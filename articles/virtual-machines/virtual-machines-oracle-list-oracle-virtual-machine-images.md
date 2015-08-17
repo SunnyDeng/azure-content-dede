@@ -1,4 +1,4 @@
-<properties 
+<properties title="List of Oracle virtual machine images"
 pageTitle="Liste der Images virtueller Oracle-Computer"
 description="Rufen Sie die Liste der Oracle-Images im Azure-Katalog auf, und erfahren Sie, wie Sie anhand eines dieser Images einen virtuellen Oracle-Computer erstellen."
 services="virtual-machines"
@@ -63,8 +63,8 @@ Die folgende Liste enthält die verfügbaren vorkonfigurierten Images virtueller
 - Oracle Linux 7.0.0.0.0
 
 ##Zusätzliche Ressourcen
-[New all-in-one Oracle images in the Azure Marketplace](https://msopentech.com/blog/2015/02/19/new-one-oracle-images-azure-marketplace/) \("Neue All-in-One-Oracle-Images im Azure Marketplace", in englischer Sprache\)
+[New all-in-one Oracle images in the Azure Marketplace](https://msopentech.com/blog/2015/02/19/new-one-oracle-images-azure-marketplace/) ("Neue All-in-One-Oracle-Images im Azure Marketplace", in englischer Sprache)
 
 [Images virtueller Oracle-Computer – verschiedene Überlegungen](#miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

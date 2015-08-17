@@ -32,17 +32,17 @@ Der erste Abschnitt in diesem Handbuch bietet eine kurze Übersicht über Azure 
 
 In diesem Abschnitt wird veranschaulicht, wie Sie über PowerShell in 5 Minuten auf Azure Storage zugreifen können.
 
-**Neu in Azure:** Holen Sie Sich ein Microsoft Azure-Abonnement und ein Microsoft-Konto für dieses Abonnement. Informationen zu Azure-Kaufoptionen finden Sie unter [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/), [Kaufoptionen](http://azure.microsoft.com/pricing/purchase-options/) und [Angebote für Mitglieder](http://azure.microsoft.com/pricing/member-offers/) \(für Mitglieder von MSDN, Microsoft Partner Network, BizSpark und anderen Microsoft-Programmen\).
+**Neu in Azure:** Holen Sie Sich ein Microsoft Azure-Abonnement und ein Microsoft-Konto für dieses Abonnement. Informationen zu Azure-Kaufoptionen finden Sie unter [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/), [Kaufoptionen](http://azure.microsoft.com/pricing/purchase-options/) und [Angebote für Mitglieder](http://azure.microsoft.com/pricing/member-offers/) (für Mitglieder von MSDN, Microsoft Partner Network, BizSpark und anderen Microsoft-Programmen).
 
 Weitere Informationen zu Azure-Abonnements finden Sie unter [Verwalten von Konten, Abonnements und Administratorrollen](https://msdn.microsoft.com/library/azure/hh531793.aspx).
 
 **Nach der Erstellung eines Microsoft Azure-Abonnements und eines Kontos:**
 
 1.	Laden Sie [Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409) herunter, und installieren Sie sie.
-2.	Starten Sie die Windows PowerShell Integrated Scripting Environment \(ISE\): Wechseln Sie auf dem lokalen Computer zum Menü **Start**. Geben Sie **Verwaltung** ein, und klicken Sie darauf, um diese auszuführen. Klicken Sie im Fenster **Verwaltung** mit der rechten Maustaste auf **Windows PowerShell ISE**, und klicken Sie dann auf **Als Administrator ausführen**.
-3.	Klicken Sie in **Windows PowerShell ISE** auf **Datei** \> **Neu**, um eine neue Skriptdatei zu erstellen.
-4.	Jetzt erhalten Sie ein einfaches Skript, das grundlegende PowerShell-Befehle für den Zugriff auf Azure Storage veranschaulicht. Sie werden zunächst vom Skript zur Eingabe Ihrer Anmeldeinformationen für das Azure-Konto aufgefordert, damit Ihr Azure-Konto zur lokalen PowerShell-Umgebung hinzugefügt werden kann. Dann legt das Skript das standardmäßige Azure-Abonnement fest und erstellt ein neues Speicherkonto in Azure. Als Nächstes erstellt das Skript in diesem neuen Speicherkonto einen neuen Container und lädt eine vorhandene Image-Datei \(Blob\) in diesen Container hoch. Nachdem das Skript alle Blobs in diesem Container aufgelistet hat, erstellt es ein neues Zielverzeichnis auf dem lokalen Computer und lädt dann die Image-Datei herunter.
-5.	Markieren Sie im folgenden Codeabschnitt das Skript zwischen den Anmerkungen **\#begin** und **\#end**. Drücken Sie STRG+C, um die Auswahl in die Zwischenablage zu kopieren.
+2.	Starten Sie die Windows PowerShell Integrated Scripting Environment (ISE): Wechseln Sie auf dem lokalen Computer zum Menü **Start**. Geben Sie **Verwaltung** ein, und klicken Sie darauf, um diese auszuführen. Klicken Sie im Fenster **Verwaltung** mit der rechten Maustaste auf **Windows PowerShell ISE**, und klicken Sie dann auf **Als Administrator ausführen**.
+3.	Klicken Sie in **Windows PowerShell ISE** auf **Datei** > **Neu**, um eine neue Skriptdatei zu erstellen.
+4.	Jetzt erhalten Sie ein einfaches Skript, das grundlegende PowerShell-Befehle für den Zugriff auf Azure Storage veranschaulicht. Sie werden zunächst vom Skript zur Eingabe Ihrer Anmeldeinformationen für das Azure-Konto aufgefordert, damit Ihr Azure-Konto zur lokalen PowerShell-Umgebung hinzugefügt werden kann. Dann legt das Skript das standardmäßige Azure-Abonnement fest und erstellt ein neues Speicherkonto in Azure. Als Nächstes erstellt das Skript in diesem neuen Speicherkonto einen neuen Container und lädt eine vorhandene Image-Datei (Blob) in diesen Container hoch. Nachdem das Skript alle Blobs in diesem Container aufgelistet hat, erstellt es ein neues Zielverzeichnis auf dem lokalen Computer und lädt dann die Image-Datei herunter.
+5.	Markieren Sie im folgenden Codeabschnitt das Skript zwischen den Anmerkungen **#begin** und **#end**. Drücken Sie STRG+C, um die Auswahl in die Zwischenablage zu kopieren.
 
     	#begin
     	# Update with the name of your subscription.
@@ -95,13 +95,13 @@ Weitere Informationen zu Azure-Abonnements finden Sie unter [Verwalten von Konte
     	$blobs | Get-AzureStorageBlobContent –Destination $DestinationFolder
     	#end
 
-5.	Drücken Sie in **Windows PowerShell ISE** STRG+V, um das Skript einzufügen. Klicken Sie auf **Datei** \> **Speichern**. Geben Sie im Dialogfeld **Speichern unter** den Namen der Skriptdatei ein, z. B. "mystoragescript". Klicken Sie auf **Speichern**.
+5.	Drücken Sie in **Windows PowerShell ISE** STRG+V, um das Skript einzufügen. Klicken Sie auf **Datei** > **Speichern**. Geben Sie im Dialogfeld **Speichern unter** den Namen der Skriptdatei ein, z. B. "mystoragescript". Klicken Sie auf **Speichern**.
 
 6.	Nun müssen Sie die Skriptvariablen auf Basis der Konfigurationseinstellungen aktualisieren. Sie müssen die Variable **$SubscriptionName** mit Ihrem eigenen Abonnement aktualisieren. Sie können die anderen Variablen im Skript übernehmen oder bei Bedarf aktualisieren.
 
 	- **$SubscriptionName**: Sie müssen diese Variable mit Ihrem eigenen Abonnementnamen aktualisieren. Suchen Sie den Namen Ihres Abonnements auf eine der folgenden drei Arten:
 
-		a. Klicken Sie in **Windows PowerShell ISE** auf **Datei** \> **Neu**, um eine neue Skriptdatei zu erstellen. Kopieren Sie das folgende Skript in die neue Skriptdatei, und klicken Sie auf **Debuggen** \> **Ausführen**. Das folgende Skript fordert zunächst Ihre Azure-Anmeldeinformationen an, um Ihr Azure-Konto zur lokalen PowerShell-Umgebung hinzuzufügen. Anschließend werden alle Abonnements angezeigt, die mit der lokalen PowerShell-Sitzung verbunden sind. Notieren Sie den Namen des Abonnements, das Sie in diesem Lernprogramm verwenden möchten:
+		a. Klicken Sie in **Windows PowerShell ISE** auf **Datei** > **Neu**, um eine neue Skriptdatei zu erstellen. Kopieren Sie das folgende Skript in die neue Skriptdatei, und klicken Sie auf **Debuggen** > **Ausführen**. Das folgende Skript fordert zunächst Ihre Azure-Anmeldeinformationen an, um Ihr Azure-Konto zur lokalen PowerShell-Umgebung hinzuzufügen. Anschließend werden alle Abonnements angezeigt, die mit der lokalen PowerShell-Sitzung verbunden sind. Notieren Sie den Namen des Abonnements, das Sie in diesem Lernprogramm verwenden möchten:
 
     		Add-AzureAccount
        		Get-AzureSubscription | Format-Table SubscriptionName, IsDefault, IsCurrent, CurrentStorageAccountName
@@ -118,7 +118,7 @@ Weitere Informationen zu Azure-Abonnements finden Sie unter [Verwalten von Konte
 
 	- **$StorageAccountName**: Verwenden Sie den im Skript angegebenen Namen, oder geben Sie einen neuen Namen für Ihr Speicherkonto ein. **Wichtig:** Der Name des Speicherkontos muss in Azure eindeutig sein. Er darf außerdem nur aus Kleinbuchstaben bestehen!
 
-	- **$Location**: Verwenden Sie das im Skript angegebene "USA \(West\)", oder wählen Sie andere Azure-Regionen wie "USA \(Ost\)", "North Europe" usw. aus.
+	- **$Location**: Verwenden Sie das im Skript angegebene "USA (West)", oder wählen Sie andere Azure-Regionen wie "USA (Ost)", "North Europe" usw. aus.
 
 	- **$ContainerName**: Verwenden Sie den im Skript angegebenen Namen, oder geben Sie einen neuen Namen für Ihren Container ein.
 
@@ -126,7 +126,7 @@ Weitere Informationen zu Azure-Abonnements finden Sie unter [Verwalten von Konte
 
 	- **$DestinationFolder**: Geben Sie den Pfad zu einem lokalen Verzeichnis zum Speichern von Dateien ein, die aus Azure Storage heruntergeladen werden. Beispiel: "C:\\DownloadImages".
 
-7.	Klicken Sie nach dem Aktualisieren der Skriptvariablen in der Datei "mystoragescript.ps1" auf **Datei** \> **Speichern**. Klicken Sie dann auf **Debuggen** \> **Ausführen**, oder drücken Sie **F5**, um das Skript auszuführen.
+7.	Klicken Sie nach dem Aktualisieren der Skriptvariablen in der Datei "mystoragescript.ps1" auf **Datei** > **Speichern**. Klicken Sie dann auf **Debuggen** > **Ausführen**, oder drücken Sie **F5**, um das Skript auszuführen.
 
 Nachdem das Skript ausgeführt wird, sollten Sie über einen lokalen Ordner verfügen, der die heruntergeladene Datei enthält. Der folgende Screenshot zeigt eine Beispielausgabe:
 
@@ -140,7 +140,7 @@ Sie benötigen ein Azure-Abonnement und -Konto zum Ausführen der in diesem Hand
 
 Azure PowerShell ist ein Modul, das Cmdlets zum Verwalten von Azure durch Windows PowerShell enthält. Informationen zum Installieren und Einrichten von Azure PowerShell finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Sie sollten daher das neueste Azure PowerShell-Modul herunterladen und installieren bzw. ein Upgrade durchführen, bevor Sie dieses Handbuch verwenden.
 
-Sie können die Cmdlets in der Azure PowerShell-Konsole, der Windows PowerShell-Standardkonsole oder der Windows PowerShell Integrated Scripting Environment \(ISE\) ausführen. Wechseln Sie z. B. zum Öffnen einer **Azure PowerShell-Konsole** zum Menü "Start", geben Sie "Microsoft Azure PowerShell" ein, klicken Sie mit der rechten Maustaste darauf, und klicken Sie dann auf "Als Administrator ausführen". Wechseln Sie zum Öffnen der **Windows PowerShell ISE** zum Menü "Start", geben Sie "Verwaltung" ein, und klicken Sie dann darauf, um diese auszuführen. Klicken Sie im Fenster "Verwaltung" mit der rechten Maustaste auf "Windows PowerShell ISE", und klicken Sie dann auf "Als Administrator ausführen".
+Sie können die Cmdlets in der Azure PowerShell-Konsole, der Windows PowerShell-Standardkonsole oder der Windows PowerShell Integrated Scripting Environment (ISE) ausführen. Wechseln Sie z. B. zum Öffnen einer **Azure PowerShell-Konsole** zum Menü "Start", geben Sie "Microsoft Azure PowerShell" ein, klicken Sie mit der rechten Maustaste darauf, und klicken Sie dann auf "Als Administrator ausführen". Wechseln Sie zum Öffnen der **Windows PowerShell ISE** zum Menü "Start", geben Sie "Verwaltung" ein, und klicken Sie dann darauf, um diese auszuführen. Klicken Sie im Fenster "Verwaltung" mit der rechten Maustaste auf "Windows PowerShell ISE", und klicken Sie dann auf "Als Administrator ausführen".
 
 ## Verwalten von Speicherkonten in Azure
 
@@ -210,7 +210,7 @@ Führen Sie das folgende Cmdlet aus, um die Namen und Statusangaben für die Spe
     Get-AzureStorageAccount | Format-Table -Property StorageAccountName, Location, AccountType, StorageAccountStatus
 
 ### Erstellen von Azure-Speicherkontexten
-Azure-Speicherkontext ist ein Objekt in PowerShell zum Kapseln der Speicheranmeldeinformationen. Durch die Verwendung eines Speicherkontextes während der Ausführung nachfolgender Cmdlets können Sie Ihre Anforderung authentifizieren, ohne das Speicherkonto und seinen Zugriffsschlüssel explizit anzugeben. Es gibt verschiedene Möglichkeiten zur Erstellung eines Speicherkontextes, z. B. durch die Verwendung von Speicherkontoname und Zugriffsschlüssel, SAS-Token \(Shared Access Signature\), Verbindungszeichenfolge oder die anonyme Erstellung. Weitere Informationen finden Sie unter [New-AzureStorageContext](http://msdn.microsoft.com/library/azure/dn806380.aspx).
+Azure-Speicherkontext ist ein Objekt in PowerShell zum Kapseln der Speicheranmeldeinformationen. Durch die Verwendung eines Speicherkontextes während der Ausführung nachfolgender Cmdlets können Sie Ihre Anforderung authentifizieren, ohne das Speicherkonto und seinen Zugriffsschlüssel explizit anzugeben. Es gibt verschiedene Möglichkeiten zur Erstellung eines Speicherkontextes, z. B. durch die Verwendung von Speicherkontoname und Zugriffsschlüssel, SAS-Token (Shared Access Signature), Verbindungszeichenfolge oder die anonyme Erstellung. Weitere Informationen finden Sie unter [New-AzureStorageContext](http://msdn.microsoft.com/library/azure/dn806380.aspx).
 
 Verwenden Sie eine der folgenden drei Methoden zum Erstellen eines Speicherkontextes:
 
@@ -221,14 +221,14 @@ Verwenden Sie eine der folgenden drei Methoden zum Erstellen eines Speicherkonte
     	$Ctx = New-AzureStorageContext $StorageAccountName -StorageAccountKey $StorageAccountKey.Primary
 
 
-- Generieren Sie ein SAS-Token \(Shared Access Signature\) für einen Azure-Speichercontainer, und verwenden Sie es zum Erstellen eines Speicherkontextes:
+- Generieren Sie ein SAS-Token (Shared Access Signature) für einen Azure-Speichercontainer, und verwenden Sie es zum Erstellen eines Speicherkontextes:
 
     	$sasToken = New-AzureStorageContainerSASToken -Container abc -Permission rl
     	$Ctx = New-AzureStorageContext -StorageAccountName $StorageAccountName -SasToken $sasToken
 
 	Weitere Informationen finden Sie unter [New-AzureStorageContainerSASToken](http://msdn.microsoft.com/library/azure/dn806416.aspx) und [Shared Access Signatures, Teil 1: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md).
 
-- In einigen Fällen möchten Sie möglicherweise die Dienstendpunkte angeben, wenn Sie einen neuen Speicherkontext erstellen. Dies kann erforderlich sein, wenn Sie einen benutzerdefinierten Domänennamen für Ihr Speicherkonto mit dem Blob-Dienst registriert haben oder eine SAS \(Shared Access Signature\) für den Zugriff auf Speicherressourcen verwenden möchten. Legen Sie die Dienstendpunkte in einer Verbindungszeichenfolge fest, und verwenden Sie diese, um einen neuen Speicherkontext zu erstellen, wie unten gezeigt:
+- In einigen Fällen möchten Sie möglicherweise die Dienstendpunkte angeben, wenn Sie einen neuen Speicherkontext erstellen. Dies kann erforderlich sein, wenn Sie einen benutzerdefinierten Domänennamen für Ihr Speicherkonto mit dem Blob-Dienst registriert haben oder eine SAS (Shared Access Signature) für den Zugriff auf Speicherressourcen verwenden möchten. Legen Sie die Dienstendpunkte in einer Verbindungszeichenfolge fest, und verwenden Sie diese, um einen neuen Speicherkontext zu erstellen, wie unten gezeigt:
 
     	$ConnectionString = "DefaultEndpointsProtocol=http;BlobEndpoint=<blobEndpoint>;QueueEndpoint=<QueueEndpoint>;TableEndpoint=<TableEndpoint>;AccountName=<AccountName>;AccountKey=<AccountKey>"
     	$Ctx = New-AzureStorageContext -ConnectionString $ConnectionString
@@ -255,7 +255,7 @@ Verwenden Sie das Cmdlet [Set-AzureStorageBlobContent](http://msdn.microsoft.com
 
 Im folgenden Beispiel wird das Cmdlet [Get-ChildItem](http://technet.microsoft.com/library/hh849800.aspx) ausgeführt, um alle Dateien im angegebenen Verzeichnis abzurufen und diese dann mithilfe des Pipeline-Operators an das nächste Cmdlet zu übergeben. Mit dem Cmdlet [Set-AzureStorageBlobContent](http://msdn.microsoft.com/library/azure/dn806379.aspx) werden die lokalen Dateien in den Container hochgeladen:
 
-    Get-ChildItem –Path C:\Images\* | Set-AzureStorageBlobContent -Container "yourcontainername"
+    Get-ChildItem –Path C:\Images* | Set-AzureStorageBlobContent -Container "yourcontainername"
 
 ### Herunterladen von Blobs aus einem Container
 Im folgenden Beispiel wird veranschaulicht, wie Blobs aus einem Container heruntergeladen werden. Im Beispiel wird zuerst mit dem Speicherkontokontext, der den Speicherkontonamen und seinen primären Zugriffsschlüssel umfasst, eine Verbindung mit dem Azure Storage hergestellt. Dann wird im Beispiel mithilfe des Cmdlets [Get-AzureStorageBlob](http://msdn.microsoft.com/library/azure/dn806392.aspx) ein Blob-Verweis abgerufen. Als Nächstes verwendet das Beispiel das Cmdlet [Get-AzureStorageBlobContent](http://msdn.microsoft.com/library/azure/dn806418.aspx) zum Herunterladen von Blobs in den lokalen Zielordner.
@@ -552,7 +552,7 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
 Azure PowerShell bietet derzeit keine Cmdlets zum direkten Verwalten von Warteschlangennachrichten. Sie können die in der [Azure Storage-Clientbibliothek für .NET](http://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx) bereitgestellten Klassen verwenden, um Vorgänge mit Warteschlangennachrichten auszuführen.
 
 #### Einfügen einer Nachricht in eine Warteschlange
-Um eine Nachricht in eine vorhandene Warteschlange einzufügen, erstellen Sie zuerst eine neue Instanz der [Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage](http://msdn.microsoft.com/library/azure/jj732474.aspx)-Klasse. Anschließend rufen Sie die [AddMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.addmessage.aspx)-Methode auf. Eine CloudQueueMessage kann entweder aus einer Zeichenfolge \(im UTF-8-Format\) oder aus einem Bytearray erstellt werden.
+Um eine Nachricht in eine vorhandene Warteschlange einzufügen, erstellen Sie zuerst eine neue Instanz der [Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage](http://msdn.microsoft.com/library/azure/jj732474.aspx)-Klasse. Anschließend rufen Sie die [AddMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.addmessage.aspx)-Methode auf. Eine CloudQueueMessage kann entweder aus einer Zeichenfolge (im UTF-8-Format) oder aus einem Bytearray erstellt werden.
 
 Im folgenden Beispiel wird veranschaulicht, wie Nachrichten zu einer Warteschlange hinzugefügt werden. Im Beispiel wird zuerst mit dem Speicherkontokontext, der den Speicherkontonamen und seinen Zugriffsschlüssel umfasst, eine Verbindung mit Azure Storage hergestellt. Als Nächstes wird die angegebene Warteschlange mithilfe des Cmdlets [Get-AzureStorageQueue](https://msdn.microsoft.com/library/azure/dn806377.aspx) abgerufen. Wenn die Warteschlange vorhanden ist, wird mit dem Cmdlet [New-Object](http://technet.microsoft.com/library/hh849885.aspx) eine Instanz der [Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage](http://msdn.microsoft.com/library/azure/jj732474.aspx)-Klasse erstellt. Später wird im Beispiel die [AddMessage](http://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.addmessage.aspx)-Methode für dieses Nachrichtenobjekt aufgerufen, um es einer Warteschlange hinzuzufügen. Dieser Code ruft eine Warteschlange ab und fügt die Nachricht "MessageInfo" ein:
 
@@ -606,8 +606,8 @@ Informationen zum Aktivieren und Anzeigen von Speichermetrikdaten mithilfe von P
 
 Weitere Informationen zum Aktivieren und Abrufen von Speicherprotokolldaten mithilfe von PowerShell finden Sie unter [Aktivieren der Speicherprotokollierung mithilfe von PowerShell](http://msdn.microsoft.com/library/azure/dn782840.aspx#HowtoenableStorageLoggingusingPowerShell) und [Suchen nach den Protokolldaten der Speicherprotokollierung](http://msdn.microsoft.com/library/azure/dn782840.aspx#FindingyourStorageLogginglogdata). Ausführliche Informationen zur Verwendung von Speichermetriken und der Speicherprotokollierung zum Beheben von Speicherproblemen finden Sie unter [Microsoft Azure Storage: Überwachung, Diagnose und Problembehandlung](storage-monitoring-diagnosing-troubleshooting.md).
 
-## Verwalten von Shared Access Signature \(SAS\) und gespeicherten Zugriffsrichtlinien
-Eine SAS \(Shared Access Signature, Signatur für freigegebenen Zugriff\) ist ein wichtiger Bestandteil des Sicherheitsmodells für alle Anwendungen, die Azure-Speicher verwenden. Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berechtigungen für Ihr Speicherkonto an Clients, die keinen Zugriff auf Ihren Kontoschlüssel haben dürfen. Standardmäßig kann nur der Besitzer eines Speicherkontos auf Blobs, Tabellen und Warteschlangen in diesem Konto zugreifen. Wenn Ihr Dienst oder Ihre Anwendung diese Ressourcen für andere Clients zur Verfügung stellen muss, ohne den Zugriffsschlüssel freizugeben, stehen Ihnen drei Optionen zum Ermöglichen des Zugriffs zur Verfügung:
+## Verwalten von Shared Access Signature (SAS) und gespeicherten Zugriffsrichtlinien
+Eine SAS (Shared Access Signature, Signatur für freigegebenen Zugriff) ist ein wichtiger Bestandteil des Sicherheitsmodells für alle Anwendungen, die Azure-Speicher verwenden. Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berechtigungen für Ihr Speicherkonto an Clients, die keinen Zugriff auf Ihren Kontoschlüssel haben dürfen. Standardmäßig kann nur der Besitzer eines Speicherkontos auf Blobs, Tabellen und Warteschlangen in diesem Konto zugreifen. Wenn Ihr Dienst oder Ihre Anwendung diese Ressourcen für andere Clients zur Verfügung stellen muss, ohne den Zugriffsschlüssel freizugeben, stehen Ihnen drei Optionen zum Ermöglichen des Zugriffs zur Verfügung:
 
 - Sie können die Berechtigungen eines Containers festlegen, um anonymen Lesezugriff auf den Container und seine Blobs zuzulassen. Dies ist für Tabellen oder Warteschlangen nicht zulässig.
 - Verwenden Sie eine SAS, die für ein bestimmtes Zeitintervall beschränkten Zugriff auf Container, Blobs, Warteschlangen und Tabellen gewährt.
@@ -616,7 +616,7 @@ Eine SAS \(Shared Access Signature, Signatur für freigegebenen Zugriff\) ist ei
 Eine SAS kann zwei Formen aufweisen:
 
 - **Ad-hoc-SAS:** Beim Erstellen einer Ad-hoc-SAS werden Startzeit, Ablaufzeit und Berechtigungen für die SAS direkt im SAS-URI angegeben. Diese Art von SAS kann für Container, Blobs, Tabellen oder Warteschlangen erstellt werden und kann nicht aufgehoben werden.
-- **SAS mit gespeicherten Zugriffsrichtlinien:** Gespeicherte Zugriffsrichtlinien werden für Ressourcencontainer – Blob-Container, Tabellen oder Warteschlangen – definiert und dienen der Verwaltung von Einschränkungen für eine oder mehrere SAS \(Shared Access Signature\). Wenn Sie eine SAS mit einer gespeicherten Zugriffsrichtlinie verknüpfen, erbt die SAS die Einschränkungen \(Startzeit, Ablaufzeit und Berechtigungen\) dieser gespeicherten Zugriffsrichtlinie. Diese Art von SAS kann aufgehoben werden.
+- **SAS mit gespeicherten Zugriffsrichtlinien:** Gespeicherte Zugriffsrichtlinien werden für Ressourcencontainer – Blob-Container, Tabellen oder Warteschlangen – definiert und dienen der Verwaltung von Einschränkungen für eine oder mehrere SAS (Shared Access Signature). Wenn Sie eine SAS mit einer gespeicherten Zugriffsrichtlinie verknüpfen, erbt die SAS die Einschränkungen (Startzeit, Ablaufzeit und Berechtigungen) dieser gespeicherten Zugriffsrichtlinie. Diese Art von SAS kann aufgehoben werden.
 
 Weitere Informationen finden Sie unter [SAS-Lernprogramm](storage-dotnet-shared-access-signature-part-1.md) und [Verwalten des Zugriffs auf Azure Storage-Ressourcen](storage-manage-access-to-resources.md).
 
@@ -736,4 +736,4 @@ In diesem Handbuch haben Sie erfahren, wie Sie Azure Storage mit Azure PowerShel
 [Next Steps]: #next
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -40,7 +40,7 @@ Mit den folgenden Schritten wird das Cloud-Dienst-Projekt erstellt, in dem die S
 
 
 
-2. Ändern Sie das Verzeichnis auf **c:\node**, und geben Sie die folgenden Befehle ein, um eine neue Projektmappe mit dem Namen **chatapp** und eine Workerrolle mit dem Namen **WorkerRole1** zu erstellen:
+2. Ändern Sie das Verzeichnis auf **c:\\node**, und geben Sie die folgenden Befehle ein, um eine neue Projektmappe mit dem Namen **chatapp** und eine Workerrolle mit dem Namen **WorkerRole1** zu erstellen:
 
 		PS C:\node> New-AzureServiceProject chatapp
 		PS C:\Node> Add-AzureNodeWorkerRole
@@ -57,13 +57,13 @@ Für dieses Projekt verwenden wir das Chat-Beispiel aus dem [Socket.IO GitHub-Re
 
     ![In einem Browserfenster wird https://github.com/LearnBoost/socket.io/tree/master/examples/chat angezeigt, wobei das ZIP-Downloadsymbol hervorgehoben ist.][chat-example-view]
 
-3.  Navigieren Sie in der Verzeichnisstruktur des lokalen Repositorys, bis sie zum Verzeichnis **examples\chat** gelangen. Kopieren Sie den Inhalt dieses Verzeichnisses in das zuvor erstellte Verzeichnis **C:\node\chatapp\WorkerRole1**.
+3.  Navigieren Sie in der Verzeichnisstruktur des lokalen Repositorys, bis sie zum Verzeichnis **examples\\chat** gelangen. Kopieren Sie den Inhalt dieses Verzeichnisses in das zuvor erstellte Verzeichnis **C:\\node\\chatapp\\WorkerRole1**.
 
-    ![Explorer zeigt den Inhalt des aus dem Archiv extrahierten Verzeichnisses "examples\chat" an.][chat-contents]
+    ![Explorer zeigt den Inhalt des aus dem Archiv extrahierten Verzeichnisses "examples\\chat" an.][chat-contents]
 
-    Die hervorgehobenen Elemente im Screenshot oben sind die aus dem Verzeichnis **examples\chat** kopierten Dateien.
+    Die hervorgehobenen Elemente im Screenshot oben sind die aus dem Verzeichnis **examples\\chat** kopierten Dateien.
 
-4.  Löschen Sie im Verzeichnis **C:\node\chatapp\WorkerRole1** die Datei **server.js**, und benennen Sie anschließend die Datei **app.js** in **server.js** um. Dadurch wird die Standarddatei **server.js** entfernt, die zuvor vom Cmdlet **Add-AzureNodeWorkerRole** erstellt wurde, und durch die Anwendungsdatei aus dem Chat-Beispiel ersetzt.
+4.  Löschen Sie im Verzeichnis **C:\\node\\chatapp\\WorkerRole1** die Datei **server.js**, und benennen Sie anschließend die Datei **app.js** in **server.js** um. Dadurch wird die Standarddatei **server.js** entfernt, die zuvor vom Cmdlet **Add-AzureNodeWorkerRole** erstellt wurde, und durch die Anwendungsdatei aus dem Chat-Beispiel ersetzt.
 
 ### Ändern von Server.js und Installieren von Modulen
 
@@ -89,7 +89,7 @@ Bevor die Anwendung im Azure-Emulator gestestet wird, müssen einige kleinere Ä
 
 Nachdem Sie die Änderungen in server.js gespeichert haben, gehen Sie folgendermaßen vor, um erforderliche Module zu installieren. Testen Sie die Anwendung anschließend im Azure-Emulator:
 
-1.  Ändern Sie mit **Azure PowerShell** das Verzeichnis auf **C:\node\chatapp\WorkerRole1**, und verwenden Sie den folgenden Befehl, um die von dieser Anwendung benötigten Module zu installieren:
+1.  Ändern Sie mit **Azure PowerShell** das Verzeichnis auf **C:\\node\\chatapp\\WorkerRole1**, und verwenden Sie den folgenden Befehl, um die von dieser Anwendung benötigten Module zu installieren:
 
         PS C:\node\chatapp\WorkerRole1> npm install
 
@@ -158,4 +158,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine grundlegende Chat-Anwendung 
   
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -61,18 +61,18 @@ Sind die Klassifizierungen in VMM ordnungsgemäß konfiguriert, werden die Quell
 
 **Standort** | **VMM-Server** | **Dateifreigabe (Quelle)** | **Klassifizierung (Quelle)** | **Zuordnungsziel** | **Dateifreigabe (Ziel)**
 ---|---|--- |---|---|---
-New York | VMM_Source| SourceShare1 | GOLD | GOLD_TARGET | TargetShare1
- | | SourceShare2 | SILVER | SILVER_TARGET | TargetShare2
- | | SourceShare3 | BRONZE | BRONZE_TARGET | TargetShare3
-Chicago | VMM_Target | | GOLD_TARGET | Nicht zugeordnet |
-| | | SILVER_TARGET | Nicht zugeordnet |
- | | | BRONZE_TARGET | Nicht zugeordnet
+New York | VMM\_Source| SourceShare1 | GOLD | GOLD\_TARGET | TargetShare1
+ | | SourceShare2 | SILVER | SILVER\_TARGET | TargetShare2
+ | | SourceShare3 | BRONZE | BRONZE\_TARGET | TargetShare3
+Chicago | VMM\_Target | | GOLD\_TARGET | Nicht zugeordnet |
+| | | SILVER\_TARGET | Nicht zugeordnet |
+ | | | BRONZE\_TARGET | Nicht zugeordnet
 
 Diese Einstellungen werden im Site Recovery-Portal auf der Registerkarte **Serverspeicher** der Seite **Ressourcen** konfiguriert.
 
 ![Konfigurieren der Speicherzuordnung](./media/site-recovery-storage-mapping/StorageMapping1.png)
 
-Für dieses Beispiel gilt Folgendes: Wenn für einen virtuellen Computer im GOLD-Speicher (SourceShare1) ein virtueller Replikatcomputer erstellt wird, wird dieser zu einem GOLD_TARGET-Speicher (TargetShare1) repliziert. Wenn für einen virtuellen Computer im SILVER-Speicher (SourceShare2) ein virtueller Replikatcomputer erstellt wird, wird er zu einem SILVER_TARGET-Speicher (TargetShare2) repliziert. Usw.
+Für dieses Beispiel gilt Folgendes: Wenn für einen virtuellen Computer im GOLD-Speicher (SourceShare1) ein virtueller Replikatcomputer erstellt wird, wird dieser zu einem GOLD\_TARGET-Speicher (TargetShare1) repliziert. Wenn für einen virtuellen Computer im SILVER-Speicher (SourceShare2) ein virtueller Replikatcomputer erstellt wird, wird er zu einem SILVER\_TARGET-Speicher (TargetShare2) repliziert. Usw.
 
 Der tatsächlichen Dateifreigaben und deren zugewiesene Klassifizierungen in VMM sehen in diesem Beispiel so aus:
 
@@ -86,24 +86,24 @@ Die folgende Tabelle zeigt die Einrichtung der Speicherklassifizierung und der f
 
 **Standort** | **Klassifizierung** | **Zugeordneter Speicher**
 ---|---|---
-New York | GOLD | <p>C:\ClusterStorage\SourceVolume1</p><p>\FileServer\SourceShare1</p>
- | SILVER | <p>C:\ClusterStorage\SourceVolume2</p><p>\FileServer\SourceShare2</p>
-Chicago | GOLD_TARGET | <p>C:\ClusterStorage\TargetVolume1</p><p>\FileServer\TargetShare1</p>
- | SILVER_TARGET| <p>C:\ClusterStorage\TargetVolume2</p><p>\FileServer\TargetShare2</p>
+New York | GOLD | <p>C:\\ClusterStorage\\SourceVolume1</p><p>\\FileServer\\SourceShare1</p>
+ | SILVER | <p>C:\\ClusterStorage\\SourceVolume2</p><p>\\FileServer\\SourceShare2</p>
+Chicago | GOLD\_TARGET | <p>C:\\ClusterStorage\\TargetVolume1</p><p>\\FileServer\\TargetShare1</p>
+ | SILVER\_TARGET| <p>C:\\ClusterStorage\\TargetVolume2</p><p>\\FileServer\\TargetShare2</p>
 
 Die folgende Tabelle zeigt, was passiert, wenn Sie den Schutz für virtuelle Computer (VM1 - VM5) in dieser Beispielumgebung aktivieren:
 
 **Virtueller Computer** | **Quellspeicher** | **Quellklassifizierung** | **Zugeordneter Zielspeicher**
 ---|---|---|---
-VM1 | C:\ClusterStorage\SourceVolume1 | GOLD | <p>C:\ClusterStorage\SourceVolume1</p><p>\\FileServer\SourceShare1</p><p>GOLD_TARGET (beide)</p>
-VM2 | \FileServer\SourceShare1 | GOLD | <p>C:\ClusterStorage\SourceVolume1</p><p>\FileServer\SourceShare1</p> <p>GOLD_TARGET (beide)</p>
-VM3 | C:\ClusterStorage\SourceVolume2 | SILVER | <p>C:\ClusterStorage\SourceVolume2</p><p>\FileServer\SourceShare2</p>
-VM4 | \FileServer\SourceShare2 | SILVER |<p>C:\ClusterStorage\SourceVolume2</p><p>\FileServer\SourceShare2</p><p>SILVER_TARGET (beide)</p>
-VM5 | C:\ClusterStorage\SourceVolume3 | – | Keine Zuordnung, daher Verwendung des Standardspeicherorts des Hyper-V-Hosts
+VM1 | C:\\ClusterStorage\\SourceVolume1 | GOLD | <p>C:\\ClusterStorage\\SourceVolume1</p><p>\\\\FileServer\\SourceShare1</p><p>GOLD\_TARGET (beide)</p>
+VM2 | \\FileServer\\SourceShare1 | GOLD | <p>C:\\ClusterStorage\\SourceVolume1</p><p>\\FileServer\\SourceShare1</p> <p>GOLD\_TARGET (beide)</p>
+VM3 | C:\\ClusterStorage\\SourceVolume2 | SILVER | <p>C:\\ClusterStorage\\SourceVolume2</p><p>\\FileServer\\SourceShare2</p>
+VM4 | \\FileServer\\SourceShare2 | SILVER |<p>C:\\ClusterStorage\\SourceVolume2</p><p>\\FileServer\\SourceShare2</p><p>SILVER\_TARGET (beide)</p>
+VM5 | C:\\ClusterStorage\\SourceVolume3 | – | Keine Zuordnung, daher Verwendung des Standardspeicherorts des Hyper-V-Hosts
 
 ## Nächste Schritte
 
 Nachdem Sie die Speicherzuordnung nun besser nachvollziehen können, können Sie sich zur Vorbereitung auf die Bereitstellung mit den [bewährten Methoden](site-recovery-best-practices.md) vertraut machen.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

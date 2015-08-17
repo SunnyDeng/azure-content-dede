@@ -22,10 +22,10 @@
 
 Anwendungen müssen häufig einfach neue Shards hinzufügen, um Daten zu verwalten, die von neuen Schlüsseln oder Schlüsselbereichen für eine Shard Map erwartet werden, welche bereits vorhanden ist. Eine Anwendung beispielsweise, bei der Sharding über die Mandanten-ID durchgeführt wird, muss unter Umständen einen neuen Shard für einen neuen Mandanten bereitstellen, oder Daten, bei denen das Sharding monatlich durchgeführt wird, benötigen möglicherweise einen neuen Shard, der vor dem Start eines jeweils neuen Monats bereitgestellt wird.
 
-Wenn der neue Schlüsselwertbereich nicht bereits Teil einer vorhandenen Zuordnung \(Mapping\) ist, ist es sehr einfach, den neuen Shard hinzuzufügen und den neuen Schlüssel oder Bereich mit dem Shard zu verknüpfen.
+Wenn der neue Schlüsselwertbereich nicht bereits Teil einer vorhandenen Zuordnung (Mapping) ist, ist es sehr einfach, den neuen Shard hinzuzufügen und den neuen Schlüssel oder Bereich mit dem Shard zu verknüpfen.
 
 ### Beispiel: Hinzufügen eines Shards und seines Bereichs zu einer vorhandenen Shard-Zuordnung
-Im Beispiel unten wurden eine Datenbank namens **sample\_shard\_2** mit allen erforderlichen, darin enthaltenen Schemaobjekten so erstellt, dass sie den Bereich \[300, 400\) abdecken.
+Im Beispiel unten wurden eine Datenbank namens **sample\_shard\_2** mit allen erforderlichen, darin enthaltenen Schemaobjekten so erstellt, dass sie den Bereich [300, 400) abdecken.
 
     // sm is a RangeShardMap object.
     // Add a new shard to hold the range being added. 
@@ -43,7 +43,7 @@ Im Beispiel unten wurden eine Datenbank namens **sample\_shard\_2** mit allen er
 
 ## So fügen Sie einen Shard für einen leeren Teil eines vorhandenen Bereichs hinzu  
 
-In einigen Fällen haben Sie einem Shard vielleicht bereits einen Bereich zugeordnet und diesen teilweise mit Daten gefüllt. Jetzt möchten Sie aber weitere Daten an einen anderen Shard umleiten. Angenommen, Sie führen das Sharding nach einem Bereich von Tagen durch und haben einem Shard bereits 50 Tage zugeordnet. Am 24. Tag sollen zukünftige Daten jedoch an einen anderen Shard weitergeleitet werden. Das [Split-Merge-Tool](sql-database-elastic-scale-overview-split-and-merge.md) für elastische Datenbanken kann diesen Vorgang durchführen. Wenn jedoch keine Datenverschiebung erforderlich ist \(weil noch keine Daten für den Bereich der Tage \[25, 50\), d. h. einschließlich Tag 25 bis ausschließlich Tag 50, vorliegen\), können Sie den ganzen Vorgang direkt mithilfe der Shard-Zuordnungs-Verwaltungs-APIs durchführen.
+In einigen Fällen haben Sie einem Shard vielleicht bereits einen Bereich zugeordnet und diesen teilweise mit Daten gefüllt. Jetzt möchten Sie aber weitere Daten an einen anderen Shard umleiten. Angenommen, Sie führen das Sharding nach einem Bereich von Tagen durch und haben einem Shard bereits 50 Tage zugeordnet. Am 24. Tag sollen zukünftige Daten jedoch an einen anderen Shard weitergeleitet werden. Das [Split-Merge-Tool](sql-database-elastic-scale-overview-split-and-merge.md) für elastische Datenbanken kann diesen Vorgang durchführen. Wenn jedoch keine Datenverschiebung erforderlich ist (weil noch keine Daten für den Bereich der Tage [25, 50), d. h. einschließlich Tag 25 bis ausschließlich Tag 50, vorliegen), können Sie den ganzen Vorgang direkt mithilfe der Shard-Zuordnungs-Verwaltungs-APIs durchführen.
 
 ### Beispiel: Aufteilen eines Bereichs und Zuweisen des leeren Teils zu einem neu hinzugefügten Shard
 
@@ -78,4 +78,4 @@ Eine Datenbank namens „sample\_shard\_2“ sowie alle erforderlichen, darin en
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

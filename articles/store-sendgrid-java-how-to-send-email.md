@@ -136,7 +136,7 @@ Der folgende Code zeigt, wie Sie eine Anlage hinzufügen.
 
     // Local file name and path.
     String attachmentName = "myfile.zip";
-    String attachmentPath = "c:\myfiles\"; 
+    String attachmentPath = "c:\\myfiles\"; 
     MimeBodyPart attachmentPart = new MimeBodyPart();
     // Specify the local file to attach.
     DataSource source = new FileDataSource(attachmentPath + attachmentName);
@@ -228,4 +228,4 @@ Nachdem Sie sich nun mit den Grundlagen des SendGrid-E-Mail-Dienstes vertraut ge
   [cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
   [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

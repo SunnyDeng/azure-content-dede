@@ -53,4 +53,4 @@ Die Netzwerkkonfigurationsdatei kann die folgenden Elemente enthalten. Der Titel
 
 [Azure-Dienstkonfigurationsschema (.cscfg-Datei)](https://msdn.microsoft.com/library/windowsazure/ee758710)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

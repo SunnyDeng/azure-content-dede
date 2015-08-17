@@ -90,4 +90,4 @@ In der folgenden Tabelle wird erläutert, wie vorhandene Azure-Dienste App Servi
 Weitere Informationen finden Sie in der[ App Service-Dokumentation](http://azure.microsoft.com/documentation/services/app-service/).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

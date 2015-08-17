@@ -13,7 +13,7 @@
 	ms.workload="infrastructure-services"
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
-	ms.topic="get-started-article"
+	ms.topic="article"
 	ms.date="07/13/2015"
 	ms.author="rasquill"/>
 
@@ -302,4 +302,4 @@ Weitere Informationen zu Linux auf Azure erhalten Sie unter:
 - [Die Docker-Erweiterung für virtuelle Linux-Computer auf Azure](virtual-machines-docker-vm-extension.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

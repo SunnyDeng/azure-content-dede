@@ -68,4 +68,4 @@ Sie können das aktuelle Azure-Abonnement durch Ausführen dieser Befehle in der
 
 Weitere Informationen zu Azure-Abonnements und -Konten finden Sie unter [Verbindung mit Ihrem Abonnement](powershell-install-configure.md#Connect).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -108,4 +108,4 @@
 
 Kontingente mit einem Sternchen (*) [können angepasst werden. Wenden Sie sich dafür an den Azure-Support](../articles/documentdb/documentdb-increase-limits.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

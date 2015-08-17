@@ -6,14 +6,16 @@
 	authors="alancameronwills" 
 	manager="douge"/>
 
+
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/23/2015" 
+	ms.date="08/04/2015" 
 	ms.author="awills"/>
+
  
 # Power BI-Ansichten von Application Insights-Daten
 
@@ -108,7 +110,7 @@ Jetzt benötigen Sie den primären Zugriffsschlüssel aus Ihrem Speicherkonto, d
 
 ![](./media/app-insights-export-power-bi/140.png)
 
-Achten Sie darauf, dass das Datum das Format "JJJJ-MM-TT" \(mit Bindestrichen\) aufweist.
+Achten Sie darauf, dass das Datum das Format "JJJJ-MM-TT" (mit Bindestrichen) aufweist.
 
 Das Präfixmuster des Pfads gibt an, wie Stream Analytics die Eingabedateien im Speicher ermittelt. Sie müssen es so einrichten, dass es der Speicherung der Daten durch den fortlaufenden Export entspricht. Legen Sie ihn wie folgt fest:
 
@@ -152,7 +154,7 @@ Fügen Sie diese Abfrage ein:
 ```SQL
 
     SELECT
-      flat.ArrayValue.name
+      flat.ArrayValue.name,
       count(*)
     INTO
       [pbi-output]
@@ -195,5 +197,6 @@ Noam Ben Zeev zeigt, wie nach Power BI exportiert wird.
 
 * [Fortlaufendem Export](app-insights-export-telemetry.md)
 * [Application Insights](app-insights-overview.md)
+* [Weitere Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

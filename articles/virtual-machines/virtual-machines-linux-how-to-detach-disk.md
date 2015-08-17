@@ -25,4 +25,4 @@
 
 [Vorgehensweise: Anfügen eines Datenträgers an einen virtuellen Linux-Computer](virtual-machines-linux-how-to-attach-disk.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

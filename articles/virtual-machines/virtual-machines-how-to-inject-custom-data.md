@@ -8,6 +8,7 @@
 	editor="tysonn"
 	tags="azure-service-management" />
 
+
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
@@ -18,17 +19,18 @@
 	ms.author="rasquill"/>
 
 
-#Einfügen von benutzerdefinierten Daten in einem virtuellen Azure-Computer
 
-Das Einfügen eines Skripts oder anderer Daten in einen virtuellen Azure-Computer, während dieser bereitgestellt wird, ist ein sehr häufiges Szenario, unabhängig davon, ob es sich bei dem Betriebssystem um Microsoft Windows oder eine Linux-Distribution handelt. In diesem Thema wird Folgendes beschrieben:
+#Einfügen benutzerdefinierter Daten in einen virtuellen Azure-Computer
 
-- Einfügen von Daten in einen virtuellen Azure-Computer, während dieser bereitgestellt wird
+Das Einfügen eines Skripts oder anderer Daten in einen virtuellen Azure-Computer, während dieser bereitgestellt wird, ist ein sehr häufiges Szenario, unabhängig davon, ob es sich bei dem Betriebssystem um Windows oder eine Linux-Distribution handelt. In diesem Thema wird Folgendes beschrieben:
 
-- Abrufen des virtuellen Computers für Windows und Linux
+- Das Einfügen von Daten in einen virtuellen Azure-Computer, während dieser bereitgestellt wird.
+
+- Das Abrufen des virtuellen Computers für Windows und Linux.
 
 - Verwenden von speziellen Tools, die auf einigen Systemen zum automatischen Ermitteln und Verarbeiten benutzerdefinierter Daten verfügbar sind.
 
-> [AZURE.NOTE]Dieser Artikel beschreibt, wie benutzerdefinierte Daten mithilfe eines virtuellen Computers, der mit dem Azure-Dienstverwaltungs-Computestapel erstellt wurde, injiziert werden können. Informationen zur Verwendung des Azure-Ressourcen-Manager-Computestapels finden Sie in [dieser Beispielvorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata).
+> [AZURE.NOTE]Dieser Artikel beschreibt, wie benutzerdefinierte Daten mithilfe eines virtuellen Computers, der mit der Azure-Dienstverwaltungs-API erstellt wurde, injiziert werden können. Informationen zur Verwendung der Azure-Dienstverwaltungs-API finden Sie in [der Beispielvorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata).
 
 ## Einfügen benutzerdefinierter Daten in einem virtuellen Azure-Computer
 
@@ -49,7 +51,7 @@ Dieses Feature wird derzeit nur in der [Azure-Befehlszeilenschnittstelle](https:
 
    >[AZURE.NOTE]Wenn die Datei vorhanden ist, wird sie überschrieben. Die Sicherheit im Verzeichnis ist auf **System:Full Control** und **Administrators:Full Control** festgelegt.
 
-+ Wenn es sich bei Ihrem virtuellen Azure-Computer um einen virtuellen Linux-Computer handelt, befindet sich die benutzerdefinierte Datendatei an den folgenden zwei Orten, die Daten sind jedoch base64-codiert. Daher müssen Sie die Daten zunächst decodieren.
++ Wenn es sich bei Ihrem virtuellen Azure-Computer um einen virtuellen Linux-Computer handelt, befindet sich die benutzerdefinierte Datendatei an den folgenden zwei Orten. Die Daten sind jedoch base64-codiert, sodass Sie sie zunächst decodieren müssen.
 
     + Unter `/var/lib/waagent/ovf-env.xml`
     + Unter `/var/lib/waagent/CustomData`
@@ -64,9 +66,8 @@ Wenn Ihr virtueller Azure-Computer von einem Ubuntu- oder CoreOS-Image erstellt 
 
 In den meisten Azure Linux-Images bearbeiten Sie "/ /etc/waagent.conf", um den temporären Ressourcendatenträger und die Auslagerungsdatei zu konfigurieren. Weitere Informationen erhalten Sie im [Benutzerhandbuch für Azure Linux Agent](virtual-machines-linux-agent-user-guide.md).
 
-Bei Ubuntu-Cloud-Images muss zum Konfigurieren des Ressourcendatenträgers (auch als "kurzlebiger" Datenträger bezeichnet) und der Swap-Partition jedoch Cloud-Init verwendet werden. Weitere Details finden Sie auf der folgenden Seite im Ubuntu-Wiki:
+Bei Ubuntu-Cloud-Images muss zum Konfigurieren des Ressourcendatenträgers (auch als "kurzlebiger" Datenträger bezeichnet) und der Swap-Partition jedoch Cloud-Init verwendet werden. Weitere Details finden Sie auf der folgenden Seite im Ubuntu-Wiki: [AzureSwapPartitions](https://wiki.ubuntu.com/AzureSwapPartitions).
 
- - [Ubuntu-Wiki: Konfigurieren von Swap-Partitionen](http://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409) (in englischer Sprache)
 
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
@@ -78,6 +79,5 @@ Weitere Informationen finden Sie unter [cloud-init documentation for Ubuntu](htt
 [REST-API-Referenz zur Dienstverwaltung mit "Add Role"](http://msdn.microsoft.com/library/azure/jj157186.aspx)
 
 [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat)
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -212,4 +212,4 @@ Wenn Sie den Schutz für eine virtuelle VMware-Maschine oder einen physischen Se
 	- **Schutz deaktivieren**: Wenn Sie diese Option aktivieren und speichern, wird der Computer nicht mehr durch Site Recovery geschützt. Die Sicherheitseinstellungen für den Computer werden automatisch bereinigt.
 	- **Aus dem Tresor entfernen**: Wenn Sie diese Option auswählen, wird der Computer nur aus dem Site Recovery-Tresor entfernt. Lokale Sicherheitseinstellungen für den Computer sind nicht betroffen. Um die Einstellungen vom Computer und den virtuellen Computer aus dem Azure-Abonnement zu entfernen, müssen Sie die Einstellungen bereinigen, indem Sie den Mobilitätsdienst deinstallieren. ![Optionen entfernen](./media/site-recovery-manage-registration-and-protection/RegistrationProtection_RemoveVM.png)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

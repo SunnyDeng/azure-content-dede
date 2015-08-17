@@ -38,7 +38,7 @@ In diesem Leitfaden verwenden Sie Dienstfunktionen, die lokal aus einer PHP-Anwe
 
 Um die APIs für Azure Service Bus-Warteschlangen zu verwenden, gehen Sie folgendermaßen vor:
 
-1. Verweisen Sie mithilfe der [require_once][require_once]-Anweisung auf die Autoloaderdatei.
+1. Verweisen Sie mithilfe der [require\_once][require_once]-Anweisung auf die Autoloaderdatei.
 2. Verweisen Sie auf alle Klassen, die Sie möglicherweise verwenden.
 
 Das folgende Beispiel zeigt, wie die Autoloaderdatei eingeschlossen und die **ServicesBuilder**-Klasse referenziert wird.
@@ -213,4 +213,4 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind,
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

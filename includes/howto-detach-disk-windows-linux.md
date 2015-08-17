@@ -31,4 +31,4 @@ Nachdem Sie den Namen des Datenträgers gefunden haben, sind Sie bereit, den Dat
 
 Der Datenträger verbleibt im Speicher, ist jedoch nicht mehr an einen virtuellen Computer angefügt.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

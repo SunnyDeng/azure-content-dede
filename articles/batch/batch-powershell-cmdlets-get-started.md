@@ -7,6 +7,7 @@
    manager="timlt"
    editor=""/>
 
+
 <tags
    ms.service="batch"
    ms.devlang="NA"
@@ -15,6 +16,7 @@
    ms.workload="big-compute"
    ms.date="07/08/2015"
    ms.author="danlep"/>
+
 
 # Erste Schritte mit Azure Batch für PowerShell-Cmdlets
 Dieser Artikel dient als kurze Einführung in die Azure PowerShell-Cmdlets, mit denen Sie Ihre Batch-Konten verwalten und Informationen über Ihre Batch-Aufträge und -Aufgaben sowie weitere Details abrufen können.
@@ -47,13 +49,13 @@ Mit Azure PowerShell-Cmdlets können Sie Batch-Konten und Schlüssel erstellen u
 
 ### Erstellen eines Batch-Kontos
 
-**New-AzureBatchAccount** erstellt ein neues Batch-Konto in einer angegebenen Ressourcengruppe. Wenn Sie noch keine Ressourcengruppe erstellt haben, erstellen Sie sie durch Ausführen des Cmdlets [New-AzureResourceGroup](https://msdn.microsoft.com/library/dn654594.aspx). Geben Sie dabei eine der Azure-Regionen im **Location**-Parameter an. \(Verfügbare Regionen für verschiedene Azure-Ressourcen finden Sie durch Ausführen von [Get-AzureLocation](https://msdn.microsoft.com/library/dn654582.aspx).\) Beispiel:
+**New-AzureBatchAccount** erstellt ein neues Batch-Konto in einer angegebenen Ressourcengruppe. Wenn Sie noch keine Ressourcengruppe erstellt haben, erstellen Sie sie durch Ausführen des Cmdlets [New-AzureResourceGroup](https://msdn.microsoft.com/library/dn654594.aspx). Geben Sie dabei eine der Azure-Regionen im **Location**-Parameter an. (Verfügbare Regionen für verschiedene Azure-Ressourcen finden Sie durch Ausführen von [Get-AzureLocation](https://msdn.microsoft.com/library/dn654582.aspx).) Beispiel:
 
 ```
 New-AzureResourceGroup –Name MyBatchResourceGroup –location "Central US"
 ```
 
-Erstellen Sie dann ein neues Batch-Konto in der Ressourcengruppe. Geben Sie zudem einen Kontonamen für "\<\*account\_name\*\>" und einen Speicherort an, an dem der Batch-Dienst verfügbar ist. Die Erstellung des Kontos kann mehrere Minuten in Anspruch nehmen. Beispiel:
+Erstellen Sie dann ein neues Batch-Konto in der Ressourcengruppe. Geben Sie zudem einen Kontonamen für <*account\_name*> und einen Speicherort an, an dem der Batch-Dienst verfügbar ist. Die Erstellung des Kontos kann mehrere Minuten in Anspruch nehmen. Beispiel:
 
 ```
 New-AzureBatchAccount –AccountName <account_name> –Location "Central US" –ResourceGroupName MyBatchResourceGroup
@@ -90,7 +92,7 @@ Bestätigen Sie bei der entsprechenden Aufforderung, dass Sie das Konto entferne
 
 ## Abfragen von Aufträgen, Aufgaben und weiteren Details
 
-Verwenden Sie Cmdlets wie z. B. **Get-AzureBatchJob**, **Get-AzureBatchTask** und **Get-AzureBatchPool** zum Abfragen von Entitäten, die in einem Batch-Konto erstellt wurden.
+Verwenden Sie Cmdlets wie **Get-AzureBatchJob**, **Get-AzureBatchTask** und **Get-AzureBatchPool** zum Abfragen von Entitäten, die in einem Batch-Konto erstellt wurden.
 
 Um diese Cmdlets verwenden zu können, müssen Sie zunächst ein AzureBatchContext-Objekt erstellen, um Ihren Kontonamen und Ihre Schlüssel zu speichern:
 
@@ -156,4 +158,4 @@ Setzen Sie den **MaxCount**-Parameter auf 0 oder eine negative Zahl, um die Ober
 * [Referenz zu Azure-Batch-Cmdlets](https://msdn.microsoft.com/library/azure/mt125957.aspx)
 * [Effiziente Listenabfragen](batch-efficient-list-queries.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

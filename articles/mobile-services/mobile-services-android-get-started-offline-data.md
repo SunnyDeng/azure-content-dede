@@ -45,7 +45,7 @@ Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure 
 	    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 
-2. Fügen Sie *ToDoActivity.java* die folgenden **import**-Anweisungen hinzu:
+2. Fügen Sie *ToDoActivity.java* die folgenden **Import**-Anweisungen hinzu:
 
 		import java.util.Map;
 		
@@ -57,7 +57,7 @@ Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure 
 		import com.microsoft.windowsazure.mobileservices.table.sync.localstore.ColumnDataType; 
 		import com.microsoft.windowsazure.mobileservices.table.sync.localstore.SQLiteLocalStore; 
 
-3. Ändern Sie am Anfang der `ToDoActivity`-Klasse in der Deklaration der `mToDoTable`-Variablen die `MobileServiceTable<ToDoItem>`-Klasse in die `MobileServiceSyncTable<ToDoItem>`-Klasse.
+3. Ändern Sie am Anfang der `ToDoActivity`-Klasse die Deklaration der `mToDoTable`-Variable von einer `MobileServiceTable<ToDoItem>`-Klasse in eine `MobileServiceSyncTable<ToDoItem>`-Klasse.
 
 		 private MobileServiceSyncTable<ToDoItem> mToDoTable;
 
@@ -137,7 +137,7 @@ Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure 
 
 
  
-9. Aktualisieren Sie den Code in der `refreshItemsFromTable`-Methode, um diese Abfrage verwenden (erste Codezeile im `try`-Block):
+9. Aktualisieren Sie den Code in der `refreshItemsFromTable`-Methode, um diese Abfrage zu verwenden (erste Codezeile im `try`-Block):
 
 		final MobileServiceList<ToDoItem> result = mToDoTable.read(mPullQuery).get();
 
@@ -146,7 +146,7 @@ Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure 
 			syncAsync();
 			refreshItemsFromTable();
 
-	Dieser Code wird ausgeführt, wenn Sie in der rechten oberen Ecke auf **Aktualisieren** klicken. Dies ist neben dem Synchronisieren beim Starten das wichtigste Verfahren zum Synchronisieren des lokalen Speichers mit Azure. Dies fördert die Batchverarbeitung von Synchronisierungsänderungen und ist ein effizientes Verfahren, da die Übertragung per Pull aus Azure relativ aufwendig ist. Sie können außerdem im Entwurf dieser App das Synchronisieren bei jeder Änderung festlegen, indem Sie den Methoden `addItem` und `checkItem` einen Aufruf von `syncAsync` hinzufügen, falls die App dies erfordert.
+	Dieser Code wird ausgeführt, wenn Sie in der rechten oberen Ecke auf die Schaltfläche **Aktualisieren** klicken. Dies ist neben dem Synchronisieren beim Starten das wichtigste Verfahren zum Synchronisieren des lokalen Speichers mit Azure. Dies fördert die Batchverarbeitung von Synchronisierungsänderungen und ist ein effizientes Verfahren, da die Übertragung per Pull aus Azure relativ aufwendig ist. Sie können außerdem im Entwurf dieser App das Synchronisieren bei jeder Änderung festlegen, indem Sie den Methoden `addItem` und `checkItem` einen Aufruf von `syncAsync` hinzufügen, falls die App dies erfordert.
 
 
 ## Testen der App
@@ -181,9 +181,9 @@ One thing which is important to point out: if there are pending changes in the l
 3. Zeigen Sie den Inhalt der Azure-Tabelle *TodoItem* an. Stellen Sie sicher, dass die neuen Elemente _nicht_ auf dem Server synchronisiert wurden:
 
    - Klicken Sie für das JavaScript-Back-End auf dem Verwaltungsportal auf die Registerkarte "Daten", um den Inhalt der `TodoItem`-Tabelle anzuzeigen.
-   - Zeigen Sie für das .NET-Back-End den Inhalt der Tabelle entweder mit einem SQL-Tool wie *SQL Server Management Studio* oder einem REST-Client wie *Fiddler* oder *Postman* an.
+   - Zeigen Sie für das .NET-Back-End den Inhalt der Tabelle entweder mit einem SQL-Tool wie *SQL Server Management Studio* oder einen REST-Client wie *Fiddler* oder *Postman* an.
 
-4. Aktivieren Sie auf dem Gerät oder Simulator WLAN. Klicken Sie auf die Schaltfläche **Aktualisieren**.
+4. Aktivieren Sie auf dem Gerät oder Simulator WLAN. Klicken Sie anschließend auf die Schaltfläche **Aktualisieren**.
 
 5. Zeigen Sie die TodoItem-Daten erneut im Azure-Portal an. Es sollten jetzt die neuen und geänderten TodoItems angezeigt werden.
 
@@ -221,4 +221,4 @@ One thing which is important to point out: if there are pending changes in the l
 
 [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"]: mobile-services-android-get-started.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

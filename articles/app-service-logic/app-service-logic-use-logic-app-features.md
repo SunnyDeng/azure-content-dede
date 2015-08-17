@@ -133,4 +133,4 @@ Um eine Logik-App bei Bedarf zu starten, klicken Sie auf der Befehlsleiste auf d
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [Azure-Portal]: https://portal.azure.com
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

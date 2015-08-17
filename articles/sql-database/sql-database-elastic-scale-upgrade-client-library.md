@@ -48,7 +48,7 @@ Befolgen Sie die nachstehenden Anweisungen zum Aktualisieren Ihrer Anwendungen, 
 
 4. Laden Sie das Scriptlet für das Clientupgrade der elastischen Datenbank aus dem [Script Center](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-Database-Elastic-6442e6a9) herunter, und speichern Sie es in dem Ordner, der bereits die DLL enthält.
 
-5. Führen Sie in diesem Ordner an der Befehlszeile "PowerShell.\upgrade.ps1" aus, und folgen Sie den Anweisungen.
+5. Führen Sie in diesem Ordner an der Befehlszeile "PowerShell.\\upgrade.ps1" aus, und folgen Sie den Anweisungen.
  
 ***Option 2: Aktualisieren von Metadaten mithilfe von C#***
 
@@ -94,4 +94,4 @@ Erste Vorschauversion
 [1]: ./media/sql-database-elastic-scale-upgrade-client-library/nuget-upgrade.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

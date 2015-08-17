@@ -36,8 +36,8 @@ Mit dem Beispiel wird eine einfache Sharding-Anwendung erstellt, und es werden d
 Zum Ausführen der Beispiel-App müssen Sie Visual Studio verwenden, und Sie müssen Zugriff auf eine Azure SQL-Datenbank haben, die in Azure ausgeführt wird. Wenn Sie noch nicht über ein Azure-Abonnement verfügen, können Sie sich für ein [kostenloses Abonnement](http://azure.microsoft.com/pricing/free-trial/) registrieren.
 ### Visual Studio und NuGet
 
-1. Visual Studio 2012 oder höher mit C\# wird benötigt. Laden Sie eine kostenlose Version unter [Visual Studio-Downloads](http://www.visualstudio.com/downloads/download-visual-studio-vs.aspx) herunter.
-2. NuGet 2.7 oder höher. Die aktuelle Version finden Sie unter [Installing NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) \(Installieren von NuGet - in englischer Sprache\).
+1. Visual Studio 2012 oder höher mit C# wird benötigt. Laden Sie eine kostenlose Version unter [Visual Studio-Downloads](http://www.visualstudio.com/downloads/download-visual-studio-vs.aspx) herunter.
+2. NuGet 2.7 oder höher. Die aktuelle Version finden Sie unter [Installing NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) (Installieren von NuGet - in englischer Sprache).
 ### Erstellen einer Azure SQL-Datenbank
 
 * Weitere Informationen finden Sie unter [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md).
@@ -46,19 +46,19 @@ Zum Ausführen der Beispiel-App müssen Sie Visual Studio verwenden, und Sie mü
 
 Die Beispielanwendung unter **Elastische Datenbank mit Azure SQL – Erste Schritte** veranschaulicht die wichtigsten Aspekte der Entwicklungsoberfläche für Sharding-Anwendungen, die Tools für elastische Datenbanken in Azure SQL verwenden. Dabei stehen die wichtigsten Anwendungsfälle für [Shard-Zuordnungsverwaltung](sql-database-elastic-scale-shard-map-management.md), [datenabhängiges Routing](sql-database-elastic-scale-data-dependent-routing.md) und [Abfragen mehrerer Shards](sql-database-elastic-scale-multishard-querying.md) im Mittelpunkt. Gehen Sie folgendermaßen vor, um das Beispiel herunterzuladen und auszuführen:
 
-1. Öffnen Sie Visual Studio, und wählen Sie **Datei -\> Neu -\> Projekt** aus.
+1. Öffnen Sie Visual Studio, und wählen Sie **Datei -> Neu -> Projekt** aus.
 2. Klicken Sie im Dialogfeld auf **Online**.
 
-    ![Neues Projekt \> Online][2]
-3. Klicken Sie anschließend unter **Beispiele** auf **Visual C\#**.
+    ![Neues Projekt > Online][2]
+3. Klicken Sie anschließend unter **Beispiele** auf **Visual C#**.
 
-    ![Auf Visual C\# klicken][3]
+    ![Auf Visual C# klicken][3]
 4. Geben Sie in das Suchfeld **elastische Datenbank** ein, um nach dem Beispiel zu suchen. Der Titel **Tools für elastische Datenbanken für Azure SQL – Erste Schritte** wird angezeigt.
 
     ![Suchfeld][1]
  
 5. Wählen Sie das Beispiel aus, wählen Sie einen Namen und einen Speicherort für das neue Projekt, und drücken Sie **OK**, um das Projekt zu erstellen.
-6. Öffnen Sie die Datei **app.config** in der Lösung des Beispielprojekts, und folgen Sie den Anweisungen in der Datei, um den Namen des Azure SQL-Datenbankservers und Ihre Anmeldeinformationen \(Benutzername und Kennwort\) hinzuzufügen.
+6. Öffnen Sie die Datei **app.config** in der Lösung des Beispielprojekts, und folgen Sie den Anweisungen in der Datei, um den Namen des Azure SQL-Datenbankservers und Ihre Anmeldeinformationen (Benutzername und Kennwort) hinzuzufügen.
 7. Erstellen Sie die Anwendung, und führen Sie sie aus. Gestatten Sie Visual Studio bei der entsprechenden Aufforderung, die NuGet-Pakete der Lösung wiederherzustellen. Dadurch wird die aktuelle Version der Clientbibliothek für elastische Datenbanken von NuGet heruntergeladen.
 8. Spielen Sie mit den verschiedenen Optionen, um mehr über die Funktionen der Clientbibliothek zu erfahren. Beachten Sie die Schritte, welche die Anwendung in der Konsolenausgabe ausführt, und erkunden Sie den zugrunde liegenden Code.
 
@@ -115,4 +115,4 @@ Weitere Informationen zu den Tools für elastische Datenbanken finden Sie unter:
 [4]: ./media/sql-database-elastic-scale-get-started/output2.png
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

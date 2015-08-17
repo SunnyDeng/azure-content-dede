@@ -19,11 +19,11 @@
 
 # Gewusst wie: Markieren eines virtuellen Computers in Azure
 
-Dieser Artikel beschreibt verschiedene Methoden zum Markieren eines virtuellen Computers in Azure. Tags sind benutzerdefinierte Schlüssel-Wert-Paare, die direkt auf einer Ressource oder einer Ressourcengruppe platziert werden können. Azure unterstützt derzeit bis zu 15 Tags pro Ressource und Ressourcengruppe. Tags können zum Zeitpunkt der Erstellung auf einer Ressource platziert werden oder zu einer vorhandenen Ressource hinzugefügt werden.
+Dieser Artikel beschreibt verschiedene Methoden zum Markieren eines virtuellen Computers in Azure mithilfe des Azure-Ressourcen-Managers. Tags sind benutzerdefinierte Schlüssel-Wert-Paare, die direkt auf einer Ressource oder einer Ressourcengruppe platziert werden können. Azure unterstützt derzeit bis zu 15 Tags pro Ressource und Ressourcengruppe. Tags können zum Zeitpunkt der Erstellung auf einer Ressource platziert werden oder zu einer vorhandenen Ressource hinzugefügt werden. Beachten Sie, dass Tags nur für Ressourcen unterstützt werden, die über den Azure-Ressourcen-Manager erstellt werden.
 
 ## Markieren eines virtuellen Computers mittels Vorlagen
 
-Zunächst sehen wir uns das Verwenden von Tags mithilfe von Vorlagen an. [Diese Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) platziert Tags auf den folgenden Ressourcen: Compute \(Virtual Machine\), Speicher \(Storage-Konto\) und Netzwerk \(öffentliche IP-Adresse, Virtual Network und Netzwerkschnittstelle\).
+Zunächst sehen wir uns das Verwenden von Tags mithilfe von Vorlagen an. [Diese Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) platziert Tags auf den folgenden Ressourcen: Compute (Virtual Machine), Speicher (Storage-Konto) und Netzwerk (öffentliche IP-Adresse, Virtual Network und Netzwerkschnittstelle).
 
 Klicken Sie unter dem [Vorlagenlink](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) auf die Schaltfläche **Bereitstellen in Azure**. Dadurch werden Sie ans [Azure-Vorschauportal](http://portal.azure.com/) weitergeleitet, in dem Sie diese Vorlage bereitstellen können.
 
@@ -33,7 +33,7 @@ Diese Vorlage enthält die folgenden Tags: *Abteilung*, *Anwendung* und *Erstell
 
 ![Azure-Tags in einer Vorlage](./media/virtual-machines-tagging-arm/azure-tags-in-a-template.png)
 
-Wie Sie sehen können, werden die Tags als Schlüssel-Wert-Paare definiert und durch einen Doppelpunkt \(:\) getrennt. Die Tags müssen im folgenden Format definiert werden:
+Wie Sie sehen können, werden die Tags als Schlüssel-Wert-Paare definiert und durch einen Doppelpunkt (:) getrennt. Die Tags müssen im folgenden Format definiert werden:
 
         “tags”: {
             “Key1” : ”Value1”,
@@ -138,7 +138,7 @@ Das Erstellen von Tags wird auch für Ressourcen unterstützt, die bereits über
 
         azure vm show -g MyResourceGroup -n MyVM
 
-Im Gegensatz zu PowerShell müssen Sie nicht alle Tags \(alte und neue\) vor der Verwendung des `azure vm set`-Befehls angeben, wenn Sie Tags auf eine Ressource hinzufügen, die bereits welche enthält. Stattdessen können Sie mit diesem Befehl ein Tag an die Ressource anhängen. Zum Hinzufügen eines neuen VM-Tags über die Azure-Befehlszeilenschnittstelle können Sie den `azure vm set`-Befehl zusammen mit dem Tag-Parameter **-t** verwenden:
+Im Gegensatz zu PowerShell müssen Sie nicht alle Tags (alte und neue) vor der Verwendung des `azure vm set`-Befehls angeben, wenn Sie Tags auf eine Ressource hinzufügen, die bereits welche enthält. Stattdessen können Sie mit diesem Befehl ein Tag an die Ressource anhängen. Zum Hinzufügen eines neuen VM-Tags über die Azure-Befehlszeilenschnittstelle können Sie den `azure vm set`-Befehl zusammen mit dem Tag-Parameter **-t** verwenden:
 
         azure vm set -g MyResourceGroup -n MyVM –t myNewTagName1=myNewTagValue1;myNewTagName2=myNewTagValue2
 
@@ -172,7 +172,7 @@ Durch Analysieren dieser Tags zusammen mit der Nutzung erhalten Organisationen n
 ## Zusätzliche Ressourcen
 
 * [Übersicht über den Azure Resource Manager][]
-* [Using tags to organize your Azure resources][] \(Verwenden von Tags zum Organisieren von Azure-Ressourcen\)
+* [Using tags to organize your Azure resources][] (Verwenden von Tags zum Organisieren von Azure-Ressourcen)
 * [Erläuterungen zur Rechnung für Azure][]
 * [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure][]
 
@@ -180,11 +180,11 @@ Durch Analysieren dieser Tags zusammen mit der Nutzung erhalten Organisationen n
 
 
 [PowerShell-Umgebung mit dem Azure-Ressourcen-Manager]: ../powershell-azure-resource-manager.md
-[Azure Resource-Cmdlets]: https://msdn.microsoft.com/en-us/library/azure/dn757692.aspx
+[Azure Resource-Cmdlets]: https://msdn.microsoft.com/de-de/library/azure/dn757692.aspx
 [Umgebung für Ihre Azure-Befehlszeilenschnittstelle]: ./xplat-cli-azure-resource-manager.md
 [Übersicht über den Azure Resource Manager]: ../resource-group-overview.md
 [Using Tags to organize your Azure Resources]: ../resource-group-using-tags.md
 [Erläuterungen zur Rechnung für Azure]: ../billing-understand-your-bill.md
 [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure]: ../billing-usage-rate-card-overview.md
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

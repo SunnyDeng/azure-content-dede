@@ -98,4 +98,4 @@ Aus den oben stehenden Informationen wissen wir, dass sich die einzige Leistungs
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

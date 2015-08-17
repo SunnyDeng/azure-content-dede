@@ -46,28 +46,11 @@ Nach der Konfiguration können Benutzer auf *->* klicken, und wählen Sie aus de
 
 ![BizTalk Flat File Encoder Aktionsliste][5]
 
-<table>
-	<tr>
-		<th>Parameter</th>
-		<th>Typ</th>
-		<th>Beschreibung des Parameters</th>
-	</tr>
-	<tr>
-		<td>Flatfile</td>
-		<td>string</td>
-		<td>Inhalt der Eingabeflatfile</td>
-	</tr>
-	<tr>
-		<td>Name des Schemas</td>
-		<td>string</td>
-		<td>Name des Schemas, das die Eingabeflatfile darstellt</td>
-	</tr>
-	<tr>
-		<td>Stammname</td>
-		<td>string</td>
-		<td>Der Stammknotenname des Flatfileschemas</td>
-	</tr>
-</table>
+Parameter|Typ|Beschreibung des Parameters
+---|---|---
+Flatfile|string|Inhalt der Eingabeflatfile
+Name des Schemas|string|Name des Schemas, das die Eingabeflatfile darstellt
+Stammname|string|Der Stammknotenname des Flatfileschemas
 
 
 Die Aktion gibt die Ausgabe als Zeichenfolge zurück - Ausgabe-XML. Ausgabe-XML enthält die XML-Darstellung des Inhalts der Eingabeflatfile.
@@ -76,18 +59,9 @@ Die Aktion gibt die Ausgabe als Zeichenfolge zurück - Ausgabe-XML. Ausgabe-XML 
 
 ![BizTalk Flat File Encoder Aktionsliste][6]
 
-<table>
-	<tr>
-		<th>Parameter</th>
-		<th>Typ</th>
-		<th>Beschreibung des Parameters</th>
-	</tr>
-	<tr>
-		<td>Eingabe-XML</td>
-		<td>string</td>
-		<td>Eingabe-XML-Inhalt</td>
-	</tr>
-</table>
+Parameter|Typ|Beschreibung des Parameters
+---|---|---
+Eingabe-XML|string|Eingabe-XML-Inhalt
 
 Die Aktion gibt die Ausgabe als Zeichenfolge zurück - Flatfile. Ausgabe enthält die Flatfiledarstellung des Eingabe-XML-Inhalts.
 
@@ -100,4 +74,4 @@ Die Aktion gibt die Ausgabe als Zeichenfolge zurück - Flatfile. Ausgabe enthäl
 [6]: ./media/app-service-logic-flatfile-encoder/FlatFileEncoder.XmlToFlatFile.PNG
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

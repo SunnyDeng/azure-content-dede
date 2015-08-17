@@ -363,4 +363,4 @@ Die Umbenennung kann sich auf die Proguard-Konfiguration auswirken. Die Regeln s
 			}
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

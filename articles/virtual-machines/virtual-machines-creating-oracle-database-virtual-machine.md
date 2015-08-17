@@ -1,19 +1,5 @@
-<properties 
-	pageTitle="Erstellen eines virtuellen Oracle Database-Computers in Azure" 
-	description="Erstellen Sie mithilfe eines Beispiels einen virtuellen Oracle-Computer in Microsoft Azure und anschließend eine Oracle-Datenbank auf dem Computer." 
-	services="virtual-machines" 
-	authors="bbenz" 
-	documentationCenter=""/>
-
-<tags 
-	ms.service="virtual-machines" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="infrastructure-services" 
-	ms.date="06/22/2015" 
-	ms.author="bbenz" />
-
+<properties title="Creating an Oracle Database Virtual Machine in Azure" pageTitle="Erstellen eines virtuellen Oracle Database-Computers in Azure" description="Erstellen Sie mithilfe eines Beispiels einen virtuellen Oracle-Computer in Microsoft Azure und anschließend eine Oracle-Datenbank auf dem Computer." services="virtual-machines" authors="bbenz" documentationCenter=""/>
+<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
 #Erstellen eines virtuellen Oracle Database-Computers in Azure
 Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf einem von Microsoft bereitgestellten Oracle Database-Image unter Windows Server 2012 in Azure erstellen. Dies umfasst zwei Schritte: Erstellen des virtuellen Computers und Erstellen der Oracle-Datenbank auf dem virtuellen Computer. In diesem Beispiel wird Oracle Database Version 12c verwendet, die Schritte sind jedoch für Version 11g nahezu identisch.
 
@@ -62,7 +48,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 5.	Befolgen Sie die Anweisungen, um eine Verbindung mit dem virtuellen Computer herzustellen. Wenn Sie zur Eingabe des Administratornamens und des Kennworts aufgefordert werden, verwenden Sie die Werte, die Sie beim Erstellen des virtuellen Computers bereitgestellt haben.
 
-6.	Erstellen Sie eine Umgebungsvariable mit dem Namen **ORACLE_HOSTNAME** und legen Sie als Wert den Computername des virtuellen Computers fest. Sie können eine Umgebungsvariable anhand der folgenden Schritte erstellen:
+6.	Erstellen Sie eine Umgebungsvariable mit dem Namen **ORACLE\_HOSTNAME** und legen Sie als Wert den Computername des virtuellen Computers fest. Sie können eine Umgebungsvariable anhand der folgenden Schritte erstellen:
 
 	1.	Klicken Sie auf das **Windows-Startmenü**, geben Sie **Systemsteuerung** ein, klicken Sie auf das Symbol **Systemsteuerung** und dann auf **System und Sicherheit**. Klicken Sie auf **System** und dann auf **Erweiterte Systemeinstellungen**.
 
@@ -70,7 +56,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 	3.	Klicken Sie im Bereich **Systemvariablen** auf **Neu**, um die Variable zu erstellen.
 
-	4.	Geben Sie im Dialogfeld **Neue Systemvariable** den Variablennamen **ORACLE_HOSTNAME** und den Computernamen des virtuellen Computers als Wert ein. Um den Computernamen zu ermitteln, öffnen Sie eine Eingabeaufforderung, und führen Sie **SET COMPUTERNAME** aus (die Ausgabe dieses Befehls enthält den Computernamen).
+	4.	Geben Sie im Dialogfeld **Neue Systemvariable** den Variablennamen **ORACLE\_HOSTNAME** und den Computernamen des virtuellen Computers als Wert ein. Um den Computernamen zu ermitteln, öffnen Sie eine Eingabeaufforderung, und führen Sie **SET COMPUTERNAME** aus (die Ausgabe dieses Befehls enthält den Computernamen).
 	
 	5.	Klicken Sie auf **OK**, um die neue Umgebungsvariable zu speichern und das Dialogfeld **Neue Systemvariable** zu schließen.
 
@@ -106,7 +92,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 3.	Geben Sie folgenden Befehl in der SQL Plus-Eingabeaufforderung ein, und führen Sie ihn aus:
 
-		select * from GLOBAL_NAME;
+		select * from GLOBAL\_NAME;
 
 	Das Ergebnis enthält den globalen Namen der Datenbank, die Sie erstellt haben.
 
@@ -171,7 +157,7 @@ Um Remoteverbindungen zur Ihrer Datenbank zuzulassen (z. B. für Clientcomputer
 10. Klicken Sie auf **OK**.
 
 ##Aktivieren des Remotezugriffs auf Oracle Database Enterprise Manager
-Wenn Sie den Remotezugriff auf Oracle Database Enterprise Manager aktivieren möchten, öffnen Sie Port 5500 in der Firewall, und erstellen Sie einen Endpunkt des virtuellen Computers für 5500 im Azure-Portal (folgen Sie den Schritten oben für das Öffnen von Port 1521 und Erstellen eines Endpunkts für 1521). Öffnen Sie dann zum Ausführen von Oracle Enterprise Manager auf dem Remotecomputer einen Browser mit der URL in Form von `http://<<unique_domain_name>>:5500/em`. (Sie können den Wert für *<< Unique_domain_name >>* im [Azure-Portal](https://ms.portal.azure.com/) festlegen, indem Sie auf **Virtuelle Computer** klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle Database verwenden.)
+Wenn Sie den Remotezugriff auf Oracle Database Enterprise Manager aktivieren möchten, öffnen Sie Port 5500 in der Firewall, und erstellen Sie einen Endpunkt des virtuellen Computers für 5500 im Azure-Portal (folgen Sie den Schritten oben für das Öffnen von Port 1521 und Erstellen eines Endpunkts für 1521). Öffnen Sie dann zum Ausführen von Oracle Enterprise Manager auf dem Remotecomputer einen Browser mit der URL in Form von `http://<<unique_domain_name>>:5500/em`. (Sie können den Wert für *<< Unique\_domain\_name >>* im [Azure-Portal](https://ms.portal.azure.com/) festlegen, indem Sie auf **Virtuelle Computer** klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle Database verwenden.)
 
 ##Konfigurieren von Popular Options- und Advanced Options-Bündeln
 Wenn Sie das Bündel **Oracle Database with Popular Options** oder **Oracle Database with Advanced Options** verwenden, müssen Sie als Nächstes die Add-On-Funktionen in der Oracle-Installation konfigurieren. Anweisungen zum Einrichten dieser Funktionen unter Windows finden Sie in der Oracle-Dokumentation. Die Konfigurationen können je nach Anforderungen der einzelnen Komponenten stark variieren.
@@ -193,4 +179,4 @@ Nachdem Sie den virtuellen Computer eingerichtet und die Datenbank erstellt habe
 
 -	[Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

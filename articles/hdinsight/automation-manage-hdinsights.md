@@ -7,6 +7,7 @@
 	manager="eamono"
 	editor=""/>
 
+
 <tags
 	ms.service="HDInsight"
 	ms.workload="identity"
@@ -15,6 +16,7 @@
 	ms.topic="article"
 	ms.date="04/13/2015"
 	ms.author="elcooper"/>
+
 
 
 
@@ -40,7 +42,8 @@ Mit den Azure-HDInsight-Cmdlets können Sie Aufgaben wie die Bereitstellung von 
 Nun, da Sie die Grundlagen von Azure Automation kennen und wissen, wie es zum Verwalten von Azure HDInsight verwendet werden kann, folgen Sie diesem Link, um mehr über Azure Automation zu erfahren.
 
 * Weitere Informationen erhalten Sie im Lernprogramm [Erste Schritte](../automation-create-runbook-from-samples.md) zu Azure Automation.
+* Beispieln in [Script Center](http://aka.ms/scriptcentergallery) anzeigen.  
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

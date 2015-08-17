@@ -1,6 +1,6 @@
 <properties
    pageTitle="Verwenden von Azure Redis Cache mit Node.js"
-   description="Erste Schritte mit Azure Redis Cache mit Node.js und ";node_redis";."
+   description="Erste Schritte mit Azure Redis Cache mit Node.js und &quot;node_redis&quot;."
    services="redis-cache"
    documentationCenter=""
    authors="MikeWasson"
@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="cache-redis"
    ms.workload="required"
-   ms.date="04/30/2015"
+   ms.date="08/04/2015"
    ms.author="mwasson"/>
 
 # Verwenden von Azure Redis Cache mit Node.js
@@ -25,11 +25,11 @@ Dieses Thema beschreibt die ersten Schritte mit Azure Redis Cache und Node.js. E
 
 ## Voraussetzungen
 
-Installieren Sie [node_redis](https://github.com/mranney/node_redis):
+Installieren Sie [node\_redis](https://github.com/mranney/node_redis):
 
     npm install redis
 
-In diesem Lernprogramm wird [node_redis](https://github.com/mranney/node_redis) verwendet. Sie können jedoch alle unter [http://redis.io/clients](http://redis.io/clients) aufgeführten Node.js-Clients verwenden.
+In diesem Lernprogramm wird [node\_redis](https://github.com/mranney/node_redis) verwendet. Sie können jedoch alle unter [http://redis.io/clients](http://redis.io/clients) aufgeführten Node.js-Clients verwenden.
 
 ## Erstellen eines Redis-Caches in Azure
 
@@ -50,7 +50,7 @@ Sobald der Cache erstellt wurde, klicken Sie im Portal darauf, um die Cache-Eins
 ## Aktivieren des Nicht-SSL-Endpunkts
 
 
-Klicken Sie auf den Link unter **Ports**, und klicken Sie bei "Zugriff nur über SSL zulassen" auf **Nein**. Dadurch wird der Nicht-SSL-Port für den Cache aktiviert. Der "node_redis"-Client unterstützt SSL derzeit nicht.
+Klicken Sie auf den Link unter **Ports**, und klicken Sie bei "Zugriff nur über SSL zulassen" auf **Nein**. Dadurch wird der Nicht-SSL-Port für den Cache aktiviert. Der "node\_redis"-Client unterstützt SSL derzeit nicht.
 
   ![][3]
 
@@ -91,4 +91,4 @@ Ausgabe:
 
 [Erstellen einer Node.js-Chatanwendung mit Socket.IO auf einer Azure-Website]: ../app-service-web/web-sites-nodejs-chat-app-socketio.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

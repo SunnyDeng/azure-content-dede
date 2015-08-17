@@ -7,6 +7,7 @@
    manager="timlt" 
    editor=""/>
 
+
 <tags
    ms.service="cloud-services"
    ms.devlang="na"
@@ -15,6 +16,7 @@
    ms.workload="tbd" 
    ms.date="05/19/2015"
    ms.author="adegeo"/>
+
 
 # Unterstützungs- und Deaktivierungsrichtlinien für Azure-Gastbetriebssysteme
 Die Informationen auf dieser Seite beziehen sich auf das Azure-Gastbetriebssystem ([Gast-BS](https://msdn.microsoft.com/library/azure/ff729422.aspx)) für Worker- und Webrollen für Clouddienste (PaaS). Sie gelten nicht für virtuelle Computer (IaaS).
@@ -59,7 +61,7 @@ Gastbetriebssystemversionen werden jeden Monat veröffentlicht. Aufgrund der Hä
 
 60 Tage nach Beginn der Lebensdauer wird eine Version "*deaktiviert*". "Deaktiviert" bedeutet, dass die Version aus dem Azure-Verwaltungsportal entfernt wird. Sie kann auch nicht mehr über die CSCFG-Konfigurationsdatei festgelegt werden. Vorhandene Bereitstellungen werden weiterhin ausgeführt, neue Bereitstellungen sowie Code- und Konfigurationsupdates für vorhandene Bereitstellungen sind jedoch nicht zulässig.
 
-Zu einem späteren Zeitpunkt wird die Gastbetriebssystemversion "*ablaufen*", und für alle Installationen, die noch unter dieser Version ausgeführt werden, wird ein Upgrade erzwungen. Gleichzeitig wird für diese Installationen festgelegt, dass das Gastbetriebssystem in Zukunft automatisch aktualisiert wird. Der Ablauf erfolgt in Batches, sodass die Zeitspanne zwischen Deaktivierung und tatsächlichem Ablauf variieren kann.
+Zu einem späteren Zeitpunkt wird die Gast-BS-Version "*ablaufen*", und für alle Installationen, die noch unter dieser Version ausgeführt werden, wird ein Upgrade erzwungen. Gleichzeitig wird für diese Installationen festgelegt, dass das Gast-BS in Zukunft automatisch aktualisiert wird. Der Ablauf erfolgt in Batches, sodass die Zeitspanne zwischen Deaktivierung und tatsächlichem Ablauf variieren kann.
 
 Diese Zeiträume können nach Ermessen von Microsoft verlängert werden, um den Kunden den Übergang zu erleichtern. Updates werden auf der Seite [Azure-Gastbetriebssystemreleases und SDK-Kompatibilitätsmatrix](cloud-services-guestos-update-matrix.md) veröffentlicht.
 
@@ -81,11 +83,11 @@ Sie sollten die neueste Gastbetriebssystemfamilie verwenden, um Ihre Clouddienst
 
 1. Starten Sie die Planung der Migration zu einer neueren Familie frühzeitig. 
 2. Richten Sie temporäre Testbereitstellungen ein, um die Ausführung Ihres Clouddiensts unter der neuen Gastbetriebssystemfamilie zu testen. 
-3. [Legen Sie die Gastbetriebssystemversion](https://msdn.microsoft.com/library/azure/gg433101.aspx) auf "Automatisch" fest (osVersion=* in der [CSCFG](https://msdn.microsoft.com/library/azure/gg456324.aspx)-Datei), sodass die Migration zu neuen Gastbetriebssystemversionen automatisch erfolgt.
+3. [Legen Sie die Gastbetriebssystemversion](https://msdn.microsoft.com/library/azure/gg433101.aspx) auf „Automatisch“ fest (osVersion=\* in der [CSCFG](https://msdn.microsoft.com/library/azure/gg456324.aspx)-Datei), sodass die Migration zu neuen Gastbetriebssystemversionen automatisch erfolgt.
 
 **Was geschieht, wenn meine Webanwendung eine tiefer greifende tiefere Integration in das Betriebssystem erfordert?**
 
 Wenn die Architektur Ihrer Webanwendung eine tiefer gehende Abhängigkeit vom zugrunde liegenden Betriebssystem erfordert, verwenden Sie von der Plattform unterstützte Funktionen wie z. B. "[Startaufgaben](https://msdn.microsoft.com/library/windowsazure/gg456327.aspx)" oder andere, zukünftig verfügbare Mechanismen zur Erweiterbarkeit. Alternativ dazu können Sie auch [Azure Virtual Machines](http://azure.microsoft.com/documentation/scenarios/virtual-machines/) (IaaS – Infrastructure-as-a-Service) verwenden, wo die Verwaltung des zugrunde liegenden Betriebssystems in Ihrem Verantwortungsbereich liegt.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

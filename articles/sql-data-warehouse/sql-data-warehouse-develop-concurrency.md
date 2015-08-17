@@ -39,13 +39,13 @@ Jede gleichzeitig ausgeführte Abfrage verbraucht einen oder mehrere Parallelit�
 | Concurrency Slot Consumption | DW100 | DW200 | DW300 | DW400 | DW500 | DW600 | DW1000 | DW1200 | DW1500 | DW2000 | DW3000 | DW6000 |
 | :--------------------------- | :---- | :---- | :---- | :---- | :---- | :---- | :----- | :----- | :----- | :----- | :----- | :----- |
 | Max Concurrent Queries       | 32    | 32    | 32    | 32    | 32    | 32    | 32     | 32     | 32     | 32     | 32     | 32     |
-| Max Concurrency Slots        | 4     | 8     | 12    | 16    | 20    | 24    | 40     | 48     | 60     | 80     | 120    | 240    |
+| Max Concurrency Slots        | 4     | 8     | 12    | 16    | 20    | 24    | 32     | 32     | 32     | 32     | 32    | 32     |
 -->
 
 | Verbrauch von Parallelitätsslots | DW100 | DW200 | DW300 | DW400 | DW500 | DW600 | DW1000 | DW1200 | DW1500 | DW2000 |
 | :--------------------------- | :---- | :---- | :---- | :---- | :---- | :---- | :----- | :----- | :----- | :----- | 
 | Max. Anzahl gleichzeitiger Abfragen | 32 | 32 | 32 | 32 | 32 | 32 | 32 | 32 | 32 | 32 | 
-| Max. Parallelitätsslots | 4 | 8 | 12 | 16 | 20 | 24 | 40 | 48 | 60 | 80 | 
+| Max. Parallelitätsslots | 4 | 8 | 12 | 16 | 20 | 24 | 32 | 32 | 32 | 32 | 
 
 Ressourcenklassen sind ein wesentlicher Bestandteil der SQL Data Warehouse-Workloadverwaltung, da hiermit auch die Serverressourcen gesteuert werden, die der Abfrage zugeordnet sind. Diese werden unten im Abschnitt zur Workloadverwaltung beschrieben.
 
@@ -93,9 +93,9 @@ Die folgende Tabelle enthält die Details zur Erhöhung des Speichers, der für 
 | Verfügbarer Speicher (pro Dist.) | DW100 | DW200 | DW300 | DW400 | DW500 | DW600 | DW1000 | DW1200 | DW1500 | DW2000 |
 | :-------------------------- | :----  | :----- | :----- | :------ | :------ | :------ | :------ | :------ | :------ | :------ |
 | smallrc(default) (s) | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB | 100 MB |
-| mediumrc (m) | 100 MB | 200 MB | 200 MB | 400 MB | 400 MB | 400 MB | 800 MB | 800 MB | 800 MB | 1.600 MB |
-| largerc (l) | 200 MB | 400 MB | 400 MB | 800 MB | 800 MB | 800 MB | 1.600 MB | 1.600 MB | 1.600 MB | 3.200 MB |
-| xlargerc (xl) | 400 MB | 800 MB | 800 MB | 1.600 MB | 1.600 MB | 1.600 MB | 3.200 MB | 3.200 MB | 3.200 MB | 6.400 MB |
+| mediumrc (m) | 100 MB | 200 MB | 200 MB | 400 MB | 400 MB | 400 MB | 800 MB | 800 MB | 800 MB | 1\.600 MB |
+| largerc (l) | 200 MB | 400 MB | 400 MB | 800 MB | 800 MB | 800 MB | 1\.600 MB | 1\.600 MB | 1\.600 MB | 3\.200 MB |
+| xlargerc (xl) | 400 MB | 800 MB | 800 MB | 1\.600 MB | 1\.600 MB | 1\.600 MB | 3\.200 MB | 3\.200 MB | 3\.200 MB | 6\.400 MB |
 
 Außerdem gilt Folgendes, wie oben bereits erwähnt: Je höher die dem Benutzer zugewiesene Ressourcenklasse ist, desto höher ist der Verbrauch von Parallelitätsslots. In der folgenden Tabelle ist der Verbrauch von Parallelitätsslots von Abfragen einer Ressourcenklasse dokumentiert.
 
@@ -223,7 +223,7 @@ Nachdem die Anmeldung abgeschlossen ist, muss nun ein Benutzerkonto hinzugefügt
 CREATE USER newperson FOR LOGIN newperson
 ```
 
-Sobald dieser abgeschlossen ist, müssen dem Benutzer Berechtigungen erteilt werden. Im Beispiel unten erteilt `CONTROL` Berechtigungen in der SQL Data Warehouse-Datenbank. `CONTROL` auf Ebene der Datenbank entspricht "db_owner" in SQL Server.
+Sobald dieser abgeschlossen ist, müssen dem Benutzer Berechtigungen erteilt werden. Im Beispiel unten erteilt `CONTROL` Berechtigungen in der SQL Data Warehouse-Datenbank. `CONTROL` auf Ebene der Datenbank entspricht "db\_owner" in SQL Server.
 
 ```
 GRANT CONTROL ON DATABASE::MySQLDW to newperson
@@ -377,4 +377,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

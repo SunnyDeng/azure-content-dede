@@ -6,14 +6,16 @@
    authors="bandersmsft"
    manager="jwhit"
    editor="" />
+
 <tags
    ms.service="operational-insights"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/21/2015"
+   ms.date="08/05/2015"
    ms.author="banders" />
+
 
 # Verwalten der Infrastrukturkapazität
 
@@ -25,7 +27,7 @@ Beispielsweise kann anhand einer Prognose ermittelt werden, wann zusätzliche Pr
 
 ## Das Dashboard "Capacity Management"
 
-Bevor Sie das Dashboard "Capacity Management" in Microsoft Azure Operational Insights verwenden können, müssen Sie die Lösung installiert haben. Weitere Informationen zum Installieren von Lösungen finden Sie unter [Verwenden von Solution Gallery zum Hinzufügen oder Entfernen von Lösungen](operational-insights-add-solution.md). Nach der Installation der Capacity Planning-Lösung können Sie die Kapazität der überwachten Server in Operational Insights über die Kachel **Capacity Planning** auf der Seite **Overview** anzeigen.
+Bevor Sie das Dashboard "Capacity Management" in Microsoft Azure Operational Insights verwenden können, müssen Sie die Lösung installiert haben. Weitere Informationen zum Installieren von Lösungen finden Sie unter [Verwenden von Solution Gallery zum Hinzufügen oder Entfernen von Lösungen](operational-insights-setup-workspace.md). Nach der Installation der Capacity Planning-Lösung können Sie die Kapazität der überwachten Server in Operational Insights über die Kachel **Capacity Planning** auf der Seite **Overview** anzeigen.
 
 ![Abbildung der Kachel "Capacity Planning"](./media/operational-insights-capacity/overview-cap-plan.png)
 
@@ -164,4 +166,4 @@ Mithilfe des Projektionstools können Sie historische Trends für die Speicherpl
 
 [AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

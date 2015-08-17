@@ -60,4 +60,4 @@ Vergleichen Sie die alte und die neue Version der Datei "ApplicationInsights.xml
 - Möglichkeit, ein Telemetrieelement als synthetisch zu markieren, indem dem gemeldeten Element eine ```SyntheticSource```-Eigenschaft hinzugefügt wird.
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

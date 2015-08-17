@@ -48,8 +48,8 @@ In den folgenden Unterabschnitten werden die Lern- und Entscheidungsvorgänge be
 Dieses Dokument beschäftigt sich mit dem Upgrade von Microsoft Azure SQL-Datenbank von Version V11 auf V12. Formal ähneln die Versionsnummern den folgenden beiden Werten, die mithilfe der Transact-SQL-Anweisung **SELECT @@version;** abgerufen werden:
 
 
-- 12.0.2000.8 *(oder etwas höher, V12)*
-- 11.0.9228.18 *(V11)*
+- 12\.0.2000.8 *(oder etwas höher, V12)*
+- 11\.0.9228.18 *(V11)*
  - V11 wurde zum Teil auch als SAWA V2 bezeichnet.
 
 ### Planung der Dienstebene
@@ -244,4 +244,4 @@ Wenn aus einem bestimmten Grund ein Upgradefehler auftritt, bleibt Ihre V11-Date
 [Subheading 1]: #subheading-1
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

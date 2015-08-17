@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Diagnose und Leistungsüberwachung für Actors in Azure Service Fabric"
-   description="Dieser Artikel beschreibt die Features für Diagnose und Leistungsüberwachung in der Fabric Actors-Laufzeit, einschließlich der von ihr ausgegebenen Ereignisse und Leistungsindikatoren."
+   pageTitle="Reliable Actors-Diagnose und -Leistungsüberwachung"
+   description="Dieser Artikel beschreibt die Features für Diagnose und Leistungsüberwachung in der Reliable Actors-Laufzeit, einschließlich der von ihr ausgegebenen Ereignisse und Leistungsindikatoren."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
+
 
 <tags
    ms.service="service-fabric"
@@ -13,21 +14,22 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/21/2015"
+   ms.date="08/05/2015"
    ms.author="abhisram"/>
 
-# Diagnose und Leistungsüberwachung für Fabric Actors
-Die Fabric Actors-Laufzeit gibt [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx)-Ereignisse und [Leistungsindikatoren](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx) aus, die Aufschluss über den Laufzeitbetrieb sowie Unterstützung bei der Problembehebung und Leistungsüberwachung bieten.
+
+# Diagnose und Leistungsüberwachung für Reliable Actors
+Die Reliable Actors-Laufzeit gibt [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx)-Ereignisse und [Leistungsindikatoren](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx) aus, die Aufschluss über den Laufzeitbetrieb sowie Unterstützung bei der Problembehebung und Leistungsüberwachung bieten.
 
 ## EventSource-Ereignisse
-Der EventSource-Name für die Fabric Actors-Laufzeit lautet "Microsoft-ServiceFabric-Actors". Ereignisse aus dieser Ereignisquelle werden im Fenster für [Diagnoseereignisse](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) beim [Debuggen der Actor-Anwendung in Visual Studio](service-fabric-debugging-your-application.md) angezeigt.
+Der EventSource-Name für die Reliable Actors-Laufzeit lautet "Microsoft-ServiceFabric-Actors". Ereignisse aus dieser Ereignisquelle werden im Fenster für [Diagnoseereignisse](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) beim [Debuggen der Actor-Anwendung in Visual Studio](service-fabric-debugging-your-application.md) angezeigt.
 
 Service Fabric bietet außerdem die Möglichkeit, diese Ereignisse an [Application Insights](http://azure.microsoft.com/services/application-insights/) weiterzuleiten. Weitere Informationen hierzu finden Sie im Artikel über das [Einrichten von Application Insights für Service Fabric](service-fabric-diagnostics-application-insights-setup.md).
 
 Weitere Beispiele für Tools und Technologien, mit deren Hilfe EventSource-Ereignisse erfasst und/oder angezeigt werden können, sind [PerfView](http://www.microsoft.com/download/details.aspx?id=28567), [Azure Diagnostics](../cloud-services-dotnet-diagnostics.md), [Semantic Logging](https://msdn.microsoft.com/library/dn774980.aspx) und [Microsoft TraceEvent Library](http://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
 ### Schlüsselwörter
-Allen Ereignissen, die zu Fabric Actors EventSource gehören, werden ein oder mehrere Schlüsselwörter zugeordnet. Dies ermöglicht das Filtern von erfassten Ereignissen. Die folgenden Schlüsselwort-Bits sind definiert:
+Allen Ereignissen, die zu Reliable Actors EventSource gehören, werden ein oder mehrere Schlüsselwörter zugeordnet. Dies ermöglicht das Filtern von erfassten Ereignissen. Die folgenden Schlüsselwort-Bits sind definiert:
 
 |Bit|Beschreibung|
 |---|---|
@@ -37,7 +39,7 @@ Allen Ereignissen, die zu Fabric Actors EventSource gehören, werden ein oder me
 |0x8|Gruppe von Ereignissen im Zusammenhang mit Turn-basierter Parallelität im Actor. Weitere Informationen finden Sie in dem Thema zu [Parallelität](service-fabric-reliable-actors-introduction.md#concurrency).|
 
 ## Leistungsindikatoren
-Die Fabric Actors-Laufzeit definiert die folgenden Leistungsindikatorkategorien.
+Die Reliable Actors-Laufzeit definiert die folgenden Leistungsindikatorkategorien.
 
 |Kategorie|Beschreibung|
 |---|---|
@@ -88,7 +90,7 @@ In dem obigen Beispiel ist `ivoicemailboxactor.leavemessageasync` der Methodenna
 ## Liste von Ereignissen und Leistungsindikatoren
 
 ### Actor-Methodenereignisse und Leistungsindikatoren
-Die Fabric Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit [Actor-Methoden](service-fabric-reliable-actors-introduction.md#actors) aus.
+Die Reliable Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit [Actor-Methoden](service-fabric-reliable-actors-introduction.md#actors) aus.
 
 |Ereignisname|Ereignis-ID|Level|Schlüsselwörter|Beschreibung|
 |---|---|---|---|---|
@@ -96,7 +98,7 @@ Die Fabric Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit [Ac
 |ActorMethodStop|8|Ausführlich|0x2|Die Ausführung einer Actor-Methode ist abgeschlossen, d. h. der asynchrone Aufruf der Laufzeit an die Actor-Methode wurde zurückgegeben, und des von der Actor-Methode zurückgegebenen Tasks ist abgeschlossen.|
 |ActorMethodThrewException|9|Warnung|0x3|Während der Ausführung einer Actor-Methode wurde eine Ausnahme ausgelöst, und zwar entweder durch den asynchronen Aufruf der Laufzeit an die Actor-Methode oder während der Ausführung des von der Actor-Methode zurückgegebenen Tasks. Dieses Ereignis gibt einen Fehler im Actor-Code an, der untersucht werden muss.|
 
-Die Fabric Actors-Laufzeit veröffentlicht die folgenden Leistungsindikatoren im Zusammenhang mit der Ausführung von Actor-Methoden.
+Die Reliable Actors-Laufzeit veröffentlicht die folgenden Leistungsindikatoren im Zusammenhang mit der Ausführung von Actor-Methoden.
 
 |Name der Kategorie|Name des Leistungsindikators|Beschreibung|
 |---|---|---|
@@ -105,34 +107,34 @@ Die Fabric Actors-Laufzeit veröffentlicht die folgenden Leistungsindikatoren im
 |Service Fabric Actor-Methode|Ausgelöste Ausnahmen pro Sekunde|Anzahl der von der Actor-Dienstmethode ausgelösten Ausnahmen pro Sekunde|
 
 ### Parallelitätsereignisse und Leistungsindikatoren
-Die Fabric Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit [Parallelität](service-fabric-reliable-actors-introduction.md#concurrency) aus.
+Die Reliable Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit [Parallelität](service-fabric-reliable-actors-introduction.md#concurrency) aus.
 
 |Ereignisname|Ereignis-ID|Level|Schlüsselwörter|Beschreibung|
 |---|---|---|---|---|
 |ActorMethodCallsWaitingForLock|12|Ausführlich|0x8|Dieses Ereignis wird zu Beginn jedes neuen Turns in einen Actor geschrieben. Es enthält die Anzahl der ausstehenden Actor-Aufrufe, die darauf warten, die Pro-Actor-Sperre zu übernehmen, welche Turn-basierte Parallelität erzwingt.|
 
-Die Fabric Actors-Laufzeit veröffentlicht die folgenden Leistungsindikatoren im Zusammenhang mit Parallelität.
+Die Reliable Actors-Laufzeit veröffentlicht die folgenden Leistungsindikatoren im Zusammenhang mit Parallelität.
 
 |Name der Kategorie|Name des Leistungsindikators|Beschreibung|
 |---|---|---|
 |Service Fabric Actor|Anzahl der Actor-Aufrufe, die auf die Actor-Sperre warten|Anzahl der ausstehenden Actor-Aufrufe, die darauf warten, die Pro-Actor-Sperre zu übernehmen, welche Turn-basierte Parallelität erzwingt.|
 
 ### Actor-Statusmanagement-Ereignisse und Leistungsindikatoren
-Die Fabric Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit der [Actor-Statusverwaltung](service-fabric-reliable-actors-introduction.md#actor-state-management) aus.
+Die Reliable Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit der [Actor-Statusverwaltung](service-fabric-reliable-actors-introduction.md#actor-state-management) aus.
 
 |Ereignisname|Ereignis-ID|Level|Schlüsselwörter|Beschreibung|
 |---|---|---|---|---|
 |ActorSaveStateStart|10|Ausführlich|0x4|Die Actors-Laufzeit ist dabei, den Actor-Status zu speichern.|
 |ActorSaveStateStop|11|Ausführlich|0x4|Die Actors-Laufzeit hat das Speichern des Actor-Status abgeschlossen.|
 
-Die Fabric Actors-Laufzeit veröffentlicht die folgenden Leistungsindikatoren im Zusammenhang mit der Actor-Statusverwaltung.
+Die Reliable Actors-Laufzeit veröffentlicht die folgenden Leistungsindikatoren im Zusammenhang mit der Actor-Statusverwaltung.
 
 |Name der Kategorie|Name des Leistungsindikators|Beschreibung|
 |---|---|---|
 |Service Fabric Actor|Durchschnittliche Anzahl von Millisekunden pro Speicherstatusvorgang|Benötigte Zeit in Millisekunden zum Speichern des Actor-Status|
 
 ### Ereignisse im Zusammenhang mit statusfreien Actor-Instanzen
-Die Fabric Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit [statusfreien Actor-Instanzen](service-fabric-reliable-actors-platform.md#service-fabric-partition-concepts-for-stateless-actors) aus.
+Die Reliable Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit [statusfreien Actor-Instanzen](service-fabric-reliable-actors-platform.md#service-fabric-partition-concepts-for-stateless-actors) aus.
 
 |Ereignisname|Ereignis-ID|Level|Schlüsselwörter|Beschreibung|
 |---|---|---|---|---|
@@ -140,7 +142,7 @@ Die Fabric Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit [st
 |ServiceInstanceClose|4|Information|0x1|Statusfreie Actor-Instanz geschlossen. Dies bedeutet, dass die Actors für diese Partition nicht mehr in dieser Instanz erstellt werden können. An Actors, die bereits in dieser Instanz erstellt wurden, werden keine neuen Anforderungen übermittelt. Die Actors werden zerstört, nachdem alle gerade ausgeführten Anforderungen abgeschlossen sind.|
 
 ### Ereignisse im Zusammenhang mit statusbehafteten Actor-Replikaten
-Die Fabric Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit [statusbehafteten Actor-Replikaten](service-fabric-reliable-actors-platform.md#service-fabric-partition-concepts-for-stateful-actors) aus.
+Die Reliable Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit [statusbehafteten Actor-Replikaten](service-fabric-reliable-actors-platform.md#service-fabric-partition-concepts-for-stateful-actors) aus.
 
 |Ereignisname|Ereignis-ID|Level|Schlüsselwörter|Beschreibung|
 |---|---|---|---|---|
@@ -148,11 +150,11 @@ Die Fabric Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit [st
 |ReplicaChangeRoleFromPrimary|2|Information|0x1|Rolle von statusbehaftetem Actor-Replikat in "Nicht primär" geändert. Dies bedeutet, dass die Actors für diese Partition nicht mehr in diesem Replikat erstellt werden. An Actors, die bereits in diesem Replikat erstellt wurden, werden keine neuen Anforderungen übermittelt. Die Actors werden zerstört, nachdem alle gerade ausgeführten Anforderungen abgeschlossen sind.|
 
 ### Ereignisse bei der Actor-Aktivierung und -Deaktivierung
-Die Fabric Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit der [ Actor-Aktivierung und -Deaktivierung](service-fabric-reliable-actors-lifecycle.md) aus.
+Die Reliable Actors-Laufzeit gibt die folgenden Ereignisse im Zusammenhang mit der [ Actor-Aktivierung und -Deaktivierung](service-fabric-reliable-actors-lifecycle.md) aus.
 
 |Ereignisname|Ereignis-ID|Level|Schlüsselwörter|Beschreibung|
 |---|---|---|---|---|
 |ActorActivated|5|Information|0x1|Ein Actor wurde aktiviert.|
 |ActorDeactivated|6|Information|0x1|Ein Actor wurde deaktiviert.|
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

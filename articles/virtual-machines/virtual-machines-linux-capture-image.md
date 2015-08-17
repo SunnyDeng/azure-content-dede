@@ -97,4 +97,4 @@ Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet wer
 [How to Attach a Data Disk to a Virtual Machine]: storage-windows-attach-disk.md
 [Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

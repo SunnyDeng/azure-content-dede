@@ -148,4 +148,4 @@ Weitere Informationen zum Arbeiten mit Produkten finden Sie im folgenden Video.
 [Erstellen und Verwenden von Gruppen für Entwicklerkonten in Azure API Management]: api-management-howto-create-groups.md
 [Erstellen und Konfigurieren erweiterter Produkteinstellungen in Azure API Management]: api-management-howto-product-with-rules.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

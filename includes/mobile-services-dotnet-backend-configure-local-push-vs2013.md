@@ -5,9 +5,9 @@ Sie können Push-Benachrichtigungen wahlweise testen, wobei der mobile Dienst au
 
 	Daraufhin wird die Seite **Push setup is almost complete** geöffnet, falls sie nicht noch geöffnet ist. Der Abschnitt **Schritt 3: Ändern von Web Config** enthält die Verbindungsinformationen für den Benachrichtigungs-Hub.
 
-2. Öffnen Sie in Visual Studio die Datei "Web.config" für das mobile Dienstprojekt, und fügen Sie im Abschnitt **connectionStrings** unter **MS_NotificationHubConnectionString** die auf der Seite **Push setup is almost complete** angegebene Verbindungszeichenfolge ein.
+2. Öffnen Sie in Visual Studio die Datei "Web.config" für das mobile Dienstprojekt, und fügen Sie im Abschnitt **connectionStrings** unter **MS\_NotificationHubConnectionString** die auf der Seite **Push setup is almost complete** angegebene Verbindungszeichenfolge ein.
 
-3. Ersetzen Sie unter **appSettings** den Wert der Anwendungseinstellung **MS_NotificationHubName** durch den auf der Seite **Push setup is almost complete** angegebenen Namen des Benachrichtigungs-Hubs.
+3. Ersetzen Sie unter **appSettings** den Wert der Anwendungseinstellung **MS\_NotificationHubName** durch den auf der Seite **Push setup is almost complete** angegebenen Namen des Benachrichtigungs-Hubs.
 
 4. Klicken Sie mit der rechten Maustaste auf das mobile Dienstprojekt. Klicken Sie auf **Debuggen** und dann auf **Neue Instanz starten**, und notieren Sie die Stamm-URL des Diensts, die auf der Startseite im Browser angezeigt wird.
 
@@ -15,4 +15,4 @@ Sie können Push-Benachrichtigungen wahlweise testen, wobei der mobile Dienst au
 
 Ihr mobiles Dienstprojekt ist so konfiguriert, dass eine Verbindung mit dem Benachrichtigungs-Hub in Azure hergestellt wird, wenn es lokal ausgeführt wird. Beachten Sie, dass Sie den gleichen Benachrichtigungs-Hubnamen und die gleiche Verbindungszeichenfolge wie im Portal verwenden müssen, weil diese Projekteinstellungen in der Datei "Web.config" bei der Ausführung in Azure mit den Portaleinstellungen überschrieben werden.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

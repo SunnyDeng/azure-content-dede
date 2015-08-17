@@ -46,11 +46,11 @@ Der Schlüssel identifiziert die Ressource, den Sie bald im SDK installieren kö
     ![Aktivieren Sie **Vorabversion einschließen**, und suchen Sie nach "Application Insights".](./media/app-insights-windows-cpp/04-nuget.png)
 
 3. Gehen Sie in den Projekteinstellungen für Veröffentlichung und Debugging folgendermaßen vor:
-  - Fügen Sie "$(SolutionDir)packages\ApplicationInsights-CPP.1.0.0-Beta\src\inc" zu den Projekteigenschaften hinzu -> VC++-Verzeichnisse -> Includeverzeichnisse
-  - Fügen Sie "$(SolutionDir)packages\ApplicationInsights.1.0.0-Beta\lib\native<PLATFORM TYPE>\release\AppInsights_Win10-UAP" zu den Projekteigenschaften hinzu -> VC++-Verzeichnisse -> Bibliotheksverzeichnisse
+  - Fügen Sie "$(SolutionDir)packages\\ApplicationInsights-CPP.1.0.0-Beta\\src\\inc" zu den Projekteigenschaften hinzu -> VC++-Verzeichnisse -> Includeverzeichnisse
+  - Fügen Sie "$(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native<PLATFORM TYPE>\\release\\AppInsights\_Win10-UAP" zu den Projekteigenschaften hinzu -> VC++-Verzeichnisse -> Bibliotheksverzeichnisse
 
-4. Fügen Sie "ApplicationInsights.winmd" aus "$(SolutionDir)packages\ApplicationInsights.1.0.0-Beta\lib\native<PLATFORM TYPE>\release\ApplicationInsights" als Verweis auf Ihr Projekt hinzu.
-5. Fügen Sie "AppInsights_Win10-UAP.dll" aus "$(SolutionDir)packages\ApplicationInsights.1.0.0-Beta\lib\native<PLATFORM TYPE>\release\AppInsights_Win10-UAP" hinzu. Wechseln Sie zu den Eigenschaften und legen Sie die Inhalte auf JA fest. Damit wird die DLL in Ihr Buildverzeichnis kopiert.
+4. Fügen Sie "ApplicationInsights.winmd" aus "$(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native<PLATFORM TYPE>\\release\\ApplicationInsights" als Verweis auf Ihr Projekt hinzu.
+5. Fügen Sie "AppInsights\_Win10-UAP.dll" aus "$(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native<PLATFORM TYPE>\\release\\AppInsights\_Win10-UAP" hinzu. Wechseln Sie zu den Eigenschaften und legen Sie die Inhalte auf JA fest. Damit wird die DLL in Ihr Buildverzeichnis kopiert.
 
 
 #### So aktualisieren Sie das SDK auf zukünftige Versionen
@@ -73,7 +73,7 @@ Initialisieren Sie das SDK, und beginnen Sie mit der Nachverfolgung der Telemetr
 	
      `// this will do automatic session tracking and automatic page view collection` `m_session = ref new ApplicationInsights::CX::SessionTracking();`
 
-  - Wenn Sie den Stammframe erstellt haben (üblicherweise am Ende von App::OnLaunched), initialisieren Sie "m_session":
+  - Wenn Sie den Stammframe erstellt haben (üblicherweise am Ende von App::OnLaunched), initialisieren Sie "m\_session":
 	
     ```
     String^ iKey = L"<YOUR INSTRUMENTATION KEY>";
@@ -139,4 +139,4 @@ Klicken Sie auf ein beliebiges Diagramm, um weitere Details zu erhalten. Zum Bei
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

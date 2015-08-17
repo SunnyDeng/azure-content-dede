@@ -7,6 +7,7 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
+
 <tags 
 	ms.service="app-service-web" 
 	ms.devlang="dotnet" 
@@ -16,6 +17,7 @@
 	ms.date="06/29/2015" 
 	ms.author="tdykstra"/>
 
+
 # Bereitstellen von Webaufträgen mit Visual Studio
 
 ## Übersicht
@@ -24,8 +26,8 @@ In diesem Thema wird erklärt, wie mithilfe von Visual Studio ein Konsolenanwend
 
 Wenn mithilfe von Visual Studio ein webauftragsfähiges Konsolenanwendungsprojekt bereitgestellt wird, werden zwei Aufgaben ausgeführt:
 
-* Laufzeitdateien werden in den entsprechenden Ordner der Web-App \(\*App\_Data/jobs/continuous\* für fortlaufende Webaufträge, *App\_Data/jobs/triggered* für geplante und bedarfsabhängige Webaufträge\) kopiert.
-* [Azure Scheduler-Aufträge](#scheduler) für Webaufträge, die für die Ausführung zu bestimmten Zeiten geplant sind, werden eingerichtet. \(Dies ist für fortlaufende Webaufträge nicht erforderlich.\)
+* Laufzeitdateien werden in den entsprechenden Ordner der Web-App (*App\_Data/jobs/continuous* für fortlaufende Webaufträge, *App\_Data/jobs/triggered* für geplante und bedarfsabhängige Webaufträge) kopiert.
+* [Azure Scheduler-Aufträge](#scheduler) für Webaufträge, die für die Ausführung zu bestimmten Zeiten geplant sind, werden eingerichtet. (Dies ist für fortlaufende Webaufträge nicht erforderlich.)
 
 Einem webauftragsfähigen Projekt werden die folgenden Elemente hinzugefügt:
 
@@ -100,12 +102,12 @@ Zum Erstellen eines neuen webauftragsfähigen Projekts können Sie die Vorlage f
 
 	Erstellen Sie ein Projekt, das für eine automatische Bereitstellung als Webauftrag konfiguriert ist, wenn in derselben Projektmappe ein Webprojekt bereitgestellt wird. Wählen Sie diese Option, wenn Sie Ihren Webauftrag in derselben Web-App ausführen möchten, in der die dazugehörige Webanwendung ausgeführt wird.
 
-In der SDK-Version 2.4 bietet die Webauftragsvorlage "new-project" keine wesentliche Erleichterung im Vergleich zum Erstellen eines Konsolenanwendungsprojekts und Aktivieren der Bereitstellung von Webaufträgen. Künftig wird die Webauftragsvorlage "new-project" die [WebJobs SDK](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs)-Bereitstellung vereinfachen, da sie automatisch die entsprechenden WebJobs SDK NuGet-Pakete installiert. Bis dahin können Sie ein Projekt für die Verwendung des WebJobs SDK konfigurieren, indem Sie die Pakete manuell installieren \(Anweisungen finden Sie im [Lernprogramm zum WebJobs SDK](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs).
+In der SDK-Version 2.4 bietet die Webauftragsvorlage "new-project" keine wesentliche Erleichterung im Vergleich zum Erstellen eines Konsolenanwendungsprojekts und Aktivieren der Bereitstellung von Webaufträgen. Künftig wird die Webauftragsvorlage "new-project" die [WebJobs SDK](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs)-Bereitstellung vereinfachen, da sie automatisch die entsprechenden WebJobs SDK NuGet-Pakete installiert. Bis dahin können Sie ein Projekt für die Verwendung des WebJobs SDK konfigurieren, indem Sie die Pakete manuell installieren (Anweisungen finden Sie im [Lernprogramm zum WebJobs SDK](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs).
 
 
 ### <a id="createnolink"></a> Verwenden der Webauftragsvorlage "new-project" für einen unabhängigen Webauftrag
   
-1. Klicken Sie auf **Datei** \> **Neues Projekt** und anschließend im Dialogfeld **Neues Projekt** auf **Cloud** \> **Microsoft Azure-Webauftrag**.
+1. Klicken Sie auf **Datei** > **Neues Projekt** und anschließend im Dialogfeld **Neues Projekt** auf **Cloud** > **Microsoft Azure-Webauftrag**.
 
 	![Dialogfeld "Neues Projekt" mit Webauftragsvorlage](./media/websites-dotnet-deploy-webjobs/np.png)
 	
@@ -129,7 +131,7 @@ Im Dialogfeld **Azure-Webauftrag hinzufügen** können Sie den Namen des Webauft
 
 Die Felder in diesem Dialogfeld entsprechen den Feldern im Dialogfeld **Neuer Auftrag** im Azure-Verwaltungsportal. Weitere Informationen finden Sie unter [Ausführen von Hintergrundaufgaben mit Webaufträgen](web-sites-create-web-jobs.md).
 
-Für geplante Webaufträge \(nicht für fortlaufende Webaufträge\) erstellt Visual Studio eine [Azure Scheduler](/services/scheduler/)-Auftragssammlung, sofern noch nicht vorhanden, und einen Auftrag in der Sammlung:
+Für geplante Webaufträge (nicht für fortlaufende Webaufträge) erstellt Visual Studio eine [Azure Scheduler](/services/scheduler/)-Auftragssammlung, sofern noch nicht vorhanden, und einen Auftrag in der Sammlung:
 
 * Die Azure Scheduler-Auftragssammlung heißt *WebJobs-{Regionsname}*, wobei *{Regionsname}* auf die Region verweist, in der die Web-App gehostet wird. Beispiel: Webaufträge WestUS.
 * Der Scheduler-Auftrag heißt *{Web-App-Name}-{Webauftragsname}*. Beispiel: MeineWebApp-MeinWebauftrag. 
@@ -137,7 +139,7 @@ Für geplante Webaufträge \(nicht für fortlaufende Webaufträge\) erstellt Vis
 >[AZURE.NOTE]
 > 
 >* Informationen zur Befehlszeilenbereitstellung finden Sie unter [Aktivieren der befehlszeilengesteuerten oder kontinuierlichen Bereitstellung von Azure-Webaufträgen](/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/).
->* Wenn Sie einen **periodischen Auftrag** konfigurieren und die Wiederholungsfrequenz auf einige wenige Minuten festlegen, ist der Azure Scheduler-Dienst nicht kostenlos. Andere Perioden \(Stunden, Tage usw.\) sind kostenlos.
+>* Wenn Sie einen **periodischen Auftrag** konfigurieren und die Wiederholungsfrequenz auf einige wenige Minuten festlegen, ist der Azure Scheduler-Dienst nicht kostenlos. Andere Perioden (Stunden, Tage usw.) sind kostenlos.
 >* Wenn Sie einen Webauftrag bereitstellen und dann entscheiden, den Typ des Webauftrags zu ändern und diesen erneut bereitzustellen, müssen Sie die Datei "webjobs-publish-settings.json" löschen. Dies veranlasst Visual Studio, die Optionen für die Veröffentlichung erneut anzeigen, sodass Sie den Typ des Webauftrags ändern können.
 >* Wenn Sie einen Webauftrag bereitstellen und den Ausführungsmodus später von fortlaufend in nicht fortlaufend ändern oder umgekehrt, erstellt Visual Studio bei der erneuten Bereitstellung einen Webauftrag in Azure. Wenn Sie andere Zeitplaneinstellungen ändern, ohne den Ausführungsmodus zu wechseln, oder zwischen "Geplant" und "Bedarfsgesteuert" wechseln, aktualisiert Visual Studio den vorhandenen Auftrag, ohne einen neuen zu erstellen.
 
@@ -159,11 +161,11 @@ Sie können diese Datei direkt bearbeiten, und Visual Studio stellt IntelliSense
 
 >[AZURE.NOTE]
 >
->* Wenn Sie einen **periodischen Auftrag** konfigurieren und die Wiederholungsfrequenz auf einige wenige Minuten festlegen, ist der Azure Scheduler-Dienst nicht kostenlos. Andere Perioden \(Stunden, Tage usw.\) sind kostenlos.
+>* Wenn Sie einen **periodischen Auftrag** konfigurieren und die Wiederholungsfrequenz auf einige wenige Minuten festlegen, ist der Azure Scheduler-Dienst nicht kostenlos. Andere Perioden (Stunden, Tage usw.) sind kostenlos.
 
 ## <a id="webjobslist"></a>webjobs-list.json
 
-Wenn Sie ein webauftragsfähiges Projekt mit einem Webprojekt verknüpfen, speichert Visual Studio den Namen des Webauftragsprojekts in der Datei *webjobs-list.json* im Ordner *Eigenschaften* des Webprojekts. Die Liste kann mehrere Webauftragsprojekte umfassen \(siehe das folgende Beispiel\):
+Wenn Sie ein webauftragsfähiges Projekt mit einem Webprojekt verknüpfen, speichert Visual Studio den Namen des Webauftragsprojekts in der Datei *webjobs-list.json* im Ordner *Eigenschaften* des Webprojekts. Die Liste kann mehrere Webauftragsprojekte umfassen (siehe das folgende Beispiel):
 
 		{
 		  "$schema": "http://schemastore.org/schemas/json/webjobs-list.json",
@@ -200,4 +202,4 @@ In diesem Artikel wird erklärt, wie WebJobs mit Visual Studio bereitgestellt wi
 * Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

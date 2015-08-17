@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Ressourcenmodell und Konzepte von DocumentDB | Azure" 
+	pageTitle="Ressourcenmodell und Konzepte von DocumentDB | Microsoft Azure" 
 	description="Microsoft Azure DocumentDB ist eine vollständig verwaltete NoSQL-Dokumentdatenbank, die ein hierarchisches Modell aus Datenbankkonten, Datenbanken, Sammlungen, gespeicherten Prozeduren, Triggern, benutzerdefinierten Funktionen (User Defined Functions, UDFs), Dokumenten, Anlagen, Medien, Benutzern und Berechtigungen zur Ressourcenverwaltung einsetzt."  
 	services="documentdb" 
 	documentationCenter="" 
@@ -7,14 +7,16 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
+
 <tags 
 	ms.service="documentdb" 
 	ms.workload="data-services" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/11/2015" 
+	ms.date="08/03/2015" 
 	ms.author="anhoh"/>
+
 
 #Ressourcenmodell und Konzepte von DocumentDB
 
@@ -34,8 +36,7 @@ Wie das folgende Diagramm veranschaulicht, besteht das **Ressourcenmodell** von 
 
 >[AZURE.NOTE]DocumentDB bietet ein hoch effizientes TCP-Protokoll mit einem RESTful-basierten Kommunikationsmodell, das über das [.NET Client-SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx) verfügbar ist.
 
-![][1]  
-**Hierarchisches Ressourcenmodell unter einem Datenbankkonto**
+![][1] **Hierarchisches Ressourcenmodell unter einem Datenbankkonto**
 
 Um mit Ressourcen zu arbeiten, müssen Sie über Ihr Azure-Abonnement [ein DocumentDB-Datenbankkonto erstellen](documentdb-create-account.md). Ein Datenbankkonto kann aus einer Reihe von **Datenbanken** mit jeweils mehreren **Sammlungen** bestehen, die jeweils wiederum **gespeicherte Prozeduren, Trigger, UDFs, Dokumente** und zugehörige **Anhänge** (Vorschaufunktion) enthalten. Einer Datenbank sind zudem **Benutzer** zugeordnet, die jeweils über eine Reihe von **Berechtigungen** verfügen, um auf Sammlungen, gespeicherte Prozeduren, Trigger, UDFs, Dokumente oder Anhänge zuzugreifen. Während Datenbanken, Benutzer, Berechtigungen und Sammlungen vom System definierte Ressourcen mit bekannten Schemas sind, enthalten Dokumente und Anhänge beliebige, benutzerdefinierte JSON-Inhalte.
 
@@ -56,7 +57,7 @@ Um mit Ressourcen zu arbeiten, müssen Sie über Ihr Azure-Abonnement [ein Docum
 ##Vergleich von system- und benutzerdefinierten Ressourcen
 Ressourcen wie Datenbankkonten, Datenbanken, Sammlungen, Benutzer, Berechtigungen, gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen verfügen alle über ein festes Schema und werden als Systemressourcen bezeichnet. Im Gegensatz dazu weisen Ressourcen wie Dokumente und Anhänge keine Einschränkungen hinsichtlich des Schemas auf und sind somit ein Beispiel für benutzerdefinierte Ressourcen. In DocumentDB werden sowohl system- als auch benutzerdefinierte Ressourcen als standardkonformes JSON dargestellt und verwaltet. Alle Ressourcen, egal ob system- oder benutzerdefiniert, haben folgende Eigenschaften gemeinsam.
 
->[AZURE.NOTE]Beachten Sie, dass in allen systemgenierten Eigenschaften in einer Ressource ein Unterstrich (_) in ihrer JSON-Darstellung voransteht.
+>[AZURE.NOTE]Beachten Sie, dass in allen systemgenierten Eigenschaften in einer Ressource ein Unterstrich (\_) in ihrer JSON-Darstellung voransteht.
 
 
 <table width="500"> 
@@ -104,24 +105,15 @@ Ressourcen wie Datenbankkonten, Datenbanken, Sammlungen, Benutzer, Berechtigunge
 DocumentDB verfügt über keine proprietären Erweiterungen des JSON-Standards oder besonderer Codierungen, und kann nur mit standardkonformen JSON-Dokumenten verwendet werden.
  
 ###Adressieren einer Ressource
-Alle Ressourcen können über URI aufgerufen werden. Der Wert der **_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /<feed>/{_rid}-Pfadsegmenten: 
+Alle Ressourcen können über URI aufgerufen werden. Der Wert der \*\*\_self\*\*-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /<feed>/{\_rid}-Pfadsegmenten:
 
-|Wert von "_self" |Beschreibung |
--------------------|----------- 
-|/dbs |Feed der Datenbanken in einem Datenbankkonto 
-|/dbs/{_rid-db}	|Datenbank mit einer eindeutigen ID-Eigenschaft mit dem Wert {_rid-db} 
-|/dbs/{_rid-db}/colls/	|Feed der Sammlungen in einer Datenbank 
-|/dbs/{_rid-db}/colls/{_rid-coll} |Sammlung mit der eindeutigen ID-Eigenschaft mit dem Wert {_rid-coll} 
-|/dbs/{_rid-db}/users/	|Feed der Benutzer in einer Datenbank 
-|/dbs/{_rid-db}/users/{_rid-user}	|Benutzer mit einer eindeutigen ID-Eigenschaft mit dem Wert {_rid-user} 
-|/dbs/{_rid-db}/users/{_rid-user}/permissions	|Feed der Berechtigungen in einer Datenbank 
-|/dbs/{_rid-db}/users/{_rid-user}/permissions/{_rid-permission}	|Berechtigung mit der eindeutigen ID-Eigenschaft mit dem Wert {_rid-permission} 
+|Wert von "\_self" |Beschreibung |-------------------|----------- |/dbs |Feed der Datenbanken in einem Datenbankkonto |/dbs/{\_rid-db} |Datenbank mit einer eindeutigen ID-Eigenschaft mit dem Wert {\_rid-db} |/dbs/{\_rid-db}/colls/ |Feed der Sammlungen in einer Datenbank |/dbs/{\_rid-db}/colls/{\_rid-coll} |Sammlung mit der eindeutigen ID-Eigenschaft mit dem Wert {\_rid-coll} |/dbs/{\_rid-db}/users/ |Feed der Benutzer in einer Datenbank |/dbs/{\_rid-db}/users/{\_rid-user} |Benutzer mit einer eindeutigen ID-Eigenschaft mit dem Wert {\_rid-user} |/dbs/{\_rid-db}/users/{\_rid-user}/permissions |Feed der Berechtigungen in einer Datenbank |/dbs/{\_rid-db}/users/{\_rid-user}/permissions/{\_rid-permission} |Berechtigung mit der eindeutigen ID-Eigenschaft mit dem Wert {\_rid-permission}.
   
-Eine Ressource verfügt ebenfalls über einen eindeutigen benutzerdefinierten Namen, der über die ID-Eigenschaft der Ressource bereitgestellt wird. Die ID ist eine benutzerdefinierte Zeichenfolge mit bis zu 256 Zeichen Länge, die innerhalb des Kontexts einer bestimmten übergeordneten Ressource eindeutig ist. Der Wert der ID-Eigenschaft aller Dokumente innerhalb einer bestimmten Sammlung ist z. B. eindeutig, ist jedoch sammlungsübergreifend möglicherweise nicht eindeutig. Der Wert der ID-Eigenschaft aller Berechtigungen eines bestimmten Benutzers ist ebenso eindeutig, ist jedoch benutzerübergreifend möglicherweise eindeutig. Die _rid-Eigenschaft wird zum Erstellen eines aufrufbaren _self-Links einer Ressource verwendet.
+Eine Ressource verfügt ebenfalls über einen eindeutigen benutzerdefinierten Namen, der über die ID-Eigenschaft der Ressource bereitgestellt wird. Die ID ist eine benutzerdefinierte Zeichenfolge mit bis zu 256 Zeichen Länge, die innerhalb des Kontexts einer bestimmten übergeordneten Ressource eindeutig ist. Der Wert der ID-Eigenschaft aller Dokumente innerhalb einer bestimmten Sammlung ist z. B. eindeutig, ist jedoch sammlungsübergreifend möglicherweise nicht eindeutig. Der Wert der ID-Eigenschaft aller Berechtigungen eines bestimmten Benutzers ist ebenso eindeutig, ist jedoch benutzerübergreifend möglicherweise eindeutig. Die \_rid-Eigenschaft wird zum Erstellen eines aufrufbaren \_self-Links einer Ressource verwendet.
 
-Jede Ressource verfügt ebenfalls über eine systemgenerierte hierarchische Ressourcen-ID (auch als RID bezeichnet), die über die _rid-Eigenschaft verfügbar ist. Die RID codiert die gesamte Hierarchie einer bestimmten Ressource und ist eine einfache interne Darstellung, die zum Erzwingen einer dezentralen refentiellen Integrität verwendet. Die RID ist innerhalb eines Datenbankkontos eindeutig und wird von DocumentDB intern für effiziente Weiterleitung ohne partitionsübergreifendes Nachschlagen verwendet. 
+Jede Ressource verfügt ebenfalls über eine systemgenerierte hierarchische Ressourcen-ID (auch als RID bezeichnet), die über die \_rid-Eigenschaft verfügbar ist. Die RID codiert die gesamte Hierarchie einer bestimmten Ressource und ist eine einfache interne Darstellung, die zum Erzwingen einer dezentralen refentiellen Integrität verwendet. Die RID ist innerhalb eines Datenbankkontos eindeutig und wird von DocumentDB intern für effiziente Weiterleitung ohne getrenntes Nachschlagen verwendet.
 
-Bei den Werten der _self- und _rid-Eigenschaften handelt es sich um alternative und kanonische Darstellungen einer Ressource.
+Bei den Werten der \_self- und \_rid-Eigenschaften handelt es sich um alternative und kanonische Darstellungen einer Ressource.
 
 ##Datenbankkonten
 Sie können mithilfe Ihres Azure-Abonnements ein oder mehrere DocumentDB-Datenbankkonten bereitstellen. Jedes Datenbankkonto der Ebene "Standard" erhält eine Mindestkapazität von einer S1-Sammlung.
@@ -168,8 +160,7 @@ Beachten Sie, dass Sie zusätzlich zur Bereitstellung, Konfiguration und Verwalt
 ##Datenbanken
 Eine DocumentDB-Datenbank ist ein logischer Container einer oder mehrerer Sammlungen und Benutzer, wie im folgenden Diagramm dargestellt. Sie können eine beliebige Anzahl von Datenbanken unter einem DocumentDB-Datenbankkonto erstellen, abhängig von der angegebenen Grenze.
 
-![][2]  
-**Eine Datenbank ist ein logischer Container von Benutzern und Sammlungen**
+![][2] **Eine Datenbank ist ein logischer Container von Benutzern und Sammlungen**
 
 Eine Datenbank kann praktisch unbegrenzten Dokumentspeicher enthalten, der in Sammlungen unterteilt ist, die die Transaktionsdomänen für die darin enthaltenen Dokumente bilden.
 
@@ -433,7 +424,7 @@ Betrachten Sie eine soziale Leseanwendung, die DocumentDB zum Speichern von Anme
 
 Beachten Sie, dass die Beispiele benutzerfreundliche IDs verwenden, um die Ressourcenhierarchie zu vermitteln. Der Zugriff auf Ressourcen erfolgt mithilfe eindeutiger Ressourcen-IDs über REST-APIs.
 
-Für die von DocumentDB verwalteten Medien verweist die _media-Eigenschaft des Anhangs über seinen URI auf das Medium. DocumentDB stellt die Garbage Collection für die Medien sicher, wenn alle ausstehenden Referenzen entfernt werden. Der Anhang wird automatisch von DocumentDB generiert, wenn Sie neue Medien hochladen. Zudem wird die _media-Eigenschaft aufgefüllt, um auf das neu hinzugefügte Medium zu verweisen. Wenn Sie die Medien in einem von Ihnen verwalteten Remoteblobspeicher speichern (z. B. OneDrive, Azure Storage, DropBox usw.), können Sie weiterhin Anhänge verwenden, um auf die Medien zu verweisen. In diesem Fall erstellen Sie den Anhang selbst und füllen seine _media-Eigenschaft auf. 
+Für die von DocumentDB verwalteten Medien verweist die "\_media"-Eigenschaft des Anhangs über seinen URI auf das Medium. DocumentDB stellt die Garbage Collection für die Medien sicher, wenn alle ausstehenden Referenzen entfernt werden. Der Anhang wird automatisch von DocumentDB generiert, wenn Sie neue Medien hochladen. Zudem wird die "\_media"-Eigenschaft gefüllt, um auf das neu hinzugefügte Medium zu verweisen. Wenn Sie die Medien in einem von Ihnen verwalteten Remote-BLOB-Speicher speichern (z. B. OneDrive, Azure Storage, DropBox usw.), können Sie weiterhin Anhänge verwenden, um auf die Medien zu verweisen. In diesem Fall erstellen Sie den Anhang selbst und füllen seine "\_media"-Eigenschaft.
 
 Wie die anderen Ressourcen können Anhänge mithilfe der REST-APIs oder eines Client-SDKs einfach erstellt, ersetzt, gelöscht, gelesen und aufgezählt werden. Wie bei Dokumenten folgt der Grad der Lesekonsistenz von Anhängen der Konsistenzrichtlinie des Datenbankkontos. Diese Richtlinie kann anforderungsbasiert in Abhängigkeit von den Anforderungen Ihrer Anwendung an die Datenkonsistenz außer Kraft gesetzt werden. Bei der Abfrage von Anhängen folgt die Lesekonsistenz dem für die Sammlung festgelegten Indizierungsmodus. Die Konsistenz folgt der Konsistenzrichtlinie des Kontos.
 ##Benutzer
@@ -450,8 +441,7 @@ Da sich die Skalierung Ihrer Anwendung an die zunehmende Anzahl der Benutzer anp
 
 Unabhängig von der gewählten Strategie für die horizontale Partitionierung können Sie Ihre realen Benutzer als Benutzer in der DocumentDB-Datenbank abbilden und den einzelnen Benutzern differenzierte Berechtigungen zuweisen.
 
-![][3]  
-**Shardingstrategien und Benutzermodellierung**
+![][3] **Shardingstrategien und Benutzermodellierung**
 
 Wie alle anderen Ressourcen können Benutzer in DocumentDB mithilfe der REST-APIs oder eines Client-SDKs einfach erstellt, ersetzt, gelöscht, gelesen und aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Benutzerressource immer eine hohe Konsistenz. Es sollte dabei darauf hingewiesen werden, dass das Löschen eines Benutzers automatisch sicherstellt, dass Sie auf keine der ihm zugeordneten Berechtigungen zugreifen können. Obwohl das Kontingent der Berechtigungen als Teil des gelöschten Benutzers im Hintergrund von DocumentDB freigegeben wird, stehen die gelöschten Berechtigungen sofort wieder für Sie zur Verfügung.
 
@@ -471,4 +461,4 @@ Weitere Informationen zum Arbeiten mit Ressourcen mithilfe von HTTP-Befehlen fin
 [3]: media/documentdb-resources/resources3.png
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

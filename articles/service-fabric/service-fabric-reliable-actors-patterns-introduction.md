@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Einführung in Muster und Antimuster von Azure Service Fabric Actors"
-   description="Entwurfsmuster, die für Service Fabric Actors gut geeignet sind"
+   pageTitle="Service Fabric Reliable Actors: Einführung in Muster und Antimuster"
+   description="Erfahren Sie mehr über das Reliable Actors-Programmiermodell von Service Fabric und Entwurfsmuster, die gut für Actors geeignet sind."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
@@ -13,14 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/17/2015"
+   ms.date="08/05/2015"
    ms.author="claudioc"/>
 
-# Einführung in Service Fabric-Entwurfsmuster
-Das Microsoft Azure Service Fabric-Actor-Modell ist eine auf dem Actor-Modell basierende Plattform zum Lösen von realen Problemen auf Cloud-Niveau. Azure Service Fabric ist eine Plattform zum Erstellen von hochzuverlässigen, skalierbaren Anwendungen sowohl in der Cloud als auch lokal, die einfach zu entwickeln und zu verwalten sind. Dieser Artikel soll praktische Informationen zu praktischen Probleme bieten. Nach der Lektüre der verschiedenen Muster sollten Sie ein Verständnis darüber gewonnen haben, wie Sie das Service Fabric Actor-Modell zum Erstellen von Lösungen auf Unternehmens- oder Cloud-Ebene verwenden können.
+# Einführung in Reliable Actors-Entwurfsmuster
+Das Reliable Actors-Programmiermodell von Service Fabric ist eine auf dem Actor-Modell basierende Plattform zum Lösen von realen Problemen auf Cloud-Niveau. Azure Service Fabric ist eine Plattform zum Erstellen von hochzuverlässigen, skalierbaren Anwendungen sowohl in der Cloud als auch lokal, die einfach zu entwickeln und zu verwalten sind. Dieser Artikel soll praktische Informationen zu praktischen Probleme bieten. Nach der Lektüre der verschiedenen Muster sollten Sie ein Verständnis darüber gewonnen haben, wie Sie das Service Fabric Actor-Modell zum Erstellen von Lösungen auf Unternehmens- oder Cloud-Ebene verwenden können.
 
 ## Muster
-Dieser Abschnitt enthält einen Satz von Mustern und zugehörige Szenarien, die wir bei unseren Projekten mit Kunden genutzt haben. Diese Muster stellen Klassen von Problemen dar, die für eine Vielzahl von Lösungen anwendbar sind, die unsere Kunden auf Microsoft Azure erstellen. Die Szenarien basieren zwar auf realen Fällen, jedoch haben wir die meisten der domänenspezifischen Aspekte entfernt, um die Muster für den Leser zu verdeutlichen. Wahrscheinlich werden Sie feststellen, dass ein Großteil des Beispielcodes einfach oder offensichtlich ist. Dieser Code wird aus Gründen der Vollständigkeit angegeben, und nicht, weil er besonders intelligent oder beeindruckend ist. Die in diesem Dokument dargelegten Muster erheben nicht den Anspruch, vollständig oder kanonisch zu sein – einige Entwickler lösen möglicherweise ein Problem oder Muster auf andere Weise als von uns angegeben.
+Dieser Abschnitt enthält einen Satz von Mustern und zugehörige Szenarien, die wir bei unseren Projekten mit Kunden genutzt haben. Diese Muster stellen Klassen von Problemen dar, die für eine Vielzahl von Lösungen anwendbar sind, die unsere Kunden auf Microsoft Azure erstellen. Die Szenarien basieren zwar auf realen Fällen, jedoch haben wir die meisten der domänenspezifischen Aspekte entfernt, um die Muster für den Leser zu verdeutlichen. Wahrscheinlich werden Sie feststellen, dass ein Großteil des Beispielcodes einfach oder offensichtlich ist. Dieser Code wird aus Gründen der Vollständigkeit angegeben, und nicht, weil er besonders intelligent oder beeindruckend ist.
+
+Die in diesem Dokument dargelegten Muster erheben nicht den Anspruch, vollständig oder kanonisch zu sein – einige Entwickler lösen möglicherweise ein Problem oder Muster auf andere Weise als von uns angegeben.
 
 [Muster: Intelligenter Cache](service-fabric-reliable-actors-pattern-smart-cache.md)
 
@@ -37,10 +39,14 @@ Dieser Abschnitt enthält einen Satz von Mustern und zugehörige Szenarien, die 
 [Beispiele für Antimuster](service-fabric-reliable-actors-anti-patterns.md)
 
 ### Erfahren Sie mehr über Actors, ein kurzer Rückblick
-Das [Dokument](http://dl.acm.org/citation.cfm?id=1624804) von Hewitt et al., das der Ursprung des Actor-Modells ist, wurde 1973 veröffentlicht. Jedoch erst vor vergleichsweise kurzer Zeit hat das Actor-Modell als Möglichkeit für den Umgang mit Parallelität und Komplexität in verteilten Systemen mehr Aufmerksamkeit gewonnen. Das Actor-Modell unterstützt differenzierte Einzelobjekte – Actors – die voneinander isoliert sind. Sie kommunizieren über asynchrone Nachrichtenübergabe, die direkte Kommunikation zwischen Actors ermöglicht. Ein Actor wird mit Singlethread-Semantik ausgeführt. Zusammen mit der Kapselung des Actor-Status und der Isolierung von anderen Actors vereinfacht dies das Schreiben von hochgradig parallelen Systemen, indem Parallelitätsprobleme aus dem Code des Actors entfernt werden. Die Actor-Erstellung erfolgt dynamisch in den Pool der verfügbaren Hardwareressourcen. [Erlang](http://www.erlang.org/) ist die beliebteste Implementierung des Actor-Modells. Entwickler haben begonnen, das Actor-Modell wiederzuentdecken. Dadurch ist ein neues Interesse an Erlang und der Erstellung von neuen Erlang-ähnlichen Lösungen entstanden: [Scala](http://www.scala-lang.org/)-Actors, [Akka](http://akka.io), [Akka.net](http://getakka.net/), [DCell](http://research.microsoft.com/pubs/75988/dcell.pdf).
+Das [Dokument](http://dl.acm.org/citation.cfm?id=1624804) von Hewitt et al., das der Ursprung des Actor-Modells ist, wurde 1973 veröffentlicht. Jedoch erst vor vergleichsweise kurzer Zeit hat das Actor-Modell als Möglichkeit für den Umgang mit Parallelität und Komplexität in verteilten Systemen mehr Aufmerksamkeit gewonnen. Das Actor-Modell unterstützt differenzierte Einzelobjekte – Actors – die voneinander isoliert sind. Sie kommunizieren über asynchrone Nachrichtenübergabe, die direkte Kommunikation zwischen Actors ermöglicht. Ein Actor wird mit Singlethread-Semantik ausgeführt. Zusammen mit der Kapselung des Actor-Status und der Isolierung von anderen Actors vereinfacht dies das Schreiben von hochgradig parallelen Systemen, indem Parallelitätsprobleme aus dem Code des Actors entfernt werden. Die Actor-Erstellung erfolgt dynamisch in den Pool der verfügbaren Hardwareressourcen.
+
+[Erlang](http://www.erlang.org/) ist die beliebteste Implementierung des Actor-Modells. Entwickler haben begonnen, das Actor-Modell wiederzuentdecken. Dadurch ist ein neues Interesse an Erlang und der Erstellung von neuen Erlang-ähnlichen Lösungen entstanden: [Scala](http://www.scala-lang.org/)-Actors, [Akka](http://akka.io), [Akka.net](http://getakka.net/), [DCell](http://research.microsoft.com/pubs/75988/dcell.pdf).
 
 ## Ein kurzer Blick auf Azure Service Fabric
-Azure Fabric Actors ist eine Implementierung des Actor-Modells, das einige Ideen von Erlang und verteilten Objektsystemen übernimmt, eine Actor-Dereferenzierungsebene hinzufügt und dies in einem integrierten Programmiermodell bereitstellt, das die Azure Service Fabric-Plattform nutzt. Die Hauptvorteile von Azure Fabric Actors sind: (1) **Entwicklerproduktivität**, selbst für nicht erfahrene Programmierer, und 2) **transparente Skalierbarkeit als Standard**, ohne besonderen Aufwand auf Programmiererseite. Azure Fabric Actors ist eine .NET-Bibliothek, die auf Azure Fabric sowie Tools ausgeführt wird, welche die Entwicklung komplexer verteilter Anwendungen stark vereinfachen und die resultierenden Anwendungen skalierbar konzipieren. Nachfolgend wird jeder dieser Vorteile ausführlicher erläutert. Das Azure Fabric Actors-Programmiermodell steigert die Produktivität von erfahrenen und nicht erfahrenen Programmierern durch das Angebot der folgenden Schlüsselabstraktionen, Garantien und Systemdienste.
+Azure Fabric Actors ist eine Implementierung des Actor-Modells, das einige Ideen von Erlang und verteilten Objektsystemen übernimmt, eine Actor-Dereferenzierungsebene hinzufügt und dies in einem integrierten Programmiermodell bereitstellt, das die Azure Service Fabric-Plattform nutzt.
+
+Die Hauptvorteile von Azure Fabric Actors sind: (1) **Entwicklerproduktivität**, selbst für nicht erfahrene Programmierer, und 2) **transparente Skalierbarkeit als Standard**, ohne besonderen Aufwand auf Programmiererseite. Azure Fabric Actors ist eine .NET-Bibliothek, die auf Azure Fabric sowie Tools ausgeführt wird, welche die Entwicklung komplexer verteilter Anwendungen stark vereinfachen und die resultierenden Anwendungen skalierbar konzipieren. Nachfolgend wird jeder dieser Vorteile ausführlicher erläutert. Das Azure Fabric Actors-Programmiermodell steigert die Produktivität von erfahrenen und nicht erfahrenen Programmierern durch das Angebot der folgenden Schlüsselabstraktionen, Garantien und Systemdienste.
 
 * *Bekanntes Paradigma für die objektorientierte Programmierung (OOP)*. Actors sind Klassen in .NET, die deklarierte .NET-Actor-Schnittstellen mit asynchronen Methoden und Eigenschaften implementieren. Daher werden Actors für den Programmierer als Remote-Objekte angezeigt, deren Methoden/Eigenschaften direkt aufgerufen werden können. Dies bietet dem Programmierer das bekannte OOP-Paradigma, indem Methodenaufrufe in Nachrichten umgewandelt, an die richtigen Endpunkte weitergeleitet, Methoden des Ziel-Actors aufgerufen und Fehler sowie Ausnahmefälle auf vollständig transparente Weise behandelt werden.
 
@@ -63,6 +69,5 @@ Azure Fabric Actors ist eine Implementierung des Actor-Modells, das einige Ideen
 * *Effiziente Planung.* Das Azure Fabric-Laufzeitmodul plant die Ausführung einer großen Anzahl von Singlethread-Actors in einem benutzerdefinierten Threadpool mit einem Thread pro physischem Prozessorkern. Mit Actor-Code, der im nicht-blockierende, fortsetzungsbasierten Format geschrieben wird (eine Anforderung des Azure Fabric Actors-Programmiermodells), wird der Anwendungscode auf sehr effiziente, "kooperative" Weise und im Multithread-Modus ausgeführt, ohne dass Konflikte auftreten. Dadurch kann das System einen hohen Durchsatz erreichen und mit sehr hoher CPU-Auslastung (bis zu 90 + %) bei hervorragenden Stabilität ausgeführt werden. Die Tatsache, dass eine Zunahme der Actor-Anzahl im System und der Last nicht zu zusätzlichen Threads oder anderen Betriebssystem-Primitiven führt, unterstützt die Skalierbarkeit einzelner Knoten und des gesamten Systems.
 
 * *Explizite Asynchronie.* Das Programmiermodell Azure Fabric Actors expliziert die asynchrone Natur einer verteilten Anwendung und weist Programmierern den Weg zum Schreiben von nicht-blockierendem, asynchronem Code. Dadurch wird ein hohes Maß an verteilter Parallelität und Gesamtdurchsatz ermöglicht, ohne dass die explizite Verwendung von Multithreading erforderlich ist.
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

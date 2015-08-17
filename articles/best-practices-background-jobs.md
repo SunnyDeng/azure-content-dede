@@ -97,8 +97,8 @@ Mit Azure WebJobs können benutzerdefinierte Aufträge als Hintergrundaufgaben i
 
 Hinweise zum Konfigurieren eines WebJobs:
 
-- Wenn der Auftrag auf einen ereignisgesteuerten Trigger reagieren soll, sollte er mit der Option **Dauerhaft ausführen** konfiguriert werden. Das Skript oder Programm wird im Ordner "site/wwwroot/app_data/jobs/continuous" gespeichert.
-- Wenn der Auftrag auf einen zeitplangesteuerten Trigger reagieren soll, sollte er mit der Option **Gemäß einem Zeitplan ausführen** konfiguriert werden. Das Skript oder Programm wird im Ordner "site/wwwroot/app_data/jobs/triggered" gespeichert.
+- Wenn der Auftrag auf einen ereignisgesteuerten Trigger reagieren soll, sollte er mit der Option **Dauerhaft ausführen** konfiguriert werden. Das Skript oder Programm wird im Ordner "site/wwwroot/app\_data/jobs/continuous" gespeichert.
+- Wenn der Auftrag auf einen zeitplangesteuerten Trigger reagieren soll, sollte er mit der Option **Gemäß einem Zeitplan ausführen** konfiguriert werden. Das Skript oder Programm wird im Ordner "site/wwwroot/app\_data/jobs/triggered" gespeichert.
 - Wenn Sie zum Konfigurieren eines Auftrags die Option **Bedarfsgesteuert ausführen** wählen, wird beim Start des Auftrags der gleichen Code wie bei der Option **Gemäß einem Zeitplan ausführen** ausgeführt.
 
 Azure WebJobs werden in der Sandbox der Website ausgeführt, d. h. dass sie auf Umgebungsvariablen zugreifen und Informationen wie Verbindungszeichenfolgen mit der Website gemeinsam nutzen können. Der Auftrag hat Zugriff auf den eindeutigen Bezeichner des Computers, auf dem der Auftrag ausgeführt wird. Die Verbindungszeichenfolge mit dem Namen **AzureJobsStorage** ermöglicht den Zugriff auf Azure-Speicherwarteschlangen, Blobs und Tabellen für Anwendungsdaten sowie auf Service Bus für Messaging und Kommunikation. Die Verbindungszeichenfolge mit dem Namen **AzureJobsDashboard** ermöglicht den Zugriff auf die Protokolldateien zu den Auftragsaktionen.
@@ -108,18 +108,18 @@ Azure WebJobs weisen folgende Merkmale auf:
 - **Sicherheit**: WebJobs werden durch die Anmeldeinformationen für die Bereitstellung der Website geschützt.
 - **Unterstützte Dateitypen**: WebJobs können als Befehlsskript (.cmd), Batchdatei (.bat), PowerShell-Skript (.ps1), Bash-Shellskript (.sh), PHP-Skript (.php), Python-Skript (.py), JavaScript-Code (.js) und ausführbares Programm (.exe, .jar usw.) definiert werden.
 - **Bereitstellung**: Skripts und ausführbare Dateien können über das Azure-Portal bereitgestellt werden oder mit dem Add-In [WebJobsVs](https://visualstudiogallery.msdn.microsoft.com/f4824551-2660-4afa-aba1-1fcc1673c3d0) für Visual Studio oder dem [Visual Studio 2013 Update 4](http://www.visualstudio.com/news/vs2013-update4-rc-vs) oder mithilfe des [Azure WebJobs SDK](websites-dotnet-webjobs-sdk-get-started.md) erstellt und bereitgestellt werden. Zudem können sie durch direktes Kopieren an die folgenden Speicherorte bereitgestellt werden:
-  - für die durch Trigger initiierte Ausführung: site/wwwroot/app_data/jobs/triggered/{Auftragsname}
-  - für die fortwährende Ausführung: site/wwwroot/app_data/jobs/continuous/{Auftragsname}
+  - für die durch Trigger initiierte Ausführung: site/wwwroot/app\_data/jobs/triggered/{Auftragsname}
+  - für die fortwährende Ausführung: site/wwwroot/app\_data/jobs/continuous/{Auftragsname}
 - **Protokollierung**: Console.Out wird als INFO und Console.Error als ERROR behandelt (markiert). Über das Azure-Portal kann auf Überwachungs- und Diagnosedaten zugegriffen werden, und Protokolldaten können direkt von der Website heruntergeladen werden. Sie werden an den folgenden Speicherorten gespeichert:
   - für die durch Trigger initiierte Ausführung: Vfs/data/jobs/continuous/jobName
   - für die fortwährende Ausführung: Vfs/data/jobs/triggered/jobName
 - **Konfiguration**: WebJobs können mit dem Portal, der REST API und PowerShell konfiguriert werden. Konfigurationsinformationen für einen Auftrag können in einer Konfigurationsdatei namens "settings.job", die sich im Stammverzeichnis des Jobskripts befinden muss, bereitgestellt werden. Beispiel:
-  - { "stopping_wait_time": 60 }
-  - { "is_singleton": true }
+  - { "stopping\_wait\_time": 60 }
+  - { "is\_singleton": true }
 
 ### Überlegungen
 
-- Standardmäßig werden WebJobs mit der Website skaliert. Allerdings können Aufträge für die Ausführung in einer einzelnen Instanz konfiguriert werden, indem die Konfigurationseigenschaft **is_singleton** auf true festgelegt wird. Einzelinstanz-WebJobs sind für Aufgaben sinnvoll, die nicht skaliert oder gleichzeitig in mehreren Instanzen ausgeführt werden sollen, z. B. eine erneute Indizierung, Datenanalyse oder ähnliche Aufgaben.
+- Standardmäßig werden WebJobs mit der Website skaliert. Allerdings können Aufträge für die Ausführung in einer einzelnen Instanz konfiguriert werden, indem die Konfigurationseigenschaft **is\_singleton** auf true festgelegt wird. Einzelinstanz-WebJobs sind für Aufgaben sinnvoll, die nicht skaliert oder gleichzeitig in mehreren Instanzen ausgeführt werden sollen, z. B. eine erneute Indizierung, Datenanalyse oder ähnliche Aufgaben.
 - Damit die Leistung der Website durch die Aufträge möglichst minimal beeinträchtigt wird, sollten Sie in Betracht ziehen, eine leere Azure-Websites-Instanz in einem neuen App Service-Plan zum Hosten von WebJobs zu erstellen, die langwierig oder ressourcenintensiv sind.
 
 ### Weitere Informationen
@@ -236,9 +236,9 @@ Web- und Workerrollen durchlaufen unterschiedliche Phasen, während sie gestarte
 
 - Azure lädt die Rollenassembly und sucht nach einer von **RoleEntryPoint** abgeleiteten Klasse.
 - Wenn diese Klasse gefunden wird, wird **RoleEntryPoint.OnStart()** aufgerufen. Sie überschreiben diese Methode, um die Hintergrundaufgaben zu initialisieren.
-- Nach Abschluss der **OnStart**-Methode ruft Azure in der globalen Datei der Anwendung **Application_Start()** auf, sofern die Datei vorhanden ist (z. B. "Global.asax" in einer Webrolle unter ASP.NET).
+- Nach Abschluss der **OnStart**-Methode ruft Azure in der globalen Datei der Anwendung **Application\_Start()** auf, sofern die Datei vorhanden ist (z. B. "Global.asax" in einer Webrolle unter ASP.NET).
 - Azure ruft **RoleEntryPoint.Run()** in einem neuen Vordergrundthread auf, der parallel zu **OnStart()** ausgeführt wird. Sie überschreiben diese Methode, um die Hintergrundaufgaben zu starten.
-- Wenn die Run-Methode beendet wird, ruft Azure zuerst **Application_End()** in der globalen Datei der Anwendung, sofern diese vorhanden ist, und anschließend **RoleEntryPoint.OnStop()** auf. Sie überschreiben die **OnStop**-Methode, um die Hintergrundaufgaben zu beenden, Ressourcen zu bereinigen, Objekte zu löschen und die Verbindungen zu schließen, die von den Aufgaben möglicherweise verwendet wurden.
+- Wenn die Run-Methode beendet wird, ruft Azure zuerst **Application\_End()** in der globalen Datei der Anwendung, sofern diese vorhanden ist, und anschließend **RoleEntryPoint.OnStop()** auf. Sie überschreiben die **OnStop**-Methode, um die Hintergrundaufgaben zu beenden, Ressourcen zu bereinigen, Objekte zu löschen und die Verbindungen zu schließen, die von den Aufgaben möglicherweise verwendet wurden.
 - Der Hostprozess für die Azure-Workerrolle wird beendet. An diesem Punkt wird die Rolle wiederverwendet und neu gestartet.
 
 Weitere Einzelheiten und ein Beispiel für die Verwendung der Methoden der **RoleEntryPoint**-Klasse finden Sie unter [Muster für die Konsolidierung von Compute-Ressourcen](http://msdn.microsoft.com/library/dn589778.aspx).
@@ -290,7 +290,7 @@ Hintergrundaufgaben müssen ausreichend Leistung bieten, damit sichergestellt is
 - Wenn Hintergrundaufgaben eine andere Leistungsfähigkeit als andere Teile einer Cloud Services-Anwendung haben (z. B. die Benutzeroberfläche oder Komponenten wie die Datenzugriffsschicht), kann durch das gemeinsame Hosten der Hintergrundaufgaben in einer separaten Workerrolle erreicht werden, dass die Benutzeroberfläche und die Hintergrundaufgabenrollen unabhängig voneinander skaliert werden, um die Last zu verwalten. Wenn sich die Leistungsfähigkeit verschiedener Hintergrundaufgaben deutlich voneinander unterscheidet, sollten Sie in Erwägung ziehen, diese in verschiedene Workerrollen aufzuteilen und die verschiedenen Rollentypen voneinander getrennt zu skalieren. Verglichen mit der Kombination aller Aufgaben in einer kleineren Anzahl von Rollen kann dies jedoch zu höheren Laufzeitkosten führen.
 - Eine einfache Skalierung der Rollen ist u. U. nicht ausreichend, um Leistungsverluste unter Last zu verhindern. Sie müssen möglicherweise auch Speicherwarteschlangen und andere Ressourcen skalieren, um zu vermeiden, dass ein einzelner Zugriffspunkt in der gesamten Verarbeitungskette zum Engpass wird. Berücksichtigen Sie auch andere Einschränkungen, z. B. den maximalen Durchsatz des Speichers sowie andere Dienste der Anwendung und die Hintergrundaufgaben, die sich darauf stützen.
 - Hintergrundaufgaben müssen für die Skalierung konzipiert werden. Beispielsweise müssen sie dynamisch die Anzahl der verwendeten Speicherwarteschlangen erkennen können, um Nachrichten überwachen oder an die entsprechende Warteschlange senden zu können.
-- In der Standardeinstellung werden WebJobs zusammen mit ihrer zugehörigen Azure Websites-Instanz skaliert. Wenn ein WebJob jedoch nur als Einzelinstanz ausgeführt werden soll, können Sie eine Datei namens "Settings.job" erstellen, welche die JSON-Daten **{"Is_singleton": true}** enthält. Damit wird Azure gezwungen, nur eine WebJob-Instanz auszuführen, selbst wenn mehrere Instanzen der zugehörigen Website vorhanden sind. Diese Technik kann bei geplanten Aufträgen, die nur als einzelne Instanz ausgeführt werden müssen, hilfreich sein.
+- In der Standardeinstellung werden WebJobs zusammen mit ihrer zugehörigen Azure Websites-Instanz skaliert. Wenn ein WebJob jedoch nur als Einzelinstanz ausgeführt werden soll, können Sie eine Datei namens "Settings.job" erstellen, welche die JSON-Daten **{"Is\_singleton": true}** enthält. Damit wird Azure gezwungen, nur eine WebJob-Instanz auszuführen, selbst wenn mehrere Instanzen der zugehörigen Website vorhanden sind. Diese Technik kann bei geplanten Aufträgen, die nur als einzelne Instanz ausgeführt werden müssen, hilfreich sein.
 
 ## Verwandte Muster
 
@@ -317,4 +317,4 @@ Hintergrundaufgaben müssen ausreichend Leistung bieten, damit sichergestellt is
 - [Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung](http://msdn.microsoft.com/library/hh767287.aspx)
 - [Aktivieren der Diagnose in einem Clouddienst](http://msdn.microsoft.com/library/dn482131.aspx)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

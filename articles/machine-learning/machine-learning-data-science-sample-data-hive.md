@@ -2,7 +2,6 @@
 	pageTitle="Extrahieren von Stichproben aus Daten in Azure HDInsight Hive-Tabellen | Microsoft Azure"
 	description="Komprimieren von Daten in Azure HDInsight Hive-Tabellen"
 	services="machine-learning,hdinsight"
-	solutions=""
 	documentationCenter=""
 	authors="hangzh-msft"
 	manager="paulettm" 
@@ -96,4 +95,4 @@ Dies ist eine Beispielabfrage:
 Informationen zu komplexeren Methoden für das Extrahieren von Stichproben, die in Hive verfügbar sind, finden Sie unter [LanguageManual Sampling](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Sampling) (in englischer Sprache).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

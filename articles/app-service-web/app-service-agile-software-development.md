@@ -21,7 +21,7 @@
 
 In diesem Tutorial erfahren Sie, wie Sie umfangreiche komplexe Anwendungen mit [Azure App Service](/services/app-service/) auf eine Weise erstellen, die die [agile Softwareentwicklung](https://en.wikipedia.org/wiki/Agile_software_development) unterstützt. Es wird davon ausgegangen, dass Sie bereits wissen, wie Sie [komplexe Anwendungen in Azure vorhersehbar bereitstellen](app-service-deploy-complex-application-predictably.md).
 
-Einschränkungen bei den technischen Prozessen stehen einer erfolgreichen Umsetzung agiler Methoden mitunter im Weg. Azure App Service kann mit Features wie [kontinuierliche Veröffentlichung](web-sites-publish-source-control.md), [Stagingumgebungen](web-sites-staged-publishing.md) \(Slots\) und [Überwachung](web-sites-monitor.md) und bei überlegter Kombination mit der Orchestrierung und Verwaltung der Bereitstellung im [Azure-Ressourcen-Manager](resource-group-overview.md) Teil einer überzeugenden Lösung für Entwickler sein, die die agile Softwareentwicklung bevorzugen.
+Einschränkungen bei den technischen Prozessen stehen einer erfolgreichen Umsetzung agiler Methoden mitunter im Weg. Azure App Service kann mit Features wie [kontinuierliche Veröffentlichung](web-sites-publish-source-control.md), [Stagingumgebungen](web-sites-staged-publishing.md) (Slots) und [Überwachung](web-sites-monitor.md) und bei überlegter Kombination mit der Orchestrierung und Verwaltung der Bereitstellung im [Azure-Ressourcen-Manager](resource-group-overview.md) Teil einer überzeugenden Lösung für Entwickler sein, die die agile Softwareentwicklung bevorzugen.
 
 Die folgende Tabelle enthält eine kurze Liste der Anforderungen an die agile Entwicklung und wie Azure-Dienste zu deren Erfüllung beitragen.
 
@@ -29,28 +29,28 @@ Die folgende Tabelle enthält eine kurze Liste der Anforderungen an die agile En
 |---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | – Build mit jedem Commit<br>– Automatischer und schneller Build | Bei Konfiguration mit fortlaufender Bereitstellung kann Azure App Service basierend auf einer Entwicklungsverzweigung als aktiv ausgeführte Builds fungieren. Jedes Mal, wenn Code per Push in die Verzweigung übertragen wird, erfolgt automatisch ein Build und die aktive Ausführung in Azure.|
 | – Builds mit Selbsttests gestalten | Auslastungstests, Webtests usw. können mit der Azure-Ressourcen-Manager-Vorlage bereitgestellt werden.|
-| – Tests in einem Klon der Produktionsumgebung durchführen | Azure Ressourcen-Manager-Vorlagen können verwendet werden, um Klone der Azure-Produktionsumgebung \(einschließlich App-Einstellungen, Vorlagen mit Verbindungszeichenfolgen, Skalierung usw.\) für schnelle und vorhersagbare Tests zu erstellen.|
+| – Tests in einem Klon der Produktionsumgebung durchführen | Azure Ressourcen-Manager-Vorlagen können verwendet werden, um Klone der Azure-Produktionsumgebung (einschließlich App-Einstellungen, Vorlagen mit Verbindungszeichenfolgen, Skalierung usw.) für schnelle und vorhersagbare Tests zu erstellen.|
 | – Ergebnis des neuesten Builds problemlos anzeigen | Die kontinuierliche Bereitstellung in Azure aus einem Repository bedeutet, dass Sie unmittelbar nach dem Commit Ihrer Änderungen neuen Code in einer aktiven Anwendung testen können. |
 | – Täglicher Commit in der MAIN-Verzweigung<br> – Bereitstellung automatisieren | Durch die fortlaufende Integration einer Produktionsanwendung mit der MAIN-Verzweigung eines Repositorys wird jeder Commit-/Zusammenführungsvorgang automatisch in der MAIN-Verzweigung in der Produktion bereitgestellt. |
 
 ## Aufgaben ##
 
-Sie durchlaufen einen typischen Produktionsworkflow aus Entwicklung/Test/Staging, um neue Änderungen an der Beispielanwendung [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) zu veröffentlichen, die aus zwei [Web-Apps](/services/app-service/web/), von denen eine ein Front-End \(FE\) und die andere ein Web-API-Back-End \(BE\) ist, und einer [SQL-Datenbank](/services/sql-database/) besteht. Sie werden mit der unten gezeigten Bereitstellungsarchitektur arbeiten:
+Sie durchlaufen einen typischen Produktionsworkflow aus Entwicklung/Test/Staging, um neue Änderungen an der Beispielanwendung [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) zu veröffentlichen, die aus zwei [Web-Apps](/services/app-service/web/), von denen eine ein Front-End (FE) und die andere ein Web-API-Back-End (BE) ist, und einer [SQL-Datenbank](/services/sql-database/) besteht. Sie werden mit der unten gezeigten Bereitstellungsarchitektur arbeiten:
 
 ![](./media/app-service-agile-software-development/what-1-architecture.png)
 
 Hier eine Erläuterung der Abbildung:
 
--	Die Bereitstellungsarchitektur ist in drei verschiedene Umgebungen \(bzw. [Ressourcengruppen](resource-group-overview.md) in Azure\) aufgeteilt, von denen jede einen eigenen [App Service-Plan](azure-web-sites-web-hosting-plans-in-depth-overview.md), eigene [Skalierungseinstellungen](web-sites-scale.md) und eine eigene SQL-Datenbank hat. 
+-	Die Bereitstellungsarchitektur ist in drei verschiedene Umgebungen (bzw. [Ressourcengruppen](resource-group-overview.md) in Azure) aufgeteilt, von denen jede einen eigenen [App Service-Plan](azure-web-sites-web-hosting-plans-in-depth-overview.md), eigene [Skalierungseinstellungen](web-sites-scale.md) und eine eigene SQL-Datenbank hat. 
 -	Jede Umgebung kann separat verwaltet werden. Sie können sogar in verschiedenen Abonnements vorhanden sind.
 -	Die Staging- und Produktionsumgebung werden als zwei Slots derselben App Service-App implementiert. Die Hauptverzweigung ist für die kontinuierliche Integration mit dem Stagingslot eingerichtet.
--	Wenn ein Commit für die Hauptverzweigung im Stagingslot \(mit Produktionsdaten\) bestätigt wird, wird die überprüfte Staging-App im Produktionsslot [ohne Ausfallzeiten](web-sites-staged-publishing.md) ausgetauscht.
+-	Wenn ein Commit für die Hauptverzweigung im Stagingslot (mit Produktionsdaten) bestätigt wird, wird die überprüfte Staging-App im Produktionsslot [ohne Ausfallzeiten](web-sites-staged-publishing.md) ausgetauscht.
 
-Die Produktions- und Stagingumgebung werden von der Vorlage unter [*&lt;Repositorystammverzeichnis\>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json) definiert.
+Die Produktions- und Stagingumgebung werden von der Vorlage unter [*&lt;Repositorystammverzeichnis>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json) definiert.
 
-Die Entwicklungs- und Testumgebungen werden von der Vorlage unter [*&lt;Repositorystammverzeichnis\>*/ARMTemplates/Dev.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/Dev.json) definiert.
+Die Entwicklungs- und Testumgebungen werden von der Vorlage unter [*&lt;Repositorystammverzeichnis>*/ARMTemplates/Dev.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/Dev.json) definiert.
 
-Sie verwenden auch die übliche Verzweigungsstrategie, bei der Code aus der Entwicklungsverzweigung in die Testverzweigung und dann in die Hauptverzweigung verschoben wird \(wobei jedes Mal die Qualität verbessert wird\).
+Sie verwenden auch die übliche Verzweigungsstrategie, bei der Code aus der Entwicklungsverzweigung in die Testverzweigung und dann in die Hauptverzweigung verschoben wird (wobei jedes Mal die Qualität verbessert wird).
 
 ![](./media/app-service-agile-software-development/what-2-branches.png)
 
@@ -58,10 +58,10 @@ Sie verwenden auch die übliche Verzweigungsstrategie, bei der Code aus der Entw
 
 -	Ein Azure-Konto
 -	Ein [GitHub](https://github.com/)-Konto
--	Git-Shell \(mit [GitHub für Windows](https://windows.github.com/) installiert\) – Ermöglicht Ihnen, Git- und PowerShell-Befehle in der gleichen Sitzung auszuführen. 
+-	Git-Shell (mit [GitHub für Windows](https://windows.github.com/) installiert) – Ermöglicht Ihnen, Git- und PowerShell-Befehle in der gleichen Sitzung auszuführen. 
 -	Neueste [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/0.9.4-June2015/azure-powershell.0.9.4.msi)-Version
 -	Grundlegende Kenntnisse der folgenden Komponenten:
-	-	Bereitstellung der [Azure-Ressourcen-Manager](resource-group-overview.md)-Vorlage \(siehe auch [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md)\)
+	-	Bereitstellung der [Azure-Ressourcen-Manager](resource-group-overview.md)-Vorlage (siehe auch [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md))
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
 
@@ -87,7 +87,7 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 
 		git clone https://github.com/<your_fork>/ToDoApp.git 
 
-4.	Sobald Sie Ihre lokalen Klon haben, navigieren Sie zu *&lt;Repositorystammverzeichnis\>\\ARMTemplates* und führen das Skript "deploy.ps1" wie folgt aus:
+4.	Sobald Sie Ihre lokalen Klon haben, navigieren Sie zu *&lt;Repositorystammverzeichnis>\\ARMTemplates* und führen das Skript "deploy.ps1" wie folgt aus:
 
 		.\deploy.ps1 –RepoUrl https://github.com/<your_fork>/todoapp.git
 
@@ -97,7 +97,7 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 
 	![](./media/app-service-agile-software-development/production-2-app-in-browser.png)
  
-	>[AZURE.TIP]Wenn Sie sich *&lt;Repositorystammverzeichnis\>\\ARMTemplates\\Deploy.ps1* ansehen, erkennen Sie, wie das Skript Ressourcen mit eindeutigen IDs erstellt. Sie können den gleichen Ansatz zum Erstellen von Klonen der gleichen Bereitstellung befolgen, ohne sich Gedanken über in Konflikt stehende Ressourcennamen machen zu müssen.
+	>[AZURE.TIP]Wenn Sie sich *&lt;Repositorystammverzeichnis>\\ARMTemplates\\Deploy.ps1* ansehen, erkennen Sie, wie das Skript Ressourcen mit eindeutigen IDs erstellt. Sie können den gleichen Ansatz zum Erstellen von Klonen der gleichen Bereitstellung befolgen, ohne sich Gedanken über in Konflikt stehende Ressourcennamen machen zu müssen.
  
 6.	Zurück in der Git-Shell-Sitzung führen Sie Folgendes aus:
 
@@ -105,11 +105,11 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 
 	![](./media/app-service-agile-software-development/production-4-swap.png)
 
-7.	Wenn das Skript abgeschlossen ist, navigieren Sie zurück zur Adresse des Front-Ends \(http://ToDoApp*&lt;unique_string\>\*master.azurewebsites.net/\), um zu prüfen, ob die Anwendung in der Produktionsumgebung ausgeführt wird.
+7.	Wenn das Skript abgeschlossen ist, navigieren Sie zurück zur Adresse des Front-Ends (http://ToDoApp*&lt;unique_string>*master.azurewebsites.net/), um zu prüfen, ob die Anwendung in der Produktionsumgebung ausgeführt wird.
  
 5.	Melden Sie sich am [Azure-Vorschauportal](https://portal.azure.com) an, und sehen Sie sich, was erstellt wurde.
 
-	Sie sollten zwei Web-Apps in der gleichen Ressourcengruppe sehen, von denen eine das Suffix `Api` im Namen enthält. Wenn Sie die Ressourcengruppenansicht betrachten, sehen Sie auch SQL-Datenbank und -Server, den App Service-Plan und die Stagingslots für die Web-Apps. Navigieren Sie durch die verschiedenen Ressourcen, und vergleichen Sie diese mit *&lt;Repositorystammverzeichnis\>\\ARMTemplates\\ProdAndStage.json*, um zu prüfen, wie sie in der Vorlage konfiguriert sind.
+	Sie sollten zwei Web-Apps in der gleichen Ressourcengruppe sehen, von denen eine das Suffix `Api` im Namen enthält. Wenn Sie die Ressourcengruppenansicht betrachten, sehen Sie auch SQL-Datenbank und -Server, den App Service-Plan und die Stagingslots für die Web-Apps. Navigieren Sie durch die verschiedenen Ressourcen, und vergleichen Sie diese mit *&lt;Repositorystammverzeichnis>\\ARMTemplates\\ProdAndStage.json*, um zu prüfen, wie sie in der Vorlage konfiguriert sind.
 
 	![](./media/app-service-agile-software-development/production-3-resource-group-view.png)
 
@@ -132,7 +132,7 @@ Nun da Sie über eine komplexe Anwendung verfügen, die in Azure in der Produkti
 	-	Sie können sie in einem beliebigen Azure-Abonnement erstellen. Das bedeutet, dass die Produktionsumgebung von Ihrer Testumgebung getrennt verwaltet werden kann.
 	-	Ihre Testumgebung wird aktiv in Azure ausgeführt.
 	-	Die Testumgebung ist identisch mit der Produktionsumgebung mit Ausnahme der Stagingslots und Skalierungseinstellungen. Dies wissen Sie, da dies die einzige Unterschiede zwischen "ProdandStage.json" und "Dev.json" sind.
-	-	Sie können Ihre Testumgebung in einem eigenen App Service-Plan mit einem anderen Tarif \(z. B. **Free**\) verwalten.
+	-	Sie können Ihre Testumgebung in einem eigenen App Service-Plan mit einem anderen Tarif (z. B. **Free**) verwalten.
 	-	Das Löschen dieser Testumgebung ist so einfach wie das Löschen der Ressourcengruppe. Die dazu erforderlichen Schritte lernen Sie [später](#delete) kennen.
 
 2.	Fahren Sie mit dem Erstellen einer Entwicklungsverzweigung fort, indem Sie die folgenden Befehle ausführen:
@@ -152,7 +152,7 @@ Nun da Sie über eine komplexe Anwendung verfügen, die in Azure in der Produkti
 
 >[AZURE.NOTE]Wenn mehrere Entwickler am neuen Update arbeiten, kann jeder über die folgenden Schritte mühelos eine Verzweigung und dedizierte Entwicklungsumgebung erstellen:
 >
->1.	Erstellen einer eigenen Verzweigung des Repositorys in GitHub \(siehe [Verzweigen eines Repositorys](https://help.github.com/articles/fork-a-repo/)\)
+>1.	Erstellen einer eigenen Verzweigung des Repositorys in GitHub (siehe [Verzweigen eines Repositorys](https://help.github.com/articles/fork-a-repo/))
 >2.	Klonen der Verzweigung auf ihrem lokalen Computer
 >3.	Ausführen derselben Befehle zum Erstellen ihrer eigenen Entwicklungsverzweigung und -umgebung
 
@@ -160,7 +160,7 @@ Wenn Sie fertig sind, sollte Ihre GitHub-Verzweigung drei Verzweigungen aufweise
 
 ![](./media/app-service-agile-software-development/test-1-github-view.png)
 
-Und Sie sollten über sechs Web-Apps \(drei Gruppen mit je zwei\) in drei separaten Ressourcengruppen verfügen:
+Und Sie sollten über sechs Web-Apps (drei Gruppen mit je zwei) in drei separaten Ressourcengruppen verfügen:
 
 ![](./media/app-service-agile-software-development/test-2-all-webapps.png)
  
@@ -174,7 +174,7 @@ Die Vorlagendateien "ProdAndStage.json" und "Dev.json" geben bereits die Quellve
 
 		git checkout Dev
 
-2.	Nehmen Sie eine einfache Änderung an der Benutzeroberflächenebene der App vor, indem Sie den Code so ändern, dass [Bootstrap](http://getbootstrap.com/components/)-Listen verwendet werden. Öffnen Sie *&lt;Repositorystammverzeichnis\>\\src\\MultiChannelToDo.Web\\app\\index.cshtml*, und nehmen Sie die unten hervorgehobene Änderung vor:
+2.	Nehmen Sie eine einfache Änderung an der Benutzeroberflächenebene der App vor, indem Sie den Code so ändern, dass [Bootstrap](http://getbootstrap.com/components/)-Listen verwendet werden. Öffnen Sie *&lt;Repositorystammverzeichnis>\\src\\MultiChannelToDo.Web\\app\\index.cshtml*, und nehmen Sie die unten hervorgehobene Änderung vor:
 
 	![](./media/app-service-agile-software-development/commit-1-changes.png)
 
@@ -223,7 +223,7 @@ Lassen Sie uns nun Ihren Code per Push in die Verzweigung **NewUpdate** übertra
 
 Fertig!
 
-Wechseln Sie zum Blatt "Web-App" für Ihre Testumgebung, um zu prüfen, ob Ihr neuer \(mit der Verzweigung "NewUpdate" zusammengeführter\) Commit per Push in die Testumgebung übertragen wurde. Klicken Sie dann auf **Durchsuchen**, um zu überprüfen, ob die Formatänderung jetzt aktiv in Azure ausgeführt wird.
+Wechseln Sie zum Blatt "Web-App" für Ihre Testumgebung, um zu prüfen, ob Ihr neuer (mit der Verzweigung "NewUpdate" zusammengeführter) Commit per Push in die Testumgebung übertragen wurde. Klicken Sie dann auf **Durchsuchen**, um zu überprüfen, ob die Formatänderung jetzt aktiv in Azure ausgeführt wird.
 
 ## Bereitstellen des Updates in der Produktionsumgebung ##
 
@@ -250,7 +250,7 @@ Glückwunsch! Sie haben erfolgreich ein neues Update für Ihre Webanwendung in d
 <a name="delete"></a>
 ## Löschen von Entwicklungs- und Testumgebungen ##
 
-Da Sie Ihre Entwicklungs- und Testumgebungen absichtlich als eigenständige Ressourcengruppen entworfen haben, ist es sehr einfach, diese zu löschen. Um diejenigen zu löschen, die Sie in diesem Tutorial erstellt haben \(sowohl die GitHub-Verzweigungen als auch die Azure-Artefakte\), führen Sie einfach die folgenden Befehle auf der Git-Shell aus:
+Da Sie Ihre Entwicklungs- und Testumgebungen absichtlich als eigenständige Ressourcengruppen entworfen haben, ist es sehr einfach, diese zu löschen. Um diejenigen zu löschen, die Sie in diesem Tutorial erstellt haben (sowohl die GitHub-Verzweigungen als auch die Azure-Artefakte), führen Sie einfach die folgenden Befehle auf der Git-Shell aus:
 
 	git branch -d Dev
 	git push origin :Dev
@@ -279,4 +279,4 @@ Eine agile Softwareentwicklung ist für viele Unternehmen unverzichtbar, die Azu
 -	[Erstellen oder Bearbeiten von Benutzern in Azure AD](https://msdn.microsoft.com/library/azure/hh967632.aspx#BKMK_1)
 -	[Wiki zum Kudu-Projekt](https://github.com/projectkudu/kudu/wiki)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

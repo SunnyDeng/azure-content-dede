@@ -76,4 +76,4 @@ Informationen zur Nutzung von Daten mithilfe von Power Query finden Sie in den f
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

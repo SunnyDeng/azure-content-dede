@@ -363,4 +363,4 @@ Sie können Dienste in Azure über eine Vorlage bereitstellen, indem Sie PowerSh
 
 [Bereitstellungen von Vorlagen](https://msdn.microsoft.com/library/azure/dn790549.aspx)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -33,13 +33,13 @@ Azure AD veröffentlicht Verbundmetadaten in *https://login.windows.net/<TenantD
 
 Für **mandantenspezifische Endpunkte** kann <TenantDomainName> einem der folgenden Typen entsprechen:
 
-- Ein registrierter Domänenname für einen Azure AD-Mandanten, z. B.: "contoso.onmicrosoft.com".
+- Ein registrierter Domänenname für einen Azure AD-Mandanten, z. B.: „contoso.onmicrosoft.com“.
 
 - Die unveränderliche Mandanten-ID der Domäne, z. B. "72f988bf-86f1-41af-91ab-2d7cd011db45".
 
 Für **mandantenunabhängige Endpunkte** lautet der Wert von <TenantDomainName> **common**. Dieser Name gibt nur die Verbundmetadatenelemente an, die für alle Azure AD-Mandanten gelten, die unter "login.windows.net" gehostet werden.
 
-Ein mandantenspezifischer Endpunkt kann z. B. folgendermaßen lauten: *https://login.windows.net/contoso.onmicrosoft.comFederationMetadata/2007-06/FederationMetadata.xml*. Der mandantenunabhängige Endpunkt lautet *https://login.windows.net/common/FederationMetadata/2007-06/FederationMetadata.xml*.
+Ein mandantenspezifischer Endpunkt kann z. B. folgendermaßen lauten: **https://login.windows.net/contoso.onmicrosoft.comFederationMetadata/2007-06/FederationMetadata.xml*. Der mandantenunabhängige Endpunkt lautet **https://login.windows.net/common/FederationMetadata/2007-06/FederationMetadata.xml*.
 
 ## Inhalt der Verbundmetadaten
 
@@ -149,4 +149,4 @@ Auf ähnliche Weise werden die Endpunkte für die gemeinsamen SAML 2.0-Protokol
 
 [Entwicklerhandbuch zu Azure Active Directory](active-directory-developers-guide.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

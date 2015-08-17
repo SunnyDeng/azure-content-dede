@@ -1,7 +1,6 @@
 <properties
 	pageTitle="Informationen zur Verwendung von Hadoop-Tools für Visual Studio für HDInsight | Microsoft Azure"
 	description="Erfahren Sie, wie Hadoop-Tools für Visual Studio für HDInsight verwendet werden, um eine Verbindung mit einem Hadoop-Cluster herzustellen und eine Hive-Abfrage auszuführen."
-	keywords="hadoop tools,hive query,visual studio"
 	services="HDInsight"
 	documentationCenter=""
 	authors="mumian"
@@ -67,7 +66,7 @@ Mithilfe der HDInsight-Tools für Visual Studio können Sie eine Verbindung mit 
 2.	Klicken Sie im Menü **Ansicht** auf **Server-Explorer**, um das Fenster "Server-Explorer" zu öffnen.
 3.	Erweitern Sie erst **Azure** und dann **HDInsight**.
 
-	>[AZURE.NOTE]**HDInsight-Aufgabenliste****Andere Fenster****Ansicht****Fenster "HDInsight-Aufgabenliste"**  
+	>[AZURE.NOTE]Beachten Sie, dass das Fenster **HDInsight-Aufgabenliste** geöffnet sein sollte. Wenn es nicht angezeigt werden sollte, klicken Sie im Menü **Ansicht** auf **Andere Fenster** und dann auf das Fenster **HDInsight-Aufgabenliste**.  
 4.	Geben Sie die Anmeldeinformationen für Ihr Azure-Abonnement ein, und klicken Sie auf **Anmelden**. Dies ist nur erforderlich, wenn Sie bislang noch nicht in Visual Studio auf dieser Arbeitsstation eine Verbindung mit dem Azure-Abonnement hergestellt haben.
 5.	Im Server-Explorer wird eine Liste vorhandener HDInsight-Cluster angezeigt. Wenn Sie noch keine Cluster haben, können Sie einen über das Azure-Portal, Azure PowerShell oder das HDInsight SDK bereitstellen. Weitere Informationen finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
 
@@ -141,7 +140,7 @@ Es gibt zwei Möglichkeiten zum Erstellen und Ausführen von Hive-Abfragen:
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – IntelliSense][14]
 
-	> [AZURE.NOTE]
+	> [AZURE.NOTE]Nur die Metadaten der Cluster, die in der HDInsight-Symbolleiste ausgewählt sind, werden vorgeschlagen.
 4. (Optional): Klicken Sie auf **Skript überprüfen**, um die Syntaxfehler des Skripts zu überprüfen.
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – lokale Überprüfung][10]
@@ -236,4 +235,4 @@ In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio mithilfe des Hado
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

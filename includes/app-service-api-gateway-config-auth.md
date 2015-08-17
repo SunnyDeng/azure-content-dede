@@ -22,7 +22,7 @@
 
 Die nachfolgenden Screenshots zeigen beispielhaft, welche Seiten im [Azure-Portal] und welche Blätter im [Azure-Vorschauportal] angezeigt werden sollten, nachdem Sie die Azure Active Directory-Authentifizierung eingerichtet haben.
 
-Im Azure-Vorschauportal zeigt das Blatt **Azure Active Directory** eine **Client-ID** aus der Anwendung, die Sie auf der Registerkarte "Azure Active Directory" im Azure-Portal erstellt haben. Die Einstellung **Zulässige Mandanten** enthält Ihren Azure Active Directory-Mandanten \(z. B. "contoso.onmicrosoft.com"\).
+Im Azure-Vorschauportal zeigt das Blatt **Azure Active Directory** eine **Client-ID** aus der Anwendung, die Sie auf der Registerkarte "Azure Active Directory" im Azure-Portal erstellt haben. Die Einstellung **Zulässige Mandanten** enthält Ihren Azure Active Directory-Mandanten (z. B. "contoso.onmicrosoft.com").
 
 ![Blatt "Azure Active Directory"](./media/app-service-api-gateway-config-auth/tdinaadblade.png)
 
@@ -36,6 +36,6 @@ Im Azure-Portal enthält die Registerkarte **Konfiguration** der Anwendung, die 
 
 ![](./media/app-service-api-gateway-config-auth/oldportal4.png)
 
-\(Die Antwort-URL im Screenshot zeigt zweimal dieselbe URL, einmal mit `http:` und einmal mit `https:`.\)
+(Die Antwort-URL im Screenshot zeigt zweimal dieselbe URL, einmal mit `http:` und einmal mit `https:`.)
 
-<!-------HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

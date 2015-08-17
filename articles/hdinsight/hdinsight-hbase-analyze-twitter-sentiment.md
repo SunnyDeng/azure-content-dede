@@ -222,7 +222,7 @@ Sie müssen eine Konsolenanwendung erstellen, um Tweets zu erhalten, einen Stimm
         // Sentiment dictionary file and the punctuation characters
         const string DICTIONARYFILENAME = @"....\data\dictionary\dictionary.tsv";
         private static char[] _punctuationChars = new[] { 
-            ' ', '!', '"', '#', '$', '%', '&', ''', '(', ')', '*', '+', ',', '-', '.', '/',   //ascii 23--47
+            ' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/',   //ascii 23--47
             ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~' };   //ascii 58--64 + misc.
 
         // For writting to HBase
@@ -1177,7 +1177,7 @@ In diesem Abschnitt erstellen Sie eine ASP.NET MVC-Webanwendung, die die Echtzei
 
 **So ändern Sie die Datei "layout.cshtml"**
 
-1. Erweitern Sie im **Projektmappen-Explorer** den Eintrag **TweetSentimentWeb**, **Ansichten** und **Shared**, und doppelklicken Sie abschließend auf _**Layout.cshtml**.
+1. Erweitern Sie im **Projektmappen-Explorer** den Eintrag **TweetSentimentWeb**, **Ansichten**, **Freigegeben**, und doppelklicken Sie abschließend auf _**Layout.cshtml**.
 2. Ersetzen Sie den Inhalt durch Folgendes:
 
 		<!DOCTYPE html>
@@ -1358,4 +1358,4 @@ In diesem Tutorial haben Sie erfahren, wie Sie Tweets abrufen, die Stimmung von 
 
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

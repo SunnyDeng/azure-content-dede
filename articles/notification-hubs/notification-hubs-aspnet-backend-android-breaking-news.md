@@ -36,7 +36,7 @@ Dieses Thema baut auf die App auf, die Sie in [Erste Schritte mit Notification H
 
 Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen Hauptaktivität hinzuzufügen, welche dem Benutzer die Auswahl der Kategorien für die Registrierung ermöglichen. Die durch den Benutzer ausgewählten Kategorien werden auf dem Gerät gespeichert. Wenn die App gestartet wird, wird eine Geräteregistrierung in Ihrem Notification Hub mit den ausgewählten Kategorien als Tags erstellt.
 
-1. Öffnen Sie die Datei „res/layout/activity_main.xml“, und ersetzen Sie den Inhalt wie folgt:
+1. Öffnen Sie die Datei „res/layout/activity\_main.xml“, und ersetzen Sie den Inhalt wie folgt:
 			
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		    xmlns:tools="http://schemas.android.com/tools"
@@ -96,7 +96,7 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 	    <string name="label_science">Science</string>
 	    <string name="label_sports">Sports</string>
 
-	Das Layout von „main_activity.xml“ sollte jetzt wie folgt aussehen:
+	Das Layout von „main\_activity.xml“ sollte jetzt wie folgt aussehen:
 
 	![][A1]
 
@@ -319,4 +319,4 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

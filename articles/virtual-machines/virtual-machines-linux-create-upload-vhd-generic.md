@@ -91,7 +91,7 @@ Wenn Sie nicht in einer Windows-Umgebung arbeiten, sollten Sie die Konvertierung
 		rounded_size=$((($size/$MB + 1)*$MB))
 		echo "Rounded Size = $rounded_size"
 
- 3. Ändern Sie die Größe des RAW-Datenträgers mit $rounded_size, wie im obigen Skript festgelegt:
+ 3. Ändern Sie die Größe des RAW-Datenträgers mit $rounded\_size, wie im obigen Skript festgelegt:
 
 		# qemu-img resize MyLinuxVM.raw $rounded_size
 
@@ -123,10 +123,10 @@ Wenn ein benutzerdefiniertes Kernel erforderlich ist, empfiehlt es sich, eine ne
 
 Das Fehlen der folgenden Patches hat in einem sehr geringen Ausmaß Probleme in Azure verursacht. Daher müssen diese im Kernel enthalten sein. Diese Liste ist keineswegs vollständig für alle Verteilungen:
 
-- [ata_piix: defer disks to the Hyper-V drivers by default](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/ata/ata_piix.c?id=cd006086fa5d91414d8ff9ff2b78fbb593878e3c) (Standardmäßiges Zurückstellen von Datenträgern zu Hyper-V-Treibern, in englischer Sprache)
+- [ata\_piix: defer disks to the Hyper-V drivers by default](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/ata/ata_piix.c?id=cd006086fa5d91414d8ff9ff2b78fbb593878e3c) (Standardmäßiges Zurückstellen von Datenträgern zu Hyper-V-Treibern, in englischer Sprache)
 - [storvsc: Account for in-transit packets in the RESET path](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/drivers/scsi/storvsc_drv.c?id=5c1b10ab7f93d24f29b5630286e323d1c5802d5c) (Konto für Pakete auf dem Transportweg im RESET-Pfad, in englischer Sprache)
-- [storvsc: avoid usage of WRITE_SAME](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=3e8f4f4065901c8dfc51407e1984495e1748c090) (Vermeiden der Verwendung von WRITE_SAME, in englischer Sprache)
-- [storvsc: Disable WRITE SAME for RAID and virtual host adapter drivers](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=54b2b50c20a61b51199bedb6e5d2f8ec2568fb43) (Deaktivieren von WRITE_SAME für RAID und virtuelle Hostadaptertreiber, in englischer Sprache)
+- [storvsc: avoid usage of WRITE\_SAME](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=3e8f4f4065901c8dfc51407e1984495e1748c090) (Vermeiden der Verwendung von WRITE\_SAME, in englischer Sprache)
+- [storvsc: Disable WRITE SAME for RAID and virtual host adapter drivers](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=54b2b50c20a61b51199bedb6e5d2f8ec2568fb43) (Deaktivieren von WRITE\_SAME für RAID und virtuelle Hostadaptertreiber, in englischer Sprache)
 - [storvsc: NULL pointer dereference fix](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=b12bb60d6c350b348a4e1460cd68f97ccae9822e) (Beheben der NULL-Zeigerdereferenzierung, in englischer Sprache)
 - [storvsc: ring buffer failures may result in I/O freeze](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/storvsc_drv.c?id=e86fb5e8ab95f10ec5f2e9430119d5d35020c951) (Einfrieren von E/A durch Ringpufferfehler, in englischer Sprache)
 
@@ -189,4 +189,4 @@ Der [Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md) (waagent) is
 
 - Sie müssen den virtuellen Computer anschließend herunterfahren und die virtuelle Festplatte in Azure hochladen.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

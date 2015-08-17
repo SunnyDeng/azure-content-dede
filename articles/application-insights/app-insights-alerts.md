@@ -36,11 +36,11 @@ Um eine E-Mail zu erhalten, wenn eine Metrik einen Schwellenwert überschreitet,
 
 ![Klicken Sie auf dem Blatt "Warnungsregeln" auf "Warnung hinzufügen". Legen Sie Ihre App als die zu messende Ressource fest, geben Sie einen Namen für die Warnung ein, und wählen eine Metrik.](./media/app-insights-alerts/01-set-metric.png)
 
-Legen Sie die Ressource vor den anderen Eigenschaften fest. **Wählen Sie die Ressource "\(Komponenten\)" aus**, wenn Sie Benachrichtigungen für Leistungs- oder Nutzungsmetriken festlegen möchten.
+Legen Sie die Ressource vor den anderen Eigenschaften fest. **Wählen Sie die Ressource "(Komponenten)" aus**, wenn Sie Benachrichtigungen für Leistungs- oder Nutzungsmetriken festlegen möchten.
 
 Achten Sie auf die Einheiten, die beim Eingeben des Schwellenwerts gefordert sind.
 
-*Die Schaltfläche "Warnung hinzufügen" wird nicht angezeigt.* – Verwenden Sie ein Organisationskonto? Sie können Warnungen festlegen, wenn Sie für diese Anwendungsressource über Zugriffsberechtigungen für Besitzer oder Mitwirkende verfügen. Sehen Sie unter "Einstellungen" -\> "Benutzer" nach. [Erfahren Sie mehr über die Zugriffssteuerung][roles].
+*Die Schaltfläche "Warnung hinzufügen" wird nicht angezeigt.* – Verwenden Sie ein Organisationskonto? Sie können Warnungen festlegen, wenn Sie für diese Anwendungsressource über Zugriffsberechtigungen für Besitzer oder Mitwirkende verfügen. Sehen Sie unter "Einstellungen" -> "Benutzer" nach. [Erfahren Sie mehr über die Zugriffssteuerung][roles].
 
 ## Anzeigen Ihrer Warnungen
 
@@ -80,4 +80,4 @@ Zu den gängigen Warnungen zählen Folgende:
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

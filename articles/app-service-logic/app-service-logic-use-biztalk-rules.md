@@ -85,14 +85,14 @@ Sehen wir uns ein Beispielszenario an, während wir dafür die Geschäftslogik e
 In einem sehr einfachen Versicherungsszenario übermittelt der Antragsteller seinen Versicherungsanspruch (über einen beliebigen Client wie Website, Telefon-App usw.). Diese Anspruchserhebung wird an die Einheit zur Schadenbearbeitung gesendet. Basierend auf dem Ergebnis der Bearbeitung wird der Anspruch entweder genehmigt, abgewiesen oder zur weiteren manuellen Verarbeitung weitergeleitet. Die Einheit zur Schadenbearbeitung wäre in unserem Szenario für die Geschäftslogik für das System zuständig. Wenn wir diese Einheit näher betrachten, können wir Folgendes erkennen:
 
 ![Alt text][2]
- 
+
 Verwenden wir jetzt Geschäftsregeln zum Implementieren dieser Geschäftslogik.
 
 
 ##Erstellen der Regel-API-App
 
 
-1. Melden Sie sich beim Azure-Portal an, sodass Sie zur Homepage gelangen. 
+1. Melden Sie sich beim Azure-Portal an, sodass Sie zur Homepage gelangen.
 1. Klicken Sie auf "Neu" -> "Azure Marketplace" -> "API-Apps" - > "Biz Talk-Regeln" -> "Erstellen". ![Alt text][3]
 1. Geben Sie auf dem neuen Blatt, das geöffnet wird, Folgendes ein:  
 	1. Name – Geben Sie einen Namen für die Regel-API-App ein.
@@ -212,20 +212,20 @@ Das folgende Beispiel zeigt, wie diese API in C# verwendet werden könnte.
 
             JObject input = new JObject();
 
-			// The JSON object is to be of form {"<XMLSchemName>_<RootNodeName>":"<XML Instance String>". 
-			// In the below case, we are using XML Schema - "insruanceclaimsschema" and the root node is "Patient". 
-			// This is CASE SENSITIVE. 
+			// The JSON object is to be of form {"<XMLSchemName>_<RootNodeName>":"<XML Instance String>".
+			// In the below case, we are using XML Schema - "insruanceclaimsschema" and the root node is "Patient".
+			// This is CASE SENSITIVE.
             input.Add("insuranceclaimschema_Patient", xmlInstance);
             string stringContent = JsonConvert.SerializeObject(input);
 
 
             // Making REST call to Rules API App
             HttpClient httpClient = new HttpClient();
-	
+
 			// The url is the Host URL of the Rules API App
-            httpClient.BaseAddress = new Uri("https://rulesservice77492755b7b54c3f9e1df8ba0b065dc6.azurewebsites.net/");            
+            httpClient.BaseAddress = new Uri("https://rulesservice77492755b7b54c3f9e1df8ba0b065dc6.azurewebsites.net/");
             HttpContent httpContent = new StringContent(stringContent);
-            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");            
+            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
 
             // Invoking API "Execute" on policy "InsruranceClaimPolicy" and getting response JSON object. The url can be gotten from the API Definition Lens
             var postReponse = httpClient.PostAsync("api/Policies/InsuranceClaimPolicy?comp=Execute", httpContent).Result;
@@ -250,4 +250,4 @@ Einer der Hauptvorteile der Verwendung von Geschäftsregeln ist, dass Änderunge
 [10]: ./media/app-service-logic-use-biztalk-rules/APIDef.PNG
 [11]: ./media/app-service-logic-use-biztalk-rules/PublicAnon.PNG
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -40,7 +40,7 @@ Weitere Zusatzdateien können auch in der ZIP-Datei eingeschlossen werden und Fu
 ## Schnellstart-Beispiel: Definieren, Zusammenfassen und Registrieren eines benutzerdefinierten R-Moduls
 In diesem Beispiel wird veranschaulicht, wie die erforderlichen Dateien für ein benutzerdefiniertes R-Modul erstellt und in einer ZIP-Datei komprimiert werden und dann das Modul im Machine Learning-Arbeitsbereich registriert wird. Das Beispiel-Zip-Paket und die Beispiel-Dateien können [hier](http://go.microsoft.com/fwlink/?LinkID=524916&clcid=0x409) heruntergeladen werden.
 
-Denken Sie zum Beispiel an ein benutzerdefiniertes Modul **Add Rows**, das die Standardimplementierung des Moduls "Add Rows" ändert, welches zum Verketten von Zeilen \(Vorkommen\) aus zwei DataSets \(DataFrames\) verwendet wird. Das Standardmodul "Add Rows" hängt die Zeilen des zweiten Eingabe-DataSets mit dem "rbind"-Algorithmus am Ende des ersten Eingabe-DataSets an. Die benutzerdefinierte `CustomAddRows`Funktion akzeptiert auf ähnliche Weise zwei DataSets, aber auch einen zusätzlichen booleschen "swap"-Parameter als Eingabe. Wenn der "swap"-Parameter **FALSE** ist, wird dasselbe DataSet wie bei der Standard-Implementierung zurückgegeben. Wenn der "swap"-Parameter jedoch **TRUE** ist, werden stattdessen Zeilen des ersten Eingabe-DataSet an das Ende des zweiten DataSet angehängt. Die Datei, die die R `CustomAddRows` Funktion implementiert, die vom Modul **Custom Add Rows** offengelegt wird, enthält den folgenden R-Code.
+Denken Sie zum Beispiel an ein benutzerdefiniertes Modul **Add Rows**, das die Standardimplementierung des Moduls "Add Rows" ändert, welches zum Verketten von Zeilen (Vorkommen) aus zwei DataSets (DataFrames) verwendet wird. Das Standardmodul "Add Rows" hängt die Zeilen des zweiten Eingabe-DataSets mit dem "rbind"-Algorithmus am Ende des ersten Eingabe-DataSets an. Die benutzerdefinierte `CustomAddRows`Funktion akzeptiert auf ähnliche Weise zwei DataSets, aber auch einen zusätzlichen booleschen "swap"-Parameter als Eingabe. Wenn der "swap"-Parameter **FALSE** ist, wird dasselbe DataSet wie bei der Standard-Implementierung zurückgegeben. Wenn der "swap"-Parameter jedoch **TRUE** ist, werden stattdessen Zeilen des ersten Eingabe-DataSet an das Ende des zweiten DataSet angehängt. Die Datei, die die R `CustomAddRows` Funktion implementiert, die vom Modul **Custom Add Rows** offengelegt wird, enthält den folgenden R-Code.
 
 	CustomAddRows <- function(dataset1, dataset2, swap=FALSE) 
 	{
@@ -87,11 +87,11 @@ Um diese `CustomAddRows`Funktion als Azure Machine Learning-Modul offenzulegen, 
 	</Module>
 
  
-Beachten Sie, dass der Wert der **ID**-Attribute der **Eingabe** und **Arg**-Elemente in der XML-Datei mit den Funktionsparameternamen des R-Codes genau übereinstimmen muss \(\* dataset1 \* *Datensatz2* und *Swap* im Beispiel\). Entsprechend muss der Wert vom **EntryPoint**-Attribut des **Sprachen**-Elements mit dem Namen der Funktion im R-Skript exakt übereinstimmen \(\*CustomAddRows\* im Beispiel\). Im Gegensatz dazu muss das **ID**-Attribut für die **Ausgabe**-Elemente nicht den Variablen im R-Skript entsprechen. Wenn mehr als eine Ausgabe erforderlich ist, einfach eine Liste der R-Funktion zurückgeben, auf der die Ergebnisse in derselben Reihenfolge platziert sind, wie die Ausgaben in der XML-Datei deklariert sind.
+Beachten Sie, dass der Wert der **id**-Attribute der **Input**- und **Arg**-Elemente in der XML-Datei genau mit den Funktionsparameternamen des R-Codes übereinstimmen muss (*dataset1*, *dataset2* und *swap* im Beispiel). Entsprechend muss der Wert des **entryPoint**-Attributs des **Language**-Elements genau mit dem Namen der Funktion im R-Skript übereinstimmen (*CustomAddRows* im Beispiel). Im Gegensatz dazu muss das **ID**-Attribut für die **Ausgabe**-Elemente nicht den Variablen im R-Skript entsprechen. Wenn mehr als eine Ausgabe erforderlich ist, einfach eine Liste der R-Funktion zurückgeben, auf der die Ergebnisse in derselben Reihenfolge platziert sind, wie die Ausgaben in der XML-Datei deklariert sind.
 
 Speichern Sie diese beiden Dateien als *CustomAddRows.R* und *CustomAddRows.xml* und zippen Sie sie zusammen in einer *CustomAddRows.zip* Datei.
 
-Um sie im Machine Learning-Arbeitsbereich zu registrieren, besuchen Sie den Arbeitsbereich in Machine Learning Studio, klicken Sie unten auf die Schaltfläche **+NEW** und wählen Sie **MODULE -\> FROM ZIP PACKAGE**, um das neue Modul "Custom Add Rows" hochzuladen.
+Um sie im Machine Learning-Arbeitsbereich zu registrieren, besuchen Sie den Arbeitsbereich in Machine Learning Studio, klicken Sie unten auf die Schaltfläche **+NEW** und wählen Sie **MODULE -> FROM ZIP PACKAGE**, um das neue Modul "Custom Add Rows" hochzuladen.
 
 ![](http://i.imgur.com/RFJhCls.png)
 
@@ -115,7 +115,7 @@ Innerhalb des**Modul**-Elements können Sie ein optionales **Besitzer**-Element 
 * Der Inhalt des **Beschreibungs**-Elements darf 128 Zeichen nicht überschreiten.
 * Der Inhalt des **Besitzer**-Elements darf 32 Zeichen nicht überschreiten.
 
-\*\*Gibt an, ob die Ergebnisse eines Moduls deterministisch oder nicht deterministisch sind.
+**Gibt an, ob die Ergebnisse eines Moduls deterministisch oder nicht deterministisch sind.
 
 Standardmäßig gelten alle Module als deterministisch. Das heißt, bei einer unveränderlichen Gruppe von Parametern sollte das Modul jedes Mal, wenn es ausgeführt wird, die gleichen Ergebnisse zurückgeben. Bei diesem Verhalten wird Azure Machine Learning Studio die Module nicht erneut ausführen, die als deterministisch gekennzeichnet sind, es sei denn, ein Parameter oder die Eingabedaten haben sich geändert. Zwischengespeicherte Ergebnisse werden zurückgegeben, wodurch Experimente schneller ausgeführt werden.
 
@@ -128,7 +128,7 @@ Das**Sprachen**-Element in Ihrer XML-Definitionsdatei wird verwendet, um die Spr
 
 
 ### Ports
-Die Eingabe- und Ausgabeports für ein benutzerdefiniertes Modul sind in den untergeordneten Elementen des Abschnitts **Ports** der XML-Definitionsdatei angegeben. Die Reihenfolge dieser Elemente bestimmt das Layout \(UX\) für die Benutzer. Die erste untergeordnete **Eingabe** oder **Ausgabe**, die im **Ports** -Element der XML-Datei aufgeführt wird, wird der Eingabe-Port außen links in der Machine Learning UX sein. Jeder Eingabe- und Ausgabeport verfügt möglicherweise über ein untergeordnetes **Beschreibungs**-Element, das den Text angibt, der gezeigt wird, wenn ein Benutzer den Mauszeiger über den Port in der Machine Learning-Benutzeroberfläche bewegt.
+Die Eingabe- und Ausgabeports für ein benutzerdefiniertes Modul sind in den untergeordneten Elementen des Abschnitts **Ports** der XML-Definitionsdatei angegeben. Die Reihenfolge dieser Elemente bestimmt das Layout (UX) für die Benutzer. Die erste untergeordnete **Eingabe** oder **Ausgabe**, die im **Ports** -Element der XML-Datei aufgeführt wird, wird der Eingabe-Port außen links in der Machine Learning UX sein. Jeder Eingabe- und Ausgabeport verfügt möglicherweise über ein untergeordnetes **Beschreibungs**-Element, das den Text angibt, der gezeigt wird, wenn ein Benutzer den Mauszeiger über den Port in der Machine Learning-Benutzeroberfläche bewegt.
 
 **Port-Regeln**:
 
@@ -137,7 +137,7 @@ Die Eingabe- und Ausgabeports für ein benutzerdefiniertes Modul sind in den unt
 ### Input-Elemente
 Eingabeports ermöglichen Benutzern Daten an Ihren Arbeitsbereich und Ihre R-Funktion zu übergeben. Die unterstützten **Datentypen** für Eingabe-Ports lauten folgendermaßen:
 
-**DataTable:** Dieser Typ wird als data.frame an Ihre R-Funktion übergeben. Tatsächlich werden alle Typen \(z. B. CSV-Dateien oder ARFF-Dateien\), die von Machine Learning unterstützt werden und mit **DataTable** kompatibel sind, automatisch in eine data.frame konvertiert.
+**DataTable:** Dieser Typ wird als data.frame an Ihre R-Funktion übergeben. Tatsächlich werden alle Typen (z. B. CSV-Dateien oder ARFF-Dateien), die von Machine Learning unterstützt werden und mit **DataTable** kompatibel sind, automatisch in eine data.frame konvertiert.
 
 		<Input id="dataset1" name="Input 1" type="DataTable" isOptional="false">
         	<Description>Input Dataset 1</Description>
@@ -160,11 +160,11 @@ Für benutzerdefinierte R-Module muss die ID für einen Zip-Port nicht mit den P
 * Der Wert des **Namen**-Attributs vom **Eingabe**-Element darf nicht länger als 64 Zeichen sein.
 * Der Inhalt des **Beschreibungs**-Elements darf 128 Zeichen nicht überschreiten.
 * Der Wert des **Typen**-Attributs vom **Eingabe**-Element muss *Zip* oder *DataTable* sein.
-* Der Wert des **IsOptional** -Attributs vom **Eingabe**-Element ist nicht erforderlich \(und standardmäßig *false*, wenn nicht angegeben\); aber wenn er angegeben wird, muss er *true* oder *false* sein.
+* Der Wert des **IsOptional** -Attributs vom **Eingabe**-Element ist nicht erforderlich (und standardmäßig *false*, wenn nicht angegeben); aber wenn er angegeben wird, muss er *true* oder *false* sein.
 
 ### Ausgabe-Elemente
 
-**Standard-Ausgabe-Ports:** Ausgabe-Ports sind den Rückgabewerten Ihrer R-Funktion zugeordnet, die anschließend von nachfolgenden Modulen verwendet werden können. *DataTable* ist zurzeit der einzige unterstützte Standardtyp für Ausgabeports. \(Unterstützung für *Learners* und *Transforms* in Kürze zu erwarten.\) Eine *DataTable*-Ausgabe wird wie folgt definiert:
+**Standard-Ausgabe-Ports:** Ausgabe-Ports sind den Rückgabewerten Ihrer R-Funktion zugeordnet, die anschließend von nachfolgenden Modulen verwendet werden können. *DataTable* ist zurzeit der einzige unterstützte Standardtyp für Ausgabeports. (Unterstützung für *Learners* und *Transforms* in Kürze zu erwarten.) Eine *DataTable*-Ausgabe wird wie folgt definiert:
 
 	<Output id="dataset" name="Dataset" type="DataTable">
 		<Description>Combined dataset</Description>
@@ -174,7 +174,7 @@ Für Ausgaben in benutzerdefinierten R-Modulen muss der Wert des **ID**-Attribut
  
 Wenn Sie beispielsweise "Dataset", "Dataset1" und "Dataset2" von links nach rechts an die Ausgabe-Ports dataset, dataset1 und dataset2 ausgeben möchten, definieren Sie die Ausgabe-Ports in der Datei "CustomAddRows.xml" wie folgt:
 
-Wenn Sie beispielsweise das Moul **Custom Add Rows** ändern möchten, um die ursprünglichen beiden DataSets, *dataset1* und *dataset2*, zusätzlich zu den beiden neu verknüpften *DataSets* ausgeben möchten \(in Reihenfolge von links nach rechts als *dataset*, *dataset1*, *dataset2*\), definieren Sie die Ausgabe-Ports in der Datei „CustomAddRows.xml“ wie folgt:
+Wenn Sie beispielsweise das Moul **Custom Add Rows** ändern möchten, um die ursprünglichen beiden DataSets, *dataset1* und *dataset2*, zusätzlich zu den beiden neu verknüpften *DataSets* ausgeben möchten (in Reihenfolge von links nach rechts als *dataset*, *dataset1*, *dataset2*), definieren Sie die Ausgabe-Ports in der Datei „CustomAddRows.xml“ wie folgt:
 
 	<Ports> 
 		<Output id="dataset" name="Dataset Out" type="DataTable"> 
@@ -223,7 +223,7 @@ Zusätzliche Daten können an die R-Funktion über die Modulparameter übergeben
 ### Arg-Element
 Ein Modul-Parameter wird mithilfe des untergeordneten**Arg**-Elements vom Abschnitt **Argumente** der XML-Definitionsdatei definiert. Wie bei den untergeordneten Elementen im Abschnitt **Ports** definiert die Reihenfolge der Parameter im Abschnitt **Argumente** das Layout in der UX. Die Parameter werden von oben nach unten in der Benutzeroberfläche in der gleichen Reihenfolge, in der sie in der XML-Datei definiert sind, angezeigt. Die von Machine Learning für Parameter unterstützten Typen sind unten aufgeführt.
 
-**int** – ein Parameter des Typs Ganzzahl \(32 Bit\).
+**int** – ein Parameter des Typs Ganzzahl (32 Bit).
 
 		<Arg id="intValue1" name="Int Param" type="int">
 			<Properties min="0" max="100" default="0" />
@@ -309,7 +309,7 @@ Ein Modul-Parameter wird mithilfe des untergeordneten**Arg**-Elements vom Abschn
 		* Alle
 
                             							
-**Dropdown**: eine vom Benutzer angegebene aufgezählte \(Dropdown\)-Liste. Angabe der Dropdown-Elemente werden innerhalb des**Eigenschaften**-Elements mithilfe eines **Elementen**-Element angegeben. Die **ID** für jedes **Element** muss eindeutig sein und eine gültige R-Variable und der Name des Elements entsprechen sowohl dem Text, der Benutzern angezeigt wird, und dem Wert, der an die R-Funktion übergeben wird.
+**Dropdown**: eine vom Benutzer angegebene aufgezählte (Dropdown)-Liste. Angabe der Dropdown-Elemente werden innerhalb des**Eigenschaften**-Elements mithilfe eines **Elementen**-Element angegeben. Die **ID** für jedes **Element** muss eindeutig sein und eine gültige R-Variable und der Name des Elements entsprechen sowohl dem Text, der Benutzern angezeigt wird, und dem Wert, der an die R-Funktion übergeben wird.
 
 	<Arg id="color" name="Color" type="DropDown">
       <Properties default="red">
@@ -364,4 +364,4 @@ Die Ausführungsumgebung für das R-Skript verwendet die gleiche Version von R w
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

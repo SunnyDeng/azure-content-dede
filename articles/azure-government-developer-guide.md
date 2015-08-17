@@ -38,7 +38,7 @@
 
 Microsoft Azure Government ist eine separate Instanz des Microsoft Azure Service, die auf die Anforderungen an die Sicherheit und Kompatibilität von Bundes-, Landes- und kommunalen Behörden sowie deren Lösungsanbietern ausgerichtet ist. Azure Government bietet die physische Isolation und Netzwerkisolation von nicht behördlichen Bereitstellungen sowie überprüftes US-Personal.
 
-Microsoft bietet eine Reihe von Tools zum Erstellen und Bereitstellen von Cloud-Anwendungen für den globalen Microsoft Azure Service \("globaler Dienst"\) und Microsoft Azure Government.
+Microsoft bietet eine Reihe von Tools zum Erstellen und Bereitstellen von Cloud-Anwendungen für den globalen Microsoft Azure Service ("globaler Dienst") und Microsoft Azure Government.
 
 Beim Erstellen und Bereitstellen von Anwendungen für Azure Government-Dienste müssen die Entwickler anders als beim globalen Dienst die wichtigsten Unterschiede zwischen den beiden Diensten kennen. Dies gilt insbesondere bei der Einrichtung und Konfiguration der Programmierumgebung, beim Konfigurieren der Endpunkte, beim Erstellen von Anwendungen sowie bei deren Bereitstellung als Dienste für Azure Government.
 
@@ -80,13 +80,13 @@ Dienstart|Azure – Öffentlich|Azure Government
 ---|---|---
 Azure Government-Startseite|windowsazure.com|microsoftazure.us
 Verwaltungsportal|manage.windowsazure.com|manage.windowsazure.us
-Allgemein|*.windows.net\|*.usgovcloudapi.net
-Core|*.core.windows.net\|*.core.usgovcloudapi.net
-Compute|*.cloudapp.net\|*.usgovcloudapp.net
-Blob-Speicher|*.blob.core.windows.net\| *.blob.core.usgovcloudapi.net Queue Storage\|*.queue.core.windows.net\|*.queue.core.usgovcloudapi.net
-Tabellenspeicher|*.table.core.windows.net\|*.table.core.usgovcloudapi.net
+Allgemein|*.windows.net|*.usgovcloudapi.net
+Core|*.core.windows.net|*.core.usgovcloudapi.net
+Compute|*.cloudapp.net|*.usgovcloudapp.net
+Blob-Speicher|*.blob.core.windows.net| *.blob.core.usgovcloudapi.net Queue Storage|*.queue.core.windows.net|*.queue.core.usgovcloudapi.net
+Tabellenspeicher|*.table.core.windows.net|*.table.core.usgovcloudapi.net
 Dienstverwaltung|management.core.windows.net|management.core.usgovcloudapi.net
-SQL-Datenbank|*.database.windows.net\|*.database.usgovcloudapi.net
+SQL-Datenbank|*.database.windows.net|*.database.usgovcloudapi.net
 
 ## <a name="next"></a>Nächste Schritte
 Weitere Informationen zu Azure Government und zur Qualifikation von Unternehmen für den Zugriff finden Sie unter <A href="http://azure.com/gov">http://www.azure.com/gov</a>.
@@ -105,4 +105,4 @@ Weitere Informationen zu Azure Government und zur Qualifikation von Unternehmen 
 [Link 2 to another azure.microsoft.com documentation topic]: web-sites-custom-domain-name.md
 [Link 3 to another azure.microsoft.com documentation topic]: storage-whatis-account.md
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -91,9 +91,9 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 
 5.	(optional) Wenn das Ubuntu-System ein Fehler feststellt und neu gestartet wird, wartet es oftmals an der Grub-Starteingabeaufforderung auf eine Benutzereingabe, wodurch das entsprechende Starten des Systems verhindert wird. Um dies zu unterbinden, müssen Sie die folgenden Schritte ausführen:
 
-	a) Öffnen Sie die Datei /etc/grub.d/00_header.
+	a) Öffnen Sie die Datei /etc/grub.d/00\_header.
 
-	b) Suchen Sie in der **make_timeout()**-Funktion **if ["\${recordfail}" = 1 ]; then**
+	b) Suchen Sie in der **make\_timeout()**-Funktion **if ["\\${recordfail}" = 1 ]; then**
 
 	c) Ändern Sie die Anweisung unterhalb dieser Zeile in **set timeout=5**.
 
@@ -125,4 +125,4 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

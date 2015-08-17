@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="04/24/2015" 
 	ms.author="ggailey777"/>
+
 
 # Speichern von Projektcode in der Quellcodeverwaltung
 
@@ -36,8 +38,7 @@ Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst durch Be
 
 	Die erforderlichen Schritte zum Installieren von Git variieren je nach Betriebssystem. Informationen zu Betriebssystem-spezifischen Distributionen und zur Installation finden Sie unter [Installieren von Git].
 
-	> [AZURE.NOTE]
-	> Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
+	> [AZURE.NOTE]Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
 
 2. Öffnen Sie eine Befehlszeile, zum Beispiel **GitBash** (Windows) oder **Bash** (Unix Shell). Auf OS X-Systemen können Sie auf die Befehlszeile über die **Terminal**-Anwendung zugreifen.
 
@@ -94,7 +95,7 @@ Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Servers
 	
 	Daraufhin wird eine Reihe von Ausgaben für die Bereitstellung des Commits im mobilen Dienst angezeigt.
 
-6. Kehren Sie zurück zum Verwaltungsportal, klicken Sie auf die Registerkarte **Daten**, klicken Sie auf die Tabelle **TodoItem**, klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen** aus.
+6. Kehren Sie zurück zum Verwaltungsportal, klicken Sie auf die Registerkarte **Daten**, klicken Sie anschließend auf die Tabelle **TodoItem**, klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen** aus.
 7. 
 	Beachten Sie, dass das angezeigte Skript für die Einfügen-Operation denselben JavaScript-Code enthält, den Sie soeben in Ihr Repository hochgeladen haben.
 
@@ -104,7 +105,7 @@ Mobile Services bietet Zugang zum kompletten Umfang der Node.js-Basismodule, und
 
 Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobilen Dienst besteht darin, Referenzen zur package.json-Datei des Diensts hinzuzufügen. Als Nächstes fügen Sie das Node.js-Modul [node-uuid] zu Ihrem mobilen Dienst hinzu, indem Sie die package.json-Datei aktualisieren. Wenn die Aktualisierung mithilfe von Push an Azure übertragen wird, wird der mobile Dienst neu gestartet, und das Modul wird installiert. Mit diesem Modul können Sie nun neue GUID-Werte für die **uuid**-Eigenschaft in eingefügten Elementen generieren.
 
-2. Wechseln Sie zum Ordner `.\service` Ihres lokalen Git-Repositorys, und öffnen Sie die Datei "package.json" in einem Text-Editor. Fügen Sie im Objekt **dependencies** das folgende Feld hinzu:
+2. Wechseln Sie zum Ordner `.\service` Ihres lokalen Git-Repositorys, und öffnen Sie die Datei "package.json" in einem Text-Editor. Fügen Sie dem Objekt **dependencies** das folgende Feld hinzu:
 
 		"node-uuid": "~1.4.3"
 
@@ -133,11 +134,11 @@ Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobil
 
 Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer Quellcodeverwaltung zu speichern. Die folgenden Artikel enthalten weiterführende Informationen zu Serverskripts und benutzerdefinierten APIs:
 
-+ [Arbeiten mit Serverskripts in Mobile Services] 
-	<br/>Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
++ [Arbeiten mit Serverskripts in Mobile Services] <br/>
+Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
 
-+ [Aufrufen einer benutzerdefinierten API vom Client] 
-	<br/> Zeigt, wie benutzerdefinierte APIs erstellt werden, die vom Client aufgerufen werden können.
++ [Aufrufen einer benutzerdefinierten API vom Client] <br/>
+ Zeigt, wie benutzerdefinierte APIs erstellt werden, die vom Client aufgerufen werden können.
 
 <!-- Anchors. -->
 [Enable source control in your mobile service]: #enable-source-control
@@ -158,10 +159,9 @@ Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer 
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-ios-get-started-data.md
 [Arbeiten mit Serverskripts in Mobile Services]: mobile-services-how-to-use-server-scripts.md
 [Azure Management Portal]: https://manage.windowsazure.com/
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Aufrufen einer benutzerdefinierten API vom Client]: mobile-services-ios-call-custom-api.md
 [Module]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

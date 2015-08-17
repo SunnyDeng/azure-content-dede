@@ -18,7 +18,7 @@
 
 # Überwachen eines DocumentDB-Kontos über das Azure-Vorschauportal 
 
-Sie können Ihre DocumentDB-Konten im [Microsoft Azure-Vorschauportal](https://portal.azure.com/) überwachen. Für jedes DocumentDB-Konto sind sowohl Leistungsmetriken \(wie Anforderungen und Serverfehler\) als auch Nutzungsmetriken \(wie belegter Speicher\) verfügbar.
+Sie können Ihre DocumentDB-Konten im [Microsoft Azure-Vorschauportal](https://portal.azure.com/) überwachen. Für jedes DocumentDB-Konto sind sowohl Leistungsmetriken (wie Anforderungen und Serverfehler) als auch Nutzungsmetriken (wie belegter Speicher) verfügbar.
 
 ## Vorgehensweise: Anzeigen von Leistungsmetriken für ein DocumentDB-Konto
 1.	Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf **Alle durchsuchen**, dann auf **DocumentDB-Konten** und anschließend auf den Namen des DocumentDB-Kontos, dessen Leistungsmetriken Sie anzeigen möchten.
@@ -30,7 +30,7 @@ Sie können Ihre DocumentDB-Konten im [Microsoft Azure-Vorschauportal](https://p
 
 
 3.	Wenn Sie auf das Detail **Anforderungen insgesamt** oder **Durchschnittliche Anforderungen pro Sekunde** klicken, wird ein detailliertes Blatt **Metrik** geöffnet.
-4.	Das Blatt **Metrik** zeigt Details zu den ausgewählten Metriken. Im oberen Teil des Fensters befindet sich ein Diagramm und darunter eine Tabelle mit einer Aggregation der Werte der ausgewählten Metriken, also beispielsweise Durchschnitt, Minimum und Maximum. Das Fenster „Metrik“ zeigt auch eine Liste von Warnung, die definiert wurden. Sie ist gefiltert nach den im aktuellen Fenster „Metrik“ anzeigten Metriken \(wenn Sie eine Reihe von Warnungen haben, dann werden auf diese Weise hier nur die relevanten gezeigt\).   
+4.	Das Blatt **Metrik** zeigt Details zu den ausgewählten Metriken. Im oberen Teil des Fensters befindet sich ein Diagramm und darunter eine Tabelle mit einer Aggregation der Werte der ausgewählten Metriken, also beispielsweise Durchschnitt, Minimum und Maximum. Das Fenster „Metrik“ zeigt auch eine Liste von Warnung, die definiert wurden. Sie ist gefiltert nach den im aktuellen Fenster „Metrik“ anzeigten Metriken (wenn Sie eine Reihe von Warnungen haben, dann werden auf diese Weise hier nur die relevanten gezeigt).   
 
 	![Screenshot des Blatts "Metriken"](./media/documentdb-monitor-accounts/madocdb2.png)
 
@@ -42,7 +42,7 @@ Sie können Ihre DocumentDB-Konten im [Microsoft Azure-Vorschauportal](https://p
 2.	Das Blatt **Diagramm bearbeiten** bietet Optionen zum Ändern der in diesem Detail angezeigten Metriken sowie deren Zeitraum. ![Screenshot des Blatts "Diagramm bearbeiten"](./media/documentdb-monitor-accounts/madocdb4.png)
 
 3.	Sie können die im Detail angezeigten Metriken verändern, indem Sie einfach die verfügbaren Leistungsmetriken auswählen oder löschen und dann unten auf dem Blatt auf **Speichern** klicken.
-4.	Um den Zeitraum zu ändern, wählen Sie einen anderen Zeitraum \(z. B. **Benutzerdefiniert**\) und klicken unten auf dem Blatt auf **Speichern**.  
+4.	Um den Zeitraum zu ändern, wählen Sie einen anderen Zeitraum (z. B. **Benutzerdefiniert**) und klicken unten auf dem Blatt auf **Speichern**.  
 
 	![Screenshot des Details "Zeitraum" auf dem Blatt "Diagramm bearbeiten" mit Eingabe eines benutzerdefinierten Zeitraums](./media/documentdb-monitor-accounts/madocdb5.png)
 
@@ -66,7 +66,7 @@ Sie können diesen Bereich jetzt wie jeden anderen Metrikbereich behandeln und i
 2.	Innerhalb des Fokus **Nutzung** können Sie standardmäßig Folgendes anzeigen:
 	*	Die geschätzten Kosten bis dato des DocumentDB-Kontos im aktuellen Abrechnungszeitraum.
 	*	Im Konto belegter Speicher
-	*	Maximal verfügbarer Speicher des Kontos \(Schwellenwert\)
+	*	Maximal verfügbarer Speicher des Kontos (Schwellenwert)
 	*	Nutzung von Benutzern und Berechtigungen
 	*	Nutzung von Anlagen
 
@@ -90,4 +90,4 @@ Sie können diesen Bereich jetzt wie jeden anderen Metrikbereich behandeln und i
 Weitere Informationen zur Kapazität von DocumentDB finden Sie unter [Verwalten der Kapazität von DocumentDB](documentdb-manage.md).
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

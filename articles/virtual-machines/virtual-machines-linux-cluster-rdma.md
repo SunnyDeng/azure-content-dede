@@ -17,9 +17,9 @@ ms.service="virtual-machines"
 
 # Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen
 
-In diesem Artikel wird beschrieben, wie Sie einen Linux RDMA-Cluster mit [virtuellen Computern der Größe A8 und A9](virtual-machines-a8-a9-a10-a11-specs.md) in Azure einrichten, um parallele MPI-Anwendungen \(Message Passing Interface\) auszuführen. Wenn Sie Linux-basierte A8- und A9-VMs zum Ausführen einer unterstützten MPI-Implementierung konfigurieren, erfolgt die Kommunikation der MPI-Anwendungen in Azure effizient über ein auf RDMA-Technologie \(Remote Direct Memory Access\) basierenden Netzwerk mit niedriger Latenz und hohem Durchsatz.
+In diesem Artikel wird beschrieben, wie Sie einen Linux RDMA-Cluster mit [virtuellen Computern der Größe A8 und A9](virtual-machines-a8-a9-a10-a11-specs.md) in Azure einrichten, um parallele MPI-Anwendungen (Message Passing Interface) auszuführen. Wenn Sie Linux-basierte A8- und A9-VMs zum Ausführen einer unterstützten MPI-Implementierung konfigurieren, erfolgt die Kommunikation der MPI-Anwendungen in Azure effizient über ein auf RDMA-Technologie (Remote Direct Memory Access) basierenden Netzwerk mit niedriger Latenz und hohem Durchsatz.
 
->[AZURE.NOTE]Azure Linux RDMA wird derzeit mit Intel MPI Library 5.0 unter SUSE Linux Enterprise Server 12 \(SLES 12\) unterstützt.
+>[AZURE.NOTE]Azure Linux RDMA wird derzeit mit Intel MPI Library 5.0 unter SUSE Linux Enterprise Server 12 (SLES 12) unterstützt.
 >
 > Azure bietet zudem rechenintensive A10- und A11-Instanzen mit Verarbeitungskapazitäten ähnlich denjenigen von A8- und A9-Instanzen, aber ohne eine Verbindung zu einem RDMA-Back-End-Netzwerk. Wenn Sie MPI-Workloads in Azure ausführen möchten, erzielen Sie in der Regel mit den A8- und A9-Instanzen eine optimale Leistung.
 
@@ -28,9 +28,9 @@ In diesem Artikel wird beschrieben, wie Sie einen Linux RDMA-Cluster mit [virtue
 
 Mit den folgenden Methoden können Sie einen Linux RDMA-Cluster mit oder ohne eine Auftragsplanung erstellen.
 
-* **HPC Pack** – Sie können einen Microsoft HPC Pack-Cluster in Azure erstellen und Computeknoten hinzufügen, auf denen unterstützte Linux-Distributionen ausgeführt werden \(Unterstützung ab HPC Pack 2012 R2 Update 2\). Einige Linux-Knoten können für den Zugriff auf das RDMA-Netzwerk konfiguriert werden. Informationen zu den ersten Schritten finden Sie in der [Dokumentation zu HPC Pack](http://go.microsoft.com/fwlink/?LinkId=617894).
+* **HPC Pack** – Sie können einen Microsoft HPC Pack-Cluster in Azure erstellen und Computeknoten hinzufügen, auf denen unterstützte Linux-Distributionen ausgeführt werden (Unterstützung ab HPC Pack 2012 R2 Update 2). Einige Linux-Knoten können für den Zugriff auf das RDMA-Netzwerk konfiguriert werden. Informationen zu den ersten Schritten finden Sie in der [Dokumentation zu HPC Pack](http://go.microsoft.com/fwlink/?LinkId=617894).
 
-* **Azure-CLI-Skripts** – Sie können die [Azure-Befehlszeilenschnittstelle](../xplat-cli.md) \(CLI\) für Mac, Linux und Windows zum Erstellen eigener Skripts für die Bereitstellung eines virtuellen Netzwerks und der übrigen Komponenten verwenden, die zum Erstellen eines Linux-Clusters erforderlich sind. Über die CLI im asm-Modus \(Azure Service Management\) werden die Clusterknoten seriell bereitgestellt, daher kann die Bereitstellung vieler Computeknoten einige Minuten in Anspruch nehmen. Ein Beispiel finden Sie in den Schritten im weiteren Verlauf dieses Artikels.
+* **Azure-CLI-Skripts** – Sie können die [Azure-Befehlszeilenschnittstelle](../xplat-cli.md) (CLI) für Mac, Linux und Windows zum Erstellen eigener Skripts für die Bereitstellung eines virtuellen Netzwerks und der übrigen Komponenten verwenden, die zum Erstellen eines Linux-Clusters erforderlich sind. Über die CLI im asm-Modus (Azure Service Management) werden die Clusterknoten seriell bereitgestellt, daher kann die Bereitstellung vieler Computeknoten einige Minuten in Anspruch nehmen. Ein Beispiel finden Sie in den Schritten im weiteren Verlauf dieses Artikels.
 
 * **Azure-Ressourcen-Manager-Vorlagen** – Durch Erstellen einer einfachen Azure-Ressourcen-Manager-JSON-Vorlagendatei und Ausführen der Azure-CLI-Befehle im arm-Modus oder unter Verwendung des Azure-Vorschauportals können Sie mehrere A8- und A9-Linux-VMs bereitstellen sowie virtuelle Netzwerke, statische IP-Adressen, DNS-Einstellungen und andere Ressourcen definieren, um einen Computecluster einzurichten, der das RDMA-Netzwerk nutzen und MPI-Workloads ausführen kann. Sie können [eine eigene Vorlage erstellen](../resource-group-authoring-templates.md) oder auf der [Seite "Azure Schnellstart Vorlagen"](https://azure.microsoft.com/documentation/templates/) nach Vorlagen von Microsoft oder der Community suchen, um die gewünschte Lösung bereitzustellen. Ressourcen-Manager-Vorlagen stellen in der Regel die schnellste und zuverlässigste Möglichkeit zum Bereitstellen eines Linux-Clusters dar.
 
@@ -51,7 +51,7 @@ Die folgenden Schritte helfen Ihnen beim Bereitstellen einer SLES-12-VM, beim In
 
 ### Bereitstellen einer SLES 12-VM
 
-Führen Sie nach der Anmeldung bei Azure mit der Azure-Befehlszeilenschnittstelle den Befehl `azure config list` aus, um sicherzustellen, dass die Befehlszeilenschnittstelle sich im asm-Modus \(Azure Service Management\) befindet. Wenn dies nicht der Fall ist, aktivieren Sie den Modus durch Ausführen dieses Befehls:
+Führen Sie nach der Anmeldung bei Azure mit der Azure-Befehlszeilenschnittstelle den Befehl `azure config list` aus, um sicherzustellen, dass die Befehlszeilenschnittstelle sich im asm-Modus (Azure Service Management) befindet. Wenn dies nicht der Fall ist, aktivieren Sie den Modus durch Ausführen dieses Befehls:
 
 ```
 azure config mode asm
@@ -85,17 +85,17 @@ azure vm create -g <username> -p <password> -c <cloud-service-name> -l <location
 
 Hierbei gilt:
 
-* Die Größe \(in diesem Beispiel A9\) kann A8 oder A9 sein.
+* Die Größe (in diesem Beispiel A9) kann A8 oder A9 sein.
 
-* Die externe SSH-Portnummer \(in diesem Beispiel 10004\) ist eine beliebige gültige Portnummer. Die interne SSH-Portnummer wird auf 22 festgelegt.
+* Die externe SSH-Portnummer (in diesem Beispiel 10004) ist eine beliebige gültige Portnummer. Die interne SSH-Portnummer wird auf 22 festgelegt.
 
 * Ein neuer Clouddienst wird in der durch den Standort festgelegten Azure-Region erstellt. Geben Sie einen Standort, z. B. "West US" ein, an dem die A8- und A9-Instanzen verfügbar sind.
 
-* Der Imagename kann derzeit `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708` \(kostenlos\) oder `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-priority-v20150708` für SUSE Priority Support \(gebührenpflichtig\)
+* Der Imagename kann derzeit `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708` (kostenlos) oder `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-priority-v20150708` für SUSE Priority Support (gebührenpflichtig)
 
 ### Anpassen des virtuellen Computers
 
-Nach Abschluss der VM-Bereitstellung stellen Sie mithilfe der externen IP-Adresse des virtuellen Computers \(oder des DNS-Namens\) und der externen Portnummer, die Sie konfiguriert haben, eine SSH-Verbindung zum virtuellen Computer her, und nehmen Sie die Anpassungen vor. Weitere Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird](virtual-machines-linux-how-to-log-on.md).
+Nach Abschluss der VM-Bereitstellung stellen Sie mithilfe der externen IP-Adresse des virtuellen Computers (oder des DNS-Namens) und der externen Portnummer, die Sie konfiguriert haben, eine SSH-Verbindung zum virtuellen Computer her, und nehmen Sie die Anpassungen vor. Weitere Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird](virtual-machines-linux-how-to-log-on.md).
 
 >[AZURE.NOTE]Microsoft Azure bietet keinen Stammzugriff auf Linux-VMs. Wenn Sie als Benutzer angemeldet sind, können Sie `sudo –s` verwenden, um Administratorzugriff zu erhalten.
 
@@ -103,7 +103,7 @@ Nach Abschluss der VM-Bereitstellung stellen Sie mithilfe der externen IP-Adress
 
 >[AZURE.IMPORTANT]Zurzeit empfiehlt es sich nicht, Kernel-Updates zu installieren, da dies zu Problemen mit den Linux RDMA-Treibern führen kann.
 
-**Intel MPI** – Laden Sie die Intel MPI Library 5.0-Laufzeit von der ["Intel.com"-Website](https://software.intel.com/en-us/intel-mpi-library/) herunter, und installieren Sie sie. Nach der Registrierung bei Intel folgen Sie dem Link in der Bestätigungs-E-Mail auf die entsprechende Webseite, und kopieren Sie den Downloadlink der TGZ-Datei für die entsprechende Version von Intel MPI.
+**Intel MPI** – Laden Sie die Intel MPI Library 5.0-Laufzeit von der ["Intel.com"-Website](https://software.intel.com/de-de/intel-mpi-library/) herunter, und installieren Sie sie. Nach der Registrierung bei Intel folgen Sie dem Link in der Bestätigungs-E-Mail auf die entsprechende Webseite, und kopieren Sie den Downloadlink der TGZ-Datei für die entsprechende Version von Intel MPI.
 
 Führen Sie zum Installieren von Intel MPI auf dem virtuellen Computer Befehle aus, die etwa folgendermaßen aussehen:
 
@@ -329,7 +329,7 @@ In einem funktionierenden Cluster mit zwei Knoten sollte eine Ausgabe ähnlich d
 
 * Für Linux-VMs ist Eth1 für RDMA-Netzwerkverkehr reserviert. Ändern Sie keine Eth1-Einstellungen oder anderen Informationen in der Konfigurationsdatei, die sich auf dieses Netzwerk beziehen.
 
-* In Azure wird IP over InfiniBand \(IB\) nicht unterstützt. Nur RDMA over IB wird unterstützt.
+* In Azure wird IP over InfiniBand (IB) nicht unterstützt. Nur RDMA over IB wird unterstützt.
 
 * Auf Linux-VMs ist Eth0 für den regulären Azure-Netzwerkverkehr reserviert.
 
@@ -337,6 +337,6 @@ In einem funktionierenden Cluster mit zwei Knoten sollte eine Ausgabe ähnlich d
 
 * Versuchen Sie, Ihre Linux-MPI-Anwendungen im Linux-Cluster bereitzustellen und auszuführen.
 
-* Anleitungen zu Intel MPI finden Sie in der [Dokumentation zu Intel MPI Library](https://software.intel.com/en-us/articles/intel-mpi-library-documentation/).
+* Anleitungen zu Intel MPI finden Sie in der [Dokumentation zu Intel MPI Library](https://software.intel.com/de-de/articles/intel-mpi-library-documentation/).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

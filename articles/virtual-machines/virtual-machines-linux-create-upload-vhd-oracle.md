@@ -227,4 +227,4 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

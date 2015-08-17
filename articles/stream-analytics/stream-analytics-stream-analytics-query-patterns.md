@@ -1,11 +1,13 @@
 <properties
 	pageTitle="Abfragemuster in Azure Stream Analytics | Microsoft Azure"
-	description="Azure Stream Analytics-Leitfaden mit Beispielen für die Abfragesprache"
+	description="Allgemeine Abfragemuster in Azure Stream Analytics"
+	keywords="stream analytics, sample, query, language, guide, patterns"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
 	manager="paulettm"
 	editor="cgronlun"/>
+
 
 <tags
 	ms.service="stream-analytics"
@@ -13,11 +15,12 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="07/30/2015"
+	ms.date="08/03/2015"
 	ms.author="jeffstok"/>
 
 
-# Azure Stream Analytics-Leitfaden mit Beispielen für die Abfragesprache #
+
+# Allgemeine Abfragemuster in Azure Stream Analytics  #
 
 ## Einführung ##
 Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache formuliert, die [hier](https://msdn.microsoft.com/library/azure/dn834998.aspx) dokumentiert ist. In diesem Dokument werden anhand von Praxisbeispielen Lösungen für mehrere allgemeine Abfragemuster veranschaulicht. Das Dokument wird nach und nach mit weiteren Mustern aktualisiert.
@@ -51,7 +54,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 		Make,
     	TumblingWindow(second, 10)
 
-**Erläuterung**: Verwenden Sie eine CAST-Anweisung für das Gewichtsfeld, um dessen Typ anzugeben. \(Eine Liste mit unterstützten Datentypen finden Sie [hier](https://msdn.microsoft.com/library/azure/dn835065.aspx).\)
+**Erläuterung**: Verwenden Sie eine CAST-Anweisung für das Gewichtsfeld, um dessen Typ anzugeben. (Eine Liste mit unterstützten Datentypen finden Sie [hier](https://msdn.microsoft.com/library/azure/dn835065.aspx).)
 
 ## Musterabgleich mithilfe von „Like“/„Not like“ ##
 **Beschreibung**: Sicherstellen, dass ein Feldwert des Ereignisses einem bestimmten Muster entspricht. Beispiel: Zurückgeben von Nummernschildern, die mit „A“ beginnen und mit „9“ enden.
@@ -82,8 +85,8 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Verwenden Sie die LIKE-Anweisung, um sicherzustellen, dass der Wert im Feld „LicensePlate“ mit „A“ beginnt, anschließend eine beliebige Zeichenfolge mit null oder mehr Zeichen enthält und dann mit „9“ endet.
 
-## Logik für verschiedene Fälle/Werte \(CASE-Anweisungen\) ##
-**Beschreibung**: Angeben einer kriterienbasierten Berechnung für ein Feld. Beispiel: Bereitstellen einer Zeichenfolge, die beschreibt, wie viele Fahrzeuge der gleichen Marke vorbeigefahren sind \(mit einem Sonderfall für „1“\).
+## Logik für verschiedene Fälle/Werte (CASE-Anweisungen) ##
+**Beschreibung**: Angeben einer kriterienbasierten Berechnung für ein Feld. Beispiel: Bereitstellen einer Zeichenfolge, die beschreibt, wie viele Fahrzeuge der gleichen Marke vorbeigefahren sind (mit einem Sonderfall für „1“).
 
 **Eingabe**:
 
@@ -114,7 +117,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 		Make,
 		TumblingWindow(second, 10)
 
-**Erläuterung**: Mit der CASE-Klausel kann auf der Grundlage einiger Kriterien \(in unserem Fall die Fahrzeuganzahl im Aggregierungszeitraum\) eine abweichende Berechnung angegeben werden.
+**Erläuterung**: Mit der CASE-Klausel kann auf der Grundlage einiger Kriterien (in unserem Fall die Fahrzeuganzahl im Aggregierungszeitraum) eine abweichende Berechnung angegeben werden.
 
 ## Senden von Daten an mehrere Ausgaben ##
 **Beschreibung**: Senden von Daten an mehrere Ausgabeziele über einen einzelnen Auftrag. Beispiel: Analysieren von Daten für eine schwellenwertbasierte Warnung und Archivieren aller Ereignisse im BLOB-Speicher.
@@ -168,7 +171,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 	HAVING
 		[Count] >= 3
 
-**Erläuterung**: Mit der INTO-Klausel wird Stream Analytics mitgeteilt, in welche Ausgabe die Daten aus dieser Anweisung geschrieben werden sollen. Bei der ersten Abfrage werden die eingegangenen Daten an eine Ausgabe namens „ArchiveOutput“ weitergereicht. Bei der zweiten Abfrage werden die Daten nach einer einfachen Aggregierung und Filterung an ein nachgelagertes Warnsystem gesendet. *Hinweis*: Sie können auch die Ergebnisse von CTEs \(WITH-Anweisungen\) in mehreren Ausgabeanweisungen wiederverwenden. Dies hat zudem den Vorteil, dass weniger Leser für die Eingabequelle geöffnet werden. Beispiel:
+**Erläuterung**: Mit der INTO-Klausel wird Stream Analytics mitgeteilt, in welche Ausgabe die Daten aus dieser Anweisung geschrieben werden sollen. Bei der ersten Abfrage werden die eingegangenen Daten an eine Ausgabe namens „ArchiveOutput“ weitergereicht. Bei der zweiten Abfrage werden die Daten nach einer einfachen Aggregierung und Filterung an ein nachgelagertes Warnsystem gesendet. *Hinweis*: Sie können auch die Ergebnisse von CTEs (WITH-Anweisungen) in mehreren Ausgabeanweisungen wiederverwenden. Dies hat zudem den Vorteil, dass weniger Leser für die Eingabequelle geöffnet werden. Beispiel:
 
 	WITH AllRedCars AS (
 		SELECT
@@ -436,11 +439,11 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 	    ThisGood.Weight < 20000
 	    AND MidGood.Weight IS NULL
 
-**Erläuterung**: Wir suchen nach zwei gültigen Ereignissen, zwischen denen sich ein ungültiges und kein weiteres gültiges Ereignis befindet. Mit anderen Worten: Bei den beiden Ereignissen handelt es sich jeweils um das erste Ereignis vor bzw. nach mindestens einem ungültigen Ereignis. Zwei gültige Ereignisse mit einem ungültigen Ereignis dazwischen lassen sich problemlos mit zwei JOIN-Klauseln und einer Suche nach dem Muster „gültig -\> ungültig -\> gültig“ ermitteln. Zu diesem Zweck überprüfen wir das Gewicht und vergleichen die Zeitstempel.
+**Erläuterung**: Wir suchen nach zwei gültigen Ereignissen, zwischen denen sich ein ungültiges und kein weiteres gültiges Ereignis befindet. Mit anderen Worten: Bei den beiden Ereignissen handelt es sich jeweils um das erste Ereignis vor bzw. nach mindestens einem ungültigen Ereignis. Zwei gültige Ereignisse mit einem ungültigen Ereignis dazwischen lassen sich problemlos mit zwei JOIN-Klauseln und einer Suche nach dem Muster „gültig -> ungültig -> gültig“ ermitteln. Zu diesem Zweck überprüfen wir das Gewicht und vergleichen die Zeitstempel.
 
 Dank der Erkenntnisse, die wir bei der Verwendung der linken äußeren Verknüpfung zur Ermittlung von NULL-Werten oder zur Prüfung auf nicht vorhandene Ereignisse gewonnen haben, wissen wir, wie wir uns vergewissern können, dass zwischen den beiden gültigen Ereignissen kein gültiges Ereignis aufgetreten ist.
 
-Zusammengenommen erhalten wir „gültig -\> ungültig -\> gültig“ ohne anderes gültiges Ereignis dazwischen. Nun können wir die Dauer zwischen Beginn und Ende der gültigen Ereignisse berechnen und so die Dauer des Fehlers ermitteln.
+Zusammengenommen erhalten wir „gültig -> ungültig -> gültig“ ohne anderes gültiges Ereignis dazwischen. Nun können wir die Dauer zwischen Beginn und Ende der gültigen Ereignisse berechnen und so die Dauer des Fehlers ermitteln.
 
 ## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
@@ -450,8 +453,8 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](../stream.analytics.get.started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
-- [Stream Analytics Query Language Reference \(in englischer Sprache\)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

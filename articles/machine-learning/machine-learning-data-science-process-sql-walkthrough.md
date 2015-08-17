@@ -2,10 +2,12 @@
 	pageTitle="Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server | Microsoft Azure" 
 	description="Advanced Analytics Process and Technology in Aktion"  
 	services="machine-learning" 
+	solutions="" 
 	documentationCenter="" 
 	authors="msolhab" 
 	manager="paulettm" 
 	editor="cgronlun" />
+
 
 <tags 
 	ms.service="machine-learning" 
@@ -16,6 +18,7 @@
 	ms.date="05/29/2015" 
 	ms.author="mohabib;fashah;bradsev"/>
 
+
                 
 # Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server
 
@@ -24,9 +27,9 @@ In diesem Lernprogramm bearbeiten Sie den Azure Advanced Analytics Process and T
 
 ## <a name="dataset"></a>Beschreibung des NYC Taxi Trips-DataSets
 
-Die NYC Taxi Trips-Daten umfassen ca. 20 GB komprimierter CSV-Dateien (~48 GB unkomprimiert) mit mehr als 173 Millionen einzelnen Fahrten mit den zugehörigen Preisen. Jedes Fahrten-DataSets enthält den Start- und Zielort mit der Uhrzeit, die anonymisierte Lizenznummer des Fahrers (Hack) und die eindeutige ID des Taxis (Medallion). Die Daten umfassen alle Fahrten im Jahr 2013. Sie werden für jeden Monat in den folgenden beiden DataSets bereitgestellt:
+Die NYC Taxi Trips-Daten umfassen ca. 20 GB komprimierter CSV-Dateien (\~48 GB unkomprimiert) mit mehr als 173 Millionen einzelnen Fahrten mit den zugehörigen Preisen. Jedes Fahrten-DataSets enthält den Start- und Zielort mit der Uhrzeit, die anonymisierte Lizenznummer des Fahrers (Hack) und die eindeutige ID des Taxis (Medallion). Die Daten umfassen alle Fahrten im Jahr 2013. Sie werden für jeden Monat in den folgenden beiden DataSets bereitgestellt:
 
-1. Die CSV-Datei "trip_data" enthält Fahrtendetails wie die Anzahl der Fahrgäste, Start- und Zielort, Fahrtdauer und Fahrtlänge. Es folgen einige Beispieleinträge:
+1. Die CSV-Datei "trip\_data" enthält Fahrtendetails wie die Anzahl der Fahrgäste, Start- und Zielort, Fahrtdauer und Fahrtlänge. Es folgen einige Beispieleinträge:
 
 		medallion,hack_license,vendor_id,rate_code,store_and_fwd_flag,pickup_datetime,dropoff_datetime,passenger_count,trip_time_in_secs,trip_distance,pickup_longitude,pickup_latitude,dropoff_longitude,dropoff_latitude
 		89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,1,N,2013-01-01 15:11:48,2013-01-01 15:18:10,4,382,1.00,-73.978165,40.757977,-73.989838,40.751171
@@ -35,7 +38,7 @@ Die NYC Taxi Trips-Daten umfassen ca. 20 GB komprimierter CSV-Dateien (~48 GB 
 		DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:54:15,2013-01-07 23:58:20,2,244,.70,-73.974602,40.759945,-73.984734,40.759388
 		DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:25:03,2013-01-07 23:34:24,1,560,2.10,-73.97625,40.748528,-74.002586,40.747868
 
-2. Die CSV-Datei "trip_fare" enthält Details für jede bezahlte Gebühr, wie Zahlungsart, Fahrpreis, Zuschläge und Steuern, Trinkgelder und Mautgebühren sowie den bezahlten Gesamtbetrag für den Fahrpreis. Es folgen einige Beispieleinträge:
+2. Die CSV-Datei "trip\_fare" enthält Details für jede bezahlte Gebühr, wie Zahlungsart, Fahrpreis, Zuschläge und Steuern, Trinkgelder und Mautgebühren sowie den bezahlten Gesamtbetrag für den Fahrpreis. Es folgen einige Beispieleinträge:
 
 		medallion, hack_license, vendor_id, pickup_datetime, payment_type, fare_amount, surcharge, mta_tax, tip_amount, tolls_amount, total_amount
 		89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,2013-01-01 15:11:48,CSH,6.5,0,0.5,0,0,7
@@ -44,15 +47,15 @@ Die NYC Taxi Trips-Daten umfassen ca. 20 GB komprimierter CSV-Dateien (~48 GB 
 		DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:54:15,CSH,5,0.5,0.5,0,0,6
 		DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:25:03,CSH,9.5,0.5,0.5,0,0,10.5
 
-Der eindeutige Schlüssel für die Zusammenführung von "trip_data" und "trip_fare" besteht aus den Feldern: "medallion", "hack_licence" und "pickup_datetime".
+Der eindeutige Schlüssel für die Zusammenführung von "trip\_data" und "trip\_fare" besteht aus den Feldern: "medallion", "hack\_licence" und "pickup\_datetime".
 
 ## <a name="mltasks"></a>Beispiele für Vorhersageaufgaben
 
-Wir werden drei Vorhersageprobleme formulieren, die auf *tip_amount* basieren, nämlich:
+Wir werden drei Vorhersageprobleme formulieren, die auf *tip\_amount* basieren, nämlich:
 
-1. Binäre Klassifizierung: Vorhersagen, ob ein Trinkgeld bezahlt wurde, d. h. ein *tip_amount* größer als 0 $ ist eine positive Probe, während ein *tip_amount* gleich 0 $ eine negative Probe ist.
+1. Binäre Klassifizierung: Vorhersagen, ob ein Trinkgeld bezahlt wurde, d. h. ein *tip\_amount* größer als 0 $ ist eine positive Probe, während ein *tip\_amount* gleich 0 $ eine negative Probe ist.
 
-2. Multi-Klassen-Klassifizierung: Vorhersage des Trinkgeldbereichs für die Fahrt. Wir teilen *tip_amount* in fünf Fächer oder Klassen auf:
+2. Multi-Klassen-Klassifizierung: Vorhersage des Trinkgeldbereichs für die Fahrt. Wir teilen *tip\_amount* in fünf Fächer oder Klassen auf:
 	
 		Class 0 : tip_amount = $0
 		Class 1 : tip_amount > $0 and tip_amount <= $5
@@ -99,9 +102,9 @@ So kopieren Sie die Daten mit AzCopy:
 
 		"C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy" /Source:https://nyctaxitrips.blob.core.windows.net/data /Dest:<path_to_data_folder> /S
 
-	Nach Abschluss von AzCopy sollten insgesamt 24 komprimierte CSV-Dateien (12 für "trip_data" und 12 für "trip_fare") im Datenordner enthalten sein.
+	Nach Abschluss von AzCopy sollten insgesamt 24 komprimierte CSV-Dateien (12 für "trip\_data" und 12 für "trip\_fare") im Datenordner enthalten sein.
 
-4. Extrahieren Sie die heruntergeladenen Dateien. Notieren Sie sich den Ordner mit den extrahierten Dateien. Sie verweisen auf diesen Ordner mit <path_to_data_files>.
+4. Extrahieren Sie die heruntergeladenen Dateien. Notieren Sie sich den Ordner mit den extrahierten Dateien. Sie verweisen auf diesen Ordner mit <path\_to\_data\_files>.
 
 ## <a name="dbload"></a>Massenimport von Daten in eine SQL Server-Datenbank
 
@@ -113,7 +116,7 @@ Die Leistung beim Laden/Übertragen großer Datenmengen in eine SQL-Datenbank un
 
 	![SSMS-Verbindung][12]
 
-3. Wenn Sie noch nicht den SQL Server-Authentifizierungsmodus geändert und einen neuen SQL-Benutzer erstellt haben, öffnen Sie die Skriptdatei **change_auth.sql** im Ordner **Sample Scripts**. Ändern Sie den Standardbenutzernamen und das Kennwort. Klicken Sie auf der Symbolleiste auf **!Ausführen**, um das Skript auszuführen.
+3. Wenn Sie noch nicht den SQL Server-Authentifizierungsmodus geändert und einen neuen SQL-Benutzer erstellt haben, öffnen Sie die Skriptdatei **change\_auth.sql** im Ordner **Sample Scripts**. Ändern Sie den Standardbenutzernamen und das Kennwort. Klicken Sie auf der Symbolleiste auf **!Ausführen**, um das Skript auszuführen.
 
 	![Skript ausführen][13]
 
@@ -129,22 +132,22 @@ Die Leistung beim Laden/Übertragen großer Datenmengen in eine SQL-Datenbank un
 	
 		![SQL-Datenbankstandards][15]
 
-5. Um eine neue Datenbank und einen Satz von Dateigruppen zum Speichern der partitionierten Tabellen zu erstellen, öffnen Sie das Beispielskript **create_db_default.sql**. Das Skript erstellt eine neue Datenbank namens **TaxiNYC** und 12 Dateigruppen am Standardspeicherort für Daten. Jede Dateigruppe enthält die Daten aus "trip_data" und "trip_fare" eines Monats. Ändern Sie bei Bedarf den Datenbanknamen. Klicken Sie auf **!Ausführen**, um das Skript auszuführen.
+5. Um eine neue Datenbank und einen Satz von Dateigruppen zum Speichern der partitionierten Tabellen zu erstellen, öffnen Sie das Beispielskript **create\_db\_default.sql**. Das Skript erstellt eine neue Datenbank namens **TaxiNYC** und 12 Dateigruppen am Standardspeicherort für Daten. Jede Dateigruppe enthält die Daten aus "trip\_data" und "trip\_fare" eines Monats. Ändern Sie bei Bedarf den Datenbanknamen. Klicken Sie auf **!Ausführen**, um das Skript auszuführen.
 
-6. Erstellen Sie als Nächstes zwei Partitionstabellen für "trip_data" und "trip_fare". Öffnen Sie das Beispielskript **create_partitioned_table.sql**, dadurch wird Folgendes ausgeführt:
+6. Erstellen Sie als Nächstes zwei Partitionstabellen für "trip\_data" und "trip\_fare". Öffnen Sie das Beispielskript **create\_partitioned\_table.sql**, dadurch wird Folgendes ausgeführt:
 
 	- Erstellen einer Partitionsfunktion zum Aufteilen der Daten nach Monaten
 	- Erstellen eines Partitionsschemas für die Zuordnung der Daten der einzelnen Monate zu einer anderen Dateigruppe
-	- Erstellen Sie zwei partitionierte Tabellen, die dem Partitionsschema zugeordnet sind: **nyctaxi_trip** enthält "trip_data" und **nyctaxi_fare** enthält "trip_fare".
+	- Erstellen Sie zwei partitionierte Tabellen, die dem Partitionsschema zugeordnet sind: **nyctaxi\_trip** enthält "trip\_data" und **nyctaxi\_fare** enthält "trip\_fare".
 
 	Klicken Sie auf **!Ausführen**, um das Skript auszuführen und die partitionierten Tabellen zu erstellen.
 
 7. Im Ordner **Sample Scripts** befinden sich zwei PowerShell-Beispielskripts zur Veranschaulichung des parallelen Massenimports von Daten in SQL Server-Tabellen.
 
-	- **bcp_parallel_generic.ps1** ist ein allgemeines Skript für den parallelen Massenimport von Daten in eine Tabelle. Ändern Sie dieses Skript, um die Eingabe- und Zielvariablen wie in den Kommentarzeilen im Skript angegeben festzulegen.
-	- **bcp_parallel_nyctaxi.ps1** ist eine vorkonfigurierte Version des generischen Skripts, das verwendet werden kann, um beide Tabellen für die "NYC Taxi Trips"-Daten zu laden.  
+	- **bcp\_parallel\_generic.ps1** ist ein allgemeines Skript für den parallelen Massenimport von Daten in eine Tabelle. Ändern Sie dieses Skript, um die Eingabe- und Zielvariablen wie in den Kommentarzeilen im Skript angegeben festzulegen.
+	- **bcp\_parallel\_nyctaxi.ps1** ist eine vorkonfigurierte Version des generischen Skripts, das verwendet werden kann, um beide Tabellen für die "NYC Taxi Trips"-Daten zu laden.  
 
-8. Klicken Sie mit der rechten Maustaste auf den Namen des Skripts **bcp_parallel_nyctaxi.ps1**, und klicken Sie dann auf **Bearbeiten**, um es in PowerShell zu öffnen. Überprüfen und ändern Sie die vordefinierten Variablen entsprechend Ihren gewählten Namen für Datenbank, Eingabedatenordner, Zielprotokollordner und die Pfade zu den Beispielformatdateien **nyctaxi_trip.xml** und **nyctaxi_fare.xml** (im Ordner **Sample Scripts**).
+8. Klicken Sie mit der rechten Maustaste auf den Namen des Skripts **bcp\_parallel\_nyctaxi.ps1**, und klicken Sie dann auf **Bearbeiten**, um es in PowerShell zu öffnen. Überprüfen und ändern Sie die vordefinierten Variablen entsprechend Ihren gewählten Namen für Datenbank, Eingabedatenordner, Zielprotokollordner und die Pfade zu den Beispielformatdateien **nyctaxi\_trip.xml** und **nyctaxi\_fare.xml** (im Ordner **Sample Scripts**).
 
 	![Massenimportdaten][16]
 
@@ -152,22 +155,22 @@ Die Leistung beim Laden/Übertragen großer Datenmengen in eine SQL-Datenbank un
 
 9. Das PowerShell-Skript meldet die Start- und Endzeiten. Wenn alle Massenimportvorgänge abgeschlossen wurden, wird die Endzeit gemeldet. Überprüfen Sie den Zielprotokollordner, um zu überprüfen, ob die Massenimportvorgänge erfolgreich ausgeführt wurden, d. h., ob keine Fehler im Zielprotokollordner gemeldet wurden.
 
-10. Die Datenbank kann jetzt zum Durchsuchen, zur Funktionsverarbeitung und für andere Vorgänge verwendet werden. Da die Tabellen nach dem Feld **pickup_datetime** partitioniert sind, profitieren Abfragen mit **pickup_datetime**-Bedingungen in der **WHERE**-Klausel vom Partitionsschema.
+10. Die Datenbank kann jetzt zum Durchsuchen, zur Funktionsverarbeitung und für andere Vorgänge verwendet werden. Da die Tabellen nach dem Feld **pickup\_datetime** partitioniert sind, profitieren Abfragen mit **pickup\_datetime**-Bedingungen in der **WHERE**-Klausel vom Partitionsschema.
 
-11. Untersuchen Sie in **SQL Server Management Studio** das bereitgestellte Beispielskript **sample_queries.sql**. Um eine der Beispielabfragen auszuführen, markieren Sie die Abfragezeilen, und klicken Sie auf der Symbolleiste auf **!Ausführen**.
+11. Untersuchen Sie in **SQL Server Management Studio** das bereitgestellte Beispielskript **sample\_queries.sql**. Um eine der Beispielabfragen auszuführen, markieren Sie die Abfragezeilen, und klicken Sie auf der Symbolleiste auf **!Ausführen**.
 
-12. Die "NYC Taxi Trips"-Daten werden in zwei separate Tabellen geladen. Zur Verbesserung der Join-Vorgänge empfiehlt es sich dringend, die Tabellen zu indizieren. Das Beispielskript **create_partitioned_index.sql** erstellt partitionierte Indizes für den zusammengesetzten Verknüpfungsschlüssel **medallion, hack_license und pickup_datetime**.
+12. Die "NYC Taxi Trips"-Daten werden in zwei separate Tabellen geladen. Zur Verbesserung der Join-Vorgänge empfiehlt es sich dringend, die Tabellen zu indizieren. Das Beispielskript **create\_partitioned\_index.sql** erstellt partitionierte Indizes für den zusammengesetzten Verknüpfungsschlüssel **medallion, hack\_license und pickup\_datetime**.
 
 ## <a name="dbexplore"></a>Durchsuchen von Daten und Verarbeiten von Funktionen in SQL Server
 
-In diesem Abschnitt durchsuchen wir Daten und generieren Funktionen durch Ausführen von SQL-Abfragen direkt in **SQL Server Management Studio**. Wir verwenden dazu die zuvor erstellte SQL Server-Datenbank. Das Beispielskript **sample_queries.sql** ist im Ordner **Sample Scripts** enthalten. Ändern Sie das Skript zum Ändern des Datenbanknamens, wenn er vom Standardwert abweicht: **TaxiNYC**.
+In diesem Abschnitt durchsuchen wir Daten und generieren Funktionen durch Ausführen von SQL-Abfragen direkt in **SQL Server Management Studio**. Wir verwenden dazu die zuvor erstellte SQL Server-Datenbank. Das Beispielskript **sample\_queries.sql** ist im Ordner **Sample Scripts** enthalten. Ändern Sie das Skript zum Ändern des Datenbanknamens, wenn er vom Standardwert abweicht: **TaxiNYC**.
 
 In dieser Übung führen Sie die folgenden Aktionen durch:
 
 - Herstellen einer Verbindung mit **SQL Server Management Studio** mithilfe der Windows-Authentifizierung oder der SQL-Authentifizierung mit SQL-Anmeldenamen und Kennwort
 - Untersuchen der Datenverteilungen einiger Felder in unterschiedlichen Zeitfenstern
 - Überprüfen der Datenqualität der Felder "longitude" und "latitude"
-- Generieren von binären und Multi-Klassen-Klassifizierungsbezeichnern auf der Grundlage von **tip_amount**
+- Generieren von binären und Multi-Klassen-Klassifizierungsbezeichnern auf der Grundlage von **tip\_amount**
 - Generieren von Funktionen und Berechnen/Vergleichen der Fahrtentfernungen
 - Zusammenführen der beiden Tabellen und Extrahieren einer zufälligen Stichprobe zum Erstellen von Modellen
 
@@ -188,7 +191,7 @@ Für eine schnelle Überprüfung der Anzahl von Zeilen und Spalten in den Tabell
 
 #### Durchsuchen: Verteilung der Fahrten nach "medallion"
 
-In diesem Beispiel wird die Taxinummer ("medallion") mit mehr als 100 Fahrten innerhalb eines bestimmten Zeitraums ermittelt. Die Abfrage profitiert vom Zugriff auf die partitionierte Tabelle, da sie vom Partitionsschema **pickup_datetime** abhängig ist. Abfragen an das vollständige DataSet nutzen ebenfalls die partitionierte Tabelle und/oder den Indexscan.
+In diesem Beispiel wird die Taxinummer ("medallion") mit mehr als 100 Fahrten innerhalb eines bestimmten Zeitraums ermittelt. Die Abfrage profitiert vom Zugriff auf die partitionierte Tabelle, da sie vom Partitionsschema **pickup\_datetime** abhängig ist. Abfragen an das vollständige DataSet nutzen ebenfalls die partitionierte Tabelle und/oder den Indexscan.
 
 	SELECT medallion, COUNT(*)
 	FROM nyctaxi_fare
@@ -196,7 +199,7 @@ In diesem Beispiel wird die Taxinummer ("medallion") mit mehr als 100 Fahrten i
 	GROUP BY medallion
 	HAVING COUNT(*) > 100
 
-#### Durchsuchen: Verteilung der Fahrten nach "medallion" und "hack_license"
+#### Durchsuchen: Verteilung der Fahrten nach "medallion" und "hack\_license"
 
 	SELECT medallion, hack_license, COUNT(*)
 	FROM nyctaxi_fare
@@ -264,7 +267,7 @@ Die Suchabfragen zur Generierung von Bezeichnern und zum Konvertieren der Geogra
 
 #### Vorbereiten von Daten für die Modellerstellung
 
-Die folgende Abfrage führt die Tabellen **nyctaxi_trip** und **nyctaxi_fare** zusammen, generiert der binäre Klassifikationsbezeichner **tipped**, den Bezeichner **tip_class** für die Multi-Klassen-Klassifizierung und extrahiert eine zufällige 1-%-Stichprobe aus dem vollständig verbundenen DataSet. Diese Abfrage kann kopiert und dann direkt in das [Reader](https://studio.azureml.net)-Modul in [Azure Machine Learning Studio][reader] eingefügt werden, um eine direkte Datenerfassung aus der SQL Server-Datenbankinstanz in Azure zu erreichen. Die Abfrage schließt DataSets mit falschen Koordinaten (0, 0) aus.
+Die folgende Abfrage führt die Tabellen **nyctaxi\_trip** und **nyctaxi\_fare** zusammen, generiert der binäre Klassifikationsbezeichner **tipped**, den Bezeichner **tip\_class** für die Multi-Klassen-Klassifizierung und extrahiert eine zufällige 1-%-Stichprobe aus dem vollständig verbundenen DataSet. Diese Abfrage kann kopiert und dann direkt in das [Reader](https://studio.azureml.net)-Modul in [Azure Machine Learning Studio][reader] eingefügt werden, um eine direkte Datenerfassung aus der SQL Server-Datenbankinstanz in Azure zu erreichen. Die Abfrage schließt DataSets mit falschen Koordinaten (0, 0) aus.
 
 	SELECT t.*, f.payment_type, f.fare_amount, f.surcharge, f.mta_tax, f.tolls_amount, 	f.total_amount, f.tip_amount,
 	    CASE WHEN (tip_amount > 0) THEN 1 ELSE 0 END AS tipped,
@@ -316,7 +319,7 @@ Initialisieren Sie die Datenbank-Verbindungseinstellungen in den folgenden Varia
     CONNECTION_STRING = 'DRIVER={'+DRIVER+'};SERVER='+SERVER_NAME+';DATABASE='+DATABASE_NAME+';UID='+USERID+';PWD='+PASSWORD
     conn = pyodbc.connect(CONNECTION_STRING)
 
-#### Melden der Anzahl von Zeilen und Spalten in der Tabelle "nyctaxi_trip"
+#### Melden der Anzahl von Zeilen und Spalten in der Tabelle "nyctaxi\_trip"
 
     nrows = pd.read_sql('''
 		SELECT SUM(rows) FROM sys.partitions 
@@ -360,7 +363,7 @@ Zeit für das Einlesen der Beispieltabelle ist 6,492000 Sekunden. Anzahl der ab
     
 #### Deskriptive Statistik
 
-Jetzt können die erfassten Daten durchsucht werden. Wir beginnen mit einem Blick auf die deskriptive Statistik für das Feld **trip_distance** (oder andere Felder):
+Jetzt können die erfassten Daten durchsucht werden. Wir beginnen mit einem Blick auf die deskriptive Statistik für das Feld **trip\_distance** (oder andere Felder):
 
     df1['trip_distance'].describe()
 
@@ -403,13 +406,13 @@ Die oben genannte Klassifizierungsverteilung können wir wie unten gezeigt in ei
 
 #### Visualisierung: Punktdiagramm-Beispiel
 
-Wir zeigen ein Punktdiagramm zwischen **trip_time_in_secs** und **trip_distance**, um zu ermitteln, ob es Korrelationen gibt.
+Wir zeigen ein Punktdiagramm zwischen **trip\_time\_in\_secs** und **trip\_distance**, um zu ermitteln, ob es Korrelationen gibt.
 
     plt.scatter(df1['trip_time_in_secs'], df1['trip_distance'])
 
 ![Grafik 6][6]
 
-Auf ähnliche Weise können wir die Beziehung zwischen **rate_code** und **trip_distance** überprüfen.
+Auf ähnliche Weise können wir die Beziehung zwischen **rate\_code** und **trip\_distance** überprüfen.
 
     plt.scatter(df1['passenger_count'], df1['trip_distance'])
 
@@ -417,13 +420,13 @@ Auf ähnliche Weise können wir die Beziehung zwischen **rate_code** und **trip_
 
 ### Generieren von Stichproben aus den Daten in SQL
 
-Bei der Vorbereitung von Daten für die Modellerstellung in [Azure Machine Learning Studio](https://studio.azureml.net) entscheiden Sie sich entweder für eine **direkte Verwendung von SQL-Abfragen im Reader-Modul** oder für das Beibehalten der bearbeiteten und erfassten Daten in einer neuen Tabelle, die Sie im [Reader][reader]-Modul mit einer einfachen **SELECT-Abfrage wie SELECT * FROM <Ihr_neuer_Tabellenname>** verwenden können.
+Bei der Vorbereitung von Daten für die Modellerstellung in [Azure Machine Learning Studio](https://studio.azureml.net) entscheiden Sie sich entweder für eine **direkte Verwendung von SQL-Abfragen im Reader-Modul** oder für das Beibehalten der bearbeiteten und erfassten Daten in einer neuen Tabelle, die Sie im [Reader][reader]-Modul mit einer einfachen **SELECT-Abfrage wie SELECT \* FROM <Ihr\_neuer\_Tabellenname>** verwenden können.
 
 In diesem Abschnitt erstellen Sie eine neue Tabelle zum Speichern der erfassten und verarbeiteten Daten. Ein Beispiel für eine direkte SQL-Abfrage für die Modellerstellung finden Sie im Abschnitt [Durchsuchen von Daten und Verarbeiten von Funktionen in SQL Server](#dbexplore).
 
 #### Erstellen einer Beispieltabelle und Auffüllen dieser mit 1 % der verknüpften Tabellen. Löschen Sie zunächst die Tabelle, falls sie bereits vorhanden ist.
 
-In diesem Abschnitt führen wir die Tabellen **nyctaxi_trip** und **nyctaxi_fare** zusammen, extrahieren 1 % zufälliger Stichproben und speichern die erfassten Daten in der neuen Tabelle **nyctaxi_one_percent**:
+In diesem Abschnitt führen wir die Tabellen **nyctaxi\_trip** und **nyctaxi\_fare** zusammen, extrahieren 1 % zufälliger Stichproben und speichern die erfassten Daten in der neuen Tabelle **nyctaxi\_one\_percent**:
 
     cursor = conn.cursor()
     
@@ -448,7 +451,7 @@ In diesem Abschnitt führen wir die Tabellen **nyctaxi_trip** und **nyctaxi_fare
     
 ### Durchsuchen von Daten und Verwenden von SQL-Abfragen in IPython Notebook
 
-In diesem Abschnitt untersuchen wir die Datenverteilungen anhand der 1 % Stichprobendaten in der zuvor neu erstellten Tabelle. Beachten Sie, dass ähnliche Suchvorgänge anhand der ursprünglichen Tabellen ausgeführt werden können, wobei die Suchvorgänge optional mit **TABLESAMPLE** auf Stichproben begrenzt werden können, oder dass die Ergebnisse durch die Begrenzung mithilfe von **pickup_datetime**-Partitionen auf einen bestimmten Zeitraum eingeschränkt werden können. Dies wird im Abschnitt [Durchsuchen von Daten und Verarbeiten von Funktionen in SQL Server](#dbexplore) beschrieben.
+In diesem Abschnitt untersuchen wir die Datenverteilungen anhand der 1 % Stichprobendaten in der zuvor neu erstellten Tabelle. Beachten Sie, dass ähnliche Suchvorgänge anhand der ursprünglichen Tabellen ausgeführt werden können, wobei die Suchvorgänge optional mit **TABLESAMPLE** auf Stichproben begrenzt werden können, oder dass die Ergebnisse durch die Begrenzung mithilfe von **pickup\_datetime**-Partitionen auf einen bestimmten Zeitraum eingeschränkt werden können. Dies wird im Abschnitt [Durchsuchen von Daten und Verarbeiten von Funktionen in SQL Server](#dbexplore) beschrieben.
 
 #### Durchsuchen: Tägliche Verteilung der Fahrten
 
@@ -479,7 +482,7 @@ In diesem Abschnitt erzeugen Sie neue Bezeichner und Funktionen direkt mithilfe 
 Im folgenden Beispiel erstellen Sie zwei Sätze von Bezeichnern für die Modellierung:
 
 1. Binäre Klassenbezeichner **tipped** (Vorhersagen, ob ein Trinkgeld gegeben wird)
-2. Multi-Klassenbezeichner **tip_class** (Vorhersage des Trinkgeldbereichs)
+2. Multi-Klassenbezeichner **tip\_class** (Vorhersage des Trinkgeldbereichs)
 
 		nyctaxi_one_percent_add_col = '''
 			ALTER TABLE nyctaxi_one_percent ADD tipped bit, tip_class int
@@ -639,7 +642,7 @@ Sie haben in dieser Übung bereits die Daten in SQL Server untersucht und bearbe
 
 4. Geben Sie den **Datenbanknamen** in das entsprechende Feld ein.
 
-5. Geben Sie den **SQL-Benutzernamen** in **Server user account name und das Kennwort in **Server user account password** ein.
+5. Geben Sie den **SQL-Benutzernamen** in \*\*Server user account name und das Kennwort in **Server user account password** ein.
 
 6. Aktivieren Sie die Option **Accept any server certificate**.
 
@@ -649,7 +652,7 @@ Ein Beispiel für ein binäres Klassifizierungsexperiment zum Lesen von Daten di
 
 ![Azure ML-Schulung][10]
 
-> [AZURE.IMPORTANT]In den Modellierungsbeispielen für Datenextraktion und Stichprobengenerierung in den vorherigen Abschnitten sind **alle Bezeichner für die drei Modellierungsübungen in der Abfrage enthalten**. Ein wichtiger (erforderlicher) Schritt in den einzelnen Modellierungsübungen ist das **Ausschließen** unnötiger Bezeichner für die anderen beiden Probleme und alle anderen **Zielverluste**. Wenn Sie z. B. eine binäre Klassifizierung anwenden, verwenden Sie den Bezeichner **tipped** und schließen die Felder **tip_class**, **tip_amount** und **total_amount** aus. Letztere sind Zielverluste, da sie das bezahlte Trinkgeld beinhalten.
+> [AZURE.IMPORTANT]In den Modellierungsbeispielen für Datenextraktion und Stichprobengenerierung in den vorherigen Abschnitten sind **alle Bezeichner für die drei Modellierungsübungen in der Abfrage enthalten**. Ein wichtiger (erforderlicher) Schritt in den einzelnen Modellierungsübungen ist das **Ausschließen** unnötiger Bezeichner für die anderen beiden Probleme und alle anderen **Zielverluste**. Wenn Sie z. B. eine binäre Klassifizierung anwenden, verwenden Sie den Bezeichner **tipped** und schließen die Felder **tip\_class**, **tip\_amount** und **total\_amount** aus. Letztere sind Zielverluste, da sie das bezahlte Trinkgeld beinhalten.
 >
 > Um nicht benötigte Spalten und/oder Zielverluste auszuschließen, können Sie das Modul [Project Columns][project-columns] oder den [Metadaten-Editor][metadata-editor] verwenden. Weitere Informationen finden Sie auf den Referenzseiten [Project Columns][project-columns] und [Metadaten-Editor][metadata-editor].
 
@@ -715,4 +718,4 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts und IPython Note
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

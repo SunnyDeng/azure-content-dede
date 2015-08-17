@@ -6,14 +6,16 @@
    authors="bandersmsft"
    manager="jwhit"
    editor="" />
+
 <tags
    ms.service="operational-insights"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/21/2015"
+   ms.date="08/05/2015"
    ms.author="banders" />
+
 
 # Identifizieren von Unterschieden mit Change Tracking
 
@@ -25,7 +27,7 @@ Sie installieren die Lösung, um den Operations Manager-Agent und das Basiskonfi
 
 ## Verwenden von Change Tracking
 
-Bevor Sie Change Tracking in Operational Insights verwenden können, müssen Sie die Lösung installiert haben. Weitere Informationen zum Installieren von Lösungen finden Sie unter [Verwenden von Solution Gallery zum Hinzufügen oder Entfernen von Lösungen](operational-insights-add-solution.md).
+Bevor Sie Change Tracking in Operational Insights verwenden können, müssen Sie die Lösung installiert haben. Weitere Informationen zum Installieren von Lösungen finden Sie unter [Verwenden von Solution Gallery zum Hinzufügen oder Entfernen von Lösungen](operational-insights-setup-workspace.md).
 
 Nach der Installation können Sie die Zusammenfassung der Änderungen für die überwachten Server in Operational Insights über die Kachel **Change Tracking** auf der Seite **Übersicht** anzeigen.
 
@@ -54,4 +56,4 @@ Sie können Änderungen an Ihrer Infrastruktur anzeigen und dann Einzelheiten f�
 
 [AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

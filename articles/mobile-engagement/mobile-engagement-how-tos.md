@@ -75,7 +75,7 @@ Sobald das SDK vollständig in Ihrer App integriert ist, können Sie erste Schri
  
 ![Personalisieren1][11]
 
-Die Personalisierung funktioniert durch Ersetzen einer Markierung durch ein App-Informationskennzeichen, daher müssen Sie zunächst sicherstellen, dass für den Benutzer die richtige App-Information definiert ist. In diesem Beispiel verfügt der Zielbenutzer über ein App-Informationskennzeichen namens „rebate-code defined“. Wie Sie oben sehen können, enthält der Inhalt der Pushbenachrichtigung die Markierung „${rebate_code}“, die darauf hinweist, dass sie durch den eigentlichen Inhalt des App-Informationskennzeichens ersetzt wird.
+Die Personalisierung funktioniert durch Ersetzen einer Markierung durch ein App-Informationskennzeichen, daher müssen Sie zunächst sicherstellen, dass für den Benutzer die richtige App-Information definiert ist. In diesem Beispiel verfügt der Zielbenutzer über ein App-Informationskennzeichen namens „rebate-code defined“. Wie Sie oben sehen können, enthält der Inhalt der Pushbenachrichtigung die Markierung „${rebate\_code}“, die darauf hinweist, dass sie durch den eigentlichen Inhalt des App-Informationskennzeichens ersetzt wird.
 
 > Warnung: Wenn das App-Informationskennzeichen für den Benutzer nicht definiert ist, erhält der Benutzer keine Pushübertragung.
 
@@ -293,4 +293,4 @@ Eine Webansicht ist ein Popupfenster mit Webinhalt. Dieses Popupfenster wird ang
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

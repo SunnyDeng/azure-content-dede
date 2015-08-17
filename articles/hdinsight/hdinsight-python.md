@@ -109,13 +109,13 @@ Ein Python-Skript kann als UDF von Pig aus mittels der **GENERATE**-Anweisung ve
 
 So funktioniert dieses Beispiel:
 
-1. Es registriert die Datei, die das Python-Skript (**jython.py**) enthält, mithilfe von **Jython** und gibt sie als **myfuncs** an Pig weiter. Jython ist ein Python-Implementierung in Java und läuft auf demselben virtuellen Java-Computer wie Pig. Damit kann das Python-Skript genau wie ein traditioneller Funktionsaufruf behandelt werden, im Gegensatz zum Streamingansatz von Hive.
+1. Es registriert die Datei, die das Python-Skript (**jython.py**,) enthält mithilfe von **Jython** und gibt es als **myfuncs** an Pig weiter. Jython ist ein Python-Implementierung in Java und läuft auf demselben virtuellen Java-Computer wie Pig. Damit kann das Python-Skript genau wie ein traditioneller Funktionsaufruf behandelt werden, im Gegensatz zum Streamingansatz von Hive.
 
-2. Die nächste Zeile lädt die Datei mit den Beispieldaten, **sample.log**, in **LOGS**. Da diese Protokolldatei kein gleichbleibendes Schema hat, definiert sie außerdem jeden Datensatz (in diesem Fall **LINE**) als ein **chararray**. Chararray ist im Grunde genommen eine Zeichenfolge.
+2. Die nächste Zeile lädt die Datei mit den Beispieldaten, **sample.log**, in **LOGS**. Da diese Protokolldatei kein gleichbleibendes Schema hat, definiert sie außerdem jeden Datensatz (**LINE** in diesem Fall) als ein **chararray**. Chararray ist im Grunde genommen eine Zeichenfolge.
 
 3. Die dritte Zeile filtert etwaige NULL-Werte heraus und speichert die Ergebnisse des Vorgangs in **LOG**.
 
-4. Dann wiederholt es über die Datensätze in **LOG** hinweg und verwendet **GENERATE** zum Aufruf der Methode **create_structure**, die im Skript **jython.py** enthalten ist und als **myfuncs** geladen wird. **LINE** wird für die Übergabe des aktuellen Datensatzes an die Funktion verwendet.
+4. Dann wiederholt es über die Datensätze in **LOG** hinweg und verwendet **GENERATE** zum Aufruf der Methode **create\_structure**, die im Skript **jython.py** enthalten ist und als **myfuncs** geladen wird. **LINE** wird für die Übergabe des aktuellen Datensatzes an die Funktion verwendet.
 
 5. Schließlich werden die ausgegebenen Daten mit dem Befehl **DUMP** in STDOUT geschrieben. Das geschieht nur, damit die Ergebnisse direkt nach dem Ende des Vorgangs angezeigt werden; in einem echten Skript würde man die Daten normalerweise in einer neuen Datei speichern (**STORE**).
 
@@ -138,9 +138,9 @@ Sie erinnern sich daran, dass wir vorhin die **LINE**-Eingabe einfach als Charar
 	* level – die Protokollierungsebene
 	* detail – ausführliche Details des Protokolleintrags
 
-2. Dann definiert **def create_structure(input)** die Funktion, der Pig Positionen weitergibt.
+2. Dann definiert **def create\_structure(input)** die Funktion, der Pig Positionen weitergibt.
 
-3. Die Beispieldatei **sample.log** entspricht weitgehend dem Schema für Datum, Uhrzeit, Klassenname, Ebene und Detail, das wir zurückgeben möchten. Sie enthält aber auch ein paar Zeilen, die mit der Zeichenfolge '*java.lang.Exception*' beginnen, die geändert werden muss, damit sie dem Schema entspricht. Die Anweisung **if** überprüft deren Vorhandensein, weist dann die Eingabedaten an, die Zeichenfolge '*java.lang.Exception*' ans Ende zu verschieben, sodass die Daten dem erwarteten Ausgabeschema entsprechen.
+3. Die Beispieldatei **sample.log** entspricht weitgehend dem Schema für Datum, Uhrzeit, Klassenname, Ebene und Detail, das wir zurückgeben möchten. Sie enthält aber auch ein paar Zeilen, die mit der Zeichenfolge '*java.lang.Exception*' beginnen, die geändert werden muss, damit sie dem Schema entspricht. Die Anweisung **if** überprüft deren Vorhandensein, weist dann die Eingabedaten an, die Zeichenfolge '*java.lang.Exception*' ans Ende zu stellen, sodass die Daten dem erwarteten Ausgabeschema entsprechen.
 
 4. Als Nächstes wird der Befehl **split** zum Aufteilen der Daten bei den ersten vier Leerzeichen verwendet. Das führt zu fünf Werten, die **date**, **time**, **classname**, **level** und **detail** zugewiesen werden.
 
@@ -330,4 +330,4 @@ Informationen zu anderen Möglichkeiten der Verwendung von Pig und Hive sowie In
 
 * [Verwenden von MapReduce mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

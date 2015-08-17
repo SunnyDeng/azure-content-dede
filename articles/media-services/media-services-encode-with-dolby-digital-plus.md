@@ -592,17 +592,17 @@ Jedes Attribut wird in den folgenden Abschnitten beschrieben.
 Dieses Attribut bestimmt den Loudness Metering-Modus. Zulässige Werte sind:
 
  
-**ITU_R_BS_1770_2_DI** (Standardwert): Gibt ITU-R BS.1770-2 und Dialogue Intelligence an
+**ITU\_R\_BS\_1770\_2\_DI** (Standardwert): Gibt ITU-R BS.1770-2 und Dialogue Intelligence an
 
-**ITU_R_BS_1770_1_DI**: Gibt ITU-R BS.1770-1 und Dialogue Intelligence an
+**ITU\_R\_BS\_1770\_1\_DI**: Gibt ITU-R BS.1770-1 und Dialogue Intelligence an
 
-**ITU_R_BS_1770_2**: Gibt ITU-R BS.1770-2 an
+**ITU\_R\_BS\_1770\_2**: Gibt ITU-R BS.1770-2 an
 
-**LEQA_DI**: Gibt Leq(A) und Dialogue Intelligence an
+**LEQA\_DI**: Gibt Leq(A) und Dialogue Intelligence an
 
 **Hinweis:**
 
-Der **EBU R128**-Modus kann mit **ITU_R_BS_1770_2_DI** erzielt werden.
+Der **EBU R128**-Modus kann mit **ITU\_R\_BS\_1770\_2\_DI** erzielt werden.
 
 **Leq(A)** wurde aus Kompatibilitätsgründen aufgenommen und sollte nur in bestimmten älteren Workflows verwendet werden.
 
@@ -610,7 +610,7 @@ Die **ITU** hat vor kurzem eine Aktualisierung namens BS.1770-3 veröffentlicht,
 
 ###SpeechThreshold-Attribut
 
-Gibt die von DPLM verwendete Sprachschwelle zur Erzeugung eines integrierten Lautheitergebnisses an (z. B. Auswahl zwischen Sprach-Gating, Lautstärke-Gating und kein Gating). Die Sprachschwelleneinstellung reicht von 0 % bis 100 % in Schritten von 1 %. Dieser Parameter ist nur dann wirksam, wenn DPLM in einem Modus konfiguriert ist, der Dialogue Intelligence verwendet. Dies bedeutet, er kann nur dann angegeben werden, wenn der Modus auf ITU_R_BS_1770_2_DI oder ITU_R_BS_1770_1_DI festgelegt ist. Der Standardwert ist 20 %, wenn der Modus ITU_R_BS_1770_2_DI oder ITU_R_BS_1770_1_DI lautet. Die Werte für dieses Attribut müssen im Bereich 0, 1 bis 100 festgelegt werden.
+Gibt die von DPLM verwendete Sprachschwelle zur Erzeugung eines integrierten Lautheitergebnisses an (z. B. Auswahl zwischen Sprach-Gating, Lautstärke-Gating und kein Gating). Die Sprachschwelleneinstellung reicht von 0 % bis 100 % in Schritten von 1 %. Dieser Parameter ist nur dann wirksam, wenn DPLM in einem Modus konfiguriert ist, der Dialogue Intelligence verwendet. Dies bedeutet, er kann nur dann angegeben werden, wenn der Modus auf ITU\_R\_BS\_1770\_2\_DI oder ITU\_R\_BS\_1770\_1\_DI festgelegt ist. Der Standardwert ist 20 %, wenn der Modus ITU\_R\_BS\_1770\_2\_DI oder ITU\_R\_BS\_1770\_1\_DI lautet. Die Werte für dieses Attribut müssen im Bereich 0, 1 bis 100 festgelegt werden.
 
 ###TruePeakDCBlock-Attribut
 
@@ -640,7 +640,7 @@ Alle Attribute werden im Folgenden beschrieben.
 
 **DialogNormalization**: Der für die Eingabeaudiodaten gemessene Wert von "DialNorm" (in Dezibel), der in den DD+-Ausgabedatenstrom eingebettet wird, im Bereich von {-31, -30, …, -1} dB.
 
-**IntegratedLoudness**: Die von DPLM gemessene integrierte Lautstärke, im Bereich von -70 bis +10 LKFS/dBFS (wobei dBFS nur verwendet wird, wenn der Modus auf LEQA_DI festgelegt ist).
+**IntegratedLoudness**: Die von DPLM gemessene integrierte Lautstärke, im Bereich von -70 bis +10 LKFS/dBFS (wobei dBFS nur verwendet wird, wenn der Modus auf LEQA\_DI festgelegt ist).
 
 **IntegratedLoudnessGatingMethod**: Gültige Werte sind: 0 – None/Ungated; 1 – Sprache Gated; 2 – Lautstärke-Gating.
 
@@ -651,4 +651,4 @@ Alle Attribute werden im Folgenden beschrieben.
 **TruePeak**: Dieses Ergebnis enthält den größten absoluten True Peak-Wert in jedem Kanal, seit die Messung zurückgesetzt wurde. Eine Beschreibung von True Peak finden Sie unter ITU‐R BS.1770‐2. Die Werte liegen im Bereich von -70 bis 12.04 dBTP.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

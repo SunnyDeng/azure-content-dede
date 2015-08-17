@@ -8,6 +8,7 @@
 	manager="paulettm"
 	editor=""/>
 
+
 <tags
 	ms.service="machine-learning"
 	ms.workload="data-services"
@@ -16,6 +17,7 @@
 	ms.topic="article"
 	ms.date="06/16/2015"
 	ms.author="roalexan" />
+
 
 
 # Erfahren Sie, wie Sie Azure ML-Webdienste mithilfe von API Management verwalten
@@ -72,7 +74,7 @@ Klicken Sie auf der linken Seite im Menü **API Management** auf **APIs**, und k
 
 ![api-management-menu](./media/machine-learning-manage-web-service-endpoints-using-api-management/api-management-menu.png)
 
-Geben Sie **Azure ML-Demo-API** als **Web-API-Namen** ein. Geben Sie **https://ussouthcentral.services.azureml.net** als **Webdienst-URL** ein. Geben Sie **azureml-demo** als **Web-API-URL-Suffix** ein. Aktivieren Sie **HTTPS** als **Web-API-URL**-Schema. Wählen Sie **Starter** als **Produkte** aus. Wenn Sie fertig sind, klicken Sie auf **Speichern**, um die API zu erstellen.
+Geben Sie **Azure ML-Demo-API** als **Web-API-Namen** ein. Geben Sie \*\***https://ussouthcentral.services.azureml.net** als **Webdienst-URL** ein. Geben Sie **azureml-demo** als **Web-API-URL-Suffix** ein. Aktivieren Sie **HTTPS** als **Web-API-URL**-Schema. Wählen Sie **Starter** als **Produkte** aus. Wenn Sie fertig sind, klicken Sie auf **Speichern**, um die API zu erstellen.
 
 ![add-new-api](./media/machine-learning-manage-web-service-endpoints-using-api-management/add-new-api.png)
 
@@ -124,7 +126,7 @@ Klicken Sie im Hauptmenü auf **APIs** und anschließend auf **Azure ML-Demo-AP
 
 ![demoazureml-api](./media/machine-learning-manage-web-service-endpoints-using-api-management/demoazureml-api.png)
 
-Wählen Sie als Vorgang **RRS Execute** aus. Klicken Sie auf **Testen**.
+Wählen Sie als Vorgang **RRS Execute** aus. Klicken auf **Ausprobieren**.
 
 ![try-it](./media/machine-learning-manage-web-service-endpoints-using-api-management/try-it.png)
 
@@ -198,7 +200,7 @@ Klicken Sie auf **Yes**, um das Experiment zu veröffentlichen.
 
 ###Testen des Webdiensts
 
-Ein Azure ML-Webdienst besteht aus RRS-Endpunkten (Request/Response Service, Anforderungs-/Antwortdienst) und BES-Endpunkten (Batch Execution Service, Batchausführungsdienst). RRS dient zur synchronen Ausführung. BES dient zur asynchronen Auftragsausführung. Um Ihren Webdienst mit dem unten aufgeführten Python-Beispielcode zu testen, müssen Sie möglicherweise das Azure-SDK für Python herunterladen und installieren (siehe [Installieren von Python und SDK](python-how-to-install.md)).
+Ein Azure ML-Webdienst besteht aus RRS-Endpunkten (Request/Response Service, Anforderungs-/Antwortdienst) und BES-Endpunkten (Batch Execution Service, Batchausführungsdienst). RRS dient zur synchronen Ausführung. BES dient zur asynchronen Auftragsausführung. Um Ihren Webdienst mit dem unten aufgeführten Python-Beispielcode zu testen, müssen Sie möglicherweise das Azure-SDK für Python herunterladen und installieren (siehe [Installieren von Python ](python-how-to-install.md)).
 
 Sie benötigen auch den **Arbeitsbereich**, den **Dienst** und den **API-Schlüssel** Ihres Experiments für den unten stehenden Beispielcode. Sie finden den Arbeitsbereich und den Dienst, indem Sie im Webdienstdashboard für Ihr Experiment entweder auf **Anforderung/Antwort** oder auf **Batchausführung** klicken.
 
@@ -272,8 +274,8 @@ Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses 
 	storage_account_name = "<REPLACE WITH YOUR AZURE STORAGE ACCOUNT NAME>"
 	storage_account_key = "<REPLACE WITH YOUR AZURE STORAGE KEY>"
 	storage_container_name = "<REPLACE WITH YOUR AZURE STORAGE CONTAINER NAME>"
-	input_file = "<REPLACE WITH THE LOCATION OF YOUR INPUT FILE>" # Example: C:\mydata.csv
-	output_file = "<REPLACE WITH THE LOCATION OF YOUR OUTPUT FILE>" # Example: C:\myresults.csv
+	input_file = "<REPLACE WITH THE LOCATION OF YOUR INPUT FILE>" # Example: C:\\mydata.csv
+	output_file = "<REPLACE WITH THE LOCATION OF YOUR OUTPUT FILE>" # Example: C:\\myresults.csv
 	input_blob_name = "mydatablob.csv"
 	output_blob_name = "myresultsblob.csv"
 	def printHttpError(httpError):
@@ -384,4 +386,4 @@ Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses 
 	return
 	invokeBatchExecutionService()
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

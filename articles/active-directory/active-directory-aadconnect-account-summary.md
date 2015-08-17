@@ -7,6 +7,7 @@
 	manager="swadhwa" 
 	editor="curtand"/>
 
+
 <tags 
 	ms.service="active-directory" 
 	ms.workload="identity" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/02/2015" 
 	ms.author="billmath"/>
+
 
 
 
@@ -41,12 +43,13 @@ Herstellen einer Verbindung mit AD DS | Lokale Active Directory-Anmeldeinformati
 
 ## Erfasste Anmeldeinformationen und deren Verwendungszweck bei einem benutzerdefinierten Setup
 
+
 Seite des Assistenten | Erfasste Anmeldeinformationen | Erforderliche Berechtigungen| Verwendung 
-------------- | ------------- |------------- |------------- |
+------------- | ------------- |------------- |------------- 
 Nicht verfügbar|Anmeldeinformationen des Benutzers, der den Assistenten ausführt|Administrator des lokalen Servers| <li>Standardmäßig erstellt der Assistent das Active Directory-Konto, das als Anmeldekonto für den Synchronisierungsdienst dient, auf dem lokalen Computer.</li><li>Sie erstellen das Anmeldekonto für den Synchronisierungsdienst nur dann, wenn der Administrator kein bestimmtes Konto angibt.</li> <li>Bei dem Konto handelt es sich um ein lokales Benutzerkonto, es sei denn, es befindet sich auf einem DC. In diesem Fall handelt es sich um Domänenbenutzerkonto.</li> 
 Seite "Synchronisierungsdienste installieren", Option "Dienstkonto" | Anmeldeinformationen für Active Directory- oder lokale Konten | Lokaler Benutzer|Wenn der Administrator ein Konto angibt, wird dieses Konto als Anmeldekonto für den Synchronisierungsdienst verwendet.
 Herstellen einer Verbindung mit Azure AD|Azure AD-Verzeichnisanmeldeinformationen| Globale Administratorrolle in Azure AD|Der Assistent erstellt das AD-Konto, das als Anmeldekonto für den Synchronisierungsdienst auf dem lokalen Computer dient.
-Verzeichnisse verbinden|Lokale Active Directory-Anmeldeinformationen für jede Gesamtstruktur, die mit Azure AD verbunden wird. |<li>Die vom Assistenten geforderte Mindestberechtigung ist "Domänenbenutzer".</li> <li>Jedoch muss das angegebene Konto die erforderlichen Berechtigungen für das gewünschte Szenario aufweisen.</li><li>Wenn Sie beabsichtigen, die Kennwortsynchronisierung zu Azure AD zu konfigurieren, stellen Sie sicher, dass dieses Konto über die folgenden Berechtigungen verfügt: – Verzeichnisänderungen replizieren – Alle Verzeichnisänderungen replizieren</li> <li>Wenn Sie beabsichtigen, die Synchronisierung so zu konfigurieren, dass Informationen von Azure AD in Ihr lokales AD "zurückgeschrieben" werden, stellen Sie sicher, dass das Konto über Schreibberechtigungen für Verzeichnisobjekte und -Attribute verfügt, die zurückgeschrieben werden sollen.</li> <li>Wenn Sie beabsichtigen, AD FS für die Anmeldung zu konfigurieren, stellen Sie sicher, dass das Konto mit den AD-Anmeldeinformationen, die Sie für die Gesamtstruktur bereitstellen, in der sich der AD FS-Server befindet, über Domänenadministratorberechtigungen verfügt.</li><li>In der folgenden Tabelle ist eine Liste mit zusätzlichen Anforderungen für Ihr Szenario aufgeführt.</li>|<li>Erstellen des lokalen Active Directory-Verwaltungs-Agent-Kontos – das Konto, das zum Lesen und Schreiben von Objekten und Attributen im lokalen AD für die fortlaufende Synchronisierung verwendet wird.</li><li>Zuweisen der erforderlichen Berechtigungen und Zugriffseinstellungen für die ausgewählten Synchronisierungsoptionen zum oben genannten Konto und zu AD.</li>
+Verzeichnisse verbinden|Lokale Active Directory-Anmeldeinformationen für jede Gesamtstruktur, die mit Azure AD verbunden wird. |<li>Die vom Assistenten geforderte Mindestberechtigung ist "Domänenbenutzer".</li> <li>Jedoch muss das angegebene Konto die erforderlichen Berechtigungen für das gewünschte Szenario aufweisen.</li><li>Wenn Sie beabsichtigen, die Kennwortsynchronisierung zu Azure AD zu konfigurieren, stellen Sie sicher, dass dieses Konto über die folgenden Berechtigungen verfügt: – Verzeichnisänderungen replizieren – Alle Verzeichnisänderungen replizieren</li> <li>Wenn Sie beabsichtigen, die Synchronisierung so zu konfigurieren, dass Informationen von Azure AD in Ihr lokales AD "zurückgeschrieben" werden, stellen Sie sicher, dass das Konto über Schreibberechtigungen für Verzeichnisobjekte und -Attribute verfügt, die zurückgeschrieben werden sollen.</li> <li>Wenn Sie beabsichtigen, AD FS für die Anmeldung zu konfigurieren, stellen Sie sicher, dass das Konto mit den AD-Anmeldeinformationen, die Sie für die Gesamtstruktur bereitstellen, in der sich der AD FS-Server befindet, über Domänenadministratorberechtigungen verfügt.</li><li>In der folgenden Tabelle ist eine Liste mit zusätzlichen Anforderungen für Ihr Szenario aufgeführt.</li>|<li>Dies ist das Konto, das für das lokale Konto des Active Directory Verwaltungs-Agent-Kontos (AD MA-Konto, AD Management Agent-Konto) verwendet wird. Es wird zum Lesen und Schreiben von Objekten und Attributen im lokalen AD für die fortlaufende Synchronisierung verwendet.</li><li>Zuweisen der erforderlichen Berechtigungen und Zugriffseinstellungen für die ausgewählten Synchronisierungsoptionen zum oben genannten Konto und zu AD.</li>
 AD FS-Server|Für jeden Server in der Liste sammelt der Assistent Anmeldeinformationen, wenn die Anmeldeinformationen des Benutzers, der den Assistenten ausführt, nicht für die Verbindung ausreichen.|Domänenadministrator|Installieren und Konfigurieren der AD FS-Server-Rolle.|
 Webanwendungsproxy-Server |Für jeden Server in der Liste sammelt der Assistent Anmeldeinformationen, wenn die Anmeldeinformationen des Benutzers, der den Assistenten ausführt, nicht für die Verbindung ausreichen.|Lokaler Administrator auf dem Zielcomputer.|Installieren und Konfigurieren der WAP-Server-Rolle.
 Anmeldeinformationen der Proxyvertrauensstellung |Anmeldeinformationen der Verbunddienstvertrauensstellung (die Anmeldeinformationen, die der Proxy zur Registrierung für ein Zertifikat für die Vertrauensstellung vom FS verwendet) |Domänenkonto, dessen Benutzer ein lokaler Administrator des AD FS-Servers ist|Anfängliche Registrierung des vertrauenswürdigen FS-WAP-Zertifikats
@@ -90,4 +93,4 @@ AD FS: GMSA-Konto (aadcsvc$)|Domänenbenutzer|Anmeldekonto für den AD FS-Dienst
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

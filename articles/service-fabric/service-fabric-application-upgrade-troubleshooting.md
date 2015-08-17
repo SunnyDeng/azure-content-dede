@@ -7,6 +7,7 @@
    manager="samgeo"
    editor=""/>
 
+
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
@@ -15,6 +16,7 @@
    ms.workload="NA"
    ms.date="04/24/2015"
    ms.author="subramar"/>
+
 
 # Problembehandlung bei Anwendungsupgrades
 
@@ -78,7 +80,7 @@ ForceRestart                   : False
 UpgradeReplicaSetCheckTimeout  : 00:00:00
 ~~~
 
-In diesem Beispiel ist zu sehen, dass das Upgrade in der Upgradedomäne *MYUD1* fehlgeschlagen ist und dass zwei Partitionen (*744c8d9f-1d26-417e-a60e-cd48f5c098f0* und *4b43f4d8-b26b-424e-9307-7a7a62e79750*) nicht mehr reagieren, sodass primäre Replikate nicht in den Zielknoten *Node1* und *Node4* platziert werden können (*WaitForPrimaryPlacement*). Mit dem Befehl **Get-ServiceFabricNode** kann überprüft werden, ob sich diese beiden Knoten in der Upgradedomäne *MYUD1* befinden. *UpgradePhase* gibt *PostUpgradeSafetyCheck* aus, was bedeutet, dass diese Sicherheitsprüfungen nach dem Aktualisieren aller Knoten in der Upgradedomäne stattfinden. Alle diese Informationen lassen auf ein mögliches Problem mit der neuen Version des Anwendungscodes schließen. Die häufigsten Probleme sind Dienstfehler im Vordergrund oder bei der Heraufstufung auf primäre Codepfade.
+In diesem Beispiel ist zu sehen, dass das Upgrade in der Upgradedomäne *MYUD1* fehlgeschlagen ist und dass zwei Partitionen (*744c8d9f-1d26-417e-a60e-cd48f5c098f0*und *4b43f4d8-b26b-424e-9307-7a7a62e79750*) nicht mehr reagieren, sodass primäre Replikate nicht in den Zielknoten *Node1* und *Node4* platziert werden können (*WaitForPrimaryPlacement*). Mit dem Befehl **Get-ServiceFabricNode** kann überprüft werden, ob sich diese beiden Knoten in der Upgradedomäne *MYUD1* befinden. *UpgradePhase* gibt *PostUpgradeSafetyCheck* aus, was bedeutet, dass diese Sicherheitsprüfungen nach dem Aktualisieren aller Knoten in der Upgradedomäne stattfinden. Alle diese Informationen lassen auf ein mögliches Problem mit der neuen Version des Anwendungscodes schließen. Die häufigsten Probleme sind Dienstfehler im Vordergrund oder bei der Heraufstufung auf primäre Codepfade.
 
 *PreUpgradeSafetyCheck* als *UpgradePhase* bedeutet, dass vor der eigentlichen Durchführung des Upgrades Probleme bei der Vorbereitung der Upgradedomäne aufgetreten sind. In diesem Fall sind die häufigsten Probleme Fehler im Hintergrund oder bei der Herabstufung von primären Codepfaden.
 
@@ -188,7 +190,7 @@ Das Upgrade wird ab der Upgradedomäne fortgesetzt, in der es zuletzt angehalten
 
 Mögliche Ursache 1:
 
-Service Fabric übersetzt für die Integritätsevaluierung alle Prozentsätze in die tatsächliche Anzahl der Entitäten (z. B. Replikate, Partitionen und Dienste) und rundet immer auf die nächste Zahl der gesamten Entitäten auf. Wenn für _MaxPercentUnhealthyReplicasPerPartition_ beispielsweise maximal 21 % angegeben und 5 Replikate vorhanden sind, lässt Service Fabric bei der Evaluierung der Partitionsintegrität bis zu 2 Replikate (d. h. `Math.Ceiling (5*0.21)`) zu. Dies sollte beim Festlegen der Integritätsrichtlinien berücksichtigt werden.
+Service Fabric übersetzt für die Integritätsevaluierung alle Prozentsätze in die tatsächliche Anzahl der Entitäten (z. B. Replikate, Partitionen und Dienste) und rundet immer auf die nächste Zahl der gesamten Entitäten auf. Wenn für _MaxPercentUnhealthyReplicasPerPartition_ beispielsweise maximal 21 % angegeben und 5 Replikate vorhanden sind, lässt Service Fabric bei der Evaluierung der Partitionsintegrität bis zu 2 Replikate (d. h. `Math.Ceiling (5\*0.21)`) zu. Dies sollte beim Festlegen der Integritätsrichtlinien berücksichtigt werden.
 
 Mögliche Ursache 2:
 
@@ -225,4 +227,4 @@ Die Upgradezeit für eine Upgradedomäne wird durch *UpgradeDomainTimeout* begre
 [Datenserialisierung](service-fabric-application-upgrade-data-serialization.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

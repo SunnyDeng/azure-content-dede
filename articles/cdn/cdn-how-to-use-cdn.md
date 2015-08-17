@@ -7,14 +7,16 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="cdn" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="05/19/2015" 
 	ms.author="mazha"/>
+
 
 
 # Verwenden von CDN für Azure
@@ -54,4 +56,4 @@ Verwenden Sie für den Zugriff auf die im CDN zwischengespeicherten Inhalte den 
 [Übersicht über das Azure Content Delivery Network (CDN)](cdn-overview.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

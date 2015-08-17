@@ -119,23 +119,23 @@ Gehen Sie jeweils für beide SQL-Server nach den Anweisungen der folgenden Proze
 3.	Klicken Sie im linken Bereich mit der rechten Maustaste auf den obersten Knoten – die nach dem Computer benannte Standardinstanz –, und klicken Sie dann auf **Eigenschaften**.
 4.	Klicken Sie unter **Servereigenschaften** auf **Datenbankeinstellungen**.
 5.	Legen Sie unter **Standardspeicherorte für Datenbank** die folgenden Werte fest:
-- Geben Sie als Pfad für **Daten** **f:\Data** ein.
-- Geben Sie als Pfad für **Protokoll** **f:\Log** ein.
-- Geben Sie als Pfad für **Sicherung** **f:\Backup** ein.
+- Geben Sie als Pfad für **Daten** **f:\\Data** ein.
+- Geben Sie als Pfad für **Protokoll** **f:\\Log** ein.
+- Geben Sie als Pfad für **Sicherung** **f:\\Backup** ein.
 - Nur neue Datenbanken verwenden diese Speicherorte.
 6.	Klicken Sie auf **OK**, um das Fenster zu schließen.
 7.	Erweitern Sie im linken Bereich den **Ordner Sicherheit**.
 8.	Klicken Sie mit der rechten Maustaste auf **Anmeldungen**, und klicken Sie dann auf **Neue Anmeldung**.
-9.	Geben Sie unter **Anmeldename** die Zeichenfolge „*Domäne*\sp_farm_db“ ein (wobei *Domäne* der Name der Domäne ist, in der das Konto „sp_farm_db“ erstellt wurde).
+9.	Geben Sie unter **Anmeldename** die Zeichenfolge „*Domäne*\\sp\_farm\_db“ ein (wobei *Domäne* der Name der Domäne ist, in der das Konto „sp\_farm\_db“ erstellt wurde).
 10.	Klicken Sie unter **Seite auswählen** auf **Serverrollen**, klicken Sie auf **sysadmin**, und klicken Sie dann auf **OK**.
 11.	Schließen Sie SQL Server 2014 Management Studio.
 
-Gehen Sie jeweils für beide SQL-Server nach den Anweisungen der folgenden Prozedur vor, damit Remotedesktopverbindungen das Konto „sp_farm_db“ verwenden können.
+Gehen Sie jeweils für beide SQL-Server nach den Anweisungen der folgenden Prozedur vor, damit Remotedesktopverbindungen das Konto „sp\_farm\_db“ verwenden können.
 
 1.	Klicken Sie auf dem Startbildschirm mit der rechten Maustaste auf **Dieser PC**, und klicken Sie dann auf **Eigenschaften**.
 2.	Klicken Sie im Fenster **System** auf **Remoteeinstellungen**.
 3.	Klicken Sie im Abschnitt **Remotedesktop** auf **Benutzer auswählen**, und klicken Sie dann auf **Hinzufügen**.
-4.	Geben Sie unter **Geben Sie die Namen der auszuwählenden Objekte ein** die Zeichenfolge "[Domäne]**\sp_farm_db**" ein, und klicken Sie dann dreimal auf **OK**.
+4.	Geben Sie unter **Geben Sie die Namen der auszuwählenden Objekte ein** die Zeichenfolge "[Domäne]**\\sp\_farm\_db**" ein, und klicken Sie dann dreimal auf **OK**.
 
 Für SQL Server ist ein Port erforderlich, über den die Clients auf den Datenbankserver zugreifen. Zwei weitere Ports sind erforderlich für die Verbindung mit SQL Server Management Studio und die Verwaltung der Hochverfügbarkeitsgruppe. Führen Sie als Nächstes jeweils für beide SQL-Server den folgenden Befehl an einer Windows PowerShell-Eingabeaufforderung auf Administratorebene aus, um eine Firewallregel hinzuzufügen, die eingehenden Datenverkehr zum SQL-Server erlaubt.
 
@@ -167,7 +167,7 @@ Führen Sie für beide SQL Server-Computer und für den Mehrheitsknoten des Clus
 
 Aufgrund des noch nicht RFC-konformen Verhaltens von DHCP in Azure kann die Erstellung eines Clusters mit Windows Server-Failoverclustering (WSFC) fehlschlagen. Nähere Informationen hierzu finden Sie im Artikel „Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern“ unter „WSFC-Clusterverhalten in Azure-Netzwerken“. Dieses Problem kann jedoch umgangen werden. Führen Sie zum Erstellen des Clusters die folgenden Schritte aus:
 
-1.	Melden Sie sich beim primären virtuellen SQL Server-Computer unter dem Konto **sp_install** an.
+1.	Melden Sie sich beim primären virtuellen SQL Server-Computer unter dem Konto **sp\_install** an.
 2.	Geben Sie auf dem Startbildschirm **Failover** ein, und klicken Sie dann auf **Failovercluster-Manager**.
 3.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **Failovercluster-Manager**, und klicken Sie dann auf **Cluster erstellen**.
 4.	Klicken Sie auf der Seite „Voraussetzungen“ auf **Weiter**.
@@ -197,12 +197,12 @@ Als Nächstes aktivieren Sie AlwaysOn-Verfügbarkeitsgruppen mit dem SQL Server-
 
 Führen Sie zur Aktivierung von Verfügbarkeitsgruppen in SQL Server folgende Schritte aus.
 
-1.	Melden Sie sich unter dem Konto **sp_farm_db** oder einem anderen Konto, das auf dem SQL-Server über die Serverrolle „sysadmin“ verfügt, beim primären SQL-Server an.
+1.	Melden Sie sich unter dem Konto **sp\_farm\_db** oder einem anderen Konto, das auf dem SQL-Server über die Serverrolle „sysadmin“ verfügt, beim primären SQL-Server an.
 2.	Geben Sie auf dem Startbildschirm **SQL Server-Konfiguration** ein, und klicken Sie dann auf **SQL Server-Konfigurations-Manager**.
 3.	Klicken Sie im linken Bereich auf **SQL Server-Dienste**.
 4.	Doppelklicken Sie im Inhaltsbereich auf **SQL Server (MSSQLSERVER)**.
 5.	Klicken Sie im Fenster **Eigenschaften von SQL Server (MSSQLSERVER)** auf die Registerkarte **Hohe Verfügbarkeit mit AlwaysOn**, wählen Sie **AlwaysOn-Verfügbarkeitsgruppen aktivieren** aus, klicken Sie auf **Übernehmen**, und klicken Sie dann, wenn Sie dazu aufgefordert werden, auf **OK**. Lassen Sie das Eigenschaftenfenster noch offen.
-6.	Klicken Sie auf die Registerkarte "virtual-machines-manage-availability", und geben Sie unter **Kontoname** [Domäne]**\sqlservice** ein. Geben Sie unter **Kennwort** das Kennwort für das Konto "sqlservice" ein, **bestätigen Sie das Kennwort**, und klicken Sie dann auf **OK**.
+6.	Klicken Sie auf die Registerkarte "virtual-machines-manage-availability", und geben Sie unter **Kontoname** [Domäne]**\\sqlservice** ein. Geben Sie unter **Kennwort** das Kennwort für das Konto "sqlservice" ein, **bestätigen Sie das Kennwort**, und klicken Sie dann auf **OK**.
 7.	Klicken Sie im Meldungsfenster auf **Ja**, um den SQL Server-Dienst neu zu starten.
 8.	Melden Sie sich beim sekundären SQL-Server an, und wiederholen Sie diesen Vorgang.
 
@@ -226,4 +226,4 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 4:
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

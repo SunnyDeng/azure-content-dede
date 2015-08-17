@@ -19,7 +19,7 @@
 
 ## Übersicht
 
-Eine Sicherungsrichtlinie erstellt einen Zeitplan für die Sicherung von Volumedaten lokal oder in der Cloud. Wenn Sie eine Sicherungsrichtlinie erstellen, können Sie auch eine Aufbewahrungsrichtlinie angeben. \(Sie können bis zu 64 Momentaufnahmen beibehalten.\) Weitere Informationen zu Sicherungsrichtlinien finden Sie unter [Sicherungstypen und -richtlinien](storsimple-what-is-snapshot-manager.md#backup-types-and-backup-policies).
+Eine Sicherungsrichtlinie erstellt einen Zeitplan für die Sicherung von Volumedaten lokal oder in der Cloud. Wenn Sie eine Sicherungsrichtlinie erstellen, können Sie auch eine Aufbewahrungsrichtlinie angeben. (Sie können bis zu 64 Momentaufnahmen beibehalten.) Weitere Informationen zu Sicherungsrichtlinien finden Sie unter [Sicherungstypen und -richtlinien](storsimple-what-is-snapshot-manager.md#backup-types-and-backup-policies).
 
 In diesem Lernprogramm werden folgende Punkte erläutert:
 
@@ -47,11 +47,11 @@ Verwenden Sie das folgende Verfahren, um eine neue Sicherungsrichtlinie zu erste
 
    1. Geben Sie im Textfeld **Name** einen Namen für die Richtlinie ein.
 
-   2. Geben Sie im Textfeld\*\* Volumegruppe **den Namen der Volumegruppe ein, die der Richtlinie zugeordnet ist.
+   2. Geben Sie im Textfeld **Volumegruppe** den Namen der Volumegruppe ein, die der Richtlinie zugeordnet ist.
 
    3. Wählen Sie entweder **lokale Momentaufnahme** oder **cloudbasierte Momentaufnahme**.
 
-   4. Wählen Sie die Anzahl der Momentaufnahmen, die beibehalten werden sollen. Wenn Sie die Option **Alle** auswählen, werden 64 Momentaufnahmen \(die maximale Anzahl\) beibehalten.
+   4. Wählen Sie die Anzahl der Momentaufnahmen, die beibehalten werden sollen. Wenn Sie die Option **Alle** auswählen, werden 64 Momentaufnahmen (die maximale Anzahl) beibehalten.
 
 4. Klicken Sie auf die Registerkarte **Zeitplan**.
 
@@ -81,7 +81,7 @@ Nachdem Sie eine Sicherungsrichtlinie erstellt haben, werden die folgenden Infor
 
 - **Erstellt** – das Datum, an dem diese Richtlinie erstellt wurde.
 
-- **Aktiviert** – ob die Richtlinie derzeit angewendet wird: **True** gibt an, sie aktiviert ist, **False** gibt an, dass sie nicht aktiviert ist.
+- **Aktiviert** – ob die Richtlinie derzeit angewendet wird: **True** gibt an, dass sie aktiviert ist, **False** gibt an, dass sie nicht aktiviert ist.
 
 ## Bearbeiten einer Sicherungsrichtlinie
 
@@ -118,4 +118,4 @@ Verwenden Sie das folgende Verfahren, um eine Sicherungsrichtlinie zu löschen.
 
 [Verwenden von StorSimple Snapshot Manager zum Anzeigen und Verwalten von Sicherungsaufträgen](storsimple-snapshot-manager-manage-backup-jobs.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

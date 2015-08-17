@@ -41,4 +41,4 @@ Eine Dienstkonfigurationsdatei kann ein DnsServers-Element mit einer Liste von I
 
 [Einstellungen für virtuelle Netzwerke im Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkId=248092)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

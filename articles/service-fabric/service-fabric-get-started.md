@@ -19,7 +19,7 @@
 # Einrichten der Service Fabric-Entwicklungsumgebung
  Dieser Artikel befasst sich mit allem, was Sie zum Erstellen von [Service Fabric][1]-Apps benötigen, einschließlich Installation von Laufzeit, SDK und Tools sowie Einrichtung eines lokalen Clusters.
 
- > [AZURE.NOTE] Diese Anweisungen beziehen sich auf die Einrichtung neuer PCs. Wenn Sie eine frühere Version von Service Fabric auf Ihrem PC installiert haben, folgen Sie den [Anweisungen zum Aktualisieren der Entwicklungsumgebung](service-fabric-update-your-development-environment.md).
+ >[AZURE.NOTE]Diese Anweisungen beziehen sich auf die Einrichtung neuer PCs. Wenn Sie eine frühere Version von Service Fabric auf Ihrem PC installiert haben, folgen Sie den [Anweisungen zum Aktualisieren der Entwicklungsumgebung](service-fabric-update-your-development-environment.md).
 
 ## Voraussetzungen
 ### Unterstütztes Betriebssystemversionen:
@@ -33,7 +33,7 @@ Die folgenden Betriebssystemversionen werden unterstützt:
 
 Die Tools für Service Fabric hängen von Visual Studio 2015 ab, das Sie [hier][2] finden.
 
-> [AZURE.NOTE] Wenn Sie keine der unterstützten Betriebssystemversionen verwenden oder Visual Studio 2015 nicht auf Ihrem PC installieren möchten, können Sie mit Windows Server 2012 R2 und der vorinstallierten Version von Visual Studio 2015 einen virtuellen Azure-Computer einrichten, indem Sie ein Image aus dem VM-Katalog verwenden.
+> [AZURE.NOTE]Wenn Sie keine der unterstützten Betriebssystemversionen verwenden oder Visual Studio 2015 nicht auf Ihrem PC installieren möchten, können Sie mit Windows Server 2012 R2 und der vorinstallierten Version von Visual Studio 2015 einen virtuellen Azure-Computer einrichten, indem Sie ein Image aus dem VM-Katalog verwenden.
 
 ## Installieren von Laufzeit, SDK und Tools
 
@@ -66,7 +66,7 @@ Ein lokaler Cluster stellt die Topologie mit mehreren Computern dar, die Sie let
 
 Nach wenigen Augenblicken sehen Sie eine Ausgabe mit Knoteninformationen und der Bestätigung, dass der Cluster erfolgreich erstellt wurde. In manchen Fällen werden beim Starten des Service Fabric-Hostdiensts und der Naming-Dienste Warnungen angezeigt. Dies ist normal; es werden außerdem Diese sind normal und werden gefolgt von kurz angezeigten grundlegenden Informationen zum Cluster.
 
-> [AZURE.NOTE] Der lokale Cluster verwendet genau dieselbe Laufzeit, die später in Azure ausgeführt wird. Die Laufzeit ist weder simuliert noch emuliert. Der einzige Unterschied besteht darin, dass alle Knoten auf einem einzelnen Computer ausgeführt werden, anstatt auf mehreren Computern verteilt zu sein, wie es in Azure der Fall sein wird.
+> [AZURE.NOTE]Der lokale Cluster verwendet genau dieselbe Laufzeit, die später in Azure ausgeführt wird. Die Laufzeit ist weder simuliert noch emuliert. Der einzige Unterschied besteht darin, dass alle Knoten auf einem einzelnen Computer ausgeführt werden, anstatt auf mehreren Computern verteilt zu sein, wie es in Azure der Fall sein wird.
 
 ## Überprüfen der Clustereinrichtung
 
@@ -89,8 +89,8 @@ Ihre Entwicklungsumgebung ist nun eingerichtet, und Sie können mit der Entwickl
 - [Service Fabric-Beispiele auf GitHub](https://github.com/azure/servicefabric-samples)
 - [Visualisieren des Clusters mit Service Fabric-Explorer](service-fabric-visualizing-your-cluster.md)
 
-[1]: http://azure.microsoft.com/en-us/campaigns/service-fabric/ "Service Fabric-Kampagnenseite"
+[1]: http://azure.microsoft.com/campaigns/service-fabric/ "Service Fabric-Kampagnenseite"
 [2]: http://go.microsoft.com/fwlink/?LinkId=517106 "VS RC"
 [3]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI-Link"
 
-<!-----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

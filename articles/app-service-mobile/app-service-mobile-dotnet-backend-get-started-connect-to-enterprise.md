@@ -47,11 +47,11 @@ Um einen Aufruf an SharePoint zu richten, müssen Sie die Endpunkte festlegen, m
 
 3. Navigieren Sie im Verwaltungsportal im Abschnitt für den Code der mobilen App zur Registerkarte "Konfiguration", und führen Sie einen Bildlauf zu den App-Einstellungen durch. Hier können Sie ein Schlüsselwertepaar bereitstellen, mit dem Sie auf die nötigen Anmeldeinformationen verweisen.
 
-* Legen Sie SP_Authority als Autoritätsendpunkt für das AAD-Mandat fest. Das sollte derselbe Autoritätsendpunkt sein, den Sie auch für die Client-App verwendet haben. Er hat das Format `https://login.windows.net/contoso.onmicrosoft.com`.
+* Legen Sie SP\_Authority als Autoritätsendpunkt für das AAD-Mandat fest. Das sollte derselbe Autoritätsendpunkt sein, den Sie auch für die Client-App verwendet haben. Er hat das Format `https://login.windows.net/contoso.onmicrosoft.com`.
 
-* Legen Sie bei SP_ClientSecret den geheimen Clientwert fest, den Sie zuvor abgerufen haben.
+* Legen Sie bei SP\_ClientSecret den geheimen Clientwert fest, den Sie zuvor abgerufen haben.
 
-* Legen Sie bei SP_SharePointURL die URL für Ihre SharePoint-Website fest. Sie sollte das folgende Format aufweisen: `https://contoso-my.sharepoint.com`
+* Legen Sie bei SP\_SharePointURL die URL für Ihre SharePoint-Website fest. Sie sollte das folgende Format aufweisen: `https://contoso-my.sharepoint.com`
 
 Sie können diese Werte mithilfe von "ApiServices.Settings" in Ihrem Code abrufen.
 
@@ -187,4 +187,4 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 [Mobile Apps .NET Backend App Service Extension]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.AppService/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -82,4 +82,4 @@ Folgende Fragen wurden zu Azure RemoteApp an uns gestellt. Haben Sie weitere Fra
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

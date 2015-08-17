@@ -13,10 +13,14 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/01/2015"
+   ms.date="08/03/2015"
    ms.author="joaoma" />
 
 # Erste Schritte zum Konfigurieren des Lastenausgleichs für Internetverbindungen
+
+> [AZURE.SELECTOR]
+- [Azure classic steps](load-balancer-internet-getstarted.md)
+- [Resource Manager Powershell steps](load-balancer-arm-powershell.md)
 
 Lastenausgleichsdienste in Microsoft Azure funktionieren mit allen Mandantentypen (IaaS oder PaaS) und allen Betriebssystemarten (Windows- oder Linux-Betriebssysteme).
 
@@ -135,4 +139,4 @@ Im folgenden Beispiel fügen Sie einen Load Balancer mit dem Namen „webfarm“
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

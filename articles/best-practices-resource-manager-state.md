@@ -337,7 +337,7 @@ Beachten Sie, dass *osImageReference* die Werte aus der in der Hauptvorlage defi
 
 ##### vmScripts
 
-Das*vmScripts*-Objekt enthält Details zu den Skripts zum Herunterladen und Ausführen auf einer VM-Instanz, einschließlich der externen und internen Verweise. Externe Verweise schließen die Infrastruktur ein. Interne Verweise umfassen die installierte Software und die Konfiguration.
+Das *vmScripts*-Objekt enthält Details zu den Skripts zum Herunterladen und Ausführen auf einer VM-Instanz, einschließlich der externen und internen Verweise. Externe Verweise schließen die Infrastruktur ein. Interne Verweise umfassen die installierte Software und die Konfiguration.
 
 Mithilfe der *scriptsToDownload*-Eigenschaft listen Sie die Skripts auf, die auf den virtuellen Computer heruntergeladen werden sollen.
 
@@ -381,4 +381,4 @@ Innerhalb der Hauptvorlage können Sie diese Daten mit folgender Syntax verwende
 - [Authoring Azure Resource Manager Templates](resource-group-authoring-templates.md) (in englischer Sprache)
 - [Funktionen von Azure-Ressourcen- Manager-Vorlagen](resource-group-template-functions.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -62,4 +62,4 @@ Weitere Informationen finden Sie unter [reference-Funktion](../resource-group-te
 - Weitere Informationen zum Erstellen von Azure-Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Vorlagen](resource-group-authoring-templates.md). 
 - Eine Liste der verfügbaren Funktionen in einer Vorlage finden Sie unter [Vorlagenfunktionen](resource-group-template-functions.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

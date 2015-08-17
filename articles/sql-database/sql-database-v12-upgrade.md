@@ -28,13 +28,13 @@
 
 | Upgradeschritte | Screenshot |
 | :--- | :--- |
-| 1. Melden Sie sich bei [http://portal.azure.com/](http://portal.azure.com/) an. | ![Neues Azure-Portal][1] |
-| 2. Klicken Sie auf **DURCHSUCHEN**. | ![Durchsuchen von Diensten][2] |
-| 3. Klicken Sie auf **SQL-Server**. Eine Liste der Namen der Computer mit SQL-Server wird angezeigt. | ![Auswählen des SQL Server-Diensts][3] |
-| 4. Wählen Sie den Server aus, den Sie auf einen neuen Server kopieren möchten, auf dem das SQL-Datenbankupdate aktiviert ist. | ![Zeigt eine Liste der SQL-Server an][4] |
-| 5. Klicken Sie auf **Einstellungen** oder **Serverversion**, um den Server auf Version 12 zu aktualisieren. | ![Aktuelles Vorschaufeature][5] |
-| 6. Klicken Sie auf **UPGRADE FÜR DIESEN SERVER AUSFÜHREN**. | ![SQL Server-Upgrade auf die Preview][6] |
-| 7. Nach dem Klicken auf **UPGRADE FÜR DEN SERVER AUSFÜHREN** wird der Upgradevorgang initiiert. Unter **Serverversion** ändert sich die Benachrichtigung von **V2** in **Upgrade scheduled...**. Wenn Sie auf die Benachrichtigung **Upgrade scheduled...** klicken, wird ein Blatt geöffnet, das die Schaltfläche **Upgrade abbrechen** enthält. Klicken Sie auf **Upgrade abbrechen**, wenn Sie sich gegen ein Upgrade für den Server entscheiden. **Hinweis:** Ein Abbruch des Vorgangs gegen Ende des Upgradevorgangs ist nicht möglich, das Upgrade wird in diesem Fall normal abgeschlossen.|![Upgrade abbrechen][9] 
+| 1\. Melden Sie sich bei [http://portal.azure.com/](http://portal.azure.com/) an. | ![Neues Azure-Portal][1] |
+| 2\. Klicken Sie auf **DURCHSUCHEN**. | ![Durchsuchen von Diensten][2] |
+| 3\. Klicken Sie auf **SQL-Server**. Eine Liste der Namen der Computer mit SQL-Server wird angezeigt. | ![Auswählen des SQL Server-Diensts][3] |
+| 4\. Wählen Sie den Server aus, den Sie auf einen neuen Server kopieren möchten, auf dem das SQL-Datenbankupdate aktiviert ist. | ![Zeigt eine Liste der SQL-Server an][4] |
+| 5\. Klicken Sie auf **Einstellungen** oder **Serverversion**, um den Server auf Version 12 zu aktualisieren. | ![Aktuelles Vorschaufeature][5] |
+| 6\. Klicken Sie auf **UPGRADE FÜR DIESEN SERVER AUSFÜHREN**. | ![SQL Server-Upgrade auf die Preview][6] |
+| 7\. Nach dem Klicken auf **UPGRADE FÜR DEN SERVER AUSFÜHREN** wird der Upgradevorgang initiiert. Unter **Serverversion** ändert sich die Benachrichtigung von **V2** in **Upgrade scheduled...**. Wenn Sie auf die Benachrichtigung **Upgrade scheduled...** klicken, wird ein Blatt geöffnet, das die Schaltfläche **Upgrade abbrechen** enthält. Klicken Sie auf **Upgrade abbrechen**, wenn Sie sich gegen ein Upgrade für den Server entscheiden. **Hinweis:** Ein Abbruch des Vorgangs gegen Ende des Upgradevorgangs ist nicht möglich, das Upgrade wird in diesem Fall normal abgeschlossen.|![Upgrade abbrechen][9] 
 
 
 > [AZURE.NOTE]Nachdem Sie die Upgradeoption ausgewählt haben, werden die Funktionen der SQL-Datenbank V12 für den Server und die Datenbanken auf diesem Server aktiviert. Dieser Vorgang kann nicht rückgängig gemacht werden. Damit für Server ein Upgrade auf SQL-Datenbank V12 durchgeführt werden kann, ist die Dienstebene „Basic“, „Standard“ oder „Premium“ erforderlich. Weitere Informationen zu den Dienstebenen finden Sie unter [Upgrade von Web-/Businessdatenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md).
@@ -55,8 +55,8 @@ Nachdem Sie auf die Option **UPGRADE FÜR DIESEN SERVER AUSFÜHREN** geklickt ha
 
 | Aktion | Screenshot |
 | :--- | :--- |
-| 7. Nachdem Sie die Aktionen abgeschlossen haben, die Ihren Server auf das Upgrade vorbereiten, geben Sie den Namen des Servers ein, für den das Upgrade durchgeführt werden soll. Klicken Sie dann auf **OK**. | ![Bestätigen Sie den Namen des Servers, für den ein Upgrade durchgeführt werden soll.][7] |
-| 8. Der Upgradevorgang wird eingeleitet. Das Upgrade kann bis zu 24 Stunden dauern. Während dieser Zeitspanne bleiben alle Datenbanken auf diesem Server online. Server- und Datenbankverwaltungsaktionen sind jedoch eingeschränkt. Nachdem der Vorgang abgeschlossen wurde, wird im Serverbereich der Status **Aktiviert** angezeigt. | ![Bestätigt, dass Vorschaufeatures aktiviert sind][8] |
+| 7\. Nachdem Sie die Aktionen abgeschlossen haben, die Ihren Server auf das Upgrade vorbereiten, geben Sie den Namen des Servers ein, für den das Upgrade durchgeführt werden soll. Klicken Sie dann auf **OK**. | ![Bestätigen Sie den Namen des Servers, für den ein Upgrade durchgeführt werden soll.][7] |
+| 8\. Der Upgradevorgang wird eingeleitet. Das Upgrade kann bis zu 24 Stunden dauern. Während dieser Zeitspanne bleiben alle Datenbanken auf diesem Server online. Server- und Datenbankverwaltungsaktionen sind jedoch eingeschränkt. Nachdem der Vorgang abgeschlossen wurde, wird im Serverbereich der Status **Aktiviert** angezeigt. | ![Bestätigt, dass Vorschaufeatures aktiviert sind][8] |
 
 
 ## Powershell-Cmdlets
@@ -94,4 +94,4 @@ Mit dem Cmdlet „Stop-“ wird der Vorgang abgebrochen, nicht angehalten. Ein U
 [9]: ./media/sql-database-v12-upgrade/cancel.PNG
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

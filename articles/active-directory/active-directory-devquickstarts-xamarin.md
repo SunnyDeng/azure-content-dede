@@ -203,4 +203,4 @@ Als Referenz stellen wir [hier](https://github.com/AzureADQuickStarts/NativeClie
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

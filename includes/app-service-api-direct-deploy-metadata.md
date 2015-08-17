@@ -36,4 +36,4 @@ Wenn Sie eine statische [Swagger](http://swagger.io/) 2.0-API-Definition bereits
 
 Lassen Sie `endpoints.apiDefinition` in der Datei *apiapp.json* weg, oder setzen Sie den zugehörigen Wert auf "null". Wenn Sie sowohl eine `endpoints.apiDefinition`-URL als auch eine Datei *apiDefinition.swagger.json* einschließen, hat die URL Vorrang, und die Datei wird ignoriert.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

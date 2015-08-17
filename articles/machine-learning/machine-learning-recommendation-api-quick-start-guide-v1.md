@@ -7,6 +7,7 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
+
 <tags 
 	ms.service="machine-learning" 
 	ms.workload="data-services" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/06/2015" 
 	ms.author="luisca"/>
+
 
 # Kurzanleitung für die Machine Learning Empfehlungen-API
 
@@ -68,9 +70,7 @@ Erstellen eine Anforderung "Modell erstellen":
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
-|	modelName |	Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) zulässig.<br>Max. Länge: 20 |
-|	apiVersion | 1.0 |
-||| | ||| | Request Body | KEINER |
+|	modelName |	Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (\_) zulässig.<br>Max. Länge: 20 | | apiVersion | 1.0 | ||| | Anforderungstext | NONE |
 
 
 **Antwort**:
@@ -83,16 +83,20 @@ OData-XML
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/CreateModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
 	  <title type="text" />
+
 	  <subtitle type="text">Create A New Model</subtitle>
 	  <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/CreateModel?modelName='MyFirstModel'&amp;apiVersion='1.0'</id>
-	  <rights type="text" />	
+	  <rights type="text" />
+	
 	  <updated>2014-10-05T06:35:21Z</updated>
  	 <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/CreateModel?modelName='MyFirstModel'&amp;apiVersion='1.0'" />
+
 	  <entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/CreateModel?modelName='MyFirstModel'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">CreateANewModelEntity2</title>
     <updated>2014-10-05T06:35:21Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/CreateModel?modelName='MyFirstModel'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">a658c626-2baa-43a7-ac98-f6ee26120a12</d:Id>
@@ -121,9 +125,7 @@ Wenn Sie mehrere Katalogdateien mit demselben Modell durch mehrere Aufrufe Hochl
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells |
-| filename | Dies ist ein Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) zulässig.<br>Max. Länge: 50 |
-|	apiVersion | 1.0 |
-||| | Request Body| Die Katalogdaten. Format:<br>`<Item Id>,<Item Name>,<Item Category>[,<description>]`<br><br><table><tr><th>Name</th><th>Obligatorisch</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>Element-ID</td><td>Ja</td><td>Alphanumerisch, Max. Länge 50</td><td>Eindeutiger Bezeichner eines Elements</td></tr><tr><td>Elementname</td><td>Ja</td><td>Alphanumerisch, Max. Länge 255</td><td>Der Elementname</td></tr><tr><td>Elementkategorie</td><td>Ja</td><td>Alphanumerisch, Max. Länge 255</td><td>Die Kategorie, zu der dieser Artikel gehört (z. B. Kochbücher, Drama...)</td></tr><tr><td>Beschreibung</td><td>Nr.</td><td>Alphanumerisch, Max. Länge 4000</td><td>Eine Beschreibung des Elements</td></tr></table><br>Maximale Dateigröße 200MB<br><br>Beispiel:<br><pre>2406e770-769c-4189-89de-1c9283f93a96, Clara Callan, Buch<br>21bf8088-b6c0-4509-870c-e1c7ac78304a, The Forgetting Room: A Fiction (Byzantium Book), Buch<br>3bb5cb44-d143-4bdd-a55c-443964bf4b23, Spadework, Buch<br>552a1940-21e4-4399-82bb-594b46d7ed54, Die Herren der Zäune, Buch</pre> |
+| filename | Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (\_) zulässig<br>Max. Länge: 50 | | apiVersion | 1.0 | ||| | Anforderungstext | Katalogdaten. Format:<br>`<Item Id>,<Item Name>,<Item Category>[,<description>]`<br><br><table><tr><th>Name</th><th>Obligatorisch</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>Element-ID</td><td>Ja</td><td>Alphanumerisch, Max. Länge 50</td><td>Eindeutiger Bezeichner eines Elements</td></tr><tr><td>Elementname</td><td>Ja</td><td>Alphanumerisch, Max. Länge 255</td><td>Der Elementname</td></tr><tr><td>Elementkategorie</td><td>Ja</td><td>Alphanumerisch, Max. Länge 255</td><td>Die Kategorie, zu der dieser Artikel gehört (z. B. Kochbücher, Drama...)</td></tr><tr><td>Beschreibung</td><td>Nr.</td><td>Alphanumerisch, Max. Länge 4000</td><td>Eine Beschreibung des Elements</td></tr></table><br>Maximale Dateigröße 200MB<br><br>Beispiel:<br><pre>2406e770-769c-4189-89de-1c9283f93a96, Clara Callan, Buch<br>21bf8088-b6c0-4509-870c-e1c7ac78304a, The Forgetting Room: A Fiction (Byzantium Book), Buch<br>3bb5cb44-d143-4bdd-a55c-443964bf4b23, Spadework, Buch<br>552a1940-21e4-4399-82bb-594b46d7ed54, Die Herren der Zäune, Buch</pre> |
 
 
 **Antwort**:
@@ -137,16 +139,20 @@ OData-XML
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ImportCatalogFile" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
 	  <title type="text" />
+
   		<subtitle type="text">Import catalog file</subtitle>
   		<id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ImportCatalogFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='catalog10_small.txt'&amp;apiVersion='1.0'</id>
   	<rights type="text" />
+
   	<updated>2014-10-05T06:58:04Z</updated>
   	<link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ImportCatalogFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='catalog10_small.txt'&amp;apiVersion='1.0'" />
+
   	<entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ImportCatalogFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='catalog10_small.txt'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">ImportCatalogFileEntity2</title>
     <updated>2014-10-05T06:58:04Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ImportCatalogFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='catalog10_small.txt'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:LineCount m:type="Edm.String">4</d:LineCount>
@@ -169,9 +175,7 @@ In diesem Abschnitt wird gezeigt, wie Verwendungsdaten mithilfe einer Datei hoch
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells |
-| filename | Dies ist ein Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) zulässig.<br>Max. Länge: 50 |
-|	apiVersion | 1.0 |
-||| | Request Body | Die Nutzungsdaten. Format:<br>`<User Id>,<Item Id>[,<Time>,<Event>]`<br><br><table><tr><th>Name</th><th>Erforderlich</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>User ID</td><td>Ja</td><td>Alphanumerisch</td><td>Eindeutiger Bezeichner eines Benutzers</td></tr><tr><td>Element-ID</td><td>Ja</td><td>Alphanumerisch, Max. Länge 50</td><td>Eindeutiger Bezeichner eines Elements</td></tr><tr><td>Zeit</td><td>Nein </td><td>Datum im Format YYYY/MM/DDTHH:MM:SS (z. B. 2013/06/20T10:00:00)</td><td>Zeitpunkt der Datenerhebung</td></tr><tr><td>Event</td><td>Nein; falls angegeben, muss auch ein Datum angegeben werden</td><td>Eines der folgenden:<br>• Click<br>• RecommendationClick<br>• AddShopCart<br>• RemoveShopCart<br>• Purchase</td><td></td></tr></table><br>Maximale Dateigröße: 200MB<br><br>Beispiel:<br><pre>149452,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>6360,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>50321,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>71285,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>224450,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>236645,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>107951,1b3d95e2-84e4-414c-bb38-be9cf461c347</pre> |
+| filename | Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (\_) zulässig<br>Max. Länge: 50 | | apiVersion | 1.0 | ||| | Anforderungstext | Nutzungsdaten. Format:<br>`<User Id>,<Item Id>[,<Time>,<Event>]`<br><br><table><tr><th>Name</th><th>Erforderlich</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>User ID</td><td>Ja</td><td>Alphanumerisch</td><td>Eindeutiger Bezeichner eines Benutzers</td></tr><tr><td>Element-ID</td><td>Ja</td><td>Alphanumerisch, Max. Länge 50</td><td>Eindeutiger Bezeichner eines Elements</td></tr><tr><td>Zeit</td><td>Nein </td><td>Datum im Format YYYY/MM/DDTHH:MM:SS (z. B. 2013/06/20T10:00:00)</td><td>Zeitpunkt der Datenerhebung</td></tr><tr><td>Event</td><td>Nein; falls angegeben, muss auch ein Datum angegeben werden</td><td>Eines der folgenden:<br>• Click<br>• RecommendationClick<br>• AddShopCart<br>• RemoveShopCart<br>• Purchase</td><td></td></tr></table><br>Maximale Dateigröße: 200MB<br><br>Beispiel:<br><pre>149452,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>6360,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>50321,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>71285,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>224450,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>236645,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>107951,1b3d95e2-84e4-414c-bb38-be9cf461c347</pre> |
 
 **Antwort**:
 
@@ -186,16 +190,20 @@ OData-XML
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ImportUsageFile" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
   	<title type="text" />
+
   	<subtitle type="text">Add bulk usage data (usage file)</subtitle>
   	<id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ImportUsageFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='ImplicitMatrix10_Guid_small.txt'&amp;apiVersion='1.0'</id>
   	<rights type="text" />
+
   	<updated>2014-10-05T07:21:44Z</updated>
   	<link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ImportUsageFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='ImplicitMatrix10_Guid_small.txt'&amp;apiVersion='1.0'" />
+
   	<entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ImportUsageFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='ImplicitMatrix10_Guid_small.txt'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">AddBulkUsageDataUsageFileEntity2</title>
     <updated>2014-10-05T07:21:44Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ImportUsageFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='ImplicitMatrix10_Guid_small.txt'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:LineCount m:type="Edm.String">33</d:LineCount>
@@ -216,7 +224,7 @@ In diesem Abschnitt wird gezeigt, wie Ereignisse in Echtzeit an Azure ML Empfehl
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
-|	apiVersion | 1.0 |
+|	apiVersion | 1,0 |
 
 Anforderungstext
 
@@ -321,7 +329,7 @@ Anforderungstext
 |:--------			|:--------								|
 | modelId |	Der eindeutige Bezeichner des Modells |
 | userDescription | Dies ist der Textbezeichner des Katalogs. Beachten Sie, dass Sie bei Verwendung von Leerzeichen diese stattdessen mit "%20" codieren müssen. Siehe Beispiel oben. <br>Max. Länge: 50 |
-| apiVersion | 1.0 |
+| apiVersion | 1,0 |
 ||| | ||| | Request Body | KEINER |
 
 **Antwort**:
@@ -346,16 +354,20 @@ HTTP-Statuscode: 200
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/BuildModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
   	<title type="text" />
+
   	<subtitle type="text">Build a Model with RequestBody</subtitle>
   	<id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/BuildModel?modelId='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;userDescription='First build'&amp;apiVersion='1.0'</id>
   	<rights type="text" />
+
   	<updated>2014-10-05T08:56:34Z</updated>
   	<link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/BuildModel?modelId='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;userDescription='First%20build'&amp;apiVersion='1.0'" />
+
   	<entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/BuildModel?modelId='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;userDescription='First build'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">BuildAModelEntity2</title>
     <updated>2014-10-05T08:56:34Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/BuildModel?modelId='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;userDescription='First%20build'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">1000272</d:Id>
@@ -393,7 +405,7 @@ HTTP-Statuscode: 200
 |:--------			|:--------								|
 |	modelId |	Der eindeutige Bezeichner des Modells |
 |	onlyLastBuild |	Hier wird angegeben, ob der gesamte Buildverlauf des Modells oder nur der Status des letzten Builds zurückgegeben werden soll. |
-|	apiVersion |	1.0 |
+|	apiVersion |	1,0 |
 
 
 **Antwort**:
@@ -413,16 +425,20 @@ HTTP-Statuscode: 200
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/GetModelBuildsStatus" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
 	<title type="text" />
+
 	<subtitle type="text">Get builds status of a model</subtitle>
 	<id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/GetModelBuildsStatus?modelId='1d20c34f-dca1-4eac-8e5d-f299e4e4ad66'&amp;onlyLastBuild=False&amp;apiVersion='1.0'</id>
 	<rights type="text" />
+
 	<updated>2014-11-05T17:51:10Z</updated>
 	<link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/GetModelBuildsStatus?modelId='1d20c34f-dca1-4eac-8e5d-f299e4e4ad66'&amp;onlyLastBuild=False&amp;apiVersion='1.0'" />
+
 	<entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/GetModelBuildsStatus?modelId='1d20c34f-dca1-4eac-8e5d-f299e4e4ad66'&amp;onlyLastBuild=False&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">GetBuildsStatusEntity</title>
     <updated>2014-11-05T17:51:10Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/GetModelBuildsStatus?modelId='1d20c34f-dca1-4eac-8e5d-f299e4e4ad66'&amp;onlyLastBuild=False&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:UserName m:type="Edm.String">b-434e-b2c9-84935664ff20@dm.com</d:UserName>
@@ -458,7 +474,7 @@ HTTP-Statuscode: 200
 | itemIds | Durch Trennzeichen getrennte Liste der Elemente, für die Empfehlungen erstellt werden sollen.<br>Max. Länge: 200 |
 | numberOfResults | Die Anzahl der erforderlichen Ergebnisse. |
 | includeMetatadata | Zur zukünftigen Verwendung, immer auf "false" festlegen. |
-| apiVersion | 1.0 |
+| apiVersion | 1,0 |
 
 **Antwort:**
 
@@ -473,16 +489,20 @@ HTTP-Statuscode: 200
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
   	<title type="text" />
+
  	 <subtitle type="text">Get Recommendation</subtitle>
  	 <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'</id>
   	<rights type="text" />
+
   	<updated>2014-10-05T12:28:48Z</updated>
   	<link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'" />
+
   	<entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">159</d:Id>
@@ -497,6 +517,7 @@ HTTP-Statuscode: 200
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=1&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">52</d:Id>
@@ -511,6 +532,7 @@ HTTP-Statuscode: 200
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=2&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">35</d:Id>
@@ -525,6 +547,7 @@ HTTP-Statuscode: 200
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=3&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">124</d:Id>
@@ -539,6 +562,7 @@ HTTP-Statuscode: 200
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=4&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">120</d:Id>
@@ -553,6 +577,7 @@ HTTP-Statuscode: 200
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=5&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">96</d:Id>
@@ -567,6 +592,7 @@ HTTP-Statuscode: 200
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=6&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">69</d:Id>
@@ -581,6 +607,7 @@ HTTP-Statuscode: 200
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=7&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">172</d:Id>
@@ -595,6 +622,7 @@ HTTP-Statuscode: 200
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=8&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">155</d:Id>
@@ -609,6 +637,7 @@ HTTP-Statuscode: 200
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=9&amp;$top=1" />
+
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">32</d:Id>
@@ -633,7 +662,7 @@ Mit diesem Mechanismus können Sie, wenn Sie ein Empfehlungsmodell haben, neue M
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 | id | Der eindeutige Bezeichner des Modells |
-| apiVersion | 1.0 |
+| apiVersion | 1\.0 |
 ||| | Request Body | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`   <Description>New Description</Description>`<br>`          <ActiveBuildId>-1</ActiveBuildId>`<br>`</ModelUpdateParams>`<br><br> Beachten Sie, dass die XML-Tags "Description" und "ActiveBuildId" optional sind. Wenn Sie weder eine Beschreibung noch eine aktive Build-ID festlegen möchten, entfernen Sie jeweils das gesamte Tag. |
 
 **Antwort**:
@@ -643,15 +672,18 @@ HTTP-Statuscode: 200
 	OData XML
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/UpdateModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
   	<title type="text" />
+
   	<subtitle type="text">Update an Existing Model</subtitle>
   	<id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/UpdateModel?id='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;apiVersion='1.0'</id>
   	<rights type="text" />
+
  	 <updated>2014-10-05T10:27:17Z</updated>
  	 <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v1/UpdateModel?id='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;apiVersion='1.0'" />
+
 	</feed>
 
 ##Rechtliches
 Dieses Dokument wird bereitgestellt "wie-es- ist". Informationen und Stellungnahmen, die in diesem Dokument enthalten sind, einschließlich URLs und anderer Verweise auf Internetwebsites, können ohne vorherige Ankündigung geändert werden. Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Keine Ähnlichkeit oder Verbindung ist beabsichtigt und ist rein zufällig. Dieses Dokument gibt keine Rechte an geistigem Eigentum an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden. © 2014 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

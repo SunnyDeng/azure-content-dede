@@ -2,4 +2,4 @@ Ein benutzerdefinierter Domänenname für Web-Apps in Azure App Service, für di
 
 Weitere Informationen zu App Service-Planmodi, darunter auch Informationen zum Ändern des Websitemodus, finden Sie unter [Skalieren von Websites](../article/app-service-web/web-sites-scale.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

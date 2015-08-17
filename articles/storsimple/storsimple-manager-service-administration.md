@@ -36,7 +36,7 @@ Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Er stellt Ver
 
 1. Navigieren Sie zu [http://azure.microsoft.com/](http://azure.microsoft.com/).
 
-1. Melden Sie sich mit den Anmeldeinformationen Ihres Microsoft-Kontos beim Microsoft Azure-Verwaltungsportal \(rechts oben\) an.
+1. Melden Sie sich mit den Anmeldeinformationen Ihres Microsoft-Kontos beim Microsoft Azure-Verwaltungsportal (rechts oben) an.
 
 1. Führen Sie im linken Navigationsbereich einen Bildlauf nach unten durch, um auf den StorSimple Manager-Dienst zuzugreifen.
 
@@ -57,7 +57,7 @@ Die folgende Tabelle gibt Aufschluss über die Navigationshierarchie der Benutze
 |Zielseite|Seiten auf Dienstebene|Seiten auf Geräteebene|Seiten auf Geräteebene|
 |---|---|---|---|
 |StorSimple Manager-Dienst|Dienstdashboard|Gerätedashboard||
-\|\|Geräte →\|Überwachen\| \|\|Sicherungskatalog\|Volumecontainer→\|Volumes\| \|\|Konfigurieren \(Dienst\)\|Sicherungsrichtlinien\|\| \|\|Aufträge\|Konfigurieren \(Gerät\)\| \|\|Warnungen\|Wartung\|
+||Geräte →|Überwachen| ||Sicherungskatalog|Volumecontainer→|Volumes| ||Konfigurieren (Dienst)|Sicherungsrichtlinien|| ||Aufträge|Konfigurieren (Gerät)| ||Warnungen|Wartung|
 
 
 ## Verwalten des StorSimple-Geräts mithilfe des StorSimple Manager-Diensts
@@ -73,7 +73,7 @@ Klicken Sie auf die Verfahren in der Tabelle, um weitere Informationen zu den ei
 |Dienst erstellen</br>Dienst löschen</br>Dienstregistrierungsschlüssel abrufen</br>Dienstregistrierungsschlüssel erneut generieren|StorSimple Manager-Dienst|[Bereitstellen eines StorSimple Manager-Diensts](storsimple-manage-service.md)
 |Dienstdaten-Verschlüsselungsschlüssel ändern</br>Vorgangsprotokolle anzeigen|StorSimple Manager-Dienst → Dashboard|[Verwenden des Dashboards des StorSimple Manager-Diensts](storsimple-service-dashboard.md)|
 |Gerät deaktivieren</br>Gerät löschen|StorSimple Manager-Dienst → Geräte|[Deaktivieren oder Löschen eines Geräts]()|
-|Über Notfallwiederherstellung und Gerätefailover informieren</br>Failover auf ein physisches Gerät ausführen</br>Failover auf ein virtuelles Gerät ausführen</br>BCDR \(Business Continuity Disaster Recovery\) ausführen|StorSimple Manager-Dienst → Geräte|[Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md)|
+|Über Notfallwiederherstellung und Gerätefailover informieren</br>Failover auf ein physisches Gerät ausführen</br>Failover auf ein virtuelles Gerät ausführen</br>BCDR (Business Continuity Disaster Recovery) ausführen|StorSimple Manager-Dienst → Geräte|[Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md)|
 |Liste mit Sicherungen für ein Volume anzeigen</br>Sicherungssatz auswählen</br>Sicherungssatz löschen|StorSimple Manager-Dienst → Sicherungskatalog|[Verwalten von Sicherungen](storsimple-manage-backup-catalog.md)|
 |Volume klonen|StorSimple Manager-Dienst → Sicherungskatalog|[Klonen eines Volumes](storsimple-clone-volume.md)|
 |Sicherungssatz wiederherstellen|StorSimple Manager-Dienst → Sicherungskatalog|[Wiederherstellen eines Sicherungssatzes](storsimple-restore-from-backup-set.md)|
@@ -93,8 +93,8 @@ Klicken Sie auf die Verfahren in der Tabelle, um weitere Informationen zu den ei
 |Warnungseinstellungen konfigurieren|StorSimple Manager-Dienst → Geräte → Konfigurieren|[Anzeigen und Verwalten von StorSimple-Warnungen](storsimple-manage-alerts.md)|
 |CHAP für Ihr StorSimple-Gerät konfigurieren|StorSimple Manager-Dienst → Geräte → Konfigurieren|[Konfigurieren von CHAP für Ihr StorSimple-Gerät](storsimple-configure-chap.md)|
 |Sicherungsrichtlinie hinzufügen</br>Zeitplan hinzufügen oder ändern</br>Sicherungsrichtlinie löschen</br>Manuelle Sicherung ausführen</br>Benutzerdefinierte Sicherungsrichtlinie mit mehreren Volumes und Zeitplänen erstellen|StorSimple Manager-Dienst → Geräte → Sicherungsrichtlinien|[Verwalten von Sicherungsrichtlinien](storsimple-manage-backup-policies.md)|
-|Gerätecontroller beenden</br>Gerätecontroller neu starten</br>Gerätecontroller herunterfahren</br>Gerät auf Werkseinstellungen zurücksetzen</br>\(nur bei lokalen Geräten\)|StorSimple Manager-Dienst → Geräte → Wartung|[Verwalten des StorSimple-Gerätecontrollers](storsimple-manage-device-controller.md)|
-|Über StorSimple-Hardwarekomponenten informieren</br>Hardwarestatus überwachen</br>\(nur bei lokalen Geräten\)|StorSimple Manager-Dienst → Geräte → Wartung|[Überwachen der Hardwarekomponenten](storsimple-monitor-hardware-status.md)|
+|Gerätecontroller beenden</br>Gerätecontroller neu starten</br>Gerätecontroller herunterfahren</br>Gerät auf Werkseinstellungen zurücksetzen</br>(nur bei lokalen Geräten)|StorSimple Manager-Dienst → Geräte → Wartung|[Verwalten des StorSimple-Gerätecontrollers](storsimple-manage-device-controller.md)|
+|Über StorSimple-Hardwarekomponenten informieren</br>Hardwarestatus überwachen</br>(nur bei lokalen Geräten)|StorSimple Manager-Dienst → Geräte → Wartung|[Überwachen der Hardwarekomponenten](storsimple-monitor-hardware-status.md)|
 |Unterstützungspaket erstellen|StorSimple Manager-Dienst → Geräte → Wartung|[Erstellen und Verwalten eines Unterstützungspakets](storsimple-create-manage-support-package.md)|
 |Softwareupdates installieren|StorSimple Manager-Dienst → Geräte → Wartung|[Aktualisieren Ihres Geräts](storsimple-update-device.md)|
 
@@ -109,4 +109,4 @@ Falls sich das Problem nicht beheben lässt und Sie eine Serviceanfrage erstelle
 
 -  [Kontaktaufnahme mit dem Microsoft-Support](https://msdn.microsoft.com/library/azure/dn757750.aspx)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

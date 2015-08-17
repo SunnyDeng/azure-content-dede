@@ -20,8 +20,8 @@
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| <p>Dieser Bericht enthält die Benutzer, die sich erfolgreich bei Ihrem Verzeichnis angemeldet haben, während Ihnen eine Client-IP-Adresse zugewiesen war, die von Microsoft als IP-Adresse eines anonymen Proxys erkannt wurde. Diese Proxys werden häufig von Benutzern verwendet, die die IP-Adresse ihres Computers verbergen möchten, und können in böswilliger Absicht genutzt werden, weshalb Hacker mitunter mit diesen Proxys arbeiten. </p><p> Die Ergebnisse in diesem Bericht geben an, wie oft sich ein Benutzer bei Ihrem Verzeichnis von dieser Adresse aus angemeldet hat, und weisen die IP-Adresse des Proxys aus.</p> | Verzeichnis \> Registerkarte "Berichte" |
+| <p>Dieser Bericht enthält die Benutzer, die sich erfolgreich bei Ihrem Verzeichnis angemeldet haben, während Ihnen eine Client-IP-Adresse zugewiesen war, die von Microsoft als IP-Adresse eines anonymen Proxys erkannt wurde. Diese Proxys werden häufig von Benutzern verwendet, die die IP-Adresse ihres Computers verbergen möchten, und können in böswilliger Absicht genutzt werden, weshalb Hacker mitunter mit diesen Proxys arbeiten. </p><p> Die Ergebnisse in diesem Bericht geben an, wie oft sich ein Benutzer bei Ihrem Verzeichnis von dieser Adresse aus angemeldet hat, und weisen die IP-Adresse des Proxys aus.</p> | Verzeichnis > Registerkarte "Berichte" |
 
 ![Anmeldungen aus unbekannten Quellen](./media/active-directory-reporting-sign-ins-from-unknown-sources/signInsFromUnknownSources.PNG)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

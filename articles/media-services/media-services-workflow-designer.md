@@ -69,4 +69,4 @@ Im Video von Tag 3 werden folgende Themen behandelt:
 
 [Azure Premium Encoder Workflow-Designer – Schulungsvideos](http://johndeutscher.com/2015/07/06/azure-premium-encoder-workflow-designer-training-videos/)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

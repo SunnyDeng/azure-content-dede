@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="TBD"
-   ms.date="07/27/2015"
+   ms.date="07/30/2015"
    ms.author="alkohli" />
 
 # Konfigurieren von CHAP für Ihr StorSimple-Gerät
@@ -21,7 +21,7 @@ In diesem Tutorial erfahren Sie, wie Sie CHAP für Ihr StorSimple-Gerät konfigu
 
 CHAP steht für Challenge Handshake Authentication-Protokoll. Dabei handelt es sich um ein Authentifizierungsschema, das von Servern zum Überprüfen der Identität von Remoteclients verwendet wird. Die Überprüfung basiert auf einem freigegebenen Kennwort oder geheimen Schlüssel.
 
-CHAP kann unidirektional oder bidirektional verwendet werden. Bei unidirektionalem CHAP authentifiziert das Ziel einen Initiator. Bei bidirektionalem \(oder umgekehrtem\) CHAP muss dagegen das Ziel den Initiator und der Initiator wiederum das Ziel authentifizieren. Die Initiatorauthentifizierung kann ohne Zielauthentifizierung implementiert werden. Die Zielauthentifizierung kann dagegen nur implementiert werden, wenn auch die Initiatorauthentifizierung implementiert ist.
+CHAP kann unidirektional oder bidirektional verwendet werden. Bei unidirektionalem CHAP authentifiziert das Ziel einen Initiator. Bei bidirektionalem (oder umgekehrtem) CHAP muss dagegen das Ziel den Initiator und der Initiator wiederum das Ziel authentifizieren. Die Initiatorauthentifizierung kann ohne Zielauthentifizierung implementiert werden. Die Zielauthentifizierung kann dagegen nur implementiert werden, wenn auch die Initiatorauthentifizierung implementiert ist.
 
 Es empfiehlt sich, CHAP zu verwenden, um die iSCSI-Sicherheit zu verbessern.
 
@@ -31,7 +31,7 @@ Die CHAP-Einstellungen auf dem StorSimple-Gerät können wie folgt konfiguriert 
 
 - Unidirektionale Authentifizierung
 
-- Bidirektionale oder wechselseitige \(umgekehrte\) Authentifizierung
+- Bidirektionale oder wechselseitige (umgekehrte) Authentifizierung
 
 In beiden Fällen müssen das Verwaltungsportal des Geräts und die iSCSI-Initiator-Serversoftware konfiguriert werden. Die Schritte für diese Konfiguration werden im folgenden Tutorial ausführlich beschrieben.
 
@@ -83,7 +83,7 @@ Bei der unidirektionalen Authentifizierung authentifiziert das Ziel den Initiato
 
 	4. Klicken Sie auf **OK**.
 
-		![Erweiterte Einstellungen \(allgemein\)](./media/storsimple-configure-chap/IC740946.png)
+		![Erweiterte Einstellungen (allgemein)](./media/storsimple-configure-chap/IC740946.png)
 
 5. Im Fenster **Eigenschaften von iSCSI-Initiator** wird auf der Registerkarte **Ziele** der Gerätestatus **Verbunden** angezeigt.
 
@@ -152,7 +152,7 @@ Bei der bidirektionalen Authentifizierung muss das Ziel den Initiator und der In
 
 	4. Aktivieren Sie das Kontrollkästchen **Wechselseitige Authentifizierung ausführen**.
 
-		![Erweiterte Einstellungen \(wechselseitige Authentifizierung\)](./media/storsimple-configure-chap/IC740950.png)
+		![Erweiterte Einstellungen (wechselseitige Authentifizierung)](./media/storsimple-configure-chap/IC740950.png)
 
 	5. Klicken Sie auf **OK**, um die CHAP-Konfiguration abzuschließen.
 
@@ -192,4 +192,4 @@ Mit den folgenden Schritten können Sie überprüfen, ob CHAP verwendet wird.
 
 Informieren Sie sich ausführlicher über [StorSimple-Sicherheit](storsimple-security.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -1,12 +1,4 @@
-<properties 
-	pageTitle="Einrichten von Azure AD zur Self-Service-Verwaltung des Anwendungszugriffs | Microsoft Azure" 
-	description="Dieses Thema erläutert die Verwaltung von Gruppen in Azure AD." 
-	services="active-directory" 
-	documentationCenter="" 
-    authors="femila"
-	manager="swadhwa"" 
-	editor=""
-	tags="azure-classic-portal"/>
+<properties pageTitle="Einrichten von Azure AD zur Self-Service-Verwaltung des Anwendungszugriffs | Microsoft Azure" description="Dieses Thema erläutert die Verwaltung von Gruppen in Azure AD." services="active-directory" documentationCenter="" authors="femila" manager="swadhwa"" editor="" tags="azure-classic-portal"/>
 
 <tags 
 	ms.service="active-directory" 
@@ -19,7 +11,7 @@
 
 #Einrichten von Azure AD zur Self-Service-Verwaltung des Anwendungszugriffs
 
-Die Self-Service-Gruppenverwaltung ermöglicht Benutzern das Erstellen und Verwalten von Sicherheitsgruppen in Microsoft Azure Active Directory \(AD\) und bietet die Möglichkeit, die Mitgliedschaft in Sicherheitsgruppen anzufordern, die anschließend vom Besitzer der Gruppe genehmigt oder abgelehnt werden kann. Mithilfe der Funktionen für die Self-Service-Gruppenverwaltung kann die tagtägliche Steuerung der Gruppenmitgliedschaft an Personen delegiert werden, die den Geschäftskontext für die betreffende Mitgliedschaft verstehen.
+Die Self-Service-Gruppenverwaltung ermöglicht Benutzern das Erstellen und Verwalten von Sicherheitsgruppen in Microsoft Azure Active Directory (AD) und bietet die Möglichkeit, die Mitgliedschaft in Sicherheitsgruppen anzufordern, die anschließend vom Besitzer der Gruppe genehmigt oder abgelehnt werden kann. Mithilfe der Funktionen für die Self-Service-Gruppenverwaltung kann die tagtägliche Steuerung der Gruppenmitgliedschaft an Personen delegiert werden, die den Geschäftskontext für die betreffende Mitgliedschaft verstehen.
 
 Die Self-Service-Gruppenverwaltung unterstützt zurzeit zwei grundlegende Szenarien: delegierte Gruppenverwaltung und Self-Service-Gruppenverwaltung.
 
@@ -39,7 +31,7 @@ Wenn die Option **Benutzer können Gruppen erstellen** auf **Aktiviert** festgel
 
 Sie können auch mithilfe der Option "Benutzer, die Self-Service für Sicherheitsgruppen verwenden" eine genauer abgestufte Steuerung des Zugriffs auf die Self-Service-Gruppenverwaltungsfunktionen für Ihre Benutzer einrichten. Wenn die Option "Benutzer können Gruppen erstellen" auf "Aktiviert" festgelegt ist, können alle Benutzer in Ihrem Verzeichnis neue Sicherheitsgruppen erstellen und diesen Gruppen Mitglieder hinzuzufügen. Indem Sie die Option "Benutzer, die Self-Service für Sicherheitsgruppen verwenden" auf "Einige" festlegen, können Sie die Verwaltung der Sicherheitsgruppe auf eine begrenzte Gruppe von Benutzern einschränken. Wenn diese Option auf "Einige" festgelegt ist, wird eine Gruppe namens "SSGMSecurityGroupsUsers" in Ihrem Verzeichnis erstellt, und nur diejenigen Benutzer, die Sie als Mitglieder dieser Gruppe hinzugefügt haben, können in Ihrem Verzeichnis neue Sicherheitsgruppen erstellen und diesen Mitglieder hinzufügen. Indem Sie die Option "Benutzer, die Self-Service für Sicherheitsgruppen verwenden" auf "Alle" festlegen, können alle Benutzer in Ihrem Verzeichnis neue Sicherheitsgruppen erstellen.
 
-Sie können auch mithilfe der Option "Gruppen, die Self-Service für Sicherheitsgruppen verwenden" \(standardmäßig auf "SSGMSecurityGroupsUsers" festgelegt\) einen benutzerdefinierten Namen für eine Gruppe angeben, die alle Benutzer enthält, welche die Self-Service-Funktionen nutzen und neue Sicherheitsgruppen in Ihrem Verzeichnis erstellen dürfen.
+Sie können auch mithilfe der Option "Gruppen, die Self-Service für Sicherheitsgruppen verwenden" (standardmäßig auf "SSGMSecurityGroupsUsers" festgelegt) einen benutzerdefinierten Namen für eine Gruppe angeben, die alle Benutzer enthält, welche die Self-Service-Funktionen nutzen und neue Sicherheitsgruppen in Ihrem Verzeichnis erstellen dürfen.
 
 Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Directory bieten:
 
@@ -49,4 +41,4 @@ Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Di
 
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!-----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -34,7 +34,7 @@ Die folgende Liste enthält Informationen zur Installation der Befehlszeilentool
 
 * **Mac**: Laden Sie den [Azure SDK Installer][mac-installer] herunter. Öffnen Sie die heruntergeladene PKG-Datei, und führen Sie die Installationsschritte durch, zu denen Sie aufgefordert werden.
 
-* **Linux**: Installieren Sie die neueste Version von [Node.js][nodejs-org] \(siehe [Install Node.js via Package Manager][install-node-linux] \(Installieren von Node.js mithilfe des Paket-Managers, in englischer Sprache\)\), und führen Sie dann den folgenden Befehl aus:
+* **Linux**: Installieren Sie die neueste Version von [Node.js][nodejs-org] (siehe [Install Node.js via Package Manager][install-node-linux] (Installieren von Node.js mithilfe des Paket-Managers, in englischer Sprache)), und führen Sie dann den folgenden Befehl aus:
 
 	npm install azure-cli -g
 
@@ -106,7 +106,7 @@ Mit dem folgenden Befehl wird eine neue Tabelle erstellt, die die öffentliche B
 
 Die folgende Tabelle enthält den Skriptberechtigungswert im Gegensatz zum Berechtigungswert im [Azure-Verwaltungsportal].
 
-\|Skriptwert\|Verwaltungsportalwert\| \|========\|========\| \|`public`\|Jeder\| \|`application`\(Standard\)\|Jeder mit dem Anwendungsschlüssel\| \|`user`\|Nur authentifizierte Benutzer\| \|`admin`\|Nur Skripts und Admins\|
+|Skriptwert|Verwaltungsportalwert| |========|========| |`public`|Jeder| |`application`(Standard)|Jeder mit dem Anwendungsschlüssel| |`user`|Nur authentifizierte Benutzer| |`admin`|Nur Skripts und Admins|
 
 Der Befehl `mobile table create` schlägt fehl, wenn die angegebene Tabelle bereits vorhanden ist. Sie sollten bei Ihren automatisierten Skripts eine Tabelle löschen, bevor Sie diese neu zu erstellen versuchen.
 
@@ -132,7 +132,7 @@ Mit dem folgenden Befehl wird eine Funktion für einen Tabellenvorgang hochgelad
 
 	azure mobile script upload <service-name> table/<table-name>.<operation>.js
 
-Beachten Sie, dass mit diesem Vorgang eine JavaScript \(.js\)-Datei vom lokalen Computer hochgeladen wird. Der Name der Datei muss sich aus dem Tabellen- und Vorgangsnamen zusammensetzen, und die Datei muss sich im Unterordner `table` relativ zum Verzeichnis befinden, in dem der Befehl ausgeführt wird. Beim folgenden Vorgang wird beispielsweise ein neues `insert`-Skript hochgeladen und registriert, das zur Tabelle `TodoItems` gehört:
+Beachten Sie, dass mit diesem Vorgang eine JavaScript (.js)-Datei vom lokalen Computer hochgeladen wird. Der Name der Datei muss sich aus dem Tabellen- und Vorgangsnamen zusammensetzen, und die Datei muss sich im Unterordner `table` relativ zum Verzeichnis befinden, in dem der Befehl ausgeführt wird. Beim folgenden Vorgang wird beispielsweise ein neues `insert`-Skript hochgeladen und registriert, das zur Tabelle `TodoItems` gehört:
 
 	azure mobile script upload todolist table/todoitems.insert.js
 
@@ -184,4 +184,4 @@ Weitere Informationen über das Registrieren von Skripts finden Sie unter [Mobil
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -114,7 +114,9 @@ In dieser Aufgabe konfigurieren Sie den ACS zur Erkennung Ihrer Java-Webanwendun
 3.  Führen Sie auf der Seite **Add Relying Party Application** die folgenden Aktionen aus:
     1.  Geben Sie unter **Name** einen Namen für die RP ein. Geben Sie für die Zwecke dieses Lernprogramms **Azure Web App** ein.
     2.  Wählen Sie unter **Modus** die Option **Enter settings manually** aus.
-    3.  Geben Sie unter **Bereich** den URI ein, für den das vom ACS ausgegebene Sicherheitstoken gilt. Geben Sie **http://localhost:8080/** ![RP-Bereich zur Verwendung im Serveremulator][relying_party_realm_emulator]  für diese Aufgabe ein.4.  Geben Sie unter **Rückgabe-URL** die URL ein, an die der ACS das Sicherheitstoken zurückgibt. Geben Sie **http://localhost:8080/MyACSHelloWorld/index.jsp** ![Von RP zurückgegebene URL zur Verwendung im Serveremulator][relying_party_return_url_emulator]  für diese Aufgabe ein.5.  Übernehmen Sie in den restlichen Feldern die Standardwerte.
+    3.  Geben Sie unter **Bereich** den URI ein, für den das vom ACS ausgegebene Sicherheitstoken gilt. Geben Sie ****http://localhost:8080/** für diese Aufgabe ein. ![RP-Bereich zur Verwendung im Serveremulator][relying_party_realm_emulator]
+4.  Geben Sie unter **Rückgabe-URL** die URL ein, an die der ACS das Sicherheitstoken zurückgibt. Geben Sie ****http://localhost:8080/MyACSHelloWorld/index.jsp** für diese Aufgabe ein. ![Von RP zurückgegebene URL zur Verwendung im Serveremulator][relying_party_return_url_emulator]
+5.  Übernehmen Sie in den restlichen Feldern die Standardwerte.
 
 4.  Klicken Sie auf **Speichern**.
 
@@ -250,7 +252,7 @@ Informationen zur vom ACS an Ihre Anwendung zurückgegebenen Security Assertion 
 
 In diesem Beispiel wurde auch die Option **Embed the certificate in the WAR file** verwendet. Diese Option vereinfacht die Bereitstellung des Zertifikats. Wenn Sie stattdessen Ihr Signaturzertifikat von Ihrer WAR-Datei getrennt halten möchten, gehen Sie folgendermaßen vor:
 
-1. Geben Sie im Abschnitt **Sicherheit** des Dialogfelds **Azure Access Control Services Filter** die Zeichenfolge **${env.JAVA_HOME}/mycert.cer** ein, und deaktivieren Sie **Embed the certificate in the WAR file**. (Wenn Ihre Zertifikatdatei einen anderen Namen hat, ersetzen Sie mycert.cer durch diesen.) Klicken Sie auf **Fertig stellen**, um das Dialogfeld zu schließen.
+1. Geben Sie im Abschnitt **Sicherheit** des Dialogfelds **Azure Access Control Services Filter** die Zeichenfolge **${env.JAVA\_HOME}/mycert.cer** ein, und deaktivieren Sie **Embed the certificate in the WAR file**. (Wenn Ihre Zertifikatdatei einen anderen Namen hat, ersetzen Sie mycert.cer durch diesen.) Klicken Sie auf **Fertig stellen**, um das Dialogfeld zu schließen.
 2. Kopieren Sie das Zertifikat als Komponente in Ihre Bereitstellung: Erweitern Sie im Eclipse-Projektexplorer **MyAzureACSProject**, klicken Sie mit der rechten Maustaste auf **WorkerRole1**, klicken Sie auf **Eigenschaften**, erweitern Sie **Azure Role**, und klicken Sie auf **Komponenten**.
 3. Klicken Sie auf **Hinzufügen**.
 4. Im Dialogfeld **Komponente hinzufügen**:
@@ -260,7 +262,7 @@ In diesem Beispiel wurde auch die Option **Embed the certificate in the WAR file
     2. Klicken Sie unter **Als Name** auf das Textfeld, und übernehmen Sie den Standardnamen.
     3. Im Abschnitt **Bereitstellen**:
         1. Wählen Sie unter **Methode** die Option **Kopieren**.
-        2. Geben Sie unter **To directory** die Zeichenfolge **%JAVA_HOME%** ein.
+        2. Geben Sie unter **To directory** die Zeichenfolge **%JAVA\_HOME%** ein.
     4. Das Dialogfeld **Komponente hinzufügen** sollte nun etwa wie folgt aussehen.
 
         ![Zertifikatkomponente hinzufügen][add_cert_component]
@@ -308,4 +310,4 @@ An diesem Punkt wird Ihr Zertifikat in Ihre Bereitstellung aufgenommen. Bitte be
 [add_token_signing_cert]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddTokenSigningCertificate.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

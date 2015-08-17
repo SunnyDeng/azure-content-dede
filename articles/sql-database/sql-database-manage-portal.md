@@ -25,26 +25,26 @@ Das [Azure-Verwaltungsportal][Management Portal] ermöglicht das Erstellen, Übe
 
 ![Datenbankübersicht](./media/sql-database-manage-portal/sqldatabase_annotated.png)
 
-## 1. Aktionen zur Datenbankverwaltung
+## 1\. Aktionen zur Datenbankverwaltung
 ![Datenbankverwaltungsaktionen](./media/sql-database-manage-portal/sqldatabase_actions.png)
 
 Das Azure-Verwaltungsportal bietet eine Reihe von allgemeinen Datenbankaktionen, auf die oben auf dem Blatt "Datenbank" zugegriffen werden kann. Sie können eine Datenbank zu einem früheren Zeitpunkt wiederherstellen, eine Datenbank in Visual Studio öffnen, eine Datenbank auf einen neuen Server kopieren und die Datenbank in ein Azure-Speicherkonto exportieren.
 
-## 2. Datenbanküberwachung
+## 2\. Datenbanküberwachung
 ![Datenbanküberwachung](./media/sql-database-manage-portal/sqldatabase_monitoring.png)
 
 Azure SQL-Datenbanken verfügen standardmäßig über Überwachungsdiagramme für die Datenbankdurchsatzeinheit (DTU), die Größe der Datenbank und die Verbindungsintegrität. Diese Überwachungsdiagramme können angepasst und erweitert werden, um außerdem die CPU-Nutzung, den Daten-E/A-Prozentsatz, Deadlocks, den Protokoll-E/A-Prozentsatz oder sogar den Prozentsatz der Anforderungen anzuzeigen, die von der Firewall blockiert werden. Weitere Informationen zum Anpassen der Überwachungsdiagrammen finden Sie [hier][Azure part monitoring].
 
 Darüber hinaus können Regeln für Warnhinweise eingerichtet werden, um eine angegebene Metrik zu überwachen und einen bestimmten Administrator und Co-Administrator zu warnen, wenn vordefinierte Grenzwerte erreicht werden. Weitere Informationen zum Einrichten von Regeln für Warnhinweise im Azure-Verwaltungsportal finden Sie [hier][Azure part monitoring].
 
-## 3. Datenbanksicherheit und Überwachung
+## 3\. Datenbanksicherheit und Überwachung
 ![Datenbanksicherheit](./media/sql-database-manage-portal/sqldatabase_security.png)
 
 Azure SQL-Datenbanken können so konfiguriert werden, dass alle Datenbankereignisse verfolgt werden und in ein Überwachungsprotokoll in Ihrem Azure-Speicherkonto geschrieben werden. Diese Funktion kann Ihnen dabei helfen, die gesetzlichen Bestimmungen einzuhalten, die Datenbankaktivität zu verstehen und Einblicke in Abweichungen zu erhalten, die auf geschäftsspezifische Bedenken oder mutmaßliche Sicherheitsverstöße hinweisen können. Weitere Informationen zur Überwachung von Azure SQL-Datenbank finden Sie [hier][AzureDb Auditing]
 
 Azure SQL-Datenbanken können auch zum Maskieren vertraulicher Daten für nicht berechtigte Benutzer konfiguriert werden. Weitere Informationen über die dynamische Datenmaskierungsfunktion von Azure SQL-Datenbanken finden Sie [hier][AzureDb datamasking]
 
-## 4. Georeplikation
+## 4\. Georeplikation
 ![Georeplikation](./media/sql-database-manage-portal/sqldatabase_georeplication.png)
 
 Azure SQL-Datenbanken können konfiguriert werden, um bereits übergebene Transaktionen asynchron in eine sekundäre Datenbank zu replizieren. Mit der Georeplikation im Verwaltungsportal können Sie die Azure-Region wählen, in der die sekundäre Datenbank gespeichert werden soll. Weitere Informationen zur Georeplikation von Datenbanken in Azure finden Sie [hier][Database geo-replication]
@@ -70,4 +70,4 @@ Azure SQL-Datenbanken können konfiguriert werden, um bereits übergebene Transa
  
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

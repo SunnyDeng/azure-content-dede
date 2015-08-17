@@ -16,7 +16,7 @@
    ms.date="07/28/2015"
    ms.author="danlep"/>
 
-# Big Compute in Azure: Technische Ressourcen für Batch und HPC \(High Performance Computing\)
+# Big Compute in Azure: Technische Ressourcen für Batch und HPC (High Performance Computing)
 Dies ist eine Anleitung zu den technischen Ressourcen, die Ihnen beim Ausführen Ihrer umfangreichen parallelen, Batch- und HPC-Workloads in Azure helfen. Erweitern Sie Ihre vorhandenen Batch- oder HPC-Workloads auf die Azure-Cloud, oder erstellen Sie mithilfe einer Reihe von Azure-Diensten neue Big Compute-Lösungen in Azure.
 
 ## Lösungsoptionen
@@ -50,7 +50,7 @@ Sie können Ihren vorhandenen Windows- oder Linux-HPC-Cluster zum Ausführen rec
 
 HPC Pack ist die kostenlose HPC-Lösung von Microsoft, die auf Microsoft Azure und Windows Server-Technologien basiert.
 
-* [HPC Pack 2012 R2 Update 2 herunterladen](https://www.microsoft.com/en-us/download/details.aspx?id=47755)
+* [HPC Pack 2012 R2 Update 2 herunterladen](https://www.microsoft.com/de-de/download/details.aspx?id=47755)
 
 * [Dokumentation](https://technet.microsoft.com/library/jj899572.aspx)
 
@@ -80,7 +80,7 @@ HPC Pack ist die kostenlose HPC-Lösung von Microsoft, die auf Microsoft Azure u
 
     * [HPC Pack in Azure Virtual Machines](https://msdn.microsoft.com/library/azure/dn518135.aspx)
 
-    * [Burst to Azure with HPC Pack](https://technet.microsoft.com/library/gg481749.aspx) \(Erweiterung auf Azure mit HPC Pack, in englischer Sprache\)
+    * [Burst to Azure with HPC Pack](https://technet.microsoft.com/library/gg481749.aspx) (Erweiterung auf Azure mit HPC Pack, in englischer Sprache)
 
 
 * [Windows-HPC-Foren](https://social.microsoft.com/Forums/home?category=windowshpc)
@@ -95,7 +95,7 @@ Mithilfe dieser Azure-Schnellstartvorlagen können Sie Linux-HPC-Cluster mit Ope
 
 ## Microsoft MPI
 
-[Microsoft MPI](https://msdn.microsoft.com/library/bb524831.aspx) \(MS-MPI\) ist eine Microsoft-Implementierung des Message Passing Interface-Standards für die Entwicklung und Ausführung paralleler Anwendungen auf der Windows-Plattform.
+[Microsoft MPI](https://msdn.microsoft.com/library/bb524831.aspx) (MS-MPI) ist eine Microsoft-Implementierung des Message Passing Interface-Standards für die Entwicklung und Ausführung paralleler Anwendungen auf der Windows-Plattform.
 
 
 * [MS-MPI herunterladen](http://go.microsoft.com/FWLink/p/?LinkID=389556)
@@ -117,13 +117,13 @@ Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe u
 
 ## Architekturpläne
 
-* [Large-Scale Computing – Financial Services](http://go.microsoft.com/fwlink/?LinkId=536378) \(PDF in englischer Sprache\) zeigt, wie umfangreiche Berechnungen und Datenanalysen in der Cloud für Risikomanagement, Berichterstellung und Simulationen durchgeführt und koordiniert werden.
+* [Large-Scale Computing – Financial Services](http://go.microsoft.com/fwlink/?LinkId=536378) (PDF in englischer Sprache) zeigt, wie umfangreiche Berechnungen und Datenanalysen in der Cloud für Risikomanagement, Berichterstellung und Simulationen durchgeführt und koordiniert werden.
 
 ## Beispiele und Demos
 
-* [Azure Batch code samples](https://github.com/Azure/azure-batch-samples) \(Azure Batch-Codebeispiele, in englischer Sprache\)
+* [Azure Batch code samples](https://github.com/Azure/azure-batch-samples) (Azure Batch-Codebeispiele, in englischer Sprache)
 
-* [Batch Apps Blender sample](https://github.com/Azure/azure-batch-apps-blender) \(Batch App-Blender-Beispiel, in englischer Sprache\) und [Blogbeitrag zu Blender in Azure Batch](http://azure.microsoft.com/blog/2015/01/26/blender-on-azure-batch/) \(in englischer Sprache\)
+* [Batch Apps Blender sample](https://github.com/Azure/azure-batch-apps-blender) (Batch App-Blender-Beispiel, in englischer Sprache) und [Blogbeitrag zu Blender in Azure Batch](http://azure.microsoft.com/blog/2015/01/26/blender-on-azure-batch/) (in englischer Sprache)
 
 ## Verwandte Azure-Dienste
 
@@ -146,4 +146,4 @@ Azure bietet zum Ausführen Ihrer Linux- und Windows-HPC-Workloads [eine Reihe u
 * Die neuesten Ankündigungen finden Sie im [Blog des HPC- und Batch-Teams von Microsoft](http://blogs.technet.com/b/windowshpc/) und im [Azure-Blog](http://azure.microsoft.com/blog/tag/hpc/).
 * Weitere Informationen finden Sie auch unter [Neuigkeiten bei Batch](http://azure.microsoft.com/updates/?service=batch) oder indem Sie den [RSS-Feed](http://azure.microsoft.com/updates/feed/?service=batch) abonnieren.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -43,7 +43,7 @@ Wenn Sie den virtuellen SQL Server-Computer mit dem [Azure-Vorschauportal](https
 
 ### Syntax
 
-Set-AzureVMSqlServerExtension \[-VM\] <IPersistentVM> \[\[-Version\] <string>\] \[-AutoBackupSettings \<Einstellungen der automatischen Sicherung\>\] \[-AutoPatchingSetttings <AutoPatchingSetttings>\] \[-Confirm\] \[-WhatIf\] \[\<Allgemeine Parameter\>\]
+Set-AzureVMSqlServerExtension [-VM] <IPersistentVM> [[-Version] <string>] [-AutoBackupSettings <Einstellungen der automatischen Sicherung>] [-AutoPatchingSetttings <AutoPatchingSetttings>] [-Confirm] [-WhatIf] [<Allgemeine Parameter>]
 
 > [AZURE.NOTE]Es wird empfohlen, den Parameter „–Version“ auszulassen. Ohne diesen Parameter wird standardmäßig die neueste Version der Erweiterung festgelegt.
 
@@ -59,7 +59,7 @@ Sie können auch das folgende Azure PowerShell-Cmdlet verwenden:
 
 ### Syntax
 
-Get-AzureVMSqlServerExtension \[\[-VM\] <IPersistentVM>\] \[\[-Version\] <string>\] \[\<Allgemeine Parameter\>\]
+Get-AzureVMSqlServerExtension [[-VM] <IPersistentVM>] [[-Version] <string>] [<Allgemeine Parameter>]
 
 > [AZURE.NOTE]Sie können den Parameter „ –Version“ auslassen. Ohne diesen Parameter wird standardmäßig die neueste Version der Erweiterung festgelegt.
 
@@ -72,6 +72,6 @@ Wenn Sie diese Erweiterung vom virtuellen Computer entfernen möchten, können S
 **Remove-AzureVMSqlServerExtension**
 
 ### Syntax
-Remove-AzureVMSqlServerExtension -VM <IPersistentVM> \[<CommonParameters>\]
+Remove-AzureVMSqlServerExtension -VM <IPersistentVM> [<CommonParameters>]
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

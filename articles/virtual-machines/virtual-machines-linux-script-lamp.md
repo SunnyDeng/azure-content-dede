@@ -64,11 +64,11 @@ Dieses Skript installiert einen LAMP-Stack auf Ubuntu (einschließlich Einrichtu
 
 **Hochladen**
 
-Speichern Sie das Skript als Textdatei (z. B. *lamp_install.sh*), und laden Sie es dann in den Azure-Speicher hoch. Diese Aufgabe kann auf einfache Weise mit der Azure-CLI ausgeführt werden. Im folgenden Beispiel wird die Datei in einen Container namens "scripts" hochgeladen. Hinweis: Wenn der Container nicht vorhanden ist, müssen Sie ihn vorher erstellen.
+Speichern Sie das Skript als Textdatei (z. B. *lamp\_install.sh*), und laden Sie es dann in den Azure-Speicher hoch. Diese Aufgabe kann auf einfache Weise mit der Azure-CLI ausgeführt werden. Im folgenden Beispiel wird die Datei in einen Container namens "scripts" hochgeladen. Hinweis: Wenn der Container nicht vorhanden ist, müssen Sie ihn vorher erstellen.
 
     azure storage blob upload -a <yourStorageAccountName> -k <yourStorageKey> --container scripts ./install_lamp.sh
 
-Erstellen Sie außerdem eine JSON-Datei, die beschreibt, wie das Skript aus Azure Storage heruntergeladen wird. Speichern Sie diese als *public_config.json* (ersetzen Sie "mystorage" durch den Namen Ihres Speicherkontos):
+Erstellen Sie außerdem eine JSON-Datei, die beschreibt, wie das Skript aus Azure Storage heruntergeladen wird. Speichern Sie diese als *public\_config.json* (ersetzen Sie "mystorage" durch den Namen Ihres Speicherkontos):
 
     {"fileUris":["https://mystorage.blob.core.windows.net/scripts/install_lamp.sh"], "commandToExecute":"sh install_lamp.sh" }
 
@@ -79,7 +79,7 @@ Jetzt können wir die CustomScript-Erweiterung für Linux mit der Azure-CLI auf 
 
     azure vm extension set -c "./public_config.json" lamp-vm CustomScriptForLinux Microsoft.OSTCExtensions 1.*
 
-Auf diese Weise wird das Skript *lamp_install.sh* heruntergeladen und auf der VM namens *lamp-vm* ausgeführt.
+Auf diese Weise wird das Skript *lamp\_install.sh* heruntergeladen und auf der VM namens *lamp-vm* ausgeführt.
 
 Da die App einen Webserver umfasst, müssen Sie daran denken, einen HTTP-Lauschport auf der Remote-VM zu öffnen:
 
@@ -92,7 +92,7 @@ Sie können den Fortschritt bei der Ausführung des benutzerdefinierten Skripts 
     cd /var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.3.0.0/
     tail -f extension.log
 
-Nachdem die Ausführung der CustomScript-Erweiterung abgeschlossen wurde, können Sie zur erstellten PHP-Seite wechseln. Im vorliegenden Beispiel wäre das diese Seite: *http://lamp-vm.cloudapp.net/phpinfo.php*.
+Nachdem die Ausführung der CustomScript-Erweiterung abgeschlossen wurde, können Sie zur erstellten PHP-Seite wechseln. Im vorliegenden Beispiel wäre das diese Seite: **http://lamp-vm.cloudapp.net/phpinfo.php*.
 
 ## Zusätzliche Ressourcen
 
@@ -107,4 +107,4 @@ Nachfolgend finden Sie einige zusätzliche Ressourcen für die Azure-CLI, Linux 
 [Linux und Open-Source-Computing auf Azure](virtual-machines-linux-opensource.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

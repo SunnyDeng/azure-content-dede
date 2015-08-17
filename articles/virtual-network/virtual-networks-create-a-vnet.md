@@ -10,7 +10,7 @@
 <tags
    ms.service="virtual-network"
    ms.devlang="na"
-   ms.topic="hero-article"
+   ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="07/06/2015"
@@ -52,4 +52,4 @@ Nachdem Sie Ihr virtuelles Netzwerk erstellt haben, können Sie ihm neue VMs und
 
 -  [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](../virtual-machines/virtual-machines-create-custom.md)
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

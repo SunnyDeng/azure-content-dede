@@ -28,10 +28,10 @@ Im Azure-Vorschauportal können Sie Ihre Data Factory in Diagrammform anzeigen, 
 1.	Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) an.
 2.	Klicken Sie auf **Alle durchsuchen**, und wählen Sie **Data Factorys** aus.
 	
-	![Alle durchsuchen -\> Data Factorys](./media/data-factory-monitor-manage-pipelines/browseall-data-factories.png)
+	![Alle durchsuchen -> Data Factorys](./media/data-factory-monitor-manage-pipelines/browseall-data-factories.png)
 
 	Auf dem Blatt **Data Factorys** sollten alle Data Factorys angezeigt sein. 
-4. Wählen Sie auf dem Blatt "Data Factorys" die Data Factory aus, die Sie interessiert. Anschließend sollte die Startseite \(das Blatt "Data Factory"\) für die Data Factory angezeigt werden.
+4. Wählen Sie auf dem Blatt "Data Factorys" die Data Factory aus, die Sie interessiert. Anschließend sollte die Startseite (das Blatt **Data Factory**) für die Data Factory angezeigt werden.
 
 	![Blatt "Data Factory"](./media/data-factory-monitor-manage-pipelines/data-factory-blade.png)
 
@@ -42,14 +42,14 @@ Klicken Sie oben auf der Data Factory-Startseite auf **Diagramm**, um die Diagra
 
 ![Diagrammansicht](./media/data-factory-monitor-manage-pipelines/diagram-view.png)
 
-Sie können die Ansicht vergrößern, verkleinern, auf 100 % anpassen, das Layout des Diagramms sperren, Pipelines und Tabellen automatisch positionieren und Informationen zur Datenherkunft anzeigen \(d. h. vor- und nachgelagerte Elemente ausgewählter Elemente anzeigen\).
+Sie können die Ansicht vergrößern, verkleinern, auf 100 % anpassen, das Layout des Diagramms sperren, Pipelines und Tabellen automatisch positionieren und Informationen zur Datenherkunft anzeigen (d. h. vor- und nachgelagerte Elemente ausgewählter Elemente anzeigen).
  
 
 ### Aktivitäten innerhalb einer Pipeline 
-1. Klicken Sie mit der rechten Maustaste, und klicken Sie auf **Pipeline öffnen**, um alle Aktivitäten in der Pipeline sowie Ein- und Ausgabedatasets für die Aktivitäten anzuzeigen. Dies ist hilfreich, wenn Ihre Pipeline mehr als eine Aktivität umfasst und Sie die Herkunft einer einzelnen Pipeline verstehen möchten.
+1. Klicken Sie mit der rechten Maustaste auf die Pipeline, und klicken Sie auf **Pipeline öffnen**, um alle Aktivitäten in der Pipeline sowie Ein- und Ausgabedatasets für die Aktivitäten anzuzeigen. Dies ist hilfreich, wenn Ihre Pipeline mehr als eine Aktivität umfasst und Sie die Herkunft einer einzelnen Pipeline verstehen möchten.
 
 	![Menü "Pipeline öffnen"](./media/data-factory-monitor-manage-pipelines/open-pipeline-menu.png)	 
-2. Im folgenden Beispiel sehen Sie zwei Aktivitäten in der Pipeline mit ihren Ein- und Ausgaben. Die Aktivitäten **JoinData** von Typ "HDInsight Hive-Aktivität" und **EgressDataAzure** vom Typ "Kopieraktivität" sind in dieser Beispielpipeline enthalten. 
+2. Im folgenden Beispiel sehen Sie zwei Aktivitäten in der Pipeline mit ihren Ein- und Ausgaben. Die Aktivitäten **JoinData** vom Typ "HDInsight Hive-Aktivität" und **EgressDataAzure** vom Typ "Kopieraktivität" sind in dieser Beispielpipeline enthalten. 
 	
 	![Aktivitäten innerhalb einer Pipeline](./media/data-factory-monitor-manage-pipelines/activities-inside-pipeline.png) 
 3. Sie können zurück zur Data Factory-Startseite navigieren, indem Sie in der Brotkrümelnavigation links oben auf den Link "Data Factory" klicken.
@@ -63,7 +63,7 @@ Im folgenden Beispiel wurde die **BlobPartitionHiveActivity** erfolgreich ausgef
 
 ![Status der Pipeline](./media/data-factory-monitor-manage-pipelines/state-of-pipeline.png)
 
-Bei Doppelklicken auf **PartitionedProductsUsageTable** in der Diagrammansicht werden alle Slices gezeigt, die innerhalb einer Pipeline von verschiedenen Aktivitätsausführungen erzeugt wurden. Sie sehen, dass die **BlobPartitionHiveActivity** in den letzten 8 Monaten erfolgreich ausgeführt wurde und Slices mit dem Status **Ready** erzeugt hat.
+Durch Doppelklicken auf **PartitionedProductsUsageTable** in der Diagrammansicht werden alle Slices gezeigt, die innerhalb einer Pipeline von verschiedenen Aktivitätsausführungen erzeugt wurden. Sie sehen, dass die **BlobPartitionHiveActivity** in den letzten 8 Monaten jeden Monat erfolgreich ausgeführt wurde und Slices mit dem Status **Ready** erzeugt hat.
 
 Die Datasetslices in Data Factory können einen der folgenden Status haben:
 
@@ -96,9 +96,9 @@ Sobald Sie eine Data Factory bereitstellen und die Pipelines einen gültigen akt
 
 ![Statusdiagramm](./media/data-factory-monitor-manage-pipelines/state-diagram.png)
 
-In Data Factory gibt es die folgenden Übergänge beim Status von Datasets: Warten -\> In Bearbeitung/In Bearbeitung \(Überprüfung\) -\> Bereit/Fehler
+In Data Factory gibt es die folgenden Übergänge beim Status von Datasets: Warten -> In Bearbeitung/In Bearbeitung (Überprüfung) -> Bereit/Fehler
 
-Die Slices starten im Status **Warten**, in dem Vorbedingungen für die Ausführung erfüllt werden müssen. Im Anschluss beginnt die Ausführung der Aktivität , und der Slice wechselt in den Status **In Bearbeitung**. Die Aktivitätsausführung kann erfolgreich sein oder nicht, sodass der Slice anschließend den Status **Bereit** oder **Fehler** hat.
+Die Slices starten im Status **Warten**, in dem Vorbedingungen für die Ausführung erfüllt werden müssen. Im Anschluss beginnt die Ausführung der Aktivität, und der Slice wechselt in den Status **In Bearbeitung**. Die Aktivitätsausführung kann erfolgreich sein oder nicht, sodass der Slice anschließend den Status **Bereit** oder **Fehler** hat.
 
 Der Benutzer kann den Slice vom Status **Bereit** oder **Fehler** in den Status **Warten** zurücksetzen. Der Benutzer kann als Status für den Slice auch **Überspringen** angeben, wodurch die Aktivität nicht ausgeführt und der Slice nicht verarbeitet wird.
 
@@ -109,7 +109,7 @@ Sie können Ihre Pipelines mit Azure PowerShell verwalten. Sie können z. B. mit
 ### Anhalten und Fortsetzen von Pipelines
 Sie können Pipelines mit dem PowerShell-Cmdlet **Suspend-AzureDataFactoryPipeline** anhalten. Dies ist hilfreich, wenn Sie ein Problem in Ihren Daten festgestellt haben und die Pipelines nicht weiter zum Verarbeiten von Daten ausführen möchten, bis das Problem behoben ist.
 
-Im nachstehende Bildschirmfoto wurde z. B. ein Problem in der **PartitionProductsUsagePipeline** in der Data Factory **productrecgamalbox1dev** festgestellt, weshalb die Pipeline angehalten werden soll.
+Im nachstehende Screenshot wurde z. B. ein Problem in der **PartitionProductsUsagePipeline** in der Data Factory **productrecgamalbox1dev** festgestellt, weshalb die Pipeline angehalten werden soll.
 
 ![Pipeline, die angehalten werden soll](./media/data-factory-monitor-manage-pipelines/pipeline-to-be-suspended.png)
 
@@ -181,7 +181,7 @@ Wenn eine Aktivitätsausführung in einer Pipeline nicht erfolgreich ist, hat da
 		Get-AzureDataFactoryRun -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -TableName EnrichedGameEventsTable -StartDateTime "5/5/2014 12:00:00 AM"
 
 	Der Wert von "StartDateTime" ist die Startzeit für den Fehler-/Problemslice, den Sie im vorherigen Schritt notiert haben. Datum und Uhrzeit sollte in doppelte Anführungszeichen eingeschlossen werden.
-5. 	Die Ausgabe mit Einzelheiten zu dem Fehler \(ähnlich der folgenden\) sollte angezeigt werden:
+5. 	Die Ausgabe mit Einzelheiten zu dem Fehler (ähnlich der folgenden) sollte angezeigt werden:
 
 		Id                  	: 841b77c9-d56c-48d1-99a3-8c16c3e77d39
 		ResourceGroupName   	: ADF
@@ -218,7 +218,7 @@ Nachdem Sie eine Problembehandlung und ein Debugging für Fehler in einer Pipeli
 
 ![Wiederholen eines fehlerhaften Slices](./media/data-factory-monitor-manage-pipelines/rerun-slice.png)
 
-Für den Fall, dass der Slice die Überprüfung aufgrund eines Richtlinienfehlers \(z. B. Daten nicht verfügbar\) nicht besteht, können Sie den Fehler korrigieren und die Überprüfung erneut ausführen, indem Sie auf der Befehlsleiste auf **Überprüfen** klicken. ![Beheben von Fehlern und Überprüfen](./media/data-factory-monitor-manage-pipelines/fix-error-and-validate.png)
+Für den Fall, dass der Slice die Überprüfung aufgrund eines Richtlinienfehlers (z. B. Daten nicht verfügbar) nicht besteht, können Sie den Fehler korrigieren und die Überprüfung erneut ausführen, indem Sie auf der Befehlsleiste auf **Überprüfen** klicken. ![Beheben von Fehlern und Überprüfen](./media/data-factory-monitor-manage-pipelines/fix-error-and-validate.png)
 
 ### Verwenden von Azure PowerShell
 
@@ -226,27 +226,27 @@ Sie können Fehler mit dem Cmdlet "Set-AzureDataFactorySliceStatus" wiederholen.
 
 	Set-AzureDataFactorySliceStatus [-ResourceGroupName] <String> [-DataFactoryName] <String> [-TableName] <String> [-StartDateTime] <DateTime> [[-EndDateTime] <DateTime> ] [-Status] <String> [[-UpdateType] <String> ] [-Profile <AzureProfile> ] [ <CommonParameters>]
 
-**Beispiel:** Im folgenden Beispiel wird den Status aller Slices für die Tabelle "DAWikiAggregatedData" in der Azure Data Factory "WikiADF" auf "PendingExecution" festgelegt.
+**Beispiel:** Im folgenden Beispiel wird der Status aller Slices für die Tabelle "DAWikiAggregatedData" in der Azure Data Factory "WikiADF" auf "PendingExecution" festgelegt.
 
-**Hinweis:** "UpdateType" ist auf "UpstreamInPipeline" festgelegt, was bedeutet, dass der Status der einzelnen Slices für die Tabelle und aller abhängigen \(nachgelagerten\) Tabellen, die als Eingabetabellen für Aktivitäten in der Pipeline verwendet werden, auf "PendingExecution" festgelegt ist. Ein anderer möglicher Wert für diesen Parameter ist "Individual".
+**Hinweis:** "UpdateType" ist auf "UpstreamInPipeline" festgelegt, was bedeutet, dass der Status der einzelnen Slices für die Tabelle und aller abhängigen (nachgelagerten) Tabellen, die als Eingabetabellen für Aktivitäten in der Pipeline verwendet werden, auf "PendingExecution" festgelegt ist. Ein anderer möglicher Wert für diesen Parameter ist "Individual".
 
 	Set-AzureDataFactorySliceStatus -ResourceGroupName ADF -DataFactoryName WikiADF -TableName DAWikiAggregatedData -Status PendingExecution -UpdateType UpstreamInPipeline -StartDateTime 2014-05-21T16:00:00 -EndDateTime 2014-05-21T20:00:00
 
 
 ## Erstellen von Warnungen
-Azure protokolliert Benutzerereignisse, wenn eine Azure-Ressource \(z. B. Data Factory\) erstellt, aktualisiert oder gelöscht wird. Sie können Warnungen für diese Ereignisse erstellen. Data Factory erlaubt das Erfassen verschiedener Metriken und Erstellen von Warnungen zu Metriken. Es wird empfohlen, Ereignisse für die Echtzeitüberwachung und Metriken für Nachverfolgungszwecke zu verwenden.
+Azure protokolliert Benutzerereignisse, wenn eine Azure-Ressource (z. B. Data Factory) erstellt, aktualisiert oder gelöscht wird. Sie können Warnungen für diese Ereignisse erstellen. Data Factory erlaubt das Erfassen verschiedener Metriken und Erstellen von Warnungen zu Metriken. Es wird empfohlen, Ereignisse für die Echtzeitüberwachung und Metriken für Nachverfolgungszwecke zu verwenden.
 
 ### Warnungen zu Ereignissen
-Azure-Ereignisse bieten hilfreiche Einblicke in die Aktivitäten in Ihren Azure-Ressourcen. Azure protokolliert Benutzerereignisse, wenn eine Azure-Ressource \(z. B. Data Factory\) erstellt, aktualisiert oder gelöscht wird. Bei Verwendung von Azure Data Factory werden Ereignisse in folgenden Fällen generiert:
+Azure-Ereignisse bieten hilfreiche Einblicke in die Aktivitäten in Ihren Azure-Ressourcen. Azure protokolliert Benutzerereignisse, wenn eine Azure-Ressource (z. B. Data Factory) erstellt, aktualisiert oder gelöscht wird. Bei Verwendung von Azure Data Factory werden Ereignisse in folgenden Fällen generiert:
 
 - Azure Data Factory wird erstellt/aktualisiert/gelöscht.
-- Die Datenverarbeitung \(als Ausführungen bezeichnet\) wurde gestartet/abgeschlossen.
+- Die Datenverarbeitung (als Ausführungen bezeichnet) wurde gestartet/abgeschlossen.
 - Ein bedarfsbezogener HDInsight-Cluster wird erstellt und entfernt.
 
 Sie können Warnungen zu diesen Benutzerereignissen erstellen und sie so konfigurieren, dass E-Mail-Benachrichtigungen an den Administrator und an Co-Administratoren des Abonnements gesendet werden. Darüber hinaus können Sie zusätzliche E-Mail-Adressen von Benutzern angeben, die E-Mail-Benachrichtigungen erhalten sollen, wenn bestimmte Bedingungen erfüllt werden. Diese sind sehr nützlich, wenn Sie sich bei Fehlern benachrichtigen lassen und Ihre Data Factory nicht kontinuierlich überwachen möchten.
 
 #### Angeben einer Warnungsdefinition:
-Um eine Warnungsdefinition anzugeben, erstellen Sie eine JSON-Datei mit einer Beschreibung der Vorgänge, zu denen Sie benachrichtigt werden möchten. Im folgenden Beispiel sendet die Warnung eine E-Mail-Benachrichtigung für den "RunFinished"-Vorgang. Genauer gesagt: Es wird eine E-Mail-Benachrichtigung gesendet, wenn eine Ausführung in der Data Factory abgeschlossen wurde und ein Fehler aufgetreten ist \(Status = FailedExecution\).
+Um eine Warnungsdefinition anzugeben, erstellen Sie eine JSON-Datei mit einer Beschreibung der Vorgänge, zu denen Sie benachrichtigt werden möchten. Im folgenden Beispiel sendet die Warnung eine E-Mail-Benachrichtigung für den "RunFinished"-Vorgang. Genauer gesagt: Es wird eine E-Mail-Benachrichtigung gesendet, wenn eine Ausführung in der Data Factory abgeschlossen wurde und ein Fehler aufgetreten ist (Status = FailedExecution).
 
 	{
 	    "contentVersion": "1.0.0.0",
@@ -287,12 +287,12 @@ Um eine Warnungsdefinition anzugeben, erstellen Sie eine JSON-Datei mit einer Be
 
 Aus der obigen JSON-Definition kann **subStatus** entfernt werden, wenn Sie zu einem bestimmten Fehler nicht informiert werden möchten.
 
-Die folgende Tabelle enthält eine Liste der verfügbaren Vorgänge und Status \(samt Unterstatus\).
+Die folgende Tabelle enthält eine Liste der verfügbaren Vorgänge und Status (samt Unterstatus).
 
 Vorgangsname | Status | Unterstatus
 -------------- | ------ | ----------
 RunStarted | Started | Starting
-RunFinished | Failed / Succeeded | <p>FailedResourceAllocation</p><p>Succeeded</p><p>FailedExecution</p><p>TimedOut</p><p>\<Canceled/p\><p>FailedValidation</p><p>Abandoned</p>
+RunFinished | Failed / Succeeded | <p>FailedResourceAllocation</p><p>Succeeded</p><p>FailedExecution</p><p>TimedOut</p><p><Canceled/p><p>FailedValidation</p><p>Abandoned</p>
 SliceOnTime | In Progress | Ontime
 SliceDelayed | In Progress | Late
 OnDemandClusterCreateStarted | Gestartet
@@ -337,7 +337,7 @@ Um die Liste der bereitgestellten Azure-Ressourcengruppen abzurufen, verwenden S
 
 
 #### Problembehandlung bei Benutzerereignissen
-Sie können alle erzeugten Ereignisse anzeigen, indem Sie auf die Kachel **Vorgänge** klicken. Für alle auf dem Blatt **Ereignisse** angezeigten Vorgänge können Warnungen eingerichtet werden.
+Sie können alle erzeugten Ereignisse anzeigen, indem Sie auf die Kachel **Vorgänge** klicken. Für alle auf dem Blatt **Ereignisse** angezeigten Vorgänge können Warnungen eingerichtet werden:
 
 ![Vorgänge](./media/data-factory-monitor-manage-pipelines/operations.png)
 
@@ -369,7 +369,7 @@ Diese Metriken sind sehr nützlich und ermöglichen Benutzern, sich einen Überb
 #### Aktivieren von Metriken:
 Klicken Sie auf dem Blatt "Data Factory" auf Folgendes, um Metriken zu aktivieren:
 
-**Überwachung** -\> **Metrik** -\> **Diagnoseeinstellungen** -\> **Diagnose**
+**Überwachung** -> **Metrik** -> **Diagnoseeinstellungen** -> **Diagnose**
 
 Klicken Sie auf dem Blatt **Diagnose** auf **Ein**, wählen Sie das Speicherkonto aus, und speichern Sie.
 
@@ -380,7 +380,7 @@ Nach dem Speichern kann es bis zu einer Stunde dauern, bis die Metriken auf dem 
 
 ### Einrichten von Warnungen zu Metriken:
 
-Zum Einrichten von Warnungen zu Metriken klicken Sie auf dem Blatt "Data Factory" auf Folgendes: **Überwachung** -\> **Metrik** -\> **Warnung hinzufügen** -\> **Warnungsregel hinzufügen**.
+Zum Einrichten von Warnungen zu Metriken klicken Sie auf dem Blatt "Data Factory" auf Folgendes: **Überwachung** -> **Metrik** -> **Warnung hinzufügen** -> **Warnungsregel hinzufügen**.
 
 Geben Sie die Details für die Warnungsregel ein, geben Sie E-Mail-Adressen an, und klicken Sie auf **OK**.
 
@@ -467,4 +467,4 @@ Folgende Meldung sollte nach erfolgreicher Bereitstellung angezeigt werden:
 	Parameters        :
 	Outputs           
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

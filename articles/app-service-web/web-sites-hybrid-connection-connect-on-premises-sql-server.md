@@ -49,26 +49,12 @@ Der Computer, auf dem Sie den lokalen Hybridverbindungs-Manager-Agent installier
 
 - Sie benötigen Outbound-Konnektivität zu Azure über:
 
-> <table border="1">
-    <tr>
-       <th><strong>Port</strong></th>
-        <th>Warum</th>
-    </tr>
-    <tr>
-        <td>80</td>
-        <td><strong>Erforderlich</strong> für HTTP-Port für Zertifikatüberprüfung und optional für Datenkonnektivität.</td>
-    </tr>
-    <tr>
-        <td>443</td>
-        <td><strong>Optional</strong> für Datenkonnektivität. Wenn keine ausgehende Konnektivität zu 443 verfügbar ist, wird TCP-Port 80 verwendet.</td>
-    </tr>
-	<tr>
-        <td>5671 und 9352</td>
-        <td><strong>Empfohlen</strong>, jedoch für Datenkonnektivität optional. Beachten Sie, dass dieser Modus normalerweise für mehr Durchsatz sorgt. Wenn Outbound-Konnektivität zu diesen Ports nicht verfügbar ist, wird TCP-Port 443 verwendet.</td>
-	</tr>
-</table>
-
-- Muss in der Lage sein, *Hostname*:*Portnummer*Ihrer lokalen Ressource zu erreichen. 
+Port|Warum
+---|---
+80|**Erforderlich** für HTTP-Port für Zertifikatüberprüfung und optional für Datenkonnektivität.
+443|**Optional** für Datenkonnektivität. Wenn keine ausgehende Konnektivität zu 443 verfügbar ist, wird TCP-Port 80 verwendet.
+5671 und 9352|**Empfohlen**, jedoch für Datenkonnektivität optional. Beachten Sie, dass dieser Modus normalerweise für mehr Durchsatz sorgt. Wenn Outbound-Konnektivität zu diesen Ports nicht verfügbar ist, wird TCP-Port 443 verwendet.
+- Sie müssen in der Lage sein, *Hostname*:*Portnummer* Ihrer lokalen Ressource zu erreichen. 
 
 Bei den Schritten in diesem Artikel wird davon ausgegangen, dass Sie den Browser auf dem Computer verwenden, auf dem der lokale Hybridverbindungs-Agent installiert ist.
 
@@ -81,7 +67,7 @@ In diesem Abschnitt wird erläutert, wie Sie SQL Server Express installieren, TC
 
 ### SQL Server Express installieren ###
 
-1. Um SQL Server Express zu installieren, führen Sie die Datei **SQLEXPRWT_x64_ENU.exe** oder **SQLEXPR_x86_ENU.exe** aus, die Sie heruntergeladen haben. Der SQL Server-Installationscenter-Assistent wird geöffnet.
+1. Um SQL Server Express zu installieren, führen Sie die Datei **SQLEXPRWT\_x64\_ENU.exe** oder **SQLEXPR\_x86\_ENU.exe** aus, die Sie heruntergeladen haben. Der SQL Server-Installationscenter-Assistent wird geöffnet.
 	
 	![SQL Server-Installation][SQLServerInstall]
 	
@@ -218,7 +204,7 @@ In diesem Schritt bearbeiten Sie die Verbindungszeichenfolge, der Ihre Anwendung
 	
 	Beachten Sie beim Erstellen der Verbindungszeichenfolge Folgendes:
 	
-	- Wenn Sie eine Verbindung mit einer benannten Instanz statt mit der Standardinstanz herstellen (beispielsweise IhrServer\SQLEXPRESS), müssen Sie den SQL Server für die Verwendung statischer Ports konfigurieren. Informationen zum Konfigurieren statischer Ports finden Sie unter [Konfigurieren von SQL Server zum Abhören eines bestimmten Ports](http://support.microsoft.com/kb/823938). Standardmäßig verwenden benannte Instanzen UDP und dynamische Ports, was von Hybridverbindungen nicht unterstützt wird. 
+	- Wenn Sie eine Verbindung mit einer benannten Instanz statt mit der Standardinstanz herstellen (beispielsweise IhrServer\\SQLEXPRESS), müssen Sie den SQL Server für die Verwendung statischer Ports konfigurieren. Informationen zum Konfigurieren statischer Ports finden Sie unter [Konfigurieren von SQL Server zum Abhören eines bestimmten Ports](http://support.microsoft.com/kb/823938). Standardmäßig verwenden benannte Instanzen UDP und dynamische Ports, was von Hybridverbindungen nicht unterstützt wird. 
 	
 	- Es wird empfohlen, dass Sie den Port (standardmäßig 1433 wie im Beispiel) in der Verbindungszeichenfolge angeben, damit Sie sicher sein können, dass auf ihrem lokalen SQL Server TCP aktiviert ist und der richtige Port verwendet wird.
 	
@@ -378,4 +364,4 @@ Sie haben jetzt eine ASP.NET-Webanwendung erstellt und bereitgestellt, die eine 
 [HCTestShowMemberDb]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F11HCTestShowMemberDb.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

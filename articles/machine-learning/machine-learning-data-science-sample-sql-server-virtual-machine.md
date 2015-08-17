@@ -26,7 +26,7 @@ Dieses Dokument beschreibt die Erstellung von Stichproben für SQL Server-Daten 
 
 In diesem Abschnitt werden verschiedene Methoden beschrieben, um mit SQL einfache Stichproben der Daten in der Datenbank zu extrahieren. Wählen Sie eine Methode, die für Ihre Datengröße und -verteilung geeignet ist.
 
-Die beiden Beispiele unten zeigen, wie Sie mit "newid" in SQL Server eine Stichprobe erstellen. Die von Ihnen gewählte Methode hängt davon ab, wie zufällig die Stichprobe sein soll ("pk_id" wird im Beispielcode unten als ein automatisch generierter Primärschlüssel angenommen).
+Die beiden Beispiele unten zeigen, wie Sie mit "newid" in SQL Server eine Stichprobe erstellen. Die von Ihnen gewählte Methode hängt davon ab, wie zufällig die Stichprobe sein soll ("pk\_id" wird im Beispielcode unten als ein automatisch generierter Primärschlüssel angenommen).
 
 1. Beispiel mit geringerer Randomisierung
 
@@ -114,4 +114,4 @@ Eine umfassende exemplarische Vorgehensweise zur Verwendung der Advanced Analyti
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

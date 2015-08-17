@@ -12,7 +12,7 @@
 	ms.workload="tbd"
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="06/02/2015"
 	ms.author="sethm"/>
 
@@ -91,7 +91,7 @@ Sie können Namespaces und Service Bus-Nachrichtenentitäten im [Azure-Verwaltun
 
     WICHTIG: Wählen Sie **dieselbe Region**, in der Sie auch Ihre Anwendung einsetzen möchten. Dies sorgt für die beste Leistung.
 
-6.	Übernehmen Sie für die weiteren Felder im Dialogfeld die Standardwerte ("Messaging" und **Standardstufe**), und klicken Sie anschließend auf das Häkchen. Ihr Dienstnamespace wird nun erstellt und aktiviert. Ggf. müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto durch das System bereitgestellt werden.
+6.	Übernehmen Sie für die weiteren Felder im Dialogfeld die Standardwerte (**Messaging** und **Standardstufe**), und klicken Sie anschließend auf das Häkchen. Ihr Dienstnamespace wird nun erstellt und aktiviert. Ggf. müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto durch das System bereitgestellt werden.
 
 	![][38]
 
@@ -250,7 +250,7 @@ Zu Anfang ist das Projekt eine Visual Studio-Konsolenanwendung. Mithilfe des Ser
             }
         }
 
-13. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei **App.config**, um sie im **Visual Studio**-Editor zu öffnen. Ersetzen Sie den Inhalt von **&lt;system.ServiceModel&gt;** durch den folgenden XML-Code. Achten Sie darauf, *yourServiceNamespace* durch den Namen Ihres Dienstnamespace und *yourKey* durch den Schlüssel zu ersetzen, den Sie zuvor aus dem Azure-Verwaltungsportal abgerufen haben:
+13. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei **App.config**, um sie im **Visual Studio**-Editor zu öffnen. Ersetzen Sie den Inhalt von **&lt;system.ServiceModel&gt;** durch den folgenden XML-Code. Achten Sie darauf, *yourServiceNamespace* durch den Namen Ihres Dienstnamespace und *yourKey* durch den SAS-Schlüssel zu ersetzen, den Sie zuvor aus dem Azure-Verwaltungsportal abgerufen haben:
 
         <system.serviceModel>
           <extensions>
@@ -340,11 +340,11 @@ In diesem Abschnitt erstellen Sie eine einfache ASP.NET-Anwendung, in der von Ih
             }
         }
 
-3.  Erweitern Sie im Projektmappen-Explorer **Views\Shared**:
+3.  Erweitern Sie im Projektmappen-Explorer **Views\\Shared**:
 
     ![][18]
 
-4.  Doppelklicken Sie als Nächstes auf _"Layout.cshtml", um die Datei im Visual Studio-Editor zu öffnen.
+4.  Doppelklicken Sie als Nächstes auf \_Layout.cshtml, um die Datei im Visual Studio-Editor zu öffnen.
 
 5.  Ändern Sie alle Vorkommnisse von **My ASP.NET Application** in **LITWARE's Products**.
 
@@ -352,7 +352,7 @@ In diesem Abschnitt erstellen Sie eine einfache ASP.NET-Anwendung, in der von Ih
 
 	![][41]
 
-7.  Erweitern Sie im Projektmappen-Explorer **Views\Home**:
+7.  Erweitern Sie im Projektmappen-Explorer **Views\\Home**:
 
     ![][20]
 
@@ -410,7 +410,7 @@ Sie können die Anwendung für einen Azure-Cloud-Dienst oder eine Azure-Website 
 
 Zur Bereitstellung der Anwendung für einen Cloud-Dienst fügen Sie der Projektmappe ein Bereitstellungsprojekt für das Cloud-Dienstprojekt hinzu. Das Bereitstellungsprojekt enthält Konfigurationsinformationen, die benötigt werden, um die Anwendung ordnungsgemäß in der Cloud auszuführen.
 
-1.  Um die Anwendung in der Cloud bereitstellen zu können, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **ProductsPortal**,klicken Sie auf **Konvertieren** und dann auf **Convert to Microsoft Azure Cloud Service Project**.
+1.  Um die Anwendung in der Cloud bereitstellen zu können, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **ProductsPortal**,klicken Sie auf **Konvertieren** und dann auf **Konvertieren zu Microsoft Azure-Clouddienstprojekt**.
 
     ![][22]
 
@@ -434,11 +434,11 @@ Im nächsten Schritt wird der lokale Produktserver mit der ASP.NET MVC-Webanwend
 
 4.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **ProductsPortal**. Klicken Sie auf **Hinzufügen** und dann auf **Vorhandenes Element**.
 
-5.  Navigieren Sie im Konsolenprojekt **ProductsServer** zur Datei **ProductsContract.cs**. Klicken Sie, um "ProductsContract.cs" zu markieren. Klicken Sie auf den Pfeil nach unten neben **Hinzufügen** und dann auf **Link hinzufügen**.
+5.  Navigieren Sie im Konsolenprojekt **ProductsServer** zur Datei **ProductsContract.cs**. Klicken Sie, um "ProductsContract.cs" zu markieren. Klicken Sie auf den Pfeil nach unten neben **Hinzufügen** und dann auf **Als Link hinzufügen**.
 
 	![][24]
 
-6.  Öffnen Sie nun die Datei **HomeController.cs** im Visual Studio-Editor, und ersetzen Sie die Namespace-Definition durch den folgenden Code. Ersetzen Sie *yourServiceNamespace* durch den Namen Ihres Dienstnamespaces und *yourKey* durch Ihren SAS-Schlüssel. Der Client kann daraufhin den lokalen Dienst aufrufen und das Ergebnis des Aufrufs zurückgeben.
+6.  Öffnen Sie nun die Datei **HomeController.cs** im Visual Studio-Editor, und ersetzen Sie die Namespace-Definition durch den folgenden Code. Achten Sie darauf, *yourServiceNamespace* durch den Namen Ihres Dienstnamespaces und *yourKey* durch Ihren SAS-Schlüssel zu ersetzen. Der Client kann daraufhin den lokalen Dienst aufrufen und das Ergebnis des Aufrufs zurückgeben.
 
             namespace ProductsWeb.Controllers
             {
@@ -620,4 +620,4 @@ Weitere Informationen zum Service Bus finden Sie in den folgenden Ressourcen:
   [executionmodels]: http://azure.microsoft.com/develop/net/fundamentals/compute/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

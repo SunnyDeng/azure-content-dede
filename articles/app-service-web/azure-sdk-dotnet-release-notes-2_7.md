@@ -2,7 +2,7 @@
 <properties 
    pageTitle="Versionshinweise zu Azure SDK für .NET 2.7" 
    description="Versionshinweise zu Azure SDK für .NET 2.7" 
-   services="app-service/web" 
+   services="app-service\web" 
    documentationCenter=".net" 
    authors="Juliako" 
    manager="dwrede" 
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="07/20/2015"
+   ms.date="08/04/2015"
    ms.author="juliako"/>
 
 
@@ -112,4 +112,4 @@ Einführung von **Azure Data Factory-Tools** für Visual Studio. Es folgt eine A
 
 [Ankündigungsbeitrag zu Azure SDK 2.7](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) (in englischer Sprache)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

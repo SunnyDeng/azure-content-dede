@@ -38,4 +38,4 @@ Die folgenden Informationen beschreiben die Verwendung von Multi-Factor Authenti
 
 <li>Sie sollten jetzt angemeldet sein.</li>
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -1,34 +1,34 @@
-<properties 
-	pageTitle="Verwenden des Blob-Speichers mit Python | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Azure-Blob-Dienst mit Python nutzen können, um Blobs hoch- und herunterzuladen, aufzulisten und zu löschen." 
-	services="storage" 
-	documentationCenter="python" 
-	authors="huguesv" 
-	manager="wpickett" 
+<properties
+	pageTitle="Verwenden des Azure-Blob-Speichers mit Python | Microsoft Azure"
+	description="Erfahren Sie, wie Sie den Azure-Blob-Speicher mit Python nutzen können, um Blobs hoch- und herunterzuladen, aufzulisten und zu löschen."
+	services="storage"
+	documentationCenter="python"
+	authors="huguesv"
+	manager="wpickett"
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="05/11/2015" 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="05/11/2015"
 	ms.author="huvalo"/>
 
-# Verwenden des Blob-Speichers mit Python
+# Verwenden des Azure-Blob-Speichers mit Python
 
 [AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
 
 ## Übersicht
 
-In diesem Leitfaden wird die Durchführung gängiger Szenarien mit dem Azure-Blob-Speicherdienst demonstriert. Die Beispiele sind in Python geschrieben und verwenden das [Python Azure-Paket][]. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs.
+In diesem Artikel wird die Durchführung gängiger Szenarien mit dem Blob-Speicher demonstriert. Die Beispiele sind in Python geschrieben und verwenden das [Python Azure-Paket][]. Die behandelten Szenarien umfassen das Hochladen, Auflisten, Herunterladen und Löschen von Blobs.
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
 [AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
-## Erstellen von Containern
+## Erstellen eines Containers
 
 > [AZURE.NOTE]Informationen zur Installation von Python bzw. des [Python Azure-Pakets][] finden Sie im [Python-Installationshandbuch](../python-how-to-install.md).
 
@@ -42,25 +42,25 @@ Mit dem folgenden Code wird unter Verwendung des Speicherkontonamens und Kontosc
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
 
-Sie können den Container mithilfe eines **BlobService**-Objekts erstellen, falls er nicht vorhanden ist:
+Im folgenden Codebeispiel können Sie den Container mithilfe eines **BlobService**-Objekts erstellen, falls er nicht vorhanden ist.
 
 	blob_service.create_container('mycontainer')
 
-Standardmäßig ist der neue Container privat, sodass Sie Ihren Speicherzugriffsschlüssel wie zuvor angeben müssen, um Blobs aus diesem Container herunterzuladen. Wenn die Dateien im Container für alle verfügbar sein sollen, können Sie den Container mithilfe des folgenden Codes erstellen und öffentlich machen:
+Standardmäßig ist der neue Container privat, sodass Sie Ihren Speicherzugriffsschlüssel wie zuvor angeben müssen, um Blobs aus diesem Container herunterzuladen. Wenn die Dateien im Container für alle verfügbar sein sollen, können Sie den Container mithilfe des folgenden Codes erstellen und öffentlich machen.
 
-	blob_service.create_container('mycontainer', x_ms_blob_public_access='container') 
+	blob_service.create_container('mycontainer', x_ms_blob_public_access='container')
 
-Alternativ können Sie einen Container nach der Erstellung mit dem folgenden Code ändern:
+Alternativ können Sie einen Container nach der Erstellung mit dem folgenden Code ändern.
 
 	blob_service.set_container_acl('mycontainer', x_ms_blob_public_access='container')
 
 Nach dieser Änderung kann jeder Benutzer im Internet Blobs in einem öffentlichen Container sehen, aber nur Sie können die Blobs ändern oder löschen.
 
-## Hochladen von Blobs in einen Container
+## Hochladen eines Blobs in einen Container
 
 Zum Hochladen von Daten in einen Blob verwenden Sie die Methode **put\_block\_blob\_from\_path**, **put\_block\_blob\_from\_file**, **put\_block\_blob\_from\_bytes** oder **put\_block\_blob\_from\_text**. Dies sind allgemeine Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
 
-**put\_block\_blob\_from\_path** lädt den Inhalt einer Datei aus dem angegebenen Pfad hoch, **put\_block\_blob\_from\_file** lädt den Inhalt aus einer bereits geöffneten Datei/einem Stream. **put\_block\_blob\_from\_bytes** lädt ein Byte-Array hoch, und **put\_block\_blob\_from\_text** lädt den angegebenen Textwert unter Verwendung der festgelegten Codierung \(standardmäßig UTF-8\) hoch.
+**put\_block\_blob\_from\_path** lädt den Inhalt einer Datei aus dem angegebenen Pfad hoch, und **put\_block\_blob\_from\_file** lädt den Inhalt aus einer bereits geöffneten Datei/einem Stream. **put\_block\_blob\_from\_bytes** lädt ein Byte-Array hoch, und **put\_block\_blob\_from\_text** lädt den angegebenen Textwert unter Verwendung der festgelegten Codierung (standardmäßig UTF-8) hoch.
 
 Das folgende Beispiel lädt den Inhalt der Datei **sunset.png** in das Blob **myblob** hoch.
 
@@ -73,13 +73,7 @@ Das folgende Beispiel lädt den Inhalt der Datei **sunset.png** in das Blob **my
 
 ## Auflisten der Blobs in einem Container
 
-Um die Blobs in einem Container aufzulisten, verwenden Sie die **list\_blobs**-Methode mit einer **for**-Schleife, um die Namen der einzelnen Blobs im Container anzuzeigen. Der folgende Code gibt den **Namen** der einzelnen Blobs in einem Container in der Konsole aus.
-
-	blobs = blob_service.list_blobs('mycontainer')
-	for blob in blobs:
-		print(blob.name)
-
-**list\_blobs** gibt nur maximal 5.000 Blobs zurück. Enthält der Container mehr als 5.000 Blobs, verwenden Sie den folgenden Code.
+Verwenden Sie zum Auflisten des Blobs in einem Container die Methode **list\_blobs**. Jeder Aufruf von **list\_blobs** gibt ein Segment mit den Ergebnissen zurück. Um alle Ergebnisse zu erhalten, überprüfen Sie die Variable **next\_marker** bei den Ergebnissen und rufen Sie bei Bedarf **list\_blobs** erneut ab. Der folgende Code gibt den **Namen** der einzelnen Blobs in einem Container in der Konsole aus.
 
 	blobs = []
 	marker = None
@@ -94,9 +88,11 @@ Um die Blobs in einem Container aufzulisten, verwenden Sie die **list\_blobs**-M
 
 ## Herunterladen von Blobs
 
+Jedes Segment mit Ergebnissen kann eine unterschiedliche Anzahl von Blobs enthalten, insgesamt bis zu 5.000. Wenn die Variable **next\_marker** für ein bestimmtes Segment vorhanden ist, gibt es möglicherweise weitere Blobs im Container.
+
 Verwenden Sie **get\_blob\_to\_path**, **get\_blob\_to\_file**, **get\_blob\_to\_bytes** oder **get\_blob\_to\_text**, um Daten aus einem Blob herunterzuladen. Dies sind allgemeine Methoden zur Durchführung der erforderlichen Teilung, wenn die Größe der Daten 64 MB übersteigt.
 
-Das folgende Beispiel verwendet **get\_blob\_to\_path**, um den Inhalt des Blobs **myblob** herunterzuladen und in der Datei **out-sunset.png** zu speichern:
+Das folgende Beispiel verwendet **get\_blob\_to\_path**, um den Inhalt des Blobs **myblob** herunterzuladen und in der Datei **out-sunset.png** zu speichern.
 
 	blob_service.get_blob_to_path('mycontainer', 'myblob', 'out-sunset.png')
 
@@ -104,19 +100,18 @@ Das folgende Beispiel verwendet **get\_blob\_to\_path**, um den Inhalt des Blobs
 
 Um ein Blob zu löschen, rufen Sie **delete\_blob** auf.
 
-	blob_service.delete_blob('mycontainer', 'myblob') 
+	blob_service.delete_blob('mycontainer', 'myblob')
 
 ## Nächste Schritte
 
 Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern von und Zugreifen auf Daten in Azure][].
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][].
 -   Besuchen Sie den [Blog des Azure-Speicherteams][]
 
-[Speichern von und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure-Paket]: https://pypi.python.org/pypi/azure
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
- 
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

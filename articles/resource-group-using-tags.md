@@ -7,28 +7,29 @@
 	manager="wpickett" 
 	editor=""/>
 
+
 <tags 
 	ms.service="azure-resource-manager" 
 	ms.workload="multiple" 
 	ms.tgt_pltfrm="AzurePortal" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/15/2015" 
+	ms.date="08/05/2015" 
 	ms.author="tomfitz"/>
+
 
 
 # Verwenden von Tags zum Organisieren von Azure-Ressourcen
 
-Das Azure-Portal und der zugrunde liegende Ressourcen-Manager werden zum Organisieren von Ressourcen und Personalisieren der Benutzererfahrung verwendet.
+Mit dem Ressourcen-Manager können Sie Ressourcen durch Anwenden von Tags logisch organisieren. Tags bestehen aus Schlüssel-Wert-Paaren, die Ressourcen mit den Eigenschaften identifizieren, die Sie definieren. Um Ressourcen so zu kennzeichnen, dass sie zur selben Kategorie gehören, wenden Sie das gleiche Tag auf diese Ressourcen an.
 
-Abonnements sind im klassischen Azure-Portal die einzige Möglichkeit zum Kategorisieren und Gruppieren Ihrer Ressourcen. Mit dem Azure-Portal [haben wir Ressourcengruppen eingeführt](./resource-group-portal.md), die es Ihnen ermöglichen, verknüpfte Entitäten zu gruppieren. Dies wurde noch nützlicher, als [wir den rollenbasierten Zugriff eingeführt](./role-based-access-control-configure.md) haben. Jetzt können Sie in diesem Sinne Ihre Ressourcen mit Schlüssel-Wert-Paaren markieren, um Ressourcen für Abonnements über Ressourcengruppen hinweg und, innerhalb des Portals, über Abonnements hinweg weiter zu kategorisieren und anzuzeigen.
+Wenn Sie Ressourcen mit einem bestimmten Tag anzeigen, sehen Sie Ressourcen aus allen Ressourcengruppen. Sie sind nicht auf Ressourcen in der gleichen Ressourcengruppe beschränkt, weshalb Sie Ihre Ressourcen unabhängig von Bereitstellungsbeziehungen organisieren können. Tags können besonders hilfreich sein, wenn Sie Ressourcen zur Abrechnung oder Verwaltung organisieren müssen.
 
-Gruppieren Sie Ressourcen nach Team, Projekt oder sogar Umgebung, um sich genau darauf zu konzentrieren, was Sie sehen müssen und wann Sie es benötigen.
+> [AZURE.NOTE]Sie können Tags nur auf Ressourcen anwenden, die Ressourcen-Manager-Vorgänge unterstützen. Wenn Sie einen virtuellen Computer, ein Virtual Network oder einen Speicher über das klassische Bereitstellungsmodell erstellt haben (z. B. über das Azure-Portal oder die [Dienstverwaltungs-API](https://msdn.microsoft.com/library/azure/dn948465.aspx)), können Sie auf diese Ressource kein Tag anwenden. Sie müssen diese Ressourcen über den Ressourcen-Manager erneut bereitstellen, damit Tags unterstützt werden. Alle anderen Ressourcen unterstützen die Markierung durch Tags.
 
+## Tags im Vorschauportal
 
-## Markierungen im Azure-Portal
-
-Das Markieren von Ressourcen und Ressourcengruppen im Portal ist einfach. Verwenden Sie den Durchsuchenhub, um zu der Ressource oder Ressourcengruppe zu navigieren, die Sie markieren möchten. Klicken Sie dann auf den Tags-Teil im Übersichtsabschnitt oben im Fenster.
+Das Markieren von Ressourcen und Ressourcengruppen im Vorschauportal ist einfach. Verwenden Sie den Durchsuchenhub, um zu der Ressource oder Ressourcengruppe zu navigieren, die Sie markieren möchten. Klicken Sie dann auf den Tags-Teil im Übersichtsabschnitt oben im Fenster.
 
 ![Tags-Bereich im Blatt für Ressourcen oder Ressourcengruppen](./media/resource-group-using-tags/rgblade.png)
 
@@ -62,7 +63,7 @@ Der Prozess ist für Ressourcen der gleiche, Sie verwenden jedoch die Cmdlets `G
 ![Abrufen von markierten Ressourcen und Ressourcengruppen mit Get-AzureResource und Get-AzureResourceGroup in PowerShell](./media/resource-group-using-tags/Get-AzureResourceGroup-with-tags-in-PowerShell.png)
 
 
-## Markieren mit dem Ressourcen-Manager
+## Markieren durch Tags mit der REST-API
 
 Das Vorschauportal und PowerShell verwenden im Hintergrund die [Ressourcen-Manager-REST-API](http://msdn.microsoft.com/library/azure/dn790568.aspx). Wenn Sie das Tagging in eine andere Umgebung integrieren müssen, können Sie Tags mit GET für die Ressourcen-ID abrufen und die Tags mit einem PATCH-Aufruf aktualisieren.
 
@@ -90,7 +91,7 @@ Fixieren Sie die wichtigsten Tags für den schnellen Zugriff auf dem Startboard,
 
 ## Tags und Abrechnung
 
-Abrechnungsdaten können für unterstützte Dienste mithilfe von Tags gruppiert werden. So können Sie beispielsweise mithilfe von [in den Azure-Ressourcen-Manager integrierten virtuellen Computern](/virtual-machines/virtual-machines-azurerm-versus-azuresm.md) Tags definieren und anwenden, um die Abrechnung für virtuelle Computer zu organisieren. Wenn Sie mehrere virtuelle Computer für verschiedene Organisationen betreiben, können Sie die Nutzung mithilfe von Tags nach Kostenstelle gruppieren. Mit Tags können Sie auch Kosten nach Laufzeitumgebung kategorisieren \(beispielsweise zur Abrechnung der Nutzung virtueller Computer in der Produktionsumgebung\).
+Abrechnungsdaten können für unterstützte Dienste mithilfe von Tags gruppiert werden. So können Sie beispielsweise mithilfe von [in den Azure-Ressourcen-Manager integrierten virtuellen Computern](/virtual-machines/virtual-machines-azurerm-versus-azuresm.md) Tags definieren und anwenden, um die Abrechnung für virtuelle Computer zu organisieren. Wenn Sie mehrere virtuelle Computer für verschiedene Organisationen betreiben, können Sie die Nutzung mithilfe von Tags nach Kostenstelle gruppieren. Mit Tags können Sie auch Kosten nach Laufzeitumgebung kategorisieren (beispielsweise zur Abrechnung der Nutzung virtueller Computer in der Produktionsumgebung).
 
 Informationen zu Tags können über die [Nutzungs-API](billing-usage-rate-card-overview.md) oder aus der Nutzungsdatei im CSV-Format abgerufen werden, die Sie aus dem [Azure-Kontenportal](https://account.windowsazure.com/) oder aus dem [EA-Portal](https://ea.azure.com) herunterladen können.
 
@@ -99,26 +100,12 @@ Wenn Sie die CSV-Nutzungsdatei für Dienste herunterladen, die die Verwendung vo
 ![Anzeigen von Tags in der Abrechnung](./media/resource-group-using-tags/billing_csv.png)
 
 ## Nächste Schritte
-Erste Schritte
 
-- [Azure Resource Manager Overview](./resource-group-overview.md) \(Übersicht über den Azure-Ressourcen-Manager\)  
-- [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](./powershell-azure-resource-manager.md)
-- [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](./xplat-cli-azure-resource-manager.md)  
-- [Using the Azure Portal to manage your Azure resources](./resource-group-portal.md) \(Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen\)  
-  
-Erstellen und Bereitstellen von Anwendungen
-  
-- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) \(Erstellen von Vorlagen im Azure-Ressourcen-Manager\)  
-- [Deploy an application with Azure Resource Manager Template](./resource-group-template-deploy.md) \(Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager\)  
-- [Troubleshooting Resource Group Deployments in Azure](./resource-group-deploy-debug.md) \(Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure\)  
-- [Azure Resource Manager Template Functions](./resource-group-template-functions.md) \(Vorlagenfunktionen im Azure-Ressourcen-Manager\)  
-- [Advanced Template Operations](./resource-group-advanced-template.md) \(Erweiterte Anwendungen mit Vorlagen\)  
-  
-Zugriffsverwaltung und -überwachung
-  
-- [Verwalten und Überwachen des Ressourcen-Zugriffs](./resource-group-rbac.md)  
-- [Authentifizieren eines Dienstprinzipals mit Azure-Ressourcen-Manager](./resource-group-authenticate-service-principal.md)  
-- [Erstellen neuer Azure-Dienstprinzipale mit dem Azure-Portal](./resource-group-create-service-principal-portal.md)  
+- Eine Einführung zur Verwendung von Azure PowerShell für das Bereitstellen von Ressourcen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](./powershell-azure-resource-manager.md).
+- Eine Einführung zur Verwendung der Azure-Befehlszeilenschnittstelle für das Bereitstellen von Ressourcen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung](./xplat-cli-azure-resource-manager.md).
+- Eine Einführung zum Verwenden des Vorschauportals finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](./resource-group-portal.md).  
   
 
-<!---HONumber=July15_HO5-->
+  
+
+<!---HONumber=August15_HO6-->

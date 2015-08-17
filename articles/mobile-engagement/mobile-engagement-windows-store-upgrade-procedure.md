@@ -129,8 +129,8 @@ Nach Abschluss dieser Schritte müssen Sie nur die alten Capptain-Verweise durch
 
 In der Datei "Package.appxmanifest" wurde `File Type Associations` aktualisiert von:
 
- -   capptain_reach_content zu engagement_reach_content
- -   capptain_log_file zu engagement_log_file
+ -   capptain\_reach\_content zu engagement\_reach\_content
+ -   capptain\_log\_file zu engagement\_log\_file
 
 ### Anwendungs-ID/SDK-Schlüssel
 
@@ -169,4 +169,4 @@ Beachten Sie, dass sich die Umbenennung auch auf überschriebene Methoden auswir
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

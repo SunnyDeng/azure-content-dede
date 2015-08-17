@@ -278,4 +278,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [sqlite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.2
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

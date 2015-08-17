@@ -7,6 +7,7 @@
 	editor="" 
 	services="notification-hubs"/>
 
+
 <tags 
 	ms.service="notification-hubs" 
 	ms.workload="mobile" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="05/31/2015" 
 	ms.author="wesmc"/>
+
 
 #Azure Notification Hubs – Benachrichtigen von Benutzern
 
@@ -69,7 +71,7 @@ Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff a
 
 		- (IBAction)LogInAction:(id)sender;		
 
-4. Fügen Sie in "ViewController.h" folgende `#define` direkt unter den import-Anweisungen hinzu. Ersetzen Sie den Platzhalter *<Enter Your Backend Endpoint>* durch die Ziel-URL, die Sie zum Bereitstellen Ihres App-Back-Ends im vorherigen Abschnitt verwendet haben. Beispiel: *http://you_backend.azurewebsites.net*.
+4. Fügen Sie in "ViewController.h" folgende `#define` direkt unter den import-Anweisungen hinzu. Ersetzen Sie den Platzhalter *<Enter Your Backend Endpoint>* durch die Ziel-URL, die Sie zum Bereitstellen Ihres App-Back-Ends im vorherigen Abschnitt verwendet haben. Zum Beispiel \**http://you_backend.azurewebsites.net*.
 
 		#define BACKEND_ENDPOINT @"<Enter Your Backend Endpoint>"
 
@@ -454,7 +456,7 @@ Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff a
 
 	![][3]
 
-4. Geben Sie im Textfeld **Recipient username tag* das Benutzernamenstag ein, das mit der Registrierung von einem anderen Gerät verwendet wird.
+4. Geben Sie im Textfeld \*\*Recipient username tag\* das Benutzernamenstag ein, das bei der Anmeldung von einem anderen Gerät verwendet wird.
 5. Geben Sie eine Benachrichtigungsmeldung ein, und klicken Sie auf **Send Notification**. Die Benachrichtigungsmeldung wird nur auf den Geräten empfangen, die für das Empfänger-Benutzernamenstag registriert sind. Sie wird nur an diese Benutzer gesendet.
 
 	![][4]
@@ -466,4 +468,4 @@ Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff a
 [4]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users-enter-msg.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

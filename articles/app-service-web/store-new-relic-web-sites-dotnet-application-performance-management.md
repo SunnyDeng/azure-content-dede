@@ -7,14 +7,16 @@
 	manager="wpickett" 
 	editor=""/>
 
+
 <tags 
 	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/17/2015" 
+	ms.date="07/30/2015" 
 	ms.author="stepsic"/>
+
 
 
 
@@ -38,8 +40,7 @@ Preisinformationen finden Sie auf der [New Relic-Seite im Azure Marketplace](/ma
 
 Azure-Kunden erhalten bei Bereitstellung des New Relic-Agenten ein zweiwöchiges Testabonnement von New Relic Pro.
 
-Anmelden bei New Relic über den Azure Marketplace 
---
+Anmelden bei New Relic über den Azure Marketplace --
 
 New Relic kann nahtlos in Azure-Web- und -Workerrollen sowie Azure App Service integriert werden.
 
@@ -47,7 +48,7 @@ Um sich direkt im Azure Marketplace bei New Relic anzumelden, führen Sie diese 
 
 ## Schritt 1: Erstellen eines New Relic-Kontos
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an, und klicken Sie unten links auf **Neu**.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an, und klicken Sie auf **Neu**.
 3. Klicken Sie auf **Entwicklerdienste** > **New Relic-APM**.
 4. Konfigurieren Sie Ihr New Relic-Konto mit den folgenden Angaben, und klicken Sie dann auf **Erstellen**.
 	- **Name**
@@ -63,12 +64,16 @@ Um sich direkt im Azure Marketplace bei New Relic anzumelden, führen Sie diese 
 
 ## Schritt 2: Konfigurieren der New Relic-Integration für die Web-App
 
-2. Öffnen Sie im [Azure-Vorschauportal](https://portal.azure.com) das Blatt Ihrer Web-App.
-3. Klicken Sie auf **Anwendungsüberwachung** > **New Relic**. Wählen Sie das im vorherigen Schritt erstellte Konto aus, und klicken Sie auf **OK**. 
+1. Öffnen Sie im [Azure-Vorschauportal](https://portal.azure.com) das Blatt Ihrer Web-App.
+2. Klicken Sie im oberen Bereich des Blatts auf das Menü "...", und wählen Sie **Kacheln hinzufügen**.
+3. Wählen Sie auf der Registerkarte **Überwachung** **Anwendungsübersicht**, und ziehen Sie die Kachel auf die gewünschte Stelle im Blatt für die Web-App.
+4. Klicken Sie auf „Fertig“, um das Hinzufügen der Kacheln zu beenden.
+5. Klicken Sie auf die Kachel **Anwendungsüberwachung**, und wählen Sie **New Relic**.
+6. Wählen Sie das im vorherigen Schritt erstellte Konto aus, und klicken Sie auf **OK**. 
 
 	![](./media/store-new-relic-web-sites-dotnet-application-performance-management/configure-new-relic-integration.png)
 
-	Klicken Sie nach Abschluss des Vorgangs auf dem Blatt der Web-App auf **Alle Einstellungen** und anschließend auf **Anwendungseinstellungen**. Die Einstellung **NEWRELIC_LICENSEKEY** sollte dem Abschnitt **App-Einstellungen** des Blatts zur Unterstützung von New Relic hinzugefügt worden sein:
+	Klicken Sie nach Abschluss des Vorgangs auf dem Blatt der Web-App auf **Alle Einstellungen** und anschließend auf **Anwendungseinstellungen**. Die Einstellung **NEWRELIC\_LICENSEKEY** sollte dem Abschnitt **App-Einstellungen** des Blatts zur Unterstützung von New Relic hinzugefügt worden sein:
 
 	>[AZURE.NOTE]Es kann bis zu 30 Sekunden dauern, bis die neuen App-Einstellungen wirksam sind. Damit die Einstellungen sofort wirksam werden, starten Sie die Web-App neu.
 
@@ -118,7 +123,8 @@ Neben der <a href="https://newrelic.com/docs/site/the-new-relic-ui#functions">st
     </tr>
     <tr>
        <td>Anzeigen weltweiter Apdex-Details</td>
-       <td>Zeigen Sie in der <b>Browser</b>-Ansicht der Übersicht auf eine beliebige Stelle der globalen Apdex-Karte.<br /><b>Tipp:</b> Wenn Sie direkt zum Dashboard <a href="https://newrelic.com/docs/site/geography" target="_blank">Geography</a> der ausgewählten App wechseln möchten, klicken Sie auf den Titel <b>Global Apdex</b>, oder klicken Sie auf eine beliebige Stelle der globalen Apdex-Karte.</td>
+       <td>Zeigen Sie in der <b>Browser</b>-Ansicht der Übersicht auf eine beliebige Stelle der globalen Apdex-Karte.<br />
+<b>Tipp:</b> Wenn Sie direkt zum Dashboard <a href="https://newrelic.com/docs/site/geography" target="_blank">Geography</a> der ausgewählten App wechseln möchten, klicken Sie auf den Titel <b>Global Apdex</b>, oder klicken Sie auf eine beliebige Stelle der globalen Apdex-Karte.</td>
     </tr>
     <tr>
        <td>Anzeigen des Dashboards <a href="https://docs.newrelic.com/docs/applications-menu/transactions-dashboard" target="_blank">Web Transactions</a></td>
@@ -126,7 +132,8 @@ Neben der <a href="https://newrelic.com/docs/site/the-new-relic-ui#functions">st
     </tr>
     <tr>
        <td>Anzeigen des Dashboards <a href="https://newrelic.com/docs/site/errors" target="_blank">Errors</a></td>
-       <td>Klicken Sie im Dashboard "Overview" der Anwendung auf den Titel des Fehlerratendiagramms.<br /><b>Tipp:</b> Sie können das Dashboard "Errors" auch über <b>Applications > (Ihre App) > Events > Errors</b> anzeigen.</td>
+       <td>Klicken Sie im Dashboard "Overview" der Anwendung auf den Titel des Fehlerratendiagramms.<br />
+<b>Tipp:</b> Sie können das Dashboard "Errors" auch über <b>Applications > (Ihre App) > Events > Errors</b> anzeigen.</td>
     </tr>
     <tr>
        <td>Anzeigen von Details zum App-Server</td>
@@ -176,4 +183,4 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
 [custom]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrcustom.png
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

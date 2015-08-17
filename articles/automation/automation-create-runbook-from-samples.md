@@ -12,7 +12,7 @@
 	ms.workload="tbd"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article" 
+	ms.topic="hero-article" 
 	ms.date="05/19/2015"
 	ms.author="bwren"/>
 
@@ -26,7 +26,7 @@ Microsoft Azure Automation bietet Benutzern die Möglichkeit, die manuellen, lan
 ## Lernprogramm:
 In diesem Lernprogramm wird erläutert, wie Sie ein Automation-Konto erstellen, das Beispiel-Runbook "Hello World" in Azure Automation importieren, es ausführen und anschließend dessen Ausgabe anzeigen.
 
-Sie benötigen ein Azure-Abonnement, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Abonnement haben, können Sie <a href="/pricing/member-offers/msdn-benefits-details/" target="_blank">Ihre MSDN-Abonnentenvorteile aktivieren</a> oder <a href="/pricing/free-trial/" target="_blank">sich für eine kostenlose Testversion registrieren</a>.
+Sie benötigen ein Azure-Abonnement, um dieses Lernprogramm auszuführen. Wenn Sie noch kein Abonnement haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](../pricing/member-offers/msdn-benefits-details/) oder sich [für eine kostenlose Testversion registrieren](../pricing/free-trial.md)</a>.
 
 [AZURE.INCLUDE [automation-note-authentication](../../includes/automation-note-authentication.md)]
 
@@ -138,7 +138,7 @@ Microsoft und die Azure Automation-Community stellen Beispiel-Runbooks zur Verf�
 
 ## Feedback
 
-<strong>Geben Sie uns Feedback!</strong> Wenn Sie nach einer Azure Automation-Runbook-Lösung oder einem Integrationsmodul suchen, senden Sie im Script Center eine Skriptanforderung. Wenn Sie Feedback oder Vorschläge zu Features für Azure Automation haben, veröffentlichen Sie sie auf [User Voice](http://feedback.windowsazure.com/forums/34192--general-feedback). Vielen Dank!
+**Geben Sie uns Feedback!** Wenn Sie nach einer Azure Automation-Runbook-Lösung oder einem Integrationsmodul suchen, senden Sie im Script Center eine Skriptanforderung. Wenn Sie Feedback oder Vorschläge zu Features für Azure Automation haben, veröffentlichen Sie sie auf [User Voice](http://feedback.windowsazure.com/forums/34192--general-feedback). Vielen Dank!
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

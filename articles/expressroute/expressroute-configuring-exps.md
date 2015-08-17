@@ -9,7 +9,7 @@
 <tags
    ms.service="expressroute"
    ms.devlang="na"
-   ms.topic="hero-article" 
+   ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="07/28/2015"
@@ -32,13 +32,13 @@ Bevor Sie mit der Konfiguration beginnen, vergewissern Sie sich, dass die folgen
 - Aktuelle Version von Azure PowerShell
 - Die folgenden Anforderungen hinsichtlich virtueller Netzwerke:
 	- Eine Gruppe von IP-Adresspräfixen, die in virtuellen Netzwerken in Azure verwendet werden
-	- Eine Gruppe von lokalen IP-Präfixen \(kann öffentliche IP-Adressen enthalten\)
+	- Eine Gruppe von lokalen IP-Präfixen (kann öffentliche IP-Adressen enthalten)
 	- Das Gateway des virtuellen Netzwerks muss mit einem /28-Subnetz erstellt werden.
-	- Zusätzliche Gruppe von IP-Präfixen \(/28\) außerhalb des virtuellen Netzwerks. Dies wird zum Konfigurieren von BGP-Peering verwendet.
-	- AS-Nummer für Ihr Netzwerk. Weitere Informationen zu AS-Nummern finden Sie unter [Autonome Systemnummern \(AS\)](http://www.iana.org/assignments/as-numbers/as-numbers.xhtml).
+	- Zusätzliche Gruppe von IP-Präfixen (/28) außerhalb des virtuellen Netzwerks. Dies wird zum Konfigurieren von BGP-Peering verwendet.
+	- AS-Nummer für Ihr Netzwerk. Weitere Informationen zu AS-Nummern finden Sie unter [Autonome Systemnummern (AS)](http://www.iana.org/assignments/as-numbers/as-numbers.xhtml).
 	- MD5-Hash, wenn Sie eine authentifizierte BGP-Sitzung benötigen
 	- VLAN-IDs, über die der Datenverkehr gesendet wird. Sie benötigen 2 VLAN-IDs pro Verbindung: eine für virtuelle Netzwerke und die andere für Dienste, die unter öffentlichen IP-Adressen gehostet werden.
-	- [Autonome Systemnummern \(AS\)](http://www.iana.org/assignments/as-numbers/as-numbers.xhtml) für Ihr Netzwerk.
+	- [Autonome Systemnummern (AS)](http://www.iana.org/assignments/as-numbers/as-numbers.xhtml) für Ihr Netzwerk.
 	- Zwei 1-Gbit/s- bzw. 10-Gbit/s-Querverbindungen mit dem Ethernet-Exchange des Exchange-Anbieters.
 	- Ein Routerpaar, das für das Routing BGP unterstützen kann
 
@@ -231,4 +231,4 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
 - Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

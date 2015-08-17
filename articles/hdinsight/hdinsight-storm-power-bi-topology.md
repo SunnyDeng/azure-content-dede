@@ -138,4 +138,4 @@ In diesem Dokument haben Sie erfahren, wie Daten aus einer Storm-Topologie an Po
 
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

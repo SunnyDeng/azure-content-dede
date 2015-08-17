@@ -22,17 +22,17 @@
 
 In diesem Thema wird erläutert, wie Sie den Azure Redis Cache-Dienst für den Sitzungszustand verwenden.
 
-Falls Ihre ASP.NET-Web-App den Sitzungszustand verwendet, müssen Sie einen externen Sitzungszustandsanbieter \(entweder den Redis Cache Service oder einen SQL Server-Sitzungszustandsanbieter\) konfigurieren. Wird der Sitzungszustand ohne einen externen Anbieter verwendet, sind Sie auf eine Instanz Ihrer Web-App beschränkt. Der Redis Cache Service lässt sich am schnellsten und einfachsten aktivieren.
+Falls Ihre ASP.NET-Web-App den Sitzungszustand verwendet, müssen Sie einen externen Sitzungszustandsanbieter (entweder den Redis Cache Service oder einen SQL Server-Sitzungszustandsanbieter) konfigurieren. Wird der Sitzungszustand ohne einen externen Anbieter verwendet, sind Sie auf eine Instanz Ihrer Web-App beschränkt. Der Redis Cache Service lässt sich am schnellsten und einfachsten aktivieren.
 
 ##<a id="createcache"></a>Erstellen des Caches
 Befolgen Sie [diese Anweisungen](../cache-dotnet-how-to-use-azure-redis-cache.md#create-cache) zum Erstellen des Caches.
 
 ##<a id="configureproject"></a>Hinzufügen des RedisSessionStateProvider-NuGet-Pakets zur Web-App
-Installieren Sie das `RedisSessionStateProvider`-NuGet-Paket. Verwenden Sie den folgenden Befehl zur Installation über die Paket-Manager-Konsole \(\*\*Tools\*\* \> **NuGet-Paket-Manager** \> **Paket-Manager-Konsole**\):
+Installieren Sie das `RedisSessionStateProvider`-NuGet-Paket. Verwenden Sie den folgenden Befehl zur Installation über die Paket-Manager-Konsole (**Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**):
 
   `PM> Install-Package Microsoft.Web.RedisSessionStateProvider`
   
-Bei Installation über**Extras** \> **NuGet-Paket-Manage** \> **NuGet-Pakete für Projektmappe verwalten** suchen Sie nach `RedisSessionStateProvider`.
+Bei Installation über**Extras** > **NuGet-Paket-Manage** > **NuGet-Pakete für Projektmappe verwalten** suchen Sie nach `RedisSessionStateProvider`.
 
 Weitere Informationen finden Sie auf der [NuGet-RedisSessionStateProvider-Seite](http://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider/) und unter [Konfigurieren der Cacheclients](../cache-dotnet-how-to-use-azure-redis-cache.md#NuGet).
 
@@ -41,17 +41,17 @@ Das NuGet-Paket fügt nicht nur Assemblyverweise für Cache, sondern auch Stub-E
 
 1. Öffnen Sie *web.config*, und suchen Sie das Element **sessionState**.
 
-1. Geben Sie die Werte für `host`, `accessKey`, `port` \(der SSL-Port sollte 6380 lauten\) ein, und legen Sie `SSL` auf `true` fest. Diese Werte finden Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) auf dem Blatt für Ihre Cacheinstanz. Weitere Informationen finden Sie unter [Verbinden mit dem Cache](../cache-dotnet-how-to-use-azure-redis-cache.md#connect-to-cache). Beachten Sie, dass der Nicht-SSL-Port für neue Caches standardmäßig deaktiviert ist. Weitere Informationen zum Aktivieren des Nicht-SSL-Ports finden Sie im Abschnitt [Zugriffsports](https://msdn.microsoft.com/library/azure/dn793612.aspx#AccessPorts) zum Thema [Konfigurieren eines Caches in Azure Redis Cache](https://msdn.microsoft.com/library/azure/dn793612.aspx). Das folgende Markup zeigt die Änderungen an der Datei *web.config*.
+1. Geben Sie die Werte für `host`, `accessKey`, `port` (der SSL-Port sollte 6380 lauten) ein, und legen Sie `SSL` auf `true` fest. Diese Werte finden Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) auf dem Blatt für Ihre Cacheinstanz. Weitere Informationen finden Sie unter [Verbinden mit dem Cache](../cache-dotnet-how-to-use-azure-redis-cache.md#connect-to-cache). Beachten Sie, dass der Nicht-SSL-Port für neue Caches standardmäßig deaktiviert ist. Weitere Informationen zum Aktivieren des Nicht-SSL-Ports finden Sie im Abschnitt [Zugriffsports](https://msdn.microsoft.com/library/azure/dn793612.aspx#AccessPorts) zum Thema [Konfigurieren eines Caches in Azure Redis Cache](https://msdn.microsoft.com/library/azure/dn793612.aspx). Das folgende Markup zeigt die Änderungen an der Datei *web.config*.
 
 
-  <pre class="prettyprint">  
-    &lt;system.web>
-    &lt;customErrors mode="Off" />
-    &lt;authentication mode="None" />
-    &lt;compilation debug="true" targetFramework="4.5" />
-    &lt;httpRuntime targetFramework="4.5" />
-  &lt;sessionState mode="Custom" customProvider="RedisSessionProvider">
-      &lt;providers>  
+```  
+    &lt;system.web&gt;
+    &lt;customErrors mode="Off" /&gt;
+    &lt;authentication mode="None" /&gt;
+    &lt;compilation debug="true" targetFramework="4.5" /&gt;
+    &lt;httpRuntime targetFramework="4.5" /&gt;
+  &lt;sessionState mode="Custom" customProvider="RedisSessionProvider"&gt;
+      &lt;providers&gt;  
           &lt;!--&lt;add name="RedisSessionProvider" 
             host = "127.0.0.1" [String]
             port = "" [number]
@@ -61,20 +61,23 @@ Das NuGet-Paket fügt nicht nur Assemblyverweise für Cache, sondern auch Stub-E
             retryTimeoutInMilliseconds = "0" [number]
             databaseId = "0" [number]
             applicationName = "" [String]
-          />-->
+          /&gt;--&gt;
          &lt;add name="RedisSessionProvider" 
               type="Microsoft.Web.Redis.RedisSessionStateProvider" 
               <mark>port="6380"
               host="movie2.redis.cache.windows.net" 
               accessKey="m7PNV60CrvKpLqMUxosC3dSe6kx9nQ6jP5del8TmADk=" 
-              ssl="true"</mark> />
-      &lt;!--&lt;add name="MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider" host="127.0.0.1" accessKey="" ssl="false" />-->
-      &lt;/providers>
-    &lt;/sessionState>
-  &lt;/system.web></pre>
+              ssl="true"</mark> /&gt;
+      &lt;!--&lt;add name="MySessionStateStore" type="Microsoft.Web.Redis.RedisSessionStateProvider" host="127.0.0.1" accessKey="" ssl="false" /&gt;--&gt;
+      &lt;/providers&gt;
+    &lt;/sessionState&gt;
+  &lt;/system.web&gt;
+```
 
 
-<a id="usesessionobject"></a>Verwenden des Sitzungsobjekts im Code Der letzte Schritt ist die Verwendung des Sitzungsobjekts im ASP.NET-Code. Fügen Sie Objekte mit der Methode **Session.Add** zum Sitzungsstatus hinzu. Diese Methode verwendet Schlüssel-Wert-Paare, um Elemente im Sitzungszustandscache zu speichern.
+
+##<a id="usesessionobject"></a> Verwenden des Sitzungsobjekts im Code
+Der letzte Schritt ist die Verwendung des Sitzungsobjekts im ASP.NET-Code. Fügen Sie Objekte mit der Methode **Session.Add** zum Sitzungsstatus hinzu. Diese Methode verwendet Schlüssel-Wert-Paare, um Elemente im Sitzungszustandscache zu speichern.
 
     string strValue = "yourvalue";
 	Session.Add("yourkey", strValue);
@@ -108,4 +111,4 @@ Sie können den Redis Cache auch zum Zwischenspeichern von Objekten in Ihrer Web
   [ManageKeys]: ./media/web-sites-dotnet-session-state-caching/CachingScreenshot_ManageAccessKeys.png
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

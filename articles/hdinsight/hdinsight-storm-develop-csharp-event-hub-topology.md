@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="05/29/2015"
+   ms.date="07/24/2015"
    ms.author="larryfr"/>
 
 # Verarbeitung von Ereignissen von Azure-Event-Hubs mit Storm auf HDInsight (C#)
@@ -532,17 +532,17 @@ Der EventHubSpout erstellt in regelmäßigen Abständen Prüfpunkte im Zookeeper
 
 * Die Topologie wird beendet und **mit demselben Namen** neu gestartet.
 
-Die persistenten Prüfpunkte können auch an WASB (dem von Ihrem HDInsight-Cluster verwendeten Azure-Speicher) exportiert und importiert werden. Die dafür geeigneten Skripts befinden sich auf dem Storm-Cluster auf HDInsight unter **c:\apps\dist\storm-0.9.3.2.2.1.0-2340\zkdatatool-1.0\bin**.
+Die persistenten Prüfpunkte können auch an WASB (dem von Ihrem HDInsight-Cluster verwendeten Azure-Speicher) exportiert und importiert werden. Die dafür geeigneten Skripts befinden sich auf dem Storm-Cluster auf HDInsight unter **c:\\apps\\dist\\storm-0.9.3.2.2.1.0-2340\\zkdatatool-1.0\\bin**.
 
 >[AZURE.NOTE]Die Versionsnummer im Pfad kann abweichen, da sich die auf dem Cluster installierte Storm-Version in Zukunft ändern könnte.
 
 Die Skripts in diesem Verzeichnis sind:
 
-* **stormmeta_import.cmd:** importiert alle Storm-Metadaten vom standardmäßigen Speichercontainer des Clusters in Zookeeper.
+* **stormmeta\_import.cmd:** importiert alle Storm-Metadaten vom standardmäßigen Speichercontainer des Clusters in Zookeeper.
 
-* **stormmeta_export.cmd:** exportiert alle Storm-Metadaten von Zookeeper in den standardmäßigen Speichercontainer des Clusters.
+* **stormmeta\_export.cmd:** exportiert alle Storm-Metadaten von Zookeeper in den standardmäßigen Speichercontainer des Clusters.
 
-* **stormmeta_delete.cmd:** Alle Storm-Metadaten werden aus Zookeeper gelöscht.
+* **stormmeta\_delete.cmd:** Alle Storm-Metadaten werden aus Zookeeper gelöscht.
 
 Durch das Exportieren und Importieren können Sie Prüfpunktdaten persistent speichern, um beispielsweise einen Cluster zu löschen und nach dem Onlineschalten des neuen Clusters die Verarbeitung am aktuellen Offset fortsetzen zu können.
 
@@ -557,4 +557,4 @@ In diesem Dokument haben Sie erfahren, wie Sie den Java-Spout und den -Bolt für
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

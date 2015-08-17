@@ -56,4 +56,4 @@ Jeder der Hauptdienstbereiche wird im Anschluss an das Diagramm näher beschrieb
 
 [Batch Processing Tier](https://gallery.technet.microsoft.com/Cloud-Platform-Integration-0bc3f8b1)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

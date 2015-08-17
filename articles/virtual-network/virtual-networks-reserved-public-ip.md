@@ -123,4 +123,4 @@ Sie können eine reservierte IP einem Cloud-Dienst auch zuordnen, indem Sie eine
 
 [Reservierte IP-REST-APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

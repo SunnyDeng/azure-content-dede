@@ -1,5 +1,5 @@
 <properties
-	pageTitle="IPython Notebook | Azure-Lernprogramm"
+	pageTitle="IPython Notebook – Azure-Lernprogramm"
 	description="Dieses Lernprogramm beschreibt die Bereitstellung von IPython Notebook in Azure mithilfe von virtuellen Linux- oder Windows-Computern (VMs)."
 	services="virtual-machines"
 	documentationCenter="python"
@@ -21,7 +21,7 @@
 
 Das [IPython-Projekt](http://ipython.org) bietet eine Sammlung von Tools für wissenschaftliche Berechnungen inklusive umfangreicher interaktiver Shells, leistungsstarker und leicht einsetzbarer paralleler Bibliotheken und einer webbasierten Umgebung mit dem Namen IPython-Notizbuch. Notebook bietet eine Arbeitsumgebung für interaktive Berechnungen, die Codeausführung mit der Erstellung eines Live-Berechnungsdokuments vereint. Diese Notebook-Dateien enthalten beliebigen Text, mathematische Formeln, Eingabecode, Ergebnisse, Grafiken, Videos und beliebige andere Medientypen, die in modernen Webbrowsern angezeigt werden können.
 
-Das IPython-Notizbuch ist eine hervorragende Wahl, egal ob Sie Python-Anfänger sind und die Sprache in einer interessanten und interaktiven Umgebung erlernen möchten, oder ob Sie ernsthafte parallele und technische Berechnungen durchführen möchten. Der folgende Screenshot illustriert diese Möglichkeiten und zeigt das IPython-Notizbuch in Kombination mit den SciPy- und matplotlib-Paketen, um die Struktur einer Tonaufnahme zu analysieren:
+Das IPython-Notizbuch ist eine hervorragende Wahl, egal ob Sie Python-Anfänger sind und die Sprache in einer interessanten und interaktiven Umgebung erlernen möchten, oder ob Sie ernsthafte parallele und technische Berechnungen durchführen möchten. Der folgende Screenshot illustriert diese Möglichkeiten und zeigt das IPython-Notizbuch in Kombination mit den SciPy- und Matplotlib-Paketen, um die Struktur einer Tonaufnahme zu analysieren.
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-notebook-spectral.png)
 
@@ -89,7 +89,7 @@ Um IPython und dessen Abhängigkeiten auf der Windows-VM zu installieren, verbin
 
 **Hinweis**: Sie müssen einige Sicherheitseinstellungen ändern, um Downloads mit dem Internet Explorer ausführen zu können. Klicken Sie im **Server-Manager** auf **Lokaler Server**, anschließend auf **Verstärkte Sicherheitskonfiguration für IE**, und deaktivieren Sie die Option für Administratoren. Sie können die Option nach der Installation von IPython wieder aktivieren.
 
-1.  Laden Sie die aktuelle 32-Bit-Version von [Python 2.7][] herunter, und installieren Sie sie. Sie müssen `C:\Python27` und `C:\Python27\Scripts` zu der `PATH` Umgebungsvariablen hinzufügen.
+1.  Laden Sie die aktuelle 32-Bit-Version von [Python 2.7][] herunter, und installieren Sie sie. Sie müssen `C:\Python27` und `C:\Python27\Scripts` zu der `PATH`-Umgebungsvariablen hinzufügen.
 
 1.  Installieren Sie [Tornado][Tornado], [PyZMQ][PyZMQ] und andere IPython-Abhängigkeiten mithilfe der folgenden Befehle.
 
@@ -112,7 +112,7 @@ Um IPython und dessen Abhängigkeiten auf der Windows-VM zu installieren, verbin
 
 	* Sie müssen `C:\OpenSSL-Win32\bin` der `PATH`-Umgebungsvariable hinzufügen.
 
-> [AZURE.NOTE] Installieren Sie unbedingt Version 1.0.1g oder höher von OpenSSL, da diese Versionen Schutz vor der Heartbleed-Sicherheitslücke bieten.
+	> [AZURE.NOTE]Installieren Sie unbedingt Version 1.0.1g oder höher von OpenSSL, da diese Versionen Schutz vor der Heartbleed-Sicherheitslücke bieten.
 
 1.  Installieren Sie IPython mithilfe des folgenden Befehls.
 
@@ -160,31 +160,31 @@ Neben dem Zertifikat müssen Sie auch ein Kennwort angeben, um Ihr Notizbuch vor
 
 Daraufhin werden Sie aufgefordert, Ihr Kennwort zweimal einzugeben, und das Kennwort wird anschließend wie folgt ausgegeben.
 
-    Enter password: 
-    Verify password: 
+    Enter password:
+    Verify password:
     sha1:b86e933199ad:a02e9592e59723da722.. (elided the rest for security)
-    
+
 Als Nächstes bearbeiten wir die Konfigurationsdatei des Profils. Hierbei handelt es sich um die `ipython_notebook_config.py`-Datei im Profilverzeichnis, in dem Sie sich befinden. Beachten Sie, dass diese Datei möglicherweise nicht vorhanden ist. Erstellen Sie sie einfach. Diese Datei verfügt über einige Felder, und standardmäßig sind alle auskommentiert. Öffnen Sie diese Datei in einem Text-Editor Ihrer Wahl und stellen Sie sicher, dass mindestens der folgende Text enthalten ist.
 
     c = get_config()
-    
+
     # This starts plotting support always with matplotlib
     c.IPKernelApp.pylab = 'inline'
-    
+
     # You must give the path to the certificate file.
-    
+
     # If using a Linux VM:
     c.NotebookApp.certfile = u'/home/azureuser/.ipython/profile_nbserver/mycert.pem'
-    
+
     # And if using a Windows VM:
     c.NotebookApp.certfile = r'C:\Users\azureuser\.ipython\profile_nbserver\mycert.pem'
-    
+
     # Create your own password as indicated above
     c.NotebookApp.password = u'sha1:b86e933199ad:a02e9592e5 etc... '
-    
+
     # Network and browser details. We use a fixed port (9999) so it matches
     # our Azure setup, where we've allowed traffic on that port
-    
+
     c.NotebookApp.ip = '*'
     c.NotebookApp.port = 9999
     c.NotebookApp.open_browser = False
@@ -258,19 +258,16 @@ Die Kernfunktionen von IPython sind auch in Visual Studio unter [Python Tools fo
 
 
 
-[tornado]: http://www.tornadoweb.org/ "Tornado"
-[pyzmq]: https://github.com/zeromq/pyzmq "PyZMQ"
-[numpy]: http://www.numpy.org/ "NumPy"
-[matplotlib]: http://matplotlib.sourceforge.net/ "Matplotlib"
 
+[Tornado]: http://www.tornadoweb.org/ "Tornado"
+[PyZMQ]: https://github.com/zeromq/pyzmq "PyZMQ"
+[NumPy]: http://www.numpy.org/ "NumPy"
+[Matplotlib]: http://matplotlib.sourceforge.net/ "Matplotlib"
 [portal-vm-windows]: /manage/windows/tutorials/virtual-machine-from-gallery/
 [portal-vm-linux]: /manage/linux/tutorials/virtual-machine-from-gallery/
-
 [repository]: https://github.com/ipython/ipython
 [python Tools for visual studio]: http://aka.ms/ptvs
+[Python 2.7]: http://www.python.org/download
+[OpenSSL]: http://slproweb.com/products/Win32OpenSSL.html
 
-[python 2.7]: http://www.python.org/download
-[openssl]: http://slproweb.com/products/Win32OpenSSL.html
- 
-
-<!-----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

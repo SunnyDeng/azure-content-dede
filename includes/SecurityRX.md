@@ -390,7 +390,7 @@ Im folgenden werden wichtige Sicherheitsknöpfe von WIF aufgeführt. Die unten s
 Beachten Sie die folgenden Sicherheitsknöpfe bei der Bereitstellung mit Azure AD Access Control Die unten stehenden Informationen sind ein Auszug aus [ACS-Sicherheitsrichtlinien](http://msdn.microsoft.com/library/gg185962.aspx) und [Verwaltungsrichtlinien für Zertifikate und Schlüssel](http://msdn.microsoft.com/library/hh204521.aspx).
 
 -   **Ablauf von STS-Token**. Legen Sie über das Verwaltungsportal von Azure AD Access Control einen aggressiven Tokenablauf fest.
--   **Datenvalidierung bei Verwendung der Funktion "Fehler-URL"**. Die Funktion "Fehler-URL" von Azure AD Access Control erfordert einen anonymen Zugriff auf die Seite der Anwendung, an die sie Fehlermeldungen sendet. Gehen Sie bei sämtlichen Daten, die an diese Seite gehen, davon aus, dass sie gefährlich sind und aus einer nicht vertrauenswürdigen Quelle stammen.
+-   **Datenvalidierung bei Verwendung der Funktion "Fehler-URL"**. Die Funktion „Fehler-URL“ von Azure AD Access Control erfordert einen anonymen Zugriff auf die Seite der Anwendung, an die sie Fehlermeldungen sendet. Gehen Sie bei sämtlichen Daten, die an diese Seite gehen, davon aus, dass sie gefährlich sind und aus einer nicht vertrauenswürdigen Quelle stammen.
 -   **Verschlüsseln von Token für hoch sensible Szenarien**. Erwägen Sie ein Verschlüsseln der Token, um die Bedrohung durch eine Offenlegung der im Token vorhandenen Informationen zu verringern.
 -   **Verschlüsseln von Cookies mit RSA beim Bereitstellen in Azure**. WIF verschlüsselt Cookies standardmäßig mit DPAPI. Dies führt zu Serveraffinität und kann bei Bereitstellung in Webfarm- und Azure-Umgebungen zu Ausnahmen führen. Verwenden Sie bei Webfarm- und Azure-Szenarien stattdessen RSA.
 -   **Token-Signaturzertifikate**. Erneuern Sie Token-Signaturzertifikate regelmäßig, um einen Denial of Service zu vermeiden. Azure AD Access Control signiert alle von ihm ausgegebenen Token. Beim Erstellen einer Anwendung, die von ACS ausgestellte SAML-Token verbraucht, werden X.509-Zertifikate für die Signatur verwendet. Nach dem Ablauf von Signaturzertifikaten erhalten Sie Fehlermeldungen, wenn Sie versuchen, ein Token anzufordern.
@@ -451,4 +451,4 @@ Alle in diesem Thema umrissenen Szenarien und Lösungen sind gültig, wenn die A
 [Web SSO Design]: http://technet.microsoft.com/library/dd807033(WS.10).aspx
 [Federated Web SSO Design]: http://technet.microsoft.com/library/dd807050(WS.10).aspx
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

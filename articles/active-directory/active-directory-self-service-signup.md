@@ -167,7 +167,7 @@ Beispiel:
 
 3. Führen Sie dann das Cmdlet "Get-MsolDomainVerificationDns" aus, um eine Abfrage zu erstellen:
 
-	Get-MsolDomainVerificationDns –DomainName *Name_Ihrer_Domäne* –Mode DnsTxtRecord
+	Get-MsolDomainVerificationDns –DomainName *Name\_Ihrer\_Domäne* –Mode DnsTxtRecord
 
 	Beispiel:
 
@@ -185,7 +185,7 @@ Beispiel:
 
 6. Führen Sie das Cmdlet "Confirm-MsolDomain" aus, um die Abfrage zu überprüfen:
 
-	Confirm-MsolEmailVerifiedDomain -DomainName *Name_Ihrer_Domäne*
+	Confirm-MsolEmailVerifiedDomain -DomainName *Name\_Ihrer\_Domäne*
 
 	Beispiel:
 
@@ -236,4 +236,4 @@ Weitere Informationen und Beispiele zum Verwenden dieser Parameter finden Sie un
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

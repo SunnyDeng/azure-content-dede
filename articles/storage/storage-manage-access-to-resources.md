@@ -7,14 +7,16 @@
 	manager="jdial" 
 	editor=""/>
 
+
 <tags 
 	ms.service="storage" 
 	ms.workload="storage" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/28/2015" 
+	ms.date="08/04/2015" 
 	ms.author="micurd;tamram"/>
+
 
 # Verwalten des Zugriffs auf Azure Storage-Ressourcen
 
@@ -22,11 +24,11 @@
 
 Standardmäßig kann nur der Besitzer eines Speicherkontos auf Speicherressourcen in diesem Konto zugreifen. Wenn Ihr Dienst oder Ihre Anwendung diese Ressourcen für andere Clients zur Verfügung stellen muss, ohne den Zugriffsschlüssel freizugeben, stehen folgende Optionen zum Ermöglichen des Zugriffs zur Verfügung:
 
-- Sie können die Berechtigungen eines Containers festlegen, um anonymen Lesezugriff auf den Container und seine Blobs zuzulassen. Dies ist für Tabellen oder Warteschlangen nicht zulässig.
+- Sie können die Berechtigungen eines Containers festlegen, um anonymen Lesezugriff auf den Container und seine Blobs zuzulassen. Der anonyme Lesezugriff ist nur für Container und Blobs verfügbar. 
 
-- Sie können eine Ressource über eine SAS (Shared Access Signature, Signatur für freigegebenen Zugriff) verfügbar machen, die es Ihnen ermöglicht, beschränkten Zugriff auf eine Container-, Blob-, Tabellen- oder Warteschlangenressource zu delegieren, indem Sie das Intervall, für das die Ressourcen verfügbar sind, und die Berechtigungen, die ein Client haben muss, angeben.
+- Sie können eine Ressource über eine SAS (Shared Access Signature, Signatur für freigegebenen Zugriff) verfügbar machen, die es Ihnen ermöglicht, beschränkten Zugriff auf einen Container, einen Blob, eine Tabelle, eine Warteschlange, eine Dateifreigabe oder eine Datei zu delegieren, indem Sie das Intervall, für das die Ressourcen verfügbar sind, und die Berechtigungen, die ein Client haben muss, angeben.
 
-- Sie können eine gespeicherte Zugriffsrichtlinie verwenden, um Shared Access Signatures für einen Container oder dessen Blobs, eine Warteschlange oder eine Tabelle zu verwalten. Über die gespeicherte Zugriffsrichtlinie haben Sie zusätzliche Kontrolle über die Shared Access Signatures und zudem eine direkte Möglichkeit, diese aufzuheben.
+- Sie können eine gespeicherte Zugriffsrichtlinie verwenden, um Shared Access Signatures für einen Container oder dessen Blobs, für eine Warteschlange, für eine Tabelle oder für eine Dateifreigabe oder dessen Dateien zu verwalten. Über die gespeicherte Zugriffsrichtlinie haben Sie zusätzliche Kontrolle über die Shared Access Signatures und zudem eine direkte Möglichkeit, diese aufzuheben.
 
 ## Beschränken des Zugriffs auf Container und Blobs
 
@@ -74,25 +76,18 @@ Die folgende Tabelle zeigt, welche Vorgänge von anonymen Benutzern aufgerufen w
 | Get Page Ranges | Alle | Alle |
 
 ## Erstellen und Verwenden einer SAS (Shared Access Signature)
-Eine SAS (Shared Access Signature) ist ein URI, der eingeschränkte Zugriffsrechte auf Container, Blobs, Warteschlangen und Tabellen für die Dauer eines bestimmten Zeitintervalls gewährt. Indem Sie einem Client eine SAS bereitstellen, können Sie diesem ermöglichen, auf Ressourcen in Ihrem Speicherkonto zuzugreifen, ohne dass Sie den Kontoschlüssel freigeben müssen.
+Eine Shared Access Signature (SAS) ist ein URI, der eingeschränkte Zugriffsrechte auf eine Speicherressource für die Dauer eines angegebenen Zeitintervalls gewährt. Sie können eine SAS auf den folgenden Speicherressourcen erstellen:
+
+- Container und Blobs
+- Warteschlangen
+- Tabellen
+- Dateifreigaben und Dateien 
+
+Indem Sie einem Client eine SAS bereitstellen, können Sie diesem ermöglichen, auf Ressourcen in Ihrem Speicherkonto zuzugreifen, ohne dass Sie den Kontoschlüssel freigeben müssen.
 
 >[AZURE.NOTE]Eine ausführliche Konzeptübersicht und ein Lernprogramm zu SAS finden Sie unter [SAS (Shared Access Signatures)](storage-dotnet-shared-access-signature-part-1.md).
 
-Zu den unterstützten Vorgängen mithilfe von SAS gehören Folgende:
-
-- Lesen und Schreiben von Seiten- oder Block-Blob-Inhalten, Blockierlisten, Eigenschaften und Metadaten
-
-- Löschen, Leasen und Erstellen einer Momentaufnahme eines Blobs
-
-- Auflisten der Blobs innerhalb eines Containers
-
-- Hinzufügen, Entfernen, Aktualisieren und Löschen von Warteschlangennachrichten (in der Speicherclientbibliothek 2.0 und neuer)
-
-- Abrufen von Warteschlangenmetadaten, einschließlich der Nachrichtenanzahl (in der Speicherclientbibliothek 2.0 und neuer)
-
-- Abfragen, Hinzufügen, Aktualisieren, Löschen von Tabellenentitäten sowie Ausführen von Upsert-Vorgängen für Tabellenentitäten (in der Speicherclientbibliothek 2.0 und neuer)
-
-Die Abfrageparameter des SAS-URI enthalten alle Informationen, die erforderlich sind, um gesteuerten Zugriff auf eine Speicherressource zu gewähren. Die URI-Abfrageparameter geben das Zeitintervall an, in dem die SAS gültig ist, die gewährten Berechtigungen, die Ressource, die bereitgestellt werden soll, und die Signatur, die die Speicherdienste verwenden sollen, um die Anforderung zu authentifizieren.
+Die Abfrageparameter des SAS-URI enthalten alle Informationen, die erforderlich sind, um gesteuerten Zugriff auf eine Speicherressource zu gewähren. Die URI-Abfrageparameter für eine SAS geben das Zeitintervall an, in dem die SAS gültig ist, die gewährten Berechtigungen, die Ressource, die bereitgestellt werden soll, die für die Ausführung der Anforderung zu verwendende Version, und die Signatur, die die Speicherdienste verwenden, um die Anforderung zu authentifizieren.
 
 Darüber hinaus kann der URI der SAS auf eine gespeicherte Zugriffsrichtlinie verweisen, die ein höheres Maß an Kontrolle für eine Gruppe von Signaturen bietet, einschließlich der Möglichkeit, den Zugriff auf die Ressource ggf. zu ändern oder aufzuheben.
 
@@ -178,18 +173,18 @@ Ein Client, der eine SAS erhält, kann sie aus seinem Code heraus verwenden, um 
 ## Verwenden einer gespeicherten Zugriffsrichtlinie
 Eine gespeicherte Zugriffsrichtlinie bietet ein höheres Maß an Kontrolle für eine SAS auf Serverseite. Durch Festlegen einer gespeicherten Zugriffsrichtlinie können SAS gruppiert werden, und es werden zusätzliche Einschränkungen für Signaturen bereitgestellt, die von der Richtlinie abhängig sind. Sie können eine gespeicherte Zugriffsrichtlinie verwenden, um die Startzeit, die Ablaufzeit oder die Berechtigungen für eine Signatur zu ändern, oder um diese aufzuheben, nachdem sie ausgegeben wurde.
 
-Eine gespeicherte Zugriffsrichtlinie bietet größere Kontrolle über die von Ihnen freigegebenen SAS. Statt die Lebensdauer und die Berechtigungen der Signatur in der URL anzugeben, können Sie diese Parameter in der gespeicherten Zugriffsrichtlinie angeben, die im freigegebenen Blob, im freigegebenen Container, in der freigegebenen Warteschlange oder in der freigegebenen Tabelle gespeichert wird. Um diese Parameter für eine oder mehrere Signaturen zu ändern, können Sie die gespeicherte Zugriffsrichtlinie ändern und müssen die Signaturen nicht erneut ausgeben. Sie können die Signatur auch schnell aufheben, indem Sie die gespeicherte Zugriffsrichtlinie ändern.
+Eine gespeicherte Zugriffsrichtlinie bietet größere Kontrolle über die von Ihnen freigegebenen SAS. Statt die Lebensdauer und die Berechtigungen der Signatur in der URL anzugeben, können Sie diese Parameter in der gespeicherten Zugriffsrichtlinie angeben, die im Container, in der Dateifreigabe, in der Warteschlange oder in der Tabelle gespeichert wird, wo sich die freigegebene Ressource befindet. Um diese Parameter für eine oder mehrere Signaturen zu ändern, können Sie die gespeicherte Zugriffsrichtlinie ändern und müssen die Signaturen nicht erneut ausgeben. Sie können die Signatur auch schnell aufheben, indem Sie die gespeicherte Zugriffsrichtlinie ändern.
 
 Angenommen, Sie haben eine SAS ausgegeben, die einer gespeicherten Zugriffsrichtlinie zugeordnet ist. Wenn Sie die Ablaufzeit in der gespeicherten Zugriffsrichtlinie angegeben haben, können Sie die Zugriffsrichtlinie ändern, um die Lebensdauer der Signatur zu verlängern, ohne eine neue Signatur ausgeben zu müssen.
 
 Als bewährte Methode wird empfohlen, eine gespeicherte Zugriffsrichtlinie für jede signierte Ressource anzugeben, für die Sie eine SAS ausgeben, da die gespeicherte Richtlinie verwendet werden kann, um die Signatur nach dem Ausgeben zu ändern oder zu widerrufen. Wenn Sie keine gespeicherte Richtlinie angeben, wird empfohlen, die Lebensdauer der Signatur zu begrenzen, um mögliche Risiken für die Speicherkontoressourcen zu minimieren.
 
 ### Zuordnen einer SAS zu einer gespeicherten Zugriffsrichtlinie
-Eine gespeicherte Zugriffsrichtlinie beinhaltet einen Namen mit einer Länge von bis zu 64 Zeichen, der innerhalb des Containers, der Warteschlange oder der Tabelle eindeutig ist. Um eine SAS einer gespeicherten Zugriffsrichtlinie zuzuordnen, geben Sie nun diesen Bezeichner beim Erstellen der SAS an. Im URI der SAS gibt das Feld *signedidentifier* den Bezeichner der gespeicherten Zugriffsrichtlinie an.
+Eine gespeicherte Zugriffsrichtlinie beinhaltet einen Namen mit einer Länge von bis zu 64 Zeichen, der innerhalb des Containers, der Dateifreigabe, der Warteschlange oder der Tabelle eindeutig ist. Um eine SAS einer gespeicherten Zugriffsrichtlinie zuzuordnen, geben Sie nun diesen Bezeichner beim Erstellen der SAS an. Im URI der SAS gibt das Feld *signedidentifier* den Bezeichner der gespeicherten Zugriffsrichtlinie an.
 
-Ein Container, eine Warteschlange oder eine Tabelle kann bis zu 5 gespeicherte Zugriffsrichtlinien enthalten. Richtlinie kann von einer beliebigen Anzahl von freigegebenen Zugriffssignaturen verwendet werden.
+Ein Container, eine Dateifreigabe, eine Warteschlange oder eine Tabelle kann bis zu 5 gespeicherte Zugriffsrichtlinien enthalten. Richtlinie kann von einer beliebigen Anzahl von freigegebenen Zugriffssignaturen verwendet werden.
 
->[AZURE.NOTE]Wenn Sie eine gespeicherte Zugriffsrichtlinie für einen Container, eine Warteschlange oder eine Tabelle einrichten, kann es bis zu 30 Sekunden dauern, bis die Richtlinie angewendet wird. Während dieses Intervalls tritt bei einer SAS, die der gespeicherten Zugriffsrichtlinie zugeordnet ist, so lange ein Fehler mit dem Statuscode 403 (Unzulässig) auf, bis die Zugriffsrichtlinie aktiv ist.
+>[AZURE.NOTE]Wenn Sie eine gespeicherte Zugriffsrichtlinie für einen Container, eine Dateifreigabe, eine Warteschlange oder eine Tabelle einrichten, kann es bis zu 30 Sekunden dauern, bis die Richtlinie angewendet wird. Während dieses Intervalls tritt bei einer SAS, die der gespeicherten Zugriffsrichtlinie zugeordnet ist, so lange ein Fehler mit dem Statuscode 403 (Unzulässig) auf, bis die Zugriffsrichtlinie aktiv ist.
 
 ### Angeben von Zugriffsrichtlinienparametern für eine SAS
 In der gespeicherten Zugriffsrichtlinie können die folgenden Zugriffsrichtlinienparameter für die zugeordneten Signaturen angegeben werden:
@@ -214,4 +209,4 @@ Um den Zugriff auf SAS aufzuheben, die dieselbe gespeicherte Zugriffsrichtlinie 
 - [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md)
 - [Delegieren des Zugriffs mit einer Shared Access Signature](https://msdn.microsoft.com/library/azure/ee395415.aspx) 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

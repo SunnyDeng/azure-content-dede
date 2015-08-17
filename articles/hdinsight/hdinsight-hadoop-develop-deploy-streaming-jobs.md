@@ -7,6 +7,7 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
+
 <tags 
 	ms.service="hdinsight" 
 	ms.workload="big-data" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/08/2015" 
 	ms.author="jgao"/>
+
 
 
 
@@ -149,8 +151,8 @@ Diese Wortzähllösung besteht aus zwei Konsolenanwendungsprojekten: Mapper und 
 
 Die ausführbaren Dateien für Mapper und Reducer haben folgende Pfade:
 
-- C:\Tutorials\WordCount\WordCountMapper\bin\Debug\WordCountMapper.exe
-- C:\Tutorials\WordCount\WordCountReducer\bin\Debug\WordCountReducer.exe
+- C:\\Tutorials\\WordCount\\WordCountMapper\\bin\\Debug\\WordCountMapper.exe
+- C:\\Tutorials\\WordCount\\WordCountReducer\\bin\\Debug\\WordCountReducer.exe
 
 
 ##<a name="test"></a>Testen des Programms im Emulator
@@ -167,9 +169,9 @@ Standardmäßig verwendet der HDInsight-Emulator HDFS (Hadoop Distributed File S
 
 In diesem Lernprogramm wird die folgende Ordnerstruktur verwendet:
 
-<table border="1"> <tr><td>Ordner</td><td>Hinweis</td></tr> <tr><td>\WordCount</td><td>Der Stammordner des Wortzählungsprojekts. </td></tr> <tr><td>\WordCount\Apps</td><td>Der Ordner mit den ausführbaren Dateien für Mapper und Reducer.</td></tr> <tr><td>\WordCount\Input</td><td>Der MapReduce-Quelldateiordner.</td></tr> <tr><td>\WordCount\Output</td><td>Der MapReduce-Ausgabedateiordner.</td></tr> <tr><td>\WordCount\MRStatusOutput</td><td>Der Auftragsausgabeordner.</td></tr> </table></br>
+<table border="1"> <tr><td>Ordner</td><td>Hinweis</td></tr> <tr><td>\\WordCount</td><td>Der Stammordner des Wortzählungsprojekts. </td></tr> <tr><td>\\WordCount\\Apps</td><td>Der Ordner mit den ausführbaren Dateien für Mapper und Reducer.</td></tr> <tr><td>\\WordCount\\Input</td><td>Der MapReduce-Quelldateiordner.</td></tr> <tr><td>\\WordCount\\Output</td><td>Der MapReduce-Ausgabedateiordner.</td></tr> <tr><td>\\WordCount\\MRStatusOutput</td><td>Der Auftragsausgabeordner.</td></tr> </table></br>
 
-In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop_home% verwendet.
+In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop\_home% verwendet.
 
 > [AZURE.NOTE]Bei den Hadoop-HDFS-Befehlen muss die Groß- und Kleinschreibung beachtet werden.
 
@@ -186,7 +188,7 @@ In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop_home% verw
 
 2. Führen Sie den folgenden Befehl aus, um einige Textdateien in den Eingabeordner im HDFS zu kopieren:
 
-		hadoop fs -copyFromLocal %hadoop_home%\share\doc\hadoop\common*.txt \WordCount\Input
+		hadoop fs -copyFromLocal %hadoop_home%\share\doc\hadoop\common\*.txt \WordCount\Input
 
 3. Führen Sie den folgenden Befehl aus, um die hochgeladenen Dateien aufzulisten:
 
@@ -263,7 +265,8 @@ In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop_home% verw
 
 **So prüfen Sie den Auftragsstatus**
 
-1. Klicken Sie auf dem Desktop auf **Hadoop YARN-Status**, oder öffnen Sie die Adresse **http://localhost:50030/jobtracker.jsp** in einem Browser.2. Suchen Sie anhand der Auftrags-ID in den Kategorien **WIRD AUSGEFÜHRT** oder **BEENDET** nach dem Auftrag. 
+1. Klicken Sie auf dem Desktop auf **Hadoop YARN-Status**, oder öffnen Sie die Adresse \*\***http://localhost:50030/jobtracker.jsp** in einem Browser.
+2. Suchen Sie anhand der Auftrags-ID in den Kategorien **WIRD AUSGEFÜHRT** oder **BEENDET** nach dem Auftrag. 
 3. Fehlgeschlagene Jobs finden Sie in der Kategorie **FAILED**. Außerdem können Sie die Jobdetails öffnen, um hilfreiche Debugging-Informationen zu erhalten.
 
 
@@ -278,7 +281,7 @@ In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop_home% verw
 	Sie können auch "|more" an das Ende der Befehlszeile anhängen, um eine Seitenansicht zu öffnen.
 
 ##<a id="upload"></a>Hochladen von Daten in Azure-Blobspeicher
-Azure HDInsight verwendet Azure-Blobspeicher als Standarddateisystem. Sie können ein HDInsight-Cluster für die Verwendung von zusätzlichem Blobspeicher für die Datendateien verwenden. In diesem Abschnitt erstellen Sie ein Azure-Speicherkonto und laden die Datendateien in den Blobspeicher hoch. Als Datendateien werden die .txt-Dateien im Verzeichnis %hadoop_home%\share\doc\hadoop\common verwendet.
+Azure HDInsight verwendet Azure-Blobspeicher als Standarddateisystem. Sie können ein HDInsight-Cluster für die Verwendung von zusätzlichem Blobspeicher für die Datendateien verwenden. In diesem Abschnitt erstellen Sie ein Azure-Speicherkonto und laden die Datendateien in den Blobspeicher hoch. Als Datendateien werden die .txt-Dateien im Verzeichnis %hadoop\_home%\\share\\doc\\hadoop\\common verwendet.
 
 
 **So erstellen Sie einen Blobspeicher und Container**
@@ -316,7 +319,7 @@ Azure HDInsight verwendet Azure-Blobspeicher als Standarddateisystem. Sie könne
 		$localFolder = "C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common"
 		$destFolder = "WordCount/Input"
 
-	Beachten Sie: Der lokale Quellordner ist **C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common**, und der Zielordner ist **WordCount/Input**. Der Quellordner ist der Speicherort der .txt-Dateien im HDInsight-Emulator. Als Ziel wird die Ordnerstruktur verwendet, die im Azure-Blobcontainer abgebildet wird.
+	Beachten Sie: Der lokale Quellordner ist **C:\\hdp\\hadoop-2.4.0.2.1.3.0-1981\\share\\doc\\hadoop\\common**, und der Zielordner ist **WordCount/Input**. Der Quellordner ist der Speicherort der .txt-Dateien im HDInsight-Emulator. Als Ziel wird die Ordnerstruktur verwendet, die im Azure-Blobcontainer abgebildet wird.
 
 3. Führen Sie die folgenden Befehle aus, um eine Liste der .txt-Dateien im Quellordner abzurufen:
 
@@ -468,7 +471,7 @@ Dieser Abschnitt enthält ein Azure PowerShell-Skript, das alle zur Ausführung 
 
 3. Legen Sie die ersten vier Variablen in dem Skript fest. Die Variable **$stringPrefix** wird den angegebenen Zeichenfolgen für die Namen des HDInsight-Clusters, Speicherkontos und Blobspeichercontainers vorangestellt. Da diese Namen zwischen 3 und 24 Zeichen enthalten müssen, müssen Sie sicherstellen, dass die angegebene Zeichenfolge und die im Skript verwendeten Namen zusammen diese Längeneinschränkung nicht überschreiten. Verwenden Sie für **$stringPrefix** nur Kleinbuchstaben.
 
-	Die Variablen **$storageAccountName_Data** und **$containerName_Data** sind das Speicherkonto und der Container, das/den Sie in den vorigen Schritten erstellt haben. Geben Sie die entsprechenden Namen an. Diese Komponenten werden zur Speicherung von Datendateien und Anwendungen verwendet. Die Variable **$location** muss mit dem Speicherort des Datenspeicherkontos übereinstimmen.
+	Die Variablen **$storageAccountName\_Data** und **$containerName\_Data** sind das Speicherkonto und der Container, das/den Sie in den vorigen Schritten erstellt haben. Geben Sie die entsprechenden Namen an. Diese Komponenten werden zur Speicherung von Datendateien und Anwendungen verwendet. Die Variable **$location** muss mit dem Speicherort des Datenspeicherkontos übereinstimmen.
 
 4. Prüfen Sie auch die restlichen Variablen.
 5. Speichern Sie die Skript-Datei.
@@ -551,4 +554,4 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Hadoop-Streaming-MapReduce-Auf
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

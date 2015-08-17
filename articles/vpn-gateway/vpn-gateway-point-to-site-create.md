@@ -158,4 +158,4 @@ Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Info
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

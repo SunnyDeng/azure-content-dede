@@ -4,7 +4,7 @@
 
 # Verwaltungs-API: Version 2014-07-31-Preview
 
-Das vorliegende Dokument beschreibt die Version **2014-07-31-Preview** der Azure Search-Verwaltungs-REST-API. Diese wurde auf MSDN durch die allgemein verfügbare Version [Azure Search-Verwaltungs-REST API 2015-02-28](https://msdn.microsoft.com/library/dn832684.aspx) ersetzt. ________________________________________
+Das vorliegende Dokument beschreibt die Version **2014-07-31-Preview** der Azure Search-Verwaltungs-REST-API. Diese wurde auf MSDN durch die allgemein verfügbare Version [Azure Search-Verwaltungs-REST API 2015-02-28](https://msdn.microsoft.com/library/dn832684.aspx) ersetzt. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 ## Dienstverwaltungsvorgänge
 
@@ -815,4 +815,4 @@ Keiner.
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -65,4 +65,4 @@ Für die meisten Organisationen, die lediglich die Benutzeranmeldung für Office
 	- Bedingte Zugriff auf lokale und Cloudressourcen mithilfe der Geräteregistrierung, Azure AD-Einbindung oder Intune-MDM-Richtlinien
  
 
-<!--------HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -126,4 +126,4 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 [Beheben von Problemen bei einem Mobile Services .NET-Back-End]: mobile-services-dotnet-backend-how-to-troubleshoot.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

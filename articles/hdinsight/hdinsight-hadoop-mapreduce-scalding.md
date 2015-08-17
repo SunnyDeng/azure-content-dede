@@ -138,7 +138,7 @@ Erfahren Sie in diesem Dokument, wie Maven verwendet wird, um einen einfachen Ma
 
     * **repositories**: Die Bibliotheken, die die von diesem Projekt verwendeten Abhängigkeitsdateien enthalten.
 
-    * **scalding-core_2.11** und **hadoop-core**: Dieses Projekts hängt sowohl von den Scalding- und als auch den Hadoop-Core-Paketen ab.
+    * **scalding-core\_2.11** und **hadoop-core**: Dieses Projekts hängt sowohl von den Scalding- und als auch den Hadoop-Core-Paketen ab.
 
     * **maven-scala-plugin**: Plug-In zur Kompilierung von Scala-Anwendungen.
 
@@ -168,7 +168,7 @@ Erfahren Sie in diesem Dokument, wie Maven verwendet wird, um einen einfachen Ma
 
           //Tokenizer to split sentance into words
           def tokenize(text : String) : Array[String] = {
-            text.toLowerCase.replaceAll("[^a-zA-Z0-9\s]", "").split("\s+")
+            text.toLowerCase.replaceAll("[^a-zA-Z0-9\\s]", "").split("\\s+")
           }
         }
 
@@ -289,4 +289,4 @@ Nachdem Sie erfahren haben, wie mit Scalding MapReduce-Aufträge für HDInsight 
 
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

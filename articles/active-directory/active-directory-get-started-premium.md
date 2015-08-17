@@ -12,7 +12,7 @@
 	ms.workload="infrastructure-services" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="05/05/2015" 
 	ms.author="Justinha"/>
 
@@ -124,4 +124,4 @@ Die Verfügbarkeit der Dienste und Features eines Microsoft Clouddiensts variier
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

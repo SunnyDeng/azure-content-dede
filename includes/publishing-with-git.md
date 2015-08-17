@@ -300,4 +300,4 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 [Verwenden von Dropbox zum Freigeben von Git-Repositorys]: https://gist.github.com/trey/2722927
 [Continuous delivery to Azure using Visual Studio Online]: ../articles/cloud-services/cloud-services-continuous-delivery-use-vso.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

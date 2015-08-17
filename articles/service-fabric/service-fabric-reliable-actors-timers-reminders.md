@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Timer und Erinnerungen für Azure Service Fabric Actors"
-   description="Einführung in Timer und Erinnerungen für Azure Service Fabric Actors."
+   pageTitle="Timer und Erinnerungen für Reliable Actors"
+   description="Einführung in Timer und Erinnerungen für Service Fabric Reliable Actors."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
+
 
 <tags
    ms.service="service-fabric"
@@ -13,8 +14,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/09/2015"
+   ms.date="08/05/2015"
    ms.author="amanbha"/>
+
 
 
 # Actor-Timer
@@ -114,4 +116,4 @@ Task reminderUnregistration = UnregisterReminder(reminder);
 
 Wie oben gezeigt, akzeptiert die Methode `UnregisterReminder` die Schnittstelle `IActorReminder`. Die Basisklasse des Actors unterstützt die Methode `GetReminder`, die zum Abrufen der Schnittstelle `IActorReminder` durch Übergabe des Erinnerungsnamens verwendet werden kann. Dies ist praktisch, da der Actor die Schnittstelle `IActorReminder` nicht beibehalten muss, die bei Aufruf der Methode `RegisterReminder` zurückgegeben wurde.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

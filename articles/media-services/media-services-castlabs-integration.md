@@ -44,25 +44,24 @@ castLabs sowie AMS unterstützen das für die Autorisierung einer Lizenz verwend
 
 In der folgenden Tabelle wird das in AMS verwendete JWT-Token beschrieben.
 
-<table border="1">
-<tr><td>Aussteller</td><td>Ausstellerzeichenfolge aus dem ausgewählten Secure Token Service (STS)</td></tr>
-<tr><td>Zielgruppe</td><td>Zielgruppenzeichenfolge aus dem verwendeten STS</td></tr>
-<tr><td>Ansprüche</td><td>Eine Sammlung von Ansprüchen</td></tr>
-<tr><td>NotBefore</td><td>Beginn der Gültigkeit des Tokens</td></tr>
-<tr><td>Expires</td><td>Ende der Gültigkeit des Tokens</td></tr>
-<tr><td>SigningCredentials</td><td>Der Schlüssel, der vom PlayReady-Lizenzserver, dem castLabs-Lizenzserver und STS gemeinsam genutzt wird. Kann ein symmetrischer oder asymmetrischer Schlüssel sein.</td></tr>
-</table>
+Aussteller|Ausstellerzeichenfolge aus dem ausgewählten Secure Token Service (STS)
+---|---
+Zielgruppe|Zielgruppenzeichenfolge aus dem verwendeten STS
+Ansprüche|Eine Sammlung von Ansprüchen
+NotBefore|Beginn der Gültigkeit des Tokens
+Expires|Ende der Gültigkeit des Tokens
+SigningCredentials|Der Schlüssel, der vom PlayReady-Lizenzserver, dem castLabs-Lizenzserver und STS gemeinsam genutzt wird. Kann ein symmetrischer oder asymmetrischer Schlüssel sein.
 
 ###JWT-Token in castLabs
 
 In der folgenden Tabelle wird das in castLabs verwendete JWT-Token beschrieben.
 
-<table border="1">
-<tr><td>optData</td><td>Eine JSON-Zeichenfolge, die Informationen über Sie enthält. </td></tr>
-<tr><td>crt</td><td>Eine JSON-Zeichenfolge mit Angaben zum Medienobjekt, den zugehörigen Lizenzinformationen und Wiedergaberechten.</td></tr>
-<tr><td>iat</td><td>Aktuelles Datum und aktuelle Uhrzeit in der Epoche.</td></tr>
-<tr><td>jti</td><td>Ein eindeutiger Bezeichner des Tokens (jedes Token kann im castLabs-System nur einmal verwendet werden).</td></tr>
-</table>
+Name|Beschreibung
+---|---
+optData|Eine JSON-Zeichenfolge, die Informationen über Sie enthält. 
+crt|Eine JSON-Zeichenfolge mit Angaben zum Medienobjekt, den zugehörigen Lizenzinformationen und Wiedergaberechten.
+iat|Aktuelles Datum und aktuelle Uhrzeit in der Epoche.
+jti|Ein eindeutiger Bezeichner des Tokens (jedes Token kann im castLabs-System nur einmal verwendet werden).
 
 ##Setup einer Beispiellösung 
 
@@ -114,4 +113,4 @@ Wenn Sie das geschützte Video in HTML5 in Chrome mit dem castLabs-Player wieder
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

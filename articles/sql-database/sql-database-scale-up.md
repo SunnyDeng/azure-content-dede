@@ -242,4 +242,4 @@ Ausführliche Informationen zu den in diesem Thema verwendeten Azure PowerShell-
 [Set-AzureSqlDatabase](http://go.microsoft.com/fwlink/?LinkId=391412)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -46,14 +46,14 @@ Der folgende Code erstellt ein **QueueService**-Objekt unter Verwendung des Spei
 
 ## Einfügen einer Nachricht in eine Warteschlange
 
-Zum Einfügen einer Nachricht in eine Warteschlange verwenden Sie die **put_message**-Methode, um eine neue Nachricht zu erstellen und zur Warteschlange hinzuzufügen.
+Zum Einfügen einer Nachricht in eine Warteschlange verwenden Sie die **put\_message**-Methode, um eine neue Nachricht zu erstellen und zur Warteschlange hinzuzufügen.
 
 	queue_service.put_message('taskqueue', 'Hello World')
 
 
 ## Einsehen der nächsten Nachricht
 
-Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die Methode **peek_messages** aufrufen. Standardmäßig ruft **peek_messages** nur eine einzige Nachricht ab.
+Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die Methode **peek\_messages** aufrufen. Standardmäßig ruft **peek\_messages** nur eine einzige Nachricht ab.
 
 	messages = queue_service.peek_messages('taskqueue')
 	for message in messages:
@@ -62,7 +62,7 @@ Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, 
 
 ## Entfernen der nächsten Nachricht aus der Warteschlange
 
-Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Wenn Sie **get_messages** aufrufen, wird standardmäßig die nächste Nachricht aus der Warteschlange abgerufen. Die für **get_messages** zurückgegebene Nachricht ist für anderen Code nicht mehr sichtbar, der Nachrichten aus dieser Warteschlange liest. Standardmäßig bleibt die Nachricht 30 Sekunden lang unsichtbar. Um die Nachricht endgültig aus der Warteschlange zu entfernen, müssen Sie außerdem **delete_message** aufrufen. Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass eine andere Codeinstanz dieselbe Nachricht erneut abrufen kann, falls die Verarbeitung aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. Der Code ruft **delete_message** direkt nach der Verarbeitung der Nachricht auf.
+Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Wenn Sie **get\_messages** aufrufen, wird standardmäßig die nächste Nachricht aus der Warteschlange abgerufen. Die für **get\_messages** zurückgegebene Nachricht ist für anderen Code nicht mehr sichtbar, der Nachrichten aus dieser Warteschlange liest. Standardmäßig bleibt die Nachricht 30 Sekunden lang unsichtbar. Um die Nachricht endgültig aus der Warteschlange zu entfernen, müssen Sie außerdem **delete\_message** aufrufen. Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass eine andere Codeinstanz dieselbe Nachricht erneut abrufen kann, falls die Verarbeitung aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. Der Code ruft **delete\_message** direkt nach der Verarbeitung der Nachricht auf.
 
 	messages = queue_service.get_messages('taskqueue')
 	for message in messages:
@@ -72,7 +72,7 @@ Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Wen
 
 ## Ändern des Inhalts von Nachrichten in der Warteschlange
 
-Sie können den Inhalt einer Nachricht vor Ort in der Warteschlange ändern. Wenn die Nachricht eine Arbeitsaufgabe darstellt, können Sie diese Funktion verwenden, um den Status der Aufgabe zu aktualisieren. Der folgende Code verwendet die **update_message**-Methode zum Aktualisieren einer Nachricht.
+Sie können den Inhalt einer Nachricht vor Ort in der Warteschlange ändern. Wenn die Nachricht eine Arbeitsaufgabe darstellt, können Sie diese Funktion verwenden, um den Status der Aufgabe zu aktualisieren. Der folgende Code verwendet die **update\_message**-Methode zum Aktualisieren einer Nachricht.
 
 	messages = queue_service.get_messages('taskqueue')
 	for message in messages:
@@ -80,7 +80,7 @@ Sie können den Inhalt einer Nachricht vor Ort in der Warteschlange ändern. Wen
 
 ## Zusätzliche Optionen für das Entfernen von Nachrichten aus der Warteschlange
 
-Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Warteschlange anpassen können. Erstens können Sie einen Nachrichtenstapel abrufen (bis zu 32). Zweitens können Sie das Unsichtbarkeits-Zeitlimit verkürzen oder verlängern, sodass der Code mehr oder weniger Zeit zur vollständigen Verarbeitung jeder Nachricht benötigt. Das folgende Codebeispiel verwendet **get_messages**, um 16 Nachrichten mit einem Aufruf abzurufen. Anschließend wird jede Nachricht mithilfe einer for-Schleife verarbeitet. Außerdem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten pro Nachricht festgelegt.
+Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Warteschlange anpassen können. Erstens können Sie einen Nachrichtenstapel abrufen (bis zu 32). Zweitens können Sie das Unsichtbarkeits-Zeitlimit verkürzen oder verlängern, sodass der Code mehr oder weniger Zeit zur vollständigen Verarbeitung jeder Nachricht benötigt. Das folgende Codebeispiel verwendet **get\_messages**, um 16 Nachrichten mit einem Aufruf abzurufen. Anschließend wird jede Nachricht mithilfe einer for-Schleife verarbeitet. Außerdem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten pro Nachricht festgelegt.
 
 	messages = queue_service.get_messages('taskqueue', numofmessages=16, visibilitytimeout=5*60)
 	for message in messages:
@@ -89,14 +89,14 @@ Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Wartesc
 
 ## Abrufen der Warteschlangenlänge
 
-Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. Die **get_queue_metadata**-Methode fordert den Warteschlangendienst auf, Metadaten zur Warteschlange zurückzugeben. **x-ms-approximate-messages-count** sollte als Index für das zurückgegebene Wörterbuch verwendet werden, um die Anzahl zu finden. Die Anzahl ist nur ein ungefährer Wert, da seit der Antwort des Warteschlangendienstes möglicherweise bereits Nachrichten hinzugefügt oder gelöscht wurden.
+Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. Die **get\_queue\_metadata**-Methode fordert den Warteschlangendienst auf, Metadaten zur Warteschlange zurückzugeben. **x-ms-approximate-messages-count** sollte als Index für das zurückgegebene Wörterbuch verwendet werden, um die Anzahl zu finden. Die Anzahl ist nur ein ungefährer Wert, da seit der Antwort des Warteschlangendienstes möglicherweise bereits Nachrichten hinzugefügt oder gelöscht wurden.
 
 	queue_metadata = queue_service.get_queue_metadata('taskqueue')
 	count = queue_metadata['x-ms-approximate-messages-count']
 
 ## Löschen von Warteschlangen
 
-Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen Sie die Methode **delete_queue** auf.
+Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen Sie die Methode **delete\_queue** auf.
 
 	queue_service.delete_queue('taskqueue')
 
@@ -113,4 +113,4 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

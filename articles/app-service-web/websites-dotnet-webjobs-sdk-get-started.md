@@ -12,7 +12,7 @@
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="06/29/2015" 
 	ms.author="tdykstra"/>
 
@@ -804,10 +804,13 @@ Weitere Informationen zum Schreiben von Funktionen, die Attribute des Webaufträ
 * [Verwenden von Azure-Tabellenspeicher mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-storage-tables-how-to.md)
 * [Verwenden von Azure Service Bus mit dem Webaufträge-SDK](websites-dotnet-webjobs-sdk-service-bus.md)
 
->[AZURE.NOTE]
->* Falls Ihre Web-App auf mehreren VMs läuft, wird dieses Programm auf allen Computern ausgeführt, und jeder Computer wartet auf Auslöser und versucht, Funktionen auszuführen. In einigen Szenarien kann dies dazu führen, dass einige Funktionen die Verarbeitung derselben Daten zweimal führen, daher sollten Funktionen idempotent sein (so geschrieben, dass wiederholtes Aufrufen mit den gleichen Eingabedaten nicht zu doppelten Ergebnissen führt).
->* Informationen zum Durchführen von ordnungsgemäßem Herunterfahren finden Sie unter [Ordnungsgemäßes Herunterfahren](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#graceful).
->* Der Code in der `ConvertImageToThumbnailJPG`)-Methode (nicht dargestellt) verwendet aus Gründen der Einfachheit Klassen im `System.Drawing`-Namespace. Die Klassen in diesem Namespace wurden jedoch für den Einsatz mit Windows Forms entwickelt. Sie werden nicht für die Verwendung in einem Windows- oder ASP.NET-Dienst unterstützt. Weitere Informationen zu Bildverarbeitungsoptionen finden Sie unter [Dynamic Image Generation](http://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx) (Dynamische Imageerstellung; in englischer Sprache) und [Deep Inside Image Resizing](http://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na) (Ausführliche Informationen zur Bildgrößenanpassung; in englischer Sprache).
+> [AZURE.NOTE]
+>
+> * Wenn Ihre Web-App auf mehren VMs ausgeführt wird, werden mehrere WebJobs gleichzeitig ausgeführt. Dies kann in manchen Szenarien dazu führen, dass dieselben Daten mehrere Male verarbeitet werden. Dies ist kein Problem, wenn Sie die integrierte Warteschlange, Blob und Service Bus-Trigger verwenden. Das SDK stellt sicher, dass Ihre Funktionen für jede Nachricht oder jedes Blob nur einmal verarbeitet werden.
+>
+> * Weitere Informationen zum Implementieren von ordnungsgemäßem Herunterfahren finden Sie unter [Ordnungsgemäßes Herunterfahren](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#graceful).
+>
+> * Der Code in der `ConvertImageToThumbnailJPG`-Methode (nicht angezeigt) verwendet Klassen aus dem `System.Drawing`-Namespace zur Vereinfachung. Die Klassen in diesem Namespace wurden jedoch für den Einsatz mit Windows Forms entwickelt. Sie werden nicht für die Verwendung in einem Windows- oder ASP.NET-Dienst unterstützt. Weitere Informationen zu Bildverarbeitungsoptionen finden Sie unter [Dynamic Image Generation](http://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx) (Dynamische Imageerstellung; in englischer Sprache) und [Deep Inside Image Resizing](http://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na) (Ausführliche Informationen zur Bildgrößenanpassung; in englischer Sprache).
 
 ### Webaufträge-SDK im Vergleich zu Cloud-Dienst-Workerrolle ohne Webaufträge-SDK
 
@@ -833,4 +836,4 @@ Weitere Informationen finden Sie unter [Azure WebJobs - Empfohlene Ressourcen](h
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
-<!-----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

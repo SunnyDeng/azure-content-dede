@@ -70,7 +70,7 @@ Die Funktion [TinyTDS::Client](https://github.com/rails-sqlserver/tiny_tds) dien
 
 ## Ausführen einer SELECT-Anweisung und Abrufen des Resultsets
 
-Die Funktion [TinyTds::Result](https://github.com/rails-sqlserver/tiny_tds) wird verwendet, um ein Resultset aus einer Abfrage in einer SQL-Datenbank abzurufen. Diese Funktion akzeptiert eine Abfrage und gibt ein Resultset zurück. Das Resultset läuft mithilfe von [result.each führen \|row\|](https://github.com/rails-sqlserver/tiny_tds) durch.
+Die Funktion [TinyTds::Result](https://github.com/rails-sqlserver/tiny_tds) wird verwendet, um ein Resultset aus einer Abfrage in einer SQL-Datenbank abzurufen. Diese Funktion akzeptiert eine Abfrage und gibt ein Resultset zurück. Das Resultset läuft mithilfe von [result.each führen |row|](https://github.com/rails-sqlserver/tiny_tds) durch.
 
     require 'tiny_tds'  
     print 'test'     
@@ -117,4 +117,4 @@ Zum Ausrichten am [Datetime](http://msdn.microsoft.com/library/ms187819.aspx)-Fo
     puts row
     end 
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

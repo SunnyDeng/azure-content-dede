@@ -29,4 +29,4 @@ Für die SQL-Datenbank sind die [Dienstebenen](sql-database-service-tiers.md) Ba
 Beginnen Sie mit einer [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/), und [erstellen Sie Ihre erste SQL-Datenbank](sql-database-get-started.md) in nur wenigen Minuten.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

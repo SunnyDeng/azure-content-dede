@@ -24,7 +24,7 @@
 
 In diesem Thema erfahren Sie, wie Sie Benutzer in Azure Mobile Services über Ihre Windows Phone-App authentifizieren. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.
 
->[AZURE.NOTE]Dieses Thema unterstützt Apps für Windows Phone 8.0 und Windows Phone 8.1 \(„Silverlight“\). Wenn Sie eine Windows Phone Store 8.1- oder eine universelle Windows-App haben, befolgen Sie stattdessen die Version für [universelle Windows-Apps in diesem Thema](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users.md).
+>[AZURE.NOTE]Dieses Thema unterstützt Apps für Windows Phone 8.0 und Windows Phone 8.1 („Silverlight“). Wenn Sie eine Windows Phone Store 8.1- oder eine universelle Windows-App haben, befolgen Sie stattdessen die Version für [universelle Windows-Apps in diesem Thema](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users.md).
 
 Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Mobile Services] abschließen.
 
@@ -40,7 +40,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 &nbsp;&nbsp;6. Öffnen Sie in Visual Studio das Client-App-Projekt, und stellen Sie sicher, dass die Instanz von **MobileServiceClient** in "App.xaml.cs" für die Verwendung der Cloud-URL zum mobilen Dienst konfiguriert ist.
 
-&nbsp;&nbsp;7. Drücken Sie F5, um diese Schnellstart-basierte App auszuführen. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 \(Nicht autorisiert\) angezeigt wird, nachdem die App gestartet wurde. Dies geschieht, wenn die App als nicht authentifizierter Benutzer auf Mobile Services zugreift und die *TodoItem*-Tabelle nun eine Authentifizierung verlangt.
+&nbsp;&nbsp;7. Drücken Sie F5, um diese Schnellstart-basierte App auszuführen. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde. Dies geschieht, wenn die App als nicht authentifizierter Benutzer auf Mobile Services zugreift und die *TodoItem*-Tabelle nun eine Authentifizierung verlangt.
 
 Als Nächstes werden Sie die App aktualisieren, um Benutzer zu authentifizieren, bevor diese Ressourcen vom Mobile Service anfordern.
 
@@ -76,4 +76,4 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 [Register your Windows Store app package for Microsoft authentication]: ../mobile-services-how-to-register-store-app-package-microsoft-authentication.md
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

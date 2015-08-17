@@ -76,4 +76,4 @@ Sie können die Vorgangsprotokolle anzeigen, indem Sie auf den entsprechenden Li
 
 Erfahren Sie, wie Sie [Probleme bei StorSimple-Geräten behandeln](storsimple-troubleshoot-operational-device.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

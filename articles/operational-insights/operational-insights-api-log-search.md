@@ -6,6 +6,7 @@
    authors="bandersmsft"
    manager="jwhit"
    editor="" />
+
 <tags
    ms.service="operational-insights"
    ms.devlang="na"
@@ -14,6 +15,7 @@
    ms.workload="tbd"
    ms.date="07/21/2015"
    ms.author="banders" />
+
 
 
 
@@ -197,7 +199,7 @@ Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 	armclient post /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/search/{SearchId}?api-version=2014-10-10
 ```
 
->[AZURE.NOTE] Wenn die Suche den Status "Ausstehend" zurückgibt, können die aktualisierten Ergebnisse über diese API aufgerufen werden. Nach 6 Minuten wird das Ergebnis der Suche aus dem Cache gelöscht, und es wird "Http Fehlend" zurückgegeben. Wenn die anfängliche Suchanforderung sofort den Status "Erfolgreich" zurückgibt, wird sie nicht zum Cache hinzugefügt. Dadurch gibt diese API bei einer Abfrage "Http Fehlend" zurück. Der Inhalt eines "Http 200"-Ergebnisses wird im gleichen Format wie die ursprüngliche Suchanforderung erstellt, nur mit aktualisierten Werten.
+>[AZURE.NOTE]Wenn die Suche den Status "Ausstehend" zurückgibt, können die aktualisierten Ergebnisse über diese API aufgerufen werden. Nach 6 Minuten wird das Ergebnis der Suche aus dem Cache gelöscht, und es wird "Http Fehlend" zurückgegeben. Wenn die anfängliche Suchanforderung sofort den Status "Erfolgreich" zurückgibt, wird sie nicht zum Cache hinzugefügt. Dadurch gibt diese API bei einer Abfrage "Http Fehlend" zurück. Der Inhalt eines "Http 200"-Ergebnisses wird im gleichen Format wie die ursprüngliche Suchanforderung erstellt, nur mit aktualisierten Werten.
 
 ### Gespeicherte Suchvorgänge - nur REST
 
@@ -205,52 +207,52 @@ Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 
 ```
 	armclient get /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/savedSearches?api-version=2014-10-10
-  ```
+```
 
-Supported methods: GET PUT DELETE
+Unterstützte Methoden: GET PUT DELETE
 
-Supported collection methods: GET
+Unterstützte Erfassungsmethoden: GET
 
-The following table describes the properties that are available.
+Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 
-|Property|Description|
+|Eigenschaft|Beschreibung|
 |---|---|
-|Id|The unique identifier.|
-|Etag|**Required for Patch**. Updated by server on each write. Value must be equal to the current stored value or ‘*’ to update. 409 returned for old/invalid values.|
-|properties.query|**Required**. The search query.|
-|properties.displayName|**Required**. The user defined display name of the query. If modeled as an Azure resource, this would be a Tag.|
-|properties.category|**Required**. The user defined category of the query. If modeled as an Azure resource this would be a Tag.|
+|ID|Der eindeutige Bezeichner.|
+|ETag|**Erforderlich für Patch**. Wird bei jedem Schreibvorgang vom Server aktualisiert. Zum Aktualisieren muss der Wert mit dem aktuellen gespeicherten Wert übereinstimmen oder "\*" lauten. 409 für alte/ungültige Werte zurückgegeben.|
+|properties.query|**Erforderlich**. Die Suchabfrage|
+|properties.displayName|**Erforderlich**. Der benutzerdefinierte Anzeigename der Abfrage. Bei Modellierung als Azure-Ressource wäre dies ein Tag.|
+|properties.category|**Erforderlich**. Die benutzerdefinierte Kategorie der Abfrage. Bei Modellierung als Azure-Ressource wäre dies ein Tag.|
 
->[AZURE.NOTE]The Operational Insights Search API currently returns user-created saved searches when polled for saved searches in a workspace. The API will not return saved searches provided by solutions at this time. This functionality will be added at a later date.
+>[AZURE.NOTE]Beim Abrufen gespeicherter Suchvorgänge in einem Arbeitsbereich gibt die Operational Insights Search-API zurzeit vom Benutzer erstellte gespeicherte Suchvorgänge zurück. Momentan gibt die API keine von Lösungen bereitgestellten gespeicherten Suchvorgänge zurück. Diese Funktionalität wird zu einem späteren Zeitpunkt hinzugefügt.
 
-### Delete saved searches
+### Löschen gespeicherter Suchvorgänge
 
-**Request:**
+**Anforderung:**
 
 ```
 	armclient delete /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace ID}/savedSearches/thisIsMyId?api-version=2014-10-10
 ```
 
-### Update saved searches
+### Aktualisieren gespeicherter Suchvorgänge
 
- **Request:**
+ **Anforderung:**
 
 ```
 	$savedSearchParametersJson = "{'etag': 'W/`"datetime\'2015-04-16T23%3A35%3A35.3182423Z\'`"', 'properties': { 'Category': 'myCategory', 'DisplayName':'myDisplayName', 'Query':'* | measure Count() by Source', 'Version':'1'  }"
 	armclient put /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace ID}/savedSearches/thisIsMyId?api-version=2014-10-10 $savedSearchParametersJson
 ```
 
-### Metadata - JSON only
+### Metadaten: nur JSON
 
-Here’s a way to see the fields for all log types for the data collected in your workspace. For example, if you want you know if the Event type has a field named Computer, then this is one way to look up and confirm.
+Dies ist eine Möglichkeit, die Felder für alle Protokolltypen für die Daten anzuzeigen, die im Arbeitsbereich gesammelt wurden. Wenn Sie beispielsweise wissen möchten, ob der Ereignistyp ein Feld mit dem Namen "Computer" aufweist, können Sie dies unter anderem hiermit herausfinden.
 
-**Request for Fields:**
+**Felder anfordern:**
 
 ```
 	armclient get /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/schema?api-version=2014-10-10
 ```
 
-**Response:**
+**Antwort:**
 
 ```
 	{
@@ -281,29 +283,28 @@ Here’s a way to see the fields for all log types for the data collected in you
 	}
 ```
 
-The following table describes the properties that are available.
+Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 
-|**Property**|**Description**|
+|**Eigenschaft**|**Beschreibung**|
 |---|---|
-|name|Field name.|
-|displayName|The display name of the field.|
-|type|The Type of the field value.|
-|facetable|Combination of current ‘indexed’, ‘stored ‘and ‘facet’ properties.|
-|display|Current ‘display’ property. True if field is visible in search.|
-|ownerType|Reduced to only Types belonging to onboarded IP’s.|
+|Name|Feldname.|
+|displayName|Der Anzeigename des Felds.|
+|type|Der Typ des Feldwerts.|
+|facetable|Kombination der aktuellen Eigenschaften "indexed", "stored" und "facet".|
+|display|Aktuelle display-Eigenschaft. "True", wenn das Feld in Search angezeigt wird.|
+|ownerType|Nur Typen, die zu eingebundenen IP-Adressen gehören.|
 
 
-## Optional parameters
-The following information describes optional parameters available.
+## Optionale Parameter
+Im Folgenden werden die verfügbaren optionalen Parameter beschrieben.
 
-### Highlighting
+### Hervorhebungen
 
-The “Highlight” parameter is an optional parameter you may use to request the search subsystem include a set of markers in its response.
+Der Parameter "Highlight" ist ein optionaler Parameter, den Sie verwenden können, damit das Suchsubsystem einen Satz von Markern in die Antwort einbezieht.
 
-These markers indicate the start and end highlighted text that matches the terms provided in your search query.
-You may specify the start and end markers that will be used by search to wrap the highlighted term.
+Diese Marker stehen für den Beginn und das Ende von hervorgehobenem Text, der den in Ihrer Suchabfrage angegebenen Begriffen entspricht. Sie können die Start- und Endmarker angeben, die bei der Suche zum Einschließen des markierten Begriffs verwendet werden.
 
-**Example search query**
+**Beispiel für eine Suchabfrage**
 
 ```
 	$savedSearchParametersJson =
@@ -320,7 +321,7 @@ You may specify the start and end markers that will be used by search to wrap th
 	armclient post /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace ID}/search?api-version=2014-10-10 $searchParametersJson
 ```
 
-**Sample result:**
+**Beispielergebnis:**
 
 ```
 	{
@@ -346,5 +347,4 @@ You may specify the start and end markers that will be used by search to wrap th
 
 Beachten Sie, dass das oben genannte Ergebnis eine Fehlermeldung enthält, die mit dem Präfix versehen und angefügt wurde.
 
-
-<!-----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

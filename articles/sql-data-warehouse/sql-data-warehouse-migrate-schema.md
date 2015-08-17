@@ -110,10 +110,10 @@ Alternativen:
 - **image**, **text**, **ntext**: varchar/nvarchar (je kleiner, desto besser)
 - **nvarchar(max)**: varchar(4000) oder kleiner zur Verbesserung der Leistung
 - **numeric**: decimal
-- **sql_variant**: Spalte in mehrere Spalten mit starker Typisierung unterteilen
+- **sql\_variant**: Spalte in mehrere Spalten mit starker Typisierung unterteilen
 - **sysname**: nvarchar(128)
 - **table**: in temporäre Tabellen konvertieren
-- **timestamp**: Code anpassen, sodass datetime2 und die `CURRENT_TIMESTAMP`-Funktion verwendet wird. Beachten Sie, dass Sie "current_timestamp" nicht als Standardeinschränkung verwenden können und dass der Wert nicht automatisch aktualisiert wird. Wenn Sie rowversion-Werte aus einer Spalte mit timestamp-Typ migrieren müssen, sollten Sie binary(8) oder varbinary(8) für NOT NULL- oder NULL-Zeilenversionswerte verwenden.
+- **timestamp**: Code anpassen, sodass datetime2 und die `CURRENT_TIMESTAMP`-Funktion verwendet wird. Beachten Sie, dass Sie "current\_timestamp" nicht als Standardeinschränkung verwenden können und dass der Wert nicht automatisch aktualisiert wird. Wenn Sie rowversion-Werte aus einer Spalte mit timestamp-Typ migrieren müssen, sollten Sie binary(8) oder varbinary(8) für NOT NULL- oder NULL-Zeilenversionswerte verwenden.
 - **varchar(max)**: varchar(8000) oder kleiner zur Verbesserung der Leistung
 - **uniqueidentifier**: varbinary(8)
 - **Benutzerdefinierte Datentypen**: zurück in systemeigene Typen konvertieren, falls möglich
@@ -145,4 +145,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

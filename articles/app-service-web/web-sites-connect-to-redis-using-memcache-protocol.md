@@ -69,7 +69,7 @@ Wenn Sie die drei Anwendungseinstellungen hinzugefügt haben, klicken Sie auf **
 
 ## Aktivieren der Memcache-Erweiterung für PHP
 
-Damit die Anwendung über das Memcache-Protokoll kommunizieren kann, muss die Memcache-Erweiterung für PHP \(Sprachen-Framework für Ihre WordPress-Website\) installiert werden.
+Damit die Anwendung über das Memcache-Protokoll kommunizieren kann, muss die Memcache-Erweiterung für PHP (Sprachen-Framework für Ihre WordPress-Website) installiert werden.
 
 ### Herunterladen der php\_memcache-Erweiterung
 
@@ -77,13 +77,13 @@ Navigieren Sie zu [PECL][6], und klicken Sie unter der Kategorie für das Zwisch
 
 ![PHP-PECL-Website](./media/web-sites-connect-to-redis-using-memcache-protocol/7-php-pecl-website.png)
 
-Laden Sie das Ziel des x86-Links zum Non-Thread Safe \(NTS\) für Ihre in Web-Apps aktivierte Version von PHP herunter. \(Die Standardeinstellung ist PHP 5.4\)
+Laden Sie das Ziel des x86-Links zum Non-Thread Safe (NTS) für Ihre in Web-Apps aktivierte Version von PHP herunter. (Die Standardeinstellung ist PHP 5.4)
 
 ![PHP-PECL-Website – Memcache-Paket](./media/web-sites-connect-to-redis-using-memcache-protocol/8-php-pecl-memcache-package.png)
 
 ### Aktivieren der php\_memcache-Erweiterung
 
-Extrahieren Sie die Datei **php\_memcache.dll** nach dem Herunterladen, und laden Sie sie in das Verzeichnis **d:\\home\\site\\wwwroot\\bin\\ext\\** hoch. Nachdem die "php\_memcache.dll" in die Web-App hochgeladen wurde, muss für die Erweiterung für die PHP-Laufzeit aktiviert werden. Öffnen Sie zum Aktivieren der Memcache-Erweiterung im Azure-Portal das Blatt **Anwendungseinstellungen** für die Web-App, und fügen Sie eine neue Anwendungseinstellung mit dem Schlüssel **PHP\_EXTENSIONS** und dem Wert **bin\\ext\\php\_memcache.dll** hinzu.
+Extrahieren Sie die Datei **php\_memcache.dll** nach dem Herunterladen, und laden Sie sie in das Verzeichnis **d:\\home\\site\\wwwroot\\bin\\ext\** hoch. Nachdem die "php\_memcache.dll" in die Web-App hochgeladen wurde, muss für die Erweiterung für die PHP-Laufzeit aktiviert werden. Öffnen Sie zum Aktivieren der Memcache-Erweiterung im Azure-Portal das Blatt **Anwendungseinstellungen** für die Web-App, und fügen Sie eine neue Anwendungseinstellung mit dem Schlüssel **PHP\_EXTENSIONS** und dem Wert **bin\\ext\\php\_memcache.dll** hinzu.
 
 
 > Wenn die Web-App mehrere PHP-Erweiterungen laden muss, sollte der Wert von PHP\_EXTENSIONS eine durch Kommas getrennte Liste von relativen Pfaden zu DLL-Dateien sein.
@@ -148,11 +148,11 @@ Wählen Sie aus der Liste **Access Ports** aus.
 
 Klicken Sie unter **Allow access only via SSL** auf **Nein**.
 
-![Azure Redis Cache – Portzugriff \(nur SSL\)](./media/web-sites-connect-to-redis-using-memcache-protocol/17-azure-redis-cache-access-port-ssl-only.png)
+![Azure Redis Cache – Portzugriff (nur SSL)](./media/web-sites-connect-to-redis-using-memcache-protocol/17-azure-redis-cache-access-port-ssl-only.png)
 
 Es wird angezeigt, dass der Nicht-SSL-Port nun geöffnet ist. Klicken Sie auf **Speichern**.
 
-![Azure Redis Cache – Redis-Zugriffsportal \(kein SSL\)](./media/web-sites-connect-to-redis-using-memcache-protocol/18-azure-redis-cache-access-port-non-ssl.png)
+![Azure Redis Cache – Redis-Zugriffsportal (kein SSL)](./media/web-sites-connect-to-redis-using-memcache-protocol/18-azure-redis-cache-access-port-non-ssl.png)
 
 ### Herstellen einer Verbindung mit dem Azure Redis Cache von Redis-CLI
 
@@ -197,4 +197,4 @@ Glückwunsch! Die WordPress-App verfügt jetzt über einen zentralen Cache im Ar
 [13]: http://memcached.org
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -18,7 +18,7 @@
 
 #Tutorial: Integrieren von NetSuite in Azure Active Directory
 
-In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure Active Directory \(Azure AD\) verbinden. Sie erfahren, wie Sie die einmalige Anmeldung bei NetSuite konfigurieren, die automatisierte Benutzerbereitstellung aktivieren und Benutzern den Zugriff auf NetSuite zuweisen.
+In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure Active Directory (Azure AD) verbinden. Sie erfahren, wie Sie die einmalige Anmeldung bei NetSuite konfigurieren, die automatisierte Benutzerbereitstellung aktivieren und Benutzern den Zugriff auf NetSuite zuweisen.
 
 ##Voraussetzungen
 
@@ -64,7 +64,7 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 
 	![Wählen Sie "Azure AD – einmaliges Anmelden".][7]
 
-	> [AZURE.NOTE]Um weitere Informationen zu den verschiedenen Optionen für die einmalige Anmeldung zu erhalten, [klicken Sie hier](https://msdn.microsoft.com/library/azure/dn308588.aspx).
+	> [AZURE.NOTE]Um weitere Informationen zu den verschiedenen Optionen für die einmalige Anmeldung zu erhalten, [klicken Sie hier](../active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work).
 
 3. Geben Sie auf der Seite **App-Einstellungen konfigurieren** für das Feld **Anmelde-URL** Ihre NetSuite-Mandanten-URL in einem der folgenden Formate ein:
 	- `https://<tenant-name>.netsuite.com`
@@ -218,11 +218,7 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 
 4. Um Ihre Einstellungen für die einmalige Anmeldung zu testen, öffnen Sie den Zugriffsbereich unter [https://myapps.microsoft.com](https://myapps.microsoft.com/), melden Sie sich beim Testkonto an, und klicken Sie auf **NetSuite**.
 
-##Siehe auch
-
-- [Liste der Tutorials zur Integration von SaaS-Anwendungen](active-directory-saas-tutorial-list.md)
-- [Anwendungszugriff in Azure AD](https://msdn.microsoft.com/library/azure/dn308590.aspx)
-- [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/azure/dn308586.aspx)
+[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
 [0]: ./media/active-directory-saas-netsuite-tutorial/azure-active-directory.png
 [1]: ./media/active-directory-saas-netsuite-tutorial/applications-tab.png
@@ -258,4 +254,4 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre NetSuite-Umgebung mit Ihrem Azure 
 [31]: ./media/active-directory-saas-netsuite-tutorial/assign-users.png
 [32]: ./media/active-directory-saas-netsuite-tutorial/assign-confirm.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

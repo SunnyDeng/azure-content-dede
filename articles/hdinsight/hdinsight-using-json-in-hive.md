@@ -81,7 +81,7 @@ Die im nächsten Abschnitt aufgeführten Methoden erfordern das JSON-Dokument in
 	
 	SELECT * FROM StudentsOneLine
 
-Die unformatierte JSON-Datei befindet sich unter **wasb://processjson@hditutorialdata.blob.core.windows.net/**. Die Hive-Tabelle *StudentsRaw* verweist auf das unformatierte, nicht vereinfachte JSON-Dokument.
+Die unformatierte JSON-Datei befindet sich unter ****wasb://processjson@hditutorialdata.blob.core.windows.net/**. Die Hive-Tabelle *StudentsRaw* verweist auf das unformatierte, nicht vereinfachte JSON-Dokument.
 
 Die Hive-Tabelle *StudentsOneLine* speichert die Daten im HDInsight-Standarddateisystem im Pfad */json/students/*.
 
@@ -91,15 +91,15 @@ Die SELECT-Anweisung gibt nur eine Zeile zurück.
 
 Dies ist die Ausgabe der SELECT-Anweisung:
 
-![Vereinfachen \(Flattening\) des JSON-Dokuments][image-hdi-hivejson-flatten]
+![Vereinfachen (Flattening) des JSON-Dokuments][image-hdi-hivejson-flatten]
 
 ##Analysieren von JSON-Dokumenten in Hive
 
 In der Struktur sind drei verschiedene Mechanismen zum Ausführen von Abfragen bei JSON-Dokumenten verfügbar:
 
-- Verwenden Sie die GET\_JSON\_OBJECT-UDF \(User Defined Function, benutzerdefinierte Funktion\).
+- Verwenden Sie die GET\_JSON\_OBJECT-UDF (User Defined Function, benutzerdefinierte Funktion).
 - Verwenden Sie die JSON\_TUPLE-UDF.
-- Verwenden Sie ein benutzerdefiniertes Serialisierungs-/Deserialisierungsprogramm \(SerDe\).
+- Verwenden Sie ein benutzerdefiniertes Serialisierungs-/Deserialisierungsprogramm (SerDe).
 - Schreiben Sie mit Python oder anderen Sprachen eine eigene UDF. In [diesem Artikel][hdinsight-python] finden Sie weitere Informationen zum Ausführen von Python-Code mit Hive. 
 
 ### Verwenden der GET\_JSON\_OBJECT-UDF
@@ -119,14 +119,14 @@ Dies ist die Ausgabe, wenn diese Abfrage im Konsolenfenster ausgeführt wurde:
 Für die get-json\_object-UDF gibt es einige Einschränkungen.
 
 - Da für jedes Feld in der Abfrage eine erneute Analyse die Abfrage erforderlich ist, wird die Leistung beeinträchtigt.
-- Von GET\_JSON\_OBJECT\(\) wird die Zeichenfolgendarstellung eines Arrays zurückgegeben. Zum Umwandeln in ein Hive-Array müssen Sie reguläre Ausdrücke verwenden, um die eckigen Klammern "\[" und "\]" zu ersetzen, und Sie müssen die Funktion "Call Split" verwenden, um das Array zu erhalten.
+- Von GET\_JSON\_OBJECT() wird die Zeichenfolgendarstellung eines Arrays zurückgegeben. Zum Umwandeln in ein Hive-Array müssen Sie reguläre Ausdrücke verwenden, um die eckigen Klammern "[" und "]" zu ersetzen, und Sie müssen die Funktion "Call Split" verwenden, um das Array zu erhalten.
 
 
 Deshalb wird im Hive-Wiki die Verwendung von "json\_tuple" empfohlen.
 
 ### Verwenden der JSON\_TUPLE-UDF
 
-Eine andere in Hive verfügbare UDF ist [json\_tuple](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-json_tuple). Diese Funktion ist leistungsfähiger als \[get\_ json _object\]\(https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object). Bei dieser Methode wird mit einer einzigen Funktion ein Satz von Schlüsseln sowie eine JSON-Zeichenfolge verwendet, um ein Tupel Werte zurückzugeben. Die folgende Abfrage gibt die ID der Studierenden und die Klasse aus dem JSON-Dokument zurück:
+Eine andere in Hive verfügbare UDF ist [json\_tuple](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-json_tuple). Diese Funktion ist leistungsfähiger als [get\_ json object](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-get_json_object). Bei dieser Methode wird mit einer einzigen Funktion ein Satz von Schlüsseln sowie eine JSON-Zeichenfolge verwendet, um ein Tupel Werte zurückzugeben. Die folgende Abfrage gibt die ID der Studierenden und die Klasse aus dem JSON-Dokument zurück:
 
     SELECT q1.StudentId, q1.Grade 
       FROM StudentsOneLine jt
@@ -140,7 +140,7 @@ Die Ausgabe des Skripts in der Hive-Konsole:
 JSON\_TUPLE verwendet die Syntax [Lateral View](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) in Hive, mit der von "json\_tuple" eine virtuelle Tabelle erstellt wird, indem die UDT-Funktion auf jede Zeile der Originaltabelle angewendet wird. Komplexe JSONs werden durch die wiederholte Verwendung von LATERAL VIEW zu unhandlich. Darüber hinaus kann JSON\_TUPLE keine geschachtelten JSONs verarbeiten.
 
 
-###Verwenden eines benutzerdefinierten Serialisierungs-/Deserialisierungsprogramms \(SerDe\)
+###Verwenden eines benutzerdefinierten Serialisierungs-/Deserialisierungsprogramms (SerDe)
 
 SerDe ist die beste Wahl für die Analyse von geschachtelten JSON-Dokumenten. Sie können damit das JSON-Schema definieren und das Schema verwenden, um die Dokumente zu analysieren. In diesem Tutorial verwenden Sie eines der bekannteren SerDe, das von [rcongiu](https://github.com/rcongiu) entwickelt wurde.
 
@@ -223,9 +223,9 @@ Dies ist die Ausgabe aus der Strukturkonsole:
 
 ![SerDe-Abfrage 2][image-hdi-hivejson-serde_query2]
 
-So finden Sie die Fächer, in denen ein bestimmter Studierender über 80 Punkte erhalten hat: SELECT jt.StudentClassCollection.ClassId FROM json\_table jt lateral view explode\(jt.StudentClassCollection.Score\) collection as score where score \> 80;
+So finden Sie die Fächer, in denen ein bestimmter Studierender über 80 Punkte erhalten hat: SELECT jt.StudentClassCollection.ClassId FROM json\_table jt lateral view explode(jt.StudentClassCollection.Score) collection as score where score > 80;
       
-Von der genannten Abfrage wird ein Strukturarray zurückgegeben \(im Gegensatz dazu wird von „get\_json\_object“ eine Zeichenfolge zurückgegeben\).
+Von der genannten Abfrage wird ein Strukturarray zurückgegeben (im Gegensatz dazu wird von „get\_json\_object“ eine Zeichenfolge zurückgegeben).
 
 ![SerDe-Abfrage 3][image-hdi-hivejson-serde_query3]
 
@@ -261,4 +261,4 @@ Verwandte Artikel
 [image-hdi-hivejson-serde_result]: ./media/hdinsight-using-json-in-hive/serde_result.png
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

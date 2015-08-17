@@ -127,7 +127,7 @@ Auf dem Blatt mit den Verbindungszeichenfolgen für Datenbanken werden die entsp
 ## Schritt 4: Einfügen der tatsächlichen Verbindungsinformationen
 
 
-- Ersetzen Sie in dem von Ihnen eingefügten Quellcode den Platzhalter *[Your_Connection_String]* durch die Verbindungszeichenfolge und unbedingt auch *Your_password_here* in dieser Zeichenfolge durch Ihr tatsächliches Kennwort.
+- Ersetzen Sie in dem von Ihnen eingefügten Quellcode den Platzhalter *[Your\_Connection\_String]* durch die Verbindungszeichenfolge und unbedingt auch *Your\_password\_here* in dieser Zeichenfolge durch Ihr tatsächliches Kennwort.
 
 
 ## Schritt 5: Ausführen der Anwendung
@@ -137,4 +137,4 @@ Auf dem Blatt mit den Verbindungszeichenfolgen für Datenbanken werden die entsp
 2. Das Programm zeigt die Ergebnisse der Abfrage im Konsolenfenster an.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

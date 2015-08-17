@@ -131,7 +131,7 @@ Sie veröffentlichen nun die Anwendung in einer Web-App in Azure App Service. Di
 
 4. Benennen Sie die Anwendung, und klicken Sie auf **Weiter**.
 
-5. Legen Sie unter „App-Eigenschaften“ die Option **URL für Anmeldung** auf die Web-App-URL fest, die Sie zuvor gespeichert haben (z. B. `https://<site-name>.azurewebsites.net`), und legen Sie **APP-ID-URI** auf `https://<aad-tenanet-name>/<app-name>` fest. Klicken Sie danach auf **Abschließen**.
+5. Legen Sie unter "App-Eigenschaften" die Option **URL für Anmeldung** auf die Web-App-URL fest, die Sie zuvor gespeichert haben (z. B. `https://<site-name>.azurewebsites.net`), und legen Sie **APP-ID-URI** auf `https://<aad-tenanet-name>/<app-name>` fest. Klicken Sie danach auf **Abschließen**.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/7-app-properties.png)
 
@@ -347,11 +347,11 @@ In diesem Teil des Lernprogramms erfahren Sie, wie Sie die gewünschte Branchenf
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/9-create-workitem.png)
 
-16. Füllen Sie den Rest des Formulars aus, und klicken Sie auf **Erstellen**. Die Seite "~/WorkItems/Index" zeigt jetzt die neu erstellte Arbeitsaufgabe an. Darüber hinaus sehen Sie im Screenshot unten, dass ich die Spalte `AssignedToID` in der Datei „Views\\WorkItems\\Index.cshtml“ entfernt habe.
+16. Füllen Sie den Rest des Formulars aus, und klicken Sie auf **Erstellen**. Die Seite "\~/WorkItems/Index" zeigt jetzt die neu erstellte Arbeitsaufgabe an. Darüber hinaus sehen Sie im Screenshot unten, dass ich die Spalte `AssignedToID` in der Datei "Views\\WorkItems\\Index.cshtml" entfernt habe.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/10-workitem-index.png)
 
-11.	Nehmen Sie jetzt entsprechende Änderungen an der Ansicht **Bearbeiten** vor. Nehmen Sie in der Datei „Views\\WorkItems\\Edit.cshtml“ die Änderungen an der `Html.BeginForm`-Hilfsmethode vor, die mit den Änderungen an „Views\\WorkItems\\Create.cshtml“ im vorherigen Schritt identisch sind (ersetzen Sie „Create“ im oben hervorgehobenen Code durch „Edit“).
+11.	Nehmen Sie jetzt entsprechende Änderungen an der Ansicht **Bearbeiten** vor. Nehmen Sie in der Datei "Views\\WorkItems\\Edit.cshtml" die Änderungen an der `Html.BeginForm`-Hilfsmethode vor, die mit den Änderungen an "Views\\WorkItems\\Create.cshtml" im vorherigen Schritt identisch sind (ersetzen Sie "Create" im oben hervorgehobenen Code durch "Edit").
 
 Das ist alles!
 
@@ -362,7 +362,7 @@ Nachdem Sie die Autorisierungen und die Branchenfunktionalität für die verschi
 <a name="bkmk_resources"></a>
 ## Weitere Ressourcen
 
-- [Schützen der Anwendung durch SSL und das „Authorize“-Attribut](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md#protect-the-application-with-ssl-and-the-authorize-attribute)
+- [Schützen der Anwendung durch SSL und das Authorize-Attribut](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [Verwenden von Active Directory für die Authentifizierung in Azure App Service](web-sites-authentication-authorization.md)
 - [Erstellen einer .NET MVC-Web-App in Azure App Service mit AD FS-Authentifizierung](web-sites-dotnet-lob-application-adfs.md)
 - [Microsoft Azure Active Directory – Beispiele und Dokumentation](https://github.com/AzureADSamples)
@@ -378,4 +378,4 @@ Nachdem Sie die Autorisierungen und die Branchenfunktionalität für die verschi
 [AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
  
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -101,4 +101,4 @@ In diesem Beispiel wird `QuorumLossMode` auf `PartialQuorumLoss` festgelegt. So 
 
 [Weitere Informationen zu Testability-Szenarien](service-fabric-testability-scenarios.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

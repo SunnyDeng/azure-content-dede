@@ -164,10 +164,10 @@ Weitere Informationen finden Sie unter [Verwenden von Blob-Speicher aus .NET](..
 	  	CloudBlockBlob dataprocessor = container.GetBlockBlobReference("ProcessTaskData.exe");
 	  	CloudBlockBlob storageassembly =
 			container.GetBlockBlobReference("Microsoft.WindowsAzure.Storage.dll");
-		  taskData1.UploadFromFile("..\..\taskdata1.txt", FileMode.Open);
-		  taskData2.UploadFromFile("..\..\taskdata2.txt", FileMode.Open);
-	  	taskData3.UploadFromFile("..\..\taskdata3.txt", FileMode.Open);
-		  dataprocessor.UploadFromFile("..\..\..\ProcessTaskData\bin\debug\ProcessTaskData.exe", FileMode.Open);
+		  taskData1.UploadFromFile("..\\..\\taskdata1.txt", FileMode.Open);
+		  taskData2.UploadFromFile("..\\..\\taskdata2.txt", FileMode.Open);
+	  	taskData3.UploadFromFile("..\\..\\taskdata3.txt", FileMode.Open);
+		  dataprocessor.UploadFromFile("..\\..\\..\\ProcessTaskData\\bin\\debug\\ProcessTaskData.exe", FileMode.Open);
 		  storageassembly.UploadFromFile("Microsoft.WindowsAzure.Storage.dll", FileMode.Open);
 		  Console.WriteLine("Uploaded the files. Press Enter to continue.");
 		  Console.ReadLine();
@@ -208,7 +208,7 @@ Der erste Satz von Ressourcen, den Sie zum Ausführen von Aufgaben erstellen mü
 			  newPool.Commit();
 			  Console.WriteLine("Created the pool. Press Enter to continue.");
 			  Console.ReadLine();
-		  }
+		  	}
 
 4. Fügen Sie diesen Code der Main-Methode hinzu, um die soeben hinzugefügte Methode aufzurufen:
 
@@ -266,7 +266,7 @@ Erstellen Sie einen Auftrag, mit dem die im Pool ausgeführten Aufgaben verwalte
 				Console.WriteLine("Job id: " + job.Id);
 				Console.WriteLine("   Job status: " + job.State);
 			}
-			Console.WriteLine("Press Enter to continue.")
+			Console.WriteLine("Press Enter to continue.");
 			Console.ReadLine();
 		}
 
@@ -316,7 +316,7 @@ Nachdem der Auftrag erstellt wurde, können Aufgaben hinzugefügt werden. Jede A
 			{
 				Console.WriteLine("Task " + task.Id + " says:\n" + task.GetNodeFile(Constants.StandardOutFileName).ReadAsString());
 			}
-			Console.WriteLine("Press Enter to continue.")
+			Console.WriteLine("Press Enter to continue.");
 			Console.ReadLine();
 		}
 
@@ -377,7 +377,7 @@ Da Ihnen die Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer 
 
 			static void DeleteJob(BatchClient client)
 			{
-				client.JobOperations.DeleteJob("davidmujob1");
+				client.JobOperations.DeleteJob("testjob1");
 				Console.WriteLine("Job was deleted.");
 				Console.ReadLine();
 			}
@@ -394,7 +394,7 @@ Da Ihnen die Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer 
 
 		static void DeletePool (BatchClient client)
 		{
-			client.PoolOperations.DeletePool("davidmupl1");
+			client.PoolOperations.DeletePool("testpool1");
 			Console.WriteLine("Pool was deleted.");
 			Console.ReadLine();
 		}
@@ -475,4 +475,4 @@ Da Ihnen die Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer 
 
 2. Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit, dies zu lösen, besteht in [effizienten Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

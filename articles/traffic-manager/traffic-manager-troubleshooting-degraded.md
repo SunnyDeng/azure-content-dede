@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Problembehandlung beim Status ";Heruntergestuft"; in Azure Traffic Manager"
-   description="Problembehandlung bei Traffic Manager-Profilen, bei denen der Status ";Heruntergestuft"; angezeigt wird."
+   pageTitle="Problembehandlung beim Status &quot;Heruntergestuft&quot; in Azure Traffic Manager"
+   description="Problembehandlung bei Traffic Manager-Profilen, bei denen der Status &quot;Heruntergestuft&quot; angezeigt wird."
    services="traffic-manager"
    documentationCenter=""
    authors="kwill-MSFT"
@@ -79,4 +79,4 @@ Wenn bei dem Test das HTTPs-Protokoll verwendet wird, sollten Sie in Wget den Pa
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

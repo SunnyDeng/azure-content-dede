@@ -77,7 +77,7 @@ Die Autorisierungsrichtlinie für Inhaltsschlüssel kann eine oder mehrere Autor
 
 ##Häufige Szenarios
 
-###Schützen von Inhalten im Speicher, Übermitteln dynamisch verschlüsselter Streamingmedien, Verwenden des AMS-Schlüssels\Lizenzbereitstellungsdienstes  
+###Schützen von Inhalten im Speicher, Übermitteln dynamisch verschlüsselter Streamingmedien, Verwenden des AMS-Schlüssels\\Lizenzbereitstellungsdienstes  
 
 1. Nehmen Sie eine Zwischendatei (Mezzanine File) hoher Qualität in ein Medienobjekt auf. Wenden Sie die Speicherverschlüsselung auf das Medienobjekt an.
 2. Konfigurieren von Streamingendpunkten
@@ -141,4 +141,4 @@ Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte mithilfe von **.N
 [content-protection]: ./media/media-services-content-protection-overview/media-services-content-protection.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -88,4 +88,4 @@ Die Ausgabe der HTTP-Aktion besteht aus Headern und Text und kann in ähnlicher 
 [9]: ./media/app-service-logic-connector-http/9.png
 [10]: ./media/app-service-logic-connector-http/10.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -6,14 +6,16 @@
    authors="bandersmsft"
    manager="jwhit"
    editor="" />
+
 <tags
    ms.service="operational-insights"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/21/2015"
+   ms.date="08/05/2015"
    ms.author="banders" />
+
 
 
 
@@ -21,7 +23,7 @@
 
 [AZURE.INCLUDE [operational-insights-note-moms](../../includes/operational-insights-note-moms.md)]
 
-Bevor Sie Alert Management in Microsoft Azure Operational Insights verwenden können, müssen Sie die Lösung installiert haben. Weitere Informationen zum Installieren von Lösungen finden Sie unter [Verwenden des Lösungskatalogs zum Hinzufügen oder Entfernen von Lösungen](operational-insights-add-solution.md). Die Lösung funktioniert nur, wenn Sie Ihre Server mit Operations Manager-Agents überwacht werden. Weitere Informationen zur Verwendung von Operations Manager mit Operational Insights finden Sie unter [Verbinden mit Operational Insights von System Center Operations Manager aus](operational-insights-connect-scom.md).
+Bevor Sie Alert Management in Microsoft Azure Operational Insights verwenden können, müssen Sie die Lösung installiert haben. Weitere Informationen zum Installieren von Lösungen finden Sie unter [Einrichten Ihres Arbeitsbereichs](operational-insights-setup-workspace.md). Die Lösung funktioniert nur, wenn Sie Ihre Server mit Operations Manager-Agents überwacht werden. Weitere Informationen zur Verwendung von Operations Manager mit Operational Insights finden Sie unter [Verbinden mit Operational Insights von System Center Operations Manager aus](operational-insights-connect-scom.md).
 
 Nach der Installation der Lösung können Sie Warnungen für die überwachten Server in Operational Insights über die Kachel **Alert Management** im Dashboard **Übersicht** anzeigen.
 
@@ -58,4 +60,4 @@ Im Dashboard **Alert Management** können Sie alle Warnungen anzeigen, die Micro
 
 [AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

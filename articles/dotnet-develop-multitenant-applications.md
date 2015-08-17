@@ -95,4 +95,4 @@ Azure bietet viele verschiedene Möglichkeiten zur Bereitstellung neuer Mandante
 [Hosting a Multi-Tenant Application on Azure]: http://msdn.microsoft.com/library/hh534480.aspx
 [Designing Multitenant Applications on Azure]: http://msdn.microsoft.com/library/windowsazure/hh689716
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

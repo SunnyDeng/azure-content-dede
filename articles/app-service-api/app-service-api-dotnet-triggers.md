@@ -341,4 +341,4 @@ Im Folgenden finden Sie ein Beispiel dafür, wie diese Klasse implementiert werd
     }
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -67,4 +67,4 @@ Diese Zeilen sollten nach jedem [Prüfpunkt](automation-runbook-execution#checkp
 - [Azure Automation: Authentifizieren bei Azure mit Azure Active Directory](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

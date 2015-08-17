@@ -30,7 +30,7 @@ Die folgenden Administratorrollen sind verfügbar:
 - **Dienstadministrator**: verwaltet Dienstanforderungen und überwacht die Integrität des Dienstes.
     
 	> [AZURE.NOTE]
-    > Um einem Benutzer die Dienstadministratorrolle zuzuweisen, muss der globale Administrator zunächst dem Benutzer Administratorberechtigungen im Dienst (z. B. Exchange Online) zuweisen, und anschließend die Dienstadministratorrolle im Azure-Verwaltungsportal.
+    	> Um einem Benutzer die Dienstadministratorrolle zuzuweisen, muss der globale Administrator zunächst dem Benutzer Administratorberechtigungen im Dienst (z. B. Exchange Online) zuweisen, und anschließend die Dienstadministratorrolle im Azure-Verwaltungsportal.
 - **Benutzeradministrator**: setzte Kennwörter zurück, überwacht die Dienstintegrität und verwaltet Benutzerkonten, Benutzergruppen und Dienstanforderungen. Für die Berechtigungen eines Benutzerverwaltungsadministrators gelten einige Einschränkungen. Sie können z. B. keinen globalen Administrator löschen oder andere Administratoren erstellen. Sie können außerdem keine Kennwörter für Abrechnungs-, globale und Dienstadministratoren zurücksetzen.
 
 ## Administratorberechtigungen
@@ -89,4 +89,4 @@ Der globale Administrator hat Zugriff auf alle administrativen Funktionen. Stand
 
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

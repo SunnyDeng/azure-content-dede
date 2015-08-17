@@ -27,24 +27,24 @@ Wenn Sie die Bereitstellung für eine SaaS-Anwendung konfigurieren, ist einer de
 
 ## Syntaxübersicht
 
-Die Syntax für die Ausdrücke für Attributzuordnungen ist den Funktionen von Visual Basic for Applications \(VBA\) ähnlich.
+Die Syntax für die Ausdrücke für Attributzuordnungen ist den Funktionen von Visual Basic for Applications (VBA) ähnlich.
 
-- Der gesamte Ausdruck muss mittels Funktionen definiert werden, die aus einem Namen mit darauffolgenden Argumenten in Klammern bestehen: <br>*Funktionsname\(\<<argument 1>\>,\<<argument N>\>\)*
+- Der gesamte Ausdruck muss mittels Funktionen definiert werden, die aus einem Namen mit darauffolgenden Argumenten in Klammern bestehen: <br>*Funktionsname(<<argument 1>>,<<argument N>>)*
 
 
-- Sie können Funktionen ineinander verschachteln. Beispiel: <br> *FunktionEins\(FunktionZwei\(\<<argument1>\>\)\)*
+- Sie können Funktionen ineinander verschachteln. Beispiel: <br> *FunktionEins(FunktionZwei(<<argument1>>))*
 
 
 - Sie können drei verschiedene Argumententypen an die Funktionen übergeben:
 
-   1. Attribute, die in eckige Klammern eingeschlossen werden müssen. Beispiel: \[Attributname\]
+   1. Attribute, die in eckige Klammern eingeschlossen werden müssen. Beispiel: [Attributname]
 
    2. Zeichenfolgenkonstanten, die in doppelte Anführungszeichen eingeschlossen werden müssen. Beispiel: "USA"
 
-   3. Andere Funktionen Beispiel: FunktionEins\(\<<argument1>\>, FunktionZwei\(\<<argument2>\>\)\)
+   3. Andere Funktionen Beispiel: FunktionEins(<<argument1>>, FunktionZwei(<<argument2>>))
 
 
-- Bei Zeichenfolgenkonstanten, in denen ein umgekehrter Schrägstrich \( \\ \) oder ein Anführungszeichen \( " \) benötigt wird, muss dieser bzw. dieses mit einem umgekehrten Schrägstrichsymbol \( \\ \) versehen werden. Beispiel: "Firmenname: \\"Contoso\\""
+- Bei Zeichenfolgenkonstanten, in denen ein umgekehrter Schrägstrich ( \\ ) oder ein Anführungszeichen ( " ) benötigt wird, muss dieser bzw. dieses mit einem umgekehrten Schrägstrichsymbol ( \\ ) versehen werden. Beispiel: "Firmenname: \"Contoso\""
 
 
 
@@ -59,7 +59,7 @@ Die Syntax für die Ausdrücke für Attributzuordnungen ist den Funktionen von V
 ----------
 ### Anfügen
 
-**Funktion:**<br> Append\(Quelle, Suffix\)
+**Funktion:**<br> Append(Quelle, Suffix)
 
 **Beschreibung:**<br>Fügt das Suffix am Ende eines angegebenen Quellzeichenfolgenwerts an.
  
@@ -74,7 +74,7 @@ Die Syntax für die Ausdrücke für Attributzuordnungen ist den Funktionen von V
 ----------
 ### Coalesce
 
-**Funktion:**<br> Coalesce\(Quelle1, Quelle2, …\)
+**Funktion:**<br> Coalesce(Quelle1, Quelle2, …)
 
 **Beschreibung:**<br>Gibt den ersten nicht leeren Wert aus der Liste der Quellparameter zurück.
  
@@ -82,14 +82,14 @@ Die Syntax für die Ausdrücke für Attributzuordnungen ist den Funktionen von V
 
 |Name| Erforderlich/wiederholt | Typ | Hinweise |
 |--- | ---                 | ---  | ---   |
-| **Quelle1 .. QuelleN \*\* \| Erforderlich, unterschiedlich oft \| String \| **Quellwerte** zur Auswahl \|
+| ****Quelle1 .. QuelleN ** | Erforderlich, unterschiedlich oft | String | **Quellwerte** zur Auswahl |
 
 
 
 ----------
 ### FormatDateTime
 
-**Funktion:**<br> FormatDateTime\(Quelle, Eingabeformat, Ausgabeformat\)
+**Funktion:**<br> FormatDateTime(Quelle, Eingabeformat, Ausgabeformat)
 
 **Beschreibung:**<br> Konvertiert eine Datumszeichenfolge aus einem Format in ein anderes Format.
  
@@ -106,9 +106,9 @@ Die Syntax für die Ausdrücke für Attributzuordnungen ist den Funktionen von V
 ----------
 ### Join
 
-**Funktion:**<br> Join\(Trennzeichen, Quelle1, Quelle2, …\)
+**Funktion:**<br> Join(Trennzeichen, Quelle1, Quelle2, …)
 
-**Beschreibung:**<br> Join\(\) ist Append\(\) ähnlich mit der Ausnahme, dass es mehrere **Quellzeichenfolgenwerte** in einer einzelnen Zeichenfolge kombinieren kann und die Werte jeweils durch eine **Trennzeichenfolge** getrennt werden.
+**Beschreibung:**<br> Join() ist Append() ähnlich mit der Ausnahme, dass es mehrere **Quellzeichenfolgenwerte** in einer einzelnen Zeichenfolge kombinieren kann und die Werte jeweils durch eine **Trennzeichenfolge** getrennt werden.
 
 Wenn einer der Quellwerte ein mehrwertiges Attribut ist, werden die einzelnen Werte in diesem Attribut miteinander verknüpft und dabei durch den Trennzeichenwert getrennt.
 
@@ -118,7 +118,7 @@ Wenn einer der Quellwerte ein mehrwertiges Attribut ist, werden die einzelnen We
 |Name| Erforderlich/wiederholt | Typ | Hinweise |
 |--- | ---                 | ---  | ---   |
 | **Trennzeichen** | Erforderlich | String | Zeichenfolge, die zur Trennung von Quellwerten verwendet wird, wenn diese zu einer einzelnen Zeichenfolge zusammengesetzt werden. Kann "" sein, wenn kein Trennzeichen erforderlich ist. |
-| **Quelle1 … QuelleN \*\* \| Erforderlich, unterschiedlich oft \| String \| Zeichenfolgenwerte, die zusammengesetzt werden sollen. \|
+| ****Quelle1 … QuelleN ** | Erforderlich, unterschiedlich oft | String | Zeichenfolgenwerte, die zusammengesetzt werden sollen. |
 
 
 
@@ -127,7 +127,7 @@ Wenn einer der Quellwerte ein mehrwertiges Attribut ist, werden die einzelnen We
 ----------
 ### MatchRegex
 
-**Funktion:**<br> MatchRegex\(Quelle, Suchen, Gruppe\)
+**Funktion:**<br> MatchRegex(Quelle, Suchen, Gruppe)
 
 **Beschreibung:**<br> Gibt die Teilzeichenfolge aus dem Quellwert zurück, die dem Muster des regulären Ausdrucks entspricht, der im Suchparameter angegeben ist. Wenn eine Gruppe angegeben wird, wird nur der Wert dieser RegEx-Gruppe zurückgegeben.
 
@@ -145,7 +145,7 @@ Wenn einer der Quellwerte ein mehrwertiges Attribut ist, werden die einzelnen We
 ----------
 ### Mid
 
-**Funktion:**<br> Mid\(Quelle, Start, Länge\)
+**Funktion:**<br> Mid(Quelle, Start, Länge)
 
 **Beschreibung:**<br> Gibt eine Teilzeichenfolge des Quellwerts zurück. Eine Teilzeichenfolge ist eine Zeichenfolge, die nur einige der Zeichen aus der Quellzeichenfolge enthält.
 
@@ -164,9 +164,9 @@ Wenn einer der Quellwerte ein mehrwertiges Attribut ist, werden die einzelnen We
 ----------
 ### Not
 
-**Funktion:**<br> Not\(Quelle\)
+**Funktion:**<br> Not(Quelle)
 
-**Beschreibung:**<br> Schaltet den booleschen Wert der **Quelle** um. Wenn der **Quellwert** "\*True\*" ist, gibt die Funktion "\*False\*" zurück. Andernfalls gibt sie "\*True\*" zurück.
+**Beschreibung:**<br> Schaltet den booleschen Wert der **Quelle** um. Wenn der **Quellwert** "*True*" ist, gibt die Funktion "*False*" zurück. Andernfalls gibt sie "*True*" zurück.
 
 
 **Parameter:**<br>
@@ -180,7 +180,7 @@ Wenn einer der Quellwerte ein mehrwertiges Attribut ist, werden die einzelnen We
 ----------
 ### ObsoleteReplace
 
-**Funktion:**<br> ObsoleteReplace\(Quelle, AlterWert, RegexMuster, RegexGruppenname, Ersatzwert, Ersatzattributname, Vorlage\)
+**Funktion:**<br> ObsoleteReplace(Quelle, AlterWert, RegexMuster, RegexGruppenname, Ersatzwert, Ersatzattributname, Vorlage)
 
 **Beschreibung:**<br>
 > [AZURE.NOTE]Diese Funktion wird in naher Zukunft nicht mehr verwendet und durch einfachere Versionen ersetzt.
@@ -223,7 +223,7 @@ Ersetzt Werte in einer Zeichenfolge. Sie funktioniert unterschiedlich, je nachde
 ----------
 ### Replace
 
-**Funktion:**<br> Replace\(Quelle, Suchen, Ersetzen\)
+**Funktion:**<br> Replace(Quelle, Suchen, Ersetzen)
 
 **Beschreibung**<br>: Ersetzt alle Vorkommen des **Suchen**-Werts in der **Quellenzeichenfolge** durch den Wert des **Ersetzen**-Parameters.
 
@@ -240,7 +240,7 @@ Ersetzt Werte in einer Zeichenfolge. Sie funktioniert unterschiedlich, je nachde
 ----------
 ### ReplaceRegex
 
-**Funktion:**<br> ReplaceRegex\(Quelle, Suchen, Ersetzen, Gruppe\)
+**Funktion:**<br> ReplaceRegex(Quelle, Suchen, Ersetzen, Gruppe)
 
 **Beschreibung:**<br> Ersetzt in der **Quellzeichenfolge** alle Teilzeichenfolgen, die dem regulären Ausdruck in **Suchen** entsprechen, durch den **Ersetzen**-Wert. Wenn eine **Gruppe** angegeben ist, wird nur der Wert dieser RegEx-Gruppe ersetzt.
 
@@ -259,9 +259,9 @@ Ersetzt Werte in einer Zeichenfolge. Sie funktioniert unterschiedlich, je nachde
 ----------
 ### StripSpaces
 
-**Funktion:**<br> StripSpaces\(Quelle\)
+**Funktion:**<br> StripSpaces(Quelle)
 
-**Beschreibung:**<br> Entfernt alle Leerzeichen \(" "\) aus der Quellzeichenfolge.
+**Beschreibung:**<br> Entfernt alle Leerzeichen (" ") aus der Quellzeichenfolge.
 
 **Parameter:**<br>
 
@@ -274,7 +274,7 @@ Ersetzt Werte in einer Zeichenfolge. Sie funktioniert unterschiedlich, je nachde
 ----------
 ### Switch
 
-**Funktion:**<br> Switch\(Quelle, Standardwert, Schlüssel1, Wert1, Schlüssel2, Wert2, …\)
+**Funktion:**<br> Switch(Quelle, Standardwert, Schlüssel1, Wert1, Schlüssel2, Wert2, …)
 
 **Beschreibung:**<br> Wenn der **Quellwert** mit einem **Schlüssel** übereinstimmt, gibt die Funktion den **Wert** für diesen **Schlüssel**. Wenn der **Quellwert** mit keinem Schlüssel übereinstimmt, wird der **Standardwert** zurückgegeben. Die **Schlüssel**- und **Wertparameter** müssen immer paarweise angegeben werden, d.h. die Funktion erwartet immer eine gerade Anzahl von Parametern.
 
@@ -283,7 +283,7 @@ Ersetzt Werte in einer Zeichenfolge. Sie funktioniert unterschiedlich, je nachde
 |Name| Erforderlich/wiederholt | Typ | Hinweise |
 |--- | ---                 | ---  | ---   |
 | **Quelle** | Erforderlich | String | Der **Quellwert**, der aktualisiert werden soll. |
-| **defaultValue** | Optional | String | Der Standardwert, der verwendet werden soll, wenn die Quelle mit keinem Schlüssel übereinstimmt. Kann eine leere Zeichenfolge \(""\) sein. |
+| **defaultValue** | Optional | String | Der Standardwert, der verwendet werden soll, wenn die Quelle mit keinem Schlüssel übereinstimmt. Kann eine leere Zeichenfolge ("") sein. |
 | **key** | Erforderlich | String | **Schlüssel**, der mit dem **Quellwert** verglichen werden soll. |
 | **value** | Erforderlich | String | Der Ersatzwert für die **Quelle**, die mit dem Schlüssel übereinstimmt. |
 
@@ -300,7 +300,7 @@ Sie müssen einen bekannten Domänennamen aus der E-Mail-Adresse eines Benutzers
 
 **Beispieleingabe/-ausgabe:** <br>
 
-- **EINGABE** \(E-Mail\): "john.doe@contoso.com"
+- **EINGABE** (E-Mail): "john.doe@contoso.com"
 
 - **AUSGABE**: "john.doe"
 
@@ -317,7 +317,7 @@ Wenn Sie eine Salesforce Sandbox verwenden, müssen Sie möglicherweise ein weit
 
 **Beispieleingabe/-ausgabe:** <br>
 
-- **EINGABE**: \(userPrincipalName\): "John.Doe@contoso.com"
+- **EINGABE**: (userPrincipalName): "John.Doe@contoso.com"
 
 
 - **AUSGABE**: "John.Doe@contoso.com.test"
@@ -335,9 +335,9 @@ Sie müssen einen Benutzeralias generieren, indem Sie die ersten drei Buchstaben
 
 **Beispieleingabe/-ausgabe:** <br>
 
-- **EINGABE** \(givenName\): "John"
+- **EINGABE** (givenName): "John"
 
-- **EINGABE** \(surname\): "Doe"
+- **EINGABE** (surname): "Doe"
 
 - **AUSGABE**: "JohDoe"
 
@@ -356,7 +356,7 @@ Sie möchten Datumsangaben in einem bestimmten Format an eine SaaS-Anwendung sen
 
 **Beispieleingabe/-ausgabe:**
 
-- **EINGABE** \(extensionAttribute1\): "20150123105347.1Z"
+- **EINGABE** (extensionAttribute1): "20150123105347.1Z"
 
 - **AUSGABE**: "2015-01-23"
 
@@ -375,16 +375,11 @@ Sie müssen die Zeitzone des Benutzers anhand des Bundesstaatscodes festlegen, d
 
 **Beispieleingabe/-ausgabe:**
 
-- **EINGABE** \(state\): "QLD"
+- **EINGABE** (state): "QLD"
 
 - **AUSGABE**: "Australien/Brisbane"
 
 
+[AZURE.INCLUDE [SaaS – Inhaltsverzeichnis](../../includes/active-directory-saas-toc.md)]
 
-## Zusätzliche Ressourcen
-
-* [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md)
-
-<!--Image references-->
-
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -85,7 +85,7 @@ Dies sind die einzelnen Schritte zum Erstellen eines neuen Abbilds:
 	1. Erstellen Sie einen neuen virtuellen Computer. Verwenden Sie den Assistenten für neue virtuelle Computer im Hyper-V Manager oder Hyper-V für Clients.
 		1. Wählen Sie auf der Seite "Generation angeben" die Option **Generation 1** aus.
 		2. Wählen Sie auf der Seite "Virtuelle Festplatte anschließen" **Vorhandene virtuelle Festplatte verwenden** und gehen Sie zu der im vorhergehenden Schritt erstellten VHD.
-		2. Wählen Sie auf der Seite "Installationsoptionen" **Betriebssystem von Start-CD/DVD_ROM installieren** und wählen Sie dann den Ort der Windows Server 2012 R2-Installationsdatenträger.
+		2. Wählen Sie auf der Seite "Installationsoptionen" **Betriebssystem von Start-CD/DVD\_ROM installieren** und wählen Sie dann den Ort der Windows Server 2012 R2-Installationsdatenträger.
 		3. Wählen Sie im Assistenten die weiteren Optionen, die für die Installation von Windows und der Anwendungen erforderlich sind. Beenden Sie den Assistenten.
 	2.  Bearbeiten Sie nach Abschluss des Assistenten die Einstellungen des virtuellen Computers, und nehmen Sie alle für die Installation von Windows und Ihrer Programme erforderlichen Änderungen vor, z. B. bezüglich der Zahl der virtuellen Prozessoren. Klicken Sie dann auf **OK**.
 	4.  Stellen Sie eine Verbindung mit dem virtuellen Computer her, und installieren Sie Windows Server 2012 R2.
@@ -120,11 +120,11 @@ Dies sind die einzelnen Schritte zum Erstellen eines neuen Abbilds:
 	Alternativ können Sie in der Registrierung den folgenden DWORD-Wert festlegen oder hinzufügen:
 
 		HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisableEncryption = 1
-9.	Wenn Sie das Abbild in einem virtuellen Azure-Computer erstellen, müssen Sie die Datei **\%windir%\Panther\Unattend.xml** umbenennen, da sie anderenfalls das Uploadskript blockiert, das in einem der folgenden Schritte verwendet wird. Benennen Sie diese Datei in "Unattend.old" um, damit sie ggf. darauf zurückgreifen können, falls Sie die Bereitstellung rückgängig machen müssen.
+9.	Wenn Sie das Abbild in einem virtuellen Azure-Computer erstellen, müssen Sie die Datei **\\%windir%\\Panther\\Unattend.xml** umbenennen, da sie anderenfalls das Uploadskript blockiert, das in einem der folgenden Schritte verwendet wird. Benennen Sie diese Datei in "Unattend.old" um, damit sie ggf. darauf zurückgreifen können, falls Sie die Bereitstellung rückgängig machen müssen.
 10.	Wechseln Sie zu Windows Update, und installieren Sie alle wichtigen Updates. Möglicherweise müssen Sie Windows Update mehrmals ausführen, um alle Updates zu erhalten. (Manchmal ist für ein von Ihnen installiertes Update direkt ein weiteres Update erforderlich.)
 10.	Bereiten Sie das Abbild mit SYSPREP vor. Führen Sie an einer Eingabeaufforderung mit erhöhten Rechten den folgenden Befehl aus:
 
-	**C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /shutdown**
+	**C:\\Windows\\System32\\sysprep\\sysprep.exe /generalize /oobe /shutdown**
 
 	**Hinweis:** Verwenden Sie nicht den Schalter **/mode:vm** für den SYSPREP-Befehls, auch wenn es sich um einen virtuellen Computer handelt.
 
@@ -137,4 +137,4 @@ Nach dem Erstellen des benutzerdefinierten Vorlagenimages müssen Sie dieses Ima
 - [Erstellen einer Cloud-Sammlung von RemoteApp](remoteapp-create-cloud-deployment.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

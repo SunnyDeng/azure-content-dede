@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Azure-Benachrichtigungs-Hubs"
+	pageTitle="Erste Schritte mit Azure Notification Hubs"
 	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen."
 	services="notification-hubs"
 	documentationCenter="windows"
@@ -12,9 +12,10 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-windows-phone"
 	ms.devlang="dotnet"
-	ms.topic="get-started-article" 
+	ms.topic="hero-article" 
 	ms.date="06/16/2015"
 	ms.author="wesmc"/>
+	
 # Erste Schritte mit Notification Hubs
 
 [AZURE.INCLUDE [Notification-Hubs-Auswahl-Erste-Schritte](../../includes/notification-hubs-selector-get-started.md)]
@@ -94,7 +95,7 @@ Nun verfügen Sie über die Verbindungszeichenfolgen, die Sie zum Registrieren I
         using Microsoft.Phone.Notification;
         using Microsoft.WindowsAzure.Messaging;
 
-5. Fügen Sie den folgenden Code oben in der Methode **Application_Launching** in App.xaml.cs ein:
+5. Fügen Sie den folgenden Code oben in der Methode **Application\_Launching** in App.xaml.cs ein:
 
 	    var channel = HttpNotificationChannel.Find("MyPushChannel");
         if (channel == null)
@@ -114,7 +115,7 @@ Nun verfügen Sie über die Verbindungszeichenfolgen, die Sie zum Registrieren I
 
 	>[AZURE.NOTE]Dieses Lernprogramm sendet eine Popupbenachrichtigung an das Gerät. Wenn Sie eine Kachelbenachrichtigung senden, müssen Sie stattdessen die **BindToShellTile**-Methode für den Kanal aufrufen. Um Popup- und Kachelbenachrichtigungen zu unterstützen, rufen Sie beide Methoden, **BindToShellTile** und **BindToShellToast**, auf.
 
-6. Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei "WMAppManifest.xml", klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **ID_CAP_PUSH_NOTIFICATION**.
+6. Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei "WMAppManifest.xml", klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **ID\_CAP\_PUSH\_NOTIFICATION**.
 
    	![][14]
 
@@ -215,4 +216,4 @@ In diesem einfachen Beispiel übertragen Sie Benachrichtigungen an all Ihre Wind
 [Beispiellernprogramm Notification Hub - WP Silverlight]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

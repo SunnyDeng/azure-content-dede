@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/23/2015" 
 	ms.author="juliako"/>
+
 
 
 # Verwalten von Inhalten mit Media Services auf dem Azure-Verwaltungsportal
@@ -51,7 +53,7 @@ In diesem Thema wird erläutert, wie Sie die folgenden Inhaltsvorgänge direkt �
 
 	![Auftragsstatus][status]
 
-Wenn der Upload abgeschlossen ist, wird in der Liste "Inhalt" das neue Medienobjekt aufgeführt. Entsprechend der Namenskonvention wird "\*\*-Source\*\*" am Ende angehängt, damit neue Inhalte als Quellinhalte für Codieraufgaben erfasst werden können.
+Wenn der Upload abgeschlossen ist, wird in der Liste "Inhalt" das neue Medienobjekt aufgeführt. Entsprechend der Namenskonvention wird "**-Source**" an das Ende gehängt, damit neue Inhalte als Quellinhalte für Codieraufgaben erfasst werden können.
 
 ![Inhaltsseite][contentpage]
 
@@ -81,30 +83,31 @@ Die folgenden Schritte veranschaulichen, wie Sie das Verwaltungsportal verwenden
 - [REST](media-services-rest-encode-asset.md)
 - [Portal](media-services-manage-content.md#encode)
 
-Um digitale Videos über das Internet zu übermitteln, müssen Sie die Medien komprimieren. Media Services bietet einen Media Encoder, mit dem Sie angeben, wie Ihre Inhalte codiert werden sollen \(z. B. Codecs, Dateiformat, Auflösung und Bitrate\).
+Um digitale Videos über das Internet zu übermitteln, müssen Sie die Medien komprimieren. Media Services bietet einen Media Encoder, mit dem Sie angeben, wie Ihre Inhalte codiert werden sollen (z. B. Codecs, Dateiformat, Auflösung und Bitrate).
 
-Bei der Arbeit mit Azure Media Services ist eines der häufigsten Szenarios das Streaming mit adaptiver Bitrate an Clients. Beim Streaming mit adaptiver Bitrate kann der Client während der Videodarstellung abhängig von der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren auf einen Stream mit höherer oder niedrigerer Bitrate wechseln. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming \(HLS\), Smooth Streaming, MPEG DASH und HDS \(nur mit Adobe PrimeTime/Access-Lizenz\).
+Bei der Arbeit mit Azure Media Services ist eines der häufigsten Szenarios das Streaming mit adaptiver Bitrate an Clients. Beim Streaming mit adaptiver Bitrate kann der Client während der Videodarstellung abhängig von der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren auf einen Stream mit höherer oder niedrigerer Bitrate wechseln. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
-Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden \(MPEG DASH, HLS, Smooth Streaming, HDS\), ohne dass Sie diese Streamingformate erneut verpacken müssen.
+Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden (MPEG DASH, HLS, Smooth Streaming, HDS), ohne dass Sie diese Streamingformate erneut verpacken müssen.
 
 Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
 
-- Codieren Ihrer Zwischendatei \(Quelle\) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate \(die Codierungsschritte werden weiter unten in diesem Lernprogramm beschrieben\)
+- Codieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm beschrieben)
 - Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins.md#scale_streaming_endpoints/).
 
 Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
 
-Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zusätzlich zur dynamischen Paketerstellung auch eine dedizierte Ausgangskapazität bereitstellen, die in Schritten von 200 Mbit/s erworben werden kann. Standardmäßig wird das bedarfsgesteuerte Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen \(z. B. Rechen- und Ausgangskapazität usw.\) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Durchsatz des bedarfsgesteuerten Streamings zu erhöhen, sollten Sie reservierte Einheiten für On-Demand Streaming kaufen.
+Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zusätzlich zur dynamischen Paketerstellung auch eine dedizierte Ausgangskapazität bereitstellen, die in Schritten von 200 Mbit/s erworben werden kann. Standardmäßig wird das bedarfsgesteuerte Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen (z. B. Rechen- und Ausgangskapazität usw.) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Durchsatz des bedarfsgesteuerten Streamings zu erhöhen, sollten Sie reservierte Einheiten für On-Demand Streaming kaufen.
 
 Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre Inhalte mit Azure Media Encoder im Verwaltungsportal zu codieren.
 
 1.  Wählen Sie die Datei aus, die Sie codieren möchten. Wenn die Codierung für diesen Dateityp unterstützt wird, wird die Schaltfläche "Prozess" unten auf der Inhaltsseite aktiviert.
-4. Wählen Sie im Dialogfeld **Prozess** den\*\* Azure Media Encoder-**Prozessor aus.5. Wählen Sie eine der **Codierungskonfigurationen** aus.
+4. Wählen Sie im Dialogfeld **Prozess** den\*\* Azure Media Encoder-Prozessor aus.
+5. Wählen Sie eine der **Codierungskonfigurationen** aus.
 
 	![Prozess2][process2]
 
 		
-	Im Thema [Taskvoreinstellung für Media Services Encoder](https://msdn.microsoft.com/library/azure/dn619392.aspx) werden die Voreinstellungen in den Kategorien **Voreinstellungen für adaptives Streaming \(dynamische Paketerstellung\)**, **Voreinstellungen für progressiven Download** und **Legacy-Voreinstellungen für adaptives Streaming** erläutert.
+	Im Thema [Taskvoreinstellung für Media Services Encoder](https://msdn.microsoft.com/library/azure/dn619392.aspx) werden die Voreinstellungen in den Kategorien **Voreinstellungen für adaptives Streaming (dynamische Paketerstellung)**, **Voreinstellungen für progressiven Download** und **Legacy-Voreinstellungen für adaptives Streaming** erläutert.
 
 
 	Die **anderen** Konfigurationen werden nachfolgend beschrieben:
@@ -113,9 +116,9 @@ Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre In
 	
 	
 		Standardmäßig wird der Media Services PlayReady-Lizenzierungsdienst verwendet. Verwenden Sie REST oder die Media Services .NET SDK-APIs, um andere Dienste zu verwenden, von denen Clients eine Lizenz zum Abspielen der mit PlayReady verschlüsselten Inhalte abrufen können. Weitere Informationen finden Sie unter [Inhaltsschutz mit statischer Verschlüsselung](). Setzen Sie außerdem die **licenseAcquisitionUrl**-Eigenschaft in der Media Encryptor-Voreinstellung. Alternativ können Sie dynamische Verschlüsselung verwenden und die **PlayReadyLicenseAcquisitionUrl**-Eigenschaft setzen. Lesen Sie dazu [Verwenden der dynamischen PlayReady-Verschlüsselung und des Lizenzierungsdienstes](http://go.microsoft.com/fwlink/?LinkId=507720). 
-	+ **Wiedergabe auf PC/Mac \(über Flash/Silverlight\)**. Diese Voreinstellung erzeugt ein Smooth Streaming-Medienobjekt mit den folgenden Eigenschaften: AAC-Stereo-Audio mit 44,1 kHz und 16 Bits/Sample, codiert mit konstanter Bitrate \(96 Kbit/s\) und 720p-Video codiert mit 6 konstanten Bitraten von 3400 Kbit/s bis 400 Kbit/s mithilfe des H.264-Hauptprofils und 2-Sekunden-GOPs.
-	+ **Wiedergabe über HTML5 \(IE/Chrome/Safari\)**. Diese Voreinstellung erzeugt ein Smooth Streaming-Medienobjekt mit den folgenden Eigenschaften: AAC-Stereo-Audio mit 44,1 kHz und 16 Bits/Sample, codiert mit konstanter Bitrate von 128 Kbit/s und 720p-Video codiert mit konstanter Bitrate von 4500 Kbit/s mithilfe des H.264-Hauptprofils und 2-Sekunden-GOPs.
-	+ **Wiedergabe auf iOS-Geräten und PC/Mac**. Diese Voreinstellung erzeugt eine Ressource mit den gleichen Eigenschaften wie die Smooth Streaming-Ressource \(Beschreibung siehe oben\), jedoch in einem Format, das zur Übermittlung von Apple HLS-Streams auf iOS-Geräten verwendet werden kann. 
+	+ **Wiedergabe auf PC/Mac (über Flash/Silverlight)**. Diese Voreinstellung erzeugt ein Smooth Streaming-Medienobjekt mit den folgenden Eigenschaften: AAC-Stereo-Audio mit 44,1 kHz und 16 Bits/Sample, codiert mit konstanter Bitrate (96 Kbit/s) und 720p-Video codiert mit 6 konstanten Bitraten von 3400 Kbit/s bis 400 Kbit/s mithilfe des H.264-Hauptprofils und 2-Sekunden-GOPs.
+	+ **Wiedergabe über HTML5 (IE/Chrome/Safari)**. Diese Voreinstellung erzeugt ein Smooth Streaming-Medienobjekt mit den folgenden Eigenschaften: AAC-Stereo-Audio mit 44,1 kHz und 16 Bits/Sample, codiert mit konstanter Bitrate von 128 Kbit/s und 720p-Video codiert mit konstanter Bitrate von 4500 Kbit/s mithilfe des H.264-Hauptprofils und 2-Sekunden-GOPs.
+	+ **Wiedergabe auf iOS-Geräten und PC/Mac**. Diese Voreinstellung erzeugt eine Ressource mit den gleichen Eigenschaften wie die Smooth Streaming-Ressource (Beschreibung siehe oben), jedoch in einem Format, das zur Übermittlung von Apple HLS-Streams auf iOS-Geräten verwendet werden kann. 
 
 5. Anschließend geben Sie den gewünschten Anzeigenamen für den Inhalt ein oder übernehmen den Standardnamen. Klicken Sie anschließend auf das Häkchen, um den Codiervorgang zu starten. Den Fortschritt des Vorgangs können Sie unten im Portal verfolgen.
 6. Klicken Sie auf "OK".
@@ -130,7 +133,7 @@ Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre In
 
 Wenn Sie Medienobjekte für Media Services dynamisch mit einem AES-Schlüssel oder PlayReady-DRM verschlüsseln möchten, gehen Sie wie folgt vor:
 
-- Codieren Sie Ihre Zwischendatei \(Quelle\) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate \(die Codierungsschritte werden weiter unten im Abschnitt [Codieren](#encode) gezeigt\).
+- Codieren Sie Ihre Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten im Abschnitt [Codieren](#encode) gezeigt).
 - Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins.md#scale_streaming_endpoints/).
 - Konfigurieren Sie die Standardrichtlinie für den Dienst für unverschlüsselte AES-Schlüssel bzw. die für den Dienst für PlayReady-Lizenzen. Weitere Informationen finden Sie unter [Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel](media-services-portal-configure-content-key-auth-policy.md).  
 
@@ -150,9 +153,9 @@ Wenn Sie Medienobjekte für Media Services dynamisch mit einem AES-Schlüssel od
 
 ###Übersicht
 
-Um Ihren Benutzern eine URL für das Streaming bzw. Herunterladen des Inhalts angeben zu können, müssen Sie zunächst das Medienobjekt "veröffentlichen", indem Sie einen Locator erstellen. Locator ermöglichen den Zugriff auf Dateien im Medienobjekt. Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator zum Streamen von Medien \(z. B. MPEG DASH, HLS oder Smooth Streaming\) und Access Signature \(SAS\)-Locator zum Herunterladen von Mediendateien.
+Um Ihren Benutzern eine URL für das Streaming bzw. Herunterladen des Inhalts angeben zu können, müssen Sie zunächst das Medienobjekt "veröffentlichen", indem Sie einen Locator erstellen. Locator ermöglichen den Zugriff auf Dateien im Medienobjekt. Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) und Access Signature (SAS)-Locator zum Herunterladen von Mediendateien.
 
-Wenn Sie Ihre Medienobjekte über das Azure-Verwaltungsportal veröffentlichen, werden die Locators für Sie erstellt und eine OnDemandOrigin-basierte URL \(wenn Ihr Medienobjekt eine ISM-Datei enthält\) oder eine SAS-URL bereitgestellt.
+Wenn Sie Ihre Medienobjekte über das Azure-Verwaltungsportal veröffentlichen, werden die Locators für Sie erstellt und eine OnDemandOrigin-basierte URL (wenn Ihr Medienobjekt eine ISM-Datei enthält) oder eine SAS-URL bereitgestellt.
 
 Eine SAS-URL weist das folgende Format auf:
 
@@ -162,11 +165,11 @@ Eine Streaming-URL weist das folgende Format auf. Mit dieser URL können Sie Smo
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest
 
-Um eine HLS-Streaming-URL zu erstellen, fügen Sie "\(format=m3u8-aapl\)" an die URL an.
+Um eine HLS-Streaming-URL zu erstellen, fügen Sie "(format=m3u8-aapl)" an die URL an.
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
 
-Um eine MPEG DASH-Streaming-URL zu erstellen, fügen Sie "\(format=mpd-time-csf\)" an die URL an.
+Um eine MPEG DASH-Streaming-URL zu erstellen, fügen Sie "(format=mpd-time-csf)" an die URL an.
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 
@@ -214,4 +217,4 @@ Folgende Überlegungen sollten berücksichtigt werden:
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-manage-content/media-services-portal-player.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

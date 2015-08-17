@@ -7,14 +7,16 @@
 	manager="jwhit" 
 	editor=""/>
 
+
 <tags 
 	ms.service="cloud-services" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/23/2014" 
+	ms.date="08/04/2014" 
 	ms.author="robb"/>
+
 
 
 #Überwachung von Clouddiensten
@@ -124,7 +126,7 @@ Zum Anzeigen von benutzerdefinierten Leistungsindikatoren im Portal müssen Sie 
 2. Navigieren Sie gemäß dem Muster **DeploymentId/ RoleName/RoleInstance** zum Blobpfad, um die Konfiguration für die Rolleninstanz zu suchen. 
 
 	![Speicher-Explorer von Visual Studio](./media/cloud-services-how-to-monitor/CloudServices_Monitor_VisualStudioStorage.png)
-3. Laden Sie die Konfigurationsdatei für die Rolleninstanz herunter, und aktualisieren Sie sie, um alle benutzerdefinierten Leistungsindikatoren einzuschließen. Fügen Sie beispielsweise zum Überwachen von *Datenträgerschreibvorgang Byte/s* für *Laufwerk C* Folgendes unter dem Knoten **PerformanceCounters\Subscriptions** ein.
+3. Laden Sie die Konfigurationsdatei für die Rolleninstanz herunter, und aktualisieren Sie sie, um alle benutzerdefinierten Leistungsindikatoren einzuschließen. Fügen Sie beispielsweise zum Überwachen von *Datenträgerschreibvorgang Byte/s* für *Laufwerk C* Folgendes unter dem Knoten **PerformanceCounters\\Subscriptions** ein.
 
 	```xml
 	<PerformanceCounterConfiguration>
@@ -179,7 +181,7 @@ Hinweis:
 
 - *deploymentID* ist die GUID der Clouddienstbereitstellung
 
-- *aggregation_interval* = 5M, 1H oder 12H
+- *aggregation\_interval* = 5M, 1H oder 12H
 
 - Aggregationen auf Rollenebene = R
 
@@ -192,4 +194,4 @@ Die folgenden Tabellen speichern z. B. ausführliche Überwachungsdaten aggregie
 	WAD8b7c4233802442b494d0cc9eb9d8dd9fPT1HRITable (hourly aggregations for role instances)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

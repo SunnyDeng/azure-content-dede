@@ -86,4 +86,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Azure Mobile Services-Komponente]: http://components.xamarin.com/view/azure-mobile-services/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

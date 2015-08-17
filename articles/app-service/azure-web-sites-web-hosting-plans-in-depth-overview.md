@@ -18,7 +18,7 @@
 
 #Azure App Service-Pläne – Detaillierte Übersicht#
 
-Ein **App Service-Plan** stellt einen Satz von Funktionen und Kapazitäten dar, die Sie in mehreren Apps in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) gemeinsam nutzen können, einschließlich Web-Apps, mobilen Apps, Logik-Apps oder API-Apps. Diese Pläne unterstützen 5 Preisstufen ("Free", **Shared**, **Basic**, **Standard** und **Premium**), wobei jede Preisstufe über eigene Funktionen und Kapazitäten verfügt. Apps im selben Abonnement und am gleichen geografischen Standort können den gleichen Plan verwenden. Alle Apps mit gemeinsamem Plan können alle Funktionen und Features nutzen, die in der Preisstufe des Plans vorgesehen sind. Alle einem bestimmten Plan zugeordneten Apps werden auf den Ressourcen ausgeführt, die vom Plan vorgegeben sind. Wenn Ihr Plan beispielsweise so konfiguriert ist, dass zwei "kleine" Instanzen der Preisstufe "Standard" verwendet werden, werden alle Apps, die diesem Plan zugeordnet sind, auf beiden Instanzen ausgeführt und haben Zugriff auf die Funktionalität der Preisstufe "Standard". Planinstanzen, auf denen Apps ausgeführt werden, auf, sind vollständig verwaltbar und bieten hohe Verfügbarkeit.
+Ein **App Service-Plan** stellt einen Satz von Funktionen und Kapazitäten dar, die Sie in mehreren Apps in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) gemeinsam nutzen können, einschließlich Web-Apps, mobilen Apps, Logik-Apps oder API-Apps. Diese Pläne unterstützen 5 Preisstufen (**Free**, **Shared**, **Basic**, **Standard** und **Premium**), wobei jede Preisstufe über eigene Funktionen und Kapazitäten verfügt. Apps im selben Abonnement und am gleichen geografischen Standort können den gleichen Plan verwenden. Alle Apps mit gemeinsamem Plan können alle Funktionen und Features nutzen, die in der Preisstufe des Plans vorgesehen sind. Alle einem bestimmten Plan zugeordneten Apps werden auf den Ressourcen ausgeführt, die vom Plan vorgegeben sind. Wenn Ihr Plan beispielsweise so konfiguriert ist, dass zwei "kleine" Instanzen der Preisstufe "Standard" verwendet werden, werden alle Apps, die diesem Plan zugeordnet sind, auf beiden Instanzen ausgeführt und haben Zugriff auf die Funktionalität der Preisstufe "Standard". Planinstanzen, auf denen Apps ausgeführt werden, auf, sind vollständig verwaltbar und bieten hohe Verfügbarkeit.
 
 In diesem Artikel lernen Sie die Hauptmerkmale kennen, z. B. Preisstufe und Umfang eines App Service-Plans und ihre Rolle beim Verwalten Ihrer Apps.
 
@@ -96,4 +96,4 @@ App Service-Pläne stellen einen Satz an Funktionen und Kapazitäten dar, die Si
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -30,7 +30,7 @@ Es gibt zwei Möglichkeiten für die Erstellung und die Verwaltung von Import- u
 - Über das Azure Verwaltungsportal
 - Über eine REST-Schnittstelle zum Dienst
 
-Dieser Artikel bietet eine Übersicht über den Import-/Export-Dienst und beschreibt die Verwendung des Verwaltungsportals für den Import-/Export-Dienst. Weitere Informationen zur REST-API finden Sie unter [Import/Export Service REST API Reference](http://go.microsoft.com/fwlink/?LinkID=329099) \(Import-/Export-Dienst REST-API-Verweis, in englischer Sprache\).
+Dieser Artikel bietet eine Übersicht über den Import-/Export-Dienst und beschreibt die Verwendung des Verwaltungsportals für den Import-/Export-Dienst. Weitere Informationen zur REST-API finden Sie unter [Import/Export Service REST API Reference](http://go.microsoft.com/fwlink/?LinkID=329099) (Import-/Export-Dienst REST-API-Verweis, in englischer Sprache).
 
 ## Einführung in den Import/Export-Dienst ##
 
@@ -74,11 +74,11 @@ Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vor
 
 ### Importauftrag erstellen
 
-1.	Sobald Sie Ihr Laufwerk vorbereitet haben, navigieren Sie zum Speicherkonto im Verwaltungsportal, und zeigen Sie das Dashboard an. Klicken Sie unter <strong>Auf einen Blick</strong> auf <strong>Importauftrag erstellen</strong>. 
+1.	Sobald Sie Ihr Laufwerk vorbereitet haben, navigieren Sie zum Speicherkonto im Verwaltungsportal, und zeigen Sie das Dashboard an. Klicken Sie unter **Schnelleinsicht** auf **Create an Import Job**. 
  
 2.	Geben Sie im ersten Schritt des Assistenten an, dass Sie Ihr Laufwerk vorbereitet haben und dass Sie die Laufwerkprotokolldatei zur Hand haben.
  
-3.	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Importauftrag an. Wenn Sie ausführliche Protokolldaten für den Importauftrag speichern möchten, wählen Sie die Option <strong>Das ausführliche Protokoll im Blobcontainer "waimportexport" speichern</strong>.
+3.	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Importauftrag an. Wenn Sie ausführliche Protokolldaten für den Importauftrag speichern möchten, wählen Sie die Option **Save the verbose log in my 'waimportexport' blob container**.
 
 4.	Laden Sie im dritten Schritt die Protokolldateien hoch, die Sie während der Vorbereitung des Laufwerks erhalten haben. Sie müssen pro vorbereitetem Laufwerk eine Datei hochladen.
 
@@ -104,9 +104,9 @@ Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vor
 
 Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu informieren, dass Sie ein oder mehrere leere Laufwerke an das Datacenter schicken. So können die Daten von Ihrem Speicherkonto auf die Laufwerke exportiert werden, und die Laufwerke werden Ihnen dann zugeschickt.
 
-1. 	Navigieren Sie zum Speicherkonto im Verwaltungsportal, und zeigen Sie das Dashboard an, um einen Exportauftrag zu erstellen. Klicken Sie unter <strong>Auf einen Blick</strong> auf <strong>Exportauftrag erstellen</strong>, und fahren Sie mit dem Assistenten fort.
+1. 	Navigieren Sie zum Speicherkonto im Verwaltungsportal, und zeigen Sie das Dashboard an, um einen Exportauftrag zu erstellen. Klicken Sie unter **Schnelleinsicht** auf **Create an Export Job**, und fahren Sie mit dem Assistenten fort.
 
-2. 	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Exportauftrag an. Wenn Sie ausführliche Protokolldaten für den Exportauftrag speichern möchten, wählen Sie die Option <strong>Das ausführliche Protokoll im Blobcontainer "waimportexport" speichern</strong>.
+2. 	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Exportauftrag an. Wenn Sie ausführliche Protokolldaten für den Exportauftrag speichern möchten, wählen Sie die Option **Save the verbose log in my 'waimportexport' blob container**.
 
 3.	Legen Sie im dritten Schritt fest, welche Blob-Daten Sie von Ihrem Speicherkonto auf Ihr leeres Laufwerk oder Ihre Laufwerke exportieren möchten. Sie können alle Blob-Daten des Speicherkontos exportieren, oder Sie legen fest, welche Blobs oder Blob-Sätze exportiert werden sollen.
 
@@ -117,50 +117,15 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 
 	Die Tabelle zeigt Beispiele für gültige Blob-Pfade:
 
-	<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
-	<tbody>
-		<tr>
-			<td><strong>Auswahl</strong></td>
-			<td><strong>Blobpfad</strong></td>
-			<td><strong>Beschreibung</strong></td>
-		</tr>
-		<tr>
-			<td>Beginnt mit</td>
-			<td>/</td>
-			<td>Exportiert alle Blobs im Speicherkonto</td>
-		</tr>
-		<tr>
-			<td>Beginnt mit</td>
-			<td>/$root/</td>
-			<td>Exportiert alle Blobs im Stammcontainer</td>
-		</tr>
-		<tr>
-			<td>Beginnt mit</td>
-			<td>/book</td>
-			<td>Exportiert alle Blobs in allen Containern mit dem Präfix <strong>book</strong></td>
-		</tr>
-		<tr>
-			<td>Beginnt mit</td>
-			<td>/music/</td>
-			<td>Exportiert alle Blobs im Container <strong>music</strong></td>
-		</tr>
-		<tr>
-			<td>Beginnt mit</td>
-			<td>/music/love</td>
-			<td>Exportiert alle Blobs im Container <strong>music</strong>, die mit dem Präfix <strong>love</strong> beginnen</td>
-		</tr>
-		<tr>
-			<td>Entspricht</td>
-			<td>$root/logo.bmp</td>
-			<td>Exportiert das Blob <strong>logo.bmp</strong> im Stammcontainer</td>
-		</tr>
-		<tr>
-			<td>Entspricht</td>
-			<td>videos/story.mp4</td>
-			<td>Exportiert das Blob <strong>story.mp4</strong> im Container <strong>videos</strong></td>
-		</tr>
-	</tbody>
-</table>
+	Auswahl|Blob-Pfad|Beschreibung
+	---|---|---
+	Beginnt mit|/|Exportiert alle Blobs im Speicherkonto
+	Beginnt mit|/$root/|Exportiert alle Blobs im Stammcontainer
+	Beginnt mit|/book|Exportiert alle Blobs in allen Containern mit dem Präfix **book**
+	Beginnt mit|/music/|Exportiert alle Blobs im Container **music**
+	Beginnt mit|/music/love|Exportiert alle Blobs im Container **music**, die mit dem Präfix **love** beginnen
+	Entspricht|$root/logo.bmp|Exportiert das Blob **logo.bmp** im Stammcontainer
+	Entspricht|videos/story.mp4|Exportiert das Blob **story.mp4** im Container **videos**
 
 
 4.	Geben Sie im vierten Schritt einen beschreibenden Namen für den Exportauftrag ein. Der eingegebene Name darf nur Kleinbuchstaben, Ziffern, Trennstriche und Unterstriche enthalten, muss mit einem Buchstaben beginnen und darf keine Leerzeichen enthalten.
@@ -171,7 +136,7 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 
 	Falls Sie Ihre Nachverfolgungsnummer haben, wählen Sie Ihr Transportunternehmen in der Liste aus und geben Sie die Nummer ein.
 
-	Falls Sie noch keine Nachverfolgungsnummer haben, wählen Sie die Option <strong>Ich gebe die Versandinformationen für diesen Exportauftrag an, nachdem ich mein Paket versendet habe</strong> aus und schließen Sie den Exportvorgang ab.
+	Falls Sie noch keine Nachverfolgungsnummer haben, wählen Sie die Option **Ich werde die Versanddaten für diesen Exportauftrag angeben, sobald ich mein Paket verschickt habe** aus und schließen Sie den Exportvorgang ab.
 
 6. Um Ihre Nachverfolgungsnummer einzugeben, nachdem Sie Ihr Paket verschickt haben, kehren Sie zur Seite **Import/Export** für Ihr Speicherkonto im Verwaltungsportal zurück, wählen Ihren Auftrag in der Liste aus und klicken auf **Versandinformationen**. Navigieren Sie durch den Assistenten und geben Sie Ihre Nachverfolgungsnummer in Schritt 2 ein.
 	
@@ -187,34 +152,14 @@ Sie können den Status Ihrer Import- oder Exportaufträge im Verwaltungsportal n
 
 In der Tabelle sind die Bedeutungen der Auftragsstatus beschrieben:
 
-<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
-	<tbody>
-		<tr>
-			<td><strong>Auftragsstatus</strong></td>
-			<td><strong>Beschreibung</strong></td>
-		</tr>
-		<tr>
-			<td>Wird erstellt</td>
-			<td>Ihr Auftrag wurde erstellt, aber Sie haben Ihre Versandinformationen noch nicht angegeben.</td>
-		</tr>
-		<tr>
-			<td>Wird versendet</td>
-			<td>Ihr Auftrag wurde erstellt, und Sie haben Ihre Versandinformationen angegeben.</td>
-		</tr>
-		<tr>
-			<td>Wird übertragen</td>
-			<td>Ihre Daten werden von Ihrem Laufwerk (bei einem Importauftrag) oder auf Ihr Laufwerk (bei einem Exportauftrag) übertragen.</td>
-		</tr>
-		<tr>
-			<td>Wird verpackt</td>
-			<td>Die Übertragung Ihrer Daten ist abgeschlossen, und Ihre Festplatte wird für den Rückversand vorbereitet.</td>
-		</tr>
-		<tr>
-			<td>Abgeschlossen</td>
-			<td>Ihre Festplatte wurde an Sie zurückgeschickt.</td>
-		</tr>
-	</tbody>
-</table>
+Auftragsstatus|Beschreibung
+---|---
+Wird erstellt|Ihr Auftrag wurde erstellt, aber Sie haben Ihre Versandinformationen noch nicht angegeben.
+Wird versendet|Ihr Auftrag wurde erstellt, und Sie haben Ihre Versandinformationen angegeben.
+Wird übertragen|Ihre Daten werden von Ihrem Laufwerk (bei einem Importauftrag) oder auf Ihr Laufwerk (bei einem Exportauftrag) übertragen.
+Wird verpackt|Die Übertragung Ihrer Daten ist abgeschlossen, und Ihre Festplatte wird für den Rückversand vorbereitet.
+Abgeschlossen|Ihre Festplatte wurde an Sie zurückgeschickt.
+
 
 ## BitLocker-Schlüssel für einen Exportauftrag anzeigen ##
 
@@ -236,7 +181,7 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
  
 **Welche Schnittstellentypen werden unterstützt?**
 
-- Der Import-/Exportdienst unterstützt interne SATA II/III-Laufwerke \(HDDs\) im 3,5-Zoll-Format. Sie können die folgenden Konverter verwenden, um Daten von USB-Geräten vor dem Versand auf SATA zu übertragen:
+- Der Import-/Exportdienst unterstützt interne SATA II/III-Laufwerke (HDDs) im 3,5-Zoll-Format. Sie können die folgenden Konverter verwenden, um Daten von USB-Geräten vor dem Versand auf SATA zu übertragen:
 	- Anker 68UPSATAA-02BU
 	- Anker 68UPSHHDS-BU
 	- Startech SATADOCK22UE 
@@ -279,7 +224,7 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 **Welche Kurierdienste können verwendet werden?**
 
-- Für US- und europäische Regionen wird nur [Federal Express](http://www.fedex.com/us/oadr/) \(FedEx\) unterstützt. Alle Pakete werden per FedEx Ground oder FedEx International Economy zurückgeschickt.
+- Für US- und europäische Regionen wird nur [Federal Express](http://www.fedex.com/us/oadr/) (FedEx) unterstützt. Alle Pakete werden per FedEx Ground oder FedEx International Economy zurückgeschickt.
 
 - Für asiatische Regionen wird nur [DHL](http://www.dhl-welcome.com/Tutorial/) unterstützt. Alle Pakete werden per DHL Express Worldwide zurückgeschickt.
 
@@ -287,20 +232,20 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 **Entstehen Kosten für den Rückversand?**
 
-- Microsoft verwendet die Kontonummer für das Transportunternehmen, die Sie bei der Auftragserstellung angegeben haben, um die Laufwerke vom Rechenzentrum an Ihre Absenderadresse zu schicken. Geben Sie daher unbedingt eine Kontonummer für ein Transportunternehmen an, das in der Region des Rechenzentrums unterstützt wird. Sie können ein Konto bei [FedEx](http://www.fedex.com/us/oadr/) \(für USA und Europa\) oder [DHL](http://www.dhl-welcome.com/Tutorial/) \(Asien\) erstellen, falls Sie kein solches Konto haben.
+- Microsoft verwendet die Kontonummer für das Transportunternehmen, die Sie bei der Auftragserstellung angegeben haben, um die Laufwerke vom Rechenzentrum an Ihre Absenderadresse zu schicken. Geben Sie daher unbedingt eine Kontonummer für ein Transportunternehmen an, das in der Region des Rechenzentrums unterstützt wird. Sie können ein Konto bei [FedEx](http://www.fedex.com/us/oadr/) (für USA und Europa) oder [DHL](http://www.dhl-welcome.com/Tutorial/) (Asien) erstellen, falls Sie kein solches Konto haben.
 
 - Die Rücksendegebühren werden Ihrem Konto beim Transportunternehmen berechnet und hängen vom Transportunternehmen ab.
 
 **Von wo aus kann ich meine Daten verschicken bzw. wohin kann ich sie schicken lassen?**
 
 - Der Import-/Exportdienst unterstützt Import und Export von Daten in Speicherkonten in den folgenden Regionen:
-	- USA \(Ost\) 
+	- USA (Ost) 
 	- Westen USA 
 	- USA Nord Mitte 
 	- USA Süd Mitte 
 	- Nordeuropa
 	- Westeuropa
-	- Asien \(Osten\)
+	- Asien (Osten)
 	- Südostasien
 
 - Sie erhalten eine Lieferadresse in der Region, in der sich Ihr Speicherkonto befindet. Wenn Sie z. B. in den USA leben und sich Ihr Speicherkonto im Rechenzentrum in Westeuropa befindet, erhalten Sie für den Versand der Laufwerke eine Lieferadresse in Europa.
@@ -324,4 +269,4 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 [export-job-bitlocker-keys]: ./media/storage-import-export-service/export-job-bitlocker-keys.png
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

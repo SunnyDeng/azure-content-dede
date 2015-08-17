@@ -7,7 +7,7 @@ Dieses Verfahren umfasst Folgendes:
 
 3. [Ausführen von „Maintainer.exe“](#to-run-the-maintainer)
 
-4. [Wiederherstellen der Einstellungen von Inhaltsdatenbank und Papierkorb](to-revert-the-content-database-and-recycle-bin-settings)
+4. [Wiederherstellen der Einstellungen von Inhaltsdatenbank und Papierkorb](#to-revert-the-content-database-and-recycle-bin-settings)
 
 #### So bereiten Sie die Ausführung von Maintainer vor
 
@@ -37,7 +37,7 @@ Dieses Verfahren umfasst Folgendes:
 
        `exec mssqlrbs.rbs_sp_set_config_value ‘delete_scan_period’ , ’time 00:00:00’`
 
-2. Bearbeiten Sie auf dem Front-End-Webserver unter **Zentraladministration** die allgemeinen Webanwendungseinstellungen für die gewünschte Inhaltsdatenbank, um den Papierkorb vorübergehend zu deaktivieren. Im Zuge dieser Aktion wird auch der Papierkorb für alle dazugehörigen Websitesammlungen geleert. Klicken Sie auf **Zentraladministration** -\> **Anwendungsverwaltung** -\> **Webanwendungen \(Webanwendungen verwalten\)** -\> **SharePoint - 80** -\> **Allgemeine Anwendungseinstellungen**. Legen Sie den Status des Papierkorbs auf **AUS** fest.
+2. Bearbeiten Sie auf dem Front-End-Webserver unter **Zentraladministration** die allgemeinen Webanwendungseinstellungen für die gewünschte Inhaltsdatenbank, um den Papierkorb vorübergehend zu deaktivieren. Im Zuge dieser Aktion wird auch der Papierkorb für alle dazugehörigen Websitesammlungen geleert. Klicken Sie auf **Zentraladministration** -> **Anwendungsverwaltung** -> **Webanwendungen (Webanwendungen verwalten)** -> **SharePoint - 80** -> **Allgemeine Anwendungseinstellungen**. Legen Sie den Status des Papierkorbs auf **AUS** fest.
 
     ![Allgemeine Webanwendungseinstellungen](./media/storsimple-sharepoint-adapter-garbage-collection/HCS_WebApplicationGeneralSettings-include.png)
 
@@ -61,6 +61,6 @@ Dieses Verfahren umfasst Folgendes:
 
       `exec mssqlrbs.rbs_sp_set_config_value ‘orphan_scan_period’ , ’days 30’`
 
-2. Bearbeiten Sie auf dem Front-End-Webserver unter **Zentraladministration** die allgemeinen Webanwendungseinstellungen für die gewünschte Inhaltsdatenbank, um den Papierkorb wieder zu aktivieren. Klicken Sie auf **Zentraladministration** -\> **Anwendungsverwaltung** -\> **Webanwendungen \(Webanwendungen verwalten\)** -\> **SharePoint - 80** -\> **Allgemeine Anwendungseinstellungen**. Legen Sie den Status des Papierkorbs auf **EIN** fest.
+2. Bearbeiten Sie auf dem Front-End-Webserver unter **Zentraladministration** die allgemeinen Webanwendungseinstellungen für die gewünschte Inhaltsdatenbank, um den Papierkorb wieder zu aktivieren. Klicken Sie auf **Zentraladministration** -> **Anwendungsverwaltung** -> **Webanwendungen (Webanwendungen verwalten)** -> **SharePoint - 80** -> **Allgemeine Anwendungseinstellungen**. Legen Sie den Status des Papierkorbs auf **EIN** fest.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

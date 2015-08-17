@@ -87,7 +87,7 @@ Hinweis: Wenn aktive Vorgänge ausgeführt werden oder fehlgeschlagen sind, navi
 
 | Szenarios | Ereignisquellen |
 |-------------------------	|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| Schutz des VMM-Standorts | VMM-Server <ul><li> **Applications and Service Logs/Microsoft/VirtualMachineManager/Server/Admin** </li></ul> Hyper-V-Host <ul><li> **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** \(für Azure als Ziel\)</li><li> **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin** </li></ul> |
+| Schutz des VMM-Standorts | VMM-Server <ul><li> **Applications and Service Logs/Microsoft/VirtualMachineManager/Server/Admin** </li></ul> Hyper-V-Host <ul><li> **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** (für Azure als Ziel)</li><li> **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin** </li></ul> |
 | Schutz des Hyper-V-Standorts | <ul><li> **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** </li><li> **Applications and Service Logs/Microsoft/Azure Site Recovery/Provider/Operational** </li><li> **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin** </li><ul>|
 
 
@@ -127,11 +127,11 @@ Beenden Sie zum Anzeigen der gesammelten Informationen zunächst die Ablaufverfo
 
 ### Protokollsammlung
 
-Im Hinblick auf den Schutz von VMM-Standorten finden Sie Informationen zum Sammeln der erforderlichen Protokolle unter [ASR Log Collection using Support Diagnostics Platform \(SDP\) Tool](http://social.technet.microsoft.com/wiki/contents/articles/28198.asr-data-collection-and-analysis-using-the-vmm-support-diagnostics-platform-sdp-tool.aspx) \(in englischer Sprache\).
+Im Hinblick auf den Schutz von VMM-Standorten finden Sie Informationen zum Sammeln der erforderlichen Protokolle unter [ASR Log Collection using Support Diagnostics Platform (SDP) Tool](http://social.technet.microsoft.com/wiki/contents/articles/28198.asr-data-collection-and-analysis-using-the-vmm-support-diagnostics-platform-sdp-tool.aspx) (in englischer Sprache).
 
 Laden Sie für den Schutz von Hyper-V-Zweigstellen und SMB-Standorten dieses [Tool](https://dcupload.microsoft.com/tools/win7files/DIAG_ASRHyperV_global.DiagCab) herunter, und führen Sie es auf dem Hyper-V-Host aus, um die Protokolle zu sammeln.
 
-Informationen zum Sammeln der erforderlichen Protokolle für physische oder VMware-Szenarios finden Sie unter [Azure Site Recovery Log Collection for VMware and Physical site protection](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx) \(in englischer Sprache\).
+Informationen zum Sammeln der erforderlichen Protokolle für physische oder VMware-Szenarios finden Sie unter [Azure Site Recovery Log Collection for VMware and Physical site protection](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx) (in englischer Sprache).
 
 Das SDP-Tool sammelt die Protokolldatei lokal. Diese finden Sie auch in einem zufällig benannten Unterordner unter **%LocalAppData%\\ElevatedDiagnostics**.
 
@@ -141,20 +141,20 @@ Um ein Supportticket für ASR zu öffnen, wenden Sie sich an den Azure-Support u
 
 ## KB-Artikel
 
--   \[How to preserve the drive letter for protected virtual machines \(in englischer Sprache\)
-    > http://support.microsoft.com/kb/3031135
+-   [How to preserve the drive letter for protected virtual machines (in englischer Sprache)
+    > that are failed over or migrated to Azure](http://support.microsoft.com/kb/3031135)
 
--   \[How to troubleshoot Azure Recovery
-    > Services \(in englischer Sprache\)\] \(http://support.microsoft.com/kb/3005185\)
+-   [How to troubleshoot Azure Recovery
+    > Services (in englischer Sprache)] (http://support.microsoft.com/kb/3005185)
 
--   \[How to Enable Debug Logging for the Azure Site Recovery in Hyper-V
-    > Site Protection \(in englischer Sprache\)\] \(http://support.microsoft.com/kb/3033922\)
+-   [How to Enable Debug Logging for the Azure Site Recovery in Hyper-V
+    > Site Protection (in englischer Sprache)] (http://support.microsoft.com/kb/3033922)
 
--   \[ASR: "The cluster resource could not be found" error when you try
-    > to enable protection for a virtual machine \(in englischer Sprache\)\] \(http://support.microsoft.com/kb/3010979\)
+-   [ASR: "The cluster resource could not be found" error when you try
+    > to enable protection for a virtual machine (in englischer Sprache)] (http://support.microsoft.com/kb/3010979)
     
--   \[Understand & Troubleshoot Hyper-V Replica
-    > Guide \(in englischer Sprache\)\] \(http://www.microsoft.com/en-in/download/details.aspx?id=29016\)
+-   [Understand & Troubleshoot Hyper-V Replica
+    > Guide (in englischer Sprache)] (http://www.microsoft.com/en-in/download/details.aspx?id=29016)
 	
 	
 	
@@ -190,9 +190,9 @@ Im Folgenden werden häufige Fehler aufgeführt, die passieren können, sowie de
 
     -   [Ein Failover auf den ausgewählten Wiederherstellungspunkt für den virtuellen Computer: Allgemeiner Zugriffsfehler.](http://social.technet.microsoft.com/wiki/contents/articles/25504.fail-over-to-the-selected-recovery-point-for-virtual-machine-general-access-denied-error.aspx)
 
-    -   [Hyper-V konnte kein Failover auf den ausgewählten Wiederherstellungspunkt für virtuelle Computer ausgeben: Der Vorgang wurde abgebrochen. Versuchen Sie es mit einem neueren Wiederherstellungspunkt. \(0x80004004\)](http://social.technet.microsoft.com/wiki/contents/articles/25503.hyper-v-failed-to-fail-over-to-the-selected-recovery-point-for-virtual-machine-operation-aborted-try-a-more-recent-recovery-point-0x80004004.aspx)
+    -   [Hyper-V konnte kein Failover auf den ausgewählten Wiederherstellungspunkt für virtuelle Computer ausgeben: Der Vorgang wurde abgebrochen. Versuchen Sie es mit einem neueren Wiederherstellungspunkt. (0x80004004)](http://social.technet.microsoft.com/wiki/contents/articles/25503.hyper-v-failed-to-fail-over-to-the-selected-recovery-point-for-virtual-machine-operation-aborted-try-a-more-recent-recovery-point-0x80004004.aspx)
 
-    -   Eine Verbindung mit dem Server konnte nicht hergestellt werden \(0x00002EFD\).
+    -   Eine Verbindung mit dem Server konnte nicht hergestellt werden (0x00002EFD).
 
         -   [Fehler von Hyper-V beim Aktivieren der umgekehrten Replikation für den virtuellen Computer](http://social.technet.microsoft.com/wiki/contents/articles/25505.a-connection-with-the-server-could-not-be-established-0x00002efd-hyper-v-failed-to-enable-reverse-replication-for-virtual-machine.aspx)
 
@@ -215,11 +215,11 @@ Im Folgenden werden häufige Fehler aufgeführt, die passieren können, sowie de
 
 ### Konfigurationsserver, Prozessserver, Masterziel
 
-Konfigurationsserver \(Configuration Server, CS\), Prozessserver \(Process Server, PS\), Masterziel \(Master Target, MT\)
+Konfigurationsserver (Configuration Server, CS), Prozessserver (Process Server, PS), Masterziel (Master Target, MT)
 
 -   [Der ESXi-Host, auf dem der PS/CS als virtueller Computer gehostet wird, schlägt mit einem violetten Bildschirm fehl.](http://social.technet.microsoft.com/wiki/contents/articles/31107.vmware-esxi-host-experiences-a-purple-screen-of-death.aspx)
 
 ### Remotedesktop-Problembehandlung nach einem Failover
 Viele Kunden haben Probleme beim Herstellen einer Verbindung mit dem virtuellen Computer in Azure festgestellt, für den ein Failover ausgeführt wurde. Stellen Sie anhand des Dokuments für die Problembehandlung eine RDP-Verbindung mit dem virtuellen Computer her. [Link zum Dokument](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

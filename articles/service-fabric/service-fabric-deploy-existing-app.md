@@ -80,7 +80,7 @@ Hier ein Beispiel für ein Dienstmanifest:
 ## Dateistruktur des Anwendungspakets
 Damit eine Anwendung z. B. mit Powershell-Cmdlets bereitgestellt werden kann, muss die Anwendung einer vordefinierten Verzeichnisstruktur folgen.
 
-\applicationmanifest.xml \Mein Dienstpaket \servicemanifest.xml \code \config \data
+\\applicationmanifest.xml \\Mein Dienstpaket \\servicemanifest.xml \\code \\config \\data
 
 Das Stammverzeichnis enthält die Datei "applicationmanifest.xml", welche die Anwendung definiert. Für jeden Dienst, der in der Anwendung enthalten ist, gibt es ein Unterverzeichnis, das alle für den Dienst erforderlichen Artefakte enthält: die Datei "servicemanifest.xml" und in der Regel drei Verzeichnisse:
 
@@ -198,7 +198,7 @@ Mit dem Element `Entrypoint` in der Dienstmanifestdatei wird angegeben, wie den 
 				  \ ...
 			\config
 			\data
-			...
+			\...
 
 ```
 
@@ -311,4 +311,4 @@ Wir arbeiten an der Entwicklung eines Tools, mit dem eine vorhandene Anwendung e
 
 	
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

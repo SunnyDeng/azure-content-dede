@@ -7,6 +7,7 @@
 	manager="jwhit"
 	editor="tysonn"/>
 
+
 <tags
 	ms.service="site-recovery"
 	ms.workload="backup-recovery"
@@ -15,6 +16,7 @@
 	ms.topic="hero-article"
 	ms.date="05/07/2015"
 	ms.author="raynew"/>
+
 
 #  Einrichten von Schutz zwischen einem lokalen VMM-Standort und Azure
 
@@ -88,7 +90,7 @@ Wenn Sie eine Netzwerkzuordnung bereitstellen möchten, benötigen Sie Folgendes
 
 4. Geben Sie unter *Name* einen Anzeigenamen ein, über den der Tresor identifiziert wird.
 
-5. Wählen Sie unter *Region* die geografische Region für den Tresor aus. Zu den verfügbaren geografischen Regionen zählen Ostasien, Westeuropa, USA \(Westen\), USA \(Osten\), Nordeuropa und Südostasien.
+5. Wählen Sie unter *Region* die geografische Region für den Tresor aus. Zu den verfügbaren geografischen Regionen zählen Ostasien, Westeuropa, USA (Westen), USA (Osten), Nordeuropa und Südostasien.
 6. Klicken Sie auf *Tresor erstellen*.
 
 	![Neuer Tresor](./media/site-recovery-vmm-to-azure/ASRE2AVMM_HvVault.png)
@@ -128,9 +130,9 @@ Fahren Sie nach der Installation des Anbieters mit der Einrichtung fort, um den 
 
 5. Geben Sie auf der Seite **Internetverbindung** an, wie sich der Anbieter auf dem VMM-Server mit dem Internet verbinden soll. Wählen Sie *Proxyeinstellungen des Systems verwenden* aus, um die Standard-Internetverbindungseinstellungen auf dem Server zu verwenden.
 
-	![Interneteinstellungen](./media/site-recovery-vmm-to-azure/ASRE2AVMM_ProviderProxy.png) – Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung verlangt, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Ports eingeben. – Der VMM-Server und die Hyper-V-Hosts sollten auf die folgenden URLs Zugriff haben – *.hypervrecoverymanager.windowsazure.com – *.accesscontrol.windows.net – *.backup.windowsazure.com – *.blob.core.windows.net – *.store.core.windows.net – Erlauben Sie die IP-Adressen wie in [IP-Bereiche von Azure-Datencenter](http://go.microsoft.com/fwlink/?LinkId=511094) und HTTPS \(443\)-Protokoll beschrieben. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
+	![Interneteinstellungen](./media/site-recovery-vmm-to-azure/ASRE2AVMM_ProviderProxy.png) – Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen. Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung verlangt, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Ports eingeben. – Der VMM-Server und die Hyper-V-Hosts sollten auf die folgenden URLs Zugriff haben – \*.hypervrecoverymanager.windowsazure.com – \*.accesscontrol.windows.net – \*.backup.windowsazure.com – \*.blob.core.windows.net – \*.store.core.windows.net – Erlauben Sie die IP-Adressen wie in [IP-Bereiche von Azure-Datencenter](http://go.microsoft.com/fwlink/?LinkId=511094) und HTTPS (443)-Protokoll beschrieben. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
-	- Wenn Sie einen benutzerdefinierten Proxy verwenden, wird ein ausführendes VMM-Konto \(DRAProxyAccount\) automatisch mit den angegebenen Proxyanmeldeinformationen erstellt. Konfigurieren Sie den Proxyserver so, dass dieses Konto erfolgreich authentifiziert werden kann. In der VMM-Konsole können die Einstellungen des ausführenden VMM-Kontos geändert werden. Zu diesem Zweck öffnen Sie den Arbeitsbereich "Einstellungen", erweitern Sie "Sicherheit", klicken Sie auf "Ausführende Konten", und ändern Sie das Kennwort für DRAProxyAccount. Sie müssen den VMM-Dienst neu starten, damit diese Einstellung wirksam wird.
+	- Wenn Sie einen benutzerdefinierten Proxy verwenden, wird ein ausführendes VMM-Konto (DRAProxyAccount) automatisch mit den angegebenen Proxyanmeldeinformationen erstellt. Konfigurieren Sie den Proxyserver so, dass dieses Konto erfolgreich authentifiziert werden kann. In der VMM-Konsole können die Einstellungen des ausführenden VMM-Kontos geändert werden. Zu diesem Zweck öffnen Sie den Arbeitsbereich "Einstellungen", erweitern Sie "Sicherheit", klicken Sie auf "Ausführende Konten", und ändern Sie das Kennwort für DRAProxyAccount. Sie müssen den VMM-Dienst neu starten, damit diese Einstellung wirksam wird.
 
 6. Wählen Sie unter **Registrierungsschlüssel** den Schlüssel aus, den Sie von Azure Site Recovery heruntergeladen und auf den VMM-Server kopiert haben.
 7. Prüfen Sie unter **Tresorname** den Namen des Tresors, in dem der Server registriert wird.
@@ -159,7 +161,7 @@ Falls Sie noch kein Azure-Speicherkonto besitzen, klicken Sie auf **Azure-Speich
 
 Installieren Sie den Azure Recovery Services-Agent auf jedem Hyper-V-Hostserver in den VMM-Clouds, die Sie schützen möchten.
 
-1. Klicken Sie auf der Seite Schnellstart auf <b>Azure Site Recovery Services-Agent für die Installation auf Hosts</b> herunterladen, um die neueste Version der Agent-Installationsdatei herunterzuladen.
+1. Klicken Sie auf der Seite „Schnellstart“ auf <b>Azure Site Recovery Services-Agent für die Installation auf Hosts</b> herunterladen, um die neueste Version der Agent-Installationsdatei zu erhalten.
 
 	![Recovery Services-Agent installieren](./media/site-recovery-vmm-to-azure/ASRE2AVMM_InstallHyperVAgent.png)
 
@@ -180,11 +182,11 @@ Nachdem Sie den VMM-Server registriert haben, können Sie Schutzeinstellungen f�
 1. Klicken Sie auf der Seite „Schnellstart“ auf **Schutz für VMM-Clouds einrichten**.
 2. Klicken Sie auf der Registerkarte **Geschützte Elemente** auf die Cloud, die Sie konfigurieren möchten, und gehen Sie zur Registerkarte **Konfiguration**.
 3. Wählen Sie unter <b>Ziel</b> die Option <b>Microsoft Azure</b> aus.
-4. Wählen Sie unter <b>Speicherkonto</b> das Azure-Speicherkonto aus, das Sie zum Replizieren auf die virtuellen Computer verwenden möchten.
+4. Wählen Sie unter <b>Speicherkonto</b> das Azure-Speicherkonto aus, auf das Sie Ihre virtuellen Computer replizieren möchten.
 5. Legen Sie <b>Gespeicherte Daten verschlüsseln</b> auf <b>Aus</b> fest. Diese Einstellung gibt an, dass die Daten beim Replizieren zwischen dem lokalen Standort und Azure verschlüsselt werden sollen.
 6. Lassen Sie unter <b>Kopierhäufigkeit</b> die Standardeinstellung unverändert. Dieser Wert gibt an, wie oft die Daten zwischen dem Quell- und dem Zielspeicherort synchronisiert werden sollen.
-7. Lassen Sie unter <b>Wiederherstellungspunkte beibehalten</b> die Standardeinstellung unverändert. Wenn die Standardeinstellung 0 \(Null\) aktiviert ist, wird nur der letzte Wiederherstellungspunkt für einen primären virtuellen Computer auf einem Replikathostserver gespeichert.
-8. Lassen Sie unter <b>Häufigkeit von anwendungskonsistenten Momentaufnahmen</b> die Standardeinstellung unverändert. Dieser Wert gibt an, wie oft Momentaufnahmen erstellt werden. Momentaufnahmen verwenden VSS \(Volume Shadow Copy Service, Volumenschattenkopie-Dienst\), um sicherzustellen, dass Anwendungen zum Zeitpunkt der Momentaufnahme konsistent sind. Wenn Sie einen Wert festlegen möchten, stellen Sie sicher, dass er geringer als die Anzahl der konfigurierten zusätzlichen Wiederherstellungspunkte ist.
+7. Lassen Sie unter <b>Wiederherstellungspunkte beibehalten</b> die Standardeinstellung unverändert. Wenn die Standardeinstellung 0 (Null) aktiviert ist, wird nur der letzte Wiederherstellungspunkt für einen primären virtuellen Computer auf einem Replikathostserver gespeichert.
+8. Lassen Sie unter <b>Häufigkeit von anwendungskonsistenten Momentaufnahmen</b> die Standardeinstellung unverändert. Dieser Wert gibt an, wie oft Momentaufnahmen erstellt werden. Momentaufnahmen verwenden VSS (Volume Shadow Copy Service, Volumenschattenkopie-Dienst), um sicherzustellen, dass Anwendungen zum Zeitpunkt der Momentaufnahme konsistent sind. Wenn Sie einen Wert festlegen möchten, stellen Sie sicher, dass er geringer als die Anzahl der konfigurierten zusätzlichen Wiederherstellungspunkte ist.
 9. Geben Sie unter <b>Startzeit für Replikation</b> an, wann die erste Datenreplikation an Azure starten soll. Die Zeitzone auf dem Hyper-V-Hostserver wird verwendet. Es wird empfohlen, die erste Replikation außerhalb der Spitzenzeiten zu planen.
 
 	![Cloud-Replikationseinstellungen](./media/site-recovery-vmm-to-azure/ASRE2AVMM_CloudSettings.png)
@@ -197,7 +199,7 @@ Nach dem Speichern können die Cloud-Einstellungen auf der Registerkarte <b>Konf
 Bevor Sie mit der Netzwerkzuordnung beginnen, stellen Sie sicher, dass virtuelle Computer auf dem VMM-Quellserver mit einem VM-Netzwerk verbunden sind. Erstellen Sie außerdem ein oder mehrere virtuelle Azure-Netzwerke. Beachten Sie, dass einem einzelnen Azure-Netzwerk mehrere VM-Netzwerke zugeordnet werden können.
 
 1. Klicken Sie auf der Seite „Schnellstart“ auf **Netzwerke zuordnen**.
-2. Wählen Sie auf der Registerkarte **Netzwerke** unter **Quellenspeicherort** den VMM-Quellserver aus. Wählen Sie unter **Zielspeicherort** Azure aus.
+2. Wählen Sie auf der Registerkarte **Netzwerke** unter **Quellenspeicherort** den VMM-Quellserver aus. Wählen Sie „Azure“ unter **Zielspeicherort** aus.
 3. Unter **Quelle** wird eine Liste der VM-Netzwerke angezeigt, die mit dem VMM-Server verbunden sind. Unter **Ziel** werden die dem Abonnement zugeordneten Azure-Netzwerke angezeigt.
 4. Wählen Sie das VM-Quellnetzwerk aus, und klicken Sie auf **Zuordnen**.
 5. Wählen Sie auf der Seite **Zielnetzwerk auswählen** das Azure-Zielnetzwerk aus, das Sie verwenden möchten.
@@ -259,7 +261,7 @@ Um Ihre Bereitstellung zu testen, können Sie ein Testfailover für einen einzel
 
 	![Wiederherstellungsplan erstellen](./media/site-recovery-vmm-to-azure/ASRE2AVMM_RP1.png)
 
-2. Wahlen Sie auf der Seite **Virtuelle Computer auswählen** die virtuellen Computer aus, die dem Wiederherstellungsplan hinzugefügt werden sollen. Diese virtuellen Computer werden der Standardgruppe des Wiederherstellungsplans \(Gruppe 1\) hinzugefügt. Maximal 100 virtuelle Computer wurden in einem einzelnen Wiederherstellungsplan getestet.
+2. Wahlen Sie auf der Seite **Virtuelle Computer auswählen** die virtuellen Computer aus, die dem Wiederherstellungsplan hinzugefügt werden sollen. Diese virtuellen Computer werden der Standardgruppe des Wiederherstellungsplans (Gruppe 1) hinzugefügt. Maximal 100 virtuelle Computer wurden in einem einzelnen Wiederherstellungsplan getestet.
 
 	- Wenn Sie die Eigenschaften der virtuellen Computer überprüfen möchten, bevor Sie sie dem Plan hinzufügen, klicken Sie auf den virtuellen Computer auf der Eigenschaftenseite der Cloud, in der er sich befindet. Sie können auch die Eigenschaften des virtuellen Computers in der VMM-Konsole konfigurieren.
 	- Für alle angezeigten virtuellen Computer wurde die Schutzfunktion aktiviert. Die Liste enthält sowohl virtuelle Computer, die für den Schutz aktiviert wurden und deren erste Replikation abgeschlossen ist, als auch solche, die für den Schutz aktiviert wurden, deren erste Replikation jedoch noch aussteht. Nur virtuelle Computer, deren erste Replikation abgeschlossen ist, können im Rahmen eines Wiederherstellungsplans ein Failover durchführen. Überprüfen Sie daher den Status der ersten Replikation virtueller Computer im Plan, bevor Sie das Failover eines Wiederherstellungsplans starten.
@@ -276,7 +278,7 @@ Es gibt zwei Möglichkeiten, ein Testfailover in Azure auszuführen.
 - Testfailover ohne Azure-Netzwerk – Bei dieser Art von Testfailover wird überprüft, dass der virtuelle Computer in Azure ordnungsgemäß hochgefahren wird. Der virtuelle Computer wird nach einem Failover mit keinem Azure-Netzwerk verbunden.
 - Testfailover mit Azure-Netzwerk – Bei dieser Art von Failover wird überprüft, ob die gesamte Replikationsumgebung wie erwartet hochgefahren wird und die betreffenden virtuellen Computer mit dem angegebenen Azure-Zielnetzwerk verbunden werden. Bei der Subnetzverarbeitung wird für das Testfailover das Subnetz des virtuellen Testcomputers basierend auf dem Subnetz des virtuellen Replikatcomputers festgelegt. Dies unterscheidet sich von der regulären Replikation, bei der das Subnetz des virtuellen Replikatcomputers auf dem Subnetz des virtuellen Quellcomputers basiert.
 
-Wenn Sie ein Testfailover für einen virtuellen Computer, der für den Schutz in Azure aktiviert ist, ohne Angabe eines Azure-Zielnetzwerks durchführen möchten, müssen Sie nichts vorbereiten. Für ein Testfailover mit einem Azure-Zielnetzwerk müssen Sie ein neues Azure-Netzwerk erstellen, das von Ihrem Azure-Produktionsnetzwerk isoliert ist \(Standardverhalten bei der Erstellung eines neuen Netzwerks in Azure\), und die Infrastruktur einrichten, damit der replizierte virtuelle Computer erwartungsgemäß funktioniert. So kann beispielsweise ein virtueller Computer mit Domänencontroller und DNS mithilfe von Azure Site Recovery zu Azure repliziert und mittels Testfailover im Testnetzwerk erstellt werden. Gehen Sie wie folgt vor, um ein Testfailover durchzuführen:
+Wenn Sie ein Testfailover für einen virtuellen Computer, der für den Schutz in Azure aktiviert ist, ohne Angabe eines Azure-Zielnetzwerks durchführen möchten, müssen Sie nichts vorbereiten. Für ein Testfailover mit einem Azure-Zielnetzwerk müssen Sie ein neues Azure-Netzwerk erstellen, das von Ihrem Azure-Produktionsnetzwerk isoliert ist (Standardverhalten bei der Erstellung eines neuen Netzwerks in Azure), und die Infrastruktur einrichten, damit der replizierte virtuelle Computer erwartungsgemäß funktioniert. So kann beispielsweise ein virtueller Computer mit Domänencontroller und DNS mithilfe von Azure Site Recovery zu Azure repliziert und mittels Testfailover im Testnetzwerk erstellt werden. Gehen Sie wie folgt vor, um ein Testfailover durchzuführen:
 
 1. Führen Sie ein Testfailover des virtuellen Computers mit Domänencontroller und DNS in dem Netzwerk durch, das Sie auch für das eigentliche Testfailover des lokalen virtuellen Computers verwenden möchten.
 2. Notieren Sie sich die IP-Adresse, die dem virtuellen DNS-Computer nach dem Failover zugeordnet wurde.
@@ -321,4 +323,4 @@ Gehen Sie folgendermaßen vor, um ein Testfailover durchzuführen:
 <LI>Wenn Sie Fragen haben, besuchen Sie das<a href="http://go.microsoft.com/fwlink/?LinkId=313628"> Azure Recovery Services-Forum</a>.</LI></UL>
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

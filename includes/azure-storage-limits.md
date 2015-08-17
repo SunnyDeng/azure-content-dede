@@ -69,12 +69,12 @@
 </tr>
 </table>
 
-<sup>1</sup>Die gesamte Anforderungsrate für ein Speicherkonto ist auf 20.000 IOPS beschränkt. Wenn ein virtueller Computer die maximalen IOPS pro Datenträger belegt, sollten Sie sicherstellen, dass die gesamten IOPS auf allen virtuellen Festplatten der virtuellen Computer die Beschränkung für das Speicherkonto \(20.000 IOPS\) nicht überschreiten, um eine Drosselung zu vermeiden.
+<sup>1</sup>Die gesamte Anforderungsrate für ein Speicherkonto ist auf 20.000 IOPS beschränkt. Wenn ein virtueller Computer die maximalen IOPS pro Datenträger belegt, sollten Sie sicherstellen, dass die gesamten IOPS auf allen virtuellen Festplatten der virtuellen Computer die Beschränkung für das Speicherkonto (20.000 IOPS) nicht überschreiten, um eine Drosselung zu vermeiden.
 
-Basierend auf der Begrenzung für Transaktionen können Sie die Anzahl der Datenträger mit hoher Auslastung, die in einem Speicherkonto unterstützt werden, grob berechnen. Im Basic-Tarif liegt die maximal zulässige Anzahl der Datenträger mit hoher Auslastung für einen virtuellen Computer beispielsweise bei 66 Datenträgern \(20.000/300 IOPS pro Datenträger\) und im Standard-Tarif bei ungefähr 40 Datenträgern \(20.000/500 IOPS pro Datenträger\). Beachten Sie jedoch, dass das Speicherkonto eine größere Anzahl von Datenträgern unterstützen kann, wenn nicht alle Datenträger gleichzeitig eine hohe Auslastung aufweisen.
+Basierend auf der Begrenzung für Transaktionen können Sie die Anzahl der Datenträger mit hoher Auslastung, die in einem Speicherkonto unterstützt werden, grob berechnen. Im Basic-Tarif liegt die maximal zulässige Anzahl der Datenträger mit hoher Auslastung für einen virtuellen Computer beispielsweise bei 66 Datenträgern (20.000/300 IOPS pro Datenträger) und im Standard-Tarif bei ungefähr 40 Datenträgern (20.000/500 IOPS pro Datenträger). Beachten Sie jedoch, dass das Speicherkonto eine größere Anzahl von Datenträgern unterstützen kann, wenn nicht alle Datenträger gleichzeitig eine hohe Auslastung aufweisen.
 
-<sup>2</sup>\*Eingehend\* bezieht sich auf alle Daten \(Anforderungen\), die an ein Speicherkonto gesendet werden. *Ausgehend* bezieht sich auf alle Daten \(Antworten\), die von einem Speicherkonto empfangen werden.
+<sup>2</sup>*Eingehend* bezieht sich auf alle Daten (Anforderungen), die an ein Speicherkonto gesendet werden. *Ausgehend* bezieht sich auf alle Daten (Antworten), die von einem Speicherkonto empfangen werden.
 
 <sup>3</sup>GRS bezieht sich auf den georedundanten Speicher und LRS auf den lokal redundanten Speicher.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

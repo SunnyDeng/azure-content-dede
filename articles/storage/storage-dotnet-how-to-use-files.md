@@ -12,25 +12,29 @@
       ms.tgt_pltfrm="na"
       ms.devlang="dotnet"
       ms.topic="hero-article"
-      ms.date="07/06/2015"
+      ms.date="08/04/2015"
       ms.author="tamram" />
 
 # Verwenden des Azure-Dateispeichers mit PowerShell und .NET
 
 ## Übersicht
 
-Der Azure-Dateidienst stellt Dateifreigaben mit dem SMB 2.1-Standardprotokoll bereit. Anwendungen, die in Azure ausgeführt werden, können nun ganz einfach über standardmäßige und bekannte Dateisystem-APIs wie ReadFile und WriteFile Dateien zwischen virtuellen Computern freigeben. Darüber hinaus kann der Dateizugriff gleichzeitig über eine REST-Schnittstelle erfolgen, die eine Vielzahl von Hybridszenarien ermöglicht. Schließlich beruhen Azure-Dateien auf der gleichen Technologie wie BLOB-, Tabellen-, und Warteschlangendienste, was bedeutet, dass Azure-Dateien die vorhandenen Verfügbarkeit, Dauerhaftigkeit, Skalierbarkeit und geografische Redundanz nutzen, die in die Plattform integriert ist.
+Der Azure-Dateidienst stellt Dateifreigaben mit dem SMB 2.1-Standardprotokoll bereit. Anwendungen, die in Azure ausgeführt werden, können nun ganz einfach über standardmäßige und bekannte Dateisystem-APIs wie ReadFile und WriteFile Dateien zwischen virtuellen Computern freigeben. Darüber hinaus kann der Dateizugriff gleichzeitig über eine REST-Schnittstelle erfolgen, die eine Vielzahl von Hybridszenarien ermöglicht. Schließlich beruhen Azure-Dateien auf der gleichen Technologie wie BLOB-, Tabellen-, und Warteschlangendienste, was bedeutet, dass Azure-Dateien die vorhandenen Verfügbarkeit, Dauerhaftigkeit, Skalierbarkeit und geografische Redundanz nutzen, die in die Azure Storage-Plattform integriert ist.
 
 ## Informationen zu diesem Lernprogramm
 
 In diesem Lernprogramm für die ersten Schritte veranschaulichen wir die Grundlagen der Verwendung des Microsoft Azure-Dateispeichers. In diesem Lernprogramm wird Folgendes beschrieben:
 
-- Verwenden von PowerShell, um die Erstellung einer neuen Azure-Dateifreigabe, das Hinzufügen eines Verzeichnisses, das Hochladen einer lokalen Datei in die Freigabe und das Auflisten der Dateien in dem Verzeichnis zu veranschaulichen.
-- Bereitstellen der Dateifreigabe von einem virtuellen Azure-Computer, genau wie bei einer SMB-Freigabe.
+- Verwenden von Azure PowerShell, um die Erstellung einer neuen Azure-Dateifreigabe, das Hinzufügen eines Verzeichnisses, das Hochladen einer lokalen Datei in die Freigabe und das Auflisten der Dateien in dem Verzeichnis zu veranschaulichen.
+- Bereitstellen der Dateifreigabe von einem virtuellen Azure-Computer, genau wie bei der Bereitstellung einer SMB-Freigabe.
+- Verwenden der Azure Storage-Clientbibliothek für .NET, um aus einer lokalen Anwendung auf die Dateifreigabe zuzugreifen. Sie erstellen eine Konsolenanwendung und führen diese Aktionen mit der Dateifreigabe aus:
+	- Schreiben des Inhalts einer Datei in der Freigabe in das Konsolenfenster
+	- Festlegen des Kontingents (maximale Größe) für die Dateifreigabe
+	- Erstellen einer SAS (Shared Access Signature) für eine Datei, für die eine SAS-Richtlinie verwendet wird, die für die Freigabe definiert ist
+	- Kopieren einer Datei in eine andere Datei im selben Speicherkonto
+	- Kopieren einer Datei in ein BLOB im selben Speicherkonto
 
-Für Benutzer, die auf Dateien in einer Freigabe sowohl von einer lokalen Anwendung als auch von einem virtuellen Azure-Computer oder einem Cloud-Dienst aus zugreifen möchten, zeigen wir, wie Sie die Azure-Speicherclientbibliothek für .NET verwenden, um mit der Dateifreigabe von einer Desktopanwendung aus zu arbeiten.
-
-> [AZURE.NOTE]Zur Ausführung der .NET-Codebeispiele in dieser Anleitung ist die Azure .NET Storage Client Library 4.x oder höher erforderlich. Die Speicherclientbibliothek steht über [NuGet](https://www.nuget.org/packages/WindowsAzure.Storage/) zur Verfügung.
+[AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
 [AZURE.INCLUDE [storage-file-concepts-include](../../includes/storage-file-concepts-include.md)]
 
@@ -118,19 +122,19 @@ Windows stellt nun bei einem Neustart des virtuellen Computers erneut eine Verbi
 
 Nachdem Sie eine Remoteverbindung zu dem virtuellen Computer hergestellt haben, können Sie den Befehl `net use` mit folgender Syntax ausführen, um die Dateifreigabe bereitzustellen. Ersetzen Sie `<storage-account-name>` durch den Namen Ihres Speicherkontos und `<share-name>` durch den Namen Ihrer Dateispeicher-Freigabe:
 
-    net use <drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name>
+    net use <drive-letter>: \<storage-account-name>.file.core.windows.net<share-name>
 
 	example :
 	net use z: \\samples.file.core.windows.net\logs
 
-> [AZURE.NOTE]Da Sie die Speicherkonto-Anmeldeinformationen im vorherigen Schritt dauerhaft gespeichert haben, müssen Sie diese nicht mit dem Befehl `net use` angeben. Wenn Sie Ihre Anmeldeinformationen jedoch nicht dauerhaft gespeichert haben, fügen Sie sie als Parameter hinzu, der an den Befehl `net use` übergeben wird.
+Da Sie die Speicherkonto-Anmeldeinformationen im vorherigen Schritt dauerhaft gespeichert haben, müssen Sie diese nicht mit dem Befehl `net use` angeben. Wenn Sie Ihre Anmeldeinformationen noch nicht dauerhaft gespeichert haben, fügen Sie sie als Parameter hinzu, der an den Befehl `net use` übergeben wird, wie in diesem Beispiel gezeigt:
 
-    net use <drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /u:<storage-account-name> <storage-account-key>
+    net use <drive-letter>: \<storage-account-name>.file.core.windows.net<share-name> /u:<storage-account-name> <storage-account-key>
 
 	example :
 	net use z: \\samples.file.core.windows.net\logs /u:samples <storage-account-key>
 
-Sie können nun mit der Dateispeicher-Freigabe vom virtuellen Computer aus arbeiten, wie von jedem anderen Laufwerk auch. Sie können die Standarddateibefehle über die Eingabeaufforderung eingeben oder die bereitgestellte Freigabe und deren Inhalt im Datei-Explorer anzeigen. Außerdem können Sie Code auf dem virtuellen Computer ausführen, der über standardmäßige Windows-E/A-APIs auf die Dateifreigabe zugreift, die z. B. über die \[System.IO-Namespaces\]\(http://msdn.microsoft.com/library/gg145019(v=vs.110).aspx\) in .NET Framework bereitgestellt werden.
+Sie können nun mit der Dateispeicher-Freigabe vom virtuellen Computer aus arbeiten, wie von jedem anderen Laufwerk auch. Sie können die Standarddateibefehle über die Eingabeaufforderung eingeben oder die bereitgestellte Freigabe und deren Inhalt im Datei-Explorer anzeigen. Sie können auf dem virtuellen Computer auch Code ausführen, der mithilfe der standardmäßigen Datei-E/A-APIs von Windows (z. B. die von [System.IO-Namespaces](http://msdn.microsoft.com/library/gg145019.aspx) im .NET Framework bereitgestellten APIs) auf die Dateifreigabe zugreift.
 
 Sie können die Dateifreigabe auch über eine im Azure-Clouddienst ausgeführte Rolle bereitstellen, indem Sie eine Remoteverbindung zur Rolle herstellen.
 
@@ -144,7 +148,7 @@ Um die Verwendung der API von einer lokalen Anwendung aus zu veranschaulichen, e
 
 So erstellen Sie eine neue Konsolenanwendung in Visual Studio und installieren das Azure Storage NuGet-Paket:
 
-1. Wählen Sie in Visual Studio **Datei** -\> **Neues Projekt**, und wählen Sie dann **Windows** -\> **Konsolenanwendung** aus der Liste der Visual C\#-Vorlagen aus.
+1. Wählen Sie in Visual Studio **Datei** -> **Neues Projekt**, und wählen Sie dann **Windows** -> **Konsolenanwendung** aus der Liste der Visual C#-Vorlagen aus.
 2. Stellen Sie einen Namen für die Konsolenanwendung bereit, und klicken Sie dann auf **OK**.
 3. Nachdem Ihr Projekt erstellt wurde, klicken Sie mit der rechten Maustaste im Projektmappen-Explorer auf das Projekt und wählen **NuGet-Pakete verwalten** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
 
@@ -171,16 +175,19 @@ Als Nächstes speichern Sie Ihre Anmeldeinformationen in der Datei „app.config
 
 	using Microsoft.WindowsAzure;
 	using Microsoft.WindowsAzure.Storage;
+	using Microsoft.WindowsAzure.Storage.Blob;
 	using Microsoft.WindowsAzure.Storage.File;
 
 ### Programmgesteuertes Abrufen der Verbindungszeichenfolge
 
-Sie können Ihre gespeicherten Anmeldeinformationen aus der Datei „app.config“ entweder mit der Klasse `Microsoft.WindowsAzure.CloudConfigurationManager` oder der Klasse `System.Configuration.ConfigurationManager ` abrufen. In diesem Beispiel wird dargestellt, wie Sie Ihre Anmeldeinformationen mithilfe der Klasse `CloudConfigurationManager` abrufen und dann mit der Klasse `CloudStorageAccount` kapseln. Fügen Sie den folgenden Code der `Main()`-Methode in "program.cs" hinzu:
+Sie können Ihre gespeicherten Anmeldeinformationen aus der Datei „app.config“ entweder mit der Klasse `Microsoft.WindowsAzure.CloudConfigurationManager` oder der Klasse `System.Configuration.ConfigurationManager ` abrufen. Das Microsoft Azure-Konfigurations-Manager-Paket, das die `Microsoft.WindowsAzure.CloudConfigurationManager`-Klasse enthält, steht auf [Nuget](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager) zur Verfügung.
+
+In diesem Beispiel wird dargestellt, wie Sie Ihre Anmeldeinformationen mithilfe der Klasse `CloudConfigurationManager` abrufen und dann mit der Klasse `CloudStorageAccount` kapseln. Fügen Sie den folgenden Code der `Main()`-Methode in "program.cs" hinzu:
 
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-    	CloudConfigurationManager.GetSetting("StorageConnectionString"));
+    	CloudConfigurationManager.GetSetting("StorageConnectionString")); 
 
-### Programmgesteuerter Zugriff auf die Dateispeicher-Freigabe
+### Programmgesteuertes Zugreifen auf die Dateifreigabe
 
 Fügen Sie als Nächstes den folgenden Code der `Main()`-Methode nach dem oben angegebenen Code hinzu, um die Verbindungszeichenfolge abzurufen. Dieser Code ruft einen Verweis auf die zuvor erstellte Datei ab und gibt dessen Inhalt im Konsolenfenster an.
 
@@ -216,20 +223,204 @@ Fügen Sie als Nächstes den folgenden Code der `Main()`-Methode nach dem oben a
 
 Führen Sie die Konsolenanwendung aus, um die Ausgabe zu sehen.
 
-## Einbinden der Freigabe von einem virtuellen Azure-Computer unter Linux aus
+## Festlegen der maximalen Größe für eine Dateifreigabe
 
-Bei der Erstellung eines virtuellen Azure-Computers können Sie ein Ubuntu-Image aus der Galerie der Datenträgerimages angeben, um die Unterstützung für SMB 2.1 sicherzustellen. Allerdings kann jede Linux-Distribution, die SMB 2.1 unterstützt, eine Azure-Dateifreigabe einbinden.
+Ab Version 5.x der Azure Storage-Clientbibliothek können Sie das Kontingent (oder die maximale Größe) für eine Freigabe in Gigabyte festlegen. Durch Festlegen des Kontingents für eine Freigabe können Sie die Gesamtgröße der Dateien einschränken, die in der Freigabe gespeichert werden.
 
-Eine Demonstration, wie eine Azure-Dateifreigabe unter Linux eingebunden wird, finden Sie unter [Freigegebener Speicher unter Linux mithilfe der Vorschau der Azure-Dateien - Teil 1](http://channel9.msdn.com/Blogs/Open/Shared-storage-on-Linux-via-Azure-Files-Preview-Part-1) auf Channel 9.
+Überschreitet die Gesamtgröße der Dateien in der Freigabe das für die Freigabe festgelegte Kontingent, können die Clients weder die Größe von vorhandenen Dateien ändern noch neue Dateien erstellen, es sei denn, diese sind leer.
+
+Im folgende Beispiel wird gezeigt, wie das Kontingent für eine vorhandene Dateifreigabe festgelegt wird.
+
+    //Parse the connection string for the storage account.
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+        Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
+
+    //Create a CloudFileClient object for credentialed access to File storage.
+    CloudFileClient fileClient = storageAccount.CreateCloudFileClient();
+
+    //Get a reference to the file share we created previously.
+    CloudFileShare share = fileClient.GetShareReference("logs");
+
+    //Ensure that the share exists.
+    if (share.Exists())
+    {
+		//Specify the maximum size of the share, in GB.
+	    share.Properties.Quota = 100;
+	    share.SetProperties();
+	}
+
+Um den Wert eines vorhandenen Kontingents für die Freigabe zu ermitteln, rufen Sie die **FetchAttributes()**-Methode auf, um die Eigenschaften der Freigabe abzurufen.
+
+## Generieren einer SAS für eine Datei oder Dateifreigabe
+
+Ab Version 5.x der Azure Storage-Clientbibliothek können Sie eine SAS (Shared Access Signature) für eine Dateifreigabe oder für eine einzelne Datei generieren. Sie können auch eine SAS-Richtlinie für eine Dateifreigabe erstellen, um Shared Access Signatures zu verwalten. Erstellen einer SAS-Richtlinie wird empfohlen, weil sie eine Möglichkeit bietet, die SAS zu widerrufen, wenn diese gefährdet sein sollte.
+
+Im folgenden Beispiel wird eine SAS-Richtlinie für eine Freigabe erstellt und die Richtlinie dann dazu verwendet, die Einschränkungen für eine SAS für eine Datei in der Freigabe bereitzustellen.
+
+    //Parse the connection string for the storage account.
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+        Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
+
+    //Create a CloudFileClient object for credentialed access to File storage.
+    CloudFileClient fileClient = storageAccount.CreateCloudFileClient();
+
+    //Get a reference to the file share we created previously.
+    CloudFileShare share = fileClient.GetShareReference("logs");
+
+    //Ensure that the share exists.
+    if (share.Exists())
+    {
+        string policyName = "sampleSharePolicy" + DateTime.UtcNow.Ticks;
+
+        //Create a new shared access policy and define its constraints.
+        SharedAccessFilePolicy sharedPolicy = new SharedAccessFilePolicy()
+            {
+                SharedAccessExpiryTime = DateTime.UtcNow.AddHours(24),
+                Permissions = SharedAccessFilePermissions.Read | SharedAccessFilePermissions.Write
+            };
+
+        //Get existing permissions for the share.
+        FileSharePermissions permissions = share.GetPermissions();
+
+        //Add the shared access policy to the share's policies. Note that each policy must have a unique name.
+        permissions.SharedAccessPolicies.Add(policyName, sharedPolicy);
+        share.SetPermissions(permissions);
+
+        //Generate a SAS for a file in the share and associate this access policy with it.
+        CloudFileDirectory rootDir = share.GetRootDirectoryReference();
+        CloudFileDirectory sampleDir = rootDir.GetDirectoryReference("CustomLogs");
+        CloudFile file = sampleDir.GetFileReference("Log1.txt");
+        string sasToken = file.GetSharedAccessSignature(null, policyName);
+        Uri fileSasUri = new Uri(file.StorageUri.PrimaryUri.ToString() + sasToken);
+
+        //Create a new CloudFile object from the SAS, and write some text to the file. 
+        CloudFile fileSas = new CloudFile(fileSasUri);
+        fileSas.UploadText("This write operation is authenticated via SAS.");
+        Console.WriteLine(fileSas.DownloadText());
+    }
+
+Weitere Informationen zum Erstellen und Verwenden von Shared Access Signatures finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md) und [Erstellen und Verwenden einer SAS mit dem Blob-Dienst](storage-dotnet-shared-access-signature-part-2.md).
+
+## Kopieren von Dateien
+
+Ab Version 5.x der Azure Storage-Clientbibliothek können Sie eine Datei in eine andere Datei, eine Datei in ein BLOB oder ein Blob in eine Datei kopieren. Im Folgenden wird demonstriert, wie diese Kopiervorgänge programmgesteuert ausgeführt werden können.
+
+Sie können auch AzCopy verwenden, um eine Datei in eine andere oder ein BLOB in eine Datei oder umgekehrt zu kopieren. Ausführliche Informationen zum Kopieren von Dateien mit AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md#copy-files-in-azure-file-storage-with-azcopy-preview-version-only).
+
+> [AZURE.NOTE]Wenn Sie ein BLOB in eine Datei oder eine Datei in ein BLOB kopieren, müssen Sie eine SAS verwenden, um das Quellobjekt zu authentifizieren. Dies gilt selbst dann, wenn Sie innerhalb desselben Speicherkontos kopieren.
+
+### Kopieren einer Datei in eine andere Datei
+
+Im folgenden Beispiel wird eine Datei in eine andere Datei in derselben Freigabe kopiert. Weil bei diesem Kopiervorgang zwischen Dateien im selben Speicherkonto kopiert wird, können Sie die Gemeinsam verwendeter Schlüssel-Authentifizierung verwenden, um den Kopiervorgang auszuführen.
+
+    //Parse the connection string for the storage account.
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+        Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
+
+    //Create a CloudFileClient object for credentialed access to File storage.
+    CloudFileClient fileClient = storageAccount.CreateCloudFileClient();
+
+    //Get a reference to the file share we created previously.
+    CloudFileShare share = fileClient.GetShareReference("logs");
+
+    //Ensure that the share exists.
+    if (share.Exists())
+    {
+        //Get a reference to the root directory for the share.
+        CloudFileDirectory rootDir = share.GetRootDirectoryReference();
+
+        //Get a reference to the directory we created previously.
+        CloudFileDirectory sampleDir = rootDir.GetDirectoryReference("CustomLogs");
+
+        //Ensure that the directory exists.
+        if (sampleDir.Exists())
+        {
+            //Get a reference to the file we created previously.
+            CloudFile sourceFile = sampleDir.GetFileReference("Log1.txt");
+
+            //Ensure that the source file exists.
+            if (sourceFile.Exists())
+            {
+                //Get a reference to the destination file.
+                CloudFile destFile = sampleDir.GetFileReference("Log1Copy.txt");
+
+                //Start the copy operation.
+                destFile.StartCopy(sourceFile);
+
+                //Write the contents of the destination file to the console window.
+                Console.WriteLine(destFile.DownloadText());
+            }
+        }
+    }
+
+
+### Kopieren einer Datei in ein BLOB
+
+Im folgenden Beispiel wird eine Datei erstellt und diese in ein BLOB im selben Speicherkonto kopiert. In dem Beispiel wird für die Quelldatei eine SAS erstellt, die der Dienst dazu verwendet, während des Kopiervorgangs den Zugriff auf die Quelldatei zu authentifizieren.
+
+    //Parse the connection string for the storage account.
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+        Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
+
+    //Create a CloudFileClient object for credentialed access to File storage.
+    CloudFileClient fileClient = storageAccount.CreateCloudFileClient();
+
+    //Create a new file share, if it does not already exist.
+    CloudFileShare share = fileClient.GetShareReference("sample-share");
+    share.CreateIfNotExists();
+
+    //Create a new file in the root directory.
+    CloudFile sourceFile = share.GetRootDirectoryReference().GetFileReference("sample-file.txt");
+    sourceFile.UploadText("A sample file in the root directory.");
+
+    //Get a reference to the blob to which the file will be copied.
+    CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+    CloudBlobContainer container = blobClient.GetContainerReference("sample-container");
+    container.CreateIfNotExists();
+    CloudBlockBlob destBlob = container.GetBlockBlobReference("sample-blob.txt");
+
+    //Create a SAS for the file that's valid for 24 hours.
+    //Note that when you are copying a file to a blob, or a blob to a file, you must use a SAS
+    //to authenticate access to the source object, even if you are copying within the same 
+    //storage account.
+    string fileSas = sourceFile.GetSharedAccessSignature(new SharedAccessFilePolicy()
+    {
+        //Only read permissions are required for the source file.
+        Permissions = SharedAccessFilePermissions.Read,
+        SharedAccessExpiryTime = DateTime.UtcNow.AddHours(24)
+    });
+
+    //Construct the URI to the source file, including the SAS token. 
+    Uri fileSasUri = new Uri(sourceFile.StorageUri.PrimaryUri.ToString() + fileSas);
+
+    //Copy the file to the blob.
+    destBlob.StartCopy(fileSasUri);
+
+    //Write the contents of the file to the console window.
+    Console.WriteLine("Source file contents: {0}", sourceFile.DownloadText());
+    Console.WriteLine("Destination blob contents: {0}", destBlob.DownloadText());
+
+Auf gleiche Weise können Sie ein BLOB in eine Datei kopieren. Wenn das Quellobjekt ein BLOB ist, erstellen Sie eine SAS, um den Zugriff auf dieses BLOB während des Kopiervorgangs zu authentifizieren.
+
+## Verwenden von Dateispeicher mit Linux
+
+Um eine Dateifreigabe aus Linux zu erstellen und zu verwalten, verwenden Sie die Azure-Befehlszeilenschnittstelle. Informationen zum Verwenden der Azure-Befehlszeilenschnittstelle mit Dateispeicher finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher](storage-azure-cli.md#create-and-manage-file-shares).
+
+Sie können eine Azure-Dateifreigabe aus einem virtuellen Computer unter Linux bereitstellen. Wenn Sie Ihren virtuellen Azure-Computer erstellen, können Sie ein Linux-Image, das SMB 2.1 unterstützt, aus dem Azure-Imagekatalog angeben, z. B. die neueste Version von Ubuntu. Jede Linux-Distribution, die SMB 2.1 unterstützt, kann die Azure-Dateifreigabe einbinden.
+
+Weitere Informationen dazu, wie eine Azure-Dateifreigabe unter Linux eingebunden wird, finden Sie unter [Freigegebener Speicher unter Linux mithilfe der Vorschau der Azure-Dateien - Teil 1](http://channel9.msdn.com/Blogs/Open/Shared-storage-on-Linux-via-Azure-Files-Preview-Part-1) auf Channel 9.
 
 ## Nächste Schritte
 
 Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 
-### Referenz
+### Lernprogramme und Referenz
 
 - [Referenz zur Storage-Clientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx)
 - [Referenz zur REST-API des Dateidiensts](http://msdn.microsoft.com/library/azure/dn167006.aspx)
+- [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md)
+- [Verwenden von Azure PowerShell mit Azure Storage](storage-powershell-guide-full.md)
+- [Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher](storage-azure-cli.md)
 
 ### Blogbeiträge
 
@@ -237,4 +428,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

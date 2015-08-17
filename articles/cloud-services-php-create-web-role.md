@@ -12,7 +12,7 @@
 	ms.workload="tbd"
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
-	ms.topic="get-started-article"
+	ms.topic="article"
 	ms.date="06/09/2015"
 	ms.author="tomfitz"/>
 
@@ -212,4 +212,4 @@ Um die Anwendung zu veröffentlichen, müssen Sie zuerst die Veröffentlichungse
 [Importieren der Veröffentlichungseinstellungen]: /develop/php/how-to-guides/powershell-cmdlets/#ImportPubSettings
 [Bereitstellen eines Clouddiensts in Azure]: /develop/php/how-to-guides/powershell-cmdlets/#Deploy
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -294,7 +294,7 @@ Um Werte für die Ressourcenparameter anzugeben, die in der Vorlage definiert wu
           }
         }
 
-    >[AZURE.NOTE]VHD-Imagenamen ändern sich regelmäßig im Imagekatalog, daher benötigen Sie einen aktuellen Imagenamen, um den virtuellen Computer bereitzustellen. Weitere Informationen hierzu finden Sie unter [Verwalten von Images mithilfe von Windows PowerShell](https://msdn.microsoft.com/library/azure/dn790330.aspx), und ersetzen Sie {source-image-name} durch den Namen der VHD-Datei, die Sie verwenden möchten. Beispiel: "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Ersetzen Sie {subscription-id} durch die ID Ihres Abonnements.
+    >[AZURE.NOTE]VHD-Imagenamen ändern sich regelmäßig im Imagekatalog, daher benötigen Sie einen aktuellen Imagenamen, um den virtuellen Computer bereitzustellen. Weitere Informationen hierzu finden Sie unter [Verwalten von Images mithilfe von Windows PowerShell](https://msdn.microsoft.com/library/azure/dn790330.aspx), und ersetzen Sie {source-image-name} durch den Namen der VHD-Datei, die Sie verwenden möchten. Beispiel: "a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201412.01-en.us-127GB.vhd". Ersetzen Sie {subscription-id} durch die ID Ihres Abonnements.
 
 
 4.	Speichern Sie Parameterdatei, die Sie erstellt haben.
@@ -443,4 +443,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/arm-template-deployment/crpportal.png)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

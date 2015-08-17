@@ -265,7 +265,7 @@ Erstellen Sie ein selbstsigniertes Zertifikat, installieren Sie es auf Ihrer Arb
 
 ### <a name="runApp"></a>Ausführen der Anwendung
 
-Öffnen Sie die Azure PowerShell-Konsole, wechseln Sie zum Speicherort, an dem Sie das Projekt gespeichert haben, wechseln Sie innerhalb des Projekts zum Verzeichnis "\bin\debug", und führen Sie dann den folgenden Befehl aus:
+Öffnen Sie die Azure PowerShell-Konsole, wechseln Sie zum Speicherort, an dem Sie das Projekt gespeichert haben, wechseln Sie innerhalb des Projekts zum Verzeichnis "\\bin\\debug", und führen Sie dann den folgenden Befehl aus:
 
 	.\CreateRCluster <cluster-name>
 
@@ -283,4 +283,4 @@ Geben Sie einen Clusternamen ein, und drücken Sie die EINGABETASTE zum Bereitst
 [hdinsight-install-spark]: ../hdinsight-hadoop-spark-install/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

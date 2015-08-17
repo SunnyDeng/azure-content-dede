@@ -259,4 +259,4 @@ Wenn die Streamingereignisse beendet sind und Sie die zuvor bereitgestellten Res
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

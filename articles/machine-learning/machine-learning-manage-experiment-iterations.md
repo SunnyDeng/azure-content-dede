@@ -20,7 +20,7 @@
 
 Das Entwickeln eines solchen Vorhersageanalysemodells ist ein iterativer Prozess: Sie ändern die verschiedenen Funktionen und Parameter des Experiments, und die Ergebnisse nähern sich solange an, bis Sie der Ansicht sind, ein trainiertes, effektives Modell erreicht zu haben. Wichtig für diesen Prozess ist das Verfolgen der verschiedenen Iterationen der Experimentparameter und -konfigurationen.
 
-[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
 Sie können die vorherigen Testläufe der Experimente zu jedem beliebigen Zeitpunkt noch einmal überprüfen, um die vorherigen Annahmen infrage zu stellen, neu aufzugreifen und letztendlich entweder zu bestätigen oder zu verfeinern. Wenn Sie ein Experiment ausführen, speichert ML Studio den Verlauf des Testlaufs, einschließlich Datasets, Modul sowie Portverbindungen und Parameter. In diesem Verlauf werden auch Ergebnisse, Laufzeitinformationen, z. B. Start- und Endzeiten, Protokollmeldungen und der Ausführungsstatus aufgezeichnet. Sie können jeden dieser Testläufe jederzeit überprüfen, um die Chronologie des Experiments und die Zwischenergebnisse zu betrachten. Ein vorheriger Testlauf des Experiment kann sogar den Ausgangspunkt einer neuen Untersuchungsphase auf dem Weg zur Erstellung einfacher, komplexer oder mehrfacher Modellierungslösungen bilden.
 
@@ -40,10 +40,10 @@ Angenommen, Sie erstellen ein Experiment mit dem Modul [Linear Regression][linea
 
 | Der Wert von "Learning Rate" | Startzeit des Testlaufs |
 | ------------------- | -------------- |
-| 0,1 | 11.9.2014 16:18:58
-| 0,2 | 11.9.2014 16:24:33
-| 0,4 | 11.9.2014 16:28:36
-| 0,5 | 11.9.2014 16:33:31
+| 0,1 | 11\.9.2014 16:18:58
+| 0,2 | 11\.9.2014 16:24:33
+| 0,4 | 11\.9.2014 16:28:36
+| 0,5 | 11\.9.2014 16:33:31
 
 Wenn Sie auf **VIEW RUN HISTORY** (AUSFÜHRUNGSVERLAUF ANZEIGEN) klicken, wird eine Liste aller Testläufe angezeigt:
 
@@ -85,4 +85,4 @@ Sie können diese Version des Experiments nun weiterhin ändern und ausführen, 
 [linear-regression]: https://msdn.microsoft.com/library/azure/31960a6f-789b-4cf7-88d6-2e1152c0bd1a/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

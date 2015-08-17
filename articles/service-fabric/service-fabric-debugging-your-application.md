@@ -66,4 +66,4 @@ Sie können Zeit und Geld sparen, indem Sie Ihre Service Fabric-Anwendung in ein
 [breakpoint]: ./media/service-fabric-debugging-your-application/breakpoint.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

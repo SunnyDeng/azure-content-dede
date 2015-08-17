@@ -53,19 +53,19 @@ Der Setup-Assistent führt Sie durch die einzelnen Schritte für die Webproxykon
 
 #### So konfigurieren Sie den Webproxy mithilfe des Setup-Assistenten
 
-1. Wählen Sie im Menü der seriellen Konsole die erste Option \(Anmeldung mit Vollzugriff\) aus, und geben Sie das Geräteadministratorkennwort ein. Geben Sie den folgenden Befehl ein, um eine Sitzung des Setup-Assistenten zu starten:
+1. Wählen Sie im Menü der seriellen Konsole die erste Option (Anmeldung mit Vollzugriff) aus, und geben Sie das Geräteadministratorkennwort ein. Geben Sie den folgenden Befehl ein, um eine Sitzung des Setup-Assistenten zu starten:
 
     `Invoke-HcsSetupWizard`
 
 
 1. Bei erstmaliger Verwendung des Setup-Assistenten für die Geräteregistrierung müssen Sie alle erforderlichen Netzwerkeinstellungen konfigurieren, um zur Webproxykonfiguration zu gelangen. Ist Ihr Gerät bereits registriert, können Sie die konfigurierten Netzwerkeinstellungen akzeptieren, bis Sie die Webproxykonfiguration erreichen. Geben Sie im Setup-Assistenten **Ja** ein, wenn Sie zum Konfigurieren der Webproxyeinstellungen aufgefordert werden.
-2. Geben Sie als Webproxy-URL die IP-Adresse oder den vollqualifizierten Domänennamen \(Fully Qualified Domain Name, FQDN\) des Webproxyservers sowie die TCP-Portnummer ein, die das Gerät bei der Kommunikation mit der Cloud verwenden soll. Verwenden Sie das folgende Format:
+2. Geben Sie als Webproxy-URL die IP-Adresse oder den vollqualifizierten Domänennamen (Fully Qualified Domain Name, FQDN) des Webproxyservers sowie die TCP-Portnummer ein, die das Gerät bei der Kommunikation mit der Cloud verwenden soll. Verwenden Sie das folgende Format:
 
 	`http://<IP address or FQDN of the web proxy server>:<TCP port number>`
 
 	Standardmäßig wird die TCP-Portnummer 8080 angegeben.
 
-1. Legen Sie den Authentifizierungstyp auf **NTLM**, **Standard** oder **Keine** fest. „Standard“ bietet bei der Authentifizierung für die Proxyserverkonfiguration die geringste Sicherheit. „NTLM“ \(NT-LAN-Manager\) ist ein äußerst sicheres und komplexes Authentifizierungsprotokoll mit einem Drei-Wege-Messaging-System für die Benutzerauthentifizierung \(ggf. auch ein Vier-Wege-System, wenn zusätzliche Integrität erforderlich ist\). Standardmäßig wird die NTLM-Authentifizierung verwendet. Weitere Informationen finden Sie unter [Standard](http://hc.apache.org/httpclient-3.x/authentication.html) bzw. unter [NTLM-Authentifizierung](http://hc.apache.org/httpclient-3.x/authentication.html).
+1. Legen Sie den Authentifizierungstyp auf **NTLM**, **Standard** oder **Keine** fest. „Standard“ bietet bei der Authentifizierung für die Proxyserverkonfiguration die geringste Sicherheit. „NTLM“ (NT-LAN-Manager) ist ein äußerst sicheres und komplexes Authentifizierungsprotokoll mit einem Drei-Wege-Messaging-System für die Benutzerauthentifizierung (ggf. auch ein Vier-Wege-System, wenn zusätzliche Integrität erforderlich ist). Standardmäßig wird die NTLM-Authentifizierung verwendet. Weitere Informationen finden Sie unter [Standard](http://hc.apache.org/httpclient-3.x/authentication.html) bzw. unter [NTLM-Authentifizierung](http://hc.apache.org/httpclient-3.x/authentication.html).
 
 	> [AZURE.IMPORTANT]**Wenn in der Proxyserverkonfiguration für das Gerät die Standard- oder NTLM-Authentifizierung aktiviert ist, funktionieren die Geräteüberwachungsdiagramme im StorSimple Manager-Dienst nicht. Zur Verwendung der Überwachungsdiagramme muss die Authentifizierung auf „Keine“ festgelegt sein.**
 
@@ -120,7 +120,7 @@ Führen Sie in Windows PowerShell für StorSimple die folgenden Schritte aus, um
 Die Webproxyeinstellungen werden über die Windows PowerShell-Schnittstelle konfiguriert und können nicht im Verwaltungsportal geändert werden. Sie können die konfigurierten Einstellungen allerdings im Verwaltungsportal anzeigen. Führen Sie die folgenden Schritte aus, um den Webproxy anzuzeigen:
 
 #### So zeigen Sie die Webproxyeinstellungen an
-1. Navigieren Sie zu **StorSimple Manager-Dienst \> Geräte**. Klicken Sie auf ein Gerät, und navigieren Sie anschließend zu **Konfigurieren**.
+1. Navigieren Sie zu **StorSimple Manager-Dienst > Geräte**. Klicken Sie auf ein Gerät, und navigieren Sie anschließend zu **Konfigurieren**.
 1. Navigieren Sie auf der Konfigurationsseite zum Abschnitt mit den Webproxyeinstellungen. Die konfigurierten Webproxyeinstellungen für das StorSimple-Gerät werden wie folgt angezeigt:
 
 	![Anzeigen des Webproxys im Verwaltungsportal](./media/storsimple-configure-web-proxy/ViewWebProxyPortal_M.png)
@@ -147,4 +147,4 @@ Sind die Webproxyeinstellungen nicht korrekt konfiguriert, werden in Windows Pow
 ## Nächste Schritte
 Informationen zum Behandeln von Problemen beim Bereitstellen Ihres Geräts oder beim Konfigurieren der Webproxyeinstellungen finden Sie unter [Beheben von Problemen mit der Bereitstellung von StorSimple-Geräten](storsimple-troubleshoot-deployment.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

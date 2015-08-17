@@ -70,12 +70,12 @@ Die Dateinamenkonvention wird mithilfe des DefaultMediaOutputFileName-Attributs 
 	   </OutputFormat>
 	</MediaFile>
 
-Der Encoder fügt Unterstriche zwischen den einzelnen Makros ein, z. B. ergibt die Konfiguration oben einen Dateinamen wie "MyVideo_H264_4500kpbs_AAC_und_ch2_128kbps.mp4".
+Der Encoder fügt Unterstriche zwischen den einzelnen Makros ein, z. B. ergibt die Konfiguration oben einen Dateinamen wie "MyVideo\_H264\_4500kpbs\_AAC\_und\_ch2\_128kbps.mp4".
 
 
 ##Erstellen von Überlagerungen
 
-Mit dem Azure Media Services Encoder können Sie ein vorhandenes Video mit einem Bild (JPG, BMP, GIF, TIF), einem Video oder einer Audiodatei (WMA, *MP3*, WAV) überlagern. Diese Funktion entspricht in etwa dem Expression Encoder 4 (Service Pack 2).
+Mit dem Azure Media Services Encoder können Sie ein vorhandenes Video mit einem Bild (JPG, BMP, GIF, TIF), einem Video oder einer Audiodatei (WMA, MP3, WAV) überlagern. Diese Funktion entspricht in etwa dem Expression Encoder 4 (Service Pack 2).
 
 ###Überlagerungen mit dem Media Services Encoder
 
@@ -458,11 +458,11 @@ Um eine Verstärkung der Hintergrundgeräusche zu verhindern, führen Sie folgen
 
 1. Speichern Sie die geänderte Voreinstellungsdatei auf Ihrer lokalen Festplatte, und verwenden Sie einen Code wie den folgenden, um die Codierung mit diesen Voreinstellungen durchzuführen:
 	
-	// Laden Sie die Datei hoch, und erstellen Sie das Medienobjekt IAsset asset = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, @"C:\TEMP\Original.mp4");
+	// Laden Sie die Datei hoch, und erstellen Sie das Medienobjekt IAsset asset = CreateAssetAndUploadSingleFile(AssetCreationOptions.None, @"C:\\TEMP\\Original.mp4");
 	 
-	string inputPresetFile = @"C:\TEMP\H264 Broadband 720p NoAudioNorm.xml"; string presetName = Path.GetFileNameWithoutExtension(inputPresetFile);
+	string inputPresetFile = @"C:\\TEMP\\H264 Broadband 720p NoAudioNorm.xml"; string presetName = Path.GetFileNameWithoutExtension(inputPresetFile);
 	 
-	IJob job = _context.Jobs.Create("Encode Job for " + asset.Name + ", encoded using " + presetName);
+	IJob job = context.Jobs.Create("Encode Job for " + asset.Name + ", encoded using " + presetName);
 	
 	Console.WriteLine("Encode Job for " + asset.Name + ", encoded using " + presetName);
 	
@@ -482,4 +482,4 @@ Um eine Verstärkung der Hintergrundgeräusche zu verhindern, führen Sie folgen
 
 [Azure Media Encoder XML-Schema](https://msdn.microsoft.com/library/azure/dn584702.aspx)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

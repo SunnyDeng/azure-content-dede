@@ -4,7 +4,8 @@
 	services="application-insights" 
     documentationCenter=".net"
 	authors="alancameronwills" 
-	manager="keboyd"/>
+	manager="douge"/>
+
 
 <tags 
 	ms.service="application-insights" 
@@ -12,8 +13,9 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/27/2015" 
+	ms.date="08/04/2015" 
 	ms.author="awills"/>
+
  
 # Untersuchen von .NET-Ablaufverfolgungsprotokollen in Application Insights  
 
@@ -61,7 +63,7 @@ Beispiel:
     var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
     telemetry.TrackTrace("Slow response - database01");
 
-
+Ein Vorteil von TrackTrace ist, dass relativ lange Daten in die Nachricht eingefügt werden können. Sie können dort z. B. POST-Daten codieren.
 
 
 ## Untersuchen Ihrer Protokolle
@@ -124,4 +126,4 @@ Bis zu 500 Ereignisse pro Sekunde für jede Anwendung. Ereignisse werden sieben 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

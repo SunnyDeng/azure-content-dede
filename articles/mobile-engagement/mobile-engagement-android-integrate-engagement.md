@@ -55,7 +55,7 @@ Die Verbindungszeichenfolge für die Anwendung wird im Azure-Portal angezeigt.
 			<uses-permission android:name="android.permission.INTERNET"/>
 			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
--   Für einige Gerätemodelle kann der Engagement-Gerätebezeichner nicht aus der „ANDROID_ID“ generiert werden (sie ist möglicherweise fehlerhaft oder nicht verfügbar). In diesem Fall generiert das SDK einen zufälligen Gerätebezeichner und versucht dann, ihn im externen Speicher des Geräts zu speichern, damit derselbe Gerätebezeichner von anderen Engagement-Anwendungen gemeinsam genutzt werden kann (er wird auch als gemeinsam genutzte Voreinstellung gespeichert, um sicherzustellen, dass die Anwendung unabhängig vom externen Speicher immer denselben Gerätebezeichner verwendet). Damit dieser Mechanismus ordnungsgemäß funktioniert, müssen Sie die folgende Berechtigung hinzufügen, wenn diese fehlt (vor dem `<application>`-Tag):
+-   Für einige Gerätemodelle kann der Engagement-Gerätebezeichner nicht aus der „ANDROID\_ID“ generiert werden (sie ist möglicherweise fehlerhaft oder nicht verfügbar). In diesem Fall generiert das SDK einen zufälligen Gerätebezeichner und versucht dann, ihn im externen Speicher des Geräts zu speichern, damit derselbe Gerätebezeichner von anderen Engagement-Anwendungen gemeinsam genutzt werden kann (er wird auch als gemeinsam genutzte Voreinstellung gespeichert, um sicherzustellen, dass die Anwendung unabhängig vom externen Speicher immer denselben Gerätebezeichner verwendet). Damit dieser Mechanismus ordnungsgemäß funktioniert, müssen Sie die folgende Berechtigung hinzufügen, wenn diese fehlt (vor dem `<application>`-Tag):
 
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
@@ -311,4 +311,4 @@ Dann können Sie `CheckBoxPreference` wie folgt im Einstellungslayout hinzufüge
 [Geräte-API]: http://go.microsoft.com/?linkid=9876094
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

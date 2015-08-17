@@ -20,7 +20,7 @@
 
 Azure Active Directory bietet Verzeichnisadministratoren die Möglichkeit, in mehreren Berichten nach Benutzersicherheit, Aktivität und Überwachungsereignissen zu suchen.
 
-Den Suchbereich finden Sie, wenn Sie zu **Azure-Verwaltungsportal -\> Ihr Azure Active Directory -\> Berichte** navigieren. Der Bereich befindet sich am Anfang der Liste der Berichte.
+Den Suchbereich finden Sie, wenn Sie zu **Azure-Verwaltungsportal -> Ihr Azure Active Directory -> Berichte** navigieren. Der Bereich befindet sich am Anfang der Liste der Berichte.
 
 Um für einen bestimmten Benutzer nach Aktivitäts- oder Überwachungsereignissen zu suchen, wählen Sie einen Datumsbereich in den Feldern "Von" und "Bis", geben Sie UPN oder Anzeigenamen des Benutzers ein, und klicken Sie auf das Häkchen.
 
@@ -55,4 +55,4 @@ Es werden noch nicht alle Berichte in die Suchergebnisse einbezogen. Diese Tabel
  - [Azure Active Directory-Berichte](active-directory-view-access-usage-reports.md)
  - [Azure Active Directory-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

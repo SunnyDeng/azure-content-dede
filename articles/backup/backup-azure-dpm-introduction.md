@@ -81,4 +81,4 @@ Diese werden nicht unterstützt:
 
 >[AZURE.NOTE]Ab System Center 2012 DPM mit SP1 können Sie Workloads, die von DPM geschützt werden, in Azure mithilfe von Microsoft Azure Backup sichern.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

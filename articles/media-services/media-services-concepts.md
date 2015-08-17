@@ -20,7 +20,7 @@
 
 Dieses Thema bietet eine Übersicht über die wichtigsten Konzepte von Media Services.
 
-##<a id="assets"></a>Medienobjekte\Speicher
+##<a id="assets"></a>Medienobjekte\\Speicher
 
 ###Medienobjekte
 
@@ -79,13 +79,13 @@ Beachten Sie, dass die Berechtigung zum Auflisten (AccessPermissions.List) beim 
 
 Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Ein Media Service-Konto kann mit einem oder mehreren Speicherkonten verknüpft werden. Ein Konto kann eine unbegrenzte Anzahl von Containern enthalten, solange die Gesamtgröße unter 500 TB pro Speicherkonto bleibt. Media Services enthält Tools auf SDK-Ebene, mit denen Sie mehrere Speicherkonten verwalten und bei der Verteilung Ihrer Medienobjekte einen Lastenausgleich durchführen können. Beim Hochladen der Objekte in diese Konten kann dieser Ausgleich basierend auf Kennzahlen oder anhand einer zufälligen Verteilung erfolgen. Weitere Informationen finden Sie unter [Arbeiten mit Azure Storage](https://msdn.microsoft.com/library/azure/dn767951.aspx).
 
-##Aufträge \ Aufgaben
+##Aufträge \\ Aufgaben
 
 Ein [Auftrag ](https://msdn.microsoft.com/library/azure/hh974289.aspx) wird normalerweise zum Verarbeiten (beispielsweise zum Indizieren oder Codieren) einer einzelnen Audio-/Videopräsentation verwendet. Wenn Sie mehrere Videos verarbeiten, erstellen Sie einen Auftrag für jedes zu verschlüsselnde Video.
 
 Ein Auftrag enthält Metadaten zur auszuführenden Verarbeitung. Jeder Auftrag enthält eine oder mehrere [Aufgaben](https://msdn.microsoft.com/library/azure/hh974286.aspx). Diese geben eine unteilbare Verarbeitungsaufgabe, die zugehörigen Eingabe- und Ausgabemedienobjekte, einen Medienprozessor und die zugehörigen Einstellungen an. Aufgaben innerhalb eines Auftrags können verkettet werden, wobei das Ausgabemedienobjekt als Eingabemedienobjekt für die nächste Aufgabe dient. Auf diese Weise kann ein Auftrag die gesamten Verarbeitungsschritte für eine Medienpräsentation umfassen.
 
-##<a id="encoding"></a>Codierung\Paketerstellung
+##<a id="encoding"></a>Codierung\\Paketerstellung
 
 ###Codieren
 
@@ -242,4 +242,4 @@ In der folgenden Liste werden verschiedene Streamingformate beschrieben und Beis
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

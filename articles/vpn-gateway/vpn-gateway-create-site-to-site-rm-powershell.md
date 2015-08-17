@@ -33,7 +33,7 @@ Azure verfügt derzeit über zwei Bereitstellungsmodelle: das klassische Bereits
 
 Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Ein kompatibles VPN-Gerät \(und eine Person, die es konfigurieren kann\). Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten](vpn-gateway-vpn-devices.md).
+- Ein kompatibles VPN-Gerät (und eine Person, die es konfigurieren kann). Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten](vpn-gateway-vpn-devices.md).
 - Eine externe öffentliche IP-Adresse für Ihr VPN-Gerät. Diese IP-Adresse darf sich nicht hinter einer NAT befinden.
 - Die neueste Version von Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt „Windows PowerShell“ der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren. 
 - Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
@@ -123,7 +123,7 @@ Die Gatewaykonfiguration definiert das zu verwendende Subnetz und die zu verwend
 In diesem Schritt erstellen Sie das Gateway des virtuellen Netzwerks. Verwenden Sie die folgenden Werte:
 
 - Der Gatewaytyp ist *Vpn*.
-- Der „VpnType“ kann routenbasiert\* \(in einigen Dokumentationen als ein dynamisches Gateway bezeichnet\) oder *richtlinienbasiert* sein \(in einigen Dokumentationen als statisches Gateway bezeichnet\). Weitere Informationen zu VPN-Gatewaytypen finden Sie unter [Informationen zu VPN-Gateways](vpn-gateway-about-vpngateways.md). 	
+- Der „VpnType“ kann routenbasiert* (in einigen Dokumentationen als ein dynamisches Gateway bezeichnet) oder *richtlinienbasiert* sein (in einigen Dokumentationen als statisches Gateway bezeichnet). Weitere Informationen zu VPN-Gatewaytypen finden Sie unter [Informationen zu VPN-Gateways](vpn-gateway-about-vpngateways.md). 	
 
 		New-AzureVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg -Location 'West US' -IpConfigurations $gwipconfig -GatewayType Vpn -VpnType RouteBased
 
@@ -152,4 +152,4 @@ Nach einigen Minuten sollte die Verbindung hergestellt sein. Zu diesem Zeitpunkt
 
 Fügen Sie einen virtuellen Computer zu Ihrem virtuellen Netzwerk hinzu. [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

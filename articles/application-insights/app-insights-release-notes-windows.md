@@ -58,7 +58,7 @@ Weitere Informationen finden Sie unter [Erste Schritte mit Application Insights 
 
 - TelemetryClient wird standardmäßig mit InMemoryChannel initialisiert.
 - Neue API wurde hinzugefügt, `TelemetryClient.Flush()`. Diese Löschmethode löst ein unmittelbares Blockieren des Uploads aller Telemetriedaten aus, die auf dem Client protokolliert wurden. Dies ermöglicht das manuelle Auslösen des Uploads vor dem Beenden des Prozesses.
-- Das NuGet-Paket hat ein .NET 4.5-Ziel hinzugefügt. Dieses Ziel verfügt über keine externen Abhängigkeiten \(entfernte BCL- und EventSource-Abhängigkeiten\).
+- Das NuGet-Paket hat ein .NET 4.5-Ziel hinzugefügt. Dieses Ziel verfügt über keine externen Abhängigkeiten (entfernte BCL- und EventSource-Abhängigkeiten).
 
 ## Version 0.16 
 
@@ -77,4 +77,4 @@ Vorschau vom 28.04.2015
 
 Für ältere Versionen sind keine Versionshinweise verfügbar.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

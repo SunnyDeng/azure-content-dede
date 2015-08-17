@@ -10,7 +10,7 @@
 <tags
    ms.service="dns"
    ms.devlang="na"
-   ms.topic="get-started-article"
+   ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="05/01/2015"
@@ -119,4 +119,4 @@ Sie können auch nslookup oder andere DNS-Tools verwenden, um die neue Datensatz
 [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

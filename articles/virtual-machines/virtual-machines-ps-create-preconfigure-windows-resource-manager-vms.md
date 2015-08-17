@@ -21,7 +21,7 @@
 
 Diese Schritte zeigen, wie Sie einen Befehlssatz im Ressourcen-Manager-Modus von Azure PowerShell erstellen, mit dem ein Windows-basierter virtueller Azure-Computer erstellt und vorab konfiguriert wird. Sie können dieses Bausteinverfahren verwenden, um schnell einen Befehlssatz für einen neuen Windows-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern. Sie können damit auch mehrere Befehlssätze erstellen, mit denen Sie schnell eine benutzerdefinierte professionelle Entwicklungs- und Test-IT-Umgebung aufbauen können.
 
-Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure PowerShell-Befehlssätzen. Dieser Ansatz kann hilfreich sein, wenn Sie noch nicht mit PowerShell gearbeitet haben oder einfach wissen möchten, welche Werte Sie für die erfolgreiche Konfiguration angeben müssen. Wenn Sie ein fortgeschrittener PowerShell-Benutzer sind, können Sie die Befehle verwenden und die Variablen \(mit "$" beginnende Zeilen\) durch eigene Werte ersetzen.
+Diese Schritte folgen einem lückenfüllenden Ansatz zur Erstellung von Azure PowerShell-Befehlssätzen. Dieser Ansatz kann hilfreich sein, wenn Sie noch nicht mit PowerShell gearbeitet haben oder einfach wissen möchten, welche Werte Sie für die erfolgreiche Konfiguration angeben müssen. Wenn Sie ein fortgeschrittener PowerShell-Benutzer sind, können Sie die Befehle verwenden und die Variablen (mit "$" beginnende Zeilen) durch eigene Werte ersetzen.
 
 [AZURE.INCLUDE [resource-manager-pointer-to-service-management](../../includes/resource-manager-pointer-to-service-management.md)]
 
@@ -136,7 +136,7 @@ Mit diesen Befehlen können Sie die vorhandenen virtuellen Netzwerke auflisten.
 
 ## Schritt 4: Erstellen des Befehlssatzes
 
-Öffnen Sie eine neue Instanz eines Texteditors Ihrer Wahl oder die PowerShell Integrated Scripting Environment \(ISE\), und kopieren Sie die folgenden Zeilen, um den Befehlssatz zu starten. Geben Sie den Namen der Ressourcengruppe, den Azure-Standort und das Speicherkonto für den neuen virtuellen Computer an. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < and >, durch die korrekten Namen.
+Öffnen Sie eine neue Instanz eines Texteditors Ihrer Wahl oder die PowerShell Integrated Scripting Environment (ISE), und kopieren Sie die folgenden Zeilen, um den Befehlssatz zu starten. Geben Sie den Namen der Ressourcengruppe, den Azure-Standort und das Speicherkonto für den neuen virtuellen Computer an. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < and >, durch die korrekten Namen.
 
 	Switch-AzureMode AzureResourceManager
 	$rgName="<resource group name>"
@@ -167,7 +167,7 @@ Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie einen vorhandenen vi
 	$subnetIndex=<index of the subnet on which to create the NIC for the virtual machine>
 	$vnet=Get-AzurevirtualNetwork -Name $vnetName -ResourceGroupName $rgName
 
-Als Nächstes erstellen Sie eine Netzwerkschnittstellenkarte \(NIC\). Kopieren Sie eine der folgenden Optionen in den Befehlssatz, und geben Sie die erforderlichen Informationen ein.
+Als Nächstes erstellen Sie eine Netzwerkschnittstellenkarte (NIC). Kopieren Sie eine der folgenden Optionen in den Befehlssatz, und geben Sie die erforderlichen Informationen ein.
 
 ### Option 1: Geben Sie einen NIC-Namen an und weisen eine öffentliche IP-Adresse zu.
 
@@ -311,7 +311,7 @@ Schließlich kopieren Sie diese Befehle in den Befehlssatz, und geben den Namens
 
 Wenn Sie Ihre Befehle in einem Texteditor verwenden, kopieren Sie den Befehlssatz in die Zwischenablage, und klicken Sie dann mit der rechten Maustaste auf Ihre offene Azure PowerShell-Eingabeaufforderung. Dies gibt den Befehlssatz als Serie von PowerShell-Befehlen aus und erstellt den virtuellen Azure-Computer. Führen Sie alternativ den Befehlssatz in Azure PowerShell ISE aus.
 
-Wenn Sie diesen virtuellen Computer erneut oder einen ähnlichen virtuellen Computer erstellen, können Sie diesen Befehlssatz als PowerShell-Skriptdatei \(\*.PS1\) speichern.
+Wenn Sie diesen virtuellen Computer erneut oder einen ähnlichen virtuellen Computer erstellen, können Sie diesen Befehlssatz als PowerShell-Skriptdatei (*.PS1) speichern.
 
 ## Beispiel
 
@@ -320,7 +320,7 @@ Ich brauche einen PowerShell-Befehlssatz, um einen zusätzlichen virtuellen Comp
 - sich in der vorhandenen LOBServers-Ressourcengruppe befindet
 - das Windows Server 2012 R2 Datacenter-Image verwendet
 - den Namen LOB07 hat und sich in der vorhandenen WEB\_AS-Verfügbarkeitsgruppe befindet
-- über eine Netzwerkkarte mit einer öffentlichen IP-Adresse im FrontEnd-Subnetz \(Subnetzindex 0\) des vorhandenen virtuellen AZDatacenter-Netzwerks verfügt
+- über eine Netzwerkkarte mit einer öffentlichen IP-Adresse im FrontEnd-Subnetz (Subnetzindex 0) des vorhandenen virtuellen AZDatacenter-Netzwerks verfügt
 - einen zusätzlichen Datenträger mit 200 GB aufweist
 
 Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen Computers auf Grundlage der in Schritt 4 beschriebenen Verfahren.
@@ -387,4 +387,4 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

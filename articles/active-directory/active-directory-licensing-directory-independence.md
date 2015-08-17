@@ -40,4 +40,4 @@ Um ein Azure AD-Verzeichnis im Azure-Verwaltungsportal hinzuzufügen, wählen Si
 
 Eine grobe Übersicht über Lizenzierungsprobleme und bewährte Methoden im Zusammenhang mit Azure AD finden Sie unter [Was ist Azure Active Directory-Lizenzierung?](active-directory-licensing-what-is.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -248,4 +248,4 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind,
   [Service Bus-Warteschlangen, Themen und Abonnements]: http://msdn.microsoft.com/library/hh367516.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

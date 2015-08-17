@@ -61,18 +61,18 @@ Wählen Sie zum Starten des Azure-Speicheremulators die Schaltfläche **Start** 
 In den folgenden Beispielen wird davon ausgegangen, dass Sie eine dieser zwei Methoden verwendet haben, um die Speicherverbindungszeichenfolge abzurufen.
 
 ## Abrufen der Verbindungszeichenfolge  
-Sie können Ihre Speicherkontoinformationen mit der Klasse **cloud_storage_account** darstellen. Verwenden Sie zum Abrufen von Speicherkontoinformationen aus der Speicher-Verbindungszeichenfolge die parse-Methode.
+Sie können Ihre Speicherkontoinformationen mit der Klasse **cloud\_storage\_account** darstellen. Verwenden Sie zum Abrufen von Speicherkontoinformationen aus der Speicher-Verbindungszeichenfolge die parse-Methode.
 
 	// Retrieve the storage account from the connection string. 
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
 
-Anschließend rufen Sie einen Verweis auf eine **cloud_table_client**-Klasse ab, da Sie mit dieser Verweisobjekte für Tabellen und Entitäten abrufen können, die innerhalb des Tabellenspeicherdiensts gespeichert sind. Mit dem folgenden Code wird unter Verwendung des oben abgerufenen Speicherkontoobjekts ein **cloud_table_client**-Objekt erstellt:
+Anschließend rufen Sie einen Verweis auf eine **cloud\_table\_client**-Klasse ab, da Sie mit dieser Verweisobjekte für Tabellen und Entitäten abrufen können, die innerhalb des Tabellenspeicherdiensts gespeichert sind. Mit dem folgenden Code wird unter Verwendung des oben abgerufenen Speicherkontoobjekts ein **cloud\_table\_client**-Objekt erstellt:
 
 	// Create the table client.
 	azure::storage::cloud_table_client table_client = storage_account.create_cloud_table_client();
 
 ## Erstellen einer Tabelle
-Mit einem **cloud_table_client**-Objekt können Sie Verweisobjekte für Tabellen und Entitäten abrufen. Durch den folgenden Code wird ein **cloud_table_client**-Objekt erstellt und verwendet, um eine neue Tabelle zu erstellen.
+Mit einem **cloud\_table\_client**-Objekt können Sie Verweisobjekte für Tabellen und Entitäten abrufen. Durch den folgenden Code wird ein **cloud\_table\_client**-Objekt erstellt und verwendet, um eine neue Tabelle zu erstellen.
 
 	// Retrieve the storage account from the connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);  
@@ -87,9 +87,9 @@ Mit einem **cloud_table_client**-Objekt können Sie Verweisobjekte für Tabellen
 	table.create_if_not_exists();  
 
 ## Hinzufügen einer Entität zu einer Tabelle
-Um einer Tabelle eine Entität hinzuzufügen, erstellen Sie ein neues **table_entity**-Objekt und übergeben es an **table_operation::insert_entity**. Im folgenden Code wird der Vorname des Kunden als Zeilenschlüssel und der Nachname als Partitionsschlüssel verwendet. In Kombination miteinander wird mit dem Partitions- und Zeilenschlüssel eine Entität in der Tabelle eindeutig identifiziert. Entitäten mit demselben Partitionsschlüssel können schneller abgerufen werden als Entitäten mit unterschiedlichen Partitionsschlüsseln, die Verwendung verschiedener Partitionsschlüssel ermöglicht jedoch eine größere parallele Vorgangsskalierbarkeit. Weitere Informationen finden Sie unter [Checkliste zu Leistung und Skalierbarkeit von Microsoft Azure Storage](storage-performance-checklist.md/).
+Um einer Tabelle eine Entität hinzuzufügen, erstellen Sie ein neues **table\_entity**-Objekt und übergeben es an **table\_operation::insert\_entity**. Im folgenden Code wird der Vorname des Kunden als Zeilenschlüssel und der Nachname als Partitionsschlüssel verwendet. In Kombination miteinander wird mit dem Partitions- und Zeilenschlüssel eine Entität in der Tabelle eindeutig identifiziert. Entitäten mit demselben Partitionsschlüssel können schneller abgerufen werden als Entitäten mit unterschiedlichen Partitionsschlüsseln, die Verwendung verschiedener Partitionsschlüssel ermöglicht jedoch eine größere parallele Vorgangsskalierbarkeit. Weitere Informationen finden Sie unter [Checkliste zu Leistung und Skalierbarkeit von Microsoft Azure Storage](storage-performance-checklist.md/).
 
-Durch den folgenden Code wird eine neue Instanz von **table_entity** mit einigen zu speichernden Kundendaten erstellt. Als Nächstes ruft der Code **table_operation::insert_entity** auf, um ein **table_operation**-Objekt zum Einfügen einer Entität in eine Tabelle zu erstellen, und weist dieser Entität die neue Tabellenentität zu. Schließlich ruft der Code die execute-Methode für das **cloud_table**-Objekt auf. Die neue **table_operation** sendet eine Anforderung an den Speicherdienst, dass die neue Kundenentität in die Tabelle "people" eingefügt werden soll.
+Durch den folgenden Code wird eine neue Instanz von **table\_entity** mit einigen zu speichernden Kundendaten erstellt. Als Nächstes ruft der Code **table\_operation::insert\_entity** auf, um ein **table\_operation**-Objekt zum Einfügen einer Entität in eine Tabelle zu erstellen, und weist dieser Entität die neue Tabellenentität zu. Schließlich ruft der Code die execute-Methode für das **cloud\_table**-Objekt auf. Die neue **table\_operation** sendet eine Anforderung an den Speicherdienst, dass die neue Kundenentität in die Tabelle "people" eingefügt werden soll.
 
 	// Retrieve the storage account from the connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -119,7 +119,7 @@ Durch den folgenden Code wird eine neue Instanz von **table_entity** mit einigen
 	azure::storage::table_result insert_result = table.execute(insert_operation);
 
 ## Einfügen eines Entitätsbatchs
-Sie können einen Entitätsbatch in einem Schreibvorgang in den Tabellendienst einfügen. Durch den folgenden Code wird ein **table_batch_operation**-Objekt erstellt, dem anschließend drei Einfügevorgänge hinzugefügt werden. Für jeden Einfügevorgang wird ein neues Entitätsobjekt erstellt, dessen Werte werden festgelegt, und dann wird die "insert"-Methode für das **table_batch_operation**-Objekt aufgerufen, um die Entität einem neuen Einfügevorgang zuzuordnen. Anschließend folgt ein Aufruf von **cloud_table.execute**, um den Vorgang auszuführen.
+Sie können einen Entitätsbatch in einem Schreibvorgang in den Tabellendienst einfügen. Durch den folgenden Code wird ein **table\_batch\_operation**-Objekt erstellt, dem anschließend drei Einfügevorgänge hinzugefügt werden. Für jeden Einfügevorgang wird ein neues Entitätsobjekt erstellt, dessen Werte werden festgelegt, und dann wird die "insert"-Methode für das **table\_batch\_operation**-Objekt aufgerufen, um die Entität einem neuen Einfügevorgang zuzuordnen. Anschließend folgt ein Aufruf von **cloud\_table.execute**, um den Vorgang auszuführen.
 
 	// Retrieve the storage account from the connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -173,7 +173,7 @@ Beachten Sie im Zusammenhang mit Batchvorgängen Folgendes:
 -	Ein Batchvorgang ist auf eine Nutzlast von 4 MB Daten beschränkt.  
 
 ## Abrufen aller Entitäten in einer Partition
-Verwenden Sie ein **table_query**-Objekt, um eine Tabelle für alle Entitäten in einer Partition abzurufen. Im folgenden Codebeispiel wird ein Filter für Entitäten erstellt, wobei "Smith" der Partitionsschlüssel ist. In diesem Beispiel werden die Felder der einzelnen Entitäten in den Abfrageergebnissen an die Konsole ausgegeben.
+Verwenden Sie ein **table\_query**-Objekt, um eine Tabelle für alle Entitäten in einer Partition abzurufen. Im folgenden Codebeispiel wird ein Filter für Entitäten erstellt, wobei "Smith" der Partitionsschlüssel ist. In diesem Beispiel werden die Felder der einzelnen Entitäten in den Abfrageergebnissen an die Konsole ausgegeben.
 
 	// Retrieve the storage account from the connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -241,7 +241,7 @@ Wenn Sie nicht alle Entitäten in einer Partition abrufen möchten, können Sie 
 	}  
 
 ## Abrufen einer einzelnen Entität
-Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Im folgenden Code wird der Kunde "Jeff Smith" durch eine **table_operation::retrive_entity** angegeben. Bei dieser Methode wird nur eine Entität anstelle einer Sammlung zurückgegeben, und der zurückgegebene Wert befindet sich in **table_result**. Die Angabe beider Schlüssel, Partition und Zeile, in einer Abfrage ist die schnellste Möglichkeit, um eine einzelne Entität aus dem Tabellendienst abzurufen.
+Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Im folgenden Code wird der Kunde "Jeff Smith" durch eine **table\_operation::retrive\_entity** angegeben. Bei dieser Methode wird nur eine Entität anstelle einer Sammlung zurückgegeben, und der zurückgegebene Wert befindet sich in **table\_result**. Die Angabe beider Schlüssel, Partition und Zeile, in einer Abfrage ist die schnellste Möglichkeit, um eine einzelne Entität aus dem Tabellendienst abzurufen.
 
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
 
@@ -264,7 +264,7 @@ Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Im fol
 		<< U(", Property2: ") << properties.at(U("Phone")).string_value() << std::endl;
 
 ## Ersetzen einer Entität
-Um eine Entität zu ersetzen, rufen Sie sie aus dem Tabellendienst ab, ändern Sie das Entitätsobjekt, und speichern Sie die Änderungen dann im Tabellendienst. Mit dem folgenden Code werden Telefonnummer und E-Mail-Adresse eines vorhandenen Kunden geändert. Statt **table_operation:: insert_entity** wird in diesem Codebeispiel **table_operation:: replace_entity** aufgerufen. Dadurch wird die Entität auf dem Server vollständig ersetzt, sofern die Entität auf dem Server sich seit dem letzten Abruf nicht geändert hat. In diesem Fall wäre der Vorgang nicht erfolgreich. Auf diese Weise soll verhindert werden, dass eine Änderung, die zwischen dem Abruf und der Aktualisierung durch eine andere Komponente der Anwendung vorgenommen wurde, unabsichtlich überschrieben wird. Die richtige Vorgehensweise in diesem Fall besteht darin, die Entität erneut abzurufen, Ihre Änderungen vorzunehmen (falls diese noch gültig sind) und dann einen anderen **table_operation::replace_entity**-Vorgang auszuführen. Im nächsten Abschnitt erfahren Sie, wie Sie dieses Verhalten überschreiben.
+Um eine Entität zu ersetzen, rufen Sie sie aus dem Tabellendienst ab, ändern Sie das Entitätsobjekt, und speichern Sie die Änderungen dann im Tabellendienst. Mit dem folgenden Code werden Telefonnummer und E-Mail-Adresse eines vorhandenen Kunden geändert. Statt **table\_operation:: insert\_entity** wird in diesem Codebeispiel **table\_operation:: replace\_entity** aufgerufen. Dadurch wird die Entität auf dem Server vollständig ersetzt, sofern die Entität auf dem Server sich seit dem letzten Abruf nicht geändert hat. In diesem Fall wäre der Vorgang nicht erfolgreich. Auf diese Weise soll verhindert werden, dass eine Änderung, die zwischen dem Abruf und der Aktualisierung durch eine andere Komponente der Anwendung vorgenommen wurde, unabsichtlich überschrieben wird. Die richtige Vorgehensweise in diesem Fall besteht darin, die Entität erneut abzurufen, Ihre Änderungen vorzunehmen (falls diese noch gültig sind) und dann einen anderen **table\_operation::replace\_entity**-Vorgang auszuführen. Im nächsten Abschnitt erfahren Sie, wie Sie dieses Verhalten überschreiben.
 
 	// Retrieve the storage account from the connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -293,7 +293,7 @@ Um eine Entität zu ersetzen, rufen Sie sie aus dem Tabellendienst ab, ändern S
 	azure::storage::table_result replace_result = table.execute(replace_operation);
 
 ## Einfügen oder Ersetzen einer Entität
-**table_operation::replace_entity**-Vorgänge sind nicht erfolgreich, wenn die Entität seit dem letzten Abruf vom Server geändert wurde. Darüber hinaus müssen Sie zuerst die Entität vom Server abrufen, damit der **table_operation::replace_entity**-Vorgang erfolgreich ist. Manchmal ist jedoch nicht bekannt, ob die Entität auf dem Server vorhanden ist, und die darin aktuell gespeicherten Werte sind nicht relevant. In diesem Fall sollten diese durch die Aktualisierung vollständig überschrieben werden. Dies erreichen Sie mit einem **table_operation::insert_or_replace_entity**-Vorgang. Bei diesem Vorgang wird die Entität eingefügt, falls sie nicht vorhanden ist, oder ersetzt, falls sie vorhanden ist, unabhängig davon, wann die letzte Aktualisierung stattgefunden hat. Im folgenden Codebeispiel wird die Kundenentität für Jeff Smith abgerufen, sie wird danach jedoch mithilfe von **table_operation::insert_or_replace_entity** wieder auf dem Server gespeichert. Alle Änderungen, die zwischen dem Abruf- und Aktualisierungsvorgang an der Entität vorgenommen wurden, werden überschrieben.
+**table\_operation::replace\_entity**-Vorgänge sind nicht erfolgreich, wenn die Entität seit dem letzten Abruf vom Server geändert wurde. Darüber hinaus müssen Sie zuerst die Entität vom Server abrufen, damit der **table\_operation::replace\_entity**-Vorgang erfolgreich ist. Manchmal ist jedoch nicht bekannt, ob die Entität auf dem Server vorhanden ist, und die darin aktuell gespeicherten Werte sind nicht relevant. In diesem Fall sollten diese durch die Aktualisierung vollständig überschrieben werden. Dies erreichen Sie mit einem **table\_operation::insert\_or\_replace\_entity**-Vorgang. Bei diesem Vorgang wird die Entität eingefügt, falls sie nicht vorhanden ist, oder ersetzt, falls sie vorhanden ist, unabhängig davon, wann die letzte Aktualisierung stattgefunden hat. Im folgenden Codebeispiel wird die Kundenentität für Jeff Smith abgerufen, sie wird danach jedoch mithilfe von **table\_operation::insert\_or\_replace\_entity** wieder auf dem Server gespeichert. Alle Änderungen, die zwischen dem Abruf- und Aktualisierungsvorgang an der Entität vorgenommen wurden, werden überschrieben.
 
 	// Retrieve the storage account from the connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -323,7 +323,7 @@ Um eine Entität zu ersetzen, rufen Sie sie aus dem Tabellendienst ab, ändern S
 	azure::storage::table_result insert_or_replace_result = table.execute(insert_or_replace_operation);
  
 ## Abfragen einer Teilmenge von Entitätseigenschaften  
-Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer Entität aufgerufen werden. Die Abfrage im folgenden Code übergibt mit der **table_query::set_select_columns**-Methode nur die E-Mail-Adressen von Entitäten in der Tabelle.
+Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer Entität aufgerufen werden. Die Abfrage im folgenden Code übergibt mit der **table\_query::set\_select\_columns**-Methode nur die E-Mail-Adressen von Entitäten in der Tabelle.
 
 	// Retrieve the storage account from the connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -362,7 +362,7 @@ Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer En
 **Hinweis:** Das Abfragen einiger Eigenschaften einer Entität ist effizienter als das Abrufen aller Eigenschaften.
 
 ## Löschen einer Entität
-Sie können eine Entität problemlos nach dem Abrufen löschen. Nachdem die Entität abgerufen wurde, rufen Sie die **table_operation::delete_entity** mit der zu löschenden Entität auf. Rufen Sie anschließend eine Ausführung der **cloud_table.execute**-Methode auf. Der folgende Code ruft eine Entität mit Partitionsschlüssel "Smith" sowie Zeilenschlüssel "Jeff" ab und löscht sie.
+Sie können eine Entität problemlos nach dem Abrufen löschen. Nachdem die Entität abgerufen wurde, rufen Sie die **table\_operation::delete\_entity** mit der zu löschenden Entität auf. Rufen Sie anschließend eine Ausführung der **cloud\_table.execute**-Methode auf. Der folgende Code ruft eine Entität mit Partitionsschlüssel "Smith" sowie Zeilenschlüssel "Jeff" ab und löscht sie.
 
 	// Retrieve the storage account from the connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -416,4 +416,4 @@ Nachdem Sie sich nun mit den Grundlagen von Tabellenspeichern vertraut gemacht h
 -	[Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

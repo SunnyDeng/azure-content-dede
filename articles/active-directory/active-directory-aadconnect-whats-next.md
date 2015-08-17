@@ -18,9 +18,12 @@
 
 # Verwalten von Azure AD Connect 
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="../active-directory-aadconnect/" title="Worum handelt es sich?">Worum handelt es sich?</a> <a href="../active-directory-aadconnect-how-it-works/" title="Funktionsweise">Funktionsweise</a> <a href="../active-directory-aadconnect-get-started/" title="Erste Schritte">Erste Schritte</a> <a href="../active-directory-aadconnect-whats-next/" title="Nächste Schritte" class="current">Nächste Schritte</a> <a href="../active-directory-aadconnect-learn-more/" title="Weitere Informationen">Weitere Informationen</a>
-</div>
+> [AZURE.SELECTOR]
+- [What is It](../active-directory-aadconnect/)
+- [How it Works](../active-directory-aadconnect-how-it-works/)
+- [Getting Started](../active-directory-aadconnect-get-started/)
+- [What's Next](../active-directory-aadconnect-whats-next/) 
+- [Learn More](../active-directory-aadconnect-learn-more/)
 
 Anhand der Anweisungen in den folgenden weiterführenden Themen können Sie Azure Active Directory Connect entsprechend den Bedürfnissen und Anforderungen Ihrer Organisation anpassen.
 
@@ -30,13 +33,12 @@ Nachdem Ihre Benutzer in der Cloud synchronisiert wurden, müssen Sie ihnen nun 
 
 ### So weisen Sie eine Azure AD Premium- oder Enterprise Mobility Suite-Lizenz zu
 --------------------------------------------------------------------------------
-<ol>
-<li>Melden Sie sich beim Azure-Portal als Administrator an.</li>
-<li>Wählen Sie im linken Bereich **Active Directory** aus.</li>
-<li>Doppelklicken Sie auf der Seite "Active Directory" auf das Verzeichnis mit den Benutzern, die Sie aktivieren möchten.</li>
-<li>Wählen Sie oben auf der Seite des Verzeichnisses die Option **Lizenzen** aus.</li>
-<li>Wählen Sie auf der Seite "Lizenzen" die Option "Active Directory Premium" oder "Enterprise Mobility Suite" aus, und klicken Sie dann auf **Zuweisen**.</li>
-<li>Wählen Sie im Dialogfeld die Benutzer aus, denen Sie Lizenzen zuweisen möchten, und klicken Sie dann auf das Häkchen, um die Änderungen zu speichern.</li>
+1. Melden Sie sich beim Azure-Portal als Administrator an.
+2. Wählen Sie im linken Bereich **Active Directory** aus.
+3. Doppelklicken Sie auf der Seite "Active Directory" auf das Verzeichnis mit den Benutzern, die Sie aktivieren möchten.
+4. Wählen Sie oben auf der Seite des Verzeichnisses die Option **Lizenzen** aus.
+5. Wählen Sie auf der Seite "Lizenzen" die Option "Active Directory Premium" oder "Enterprise Mobility Suite" aus, und klicken Sie dann auf **Zuweisen**.
+6. Wählen Sie im Dialogfeld die Benutzer aus, denen Sie Lizenzen zuweisen möchten, und klicken Sie dann auf das Häkchen, um die Änderungen zu speichern.
 
 
 ## Überprüfen der geplanten Synchronisierungsaufgabe
@@ -66,7 +68,8 @@ Nach der ersten Installation von Azure AD Connect können Sie den Assistenten �
 
 Die folgende Tabelle enthält eine Zusammenfassung und jeweils eine kurze Beschreibung dieser Aufgaben.
 
-<center>![Verknüpfungsregel](./media/active-directory-aadconnect-whats-next/addtasks.png) </center>
+![Join Rule](./media/active-directory-aadconnect-whats-next/addtasks.png)
+
 
 Weitere Aufgabe | Beschreibung 
 ------------- | ------------- |
@@ -85,6 +88,7 @@ Stagingmodus aktivieren | Hiermit können Sie Informationen bereitstellen, die s
 ## Zusätzliche Dokumentation
 Zusätzliche Dokumentation zur Verwendung von Azure AD Connect:
 
+- [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
 - [Changing the Azure AD Connect default configuration](active-directory-aadconnect-whats-next-change-default-config.md) (in englischer Sprache)
 - [Using the Azure AD Connect Synchronization Rules Editor](active-directory-aadconnect-whats-next-synch-rules-editor.md) (in englischer Sprache)
 - [Using declarative provisioning](active-directory-aadconnect-whats-next-declarative-prov.md) (in englischer Sprache)
@@ -94,4 +98,4 @@ Ein Teil der Dokumentation für Azure AD Sync ist noch immer relevant und gilt 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

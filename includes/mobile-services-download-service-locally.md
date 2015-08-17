@@ -8,4 +8,4 @@
 
 	Dadurch wird das Visual Studio-Projekt, das den mobilen Dienst implementiert, heruntergeladen. Speichern Sie die komprimierte Projektdatei auf Ihrem lokalen Computer, und notieren Sie sich den Speicherort.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -33,7 +33,7 @@ Gehen Sie wie folgt vor, um mithilfe einer Resource Manager-Vorlage im Github-Vo
 
 ### Schritt 1: Laden Sie die JSON-Datei herunter.
 
-Bestimmen Sie einen lokalen Ordner als Speicherort für die JSON-Vorlagendateien, und erstellen Sie den Ordner (z. B. C:\Azure\Vorlagen\Verfügbarkeit).
+Bestimmen Sie einen lokalen Ordner als Speicherort für die JSON-Vorlagendateien, und erstellen Sie den Ordner (z. B. C:\\Azure\\Vorlagen\\Verfügbarkeit).
 
 Ersetzen Sie den Ordnernamen, kopieren Sie die folgenden Befehle, und führen Sie sie aus.
 
@@ -103,4 +103,4 @@ Gehen Sie wie folgt vor, um die Verfügbarkeitsgruppe mithilfe einer Ressourcen-
 
 	azure group deployment create <my-resource-group> <my-deployment-name> --template-uri https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-2-vms-2-FDs-no-resource-loops/azuredeploy.json
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

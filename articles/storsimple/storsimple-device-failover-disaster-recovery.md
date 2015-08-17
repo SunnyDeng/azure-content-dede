@@ -9,7 +9,7 @@
 <tags 
    ms.service="storsimple"
    ms.devlang="na"
-   ms.topic="hero-article"
+   ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="07/23/2015"
@@ -87,7 +87,7 @@ Führen Sie die folgenden Schritte aus, wenn Sie nur über ein einzelnes Gerät 
 												
 	>[AZURE.IMPORTANT]**Wenn nicht zuerst die Mindestkonfiguration abgeschlossen wird, schlägt die Notfallwiederherstellung aufgrund eines Fehlers in der aktuellen Implementierung fehl. Dieses Verhalten wird in einer späteren Version behoben werden.**
 
-1. Wählen Sie das alte Gerät \(Status "Offline"\) aus, und klicken Sie auf **Failover**. Führen Sie im daraufhin angezeigten Assistenten ein Failover für dieses Gerät durch, und geben Sie das Zielgerät als neu registriertes Gerät an. Ausführliche Anweisungen finden Sie unter [Failover auf ein anderes physisches Gerät](#fail-over-to-another-physical-device).
+1. Wählen Sie das alte Gerät (Status "Offline") aus, und klicken Sie auf **Failover**. Führen Sie im daraufhin angezeigten Assistenten ein Failover für dieses Gerät durch, und geben Sie das Zielgerät als neu registriertes Gerät an. Ausführliche Anweisungen finden Sie unter [Failover auf ein anderes physisches Gerät](#fail-over-to-another-physical-device).
 
 1. Es wird ein Gerätewiederherstellungsauftrag erstellt, den Sie auf der Seite **Aufträge** überwachen können.
 
@@ -129,9 +129,9 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorS
 	
 	b. Wechseln Sie zur Seite **Volumecontainer**. Es sollten jetzt alle Volumecontainer und die Volumes des alten Geräts aufgeführt werden.
 
-## Business Continuity Disaster Recovery \(BCDR\)
+## Business Continuity Disaster Recovery (BCDR)
 
-Ein Business Continuity Disaster Recovery \(BCDR\)-Szenario liegt vor, wenn das gesamte Azure-Rechenzentrum nicht mehr funktioniert. Dies kann sich auf den StorSimple Manager-Dienst und die zugehörigen StorSimple-Geräte auswirken.
+Ein Business Continuity Disaster Recovery (BCDR)-Szenario liegt vor, wenn das gesamte Azure-Rechenzentrum nicht mehr funktioniert. Dies kann sich auf den StorSimple Manager-Dienst und die zugehörigen StorSimple-Geräte auswirken.
 
 Wenn StorSimple-Geräte direkt vor einem Notfall registriert wurden, müssen diese StorSimple-Geräte möglicherweise auf die Werkseinstellungen zurückgesetzt werden. Nach dem Notfall wird das StorSimple-Gerät als offline angezeigt. Das StorSimple-Gerät muss aus dem Portal gelöscht und auf die Werkseinstellungen zurückgesetzt werden. Anschließend muss es neu registriert werden.
 
@@ -148,4 +148,4 @@ Informationen zum Verwalten Ihres Geräts mit dem StorSimple-Manager-Dienst find
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

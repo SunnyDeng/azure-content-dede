@@ -106,4 +106,4 @@ Wenn die Ausführung der Vorlage abgeschlossen ist, verfügen Sie über eine neu
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -63,4 +63,4 @@ Die Aktion gibt die Ausgabe als Zeichenfolge zurück - Ergebnis. Das Ergebnis en
 <!-- Links -->
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 
-<!-------HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

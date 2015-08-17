@@ -143,4 +143,4 @@ Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](http://azu
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

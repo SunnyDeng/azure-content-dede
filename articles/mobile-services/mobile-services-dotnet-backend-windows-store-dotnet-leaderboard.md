@@ -7,6 +7,7 @@
 	editor="" 
 	services="mobile-services"/>
 
+
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="06/24/2015" 
 	ms.author="glenga"/>
+
 
 # Erstellen einer Bestenlisten-App mit Azure Mobile Services .NET-Back-End
 
@@ -111,7 +113,7 @@ Fügen Sie eine weitere Klasse namens `PlayerRank` hinzu.
 
 Beide Klassen erben von der **EntityData**-Klasse. Durch das Ableiten von **EntityData** wird die Nutzung der Daten für die App erleichtert. Es wird die plattformübergreifende Clientbibliothek für Azure Mobile Services verwendet. **EntityData** macht außerdem das [Behandeln von Datenbank-Schreibkonflikten](mobile-services-windows-store-dotnet-handle-database-conflicts.md) leichter für die App.
 
-Die `PlayerRank`-Klasse verfügt über eine [Navigationseigenschaft](http://msdn.microsoft.com/data/jj713564.aspx), die auf die zugehörige `Player`-Entität verweist. Das **[ForeignKey]**-Attribut teilt EF mit, das die `Player`-Eigenschaft einen Fremdschlüssel darstellt.
+Die `PlayerRank`-Klasse verfügt über eine ￼[Navigationseigenschaft](http://msdn.microsoft.com/data/jj713564.aspx)￼, die auf die zugehörige `Player`￼￼￼-Entität verweist. Das **[ForeignKey]**-Attribut teilt EF mit, das die `Player`-Eigenschaft einen Fremdschlüssel darstellt.
 
 ## Hinzufügen von Web-API-Controllern
 
@@ -139,7 +141,7 @@ Mit diesen Schritten wird eine Datei namens „PlayerController.cs“ zum Projek
 
 Der Controller wird von **TableController<T>** abgeleitet. Diese Klasse erbt **ApiController**, ist jedoch auf Azure Mobile Services spezialisiert.
  
-- Die Standardroute für einen **TableController** ist `/tables/{table_name}/{id}`, wobei *table_name* dem Namen der Entität entspricht. Die Route für den Player-Controller ist also */tables/player/{id}*. Diese Routingkonvention macht **TableController** mit der Mobile Services [REST-API](http://msdn.microsoft.com/library/azure/jj710104.aspx) konsistent.
+- Die Standardroute für einen **TableController** ist `/tables/{table_name}/{id}`, wobei *table\_name* dem Namen der Entität entspricht. Die Route für den Player-Controller ist also */tables/player/{id}*. Diese Routingkonvention macht **TableController** mit der Mobile Services [REST-API](http://msdn.microsoft.com/library/azure/jj710104.aspx) konsistent.
 - Datenzugriff: Für Datenbankvorgänge verwendet die Klasse **TableController** die Schnittstelle **IDomainManager**, die eine Abstraktion für den Datenzugriff definiert. Das Gerüst verwendet **EntityDomainManager**, welches eine konkrete Implementierung von **IDomainManager** ist, die einen EF-Kontext einfasst. 
 
 Fügen Sie nun einen zweiten Controller für PlayerRank-Entitäten hinzu. Führen Sie die gleichen Schritte aus, aber wählen Sie PlayerRank als Modellklasse. Verwenden Sie dieselbe Datenkontextklasse; Sie müssen keine neue erstellen. Nennen Sie den Controller „PlayerContoller“.
@@ -308,7 +310,7 @@ Fügen Sie anschließend den folgenden Code zu `PlayerRankController` hinzu:
         return Ok();
     }
 
-Die `PostPlayerScore`-Methode verwendet eine `PlayerScore`-Instanz als Eingabe. (Der Client sendet das Ergebnis als `PlayerScore` in einer HTTP POST-Anforderung.) Die Methode bewirkt Folgendes:
+Die `PostPlayerScore`-Methode verwendet eine `PlayerScore`￼￼￼-Instanz als Eingabe. (Der Client sendet das Ergebnis als `PlayerScore` in einer HTTP POST-Anforderung.) Die Methode bewirkt Folgendes:
 
 1.	Fügt einen neuen Wert für `PlayerRank` für den Spieler hinzu, falls er nicht bereits in der Datenbank vorhanden ist.
 2.	Aktualisiert das Ergebnis des Spielers.
@@ -588,7 +590,7 @@ Fügen Sie zuletzt Methoden hinzu, welche die Dienstebene aufrufen.
 
 ## Hinzufügen einer MobileServiceClient-Instanz
 
-Öffnen Sie die Datei *„App.xaml.cs*“, und fügen Sie der `App`-Klasse eine **MobileServiceClient**-Instanz hinzu.
+Öffnen Sie die Datei „App.xaml.cs\*“, und fügen Sie der `App`-Klasse eine **MobileServiceClient**-Instanz hinzu.
 
 	// New code:
 	using Microsoft.WindowsAzure.MobileServices;
@@ -635,6 +637,7 @@ Die Liste der Spieler wird in einem Listenfeld (**ListBox**) angezeigt:
 	<ListBox Width="200" Height="400" x:Name="PlayerListBox" 
 	    ItemsSource="{Binding Players}" DisplayMemberPath="Name"/>
 
+
 Die Rangfolge wird in einer Listenansicht (**ListView**) angezeigt:
 
 	<ListView x:Name="RankingsListView" ItemsSource="{Binding Ranks}" SelectionMode="None">
@@ -644,12 +647,18 @@ Die Rangfolge wird in einer Listenansicht (**ListView**) angezeigt:
 	            <Grid>
 	                <Grid.ColumnDefinitions>
 	                    <ColumnDefinition Width="*"/>
+
 	                    <ColumnDefinition Width="2*"/>
+
 	                    <ColumnDefinition Width="*"/>
+
 	                </Grid.ColumnDefinitions>
 	                <TextBlock Text="{Binding Path=Rank}"/>
+
 	                <TextBlock Text="{Binding Path=PlayerName}" Grid.Column="1"/>
+
 	                <TextBlock Text="{Binding Path=Score}" Grid.Column="2"/>
+
 	            </Grid>
 	        </DataTemplate>
 	    </ListView.ItemTemplate>
@@ -762,4 +771,4 @@ Wenn Sie nun die App ausführen, kommuniziert diese mit dem echten Dienst.
 
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

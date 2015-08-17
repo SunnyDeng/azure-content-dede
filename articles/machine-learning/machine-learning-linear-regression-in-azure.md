@@ -9,6 +9,7 @@
 	manager="paulettm" 
 	editor="cgronlun"  />
 
+
 <tags 
 	ms.service="machine-learning" 
 	ms.workload="data-services" 
@@ -17,6 +18,7 @@
 	ms.topic="article" 
 	ms.date="07/14/2015" 
 	ms.author="kbaroni;garye" />
+
 
 # Verwenden der linearen Regression in Azure Machine Learning
 
@@ -61,7 +63,9 @@ Zunächst war das Excel-Modell dem Azure-ML-Modell deutlich überlegen.
 |---|:---:|:---:|
 |Leistung| | |
 |<ul style="list-style-type: none;"><li>Adjusted R Square</li></ul>| 0,96 |–|
-|<ul style="list-style-type: none;"><li>Coefficient of <br />Determination</li></ul>|–|	0,78<br />(geringe Genauigkeit)|
+|<ul style="list-style-type: none;"><li>Coefficient of <br />
+Determination</li></ul>|–|	0,78<br />
+(geringe Genauigkeit)|
 |Mittlerer absoluter Fehler |	9,5 Mio. $|	19,4 Mio. $|
 |Mean Absolute Error (%)|	6,03 %|	12,2 %
 
@@ -75,28 +79,12 @@ Als wir unser Verfahren und die Ergebnisse den Entwicklern und Data Scientists d
 ### Rätsel gelöst!
 Als wir die Empfehlungen umgesetzt hatten, konnten wir in Azure ML denselben Benchmark erzielen wie mit Excel.
 
-|| Excel|Azure ML (erstes Modell)|Azure ML mit Least Squares|
-|---|:---:|:---:|:---:|
-|Bezeichneter Wert |Actuals (numerisch)|gleich|gleich|
-|Learner |Excel -> Data Analysis -> Regression|Linear Regression.|Linear Regression|
-|Learner options|–|Standard|ordinary least squares<br />L2 = 0,005|
-|Data Set|26 Zeichen, 3 Features, 1 Bezeichnung. Alle numerisch|gleich|gleich|
-|Split: trainieren|Excel trainiert mit ersten 18 Zeilen, getestet an letzten 8 Zeilen|gleich|gleich|
-|Split: testen|Excel-Regressionsformel auf letzte 8 Zeilen angewendet|gleich|gleich|
-|**Leistung**||||
-|Angepasstes R-Quadrat|0,96|–||
-|Coefficient of Determination|–|0,78|0,952049|
-|Mean Absolute Error |9,5 M$|19,4 M$|9,5 M$|
-|Mean Absolute Error (%)|<span style="background-color: 00FF00;"> 6,03 %</span>|12,2 %|<span style="background-color: 00FF00;"> 6,03 %</span>|
+|| Excel|Azure ML (erstes Modell)|Azure ML mit Least Squares| |---|:---:|:---:|:---:| |Bezeichneter Wert |Actuals (numerisch)|gleich|gleich| |Learner |Excel -> Data Analysis -> Regression|Linear Regression.|Linear Regression| |Learner options|–|Standard|ordinary least squares<br />
+L2 = 0,005| |Data Set|26 Zeichen, 3 Features, 1 Bezeichnung. Alle numerisch|gleich|gleich| |Split: trainieren|Excel trainiert mit ersten 18 Zeilen, getestet an letzten 8 Zeilen|gleich|gleich| |Split: testen|Excel-Regressionsformel auf letzte 8 Zeilen angewendet|gleich|gleich| |**Leistung**|||| |Angepasstes R-Quadrat|0,96|–|| |Coefficient of Determination|–|0,78|0,952049| |Mean Absolute Error |9,5 M$|19,4 M$|9,5 M$| |Mean Absolute Error (%)|<span style="background-color: 00FF00;"> 6,03 %</span>|12,2 %|<span style="background-color: 00FF00;"> 6,03 %</span>|
 
 Zudem gab es eine gute Übereinstimmung der Excel-Koeffizienten mit den Funktionsgewichten im trainierten Azure-Modell.
 
-||Excel-Koeffizienten|Azure-Featuregewichtungen|
-|---|:---:|:---:|
-|Intercept/Bias|19470209,88|19328500|
-|Feature A|0,832653063|0,834156|
-|Feature B|11071967,08|11007300|
-|Feature C|25383318,09|25140800|
+||Excel-Koeffizienten|Azure-Featuregewichtungen| |---|:---:|:---:| |Intercept/Bias|19470209,88|19328500| |Feature A|0,832653063|0,834156| |Feature B|11071967,08|11007300| |Feature C|25383318,09|25140800|
 
 ## Nächste Schritte
 
@@ -158,4 +146,4 @@ Im Folgenden finden Sie einige Ressourcen für Ihre Arbeit mit Regression:
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

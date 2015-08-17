@@ -52,7 +52,7 @@ Um dieses Szenario zu aktivieren, gehen Sie im Machine Learning-Empfehlungsdiens
 
 * Abrufen von Empfehlungen: Wenn Sie über ein Empfehlungsmodell verfügen, können Sie Empfehlungen für einzelne ausgewählte Elemente oder eine Elementliste erstellen. 
 
-In der Regel rufen Sie "Get recommendation" über einen bestimmten Zeitraum auf. Während dieses Zeitraums können Sie die Nutzungsdaten an das Machine Learning-Empfehlungssystem umleiten, damit diese Daten dem angegebenen Modellcontainer hinzugefügt werden. Wenn Sie über ausreichend Nutzungsdaten verfügen, können Sie ein neues Empfehlungsmodell erstellen, das die zusätzlichen Nutzungsdaten integriert.
+In der Regel rufen Sie „Get recommendation“ über einen bestimmten Zeitraum auf. Während dieses Zeitraums können Sie die Nutzungsdaten an das Machine Learning-Empfehlungssystem umleiten, damit diese Daten dem angegebenen Modellcontainer hinzugefügt werden. Wenn Sie über ausreichend Nutzungsdaten verfügen, können Sie ein neues Empfehlungsmodell erstellen, das die zusätzlichen Nutzungsdaten integriert.
 
 ##Voraussetzungen
 
@@ -89,4 +89,4 @@ Eine vollständige Beschreibung der APIs finden Sie in der Dokumentation zum Mic
 Die Beispiel-App ist nicht für die Ausführung in einer Produktionsumgebung gedacht. Der Katalog umfasst nur sehr wenige Daten, die kein sinnvolles Empfehlungsmodell ergeben. Die Daten werden als Beispiel bereitgestellt.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

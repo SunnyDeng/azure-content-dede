@@ -7,4 +7,4 @@
 
 3. Legen Sie für **Automatische Updates** die Option **Ja** fest. Diese Option sucht täglich um 3:00 Uhr Gerätezeit automatisch nach Updates und installiert Updates um 4:00 Uhr.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

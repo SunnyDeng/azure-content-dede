@@ -24,4 +24,4 @@ Standardmäßig sind sämtliche Anfragen an die Ressourcen des mobilen Diensts a
  
 4. Veröffentlichen Sie das Projekt erneut.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

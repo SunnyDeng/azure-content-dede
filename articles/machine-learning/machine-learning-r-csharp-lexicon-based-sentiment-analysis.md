@@ -76,7 +76,7 @@ Die Eingabe lautet: "Today is a good day." Die Ausgabe lautet "1", was darauf hi
 >Dieser Webdienst wurde mithilfe von Azure Machine Learning erstellt. Eine kostenlose Testversion sowie Einführungsvideos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](machine-learning-publish-a-machine-learning-web-service.md) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
 
 
-In Azure Machine Learning wurde ein neues leeres Experiment erstellt. Die nachfolgende Abbildung zeigt den Experimentablauf bei der lexikonbasierten Stimmungsanalyse. Die Datei "sent_dict.csv" befindet sich im MPQA-Subjektivitätslexikon und ist als eine der Eingaben für [Execute R Script][execute-r-script] festgelegt. Eine andere Eingabe ist eine Stichprobe des Amazon-Bewertungsdatasets zum Testen, bei der Vorgänge für Auswahl, Modifizieren des Spaltennamens und Aufteilen ausgeführt wurden. Sie verwenden ein Hashpaket, um das Subjektivitätslexikon im Arbeitsspeicher zu speichern und den Prozess der Bewertungsberechnung zu beschleunigen. Der gesamte Text wird vom von "tm"-Paket in Token umgesetzt und mit dem Wort im Stimmungswörterbuch verglichen. Schließlich wird ein Ergebnis berechnet, indem die Gewichtung aller subjektiven Wörter im Text hinzugefügt wird.
+In Azure Machine Learning wurde ein neues leeres Experiment erstellt. Die nachfolgende Abbildung zeigt den Experimentablauf bei der lexikonbasierten Stimmungsanalyse. Die Datei "sent\_dict.csv" befindet sich im MPQA-Subjektivitätslexikon und ist als eine der Eingaben für [Execute R Script][execute-r-script] festgelegt. Eine andere Eingabe ist eine Stichprobe des Amazon-Bewertungsdatasets zum Testen, bei der Vorgänge für Auswahl, Modifizieren des Spaltennamens und Aufteilen ausgeführt wurden. Sie verwenden ein Hashpaket, um das Subjektivitätslexikon im Arbeitsspeicher zu speichern und den Prozess der Bewertungsberechnung zu beschleunigen. Der gesamte Text wird vom von "tm"-Paket in Token umgesetzt und mit dem Wort im Stimmungswörterbuch verglichen. Schließlich wird ein Ergebnis berechnet, indem die Gewichtung aller subjektiven Wörter im Text hinzugefügt wird.
 
 ###Experimentablauf:
 
@@ -89,7 +89,7 @@ In Azure Machine Learning wurde ein neues leeres Experiment erstellt. Die nachfo
     sent_dict_data<- maml.mapInputPort(1) # class: data.frame
     dataset2 <- maml.mapInputPort(2) # class: data.frame
  
-   # Install hash package install.packages("src/hash_2.2.6.zip", lib = ".", repos = NULL, verbose = TRUE) success <- library("hash", lib.loc = ".", logical.return = TRUE, verbose = TRUE) library(tm) library(stringr)
+   # Install hash package install.packages("src/hash\_2.2.6.zip", lib = ".", repos = NULL, verbose = TRUE) success <- library("hash", lib.loc = ".", logical.return = TRUE, verbose = TRUE) library(tm) library(stringr)
 
     #create sentiment dictionary
     negation_word <- c("not","nor", "no")
@@ -153,4 +153,4 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

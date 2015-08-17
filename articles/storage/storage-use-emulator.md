@@ -6,6 +6,7 @@
 	authors="tamram" 
 	manager="adinah" 
 	editor=""/>
+
 <tags 
 	ms.service="storage" 
 	ms.workload="storage" 
@@ -14,6 +15,7 @@
 	ms.topic="article" 
 	ms.date="07/08/2015" 
 	ms.author="tamram"/>
+
 
 # Einsatz des Azure-Speicheremulators für Entwicklung und Tests
 
@@ -49,7 +51,7 @@ Einige Azure Storage-Clientbibliotheken, wie z. B. die Xamarin-Bibliothek, unte
 
 1. Installieren Sie Azure PowerShell, sofern noch nicht geschehen. Es empfiehlt sich, die neueste Version der Azure PowerShell-Cmdlets zu verwenden. Installationsanweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../articles/powershell-install-configure.md#Install).
 
-2. Öffnen Sie Azure PowerShell, und führen Sie die folgenden Befehle aus. Ersetzen Sie unbedingt *ACCOUNT_NAME* und *ACCOUNT_KEY==* durch Ihre eigenen Anmeldeinformationen. Ersetzen Sie *CONTAINER_NAME* durch einen Namen Ihrer Wahl.
+2. Öffnen Sie Azure PowerShell, und führen Sie die folgenden Befehle aus. Ersetzen Sie unbedingt *ACCOUNT\_NAME* und *ACCOUNT\_KEY==* durch Ihre eigenen Anmeldeinformationen. Ersetzen Sie *CONTAINER\_NAME* durch einen Namen Ihrer Wahl.
 
 		$context = New-AzureStorageContext -StorageAccountName "ACCOUNT_NAME" -StorageAccountKey "ACCOUNT_KEY=="
 		
@@ -80,7 +82,7 @@ Wenn Sie das Befehlszeilenfenster schließen, wird der Speicheremulator weiterhi
 
 Wenn Sie den Speicheremulator zum ersten Mal ausführen, wird die lokale Speicherumgebung für Sie initialisiert. Durch die Initialisierung wird in LocalDB eine Datenbank erstellt, und es werden für jeden lokalen Speicherdienst HTTP-Ports reserviert.
 
-Der Speicheremulator wird standardmäßig im Verzeichnis "C:\Programme (x86)\Microsoft SDKs\Azure\Storage Emulator" installiert.
+Der Speicheremulator wird standardmäßig im Verzeichnis "C:\\Programme (x86)\\Microsoft SDKs\\Azure\\Storage Emulator" installiert.
 
 ### Initialisieren des Speicheremulators zur Verwendung einer anderen SQL-Datenbank
 
@@ -89,11 +91,11 @@ Sie können das Speicheremulator-Befehlszeilentool zum Initialisieren des Speich
 1. Klicken Sie auf die Schaltfläche **Start**, oder drücken Sie die **Windows**-Taste. Geben Sie `Azure Storage Emulator` ein, und wählen Sie den Speicheremulator aus, wenn er angezeigt wird, um das Speicheremulator-Befehlszeilentool aufzurufen.
 2. Geben Sie im Eingabeaufforderungsfenster den folgenden Befehl ein, wobei `<SQLServerInstance>` der Name der SQL Server-Instanz ist. Geben Sie als SQL Server-Instanz `(localdb)\v11.0` ein, um LocalDB zu verwenden.
 
-		AzureStorageEmulator init /sqlInstance <SQLServerInstance> 
+		AzureStorageEmulator init /server <SQLServerInstance> 
     
 	Mit dem folgenden Befehl können Sie den Emulator anweisen, die SQL Server-Standardinstanz zu verwenden:
 
-    	AzureStorageEmulator init /server .\ 
+    	AzureStorageEmulator init /server .\\ 
 
 	Sie können auch den folgenden Befehl verwenden, mit dem die Datenbank erneut als Standardinstanz von LocalDB initialisiert wird:
 
@@ -143,7 +145,7 @@ Ab Version 3.0 wird beim Start des Speicheremulators ein Befehlszeilenfenster a
 
 ### Befehlszeilensyntax
 
-	AzureStorageEmulator [/start] [/stop] [/status] [/clear] [/init] [/help]
+	AzureStorageEmulator [start] [stop] [status] [clear] [init] [help]
 
 ### Optionen
 
@@ -154,8 +156,14 @@ Geben Sie zum Anzeigen der Liste der Optionen an der Eingabeaufforderung `/help`
 | **Starten** | Startet den Speicheremulator. | `AzureStorageEmulator start [-inprocess]` | *-inprocess*: startet den Emulator im aktuellen Prozess, anstatt einen neuen Prozess zu erstellen. |
 | **Beenden** | Beendet den Speicheremulator. | `AzureStorageEmulator stop` | |
 | **Status** | Zeigt den Status des Speicheremulators an. | `AzureStorageEmulator status` | |
-| **Clear** | Löscht die Daten in allen Diensten, die an der Befehlszeile angegeben werden. | `AzureStorageEmulator clear [blob] [table] [queue] [all]                                                    `| *blob*: löscht Blob-Daten. <br/>*queue*: löscht Warteschlangendaten. <br/>*table*: löscht Tabellendaten. <br/>*all*: löscht sämtliche Daten in allen Diensten. |
-| **Init** | Führt eine einmalige Initialisierung zur Einrichtung des Emulators durch. | `AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate] [-inprocess]` | *-server serverName*: gibt den Server an, auf dem die SQL-Instanz gehostet wird. <br/>*-sqlinstance instanceName*: gibt den Namen der zu verwendenden SQL-Instanz an. <br/>*-forcecreate*: erzwingt die Erstellung der SQL-Datenbank, auch wenn diese bereits vorhanden ist. <br/>*-inprocess*: führt die Initialisierung im aktuellen Prozess aus, anstatt einen neuen Prozess zu erstellen. Dazu muss der aktuelle Prozess mit erweiterten Berechtigungen gestartet worden sein. |
+| **Clear** | Löscht die Daten in allen Diensten, die an der Befehlszeile angegeben werden. | `AzureStorageEmulator clear [blob] [table] [queue] [all]                                                    `| *blob*: löscht Blob-Daten. <br/>
+\*queue\*: löscht Warteschlangendaten. <br/>
+\*table\*: löscht Tabellendaten. <br/>
+\*all\*: löscht sämtliche Daten in allen Diensten. |
+| **Init** | Führt eine einmalige Initialisierung zur Einrichtung des Emulators durch. | `AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate] [-inprocess]` | *-server serverName\\instanceName*: gibt den Server an, auf dem die SQL-Instanz gehostet wird. <br/>
+\*-sqlinstance instanceName\*: gibt den Namen der zu verwendenden SQL-Instanz in der Standardserverinstanz an. <br/>
+\*-forcecreate\*: erzwingt die Erstellung der SQL-Datenbank, auch wenn diese bereits vorhanden ist. <br/>
+\*-inprocess\*: führt die Initialisierung im aktuellen Prozess aus, anstatt einen neuen Prozess zu erstellen. Sie müssen den aktuellen Prozess mit erweiterten Berechtigungen zum Ausführen der Initialisierung starten. |
                                                                                                                   
 ## Unterschiede zwischen dem Speicheremulator und Azure Storage
 
@@ -173,6 +181,8 @@ Da der Speicheremulator eine emulierte Umgebung darstellt, die in einer lokalen 
 
 - Die Endpunkte für Dateidienst und SMB-Protokolldienst werden im Speicheremulator zurzeit nicht unterstützt.
 
+- Der Speicheremulator gibt den Fehler „VersionNotSupportedByEmulator“ (HTTP-Statuscode 400 – Ungültige Anforderung) zurück, wenn Sie eine Version der Speicherdienste verwenden, die noch nicht von der Version des von Ihnen verwendeten Emulators unterstützt wird.
+
 ### Unterschiede beim Blob-Speicher 
 
 Die folgenden Unterschiede gelten für Blob-Speicher im Emulator:
@@ -180,6 +190,8 @@ Die folgenden Unterschiede gelten für Blob-Speicher im Emulator:
 - Der Speicheremulator unterstützt nur Blob-Größen bis 2 GB.
 
 - Ein Ablegevorgang für ein Blob kann bei einem Blob, das im Speicheremulator vorhanden ist und über eine aktive Lease verfügt, erfolgreich durchgeführt werden, auch wenn die Lease-ID nicht in der Anforderung angegeben wurde.
+
+- Vorgänge für Anfügeblobs werden vom Emulator nicht unterstützt. Beim Versuch, einen Vorgang auf einen Anfügeblob anzuwenden, wird der Fehler „FeatureNotSupportedByEmulator“ (HTTP-Statuscode 400 – Ungültige Anforderung) zurückgegeben.
 
 ### Unterschiede beim Tabellenspeicher 
 
@@ -199,9 +211,17 @@ Es bestehen keine Unterschiede beim Warteschlangenspeicher im Emulator.
 
 ## Speicheremulator – Versionshinweise
 
+### Version 4.1
+
+- Der Speicheremulator unterstützt nun Version 2015-02-21 der Speicherdienste auf Blob-, Warteschlangen- und Dienstendpunkten, mit Ausnahme der neuen Anfügeblob-Funktionen. 
+
+- Der Speicheremulator gibt jetzt eine sinnvolle Fehlermeldung zurück, wenn Sie eine Version der Speicherdienste verwenden, die von dieser Version des Emulators noch nicht unterstützt wird. Es wird empfohlen, die neueste Version des Emulators zu verwenden. Wenn Sie den Fehler „VersionNotSupportedByEmulator“ (HTTP-Statuscode 400 – Ungültige Anforderung) erhalten, laden Sie die neueste Version des Speicheremulators herunter.
+
+- Es wurde ein Fehler behoben, bei der eine Racebedingung während der gleichzeitigen Zusammenführungsvorgänge zu falschen Tabellenentitätsdaten geführt hat.
+
 ### Version 4.0
 
-Die ausführbare Datei des Speicheremulators wurde in *AzureStorageEmulator.exe* umbenannt.
+- Die ausführbare Datei des Speicheremulators wurde in *AzureStorageEmulator.exe* umbenannt.
 
 ### Version 3.2
 - Der Speicheremulator unterstützt nun Version 2014-02-14 der Speicherdienste auf Blob-, Warteschlangen- und Dienstendpunkten. Beachten Sie, dass Endpunkte für den Dateidienst im Speicheremulator zurzeit nicht unterstützt werden. Ausführliche Informationen über die Version 2014-02-14 finden Sie unter [Versionsverwaltung für den Blob-Dienst, den Warteschlangendienst und den Tabellendienst in Windows Azure](https://msdn.microsoft.com/library/azure/dd894041.aspx).
@@ -216,8 +236,4 @@ Die ausführbare Datei des Speicheremulators wurde in *AzureStorageEmulator.exe*
 
 - Version 2013-08-15 der Azure Storage-Dienste wird jetzt vollständig unterstützt. (Zuvor wurde diese Version nur von Version 2.2.1 Preview des Speicheremulators unterstützt.)
 
-
-
- 
-
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

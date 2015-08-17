@@ -63,13 +63,13 @@ Wählen Sie zum Starten des Azure-Speicheremulators die Schaltfläche **Start** 
 In den folgenden Beispielen wird davon ausgegangen, dass Sie eine dieser zwei Methoden verwendet haben, um die Speicherverbindungszeichenfolge abzurufen.
 
 ## Abrufen der Verbindungszeichenfolge
-Sie können Ihre Speicherkontoinformationen mit der Klasse **cloud_storage_account**darstellen. Verwenden Sie zum Abrufen von Speicherkontoinformationen aus der Speicher-Verbindungszeichenfolge die **parse**-Methode.
+Sie können Ihre Speicherkontoinformationen mit der Klasse **cloud\_storage\_account**darstellen. Verwenden Sie zum Abrufen von Speicherkontoinformationen aus der Speicher-Verbindungszeichenfolge die **parse**-Methode.
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
 
 ## Erstellen einer Warteschlange
-Mit einem **cloud_queue_client**-Objekt können Sie Referenzobjekte für Warteschlangen abrufen. Mit dem folgenden Code wird ein **cloud_queue_client**-Objekt erstellt.
+Mit einem **cloud\_queue\_client**-Objekt können Sie Referenzobjekte für Warteschlangen abrufen. Mit dem folgenden Code wird ein **cloud\_queue\_client**-Objekt erstellt.
 
 	// Retrieve storage account from connection string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -77,7 +77,7 @@ Mit einem **cloud_queue_client**-Objekt können Sie Referenzobjekte für Wartesc
 	// Create a queue client.
 	azure::storage::cloud_queue_client queue_client = storage_account.create_cloud_queue_client();
 
-Mithilfe des **cloud_queue_client**-Objekts können Sie einen Verweis auf die Warteschlange abrufen, die Sie verwenden möchten. Sie können die Warteschlange erstellen, wenn sie nicht vorhanden ist.
+Mithilfe des **cloud\_queue\_client**-Objekts können Sie einen Verweis auf die Warteschlange abrufen, die Sie verwenden möchten. Sie können die Warteschlange erstellen, wenn sie nicht vorhanden ist.
 
 	// Retrieve a reference to a queue.
 	azure::storage::cloud_queue queue = queue_client.get_queue_reference(U("my-sample-queue"));
@@ -86,7 +86,7 @@ Mithilfe des **cloud_queue_client**-Objekts können Sie einen Verweis auf die Wa
  	queue.create_if_not_exists();  
 
 ## Einfügen einer Nachricht in eine Warteschlange
-Um eine Nachricht in eine vorhandene Warteschlange einzufügen, erstellen Sie zuerst eine neue **cloud_queue_message**. Rufen Sie dann die Methode **add_message** auf. Die **cloud_queue_message** kann entweder aus einer Zeichenfolge oder aus einem **Byte**-Array erstellt werden. Dieser Code erstellte eine Warteschlange (wenn sie noch nicht vorhanden ist) und fügt die Nachricht "Hello, World" ein:
+Um eine Nachricht in eine vorhandene Warteschlange einzufügen, erstellen Sie zuerst eine neue **cloud\_queue\_message**. Rufen Sie dann die Methode **add\_message** auf. Die **cloud\_queue\_message** kann entweder aus einer Zeichenfolge oder aus einem **Byte**-Array erstellt werden. Dieser Code erstellte eine Warteschlange (wenn sie noch nicht vorhanden ist) und fügt die Nachricht "Hello, World" ein:
 
 	// Retrieve storage account from connection-string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -105,7 +105,7 @@ Um eine Nachricht in eine vorhandene Warteschlange einzufügen, erstellen Sie zu
 	queue.add_message(message1);  
 
 ## Einsehen der nächsten Nachricht
-Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die **peek_message**-Methode aufrufen.
+Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die **peek\_message**-Methode aufrufen.
 
 	// Retrieve storage account from connection-string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -147,7 +147,7 @@ Sie können den Inhalt einer Nachricht vor Ort in der Warteschlange ändern. Wen
 	std::wcout << U("Changed message content: ") << changed_message.content_as_string() << std::endl;  
 
 ## Entfernen aus der Warteschlange bei nächster Nachricht
-Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Wenn Sie **get_message** aufrufen, wird die nächste Nachricht aus der Warteschlange abgerufen. Die für **get_message** zurückgegebene Nachricht ist für anderen Code nicht mehr sichtbar, der Nachrichten aus dieser Warteschlange liest. Um die Nachricht endgültig aus der Warteschlange zu entfernen, müssen Sie außerdem **delete_message** aufrufen. Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass eine andere Codeinstanz dieselbe Nachricht erneut abrufen kann, falls die Verarbeitung aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. Der Code ruft **delete_message** direkt nach der Verarbeitung der Nachricht auf.
+Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Wenn Sie **get\_message** aufrufen, wird die nächste Nachricht aus der Warteschlange abgerufen. Die für **get\_message** zurückgegebene Nachricht ist für anderen Code nicht mehr sichtbar, der Nachrichten aus dieser Warteschlange liest. Um die Nachricht endgültig aus der Warteschlange zu entfernen, müssen Sie außerdem **delete\_message** aufrufen. Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass eine andere Codeinstanz dieselbe Nachricht erneut abrufen kann, falls die Verarbeitung aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. Der Code ruft **delete\_message** direkt nach der Verarbeitung der Nachricht auf.
 
 	// Retrieve storage account from connection-string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -166,7 +166,7 @@ Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Wen
 	queue.delete_message(dequeued_message); 
 
 ## Nutzen zusätzlicher Optionen für das Entfernen von Nachrichten aus der Warteschlange
-Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Warteschlange anpassen können. Erstens können Sie einen Nachrichtenstapel abrufen (bis zu 32). Zweitens können Sie das Unsichtbarkeits-Zeitlimit verkürzen oder verlängern, sodass der Code mehr oder weniger Zeit zur vollständigen Verarbeitung jeder Nachricht benötigt. Das folgende Codebeispiel verwendet die **get_messages**-Methode, um 20 Nachrichten mit einem Aufruf abzurufen. Anschließend wird jede Nachricht mithilfe einer **for**-Schleife verarbeitet. Außerdem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten pro Nachricht festgelegt. Beachten Sie, dass die 5 Minuten für alle Nachrichten gleichzeitig beginnen, sodass 5 Minuten nach dem Aufruf von **get_messages** alle Nachrichten, die nicht gelöscht wurden, wieder sichtbar werden.
+Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Warteschlange anpassen können. Erstens können Sie einen Nachrichtenstapel abrufen (bis zu 32). Zweitens können Sie das Unsichtbarkeits-Zeitlimit verkürzen oder verlängern, sodass der Code mehr oder weniger Zeit zur vollständigen Verarbeitung jeder Nachricht benötigt. Das folgende Codebeispiel verwendet die **get\_messages**-Methode, um 20 Nachrichten mit einem Aufruf abzurufen. Anschließend wird jede Nachricht mithilfe einer **for**-Schleife verarbeitet. Außerdem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten pro Nachricht festgelegt. Beachten Sie, dass die 5 Minuten für alle Nachrichten gleichzeitig beginnen, sodass 5 Minuten nach dem Aufruf von **get\_messages** alle Nachrichten, die nicht gelöscht wurden, wieder sichtbar werden.
 
 	// Retrieve storage account from connection-string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -192,7 +192,7 @@ Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Wartesc
 	}
 
 ## Abrufen der Warteschlangenlänge
-Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. Die **download_attributes**-Methode fordert den Warteschlangendienst auf, die Warteschlangenattribute einschließlich der Nachrichtenanzahl abzurufen. Die **approximate_message_count**-Methode ruft die ungefähre Anzahl der Nachrichten in der Warteschlange ab.
+Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. Die **download\_attributes**-Methode fordert den Warteschlangendienst auf, die Warteschlangenattribute einschließlich der Nachrichtenanzahl abzurufen. Die **approximate\_message\_count**-Methode ruft die ungefähre Anzahl der Nachrichten in der Warteschlange ab.
 
 	// Retrieve storage account from connection-string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -213,7 +213,7 @@ Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. 
 	std::wcout << U("Number of messages in queue: ") << cachedMessageCount << std::endl;  
 
 ## Löschen von Warteschlangen
-Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen Sie die **delete_queue_if_exists**-Methode für das Warteschlangenobjekt auf.
+Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen Sie die **delete\_queue\_if\_exists**-Methode für das Warteschlangenobjekt auf.
 
 	// Retrieve storage account from connection-string.
 	azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
@@ -239,4 +239,4 @@ Nachdem Sie sich nun mit den Grundlagen von Warteschlangenspeichern vertraut gem
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

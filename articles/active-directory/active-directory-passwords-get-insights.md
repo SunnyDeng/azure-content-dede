@@ -50,7 +50,7 @@ Zum Finden der Berichte für die Kennwortverwaltung führen Sie die folgenden Sc
 
 ## Anzeigen der Aktivität "Registrierung für Zurücksetzen des Kennworts"
 
-Der Bericht "Aktivität "Registrierung für Zurücksetzen des Kennworts"" zeigt alle Registrierungen für die Kennwortzurücksetzung, die in Ihrer Organisation erfolgt sind. Eine Registrierung für die Kennwortzurücksetzung wird in diesem Bericht für jeden Benutzer angezeigt, der erfolgreich Authentifizierungsinformationen beim Registrierungsportal für die Kennwortzurücksetzung registriert hat \([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)\).
+Der Bericht "Aktivität "Registrierung für Zurücksetzen des Kennworts"" zeigt alle Registrierungen für die Kennwortzurücksetzung, die in Ihrer Organisation erfolgt sind. Eine Registrierung für die Kennwortzurücksetzung wird in diesem Bericht für jeden Benutzer angezeigt, der erfolgreich Authentifizierungsinformationen beim Registrierungsportal für die Kennwortzurücksetzung registriert hat ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)).
 
 - **Max. Zeitraum**: 1 Monat
 - **Maximale Anzahl von Zeilen**: unbegrenzt
@@ -69,47 +69,9 @@ In der folgende Liste werden alle Berichtsspalten im Detail beschrieben:
 ### Beschreibung der Berichtswerte
 Die folgende Tabelle beschreibt die verschiedenen Werte, die für die einzelnen Spalten zulässig sind:
 
-<table>
-            <tbody><tr>
-              <td>
-                <p>
-                  <strong>Spalte</strong>
-                </p>
-              </td>
-              <td>
-                <p>
-                  <strong>Zulässige Werte und ihre Bedeutung</strong>
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Registrierte Daten</p>
-              </td>
-              <td>
-                <ul>
-                  <li class="unordered">
-                    <strong>Alternative E-Mail-Adresse</strong> – Benutzer hat für die Authentifizierung eine alternative E-Mail-Adresse oder eine E-Mail-Adresse zur Authentifizierung verwendet.<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Bürotelefon</strong> – Benutzer hat seine Bürotelefonnummer zur Authentifizierung verwendet.<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Mobiltelefon</strong> – Benutzer hat sein Mobiltelefon oder sein Telefon für Authentifizierung zum Authentifizieren verwendet.<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Sicherheitsfragen</strong> – Benutzer hat Sicherheitsfragen zur Authentifizierung verwendet.<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Eine beliebige Kombination der oben genannten (z. B. alternative E-Mail-Adresse und Mobiltelefon)</strong> – Tritt auf, wenn eine Richtlinie für die zweistufige Überprüfung angegeben ist, und zeigt, welche beiden Methoden der Benutzer zur Authentifizierung seiner Anforderung zum Zurücksetzen des Kennworts verwendet hat.<br><br></li>
-                </ul>
-              </td>
-            </tr>
-          </tbody></table>
+Column|Zulässige Werte und ihre Bedeutung
+---|---
+Registrierte Daten| **Alternative E-Mail-Adresse** – Benutzer hat für die Authentifizierung eine alternative E-Mail-Adresse oder eine E-Mail-Adresse zur Authentifizierung verwendet.<p><p>**Bürotelefon** – Benutzer hat seine Bürotelefonnummer zur Authentifizierung verwendet.<p>**Mobiltelefon** – Benutzer hat sein Mobiltelefon oder sein Telefon für Authentifizierung zum Authentifizieren verwendet.<p>**Sicherheitsfragen** – Benutzer hat Sicherheitsfragen zur Authentifizierung verwendet.<p>**Eine beliebige Kombination der oben genannten (z. B. alternative E-Mail-Adresse und Mobiltelefon)** – Tritt auf, wenn eine Richtlinie für die zweistufige Überprüfung angegeben ist, und zeigt, welche beiden Methoden der Benutzer zur Authentifizierung seiner Anforderung zum Zurücksetzen des Kennworts verwendet hat.
 
 ## Anzeigen der Aktivität "Zurücksetzen des Kennworts"
 
@@ -124,406 +86,65 @@ Dieser Bericht zeigt alle Versuche der Kennwortzurücksetzung an, die in Ihrer O
 ### Beschreibung der Berichtsspalten
 In der folgende Liste werden alle Berichtsspalten im Detail beschrieben:
 
-1. **Benutzer** – Der Benutzer, der versucht hat, ein Kennwort zurückzusetzen \(basierend auf dem Feld "Benutzer-ID", das bereitgestellt wird, wenn der Benutzer ein Kennwort zurückzusetzen versucht\).
+1. **Benutzer** – Der Benutzer, der versucht hat, ein Kennwort zurückzusetzen (basierend auf dem Feld "Benutzer-ID", das bereitgestellt wird, wenn der Benutzer ein Kennwort zurückzusetzen versucht).
 2. **Rolle** – Die Rolle des Benutzers im Verzeichnis.
 3. **Datum und Uhrzeit** – Datum und Uhrzeit des Versuchs.
-4. **Verwendete Methode\(n\)** – Die Authentifizierungsmethoden, die der Benutzer für diesen Zurücksetzungsvorgang verwendet hat.
+4. **Verwendete Methode(n)** – Die Authentifizierungsmethoden, die der Benutzer für diesen Zurücksetzungsvorgang verwendet hat.
 5. **Ergebnis** – Das Endergebnis des Vorgangs zum Zurücksetzen des Kennworts.
 6. **Details** – Die Einzelheiten dazu, warum die Kennwortzurücksetzung zu dem entsprechenden Wert geführt hat. Enthält auch alle Maßnahmen, die Sie ergreifen können, um einen unerwarteten Fehler zu beheben.
 
 ### Beschreibung der Berichtswerte
 Die folgende Tabelle beschreibt die verschiedenen Werte, die für die einzelnen Spalten zulässig sind:
 
-<table>
-            <tbody><tr>
-              <td>
-                <p>
-                  <strong>Spalte</strong>
-                </p>
-              </td>
-              <td>
-                <p>
-                  <strong>Zulässige Werte und ihre Bedeutung</strong>
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Verwendete Methoden</p>
-              </td>
-              <td>
-                <ul>
-                  <li class="unordered">
-                    <strong>Alternative E-Mail-Adresse</strong> – Benutzer hat für die Authentifizierung eine alternative E-Mail-Adresse oder eine E-Mail-Adresse zur Authentifizierung verwendet.<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Bürotelefon</strong> – Benutzer hat seine Bürotelefonnummer zur Authentifizierung verwendet.<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Mobiltelefon</strong> – Benutzer hat sein Mobiltelefon oder sein Telefon für Authentifizierung zum Authentifizieren verwendet.<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Sicherheitsfragen</strong> – Benutzer hat Sicherheitsfragen zur Authentifizierung verwendet.<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Eine beliebige Kombination der oben genannten (z. B. alternative E-Mail-Adresse und Mobiltelefon)</strong> – Tritt auf, wenn eine Richtlinie für die zweistufige Überprüfung angegeben ist, und zeigt, welche beiden Methoden der Benutzer zur Authentifizierung seiner Anforderung zum Zurücksetzen des Kennworts verwendet hat.<br><br></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Ergebnis</p>
-              </td>
-              <td>
-                <ul>
-                  <li class="unordered">
-                    <strong>Vorzeitig beendet</strong> – Der Benutzer hat die Kennwortzurücksetzung gestartet, den Vorgang jedoch mittendrin beendet und nicht abgeschlossen.<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Blockiert</strong> – Das Konto des Benutzers wurde an der Kennwortzurücksetzung gehindert, weil die Seite zur Kennwortzurücksetzung oder eine einzige Überprüfungsmethode zur Kennwortzurücksetzung in einem Zeitraum von 24 Stunden zu häufig verwendet wurde.<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Abgebrochen</strong> – Der Benutzer hat die Kennwortzurücksetzung gestartet, aber dann auf die Schaltfläche "Abbrechen" geklickt, um die Sitzung mittendrin abzubrechen. <br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Administrator kontaktiert</strong> – Beim Benutzer ist während der Sitzung ein Problem aufgetreten, das er nicht auflösen konnte. Daher hat der Benutzer auf den Link "Wenden Sie sich an Ihren Administrator" geklickt, statt die Kennwortzurücksetzung abzuschließen.<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Fehler</strong> – Der Benutzer konnte ein Kennwort nicht zurücksetzen, wahrscheinlich weil der Benutzer nicht für die Verwendung dieses Features konfiguriert wurde (z. B. keine Lizenz, fehlende Informationen für die Authentifizierung, Kennwort lokal verwaltet ohne Aktivierung der Rückschreibungsfunktion).<br><br></li>
-                </ul>
-                <ul>
-                  <li class="unordered">
-                    <strong>Erfolgreich</strong> – Kennwortzurücksetzung war erfolgreich.<br><br></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Details</p>
-              </td>
-              <td>
-                <p>Beachten Sie die folgende Tabelle.</p>
-              </td>
-            </tr>
-          </tbody></table>
+
+Column|Zulässige Werte und ihre Bedeutung
+---|---
+Verwendete Methoden|**Alternative E-Mail-Adresse** – Benutzer hat für die Authentifizierung eine alternative E-Mail-Adresse oder eine E-Mail-Adresse zur Authentifizierung verwendet.<p>**Bürotelefon** – Benutzer hat seine Bürotelefonnummer zur Authentifizierung verwendet.<p>**Mobiltelefon** – Benutzer hat sein Mobiltelefon oder sein Telefon für Authentifizierung zum Authentifizieren verwendet.<p>**Sicherheitsfragen** – Benutzer hat Sicherheitsfragen zur Authentifizierung verwendet.<p>**Eine beliebige Kombination der oben genannten (z. B. alternative E-Mail-Adresse und Mobiltelefon)** – Tritt auf, wenn eine Richtlinie für die zweistufige Überprüfung angegeben ist, und zeigt, welche beiden Methoden der Benutzer zur Authentifizierung seiner Anforderung zum Zurücksetzen des Kennworts verwendet hat.
+Ergebnis|**Vorzeitig beendet** – Der Benutzer hat die Kennwortzurücksetzung gestartet, den Vorgang jedoch mittendrin beendet und nicht abgeschlossen.<p>**Blockiert** – Das Konto des Benutzers wurde an der Kennwortzurücksetzung gehindert, weil die Seite zur Kennwortzurücksetzung oder eine einzige Überprüfungsmethode zur Kennwortzurücksetzung in einem Zeitraum von 24 Stunden zu häufig verwendet wurde.<p>**Abgebrochen** – Der Benutzer hat die Kennwortzurücksetzung gestartet, aber dann auf die Schaltfläche "Abbrechen" geklickt, um die Sitzung mittendrin abzubrechen.<p>**Administrator kontaktiert – Beim Benutzer ist während der Sitzung ein Problem aufgetreten, das er nicht auflösen konnte. Daher hat der Benutzer auf den Link "Wenden Sie sich an Ihren Administrator" geklickt, statt die Kennwortzurücksetzung abzuschließen.<p>**Fehler** – Der Benutzer konnte ein Kennwort nicht zurücksetzen, wahrscheinlich weil der Benutzer nicht für die Verwendung dieses Features konfiguriert wurde (z. B. keine Lizenz, fehlende Informationen für die Authentifizierung, Kennwort lokal verwaltet ohne Aktivierung der Rückschreibungsfunktion).<p>**Erfolgreich** – Kennwortzurücksetzung war erfolgreich.
+Details|Beachten Sie die folgende Tabelle.
 
 ### Zulässige Werte für die Spalte "Details"
 Nachfolgend finden Sie die Liste der Ergebnistypen, die Sie im Bericht zur Aktivität "Zurücksetzen des Kennworts" erwarten können:
 
-<table>
-            <tbody><tr>
-              <td>
-                <p>
-                  <strong>Details</strong>
-                </p>
-              </td>
-              <td>
-                <p>
-                  <strong>Ergebnistyp</strong>
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach Abschluss der Überprüfung per E-Mail vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach Abschluss der Überprüfung per Mobiltelefon-SMS vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach Abschluss der Überprüfung per Mobiltelefon-Sprachanruf vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach Abschluss der Überprüfung per Bürotelefon-Sprachanruf vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach Abschluss der Überprüfung per Sicherheitsfragen vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach Eingabe der Benutzer-ID vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach dem Start der Überprüfung per E-Mail vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach dem Start der Überprüfung per Mobiltelefon-SMS vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach dem Start der Überprüfung per Mobiltelefon-Sprachanruf vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach dem Start der Überprüfung per Bürotelefon-Sprachanruf vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach dem Start der Überprüfung per Sicherheitsfragen vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat vor Auswahl eines neuen Kennworts vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat während Auswahl eines neuen Kennworts vorzeitig beendet.</p>
-              </td>
-              <td>
-                <p>Vorzeitig beendet</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat zu viele ungültige E-Mail-Überprüfungscodes eingegeben und ist für 24 Stunden blockiert.</p>
-              </td>
-              <td>
-                <p>Blockiert</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat zu viele ungültige SMS-Überprüfungscodes eingegeben und ist für 24 Stunden blockiert.</p>
-              </td>
-              <td>
-                <p>Blockiert</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat die Überprüfung per Mobiltelefon-Sprachanruf zu oft versucht und ist für 24 Stunden blockiert.</p>
-              </td>
-              <td>
-                <p>Blockiert</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat die Überprüfung per Bürotelefon-Sprachanruf zu oft versucht und ist für 24 Stunden blockiert.</p>
-              </td>
-              <td>
-                <p>Blockiert</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat zu häufig versucht, die Sicherheitsfragen zu beantworten, und ist für 24 Stunden blockiert.</p>
-              </td>
-              <td>
-                <p>Blockiert</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat zu oft versucht, eine Telefonnummer zu überprüfen, und ist für 24 Stunden blockiert.</p>
-              </td>
-              <td>
-                <p>Blockiert</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat vor Übergabe der erforderlichen Authentifizierungsmethoden abgebrochen.</p>
-              </td>
-              <td>
-                <p>Abgebrochen</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat vor Übermittlung eines neuen Kennworts abgebrochen.</p>
-              </td>
-              <td>
-                <p>Abgebrochen</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach Versuch der Überprüfung per E-Mail den Administrator kontaktiert.</p>
-              </td>
-              <td>
-                <p>Administrator kontaktiert</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach Versuch der Überprüfung per Mobiltelefon-SMS den Administrator kontaktiert.</p>
-              </td>
-              <td>
-                <p>Administrator kontaktiert</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach Versuch der Überprüfung per Mobiltelefon-Sprachanruf den Administrator kontaktiert.</p>
-              </td>
-              <td>
-                <p>Administrator kontaktiert</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach Versuch der Überprüfung per Bürotelefon-Sprachanruf den Administrator kontaktiert.</p>
-              </td>
-              <td>
-                <p>Administrator kontaktiert</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat nach Versuch der Überprüfung per Sicherheitsfrage den Administrator kontaktiert.</p>
-              </td>
-              <td>
-                <p>Administrator kontaktiert</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Die Kennwortzurücksetzung ist für diesen Benutzer nicht aktiviert. Aktivieren Sie die Kennwortzurücksetzung auf der Konfigurationsregisterkarte, um dieses Problem zu beheben.</p>
-              </td>
-              <td>
-                <p>Fehler</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p> Der Benutzer hat keine Lizenz. Sie können dem Benutzer eine Lizenz hinzufügen, um dieses Problems zu beheben. </p>
-              </td>
-              <td>
-                <p>Fehler</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat versucht, die Zurücksetzung von einem Gerät ohne aktivierte Cookies durchzuführen.</p>
-              </td>
-              <td>
-                <p>Fehler</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Im Benutzerkonto sind nicht genügend Authentifizierungsmethoden definiert. Fügen Sie Authentifizierungsinformationen hinzu, um dieses Problem zu beheben.</p>
-              </td>
-              <td>
-                <p>Fehler</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Das Kennwort des Benutzers wird lokal verwaltet. Sie können die Kennwortrückschreibung aktivieren, um dieses Problem zu beheben.</p>
-              </td>
-              <td>
-                <p>Fehler</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Wir konnten den Dienst zum Zurücksetzen Ihres lokalen Kennworts nicht erreichen. Überprüfen Sie das Ereignisprotokoll des Synchronisierungscomputers.</p>
-              </td>
-              <td>
-                <p>Fehler</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Beim Zurücksetzen des lokalen Kennworts des Benutzers ist ein Problem aufgetreten. Überprüfen Sie das Ereignisprotokoll des Synchronisierungscomputers.</p>
-              </td>
-              <td>
-                <p>Fehler</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Der Benutzer ist kein Mitglied der Benutzergruppe für Kennwortzurücksetzung. Fügen Sie diesen Benutzer dieser Gruppe hinzu, um dieses Problem zu beheben.</p>
-              </td>
-              <td>
-                <p>Fehler</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Die Kennwortzurücksetzung wurde für diesen Mandanten vollständig deaktiviert. Informationen zum Beheben dieses Problems finden Sie unter <a href="http://aka.ms/ssprtroubleshoot">http://aka.ms/ssprtroubleshoot</a>.</p>
-              </td>
-              <td>
-                <p>Fehler</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Benutzer hat das Kennwort erfolgreich zurückgesetzt.</p>
-              </td>
-              <td>
-                <p>Erfolgreich</p>
-              </td>
-            </tr>
-          </tbody></table>
+Details | Ergebnistyp 
+----|----
+Benutzer hat nach Abschluss der Überprüfung per E-Mail vorzeitig beendet. | Vorzeitig beendet
+Benutzer hat nach Abschluss der Überprüfung per Mobiltelefon-SMS vorzeitig beendet.|Vorzeitig beendet 
+Benutzer hat nach Abschluss der Überprüfung per Mobiltelefon-Sprachanruf vorzeitig beendet. | Vorzeitig beendet 
+Benutzer hat nach Abschluss der Überprüfung per Bürotelefon-Sprachanruf vorzeitig beendet. | Vorzeitig beendet
+Benutzer hat nach Abschluss der Überprüfung per Sicherheitsfragen vorzeitig beendet.|Vorzeitig beendet 
+Benutzer hat nach Eingabe der Benutzer-ID vorzeitig beendet.| Vorzeitig beendet 
+Benutzer hat nach dem Start der Überprüfung per E-Mail vorzeitig beendet.|Vorzeitig beendet
+Benutzer hat nach dem Start der Überprüfung per Mobiltelefon-SMS vorzeitig beendet.|Vorzeitig beendet
+Benutzer hat nach dem Start der Überprüfung per Mobiltelefon-Sprachanruf vorzeitig beendet.|Vorzeitig beendet
+Benutzer hat nach dem Start der Überprüfung per Bürotelefon-Sprachanruf vorzeitig beendet.|Vorzeitig beendet
+Benutzer hat nach dem Start der Überprüfung per Sicherheitsfragen vorzeitig beendet.| Vorzeitig beendet
+Benutzer hat vor Auswahl eines neuen Kennworts vorzeitig beendet.| Vorzeitig beendet
+Benutzer hat während Auswahl eines neuen Kennworts vorzeitig beendet.| Vorzeitig beendet
+Benutzer hat zu viele ungültige SMS-Überprüfungscodes eingegeben und ist für 24 Stunden blockiert.|Blockiert
+Benutzer hat die Überprüfung per Mobiltelefon-Sprachanruf zu oft versucht und ist für 24 Stunden blockiert.|Blockiert
+Benutzer hat die Überprüfung per Bürotelefon-Sprachanruf zu oft versucht und ist für 24 Stunden blockiert. |Blockiert
+Benutzer hat zu häufig versucht, die Sicherheitsfragen zu beantworten, und ist für 24 Stunden blockiert.| Blockiert
+Benutzer hat zu oft versucht, eine Telefonnummer zu überprüfen, und ist für 24 Stunden blockiert.|Blockiert
+Benutzer hat vor Übergabe der erforderlichen Authentifizierungsmethoden abgebrochen.|Abgebrochen
+Benutzer hat vor Übermittlung eines neuen Kennworts abgebrochen.|Abgebrochen
+Benutzer hat nach Versuch der Überprüfung per E-Mail den Administrator kontaktiert. |Administrator kontaktiert
+Benutzer hat nach Versuch der Überprüfung per Mobiltelefon-SMS den Administrator kontaktiert.|Administrator kontaktiert
+Benutzer hat nach Versuch der Überprüfung per Mobiltelefon-Sprachanruf den Administrator kontaktiert.|Administrator kontaktiert
+Benutzer hat nach Versuch der Überprüfung per Bürotelefon-Sprachanruf den Administrator kontaktiert. |Administrator kontaktiert
+Benutzer hat nach Versuch der Überprüfung per Sicherheitsfrage den Administrator kontaktiert.|Administrator kontaktiert
+Die Kennwortzurücksetzung ist für diesen Benutzer nicht aktiviert. Aktivieren Sie die Kennwortzurücksetzung auf der Konfigurationsregisterkarte, um dieses Problem zu beheben.| Fehler
+Der Benutzer hat keine Lizenz. Sie können dem Benutzer eine Lizenz hinzufügen, um dieses Problems zu beheben.|Fehler
+Benutzer hat versucht, die Zurücksetzung von einem Gerät ohne aktivierte Cookies durchzuführen.| Fehler
+Im Benutzerkonto sind nicht genügend Authentifizierungsmethoden definiert. Fügen Sie Authentifizierungsinformationen hinzu, um dieses Problem zu beheben.|Fehler
+Das Kennwort des Benutzers wird lokal verwaltet. Sie können die Kennwortrückschreibung aktivieren, um dieses Problem zu beheben.|Fehler
+Wir konnten den Dienst zum Zurücksetzen Ihres lokalen Kennworts nicht erreichen. Überprüfen Sie das Ereignisprotokoll des Synchronisierungscomputers.|Fehler
+Beim Zurücksetzen des lokalen Kennworts des Benutzers ist ein Problem aufgetreten. Überprüfen Sie das Ereignisprotokoll des Synchronisierungscomputers. | Fehler
+Der Benutzer ist kein Mitglied der Benutzergruppe für Kennwortzurücksetzung. Fügen Sie diesen Benutzer dieser Gruppe hinzu, um dieses Problem zu beheben.|Fehler
+Die Kennwortzurücksetzung wurde für diesen Mandanten vollständig deaktiviert. [Hier](http://aka.ms/ssprtroubleshoot) finden Sie Informationen zur Lösung des Problems. | Fehler 
+Benutzer hat das Kennwort erfolgreich zurückgesetzt.|Succeeded
 
-<br/> <br/> <br/>
-
-**Zusätzliche Ressourcen**
+**Weitere Ressourcen**
 
 
 * [Was ist die Kennwortverwaltung?](active-directory-passwords.md)
@@ -543,4 +164,4 @@ Nachfolgend finden Sie die Liste der Ergebnistypen, die Sie im Bericht zur Aktiv
 [003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="cache" 
 	ms.workload="tbd" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/24/2015" 
 	ms.author="sdanie"/>
+
 
 # Azure Redis Cache – häufig gestellte Fragen
 
@@ -30,7 +32,7 @@ Jedes Azure Redis Cache-Angebot bietet unterschiedliche Optionen in Bezug auf **
 
 Wenn Sie eine höhere Verfügbarkeit benötigen, wählen Sie das Standard-Angebot, das eine SLA mit 99,9 % bietet. Für Entwicklung und Prototyperstellung oder für Szenarien, in denen keine SLA erforderlich ist, reicht das Basic-Angebot aus.
 
-Cachegrößen und Bandbreite entsprechen ungefähr den Größen und Bandbreiten der virtuellen Computer, die den Cache hosten. Die Cachegröße von 250 MB wird im Basic- und Standard-Angebot auf einem virtuellen Computer der Stufe "Extra Small \(A0\)" gehostet. Hierbei erfolgt das Hosting über gemeinsam genutzte Kerne, während bei den anderen Größen dedizierte Kerne verwendet werden. Die Cachegröße von 1 GB wird auf einem virtuellen Computer der Stufe "Small \(A1\)" gehostet. Dieser verfügt über 1 dedizierten virtuellen Kern, der sowohl das Betriebssystem als auch Redis Cache bedient. Größere Cachegrößen werden auf größeren VM-Instanzen mit mehreren dedizierten virtuellen Kernen gehostet.
+Cachegrößen und Bandbreite entsprechen ungefähr den Größen und Bandbreiten der virtuellen Computer, die den Cache hosten. Die Cachegröße von 250 MB wird im Basic- und Standard-Angebot auf einem virtuellen Computer der Stufe "Extra Small (A0)" gehostet. Hierbei erfolgt das Hosting über gemeinsam genutzte Kerne, während bei den anderen Größen dedizierte Kerne verwendet werden. Die Cachegröße von 1 GB wird auf einem virtuellen Computer der Stufe "Small (A1)" gehostet. Dieser verfügt über 1 dedizierten virtuellen Kern, der sowohl das Betriebssystem als auch Redis Cache bedient. Größere Cachegrößen werden auf größeren VM-Instanzen mit mehreren dedizierten virtuellen Kernen gehostet.
 
 Wenn Ihr Cache einen hohen Durchsatz aufweist, wählen Sie 1 GB oder mehr, damit Ihr Cache mit dedizierten Kernen ausgeführt wird. Der 1-GB-Cache wird auf einem virtuellen Computer mit 1 Kern ausgeführt. Dieser Kern bedient sowohl das Betriebssystem als auch den Cache. Cachegrößen von mehr als 1 GB werden auf virtuellen Computern mit mehreren Kernen ausgeführt, und Redis Cache verwendet einen dedizierten Kern, der nicht gemeinsam mit dem Betriebssystem verwendet wird.
 
@@ -38,56 +40,15 @@ Wenn Ihr Cache einen hohen Durchsatz aufweist, wählen Sie 1 GB oder mehr, dami
 
 Die folgende Tabelle zeigt die maximalen Bandbreitenwerte beim Testen verschiedener Azure Redis Cache-Größen bei Verwendung von `redis-benchmark.exe` aus einer IaaS-VM mit dem Azure Redis Cache-Endpunkt. Beachten Sie, dass diese Werte nicht garantiert werden und keine SLA für diese Werte bereitgestellt. Die Werte sollten jedoch typischerweise erreicht werden. Führen Sie Auslastungstests für Ihre Anwendung durch, um die geeignete Cachegröße für Ihre Anwendung zu ermitteln.
 
-<table>
-  <tr>
-    <th>Cachename</th>
-    <th>Cachegröße</th>
-    <th>GET/s (einfache GET-Aufrufe mit 1-KB-Werten)</th>
-    <th>Bandbreite (MBit/s)</th>
-  </tr>
-  <tr>
-    <td>C0</td>
-    <td>250 MB</td>
-    <td>610</td>
-    <td>5</td>
-  </tr>
-  <tr>
-    <td>C1</td>
-    <td>1 GB</td>
-    <td>12.200</td>
-    <td>100</td>
-  </tr>
-  <tr>
-    <td>C2</td>
-    <td>2,5 GB</td>
-    <td>24.300</td>
-    <td>200</td>
-  </tr>
-  <tr>
-    <td>C3</td>
-    <td>6 GB</td>
-    <td>48.875</td>
-    <td>400</td>
-  </tr>
-  <tr>
-    <td>C4</td>
-    <td>13 GB</td>
-    <td>61.350</td>
-    <td>500</td>
-  </tr>
-  <tr>
-    <td>C5</td>
-    <td>26 GB</td>
-    <td>112.275</td>
-    <td>1.000</td>
-  </tr>
-  <tr>
-    <td>C6</td>
-    <td>53 GB</td>
-    <td>153.219</td>
-    <td>mehr als 1.000</td>
-  </tr>
-</table>
+Cachename|Cachegröße|GET/s (einfache GET-Aufrufe mit 1-KB-Werten)|Bandbreite (MBit/s)
+---|---|---|---
+C0|250 MB|610|5
+C1|1 GB|12\.200|100
+C2|2,5 GB|24\.300|200
+C3|6 GB|48\.875|400
+C4|13 GB|61\.350|500
+C5|26 GB|112\.275|1\.000
+C6|53 GB|153\.219|mehr als 1.000
 
 Anweisungen zum Herunterladen von Redis-Tools wie beispielsweise `redis-benchmark.exe` finden Sie im Abschnitt [Wie führe ich Redis-Befehle aus?](#cache-commands).
 
@@ -134,35 +95,18 @@ Nachfolgend werden einige Gründe dafür aufgeführt, warum ein Cache getrennt w
 
 Für "StackExchange.Redis" stehen zahlreiche Optionen zur Verfügung. In diesem Abschnitt werden einige der gängigsten Optionen erläutert. Ausführlichere Informationen zu den StackExchange.Redis-Optionen finden Sie unter [StackExchange.Redis-Konfiguration](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md).
 
-<table>
-  <tr>
-    <th>ConfigurationOptions</th>
-    <th>Beschreibung</th>
-    <th>Empfehlung</th>
-  </tr>
-  <tr>
-    <td>AbortOnConnectFail</td>
-    <td>Wenn Sie diese Option auf "true" setzen, wird die Verbindung nach einem Netzwerkausfall nicht wiederhergestellt.</td>
-    <td>Bei Festlegung auf "false" kann "StackExchange.Redis" die Verbindung automatisch wiederherstellen.</td>
-  </tr>
-  <tr>
-    <td>ConnectRetry</td>
-    <td>Die Anzahl von Versuchen für die Verbindungsherstellung bei der anfänglichen Verbindung.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>ConnectTimeout</td>
-    <td>Timeout in Millisekunden für Verbindungsvorgänge.</td>
-    <td></td>
-  </tr>
-</table>
+ConfigurationOptions|Beschreibung|Empfehlung
+---|---|---
+AbortOnConnectFail|Wenn Sie diese Option auf "true" setzen, wird die Verbindung nach einem Netzwerkausfall nicht wiederhergestellt.|Bei Festlegung auf "false" kann "StackExchange.Redis" die Verbindung automatisch wiederherstellen.
+ConnectRetry|Die Anzahl von Versuchen für die Verbindungsherstellung bei der anfänglichen Verbindung.||
+ConnectTimeout|Timeout in Millisekunden für Verbindungsvorgänge.|
 
 In den meisten Fällen reichen die Standardwerte des Clients aus. Sie können die Optionen basierend auf Ihrer Workload optimieren.
 
 -	Wiederholungsversuche
 	-	Für "ConnectRetry" und "ConnectTimeout" lautet die allgemeine Empfehlung, nach einem Fehler schnell abzubrechen und den Vorgang zu wiederholen. Dies hängt von Ihrer Workload und davon ab, wie lange es auf Ihrem Client durchschnittlich dauert, einen Redis-Befehl auszugeben und eine Antwort zu empfangen.
 	-	Ermöglichen Sie eine automatische Neuverbindung durch "StackExchange.Redis", statt die Prüfung des Verbindungsstatus und die erneute Verbindungsherstellung selbst zu prüfen. **Vermeiden Sie die Verwendung der ConnectionMultiplexer.IsConnected-Eigenschaft**.
-	-	Schneeballeffekt – Gelegentlich kann es zu Problemen kommen, bei denen Wiederholungsversuche zu nicht behebbaren, immer wiederkehrenden Problemen führen. In diesem Fall sollten Sie die Verwendung eines exponentiellen Backoff/Retry-Algorithmus in Erwägung ziehen, wie er im Artikel [Allgemeine Hinweise zu Wiederholungsversuchen](https://github.com/mspnp/azure-guidance/blob/master/Retry-General.md) der Microsoft Patterns & Practices-Gruppe beschrieben wird \(in englischer Sprache\).
+	-	Schneeballeffekt – Gelegentlich kann es zu Problemen kommen, bei denen Wiederholungsversuche zu nicht behebbaren, immer wiederkehrenden Problemen führen. In diesem Fall sollten Sie die Verwendung eines exponentiellen Backoff/Retry-Algorithmus in Erwägung ziehen, wie er im Artikel [Allgemeine Hinweise zu Wiederholungsversuchen](https://github.com/mspnp/azure-guidance/blob/master/Retry-General.md) der Microsoft Patterns & Practices-Gruppe beschrieben wird (in englischer Sprache).
 -	Timeoutwerte
 	-	Berücksichtigen Sie Ihre Workload, und legen Sie die Werte entsprechend fest. Wenn Sie große Werte speichern, legen Sie die Timeouteinstellung auf einen höheren Wert fest.
 		-	Legen Sie "ABortOnConnectFail" auf "false" fest, und überlassen Sie "StackExchange.Redis" die erneute Verbindungsherstellung.
@@ -188,7 +132,7 @@ In den meisten Fällen reichen die Standardwerte des Clients aus. Sie können di
 <a name="cache-ssl"></a>
 ## Wann sollte ich den Nicht-SSL-Port für die Verbindungsherstellung mit Redis verwenden?
 
-Der Redis-Server bietet keine integrierte SSL-Unterstützung, Azure Redis Cache hingegen schon. Wenn Sie eine Verbindung mit Azure Redis Cache herstellen und Ihr Client SSL unterstützt \(z. B. StackExchange.Redis\), dann sollten Sie SSL verwenden.
+Der Redis-Server bietet keine integrierte SSL-Unterstützung, Azure Redis Cache hingegen schon. Wenn Sie eine Verbindung mit Azure Redis Cache herstellen und Ihr Client SSL unterstützt (z. B. StackExchange.Redis), dann sollten Sie SSL verwenden.
 
 Beachten Sie, dass der Nicht-SSL-Port für neue Azure Redis Cache-Instanzen standardmäßig deaktiviert ist. Wenn Ihr Client keine SSL-Unterstützung bietet, müssen Sie den Nicht-SSL-Port mithilfe der Anweisungen im Abschnitt [Zugriffsports](https://msdn.microsoft.com/library/azure/dn793612.aspx#AccessPorts) des Artikels [Konfigurieren eines Caches in Azure Redis Cache](https://msdn.microsoft.com/library/azure/dn793612.aspx) aktivieren.
 
@@ -221,7 +165,7 @@ Sie können allen aufgelisteten [Redis-Befehle](http://redis.io/commands#) mit A
 <a name="cache-common-patterns"></a>
 ## Welche gängigen Cachemuster gibt es, und was muss berücksichtigt werden?
 
--	Microsoft Patterns & Practices bietet die folgenden Anleitungen \(in englischer Sprache\):
+-	Microsoft Patterns & Practices bietet die folgenden Anleitungen (in englischer Sprache):
 	-	[Anleitung zum Caching](https://github.com/mspnp/azure-guidance/blob/master/Caching.md).
 	-	[Anleitung zu Design und Implementierung von Azure-Cloudanwendungen](https://github.com/mspnp/azure-guidance)
 -	[Allgemeine Cachemuster mit Azure Redis Cache](cache-howto-common-cache-patterns.md)
@@ -233,4 +177,4 @@ Microsoft Azure Redis Cache basiert auf dem populären quelloffenen Redis Cache 
 
 Da jeder Client anders ist, gibt es nicht nur einen zentralen Klassenverweis in MSDN. Stattdessen verwaltet jeder Client seine eigene Verweisdokumentation. Zusätzlich zur Verweisdokumentation gibt es mehrere Lernprogramme auf "Azure.com". Diese stehen auf der Seite [Redis Cache-Dokumentation](http://azure.microsoft.com/documentatgion/services/redis-cache/) zur Verfügung und erleichtern Ihnen den Einstieg in die Verwendung von Azure Redis Cache mit verschiedenen Sprachen und Cacheclients.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

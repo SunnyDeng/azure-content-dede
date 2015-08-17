@@ -461,7 +461,7 @@ So rufen Sie FTP-Verbindungsinformationen aus dem Web-App-Blatt im [Azure-Portal
 
 1. Suchen Sie unter **Grundlegende Informationen** nach **FTP-Hostname**, und kopieren Sie diesen Wert. Es handelt sich um einen URI ähnlich wie `ftp://waws-prod-bay-NNN.ftp.azurewebsites.windows.net`.
 
-2. Suchen Sie unter **Grundlegende Informationen** nach **FTP/Benutzername für Bereitstellung**, und kopieren Sie diesen Wert. Dieser hat die Form *Name_Web-App\Benutzername_Bereitstellung*, beispielsweise `WebDemoWebApp\deployer77`.
+2. Suchen Sie unter **Grundlegende Informationen** nach **FTP/Benutzername für Bereitstellung**, und kopieren Sie diesen Wert. Dieser hat die Form *Name\_Web-App\\Benutzername\_Bereitstellung*, beispielsweise `WebDemoWebApp\deployer77`.
 
 So rufen Sie FTP-Verbindungsinformationen aus dem Veröffentlichungsprofil ab
 
@@ -493,7 +493,7 @@ Bevor Sie die Anwendung veröffentlichen, müssen Sie einige Konfigurationseinst
 
 1. Wechseln Sie im klassischen Portal zur Seite **Dashboard** der Web-App, und klicken Sie auf **Konfigurieren**. Geben Sie auf der Seite **Konfigurieren** die folgenden Einstellungen an.
 
-2. Für **Java-Version** lautet die Standardeinstellung **Aus**. Wählen Sie die Java-Version für Ihre Anwendungsziele, beispielsweise 1.7.0_51. Stellen Sie anschließend sicher, dass **Webcontainer** auf eine Tomcat-Serverversion festgelegt ist.
+2. Für **Java-Version** lautet die Standardeinstellung **Aus**. Wählen Sie die Java-Version für Ihre Anwendungsziele, beispielsweise 1.7.0\_51. Stellen Sie anschließend sicher, dass **Webcontainer** auf eine Tomcat-Serverversion festgelegt ist.
 
 3. Fügen Sie in **Standarddokumente** die Datei "index.jsp" hinzu, und verschieben Sie die Datei an den Anfang der Liste. (Die Standarddatei für Web-Apps ist "hostingstart.html".)
 
@@ -542,7 +542,7 @@ Eine zweite Möglichkeit zum Veröffentlichen der Anwendung besteht in der Verwe
 1. Klicken Sie in FileZilla auf **Datei > Servermanager**.
 2. Klicken Sie im **Servermanager** auf **Neuer Server**. Unter **Eintrag auswählen** wird ein neuer, leerer FTP-Server angezeigt, für den Sie einen Namen eingeben müssen. Verwenden Sie in dieser Vorgehensweise `AzureWebDemo-FTP`.
 
-    Legen Sie auf der Registerkarte **Allgemein** die folgenden Einstellungen fest: – **Host:** Geben Sie den Wert für **FTP-Hostname** ein, den Sie aus dem Dashboard kopiert haben. – **Port:** (Lassen Sie dieses Feld leer, da es sich um eine passive Übertragung handelt und der Server den zu verwendenden Port ermittelt.) – **Protokoll:** FTP File Transfer Protocol - **Verschlüsselung:** Unverschlüsseltes FTP verwenden – **Verbindungsart:** Normal - **Benutzer:** Geben Sie den Benutzer für Bereitstellung/FTP ein, den Sie aus dem Dashboard kopiert haben. Dies ist der vollständige FTP-Benutzername in der Form *Name_Web-App\Benutzername*. – **Kennwort:** Geben Sie das Kennwort ein, das Sie beim Festlegen der Anmeldeinformationen für die Bereitstellung angegeben haben.
+    Legen Sie auf der Registerkarte **Allgemein** die folgenden Einstellungen fest: – **Host:** Geben Sie den Wert für **FTP-Hostname** ein, den Sie aus dem Dashboard kopiert haben. – **Port:** (Lassen Sie dieses Feld leer, da es sich um eine passive Übertragung handelt und der Server den zu verwendenden Port ermittelt.) – **Protokoll:** FTP File Transfer Protocol - **Verschlüsselung:** Unverschlüsseltes FTP verwenden – **Verbindungsart:** Normal - **Benutzer:** Geben Sie den Benutzer für Bereitstellung/FTP ein, den Sie aus dem Dashboard kopiert haben. Dies ist der vollständige FTP-Benutzername in der Form *Name\_Web-App\\Benutzername*. – **Kennwort:** Geben Sie das Kennwort ein, das Sie beim Festlegen der Anmeldeinformationen für die Bereitstellung angegeben haben.
 
     Wählen Sie auf der Registerkarte **Übertragungs-Einstellungen** die Option **Passiv**.
 
@@ -590,4 +590,4 @@ In dieser Vorgehensweise wird eine App Service-Web-App erstellt. Die Ressource w
   [10]: ./media/java-create-azure-website-using-java-sdk/kudu-console-jsphello-war-2.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

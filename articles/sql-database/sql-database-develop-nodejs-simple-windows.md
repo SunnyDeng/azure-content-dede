@@ -8,14 +8,16 @@
 	editor=""/>
 
 
+
 <tags 
 	ms.service="sql-database" 
 	ms.workload="data-management" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="04/27/2015" 
+	ms.date="07/30/2015" 
 	ms.author="mebha"/>
+
 
 
 # Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Node.js unter Windows
@@ -41,25 +43,12 @@ Die folgenden Softwarekomponenten müssen auf dem Cliententwicklungscomputer vor
 
 ### Installieren der erforderlichen Module
 
+Sobald Sie die Anforderungen erfüllen, stellen Sie sicher, dass Sie Version 0.8.9 von „Node.js“ verwenden. Sie können dies überprüfen, indem Sie den folgenden Befehl in der Befehlszeile eingeben: node -v. <br> Navigieren Sie in einem **cmd.exe**-Befehlszeilenfenster zu Ihrem Projektverzeichnis, z. B. C:\\NodeJSSQLProject. Geben Sie die folgenden Befehle in der gezeigten Reihenfolge ein.
 
-Navigieren Sie in einem Eingabeaufforderungsfenster von **cmd.exe** zu dem Verzeichnis mit msnodesql. Geben Sie die folgenden Befehle in der gezeigten Reihenfolge ein.
-
-
+	npm init
 	npm install msnodesql
-	npm install -g node-gyp
 
-
-Nachdem Sie node-gyp installiert haben, navigieren Sie zu *Ihrem Projektverzeichnis* und dann zu **node_modules\msnodesql**. Geben Sie dann die folgenden Befehle im Fenster von **cmd.exe** ein.
-
-
-	node-gyp configure 
-	node-gyp build
-
-
-Wechseln Sie anschließend in das Verzeichnis **build\release**. Kopieren Sie die Datei **sqlserver.node**, und fügen Sie sie im Verzeichnis **msnodesql\lib** ein. Ersetzen Sie ggf. die alte Datei.
-
-In unserem [Teamblog](http://blogs.msdn.com/b/sqlphp/archive/2015/05/12/getting-started-with-node-js-and-microsoft-sql-server-and-azure-sql-database.aspx) und [Video](https://www.youtube.com/watch?v=kQo_L-D_zk8) erfahren Sie, wie Sie die oben genannten Voraussetzungen installieren und einrichten.
-
+Als Nächstes navigieren Sie zum Ordner „Node\_modules\\msnodesql“ und führen die Datei **Msnodesql-0.2.1-v0. 8-ia32** aus. Führen Sie die Schritte im Installationsassistenten aus, und drücken Sie "Fertig stellen", wenn Sie fertig sind. An diesem Punkt sollten Sie den „Node.js“-SQL Server-Treiber installiert haben. Fahren Sie mit den nächsten Schritten fort, um die Verbindungszeichenfolge abzurufen. Anschließend sollten Sie in der Lage sein, von der „Node.js“-Anwendung eine Verbindung mit der Azure SQL-Datenbank herzustellen.
 
 ### Erstellen einer Datenbank und Abrufen der Verbindungszeichenfolge
  
@@ -234,4 +223,4 @@ Damit dieses Codebeispiel funktioniert, müssen Sie zunächst eine gespeicherte 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

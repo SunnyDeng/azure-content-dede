@@ -44,7 +44,7 @@ Gehen Sie folgendermaßen vor, um einen Redis-Cluster mithilfe einer Ressourcen-
 
 ### Schritt 1-a: Herunterladen der Vorlagendateien mithilfe von Azure PowerShell
 
-Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\Azure\Vorlagen\RedisCluster").
+Erstellen Sie einen lokalen Ordner für die JSON-Vorlage und andere zugehörige Dateien (z. B. "C:\\Azure\\Vorlagen\\RedisCluster").
 
 Fügen Sie dabei den Namen Ihres lokalen Ordners ein, und führen Sie damit die folgenden Befehle aus:
 
@@ -96,7 +96,7 @@ Klonen Sie das komplette Vorlagenrepository mithilfe eines Git-Clients Ihrer Wah
 git clone https://github.com/Azure/azure-quickstart-templates C:\Azure\Templates
 ```
 
-Sobald der Klonvorgang abgeschlossen ist, suchen Sie im Verzeichnis "C:\Azure\Vorlagen" nach dem Ordner **redis-high-availability**.
+Sobald der Klonvorgang abgeschlossen ist, suchen Sie im Verzeichnis "C:\\Azure\\Vorlagen" nach dem Ordner **redis-high-availability**.
 
 ### Schritt 2 (optional): Erlernen der Vorlagenparameter
 
@@ -387,7 +387,7 @@ In diesem Diagramm werden die Beziehungen zwischen allen Dateien beschrieben, di
 
 Dieser Abschnitt führt Sie schrittweise durch die Struktur der Vorlage "azuredeploy.json" für den Redis-Cluster.
 
-Wenn Sie keine Kopie der Vorlagendatei heruntergeladen haben, legen Sie einen lokalen Ordner als Speicherort für die Datei fest, und erstellen Sie ihn (z. B. "C:\Azure\Vorlagen\RedisCluster"). Geben Sie den Ordnernamen an, und führen Sie die folgenden Befehle aus:
+Wenn Sie keine Kopie der Vorlagendatei heruntergeladen haben, legen Sie einen lokalen Ordner als Speicherort für die Datei fest, und erstellen Sie ihn (z. B. "C:\\Azure\\Vorlagen\\RedisCluster"). Geben Sie den Ordnernamen an, und führen Sie die folgenden Befehle aus:
 
 ```powershell
 $folderName="<folder name, such as C:\Azure\Templates\RedisCluster>"
@@ -666,4 +666,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

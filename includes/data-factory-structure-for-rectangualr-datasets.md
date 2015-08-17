@@ -1,16 +1,16 @@
-## Specifying structure definition for rectangular datasets
-The structure section in the datasets JSON is an **optional** section for rectangular tables (with rows & columns) and contains a collection of columns for the table. You will use the structure section for either providing type information for type conversions or doing column mappings. The following sections describe these features in detail. 
+## Angeben der Strukturdefinition für rechteckige Datasets
+Der Abschnitt "structure" in der JSON von Datasets ist ein **optionaler** Abschnitt für rechteckige Tabellen (mit Zeilen und Spalten) und enthält eine Auflistung der Spalten der Tabelle. Sie verwenden den Abschnitt "structure" entweder zum Angeben von Typinformationen für Typumwandlungen oder für Spaltenzuordnungen. In den folgenden Abschnitten werden diese Features ausführlich beschrieben.
 
-Each column contains the following properties:
+Jede Spalte enthält die folgenden Eigenschaften:
 
-| Property | Description | Required |
+| Eigenschaft | Beschreibung | Erforderlich |
 | -------- | ----------- | -------- |
-| name | Name of the column. | Yes |
-| type | Data type of the column. See type conversions section below for more details regarding when should you specify type information | No |
-| culture | .NET based culture to be used when type is specified and is .NET type Datetime or Datetimeoffset. Default is “en-us”.  | No |
-| format | Format string to be used when type is specified and is .NET type Datetime or Datetimeoffset. | No |
+| name | Name der Spalte. | Ja |
+| type | Datentyp der Spalte. Im nachstehenden Abschnitt "Typkonvertierungen" finden Sie Details zur Angabe von Typinformationen. | Nein |
+| culture | Zu verwendendes .NET-basiertes Gebietsschema, wenn "type" angegeben ist und den .NET-Typ "Datetime" oder "Datetimeoffset" hat. Die Standardeinstellung ist "de-de". | Nein |
+| format | Zu verwendende Formatzeichenfolge, wenn "type" angegeben ist und den .NET-Typ "Datetime" oder "Datetimeoffset" hat. | Nein |
 
-The following sample shows the structure section JSON for a table that has three columns userid, name, and lastlogindate.
+Das folgende Beispiel zeigt den Abschnitt "structure" der JSON für eine Tabelle mit den drei Spalten "userid", "name" und "lastlogindate".
 
     "structure": 
     [
@@ -19,17 +19,17 @@ The following sample shows the structure section JSON for a table that has three
         { "name": "lastlogindate"}
     ],
 
-Please use the following guidelines for when to include “structure” information and what to include in the **structure** section.
+Befolgen Sie die folgenden Angaben dazu, wann der Abschnitt **structure** mit welchen Informationen verwendet werden sollte.
 
-1.	**For structured data sources** that store data schema and type information along with the data itself (sources like SQL Server, Oracle, Azure table etc.), you should specify the “structure” section only if you want do column mapping of specific source columns to specific columns in sink and their names are not the same (see details in column mapping section below). 
+1.	**Für strukturierte Datenquellen**, die Datenschema- und Typinformationen neben den Daten selbst speichern (wie z. B. SQL Server, Oracle, Azure-Tabelle usw.), sollten Sie den Abschnitt "structure" nur angeben, wenn bestimmte Quellspalten bestimmten Zielspalten in der Senke zugewiesen werden sollen und deren Namen nicht identisch sind (Einzelheiten finden Sie im nachfolgenden Abschnitt zur Spaltenzuordnung). 
 
-	As mentioned above, the type information is optional in “structure” section. For structured sources, type information is already available as part of dataset definition in the data store, so you should not include type information when you do include the “structure” section.
-2. **For schema on read data sources (specifically Azure blob)**  you can chose to store data without storing any schema or type information with the data. For these types of data sources you should include “structure” in the following 2 cases:
-	1. You want to do column mapping.
-	2. When the dataset is a source in a Copy activity, you can provide type information in “structure” and data factory will use this type information for conversion to native types for the sink. See [Move data to and from Azure Blob](../articles/data-factory/data-factory-azure-blob-connector.md) article for more information.
+	Wie bereits erwähnt, ist die Information "type" im Abschnitt "structure" optional. Für strukturierte Datenquellen steht die Information "type" bereits als Teil der Datasetdefinition im Datenspeicher zur Verfügung, weshalb Sie Typinformationen nicht dem Abschnitt "structure" hinzufügen müssen.
+2. **Für das Schema von Lesedatenquellen (insbesondere Azure-Blob)** können Sie Daten speichern, ohne Schema- oder Typinformationen mit den Daten zu speichern. Bei diesen Typen von Datenquellen sollten Sie den Abschnitt "structure" in den beiden folgenden Fällen hinzufügen:
+	1. Sie wünschen eine Spaltenzuordnung.
+	2. Wenn das Dataset eine Quelle in einer Kopieraktivität ist, können Sie Typinformationen in "structure" bereitstellen. Data Factory verwendet diese Typinformationen für die Konvertierung in systemeigene Typen für die Senke. Weitere Informationen finden Sie im Artikel [Verschieben von Daten in und aus einem Azure-Blob](../articles/data-factory/data-factory-azure-blob-connector.md).
 
-### Supported .NET-based types 
-Data factory supports the following CLS compliant .NET based type values for providing type information in “structure” for schema on read data sources like Azure blob.
+### Unterstützte .NET-basierte Typen 
+Data Factory unterstützt die folgenden CLS-konformen auf .NET basierenden Typwerte für die Bereitstellung von Typinformationen in "structure" für das Schema von Lesedatenquellen wie Azure-Blob.
 
 - Int16
 - Int32 
@@ -37,7 +37,7 @@ Data factory supports the following CLS compliant .NET based type values for pro
 - Single
 - Double
 - Decimal
-- Byte[]
+- Byte
 - Bool
 - String 
 - Guid
@@ -45,5 +45,6 @@ Data factory supports the following CLS compliant .NET based type values for pro
 - Datetimeoffset
 - Timespan 
 
-For Datetime & Datetimeoffset you can also optionally specify “culture” & “format” string to facilitate parsing of your custom Datetime string. See sample for type conversion below.
+Für "Datetime" und "Datetimeoffset" können Sie optional auch die Zeichenfolgen "culture" und "format" angeben, um das Analysieren Ihrer benutzerdefinierten "Datetime"-Zeichenfolge zu erleichtern. Nachstehend sehen Sie ein Beispiel einer Typumwandlung.
 
+<!---HONumber=August15_HO6-->

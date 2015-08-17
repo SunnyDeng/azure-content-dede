@@ -1,7 +1,8 @@
 <properties 
 	pageTitle="Mehrinstanzenfähige Anwendungen mit elastischen Datenbanktools und zeilenbasierter Sicherheit" 
 	description="Erfahren Sie, wie Sie mithilfe von elastischen Datenbanktools in Verbindung mit zeilenbasierter Sicherheit eine Anwendung mit einer hochgradig skalierbaren Datenebene in einer Azure SQL-Datenbank erstellen, die mehrinstanzenfähige Shards unterstützt." 
-	services="sql-database" documentationCenter=""  
+	services="sql-database" 
+	documentationCenter=""  
 	manager="jeffreyg" 
 	authors="tmullaney"/>
 
@@ -46,17 +47,17 @@ Erstellen Sie die Anwendung, und führen Sie sie aus. Dadurch werden ein Bootstr
 
 Beachten Sie, dass diese gesamten Tests ein Problem aufzeigen, da RLS noch nicht in den Shard-Datenbanken aktiviert wurde: Mandanten können Blogs anzeigen, die Ihnen nicht gehören, und die Anwendung, wird nicht daran gehindert, einen Blog für den falschen Mandanten einzufügen. Im restlichen Artikel wird beschrieben, wie Sie diese Probleme beheben, indem Sie die Mandantenisolierung mit RLS erzwingen. Dies umfasst zwei Schritte:
 
-1. **Anwendungsebene:** Ändern Sie den Anwendungscode so, dass CONTEXT_INFO immer nach dem Öffnen einer Verbindung auf die aktuelle Mandanten-ID festgelegt wird. Im Beispielprojekt wurde dies bereits vorgenommen. 
-2. **Datenebene**: Erstellen Sie basierend auf dem Wert von CONTEXT_INFO eine RLS-Sicherheitsrichtlinie zum Filtern von Zeilen in jeder Shard-Datenbank. Sie müssen dies für jede Shard-Datenbank durchführen, andernfalls werden die Zeilen in Shards mit mehreren Mandanten nicht gefiltert. 
+1. **Anwendungsebene:** Ändern Sie den Anwendungscode so, dass CONTEXT\_INFO immer nach dem Öffnen einer Verbindung auf die aktuelle Mandanten-ID festgelegt wird. Im Beispielprojekt wurde dies bereits vorgenommen. 
+2. **Datenebene**: Erstellen Sie basierend auf dem Wert von CONTEXT\_INFO eine RLS-Sicherheitsrichtlinie zum Filtern von Zeilen in jeder Shard-Datenbank. Sie müssen dies für jede Shard-Datenbank durchführen, andernfalls werden die Zeilen in Shards mit mehreren Mandanten nicht gefiltert. 
 
 
-## Schritt 1) Anwendungsebene: Legen Sie CONTEXT_INFO auf die Mandanten-ID fest.
+## Schritt 1) Anwendungsebene: Legen Sie CONTEXT\_INFO auf die Mandanten-ID fest.
 
-Nach dem Herstellen einer Verbindung mit einer Shard-Datenbank mithilfe der datenabhängigen Routing-APIs der Clientbibliothek für elastische Datenbanken muss die Anwendung noch die Datenbank anweisen, welche Mandanten-ID diese Verbindung verwendet, sodass eine RLS-Sicherheitsrichtlinie zu anderen Mandanten gehörende Zeilen herausfiltern kann. Die empfohlene Vorgehensweise zur Übergabe dieser Informationen besteht im Festlegen von [CONTEXT_INFO](https://msdn.microsoft.com/library/ms180125) auf die aktuelle Mandanten-ID für diese Verbindung. Beachten Sie, dass CONTEXT_INFO in Azure SQL-Datenbank mit einer sitzungsspezifischen GUID vorab aufgefüllt ist, sodass Sie CONTEXT_INFO vor dem Ausführen von Abfragen für eine neue Verbindung auf die richtige Mandanten-ID festlegen *müssen*, um sicherzustellen, dass keine Zeilen unbeabsichtigt weitergegeben werden.
+Nach dem Herstellen einer Verbindung mit einer Shard-Datenbank mithilfe der datenabhängigen Routing-APIs der Clientbibliothek für elastische Datenbanken muss die Anwendung noch die Datenbank anweisen, welche Mandanten-ID diese Verbindung verwendet, sodass eine RLS-Sicherheitsrichtlinie zu anderen Mandanten gehörende Zeilen herausfiltern kann. Die empfohlene Vorgehensweise zur Übergabe dieser Informationen besteht im Festlegen von [CONTEXT\_INFO](https://msdn.microsoft.com/library/ms180125) auf die aktuelle Mandanten-ID für diese Verbindung. Beachten Sie, dass CONTEXT\_INFO in Azure SQL-Datenbank mit einer sitzungsspezifischen GUID vorab aufgefüllt ist, sodass Sie CONTEXT\_INFO vor dem Ausführen von Abfragen für eine neue Verbindung auf die richtige Mandanten-ID festlegen *müssen*, um sicherzustellen, dass keine Zeilen unbeabsichtigt weitergegeben werden.
 
 ### Entity Framework
 
-Für die Verwendung von Entity Framework-Anwendungen ist die einfachste Herangehensweise, CONTEXT_INFO in der "ElasticScaleContext"-Überschreibung festzulegen, wie unter [Datenabhängiges Routing mit EF DbContext](sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md/#data-dependent-routing-using-ef-dbcontext) beschrieben. Vor der Rückgabe der über datenabhängiges Routing vermittelten Verbindung erstellen Sie einfach einen SqlCommand, der CONTEXT_INFO auf den "shardingkey" (die Mandanten-ID) festlegt, der für diese Verbindung angegeben wurde. Auf diese Weise müssen Sie nur einmal Code zum Festlegen von CONTEXT_INFO schreiben.
+Für die Verwendung von Entity Framework-Anwendungen ist die einfachste Herangehensweise, CONTEXT\_INFO in der "ElasticScaleContext"-Überschreibung festzulegen, wie unter [Datenabhängiges Routing mit EF DbContext](sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md/#data-dependent-routing-using-ef-dbcontext) beschrieben. Vor der Rückgabe der über datenabhängiges Routing vermittelten Verbindung erstellen Sie einfach einen SqlCommand, der CONTEXT\_INFO auf den "shardingkey" (die Mandanten-ID) festlegt, der für diese Verbindung angegeben wurde. Auf diese Weise müssen Sie nur einmal Code zum Festlegen von CONTEXT\_INFO schreiben.
 
 ```
 // ElasticScaleContext.cs 
@@ -102,7 +103,7 @@ public static SqlConnection OpenDDRConnection(ShardMap shardMap, T shardingKey, 
 // ... 
 ```
 
-CONTEXT_INFO wird jetzt automatisch auf die angegebene Mandanten-ID festgelegt, wenn ElasticScaleContext aufgerufen wird:
+CONTEXT\_INFO wird jetzt automatisch auf die angegebene Mandanten-ID festgelegt, wenn ElasticScaleContext aufgerufen wird:
 
 ```
 // Program.cs 
@@ -125,7 +126,7 @@ SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() =>
 
 ### ADO.NET SqlClient 
 
-Bei Anwendungen mit ADO.NET SqlClient ist die empfohlene Vorgehensweise, eine Wrapperfunktion um ShardMap.OpenConnectionForKey() zu erstellen, die CONTEXT_INFO automatisch auf die richtige Mandanten-ID festlegt, bevor eine Verbindung zurückgegeben wird. Um sicherzustellen, dass CONTEXT_INFO immer richtig konfiguriert ist, sollten Sie Verbindungen nur mit dieser Wrapperfunktion öffnen.
+Bei Anwendungen mit ADO.NET SqlClient ist die empfohlene Vorgehensweise, eine Wrapperfunktion um ShardMap.OpenConnectionForKey() zu erstellen, die CONTEXT\_INFO automatisch auf die richtige Mandanten-ID festlegt, bevor eine Verbindung zurückgegeben wird. Um sicherzustellen, dass CONTEXT\_INFO immer richtig konfiguriert ist, sollten Sie Verbindungen nur mit dieser Wrapperfunktion öffnen.
 
 ```
 // Program.cs
@@ -187,9 +188,9 @@ SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() =>
 
 ### Erstellen Sie eine Sicherheitsrichtlinie zum Filtern von SELECT-, UPDATE- und DELETE- Abfragen. 
 
-Da die Anwendung nun CONTEXT_INFO vor dem Abfragen auf die aktuelle Mandanten-ID festlegt, kann eine RLS-Sicherheitsrichtlinie Abfragen filtern und Zeilen ausschließen, die eine andere Mandanten-ID aufweisen.
+Da die Anwendung nun CONTEXT\_INFO vor dem Abfragen auf die aktuelle Mandanten-ID festlegt, kann eine RLS-Sicherheitsrichtlinie Abfragen filtern und Zeilen ausschließen, die eine andere Mandanten-ID aufweisen.
 
-RLS ist in T-SQL implementiert: Eine benutzerdefinierte Prädikatfunktion definiert die Filterlogik und eine Sicherheitsrichtlinie bindet diese Funktion an eine beliebige Anzahl von Tabellen. Für dieses Projekt stellt die Prädikatfunktion einfach sicher, dass die Anwendung (statt eines anderen SQL-Benutzers) mit der Datenbank verbunden wird und die Mandanten-ID einer bestimmten Zeile mit dem Wert der CONTEXT_INFO übereinstimmt. Zeilen, die diese Bedingungen erfüllen, werden durch den Filter für SELECT-, UPDATE- und DELETE-Abfragen zugelassen. Wenn CONTEXT_INFO noch nicht festgelegt wurde, werden keine Zeilen zurückgegeben.
+RLS ist in T-SQL implementiert: Eine benutzerdefinierte Prädikatfunktion definiert die Filterlogik und eine Sicherheitsrichtlinie bindet diese Funktion an eine beliebige Anzahl von Tabellen. Für dieses Projekt stellt die Prädikatfunktion einfach sicher, dass die Anwendung (statt eines anderen SQL-Benutzers) mit der Datenbank verbunden wird und die Mandanten-ID einer bestimmten Zeile mit dem Wert der CONTEXT\_INFO übereinstimmt. Zeilen, die diese Bedingungen erfüllen, werden durch den Filter für SELECT-, UPDATE- und DELETE-Abfragen zugelassen. Wenn CONTEXT\_INFO noch nicht festgelegt wurde, werden keine Zeilen zurückgegeben.
 
 Um RLS zu aktivieren, führen Sie auf allen Shards das folgende T-SQL-Skript mithilfe von Visual Studio (SSDT), SSMS oder dem PowerShell-Skript aus, das im Projekt enthalten ist. (Bei Verwendung von [elastischen Datenbankaufträgen](sql-database-elastic-jobs-overview.md) können Sie es zur Automatisierung der Ausführung dieses T-SQL-Skripts auf allen Shards verwenden):
 
@@ -261,7 +262,7 @@ Die Anwendung kann jetzt keine Zeilen einfügen, die Mandanten gehören, die nic
 
 ### Hinzufügen von Standardeinschränkungen zum automatischen Auffüllen der Mandanten-ID für INSERTs. 
 
-Neben der Verwendung von Überprüfungseinschränkungen zum Blockieren von falschen Mandanteneinfügungen können Sie eine Standardeinschränkung für jede Tabelle einsetzen, mit der die Mandanten-ID beim Einfügen von Zeilen automatisch mit dem aktuellen Wert von CONTEXT_INFO aufgefüllt wird. Beispiel:
+Neben der Verwendung von Überprüfungseinschränkungen zum Blockieren von falschen Mandanteneinfügungen können Sie eine Standardeinschränkung für jede Tabelle einsetzen, mit der die Mandanten-ID beim Einfügen von Zeilen automatisch mit dem aktuellen Wert von CONTEXT\_INFO aufgefüllt wird. Beispiel:
 
 ```
 -- Create default constraints to auto-populate TenantId with the value of CONTEXT_INFO for inserts 
@@ -290,7 +291,7 @@ SqlDatabaseUtils.SqlRetryPolicy.ExecuteAction(() =>
 }); 
 ```
 
-> [AZURE.NOTE]Bei der Verwendung von Standardeinschränkungen für ein Entity Framework-Projekt wird empfohlen, dass Sie NICHT die Mandanten-ID-Spalte in Ihr EF-Datenmodell einbeziehen. Dies liegt daran, dass Entity Framework-Abfragen automatisch Standardwerte angeben, die die in T-SQL erstellten Standardeinschränkungen mit CONTEXT_INFO außer Kraft setzen. Um Standardeinschränkungen im Beispielprojekt zu verwenden, sollten Sie z. B. "TenantId" (die Mandanten-ID) aus "DataClasses.cs" entfernen (und "Add-Migration" in der Paket-Manager-Konsole ausführen) sowie T-SQL verwenden, um sicherzustellen, dass das Feld nur in den Datenbanktabellen vorhanden ist. Auf diese Weise wird EF beim Einfügen von Daten nicht automatisch falsche Standardwerte übergeben.
+> [AZURE.NOTE]Bei der Verwendung von Standardeinschränkungen für ein Entity Framework-Projekt wird empfohlen, dass Sie NICHT die Mandanten-ID-Spalte in Ihr EF-Datenmodell einbeziehen. Dies liegt daran, dass Entity Framework-Abfragen automatisch Standardwerte angeben, die die in T-SQL erstellten Standardeinschränkungen mit CONTEXT\_INFO außer Kraft setzen. Um Standardeinschränkungen im Beispielprojekt zu verwenden, sollten Sie z. B. "TenantId" (die Mandanten-ID) aus "DataClasses.cs" entfernen (und "Add-Migration" in der Paket-Manager-Konsole ausführen) sowie T-SQL verwenden, um sicherzustellen, dass das Feld nur in den Datenbanktabellen vorhanden ist. Auf diese Weise wird EF beim Einfügen von Daten nicht automatisch falsche Standardwerte übergeben.
 
 ### (Optional:) Aktivieren Sie einen "superuser", der auf alle Zeilen zugreifen kann.
 Einige Anwendungen sollten einen "superuser" erstellen, der auf alle Zeilen zugreifen kann, um Berichterstellung für alle Mandanten auf allen Shards zu aktivieren oder um Teilungs-/Zusammenführungsoperationen für Shards auszuführen, bei denen Mandantenzeilen zwischen Datenbanken verschoben werden. Um dies zu ermöglichen, sollten Sie einen neuen SQL-Benutzer (in diesem Beispiel "superuser") in den einzelnen Shard-Datenbanken erstellen. Ändern Sie dann die Sicherheitsrichtlinie mit einer neuen Prädikatfunktion, durch die dieser Benutzer Zugriff auf alle Zeilen erhält:
@@ -339,4 +340,4 @@ Elastische Datenbanktools und zeilenbasierte Sicherheit können zusammen zum hor
 [1]: ./media/sql-database-elastic-tools-multi-tenant-row-level-security/blogging-app.png
 <!--anchors-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

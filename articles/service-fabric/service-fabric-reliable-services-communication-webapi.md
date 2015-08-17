@@ -7,6 +7,7 @@
    manager="timlt"
    editor=""/>
 
+
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
@@ -15,6 +16,7 @@
    ms.workload="required"
    ms.date="07/23/2015"
    ms.author="vturecek"/>
+
 
 # Erste Schritte mit Web-API-Diensten von Microsoft Azure Service Fabric mit selbstgehostetem OWIN-Server
 
@@ -25,10 +27,10 @@ Service Fabric ermöglicht Ihnen, selbst zu entscheiden, wie Ihre Dienste mit Be
 
 Die ASP.NET Web-API ist ein beliebtes und leistungsstarkes Framework zum Erstellen von HTTP-APIs auf .NET Framework. Wenn Sie nicht bereits mit Web-APIs vertraut sind, erfahren Sie unter [www.asp.net/webapi](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api) mehr darüber.
 
-In Service Fabric wird die bekannte und bewährte Web-API von ASP.NET verwendet. Die Web-API-Anwendung werden jedoch unterschiedlich *gehostet* \(Sie verwenden nicht IIS\). Zum besseren Verständnis des Unterschieds wird das Hosten nachfolgend in zwei Teile untergliedert:
+In Service Fabric wird die bekannte und bewährte Web-API von ASP.NET verwendet. Die Web-API-Anwendung werden jedoch unterschiedlich *gehostet* (Sie verwenden nicht IIS). Zum besseren Verständnis des Unterschieds wird das Hosten nachfolgend in zwei Teile untergliedert:
 
- 1. Die Web-API-Anwendung \(Ihre Controller, Modelle usw.\)
- 2. Der Host \(der Webserver, in der Regel IIS\)
+ 1. Die Web-API-Anwendung (Ihre Controller, Modelle usw.)
+ 2. Der Host (der Webserver, in der Regel IIS)
 
 Die Web-API-Anwendung an sich bleibt gleich. Sie unterscheidet sich nicht von den Web-API-Anwendungen, die Sie bisher möglicherweise geschrieben haben. Den Großteil Ihres Anwendungscodes sollten Sie einfach direkt verschieben können. Das Hosten der Anwendung erfolgt möglicherweise ein wenig anders, als Sie es vom Hosten auf IIS gewohnt sind. Bevor wir uns jedoch mit dem Hosten befassen, beginnen wir mit dem vertrauteren Teil: der Web-API-Anwendung.
 
@@ -190,7 +192,7 @@ Jetzt geht es darum, die Anwendung zu hosten, um sie tatsächlich ausführen zu 
 
 ## Diensthosting
 
-In Service Fabric wird Ihr Dienst in einem *Diensthostprozess* in Form einer ausführbaren Datei ausgeführt, die Ihren Dienstcode ausführt. Beim Schreiben eines Diensts mithilfe der Reliable Services-API \(und in der Tat in den meisten Fällen, in denen Sie einen Dienst für Service Fabric in .NET schreiben\), wird das Dienstprojekt einfach in eine .EXE-Datei kompiliert, die den Diensttyp registriert und den Code ausführt. Tatsächlich sollten Sie Folgendes sehen, wenn Sie **Program.cs** im zustandslosen Dienstprojekt öffnen:
+In Service Fabric wird Ihr Dienst in einem *Diensthostprozess* in Form einer ausführbaren Datei ausgeführt, die Ihren Dienstcode ausführt. Beim Schreiben eines Diensts mithilfe der Reliable Services-API (und in der Tat in den meisten Fällen, in denen Sie einen Dienst für Service Fabric in .NET schreiben), wird das Dienstprojekt einfach in eine .EXE-Datei kompiliert, die den Diensttyp registriert und den Code ausführt. Tatsächlich sollten Sie Folgendes sehen, wenn Sie **Program.cs** im zustandslosen Dienstprojekt öffnen:
 
 ```csharp
 
@@ -229,7 +231,7 @@ Angesichts der Tatsache, dass der Anwendungscode für die Web-API in einem eigen
 
 In diesem Artikel wird als OWIN-Host für die Web-API-Anwendung Katana verwendet. Katana ist eine Open-Source-Owin-Host-Implementierung.
 
-> [AZURE.NOTE]Weitere Informationen zu Katana erhalten Sie auf der [Katana-Website](http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana). Einen schnellen Überblick über die Verwendung von Katana zum Selbsthosten der Web-API finden Sie im Artikel [Use OWIN to Self-Host ASP.NET Web API 2](http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api) \(Selbsthosting der ASP.NET Web-API 2, in englischer Sprache\).
+> [AZURE.NOTE]Weitere Informationen zu Katana erhalten Sie auf der [Katana-Website](http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana). Einen schnellen Überblick über die Verwendung von Katana zum Selbsthosten der Web-API finden Sie im Artikel [Use OWIN to Self-Host ASP.NET Web API 2](http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api) (Selbsthosting der ASP.NET Web-API 2, in englischer Sprache).
 
 
 ## Einrichten des Webservers
@@ -258,7 +260,7 @@ protected override ICommunicationListener CreateCommunicationListener()
 
 ```
 
-Der Webserver – und alle anderen Kommunikationsstapel, die Sie in Zukunft möglicherweise verwenden werden \(z. B. WebSockets\) – sollte für die ordnungsgemäße Integration in das System die Schnittstelle ICommunicationListener verwenden. Die Gründe hierfür werden in den folgenden Schritten verdeutlicht.
+Der Webserver – und alle anderen Kommunikationsstapel, die Sie in Zukunft möglicherweise verwenden werden (z. B. WebSockets) – sollte für die ordnungsgemäße Integration in das System die Schnittstelle ICommunicationListener verwenden. Die Gründe hierfür werden in den folgenden Schritten verdeutlicht.
 
 Erstellen Sie zunächst eine Klasse namens "OwinCommunicationListener", die ICommunicationListener implementiert:
 
@@ -334,7 +336,7 @@ Hier wird die Webserver-URL eingerichtet. Hierzu benötigen Sie die folgenden In
  + **Präfix für URL-Pfad**: Obwohl dies optional ist, sollte es jetzt eingerichtet werden, damit Sie mehrere Webdienste sicher in Ihrer Anwendung hosten können.
  + **Port**:
 
-Bevor Sie einen Port für den Webserver wählen, ist es wichtig zu verstehen, dass Service Fabric eine Anwendungsebene bereitstellt, die als Puffer zwischen der Anwendung und dem zugrunde liegenden Betriebssystem fungiert. Service Fabric bietet somit eine Möglichkeit zum Konfigurieren von *Endpunkten* für Ihre Dienste. Service Fabric stellt sicher, dass der Endpunkt für den Dienst verfügbar ist, damit Sie ihn nicht selbst mit der zugrunde liegenden Betriebssystemumgebung konfigurieren müssen. Dies ermöglicht es Ihnen, die Service Fabric-Anwendung auf einfache Weise in verschiedenen Umgebungen zu hosten, ohne Änderungen an Ihrer Anwendung vorzunehmen. \(Sie können z. B. die gleiche Anwendung in Azure oder in Ihrem eigenen Rechenzentrum hosten.\)
+Bevor Sie einen Port für den Webserver wählen, ist es wichtig zu verstehen, dass Service Fabric eine Anwendungsebene bereitstellt, die als Puffer zwischen der Anwendung und dem zugrunde liegenden Betriebssystem fungiert. Service Fabric bietet somit eine Möglichkeit zum Konfigurieren von *Endpunkten* für Ihre Dienste. Service Fabric stellt sicher, dass der Endpunkt für den Dienst verfügbar ist, damit Sie ihn nicht selbst mit der zugrunde liegenden Betriebssystemumgebung konfigurieren müssen. Dies ermöglicht es Ihnen, die Service Fabric-Anwendung auf einfache Weise in verschiedenen Umgebungen zu hosten, ohne Änderungen an Ihrer Anwendung vorzunehmen. (Sie können z. B. die gleiche Anwendung in Azure oder in Ihrem eigenen Rechenzentrum hosten.)
 
 Konfigurieren Sie einen HTTP-Endpunkt in PackageRoot\\ServiceManifest.xml:
 
@@ -343,12 +345,13 @@ Konfigurieren Sie einen HTTP-Endpunkt in PackageRoot\\ServiceManifest.xml:
 <Resources>
     <Endpoints>
         <Endpoint Name="ServiceEndpoint" Type="Input" Protocol="http" Port="80" />
+
     </Endpoints>
 </Resources>
 
 ```
 
-Dieser Schritt ist wichtig, da der Diensthostprozess mit eingeschränkten Anmeldeinformationen \(Netzwerkdienst unter Windows\) ausgeführt wird. Das bedeutet, dass der Dienst keinen Zugriff hat, um eigenständig einen HTTP-Endpunkt einrichten zu können. Mithilfe der Endpunktkonfiguration kann Service Fabric die ACL \(Access Control List, Zugriffssteuerungsliste\) für die vom Dienst zu überwachende URL ordnungsgemäß einrichten. Gleichzeitig bietet sie einen Standardort zum Konfigurieren von Endpunkten.
+Dieser Schritt ist wichtig, da der Diensthostprozess mit eingeschränkten Anmeldeinformationen (Netzwerkdienst unter Windows) ausgeführt wird. Das bedeutet, dass der Dienst keinen Zugriff hat, um eigenständig einen HTTP-Endpunkt einrichten zu können. Mithilfe der Endpunktkonfiguration kann Service Fabric die ACL (Access Control List, Zugriffssteuerungsliste) für die vom Dienst zu überwachende URL ordnungsgemäß einrichten. Gleichzeitig bietet sie einen Standardort zum Konfigurieren von Endpunkten.
 
 In OwinCommunicationListener.cs können Sie die Endpunktinformationen mit der Methode "Initialize" zum Abrufen des Ports beziehen. Erstellen Sie die vom Dienst zu überwachende URL, und speichern Sie sie in der zuvor erstellte Klassenmembervariablen. Diese wird in "OpenAsync" verwendet, um den Webserver zu starten.
 
@@ -376,7 +379,7 @@ Beachten Sie, dass hier "http://+" verwendet wird. Auf diese Weise stellen Sie s
 
 "OpenAsync" wird nach der Ausführung von "Initialize" von der Plattform aufgerufen. Hier verwenden Sie die Adresse, die mit "Initialize" zum Öffnen des Webservers erstellt wurde.
 
-Das Implementieren von "OpenAsync" ist einer der wichtigsten Gründe, warum der Webserver \(oder ein Kommunikationsstapel\) als ICommunicationListener implementiert und nicht einfach direkt mit "RunAsync\(\)" im Dienst geöffnet wird. Der Rückgabewert von "OpenAsync" ist die vom Webserver überwachte Adresse. Bei der Rückgabe der Adresse an das System wird diese vom Dienst registriert. Die von Service Fabric bereitgestellte API ermöglicht es Clients oder andere Diensten, die Adresse anschließend anhand des Dienstnamens anzufordern. Dies ist wichtig, da die Dienstadresse nicht statisch ist. Der Grund dafür ist, dass die Dienste zwecks Ressourcenausgleich und Verfügbarkeit im Cluster verschoben werden. Dies ist der Mechanismus, mit dem Clients die Überwachungsadresse für einen Dienst auflösen können.
+Das Implementieren von "OpenAsync" ist einer der wichtigsten Gründe, warum der Webserver (oder ein Kommunikationsstapel) als ICommunicationListener implementiert und nicht einfach direkt mit "RunAsync()" im Dienst geöffnet wird. Der Rückgabewert von "OpenAsync" ist die vom Webserver überwachte Adresse. Bei der Rückgabe der Adresse an das System wird diese vom Dienst registriert. Die von Service Fabric bereitgestellte API ermöglicht es Clients oder andere Diensten, die Adresse anschließend anhand des Dienstnamens anzufordern. Dies ist wichtig, da die Dienstadresse nicht statisch ist. Der Grund dafür ist, dass die Dienste zwecks Ressourcenausgleich und Verfügbarkeit im Cluster verschoben werden. Dies ist der Mechanismus, mit dem Clients die Überwachungsadresse für einen Dienst auflösen können.
 
 Vor diesem Hintergrund startet "OpenAsync" den Webserver und gibt die von ihm überwachte Adresse zurück. Beachten Sie, dass die Überwachung auf "http://+" erfolgt, das "+" jedoch vor der Rückgabe der Adresse durch die IP-Adresse oder den FQDN des Knotens ersetzt wird, auf dem sie sich aktuell befindet. Der Grund dafür ist, dass die mit der Methode zurückgegebene Adresse im System registriert ist. Diese Adresse erhalten Clients und andere Dienste, wenn sie die Dienstadresse anfordern. Damit Clients eine ordnungsgemäße Verbindung herstellen können, muss die Adresse eine tatsächliche IP oder FQDN enthalten.
 
@@ -397,7 +400,7 @@ public Task<string> OpenAsync(CancellationToken cancellationToken)
 
 Diese verweist auf die **Startklasse**, die im Konstruktor an OwinCommunicationListener übergeben wurde. Diese Startinstanz wird vom Webserver verwendet, um die Web-API-Anwendung zu starten.
 
-Die Zeile "ServiceEventSource.Current.Message\(\)" wird später im Diagnoseereignisfenster angezeigt, wenn Sie die Anwendung ausführen. Sie dient als Hinweis, dass der Webserver erfolgreich gestartet wurde.
+Die Zeile "ServiceEventSource.Current.Message()" wird später im Diagnoseereignisfenster angezeigt, wenn Sie die Anwendung ausführen. Sie dient als Hinweis, dass der Webserver erfolgreich gestartet wurde.
 
 ### CloseAsync und Abort
 
@@ -438,7 +441,7 @@ In diesem Implementierungsbeispiel wird der Webserver einfach mit "CloseAsync" u
 
 ## Starten der Website
 
-Sie können nun eine Instanz von OwinCommunicationListener erstellen und zurückgeben, um den Webserver zu starten. Setzen Sie in der Dienstklasse \(Service.cs\) die Methode **CreateCommunicationListener\(\)** außer Kraft:
+Sie können nun eine Instanz von OwinCommunicationListener erstellen und zurückgeben, um den Webserver zu starten. Setzen Sie in der Dienstklasse (Service.cs) die Methode **CreateCommunicationListener()** außer Kraft:
 
 ```csharp
 
@@ -449,11 +452,11 @@ protected override ICommunicationListener CreateCommunicationListener()
 
 ```
 
-Hierbei treffen die *Web-API-Anwendung* und der *OWIN-Host* schließlich aufeinander: Der *Host* \(\*\* OwinCommunicationListener \*\*\) erhält eine Instanz der *Anwendung* \(Web-API über **Start**\), und Service Fabric verwaltet den Lebenszyklus. Dieses Muster kann in der Regel bei jedem Kommunikationsstapel verwendet werden.
+Hierbei treffen die Web-API-*Anwendung* und der *OWIN-Host* schließlich aufeinander: Der *Host* (**OwinCommunicationListener**) erhält eine Instanz der *Anwendung* (Web-API über **Start**), und Service Fabric verwaltet den Lebenszyklus. Dieses Muster kann in der Regel bei jedem Kommunikationsstapel verwendet werden.
 
 ## Zusammenfügen des Gesamtbilds
 
-In diesem Beispiel benötigen Sie die Methode "RunAsync\(\)" nicht, sodass die Außerkraftsetzung einfach entfernt werden kann.
+In diesem Beispiel benötigen Sie die Methode "RunAsync()" nicht, sodass die Außerkraftsetzung einfach entfernt werden kann.
 
 Die endgültige Dienstimplementierung sollte einfach sein, da nur der Kommunikationslistener erstellt werden muss:
 
@@ -570,7 +573,7 @@ Nachdem nun alle Komponenten vorhanden sind, sollte Ihr Projekt wie eine typisch
 Falls Sie dies nicht bereits getan haben, [richten Sie die Entwicklungsumgebung ein](service-fabric-get-started.md).
 
 
-Sie können jetzt den Dienst erstellen und bereitstellen. Drücken Sie zum Erstellen und Bereitstellen der Anwendung in Visual Studio **F5**. Im Fenster für Diagnoseereignisse sollte eine Meldung angezeigt sein, dass der Webserver auf **http://localhost:80/api** geöffnet wurde.
+Sie können jetzt den Dienst erstellen und bereitstellen. Drücken Sie zum Erstellen und Bereitstellen der Anwendung in Visual Studio **F5**. Im Fenster für Diagnoseereignisse sollte eine Meldung angezeigt sein, dass der Webserver auf \*\***http://localhost:80/api** geöffnet wurde
 
 
 ![](media/service-fabric-reliable-services-communication-webapi/webapi-diagnostics.png)
@@ -598,6 +601,7 @@ Oder beim Definieren eines Standarddiensts in einem Visual Studio-Projekt mit ei
   <Service Name="WebService">
     <StatelessService ServiceTypeName="WebServiceType" InstanceCount="-1">
       <SingletonPartition />
+
     </StatelessService>
   </Service>
 </DefaultServices>
@@ -614,4 +618,4 @@ In ASP.NET 5 bleiben das Konzept und das Programmiermodell, bei dem die *Anwendu
 
 [Debuggen einer Service Fabric-Anwendung in Visual Studio](service-fabric-debugging-your-application.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

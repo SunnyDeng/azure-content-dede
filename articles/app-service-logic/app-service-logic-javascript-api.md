@@ -26,14 +26,14 @@ Wenn Sie jedoch einen wiederverwendbaren Codeausschnitt erstellen möchten, der 
 
 Wenn Sie zudem zusätzliche Pakete einschließen möchten, müssen Sie auch die WebJobs-API-App verwenden, da Sie mit der JavaScript-API-App keine Bibliotheken hinzufügen können.
 
-Verwenden Sie die [C\#-API-App](app-service-logic-cs-api.md), wenn Sie Ausdrücke lieber in C\# schreiben möchten.
+Verwenden Sie die [C#-API-App](app-service-logic-cs-api.md), wenn Sie Ausdrücke lieber in C# schreiben möchten.
 
 ##Erstellen einer JavaScript-API-App
 Um die JavaScript-API-App verwenden zu können, müssen Sie zunächst eine Instanz in der JavaScript-API-App erstellen. Dies kann entweder inline beim Erstellen einer Logik-App oder durch Auswählen der JavaScript-API-App aus dem Azure Marketplace erfolgen.
 
 ##Verwenden der JavaScript-API-App auf der Designeroberfläche von Logik-Apps
 ###Trigger
-Sie können einen Trigger erstellen, der den Logik-App-Dienst abruft \(in einem von Ihnen definierten Intervall\). Wenn Inhalt zurückgegeben wird, wird die Logik-App ausgeführt, andernfalls wartet sie bis zur Überprüfung im nächsten Abrufintervall.
+Sie können einen Trigger erstellen, der den Logik-App-Dienst abruft (in einem von Ihnen definierten Intervall). Wenn Inhalt zurückgegeben wird, wird die Logik-App ausgeführt, andernfalls wartet sie bis zur Überprüfung im nächsten Abrufintervall.
 
 Die Eingaben für den Trigger sind: – **JavaScript-Ausdruck** – Ein Ausdruck, der ausgewertet wird. Er wird in einer Funktion aufgerufen und muss `false` zurückgeben, wenn die Logik-App nicht ausgeführt werden soll. Er kann beliebige Werte zurückgeben, wenn die Logik-App ausgeführt werden soll. Sie können den Inhalt der Antwort in den Aktionen der Logik-App verwenden. – **Kontextobjekt** – Ein optionales Objekt, das an den Trigger übergeben werden kann. Sie können beliebig viele Eigenschaften definieren, aber die Entität der obersten Ebene muss ein Objekt sein, z. B. `{ "bar" : 0}`.
 
@@ -91,4 +91,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Creating a Logic App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

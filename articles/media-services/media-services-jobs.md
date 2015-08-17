@@ -60,4 +60,4 @@ Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des **Azure-Verwa
 [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md): Beschreibt verwendete Kontingente und Einschränkungen für den Media Services Encoder
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

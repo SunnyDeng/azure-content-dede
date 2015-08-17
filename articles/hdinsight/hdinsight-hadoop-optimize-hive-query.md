@@ -27,8 +27,8 @@ In einem Cluster, dem mehr Worker-Knoten zur Verfügung stehen, können mehr Map
 
 - Bei der Bereitstellung können Sie die Anzahl der Worker-Knoten im Azure-Portal, in Azure PowerShell oder in der plattformübergreifenden Befehlszeilenschnittstelle angeben. Weitere Informationen finden Sie unter [Bereitstellen von HDInsight-Clustern](hdinsight-provision-clusters.md). Der folgende Screenshot zeigt die Konfiguration der Worker-Knoten im Azure-Portal:
 
-	![scaleout_1][image-hdi-optimize-hive-scaleout_1]
-- Aber auch während der Laufzeit kann ein Cluster horizontal skaliert werden, ohne ihn neu zu erstellen. Dies wird nachfolgend gezeigt. ![scaleout_1][image-hdi-optimize-hive-scaleout_2]
+	![scaleout\_1][image-hdi-optimize-hive-scaleout_1]
+- Aber auch während der Laufzeit kann ein Cluster horizontal skaliert werden, ohne ihn neu zu erstellen. Dies wird nachfolgend gezeigt. ![scaleout\_1][image-hdi-optimize-hive-scaleout_2]
 
 Weitere Informationen zu den von HDInsight unterstützten virtuellen Computern finden Sie unter [HDInsight-Preise](http://azure.microsoft.com/pricing/details/hdinsight/).
 
@@ -36,7 +36,7 @@ Weitere Informationen zu den von HDInsight unterstützten virtuellen Computern f
 
 [Apache Tez](http://hortonworks.com/hadoop/tez/) ist eine Alternative zum Ausführungsmodul MapReduce:
 
-![tez_1][image-hdi-optimize-hive-tez_1]
+![tez\_1][image-hdi-optimize-hive-tez_1]
 
 
 Tez ist jedoch aus folgenden Gründen schneller:
@@ -215,4 +215,4 @@ In diesem Artikel haben Sie mehrere allgemeine Hive-Methoden zur Optimierung von
 [image-hdi-optimize-hive-partitioning_1]: ./media/hdinsight-hadoop-optimize-hive-query/partitioning_1.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

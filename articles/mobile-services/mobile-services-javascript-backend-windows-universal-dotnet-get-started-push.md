@@ -79,7 +79,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 * [Was sind Notification Hubs?] <br/>Erfahren Sie, wie Sie mit Benachrichtigungshubs Benachrichtigungen an all Ihre Apps auf allen großen Clientplattformen versenden können.
 
-* [Verwenden eines .NET-Clients für Azure Mobile Services] <br/>Erfahren Sie mehr über die Verwendung von Mobile Services in C\#-Windows-Apps.
+* [Verwenden eines .NET-Clients für Azure Mobile Services] <br/>Erfahren Sie mehr über die Verwendung von Mobile Services in C#-Windows-Apps.
 
 <!-- Anchors. -->
 
@@ -101,4 +101,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

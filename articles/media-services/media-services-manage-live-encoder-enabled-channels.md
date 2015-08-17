@@ -101,7 +101,7 @@ Wenn der **Encodertyp** die Einstellung **Standard** aufweist, gibt es folgende 
 - Single-Bitrate **RTMP**
 - Single-Bitrate **Fragmentiertes MP4** (Smooth Streaming)
 
-Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
+Weitere Informationen finden Sie unter [￼Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 
 ####RTP (MPEG-TS) – MPEG-2-Transportdatenstrom über RTP.  
 
@@ -278,16 +278,16 @@ Durch **Default720p** wird das Video in die folgenden 7 Ebenen codiert:
 
 ####Ausgabe-Videodatenstrom
 
-<table border="1">
-<tr><th>BitRate</th><th>Breite</th><th>Höhe</th><th>Max. Bilder/s</th><th>Profil</th><th>Name des Ausgabedatenstroms</th></tr>
-<tr><td>3500</td><td>1280</td><td>720</td><td>30</td><td>Hoch</td><td>Video_1280x720_30fps_3500kbps</td></tr>
-<tr><td>2200</td><td>960</td><td>540</td><td>30</td><td>Main</td><td>Video_960x540_30fps_2200kbps</td></tr>
-<tr><td>1350</td><td>704</td><td>396</td><td>30</td><td>Main</td><td>Video_704x396_30fps_1350kbps</td></tr>
-<tr><td>850</td><td>512</td><td>288</td><td>30</td><td>Main</td><td>Video_512x288_30fps_850kbps</td></tr>
-<tr><td>550</td><td>384</td><td>216</td><td>30</td><td>Main</td><td>Video_384x216_30fps_550kbps</td></tr>
-<tr><td>350</td><td>340</td><td>192</td><td>30</td><td>Grundwert</td><td>Video_340x192_30fps_350kbps</td></tr>
-<tr><td>200</td><td>340</td><td>192</td><td>30</td><td>Grundwert</td><td>Video_340x192_30fps_200kbps</td></tr>
-</table>
+BitRate|Breite|Höhe|Max. Bilder/s|Profil|Name des Ausgabedatenstroms
+---|---|---|---|---|---
+3500|1280|720|30|Hoch|Video\_1280x720\_30fps\_3500kbps
+2200|960|540|30|Main|Video\_960x540\_30fps\_2200kbps
+1350|704|396|30|Main|Video\_704x396\_30fps\_1350kbps
+850|512|288|30|Main|Video\_512x288\_30fps\_850kbps
+550|384|216|30|Main|Video\_384x216\_30fps\_550kbps
+350|340|192|30|Grundwert|Video\_340x192\_30fps\_350kbps
+200|340|192|30|Grundwert|Video\_340x192\_30fps\_200kbps
+
 
 ####Ausgabe-Audiodatenstrom
 
@@ -341,7 +341,8 @@ Optional. Hier wird die ID des Media Services-Medienobjekts angegeben, welches d
 
 - Auflösung von höchstens 1920 x 1080
 - Größe von maximal 3 MB
-- Der Dateinamen muss die Erweiterung *JPG aufweisen.- Das Bild muss als einzige AssetFile in ein Medienobjekt hochgeladen werden. Diese AssetFile sollte als primäre Datei gekennzeichnet werden. Bei dem Medienobjekt ist keine Speicherverschlüsselung möglich.
+- Der Dateinamen muss die Erweiterung *JPG aufweisen.
+- Das Bild muss als einzige AssetFile in ein Medienobjekt hochgeladen werden. Diese AssetFile sollte als primäre Datei gekennzeichnet werden. Bei dem Medienobjekt ist keine Speicherverschlüsselung möglich.
 
 Wird keine **default slate Asset Id** (ID des Slate-Standardmedienobjekts) angegeben, und die Option **insert slate on ad marker** (Slate bei AD-Marker einfügen) weist die Einstellung **true** auf, so wird ein Standardbild von Azure Media Services verwendet, um den eingehenden Videodatenstrom zu verdecken. Im Slatezustand wird auch die Audioausgabe stummgeschaltet.
 
@@ -383,13 +384,12 @@ Dies ist der aktuelle Status des Kanals. Mögliche Werte sind:
 
 In der folgenden Tabelle ist die Zuordnung der Kanalstatus mit den Abrechnungsmodi aufgeführt.
  
-<table border="1">
-<tr><th>Kanalstatus</th><th>Portal-UI-Indikatoren</th><th>In Rechnung gestellt?</th></tr>
-<tr><td>Wird gestartet</td><td>Wird gestartet</td><td>Nein (Übergangsstatus)</td></tr>
-<tr><td>Wird ausgeführt</td><td>Bereit (keine ausgeführten Programme)<br/>oder<br/>Streaming (mindestens ein ausgeführtes Programm)</td><td>Ja</td></tr>
-<tr><td>Wird beendet</td><td>Wird beendet</td><td>Nein (Übergangsstatus)</td></tr>
-<tr><td>Beendet</td><td>Beendet</td><td>Nein</td></tr>
-</table>
+Kanalstatus|Portal-UI-Indikatoren|In Rechnung gestellt?
+---|---|---
+Wird gestartet|Wird gestartet|Nein (Übergangsstatus)
+Wird ausgeführt|Bereit (keine ausgeführten Programme)<br/>oder<br/>Streaming (mindestens ein laufendes Programm)|Ja
+Wird beendet|Wird beendet|Nein (Übergangsstatus)
+Beendet|Beendet|Nein
 
 
 >[AZURE.NOTE]Derzeit kann der Kanalstart in der Vorschau 20 Minuten und länger dauern. Das Zurücksetzen des Kanals kann bis zu 5 Minuten dauern.
@@ -402,7 +402,7 @@ In der folgenden Tabelle ist die Zuordnung der Kanalstatus mit den Abrechnungsmo
 - Ein Kanal kann nur beendet werden, wenn er den Status „Wird ausgeführt“ aufweist und alle Programme im Kanal beendet wurden.
 - In der Standardeinstellung können Sie Ihrem Media Services-Konto nicht mehr als 5 Livekanäle hinzufügen. Hierbei handelt es sich um eine weiche Kontingentgrenze bei allen neuen Konten. Weitere Informationen finden Sie unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md).
 - Sie können das Eingabeprotokoll nicht ändern, während der Kanal oder seine zugehörigen Programme ausgeführt werden. Wenn Sie andere Protokolle benötigen, erstellen Sie für jedes Eingabeprotokoll einen separaten Kanal.
-- Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [diesem Abschnitt](media-services-manage-live-encoder-enabled-channels.md#states).
+- Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [￼diesem Abschnitt](media-services-manage-live-encoder-enabled-channels.md#states).
 
 ##Bekannte Probleme
 
@@ -505,4 +505,4 @@ Informationen zum Skalieren von Streamingeinheiten finden Sie unter [Skalieren v
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

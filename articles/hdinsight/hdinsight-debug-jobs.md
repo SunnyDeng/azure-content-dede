@@ -7,6 +7,7 @@
 	authors="mumian" 
 	documentationCenter=""/>
 
+
 <tags 
 	ms.service="hdinsight" 
 	ms.workload="big-data" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/08/2015" 
 	ms.author="jgao"/>
+
 
 # Debuggen von Hadoop in HDInsight: Verstehen von Fehlermeldungen
 
@@ -197,10 +199,12 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Azure-Portal stoße
 
 ### <a id="UnableToResolveDNS"></a>UnableToResolveDNS
 - **Beschreibung**: DNS *IhreDnsUrl* konnte nicht aufgelöst werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blobendpunkt bereitgestellt wird.  
-- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, das heißt, sie muss mit *http://* beginnen und mit *.com* enden. Die vollqualifizierte URL befindet sich in der Regel auf der Speicherregisterkarte des Portals unter manage.windowsazure.com. 
+- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, das heißt, sie muss mit \**http://* beginnen und mit *.com* enden. Die vollqualifizierte URL befindet sich in der Regel auf der Speicher-Registerkarte des Portals unter manage.windowsazure.com.
+
 ### <a id="UnableToVerifyLocationOfResource"></a>UnableToVerifyLocationOfResource
 - **Beschreibung**: Der Speicherort der Ressource *IhreDnsUrl* konnte nicht überprüft werden. Stellen Sie sicher, dass die vollqualifizierte URL für den Blobendpunkt bereitgestellt wird.  
-- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, das heißt, sie muss mit *http://* beginnen und mit *.com* enden. Die vollqualifizierte URL befindet sich in der Regel auf der Speicherregisterkarte des Portals unter manage.windowsazure.com. 
+- **Lösung**: Geben Sie eine gültige Blob-URL an. Die URL MUSS uneingeschränkt gültig sein, das heißt, sie muss mit \**http://* beginnen und mit *.com* enden. Die vollqualifizierte URL befindet sich in der Regel auf der Speicher-Registerkarte des Portals unter manage.windowsazure.com.
+
 ### <a id="VersionCapabilityNotAvailable"></a>VersionCapabilityNotAvailable
 - **Beschreibung**: Die Versionsfunktion ist nicht für Version *AngegebeneVersion* und Abonnement-ID *IhreAbonnementID* verfügbar.  
 - **Lösung**: Wählen Sie eine verfügbare Version aus, und wiederholen Sie den Vorgang. 
@@ -232,4 +236,4 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Azure-Portal stoße
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

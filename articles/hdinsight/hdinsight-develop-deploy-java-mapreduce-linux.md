@@ -38,13 +38,13 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 Bei der Installation von Java und dem JDK können die folgenden Umgebungsvariablen festgelegt werden. Sie sollten dennoch prüfen, ob die Variablen vorhanden sind und korrekte Werte für Ihr System enthalten.
 
-* **JAVA_HOME** – sollte auf das Verzeichnis verweisen, in dem die Java-Laufzeitumgebung (Java Runtime Environment, JRE) installiert ist. Für ein OS X-, Unix- oder Linux-System sollte z. B. ein Wert wie `/usr/lib/jvm/java-7-oracle` verwendet werden. Unter Windows sollte der Wert so ähnlich sein wie `c:\Program Files (x86)\Java\jre1.7`
+* **JAVA\_HOME** – sollte auf das Verzeichnis verweisen, in dem die Java-Laufzeitumgebung (Java Runtime Environment, JRE) installiert ist. Für ein OS X-, Unix- oder Linux-System sollte z. B. ein Wert wie `/usr/lib/jvm/java-7-oracle` verwendet werden. Unter Windows sollte der Wert so ähnlich sein wie `c:\Program Files (x86)\Java\jre1.7`
 
 * **PATH** – sollte die folgenden Pfade enthalten:
 
-	* **JAVA_HOME** (oder den entsprechenden Pfad)
+	* **JAVA\_HOME** (oder den entsprechenden Pfad)
 
-	* **JAVA_HOME\bin** (oder den entsprechenden Pfad)
+	* **JAVA\_HOME\\bin** (oder den entsprechenden Pfad)
 
 	* Das Verzeichnis, in dem Maven installiert ist.
 
@@ -56,13 +56,13 @@ Bei der Installation von Java und dem JDK können die folgenden Umgebungsvariabl
 
 		mvn archetype:generate -DgroupId=org.apache.hadoop.examples -DartifactId=wordcountjava -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
-	Daraufhin wird im aktuellen Verzeichnis ein neues Verzeichnis mit dem im __artifactID__-Parameter (in diesem Beispiel **wordcountjava**) angegebenen Namen erstellt. Dieses Verzeichnis enthält die folgenden Elemente:
+	Daraufhin wird ein neues Unterverzeichnis mit dem im __artifactID__-Parameter (**wordcountjava** in diesem Beispiel) angegebenen Namen im aktuellen Verzeichnis erstellt. Dieses Verzeichnis enthält die folgenden Elemente:
 
 	* __pom.xml__ – Das [Projektobjektmodell (POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)), das die Informationen und Konfigurationsdetails für das Erstellen des Projekts enthält.
 
-	* __src__ - Das Verzeichnis, welches das Verzeichnis __main/java/org/apache/hadoop/examples__ enthält, in dem Sie die Anwendung erstellen.
+	* __src__ – Das Verzeichnis, das das __main\\java\\org\\apache\\hadoop\\examples__-Verzeichnis enthält, in dem Sie die Anwendung erstellen werden.
 
-3. Löschen Sie die Datei __src/test/java/org/apache/hadoop/examples/apptest.java__, da sie in diesem Beispiel nicht verwendet wird.
+3. Löschen Sie die Datei __src\\test\\java\\org\\apache\\hadoop\\examples\\apptest.java__, da diese in diesem Beispiel nicht verwendet wird.
 
 ##Hinzufügen von Abhängigkeiten
 
@@ -89,7 +89,7 @@ Bei der Installation von Java und dem JDK können die folgenden Umgebungsvariabl
 
 	Damit teilen Sie Maven mit, dass das Projekt die Bibliotheken (aufgelistet in <artifactId>) in bestimmten Versionen (aufgelistet in <version>) benötigt. Beim Kompilieren wird er aus dem standardmäßigen Maven-Repository heruntergeladen. Sie können die [Maven-Repositorysuche](http://search.maven.org/#artifactdetails%7Corg.apache.hadoop%7Chadoop-mapreduce-examples%7C2.5.1%7Cjar) verwenden, um weitere Komponenten anzuzeigen.
 
-	`<scope>provided</scope>` gibt für Maven an, dass diese Abhängigkeiten nicht mit der Anwendung gepackt werden sollen, da sie durch den HDInsight-Cluster zur Laufzeit bereitgestellt werden.
+	`<scope>provided</scope>` gibt für Maven an, dass diese Abhängigkeiten nicht mit der Anwendung zusammengepackt werden sollen, da sie durch den HDInsight-Cluster zur Laufzeit bereitgestellt werden.
 
 2. Fügen Sie der Datei __pom.xml__ folgenden Code hinzu: Dieser muss sich in der Datei innerhalb der `<project>...</project>`-Tags befinden, z. B. zwischen `</dependencies>` und `</project>`.
 
@@ -133,7 +133,7 @@ Bei der Installation von Java und dem JDK können die folgenden Umgebungsvariabl
 
 ##Erstellen der MapReduce-Anwendung
 
-1. Wechseln Sie zum Verzeichnis __wordcountjava/src/main/java/org/apache/hadoop/examples__, und benennen Sie die Datei __App.java__ in __WordCount.java__ um.
+1. Wechseln Sie in das Verzeichnis __wordcountjava\\src\\main\\java\\org\\apache\\hadoop\\examples__ und benennen Sie die Datei __app.java__ in __WordCount.java__ um.
 
 2. Öffnen Sie die Datei __WordCount.java__ in einem Text-Editor, und ersetzen Sie den Inhalt durch Folgendes:
 
@@ -220,7 +220,7 @@ Bei der Installation von Java und dem JDK können die folgenden Umgebungsvariabl
 
 	Damit werden etwaige frühere Buildartefakte entfernt, alle noch nicht installierten Abhängigkeiten heruntergeladen und die Anwendung erstellt und verpackt.
 
-3. Nachdem der Befehl ausgeführt wurde, enthält das Verzeichnis __wordcountjava/target__ eine Datei mit dem Namen __wordcountjava-1.0-SNAPSHOT.jar__.
+3. Nachdem der Befehl ausgeführt wurde, enthält das Verzeichnis __wordcountjava\\target__ eine Datei mit dem Namen __wordcountjava-1.0-SNAPSHOT.jar__.
 
 	> [AZURE.NOTE]Die Datei __wordcountjava-1.0-SNAPSHOT.jar__ ist ein Uberjar, das nicht nur den WordCount-Auftrag enthält, sondern auch Abhängigkeiten, die für den Auftrag zur Laufzeit erforderlich sind.
 
@@ -249,7 +249,7 @@ Dadurch werden die Dateien aus dem lokalen System auf den Stammknoten kopiert.
 
 		hadoop jar wordcountjava.jar org.apache.hadoop.examples.WordCount wasb:///example/data/gutenberg/davinci.txt wasb:///example/data/wordcountout
 
-	Dadurch wird die WordCount MapReduce-Anwendung verwendet, um die Wörter in der Datei "davinci.txt" zu zählen und die Ergebnisse in __wasb:///example/data/wordcountout__ zu speichern. Die Eingabedatei und die Ausgabe werden im Standardspeicher für den Cluster gespeichert.
+	Dadurch wird die WordCount MapReduce-Anwendung verwendet, um die Wörter in der Datei "davinci.txt" zu zählen und die Ergebnisse in \_\___wasb:///example/data/wordcountout__ zu speichern. Die Eingabedatei und die Ausgabe werden im Standardspeicher für den Cluster gespeichert.
 
 3. Wenn der Auftrag abgeschlossen ist, können Sie die Ergebnisse wie folgt anzeigen.
 
@@ -297,4 +297,4 @@ In diesem Dokument haben Sie gelernt, wie ein Java MapReduce-Auftrag entwickelt 
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

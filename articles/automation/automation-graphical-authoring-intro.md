@@ -185,7 +185,7 @@ Bei einer Sequenzverknüpfung wird die Bedingung nur einmal ausgewertet, da ein 
 
 Wenn Sie eine bedingte Verknüpfung verwenden, werden die verfügbaren Daten aus der Quellaktivität für andere Aktivitäten in dieser Verzweigung durch die Bedingung gefiltert. Wenn eine Aktivität die Quelle für mehrere Verknüpfungen ist, richten sich die verfügbaren Daten für Aktivitäten in jeder Verzweigung nach der Bedingung in der Verknüpfung, die mit dieser Verzweigung verbunden ist.
 
-Beispielsweise ruft die Quellaktivität im nachstehenden Runbook alle virtuellen Computer ab. Die Aktivität weist zwei bedingte Verknüpfungen und eine Verknüpfung ohne Bedingung auf. Die erste bedingte Verknüpfung verwendet den Ausdruck *$ActivityOutput\['Get-AzureVM'\].PowerState -eq 'Started'*, um nur die virtuellen Computer herauszufiltern, die zurzeit ausgeführt werden. Die zweite Verknüpfung verwendet den Ausdruck *$ActivityOutput\['Get-AzureVM'\].PowerState -eq 'Stopped'*, um nur die virtuellen Computer herauszufiltern, die zurzeit beendet sind.
+Beispielsweise ruft die Quellaktivität im nachstehenden Runbook alle virtuellen Computer ab. Die Aktivität weist zwei bedingte Verknüpfungen und eine Verknüpfung ohne Bedingung auf. Die erste bedingte Verknüpfung verwendet den Ausdruck *$ActivityOutput['Get-AzureVM'].PowerState -eq 'Started'*, um nur die virtuellen Computer herauszufiltern, die zurzeit ausgeführt werden. Die zweite Verknüpfung verwendet den Ausdruck *$ActivityOutput['Get-AzureVM'].PowerState -eq 'Stopped'*, um nur die virtuellen Computer herauszufiltern, die zurzeit beendet sind.
 
 ![Beispiel einer bedingten Verknüpfung](media/automation-graphical-authoring-intro/conditional-links.png)
 
@@ -246,7 +246,7 @@ Sie müssen beim Start des Runbooks und nach jedem Prüfpunkt eine Authentifizie
 
 ### Runbookeingabe
 
-Ein Runbook erfordert möglicherweise Eingaben durch den Benutzer, wenn es über das Azure-Vorschauportal oder \(wenn das aktuelle Runbook als untergeordnetes Runbook verwendet wird\) aus einem anderen Runbook gestartet wird. Wenn Sie beispielsweise über ein Runbook verfügen, das einen virtuellen Computer erstellt, müssen Sie bei jedem Start des Runbooks möglicherweise Informationen wie den Namen des virtuellen Computers und andere Eigenschaften bereitstellen.
+Ein Runbook erfordert möglicherweise Eingaben durch den Benutzer, wenn es über das Azure-Vorschauportal oder (wenn das aktuelle Runbook als untergeordnetes Runbook verwendet wird) aus einem anderen Runbook gestartet wird. Wenn Sie beispielsweise über ein Runbook verfügen, das einen virtuellen Computer erstellt, müssen Sie bei jedem Start des Runbooks möglicherweise Informationen wie den Namen des virtuellen Computers und andere Eigenschaften bereitstellen.
 
 Sie akzeptieren eine Eingabe für ein Runbook, indem Sie einen oder mehrere Eingabeparameter definieren. Die Werte für diese Parameter werden bei jedem Start des Runbooks bereitgestellt. Wenn Sie ein Runbook mit dem Azure-Vorschauportal starten, werden Sie aufgefordert, Werte für jeden Eingabeparameter des Runbooks einzugeben.
 
@@ -280,4 +280,4 @@ Daten, die von einer Aktivität ohne ausgehende Verknüpfung erstellt werden, we
 - [Automation-Objekte](http://msdn.microsoft.com/library/azure/dn939988.aspx)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

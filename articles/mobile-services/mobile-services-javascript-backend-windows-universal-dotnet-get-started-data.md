@@ -114,4 +114,4 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen 
 [MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030
  
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

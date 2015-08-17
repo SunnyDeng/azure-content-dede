@@ -87,7 +87,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 		Select-AzureSubscription $subscriptionName
 
 		# Blob storage container and account name
-      $storageAccountKey = Get-AzureStorageKey -StorageAccountName $storageAccountName | %{ $_.Primary } $storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
+      $storageAccountKey = Get-AzureStorageKey -StorageAccountName $storageAccountName | %{ $\_.Primary } $storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
 
 		# Retrieve the output
 		Get-AzureStorageBlobContent -Container $containerName -Blob "example/data/StreamingOutput/wc.txt/part-00000" -Context $storageContext -Force
@@ -204,4 +204,4 @@ Lernprogramme mit anderen Beispielen und Anweisungen zur Ausführung von Pig-, H
 [hdinsight-use-pig]: hdinsight-use-pig.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

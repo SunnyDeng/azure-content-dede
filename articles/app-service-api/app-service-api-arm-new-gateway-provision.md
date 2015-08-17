@@ -7,14 +7,16 @@
 	manager="wpickett" 
 	editor=""/>
 
+
 <tags 
 	ms.service="app-service-api" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/01/2015" 
+	ms.date="08/04/2015" 
 	ms.author="tomfitz"/>
+
 
 # Bereitstellen einer API-App mit einem neuen Gateway
 
@@ -42,6 +44,14 @@ Klicken Sie auf folgende Schaltfläche, um die Bereitstellung automatisch auszuf
 
 [AZURE.INCLUDE [app-service-api-deploy-parameters](../../includes/app-service-api-deploy-parameters.md)]
 
+### hostingPlanName
+
+Der Name des App Service-Plans.
+
+    "hostingPlanName": {
+      "type": "string"
+    }
+
 ### hostingPlanSettings
 
 Die Einstellungen für den neuen Hostingplan.
@@ -65,7 +75,7 @@ Diese Vorlage definiert eine Variable, die beim Bereitstellen der Ressourcen ver
       "packageId": "Microsoft.ApiApp"
     }
     
-Der Wert wird nachstehend als **variables\('packageId'\)** verwendet.
+Der Wert wird nachstehend als **variables('packageId')** verwendet. Er enthält die NuGet-Paket-Id für API-Apps.
 
 ## Bereitzustellende Ressourcen
 
@@ -91,7 +101,7 @@ Erstellt den Diensthostingplan für die API-App.
 
 Erstellt eine Web-App, die das Gateway hostet.
 
-Beachten Sie, dass **kind** auf **gateway** festgelegt ist. Hierdurch wird das Azure-Portal darüber informiert, dass diese Web-App ein Gateway hostet. Das Portal blendet die Web-App auf dem Blatt zum Durchsuchen von Web-Apps aus. Zwischen der hostenden Web-App und dem Gateway wird ein Link definiert. Der Abschnitt mit den App-Einstellungen enthält die erforderlichen Werte zum Hosten der API-App.
+Beachten Sie, dass **kind** auf **gateway** festgelegt ist. Hierdurch wird das Azure-Portal darüber informiert, dass diese Web-App ein Gateway hostet. Das Portal blendet die Web-App auf dem Blatt zum Durchsuchen von Web-Apps aus. Zwischen der hostenden Web-App und dem Gateway wird ein Link definiert. Der Abschnitt mit den App-Einstellungen enthält die erforderlichen Werte zum Hosten der API-App. Die **ServerFarmId** enthält den Namen des App Service-Plans, den Sie im **HostingPlanName**-Parameter bereitgestellt haben.
 
 
     {
@@ -178,7 +188,7 @@ Die hostende Web-App ist als eine Eigenschaft des Gateways definiert.
 
 Erstellt eine Web-App zum Hosten der API-App.
 
-Beachten Sie, dass **kind** auf **apiApp** festgelegt ist. Hierdurch wird das Azure-Portal darüber informiert, dass diese Web-App eine API-App hostet. Das Portal blendet die Web-App auf dem Blatt zum Durchsuchen von Web-Apps aus. Die App umfasst eine Erweiterung zum Installieren des leeren API-App-Standardpakets. Zwischen der API-App und der hostenden Web-App wird ein Link definiert. Der Abschnitt mit den App-Einstellungen enthält die erforderlichen Werte zum Hosten der API-App.
+Beachten Sie, dass **kind** auf **apiApp** festgelegt ist. Hierdurch wird das Azure-Portal darüber informiert, dass diese Web-App eine API-App hostet. Das Portal blendet die Web-App auf dem Blatt zum Durchsuchen von Web-Apps aus. Die App umfasst eine Erweiterung zum Installieren des leeren API-App-Standardpakets. Zwischen der API-App und der hostenden Web-App wird ein Link definiert. Der Abschnitt mit den App-Einstellungen enthält die erforderlichen Werte zum Hosten der API-App. Die **ServerFarmId** enthält den Namen des App Service-Plans, den Sie im **HostingPlanName**-Parameter bereitgestellt haben.
 
     {
       "type": "Microsoft.Web/sites",
@@ -300,4 +310,4 @@ Beachten Sie, dass die Namen der hostenden Web-App und des Gateways als Eigensch
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Shared Access Signatures: Grundlagen zum SAS-Modell | Microsoft Azure" 
-	description="Erfahren Sie mehr zum Delegieren des Zugriffs auf Azure-Speicherressourcen, einschließlich Blobs, Warteschlangen und Tabellen mit SAS. Mit SAS können Sie Ihren Speicherkontoschlüssel schützen, während Sie anderen Benutzern Zugriff auf Ressourcen in Ihrem Konto gewähren. Sie können die Berechtigungen, die Sie gewähren, und das für das SAS gültige Intervall steuern. Wenn Sie auch eine gespeicherte Zugriffsrichtlinie einrichten, können Sie die SAS widerrufen, sollten Sie sich um die Sicherheit Ihres Kontos fürchten." 
+	description="Erfahren Sie mehr zum Delegieren des Zugriffs auf Azure-Speicherressourcen, einschließlich Blobs, Warteschlangen, Tabellen und Dateien mithilfe von Shared Access Signatures (SAS). Mit SAS können Sie Ihren Speicherkontoschlüssel schützen, während Sie anderen Benutzern Zugriff auf Ressourcen in Ihrem Konto gewähren. Sie können die Berechtigungen, die Sie gewähren, und das für das SAS gültige Intervall steuern. Wenn Sie auch eine gespeicherte Zugriffsrichtlinie einrichten, können Sie die SAS widerrufen, sollten Sie sich um die Sicherheit Ihres Kontos fürchten." 
 	services="storage" 
 	documentationCenter="" 
 	authors="tamram" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/07/2015" 
+	ms.date="08/04/2015" 
 	ms.author="tamram"/>
 
 
@@ -22,11 +22,11 @@
 
 ## Übersicht
 
-Shared Access Signatures (SAS) sind eine leistungsstarke Methode, um anderen Clients eingeschränkten Zugriff auf Blobs, Tabellen und Warteschlangen in Ihrem Speicherkonto zu bieten, ohne Ihren Kontoschlüssel weitergeben zu müssen. Teil 1 dieses Lernprogramms zu Shared Access Signatures bietet eine Übersicht über das SAS-Modell und bewährte Methoden für SAS. [Teil 2](storage-dotnet-shared-access-signature-part-2.md) des Lernprogramms beschreibt die Erstellung von Shared Access Signatures mit dem Blob-Dienst.
+Shared Access Signatures (SAS) sind eine leistungsstarke Methode, um anderen Clients eingeschränkten Zugriff auf Objekte in Ihrem Speicherkonto zu bieten, ohne Ihren Kontoschlüssel weitergeben zu müssen. Teil 1 dieses Lernprogramms zu Shared Access Signatures bietet eine Übersicht über das SAS-Modell und bewährte Methoden für SAS. [Teil 2](storage-dotnet-shared-access-signature-part-2.md) des Lernprogramms beschreibt die Erstellung von Shared Access Signatures mit dem Blob-Dienst.
 
 ## Was ist eine Shared Access Signature? ##
 
-Shared Access Signatures bieten delegierten Zugriff auf Ressourcen in Ihren Speicherkonto. Sie haben die Möglichkeit, einem Client für einen bestimmten Zeitraum spezielle eingeschränkte Berechtigungen für Ihre Blobs, Warteschlangen oder Tabellen erteilen, ohne Ihre Konto-Zugriffsschlüssel weitergeben zu müssen. Die SAS ist ein URI, dessen Abfrageparameter alle erforderlichen Informationen für den authentifizierten Zugriff auf eine Speicherressource enthalten. Für den Zugriff auf Speicherressourcen mit der SAS braucht der Client diese nur an den entsprechenden Konstruktor bzw. die entsprechende Methode zu übergeben.
+Shared Access Signatures bieten delegierten Zugriff auf Ressourcen in Ihren Speicherkonto. Sie haben die Möglichkeit, einem Client für einen bestimmten Zeitraum spezielle eingeschränkte Berechtigungen für Objekte in Ihrem Speicherkonto zu erteilen, ohne Ihre Konto-Zugriffsschlüssel weitergeben zu müssen. Die SAS ist ein URI, dessen Abfrageparameter alle erforderlichen Informationen für den authentifizierten Zugriff auf eine Speicherressource enthalten. Für den Zugriff auf Speicherressourcen mit der SAS braucht der Client diese nur an den entsprechenden Konstruktor bzw. die entsprechende Methode zu übergeben.
 
 ## Wann sollten Sie eine Shared Access Signature verwenden? ##
 
@@ -39,11 +39,17 @@ SAS sind zum Beispiel dann hilfreich, wenn Benutzer ihre eigenen Daten in Ihrem 
 
 ![sas-storage-fe-proxy-service][sas-storage-fe-proxy-service]
 
-2\.	Ein vereinfachter Dienst authentifiziert den Client bei Bedarf und generiert anschließend die SAS. Sobald der Client die SAS erhält, kann er direkt gemäß der in der SAS definierten Berechtigungen für den definierten Zeitraum auf die Speicherkonto-Ressourcen zugreifen. Dank der SAS müssen nicht mehr alle Daten durch einen Front-End-Proxydienst geleitet werden.
+2\. Ein vereinfachter Dienst authentifiziert den Client bei Bedarf und generiert anschließend die SAS. Sobald der Client die SAS erhält, kann er direkt gemäß der in der SAS definierten Berechtigungen für den definierten Zeitraum auf die Speicherkonto-Ressourcen zugreifen. Dank der SAS müssen nicht mehr alle Daten durch einen Front-End-Proxydienst geleitet werden.
 
 ![sas-storage-provider-service][sas-storage-provider-service]
 
 Viele tatsächliche Dienste verwenden je nach Szenario eine Mischung aus beiden Ansätzen, verarbeiten und validieren einige Daten im Front-End-Proxy und speichern und/oder lesen andere Daten direkt per SAS.
+
+Darüber hinaus müssen Sie eine SAS verwenden, um das Quellobjekt in einen Kopiervorgang in bestimmten Szenarien zu authentifizieren:
+
+- Beim Kopieren eines Blobs in ein anderes Blob, das sich in einem anderen Speicherkonto befindet, müssen Sie eine SAS verwenden, um das Quell-Blob zu authentifizieren. Optional können Sie eine SAS verwenden, um das Ziel-Blob zu authentifizieren, solange Sie die Version 2013-08-15 oder höher der Speicherdienste verwenden.
+- Beim Kopieren einer Datei in eine andere Datei, die sich in einem anderen Speicherkonto befindet, müssen Sie eine SAS verwenden, um die Quelldatei zu authentifizieren. Optional können Sie eine SAS verwenden, um die Zieldatei zu authentifizieren.
+- Wenn Sie ein Blob in eine Datei oder eine Datei in ein Blob kopieren, müssen Sie eine SAS verwenden, um das Quellobjekt zu authentifizieren. Dies gilt selbst dann, wenn sich die Quell- und Zielobjekte innerhalb desselben Speicherkontos befinden.
 
 ## Funktionsweise von Shared Access Signatures ##
 
@@ -51,146 +57,35 @@ Shared Access Signatures sind URIs, die auf Speicherressourcen verweisen und ver
 
 Shared Access Signatures werden durch die folgenden Einschränkungen definiert. Jede der Einschränkungen wird als Parameter des URI dargestellt:
 
-- **Die Speicherressource.** Sie können den Zugriff auf Speicherressourcen wie z. B. Container, Blobs, Warteschlangen, Tabellen und Bereiche von Tabellenentitäten delegieren.
+- **Die Speicherressource.** Speicherressourcen, für die Sie Zugriff delegieren können, umfassen:
+	- Container und Blobs
+	- Dateifreigaben und Dateien
+	- Warteschlangen
+	- Tabellen und Bereiche von Tabellenentitäten.
 - **Startzeit.** Dies ist der Zeitpunkt, ab dem die SAS gültig ist. Die Startzeit für eine Shared Access Signature ist optional. Wenn die Startzeit nicht angegeben wird, ist die SAS sofort gültig. 
 - **Ablaufzeit.** Dies ist der Zeitpunkt, ab dem die SAS nicht mehr gültig ist. Sie sollten nach Möglichkeit entweder eine Ablaufzeit für die SAS angeben oder diese mit einer gespeicherten Zugriffsrichtlinie verknüpfen (siehe unten).
 - **Berechtigungen.** Die in der SAS angegebenen Berechtigungen geben an, welche Operationen der Client mit der SAS auf der Speicherressource ausführen kann. 
 
 Dies ist ein Beispiel für einen SAS-URI, der Lese- und Schreibzugriff für einen Blob gewährt. Die Tabelle analysiert die einzelnen Teile des URI, um dessen Zusammenhang mit der SAS zu erläutern:
 
-https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt?sv=2012-02-12&st=2013-04-29T22%3A18%3A26Z&se=2013-04-30T02%3A23%3A26Z&sr=b&sp=rw&sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D
+	https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt?sv=2012-02-12&st=2013-04-29T22%3A18%3A26Z&se=2013-04-30T02%3A23%3A26Z&sr=b&sp=rw&sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D
 
-<table border="1" cellpadding="0" cellspacing="0">
-    <tbody>
-        <tr>
-            <td valign="top" width="213">
-                <p>
-                    Blob-URI
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    Die Blob-Adresse. Sie sollten unbedingt HTTPS verwenden.
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="213">
-                <p>
-                    Version des Speicherdienstes
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    sv=2012-02-12
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    Für Speicherdienste der Version 2012-02-12 und später gibt dieser Parameter die zu verwendende Version an.
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="213">
-                <p>
-                    Startzeit
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    st=2013-04-29T22%3A18%3A26Z
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    Angegeben im ISO 8061-Format. Lassen Sie diesen Parameter aus, wenn die SAS sofort gültig sein soll.
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="213">
-                <p>
-                    Ablaufzeit
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    se=2013-04-30T02%3A23%3A26Z
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    Angegeben im ISO 8061-Format.
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="213">
-                <p>
-                    Ressource
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    sr=b
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    Die Ressource ist ein Blob.
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="213">
-                <p>
-                    Berechtigungen
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    sp=rw
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    Die SAS verleiht die Berechtigungen zum Lesen (r) und Schreiben (w).
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" width="213">
-                <p>
-                    Signatur
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D
-                </p>
-            </td>
-            <td valign="top" width="213">
-                <p>
-                    Wird zur Zugriffsauthentifizierung für den Blob verwendet. Die Signatur ist ein HMAC, der mithilfe des SHA256-Algorithmus über StringToSign-Zeichenfolge und Schlüssel erstellt und anschließend mit Base64 codiert wird.
-                </p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
+Name|Link-Abschnitt|Beschreibung
+---|---|---
+Blob-URI|https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt | Die Blob-Adresse. Sie sollten unbedingt HTTPS verwenden.
+Version des Speicherdienstes|sv=2012-02-12|Für Speicherdienste der Version 2012-02-12 und später gibt dieser Parameter die zu verwendende Version an.
+Startzeit|st=2013-04-29T22%3A18%3A26Z|Angegeben im ISO 8061-Format. Lassen Sie diesen Parameter aus, wenn die SAS sofort gültig sein soll.
+Ablaufzeit|se=2013-04-30T02%3A23%3A26Z|Angegeben im ISO 8061-Format.
+Ressource|sr=b|Die Ressource ist ein Blob.
+Berechtigungen|sp=rw|Die SAS verleiht die Berechtigungen zum Lesen (r) und Schreiben (w).
+Signatur|sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D|Wird zur Zugriffsauthentifizierung für den Blob verwendet. Die Signatur ist ein HMAC, der mithilfe des SHA256-Algorithmus über StringToSign-Zeichenfolge und Schlüssel erstellt und anschließend mit Base64 codiert wird.
 
 ## Steuerung von Shared Access Signatures mit gespeicherten Zugriffsrichtlinien ##
 
 Shared Access Signatures können zwei unterschiedliche Formen haben:
 
-- **Ad-Hoc-SAS:** Beim Erstellen von Ad-Hoc-SAS werden Startzeit, Ablaufzeit und Berechtigungen für die SAS direkt im SAS-URI angegeben (bzw. impliziert, falls die Startzeit ausgelassen wird). Diese Art von SAS kann für Container, Blobs, Tabellen oder Warteschlangen erstellt werden.
-- **SAS mit gespeicherten Zugriffsrichtlinien:** Gespeicherte Zugriffsrichtlinien werden für Ressourcencontainer – Blobcontainer, Tabellen oder Warteschlangen – definiert und dienen zur Verwaltung von Einschränkungen für eine oder mehrere Shared Access Signatures. Wenn Sie eine SAS mit einer gespeicherten Zugriffsrichtlinie verknüpfen, erbt die SAS die Einschränkungen (Startzeit, Ablaufzeit und Berechtigungen) dieser gespeicherten Zugriffsrichtlinie.
+- **Ad-Hoc-SAS:** Beim Erstellen von Ad-Hoc-SAS werden Startzeit, Ablaufzeit und Berechtigungen für die SAS direkt im SAS-URI angegeben (bzw. impliziert, falls die Startzeit ausgelassen wird). Diese Art von SAS kann für Container, Blobs, Dateifreigaben, Dateien, Tabellen oder Warteschlangen erstellt werden.
+- **SAS mit gespeicherten Zugriffsrichtlinien:** Gespeicherte Zugriffsrichtlinien werden für Ressourcencontainer – Blobcontainer, Tabellen, Warteschlangen oder Dateifreigaben – definiert und dienen zur Verwaltung von Einschränkungen für eine oder mehrere Shared Access Signatures. Wenn Sie eine SAS mit einer gespeicherten Zugriffsrichtlinie verknüpfen, erbt die SAS die Einschränkungen (Startzeit, Ablaufzeit und Berechtigungen) dieser gespeicherten Zugriffsrichtlinie.
 
 Der Unterschied zwischen diesen beiden Formen ist wichtig für ein Schlüsselszenario: Widerruf. Eine SAS ist eine URL und kann daher von beliebiger Stelle verwendet werden, unabhängig davon, wer die SAS ursprünglich angefordert hatte. Wenn eine SAS veröffentlicht wird, kann diese von beliebiger Stelle weltweit verwendet werden. Auf diese Weise verteilte SAS sind gültig, bis eines von vier Ereignissen eintritt:
 
@@ -225,17 +120,13 @@ Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berech
 
 ## Nächste Schritte ##
 
-[Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit dem Blobdienst](../storage-dotnet-shared-access-signature-part-2/)
-
-[Verwalten des Zugriffs auf Azure Storage-Ressourcen](http://msdn.microsoft.com/library/azure/ee393343.aspx)
-
-[Delegieren des Zugriffs mit einer Shared Access Signature (REST API)](http://msdn.microsoft.com/library/azure/ee395415.aspx)
-
-[Einführung in Tabellen- und Warteschlangen-SAS](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)
-[sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png
-[sas-storage-provider-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png
+- [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit dem Blobdienst](storage-dotnet-shared-access-signature-part-2.md)
+- [Verwenden des Azure-Dateispeichers mit PowerShell und .NET](storage-dotnet-how-to-use-files.md)
+- [Verwalten des Zugriffs auf Azure Storage-Ressourcen](storage-manage-access-to-resources.md)
+- [Delegieren des Zugriffs mit einer Shared Access Signature (REST API)](http://msdn.microsoft.com/library/azure/ee395415.aspx)
+- [Einführung in Tabellen- und Warteschlangen-SAS](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx) [sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png [sas-storage-provider-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png
 
 
  
 
-<!-------HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

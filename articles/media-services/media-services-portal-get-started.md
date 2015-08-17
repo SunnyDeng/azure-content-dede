@@ -7,6 +7,7 @@
 	manager="dwrede"
 	editor=""/>
 
+
 <tags
 	ms.service="media-services"
 	ms.workload="media"
@@ -15,6 +16,7 @@
 	ms.topic="get-started-article" 
 	ms.date="07/16/2015"
 	ms.author="juliako"/>
+
 
 
 #Erste Schritte zum Bereitstellen von Video-on-Demand (VoD) mit dem Azure-Verwaltungsportal
@@ -111,7 +113,7 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 
 	![Auftragsstatus][status]
 
-Wenn der Upload abgeschlossen ist, wird in der Liste "Inhalt" das neue Medienobjekt aufgeführt. Entsprechend der Namenskonvention wird "**-Source**" am Ende angehängt, damit neue Inhalte als Quellinhalte für Codieraufgaben erfasst werden können.
+Wenn der Upload abgeschlossen ist, wird in der Liste "Inhalt" das neue Medienobjekt aufgeführt. Entsprechend der Namenskonvention wird "**-Source**" an das Ende gehängt, damit neue Inhalte als Quellinhalte für Codieraufgaben erfasst werden können.
 
 ![Inhaltsseite][contentpage]
 
@@ -141,7 +143,8 @@ Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zus
 Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre Inhalte mit Azure Media Encoder im Verwaltungsportal zu codieren.
 
 1.  Wählen Sie die Datei aus, die Sie codieren möchten. Wenn die Codierung für diesen Dateityp unterstützt wird, wird die Schaltfläche "Prozess" unten auf der Inhaltsseite aktiviert.
-4. Wählen Sie im Dialogfeld **Prozess** den** Azure Media Encoder-**Prozessor aus.5. Wählen Sie eine der **Codierungskonfigurationen** aus.
+4. Wählen Sie im Dialogfeld **Prozess** den\*\* Azure Media Encoder-Prozessor aus.
+5. Wählen Sie eine der **Codierungskonfigurationen** aus.
 
 	![Prozess2][process2]
 
@@ -255,4 +258,4 @@ Weitere Informationen zum Erstellen von Video-on-Demand-Anwendungen erhalten Sie
 [AMSPlayer]: ./media/media-services-portal-get-started/media-services-portal-player.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

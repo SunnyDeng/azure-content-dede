@@ -210,7 +210,7 @@ Bei numerischen Werten und DateTime-Werten können explizit Werte für das Facet
 
 **Kürzen von Facettenergebnissen**
 
-Facettenergebnisse sind Dokumente in den Suchergebnissen, die einem Facettenbegriff entsprechen. Im folgenden Beispiel besitzen 254 Elemente der Suchergebnisse für *cloud-computing* auch den Inhaltstyp *internal specification*. Die Elemente schließen sich nicht zwingend gegenseitig aus. Erfüllt ein Element die Kriterien beider Filter, wird es in jedem Filter gezählt. Dies ist möglich, wenn die Facette auf Feldern vom Typ `Collection(Edm.String)` basiert, die häufig zur Implementierung von Dokumententags verwendet werden.
+Facettenergebnisse sind Dokumente in den Suchergebnissen, die einem Facettenbegriff entsprechen. Im folgenden Beispiel besitzen 254 Elemente der Suchergebnisse für *Cloud-Computing* auch den Inhaltstyp *interne Spezifikation*. Die Elemente schließen sich nicht zwingend gegenseitig aus. Erfüllt ein Element die Kriterien beider Filter, wird es in jedem Filter gezählt. Dies ist möglich, wenn die Facette auf Feldern vom Typ `Collection(Edm.String)` basiert, die häufig zur Implementierung von Dokumententags verwendet werden.
 
 		Search term: "cloud computing"
 		Content type
@@ -223,11 +223,11 @@ Allgemein gilt: Wenn die Facettenergebnisse ständig zu umfangreich ausfallen, e
 
 Jedes Facettenfeld in der Navigationsstruktur ist standardmäßig auf maximal zehn Werte beschränkt. Dieser Standardwert ist für Navigationsstrukturen sinnvoll, da die Werteliste dadurch überschaubar bleibt. Sie können den Standardwert überschreiben, indem Sie einen Zählwert zuweisen.
 
-- `&facet=city,count:5` gibt an, dass als Facettenergebnis nur die ersten fünf Städte aus den Topergebnissen zurückgegeben werden sollen. Wenn der Suchbegriff „Flughafen“ 32 Treffer ergibt und für die Abfrage `&facet=city,count:5` angegeben ist, werden in den Facettenergebnissen nur die ersten fünf eindeutige Städte mit den meisten Dokumenten in den Suchergebnissen berücksichtigt.
+- `&facet=city,count:5` gibt an, dass als Facettenergebnis nur die ersten fünf Städte aus den Topergebnissen zurückgegeben werden sollen. Wenn der Suchbegriff „Flughafen“ 32 Treffer ergibt und für die Abfrage `&facet=city,count:5` angegeben ist, werden in den Facettenergebnissen nur die ersten fünf eindeutigen Städte mit den meisten Dokumenten in den Suchergebnissen berücksichtigt.
 
 Beachten Sie die Unterscheidung zwischen Facettenergebnissen und Suchergebnissen: Suchergebnisse umfassen alle Dokumente, die der Abfrage entsprechen. Facettenergebnisse sind die Übereinstimmungen für die einzelnen Facettenwerte. In unserem Beispiel umfassen die Suchergebnisse Städtenamen, die sich nicht in der Facettenklassifizierungsliste (in unserem Beispiel: fünf) befinden. Durch die Facettennavigation herausgefilterte Ergebnisse werden dem Benutzer angezeigt, wenn er Facetten löscht oder zusätzliche Facetten auswählt.
 
-> [AZURE.NOTE]Die Erläuterung von `count` kann verwirrend sein, da mehrere Typen vorhanden sind. Die folgende Tabelle bietet einen kurzen Überblick über die Verwendung des Begriffs in Azure Search-API, Beispielcode und Dokumentation:
+> [AZURE.NOTE]Die Erläuterung von `count` kann verwirrend sein, wenn mehrere Typen vorhanden sind. Die folgende Tabelle bietet einen kurzen Überblick über die Verwendung des Begriffs in Azure Search-API, Beispielcode und Dokumentation:
 
 - `@colorFacet.count`<br/> Im Darstellungscode wird die Facette mit einem count-Parameter versehen, um die Anzahl der Facettenergebnisse anzuzeigen. In den Facettenergebnissen gibt „count“ die Anzahl von Dokumenten an, die dem Facettenbegriff oder -bereich entsprechen.
 
@@ -238,7 +238,7 @@ Beachten Sie die Unterscheidung zwischen Facettenergebnissen und Suchergebnissen
 
 **Ebenen der Facettennavigation**
 
-Wie bereits erwähnt wird die hierarchische Schachtelung von Facetten nicht direkt unterstützt. Standardmäßig unterstützt die Facettennavigation lediglich eine Ebene von Filtern. Diese Beschränkung lässt sich jedoch umgehen. Sie können eine hierarchische Facettenstruktur in einem Element vom Typ `Collection(Edm.String)` codieren, indem Sie pro Hierarchie jeweils einen Eintrag angeben. Die Implementierung dieser Umgehung ist nicht Gegenstand dieses Artikels. Informationen zu Auflistungen finden Sie unter [OData by Example](http://msdn.microsoft.com/library/ff478141.aspx).
+Wie bereits erwähnt wird die hierarchische Schachtelung von Facetten nicht direkt unterstützt. Standardmäßig unterstützt die Facettennavigation lediglich eine Ebene von Filtern. Diese Beschränkung lässt sich jedoch umgehen. Sie können eine hierarchische Facettenstruktur in einem Element vom Typ `Collection(Edm.String)` codieren, indem Sie pro Hierarchie jeweils einen Eintrag angeben. Die Implementierung dieser Umgehung ist nicht Gegenstand dieses Artikels. Informationen zu Auflistungen finden Sie unter [OData nach Beispiel](http://msdn.microsoft.com/library/ff478141.aspx).
 
 **Überprüfen von Feldern**
 
@@ -250,7 +250,7 @@ Beim Hinzufügen eines Filters zu einer Facettenabfrage empfiehlt es sich unter 
 
 **Auswirkungen von Sharding auf die Facettenanzahl**
 
-Unter bestimmten Umständen kann es vorkommen, dass die Facettenanzahl nicht den Resultsets entspricht (siehe Forumsbeitrag [Faceted navigation in Azure Search](https://social.msdn.microsoft.com/Forums/azure/06461173-ea26-4e6a-9545-fbbd7ee61c8f/faceting-on-azure-search?forum=azuresearch)).
+Unter bestimmten Umständen kann es vorkommen, dass die Facettenanzahl nicht den Resultsets entspricht (siehe Forumsbeitrag [Facettennavigation in Azure Search](https://social.msdn.microsoft.com/Forums/azure/06461173-ea26-4e6a-9545-fbbd7ee61c8f/faceting-on-azure-search?forum=azuresearch)).
 
 Die Abweichung der Facettenanzahl kann auf die Sharding-Architektur zurückzuführen sein. Jeder Suchindex besitzt mehrere Shards, von denen jeweils die x relevantesten Facetten (auf der Grundlage der Dokumentanzahl) zurückgegeben werden. Diese werden dann zu einem einzelnen Ergebnis zusammengefasst. Falls nun für einige Shards besonders viele und für andere Shards besonders wenige Werte vorhanden sind, kann es vorkommen, dass einige Facettenwerte fehlen oder in den Ergebnissen nicht korrekt erfasst wurden.
 
@@ -295,14 +295,14 @@ In Azure Search stehen zwei räumliche Funktionen zur Verfügung: **geo.distance
 
 - **geo.intersects** gibt „true“ zurück, wenn ein bestimmter Punkt innerhalb eines bestimmten Polygons liegt. Der Punkt ist hierbei ein Feld, das Polygon eine Konstantenliste mit Koordinaten, die als Teil des Filters übergeben werden.
 
-Filterbeispiele finden Sie unter [OData-Ausdruckssyntax für Azure Search](http://msdn.microsoft.com/library/azure/dn798921.aspx). Weitere Informationen zur räumlichen Suche finden Sie unter [Create a geospatial search app using Azure Search](search-create-geospatial.md).
+Filterbeispiele finden Sie unter [OData-Ausdruckssyntax für Azure Search](http://msdn.microsoft.com/library/azure/dn798921.aspx). Weitere Informationen zur räumlichen Suche finden Sie unter [Erstellen einer Anwendung für räumliche Suche in Azure Search](search-create-geospatial.md).
 
 <a name="tryitout"></a>
 ##Ausprobieren
 
 Die bei Codeplex verfügbare Adventure Works-Demo für Azure Search enthält die Beispiele, auf die in diesem Artikel Bezug genommen wird. Achten Sie bei der Arbeit mit Suchergebnissen auf die Veränderung der Abfragekonstruktion in der URL. Diese Anwendung fügt die ausgewählten Facetten dem URI hinzu.
 
-1.	Konfigurieren Sie die Beispielanwendung (siehe [Erstellen Ihrer ersten Anwendung](search-create-first-solution.md)). 
+1.	Konfigurieren Sie die Beispielanwendung (siehe [Erstellen Ihrer ersten Anwendung für Anweisungen](search-create-first-solution.md)). 
 
 	Beachten Sie das Schema, das in der Datei „Program.cs“ des CatalogIndexer-Projekts definiert ist. Es gibt facettenfähige Felder für „color“, „listPrice“, „size“, „weight“, „categoryName“ und „modelName“ an. In der Facettennavigation sind jedoch nur einige dieser Felder („color“, „listPrice“ und „categoryName“) tatsächlich implementiert.
 
@@ -329,7 +329,7 @@ Die bei Codeplex verfügbare Adventure Works-Demo für Azure Search enthält di
 <a name="nextstep"></a>
 ##Nächster Schritt
 
-Fügen Sie zum Testen Ihrer Kenntnisse ein Facettenfeld für *modelName* hinzu. Da der Index für diese Facette bereits eingerichtet ist, sind keine Änderungen am Index erforderlich. Sie müssen jedoch den HTML-Code mit einer neuen Facette für Modelle versehen und das Facettenfeld dem Abfragekonstruktor hinzufügen.
+Zum Testen Ihrer Kenntnisse können Sie ein Facettenfeld für *modelName* hinzufügen. Da der Index für diese Facette bereits eingerichtet ist, sind keine Änderungen am Index erforderlich. Sie müssen jedoch den HTML-Code mit einer neuen Facette für Modelle versehen und das Facettenfeld dem Abfragekonstruktor hinzufügen.
 
 Weitere Einblicke in die Entwurfsprinzipien der Facettennavigation erhalten Sie unter folgenden Links:
 
@@ -372,4 +372,4 @@ Weitere Einblicke in die Entwurfsprinzipien der Facettennavigation erhalten Sie 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

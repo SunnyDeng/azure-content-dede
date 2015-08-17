@@ -7,6 +7,7 @@
 	editor=""
 	services="mobile-services"/>
 
+
 <tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
@@ -15,6 +16,7 @@
 	ms.topic="article"
 	ms.date="07/01/2015"
 	ms.author="krisragh;donnam"/>
+
 
 # Erste Schritte mit der Synchronisierung von Offlinedaten in Mobile Services
 
@@ -30,7 +32,7 @@ Die Offlinesynchronisierung bietet mehrere Vorteile:
 * Synchronisiert Daten auf mehreren Geräten
 * Erkennt Konflikte, wenn derselbe Datensatz von zwei Geräten geändert wird
 
-> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](http://azure.microsoft.com/pricing/details/mobile-services/). Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28 target="_blank").
+> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](http://azure.microsoft.com/pricing/details/mobile-services/). Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28 target="\_blank").
 
 Dieses Lernprogramm baut auf dem Schnellstartlernprogramm [Erste Schritte mit Mobile Services] auf, das Sie zuerst abschließen müssen. Sehen sich zunächst den Code im Zusammenhang mit der Offlinesynchronisierung aus dem Schnellstart an.
 
@@ -110,10 +112,10 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
 
 - Öffnen Sie **QSDataModel.xcdatamodeld**. Es sind vier Tabellen definiert – drei, die durch das SDK verwendet werden, und eine Tabelle für die Todo-Elemente selbst:
 
-      * MS_TableOperations: Zum Nachverfolgen von Elementen, die mit dem Server synchronisiert werden müssen.
-      * MS_TableOperationErrors: Zum Nachverfolgen von Fehlern, die während der Offlinesynchronisierung auftreten.
-      * MS_TableConfig: Zum Nachverfolgen der letzten aktualisierten Zeit für die letzte Synchronisierung für alle Pullvorgänge.
-      * TodoItem: Zum Speichern von TODO-Elementen. Die Systemspalten **ms_createdAt**, **ms_updatedAt** und **ms_version** sind optionale Systemeigenschaften.
+      * MS\_TableOperations: Zum Nachverfolgen von Elementen, die mit dem Server synchronisiert werden müssen.
+      * MS\_TableOperationErrors: Zum Nachverfolgen von Fehlern, die während der Offlinesynchronisierung auftreten.
+      * MS\_TableConfig: Zum Nachverfolgen der letzten aktualisierten Zeit für die letzte Synchronisierung für alle Pullvorgänge.
+      * TodoItem: Zum Speichern von TODO-Elementen. Die Systemspalten **ms\_createdAt**, **ms\_updatedAt** und **ms\_version** sind optionale Systemeigenschaften.
 
 >[AZURE.NOTE]Das Mobile Services-SDK reserviert Spaltennamen, die mit "**`ms_`**" beginnen. Verwenden Sie dieses Präfix ausschließlich für Systemspalten. Andernfalls ändern sich die Spaltennamen bei Verwendung des Remotedienstes.
 
@@ -121,7 +123,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
 
     ### Systemtabellen
 
-    #### MS_TableOperations
+    #### MS\_TableOperations
 
     | Attribut | Typ |
     |-------------- |   ------    |
@@ -131,7 +133,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
     | Tabelle | String |
     | tableKind | Integer 16 |
 
-    #### MS_TableOperationErrors
+    #### MS\_TableOperationErrors
 
     | Attribut | Typ |
     |-------------- | ----------  |
@@ -140,7 +142,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
     | Eigenschaften | Binärdaten |
     | tableKind | Integer 16 |
 
-    #### MS_TableConfig
+    #### MS\_TableConfig
 
 
     | Attribut | Typ |
@@ -160,7 +162,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
     | ID (erforderlich) | String | Primärschlüssel im Remotespeicher (erforderlich) |
     | complete | Boolean | Todo-Elementfeld |
     | Text | String | Todo-Elementfeld |
-    | ms_createdAt | Datum | (optional) Zuordnung zur __createdAt-Systemeigenschaft | | ms_updatedAt | Datum | (optional) Zuordnung zur __updatedAt-Systemeigenschaft | | ms_version | String | (optional) Zum Erkennen von Konflikten, Zuordnung zu __version |
+    | ms\_createdAt | Date | (optional) Zuordnung zur \_\_createdAt-Systemeigenschaft | | ms\_updatedAt | Datum | (optional) Zuordnung zur \_\_updatedAt-Systemeigenschaft | | ms\_version | String | (optional) Zum Erkennen von Konflikten, Zuordnung zu \_\_version |
 
 
 
@@ -271,4 +273,4 @@ Um den lokalen Speicher mit dem Server zu synchronisieren, wurden `MSSyncTable.p
 
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

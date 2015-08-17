@@ -26,12 +26,12 @@ Dieser Artikel enthält eine Übersicht über die Verwendung von verschiedenen M
 
 Verwenden Sie SQL Server Management Studio oder "SQLCMD.EXE" zum Überprüfen, ob eine Verbindung mit der Datenbank hergestellt werden kann.
 
-- Anweisungen zum Herstellen einer Verbindung mit der SQL-Datenbank mit SQL Server Management Studio \(SSMS\) finden Sie unter [Herstellen von Verbindungen mit einer Azure SQL-Datenbank mit SSMS](sql-database-connect-to-database.md).
+- Anweisungen zum Herstellen einer Verbindung mit der SQL-Datenbank mit SQL Server Management Studio (SSMS) finden Sie unter [Herstellen von Verbindungen mit einer Azure SQL-Datenbank mit SSMS](sql-database-connect-to-database.md).
 - Anweisungen zum Herstellen einer Verbindung mit der SQL-Datenbank mit SQLCMD finden Sie unter [Vorgehensweise: Herstellen einer Verbindung mit Azure SQL-Datenbank über sqlcmd](https://msdn.microsoft.com/library/azure/ee336280.aspx).
 
 
 
-## Versucht die Anwendung eine Verbindung mit einer in Azure ausgeführten SQL-Datenbank herzustellen \(ist z. B. die Anwendung, die keine Verbindung mit der Datenbank herstellen kann, ein Clouddienst oder eine Web-App\)?
+## Versucht die Anwendung eine Verbindung mit einer in Azure ausgeführten SQL-Datenbank herzustellen (ist z. B. die Anwendung, die keine Verbindung mit der Datenbank herstellen kann, ein Clouddienst oder eine Web-App)?
 
 Stellen Sie sicher, dass die Firewallregel zum Zulassen sämtlicher Azure-Dienste für den Server/die Datenbank aktiviert ist.
 
@@ -44,10 +44,10 @@ Stellen Sie sicher, dass die Firewallregel zum Zulassen sämtlicher Azure-Dienst
 Stellen Sie sicher, dass für den Server/die Datenbank die Firewallregeln aktiviert sind, die den Zugriff aus bestimmten Netzwerken zulassen.
 
 - Allgemeine Informationen zu Firewallregeln finden Sie unter [Firewall für die Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee621782.aspx).
-- Anweisungen zum Einrichten von Firewallregeln finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen \(Azure SQL-Datenbank\)](https://msdn.microsoft.com/library/azure/jj553530.aspx).
+- Anweisungen zum Einrichten von Firewallregeln finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/azure/jj553530.aspx).
 
 
-## Wenn die Firewallregeln ordnungsgemäß konfiguriert sind, gehen Sie anhand der geführten exemplarischen Vorgehensweise unter [Troubleshoot Microsoft Azure SQL Database connectivity](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1) \(Behandeln von Verbindungsproblemen in Microsoft Azure SQL-Datenbank, in englischer Sprache\) vor.
+## Wenn die Firewallregeln ordnungsgemäß konfiguriert sind, gehen Sie anhand der geführten exemplarischen Vorgehensweise unter [Troubleshoot Microsoft Azure SQL Database connectivity](https://support2.microsoft.com/common/survey.aspx?scid=sw;en;3844&showpage=1) (Behandeln von Verbindungsproblemen in Microsoft Azure SQL-Datenbank, in englischer Sprache) vor.
 
 Der oben genannte Supportartikel bietet Hilfe bei folgenden Verbindungsproblemen mit SQL-Datenbank:
 
@@ -57,7 +57,7 @@ Der oben genannte Supportartikel bietet Hilfe bei folgenden Verbindungsproblemen
 - Fehler aufgrund von Verbindungstimeouts 
 - Vorübergehende Fehler 
 - Verbindungsbeendigung aufgrund des Erreichens einiger im System definierter Limits 
-- Verbindungsfehler von SQL Server Management Studio \(SSMS\) 
+- Verbindungsfehler von SQL Server Management Studio (SSMS) 
 
 
 ## Zusätzliche Informationen
@@ -66,10 +66,10 @@ Der oben genannte Supportartikel bietet Hilfe bei folgenden Verbindungsproblemen
 
 - Details zu bestimmten Verbindungsfehlern finden Sie unter [Fehlermeldungen für Clientprogramme der SQL-Datenbank](sql-database-develop-error-messages.md#bkmk_connection_errors) im Abschnitt **Vorübergehende Fehler, Fehler aufgrund eines Verbindungsabbruchs**.
 
-- Zugriff auf Ereignisdaten von Verbindungen erhalten Sie durch Abfragen von Konnektivitätsereignissen mit der Sicht [**sys.event\_log \(Azure SQL-Datenbank\)**](https://msdn.microsoft.com/library/dn270018.aspx).
+- Zugriff auf Ereignisdaten von Verbindungen erhalten Sie durch Abfragen von Konnektivitätsereignissen mit der Sicht [**sys.event\_log (Azure SQL-Datenbank)**](https://msdn.microsoft.com/library/dn270018.aspx).
 
-- Zugriff auf Metriken von Datenbank-Konnektivitätsereignissen erhalten Sie durch Abfragen mit der Sicht [**sys.database\_connection\_stats \(Azure SQL-Datenbank\)**](https://msdn.microsoft.com/library/dn269986.aspx).
+- Zugriff auf Metriken von Datenbank-Konnektivitätsereignissen erhalten Sie durch Abfragen mit der Sicht [**sys.database\_connection\_stats (Azure SQL-Datenbank)**](https://msdn.microsoft.com/library/dn269986.aspx).
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

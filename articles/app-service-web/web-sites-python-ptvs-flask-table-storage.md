@@ -153,7 +153,7 @@ In diesem Abschnitt konfigurieren wir die Umgebungsvariablen für die Web-Apps-I
 
   	<!-- ![Top Menu](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonWebSiteTopMenu.png) -->
 
-1.  Navigieren Sie nach unten zum Abschnitt **App-Einstellungen**, und legen Sie die Werte für **REPOSITORY_NAME**, **STORAGE_NAME** und **STORAGE_KEY** gemäß der Beschreibung im obigen Abschnitt fest.
+1.  Navigieren Sie nach unten zum Abschnitt **App-Einstellungen**, und legen Sie die Werte für **REPOSITORY\_NAME**, **STORAGE\_NAME** und **STORAGE\_KEY** gemäß der Beschreibung im obigen Abschnitt fest.
 
   	<!-- ![App Settings](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonWebSiteConfigureSettingsTableStorage.png) -->
 
@@ -210,4 +210,4 @@ Unter den folgenden Links finden Sie weitere Informationen zu Python Tools für 
 [Azure-SDK für Python]: https://github.com/Azure/azure-sdk-for-python
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

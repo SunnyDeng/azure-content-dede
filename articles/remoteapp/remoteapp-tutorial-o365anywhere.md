@@ -64,4 +64,4 @@ Klicken Sie auf die Anwendungen, um sie auf dem virtuellen Azure-Computer zu sta
 ![PowerPoint](https://raw.githubusercontent.com/guscatalano/azure-content/master/articles/media/remoteapp-tutorial-o365anywhere/11-pp.PNG)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -40,10 +40,10 @@ Azure Data Catalog enthält Funktionen für technisch versierte und andere Benut
 
 Während der Preview-Phase sind Azure Data Catalog-Dienste nur in den folgenden Rechenzentren verfügbar:
 
-- USA \(Westen\)
-- USA \(Osten\)
+- USA (Westen)
+- USA (Osten)
 - Westeuropa
-- Australien \(Osten\)
+- Australien (Osten)
 
 ## F: Welche Grenzwerte gelten für die Anzahl der Datenressourcen in Azure Data Catalog?
 
@@ -53,7 +53,7 @@ Die Standard Edition von Azure Data Catalog unterstützt bis zu 100.000 registr
 
 ## F: Welche Datenquellen und Ressourcentypen werden unterstützt?
 
-Während der Preview-Phase unterstützt Azure Data Catalog derzeit relationale SQL Server-Datenbanken \(z. B. Azure SQL DB\) und SQL Server Analysis Services-Datenbanken \(mehrdimensional und tabellarisch\) sowie SQL Server Reporting Services \(nur systemeigener Modus\) und Oracle Database.
+Während der Preview-Phase unterstützt Azure Data Catalog derzeit relationale SQL Server-Datenbanken (z. B. Azure SQL DB) und SQL Server Analysis Services-Datenbanken (mehrdimensional und tabellarisch) sowie SQL Server Reporting Services (nur systemeigener Modus) und Oracle Database.
 
 Während der Preview-Phase unterstützt Azure Data Catalog die folgenden Ressourcentypen:
 
@@ -90,7 +90,7 @@ Die spezifischen Eigenschaften variieren je nach Datenquelle, aber im Allgemeine
 - Datentypen von Attributen/Spalten
 - Beschreibung von Attributen/Spalten
 
-> [AZURE.IMPORTANT]Von Azure Data Catalog werden Ihre Daten nicht in die Cloud \(cloudAzure\) verschoben oder kopiert. Beim Registrieren von Ressourcen einer Datenquelle werden die Metadaten der Ressource nach Azure kopiert, aber die eigentlichen Daten verbleiben am vorhandenen Speicherort der Datenquelle. Die einzige Ausnahme von dieser Regel ist, wenn ein Benutzer sich beim Registrieren von Ressourcen zum Hochladen von Vorschaudatensätzen entscheidet. In diesem Fall werden bis zu 20 Datensätze aus jeder Ressource kopiert und als Momentaufnahme in **Azure Data Catalog** gespeichert.
+> [AZURE.IMPORTANT]Von Azure Data Catalog werden Ihre Daten nicht in die Cloud (cloudAzure) verschoben oder kopiert. Beim Registrieren von Ressourcen einer Datenquelle werden die Metadaten der Ressource nach Azure kopiert, aber die eigentlichen Daten verbleiben am vorhandenen Speicherort der Datenquelle. Die einzige Ausnahme von dieser Regel ist, wenn ein Benutzer sich beim Registrieren von Ressourcen zum Hochladen von Vorschaudatensätzen entscheidet. In diesem Fall werden bis zu 20 Datensätze aus jeder Ressource kopiert und als Momentaufnahme in **Azure Data Catalog** gespeichert.
 
 <br/>
 
@@ -114,7 +114,7 @@ Sie können ein Objekt aus **Azure Data Catalog** löschen, indem Sie das Objekt
 
 Ein Experte ist eine Person, die über fundiertes Wissen zu einem Datenobjekt verfügt. Ein Objekt kann mehrere Experten haben. Ein Experte muss nicht unbedingt der Besitzer eines Objekts sein. Es handelt sich lediglich um eine Person, die weiß, wie die Daten verwendet werden können und sollten.
 
-## F: Wie lautet die Vereinbarung zum Servicelevel \(SLA\) für die Preview-Version?
+## F: Wie lautet die Vereinbarung zum Servicelevel (SLA) für die Preview-Version?
 
 Während der Preview-Phase für **Azure Data Catalog** gilt keine besondere Vereinbarung zum Servicelevel.
 
@@ -123,7 +123,7 @@ Während der Preview-Phase für **Azure Data Catalog** gilt keine besondere Vere
 Nutzen Sie das **Azure Data Catalog**-Forum, um Probleme zu melden, Informationen bereitzustellen und Fragen zu stellen. Sie finden das Forum unter http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409.
 
 ##F: Funktioniert Azure Data Catalog auch mit anderen Datenquellen, an denen ich interessiert bin? 
-Wir arbeiten aktiv daran, **Azure Data Catalog** weitere Datenquellen hinzuzufügen. Wenn Sie sich für eine bestimmte Datenquelle Unterstützung wünschen, können Sie dies im [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409) vorschlagen \(oder eine ggf. bereits vorhandene Anfrage unterstützen\).
+Wir arbeiten aktiv daran, **Azure Data Catalog** weitere Datenquellen hinzuzufügen. Wenn Sie sich für eine bestimmte Datenquelle Unterstützung wünschen, können Sie dies im [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409) vorschlagen (oder eine ggf. bereits vorhandene Anfrage unterstützen).
 
 ## F: Welche Verbindung besteht zwischen Azure Data Catalog und Data Catalog in Power BI für Office 365?
 
@@ -139,7 +139,7 @@ Der Benutzer, der das **Azure Data Catalog**-Registrierungstool ausführt, benö
 
 ##F: Können aus den registrierten Datenquellen auch mehr oder umfangreichere Metadaten extrahiert werden?
 
-Wir arbeiten derzeit daran, die Funktionen von **Azure Data Catalog** zu erweitern. Wenn zusätzliche Metadaten vorhanden sind, die während der Registrierung aus der Datenquelle extrahiert werden sollen, können Sie dies im [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409) vorschlagen \(oder einen bereits vorhandenen Vorschlag unterstützen\). In Zukunft werden auch Drittanbieter berechtigt sein, neue Datenquellentypen per Erweiterbarkeits-API hinzuzufügen.
+Wir arbeiten derzeit daran, die Funktionen von **Azure Data Catalog** zu erweitern. Wenn zusätzliche Metadaten vorhanden sind, die während der Registrierung aus der Datenquelle extrahiert werden sollen, können Sie dies im [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409) vorschlagen (oder einen bereits vorhandenen Vorschlag unterstützen). In Zukunft werden auch Drittanbieter berechtigt sein, neue Datenquellentypen per Erweiterbarkeits-API hinzuzufügen.
 
 ## F: Wie kann ich die Sichtbarkeit der registrierten Datenressourcen so einschränken, dass nur bestimmte Personen sie ermitteln können?
 
@@ -157,4 +157,4 @@ Wenn Probleme auftreten oder falls Sie Hilfe mit der Preview-Version von Azure D
 
 Wechseln Sie in das [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409). Fragen, die dort gestellt werden, werden in diesen Artikel aufgenommen.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

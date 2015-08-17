@@ -58,4 +58,4 @@ Alle Service Fabric-Kommunikations-APIs sind derzeit nur in C# verfügbar. Wenn 
 * [WCF-basierter Kommunikationsstapel für Reliable Services](service-fabric-reliable-services-communication-wcf.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

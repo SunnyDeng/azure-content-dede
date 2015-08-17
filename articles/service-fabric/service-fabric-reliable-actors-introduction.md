@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Azure Service Fabric Actors – Überblick"
-   description="Einführung in das Programmiermodell Azure Service Fabric Actors"
+   pageTitle="Service Fabric Reliable Actors – Übersicht"
+   description="Einführung in das Programmiermodell Service Fabric Reliable Actors"
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
+
 
 <tags
    ms.service="service-fabric"
@@ -13,10 +14,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/10/2015"
+   ms.date="08/05/2015"
    ms.author="claudioc"/>
 
-# Einführung in Azure Service Fabric Actors
+
+# Einführung in Service Fabric Reliable Actors
 Die Reliable Actor-API ist eines von zwei High-Level-Frameworks, das [Service Fabric](service-fabric-technical-overview.md) neben der [Reliable Services-API](service-fabric-reliable-services-introduction.md) bereitstellt.
 
 Auf Grundlage des Actor-Musters stellt die Reliable Actors-API ein asynchrones Singlethread-Programmiermodell bereit, das nicht nur den Code vereinfacht, sondern sich auch die Skalierbarkeit und Zuverlässigkeit zunutze macht, die Service Fabric gewährleistet.
@@ -191,11 +193,11 @@ Timer-Rückrufe können mit Attribut `Readonly` auf ähnliche Weise markiert wer
 
 [Verwendung der Service Fabric-Plattform durch Fabric Actors](service-fabric-reliable-actors-platform.md)
 
-[Konfigurieren des KVSActorStateProvider-Actors](../Service-Fabric/service-fabric-reliable-actors-KVSActorstateprovider-configuration.md)
+[Konfigurieren des KVSActorStateProvider-Actors](service-fabric-reliable-actors-KVSActorstateprovider-configuration.md)
 
 [Actor-Diagnose und -Leistungsüberwachung](service-fabric-reliable-actors-diagnostics.md)
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-introduction/concurrency.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

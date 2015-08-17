@@ -42,4 +42,4 @@ In diesem Lernprogramm haben Sie gelernt, einen virtuellen Computer mit OpenSUSE
 [MySQL]: http://www.mysql.com
 [AzurePortal]: http://manage.windowsazure.com
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

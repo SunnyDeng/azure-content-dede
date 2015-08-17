@@ -29,7 +29,7 @@ Die folgende Liste enthält Informationen zur Installation der Befehlszeilentool
 
 * **Mac**: Laden Sie den [Azure SDK Installer][mac-installer] herunter. Öffnen Sie die heruntergeladene PKG-Datei, und führen Sie die Installationsschritte durch, zu denen Sie aufgefordert werden.
 
-* **Linux**: Installieren Sie die neueste Version von [Node.js][nodejs-org] \(siehe [Install Node.js via Package Manager][install-node-linux] \(Installieren von Node.js mithilfe des Paket-Managers, in englischer Sprache\)\), und führen Sie dann den folgenden Befehl aus:
+* **Linux**: Installieren Sie die neueste Version von [Node.js][nodejs-org] (siehe [Install Node.js via Package Manager][install-node-linux] (Installieren von Node.js mithilfe des Paket-Managers, in englischer Sprache)), und führen Sie dann den folgenden Befehl aus:
 
 		npm install azure-cli -g
 
@@ -37,7 +37,7 @@ Die folgende Liste enthält Informationen zur Installation der Befehlszeilentool
 
 		sudo npm install azure-cli -g
 
-* **Windows**: Führen Sie den Windows-Installer \(MSI-Datei\) aus. Sie finden diesen unter [Azure-Befehlszeilentools][windows-installer].
+* **Windows**: Führen Sie den Windows-Installer (MSI-Datei) aus. Sie finden diesen unter [Azure-Befehlszeilentools][windows-installer].
 
 
 Geben Sie `azure` an der Eingabeaufforderung ein, um die Installation zu überprüfen. Wenn die Installation erfolgreich war, wird eine Liste aller verfügbaren `azure`-Befehle angezeigt.
@@ -96,10 +96,10 @@ Die Ausgabe dieses Befehls enthält die Standard-URL für die neu erstellte Webs
 
 Beachten Sie, dass Sie den Befehl `azure site create` mit einer der folgenden Optionen ausführen können:
 
-* `--location [location name]`. Mit dieser Option geben Sie den Standort des Datencenters an, in dem Ihre Website erstellt wird \(z. B. "USA, Westen"\). Wenn Sie diese Option auslassen, werden Sie aufgefordert, einen Standort auszuwählen.
+* `--location [location name]`. Mit dieser Option geben Sie den Standort des Datencenters an, in dem Ihre Website erstellt wird (z. B. "USA, Westen"). Wenn Sie diese Option auslassen, werden Sie aufgefordert, einen Standort auszuwählen.
 * `--hostname [custom host name]`. Mithilfe dieser Option können Sie einen benutzerdefinierten Hostnamen für Ihre Website auswählen.
 
-Sie können dann Inhalte zu Ihrem Websiteverzeichnis hinzufügen. Verwenden Sie den regulären Git-Ablauf \(`git add`, `git commit`\), um Ihre Inhalte zu übermitteln. Verwenden Sie den folgenden Git-Befehl, um Ihren Website-Inhalt an Azure zu übertragen:
+Sie können dann Inhalte zu Ihrem Websiteverzeichnis hinzufügen. Verwenden Sie den regulären Git-Ablauf (`git add`, `git commit`), um Ihre Inhalte zu übermitteln. Verwenden Sie den folgenden Git-Befehl, um Ihren Website-Inhalt an Azure zu übertragen:
 
 	git push azure master
 
@@ -165,17 +165,17 @@ Verwenden Sie die Option `site`, um eine vollständige Liste der `-help`-Befehle
 
 <h2><a id="VMs"></a>Erstellen und Verwalten eines virtuellen Azure-Computers</h2>
 
-Ein virtueller Azure-Computer wird aus einem Image eines virtuellen Computers \(VHD-Datei\) erstellt, das Sie bereitstellen oder das im Imagekatalog verfügbar ist. Um die verfügbaren Images anzuzeigen, verwenden Sie den Befehl `vm image list`:
+Ein virtueller Azure-Computer wird aus einem Image eines virtuellen Computers (VHD-Datei) erstellt, das Sie bereitstellen oder das im Imagekatalog verfügbar ist. Um die verfügbaren Images anzuzeigen, verwenden Sie den Befehl `vm image list`:
 
 	azure vm image list
 
-Sie können einen virtuellen Computer mit dem Befehl `vm create` über eines der verfügbaren Images bereitstellen oder starten. Das folgende Beispiel zeigt, wie Sie einen virtuellen Linux-Computer \(genannt `myVM`\) aus einem Image im Imagekatalog \(CentOS 6.2\) starten. Der Root-Benutzername und das -Kennwort für den virtuellen Computer lauten `myusername` bzw. `Mypassw0rd`. \(Beachten Sie, dass der Parameter `--location` das Datencenter angibt, in dem der virtuelle Computer erstellt wird. Wenn Sie den Parameter `--location` auslassen, werden Sie aufgefordert, einen Standort auszuwählen.\)
+Sie können einen virtuellen Computer mit dem Befehl `vm create` über eines der verfügbaren Images bereitstellen oder starten. Das folgende Beispiel zeigt, wie Sie einen virtuellen Linux-Computer (genannt `myVM`) aus einem Image im Imagekatalog (CentOS 6.2) starten. Der Root-Benutzername und das -Kennwort für den virtuellen Computer lauten `myusername` bzw. `Mypassw0rd`. (Beachten Sie, dass der Parameter `--location` das Datencenter angibt, in dem der virtuelle Computer erstellt wird. Wenn Sie den Parameter `--location` auslassen, werden Sie aufgefordert, einen Standort auszuwählen.)
 
-	azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-en-us-30GB.vhd myusername --location "West US"
+	azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-de-de-30GB.vhd myusername --location "West US"
 
-Möglicherweise möchten Sie das `--ssh`-Flag \(Linux\) oder das `--rdp`-Flag \(Windows\) an `vm create` übergeben, um Remoteverbindungen mit dem neu erstellten virtuellen Computer zu ermöglichen.
+Möglicherweise möchten Sie das `--ssh`-Flag (Linux) oder das `--rdp`-Flag (Windows) an `vm create` übergeben, um Remoteverbindungen mit dem neu erstellten virtuellen Computer zu ermöglichen.
 
-Wenn Sie stattdessen einen virtuellen Computer aus einem benutzerdefinierten Image erstellen möchten, können Sie mit dem Befehl `vm image create` ein Image einer VHD-Datei erstellen und dann mit dem Befehl `vm create` den virtuellen Computer bereitstellen. Das folgende Beispiel zeigt, wie Sie ein Linux-Image \(genannt `myImage`\) aus einer lokalen VHD-Datei erstellen. \(Der `--location`-Parameter gibt die Daten an, in denen das Image gespeichert ist.\)
+Wenn Sie stattdessen einen virtuellen Computer aus einem benutzerdefinierten Image erstellen möchten, können Sie mit dem Befehl `vm image create` ein Image einer VHD-Datei erstellen und dann mit dem Befehl `vm create` den virtuellen Computer bereitstellen. Das folgende Beispiel zeigt, wie Sie ein Linux-Image (genannt `myImage`) aus einer lokalen VHD-Datei erstellen. (Der `--location`-Parameter gibt die Daten an, in denen das Image gespeichert ist.)
 
 	azure vm image create myImage /path/to/myImage.vhd --os linux --location "West US"
 
@@ -183,7 +183,7 @@ Statt ein Image aus einer lokalen VHD-Datei zu erstellen, können Sie ein Image 
 
 	azure vm image create myImage --blob-url <url to .vhd in Blob Storage> --os linux
 
-Nachdem Sie ein Image erstellt haben, können Sie mithilfe von `vm create` einen virtuellen Computer aus dem Image erstellen. Der unten genannte Befehl erstellt einen virtuellen Computer namens `myVM` aus dem oben erstellten Image \(`myImage`\).
+Nachdem Sie ein Image erstellt haben, können Sie mithilfe von `vm create` einen virtuellen Computer aus dem Image erstellen. Der unten genannte Befehl erstellt einen virtuellen Computer namens `myVM` aus dem oben erstellten Image (`myImage`).
 
 	azure vm create myVM myImage myusername --location "West US"
 
@@ -191,7 +191,7 @@ Nachdem Sie einen virtuellen Computer bereitgestellt haben, möchten Sie möglic
 
 	azure vm endpoint create myVM 22 22
 
-Detaillierte Informationen zu einem virtuellen Computer \(einschließlich IP-Adresse, DNS-Name und Endpunktinformationen\) erhalten Sie mit dem Befehl `vm show`.
+Detaillierte Informationen zu einem virtuellen Computer (einschließlich IP-Adresse, DNS-Name und Endpunktinformationen) erhalten Sie mit dem Befehl `vm show`.
 
 	azure vm show myVM
 
@@ -220,4 +220,4 @@ Eine vollständige Liste der Befehle zum Erstellen und Verwalten von virtuellen 
 [reference-docs]: http://go.microsoft.com/fwlink/?LinkId=252246
 [windowsazuredotcom]: http://www.windowsazure.com
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

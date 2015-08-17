@@ -35,13 +35,13 @@ Die Einstellungen für das virtuelle Netzwerk (VNet) tragen Sie in Tabelle V ein
 
 Element | Konfigurationselement | Beschreibung | Wert
 --- | --- | --- | ---
-1. | VNet-Name | Der Name, den Sie dem virtuellen Azure-Netzwerk zuweisen (z. B. SPFarmNet) . | __________________
-2. | VNet-Standort | Das Azure-Rechenzentrum, in dem sich das virtuelle Netzwerk befindet. | __________________
-3. | Name des lokalen Netzwerks | Der Name, den Sie Ihrem Unternehmensnetzwerk zuweisen. | __________________
-4. | IP-Adresse des VPN-Geräts | Die öffentliche IPv4-Adresse der Schnittstelle Ihres VPN-Geräts im Internet. Fragen Sie Ihre IT-Abteilung nach dieser Adresse. | __________________
-5. | VNet-Adressraum | Der Adressraum des virtuellen Netzwerks (definiert in einem einzigen privaten Adresspräfix). Fragen Sie Ihre IT-Abteilung nach diesem Adressraum. | __________________
-6. | Erster finaler DNS-Server | Die vierte mögliche IP-Adresse für den Adressraum des Subnetzes des virtuellen Netzwerks (Tabelle S). Fragen Sie Ihre IT-Abteilung nach diesen Adressen. | __________________
-7. | Zweiter finaler DNS-Server | Die fünfte mögliche IP-Adresse für den Adressraum des Subnetzes des virtuellen Netzwerks (Tabelle S). Fragen Sie Ihre IT-Abteilung nach diesen Adressen. | __________________
+1\. | VNet-Name | Der Name, den Sie dem virtuellen Azure-Netzwerk zuweisen (z. B. SPFarmNet) . | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+2\. | VNet-Standort | Das Azure-Rechenzentrum, in dem sich das virtuelle Netzwerk befindet. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+3\. | Name des lokalen Netzwerks | Der Name, den Sie Ihrem Unternehmensnetzwerk zuweisen. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+4\. | IP-Adresse des VPN-Geräts | Die öffentliche IPv4-Adresse der Schnittstelle Ihres VPN-Geräts im Internet. Fragen Sie Ihre IT-Abteilung nach dieser Adresse. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+5\. | VNet-Adressraum | Der Adressraum des virtuellen Netzwerks (definiert in einem einzigen privaten Adresspräfix). Fragen Sie Ihre IT-Abteilung nach diesem Adressraum. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+6\. | Erster finaler DNS-Server | Die vierte mögliche IP-Adresse für den Adressraum des Subnetzes des virtuellen Netzwerks (Tabelle S). Fragen Sie Ihre IT-Abteilung nach diesen Adressen. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+7\. | Zweiter finaler DNS-Server | Die fünfte mögliche IP-Adresse für den Adressraum des Subnetzes des virtuellen Netzwerks (Tabelle S). Fragen Sie Ihre IT-Abteilung nach diesen Adressen. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Tabelle V: Konfiguration eines standortübergreifenden virtuellen Netzwerks**
 
@@ -49,7 +49,7 @@ Füllen Sie für das Subnetz dieser Lösung Tabelle S aus. Geben Sie für das Su
 
 Element | Subnetzname | Subnetzadressraum | Zweck
 --- | --- | --- | ---
-1. | _______________ | _____________________________ | _________________________
+1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Tabelle S: Subnetze im virtuellen Netzwerk**
 
@@ -59,8 +59,8 @@ Füllen Sie für die zwei lokalen DNS-Server, die Sie bei der anfänglichen Einr
 
 Element | Anzeigename des DNS-Servers | IP-Adresse des DNS-Servers
 --- | --- | ---
-1. | ___________________________ | ___________________________
-2. | ___________________________ | ___________________________
+1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Tabelle D: Lokale DNS-Server**
 
@@ -70,9 +70,9 @@ Füllen Sie zur Angabe der Adressräume Ihres lokalen Netzwerks Tabelle L aus. H
 
 Element | Adressraum des lokalen Netzwerks
 --- | ---
-1. | ___________________________________
-2. | ___________________________________
-3. | ___________________________________
+1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+3\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Tabelle L: Adresspräfixe für das lokale Netzwerk**
 
@@ -106,13 +106,13 @@ Erstellen Sie als Nächstes die drei für diese SharePoint-Farm erforderlichen C
 
 Element | Zweck | Name des Cloud-Diensts
 --- | --- | ---
-1. | Domänencontroller | ___________________________
-2. | SQL-Server | ___________________________
-3. | SharePoint-Server | ___________________________
+1\. | Domänencontroller | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+2\. | SQL-Server | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+3\. | SharePoint-Server | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Tabelle C: Namen der Cloud-Dienste**
 
-Wählen Sie für jeden Cloud-Dienst einen eindeutigen Namen aus. *Der Name eines Cloud-Diensts darf nur Buchstaben, Zahlen und Bindestriche enthalten. Das erste und das letzte Zeichen im Feld müssen ein Buchstabe oder eine Zahl sein.*
+Wählen Sie für jeden Cloud-Dienst einen eindeutigen Namen aus. *Der Name eines Cloud-Diensts darf nur Buchstaben, Zahlen und Bindestriche enthalten. Das erste und das letzte Zeichen im Feld müssen Buchstaben oder Zahlen sein.*
 
 So können Sie den ersten Cloud-Dienst beispielsweise „DCs-*EindeutigeZeichenfolge*“ nennen, wobei *EindeutigeZeichenfolge* eine Abkürzung Ihres Unternehmens ist. Heißt Ihr Unternehmen beispielsweise „Tailspin Toys“, so können Sie den Cloud-Dienst „DCs-Tailspin“ nennen.
 
@@ -140,10 +140,10 @@ Definieren Sie als Nächstes die Namen von vier Verfügbarkeitsgruppen. Füllen 
 
 Element | Zweck | Name der Verfügbarkeitsgruppe
 --- | --- | ---
-1. | Domänencontroller | ___________________________
-2. | SQL-Server | ___________________________
-3. | SharePoint-Anwendungsserver | ___________________________
-4. | SharePoint-Front-End-Webserver | ___________________________
+1\. | Domänencontroller | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+2\. | SQL-Server | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+3\. | SharePoint-Anwendungsserver | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+4\. | SharePoint-Front-End-Webserver | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 **Tabelle A: Namen der Verfügbarkeitsgruppen**
 
@@ -169,4 +169,4 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 2:
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

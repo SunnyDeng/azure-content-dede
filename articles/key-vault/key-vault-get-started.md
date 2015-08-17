@@ -7,6 +7,7 @@
 	manager="mbaldwin"
 	tags="azure-resource-manager"/>
 
+
 <tags
 	ms.service="key-vault"
 	ms.workload="identity"
@@ -15,6 +16,7 @@
 	ms.topic="hero-article" 
 	ms.date="07/22/2015"
 	ms.author="cabailey"/>
+
 
 # Erste Schritte mit dem Azure-Schlüsseltresor #
 Azure-Tresorschlüssel ist in den meisten Regionen verfügbar. Weitere Informationen finden Sie auf der Seite [Preisdetails für Schlüsseltresor](../../../../pricing/details/key-vault/).
@@ -119,7 +121,7 @@ Geben Sie anschließend den folgenden Code ein, um den Schlüssel aus der PFX-Da
     $key = Add-AzureKeyVaultKey -VaultName 'ContosoKeyVault' -Name 'ContosoFirstKey' -KeyFilePath 'c:\softkey.pfx' -KeyFilePassword $securepfxpwd
 
 
-Jetzt können Sie mit dem zugehörigen URI auf den erstellten oder in den Azure-Schlüsseltresor hochgeladenen Schlüssel verweisen. Verwenden Sie **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey**, um immer die aktuelle Version zu erhalten, und verwenden Sie **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**, um diese bestimmte Version abzurufen.
+Jetzt können Sie mit dem zugehörigen URI auf den erstellten oder in den Azure-Schlüsseltresor hochgeladenen Schlüssel verweisen. Verwenden Sie \*\***https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey**, um immer die aktuelle Version zu erhalten, und verwenden Sie \*\***https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**, um diese bestimmte Version abzurufen.
 
 Geben Sie zur Anzeige des URI für diesen Schlüssel Folgendes ein:
 
@@ -133,7 +135,7 @@ Geben Sie anschließend Folgendes ein:
 
 	$secret = Set-AzureKeyVaultSecret -VaultName 'ContosoKeyVault' -Name 'SQLPassword' -SecretValue $secretvalue
 
-Jetzt können Sie mit dem zugehörigen URI auf das Kennwort verweisen, das Sie dem Azure-Schlüsseltresor hinzugefügt haben. Verwenden Sie **https://ContosoVault.vault.azure.net/secrets/SQLPassword**, um immer die aktuelle Version zu erhalten, und verwenden Sie **https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**, um diese bestimmte Version abzurufen.
+Jetzt können Sie mit dem zugehörigen URI auf das Kennwort verweisen, das Sie dem Azure-Schlüsseltresor hinzugefügt haben. Verwenden Sie \*\***https://ContosoVault.vault.azure.net/secrets/SQLPassword**, um immer die aktuelle Version zu erhalten, und verwenden Sie \*\***https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**, um diese bestimmte Version abzurufen.
 
 Geben Sie zur Anzeige des URI für diesen geheimen Schlüssel Folgendes ein:
 
@@ -248,4 +250,4 @@ Eine Liste der Windows PowerShell-Cmdlets für den Azure-Schlüsseltresor finden
 Programmierungsreferenzen finden Sie unter [Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn903625.aspx) in der Dokumentationsbibliothek für Microsoft Azure auf MSDN.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

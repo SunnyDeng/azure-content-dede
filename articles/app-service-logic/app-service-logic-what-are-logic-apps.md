@@ -18,7 +18,7 @@
 
 #Was sind Logik-Apps?
 
-Azure App Service ist eine vollständig verwaltete PaaS-Lösung \(Platform-as-a-Service\) für Entwickler, die das Erstellen von Web-, mobilen und Integrations-Apps vereinfacht. Logik-Apps sind ein Teil dieser Produktfamilie und ermöglichen technisch orientierten Benutzern und Entwicklern das Automatisieren der Ausführung von Geschäftsprozessen und des Workflows mithilfe eines leicht zu bedienenden visuellen Designers.
+Azure App Service ist eine vollständig verwaltete PaaS-Lösung (Platform-as-a-Service) für Entwickler, die das Erstellen von Web-, mobilen und Integrations-Apps vereinfacht. Logik-Apps sind ein Teil dieser Produktfamilie und ermöglichen technisch orientierten Benutzern und Entwicklern das Automatisieren der Ausführung von Geschäftsprozessen und des Workflows mithilfe eines leicht zu bedienenden visuellen Designers.
 
 Außerdem können Logik-Apps mit [Connectors][connectors] aus unserem Marketplace kombiniert werden, um selbst schwierige Integrationsszenarien einfach zu meistern.
 
@@ -30,7 +30,7 @@ Wenn Sie automatisch neue Datensätze in Ihrer SQL-Datenbank replizieren und per
 
 Logik-Apps ermöglichen Entwicklern das Entwerfen von Workflows, die bei einem Trigger beginnen und dann eine Reihe von Schritten ausführen. Bei jedem Schritt wird eine App Service-API-App aufgerufen, und zugleich werden eine sichere Authentifizierung und Best Practices wie Prüfpunktausführung und beständige Ausführung gewährleistet.
 
-Wenn Sie einen beliebigen Geschäftsprozess automatisieren möchten \(z. B. negative Tweets finden und an Ihren internen Pufferkanal senden oder neue Kundendatensätze aus SQL gleich bei ihrem Eintreffen in das CRM-System replizieren\), können Sie mit Logik-Apps ganz leicht verschiedene Datenquellen integrieren, ob Cloud oder lokal. Weitere Inspiration erhalten Sie durch unsere [Connectors][connectors]. Führen Sie jetzt die [ersten Schritte][create] durch, um Ihre Optionen kennen zu lernen.
+Wenn Sie einen beliebigen Geschäftsprozess automatisieren möchten (z. B. negative Tweets finden und an Ihren internen Pufferkanal senden oder neue Kundendatensätze aus SQL gleich bei ihrem Eintreffen in das CRM-System replizieren), können Sie mit Logik-Apps ganz leicht verschiedene Datenquellen integrieren, ob Cloud oder lokal. Weitere Inspiration erhalten Sie durch unsere [Connectors][connectors]. Führen Sie jetzt die [ersten Schritte][create] durch, um Ihre Optionen kennen zu lernen.
 
 Mit unseren [BizTalk-API][biztalk]-Apps können Sie darüber hinaus ausgereifte Integrationsszenarien erstellen – dank [Regelmodul][rules], [Handelspartnerverwaltung][tpm] und vielem mehr.
 
@@ -69,4 +69,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [templates]: app-service-logic-use-logic-app-templates.md
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

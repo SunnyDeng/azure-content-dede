@@ -76,4 +76,4 @@ Nachdem Sie die URLs und Einstellungen für die formularbasierte oder die HTTP-A
 3. Im daraufhin angezeigten Dialogfeld "Vertrauenswürdige IP hinzufügen" wählen Sie das Optionsfeld "Eine IP", "IP-Bereich" oder "Subnetz" aus.
 4. Geben Sie die IP-Adresse, den IP-Adressbereich oder das Subnetz ein, das der Positivliste hinzugefügt werden soll. Wenn Sie ein Subnetz eingeben, wählen Sie die entsprechende Netzmaske aus, und klicken Sie auf die Schaltfläche "OK". Der Eintrag wird der Positivliste hinzugefügt.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

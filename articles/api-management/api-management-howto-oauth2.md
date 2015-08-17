@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/10/2015" 
+	ms.date="08/05/2015" 
 	ms.author="sdanie"/>
 
 # So autorisieren Sie Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management
@@ -120,7 +120,7 @@ Nun können Sie die gewünschten Werte für die restlichen Parameter konfigurier
 
 ## Nächste Schritte
 
-Weitere Informationen zur Verwendung von OAuth 2.0 und API Management finden Sie im folgenden Video.
+Weitere Informationen zur Verwendung von OAuth 2.0 und API Management finden Sie im folgenden Video und dem zugehörigen [Artikel](api-management-howto-protect-backend-with-aad.md).
 
 > [AZURE.VIDEO protecting-web-api-backend-with-azure-active-directory-and-api-management]
 
@@ -160,4 +160,4 @@ Weitere Informationen zur Verwendung von OAuth 2.0 und API Management finden Si
 [Test the OAuth 2.0 user authorization in the Developer Portal]: #step3
 [Next steps]: #next-steps
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

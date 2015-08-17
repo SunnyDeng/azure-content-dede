@@ -7,6 +7,7 @@
    manager="dwrede" 
    editor=""/>
 
+
 <tags
    ms.service="mobile-engagement"
    ms.devlang="na"
@@ -15,6 +16,7 @@
    ms.workload="mobile" 
    ms.date="06/18/2015"
    ms.author="piyushjo"/>
+
 
 # Handbuch zur Problembehandlung bei Push und Reach
 
@@ -30,7 +32,7 @@ Im Folgenden finden Sie mögliche Probleme, die beim Senden von Informationen du
 - Testen Sie nur einen App-internen Push und einen App-externen Push um zu ermitteln, ob es sich um einen Fehler innerhalb oder außerhalb der App handelt.
 - Führen Sie den Test im Rahmen der Problembehandlung sowohl über die Benutzeroberfläche als auch über die API durch, und prüfen Sie, welche zusätzlichen Fehlerinformationen jeweils verfügbar sind.
 - App-externe Pushvorgänge funktionieren nur dann, wenn sowohl Azure Mobile Engagement als auch Reach in das SDK integriert wurden.
-- Pushvorgänge werden nicht ausgeführt, wenn Zertifikate ungültig sind oder PROD bzw. DEV nicht ordnungsgemäß verwenden (nur iOS). (** Hinweis: ** App-externe Pushbenachrichtigungen werden möglicherweise nicht an iOS übermittelt, wenn auf demselben Gerät die Entwicklungsversion (DEV) und Produktionsversion (PROD) der Anwendung installiert ist, da das Sicherheitstoken für das Zertifikat möglicherweise von Apple für ungültig erklärt wurde. Um dieses Problem zu beheben, deinstallieren Sie die DEV- und PROD-Version der Anwendung, und installieren Sie dann nur eine Version auf dem Gerät.)
+- Pushvorgänge werden nicht ausgeführt, wenn Zertifikate ungültig sind oder PROD bzw. DEV ordnungsgemäß (nur iOS). (**Hinweis:** „App-externe“ Pushbenachrichtigungen werden möglicherweise nicht an iOS übermittelt, wenn auf demselben Gerät die Entwicklungsversion (DEV) und Produktionsversion (PROD) der Anwendung installiert ist, da das Sicherheitstoken für das Zertifikat möglicherweise von Apple für ungültig erklärt wurde. Um dieses Problem zu beheben, deinstallieren Sie die DEV- und PROD-Version der Anwendung, und installieren Sie dann nur eine Version auf dem Gerät.)
 - App-externe Pushvorgänge werden auf den verschiedenen Plattformen unterschiedlich verarbeitet (iOS zeigt weniger Informationen an als Android, wenn systemeigene Pushvorgänge auf einem Gerät deaktiviert werden, die API stellt mehr Informationen zu Pushstatistiken bereit als die Benutzeroberfläche).
 - App-externe Pushvorgänge können von Kunden auf Betriebssystemebene blockiert werden (iOS und Android).
 - App-externe Pushvorgänge werden in der Azure Mobile Engagement-Benutzeroberfläche als deaktiviert angezeigt, wenn sie nicht ordnungsgemäß integriert wurden. Bei der API hingegen treten nur "stille" Fehler (ohne Fehlermeldung) auf.
@@ -67,7 +69,7 @@ Im Folgenden finden Sie mögliche Probleme, die beim Senden von Informationen du
 ### Ursachen
 
 - Für eine Verlinkung mit einem spezifischen App-internen Speicherort sind "categories" erforderlich (nur Android).
-- Deep-Linking-Schemas zum Umleiten von Benutzern zu einem alternativen Speicherort nach dem Klicken auf eine Pushbenachrichtigung müssen von der Anwendung und dem Betriebssystem des Geräts statt direkt von Mobile Engagement verwaltet werden. (** Hinweis: ** Unter iOS können App-externe Benachrichtigungen nicht wie unter Android direkt mit App-internen Speicherorten verlinkt werden.)
+- Deep-Linking-Schemas zum Umleiten von Benutzern zu einem alternativen Speicherort nach dem Klicken auf eine Pushbenachrichtigung müssen von der Anwendung und dem Betriebssystem des Geräts statt direkt von Mobile Engagement verwaltet werden. (**Hinweis:** Unter iOS können App-externe Benachrichtigungen nicht wie unter Android direkt mit App-internen Speicherorten verlinkt werden.)
 - Externe Imageserver müssen in der Lage sein, HTTP "GET" und "HEAD" zu verwenden, damit Pushvorgänge für große Bilder funktionieren (nur Android).
 - Sie können in Ihrem Code den Azure Mobile Engagement-Agent deaktivieren, wenn die Tastatur geöffnet ist, und den Azure Mobile Engagement-Agent erneut aktivieren, wenn die Tastatur geschlossen wurde. So verhindern Sie, dass die Tastatur das Aussehen Ihrer Benachrichtigung beeinflusst (nur iOS).
 - Einige Elemente funktionieren in Testsimulationen nicht, in realen Kampagnen schon (Badge, Klingeln, Vibrieren, Bild usw.).
@@ -110,4 +112,4 @@ Im Folgenden finden Sie mögliche Probleme, die beim Senden von Informationen du
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

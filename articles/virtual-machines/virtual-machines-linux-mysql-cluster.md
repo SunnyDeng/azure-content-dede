@@ -310,15 +310,15 @@ Stellen Sie nach einigen Sekunden und bei Verwendung von `sudo crm_mon –L` sic
 
 Der folgende Screenshot zeigt `crm_mon` mit einem angehaltenen Knoten (Beenden mit STRG-C).
 
-![crm_mon node stopped](media/virtual-machines-linux-mysql-cluster/image002.png)
+![crm\_mon node stopped](media/virtual-machines-linux-mysql-cluster/image002.png)
 
 Und dieser Screenshot zeigt beide Knoten, einen Master- und einen Detailknoten:
 
-![crm_mon operational master/slave](media/virtual-machines-linux-mysql-cluster/image003.png)
+![crm\_mon operational master/slave](media/virtual-machines-linux-mysql-cluster/image003.png)
 
 ## Testen
 
-Nun sind wir bereit für eine automatische Failoversimulation. Dies kann auf zwei Arten erreicht werden: "soft" und "hard". Die Variante "soft" verwendet die Funktion zum Herunterfahren des Clusters: ``crm_standby -U `uname -n` -v on`` Wenn diese auf dem Master verwendet wird, übernimmt der Detailknoten. Denken Sie daran, dies wieder auf "off" zurückzusetzen. (Ansonsten informiert Sie "crm_mon", dass sich ein Knoten im Standbymodus befindet.)
+Nun sind wir bereit für eine automatische Failoversimulation. Dies kann auf zwei Arten erreicht werden: "soft" und "hard". Die Variante "soft" verwendet die Funktion zum Herunterfahren des Clusters: ``crm_standby -U `uname -n` -v on`` Wenn diese auf dem Master verwendet wird, übernimmt der Detailknoten. Denken Sie daran, dies wieder auf "off" zurückzusetzen. (Ansonsten informiert Sie "crm\_mon", dass sich ein Knoten im Standbymodus befindet.)
 
 Bei der harten Variante wird der primäre virtuelle Computer (hadb01) über das Portal heruntergefahren, oder es wird die Ausführungsebene des virtuellen Computers geändert (d. h. anhalten, herunterfahren), dann helfen wir Corosync und Pacemaker, indem wir signalisieren, dass der Master herunterfährt. Sie können dies testen (nützlich für Wartungsfenster). Wir können das Szenario jedoch auch erzwingen, indem wir einfach den virtuellen Computer einfrieren.
 
@@ -348,4 +348,4 @@ Es gelten die folgenden Einschränkungen:
 - Die Schreibleistung hängt vom Interconnect des virtuellen Computers im virtuellen Switch ab, da es sich hierbei um den Mechanismus handelt, der durch DRBD zum Replizieren des Geräts verwendet wird.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -18,9 +18,9 @@
 
 #Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory
 
-Um Sie bei der Integration Ihrer gesamten Cloudanwendungen \(SaaS\) in Azure Active Directory zu unterstützen, haben wir eine Sammlung von Tutorials entwickelt, in denen alle erforderlichen Konfigurationsschritte gezeigt werden.
+Um Sie bei der Integration Ihrer gesamten Cloudanwendungen (SaaS) in Azure Active Directory zu unterstützen, haben wir eine Sammlung von Tutorials entwickelt, in denen alle erforderlichen Konfigurationsschritte gezeigt werden.
 
-Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [Active Directory-Marketplace](https://azure.microsoft.com/en-us/marketplace/active-directory/).
+Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [Active Directory-Marketplace](https://azure.microsoft.com/de-de/marketplace/active-directory/).
 
 ##Liste der Tutorials
 
@@ -151,8 +151,7 @@ Logo | App-Name
 ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Zscaler.jpg) | [Zscaler One](https://go.microsoft.com/fwLink/?LinkID=512737&clcid=0x409)
 ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Zscaler.jpg) | [Zscaler Two](https://go.microsoft.com/fwLink/?LinkID=512734&clcid=0x409)
 
-##Siehe auch
 
-- [Anwendungszugriff](https://msdn.microsoft.com/library/azure/dn308590.aspx)
+[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

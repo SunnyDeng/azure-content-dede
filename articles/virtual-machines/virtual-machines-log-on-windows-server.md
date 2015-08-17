@@ -20,7 +20,7 @@
 
 # Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird#
 
-Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Portal zum Starten einer Remotedesktopsitzung. \(Weitere Informationen zu virtuellen Linux-Computern finden Sie unter [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md).\)
+Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Portal zum Starten einer Remotedesktopsitzung. (Weitere Informationen zu virtuellen Linux-Computern finden Sie unter [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md).)
 
 ## Anmelden
 
@@ -36,4 +36,4 @@ Wenn Sie Probleme mit Ihrem Kennwort haben, setzen Sie es über das Portal zurü
 
 Wenn diese Tipps nicht helfen, müssen Sie eine ausführlichere Problembehandlung durchführen. Anweisungen finden Sie unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

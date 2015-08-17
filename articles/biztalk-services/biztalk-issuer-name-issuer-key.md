@@ -55,7 +55,7 @@ Alternativ können Sie auf **ACS-Verwaltungsportal öffnen** klicken, um die Acc
 
 Im linken Navigationsbereich können Sie außerdem **Active Directory** auswählen, um die Access Control-Werte abzurufen.
 
-> [AZURE.IMPORTANT]Wenn Sie einen Access Control-Namespace mit <strong>Active Directory</strong> erstellen, wird die Dienstidentität **nicht** automatisch erstellt. Wenn Sie einen BizTalk Service einrichten, werden automatisch ein Access Control-Namespace, eine Dienstidentität mit dem Namen "owner" (Ausstellername), ein Kennwort (Ausstellerschlüssel) und ein symmetrischer Schlüssel erstellt.<br /> [Verwenden des ACS-Verwaltungsdiensts zum Konfigurieren von Dienstidentitäten](http://go.microsoft.com/fwlink/p/?LinkID=303942) bietet weitere Informationen zu Access Control-Dienstidentitäten.
+> [AZURE.IMPORTANT]Wenn Sie einen Access Control-Namespace mit **Active Directory** erstellen, wird die Dienstidentität **nicht** automatisch erstellt. Wenn Sie einen BizTalk Service einrichten, werden automatisch ein Access Control-Namespace, eine Dienstidentität mit dem Namen "owner" (Ausstellername), ein Kennwort (Ausstellerschlüssel) und ein symmetrischer Schlüssel erstellt.<br /> [Verwenden des ACS-Verwaltungsdiensts zum Konfigurieren von Dienstidentitäten](http://go.microsoft.com/fwlink/p/?LinkID=303942) bietet weitere Informationen zu Access Control-Dienstidentitäten.
 
 
 ## Service Bus-Ausstellername und -schlüssel
@@ -86,4 +86,4 @@ Zusätzliche Azure BizTalk Services-Themen:
 - [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

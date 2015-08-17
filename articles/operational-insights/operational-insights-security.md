@@ -22,21 +22,21 @@
 
 Microsoft ist bestrebt, bei der Bereitstellung von Software und Diensten, mit denen Sie die IT-Infrastruktur Ihres Unternehmens verwalten, Ihre Privatsphäre und Ihre Daten zu schützen. Wenn Sie Ihre Daten anderen anvertrauen, setzt dieses Vertrauen strikte Sicherheit voraus. Das wissen wir. Microsoft hält strenge Compliance- und Sicherheitsrichtlinien ein – angefangen bei der Codierung bis hin zum Betreiben von Diensten.
 
-Das Sichern und Schützen von Daten hat bei Microsoft oberste Priorität. Wenden Sie sich unter den [Azure-Supportoptionen](http://azure.microsoft.com/support/options/) an uns, wenn Sie Fragen, Vorschläge oder Probleme bezüglich der folgenden Informationen \(einschließlich unserer Sicherheitsrichtlinien\) haben.
+Das Sichern und Schützen von Daten hat bei Microsoft oberste Priorität. Wenden Sie sich unter den [Azure-Supportoptionen](http://azure.microsoft.com/support/options/) an uns, wenn Sie Fragen, Vorschläge oder Probleme bezüglich der folgenden Informationen (einschließlich unserer Sicherheitsrichtlinien) haben.
 
-In diesem Artikel wird erläutert, wie Daten in der Operations Management Suite \(OMS\) gesammelt, verarbeitet und geschützt werden. Vorher hieß die Suite Microsoft Azure Operational Insights. Sie können entweder Agents mit direkter Verbindung zum Webdienst oder zu System Center Operations Manager verwenden, um betriebliche Daten für den OMS-Dienst zu sammeln. Die gesammelten Daten werden über das Internet an den OMS-Dienst gesendet, der in Microsoft Azure gehostet wird.
+In diesem Artikel wird erläutert, wie Daten in der Operations Management Suite (OMS) gesammelt, verarbeitet und geschützt werden. Vorher hieß die Suite Microsoft Azure Operational Insights. Sie können entweder Agents mit direkter Verbindung zum Webdienst oder zu System Center Operations Manager verwenden, um betriebliche Daten für den OMS-Dienst zu sammeln. Die gesammelten Daten werden über das Internet an den OMS-Dienst gesendet, der in Microsoft Azure gehostet wird.
 
 Der OMS-Dienst verwaltet Ihre Daten sicher mithilfe der folgenden Methoden:
 
 **Trennung von Daten**: Kundendaten werden für jede Komponente des OMS-Diensts logisch getrennt verwaltet. Sämtliche Daten werden nach Organisation gekennzeichnet. Dieser Kennzeichnung wird während des gesamten Datenlebenszyklus beibehalten und auf jeder Ebene des Diensts erzwungen.
 
-Jeder Kunde verfügt über einen dedizierten Azure-Blob \(Speicher\), der die langfristigen Daten enthält. Dieser Blob wird verschlüsselt. Dazu werden kundenbezogene, eindeutige Schlüssel verwendet, die alle 90 Tage geändert werden.
+Jeder Kunde verfügt über einen dedizierten Azure-Blob (Speicher), der die langfristigen Daten enthält. Dieser Blob wird verschlüsselt. Dazu werden kundenbezogene, eindeutige Schlüssel verwendet, die alle 90 Tage geändert werden.
 
-**Datenaufbewahrung**: Die gesammelten Metriken für einige der Lösungen \(früher als "Intelligence Pack" bezeichnet\) wie beispielsweise Capacity Management werden in einer von Microsoft Azure gehosteten SQL-Datenbank gespeichert. Diese Daten werden für 390 Tage gespeichert. Die Daten der indizierten Protokollsuche werden gemäß des Preisplans gespeichert und beibehalten. Weitere Informationen finden Sie auf unserer [Preisseite](http://azure.microsoft.com/pricing/details/operational-insights/).
+**Datenaufbewahrung**: Die gesammelten Metriken für einige der Lösungen (früher als "Intelligence Pack" bezeichnet) wie beispielsweise Capacity Management werden in einer von Microsoft Azure gehosteten SQL-Datenbank gespeichert. Diese Daten werden für 390 Tage gespeichert. Die Daten der indizierten Protokollsuche werden gemäß des Preisplans gespeichert und beibehalten. Weitere Informationen finden Sie auf unserer [Preisseite](http://azure.microsoft.com/pricing/details/operational-insights/).
 
-**Physische Sicherheit**: Der OMS-Dienst ist mit Microsoft-Mitarbeitern besetzt. Alle Aktivitäten werden protokolliert und können überwacht werden. Der OMS-Dienst wird vollständig in Azure ausgeführt und erfüllt die allgemeinen technischen Kriterien für Azure. Ausführliche Informationen über die physische Sicherheit der Azure-Ressourcen finden Sie auf Seite 18 des Dokuments [Windows Azure Security Overview](http://download.microsoft.com/download/6/0/2/6028B1AE-4AEE-46CE-9187-641DA97FC1EE/Windows%20Azure%20Security%20Overview%20v1.01.pdf) \(in englischer Sprache\).
+**Physische Sicherheit**: Der OMS-Dienst ist mit Microsoft-Mitarbeitern besetzt. Alle Aktivitäten werden protokolliert und können überwacht werden. Der OMS-Dienst wird vollständig in Azure ausgeführt und erfüllt die allgemeinen technischen Kriterien für Azure. Ausführliche Informationen über die physische Sicherheit der Azure-Ressourcen finden Sie auf Seite 18 des Dokuments [Windows Azure Security Overview](http://download.microsoft.com/download/6/0/2/6028B1AE-4AEE-46CE-9187-641DA97FC1EE/Windows%20Azure%20Security%20Overview%20v1.01.pdf) (in englischer Sprache).
 
-**Compliance und Zertifizierungen**: Das Softwareentwicklungs- und Serviceteam für OMS arbeitet aktiv mit den Microsoft Legal- und Compliance-Teams und anderen Partnern der Branche zusammen, um eine Vielzahl von Zertifizierungen \(einschließlich ISO\) zu erhalten.
+**Compliance und Zertifizierungen**: Das Softwareentwicklungs- und Serviceteam für OMS arbeitet aktiv mit den Microsoft Legal- und Compliance-Teams und anderen Partnern der Branche zusammen, um eine Vielzahl von Zertifizierungen (einschließlich ISO) zu erhalten.
 
 Derzeit erfüllen wir die folgenden Sicherheitsstandards:
 
@@ -51,7 +51,7 @@ Das folgende Diagramm zeigt den Informationsfluss von Ihrem Unternehmen und dess
 
 ### 1\. Registrieren für OMS und Sammeln von Daten
 
-Damit Ihre Organisation Daten an den OMS-Dienst senden kann, müssen Sie entweder Microsoft Monitoring Agents konfigurieren, wenn Sie eine direkte Verbindung mit dem Webdienst vornehmen, oder einen Konfigurations-Assistenten in der Betriebskonsole in Operations Manager verwenden. Benutzer \(Sie, andere Einzelbenutzer oder eine Gruppe von Personen\) müssen OMS-Konten erstellen und jeden direkt verbundenen Agent bzw. ihre Operations Manager-Umgebung mithilfe eines der folgenden Konten registrieren:
+Damit Ihre Organisation Daten an den OMS-Dienst senden kann, müssen Sie entweder Microsoft Monitoring Agents konfigurieren, wenn Sie eine direkte Verbindung mit dem Webdienst vornehmen, oder einen Konfigurations-Assistenten in der Betriebskonsole in Operations Manager verwenden. Benutzer (Sie, andere Einzelbenutzer oder eine Gruppe von Personen) müssen OMS-Konten erstellen und jeden direkt verbundenen Agent bzw. ihre Operations Manager-Umgebung mithilfe eines der folgenden Konten registrieren:
 
 
 - [Organisations-ID](../sign-up-organization.md)
@@ -62,7 +62,7 @@ In einem OMS-Konto werden Daten gesammelt, aggregiert, analysiert und präsentie
 
 Wenn der Konfigurations-Assistent abgeschlossen ist, stellt jede Operations Manager-Verwaltungsgruppe eine Verbindung mit dem OMS-Dienst her. Sie wählen dann mit dem Assistenten zum Hinzufügen von Computern aus, welche Computer in der Verwaltungsgruppe Daten an den Dienst senden können.
 
-Beide Typen von Agents sammeln Daten für OMS. Der Typ der gesammelten Daten ist abhängig von den Typen der verwendeten Lösungen. Eine Lösung ist ein Bündel von vordefinierten Ansichten, Protokollsuchabfragen, Datensammlungsregeln und Verarbeitungslogik. Nur OMS-Administratoren können OMS zum Importieren einer Projektmappe verwenden. Nach dem Importieren der Lösung wird diese auf die Operations Manager-Verwaltungsserver verschoben \(sofern verwendet\) und dann auf die ausgewählten Operations Manager Agents. Anschließend sammeln die Agents die Daten.
+Beide Typen von Agents sammeln Daten für OMS. Der Typ der gesammelten Daten ist abhängig von den Typen der verwendeten Lösungen. Eine Lösung ist ein Bündel von vordefinierten Ansichten, Protokollsuchabfragen, Datensammlungsregeln und Verarbeitungslogik. Nur OMS-Administratoren können OMS zum Importieren einer Projektmappe verwenden. Nach dem Importieren der Lösung wird diese auf die Operations Manager-Verwaltungsserver verschoben (sofern verwendet) und dann auf die ausgewählten Operations Manager Agents. Anschließend sammeln die Agents die Daten.
 
 Die folgende Tabelle enthält die verfügbaren Lösungen in OMS und die Typen der von ihnen gesammelten Daten.
 
@@ -107,4 +107,4 @@ Der OMS-Dienst verarbeitet die Rohdaten, und die aggregierten verarbeiteten Date
 
 Sie können sich über das zuvor eingerichtete Konto bei OMS anmelden. Der gesamte Datenverkehr zwischen OMS und dem OMS-Dienst wird über einen sicheren HTTPS-Kanal gesendet.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

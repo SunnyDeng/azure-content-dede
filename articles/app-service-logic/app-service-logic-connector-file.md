@@ -33,7 +33,7 @@ Zur Verwendung des Datei-Connectors müssen Sie zunächst eine Instanz der Datei
 
 	- **Name** – Geben Sie einen Namen für den Datei-Connector ein.
 	- **Paketeinstellungen**
-		- **Stammordner** - Geben Sie den Pfad des Stammordners auf dem Hostcomputer an. Z. B. D:\FileConnectorTest
+		- **Stammordner** - Geben Sie den Pfad des Stammordners auf dem Hostcomputer an. Z. B. D:\\FileConnectorTest
 		- **Service Bus-Verbindungszeichenfolge** - Geben Sie eine Dienstbus-Verbindungszeichenfolge an. Stellen Sie sicher, dass der Service Bus-Namespace vom Typ "Standard" ist und NICHT "Basic", um Service Bus Relays zu ermöglichen. Service Bus Relay wird für die Verbindung mit dem Hybrid Connection Manager verwendet.
 	- **App Service-Plan** - Wählen oder erstellen Sie einen App Service-Plan.
 	- **Tarif** – Wählen Sie einen Tarif für den Connector.
@@ -85,4 +85,4 @@ Ausführliche Informationen zu den APIs finden sie unter [File Connector (in eng
 [File Connector (in englischer Sprache)]: https://msdn.microsoft.com/en-US/library/dn936296.aspx
 [Hybrid Connection Manager verwenden]: app-service-logic-hybrid-connection-manager.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

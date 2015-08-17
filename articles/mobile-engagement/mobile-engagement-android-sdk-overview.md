@@ -35,7 +35,7 @@ Klicken Sie, um den [SDK-Inhalt](mobile-engagement-android-sdk-content.md) anzuz
 
 ##Versionshinweise
 
-###4.0.0 (06.07.2015)
+###4\.0.0 (06.07.2015)
 
 -   Interne Protokolländerungen zur Steigerung der Zuverlässigkeit von Analysen und Push
 -   Ein systemeigener Push (GCM/ADM) wird jetzt auch für In-App-Benachrichtigungen verwendet, Sie müssen daher die Anmeldeinformationen für den systemeigenen Push für jeden Push-Kampagnentyp konfigurieren.
@@ -118,4 +118,4 @@ Möglicherweise wird jetzt ein Ladebildschirm angezeigt, wenn Sie auf eine Ankü
 
 Betten Sie die neue `res/layout/engagement_loading.xml`-Datei in Ihr Projekt ein.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -7,6 +7,7 @@
     manager="timlt"
     editor=""/>
 
+
 <tags
     ms.service="service-bus"
     ms.workload="tbd"
@@ -15,6 +16,7 @@
     ms.topic="get-started-article"
     ms.date="07/02/2015"
     ms.author="sethm"/>
+
 
 # Verwenden von Servicebus-Warteschlangen
 
@@ -45,26 +47,27 @@ Sie können nun Code für Service Bus erstellen.
 
 Service Bus verwendet eine Verbindungszeichenfolge zum Speichern von Endpunkten und Anmeldeinformationen. Sie können die Verbindungszeichenfolge in einer Konfigurationsdatei ablegen, statt sie fest zu programmieren:
 
-- Bei der Verwendung von Azure-Cloud-Diensten empfiehlt es sich, die Verbindungszeichenfolge mithilfe des Azure-Dienstkonfigurationssystems (Dateien ***.csdef** und ***.cscfg**) zu speichern.
+- Bei der Verwendung von Azure-Clouddiensten empfiehlt es sich, die Verbindungszeichenfolge mithilfe des Azure-Dienstkonfigurationssystems (Dateien ***\*.csdef** and ***\*.cscfg**) zu speichern.
 - Bei der Verwendung von Azure-Websites oder Azure Virtual Machines sollten Sie Ihre Verbindungszeichenfolge mithilfe des .NET-Konfigurationssystems speichern (z. B. die **Web.config**-Datei).
 
 In beiden Fällen können Sie Ihre Verbindungszeichenfolge über die `CloudConfigurationManager.GetSetting`-Methode abrufen, wie später in dieser Anleitung beschrieben.
 
 ### Konfigurieren der Verbindungszeichenfolge bei Verwendung von Cloud Services
 
-Azure-Cloud-Dienst-Projekte bieten einen einzigartigen Dienstkonfigurationsmechanismus, mit dem Sie Ihre Konfigurationseinstellungen im Azure-Verwaltungsportal dynamisch ändern können, ohne Ihre Anwendung neu bereitstellen zu müssen. Fügen Sie beispielsweise der Dienstdefinitionsdatei (***.csdef**) eine `Setting`-Bezeichnung hinzu, wie nachfolgend gezeigt:
+Azure-Cloud-Dienst-Projekte bieten einen einzigartigen Dienstkonfigurationsmechanismus, mit dem Sie Ihre Konfigurationseinstellungen im Azure-Verwaltungsportal dynamisch ändern können, ohne Ihre Anwendung neu bereitstellen zu müssen. Fügen Sie beispielsweise der Dienstdefinitionsdatei (***\*.csdef**) eine `Setting`-Bezeichnung hinzu, wie nachfolgend gezeigt:
 
     <ServiceDefinition name="Azure1">
     ...
         <WebRole name="MyRole" vmsize="Small">
             <ConfigurationSettings>
                 <Setting name="Microsoft.ServiceBus.ConnectionString" />
+
             </ConfigurationSettings>
         </WebRole>
     ...
     </ServiceDefinition>
 
-Anschließend geben Sie Werte in der Dienstkonfigurationsdatei (***.cscfg**) an:
+Anschließend geben Sie Werte in der Dienstkonfigurationsdatei (***\*.cscfg**) an:
 
     <ServiceConfiguration serviceName="Azure1">
     ...
@@ -72,6 +75,7 @@ Anschließend geben Sie Werte in der Dienstkonfigurationsdatei (***.cscfg**) an:
             <ConfigurationSettings>
                 <Setting name="Microsoft.ServiceBus.ConnectionString"
                          value="Endpoint=sb://yourServiceNamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourKey" />
+
             </ConfigurationSettings>
         </Role>
     ...
@@ -81,12 +85,13 @@ Verwenden Sie die aus dem Verwaltungsportal abgerufenen SAS-Schlüsselwerte und 
 
 ### Konfigurieren der Verbindungszeichenfolge bei Verwendung von Websites oder virtuellen Computern
 
-Bei der Verwendung von Websites oder Virtual Machines sollten Sie das .NET-Konfigurationssystem verwenden (z. B. **Web.config**). Sie speichern die Verbindungszeichenfolge mit dem `<appSettings>`-Element:
+Bei der Verwendung von Websites oder virtuellen Computern wird es empfohlen, das .NET-Konfigurationssystem zu verwenden (z. B. **Web.config**). Sie speichern die Verbindungszeichenfolge mit dem `<appSettings>`-Element:
 
     <configuration>
         <appSettings>
             <add key="Microsoft.ServiceBus.ConnectionString"
                  value="Endpoint=sb://yourServiceNamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourKey" />
+
         </appSettings>
     </configuration>
 
@@ -149,9 +154,9 @@ Der folgende Code veranschaulicht, wie ein [`QueueClient`](https://msdn.microsof
 
     Client.Send(new BrokeredMessage());
 
-Nachrichten, die an die Service Bus-Warteschlangen gesendet werden (und von diesen empfangen werden), sind Instanzen der [`BrokeredMessage`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx)-Klasse. `BrokeredMessage`-Objekte verfügen über einen Satz von Standardeigenschaften (z. B. [`Label`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) und [`TimeToLive`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), ein Wörterbuch, in dem benutzerdefinierte anwendungsspezifische Eigenschaften enthalten sind, sowie einen Bestand beliebiger Anwendungsdaten. Eine Anwendung kann den Textkörper der Nachricht festlegen, indem ein beliebiges serialisierbares Objekt an den Konstruktor des [`BrokeredMessage`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx)-Objekts übergeben wird. Das entsprechende **DataContractSerializer-Objekt** wird dann zum Serialisieren des Objekts verwendet. Alternativ kann ein **System.IO.Stream**-Objekt zur Verfügung gestellt werden.
+Nachrichten, die an die Service Bus-Warteschlangen gesendet werden (und von diesen empfangen werden), sind Instanzen der [`BrokeredMessage`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx)-Klasse. `BrokeredMessage`-Objekte verfügen über einen Satz von Standardeigenschaften (z. B. [`Label`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) und [`TimeToLive`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), ein Wörterbuch, in dem benutzerdefinierte anwendungsspezifische Eigenschaften enthalten sind, sowie einen Bestand beliebiger Anwendungsdaten. Eine Anwendung kann den Textkörper der Nachricht festlegen, indem ein beliebiges serialisierbares Objekt an den Konstruktor des [`BrokeredMessage`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx)-Objekts übergeben wird. Der entsprechende **DataContractSerializer** wird dann zum Serialisieren des Objekts verwendet. Alternativ kann ein **System.IO.Stream**-Objekt zur Verfügung gestellt werden.
 
-Das folgende Beispiel zeigt, wie fünf Testnachrichten an das [`QueueClient`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx)-Objekt "TestQueue" gesendet werden, der im vorherigen Codeausschnitt abgerufen wurde:
+Das folgende Beispiel zeigt, wie fünf Testnachrichten an das [`QueueClient`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx)-Objekt "TestQueue" gesendet werden, das im vorherigen Codeausschnitt abgerufen wurde:
 
      for (int i=0; i<5; i++)
      {
@@ -166,13 +171,13 @@ Das folgende Beispiel zeigt, wie fünf Testnachrichten an das [`QueueClient`](ht
        Client.Send(message);
      }
 
-Servicebus-Warteschlangen unterstützen eine [maximale Nachrichtengröße von 256 KB](service-bus-quotas.md) (der Header, der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 KB haben). Bei der Anzahl der Nachrichten, die in einer Warteschlange aufgenommen werden können, besteht keine Beschränkung. Allerdings gilt eine Deckelung bei der Gesamtgröße der in einer Warteschlange aufzunehmenden Nachrichten. Die Warteschlangengröße wird bei der Erstellung definiert. Die Obergrenze beträgt 5 GB. Wenn Partitionierung aktiviert ist, ist die Obergrenze höher. Weitere Informationen finden Sie unter [Partitionieren von Nachrichtenentitäten](https://msdn.microsoft.com/library/azure/dn520246.aspx).
+Service Bus-Warteschlangen unterstützen eine [maximale Nachrichtengröße von 256 KB](service-bus-quotas.md) (der Header, der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 KB haben). Bei der Anzahl der Nachrichten, die in einer Warteschlange aufgenommen werden können, besteht keine Beschränkung. Allerdings gilt eine Deckelung bei der Gesamtgröße der in einer Warteschlange aufzunehmenden Nachrichten. Die Warteschlangengröße wird bei der Erstellung definiert. Die Obergrenze beträgt 5 GB. Wenn Partitionierung aktiviert ist, ist die Obergrenze höher. Weitere Informationen finden Sie unter [Partitionieren von Nachrichtenentitäten](https://msdn.microsoft.com/library/azure/dn520246.aspx).
 
 ## Empfangen von Nachrichten aus einer Warteschlange
 
 Die empfohlene Methode zum Empfangen von Nachrichten aus einer Warteschlange ist die Verwendung eines [`QueueClient`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx)-Objekts. `QueueClient`-Objekte können in zwei verschiedenen Modi arbeiten: [`ReceiveAndDelete` und `PeekLock`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.receivemode.aspx).
 
-Bei Verwendung des Modus **ReceiveAndDelete** ist der Nachrichtenempfang ein Single-Shot-Vorgang. Wenn Service Bus also eine Leseanforderung für eine Nachricht in einer Warteschlange erhält, wird die Nachricht als verarbeitet gekennzeichnet und an die Anwendung zurückgegebenen. **ReceiveAndDelete** ist das einfachste Modell. Es wird am besten für Szenarien eingesetzt, bei denen es eine Anwendung tolerieren kann, wenn eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da die Nachricht von Service Bus als verarbeitet gekennzeichnet wurde, wird die vor dem Absturz verarbeitete Nachricht nicht berücksichtigt, wenn die Anwendung neu gestartet und die Verarbeitung von Nachrichten wieder aufgenommen wird.
+Bei Verwendung des Modus **ReceiveAndDelete** ist der Nachrichtenempfang ein Single-Shot-Vorgang. Wenn Service Bus also eine Leseanforderung für eine Nachricht in einer Warteschlange erhält, wird die Nachricht als verarbeitet gekennzeichnet und an die Anwendung zurückgegeben. **ReceiveAndDelete** ist das einfachste Modell. Es wird am besten für Szenarien eingesetzt, bei denen es eine Anwendung tolerieren kann, wenn eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da die Nachricht von Service Bus als verarbeitet gekennzeichnet wurde, wird die vor dem Absturz verarbeitete Nachricht nicht berücksichtigt, wenn die Anwendung neu gestartet und die Verarbeitung von Nachrichten wieder aufgenommen wird.
 
 Im Modus **PeekLock** (dies ist der Standardmodus) wird der Empfangsvorgang zu einem zweistufigen Vorgang. Dadurch können Anwendungen unterstützt werden, die das Auslassen bzw. Fehlen von Nachrichten nicht zulassen können. Wenn Service Bus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann zurück an die Anwendung. Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen hat (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat), führt Sie die zweite Phase des Empfangsprozesses durch Aufruf von [`Complete`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx) für die empfangene Nachricht durch. Wenn Service Bus den `Complete`-Aufruf erkennt, kennzeichnet der Dienst die Nachricht als verarbeitet und entfernt sie aus der Warteschlange.
 
@@ -245,4 +250,4 @@ Nachdem Sie nun mit den Grundlagen der Servicebus-Warteschlangen vertraut sind, 
   [MSDN]: https://msdn.microsoft.com/library/azure/dn194201.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

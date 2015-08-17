@@ -46,7 +46,7 @@ Wenn Ihre Organisation über einen Verbund mit Azure Active Directory verfügt u
 		</saml:Attribute>
 - Klicken Sie auf OK. Klicken Sie auf Fertig stellen. Schließen Sie die AD FS-Verwaltungskonsole.
 
-Benutzer können dann die Anmeldung mithilfe der lokalen Methode \(z. B. Smartcard\) abschließen.
+Benutzer können dann die Anmeldung mithilfe der lokalen Methode (z. B. Smartcard) abschließen.
 
 ## Vertrauenswürdige IPs für Partnerbenutzer
 Mit vertrauenswürdigen IPs können Administratoren die Multi-Factor Authentication für bestimmte IP-Adressen oder Partnerbenutzer umgehen, deren Anfragen aus dem eigenen Intranet stammen. In den folgenden Abschnitten wird beschrieben, wie Sie vertrauenswürdige IPs für die Azure Multi-Factor Authentication mit Partnerbenutzern konfigurieren und die Multi-Factor Authentication umgehen, wenn eine Anforderung aus dem Intranet eines Partnerbenutzers stammt. Hierzu wird für AD FS die Verwendung eines Passthrough-Elements oder für die Filterung einer Vorlage für einen eingehenden Anspruch mit dem Anspruchstyp „Innerhalb des Unternehmensnetzwerks“ konfiguriert. In diesem Beispiel wird Office 365 für die Vertrauensstellungen der vertrauenden Seite verwendet.
@@ -93,4 +93,4 @@ Da die Ansprüche jetzt vorhanden sind, können wir vertrauenswürdige IPs konfi
 
 Fertig! An diesem Punkt sollten Office 365-Partnerbenutzer nur MFA verwenden müssen, wenn ein Anspruch von außerhalb des Unternehmensintranets stammt.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

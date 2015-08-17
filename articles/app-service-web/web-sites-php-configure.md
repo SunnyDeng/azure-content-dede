@@ -69,7 +69,7 @@ Um die Azure-Befehlszeilenschnittstelle verwenden zu können, muss **Node.js** a
 
 Für jede integrierte PHP-Laufzeit können Sie alle Konfigurationsoptionen ändern, indem Sie folgende Schritte ausführen. (Informationen zu php.ini-Direktiven finden Sie unter [Liste der php.ini-Direktiven]).
 
-### Ändern von PHP_INI_USER, PHP_INI_PERDIR, PHP_INI_ALL-Konfigurationseinstellungen
+### Ändern von PHP\_INI\_USER, PHP\_INI\_PERDIR, PHP\_INI\_ALL-Konfigurationseinstellungen
 
 1. Fügen Sie eine [.user.ini]-Datei zum Stammverzeichnis hinzu.
 2. Fügen Sie der Datei `.user.ini` die Konfigurationseinstellungen hinzu, und verwenden Sie dieselbe Syntax wie für eine `php.ini`-Datei. Wenn Sie zum Beispiel die Einstellung `display_errors` aktivieren und die Einstellung `upload_max_filesize` auf 10 M festlegen möchten, enthält die Datei `.user.ini` diesen Text:
@@ -81,9 +81,9 @@ Für jede integrierte PHP-Laufzeit können Sie alle Konfigurationsoptionen ände
 3. Stellen Sie Ihre Web-App bereit.
 4. Starten Sie die Web-App neu. (Der Neustart ist erforderlich, da die Frequenz, mit der PHP `.user.ini`-Dateien liest, durch die Einstellung `user_ini.cache_ttl` geregelt wird. Dies ist eine Einstellung auf Systemebene, die standardmäßig 300 Sekunden (5 Minuten) beträgt. Durch einen Neustart der Web-App wird PHP gezwungen, die neuen Einstellungen in der `.user.ini`-Datei zu lesen.)
 
-Alternativ zur Verwendung einer`.user.ini`-Datei können Sie auch die Funktion [ini_set()] in Skripts verwenden, um Konfigurationsoptionen festzulegen, die keine Direktiven auf Systemebene sind.
+Alternativ zur Verwendung einer`.user.ini`-Datei können Sie auch die Funktion [ini\_set()] in Skripts verwenden, um Konfigurationsoptionen festzulegen, die keine Direktiven auf Systemebene sind.
 
-### Ändern der PHP_INI_SYSTEM-Konfigurationseinstellungen
+### Ändern der PHP\_INI\_SYSTEM-Konfigurationseinstellungen
 
 1. Hinzufügen einer App-Einstellung zu Ihrer Web-App mit Schlüssel `PHP_INI_SCAN_DIR` und Wert `d:\home\site\ini`
 2. Erstellen Sie eine `settings.ini`-Datei über die Kudu-Konsole (http://&lt;site-name&gt;.scm.azurewebsite.net) im Verzeichnis `d:\home\site\ini`.
@@ -120,7 +120,7 @@ Wie im vorherigen Anschnitt angegeben ist die Standardkonfiguration die beste M�
 	![Web-App-Einstellungen][settings-button]
 
 5. Wählen Sie auf dem Blatt **Einstellungen** die Option **Anwendungseinstellungen** aus, und führen Sie einen Bildlauf zum Bereich **App-Einstellungen** aus.
-6. Erstellen Sie im Bereich **App-Einstellungen** den Schlüssel **PHP_EXTENSIONS**. Der Wert für diesen Schlüssel ist ein Pfad relativ zum Stammverzeichnis der Website: **bin\your-ext-file**.
+6. Erstellen Sie im Bereich **App-Einstellungen** den Schlüssel **PHP\_EXTENSIONS**. Der Wert für diesen Schlüssel ist ein Pfad relativ zum Stammverzeichnis der Website: **bin\\your-ext-file**.
 
 	![Aktivieren Sie die Erweiterung in den App-Einstellungen][php-extensions]
 
@@ -128,7 +128,7 @@ Wie im vorherigen Anschnitt angegeben ist die Standardkonfiguration die beste M�
 
 	![Speichern Sie die Konfigurationseinstellungen][save-button]
 
-Zend-Erweiterungen werden bei Verwendung des Schlüssels **PHP_ZENDEXTENSIONS** ebenfalls unterstützt. Um mehrere Erweiterungen zu aktivieren, fügen Sie eine durch Trennzeichen getrennte Liste von `.dll`-Dateien für den Wert der App-Einstellung hinzu.
+Zend-Erweiterungen werden bei Verwendung des Schlüssels **PHP\_ZENDEXTENSIONS** ebenfalls unterstützt. Um mehrere Erweiterungen zu aktivieren, fügen Sie eine durch Trennzeichen getrennte Liste von `.dll`-Dateien für den Wert der App-Einstellung hinzu.
 
 
 ## Vorgehensweise: Verwenden einer benutzerdefinierten PHP-Laufzeit
@@ -162,7 +162,7 @@ Anstelle der PHP-Standardlaufzeit können App Service-Web-Apps auch eine PHP-Lau
 [select-php-version]: ./media/web-sites-php-configure/select-php-version.png
 [Liste der php.ini-Direktiven]: http://www.php.net/manual/en/ini.list.php
 [.user.ini]: http://www.php.net/manual/en/configuration.file.per-user.php
-[ini_set()]: http://www.php.net/manual/en/function.ini-set.php
+[ini\_set()]: http://www.php.net/manual/en/function.ini-set.php
 [application-settings]: ./media/web-sites-php-configure/application-settings.png
 [settings-button]: ./media/web-sites-php-configure/settings-button.png
 [save-button]: ./media/web-sites-php-configure/save-button.png
@@ -176,4 +176,4 @@ Anstelle der PHP-Standardlaufzeit können App Service-Web-Apps auch eine PHP-Lau
 [GETPHPVERPS]: ./media/web-sites-php-configure/ShowPHPVersion-PS.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -12,7 +12,7 @@
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="07/13/2015" 
 	ms.author="billmath"/>
 
@@ -27,7 +27,7 @@ Heutzutage möchten Benutzer auf Anwendungen sowohl lokal als auch in der Cloud 
 Die Einführung von Azure Active Directory vereinfacht den Zugriff auf diese Anwendungen und die Migration in die Cloud. Azure AD Connect bietet die folgenden Vorteile:
 
 - Die Benutzer können sich mit einer einzigen Identität sowohl in der Cloud als auch lokal anmelden. Das Merken mehrerer Benutzerpasswörter und -konten entfällt, und Administratoren entsteht kein Mehraufwand durch die Verwaltung mehrerer Konten.
-- Azure AD Connect stellt das einzige Tool samt Anleitungen zum Verbinden Ihrer lokalen Verzeichnisse mit Azure Active Directory dar. Nach der Installation implementiert und konfiguriert der Assistent alle Komponenten, die erforderlich sind, um Ihre Verzeichnisintegration einzurichten und auszuführen, einschließlich Synchronisierungsdiensten, Kennwortsynchronisierung oder Active Directory-Verbunddiensten \(AD FS\) sowie Voraussetzungen wie dem Azure AD PowerShell-Modul.
+- Azure AD Connect stellt das einzige Tool samt Anleitungen zum Verbinden Ihrer lokalen Verzeichnisse mit Azure Active Directory dar. Nach der Installation implementiert und konfiguriert der Assistent alle Komponenten, die erforderlich sind, um Ihre Verzeichnisintegration einzurichten und auszuführen, einschließlich Synchronisierungsdiensten, Kennwortsynchronisierung oder Active Directory-Verbunddiensten (AD FS) sowie Voraussetzungen wie dem Azure AD PowerShell-Modul.
 
 
 
@@ -52,7 +52,7 @@ Connect von Azure AD erleichtert diese Integration und vereinfacht die Verwaltun
 ----------------------------------------------------------------------------------------------------------
 ## Azure AD Connect herunterladen
 
-Für Ihre ersten Schritte mit Azure AD Connect können Sie die neuste Version über den folgenden Link herunterladen: [Download Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) \(in englischer Sprache\)
+Für Ihre ersten Schritte mit Azure AD Connect können Sie die neuste Version über den folgenden Link herunterladen: [Download Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771) (in englischer Sprache)
 
 ----------------------------------------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ Folgendes ist eine Liste der erforderlichen und unterstützenden Komponenten, di
 
 
 
-Die folgende Dokumentation hilft Ihnen beim Einstieg mit Azure Active Directory Connect. In dieser Dokumentation wird die Verwendung der Expressinstallation für Azure AD Connect behandelt. Informationen zur benutzerdefinierten Installation finden Sie unter [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md) \(in englischer Sprache\). Informationen zum Aktualisieren von DirSync auf Azure AD Connect finden Sie unter [Upgrading DirSync to Azure Active Directory Connect](active-directory-aadconnect-dirsync-upgrade-get-started.md) \(in englischer Sprache\).
+Die folgende Dokumentation hilft Ihnen beim Einstieg mit Azure Active Directory Connect. In dieser Dokumentation wird die Verwendung der Expressinstallation für Azure AD Connect behandelt. Informationen zur benutzerdefinierten Installation finden Sie unter [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md) (in englischer Sprache). Informationen zum Aktualisieren von DirSync auf Azure AD Connect finden Sie unter [Upgrading DirSync to Azure Active Directory Connect](active-directory-aadconnect-dirsync-upgrade-get-started.md) (in englischer Sprache).
 
 
 ### Vor der Installation von Azure AD Connect
@@ -126,7 +126,7 @@ Informationen zu weiteren Anforderungen für benutzerdefinierte Optionen, z. B.
 
 
 ### Expressinstallation von Azure AD Connect
-Die Auswahl der Express-Einstellungen ist die Standardoption und eines der häufigsten Szenarios. Auf diese Weise stellt Azure AD Connect die Synchronisierung mit der Kennwort-Hash-Synchronisierungsoption bereit. Dies gilt nur für eine einzige Gesamtstruktur und ermöglicht den Benutzern die Verwendung ihres lokalen Kennworts beim Anmelden in der Cloud. Bei Verwendung der Express-Einstellungen wird nach Abschluss der Installation automatisch eine Synchronisierung gestartet \(dies können Sie jedoch auch deaktivieren\). Mit dieser Option können Sie mit nur wenigen kurzen Klicks Ihr lokales Verzeichnis auf die Cloud erweitern.
+Die Auswahl der Express-Einstellungen ist die Standardoption und eines der häufigsten Szenarios. Auf diese Weise stellt Azure AD Connect die Synchronisierung mit der Kennwort-Hash-Synchronisierungsoption bereit. Dies gilt nur für eine einzige Gesamtstruktur und ermöglicht den Benutzern die Verwendung ihres lokalen Kennworts beim Anmelden in der Cloud. Bei Verwendung der Express-Einstellungen wird nach Abschluss der Installation automatisch eine Synchronisierung gestartet (dies können Sie jedoch auch deaktivieren). Mit dieser Option können Sie mit nur wenigen kurzen Klicks Ihr lokales Verzeichnis auf die Cloud erweitern.
 
 <center>![Willkommen bei Azure&#160;AD Connect](./media/active-directory-aadconnect-get-started/welcome.png)</center>
 
@@ -142,14 +142,15 @@ Die Auswahl der Express-Einstellungen ist die Standardoption und eines der häuf
 8. Geben Sie im Bildschirm "Mit AD DS verbinden" den Benutzernamen und das Kennwort für ein Enterprise-Administratorkonto ein. Klicken Sie auf **Weiter**.
 <center>![Willkommen bei Azure&#160;AD Connect](./media/active-directory-aadconnect-get-started/install4.png)</center>
 9. Klicken Sie im Bildschirm "Bereit zur Konfiguration" auf **Installieren**.
-	- Optional können Sie auf der Seite "Bereit zur Konfiguration" das Kontrollkästchen \*\*Starten Sie den Synchronisierungsvorgang, sobald die Anfangskonfiguration abgeschlossen wurde\*\* deaktivieren. Der Assistent konfiguriert dann zwar die Synchronisierung, die Aufgabe bleibt jedoch deaktiviert, sodass sie erst ausgeführt wird, wenn Sie sie in der Aufgabenplanung manuell aktivieren. Sobald die Aufgabe aktiviert ist, wird die Synchronisierung alle drei Stunden ausgeführt.
+	- Optional können Sie auf der Seite "Bereit zur Konfiguration" das Kontrollkästchen **Starten Sie den Synchronisierungsvorgang, sobald die Anfangskonfiguration abgeschlossen wurde** deaktivieren. Der Assistent konfiguriert dann zwar die Synchronisierung, die Aufgabe bleibt jedoch deaktiviert, sodass sie erst ausgeführt wird, wenn Sie sie in der Aufgabenplanung manuell aktivieren. Sobald die Aufgabe aktiviert ist, wird die Synchronisierung alle drei Stunden ausgeführt.
 	- Durch Aktivieren des entsprechenden Kontrollkästchens können Sie wahlweise auch die Konfiguration von Synchronisierungsdiensten für die **Exchange-Hybridbereitstellung** festlegen. Wenn Sie Exchange-Postfächer nicht gleichzeitig lokal und in der Cloud bereitstellen möchten, müssen Sie diese Option nicht aktivieren.
 
 <center>![Willkommen bei Azure&#160;AD Connect](./media/active-directory-aadconnect-get-started/readyinstall.png)</center>
 8. Klicken Sie nach Abschluss der Installation auf **Beenden**.
 
 
-<br> <br>
+
+
 
 Im Folgenden können Sie sich ein Video zur Expressinstallation ansehen:
 
@@ -183,7 +184,7 @@ Nachdem Ihre Benutzer in der Cloud synchronisiert wurden, müssen Sie ihnen nun 
 1. Melden Sie sich beim Azure-Portal als Administrator an.
 2. Wählen Sie im linken Bereich **Active Directory** aus.
 3. Doppelklicken Sie auf der Seite "Active Directory" auf das Verzeichnis mit den Benutzern, die Sie aktivieren möchten.
-4. Wählen Sie oben auf der Verzeichnisseite die Option **Lizenzen** aus.
+4. Wählen Sie oben auf der Seite des Verzeichnisses die Option **Lizenzen** aus.
 5. Wählen Sie auf der Seite "Lizenzen" die Option "Active Directory Premium" oder "Enterprise Mobility Suite" aus, und klicken Sie dann auf **Zuweisen**.
 6. Wählen Sie im Dialogfeld die Benutzer aus, denen Sie Lizenzen zuweisen möchten, und klicken Sie dann auf das Häkchen, um die Änderungen zu speichern.
 
@@ -228,9 +229,9 @@ Stagingmodus aktivieren | Hiermit können Sie Informationen bereitstellen, die s
 ### Zusätzliche Dokumentation
 Zusätzliche Dokumentation zur Verwendung von Azure AD Connect:
 
-- [Changing the Azure AD Connect default configuration](active-directory-aadconnect-whats-next-change-default-config.md) \(in englischer Sprache\)
-- [Using the Azure AD Connect Synchronization Rules Editor](active-directory-aadconnect-whats-next-synch-rules-editor.md) \(in englischer Sprache\)
-- [Using declarative provisioning](active-directory-aadconnect-whats-next-declarative-prov.md) \(in englischer Sprache\)
+- [Changing the Azure AD Connect default configuration](active-directory-aadconnect-whats-next-change-default-config.md) (in englischer Sprache)
+- [Using the Azure AD Connect Synchronization Rules Editor](active-directory-aadconnect-whats-next-synch-rules-editor.md) (in englischer Sprache)
+- [Using declarative provisioning](active-directory-aadconnect-whats-next-declarative-prov.md) (in englischer Sprache)
 
 Ein Teil der Dokumentation für Azure AD Sync ist noch immer relevant und gilt für Azure AD Connect. Obwohl jede Anstrengung unternommen wird, diese Dokumentation an Azure.com zu übermitteln, befindet sich ein Teil noch immer in der MSDN-Bibliothek. Zusätzliche Dokumentation finden Sie unter [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) und [Azure AD Sync auf MSDN](https://msdn.microsoft.com/library/azure/dn790204.aspx).
 
@@ -256,4 +257,4 @@ Ignite 2015-Präsentation über die Erweiterung lokaler Verzeichnisse in die Cl
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

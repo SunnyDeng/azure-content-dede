@@ -29,15 +29,15 @@ Zunächst müssen Sie in Tabelle M die Spalte **Name des virtuellen Computers** 
 
 Element | Name des virtuellen Computers | Gallery-Image | Mindestgröße
 --- | --- | --- | ---
-1. | ______________ (erster Domänencontroller, Beispiel: DC1) | Windows Server 2012 R2 Datacenter | A2 (Mittel)
-2. | ______________ (zweiter Domänencontroller, Beispiel: DC2) | Windows Server 2012 R2 Datacenter | A2 (Mittel)
-3. | ______________ (erster SQL Server-Computer, Beispiel: SQL1) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	A7
-4. | ______________ (zweiter SQL Server-Computer, Beispiel: SQL2) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	A7
-5. | ______________ (Mehrheitsknotenzeuge des Clusters, Beispiel: MN1) | Windows Server 2012 R2 Datacenter | A1 (Klein)
-6. | ______________ (erster SharePoint-Anwendungsserver, Beispiel: APP1) | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
-7. | ______________ (zweiter SharePoint-Anwendungsserver, Beispiel: APP2) | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
-8. | ______________ (erster SharePoint-Webserver, Beispiel: WEB1) | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
-9. | ______________ (zweiter SharePoint-Webserver, Beispiel: WEB2) | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
+1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (erster Domänencontroller, Beispiel: DC1) | Windows Server 2012 R2 Datacenter | A2 (Mittel)
+2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (zweiter Domänencontroller, Beispiel: DC2) | Windows Server 2012 R2 Datacenter | A2 (Mittel)
+3\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (erster SQL Server-Computer, Beispiel: SQL1) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	A7
+4\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (zweiter SQL Server-Computer, Beispiel: SQL2) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	A7
+5\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (Mehrheitsknotenzeuge des Clusters, Beispiel: MN1) | Windows Server 2012 R2 Datacenter | A1 (Klein)
+6\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (erster SharePoint-Anwendungsserver, Beispiel: APP1) | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
+7\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (zweiter SharePoint-Anwendungsserver, Beispiel: APP2) | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
+8\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (erster SharePoint-Webserver, Beispiel: WEB1) | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
+9\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (zweiter SharePoint-Webserver, Beispiel: WEB2) | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
 
 **Tabelle M – Virtuelle Computer für die SharePoint 2013-Intranetfarm in Azure**
 
@@ -113,7 +113,7 @@ Melden Sie sich bei dem ersten Domänencontroller mit den Anmeldeinformationen d
 5.	Sie werden nun im Browserdialogfeld gefragt, ob "ComputerName.rdp" von "manage.windowsazure.com" geöffnet oder gespeichert werden soll. Klicken Sie auf **Öffnen**.
 6.	Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Verbinden**.
 7.	Klicken Sie im Dialogfeld **Windows-Sicherheit** auf **Anderes Konto verwenden**.
-8.	Geben Sie im Feld **Benutzername** den Namen des virtuellen Computers sowie den Benutzernamen des lokalen Administratorkontos ein, das mit dem virtuellen Computer erstellt wurde (ein lokales Computerkonto). Verwenden Sie Folgendes Format: *ComputerName\**LokalesAdministratorkontoName*
+8.	Geben Sie im Feld **Benutzername** den Namen des virtuellen Computers sowie den Benutzernamen des lokalen Administratorkontos ein, das mit dem virtuellen Computer erstellt wurde (ein lokales Computerkonto). Verwenden Sie Folgendes Format: *ComputerName*\*LokalesAdministratorkontoName*
 9.	Geben Sie im Feld **Kennwort** das Kennwort für das lokale Administratorkonto ein.
 10.	Klicken Sie auf **OK**.
 11.	Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Ja**. Der Desktop des neuen Computers wird in einem Remotedesktop-Sitzungsfenster angezeigt.
@@ -170,9 +170,9 @@ Der Computer wird neu gestartet.
 
 Für die SharePoint-Farm sind die folgenden Benutzerkonten erforderlich:
 
-- sp_farm: Benutzerkonto für die Verwaltung von SharePoint-Farmen
-- sp_farm_db: Benutzerkonto mit Systemadministratorrechten für SQL Server-Instanzen
-- sp_install: Benutzerkonto mit Domänenverwaltungsrechten für die Installation von Rollen und Features
+- sp\_farm: Benutzerkonto für die Verwaltung von SharePoint-Farmen
+- sp\_farm\_db: Benutzerkonto mit Systemadministratorrechten für SQL Server-Instanzen
+- sp\_install: Benutzerkonto mit Domänenverwaltungsrechten für die Installation von Rollen und Features
 - sqlservice: Benutzerkonto, unter dem SQL Server-Instanzen ausgeführt werden können
 
 Melden Sie sich nun bei einem Computer mit einem Domänenadministratorkonto für die Domäne an, deren Mitglied die Domänencontroller sind, öffnen Sie auf Administratorebene eine Windows PowerShell-Eingabeaufforderung, und führen Sie *nacheinander* die folgenden Befehle aus:
@@ -191,14 +191,14 @@ Führen Sie als Nächstes die folgenden Schritte aus, um den neuen Benutzerkonte
 
 1.	Geben Sie auf dem Startbildschirm **Active Directory-Benutzer** ein, und klicken Sie dann auf **Active Directory-Benutzer und -Computer**.
 2.	Öffnen Sie im Strukturbereich Ihre Domäne, und klicken Sie auf **Benutzer**.
-3.	Klicken Sie im Inhaltsbereich mit der rechten Maustaste auf **sp_install**, und klicken Sie dann auf **Zu einer Gruppe hinzufügen**.
+3.	Klicken Sie im Inhaltsbereich mit der rechten Maustaste auf **sp\_install**, und klicken Sie dann auf **Zu einer Gruppe hinzufügen**.
 4.	Geben Sie im Dialogfeld **Gruppen auswählen** **Domänenadministratoren** ein, und klicken Sie dann zweimal hintereinander auf **OK**.
 5.	Klicken Sie im Dialogfeld auf **Anzeigen** und dann auf „Erweiterte Features“. Mit dieser Option zeigen Sie alle ausgeblendeten Container und Registerkarten in den Eigenschaftenfenstern von Active Directory-Objekten an.
 6.	Klicken Sie mit der rechten Maustaste auf Ihren Domänennamen, und klicken Sie dann auf **Eigenschaften**.
 7.	Klicken Sie im Dialogfeld **Eigenschaften** auf die Registerkarte **Sicherheit**, und klicken Sie dann auf die Schaltfläche **Erweitert**.
 8.	Klicken Sie im Fenster **Erweiterte Sicherheitseinstellungen für <YourDomain>** auf **Hinzufügen**.
 9.	Klicken Sie im Fenster **Berechtigungseintrag für <YourDomain> ** auf **Prinzipal auswählen**.
-10.	Geben Sie im Textfeld **<YourDomain>\sp_install** ein, und klicken Sie auf **OK**.
+10.	Geben Sie im Textfeld **<YourDomain>\\sp\_install** ein, und klicken Sie auf **OK**.
 11.	Aktivieren Sie für **Computerobjekte erstellen** die Option **Zulassen**, und klicken Sie dann dreimal hintereinander auf **OK**.
 
 Aktualisieren Sie danach die DNS-Server für Ihr virtuelles Netzwerk, damit Azure den virtuellen Computern die IP-Adressen der beiden neuen Domänencontroller als deren DNS-Server zuweist. Die für dieses Verfahren benötigten Werte stammen aus Tabelle V (Einstellungen Ihres virtuellen Netzwerks).
@@ -217,7 +217,7 @@ Aktualisieren Sie danach die DNS-Server für Ihr virtuelles Netzwerk, damit Azur
 
 Die beiden Domänencontroller mussten neu gestartet werden, damit sie nicht mit dem lokalen DNS-Server als DNS-Server konfiguriert sind. Da es sich bei beiden selbst um DNS-Server handelt, werden sie bei ihrer Heraufstufung auf Domänencontroller automatisch mit den lokalen DNS-Servern als DNS-Weiterleitung konfiguriert.
 
-Um sicherzustellen, dass die Server im virtuellen Azure-Netzwerk die lokalen Domänencontroller verwenden, müssen Sie nun eine Active Directory-Replikationssite erstellen. Melden Sie sich unter dem Konto „sp_install“ beim primären Domänencontroller an, und führen Sie die folgenden Befehle auf Administratorebene an einer Windows PowerShell-Eingabeaufforderung aus:
+Um sicherzustellen, dass die Server im virtuellen Azure-Netzwerk die lokalen Domänencontroller verwenden, müssen Sie nun eine Active Directory-Replikationssite erstellen. Melden Sie sich unter dem Konto „sp\_install“ beim primären Domänencontroller an, und führen Sie die folgenden Befehle auf Administratorebene an einer Windows PowerShell-Eingabeaufforderung aus:
 
 	$vnet="<Table V – Item 1 – Value column>"
 	$vnetSpace="<Table V – Item 5 – Value column>"
@@ -244,4 +244,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 3: Konfigur
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

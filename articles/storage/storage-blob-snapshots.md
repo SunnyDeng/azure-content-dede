@@ -53,13 +53,13 @@ Ein Blob mit Momentaufnahmen kann nur dann gelöscht werden, wenn die Momentaufn
 ## Momentaufnahmen mit Premium-Speicher
 Die Verwendung von Momentaufnahmen mit Premium-Speicher unterliegt den folgenden Regeln:
 
-- Die Anzahl der Momentaufnahmen pro Seitenblob in einem Premium-Speicherkonto ist auf 100 beschränkt. Wenn diese Grenze überschritten wird, gibt der Momentaufnahmenblob-Vorgang Fehlercode 409 ("SnapshotCountExceeded") zurück.
+- Die Anzahl der Momentaufnahmen pro Seitenblob in einem Premium-Speicherkonto ist auf 100 beschränkt. Wenn diese Grenze überschritten wird, gibt der Momentaufnahmenblob-Vorgang Fehlercode 409 (**SnapshotCountExceeded**) zurück.
 
-- Eine Momentaufnahme eines Seitenblobs in einem Premium-Speicherkonto kann alle zehn Minuten erstellt werden. Wenn diese Grenze überschritten wird, gibt der Momentaufnahmenblob-Vorgang Fehlercode 409 ("SnaphotOperationRateExceeded") zurück.
+- Eine Momentaufnahme eines Seitenblobs in einem Premium-Speicherkonto kann alle zehn Minuten erstellt werden. Wenn diese Grenze überschritten wird, gibt der Momentaufnahmenblob-Vorgang Fehlercode 409 (**SnaphotOperationRateExceeded**) zurück.
 
-- Das Lesen von Momentaufnahmen eines Seitenblobs in einem Premium-Speicherkonto über "Get Blob" wird nicht unterstützt. Der Aufruf von "Get Blob" für eine Momentaufnahme in einem Storage Premium-Konto gibt Fehlercode 400 ("InvalidOperation") zurück. Der Aufruf von "Get Blob Properties" und "Get Blob Metadata" für eine Momentaufnahme wird hingegen unterstützt.
+- Das Lesen von Momentaufnahmen eines Seitenblobs in einem Premium-Speicherkonto über "Get Blob" wird nicht unterstützt. Der Aufruf von "Get Blob" für eine Momentaufnahme in einem Storage Premium-Konto gibt Fehlercode 400 (**InvalidOperation**) zurück. Der Aufruf von "Get Blob Properties" und "Get Blob Metadata" für eine Momentaufnahme wird hingegen unterstützt.
 
-- Zum Lesen einer Momentaufnahme können Sie eine Momentaufnahme mithilfe des Copy Blob-Vorgangs in ein anderes Seitenblob im Konto kopieren. Das Ziel-Blob für den Kopiervorgang darf keine vorhandenen Momentaufnahmen besitzen. Wenn das Zielblob Momentaufnahmen aufweist, gibt "Copy Blob" Fehlercode 409 ("SnapshotsPresent") zurück.
+- Zum Lesen einer Momentaufnahme können Sie eine Momentaufnahme mithilfe des Copy Blob-Vorgangs in ein anderes Seitenblob im Konto kopieren. Das Ziel-Blob für den Kopiervorgang darf keine vorhandenen Momentaufnahmen besitzen. Wenn das Zielblob Momentaufnahmen aufweist, gibt "Copy Blob" Fehlercode 409 (**SnapshotsPresent**) zurück.
 
 ## Zurückgeben des absoluten URI zu einer Momentaufnahme 
 
@@ -125,4 +125,4 @@ In Szenario 4 wurde das Basis-BLOB vollständig aktualisiert und enthält keinen
 
 ![Azure-Speicherressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

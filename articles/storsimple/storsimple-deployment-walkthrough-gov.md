@@ -211,4 +211,4 @@ Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
 Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

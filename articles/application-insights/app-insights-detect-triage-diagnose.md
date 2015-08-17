@@ -4,16 +4,18 @@
 	authors="alancameronwills"
 	services="application-insights"
     documentationCenter=""
-	manager="keboyd"/>
+	manager="douge"/>
+
 
 <tags
 	ms.service="application-insights"
 	ms.workload="tbd"
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
-	ms.topic="get-started-article" 
-	ms.date="04/02/2015"
+	ms.topic="article" 
+	ms.date="08/04/2015"
 	ms.author="awills"/>
+
 
 # Erkennung, Eingrenzung und Diagnose mit Application Insights
 
@@ -59,7 +61,7 @@ Marcela Markova ist im OBS-Team eine Spezialistin für Tests und für die Überw
 Nach dem Einrichten dieser Tests ist Marcela sicher, dass das Team schnell über Systemausfälle informiert wird.
 
 
-Ausfälle bzw. Fehler werden im Übersichtsdiagramm des Webtests als rote Punkte angezeigt:
+Ausfälle bzw. Fehler werden im Diagramm des Webtests als rote Punkte angezeigt:
 
 ![Anzeigen von Webtests, die im vorherigen Zeitraum erfolgt sind](./media/app-insights-detect-triage-diagnose/04-webtests.png)
 
@@ -70,18 +72,17 @@ Aber noch wichtiger ist, dass eine Warnung zu allen Fehlern per E-Mail an das En
 ## Überwachen von Leistungsmetriken
 
 
-Auf der Übersichtsseite mit dem Verfügbarkeitsdiagramm gibt es auch ein Diagramm, das eine Vielzahl [wichtiger Metriken][perf] zeigt.
-
+Die Übersichtsseite in Application Insights enthält ein Diagramm, das eine Vielzahl [wichtiger Metriken][perf] zeigt.
 
 ![Verschiedene Metriken](./media/app-insights-detect-triage-diagnose/05-perfMetrics.png)
 
-Die Clientverarbeitungszeit wird von Telemetriedaten abgeleitet, die direkt von Webseiten gesendet werden. Die anderen Abbildungen zeigen auf den Webservern berechnete Metriken.
+Die Browser-Seitenladezeit wird von Telemetriedaten abgeleitet, die direkt von Webseiten gesendet werden. Die Serverantwortzeit, die Anzahl von Serveranforderungen und die Anzahl der Anforderungsfehler werden alle auf dem Webserver gemessen und von dort an Application Insights gesendet.
 
 
 Der Zähler "Anforderungsfehler" bezieht sich auf Fälle, bei denen Benutzern ein Fehler angezeigt wurde, meist im Anschluss an eine im Code ausgelöste Ausnahme. Vielleicht wird den Benutzern auf dem Bildschirm die Meldung "Es tut uns leid, dass wir Ihre Daten zur Zeit nicht aktualisieren können" oder aber (im absolut peinlichsten Fall) ein Stapelabbild des Webservers gezeigt.
 
 
-Marcela wirft von Zeit zu Zeit gern einen Blick auf diese Diagramme. Die ständig im Hintergrund schwebenden fehlerhaften Anforderungen sind ein wenig deprimierend, haben ihre Ursache aber in einem Fehler, den das Team gerade untersucht. Nach dessen Behebung sollte sich die Lage entspannen. Doch wenn es bei den Anforderungsfehlern oder einigen anderen Metriken wie der Serverantwortzeit zu plötzlichen Spitzen kommt, möchte Marcela sofort davon wissen. Dabei kann es sich um ein unvorhergesehenes Problem handeln, das von einer bestimmten Codeversion, einem Fehler in einer Abhängigkeit, z. B. einer Datenbank, oder einer nicht ordnungsgemäßen Reaktion auf eine hohe Anforderungslast verursacht werden kann.
+Marcela wirft von Zeit zu Zeit gern einen Blick auf diese Diagramme. Treten keine Anforderungsfehler auf, ist das vielversprechend. Wenn sie jedoch als Bereich des Diagramms die letzte Woche angibt, werden gelegentliche Fehler angezeigt. Dies ist bei einem ausgelasteten Server akzeptabel. Doch wenn es bei den Anforderungsfehlern oder einigen anderen Metriken wie der Serverantwortzeit zu plötzlichen Spitzen kommt, möchte Marcela sofort davon wissen. Dabei kann es sich um ein unvorhergesehenes Problem handeln, das von einer bestimmten Codeversion, einem Fehler in einer Abhängigkeit, z. B. einer Datenbank, oder einer nicht ordnungsgemäßen Reaktion auf eine hohe Anforderungslast verursacht werden kann.
 
 #### Warnungen
 
@@ -103,7 +104,7 @@ Es ist auch möglich, Warnungen für eine Vielzahl anderer Metriken festzulegen.
 ## Erkennen von Ausnahmen
 
 
-Ausnahmen werden Application Insights gemeldet, indem [TrackException()][api] aufgerufen wird:
+Mit nur wenigen Einrichtungsschritten werden [Ausnahmen](app-insights-asp-net-exceptions.md) automatisch an Application Insights gemeldet. Die Ausnahmen können auch explizit aufgezeichnet werden, indem Aufrufe von [TrackException()](app-insights-api-custom-events-metrics.md#track-exception) in den Code eingefügt werden:
 
     var telemetry = new TelemetryClient();
     ...
@@ -144,19 +145,20 @@ Ausnahmen und Ereignisse werden auf dem Blatt [Diagnosesuche][diagnostic] gezeig
 
 ![Verwenden Sie bei der Diagnosesuche Filter, um bestimmte Datentypen anzeigen](./media/app-insights-detect-triage-diagnose/appinsights-333facets.png)
 
-## Überwachung fehlerfreier Ereignisse
+## Überwachen der Benutzeraktivität
+
+Wenn die Antwortzeit durchweg gut ist und nur wenige Ausnahmen auftreten, kann das Entwicklungsteam überlegen, wie es die Benutzererfahrung verbessern und mehr Benutzer ermutigen kann, die gewünschten Ziele zu erreichen.
 
 
-Das Entwicklungsteam von Fabrikam möchte gerne sowohl positive als auch negative Aspekte nachverfolgen. Erstens weil es schön, sich an den positiven Aspekten (d. h. dem reibungslose Betrieb) zu erfreuen und gewappnet zu sein, wenn ein positiver Aspekt sich plötzlich in einen negativen umkehrt.
+Die Websitenavigation von Benutzern folgt üblicherweise einem Trichtermodell: Viele Kunden sehen sich die Zinssätze verschiedener Darlehen an. Einige füllen das Angebotsformular aus. Und von denjenigen, die ein Angebot erhalten, nehmen einige wenige anschließend tatsächlich ein Darlehen auf.
 
+![](./media/app-insights-detect-triage-diagnose/12-funnel.png)
 
-Die Wege vieler Benutzer durch das System folgen einem Trichtermodell: viele Kunden sehen sich die Zinssätze verschiedener Arten von Darlehen an, einige füllen das Angebotsformular aus, und diejenigen, die ein Angebot erhalten, nehmen anschließend das Darlehen auf.
+Ein Unternehmen kann nun untersuchen, an welcher Stelle die meisten Kunden den Vorgang abbrechen, und so ermitteln, wie sich mehr Benutzer durch den gesamten Trichter schleusen lassen. In manchen Fällen tritt ein Fehler auf der Benutzeroberfläche auf. Beispielsweise ist die Schaltfläche „Weiter“ schwer zu finden, oder die Anweisungen sind nicht eindeutig zu erkennen. Wahrscheinlicher sind jedoch geschäftliche Gründe (wie etwa zu hohe Zinssätze für Darlehen).
 
+Unabhängig von den Gründen kann das Team mithilfe der Daten ermitteln, welche Aktionen Benutzer ausführen. Es kann weitere Aufrufe zur Nachverfolgung einfügen, um zusätzliche Einzelheiten zu ermitteln. Mithilfe von „TrackEvent()“ können alle Benutzeraktionen (angefangen von einzelnen Klicks auf Schaltflächen bis hin zu bedeutenderen Ereignissen wie etwa das Abzahlen eines Darlehens) nachverfolgt werden.
 
-Das Entwicklungsteam fügt in jede Phase im Trichter "TrackMetric()"-Aufrufe ein. Im Metrik-Explorer kann Brian, der Geschäftssystemarchitekt, die Werte der einzelnen Metriken vergleichen, um einzuschätzen, wie gut mit dem System Darlehen verkauft werden.
-
-
-Ursula, die Spezialistin für die Benutzererfahrung, behält auch die einwandfreien Metriken im Auge. Wenn im Trichterdiagramm in einer beliebigen Phase ein plötzlicher Abfall zu verzeichnen ist, zeigt dies an, dass ein bestimmtes Problem vorliegt. Vielleicht ist es schwierig, die richtige Schaltfläche zu finden, oder der Text ist ggf. nicht sehr förderlich. Oder es liegt ein Fehler vor: Benutzer klicken auf die Schaltfläche, aber nichts geschieht.
+Das Team gewöhnt sich daran, Informationen zur Benutzeraktivität zu erhalten. Heute entwickelt das Team beim Entwerfen eines neuen Features ein Feedbackkonzept, um Informationen zur Nutzung zu erhalten. Es arbeitet von Anfang an Aufrufe zur Nachverfolgung in das Feature ein. Es verwendet das Feedback dazu, das Feature in jedem Entwicklungszyklus zu verbessern.
 
 
 ## Proaktive Überwachung  
@@ -260,4 +262,4 @@ Ein Team kann also Application Insights nicht nur nutzen, um einzelne Probleme z
 [usage]: app-insights-web-track-usage.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

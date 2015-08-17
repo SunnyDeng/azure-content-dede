@@ -84,4 +84,4 @@ Nachdem die API-App codiert wurde, müssen Sie den Code testen.
 
 5. Drücken Sie die **EINGABETASTE**, um das Konsolenfenster zu schließen.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

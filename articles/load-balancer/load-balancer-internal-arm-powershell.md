@@ -9,7 +9,7 @@
 <tags
    ms.service="load-balancer"
    ms.devlang="na"
-   ms.topic="get-started-article"
+   ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="07/22/2015"
@@ -80,7 +80,7 @@ Um eine Liste der verfügbaren Abonnements anzuzeigen, verwenden Sie das Cmdlet 
 
 ### Schritt 4
 
-Erstellen Sie eine neue Ressourcengruppe. \(Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.\)
+Erstellen Sie eine neue Ressourcengruppe. (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
 
     PS C:\> New-AzureResourceGroup -Name NRP-RG -location "West US"
 
@@ -148,7 +148,7 @@ Im obigen Beispiel werden die folgenden Elemente erstellt:
 
 ### Schritt 2
 
-Erstellen Sie den Load Balancer, indem Sie alle Objekte \(NAT-Regeln, Load-Balancer-Regeln, Testkonfigurationen\) zusammenfügen:
+Erstellen Sie den Load Balancer, indem Sie alle Objekte (NAT-Regeln, Load-Balancer-Regeln, Testkonfigurationen) zusammenfügen:
 
 	$NRPLB = New-AzureLoadBalancer -ResourceGroupName "NRP-RG" -Name "NRP-LB" -Location "West US" -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe 
 
@@ -217,7 +217,7 @@ PS C:\> $backendnic1
                            ],
                            "ProvisioningState": "Succeeded",
                            "Name": "ipconfig1",
-                           "Etag": "W/\"d448256a-e1df-413a-9103-a137e07276d1\"",
+                           "Etag": "W/"d448256a-e1df-413a-9103-a137e07276d1"",
                            "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be/ipConfigurations/ipconfig1"
                          }
                        ]
@@ -245,4 +245,4 @@ In der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Co
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

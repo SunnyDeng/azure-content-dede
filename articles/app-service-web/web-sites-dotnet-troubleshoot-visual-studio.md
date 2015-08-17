@@ -764,4 +764,4 @@ Informationen darüber, wie Sie statt einer Web-App einen Azure-Cloud-Dienst deb
 [GetStartedWJ]: websites-dotnet-webjobs-sdk.md
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

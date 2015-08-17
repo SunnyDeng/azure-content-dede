@@ -1,7 +1,7 @@
 
 ##<a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
-1. Wir fügen neben der vorhandenen Schaltfläche eine Schaltfläche namens "Complete All" ein und verschieben beide Schaltflächen um eine Zeile nach unten. Öffnen Sie in Android Studio die Datei *res\layout\activity_to_do.xml* in Ihrem Schnellstartprojekt, suchen Sie das Element **LinearLayout**, welches das **Button**-Element namens `buttonAddToDo` enthält. Kopieren Sie das **LinearLayout**, und fügen Sie es direkt nach dem ursprünglichen ein. Löschen Sie das Element **Button** vom ersten **LinearLayout**.
+1. Wir fügen neben der vorhandenen Schaltfläche eine Schaltfläche namens "Complete All" ein und verschieben beide Schaltflächen um eine Zeile nach unten. Öffnen Sie in Android Studio die Datei *res\\layout\\activity\_to\_do.xml* in Ihrem Schnellstartprojekt, suchen Sie das Element **LinearLayout**, welches das **Button**-Element namens `buttonAddToDo` enthält. Kopieren Sie das **LinearLayout**, und fügen Sie es direkt nach dem ursprünglichen ein. Löschen Sie das Element **Button** vom ersten **LinearLayout**.
 
 2. Im zweiten **LinearLayout** löschen Sie das Element **EditText**, und fügen Sie den folgenden Code direkt nach dem vorhandenen **Button**-Element hinzu:
 
@@ -36,7 +36,7 @@
 	    </LinearLayout>
 	
 
-4. Öffnen Sie die Datei res\values\string.xml file, und fügen Sie die folgende Codezeile hinzu:
+4. Öffnen Sie die Datei res\\values\\string.xml file, und fügen Sie die folgende Codezeile hinzu:
 
     	<string name="complete_button_text">Complete All</string>
 
@@ -112,4 +112,4 @@
 
 	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

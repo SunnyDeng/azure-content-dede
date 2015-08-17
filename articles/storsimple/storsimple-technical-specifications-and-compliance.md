@@ -51,8 +51,8 @@ Die folgende Tabelle enthält die typischen Stromverbrauchsdaten für die versch
  
  Bedingungen | 240 V AC | 240 V AC | 240 V AC | 110 V AC | 110 V AC | 110 V AC 
  ---------- | -------- | -------- | -------- | -------- | -------- | -------- 
- Lüfter langsam, Laufwerke im Leerlauf | 1,45 A |0,31 kW | 1057,76 BTU/h | 3.19 A | 0,34 kW | 1160,13 BTU/h 
- Lüfter langsam, Laufwerkszugriff | 1,54 A | 0,33 kW | 1126,01 BTU/h | 3.27 A | 0,36 kW | 1228,37 BTU/h 
+ Lüfter langsam, Laufwerke im Leerlauf | 1,45 A |0,31 kW | 1057,76 BTU/h | 3\.19 A | 0,34 kW | 1160,13 BTU/h 
+ Lüfter langsam, Laufwerkszugriff | 1,54 A | 0,33 kW | 1126,01 BTU/h | 3\.27 A | 0,36 kW | 1228,37 BTU/h 
  Lüfter schnell, Laufwerke im Leerlauf, Betrieb mit zwei Netzteilen | 2,14 A | 0,49 kW | 1671,95 BTU/h | 4,99 A | 0,54 kW | 1842,56 BTU/h 
  Lüfter schnell, Laufwerke im Leerlauf, ein Netzteil zur Stromversorgung und das andere im Leerlauf | 2,05 A | 0,48 kW | 1637,83 BTU/h | 4,58 A | 0,50 kW | 1706,07 BTU/h 
  Lüfter schnell, Laufwerkszugriff, Betrieb mit zwei Netzteilen | 2,26 A | 0,51 kW | 1740,19 BTU/h | 4,95 A | 0,54 kW | 1842,56 BTU/h 
@@ -172,4 +172,4 @@ Für die 10 GbE-Netzwerkschnittstellen, DATA 2 und DATA 3, finden Sie eine [List
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

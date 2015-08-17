@@ -15,4 +15,4 @@ Die folgenden Grenzwerte gelten nur bei Verwendung des Azure-Ressourcen-Managers
 </tr>
 </table>
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -131,4 +131,4 @@ Je nach Preisstufe stehen die folgenden entwicklungsbezogenen Funktionen zur Ver
 [GeoReplication]: ./media/web-sites-scale/scale12SQLGeoReplication.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

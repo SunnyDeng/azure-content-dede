@@ -51,11 +51,11 @@ Anschließend müssen Sie den **Delegierungsendpunkt** einrichten. Dieser Endpun
 2. Überprüfen, ob die Anfrage von Azure API Management stammt (optional, aus Sicherheitsgründen jedoch dringend empfohlen)
 
 	* Generieren Sie einen HMAC-SHA512-Hash für eine Zeichenfolge basierend auf den Abfrageparametern **returnUrl** und **salt** ([Beispielcode finden Sie unter]):
-        > **returnUrl**
+        > HMAC(**salt** + '\\n' + **returnUrl**)
 		 
-	* Vergleichen Sie den generierten Hash mit dem Wert des **sig**-Abfrageparameters. Fahren Sie mit dem nächsten Schritt fort, wenn die Hashes übereinstimmen. Lehnen Sie die Anfrage andernfalls ab.
+	* Vergleichen Sie den generierten Hash mit dem Wert des **sig**Abfrageparameters. Fahren Sie mit dem nächsten Schritt fort, wenn die Hashes übereinstimmen. Lehnen Sie die Anfrage andernfalls ab.
 
-2. Überprüfen Sie, ob Sie eine Anfrage zur Anmeldung/Registrierung erhalten haben: Der **operation**-Abfrageparameter wird auf "SignIn" gesetzt.
+2. Überprüfen Sie, ob Sie eine Anfrage zur Anmeldung/Registrierung erhalten haben: Der **operation**-Abfrageparameter wird auf "**SignIn**" gesetzt.
 
 3. Anzeigen der Benutzeroberfläche für Anmeldung oder Registrierung
 
@@ -107,7 +107,7 @@ Konfigurieren Sie anschließend die folgenden Aktionen für den Delegierungsendp
 2. Überprüfen, ob die Anfrage von Azure API Management stammt (optional, aus Sicherheitsgründen jedoch dringend empfohlen)
 
 	* Generieren Sie einen HMAC-SHA512-Hash für eine Zeichenfolge aus den Abfrageparametern **productId**, **redirectUrl** und **salt**:
-		> **productId****userId**
+		> HMAC(**salt** + '\\n' + **productId** + '\\n' + **userId**)
 		 
 	* Vergleichen Sie den generierten Hash mit dem Wert des **sig**Abfrageparameters. Fahren Sie mit dem nächsten Schritt fort, wenn die Hashes übereinstimmen. Lehnen Sie die Anfrage andernfalls ab.
 	
@@ -168,4 +168,4 @@ Weitere Informationen zum Delegieren finden Sie im folgenden Video.
 
 [api-management-delegation-signin-up]: ./media/api-management-howto-setup-delegation/api-management-delegation-signin-up.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

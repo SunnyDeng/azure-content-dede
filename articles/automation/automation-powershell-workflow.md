@@ -88,7 +88,7 @@ Eine Möglichkeit besteht darin, diese beiden Codezeilen in einen [InlineScript]
 		}
 	} 
 
-Eine weitere Möglichkeit ist die Verwendung eines anderen Cmdlets, mit dem die gleichen Funktionen wie mit der Methode durchgeführt werden \(sofern verfügbar\). In unserem Beispiel werden mit dem Stop-Service-Cmdlet die gleichen Funktionen wie mit der Stop-Methode bereitgestellt, und Sie können Folgendes für einen Workflow verwenden:
+Eine weitere Möglichkeit ist die Verwendung eines anderen Cmdlets, mit dem die gleichen Funktionen wie mit der Methode durchgeführt werden (sofern verfügbar). In unserem Beispiel werden mit dem Stop-Service-Cmdlet die gleichen Funktionen wie mit der Stop-Methode bereitgestellt, und Sie können Folgendes für einen Workflow verwenden:
 
 	Workflow Stop-MyService
 	{
@@ -249,4 +249,4 @@ Weitere Informationen zu Prüfpunkten finden Sie unter [Hinzufügen von Prüfpun
 
 - [Erste Schritte mit dem Windows PowerShell-Workflow](http://technet.microsoft.com/library/jj134242.aspx) 
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

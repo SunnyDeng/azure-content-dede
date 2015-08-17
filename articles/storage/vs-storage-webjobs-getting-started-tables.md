@@ -16,7 +16,7 @@
 	ms.date="07/13/2015" 
 	ms.author="patshea123"/>
 
-# Erste Schritte mit Azure Storage \(Azure WebJob-Projekte\)
+# Erste Schritte mit Azure Storage (Azure WebJob-Projekte)
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-storage-webjobs-getting-started-tables.md)
@@ -33,7 +33,7 @@
 
 Der Azure-Tabellenspeicherdienst ermöglicht das Speichern großer Mengen von strukturierten Daten. Der Dienst ist ein NoSQL-Datenspeicher, der authentifizierte Aufrufe von innerhalb und außerhalb der Azure-Cloud akzeptiert. Azure-Tabellen sind hervorragend zur Speicherung strukturierter nicht relationaler Daten geeignet. Weitere Informationen finden Sie unter [Verwenden von Tabellenspeicher aus .NET](storage-dotnet-how-to-use-tables.md/#create-a-table "Verwenden des Tabellenspeichers mit .NET").
 
-Dieser Artikel enthält C\#-Codebeispiele, die zeigen, wie das Azure WebJobs-SDK \(Version 1.x\) mit dem Azure-Tabellenspeicherdienst verwendet wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet.
+Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie das Azure WebJobs-SDK (Version 1.x) mit dem Azure-Tabellenspeicherdienst verwendet wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet.
 
 		
 Einige der Codeausschnitte zeigen das `Table`-Attribut in Funktionen, die [manuell aufgerufen](vs-storage-webjobs-getting-started-blobs.md#manual) werden, d. h. nicht mit einem der Triggerattribute.
@@ -81,7 +81,7 @@ Da Dateneingangsfunktionen oft große Datenmengen verarbeiten, bietet das Dashbo
 
 ![Eingangsfunktion wird ausgeführt](./media/vs-storage-webjobs-getting-started-tables/ingressrunning.png)
 
-Die Seite **Aufrufdetails** meldet den Status der Funktion \(Anzahl der geschriebenen Entitäten\) während der Ausführung und bietet Ihnen die Möglichkeit, sie abzubrechen.
+Die Seite **Aufrufdetails** meldet den Status der Funktion (Anzahl der geschriebenen Entitäten) während der Ausführung und bietet Ihnen die Möglichkeit, sie abzubrechen.
 
 ![Eingangsfunktion wird ausgeführt](./media/vs-storage-webjobs-getting-started-tables/ingressprogress.png)
 
@@ -166,4 +166,4 @@ Informationen zur Handhabung der durch eine Warteschlangennachricht ausgelösten
 In diesem Artikel wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Tabellen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

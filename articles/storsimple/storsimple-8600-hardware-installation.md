@@ -365,7 +365,7 @@ Führen Sie die folgenden Schritte aus, um den seriellen Anschluss zu verkabeln.
 4. Installieren Sie die Seriell-USB-Treiber (im Lieferumfang des Geräts enthalten) auf Ihrem Computer.
 
 5. Richten Sie die serielle Verbindung wie folgt ein:
-   - 115.200 Baud
+   - 115\.200 Baud
    - 8 Datenbits
    - 1 Stoppbit
    - Keine Parität
@@ -382,4 +382,4 @@ Das Gerät ist nun für Stromversorgung, Netzwerkzugriff und serielle Verbindung
 Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

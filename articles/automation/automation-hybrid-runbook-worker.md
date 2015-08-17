@@ -9,7 +9,7 @@
 <tags
    ms.service="automation"
    ms.devlang="na"
-   ms.topic="get-started-article"
+   ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="07/10/2015"
@@ -115,9 +115,9 @@ Sie können auch [InlineScript](automation-powershell-workflow.md#inline-script)
 
 Sie können ein Runbook für Hybrid-Runbook-Worker in Azure Automation bearbeiten, es ist jedoch möglicherweise schwierig, das Runbook im Editor zu testen. Die PowerShell-Module für den Zugriff auf die lokalen Ressourcen sind möglicherweise nicht in Ihrer Azure Automation-Umgebung installiert, sodass beim Testen Fehler auftreten. Wenn Sie die erforderlichen Module installieren, wird das Runbook ausgeführt, der Test kann aufgrund des fehlenden Zugriffs auf die lokalen Ressourcen jedoch nicht vollständig ausgeführt werden.
 
-## Beziehung zu Service Management Automation \(SMA\)
+## Beziehung zu Service Management Automation (SMA)
 
-[Service Management Automation \(SMA\)](https://technet.microsoft.com/library/dn469260.aspx) ist eine Komponente in Microsoft Azure Pack, mit der dieselben Runbooks, die von Azure Automation unterstützt werden, in Ihrem lokalen Datencenter ausgeführt werden können. Im Gegensatz zu Azure Automation erfordert SMA eine lokale Installation, die das Microsoft Azure Pack-Verwaltungsportal und eine Datenbank zum Speichern von Runbooks und SMA-Konfiguration einschließt. Azure Automation stellt diese Dienste in der Cloud bereit, Sie müssen lediglich die Hybrid-Runbook-Worker in Ihrer lokalen Umgebung verwalten.
+[Service Management Automation (SMA)](https://technet.microsoft.com/library/dn469260.aspx) ist eine Komponente in Microsoft Azure Pack, mit der dieselben Runbooks, die von Azure Automation unterstützt werden, in Ihrem lokalen Datencenter ausgeführt werden können. Im Gegensatz zu Azure Automation erfordert SMA eine lokale Installation, die das Microsoft Azure Pack-Verwaltungsportal und eine Datenbank zum Speichern von Runbooks und SMA-Konfiguration einschließt. Azure Automation stellt diese Dienste in der Cloud bereit, Sie müssen lediglich die Hybrid-Runbook-Worker in Ihrer lokalen Umgebung verwalten.
 
 Wenn Sie SMA bereits verwenden, können Sie Ihre Runbooks nach Azure Automation verschieben, damit diese ohne Änderungen mit Hybrid-Runbook-Worker verwendet werden. Hierbei wird vorausgesetzt, dass eine eigene Authentifizierung gegenüber den verwendeten Ressourcen durchgeführt wird, wie beschrieben unter [Erstellen von Runbooks für Hybrid-Runbook-Worker](#creating-runbooks-for-hybrid-runbook-worker). Runbooks werden in SMA im Kontext des Dienstkontos auf dem Workerserver ausgeführt, der möglicherweise die Authentifizierung für die Runbooks bereitstellt.
 
@@ -136,4 +136,4 @@ Sie können anhand der folgenden Kriterien prüfen, ob Azure Automation mit Hybr
 - [Bearbeiten eines Runbooks in Azure Automation](https://msdn.microsoft.com/library/dn879137.aspx)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

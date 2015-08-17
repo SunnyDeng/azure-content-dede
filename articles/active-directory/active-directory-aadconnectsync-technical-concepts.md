@@ -40,7 +40,7 @@ Die folgenden Abschnitte bieten weitere Details zu den folgenden Aspekten des FI
 
 ## Connector
 
-Die zur Kommunikation mit einer verbundenen Datenquelle verwendeten Codemodule werden "Connectors" genannt \(zuvor als verwaltete Agents \[MAs\] bekannt\).<br> Sie werden auf dem Computer installiert, auf dem die Azure AD Connect-Synchronisierung ausgeführt wird. Mithilfe von Connectors können Konvertierungen ohne Agents mithilfe von Remotesystemprotokollen ausgeführt werden. Damit entfällt die Notwendigkeit, sich auf die Bereitstellung spezialisierter Agents zu verlassen. Dies hat ein vermindertes Risiko und geringere Bereitstellungszeiten zur Folge, insbesondere wenn es um die Arbeit mit kritischen Anwendungen und Systemen geht.
+Die zur Kommunikation mit einer verbundenen Datenquelle verwendeten Codemodule werden "Connectors" genannt (zuvor als verwaltete Agents [MAs] bekannt).<br> Sie werden auf dem Computer installiert, auf dem die Azure AD Connect-Synchronisierung ausgeführt wird. Mithilfe von Connectors können Konvertierungen ohne Agents mithilfe von Remotesystemprotokollen ausgeführt werden. Damit entfällt die Notwendigkeit, sich auf die Bereitstellung spezialisierter Agents zu verlassen. Dies hat ein vermindertes Risiko und geringere Bereitstellungszeiten zur Folge, insbesondere wenn es um die Arbeit mit kritischen Anwendungen und Systemen geht.
 
 In der obigen Abbildung ist der Connector mit dem Connectorbereich gleichbedeutend, umfasst jedoch die gesamte Kommunikation mit dem externen System.
 
@@ -54,14 +54,14 @@ Der Connector ist für alle Funktionen verantwortlich, die den Import in das Sys
 
 Das Metaverse ist die konsolidierte Ansicht sämtlicher verknüpfter Identitäten aus benachbarten Connectorbereichen. In der obigen Abbildung wird der eingehende und ausgehende Attributfluss durch Linien mit Pfeilspitzen dargestellt. Beim Attributfluss handelt es sich um den Vorgang des Kopierens oder Umwandelns von Daten von einem System in ein anderes. Es werden ein- und ausgehende Attributflüsse unterschieden.
 
-Ein Attributfluss tritt bidirektional zwischen Connectorbereich und Metaverse auf, wenn die Ausführung von Synchronisierungsvorgängen \(vollständig oder Delta\) geplant ist. Ein Attributfluss tritt nur auf, wenn diese Synchronisierungen ausgeführt werden. Attributflüsse werden in Synchronisierungsregeln definiert. Diese können eingehend \(ISR im obigen Bild\) oder ausgehend \(OSR im obigen Bild\) sein.
+Ein Attributfluss tritt bidirektional zwischen Connectorbereich und Metaverse auf, wenn die Ausführung von Synchronisierungsvorgängen (vollständig oder Delta) geplant ist. Ein Attributfluss tritt nur auf, wenn diese Synchronisierungen ausgeführt werden. Attributflüsse werden in Synchronisierungsregeln definiert. Diese können eingehend (ISR im obigen Bild) oder ausgehend (OSR im obigen Bild) sein.
  
 
 ## Connectorbereich
 
 Jede verbundene Datenquelle wird als gefilterte Teilmenge der Objekte und Attribute im Connectorbereich dargestellt. So kann der Synchronisierungsdienst lokal ausgeführt werden, ohne das Remotesystem beim Synchronisieren der Objekte zu kontaktieren, und die Interaktion wird auf Importe und Exporte beschränkt.
 
-Wenn die Datenquelle und der Connector in der Lage sind, eine Liste der Änderungen \(einen Deltaimport\) bereitzustellen, wird die Betriebseffizienz erheblich gesteigert, da nur seit dem letzten Abrufzyklus vorgenommene Änderungen ausgetauscht werden. Der Connectorbereich isoliert die verbundene Datenquelle von der automatischen Übertragung von Änderungen durch die Anforderung, dass Import- und Exportvorgänge gemäß dem Connectorplan erfolgen. Mit dieser zusätzlichen Versicherung können Sie unbesorgt testen, die Vorschau anzeigen oder das nächste Update bestätigen.
+Wenn die Datenquelle und der Connector in der Lage sind, eine Liste der Änderungen (einen Deltaimport) bereitzustellen, wird die Betriebseffizienz erheblich gesteigert, da nur seit dem letzten Abrufzyklus vorgenommene Änderungen ausgetauscht werden. Der Connectorbereich isoliert die verbundene Datenquelle von der automatischen Übertragung von Änderungen durch die Anforderung, dass Import- und Exportvorgänge gemäß dem Connectorplan erfolgen. Mit dieser zusätzlichen Versicherung können Sie unbesorgt testen, die Vorschau anzeigen oder das nächste Update bestätigen.
  
 
 
@@ -91,4 +91,4 @@ Wenn eine Regel bestimmt, dass ein neues Connectorbereichsobjekt erstellt werden
 <!--Image references-->
 [1]: ./media/active-directory-aadsync-technical-concepts/ic750598.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

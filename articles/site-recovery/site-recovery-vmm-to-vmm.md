@@ -135,7 +135,12 @@ Fahren Sie nach der Installation des Anbieters mit der Einrichtung fort, um den 
 	- Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen.
 	- Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung verlangt, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Ports eingeben.
 	- Der VMM-Server sollte auf die folgenden URLs Zugriff haben:
-		- *.hypervrecoverymanager.windowsazure.com - *.accesscontrol.windows.net - *.backup.windowsazure.com - *.blob.core.windows.net - *.store.core.windows.net 
+		- **.hypervrecoverymanager.windowsazure.com
+- **.accesscontrol.windows.net
+- **.backup.windowsazure.com
+- **.blob.core.windows.net
+- **.store.core.windows.net
+
 	- Lassen Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) angegebenen IP-Adressen sowie das HTTPS-Protokoll (443) zu. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 	
 	- Wenn Sie einen benutzerdefinierten Proxy verwenden, wird ein ausführendes VMM-Konto (DRAProxyAccount) automatisch mit den angegebenen Proxyanmeldeinformationen erstellt. Konfigurieren Sie den Proxyserver so, dass dieses Konto erfolgreich authentifiziert werden kann. In der VMM-Konsole können die Einstellungen des ausführenden VMM-Kontos geändert werden. Zu diesem Zweck öffnen Sie den Arbeitsbereich "Einstellungen", erweitern Sie "Sicherheit", klicken Sie auf "Ausführende Konten", und ändern Sie das Kennwort für DRAProxyAccount. Sie müssen den VMM-Dienst neu starten, damit diese Einstellung wirksam wird.
@@ -198,7 +203,7 @@ Sie müssen die folgenden Aktionen durchführen, um die erste Replikation offlin
 	1. Öffnen Sie auf dem Domänencontroller **Active Directory-Benutzer und-Computer**.
 	2. Klicken Sie in der Konsolenstruktur auf **DomainName** > **Computer**.
 	3. Klicken Sie mit der rechten Maustaste auf den Namen des Hyper-V-Hostservers > **Eigenschaften**.
-	4. Klicken Sie auf der Registerkarte **Delegierung** auf Computer bei Delegierungen angegebener Dienste v**ertrauen**.
+	4. Klicken Sie auf der Registerkarte **Delegierung** auf **Diesem Computer nur bei Delegierungen angegebener Dienste vertrauen**.
 	5. Klicken Sie auf **Beliebiges Authentifizierungsprotokoll verwenden**.
 	6. Klicken Sie auf **Hinzufügen** > **Benutzer und Computer**.
 	7. Geben Sie den Namen des Computers ein, der den Exportpfad hostet > **OK**. Halten Sie die STRG-Taste gedrückt, und klicken Sie in der Liste der verfügbaren Dienste auf **CIFS** > **OK**. Wiederholen Sie diesen Vorgang für den Namen des Computers, der den Importpfad hostet. Wiederholen Sie den Vorgang bei Bedarf für zusätzliche Hyper-V-Hostserver.
@@ -308,7 +313,7 @@ Dieser Abschnitt enthält zusätzliche Datenschutzinformationen für den Microso
 
 **Feature: Registrierung**
 
-- **Funktionsbeschreibung**: Registriert Server beim Dienst, sodass virtuelle Computer geschützt werden können.
+- **Funktionsbeschreibung**: Registriert Server beim Dienst, sodass virtuelle Computer geschützt werden können
 - **Gesammelte Informationen**: Sammelt, verarbeitet und überträgt nach dem Registrieren des Diensts Informationen zum Verwaltungszertifikat von dem VMM-Server, der für die Bereitstellung der Notfallwiederherstellung festgelegt wurde. Dies geschieht anhand des Dienstnamens des VMM-Servers und der Namen der Clouds für virtuelle Computer auf dem VMM-Server.
 - **Verwendung von Informationen**: 
 	- Verwaltungszertifikat – Wird verwendet, um den registrierten VMM-Server für den Zugriff auf den Dienst zu identifizieren und zu authentifizieren. Der Dienst verwendet den öffentlichen Schlüsselteil des Zertifikats zum Sichern eines Tokens, auf das nur der registrierte VMM-Server zugreifen kann. Der Server muss dieses Token für den Zugriff auf die Dienstfunktionen verwenden.
@@ -339,7 +344,7 @@ Dieser Abschnitt enthält zusätzliche Datenschutzinformationen für den Microso
 
 **Feature: Netzwerkzuordnung**
 
-- **Funktionsweise**: Mithilfe dieser Funktion können Sie Netzwerkinformationen aus dem primären Rechenzentrum dem Rechenzentrum für die Wiederherstellung zuordnen. Wenn die virtuellen Computer am Wiederherstellungsstandort wiederhergestellt werden, hilft diese Zuordnung beim Herstellen der Netzwerkkonnektivität.
+- **Funktionsbeschreibung**: Mithilfe dieser Funktion können Sie Netzwerkinformationen aus dem primären Rechenzentrum dem Rechenzentrum für die Wiederherstellung zuordnen. Wenn die virtuellen Computer am Wiederherstellungsstandort wiederhergestellt werden, hilft diese Zuordnung beim Herstellen der Netzwerkkonnektivität.
 
 - **Gesammelte Informationen**: Im Rahmen der Funktion für die Netzwerkzuordnung erfasst, verarbeitet und überträgt der Dienst die Metadaten der logischen Netzwerke für die einzelnen Standorte (primär und Rechenzentrum).
 
@@ -365,4 +370,4 @@ Der Anbieter auf dem VMM-Server wird vom Dienst über das Ereignis benachrichtig
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

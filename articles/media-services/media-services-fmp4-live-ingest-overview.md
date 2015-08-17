@@ -49,7 +49,7 @@ Es folgt eine Liste der speziellen Formatdefinitionen, die für die Echtzeiterfa
 5. Im Abschnitt 3.3.6 in [1] wird das Feld mit der Bezeichnung "MovieFragmentRandomAccessBox" ("mfra") definiert, das am Ende der Echtzeiterfassung gesendet werden KANN, um das Ende des Streams (EOS, End-of-Stream) für den Kanal anzugeben. Aufgrund der Erfassungslogik von Azure Media Services ist die Verwendung von EOS (End-of-Stream) veraltet, und das Feld "mfra" für die Echtzeiterfassung SOLLTE NICHT gesendet werden. Wenn es dennoch gesendet wird, wird es in Azure Media Services ohne Meldung ignoriert. Es wird empfohlen, [Channel Reset](https://msdn.microsoft.com/library/azure/dn783458.aspx#reset_channels) zu verwenden, um den Status des Erfassungspunkts zurückzusetzen. Es wird auch empfohlen, [Program Stop](https://msdn.microsoft.com/library/azure/dn783463.aspx#stop_programs) zum Beenden einer Präsentation und eines Streams zu verwenden.
 6. Die Dauer des MP4-Fragments SOLLTE konstant sein, um die Größe der Clientmanifeste zu reduzieren und die Clientdownloadheuristik durch Verwendung von Wiederholungstags zu verbessern. Die Dauer KANN schwanken, um nicht ganzzahlige Frameraten auszugleichen.
 7. Die Dauer des MP4-Fragments SOLLTE zwischen ca. 2 und 6 Sekunden liegen.
-8. Zeitstempel und Indizes des MP4-Fragments (fragment_absolute_time und fragment_index für TrackFragmentExtendedHeaderBox) SOLLTEN in aufsteigender Reihenfolge eingehen. Obwohl Fragmente in Azure Media Services dupliziert werden können, sind die Möglichkeiten, Fragmente entsprechend der Medienzeitachse neu anzuordnen, nur sehr begrenzt.
+8. Zeitstempel und Indizes des MP4-Fragments (fragment\_absolute\_time und fragment\_index für TrackFragmentExtendedHeaderBox) SOLLTEN in aufsteigender Reihenfolge eingehen. Obwohl Fragmente in Azure Media Services dupliziert werden können, sind die Möglichkeiten, Fragmente entsprechend der Medienzeitachse neu anzuordnen, nur sehr begrenzt.
 
 ##Protokollformat – HTTP
 
@@ -139,7 +139,7 @@ Im Folgenden sind die Erwartungen im Hinblick auf den Echtzeiterfassungsendpunkt
 3. Die POST-Anforderung des neuen Encoders MUSS die gleichen Fragmented MP4-Headerfelder enthalten wie die Instanz, bei der der Fehler aufgetreten ist.
 4. Der neue Encoder MUSS ordnungsgemäß mit allen anderen für die gleiche Livepräsentation ausgeführten Encodern synchronisiert werden, sodass synchronisierte Audio- und Videobeispiele mit abgeglichenen Fragmentgrenzen generiert werden.
 5. Der neue Stream MUSS dem vorherigen Stream semantisch entsprechen und auf Header- und Fragmentebene austauschbar sein.
-6. Der neue Encoder SOLLTE versuchen, den Datenverlust zu minimieren. Die Werte für "fragment_absolute_time" und "fragment_index" von Medienfragmenten SOLLTEN sich ab dem Punkt erhöhen, an dem der Encoder zuletzt beendet wurde. Die Werte für "fragment_absolute_time" und "fragment_index" SOLLTEN sich kontinuierlich erhöhen, können jedoch bei Bedarf eine Fehlstelle aufweisen. Azure Media Services ignoriert Fragmente, die bereits empfangen und verarbeitet wurden. Daher ist es besser, im Zweifelsfall Fragmente erneut zu senden, als Fehlstellen in die Medienzeitachse einzuführen. 
+6. Der neue Encoder SOLLTE versuchen, den Datenverlust zu minimieren. Die Werte für "fragment\_absolute\_time" und "fragment\_index" von Medienfragmenten SOLLTEN sich ab dem Punkt erhöhen, an dem der Encoder zuletzt beendet wurde. Die Werte für "fragment\_absolute\_time" und "fragment\_index" SOLLTEN sich kontinuierlich erhöhen, können jedoch bei Bedarf eine Fehlstelle aufweisen. Azure Media Services ignoriert Fragmente, die bereits empfangen und verarbeitet wurden. Daher ist es besser, im Zweifelsfall Fragmente erneut zu senden, als Fehlstellen in die Medienzeitachse einzuführen. 
 
 ##Encoder-Redundanz 
 
@@ -206,4 +206,4 @@ Es folgt eine empfohlene Implementierung für redundante Audiospuren:
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

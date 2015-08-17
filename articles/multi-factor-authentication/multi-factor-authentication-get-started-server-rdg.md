@@ -59,4 +59,4 @@ Der Azure Multi-Factor Authentication-Server wird als RADIUS-Proxy zwischen dem 
 
 ![RADIUS-Authentifizierung](./media/multi-factor-authentication-get-started-server-rdg/radius.png)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

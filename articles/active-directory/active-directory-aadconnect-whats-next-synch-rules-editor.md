@@ -74,4 +74,4 @@ Zur Orientierung: In einer Kontoressourcen-Gesamtstrukturbereitstellung erwarten
 Das Thema der Transformation ist umfangreich und bietet einen großen Teil der benutzerdefinierten Konfiguration, die mit Azure AD Connect möglich ist. Die benutzerdefinierte Konfiguration wird in dieser Übersicht nicht behandelt, aber wir betrachten später in diesem Dokument einige weitere Attribute.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

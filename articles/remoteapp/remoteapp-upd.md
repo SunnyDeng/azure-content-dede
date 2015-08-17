@@ -2,7 +2,7 @@
 <properties 
     pageTitle="Benutzerprofildaten in Azure RemoteApp"
 	description="Erfahren Sie, wie Benutzerdaten in Azure RemoteApp gespeichert und abgerufen werden können."
-	services="remoteapp" 
+	services="remoteapp"
 	documentationCenter="" 
 	authors="lizap" 
 	manager="mbaldwin" />
@@ -39,11 +39,11 @@ Ja, wir speichern einen Backup der Benutzerdaten je nach geografischem Standort.
 
 ## Wie wird ein Benutzerprofil-Datenträger dem Benutzer auf der Serverseite angezeigt?
 
-Jeder Benutzer hat sein eigenes Verzeichnis auf dem Server, das dem Benutzerprofil-Datenträger zugeordnet ist: c:\Users\username.
+Jeder Benutzer hat sein eigenes Verzeichnis auf dem Server, das dem Benutzerprofil-Datenträger zugeordnet ist: c:\\Users\\username.
 
 ## Was ist die beste Möglichkeit, Outlook und den Benutzerprofil-Datenträger zu verwenden?
 
-Azure RemoteApp speichert den Outlook-Zustand (Postfächer, PSTs) zwischen den Sitzungen. Um dies zu ermöglichen, müssen PSTs in den Benutzerprofildaten gespeichert werden (c:\users<Benutzername>). Dies ist der Standardspeicherort für die Daten, und so lange dieser Speicherort nicht geändert wird, werden die Daten zwischen den Sitzungen beibehalten.
+Azure RemoteApp speichert den Outlook-Zustand (Postfächer, PSTs) zwischen den Sitzungen. Um dies zu ermöglichen, müssen PSTs in den Benutzerprofildaten gespeichert werden (c:\\users<Benutzername>). Dies ist der Standardspeicherort für die Daten, und so lange dieser Speicherort nicht geändert wird, werden die Daten zwischen den Sitzungen beibehalten.
 
 Außerdem wird empfohlen, dass Sie den "Cache"-Modus in Outlook und den "Server/online"-Modus für die Suche verwenden.
 
@@ -115,7 +115,7 @@ Sie können auch [auf Gruppenrichtlinien basierte Startskripts](https://technet.
 
 ## Kann das Startskript auch im Startmenü platziert werden? Funktioniert das?
 
-Mit anderen Worten, kann ich eine BAT-Datei erstellen, die ein Config-Fenster-Skript ausführt, es im Ordner "c:\ProgramData\Microsoft\Windows\Start" speichern, und das Skript dann immer dann ausführen lassen, wenn ein Benutzer eine RemoteApp-Sitzung startet?
+Mit anderen Worten, kann ich eine BAT-Datei erstellen, die ein Config-Fenster-Skript ausführt, es im Ordner "c:\\ProgramData\\Microsoft\\Windows\\Start" speichern, und das Skript dann immer dann ausführen lassen, wenn ein Benutzer eine RemoteApp-Sitzung startet?
 
 Nein, dies wird von Azure RemoteApp nicht unterstützt, da der RDSH genutzt wird, der Startskripts im Startmenü ebensowenig unterstützt.
 
@@ -123,4 +123,4 @@ Nein, dies wird von Azure RemoteApp nicht unterstützt, da der RDSH genutzt wird
 
 Nein, dies wird von Azure RemoteApp nicht unterstützt.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

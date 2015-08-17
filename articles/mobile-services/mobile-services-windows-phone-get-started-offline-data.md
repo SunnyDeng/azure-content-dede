@@ -59,7 +59,7 @@ In diesem Abschnitt wird SQLite als lokaler Speicher für die Offlinefunktionen 
 
     >[AZURE.NOTE]Wenn Sie Internet Explorer verwenden und auf den Link für das Herunterladen von SQLite klicken, werden Sie möglicherweise aufgefordert, die VSIX-Datei als ZIP-Datei herunterzuladen. Speichern Sie die Datei mit der Endung .vsix statt.zip an einem Speicherort auf Ihrer Festplatte. Doppelklicken Sie im Windows-Explorer auf die VSIX-Datei, um die Installation auszuführen.
 
-2. Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] abgeschlossen haben. Klicken Sie im Projektmappen-Explorer unterhalb des Projekts mit der rechten Maustaste auf **Verweise**, und fügen Sie einen Verweis auf **SQLite für Windows Phone** unter **Windows Phone**>**Erweiterungen** hinzu.
+2. Öffnen Sie in Visual Studio das Projekt, das Sie im Lernprogramm [Erste Schritte mit Mobile Services] oder [Erste Schritte mit Daten] abgeschlossen haben. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Verweise** unterhalb des Projekts und fügen Sie einen Verweis auf **SQLite für Windows Phone** unter **Windows Phone**>**Erweiterungen** hinzu.
 
     ![][1]
 
@@ -178,7 +178,7 @@ In diesem Abschnitt trennen Sie die Verbindung zwischen App und mobilem Dienst, 
 Beachten Sie, dass in diesem Abschnitt keinerlei Verbindung zwischen App und mobilem Dienst bestehen sollte. Daher lösen die Schaltflächen **Push** und **Pull** Ausnahmefehler aus, wenn sie getestet werden.. Im nächsten Abschnitt verbinden Sie diese Client-App erneut mit dem mobilen Dienst, um die **Push**- und **Pull**-Vorgänge zu testen und den Speicher mit der Datenbank des mobilen Dienstes zu synchronisieren.
 
 
-1. Öffnen Sie im Projektmappen-Explorer von Visual Studio die Datei "App.xaml.cs". Ändern Sie die Initialisierung von **MobileServiceClient** in eine ungültige Adresse, indem Sie in der URL **"azure-mobile.net"** durch **"azure-mobile.xxx"** ersetzen. Speichern Sie anschließend die Datei.
+1. Öffnen Sie im Projektmappen-Explorer von Visual Studio die Datei "App.xaml.cs". Ändern Sie die Initialisierung von **MobileServiceClient** in eine ungültige Adresse, indem Sie in der URL "**azure-mobile.net**" durch"**azure-mobile.xxx**" ersetzen. Speichern Sie anschließend die Datei.
 
          public static MobileServiceClient MobileService = new MobileServiceClient(
             "https://your-mobile-service.azure-mobile.xxx/",
@@ -196,7 +196,7 @@ Beachten Sie, dass in diesem Abschnitt keinerlei Verbindung zwischen App und mob
 In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies simuliert, dass die App von einem Offlinestatus in einen Onlinestatus mit dem mobilen Dienst wechselt.
 
 
-1. Öffnen Sie im Projektmappen-Explorer von Visual Studio die Datei "App.xaml.cs". Ändern Sie die Initialisierung von **MobileServiceClient** zurück zur korrekten Adresse, indem Sie in der URL **"azure-mobile.xxx"** durch **"azure-mobile.net"** ersetzen. Speichern Sie anschließend die Datei.
+1. Öffnen Sie im Projektmappen-Explorer von Visual Studio die Datei "App.xaml.cs". Ändern Sie die Initialisierung von **MobileServiceClient** zurück zur korrekten Adresse, indem Sie in der URL "**azure-mobile.xxx**" durch "**azure-mobile.net**" ersetzen. Speichern Sie anschließend die Datei.
 
          public static MobileServiceClient MobileService = new MobileServiceClient(
             "https://your-mobile-service.azure-mobile.net/",
@@ -291,4 +291,4 @@ In diesem Abschnitt testen Sie die Push- und Pull-Vorgänge zur Synchronisierung
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

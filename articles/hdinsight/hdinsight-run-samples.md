@@ -46,10 +46,10 @@ Im Internet finden Sie umfangreiche Dokumentationen zu Hadoop-verwandten Technol
 
 HDInsight wird mit den folgenden Beispielen ausgeliefert:
 
-- [**Das Pi-Schätzungsbeispiel mit Hadoop**][hdinsight-sample-pi-estimator]: Zeigt die Ausführung eines MapReduce-Programms mit HDInsight, das den Wert von Pi mithilfe einer statistischen (Quasi-Monte-Carlo-) Methode ermittelt.
-- [**Ausführen eines Hadoop MapReduce-Wortzählungsbeispiel in HDInsight**][hdinsight-sample-wordcount]: Beschreibt die Verwendung eines HDInsight-Clusters für die Ausführung eines MapReduce-Programms, das Worthäufigkeiten in einer Textdatei zählt.
-- [**Das 10-GB-Graysort-Beispiel**][hdinsight-sample-10gb-graysort]: Zeigt die Ausführung eines allgemeinen GraySort auf einer 10 GB-Datei mithilfe von HDInsight. Drei Aufträge müssen ausgeführt werden: Teragen zum Generieren der Daten, Terasort zum Sortieren der Daten und Teravalidate zur Überprüfung der richtigen Sortierung der Daten.
-- [**Das C#-Streamingbeispiel zur MapReduce-Wortzählung in Hadoop**][hdinsight-sample-csharp-streaming]: Dieses Lernprogramm zeigt, wie Sie in C# ein MapReduce-Programm schreiben können, das die Hadoop-Streamingschnittstelle verwendet.
+- [**Das Pi-Schätzungsbeispiel mit Hadoop**][hdinsight-sample-pi-estimator]\: Zeigt die Ausführung eines MapReduce-Programms mit HDInsight, das den Wert von Pi mithilfe einer statistischen (Quasi-Monte-Carlo-) Methode ermittelt.
+- [**Ausführen eines Hadoop MapReduce-Wortzählungsbeispiel in HDInsight**][hdinsight-sample-wordcount]\: Beschreibt die Verwendung eines HDInsight-Clusters für die Ausführung eines MapReduce-Programms, das Worthäufigkeiten in einer Textdatei zählt.
+- [**Das 10-GB-Graysort-Beispiel**][hdinsight-sample-10gb-graysort]\: Zeigt die Ausführung eines allgemeinen GraySort auf einer 10 GB-Datei mithilfe von HDInsight. Drei Aufträge müssen ausgeführt werden: Teragen zum Generieren der Daten, Terasort zum Sortieren der Daten und Teravalidate zur Überprüfung der richtigen Sortierung der Daten.
+- [**Das C#-Streamingbeispiel zur MapReduce-Wortzählung in Hadoop**][hdinsight-sample-csharp-streaming]\: Dieses Lernprogramm zeigt, wie Sie in C# ein MapReduce-Programm schreiben können, das die Hadoop-Streamingschnittstelle verwendet.
 
 
 ## Ausführen der Beispiele ##
@@ -89,4 +89,4 @@ In diesem Artikel und den Artikeln zu den einzelnen Beispielen haben Sie gelernt
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

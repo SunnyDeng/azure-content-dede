@@ -122,7 +122,7 @@ Da Hive und Pig die Anwendung zur Laufzeit aufrufen, sollte die Vorlage **Konsol
 
 6. Doppelklicken Sie auf **Standardcontainer** für den Cluster. Es wird ein neues Fenster geöffnet, das die Inhalte des Standardcontainers anzeigt.
 
-7. Klicken Sie auf das Symbol für den Upload, und wechseln Sie dann zum Ordner **bin\debug** für das Projekt **HiveCSharp**. Wählen Sie anschließend die Datei **HiveCSharp.exe** aus, und klicken Sie auf **Ok**.
+7. Klicken Sie auf das Symbol für den Upload, und wechseln Sie dann zum Ordner **bin\\debug** für das Projekt **HiveCSharp**. Wählen Sie anschließend die Datei **HiveCSharp.exe** aus, und klicken Sie auf **Ok**.
 
 	![Symbol für den Upload](./media/hdinsight-hadoop-hive-pig-udf-dotnet-csharp/upload.png)
 
@@ -195,7 +195,7 @@ Da Hive und Pig die Anwendung zur Laufzeit aufrufen, sollte die Vorlage **Konsol
 
 1. Beim Pig-Streaming wird vorausgesetzt, dass die Anwendung lokal im Clusterdateisystem vorliegt. Aktivieren Sie Remotedesktop für den HDInsight-Cluster, und stellen Sie anschließend mithilfe der Anweisungen unter [Verbinden mit HDInsight-Clustern über RDP](hdinsight-administer-use-management-portal.md#rdp) eine Verbindung her.
 
-2. Kopieren Sie nach der Verbindungsherstellung **PigUDF.exe** aus dem Verzeichnis **bin/debug** für das PigUDF-Projekt auf Ihren lokalen Computer, und fügen Sie die Datei im Verzeichnis **%PIG_HOME%** des Clusters ein.
+2. Kopieren Sie nach der Verbindungsherstellung **PigUDF.exe** aus dem Verzeichnis **bin/debug** für das PigUDF-Projekt auf Ihren lokalen Computer, und fügen Sie die Datei im Verzeichnis **%PIG\_HOME%** des Clusters ein.
 
 ###Verwenden der Anwendung aus Pig Latin
 
@@ -240,4 +240,4 @@ Informationen zu anderen Möglichkeiten der Verwendung von Pig und Hive sowie In
 
 * [Verwenden von MapReduce mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

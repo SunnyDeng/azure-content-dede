@@ -11,7 +11,7 @@
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="06/30/2015" 
 	ms.author="awills"/>
  
@@ -35,7 +35,7 @@ Sie benötigen Folgendes:
 *Wenn Sie eine Web-App haben, die bereits aktiv ist, könnten Sie das alternative Verfahren nutzen, [um das SDK zur Laufzeit auf dem Webserver hinzuzufügen](app-insights-java-live.md). Diese Alternative vermeidet das Neuerstellen des Codes, jedoch erhalten Sie nicht die Möglichkeit, Code schreiben, um die Benutzeraktivität nachzuverfolgen.*
 
 
-## 1. Abrufen eines Application Insights-Instrumentationsschlüssels
+## 1\. Abrufen eines Application Insights-Instrumentationsschlüssels
 
 1. Melden Sie sich am [Microsoft Azure-Portal](https://portal.azure.com) an.
 2. Erstellen einer neuen Application Insights-Ressource
@@ -48,7 +48,7 @@ Sie benötigen Folgendes:
 
     ![Klicken Sie in der Übersicht über neue Ressourcen auf "Eigenschaften", und kopieren Sie den Instrumentationsschlüssel](./media/app-insights-java-get-started/03-key.png)
 
-## 2. Hinzufügen des Application Insights SDK für Java zu Ihrem Projekt
+## 2\. Hinzufügen des Application Insights SDK für Java zu Ihrem Projekt
 
 *Wählen Sie die geeignete Methode für Ihr Projekt.*
 
@@ -123,7 +123,7 @@ Fügen Sie das SDK manuell hinzu:
 
 
 
-## 3. Hinzufügen der Datei "ApplicationInsights.XML"
+## 3\. Hinzufügen der Datei "ApplicationInsights.XML"
 
 Fügen Sie dem Ressourcenordner in Ihrem Projekt die Datei "ApplicationInsights.xml" hinzu, oder stellen Sie sicher, dass sie dem Bereitstellungsklassenpfad Ihres Projekts hinzugefügt wird. Kopieren Sie sie in den folgenden XML-Code.
 
@@ -164,7 +164,7 @@ Fügen Sie den Instrumentationsschlüssel ein, den Sie aus dem Azure-Portal abge
 * Die Komponente "HTTP-Anforderung" ist optional. Sie sendet automatisch Telemetriedaten zu Anforderungen und Antwortzeiten zum Portal.
 * Die Korrelation von Ereignissen ist eine Ergänzung der HTTP-Anforderungskomponente. Sie weist den einzelnen Anforderungen, die vom Server empfangen wurden, einen Bezeichner zu und fügt diesen als Eigenschaft 'Operation.Id' jedem Telemetrieelement hinzu. Diese Eigenschaft ermöglicht das Korrelieren der jeder Anforderung zugeordneten Telemetriedaten, indem in [Diagnosesuche][diagnostic] ein Filter festgelegt wird.
 
-## 4. Hinzufügen eines HTTP-Filters
+## 4\. Hinzufügen eines HTTP-Filters
 
 Der letzte Konfigurationsschritt ermöglicht der HTTP-Anforderungskomponente das Protokollieren jeder Webanforderung. (Nicht erforderlich, wenn nur die bloße API wünschen.)
 
@@ -207,7 +207,7 @@ Fügen Sie dieses Element der Struts-Konfigurationsdatei (die in der Regel "stru
 
 (Wenn Sie in einem Standardstapel Interceptors definiert haben, kann der Interceptor einfach diesem Stapel hinzugefügt werden.)
 
-## 5. Installieren auf dem Server
+## 5\. Installieren auf dem Server
 
 Installieren Sie auf Windows-Servern:
 
@@ -215,11 +215,11 @@ Installieren Sie auf Windows-Servern:
 
 (Damit werden Leistungsindikatoren aktiviert).
 
-## 6. Ausführen der Anwendung
+## 6\. Ausführen der Anwendung
 
 Führen Sie sie entweder im Debugmodus auf dem Entwicklungscomputer aus, oder veröffentlichen Sie sie auf Ihrem Server.
 
-## 7. Anzeigen Ihrer Telemetriedaten in Application Insights
+## 7\. Anzeigen Ihrer Telemetriedaten in Application Insights
 
 Kehren Sie zur Application Insights-Ressource im [Microsoft Azure-Portal](https://portal.azure.com) zurück.
 
@@ -373,4 +373,4 @@ Nachdem Sie das SDK installiert haben, können Sie die API verwenden, um eigene 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

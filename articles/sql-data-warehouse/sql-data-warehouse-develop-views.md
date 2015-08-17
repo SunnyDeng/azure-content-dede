@@ -26,9 +26,9 @@ In diesem Artikel werden einige Beispiele zum Verbessern der Lösung mit einer I
 ## Architekturabstraktion
 Ein häufig verwendetes Anwendungsmuster ist das erneute Erstellen von Tabellen mit CREATE TABLE AS SELECT (CTAS) gefolgt von einem Muster zur Objektumbenennung beim Laden von Daten.
 
-Im folgenden Beispiel werden einer Datumsdimension neue Datumsdatensätze hinzugefügt. Beachten Sie, wie zunächst ein neues Objekt "DimDate_New" erstellt und dann umbenannt wird, um die ursprüngliche Version des Objekts zu ersetzen. ``` CREATE TABLE dbo.DimDate_New WITH (DISTRIBUTION = REPLICATE , CLUSTERED INDEX (DateKey ASC) ) AS SELECT * FROM dbo.DimDate AS prod UNION ALL SELECT * FROM dbo.DimDate_stg AS stg ;
+Im folgenden Beispiel werden einer Datumsdimension neue Datumsdatensätze hinzugefügt. Beachten Sie, wie zunächst ein neues Objekt "DimDate\_New" erstellt und dann umbenannt wird, um die ursprüngliche Version des Objekts zu ersetzen. ``` CREATE TABLE dbo.DimDate\_New WITH (DISTRIBUTION = REPLICATE , CLUSTERED INDEX (DateKey ASC) ) AS SELECT * FROM dbo.DimDate AS prod UNION ALL SELECT * FROM dbo.DimDate\_stg AS stg ;
 
-RENAME OBJECT DimDate TO DimDate_Old; RENAME OBJECT DimDate_New TO DimDate;
+RENAME OBJECT DimDate TO DimDate\_Old; RENAME OBJECT DimDate\_New TO DimDate;
 
 ``` Allerdings können dadurch Tabellenobjekte in der Benutzersicht im SSDT SQL Server-Objekt-Explorer auftauchen oder daraus verschwinden. Sichten können verwendet werden, um eine konsistente Darstellungsschicht für Warehouse-Datenconsumer bereitzustellen, während die zugrunde liegenden Objekte umbenannt werden. Beim Bereitstellen von Datenzugriff über eine Sicht benötigen Benutzer keine Einblicke in die zugrunde liegenden Tabellen. Dadurch wird eine konsistente Benutzererfahrung gewährleistet, während die Data Warehouse-Designer das Datenmodell weiterentwickeln und die Leistung maximieren können, indem sie beim Datenladevorgang CTAS verwenden.
 
@@ -53,4 +53,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

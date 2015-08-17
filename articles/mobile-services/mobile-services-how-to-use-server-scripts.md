@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
@@ -17,9 +18,13 @@
 	ms.author="ricksal"/>
 
 
+
 # Arbeiten mit einem mobilen JavaScript-Back-End-Dienst
 
-<div class="dev-center-tutorial-subselector"><a href="/documentation/articles/mobile-services-dotnet-backend-how-to-use/" title=".NET-Back-End">.NET-Back-End</a> | <a href="/documentation/articles/mobile-services-how-to-use-server-scripts/"  title="JavaScript-Back-End" class="current">JavaScript-Back-End</a></div>
+> [AZURE.SELECTOR]
+[.NET backend](mobile-services-dotnet-backend-how-to-use.md)
+[JavaScript backend](mobile-services-how-to-use-server-scripts.md)
+ 
 Dieser Artikel enthält ausführliche Informationen und Beispiele zum Arbeiten mit einem JavaScript-Back-End in Azure Mobile Services.
 
 ##<a name="intro"></a>Einführung
@@ -37,7 +42,7 @@ Beschreibungen zu einzelnen Serverskript-Objekten und -Funktionen finden Sie unt
 
 ##<a name="table-scripts"></a>Tabellenvorgänge
 
-Tabellenvorgänge sind Serverskripts, die für einen Vorgang auf einer Tabelle registriert sind: einfügen, lesen, ändern oder löschen (*del*). In diesem Abschnitt wird beschrieben, wie Sie mit Tabellenvorgänge in einem JavaScript-Back-End arbeiten. Darin sind die folgenden Abschnitte enthalten:
+Ein Tabellenvorgangsskript ist ein Serverskript, der für einen Vorgang auf einer Tabelle registriert ist&mdash;einfügen, lesen, aktualisieren oder löschen (*del*). In diesem Abschnitt wird beschrieben, wie Sie mit Tabellenvorgänge in einem JavaScript-Back-End arbeiten. Darin sind die folgenden Abschnitte enthalten:
 
 + [Übersicht über Tabellenvorgänge][Basic table operations]
 + [Gewusst wie: Registrierung für Tabellenvorgänge]
@@ -77,10 +82,10 @@ Tabellen-Skriptfunktionen nehmen immer drei Argumente entgegen.
 
 Dies sind die kanonischen Signaturen der main-Funktion für die Tabellenvorgänge:
 
-+ [Einfügen][insert function]: `function insert (item, user, request) { ... }`
-+ [Aktualisieren][update function]: `function update (item, user, request) { ... }`
-+ [Löschen][delete function]: `function del (id, user, request) { ... }`
-+ [Lesen][read function]: `function read (query, user, request) { ... }`
++ [Einfügen][insert function]\: `function insert (item, user, request) { ... }`
++ [Aktualisieren][update function]\: `function update (item, user, request) { ... }`
++ [Löschen][delete function]\: `function del (id, user, request) { ... }`
++ [Lesen][read function]\: `function read (query, user, request) { ... }`
 
 >[AZURE.NOTE]Funktionen, die für den Delete-Vorgang registriert sind, müssen _del_ genannt werden, da delete ein reserviertes Schlüsselwort in JavaScript ist.
 
@@ -96,7 +101,7 @@ Sie können Serverskripts, die für einen Tabellenvorgang registriert sind, auf 
 	
 	Weitere Informationen hierzu finden Sie unter [Validate and modify data in Mobile Services by using server scripts] (Validierung und Änderung von Daten in Mobile Services mithilfe von Serverskripts, in englischer Sprache).
 
-+ Mithilfe von Quellcodeverwaltung. Falls Sie die Quellcodeverwaltung aktiviert haben, erstellen Sie einfach eine Datei mit dem Namen "<em>`<table>`</em>.<em>`<operation>`</em>.js" im Unterordner ".\service\table" in Ihrem Git-Repository, wobei <em>`<table>`</em> der Name der Tabelle und <em>`<operation>`</em> der registrierte Tabellenvorgang ist. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Source control, shared code, and helper functions].
++ Mithilfe von Quellcodeverwaltung. Falls Sie die Quellcodeverwaltung aktiviert haben, erstellen Sie einfach eine Datei mit dem Namen "<em>`<table>`</em>.<em>`<operation>`</em>.js" im Unterordner ".\\service\\table" in Ihrem Git-Repository, wobei <em>`<table>`</em> der Name der Tabelle und <em>`<operation>`</em> der registrierte Tabellenvorgang ist. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Source control, shared code, and helper functions].
 
 + Über die Eingabeaufforderung im Azure-Befehlszeilentool. Weitere Informationen finden Sie unter [Arbeiten mit dem Befehlszeilentool].
 
@@ -228,7 +233,7 @@ Wenn eine Anwendung einen Wert für eine ID übergibt, speichert Mobile Services
 Der `id`-Wert muss eindeutig sein und darf keine Zeichen aus den folgenden Sätzen enthalten:
 
 + Steuerzeichen: [0x0000-0x001F] und [0x007F-0x009F]. Weitere Informationen finden Sie unter [ASCII-Steuerzeichen C0 und C1](http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set).
-+  Druckbare Zeichen: **"**(0 x 0022), **+** (0x002B), **/** (0x002F), **?** (0x003F), **\** (0x005C), **`** (0x0060)
++  Druckbare Zeichen: **"**(0 x 0022), **+** (0x002B), **/** (0x002F), **?** (0x003F), **\\** (0x005C), **`** (0x0060)
 +  Die IDs "." und ".."
 
 Alternativ können Sie auch ganzzahlige IDs für Ihre Tabellen verwenden. Um ganzzahlige IDs zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables](../virtual-machines-command-line-tools.md#Mobile_Tables) (CLI für Tabellen in mobilen Diensten, in englischer Sprache).
@@ -343,7 +348,7 @@ Sie können Serverskripts, die für HTTP-Methoden in einem Endpunkt einer benutz
 	
 	Zugriffsberechtigungen für Methoden von benutzerdefinierten APIs werden in der Registerkarte Berechtigungen zugewiesen. Informationen zur Erstellung der API finden Sie unter [Call a custom API from the client] (Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache.
 
-+ Mithilfe von Quellcodeverwaltung. Falls Sie die Quellcodeverwaltung aktiviert haben, erstellen Sie einfach eine Datei mit dem Namen "<em>`<custom_api>`</em>.js" im Unterordner ".\service\api" in Ihrem Git-Repository, wobei <em>`<custom_api>`</em> der Name der benutzerdefinierten API ist, die registriert wird. Die Skriptdatei enthält eine _exported_-Funktion für jede HTTP-Methode, die von der benutzerdefinierten API verfügbar gemacht wird. Die Berechtigungen werden in einer separaten .json-Datei definiert. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Source control, shared code, and helper functions].
++ Mithilfe von Quellcodeverwaltung. Falls Sie die Quellcodeverwaltung aktiviert haben, erstellen Sie einfach eine Datei mit dem Namen "<em>`<custom_api>`</em>.js" im Unterordner ".\\service\\api" in Ihrem Git-Repository, wobei <em>`<custom_api>`</em> der Name der benutzerdefinierten API ist, die registriert wird. Die Skriptdatei enthält eine _exported_-Funktion für jede HTTP-Methode, die von der benutzerdefinierten API verfügbar gemacht wird. Die Berechtigungen werden in einer separaten .json-Datei definiert. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Source control, shared code, and helper functions].
 
 + Über die Eingabeaufforderung im Azure-Befehlszeilentool. Weitere Informationen finden Sie unter [Arbeiten mit dem Befehlszeilentool].
 
@@ -367,7 +372,8 @@ Die folgende **OrderPizza**-Funktion einer benutzerdefinierten API liefert ein e
 
 		exports.get = function(request, response) {
 		  response.set('content-type', 'application/xml');
-		  var xml = '<?xml version="1.0"?><PizzaOrderForm><PizzaOrderForm/>';
+		  var xml = '<?xml version="1.0"?><PizzaOrderForm><PizzaOrderForm/>
+';
 		  response.send(200, xml);
 		};
 
@@ -462,7 +468,7 @@ Geplante Aufträge können auf zwei Arten definiert werden:
 
 + Über die Eingabeaufforderung im Azure-Befehlszeilentool. Weitere Informationen finden Sie unter [Arbeiten mit dem Befehlszeilentool].
 
->[AZURE.NOTE]Falls Sie die Quellcodeverwaltung aktiviert haben, können Sie die Skriptdateien der geplanten Aufträge direkt im Unterordner .\service\scheduler in Ihrem Git-Repository bearbeiten. Weitere Informationen finden Sie unter [Gewusst wie: Freigeben von Code mithilfe der Quellcodeverwaltung].
+>[AZURE.NOTE]Falls Sie die Quellcodeverwaltung aktiviert haben, können Sie die Skriptdateien der geplanten Aufträge direkt im Unterordner .\\service\\scheduler in Ihrem Git-Repository bearbeiten. Weitere Informationen finden Sie unter [Gewusst wie: Freigeben von Code mithilfe der Quellcodeverwaltung].
 
 ##<a name="shared-code"></a>Quellcodeverwaltung, freigegebener Code und Hilfsfunktionen
 
@@ -772,38 +778,16 @@ Beim Schreiben von Serverskripts, die [insert-], [update-], [read-] oder [delete
 
 Wenn Sie das [Tabellenobjekt] oder das [mssql-Objekt] verwenden oder Ihre Skripts ausführen, werden die deserialisierten JavaScript-Objekte in Ihre SQL-Datenbank eingefügt. Bei diesem Vorgang werden die Objekteigenschaften auf T-SQL-Datentypen abgebildet:
 
-<table border="1">
-<tr>
-<td>JavaScript-Eigenschaft</td>
-<td>T-SQL-Datentyp</td>
-</tr><tr>
-<td>Number</td>
-<td>Float(53)</td>
-</tr><tr>
-<td>Boolean</td>
-<td>Bit</td>
-</tr><tr>
-<td>Date</td>
-<td>DateTimeOffset(3)</td>
-</tr>
-<tr>
-<td>String</td>
-<td>Nvarchar(max)</td>
-</tr>
-<tr>
-<td>Buffer</td>
-<td>Nicht unterstützt</td>
-</tr><tr>
-<td>Object</td>
-<td>Nicht unterstützt</td>
-</tr><tr>
-<td>Array</td>
-<td>Nicht unterstützt</td>
-</tr><tr>
-<td>Stream</td>
-<td>Nicht unterstützt</td>
-</tr>
-</table>
+JavaScript-Eigenschaft|T-SQL-Datentyp
+---|---
+Number|Float(53)
+Boolean|Bit
+Date|DateTimeOffset(3)|
+String|Nvarchar(max)
+Buffer|Nicht unterstützt
+Object|Nicht unterstützt
+Array|Nicht unterstützt
+Stream|Nicht unterstützt
 
 ###<a name="TSQL"></a>Tabellenzugriff mit Transact-SQL
 
@@ -1079,4 +1063,4 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [Support for package.json in Azure Mobile Services]: http://go.microsoft.com/fwlink/p/?LinkId=391036
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

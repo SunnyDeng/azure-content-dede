@@ -63,4 +63,4 @@ Sie können diese Warnungsregel natürlich bearbeiten und **deaktivieren** und w
 * [Nachverfolgen des Dienststatus](insights-service-health.md), um den Zeitpunkt von Leistungsabfällen oder Dienstunterbrechungen zu ermitteln, die bei Azure aufgetreten sind.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

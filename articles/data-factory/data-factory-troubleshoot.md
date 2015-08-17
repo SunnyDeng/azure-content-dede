@@ -7,6 +7,7 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
+
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="06/04/2015" 
 	ms.author="spelluru"/>
+
 
 # Problembehandlung bei Data Factory
 Sie können Azure Data Factory-Probleme mithilfe vom Azure-Portal (oder) Azure PowerShell-Cmdlets beheben. Dieses Thema enthält exemplarische Vorgehensweisen, die Ihnen zeigen, wie Sie das Azure-Portal verwenden, um schnell Fehler zu beheben, die bei Data Factory auftreten.
@@ -52,44 +54,42 @@ Stellen Sie sicher, dass SQL Server von dem Computer, auf dem das Gateway instal
 
 ## Problem: Eingabeslices haben permanent den Status "PendingExecution" oder "PendingValidation".
 
-Slices können den Status **PendingExecution** oder **PendingValidation** aus unterschiedlichen Gründen aufweisen. Zu den häufigsten Gründen zählt, dass die Eigenschaft **waitOnExternal** nicht im Abschnitt **availability** der ersten Tabelle bzw. des ersten Datasets in der Pipeline angegeben ist. Ein Dataset, das außerhalb des Gültigkeitsbereichs von Azure Data Factory erstellt wird, sollte im Abschnitt **availability** mit der Eigenschaft **waitOnExternal** gekennzeichnet sein. Dies bedeutet, dass es sich um externe Daten handelt, die nicht von Pipelines innerhalb der Data Factory unterstützt werden. Die Datenslices werden als **Ready** gekennzeichnet, sobald die Daten im entsprechenden Speicher verfügbar sind.
+Slices können den Status **PendingExecution** oder **PendingValidation** aus unterschiedlichen Gründen aufweisen. Zu den häufigsten Gründen zählt, dass die Eigenschaft **external** nicht auf **true** festgelegt ist. Ein Dataset, das außerhalb des Gültigkeitsbereichs von Azure Data Factory erstellt wird, sollte mit der Eigenschaft **external** gekennzeichnet sein. Dies bedeutet, dass es sich um externe Daten handelt, die nicht von Pipelines innerhalb der Data Factory unterstützt werden. Die Datenslices werden als **Ready** gekennzeichnet, sobald die Daten im entsprechenden Speicher verfügbar sind.
 
-Das folgende Beispiel zeigt die Verwendung der Eigenschaft **waitOnExternal**. Sie können **waitOnExternal {}** angeben, ohne Werte für Eigenschaften im Abschnitt festzulegen, sodass die Standardwerte verwendet werden.
+Das folgende Beispiel zeigt die Verwendung der Eigenschaft **external**. Sie können optional **externalData**\* angeben, wenn Sie "external" auf "true" festlegen.
 
 Im Thema "Tabellen" in der [Referenz zur JSON-Skripterstellung][json-scripting-reference] finden Sie weitere Informationen zu dieser Eigenschaft.
 	
 	{
-	    "name": "CustomerTable",
-	    "properties":
-	    {
-	        "location":
-	        {
-	            "type": "AzureBlobLocation",
-	            "folderPath": "MyContainer/MySubFolder/",
-	            "linkedServiceName": "MyLinkedService",
-	            "format":
-	            {
-	                "type": "TextFormat",
-	                "columnDelimiter": ",",
-	                "rowDelimiter": ";"
-	            }
-	        },
-	        "availability":
-	        {
-	            "frequency": "Hour",
-	            "interval": 1,
-	            "waitOnExternal":
-	            {
-	                "dataDelay": "00:10:00",
-	                "retryInterval": "00:01:00",
-	                "retryTimeout": "00:10:00",
-	                "maximumRetry": 3
-	            }
-	        }
+	  "name": "CustomerTable",
+	  "properties": {
+	    "type": "AzureBlob",
+	    "linkedServiceName": "MyLinkedService",
+	    "typeProperties": {
+	      "folderPath": "MyContainer/MySubFolder/",
+	      "format": {
+	        "type": "TextFormat",
+	        "columnDelimiter": ",",
+	        "rowDelimiter": ";"
+	      }
+	    },
+	    "external": true,
+	    "availability": {
+	      "frequency": "Hour",
+	      "interval": 1
+	    },
+	    "policy": {
+	      "externalData": {
+	        "dataDelay": "00:10:00",
+	        "retryInterval": "00:01:00",
+	        "retryTimeout": "00:10:00",
+	        "maximumRetry": 3
+	      }
 	    }
+	  }
 	}
 
- Um den Fehler zu beheben, fügen Sie den Abschnitt **waitOnExternal** der JSON-Definition für die Eingabetabelle hinzu und erstellen die Tabelle erneut.
+ Um den Fehler zu beheben, fügen Sie die Eigenschaft **external** und den optionalen Abschnitt **externalData** der JSON-Definition für die Eingabetabelle hinzu und erstellen die Tabelle erneut.
 
 ## Problem: Fehler beim Hybridkopiervorgang
 So erhalten Sie weitere Details:
@@ -131,7 +131,7 @@ Zum Auflisten und Lesen der Protokolle einer bestimmten benutzerdefinierten Akti
 
 Ein **häufiger Fehler** bei benutzerdefinierten Aktivitäten erfolgt bei der Paketausführung mit Exitcode "1". Weitere Details finden Sie unter "wasb://adfjobs@storageaccount.blob.core.windows.net/PackageJobs/<guid>/<jobid>/Status/stderr".
 
-Um weitere Details zu dieser Art von Fehler anzuzeigen, öffnen Sie die Datei **stderr**. Ein häufiger Fehler ist hier eine Timeoutbedingung wie diese: INFO mapreduce.Job: Task Id : attempt_1424212573646_0168_m_000000_0, Status : FAILED AttemptID:attempt_1424212573646_0168_m_000000_0 Timed out after 600 secs
+Um weitere Details zu dieser Art von Fehler anzuzeigen, öffnen Sie die Datei **stderr**. Ein häufiger Fehler ist hier eine Timeoutbedingung wie diese: INFO mapreduce.Job: Task Id : attempt\_1424212573646\_0168\_m\_000000\_0, Status : FAILED AttemptID:attempt\_1424212573646\_0168\_m\_000000\_0 Timed out after 600 secs
 
 Derselbe Fehler wird möglicherweise mehrmals angezeigt, wenn der Auftrag z. B. über einen Zeitraum von mindestens 30 Minuten dreimal wiederholt wurde.
 
@@ -386,4 +386,4 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 [image-data-factory-troubleshoot-activity-run-details]: ./media/data-factory-troubleshoot/Walkthrough2ActivityRunDetails.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

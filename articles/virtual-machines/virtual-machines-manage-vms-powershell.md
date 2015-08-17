@@ -1,11 +1,12 @@
 <properties
-   pageTitle="manage-vms-azure-powershell"
-   description="Verwalten Ihrer VMs mit Azure PowerShell"
+   pageTitle="Verwalten Ihrer virtuellen Computer mit Azure PowerShell | Microsoft AzureVerwalten Sie Ihre virtuellen Computer mithilfe von Azure PowerShell | Microsoft Azure"
+   description="Lernen Sie Befehle kennen, mit denen Sie Aufgaben bei der Verwaltung Ihrer virtuellen Computer verwenden können."
    services="virtual-machines"
    documentationCenter="windows"
    authors="singhkay"
    manager="timlt"
    editor=""/>
+
 
    <tags
    ms.service="virtual-machines"
@@ -16,11 +17,12 @@
    ms.date="06/24/2015"
    ms.author="kasing"/>
 
-# Verwalten Ihrer virtuellen Computer mit Azure PowerShell
+
+# Verwalten Ihrer virtuellen Computer mithilfe von Azure PowerShell
 
 Viele Aufgaben, die Sie jeden Tag zur Verwaltung der virtuellen Computer ausführen, können mithilfe von Azure PowerShell-Cmdlets automatisiert werden. In diesem Artikel finden Sie Beispiele für Befehle für einfachere Aufgaben und Links zu Artikeln, die die Befehle für komplexere Aufgaben behandeln.
 
->[AZURE.NOTE]Wenn Sie Azure PowerShell noch nicht installiert und konfiguriert haben, finden Sie [hier](../install-configure-powershell.md) Anweisungen dazu.
+>[AZURE.NOTE]Wenn Sie Azure PowerShell noch nicht installiert und konfiguriert haben, erhalten Sie die Anweisungen dazu im Artikel [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
 
 ## So verwenden Sie die Beispielbefehle
 Sie müssen einen Teil des Texts in den Befehlen durch Text ersetzen, der für Ihre Umgebung geeignet ist. Die < and >-Symbole zeigen Text an, der ersetzt werden muss. Wenn Sie den Text ersetzen, entfernen Sie die Symbole, behalten jedoch die Anführungszeichen bei.
@@ -62,10 +64,10 @@ Führen Sie den folgenden Befehl aus:
 
     Start-AzureVM -ServiceName "<cloud service name>" -Name "<virtual machine name>"
 
-## Anfügen eines Datenträgers
-Diese Aufgabe erfordert einige Schritte. Zunächst verwenden Sie das Cmdlet ****Add-AzureDataDisk****, um dem $vm-Objekt den Datenträger hinzuzufügen, anschließend aktualisieren Sie die Konfiguration des virtuellen Computers mit dem Cmdlet "Update-AzureVM".
+## Datenträger anfügen
+Diese Aufgabe erfordert einige Schritte. Zunächst verwenden Sie das Cmdlet \*\*\*\*Add-AzureDataDisk\*\*\*\* zum Hinzufügen des Datenträgers zum $vm-Objekt. Dann verwenden Sie das Cmdlet **Update-AzureVM**, um die Konfiguration des virtuellen Computers zu aktualisieren.
 
-Sie müssen auch entscheiden, ob Sie einen neuen Datenträger anfügen oder einen, der Daten enthält. Für einen neuen Datenträger erstellt der Befehl die VHD-Datei und fügt sie im selben Befehl an.
+Sie müssen auch entscheiden, ob Sie einen neuen Datenträger anfügen oder einen, der Daten enthält. Für einen neuen Datenträger erstellt der Befehl die VHD-Datei und fügt sie an.
 
 Um einen neuen Datenträger anzufügen, führen Sie den folgenden Befehl aus:
 
@@ -84,13 +86,13 @@ Führen Sie den folgenden Befehl zum Anfügen von Datenträgern aus einer vorhan
               -DiskLabel "<main>" -LUN <0> `
               | Update-AzureVM
 
-## Erstellen eines virtuellen Windows-Computers
+## Erstellen eines virtuellen Computers auf Windows-Basis
 
-Zum Erstellen eines auf Windows basierenden virtuellen Computers in Azure folgen Sie den Anweisungen unter [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md). In diesem Thema wird schrittweise erläutert, wie Sie einen PowerShell-Befehlssatz erstellen, mit dem Sie einen virtuellen Windows-Computer generieren, der mit folgenden Optionen vorkonfiguriert werden kann:
+Zum Erstellen eines auf Windows basierenden virtuellen Computers in Azure folgen Sie den Anweisungen unter [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md). In diesem Thema wird schrittweise erläutert, wie Sie einen Azure PowerShell-Befehlssatz erstellen, mit dem Sie einen virtuellen Windows-Computer generieren, der vorkonfiguriert werden kann:
 
-- Mitgliedschaft in einer Active Directory-Domäne
-- Zusätzliche Datenträger
-- Mitgliedschaft in einer vorhandenen Lastenausgleichsgruppe
-- Statische IP-Adresse
+- Mit einer Mitgliedschaft in einer Active Directory-Domäne.
+- Mit zusätzlichen Datenträgern.
+- Als Mitglied in einer vorhandenen Lastenausgleichsgruppe.
+- Mit einer statischen IP-Adresse.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

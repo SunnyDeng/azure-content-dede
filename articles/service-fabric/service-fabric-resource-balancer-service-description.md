@@ -78,7 +78,7 @@ Für die Dienstaffinität gelten derzeit die folgenden Einschränkungen:
 - Sie kann nicht übergreifend für zustandslose und zustandsbehaftete Dienste verwendet werden.
 - Sie kann nicht übergreifend für zustandslose Dienste mit unterschiedlicher Instanzanzahl verwendet werden. Beispielsweise sollten beide zustandslosen Dienste die gleiche InstanceCount-Eigenschaft aufweisen, wenn sie erstellt werden.
 - Sie kann nicht übergreifend für zustandsbehaftete temporäre oder dauerhafte Dienste mit unterschiedlicher Replikatanzahl verwendet werden. Beispielsweise müssen für beide Dienste die gleichen ReplicaSetSizes-Werte („Target“ und „Min“) angegeben werden.
-- Sie kann nicht mit partitionierten Diensten verwendet werden. Jeder Dienst muss über ein FABRIC_PARTITION_SCHEME_SINGLETON-Partitionsschema verfügen.
+- Sie kann nicht mit partitionierten Diensten verwendet werden. Jeder Dienst muss über ein FABRIC\_PARTITION\_SCHEME\_SINGLETON-Partitionsschema verfügen.
 - Affinitätsbeziehungen werden – wie andere Eigenschaften der Dienstbeschreibung auch – festgelegt, wenn der Dienst erstellt wird, und können nicht geändert werden.
 - Dienstketten sind nicht zulässig. Wenn mehrere Dienste in eine Affinitätsbeziehung eingebunden werden müssen, muss ein „Sternmodell“ verwendet werden.
 
@@ -229,4 +229,4 @@ Weitere Informationen: [Resource Balancer-Architektur](service-fabric-resource-b
 [Image3]: media/service-fabric-resource-balancer-service-description/MW.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -36,7 +36,7 @@ Dieses Thema baut auf die App auf, die Sie in [Erste Schritte mit Notification H
 
 Zunächst werden Sie Benutzeroberflächenelemente zum vorhandenen Storyboard hinzufügen, mit denen Benutzer Kategorien für die Registrierung auswählen können. Die durch den Benutzer ausgewählten Kategorien werden auf dem Gerät gespeichert. Wenn die App gestartet wird, wird eine Geräteregistrierung in Ihrem Notification Hub mit den ausgewählten Kategorien als Tags erstellt.
 
-1. Fügen Sie die folgenden Komponenten aus der Objektbibliothek zu MainStoryboard_iPhone.storyboard hinzu:
+1. Fügen Sie die folgenden Komponenten aus der Objektbibliothek zu MainStoryboard\_iPhone.storyboard hinzu:
 	+ Eine Beschriftung mit dem Text "Breaking News",
 	+ Beschriftungen mit den Kategorien "World", "Politics", "Business", "Technology", "Science", "Sports",
 	+ Sechs Switches, einen pro Kategorie, wobei für jeden Switch **State** standardmäßig auf **Off** festgelegt ist.
@@ -346,7 +346,7 @@ Normalerweise würden die Benachrichtigungen von einem Back-End-Dienst gesendet 
 
 3. Jedes Gerät, das aktuelle Nachrichten abonniert hat, erhält die Benachrichtigungen, die Sie gerade gesendet haben.
 
-	![][4]![][5]
+	![][4] ![][5]
 
 
 ## Nächste Schritte
@@ -387,4 +387,4 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 [get-started]: /manage/services/notification-hubs/get-started-notification-hubs-ios/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

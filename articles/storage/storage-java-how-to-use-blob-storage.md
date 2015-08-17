@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Verwenden des Blob-Speichers mit Java | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Azure-Blob-Dienst zum Hochladen, Herunterladen, Auflisten und Löschen von Blob-Inhalten verwenden. Die Beispiele wurden in Java geschrieben." 
-	services="storage" 
-	documentationCenter="java" 
-	authors="rmcmurray" 
-	manager="wpickett" 
+<properties
+	pageTitle="Verwenden des Azure-Blob-Speichers mit Java | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Azure Blob-Speicher zum Hochladen, Herunterladen, Auflisten und Löschen von Blob-Inhalten verwenden. Die Beispiele wurden in Java geschrieben."
+	services="storage"
+	documentationCenter="java"
+	authors="rmcmurray"
+	manager="wpickett"
 	editor="jimbe"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="06/03/2015" 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="06/03/2015"
 	ms.author="robmcm"/>
 
 # Verwenden des Blob-Speichers mit Java
@@ -22,7 +22,7 @@
 
 ## Übersicht
 
-In diesem Leitfaden wird die Durchführung gängiger Szenarien mit dem Microsoft Azure-Blobspeicherdienst demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
+In diesem Artikel wird die Durchführung gängiger Szenarien mit dem Microsoft Azure-Blob-Speicher demonstriert. Die Beispiele wurden in Java geschrieben und verwenden das [Azure Storage-SDK für Java][]. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
 
 > [AZURE.NOTE]Ein SDK steht für Entwickler zur Verfügung, die Azure Storage auf Android-Geräten verwenden. Weitere Informationen finden Sie unter [Azure Storage-SDK für Android][].
 
@@ -32,7 +32,7 @@ In diesem Leitfaden wird die Durchführung gängiger Szenarien mit dem Microsoft
 
 ## Erstellen einer Java-Anwendung
 
-In diesem Leitfaden werden Sie Speicherfunktionen verwenden, die lokal in einer Java-Anwendung oder in Code ausgeführt werden können, der in einer Webrolle oder in einer Workerrolle in Azure ausgeführt wird.
+In diesem Artikel werden Sie Speicherfunktionen verwenden, die lokal in einer Java-Anwendung oder in Code ausgeführt werden können, der in einer Webrolle oder in einer Workerrolle in Azure ausgeführt wird.
 
 Dafür müssen Sie das Java Development Kit (JDK) installieren und ein Azure-Speicherkonto in Ihrem Azure-Abonnement erstellen. Sobald Sie dies erledigt haben, müssen Sie sicherstellen, dass Ihre Entwicklungssystem die minimalen Anforderungen und Abhängigkeiten erfüllt, die im Repository [Azure Storage-SDK für Java][] auf GitHub aufgelistet sind. Wenn Ihr System diese Anforderungen erfüllt, können Sie die Anweisungen für das Herunterladen und Installieren der Azure Storage-Bibliotheken für Java auf Ihr System von diesem Repository befolgen. Sobald Sie diese Aufgaben abgeschlossen haben, können Sie eine Java-Anwendung erstellen, die die Beispiele in diesem Artikel verwendet.
 
@@ -46,25 +46,27 @@ Fügen Sie die folgenden "import"-Anweisungen am Anfang der Java-Datei hinzu, um
 
 ## Einrichten einer Azure-Speicherverbindungszeichenfolge
 
-Ein Azure-Speicherclient verwendet eine Speicherverbindungszeichenfolge zum Speichern von Endpunkten und Anmeldeinformationen für den Zugriff auf Datenverwaltungsdienste. Bei der Ausführung in einer Clientanwendung muss die Speicherverbindungszeichenfolge in dem unten gezeigten Format angegeben werden. Dabei müssen der Name Ihres Speicherkontos und der primäre Zugriffsschlüssel für das im Verwaltungsportal aufgeführte Speicherkonto als *AccountName-* und *AccountKey-* Werte eingegeben werden. Dieses Beispiel zeigt, wie Sie ein statisches Feld für die Verbindungszeichenfolge deklarieren:
+Ein Azure-Speicherclient verwendet eine Speicherverbindungszeichenfolge zum Speichern von Endpunkten und Anmeldeinformationen für den Zugriff auf Datenverwaltungsdienste. Bei der Ausführung in einer Clientanwendung muss die Speicherverbindungszeichenfolge in dem unten gezeigten Format angegeben werden. Dabei müssen der Name Ihres Speicherkontos und der primäre Zugriffsschlüssel für das im Azure-Portal aufgeführte Speicherkonto als *AccountName-* und *AccountKey-* Werte eingegeben werden. Das folgende Beispiel zeigt, wie Sie ein statisches Feld für die Verbindungszeichenfolge deklarieren.
 
     // Define the connection-string with your values
-    public static final String storageConnectionString = 
-        "DefaultEndpointsProtocol=http;" + 
-        "AccountName=your_storage_account;" + 
+    public static final String storageConnectionString =
+        "DefaultEndpointsProtocol=http;" +
+        "AccountName=your_storage_account;" +
         "AccountKey=your_storage_account_key";
 
-In einer Anwendung, die in einer Microsoft Azure-Rolle ausgeführt wird, kann diese Zeichenfolge in der Dienstkonfigurationsdatei *ServiceConfiguration.cscfg* gespeichert werden. Der Zugriff darauf kann dann durch Aufruf der Methode **RoleEnvironment.getConfigurationSettings** erfolgen. Dieses Beispiel zeigt, wie die Verbindungszeichenfolge von einem **Setting**-Element mit der Bezeichnung *StorageConnectionString* in der Dienstkonfigurationsdatei abgerufen wird:
+In einer Anwendung, die in einer Microsoft Azure-Rolle ausgeführt wird, kann diese Zeichenfolge in der Dienstkonfigurationsdatei *ServiceConfiguration.cscfg* gespeichert werden. Der Zugriff darauf kann dann durch Aufruf der Methode **RoleEnvironment.getConfigurationSettings** erfolgen. Das folgende Beispiel zeigt, wie die Verbindungszeichenfolge von einem **Setting**-Element mit der Bezeichnung *StorageConnectionString* in der Dienstkonfigurationsdatei abgerufen wird:
 
     // Retrieve storage account from connection-string.
-    String storageConnectionString = 
+    String storageConnectionString =
         RoleEnvironment.getConfigurationSettings().get("StorageConnectionString");
 
 In den folgenden Beispielen wird davon ausgegangen, dass Sie eine dieser zwei Methoden verwendet haben, um die Speicherverbindungszeichenfolge abzurufen.
 
-## Erstellen von Containern
+## Erstellen eines Containers
 
-Ein CloudBlobClient-Objekt ermöglicht den Abruf von Referenzobjekten für Container und Blobs. Mit dem folgenden Code wird ein **CloudBlobClient**-Objekt erstellt. (Hinweis: Es gibt zusätzliche Möglichkeiten zum Erstellen von **CloudStorageAccount**-Objekten. Weitere Informationen finden Sie unter **CloudStorageAccount** in der [Azure Storage-Client-SDK-Referenz].)
+Ein **CloudBlobClient**-Objekt ermöglicht den Abruf von Referenzobjekten für Container und Blobs. Mit dem folgenden Code wird ein **CloudBlobClient**-Objekt erstellt.
+
+> [AZURE.NOTE]Es gibt zusätzliche Möglichkeiten zum Erstellen von **CloudStorageAccount**-Objekten. Weitere Informationen finden Sie unter **CloudStorageAccount** im Thema zur [Azure Storage-Client-SDK-Referenz].
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
 
@@ -104,9 +106,9 @@ Die Berechtigungen eines Containers werden standardmäßig für den privaten Zug
     // Set the permissions on the container.
     container.uploadPermissions(containerPermissions);
 
-## Hochladen von Blobs in einen Container
+## Hochladen eines Blobs in einen Container
 
-Rufen Sie einen Containerverweis ab und verwenden Sie diesen zum Abrufen eines Blob-Verweises, um eine Datei in ein Blob hochzuladen. Sobald Sie über einen Blob-Verweis verfügen, können Sie jeden Datenstrom hochladen, indem Sie die upload-Methode für den Blob-Verweis aufrufen. Bei diesem Vorgang wird das Blob erstellt, falls es nicht vorhanden ist, oder überschrieben, falls es vorhanden ist. Dieses Codebeispiel zeigt diesen Vorgang. Dabei wird davon ausgegangen, dass der Container bereits erstellt wurde.
+Rufen Sie einen Containerverweis ab und verwenden Sie diesen zum Abrufen eines Blob-Verweises, um eine Datei in ein Blob hochzuladen. Sobald Sie über einen Blob-Verweis verfügen, können Sie jeden Datenstrom hochladen, indem Sie die upload-Methode für den Blob-Verweis aufrufen. Bei diesem Vorgang wird das Blob erstellt, falls es nicht vorhanden ist, oder überschrieben, falls es vorhanden ist. Das folgende Codebeispiel zeigt diesen Vorgang. Dabei wird davon ausgegangen, dass der Container bereits erstellt wurde.
 
 	try
     {
@@ -118,9 +120,9 @@ Rufen Sie einen Containerverweis ab und verwenden Sie diesen zum Abrufen eines B
 
 	   // Retrieve reference to a previously created container.
     	CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
-			
+
         // Define the path to a local file.
-        final String filePath = "C:\myimages\myimage.jpg";
+        final String filePath = "C:\\myimages\\myimage.jpg";
 
     	// Create or overwrite the "myimage.jpg" blob with contents from a local file.
     	CloudBlockBlob blob = container.getBlockBlobReference("myimage.jpg");
@@ -147,7 +149,7 @@ Um die Blobs in einem Container aufzulisten, müssen Sie zuerst einen Containerv
 
     	// Retrieve reference to a previously created container.
     	CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
-			
+
     	// Loop over blobs within the container and output the URI to each of them.
     	for (ListBlobItem blobItem : container.listBlobs()) {
 	       System.out.println(blobItem.getUri());
@@ -179,14 +181,14 @@ Führen Sie zum Herunterladen von Blobs die gleichen Schritte wie zum Hochladen 
 
 	   // Retrieve reference to a previously created container.
 	   CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
-			
+
 	   // Loop through each blob item in the container.
 	   for (ListBlobItem blobItem : container.listBlobs()) {
 	       // If the item is a blob, not a virtual directory.
 	       if (blobItem instanceof CloudBlob) {
 	           // Download the item and save it to a file with the same name.
     	        CloudBlob blob = (CloudBlob) blobItem;
-    	        blob.download(new FileOutputStream("C:\mydownloads\" + blob.getName()));
+    	        blob.download(new FileOutputStream("C:\\mydownloads\" + blob.getName()));
     	    }
     	}
     }
@@ -210,7 +212,7 @@ Zum Löschen eines Blobs rufen Sie einen Blobverweis ab und rufen dann **deleteI
 
 	   // Retrieve reference to a previously created container.
 	   CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
-			
+
 	   // Retrieve reference to a blob named "myimage.jpg".
 	   CloudBlockBlob blob = container.getBlockBlobReference("myimage.jpg");
 
@@ -237,7 +239,7 @@ Zum Löschen eines Blob-Containers rufen Sie einen Blob-Containerverweis ab und 
 
 	   // Retrieve reference to a previously created container.
 	   CloudBlobContainer container = blobClient.getContainerReference("mycontainer");
-			
+
 	   // Delete the blob container.
 	   container.deleteIfExists();
     }
@@ -263,6 +265,5 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
 [Referenz für Azure Storage-Client-SDKs]: http://dl.windowsazure.com/storage/javadoc/
 [Azure Storage-REST-API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

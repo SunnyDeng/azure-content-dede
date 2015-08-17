@@ -177,7 +177,7 @@ Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurier
 
 7.	Prüfen Sie auf der Seite **Bezeichner konfigurieren**, ob die SSL-URL für Ihr Projekt bereits aufgeführt wird, und klicken Sie auf **Weiter**. Klicken Sie bis zum Abschluss des Assistenten mit den Standardeinstellungen stets auf **Weiter**.
 
-	> [AZURE.NOTE]In der Datei „App_Start\\Startup.Auth.cs“ Ihres Visual Studio-Projekts wird diese ID während der Verbundauthentifizierung mit dem Wert von <code>WsFederationAuthenticationOptions.Wtrealm</code> verglichen. Standardmäßig wird die URL der Anwendung aus dem vorherigen Schritt als RP-ID hinzugefügt.
+	> [AZURE.NOTE]In der Datei "App\_Start\\Startup.Auth.cs" Ihres Visual Studio-Projekts wird diese ID während der Verbundauthentifizierung mit dem Wert von <code>WsFederationAuthenticationOptions.Wtrealm</code> verglichen. Standardmäßig wird die URL der Anwendung aus dem vorherigen Schritt als RP-ID hinzugefügt.
 
 8.	Damit ist die Konfiguration der RP-Anwendung für Ihr Projekt in AD FS abgeschlossen. Anschließend konfigurieren Sie diese Anwendung zum Senden die Ansprüche, die Ihre Anwendung benötigt. Am Ende des Assistenten wird das Dialogfeld **Anspruchsregeln bearbeiten** standardmäßig geöffnet, damit Sie sofort mit der Bearbeitung beginnen können. Wir wollen mindestens die folgenden Ansprüche konfigurieren (Schemas sind in Klammern angegeben):
 
@@ -188,7 +188,7 @@ Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurier
 
 	> [AZURE.NOTE]Die Anspruchstypen, die Sie für Ihre Anwendung konfigurieren müssen, richten sich nach den Anforderungen Ihrer Anwendung. Die Liste der Ansprüche, die von Azure Active Directory-Anwendungen (d. h. RP-Vertrauensstellungen) unterstützt werden, finden Sie z. B. unter [Unterstützte Token- und Anspruchstypen](http://msdn.microsoft.com/library/azure/dn195587.aspx).
 
-8.	Klicken Sie im Dialogfeld „Anspruchsregeln bearbeiten“ auf **Regel hinzufügen**.
+8.	Klicken Sie im Dialogfeld "Anspruchsregeln bearbeiten" auf **Regel hinzufügen**.
 9.	Konfigurieren Sie die Namens-, UPN- und Rollenansprüche wie unten gezeigt, und klicken Sie auf **Fertig stellen**.
 
 	![](./media/web-sites-dotnet-lob-application-adfs/5-ldap-claims.png)
@@ -357,4 +357,4 @@ Azure App Service-Web-Apps unterstützen zwei Methoden für den Zugriff auf loka
  
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -31,4 +31,4 @@ Wechseln Sie zurück zu Visual Studio, und wählen Sie das Client-App-Projekt mi
 
 	Beachten Sie, dass nach dem Starten der Windows-App die im vorhergehenden Schritt gespeicherte Daten aus der mobilen App geladen werden.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

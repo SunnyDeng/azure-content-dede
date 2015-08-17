@@ -52,8 +52,8 @@ Das Schlüsselelement in dieser Architekturabbildung ist der Dienst Azure Servic
 ###Voraussetzungen
 Sie sollten die folgenden Lernprogramme durcharbeiten, um sich mit den Konzepten sowie den allgemeinen Erstellungs- und Konfigurationsschritten vertraut zu machen:
 
-1. [Verwenden von Service Bus-Themen und -Abonnements]: Es werden die Details des Arbeitens mit Service Bus-Themen/-Abonnements erläutert, und es wird erläutert, wie ein Namespace erstellt wird, der Themen/Abonnements enthalten soll, und wie Nachrichten von diesen gesendet bzw. empfangen werden. 
-2. [Erste Schritte mit Notification Hubs]: Hier wird erläutert, wie eine Windows Store-App eingerichtet wird und wie mithilfe von Notification Hubs Benachrichtigungen registriert und dann empfangen werden. 
+1. [Verwenden von Service Bus-Themen und -Abonnements]\: Es werden die Details des Arbeitens mit Service Bus-Themen/-Abonnements erläutert, und es wird erläutert, wie ein Namespace erstellt wird, der Themen/Abonnements enthalten soll, und wie Nachrichten von diesen gesendet bzw. empfangen werden. 
+2. [Erste Schritte mit Notification Hubs]\: Hier wird erläutert, wie eine Windows Store-App eingerichtet wird und wie mithilfe von Notification Hubs Benachrichtigungen registriert und dann empfangen werden. 
 
 ###Beispielcode
 
@@ -271,4 +271,4 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
 [Erste Schritte mit Notification Hubs]: http://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

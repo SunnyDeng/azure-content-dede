@@ -6,6 +6,7 @@
  authors="Thraka" 
  manager="timlt" 
  editor=""/>
+
 <tags 
  ms.service="cloud-services" 
  ms.devlang="na" 
@@ -14,6 +15,7 @@
  ms.workload="tbd"
  ms.date="06/04/2015" 
  ms.author="adegeo"/>
+
  
 # Größen für Clouddienste
 
@@ -41,29 +43,79 @@ Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe
 
 |Größe|CPU-<br>Kerne|Arbeitsspeicher|Datenträgergrößen|
 |---|---|---|---|
-|Sehr klein|1|768 MB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 19 GB<br/>Apps = etwa 1,5 GB|
-|Klein|1|1,75 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 224 GB<br/>Apps = etwa 1,5 GB|
-|Mittel|2|3,5 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 489 GB<br/>Apps = ca. 1,5 GB|
-|Groß|4|7 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 999 GB<br/>Apps = ca. 1,5 GB|
-|Extragroß|8|14 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 2039 GB<br/>Apps = ca. 1,5 GB|
-|A5|2|14 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 489 GB<br/>Apps = ca. 1,5 GB|
-|A6|4|28 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 999 GB<br/>Apps = ca. 1,5 GB|
-|A7|8|56 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 2039 GB<br/>Apps = ca. 1,5 GB
-|A8|8|56 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 1,77 TB<br/>Apps = ca. 1,5 GB<blockquote>Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen</a>.</blockquote>|
-|A9|16|112 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 1,77 TB<br/>Apps = ca. 1,5 GB<blockquote>Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen</a>.</blockquote>|
-|A10|8|56 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 1,77 TB<br/>Apps = ca. 1,5 GB<blockquote>Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen</a>.</blockquote>|
-|A11|16|112 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 1,77 TB<br/>Apps = ca. 1,5 GB<blockquote>Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen</a>.</blockquote>|
-|Standard_D1|1|3,5 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 50 GB<br/>Apps = ca. 1,5 GB|
-|Standard_D2|2|7 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 100 GB<br/>Apps = ca. 1,5 GB|
-|Standard_D3|4|14 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 200 GB<br/>Apps = ca. 1,5 GB|
-|Standard_D4|8|28 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 400 GB<br/>Apps = ca. 1,5 GB|
-|Standard_D11|2|14 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 100 GB<br/>Apps = ca. 1,5 GB|
-|Standard_D12|4|28 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 200 GB<br/>Apps = ca. 1,5 GB|
-|Standard_D13|8|56 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 400 GB<br/>Apps = ca. 1,5 GB|
-|Standard_D14|16|112 GB|Betriebssystem = Größe des Gast-OS<br/>Lokale Ressource = 800 GB<br/>Apps = ca. 1,5 GB|
+|Sehr klein|1|768 MB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 19 GB<br/>
+Apps = etwa 1,5 GB|
+|Klein|1|1,75 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 224 GB<br/>
+Apps = etwa 1,5 GB|
+|Mittel|2|3,5 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 489 GB<br/>
+Apps = ca. 1,5 GB|
+|Groß|4|7 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 999 GB<br/>
+Apps = ca. 1,5 GB|
+|Extragroß|8|14 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 2039 GB<br/>
+Apps = ca. 1,5 GB|
+|A5|2|14 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 489 GB<br/>
+Apps = ca. 1,5 GB|
+|A6|4|28 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 999 GB<br/>
+Apps = ca. 1,5 GB|
+|A7|8|56 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 2039 GB<br/>
+Apps = ca. 1,5 GB
+|A8|8|56 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 1,77 TB<br/>
+Apps = ca. 1,5 GB<blockquote>Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen</a>.</blockquote>|
+|A9|16|112 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 1,77 TB<br/>
+Apps = ca. 1,5 GB<blockquote>Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen</a>.</blockquote>|
+|A10|8|56 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 1,77 TB<br/>
+Apps = ca. 1,5 GB<blockquote>Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen</a>.</blockquote>|
+|A11|16|112 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 1,77 TB<br/>
+Apps = ca. 1,5 GB<blockquote>Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter <a href="http://go.microsoft.com/fwlink/p/?linkid=328042">Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen</a>.</blockquote>|
+|Standard\_D1|1|3,5 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 50 GB<br/>
+Apps = ca. 1,5 GB|
+|Standard\_D2|2|7 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 100 GB<br/>
+Apps = ca. 1,5 GB|
+|Standard\_D3|4|14 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 200 GB<br/>
+Apps = ca. 1,5 GB|
+|Standard\_D4|8|28 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 400 GB<br/>
+Apps = ca. 1,5 GB|
+|Standard\_D11|2|14 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 100 GB<br/>
+Apps = ca. 1,5 GB|
+|Standard\_D12|4|28 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 200 GB<br/>
+Apps = ca. 1,5 GB|
+|Standard\_D13|8|56 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 400 GB<br/>
+Apps = ca. 1,5 GB|
+|Standard\_D14|16|112 GB|Betriebssystem = Größe des Gast-OS<br/>
+Lokale Ressource = 800 GB<br/>
+Apps = ca. 1,5 GB|
 
+## Konfigurieren von Größen für Cloud Services
+
+Sie können die Größe des virtuellen Computers einer Rolleninstanz als Teil des Service-Modells angeben, wie durch die Dienstdefinitionsdatei beschrieben. Die Größe einer Rolle bestimmt die Anzahl der CPU-Kerne, die Speicherkapazität und die lokale Dateisystemgröße, die einer aktiven Instanz zugeordnet werden. Wählen Sie die Rollengröße basierend auf der Ressourcenanforderung Ihrer Anwendung.
+
+Dies ist ein Beispiel, in der eine kleine Rollengröße für eine Webrolleninstanz festgelegt wird:
+
+
+    <WebRole name="WebRole1" vmsize="Small">
+    …
+    </WebRole>
 ## Nächste Schritte
 
-[Einrichten eines Clouddiensts für Azure](https://msdn.microsoft.com/library/hh124108) [Konfigurieren von Größen für Clouddienste](https://msdn.microsoft.com/library/ee814754)
+[Einrichten eines Clouddiensts für Azure](https://msdn.microsoft.com/library/hh124108)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -74,4 +74,4 @@ Wie bei den Metriken können Sie mithilfe von [REST-API](https://msdn.microsoft.
 * [Überwachen der Verfügbarkeit und Reaktionsfähigkeit einer beliebigen Webseite](../app-insights-monitor-web-app-availability.md) mit Application Insights, um zu ermitteln, ob eine Seite offline ist.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

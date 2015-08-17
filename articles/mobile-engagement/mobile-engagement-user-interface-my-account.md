@@ -44,7 +44,7 @@ Zum Verwenden der Push-API oder Device-API müssen Sie die eindeutige Geräteken
 3. Wenn bei einer Reach-Ankündigung die der Ankündigung zugeordnete Aktions-URL das {deviceid}-Muster enthält, wird es automatisch durch die ID des Geräts ersetzt, das die Aktion auslöst. http://<example>.com/registeruser?deviceid={deviceid}&otherparam=myparamdata wird ersetzt durch: http://<example>.com/registeruser?deviceid=XXXXXXXXXXXXXXXX&otherparam=myparamdata 
 4. Wenn bei einer Reach-Webankündigung der HTML-Code der Ankündigung das {deviceid}-Muster enthält, wird es automatisch durch die ID des Geräts ersetzt, das die Webankündigung auslöst. Hier ist meine Geräte-ID: {deviceid} wird ersetzt durch: Hier ist meine Geräte-ID: XXXXXXXXXXXXXXXX
 5.  Öffnen Sie die Anwendung auf Ihrem Gerät, und lösen Sie ein Ereignis in Ihrer App aus, das mit einem Tag versehen wurde. In "Benutzeroberfläche - Ihre App - Überwachen - Ereignisse - Details" finden Sie das ausgelöste Ereignis in der Liste. Klicken Sie im Abschnitt "Überwachen" auf dieses Ereignis. Ihre Geräte-ID sollte in der Liste der Geräte vorhanden sein, auf denen dieses Ereignis erfolgt ist. Anschließend können Sie diese Geräte-ID kopieren und in "Benutzeroberfläche - Mein Konto - Geräte - Neues Gerät - Geräteplattform auswählen" registrieren.
->
+>(Bedenken Sie, dass wenn IDFA für iOS deaktiviert ist, die Geräte-ID sich mit der Zeit ändern kann, wenn Sie die App deinstallieren und neu installieren.)
 
 <!--Image references-->
 [1]: ./media/mobile-engagement-user-interface-navigation/navigation1.png
@@ -145,4 +145,4 @@ Zum Verwenden der Push-API oder Device-API müssen Sie die eindeutige Geräteken
  
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

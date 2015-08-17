@@ -16,7 +16,7 @@
 	ms.author="heidist"
 	ms.date="07/24/2015" />
 
-# Bewertungsprofile \(Azure Search REST-API Version 2015-02-28-Preview\)
+# Bewertungsprofile (Azure Search REST-API Version 2015-02-28-Preview)
 
 > [AZURE.NOTE]Dieser Artikel beschreibt die Bewertungsprofile in [2015-02-28-Preview](search-api-2015-02-28-preview.md). Derzeit besteht kein Unterschied zwischen der `2015-02-28`-Version, die auf [MSDN](http://msdn.microsoft.com/library/azure/mt183328.aspx) dokumentiert ist, und der hier beschriebenen `2015-02-28-Preview`-Version.
 
@@ -55,15 +55,15 @@ Um dieses Bewertungsprofil zu verwenden, muss die Abfrage so formuliert werden, 
 
     GET /indexes/hotels/docs?search=inn&scoringProfile=geo&scoringParameter=currentLocation:-122.123,44.77233&api-version=2015-02-28-Preview
 
-Diese Abfrage sucht nach dem Begriff "inn" und übergibt die aktuelle Position. Beachten Sie, dass diese Abfrage weitere Parameter einbezieht, z. B. `scoringParameter`. Eine Beschreibung der Abfrageparameter finden Sie unter [Dokumente durchsuchen \(Azure Search-API\)](search-api-2015-02-28-preview/#SearchDocs.md).
+Diese Abfrage sucht nach dem Begriff "inn" und übergibt die aktuelle Position. Beachten Sie, dass diese Abfrage weitere Parameter einbezieht, z. B. `scoringParameter`. Eine Beschreibung der Abfrageparameter finden Sie unter [Dokumente durchsuchen (Azure Search-API)](search-api-2015-02-28-preview/#SearchDocs.md).
 
 Klicken Sie auf [Beispiel](#example), um ein ausführlicheres Beispiel für ein Bewertungsprofil zu überprüfen.
 
 ## Standardbewertung
 
-Bei der Bewertung wird eine Suchbewertung für jedes Element in einem nach Rangfolge sortierten Resultset berechnet. Jedes Element in einem Resultset wird einer Suchbewertung zugeordnet und anschließend wird eine absteigende Rangfolge zugewiesen. Die Elemente mit den höchsten Bewertungen werden an die Anwendung zurückgegeben. Standardmäßig werden die ersten 50 Elemente zurückgegeben, Sie können jedoch den `$top`-Parameter verwenden, um eine kleinere oder größere Anzahl von Elementen \(bis zu 1000 in einer einzelnen Antwort\) zurückzugeben.
+Bei der Bewertung wird eine Suchbewertung für jedes Element in einem nach Rangfolge sortierten Resultset berechnet. Jedes Element in einem Resultset wird einer Suchbewertung zugeordnet und anschließend wird eine absteigende Rangfolge zugewiesen. Die Elemente mit den höchsten Bewertungen werden an die Anwendung zurückgegeben. Standardmäßig werden die ersten 50 Elemente zurückgegeben, Sie können jedoch den `$top`-Parameter verwenden, um eine kleinere oder größere Anzahl von Elementen (bis zu 1000 in einer einzelnen Antwort) zurückzugeben.
 
-Standardmäßig wird eine Suchbewertung auf Basis der statistischen Eigenschaften der Daten und der Abfrage berechnet. Azure Search findet Dokumente, die die Suchbegriffe in der Abfragezeichenfolge enthalten \(einige oder alle in Abhängigkeit von `searchMode`\), wobei Dokumente bevorzugt werden, die viele Instanzen des Suchbegriffs enthalten. Die Suchbewertung fällt sogar noch höher aus, wenn der Begriff nur selten im Datenhauptteil, jedoch innerhalb des Dokuments häufig vorkommt. Die Grundlage für diesen Ansatz zur Berechnung der Relevanz wird als TF-IDF \(Term Frequency-Inverse Document Frequency, Vorkommenshäufigkeit-Inverse Dokumenthäufigkeit\) bezeichnet.
+Standardmäßig wird eine Suchbewertung auf Basis der statistischen Eigenschaften der Daten und der Abfrage berechnet. Azure Search findet Dokumente, die die Suchbegriffe in der Abfragezeichenfolge enthalten (einige oder alle in Abhängigkeit von `searchMode`), wobei Dokumente bevorzugt werden, die viele Instanzen des Suchbegriffs enthalten. Die Suchbewertung fällt sogar noch höher aus, wenn der Begriff nur selten im Datenhauptteil, jedoch innerhalb des Dokuments häufig vorkommt. Die Grundlage für diesen Ansatz zur Berechnung der Relevanz wird als TF-IDF (Term Frequency-Inverse Document Frequency, Vorkommenshäufigkeit-Inverse Dokumenthäufigkeit) bezeichnet.
 
 Wenn keine benutzerdefinierte Sortierung erfolgt, werden die Ergebnisse nach Suchbewertung sortiert, bevor sie an die aufrufende Anwendung zurückgegeben werden. Wenn `$top` nicht angegeben ist, werden die 50 Elemente mit der höchsten Suchbewertung zurückgegeben.
 
@@ -80,7 +80,7 @@ Die relevanzbasiert Sortierung wird ebenfalls über Bewertungsprofile implementi
 
 Wie bereits erwähnt, wird die benutzerdefinierte Bewertung über Bewertungsprofile implementiert, die in einem Indexschema definiert sind.
 
-In diesem Beispiel wird das Schema für einen Index mit zwei Bewertungsprofilen \(`boostGenre`, `newAndHighlyRated`\) gezeigt. Jede Abfrage für diesen Index, die eines der Profile als Abfrageparameter enthält, verwendet das Profil zum Bewerten des Resultsets.
+In diesem Beispiel wird das Schema für einen Index mit zwei Bewertungsprofilen (`boostGenre`, `newAndHighlyRated`) gezeigt. Jede Abfrage für diesen Index, die eines der Profile als Abfrageparameter enthält, verwendet das Profil zum Bewerten des Resultsets.
 
 [Testen Sie dieses Beispiel](search-get-started-scoring-profiles.md).
 
@@ -154,7 +154,7 @@ Um ein benutzerdefiniertes Bewertungsverhalten zu implementieren, fügen Sie dem
 
 Beginnen Sie mit der in diesem Thema angegebenen [Vorlage](#bkmk_template).
 
-Geben Sie einen Namen ein. Bewertungsprofile sind optional, wenn Sie jedoch ein Profil hinzufügen, ist der Name erforderlich. Achten Sie darauf, dass Sie die Namenskonventionen für Felder einhalten \(mit einem Buchstaben beginnen, Sonderzeichen und reservierte Wörter vermeiden\). Weitere Informationen finden Sie unter [Benennungsregeln](http://msdn.microsoft.com/library/azure/dn857353.aspx).
+Geben Sie einen Namen ein. Bewertungsprofile sind optional, wenn Sie jedoch ein Profil hinzufügen, ist der Name erforderlich. Achten Sie darauf, dass Sie die Namenskonventionen für Felder einhalten (mit einem Buchstaben beginnen, Sonderzeichen und reservierte Wörter vermeiden). Weitere Informationen finden Sie unter [Benennungsregeln](http://msdn.microsoft.com/library/azure/dn857353.aspx).
 
 Der Hauptteil des Bewertungsprofils wird aus gewichteten Feldern und Funktionen erstellt.
 
@@ -341,7 +341,7 @@ Interpolationen ermöglichen Ihnen die Definition der Steigung, in der die Bewer
 
 `boostingDuration` ist ein Attribut der Funktion "freshness". Sie können damit eine Ablaufdauer festlegen, nach der die Verstärkung für ein bestimmtes Dokument beendet wird. Um beispielsweise eine Produktlinie oder Marke für einen zehntägigen Werbezeitraum zu verstärken, können Sie den zehntägigen Zeitraum für diese Dokumente z. B. als "P10D" angeben.
 
-`boostingDuration` muss als XSD-Wert "dayTimeDuration" formatiert sein \(eine eingeschränkte Teilmenge eines ISO 8601-Zeitdauerwerts\). Das Muster hierfür lautet: P\[nD\]\[T\[nH\]\[nM\]\[nS\]\].
+`boostingDuration` muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines ISO 8601-Zeitdauerwerts). Das Muster hierfür lautet: P[nD][T[nH][nM][nS]].
 
 Die folgende Tabelle enthält einige Beispiele.
 
@@ -364,11 +364,11 @@ Die folgende Tabelle enthält einige Beispiele.
 </tbody>
 </table>
 
-Weitere Beispiele finden Sie unter [XML-Schema: Datentypen \(W3.org-Website\)](http://www.w3.org/TR/xmlschema11-2/).
+Weitere Beispiele finden Sie unter [XML-Schema: Datentypen (W3.org-Website)](http://www.w3.org/TR/xmlschema11-2/).
 
-**Weitere Informationen** [REST-API für den Azure Search-Dienst](http://msdn.microsoft.com/library/azure/dn798935.aspx) auf MSDN <br/> [Index erstellen \(Azure Search-API\)](http://msdn.microsoft.com/library/azure/dn798941.aspx) auf MSDN<br/> [Hinzufügen von Bewertungsprofilen zu einem Suchindex](http://msdn.microsoft.com/library/azure/dn798928.aspx) auf MSDN<br/>
+**Weitere Informationen** [REST-API für den Azure Search-Dienst](http://msdn.microsoft.com/library/azure/dn798935.aspx) auf MSDN <br/> [Index erstellen (Azure Search-API)](http://msdn.microsoft.com/library/azure/dn798941.aspx) auf MSDN<br/> [Hinzufügen von Bewertungsprofilen zu einem Suchindex](http://msdn.microsoft.com/library/azure/dn798928.aspx) auf MSDN<br/>
 
 <!--Image references-->
 [1]: ./media/search-api-scoring-profiles-2015-02-28-Preview/scoring_interpolations.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

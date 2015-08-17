@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/24/2015" 
+	ms.date="08/05/2015" 
 	ms.author="genemi"/>
 
 
@@ -46,7 +46,7 @@ Unabhängig davon, welche Verbindungstechnologie Sie verwenden, sind bestimmte F
 - [Firewall für die Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee621782.aspx)
 
 
-## Empfehlung: Authentifizierung
+## Empfehlungen für die Authentifizierung
 
 
 - Verwenden Sie anstatt der Windows-Authentifizierung die SQL-Datenbank-Authentifizierung.
@@ -58,7 +58,7 @@ Unabhängig davon, welche Verbindungstechnologie Sie verwenden, sind bestimmte F
  - Sie können die **USE myDatabaseName;**-Transact-SQL-Anweisung in SQL-Datenbank nicht verwenden.
 
 
-## Empfehlungen: Verbindung
+## Empfehlungen für die Verbindung
 
 
 - Ändern Sie in der Clientverbindungslogik das Standardtimeout in 30 Sekunden.
@@ -71,6 +71,12 @@ Unabhängig davon, welche Verbindungstechnologie Sie verwenden, sind bestimmte F
  - Ein dauerhafter Grund für den Fehler ist beispielsweise, dass die Verbindungszeichenfolge falsch formatiert ist.
  - Ein vorübergehender Grund für den Fehler ist möglicherweise darauf zurückzuführen, dass die Gesamtarbeitslast in der Azure SQL-Datenbank ausgeglichen werden muss. Der vorübergehende Grund klärt sich von allein. Das bedeutet, dass die Anwendung den Vorgang der Verbindungsherstellung wiederholen soll.
  - Trennen Sie bei der Wiederholung einer Abfrage zunächst die Verbindung, und stellen Sie dann eine andere Verbindung her.
+
+
+### Andere Ports als 1433 in V12.
+
+
+Bei Clientverbindungen mit Azure SQL-Datenbank V12 wird der Proxy manchmal umgangen und direkt mit der Datenbank interagiert. Andere Ports als 1433 werden wichtig. Details finden Sie in:<br/> [Andere Ports als 1433 für ADO.NET 4.5, ODBC 11 und SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md)
 
 
 Im nächsten Abschnitt erfahren Sie mehr über die Wiederholungslogik und die Behandlung vorübergehender Fehler.
@@ -90,7 +96,7 @@ Wenn in SQL-Datenbank ein Fehler auftritt, wird eine [SqlException](https://msdn
 
 - [Fehlermeldungen für Clientprogramme der SQL-Datenbank](sql-database-develop-error-messages.md)
  - Der Abschnitt **Vorübergehende Fehler, Fehler bei Verbindungsabbruch** enthält eine Liste der vorübergehenden Fehler, bei denen sich automatische Wiederholungsversuche empfehlen.
- - Führen Sie beispielsweise eine Wiederholung durch, wenn Fehler Nummer 40613 auftritt, der in etwa besagt: <br/>\* Datenbank "mydatabase" auf Server "Server" ist derzeit nicht verfügbar.\*
+ - Führen Sie beispielsweise eine Wiederholung durch, wenn Fehler Nummer 40613 auftritt, der in etwa besagt: <br/>* Datenbank "mydatabase" auf Server "Server" ist derzeit nicht verfügbar.*
 
 
 *Vorübergehende Fehler* werden mitunter auch englisch als *Transient Faults* bezeichnet. In diesem Thema werden die beiden Begriffe als Synonyme angesehen.
@@ -111,31 +117,19 @@ Links zu Themen mit Codebeispielen, welche die Wiederholungslogik veranschaulich
 <a id="gatewaynoretry" name="gatewaynoretry">&nbsp;</a>
 
 
-## In V12 stellt der Gateway keine Wiederholungslogik mehr bereit.
+## Middleware-Proxy und Wiederholungslogik
 
 
-Vor Version V12 verfügte Azure SQL-Datenbank über einen Gateway, der als Proxy und Puffer für alle Interaktionen zwischen der Datenbank und Ihrem Clientprogramm fungierte. Der Gateway stellte einen zusätzlichen Netzwerkhop dar, der manchmal die Latenz des Datenbankzugriffs erhöhte.
+Der Middleware-Proxy, der zwischen V11 und dem ADO.NET 4.5-Client vermittelt, verarbeitet eine kleine Teilmenge vorübergehender Fehler ordnungsgemäß mit Wiederholungslogik. In Fällen, in denen der Proxy beim zweiten Versuch erfolgreich eine Verbindung herstellt, hat das Clientprogramm überhaupt nicht bemerkt, dass der erste Versuch fehlgeschlagen ist.
 
 
-In V12 ist der Gateway entfallen. Jetzt gilt Folgendes:
+Der V12-Proxy behandelt eine kleinere Teilmenge vorübergehender Fehler. In anderen Fällen wird der V12-Proxy umgangen, um eine schnellere Verbindung mit der SQL-Datenbank direkt herzustellen. Für ein ADO.NET 4.5-Clientprogramm lassen diese Änderungen die Azure SQL-Datenbank V12 eher wie Microsoft SQL Server erscheinen.
 
 
-- Das Clientprogramm interagiert *direkt* mit der Datenbank. Das ist wesentlich effizienter.
-- Die geringfügigen Verzerrungen durch den Gateway bei Fehlermeldungen und der übrigen Kommunikation mit dem Programm werden eliminiert.
- - SQL-Datenbank und SQL Server haben eine einheitlichere Sicht auf Ihr Programm.
+Codebeispiele für die Wiederholungslogik finden Sie unter:<br/> [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md).
 
 
-#### Keine Wiederholungslogik mehr
-
-
-Die Wiederholungslogik des Gateways hat einige vorübergehende Fehler behandelt. Jetzt muss das Programm in größerem Umfang vorübergehende Fehler behandeln. Codebeispiele zur Wiederholungslogik finden Sie unter:
-
-
-- [Codebeispiele für die Cliententwicklung und erste Schritte mit SQL-Datenbanken](sql-database-develop-quick-start-client-code-samples.md)
- - Enthält Links zu Codebeispielen mit Wiederholungslogik und zu einfacheren Beispiele, die das Herstellen von Verbindungen und die Abfrage verdeutlichen.
-- [Vorgehensweise: Zuverlässiges Herstellen einer Verbindung mit Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn864744.aspx)
-- [Vorgehensweise: Herstellen einer Verbindung mit Azure SQL-Datenbank mithilfe von ADO.NET mit Enterprise Library](http://msdn.microsoft.com/library/azure/dn961167.aspx)
-- [Codebeispiel: Wiederholungslogik in C\# für das Herstellen einer Verbindung mit einer SQL-Datenbank](sql-database-develop-csharp-retry-windows.md)
+> [AZURE.TIP]In einer Produktionsumgebung wird empfohlen, dass Clients, die eine Verbindung mit Azure SQL-Datenbank V11 oder V12 herstellen, eine Wiederholungslogik in ihrem Code implementieren. Dabei kann es sich um benutzerdefinierten Code handeln oder um Code, der eine API wie Enterprise Library nutzt.
 
 
 ## Technologien
@@ -147,7 +141,7 @@ Die folgenden Themen enthalten Links zu Codebeispielen für mehrere Sprachen und
 Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unterschiedliche Codebeispiele angegeben.
 
 
-**Allgemeine Beispiele:** Es gibt Codebeispiele für eine Vielzahl von Programmiersprachen, einschließlich PHP, Python, Node.js und .NET C\#. Darüber hinaus gibt es Beispiele für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden.
+**Allgemeine Beispiele:** Es gibt Codebeispiele für eine Vielzahl von Programmiersprachen, einschließlich PHP, Python, Node.js und .NET C#. Darüber hinaus gibt es Beispiele für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden.
 
 
 - [Codebeispiele für die Cliententwicklung und erste Schritte mit SQL-Datenbanken](sql-database-develop-quick-start-client-code-samples.md)
@@ -164,14 +158,14 @@ Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unt
 **Treiberbibliotheken:** Informationen zu Verbindungstreiberbibliotheken, einschließlich empfohlener Versionen, finden Sie unter:
 
 
-- [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) \(Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache\)
+- [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)
 
 
 ## Siehe auch
 
 
-- [Create your first Azure SQL Database](sql-database-get-started.md) \(Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache\)
+- [Create your first Azure SQL Database](sql-database-get-started.md) (Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache)
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -181,4 +181,4 @@ Im nächsten Lernprogramm, [Rollenbasierte Zugriffssteuerung mit AAD in Mobile S
 [Rollenbasierte Zugriffssteuerung mit AAD in Mobile Services]: mobile-services-javascript-backend-windows-store-dotnet-aad-rbac.md
 [Azure Active Directory Graph-Teamblog]: http://go.microsoft.com/fwlink/?LinkId=510536
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -647,4 +647,4 @@ Wenn Sie aufgerufen `actionContent(this)` und dann die Aktivität beendet haben,
 [Amazon Device Messaging]: https://developer.amazon.com/sdk/adm.html
  
 
-<!-------HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

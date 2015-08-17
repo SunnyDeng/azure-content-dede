@@ -7,6 +7,7 @@
 	manager="jwhit" 
 	editor=""/>
 
+
 <tags 
 	ms.service="site-recovery" 
 	ms.devlang="na"
@@ -15,6 +16,7 @@
 	ms.workload="storage-backup-recovery" 
 	ms.date="05/14/2015" 
 	ms.author="raynew"/>
+
 
 # Erstellen von Wiederherstellungsplänen
 
@@ -53,16 +55,18 @@ Erstellen Sie einen Wiederherstellungsplan wie folgt:
 	- Wenn Sie von VMM zu VMM replizieren, müssen Sie unter **Quelltyp** die Option „VMM“ und die VMM-Quell- und -Zielserver auswählen. Klicken Sie auf **Hyper-V**, um Clouds anzuzeigen, die für die Verwendung des Hyper-V-Replikats konfiguriert sind. 
 	- Wenn Sie per SAN von VMM zu VMM replizieren, müssen Sie unter **Quelltyp** die Option „VMM“ und die VMM-Quell- und -Zielserver auswählen. Klicken Sie auf **SAN**, um die Clouds anzuzeigen, die für die SAN-Replikation konfiguriert sind.
 	- Wenn Sie von VMM zu Azure replizieren, wählen Sie unter **Quelltyp** die Option „VMM“ aus. Wählen Sie den VMM-Quellserver und als Ziel **Azure** aus.
-	- Wenn Sie von einem Hyper-V-Standort replizieren, wählen Sie unter „Quelltyp“ die Option „Hyper-V“ aus. Wählen Sie den Standort als Quelle und als Ziel **Azure** aus. - Wenn Sie von VMware oder einem physischen lokalen Server zu Azure replizieren, wählen Sie einen Konfigurationsserver als Quelle und als Ziel **Azure** aus.
+	- Wenn Sie von einem Hyper-V-Standort replizieren, wählen Sie unter „Quelltyp“ die Option „Hyper-V“ aus. Wählen Sie den Standort als Quelle und als Ziel \*\*Azure\*\* aus.
+- Wenn Sie von VMware oder einem physischen lokalen Server zu Azure replizieren, wählen Sie einen Konfigurationsserver als Quelle und als Ziel **Azure** aus.
 
-2. Wählen Sie unter **Virtuelle Computer auswählen** die virtuellen Computer (oder die Replikationsgruppe) aus, die Sie der Standardgruppe (Gruppe 1) im Wiederherstellungsplan hinzufügen möchten.
+2\. Wählen Sie unter **Virtuelle Computer auswählen** die virtuellen Computer (oder die Replikationsgruppe) aus, die Sie der Standardgruppe (Gruppe 1) im Wiederherstellungsplan hinzufügen möchten.
 
 ## Anpassen von Wiederherstellungsplänen
 
 Nachdem Sie geschützte virtuelle Computer oder Replikationsgruppen der standardmäßigen Wiederherstellungsplangruppe hinzugefügt und den Plan erstellt haben, können Sie ihn anpassen:
 
 - **Hinzufügen neuer Gruppen**: Sie können weitere Wiederherstellungsplangruppen hinzufügen. Gruppen werden in der Reihenfolge nummeriert, in der sie von Ihnen hinzugefügt werden. Sie können bis zu sieben Gruppen hinzufügen. Sie können diesen neuen Gruppen weitere Computer oder Replikationsgruppen hinzufügen. Beachten Sie, dass ein virtueller Computer oder eine Replikationsgruppe nur in eine Wiederherstellungsplangruppe eingefügt werden kann.
-- **Hinzufügen eines Skripts**: Sie können Skripts für die Ausführung vor oder nach einer Wiederherstellungsplangruppe hinzufügen. Hierbei wird für die Gruppe ein neuer Satz mit Aktionen hinzugefügt. Eine Gruppe von Vorabschritten für „Group 1“ wird beispielsweise mit dem folgenden Namen erstellt: „Group 1: Pre-steps“. Alle Vorabschritte werden in diesem Satz aufgelistet. Beachten Sie, dass Sie am primären Standort nur dann ein Skript hinzufügen können, wenn Sie einen VMM-Server bereitgestellt haben. - **Hinzufügen einer manuellen Aktion**: Sie können manuelle Aktionen hinzufügen, die vor oder nach einer Wiederherstellungsgruppe ausgeführt werden. Wenn der Wiederherstellungsplan ausgeführt wird, wird er an dem Punkt angehalten, an dem Sie die manuelle Aktion eingefügt haben. In einem Dialogfeld werden Sie aufgefordert anzugeben, dass die manuelle Aktion abgeschlossen wurde.
+- **\*\*Hinzufügen eines Skripts\*\*: Sie können Skripts für die Ausführung vor oder nach einer Wiederherstellungsplangruppe hinzufügen. Hierbei wird für die Gruppe ein neuer Satz mit Aktionen hinzugefügt. Eine Gruppe von Vorabschritten für „Group 1“ wird beispielsweise mit dem folgenden Namen erstellt: „Group 1: Pre-steps“. Alle Vorabschritte werden in diesem Satz aufgelistet. Beachten Sie, dass Sie am primären Standort nur dann ein Skript hinzufügen können, wenn Sie einen VMM-Server bereitgestellt haben.
+- **Hinzufügen einer manuellen Aktion**: Sie können manuelle Aktionen hinzufügen, die vor oder nach einer Wiederherstellungsgruppe ausgeführt werden. Wenn der Wiederherstellungsplan ausgeführt wird, wird er an dem Punkt angehalten, an dem Sie die manuelle Aktion eingefügt haben. In einem Dialogfeld werden Sie aufgefordert anzugeben, dass die manuelle Aktion abgeschlossen wurde.
 
 ### Erweitern von Wiederherstellungsplänen mit Skripts
 
@@ -77,11 +81,11 @@ Beachten Sie Folgendes, bevor Sie beginnen:
 - Schreiben Sie Skripts mit Windows PowerShell.
 - VMM-Cmdlets werden in einem Windows PowerShell-Modul bereitgestellt. Das VMM-Modul von Windows PowerShell wird installiert, wenn Sie die VMM-Konsole installieren. Das VMM-Modul kann mit dem folgenden Skriptbefehl in das Skript geladen werden: Import-Module -Name virtualmachinemanager. [Weitere Details](hhttps://technet.microsoft.com/library/hh875013.aspx)
 - Stellen Sie sicher, dass Ihre VMM-Bereitstellung mindestens einen Bibliothekserver enthält. Standardmäßig befindet sich der Bibliotheksfreigabepfad für einen VMM-Server lokal auf dem VMM-Server mit dem Ordnernamen MSCVMMLibrary.
-- Wenn Ihr Bibliotheksfreigabepfad remote vorhanden ist (oder lokal, aber nicht für MSCVMMLibrary freigegeben), konfigurieren Sie die Freigabe wie folgt (hier dient „\libserver2.contoso.com\share\“ als Beispiel):
+- Wenn Ihr Bibliotheksfreigabepfad remote vorhanden ist (oder lokal, aber nicht für MSCVMMLibrary freigegeben), konfigurieren Sie die Freigabe wie folgt (hier dient „\\libserver2.contoso.com\\share\\“ als Beispiel):
 	- Öffnen Sie den Registrierungs-Editor.
-	- Navigieren Sie zu HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft System Center Virtual Machine Manager Server\DRAdapter\Registration.
+	- Navigieren Sie zu HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Microsoft System Center Virtual Machine Manager Server\\DRAdapter\\Registration.
 	- Bearbeiten Sie den Wert unter ScriptLibraryPath.
-	- Platzieren Sie den Wert als „\libserver2.contoso.com\share“. Geben Sie den vollqualifizierten Domänennamen vollständig ein.
+	- Platzieren Sie den Wert als „\\libserver2.contoso.com\\share“. Geben Sie den vollqualifizierten Domänennamen vollständig ein.
 	- Geben Sie die Berechtigungen für den Speicherort der Freigabe an.
 
 - Skripts in einem Wiederherstellungsplan werden im Kontext des VMM-Dienstkontos ausgeführt. Stellen Sie sicher, dass dieses Konto über Leseberechtigungen auf der Remotefreigabe verfügt, auf der sich das Skript befindet. Testen Sie die Ausführung des Skripts auf Berechtigungsebene des VMM-Dienstkontos.
@@ -96,9 +100,9 @@ Beachten Sie Folgendes, bevor Sie beginnen:
 
 Erstellen Sie das Skript wie folgt:
 
-1. Erstellen Sie einen neuen Ordner in der Bibliotheksfreigabe, z. B.: <VMMServerName>\MSSCVMMLibrary\RPScripts. Platzieren Sie diese Datei auf dem VMM-Quell- und -Zielserver.
+1. Erstellen Sie einen neuen Ordner in der Bibliotheksfreigabe, z. B.: <VMMServerName>\\MSSCVMMLibrary\\RPScripts. Platzieren Sie diese Datei auf dem VMM-Quell- und -Zielserver.
 2. Erstellen Sie das Skript (z. B. RPScript), und überprüfen Sie, ob es wie erwartet funktioniert.
-3. Platzieren Sie das Skript unter „<VMMServerName>\MSSCVMMLibrary“ auf dem VMM-Quell- und -Zielserver.
+3. Platzieren Sie das Skript unter „<VMMServerName>\\MSSCVMMLibrary“ auf dem VMM-Quell- und -Zielserver.
 
 #### Erstellen eines Azure-Automatisierungsrunbooks
 
@@ -110,7 +114,7 @@ Sie können Ihren Wiederherstellungsplan erweitern, indem Sie als Teil des Plans
 1. Öffnen Sie den Wiederherstellungsplan, den Sie anpassen möchten.
 2. Klicken Sie, um virtuelle Computer oder eine neue Gruppe hinzuzufügen.
 3. Klicken Sie zum Hinzufügen eines Skripts oder einer manuellen Aktion in der Liste **Schritt** auf einen beliebigen Eintrag, und klicken Sie anschließend auf **Skript** oder **Manuelle Aktion**. Geben Sie an, ob Sie das Skript oder die Aktion vor oder nach dem ausgewählten Eintrag hinzufügen möchten. Verwenden Sie die Befehlsschaltflächen **Nach oben** und **Nach unten**, um die Position des Skripts nach oben oder unten zu verschieben.
-4. Wählen Sie beim Hinzufügen eines VMM-Skripts die Option **Failover zu VMM-Skript** aus, und geben Sie unter **Skriptpfad** den relativen Pfad zur Freigabe ein. Geben Sie für unser Beispiel, in dem sich die Freigabe unter „\<VMMServerName>\MSSCVMMLibrary\RPScripts“ befindet, also den folgenden Pfad an: \RPScripts\RPScript.PS1.
+4. Wählen Sie beim Hinzufügen eines VMM-Skripts die Option **Failover zu VMM-Skript** aus, und geben Sie unter **Skriptpfad** den relativen Pfad zur Freigabe ein. Geben Sie für unser Beispiel, in dem sich die Freigabe unter „\<VMMServerName>\\MSSCVMMLibrary\\RPScripts“ befindet, also den folgenden Pfad an: \\RPScripts\\RPScript.PS1.
 5. Wenn Sie ein Azure-Automatisierungsrunbook hinzufügen, geben Sie das **Azure Automation-Konto** an, unter dem sich das Runbook befindet, und wählen das gewünschte **Azure-Runbookskript** aus.
 5. Führen Sie ein Failover für den Wiederherstellungsplan aus, um sicherzustellen, dass das Skript wie erwartet funktioniert.
 
@@ -122,4 +126,4 @@ Sie können unterschiedliche Arten von Failover-Wiederherstellungsplänen ausfü
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

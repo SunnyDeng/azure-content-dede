@@ -35,7 +35,13 @@ In diesem Artikel wird davon ausgegangen, dass Sie über die folgenden Vorausset
 
 > [AZURE.NOTE]Das VHDX-Format wird in Microsoft Azure nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem [Convert-VHD-Cmdlet](http://technet.microsoft.com/library/hh848454.aspx) in das VHD-Format konvertieren. Ein Lernprogramm zu diesem Thema finden Sie [hier](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/10/03/using-powershell-to-convert-a-vhd-to-a-vhdx.aspx).
  
- Die folgenden Versionen von Windows Server werden unterstützt: <P> <TABLE BORDER="1" WIDTH="600"> <TR BGCOLOR="#E9E7E7"> <TH>OS</TH> <TH>SKU</TH> <TH>Service Pack</TH> <TH>Architektur</TH> </TR> <TR> <TD>Windows Server 2012 R2</TD> <TD>alle Editionen</TD> <TD>–</TD> <TD>x64</TD> </TR> <TR> <TD>Windows Server 2012</TD> <TD>alle Editionen</TD> <TD>–</TD> <TD>x64</TD> </TR> <TR> <TD>Windows Server 2008 R2</TD> <TD>alle Editionen</TD> <TD>SP1</TD> <TD>x64</TD> </TR> </TABLE> </P>
+ Die folgenden Windows Server-Versionen werden unterstützt:
+
+Betriebssystem|SKU|Service Pack|Architektur
+---|---|---|---
+Windows Server 2012 R2|Alle Editionen|n. z.|x64
+Windows Server 2012|Alle Editionen|n. z.|x64
+Windows Server 2008 R2|Alle Editionen|SP1|x64
 
 
 Diese Aufgabe umfasst die folgenden Schritte:
@@ -53,7 +59,7 @@ Führen Sie auf dem virtuellen Computer, auf dem das Betriebssystem installiert 
 
 1. Melden Sie sich beim Betriebssystem an.
 
-2. Öffnen Sie ein Eingabeaufforderungsfenster als ein Administrator. Wechseln Sie in das Verzeichnis **%windir%\system32\sysprep**, und führen Sie dann `sysprep.exe` aus.
+2. Öffnen Sie ein Eingabeaufforderungsfenster als ein Administrator. Wechseln Sie in das Verzeichnis **%windir%\\system32\\sysprep**, und führen Sie dann `sysprep.exe` aus.
 
 	![Öffnen eines Eingabeaufforderungsfensters](./media/virtual-machines-create-upload-vhd-windows-server/sysprep_commandprompt.png)
 
@@ -211,4 +217,4 @@ Nachdem Sie einen virtuellen Computer erstellt haben, sollten Sie versuchen, ein
 [Schritt 4: Hochladen der VHD-Datei]: #upload
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

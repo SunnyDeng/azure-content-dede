@@ -21,7 +21,7 @@
 
 Welches Szenario entspricht Ihrem Analyseproblem, wenn Sie sich darauf vorbereiten, eine Umgebung für erweiterte Analysen mit Azure Machine Learning einzurichten? Ihre Entscheidungen hinsichtlich der benötigten Ressourcen basieren auf der Art, der Größe und dem Quellspeicherort Ihrer Daten sowie dem Zielspeicherort dieser Daten in der Cloud. In diesem Artikel werden die Fragen behandelt, die Ihnen helfen sollen, Ihr Szenario zu bestimmen.
 
-Nachdem Sie das relevante Szenario ermittelt haben, begleitet Sie der ADAPT-Workflow \(Advanced Analytics Process and Technology\), der im [Lernpfad: Erstellen von erweiterten Analyselösungen in Azure](machine-learning-data-science-how-to-create-machine-learning-service.md) vorgestellt wurde, durch eine Reihe von Aufgaben. Dazu zählen das Abrufen eines Datasets über die Erstellung und Veröffentlichung eines Modells als Azure-Webdienst, den Anwendungen nutzen können.
+Nachdem Sie das relevante Szenario ermittelt haben, begleitet Sie der ADAPT-Workflow (Advanced Analytics Process and Technology), der im [Lernpfad: Erstellen von erweiterten Analyselösungen in Azure](machine-learning-data-science-how-to-create-machine-learning-service.md) vorgestellt wurde, durch eine Reihe von Aufgaben. Dazu zählen das Abrufen eines Datasets über die Erstellung und Veröffentlichung eines Modells als Azure-Webdienst, den Anwendungen nutzen können.
 
 In diesem Thema werden auch einige der Ressourcen und Tools aufgelistet, die bei diesem erweiterten Analyseprozess verwendet werden.
 
@@ -30,7 +30,7 @@ In diesem Thema werden auch einige der Ressourcen und Tools aufgelistet, die bei
 ## Beantworten Sie diese Fragen
 Beantworten Sie diese Fragen, um zu bestimmen, mit welchem Szenario Sie arbeiten, bevor Sie Ihre Umgebung für erweiterte Analysen erstellen.
 
-1. **Wo befindet sich Ihre Daten?** \(Dieser Speicherort wird als die ***Datenquelle*** bezeichnet.\) Beispiel:
+1. **Wo befindet sich Ihre Daten?** (Dieser Speicherort wird als die ***Datenquelle*** bezeichnet.) Beispiel:
 	- Die Daten sind öffentlich über eine HTTP-Adresse verfügbar.
 	- Die Daten befinden sich an einem lokalen/Netzwerkspeicherort.
 	- Die Daten befinden sich in einer SQL Server-Datenbank.
@@ -68,7 +68,7 @@ Je nach Szenario benötigen Sie möglicherweise einige der folgenden Tools und R
 	* 	[Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/)
 	* 	[AzCopy](../storage-use-azcopy.md)
 2.  Virtuelle Azure-Computer mit SQL Server
-3.  Azure HDInsight \(Hadoop\)
+3.  Azure HDInsight (Hadoop)
 4.  Virtuelle Azure-Netzwerke für das Freigeben lokaler Dateien in Azure
 5.  Azure Data Factory für das Planen von Datenverschiebungen
 
@@ -79,4 +79,4 @@ Je nach Szenario benötigen Sie möglicherweise einige der folgenden Tools und R
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

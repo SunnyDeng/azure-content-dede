@@ -7,6 +7,7 @@
 	manager="mblythe" 
 	editor=""/>
 
+
 <tags 
 	ms.service="search" 
 	ms.devlang="rest-api" 
@@ -15,6 +16,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.date="07/08/2015" 
 	ms.author="heidist"/>
+
 
 # Erstellen einer geografischen Suchanwendung mit Azure Search
 
@@ -67,7 +69,7 @@ Wir werden die Bing Maps-API für zwei Dinge verwenden:
 
 In diesem Schritt verwenden wir die Bing Maps DataFlow-API, um einige Adressen von verschiedenen weltweiten Fahrradgeschäften zu geokodieren.
 
-Die Daten stammen aus der Datei "store_locations.csv", die sich in den heruntergeladenen Materialien befindet. Wenn Sie diese Datei mit einem Texteditor oder Microsoft Excel öffnen, sehen Sie, dass jedes Geschäft mit einer ID, dem Namen des Geschäfts und der Adresse aufgelistet ist.
+Die Daten stammen aus der Datei "store\_locations.csv", die sich in den heruntergeladenen Materialien befindet. Wenn Sie diese Datei mit einem Texteditor oder Microsoft Excel öffnen, sehen Sie, dass jedes Geschäft mit einer ID, dem Namen des Geschäfts und der Adresse aufgelistet ist.
 
 Lassen Sie uns gemeinsam den Code durchgehen, um seine Funktionsweise zu verstehen.
 
@@ -75,13 +77,13 @@ Lassen Sie uns gemeinsam den Code durchgehen, um seine Funktionsweise zu versteh
 
 2. Suchen Sie die Funktion **Main**. Wie Sie sehen, ruft sie die Funktion **ApplyStoreData** auf. Suchen Sie diese Funktion, und gehen Sie den Code Zeile für Zeile durch.
 
-3. Die Funktion **ApplyStoreData** lädt Daten aus einer CSV-Datei mit dem Namen "store_locations.csv" in eine Tabelle (System.Data.DataTable).
+3. Die Funktion **ApplyStoreData** lädt Daten aus einer CSV-Datei mit dem Namen "store\_locations.csv" in eine Tabelle (System.Data.DataTable).
 
     Diese Datei enthält alle Geschäfte (einschließlich der Adressen), die wir in Azure Search laden möchten. Durch die Wiederholung jeder Zeile in dieser Datei können wir einen Satz an **indexOperations** erstellen, die dann in einen Azure Search-Index eingefügt werden (zuvor in der Funktion **CreateStoresIndex()** erstellt).
 
     Wenn Sie sich den Index anschließend genau ansehen, fällt auf, dass das Feld **GeoPt** mit den Längen- und Breitenangaben für jedes Geschäft leer ist. Dies führt uns zum nächsten Schritt der Funktion **Main**.
 
-5. Suchen Sie nach der Funktion **ExtractAddressInfoToXML()**. Mit dieser Funktion werden die Adressinformationen aus der Datei "store_locations.csv" extrahiert und in eine XML-Datei geladen, die für die Geokodierung in Bing Maps formatiert ist. Nachdem die Datei erstellt ist, wird sie zur Verarbeitung an Bing Maps DataFlow gesendet. Dieser Vorgang erfolgt durch Aufrufen der Funktion **GeoCoding.CreateJob**.
+5. Suchen Sie nach der Funktion **ExtractAddressInfoToXML()**. Mit dieser Funktion werden die Adressinformationen aus der Datei "store\_locations.csv" extrahiert und in eine XML-Datei geladen, die für die Geokodierung in Bing Maps formatiert ist. Nachdem die Datei erstellt ist, wird sie zur Verarbeitung an Bing Maps DataFlow gesendet. Dieser Vorgang erfolgt durch Aufrufen der Funktion **GeoCoding.CreateJob**.
 
 6. Da die Geokodierung einige Zeit in Anspruch nehmen kann, wird mithilfe einer Programmschleife alle 10 Sekunden die Funktion **GeoCoding.CheckStatus** aufgerufen, um zu prüfen, ob der Vorgang abgeschlossen ist. Nachdem der Vorgang abgeschlossen ist, werden die Ergebnisse durch Aufrufen der Funktion **GeoCoding.DownloadResults** in eine Adressenklasse heruntergeladen.
 
@@ -127,7 +129,7 @@ Das Projekt **AdventureWorksWebGeo** beschreibt, wie ASP.NET MVC 4 zusammen mit
 
 +	Die Funktion **Search** ruft die Geschäftsstandorte ab, die nach Empfang als PushPins zur Bing-Karte hinzugefügt werden.
 
-4.	Öffnen Sie unter **Controllers** die Datei "HomeController.cs“, und sehen Sie sich die Funktion **Search** an. Diese Funktion ruft die Funktion „_storeSearch.Search(lat, lon, 10000)“ auf. Dadurch wird eine Abfrage ausgeführt, um nach allen Geschäften in einem Umkreis von 10.000 km des mit dem Längengrad (lon) und Breitengrad (lat) angegebenen Standorts zu suchen. Die Abfrageergebnisse werden verarbeitet und anschließend an die Indexansicht zurückgesendet, um als PushPins verarbeitet und als Überlagerung auf der Bing-Karte angezeigt zu werden.
+4.	Öffnen Sie unter **Controllers** die Datei "HomeController.cs“, und sehen Sie sich die Funktion **Search** an. Diese Funktion ruft die Funktion "\_storeSearch.Search(lat, lon, 10000)" auf. Dadurch wird eine Abfrage ausgeführt, um nach allen Geschäften in einem Umkreis von 10.000 km des mit dem Längengrad (lon) und Breitengrad (lat) angegebenen Standorts zu suchen. Die Abfrageergebnisse werden verarbeitet und anschließend an die Indexansicht zurückgesendet, um als PushPins verarbeitet und als Überlagerung auf der Bing-Karte angezeigt zu werden.
 
 Die Demonstration ist hiermit abgeschlossen. Sie haben sich nun mit den wichtigsten Operationen vertraut gemacht, die Sie zum Erstellen einer kartenbasierten ASP.NET MVC4-Anwendung mit Azure Search benötigen.
 
@@ -137,7 +139,7 @@ Die Demonstration ist hiermit abgeschlossen. Sie haben sich nun mit den wichtigs
 
 Wenn beim Buildvorgang von AdventureWorksWeb die Fehlermeldung "Datei oder Assemblydatei 'System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' oder eine ihrer Abhängigkeiten konnte nicht geladen werden" angezeigt wird, gehen Sie wie folgt vor, um den Fehler zu beheben.
 
-1. Wählen Sie **Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole **, um die Paket-Manager-Konsole zu öffnen.
+1. Wählen Sie **Extras** | **NuGet-Paket-Manager** | **Paket-Manager-Konsole **, um die Paket-Manager-Konsole zu öffnen.
 2. Geben Sie an der Paket-Manager-Eingabeaufforderung folgenden Befehl ein: "Update-package -reinstall Microsoft.AspNet.Mvc".
 3. Wählen Sie bei Aufforderung zum Neuladen der Datei die Option **Ja, alle** aus.
 4. Erstellen Sie die Lösung neu, und drücken Sie **F5**.
@@ -167,4 +169,4 @@ Um Ihr Selbststudium zu vertiefen, fügen Sie beispielsweise weitere Funktionen 
 [7]: ./media/search-create-geospatial/AzureSearch-geo1-App.PNG
 [12]: ./media/search-create-geospatial/AzureSearch_Create2_CodeplexDownload.PNG
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

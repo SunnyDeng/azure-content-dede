@@ -7,14 +7,16 @@
 	manager="dwrede"
 	editor=""/>
 
+
 <tags
 	ms.service="notification-hubs"
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-kindle"
 	ms.devlang="Java"
-	ms.topic="get-started-article" 
+	ms.topic="hero-article" 
 	ms.date="06/16/2015"
 	ms.author="wesmc"/>
+
 
 # Erste Schritte mit Notification Hubs
 
@@ -79,7 +81,8 @@ Geben Sie im Portal den geheimen Clientschlüssel und die Client-ID in die Regis
 Fügen Sie die ADM-Bibliotheken zum Eclipse-Projekt hinzu.
 
 1. Um die ADM-Bibliothek zu erhalten, [laden Sie das SDK herunter]. Extrahieren Sie die SDK-ZIP-Datei.
-2. Klicken Sie in Eclipse mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Properties**. Wählen Sie den **Java Build Path** auf der linken Seite, und klicken Sie oben auf die Registerkarte **Libraries**. Klicken Sie auf **Add External Jar**, und wählen Sie die Datei `\SDK\Android\DeviceMessaging\lib\amazon-device-messaging-*.jar` aus dem Verzeichnis aus, in das Sie das Amazon-SDK extrahiert haben. 3. Laden Sie das NotificationHubs Android-SDK (Link) herunter.
+2. Klicken Sie in Eclipse mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Properties**. Wählen Sie **Java Build Path** auf der linken Seite aus, und klicken Sie anschließend oben auf die Registerkarte \*\*Bibliotheken\*\*. Klicken Sie auf **Externe Jar hinzufügen**, und wählen Sie die Datei `\SDK\Android\DeviceMessaging\lib\amazon-device-messaging-*.jar` aus dem Verzeichnis aus, in das Sie das Amazon-SDK extrahiert haben.
+3. Laden Sie das NotificationHubs Android-SDK (Link) herunter.
 4. Entpacken Sie das Paket, und ziehen Sie die Datei `notification-hubs-sdk.jar` in den Ordner `libs ` in Eclipse.
 
 Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
@@ -95,25 +98,32 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 	     android:name="[YOUR PACKAGE NAME].permission.RECEIVE_ADM_MESSAGE"
 	     android:protectionLevel="signature" />
 
+
 		<uses-permission android:name="android.permission.INTERNET"/>
 
+
 		<uses-permission android:name="[YOUR PACKAGE NAME].permission.RECEIVE_ADM_MESSAGE" />
+
 
 		<!-- This permission allows your app access to receive push notifications
 		from ADM. -->
 		<uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE" />
 
+
 		<!-- ADM uses WAKE_LOCK to keep the processor from sleeping when a message is received. -->
 		<uses-permission android:name="android.permission.WAKE_LOCK" />
+
 
 3. Fügen Sie das folgende Element als erstes untergeordnetes Element des Anwendungselements ein. Ersetzen Sie **[IHR DIENSTNAME]** durch den Namen des ADM-Meldungshandlers, den Sie im nächsten Abschnitt erstellen (einschließlich Paket), und ersetzen Sie **[IHR PAKETNAME]** durch den Namen des Pakets, mit dem Sie Ihre App erstellt haben.
 
 		<amazon:enable-feature
 		      android:name="com.amazon.device.messaging"
 		             android:required="true"/>
+
 		<service
 		    android:name="[YOUR SERVICE NAME]"
 		    android:exported="false" />
+
 
 		<receiver
 		    android:name="[YOUR SERVICE NAME]$Receiver"
@@ -124,10 +134,13 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 		    <!-- To interact with ADM, your app must listen for the following intents. -->
 		    <intent-filter>
 		  <action android:name="com.amazon.device.messaging.intent.REGISTRATION" />
+
 		  <action android:name="com.amazon.device.messaging.intent.RECEIVE" />
+
 
 		  <!-- Replace the name in the category tag with your app's package name. -->
 		  <category android:name="[YOUR PACKAGE NAME]" />
+
 		    </intent-filter>
 		</receiver>
 
@@ -241,7 +254,7 @@ Bearbeiten Sie Ihr App-Manifest zur Unterstützung von ADM:
 
 ## Hinzufügen Ihres API-Schlüssels zur App
 
-1. Erstellen Sie in Eclipse eine neue Datei namens **api_key.txt** im Verzeichnisobjekt des Projekts.
+1. Erstellen Sie in Eclipse eine neue Datei namens **api\_key.txt** im Verzeichnisobjekt des Projekts.
 2. Öffnen Sie die Datei, und kopieren Sie den **API-Schlüssel**, den Sie im Amazon-Entwicklerportal generiert haben.
 
 ## Ausführen der App
@@ -281,4 +294,4 @@ So senden Sie eine Nachricht mit .NET:
 [7]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-notification.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -111,9 +111,9 @@ Sie können auch [Zurücksetzen des Kennworts und des SSH-Schlüssels](#resetbot
 
 ### <a name="sshconfigresetcli"></a>Zurücksetzen der SSH-Konfiguration
 
-Wenn sich die SSH-Konfiguration in einen unerwünschten Zustand befindet, verlieren Sie möglicherweise auch den Zugriff auf den virtuellen Computer. Mit der VMAccess-Erweiterung können Sie die Konfiguration auf den Standardzustand zurücksetzen. Hierzu legen Sie einfach nur den Schlüssel "reset_ssh" auf "True" fest. Die Erweiterung startet den SSH-Server neu, öffnet den SSH-Port auf Ihrem virtuellen Computer und setzt die SSH-Konfiguration auf die Standardeinstellungen zurück. Das Benutzerkonto (Name, Kennwort oder SSH-Schlüssel) wird nicht geändert.
+Wenn sich die SSH-Konfiguration in einen unerwünschten Zustand befindet, verlieren Sie möglicherweise auch den Zugriff auf den virtuellen Computer. Mit der VMAccess-Erweiterung können Sie die Konfiguration auf den Standardzustand zurücksetzen. Hierzu legen Sie einfach nur den Schlüssel "reset\_ssh" auf "True" fest. Die Erweiterung startet den SSH-Server neu, öffnet den SSH-Port auf Ihrem virtuellen Computer und setzt die SSH-Konfiguration auf die Standardeinstellungen zurück. Das Benutzerkonto (Name, Kennwort oder SSH-Schlüssel) wird nicht geändert.
 
-> [AZURE.NOTE]Die SSH-Konfigurationsdatei befindet sich unter "/etc/ssh/sshd_config".
+> [AZURE.NOTE]Die SSH-Konfigurationsdatei befindet sich unter "/etc/ssh/sshd\_config".
 
 Schritt 1: Erstellen Sie eine Datei namens PrivateConf.json mit diesem Inhalt.
 
@@ -228,7 +228,7 @@ Führen Sie diese Befehle aus.
 	$Version = "1.*"
 	Set-AzureVMExtension -ExtensionName $ExtensionName -VM  $vm -Publisher $Publisher -Version $Version -PrivateConfiguration $PrivateConfig | Update-AzureVM
 
-> [AZURE.NOTE]Die SSH-Konfigurationsdatei befindet sich unter /etc/ssh/sshd_config.
+> [AZURE.NOTE]Die SSH-Konfigurationsdatei befindet sich unter /etc/ssh/sshd\_config.
 
 ### <a name="delete"></a>Löschen eines Benutzers
 
@@ -263,4 +263,4 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH]: http://msdn.microsoft.com/library/azure/dn535788.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="06/16/2015"
+	ms.date="08/05/2015"
 	ms.author="sdanie"/>
 
 # Anpassen des Entwicklerportals in Azure API Management
@@ -99,4 +99,4 @@ Klicken Sie auf die Willkommensseite, um den Inhalt zu bearbeiten, der auf der S
 [bootstrap]: http://getbootstrap.com/
 [LESS-Variablen]: http://getbootstrap.com/css/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -246,4 +246,4 @@ Die folgenden Fragen und Antworten beziehen sich auf die Sicherheit und Microsof
 [Erste Schritte mit dem physischen Gerät](https://msdn.microsoft.com/library/azure/dn772410.aspx)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

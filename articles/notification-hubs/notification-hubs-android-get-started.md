@@ -1,19 +1,21 @@
 <properties 
-	pageTitle="Erste Schritte mit Azure-Benachrichtigungs-Hubs" 
+	pageTitle="Erste Schritte mit Azure Notification Hubs" 
 	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen." 
 	services="notification-hubs" 
 	documentationCenter="android" 
 	authors="wesmc7777" 
 	manager="dwrede" 
 	editor=""/>
+
 <tags 
 	ms.service="notification-hubs" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
-	ms.topic="article" 
+	ms.topic="hero-article" 
 	ms.date="05/27/2015" 
 	ms.author="wesmc"/>
+
 
 # Erste Schritte mit Notification Hubs
 
@@ -66,11 +68,11 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 
 ###Hinzufügen des Codes
 
-1. Laden Sie <a href="https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409">hier</a> das Notification Hubs Android SDK herunter. Extrahieren Sie die ZIP-Datei, und kopieren Sie die Dateien **notificationhubs\notification-hubs-0.4.jar** und **notifications\notifications-1.0.1.jar** in das Verzeichnis **app\libs** Ihres Projekts. Dazu können Sie die Dateien direkt in den Ordner **libs** im Fenster "Project View" von Android Studio ziehen. Aktualisieren Sie den Ordner "libs".
+1. Laden Sie <a href="https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409">hier</a> das Notification Hubs Android SDK herunter. Extrahieren Sie die ZIP-Datei, und kopieren Sie die Dateien **notificationhubs\\notification-hubs-0.4.jar** und **notifications\\notifications-1.0.1.jar** in das Verzeichnis **app\\libs** Ihres Projekts. Dazu können Sie die Dateien direkt in den Ordner **libs** im Fenster "Project View" von Android Studio ziehen. Aktualisieren Sie den Ordner "libs".
 
 
 
-	Die Referenzdokumentation für diese zwei Pakete finden Sie unter den folgenden Links: * [com.microsoft.windowsazure.messaging](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/messaging/package-summary.html) * [com.microsoft.windowsazure.notifications](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/notifications/package-summary.html)
+	Die Referenzdokumentation für diese zwei Pakete finden Sie unter den folgenden Links: \* [com.microsoft.windowsazure.messaging](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/messaging/package-summary.html) \* [com.microsoft.windowsazure.notifications](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/notifications/package-summary.html)
 
 
     > [AZURE.NOTE]Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.
@@ -80,12 +82,18 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 	Fügen Sie in der Datei "AndroidManifest.xml" die folgenden Berechtigungen unter der Markierung `</application>` ein. Ersetzen Sie dabei `<your package>` durch den oben in der Datei "AndroidManifest.xml" angegebenen Paketnamen (`com.example.testnotificationhubs` in diesem Beispiel).
 
 		<uses-permission android:name="android.permission.INTERNET"/>
+
 		<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+
 		<uses-permission android:name="android.permission.WAKE_LOCK"/>
+
 		<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
+
 		<permission android:name="<your package>.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+
 		<uses-permission android:name="<your package>.permission.C2D_MESSAGE"/>
+
 
 3. Fügen Sie in der Klasse **MainActivity** die folgenden `import`-Anweisungen über der Klassendeklaration hinzu.
 
@@ -106,7 +114,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 		private String HubListenConnectionString = "<Your default listen connection string>";
 
 
-	Aktualisieren Sie die drei Platzhalter: * **SENDER_ID**: Setzen Sie `SENDER_ID` auf die Projektnummer, die Sie zuvor von dem in der [Google Cloud Console](http://cloud.google.com/console) erstellten Projekt abgerufen haben. * **HubListenConnectionString**: Legen Sie für `HubListenConnectionString` die Verbindungszeichenfolge **DefaultListenAccessSignature** für den Hub fest. Sie können diese Verbindungszeichenfolge kopieren, indem Sie im [Azure-Verwaltungsportal] auf der Registerkarte **Dashboard** Ihres Hubs auf **Verbindungszeichenfolge anzeigen** klicken. * **HubName**: Der Name Ihres Notification Hubs, der oben auf der Seite in Azure angezeigt wird (**nicht** die vollständige URL). Beispiel: `"myhub"`.
+	Aktualisieren Sie die drei Platzhalter: \* **SENDER\_ID**: Setzen Sie `SENDER_ID` auf die Projektnummer, die Sie zuvor von dem in der [Google Cloud Console](http://cloud.google.com/console) erstellten Projekt abgerufen haben. \* **HubListenConnectionString**: Legen Sie für `HubListenConnectionString` die Verbindungszeichenfolge **DefaultListenAccessSignature** für den Hub fest. Sie können diese Verbindungszeichenfolge kopieren, indem Sie im [Azure-Verwaltungsportal] auf der Registerkarte **Dashboard** Ihres Hubs auf **Verbindungszeichenfolge anzeigen** klicken. \* **HubName**: Der Name Ihres Notification Hubs, der oben auf der Seite in Azure angezeigt wird (**nicht** die vollständige URL). Beispiel: `"myhub"`.
 
 
 
@@ -178,7 +186,9 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
                 <category android:name="<your package name>" />
+
             </intent-filter>
         </receiver>
 
@@ -259,7 +269,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
 
 ![][31]
 
-1. Erweitern Sie in der Projektansicht von Android Studio **App** -> **src** -> **main** -> **res** -> **layout**. Öffnen Sie die Layoutdatei **activity_main.xml**, und klicken Sie auf die Registerkarte **Text**, um den Textinhalt der Datei zu aktualisieren. Ändern Sie ihn in den folgenden Code, mit dem ein neues `Button`- und `EditText`-Steuerelement zum Senden von Benachrichtigungsmeldungen an den Notification Hub hinzugefügt wird. Fügen Sie diesen Code am Ende der Datei unmittelbar vor `</RelativeLayout>` hinzu.
+1. Erweitern Sie in der Projektansicht von Android Studio **App**->**src**->**main**->**res**->**layout**. Öffnen Sie die Layoutdatei **activity\_main.xml**, und klicken Sie auf die Registerkarte **Text**, um den Textinhalt der Datei zu aktualisieren. Ändern Sie ihn in den folgenden Code, mit dem ein neues `Button`- und `EditText`-Steuerelement zum Senden von Benachrichtigungsmeldungen an den Notification Hub hinzugefügt wird. Fügen Sie diesen Code am Ende der Datei unmittelbar vor `</RelativeLayout>` hinzu.
 
 	    <Button
         android:layout_width="wrap_content"
@@ -270,6 +280,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
         android:layout_centerHorizontal="true"
         android:onClick="sendNotificationButtonOnClick" />
 
+
 	    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -278,6 +289,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="42dp"
         android:hint="@string/notification_message_hint" />
+
 
 2. Erweitern Sie in der Projektansicht von Android Studio **App** -> **src** -> **main** -> **res** -> **values**. Öffnen Sie die Datei **strings.xml**, und fügen Sie die Zeichenfolgenwerte hinzu, auf die von dem neuen `Button`- und `EditText`-Steuerelement verwiesen wird. Fügen Sie sie am Ende der Datei unmittelbar vor `</resources>` ein.
 
@@ -448,9 +460,9 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
 ##Testen der App
 
 ####Testen mit einem Emulator
-Wenn Sie die App mit einem Emulator testen möchten, müssen Sie sicherstellen, dass das Emulatorabbild die Google-API-Ebene unterstützt, die Sie für die API auswählen. Wenn das Abbild die Google-APIs nicht unterstützt, wird die Ausnahme **SERVICE_NOT_AVAILABLE** ausgegeben.
+Wenn Sie die App mit einem Emulator testen möchten, müssen Sie sicherstellen, dass das Emulatorabbild die Google-API-Ebene unterstützt, die Sie für die API auswählen. Wenn das Abbild die Google-APIs nicht unterstützt, wird die Ausnahme **SERVICE\_NOT\_AVAILABLE** ausgegeben.
 
-Stellen Sie außerdem sicher, dass Ihr Google-Konto dem ausgeführten Emulator unter **Einstellungen** -> **Konten** hinzugefügt ist. Andernfalls führt die Registrierung bei GCM möglicherweise zur Ausnahme **AUTHENTICATION_FAILED**.
+Stellen Sie außerdem sicher, dass Ihr Google-Konto dem ausgeführten Emulator unter **Einstellungen** -> **Konten** hinzugefügt ist. Andernfalls führt die Registrierung bei GCM möglicherweise zur Ausnahme **AUTHENTICATION\_FAILED**.
 
 ####Testen der App     
 
@@ -511,4 +523,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [Verwenden von Notification Hubs zum Übermitteln von Nachrichten]: notification-hubs-aspnet-backend-android-breaking-news.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

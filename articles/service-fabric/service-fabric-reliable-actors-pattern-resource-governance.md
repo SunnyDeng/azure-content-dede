@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Entwurfsmuster für Ressourcenkontrolle in Azure Service Fabric Actors"
-   description="Entwurfsmuster zur Verwendung von Service Fabric Actors zum Modellieren von Anwendungen, die skaliert werden sollen, jedoch beschränkte Ressourcen verwenden"
+   pageTitle="Reliable Actors: Entwurfsmuster für Ressourcenkontrolle"
+   description="Entwurfsmuster zur Verwendung von Reliable Actors zum Modellieren von Anwendungen, die skaliert werden sollen, jedoch beschränkte Ressourcen verwenden"
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
+
 
 <tags
    ms.service="service-fabric"
@@ -13,10 +14,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/17/2015"
+   ms.date="08/05/2015"
    ms.author="claudioc"/>
 
-# Entwurfsmuster in Azure Service Fabric Actors: Ressourcenkontrolle
+
+# Reliable Actors-Entwurfsmuster: Ressourcenkontrolle
 Dieses Muster und verwandte Szenarien sind leicht erkennbar für Entwickler – in Unternehmen oder anderswo – die über beschränkte Ressourcen auf lokaler Ebene oder in der Cloud verfügen, die sie nicht sofort skalieren können, oder die große Anwendungen und Daten in die Cloud senden möchten.
 
 In Unternehmen werden diese beschränkten Ressourcen, wie z. B. Datenbanken, auf hochskalierbarer Hardware ausgeführt. Wer über eine lange Unternehmenserfahrung verfügt, weiß, dass dies eine gängige Situation in Unternehmen ist. Selbst bei der Skalierung der Cloud ist diese Situation aufgetreten, als ein Cloud-Dienst versucht hat, das TCP-Limit von 64 K für Verbindungen zwischen einem Adress-/Port-Tupel zu überschreiten, oder beim Versuch, eine Verbindung zu einer Cloud-basierten Datenbank herzustellen, die die Anzahl gleichzeitiger Verbindungen beschränkt.
@@ -48,7 +50,7 @@ private static string ResolveConnectionString(long userId, int region)
 }
 ```
 
-Einfach, jedoch nicht sehr flexibel. Betrachten wir nun einen erweiterten und hilfreichen Ansatz. Als erstes modellieren wir die Affinität zwischen physischen Ressourcen und Actors. Dies erfolgt durch einen Actor namens Resolver, der die Zuordnung zwischen Benutzern, logischen Partitionen und physischen Ressourcen erkennt. Resolver verwaltet seine Daten in einem persistenten Speicher, sie werden jedoch für eine schnelle Suche zwischengespeichert. Wie in dem Wechselkurs-Beispiel weiter oben im Muster des intelligenten Cache zu sehen war, kann Resolver die neuesten Informationen mithilfe eines Timers auf proaktive Weise abrufen. Wenn der Benutzer-Actor die Ressource, die er verwenden muss, auflöst, nimmt er ihre Zwischenspeicherung in einer lokalen Variablen mit dem Namen _resolution vor und verwendet sie während seiner Lebensdauer. Einer suchbasierten Auflösung (unten dargestellt) wurde der Vorzug gegeben gegenüber einfachem Hashing oder Bereich-Hashing, und zwar aufgrund der Flexibilität, die sie bei Vorgängen wie Herunter-/Hochskalieren oder Verschieben eines Benutzers von einer Ressource in eine andere bietet.
+Einfach, jedoch nicht sehr flexibel. Betrachten wir nun einen erweiterten und hilfreichen Ansatz. Als erstes modellieren wir die Affinität zwischen physischen Ressourcen und Actors. Dies erfolgt durch einen Actor namens Resolver, der die Zuordnung zwischen Benutzern, logischen Partitionen und physischen Ressourcen erkennt. Resolver verwaltet seine Daten in einem persistenten Speicher, sie werden jedoch für eine schnelle Suche zwischengespeichert. Wie in dem Wechselkurs-Beispiel weiter oben im Muster des intelligenten Cache zu sehen war, kann Resolver die neuesten Informationen mithilfe eines Timers auf proaktive Weise abrufen. Wenn der Benutzer-Actor die Ressource, die er verwenden muss, auflöst, nimmt er ihre Zwischenspeicherung in einer lokalen Variablen mit dem Namen "\_resolution" vor und verwendet sie während seiner Lebensdauer. Einer suchbasierten Auflösung (unten dargestellt) wurde der Vorzug gegeben gegenüber einfachem Hashing oder Bereich-Hashing, und zwar aufgrund der Flexibilität, die sie bei Vorgängen wie Herunter-/Hochskalieren oder Verschieben eines Benutzers von einer Ressource in eine andere bietet.
 
 ![][2]
 
@@ -416,6 +418,5 @@ Dieses Muster ist sehr gängig in Szenarien, in denen Entwickler entweder über 
 [1]: ./media/service-fabric-reliable-actors-pattern-resource-governance/resourcegovernance_arch1.png
 [2]: ./media/service-fabric-reliable-actors-pattern-resource-governance/resourcegovernance_arch2.png
 [3]: ./media/service-fabric-reliable-actors-pattern-resource-governance/resourcegovernance_arch3.png
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

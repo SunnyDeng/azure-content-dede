@@ -143,4 +143,4 @@ Obwohl die Tools für elastische Datenbanken viele zusätzliche Funktionen biete
 [3]: ./media/sql-database-elastic-scale-federation-migration/migrate-3.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

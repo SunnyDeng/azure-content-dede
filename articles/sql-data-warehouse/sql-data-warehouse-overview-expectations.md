@@ -78,4 +78,4 @@ Für Azure SQL Data Warehouse gibt es möglicherweise bis zu vier Wartungsmaßna
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

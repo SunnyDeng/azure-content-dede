@@ -6,14 +6,16 @@
    authors="bandersmsft"
    manager="jwhit"
    editor="tysonn" />
+
 <tags
    ms.service="operational-insights"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/21/2015"
+   ms.date="08/05/2015"
    ms.author="banders" />
+
 
 # Aktualisieren von Servern mit System Updates
 
@@ -23,7 +25,7 @@ Mithilfe der Lösung "System Updates" in Microsoft Azure Operational Insights k�
 
 ## Verwenden von System Updates zum Aktualisieren von Servers
 
-Bevor Sie System Updates in Microsoft Azure Operational Insights verwenden können, müssen Sie die Lösung installiert haben. Weitere Informationen zum Installieren von Lösungen finden Sie unter [Verwenden von Solutions Gallery zum Hinzufügen oder Entfernen von Lösungen](operational-insights-add-solution.md). Nach der Installation können Sie die Updates, die auf den überwachten Servern fehlen, in Operational Insights über die Kachel **System Update Assessment** auf der Seite **Übersicht** anzeigen.
+Bevor Sie System Updates in Microsoft Azure Operational Insights verwenden können, müssen Sie die Lösung installiert haben. Weitere Informationen zum Installieren von Lösungen finden Sie unter [Verwenden von Solutions Gallery zum Hinzufügen oder Entfernen von Lösungen](operational-insights-setup-workspace.md). Nach der Installation können Sie die Updates, die auf den überwachten Servern fehlen, in Operational Insights über die Kachel **System Update Assessment** auf der Seite **Übersicht** anzeigen.
 
 ### So arbeiten Sie mit Updates
 
@@ -36,4 +38,4 @@ Bevor Sie System Updates in Microsoft Azure Operational Insights verwenden könn
 
 [AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

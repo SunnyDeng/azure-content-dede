@@ -1,6 +1,6 @@
 In diesem Abschnitt ändern wir das Modell unserer Datenbank, indem wir ein neues Zeitstempelfeld namens **CompleteDate** hinzufügen. In diesem Feld wird die Zeit aufgezeichnet, zu der das todo-Element zuletzt abgeschlossen wurde. Entity Framework aktualisiert die Datenbank auf Grundlage unserer Modelländerung mittels einer von [DropCreateDatabaseIfModelChanges](http://go.microsoft.com/fwlink/?LinkId=394621) abgeleiteten Standard-Datenbankinitialisiererklasse.
 
-1. Erweitern Sie im Projektmappen-Explorer für Visual Studio den Ordner **App_Start** im Aufgabenlistenserviceprojekt. Öffnen Sie die Datei "WebApiConfig.cs".
+1. Erweitern Sie im Projektmappen-Explorer für Visual Studio den Ordner **App\_Start** im Aufgabenlistenserviceprojekt. Öffnen Sie die Datei "WebApiConfig.cs".
 
 2. Beachten Sie in der Datei "WebApiConfig.cs", dass die Standard-Datenbankinitialisiererklasse von der `DropCreateDatabaseIfModelChanges`-Klasse abgeleitet wird. Dies bedeutet, dass jede Änderung am Modell dazu führt, dass die Tabelle gelöscht und dem neuen Modell entsprechend erneut erstellt wird. Die Daten in der Tabelle gehen also verloren, und es wird ein erneutes Seeding für die Tabelle ausgeführt. Ändern Sie die Seed-Methode des Datenbankinitialisierers so, dass die Seed-Daten wie folgt sind, und speichern Sie die Datei "WebApiConfig.cs".
 
@@ -40,4 +40,4 @@ In diesem Abschnitt ändern wir das Modell unserer Datenbank, indem wir ein neue
 
 Als Nächstes aktualisieren Sie die Client-App, um die neuen **CompleteDate**-Daten anzuzeigen.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

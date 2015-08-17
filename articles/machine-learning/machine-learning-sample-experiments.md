@@ -19,7 +19,7 @@
 # Verwenden von Beispielexperimenten zum Erstellen neuer Experimente
 Wenn Sie ein Experiment erstellen möchten, suchen Sie in den Beispielexperimenten des Machine Learning-Teams und in den von der Machine Learning-Community freigegebenen Experimenten nach Beispielen. Sie können auch in der [Galerie](http://gallery.azureml.net/) Fragen stellen oder Anmerkungen zu Experimenten veröffentlichen.
 
-[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
 ## Durchsuchen der Galerie
 1. Wechseln Sie zu [Gallery](http://gallery.azureml.net/) (Galerie).
@@ -40,4 +40,4 @@ Wenn Sie ein Experiment erstellen möchten, suchen Sie in den Beispielexperiment
 - [Durchsuchen einsatzbereiter Anwendungen](https://datamarket.azure.com/browse?query=machine+learning)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

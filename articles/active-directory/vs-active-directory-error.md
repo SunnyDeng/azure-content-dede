@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/22/2015" 
-	ms.author="patshea123"/>
+	ms.author="patshea"/>
 
 # Fehler während der Authentifizierungserkennung
 
@@ -56,45 +56,45 @@ Der Assistent versucht schließlich, Versionen von Authentifizierungscode zu erk
 
 Zum Erkennen der Windows-Authentifizierung in einem MVC-Projekt sucht der Assistent nach dem `authentication`-Element aus Ihrer Datei **web.config**.
 
-<PRE class="prettyprint">
+```
 	&lt;configuration&gt;
 	    &lt;system.web&gt;
 	        <span style="background-color: yellow">&lt;authentication mode="Windows" /&gt;</span>
 	    &lt;/system.web&gt;
 	&lt;/configuration&gt;
-</pre>
+```
 
 Zum Erkennen der Windows-Authentifizierung in einem Web-API-Projekt sucht der Assistent nach dem `IISExpressWindowsAuthentication`-Element aus der **CSPROJ**-Datei Ihres Projekts:
 
-<PRE class="prettyprint">
+```
 	&lt;Project&gt;
 	    &lt;PropertyGroup&gt;
 	        <span style="background-color: yellow">&lt;IISExpressWindowsAuthentication&gt;enabled&lt;/IISExpressWindowsAuthentication&gt;</span>
 	    &lt;/PropertyGroup>
 	&lt;/Project&gt;
-</PRE>
+```
 
 Zum Erkennen der Authentifizierung einzelner Benutzerkonten sucht der Assistent nach dem Paketelement aus Ihrer Datei **Packages.config**.
 
-<PRE class="prettyprint">
+```
 	&lt;packages&gt;
 	    <span style="background-color: yellow">&lt;package id="Microsoft.AspNet.Identity.EntityFramework" version="2.1.0" targetFramework="net45" /&gt;</span>
 	&lt;/packages&gt;
-</PRE>
+```
 
 Zum Erkennen der alten Form von Organisationskontoauthentifizierung sucht der Assistent nach dem folgenden Element aus der Datei **web.config**:
 
-<PRE class="prettyprint">
+```
 	&lt;configuration&gt;
 	    &lt;appSettings&gt;
 	        <span style="background-color: yellow">&lt;add key="ida:Realm" value="***" /&gt;</span>
 	    &lt;/appSettings&gt;
 	&lt;/configuration&gt;
-</PRE>
+```
 
 Wenn Sie den Authentifizierungstyp ändern möchten, entfernen Sie den inkompatiblen Authentifizierungstyp, und führen Sie den Assistenten dann erneut aus.
 
 Weitere Informationen finden Sie unter [Authentifizierungsszenarien für Azure AD](active-directory-authentication-scenarios.md).
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

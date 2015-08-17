@@ -26,4 +26,4 @@ Der Schritt mit der Bezeichnung **Erweiterte Datenverarbeitung in Azure** ist ei
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/machine-learning-how-to-create-ml-service.svg" width="100%" height="100%"> </object>
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -170,4 +170,4 @@ In diesem Abschnitt stellen Sie erneut eine Verbindung zwischen der App und dem 
 [Xamarin-Erweiterung]: http://xamarin.com/visual-studio
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

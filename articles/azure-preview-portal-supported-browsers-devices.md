@@ -3,7 +3,7 @@
 	description="" 
 	services="" 
 	documentationCenter="" 
-	authors="micflan" 
+	authors="micflan"  
 	manager="lwelicki" 
 	editor=""/>
 
@@ -25,11 +25,11 @@ Das Portal funktioniert einwandfrei auf modernen PCs, Macs und Tablets. Mobiltel
 ### Unterstützte Browser
 Die neuesten Versionen der folgenden Browser werden unterstützt:
 
-- Internet Explorer \(11 und höher\)
-- Safari \(7 und höher\)
-- Chrome \(neueste Version\)
-- Firefox \(neueste Version\)
+- Internet Explorer (11 und höher)
+- Safari (7 und höher)
+- Chrome (neueste Version)
+- Firefox (neueste Version)
 
 *Safari 6 und niedriger wird nicht unterstützt. Wenn Sie OS X verwenden, können Sie entweder Chrome bzw. Firefox verwenden oder auf OS X Mavericks aktualisieren, um Safari 7 zu erhalten.*
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

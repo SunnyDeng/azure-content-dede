@@ -7,6 +7,7 @@
    manager="paulettm"
    editor="cgronlun"/>
 
+
 <tags
    ms.service="hdinsight"
    ms.devlang="na"
@@ -15,6 +16,7 @@
    ms.workload="big-data"
    ms.date="07/06/2015"
    ms.author="larryfr"/>
+
 
 #Ausführen von Hive-Abfragen mit Hadoop in HDInsight mithilfe von PowerShell
 
@@ -104,7 +106,7 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
 
 ##<a id="results"></a>Anzeigen der Auftragsausgabe
 
-Der MapReduce-Auftrag hat die Ergebnisse des Vorgangs im Azure-Blobspeicher im Pfad **wasb:///example/data/WordCountOutput** gespeichert, der als Argument für den Auftrag angegeben wurde. Sie können über Azure PowerShell auf den Azure-Blobspeicher zugreifen, aber Sie müssen den Speicherkontonamen, den Schlüssel und den Container kennen, der von Ihrem HDInsight-Cluster verwendet wird, um direkt auf die Dateien zuzugreifen.
+Der MapReduce-Auftrag hat die Ergebnisse des Vorgangs im Azure-Blobspeicher im Pfad \*\***wasb:///example/data/WordCountOutput** gespeichert, der als Argument für den Auftrag angegeben wurde. Sie können über Azure PowerShell auf den Azure-Blobspeicher zugreifen, aber Sie müssen den Speicherkontonamen, den Schlüssel und den Container kennen, der von Ihrem HDInsight-Cluster verwendet wird, um direkt auf die Dateien zuzugreifen.
 
 Glücklicherweise können Sie diese Informationen mithilfe der folgenden Azure PowerShell-Cmdlets abrufen:
 
@@ -113,7 +115,7 @@ Glücklicherweise können Sie diese Informationen mithilfe der folgenden Azure P
 * **Get-AzureStorageBlob**: Bei gegebenem Kontextobjekt und Containernamen wird eine Liste der im Container enthaltenen Blobs zurückgegeben.
 * **Get-AzureStorageBlobContent**: Bei gegebenem Kontextobjekt, Dateipfad und -namen (von **Get-AzureHDinsightCluster** zurückgegeben) wird eine Datei aus dem Azure-Blobspeicher heruntergeladen.
 
-Im folgenden Beispiel werden die Speicherinformationen abgerufen; anschließend wird die Ausgabe von **wasb:///example/data/WordCountOutput** heruntergeladen. Ersetzen Sie **CLUSTERNAME** durch den Namen Ihres HDInsight-Clusters.
+Im folgenden Beispiel werden die Speicherinformationen abgerufen; anschließend wird die Ausgabe von \*\***wasb:///example/data/WordCountOutput** heruntergeladen. Ersetzen Sie **CLUSTERNAME** durch den Namen Ihres HDInsight-Clusters.
 
 		#Login to your Azure subscription
 		# Is there an active Azure subscription?
@@ -173,4 +175,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Pig mit Hadoop in HDInsight](hdinsight-use-pig.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

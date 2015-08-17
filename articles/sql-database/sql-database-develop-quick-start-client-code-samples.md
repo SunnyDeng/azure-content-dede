@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank | Microsoft Azure" 
-	description="Bietet Codebeispiele und Treiber Node.js unter Linux, Python unter Mac OS, Java unter Windows u. v. m. für Azure SQL-Datenbank-Clients."
+	description="Bietet Codebeispiele und Treiber für Node.js unter Linux, Python, unter Mac OS, Java und Windows, Enterprise Library u. v. m. für Azure SQL-Datenbank-Clients."
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/24/2015" 
+	ms.date="08/04/2015" 
 	ms.author="genemi"/>
 
 
@@ -25,7 +25,7 @@ Dieses Thema enthält Links zu Schnellstart-Codebeispielen, die Sie zum Herstell
 
 
 - Kurze Beispiele für Verbindungen und Abfragen.
-- Beispiele für die Wiederholung von Verbindung und Abfrage und die automatische Wiederholung, wenn ein Fehler als [*vorübergehender*](sql-database-develop-error-messages.md#bkmk_connection_errors) Fehler eingestuft wird \(z. B. Verbindungstimeout\).
+- Beispiele für die Wiederholung von Verbindung und Abfrage und die automatische Wiederholung, wenn ein Fehler als [*vorübergehender*](sql-database-develop-error-messages.md#bkmk_connection_errors) Fehler eingestuft wird (z. B. Verbindungstimeout).
 
 
 Die Beispiele decken Folgendes ab:
@@ -75,11 +75,11 @@ Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramm
 
 | Sprache | Kurzes Beispiel | Beispiel für Wiederholung | Relational in objektorientiert |
 | :-- | :-- | :-- | :-- |
-| C\# | [ADO.NET](sql-database-develop-dotnet-simple.md) | [ADO.NET \(benutzerdefiniert\)](sql-database-develop-csharp-retry-windows.md)<br/><br/>[ADO.NET mit Enterprise Library](http://msdn.microsoft.com/library/azure/dn961167.aspx) | [ADO.NET Entity Framework](http://msdn.microsoft.com/library/azure/ff951633.aspx) |
+| C# | [ADO.NET](sql-database-develop-dotnet-simple.md) | [ADO.NET benutzerdefiniert](sql-database-develop-csharp-retry-windows.md)<br/><br/>[Enterprise Library](sql-database-develop-entlib-csharp-retry-windows.md) | (Entity Framework) |
 | C++ | [ODBC-Treiber](http://msdn.microsoft.com/library/azure/hh974312.aspx) | . | . |
 | Java | [Java. JDBC, JDK. INSERT, TRANSACTION, SELECT.](sql-database-develop-java-simple-windows.md)<br/><br/>[Java. Eclipse](sql-data-java-how-to-use-sql-database.md)<br/><br/>[Java. JDBC](http://msdn.microsoft.com/library/azure/gg715284.aspx) | . | . |
 | Node.js | [msnodesql](sql-database-develop-nodejs-simple-windows.md) | . | . |
-| PHP | [ODBC](sql-database-develop-php-simple-windows.md) | [ODBC \(benutzerdefiniert\)](sql-database-develop-php-retry-windows.md) | . |
+| PHP | [ODBC](sql-database-develop-php-simple-windows.md) | [ODBC (benutzerdefiniert)](sql-database-develop-php-retry-windows.md) | . |
 | Python | [pymssql](sql-database-develop-python-simple-windows.md) | . | . |
 
 
@@ -87,10 +87,11 @@ Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramm
 
 
 - [Downloads von SDKs und Tools für zahlreiche Sprachen und Plattformen](http://azure.microsoft.com/downloads/#cmd-line-tools)
-- [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) \(Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache\)
+- [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)
 - [Liste mit numerischem Code für vorübergehende Fehler](sql-database-develop-error-messages.md#bkmk_connection_errors)<br/>&nbsp;
 - [Azure SQL-Datenbankentwicklung: Themen zur Vorgehensweise](http://msdn.microsoft.com/library/azure/ee621787.aspx)
 - [Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen](sql-database-connect-central-recommendations.md)
-- [Create your first Azure SQL Database](sql-database-get-started.md) \(Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache\)
+- [Create your first Azure SQL Database](sql-database-get-started.md) (Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache)
+- [Entity Framework 6 hier, EF 7 auf GitHub](http://entityframework.codeplex.com/)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

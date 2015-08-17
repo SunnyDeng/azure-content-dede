@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Upgrade von Web- oder Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen" 
-	description="Führen Sie ein Upgrade der Web- oder Business-Datenbanken von Azure SQL-Datenbank auf die neuen Dienstebenen und Leistungsstufen ";Basic";, ";Standard"; und ";Premium"; von Azure SQL-Datenbank durch." 
+	description="Führen Sie ein Upgrade der Web- oder Business-Datenbanken von Azure SQL-Datenbank auf die neuen Dienstebenen und Leistungsstufen &quot;Basic&quot;, &quot;Standard&quot; und &quot;Premium&quot; von Azure SQL-Datenbank durch." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="stevestein" 
@@ -310,4 +310,4 @@ Der Azure SQL-Datenbankdienst stellt Telemetriedaten und Tools zum Auswerten der
 
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

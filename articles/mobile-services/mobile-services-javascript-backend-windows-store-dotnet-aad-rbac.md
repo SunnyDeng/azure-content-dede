@@ -66,7 +66,7 @@ Wenn Sie mit der Bereitstellung von Skripts mit Git für Ihren mobilen Dienst no
 1. Erstellen Sie eine neue Skriptdatei namens *rbac.js* im Verzeichnis *./service/shared/* des lokalen Repositorys für Ihren mobilen Dienst.
 2. Fügen Sie das folgende Skript am Anfang der Datei ein, welches die Funktion `getAADToken` definiert. Anhand der *Mandantendomäne*, der *Client-ID* der integrierten Anwendung sowie des *Anwendungsschlüssels* stellt diese Funktion ein Graph-Zugriffstoken bereit, das zum Lesen der Verzeichnisinformationen verwendet wird.
 
-    >[AZURE.NOTE]Sie sollten das Token zwischenspeichern, statt für jede Zugriffsprüfung ein neues Token zu erstellen. Aktualisieren Sie den Zwischenspeicher, wenn bei der Verwendung des Tokens ein Authentication_ExpiredToken-Fehler 401 ausgegeben wird, wie in der [Graph-API-Fehlerreferenz] beschrieben ist. Aus Gründen der Vereinfachung wird dies im Code unten nicht dargestellt, aber es minimiert den zusätzlichen Netzwerkverkehr mit Active Directory.
+    >[AZURE.NOTE]Sie sollten das Token zwischenspeichern, statt für jede Zugriffsprüfung ein neues Token zu erstellen. Aktualisieren Sie den Zwischenspeicher, wenn bei der Verwendung des Tokens ein Authentication\_ExpiredToken-Fehler 401 ausgegeben wird, wie in der [Graph-API-Fehlerreferenz] beschrieben ist. Aus Gründen der Vereinfachung wird dies im Code unten nicht dargestellt, aber es minimiert den zusätzlichen Netzwerkverkehr mit Active Directory.
 
         var appSettings = require('mobileservice-config').appSettings;
         var tenant_domain = appSettings.AAD_TENANT_DOMAIN;
@@ -285,4 +285,4 @@ Die folgenden Schritte zeigen, wie Sie rollenbasierte Zugriffssteuerung mithilfe
 [IsMemberOf]: http://msdn.microsoft.com/library/azure/dn151601.aspx
 [Zugriff auf Azure Active Directory Graph-Informationen]: mobile-services-javascript-backend-windows-store-dotnet-aad-graph-info.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

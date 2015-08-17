@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/20/2015" 
+	ms.date="07/24/2015" 
 	ms.author="sidneyh"/>
 
 # Verwenden der Clientbibliothek für elastische Datenbanken 
@@ -174,4 +174,4 @@ Anwendungen, die Dapper und DapperExtensions verwenden, können auch leicht von 
 [1]: ./media/sql-database-elastic-scale-working-with-dapper/dapperimage1.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

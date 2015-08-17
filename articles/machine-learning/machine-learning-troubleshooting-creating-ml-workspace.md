@@ -25,7 +25,7 @@ Dieser Leitfaden bietet Lösungen für einige gängige Schwierigkeiten beim Einr
 
 ##Besitzer des Arbeitsbereichs
 
-Beim Erstellen eines neuen Azure Machine Learning-Arbeitsbereichs müssen Sie im Feld "WORKSPACE OWNER" ein gültiges Microsoft-Konto \(ehemals "Windows Live ID"\) eingeben, z. B. john-contoso@live.com oder john-contoso@hotmail.com. Es muss ein Microsoft-Konto sein, z. B. kann es nicht Ihr Unternehmens-E-Mail-Konto sein. Besuchen Sie [www.live.com](http://www.live.com), um ein kostenloses Microsoft-Konto zu erstellen.
+Beim Erstellen eines neuen Azure Machine Learning-Arbeitsbereichs müssen Sie im Feld "WORKSPACE OWNER" ein gültiges Microsoft-Konto (ehemals "Windows Live ID") eingeben, z. B. john-contoso@live.com oder john-contoso@hotmail.com. Es muss ein Microsoft-Konto sein, z. B. kann es nicht Ihr Unternehmens-E-Mail-Konto sein. Besuchen Sie [www.live.com](http://www.live.com), um ein kostenloses Microsoft-Konto zu erstellen.
 
 Beachten Sie, dass das Konto, mit dem Sie sich am Azure-Portal angemeldet haben, um einen Arbeitsbereich zu erstellen, nicht automatisch über die Berechtigung zum *Öffnen* dieses Arbeitsbereichs verfügt, sofern Sie nicht dieses Konto als Besitzer angeben. Um einen Arbeitsbereich in Machine Learning Studio zu öffnen, müssen Sie bei dem Microsoft-Konto angemeldet sein, das als Besitzer des Arbeitsbereichs definiert wurde, oder Sie müssen eine Einladung des Besitzers zur Teilnahme am Arbeitsbereich erhalten haben. Sie können jedoch im Azure-Portal den Arbeitsbereich *verwalten*, einschließlich der Möglichkeit zum Ändern des Besitzers und der Zugriffskonfiguration.
 
@@ -35,7 +35,7 @@ Weitere Informationen zum Verwalten eines Arbeitsbereichs finden Sie unter [Verw
 
 ##Zulässige Regionen
 
-Machine Learning ist derzeit in der Region USA \(Mitte/Süden\) verfügbar. Falls Ihr Abonnement die Region USA \(Mitte/Süden\) nicht beinhaltet, wird eventuell die Fehlermeldung "You have no subscriptions in the allowed regions. Allowed regions: South Central US." \(Sie besitzen kein Abonnement in den zulässigen Regionen. Zulässige Regionen: USA \(Mitte/Süd\)\) ausgegeben.
+Machine Learning ist derzeit in der Region USA (Mitte/Süden) verfügbar. Falls Ihr Abonnement die Region USA (Mitte/Süden) nicht beinhaltet, wird eventuell die Fehlermeldung "You have no subscriptions in the allowed regions. Allowed regions: South Central US." (Sie besitzen kein Abonnement in den zulässigen Regionen. Zulässige Regionen: USA (Mitte/Süd)) ausgegeben.
 
 Wählen Sie in diesem Fall wie im nachstehenden Screenshot ersichtlich im Azure-Verwaltungsportal **Microsoft-Support kontaktieren** aus, und wählen Sie **Abrechnung** als **SUPPORTTYP** aus, um diese Region Ihrem Abonnement hinzuzufügen.
 
@@ -43,11 +43,11 @@ Wählen Sie in diesem Fall wie im nachstehenden Screenshot ersichtlich im Azure-
 
 ##Speicherkonto
  
-Der Machine Learning-Dienst benötigt ein Speicherkonto zum Speichern von Daten. Sie können ein bestehendes Speicherkonto in der Region USA \(Mitte/Süden\) verwenden oder ein neues Speicherkonto erstellen, wenn Sie den neuen Machine Learning-Arbeitsbereich einrichten \(falls Ihr Kontingent ausreicht, um ein neues Speicherkonto zu erstellen\). Um herauszufinden, ob Sie ein neues Speicherkonto erstellen können, klicken Sie im Azure-Verwaltungsportal auf **Einstellungen** und **Nutzung**.
+Der Machine Learning-Dienst benötigt ein Speicherkonto zum Speichern von Daten. Sie können ein bestehendes Speicherkonto in der Region USA (Mitte/Süden) verwenden oder ein neues Speicherkonto erstellen, wenn Sie den neuen Machine Learning-Arbeitsbereich einrichten (falls Ihr Kontingent ausreicht, um ein neues Speicherkonto zu erstellen). Um herauszufinden, ob Sie ein neues Speicherkonto erstellen können, klicken Sie im Azure-Verwaltungsportal auf **Einstellungen** und **Nutzung**.
 
 ![Arbeitsbereich erstellen][screen2]
 
-Nachdem Sie den neuen Machine Learning-Arbeitsbereich erstellt haben, können Sie sich mit dem Microsoft-Konto in Machine Learning Studio anmelden, das Sie als Besitzer des Arbeitsbereichs angegeben haben. Wenn die Fehlermeldung "Arbeitsbereich wurde nicht gefunden." \(ähnlich wie im folgenden Screenshot\) angezeigt wird, führen Sie die folgenden Schritte durch, um Ihre Browsercookies zu löschen.
+Nachdem Sie den neuen Machine Learning-Arbeitsbereich erstellt haben, können Sie sich mit dem Microsoft-Konto in Machine Learning Studio anmelden, das Sie als Besitzer des Arbeitsbereichs angegeben haben. Wenn die Fehlermeldung "Arbeitsbereich wurde nicht gefunden." (ähnlich wie im folgenden Screenshot) angezeigt wird, führen Sie die folgenden Schritte durch, um Ihre Browsercookies zu löschen.
 
 ![Arbeitsbereich nicht gefunden][screen3]
 
@@ -77,4 +77,4 @@ Es ist unser Ziel, die Machine Learning-Erfahrung so glatt und nahtlos wie mögl
 [screen6]: media/machine-learning-troubleshooting-creating-ml-workspace/screen6.png
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

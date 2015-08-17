@@ -61,4 +61,4 @@ Weitere Informationen finden Sie unter [Interner Lastenausgleich](http://msdn.mi
 
 <!-- LINKS -->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

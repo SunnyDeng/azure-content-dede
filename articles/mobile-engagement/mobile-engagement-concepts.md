@@ -67,16 +67,16 @@ Mithilfe von Anwendungsinformationen (oder `app info`) werden Benutzer gekennzei
 
 Anwendungsinformationen können mithilfe der API des Mobile Engagement SDKs oder der Geräte-API der Mobile Engagement-Plattform registriert werden.
 
-Anwendungsinformationen bestehen aus einem Schlüssel-Wert-Paar, das einem Gerät zugeordnet ist. Der Schlüssel ist der Name der Anwendungsinformation (begrenzt auf 64 ASCII-Buchstaben [a-z, A-Z], Zahlen [0-9] und Unterstriche [_]). Der Wert (begrenzt auf 1024 Zeichen) kann eine beliebige Zeichenfolge, eine ganze Zahl, ein Datum (JJJJ-MM-TT) oder ein boolescher Wert („true“ oder „false“) sein.
+Anwendungsinformationen bestehen aus einem Schlüssel-Wert-Paar, das einem Gerät zugeordnet ist. Der Schlüssel ist der Name der Anwendungsinformation (begrenzt auf 64 ASCII-Buchstaben [a-z, A-Z], Zahlen [0-9] und Unterstriche [\_]). Der Wert (begrenzt auf 1024 Zeichen) kann eine beliebige Zeichenfolge, eine ganze Zahl, ein Datum (JJJJ-MM-TT) oder ein boolescher Wert („true“ oder „false“) sein.
 
 Einem Gerät können innerhalb der in den Mobile Engagement-Preisinformationen definierten Grenzen beliebig viele Anwendungsinformationen zugeordnet werden. Für einen angegebenen Schlüssel wird nur der letzte festgelegte Wert von Mobile Engagement nachverfolgt (kein Verlauf). Durch das Festlegen oder Ändern des Werts einer Anwendungsinformation wird Mobile Engagement dazu gezwungen, die Zielgruppenkriterien erneut auszuwerten, die für diese Anwendungsinformation (sofern vorhanden) festgelegt sind. Das bedeutet, die Anwendungsinformationen können dazu verwendet werden, um Echtzeit-Pushübertragungen auszulösen.
 
 ##Zusätzliche Daten
 Zusätzliche Daten (oder Extras) sind beliebige Daten, die Ereignissen, Fehlern, Aktivitäten und Aufträgen zugeordnet werden können.
 
-Zusätzliche Daten sind ähnlich wie JSON-Objekte strukturiert: sie bestehen aus einer Struktur von Schlüssel-Wert-Paaren. Schlüssel sind auf 64 ASCII-Buchstaben [a-z, A-Z], Zahlen [0-9] und Unterstriche [_] begrenzt, und die Gesamtgröße der Extras ist auf 1024 Zeichen begrenzt (nach der JSON-Codierung durch das Mobile Engagement SDK).
+Zusätzliche Daten sind ähnlich wie JSON-Objekte strukturiert: sie bestehen aus einer Struktur von Schlüssel-Wert-Paaren. Schlüssel sind auf 64 ASCII-Buchstaben [a-z, A-Z], Zahlen [0-9] und Unterstriche [\_] begrenzt, und die Gesamtgröße der Extras ist auf 1024 Zeichen begrenzt (nach der JSON-Codierung durch das Mobile Engagement SDK).
 
-Die gesamte Struktur aus Schlüssel-Wert-Paaren wird als JSON-Objekt gespeichert. Trotzdem wird nur die erste Ebene der Schlüssel-Wert-Paare zerlegt, damit einige erweiterte Funktionen wie Segmente direkt darauf zugreifen können (Sie können z. B. problemlos ein Segment namens „SciFi-Fans“ definieren, das aus allen Benutzern besteht, denen im letzten Monat mindestens 10 Mal das Ereignis „content_viewed“ mit dem zusätzlichen Schlüssel „content_type“ und dem Wert „scifi“ gesendet wurde). Es wird daher dringend empfohlen, nur zusätzliche Daten zu senden, die aus einfachen Listen von Schlüssel-Wert-Paaren bestehen, die skalare Werte verwenden (z. B. Zeichenfolgen, Datumsangaben, ganze Zahlen oder boolesche Werte).
+Die gesamte Struktur aus Schlüssel-Wert-Paaren wird als JSON-Objekt gespeichert. Trotzdem wird nur die erste Ebene der Schlüssel-Wert-Paare zerlegt, damit einige erweiterte Funktionen wie Segmente direkt darauf zugreifen können (Sie können z. B. problemlos ein Segment namens „SciFi-Fans“ definieren, das aus allen Benutzern besteht, denen im letzten Monat mindestens 10 Mal das Ereignis „content\_viewed“ mit dem zusätzlichen Schlüssel „content\_type“ und dem Wert „scifi“ gesendet wurde). Es wird daher dringend empfohlen, nur zusätzliche Daten zu senden, die aus einfachen Listen von Schlüssel-Wert-Paaren bestehen, die skalare Werte verwenden (z. B. Zeichenfolgen, Datumsangaben, ganze Zahlen oder boolesche Werte).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -334,7 +334,7 @@ Jeder Schlüssel in dem Objekt muss mit dem folgenden regulären Ausdruck übere
 
 `^[a-zA-Z][a-zA-Z_0-9]*$`
 
-Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_) beginnen müssen.
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (\_) beginnen müssen.
 
 #### Größe
 
@@ -368,7 +368,7 @@ Jeder Schlüssel in dem Objekt muss mit dem folgenden regulären Ausdruck übere
 
 `^[a-zA-Z][a-zA-Z_0-9]*$`
 
-Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (_) beginnen müssen.
+Das bedeutet, dass Schlüssel mit mindestens einem Buchstaben, gefolgt von Buchstaben, Ziffern oder Unterstrichen (\_) beginnen müssen.
 
 #### Größe
 
@@ -379,4 +379,4 @@ Im vorherigen Beispiel enthält das an den Server gesendete JSON 44 Zeichen:
 			{"subscription":"2013-12-07","premium":"true"}
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

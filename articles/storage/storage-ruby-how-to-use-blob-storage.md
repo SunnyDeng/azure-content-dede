@@ -51,7 +51,7 @@ Fügen Sie mit Ihrem bevorzugten Texteditor Folgendes oben in die Ruby-Datei an 
 
 ## Einrichten einer Azure-Speicherverbindung
 
-Das Azure-Modul liest die Umgebungsvariablen **AZURE_STORAGE_ACCOUNT** und **AZURE_STORAGE_ACCESS_KEY** nach Informationen aus, die erforderlich sind, um eine Verbindung zum Azure-Speicherkonto herzustellen. Wenn diese Umgebungsvariablen nicht festgelegt werden, müssen Sie die Kontoinformationen vor dem Verwenden von **Azure::BlobService** mit dem folgenden Code angeben:
+Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** nach Informationen aus, die erforderlich sind, um eine Verbindung zum Azure-Speicherkonto herzustellen. Wenn diese Umgebungsvariablen nicht festgelegt werden, müssen Sie die Kontoinformationen vor dem Verwenden von **Azure::BlobService** mit dem folgenden Code angeben:
 
 	Azure.config.storage_account_name = "<your azure storage account>"
 	Azure.config.storage_access_key = "<your azure storage access key>"
@@ -68,7 +68,7 @@ So rufen Sie diese Werte ab:
 
 [AZURE.INCLUDE [storage-container-naming-rules-include](../../includes/storage-container-naming-rules-include.md)]
 
-Mit dem **Azure::BlobService**-Objekt können Sie mit Containern und Blobs arbeiten. Verwenden Sie die **create_container()**-Methode, um einen Container zu erstellen.
+Mit dem **Azure::BlobService**-Objekt können Sie mit Containern und Blobs arbeiten. Verwenden Sie die **create\_container()**-Methode, um einen Container zu erstellen.
 
 Im folgenden Beispiel wird ein Container erstellt oder ggf. ein Fehler ausgegeben.
 
@@ -81,19 +81,19 @@ Im folgenden Beispiel wird ein Container erstellt oder ggf. ein Fehler ausgegebe
 
 Wenn Sie die Dateien im Container öffentlich machen möchten, können Sie die Berechtigungen des Containers festlegen.
 
-Sie können einfach den <strong>create_container()</strong>-Aufruf ändern, um die **:public_access_level**-Option zu übergeben:
+Sie können einfach den <strong>create\_container()</strong>-Aufruf ändern, um die **:public\_access\_level**-Option zu übergeben:
 
 	container = azure_blob_service.create_container("test-container", 
 	  :public_access_level => "<public access level>")
 
 
-Gültige Werte für die **:public_access_level**-Option sind:
+Gültige Werte für die **:public\_access\_level**-Option sind:
 
 * **blob**: Gibt vollständigen öffentlichen Lesezugriff für Container- und Blob-Daten an. Clients können Blobs innerhalb des Containers über eine anonyme Anforderung aufzählen, können aber keine Container innerhalb des Speicherkontos aufzählen.
 
 * **container**: Gibt öffentlichen Lesezugriff für Blobs an. Blob-Daten innerhalb dieses Containers können über anonyme Anforderungen gelesen werden, Containerdaten sind aber nicht verfügbar. Clients können keine Blobs innerhalb des Containers über anonyme Anforderungen aufzählen.
 
-Sie können aber auch die öffentliche Zugriffsstufe eines Container mithilfe der **set_container_acl()**-Methode ändern, um die öffentliche Zugriffsstufe anzugeben.
+Sie können aber auch die öffentliche Zugriffsstufe eines Container mithilfe der **set\_container\_acl()**-Methode ändern, um die öffentliche Zugriffsstufe anzugeben.
  
 Im folgenden Beispiel wird die öffentliche Zugriffsstufe auf **container** geändert:
 
@@ -101,7 +101,7 @@ Im folgenden Beispiel wird die öffentliche Zugriffsstufe auf **container** geä
 
 ## Hochladen von Blobs in einen Container
 
-Um Inhalte in einen Blob hochzuladen, verwenden Sie die **create_block_blob()**-Methode, um den Blob zu erstellen, und verwenden Sie eine Datei oder Zeichenfolge als Inhalt des Blobs.
+Um Inhalte in einen Blob hochzuladen, verwenden Sie die **create\_block\_blob()**-Methode, um den Blob zu erstellen, und verwenden Sie eine Datei oder Zeichenfolge als Inhalt des Blobs.
 
 Durch den folgenden Code wird die Datei **test.png** als neuer Blob namens "image-blob" in den Container hochgeladen.
 
@@ -112,7 +112,7 @@ Durch den folgenden Code wird die Datei **test.png** als neuer Blob namens "imag
 
 ## Auflisten der Blobs in einem Container
 
-Verwenden Sie die **list_containers()**-Methode, um die Container aufzulisten. Verwenden Sie die **list_blobs()**-Methode, um die Blobs innerhalb eines Containers aufzulisten.
+Verwenden Sie die **list\_containers()**-Methode, um die Container aufzulisten. Verwenden Sie die **list\_blobs()**-Methode, um die Blobs innerhalb eines Containers aufzulisten.
 
 Auf diese Weise werden die URLs aller Blobs in allen Containern des Kontos ausgegeben.
 
@@ -126,15 +126,15 @@ Auf diese Weise werden die URLs aller Blobs in allen Containern des Kontos ausge
 
 ## Herunterladen von Blobs
 
-Um Blobs herunterzuladen, verwenden Sie die **get_blob()**-Methode zum Abrufen des Inhalts.
+Um Blobs herunterzuladen, verwenden Sie die **get\_blob()**-Methode zum Abrufen des Inhalts.
 
-Das folgende Beispiel demonstriert das Verwenden von **get_blob()** zum Herunterladen der Inhalte von "image-blob" und zum Schreiben in eine lokale Datei.
+Das folgende Beispiel demonstriert das Verwenden von **get\_blob()** zum Herunterladen der Inhalte von "image-blob" und zum Schreiben in eine lokale Datei.
 
 	blob, content = azure_blob_service.get_blob(container.name,"image-blob")
 	File.open("download.png","wb") {|f| f.write(content)}
 
 ## Löschen eines Blobs
-Verwenden Sie schließlich die **delete_blob()**-Methode, um einen Blob zu löschen. Das folgende Beispiel demonstriert das Löschen eines Blobs.
+Verwenden Sie schließlich die **delete\_blob()**-Methode, um einen Blob zu löschen. Das folgende Beispiel demonstriert das Löschen eines Blobs.
 
 	azure_blob_service.delete_blob(container.name, "image-blob")
 
@@ -147,4 +147,4 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
 - Besuchen Sie das [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

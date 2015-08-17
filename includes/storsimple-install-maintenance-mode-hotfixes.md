@@ -17,4 +17,4 @@
 
 6. Nachdem alle Hotfixes angewendet wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [Beenden des Wartungsmodus](#exit-maintenance-mode).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

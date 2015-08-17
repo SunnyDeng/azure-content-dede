@@ -7,6 +7,7 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
+
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="06/04/2015" 
 	ms.author="spelluru"/>
+
 
 # Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory [PowerShell]
 Dieser Artikel bietet eine umfassende exemplarische Vorgehensweise eines kanonischen Szenarios der Protokollverarbeitung mithilfe von Azure Data Factory zum Transformieren von Daten aus Protokolldateien in Einblicke.
@@ -30,7 +32,7 @@ In dieser exemplarischen Vorgehensweise werden Beispielprotokolle gesammelt, ver
 3.	Sie müssen [Azure PowerShell][download-azure-powershell] auf Ihren Computer herunterladen und installieren. 
 2.	**Empfohlen:** Beschäftigen Sie sich mit dem Lernprogramm im Artikel [Erste Schritte mit Azure Data Factory][adfgetstarted], um sich im Rahmen eines einfachen Lernprogramms mit dem Portal und den Cmdlets vertraut zu machen.
 3.	**Empfohlen:** Beschäftigen Sie sich mit der exemplarischen Vorgehensweise im Artikel [Verwenden von Pig und Hive mit Azure Data Factory][usepigandhive], um sich mit der Erstellung einer Pipeline vertraut zu machen, mit der Daten aus einer lokalen Datenquelle in einen Azure-Blobspeicher verschoben werden.
-4.	Laden Sie die Dateien für [ADFWalkthrough][adfwalkthrough-download] in den Ordner **C:\ADFWalkthrough** herunter, und **behalten Sie dabei die Ordnerstruktur bei**:
+4.	Laden Sie die Dateien für [ADFWalkthrough][adfwalkthrough-download] in den Ordner **C:\\ADFWalkthrough** herunter, und **behalten Sie dabei die Ordnerstruktur bei**:
 	- **Pipelines:** Enthält JSON-Dateien mit der Definition der Pipelines.
 	- **Tables:** Enthält JSON-Dateien mit der Definition der Tabellen.
 	- **LinkedServices:** Enthält JSON-Dateien mit der Definition Ihres Speicher- und Datenverarbeitungsclusters (HDInsight). 
@@ -104,7 +106,7 @@ In diesem Schritt laden Sie alle Beispieldaten (einschließlich aller Protokolle
 
 Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim Verschieben der Wirksamkeitsergebnisse der Marketingkampagne aus dem Azure-BLOB-Speicher in die Azure SQL-Datenbank verschoben.
 
-1. Öffnen Sie **uploadSampleDataAndScripts.ps1** im Ordner **C:\ADFWalkthrough** (oder in dem Ordner mit den extrahierten Dateien) in Ihrem bevorzugten Editor, ersetzen Sie die markierten Informationen durch Ihre Clusterinformationen, und speichern Sie die Datei.
+1. Öffnen Sie **uploadSampleDataAndScripts.ps1** im Ordner **C:\\ADFWalkthrough** (oder in dem Ordner mit den extrahierten Dateien) in Ihrem bevorzugten Editor, ersetzen Sie die markierten Informationen durch Ihre Clusterinformationen, und speichern Sie die Datei.
 
 
 		$storageAccount = <storage account name>
@@ -116,10 +118,10 @@ Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim
  
 	Dieses Skript erfordert, dass Sie das sqlcmd-Dienstprogramm auf dem Computer installiert haben. Wenn Sie SQL Server installiert haben, verfügen Sie bereits über das Dienstprogramm. Andernfalls [laden Sie das Dienstprogramm herunter][sqlcmd-install] und installieren es.
 	
-	Sie können auch die Dateien im Ordner "C:\ADFWalkthrough\Scripts" verwenden, um Pig-/Hive-Skripts und Beispieldateien in den ADFWalkthrough-Container im Blob-Speicher hochzuladen und die Tabelle "MarketingCampaignEffectiveness" in der Azure SQL-Datenbank "MarketingCamapaigns" zu erstellen.
+	Sie können auch die Dateien im Ordner "C:\\ADFWalkthrough\\Scripts" verwenden, um Pig-/Hive-Skripts und Beispieldateien in den ADFWalkthrough-Container im Blob-Speicher hochzuladen und die Tabelle "MarketingCampaignEffectiveness" in der Azure SQL-Datenbank "MarketingCamapaigns" zu erstellen.
    
-2. Bestätigen Sie, dass der lokale Computer auf die Azure SQL-Datenbank zugreifen darf. Verwenden Sie das Azure-Verwaltungsportal oder **sp_set_firewall_rule** in der Masterdatenbank, um eine Firewallregel für die IP-Adresse auf dem Computer zu erstellen und so den Zugriff zu aktivieren. Es kann bis zu fünf Minuten dauert, bis diese Änderung wirksam wird. Unter [Festlegen von Firewallregeln für Azure SQL][azure-sql-firewall] finden Sie weitere Informationen.
-4. Navigieren Sie in Azure PowerShell zu dem Ordner, in dem Sie die Beispiele extrahiert haben (z. B. **C:\ADFWalkthrough**).
+2. Bestätigen Sie, dass der lokale Computer auf die Azure SQL-Datenbank zugreifen darf. Verwenden Sie das Azure-Verwaltungsportal oder **sp\_set\_firewall\_rule** in der Masterdatenbank, um eine Firewallregel für die IP-Adresse auf dem Computer zu erstellen und so den Zugriff zu aktivieren. Es kann bis zu fünf Minuten dauert, bis diese Änderung wirksam wird. Unter [Festlegen von Firewallregeln für Azure SQL][azure-sql-firewall] finden Sie weitere Informationen.
+4. Navigieren Sie in Azure PowerShell zu dem Ordner, in dem Sie die Beispiele extrahiert haben (z. B. **C:\\ADFWalkthrough**).
 5. Führen Sie **uploadSampleDataAndScripts.ps1** aus. 
 6. Wenn das Skript erfolgreich ausgeführt wird, wird Folgendes angezeigt:
 
@@ -246,7 +248,7 @@ In diesem Schritt werden die folgenden verknüpften Dienste erstellt: „Storage
 
 		Switch-AzureMode AzureResourceManager
 
-16. Navigieren Sie zum Unterordner **LinkedServices**. Dieser befindet sich entweder unter **C:\ADFWalkthrough** oder an dem Speicherort, an dem Sie die Dateien extrahiert haben.
+16. Navigieren Sie zum Unterordner **LinkedServices**. Dieser befindet sich entweder unter **C:\\ADFWalkthrough** oder an dem Speicherort, an dem Sie die Dateien extrahiert haben.
 17. Öffnen Sie **HDInsightLinkedService.json** in Ihrem bevorzugten Editor, und beachten Sie, dass der Typ auf **HDInsightOnDemandLinkedService** festgelegt ist.
 
 
@@ -296,7 +298,7 @@ Das Erstellen von Datasets/Tabellen wird vom Azure-Verwaltungsportal noch nicht 
 
 ### So erstellen Sie die Tabellen
 
-1.	Navigieren Sie in Azure PowerShell an dem Speicherort, an dem Sie die Beispiele extrahiert haben, zum Ordner **Tables** (**C:\ADFWalkthrough\Tables\**). 
+1.	Navigieren Sie in Azure PowerShell an dem Speicherort, an dem Sie die Beispiele extrahiert haben, zum Ordner **Tables** (\*\*C:\\ADFWalkthrough\\Tables\\\*\*).
 2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryTable**, um die Tabellen für **RawGameEventsTable.json** wie folgt zu erstellen.	
 
 
@@ -334,7 +336,7 @@ Das Erstellen von Datasets/Tabellen wird vom Azure-Verwaltungsportal noch nicht 
 ## <a name="MainStep5"></a> Schritt 5: Erstellen und Planen von Pipelines
 In diesem Schritt werden die folgenden Pipelines erstellt: „PartitionGameLogsPipeline“, „EnrichGameLogsPipeline“ und „AnalyzeMarketingCampaignPipeline“.
 
-1. Navigieren Sie mithilfe von **Windows-Explorer** im Ordner **C:\ADFWalkthrough** (oder an dem Speicherort, an dem Sie die Beispiele extrahiert haben) zum Unterordner **Pipelines**.
+1. Navigieren Sie mithilfe von **Windows-Explorer** im Ordner **C:\\ADFWalkthrough** (oder an dem Speicherort, an dem Sie die Beispiele extrahiert haben) zum Unterordner **Pipelines**.
 2.	Öffnen Sie **PartitionGameLogsPipeline.json** in Ihrem bevorzugten Editor, ersetzen Sie die markierten Informationen durch Ihr Speicherkonto für die Informationen des Datenspeicherkontos, und speichern Sie die Datei.
 			
 		"RAWINPUT": "wasb://adfwalkthrough@<storageaccountname>.blob.core.windows.net/logs/rawgameevents/",
@@ -346,7 +348,7 @@ In diesem Schritt werden die folgenden Pipelines erstellt: „PartitionGameLogsP
 
 	**WICHTIG:** Vergewissern Sie sich, dass Sie alle <storageaccountname> durch den Namen Ihres Speicherkontos ersetzt haben.
  
-4.  Navigieren Sie in **Azure PowerShell** im Ordner **C:\ADFWalkthrough** (oder an dem Speicherort, an dem Sie die Beispiele extrahiert haben) zum Unterordner **Pipelines**.
+4.  Navigieren Sie in **Azure PowerShell** im Ordner **C:\\ADFWalkthrough** (oder an dem Speicherort, an dem Sie die Beispiele extrahiert haben) zum Unterordner **Pipelines**.
 5.  Verwenden Sie das Cmdlet **New-AzureDataFactoryPipeline**, um die Pipelines für **PartitionGameLogspeline.json** wie folgt zu erstellen.	 
 			
 		New-AzureDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName $df –File .\PartitionGameLogsPipeline.json
@@ -434,7 +436,7 @@ Um den aktiven Zeitraum für die Pipeline anzugeben, können Sie das Cmdlet „S
 
 	![Blatt des Datenslices „RawGameEventsTable“][image-data-factory-monitoring-raw-game-events-table-dataslice-blade]
 
-	Im Falle eines Fehlers wird hier der Status **Fehler** angezeigt. Möglicherweise werden auch beide Slices mit dem Status **Bereit** oder beide Slices mit dem Status **Ausstehende Überprüfung** angezeigt – je nachdem, wie schnell die Slices verarbeitet werden.
+	Im Falle eines Fehlers wird hier der Status \*\*Fehler\*\* angezeigt. Möglicherweise werden auch beide Slices mit dem Status **Bereit** oder beide Slices mit dem Status **Ausstehende Überprüfung** angezeigt – je nachdem, wie schnell die Slices verarbeitet werden.
  
 	Die [Azure Data Factory-Entwicklerreferenz][developer-reference] enthält Informationen zu allen möglichen Slicestatusoptionen.
 
@@ -559,4 +561,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial-using-powershell/DataFactoryCreateButton.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

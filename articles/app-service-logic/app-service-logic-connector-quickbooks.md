@@ -21,12 +21,27 @@
 
 Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Mit dem QuickBooks-Connector können Sie unterschiedliche QuickBooks-Entitäten erstellen und bearbeiten. Im Folgenden finden Sie eine Liste der QuickBooks-Entitäten, die vom QuickBooks-Connector unterstützt werden.
 
-<Table>
-<TR><TD><B>Entitäten</TD><TD><B>Beschreibung</TR> <TR> <TD> Account (Konto) </TD> <TD> Das Konto ist eine Komponente eines Kontenplans und Teil eines Sachkontos. Es wird zum Aufzeichnen eines Gesamtgeldbetrags verwendet, der einer bestimmten Verwendung zugeordnet ist. </TD> </TR> <TR> <TD> CreditMemo (Gutschrift) </TD> <TD> CreditMemo ist eine finanzielle Transaktion, die für eine Rückerstattung oder Gutschrift einer Zahlung oder für einen Zahlungsanteil an verkauften Waren oder Dienstleistungen steht. </TD> </TR> <TR> <TD> Customer (Kunde) </TD> <TD> Ein Kunde ist der Konsument der Dienstleistung oder des Produkts, das Ihr Unternehmen anbietet. </TD> </TR> <TR> <TD> Estimate (Schätzung) </TD> <TD> Die Schätzung stellt einen Vorschlag einschließlich Preisangebot für Waren oder Dienstleistungen bei einer finanziellen Transaktion zwischen einem Unternehmen und einem Kunden dar. </TD> </TR> <TR> <TD> Invoice (Rechnung) </TD> <TD> Eine Rechnung ist ein Verkaufsverfahren, bei dem der Kunde später für ein Produkt oder einen Dienst bezahlt. Weitere Informationen zur Verwendung des Rechnungsdatenmodells finden Sie hier. </TD> </TR> <TR> <TD> Item (Artikel) </TD> <TD> Ein Artikel ist etwas, das Ihr Unternehmen kauft, verkauft oder weiterverkauft, z. B. Produkte, Versand- und Bearbeitungsgebühren, Rabatte und Mehrwertsteuer (falls zutreffend). Ein Artikel wird als Position in einer Rechnung oder einem Verkaufsformular angezeigt. </TD> </TR> <TR> <TD> SalesReceipt (Verkaufsbestätigung) </TD> <TD> Diese Entität repräsentiert die Verkaufsbestätigung, die einem Kunden zugewiesen wird. </TD> </TR> </Table>
+Entitäten|Beschreibung
+---|---
+Konto|Das Konto ist Komponente eines Kontenplans und Teil eines Sachkontos. Wird verwendet, um einen Gesamtbetrag für einen bestimmten Verwendungszweck aufzuzeichnen.
+CreditMemo|CreditMemo ist eine finanzielle Transaktion, die für eine Rückerstattung oder Gutschrift einer Zahlung oder für einen Zahlungsanteil an verkauften Waren oder Dienstleistungen steht.
+Kunde|Ein Kunde ist der Konsument der Dienstleistung oder des Produkts, das Ihr Unternehmen anbietet.
+Schätzung|Die Schätzung stellt einen Vorschlag einschließlich Preisangebot für Waren oder Dienstleistungen bei einer finanziellen Transaktion zwischen einem Unternehmen und einem Kunden dar.
+Rechnung|Eine Rechnung stellt ein Verkaufsformular dar, mit dem der Kunde für ein Produkt oder einen Dienst bezahlt. Weitere Informationen zur Verwendung des Rechnungsdatenmodells finden Sie hier.
+Item|Ein Artikel ist etwas, das Ihr Unternehmen kauft, verkauft oder weiterverkauft, wie z. B. Produkte, Versand- und Bearbeitungsgebühren, Rabatte und Mehrwertsteuer (falls zutreffend). Ein Artikel wird als Position in einer Rechnung oder einem Verkaufsformular angezeigt.
+SalesReceipt|Diese Entität repräsentiert die Verkaufsbestätigung, die einem Kunden zugewiesen wird.
+
 
 
 ##QuickBooks-Aktionen ##
-Im Folgenden werden die verschiedenen im QuickBooks-Connector verfügbaren Aktionen aufgeführt. <table> <tbody> <tr><td> <strong>Aktion</strong> </td> <td> <strong>Beschreibung</strong> </td> </tr> <tr> <td> Entität lesen </td> <td> Das Entitätsobjekt wird gelesen. </td> </tr> <tr> <td> Entität erstellen oder aktualisieren </td> <td> Das Entitätsobjekt wird erstellt oder aktualisiert. Das Objekt wird aktualisiert, wenn es vorhanden ist. Andernfalls wird ein neues Objekt erstellt. </td> </tr> <tr> <td> Löschen </td> <td> Durch diese Aktion wird das angegebene Objekt aus der ausgewählten Entität gelöscht. </td> </tr> <tr> <td> Abfragen </td> <td> Der Abfragevorgang stellt die Methode zum Erstellen einer angeleiteten Abfrage für eine Entität dar. </td> </tr> </tbody> </table>
+Im Folgenden werden die verschiedenen im QuickBooks-Connector verfügbaren Aktionen aufgeführt.
+
+Aktion|Beschreibung
+---|---
+Entität lesen|Liest das Entitätsobjekt.
+Entität erstellen oder aktualisieren|Erstellt oder aktualisiert das Entitätsobjekt. Das Objekt wird aktualisiert, wenn es vorhanden ist. Andernfalls wird ein neues Objekt erstellt.
+Löschen|Durch diese Aktion wird das angegebene Objekt aus der ausgewählten Entität gelöscht.
+Abfragen|Der Abfragevorgang stellt die Methode zum Erstellen einer angeleiteten Abfrage für eine Entität dar.
 
 ##Erstellen einer QuickBooks-Connector-API-App##
 1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" unten rechts im Azure-Portal.
@@ -119,4 +134,4 @@ Wir erstellen eine einfache Logik-App, die ein Konto in QuickBooks erstellt, und
 [12]: ./media/app-service-logic-connector-quickbooks/12_Update_Account_Address.png
 [13]: ./media/app-service-logic-connector-quickbooks/13_Create_new_quickbooks_connector.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

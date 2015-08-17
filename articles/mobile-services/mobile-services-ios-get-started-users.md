@@ -22,7 +22,7 @@
 
 In diesem Lernprogramm fügen Sie dem [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"] mithilfe eines unterstützten Identitätsanbieters eine Authentifizierung hinzu.
 
-Es empfiehlt sich, zuerst das [Tutorial "Erste Schritte mit Mobile Services"] abzuschließen. Laden Sie alternativ dazu das Schnellstart-iOS-Projekt herunter: Klicken Sie im Azure-Portal auf **Mobile Services**, auf Ihren mobilen Dienst und dann auf das Cloudzeichen oben links. Klicken Sie anschließend auf **iOS** \> **Eine neue iOS-App erstellen** \> **App herunterladen und ausführen** \> **Objective-C** \> **Herunterladen**. Sofern Sie diese Tabelle noch nicht erstellt haben, klicken Sie vor dem Klicken auf **Herunterladen** auf die Option **TodoItem-Tabelle erstellen**.
+Es empfiehlt sich, zuerst das [Tutorial "Erste Schritte mit Mobile Services"] abzuschließen. Laden Sie alternativ dazu das Schnellstart-iOS-Projekt herunter: Klicken Sie im Azure-Portal auf **Mobile Services**, auf Ihren mobilen Dienst und dann auf das Cloudzeichen oben links. Klicken Sie anschließend auf **iOS** > **Eine neue iOS-App erstellen** > **App herunterladen und ausführen** > **Objective-C** > **Herunterladen**. Sofern Sie diese Tabelle noch nicht erstellt haben, klicken Sie vor dem Klicken auf **Herunterladen** auf die Option **TodoItem-Tabelle erstellen**.
 
 ##<a name="register"></a>Registrieren der App für die Authentifizierung
 
@@ -85,4 +85,4 @@ Als Nächstes erfahren Sie, [wie der Benutzer-ID-Wert zum Filtern der zurückgeg
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

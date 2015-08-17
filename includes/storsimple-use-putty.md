@@ -29,4 +29,4 @@
 7. Klicken Sie auf **Öffnen**, um eine serielle Sitzung zu starten.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

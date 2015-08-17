@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Hinweise zur Actor-Typserialisierung von Azure Service Fabric Actors"
-   description="Grundlegende Anforderungen für das Definieren von serialisierbaren Klassen, die zum Definieren von Status und Schnittstellen für Azure Fabric Reliable Actors verwendet werden können"
+   pageTitle="Hinweise zur Actor-Typserialisierung von Reliable Actors"
+   description="Es werden grundlegende Anforderungen für das Definieren von serialisierbaren Klassen erörtert, die zum Definieren von Status und Schnittstellen für Service Fabric Reliable Actor verwendet werden können"
    services="service-fabric"
    documentationCenter=".net"
    authors="clca"
    manager="timlt"
    editor=""/>
+
 
 <tags
    ms.service="service-fabric"
@@ -13,11 +14,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/02/2015"
+   ms.date="08/05/2015"
    ms.author="claudioc"/>
 
 
-# Hinweise zur Typserialisierung von Azure Service Fabric Actors
+
+# Hinweise zur Typserialisierung von Service Fabric Reliable Actors
 
 Es gibt nur wenige wichtige Aspekte, die beim Definieren der Schnittstelle(n) und des Status des Actors zu berücksichtigen sind: Typen müssen Datenvertrag-serialisierbar sein. Weitere Informationen zu Datenverträgen finden Sie unter [MSDN](https://msdn.microsoft.com/library/ms731923.aspx).
 
@@ -82,6 +84,5 @@ public class VoicemailBox
 }
 
 ```
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

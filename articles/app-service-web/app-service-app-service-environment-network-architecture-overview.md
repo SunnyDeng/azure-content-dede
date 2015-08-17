@@ -23,7 +23,7 @@ App Service-Umgebungen werden stets in einem Subnetz eines [virtuellen Netzwerks
 
 ## Allgemeiner Netzwerkdatenfluss ##
  
-Eine App Service-Umgebung verfügt immer über eine öffentliche virtuelle IP-Adresse \(VIP\). Sämtlicher eingehender Datenverkehr geht bei dieser öffentlichen VIP ein. Dazu zählen der HTTP- und HTTPS-Datenverkehr für Apps sowie anderer Datenverkehr für FTP, Remotedebuggingfunktionalität und Azure-Verwaltungsvorgänge. Eine vollständige Liste der spezifischen \(erforderlichen und optionalen\) Ports, die für die öffentliche VIP verfügbar sind, finden Sie im Artikel zum [Steuern des eingehenden Datenverkehrs][controllinginboundtraffic] in eine App Service-Umgebung.
+Eine App Service-Umgebung verfügt immer über eine öffentliche virtuelle IP-Adresse (VIP). Sämtlicher eingehender Datenverkehr geht bei dieser öffentlichen VIP ein. Dazu zählen der HTTP- und HTTPS-Datenverkehr für Apps sowie anderer Datenverkehr für FTP, Remotedebuggingfunktionalität und Azure-Verwaltungsvorgänge. Eine vollständige Liste der spezifischen (erforderlichen und optionalen) Ports, die für die öffentliche VIP verfügbar sind, finden Sie im Artikel zum [Steuern des eingehenden Datenverkehrs][controllinginboundtraffic] in eine App Service-Umgebung.
 
 Das folgende Diagramm zeigt eine Übersicht der verschiedenen ein- und ausgehenden Netzwerkdatenflüsse:
 
@@ -40,13 +40,13 @@ Details zum Zulassen ausgehender Internetverbindungen aus einer App Service-Umge
 ## Ausgehende Netzwerkadressen ##
 Wenn eine App Service-Umgebung ausgehende Aufrufe ausführt, ist den ausgehenden Aufrufen stets eine IP-Adresse zugeordnet. Die spezifische verwendete IP-Adresse hängt davon ab, ob sich der Endpunkt innerhalb oder außerhalb der virtuellen Netzwerktopologie befindet.
 
-Wenn sich der aufgerufene Endpunkt **außerhalb** der Topologie des virtuellen Netzwerks befindet, ist die ausgehende Adresse \(d. h. die ausgehende NAT-Adresse\), die verwendet wird, die öffentliche VIP der App Service-Umgebung. Diese Adresse finden Sie auf der Portalbenutzeroberfläche der App Service-Umgebung \(Hinweis: UX steht aus\).
+Wenn sich der aufgerufene Endpunkt **außerhalb** der Topologie des virtuellen Netzwerks befindet, ist die ausgehende Adresse (d. h. die ausgehende NAT-Adresse), die verwendet wird, die öffentliche VIP der App Service-Umgebung. Diese Adresse finden Sie auf der Portalbenutzeroberfläche der App Service-Umgebung (Hinweis: UX steht aus).
 
 Diese Adresse kann auch ermittelt werden, indem in der App Service-Umgebung eine App erstellt und dann ein *Nslookup*-Vorgang für die Adresse der App durchgeführt wird. Die resultierende IP-Adresse ist sowohl die öffentliche VIP als auch die ausgehende NAT-Adresse der App Service-Umgebung.
 
 Wenn sich der aufgerufene Endpunkt **innerhalb** der Topologie des virtuellen Netzwerks befindet, ist die ausgehende Adresse der aufrufenden App die interne IP-Adresse der einzelnen Computeressourcen, auf denen die App ausgeführt wird. Es gibt jedoch keine permanente Zuordnung interner IP-Adressen im virtuellen Netzwerk zu Apps. Apps können sich auf verschiedenen Computeressourcen befinden, und der Pool verfügbarer Computeressourcen in einer App Service-Umgebung kann sich aufgrund von Skalierungsvorgängen ändern.
 
-Da sich eine App Service-Umgebung immer in einem Subnetz befindet, wird jedoch garantiert, dass die interne IP-Adresse einer Computeressource, die zum Ausführen einer App dient, stets im CIDR-Bereich des Subnetzes liegt. Wenn präzise Zugriffssteuerungslisten \(ACLs\) oder Netzwerksicherheitsgruppen zum Schützen des Zugriffs auf andere Endpunkte im virtuellen Netzwerk verwendet werden, muss dem Subnetzbereich mit der App Service-Umgebung Zugriff gewährt werden.
+Da sich eine App Service-Umgebung immer in einem Subnetz befindet, wird jedoch garantiert, dass die interne IP-Adresse einer Computeressource, die zum Ausführen einer App dient, stets im CIDR-Bereich des Subnetzes liegt. Wenn präzise Zugriffssteuerungslisten (ACLs) oder Netzwerksicherheitsgruppen zum Schützen des Zugriffs auf andere Endpunkte im virtuellen Netzwerk verwendet werden, muss dem Subnetzbereich mit der App Service-Umgebung Zugriff gewährt werden.
 
 Das folgende Diagramm zeigt diese Konzepte ausführlicher:
 
@@ -60,7 +60,7 @@ Für dieses Diagramm gilt:
 ## Aufrufe zwischen App Service-Umgebungen ##
 Ein komplexeres Szenario kann auftreten, wenn Sie mehrere App Service-Umgebungen im gleichen virtuellen Netzwerk bereitstellen und ausgehende Aufrufe von einer App Service-Umgebung in eine andere App Service-Umgebung ausführen. Diese Art von Aufrufen zwischen App Service-Umgebungen wird auch wie "Internetaufrufe" behandelt.
 
-Beispiel für die Verwendung der oben angegebenen App Service-Umgebung über die ausgehende IP-Adresse 192.23.1.2: Wenn eine App in der App Service-Umgebung einen ausgehenden Aufruf einer App in einer zweiten App Service-Umgebung im gleichen virtuellen Netzwerk vornimmt, wird als Ursprung der ausgehenden Aufrufe in der zweiten App Service-Umgebung 192.23.1.2 angezeigt \(also nicht der Subnetz-Adressbereich der ersten App Service-Umgebung\).
+Beispiel für die Verwendung der oben angegebenen App Service-Umgebung über die ausgehende IP-Adresse 192.23.1.2: Wenn eine App in der App Service-Umgebung einen ausgehenden Aufruf einer App in einer zweiten App Service-Umgebung im gleichen virtuellen Netzwerk vornimmt, wird als Ursprung der ausgehenden Aufrufe in der zweiten App Service-Umgebung 192.23.1.2 angezeigt (also nicht der Subnetz-Adressbereich der ersten App Service-Umgebung).
 
 Zwar werden Aufrufe zwischen verschiedenen App Service-Umgebungen als "Internetaufrufe" behandelt, wenn sich beide App Service-Umgebungen jedoch in derselben Azure-Region befinden, bleibt der Netzwerkverkehr im regionalen Azure-Netzwerk und fließt nicht physisch über das öffentliche Internet. Als Ergebnis können Sie eine Netzwerksicherheitsgruppe im Subnetz der zweiten App Service-Umgebung verwenden, um nur eingehende Aufrufe von 192.23.1.2 zuzulassen, und somit die sichere Kommunikation zwischen den App Service-Umgebungen ermöglichen.
 
@@ -79,4 +79,4 @@ Details zur Verwendung von benutzerdefinierten Routen zum Gewähren des ausgehen
 [GeneralNetworkFlows]: ./media/app-service-app-service-environment-network-architecture-overview/NetworkOverview-1.png
 [OutboundNetworkAddresses]: ./media/app-service-app-service-environment-network-architecture-overview/OutboundNetworkAddresses-1.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

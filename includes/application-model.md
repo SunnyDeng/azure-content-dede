@@ -168,7 +168,7 @@ Für jede Rolle geben Sie die gewünschte Größe des virtuellen Computers an, d
 
 </td>
 <td>
-~5&#160;MBit/s
+\~5&#160;MBit/s
 
 </td>
 </tr>
@@ -190,7 +190,7 @@ Für jede Rolle geben Sie die gewünschte Größe des virtuellen Computers an, d
 
 </td>
 <td>
-~100&#160;MBit/s
+\~100&#160;MBit/s
 
 </td>
 </tr>
@@ -212,7 +212,7 @@ Für jede Rolle geben Sie die gewünschte Größe des virtuellen Computers an, d
 
 </td>
 <td>
-~200&#160;MBit/s
+\~200&#160;MBit/s
 
 </td>
 </tr>
@@ -234,7 +234,7 @@ Für jede Rolle geben Sie die gewünschte Größe des virtuellen Computers an, d
 
 </td>
 <td>
-~400&#160;MBit/s
+\~400&#160;MBit/s
 
 </td>
 </tr>
@@ -256,7 +256,7 @@ Für jede Rolle geben Sie die gewünschte Größe des virtuellen Computers an, d
 
 </td>
 <td>
-~800&#160;MBit/s
+\~800&#160;MBit/s
 
 </td>
 </tr>
@@ -284,7 +284,7 @@ In der Dienstdefinitionsdatei (CSDEF-Datei) geben Sie außerdem viele Attribute 
 
 Bei der Dienstkonfigurationsdatei (CSCFG-Datei) handelt es sich um eine XML-Datei, in der Einstellungen beschrieben werden, die ohne die erneute Bereitstellung Ihrer Anwendung geändert werden können. Das vollständige Schema für die XML-Datei finden Sie hier: [http://msdn.microsoft.com/library/windowsazure/ee758710.aspx][]. Die CSCFG-Datei enthält ein Rollenelement für jede Rolle in Ihrer Anwendung. Einige der Elemente, die Sie in der CSCFG-Datei angeben können, werden im Folgenden beschrieben:
 
--   **Betriebssystemversion**. Mit diesem Attribut können Sie die Betriebssystemversion auswählen, die für alle Rolleninstanzen verwendet wird, die Ihren Anwendungscode ausführen. Dieses Betriebssystem wird als *Gastbetriebssystem* bezeichnet, und alle neuen Versionen umfassen die neuesten Sicherheitspatches und -updates, die zum Zeitpunkt der Veröffentlichung des Gastbetriebssystems verfügbar sind. Wenn Sie das Attribut osVersion auf * festlegen, dann aktualisiert Azure automatisch das Gastbetriebssystem für Ihre Rolleninstanzen, wenn neue Versionen des Gastbetriebssystems verfügbar werden. Sie können sich jedoch auch gegen automatische Updates entscheiden, indem Sie eine bestimmte Version des Gastbetriebssystems auswählen. Wenn beispielsweise das Attribut "osVersion" auf den Wert "WA-GUEST-OS-2.8_201109-01" festgelegt wird, erhalten Ihre Rolleninstanzen das Betriebssystem, das auf folgender Webseite beschrieben wird: [http://msdn.microsoft.com/library/hh560567.aspx][]. Weitere Informationen zu Versionen von Gastbetriebssystemen finden Sie unter [Verwalten von Upgrades des Azure-Gastbetriebssystems].
+-   **Betriebssystemversion**. Mit diesem Attribut können Sie die Betriebssystemversion auswählen, die für alle Rolleninstanzen verwendet wird, die Ihren Anwendungscode ausführen. Dieses Betriebssystem wird als *Gastbetriebssystem* bezeichnet, und alle neuen Versionen umfassen die neuesten Sicherheitspatches und -updates, die zum Zeitpunkt der Veröffentlichung des Gastbetriebssystems verfügbar sind. Wenn Sie das Attribut osVersion auf * festlegen, dann aktualisiert Azure automatisch das Gastbetriebssystem für Ihre Rolleninstanzen, wenn neue Versionen des Gastbetriebssystems verfügbar werden. Sie können sich jedoch auch gegen automatische Updates entscheiden, indem Sie eine bestimmte Version des Gastbetriebssystems auswählen. Wenn beispielsweise das Attribut "osVersion" auf den Wert "WA-GUEST-OS-2.8\_201109-01" festgelegt wird, erhalten Ihre Rolleninstanzen das Betriebssystem, das auf folgender Webseite beschrieben wird: [http://msdn.microsoft.com/library/hh560567.aspx][]. Weitere Informationen zu Versionen von Gastbetriebssystemen finden Sie unter [Verwalten von Upgrades des Azure-Gastbetriebssystems].
 
 -   **Instanzen**. Der Wert dieses Elements gibt die Anzahl von Rolleninstanzen an, die zum Ausführen des Codes für eine bestimmte Rolle bereitgestellt werden sollen. Da Sie eine neue CSCFG-Datei zu Azure hochladen können (ohne Ihre Anwendung neu bereitzustellen), ist es problemlos möglich, den Wert dieses Elements zu ändern und eine neue CSCFG-Datei hochzuladen, um die Anzahl von Rolleninstanzen, die Ihren Anwendungscode ausführen, dynamisch zu erhöhen oder zu verringern. Damit können Sie Ihre Anwendung problemlos hoch- oder runterskalieren, um die tatsächlichen Arbeitsauslastungsanforderungen zu erfüllen und gleichzeitig zu kontrollieren, wie viel Ihnen für die Ausführung der Rolleninstanzen in Rechnung gestellt wird.
 
@@ -346,4 +346,4 @@ Weitere Informationen zum Bereitstellen, Aktualisieren und erneuten Konfiguriere
   [Migrieren von Anwendungen zu Azure]: http://msdn.microsoft.com/library/gg186051.aspx
   [Konfigurieren einer Azure-Anwendung]: http://msdn.microsoft.com/library/windowsazure/ee405486.aspx
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

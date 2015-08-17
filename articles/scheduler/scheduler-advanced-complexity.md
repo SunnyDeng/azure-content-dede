@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na" 
  ms.devlang="dotnet" 
  ms.topic="article" 
- ms.date="05/15/2015" 
+ ms.date="08/04/2015" 
  ms.author="krisragh"/>
 
 # Erstellen komplexer Zeitpläne und erweiterter Serien mit Azure Scheduler  
@@ -198,4 +198,4 @@ Bei den folgenden Zeitplänen wird jeweils davon ausgegangen, dass _interval_ au
  
   
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

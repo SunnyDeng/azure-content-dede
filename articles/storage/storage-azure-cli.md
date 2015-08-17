@@ -80,9 +80,9 @@ Weitere Informationen zu Azure-Abonnements finden Sie unter [Verwalten von Konte
 
     - **<container_name>** Verwenden Sie den im Skript angegebenen Namen, oder geben Sie einen neuen Namen für Ihren Container ein.
 
-    - **<image_to_upload>** Geben Sie einen Pfad zu einem Bild auf dem lokalen Computer ein. Zum Beispiel: "~/images/HelloWorld.png".
+    - **<image_to_upload>** Geben Sie einen Pfad zu einem Bild auf dem lokalen Computer ein. Zum Beispiel: "\~/images/HelloWorld.png".
 
-    - **<destination_folder>** Geben Sie einen Pfad zu einem lokalen Verzeichnis zum Speichern von Dateien ein, die aus dem Azure-Speicher heruntergeladen werden. Zum Beispiel: " ~/downloadImages".
+    - **<destination_folder>** Geben Sie einen Pfad zu einem lokalen Verzeichnis zum Speichern von Dateien ein, die aus dem Azure-Speicher heruntergeladen werden. Zum Beispiel: " \~/downloadImages".
 
 7. Nachdem Sie die erforderlichen Variablen in Vim aktualisiert haben, drücken Sie die Tastenkombinationen "Esc, : , wq!", um das Skript zu speichern.
 
@@ -189,7 +189,7 @@ Beachten Sie, dass dieser Verzeichnispfad mehrere Ebenen enthalten kann, *z.B.*,
 
 ### Hochladen einer lokalen Datei in das Verzeichnis
 
-Im folgenden Beispiel wird eine Datei aus **~/temp/samplefile.txt** in das Verzeichnis **myDir** hochgeladen. Bearbeiten Sie den Dateipfad so, dass er auf eine gültige Datei auf Ihrem lokalen Computer verweist:
+Im folgenden Beispiel wird eine Datei aus **\~/temp/samplefile.txt** in das Verzeichnis **myDir** hochgeladen. Bearbeiten Sie den Dateipfad so, dass er auf eine gültige Datei auf Ihrem lokalen Computer verweist:
 
         azure storage file upload '~/temp/samplefile.txt' myshare myDir
 
@@ -214,4 +214,4 @@ In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen zum Az
 [Image1]: ./media/storage-azure-cli/azure_command.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

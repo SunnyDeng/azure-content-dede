@@ -1,9 +1,7 @@
 <properties 
 	pageTitle="Erweiterte Analyseprozesse und -technologien in Aktion – mithilfe von HDInsight-Hadoop-Clustern in einem 1-TB-DataSet | Azure" 
 	description="Verwenden der erweiterten Analyseprozesse und -technologien (Advanced Analytics Process and Technology, ADAPT) für ein End-to-End-Szenario mit einem HDInsight Hadoop-Cluster zum Erstellen und Bereitstellen eines Modells unter Verwendung eines großen (1 TB) öffentlich zugänglichen DataSets" 
-	metaKeywords="" 
-	services="machine-learning,hdinsight" 
-	solutions="" 
+	services="machine-learning,hdinsight"  
 	documentationCenter="" 
 	authors="bradsev" 
 	manager="paulettm" 
@@ -86,11 +84,11 @@ Die Daten befinden sich an einem öffentlichen Speicherort für [Azure-Blob-Spei
 
 1. Die Daten in diesem öffentlichen Blob-Speicher bestehen aus drei untergeordneten Ordnern mit extrahierten Daten.
 		
-	1. Der Unterordner *raw/count/* enthält die Daten der ersten 21 Tage – von "day_00" bis "day_20".
-	2. Der Unterordner *raw/train/* enthält nur die Daten des Tages "day_21".
-	3. Der Unterordner *raw/test/* enthält die Daten der beiden Tage "day_22" und "day_23".
+	1. Der Unterordner *raw/count/* enthält die Daten der ersten 21 Tage – von "day\_00" bis "day\_20".
+	2. Der Unterordner *raw/train/* enthält nur die Daten des Tages "day\_21".
+	3. Der Unterordner *raw/test/* enthält die Daten der beiden Tage "day\_22" und "day\_23".
 
-2. Wenn Sie mit den gzip-Rohdaten beginnen möchten, finden Sie diese im Hauptordner */raw * als "day_NN.gz", wobei "NN" von 00 bis 23 reicht.
+2. Wenn Sie mit den gzip-Rohdaten beginnen möchten, finden Sie diese im Hauptordner */raw * als "day\_NN.gz", wobei "NN" von 00 bis 23 reicht.
 
 Ein alternativer Ansatz für das Zugreifen, Untersuchen und Modellieren, der keine lokalen Downloads erfordert, wird später in dieser exemplarischen Vorgehensweise erläutert, wenn wir die Hive-Tabellen erstellen.
 
@@ -114,16 +112,16 @@ Nun sind wir bereit für den ersten Teil der exemplarischen Vorgehensweise: Das 
 
 **WICHTIGER HINWEIS:** **Führen Sie alle Hive-Befehle dieser exemplarischen Vorgehensweise über Eingabeaufforderung im oben angeführten Hive-Verzeichnis "bin/" aus. So werden alle Pfadprobleme automatisch behoben. Die hier verwendeten Begriffe "Eingabeaufforderung im Hive-Verzeichnis" und "Hadoop-Befehlszeile" sind austauschbar.**
 
-**WICHTIGER HINWEIS 2:** **Zum Ausführen von Hive-Abfragen haben Sie stets folgende Möglichkeit:** cd %hive_home%\bin hive
+**WICHTIGER HINWEIS 2:** **Zum Ausführen von Hive-Abfragen haben Sie stets folgende Möglichkeit:** cd %hive\_home%\\bin hive
 
 Wenn Hive REPL mit dem Symbol "hive >" angezeigt wird, können Sie die Abfrage einfach ausschneiden und einfügen, um sie auszuführen.
 
 Mit folgendem Code werden die Datenbank "criteo" und anschließend vier Tabellen erstellt:
 
 
-* eine *Zahlentabelle* anhand der Tage „day_00“ bis „day_20“, 
-* eine auf „day_21“ beruhende *Trainingstabelle* und 
-* zwei *Testtabellen* für „day_22“ und „day_23“. 
+* eine *Zahlentabelle* anhand der Tage „day\_00“ bis „day\_20“, 
+* eine auf „day\_21“ beruhende *Trainingstabelle* und 
+* zwei *Testtabellen* für „day\_22“ und „day\_23“. 
 
 Wir teilen die Test-DataSets in zwei verschiedene Tabellen auf, da ein Tag ein Feiertag ist und wir anhand der Klickrate feststellen möchten, ob das Modell Unterschiede zwischen einem Feier- und einem Arbeitstag erkennen kann.
 
@@ -234,7 +232,7 @@ Wie immer können wir das Skript zudem über die Hive-Eingabeaufforderung "/bin"
 
 		hive -f C:\temp\sample_hive_count_criteo_test_day_22_table_examples.hql
 
-Abschließend untersuchen wir die Anzahl der Testbeispiele im Test-DataSet für "day_23".
+Abschließend untersuchen wir die Anzahl der Testbeispiele im Test-DataSet für "day\_23".
 
 Der hierfür verwendete Befehl ähnelt dem oben angeführten (siehe [sample&#95;hive&#95;count&#95;criteo&#95;test&#95;day&#95;23&#95;examples.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_count_criteo_test_day_23_examples.hql)):
 
@@ -261,7 +259,7 @@ Beachten Sie, dass der Prozentsatz der positiven Bezeichnungen etwa 3,3 % betr�
 		
 ### Histogrammverteilungen für einige numerische Variablen des Trainings-DataSets
 
-Mit der systemeigenen Funktion "histogram_numeric" von Hive können wir herausfinden, wie die Verteilung numerischer Variablen aussieht. Im Folgenden finden Sie die Inhalte von [sample&#95;hive&#95;criteo&#95;histogram&#95;numeric.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_histogram_numeric.hql):
+Mit der systemeigenen Funktion "histogram\_numeric" von Hive können wir herausfinden, wie die Verteilung numerischer Variablen aussieht. Im Folgenden finden Sie die Inhalte von [sample&#95;hive&#95;criteo&#95;histogram&#95;numeric.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_histogram_numeric.hql):
 
 		SELECT CAST(hist.x as int) as bin_center, CAST(hist.y as bigint) as bin_height FROM 
 			(SELECT
@@ -299,7 +297,7 @@ Die Kombination von Seitenansicht und Auflösung in Hive ermöglicht anstelle de
 
 ### Ungefähre Prozentwerte für einige numerische Variablen des Trainings-DataSets
 
-Im Zusammenhang mit numerischen Variablen ist auch die Berechnung der ungefähren Prozentwerte interessant. Dies wird von der systemeigenen Hive-Funktion "percentile_approx" übernommen. Die Inhalte von [sample&#95;hive&#95;criteo&#95;approximate&#95;percentiles.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_approximate_percentiles.hql) lauten:
+Im Zusammenhang mit numerischen Variablen ist auch die Berechnung der ungefähren Prozentwerte interessant. Dies wird von der systemeigenen Hive-Funktion "percentile\_approx" übernommen. Die Inhalte von [sample&#95;hive&#95;criteo&#95;approximate&#95;percentiles.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_approximate_percentiles.hql) lauten:
 
 		SELECT MIN(Col2) AS Col2_min, PERCENTILE_APPROX(Col2, 0.1) AS Col2_01, PERCENTILE_APPROX(Col2, 0.3) AS Col2_03, PERCENTILE_APPROX(Col2, 0.5) AS Col2_median, PERCENTILE_APPROX(Col2, 0.8) AS Col2_08, MAX(Col2) AS Col2_max FROM criteo.criteo_train;
 
@@ -382,7 +380,7 @@ Dies ergibt:
 		Time taken: 12.22 seconds
 		Time taken: 298.98 seconds
 
-Das Skript [sample&#95;hive&#95;criteo&#95;downsample&#95;test&#95;day&#95;22&#95;dataset.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_downsample_test_day_22_dataset.hql) gilt für die Testdaten für "day_22":
+Das Skript [sample&#95;hive&#95;criteo&#95;downsample&#95;test&#95;day&#95;22&#95;dataset.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_downsample_test_day_22_dataset.hql) gilt für die Testdaten für "day\_22":
 
 		--- Now for test data (day_22)
 
@@ -400,7 +398,7 @@ Dies ergibt:
 		Time taken: 317.66 seconds
 
 
-Und abschließend verfügen wir für die Testdaten für "day_23" über das Skript [sample&#95;hive&#95;criteo&#95;downsample&#95;test&#95;day&#95;23&#95;dataset.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_downsample_test_day_23_dataset.hql):
+Und abschließend verfügen wir für die Testdaten für "day\_23" über das Skript [sample&#95;hive&#95;criteo&#95;downsample&#95;test&#95;day&#95;23&#95;dataset.hql](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_criteo_downsample_test_day_23_dataset.hql):
 
 		--- Finally test data day_23
 		CREATE TABLE criteo.criteo_test_day_23_downsample_1perc (
@@ -452,7 +450,7 @@ So sieht der **Reader** beim Abrufen von Daten aus der Hive-Tabelle aus:
 Für das **Reader**-Modul sind die Werte der in der Grafik enthaltenen Parameter nur Beispiele für Werte, die Sie bereitstellen müssen. Im Folgenden finden Sie allgemeine Anleitungen zum Ausfüllen des Parametersatzes für das **Reader**-Modul.
 
 1. Auswählen von „Hive-Abfrage“ als **Datenquelle**
-2. In Feld mit der **Hive-Datenbankabfrage** reicht ein einfaches „SELECT * FROM <ihr_datenbankname.ihr_tabellenname>“ aus.
+2. In Feld mit der **Hive-Datenbankabfrage** reicht ein einfaches „SELECT * FROM <ihr\_datenbankname.ihr\_tabellenname>“ aus.
 3. **Hcatalog-Server-URI**: Wenn Ihr Cluster „abc“ ist, lautet dieser einfach: https://abc.azurehdinsight.net
 4. **Hadoop-Benutzerkontoname**: Der bei der Bereitstellung des Clusters ausgewählte Benutzername (NICHT der Benutzername für den Remotezugriff!)
 5. **Hadoop-Benutzerkontokennwort**: Das bei der Bereitstellung des Clusters ausgewählte Kennwort (NICHT das Kennwort für den Remotezugriff!)
@@ -540,7 +538,7 @@ Im zweiten R-Skript gleichen wir die Verteilung zwischen positiven und negativen
 
 ![](http://i.imgur.com/91wvcwN.png)
 
-In diesem einfachen R-Skript verwenden wir „pos_neg_ratio“, um den Ausgleich zwischen den positiven und den negativen Klassen festzulegen. Dies ist wichtig, da das Verringern der Diskrepanz zwischen Klassen in der Regel Leistungsvorteile bei Klassifizierungsproblemen mit sich bringt, wenn die Klassenverteilung verzerrt ist (beachten Sie, dass in unserem Fall wir 3,3 % positive und 96,7 % negative Klassen vorhanden sind).
+In diesem einfachen R-Skript verwenden wir „pos\_neg\_ratio“, um den Ausgleich zwischen den positiven und den negativen Klassen festzulegen. Dies ist wichtig, da das Verringern der Diskrepanz zwischen Klassen in der Regel Leistungsvorteile bei Klassifizierungsproblemen mit sich bringt, wenn die Klassenverteilung verzerrt ist (beachten Sie, dass in unserem Fall wir 3,3 % positive und 96,7 % negative Klassen vorhanden sind).
 
 ##### Anwenden der Zähltransformation auf unsere Daten
 
@@ -658,4 +656,4 @@ Wir sehen, dass wir für die beiden angefragten Testbeispiele (im JSON-Framework
 
 Damit sind wir am Ende unser ausführlichen exemplarischen Vorgehensweise zum Behandeln umfangreicher DataSets mithilfe von Azure Machine Learning angekommen. Wir haben mit einem Terabyte an Daten begonnen, ein Vorhersagemodell erstellt und dieses als Webdienst in der Cloud bereitgestellt.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

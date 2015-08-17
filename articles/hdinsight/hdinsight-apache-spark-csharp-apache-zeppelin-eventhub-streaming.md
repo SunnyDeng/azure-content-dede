@@ -21,7 +21,7 @@
 
 Das Spark-Streaming ist eine Erweiterung der Spark-Kern-API zum Erstellen von skalierbaren, fehlertoleranten Anwendungen für die Datenstromverarbeitung mit hohem Durchsatz. Daten können aus vielen Quellen erfasst werden. In diesem Artikel verwenden wir Event Hubs zum Erfassen von Daten. Bei Event Hubs handelt es sich um ein hochskalierbares Erfassungssystem, mit dem Millionen von Ereignissen pro Sekunde verarbeitet werden können.
 
-In diesem Lernprogramm erfahren Sie, wie Sie einen Azure Event Hub erstellen, Nachrichten mit einer Konsolenanwendung in C\# für einen Event Hub erfassen und mit einem Zeppelin Notebook parallel abrufen, das für Apache Spark unter HDInsight konfiguriert ist.
+In diesem Lernprogramm erfahren Sie, wie Sie einen Azure Event Hub erstellen, Nachrichten mit einer Konsolenanwendung in C# für einen Event Hub erfassen und mit einem Zeppelin Notebook parallel abrufen, das für Apache Spark unter HDInsight konfiguriert ist.
 
 **Voraussetzungen:**
 
@@ -34,7 +34,7 @@ Sie benötigen Folgendes:
 
 ##<a name="createeventhub"></a>Erstellen eines Azure Event Hubs
 
-1. Wählen Sie im [Azure-Portal](https://manage.windowsazure.com) die Optionen **NEU** \> **Service Bus** \> **Event Hub** \> **Benutzerdefiniert erstellen**.
+1. Wählen Sie im [Azure-Portal](https://manage.windowsazure.com) die Optionen **NEU** > **Service Bus** > **Event Hub** > **Benutzerdefiniert erstellen**.
 
 2. Geben Sie im Bildschirm **Neuen Event Hub hinzufügen** einen Wert für **Event Hub-Name** ein, wählen Sie die **Region** aus, in der der Hub erstellt werden soll, und erstellen Sie einen neuen Namespace, oder wählen Sie einen vorhandenen Namespace aus. Klicken Sie auf den **Pfeil**, um fortzufahren.
 
@@ -52,7 +52,7 @@ Sie benötigen Folgendes:
 <tr><th>Name</th><th>Berechtigungen</th></tr>
 <tr><td>mysendpolicy</td><td>Send</td></tr>
 <tr><td>myreceivepolicy</td><td>Empfangen</td></tr>
-</table>Klicken Sie nach dem Erstellen der Berechtigungen auf das Symbol **Speichern** am unteren Seitenrand. Hiermit werden die freigegebenen Zugriffsrichtlinien erstellt, die zum Senden \(\*\*mysendpolicy\*\*\) und Überwachen \(\*\*myreceivepolicy\*\*\) dieses Event Hubs verwendet werden.
+</table>Klicken Sie nach dem Erstellen der Berechtigungen auf das Symbol **Speichern** am unteren Seitenrand. Hiermit werden die freigegebenen Zugriffsrichtlinien erstellt, die zum Senden (**mysendpolicy**) und Überwachen (**myreceivepolicy**) dieses Event Hubs verwendet werden.
 
 	![Richtlinien](./media/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming/HDI.Spark.Streaming.Event.Hub.Policies.png "Erstellen von Event Hub-Richtlinien")
 
@@ -112,7 +112,7 @@ In diesem Abschnitt erstellen Sie ein [Zeppelin](https://zeppelin.incubator.apac
 
 ##<a name="runapps"></a>Ausführen der Anwendungen
 
-1. Führen Sie den Absatz mit dem Codeausschnitt aus dem Zeppelin Notebook aus. Drücken Sie **UMSCHALT+EINGABETASTE**, oder wählen Sie oben rechts die Wiedergabeschaltfläche \(**Play**\).
+1. Führen Sie den Absatz mit dem Codeausschnitt aus dem Zeppelin Notebook aus. Drücken Sie **UMSCHALT+EINGABETASTE**, oder wählen Sie oben rechts die Wiedergabeschaltfläche (**Play**).
 
 	Der Status in der rechten Ecke des Absatzes sollte sich entsprechend ändern: BEREIT, AUSSTEHEND, WIRD AUSGEFÜHRT bis zu BEENDET. Die Ausgabe wird im unteren Teil des gleichen Absatzes angezeigt. Der Screenshot sieht folgendermaßen aus:
 
@@ -164,4 +164,4 @@ Eine Anleitung zum Ausführen dieser Schritte und eine Streaming-Beispielanwendu
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

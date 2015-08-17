@@ -134,40 +134,12 @@ Im folgenden Beispiel wird ein partieller Anforderungstext für einen Vorgang an
 
 Betrachten Sie als Nächstes die folgenden CORS-Anforderungen:
 
-<table>
-<tr>
-<td colspan=3><b>Anforderung</b></td>
-<td colspan=2><b>Antwort</b></td>
-</tr>
-<tr>
-<td><b>Methode</b></td>
-<td><b>Ursprung</b></td>
-<td><b>Anforderungsheader</b></td>
-<td><b>Regelübereinstimmung</b></td>
-<td><b>Ergebnis</b></td>
-</tr>
-<tr>
-<td><b>PUT</b></td>
-<td>http://www.contoso.com</td>
-<td>x-ms-blob-content-type</td>
-<td>Erste Regel</td>
-<td>Erfolgreich</td>
-</tr>
-<tr>
-<td><b>GET</b></td>
-<td>http://www.contoso.com</td>
-<td>x-ms-blob-content-type</td>
-<td>Zweite Regel</td>
-<td>Erfolgreich</td>
-</tr>
-<tr>
-<td><b>GET</b></td>
-<td>http://www.contoso.com</td>
-<td>x-ms-blob-content-type</td>
-<td>Zweite Regel</td>
-<td>Fehler</td>
-</tr>
-</table>
+Anforderung||| Antwort||
+---|---|---|---|---
+**Methode** |**Ursprung** |**Anforderungsheader** |**Regelübereinstimmung** |**Ergebnis**
+**PUT** | http://www.contoso.com |x-ms-blob-content-type | Erste Regel |Erfolgreich
+**GET** | http://www.contoso.com| x-ms-blob-content-type | Zweite Regel |Erfolgreich
+**GET** | http://www.contoso.com| x-ms-blob-content-type | Zweite Regel | Fehler
 
 Die erste Anforderung stimmt mit der ersten Regel überein – die Ursprungsdomäne fällt unter die zulässigen Ursprungsdomänen, die Methode unter die zulässigen Methoden und der Header unter die zulässigen Header – sie wird somit erfolgreich ausgeführt.
 
@@ -185,7 +157,7 @@ Wenn der Browser oder ein anderer Benutzer-Agent die Antwort von einer CORS-Anfo
 
 Azure Storage legt den *Vary*-Header für tatsächliche GET/HEAD-Anforderungen in den folgenden Fällen auf **Origin** fest:
 
-- Die Ursprungsdomäne der Anforderung stimmt genau mit der zulässigen Ursprungsdomäne überein, die von einer CORS-Regel definiert wird. Eine genaue Übereinstimmung wird nur erzielt, wenn die CORS-Regel kein Platzhalterzeichen "*" enthält.
+- Die Ursprungsdomäne der Anforderung stimmt genau mit der zulässigen Ursprungsdomäne überein, die von einer CORS-Regel definiert wird. Eine genaue Übereinstimmung wird nur erzielt, wenn die CORS-Regel kein Platzhalterzeichen " * " enthält.
 
 - Es gibt keine Regel, die mit der Ursprungsdomäne der Anforderung übereinstimmt, CORS ist jedoch für den Speicherdienst aktiviert.
 
@@ -195,85 +167,17 @@ Bei Anforderungen, die andere Methoden als GET/HEAD verwenden, wird der Vary-Hea
 
 Der folgenden Tabelle können Sie entnehmen, wie Azure Storage in den oben beschriebenen Fällen auf GET-/HEAD-Anforderungen antwortet:
 
-<table>
-<tr>
-<td><b>Anforderung</b></td>
-<td colspan=3><b>Kontoeinstellung und Ergebnis der Regelauswertung</b></td>
-<td colspan=3><b>Antwort</b></td>
-</tr>
-<tr>
-<td><b>Origin-Header für Anforderung vorhanden</b></td>
-<td><b>CORS-Regel(n) für den Dienst angegeben</b></td>
-<td><b>Abgleichsregel vorhanden, die alle Ursprungsdomänen zulässt (*)</b></td>
-<td><b>Abgleichsregel für genaue Übereinstimmung mit Ursprungsdomäne vorhanden</b></td>
-<td><b>Antwort enthält Vary-Header, der auf "Origin" festgelegt ist</b></td>
-<td><b>Antwort enthält "Access-Control-Allowed-Origin": "*"</b></td>
-<td><b>Antwort enthält Access-Control-Exposed-Header</b></td>
-</tr>
-<tr>
-<td>Nein</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Nein</td>
-</tr>
-<tr>
-<td>Nein</td>
-<td>Ja</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Ja</td>
-<td>Nein</td>
-<td>Nein</td>
-</tr>
-<tr>
-<td>Nein</td>
-<td>Ja</td>
-<td>Ja</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Ja</td>
-<td>Ja</td>
-</tr>
-<tr>
-<td>Ja</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Nein</td>
-</tr>
-<tr>
-<td>Ja</td>
-<td>Ja</td>
-<td>Nein</td>
-<td>Ja</td>
-<td>Ja</td>
-<td>Nein</td>
-<td>Ja</td>
-</tr>
-<tr>
-<td>Ja</td>
-<td>Ja</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Ja</td>
-<td>Nein</td>
-<td>Nein</td>
-</tr>
-<tr>
-<td>Ja</td>
-<td>Ja</td>
-<td>Ja</td>
-<td>Nein</td>
-<td>Nein</td>
-<td>Ja</td>
-<td>Ja</td>
-</tr>
-</table>
+Anforderung|Kontoeinstellung und Ergebnis der Regelauswertung|||Antwort|||
+---|---|---|---|---|---|---|---|---
+**Origin-Header für Anforderung vorhanden** | **CORS-Regel(n) für den Dienst angegeben** | **Abgleichsregel vorhanden, die alle Ursprungsdomänen zulässt (*)** | **Abgleichsregel für genaue Übereinstimmung mit Ursprungsdomäne vorhanden** | **Antwort enthält Vary-Header, der auf "Origin" festgelegt ist** | **Antwort enthält "Access-Control-Allowed-Origin": "*"** | **Antwort enthält Access-Control-Exposed-Header**
+Nein|Nein|Nein|Nein|Nein|Nein|Nein
+Nein|Ja|Nein|Nein|Ja|Nein|Nein
+Nein|Ja|Ja|Nein|Nein|Ja|Ja
+Ja|Nein|Nein|Nein|Nein|Nein|Nein
+Ja|Ja|Nein|Ja|Ja|Nein|Ja
+Ja|Ja|Nein|Nein|Ja|Nein|Nein
+Ja|Ja|Ja|Nein|Nein|Ja|Ja
+
 
 ## Abrechnung von CORS-Anforderungen
 
@@ -292,4 +196,4 @@ Nicht erfolgreiche Preflight-Anforderungen werden nicht berechnet.
 [W3C-Spezifikation für CORS (Cross-Origin Resource Sharing)](http://www.w3.org/TR/cors/)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

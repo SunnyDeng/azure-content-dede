@@ -20,7 +20,13 @@ Der BLOB-Dienst umfasst die folgenden Komponenten:
 
 -   **Container:** Ein Container dient zur Gruppierung eines Satzes von Blobs. Alle BLOBs müssen sich in Containern befinden. Ein Konto kann eine beliebige Anzahl von Containern enthalten. In einem Container kann eine beliebige Anzahl von BLOBs gespeichert sein.
 
--   **Blob:** Eine Datei von beliebiger Art und Größe. Es gibt zwei Arten von Blobs, die im Azure-Speicher gespeichert werden können: Block- und Seitenblobs. Die meisten Dateien sind Block-BLOBs. Ein einzelner Block-Blob kann bis zu 200 GB groß sein. In diesem Tutorial werden Block-BLOBs verwendet. Der andere Blob-Typ, Seiten-Blobs, kann bis zu 1 TB groß sein und ist effizienter, wenn Byte-Bereiche in einer Datei häufig geändert werden. Weitere Informationen über BLOBs finden Sie unter [Grundlegendes zu Block-BLOBs und Seiten-BLOBs](https://msdn.microsoft.com/library/azure/ee691964.aspx).
+-   **Blob:** Eine Datei von beliebiger Art und Größe. Der Azure-Speicher bietet drei Arten von Blobs: Blockblobs, Seitenblobs und Anfügeblobs.
+    
+	*Blockblobs* eignen sich ideal zum Speichern von Text- oder Binärdateien, z. B. Dokumente und Mediendateien. *Anfügeblobs* ähneln Blockblobs dahingehend, dass sie aus Blöcken bestehen. Allerdings sind sie für Anfügevorgänge optimiert, sodass sie für Protokollierungsszenarien nützlich sind. Ein einzelnes Blockblob oder Anfügeblob kann bis zu 50.000 Blöcke mit jeweils bis zu 4 MB enthalten, für eine Gesamtgröße von etwas mehr als 195 GB (4 MB X 50.000).
+    
+	*Seitenblobs* können bis zu 1 TB groß sein und sind besonders für häufige Lese-und Schreibvorgänge effizient. Virtuelle Azure-Computer verwenden Seitenblobs als Betriebssystem und Datenträger.
+
+	Weitere Informationen über Blobs finden Sie unter [Grundlegendes zu Blockblobs, Seitenblobs und Anfügeblobs](https://msdn.microsoft.com/library/azure/ee691964.aspx).
 
 ## Benennen von Containern und Blobs und verweisen auf diese
 
@@ -49,7 +55,7 @@ Ein Blob-Name muss den folgenden Regeln entsprechen:
 - Ein Blob-Name muss mindestens ein Zeichen lang sein und darf nicht mehr als 1024 Zeichen lang sein.
 - Bei Blob-Namen wird Groß-/Kleinschreibung unterschieden.
 - Reservierte URL-Zeichen müssen angemessen durch ein Escapezeichen geschützt werden.
-- Die Anzahl der Pfadsegmente, die den Blob-Namen enthalten, darf 254 nicht überschreiten. Ein Pfadsegment ist die Zeichenfolge zwischen aufeinander folgenden Trennzeichen (* z. B.*, einen Schrägstrich "/"), die dem Namen eines virtuellen Verzeichnisses entspricht.
+- Die Anzahl der Pfadsegmente, die den Blob-Namen enthalten, darf 254 nicht überschreiten. Ein Pfadsegment ist die Zeichenfolge zwischen aufeinander folgenden Trennzeichen (\**z. B.*, einen Schrägstrich "/"), die dem Namen eines virtuellen Verzeichnisses entspricht.
 
 Der Blob-Dienst basiert auf einem flachen Speicherschema. Sie können eine virtuelle Hierarchie erstellen, indem Sie ein Zeichen- oder Zeichenfolgentrennzeichen im Blob-Namen angeben, um eine virtuelle Hierarchie zu erstellen. Die folgende Liste zeigt einige Beispiele für einen gültigen und eindeutigen Blob-Namen:
 
@@ -63,4 +69,4 @@ Sie können das Trennzeichen verwenden, um Blobs hierarchisch aufzulisten.
 
 [Blob1]: ./media/storage-blob-concepts-include/blob1.jpg
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -62,4 +62,4 @@ Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre Android-App
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

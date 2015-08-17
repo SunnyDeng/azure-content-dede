@@ -46,15 +46,15 @@ Es gibt zudem das Konzept von so genannten "Rezeptbüchern" (Cookbooks) und "Rez
 
 Zunächst bereiten wird die Arbeitsstation vor. Ich verwende eine Windows-Standardarbeitsstation. Wir müssen ein Verzeichnis zum Speichern unserer Konfigurationsdateien und Rezeptbücher erstellen.
 
-Erstellen Sie zunächst ein Verzeichnis namens **C:\chef**.
+Erstellen Sie zunächst ein Verzeichnis namens **C:\\chef**.
 
-Erstellen Sie dann ein zweites Verzeichnis **c:\chef\cookbooks**.
+Erstellen Sie dann ein zweites Verzeichnis **c:\\chef\\cookbooks**.
 
 Wir müssen jetzt unsere Azure-Einstellungsdatei herunterladen, damit Chef mit unserem Azure-Abonnement kommunizieren kann.
 
 Laden Sie die Veröffentlichungseinstellungen herunter unter: <a href="https://manage.windowsazure.com/publishsettings/" target="_blank">https://manage.windowsazure.com/publishsettings/</a>
 
-Speichern Sie die Datei mit Veröffentlichungseinstellungen in **C:\chef**.
+Speichern Sie die Datei mit Veröffentlichungseinstellungen in **C:\\chef**.
 
 ##Erstellen eines verwalteten Chef-Kontos
 
@@ -74,19 +74,19 @@ Die ZIP-Datei dieses Starterkits enthält die Konfigurationsdateien und Schlüss
 
 ##Konfigurieren der Chef-Arbeitsstation
 
-Extrahieren Sie den Inhalt der Datei "chef-starter.zip" im Ordner **C:\chef**.
+Extrahieren Sie den Inhalt der Datei "chef-starter.zip" im Ordner **C:\\chef**.
 
-Kopieren Sie alle Dateien unter **chef-starter\chef-repo.chef** in den Ordner **c:\chef**.
+Kopieren Sie alle Dateien unter **chef-starter\\chef-repo.chef** in den Ordner **c:\\chef**.
 
 Ihr Verzeichnis sollte in etwa wie folgt aussehen:
 
 ![][5]
 
-Im Stammverzeichnis von "c:\chef" sollten sich jetzt 4 Dateien, einschließlich der Azure-Veröffentlichungsdatei befinden.
+Im Stammverzeichnis von "c:\\chef" sollten sich jetzt 4 Dateien, einschließlich der Azure-Veröffentlichungsdatei befinden.
 
 Die PEM-Dateien enthalten die privaten Schlüssel für die Organisation und Administration für die Kommunikation, während die Datei **knife.rb** die "knife"-Konfiguration enthält. Wir müssen die Datei **knife.rb** bearbeiten.
 
-Öffnen Sie die Datei im Editor Ihrer Wahl, und ändern Sie "cookbook_path", indem Sie "/../" aus dem Pfad entfernen, damit dieser wie folgt aussieht:
+Öffnen Sie die Datei im Editor Ihrer Wahl, und ändern Sie "cookbook\_path", indem Sie "/../" aus dem Pfad entfernen, damit dieser wie folgt aussieht:
 
 	cookbook_path  ["#{current_dir}/cookbooks"]
 
@@ -98,7 +98,7 @@ Die Datei "knife.rb" sollte jetzt etwa wie folgt aussehen:
 
 ![][6]
 
-Diese Zeilen stellen sicher, dass Knife auf unser "cookbooks"-Verzeichnis unter "c:\chef\cookbooks" verweist und auch unsere Azure-Datei für die Veröffentlichungseinstellungen im Rahmen der Azure-Vorgänge verwendet.
+Diese Zeilen stellen sicher, dass Knife auf unser "cookbooks"-Verzeichnis unter "c:\\chef\\cookbooks" verweist und auch unsere Azure-Datei für die Veröffentlichungseinstellungen im Rahmen der Azure-Vorgänge verwendet.
 
 ## Installieren des Chef Development Kit
 
@@ -108,9 +108,9 @@ Laden Sie als Nächstes das ChefDK (Chef Development Kit) zum Einrichten der Che
 
 ![][7]
 
-Das ist ganz einfach. Lassen Sie es in seinem Standardverzeichnis "c:\opscode" installieren. Die Installation dauert ca. 10 Minuten.
+Das ist ganz einfach. Lassen Sie es in seinem Standardverzeichnis "c:\\opscode" installieren. Die Installation dauert ca. 10 Minuten.
 
-Vergewissern Sie sich, dass die PATH-Variable Einträge für "C:\opscode\chefdk\bin;C:\opscode\chefdk\embedded\bin;c:\users\yourusername.chefdk\gem\ruby\2.0.0\bin" enthält.
+Vergewissern Sie sich, dass die PATH-Variable Einträge für "C:\\opscode\\chefdk\\bin;C:\\opscode\\chefdk\\embedded\\bin;c:\\users\\yourusername.chefdk\\gem\\ruby\\2.0.0\\bin" enthält.
 
 Wenn sie nicht vorhanden sind, stellen Sie sicher, dass Sie diese Pfade hinzufügen!
 
@@ -143,15 +143,15 @@ Herzlichen Glückwunsch. Die Arbeitsstation wurde eingerichtet.
 
 Ein Cookbook wird von Chef dazu verwendet, um eine Reihe von Befehlen zu definieren, die auf dem verwalteten Client ausgeführt werden sollen. Die Cookbook-Erstellung ist unkompliziert, und wir verwenden den Befehl "chef generate cookbook", um unsere Cookbook-Vorlage zu erstellen. Ich nenne mein Cookbook "Webserver", da ich eine Richtlinie verwenden möchte, die IIS automatisch bereitstellt.
 
-Führen Sie unter dem Verzeichnis "C:\Chef" den folgenden Befehl aus:
+Führen Sie unter dem Verzeichnis "C:\\Chef" den folgenden Befehl aus:
 
 	chef generate cookbook webserver
 
-Dadurch wird eine Reihe von Dateien im Verzeichnis **C:\Chef\cookbooks\webserver** generiert. Wir müssen jetzt den Satz von Befehlen definieren, die unser Chef-Client auf dem verwalteten virtuellen Computer ausführen soll.
+Dadurch wird eine Reihe von Dateien im Verzeichnis **C:\\Chef\\cookbooks\\webserver** generiert. Wir müssen jetzt den Satz von Befehlen definieren, die unser Chef-Client auf dem verwalteten virtuellen Computer ausführen soll.
 
 Die Befehle werden in der Datei **default.rb.** gespeichert. In dieser Datei werden eine Reihe von Befehlen definiert, die IIS installieren, starten und eine Vorlagendatei in den Ordner "wwwroot" kopieren.
 
-Ändern Sie die Datei **C:\chef\cookbooks\webserver\recipes\default.rb**, und fügen Sie die folgenden Zeilen hinzu:
+Ändern Sie die Datei **C:\\chef\\cookbooks\\webserver\\recipes\\default.rb**, und fügen Sie die folgenden Zeilen hinzu:
 
 	powershell_script 'Install IIS' do
  		action :run
@@ -177,7 +177,7 @@ Führen Sie den folgenden Befehl aus, um die Vorlage zu erstellen:
 
 	chef generate template webserver Default.htm
 
-Wechseln Sie nun zur Datei **C:\chef\cookbooks\webserver\templates\default\Default.htm.erb**, und bearbeiten Sie die Datei.
+Wechseln Sie nun zur Datei **C:\\chef\\cookbooks\\webserver\\templates\\default\\Default.htm.erb**, und bearbeiten Sie die Datei.
 
 Fügen Sie etwas einfachen HTML-Code ("Hello World") hinzu, und speichern Sie die Datei.
 
@@ -238,4 +238,4 @@ Ich hoffe, diese Informationen waren hilfreich. Starten Sie noch heute mit Azure
 
 <!--Link references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

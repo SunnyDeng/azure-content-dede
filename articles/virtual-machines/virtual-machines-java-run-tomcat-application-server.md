@@ -22,7 +22,7 @@ Mit Azure können Sie einen virtuellen Computer nutzen, um Serverfunktionen bere
 
 Sie erhalten Informationen zu folgenden Themen:
 
-* Erstellen eines virtuellen Computers, auf dem bereits ein Java Development Kit \(JDK\) installiert ist.
+* Erstellen eines virtuellen Computers, auf dem bereits ein Java Development Kit (JDK) installiert ist.
 * Ausführen einer Remoteanmeldung an Ihrem virtuellen Computer.
 * Installieren eines Java-Anwendungsservers auf dem virtuellen Computer
 * Erstellen eines Endpunkts für den virtuellen Computer
@@ -40,20 +40,20 @@ Für dieses Lernprogramm wird ein Apache Tomcat-Anwendungsserver auf einem virtu
 2. Klicken Sie auf **Neu**, auf **Berechnen** auf **Virtueller Computer** und dann auf **Aus Galerie**.
 3. Wählen Sie im Dialogfeld **Virtual machine image select** die Option **JDK 7 Windows Server 2012** aus. Beachten Sie, dass **JDK 6 Windows Server 2012** verfügbar ist, wenn Ihre Legacyanwendungen nicht in JDK 7 ausgeführt werden können.
 4. Klicken Sie auf **Weiter**.
-5. Gehen Sie im Dialogfeld <strong>Konfiguration des virtuellen Computers</strong> wie folgt vor:
+5. Gehen Sie im Dialogfeld **Konfiguration des virtuellen Computers** wie folgt vor:
     1. Geben Sie einen Namen für den virtuellen Computer an.
     2. Geben Sie die Größe für den virtuellen Computer an.
     3. Geben Sie im Feld **Benutzername** einen Namen für den Administrator ein. Merken Sie sich diesen Namen und das als Nächstes eingegebene Kennwort. Sie benötigen diese Daten, wenn Sie sich von einem Remotestandort aus an dem virtuellen Computer anmelden.
     4. Geben Sie ein Kennwort in das Feld **Neues Kennwort** ein, und geben Sie das Kennwort dann erneut in das Feld **Kennwort bestätigen** ein. Dies ist das Kennwort für das Administratorkonto.
     5. Klicken Sie auf **Weiter**.
-6. Gehen Sie im nächsten Dialogfeld <strong>Konfiguration des virtuellen Computers</strong> wie folgt vor:
+6. Gehen Sie im nächsten Dialogfeld **Konfiguration des virtuellen Computers** wie folgt vor:
     1. Verwenden Sie für den **Cloud-Dienst** die Standardeinstellung **Neuen Cloud-Dienst erstellen**.
     2. Der Wert für **DNS-Name des Cloud-Diensts** muss auf cloudapp.net eindeutig sein. Ändern Sie wenn nötig diesen Wert, sodass Azure angibt, dass er eindeutig ist.
     2. Geben Sie eine Region, eine Affinitätsgruppe oder ein virtuelles Netzwerk an. Geben Sie für dieses Lernprogramm als Region **West-USA** an.
     2. Wählen Sie unter **Speicherkonto** die Option **Automatisch generiertes Speicherkonto verwenden** aus.
-    3. Wählen Sie unter **Verfügbarkeitssatz** die Option **\(Keine\)** aus.
+    3. Wählen Sie unter **Verfügbarkeitssatz** die Option **(Keine)** aus.
     4. Klicken Sie auf **Weiter**.
-7. Gehen Sie im letzten Dialogfeld <strong>Konfiguration des virtuellen Computers</strong> wie folgt vor:
+7. Gehen Sie im letzten Dialogfeld **Konfiguration des virtuellen Computers** wie folgt vor:
     1. Akzeptieren Sie die Standardeinträge für Endpunkte.
     2. Klicken Sie auf **Fertig stellen**.
 
@@ -73,7 +73,7 @@ Sie können einen Java-Anwendungsserver auf den virtuellen Computer kopieren ode
 Für dieses Lernprogramm wird Tomcat installiert.
 
 1. Sobald Sie an dem virtuellen Computer angemeldet sind, öffnen Sie eine Browsersitzung auf [Apache Tomcat](http://tomcat.apache.org/download-70.cgi).
-2. Doppelklicken Sie auf den Link für den **Windows Installer-Dienst \(32-Bit/64-Bit\)**. Mit diesem Verfahren wird Tomcat als Windows-Dienst installiert.
+2. Doppelklicken Sie auf den Link für den **Windows Installer-Dienst (32-Bit/64-Bit)**. Mit diesem Verfahren wird Tomcat als Windows-Dienst installiert.
 3. Starten Sie das Installationsprogramm, wenn Sie dazu aufgefordert werden.
 4. Befolgen Sie im Setup-Assistenten für **Apache Tomcat** die Anweisungen für die Installation von Tomcat. Für dieses Lernprogramm können die Standardeinstellungen übernommen werden. Wenn das Dialogfeld **Completing the Apache Tomcat Setup Wizard** angezeigt wird, können Sie optional das Kontrollkästchen **Run Apache Tomcat** aktivieren, um Tomcat gleich zu starten. Klicken Sie auf **Fertig stellen**, um die Installation von Tomcat abzuschließen.
 
@@ -91,7 +91,7 @@ Um von externen Computern aus festzustellen, ob Tomcat ausgeführt wird, müssen
 4. Klicken Sie auf **Endpunkte**.
 5. Klicken Sie auf **Hinzufügen**.
 6. Stellen Sie im Dialogfeld **Endpunkt hinzufügen** sicher, dass das Kontrollkästchen **Add standalone endpoint** aktiviert ist, und klicken Sie dann auf **Weiter**.
-7. Gehen Sie im Dialogfeld <strong>New endpoint details</strong> wie folgt vor:
+7. Gehen Sie im Dialogfeld **New endpoint details** wie folgt vor:
     1. Geben Sie einen Namen für den Endpunkt an. Beispiel: **HttpIn**.
     2. Geben Sie als Protokoll **TCP** an.
     3. Geben Sie als öffentlichen Port **80** an.
@@ -103,39 +103,22 @@ Um von externen Computern aus festzustellen, ob Tomcat ausgeführt wird, müssen
 2. Klicken Sie unter Windows auf **Start**.
 3. Klicken Sie auf **Systemsteuerung**.
 4. Klicken Sie auf **System und Sicherheit**, auf **Windows-Firewall** und dann auf **Erweiterte Einstellungen**.
-5. Klicken Sie auf **Eingehende Regeln** und dann auf **Neue Regel**.
+5. Klicken Sie auf **Eingehende Regeln** und dann auf **Neue Regel**. ![Neue eingehende Regel][NewIBRule]
+6. Wählen Sie für **Regeltyp** die Option **Port** aus, und klicken Sie dann auf**Weiter**. ![Neue eingehende Regel – Port][NewRulePort]
+7. Wählen Sie im Bildschirm **Protokoll und Ports** die Option **TCP** aus, geben Sie **8080** unter **Specific local port** ein, und klicken Sie dann auf **Weiter**. ![Neue eingehende Regel][NewRuleProtocol]
+8. Wählen Sie im Dialogfeld **Aktion** die Option **Verbindung zulassen**, und klicken Sie anschließend auf **Weiter**. ![Neue eingehende Regel – Aktion][NewRuleAction]
+9. Achten Sie im Bildschirm **Profil** darauf, dass **Domäne**, **Privat** und **Öffentlich** ausgewählt sind, und klicken Sie dann auf **Weiter**. ![Neue eingehende Regel – Profil][NewRuleProfile]
+10. Geben Sie im Bildschirm **Name** einen Namen für die Regel an, beispielsweise **HttpIn** (der Name der Regel muss jedoch nicht mit dem Namen des Endpunkts übereinstimmen). Klicken Sie anschließend auf **Fertig stellen**. ![Neue eingehende Regel – Name][NewRuleName]
 
- ![Neue eingehende Regel][NewIBRule]
-
-6. Wählen Sie für **Regeltyp** die Option **Port** aus, und klicken Sie dann auf**Weiter**.
-
- ![Neue eingehende Regel – Port][NewRulePort]
-
-7. Wählen Sie im Bildschirm **Protokoll und Ports** die Option **TCP** aus, geben Sie **8080** unter **Specific local port** ein, und klicken Sie dann auf **Weiter**.
-
- ![Neue eingehende Regel][NewRuleProtocol]
-
-8. Wählen Sie im Dialogfeld **Aktion** die Option **Verbindung zulassen**, und klicken Sie anschließend auf **Weiter**.
-
- ![Neue eingehende Regel – Aktion][NewRuleAction]
-
-9. Achten Sie im Bildschirm **Profil** darauf, dass **Domäne**, **Privat** und **Öffentlich** ausgewählt sind, und klicken Sie dann auf **Weiter**.
-
- ![Neue eingehende Regel – Profil][NewRuleProfile]
-
-10. Geben Sie im Bildschirm **Name** einen Namen für die Regel an, beispielsweise **HttpIn** \(der Name der Regel muss jedoch nicht mit dem Namen des Endpunkts übereinstimmen\). Klicken Sie anschließend auf **Fertig stellen**.  
-
- ![Neue eingehende Regel – Name][NewRuleName]
-
-An dieser Stelle sollte die Tomcat-Website unter Verwendung einer URL im Format **http://*your\_DNS\_name*.cloudapp.net** über einen externen Browser sichtbar sein. Dabei ist ***your\_DNS\_name*** der DNS-Name, den Sie beim Erstellen des virtuellen Computers angegeben haben.
+An dieser Stelle sollte die Tomcat-Website unter Verwendung einer URL im Format ****http://*your\_DNS\_name*.cloudapp.net** über einen externen Browser sichtbar sein. Dabei ist ***your\_DNS\_name*** der DNS-Name, den Sie beim Erstellen des virtuellen Computers angegeben haben.
 
 ## Überlegungen zum Lebenszyklus von Anwendungen
-* Sie können Ihr eigenes Archiv für Web-Anwendungen \(WAR\) erstellen und im Ordner **webapps** hinzufügen. Erstellen Sie beispielsweise ein dynamisches JSP-Basiswebprojekt \(Java Service Page\), und exportieren Sie dieses als WAR-Datei. Kopieren Sie dann die WAR-Datei in den Apache Tomcat-Ordner **webapps** auf dem virtuellen Computer, und führen Sie das Projekt in einem Browser aus.
+* Sie können Ihr eigenes Archiv für Web-Anwendungen (WAR) erstellen und im Ordner **webapps** hinzufügen. Erstellen Sie beispielsweise ein dynamisches JSP-Basiswebprojekt (Java Service Page), und exportieren Sie dieses als WAR-Datei. Kopieren Sie dann die WAR-Datei in den Apache Tomcat-Ordner **webapps** auf dem virtuellen Computer, und führen Sie das Projekt in einem Browser aus.
 * Beim Installieren des Tomcat-Diensts wird standardmäßig der manuelle Start festgelegt. Über das Snap-In "Dienste" können Sie zum automatischen Start wechseln. Starten Sie das Snap-In "Dienste", indem Sie unter Windows auf **Start**, **Verwaltung** und dann auf **Dienste** klicken. Doppelklicken Sie auf den**Apache Tomcat**-Dienst, und stellen Sie **Starttyp** auf **Automatisch** ein.
 
     ![Festlegen, dass ein Dienst automatisch gestartet wird][service_automatic_startup]
 
-    Der automatische Start von Tomcat bietet den Vorteil, dass der Dienst gestartet wird, wenn ein Neustart des virtuellen Computer erfolgt \(zum Beispiel nach der Installation von Softwareupdates, die einen Neustart erfordern\).
+    Der automatische Start von Tomcat bietet den Vorteil, dass der Dienst gestartet wird, wenn ein Neustart des virtuellen Computer erfolgt (zum Beispiel nach der Installation von Softwareupdates, die einen Neustart erfordern).
 
 ## Nächste Schritte
 Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Service Bus und SQL-Datenbank, die Sie möglicherweise zusammen mit Ihren Java-Anwendungen verwenden möchten, finden Sie im [Java Developer Center](http://azure.microsoft.com/develop/java/).
@@ -159,4 +142,4 @@ Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Serv
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

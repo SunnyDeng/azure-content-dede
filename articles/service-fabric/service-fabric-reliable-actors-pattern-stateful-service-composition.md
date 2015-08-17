@@ -1,12 +1,13 @@
 
 <properties
-   pageTitle="Entwurfsmuster in Service Fabric Actors für die Komposition zustandsbehafteter Dienste"
-   description="Entwurfsmuster in Service Fabric Actors, das statusbehaftete Actors zum Verwalten des Status zwischen Dienstaufrufen sowie zum Zwischenspeichern bisheriger Dienstergebnisse verwendet. Der Status kann persistent oder transient sein."
+   pageTitle="Reliable Actors: Entwurfsmuster für die Komposition zustandsbehafteter Dienste"
+   description="Entwurfsmuster in Service Fabric Reliable Actors, das statusbehaftete Actors zum Verwalten des Status zwischen Dienstaufrufen sowie zum Zwischenspeichern bisheriger Dienstergebnisse verwendet. Der Status kann persistent oder transient sein."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
+
 
 <tags
    ms.service="service-fabric"
@@ -14,10 +15,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/01/2015"
+   ms.date="08/05/2015"
    ms.author="claudioc"/>
 
-# Entwurfsmuster in Service Fabric Actors: Komposition zustandsbehafteter Dienste
+
+# Reliable Actors-Entwurfsmuster: Komposition zustandsbehafteter Dienste
 Entwickler haben die letzten eineinhalb Jahrzehnte damit verbracht, zustandsfreie N-Tier-Dienste im Unternehmen erstellen. Sie haben Dienste auf Datenbanken erstellt, sie haben höherwertige Dienste über anderen Diensten erstellt, und sie haben Orchestrierungs-Module und nachrichtenorientierte Middleware erstellt, um diese Dienste zu koordinieren. Mit der steigenden Arbeitsauslastung von Benutzern, gleichgültig ob ein höheres Maß an Interaktivität oder Skalierung gefordert wurde, begann die statusfreie serviceorientierte Architektur, ihre Schwachstellen zu zeigen.
 
 ## Die alte Methode: SOA-Dienste
@@ -90,6 +92,5 @@ Nachteile von "zustandslosen Diensten" sehen wir bei der Erstellung von skalierb
 [1]: ./media/service-fabric-reliable-actors-pattern-stateful-service-composition/stateful-service-composition-1.png
 [2]: ./media/service-fabric-reliable-actors-pattern-stateful-service-composition/stateful-service-composition-2.png
 [3]: ./media/service-fabric-reliable-actors-pattern-stateful-service-composition/stateful-service-composition-3.png
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

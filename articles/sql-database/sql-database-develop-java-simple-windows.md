@@ -128,10 +128,10 @@ Es folgt der Hauptteil des Java-Codebeispiels. Das Beispiel umfasst die `main`-F
 Um das gezeigte Java-Codebeispiel tatsächlich auszuführen, müssen Sie natürlich auch die tatsächlichen Werte in die Verbindungszeichenfolge einfügen und die folgenden Platzhalter ersetzen:
 
 
-- your_server
-- your_database
-- your_user
-- your_password
+- your\_server
+- your\_database
+- your\_user
+- your\_password
 
 
 ## INSERT two rows into the table (Einfügen von zwei Zeilen in die Tabelle mithilfe einer INSERT-Anweisung)
@@ -144,7 +144,7 @@ Dieser Java-Codeausschnitt übergibt eine Transact-SQL-INSERT-Anweisung für das
  - Wir fügen den Parameter `Statement.RETURN_GENERATED_KEYS` ein, um damit später den automatisch generierten **id**-Schlüsselwert abzurufen.
 2. Rufen Sie die `execute`-Methode für das `PreparedStatement`-Objekt auf.
 3. Rufen Sie mithilfe des `PreparedStatement`-Objekts den numerischen Wert ab, der automatisch für den Primärschlüssel generiert wurde.
- - Dies bezieht sich auf die AUTO_INCREMENT-Spezifikation in der **id**-Spalte in der Tabelle "Person"
+ - Dies bezieht sich auf die AUTO\_INCREMENT-Spezifikation in der **id**-Spalte in der Tabelle "Person"
 
 
 Kopieren Sie diesen kurzen Java-Codeausschnitt, und fügen Sie ihn beim Kommentar `// INSERT two rows into the table.` in das Hauptcodebeispiel ein.
@@ -225,4 +225,4 @@ Kopieren Sie diesen kurzen Java-Codeausschnitt, und fügen Sie ihn beim Kommenta
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

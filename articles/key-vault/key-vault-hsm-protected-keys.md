@@ -7,6 +7,7 @@
 	manager="mbaldwin"
 	tags="azure-resource-manager"/>
 
+
 <tags
 	ms.service="key-vault"
 	ms.workload="identity"
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/22/2015"
 	ms.author="cabailey"/>
+
 #Gewusst wie: Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor
 
 ##Einführung
@@ -61,7 +63,15 @@ Die folgende Tabelle enthält eine Liste mit Voraussetzungen, die beim Azure-Sch
 |Azure-Abonnement|Um einen Azure-Schlüsseltresor erstellen zu können, benötigen Sie ein Azure-Abonnement: [Registrieren Sie sich für die kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/).|
 |Azure-Schlüsseltresor, der HSMs unterstützt|Weitere Informationen zu den Dienstebenen und Funktionen für den Azure-Schlüsseltresor finden Sie auf der Website [Azure-Schlüsseltresor – Preise](http://azure.microsoft.com/pricing/details/key-vault/).|
 |Thales-HSM, Smartcards und Supportsoftware|Sie benötigen Zugriff auf ein Thales-Hardwaresicherheitsmodul sowie grundlegende Kenntnisse zum Betrieb von Thales-HSMs. Eine Liste mit kompatiblen Modellen bzw. Informationen zum Kauf eines HSM, falls Sie noch keins besitzen, finden Sie unter [Thales-Hardwaresicherheitsmodul](https://www.thales-esecurity.com/msrms/buy).|
-|Folgende Hardware und Software:<ol><li>x64-Offlinearbeitsstation mit Windows 7 als Betriebssystem-Mindestversion und Thales nShield-Software (mindestens Version 11.50).<br/><br/>Wenn auf der Arbeitsstation Windows 7 ausgeführt wird, müssen Sie [Microsoft .NET Framework 4.5 installieren](http://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe).</li><li>Eine Arbeitsstation mit Internetverbindung und Windows 7 als Betriebssystem-Mindestversion.</li><li>Ein USB-Laufwerk oder anderes tragbares Speichergerät mit mindestens 16 MB freiem Speicherplatz.</li></ol>|Aus Sicherheitsgründen wird empfohlen, die erste Arbeitsstation nicht mit einem Netzwerk zu verbinden. Dies wird jedoch nicht programmgesteuert erzwungen.<br/><br/>Beachten Sie, dass diese Arbeitsstation in den folgenden Anleitungen als „verbindungslose Arbeitsstation“ bezeichnet wird.</p></blockquote><br/>Falls Ihr Mandantenschlüssel für ein Produktionsnetzwerk gilt, empfehlen wir außerdem, eine zweite separate Arbeitsstation zu verwenden, um das Toolset herunterzuladen und den Mandantenschlüssel hochzuladen. Zu Testzwecken können Sie aber auch ein und dieselbe Arbeitsstation verwenden.<br/><br/>Beachten Sie, dass diese zweite Arbeitsstation in den folgenden Anleitungen als „Arbeitsstation mit Internetverbindung“ bezeichnet wird.</p></blockquote><br/>|
+|Folgende Hardware und Software:<ol><li>x64-Offlinearbeitsstation mit Windows 7 als Betriebssystem-Mindestversion und Thales nShield-Software (mindestens Version 11.50).<br/>
+<br/>
+Wenn auf der Arbeitsstation Windows 7 ausgeführt wird, müssen Sie [Microsoft .NET Framework 4.5 installieren](http://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe).</li><li>Eine Arbeitsstation mit Internetverbindung und Windows 7 als Betriebssystem-Mindestversion.</li><li>Ein USB-Laufwerk oder anderes tragbares Speichergerät mit mindestens 16 MB freiem Speicherplatz.</li></ol>|Aus Sicherheitsgründen wird empfohlen, die erste Arbeitsstation nicht mit einem Netzwerk zu verbinden. Dies wird jedoch nicht programmgesteuert erzwungen.<br/>
+<br/>
+Beachten Sie, dass diese Arbeitsstation in den folgenden Anleitungen als „verbindungslose Arbeitsstation“ bezeichnet wird.</p></blockquote><br/>
+Falls Ihr Mandantenschlüssel für ein Produktionsnetzwerk gilt, empfehlen wir außerdem, eine zweite separate Arbeitsstation zu verwenden, um das Toolset herunterzuladen und den Mandantenschlüssel hochzuladen. Zu Testzwecken können Sie aber auch ein und dieselbe Arbeitsstation verwenden.<br/>
+<br/>
+Beachten Sie, dass diese zweite Arbeitsstation in den folgenden Anleitungen als „Arbeitsstation mit Internetverbindung“ bezeichnet wird.</p></blockquote><br/>
+|
 
 ##Generieren und Übertragen des Schlüssels an das HSM des Azure-Schlüsseltresors
 
@@ -114,9 +124,9 @@ Das Toolset enthält Folgendes:
 
 - Ein Schlüsselaustauschschlüssel-Paket (Key Exchange Key, KEK), dessen Name mit **BYOK-KEK-pkg-.** beginnt.
 - Ein Security World-Paket, dessen Name mit **BYOK-SecurityWorld-pkg-.** beginnt.
-- Ein Python-Skript mit dem Namen „v**erifykeypackage.py.**“.
+- Ein Python-Skript mit dem Namen „v\*\*erifykeypackage.py.\*\*“.
 - Eine ausführbare Befehlszeilendatei mit dem Namen **KeyTransferRemote.exe** und die zugehörigen DLLs.
-- Ein Visual C++ Redistributable Package mit dem Namen **vcredist_x64.exe**.
+- Ein Visual C++ Redistributable Package mit dem Namen **vcredist\_x64.exe**.
 
 Kopieren Sie das Paket auf ein USB-Laufwerk oder ein anderes tragbares Speichergerät.
 
@@ -129,7 +139,7 @@ Führen Sie für diesen zweiten Schritt die folgenden Verfahren auf der Arbeitss
 
 Installieren Sie die Supportsoftware nCipher (Thales) auf einem Windows-Computer, und schließen Sie dann ein Thales-HSM an diesen Computer an.
 
-Stellen Sie sicher, dass sich die Thales-Tools unter Ihrem Pfad befinden (**%nfast_home%\bin** und **%nfast_home%\python\bin**). Geben Sie beispielsweise Folgendes ein:
+Stellen Sie sicher, dass sich die Thales-Tools unter Ihrem Pfad befinden (**%nfast\_home%\\bin** und **%nfast\_home%\\python\\bin**). Geben Sie beispielsweise Folgendes ein:
 
 		set PATH=%PATH%;”%nfast_home%\bin”;”%nfast_home%\python\bin”
 
@@ -140,7 +150,7 @@ Weitere Informationen finden Sie im Benutzerhandbuch zum Thales-HSM.
 Kopieren Sie das BYOK-Toolsetpaket vom USB-Laufwerk bzw. vom tragbaren Speichergerät, und führen Sie Folgendes aus:
 
 1. Extrahieren Sie die Dateien aus dem heruntergeladenen Paket in einen beliebigen Ordner.
-2. Führen Sie in diesem Ordner die Datei „vcredist_x64.exe“ aus.
+2. Führen Sie in diesem Ordner die Datei „vcredist\_x64.exe“ aus.
 3. Folgen Sie den Anweisungen zum Installieren der Visual C++-Laufzeitkomponenten für Visual Studio 2012.
 
 ##Schritt 3: Generieren des Schlüssels
@@ -153,7 +163,7 @@ Starten Sie eine Eingabeaufforderung, und führen Sie das Thales-new-world-Progr
 
 	new-world.exe --initialize --cipher-suite=DLf1024s160mRijndael --module=1 --acs-quorum=2/3
 
-Dieses Programm erstellt eine **Security World**-Datei unter „%NFAST_KMDATA%\local\world“, die dem Ordner „C:\ProgramData\nCipher\Key Management Data\local“ entspricht. Sie können verschiedene Werte für das Quorum verwenden, aber in unserem Beispiel werden Sie aufgefordert, jeweils drei leere Karten und PINs einzugeben. Dann erhalten Sie mit zwei beliebigen Karten vollständigen Zugriff auf die Security World. Diese Karten werden zur **Administratorkartengruppe** für die neue Security World.
+Dieses Programm erstellt eine **Security World**-Datei unter „%NFAST\_KMDATA%\\local\\world“, die dem Ordner „C:\\ProgramData\\nCipher\\Key Management Data\\local“ entspricht. Sie können verschiedene Werte für das Quorum verwenden, aber in unserem Beispiel werden Sie aufgefordert, jeweils drei leere Karten und PINs einzugeben. Dann erhalten Sie mit zwei beliebigen Karten vollständigen Zugriff auf die Security World. Diese Karten werden zur **Administratorkartengruppe** für die neue Security World.
 
 Gehen Sie wie folgt vor:
 
@@ -188,7 +198,7 @@ So überprüfen Sie das heruntergeladene Paket
 
 			python verifykeypackage.py -k BYOK-KEK-pkg-JPN-1 -w BYOK-SecurityWorld-pkg-JPN-1
 
-	>[AZURE.TIP]Die Thales-Software enthält Python unter „%NFAST_HOME%\python\bin“.
+	>[AZURE.TIP]Die Thales-Software enthält Python unter „%NFAST\_HOME%\\python\\bin“.
 	
 2.	Vergewissern Sie sich, dass Folgendes angezeigt wird, um eine erfolgreiche Überprüfung zu melden: **Result: SUCCESS**
 
@@ -210,7 +220,7 @@ Gehen Sie wie folgt vor, wenn Sie diesen Befehl ausführen:
 
 - „pubexp“ wird in diesem Beispiel leer gelassen (Standard), aber Sie können bestimmte Werte angeben. Weitere Informationen finden Sie in der Thales-Dokumentation.
 
-Mit diesem Befehl wird im Ordner „%NFAST_KMDATA%\local“ eine Tokenschlüsseldatei erstellt, deren Name mit **key_simple_** beginnt. Danach folgt die ID, die im Befehl angegeben wurde. Beispiel: **key_simple_contosokey**. Diese Datei enthält einen verschlüsselten Schlüssel.
+Mit diesem Befehl wird im Ordner „%NFAST\_KMDATA%\\local“ eine Tokenschlüsseldatei erstellt, deren Name mit **key\_simple\_** beginnt. Danach folgt die ID, die im Befehl angegeben wurde. Beispiel: **key\_simple\_contosokey**. Diese Datei enthält einen verschlüsselten Schlüssel.
 
 Sichern Sie diese Tokenschlüsseldatei an einem sicheren Ort.
 
@@ -246,7 +256,7 @@ Ersetzen Sie beim Ausführen dieses Befehls *contosokey* durch den gleichen Wert
 
 Sie werden aufgefordert, Ihre Security World-Administratorkarten einzuführen.
 
-Wenn der Befehl abgeschlossen ist, wird **Result: SUCCESS** angezeigt, und die Kopie Ihres Schlüssels mit reduzierten Berechtigungen ist in der Datei mit dem Namen „key_xferacId_<contosokey>“ enthalten.
+Wenn der Befehl abgeschlossen ist, wird **Result: SUCCESS** angezeigt, und die Kopie Ihres Schlüssels mit reduzierten Berechtigungen ist in der Datei mit dem Namen "key\_xferacId\_<contosokey>" enthalten.
 
 ###Schritt 4.2: Überprüfen der neuen Kopie des Schlüssels
 
@@ -258,7 +268,7 @@ Optional können Sie die Thales-Hilfsprogramme ausführen, um zu bestätigen, da
 - kmfile-dump.exe:
 
 		"%nfast_home%\bin\kmfile-dump.exe" "%NFAST_KMDATA%\local\key_xferacld_contosokey"
-Ersetzen Sie beim Ausführen dieser Befehle „contosokey“ durch den gleichen Wert, den Sie in **Schritt 3.3: Erstellen eines neuen Schlüssels** unter [Generieren des Schlüssels](#step-3-generate-your-key) angegeben haben.
+Ersetzen Sie beim Ausführen dieser Befehle "contosokey" durch den gleichen Wert, den Sie in **Schritt 3.3: Erstellen eines neuen Schlüssels** unter [Generieren des Schlüssels](#step-3-generate-your-key) angegeben haben.
 
 ###Schritt 4.3: Verschlüsseln des Schlüssels mit dem Schlüsselaustauschschlüssel von Microsoft
 
@@ -288,7 +298,7 @@ Gehen Sie wie folgt vor, wenn Sie diesen Befehl ausführen:
 
 - Ersetzen Sie *ContosoFirstHSMKey* durch eine Bezeichnung, die als Name Ihrer Ausgabedatei verwendet werden soll.
 
-Wenn dieser Vorgang erfolgreich ist, wird **Result: SUCCESS** angezeigt, und im aktuellen Ordner ist eine neue Datei mit dem folgenden Namen enthalten: „TransferPackage-*ContosoFirstHSMkey*.byok“.
+Wenn dieser Vorgang erfolgreich ist, wird **Result: SUCCESS** angezeigt, und im aktuellen Ordner ist eine neue Datei mit dem folgenden Namen enthalten: "TransferPackage-*ContosoFirstHSMkey\**byok".
 
 ###Schritt 4.4: Kopieren des Schlüsselübertragungspakets auf die Arbeitsstation mit Internetverbindung 
 
@@ -306,4 +316,4 @@ Wenn der Upload erfolgreich ist, werden die Eigenschaften des gerade hinzugefüg
 
 Sie können diesen HSM-geschützten Schlüssel jetzt in Ihrem Schlüsseltresor verwenden. Weitere Informationen finden Sie im Abschnitt **Verwenden eines Hardwaresicherheitsmoduls (HSM)** im Lernprogramm [Erste Schritte mit dem Azure-Schlüsseltresor](key-vault-get-started.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

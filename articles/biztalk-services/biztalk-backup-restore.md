@@ -65,8 +65,8 @@ Sobald die Sicherung abgeschlossen ist, wird im Speicherkonto ein Container mit 
 #### <a name="backupschedule"></a>Planen einer Sicherung
 
 1. Klicken Sie im Azure-Verwaltungsportal auf **BizTalk Services**, wählen Sie den Namen des BizTalk Service aus, für den Sie die Sicherung planen möchten, und klicken Sie anschließend auf die Registerkarte **Konfigurieren**.
-2. Legen Sie den **Sicherungsstatus** auf **Automatisch** fest. 
-3. Wählen Sie das **Speicherkonto** zum Speichern der Sicherung aus, geben Sie unter **Häufigkeit** an, wie oft Sicherungen erstellt werden sollen, und legen Sie unter "Aufbewahrung in Tagen" fest, wie lange Sicherungen beibehalten werden sollen:
+2. Stellen Sie den **Sicherungsstatus** auf **Automatisch** ein. 
+3. Wählen Sie das **Speicherkonto** zum Speichern der Sicherung aus, geben Sie unter **Häufigkeit** an, wie oft Sicherungen erstellt werden sollen, und unter **Aufbewahrung in Tagen** deren Aufbewahrungszeit:
 
 	![][AutomaticBU]
 
@@ -233,4 +233,4 @@ Um Azure BizTalk Services im Azure-Verwaltungsportal zu erstellen, wechseln Sie 
 [RestoreBizTalkService]: ./media/biztalk-backup-restore/RestoreBizTalkServiceWindow.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -39,7 +39,7 @@ In diesem Thema werden folgende Themen behandelt:
 ##<a id="scenario"></a>Allgemeines Livestreamingszenario
 Die folgenden Schritte beschreiben die Aufgaben zum Erstellen von gebräuchlichen Livestreaminganwendungen.
 
-1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Live-Encoder, der einen RTMP- oder Fragmented MP4-Stream (Smooth Streaming) mit mehreren Bitraten ausgibt. Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
+1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Live-Encoder, der einen RTMP- oder Fragmented MP4-Stream (Smooth Streaming) mit mehreren Bitraten ausgibt. Weitere Informationen finden Sie unter [￼Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 	
 	Dieser Schritt kann auch nach der Erstellung des Kanals ausgeführt werden.
 
@@ -125,12 +125,12 @@ Wenn ein lokaler Live-Encoder Zum Erzeugen eines Streams mit mehreren Bitraten v
 
 Die folgende Tabelle zeigt, wie die Segmentdauer berechnet wird:
 
-<table border="1">
-<tr><th>Keyframe-Intervall</th><th>Paketerstellungsverhältnis für HLS-Segmente (FragmentsPerSegment)</th><th>Beispiel</th></tr>
-<tr><td>kleiner oder gleich 3&#160;Sekunden</td><td>3:1</td><td>Wenn das KeyFrameInterval (oder GOP) 2&#160;Sekunden beträgt, ist das Standard-Paketerstellungsverhältnis für HLS-Segmente 3:1, und es wird ein HLS-Segment von 6&#160;Sekunden erstellt.</td></tr>
-<tr><td>3 bis 5 Sekunden</td><td>2:1</td><td>Wenn das KeyFrameInterval (oder GOP) 4&#160;Sekunden beträgt, ist das Standard-Paketerstellungsverhältnis für HLS-Segmente 2:1, und es wird ein HLS-Segment von 8&#160;Sekunden erstellt.</td></tr>
-<tr><td>größer als 5 Sekunden</td><td>1:1</td><td>Wenn das KeyFrameInterval (oder GOP) 6&#160;Sekunden beträgt, ist das Standard-Paketerstellungsverhältnis für HLS-Segmente 1:1, und es wird ein HLS-Segment von 6&#160;Sekunden erstellt.</td></tr>
-</table>
+Keyframe-Intervall|Paketerstellungsverhältnis für HLS-Segmente (FragmentsPerSegment)|Beispiel
+---|---|---
+kleiner oder gleich 3 Sekunden|3:1|Wenn das KeyFrameInterval (oder GOP) 2 Sekunden beträgt, ist das Standard-Paketerstellungsverhältnis für HLS-Segmente 3:1, und es wird ein HLS-Segment von 6 Sekunden erstellt.
+3 bis 5 Sekunden|2:1|Wenn das KeyFrameInterval (oder GOP) 4 Sekunden beträgt, ist das Standard-Paketerstellungsverhältnis für HLS-Segmente 2:1, und es wird ein HLS-Segment von 8 Sekunden erstellt.
+größer als 5 Sekunden|1:1|Wenn das KeyFrameInterval (oder GOP) 6 Sekunden beträgt, ist das Standard-Paketerstellungsverhältnis für HLS-Segmente 1:1, und es wird ein HLS-Segment von 6 Sekunden erstellt.
+
 
 Sie können das Verhältnis der Fragmente pro Segment ändern, indem Sie den Ausgang des Kanals konfigurieren und FragmentsPerSegment für ChannelOutputHls festlegen.
 
@@ -201,24 +201,23 @@ Dies ist der aktuelle Status des Kanals. Mögliche Werte sind:
 
 In der folgenden Tabelle ist die Zuordnung der Kanalstatus mit den Abrechnungsmodi aufgeführt.
  
-<table border="1">
-<tr><th>Kanalstatus</th><th>Portal-UI-Indikatoren</th><th>In Rechnung gestellt?</th></tr>
-<tr><td>Wird gestartet</td><td>Wird gestartet</td><td>Nein (Übergangsstatus)</td></tr>
-<tr><td>Wird ausgeführt</td><td>Bereit (keine ausgeführten Programme)<br/>oder<br/>Streaming (mindestens ein ausgeführtes Programm)</td><td>Ja</td></tr>
-<tr><td>Wird beendet</td><td>Wird beendet</td><td>Nein (Übergangsstatus)</td></tr>
-<tr><td>Beendet</td><td>Beendet</td><td>Nein</td></tr>
-</table>
+Kanalstatus|Portal-UI-Indikatoren|In Rechnung gestellt?
+---|---|---|---
+Wird gestartet|Wird gestartet|Nein (Übergangsstatus)
+Wird ausgeführt|Bereit (keine ausgeführten Programme)<p>oder<p>Streaming (mindestens ein laufendes Programm)|Ja
+Wird beendet|Wird beendet|Nein (Übergangsstatus)
+Beendet|Beendet|Nein
 
 ###Untertitel und Werbeeinblendungen 
 
 Die folgende Tabelle zeigt die unterstützten Untertitel- und Werbeeinblendungsstandards.
 
-<table border="1">
-<tr><th>Standard</th><th>Hinweise</th></tr>
-<tr><td>CEA-708 und EIA-608 (708/608)</td><td>CEA-708 und EIA-608 sind Untertitelstandards für die USA und Kanada.<br/>Derzeit werden Untertitel nur unterstützt, wenn sie im codierten Eingabestream geführt werden. Sie müssen einen Live-Media Encoder verwenden, der Untertitel nach 608 oder 708 in den codierten Stream, die an Media Services gesendet wird, einfügen kann. Media Services sendet die Inhalte mit eingefügten Untertiteln an Ihre Zuschauer.</td></tr>
-<tr><td>TTML in ISMT (Smooth Streaming-Texttracks)</td><td>Die dynamische Paketerstellung von Media Services ermöglicht Ihren Clients das Streamen von Inhalten in einem der folgenden Formate: MPEG DASH, HLS oder Smooth Streaming. Wenn Sie jedoch Fragmented MP4 (Smooth Streaming) mit Untertitel in ISMT (Smooth Streaming-Texttracks) erfassen, kann der Stream nur an Smooth Streaming-Clients gesendet werden.</td></tr>
-<tr><td>SCTE-35</td><td>Hierbei handelt es sich um ein digitales Signalisierungssystem zum Einfügen von Werbeeinblendungen. Downstream-Empfänger verwenden das Signal zum Einfügen von Werbung in den Stream für die vorgesehene Zeit. SCTE-35 muss als Spur mit geringer Dichte in den Eingabestream gesendet werden.<br/>Beachten Sie, dass derzeit als Eingabestreamformat mit Werbesignalen nur Fragmented MP4 (Smooth Streaming) unterstützt wird. Das einzige unterstützte Ausgabeformat ist ebenfalls Smooth Streaming.</td></tr>
-</table>
+Standard|Hinweise
+---|---
+CEA-708 und EIA-608 (708/608)|CEA-708 und EIA 608 sind Untertitelstandards für die USA und Kanada.<p><p>Derzeit werden Untertitel nur unterstützt, wenn sie im codierten Eingabestream übertragen werden. Sie müssen einen Live-Media Encoder verwenden, der Untertitel nach 608 oder 708 in den codierten Stream, die an Media Services gesendet wird, einfügen kann. Media Services sendet die Inhalte mit eingefügten Untertiteln an Ihre Zuschauer.
+TTML in ISMT (Smooth Streaming-Texttracks)|Die dynamische Paketerstellung von Media Services ermöglicht Ihren Clients das Streamen von Inhalten in einem der folgenden Formate: MPEG DASH, HLS oder Smooth Streaming. Wenn Sie jedoch Fragmented MP4 (Smooth Streaming) mit Untertitel in ISMT (Smooth Streaming-Texttracks) erfassen, kann der Stream nur an Smooth Streaming-Clients gesendet werden.
+SCTE-35|Hierbei handelt es sich um ein digitales Signalisierungssystem zum Einfügen von Werbeeinblendungen. Downstream-Empfänger verwenden das Signal zum Einfügen von Werbung in den Stream für die vorgesehene Zeit. SCTE-35 muss als platzsparende Spur im Eingabestream versendet werden. <p><p>Beachten Sie, dass derzeit als Eingabestreamformat mit Werbesignalen nur Fragmented MP4 (Smooth Streaming) unterstützt wird. Das einzige unterstützte Ausgabeformat ist ebenfalls Smooth Streaming.
+
 
 ##<a id="Considerations"></a>Überlegungen
 
@@ -237,7 +236,7 @@ Weitere Aspekte im Zusammenhang mit der Arbeit mit Kanälen und zugehörigen Kom
 - Ein Kanal kann nur beendet werden, wenn er den Status „Wird ausgeführt“ aufweist und alle Programme im Kanal beendet wurden.
 - In der Standardeinstellung können Sie Ihrem Media Services-Konto nur fünf Kanäle hinzufügen. Weitere Informationen finden Sie unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md).
 - Sie können das Eingabeprotokoll nicht ändern, während der Kanal oder seine zugehörigen Programme ausgeführt werden. Wenn Sie andere Protokolle benötigen, erstellen Sie für jedes Eingabeprotokoll einen separaten Kanal. 
-- Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [diesem Abschnitt](media-services-manage-channels-overview.md#states).
+- Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [￼diesem Abschnitt](media-services-manage-channels-overview.md#states).
 
 ##<a id="tasks"></a>Aufgaben im Zusammenhang mit Livestreaming
 
@@ -331,4 +330,4 @@ Informationen zum Skalieren von Streamingeinheiten finden Sie unter [Skalieren v
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
  
 
-<!-----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -4,4 +4,4 @@
   >
   > + Sie können die [MSDN-Abonnentenvorteile aktivieren](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): Sie erhalten jeden Monat über Ihr MSDN-Abonnement Guthaben, das Sie für zahlungspflichtige Azure-Dienste nutzen können.
 
-<!-----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

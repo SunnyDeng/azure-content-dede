@@ -1,49 +1,57 @@
 <properties
-   pageTitle="Konfigurieren Sie gleichzeitig bestehende ExpressRoute und Standort-zu-Standort-VPN-Verbindungen."
-   description="Dieses Lernprogramm führt Sie durch die Konfiguration von gleichzeitig bestehenden- und Standort-zu-Standort-VPN-Verbindungen."
+   pageTitle="Konfigurieren von ExpressRoute- und Standort-zu-Standort-VPN-Verbindungen, die gleichzeitig bestehen können"
+   description="Dieses Lernprogramm führt Sie durch die Konfiguration von ExpressRoute- und Standort-zu-Standort-VPN-Verbindungen, die gleichzeitig bestehen können."
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="jdial"
+   manager="carolz"
    editor="tysonn" />
 <tags
    ms.service="expressroute"
    ms.devlang="na"
-   ms.topic="article" 
+   ms.topic="get-started-article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/20/2015"
+   ms.date="08/05/2015"
    ms.author="cherylmc"/>
 
 # Konfigurieren von gleichzeitig vorhandenen ExpressRoute- und Standort-zu-Standort-VPN-Verbindungen
 
 Sie können jetzt ExpressRoute und Standort-zu-Standort-VPN mit dem gleichen virtuellen Netzwerk verbinden. Sie können zwischen zwei verschiedenen Szenarien und zwei unterschiedlichen Konfigurationsverfahren wählen.
 
-### Szenarios
+## Szenarios
 
-Es gibt zwei verschiedene Szenarien. Die folgende Abbildung stellt beide Szenarien dar.
+### Szenario 1
 
-- **Szenario 1**– Wenn Sie ein lokales Netzwerk haben, ist ExpressRoute der aktive Link und Ihr Standort-zu-Standort-VPN wäre das Backup. Wenn die ExpressRoute-Verbindung fehlschlägt, wird die Standort-zu-Standort-VPN-Verbindung aktiviert. Dieses Szenario ist am besten für hohe Verfügbarkeit geeignet.
+In diesem Szenario verfügen Sie über ein lokales Netzwerk. ExpressRoute ist die aktive Verknüpfung, und Ihr Standort-zu-Standort-VPN ist die Sicherung. Wenn die ExpressRoute-Verbindung fehlschlägt, wird die Standort-zu-Standort-VPN-Verbindung aktiviert. Dieses Szenario ist am besten für hohe Verfügbarkeit geeignet.
 
-- **Szenario 2**– Wenn Sie über zwei lokale Netzwerke verfügen, können Sie eines mit Azure über ExpressRoute verbinden und das andere über Standort-zu-Standort-VPN. In diesem Fall sind beide Verbindungen gleichzeitig aktiv.
-
-
-![Koexistenz](media/expressroute-coexist/coexist1.jpg)
+![Koexistenz](media/expressroute-coexist/scenario1.jpg)
 
 
-### Konfigurationsverfahren
 
-Es stehen zwei separate Konfigurationsverfahren zur Auswahl. Welches Konfigurationsverfahren Sie wählen, hängt davon ab, ob Sie bereits über ein vorhandenes virtuelles Netzwerk verfügen, mit dem Sie eine Verbindung aufbauen möchten, oder ob Sie ein neues virtuelles Netzwerk erstellen möchten.
+### Szenario 2:
+
+In diesem Szenario verfügen Sie über zwei lokale Netzwerke. Sie können Sie eines davon mit Azure über ExpressRoute verbinden und das andere über Standort-zu-Standort-VPN. In diesem Fall sind beide Verbindungen gleichzeitig aktiv.
+
+![Koexistenz](media/expressroute-coexist/scenario2.jpg)
 
 
-- [Erstellen eines neuen VNet mit gleichzeitig bestehenden Verbindungen](#create-a-new-vnet-with-coexisting-connections): Wenn Sie bereits über ein virtuelles Netzwerk verfügen, wird Sie dieses Verfahren durch die Schritte zum Erstellen eines neuen virtuellen Netzwerks und neuer ExpressRoute- sowie Standort-zu-Standort-VPN-Verbindungen führen.  
+## Erstellen und konfigurieren
+
+Es stehen zwei unterschiedliche Verfahren für die Konfiguration Ihrer Verbindungen zur Auswahl, damit diese gleichzeitig bestehen können. Welches Konfigurationsverfahren Sie wählen, hängt davon ab, ob Sie über ein vorhandenes virtuelles Netzwerk verfügen, mit dem Sie eine Verbindung aufbauen möchten, oder ob Sie ein neues virtuelles Netzwerk erstellen möchten.
+
+- **Erstellen ein neues virtuellen Netzwerks mit gleichzeitig bestehenden Verbindungen:** 
+	
+	Wenn Sie noch nicht über ein virtuelles Netzwerk verfügen, wird Sie dieses Verfahren durch die Schritte zum Erstellen eines neuen virtuellen Netzwerks und neuer ExpressRoute- sowie Standort-zu-Standort-VPN-Verbindungen führen. Führen Sie zur Konfiguration die Schritte zum [Erstellen eines neuen virtuellen Netzwerks mit Verbindungen](#create-a-new-virtual-network-and-connections-that-coexist) durch.
+
+- **Konfigurieren Ihrer vorhandenen virtuellen Netzwerke für gleichzeitig bestehende Verbindungen:**
+	
+	Möglicherweise haben Sie bereits ein virtuelles Netzwerk mit einer vorhandenen Standort-zu-Standort-VPN-Verbindung oder einer ExpressRoute-Verbindung. Das Verfahren zum [Konfigurieren von gleichzeitig bestehenden Verbindungen für Ihr vorhandenes virtuelles Netzwerk](#configure-connections-that-coexist-for-your-existing-virtual-network) führt Sie durch die Schritte zum Löschen des Gateways und anschließendem Erstellen neuer ExpressRoute- und Standort-zu-Standort-VPN-Verbindungen. Beachten Sie, dass die Schritte beim Erstellen von neuen Verbindungen in einer ganz bestimmten Reihenfolge ausgeführt werden müssen. Verwenden Sie die Anweisungen nicht in anderen Artikeln, um Ihre Gateways und Verbindungen zu erstellen.
+
+	In diesem Verfahren erfordert das Erstellen von gleichzeitig bestehenden Verbindungen das Löschen Ihres Gateway löschen und das anschließende Konfigurieren neuer Gateways. Das bedeutet, dass Sie für Ihre standortübergreifenden Verbindungen Ausfallzeiten haben werden, während Sie Ihr Gateway und Ihre Verbindungen löschen und neu erstellen, aber Sie müssen keine Ihrer VMs oder Dienste auf ein neues virtuelles Netzwerk migrieren. Die VMs und Dienste wären immer noch in der Lage, über den Load Balancer zu kommunizieren, während Sie Ihr Gateway konfigurieren, wenn sie zu diesem Zweck konfiguriert sind.
 
 
-- [Konfigurieren Ihres vorhandenen VNet für gleichzeitig bestehende Verbindungen](#configure-your-existing-vnet-for-coexisting-connections): Möglicherweise haben Sie bereits ein virtuelles Netzwerk mit einer vorhandenen Standort-zu-Standort-VPN-Verbindung oder einer ExpressRoute-Verbindung. Um eine gleichzeitig bestehende Verbindung zu erstellen, müssen Sie Ihr Gateway löschen und anschließend neue Gateways konfigurieren, die gleichzeitig bestehen können. Das bedeutet, dass Sie für Ihre standortübergreifenden Verbindungen Ausfallzeiten haben werden, während Sie Ihr Gateway und Ihre Verbindungen löschen und neu erstellen, aber Sie müssen keine Ihrer VMs oder Dienste auf ein neues virtuelles Netzwerk migrieren. Die VMs und Dienste wären immer noch in der Lage, über den Load Balancer zu kommunizieren, während Sie Ihr Gateway konfigurieren, wenn sie zu diesem Zweck konfiguriert sind.
-
-	Dieses Verfahren führt Sie durch die Schritte zum Löschen des Gateways und anschließendem Erstellen neuer ExpressRoute- und Standort-zu-Standort-VPN-Verbindungen. Beachten Sie, dass die Schritte beim Erstellen von neuen Verbindungen in einer ganz bestimmten Reihenfolge ausgeführt werden müssen. Verwenden Sie die Anweisungen nicht in anderen Artikeln, um Ihre Gateways und Verbindungen zu erstellen.
-
-### Hinweise und Einschränkungen
+## Hinweise und Einschränkungen
 
 - Ein Routing (über Azure) zwischen Ihrem lokalen Netzwerk mit Standort-zu-Standort-VPN-Verbindung und Ihrem lokalen Netzwerk mit ExpressRoute-Verbindung wird nicht möglich sein.
 - Sie können keine Punkt-zu-Standort-VPN-Verbindungen mit einem VNET herstellen, für das eine Verbindung mit ExpressRoute besteht. Punkt-zu-Standort-VPN- und ExpressRoute-Verbindungen können für ein VNET nicht gleichzeitig vorhanden sein.
@@ -56,7 +64,9 @@ Es stehen zwei separate Konfigurationsverfahren zur Auswahl. Welches Konfigurati
 	- [Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter (EXP)](expressroute-configuring-exps.md)
 
 
-## Erstellen Sie ein neues VNet mit gleichzeitig bestehenden Verbindungen
+## Erstellen ein neues virtuellen Netzwerks mit gleichzeitig bestehenden Verbindungen:
+
+Dieses Verfahren führt Sie durch das Erstellen eines virtuellen Netzwerks sowie das Erstellen von gleichzeitig bestehenden Standort-zu-Standort- und ExpressRoute-Verbindungen.
 
 1. Stellen Sie sicher, dass Sie über die neueste Version von PowerShell-Cmdlets verfügen. Sie können die neuesten PowerShell-Cmdlets aus dem PowerShell-Abschnitt der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
 2. Geben Sie Ihrem Virtual Network einen Namen. Weitere Informationen zum Arbeiten mit der Netzwerk-Konfigurationsdatei finden Sie unter [Konfigurieren eines Virtual Network mithilfe einer Netzwerk-Konfigurationsdatei](../virtual-network/virtual-networks-using-network-configuration-file.md). Weitere Informationen zum Konfigurationsschema finden Sie unter [Konfigurationsschema für Azure Virtual Network](https://msdn.microsoft.com/library/azure/jj157100.aspx).
@@ -163,14 +173,14 @@ Es stehen zwei separate Konfigurationsverfahren zur Auswahl. Welches Konfigurati
 	`New-AzureVirtualNetworkGatewayConnection -connectedEntityId <local-network-gateway-id> -gatewayConnectionName Azure2Local -gatewayConnectionType IPsec -sharedKey abc123 -virtualNetworkGatewayId <azure-s2s-vpn-gateway-id>`
 
 
-## Konfigurieren Sie Ihre vorhandene VNet für Koexistenz-Verbindungen
+## Konfigurieren von gleichzeitig bestehenden Verbindungen für Ihr vorhandenes virtuelles Netzwerk
 
 Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Standort-zu-Standort-VPN-Verbindung verbunden haben, um eine Verbindung beider Verbindungen mit dem vorhandenen Virtual Network zu ermöglichen, müssen Sie das vorhandene Gateway zunächst löschen. Dies bedeutet, dass lokal Ihre Verbindung mit Ihrem Virtual Network über das Gateway verloren geht, während Sie an dieser Konfiguration arbeiten.
 
 **Bevor Sie mit der Konfiguration beginnen:** Überprüfen Sie, dass Sie in Ihrem Virtual Network noch ausreichend IP-Adressen vorhanden sind, sodass Sie die Größe des Gateway-Subnetzes erhöhen können.
 
 
-1. Stellen Sie sicher, dass Sie über die neueste Version von PowerShell-Cmdlets verfügen. Sie können die neuesten PowerShell-Cmdlets aus dem PowerShell-Abschnitt der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+1. Laden Sie die aktuelle Version der PowerShell-Cmdlets herunter. Sie können die neuesten PowerShell-Cmdlets aus dem PowerShell-Abschnitt der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
  
 2. Löschen Sie das vorhandene Standort-zu-Standort-VPN-Gateway. Nutzen Sie das folgende Cmdlet, um die Werte mit Ihren eigenen auszutauschen.
 
@@ -194,7 +204,7 @@ Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Stand
 		            </LocalNetworkSiteRef>
 		          </ConnectionsToLocalNetwork>
 		        </Gateway>
-5. An diesem Punkt verfügen Sie über ein VNet ohne Gateways. Sie können mit **Schritt 3** im Artikel [Erstellen eines neuen VNet mit gleichzeitig bestehenden Verbindungen](#create-a-new-vnet-with-coexisting-connections) fortfahren, um neue Gateways zu erstellen und Ihre Verbindungen zu vervollständigen.
+5. An diesem Punkt verfügen Sie über ein VNet ohne Gateways. Sie können mit **Schritt 3** im Artikel [Erstellen eines neuen virtuellen Netzwerks mit Verbindungen](#create-a-new-virtual-network-and-connections-that-coexist) fortfahren, um neue Gateways zu erstellen und Ihre Verbindungen zu vervollständigen.
 
 
 
@@ -204,4 +214,4 @@ Erfahren Sie mehr zu ExpressRoute. Siehe [ExpressRoute-Übersicht](expressroute-
 
 Erfahren Sie mehr zu VPN-Gateways. Siehe [Zu VPN-Gateways](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

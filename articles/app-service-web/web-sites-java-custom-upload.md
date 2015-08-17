@@ -30,7 +30,7 @@ Im Folgenden werden die Einstellungen beschrieben, die für benutzerdefinierte J
 - Bis auf den einzelnen HTTP-Listener sollten alle Überwachungsports deaktiviert sein. In Tomcat umfassen diese die Shutdown-, HTTPS- und AJP-Ports.
 - Der Container darf nur für IPv4-Verkehr konfiguriert sein.
 - Der Befehl für den **Start** der Anwendung muss in der Konfiguration festgelegt sein.
-- Anwendungen, die Verzeichnisse mit Schreibberechtigungen benötigen, müssen im Inhaltsverzeichnis der Azure-Web-App abgelegt werden, d.h. unter **D:\home**. Die Umgebungsvariable `HOME` verweist auf "D:\home".  
+- Anwendungen, die Verzeichnisse mit Schreibberechtigungen benötigen, müssen im Inhaltsverzeichnis der Azure-Web-App abgelegt werden, d.h. unter **D:\\home**. Die Umgebungsvariable `HOME` verweist auf "D:\\home".  
 
 Sie können Umgebungsvariablen wie in der web.config-Datei erforderlich festlegen.
 
@@ -46,7 +46,7 @@ Beispiele (mit **processPath**):
     arguments="start"
     
     processPath="%JAVA_HOME\bin\java.exe"
-    arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP_PLATFORM_PORT% -Djetty.base=";%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115"; -jar ";%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar";"
+    arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP\_PLATFORM\_PORT% -Djetty.base=&quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115&quot; -jar &quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar&quot;"
 
 
 **processPath** - Pfad zum ausführbaren Programm oder Skript, das einen Prozess startet, der HTTP-Anfragen abhört.
@@ -71,7 +71,7 @@ Beispiele:
                                                                                       
 **stdoutLogEnabled** (Default="true".) Falls dies zutrifft, werden **stdout** und **stderr**, die für den Prozess in der Einstellung **processPath** festgelegt sind, an die Datei weitergeleitet, die unter **stdoutLogFile** angegeben ist (siehe Abschnitt **stdoutLogFile**).
                                     
-**stdoutLogFile** (Default="d:\home\LogFiles\httpPlatformStdout.log".) Absoluter Dateipfad, für den **stdout** und **stderr** von dem unter **processPath** angegebenen Prozess protokolliert werden.
+**stdoutLogFile** (Default="d:\\home\\LogFiles\\httpPlatformStdout.log".) Absoluter Dateipfad, für den **stdout** und **stderr** von dem unter **processPath** angegebenen Prozess protokolliert werden.
                                     
 > [AZURE.NOTE]`%HTTP_PLATFORM_PORT%` ist ein spezieller Platzhalter, der entweder als Teil von **arguments** oder als Teil der Liste **httpPlatform** **environmentVariables** angegeben wird. Dieser wird von **HttpPlatformHandler** durch einen intern generierten Port ersetzt, damit der von **processPath** festgelegte Prozess diesen Port abhören kann.
 
@@ -125,7 +125,7 @@ Wie bei Tomcat, können Kunden auch für Jetty ihre eigenen Instanzen hochladen.
 	      <add name="httppPlatformHandler" path="*" verb="*" modules="httpPlatformHandler" resourceType="Unspecified" />
 	    </handlers>
 	    <httpPlatform processPath="%JAVA_HOME%\bin\java.exe" 
-	         arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP_PLATFORM_PORT% -Djetty.base=";%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115"; -jar ";%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar";"
+	         arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP_PLATFORM_PORT% -Djetty.base=&quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115&quot; -jar &quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar&quot;"
 	        startupTimeLimit="20"
 		  startupRetryCount="10"
 		  stdoutLogEnabled="true">
@@ -139,9 +139,9 @@ Die Jetty-Konfiguration muss in der start.ini-Datei geändert werden, um `java.n
 
 In unserem Test verwendeten wir die Hudson 3.1.2-WAR-Datei und die Standardinstanz Tomcat 7.0.50, jedoch ohne die UI für die Einrichtung zu verwenden. Da es sich bei Hudson um ein softwarebasiertes Tool handelt, empfehlen wir die Installation auf dedizierten Instanzen, auf denen das Kennzeichen **AlwaysOn** für die Web-App festgelegt werden kann.
 
-1. Erstellen Sie im Stammverzeichnis Ihrer Web-App, also **d:\home\site\wwwroot**, ein Verzeichnis namens **webapps** (falls nicht bereits vorhanden), und speichern Sie die Hudson.war-Datei unter **d:\home\site\wwwroot\webapps**.
-2. Laden Sie Apache Maven 3.0.5 herunter (mit Hudson kompatibel), und speichern Sie es unter **d:\home\site\wwwroot**.
-3. Erstellen Sie unter **d:\home\site\wwwroot** eine web.conifg-Datei, und kopieren Sie die folgenden Inhalte hinein:
+1. Erstellen Sie im Stammverzeichnis Ihrer Web-App, also **d:\\home\\site\\wwwroot**, ein Verzeichnis namens **webapps** (falls nicht bereits vorhanden), und speichern Sie die Hudson.war-Datei unter **d:\\home\\site\\wwwroot\\webapps**.
+2. Laden Sie Apache Maven 3.0.5 herunter (mit Hudson kompatibel), und speichern Sie es unter **d:\\home\\site\\wwwroot**.
+3. Erstellen Sie unter **d:\\home\\site\\wwwroot** eine web.conifg-Datei, und kopieren Sie die folgenden Inhalte hinein:
 	
 		<?xml version="1.0" encoding="UTF-8"?>
 		<configuration>
@@ -194,7 +194,7 @@ Bei der Verwendung von Liferay 6.1.2 Community Edition GA3 in Kombination mit To
 - Legen Sie für den HTTP-Konnektor `<Connector port="${port.http}" protocol="HTTP/1.1" connectionTimeout="600000" address="127.0.0.1" URIEncoding="UTF-8" />` fest.
 - Kommentieren Sie den AJP-Konnektor.
 
-Erstellen Sie im Ordner **liferay\tomcat-7.0.40\webapps\ROOT\WEB-INF\classes** eine Datei namens **portal-ext.properties**. Die Datei muss die folgende Zeile enthalten:
+Erstellen Sie im Ordner **liferay\\tomcat-7.0.40\\webapps\\ROOT\\WEB-INF\\classes** eine Datei namens **portal-ext.properties**. Die Datei muss die folgende Zeile enthalten:
 
     liferay.home=%HOME%/site/wwwroot/liferay
 
@@ -224,7 +224,7 @@ Erstellen Sie auf der Verzeichnisebene des Ordners "tomcat-7.0.40" eine Datei na
 
 Im Block **httpPlatform** ist **requestTimeout** auf "00:10:00" festgelegt. Dies kann auch reduziert werden, allerdings werden Ihnen dann möglicherweise einige Zeitüberschreitungsfehler beim Bootstrapping von Liferay angezeigt. Wenn dieser Wert geändert wird, sollte auch **connectionTimeout** in der server.xml-Datei von Tomcat geändert werden.
 
-Es sollte darauf hingewiesen werden, dass die JRE_HOME-Umgebungsvariable in der oben genannten web.config-Datei festgelegt wurde, um auf das 64-Bit-JDK zu verweisen. Der Standardwert ist 32-Bit, aber da Liferay möglicherweise mehr Speicher benötigt, wird empfohlen, das 64-Bit-JDK zu verwenden.
+Es sollte darauf hingewiesen werden, dass die JRE\_HOME-Umgebungsvariable in der oben genannten web.config-Datei festgelegt wurde, um auf das 64-Bit-JDK zu verweisen. Der Standardwert ist 32-Bit, aber da Liferay möglicherweise mehr Speicher benötigt, wird empfohlen, das 64-Bit-JDK zu verwenden.
 
 Sobald Sie diese Änderungen vorgenommen haben, starten Sie Ihre Web-App neu mit Liferay, und öffnen Sie dann http://yourwebapp. Das Liferay-Portal ist über das Web-App-Stammverzeichnis verfügbar.
 
@@ -236,4 +236,4 @@ Weitere Informationen über Liferay finden Sie unter [http://www.liferay.com](ht
  
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

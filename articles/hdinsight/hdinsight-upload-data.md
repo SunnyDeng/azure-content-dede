@@ -95,9 +95,9 @@ Die Azure-Befehlszeilenschnittstelle ist ein plattformübergreifendes Tool zur V
 
 > [AZURE.NOTE]Wenn Sie immer mit demselben Speicherkonto arbeiten, können die folgenden Umgebungsvariablen festlegen, anstatt das Konto und den Schlüssel für jeden Befehl anzugeben:
 >
-> * **AZURE_STORAGE_ACCOUNT**: der Name des Speicherkontos
+> * **AZURE\_STORAGE\_ACCOUNT**: der Name des Speicherkontos
 >
-> * **AZURE_STORAGE_ACCESS_KEY**: der Speicherkontoschlüssel
+> * **AZURE\_STORAGE\_ACCESS\_KEY**: der Speicherkontoschlüssel
 
 ###<a id="powershell"></a>Azure PowerShell
 
@@ -279,4 +279,4 @@ Jetzt wissen Sie, wie Sie Daten in HDInsight importieren. Lesen Sie in den folge
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -22,22 +22,22 @@
 
 ##Übersicht
 
-In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services Pushbenachrichtigungen an eine Xamarin.iOS 8-App senden. In diesem Lernprogramm fügen Sie mithilfe des Apple Push Notification Services \(APNS\) Pushbenachrichtigungen zum Projekt [Erste Schritte mit Mobile Services] hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
+In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services Pushbenachrichtigungen an eine Xamarin.iOS 8-App senden. In diesem Lernprogramm fügen Sie mithilfe des Apple Push Notification Services (APNS) Pushbenachrichtigungen zum Projekt [Erste Schritte mit Mobile Services] hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
-+ Ein iOS 8-Gerät \(Sie können keine Pushbenachrichtigungen in iOS-Simulator testen\)
++ Ein iOS 8-Gerät (Sie können keine Pushbenachrichtigungen in iOS-Simulator testen)
 + iOS-Entwicklerprogramm-Mitgliedschaft
 + [Xamarin.iOS Studio]
 + [Azure Mobile Services-Komponente]
 
->[AZURE.IMPORTANT]Pushbenachrichtigungen müssen aufgrund von APNS-Anforderungen auf einem iOS-fähigen Gerät \(iPhone oder iPad\) anstatt im Emulator bereitgestellt und getestet werden.
+>[AZURE.IMPORTANT]Pushbenachrichtigungen müssen aufgrund von APNS-Anforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Emulator bereitgestellt und getestet werden.
 
 APNS verwendet Zertifikate zur Authentifizierung Ihres mobilen Diensts. Folgen Sie diesen Anweisungen zum Erstellen der erforderlichen Zertifikate und zum Hochladen auf Ihren mobilen Dienst. Die offizielle Dokumentation der APNS-Merkmale finden Sie unter [Apple Push Notification Service].
 
 ## <a name="certificates"></a>Erstellen der Zertifikatsignieranforderungsdatei
 
-Zunächst müssen Sie die Zertifikatsignieranforderungsdatei \(CSR-Datei\) erstellen, die von Apple zur Generierung eines signierten Zertifikats verwendet wird.
+Zunächst müssen Sie die Zertifikatsignieranforderungsdatei (CSR-Datei) erstellen, die von Apple zur Generierung eines signierten Zertifikats verwendet wird.
 
 1. Führen Sie unter den Hilfsprogrammen die **Schlüsselbundverwaltung** aus.
 
@@ -49,7 +49,7 @@ Zunächst müssen Sie die Zertifikatsignieranforderungsdatei \(CSR-Datei\) erste
 
     ![][6]
 
-4. Geben Sie einen Namen für die Zertifikatsignieranforderungsdatei \(CSR-Datei\) in **Sichern unter** ein, wählen Sie den Speicherort in **Ort**, und klicken Sie dann auf **Sichern**.
+4. Geben Sie einen Namen für die Zertifikatsignieranforderungsdatei (CSR-Datei) in **Sichern unter** ein, wählen Sie den Speicherort in **Ort**, und klicken Sie dann auf **Sichern**.
 
     ![][7]
 
@@ -187,7 +187,7 @@ Ihr mobiler Dienst ist nun für APNS konfiguriert.
 
     ![][120]
 
-    Dadurch wird sichergestellt, dass das Xamarin-Projekt das neue Profil für die Codesignierung verwendet. Die offizielle Dokumentation zur Xamarin-Gerätebereitstellung finden Sie unter [Xamarin Device Provisioning](Xamarin – Gerätebereitstellung, in englischer Sprache\).
+    Dadurch wird sichergestellt, dass das Xamarin-Projekt das neue Profil für die Codesignierung verwendet. Die offizielle Dokumentation zur Xamarin-Gerätebereitstellung finden Sie unter [Xamarin Device Provisioning] (Xamarin – Gerätebereitstellung, in englischer Sprache).
 
 ## <a name="add-push"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
@@ -303,9 +303,9 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
             }, 2500);
         }
 
-    Auf diese Weise wird ein neues Einfügeskript registriert, das über das [apns-Objekt] eine Pushbenachrichtigung \(den eingefügten Text\) zum in der Einfügeanforderung angegebenen Gerät sendet.
+    Auf diese Weise wird ein neues Einfügeskript registriert, das über das [apns-Objekt] eine Pushbenachrichtigung (den eingefügten Text) zum in der Einfügeanforderung angegebenen Gerät sendet.
 
-   >[AZURE.NOTE] Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
+   >[AZURE.NOTE]Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Toastbenachrichtigung zu geben.
 
 ## <a name="test"></a>Testen von Pushbenachrichtigungen in der App
 
@@ -313,9 +313,9 @@ Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
     ![][23]
 
-   >[AZURE.NOTE] Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
+   >[AZURE.NOTE]Sie müssen Pushbenachrichtigungen von Ihrer App ausdrücklich akzeptieren. Diese Anforderung tritt nur beim ersten Lauf der App auf.
 
-2. Geben Sie in der App einen aussagekräftigen Text ein, beispielsweise _Neue Mobile Services-Aufgabe_, und klicken Sie dann auf das Plussymbol (**+**).
+2. In der App geben Sie eine Beschreibung ein, wie zum Beispiel _Neue Mobile Services-Aufgabe_, und klicken Sie dann auf das Plussymbol (**+**).
 
     ![][24]
 
@@ -399,4 +399,4 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 [Xamarin.iOS]: http://xamarin.com/download
  
 
-<!-----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

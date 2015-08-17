@@ -114,4 +114,4 @@ Verwenden Sie die folgende Vorlage:
 - [Azure Resource Manager Template Functions](./resource-group-template-functions.md) (Vorlagenfunktionen im Azure-Ressourcen-Manager)
 - [Deploy an application with Azure Resource Manager Template](azure-portal/resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

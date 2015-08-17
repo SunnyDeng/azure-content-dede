@@ -57,7 +57,7 @@ Erstellen Sie ein Segment aller Endbenutzer, die Ihre App in der letzten Woche m
  
  ![segments5][39]
 
-1. Versehen Sie Ihr Segment mit einem Namen, um es schnell in der Liste "Segmente" zu finden.
+1. Versehen Sie Ihr Segment mit einem Namen, um es schnell in der Liste „Segmente“ zu finden.
 2. Klicken Sie auf die Schaltfläche "Erstellen".
  
  ![segments6][40]
@@ -188,4 +188,4 @@ Wenn Sie Ihr Kriterium eingerichtet haben, wird es im Trichter "Segment" angezei
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

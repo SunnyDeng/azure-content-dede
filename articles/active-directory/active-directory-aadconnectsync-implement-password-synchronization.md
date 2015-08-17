@@ -25,7 +25,7 @@ Das Ziel dieses Themas ist, Ihnen die Informationen bereitzustellen, die Sie ben
 
 ## Was ist die Kennwortsynchronisierung?
 
-Die Kennwortsynchronisierung ist ein Feature der Azure Active Directory Connect-Synchronisierungsdienste \(Azure AD Connect-Synchronisierung\), das Benutzerkennwörter aus Ihrem lokalen Active Directory mit Azure Active Directory \(Azure AD\) synchronisiert. Dieses Feature ermöglicht Ihren Benutzern, sich bei ihren Azure Active Directory-Diensten \(wie Office 365, Microsoft Intune, CRM Online usw.\) mit dem gleichen Kennwort anzumelden, mit dem sie sich bei Ihrem lokalen Netzwerk anmelden. Es ist unbedingt zu beachten, dass dieses Feature keine Lösung für einmaliges Anmelden \(Single Sign-On, SSO\) bereitstellt, da der Kennwortsynchronisierungsvorgang weder Tokenfreigabe noch Tokenaustausch umfasst.
+Die Kennwortsynchronisierung ist ein Feature der Azure Active Directory Connect-Synchronisierungsdienste (Azure AD Connect-Synchronisierung), das Benutzerkennwörter aus Ihrem lokalen Active Directory mit Azure Active Directory (Azure AD) synchronisiert. Dieses Feature ermöglicht Ihren Benutzern, sich bei ihren Azure Active Directory-Diensten (wie Office 365, Microsoft Intune, CRM Online usw.) mit dem gleichen Kennwort anzumelden, mit dem sie sich bei Ihrem lokalen Netzwerk anmelden. Es ist unbedingt zu beachten, dass dieses Feature keine Lösung für einmaliges Anmelden (Single Sign-On, SSO) bereitstellt, da der Kennwortsynchronisierungsvorgang weder Tokenfreigabe noch Tokenaustausch umfasst.
 
 > [AZURE.NOTE]Weitere Informationen zu Active Directory-Domänendiensten, die für die FIPS- und Kennwortsynchronisierung konfiguriert sind, siehe "Fehler bei der Kennwortsynchronisierung in FIPS-kompatiblen Systemen".
  
@@ -67,7 +67,7 @@ Wenn Sie die Kennwortsynchronisierung aktivieren, überschreiben die im lokalen 
  
 ### Kennwortablaufrichtlinie
 
-Wenn sich ein Benutzer im Bereich der Kennwortsynchronisierung befindet, wird das Cloudkontokennwort auf \*Läuft nie ab\* festgelegt. Dies bedeutet, dass es möglich ist, dass das Kennwort eines Benutzers in der lokalen Umgebung abläuft, aber er sich weiterhin mit diesem abgelaufenen Kennwort bei Clouddiensten anmelden kann.
+Wenn sich ein Benutzer im Bereich der Kennwortsynchronisierung befindet, wird das Cloudkontokennwort auf "*Läuft nie ab*" festgelegt. Dies bedeutet, dass es möglich ist, dass das Kennwort eines Benutzers in der lokalen Umgebung abläuft, aber er sich weiterhin mit diesem abgelaufenen Kennwort bei Clouddiensten anmelden kann.
 
 Das Cloudkennwort wird aktualisiert, sobald der Benutzer das nächste Mal das Kennwort in der lokalen Umgebung ändert.
 
@@ -90,7 +90,7 @@ Ihr Azure Active Directory-Mandant muss für die Verzeichnissynchronisierung akt
 
 Sie aktivieren die Kennwortsynchronisierung bei Ausführung des Azure AD Connect-Konfigurations-Assistenten.
 
-Wählen Sie auf der Dialogfeldseite **Optionale Features** \*\*Kennwortsynchronisierung\*\*.
+Wählen Sie auf der Dialogfeldseite **Optionale Features** "**Kennwortsynchronisierung**".
  
 ![Optionale Features][1]
 
@@ -156,4 +156,4 @@ Nach Ausführung des Konfigurations-Assistenten synchronisiert Ihr Mandant keine
 [4]: ./media/active-directory-aadsync-implement-password-synchronization/IC662506.png
 [5]: ./media/active-directory-aadsync-implement-password-synchronization/IC662507.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

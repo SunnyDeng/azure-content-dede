@@ -24,7 +24,7 @@ Ein typisches Beispiel ist das Einrichten des [Reader][reader]-Moduls, damit die
 
 Sie können Web Service-Parameter definieren und einem oder mehreren Modulparametern zuordnen, und Sie können angeben, ob diese erforderlich oder optional sind. Der Benutzer des Webdiensts kann dann Werte für diese Parameter für den Zugriff auf den Dienst angeben, und die Aktionen des Moduls werden zur Laufzeit angepasst.
 
-[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
 
 
 ##Festlegen und Verwenden von Webdienstparametern
@@ -91,4 +91,4 @@ Weitere Informationen zum Zugreifen auf einen Machine Learning-Webdienst finden 
 [writer]: https://msdn.microsoft.com/library/azure/7a391181-b6a7-4ad4-b82d-e419c0d6522c/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

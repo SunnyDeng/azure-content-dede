@@ -97,7 +97,7 @@ Bei einem SAML-Token ist der Vorname in einen Anspruch im SAML-Attributelement "
     <Attribute Name=” http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname”>
     <AttributeValue>Frank<AttributeValue>
 
-Bei einem JWT-Token ist der Vorname in einem "given_name"-Anspruch enthalten.
+Bei einem JWT-Token ist der Vorname in einem "given\_name"-Anspruch enthalten.
 
     "given_name": "Frank"
 
@@ -156,7 +156,7 @@ Der Anspruch "Nachname" gibt den Nachnamen des Benutzers entsprechend der Defini
     <Attribute Name=” http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname”>
     <AttributeValue>Miller<AttributeValue>
 
-Bei einem JWT-Token ist der Nachname in einem "family_name"-Anspruch enthalten.
+Bei einem JWT-Token ist der Nachname in einem "family\_name"-Anspruch enthalten.
 
     "family_name": "Miller"
 
@@ -167,7 +167,7 @@ Der Anspruch "Name" gibt einen von Menschen lesbaren Wert an, der den Antragstel
     <Attribute Name=”http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name”>
     <AttributeValue>frankm@contoso.com<AttributeValue>
 
-Bei einem JWT-Token ist der Name im "unique_name"-Anspruch enthalten.
+Bei einem JWT-Token ist der Name im "unique\_name"-Anspruch enthalten.
 
     "unique_name": "frankm@contoso.com"
 
@@ -195,7 +195,7 @@ Bei einem JWT-Token ist der Rollenanspruch im "roles"-Anspruch enthalten.
 
 ### Umfang
 
-Der Umfang des Tokens gibt die Identitätswechselberechtigungen an, die der Clientanwendung erteilt wurden. Die Standardberechtigung ist "user_impersonation". Der Besitzer der gesicherten Ressource kann zusätzliche Werte in Azure AD registrieren.
+Der Umfang des Tokens gibt die Identitätswechselberechtigungen an, die der Clientanwendung erteilt wurden. Die Standardberechtigung ist "user\_impersonation". Der Besitzer der gesicherten Ressource kann zusätzliche Werte in Azure AD registrieren.
 
 Bei einem JWT-Token wird der Umfang des Tokens in einem "scp"-Anspruch angegeben.
 
@@ -413,4 +413,4 @@ Dies ist ein Beispiel eines typischen JWT-Tokens (JSON webtoken), das bei einem 
 [Azure Active Directory-Authentifizierungsprotokolle](https://msdn.microsoft.com/library/azure/dn151124.aspx)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

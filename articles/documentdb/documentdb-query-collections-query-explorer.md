@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Erstellen, Bearbeiten und Ausführen von SQL-Abfragen in einer DocumentDB-Sammlung mithilfe des Abfrage-Explorers | Azure" 
+	pageTitle="Erstellen, Bearbeiten und Ausführen von SQL-Abfragen in einer DocumentDB-Sammlung mithilfe des Abfrage-Explorers | Microsoft Azure" 
 	description="Erfahren Sie mehr über den DocumentDB-Abfrage-Explorer, ein Azure-Vorschauportaltool zum Erstellen, Bearbeiten und Ausführen von SQL-Abfragen in einer DocumentDB-Sammlung." 
 	services="documentdb" 
 	authors="stephbaron" 
-	manager="johnmac" 
+	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter=""/>
+
 
 <tags 
 	ms.service="documentdb" 
@@ -15,6 +16,7 @@
 	ms.topic="get-started-article"
 	ms.date="06/10/2015" 
 	ms.author="stbaro"/>
+
 
 # Erstellen, Bearbeiten und Ausführen von SQL-Abfragen in einer DocumentDB-Sammlung mithilfe des Abfrage-Explorers #
 
@@ -48,7 +50,7 @@ Der Abfrage-Explorer kann über jedes DocumentDB-Blatt "Konto", "Datenbank" und 
 
 Mit dem Abfrage-Explorer können Sie problemlos Abfragen für eine DocumentDB-Sammlung erstellen, bearbeiten und ausführen. Darüber hinaus bietet er grundlegende Funktionen zum Hervorheben von Stichwörtern und Werten, um die Abfragebearbeitung zu verbessern.
 
-- Beim ersten Öffnen des Abfrage-Explorers wird die Standardabfrage "SELECT * FROM c" bereitgestellt. Sie können die Standardabfrage akzeptieren oder eine eigene Abfrage erstellen. Klicken Sie dann auf die Schaltfläche **Abfrage ausführen**, um die Ergebnisse anzuzeigen. Der Abfrage-Explorer unterstützt die SQL-Abfragesprache von DocumentDB, wie in [Abfragen von DocumentDB](documentdb-sql-query.md) beschrieben.
+- Beim ersten Öffnen des Abfrage-Explorers wird die Standardabfrage "SELECT \* FROM c" bereitgestellt. Sie können die Standardabfrage akzeptieren oder eine eigene Abfrage erstellen. Klicken Sie dann auf die Schaltfläche **Abfrage ausführen**, um die Ergebnisse anzuzeigen. Der Abfrage-Explorer unterstützt die SQL-Abfragesprache von DocumentDB, wie in [Abfragen von DocumentDB](documentdb-sql-query.md) beschrieben.
 
 	![Screenshot des Abfrage-Explorers – Abfrageergebnisse](./media/documentdb-query-collections-query-explorer/queryresults1.png)
 
@@ -78,4 +80,4 @@ Mit dem Abfrage-Explorer können Sie problemlos Abfragen für eine DocumentDB-Sa
 - Weitere Informationen zur DocumentDB-SQL-Grammatik, die im Abfrage-Explorer unterstützt wird, finden Sie [hier](documentdb-sql-query.md).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

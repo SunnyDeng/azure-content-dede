@@ -116,4 +116,4 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

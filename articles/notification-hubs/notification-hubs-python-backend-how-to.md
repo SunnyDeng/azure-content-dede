@@ -17,10 +17,12 @@
 	ms.author="yuaxu"/>
 
 # Verwenden von Notofication Hubs mit Python
-<div class="dev-center-tutorial-selector sublanding"> 
-    	<a href="/documentation/articles/notification-hubs-java-backend-how-to/" title="Java">Java</a><a href="/documentation/articles/notification-hubs-php-backend-how-to/" title="PHP">PHP</a><a href="/documentation/articles/notification-hubs-python-backend-how-to/" title="Python" class="current">Python</a><a href="/documentation/articles/notification-hubs-nodejs-how-to-use-notification-hubs/" title="Node.js">Node.js</a>
-</div>
-
+> [AZURE.SELECTOR] 
+- [Java](notification-hubs-php-backend-how-to.md)
+- [PHP](notification-hubs-python-backend-how-to.md)
+- [Python](notification-hubs-nodejs-how-to-use-notification-hubs.md)
+- [Node.js](notification-hubs-nodejs-how-to-use-notification-hubs.md)
+		
 Sie können von einem Java-/PHP-/Python-/Ruby-Back-End aus über die REST-Schnittstelle für Notification Hubs, die im MSDN-Thema [REST-APIs für Benachrichtigungshubs](http://msdn.microsoft.com/library/dn223264.aspx) beschrieben ist, auf alle Notification Hubs-Funktionen zugreifen.
 
 > [AZURE.NOTE]Dies ist eine beispielhafte Referenzimplementierung für die Implementierung der Benachrichtigungsübermittlung in Python und nicht der offiziell unterstützte Notification Hub Python SDK.
@@ -222,7 +224,7 @@ Initialisieren Sie Ihren Notification Hubs-Client (ersetzen Sie die Verbindungsz
 
 	hub = NotificationHub("myConnectionString", "myNotificationHubName")
 
-Fügen Sie dann den Sendecode je nach mobiler Zielplattform hinzu. Mit diesem Beispiel werden außerdem Methoden auf höherer Ebene hinzugefügt, um das Senden von Benachrichtigungen auf Plattformbasis zu aktivieren, z. B. "send_windows_notification" (für Windows), send_apple_notification (für Apple) usw.
+Fügen Sie dann den Sendecode je nach mobiler Zielplattform hinzu. Mit diesem Beispiel werden außerdem Methoden auf höherer Ebene hinzugefügt, um das Senden von Benachrichtigungen auf Plattformbasis zu aktivieren, z. B. "send\_windows\_notification" (für Windows), send\_apple\_notification (für Apple) usw.
 
 ### Windows Store und Windows Phone 8.1 (nicht-Silverlight)
 
@@ -352,4 +354,4 @@ In diesem Thema haben wir gezeigt, wie Sie einen einfachen Python-REST-Client f�
 [5]: ./media/notification-hubs-python-backend-how-to/TemplatedNotification.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -12,7 +12,7 @@
 	ms.workload="storage" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
-	ms.topic="hero-article" 
+	ms.topic="article" 
 	ms.date="05/28/2015" 
 	ms.author="tamram;selcint"/>
 
@@ -45,9 +45,9 @@ Um dies auszuprobieren, erstellen wir nun eine einfache Azure Storage-Anwendung 
 1. Starten Sie Visual Studio.
 2. Klicken Sie im Menü **Datei** auf **Neues Projekt**.
 3. Klicken Sie im Dialogfeld **Neues Projekt** auf **Installiert** > **Vorlagen** > **Visual C#** > **Cloud** > **Schnellstarts** > **Data Services**.
-	- 3.a. Wählen Sie eine der folgenden Vorlagen aus: Azure-Blobspeicher, Azure-Tabellenspeicher oder Azure-Warteschlangenspeicher. 
-	- 3.b. Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5** ausgewählt ist.	
-	- 3.c. Geben Sie einen Namen für das Projekt an, und erstellen Sie die neue Visual Studio-Projektmappe, wie hier zu sehen:
+	- 3\.a. Wählen Sie eine der folgenden Vorlagen aus: Azure-Blobspeicher, Azure-Tabellenspeicher oder Azure-Warteschlangenspeicher. 
+	- 3\.b. Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5** ausgewählt ist.	
+	- 3\.c. Geben Sie einen Namen für das Projekt an, und erstellen Sie die neue Visual Studio-Projektmappe, wie hier zu sehen:
 	
 	![Azure-Schnellstarts][Image1]
 
@@ -71,9 +71,9 @@ Sobald das Konto eingerichtet ist, erstellen wir eine einfache Azure Storage-Anw
 1. Starten Sie Visual Studio.
 2. Klicken Sie im Menü **Datei** auf **Neues Projekt**.
 3. Klicken Sie im Dialogfeld **Neues Projekt** auf **Installiert** > **Vorlagen** > **Visual C#** > **Cloud** > **Schnellstarts** > **Data Services**.
-	- 3.a. Wählen Sie eine der folgenden Vorlagen aus: Azure-Blobspeicher, Azure-Tabellenspeicher oder Azure-Warteschlangenspeicher.
-	- 3.b. Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5** ausgewählt ist.
-	- 3.c. Geben Sie einen Namen für das Projekt an, und erstellen Sie die neue Visual Studio-Projektmappe. 
+	- 3\.a. Wählen Sie eine der folgenden Vorlagen aus: Azure-Blobspeicher, Azure-Tabellenspeicher oder Azure-Warteschlangenspeicher.
+	- 3\.b. Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5** ausgewählt ist.
+	- 3\.c. Geben Sie einen Namen für das Projekt an, und erstellen Sie die neue Visual Studio-Projektmappe. 
 
 Vor dem Ausführen der Anwendung sollten Sie den Quellcode überprüfen. Um den Code zu anzuzeigen, wählen Sie in Visual Studio im Menü **Ansicht** die Option **Projektmappen-Explorer** aus. Doppelklicken Sie auf die Datei "Program.cs".
 
@@ -107,4 +107,4 @@ Weitere Informationen zu Azure Storage finden Sie in den folgenden Ressourcen:
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

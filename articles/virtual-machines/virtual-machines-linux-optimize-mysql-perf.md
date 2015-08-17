@@ -210,13 +210,13 @@ Um MySQL-Server-Einstellungen zu optimieren, können Sie die Datei "my.cnf" aktu
 
 Die folgenden Konfigurationselemente sind die Hauptfaktoren, die die MySQL-Leistung beeinflussen:
 
--	**innodb_buffer_pool_size**: Der Pufferpool enthält gepufferte Daten und den Index. Dies ist normalerweise auf 70 % des physischen Arbeitsspeichers festgelegt.
--	**innodb_log_file_size**: Dies ist die Größe des Redo-Protokolls. Sie verwenden die redo-Protokolle, um sicherzustellen, dass die Schreibvorgänge nach einem Systemabsturz schnell, zuverlässig und wiederherstellbar sind. Dies ist auf 512 MB festgelegt. Damit verfügen Sie über ausreichend Speicherplatz für die Protokollierung von Schreibvorgängen.
--	**max_connections**: Manchmal schließen Anwendungen Verbindungen nicht ordnungsgemäß. Mit einem größeren Wert erhält der Server mehr Zeit für die Wiederverwendung von Leerlaufverbindungen. Es sind maximal 10.000 Verbindungen möglich, aber das empfohlene Maximum beträgt 5000 Verbindungen.
--	**Innodb_file_per_table**: Mit dieser Einstellung wird die Fähigkeit von InnoDB zur Speicherung von Tabellen in separaten Dateien aktiviert bzw. deaktiviert. Durch Aktivieren der Option wird sichergestellt, dass mehrere erweiterte Verwaltungsvorgänge effizient angewendet werden können. Vom Leistungsstandpunkt aus betrachtet kann die Übermittlung von Tabellenspeicherplatz hierdurch beschleunigt und die Leistung beim Umgang mit Verschwendung optimiert werden. Daher wird empfohlen, diese Einstellung zu aktivieren.</br> Ab MySQL 5.6 ist diese Option standardmäßig aktiviert. Daher ist keine Aktion erforderlich. Bei den früheren Versionen (vor 5.6) ist die Option standardmäßig deaktiviert. Daher müssen Sie diese aktivieren. Die Option sollte vor dem Laden neuer Daten angewendet werden, weil sie sich nur auf neu erstellte Tabellen auswirkt.
--	**Innodb_flush_log_at_trx_commit**:Der Standardwert ist 1, wobei der Gültigkeitsbereich auf 0~2 gesetzt ist. Der Standardwert ist die am besten geeignete Option für eine eigenständige MySQL-DB. Die Einstellung 2 ermöglicht die höchste Datenintegrität und eignet sich für den Master im MySQL-Cluster. Die Einstellung 0 lässt Datenverluste zu. Dies kann die Zuverlässigkeit beeinträchtigen. In einigen Fällen wird die Leistung verbessert. Daher eignet sich die Einstellung für Slaves im MySQL-Cluster.
--	**Innodb_log_buffer_size**: Der Protokollpuffer lässt zu, dass Transaktionen ausgeführt werden, ohne dass das Protokoll vor dem Ausführen der Transaktionen auf den Datenträger übertragen werden muss. Wenn jedoch ein großes binäres Objekt oder Textfeld vorhanden ist, wird der Zwischenspeicher sehr schnell aufgebraucht. Dadurch wird eine häufige Datenträger-E/A ausgelöst. Es ist besser, die Puffergröße zu erhöhen, wenn die Zustandsvariable "Innodb_log_waits" nicht 0 ist.
--	**query_cache_size**: Die beste Möglichkeit ist, diese Einstellung von Anfang an zu deaktivieren. Legen Sie "query_cache_size" auf 0 fest (in MySQL 5.6 ist dies nun die Standardeinstellung), und verwenden Sie andere Methoden zur Beschleunigung von Abfragen.  
+-	**innodb\_buffer\_pool\_size**: Der Pufferpool enthält gepufferte Daten und den Index. Dies ist normalerweise auf 70 % des physischen Arbeitsspeichers festgelegt.
+-	**innodb\_log\_file\_size**: Dies ist die Größe des Redo-Protokolls. Sie verwenden die redo-Protokolle, um sicherzustellen, dass die Schreibvorgänge nach einem Systemabsturz schnell, zuverlässig und wiederherstellbar sind. Dies ist auf 512 MB festgelegt. Damit verfügen Sie über ausreichend Speicherplatz für die Protokollierung von Schreibvorgängen.
+-	**max\_connections**: Manchmal schließen Anwendungen Verbindungen nicht ordnungsgemäß. Mit einem größeren Wert erhält der Server mehr Zeit für die Wiederverwendung von Leerlaufverbindungen. Es sind maximal 10.000 Verbindungen möglich, aber das empfohlene Maximum beträgt 5000 Verbindungen.
+-	**Innodb\_file\_per\_table**: Mit dieser Einstellung wird die Fähigkeit von InnoDB zur Speicherung von Tabellen in separaten Dateien aktiviert bzw. deaktiviert. Durch Aktivieren der Option wird sichergestellt, dass mehrere erweiterte Verwaltungsvorgänge effizient angewendet werden können. Vom Leistungsstandpunkt aus betrachtet kann die Übermittlung von Tabellenspeicherplatz hierdurch beschleunigt und die Leistung beim Umgang mit Verschwendung optimiert werden. Daher wird empfohlen, diese Einstellung zu aktivieren.</br> Ab MySQL 5.6 ist diese Option standardmäßig aktiviert. Daher ist keine Aktion erforderlich. Bei den früheren Versionen (vor 5.6) ist die Option standardmäßig deaktiviert. Daher müssen Sie diese aktivieren. Die Option sollte vor dem Laden neuer Daten angewendet werden, weil sie sich nur auf neu erstellte Tabellen auswirkt.
+-	**Innodb\_flush\_log\_at\_trx\_commit**:Der Standardwert ist 1, wobei der Gültigkeitsbereich auf 0\~2 gesetzt ist. Der Standardwert ist die am besten geeignete Option für eine eigenständige MySQL-DB. Die Einstellung 2 ermöglicht die höchste Datenintegrität und eignet sich für den Master im MySQL-Cluster. Die Einstellung 0 lässt Datenverluste zu. Dies kann die Zuverlässigkeit beeinträchtigen. In einigen Fällen wird die Leistung verbessert. Daher eignet sich die Einstellung für Slaves im MySQL-Cluster.
+-	**Innodb\_log\_buffer\_size**: Der Protokollpuffer lässt zu, dass Transaktionen ausgeführt werden, ohne dass das Protokoll vor dem Ausführen der Transaktionen auf den Datenträger übertragen werden muss. Wenn jedoch ein großes binäres Objekt oder Textfeld vorhanden ist, wird der Zwischenspeicher sehr schnell aufgebraucht. Dadurch wird eine häufige Datenträger-E/A ausgelöst. Es ist besser, die Puffergröße zu erhöhen, wenn die Zustandsvariable "Innodb\_log\_waits" nicht 0 ist.
+-	**query\_cache\_size**: Die beste Möglichkeit ist, diese Einstellung von Anfang an zu deaktivieren. Legen Sie "query\_cache\_size" auf 0 fest (in MySQL 5.6 ist dies nun die Standardeinstellung), und verwenden Sie andere Methoden zur Beschleunigung von Abfragen.  
   
 In [Anhang D](#AppendixD) finden Sie einen Vergleich der Leistung nach der Optimierung.
 
@@ -303,20 +303,20 @@ Für diesen Test wird eine Dateigröße von 30 GB bzw. 1 GB mit einem RAID 0-X
 
 |Parameter |Standard |Optimierung
 |-----------|-----------|-----------
-|**innodb_buffer_pool_size** |Keine |7G
-|**innodb_log_file_size** |5M |512M
-|**max_connections** |100 |5.000
-|**innodb_file_per_table** |0 |1
-|**innodb_flush_log_at_trx_commit** |1 |2
-|**innodb_log_buffer_size** |8M |128M
-|**query_cache_size** |16M |0
+|**innodb\_buffer\_pool\_size** |Keine |7G
+|**innodb\_log\_file\_size** |5M |512M
+|**max\_connections** |100 |5\.000
+|**innodb\_file\_per\_table** |0 |1
+|**innodb\_flush\_log\_at\_trx\_commit** |1 |2
+|**innodb\_log\_buffer\_size** |8M |128M
+|**query\_cache\_size** |16M |0
 
 
 Weitere und detailliertere Konfigurationsparameter für die Optimierung finden Sie in den offiziellen MySQL-Anweisungen.
 
 [http://dev.mysql.com/doc/refman/5.6/en/innodb-configuration.html](http://dev.mysql.com/doc/refman/5.6/en/innodb-configuration.html)
 
-[http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_flush_method](http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_flush_method)
+[http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar\_innodb\_flush\_method](http://dev.mysql.com/doc/refman/5.6/en/innodb-parameters.html#sysvar_innodb_flush_method)
 
 **Testumgebung**
 
@@ -345,4 +345,4 @@ Weitere und detailliertere Konfigurationsparameter für die Optimierung finden S
 [14]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-14.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

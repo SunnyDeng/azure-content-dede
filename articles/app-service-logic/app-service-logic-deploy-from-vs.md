@@ -7,14 +7,16 @@
 	services="app-service\logic" 
 	documentationCenter=""/>
 
+
 <tags
 	ms.service="app-service-logic"
 	ms.workload="integration"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/26/2015"
+	ms.date="07/30/2015"
 	ms.author="stepsic"/>
+
 	
 # Bereitstellen von Visual Studio aus
 
@@ -23,7 +25,7 @@ Auch wenn das [Azure-Portal](https://portal.azure.com) Ihnen eine hervorragende 
 - Speichern Sie Ihre Logik-App zusammen mit den anderen Ressourcen in Ihrer Projektmappe, sodass alle Aspekte Ihrer Anwendung darin enthalten sind.
 - Lassen Sie die Logik-App-Definition in der Quellcodeverwaltung eingecheckt, damit Sie Überarbeitungen mit TFS oder Git verfolgen können. 
 
-Sie müssen das Azure SDK 2.6 installiert haben, um die folgenden Schritte durchführen zu können. Suchen Sie hier [das neueste SDK für Visual Studio](http://azure.microsoft.com/downloads/).
+Sie müssen das Azure SDK 2.7 oder höher installiert haben, um die folgenden Schritte durchführen zu können. Suchen Sie hier [das neueste SDK für Visual Studio](http://azure.microsoft.com/downloads/).
 
 ## Erstellen eines Projekts
 
@@ -45,7 +47,7 @@ Es wird empfohlen, in der gesamten Definition **Parameter** zu verwenden. Das is
 
 Derzeit bietet Visual Studio keinen integrierten Designer. Wenn Sie daher eine grafische Benutzeroberfläche nutzen möchten (statt JSON zu schreiben), müssen Sie das Azure-Portal verwenden.
 
-Wenn Sie zuvor eine Logik-App innerhalb des Azure-Portals erstellt haben und diese jetzt in die Quellcodeverwaltung einchecken möchten, können Sie folgende Aktionen durchführen: – Wechseln Sie im Portal zur **Codeansicht**, und kopieren Sie die Definition. – Verwenden Sie die [REST-API](https://msdn.microsoft.com/library/azure/dn948510.aspx) für Logik-Apps, um die Definition abzurufen. – Verwenden Sie die [Powershell des Azure-Ressourcen-Managers](../powershell-azure-resource-manager.md), insbesondere den [`Get-AzureResource`-Befehl](https://msdn.microsoft.com/library/dn654579.aspx), um die Definition herunterzuladen.
+Wenn Sie zuvor eine Logik-App innerhalb des Azure-Portals erstellt haben und diese jetzt in die Quellcodeverwaltung einchecken möchten, haben Sie drei verschiedene Möglichkeiten: – Wechseln Sie im Portal zur **Codeansicht**, und kopieren Sie die Definition. – Verwenden Sie die [REST-API](https://msdn.microsoft.com/library/azure/dn948510.aspx) für Logik-Apps, um die Definition abzurufen. – Verwenden Sie die [Powershell des Azure-Ressourcen-Managers](../powershell-azure-resource-manager.md), insbesondere den [`Get-AzureResource`-Befehl](https://msdn.microsoft.com/library/dn654579.aspx), um die Definition herunterzuladen.
 
 ## Bereitstellen Ihrer Logik-App
 
@@ -65,4 +67,4 @@ In Zukunft können Sie Ihre Logik-App in der Quellcodeverwaltung überarbeiten u
 
 Wenn Sie nicht Visual Studio verwenden, aber dennoch die Werkzeuge zur Verfügung haben möchten, um Ihre Logik-App von der Quellcodesteuerung aus bereitzustellen, können Sie immer die [API](https://msdn.microsoft.com/library/azure/dn948510.aspx) oder [Powershell](../powershell-azure-resource-manager.md) direkt verwenden, um Ihre Bereitstellungen zu automatisieren.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

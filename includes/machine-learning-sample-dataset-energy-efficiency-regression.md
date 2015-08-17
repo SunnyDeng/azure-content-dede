@@ -1,3 +1,3 @@
 Eine Sammlung von simulierten Energieprofilen, die auf 12 verschiedenen Gebäudeformen basieren. Die Gebäude werden anhand von acht Merkmalen wie Verglasungsfläche, Verglasungsflächenverteilung und -ausrichtung unterschieden.<p> </p><b>Verwendung.</b> Verwendung der Regression oder Klassifizierung zur Vorhersage der Energieeffizienzbewertung, die die Grundlage für eine von zwei Realwertantworten bildet. Für die Multiklassen-Klassifizierung wird die Antwortvariable auf die nächste ganze Zahl gerundet. <p> </p><b>Zugehörige Untersuchungen:</b> Xifara, A. & Tsanas, A. (2012). UCI Machine Learning Repository <a href="http://archive.ics.uci.edu/ml">http://archive.ics.uci.edu/ml</a>. Irvine, CA: University of California, School of Information and Computer Science
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -207,4 +207,4 @@ In diesem Beispiel wurde eine einfache Ankündigungskampagne erstellt, und es wu
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

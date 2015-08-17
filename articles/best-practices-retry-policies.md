@@ -78,7 +78,7 @@ Verwendet, um den Abstand wiederholter Versuche von Dienstaufrufen exponentiell 
 
 __Vorgehensweise:__
 
-Das Backoff-Intervall zwischen nachfolgenden Versuchen exponentiell erhöhen. Hinzufügen von Zufallsgenerator \(+/-20 %\) zum Backoff-Intervall, damit nicht alle Clients gleichzeitig die Wiederholung durchführen.
+Das Backoff-Intervall zwischen nachfolgenden Versuchen exponentiell erhöhen. Hinzufügen von Zufallsgenerator (+/-20 %) zum Backoff-Intervall, damit nicht alle Clients gleichzeitig die Wiederholung durchführen.
 
 __Konfiguration:__
 
@@ -109,7 +109,7 @@ Verwendet, um den Abstand wiederholter Versuche von Dienstaufrufen linear zu ver
 
 __Vorgehensweise:__
 
-Führen Sie eine angegebene Anzahl von Wiederholungen durch, mit einem angegebenen festen Zeitintervall zwischen den Wiederholungen. Hinzufügen von Zufallsgenerator \(+/-20 %\) zum Backoff-Intervall, damit nicht alle Clients gleichzeitig die Wiederholung durchführen.
+Führen Sie eine angegebene Anzahl von Wiederholungen durch, mit einem angegebenen festen Zeitintervall zwischen den Wiederholungen. Hinzufügen von Zufallsgenerator (+/-20 %) zum Backoff-Intervall, damit nicht alle Clients gleichzeitig die Wiederholung durchführen.
 
 __Konfiguration:__
 
@@ -191,4 +191,4 @@ iterationSleep | "00:00:00.1000000"
 lastExceptionType | "Microsoft.ServiceBus.Messaging.MessagingCommunicationException"
 exceptionMessage | "Der Remotename konnte nicht aufgelöst werden: 'retry-guidance-tests.servicebus.windows.net'.TrackingId:6a26f99c-dc6d-422e-8565-f89fdd0d4fe3,TimeStamp:9/5/2014 10:00:13 PM"
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

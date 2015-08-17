@@ -7,14 +7,16 @@
 	manager="timlt" 
 	editor=""/>
 
+
 <tags 
 	ms.service="service-bus" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="07/02/2015" 
 	ms.author="sethm"/>
+
 
 
 # Verwenden des Service Bus Relay-Diensts
@@ -56,7 +58,7 @@ So erstellen Sie einen Dienstnamespace:
 
 	WICHTIG: Wählen Sie **dieselbe Region**, in der Sie auch Ihre Anwendung einsetzen möchten. Dies sorgt für die beste Leistung.
 
-6.	Übernehmen Sie für die weiteren Felder im Dialogfeld die Standardwerte ("Messaging" und **Standardstufe**), und klicken Sie anschließend auf das Häkchen. Ihr Dienstnamespace wird nun erstellt und aktiviert. Ggf. müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto durch das System bereitgestellt werden.
+6.	Übernehmen Sie für die weiteren Felder im Dialogfeld die Standardwerte (**Messaging** und **Standardstufe**), und klicken Sie anschließend auf das Häkchen. Ihr Dienstnamespace wird nun erstellt und aktiviert. Ggf. müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto durch das System bereitgestellt werden.
 
 	![](./media/service-bus-dotnet-how-to-use-relay/getting-started-multi-tier-27.png)
 
@@ -72,7 +74,7 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. das Erstellen einer Re
 2.  Doppelklicken Sie in der angezeigten Liste auf den Namen des Namespaces, den Sie soeben erstellt haben: ![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-09.png)
 
 
-3.  Klicken Sie oben auf der Seite auf **Konfigurieren**.
+3.  Klicken Sie oben auf der Seite auf die Registerkarte **Konfigurieren**.
  
 4.  Wenn ein Service Bus-Namespace bereitgestellt wird, wird standardmäßig eine **SharedAccessAuthorizationRule** erstellt, in der **KeyName** auf **RootManageSharedAccessKey** festgelegt ist. Diese Seite zeigt den Schlüssel sowie die primären und sekundären Schlüssel für die Standardregel an.
 
@@ -134,7 +136,7 @@ Nachdem der Vertrag etabliert wurde, ist die Implementierung ein Kinderspiel:
 
 ### Programmgesteuertes Konfigurieren eines Diensthosts
 
-Nachdem der Vertrag erstellt und die Implementierung durchgeführt wurde, kann nun der Dienst gehostet werden. Das Hosting erfolgt innerhalb eines [System.ServiceModel.ServiceHost](https://msdn.microsoft.com/library/azure/system.servicemodel.servicehost.aspx)-Objekts, das die Verwaltung der Dienstinstanzen übernimmt und die Endpunkte hostet, die auf Nachrichten warten. Der folgende Code konfiguriert den Dienst sowohl mit einem regulären lokalen Endpunkt als auch mit einem Service Bus-Endpunkt, um die Darstellung interner und externer Endpunkte nebeneinander zu veranschaulichen. Ersetzen Sie die Zeichenfolge *namespace* durch Ihren Namespacenamen und *yourKey* durch den Ausstellerschlüssel, den Sie im obigen Setupschritt erhalten haben.
+Nachdem der Vertrag erstellt und die Implementierung durchgeführt wurde, kann nun der Dienst gehostet werden. Das Hosting erfolgt innerhalb eines [System.ServiceModel.ServiceHost](https://msdn.microsoft.com/library/azure/system.servicemodel.servicehost.aspx)-Objekts, das die Verwaltung der Dienstinstanzen übernimmt und die Endpunkte hostet, die auf Nachrichten warten. Der folgende Code konfiguriert den Dienst sowohl mit einem regulären lokalen Endpunkt als auch mit einem Service Bus-Endpunkt, um die Darstellung interner und externer Endpunkte nebeneinander zu veranschaulichen. Ersetzen Sie die Zeichenfolge *namespace* durch Ihren Namespacenamen und *yourKey* durch den SAS-Schlüssel, den Sie im vorherigen Setupschritt erhalten haben.
 
     ServiceHost sh = new ServiceHost(typeof(ProblemSolver));
 
@@ -174,10 +176,12 @@ Die Endpunktdefinitionen werden in die Datei "App.config" verschoben. Beachten S
             <endpoint contract="Service.IProblemSolver"
                       binding="netTcpBinding"
                       address="net.tcp://localhost:9358/solver"/>
+
             <endpoint contract="Service.IProblemSolver"
                       binding="netTcpRelayBinding"
                       address="sb://namespace.servicebus.windows.net/solver"
                       behaviorConfiguration="sbTokenProvider"/>
+
         </service>
     </services>
     <behaviors>
@@ -186,6 +190,7 @@ Die Endpunktdefinitionen werden in die Datei "App.config" verschoben. Beachten S
                 <transportClientEndpointBehavior>
                     <tokenProvider>
                         <sharedAccessSignature keyName="RootManageSharedAccessKey" key="yourKey" />
+
                     </tokenProvider>
                 </transportClientEndpointBehavior>
             </behavior>
@@ -198,11 +203,11 @@ Nachdem Sie diese Änderungen vorgenommen haben, startet der Dienst wie zuvor, j
 
 #### Programmgesteuertes Konfigurieren eines Clients
 
-Um den Dienst zu nutzen, können Sie einen WCF-Client mit einem [`ChannelFactory`](https://msdn.microsoft.com/library/system.servicemodel.channelfactory.aspx)-Objekt. Service Bus verwendet ein Token-basiertes Sicherheitsmodell, das mit SAS implementiert wird. Die **TokenProvider**-Klasse stellt einen Sicherheitstokenanbieter mit integrierten Factory-Methoden dar, die einige bekannte Tokenanbieter zurückgeben. Das folgende Beispiel verwendet die [`CreateSharedAccessSignatureTokenProvider`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx)-Methode, um die Übernahme des entsprechenden SAS-Tokens zu behandeln. Die Name und der Schlüssel wurden aus dem Portal abgerufen, wie im vorherigen Abschnitt beschrieben wurde.
+Um den Dienst zu nutzen, können Sie einen WCF-Client mit einem [`ChannelFactory`](https://msdn.microsoft.com/library/system.servicemodel.channelfactory.aspx)-Objekt erstellen. Service Bus verwendet ein Token-basiertes Sicherheitsmodell, das mit SAS implementiert wird. Die **TokenProvider**-Klasse stellt einen Sicherheitstokenanbieter mit integrierten Factory-Methoden dar, die einige bekannte Tokenanbieter zurückgeben. Das folgende Beispiel verwendet die [`CreateSharedAccessSignatureTokenProvider`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx)-Methode, um die Übernahme des entsprechenden SAS-Tokens zu behandeln. Die Name und der Schlüssel wurden aus dem Portal abgerufen, wie im vorherigen Abschnitt beschrieben wurde.
 
 Verweisen Sie zuerst auf den `IProblemSolver`-Vertragscode, oder kopieren Sie ihn aus dem Dienst in Ihr Clientprojekt.
 
-Ersetzen Sie anschließend den Code in der `Main`-Methode des Clients, und ersetzen Sie dabei den Platzhaltertext erneut durch den Service Bus-Namespace und SAS-Schlüssel:
+Ersetzen Sie anschließend den Code in der `Main`-Methode des Clients, und ersetzen Sie dabei den Platzhaltertext erneut durch Ihren Service Bus-Namespace und SAS-Schlüssel:
 
     var cf = new ChannelFactory<IProblemSolverChannel>(
         new NetTcpRelayBinding(), 
@@ -235,6 +240,7 @@ Die Endpunktdefinitionen werden in die Datei "App.config" verschoben. Der folgen
                   binding="netTcpRelayBinding"
                   address="sb://namespace.servicebus.windows.net/solver"
                   behaviorConfiguration="sbTokenProvider"/>
+
     </client>
     <behaviors>
         <endpointBehaviors>
@@ -242,6 +248,7 @@ Die Endpunktdefinitionen werden in die Datei "App.config" verschoben. Der folgen
                 <transportClientEndpointBehavior>
                     <tokenProvider>
                         <sharedAccessSignature keyName="RootManageSharedAccessKey" key="yourKey" />
+
                     </tokenProvider>
                 </transportClientEndpointBehavior>
             </behavior>
@@ -268,4 +275,4 @@ Nachdem Sie nun mit den Grundlagen des Service Bus **Relay**-Diensts vertraut si
   [MSDN]: https://msdn.microsoft.com/de-de/library/azure/dn194201.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

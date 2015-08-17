@@ -162,4 +162,4 @@ Weitere Informationen und zusätzliche Befehlen finden Sie in der [Azure-CLI-Dok
 [Anfügen eines Datenträgers an einen virtuellen Computer]: storage-windows-attach-disk.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -13,7 +13,7 @@
 	ms.workload="data-management"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.date="07/09/2015"
 	ms.author="joseidz"/>
 
@@ -23,7 +23,7 @@ Verbinden Sie Excel mit einer Azure SQL-Datenbank und Erstellen Sie einen Berich
 
 ## Voraussetzungen
 - Eine bereitgestellte und ausgeführte Azure SQL-Datenbank. Informationen zum Erstellen einer neuen SQL-Datenbank finden Sie unter [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md).
-- [Microsoft Excel 2013](https://products.office.com/en-US/) \(oder Microsoft Excel 2010\)
+- [Microsoft Excel 2013](https://products.office.com/en-US/) (oder Microsoft Excel 2010)
 
 ## Verbinden mit der SQL-Datenbank und Erstellen eines Berichts
 1.	Öffnen Sie Excel.
@@ -54,7 +54,7 @@ Verbinden Sie Excel mit einer Azure SQL-Datenbank und Erstellen Sie einen Berich
 
 ## Nächste Schritte
 
-Wenn Sie ein Software als Service \(SaaS\)-Entwickler sind, erfahren Sie mehr über [elastische Datenbankpools](sql-database-elastic-pool.md). Sie können problemlos große Sammlungen von Datenbanken mithilfe von [Aufträgen für die elastische Datenbank](sql-database-elastic-jobs-overview.md) verwalten.
+Wenn Sie ein Software als Service (SaaS)-Entwickler sind, erfahren Sie mehr über [elastische Datenbankpools](sql-database-elastic-pool.md). Sie können problemlos große Sammlungen von Datenbanken mithilfe von [Aufträgen für die elastische Datenbank](sql-database-elastic-jobs-overview.md) verwalten.
 
 <!--Image references-->
 [1]: ./media/sql-database-connect-excel/connect-to-database-server.png
@@ -63,4 +63,4 @@ Wenn Sie ein Software als Service \(SaaS\)-Entwickler sind, erfahren Sie mehr ü
 [4]: ./media/sql-database-connect-excel/power-pivot-results.png
 [5]: ./media/sql-database-connect-excel/select-database-and-table.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

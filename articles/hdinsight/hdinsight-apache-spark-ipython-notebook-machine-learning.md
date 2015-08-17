@@ -32,7 +32,7 @@ Sie benötigen Folgendes:
 
 Bevor wir mit dem Erstellen der Anwendung beginnen, müssen wir uns zuerst mit der Struktur der Daten und der Art der Analyse vertraut machen, die wir für die Daten durchführen.
 
-In diesem Artikel verwenden wir die Beispieldatendatei **HVAC.csv**, die für alle HDInsight-Cluster standardmäßig unter **\HdiSamples\SensorSampleData\hvac** verfügbar ist. Laden Sie die CSV-Datei herunter, und öffnen Sie sie, um eine Momentaufnahme der Daten zu erhalten.
+In diesem Artikel verwenden wir die Beispieldatendatei **HVAC.csv**, die für alle HDInsight-Cluster standardmäßig unter **\\HdiSamples\\SensorSampleData\\hvac** verfügbar ist. Laden Sie die CSV-Datei herunter, und öffnen Sie sie, um eine Momentaufnahme der Daten zu erhalten.
 
 ![HVAC-Datenmomentaufnahmen](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/HDI.Spark.ML.Show.Data.png "Momentaufnahme der HVAC-Daten")
 
@@ -213,11 +213,11 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 ##<a name="anaconda"></a>Verwenden der Anaconda-scikit-learn-Bibliothek für Machine Learning
 
-Apache Spark-Cluster unter HDInsight enthalten Anaconda-Bibliotheken. Dazu gehört auch die **scikit-learn**-Bibliothek für Machine Learning. Außerdem enthält die Bibliothek verschiedene Datasets, mit denen Sie Beispielanwendungen direkt über ein Jupyter Notebook erstellen können. Beispiele zur Verwendung der scikit-learn-Bibliothek finden Sie unter [http://scikit-learn.org/stable/auto_examples/index.html](http://scikit-learn.org/stable/auto_examples/index.html).
+Apache Spark-Cluster unter HDInsight enthalten Anaconda-Bibliotheken. Dazu gehört auch die **scikit-learn**-Bibliothek für Machine Learning. Außerdem enthält die Bibliothek verschiedene Datasets, mit denen Sie Beispielanwendungen direkt über ein Jupyter Notebook erstellen können. Beispiele zur Verwendung der scikit-learn-Bibliothek finden Sie unter [http://scikit-learn.org/stable/auto\_examples/index.html](http://scikit-learn.org/stable/auto_examples/index.html).
 
 ##<a name="seealso"></a>Weitere Informationen
 
-* [Übersicht: Apache Spark für Azure HDInsight](hdinsight-apache-spark-overview.md)
+* [Übersicht: Apache Spark in Azure HDInsight](hdinsight-apache-spark-overview.md)
 * [Bereitstellen von Spark in einem HDInsight-Cluster](hdinsight-apache-spark-provision-clusters.md)
 * [Durchführen interaktiver Datenanalysen mithilfe von Spark in HDInsight mit BI-Tools](hdinsight-apache-spark-use-bi-tools.md)
 * [Verwenden von Spark in HDInsight zum Erstellen von Echtzeit-Streaminganwendungen](hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming.md)
@@ -240,4 +240,4 @@ Apache Spark-Cluster unter HDInsight enthalten Anaconda-Bibliotheken. Dazu gehö
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

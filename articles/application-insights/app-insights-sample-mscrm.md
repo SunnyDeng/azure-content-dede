@@ -3,8 +3,8 @@
 	description="Abrufen von Telemetriedaten aus Microsoft CRM Online mithilfe von Application Insights Exemplarische Vorgehensweise für das Einrichten, Abrufen von Daten, Visualisieren und Exportieren." 
 	services="application-insights" 
     documentationCenter=""
-	authors="alancameronwills" 
-	manager="douge"/>
+	authors="mazharmicrosoft" 
+	manager="klin"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,12 +12,14 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/23/2015" 
+	ms.date="08/04/2015" 
 	ms.author="awills"/>
  
 # Exemplarische Vorgehensweise: Aktivieren von Telemetriedaten für Microsoft CRM Online mithilfe von Application Insights
 
 Dieser Artikel beschreibt, wie Sie Telemetriedaten aus [Microsoft CRM Online](https://www.dynamics.com/) mit [Visual Studio Application Insights](https://azure.microsoft.com/services/application-insights/) abrufen können. Der vollständige Vorgang des Hinzufügens eines Application Insights-Skripts zu Ihrer Anwendung, das Erfassen von Daten und die Visualisierung von Daten werden erläutert.
+
+>[AZURE.NOTE] [Browse the sample code](https://dynamicsandappinsights.codeplex.com/).
 
 ## Hinzufügen von Application Insights zu einer neuen oder vorhandenen CRM Online-Instanz 
 
@@ -25,7 +27,7 @@ Zum Überwachen Ihrer Anwendung fügen Sie Ihrer Anwendung ein Application Insig
 
 ### Erstellen einer Application Insights-Ressource in Azure
 
-1. Fordern Sie ein [Konto in Microsoft Azure](http://azure.com/pricing) an. 
+1. Fordern Sie [ein Konto in Microsoft Azure](http://azure.com/pricing) an. 
 2. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und fügen Sie eine neue Application Insights-Ressource hinzu. Hier werden die Daten verarbeitet und angezeigt.
 
     ![Klicken Sie auf "+", "Entwicklerdienste", "Application Insights".](./media/app-insights-sample-mscrm/01.png)
@@ -54,7 +56,7 @@ Zum Überwachen Ihrer Anwendung fügen Sie Ihrer Anwendung ein Application Insig
 
     ![](./media/app-insights-sample-mscrm/07.png)
 
-    Geben Sie ihr einen Namen, wählen Sie **Skript \(JScript\)**, und öffnen Sie den Text-Editor.
+    Geben Sie ihr einen Namen, wählen Sie **Skript (JScript)**, und öffnen Sie den Text-Editor.
 
     ![](./media/app-insights-sample-mscrm/08.png)
     
@@ -139,15 +141,24 @@ Klicken Sie auf das Diagramm, um weitere Details zu erhalten:
 
 ![](./media/app-insights-sample-mscrm/30.png)
 
+## Beispielcode
+
+[Durchsuchen Sie den Beispielcode](https://dynamicsandappinsights.codeplex.com/).
+
 ## Power BI
 
 Sie können sogar eine tiefer gehende Analyse durchführen, wenn Sie [die Daten nach Microsoft Power BI exportieren](app-insights-export-power-bi.md).
+
+## CMR-Beispiellösung
+
+Dies ist die in CMR implementierte Beispiellösung zum Starten der Telemetrie-Erfassung.https://dynamicsandappinsights.codeplex.com/
 
 ## Weitere Informationen
 
 * [Was ist Application Insights?](app-insights-overview.md)
 * [Application Insights für Webseiten](app-insights-javascript.md)
+* [Weitere Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

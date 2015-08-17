@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="04/14/2015" 
 	ms.author="juliako"/>
+
 
 #Erste Schritte zum Bereitstellen von Video-on-Demand (VoD) mit REST-APIs 
 
@@ -113,9 +115,9 @@ Das folgende Beispiel zeigt den HTTP-Anforderungsheader bzw. -text, die zum Abru
 	
 **Text**:
 
-Sie müssen den client_id-Wert und den client_secret-Wert im Text dieser Anforderung überprüfen. Die Werte client_id und client_secret entsprechen dem AccountName-Wert und dem AccountKey-Wert. Diese Werte werden Ihnen von Media Services bei der Einrichtung Ihres Kontos bereitgestellt.
+Sie müssen den client\_id-Wert und den client\_secret-Wert im Text dieser Anforderung überprüfen. Die Werte client\_id und client\_secret entsprechen dem AccountName-Wert und dem AccountKey-Wert. Diese Werte werden Ihnen von Media Services bei der Einrichtung Ihres Kontos bereitgestellt.
 
-Beachten Sie, dass der "AccountKey" für Ihr Media Services-Konto URL-codiert sein muss, wenn Sie ihn als client_secret-Wert in Ihrer Zugriffstokenanforderung verwenden.
+Beachten Sie, dass der "AccountKey" für Ihr Media Services-Konto URL-codiert sein muss, wenn Sie ihn als client\_secret-Wert in Ihrer Zugriffstokenanforderung verwenden.
 
 	grant_type=client_credentials&client_id=ams_account_name&client_secret=URL_encoded_ams_account_key&scope=urn%3aWindowsAzureMediaServices
 
@@ -146,9 +148,9 @@ Das folgende Beispiel zeigt die HTTP-Antwort, die das Zugriffstoken im Antwortte
 	}
 	
 
->[AZURE.NOTE]Es wird empfohlen, den access_token-Wert und den expires_in-Wert in einem externen Speicher zwischenzuspeichern. Die Tokendaten können später aus dem Speicher abgerufen und in den Media Services-REST-API-Aufrufen wiederverwendet werden. Dies ist besonders in Szenarien sinnvoll, in denen das Token auf sichere Weise von mehreren Prozessen oder Computern gemeinsam verwendet werden kann.
+>[AZURE.NOTE]Es wird empfohlen, den access\_token-Wert und den expires\_in-Wert in einem externen Speicher zwischenzuspeichern. Die Tokendaten können später aus dem Speicher abgerufen und in den Media Services-REST-API-Aufrufen wiederverwendet werden. Dies ist besonders in Szenarien sinnvoll, in denen das Token auf sichere Weise von mehreren Prozessen oder Computern gemeinsam verwendet werden kann.
 
-Überwachen Sie den expires_in-Wert des Zugriffstokens, und aktualisieren Sie Ihre REST-API-Aufrufe nach Bedarf anhand neuer Token.
+Überwachen Sie den expires\_in-Wert des Zugriffstokens, und aktualisieren Sie Ihre REST-API-Aufrufe nach Bedarf anhand neuer Token.
 
 ###Herstellen einer Verbindung mit dem Media Services-URI
 
@@ -497,8 +499,7 @@ Nachdem Sie Ihre Datei nun hochgeladen haben, sollten Sie die FileAsset-Größe 
 
 **HTTP-Antwort**
 
-Im Erfolgsfall wird Folgendes zurückgegeben: 
-	"HTTP/1.1 204 Kein Inhalt"
+Im Erfolgsfall wird Folgendes zurückgegeben: HTTP/1.1 204 Kein Inhalt
 
 ## Löschen von AccessPolicy und Locator 
 
@@ -549,7 +550,7 @@ Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Date
 
 Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
 
-- Abrufen von mindestens einer Streamingeinheit für den **Streamingendpunkt, **von dem aus Sie die Bereitstellung Ihrer Inhalte (wie in diesem Abschnitt beschrieben) planen.
+- Abrufen von mindestens einer Streamingeinheit für den \*\*Streamingendpunkt\*\*, von dem aus Sie die Bereitstellung Ihrer Inhalte (wie in diesem Abschnitt beschrieben) planen.
 - Codieren oder Transcodieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm veranschaulicht).  
 
 Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
@@ -829,10 +830,10 @@ Bei jeder Auftragsanforderung sind einige wichtige Punkte zu beachten:
 - Aufgaben dürfen keine Schleife bilden.
 - Der Value-Parameter, den Sie an JobInputAsset oder JobOutputAsset übergeben, stellt den Indexwert für ein Medienobjekt dar. Die tatsächlichen Medienobjekte werden in den Navigationseigenschaften InputMediaAssets und OutputMediaAssets für die Auftragsentitätsdefinition definiert. 
 
->[AZURE.NOTE]Da Media Services als Grundlage OData v3 verwendet, wird auf die einzelnen Medienobjekte in den Navigationseigenschaftenauflistungen InputMediaAssets und OutputMediaAssets durch das Name-Wert-Paar „__metadata: uri“ verwiesen.
+>[AZURE.NOTE]Da Media Services als Grundlage OData v3 verwendet, wird auf die einzelnen Medienobjekte in den Navigationseigenschaftenauflistungen InputMediaAssets und OutputMediaAssets durch das Name-Wert-Paar „\_\_metadata: uri“ verwiesen.
 
 - InputMediaAssets ist mindestens einem Medienobjekt zugeordnet, das Sie in Media Services erstellt haben. OutputMediaAssets werden vom System erstellt. Sie verweisen nicht auf ein vorhandenes Medienobjekt.
-- OutputMediaAssets können mithilfe des assetName-Attributs benannt werden. Wenn dieses Attribut nicht vorhanden ist, wird als Name von OutputMediaAsset der interne Textwert des <outputAsset>-Elements mit dem Wert des Auftragsnamens oder der Auftrags-ID (falls die Name-Eigenschaft nicht definiert ist) als Suffix verwendet. Wenn Sie für assetName z. B. den Wert „Sample“ festlegen, wird die Name-Eigenschaft von OutputMediaAsset auf „Sample“ festgelegt. Wenn Sie jedoch keinen Wert für assetName festgelegt haben, der Auftragsname jedoch auf NewJob festgelegt wurde, wird OutputMediaAsset der Name JobOutputAsset(Wert)_NewJob zugewiesen. 
+- OutputMediaAssets können mithilfe des assetName-Attributs benannt werden. Wenn dieses Attribut nicht vorhanden ist, wird als Name von OutputMediaAsset der interne Textwert des <outputAsset>-Elements mit dem Wert des Auftragsnamens oder der Auftrags-ID (falls die Name-Eigenschaft nicht definiert ist) als Suffix verwendet. Wenn Sie für assetName z. B. den Wert „Sample“ festlegen, wird die Name-Eigenschaft von OutputMediaAsset auf „Sample“ festgelegt. Wenn Sie jedoch keinen Wert für assetName festgelegt haben, der Auftragsname jedoch auf NewJob festgelegt wurde, wird OutputMediaAsset der Name JobOutputAsset(Wert)\_NewJob zugewiesen.
 
 	Im folgenden Beispiel wird gezeigt, wie das AssetName-Attribut festgelegt wird:
 	
@@ -1143,20 +1144,19 @@ Im Erfolgsfall wird die folgende Antwort zurückgegeben:
 	         }
 	      },
 	      "Id":"nb:lid:UUID:8e5a821d-2194-4d00-8884-adf979856874",
-	      "ExpirationDateTime":"/Date(1337049393000)/",
+	      "ExpirationDateTime":"\/Date(1337049393000)\/",
 	      "Type":1,
 	      "Path":"https://storagetestaccount001.blob.core.windows.net/asset-71d2dd33-efdf-ec43-8ea1-136a110bd42c?st=2012-05-14T21%3A36%3A33Z&se=2012-05-15T02%3A36%3A33Z&sr=c&si=8e5a821d-2194-4d00-8884-adf979856874&sig=y75dViDpC5V8WutrXM%2B%2FGpR3uOtqmlISiNlHU1YUBOg%3D",
 	      "AccessPolicyId":"nb:pid:UUID:38c71dd0-44c5-4c5f-8418-08bb6fbf7bf8",
 	      "AssetId":"nb:cid:UUID:71d2dd33-efdf-ec43-8ea1-136a110bd42c",
-	      "StartTime":"/Date(1337031393000)/"
+	      "StartTime":"\/Date(1337031393000)\/"
 	   }
 	}
 
 
 Die zurückgegebene **Path**-Eigenschaft enthält die SAS-URL.
 
->[AZURE.NOTE]
->Wenn Sie speicherverschlüsselten Inhalt herunterladen, müssen Sie ihn vor dem Rendern manuell entschlüsseln. Alternativ können Sie den MediaProcessor für die Speicherverschlüsselung in einer Verarbeitungsaufgabe verwenden, um verarbeitete Dateien unverschlüsselt an ein OutputAsset auszugeben und dann von diesem Medienobjekt herunterzuladen. Weitere Informationen zur Verarbeitung finden Sie unter „Erstellen und Verschlüsseln von Aufträgen mit der Media Services-REST-API“. Nachdem die SAS URL-Locators erstellt wurden, können sie nicht mehr aktualisiert werden. Beispielsweise kann derselbe Locator nicht mit einem aktualisierten StartTime-Wert wiederverwendet werden. Dies liegt an der Art, wie SAS-URLs erstellt werden. Wenn ein Locator abgelaufen ist und Sie auf ein Medienobjekt zugreifen möchten, um es herunterzuladen, müssen Sie einen neuen Locator mit einem neuen StartTime-Wert erstellen.
+>[AZURE.NOTE]Wenn Sie speicherverschlüsselten Inhalt herunterladen, müssen Sie ihn vor dem Rendern manuell entschlüsseln. Alternativ können Sie den MediaProcessor für die Speicherverschlüsselung in einer Verarbeitungsaufgabe verwenden, um verarbeitete Dateien unverschlüsselt an ein OutputAsset auszugeben und dann von diesem Medienobjekt herunterzuladen. Weitere Informationen zur Verarbeitung finden Sie unter „Erstellen und Verschlüsseln von Aufträgen mit der Media Services-REST-API“. Nachdem die SAS URL-Locators erstellt wurden, können sie nicht mehr aktualisiert werden. Beispielsweise kann derselbe Locator nicht mit einem aktualisierten StartTime-Wert wiederverwendet werden. Dies liegt an der Art, wie SAS-URLs erstellt werden. Wenn ein Locator abgelaufen ist und Sie auf ein Medienobjekt zugreifen möchten, um es herunterzuladen, müssen Sie einen neuen Locator mit einem neuen StartTime-Wert erstellen.
 
 ###Herunterladen von Dateien
 
@@ -1236,12 +1236,12 @@ Im Erfolgsfall wird die folgende Antwort zurückgegeben:
 	         }
 	      },
 	      "Id":"nb:lid:UUID:52034bf6-dfae-4d83-aad3-3bd87dcb1a5d",
-	      "ExpirationDateTime":"/Date(1337049395000)/",
+	      "ExpirationDateTime":"\/Date(1337049395000)\/",
 	      "Type":2,
 	      "Path":"http://wamsbayclus001rest-hs.net/52034bf6-dfae-4d83-aad3-3bd87dcb1a5d/",
 	      "AccessPolicyId":"nb:pid:UUID:38c71dd0-44c5-4c5f-8418-08bb6fbf7bf8",
 	      "AssetId":"nb:cid:UUID:eb5540a2-116e-4d36-b084-7e9958f7f3c3",
-	      "StartTime":"/Date(1337031395000)/"
+	      "StartTime":"\/Date(1337031395000)\/"
 	   }
 	}
 
@@ -1284,4 +1284,4 @@ Weitere Informationen zum Erstellen von Video-on-Demand-Anwendungen erhalten Sie
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

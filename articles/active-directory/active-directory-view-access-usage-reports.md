@@ -145,7 +145,7 @@ Weitere Informationen zu diesem Bericht finden Sie unter [Benutzer mit anomalen 
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| Zeigt eine Aufzeichnung aller überwachten Ereignisse in den letzten 24 Stunden, letzten 7 Tagen oder letzten 30 Tagen. <br /> Weitere Informationen finden Sie unter [Azure Active Directory-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md). | Verzeichnis \> Registerkarte "Berichte" |
+| Zeigt eine Aufzeichnung aller überwachten Ereignisse in den letzten 24 Stunden, letzten 7 Tagen oder letzten 30 Tagen. <br /> Weitere Informationen finden Sie unter [Azure Active Directory-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md). | Verzeichnis > Registerkarte "Berichte" |
 
 ![Überwachungsbericht](./media/active-directory-view-access-usage-reports/auditReport.PNG)
 
@@ -153,7 +153,7 @@ Weitere Informationen zu diesem Bericht finden Sie unter [Benutzer mit anomalen 
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| Zeigt alle Versuche der Kennwortzurücksetzung, die in Ihrer Organisation erfolgt sind. | Verzeichnis \> Registerkarte "Berichte" |
+| Zeigt alle Versuche der Kennwortzurücksetzung, die in Ihrer Organisation erfolgt sind. | Verzeichnis > Registerkarte "Berichte" |
 
 ![Kennwortzurücksetzungsaktivität](./media/active-directory-view-access-usage-reports/passwordResetActivity.PNG)
 
@@ -161,7 +161,7 @@ Weitere Informationen zu diesem Bericht finden Sie unter [Benutzer mit anomalen 
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| Zeigt alle Registrierungen für die Kennwortzurücksetzung, die in Ihrer Organisation erfolgt sind. | Verzeichnis \> Registerkarte "Berichte" |
+| Zeigt alle Registrierungen für die Kennwortzurücksetzung, die in Ihrer Organisation erfolgt sind. | Verzeichnis > Registerkarte "Berichte" |
 
 ![Aktivität "Registrierung für Zurücksetzen des Kennworts"](./media/active-directory-view-access-usage-reports/passwordResetRegistrationActivity.PNG)
 
@@ -169,7 +169,7 @@ Weitere Informationen zu diesem Bericht finden Sie unter [Benutzer mit anomalen 
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| Zeigt alle Aktivitäten der per Self-Service verwalteten Gruppen in Ihrem Verzeichnis. | Verzeichnis \> Benutzer \> <i>Benutzer</i> \> Registerkarte "Geräte" |
+| Zeigt alle Aktivitäten der per Self-Service verwalteten Gruppen in Ihrem Verzeichnis. | Verzeichnis > Benutzer > <i>Benutzer</i> > Registerkarte "Geräte" |
 
 ![Self-Service-Gruppenaktivität](./media/active-directory-view-access-usage-reports/selfServiceGroupsActivity.PNG)
 
@@ -189,7 +189,7 @@ Weitere Informationen zu diesem Bericht finden Sie unter [Benutzer mit anomalen 
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| In diesem Bericht können Sie die Nutzung aller SaaS-Anwendungen in Ihrem Verzeichnis ablesen. Dieser Bericht basiert darauf, wie oft Benutzer im Zugriffsbereich auf die Anwendung geklickt haben. | Verzeichnis \> Registerkarte "Berichte" |
+| In diesem Bericht können Sie die Nutzung aller SaaS-Anwendungen in Ihrem Verzeichnis ablesen. Dieser Bericht basiert darauf, wie oft Benutzer im Zugriffsbereich auf die Anwendung geklickt haben. | Verzeichnis > Registerkarte "Berichte" |
 
 ![Zusammenfassung Anwendungsnutzung](./media/active-directory-view-access-usage-reports/applicationUsage.PNG)
 
@@ -198,13 +198,13 @@ Weitere Informationen zu diesem Bericht finden Sie unter [Benutzer mit anomalen 
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| In diesem Bericht können Sie die Nutzung einer bestimmten SaaS-Anwendung in Ihrem Verzeichnis ablesen. Dieser Bericht basiert darauf, wie oft Benutzer im Zugriffsbereich auf die Anwendung geklickt haben. | Verzeichnis \> Registerkarte "Berichte" |
+| In diesem Bericht können Sie die Nutzung einer bestimmten SaaS-Anwendung in Ihrem Verzeichnis ablesen. Dieser Bericht basiert darauf, wie oft Benutzer im Zugriffsbereich auf die Anwendung geklickt haben. | Verzeichnis > Registerkarte "Berichte" |
 
 ### Anwendungsdashboard
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| Dieser Bericht zeigt kumulativ die Anmeldungen an der Anwendung durch Benutzer in Ihrer Organisation über einen ausgewählten Zeitraum. Das Diagramm auf der Dashboardseite hilft Ihnen beim Ausmachen von Trends der gesamten Nutzung der Anwendung. | Verzeichnis \> Anwendung \> Registerkarte "Dashboard" |
+| Dieser Bericht zeigt kumulativ die Anmeldungen an der Anwendung durch Benutzer in Ihrer Organisation über einen ausgewählten Zeitraum. Das Diagramm auf der Dashboardseite hilft Ihnen beim Ausmachen von Trends der gesamten Nutzung der Anwendung. | Verzeichnis > Anwendung > Registerkarte "Dashboard" |
 
 ## Fehlerberichte
 
@@ -212,7 +212,7 @@ Weitere Informationen zu diesem Bericht finden Sie unter [Benutzer mit anomalen 
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| Dieser Bericht dient zum Überwachen von Fehlern, die während der Synchronisierung von Konten aus SaaS-Anwendungen mit Azure Active Directory auftreten. | Verzeichnis \> Registerkarte "Berichte" |
+| Dieser Bericht dient zum Überwachen von Fehlern, die während der Synchronisierung von Konten aus SaaS-Anwendungen mit Azure Active Directory auftreten. | Verzeichnis > Registerkarte "Berichte" |
 
 ![Kontobereitstellungsfehler](./media/active-directory-view-access-usage-reports/accountProvisioningErrors.PNG)
 
@@ -230,13 +230,13 @@ Weitere Informationen zu diesem Bericht finden Sie unter [Benutzer mit anomalen 
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| In diesem Bericht finden Sie die IP-Adresse und den geografischen Standort der Geräte, die ein bestimmter Benutzer für Zugriff auf Azure Active Directory verwendet hat. | Verzeichnis \> Benutzer \> <i>Benutzer</i> \> Registerkarte "Geräte" |
+| In diesem Bericht finden Sie die IP-Adresse und den geografischen Standort der Geräte, die ein bestimmter Benutzer für Zugriff auf Azure Active Directory verwendet hat. | Verzeichnis > Benutzer > <i>Benutzer</i> > Registerkarte "Geräte" |
 
 ### Aktivität
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| Zeigt die Anmeldeaktivität eines Benutzers. Der Bericht enthält Informationen wie die Anwendung, bei der die Anmeldung erfolgt ist, das verwendete Gerät, die IP-Adresse und den Standort. Wir erfassen nicht den Verlauf von Benutzern, die sich mit einem Microsoft-Konto anmelden. | Verzeichnis \> Benutzer \> <i>Benutzer</i> \> Registerkarte "Aktivität" |
+| Zeigt die Anmeldeaktivität eines Benutzers. Der Bericht enthält Informationen wie die Anwendung, bei der die Anmeldung erfolgt ist, das verwendete Gerät, die IP-Adresse und den Standort. Wir erfassen nicht den Verlauf von Benutzern, die sich mit einem Microsoft-Konto anmelden. | Verzeichnis > Benutzer > <i>Benutzer</i> > Registerkarte "Aktivität" |
 
 #### Im Bericht "Benutzeraktivität" enthaltene Anmeldeereignisse
 
@@ -248,13 +248,13 @@ Nur bestimmte Arten von Anmeldeereignissen werden im Bericht "Benutzeraktivität
 | Anmeldungen beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) | Ja |
 | Anmeldungen beim [Microsoft Azure-Portal](http://portal.azure.com/) | Ja |
 | Anmeldungen beim [Office 365-Portal](http://portal.office.com/) | Ja |
-| Anmeldungen bei einer systemeigenen Anwendung wie Outlook \(siehe nachfolgende Ausnahme\) | Ja |
+| Anmeldungen bei einer systemeigenen Anwendung wie Outlook (siehe nachfolgende Ausnahme) | Ja |
 | Anmeldungen bei einer Verbund-/bereitgestellten App über den Zugriffsbereich wie z. B. Salesforce | Ja |
 | Anmeldungen bei einer kennwortbasierten App über den Zugriffsbereich wie z. B. Twitter | Ja |
-| Anmeldungen bei einer benutzerdefinierten Geschäfts-App, die dem Verzeichnis hinzugefügt wurde | Nein \(in Kürze verfügbar\) |
-| Anmeldungen bei einer Azure AD-Anwendungsproxy-App, die dem Verzeichnis hinzugefügt wurde | Nein \(in Kürze verfügbar\) |
+| Anmeldungen bei einer benutzerdefinierten Geschäfts-App, die dem Verzeichnis hinzugefügt wurde | Nein (in Kürze verfügbar) |
+| Anmeldungen bei einer Azure AD-Anwendungsproxy-App, die dem Verzeichnis hinzugefügt wurde | Nein (in Kürze verfügbar) |
 
-> Hinweis: Um diese Bericht übersichtlich zu halten, werden Anmeldungen bei der systemeigenen App [Lync/Skype for Business](http://products.office.com/en-us/skype-for-business/online-meetings) und durch den [Microsoft Online Services-Anmelde-Assistenten](http://community.office365.com/en-us/w/sso/534.aspx) nicht gezeigt.
+> Hinweis: Um diese Bericht übersichtlich zu halten, werden Anmeldungen bei der systemeigenen App [Lync/Skype for Business](http://products.office.com/de-de/skype-for-business/online-meetings) und durch den [Microsoft Online Services-Anmelde-Assistenten](http://community.office365.com/de-de/w/sso/534.aspx) nicht gezeigt.
 
 
 
@@ -302,4 +302,4 @@ Weitere Informationen zu den Benachrichtigungsfunktionen für Berichte in Azure�
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

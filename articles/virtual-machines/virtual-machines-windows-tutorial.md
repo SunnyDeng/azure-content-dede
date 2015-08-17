@@ -30,7 +30,6 @@ Sie können virtuelle Computer auch unter Verwendung eigener Images, mithilfe vo
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
-
 ## Auswählen des Images
 
 Wechseln Sie im Vorschauportal zum Azure Marketplace, um das gewünschte Windows-Server-Image für den virtuellen Computer zu finden.
@@ -102,4 +101,4 @@ Nachdem Sie den virtuellen Computer erstellt haben, sollten Sie sich bei diesem 
 * Verwenden Sie Azure PowerShell und die Azure-Befehlszeilenschnittstelle zum [Suchen und Auswählen von VM-Images](resource-groups-vm-searching.md).
 * Automatisieren Sie die VM- und Workloadbereitstellung und die Verwaltung unter Verwendung des [Azure-Ressourcen-Managers](virtual-machines-how-to-automate-azure-resource-manager.md) und der [Azure-Ressourcen-Manager-Vorlagen](http://azure.microsoft.com/documentation/templates/).
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -643,4 +643,4 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 [Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

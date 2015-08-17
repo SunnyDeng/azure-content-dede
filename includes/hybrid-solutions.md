@@ -101,4 +101,4 @@ Das Verbinden von Anwendungen zählte schon immer zur Erstellung von Komplettlö
 [relay]: ./media/hybrid-solutions/SvcBus_04_relay.png
 [Übersicht über Event Hubs]: https://msdn.microsoft.com/library/azure/dn836025.aspx
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

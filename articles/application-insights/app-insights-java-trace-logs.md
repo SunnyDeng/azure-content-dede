@@ -89,7 +89,7 @@ Protokollierungstool | Herunterladen | Bibliothek
 ----|----|----
 Logback|[SDK mit Logback-Appender](http://dl.windowsazure.com/applicationinsights/javabin/logbackAppender.zip)|applicationinsights-logging-logback
 Log4J v2. 0|[SDK mit Log4J-v2-Appender](http://dl.windowsazure.com/applicationinsights/javabin/log4j2Appender.zip)|applicationinsights-logging-log4j2 
-Log4J v1. 2|[SDK mit Log4J-v1. 2-Appender](http://dl.windowsazure.com/applicationinsights/javabin/log4j1_2Appender.zip)|applicationinsights-logging-log4j1_2 
+Log4J v1. 2|[SDK mit Log4J-v1. 2-Appender](http://dl.windowsazure.com/applicationinsights/javabin/log4j1_2Appender.zip)|applicationinsights-logging-log4j1\_2 
 
 
 
@@ -149,4 +149,4 @@ Nachdem Sie das Projekt so konfiguriert haben, dass Ablaufverfolgungen an Applic
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

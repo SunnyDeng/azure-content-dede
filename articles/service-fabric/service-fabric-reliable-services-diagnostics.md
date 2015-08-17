@@ -46,4 +46,4 @@ StatefulRunAsyncFailure wird ausgegeben, wenn RunAsync() eine Ausnahme ausgibt. 
 
 StatefulRunAsyncSlowCancellation wird ausgegeben, wenn eine Abbruchanforderung für RunAsync länger als 4 Sekunden dauert. Wenn das Beenden eines Diensts zu lange dauert, beeinträchtigt dies seine Fähigkeit, umgehend auf einem anderen Knoten neu gestartet werden zu können. Dies kann sich auf die allgemeine Verfügbarkeit des Diensts auswirken.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

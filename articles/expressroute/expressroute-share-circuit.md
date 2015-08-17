@@ -102,4 +102,4 @@ Das folgende Diagramm zeigt den Workflow der Autorisierung:
 
 Weitere Informationen zu ExpressRoute finden Sie unter [ExpressRoute – Übersicht](expressroute-introduction.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Ressourcen, Rollen und Zugriffssteuerung in Application Insights" 
-	description="";Besitzer";, ";Mitwirkende"; und ";Leser"; für die gewonnenen Unternehmensinformationen." 
+	description="&quot;Besitzer&quot;, &quot;Mitwirkende&quot; und &quot;Leser&quot; für die gewonnenen Unternehmensinformationen." 
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
@@ -111,4 +111,4 @@ Wenn der gewünschte Benutzer nicht im Verzeichnis enthalten ist, können Sie je
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

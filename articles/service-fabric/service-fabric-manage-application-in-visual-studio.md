@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/22/2015"
+   ms.date="08/05/2015"
    ms.author="jesseb"/>
 
 # Verwalten von Service Fabric-Anwendungen in Visual Studio
@@ -68,10 +68,10 @@ Sie können mit dem Server-Explorer eine Anwendung aus Ihrem lokalen Cluster ent
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
 
-- [Service Fabric-Anwendungsmodell](../service-fabric-application-model)
-- [Service Fabric-Anwendungsbereitstellung](../service-fabric-deploy-remove-applications)
-- [Debuggen einer Service Fabric-Anwendung](../service-fabric-debugging-your-application)
-- [Visualisieren des Clusters mit Service Fabric-Explorer](../service-fabric-visualizing-your-cluster)
+- [Service Fabric-Anwendungsmodell](service-fabric-application-model.md)
+- [Service Fabric-Anwendungsbereitstellung](service-fabric-deploy-remove-applications.md)
+- [Debuggen einer Service Fabric-Anwendung](service-fabric-debugging-your-application.md)
+- [Visualisieren des Clusters mit Service Fabric-Explorer](service-fabric-visualizing-your-cluster.md)
 
 <!--Image references-->
 [addserviceproject]: ./media/service-fabric-manage-application-in-visual-studio/addserviceproject.png
@@ -79,4 +79,4 @@ Sie können mit dem Server-Explorer eine Anwendung aus Ihrem lokalen Cluster ent
 [newservice]: ./media/service-fabric-manage-application-in-visual-studio/newservice.png
 [newserviceapplicationmanifest]: ./media/service-fabric-manage-application-in-visual-studio/newserviceapplicationmanifest.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -59,14 +59,14 @@ Nach der erfolgreichen Anmeldung sollten einige Informationen auf dem Bildschirm
 
 ### Auswählen des Azure-Abonnements
 
-Zur Auswahl des Abonnements benötigen Sie Ihre Abonnement-ID oder den Anmeldenamen für das Abonnement \(\*\*-SubscriptionName\*\*\). Sie können diese Informationen aus dem vorherigen Schritt kopieren. Falls Sie über mehrere Abonnements verfügen, können Sie sie über das Cmdlet **Get-AzureSubscription** abrufen und die gewünschten Abonnementinformationen aus dem ResultSet kopieren. Wenn Sie Ihre Abonnementinformationen haben, führen Sie das folgende Cmdlet aus:
+Zur Auswahl des Abonnements benötigen Sie Ihre Abonnement-ID oder den Anmeldenamen für das Abonnement (**-SubscriptionName**). Sie können diese Informationen aus dem vorherigen Schritt kopieren. Falls Sie über mehrere Abonnements verfügen, können Sie sie über das Cmdlet **Get-AzureSubscription** abrufen und die gewünschten Abonnementinformationen aus dem ResultSet kopieren. Wenn Sie Ihre Abonnementinformationen haben, führen Sie das folgende Cmdlet aus:
 
 	Select-AzureSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
 
 
 ## Erstellen von Ressourcengruppe, Server und Firewallregel
 
-Nachdem Sie nun Zugriff auf Cmdlets für Ihr Azure-Abonnement haben, können Sie im nächsten Schritt die Ressourcengruppe einrichten, die den Server für den Pool enthält. Sie können den nächsten Befehl für einen beliebigen gültigen Speicherort anpassen. Führen Sie **\(Get-AzureLocation \| where-object {$\_.Name -eq "Microsoft.Sql/servers" }\).Locations** aus, um eine Liste der gültigen Speicherorte abzurufen.
+Nachdem Sie nun Zugriff auf Cmdlets für Ihr Azure-Abonnement haben, können Sie im nächsten Schritt die Ressourcengruppe einrichten, die den Server für den Pool enthält. Sie können den nächsten Befehl für einen beliebigen gültigen Speicherort anpassen. Führen Sie **(Get-AzureLocation | where-object {$\_.Name -eq "Microsoft.Sql/servers" }).Locations** aus, um eine Liste der gültigen Speicherorte abzurufen.
 
 Wenn Sie bereits über eine Ressourcengruppe verfügen, können Sie mit dem nächsten Schritt fortfahren, oder Sie führen den folgenden Befehl zum Erstellen einer neuen Ressourcengruppe aus:
 
@@ -94,7 +94,7 @@ Weitere Informationen finden Sie unter [Firewall für die Azure SQL-Datenbank](h
 
 ## Erstellen eines Pools für elastische Datenbanken und elastischer Datenbanken
 
-Sie haben jetzt eine Ressourcengruppe, einen Server und eine Firewallregel konfiguriert, sodass Sie auf den Server zugreifen können. Durch den folgenden Befehl wird der Pool erstellt. Dieser Befehl erstellt einen Pool mit insgesamt 400 DTUs. Jede Datenbank im Pool bietet garantiert immer 10 verfügbare DTUs \("DatabaseDtuMin"\). Einzelne Datenbanken im Pool können maximal 100 DTUs \("DatabaseDtuMax"\) nutzen. Ausführliche Erläuterungen der Parameter finden Sie unter [Elastische Azure SQL-Datenbankpools](sql-database-elastic-pool.md).
+Sie haben jetzt eine Ressourcengruppe, einen Server und eine Firewallregel konfiguriert, sodass Sie auf den Server zugreifen können. Durch den folgenden Befehl wird der Pool erstellt. Dieser Befehl erstellt einen Pool mit insgesamt 400 DTUs. Jede Datenbank im Pool bietet garantiert immer 10 verfügbare DTUs ("DatabaseDtuMin"). Einzelne Datenbanken im Pool können maximal 100 DTUs ("DatabaseDtuMax") nutzen. Ausführliche Erläuterungen der Parameter finden Sie unter [Elastische Azure SQL-Datenbankpools](sql-database-elastic-pool.md).
 
 
 	New-AzureSqlElasticPool -ResourceGroupName "resourcegroup1" -ServerName "server1" -ElasticPoolName "elasticpool1" -Edition "Standard" -Dtu 400 -DatabaseDtuMin 10 -DatabaseDtuMax 100
@@ -148,8 +148,8 @@ Metriken, die als Prozentsatz des Poolgrenzwerts abgerufen werden können:
 * Durchschnittliche E/A-Auslastung – data\_io\_percent 
 * Durchschnittliche Protokollnutzung – log\_write\_percent 
 * Durchschnittliche Speicherauslastung – memory\_percent 
-* Durchschnittliche DTU-Auslastung \(als Maximalwert der CPU-, E/A- und Protokoll-Auslastung\) – DTU\_percent 
-* Maximale Anzahl gleichzeitiger Benutzeranforderungen \(Worker\) – max\_concurrent\_requests 
+* Durchschnittliche DTU-Auslastung (als Maximalwert der CPU-, E/A- und Protokoll-Auslastung) – DTU\_percent 
+* Maximale Anzahl gleichzeitiger Benutzeranforderungen (Worker) – max\_concurrent\_requests 
 * Maximale Anzahl gleichzeitiger Benutzersitzungen – max\_concurrent\_sessions 
 * Gesamtspeichergröße für den Pool – storage\_in\_megabytes 
 
@@ -160,7 +160,7 @@ Granularität/Beibehaltungsdauern für die Metriken:
 * Die Datenaufbewahrung beträgt 14 Tage.  
 
 
-Dieses Cmdlet und die API beschränken die Anzahl der Zeilen, die in einem Aufruf abgerufen werden können, auf 1000 Zeilen \(ca. drei Tage Daten bei 5-Minuten-Granularität\). Dieser Befehl kann jedoch mehrmals mit verschiedenen Anfangs- und Endzeitintervallen aufgerufen werden, um mehr Daten abzurufen.
+Dieses Cmdlet und die API beschränken die Anzahl der Zeilen, die in einem Aufruf abgerufen werden können, auf 1000 Zeilen (ca. drei Tage Daten bei 5-Minuten-Granularität). Dieser Befehl kann jedoch mehrmals mit verschiedenen Anfangs- und Endzeitintervallen aufgerufen werden, um mehr Daten abzurufen.
 
 
 Abrufen der Metriken:
@@ -181,11 +181,11 @@ Exportieren in eine CSV-Datei:
 
 ### Abrufen der Ressourcenverbrauchsmetriken für eine elastische Datenbank
 
-Diese APIs sind identisch mit den aktuellen APIs \(V12\), die für die Überwachung der Ressourcenverwendung einer eigenständigen Datenbank verwendet werden, mit Ausnahme der folgenden semantischen Unterschiede:
+Diese APIs sind identisch mit den aktuellen APIs (V12), die für die Überwachung der Ressourcenverwendung einer eigenständigen Datenbank verwendet werden, mit Ausnahme der folgenden semantischen Unterschiede:
 
-* Die für diese API abgerufenen Metriken werden als Prozentsatz des Werts „databaseDtuMax“ \(oder der entsprechenden Obergrenze für die zugrunde liegende Metrik wie CPU, E/A usw.\) ausgedrückt, der für diesen Pool festgelegt wurde. Beispielsweise zeigen 50 Prozent Auslastung bei einer dieser Metriken an, dass der spezifische Ressourcenverbrauch der Obergrenze pro Datenbank für diese Ressource im übergeordneten Pool bei 50 Prozent liegt. 
+* Die für diese API abgerufenen Metriken werden als Prozentsatz des Werts „databaseDtuMax“ (oder der entsprechenden Obergrenze für die zugrunde liegende Metrik wie CPU, E/A usw.) ausgedrückt, der für diesen Pool festgelegt wurde. Beispielsweise zeigen 50 Prozent Auslastung bei einer dieser Metriken an, dass der spezifische Ressourcenverbrauch der Obergrenze pro Datenbank für diese Ressource im übergeordneten Pool bei 50 Prozent liegt. 
 
-Abrufen der Metriken: $metrics = \(Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain \(\[TimeSpan\]::FromMinutes\(5\)\) -StartTime "4/18/2015" -EndTime "4/21/2015"\)
+Abrufen der Metriken: $metrics = (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015")
 
 Abrufen zusätzlicher Tage nach Bedarf durch eine Wiederholung des Aufrufs und Anfügen der Daten:
 
@@ -234,4 +234,4 @@ Weitere Informationen finden Sie unter [Übersicht über elastische Datenbankauf
 
 Weitere Informationen über elastische Datenbanken und elastische Datenbankpools, einschließlich API- und Fehlerinformationen, finden Sie unter [Referenz für elastische Datenbankpools](sql-database-elastic-pool-reference.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

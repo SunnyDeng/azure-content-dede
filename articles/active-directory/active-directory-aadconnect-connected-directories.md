@@ -46,4 +46,4 @@ Einmaliges Anmelden und AD FS| Domänenadministratorberechtigungen in der Domän
 * [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

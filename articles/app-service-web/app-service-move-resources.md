@@ -18,12 +18,12 @@
 	
 # Unterstützte Konfigurationen für das Verschieben
 
-Sie können Azure-Web-App-Ressourcen \(Web-Apps und App Services\) mit der [ARM-API zum Verschieben von Ressourcen](../resource-group-move-resources.md) verschieben.
+Sie können Azure-Web-App-Ressourcen (Web-Apps und App Services) mit der [ARM-API zum Verschieben von Ressourcen](../resource-group-move-resources.md) verschieben.
 
 Azure-Web-Apps unterstützen derzeit die folgenden Szenarien beim Verschieben:
 
 * Verschieben des gesamten Inhalts einer Ressourcengruppe in eine andere Ressourcengruppe
 	* Hinweis: In diesem Szenario darf die Zielressourcengruppe keine Microsoft.Web-Ressourcen enthalten.
-* Verschieben einzelner Web-Apps in eine andere Ressourcengruppe, während sie weiterhin im aktuellen App Service gehostet werden \(der App Service bleibt in der alten Ressourcengruppe\)
+* Verschieben einzelner Web-Apps in eine andere Ressourcengruppe, während sie weiterhin im aktuellen App Service gehostet werden (der App Service bleibt in der alten Ressourcengruppe)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

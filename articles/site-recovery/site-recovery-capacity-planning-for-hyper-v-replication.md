@@ -6,14 +6,16 @@
 	authors="csilauraa"
 	manager="jwhit"
 	editor="tysonn" />
+
 <tags
 	ms.service="site-recovery"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
 	ms.date="06/01/2015"
 	ms.author="lauraa" />
+
 
 # Kapazitätsplanung für die Hyper-V-Replikation
 
@@ -118,13 +120,13 @@ Wenn Sie bereits einen eigenständigen Hyper-V-Host als Wiederherstellungsserver
 
 	f. Klicken Sie bei Verwendung der zertifikatbasierten Authentifizierung auf **Zertifikat auswählen**, und geben Sie dann die erforderlichen Zertifikatinformationen an.
 
-	g. Legen Sie im Bereich **Autorisierung und Speicherung** fest, ob **alle** authentifizierten (primären) Server Replikationsdaten an diesen Replikatserver senden können oder ob die Replikation auf bestimmte primäre Server beschränkt ist. Sie können Platzhalterzeichen verwenden, um die Akzeptanz auf Server einer bestimmten Domäne zu beschränken, ohne die Server jeweils einzeln angeben zu müssen (z. B. *.contoso.com).
+	g. Legen Sie im Bereich **Autorisierung und Speicherung** fest, ob **alle** authentifizierten (primären) Server Replikationsdaten an diesen Replikatserver senden können oder ob die Replikation auf bestimmte primäre Server beschränkt ist. Sie können Platzhalterzeichen verwenden, um die Akzeptanz auf Server einer bestimmten Domäne zu beschränken, ohne die Server jeweils einzeln angeben zu müssen (z. B. \*.contoso.com).
 
-	h. Öffnen Sie die Firewallports auf allen Hyper-V-Wiederherstellungshosts: Port 443 (Zertifikatstelle): Get-ClusterNode | ForEach-Object {Invoke-command -computername \$_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}
+	h. Öffnen Sie die Firewallports auf allen Hyper-V-Wiederherstellungshosts: Port 443 (Zertifikatstelle): Get-ClusterNode | ForEach-Object {Invoke-command -computername \\$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}
 
 
           Port 80 (Kerberos auth):
-              Get-ClusterNode | ForEach-Object {Invoke-command -computername \$_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}
+              Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}
 
 
 ## Schritt 3: Ausführen des Tools Capacity Planner
@@ -193,11 +195,11 @@ Geben Sie die erforderlichen Netzwerkinformationen an, und klicken Sie dann auf 
 
     Standardspeicherort des Berichts
 
-    %systemdrive%\Users\Public\Documents\Capacity Planner
+    %systemdrive%\\Users\\Public\\Documents\\Capacity Planner
 
     Speicherort der Protokolle:
 
-    %systemdrive%\Users\Public\Documents\CapacityPlanner
+    %systemdrive%\\Users\\Public\\Documents\\CapacityPlanner
 
 ## Schritt 4: Interpretieren der Ergebnisse
 Sie können Metriken ignorieren, die unter den beiden folgenden Szenarios nicht aufgeführt sind, da sie für dieses Beispielszenario nicht von Bedeutung sind.
@@ -239,4 +241,4 @@ So stellen Sie ASR bereit:
 - [Einrichten von Schutz mit einem einzelnen VMM-Server](site-recovery-single-vmm)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

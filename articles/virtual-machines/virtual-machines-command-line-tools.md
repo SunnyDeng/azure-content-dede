@@ -65,7 +65,7 @@ Dieser Befehl importiert eine PUBLISHSETTINGS-Datei oder ein Zertifikat für den
 	warn:   Remember to delete it now that it has been imported.
 	info:   Account publish settings imported successfully
 
-> [AZURE.NOTE].publishsettings-Dateien können Details (Abonnementname und -ID) für mehr als ein Abonnement enthalten. Beim Importieren der PUBLISHSETTINGS-Datei wird das erste Abonnement als Standard-Abonnement verwendet. Führen Sie den folgenden Befehl aus, um ein anderes Abonnement zu verwenden: <code>~$ azure config set subscription &lt;Andere Abonnement-ID&gt;</code>
+> [AZURE.NOTE].publishsettings-Dateien können Details (Abonnementname und -ID) für mehr als ein Abonnement enthalten. Beim Importieren der PUBLISHSETTINGS-Datei wird das erste Abonnement als Standard-Abonnement verwendet. Führen Sie den folgenden Befehl aus, um ein anderes Abonnement zu verwenden: <code>\~$ azure config set subscription &lt;Andere Abonnement-ID&gt;</code>
 
 **account clear [Optionen]**
 
@@ -188,7 +188,7 @@ Das folgende Diagramm zeigt, wie virtuelle Azure-Computer in der Produktionsumge
 
 ![Technisches Diagramm Azure](./media/virtual-machines-command-line-tools/architecturediagram.jpg)
 
-**create-new** erstellt das Laufwerk im Blobspeicher (E:\ in diesem Diagramm); **attach** hängt ein bereits erstelltes, aber noch nicht angehängtes Laufwerk an einen virtuellen Computer an.
+**create-new** erstellt das Laufwerk im Blobspeicher (E:\\ in diesem Diagramm); **attach** hängt ein bereits erstelltes, aber noch nicht angehängtes Laufwerk an einen virtuellen Computer an.
 
 **vm create [Optionen] &lt;DNS-Name> &lt;Image> &lt;Benutzername> [Kennwort]**
 
@@ -206,9 +206,9 @@ Virtuelle Windows-Computer können RDP später aktivieren, indem Port 3389 als E
 
 Der Befehl unterstützt die folgenden optionalen Parameter:
 
-**-c, --connect** Erstellt den virtuellen Computer in einer bereits erstellten Bereitstellung in einem Hostingdienst. Bei der Verwendung dieser Option ohne -vmname wird der Name des neuen virtuellen Computers automatisch generiert.<br /> **-n, --vm-name** Geben Sie den Namen des virtuellen Computers an. Dieser Parameter nimmt standardmäßig den Namen des Hostingdiensts entgegen. Ohne Angabe von -vmname wird der Name des neuen virtuellen Computers als &lt;Dienstname>&lt;ID> generiert, wobei &lt;ID> die Anzahl existierender virtueller Computer im Dienst plus 1 ist. Wenn Sie mit diesem Befehl beispielsweise einen neuen virtuellen Computer zum Hostingdienst MyService hinzufügen, der bereits einen virtuellen Computer enthält, erhält der neue virtuelle Computer den Namen MyService2.<br /> **-u, --blob-url** Geben Sie die URL des Blobspeichers an, in dem das Systemlaufwerk des virtuellen Computers erstellt werden soll. <br /> **-z, --vm-size** Geben Sie die Größe des virtuellen Computers an. Gültige Werte sind: "ExtraSmall", "Small", "Medium", "Large", "ExtraLarge", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "Basic_A0", "Basic_A1", "Basic_A2", "Basic_A3", "Basic_A4", "Standard_D1", "Standard_D2", "Standard_D3", "Standard_D4", "Standard_D11", "Standard_D12", "Standard_D13", "Standard_D14", "Standard_DS1", "Standard_DS2", "Standard_DS3", "Standard_DS4", "Standard_DS11", "Standard_DS12", "Standard_DS13", "Standard_DS14", "Standard_G1", "Standard_G2", "Standard_G3", "Standard_G4", "Standard_G55". Der Standardwert ist "Small". <br /> **-r** Fügt einem virtuellen Windows-Computer RDP-Konnektivität hinzu <br /> **-e, --ssh** Fügt einem virtuellen Windows-Computer SSH-Konnektivität hinzu <br /> **-t, --ssh-cert** Legt das SSH-Zertifikat fest <br /> **-s** Das Abonnement <br /> **-o, --community** Das angegebene Bild ist ein Community-Image. <br /> **-w** Der Name des virtuellen Netzwerks <br/> **-l, --location** Gibt den Speicherort an (z. B. "Norden-Mitte USA") <br /> **-a, --affinity-group** Gibt die Affinitätsgruppe an<br /> **-w, --virtual-network-name** Gibt das virtuelle Netzwerk an, dem der neue virtuelle Computer hinzugefügt werden soll Virtuelle Netzwerke können im Azure-Portal eingerichtet und verwaltet werden.<br /> **-b, --subnet-names** Gibt die Subnetznamen an, die dem virtuellen Computer zugewiesen werden sollen.
+**-c, --connect** Erstellt den virtuellen Computer in einer bereits erstellten Bereitstellung in einem Hostingdienst. Bei der Verwendung dieser Option ohne -vmname wird der Name des neuen virtuellen Computers automatisch generiert.<br /> **-n, --vm-name** Geben Sie den Namen des virtuellen Computers an. Dieser Parameter nimmt standardmäßig den Namen des Hostingdiensts entgegen. Ohne Angabe von -vmname wird der Name des neuen virtuellen Computers als &lt;Dienstname>&lt;ID> generiert, wobei &lt;ID> die Anzahl existierender virtueller Computer im Dienst plus 1 ist. Wenn Sie mit diesem Befehl beispielsweise einen neuen virtuellen Computer zum Hostingdienst MyService hinzufügen, der bereits einen virtuellen Computer enthält, erhält der neue virtuelle Computer den Namen MyService2.<br /> **-u, --blob-url** Geben Sie die URL des Blobspeichers an, in dem das Systemlaufwerk des virtuellen Computers erstellt werden soll. <br /> **-z, --vm-size** Geben Sie die Größe des virtuellen Computers an. Gültige Werte sind: "ExtraSmall", "Small", "Medium", "Large", "ExtraLarge", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "Basic\_A0", "Basic\_A1", "Basic\_A2", "Basic\_A3", "Basic\_A4", "Standard\_D1", "Standard\_D2", "Standard\_D3", "Standard\_D4", "Standard\_D11", "Standard\_D12", "Standard\_D13", "Standard\_D14", "Standard\_DS1", "Standard\_DS2", "Standard\_DS3", "Standard\_DS4", "Standard\_DS11", "Standard\_DS12", "Standard\_DS13", "Standard\_DS14", "Standard\_G1", "Standard\_G2", "Standard\_G3", "Standard\_G4", "Standard\_G55". Der Standardwert ist "Small". <br /> **-r** Fügt einem virtuellen Windows-Computer RDP-Konnektivität hinzu <br /> **-e, --ssh** Fügt einem virtuellen Windows-Computer SSH-Konnektivität hinzu <br /> **-t, --ssh-cert** Legt das SSH-Zertifikat fest <br /> **-s** Das Abonnement <br /> **-o, --community** Das angegebene Bild ist ein Community-Image. <br /> **-w** Der Name des virtuellen Netzwerks <br/> **-l, --location** Gibt den Speicherort an (z. B. "Norden-Mitte USA") <br /> **-a, --affinity-group** Gibt die Affinitätsgruppe an<br /> **-w, --virtual-network-name** Gibt das virtuelle Netzwerk an, dem der neue virtuelle Computer hinzugefügt werden soll Virtuelle Netzwerke können im Azure-Portal eingerichtet und verwaltet werden.<br /> **-b, --subnet-names** Gibt die Subnetznamen an, die dem virtuellen Computer zugewiesen werden sollen.
 
-In diesem Beispiel wird das Image MSFT__Win2K8R2SP1-120514-1520-141205-01-de-de-30GB von der Plattform bereitgestellt. Weitere Informationen zu Betriebssystem-Images finden Sie in der VM-Imageliste.
+In diesem Beispiel wird das Image MSFT\_\_Win2K8R2SP1-120514-1520-141205-01-de-de-30GB von der Plattform bereitgestellt. Weitere Informationen zu Betriebssystem-Images finden Sie in der VM-Imageliste.
 
 	~$ azure vm create my-vm-name MSFT__Windows-Server-2008-R2-SP1.11-29-2011 username --location "West US" -r
 	info:   Executing command vm create
@@ -787,7 +787,7 @@ Dieser Befehl tauscht zwei Web-App-Steckplätze.
 
 Dieser Befehl unterstützt die folgende zusätzliche Option:
 
-**-q oder **--quiet**: Keine Bestätigungsaufforderungen. Verwenden Sie diese Option in automatisierten Skripts.
+****-q oder **--quiet**: Keine Bestätigungsaufforderungen. Verwenden Sie diese Option in automatisierten Skripts.
 
 
 **site start [Optionen] [Name]**
@@ -810,7 +810,7 @@ Dieser Befehl beendet eine Web-App.
 	info:   Site mysite has been stopped
 	info:   site stop command OK
 
-**site restart [Optionen] [Name]
+****site restart [Optionen] [Name]
 
 Dieser Befehl beendet die angegebene Web-App und startet sie dann wieder.
 
@@ -1261,7 +1261,7 @@ Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 
 > [AZURE.NOTE]Der Parameter **--query** hat Vorrang vor **--type**, **--skip** und **--top**.
 
-**mobile recover [Optionen] [Name_des_fehlerhaften_Diensts] [Name_des_fehlerfreien_Diensts]**
+**mobile recover [Optionen] [Name\_des\_fehlerhaften\_Diensts] [Name\_des\_fehlerfreien\_Diensts]**
 
 Dieser Befehl stellt einen fehlerhaften Mobile Service dadurch wieder her, dass dieser in einen fehlerfreien Mobile Service in einer anderen Region verschoben wird.
 
@@ -2014,7 +2014,7 @@ Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 + **-t** oder **--blobtype** &lt;Blob-Typ>: Der Speicher-Blob-Typ: Seite oder Block.
 + **-p** oder **--properties** &lt;Eigenschaften>: Die Speicher-Blob-Eigenschaften für die hochgeladene Datei. Bei Eigenschaften handelt es sich um Schlüssel=Wert-Paare, die durch ein Semikolon (;) voneinander getrennt sind. Die verfügbaren Eigenschaften sind contentType, contentEncoding, contentLanguage und cacheControl.
 + **-m** oder **--metadata** &lt;Metadaten>: Die Speicher-Blob-Metadaten für die hochgeladene Datei. Bei Metadaten handelt es sich um Schlüssel=Wert-Paare, die durch ein Semikolon (;) voneinander getrennt sind.
-+ **--concurrenttaskcount** &lt;Anzahl_gleichzeitiger_Aufgaben>: Die maximale Anzahl gleichzeitiger Uploadanforderungen.
++ **--concurrenttaskcount** &lt;Anzahl\_gleichzeitiger\_Aufgaben>: Die maximale Anzahl gleichzeitiger Uploadanforderungen.
 + **-q** oder **--quiet**: Überschreibt das angegebene Speicher-Blob ohne Bestätigung.
 + **-a** oder **--account-name** &lt;Kontoname>: Der Speicherkontoname.
 + **-k** oder **--account-key** &lt;Kontoschlüssel>: Der Speicherkontoschlüssel.
@@ -2031,7 +2031,7 @@ Dieser Befehl unterstützt die folgenden zusätzlichen Optionen:
 + **-b** oder **--blob** &lt;Blob-Name>: Der Speicher-Blob-Name.
 + **-d** oder **--destination** [Ziel]: die Zieldatei oder der Verzeichnispfad für den Download.
 + **-m** oder **--checkmd5**: Die md5-Prüfsumme für die heruntergeladene Datei.
-+ **--concurrenttaskcount** &lt;Anzahl_gleichzeitiger_Aufgaben>: Die maximale Anzahl gleichzeitiger Uploadanforderungen.
++ **--concurrenttaskcount** &lt;Anzahl\_gleichzeitiger\_Aufgaben>: Die maximale Anzahl gleichzeitiger Uploadanforderungen.
 + **-q** oder **--quiet**: Überschreibt die Zieldatei ohne Bestätigung.
 + **-a** oder **--account-name** &lt;Kontoname>: Der Speicherkontoname.
 + **-k** oder **--account-key** &lt;Kontoschlüssel>: Der Speicherkontoschlüssel.
@@ -2346,4 +2346,4 @@ Löscht einen DNS-Servereintrag aus der Netzwerkkonfiguration.
 	+ Deleting the DNS server entry dns-4 ( 77.88.99.11 )
 	info:    network dnsserver unregister command OK
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

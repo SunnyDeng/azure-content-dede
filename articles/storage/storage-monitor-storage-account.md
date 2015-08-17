@@ -72,7 +72,7 @@ Im Dashboard können Sie aus neun verfügbaren Metriken bis zu sechs Metriken zu
 	
 	- Um eine im Diagramm gezeichnete Metrik auszublenden, deaktivieren Sie das farbige Kontrollkästchen neben der Metriküberschrift.
 	
-		![Überwachung_n more](./media/storage-monitor-storage-account/storage_Monitoring_nmore.png)
+		![Überwachung\_n more](./media/storage-monitor-storage-account/storage_Monitoring_nmore.png)
   
 3. Standardmäßig zeigt das Diagramm Trends an, da nur der aktuelle Wert der einzelnen Metriken angezeigt wird (Option **Relativ** oben im Diagramm). Um eine Y-Achse einzublenden, sodass absolute Werte angezeigt werden, wählen Sie **Absolut** aus.
 
@@ -99,7 +99,7 @@ Mit den folgenden Vorgehensweisen können Sie wählen, welche Speichermetriken i
 	Die Seite **Überwachen** wird geöffnet. Standardmäßig zeigt die Metrikentabelle eine Teilmenge der für die Überwachung verfügbaren Metriken an. Die Abbildung zeigt die Standardanzeige der Seite "Überwachen" für ein Speicherkonto, für das für alle drei Dienste die ausführliche Überwachung konfiguriert ist. Verwenden Sie **Metriken hinzufügen**, um unter sämtlichen verfügbaren Metriken die zu überwachenden Metriken auszuwählen.
 
 
-	![Überwachung_AusführlicheAnzeige](./media/storage-monitor-storage-account/Storage_Monitoring_VerboseDisplay.png)
+	![Überwachung\_AusführlicheAnzeige](./media/storage-monitor-storage-account/Storage_Monitoring_VerboseDisplay.png)
 
 	> [AZURE.NOTE]Berücksichtigen Sie bei der Auswahl der Metriken die Kosten. Für die Aktualisierung von Überwachungsanzeigen fallen Transaktionsgebühren und Kosten für eingehenden Datenverkehr an. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://msdn.microsoft.com/library/azure/hh360997.aspx).
 
@@ -107,18 +107,18 @@ Mit den folgenden Vorgehensweisen können Sie wählen, welche Speichermetriken i
 
 	Die aggregierten Metriken für eine minimale Überwachung werden am Anfang der Liste angezeigt. Wenn das Kontrollkästchen aktiviert ist, wird die Metrik in der Metrikenliste angezeigt.
 
-	![Metriken hinzufügen_Anfängliche Anzeige](./media/storage-monitor-storage-account/Storage_AddMetrics_InitialDisplay.png)
+	![Metriken hinzufügen\_Anfängliche Anzeige](./media/storage-monitor-storage-account/Storage_AddMetrics_InitialDisplay.png)
  
 4. Zeigen Sie mit der Maus auf die rechte Seite des Dialogfelds, um eine Bildlaufleiste einzublenden, die Sie ziehen können, um weitere Metriken anzuzeigen.
 
-	![Metriken hinzufügen_Bildlaufleiste](./media/storage-monitor-storage-account/Storage_AddMetrics_Scrollbar.png)
+	![Metriken hinzufügen\_Bildlaufleiste](./media/storage-monitor-storage-account/Storage_AddMetrics_Scrollbar.png)
 
 
 5. Klicken Sie auf den Nach-unten-Pfeil neben einer Metrik, um eine Liste vor Vorgängen zu erweitern, die im Funktionsumfang der Metrik enthalten sind. Wählen Sie jeden Vorgang aus, der in der Metrikentabelle im Verwaltungsportal angezeigt werden soll.
 
 	In der folgenden Abbildung wurde die Metrik PROZENTSATZ DER AUTORISIERUNGSFEHLER erweitert.
 
-	![Erweitern_Reduzieren](./media/storage-monitor-storage-account/Storage_AddMetrics_ExpandCollapse.png)
+	![Erweitern\_Reduzieren](./media/storage-monitor-storage-account/Storage_AddMetrics_ExpandCollapse.png)
 
 
 6. Nachdem Sie Metriken für alle Dienste ausgewählt haben, klicken Sie auf "OK" (Häkchen), um die Überwachungskonfiguration zu aktualisieren. Die ausgewählten Metriken werden der Metrikentabelle hinzugefügt.
@@ -145,7 +145,7 @@ Für jeden für Ihr Speicherkonto verfügbaren Speicherdienste (Blob, Warteschla
 
 2. Klicken Sie auf **Konfigurieren**, und blättern Sie dann mit der Nach-unten-Taste zum Abschnitt **logging** (siehe Abbildung unten).
 
-	![Speicher_logging](./media/storage-monitor-storage-account/Storage_LoggingOptions.png)
+	![Speicher\_logging](./media/storage-monitor-storage-account/Storage_LoggingOptions.png)
 
  
 3. Konfigurieren Sie für jeden Dienst (Blob, Tabelle und Warteschlange) die folgenden Einstellungen:
@@ -159,4 +159,4 @@ Für jeden für Ihr Speicherkonto verfügbaren Speicherdienste (Blob, Warteschla
 Die Diagnoseprotokolle werden in einem Blob-Container namens $logs in Ihren Speicherkonto gespeichert. Informationen zum Zugreifen auf den Container $logs finden Sie unter [Informationen zur Protokollierung durch die Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343262.aspx).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

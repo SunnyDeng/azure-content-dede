@@ -82,4 +82,4 @@ Für virtuelle Computer gibt es diese verwandten Ressourcen: Domänennamen, virt
     
 Wenn Sie auf keine dieser Kacheln zugreifen können, fragen Sie den Administrator nach Zugriff als Mitwirkender auf diese Ressourcengruppe.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

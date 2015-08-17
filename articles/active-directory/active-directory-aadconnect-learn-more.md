@@ -18,9 +18,11 @@
 
 # Azure Active Directory Connect – Erfahren Sie mehr
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="../active-directory-aadconnect/" title="Worum handelt es sich?">Worum handelt es sich?</a> <a href="../active-directory-aadconnect-how-it-works/" title="Funktionsweise">Funktionsweise</a> <a href="../active-directory-aadconnect-get-started/" title="Erste Schritte">Erste Schritte</a> <a href="../active-directory-aadconnect-whats-next/" title="Nächste Schritte">Nächste Schritte</a> <a href="../active-directory-aadconnect-learn-more/" title="Weitere Informationen" class="current">Weitere Informationen</a>
-</div>
+> [AZURE.SELECTOR]
+- [What is It](../active-directory-aadconnect.md)
+- [How it Works](../active-directory-aadconnect-how-it-works.md)
+- [Getting Started](../active-directory-aadconnect-get-started.md)
+- [What's Next](../active-directory-aadconnect-whats-next.md) - [Learn More](../active-directory-aadconnect-learn-more.md)
 
 Es folgt eine Liste mit zusätzlichen Ressourcen für die Verwendung von Azure AD Connect und die Integration Ihrer lokalen Verzeichnisse in Azure AD.
 
@@ -47,4 +49,4 @@ In diesem Video erfahren Sie, wie einfach es ist, Ihr lokales Active Directory m
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

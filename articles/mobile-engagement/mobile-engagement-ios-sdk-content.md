@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Inhalt des iOS-SDK für Azure Mobile Engagement" 
+<properties
+	pageTitle="Inhalt des iOS-SDK für Azure Mobile Engagement"
 	description="Neueste Updates und Verfahren für das iOS-SDK für Azure Mobile Engagement"
-	services="mobile-engagement" 
-	documentationCenter="mobile" 
-	authors="kpiteira" 
-	manager="dwrede" 
+	services="mobile-engagement"
+	documentationCenter="mobile"
+	authors="MehrdadMzfr"
+	manager="dwrede"
 	editor="" />
 
-<tags 
-	ms.service="mobile-engagement" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-ios" 
-	ms.devlang="objective-c" 
-	ms.topic="article" 
-	ms.date="02/12/2015" 
+<tags
+	ms.service="mobile-engagement"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-ios"
+	ms.devlang="objective-c"
+	ms.topic="article"
+	ms.date="08/05/2015"
 	ms.author="kapiteir" />
 
 #SDK-Inhalt
@@ -41,6 +41,5 @@ Dieses Dokument enthält eine Liste und beschreibt den Inhalt des SDK-Archivs.
 Ordner "`src`"
 
 > Engagement-Ansichtencontroller und Reach-SDK-Quellcode (für erfahrene Benutzer, die Engagement-Klassen an Ihre Anforderungen anpassen möchten).
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -13,7 +13,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="identity"
-      ms.date="03/23/2015"
+      ms.date="07/30/2015"
       ms.author="shoatman"/>
 
 # Wie und warum werden Anwendungen zu Azure AD hinzugefügt?
@@ -65,7 +65,7 @@ Der Dienstprinzipal ist ein Anwendungsdatensatz in jedem Verzeichnis, in dem die
 ![Ein Diagramm zur Veranschaulichung der Anwendungsobjekte und Dienstprinzipale in Azure AD-Instanzen][apps_service_principals_directory]
 
 Wie Sie dem vorangegangenen Diagramm entnehmen können, stellt Microsoft intern (auf der linken Seite) zwei Verzeichnisse für die Veröffentlichung von Anwendungen bereit.
- 
+
 * Eines für Microsoft-Anwendungen (Verzeichnis für Microsoft-Dienste)
 * Eines für bereits integrierte Anwendungen von Drittanbietern (Verzeichnis für Anwendungskatalog)
 
@@ -145,6 +145,5 @@ Holen Sie weitere Informationen zum Hinzufügen von Anwendungen in Azure AD und 
 <!--Image references-->
 [apps_service_principals_directory]: media/active-directory-how-applications-are-added/HowAppsAreAddedToAAD.jpg
 [app_settings]: media/active-directory-how-applications-are-added/IntegratedAppSettings.jpg
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

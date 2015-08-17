@@ -27,7 +27,7 @@ Zur Durchführung dieses Lernprogramms benötigen Sie außerdem Folgendes:
 
 - [Visual Studio](http://msdn.microsoft.com/library/dd831853.aspx)
 - [Azure-Speicherkonto](../storage-create-storage-account.md)
-- [Windows Management Framework 3.0 ](http://www.microsoft.com/en-us/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
+- [Windows Management Framework 3.0 ](http://www.microsoft.com/de-de/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/de-de/download/details.aspx?id=40855)
 - [Azure PowerShell](../install-configure-powershell.md)
 
 Die Durchführung dieser Schritte dauert etwa 30 Minuten.
@@ -56,7 +56,7 @@ Um Azure AD zum Authentifizieren von Anforderungen an den Azure-Ressourcen-Manag
 
 5. Ersetzen Sie {application-id} durch die ID, die Sie gerade notiert haben, und erstellen Sie dann den Dienstprinzipal für die Anwendung:
 
-        New-AzureADServicePrincipal -ApplicationId {application-id} 
+        New-AzureADServicePrincipal -ApplicationId {application-id}
 
 6. Legen Sie die Berechtigung zum Verwenden der Anwendung fest:
 
@@ -109,7 +109,7 @@ Nachdem die Azure Active Directory-Anwendung erstellt und die Authentifizierungs
           ClientCredential cc = new ClientCredential("{application-id}", "{password}");
             var context = new AuthenticationContext("https://login.windows.net/{tenant-id}");
             var result = context.AcquireToken("https://management.azure.com/", cc);
-          
+
           if (result == null)
           {
             throw new InvalidOperationException("Failed to obtain the JWT token");
@@ -142,7 +142,7 @@ Ressourcen werden einer Ressourcengruppe immer bereitgestellt. Verwenden Sie die
 		public async static void CreateResourceGroup(TokenCloudCredentials credential)
 		{
 		  Console.WriteLine("Creating the resource group...");
-		  
+
           using (var resourceManagementClient = new ResourceManagementClient(credential))
 		  {
 		    var rgResult = await resourceManagementClient.ResourceGroups.CreateOrUpdateAsync("mytestrg1", new ResourceGroup { Location = "West US" });
@@ -170,7 +170,7 @@ Ein Speicherkonto wird benötigt, um die für den virtuellen Computer erstellte 
 		public async static void CreateStorageAccount(TokenCloudCredentials credential)
         {
           Console.WriteLine("Creating the storage account...");
-          
+
           using (var storageManagementClient = new StorageManagementClient(credential))
           {
             var saResult = await storageManagementClient.StorageAccounts.CreateAsync(
@@ -183,7 +183,7 @@ Ein Speicherkonto wird benötigt, um die für den virtuellen Computer erstellte 
         }
 
 3.	Fügen Sie der Main-Methode den folgenden Code hinzu, um die gerade hinzugefügte Methode aufzurufen:
-		
+
 		CreateStorageAccount(credential);
 		Console.ReadLine();
 
@@ -286,7 +286,7 @@ Nachdem Sie alle unterstützenden Ressourcen erstellt haben, können Sie nun ein
                 Location = "West US"
               } );
             Console.WriteLine(avSetResponse.StatusCode);
-                
+
             var networkClient = new NetworkResourceProviderClient(credential);
             var nicResponse = await networkClient.NetworkInterfaces.GetAsync("mytestrg1", "mytestnic1");
 
@@ -335,7 +335,7 @@ Nachdem Sie alle unterstützenden Ressourcen erstellt haben, können Sie nun ein
                   {
                     Name = "myosdisk1",
                     CreateOption = "FromImage",
-                    VirtualHardDisk = new VirtualHardDisk 
+                    VirtualHardDisk = new VirtualHardDisk
                     {
                       Uri = "http://mytestsa1.blob.core.windows.net/vhds/myosdisk1.vhd"
                     }
@@ -346,7 +346,7 @@ Nachdem Sie alle unterstützenden Ressourcen erstellt haben, können Sie nun ein
           }
         }
 
-	>[AZURE.NOTE]VHD-Imagenamen ändern sich regelmäßig im Imagekatalog, daher benötigen Sie einen aktuellen Imagenamen, um den virtuellen Computer bereitzustellen. Weitere Informationen hierzu finden Sie unter [Verwalten von Images mithilfe von Windows PowerShell](https://msdn.microsoft.com/library/azure/dn790330.aspx). Ersetzen Sie dann {source-image-name} durch den Namen der VHD-Datei, die Sie verwenden möchten. Beispiel: "a699494373c04fc0bc8f2bb1389d6106__Windows-Server-2012-R2-201411.01-en.us-127GB.vhd".
+	>[AZURE.NOTE]VHD-Imagenamen ändern sich regelmäßig im Imagekatalog, daher benötigen Sie einen aktuellen Imagenamen, um den virtuellen Computer bereitzustellen. Weitere Informationen hierzu finden Sie unter [Verwalten von Images mithilfe von Windows PowerShell](https://msdn.microsoft.com/library/azure/dn790330.aspx). Ersetzen Sie dann {source-image-name} durch den Namen der VHD-Datei, die Sie verwenden möchten. Beispiel: "a699494373c04fc0bc8f2bb1389d6106\_\_Windows-Server-2012-R2-201411.01-en.us-127GB.vhd".
 
 	Ersetzen Sie {subscription-id} durch Ihre Abonnement-ID.
 
@@ -388,4 +388,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/virtual-machines-arm-deployment/crpportal.png)
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

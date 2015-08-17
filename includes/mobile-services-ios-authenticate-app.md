@@ -22,4 +22,4 @@
 
 * Klicken Sie **Ausführen**, um die App zu starten und melden Sie sich an. Nach der Anmeldung sollten Sie die Todo-Liste anzeigen und Änderungen vornehmen können.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

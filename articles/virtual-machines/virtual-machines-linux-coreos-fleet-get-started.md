@@ -5,7 +5,9 @@
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
-	editor="madhana"/>
+	editor=""
+	tags="azure-service-management"/>
+
 
 <tags
 	ms.service="virtual-machines"
@@ -13,14 +15,15 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-linux"
 	ms.workload="infrastructure-services"
-	ms.date="03/17/2015"
+	ms.date="08/03/2015"
 	ms.author="danlep"/>
+
 
 # Erste Schritte mit Fleet unter CoreOS in Azure
 
 In diesem Artikel enthält zwei kurze Beispiele für die Verwendung von [Fleet](https://github.com/coreos/fleet) und [Docker](https://www.docker.com/) zum Ausführen von Anwendungen in einem Cluster von virtuellen [CoreOS]-Computern.
 
-Um diese Beispiele verwenden zu können, müssen Sie zunächst ein CoreOS-Cluster wie in [Gewusst wie: Verwenden von CoreOS in Azure] beschrieben einrichten. Danach verstehen Sie die grundlegenden Elemente einer CoreOS-Bereitstellung und verfügen über ein funktionierendes Cluster und den Clientcomputer. In diesen Beispielen verwenden wir denselben Clusternamen. Zudem wird in diesen Beispielen davon ausgegangen, dass Sie den lokalen Linux-Host zum Ausführen der **fleet**-Befehle verwenden.
+Um diese Beispiele verwenden zu können, müssen Sie zunächst ein CoreOS-Cluster wie in [Gewusst wie: Verwenden von CoreOS in Azure] beschrieben einrichten. Danach verstehen Sie die grundlegenden Elemente einer CoreOS-Bereitstellung und verfügen über ein funktionierendes Cluster und den Clientcomputer. In diesen Beispielen verwenden wir denselben Clusternamen. Zudem wird in diesen Beispielen davon ausgegangen, dass Sie den lokalen Linux-Host zum Ausführen der **fleetctl**-Befehle verwenden.
 
 
 
@@ -58,7 +61,7 @@ fleetctl --tunnel coreos-cluster.cloudapp.net:22 start helloworld.service
 Unit helloworld.service launched on 62f0f66e.../100.79.86.62
 ```
 
->[AZURE.NOTE]Um die **fleetctl**-Remotebefehle ohne den **--tunnel**-Parameter auszuführen, können Sie optional die FLEETCTL_TUNNEL-Umgebungsvariable zum Tunneln der Anforderungen festlegen. Beispiel: `export FLEETCTL_TUNNEL=coreos-cluster.cloudapp.net:22`.
+>[AZURE.NOTE]Um die **fleetctl**-Remotebefehle ohne den **--tunnel**-Parameter auszuführen, können Sie optional die FLEETCTL\_TUNNEL-Umgebungsvariable zum Tunneln der Anforderungen festlegen. Beispiel: `export FLEETCTL_TUNNEL=coreos-cluster.cloudapp.net:22`.
 
 
 Sie können eine Verbindung mit dem Container herstellen, um die Ausgabe des Diensts anzuzeigen:
@@ -90,7 +93,7 @@ fleetctl --tunnel coreos-cluster.cloudapp.net:22 unload helloworld.service
 
 Ein Vorteil der Verwendung von CoreOS, Docker und **fleet** besteht darin, dass dann Dienste problemlos mit hoher Verfügbarkeit ausgeführt werden können. In diesem Beispiel stellen Sie einen Dienst bereit, der aus drei identischen Containern besteht, in denen der Apache-Webserver ausgeführt wird. Der Container werden auf die drei virtuellen Computern im Cluster ausgeführt. Dieses Beispiel ähnelt dem Beispiel in [Starten von Containern mit fleet] und verwendet das [CoreOS-Image Apache Docker Hub].
 
->[AZURE.NOTE]Um den Apache-Server mit hoher Verfügbarkeit auszuführen, müssen Sie auf den virtuellen Computern einen HTTP-Endpunkt mit Lastenausgleich konfigurieren (öffentlicher Port 80, privater Port 80). Sie können dies nach der Erstellung des CoreOS-Clusters im Azure-Verwaltungsportal oder mit dem Befehl **azure vm endpoint** tun. Weitere Informationen finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich].
+>[AZURE.IMPORTANT]Um den Apache-Server mit hoher Verfügbarkeit auszuführen, müssen Sie auf den virtuellen Computern einen HTTP-Endpunkt mit Lastenausgleich konfigurieren (öffentlicher Port 80, privater Port 80). Sie können dies nach der Erstellung des CoreOS-Clusters im Azure-Portal oder mit dem Befehl **azure vm endpoint** tun. Weitere Informationen finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich].
 
 Erstellen Sie auf dem Clientcomputer mit Ihrem bevorzugten Texteditor eine **systemd**-Unit-Vorlagendatei namens apache@.service. Sie verwenden diese Vorlage zum Starten von drei separaten Instanzen namens apache@1.service, apache@2.service und apache@3.service:
 
@@ -120,7 +123,7 @@ Jetzt starten Sie die Unit-Instanzen im CoreOS-Cluster. Sie sollten sehen, dass 
 fleetctl --tunnel coreos-cluster.cloudapp.net:22 start apache@{1,2,3}.service
 
 unit apache@3.service launched on 00c927e4.../100.79.62.16
-unit apache@1.service launched on 62f0f66e.../100.79.86.62
+unit apache@1.\service launched on 62f0f66e.../100.79.86.62
 unit apache@2.service launched on df85f2d1.../100.78.126.15
 
 ```
@@ -131,7 +134,7 @@ Um den Apache-Server, der in einer dieser Units ausgeführt wird, zu erreichen, 
 Sie sehen Standardtext, der vom Apache-Server zurückgegeben wird und etwa wie folgt lautet:
 
 ```
-<htm\l><body><h1>It works!</h1>
+<html><body><h1>It works!</h1>
 <p>This is the default web page for this server.</p>
 <p>The web server software is running but no content has been added, yet.</p>
 </body></html>
@@ -149,9 +152,11 @@ fleetctl --tunnel coreos-cluster.cloudapp.net:22 unload apache@{1,2,3}.service
 
 ## Nächste Schritte
 
-Sie können das CoreOS-Cluster mit drei Knoten in Azure auch zu anderen Zwecken verwenden. Lesen Sie [Tim Park's CoreOS Tutorial] (Tim Parks CoreOS-Lernprogramm), [Patrick Chanezon's CoreOS Tutorial] (Patrick Chanezons CoreOS-Lernprogramm), die [Docker]-Dokumentation und [CoreOS Overview] (Übersicht zu CoreOS) (allesamt in englischer Sprache), um herauszufinden, wie Sie komplexere Cluster erstellen und Docker verwenden sowie interessantere Anwendungen erstellen können.
+* Sie können das CoreOS-Cluster mit drei Knoten in Azure auch zu anderen Zwecken verwenden. Lesen Sie [Tim Park's CoreOS Tutorial] (Tim Parks CoreOS-Lernprogramm), [Patrick Chanezon's CoreOS Tutorial] (Patrick Chanezons CoreOS-Lernprogramm), die [Docker]-Dokumentation und [CoreOS Overview] (Übersicht zu CoreOS) (allesamt in englischer Sprache), um herauszufinden, wie Sie komplexere Cluster erstellen und Docker verwenden sowie interessantere Anwendungen erstellen können.
 
-Weitere Informationen zur Verwendung von Open Source-Umgebungen in virtuellen Linux-Computern in Azure finden Sie unter [Linux- und Open Source-Computing in Azure].
+* Zum Einstieg in Fleet und CoreOS mit dem Azure-Ressourcen-Manager können Sie die [Schnellstart-Vorlage](https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/) nutzen.
+
+* Weitere Informationen zur Verwendung von Open Source-Umgebungen in virtuellen Linux-Computern in Azure finden Sie unter [Linux- und Open Source-Computing in Azure].
 
 <!--Link references-->
 [Azure Command-Line Interface (Azure)]: ../xplat-cli.md
@@ -163,12 +168,11 @@ Weitere Informationen zur Verwendung von Open Source-Umgebungen in virtuellen Li
 [Docker]: http://docker.io
 [YAML]: http://yaml.org/
 [Gewusst wie: Verwenden von CoreOS in Azure]: virtual-machines-linux-coreos-how-to.md
-[Konfigurieren einer Gruppe mit Lastenausgleich]: http://msdn.microsoft.com/library/azure/dn655055.aspx
+[Konfigurieren einer Gruppe mit Lastenausgleich]: ../load-balancer/load-balancer-internet-getstarted.md
 [Starten von Containern mit fleet]: https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/
 [Unit Files]: https://coreos.com/docs/launching-containers/launching/fleet-unit-files/
 [Docker-Hub-Image BusyBox]: https://registry.hub.docker.com/_/busybox/
 [CoreOS-Image Apache Docker Hub]: https://registry.hub.docker.com/u/coreos/apache/
 [Linux- und Open Source-Computing in Azure]: virtual-machines-linux-opensource.md
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

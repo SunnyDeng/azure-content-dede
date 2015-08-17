@@ -4,7 +4,7 @@
 	services="application-insights"
     documentationCenter="" 
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
  
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/01/2015" 
+	ms.date="08/04/2015" 
 	ms.author="awills"/>
 
 # Application Insights-API für benutzerdefinierte Ereignisse und Metriken 
@@ -35,6 +35,7 @@ Methode | Verwendung
 [`TrackException`](#track-exception)|Protokollieren von Ausnahmen für die Diagnose. Verfolgen Sie, wo diese in Bezug auf andere Ereignisse auftreten, und untersuchen Sie die Stapelüberwachung.
 [`TrackRequest`](#track-request)| Protokollieren Sie die Häufigkeit und Dauer der Serveranforderungen für die Leistungsanalyse.
 [`TrackTrace`](#track-trace)|Diagnoseprotokollnachrichten. Sie können auch Drittanbieterprotokolle erfassen.
+[`TrackDependency`](#track-dependency)|Protokollieren Sie die Dauer und die Häufigkeit der Aufrufe von externen Komponenten, von denen Ihre Anwendung abhängt.
 
 Sie können den meisten dieser Telemetrieaufrufe [Eigenschaften und Metriken anfügen](#properties).
 
@@ -107,17 +108,17 @@ Senden Sie z. B. in einer Spiele-App ein Ereignis, sobald ein Benutzer das Spiel
 
 Klicken Sie auf die Kachel "Benutzerdefinierte Ereignisse" auf dem Blatt "Übersicht":
 
-![Navigieren Sie zu Ihrer Anwendungsressource in portal.azure.com.](./media/app-insights-custom-events-metrics-api/01-custom.png)
+![Navigieren Sie zu Ihrer Anwendungsressource in portal.azure.com.](./media/app-insights-api-custom-events-metrics/01-custom.png)
 
 Klicken Sie weiter, um ein Übersichtsdiagramm und eine vollständige Liste anzuzeigen.
 
 Wählen Sie das Diagramm aus, und unterteilen Sie es nach Ereignisnamen, um die relativen Beiträge der wichtigsten Ereignisse anzuzeigen.
 
-![Wählen Sie das Diagramm aus, und legen Sie die Gruppierung fest.](./media/app-insights-custom-events-metrics-api/02-segment.png)
+![Wählen Sie das Diagramm aus, und legen Sie die Gruppierung fest.](./media/app-insights-api-custom-events-metrics/02-segment.png)
 
 Wählen Sie in der Liste unterhalb des Diagramms einen Ereignisnamen aus. Klicken Sie, um weitere einzelne Vorkommen eines Ereignisses anzuzeigen.
 
-![Führen Sie ein Drillthrough für die Ereignisse aus.](./media/app-insights-custom-events-metrics-api/03-instances.png)
+![Führen Sie ein Drillthrough für die Ereignisse aus.](./media/app-insights-api-custom-events-metrics/03-instances.png)
 
 Klicken Sie auf ein beliebiges Vorkommen, um weitere Details anzuzeigen.
 
@@ -184,34 +185,34 @@ Es gibt einige [Beschränkungen hinsichtlich der Anzahl von Eigenschaften, Eigen
     metrics.put("Score", currentGame.getScore());
     metrics.put("Opponents", currentGame.getOpponentCount());
     
-    telemetry.trackEvent("WinGame", properties, metrics2/7/2015 12:05:25 AM );
+    telemetry.trackEvent("WinGame", properties, metrics);
 
 
 > [AZURE.NOTE]Achten Sie darauf, keine persönlich identifizierbaren Informationen in den Eigenschaften zu protokollieren.
 
 **Wenn Sie Metriken verwenden**, öffnen Sie den Metrik-Explorer, und wählen Sie die Metrik aus der benutzerdefinierten Gruppe aus:
 
-![Öffnen Sie den Metrik-Explorer, wählen Sie das Diagramm aus, und wählen Sie die Metrik aus.](./media/app-insights-custom-events-metrics-api/03-track-custom.png)
+![Öffnen Sie den Metrik-Explorer, wählen Sie das Diagramm aus, und wählen Sie die Metrik aus.](./media/app-insights-api-custom-events-metrics/03-track-custom.png)
 
 *Wenn die Metrik nicht angezeigt wird, schließen Sie das Blatt "Auswahl", warten Sie einen Moment, und klicken Sie auf "Aktualisieren".*
 
 **Wenn Sie Eigenschaften und Metriken verwendet haben**, unterteilen Sie die Metrik nach der Eigenschaft:
 
 
-![Legen Sie die Gruppierung fest, und wählen Sie dann unter "Gruppieren nach" die Eigenschaft aus.](./media/app-insights-custom-events-metrics-api/04-segment-metric-event.png)
+![Legen Sie die Gruppierung fest, und wählen Sie dann unter "Gruppieren nach" die Eigenschaft aus.](./media/app-insights-api-custom-events-metrics/04-segment-metric-event.png)
 
 
 
 **In der Diagnosesuche** können Sie die Eigenschaften und Metriken einzelner Vorkommen eines Ereignisses anzeigen.
 
 
-![Wählen Sie eine Instanz und anschließend "...".](./media/app-insights-custom-events-metrics-api/appinsights-23-customevents-4.png)
+![Wählen Sie eine Instanz und anschließend "...".](./media/app-insights-api-custom-events-metrics/appinsights-23-customevents-4.png)
 
 
 Verwenden Sie das Suchfeld, um Ereignisvorkommen mit einem bestimmten Eigenschaftswert anzuzeigen.
 
 
-![Geben Sie einen Begriff in das Suchfeld ein.](./media/app-insights-custom-events-metrics-api/appinsights-23-customevents-5.png)
+![Geben Sie einen Begriff in das Suchfeld ein.](./media/app-insights-api-custom-events-metrics/appinsights-23-customevents-5.png)
 
 [Erfahren Sie mehr über Suchausdrücke][diagnostic].
 
@@ -229,6 +230,7 @@ Wenn es für Sie praktischer ist, können Sie die Parameter eines Ereignisses in
     event.Metrics["Opponents"] = currentGame.Opponents.Length;
 
     telemetry.TrackEvent(event);
+
 
 
 #### <a name="timed"></a> Zeitmessung bei Ereignissen
@@ -296,7 +298,7 @@ Tatsächlich können Sie dies in einem Hintergrundthread ausführen:
 
 Um die Ergebnisse anzuzeigen, öffnen Sie den Metrik-Explorer, und fügen Sie ein neues Diagramm hinzu. Legen Sie es für die Anzeige Ihrer Metrik fest.
 
-![Fügen Sie ein neues Diagramm hinzu, oder wählen Sie ein Diagramm aus, und wählen Sie Ihre Metrik unter "Benutzerdefiniert" aus.](./media/app-insights-custom-events-metrics-api/03-track-custom.png)
+![Fügen Sie ein neues Diagramm hinzu, oder wählen Sie ein Diagramm aus, und wählen Sie Ihre Metrik unter "Benutzerdefiniert" aus.](./media/app-insights-api-custom-events-metrics/03-track-custom.png)
 
 Es gibt einige [Beschränkungen hinsichtlich der Anzahl von Metriken](#limits), die verwendet werden können.
 
@@ -304,7 +306,7 @@ Es gibt einige [Beschränkungen hinsichtlich der Anzahl von Metriken](#limits), 
 
 In einer Geräte- oder Webseiten-App werden die Telemetriedaten zu den Seitenaufrufen standardmäßig gesendet, wenn die einzelnen Bildschirme oder Seiten geladen werden. Sie können dies jedoch so ändern, dass Seitenaufrufe zu zusätzlichen oder anderen verfolgt werden. Angenommen, Sie möchten in einer App mit Registerkarten oder Blättern eine "Seite" nachverfolgen, sobald der Benutzer ein neues Blatt öffnet.
 
-![Lupe für Nutzung auf dem Blatt "Übersicht"](./media/app-insights-custom-events-metrics-api/appinsights-47usage-2.png)
+![Lupe für Nutzung auf dem Blatt "Übersicht"](./media/app-insights-api-custom-events-metrics/appinsights-47usage-2.png)
 
 Benutzer- und Sitzungsdaten werden als Eigenschaften zusammen mit Seitenaufrufen gesendet, damit die Benutzer- und Sitzungsdiagramme aktiv werden, sobald Telemetriedaten zu den Seitenaufrufen vorliegen.
 
@@ -367,7 +369,7 @@ Sie können diese Methode auch selbst aufrufen, wenn Sie Anforderungen in einem 
 
 ## TrackException
 
-Senden Sie Ausnahmen an Application Insights, um sie als Hinweis auf die Häufigkeit eines Problems [zu zählen][metrics] und um [einzelne Vorkommen zu untersuchen][diagnostic].
+Senden Sie Ausnahmen an Application Insights, um sie als Hinweis auf die Häufigkeit eines Problems [zu zählen][metrics] und um [einzelne Vorkommen zu untersuchen][diagnostic]. Die Berichte enthalten die Stapelüberwachung.
 
 *C#*
 
@@ -398,87 +400,29 @@ Verwenden Sie diese Methode zur Diagnose von Problemen, indem Sie eine "Brotkrü
 
 Die Größenbeschränkung für `message` liegt wesentlich höher als der Grenzwert für Eigenschaften. Sie können nach Nachrichteninhalt suchen, aber (anders als bei Eigenschaftswerten) nicht danach filtern.
 
+## TrackDependency
 
-## <a name="default-properties"></a>Festlegen von Standardeigenschaften für alle Telemetriedaten
+Verwenden Sie diesen Aufruf zum Verfolgen der Antwortzeiten und der Erfolgsraten der Aufrufe an eine externe Codepassage. Die Ergebnisse werden in den Abhängigkeitsdiagrammen im Portal angezeigt.
 
-Sie können einen universellen Initialisierer einrichten, damit alle neuen "TelemetryClient"-Elemente automatisch Ihren Kontext verwenden. Dies schließt die standardmäßigen Telemetriedaten ein, die von plattformspezifischen Telemetriemodulen gesendet werden, wie z. B. die Nachverfolgung von Webserveranforderungen.
+```C#
 
-Eine typische Verwendung besteht in der Identifikation von Telemetriedaten aus verschiedenen Versionen oder Komponenten Ihrer App. Im Portal können Sie Ergebnisse nach dieser Eigenschaft filtern oder gruppieren.
+            var success = false;
+            var startTime = DateTime.UtcNow;
+            var timer = System.Diagnostics.Stopwatch.StartNew();
+            try
+            {
+                success = dependency.Call();
+            }
+            finally
+            {
+                timer.Stop();
+                telemetry.TrackDependency("myDependency", "myCall", startTime, timer.Elapsed, success);
+            }
+```
 
-*C#*
+Beachten Sie, dass die Server-SDKs ein [Abhängigkeitsmodul](app-insights-dependencies.md) enthalten, das bestimmte Abhängigkeitsaufrufe automatisch ermittelt und überwacht – z. B. von Datenbanken und REST-APIs. Sie müssen einen Agent auf dem Server installieren, damit das Modul funktioniert. Sie können diesen Aufruf verwenden, um Aufrufe zu verfolgen, die durch die automatisierte Nachverfolgung nicht angezeigt werden oder wenn Sie den Agent nicht installieren möchten.
 
-    // Telemetry initializer class
-    public class MyTelemetryInitializer : IContextInitializer
-    {
-        public void Initialize (TelemetryContext context)
-        {
-            context.Properties["AppVersion"] = "v2.1";
-        }
-    }
-
-    // In the app initializer such as Global.asax.cs:
-
-    protected void Application_Start()
-    {
-        // ...
-        TelemetryConfiguration.Active.ContextInitializers
-        .Add(new MyTelemetryInitializer());
-    }
-
-*Java*
-
-    import com.microsoft.applicationinsights.extensibility.ContextInitializer;
-    import com.microsoft.applicationinsights.telemetry.TelemetryContext;
-
-    public class MyTelemetryInitializer implements ContextInitializer {
-      @Override
-      public void initialize(TelemetryContext context) {
-        context.getProperties().put("AppVersion", "2.1");
-      }
-    }
-
-    // load the context initializer
-    TelemetryConfiguration.getActive().getContextInitializers().add(new MyTelemetryInitializer());
-
-
-Im JavaScript-Webclient können derzeit keine Standardeigenschaften festgelegt werden.
-
-## <a name="dynamic-ikey"></a>Dynamischer Instrumentationsschlüssel
-
-Um das Vermischen von Telemetriedaten aus Entwicklungs-, Test- und Produktionsumgebungen zu vermeiden, können Sie [separate Application Insights-Ressourcen erstellen][create] und ihre Schlüssel abhängig von der Umgebung ändern.
-
-Statt den Instrumentationsschlüssel aus der Konfigurationsdatei abzurufen, können Sie ihn im Code festlegen. Legen Sie den Schlüssel in einer Initialisierungsmethode fest, wie z. B. "global.aspx.cs" in einem ASP.NET-Dienst:
-
-*C#*
-
-    protected void Application_Start()
-    {
-      Microsoft.ApplicationInsights.Extensibility.
-        TelemetryConfiguration.Active.InstrumentationKey = 
-          // - for example -
-          WebConfigurationManager.Settings["ikey"];
-      ...
-
-*JavaScript*
-
-    appInsights.config.instrumentationKey = myKey; 
-
-
-
-Auf Webseiten empfiehlt es sich, ihn über den Zustand des Webservers festzulegen, anstatt ihn im Skript zu codieren. Hier zum Beispiel auf einer Webseite, die von einer ASP.NET-App generiert wird:
-
-*JavaScript in Razor*
-
-    <script type="text/javascript">
-    // Standard Application Insights web page script:
-    var appInsights = window.appInsights || function(config){ ...
-    // Modify this part:
-    }({instrumentationKey:  
-      // Generate from server property:
-      @Microsoft.ApplicationInsights.Extensibility.
-         TelemetryConfiguration.Active.InstrumentationKey"
-    }) // ...
-
+Um das Standardmodul zum Nachverfolgen von Abhängigkeiten zu deaktivieren, bearbeiten Sie [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md), und löschen Sie den Verweis auf `DependencyCollector.DependencyTrackingTelemetryModule`.
 
 ## <a name="defaults"></a>Festlegen von Standardeinstellungen für ausgewählte benutzerdefinierte Telemetriedaten
 
@@ -517,6 +461,7 @@ Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwört
 
 
 
+
 ## <a name="ikey"></a> Festlegen des Instrumentationsschlüssels für ausgewählte benutzerdefinierte Telemetriedaten
 
 *C#*
@@ -524,6 +469,205 @@ Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwört
     var telemetry = new TelemetryClient();
     telemetry.Context.InstrumentationKey = "---my key---";
     // ...
+
+
+## <a name="default-properties"></a>Kontextinitialisierer – Festlegen von Standardeigenschaften für alle Telemetriedaten
+
+Sie können einen universellen Initialisierer einrichten, damit alle neuen "TelemetryClient"-Elemente automatisch Ihren Kontext verwenden. Dies schließt die standardmäßigen Telemetriedaten ein, die von plattformspezifischen Telemetriemodulen gesendet werden, wie z. B. die Nachverfolgung von Webserveranforderungen.
+
+Eine typische Verwendung besteht in der Identifikation von Telemetriedaten aus verschiedenen Versionen oder Komponenten Ihrer App. Im Portal können Sie Ergebnisse nach der Eigenschaft "Application Version" filtern oder gruppieren.
+
+**Definieren des Initialisierers**
+
+
+*C#*
+
+```C#
+
+    using System;
+    using Microsoft.ApplicationInsights.Channel;
+    using Microsoft.ApplicationInsights.DataContracts;
+    using Microsoft.ApplicationInsights.Extensibility;
+
+    namespace MyNamespace
+    {
+      // Context initializer class
+      public class MyContextInitializer : IContextInitializer
+      {
+        public void Initialize (TelemetryContext context)
+        {
+            if (context == null) return;
+
+            context.Component.Version = "v2.1";
+        }
+      }
+    }
+```
+
+*Java*
+
+```Java
+
+    import com.microsoft.applicationinsights.extensibility.ContextInitializer;
+    import com.microsoft.applicationinsights.telemetry.TelemetryContext;
+
+    public class MyContextInitializer implements ContextInitializer {
+      @Override
+      public void initialize(TelemetryContext context) {
+        context.Component.Version = "2.1";
+      }
+    }
+```
+
+**Laden des Initialisierers**
+
+In "ApplicationInsights.config":
+
+    <ApplicationInsights>
+      <ContextInitializers>
+        <!-- Fully qualified type name, assembly name: -->
+        <Add Type="MyNamespace.MyContextInitializer, MyAssemblyName"/> 
+        ...
+      </ContextInitializers>
+    </ApplicationInsights>
+
+*Alternativ* können Sie den Initialisierer im Code instanziieren:
+
+*C#*
+
+```C#
+
+    protected void Application_Start()
+    {
+        // ...
+        TelemetryConfiguration.Active.ContextInitializers
+        .Add(new MyContextInitializer());
+    }
+```
+
+*Java*
+
+```Java
+
+    // load the context initializer
+    TelemetryConfiguration.getActive().getContextInitializers().add(new MyContextInitializer());
+```
+
+Im JavaScript-Webclient können derzeit keine Standardeigenschaften festgelegt werden.
+
+## Telemetrieinitialisierer
+
+Verwenden Sie Telemetrieinitialisierer zum Überschreiben ausgewählter Verhalten der Standardtelemetriemodule.
+
+Das Application Insights for Web-Paket erfasst beispielsweise Telemetriedaten über HTTP-Anforderungen. Standardmäßig kennzeichnet es jede Anforderung mit einem Antwortcode >= 400 als fehlerhaft. Wenn 400 jedoch als erfolgreich behandelt werden soll, können Sie einen Telemetrieinitialisierer angeben, der die Success-Eigenschaft festlegt.
+
+Wenn Sie einen Telemetrieinitialisierer angeben, wird dieser immer aufgerufen, wenn eine der Track*()-Methoden aufgerufen wird. Dies umfasst auch Methoden, die von den Standardtelemetriemodulen aufgerufen werden. Nach Abmachung legen diese Module keine Eigenschaft fest, die bereits durch einen Initialisierer festgelegt wurde.
+
+**Definieren des Initialisierers**
+
+*C#*
+
+```C#
+
+    using System;
+    using Microsoft.ApplicationInsights.Channel;
+    using Microsoft.ApplicationInsights.DataContracts;
+    using Microsoft.ApplicationInsights.Extensibility;
+
+    namespace MvcWebRole.Telemetry
+    {
+      /*
+       * Custom TelemetryInitializer that overrides the default SDK 
+       * behavior of treating response codes >= 400 as failed requests
+       * 
+       */
+      public class MyTelemetryInitializer : ITelemetryInitializer
+      {
+        public void Initialize(ITelemetry telemetry)
+        {
+            var requestTelemetry = telemetry as RequestTelemetry;
+            // Is this a TrackRequest() ?
+            if (requestTelemetry == null) return;
+            int code;
+            bool parsed = Int32.TryParse(requestTelemetry.ResponseCode, out code);
+            if (!parsed) return;
+            if (code >= 400 && code < 500)
+            {
+                // If we set the Success property, the SDK won't change it:
+                requestTelemetry.Success = true;
+                // Allow us to filter these requests in the portal:
+                requestTelemetry.Context.Properties["Overridden400s"] = "true";
+            }
+            // else leave the SDK to set the Success property      
+        }
+      }
+    }
+```
+
+**Laden des Initialisierers**
+
+In "ApplicationInsights.config":
+
+    <ApplicationInsights>
+      <TelemetryInitializers>
+        <!-- Fully qualified type name, assembly name: -->
+        <Add Type="MvcWebRole.Telemetry.MyTelemetryInitializer, MvcWebRole"/> 
+        ...
+      </TelemetryInitializers>
+    </ApplicationInsights>
+
+*Alternativ* können Sie den Initialisierer im Code instanziieren, z. B. in "Global.aspx.cs":
+
+
+```C#
+    protected void Application_Start()
+    {
+        // ...
+        TelemetryConfiguration.Active.TelemetryInitializers
+        .Add(new MyTelemetryInitializer());
+    }
+```
+
+
+[Weitere Informationen zu diesem Beispiel anzeigen.](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/MvcWebRole)
+
+## <a name="dynamic-ikey"></a>Dynamischer Instrumentationsschlüssel
+
+Um das Vermischen von Telemetriedaten aus Entwicklungs-, Test- und Produktionsumgebungen zu vermeiden, können Sie [separate Application Insights-Ressourcen erstellen][create] und ihre Schlüssel abhängig von der Umgebung ändern.
+
+Statt den Instrumentationsschlüssel aus der Konfigurationsdatei abzurufen, können Sie ihn im Code festlegen. Legen Sie den Schlüssel in einer Initialisierungsmethode fest, wie z. B. "global.aspx.cs" in einem ASP.NET-Dienst:
+
+*C#*
+
+    protected void Application_Start()
+    {
+      Microsoft.ApplicationInsights.Extensibility.
+        TelemetryConfiguration.Active.InstrumentationKey = 
+          // - for example -
+          WebConfigurationManager.Settings["ikey"];
+      ...
+
+*JavaScript*
+
+    appInsights.config.instrumentationKey = myKey; 
+
+
+
+Auf Webseiten empfiehlt es sich, ihn über den Zustand des Webservers festzulegen, anstatt ihn im Skript zu codieren. Hier zum Beispiel auf einer Webseite, die von einer ASP.NET-App generiert wird:
+
+*JavaScript in Razor*
+
+    <script type="text/javascript">
+    // Standard Application Insights web page script:
+    var appInsights = window.appInsights || function(config){ ...
+    // Modify this part:
+    }({instrumentationKey:  
+      // Generate from server property:
+      @Microsoft.ApplicationInsights.Extensibility.
+         TelemetryConfiguration.Active.InstrumentationKey"
+    }) // ...
+
+
 
 ## Leeren von Daten
 
@@ -533,7 +677,7 @@ Normalerweise sendet das SDK Daten zu ausgewählten Zeiten, um den Benutzer mög
 
     telemetry.Flush();
 
-Beachten Sie, dass diese Funktion synchron ist.
+Beachten Sie, dass die Funktion je nach Kanal-Implementierung synchron sein kann.
 
 
 
@@ -575,6 +719,9 @@ Wenn Sie diese Werte selbst festlegen, empfiehlt es sich, die entsprechende Zeil
 * **Session** Identifiziert die Sitzung des Benutzers. Die ID wird auf einen generierten Wert festgelegt, der geändert wird, wenn der Benutzer für eine Weile nicht aktiv ist.
 * **User** Ermöglicht das Zählen von Benutzern. Wenn in einer Web-App ein Cookie vorhanden ist, wird die Benutzer-ID daraus entnommen. Andernfalls wird eine neue generiert. Wenn Ihre Benutzer sich bei Ihrer App anmelden müssen, können Sie die ID anhand ihrer authentifizierten ID festlegen, um eine zuverlässigere Zählung bereitzustellen, die auch dann richtig ist, wenn der Benutzer sich von einem anderen Computer aus anmeldet. 
 
+
+
+
 ## Grenzen
 
 Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignissen pro Anwendung.
@@ -588,10 +735,12 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
     Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
 
+
 ## Referenz
 
 * [ASP.NET-Referenz](https://msdn.microsoft.com/library/dn817570.aspx)
 * [Java-Referenz](http://dl.windowsazure.com/applicationinsights/javadoc/)
+* [JavaScript-Referenz](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
 
 ## Fragen
 
@@ -609,6 +758,8 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
 
 [Durchsuchen von Ereignissen und Protokollen][diagnostic]
+
+[Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
 
 [Problembehandlung][qna]
 
@@ -630,4 +781,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

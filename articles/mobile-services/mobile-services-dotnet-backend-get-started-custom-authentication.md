@@ -251,7 +251,7 @@ Eines der fundamentalen Konstrukte in der Mobile Services-Authentifizierungspipe
 
 	Diese Methode übersetzt eine [ClaimsIdentity] in ein [ProviderCredentials]-Objekt, das in der Ausstellungsphase des Authentifizierungstoken verwendet wird. Es empfiehlt sich wieder, in dieser Methode alle etwaigen zusätzlichen Ansprüche zu erfassen.
 	
-6. Öffnen Sie die Projektdatei "WebApiConfig.cs" im Ordner "App_Start". Die folgende Codezeile wird nach **ConfigOptions** erstellt:
+6. Öffnen Sie die Projektdatei "WebApiConfig.cs" im Ordner "App\_Start". Die folgende Codezeile wird nach **ConfigOptions** erstellt:
 		
 		options.LoginProviders.Add(typeof(CustomLoginProvider));
 
@@ -346,7 +346,7 @@ Sie müssen in Idrer Client-Anwendung einen angepassten Anmeldebildschirm defini
 
 	Dadurch wird eine neue Debuginstanz des Back-End-Projekts für den mobilen Dienst gestartet. Nachdem der Dienst erfolgreich gestartet wurde, sehen Sie eine Startseite mit der Meldung **Dieser mobile Dienst wird nun ausgeführt**.
 
-2. Klicken Sie auf der Startseite des Diensts auf **Ausprobieren**, geben Sie das Kennwort, die Sie zum Festlegen der App-Einstellung **MS_ApplicationKey** in der Datei "web.config" mit einem leeren Benutzernamen festgelegt haben, in das Dialogfeld "Authentifizierung" ein.
+2. Klicken Sie auf der Startseite des Diensts auf **Ausprobieren**, geben Sie das Kennwort, die Sie zum Festlegen der App-Einstellung **MS\_ApplicationKey** in der Datei "web.config" mit einem leeren Benutzernamen festgelegt haben, in das Dialogfeld "Authentifizierung" ein.
 
 3. Klicken Sie auf der Hilfeseite auf den **CustomRegistration**-Endpunkt, klicken Sie dann auf **Ausprobieren**.
 
@@ -420,4 +420,4 @@ Damit ist dieses Lernprogramm abgeschlossen.
 [ProviderCredentials]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

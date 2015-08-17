@@ -13,6 +13,6 @@ Bevor Sie Daten in Ihrem neuen mobilen Dienst speichern können, müssen Sie im 
 
 	>[AZURE.NOTE]Der Anwendungsschlüssel wird mit der Anwendung bereitgestellt. Da dieser Schlüssel nicht sicher bereitgestellt wird, kann er nicht als Sicherheitstoken angesehen werden. Für den sicheren Zugriff auf die Daten in Ihrem mobilen Dienst müssen Sie stattdessen Benutzer vor dem Zugriff authentifizieren. Weitere Informationen finden Sie unter [Berechtigungen](http://msdn.microsoft.com/library/windowsazure/jj193161.aspx).
 	>
-	>Neue Tabellen werden mit den Spalten Id, __createdAt, __updatedAt und __version erstellt. Wenn das dynamische Schema aktiviert ist, generieren Mobile Services automatisch neue Spalten auf Grundlage des JSON-Objekts in der Einfüge- oder Aktualisierungsanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema](http://msdn.microsoft.com/library/windowsazure/jj193175.aspx).
+	>Neue Tabellen werden mit den Spalten "Id", "\_\_createdAt", "\_\_updatedAt" und "\_\_version" erstellt. Wenn das dynamische Schema aktiviert ist, generieren Mobile Services automatisch neue Spalten auf Grundlage des JSON-Objekts in der Einfüge- oder Aktualisierungsanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema](http://msdn.microsoft.com/library/windowsazure/jj193175.aspx).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -53,8 +53,9 @@ Eine ausführliche Anleitung zum Erstellen eines Speicherkontos und Durchführen
 
 ## SQL Server-Komponenten
 
-* URL: Eine URL gibt einen Uniform Resource Identifier (URI) zu einer eindeutigen Sicherungsdatei an. Die URL dient zur Angabe des Speicherorts und Namens der SQL Server-Sicherungsdatei. In dieser Implementierung ist lediglich eine URL gültig, die auf einen Seiten-Blob in einem Azure-Speicherkonto verweist. Die URL darf nicht auf ein Blob, sondern lediglich auf einen Container verweisen. Wenn das Blob nicht vorhanden ist, wird es erstellt. Bei Angabe eines vorhandenen Blobs schlägt BACKUP fehl, es sei denn, die Option > WITH FORMAT wird angegeben. Nachfolgend sehen Sie ein Beispiel für die URL zur Angabe im BACKUP-Befehl: **`http[s]://ACCOUNTNAME.Blob.core.windows.net/<CONTAINER>/<FILENAME.bak>` 
-<b>Hinweis:</b> HTTPS ist nicht erforderlich, wird jedoch empfohlen. <b>Wichtig</b> Wenn Sie eine Sicherungsdatei kopieren und in den Azure-Blob-Speicherdienst hochladen, müssen Sie einen Seiten-Blob als Speichertyp verwenden, falls Sie diese Datei für Wiederherstellungen nutzen möchten. Ein RESTORE aus einem Block-Blob schlägt mit einer Fehlermeldung fehl.
+* URL: Eine URL gibt einen Uniform Resource Identifier (URI) zu einer eindeutigen Sicherungsdatei an. Die URL dient zur Angabe des Speicherorts und Namens der SQL Server-Sicherungsdatei. In dieser Implementierung ist lediglich eine URL gültig, die auf einen Seiten-Blob in einem Azure-Speicherkonto verweist. Die URL darf nicht auf ein Blob, sondern lediglich auf einen Container verweisen. Wenn das Blob nicht vorhanden ist, wird es erstellt. Bei Angabe eines vorhandenen Blobs schlägt BACKUP fehl, es sei denn, die Option > WITH FORMAT wird angegeben. Nachfolgend sehen Sie ein Beispiel für die URL zur Angabe im BACKUP-Befehl: ****`http[s]://ACCOUNTNAME.Blob.core.windows.net/<CONTAINER>/<FILENAME.bak>`
+
+<b>Hinweis:</b> HTTPS ist nicht erforderlich, wird jedoch empfohlen. <b>Wichtig:</b> Wenn Sie eine Sicherungsdatei kopieren und in den Azure-Blob-Speicherdienst hochladen, müssen Sie einen Seiten-Blob als Speichertyp verwenden, falls Sie diese Datei für Wiederherstellungen nutzen möchten. Ein RESTORE aus einem Block-Blob schlägt mit einer Fehlermeldung fehl.
 
 * Anmeldeinformationen: Die Informationen, die zum Herstellen einer Verbindung zum Azure-Blob-Speicherdienst und zum Authentifizieren bei diesem erforderlich sind, werden als Anmeldeinformationen gespeichert. Damit SQL Server Sicherungen in einen Azure-Blob schreiben oder daraus wiederherstellen kann, müssen SQL Server-Anmeldeinformationen erstellt werden. In den Anmeldeinformationen werden der Name des Speicherkontos sowie der zugehörige Zugriffsschlüssel gespeichert. Nach Erstellung der Anmeldeinformationen müssen diese bei Ausgabe der BACKUP/RESTORE-Anweisungen in der Option WITH CREDENTIAL angegeben werden. Schritt-für-Schritt-Anweisungen zum Erstellen von SQL Server-Anmeldeinformationen finden Sie unter [Erste Schritte mit der SQL Server-Sicherung und -Wiederherstellung im Windows Azure-BLOB-Speicherdienst](http://go.microsoft.com/fwlink/?LinkId=271615).
 
@@ -72,4 +73,4 @@ Eine ausführliche Anleitung zum Erstellen eines Speicherkontos und Durchführen
 
 [Bewährte Methoden für die Sicherung und Wiederherstellung (Windows Azure-BLOB-Speicherdienst)](http://go.microsoft.com/fwlink/?LinkId=272394)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

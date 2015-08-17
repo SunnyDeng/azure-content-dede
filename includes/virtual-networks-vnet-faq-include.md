@@ -124,7 +124,7 @@ Ja. Sie können VNet-zu-VNet-Kommunikation mithilfe der REST-APIs oder Windows P
 
 ### Welche DNS-Optionen sind für VNets verfügbar?
 
-Eine Übersicht über die verfügbaren DNS-Optionen finden Sie in der Entscheidungstabelle auf der Seite [Namensauflösung für virtuelle Computer und Rolleninstanzen](https://msdn.microsoft.com/library/azure/jj156088.aspx).
+Eine Übersicht über die verfügbaren DNS-Optionen finden Sie in der Entscheidungstabelle auf der Seite [Namensauflösung für virtuelle Computer und Rolleninstanzen](virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
 ### Können DNS-Server für ein VNet angegeben werden?
 
@@ -264,4 +264,4 @@ Ja. VNets und die standortübergreifende Konnektivität können mithilfe von RES
 
 Ja. Sie können PowerShell und Befehlszeilentools für zahlreiche Plattformen verwenden. Weitere Informationen finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=317721).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

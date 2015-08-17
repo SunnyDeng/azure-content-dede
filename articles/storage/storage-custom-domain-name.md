@@ -7,6 +7,7 @@
 	manager="adinah" 
 	editor=""/>
 
+
 <tags 
 	ms.service="storage" 
 	ms.workload="storage" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="06/18/2015" 
 	ms.author="tamram"/>
+
 
 
 # Konfigurieren eines benutzerdefinierten Domänennamens für Blob-Daten in einem Azure-Speicherkonto
@@ -32,32 +34,11 @@ Die Zuordnung der benutzerdefinierten Domäne zum Blob-Endpunkt kann jedoch zu e
 
 Die folgende Tabelle enthält Beispiel-URLs für den Zugriff auf Blob-Daten in einem Speicherkonto namens **mystorageaccount**. Die für das Speicherkonto registrierte benutzerdefinierte Domäne ist **www.contoso.com**:
 
-<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
-	<tbody>
-		<tr>
-			<td style="width: 100px;"><strong>Ressourcentyp</strong></td>
-			<td><strong>URL-Formate</strong></td>
-		</tr>
-		<tr>
-			<td>Speicherkonto</td>
-			<td><strong>Standard-URL</strong>: http://mystorageaccount.blob.core.windows.net<br />
-			<strong>URL der benutzerdefinierten Domäne</strong>: http://www.contoso.com</td>
-		</tr>
-		<tr>
-			<td>Blob</td>
-			<td><strong>Standard-URL</strong>: http://mystorageaccount.blob.core.windows.net/mycontainer/myblob<br /><strong>URL der benutzerdefinierten Domäne</strong>: http://www.contoso.com/mycontainer/myblob</td>
-		</tr>
-		<tr>
-			<td>Stammcontainer</td>
-			<td><strong>Standard-URL</strong>: http://mystorageaccount.blob.core.windows.net/myblob 
-			<br/>oder<br />
-			http://mystorageaccount.blob.core.windows.net/$root/myblob<br />
-			<strong>URL der benutzerdefinierten Domäne</strong>: http://www.contoso.com/myblob
-			<br/>oder<br />
-			http://www.contoso.com/$root/meinBlob</td>
-		</tr>
-	</tbody>
-</table>
+Ressourcentyp|URL-Formate
+---|---
+Speicherkonto|**Standard-URL:** http://mystorageaccount.blob.core.windows.net<p> \*\*URL der benutzerdefinierten Domäne:\*\* http://www.contoso.com</td>
+Blob|**Standard-URL:** http://mystorageaccount.blob.core.windows.net/mycontainer/myblob<p> \*\*URL der benutzerdefinierten Domäne:\*\* http://www.contoso.com/mycontainer/myblob
+Stammcontainer|**Standard-URL:** http://mystorageaccount.blob.core.windows.net/myblob oder http://mystorageaccount.blob.core.windows.net/$root/myblob<p>\*\*URL der benutzerdefinierten Domäne:\*\* http://www.contoso.com/myblob oder http://www.contoso.com/$root/myblob
 
 ## Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto
 
@@ -127,7 +108,7 @@ Benutzer können jetzt Blob-Daten in Ihrer benutzerdefinierten Domäne anzeigen,
 
 Um zu überprüfen, ob Ihre benutzerdefinierte Domäne tatsächlich Ihrem Blob-Dienstendpunkt zugeordnet ist, erstellen Sie einen Blob in einem öffentlichen Container in Ihrem Speicherkonto. Greifen Sie anschließend in einem Webbrowser mit einem URI im folgenden Format auf den Blob zu:
 
--   http://<*subdomäne.benutzerdefinierteDomäne*>/<*meinContainer*>/<*meinBlob*>
+-   http://<*subdomain.customdomain*>/<*mycontainer*>/<*myblob*>
 
 Sie können z. B. den folgenden URI verwenden, um über eine benutzerdefinierte Unterdomäne **photos.contoso.com**, die einem Blob im Container **myforms** zugeordnet ist, auf ein Webformular zuzugreifen:
 
@@ -138,4 +119,4 @@ Sie können z. B. den folgenden URI verwenden, um über eine benutzerdefinierte
 -   <a href="http://msdn.microsoft.com/library/azure/gg680307.aspx">Zuordnen von CDN-Inhalt (Content Delivery Network) zu einer benutzerdefinierten Domäne</a>
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

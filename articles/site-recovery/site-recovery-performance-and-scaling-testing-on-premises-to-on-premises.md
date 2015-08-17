@@ -7,6 +7,7 @@
 	manager="jwhit"
 	editor="tysonn"/>
 
+
 <tags
 	ms.service="site-recovery"
 	ms.devlang="na"
@@ -15,6 +16,7 @@
 	ms.workload="storage-backup-recovery"
 	ms.date="05/14/2015"
 	ms.author="lauraa"/>
+
 
 # Leistungs- und Skalierungstest: lokal zu lokal
 
@@ -124,7 +126,12 @@ Die Ergebnisse zeigen deutlich, dass Azure Site Recovery in Kombination mit Hype
 
 |Server|RAM|Modell|Prozessor|Anzahl der Prozessoren|NIC|Software|
 |---|---|---|---|---|---|---|
-|Hyper-V-Server im Cluster: <br />ESTLAB-HOST11<br />ESTLAB-HOST12<br />ESTLAB-HOST13<br />ESTLAB-HOST14<br />ESTLAB-HOST25|128 MB (ESTLAB-HOST25: 256 MB)|Dell™ PowerEdge™ R820|Intel(R) Xeon(R)-CPU E5-4620 0 (2,20 GHz)|4|1 GBit/s (4x)|Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
+|Hyper-V-Server im Cluster: <br />
+ESTLAB-HOST11<br />
+ESTLAB-HOST12<br />
+ESTLAB-HOST13<br />
+ESTLAB-HOST14<br />
+ESTLAB-HOST25|128 MB (ESTLAB-HOST25: 256 MB)|Dell™ PowerEdge™ R820|Intel(R) Xeon(R)-CPU E5-4620 0 (2,20 GHz)|4|1 GBit/s (4x)|Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
 |VMM-Server|2|||2|1 GBit/s|Windows Server Datacenter 2012 R2 (x64) + VMM 2012 R2|
 
 ### Sekundärer Standort (Wiederherstellung)
@@ -137,7 +144,11 @@ Die Ergebnisse zeigen deutlich, dass Azure Site Recovery in Kombination mit Hype
 
 |Server|RAM|Modell|Prozessor|Anzahl der Prozessoren|NIC|Software|
 |---|---|---|---|---|---|---|
-|Hyper-V-Server im Cluster: <br />ESTLAB-HOST07<br />ESTLAB-HOST08<br />ESTLAB-HOST09<br />ESTLAB-HOST10|96|Dell™ PowerEdge™ R720|Intel(R) Xeon(R)-CPU E5-2630 0 (2,30 GHz)|2|1 GBit/s (4x)|Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
+|Hyper-V-Server im Cluster: <br />
+ESTLAB-HOST07<br />
+ESTLAB-HOST08<br />
+ESTLAB-HOST09<br />
+ESTLAB-HOST10|96|Dell™ PowerEdge™ R720|Intel(R) Xeon(R)-CPU E5-2630 0 (2,30 GHz)|2|1 GBit/s (4x)|Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
 |ESTLAB-HOST17|128|Dell™ PowerEdge™ R820|Intel(R) Xeon(R)-CPU E5-4620 0 (2,20 GHz)|4||Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
 |ESTLAB-HOST24|256|Dell™ PowerEdge™ R820|Intel(R) Xeon(R)-CPU E5-4620 0 (2,20 GHz)|2||Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
 |VMM-Server|2|||2|1 GBit/s|Windows Server Datacenter 2012 R2 (x64) + VMM 2012 R2|
@@ -194,13 +205,7 @@ Der Tabelle fasst die Leistungsmetriken und -indikatoren zusammen, die für die 
 
 |Metrik|Indikator|
 |---|---|
-|CPU|\Prozessor(_Total)\Prozessorzeit (%)|
-|Verfügbarer Arbeitsspeicher|\Arbeitsspeicher\Verfügbare MB|
-|IOPS|\Physikalischer Datenträger(_Total)\Übertragungen/s|
-|VM-Lesevorgänge (IOPS)/s|\Virtuelles Hyper-V-Speichergerät(<VHD>)\Lesevorgänge/s|
-|VM-Schreibvorgänge (IOPS)/s|\Virtuelles Hyper-V-Speichergerät(<VHD>)\Schreibvorgänge/s|
-|VM-Lesedurchsatz|\Virtuelles Hyper-V-Speichergerät(<VHD>)\Gelesene Bytes/s|
-|VM-Schreibdurchsatz|\Virtuelles Hyper-V-Speichergerät(<VHD>)\Geschriebene Bytes/s|
+|CPU|\\Prozessor(\_Gesamt)\\% Prozessorzeit| |Verfügbarer Speicher|\\Speicher\\Verfügbar MBytes| |IOPS|\\PhysicalDisk(\_Total)\\Übertragungen/Sek.| |VM-Lesevorgänge/Sek. (IOPS)|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Lesevorgänge/Sek.| |VM-Schreibvorgänge/Sek. (IOPS)|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Schrebvorgänge/S| |VM-Lesedurchsatz|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Lesen Bytes/Sek.| |VM-Scheibdurchsatz|\\Hyper-V virtuelles Speichergerät(<VHD>)\\Schreiben Bytes/Sek.|
 
 
 ## Nächste Schritte
@@ -214,4 +219,4 @@ So stellen Sie ASR bereit:
 - [Einrichten von Schutz mit einem einzelnen VMM-Server](site-recovery-single-vmm.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

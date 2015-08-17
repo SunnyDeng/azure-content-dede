@@ -69,7 +69,7 @@ Diagramm 1: Übersicht über den Prozess des erneuten Trainings
 
 	Beachten Sie, dass der Beispielcode Kommentare enthält, welche auf die Teile des Codes hinweisen, die aktualisiert werden müssen. Darüber hinaus muss bei Angabe des Speicherorts "output1" in der Nutzlast der Anforderung die Dateierweiterung von "RelativeLocation" zu ".ileaner" geändert werden, wie in "Outputs" vorgegeben: {Global Parameters ... { "output1": { "ConnectionString": "DefaultEndpointsProtocol=https;AccountName=mystorageacct;AccountKey=Dx9WbMIThAvXRQWap/aLnxT9LV5txxw==", "RelativeLocation": "mycontainer/output1results.ilearner"}}.
 
-	1. Bereitstellen von Azure-Speicherinformationen Der Beispielcode für BES lädt eine Datei von einem lokalen Laufwerk (z. B. "C:\temp\CensusIpnput.csv") in den Azure-Speicher zur Verarbeitung hoch und schreibt die Ergebnisse wieder in den Azure-Speicher.  
+	1. Bereitstellen von Azure-Speicherinformationen Der Beispielcode für BES lädt eine Datei von einem lokalen Laufwerk (z. B. "C:\\temp\\CensusIpnput.csv") in den Azure-Speicher zur Verarbeitung hoch und schreibt die Ergebnisse wieder in den Azure-Speicher.  
 
 		Dazu müssen Sie Informationen zum Namen, Schlüssel und Container des Speicherkontos aus dem Azure-Verwaltungsportal für Ihr Speicherkonto abrufen und den vorliegenden Code entsprechend aktualisieren. Sie müssen auch sicherstellen, dass die Eingabedatei an dem im Code angegebenen Speicherort verfügbar ist.
 
@@ -107,4 +107,4 @@ Mithilfe der Retraining-APIs können wir das trainierte Modell eines Vorhersagew
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

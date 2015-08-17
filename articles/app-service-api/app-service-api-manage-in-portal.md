@@ -39,10 +39,10 @@ Jede Ressourcengruppe, die mindestens eine API-App umfasst, verfügt auch über 
 
 Sie verwenden das Blatt **API-App** für die folgenden Aufgaben:
 
-- Konfigurieren der Zugriffsebene – Klicken Sie auf **Einstellungen \> Anwendungseinstellungen**. Der Standardwert lautet "Intern". Dies bedeutet, dass nur API-Apps in derselben Ressourcengruppe die API-App aufrufen dürfen. Weitere Informationen finden Sie unter [Schützen einer API-App](app-service-api-dotnet-add-authentication.md).   
-- Konfigurieren der Aktualisierungsrichtlinie – Klicken Sie auf **Einstellungen \> Anwendungseinstellungen**. Der Standardwert lautet **Ein**. Dies bedeutet, dass beim Veröffentlichen einer neuen Version der API-App im Marketplace Ihre API-App automatisch auf die neue Version aktualisiert wird, sofern sie keine Funktionsbeeinträchtigung \(non-breaking\) bedeutet.  
-- Konfigurieren der Authentifizierung für ausgehende Aufrufe aus der API-App – Klicken Sie auf **Einstellungen \> Authentifizierung**. Wenn die API-App einen externen Dienst aufruft, der eine Authentifizierung erfordert, werden hier die erforderlichen Konfigurationswerte eingegeben. Ein Dropbox-Connector erfordert beispielsweise eine Client-ID und einen geheimen Clientschlüssel für den Zugriff auf den Dropbox-Dienst.
-- Konfigurieren von [RBAC](../role-based-access-control-configure.md) – Klicken Sie auf **Einstellungen \> Benutzer**. Der hier konfigurierte Benutzerzugriff legt fest, wer auf die API-App-spezifischen Funktionen zugreifen kann. Verwenden Sie zum Konfigurieren von RBAC für die Web-App-Funktionen das Blatt **API-App-Host**. Normalerweise sollten die RBAC-Einstellungen für die API-App und den API-App-Host synchronisiert werden. Wenn Sie Zugriff auf die API-App erteilen, jedoch nicht auf den API-App-Host, können die Funktionen auf dem Blatt **API-App**, die tatsächlich den API-App-Host betreffen, nicht genutzt werden.
+- Konfigurieren der Zugriffsebene – Klicken Sie auf **Einstellungen > Anwendungseinstellungen**. Der Standardwert lautet "Intern". Dies bedeutet, dass nur API-Apps in derselben Ressourcengruppe die API-App aufrufen dürfen. Weitere Informationen finden Sie unter [Schützen einer API-App](app-service-api-dotnet-add-authentication.md).   
+- Konfigurieren der Aktualisierungsrichtlinie – Klicken Sie auf **Einstellungen > Anwendungseinstellungen**. Der Standardwert lautet **Ein**. Dies bedeutet, dass beim Veröffentlichen einer neuen Version der API-App im Marketplace Ihre API-App automatisch auf die neue Version aktualisiert wird, sofern sie keine Funktionsbeeinträchtigung (non-breaking) bedeutet.  
+- Konfigurieren der Authentifizierung für ausgehende Aufrufe aus der API-App – Klicken Sie auf **Einstellungen > Authentifizierung**. Wenn die API-App einen externen Dienst aufruft, der eine Authentifizierung erfordert, werden hier die erforderlichen Konfigurationswerte eingegeben. Ein Dropbox-Connector erfordert beispielsweise eine Client-ID und einen geheimen Clientschlüssel für den Zugriff auf den Dropbox-Dienst.
+- Konfigurieren von [RBAC](../role-based-access-control-configure.md) – Klicken Sie auf **Einstellungen > Benutzer**. Der hier konfigurierte Benutzerzugriff legt fest, wer auf die API-App-spezifischen Funktionen zugreifen kann. Verwenden Sie zum Konfigurieren von RBAC für die Web-App-Funktionen das Blatt **API-App-Host**. Normalerweise sollten die RBAC-Einstellungen für die API-App und den API-App-Host synchronisiert werden. Wenn Sie Zugriff auf die API-App erteilen, jedoch nicht auf den API-App-Host, können die Funktionen auf dem Blatt **API-App**, die tatsächlich den API-App-Host betreffen, nicht genutzt werden.
 - Anzeigen der API-Definition – Klicken Sie im Abschnitt **Zusammenfassung** auf **API-Definition**, um eine Liste der von der API-App verfügbar gemachten Methoden anzuzeigen.
 - [Installieren des Hybrid Connection Managers](../app-service-logic/app-service-logic-hybrid-connection-manager.md). Der Hybrid Connection Manager bietet Ihnen die Möglichkeit zur Verbindungsherstellung mit einem lokalen System, beispielsweise SQL Server oder SAP. Diese Hybridkonnektivität verwendet Azure Service Bus zur Verbindungsherstellung und zur Steuerung der Sicherheit zwischen Ihren Azure-Ressourcen und Ihren lokalen Ressourcen.
 
@@ -71,8 +71,8 @@ Sie verwenden das Blatt **API-App-Host** für alle Aufgaben, die Sie für eine b
 
 Sie verwenden das Blatt **Gateway** für die folgenden Aufgaben:
 
-- Konfigurieren des Authentifizierungsanbieters für eingehende Aufrufe an API-Apps – Klicken Sie auf **Einstellungen \> Identität**. Wenn das Gateway Benutzer authentifizieren muss, bevor diese API-Apps in der Ressourcengruppe aufrufen, müssen hier die erforderlichen Konfigurationswerte eingegeben werden. Weitere Informationen finden Sie unter [Konfigurieren und Testen eines SaaS-Connectors in Azure App Service](app-service-api-connnect-your-app-to-saas-connector.md). 
-- Konfigurieren von [RBAC](../role-based-access-control-configure.md) – Klicken Sie auf **Einstellungen \> Benutzer**. Der hier konfigurierte Benutzerzugriff legt nur fest, wer auf die gatewayspezifischen Funktionen zugreifen kann. Die Einstellungen betreffen nicht die Funktionen, die mit allen Web-Apps gemeinsam verwendet werden.
+- Konfigurieren des Authentifizierungsanbieters für eingehende Aufrufe an API-Apps – Klicken Sie auf **Einstellungen > Identität**. Wenn das Gateway Benutzer authentifizieren muss, bevor diese API-Apps in der Ressourcengruppe aufrufen, müssen hier die erforderlichen Konfigurationswerte eingegeben werden. Weitere Informationen finden Sie unter [Konfigurieren und Testen eines SaaS-Connectors in Azure App Service](app-service-api-connnect-your-app-to-saas-connector.md). 
+- Konfigurieren von [RBAC](../role-based-access-control-configure.md) – Klicken Sie auf **Einstellungen > Benutzer**. Der hier konfigurierte Benutzerzugriff legt nur fest, wer auf die gatewayspezifischen Funktionen zugreifen kann. Die Einstellungen betreffen nicht die Funktionen, die mit allen Web-Apps gemeinsam verwendet werden.
 
 ### Aufgaben, die sowohl auf dem Blatt "Gateway" als auch auf dem Blatt "Gateway-Host" ausgeführt werden können 
 
@@ -84,7 +84,7 @@ Sie verwenden das Blatt **Gatewayhost** für alle Aufgaben, die Sie für eine be
 
 ## <a id="navigate"></a>Navigation zu den Blättern „API-App“ und „Gateway“ 
 
-Eine Möglichkeit, zum Blatt **API-App** zu wechseln besteht darin, die Suchfunktion im Azure-Portal zu verwenden. Klicken Sie auf der Startseite des Portals auf **Durchsuchen \> API-Apps**, um alle API-Apps anzuzeigen, die Sie verwalten können.
+Eine Möglichkeit, zum Blatt **API-App** zu wechseln besteht darin, die Suchfunktion im Azure-Portal zu verwenden. Klicken Sie auf der Startseite des Portals auf **Durchsuchen > API-Apps**, um alle API-Apps anzuzeigen, die Sie verwalten können.
 
 ![](./media/app-service-api-manage-in-portal/browse.png)
 
@@ -124,7 +124,7 @@ Um zum Blatt **Gatewayhost** zu gelangen, klicken Sie auf den Link **Gatewayhost
 
 Im **Server-Explorer** von Visual Studio können Sie eine Remotedebuggingsitzung starten, Streamingprotokolle anzeigen und auf einen Menüeintrag klicken, der das Blatt "API-App" im Portal öffnet.
 
-Um im Server-Explorer zu einer API-App zu wechseln, klicken Sie auf **Azure \> App Service \> \[Name der Ressourcengruppe\] \> \[Name der API-App\]**, wie in der Abbildung gezeigt.
+Um im Server-Explorer zu einer API-App zu wechseln, klicken Sie auf **Azure > App Service > [Name der Ressourcengruppe] > [Name der API-App]**, wie in der Abbildung gezeigt.
 
 ![](./media/app-service-api-manage-in-portal/se.png)
 
@@ -132,6 +132,6 @@ Um im Server-Explorer zu einer API-App zu wechseln, klicken Sie auf **Azure \> A
 
 Dieser Artikel hat gezeigt, wie Sie das Azure-Portal zum Ausführen verschiedener Verwaltungsaufgaben für API-Apps verwenden. Informationen zu API-Apps, die Sie aus dem API-App-Katalog installieren, finden Sie auch unter [Verwalten und Überwachen integrierter API-Apps und Connectors](../app-service-logic/app-service-logic-monitor-your-connectors.md).
 
-Informationen zum Verwalten von API-Apps über die Befehlszeile finden Sie in den Artikeln im Abschnitt **Automatisieren**, die links neben dem Artikel \(bei breiten Browserfenstern\) oder oben über dem Artikel \(bei schmalen Browserfenstern\) angezeigt werden.
+Informationen zum Verwalten von API-Apps über die Befehlszeile finden Sie in den Artikeln im Abschnitt **Automatisieren**, die links neben dem Artikel (bei breiten Browserfenstern) oder oben über dem Artikel (bei schmalen Browserfenstern) angezeigt werden.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -34,7 +34,7 @@ Im Folgenden finden Sie eine Liste erwarteter Verhaltensweisen:
 
 Wenn Sie die Standardkonfiguration ändern müssen, führen Sie folgende Schritte aus:
 
-- Wenn Sie einen Attributfluss von einer integrierten Synchronisierungsregel anpassen müssen, verändern Sie diese nicht. Erstellen Sie stattdessen eine neue Synchronisierungsregel mit höherer Priorität \(niedrigerem numerischem Werte\), die den erforderlichen Attributfluss enthält.
+- Wenn Sie einen Attributfluss von einer integrierten Synchronisierungsregel anpassen müssen, verändern Sie diese nicht. Erstellen Sie stattdessen eine neue Synchronisierungsregel mit höherer Priorität (niedrigerem numerischem Werte), die den erforderlichen Attributfluss enthält.
 - Exportieren Sie Ihre benutzerdefinierten Synchronisierungsregeln mit dem Synchronisierungsregel-Editor. Dadurch erhalten Sie ein PowerShell-Skript, mit dem Sie die Regeln bei einem Notfallwiederherstellungsszenario problemlos neu erstellen können.
 - Wenn Sie den Bereich oder die Verknüpfungseinstellung einer "standardmäßigen" Synchronisierungsregel ändern müssen, dokumentieren Sie den Vorgang, und wenden Sie die Änderung nach dem Upgrade auf eine neuere Version der Azure AD-Synchronisierung erneut an.
 
@@ -55,4 +55,4 @@ Wenn Sie die Standardkonfiguration ändern müssen, führen Sie folgende Schritt
  
 <!--Image references-->
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

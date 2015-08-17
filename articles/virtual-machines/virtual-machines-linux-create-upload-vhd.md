@@ -7,14 +7,16 @@
 	manager="timlt"
 	editor="tysonn"/>
 
+
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/15/2015"
+	ms.date="07/29/2015"
 	ms.author="dkshir"/>
+
 
 # Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält
 
@@ -66,6 +68,8 @@ Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung
 
 ### Bei Verwendung der Azure-Befehlszeilenschnittstelle
 
+Verwenden Sie die Azure AD-Methode für die Anmeldung:
+
 1. Öffnen Sie ein Fenster für die Azure-Befehlszeilenschnittstelle.
 
 2. Geben Sie Folgendes ein:
@@ -92,8 +96,22 @@ Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung
 
 	Dabei stellt `<PathToFile>` den vollständigen Pfad zur Datei ".publishsettings" dar.
 
+	Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure über die Azure-Befehlszeilenschnittstelle](../xplat-cli-connect.md).
+
 
 ### Bei Verwendung von Azure PowerShell
+
+Verwenden Sie die Azure AD-Methode für die Anmeldung:
+
+1. Öffnen Sie ein Azure PowerShell-Fenster.
+
+2. Geben Sie Folgendes ein:
+
+	`Add-AzureAccount`
+
+	Geben Sie die Benutzer-ID und das Kennwort Ihrer Organisation ein, wenn Sie dazu aufgefordert werden.
+
+**ODER**: Speichern Sie stattdessen die Datei ".publishsettings".
 
 1. Öffnen Sie ein Azure PowerShell-Fenster.
 
@@ -113,6 +131,7 @@ Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung
 
 	Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
+> [AZURE.NOTE]Es wird empfohlen, dass Sie die neuere Azure Active Directory-Methode zum Anmelden in Ihrem Azure-Abonnement verwenden, entweder aus der Azure-Befehlszeilenschnittstelle oder aus Azure PowerShell.
 
 ## <a id="upload"> </a>Schritt 3: Hochladen des Image zu Azure ##
 
@@ -141,4 +160,4 @@ Weitere Informationen hierzu finden Sie unter [Add-AzureVhd]((https://msdn.micro
 [Step 2: Prepare the connection to Azure]: #connect
 [Step 3: Upload the image to Azure]: #upload
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

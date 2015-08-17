@@ -127,4 +127,4 @@ In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen zum [Schnellstar
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

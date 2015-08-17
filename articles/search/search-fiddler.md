@@ -236,4 +236,4 @@ Unter den folgenden Links finden Sie weitere Informationen zur codefreien Verwal
 [5]: ./media/search-fiddler/AzureSearch_Fiddler5_QueryStats.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

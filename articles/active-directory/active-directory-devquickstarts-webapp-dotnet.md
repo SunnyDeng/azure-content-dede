@@ -123,7 +123,7 @@ public void SignOut()
 }
 ```
 
--	Öffnen Sie dann `Views\Shared_LoginPartial.cshtml`. In dieser Ansicht werden dem Benutzer sein Benutzername sowie die An- und Abmeldelinks für Ihre Anwendung angezeigt.
+-	Öffnen Sie dann `Views\Shared\_LoginPartial.cshtml`. In dieser Ansicht werden dem Benutzer sein Benutzername sowie die An- und Abmeldelinks für Ihre Anwendung angezeigt.
 
 ```HTML
 @if (Request.IsAuthenticated)
@@ -176,4 +176,4 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

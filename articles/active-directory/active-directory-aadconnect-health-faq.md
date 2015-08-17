@@ -128,4 +128,4 @@ Azure AD Connect Health-Warnungen werden basierend auf einer Erfolgsbedingung a
 
 Sie müssen die TCP/UDP-Ports 80 und 443 öffnen, damit der Azure AD Connect Health-Agent mit den Azure AD Connect Health-Dienstendpunkten kommunizieren kann.
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

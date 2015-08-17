@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.tgt_pltfrm="vm-multiple"
 	ms.workload="infrastructure-services"
 	ms.date="07/28/2015"
@@ -38,7 +38,7 @@ Im Folgenden finden Sie eine Liste von Artikeln, die Ihnen die Arbeit mit virtue
 
 [Erstellen und Verwalten eines Windows-basierten virtuellen Computers unter Verwendung von Azure PowerShell](virtual-machines-create-windows-powershell-service-manager.md)
 
-[Erstellen eines virtuellen Computers mithilfe der Azure-Befehlszeilenschnittstelle \(Azure-CLI\)](virtual-machines-xplat-getting-started.md)
+[Erstellen eines virtuellen Computers mithilfe der Azure-Befehlszeilenschnittstelle (Azure-CLI)](virtual-machines-xplat-getting-started.md)
 
 [Erstellen einer Multi-VM-Bereitstellung über die Azure-Befehlszeilenschnittstelle](virtual-machines-create-multi-vm-deployment-xplat-cli.md)
 
@@ -102,7 +102,7 @@ Im Folgenden finden Sie eine Liste von Artikeln, die Ihnen die Arbeit mit virtue
 
 [LAMP-Stack](virtual-machines-linux-install-lamp-stack.md)
 
-[Message Queuing \(MSMQ\)](https://msdn.microsoft.com/library/azure/dn529082.aspx)
+[Message Queuing (MSMQ)](https://msdn.microsoft.com/library/azure/dn529082.aspx)
 
 [Microsoft Dynamics AX](https://technet.microsoft.com/library/dn741581.aspx)
 
@@ -140,7 +140,7 @@ Im Folgenden finden Sie eine Liste von Artikeln, die Ihnen die Arbeit mit virtue
 
 [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md)
 
-[Behandeln von Problemen mit Secure Shell \(SSH\)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-ssh-connections.md)
+[Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-ssh-connections.md)
 
 ## Referenz
 
@@ -150,4 +150,4 @@ Im Folgenden finden Sie eine Liste von Artikeln, die Ihnen die Arbeit mit virtue
 
 [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung](virtual-machines-command-line-tools.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -1,4 +1,4 @@
-1. Klicken Sie im Azure-[Verwaltungsportal](http://manage.windowsazure.com) auf **Virtuelle Computer**, und wählen anschließend den gerade von Ihnen erstellten virtuellen Computer aus (**testlinuxvm**).
+1. Klicken Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com) auf **Virtuelle Computer**, und wählen anschließend den gerade von Ihnen erstellten virtuellen Computer aus (**testlinuxvm**).
 
 2. Klicken Sie in der Befehlsleiste auf **Einbinden** und anschließend auf **Leeren Datenträger einbinden**.
 
@@ -27,7 +27,7 @@ Melden Sie sich beim virtuellen Computer an, um die Einrichtung des Datenträger
 
 	`$ sudo grep SCSI /var/log/messages`
 
-	Die ID des letzten hinzugefügten Datenträgers in den angezeigten Meldungen (in diesem Beispiel **sdc**).
+	Sie finden den Bezeichner des letzten hinzugefügten Datenträgers in den angezeigten Meldungen (in diesem Beispiel **sdc**).
 
 	![GREP][Image4]
 
@@ -114,4 +114,4 @@ Melden Sie sich beim virtuellen Computer an, um die Einrichtung des Datenträger
 [Image8]: ./media/attach-data-disk-centos-vm-in-portal/fdisk4.png
 [Image9]: ./media/attach-data-disk-centos-vm-in-portal/mkfs.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

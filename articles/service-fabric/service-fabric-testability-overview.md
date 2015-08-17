@@ -94,4 +94,4 @@ Beim Erstellen von robusten Diensten für die Cloud ist es wichtig sicherzustell
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

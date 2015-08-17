@@ -3,7 +3,7 @@
 	description="Wenn Sie keine Verbindung mit Ihrem Windows-basierten virtuellen Azure-Computer herstellen können, verwenden Sie diese Diagnoseverfahren und Schritte, um die Ursache des Problems zu isolieren."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="JoeDavies-MSFT"
+	authors="dsk-2015"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management,azure-resource-manager"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/07/2015"
-	ms.author="josephd"/>
+	ms.author="dkshir"/>
 
 # Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer
 
@@ -72,7 +72,7 @@ Mögliche Lösungen für dieses Problem:
 
 Ursache: Der virtuelle Computer, mit dem Sie eine Verbindung herstellen möchten, kann die Sicherheitsautorität nicht finden, die im Benutzernamensteil Ihrer Anmeldeinformationen angegeben ist.
 
-Wenn Ihr Benutzername das Format *SecurityAuthority*\*UserName* (Beispiel: "CORP\User1") aufweist, ist *SecurityAuthority* entweder der Computername des virtuellen Computers (für die lokale Sicherheitsautorität) oder ein Active Directory-Domänenname.
+Wenn Ihr Benutzername das Format *SecurityAuthority*\*UserName* (Beispiel: "CORP\\User1") aufweist, ist *SecurityAuthority* entweder der Computername des virtuellen Computers (für die lokale Sicherheitsautorität) oder ein Active Directory-Domänenname.
 
 Mögliche Lösungen für dieses Problem:
 
@@ -86,10 +86,10 @@ Ursache: Der Kontoname und das Kennwort, die Sie übermittelt haben, können von
 
 Ein Windows-basierter Computer kann die Anmeldeinformationen eines lokalen Kontos oder eines domänenbasierten Kontos überprüfen.
 
-- Verwenden Sie für lokale Konten die Syntax *Computername*\*Benutzername* (Beispiel: "SQL1\Admin4798").
-- Verwenden Sie für Domänenkonten die Syntax *Domänenname*\*Benutzername* (Beispiel: "CONTOSO\johndoe").
+- Verwenden Sie für lokale Konten die Syntax *Computername*\*Benutzername* (Beispiel: "SQL1\\Admin4798").
+- Verwenden Sie für Domänenkonten die Syntax *Domänenname*\*Benutzername* (Beispiel: "CONTOSO\\johndoe").
 
-Bei Computern, die Sie in einer neuen Active Directory-Gesamtstruktur zu Domänencontrollern heraufstufen, wird das lokale Administratorkonto, mit dem Sie beim Heraufstufen angemeldet sind, in der neuen Gesamtstruktur und Domäne in ein entsprechendes Konto mit demselben Kennwort konvertiert. Das vorherige lokale Administratorkonto wird gelöscht. Wenn Sie sich beispielsweise mit dem lokalen Administratorkonto DC1\DCAdmin angemeldet und den virtuellen Computer als Domänencontroller in einer neuen Gesamtstruktur für die Domäne "corp.contoso.com" heraufgestuft haben, dann wird das lokale Konto DC1\DCAdmin gelöscht und ein neues Domänenkonto (CORP\DCAdmin) mit demselben Kennwort erstellt.
+Bei Computern, die Sie in einer neuen Active Directory-Gesamtstruktur zu Domänencontrollern heraufstufen, wird das lokale Administratorkonto, mit dem Sie beim Heraufstufen angemeldet sind, in der neuen Gesamtstruktur und Domäne in ein entsprechendes Konto mit demselben Kennwort konvertiert. Das vorherige lokale Administratorkonto wird gelöscht. Wenn Sie sich beispielsweise mit dem lokalen Administratorkonto DC1\\DCAdmin angemeldet und den virtuellen Computer als Domänencontroller in einer neuen Gesamtstruktur für die Domäne "corp.contoso.com" heraufgestuft haben, dann wird das lokale Konto DC1\\DCAdmin gelöscht und ein neues Domänenkonto (CORP\\DCAdmin) mit demselben Kennwort erstellt.
 
 Überprüfen Sie den Kontonamen sorgfältig, um sicherzustellen, dass es sich um einen Namen handelt, den der virtuelle Computer als gültiges Konto überprüfen kann. Überprüfen Sie das Kennwort erneut, um sicherzustellen, dass es das richtige Kennwort ist.
 
@@ -201,7 +201,7 @@ Der letzte Satz möglicher Probleme hat mit dem virtuellen Azure-Computer selbst
 Wenn Sie das [Diagnosepaket Azure IaaS (Windows)](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864) für das Problem **RDP-Verbindung mit einer Azure-VM (Neustart erforderlich)** ausführen konnten, folgen Sie den Anweisungen unter [Zurücksetzen eines Kennworts oder des Remotedesktopdiensts für virtuelle Windows-Computer](virtual-machines-windows-reset-password.md), um den Dienst der Remotedesktopdienste auf dem virtuellen Computer zurückzusetzen. Dies bewirkt Folgendes:
 
 - Die Windows-Firewall-Standardregel "Remotedesktop" (TCP-Port 3389) wird aktiviert.
-- Remotedesktopverbindungen werden aktiviert, indem der HKLM\System\CurrentControlSet\Control\Terminal Server\fDenyTSConnections-Registrierungswert auf 0 festgelegt wird.
+- Remotedesktopverbindungen werden aktiviert, indem der HKLM\\System\\CurrentControlSet\\Control\\Terminal Server\\fDenyTSConnections-Registrierungswert auf 0 festgelegt wird.
 
 Versuchen Sie erneut, die Verbindung von Ihrem Computer aus herzustellen. Wenn Sie nicht erfolgreich sind, können u. a. die folgenden Probleme der Grund dafür sein:
 
@@ -225,7 +225,7 @@ Als Nächstes tragen Sie Ihren Azure-Abonnement-Namen, den Namen des Clouddienst
 
 Sie können den richtigen Abonnementnamen der SubscriptionName-Eigenschaft in der Ausgabe des Befehls **Get-AzureSubscription** entnehmen. Der Name des virtuellen Computers und der Name des Cloud-Diensts wird in der ServiceName-Spalte in der Ausgabe des Befehls **Get-AzureVM** angezeigt.
 
-Um sich davon zu überzeugen, dass Sie das neue Zertifikat besitzen, öffnen Sie ein Zertifikate-Snap-In für den aktuellen Benutzer, und zeigen Sie den Ordner **Trusted Root Certification Authorities\Certificates** an. Es sollte ein Zertifikat mit dem DNS-Namen des Cloud-Diensts in der Spalte "Ausgestellt für" angezeigt werden (Beispiel: cloudservice4testing.cloudapp.net).
+Um sich davon zu überzeugen, dass Sie das neue Zertifikat besitzen, öffnen Sie ein Zertifikate-Snap-In für den aktuellen Benutzer, und zeigen Sie den Ordner **Trusted Root Certification Authorities\\Certificates** an. Es sollte ein Zertifikat mit dem DNS-Namen des Cloud-Diensts in der Spalte "Ausgestellt für" angezeigt werden (Beispiel: cloudservice4testing.cloudapp.net).
 
 Starten Sie als Nächstes mit diesen Befehlen eine Azure Powershell-Remotesitzung.
 
@@ -287,4 +287,4 @@ Informationen zur Nutzung von Azure-Support finden Sie unter der [Microsoft Azur
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

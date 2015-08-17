@@ -65,15 +65,15 @@ Standardregeln:
 
 | Name | Priorität | Quell-IP | Quellport | Ziel-IP | Zielport | Protokoll | Access |
 |-----------------------------------|----------|--------------------|-------------|-----------------|------------------|----------|--------|
-| ALLOW VNET INBOUND | 65000 | VIRTUAL_NETWORK | * | VIRTUAL_NETWORK | * | * | ZULASSEN |
-| ALLOW AZURE LOAD BALANCER INBOUND | 65001 | AZURE_LOADBALANCER | * | * | * | * | ZULASSEN |
+| ALLOW VNET INBOUND | 65000 | VIRTUAL\_NETWORK | * | VIRTUAL\_NETWORK | * | * | ZULASSEN |
+| ALLOW AZURE LOAD BALANCER INBOUND | 65001 | AZURE\_LOADBALANCER | * | * | * | * | ZULASSEN |
 | DENY ALL INBOUND | 65500 | * | * | * | * | * | VERWEIGERN |
 
 **Ausgehend**
 
 | Name | Priorität | Quell-IP | Quellport | Ziel-IP | Zielport | Protokoll | Access |
 |-------------------------|----------|-----------------|-------------|-----------------|------------------|----------|--------|
-| ALLOW VNET OUTBOUND | 65000 | VIRTUAL_NETWORK | * | VIRTUAL_NETWORK | * | * | ZULASSEN |
+| ALLOW VNET OUTBOUND | 65000 | VIRTUAL\_NETWORK | * | VIRTUAL\_NETWORK | * | * | ZULASSEN |
 | ALLOW INTERNET OUTBOUND | 65001 | * | * | INTERNET | * | * | ZULASSEN |
 | DENY ALL OUTBOUND | 65500 | * | * | * | * | * | VERWEIGERN |
 
@@ -89,9 +89,9 @@ NSG-Regeln sind explizit. Es wird nur der Datenverkehr zugelassen oder verweiger
 
 Standardtags sind vom System bereitgestellte Bezeichner für eine Kategorie von IP-Adressen. Sie können in benutzerdefinierten Regeln angegeben werden. Folgende Standardtags stehen zur Verfügung:
 
-- **VIRTUAL_NETWORK**: Standardtag für Ihren gesamten Netzwerkadressraum. Dieser umfasst den Adressraum des virtuellen Netzwerks (IP-CIDR in Azure) sowie den gesamten verbundenen lokalen Adressraum (lokale Netzwerke). Dazu gehören auch VNet-zu-VNet-Adressräume.
+- **VIRTUAL\_NETWORK**: Standardtag für Ihren gesamten Netzwerkadressraum. Dieser umfasst den Adressraum des virtuellen Netzwerks (IP-CIDR in Azure) sowie den gesamten verbundenen lokalen Adressraum (lokale Netzwerke). Dazu gehören auch VNet-zu-VNet-Adressräume.
 
-- **AZURE_LOADBALANCER**: Standardtag für den Infrastruktur-Load Balancer von Azure. Wird in eine Azure-Datencenter-IP umgewandelt, die als Ausgangspunkt für die Integritätstests von Azure fungiert. Nur erforderlich, wenn der virtuelle Computer oder die Gruppe virtueller Computer, der bzw. die der NSG zugeordnet ist, Teil eines Satzes mit Lastenausgleich ist.
+- **AZURE\_LOADBALANCER**: Standardtag für den Infrastruktur-Load Balancer von Azure. Wird in eine Azure-Datencenter-IP umgewandelt, die als Ausgangspunkt für die Integritätstests von Azure fungiert. Nur erforderlich, wenn der virtuelle Computer oder die Gruppe virtueller Computer, der bzw. die der NSG zugeordnet ist, Teil eines Satzes mit Lastenausgleich ist.
 
 - **INTERNET**: Standardtag für den IP-Adressraum, der außerhalb des virtuellen Netzwerks liegt und über das öffentliche Internet erreichbar ist. Dieser Bereich schließt auch den Azure-eigenen öffentlichen IP-Adressraum mit ein.
 
@@ -138,7 +138,7 @@ Betrachten Sie z. B. die folgende NSG-Regel für ein solches Szenario:
 
 | Name | Priorität | Quell-IP | Quellport | Ziel-IP | Zielport | Protokoll | Access |
 |------|----------|-----------|-------------|----------------|------------------|----------|--------|
-|KEIN INTERNET|100| VIRTUAL_NETWORK|&#42;|INTERNET|&#42;|TCP|VERWEIGERN| 
+|KEIN INTERNET|100| VIRTUAL\_NETWORK|&#42;|INTERNET|&#42;|TCP|VERWEIGERN| 
 
 Da die Regel den gesamten Zugriff aus dem virtuellen Netzwerk auf das Internet verweigert, können virtuelle Computer nicht auf Azure-PaaS-Dienste zugreifen, für die ein öffentlicher Internet-Endpunkt erforderlich ist, z. B. SQL-Datenbanken.
 
@@ -146,8 +146,8 @@ Erwägen Sie, anstatt einer Verweigerungsregel eine Regel zu verwenden, mit der 
 
 | Name | Priorität | Quell-IP | Quellport | Ziel-IP | Zielport | Protokoll | Access |
 |------|----------|-----------|-------------|----------------|------------------|----------|--------|
-|INS INTERNET|100| VIRTUAL_NETWORK|&#42;|INTERNET|&#42;|TCP|ZULASSEN|
-|AUS DEM INTERNET|110| INTERNET|&#42;|VIRTUAL_NETWORK|&#42;|TCP|VERWEIGERN| 
+|INS INTERNET|100| VIRTUAL\_NETWORK|&#42;|INTERNET|&#42;|TCP|ZULASSEN|
+|AUS DEM INTERNET|110| INTERNET|&#42;|VIRTUAL\_NETWORK|&#42;|TCP|VERWEIGERN| 
 
 
 ## Planung – Workflow für eine Netzwerksicherheitsgruppe
@@ -248,4 +248,4 @@ Derzeit können NSGs ausschließlich über PowerShell-Cmdlets und REST-APIs konf
 
 	Get-Command *azurenetworksecuritygroup*
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

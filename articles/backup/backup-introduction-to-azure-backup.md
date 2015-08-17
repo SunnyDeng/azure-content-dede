@@ -69,4 +69,4 @@ Wichtigste Funktionen dieser Lösung:
 + Häufig gestellte Fragen zum Azure Backup-Dienst sind [hier](backup-azure-backup-faq.md) aufgeführt.
 + Besuchen Sie das [Azure Sicherungs-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -245,7 +245,7 @@ Die Vorlage für optionale Ressourcen enthält Ressourcen, die basierend auf dem
 
 **Vorlage für optionale Ressourcen**
 
-Eine Vorlage für optionale Ressourcen können Sie z. B. zum Konfigurieren einer Jumpbox verwenden, die über das öffentliche Internet einen indirekten Zugriff auf eine bereitgestellte Umgebung ermöglicht. Sie müssen einen Parameter oder eine Variable verwenden, um festzustellen, ob die Jumpbox aktiviert werden soll, und die *Concat*-Funktion verwenden, um den Zielnamen für die Vorlage zu erstellen, wie z. B.*jumpbox_enabled.json*. Vorlagenlinks nutzen anschließend die resultierende Variable, um die Jumpbox zu installieren.
+Eine Vorlage für optionale Ressourcen können Sie z. B. zum Konfigurieren einer Jumpbox verwenden, die über das öffentliche Internet einen indirekten Zugriff auf eine bereitgestellte Umgebung ermöglicht. Sie müssen einen Parameter oder eine Variable verwenden, um festzustellen, ob die Jumpbox aktiviert werden soll, und die *Concat*-Funktion verwenden, um den Zielnamen für die Vorlage zu erstellen, wie z. B.*jumpbox\_enabled.json*. Vorlagenlinks nutzen anschließend die resultierende Variable, um die Jumpbox zu installieren.
 
 Sie können die Vorlage für optionale Ressourcen von mehreren Stellen aus verknüpfen:
 
@@ -309,7 +309,7 @@ Sie erstellen eine Hauptvorlage mit dem Namen "azuredeploy.json".
 
 Sie erstellen eine Vorlage für freigegebene Ressourcen mit dem Namen "shared-resources.json".
 
-Sie erstellen eine Vorlage für optionale Ressourcen, um die Bereitstellung einer Jumpbox mit dem Namen "jumpbox_enabled.json" zu ermöglichen.
+Sie erstellen eine Vorlage für optionale Ressourcen, um die Bereitstellung einer Jumpbox mit dem Namen "jumpbox\_enabled.json" zu ermöglichen.
 
 Redis verwendet nur einen einzelnen Knotentyp, weshalb Sie eine einzelne Vorlage für Memberknotenressourcen mit dem Namen "node-resources.json" erstellen.
 
@@ -319,9 +319,9 @@ Mithilfe von Redis möchten Sie jeden einzelnen Knoten installieren und anschlie
 
 Unter Verwendung von Vorlagenlinks werden die Hauptvorlagenlinks mit der Vorlage für freigegebene Ressourcen verknüpft, wodurch das virtuelle Netzwerk eingerichtet wird.
 
-Logik wird der Hauptvorlage hinzugefügt, um Nutzern der Vorlage die Angabe zu ermöglichen, ob eine Jumpbox bereitgestellt werden soll. Der Wert *enabled* für den *EnableJumpbox*-Parameter gibt an, dass der Kunde eine Jumpbox bereitstellen möchte. Wenn dieser Wert angegeben ist, verkettet die Vorlage *enabled* als Suffix mit dem Basisvorlagennamen der Jumpbox-Funktion.
+Logik wird der Hauptvorlage hinzugefügt, um Nutzern der Vorlage die Angabe zu ermöglichen, ob eine Jumpbox bereitgestellt werden soll. Der Wert *enabled* für den *EnableJumpbox*-Parameter gibt an, dass der Kunde eine Jumpbox bereitstellen möchte. Wenn dieser Wert angegeben ist, verkettet die Vorlage *\_enabled* als Suffix mit dem Basisvorlagennamen der Jumpbox-Funktion.
 
-Die Hauptvorlage wendet den Wert des Parameters *Large* als Suffix an den Basisvorlagenamen für T-Shirt-Größen an und verwendet dann diesen Wert in einem Vorlagenlink, um einen Link mit *technology_on_os_large.json* herzustellen.
+Die Hauptvorlage wendet den Wert des Parameters *Large* als Suffix an den Basisvorlagenamen für T-Shirt-Größen an und verwendet dann diesen Wert in einem Vorlagenlink, um einen Link mit *technology\_on\_os\_large.json* herzustellen.
 
 Die Topologie ähnelt dieser Abbildung.
 
@@ -381,4 +381,4 @@ Wenn Sie Ihre Vorlage im Marketplace veröffentlichen möchten, richten Sie einf
 - Empfehlungen für die Sicherheitseinstellungen in Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 - Informationen zur Freigabe des Status in Vorlagen finden Sie unter [Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-state.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

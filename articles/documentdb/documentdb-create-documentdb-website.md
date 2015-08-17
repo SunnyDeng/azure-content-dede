@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Bereitstellen von DocumentDB und Azure App Service-Web-Apps mithilfe einer Vorlage des Azure-Ressourcen-Managers | Azure" 
+	pageTitle="Stellen Sie DocumentDB und Azure App Service-Web-Apps mithilfe einer Vorlage des Azure-Ressourcen-Managers bereit | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie ein DocumentDB-Konto, eine Azure App-Service-Web-App und eine Beispielwebanwendung mithilfe einer Vorlage des Azure-Ressourcen-Managers bereitstellen." 
 	services="documentdb, app-service\web" 
 	authors="stephbaron" 
-	manager="johnmac" 
+	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter=""/>
+
 
 <tags 
 	ms.service="documentdb" 
@@ -13,8 +14,9 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/29/2015" 
+	ms.date="07/28/2015" 
 	ms.author="stbaro"/>
+
 
 # Bereitstellen von DocumentDB und Azure App Service-Web-Apps mithilfe einer Vorlage des Azure-Ressourcen-Managers #
 
@@ -38,9 +40,9 @@ Vor dem Ausführen der Anweisungen zu diesem Lernprogramm, müssen Sie sicherste
 ##<a id="CreateDB"></a>Schritt 1: Herunterladen und Extrahieren der Beispieldateien ##
 Als Erstes laden wir die Beispieldateien herunter, die in diesem Lernprogramm verwendet werden.
 
-1. Laden Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos, von Web-Apps und zum Bereitstellen einer Demoanwendung](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebsiteTodo.zip) in einen lokalen Ordner (z. B. „C:\DocumentDBTemplates“) herunter, und extrahieren Sie die Dateien. In diesem Beispiel werden ein DocumentDB-Konto, eine App Service-Web-App und eine Webanwendung bereitgestellt. Außerdem wird die Webanwendung automatisch so konfiguriert, dass sie eine Verbindung mit dem DocumentDB-Konto herstellt.
+1. Laden Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos, von Web-Apps und zum Bereitstellen einer Demoanwendung](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebsiteTodo.zip) in einen lokalen Ordner (z. B. „C:\\DocumentDBTemplates“) herunter, und extrahieren Sie die Dateien. In diesem Beispiel werden ein DocumentDB-Konto, eine App Service-Web-App und eine Webanwendung bereitgestellt. Außerdem wird die Webanwendung automatisch so konfiguriert, dass sie eine Verbindung mit dem DocumentDB-Konto herstellt.
 
-2. Laden Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos und Web-Apps](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebSite.zip) in einen lokalen Ordner (z. B. „C:\DocumentDBTemplates“) herunter, und extrahieren Sie die Dateien. Mit diesem Beispiel werden ein DocumentDB-Konto und eine App Service-Web-App bereitgestellt; außerdem wird die Konfiguration der Web-App so geändert, dass DocumentDB-Verbindungsinformationen problemlos angegeben werden können, eine Webanwendung ist jedoch nicht enthalten.
+2. Laden Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos und Web-Apps](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebSite.zip) in einen lokalen Ordner (z. B. „C:\\DocumentDBTemplates“) herunter, und extrahieren Sie die Dateien. Mit diesem Beispiel werden ein DocumentDB-Konto und eine App Service-Web-App bereitgestellt; außerdem wird die Konfiguration der Web-App so geändert, dass DocumentDB-Verbindungsinformationen problemlos angegeben werden können, eine Webanwendung ist jedoch nicht enthalten.
 
 > [AZURE.TIP]Beachten Sie, dass Sie je nach den Sicherheitseinstellungen des Computers möglicherweise die extrahierten Dateien entsperren müssen, indem Sie mit der rechten Maustaste darauf klicken und dann auf **Eigenschaften** und auf **Blockierung aufheben** klicken.
 
@@ -53,7 +55,7 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
 > [AZURE.TIP]Die Vorlage überprüft nicht, ob die unten eingegebenen Namen der Web-App und der DocumentDB-Kontoname (a) gültig und (b) verfügbar sind. Es wird dringend empfohlen, die Verfügbarkeit der gewünschten Namen zu überprüfen, bevor Sie das PowerShell-Bereitstellungsskript ausführen.
 
-1. Öffnen Sie Microsoft Azure PowerShell, und navigieren Sie zu dem Ordner, in den Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos, einer App Service-Web-App und Bereitstellen einer Demoanwendung](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebsiteTodo.zip) heruntergeladen und extrahiert haben (z. B. „C:\DocumentDBTemplates\CreateDocDBWebsiteTodo“).
+1. Öffnen Sie Microsoft Azure PowerShell, und navigieren Sie zu dem Ordner, in den Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos, einer App Service-Web-App und Bereitstellen einer Demoanwendung](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebsiteTodo.zip) heruntergeladen und extrahiert haben (z. B. „C:\\DocumentDBTemplates\\CreateDocDBWebsiteTodo“).
 
 
 2. Wir führen das PowerShell-Skript "CreateDocDBWebsiteTodo.ps1" aus. Das Skript verwendet die folgenden erforderlichen Parameter:
@@ -140,7 +142,7 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
 	![Screenshot der Blätter „Ressourcengruppe“ und „Kontoblätter“ mit der hervorgehobenen Kachel „Abfrage-Explorer“.](./media/documentdb-create-documentdb-website/image8.png)
 
-11. Führen Sie die Standardabfrage "SELECT * FROM c" aus, und überprüfen Sie die Ergebnisse. Beachten Sie, dass die Abfrage die JSON-Darstellung der Aufgaben abgerufen hat, die Sie in Schritt 7 oben erstellt haben. Sie können gerne mit Abfragen experimentieren; führen Sie z. B. SELECT * FROM c WHERE c.isComplete = true aus, um alle Aufgaben zurückzugeben, die als abgeschlossen gekennzeichnet wurden.
+11. Führen Sie die Standardabfrage "SELECT \* FROM c" aus, und überprüfen Sie die Ergebnisse. Beachten Sie, dass die Abfrage die JSON-Darstellung der Aufgaben abgerufen hat, die Sie in Schritt 7 oben erstellt haben. Sie können gerne mit Abfragen experimentieren; führen Sie z. B. SELECT \* FROM c WHERE c.isComplete = true aus, um alle Aufgaben zurückzugeben, die als abgeschlossen gekennzeichnet wurden.
 
 
 	![Screenshot der Blätter „Abfrage-Explorer“ und „Ergebnisse“ mit Anzeige der Abfrageergebnisse](./media/documentdb-create-documentdb-website/image5.png)
@@ -153,7 +155,7 @@ Jetzt stellen wir unsere zweite Vorlage bereit.
 
 > [AZURE.TIP]Die Vorlage überprüft nicht, ob die unten eingegebenen Namen der Web-App und der DocumentDB-Kontoname (a) gültig und (b) verfügbar sind. Es wird dringend empfohlen, die Verfügbarkeit der gewünschten Namen zu überprüfen, bevor Sie das PowerShell-Bereitstellungsskript ausführen.
 
-1. Öffnen Sie Microsoft Azure PowerShell, und navigieren Sie zu dem Ordner, in den Sie das Beispiel zum [Erstellen eines DocumentDB-Kontos und eines Web-App-Beispiels](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebSite.zip) heruntergeladen und extrahiert haben (z. B. C:\DocumentDBTemplates\CreateDocDBWebsite).
+1. Öffnen Sie Microsoft Azure PowerShell, und navigieren Sie zu dem Ordner, in den Sie das Beispiel zum [Erstellen eines DocumentDB-Kontos und eines Web-App-Beispiels](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebSite.zip) heruntergeladen und extrahiert haben (z. B. C:\\DocumentDBTemplates\\CreateDocDBWebsite).
 
 
 2. Wir führen das PowerShell-Skript "CreateDocDBWebsite.ps1" aus. Das Skript verwendet die gleichen Parameter wie die erste bereitgestellte Vorlage, nämlich:
@@ -210,4 +212,4 @@ Glückwunsch! Sie haben DocumentDB, eine App Service-Web-App und eine Beispielwe
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

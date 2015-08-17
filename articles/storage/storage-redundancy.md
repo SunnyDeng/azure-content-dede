@@ -105,4 +105,4 @@ Wenn Sie den schreibgeschützten Zugriff auf Ihre Daten in der sekundären Regio
 - [SOSP-Dokument zu Azure Storage](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)  
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

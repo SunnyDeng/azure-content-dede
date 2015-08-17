@@ -34,4 +34,4 @@ Wenn Sie Ressourcen im Portal oder durch Bereitstellen einer Vorlage über Azure
 - Ausführliche Informationen zum Erstellen von Verknüpfungen zwischen Ressourcen finden Sie unter [Verknüpfen von Ressourcen im Azure-Ressourcen-Manager](../resource-group-link-resources.md).
 - Weitere Informationen zum Arbeiten mit Ressourcengruppen über das Vorschauportal finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](resource-group-portal.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -163,7 +163,7 @@ Neben der Unterstützung für Werbespots kann mithilfe von LiveBackoff die Lived
 
 
 
-![livebackoff_filter][livebackoff_filter]
+![livebackoff\_filter][livebackoff_filter]
 
 
 ###Kombinieren mehrerer Regeln in einem Filter
@@ -209,4 +209,4 @@ Im folgenden Thema werden Media Services-Entitäten beschrieben, die im Zusammen
 [skiing]: ./media/media-services-dynamic-manifest-overview/media-services-skiing.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

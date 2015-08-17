@@ -19,7 +19,7 @@
 
 #Versionshinweise
 
-##4.0.0 (06.07.2015)
+##4\.0.0 (06.07.2015)
 
 -   Interne Protokolländerungen zur Steigerung der Zuverlässigkeit von Analysen und Push
 -   Ein systemeigener Push (GCM/ADM) wird jetzt auch für In-App-Benachrichtigungen verwendet, Sie müssen daher die Anmeldeinformationen für den systemeigenen Push für jeden Push-Kampagnentyp konfigurieren.
@@ -29,7 +29,7 @@
 -   Korrektur der Zeichenfolgenverwaltung für die dynamische Konfiguration.
 -   Aktualisierung des Endbenutzer-Lizenzvertrags.
 
-##3.0.0 (17.02.2015)
+##3\.0.0 (17.02.2015)
 
 -   Erste Version von Azure Mobile Engagement
 -   Die „appId“-Konfiguration wird durch eine Verbindungszeichenfolgen-Konfiguration ersetzt.
@@ -40,4 +40,4 @@
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

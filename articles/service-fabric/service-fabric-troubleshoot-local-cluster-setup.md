@@ -86,4 +86,4 @@ Stellen Sie sicher, dass in Ihrer Projektmappe keine Dienstprojekte als Startpro
 - [Grundlagen und Problembehandlung für Cluster mit Systemintegritätsberichten](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
 - [Visualisieren Ihres Clusters mit Service Fabric Explorer](service-fabric-visualizing-your-cluster.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -4,7 +4,8 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
+
 
 <tags 
 	ms.service="application-insights" 
@@ -12,8 +13,9 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="hero-article" 
-	ms.date="04/26/2015" 
+	ms.date="08/04/2015" 
 	ms.author="awills"/>
+
 
 # Erste Schritte mit Visual Studio Application Insights
 
@@ -35,13 +37,23 @@ Sie benötigen ein Konto in [Microsoft Azure](http://azure.com). Möglicherweise
 
 Ziel | Vorgehensweise | Ergebnis
 ---|---|---
- <a href="app-insights-start-monitoring-app-health-usage.md">![ASP.NET](./media/app-insights-get-started/appinsights-gs-i-01-perf.png)</a> | <a href="app-insights-start-monitoring-app-health-usage.md">Hinzufügen des Application Insights-SDK zu Ihrem Webprojekt</a> <br/> ![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-start-monitoring-app-health-usage.md">![Überwachung von Leistung und Nutzung](./media/app-insights-get-started/appinsights-gs-r-01-perf.png)</a>
-<a href="app-insights-monitor-performance-live-website-now.md">![ASP.NET-Website ist bereits live](./media/app-insights-get-started/appinsights-gs-i-04-red2.png)</a><br/><a href="app-insights-monitor-performance-live-website-now.md">![Überwachung von Abhängigkeit und Leistung](./media/app-insights-get-started/appinsights-gs-i-03-red.png)</a>|<a href="app-insights-monitor-performance-live-website-now.md">Installieren des Statusmonitors auf dem IIS-Server</a> <br/> ![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-monitor-performance-live-website-now.md">![ASP.NET-Abhängigkeitsüberwachung](./media/app-insights-get-started/appinsights-gs-r-03-red.png)</a>
-<a href="insights-perf-analytics.md">![Azure-Web-App oder -VM](./media/app-insights-get-started/appinsights-gs-i-10-azure.png)</a>|<a href="insights-perf-analytics.md">Aktivieren von Insights in Ihrer Azure-Web-App oder auf dem virtuellen Computer</a> <br/> ![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="insights-perf-analytics.md">![Überwachung von Abhängigkeit und Leistung](./media/app-insights-get-started/appinsights-gs-r-03-red.png)</a>
-<a href="app-insights-java-get-started.md">![Java](./media/app-insights-get-started/appinsights-gs-i-11-java.png)</a>|<a href="app-insights-java-get-started.md">Hinzufügen des SDK zu Ihrem Java-Projekt</a><br/>![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-java-get-started.md">![Überwachung von Leistung und Nutzung](./media/app-insights-get-started/appinsights-gs-r-10-java.png)</a>
-<a href="app-insights-web-track-usage.md">![JavaScript](./media/app-insights-get-started/appinsights-gs-i-02-usage.png)</a>|<a href="app-insights-web-track-usage.md">Einfügen des Application Insights-Skripts in Ihre Webseiten</a><br/>![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-web-track-usage.md">![Seitenaufrufe und Browserleistung](./media/app-insights-get-started/appinsights-gs-r-02-usage.png)</a>
-<a href="app-insights-monitor-web-app-availability.md">![Availability](./media/app-insights-get-started/appinsights-gs-i-05-avail.png)</a>|<a href="app-insights-monitor-web-app-availability.md">Erstellen von Webtests</a><br/>![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-monitor-web-app-availability.md">![Verfügbarkeit](./media/app-insights-get-started/appinsights-gs-r-05-avail.png)</a>
-<a href="app-insights-windows-get-started.md">![Windows und Windows Phone](./media/app-insights-get-started/appinsights-gs-i-06-device.png)</a>|<a href="app-insights-windows-get-started.md">Hinzufügen von Application Insights zu Ihrem Geräte-App-Projekt</a><br/>![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-windows-get-started.md">![Absturz- und Nutzungsdaten](./media/app-insights-get-started/appinsights-gs-r-06-device.png)</a>
+ <a href="app-insights-start-monitoring-app-health-usage.md">![ASP.NET](./media/app-insights-get-started/appinsights-gs-i-01-perf.png)</a> | <a href="app-insights-start-monitoring-app-health-usage.md">Hinzufügen des Application Insights-SDK zu Ihrem Webprojekt</a> <br/>
+ ![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-start-monitoring-app-health-usage.md">![Überwachung von Leistung und Nutzung](./media/app-insights-get-started/appinsights-gs-r-01-perf.png)</a>
+<a href="app-insights-monitor-performance-live-website-now.md">![ASP.NET-Website ist bereits live](./media/app-insights-get-started/appinsights-gs-i-04-red2.png)</a><br/>
+<a href="app-insights-monitor-performance-live-website-now.md">![Überwachung von Abhängigkeit und Leistung](./media/app-insights-get-started/appinsights-gs-i-03-red.png)</a>|<a href="app-insights-monitor-performance-live-website-now.md">Installieren des Statusmonitors auf dem IIS-Server</a> <br/>
+ ![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-monitor-performance-live-website-now.md">![ASP.NET-Abhängigkeitsüberwachung](./media/app-insights-get-started/appinsights-gs-r-03-red.png)</a>
+<a href="insights-perf-analytics.md">![Azure-Web-App oder -VM](./media/app-insights-get-started/appinsights-gs-i-10-azure.png)</a>|<a href="insights-perf-analytics.md">Aktivieren von Insights in Ihrer Azure-Web-App oder auf dem virtuellen Computer</a> <br/>
+ ![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="insights-perf-analytics.md">![Überwachung von Abhängigkeit und Leistung](./media/app-insights-get-started/appinsights-gs-r-03-red.png)</a>
+<a href="app-insights-java-get-started.md">![Java](./media/app-insights-get-started/appinsights-gs-i-11-java.png)</a>|<a href="app-insights-java-get-started.md">Hinzufügen des SDK zu Ihrem Java-Projekt</a><br/>
+![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-java-get-started.md">![Überwachung von Leistung und Nutzung](./media/app-insights-get-started/appinsights-gs-r-10-java.png)</a>
+<a href="app-insights-web-track-usage.md">![JavaScript](./media/app-insights-get-started/appinsights-gs-i-02-usage.png)</a>|<a href="app-insights-web-track-usage.md">Einfügen des Application Insights-Skripts in Ihre Webseiten</a><br/>
+![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-web-track-usage.md">![Seitenaufrufe und Browserleistung](./media/app-insights-get-started/appinsights-gs-r-02-usage.png)</a>
+<a href="app-insights-monitor-web-app-availability.md">![Availability](./media/app-insights-get-started/appinsights-gs-i-05-avail.png)</a>|<a href="app-insights-monitor-web-app-availability.md">Erstellen von Webtests</a><br/>
+![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-monitor-web-app-availability.md">![Verfügbarkeit](./media/app-insights-get-started/appinsights-gs-r-05-avail.png)</a>
+<a href="app-insights-windows-get-started.md">![Windows und Windows Phone](./media/app-insights-get-started/appinsights-gs-i-06-device.png)</a>|<a href="app-insights-windows-get-started.md">Hinzufügen von Application Insights zu Ihrem Windows-App-Projekt</a><br/>
+![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-windows-get-started.md">![Absturz- und Nutzungsdaten](./media/app-insights-get-started/appinsights-gs-r-06-device.png)</a>
+<a href="app-insights-platforms.md">![iOS, Android und mehr](./media/app-insights-get-started/appinsights-gs-i-07-device.png)</a>|<a href="app-insights-platforms.md">Hinzufügen von Application Insights zu Ihrer iOS- oder Android-App</a><br/>
+![führt zu](./media/app-insights-get-started/appinsights-00arrow.png) | <a href="app-insights-platforms.md">![Absturz- und Nutzungsdaten](./media/app-insights-get-started/appinsights-gs-r-06-device.png)</a>
 
 ## Support und Feedback
 
@@ -73,4 +85,4 @@ Ziel | Vorgehensweise | Ergebnis
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

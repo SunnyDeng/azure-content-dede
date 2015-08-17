@@ -6,14 +6,16 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
+
 <tags 
    ms.service="automation"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/05/2015"
+   ms.date="08/04/2015"
    ms.author="bwren" />
+
 
 # Azure Automation-Webhooks
 
@@ -38,9 +40,7 @@ Die folgende Tabelle beschreibt die Eigenschaften, die Sie für einen Webhook ko
 ### Parameter
 Ein Webhook kann Werte für Runbookparameter definieren, die verwendet werden, wenn das Runbook von diesem Webhook gestartet wird. Der Webhook muss Werte für alle obligatorischen Parameter des Runbooks einschließen und kann Werte für optionale Parameter einschließen. Mehrere mit einem einzelnen Runbook verknüpften Webhooks können verschiedene Parameterwerte verwenden.
 
->[AZURE.NOTE]Von einem Webhook festgelegte Parameterwerte können zurzeit nicht geändert werden, nachdem der Webhook erstellt wurde. Sie müssen einen anderen Webhook erstellen, der unterschiedliche Parameterwerte verwendet.
-
-Wenn ein Client ein Runbook mithilfe eines Webhooks startet, können die im Webhook definierten Parameterwerte nicht überschrieben werden. Um Daten aus dem Client abzurufen, kann das Runbook nur einen Parameter namens **$WebhookData** vom Typ \[object\] akzeptieren, der Daten enthält, die der Client in die POST-Anforderung einschließt.
+Wenn ein Client ein Runbook mithilfe eines Webhooks startet, können die im Webhook definierten Parameterwerte nicht überschrieben werden. Um Daten aus dem Client abzurufen, kann das Runbook nur einen Parameter namens **$WebhookData** vom Typ [object] akzeptieren, der Daten enthält, die der Client in die POST-Anforderung einschließt.
 
 ![Webhookdaten](media/automation-webhooks/webhookdata.png)
 
@@ -118,11 +118,11 @@ Das Runbook erwartet im Anforderungstext eine Liste von virtuellen Computern, di
 	$jobid = ConvertFrom-Json $response 
 
 
-Die folgende Abbildung zeigt die Headerinformationen der Anforderung \(unter Verwendung einer [Fiddler](http://www.telerik.com/fiddler)-Ablaufverfolgung\). Diese beinhalten zusätzlich zu den von uns hinzugefügten benutzerdefinierten Headern mit Datums- und Benutzerangaben die Standardheader einer HTTP-Anforderung. Jeder dieser Werte steht dem Runbook in der **RequestHeaders**-Eigenschaft von **WebhookData** zur Verfügung.
+Die folgende Abbildung zeigt die Headerinformationen der Anforderung (unter Verwendung einer [Fiddler](http://www.telerik.com/fiddler)-Ablaufverfolgung). Diese beinhalten zusätzlich zu den von uns hinzugefügten benutzerdefinierten Headern mit Datums- und Benutzerangaben die Standardheader einer HTTP-Anforderung. Jeder dieser Werte steht dem Runbook in der **RequestHeaders**-Eigenschaft von **WebhookData** zur Verfügung.
 
 ![Schaltfläche "Webhooks"](media/automation-webhooks/webhook-request-headers.png)
 
-Die folgende Abbildung zeigt den Anforderungstext \(unter Verwendung einer [Fiddler](http://www.telerik.com/fiddler)-Ablaufverfolgung\), der dem Runbook in der **RequestBody**-Eigenschaft von **WebhookData** zur Verfügung steht. Der Text ist in JSON formatiert, da dieses Format im Anforderungstext enthalten war.
+Die folgende Abbildung zeigt den Anforderungstext (unter Verwendung einer [Fiddler](http://www.telerik.com/fiddler)-Ablaufverfolgung), der dem Runbook in der **RequestBody**-Eigenschaft von **WebhookData** zur Verfügung steht. Der Text ist in JSON formatiert, da dieses Format im Anforderungstext enthalten war.
 
 ![Schaltfläche "Webhooks"](media/automation-webhooks/webhook-request-body.png)
 
@@ -174,4 +174,4 @@ Das folgende Beispiel-Runbook akzeptiert die Anforderung aus dem vorherigen Beis
 - [Starten eines Runbooks](automation-starting-a-runbook.md)
 - [Anzeigen des Status eines Runbookauftrags](automation-viewing-the-status-of-a-runbook-job.md) 
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

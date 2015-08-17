@@ -8,6 +8,7 @@
    editor=""
    tags=""/>
 
+
 <tags
    ms.service="best-practice"
    ms.devlang="na"
@@ -16,6 +17,7 @@
    ms.workload="na"
    ms.date="04/28/2015"
    ms.author="masashin"/>
+
 
 # Anleitungen zum Content Delivery Network (CDN)
 
@@ -49,7 +51,20 @@ Das CDN wird häufig für Folgendes verwendet:
 
 - Die folgende Tabelle zeigt Beispiele für die mittlere Zeit bis zum ersten Byte von verschiedenen geografischen Standorten aus. Die Zielwebrolle wird in Azure West US (Westen der USA) bereitgestellt. Es gibt eine starke Wechselbeziehung zwischen dem größeren Boost durch das CDN und der Entfernung zu einem CDN-Knoten. Eine Liste aller Azure CDN-Knotenstandorte finden Sie unter [POP-Standorte von Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/library/azure/gg680302.aspx).
 
-<table xmlns:xlink="http://www.w3.org/1999/xlink"><tr><th><a name="_MailEndCompose" href="#"><span /></a><br /></th><th><p>Zeit bis zum ersten Byte (Ursprung)</p></th><th><p>Zeit bis zum ersten Byte (CDN)</p></th><th><p> % schneller für CDN</p></th></tr><tr><td><p>* San Jose, CA</p></td><td><p>47,5</p></td><td><p>46,5</p></td><td><p>2 %</p></td></tr><tr><td><p>** Dulles, VA</p></td><td><p>109</p></td><td><p>40,5</p></td><td><p>169 %</p></td></tr><tr><td><p>Buenos Aires, AR</p></td><td><p>210</p></td><td><p>151</p></td><td><p>39 %</p></td></tr><tr><td><p>* London, UK</p></td><td><p>195</p></td><td><p>44</p></td><td><p>343 %</p></td></tr><tr><td><p>Shanghai, CN</p></td><td><p>242</p></td><td><p>206</p></td><td><p>17 %</p></td></tr><tr><td><p>* Singapore</p></td><td><p>214</p></td><td><p>74</p></td><td><p>189 %</p></td></tr><tr><td><p>* Tokio, JP</p></td><td><p>163</p></td><td><p>48</p></td><td><p>240 %</p></td></tr><tr><td><p>Seoul, KR</p></td><td><p>190</p></td><td><p>190</p></td><td><p>0 %</p></td></tr></table>* Hat einen Azure CDN-Knoten in der gleichen Stadt. * Hat einen Azure CDN-Knoten in einer Nachbarstadt.
+
+
+|City |Zeit bis zum ersten Byte (Ursprung) |Zeit bis zum ersten Byte (CDN) | % schneller für CDN|
+|---|---|---|---|
+|San Jose, CA<sub>1</sub> |47,5 |46,5 |2 %|
+|Dulles, VA<sub>2</sub> |109 |40,5 |169 %|
+|Buenos Aires, AR |210 |151 |39 %|
+|London, UK<sub>1</sub> |195 |44 |343 %|
+|Shanghai, CN |242 |206 |17 %|
+|Singapur<sub>1</sub> |214 |74 |189 %|
+|Tokio, JP<sub>1</sub> |163 |48 |240 %|
+|Seoul, KR |190 |190 |0 %|
+
+Hat einen Azure CDN-Knoten in derselben Stadt.<sub>1</sub>Hat einen Azure CDN-Knoten in einer Nachbarstadt.<sub>2</sub>
 
 
 ## Herausforderungen  
@@ -85,7 +100,8 @@ In folgenden Szenarien kann CDN weniger nützlich sein:
 
 Das Verwenden des CDN ist eine gute Möglichkeit, um die Belastung Ihrer Anwendung zu minimieren und Verfügbarkeit sowie Leistung zu maximieren. Sie sollten dies für alle entsprechenden Inhalte und Ressourcen, die Ihre Anwendung verwendet, berücksichtigen. Beim Entwerfen einer Strategie zum Verwenden des CDN sollten Sie folgende Punkte berücksichtigen:
 
-- **Ursprung ** Die Bereitstellung von Inhalten über das CDN erfordert die Angabe eines HTTP-Endpunkts (Port 80), den der CDN-Dienst für den Zugriff auf den Inhalt und für die Zwischenspeicherung verwendet. Der Endpunkt kann einen Azure-Blob-Speichercontainer angeben, der den statischen Inhalt enthält, den Sie über das CDN bereitstellen möchten. Der Container muss als öffentlich markiert sein. Nur Blobs in einem öffentlichen Container, die öffentlichen Lesezugriff haben, sind über das CDN verfügbar. 
+- **Ursprung** Die Bereitstellung von Inhalten über das CDN erfordert die Angabe eines HTTP-Endpunkts (Port 80), den der CDN-Dienst für den Zugriff auf den Inhalt und für die Zwischenspeicherung verwendet. Der Endpunkt kann einen Azure-Blob-Speichercontainer angeben, der den statischen Inhalt enthält, den Sie über das CDN bereitstellen möchten. Der Container muss als öffentlich markiert sein. Nur Blobs in einem öffentlichen Container, die öffentlichen Lesezugriff haben, sind über das CDN verfügbar.
+
 - Der Endpunkt kann einen Ordner namens **cdn** im Stammverzeichnis einer der Compute-Ebenen der Anwendung (z. B. eine Webrolle oder ein virtueller Computer) angeben. Die Ergebnisse aus Anforderungen für Ressourcen, einschließlich dynamischer Ressourcen wie z. B. ASPX-Seiten, werden im CDN zwischengespeichert. Der minimale Zeitraum zum Zwischenspeichern beträgt 300 Sekunden. Kürzere Zeiträume verhindern, dass der Inhalt im CDN bereitgestellt wird (weitere Informationen finden Sie im Abschnitt <a href="#cachecontrol" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">Cachesteuerung</a>").
 
 - Bei Verwendung von Azure-Websites wird der Endpunkt durch Auswählen des Standorts beim Erstellen der CDN-Instanz auf den Stammordner der Website festgelegt. Der gesamte Inhalt der Website ist über das CDN verfügbar.
@@ -102,6 +118,7 @@ Das Verwenden des CDN ist eine gute Möglichkeit, um die Belastung Ihrer Anwendu
 
   ```
   <img src="http://[your-cdn-instance].vo.msecnd.net/Images/image.jpg" />
+
   ```
 
 - **Bereitstellung** Statische Inhalte müssen möglicherweise unabhängig von der Anwendung bereitgestellt werden, wenn Sie sie nicht in das Anwendungsbereitstellungspaket oder den Anwendungsbereitstellungsprozess einschließen. Berücksichtigen Sie, wie sich dies auf den Versionierungsansatz auswirkt, den Sie zum Verwalten der Anwendungskomponenten und des statischen Ressourceninhalts verwenden.
@@ -120,7 +137,8 @@ Das Verwenden des CDN ist eine gute Möglichkeit, um die Belastung Ihrer Anwendu
 
 - Das Bereitstellen neuer Versionen von statischen Inhalten beim Aktualisieren einer Anwendung kann eine Herausforderung darstellen, wenn die vorherigen Ressourcen im CDN zwischengespeichert sind. Weitere Informationen finden Sie im Abschnitt "<a href="#cachecontrol" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">Cachesteuerung</a>".
 
-<a name="cachecontrol" href="#" xmlns:xlink="http://www.w3.org/1999/xlink"><span /></a>**Cachesteuerung**+ Berücksichtigen Sie, wie und auf welchen Anwendungsebenen das Zwischenspeichern verwaltet werden soll. Wenn Sie beispielsweise einen Ordner als CDN-Ursprung verwenden, können Sie die Cachefähigkeit von Seiten, die Inhalte generieren, und den Inhaltsablauf für alle Ressourcen in einem bestimmten Ordner angeben. Sie können auch Cacheeigenschaften für das CDN und für den Client mithilfe von standardmäßigen HTTP-Headern angeben. Obwohl Sie das Zwischenspeichern wahrscheinlich bereits auf dem Server und dem Client verwalten, kann das CDN Sie darauf aufmerksam machen, wie Ihre Inhalte wo zwischengespeichert werden.
+<a name="cachecontrol" href="#" xmlns:xlink="http://www.w3.org/1999/xlink"><span />
+</a>\*\*Cachesteuerung\*\*+ Berücksichtigen Sie, wie und auf welchen Anwendungsebenen das Zwischenspeichern verwaltet werden soll. Wenn Sie beispielsweise einen Ordner als CDN-Ursprung verwenden, können Sie die Cachefähigkeit von Seiten, die Inhalte generieren, und den Inhaltsablauf für alle Ressourcen in einem bestimmten Ordner angeben. Sie können auch Cacheeigenschaften für das CDN und für den Client mithilfe von standardmäßigen HTTP-Headern angeben. Obwohl Sie das Zwischenspeichern wahrscheinlich bereits auf dem Server und dem Client verwalten, kann das CDN Sie darauf aufmerksam machen, wie Ihre Inhalte wo zwischengespeichert werden.
 
 - Um zu verhindern, dass Objekte im CDN verfügbar sind, können Sie sie aus dem Ursprung (Blob-Container oder **cdn**-Stammordner der Anwendung) entfernen oder den CDN-Endpunkt löschen. Sie können den Container oder Blob aber auch im Falle des Blob-Speichers privat machen. Allerdings werden Elemente nur aus dem CDN entfernt, wenn ihre Lebenszeit (Time-To-Live, TTL) abläuft.
 
@@ -176,24 +194,34 @@ Der folgende Ausschnitt aus einer Web.config-Datei im Stammverzeichnis einer von
   <rewrite>
     <rules>
       <rule name="VersionedResource" stopProcessing="false">
-        <match url="(.*)_v(.*).(.*)" ignoreCase="true" />
+        <match url="(.*)_v(.*)\.(.*)" ignoreCase="true" />
+
         <action type="Rewrite" url="{R:1}.{R:3}" appendQueryString="true" />
+
       </rule>
       <rule name="CdnImages" stopProcessing="true">
         <match url="cdn/Images/(.*)" ignoreCase="true" />
+
         <action type="Rewrite" url="/Images/{R:1}" appendQueryString="true" />
+
       </rule>
       <rule name="CdnContent" stopProcessing="true">
         <match url="cdn/Content/(.*)" ignoreCase="true" />
+
         <action type="Rewrite" url="/Content/{R:1}" appendQueryString="true" />
+
       </rule>
       <rule name="CdnScript" stopProcessing="true">
         <match url="cdn/Scripts/(.*)" ignoreCase="true" />
+
         <action type="Rewrite" url="/Scripts/{R:1}" appendQueryString="true" />
+
       </rule>
       <rule name="CdnScriptBundles" stopProcessing="true">
         <match url="cdn/bundles/(.*)" ignoreCase="true" />
+
         <action type="Rewrite" url="/bundles/{R:1}" appendQueryString="true" />
+
       </rule>
     </rules>
   </rewrite>
@@ -203,7 +231,8 @@ Der folgende Ausschnitt aus einer Web.config-Datei im Stammverzeichnis einer von
 
 Durch das Hinzufügen der Umschreiberegeln werden folgende Umleitungen ausgeführt:
 
-- Die erste Regel ermöglicht Ihnen das Einbetten einer Version in den Dateinamen einer Ressource, die dann ignoriert wird. **Dateiname_v123.jpg ** wird zum Beispiel in **Dateiname.jpg** umgeschrieben. 
+- Die erste Regel ermöglicht Ihnen das Einbetten einer Version in den Dateinamen einer Ressource, die dann ignoriert wird. **Dateiname\_v123.jpg** wird zum Beispiel in **Dateiname.jpg** umgeschrieben.
+
 - Die nächsten vier Regeln zeigen das Umleiten von Anforderungen, wenn Sie die Ressourcen nicht in einem Ordner namens **cdn** im Stammverzeichnis der Webrolle speichern möchten. Die Regeln ordnen die URLs **cdn/Images**, **cdn/Content**, **cdn/Scripts** und **cdn/bundles** URLs ihren jeweiligen Stammordnern in der Webrolle zu. Zum Verwenden der URL-Umschreibung müssen Sie einige Änderungen an der Bündelung von Ressourcen vornehmen.
 
 
@@ -219,4 +248,4 @@ Bündelung und Minimierung können von ASP.NET verarbeitet werden. In einem MVC-
 + [Integrieren eines Clouddiensts in Azure CDN](cdn-cloud-service-with-cdn.md)
 + [Bewährte Methoden für das Azure Content Delivery Network](http://azure.microsoft.com/blog/2011/03/18/best-practices-for-the-windows-azure-content-delivery-network/)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -3,7 +3,7 @@
 	description="Wenn Sie keine Verbindung mit Ihrem Linux-basierten virtuellen Azure-Computer herstellen können, verwenden Sie diese Schritte, um die Ursache des Problems zu isolieren."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="JoeDavies-MSFT"
+	authors="dsk-2015"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management,azure-resource-manager"/>
@@ -16,9 +16,9 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/07/2015"
-	ms.author="josephd"/>
+	ms.author="dkshir"/>
 
-# Behandeln von Problemen mit Secure Shell \(SSH\)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer
+# Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer
 
 Wenn Sie keine Verbindung mit Linux-basierten virtuellen Azure-Computern herstellen können, finden Sie in diesem Artikel die Beschreibung eines methodischen Ansatzes zum Isolieren und Beheben des Problems.
 
@@ -42,17 +42,17 @@ In den folgenden Abschnitten wird schrittweise erläutert, wie die verschiedenen
 
 Im Azure-Verwaltungsportal:
 
-1. Klicken Sie auf **Virtuelle Computer** \> *VM-Name*.
+1. Klicken Sie auf **Virtuelle Computer** > *VM-Name*.
 2. Klicken Sie für den virtuellen Computer auf **Dashboard**, um den Status zu überprüfen.
 3. Klicken Sie auf **Überwachen**, um aktuelle Aktivitäten für Compute-, Speicher- und Netzwerkressourcen anzuzeigen.
 4. Klicken Sie auf **Endpunkte**, und vergewissern Sie sich, dass ein Endpunkt für SSH-Datenverkehr vorhanden ist.
 
 Im Azure-Vorschauportal:
 
-1. Klicken Sie auf **Durchsuchen** \> **Virtuelle Computer** \> *VM-Name*. Klicken Sie für einen virtuellen Computer, der im Azure Ressourcen-Manager erstellt wurde, auf **Durchsuchen** \> **Virtuelle Computer \(v2\)** \> *VM-Name*. Im Statusbereich für den virtuellen Computer wird **Wird ausgeführt** angezeigt. Führen Sie einen Bildlauf nach unten durch, um aktuelle Aktivitäten für Compute-, Speicher- und Netzwerkressourcen anzuzeigen.
+1. Klicken Sie auf **Durchsuchen** > **Virtuelle Computer** > *VM-Name*. Klicken Sie für einen virtuellen Computer, der im Azure Ressourcen-Manager erstellt wurde, auf **Durchsuchen** > **Virtuelle Computer (v2)** > *VM-Name*. Im Statusbereich für den virtuellen Computer wird **Wird ausgeführt** angezeigt. Führen Sie einen Bildlauf nach unten durch, um aktuelle Aktivitäten für Compute-, Speicher- und Netzwerkressourcen anzuzeigen.
 2. Klicken Sie auf **Einstellungen**, um Endpunkte, IP-Adressen und andere Einstellungen zu überprüfen.
 
-Analysieren Sie zum Überprüfen der Netzwerkverbindung die konfigurierten Endpunkte, und testen Sie, ob der virtuelle Computer über ein anderes Protokoll \(z. B. HTTP\) oder über einen anderen bekannten Dienst erreichbar ist.
+Analysieren Sie zum Überprüfen der Netzwerkverbindung die konfigurierten Endpunkte, und testen Sie, ob der virtuelle Computer über ein anderes Protokoll (z. B. HTTP) oder über einen anderen bekannten Dienst erreichbar ist.
 
 Führen Sie bei Bedarf einen [Neustart des virtuellen Computers](https://msdn.microsoft.com/library/azure/dn763934.aspx) durch, oder [passen Sie die Größe des virtuellen Computers an](https://msdn.microsoft.com/library/dn168976.aspx).
 
@@ -64,7 +64,7 @@ Das Verbindungsproblem zwischen dem SSH-Client und dem SSH-Dienst auf dem virtue
 
 - SSH-Clientcomputer
 - Edgegerät der Organisation
-- Cloud-Dienstendpunkt und die Zugriffssteuerungsliste \(ACL\)
+- Cloud-Dienstendpunkt und die Zugriffssteuerungsliste (ACL)
 - Netzwerksicherheitsgruppen
 - Linux-basierter virtueller Azure-Computer
 
@@ -76,7 +76,7 @@ Das Verbindungsproblem zwischen dem SSH-Client und dem SSH-Dienst auf dem virtue
 
 Falls dies nicht möglich ist, suchen Sie auf Ihrem Computer Folgendes:
 
-- Eine lokale Firewall-Einstellung, die eingehenden oder ausgehenden SSH-Datenverkehr \(TCP-22\) blockiert
+- Eine lokale Firewall-Einstellung, die eingehenden oder ausgehenden SSH-Datenverkehr (TCP-22) blockiert
 - Lokal installierte Proxy-Clientsoftware, die SSH-Verbindungen verhindert
 - Lokal installierte Netzwerküberwachungssoftware, die SSH-Verbindungen verhindert
 - Andere Arten von Sicherheitssoftware, die Datenverkehr überwachen oder bestimmte Arten von Datenverkehr zulassen/unterbinden und dadurch SSH-Verbindungen verhindern
@@ -86,9 +86,9 @@ In allen diesen Fällen sollten Sie zur Ermittlung der Ursache die Software vor�
 Vergewissern Sie sich bei Verwendung der Zertifikatauthentifizierung, dass Sie für den SSH-Ordner in Ihrem Basisverzeichnis über folgende Berechtigungen verfügen:
 
 - Chmod 700 \~/.ssh
-- Chmod 644 \~/.ssh/\*.pub
-- Chmod 600 \~/.ssh/id\_rsa \(bzw. beliebige andere Dateien, in denen Ihre privaten Schlüssel gespeichert sind\)
-- Chmod 644 \~/.ssh/known\_hosts \(enthält Hosts, mit denen Sie eine SSH-Verbindung hergestellt haben\)
+- Chmod 644 \~/.ssh/*.pub
+- Chmod 600 \~/.ssh/id\_rsa (bzw. beliebige andere Dateien, in denen Ihre privaten Schlüssel gespeichert sind)
+- Chmod 644 \~/.ssh/known\_hosts (enthält Hosts, mit denen Sie eine SSH-Verbindung hergestellt haben)
 
 ### Quelle 2: Edgegerät der Organisation
 
@@ -118,8 +118,8 @@ Ist kein anderer virtueller Computer im gleichen virtuellen Netzwerk vorhanden, 
 
 Wenn Sie eine SSH-Verbindung mit einem virtuellen Computer im gleichen virtuellen Netzwerk herstellen können, überprüfen Sie Folgendes:
 
-- Die Endpunktkonfiguration für den SSH-Datenverkehr auf dem virtuellen Zielcomputer. Der private TCP-Port des Endpunkts muss dem TCP-Port entsprechen, an dem der SSH-Dienst auf dem virtuellen Computer lauscht. In der Standardeinstellung ist dies Port 22. Überprüfen Sie bei virtuellen Computern, die im Azure Ressourcen-Manager mithilfe von Vorlagen erstellt wurden, die SSH-TCP-Portnummer im Azure-Vorschauportal unter **Durchsuchen** \> **Virtuelle Computer \(v2\)** \> *VM-Name* \> **Einstellungen** \> **Endpunkte**.
-- Die ACL für den SSH-Datenverkehrsendpunkt auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACLs können dazu führen, dass eingehender SSH-Datenverkehr den Endpunkt nicht erreicht. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Netzwerk-Zugriffssteuerungslisten \(ACLs\)](https://msdn.microsoft.com/library/azure/dn376541.aspx).
+- Die Endpunktkonfiguration für den SSH-Datenverkehr auf dem virtuellen Zielcomputer. Der private TCP-Port des Endpunkts muss dem TCP-Port entsprechen, an dem der SSH-Dienst auf dem virtuellen Computer lauscht. In der Standardeinstellung ist dies Port 22. Überprüfen Sie bei virtuellen Computern, die im Azure Ressourcen-Manager mithilfe von Vorlagen erstellt wurden, die SSH-TCP-Portnummer im Azure-Vorschauportal unter **Durchsuchen** > **Virtuelle Computer (v2)** > *VM-Name* > **Einstellungen** > **Endpunkte**.
+- Die ACL für den SSH-Datenverkehrsendpunkt auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACLs können dazu führen, dass eingehender SSH-Datenverkehr den Endpunkt nicht erreicht. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Netzwerk-Zugriffssteuerungslisten (ACLs)](https://msdn.microsoft.com/library/azure/dn376541.aspx).
 
 Entfernen Sie den aktuellen Endpunkt, und erstellen Sie einen neuen Endpunkt mit dem SSH-Namen und dem TCP-Port 22 als öffentliche und private Portnummer, um den Endpunkt als Problemquelle auszuschließen. Weitere Informationen finden Sie unter [Festlegen von Endpunkten auf einem virtuellen Computer in Azure](virtual-machines-set-up-endpoints.md).
 
@@ -165,4 +165,4 @@ Informationen zur Nutzung von Azure-Support finden Sie unter der [Microsoft Azur
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

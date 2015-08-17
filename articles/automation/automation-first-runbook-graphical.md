@@ -51,7 +51,7 @@ Mithilfe des Bibliotheksteuerelements auf der linken Seite des Editors können S
 5.   Die Bezeichnung ist standardmäßig auf den Namen des Cmdlets festgelegt, kann aber in einen aussagekräftigeren Wert geändert werden. Legen Sie ihn auf *Write Hello World to output* fest.
 6.   Klicken Sie auf **Parameter**, um Parameterwerte für das Cmdlet anzugeben. Einige Cmdlets verfügen über mehrere Parametersätze, und Sie müssen auswählen, welchen Sie verwenden möchten. **Write-Output** besitzt in diesem Fall lediglich einen einzelnen Parametersatz, sodass Sie keinen auswählen müssen. <br> ![Write-Output-Eigenschaften](media/automation-first-runbook-graphical/write-output-properties.png)
 7.   Wählen Sie den Parameter **InputObject** aus. Dies ist der Parameter, in dem wir den Text für den Ausgabestream angeben.
-9.   Wählen Sie im Dropdownfeld **Datenquelle** die Option **PowerShell-Ausdruck** aus. Das Dropdownfeld **Datenquelle** enthält verschiedene Quellen, die Sie zum Auffüllen eines Parameterwerts verwenden. Sie können Ausgaben von solchen Quellen \(etwa eine andere Aktivität, ein Automation-Objekt oder ein PowerShell-Ausdruck\) verwenden. In diesem Fall soll lediglich der Text *Hello World* ausgeben werden. Hierzu können wir einen PowerShell-Ausdruck verwenden und eine Zeichenfolge angeben.
+9.   Wählen Sie im Dropdownfeld **Datenquelle** die Option **PowerShell-Ausdruck** aus. Das Dropdownfeld **Datenquelle** enthält verschiedene Quellen, die Sie zum Auffüllen eines Parameterwerts verwenden. Sie können Ausgaben von solchen Quellen (etwa eine andere Aktivität, ein Automation-Objekt oder ein PowerShell-Ausdruck) verwenden. In diesem Fall soll lediglich der Text *Hello World* ausgeben werden. Hierzu können wir einen PowerShell-Ausdruck verwenden und eine Zeichenfolge angeben.
 10.   Geben Sie im Feld **Ausdruck** die Zeichenfolge *"Hello World"* ein, und klicken Sie dann zweimal auf **OK**, um zum Zeichenbereich zurückzukehren.<br> ![PowerShell-Ausdruck](media/automation-first-runbook-graphical/expression-hello-world.png)
 11.   Klicken Sie auf **Speichern**, um das Runbook zu speichern.<br> ![Runbook speichern](media/automation-first-runbook-graphical/runbook-edit-toolbar-save.png)
 
@@ -78,7 +78,7 @@ Das soeben erstellte Runbook befindet sich immer noch im Entwurfsmodus. Wir müs
 6.  Der Auftragsstatus wird unter **Auftragszusammenfassung** angezeigt und entspricht den Statusoptionen, die wir bereits beim Testen des Runbooks gesehen haben.<br> ![API-Zusammenfassung](media/automation-first-runbook-graphical/job-pane-summary.png)
 7.  Wenn der Runbookstatus *Abgeschlossen* lautet, klicken Sie auf **Ausgabe**. Der Bereich **Ausgabe** wird geöffnet, und der Text *Hello World* wird angezeigt.<br> ![API-Zusammenfassung](media/automation-first-runbook-graphical/job-pane-output.png)  
 8.  Schließen Sie den Ausgabebereich.
-9.  Klicken Sie auf **Datenströme**, um den gleichnamigen Bereich für den Runbookauftrag zu öffnen. Im Ausgabestream sollte nur *Hello World* angezeigt werden. Hier können aber auch andere Datenströme für einen Runbookauftrag \(wie etwa „Ausführlich“ und „Fehler“\) angezeigt werden, sofern das Runbook in diese schreibt.<br> ![API-Zusammenfassung](media/automation-first-runbook-graphical/job-pane-streams.png) 
+9.  Klicken Sie auf **Datenströme**, um den gleichnamigen Bereich für den Runbookauftrag zu öffnen. Im Ausgabestream sollte nur *Hello World* angezeigt werden. Hier können aber auch andere Datenströme für einen Runbookauftrag (wie etwa „Ausführlich“ und „Fehler“) angezeigt werden, sofern das Runbook in diese schreibt.<br> ![API-Zusammenfassung](media/automation-first-runbook-graphical/job-pane-streams.png) 
 9. Schließen Sie den Datenstrom- und den Auftragsbereich, um zum Bereich „MyFirstRunbook“ zurückzukehren.
 9.  Klicken Sie auf **Aufträge**, um den Auftragsbereich für dieses Runbook zu öffnen. Dadurch werden alle von diesem Runbook erstellten Aufträge aufgeführt. Hier wird nur ein einzelner Auftrag aufgeführt, da wir den Auftrag bislang erst einmal ausgeführt haben.<br> ![Aufträge](media/automation-first-runbook-graphical/runbook-control-jobs.png) 
 9. Wenn Sie auf diesen Auftrag klicken, wird wieder der Auftragsbereich geöffnet, den wir uns beim Starten des Runbooks angesehen haben. So können Sie bereits ausgeführte Aufträge öffnen und Details zu jedem Auftrag anzeigen, der für ein bestimmtes Runbook erstellt wurde.
@@ -145,12 +145,12 @@ In diesem Schritt ändern wir das Runbook, sodass es nur gestartet wird, wenn es
 7.  Legen Sie die Datenquelle für **ServiceName** auf **Runbookeingabe** fest, und wählen Sie anschließend **VMServiceName** aus.  
 8.  Wählen Sie die Verknüpfung zwischen **Get-AzureVM** und **Start-AzureVM** aus.
 9.  Legen Sie die Option zur Anwendung der Bedingung im Konfigurationsbereich auf **True** fest. Beachten Sie, dass die Verknüpfung nun als gestrichelte Linie dargestellt wird. Das bedeutet, dass die Aktivität nur ausgeführt wird, wenn die Bedingung zu „true“ aufgelöst wird.
-10.  Geben Sie für den Bedingungsausdruck Folgendes ein: *$ActivityOutput\['Get-AzureVM'\].PowerState -eq "Stopped"*. Nun wird **Start-AzureVM** nur noch ausgeführt, wenn der virtuelle Computer beendet ist.<br> ![Verknüpfungsbedingung](media/automation-first-runbook-graphical/link-condition.png) 
+10.  Geben Sie für den Bedingungsausdruck Folgendes ein: *$ActivityOutput['Get-AzureVM'].PowerState -eq "Stopped"*. Nun wird **Start-AzureVM** nur noch ausgeführt, wenn der virtuelle Computer beendet ist.<br> ![Verknüpfungsbedingung](media/automation-first-runbook-graphical/link-condition.png) 
 11.  Erweitern Sie im Bibliotheksteuerelement den Knoten **Cmdlets** und anschließend **Microsoft.PowerShell.Utility**.
 12.  Fügen Sie dem Zeichenbereich **Write-Output** hinzu.
 13.  Erstellen Sie eine Verknüpfung zwischen **Get-AzureVM** und **Write-Output**.
 14.  Wählen Sie die Verknüpfung aus, und legen Sie die Option zur Anwendung der Bedingung auf **True** fest.
-14.  Geben Sie für den Bedingungsausdruck Folgendes ein: *$ActivityOutput\['Get-AzureVM'\].PowerState -ne "Stopped"*. Dadurch wird **Write-Output** nur ausgeführt, wenn der virtuelle Computer nicht beendet ist.<br> ![Runbook mit Write-Output](media/automation-first-runbook-graphical/write-output-link.png) 
+14.  Geben Sie für den Bedingungsausdruck Folgendes ein: *$ActivityOutput['Get-AzureVM'].PowerState -ne "Stopped"*. Dadurch wird **Write-Output** nur ausgeführt, wenn der virtuelle Computer nicht beendet ist.<br> ![Runbook mit Write-Output](media/automation-first-runbook-graphical/write-output-link.png) 
 15.  Wählen Sie **Write-Output** aus, und klicken Sie auf **Parameter**.
 16.  Legen Sie die Datenquelle für **InputObject** auf **PowerShell-Ausdruck** fest, und geben Sie den Ausdruck *"$VMName.Name already started."* ein.
 17.  Speichern Sie das Runbook, und öffnen Sie den Testbereich.
@@ -165,4 +165,4 @@ In diesem Schritt ändern wir das Runbook, sodass es nur gestartet wird, wenn es
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -38,7 +38,7 @@ Nachfolgend finden Sie eine Liste der Standardkonfigurationswerte, deren Übersc
 
 | Einstellung | Funktionsbeschreibung | Standardwert |
 | ------- | ------------ | ------------- |
-| [yarn.scheduler.capacity.maximum-applications][maximum-applications] | Die maximale Anzahl an Aufträgen, die gleichzeitig aktiv sein können (ausstehend oder in Bearbeitung). | 10.000 |
+| [yarn.scheduler.capacity.maximum-applications][maximum-applications] | Die maximale Anzahl an Aufträgen, die gleichzeitig aktiv sein können (ausstehend oder in Bearbeitung). | 10\.000 |
 | [templeton.exec.max-procs][max-procs] | Die maximale Anzahl an Anforderungen, die gleichzeitig bearbeitet werden können. | 20 |
 | [mapreduce.jobhistory.max-age-ms][max-age-ms] | Die Anzahl der Tage, die der Auftragsverlauf gespeichert wird. | 7 Tage |
 
@@ -85,4 +85,4 @@ Nachfolgend finden Sie eine Liste der Standardkonfigurationswerte, deren Übersc
 [max-age-ms]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.6.0/ds_Hadoop/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

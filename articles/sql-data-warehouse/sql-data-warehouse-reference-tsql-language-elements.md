@@ -47,27 +47,27 @@
 - [WHILE](https://msdn.microsoft.com/library/ms178642.aspx)
 
 ## Operatoren
-- [\+ \(Addition\)](https://msdn.microsoft.com/library/ms178565.aspx)
-- [\+ \(Verketten von Zeichenfolgen\)](https://msdn.microsoft.com/library/ms177561.aspx)
-- [\- \(Negativ\)](https://msdn.microsoft.com/library/ms189480.aspx)
-- [\- \(Subtraktion\)](https://msdn.microsoft.com/library/ms189518.aspx)
-- [\* \(Multiplikation\)](https://msdn.microsoft.com/library/ms176019.aspx)
-- [/ \(Division\)](https://msdn.microsoft.com/library/ms175009.aspx)
+- [\+ (Addition)](https://msdn.microsoft.com/library/ms178565.aspx)
+- [\+ (Verketten von Zeichenfolgen)](https://msdn.microsoft.com/library/ms177561.aspx)
+- [\- (Negativ)](https://msdn.microsoft.com/library/ms189480.aspx)
+- [\- (Subtraktion)](https://msdn.microsoft.com/library/ms189518.aspx)
+- [* (Multiplikation)](https://msdn.microsoft.com/library/ms176019.aspx)
+- [/ (Division)](https://msdn.microsoft.com/library/ms175009.aspx)
 - [Modulo](https://msdn.microsoft.com/library/ms190279.aspx)
 
 ## Platzhalterzeichen für den Abgleich
-- [= \(Gleich\)](https://msdn.microsoft.com/library/ms175118.aspx)
-- [\> \(Größer als\)](https://msdn.microsoft.com/library/ms178590.aspx)
-- [\< \(Kleiner als\)](https://msdn.microsoft.com/library/ms179873.aspx)
-- [\>= \(Größer als oder gleich\)](https://msdn.microsoft.com/library/ms181567.aspx)
-- [\<= \(Kleiner als oder gleich\)](https://msdn.microsoft.com/library/ms174978.aspx)
-- [\<\> \(Ungleich\)](https://msdn.microsoft.com/library/ms176020.aspx)
-- [!= \(Ungleich\)](https://msdn.microsoft.com/library/vstudio/bb399278.aspx)
+- [= (Gleich)](https://msdn.microsoft.com/library/ms175118.aspx)
+- [> (Größer als)](https://msdn.microsoft.com/library/ms178590.aspx)
+- [< (Kleiner als)](https://msdn.microsoft.com/library/ms179873.aspx)
+- [>= (Größer als oder gleich)](https://msdn.microsoft.com/library/ms181567.aspx)
+- [<= (Kleiner als oder gleich)](https://msdn.microsoft.com/library/ms174978.aspx)
+- [<> (Ungleich)](https://msdn.microsoft.com/library/ms176020.aspx)
+- [!= (Ungleich)](https://msdn.microsoft.com/library/vstudio/bb399278.aspx)
 - [AND](https://msdn.microsoft.com/library/ms188372.aspx)
 - [BETWEEN](https://msdn.microsoft.com/library/ms187922.aspx)
 - [EXISTS](https://msdn.microsoft.com/library/ms188336.aspx)
 - [IN](https://msdn.microsoft.com/library/ms177682.aspx)
-- [IS \[NOT\] NULL](https://msdn.microsoft.com/library/ms188795.aspx)
+- [IS [NOT] NULL](https://msdn.microsoft.com/library/ms188795.aspx)
 - [LIKE](https://msdn.microsoft.com/library/ms179859.aspx)
 - [NOT](https://msdn.microsoft.com/library/ms189455.aspx)
 - NULL und UNKNOWN
@@ -75,13 +75,13 @@
 
 ### Bitweise Operatoren
 
-- [& \(Bitweises AND\)](https://msdn.microsoft.com/library/ms174965.aspx)
-- [\| \(Bitweises OR\)](https://msdn.microsoft.com/library/ms186714.aspx)
-- [^ \(Bitweises exklusives OR\)](https://msdn.microsoft.com/library/ms190277.aspx)
-- [\~ \(Bitweises NOT\)](https://msdn.microsoft.com/library/ms173468.aspx)
-- [^= \(Bitweises exklusives OR EQUALS\)](https://msdn.microsoft.com/library/cc627413.aspx)
-- \| = \(Bitweises OR EQUALS\)
-- ? \(Bitweises AND EQUALS\)
+- [& (Bitweises AND)](https://msdn.microsoft.com/library/ms174965.aspx)
+- [| (Bitweises OR)](https://msdn.microsoft.com/library/ms186714.aspx)
+- [^ (Bitweises exklusives OR)](https://msdn.microsoft.com/library/ms190277.aspx)
+- [\~ (Bitweises NOT)](https://msdn.microsoft.com/library/ms173468.aspx)
+- [^= (Bitweises exklusives OR EQUALS)](https://msdn.microsoft.com/library/cc627413.aspx)
+- | = (Bitweises OR EQUALS)
+- ? (Bitweises AND EQUALS)
 
 ## Funktionen
 
@@ -290,4 +290,4 @@ Weitere Referenzinformationen finden Sie unter „SQL Data Warehouse-Referenz �
 
 <!--MSDN references-->
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

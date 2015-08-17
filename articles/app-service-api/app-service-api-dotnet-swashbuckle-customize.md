@@ -30,7 +30,7 @@ In diesem Artikel wird erläutert, wie Swashbuckle so angepasst wird, dass allge
 
 Swashbuckle generiert Swagger-Vorgangs-ID, indem Controllername und Methodennamen miteinander verbunden werden. Aufgrund dieses Musters kommt es zu einem Problem, wenn Sie mehrere Überladungen einer Methode haben: Swashbuckle generiert doppelte Vorgang-IDs, was eine ungültige Swagger-JSON ist.
 
-Bei dem folgenden Controllercode generiert Swashbuckle beispielsweise drei "Contact_Get"-Vorgang-IDs.
+Bei dem folgenden Controllercode generiert Swashbuckle beispielsweise drei "Contact\_Get"-Vorgang-IDs.
 
 ![](./media/app-service-api-dotnet-swashbuckle-customize/multiplegetsincode.png)
 
@@ -74,7 +74,7 @@ Die folgenden Schritte zeigen, wie Sie Swashbuckle mithilfe der Datei *SwaggerCo
 		    }
 		}
 
-2. Rufen Sie in der Datei *App_Start\SwaggerConfig.cs* die `OperationFilter`-Methode auf, damit Swashbuckle die neue `IOperationFilter`-Implementierung verwendet.
+2. Rufen Sie in der Datei *App\_Start\\SwaggerConfig.cs* die `OperationFilter`-Methode auf, damit Swashbuckle die neue `IOperationFilter`-Implementierung verwendet.
 
 		c.OperationFilter<MultipleOperationsWithSameVerbFilter>();
 
@@ -250,4 +250,4 @@ Den entsprechenden Code finden Sie in [diesem GitHub-Repository](https://github.
 In diesem Artikel wurde erläutert, wie die Generierung von Vorgangs-IDs und von gültigen Antwortcodes in Swashbuckle angepasst werden kann. Weitere Informationen finden Sie unter [Swashbuckle auf GitHub](https://github.com/domaindrivendev/Swashbuckle).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

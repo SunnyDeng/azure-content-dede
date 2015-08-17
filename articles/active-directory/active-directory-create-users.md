@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Erstellen oder Bearbeiten von Benutzern in Azure AD" 
-	description="In diesem Thema erfahren Sie, wie Sie Benutzerkonten unter Azure AD erstellen oder bearbeiten." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
-	editor="LisaToft"/>
+<properties
+	pageTitle="Erstellen oder Bearbeiten von Benutzern in Azure AD"
+	description="In diesem Thema erfahren Sie, wie Sie Benutzerkonten unter Azure AD erstellen oder bearbeiten."
+	services="active-directory"
+	documentationCenter=""
+	authors="curtand"
+	manager="stevepo"
+	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/05/2015" 
-	ms.author="Justinha"/>
+<tags
+	ms.service="active-directory"
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/31/2015"
+	ms.author="curtand"/>
 
 # Erstellen oder Bearbeiten von Benutzern in Azure AD
 
@@ -24,10 +24,10 @@ Sie müssen für jeden Benutzer, der auf einen Microsoft-Clouddienst zugreifen s
 
 1. Klicken Sie auf **Active Directory** und dann auf den Namen des Verzeichnisses Ihrer Organisation.
 2. Klicken Sie auf der Seite **Benutzer** auf **Benutzer hinzufügen**.
-3. Wählen Sie auf der Seite **Informationen über diesen Benutzer** unter **Art des Benutzers** eine der folgenden Optionen: 
+3. Wählen Sie auf der Seite **Informationen über diesen Benutzer** unter **Art des Benutzers** eine der folgenden Optionen:
 	1. **Neuer Benutzer in Ihrem Unternehmen**: Gibt an, dass Sie ein neues Benutzerkonto erstellen und in Ihrem Verzeichnis verwalten möchten.
-	2. **Benutzer mit einem vorhandenen Microsoft-Konto**: Gibt an, dass Sie Ihrem Verzeichnis ein vorhandenes Microsoft-Konto hinzufügen möchten, um gemeinsam mit einem Co-Administrator an Azure-Ressourcen zu arbeiten, der per Microsoft-Konto auf Azure zugreift.	
-	3. **Benutzer in einem anderen Azure AD-Verzeichnis**: Gibt an, dass Sie Ihrem Verzeichnis ein Benutzerkonto hinzufügen möchten, das aus einem anderen Azure AD-Verzeichnis stammt. Sie müssen Mitglied des anderen Verzeichnisses sein, um darin einen Benutzer auswählen zu können. 
+	2. **Benutzer mit einem vorhandenen Microsoft-Konto**: Gibt an, dass Sie Ihrem Verzeichnis ein vorhandenes Microsoft-Konto hinzufügen möchten, um gemeinsam mit einem Co-Administrator an Azure-Ressourcen zu arbeiten, der per Microsoft-Konto auf Azure zugreift.
+	3. **Benutzer in einem anderen Azure AD-Verzeichnis**: Gibt an, dass Sie Ihrem Verzeichnis ein Benutzerkonto hinzufügen möchten, das aus einem anderen Azure AD-Verzeichnis stammt. Sie müssen Mitglied des anderen Verzeichnisses sein, um darin einen Benutzer auswählen zu können.
 4. Je nach ausgewählter Option geben Sie entweder einen Benutzernamen oder einen Microsoft-Kontonamen ein, mit dem sich der Benutzer anmeldet.
 5. Geben Sie auf der Seite **Profil** des Benutzers den Vornamen und Nachnamen des Benutzers, einen benutzerfreundlichen Namen und über das Dropdownmenü „Rollen“ eine Benutzerrolle an. Weitere Informationen zu Benutzer- und Administratorrollen finden Sie unter [Zuweisen von Administratorrollen in Azure AD](active-directory-assign-admin-roles.md). Geben Sie an, ob **Mehrstufige Authentifizierung aktivieren** verwendet werden soll.
 6. Klicken Sie auf der Seite **Temporäres Kennwort abrufen** auf **Erstellen**.
@@ -40,7 +40,7 @@ Achten Sie auf die folgenden Probleme, die beim Erstellen eines Benutzerkontos a
 ## Bearbeiten eines Benutzers
 
 Wenn der Benutzer, den Sie bearbeiten möchten, mit Ihrem lokalen Active Directory-Dienst synchronisiert wird, wird eine Fehlermeldung angezeigt. Sie können den Benutzer mit diesem Verfahren dann nicht bearbeiten. Verwenden Sie zum Bearbeiten des Benutzers Ihre lokalen Active Directory-Verwaltungstools.
- 
+
 So bearbeiten Sie einen Benutzer im Azure-Verwaltungsportal
 
 1. Klicken Sie auf **Active Directory** und dann auf den Namen des Verzeichnisses Ihrer Organisation.
@@ -110,6 +110,5 @@ Durch die Anzeige eingeschränkter Informationen zu einem Benutzer oder einer Gr
 <!--Image references-->
 [1]: ./media/active-directory-create-users/RBACDirConfigTab.png
 [2]: ./media/active-directory-create-users/RBACGuestAccessControls.png
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

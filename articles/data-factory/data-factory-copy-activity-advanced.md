@@ -7,6 +7,7 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
+
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/21/2015" 
 	ms.author="spelluru"/>
+
 
 # Erweiterte Szenarien für die Verwendung der Kopieraktivität in Azure Data Factory 
 ## Übersicht
@@ -128,7 +130,7 @@ Um **folderPath** und **fileName** dynamisch basierend auf der **SliceStart**-Ze
     ],
 
 #### Beispiel – Definieren der Spaltenzuordnung
-In diesem Beispiel wird eine Aktivität in einer Pipeline wie folgt definiert. Die Spalten der Quelle werden mithilfe der **Translator**-Eigenschaft den Spalten der Senke (**columnMappings**) zugeordnet.
+In diesem Beispiel wird eine Aktivität in einer Pipeline wie folgt definiert. Die Spalten der Quelle werden mithilfe der **Translator-Eigenschaft** den Spalten der Senke (**columnMappings**) zugeordnet.
 
 	{
 		"name": "CopyActivity",
@@ -146,10 +148,10 @@ In diesem Beispiel wird eine Aktivität in einer Pipeline wie folgt definiert. D
 			{
             	"type": "BlobSink"
 			},
-			"Translator": 
+			"translator": 
 			{
       			"type": "TabularTranslator",
-      			"ColumnMappings": "UserId: MyUserId, Group: MyGroup, Name: MyName"
+      			"columnMappings": "UserId: MyUserId, Group: MyGroup, Name: MyName"
     		}
 		}
 	}
@@ -170,16 +172,16 @@ In diesem Beispiel wird eine SQL-Abfrage (im Vergleich zur Tabelle im vorherigen
 			"source":
 			{
 				"type": "SqlSource",
-				"SqlReaderQuery": "$$Text.Format('SELECT * FROM MyTable WHERE StartDateTime = \'{0:yyyyMMdd-HH}\'', SliceStart)"
+				"SqlReaderQuery": "$$Text.Format('SELECT * FROM MyTable WHERE StartDateTime = \\'{0:yyyyMMdd-HH}\\'', WindowStart)"
 			},
 			"sink":
 			{
             	"type": "BlobSink"
 			},
-			"Translator": 
+			"translator": 
 			{
       			"type": "TabularTranslator",
-      			"ColumnMappings": "UserId: MyUserId, Group: MyGroup,Name: MyName"
+      			"columnMappings": "UserId: MyUserId, Group: MyGroup,Name: MyName"
     		}
 		}
 	}
@@ -194,7 +196,7 @@ Die im Abschnitt "Structure" der Tabellendefinition angegebenen Datentypen werde
 | ----------- | ------------------------ |
 | SqlSource | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf der zugrunde liegenden SQL-Datenbank definierte Datentypen werden während der Kopieraktivität zum Extrahieren der Daten verwendet. |
 | SqlSink | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Die Datentypen für die zugrunde liegende Quelle und für das Ziel werden verglichen, und es wird eine implizite Typkonvertierung durchgeführt, falls Typkonflikte auftreten. |
-| BlobSource | Beim Übertragen von BlobSource zu BlobSink findet keine Typentransformation statt. Datentypen, die im Abschnitt Structure der Tabellendefinition definiert sind, werden ignoriert. Für andere Ziele als BlobSink werden Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert wurden, berücksichtigt. Wenn die Struktur nicht in der Tabellendefinition angegeben wird, hängt die Typbehandlung von der format-Eigenschaft der BlobSource-Tabelle ab: TextFormat: Alle Spaltentypen werden als Zeichenfolge behandelt, und alle Spaltennamen werden als "Prop_<0-N>" festgelegt. AvroFormat: Verwendet die integrierten Spaltentypen und -namen in der Avro-Datei.
+| BlobSource | Beim Übertragen von BlobSource zu BlobSink findet keine Typentransformation statt. Datentypen, die im Abschnitt Structure der Tabellendefinition definiert sind, werden ignoriert. Für andere Ziele als BlobSink werden Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert wurden, berücksichtigt. Wenn die Struktur nicht in der Tabellendefinition angegeben wird, hängt die Typbehandlung von der format-Eigenschaft der BlobSource-Tabelle ab: TextFormat: Alle Spaltentypen werden als Zeichenfolge behandelt, und alle Spaltennamen werden als "Prop\_<0-N>" festgelegt. AvroFormat: Verwendet die integrierten Spaltentypen und -namen in der Avro-Datei.
 | BlobSink | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf den zugrunde liegenden Eingabedaten definierte Datentypen werden verwendet. Für Spalten wird angegeben, dass sie für die Avro-Serialisierung NULL-Werte zulassen |
 | AzureTableSource | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf der zugrunde liegenden Azure-Tabelle definierte Datentypen werden verwendet. |
 | AzureTableSink | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf den zugrunde liegenden Eingabedaten definierte Datentypen werden verwendet. |
@@ -289,4 +291,4 @@ Obwohl die UTF-8-Codierung sehr beliebt ist, verwenden Textdateien in Azure-Blob
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity-advanced/ColumnMappingSample2.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

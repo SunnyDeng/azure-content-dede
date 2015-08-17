@@ -95,4 +95,4 @@ Die Leistungsübersicht finden Sie unter [Leistungsübersicht][].
 
 [Azure-Portal]: http://portal.azure.com/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

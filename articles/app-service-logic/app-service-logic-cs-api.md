@@ -47,10 +47,7 @@ var d = new DateTime.Now; return (d.Minute > 15) && (d.Minute < 30);
 
 Ebenso können Sie eine auszuführende Aktion bereitstellen.
 
-Die Eingaben für die Aktion sind: 
-- **C#-Ausdruck** – Ein Ausdruck, der ausgewertet wird. Sie müssen die `return`-Anweisung aufnehmen, um Inhalte abzurufen. 
-- **Kontextobjekt(e)** – Ein optionales Kontextobjekt, das an den Trigger übergeben werden kann. Sie können beliebig viele Eigenschaften definieren, aber die Basis muss ein JObject `{ ... }` sein. Auf Objekte kann im Skript über den Schlüsselnamen verwiesen werden (der Wert wird als JToken, das dem Namen entspricht, übergeben). 
-- **Bibliotheken** – Ein optionales Array von DLL-Dateien, die zum Kompilieren des Skripts aufgenommen werden. Das Array verwendet die folgende Struktur und funktioniert am besten neben einem Blobspeicherconnector mit der DLL-Datei als Ausgabe:
+Die Eingaben für die Aktion sind: – **C#-Ausdruck** – Ein Ausdruck, der ausgewertet wird. Sie müssen die `return`-Anweisung aufnehmen, um Inhalte abzurufen. – **Kontextobjekt(e)** – Ein optionales Kontextobjekt, das an den Trigger übergeben werden kann. Sie können beliebig viele Eigenschaften definieren, aber die Basis muss ein JObject `{ ... }` sein. Auf Objekte kann im Skript über den Schlüsselnamen verwiesen werden (der Wert wird als JToken, das dem Namen entspricht, übergeben). – **Bibliotheken** – Ein optionales Array von DLL-Dateien, die zum Kompilieren des Skripts aufgenommen werden. Das Array verwendet die folgende Struktur und funktioniert am besten neben einem Blobspeicherconnector mit der DLL-Datei als Ausgabe:
 
 ```javascript
 [{"filename": "name.dll", "assembly": {Base64StringFromConnector}, "usingstatment": "using Library.Reference;"}]
@@ -108,4 +105,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Creating a Logic App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

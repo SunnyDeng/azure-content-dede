@@ -123,7 +123,7 @@ Ihre Anwendung muss so konfiguriert sein, dass auf das Zertifikat verwiesen wird
 
     Alle erforderlichen Änderungen an der Dienstdefinitionsdatei sind jetzt abgeschlossen. Sie müssen jedoch noch die Zertifikatinformationen zur Dienstkonfigurationsdatei hinzufügen.
 
-3.  Fügen Sie in Ihren Dienstkonfigurationsdateien (**ServiceConfiguration.Cloud.cscfg** und **ServiceConfiguration.Local.cscfg**) das Zertifikat in den leeren Abschnitt **Certificates** innerhalb des Abschnitts **Role** ein. Damit ersetzen Sie den unten angegebenen Beispielfingerabdruckwert durch den Wert Ihres Zertifikats:
+3.  Fügen Sie in Ihren Dienstkonfigurationsdateien (**ServiceConfiguration.Cloud.cscfg** und **ServiceConfiguration.Local.cscfg**) das Zertifikat zum leeren Bereich **Certificates** innerhalb des Bereichs **Role** hinzu. Damit ersetzen Sie den unten angegebenen Beispielfingerabdruckwert durch den Wert Ihres Zertifikats:
 
         <Role name="WebRole1">
         ...
@@ -192,4 +192,4 @@ Jetzt wird die Bereitstellung in Azure ausgeführt und Sie können eine HTTPS-Ve
   [Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Workerrolle]: /develop/nodejs/common-tasks/enable-ssl-worker-role/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

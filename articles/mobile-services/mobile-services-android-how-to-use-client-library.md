@@ -562,7 +562,7 @@ Das Layout wird durch mehrere XML-Codeabschnitte definiert. Anhand eines existie
     </ListView>
 	
 
-Das *listitem*-Attribut im obigen Code definiert die id des Layouts für eine bestimmte Zeile in der Liste. Der folgende Code definiert ein Kontrollkästchen und dessen zugehörigen Text. Dieses Element wird einmal pro Listenelement instanziiert. Ein komplexeres Layout könnte zusätzliche Felder in der Anzeige definieren. Dieser Code befindet sich in der Datei *row_list_to_do.xml*.
+Das *listitem*-Attribut im obigen Code definiert die id des Layouts für eine bestimmte Zeile in der Liste. Der folgende Code definiert ein Kontrollkästchen und dessen zugehörigen Text. Dieses Element wird einmal pro Listenelement instanziiert. Ein komplexeres Layout könnte zusätzliche Felder in der Anzeige definieren. Dieser Code befindet sich in der Datei *row\_list\_to\_do.xml*.
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -579,7 +579,7 @@ Das *listitem*-Attribut im obigen Code definiert die id des Layouts für eine be
 
 ### <a name="adapter"></a>Definieren des Adapters
 	
-Da die Datenquelle in unserer Ansicht ein *ToDoItem* ist, leiten wir unseren Adapter von der *ArrayAdapter&lt;ToDoItem&gt;*-Klasse ab. Diese Unterklasse produziert eine Ansicht für jedes *ToDoItem* und verwendet dabei das *row_list_to_do*-Layout.
+Da die Datenquelle in unserer Ansicht ein *ToDoItem* ist, leiten wir unseren Adapter von der *ArrayAdapter&lt;ToDoItem&gt;*-Klasse ab. Diese Unterklasse produziert eine Ansicht für jedes *ToDoItem* und verwendet dabei das *row\_list\_to\_do*-Layout.
 
 In unserem Code definieren wir die folgende Klasse als Erweiterung der *ArrayAdapter&lt;E&gt;*-Klasse:
 
@@ -928,4 +928,4 @@ Sie können diese allgemeine Methode immer dann verwenden, wenn Sie mit komplexe
 [ASCII-Steuerzeichen C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

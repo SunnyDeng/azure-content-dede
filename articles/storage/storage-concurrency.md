@@ -93,14 +93,11 @@ Get Container Properties|	Ja|	Nein|
 Get Container Metadata|	Ja|	Nein|
 Set Container Metadata|	Ja|	Ja|
 Get Container ACL|	Ja|	Nein|
-Set Container ACL|	Ja|	Ja (*)|
-Delete Container|	Nein|	Ja|
-Lease Container|	Ja|	Ja|
-List Blobs|	Nein|	Nein  
+Set Container ACL|	Ja|	Ja (*)| Delete Container| Nein| Ja| Lease Container| Ja| Ja| List Blobs| Nein| Nein 
 
 (*) Die von SetContainerACL definierten Berechtigungen werden zwischengespeichert, und die Verteilung der Aktualisierungen dieser Berechtigungen dauert 30 Sekunden. Während dieser Zeitspanne kann die Konsistenz der Aktualisierungen nicht garantiert werden.
 
-Die folgende Tabelle gibt eine Übersicht über die Blob-Vorgänge, die bedingte Header wie **If-Match** in der Anforderung akzeptieren und in der Antwort einen ETag-Wert zurückgeben.
+Die folgende Tabelle gibt einen Überblick über die Blob-Vorgänge, die bedingte Header wie **If-Match** in der Anforderung akzeptieren und in der Antwort einen ETag-Wert zurückgeben.
 
 Vorgang |Gibt ETag-Wert zurück |Akzeptiert bedingte Header|
 -----------|-------------------|----------------------------|
@@ -110,16 +107,7 @@ Get Blob Properties|	Ja|	Ja|
 Set Blob Properties|	Ja|	Ja|
 Get Blob Metadata|	Ja|	Ja|
 Set Blob Metadata|	Ja|	Ja|
-Lease Blob (*)|	Ja|	Ja|
-Snapshot Blob|	Ja|	Ja|
-Kopieren von Blobs|	Ja|	Ja (für Quell- und Ziel-Blob)|
-Abort Copy Blob|	Nein|	Nein|
-Delete Blob|	Nein|	Ja|
-Put Block|	Nein|	Nein|
-Put Block List|	Ja|	Ja|
-Get Block List|	Ja|	Nein|
-Put Page|	Ja|	Ja|
-Get Page Ranges|	Ja|	Ja
+Lease Blob (*)| Ja| Ja| Snapshot Blob| Ja| Ja| Copy Blob| Ja| Ja (für Quell- und Ziel-Blob)| Abort Copy Blob| Nein| Nein| Delete Blob| Nein| Ja| Put Block| Nein| Nein| Put Block List| Ja| Ja| Get Block List| Ja| Nein| Put Page| Ja| Ja| Get Page Ranges| Ja| Ja
 
 (*) "Lease Blob" ändert das ETag eines Blob nicht.
 
@@ -205,7 +193,7 @@ Um die optimistische Nebenläufigkeit zu verwenden und zu prüfen, ob eine Entit
 2.	Wenn Sie die Entität aktualisieren, fügen Sie den in Schritt 1 erhaltenen ETag-Wert in den obligatorischen **If-Match**-Header der Anforderung ein, die Sie an den Dienst senden.
 3.	Der Dienst vergleicht den ETag-Wert in der Anforderung mit dem aktuellen ETag-Wert der Entität.
 4.	Wenn der aktuelle ETag-Wert der Entität vom ETag im obligatorischen **If-Match**-Header in der Anforderung abweicht, gibt der Dienst einen 412-Fehler an den Client zurück. Dadurch wird dem Client mitgeteilt, dass die Entität von einem anderen Prozess aktualisiert wurde, seitdem sie vom Client abgerufen wurde.
-5.	Wenn der aktuelle ETag-Wert der Entität identisch ist mit dem ETag-Wert im obligatorischen **If-Match**-Header in der Anforderung oder wenn der **If-Match**-Header das Platzhalterzeichen (*) enthält, führt der Dienst den angeforderten Vorgang aus und aktualisiert den aktuellen ETag-Wert der Entität, um anzuzeigen, dass die Entität aktualisiert wurde.  
+5.	Wenn der aktuelle ETag-Wert der Entität identisch ist mit dem ETag-Wert im obligatorischen **If-Match**-Header in der Anforderung oder wenn der **If-Match**-Header das Platzhalterzeichen (*) enthält, führt der Dienst den angeforderten Vorgang aus und aktualisiert den aktuellen ETag-Wert der Entität, um anzuzeigen, dass die Entität aktualisiert wurde.
 
 Im Unterschied zum Blob-Dienst verlangt der Tabellendienst vom Client, in Aktualisierungsanforderungen einen **If-Match**-Header hinzuzufügen. Es ist jedoch möglich, eine unbedingte Aktualisierung zu erzwingen (Strategie "Letzter Schreiber gewinnt") und Nebenläufigkeitsprüfungen zu umgehen, wenn der Client den **If-Match**-Header in der Anforderung auf das Platzhalterzeichen (*) festlegt.
 
@@ -263,7 +251,7 @@ Weitere Informationen finden Sie unter:
 ## Verwalten der Nebenläufigkeit im Dateidienst
 Der Zugriff auf den Dateidienst kann unter Verwendung zweier unterschiedlicher Protokollendpunkte – SMB und REST – erfolgen. Der REST-Dienst unterstützt weder die optimistische noch die pessimistische Sperrung, und alle Aktualisierungen folgen der Strategie "Letzter Schreiber gewinnt". SMB-Clients, die Dateifreigaben einbinden, können Dateisystem-Sperrmechanismen verwenden, um den Zugriff auf freigegebene Dateien zu verwalten – einschließlich der Möglichkeit, eine pessimistische Sperrung durchzuführen. Wenn ein SMB-Client eine Datei öffnet, gibt er sowohl den Dateizugriffs- als auch den Freigabemodus an. Wird für den Dateizugriff die Option "Schreiben" oder "Lesen/Schreiben" zusammen mit dem Dateifreigabemodus "Kein" festgelegt, wird die Datei von einem SMB-Client gesperrt, bis die Datei geschlossen wird. Wenn ein REST-Vorgang an einer Datei versucht wird, die von einem SMB-Client gesperrt wurde, gibt der REST-Dienst den Statuscode 409 (Konflikt) mit dem Fehlercode SharingViolation zurück.
 
-Wenn ein SMB-Client eine Datei zum Löschen öffnet, markiert er die Datei als zum Löschen ausstehend, bis alle übrigen offenen SMB-Client-Handles für die betreffende Datei geschlossen sind. Wenn eine Datei als zum Löschen ausstehend markiert ist, geben alle REST-Vorgänge für diese Datei den Statuscode 409 (Konflikt) mit dem Fehlercode SMBDeletePending zurück. Der Statuscode 404 (nicht gefunden) wird nicht zurückgegeben, da der SMB-Client das Kennzeichen für einen ausstehenden Löschvorgang entfernen kann, bevor die Datei geschlossen wird. Mit anderen Worten, der Statuscode 404 (nicht gefunden) ist nur zu erwarten, wenn die Datei entfernt wurde. Wenn sich eine Datei im Status eines ausstehenden SMB-Löschvorgangs befindet, ist sie nicht in den Ergebnissen von Dateiauflistungen enthalten. Beachten Sie außerdem, dass die REST-Vorgänge "Datei löschen" und "Verzeichnis löschen" atomisch festgeschrieben werden und nicht zum Status eines ausstehenden Löschvorgangs führen.
+Wenn ein SMB-Client eine Datei zum Löschen öffnet, markiert er die Datei als zum Löschen ausstehend, bis alle übrigen offenen SMB-Client-Handles für die betreffende Datei geschlossen sind. Wenn eine Datei als zum Löschen ausstehend markiert ist, geben alle REST-Vorgänge für diese Datei den Statuscode 409 (Konflikt) mit dem Fehlercode SMBDeletePending zurück. Der Statuscode 404 (Nicht gefunden) wird nicht zurückgegeben, da der SMB-Client das Kennzeichen für einen ausstehenden Löschvorgang entfernen kann, bevor die Datei geschlossen wird. Mit anderen Worten, der Statuscode 404 (Nicht gefunden) ist nur zu erwarten, wenn die Datei entfernt wurde. Wenn sich eine Datei im Status eines ausstehenden SMB-Löschvorgangs befindet, ist sie nicht in den Ergebnissen von Dateiauflistungen enthalten. Beachten Sie außerdem, dass die REST-Vorgänge "Datei löschen" und "Verzeichnis löschen" atomisch festgeschrieben werden und nicht zum Status eines ausstehenden Löschvorgangs führen.
 
 Weitere Informationen finden Sie unter:
 
@@ -285,4 +273,4 @@ Weitere Informationen zu Azure Storage finden Sie unter:
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -8,6 +8,7 @@
 	manager="paulettm" 
 	editor="cgronlun"  />
 
+
 <tags 
 	ms.service="machine-learning" 
 	ms.workload="data-services" 
@@ -16,6 +17,7 @@
 	ms.topic="article" 
 	ms.date="05/29/2015" 
 	ms.author="hangzh;bradsev" />
+
 
 # Anpassen von Azure Hdinsight Hadoop-Clustern für erweiterte Analyseprozesse und -technologien
 
@@ -52,7 +54,8 @@ Klicken Sie auf der letzten Konfigurationsseite zu **Script Actions** auf die Sc
  
 * **NAME** - eine beliebige Zeichenfolge als Name für diese Skriptaktion. 
 * **NODE TYPE** - wählen Sie **All nodes** aus. 
-* **SCRIPT URI** - *http://getgoing.blob.core.windows.net/publicscripts/Azure_HDI_Setup_Windows.ps1*	* *publicscripts* ist ein öffentlicher Container im Speicherkonto. 
+* **SKRIPT-URI** - \**http://getgoing.blob.core.windows.net/publicscripts/Azure_HDI_Setup_Windows.ps1*
+	* *publicscripts* ist ein öffentlicher Container im Speicherkonto. 
 	* *getgoing* wird für die Freigabe der PowerShell-Skriptdateien verwendet, um den Benutzern die Arbeit in Azure zu vereinfachen. 
 * **PARAMETERS** - (leer lassen)
 
@@ -98,4 +101,4 @@ Unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster](machine-learn
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

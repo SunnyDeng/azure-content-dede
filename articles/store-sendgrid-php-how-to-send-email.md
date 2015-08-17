@@ -57,7 +57,7 @@ E-Mails können Sie entweder über SMTP oder über die von SendGrid bereitgestel
 
 ### SMTP-API
 
-Wenn Sie eine E-Mail über die SendGrid-SMTP-API senden möchten, verwenden Sie *Swift Mailer* – eine komponentenbasierte Bibliothek zum Senden von E-Mails aus PHP-Anwendungen. Sie können die *Swift Mailer-Bibliothek* unter [http://swiftmailer.org/download v5.3.0][] herunterladen (verwenden Sie [Composer], um Swift Mailer zu installieren). Das Versenden von E-Mails mithilfe der Bibliothek umfasst das Erstellen von Instanzen der Klassen <span class="auto-style2">Swift_SmtpTransport</span>, <span class="auto-style2">Swift_Mailer</span> und <span class="auto-style2">Swift_Message</span>, das Festlegen der entsprechenden Eigenschaften und das Aufrufen der Methode <span class="auto-style2">Swift_Mailer::send</span>.
+Wenn Sie eine E-Mail über die SendGrid-SMTP-API senden möchten, verwenden Sie *Swift Mailer* – eine komponentenbasierte Bibliothek zum Senden von E-Mails aus PHP-Anwendungen. Sie können die *Swift Mailer-Bibliothek* unter [http://swiftmailer.org/download v5.3.0][] herunterladen (verwenden Sie [Composer], um Swift Mailer zu installieren). Das Versenden von E-Mails mithilfe der Bibliothek umfasst das Erstellen von Instanzen der Klassen <span class="auto-style2">Swift\_SmtpTransport</span>, <span class="auto-style2">Swift\_Mailer</span> und <span class="auto-style2">Swift\_Message</span>, das Festlegen der entsprechenden Eigenschaften und das Aufrufen der Methode <span class="auto-style2">Swift\_Mailer::send</span>.
 
     <?php
      include_once "vendor/autoload.php";
@@ -236,7 +236,7 @@ Die zusätzliche Codezeile lautet wie folgt:
 
      $message->attach(Swift_Attachment::fromPath("path\to\file")->setFileName('file_name'));
 
-Diese Codezeile ruft die Attach-Methode für das Objekt <span class="auto-style2">Swift_Message</span> auf und verwendet die statische Methode <span class="auto-style2">fromPath</span> für die Klasse <span class="auto-style2">Swift_Attachment</span>,um eine Datei an eine Nachricht anzuhängen.
+Diese Codezeile ruft die Attach-Methode für das Objekt <span class="auto-style2">Swift\_Message</span> auf und verwendet die statische Methode <span class="auto-style2">fromPath</span> für die Klasse <span class="auto-style2">Swift\_Attachment</span>,um eine Datei an eine Nachricht anzuhängen.
 
 ### Web-API
 
@@ -420,4 +420,4 @@ Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, f
   [sendgrid-php-Bibliothek]: https://github.com/sendgrid/sendgrid-php/tree/v2.1.1
   [Composer]: https://getcomposer.org/download/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

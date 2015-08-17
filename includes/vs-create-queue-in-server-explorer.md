@@ -10,4 +10,4 @@ Sie können Azure-Warteschlangen erstellen, indem Sie den **Server-Explorer** vo
 
 [Image1]: ./media/vs-create-queue-in-server-explorer/vs-storage-queues-create-in-server-explorer.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

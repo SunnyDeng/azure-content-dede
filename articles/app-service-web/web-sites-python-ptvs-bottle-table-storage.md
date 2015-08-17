@@ -217,4 +217,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Bo
 [Azure-SDK für Python]: https://github.com/Azure/azure-sdk-for-python
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Eintrittsinvarianz in Azure Service Fabric Actors"
-   description="Einführung in die Eintrittsinvarianz bei Azure Service Fabric Actors"
+   pageTitle="Reliable Actors-Eintrittsinvarianz"
+   description="Einführung in Eintrittsinvarianz für Service Fabric Reliable Actors"
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
+
 
 <tags
    ms.service="service-fabric"
@@ -13,11 +14,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/09/2015"
+   ms.date="08/05/2015"
    ms.author="amanbha"/>
 
 
-# Actor-Eintrittsinvarianz
+
+# Reliable Actor-Eintrittsinvarianz
 Fabric-Actors erlauben standardmäßig bei logischen Aufrufen eine kontextbasierte Eintrittsinvarianz. Dadurch können Actors eintrittsinvariant sein, wenn sie sich in der selben Aufrufkontextkette befinden. Wenn beispielsweise Actor A eine Nachricht an Actor B sendet und dieser wiederum eine Nachricht an Actor C. Wenn Actor C Actor A aufruft, wird im Rahmen der Nachrichtenverarbeitung zugelassen, dass die Nachricht eintrittsinvariant ist. Alle weiteren Nachrichten, die zu unterschiedlichen Aufrufkontexten gehören, werden auf Actor A blockiert, bis dieser die Verarbeitung abgeschlossen hat.
 
 Actors, die kontextbasierte Eintrittsinvarianz bei logischen Aufrufen nicht zulassen möchten, können diese Option deaktivieren, indem sie der Actor-Klasse `ReentrantAttribute(ReentrancyMode.Disallowed)` hinzufügen.
@@ -39,6 +41,5 @@ class VoicemailBoxActor : Actor<VoicemailBox>, IVoicemailBoxActor
     ...
 }
 ```
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

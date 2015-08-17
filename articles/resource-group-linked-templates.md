@@ -94,10 +94,10 @@ Das folgende Beispiel zeigt, wie Sie eine Basis-URL verwenden können, um zwei U
 
 ## Zurückgeben von Werten aus einer verknüpften Vorlage
 
-Wenn Sie einen Wert aus der verknüpften Vorlage an die Hauptvorlage übergeben müssen, können Sie einen Wert im **outputs**-Abschnitt der verknüpften Vorlage erstellen. Ein Beispiel finden Sie unter [Freigeben von Status in Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-state.md).
+Wenn Sie einen Wert aus der verknüpften Vorlage an die Hauptvorlage übergeben müssen, können Sie einen Wert im **outputs**-Abschnitt der verknüpften Vorlage erstellen. Ein Beispiel finden Sie unter [Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-state.md).
 
 ## Nächste Schritte
 - [Erstellen von Vorlagen](./resource-group-authoring-templates.md)
 - [Bereitstellen von Vorlagen](azure-portal/resource-group-template-deploy.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

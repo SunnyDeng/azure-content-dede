@@ -224,7 +224,7 @@ Erstellen Sie HBase-Tabellen mit dem gleichen Namen und den gleichen Spaltenfami
 
 **Hinzufügen von Contoso-HBase-US als Replikation-Peer**
 
-1. Wechseln Sie zum **Contso-HBase_EU** RDP-Fenster.
+1. Wechseln Sie zum **Contso-HBase\_EU** RDP-Fenster.
 2. Fügen Sie aus dem HBase-Shell-Fenster den Zielcluster (Contoso-HBase-US) als Peer hinzu, zum Beispiel:
 
 		add_peer '1', 'zookeeper0.contoso-hbase-us.d4.internal.cloudapp.net,zookeeper1.contoso-hbase-us.d4.internal.cloudapp.net,zookeeper2.contoso-hbase-us.d4.internal.cloudapp.net:2181:/hbase'
@@ -311,4 +311,4 @@ In diesem Lernprogramm haben Sie gelernt, HBase-Replikation über zwei Rechenzen
 [hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet.md
 [hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

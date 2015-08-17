@@ -33,4 +33,4 @@ Wählen Sie zum Anzeigen des **Server-Explorer** in Visual Studio in der Menüle
 Nachdem Sie einen Clouddienstcontainer erstellt haben, können Sie nun einen Clouddienst [erstellen und bereitstellen](cloud-services-how-to-create-deploy.md).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

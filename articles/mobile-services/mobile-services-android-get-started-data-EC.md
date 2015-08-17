@@ -132,4 +132,4 @@ Als Nächstes können Sie diese anderen Android-Lernprogramme ausführen:
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

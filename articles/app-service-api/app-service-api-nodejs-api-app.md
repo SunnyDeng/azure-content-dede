@@ -12,7 +12,7 @@
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
-	ms.topic="article"
+	ms.topic="get-started-article"
 	ms.date="04/21/2015"
 	ms.author="pakefali"/>
 
@@ -246,4 +246,4 @@ Sie haben eine Node.js-Web-App bereitgestellt, die ein API-App-Back-End zu Azure
 [browse-api-app-page]: ./media/app-service-api-nodejs-api-app/browse-api-app-page.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

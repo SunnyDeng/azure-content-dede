@@ -57,7 +57,7 @@ Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 	- Hadoop-Cluster: für Abfrage- und Analyseworkloads
 	- HBase-Cluster: für NoSQL-Workloads
 	- Storm-Cluster: für Workloads für die Ereignisverarbeitung in Echtzeit
-	- Spark-Cluster \(Vorschau\): für die Verarbeitung im Arbeitsspeicher, interaktive Abfragen, Streaming und Workloads für maschinelles Lernen.
+	- Spark-Cluster (Vorschau): für die Verarbeitung im Arbeitsspeicher, interaktive Abfragen, Streaming und Workloads für maschinelles Lernen.
 
 	![HDInsight-Cluster](./media/hdinsight-provision-clusters/hdinsight.clusters.png)
  
@@ -69,28 +69,28 @@ Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 
 	Hadoop-Cluster für HDInsight werden mit zwei Rollen bereitgestellt:
 
-	- Hauptknoten \(2 Knoten\)
-	- Datenknoten \(mindestens 1 Knoten\)
+	- Hauptknoten (2 Knoten)
+	- Datenknoten (mindestens 1 Knoten)
 
 	![HDInsight Hadoop-Clusterrollen](./media/hdinsight-provision-clusters/HDInsight.HBase.roles.png)
 
-	HBase-Cluster für HDInsight werden mit drei Rollen bereitgestellt: – Hauptserver \(2 Knoten\) – Regionsserver \(mindestens 1 Knoten\) – Master-/Zookeeper-Knoten \(3 Knoten\)
+	HBase-Cluster für HDInsight werden mit drei Rollen bereitgestellt: – Hauptserver (2 Knoten) – Regionsserver (mindestens 1 Knoten) – Master-/Zookeeper-Knoten (3 Knoten)
 	
 	![HDInsight Hadoop-Clusterrollen](./media/hdinsight-provision-clusters/HDInsight.Storm.roles.png)
 
-	Storm-Cluster für HDInsight werden mit drei Rollen bereitgestellt: – Nimbus-Knoten \(2 Knoten\) – Supervisor-Server \(mindestens 1 Knoten\) – Zookeeper-Knoten \(3 Knoten\)
+	Storm-Cluster für HDInsight werden mit drei Rollen bereitgestellt: – Nimbus-Knoten (2 Knoten) – Supervisor-Server (mindestens 1 Knoten) – Zookeeper-Knoten (3 Knoten)
 	
 
 	![HDInsight Hadoop-Clusterrollen](./media/hdinsight-provision-clusters/HDInsight.Spark.roles.png)
 
-	Spark-Cluster für HDInsight werden mit drei Rollen bereitgestellt: – Hauptknoten \(2 Knoten\) – Workerknoten \(mindestens 1 Knoten\) – Zookeeper-Knoten \(3 Knoten\) \(für Zookeeper vom Typ "A1" kostenlos\)
+	Spark-Cluster für HDInsight werden mit drei Rollen bereitgestellt: – Hauptknoten (2 Knoten) – Workerknoten (mindestens 1 Knoten) – Zookeeper-Knoten (3 Knoten) (für Zookeeper vom Typ "A1" kostenlos)
 
-	Kunden wird die Nutzung dieser Knoten für die Laufzeit des Clusters in Rechnung gestellt. Die Abrechnung beginnt, sobald ein Cluster erstellt wurde, und endet, wenn der Cluster gelöscht wird \(bei Clustern ist kein Aufheben der Zuweisung oder Anhalten möglich\). Die Clustergröße wirkt sich auf die Clusterkosten aus. Zu Lernzwecken wird empfohlen, einen Datenknoten zu verwenden. Weitere Informationen zu den Preisen von HDInsight finden Sie unter [HDInsight – Preise](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
+	Kunden wird die Nutzung dieser Knoten für die Laufzeit des Clusters in Rechnung gestellt. Die Abrechnung beginnt, sobald ein Cluster erstellt wurde, und endet, wenn der Cluster gelöscht wird (bei Clustern ist kein Aufheben der Zuweisung oder Anhalten möglich). Die Clustergröße wirkt sich auf die Clusterkosten aus. Zu Lernzwecken wird empfohlen, einen Datenknoten zu verwenden. Weitere Informationen zu den Preisen von HDInsight finden Sie unter [HDInsight – Preise](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
 
 
 	>[AZURE.NOTE]Die Begrenzung der Clustergröße variiert je nach Azure-Abonnement. Wenden Sie sich an den Azure-Abrechnungssupport, um diese Begrenzung zu erhöhen.
 	
-- **Region/virtuelles Netzwerk \(auch Speicherort genannt\)**
+- **Region/virtuelles Netzwerk (auch Speicherort genannt)**
 
 	![Azure-Regionen](./media/hdinsight-provision-clusters/Azure.regions.png)
 
@@ -110,21 +110,21 @@ Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 	Die HDInsight-Cluster ermöglichen Ihnen, während der Bereitstellung zwei Benutzerkonten zu konfigurieren:
 
 	- HTTP-Benutzer. Der Standardbenutzername bei der grundlegenden Konfiguration im Azure-Portal ist "admin".
-	- RDP-Benutzer \(Windows-Cluster\): Dient zum Herstellen einer Verbindung mit dem Cluster über RDP. Wenn Sie das Konto erstellen, müssen Sie ein Ablaufdatum festlegen, das maximal 90 Tage hinter dem aktuellen Datum liegt. 
-	- SSH-Benutzer \(Linux-Cluster\): Dient zum Herstellen einer Verbindung mit dem Cluster über SSH. Sie können zusätzliche SSH-Benutzerkonten erstellen, nachdem der Cluster erstellt wurde, indem Sie die Schritte unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md) ausführen.
+	- RDP-Benutzer (Windows-Cluster): Dient zum Herstellen einer Verbindung mit dem Cluster über RDP. Wenn Sie das Konto erstellen, müssen Sie ein Ablaufdatum festlegen, das maximal 90 Tage hinter dem aktuellen Datum liegt. 
+	- SSH-Benutzer (Linux-Cluster): Dient zum Herstellen einer Verbindung mit dem Cluster über SSH. Sie können zusätzliche SSH-Benutzerkonten erstellen, nachdem der Cluster erstellt wurde, indem Sie die Schritte unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md) ausführen.
   
  
 
 - **Azure-Speicherkonto**
 
 
-	Das ursprüngliche HDFS nutzt viele lokale Datenträger im Cluster. HDInsight verwendet zur Datenspeicherung stattdessen Azure-Blobspeicher. Azure-Blobspeicher stellt eine robuste, universelle Speicherlösung dar, die problemlos mit HDInsight integriert werden kann. Über eine HDFS-Schnittstelle \(Hadoop Distributed File System\) können sämtliche Komponenten in HDInsight direkt mit strukturierten oder unstrukturierten Daten im Blobspeicher arbeiten. Die Speicherung von Daten im Blobspeicher sorgt dafür, dass die HDInsight-Cluster, die für Berechnungen verwendet werden, sicher gelöscht werden können, ohne Benutzerdaten zu verlieren.
+	Das ursprüngliche HDFS nutzt viele lokale Datenträger im Cluster. HDInsight verwendet zur Datenspeicherung stattdessen Azure-Blobspeicher. Azure-Blobspeicher stellt eine robuste, universelle Speicherlösung dar, die problemlos mit HDInsight integriert werden kann. Über eine HDFS-Schnittstelle (Hadoop Distributed File System) können sämtliche Komponenten in HDInsight direkt mit strukturierten oder unstrukturierten Daten im Blobspeicher arbeiten. Die Speicherung von Daten im Blobspeicher sorgt dafür, dass die HDInsight-Cluster, die für Berechnungen verwendet werden, sicher gelöscht werden können, ohne Benutzerdaten zu verlieren.
 	
-	Bei der Konfiguration müssen Sie ein Azure-Speicherkonto und einen Azure-Blobspeichercontainer für dieses Konto angeben. Bei einigen Bereitstellungsprozessen müssen das Azure-Speicherkonto und der Blobspeichercontainer zuvor erstellt werden. Der Blobspeichercontainer wird vom Cluster als Standardspeicherort verwendet. Optional können Sie zusätzliche Azure-Speicherkonten \(verknüpften Speicher\) angeben, auf die der Cluster zugreifen kann. Darüber hinaus kann der Cluster auch auf alle Blobcontainer zugreifen, die mit vollständig öffentlichem Lesezugriff oder nur für Blobs öffentlichem Lesezugriff konfiguriert sind. Weitere Informationen zum Einschränken des Zugriffs finden Sie unter [Verwalten des Zugriffs auf Azure-Speicherressourcen](storage-manage-access-to-resources.md).
+	Bei der Konfiguration müssen Sie ein Azure-Speicherkonto und einen Azure-Blobspeichercontainer für dieses Konto angeben. Bei einigen Bereitstellungsprozessen müssen das Azure-Speicherkonto und der Blobspeichercontainer zuvor erstellt werden. Der Blobspeichercontainer wird vom Cluster als Standardspeicherort verwendet. Optional können Sie zusätzliche Azure-Speicherkonten (verknüpften Speicher) angeben, auf die der Cluster zugreifen kann. Darüber hinaus kann der Cluster auch auf alle Blobcontainer zugreifen, die mit vollständig öffentlichem Lesezugriff oder nur für Blobs öffentlichem Lesezugriff konfiguriert sind. Weitere Informationen zum Einschränken des Zugriffs finden Sie unter [Verwalten des Zugriffs auf Azure-Speicherressourcen](storage-manage-access-to-resources.md).
 
 	![HDInsight-Speicher](./media/hdinsight-provision-clusters/HDInsight.storage.png)
 	
-	>[AZURE.NOTE]Ein Blobspeichercontainer stellt eine Gruppierung von Blobs bereit \(siehe die folgende Abbildung\):
+	>[AZURE.NOTE]Ein Blobspeichercontainer stellt eine Gruppierung von Blobs bereit (siehe die folgende Abbildung):
 	
 	![Azure-Blobspeicher](./media/hdinsight-provision-clusters/Azure.blob.storage.jpg)
 	  
@@ -152,7 +152,7 @@ Mitunter möchten Sie die Konfigurationsdateien bearbeiten. Hier einige Beispiel
 - hive-site.xml
 - oozie-site.xml
 
-Die Cluster können die Änderungen aufgrund des Re-Imagings nicht beibehalten. Weitere Informationen finden Sie unter [Role Instance Restarts Due to OS Upgrades](http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx) \(Neustart von Rolleninstanzen aufgrund von Betriebssystemupdates – in englischer Sprache\). Um die Änderungen für die Laufzeit des Clusters beizubehalten, können Sie während des Bereitstellungsprozesses die HDInsight-Clusteranpassung nutzen.
+Die Cluster können die Änderungen aufgrund des Re-Imagings nicht beibehalten. Weitere Informationen finden Sie unter [Role Instance Restarts Due to OS Upgrades](http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx) (Neustart von Rolleninstanzen aufgrund von Betriebssystemupdates – in englischer Sprache). Um die Änderungen für die Laufzeit des Clusters beizubehalten, können Sie während des Bereitstellungsprozesses die HDInsight-Clusteranpassung nutzen.
 
 Es folgt ein Azure PowerShell-Skriptbeispiel der Anpassung einer Hive-Konfiguration:
 
@@ -188,7 +188,7 @@ Weitere Beispiele zum Anpassen anderer Konfigurationsdateien:
 	$OozieConfigValues = new-object 'Microsoft.WindowsAzure.Management.HDInsight.Cmdlet.DataObjects.AzureHDInsightOozieConfiguration'
 	$OozieConfigValues.Configuration = @{ "oozie.service.coord.normal.default.timeout"="150" }  # default 120
 	
-Weitere Informationen finden Sie im Blog von Azim Uddin mit dem Titel [Customizing HDInsight Cluster provisioning](http://blogs.msdn.com/b/bigdatasupport/archive/2014/04/15/customizing-hdinsight-cluster-provisioning-via-powershell-and-net-sdk.aspx) \(Anpassen der Bereitstellung von HDInsight-Clustern\).
+Weitere Informationen finden Sie im Blog von Azim Uddin mit dem Titel [Customizing HDInsight Cluster provisioning](http://blogs.msdn.com/b/bigdatasupport/archive/2014/04/15/customizing-hdinsight-cluster-provisioning-via-powershell-and-net-sdk.aspx) (Anpassen der Bereitstellung von HDInsight-Clustern).
 
 
 
@@ -202,11 +202,11 @@ Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration 
 
 [Azure Virtual Network](http://azure.microsoft.com/documentation/services/virtual-network/) ermöglicht das Erstellen eines sicheren, beständigen Netzwerk mit allen Ressourcen, die Sie für Ihre Lösung benötigen. Virtuelle Netzwerken ermöglichen Folgendes:
 
-* Verbinden von Cloudressourcen in einem privaten Netzwerk \(nur in der Cloud\)
+* Verbinden von Cloudressourcen in einem privaten Netzwerk (nur in der Cloud)
 
 	![Diagramm der Nur-Cloud-Konfiguration](./media/hdinsight-provision-clusters/hdinsight-vnet-cloud-only.png)
 
-* Verbinden Ihrer Cloudressourcen mithilfe eines virtuellen privaten Netzwerks \(VPN\) mit dem Netzwerk in Ihrem lokalen Datencenter \(Standort-zu-Standort oder Punkt-zu-Standort\).
+* Verbinden Ihrer Cloudressourcen mithilfe eines virtuellen privaten Netzwerks (VPN) mit dem Netzwerk in Ihrem lokalen Datencenter (Standort-zu-Standort oder Punkt-zu-Standort).
 
 	In einer Standort-zu-Standort-Konfiguration können Sie mehrere Ressourcen aus Ihrem Rechenzentrum über ein Hardware-VPN oder den Routing- und RAS-Dienst mit dem virtuellen Azure-Netzwerk verbinden.
 
@@ -232,11 +232,11 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 - Das Azure-Portal
 - Azure PowerShell
 - .NET SDK
-- Befehlszeilenschnittstelle \(CLI\)
+- Befehlszeilenschnittstelle (CLI)
 
 ### Verwenden des Azure-Portals
 
-Erläuterung der Felder finden Sie in den \[grundlegenden Konfigurationsoptionen\] und \[erweiterten Konfigurationsoptionen\] .
+Erläuterung der Felder finden Sie in den [grundlegenden Konfigurationsoptionen] und [erweiterten Konfigurationsoptionen] .
 
 **So erstellen Sie einen HDInsight-Cluster mit der benutzerdefinierten Erstellungsoption**
 
@@ -283,7 +283,7 @@ Erläuterung der Felder finden Sie in den \[grundlegenden Konfigurationsoptionen
 8. Klicken Sie auf der Seite **Skriptaktionen** auf **Skriptaktion hinzufügen**, um Einzelheiten zum benutzerdefinierten Skript anzugeben, das Sie zum Anpassen eines Clusters bei seiner Erstellung ausführen möchten. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md).
 
 	- Name: Geben Sie einen Namen für die Skriptaktion an.
-	- Skript-URI: Geben Sie den Uniform Resource Identifier \(URI\) für das Skript an, das aufgerufen wird, um den Cluster anzupassen.
+	- Skript-URI: Geben Sie den Uniform Resource Identifier (URI) für das Skript an, das aufgerufen wird, um den Cluster anzupassen.
 	- Knotentyp: Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
 	- Parameter: Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist.</td></tr>
 
@@ -370,13 +370,11 @@ Sobald Sie Ihr Speicherkonto und Ihren Blobcontainer vorbereitet haben, können 
 		# Create a new HDInsight cluster
 		New-AzureHDInsightCluster -Name $clusterName -Credential $credential -Location $location -DefaultStorageAccountName "$storageAccountName.blob.core.windows.net" -DefaultStorageAccountKey $storageAccountKey -DefaultStorageContainerName $containerName  -ClusterSizeInNodes $clusterNodes -ClusterType Hadoop
 
-	>[AZURE.NOTE]Die Befehle $hadoopUserName und $hadoopUserPassword werden zum Erstellen des Hadoop-Benutzerkontos für den Cluster verwendet. Sie verwenden dieses Konto, um die Verbindung mit dem Cluster herzustellen und Aufträge auszuführen.. Wenn Sie im Azure-Portal die Option "Schnellerfassung" verwenden, um einen Cluster bereitzustellen, lautet der Hadoop-Standardbenutzername "admin". Sie dürfen dieses Konto nicht mit dem Benutzerkonto für das Remotedesktopprotokoll (RDP) verwechseln. Das RDP-Benutzerkonto muss sich vom Hadoop-Benutzerkonto unterscheiden. Weitere Informationen finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Verwaltungsportal][hdinsight-admin-portal].
+	>[AZURE.NOTE]Die Befehle $hadoopUserName und $hadoopUserPassword werden zum Erstellen des Hadoop-Benutzerkontos für den Cluster verwendet. Sie verwenden dieses Konto, um die Verbindung mit dem Cluster herzustellen und Aufträge auszuführen.. Wenn Sie im Azure-Portal die Option "Schnellerfassung" verwenden, um einen Cluster bereitzustellen, lautet der Hadoop-Standardbenutzername "admin". Sie dürfen dieses Konto nicht mit dem Benutzerkonto für das Remotedesktopprotokoll (RDP) verwechseln. Das RDP-Benutzerkonto muss sich vom Hadoop-Benutzerkonto unterscheiden. Weitere Informationen finden Sie unter "Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Verwaltungsportal".
 
 	Die Bereitstellung des Clusters kann einige Minuten dauern.
 
 	![HDI.CLI.Provision][image-hdi-ps-provision]
-
-
 
 **Bereitstellen eines HDInsight-Clusters mit benutzerdefinierten Konfigurationsoptionen**
 
@@ -531,7 +529,8 @@ Sie können die Azure-Befehlszeilenschnittstelle entweder über NPM oder Windows
 
 **So installieren Sie die Azure-Befehlszeilenschnittstelle mit Windows Installer**
 
-1.	Navigieren Sie zu **http://azure.microsoft.com/downloads/**. 2.	Führen Sie einen Bildlauf nach unten zum Abschnitt **Befehlszeilentools** durch, und klicken Sie dann auf **Azure-Befehlszeilenschnittstelle**, und führen Sie den Assistenten für den Webplattform-Installer aus.
+1.	Navigieren Sie zu ****http://azure.microsoft.com/downloads/**.
+2.	Führen Sie einen Bildlauf nach unten zum Abschnitt **Befehlszeilentools** durch, und klicken Sie dann auf **Azure-Befehlszeilenschnittstelle**, und führen Sie den Assistenten für den Webplattform-Installer aus.
 
 **Herunterladen und Importieren der Veröffentlichungseinstellungen**
 
@@ -784,4 +783,4 @@ In diesem Artikel haben Sie mehrere Möglichkeiten zu Bereitstellung von HDInsig
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/library/dn479185.aspx
 [azure-management-portal]: https://manage.windowsazure.com
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

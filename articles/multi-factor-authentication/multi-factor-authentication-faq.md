@@ -145,4 +145,4 @@ Derzeit kann die zusätzliche Sicherheitsüberprüfung nur für Anwendungen und 
 
 Als Problemumgehung können Sie zusätzlich zu Ihrem normalen Konto ein separates Benutzerkonto für Administratoraufgaben erstellen. Anschließend können Sie die Postfächer beider Konten miteinander verknüpfen, sodass Sie für die Anmeldung bei Outlook lediglich ihr normales Konto benötigen. Weitere Informationen hierzu finden Sie unter [Einem Administrator das Öffnen und Anzeigen des Inhalts des Postfachs eines Benutzers ermöglichen](http://help.outlook.com/141/gg709759(d=loband).aspx?sl=1).
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -115,7 +115,7 @@ die auf die neu definierten APIs im folgenden Code verweisen. Mit dem folgenden 
 Mit dem "Application History"-Client können Sie abgeschlossene Anwendungen auflisten, Anwendungen basierend auf Ihren Kriterien filtern und relevante Anwendungsprotokolle herunterladen. Der folgende Codeausschnitt zeigt, wie dies programmgesteuert erfolgt:
 
 	// Local download folder location where the logs will be placed
-	string downloadLocation = "E:\YarnApplicationLogs";
+	string downloadLocation = "E:\\YarnApplicationLogs";
 	
 	// List completed applications on your cluster that were submitted in the last 24 hours but failed
 	// Search for applications based on application name
@@ -137,7 +137,7 @@ Mit dem "Application History"-Client können Sie abgeschlossene Anwendungen aufl
 
 Der obige Code dient zum Auflisten/Finden von Anwendungen von Interesse mithilfe des "Application History"-Clients und anschließenden Herunterladen von Protokollen für diese Anwendungen in einen lokalen Ordner.
 
-Alternativ werden mit dem folgenden Codeausschnitt Protokolle für eine Anwendung heruntergeladen, deren Anwendungs-ID bekannt ist. Die Anwendungs-ID ist der global eindeutige Bezeichner einer Anwendung gemäß der Zuweisung durch den Resource Manager. Sie wird anhand der Startzeit von Resource Manager sowie eines monoton ansteigenden Zählers für Anwendungen erstellt, die an diesen übermittelt werden. Die Anwendungs-ID hat das Format "Anwendung_&lt;RM-Startzeit&gt;_&lt;Zähler&gt". Bitte beachten Sie, dass die Anwendungs-ID und die Auftrags-ID eindeutig sind. Die Auftrags-ID ist ein für das MapReduce-Framework spezifisches Konzept, während die Anwendungs-ID ein von Frameworks unabhängiges YARN-Konzept ist. In YARN bestimmt eine Auftrags-ID einen spezifischen MapReduce-Auftrag entsprechend der Verarbeitung durch den Application Master einer MapReduce-Anwendung, die an den Resource Manager übermittelt wurde.
+Alternativ werden mit dem folgenden Codeausschnitt Protokolle für eine Anwendung heruntergeladen, deren Anwendungs-ID bekannt ist. Die Anwendungs-ID ist der global eindeutige Bezeichner einer Anwendung gemäß der Zuweisung durch den Resource Manager. Sie wird anhand der Startzeit von Resource Manager sowie eines monoton ansteigenden Zählers für Anwendungen erstellt, die an diesen übermittelt werden. Die Anwendungs-ID hat das Format "Anwendung\_&lt;RM-Startzeit&gt;\_&lt;Zähler&gt". Bitte beachten Sie, dass die Anwendungs-ID und die Auftrags-ID eindeutig sind. Die Auftrags-ID ist ein für das MapReduce-Framework spezifisches Konzept, während die Anwendungs-ID ein von Frameworks unabhängiges YARN-Konzept ist. In YARN bestimmt eine Auftrags-ID einen spezifischen MapReduce-Auftrag entsprechend der Verarbeitung durch den Application Master einer MapReduce-Anwendung, die an den Resource Manager übermittelt wurde.
 
 	// Download application logs for an application whose application ID is known
 	string applicationId = "application_1416017767088_0028";
@@ -173,4 +173,4 @@ Bei Bedarf können Sie auch Protokolle für jeden Container (oder einen bestimmt
 [YARN-concepts]: http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

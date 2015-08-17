@@ -83,12 +83,12 @@ In SQL Data Warehouse sind einige Einstellungen beim Herstellen der Verbindung u
 
 | Datenbankeinstellung | Wert |
 | :----------------- | :--------------------------- |
-| ANSI_NULLS | EIN |
-| QUOTED_IDENTIFIERS | EIN |
-| NO_COUNT | AUS |
+| ANSI\_NULLS | EIN |
+| QUOTED\_IDENTIFIERS | EIN |
+| NO\_COUNT | AUS |
 | DATEFORMAT | mdy |
 | DATEFIRST | 7 |
-| Datenbanksortierung | SQL_Latin1_General_CP1_CI_AS |
+| Datenbanksortierung | SQL\_Latin1\_General\_CP1\_CI\_AS |
 
 ## Sitzungen und Anforderungen
 Nachdem eine Verbindung hergestellt und eine Sitzung eingerichtet wurde, können Sie Abfragen schreiben und an SQL Data Warehouse senden.
@@ -158,4 +158,4 @@ Nach dem Herstellen der Verbindung können Sie mit dem Entwerfen der Tabellen be
 
 <!--Other references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

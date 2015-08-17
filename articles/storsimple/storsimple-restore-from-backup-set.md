@@ -1,4 +1,5 @@
-<properties pageTitle="Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz" | Microsoft Azure description="Erläutert, wie Sie den Sicherungskatalog zum Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz verwenden." services="storsimple" documentationCenter="NA" authors="SharS" manager="Carolz" editor ="" /> <tags 
+<properties pageTitle="Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz" | Microsoft Azure description="Erläutert, wie Sie den Sicherungskatalog zum Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz verwenden." services="storsimple" documentationCenter="NA" authors="SharS" manager="Carolz" editor ="" />
+<tags
    ms.service="storsimple"
    ms.devlang="NA"
    ms.topic="article"
@@ -74,4 +75,4 @@ Sie können Ihr StorSimple-Volume mithilfe der Seite **Sicherungskatalog** aus e
 
 Erfahren Sie, wie Sie [StorSimple-Volumes verwalten](storsimple-manage-volumes.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -12,7 +12,7 @@
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article" 
+	ms.topic="article" 
 	ms.date="04/29/2015"
 	ms.author="tdykstra"/>
 
@@ -79,7 +79,7 @@ Mit Azure App Service lassen sich die mit dem Migrieren von älteren IIS6-Anwend
 
 ### <a id="smallbusiness"></a>Ich bin Inhaber eines kleinen Unternehmens und suche nach einem kostengünstigen Weg, meine Website zu hosten. Dabei sollen zukünftige Wachstumsmöglichkeiten berücksichtigt werden.
 
-Azure App Service ist eine hervorragende Lösung für dieses Szenario, da Sie mit einer kostenlosen Version beginnen und später bei Bedarf weitere Funktionen hinzufügen können. Jede kostenlose Web-App wird mit einer Domäne von Azure bereitgestellt ("Ihr_Unternehmen".azurewebsites.net). Die Plattform umfasst integrierte Bereitstellungs- und Verwaltungstools sowie einen Anwendungskatalog, der Ihnen den Einstieg erleichtert. Es gibt viele weitere Dienste und Skalierungsoptionen, dank derer Sie die Website mit steigenden Benutzeranforderungen weiterentwickeln können. Mit Azure App Service haben Sie folgende Möglichkeiten:
+Azure App Service ist eine hervorragende Lösung für dieses Szenario, da Sie mit einer kostenlosen Version beginnen und später bei Bedarf weitere Funktionen hinzufügen können. Jede kostenlose Web-App wird mit einer Domäne von Azure bereitgestellt (*Ihr\_Unternehmen*.azurewebsites.net). Die Plattform umfasst integrierte Bereitstellungs- und Verwaltungstools sowie einen Anwendungskatalog, der Ihnen den Einstieg erleichtert. Es gibt viele weitere Dienste und Skalierungsoptionen, dank derer Sie die Website mit steigenden Benutzeranforderungen weiterentwickeln können. Mit Azure App Service haben Sie folgende Möglichkeiten:
 
 - Starten Sie mit der kostenlosen Version, und führen Sie nach Bedarf eine Skalierung durch.
 - Verwenden Sie den Web-App-Katalog, um rasch gängige Webanwendungen wie z. B. WordPress einzurichten.
@@ -140,197 +140,34 @@ Zusätzlich verfügt Azure App Service über eine neue Vorschaufunktion für RES
 
 In der folgenden Tabelle werden die Funktionen von App Service, Cloud Services und Virtual Machines verglichen, um Ihnen die Auswahl der richtigen Option zu erleichtern. Aktuelle Informationen über die Vereinbarung zum Servicelevel (SLA) in Bezug auf die jeweilige Option finden Sie unter [Azure-Vereinbarung zum Servicelevel](/support/legal/sla/).
 
-<table cellspacing="0" border="1">
-<tr>
-   <th align="left" valign="middle">Funktion</th>
-   <th align="left" valign="middle">App Service (Web-Apps)</th>
-   <th align="left" valign="middle">Cloud Services (Webrollen)</th>
-   <th align="left" valign="middle">Virtual Machines</th>
-   <th align="left" valign="middle">Hinweise</th>
-</tr>
-<tr>
-   <td valign="middle"><p>Zeitnahe Bereitstellung</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-   <td valign="middle"></td>
-   <td valign="middle">Die Bereitstellung einer Anwendung oder einer Anwendungsaktualisierung in Cloud Services oder das Erstellen eines virtuellen Computers nimmt mindestens einige Minuten in Anspruch. Die Bereitstellung einer Anwendung in einer Web-App dauert wenige Sekunden.</td>
-</tr>
-<tr>
-   <td valign="middle"><p>Skalierung auf größere Computer ohne erneute Bereitstellung</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-   <td valign="middle"></td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Webserverinstanzen weisen gemeinsame Inhalte und eine gemeinsame Konfiguration auf. Dies bedeutet, dass Sie sie bei einer Skalierung nicht neu bereitstellen oder neu konfigurieren müssen.</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-   <td valign="middle"></td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Mehrere Bereitstellungsumgebungen (Produktion und Staging)</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Automatische Aktualisierungsverwaltung für das Betriebssystem</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Nahtloser Plattformwechsel (einfacher Wechsel zwischen 32 Bit und 64 Bit)</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Bereitstellung von Code mit GIT, FTP</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Bereitstellung von Code mit Web Deploy</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-   <td valign="middle">X</td>
-   <td valign="middle">Cloud Services unterstützt die Verwendung von Web Deploy, um Updates für einzelne Rolleninstanzen bereitzustellen. Ein Einsatz für die Erstbereitstellung einer Rolle ist jedoch nicht möglich. Wenn Sie Web Deploy für eine Aktualisierung verwenden, müssen Sie jeweils eine separate Bereitstellung für jede Instanz einer Rolle vornehmen. Es sind mehrere Instanzen sind erforderlich, um für die Cloud Services-SLA für Produktionsumgebungen qualifiziert zu sein.</td>
-</tr>
-<tr>
-   <td valign="middle"><p>Unterstützung von WebMatrix</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Zugriff auf Dienste wie Service Bus, Storage und SQL-Datenbank</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Hosten der Web- oder Webdienstebene einer mehrschichtigen Architektur</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Hosten der mittleren Ebene einer mehrschichtigen Architektur</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">App Service kann problemlos für das Hosten einer REST-API der mittleren Ebene genutzt werden, über die Funktion <a href="http://go.microsoft.com/fwlink/?linkid=390226">WebJobs</a> können Hintergrundverarbeitungsaufträge gehostet werden. Sie können WebJobs auf einer dedizierten Website ausführen, um eine unabhängige Skalierbarkeit für die entsprechende Ebene zu erzielen. Die Vorschaufunktion [API-Apps](../app-service-api/app-service-api-apps-why-best-platform.md) bietet sogar noch mehr Funktionen für das Hosten von REST-Diensten.</td>
-</tr>
-<tr>
-   <td valign="middle"><p>Integrierte Unterstützung von MySQL-as-a-Service</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">Cloud Services kann in MySQL-as-a-Service über Angebote von ClearDB integriert werden, jedoch nicht als Bestandteil des Verwaltungsportal-Workflows.</td>
-</tr>
-<tr>
-   <td valign="middle"><p>Unterstützung von ASP.NET, klassischem ASP, Node.js, PHP, Python</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Horizontale Skalierung auf mehrere Instanzen ohne erneute Bereitstellung</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">Bei virtuellen Computern ist eine horizontale Skalierung auf mehrere Instanzen möglich. Die Dienste, die auf diesen Computern ausgeführt werden, müssen jedoch so geschrieben werden, dass sie diese horizontale Skalierung unterstützen. Sie müssen einen Lastenausgleich konfigurieren, um Anforderungen über die Computer weiterzuleiten. Zudem müssen Sie eine Affinitätsgruppe erstellen, um gleichzeitigen Neustarts aller Instanzen aufgrund von Wartungs- oder Hardware-Fehlern vorzubeugen.</td>
-</tr>
-<tr>
-   <td valign="middle"><p>SSL-Unterstützung</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">Für App Service-Web-Apps wird SSL für benutzerdefinierte Domänen nur in den Modi "Basic" und "Standard" unterstützt. Weitere Informationen zur Verwendung von SSL mit Web-Apps finden Sie unter <a href="../web-sites-configure-ssl-certificate/">Konfigurieren eines SSL-Zertifikats für eine Azure-Website</a>.</td>
-</tr>
-<tr>
-   <td valign="middle"><p>Visual Studio-Integration</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Remotedebugging</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Bereitstellung von Code mit TFS</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Netzwerkisolierung mit <a href="/services/virtual-network/">Azure Virtual Network</a></p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">Siehe auch <a href="/blog/2014/09/15/azure-websites-virtual-network-integration/">Virtual Network-Integration in Azure Websites</a></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Unterstützung für <a href="/services/traffic-manager/">Azure Traffic Manager</a></p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Integrierte Endpunktüberwachung</p></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Remotedesktopzugriff auf Server</p></td>
-   <td valign="middle"></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Installieren einer beliebigen benutzerdefinierten MSI</p></td>
-   <td valign="middle"></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Möglichkeit zum Definieren/Ausführen von Startaufgaben</p></td>
-   <td valign="middle"></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Kann ETW-Ereignisse abhören</p></td>
-   <td valign="middle"></td>
-   <td valign="middle">X</td>
-   <td valign="middle">X</td>
-   <td valign="middle"></td>
-</tr>
-</table>
+Funktion|App Service (Web-Apps)|Cloud Services (Webrollen)|Virtual Machines|Hinweise
+---|---|---|---|---
+Zeitnahe Bereitstellung|X|||Die Bereitstellung einer Anwendung oder einer Anwendungsaktualisierung in Cloud Services oder das Erstellen eines virtuellen Computers nimmt mindestens einige Minuten in Anspruch. Die Bereitstellung einer Anwendung in einer Web-App dauert wenige Sekunden.
+Skalierung auf größere Computer ohne erneute Bereitstellung|X|||
+Webserverinstanzen weisen gemeinsame Inhalte und eine gemeinsame Konfiguration auf. Dies bedeutet, dass Sie sie bei einer Skalierung nicht neu bereitstellen oder neu konfigurieren müssen.|X|||
+Mehrere Bereitstellungsumgebungen (Produktion und Staging)|X|X||
+Automatische Aktualisierungsverwaltung für das Betriebssystem|X|X||
+Nahtloser Plattformwechsel (einfacher Wechsel zwischen 32 Bit und 64 Bit)|X|X||
+Bereitstellung von Code mit GIT, FTP|X||X|
+Bereitstellung von Code mit Web Deploy|X||X|Cloud Services unterstützt die Verwendung von Web Deploy, um Updates für einzelne Rolleninstanzen bereitzustellen. Ein Einsatz für die Erstbereitstellung einer Rolle ist jedoch nicht möglich. Wenn Sie Web Deploy für eine Aktualisierung verwenden, müssen Sie jeweils eine separate Bereitstellung für jede Instanz einer Rolle vornehmen. Es sind mehrere Instanzen sind erforderlich, um für die Cloud Services-SLA für Produktionsumgebungen qualifiziert zu sein.
+Unterstützung von WebMatrix|X||X|
+Zugriff auf Dienste wie Service Bus, Storage und SQL-Datenbank|X|X|X|
+Hosten der Web- oder Webdienstebene einer mehrschichtigen Architektur|X|X|X|
+Hosten der mittleren Ebene einer mehrschichtigen Architektur|X|X|X|App Service kann problemlos für das Hosten einer REST-API der mittleren Ebene genutzt werden, über die Funktion [WebJobs](http://go.microsoft.com/fwlink/?linkid=390226) können Hintergrundverarbeitungsaufträge gehostet werden. Sie können WebJobs auf einer dedizierten Website ausführen, um eine unabhängige Skalierbarkeit für die entsprechende Ebene zu erzielen. Die Vorschaufunktion [API-Apps](../app-service-api/app-service-api-apps-why-best-platform/) bietet sogar noch mehr Funktionen für das Hosten von REST-Diensten.
+Integrierte Unterstützung von MySQL-as-a-Service|X|X|X|Cloud Services kann in MySQL-as-a-Service über Angebote von ClearDB integriert werden, jedoch nicht als Bestandteil des Verwaltungsportal-Workflows.
+Unterstützung von ASP.NET, klassischem ASP, Node.js, PHP, Python|X|X|X|
+Horizontale Skalierung auf mehrere Instanzen ohne erneute Bereitstellung|X|X|X|Bei virtuellen Computern ist eine horizontale Skalierung auf mehrere Instanzen möglich. Die Dienste, die auf diesen Computern ausgeführt werden, müssen jedoch so geschrieben werden, dass sie diese horizontale Skalierung unterstützen. Sie müssen einen Lastenausgleich konfigurieren, um Anforderungen über die Computer weiterzuleiten. Zudem müssen Sie eine Affinitätsgruppe erstellen, um gleichzeitigen Neustarts aller Instanzen aufgrund von Wartungs- oder Hardware-Fehlern vorzubeugen.
+SSL-Unterstützung|X|X|X|Für App Service-Web-Apps wird SSL für benutzerdefinierte Domänen nur in den Modi "Basic" und "Standard" unterstützt. Weitere Informationen zur Verwendung von SSL mit Web-Apps finden Sie unter [Konfigurieren eines SSL-Zertifikats für eine Azure-Website](../app-service-web/web-sites-configure-ssl-certificate/).
+Visual Studio-Integration|X|X|X|
+Remotedebugging|X|X|X|
+Bereitstellung von Code mit TFS|X|X|X|
+Netzwerkisolierung mit [Azure Virtual Network](../services/virtual-network/)|X|X|X|Siehe auch [Virtual Network-Integration in Azure Websites](../blog/2014/09/15/azure-websites-virtual-network-integration/)
+Unterstützung für [Azure Traffic Manager](../services/traffic-manager/)|X|X|X|
+Integrierte Endpunktüberwachung|X|X|X|
+Remotedesktopzugriff auf Server||X|X|
+Installieren einer beliebigen benutzerdefinierten MSI||X|X|
+Möglichkeit zum Definieren/Ausführen von Startaufgaben||X|X|
+Kann ETW-Ereignisse abhören||X|X|
 
 
 > [AZURE.NOTE]Wenn Sie Wenn Sie Azure Website ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie <a href="https://trywebsites.azurewebsites.net/">https://trywebsites.azurewebsites.net</a>, wo Sie sofort kostenlos eine kurzlebige ASP.NET-Starter-App in Azure App Service erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
@@ -367,4 +204,4 @@ Informationen zum Einstieg in die gewählte(n) Optionen für Ihre Anwendungen fi
   [Storage]: http://www.windowsazure.com/documentation/services/storage/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

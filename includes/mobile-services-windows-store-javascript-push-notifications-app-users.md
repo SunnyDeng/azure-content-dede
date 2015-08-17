@@ -78,4 +78,4 @@ Bei dieser Methode fügen Sie Registrierungscode aus dem Lernprogramm direkt in 
 		    });
 		}  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

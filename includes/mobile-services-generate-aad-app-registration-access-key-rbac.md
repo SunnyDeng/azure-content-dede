@@ -15,10 +15,10 @@
 
 7. Navigieren Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) zurück zu Ihrem mobilen Dienst, und klicken Sie auf die Registerkarte **Konfigurieren**. Blättern Sie nach unten zum Abschnitt **App-Einstellungen**, fügen Sie die folgenden App-Einstellungen hinzu, und klicken Sie auf **Speichern**.
 
-    <table border="1"> <tr> <th>Name der App-Einstellung</th><th>Beschreibung</th> </tr> <tr> <td>AAD_CLIENT_ID</td><td>Die Client-ID, die Sie in den vorhergehenden Schritten aus der integrierten App kopiert haben.</td> </tr> <tr> <td>AAD_CLIENT_KEY</td><td>Der App-Schlüssel, den Sie in den vorhergehenden Schritten in der AAD-integrierten App generiert haben.</td> </tr> <tr> <td>AAD_TENANT_DOMAIN</td><td>Ihr AAD-Domänenname. Sollte "mydomain.onmicrosoft.com" ähnlich sein</td> </tr> <tr> <td>AAD_GROUP_ID</td><td>Die Gruppen-ID, die Sie für die Gruppe "Sales" im vorherigen Abschnitt notiert haben</td> </tr> </table><br/>
+    <table border="1"> <tr> <th>Name der App-Einstellung</th><th>Beschreibung</th> </tr> <tr> <td>AAD\_CLIENT\_ID</td><td>Die Client-ID, die Sie in den vorhergehenden Schritten aus der integrierten App kopiert haben.</td> </tr> <tr> <td>AAD\_CLIENT\_KEY</td><td>Der App-Schlüssel, den Sie in den vorhergehenden Schritten in der AAD-integrierten App generiert haben.</td> </tr> <tr> <td>AAD\_TENANT\_DOMAIN</td><td>Ihr AAD-Domänenname. Sollte "mydomain.onmicrosoft.com" ähnlich sein</td> </tr> <tr> <td>AAD\_GROUP\_ID</td><td>Die Gruppen-ID, die Sie für die Gruppe "Sales" im vorherigen Abschnitt notiert haben</td> </tr> </table><br/>
 
  
     ![](./media/mobile-services-generate-aad-app-registration-access-key-rbac/aad-app-settings.png)
   
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

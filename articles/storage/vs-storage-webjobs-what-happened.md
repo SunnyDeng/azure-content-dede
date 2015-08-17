@@ -42,4 +42,4 @@ In der Datei „App.config“ Ihres Projekts wurden `AzureWebJobsStorage` und `A
 
 Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

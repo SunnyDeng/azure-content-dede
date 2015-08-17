@@ -21,7 +21,7 @@
 Überwachung, Erkennung, Diagnose und Problembehandlung ermöglichen das Ausführen von Diensten mit minimalen Unterbrechungen für Benutzer. Diese Vorgänge sind in einer tatsächlichen bereitgestellten Produktionsumgebung wichtig, die Wirksamkeit hängt jedoch davon ab, ob bei der Entwicklung von Diensten ein ähnliches Modell verwendet wird. Nur so ist sichergestellt, dass die Vorgänge tatsächlich funktionieren. Service Fabric erleichtert Dienstentwicklern das Implementieren von Diagnosen, die in einer lokalen Umgebung auf einem einzelnen Computer und in der tatsächlichen Konfiguration in einem Produktionscluster nahtlos verwendet werden können.
 
 ## Ablaufverfolgung und Protokollierung
-[Event Tracing for Windows](https://msdn.microsoft.com/library/windows/desktop/bb968803.aspx) \(ETW\) ist die empfohlene Technologie für das Nachverfolgen von Meldungen in Service Fabric. Hierfür gibt es folgende Gründe:
+[Event Tracing for Windows](https://msdn.microsoft.com/library/windows/desktop/bb968803.aspx) (ETW) ist die empfohlene Technologie für das Nachverfolgen von Meldungen in Service Fabric. Hierfür gibt es folgende Gründe:
 
 * ETW ist schnell. Es wurde als Technologie für die Ablaufverfolgung erstellt, die minimale Auswirkungen auf die Codeausführungszeiten hat.
 * Die ETW-Ablaufverfolgung funktioniert nahtlos in lokalen Entwicklungsumgebungen und in realen Clusterkonfigurationen. Das heißt, Sie müssen den Ablaufverfolgungscode nicht neu schreiben, wenn Sie den Code in einem echten Cluster bereitstellen.
@@ -45,7 +45,7 @@ Service Fabric gibt ETW-Ereignisse aus, um die Abläufe in der Plattform für An
 
   ![Erstellen eines Service Fabric-Diensts](./media/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/CreateServiceFabricProject-2.png)
 
-4. Drücken Sie F5, um die Anwendung zu debuggen. Die Service Fabric-Ereignisse werden nun im Fenster "Diagnoseereignisse" angezeigt. Jedes Ereignis verfügt über Standard-Metadateninformationen, anhand derer Sie den Knoten, die Anwendung und den Dienst ablesen können, aus denen das Ereignis stammt. Sie können die Liste der Ereignisse mit dem Feld „Ereignisse filtern“ oben in den Fenstern filtern \(z. B. nach Knoten- oder Dienstname\).
+4. Drücken Sie F5, um die Anwendung zu debuggen. Die Service Fabric-Ereignisse werden nun im Fenster "Diagnoseereignisse" angezeigt. Jedes Ereignis verfügt über Standard-Metadateninformationen, anhand derer Sie den Knoten, die Anwendung und den Dienst ablesen können, aus denen das Ereignis stammt. Sie können die Liste der Ereignisse mit dem Feld „Ereignisse filtern“ oben in den Fenstern filtern (z. B. nach Knoten- oder Dienstname).
 
   ![Visual Studio-Anzeige von Diagnoseereignissen](./media/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/DiagEventsExamples2.png)
 
@@ -56,12 +56,12 @@ Service Fabric gibt ETW-Ereignisse aus, um die Abläufe in der Plattform für An
 ## Hinzufügen eigener benutzerdefinierter Ablaufverfolgungen zum Anwendungscode
 Die Service Fabric-Visual Studio-Projektvorlagen enthalten Beispielcode. Der Code zeigt, wie benutzerdefinierte ETW-Ablaufverfolgungen zum Anwendungscode hinzugefügt werden. Diese werden in der ETW-Anzeige in Visual Studio zusammen mit den Systemablaufverfolgungen von Service Fabric angezeigt. Der Vorteil dieser Methode liegt darin, dass Metadaten automatisch zu Ablaufverfolgungen hinzugefügt werden und der Visual Studio-Diagnose-Viewer bereits für die Anzeige der Ablaufverfolgungen konfiguriert ist.
 
-Für Projekte, die mit **Dienstvorlagen** \(zustandsbehaftet oder zustandslos\) erstellt wurden:
+Für Projekte, die mit **Dienstvorlagen** (zustandsbehaftet oder zustandslos) erstellt wurden:
 
 1. Öffnen Sie die Datei **Service.cs**. Der Aufruf an `ServiceEventSource.Current.Message` in der *RunAsync*-Methode zeigt ein Beispiel für eine benutzerdefinierte ETW-Ablaufverfolgung aus dem Anwendungscode.
 2. In der Datei **ServiceEventSource.cs** zeigen die Überladungen der `ServiceEventSource.Message`-Methode eine Option zum Schreiben benutzerdefinierter ETW-Ablaufverfolgungen.
 
-Für Projekte, die mit **Actor-Vorlagen** \(zustandsbehaftet oder zustandslos\) erstellt wurden:
+Für Projekte, die mit **Actor-Vorlagen** (zustandsbehaftet oder zustandslos) erstellt wurden:
 
 1. Öffnen Sie die Datei **ProjectName.cs**, wobei *ProjectName* der Name Ihres Visual Studio-Projekts ist.  
 2. Suchen Sie den Code `ActorEventSource.Current.ActorMessage(this, "Doing Work");` in der Methode *DoWorkAsync*. Dies ist ein Beispiel für eine benutzerdefinierte ETW-Ablaufverfolgung im Anwendungscode.  
@@ -79,4 +79,4 @@ Der Ablaufverfolgungscode, den Sie zu Ihrer Anwendung für die lokale Diagnose h
 * [Diagnose und Leistungsüberwachung für Actors in Azure Service Fabric](service-fabric-reliable-actors-diagnostics.md)
 * [Diagnose zustandsbehafteter zuverlässiger Dienste](service-fabric-reliable-services-diagnostics.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

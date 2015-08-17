@@ -43,4 +43,4 @@
 
    	Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

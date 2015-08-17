@@ -23,7 +23,7 @@ Dieser Artikel enthält Informationen zu zusätzlicher Hardware, die mit dem Mic
 
 ## Liste der unterstützten Geräte
 
-Microsoft hat die folgenden SFP \(Small Form-factor Pluggable\)-Transceiver, Kabel und Switches getestet, um sicherzustellen, dass sie optimal mit Geräten funktionieren. \(Die folgenden Tabellen werden aktualisiert, wenn neue Hardware getestet wird.\)
+Microsoft hat die folgenden SFP (Small Form-factor Pluggable)-Transceiver, Kabel und Switches getestet, um sicherzustellen, dass sie optimal mit Geräten funktionieren. (Die folgenden Tabellen werden aktualisiert, wenn neue Hardware getestet wird.)
 
 ### SFP+-Transceiver
 
@@ -38,7 +38,7 @@ Microsoft hat die folgenden SFP \(Small Form-factor Pluggable\)-Transceiver, Kab
 | 1\.|Cisco|SFP-H10GB-CU1M|
 | 2\.|Cisco|SFP-H10GB-CU2M|
 | 3\.|Cisco|SFP-H10GB-CU3M|
-| 4\.|Tripp Lite|N820-05M \(OM3\)|
+| 4\.|Tripp Lite|N820-05M (OM3)|
 
 ### Switches
 
@@ -50,7 +50,7 @@ Microsoft hat die folgenden SFP \(Small Form-factor Pluggable\)-Transceiver, Kab
 
 ## Liste der von Mellanox unterstützten Geräte  
 
-Mellanox hat die folgenden SFP \(Small Form-factor Pluggable\)-Transceiver, Kabel und Switches getestet, um sicherzustellen, dass sie optimal mit Netzwerkschnittstellen von Mellanox, beispielsweise den 10-GbE-Netzwerkschnittstellen Ihres StorSimple-Geräts, funktionieren.
+Mellanox hat die folgenden SFP (Small Form-factor Pluggable)-Transceiver, Kabel und Switches getestet, um sicherzustellen, dass sie optimal mit Netzwerkschnittstellen von Mellanox, beispielsweise den 10-GbE-Netzwerkschnittstellen Ihres StorSimple-Geräts, funktionieren.
 
 ### Von Mellanox unterstützte Kabel und Module 
 
@@ -58,41 +58,41 @@ Die folgende Tabelle enthält die Kabel und Module, die von Mellanox unterstütz
 
 | S. Nr. | Geschwindigkeit | Modell | Beschreibung | Stellen |
 |--------|-------|-----------------------|--------------------------------------------------------|-----------------------|
-| 1\. | 10 GbE| CAB-SFP-SFP-1M | Passives Kupferkabel, SFP+, 10 GBit/s \(1 m\) | Arista |
-| 2\. | 10 GbE| CAB-SFP-SFP-2M | Passives Kupferkabel, SFP+, 10 GBit/s \(2 m\) | Arista |
-| 3\. | 10 GbE| CAB-SFP-SFP-3M | Passives Kupferkabel, SFP+, 10 GBit/s \(3 m\) | Arista |
-| 4\. | 10 GbE| CAB-SFP-SFP-5M | Passives Kupferkabel, SFP+, 10 GBit/s \(5 m\) | Arista |
+| 1\. | 10 GbE| CAB-SFP-SFP-1M | Passives Kupferkabel, SFP+, 10 GBit/s (1 m) | Arista |
+| 2\. | 10 GbE| CAB-SFP-SFP-2M | Passives Kupferkabel, SFP+, 10 GBit/s (2 m) | Arista |
+| 3\. | 10 GbE| CAB-SFP-SFP-3M | Passives Kupferkabel, SFP+, 10 GBit/s (3 m) | Arista |
+| 4\. | 10 GbE| CAB-SFP-SFP-5M | Passives Kupferkabel, SFP+, 10 GBit/s (5 m) | Arista |
 | 5\. | 10 GbE| Cisco SFP-H10GBCU1M | SFP+-Kabel von Cisco | Cisco |
 | 6\. | 10 GbE| Cisco SFP-H10GBCU3M | SFP+-Kabel von Cisco | Cisco |
 | 7\. |10 GbE | Cisco SFP-H10GBCU5M | SFP+-Kabel von Cisco | Cisco |
-| 8\. | 10 GbE| J9281B HP X242 10G | SFP+ zu SFP+, Direktanschluss-Kupferkabel \(1 m\) | HP |
-| 9\. | 10 GbE| 455883-B21 HP BLc | SR SFP+ Opt \(10 GBit\) | HP |
-| 10\. | 10 GbE| 455886-B21 HP BLc | LR SFP + Opt \(10 GBit\) | HP |
-| 11\. |10 GbE | 487649-B21 HP BLc | SFP+, 10-GbE-Kupferkabel \(0,5 m\) | HP |
-| 12\. |10 GbE | 487652-B21 HP BLc | SFP+, 10-GbE-Kupferkabel \(1 m\) | HP |
-| 13\. |10 GbE | 487655-B21 HP BLc | SFP+, 10-GbE-Kupferkabel \(3 m\) | HP |
-| 14\. |10 GbE | 487658-B21 HP BLc | SFP+, 10-GbE-Kupferkabel \(7 m\) | HP |
-| 15\. |10 GbE | 537963-B21 HP BLc | SFP+, 10-GbE-Kupferkabel \(5 m\) | HP |
-| 16\. |10 GbE | AP784A HP | Passives SFP+-Kupferkabel, C-Serie \(3 m\) | HP |
-| 17\. |10 GbE | AP785A HP | Passives SFP+-Kupferkabel, C-Serie \(5 m\) | HP |
-| 18\. |10 GbE | AP818A HP | Aktives SFP+-Kupferkabel, B-Serie \(1 m\) | HP |
-| 19\. |10 GbE | AP819A HP | Aktives SFP+-Kupferkabel, B-Serie \(3 m\) | HP |
+| 8\. | 10 GbE| J9281B HP X242 10G | SFP+ zu SFP+, Direktanschluss-Kupferkabel (1 m) | HP |
+| 9\. | 10 GbE| 455883-B21 HP BLc | SR SFP+ Opt (10 GBit) | HP |
+| 10\. | 10 GbE| 455886-B21 HP BLc | LR SFP + Opt (10 GBit) | HP |
+| 11\. |10 GbE | 487649-B21 HP BLc | SFP+, 10-GbE-Kupferkabel (0,5 m) | HP |
+| 12\. |10 GbE | 487652-B21 HP BLc | SFP+, 10-GbE-Kupferkabel (1 m) | HP |
+| 13\. |10 GbE | 487655-B21 HP BLc | SFP+, 10-GbE-Kupferkabel (3 m) | HP |
+| 14\. |10 GbE | 487658-B21 HP BLc | SFP+, 10-GbE-Kupferkabel (7 m) | HP |
+| 15\. |10 GbE | 537963-B21 HP BLc | SFP+, 10-GbE-Kupferkabel (5 m) | HP |
+| 16\. |10 GbE | AP784A HP | Passives SFP+-Kupferkabel, C-Serie (3 m) | HP |
+| 17\. |10 GbE | AP785A HP | Passives SFP+-Kupferkabel, C-Serie (5 m) | HP |
+| 18\. |10 GbE | AP818A HP | Aktives SFP+-Kupferkabel, B-Serie (1 m) | HP |
+| 19\. |10 GbE | AP819A HP | Aktives SFP+-Kupferkabel, B-Serie (3 m) | HP |
 | 20\. |10 GbE | J9150A HP | X 132 10G SFP + LC SR Transceiver | HP |
 | 21\. |10 GbE | J9151A HP | X132 10G SFP+ LC LR Transceiver | HP |
-| 22\. |10 GbE | J9283B HP | X242 10G SFP+ SFP+ DAC-Kabel \(3 m\) | HP |
-| 23\. |10 GbE | J9285B HP | X242 10G SFP+ SFP+ DAC-Kabel \(7 m\) | HP |
-| 24\. | 10 GbE| JD095B HP | X240 10G SFP+ SFP+, DAC-Kabel \(0,65 m\) | HP |
-| 25\. | 10 GbE| JD096B HP | X240 10G SFP+ SFP+ DAC-Kabel \(1,2 m\) | HP |
-| 26\. | 10 GbE| JD097B HP | X240 10G SFP+ SFP+ DAD-Kabel \(3 m\) | HP |
+| 22\. |10 GbE | J9283B HP | X242 10G SFP+ SFP+ DAC-Kabel (3 m) | HP |
+| 23\. |10 GbE | J9285B HP | X242 10G SFP+ SFP+ DAC-Kabel (7 m) | HP |
+| 24\. | 10 GbE| JD095B HP | X240 10G SFP+ SFP+, DAC-Kabel (0,65 m) | HP |
+| 25\. | 10 GbE| JD096B HP | X240 10G SFP+ SFP+ DAC-Kabel (1,2 m) | HP |
+| 26\. | 10 GbE| JD097B HP | X240 10G SFP+ SFP+ DAD-Kabel (3 m) | HP |
 | 27\. | 10 GbE| MAM1Q00A-QSA Mellanox | QSFP-zu-SFP+-Adapter | Mellanox Technologies |
-| 28\. | 10 GbE| MC2309124-006 Mt | Passives Kupferkabel 1x SFP+ zu QSFP 10 GBit/s, 24awg \(7 m\) | Mellanox Technologies |
-| 29\. | 10 GbE| MC2309124-007 Mt | Passives Kupferkabel 1x SFP+ zu QSFP 10 GBit/s, 24awg \(7 m\) | Mellanox Technologies |
-| 30\. | 10 GbE| MC2309130-003 Mt | Passives Kupferkabel 1x SFP+ zu QSFP 10 GBit/s, 30 AWG \(3 m\) | Mellanox Technologies |
-| 31\. | 10 GbE| MC2309130-00A Mt | Passives Kupferkabel 1x SFP+ zu QSFP 10GBit/s, 30 AWG \(0,5 m\) | Mellanox Technologies |
-| 32\. | 10 GbE| MC3309124-005 Mt | Passives Kupferkabel 1x SFP+ 10 GBit/s, 24 AWG \(5 m\) | Mellanox Technologies |
-| 33\. | 10 GbE| MC3309124-007 Mt | Passives Kupferkabel 1x SFP+ 10 GBit/s, 24 AWG \(7 m\) | Mellanox Technologies |
-| 34\. | 10 GbE| MC3309130-003 Mt | Passives Kupferkabel 1x SFP+ 10 GBit/s, 30 AWG \(3 m\) | Mellanox Technologies |
-| 35\. | 10 GbE| MC3309130-00A Mt | Passives Kupferkabel 1x SFP+ 10 GBit/s, 30 AWG \(0,5 m\) | Mellanox Technologies |
+| 28\. | 10 GbE| MC2309124-006 Mt | Passives Kupferkabel 1x SFP+ zu QSFP 10 GBit/s, 24awg (7 m) | Mellanox Technologies |
+| 29\. | 10 GbE| MC2309124-007 Mt | Passives Kupferkabel 1x SFP+ zu QSFP 10 GBit/s, 24awg (7 m) | Mellanox Technologies |
+| 30\. | 10 GbE| MC2309130-003 Mt | Passives Kupferkabel 1x SFP+ zu QSFP 10 GBit/s, 30 AWG (3 m) | Mellanox Technologies |
+| 31\. | 10 GbE| MC2309130-00A Mt | Passives Kupferkabel 1x SFP+ zu QSFP 10GBit/s, 30 AWG (0,5 m) | Mellanox Technologies |
+| 32\. | 10 GbE| MC3309124-005 Mt | Passives Kupferkabel 1x SFP+ 10 GBit/s, 24 AWG (5 m) | Mellanox Technologies |
+| 33\. | 10 GbE| MC3309124-007 Mt | Passives Kupferkabel 1x SFP+ 10 GBit/s, 24 AWG (7 m) | Mellanox Technologies |
+| 34\. | 10 GbE| MC3309130-003 Mt | Passives Kupferkabel 1x SFP+ 10 GBit/s, 30 AWG (3 m) | Mellanox Technologies |
+| 35\. | 10 GbE| MC3309130-00A Mt | Passives Kupferkabel 1x SFP+ 10 GBit/s, 30 AWG (0,5 m) | Mellanox Technologies |
 
 ### Liste der von Mellanox unterstützten Switches 
 
@@ -100,16 +100,16 @@ Die folgende Tabelle enthält die Switches, die von Mellanox unterstützt werden
 
 | S. Nr. | Geschwindigkeit | Modell | Beschreibung | Stellen |
 |--------|-------|-------------|---------------------------------------------------------------------|-------------|
-| 1\. | 10 GbE | 516733-B21 | HP ProCurve 6120XG Ethernet Blade Switch \(10 GbE\) | HP |
-| 2\. | 10 GbE | 538113-B21 | HP 10-GbE-Pass-Through-Modul \(PTM\) | HP |
-| 3\. | 10 GbE | EN4093 | IBM PureFlex System Fabric EN4093, Skalierbares Switch-Modul \(10 Gigabit\) | IBM |
-| 4\. | 1 GbE | 3020 | Cisco Catalyst 3020 Switch Blade \(1 GbE\) | Cisco |
-| 5\. | 1 GbE | 3020X | Cisco Catalyst 3020X Switch Blade \(1 GbE\) | Cisco |
-| 6\. | 1 GbE | 438030-B21 | HP Switch-Modul \(1 GbE\) – GbE2c Layer 2/3 Ethernet Blade Switch | HP |
-| 7\. | 1 GbE | 6120G | HP ProCurve 6120G/XG Switch Blade \(1 GbE\) | HP |
+| 1\. | 10 GbE | 516733-B21 | HP ProCurve 6120XG Ethernet Blade Switch (10 GbE) | HP |
+| 2\. | 10 GbE | 538113-B21 | HP 10-GbE-Pass-Through-Modul (PTM) | HP |
+| 3\. | 10 GbE | EN4093 | IBM PureFlex System Fabric EN4093, Skalierbares Switch-Modul (10 Gigabit) | IBM |
+| 4\. | 1 GbE | 3020 | Cisco Catalyst 3020 Switch Blade (1 GbE) | Cisco |
+| 5\. | 1 GbE | 3020X | Cisco Catalyst 3020X Switch Blade (1 GbE) | Cisco |
+| 6\. | 1 GbE | 438030-B21 | HP Switch-Modul (1 GbE) – GbE2c Layer 2/3 Ethernet Blade Switch | HP |
+| 7\. | 1 GbE | 6120G | HP ProCurve 6120G/XG Switch Blade (1 GbE) | HP |
 
 ## Nächste Schritte
 
 [Weitere Informationen zu StorSimple-Hardwarekomponenten](https://msdn.microsoft.com/library/azure/dn757755.aspx)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

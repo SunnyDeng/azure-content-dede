@@ -431,7 +431,7 @@ Zur besseren Organisation des Codes erstellen wir unsere erste einfache Funktion
 	num.month <- function(Year, Month) {
 	  ## Find the starting year
 	  min.year  <- min(Year)
-	
+
 	  ## Compute the number of months from the start of the time series
 	  12 * (Year - min.year) + Month - 1
 	}
@@ -460,31 +460,31 @@ Im folgenden Code definieren wir eine neue `log.transform()`-Funktion und wenden
 	log.transform <- function(invec, multiplier = 1) {
 	  ## Function for the transformation, which is the log
 	  ## of the input value times a multiplier
-	
+
 	  warningmessages <- c("ERROR: Non-numeric argument encountered in function log.transform",
 	                       "ERROR: Arguments to function log.transform must be greate than zero",
 	                       "ERROR: Aggurment multiplier to funcition log.transform must be a scaler",
 	                       "ERROR: Invalid time seies value encountered in function log.transform"
 	                       )
-	
+
 	  ## Check the input arguments
 	  if(!is.numeric(invec) | !is.numeric(multiplier)) {warning(warningmessages[1]); return(NA)}  
 	  if(any(invec < 0.0) | any(multiplier < 0.0)) {warning(warningmessages[2]); return(NA)}
 	  if(length(multiplier) != 1) {{warning(warningmessages[3]); return(NA)}}
-	
+
 	  ## Wrap the multiplication in tryCatch
 	  ## If there is an exception, print the warningmessage to
 	  ## standard error and return NA
 	  tryCatch(log(multiplier * invec),
 	           error = function(e){warning(warningmessages[4]); NA})
 	}
-	
-	
+
+
 	## Apply the transformation function to the 4 columns
 	## of the dataframe with production data
 	multipliers  <- list(1.0, 6.5, 1000.0, 1000.0)
 	cadairydata[, 4:7] <- Map(log.transform, cadairydata[, 4:7], multipliers)
-	
+
 	## Get rid of any rows with NA values
 	cadairydata <- na.omit(cadairydata)  
 
@@ -522,8 +522,7 @@ Der vollständige R-Code für diesen Abschnitt befindet sich in der ZIP-Datei, d
 
 Wie bereits erwähnt, sind Zeitreihen Reihen von Datenwerten, die einen Zeitindex besitzen. R-Zeitreihenobjekte dienen zum Erstellen und Verwalten des Zeitindex. Es gibt mehrere Vorteile bei der Verwendung von Zeitreihenobjekten. Zeitreihenobjekte übernehmen für Sie zahlreiche Details der Verwaltung der Zeitreihen-Indexwerte, die im Objekt gekapselt sind. Darüber hinaus ermöglichen Zeitreihenobjekte die Verwendung der zahlreichen Zeitreihenmethoden zum Plotten, Drucken, Modellieren usw.
 
-Die Zeitreihenklasse "POSIXct" wird häufig verwendet und ist relativ einfach. Diese Zeitreihenklasse misst die Zeit seit Beginn der Epoche, 1. Januar 1970. Wir verwenden in diesem Beispiel POSIXct-Zeitreihenobjekte. Andere weit verbreitete R-Zeitreihen-Objektklassen umfassen "zoo" und "xts" (für extensible time series, erweiterbare Zeitreihe). 
-<!-- Additional information on R time series objects is provided in the references in Section 5.7. [commenting because this section doesn't exist, even in the original] -->
+Die Zeitreihenklasse "POSIXct" wird häufig verwendet und ist relativ einfach. Diese Zeitreihenklasse misst die Zeit seit Beginn der Epoche, 1. Januar 1970. Wir verwenden in diesem Beispiel POSIXct-Zeitreihenobjekte. Andere weit verbreitete R-Zeitreihen-Objektklassen umfassen "zoo" und "xts" (für extensible time series, erweiterbare Zeitreihe). <!-- Additional information on R time series objects is provided in the references in Section 5.7. [commenting because this section doesn't exist, even in the original] -->
 
 ###	Beispiel für Zeitreihenobjekte
 
@@ -553,11 +552,11 @@ Wir müssen unserem Dataframe ein Zeitreihenobjekt hinzufügen. Ersetzen Sie den
 
 	# Comment the following if using RStudio
 	cadairydata <- maml.mapInputPort(1)
-	
+
 	## Create a new column as a POSIXct object
 	Sys.setenv(TZ = "PST8PDT")
 	cadairydata$Time <- as.POSIXct(strptime(paste(as.character(cadairydata$Year), "-", as.character(cadairydata$Month.Number), "-01 00:00:00", sep = ""), "%Y-%m-%d %H:%M:%S"))
-	
+
 	str(cadairydata) # Check the results
 
 Überprüfen Sie nun die "R Device"-Ausgabe. Diese sollte wie in Abbildung 15 aussehen.
@@ -590,7 +589,7 @@ Die unten dargestellte `ts.detrend()`-Funktion führt diesen beiden Vorgänge au
 
 	ts.detrend <- function(ts, Time, min.length = 3){
 	  ## Function to de-trend and standardize a time series
-	
+
 	  ## Define some messages if they are NULL  
 	  messages <- c('ERROR: ts.detrend requires arguments ts and Time to have the same length',
 	                'ERROR: ts.detrend requires argument ts to be of type numeric',
@@ -601,33 +600,33 @@ Die unten dargestellte `ts.detrend()`-Funktion führt diesen beiden Vorgänge au
   	)
 	  # Create a vector of zeros to return as a default in some cases
 	  zerovec  <- rep(length(ts), 0.0)
-	
+
 	  # The input arguments are not of the same length, return ts and quit
 	  if(length(Time) != length(ts)) {warning(messages[1]); return(ts)}
-	
+
 	  # If the ts is not numeric, just return a zero vector and quit
 	  if(!is.numeric(ts)) {warning(messages[2]); return(zerovec)}
-	
+
 	  # If the ts is too short, just return it and quit
 	  if((ts.length <- length(ts)) < min.length) {warning(messages[3]); return(ts)}
-	
+
 	  ## Check that the Time variable is of class POSIXct
 	  if(class(cadairydata$Time)[[1]] != "POSIXct") {warning(messages[4]); return(ts)}
-	
+
 	  ## De-trend the time series by using a linear model
 	  ts.frame  <- data.frame(ts = ts, Time = Time)
 	  tryCatch({ts <- ts - fitted(lm(ts ~ Time, data = ts.frame))},
 	           error = function(e){warning(messages[5]); zerovec})
-	
+
 	  tryCatch( {stdev <- sqrt(sum((ts - mean(ts))^2))/(ts.length - 1)
 	             ts <- ts/stdev},
 	            error = function(e){warning(messages[6]); zerovec})
-	
+
 	  ts
 	}  
 	## Apply the detrend.ts function to the variables of interest
 	df.detrend <- data.frame(lapply(cadairydata[, 4:7], ts.detrend, cadairydata$Time))
-	
+
 	## Plot the results to look at the relationships
 	pairs(~ Cotagecheese.Prod + Icecream.Prod + Milk.Prod + N.CA.Fat.Price, data = df.detrend, main = "Pairwise Scatterplots of detrended standardized time series")
 
@@ -654,13 +653,13 @@ Der Code zum Berechnen der Korrelationen als ccf-Objekte in R lautet wie folgt:
 	pair.cor <- function(pair.ind, ts.list, lag.max = 1, plot = FALSE){
 	  ccf(ts.list[[pair.ind[1]]], ts.list[[pair.ind[2]]], lag.max = lag.max, plot = plot)
 	}
-	
+
 	## A list of the pairwise indices
 	corpairs <- list(c(1,2), c(1,3), c(1,4), c(2,3), c(2,4), c(3,4))
-	
+
 	## Compute the list of ccf objects
 	cadairycorrelations <- lapply(corpairs, pair.cor, df.detrend)  
-	
+
 	cadairycorrelations
 
 Das Ausführen des Codes erzeugt die in Abbildung 18 dargestellte Ausgabe.
@@ -678,7 +677,7 @@ Wir haben die paarweisen Korrelationen als Liste von ccf-Objekten in R berechnet
 Der folgende Code extrahiert die Verzögerungswerte aus der Liste der ccf-Objekte, die ihrerseits aufgelistet werden:
 
 	df.correlations <- data.frame(do.call(rbind, lapply(cadairycorrelations, '[[', 1)))
-	
+
 	c.names <- c("-1 lag", "0 lag", "+1 lag")
 	r.names  <- c("Corr Cot Cheese - Ice Cream",
 	              "Corr Cot Cheese - Milk Prod",
@@ -686,14 +685,14 @@ Der folgende Code extrahiert die Verzögerungswerte aus der Liste der ccf-Objekt
 	              "Corr Ice Cream - Mik Prod",
 	              "Corr Ice Cream - Fat Price",
 	              "Corr Milk Prod - Fat Price")
-	
+
 	## Build a dataframe with the row names column and the
 	## correlation data frame and assign the column names
 	outframe <- cbind(r.names, df.correlations)
 	colnames(outframe) <- c.names
 	outframe
-	
-	
+
+
 	## WARNING!
 	## The following line works only in Azure Machine Learning
 	## When running in RStudio, this code will result in an error
@@ -735,11 +734,11 @@ Wie bei der gerade abgeschlossenen Korrelationsanalyse, müssen wir eine Spalte 
 
 	# If running in Machine Learning Studio, uncomment the first line with maml.mapInputPort()
 	cadairydata <- maml.mapInputPort(1)
-	
+
 	## Create a new column as a POSIXct object
 	Sys.setenv(TZ = "PST8PDT")
 	cadairydata$Time <- as.POSIXct(strptime(paste(as.character(cadairydata$Year), "-", as.character(cadairydata$Month.Number), "-01 00:00:00", sep = ""), "%Y-%m-%d %H:%M:%S"))
-	
+
 	str(cadairydata)
 
 Führen Sie diesen Code aus, und sehen Sie sich den "R Device"-Ausgabeport an. Das Ergebnis sollte wie in Abbildung 21 aussehen.
@@ -755,12 +754,12 @@ Mit diesem Ergebnis sind wir bereit, um unsere Analyse zu starten.
 Mit dem erzeugten Dataframe müssen wir ein Trainings-Dataset erstellen. Diese Daten enthalten dann alle Beobachtungen im Jahr 2013, außer den letzten 12, bei denen es sich um unser Testdataset handelt. Der folgende Code unterteilt das Dataframe in Teilmengen und erstellt grafische Darstellungen der Milchproduktions- und -preisvariablen. Anschließend erstellen wir grafische Darstellungen der vier Produktions- und Preisvariablen. Es wird eine anonyme Funktion verwendet, um einige Argumente zur grafischen Darstellung zu definieren und dann eine Iteration durch die Liste der anderen beiden Argumente mit `Map()` durchzuführen. Wenn Sie der Meinung sind, dass an dieser Stelle auch eine For-Schleife gut funktioniert hätte, liegen Sie richtig. Aber da R eine funktionale Sprache ist, zeigen wir Ihnen hier einen funktionalen Ansatz.
 
 	cadairytrain <- cadairydata[1:216, ]
-	
+
 	Ylabs  <- list("Log CA Cotage Cheese Production, 1000s lb",
 	               "Log CA Ice Cream Production, 1000s lb",
 	               "Log CA Milk Production 1000s lb",
 	               "Log North CA Milk Milk Fat Price per 1000 lb")
-	
+
 	Map(function(y, Ylabs){plot(cadairytrain$Time, y, xlab = "Time", ylab = Ylabs, type = "l")}, cadairytrain[, 4:7], Ylabs)
 
 Das Ausführen des Codes erzeugt die Serie von Zeitreihengrafiken aus der "R Device"-Ausgabe, die in Abbildung 22 dargestellt sind. Beachten Sie, dass die Einheit der Zeitachse Daten sind, ein praktischer Vorteil der Zeitreihen-Plotmethode.
@@ -810,7 +809,7 @@ Diese generiert Folgendes:
 	## Multiple R-squared:  0.941,	Adjusted R-squared:  0.94
 	## F-statistic: 1.12e+03 on 3 and 212 DF,  p-value: <2e-16
 
-An den p-Werten(Pr(>|t|)) in dieser Ausgabe können wir erkennen, dass der quadrierte Term möglicherweise nicht signifikant ist. Wir verwenden die `update()`-Funktion zum Ändern dieses Modells, indem wir den quadrierten Term löschen.
+An den p-Werten (Pr(>|t|)) in dieser Ausgabe können wir erkennen, dass der quadrierte Term möglicherweise nicht signifikant ist. Wir verwenden die `update()`-Funktion zum Ändern dieses Modells, indem wir den quadrierten Term löschen.
 
 	milk.lm <- update(milk.lm, . ~ . - I(Month.Count^2))
 	summary(milk.lm)
@@ -842,7 +841,7 @@ Das sieht schon besser aus. Alle Terme sind signifikant. Der "2e-16"-Wert ist ab
 Als Funktionstest erstellen wir eine Zeitreihengrafik der kalifornischen Milchproduktionsdaten mit der angezeigten Trendkurve. Ich habe den folgenden Code im [Execute R Script][execute-r-script]-Modul von Azure Machine Learning (nicht in RStudio) hinzugefügt, um das Modell sowie eine Grafik davon zu erstellen. Das Ergebnis wird in Abbildung 23 dargestellt.
 
 	milk.lm <- lm(Milk.Prod ~ Time + I(Month.Count^3), data = cadairytrain)
-	
+
 	plot(cadairytrain$Time, cadairytrain$Milk.Prod, xlab = "Time", ylab = "Log CA Milk Production 1000s lb", type = "l")
 	lines(cadairytrain$Time, predict(milk.lm, cadairytrain), lty = 2, col = 2)
 
@@ -900,7 +899,7 @@ Wir sehen, dass das Modell keinen konstanten Gliedterm mehr und 12 signifikante 
 Lassen Sie uns eine weitere Zeitreihengrafik der kalifornischen Milchproduktionsdaten erstellen, um zu sehen, wie gut das saisonale Modell funktioniert. Ich habe den folgenden Code im [Execute R Script][execute-r-script]-Modul von Azure Machine Learning hinzugefügt, um das Modell sowie eine Grafik davon zu erstellen.
 
 	milk.lm2 <- lm(Milk.Prod ~ Time + I(Month.Count^3) + Month - 1, data = cadairytrain)
-	
+
 	plot(cadairytrain$Time, cadairytrain$Milk.Prod, xlab = "Time", ylab = "Log CA Milk Production 1000s lb", type = "l")
 	lines(cadairytrain$Time, predict(milk.lm2, cadairytrain), lty = 2, col = 2)
 
@@ -917,7 +916,7 @@ Als weiteren Test unseres Modells sehen wir uns die Residuen an. Der folgende Co
 	## Compute predictions from our models
 	predict1  <- predict(milk.lm, cadairydata)
 	predict2  <- predict(milk.lm2, cadairydata)
-	
+
 	## Compute and plot the residuals
 	residuals <- cadairydata$Milk.Prod - predict2
 	plot(cadairytrain$Time, residuals[1:216], xlab = "Time", ylab ="Residuals of Seasonal Model")
@@ -960,21 +959,21 @@ Eine Reihe von Metriken wird zum Messen der Leistung von Zeitreihenmodellen verw
 	RMS.error <- function(series1, series2, is.log = TRUE, min.length = 2){
 	  ## Function to compute the RMS error or difference between two
 	  ## series or vectors
-	
+
 	  messages <- c("ERROR: Input arguments to function RMS.error of wrong type encountered",
 	                "ERROR: Input vector to function RMS.error is too short",
 	                "ERROR: Input vectors to function RMS.error must be of same length",
 	                "WARNING: Funtion rms.error has received invald input time series.")
-	
+
 	  ## Check the arguments
 	  if(!is.numeric(series1) | !is.numeric(series2) | !is.logical(is.log) | !is.numeric(min.length)) {
     	warning(messages[1])
 	    return(NA)}
-	
+
 	  if(length(series1) < min.length) {
     	warning(messages[2])
 	    return(NA)}
-	
+
 	  if((length(series1) != length(series2))) {
 	   	warning(messages[3])
 	    return(NA)}
@@ -994,7 +993,7 @@ Eine Reihe von Metriken wird zum Messen der Leistung von Zeitreihenmodellen verw
 	 ## Compute predictions from our models
 	predict1  <- predict(milk.lm, cadairydata)
 	predict2  <- predict(milk.lm2, cadairydata)
-	
+
 	## Compute the RMS error in a dataframe
 	  tryCatch( {
 	    sqrt(sum((temp1 - temp2)^2) / length(temp1))},
@@ -1018,7 +1017,7 @@ Ausgestattet mit einer Funktion zum Messen des RMS-Fehlers, erstellen wir nun ei
 	    RMS.error(predict2[217:228], cadairydata$Milk.Prod[217:228]))
 	)
 	RMS.df
-	
+
 	## The following line should be executed only when running in
 	## Azure Machine Learning Studio
 	maml.mapOutputPort('RMS.df')
@@ -1116,6 +1115,5 @@ Einige weitere nützliche Internetressourcen:
 
 <!-- Module References -->
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
- 
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

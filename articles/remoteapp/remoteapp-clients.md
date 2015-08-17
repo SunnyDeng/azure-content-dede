@@ -2,7 +2,7 @@
 <properties
     pageTitle="Zugreifen auf Apps"
     description="Sie erfahren, welche Clients für Azure RemoteApp unterstützt werden und wie Sie auf Ihre Apps zugreifen."
-    services="remoteapp"
+    services="remoteapp" 
 	documentationCenter=""
     authors="lizap"
     manager="mbaldwin" />
@@ -58,7 +58,7 @@ Nachdem Sie den Client auf Ihrem Gerät installiert und gestartet haben, können
 
 Nachdem Sie die Microsoft Remotedesktop-App aus dem Google Play Store installiert haben, wird sie in Ihrer App-Liste unter **Remotedesktop** aufgeführt.
 
-1. Wenn Sie die App starten, gelangen Sie zu einem leeren Connection Center, es sei denn, Sie haben die App bereits verwendet. Um Azure RemoteApp zu verwenden, tippen Sie auf die Schaltfläche „Hinzufügen“ \(**""+""**\) und dann auf **Azure RemoteApp**.	
+1. Wenn Sie die App starten, gelangen Sie zu einem leeren Connection Center, es sei denn, Sie haben die App bereits verwendet. Um Azure RemoteApp zu verwenden, tippen Sie auf die Schaltfläche „Hinzufügen“ (**""+""**) und dann auf **Azure RemoteApp**.	
 
 	 ![Leeres Connection Center](./media/remoteapp-clients/Android1.png)
 
@@ -70,7 +70,7 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem Google Play Store installier
 
 	![Erste Azure Active Directory-Seite](./media/remoteapp-clients/Android3.png)
 
-4. Folgen Sie den Anweisungen auf dem Bildschirm, um sich mit Ihrem Microsoft-Konto \(früher „LiveID“ genannt\) oder Ihrer Unternehmens-ID anzumelden. Nach der Anmeldung wird unter Umständen eine Seite angezeigt, auf der alle Einladungen aufgeführt sind, die Sie erhalten haben. Wenn dies der Fall ist, können Sie die Einladungen auswählen, denen Sie vertrauen, und auf **Fertig** tippen.
+4. Folgen Sie den Anweisungen auf dem Bildschirm, um sich mit Ihrem Microsoft-Konto (früher „LiveID“ genannt) oder Ihrer Unternehmens-ID anzumelden. Nach der Anmeldung wird unter Umständen eine Seite angezeigt, auf der alle Einladungen aufgeführt sind, die Sie erhalten haben. Wenn dies der Fall ist, können Sie die Einladungen auswählen, denen Sie vertrauen, und auf **Fertig** tippen.
 
 	![Seite „Einladungen“](./media/remoteapp-clients/Android4.png)
 
@@ -90,7 +90,7 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem Google Play Store installier
 
 Nachdem Sie die Microsoft Remotedesktop-App aus dem App Store installiert haben, wird sie in Ihrer App-Liste unter **RD-Client** aufgeführt.
 
-1. Wenn Sie die App starten, gelangen Sie zu einem leeren Connection Center, es sei denn, Sie haben die App bereits verwendet. Um Azure RemoteApp zu verwenden, tippen Sie auf die Schaltfläche „Hinzufügen“ \(**""+""**\) und dann auf **Azure RemoteApp hinzufügen**.
+1. Wenn Sie die App starten, gelangen Sie zu einem leeren Connection Center, es sei denn, Sie haben die App bereits verwendet. Um Azure RemoteApp zu verwenden, tippen Sie auf die Schaltfläche „Hinzufügen“ (**""+""**) und dann auf **Azure RemoteApp hinzufügen**.
 
 	![Leeres Connection Center](./media/remoteapp-clients/IOS1.png)
 
@@ -98,7 +98,7 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem App Store installiert haben,
 
 	![Eingabeaufforderung zur Anmeldung](./media/remoteapp-clients/picture1.png)
 
-3. Folgen Sie den Anweisungen auf dem Bildschirm, um sich mit Ihrem Microsoft-Konto \(LiveID\) oder Ihrer Unternehmens-ID anzumelden. Nach der Anmeldung wird unter Umständen eine Seite angezeigt, auf der alle Einladungen aufgeführt sind, die Sie erhalten haben. Wenn dies der Fall ist, können Sie die Einladungen auswählen, denen Sie vertrauen, und auf **Fertig** tippen.
+3. Folgen Sie den Anweisungen auf dem Bildschirm, um sich mit Ihrem Microsoft-Konto (LiveID) oder Ihrer Unternehmens-ID anzumelden. Nach der Anmeldung wird unter Umständen eine Seite angezeigt, auf der alle Einladungen aufgeführt sind, die Sie erhalten haben. Wenn dies der Fall ist, können Sie die Einladungen auswählen, denen Sie vertrauen, und auf **Fertig** tippen.
 
 	![Seite „Einladungen“](./media/remoteapp-clients/IOS3.png)
 
@@ -130,7 +130,7 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem App Store installiert haben,
 
 	![Erste Azure Active Directory-Seite](./media/remoteapp-clients/picture2.png)
 
-4. Folgen Sie den Anweisungen auf dem Bildschirm, um sich mit Ihrem Microsoft-Konto \(LiveID\) oder Ihrer Unternehmens-ID anzumelden. Nach der Anmeldung wird unter Umständen eine Seite angezeigt, auf der alle Einladungen aufgeführt sind, die Sie erhalten haben. Wenn dies der Fall ist, können Sie die Einladungen auswählen, denen Sie vertrauen, und das Dialogfeld schließen.
+4. Folgen Sie den Anweisungen auf dem Bildschirm, um sich mit Ihrem Microsoft-Konto (LiveID) oder Ihrer Unternehmens-ID anzumelden. Nach der Anmeldung wird unter Umständen eine Seite angezeigt, auf der alle Einladungen aufgeführt sind, die Sie erhalten haben. Wenn dies der Fall ist, können Sie die Einladungen auswählen, denen Sie vertrauen, und das Dialogfeld schließen.
 
 	![Seite „Einladungen“](./media/remoteapp-clients/Mac4.png)
 
@@ -146,7 +146,7 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem App Store installiert haben,
 
 	![Demofeed für Azure RemoteApp](./media/remoteapp-clients/Mac7.png)
 
-## Windows \(alle unterstützten Versionen außer Windows Phone\)
+## Windows (alle unterstützten Versionen außer Windows Phone)
 
 Der Client wird nach Abschluss der Installation automatisch gestartet. Wenn Sie später erneut darauf zugreifen möchten, finden Sie ihn in der App-Liste unter dem Namen **Azure RemoteApp**.
 
@@ -158,7 +158,7 @@ Der Client wird nach Abschluss der Installation automatisch gestartet. Wenn Sie 
 
 	![Erste Azure Active Directory-Eingabeaufforderung](./media/remoteapp-clients/Windows2.png)
 
-3. Folgen Sie den Anweisungen auf dem Bildschirm, um sich mit Ihrem Microsoft-Konto \(LiveID\) oder Ihrer Unternehmens-ID anzumelden. Nach der Anmeldung wird unter Umständen eine Seite angezeigt, auf der alle Einladungen aufgeführt sind, die Sie erhalten haben. Wenn dies der Fall ist, können Sie die Einladungen auswählen, denen Sie vertrauen, und auf **Fertig** klicken.
+3. Folgen Sie den Anweisungen auf dem Bildschirm, um sich mit Ihrem Microsoft-Konto (LiveID) oder Ihrer Unternehmens-ID anzumelden. Nach der Anmeldung wird unter Umständen eine Seite angezeigt, auf der alle Einladungen aufgeführt sind, die Sie erhalten haben. Wenn dies der Fall ist, können Sie die Einladungen auswählen, denen Sie vertrauen, und auf **Fertig** klicken.
 
 	![Seite „Einladungen“ des Azure RemoteApp-Clients](./media/remoteapp-clients/Windows3.png)
 
@@ -174,7 +174,7 @@ Der Client wird nach Abschluss der Installation automatisch gestartet. Wenn Sie 
 
 Nachdem Sie die Microsoft Remotedesktop-App aus dem Windows Phone 8.1 Store installiert haben, wird sie in Ihrer App-Liste unter **Remotedesktop** aufgeführt.
 
-1. Wenn Sie die App starten, gelangen Sie direkt zu einem leeren Connection Center, es sei denn, Sie haben die App bereits verwendet. Um Azure RemoteApp zu verwenden, tippen Sie unten auf dem Bildschirm auf die Schaltfläche „Hinzufügen“ \(**""+""**\).
+1. Wenn Sie die App starten, gelangen Sie direkt zu einem leeren Connection Center, es sei denn, Sie haben die App bereits verwendet. Um Azure RemoteApp zu verwenden, tippen Sie unten auf dem Bildschirm auf die Schaltfläche „Hinzufügen“ (**""+""**).
 
 	![Leeres Connection Center](./media/remoteapp-clients/WinPhone1.png)
 
@@ -190,7 +190,7 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem Windows Phone 8.1 Store ins
 
 	![Erste Azure Active Directory-Seite](./media/remoteapp-clients/WinPhone4.png)
 
-5. Folgen Sie den Anweisungen auf dem Bildschirm, um sich mit Ihrem Microsoft-Konto \(LiveID\) oder Ihrer Unternehmens-ID anzumelden. Nach der Anmeldung wird unter Umständen eine Seite angezeigt, auf der alle Einladungen aufgeführt sind, die Sie erhalten haben. Wenn dies der Fall ist, können Sie die Einladungen auswählen, denen Sie vertrauen, und auf **Speichern** tippen.
+5. Folgen Sie den Anweisungen auf dem Bildschirm, um sich mit Ihrem Microsoft-Konto (LiveID) oder Ihrer Unternehmens-ID anzumelden. Nach der Anmeldung wird unter Umständen eine Seite angezeigt, auf der alle Einladungen aufgeführt sind, die Sie erhalten haben. Wenn dies der Fall ist, können Sie die Einladungen auswählen, denen Sie vertrauen, und auf **Speichern** tippen.
 
 	![Seite „Einladungen“](./media/remoteapp-clients/WinPhone5.png)
 
@@ -207,4 +207,4 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem Windows Phone 8.1 Store ins
 	![Demofeed für Azure RemoteApp](./media/remoteapp-clients/WinPhone8.png)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

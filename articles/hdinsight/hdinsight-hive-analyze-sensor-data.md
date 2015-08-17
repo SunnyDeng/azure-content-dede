@@ -18,7 +18,7 @@
 
 #Analysieren von Sensordaten mit der Hive-Abfragekonsole für Hadoop in HDInsight
 
-Erfahren Sie, wie Sie Sensordaten mithilfe der Hive-Abfragekonsole in HDInsight \(Hadoop\) analysieren und die Daten anschließend in Microsoft Excel mithilfe von Power View visualisieren können.
+Erfahren Sie, wie Sie Sensordaten mithilfe der Hive-Abfragekonsole in HDInsight (Hadoop) analysieren und die Daten anschließend in Microsoft Excel mithilfe von Power View visualisieren können.
 
 > [AZURE.NOTE]Die Schritte in diesem Dokument funktionieren nur mit einem Windows-basierten HDInsight-Cluster.
 
@@ -26,16 +26,16 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 - Erstellen von HIVE-Tabellen zum Abfragen von Daten in CSV-Dateien
 - Erstellen von HIVE-Abfragen zum Analysieren der Daten
-- Verwenden von Microsoft Excel zum Herstellen einer Verbindung mit HDInsight \(über eine offene Datenbankverbindung \(ODBC\)\), um die analysierten Daten abzurufen
+- Verwenden von Microsoft Excel zum Herstellen einer Verbindung mit HDInsight (über eine offene Datenbankverbindung (ODBC)), um die analysierten Daten abzurufen
 - Verwenden von Power View zum Visualisieren der Daten
 
 ![Ein Diagramm der Lösungsarchitektur](./media/hdinsight-hive-analyze-sensor-data/hvac-architecture.png)
 
 ##Voraussetzungen
 
-* Ein HDInsight-Cluster \(Hadoop\): Unter [Bereitstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md) finden Sie weitere Informationen zur Erstellung von Clustern.
+* Ein HDInsight-Cluster (Hadoop): Unter [Bereitstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md) finden Sie weitere Informationen zur Erstellung von Clustern.
 
-* Microsoft Excel 2013 \(PowerPivot für Datenanalysten – Microsoft Excel 2010\)
+* Microsoft Excel 2013 (PowerPivot für Datenanalysten – Microsoft Excel 2010)
 
 	> [AZURE.NOTE]Microsoft Excel dient zur Visualisierung von Daten mithilfe von [Power View](https://support.office.com/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=en-US&rs=en-US&ad=US).
 
@@ -53,4 +53,4 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 3. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

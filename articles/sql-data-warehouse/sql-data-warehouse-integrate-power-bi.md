@@ -64,4 +64,4 @@ Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Inte
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

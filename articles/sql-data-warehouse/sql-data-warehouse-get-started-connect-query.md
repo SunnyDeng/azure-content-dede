@@ -7,14 +7,16 @@
    manager="barbkess"
    editor=""/>
 
+
 <tags
    ms.service="sql-data-warehouse"
    ms.devlang="NA"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="06/23/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+
    
 # Erste Schritte: Verbinden mit SQL Data Warehouse
 In diesem Artikel für den Schnelleinstieg ist dargestellt, wie Sie mit zwei verschiedenen Tools eine Verbindung mit einer bereitgestellten Instanz von SQL Data Warehouse herstellen und Abfragen an diese durchführen:
@@ -105,9 +107,7 @@ Der SQL Server-Objekt-Explorer wird angezeigt:
 
 3. Klicken Sie im SQL Server-Objekt-Explorer auf die Schaltfläche "Server hinzufügen". Dies ist in der folgenden Abbildung hervorgehoben:
 
-4. Füllen Sie das Dialogfeld "Mit Server verbinden" aus.
-
-Verwenden Sie die Werte, die Sie beim Erstellen des logischen Servers ausgewählt haben.
+4. Füllen Sie das Dialogfeld "Verbindung mit Server" mit den Werten auf, die Sie beim Erstellen des logischen Servers ausgewählt haben. Klicken Sie außerdem auf die Schaltfläche "Optionen", und geben Sie vor dem Herstellen einer Verbindung die Datenbank an, zu der Sie eine Verbindung herstellen (Ihre SQL Data Warehouse-Instanz).
 
 Sie können bei Bedarf das Kontrollkästchen "Kennwort speichern" aktivieren. Sie sparen so natürlich Zeit, aber denken Sie daran, dass dadurch jede Person mit physischem Zugriff auf Ihr Profil über dieses Konto Abfragen durchführen kann.
 
@@ -185,6 +185,7 @@ Da wir jetzt unseren Server registriert haben, fahren wir mit dem Schreiben eine
 	Zum Ausführen der Abfrage klicken Sie unten auf den grünen Pfeil, oder Sie verwenden die folgende Tastenkombination `CTRL`+`SHIFT`+`F5`:
 
 ## Nächste Schritte ##
+[Load sample data.]: ./sql-data-warehouse-get-started-load-samples.md
 [Start developing code]: ./articles/sql-data-warehouse-overview-develop/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

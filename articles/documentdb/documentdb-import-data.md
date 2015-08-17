@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Importieren von Daten in DocumentDB | Azure" 
+	pageTitle="Importieren von Daten in DocumentDB | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie das Open-Source-basierte DocumentDB-Datenmigrationstool verwenden, um Daten aus verschiedenen Quellen, z. B. JSON-Dateien, CSV-Dateien, SQL, MongoDB, Azure-Tabellenspeicher, Amazon DynamoDB und DocumentDB-Sammlungen, in DocumentDB zu importieren." 
 	services="documentdb" 
 	authors="stephbaron" 
-	manager="johnmac" 
+	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter=""/>
+
 
 <tags 
 	ms.service="documentdb" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/10/2015" 
 	ms.author="stbaro"/>
+
 
 # Importieren von Daten in DocumentDB #
 
@@ -72,13 +74,13 @@ Hier finden Sie einige Beispiele für Befehlszeilen zum Importieren von JSON-Dat
 	dt.exe /s:JsonFile /s.Files:.\Sessions.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Sessions /t.CollectionTier:S3
 
 	#Import a directory of JSON files
-	dt.exe /s:JsonFile /s.Files:C:\TESessions*.json /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Sessions /t.CollectionTier:S3
+	dt.exe /s:JsonFile /s.Files:C:\TESessions\*.json /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Sessions /t.CollectionTier:S3
 
 	#Import a directory (including sub-directories) of JSON files
-	dt.exe /s:JsonFile /s.Files:C:\LastFMMusic***.json /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Music /t.CollectionTier:S3
+	dt.exe /s:JsonFile /s.Files:C:\LastFMMusic\**\*.json /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Music /t.CollectionTier:S3
 
 	#Import a directory (single), directory (recursive), and individual JSON files
-	dt.exe /s:JsonFile /s.Files:C:\Tweets*.*;C:\LargeDocs***.*;C:\TESessions\Session48172.json;C:\TESessions\Session48173.json;C:\TESessions\Session48174.json;C:\TESessions\Session48175.json;C:\TESessions\Session48177.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:subs /t.CollectionTier:S3
+	dt.exe /s:JsonFile /s.Files:C:\Tweets\*.*;C:\LargeDocs\**\*.*;C:\TESessions\Session48172.json;C:\TESessions\Session48173.json;C:\TESessions\Session48174.json;C:\TESessions\Session48175.json;C:\TESessions\Session48177.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:subs /t.CollectionTier:S3
 
 	#Import a single JSON file and partition the data across 4 collections
 	dt.exe /s:JsonFile /s.Files:D:\\CompanyData\\Companies.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:comp[1-4] /t.PartitionKey:name /t.CollectionTier:S3
@@ -137,20 +139,7 @@ Diese Abfrage gibt die folgenden (partiellen) Ergebnisse zurück:
 
 Beachten Sie die Aliase, wie z. B. Address.AddressType und Address.Location.StateProvinceName. Durch Angabe des Schachtelungstrennzeichens "." erstellt das Importtool während des Imports die Filialdokumente "Address" und "Address.Location". Hier finden Sie ein Beispiel für ein Zieldokument in DocumentDB:
 
-*{
-  "id": "956",
-  "Name": "Finer Sales and Service",
-  "Address": {
-    "AddressType": "Main Office",
-    "AddressLine1": "#500-75 O'Connor Street",
-    "Location": {
-      "City": "Ottawa",
-      "StateProvinceName": "Ontario"
-    },
-    "PostalCode": "K4B 1S2",
-    "CountryRegionName": "Canada"
-  }
-}*
+*{ "id": "956", "Name": "Finer Sales and Service", "Address": { "AddressType": "Main Office", "AddressLine1": "#500-75 O'Connor Street", "Location": { "City": "Ottawa", "StateProvinceName": "Ontario" }, "PostalCode": "K4B 1S2", "CountryRegionName": "Canada" } }*
  
 Hier finden Sie einige Beispiele für Befehlszeilen zum Importieren aus SQL Server:
 
@@ -170,20 +159,9 @@ Mit der Importprogrammoption für CSV-Dateiquellen können Sie eine oder mehrere
 
 ![Screenshot der CSV-Beispieldatensätze](./media/documentdb-import-data/csvsample.png)
 
-Beachten Sie die Aliase wie z. B."DomainInfo.Domain_Name" und "RedirectInfo.Redirecting". Durch Angabe des Schachtelungstrennzeichens "." erstellt das Importtool während des Imports die Filialdokumente "DomainInfo" und "RedirectInfo". Hier finden Sie ein Beispiel für ein Zieldokument in DocumentDB:
+Beachten Sie die Aliase wie z. B."DomainInfo.Domain\_Name" und "RedirectInfo.Redirecting". Durch Angabe des Schachtelungstrennzeichens "." erstellt das Importtool während des Imports die Filialdokumente "DomainInfo" und "RedirectInfo". Hier finden Sie ein Beispiel für ein Zieldokument in DocumentDB:
 
-*{
-  "DomainInfo": {
-    "Domain_Name": "ACUS.GOV",
-    "Domain_Name_Address": "http://www.ACUS.GOV"
-  },
-  "Federal Agency": "Administrative Conference of the United States",
-  "RedirectInfo": {
-    "Redirecting": "0",
-    "Redirect_Destination": ""
-  },
-  "id": "9cc565c5-ebcd-1c03-ebd3-cc3e2ecd814d"
-}*
+*{ "DomainInfo": { "Domain\_Name": "ACUS.GOV", "Domain\_Name\_Address": "http://www.ACUS.GOV" }, "Federal Agency": "Administrative Conference of the United States", "RedirectInfo": { "Redirecting": "0", "Redirect\_Destination": "" }, "id": "9cc565c5-ebcd-1c03-ebd3-cc3e2ecd814d" }*
 
 Das Importtool versucht, Typinformationen für Werte ohne Anführungszeichen in CSV-Dateien abzuleiten (Werte in Anführungszeichen werden immer als Zeichenfolgen behandelt). Typen werden in der folgenden Reihenfolge identifiziert: number, datetime, boolean.
 
@@ -271,7 +249,7 @@ Zum Importieren von Daten aus einer einzelnen DocumentDB-Sammlung geben Sie den 
 
 Die Importprogrammoption für DocumentDB-Quellen weist die folgenden erweiterten Optionen auf:
 
-1. Interne Felder einschließen: Gibt an, ob DocumentDB-Dokumentsystemeigenschaften (z. B. _rid,_ts) in den Export eingeschlossen werden oder nicht.
+1. Interne Felder einschließen: Gibt an, ob DocumentDB-Dokumentsystemeigenschaften (z. B. \_rid, \_ts) in den Export eingeschlossen werden oder nicht.
 2. Anzahl der Wiederholungsversuche bei Fehler: Gibt an, wie häufig bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) versucht werden soll, eine Verbindung zu DocumentDB herzustellen.
 3. Intervall der Wiederholungsversuche: Gibt an, wie lang bei einem vorübergehenden Fehler (z. B. Unterbrechung der Netzwerkverbindung) gewartet werden soll, bevor erneut versucht wird, eine Verbindung zu DocumentDB herzustellen.
 4. Verbindungsmodus: Gibt den Verbindungsmodus an, der mit DocumentDB verwendet werden soll. Verfügbare Optionen sind DirectTcp, DirectHttps und Gateway. Die Direktverbindungsmodi sind schneller, der Gatewaymodus ist besser für Firewalls geeignet, da nur Port 443 verwendet wird.
@@ -346,7 +324,7 @@ Darüber hinaus können Sie beim Importieren von Datentypen (z. B. aus SQL Serve
 
 -	Zeichenfolge: Als Zeichenfolgenwert beibehalten
 -	Epoche: Als numerischen Epochenwert beibehalten
--	Beide: Sowohl als Zeichenfolgen- als auch als numerischen Epochenwert beibehalten Diese Option erstellt ein Filialdokument, zum Beispiel: "date_joined": { "Value": "2013-10-21T21:17:25.2410000Z", "Epoch": 1382390245 } 
+-	Beide: Sowohl als Zeichenfolgen- als auch als numerischen Epochenwert beibehalten Diese Option erstellt ein Filialdokument, zum Beispiel: "date\_joined": { "Value": "2013-10-21T21:17:25.2410000Z", "Epoch": 1382390245 } 
 
 
 Das DocumentDB-Massenimportprogramm weist die folgenden erweiterten Optionen auf:
@@ -394,7 +372,7 @@ Während des Imports steht eine Reihe von erweiterten Optionen zur Verfügung. S
 
 -	Zeichenfolge: Als Zeichenfolgenwert beibehalten
 -	Epoche: Als numerischen Epochenwert beibehalten
--	Beide: Sowohl als Zeichenfolgen- als auch als numerischen Epochenwert beibehalten Diese Option erstellt ein Filialdokument, zum Beispiel: "date_joined": { "Value": "2013-10-21T21:17:25.2410000Z", "Epoch": 1382390245 } 
+-	Beide: Sowohl als Zeichenfolgen- als auch als numerischen Epochenwert beibehalten Diese Option erstellt ein Filialdokument, zum Beispiel: "date\_joined": { "Value": "2013-10-21T21:17:25.2410000Z", "Epoch": 1382390245 } 
 
 Das Programm für den Import von sequenziellen DocumentDB-Datensätzen weist die folgenden erweiterten Optionen auf:
 
@@ -501,4 +479,4 @@ Geben Sie auf dem Bildschirm "Erweiterte Konfiguration" den Speicherort der Prot
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

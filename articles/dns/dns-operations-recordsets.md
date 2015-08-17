@@ -7,6 +7,7 @@
    manager="Adinah" 
    editor=""/>
 
+
 <tags
    ms.service="dns"
    ms.devlang="en"
@@ -16,6 +17,7 @@
    ms.date="05/01/2015"
    ms.author="joaoma"/>
 
+
 # Verwalten von DNS-Einträgen
 
 Diese Anleitung zeigt, wie Sie Datensatzgruppen und Einträge für die DNS-Zone verwalten.
@@ -24,7 +26,7 @@ Es ist wichtig, den Unterschied zwischen DNS-Datensatzgruppen und einzelnen DNS-
 
 ## Erstellen einer Datensatzgruppe
 
-Datensatzgruppen werden mit dem Cmdlet "New-AzureDnsRecordSet" erstellt. Sie müssen den Namen der Datensatzgruppe, die Zone, die Gültigkeitsdauer \(TTL\) und den Eintragstyp angeben.
+Datensatzgruppen werden mit dem Cmdlet "New-AzureDnsRecordSet" erstellt. Sie müssen den Namen der Datensatzgruppe, die Zone, die Gültigkeitsdauer (TTL) und den Eintragstyp angeben.
 
 >[AZURE.NOTE]Der Name der Datensatzgruppe muss ein relativer Name ohne Zonenname sein. Der Name der Datensatzgruppe "www" in der Zone "contoso.com" erstellt beispielsweise eine Datensatzgruppe mit dem vollqualifizierten Namen "www.contoso.com".
 
@@ -42,10 +44,10 @@ Im obigen Beispiel wird die Zone mithilfe eines Zonenobjekts angegeben, das von 
 
 Mit New-AzureDnsRecordSet wird ein lokales Objekt zurückgegeben, das die in Azure DNS erstellte Datensatzgruppe darstellt.
 
->[AZURE.NOTE]CNAME-Datensatzgruppen können nicht gleichzeitig neben anderen Datensatzgruppen mit dem gleichen Namen vorhanden sein. Sie können z. B. nicht CNAME mit dem relativen Namen "www" und einen A-Eintrag mit dem relativen Namen "www" gleichzeitig erstellen. Da die Zonenspitze \(Name = " @"\) immer die NS- und SOA-Datensatzgruppen enthält, die beim Erstellen der Zone erstellt wurden, bedeutet dies, dass Sie keine CNAME-Datensatzgruppe an der Zonenspitze erstellen können. Diese Einschränkungen ergeben sich aus den DNS-Standards; sie sind keine Einschränkungen von Azure DNS.
+>[AZURE.NOTE]CNAME-Datensatzgruppen können nicht gleichzeitig neben anderen Datensatzgruppen mit dem gleichen Namen vorhanden sein. Sie können z. B. nicht CNAME mit dem relativen Namen "www" und einen A-Eintrag mit dem relativen Namen "www" gleichzeitig erstellen. Da die Zonenspitze (Name = " @") immer die NS- und SOA-Datensatzgruppen enthält, die beim Erstellen der Zone erstellt wurden, bedeutet dies, dass Sie keine CNAME-Datensatzgruppe an der Zonenspitze erstellen können. Diese Einschränkungen ergeben sich aus den DNS-Standards; sie sind keine Einschränkungen von Azure DNS.
 
 ### Platzhalterdatensätze
-Azure DNS unterstützt [Platzhalterdatensätze](https://en.wikipedia.org/wiki/Wildcard_DNS_record). Diese werden für alle Abfragen mit einem übereinstimmenden Namen zurückgegeben \(es sei denn, es gibt eine genauere Übereinstimmung aus einer Datensatzgruppe ohne Platzhalter\).
+Azure DNS unterstützt [Platzhalterdatensätze](https://en.wikipedia.org/wiki/Wildcard_DNS_record). Diese werden für alle Abfragen mit einem übereinstimmenden Namen zurückgegeben (es sei denn, es gibt eine genauere Übereinstimmung aus einer Datensatzgruppe ohne Platzhalter).
 
 >[AZURE.NOTE]Um eine Datensatzgruppe mit Platzhaltern zu erstellen, verwenden Sie den Namen der Datensatzgruppe „\*“ oder einen Namen, dessen Bezeichnung mit „\*“ beginnt, z. B. „\*.foo“.
 
@@ -56,7 +58,7 @@ Verwenden Sie "Get-AzureDnsRecordSet" zum Abrufen einer vorhandenen Datensatzgru
 
 	PS C:\> $rs = Get-AzureDnsRecordSet -Name www –RecordType A -Zone $zone
 
-Wie bei New-AzureDnsRecordSet muss der Name ein relativer Name sein, d. h., er darf nicht den Zonennamen enthalten. Die Zone kann entweder mithilfe eines Zonenobjekts \(wie oben\) oder durch den Zonennamen und den Namen der Ressourcengruppe angegeben werden:
+Wie bei New-AzureDnsRecordSet muss der Name ein relativer Name sein, d. h., er darf nicht den Zonennamen enthalten. Die Zone kann entweder mithilfe eines Zonenobjekts (wie oben) oder durch den Zonennamen und den Namen der Ressourcengruppe angegeben werden:
 
 	PS C:\> $rs = Get-AzureDnsRecordSet –Name www –RecordType A -Zonename contoso.com -ResourceGroupName MyAzureResourceGroup
 
@@ -71,18 +73,18 @@ Listen Sie alle Datensatzgruppen auf. Dadurch werden alle Datensatzgruppe zurüc
 	PS C:\> $list = Get-AzureDnsRecordSet -Zone $zone
 ### Option 2 
 
-Listen Sie Datensatzgruppen eines bestimmten Eintragstyps auf. Dadurch werden alle Datensatzgruppen zurückgegeben, die dem angegebenen Eintragstyp \(in diesem Fall A-Einträge\) entsprechen:
+Listen Sie Datensatzgruppen eines bestimmten Eintragstyps auf. Dadurch werden alle Datensatzgruppen zurückgegeben, die dem angegebenen Eintragstyp (in diesem Fall A-Einträge) entsprechen:
 
 	PS C:\> $list = Get-AzureDnsRecordSet –RecordType A -Zone $zone 
 
-In beiden Fällen kann die Zone entweder mit einem Zonenobjekt \(wie gezeigt\) oder durch die Parameter "–ZoneName" und "–ResourceGroupName" angegeben werden.
+In beiden Fällen kann die Zone entweder mit einem Zonenobjekt (wie gezeigt) oder durch die Parameter "–ZoneName" und "–ResourceGroupName" angegeben werden.
 
 ## Hinzufügen eines Eintrags zu einer Datensatzgruppe
 Einträge werden mithilfe des Cmdlets "Add-AzureDnsRecordConfig" den Datensatzgruppen hinzugefügt. Dies ist ein Offline-Vorgang; nur das lokale Objekt, das die Datensatzgruppe darstellt, wird geändert.
 
 Die Parameter zum Hinzufügen von Einträgen zu einer Datensatzgruppe variieren je nach Typ der Datensatzgruppe. Wenn Sie beispielsweise eine Datensatzgruppe vom Typ "A" verwenden, können Sie nur Einträge mit dem Parameter "IPv4Address" angeben.
 
-Weitere Einträge können jeder Datensatzgruppe hinzugefügt werden, indem Add-AzureDnsRecordConfig erneut aufgerufen wird. Sie können einer Datensatzgruppe bis zu 100 Einträge hinzufügen. Datensatzgruppen vom Typ "CNAME" können allerdings höchstens 1 Eintrag enthalten, und eine Datensatzgruppe darf nicht zwei identische Einträge enthalten. Leere Datensatzgruppen \(ohne Einträge\) können erstellt werden, sie werden jedoch nicht im Azure DNS-Namenserver angezeigt.
+Weitere Einträge können jeder Datensatzgruppe hinzugefügt werden, indem Add-AzureDnsRecordConfig erneut aufgerufen wird. Sie können einer Datensatzgruppe bis zu 100 Einträge hinzufügen. Datensatzgruppen vom Typ "CNAME" können allerdings höchstens 1 Eintrag enthalten, und eine Datensatzgruppe darf nicht zwei identische Einträge enthalten. Leere Datensatzgruppen (ohne Einträge) können erstellt werden, sie werden jedoch nicht im Azure DNS-Namenserver angezeigt.
 
 Sobald die Datensatzgruppe die gewünschte Auflistung von Einträgen enthält, muss ein Commit mithilfe des Cmdlets " Set-AzureDnsRecordSet" ausgeführt werden, wodurch die vorhandene Datensatzgruppe in Azure DNS durch die bereitgestellte Datensatzgruppe ersetzt wird. Die folgenden Beispiele zeigen, wie Sie eine Datensatzgruppe jedes Eintragstyps mit einem einzelnen Eintrag erstellen.
 
@@ -109,7 +111,7 @@ Die Reihenfolge der Vorgänge zum Erstellen einer Datensatzgruppe kann auch "wei
 	PS C:\> Set-AzureDnsRecordSet -RecordSet $rs
 
 ### Erstellen einer MX-Datensatzgruppe mit einem einzelnen Eintrag
-In diesem Beispiel verwenden wir den Namen des Datensatzes "@" zum Erstellen des MX-Eintrags auf oberster Ebene der Zone \(z. B. "contoso.com"\). Dies ist bei MX-Einträgen üblich.
+In diesem Beispiel verwenden wir den Namen des Datensatzes "@" zum Erstellen des MX-Eintrags auf oberster Ebene der Zone (z. B. "contoso.com"). Dies ist bei MX-Einträgen üblich.
 
 	PS C:\> $rs = New-AzureDnsRecordSet -Name "@" -RecordType MX -Zone $zone -Ttl 60
 	PS C:\> Add-AzureDnsRecordConfig -RecordSet $rs -Exchange "mail.contoso.com" -Preference 5
@@ -122,7 +124,7 @@ In diesem Beispiel verwenden wir den Namen des Datensatzes "@" zum Erstellen des
 	PS C:\> Set-AzureDnsRecordSet -RecordSet $rs
 ### Erstellen einer SRV-Datensatzgruppe mit einem einzelnen Eintrag
 
-Wenn Sie einen SRV-Eintrag im Zonenstamm erstellen, geben Sie einfach "_service" und "_protocol" im Eintragsnamen an. Sie müssen nicht zusätzlich ". @" im Eintragsnamen angeben.
+Wenn Sie einen SRV-Eintrag im Zonenstamm erstellen, geben Sie einfach "\_service" und "\_protocol" im Eintragsnamen an. Sie müssen nicht zusätzlich ". @" im Eintragsnamen angeben.
 
 	PS C:\> $rs = New-AzureDnsRecordSet -Name "_sip._tls" -RecordType SRV -Zone $zone -Ttl 60
 	PS C:\> Add-AzureDnsRecordConfig -RecordSet $rs –Priority 0 –Weight 5 –Port 8080 –Target "sip.contoso.com"
@@ -154,7 +156,7 @@ Das Cmdlet "Set-AzureDnsRecordSet" verwendet Etag-Überprüfungen, um sicherzust
 
 ### Ändern des SOA-Eintrags
 
->[AZURE.NOTE]Sie können der automatisch erstellten SOA-Datensatzgruppe an der Zonenspitze \(Name = "@"\) keine Einträge hinzufügen oder daraus entfernen, Sie können jedoch die Parameter im SOA-Eintrag und die Gültigkeitsdauer der Datensatzgruppe ändern.
+>[AZURE.NOTE]Sie können der automatisch erstellten SOA-Datensatzgruppe an der Zonenspitze (Name = "@") keine Einträge hinzufügen oder daraus entfernen, Sie können jedoch die Parameter im SOA-Eintrag und die Gültigkeitsdauer der Datensatzgruppe ändern.
 
 Im folgenden Beispiel wird veranschaulicht, wie Sie die Eigenschaft "Email" des SOA-Eintrags ändern:
 
@@ -164,7 +166,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie die Eigenschaft "Email" des 
 
 ### Ändern der NS-Einträge an der Zonenspitze
 
->[AZURE.NOTE]Sie können der automatisch erstellten NS-Datensatzgruppe an der Zonenspitze \(Name = "@"\) keine Einträge hinzufügen, daraus entfernen und keine Einträge ändern. Sie können nur die Gültigkeitsdauer \(TTL\) der Datensatzgruppe ändern.
+>[AZURE.NOTE]Sie können der automatisch erstellten NS-Datensatzgruppe an der Zonenspitze (Name = "@") keine Einträge hinzufügen, daraus entfernen und keine Einträge ändern. Sie können nur die Gültigkeitsdauer (TTL) der Datensatzgruppe ändern.
 
 Im folgenden Beispiel wird veranschaulicht, wie Sie die Eigenschaft "TTL" der NS-Datensatzgruppe ändern:
 
@@ -235,7 +237,7 @@ Da eine CNAME-Datensatzgruppe höchstens einen Eintrag enthalten kann, bleibt be
 ## Löschen einer Datensatzgruppe
 Datensatzgruppen können mit dem Cmdlet "Remove-AzureDnsZone" gelöscht werden.
 
->[AZURE.NOTE]Sie können nicht die SOA- und NS-Datensatzgruppen an der Zonenspitze \(Name = "@"\) löschen, die beim Erstellen der Zone automatisch erstellt werden. Sie werden automatisch gelöscht, wenn die Zone gelöscht wird.
+>[AZURE.NOTE]Sie können nicht die SOA- und NS-Datensatzgruppen an der Zonenspitze (Name = "@") löschen, die beim Erstellen der Zone automatisch erstellt werden. Sie werden automatisch gelöscht, wenn die Zone gelöscht wird.
 
 Verwenden Sie eine der folgenden drei Möglichkeiten, um eine Datensatzgruppe zu löschen:
 ### Option 1
@@ -265,4 +267,4 @@ Das Datensatzgruppenobjekt kann auch weitergeleitet werden, anstatt als Paramete
 [Erste Schritte beim Erstellen von Datensatzgruppen und Einträgen](../dns-getstarted-create-recordset)<BR> [Durchführen von Vorgängen für DNS-Zonen](../dns-operations-dnszones)<BR> [Automatisieren von Vorgängen mit dem .NET SDK](../dns-sdk)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

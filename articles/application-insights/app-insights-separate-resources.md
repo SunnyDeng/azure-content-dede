@@ -28,7 +28,7 @@ Die von Ihrer Anwendung empfangenen Daten werden von Application Insights in ein
 
 Fügen Sie unter [portal.azure.com](https://portal.azure.com) eine neue Application Insights-Ressource hinzu:
 
-![Klicken Sie auf "Neu \> Application Insights"](./media/app-insights-create-new-resource/01-new.png)
+![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-create-new-resource/01-new.png)
 
 
 * **Anwendungstyp** bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften. Wenn Ihr App-Typ nicht angezeigt wird, wählen Sie einen der Webtypen für Webseiten und einen der Telefontypen für andere Geräte aus.
@@ -39,7 +39,7 @@ Fügen Sie unter [portal.azure.com](https://portal.azure.com) eine neue Applicat
 
 Das Erstellen der Ressource dauert einige Sekunden. Wenn es abgeschlossen ist, sehen Sie eine Warnung.
 
-\(Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resource.md) schreiben, um eine Ressource automatisch zu erstellen.\)
+(Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resource.md) schreiben, um eine Ressource automatisch zu erstellen.)
 
 
 ## Kopieren des Instrumentationsschlüssels
@@ -57,7 +57,7 @@ In der Regel ruft das SDK den iKey aus der Datei "ApplicationInsights.config" ab
 
 Legen Sie den Schlüssel in einer Initialisierungsmethode fest, wie z. B. "global.aspx.cs" in einem ASP.NET-Dienst:
 
-*C\#*
+*C#*
 
     protected void Application_Start()
     {
@@ -98,4 +98,4 @@ Der iKey wird auch in Webseiten Ihrer App in dem [Skript verwendet, das Sie auf 
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

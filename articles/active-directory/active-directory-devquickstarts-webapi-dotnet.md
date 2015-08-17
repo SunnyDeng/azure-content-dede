@@ -140,4 +140,4 @@ Als Referenz stellen wir [hier](https://github.com/AzureADQuickStarts/WebAPI-Bea
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

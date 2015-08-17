@@ -53,7 +53,7 @@ Nach der Installation des Service Packs sollten innerhalb von 24 Stunden Operati
 
 Der folgende Satz von Verfahren dient als Anleitung zum Beheben von Problemen mit direkt angeschlossenen Agents oder Operations Manager-Bereitstellungen, die für das Berichten von Daten an Azure Operational Insights konfiguriert sind.
 
-### 1. Verfahren: Überprüfen, ob in die Operations Manager-Umgebung die richtigen Management Packs heruntergeladen werden
+### 1\. Verfahren: Überprüfen, ob in die Operations Manager-Umgebung die richtigen Management Packs heruntergeladen werden
 >[AZURE.NOTE]Wenn Sie nur Direct Agent verwenden, können Sie mit dem nächsten Verfahren fortfahren.
 
 Je nachdem, welche Lösungen (bisher als „Intelligence Packs“ bezeichnet) Sie im OpInsights-Portal aktiviert haben, werden unterschiedlich viele Management Packs angezeigt. Suchen Sie im Namen nach dem Schlüsselwort "Advisor" oder "Intelligence". Sie können diese Management Packs mit OpsMgr PowerShell suchen:
@@ -69,13 +69,13 @@ Die folgenden drei Management Packs mit „Capacity“ im Namen sollten angezeig
 
 Wenn nur ein oder zwei davon, jedoch nicht alle drei, aufgeführt werden, entfernen Sie diese, und warten Sie 5 bis 10 Minuten, bis Operations Manager sie erneut herunterlädt und importiert – überprüfen Sie die Ereignisprotokolle auf Fehler während dieses Zeitraums.
 
-### 2. Verfahren: Überprüfen, ob die richtigen Lösungen in Ihren Direct Agent heruntergeladen werden
+### 2\. Verfahren: Überprüfen, ob die richtigen Lösungen in Ihren Direct Agent heruntergeladen werden
 >[AZURE.NOTE]Wenn Sie nur Operations Manager verwenden, können Sie dieses Verfahren ignorieren.
 
-Im Direct Agent sollte die Zwischenspeicherung der Richtlinie für die Lösungsdatensammlung unter **C:\Programme\Microsoft Monitoring Agent\Agent\Health Service State\Management Packs** angezeigt werden.
+Im Direct Agent sollte die Zwischenspeicherung der Richtlinie für die Lösungsdatensammlung unter **C:\\Programme\\Microsoft Monitoring Agent\\Agent\\Health Service State\\Management Packs** angezeigt werden.
 
 
-### 3. Verfahren: Überprüfen, ob Daten an den Advisor-Dienst gesendet werden (oder ob dies zumindest versucht wird)
+### 3\. Verfahren: Überprüfen, ob Daten an den Advisor-Dienst gesendet werden (oder ob dies zumindest versucht wird)
 Je nachdem, ob Sie direkt verbundene Agents oder Operations Manager verwenden, können Sie das folgende Verfahren auf dem Direct Agent-Computer oder auf dem Operations Manager-Verwaltungsserver ausführen:
 
 1. - Öffnen Sie den Systemmonitor.
@@ -84,7 +84,7 @@ Je nachdem, ob Sie direkt verbundene Agents oder Operations Manager verwenden, k
 
 Bei einer korrekten Konfiguration sollte eine Aktivität für diese Leistungsindikatoren angezeigt werden, während Ereignisse und andere Datenelemente (basierend auf den im Portal eingebundenen Lösungen und den konfigurierten Richtlinien zur Protokollsammlung) hochgeladen werden. Diese Leistungsindikatoren müssen nicht unbedingt dauerhaft beschäftigt sein. Wenn Sie wenig oder keine Aktivität feststellen, haben Sie möglicherweise nicht viele Lösungen eingebunden oder verwenden nur eine sehr einfache Sammlungsrichtlinie.
 
-### 4. Verfahren: Überprüfen der Ereignisprotokolle des Verwaltungsservers oder von Direct Agent auf Fehler
+### 4\. Verfahren: Überprüfen der Ereignisprotokolle des Verwaltungsservers oder von Direct Agent auf Fehler
 Wenn alle oben genannten Schritte nicht erfolgreich sind und weiterhin keine Daten vom Dienst empfangen werden, sollten Sie abschließend noch überprüfen, ob in der **Ereignisanzeige** Fehler angezeigt werden.
 
 Öffnen Sie **Ereignisanzeige** –> **Anwendungs- und Dienstprotokolle** –> **Operations Manager**, und filtern Sie nach Ereignisquellen: **Advisor**, **Integritätsdienstmodule**, **HealthService** und **Service Connector** (das letzte Element gilt nur für Direct Agent).
@@ -113,7 +113,7 @@ Fehler beim Senden des Daten empfangen-Fehlercodes. Wenn dies nur hin und wieder
 
 Einige der HTTP-Fehlercodes haben eine besondere Bedeutung:
 
-- Beim ERSTEN Mal, wenn ein MMA Direct Agent oder ein Verwaltungsserver Daten an den Dienst zu senden versucht, erhalten Sie einen Fehler 500 mit einem internen Fehlercode 404. 404 bedeutet "nicht gefunden" und weist darauf hin, dass der Speicherbereich, der für diesen neuen Arbeitsbereich verwendet werden soll, noch nicht bereit ist – er wird derzeit noch bereitgestellt. Bei der nächsten Wiederholung wird dieser jedoch bereit sein, und der Datenfluss wird (unter normalen Bedingungen) funktionieren.
+- Beim ERSTEN Mal, wenn ein MMA Direct Agent oder ein Verwaltungsserver Daten an den Dienst zu senden versucht, erhalten Sie einen Fehler 500 mit einem internen Fehlercode 404. 404 bedeutet „Nicht gefunden“ und weist darauf hin, dass der Speicherbereich, der für diesen neuen Arbeitsbereich verwendet werden soll, noch nicht bereit ist – er wird derzeit noch bereitgestellt. Bei der nächsten Wiederholung wird dieser jedoch bereit sein, und der Datenfluss wird (unter normalen Bedingungen) funktionieren.
 - 403 weist möglicherweise auf ein Problem mit den Berechtigungen/Anmeldeinformationen etc. hin.
 
 ##### Ereignis-ID 2128
@@ -138,11 +138,11 @@ Das Modul "System.PublishDataToEndPoint" ist abgestürzt. Ein Modul des Typs „
 Der Dienst hat den HTTP-Statuscode 403 als Antwort auf eine Abfrage zurückgegeben. Überprüfen Sie mit dem Dienstadministrator die Integrität des Diensts. Die Abfrage wird später wiederholt. Sie können einen 403-Fehler während der ersten Registrierungsphase des Agents erhalten. Sie sehen dann eine URL wie „https://<YourWorkspaceID>.oms.opinsights.azure.com/ AgentService.svc/AgentTopologyRequest“. Fehlercode 403 bedeutet „Unzulässig“. Der Grund ist meist ein fehlerhafter Kopiervorgang einer WorkspaceId oder eines Schlüssels, oder die Uhr ist nicht mit dem Computer synchronisiert. Versuchen Sie die Synchronisierung mit einer zuverlässigen Zeitquelle, und stellen Sie mithilfe der Konnektivitätsprüfung im Systemsteuerungs-Applet für Microsoft Monitoring Agent sicher, dass Sie die richtige Arbeitsbereichs-ID und den richtigen Schlüssel verwenden.
 
 
-### 5. Verfahren: Suchen nach den Agents, um Daten zu senden und im Portal zu indizieren
+### 5\. Verfahren: Suchen nach den Agents, um Daten zu senden und im Portal zu indizieren
 Melden Sie sich im OpInsights-Portal an, und navigieren Sie von der Seite „Übersicht“ zur kleinen Kachel **Server und Verwendung**. Es wird angezeigt, ob Verwaltungsgruppen (und deren Agents) und Direct Agents Daten an die Protokollsuche melden. Die Anzahl der Agents in der Kachel leitet sich aus den Daten ab. Wenn Computer zwei Wochen lang keine Daten melden, werden sie aus dem Netz entfernt.
 
 Über Drilldowns gelangen Sie zur Protokollsuche. Die Zeitstempel der letzten indizierten Daten werden für jeden Computer angezeigt. Von dort aus können Sie untersuchen, um welche Daten es sich handelt. Je nach Umfang der konfigurierten Datensammlung und der Art der Lösungen können der Zeitplan und die Geschwindigkeit des Datenuploads variieren.
 
 Diese Seite bietet zudem Messungsinformationen (hierbei wird nicht der Index der Protokollsuche, sondern das Abrechnungssystem verwendet, und die Daten werden alle paar Stunden aktualisiert) über die an den Dienst gesendeten Datenmengen, aufgeschlüsselt nach Lösung.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

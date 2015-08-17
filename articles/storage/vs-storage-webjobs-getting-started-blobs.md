@@ -16,7 +16,7 @@
 	ms.date="07/13/2015" 
 	ms.author="patshea123"/>
 
-# Erste Schritte mit Azure Storage \(Azure WebJob-Projekte\)
+# Erste Schritte mit Azure Storage (Azure WebJob-Projekte)
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-storage-webjobs-getting-started-blobs.md)
@@ -31,13 +31,13 @@
 
 Wenn Sie über das Dialogfeld **Verbundene Dienste hinzufügen** von Visual Studio ein Speicherkonto zu einem WebJob-Projekt hinzufügen, wird das entsprechende NuGet-Paket des Azure-Speichers installiert, die entsprechenden .NET-Verweise dem Projekt hinzugefügt, und die Verbindungszeichenfolgen für das Speicherkonto in der „App.config“-Datei aktualisiert.
 
-Dieser Artikel enthält C\#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-Blob erstellt oder aktualisiert wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet.
+Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-Blob erstellt oder aktualisiert wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet.
 
 ## Auslösen einer Funktion, wenn ein BLOB erstellt oder aktualisiert wird
 
 Dieser Abschnitt beschreibt die Verwendung des `BlobTrigger`-Attributs.
 
- **Hinweis:** Das WebJobs-SDK durchsucht Protokolldateien nach neuen oder geänderten Blobs. Dieser Vorgang ist naturgemäß recht langsam. Eine Funktion wird unter Umständen erst mehrere Minuten nach der Bloberstellung \(oder noch später\) ausgelöst. Wenn Ihre Anwendung Blobs sofort verarbeiten muss, empfiehlt es sich, zusammen mit dem Blob eine Warteschlangennachricht zu erstellen, und für die Funktion, die das Blob verarbeitet, anstelle des `BlobTrigger`-Attributs das [QueueTrigger](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#trigger)-Attribut zu verwenden.
+ **Hinweis:** Das WebJobs-SDK durchsucht Protokolldateien nach neuen oder geänderten Blobs. Dieser Vorgang ist naturgemäß recht langsam. Eine Funktion wird unter Umständen erst mehrere Minuten nach der Bloberstellung (oder noch später) ausgelöst. Wenn Ihre Anwendung Blobs sofort verarbeiten muss, empfiehlt es sich, zusammen mit dem Blob eine Warteschlangennachricht zu erstellen, und für die Funktion, die das Blob verarbeitet, anstelle des `BlobTrigger`-Attributs das [QueueTrigger](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#trigger)-Attribut zu verwenden.
 
 ### Einzelner Platzhalter für Blobnamen mit Erweiterung  
 
@@ -159,11 +159,11 @@ Die maximale Anzahl von Wiederholungen ist konfigurierbar. Für die Verarbeitung
 
 Die Warteschlangennachricht für nicht verarbeitbare Blobs ist ein JSON-Objekt, das die folgenden Eigenschaften enthält:
 
-* FunctionId \(im Format *{Webauftragsname}*.Functions.\*{Funktionsname}\*; Beispiel: WebJob1.Functions.CopyBlob\)
-* BlobType \("BlockBlob" oder "PageBlob"\)
+* FunctionId (im Format *{Webauftragsname}*.Functions.*{Funktionsname}*; Beispiel: WebJob1.Functions.CopyBlob)
+* BlobType ("BlockBlob" oder "PageBlob")
 * ContainerName
 * BlobName
-* ETag \(eine Blobversions-ID. Beispiel: 0x8D1DC6E70A277EF\)
+* ETag (eine Blobversions-ID. Beispiel: 0x8D1DC6E70A277EF)
 
 Im folgenden Codebeispiel enthält die `CopyBlob`-Funktion Code, der bewirkt, dass bei jedem Aufruf ein Fehler auftritt. Nachdem das SDK die Funktion mit der maximalen Anzahl von Wiederholungen aufgerufen hat, wird in der Warteschlange für nicht verarbeitbare Blobs eine Nachricht erstellt. Diese Nachricht wird von der `LogPoisonBlob`-Funktion verarbeitet.
 
@@ -210,11 +210,11 @@ Das WebJobs-SDK stellt sicher, dass `BlobTrigger`-Funktionen für ein neues oder
 
 Blobbelege werden in einem Container mit dem Namen *azure-webjobs-hosts* in dem Azure-Speicherkonto gespeichert, das in der Verbindungszeichenfolge "AzureWebJobsStorage" angegeben ist. Ein Blobbeleg enthält die folgenden Informationen:
 
-* Die Funktion, die für das Blob aufgerufen wurde \("\*{Webauftragsname}\*.Functions.\*{Funktionsname}\*"; Beispiel: "WebJob1.Functions.CopyBlob"\)
+* Die Funktion, die für das Blob aufgerufen wurde ("*{Webauftragsname}*.Functions.*{Funktionsname}*"; Beispiel: "WebJob1.Functions.CopyBlob")
 * Der Containername
-* Blobtyp \("BlockBlob" oder "PageBlob"\)
+* Blobtyp ("BlockBlob" oder "PageBlob")
 * Blobname
-* ETag \(eine Blobversions-ID. Beispiel: 0x8D1DC6E70A277EF\)
+* ETag (eine Blobversions-ID. Beispiel: 0x8D1DC6E70A277EF)
 
 Wenn Sie eine erneute Verarbeitung eines Blobs erzwingen möchten, können Sie den Blobbeleg für dieses Blob manuell aus dem Container *azure-webjobs-hosts* löschen.
 
@@ -239,4 +239,4 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Blobs behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

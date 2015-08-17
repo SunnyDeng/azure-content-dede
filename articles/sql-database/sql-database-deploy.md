@@ -19,9 +19,9 @@
 
 # So stellen Sie eine SQL Server-Datenbank für Azure SQL-Datenbank bereit
 
-In diesem Artikel verwenden Sie den **Assistenten zum Bereitstellen einer Datenbank auf Azure SQL-Datenbank**, um eine Beispieldatenbank auf Azure SQL-Datenbank hochzuladen. Für dieses Lernprogramm müssen Sie **SQL Server 2016 Management Studio \(CTP-Version 2.1\)** herunterladen.
+In diesem Artikel verwenden Sie den **Assistenten zum Bereitstellen einer Datenbank auf Azure SQL-Datenbank**, um eine Beispieldatenbank auf Azure SQL-Datenbank hochzuladen. Für dieses Lernprogramm müssen Sie **SQL Server 2016 Management Studio (CTP-Version 2.1)** herunterladen.
 
-Geschätzte Zeit bis zum Abschluss: 15 Minuten \(einschließlich Downloadzeit\)
+Geschätzte Zeit bis zum Abschluss: 15 Minuten (einschließlich Downloadzeit)
 
 > [AZURE.NOTE]Diese Anleitung verwendet eine Schuldatenbank als Beispiel, die bewusst einfach aufgebaut ist; alle Objekte sind mit Azure SQL-Datenbank kompatibel, sodass Sie die Datenbank nicht für die Migration ändern oder vorbereiten müssen. Wenn Sie eine komplexere vorhandene Datenbank migrieren, ist es möglicherweise auch sinnvoll, den [SQL-Datenbankmigrations](http://sqlazuremw.codeplex.com/)-Assistenten zu nutzen und diese [Übersicht](sql-database-cloud-migrate.md) zu lesen.
 
@@ -29,13 +29,13 @@ Geschätzte Zeit bis zum Abschluss: 15 Minuten \(einschließlich Downloadzeit\)
 
 Ein **Microsoft Azure-Konto**. Eine kostenlose Testversion finden Sie in diesem [Angebot](http://azure.microsoft.com/pricing/free-trial/).
 
-Laden Sie [**SQL Server Management Studio**](https://msdn.microsoft.com/library/mt238290.aspx) herunter. \(Weitere Informationen zu diesem Tool finden Sie unter [SQL Server Management Studio - June 2015 Release Notes](https://msdn.microsoft.com/library/mt238486.aspx) \(in englischer Sprache\).\)
+Laden Sie [**SQL Server Management Studio**](https://msdn.microsoft.com/library/mt238290.aspx) herunter. (Weitere Informationen zu diesem Tool finden Sie unter [SQL Server Management Studio - June 2015 Release Notes](https://msdn.microsoft.com/library/mt238486.aspx) (in englischer Sprache).)
 
-Einen vorhandenen **Azure SQL-Datenbankserver**. Bevor Sie einen Server erstellen, müssen Sie mindestens eine Datenbank erstellen. Wenn Sie eine Datenbank erstellen, können Sie sie wahlweise auf einem neuen Server oder auf einem vorhandenen Server erstellen. Anweisungen zum Erstellen einer neuen Datenbank \(auf einem neuen Server\) finden Sie unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md).
+Einen vorhandenen **Azure SQL-Datenbankserver**. Bevor Sie einen Server erstellen, müssen Sie mindestens eine Datenbank erstellen. Wenn Sie eine Datenbank erstellen, können Sie sie wahlweise auf einem neuen Server oder auf einem vorhandenen Server erstellen. Anweisungen zum Erstellen einer neuen Datenbank (auf einem neuen Server) finden Sie unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md).
 
 ## Erstellen der Schuldatenbank auf einem lokalen Server
 
-Führen Sie diese Skripte in SQL Management Studio \(SSMS\) aus, um eine lokale Version der Schuldatenbank zu erstellen.
+Führen Sie diese Skripte in SQL Management Studio (SSMS) aus, um eine lokale Version der Schuldatenbank zu erstellen.
 
 1. Stellen Sie in SSMS eine Verbindung mit einem lokalen Server her. Klicken Sie mit der rechten Maustaste auf **Databases**, klicken Sie anschließend auf **New Database** und geben Sie *school* ein.
 
@@ -589,8 +589,8 @@ Jetzt haben Sie eine lokale Datenbank, die Sie nach Azure exportieren können. F
 		
 ## Nächste Schritte
 
-Ein Lernprogramm zum Erstellen einer neuen Azure SQL-Datenbank finden Sie unter [Erste Schritte mit der Administration von SQL-Datenbank](sql-database-get-started.md). Die Grundlagen der Verbindung mit einer Azure SQL-Datenbank aus einer C\#-Anwendung finden Sie unter [Verbinden mit und Abfragen der SQL-Datenbank mit C\#](sql-database-connect-query.md). Weitere Lernprogramme für die Verbindung von verschiedenen Plattformen \(z. B. PHP\) finden Sie unter [Azure SQL-Datenbankentwicklung: Themen zur Vorgehensweise](https://msdn.microsoft.com/library/azure/ee621787.aspx).
+Ein Lernprogramm zum Erstellen einer neuen Azure SQL-Datenbank finden Sie unter [Erste Schritte mit der Administration von SQL-Datenbank](sql-database-get-started.md). Die Grundlagen der Verbindung mit einer Azure SQL-Datenbank aus einer C#-Anwendung finden Sie unter [Verbinden mit und Abfragen der SQL-Datenbank mit C#](sql-database-connect-query.md). Weitere Lernprogramme für die Verbindung von verschiedenen Plattformen (z. B. PHP) finden Sie unter [Azure SQL-Datenbankentwicklung: Themen zur Vorgehensweise](https://msdn.microsoft.com/library/azure/ee621787.aspx).
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

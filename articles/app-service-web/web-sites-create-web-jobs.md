@@ -30,17 +30,17 @@ Das Azure WebJobs-SDK vereinfacht zahlreiche WebJobs-Programmieraufgaben. Weiter
 
 Die folgenden Dateitypen werden akzeptiert:
 
-* .cmd, .bat, .exe \(bei Verwendung von windows cmd\)
-* .ps1 \(bei Verwendung von powershell\)
-* .sh \(bei Verwendung von bash\)
-* .php \(bei Verwendung von php\)
-* .py \(bei Verwendung von python\)
-* .js \(bei Verwendung von node\)
-* .jar \(bei Verwendung von Java\)
+* .cmd, .bat, .exe (bei Verwendung von windows cmd)
+* .ps1 (bei Verwendung von powershell)
+* .sh (bei Verwendung von bash)
+* .php (bei Verwendung von php)
+* .py (bei Verwendung von python)
+* .js (bei Verwendung von node)
+* .jar (bei Verwendung von Java)
 
 ## <a name="CreateOnDemand"></a>Erstellen eines bedarfsgesteuerten Webauftrags im Portal
 
-1. Klicken Sie auf dem Blatt **Web-App** im [Azure-Portal](http://portal.azure.com) auf **Alle Einstellungen \> WebJobs**, um das Blatt **WebJobs** anzuzeigen.
+1. Klicken Sie auf dem Blatt **Web-App** im [Azure-Portal](http://portal.azure.com) auf **Alle Einstellungen > WebJobs**, um das Blatt **WebJobs** anzuzeigen.
 	
 	![Webauftrag, Blatt](./media/web-sites-create-web-jobs/wjblade.png)
 	
@@ -52,7 +52,7 @@ Die folgenden Dateitypen werden akzeptiert:
 	
 4. Wählen Sie im Feld für die Ausführungshäufigkeit die Option **Bedarfsgesteuert ausführen** aus.
 	
-3. Klicken Sie im Feld **Dateiupload** auf das Ordnersymbol und navigieren Sie zu der ZIP-Datei mit dem Skript. Die ZIP-Datei sollte die ausführbare Datei \(\(.exe, .cmd, .bat, .sh, .php, .py, .js\) und alle Hilfsdateien enthalten, die zum Ausführen des Programms oder Skripts benötigt werden.
+3. Klicken Sie im Feld **Dateiupload** auf das Ordnersymbol und navigieren Sie zu der ZIP-Datei mit dem Skript. Die ZIP-Datei sollte die ausführbare Datei ((.exe, .cmd, .bat, .sh, .php, .py, .js) und alle Hilfsdateien enthalten, die zum Ausführen des Programms oder Skripts benötigt werden.
 	
 5. Aktivieren Sie **Erstellen**, um das Skript in Ihre Web-App hochzuladen.
 	
@@ -70,7 +70,7 @@ Die folgenden Dateitypen werden akzeptiert:
 	
 > [AZURE.NOTE]Wenn die Web-App auf mehr als einer Instanz ausgeführt wird, wird auf allen Instanzen ein kontinuierlich ausgeführter Webauftrag ausgeführt. Bedarfsgesteuerte und geplante Webaufträge werden auf einer einzigen Instanz ausgeführt, die für den Lastenausgleich durch Microsoft Azure ausgewählt wurde.
 	
-> Aktivieren Sie für die Web-App die Konfigurationseinstellung "Immer bereit"\*, um sicherzustellen, dass fortlaufende Webaufträge auf allen Instanzen zuverlässig ausgeführt werden. Andernfalls wird die Ausführung unter Umständen beendet, wenn sich die SCM-Hostwebsite zu lange im Leerlauf befindet.
+> Aktivieren Sie für die Web-App die Konfigurationseinstellung "Immer bereit"*, um sicherzustellen, dass fortlaufende Webaufträge auf allen Instanzen zuverlässig ausgeführt werden. Andernfalls wird die Ausführung unter Umständen beendet, wenn sich die SCM-Hostwebsite zu lange im Leerlauf befindet.
 
 ## <a name="CreateScheduled"></a>Erstellen geplanter Webaufträge
 
@@ -112,7 +112,7 @@ Das Azure-Verwaltungsportal bietet noch nicht die Möglichkeit, einen geplanten 
 	
 	![Bestimmte Wochentage in einem Monat planen][SchdMonthsOnPartWeekDays]
 	
-10. Schließlich können Sie mit der Option **Vorkommen** auswählen, in welcher Woche im Monat \(erste, zweite, dritte usw.\) der Auftrag an den angegebenen Wochentagen ausgeführt werden soll.
+10. Schließlich können Sie mit der Option **Vorkommen** auswählen, in welcher Woche im Monat (erste, zweite, dritte usw.) der Auftrag an den angegebenen Wochentagen ausgeführt werden soll.
 	
 	![Bestimmte Wochentage in bestimmten Wochen in einem Monat planen][SchdMonthsOnPartWeekDaysOccurences]
 	
@@ -138,7 +138,7 @@ Geplante Aufträge können auf den Seiten im Azure Scheduler des [alten Portals]
 	
 ## <a name="ViewJobHistory"></a>Anzeigen des Auftragsverlaufs
 
-1. Klicken Sie zum Anzeigen des Ausführungsverlaufs eines Auftrags \(einschließlich der mit dem WebJobs-SDK erstellten Aufträge\) auf dem Webauftragsblatt in der Spalte **Protokolle** auf den zugehörigen Link. \(Sie können das Zwischenablagesymbol verwenden, um die URL der Protokolldateiseite in die Zwischenablage zu kopieren, wenn Sie dies wünschen.\)
+1. Klicken Sie zum Anzeigen des Ausführungsverlaufs eines Auftrags (einschließlich der mit dem WebJobs-SDK erstellten Aufträge) auf dem Webauftragsblatt in der Spalte **Protokolle** auf den zugehörigen Link. (Sie können das Zwischenablagesymbol verwenden, um die URL der Protokolldateiseite in die Zwischenablage zu kopieren, wenn Sie dies wünschen.)
 	
 	![Link "Protokolle"](./media/web-sites-create-web-jobs/wjbladelogslink.png)
 		
@@ -165,7 +165,7 @@ Geplante Aufträge können auf den Seiten im Azure Scheduler des [alten Portals]
 
 ## <a name="WHPNotes"></a>Hinweise
 	
-- Web-Apps im kostenlosen Modus können nach 20 Minuten ablaufen, wenn keine Anforderungen bei der scm-Website \(Bereitstellung\) eingehen und das Web-App-Portal in Azure nicht geöffnet ist. Dieses Verhalten wird durch Anforderungen bei der tatsächlichen Website nicht zurückgesetzt.
+- Web-Apps im kostenlosen Modus können nach 20 Minuten ablaufen, wenn keine Anforderungen bei der scm-Website (Bereitstellung) eingehen und das Web-App-Portal in Azure nicht geöffnet ist. Dieses Verhalten wird durch Anforderungen bei der tatsächlichen Website nicht zurückgesetzt.
 - Code für einen fortlaufenden Auftrag muss zur Ausführung in einer Endlosschleife geschrieben sein.
 - Kontinuierliche Aufträge werden nur dann fortlaufend ausgeführt, wenn die Web-App aktiv ist.
 - In den Modi "Basic" und "Standard" ist das Feature "Immer aktiviert" verfügbar. Ist es aktiviert, wird verhindert, dass Web-Apps in den Leerlauf wechseln.
@@ -209,4 +209,4 @@ Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs
 [JobActionPageInScheduler]: ./media/web-sites-create-web-jobs/33JobActionPageInScheduler.png
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

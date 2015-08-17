@@ -29,7 +29,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 - Herunterladen und Installieren von NuGet-Paketen für Azure Data Factory Entsprechende Anweisungen sind in der exemplarischen Vorgehensweise enthalten.
 
 ## Exemplarische Vorgehensweise
-1. Erstellen Sie mithilfe von Visual Studio 2012 oder 2013 eine C\# .NET-Konsolenanwendung.
+1. Erstellen Sie mithilfe von Visual Studio 2012 oder 2013 eine C# .NET-Konsolenanwendung.
 	<ol type="a">
 	<li>Starten Sie <b>Visual Studio 2012</b> oder <b>Visual Studio 2013</b>.</li>
 	<li>Klicken Sie auf <b>Datei</b>, zeigen Sie auf <b>Neu</b>, und klicken Sie auf <b>Projekt</b>.</li> 
@@ -46,7 +46,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 		Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
 6. Fügen Sie den folgenden **appSettings**-Abschnitt zur Datei **App.config** hinzu. Diese werden von der Hilfsmethode **GetAuthorizationHeader** verwendet. 
 
-	Ersetzen Sie die Werte für **SubscriptionId** und **ActiveDirectoryTenantId** durch Ihre Abonnement- und Mandanten-ID für Azure. Sie können diese Werte abrufen, indem Sie über Azure PowerShell **Get-AzureAccount** ausführen \(möglicherweise müssen Sie sich zuvor mithilfe von "Add-AzureAccount" anmelden\).
+	Ersetzen Sie die Werte für **SubscriptionId** und **ActiveDirectoryTenantId** durch Ihre Abonnement- und Mandanten-ID für Azure. Sie können diese Werte abrufen, indem Sie über Azure PowerShell **Get-AzureAccount** ausführen (möglicherweise müssen Sie sich zuvor mithilfe von "Add-AzureAccount" anmelden).
  
 		<appSettings>
 		    <!--CSM Prod related values-->
@@ -59,7 +59,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 		    <add key="SubscriptionId" value="<subscription ID>" />
     		<add key="ActiveDirectoryTenantId" value="<tenant ID" />
 		</appSettings>
-6. Fügen Sie die folgenden **using**-Anweisungen zur Quelldatei \(Program.cs\) im Projekt hinzu.
+6. Fügen Sie die folgenden **using**-Anweisungen zur Quelldatei (Program.cs) im Projekt hinzu.
 
 		using System.Threading;
 		using System.Configuration;
@@ -126,7 +126,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 
 	Beachten Sie, dass für **FolderPath** für das Eingabeblob der Wert **adftutorial/** festgelegt ist, wobei **adftutorial** den Namen des Containers im Blobspeicher darstellt. Wenn dieser Container nicht in Ihrem Azure-Blobspeicher enthalten ist, erstellen Sie einen Container mit dem Namen **adftutorial** und laden eine Textdatei in den Container hoch.
 	
-	Beachten Sie, dass für "FolderPath" für das Ausgabe-Blob auf **adftutorial/apifactoryoutput/{Slice}** festgelegt ist, wobei **Slice** auf Basis des Werts von **SliceStart** \(Startdatum und -zeit für jeden Slice\) dynamisch berechnet wird.
+	Beachten Sie, dass für "FolderPath" für das Ausgabe-Blob auf **adftutorial/apifactoryoutput/{Slice}** festgelegt ist, wobei **Slice** auf Basis des Werts von **SliceStart** (Startdatum und -zeit für jeden Slice) dynamisch berechnet wird.
 
  
         // create input and output tables
@@ -244,11 +244,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
                                 },
                                 TypeProperties = new CopyActivity()
                                 {
-                                    Source = new BlobSource()
-                                    {
-                                        BlobColumnSeparators = ",",
-                                    },
-                        
+                                    Source = new BlobSource(),
                                     Sink = new BlobSink()
                                     {
                                         WriteBatchSize = 10000,
@@ -313,25 +309,28 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
             Thread.Sleep(1000 * 12);
 
             var datalistResponse = client.DataSlices.List(resourceGroupName, dataFactoryName, Table_Destination,
-                PipelineActivePeriodStartTime.ConvertToISO8601DateTimeString(),
-                PipelineActivePeriodEndTime.ConvertToISO8601DateTimeString());
+                new DataSliceListParameters()
+                {
+                    DataSliceRangeStartTime = PipelineActivePeriodStartTime.ConvertToISO8601DateTimeString(),
+                    DataSliceRangeEndTime = PipelineActivePeriodEndTime.ConvertToISO8601DateTimeString()
+                });
 
             foreach (DataSlice slice in datalistResponse.DataSlices)
             {
-                if (slice.Status == DataSliceStatus.Failed || slice.Status == DataSliceStatus.Ready)
+                if (slice.State == DataSliceState.Failed || slice.State == DataSliceState.Ready)
                 {
-                    Console.WriteLine("Slice execution is done with status: {0}", slice.Status);
+                    Console.WriteLine("Slice execution is done with status: {0}", slice.State);
                     done = true;
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("Slice status is: {0}", slice.Status);
+                    Console.WriteLine("Slice status is: {0}", slice.State);
                 }
             }
         }
 
-14. **\(optional\)** Fügen Sie der **Main**-Methode den folgenden Code hinzu, um Ausführungsdetails für einen Datenslice abzurufen.
+14. **(optional)** Fügen Sie der **Main**-Methode den folgenden Code hinzu, um Ausführungsdetails für einen Datenslice abzurufen.
 
         Console.WriteLine("Getting run details of a data slice");
 
@@ -368,7 +367,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
         John, Doe
 		Jane, Doe
 	 
-17. Führen Sie das Beispiel aus, indem Sie im Menü auf **Debuggen** -\> **Debuggen starten** klicken. Wenn angezeigt wird, dass die **Ausführungsdetails für einen Datenslice** abgerufen werden, warten Sie einige Minuten, und drücken Sie dann die **EINGABETASTE**.
+17. Führen Sie das Beispiel aus, indem Sie im Menü auf **Debuggen** -> **Debuggen starten** klicken. Wenn angezeigt wird, dass die **Ausführungsdetails für einen Datenslice** abgerufen werden, warten Sie einige Minuten, und drücken Sie dann die **EINGABETASTE**.
 18. Verwenden Sie das Azure-Vorschauportal, um Folgendes für die Data Factory zu überprüfen: **APITutorialFactory** wird mit folgenden Artefakten erstellt: 
 	- Verknüpfter Dienst: **LinkedService\_AzureStorage** 
 	- Tabellen: **TableBlobSource** und **TableBlobDestination**.
@@ -394,4 +393,4 @@ Artikel | Beschreibung
 [azure-developer-center]: http://azure.microsoft.com/downloads/
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

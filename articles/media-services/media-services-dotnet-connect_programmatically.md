@@ -171,14 +171,14 @@ Es wird dringend empfohlen, Verbindungswerte in der Konfiguration zu speichern. 
 Die folgende Datei „App.config“ enthält die erforderlichen Verbindungswerte. Die Werte im <appSettings>-Element sind die erforderlichen Werte, die Sie bei der Einrichtung des Media Services-Kontos erhalten haben.
 
 
-<pre><code>
-&lt;configuration>
-    &lt;appSettings>
-	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
-    	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
-    &lt;/appSettings>
-&lt;/configuration>
-</code></pre>
+```
+&lt;configuration&gt;
+    &lt;appSettings&gt;
+	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" /&gt;
+    	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" /&gt;
+    &lt;/appSettings&gt;
+&lt;/configuration&gt;
+```
 
 Zum Abrufen von Verbindungswerten aus der Konfiguration können Sie die **ConfigurationManager**-Klasse verwenden und die Werte dann Feldern in Ihrem Code zuweisen:
 	
@@ -191,4 +191,4 @@ Zum Abrufen von Verbindungswerten aus der Konfiguration können Sie die **Config
 
 <!-- URLs. -->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

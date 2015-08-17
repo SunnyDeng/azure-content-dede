@@ -58,9 +58,9 @@ Ein Batch-Konto ist eine eindeutig identifizierte Entität innerhalb des Batch-D
 
 ### <a name="computenode"></a>Computeknoten
 
-Ein Computeknoten \(Knoten\) ist ein Azure-Knoten, der für Ihre Anwendung für eine bestimmte Workload vorgesehen ist. Die Größe eines Knotens bestimmt die Anzahl der CPU-Kerne, die Speicherkapazität und die lokale Dateisystemgröße, die dem Knoten zugeordnet werden. Ein Knoten kann ein kleiner, großer oder sehr großer virtueller Computer sein, wie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/dn197896.aspx) beschrieben.
+Ein Computeknoten (Knoten) ist ein Azure-Knoten, der für Ihre Anwendung für eine bestimmte Workload vorgesehen ist. Die Größe eines Knotens bestimmt die Anzahl der CPU-Kerne, die Speicherkapazität und die lokale Dateisystemgröße, die dem Knoten zugeordnet werden. Ein Knoten kann ein kleiner, großer oder sehr großer virtueller Computer sein, wie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/dn197896.aspx) beschrieben.
 
-Die von einem Knoten ausführbaren Programme umfassen ausführbare Dateien \(EXE\), Befehlsdateien \(CMD\), Batchdateien \(BAT\) und Skriptdateien. Ein Knoten verfügt außerdem über die folgenden Attribute:
+Die von einem Knoten ausführbaren Programme umfassen ausführbare Dateien (EXE), Befehlsdateien (CMD), Batchdateien (BAT) und Skriptdateien. Ein Knoten verfügt außerdem über die folgenden Attribute:
 
 - Aufgabenspezifische und freigegebene Dateisystemordner. Eine Ordnerstruktur und Umgebungsvariablen werden auf jedem Poolknoten erstellt. Die folgende Ordnerstruktur wird mit einem freigegebenen Ordner für gemeinsam genutzte Anwendungen und Daten sowie mit jeweils einem Ordner pro Aufgabe erstellt:
 
@@ -106,7 +106,7 @@ Wenn Sie einen Pool erstellen, können Sie die folgenden Attribute angeben:
 - Die Betriebssystemfamilie und -version, die auf den Knoten ausgeführt wird.
 	- Betriebssystemfamilie und -version können genau wie bei Workerrollen konfiguriert werden.
 	- Die Betriebssystemfamilie bestimmt auch, welche Versionen von .NET mit dem Betriebssystem installiert sind.
-	- Genau wie bei Workerrollen empfiehlt sich auch bei der Betriebssystemversion die Verwendung von "\*", damit die Knoten automatisch aktualisiert werden und für neue Versionen kein Zusatzaufwand entsteht. Mit der Wahl einer bestimmten Betriebssystemversion wird in erster Linie die Anwendungskompatibilität sichergestellt. Hierzu wird die Überprüfung der Abwärtskompatibilität vor der Versionsaktualisierung ermöglicht. Nach der Überprüfung kann die Betriebssystemversion für den Pool aktualisiert und das neue Betriebssystemimage installiert werden. Dabei werden alle ausgeführten Aufgaben unterbrochen und wieder der Warteschlange hinzugefügt.
+	- Genau wie bei Workerrollen empfiehlt sich auch bei der Betriebssystemversion die Verwendung von "*", damit die Knoten automatisch aktualisiert werden und für neue Versionen kein Zusatzaufwand entsteht. Mit der Wahl einer bestimmten Betriebssystemversion wird in erster Linie die Anwendungskompatibilität sichergestellt. Hierzu wird die Überprüfung der Abwärtskompatibilität vor der Versionsaktualisierung ermöglicht. Nach der Überprüfung kann die Betriebssystemversion für den Pool aktualisiert und das neue Betriebssystemimage installiert werden. Dabei werden alle ausgeführten Aufgaben unterbrochen und wieder der Warteschlange hinzugefügt.
 
 - Die vorgegebene Anzahl von Knoten, die für den Pool verfügbar sein soll.
 
@@ -118,7 +118,7 @@ Wenn Sie einen Pool erstellen, können Sie die folgenden Attribute angeben:
 	- Darüber hinaus können Sie durch Angabe einer Füllrichtlinie bestimmen, ob Knoten zuerst von Batch gefüllt oder ob die Aufgaben auf alle Knoten verteilt werden sollen.
  
 - Der Kommunikationsstatus der Knoten im Pool.
- 	- In vielen Szenarien werden Aufgaben unabhängig ausgeführt und müssen nicht mit anderen Aufgaben kommunizieren. Es gibt jedoch auch Anwendungen mit Aufgabenkommunikation \(beispielsweise Anwendungen mit MPI\).
+ 	- In vielen Szenarien werden Aufgaben unabhängig ausgeführt und müssen nicht mit anderen Aufgaben kommunizieren. Es gibt jedoch auch Anwendungen mit Aufgabenkommunikation (beispielsweise Anwendungen mit MPI).
 	- Sie können konfigurieren, ob die Knoten kommunizieren können. Dies hat Auswirkungen auf die zugrunde liegende Infrastruktur sowie auf die Platzierung der Knoten.
 
 - Die Startaufgabe für Knoten im Pool.
@@ -185,7 +185,7 @@ Eine Startaufgabe wird durch Hinzufügen eines JSON-Abschnitts zum Anforderungst
 		“maxTaskRetryCount”:0
 	}
 
-Eine C\#-Schnittstelle sieht folgendermaßen aus:
+Eine C#-Schnittstelle sieht folgendermaßen aus:
 
 	CloudPool pool = pm.CreatePool(poolId, targetDedicated: 3, virtualMachineSize: "small", osFamily: "3");
 	pool.StartTask = new StartTask();
@@ -281,7 +281,7 @@ Im Extremfall könnte beispielsweise für jeden Auftrag ein Pool erstellt werden
 
 Wenn die sofortige Ausführung von Aufträgen Priorität hat, muss vor der Übermittlung des Auftrags ein Pool erstellt werden, und die Knoten müssen verfügbar sein. Die Aufgaben können zwar umgehend starten, je nach Auslastung befinden sich dann aber Knoten im Leerlauf und warten auf Auftragsaufgaben.
 
-Bei variabler Last wird häufig ein Pool verwendet, an den mehrere Aufträge übermittelt werden, wobei die Anzahl der Knoten lastabhängig skaliert wird. Hierzu kann ein reaktives Modell verwendet werden \(oder auch ein proaktives, sofern die Auslastung vorhersehbar ist\).
+Bei variabler Last wird häufig ein Pool verwendet, an den mehrere Aufträge übermittelt werden, wobei die Anzahl der Knoten lastabhängig skaliert wird. Hierzu kann ein reaktives Modell verwendet werden (oder auch ein proaktives, sofern die Auslastung vorhersehbar ist).
 
 ## <a name="scaling"></a>Skalieren von Anwendungen
 
@@ -297,7 +297,7 @@ Eine Formel kann auf den folgenden Metriken basieren:
 
 - **Ressourcenmetriken**: Basieren auf CPU-Auslastung, Bandbreitenauslastung, Speicherauslastung und der Anzahl von Knoten.
 
-- **Aufgabenmetriken**: Basieren auf dem Aufgabenstatus \(wie etwa „Aktiv“, „Ausstehend“ oder „Abgeschlossen“\).
+- **Aufgabenmetriken**: Basieren auf dem Aufgabenstatus (wie etwa „Aktiv“, „Ausstehend“ oder „Abgeschlossen“).
 
 Weitere Informationen zum automatischen Skalieren einer Anwendung finden Sie unter "Konfigurieren der automatischen Skalierung von virtuellen Aufgabencomputern".
 
@@ -385,4 +385,4 @@ Jeder Knoten in einem Pool erhält einen eindeutigen Namen, und der Knoten, auf 
 
 [Azure Batch – Technische Übersicht]: batch-technical-overview.md
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

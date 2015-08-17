@@ -17,7 +17,7 @@
 	ms.author="huvalo;bradsev" />
 
 
-#Zugriff auf Datasets mit Python mithilfe der Azure Machine Learning-Python-Clientbibliothek 
+#Zugriff auf Datasets mit Python mithilfe der Azure Machine Learning Python-Clientbibliothek 
 
 Die Vorschau von Microsoft Azure Machine Learning Python-Clientbibliothek kann einen sicheren Zugriff auf Ihre Azure Machine Learning Datasets aus einer lokalen Python-Umgebung aktivieren und ermöglicht die Erstellung und Verwaltung von Datasets im Arbeitsbereich.
 
@@ -367,4 +367,4 @@ Wenn Ihre Daten bereits serialisiert sind, verwenden Sie `update_from_raw_data` 
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

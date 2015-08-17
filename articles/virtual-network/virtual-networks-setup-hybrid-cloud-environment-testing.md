@@ -53,7 +53,7 @@ Diese Konfiguration erfordert ein Testsubnetz von bis zu vier Computern, die üb
 
 Befolgen Sie die Anweisungen im Abschnitt "Steps for Configuring the Corpnet Subnet" (Schritte zum Konfigurieren des Subnetzes Corpnet) im [Test Lab Guide: Base Configuration for Windows Server 2012 R2](http://www.microsoft.com/download/details.aspx?id=39638), um die Computer DC1, APP1 und CLIENT1 in einem Subnetz namens Corpnet zu konfigurieren. **Dieses Subnetz muss von Ihrem Organisationsnetzwerk isoliert werden, da es direkt über den RRAS1-Computer mit dem Internet verbunden wird.**
 
-Melden Sie sich zunächst bei DC1 mit den Anmeldeinformationen von CORP\User1 an. Führen Sie die folgenden Befehle von einer Windows PowerShell-Eingabeaufforderung aus, um die CORP-Domäne so zu konfigurieren, dass Computer und Benutzer ihren lokalen Domänencontroller zur Authentifizierung verwenden.
+Melden Sie sich zunächst bei DC1 mit den Anmeldeinformationen von CORP\\User1 an. Führen Sie die folgenden Befehle von einer Windows PowerShell-Eingabeaufforderung aus, um die CORP-Domäne so zu konfigurieren, dass Computer und Benutzer ihren lokalen Domänencontroller zur Authentifizierung verwenden.
 
 	New-ADReplicationSite -Name "TestLab" 
 	New-ADReplicationSite -Name "TestVNET"
@@ -268,7 +268,7 @@ Konfigurieren Sie als Nächstes DC2 als replizierten Domänencontroller für die
 	Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 	Install-ADDSDomainController -Credential (Get-Credential CORP\User1) -DomainName "corp.contoso.com" -InstallDns:$true -DatabasePath "F:\NTDS" -LogPath "F:\Logs" -SysvolPath "F:\SYSVOL"
 
-Beachten Sie, dass Sie zur Angabe des Kennworts für CORP\User1 und eines Kennworts für den Verzeichnisdienst-Wiederherstellungsmodus (DSRM) und zum Neustart von DC2 aufgefordert werden.
+Beachten Sie, dass Sie zur Angabe des Kennworts für CORP\\User1 und eines Kennworts für den Verzeichnisdienst-Wiederherstellungsmodus (DSRM) und zum Neustart von DC2 aufgefordert werden.
 
 Da das virtuelle Netzwerk TestVNET nun über einen eigenen DNS-Server (DC2) verfügt, müssen Sie das virtuelle Netzwerk TestVNET zur Verwendung dieses DNS-Servers konfigurieren.
 
@@ -304,7 +304,7 @@ Die Hybrid Cloud-Umgebung kann nun getestet werden.
 
 ## Minimieren der laufenden Kosten dieser Umgebung
 
-Führen Sie zur Minimierung der Kosten für das Ausführen von virtuellen Computern in dieser Umgebung die erforderlichen Tests und Demonstrationen so schnell wie möglich durch, und löschen Sie oder fahren Sie die virtuellen Computer herunter, wenn Sie sie nicht verwenden. Sie können beispielsweise Azure Automation und ein Runbook zum automatischen Herunterfahren der virtuellen Computer im virtuellen Netzwerk Test_VNET am Ende des Geschäftstags verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit Azure Automation](../automation-create-runbook-from-samples.md).
+Führen Sie zur Minimierung der Kosten für das Ausführen von virtuellen Computern in dieser Umgebung die erforderlichen Tests und Demonstrationen so schnell wie möglich durch, und löschen Sie oder fahren Sie die virtuellen Computer herunter, wenn Sie sie nicht verwenden. Sie können beispielsweise Azure Automation und ein Runbook zum automatischen Herunterfahren der virtuellen Computer im virtuellen Netzwerk Test\_VNET am Ende des Geschäftstags verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit Azure Automation](../automation-create-runbook-from-samples.md).
 
 Das Azure-VPN-Gateway ist als Gruppe von zwei virtuellen Azure-Computern implementiert, für das laufende Kosten anfallen. Nähere Informationen hierzu finden Sie unter [Preise – Virtuelles Netzwerk](http://azure.microsoft.com/pricing/details/virtual-network/). Erstellen Sie zur Minimierung der Kosten für das VPN-Gateway die Testumgebung und führen Sie die benötigten Tests und Demonstrationen so schnell wie möglich aus, oder löschen Sie das Gateway mithilfe der folgenden Schritte aus.
 
@@ -326,4 +326,4 @@ Melden Sie sich als Nächstes bei RRAS1 als lokaler Administrator an, und führe
 Wechseln Sie zum Azure-Verwaltungsportal auf dem lokalen Computer, und warten Sie, bis das virtuelle Netzwerk TestVNET den Status „Verbunden“ aufweist.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

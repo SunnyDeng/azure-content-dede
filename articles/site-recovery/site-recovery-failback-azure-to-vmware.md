@@ -7,6 +7,7 @@
    manager="mkjain" 
    editor=""/>
 
+
 <tags
    ms.service="site-recovery"
    ms.devlang="powershell"
@@ -15,6 +16,7 @@
    ms.workload="required" 
    ms.date="05/27/2015"
    ms.author="ruturajd@microsoft.com"/>
+
 
 # Schritte für ein Failback von Azure zu VMware
 
@@ -58,64 +60,19 @@ Die Setupdatei für vContinuum finden Sie [hier](http://go.microsoft.com/fwlink/
 
 Installieren Sie auch den [vContinuum-Patch](http://go.microsoft.com/fwlink/?LinkID=533813).
 
-1.  Führen Sie die Setupdatei aus, um die Installation von vContinuum zu starten. Klicken Sie nach der Willkommensseite auf „Next“, um mit der Konfiguration zu beginnen.
-
-![](./media/site-recovery-failback-azure-to-vmware/image2.png)
-
-2.  Geben Sie die IP-Adresse und den Port des CX-Servers an. Vergewissern Sie sich, dass das Kontrollkästchen für HTTPS aktiviert ist.
-
-![](./media/site-recovery-failback-azure-to-vmware/image3.png)
-
-    a.  To discover the CX IP go to the CS deployment on Azure and view
-        its dashboard. The public IP address will be displayed under
-        Public Virtual IP address.
-
-![](./media/site-recovery-failback-azure-to-vmware/image4.png)
-
-    b.  To discover the CX public port go to the endpoints tab in the VM
-        page and identify the HTTPs endpoints public port
-
-![](./media/site-recovery-failback-azure-to-vmware/image5.png)
-
-3.  Geben Sie die Passphrase für den Konfigurationsserver (Configuration Server, CS) an. Die Passphrase haben Sie sich bei der CS-Registrierung notiert. Hierbei handelt es sich um die gleiche Passphrase, die Sie auch bei der Bereitstellung von Masterziel und Prozessserver verwendet haben. Sollten Sie die Passphrase vergessen haben, navigieren Sie in Azure zum CS. Dort finden Sie die Passphrase unter „C:\Programme (x86)\InMage Systems\private\connection.passphrase“.
-
-    ![](./media/site-recovery-failback-azure-to-vmware/image6.png)
-
-4.  Geben Sie den gewünschten Speicherort für den vContinuum-Server an, und starten Sie die Installation.
-
-    ![](./media/site-recovery-failback-azure-to-vmware/image7.png)
-
-5.  Nach Abschluss der Installation können Sie vContinuum starten.
-
-    ![](./media/site-recovery-failback-azure-to-vmware/image8.png)
+1.  Führen Sie die Setupdatei aus, um die Installation von vContinuum zu starten. Klicken Sie nach der Willkommensseite auf „Next“, um mit der Konfiguration zu beginnen ![](./media/site-recovery-failback-azure-to-vmware/image2.png)
+2.  Geben Sie die IP-Adresse und den Port des CX-Servers an. Vergewissern Sie sich, dass das Kontrollkästchen für HTTPS aktiviert ist. ![](./media/site-recovery-failback-azure-to-vmware/image3.png) a. Wechseln Sie zur CS-Bereitstellung auf Azure, um die CX-IP zu ermitteln, und zeigen Sie das zugehörige Dashboard an. Die öffentliche IP-Adresse wird unter "Öffentliche virtuelle IP-Adresse" angezeigt. ![](./media/site-recovery-failback-azure-to-vmware/image4.png) b. Wechseln Sie zur Registerkarte "Endpunkte" auf der VM-Seite, um den öffentlichen CX-Port zu ermitteln, und identifizieren Sie den öffentlichen Port für HTTPs-Endpunkte ![](./media/site-recovery-failback-azure-to-vmware/image5.png)
+3.  Geben Sie die Passphrase für den Konfigurationsserver (Configuration Server, CS) an. Die Passphrase haben Sie sich bei der CS-Registrierung notiert. Hierbei handelt es sich um die gleiche Passphrase, die Sie auch bei der Bereitstellung von Masterziel und Prozessserver verwendet haben. Sollten Sie die Passphrase vergessen haben, navigieren Sie in Azure zum CS. Dort finden Sie die Passphrase unter „C:\\Programme (x86)\\InMage Systems\\private\\connection.passphrase“ ![](./media/site-recovery-failback-azure-to-vmware/image6.png)
+4.  Geben Sie den gewünschten Speicherort für den vContinuum-Server an, und starten Sie die Installation ![](./media/site-recovery-failback-azure-to-vmware/image7.png)
+5.  Nach Abschluss der Installation können Sie vContinuum starten ![](./media/site-recovery-failback-azure-to-vmware/image8.png)
 
 ## Installieren des Prozessservers (PS) für Azure
 
 Für Azure muss ein PS installiert werden, damit die virtuellen Computer in Azure die Daten wieder an das lokale Masterziel zurücksenden können. Der PS für Azure muss im gleichen Netzwerk bereitgestellt werden wie der Konfigurationsserver.
 
 1.  Klicken Sie auf der Konfigurationsserverseite in Azure auf die Option zum Hinzufügen eines neuen Prozessservers. ![](./media/site-recovery-failback-azure-to-vmware/image9.png)
-
-2.  Konfigurieren Sie die folgenden Einstellungen für den Prozessserver, um einen neuen Server bereitzustellen:
-
-    a. Benennen Sie den Prozessserver.
-
-    b. Geben Sie einen Benutzernamen ein, um mit dem virtuellen Computer eine Verbindung als Administrator herzustellen.
-
-    c. Geben Sie das Kennwort für die Anmeldung ein.
-
-    d. Wählen Sie den Konfigurationsserver aus, bei dem der Prozessserver registriert werden soll. Vergewissern Sie sich, dass der korrekte Konfigurationsserver ausgewählt ist. Hierbei handelt es sich um den gleichen Server, den Sie für den Schutz und das Failover Ihrer virtuellen Computer verwendet haben.
-
-    e. Geben Sie das Azure-Netzwerk an, in dem der Prozessserver bereitgestellt werden soll. Wählen Sie dabei das Netzwerk aus, in dem sich auch Ihr Konfigurationsserver befindet.
-
-    f. Geben Sie eine eindeutige IP-Adresse aus dem ausgewählten Subnetz an.
-
-    g. Initiieren Sie die Bereitstellung des Prozessservers.
-
-![](./media/site-recovery-failback-azure-to-vmware/image10.png)
-
-1.  Für den Prozessserver wird ein Bereitstellungsauftrag ausgelöst.
-
-![](./media/site-recovery-failback-azure-to-vmware/image11.png)
+2.  Konfigurieren Sie die folgenden Einstellungen auf einem Prozessserver, um einen neuen Server bereitzustellen a. Benennen Sie den Prozessserver b. Geben Sie einen Benutzernamen ein, um mit dem virtuellen Computer eine Verbindung als Administrator herzustellen c. Geben Sie das Kennwort für die Anmeldung ein d. Wählen Sie den Konfigurationsserver aus, bei dem der Prozessserver registriert werden soll. Vergewissern Sie sich, dass der korrekte Konfigurationsserver ausgewählt ist. Hierbei handelt es sich um den gleichen Server, den Sie für den Schutz und das Failover Ihrer virtuellen Computer verwendet haben. e. Geben Sie das Azure-Netzwerk an, in dem der Prozessserver bereitgestellt werden soll. Achten Sie darauf, das Netzwerk auszuwählen, in dem sich auch Ihr Konfigurationsserver befindet. f. Geben Sie eine eindeutige IP-Adresse aus dem ausgewählten Subnetz an (g). Initiieren Sie die Bereitstellung des Prozessservers. ![](./media/site-recovery-failback-azure-to-vmware/image10.png)
+3.  Für den Prozessserver wird ein Bereitstellungsauftrag ausgelöst ![](./media/site-recovery-failback-azure-to-vmware/image11.png)
 
 Wenn der Prozessserver für Azure bereitgestellt wurde, können Sie sich mit den angegebenen Anmeldeinformationen bei dem Server anmelden. Verwenden Sie bei der Registrierung des PS die gleichen Schritte wie beim vorwärts gerichteten Schutz.
 
@@ -197,35 +154,35 @@ HINWEIS: Vergewissern Sie sich vor dem Herunterladen und Installieren zusätzlic
 
 Der obige Befehl lädt die folgenden 15 Pakete aus dem CentOS 6.6-Repository herunter und installiert sie:
 
-bc-1.06.95-1.el6.x86_64.rpm
+bc-1.06.95-1.el6.x86\_64.rpm
 
-busybox-1.15.1-20.el6.x86_64.rpm
+busybox-1.15.1-20.el6.x86\_64.rpm
 
-elfutils-libs-0.158-3.2.el6.x86_64.rpm
+elfutils-libs-0.158-3.2.el6.x86\_64.rpm
 
-kexec-tools-2.0.0-280.el6.x86_64.rpm
+kexec-tools-2.0.0-280.el6.x86\_64.rpm
 
-lsscsi-0.23-2.el6.x86_64.rpm
+lsscsi-0.23-2.el6.x86\_64.rpm
 
-lzo-2.03-3.1.el6_5.1.x86_64.rpm
+lzo-2.03-3.1.el6\_5.1.x86\_64.rpm
 
-perl-5.10.1-136.el6_6.1.x86_64.rpm
+perl-5.10.1-136.el6\_6.1.x86\_64.rpm
 
-perl-Module-Pluggable-3.90-136.el6_6.1.x86_64.rpm
+perl-Module-Pluggable-3.90-136.el6\_6.1.x86\_64.rpm
 
-perl-Pod-Escapes-1.04-136.el6_6.1.x86_64.rpm
+perl-Pod-Escapes-1.04-136.el6\_6.1.x86\_64.rpm
 
-perl-Pod-Simple-3.13-136.el6_6.1.x86_64.rpm
+perl-Pod-Simple-3.13-136.el6\_6.1.x86\_64.rpm
 
-perl-libs-5.10.1-136.el6_6.1.x86_64.rpm
+perl-libs-5.10.1-136.el6\_6.1.x86\_64.rpm
 
-perl-version-0.77-136.el6_6.1.x86_64.rpm
+perl-version-0.77-136.el6\_6.1.x86\_64.rpm
 
-rsync-3.0.6-12.el6.x86_64.rpm
+rsync-3.0.6-12.el6.x86\_64.rpm
 
-snappy-1.1.0-1.el6.x86_64.rpm
+snappy-1.1.0-1.el6.x86\_64.rpm
 
-wget-1.12-5.el6_6.1.x86_64.rpm
+wget-1.12-5.el6\_6.1.x86\_64.rpm
 
 HINWEIS: Wenn der Quellcomputer für das Stamm- oder Startgerät das Reiser- oder das XFS-Dateisystem verwendet, müssen vor dem Schutz die folgenden Pakete heruntergeladen und auf dem Linux-Masterziel installiert werden:
 
@@ -235,11 +192,11 @@ HINWEIS: Wenn der Quellcomputer für das Stamm- oder Startgerät das Reiser- ode
 
 # wget <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm>
 
-# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm
+# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
 
 # wget <http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm>
 
-# rpm -ivh xfsprogs-3.1.1-16.el6.x86_64.rpm
+# rpm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
 
 #### Anwenden benutzerdefinierter Konfigurationsänderungen
 
@@ -277,7 +234,7 @@ Wenn Sie über eine öffentliche Internetverbindung eine Verbindung mit dem Linu
 
 Extrahieren Sie die Dateien aus dem gezippten tar-Archiv des Installationsprogramms für den Linux-Masterzielserver. Führen Sie hierzu
 
-*tar –xvzf Microsoft-ASR_UA_8.2.0.0_RHEL6-64** in dem Verzeichnis aus, in das Sie das Installationsprogramm für den Linux-Masterzielserver kopiert haben.
+*tar –xvzf Microsoft-ASR\_UA\_8.2.0.0\_RHEL6-64\** in dem Verzeichnis aus, in das Sie das Installationsprogramm für den Linux-Masterzielserver kopiert haben.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image16.png)
 
@@ -349,11 +306,11 @@ Hinweis: Während des Failovers von Azure zurück zum lokalen Schutz ähnelt der
 
 ![](./media/site-recovery-failback-azure-to-vmware/image8.png)
 
-1.  Wählen Sie unter **Choose Application** die Option **P2V** aus.
+2.  Wählen Sie unter **Choose Application** die Option **P2V** aus.
 
-2.  Klicken Sie auf **New Protection**.
+3.  Klicken Sie auf **New Protection**.
 
-3.  Im daraufhin angezeigten Fenster können Sie mit der Rückkehr zum lokalen Schutz der virtuellen Computer beginnen.
+4.  Im daraufhin angezeigten Fenster können Sie mit der Rückkehr zum lokalen Schutz der virtuellen Computer beginnen.
 
     a. Wählen Sie den passenden Betriebssystemtyp für die virtuellen Computer aus, für die Sie ein Failback ausführen möchten, und rufen Sie Details ab.
 
@@ -365,7 +322,7 @@ Hinweis: Während des Failovers von Azure zurück zum lokalen Schutz ähnelt der
 
     e. Wenn Sie die virtuellen Computer ermittelt haben, die Sie schützen möchten, wählen Sie sie nacheinander aus.
 
-4.  Wenn Sie einen zu schützenden virtuellen Computer auswählen, für den bereits ein Failover zu Azure stattgefunden hat, erscheint ein Popupfenster mit zwei Einträgen für den virtuellen Computer. Der Grund: Beim CS sind zwei Instanzen des virtuellen Computers registriert. Der Eintrag für den lokalen virtuellen Computer muss entfernt werden, damit der richtige virtuelle Computer geschützt werden kann. Bei den Einträgen handelt es sich jeweils um den Hostnamen des Computers. Zur Ermittlung des Eintrags für den richtigen virtuellen Azure-Computer können Sie sich bei dem virtuellen Azure-Computer anmelden und zu „C:\Programme (x86)\Microsoft Azure Site Recovery\Application Data\...“ navigieren. Ermitteln Sie in der Datei „drscout.conf“ die Host-ID. Behalten Sie im Dialogfeld von vContinuum den Eintrag, dessen Host-ID Sie auf dem virtuellen Computer gefunden haben. Löschen Sie alle anderen Einträge.
+5.  Wenn Sie einen zu schützenden virtuellen Computer auswählen, für den bereits ein Failover zu Azure stattgefunden hat, erscheint ein Popupfenster mit zwei Einträgen für den virtuellen Computer. Der Grund: Beim CS sind zwei Instanzen des virtuellen Computers registriert. Der Eintrag für den lokalen virtuellen Computer muss entfernt werden, damit der richtige virtuelle Computer geschützt werden kann. Bei den Einträgen handelt es sich jeweils um den Hostnamen des Computers. Zur Ermittlung des Eintrags für den richtigen virtuellen Azure-Computer können Sie sich bei dem virtuellen Azure-Computer anmelden und zu „C:\\Programme (x86)\\Microsoft Azure Site Recovery\\Application Data\\...“ navigieren. Ermitteln Sie in der Datei „drscout.conf“ die Host-ID. Behalten Sie im Dialogfeld von vContinuum den Eintrag, dessen Host-ID Sie auf dem virtuellen Computer gefunden haben. Löschen Sie alle anderen Einträge.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image22.png)
 
@@ -380,7 +337,7 @@ Hinweis: Während des Failovers von Azure zurück zum lokalen Schutz ähnelt der
 
     d.  Next you can also delete the virtual machines on-premises
 
-5.  Geben Sie anschließend den lokalen Masterzielserver an, mit dem Sie die virtuellen Computer schützen möchten.
+6.  Geben Sie anschließend den lokalen Masterzielserver an, mit dem Sie die virtuellen Computer schützen möchten.
 
     a. Stellen Sie eine Verbindung mit dem vCenter her, das als Failbackziel fungieren soll.
 
@@ -390,7 +347,7 @@ a. Wählen Sie auf der Grundlage des Hosts, auf dem Sie die virtuellen Computer 
 
 ![](./media/site-recovery-failback-azure-to-vmware/image24.png)
 
-1.  Geben Sie die Replikationsoption für die einzelnen virtuellen Computer an.
+7.  Geben Sie die Replikationsoption für die einzelnen virtuellen Computer an.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image25.png)
 
@@ -398,32 +355,28 @@ a. Wählen Sie den wiederherstellungsseitigen Datenspeicher aus. Hierbei handelt
 
 Für jeden virtuellen Computer müssen folgende Optionen angegeben werden:
 
-<table>
-<tr><td>Option</td><td>Empfohlener Wert</td></tr>
-<tr><td>Process Server IP</td><td>Wählen Sie den Prozessserver aus, den Sie für Azure bereitgestellt haben.</td></tr>
-<tr><td>Retention size in MB</td><td></td></tr>
-<tr><td>Retention value</td><td>1</td></tr>
-<tr><td>Days or Hours</td><td>Days</td></tr>
-<tr><td>Consistency Interval</td><td>1</td></tr>
-<tr><td>Select target datastore</td><td>Der wiederherstellungsseitig verfügbare Datenspeicher. Dieser Datenspeicher muss über genügend Speicherplatz verfügen und auch für den ESX-Host verfügbar sein, auf dem Sie den virtuellen Computer realisieren möchten.</td></tr>
-</table>
+Option|Empfohlener Wert
+---|---
+Process Server IP|Wählen Sie den Prozessserver aus, den Sie für Azure bereitgestellt haben.
+Retention size in MB| 
+Retention value|1
+Days or Hours|Days
+Consistency Interval|1
+Select target datastore|Der wiederherstellungsseitig verfügbare Datenspeicher. Dieser Datenspeicher muss über genügend Speicherplatz verfügen und auch für den ESX-Host verfügbar sein, auf dem Sie den virtuellen Computer realisieren möchten.
 
 
-1.  Anschließend können Sie die Eigenschaften konfigurieren, mit denen der virtuellen Computer nach einem Failover zum lokalen Standort versehen werden soll. Folgende Eigenschaften können konfiguriert werden:
+8.  Anschließend können Sie die Eigenschaften konfigurieren, mit denen der virtuellen Computer nach einem Failover zum lokalen Standort versehen werden soll. Folgende Eigenschaften können konfiguriert werden:
 
 ![](./media/site-recovery-failback-azure-to-vmware/image26.png)
 
 
-  <table>
-<tr><td>Eigenschaft</td><td>Konfiguration</td></tr>
-<tr><td>Network Configuration</td><td>Konfigurieren Sie für jede erkannte Netzwerkkarte die Failback-IP-Adresse für den virtuellen Computer. Wählen Sie die Netzwerkkarte aus, und klicken Sie auf **Change**, um die IP-Adresse anzugeben.
-
-</td></tr>
-<tr><td>Hardware Configuration</td><td>Sie können die CPU und den Arbeitsspeicher für den virtuellen Computer angeben. Diese Einstellung kann auf alle virtuellen Computer angewendet werden, die Sie schützen möchten. Die korrekten Werte für CPU und Arbeitsspeicher finden Sie unter der Rollengröße des virtuellen IAAS-Computers. Hier können Sie die Anzahl der Kerne und den zugewiesenen Arbeitsspeicher einsehen.
-</td></tr>
-<tr><td>Display Name</td><td>Nach einem Failover zurück zum lokalen Betrieb können Sie die virtuellen Computer umbenennen, damit sie wie im vCenter-Bestand angezeigt werden. Beachten Sie, dass standardmäßig der Hostname des virtuellen Computers angezeigt wird. Den Namen des virtuellen Computers finden Sie in der Liste mit den virtuellen Computern der Schutzgruppe.</td></tr>
-<tr><td>NAT Configuration</td><td>Diese Option wird im Anschluss näher erläutert.</td></tr>
-</table>
+Eigenschaft|Konfiguration
+---|---
+Network Configuration|Konfigurieren Sie für jede erkannte Netzwerkkarte die Failback-IP-Adresse für den virtuellen Computer. Wählen Sie die Netzwerkkarte aus, und klicken Sie auf **Ändern**, um die IP-Adresse anzugeben.
+Hardware Configuration|Sie können die CPU und den Arbeitsspeicher für den virtuellen Computer angeben. Diese Einstellung kann auf alle virtuellen Computer angewendet werden, die Sie schützen möchten.
+Display Name|Die korrekten Werte für CPU und Arbeitsspeicher finden Sie unter der Rollengröße des virtuellen IAAS-Computers. Hier können Sie die Anzahl der Kerne und den zugewiesenen Arbeitsspeicher einsehen.
+Display Name|Nach einem Failover zurück zum lokalen Betrieb können Sie die virtuellen Computer umbenennen, damit sie wie im vCenter-Bestand angezeigt werden. Beachten Sie, dass standardmäßig der Hostname des virtuellen Computers angezeigt wird. Den Namen des virtuellen Computers finden Sie in der Liste mit den virtuellen Computern der Schutzgruppe.
+NAT Configuration|Diese Option wird im Anschluss näher erläutert.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image27.png)
 
@@ -453,7 +406,7 @@ Für jeden virtuellen Computer müssen folgende Optionen angegeben werden:
 
 Die anderen Optionen der erweiterten Einstellungen müssen nicht geändert werden. Stellen Sie sicher, dass Sie die Ordnernameneinstellungen auf alle Server anwenden.
 
-1.  Danach können Sie mit der abschließenden Phase des Schutzes beginnen. In dieser Phase muss eine Bereitschaftsüberprüfung durchgeführt werden, um sicherzustellen, dass die virtuellen Computer für die Rückkehr zum lokalen Schutz bereit sind.
+2.  Danach können Sie mit der abschließenden Phase des Schutzes beginnen. In dieser Phase muss eine Bereitschaftsüberprüfung durchgeführt werden, um sicherzustellen, dass die virtuellen Computer für die Rückkehr zum lokalen Schutz bereit sind.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image32.png)
 
@@ -471,7 +424,7 @@ Die anderen Optionen der erweiterten Einstellungen müssen nicht geändert werde
     below.
 
 
-1.  Der Schutz beginnt.
+3.  Der Schutz beginnt.
 
     a. Der Status des Schutzes wird in vContinuum angezeigt.
 
@@ -498,15 +451,15 @@ Sie können einen Failbackplan mit vContinuum vorbereiten, damit für die Anwend
 
 ![](./media/site-recovery-failback-azure-to-vmware/image37.png)
 
-1.  Eine Liste mit allen Plänen zum Schutz der virtuellen Computer wird angezeigt. Diese Pläne können Sie auch für die Wiederherstellung verwenden.
+3.  Eine Liste mit allen Plänen zum Schutz der virtuellen Computer wird angezeigt. Diese Pläne können Sie auch für die Wiederherstellung verwenden.
 
-2.  Wählen Sie den Schutzplan und die virtuellen Computer aus, die Sie wiederherstellen möchten.
+4.  Wählen Sie den Schutzplan und die virtuellen Computer aus, die Sie wiederherstellen möchten.
 
     a. Für jeden virtuellen Computer werden weitere Details zum virtuellen Quellcomputer, zum Ziel-ESX-Server, auf dem der virtuelle Computer wiederhergestellt wird, und zum virtuellen Quelldatenträger angezeigt.
 
-3.  Klicken Sie auf **Next**, um den Wiederherstellungs-Assistenten zu starten.
+5.  Klicken Sie auf **Next**, um den Wiederherstellungs-Assistenten zu starten.
 
-4.  Wählen Sie die virtuellen Computer aus, die Sie wiederherstellen möchten.
+6.  Wählen Sie die virtuellen Computer aus, die Sie wiederherstellen möchten.
 
     a. Sehen Sie sich die Liste mit allen virtuellen Computern an, die wiederhergestellt werden können.
 
@@ -520,15 +473,15 @@ Sie können einen Failbackplan mit vContinuum vorbereiten, damit für die Anwend
     chosen for all the virtual machines.
 
 
-1.  Führen Sie die Bereitschaftsprüfung aus. Daraufhin wird geprüft, ob die richtigen Parameter konfiguriert sind, um die neueste Tag-Wiederherstellung des virtuellen Computers zu ermöglichen. Klicken Sie auf „Next“, wenn alle Überprüfungen erfolgreich waren. Falls nicht, sehen Sie sich das Protokoll an, und beheben Sie die Fehler.
+7.  Führen Sie die Bereitschaftsprüfung aus. Daraufhin wird geprüft, ob die richtigen Parameter konfiguriert sind, um die neueste Tag-Wiederherstellung des virtuellen Computers zu ermöglichen. Klicken Sie auf „Next“, wenn alle Überprüfungen erfolgreich waren. Falls nicht, sehen Sie sich das Protokoll an, und beheben Sie die Fehler.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image39.png)
 
-2.  Vergewissern Sie sich im Konfigurationsschritt für den virtuellen Computer, dass die Wiederherstellungseinstellungen korrekt sind. Sollten die Einstellungen für den virtuellen Computer nicht den erforderlichen Einstellungen entsprechen, können Sie die Einstellungen ändern. Da wir diesen Schritt bereits während des Schutzes durchgeführt haben, können Sie ihn dieses Mal ignorieren.
+8.  Vergewissern Sie sich im Konfigurationsschritt für den virtuellen Computer, dass die Wiederherstellungseinstellungen korrekt sind. Sollten die Einstellungen für den virtuellen Computer nicht den erforderlichen Einstellungen entsprechen, können Sie die Einstellungen ändern. Da wir diesen Schritt bereits während des Schutzes durchgeführt haben, können Sie ihn dieses Mal ignorieren.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image40.png)
 
-1.  Überprüfen Sie die Liste mit den virtuellen Computern, die wiederhergestellt werden sollen.
+9.  Überprüfen Sie die Liste mit den virtuellen Computern, die wiederhergestellt werden sollen.
 
     a. Geben Sie eine Wiederherstellungsreihenfolge für die virtuellen Computer an.
 
@@ -536,7 +489,7 @@ Hinweis: Die virtuellen Computer sind mit dem Computerhostnamen angegeben. Unter
 
 ![](./media/site-recovery-failback-azure-to-vmware/image41.png)
 
-1.  Geben Sie den Namen des Wiederherstellungsplans an, und wählen Sie in den Wiederherstellungsoptionen die Option für eine spätere Wiederherstellung aus.
+10.  Geben Sie den Namen des Wiederherstellungsplans an, und wählen Sie in den Wiederherstellungsoptionen die Option für eine spätere Wiederherstellung aus.
 
     a. Falls Sie die Wiederherstellung sofort durchführen möchten, können Sie in den Wiederherstellungsoptionen die Einstellung für die sofortige Wiederherstellung auswählen.
 
@@ -544,11 +497,11 @@ Hinweis: Die virtuellen Computer sind mit dem Computerhostnamen angegeben. Unter
 
     c. Klicken Sie abschließend auf die Schaltfläche **Recover**, um abhängig von den gewählten Wiederherstellungsoptionen entweder den Plan zu speichern oder die Wiederherstellung zu initiieren.
 
-2.  Sie sehen den Wiederherstellungsstatus und erfahren, ob der Plan erfolgreich gespeichert wurde.
+11.  Sie sehen den Wiederherstellungsstatus und erfahren, ob der Plan erfolgreich gespeichert wurde.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image42.png)
 
-1.  Wenn Sie sich für die spätere Wiederherstellung entschieden haben, werden Sie darüber informiert, dass der Plan erstellt wurde und Sie die Wiederherstellung später durchführen können.
+12.  Wenn Sie sich für die spätere Wiederherstellung entschieden haben, werden Sie darüber informiert, dass der Plan erstellt wurde und Sie die Wiederherstellung später durchführen können.
 
 ![](./media/site-recovery-failback-azure-to-vmware/image43.png)
 
@@ -570,18 +523,18 @@ Starten Sie den gespeicherten Plan, um mit der lokalen Wiederherstellung der vir
 
 ![](./media/site-recovery-failback-azure-to-vmware/image45.png)
 
-1.  Klicken Sie auf den Wiederherstellungsknoten, und wählen Sie den Plan aus, den Sie wiederherstellen möchten.
+3.  Klicken Sie auf den Wiederherstellungsknoten, und wählen Sie den Plan aus, den Sie wiederherstellen möchten.
 
     a. Sie werden darüber informiert, dass der Plan noch nicht gestartet wurde.
 
-2.  Klicken Sie auf **Start**, um mit der Wiederherstellung zu beginnen.
+4.  Klicken Sie auf **Start**, um mit der Wiederherstellung zu beginnen.
 
-3.  Sie können die Wiederherstellung der virtuellen Computer verfolgen.
+5.  Sie können die Wiederherstellung der virtuellen Computer verfolgen.
 
 
 ![](./media/site-recovery-failback-azure-to-vmware/image46.png)
 
-4. Nachdem die virtuellen Computer eingeschaltet wurden, können Sie über Ihr vCenter eine Verbindung herstellen.
+6. Nachdem die virtuellen Computer eingeschaltet wurden, können Sie über Ihr vCenter eine Verbindung herstellen.
 
 ## Wiederherstellen des Schutzes in Azure nach dem Failback
 
@@ -604,4 +557,4 @@ Nach Abschluss des Failbacks empfiehlt es sich unter Umständen, die virtuellen 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

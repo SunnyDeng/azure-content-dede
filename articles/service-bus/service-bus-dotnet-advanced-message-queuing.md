@@ -308,4 +308,4 @@ Sie können Servicebus AMQP 1.0 auch in anderen Sprachen verwenden, einschließl
 * [Verwenden von Servicebus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

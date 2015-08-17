@@ -31,61 +31,14 @@ Die Treiber für die Linux-Integrationsdienste (Linux Integration Services, LIS)
 
 Der Azure Linux-Agent ist bereits in den Images im Azure-Katalog vorinstalliert und i. d. R. im Paketrepository der Distribution verfügbar. Quellcode finden Sie unter [GitHub](https://github.com/azure/walinuxagent).
 
-<table border="1" width="600">
-  <tr bgcolor="#E9E7E7">
-		<th>Verteilung</th>		
-	    <th>Version</th>
-	    <th>Treiber</th>
-		<th>Agent</th>
-			</tr>
-	<tr>
-		<th>  Ubuntu von Canonical </th>
-		<td> Ubuntu 12.04, 14.04, 14.10 und 15.04 </td>
-		<td>Im Kernel</td>
-		<td>Paket: Im Repository unter "walinuxagent" <br />
-			Quelle: <a href="http://go.microsoft.com/fwlink/p/?LinkID=250998">GitHub</a></td>
-			</tr>
-	<tr>
-		<th> CentOS von OpenLogic </th>
-		<td> CentOS 6.3+, 7.0+</td>
-	    <td> CentOS 6.3: <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409">LIS-Download</a><br/>
-	        CentOS 6.4+: Im Kernel</td>
-		<td>Paket: Im <a href="http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/">Open Logic-Repository</a> unter "WALinuxAgent"<br />
-			Quelle: <a href="http://go.microsoft.com/fwlink/p/?LinkID=250998">GitHub</a></td>
- 		
-	</tr>
-	<tr>
-		<th> <a href="https://coreos.com/docs/running-coreos/cloud-providers/azure/">CoreOS</a> </th>
-		<td> 494.4.0+ </td>
-        <td> Im Kernel </td>
-		<td> Quelle: <a href="https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent">GitHub</a></td>
-		
-	</tr>
-	<tr>
-		<th> Oracle Linux </th>
-		<td> 6.4+, 7.0+ </td>
-        <td>Im Kernel</td>
-		<td>Paket: Im Repository unter "WALinuxAgent"<br />
-			Quelle: <a href="http://go.microsoft.com/fwlink/p/?LinkID=250998">GitHub</a></td>
-		
-	</tr>
-	<tr>
-		<th> SUSE Linux Enterprise </th>
-		<td> SLES 11 SP3 oder höher, SLES 12 oder höher und <br /> SLES für SAP 11.3 oder höher </td>
-        <td>Im Kernel</td>
-		<td>Paket: Im <a href="https://build.opensuse.org/project/show/Cloud:Tools">Cloud:Tools</a>-Repository unter "WALinuxAgent"<br />
-			Quelle: <a href="http://go.microsoft.com/fwlink/p/?LinkID=250998">GitHub</a></td>
-		
-	</tr>
-	<tr>
-		<th> openSUSE </th>
-		<td> openSUSE 13.1+</td>
-		<td>Im Kernel</td>
-		<td>Paket: Im <a href="https://build.opensuse.org/project/show/Cloud:Tools" >Cloud:Tools</a>-Repository unter "WALinuxAgent"<br />
-			Quellcode: <a href="http://go.microsoft.com/fwlink/p/?LinkID=250998">GitHub</a></td>
-		
-	</tr>
-</table>
+Verteilung|Version|Treiber|Agent
+---|---|---|---
+Ubuntu von Canonical|Ubuntu 12.04, 14.04, 14.10 und 15.04|Im Kernel|Paket: Im Repository unter "WALinuxagent" <p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+CentOS von OpenLogic |CentOS 6.3+, 7.0+| CentOS 6.3:[LIS-Download](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4 +: im Kernel|Paket: Im <a href="http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/">-OpenLogic-Repository unter "WALinuxagent"<p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+[CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/)|494\.4.0+ |Im Kernel|Quelle: [GitHub](https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent)
+Oracle Linux| 6\.4+, 7.0+|Im Kernel|Paket: Im Repository unter "WALinuxagent" <p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+SUSE Linux Enterprise |SLES 11 SP3 oder höher, SLES 12 oder höher und <p><p>SLES für SAP 11.3 oder höher |Im Kernel|Paket: Im [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools)-Repository unter "WALinuxAgent"<p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+openSUSE |openSUSE 13.1+|Im Kernel|Paket: Im [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools)-Repository unter "WALinuxAgent"<p><p>Quellcode: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
 
 ## Partner
 
@@ -124,4 +77,4 @@ SUSE Linux Enterprise Server unter Azure ist eine bewährte Plattform, die hervo
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -12,7 +12,7 @@
 	ms.workload="tbd"
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
-	ms.topic="get-started-article"
+	ms.topic="hero-article"
 	ms.date="06/08/2015"
 	ms.author="tdykstra"/>
 
@@ -270,7 +270,7 @@ Die Verbindungszeichenfolgen für das Azure-Speicherkonto für das Web- und Work
 
 	![Cloudkonfiguration](./media/cloud-services-dotnet-get-started/sccloud.png)
 
-6. Wenn Sie den Eintrag **StorageConnectionString** auswählen, sehen Sie am rechten Ende der Zeile eine Schaltfläche mit Auslassungszeichen (**...**). Klicken Sie auf die elliptische Schaltfläche, um das Dialogfeld **Verbindungszeichenfolge für Speicherkonto erstellen** zu öffnen.
+6. Wenn Sie den Eintrag **StorageConnectionString** auswählen, sehen Sie eine elliptische Schaltfläche (**...**) am Ende der Zeile. Klicken Sie auf die elliptische Schaltfläche, um das Dialogfeld **Verbindungszeichenfolge für Speicherkonto erstellen** zu öffnen.
 
 	![Erstellungsdialog für Verbindungszeichenfolge](./media/cloud-services-dotnet-get-started/opencscreate.png)
 
@@ -467,10 +467,10 @@ Um Dateien zu einem Projekt oder einem Ordner hinzuzufügen, klicken Sie mit der
 
 3. Fügen Sie im Projekt ContosoAdsWeb die folgenden Dateien aus dem heruntergeladenen Projekt hinzu.
 	- *Global.asax.cs*  
-	- Im Ordner *Views\Shared*: <em>_Layout.cshtml</em>
-	- Im Ordner *Views\Home*: *Index.cshtml*
+	- Im Ordner *Views\\Shared*: <em>\_Layout.cshtml</em>
+	- Im Ordner *Views\\Home*: *Index.cshtml*
 	- Im Ordner *Controllers*: *AdController.cs*
-	- Im Ordner *Views\Ad* (Ordner zuerst erstellen): fünf *CSHTML*-Dateien
+	- Im Ordner *Views\\Ad* (Ordner zuerst erstellen): fünf *CSHTML*-Dateien
 
 3. Fügen Sie im Projekt ContosoAdsWorker die Datei *WorkerRole.cs* aus dem heruntergeladenen Projekt hinzu.
 
@@ -571,13 +571,13 @@ Ein ähnlicher Codeteil ruft einen Verweis auf die *images*-Warteschlange ab und
 		var imagesQueue = queueClient.GetQueueReference("images");
 		imagesQueue.CreateIfNotExists();
 
-### ContosoAdsWeb - _Layout.cshtml
+### ContosoAdsWeb - \_Layout.cshtml
 
-Die *_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen Ads-Menüeintrag.
+Die *\_Layout.cshtml*-Datei setzt den App-Namen in Kopf- und Fußzeile und erstellt einen "Ads"-Menüeintrag.
 
-### ContosoAdsWeb - Views\Home\Index.cshtml
+### ContosoAdsWeb - Views\\Home\\Index.cshtml
 
-Die *Views\Home\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der `Category`-Enumeration in einer querystring-Variable an die Ads-Indexseite.
+Die *Views\\Home\\Index.cshtml*-Datei zeigt Links zu den Kategorien auf der Startseite an. Die Links übergeben den ganzzahligen Wert aus der `Category`-Enumeration in einer querystring-Variable an die Ads-Indexseite.
 
 		<li>@Html.ActionLink("Cars", "Index", "Ad", new { category = (int)Category.Cars }, null)</li>
 		<li>@Html.ActionLink("Real estate", "Index", "Ad", new { category = (int)Category.RealEstate }, null)</li>
@@ -666,7 +666,7 @@ Hier sehen Sie den Code, der Blobs löscht, wenn Sie eine Werbung löschen:
 		    await blobToDelete.DeleteAsync();
 		}
 
-### ContosoAdsWeb - Views\Ad\Index.cshtml und Details.cshtml
+### ContosoAdsWeb - Views\\Ad\\Index.cshtml und Details.cshtml
 
 Die Datei *Index.cshtml* zeigt Miniaturansichten zusammen mit den restlichen Werbedaten an:
 
@@ -676,7 +676,7 @@ Die Datei *Details.cshtml* zeigt das Bild in voller Größe an:
 
 		<img src="@Html.Raw(Model.ImageURL)" />
 
-### ContosoAdsWeb - Views\Ad\Create.cshtml und Edit.cshtml
+### ContosoAdsWeb - Views\\Ad\\Create.cshtml und Edit.cshtml
 
 Die Dateien *Create.cshtml* und *Edit.cshtml* geben die Formularcodierung an, mit der der Controller das `HttpPostedFileBase`-Objekt abruft.
 
@@ -812,4 +812,4 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 * [Azure Storage](/documentation/services/storage/) (in englischer Sprache)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

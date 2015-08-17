@@ -6,6 +6,7 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
+
 <tags 
    ms.service="automation"
    ms.devlang="na"
@@ -14,6 +15,7 @@
    ms.workload="infrastructure-services"
    ms.date="06/14/2015"
    ms.author="bwren" />
+
 
 # Zertifikatobjekte in Azure Automation
 
@@ -98,7 +100,7 @@ Sie können einem grafischen Runbook **Get-AutomationCertificate** hinzufügen, 
 
 Die folgende Abbildung zeigt ein Beispiel für die Verwendung eines Zertifikats in einem grafischen Runbook. Es handelt sich um das oben gezeigte Beispiel zum Hinzufügen eines Zertifikats zu einem Clouddienst aus einem Textrunbook.
 
-In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die Send-**TwilioSMS**-Aktivität verwendet, die ein Verbindungsobjekt zur Authentifizierung beim Dienst nutzt. Es muss hier eine [Pipelineverknüpfung](automation-graphical-authoring-intro.md#links-and-workflow) verwendet werden, da eine Sequenzverknüpfung eine Auflistung mit einem einzelnen Objekt zurückgeben würde, und dies nicht vom Connection-Parameter erwartet wird.
+In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die Send-**TwilioSMS-Aktivität** verwendet, die ein Verbindungsobjekt zur Authentifizierung beim Dienst nutzt. Es muss hier eine [Pipelineverknüpfung](automation-graphical-authoring-intro.md#links-and-workflow) verwendet werden, da eine Sequenzverknüpfung eine Auflistung mit einem einzelnen Objekt zurückgeben würde, und dies nicht vom Connection-Parameter erwartet wird.
 
 ![](media/automation-certificates/add-certificate.png)
 
@@ -107,4 +109,4 @@ In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die Send-
 
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow) 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

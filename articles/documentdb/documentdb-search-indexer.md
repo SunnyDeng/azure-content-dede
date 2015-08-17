@@ -1,11 +1,12 @@
 <properties 
-    pageTitle="Herstellen einer Verbindung zwischen DocumentDB und Azure Search unter Verwendung von Indexern | Azure" 
+    pageTitle="Herstellen einer Verbindung zwischen DocumentDB und Azure Search unter Verwendung von Indexern | Microsoft Azure" 
     description="Dieser Artikel veranschaulicht die Verwendung des Azure-Such-Indexers mit DocumentDB als Datenquelle."
     services="documentdb" 
     documentationCenter="" 
     authors="aliuy" 
     manager="jhubbard" 
     editor="mimig"/>
+
 
 <tags 
     ms.service="documentdb" 
@@ -16,17 +17,18 @@
     ms.date="06/16/2015" 
     ms.author="andrl"/>
 
+
 #Herstellen einer Verbindung zwischen DocumentDB und Azure Search unter Verwendung von Indexern
 
 Wenn Sie ein hervorragendes Suchverlaufsverhalten in Bezug auf DocumentDB-Daten implementieren möchten, verwenden Sie den Azure Search Indexer für DocumentDB! In diesem Artikel erfahren Sie, wie Sie Azure DocumentDB mit der Azure-Suche integrieren, ohne dass Sie Code zum Beibehalten der Indexdienst-Infrastruktur schreiben müssen!
 
-Zur Realisierung müssen Sie ein [Azure Search-Konto einrichten](../search-get-started.md#start-with-the-free-service) \(Sie müssen kein Upgrade auf die Standardsuche durchführen\) und anschließend die [Azure Search-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) aufrufen, um eine DocumentDB-**Datenquelle** und einen **Indexer** für diese Datenquelle zu erstellen.
+Zur Realisierung müssen Sie ein [Azure Search-Konto einrichten](../search-get-started.md#start-with-the-free-service) (Sie müssen kein Upgrade auf die Standardsuche durchführen) und anschließend die [Azure Search-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) aufrufen, um eine DocumentDB-**Datenquelle** und einen **Indexer** für diese Datenquelle zu erstellen.
 
 ##<a id="Concepts"></a>Azure Search Indexer-Konzepte
 
-Azure Search unterstützt die Erstellung und Verwaltung von Datenquellen \(einschließlich DocumentDB\) und von Indexern, die gegenläufig zu diesen Datenquellen fungieren.
+Azure Search unterstützt die Erstellung und Verwaltung von Datenquellen (einschließlich DocumentDB) und von Indexern, die gegenläufig zu diesen Datenquellen fungieren.
 
-Eine **Datenquelle** gibt an, welche Daten indiziert werden müssen, und sie legt die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search, um Änderungen an den Daten effizient identifizieren zu können \(wie z. B. geänderte oder gelöschte Dokumente in der Sammlung\). Die Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
+Eine **Datenquelle** gibt an, welche Daten indiziert werden müssen, und sie legt die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search, um Änderungen an den Daten effizient identifizieren zu können (wie z. B. geänderte oder gelöschte Dokumente in der Sammlung). Die Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
 
 Ein **Indexer** beschreibt, wie die Daten von der Datenquelle in einen Zielsuchindex fließen. Sie sollten jeweils einen Indexer pro Kombination aus Zielindex und Datenquelle erstellen. Während mehrere Indexer zwar in denselben Index schreiben können, kann ein Indexer nur in einen einzigen Index schreiben. Ein Indexer wird für Folgendes verwendet:
 
@@ -80,7 +82,7 @@ Sie müssen `_ts` außerdem in der Projektion und der `WHERE`-Klausel für Ihre 
 
 ###<a id="DataDeletionDetectionPolicy"></a>Erfassen von gelöschten Dokumenten
 
-Wenn Zeilen aus der Quelltabelle gelöscht werden, sollten Sie diese Zeilen auch aus dem Suchindex löschen. Die Richtlinie zum Erkennen von Datenlöschungen dient einer effizienten Identifizierung gelöschter Datenelemente. Zurzeit ist `Soft Delete` die einzige unterstützte Richtlinie \(die Löschung wird durch ein bestimmtes Kennzeichen markiert\). Diese wird folgendermaßen festgelegt:
+Wenn Zeilen aus der Quelltabelle gelöscht werden, sollten Sie diese Zeilen auch aus dem Suchindex löschen. Die Richtlinie zum Erkennen von Datenlöschungen dient einer effizienten Identifizierung gelöschter Datenelemente. Zurzeit ist `Soft Delete` die einzige unterstützte Richtlinie (die Löschung wird durch ein bestimmtes Kennzeichen markiert). Diese wird folgendermaßen festgelegt:
 
     { 
         "@odata.type" : "#Microsoft.Azure.Search.SoftDeleteColumnDeletionDetectionPolicy",
@@ -132,50 +134,16 @@ Stellen Sie sicher, dass das Schema des Ziel-Indexes mit dem Schema der JSON-Que
 
 ###Abbildung A: Zuordnung zwischen JSON-Datentypen und Azure Search-Datentypen
 
-<table style="font-size:12">
-    <tr>
-        <th>JSON-Datentyp</th>
-        <th>Kompatible Ziel-Index-Feldtypen</th>
-    </tr>
-    <tr>
-        <td>Bool</td>
-        <td>Edm.Boolean, Edm.String</td>
-    </tr>
-    <tr>
-        <td>Zahlen, die wie Ganzzahlen aussehen</td>
-        <td>Edm.Int32, Edm.Int64, Edm.String</td>
-    </tr>
-    <tr>
-        <td>Zahlen, die wie Gleitkommas aussehen</td>
-        <td>Edm.Double, Edm.String</td>
-    </tr>
-    <tr>
-        <td>String</td>
-        <td>Edm.String</td>
-    </tr>
-    <tr>
-        <td>
-            Arrays primitiver Typen<br/>
-            z.&#160;B. [„a“, „b“, „c“]
-        </td>
-        <td>Collection(Edm.String)</td>
-    </tr>
-    <tr>
-        <td>Zeichenfolgen, die wie Datumsangaben aussehen</td>
-        <td>Edm.DateTimeOffset, Edm.String</td>
-    </tr>
-    <tr>
-        <td>
-            GeoJSON-Objekte<br/>
-            z.&#160;B. {„Typ“: „Punkt“, „Koordinaten“: [long, lat]}
-        </td>
-        <td>Edm.GeographyPoint</td>
-    </tr>
-    <tr>
-        <td>Andere JSON-Objekte</td>
-        <td>N/V</td>
-    </tr>
-</table>
+| JSON-DATENTYP|	KOMPATIBLE ZIEL-INDEX-FELDTYPEN|
+|---|---|
+|Bool|Edm.Boolean, Edm.String|
+|Zahlen, die wie Ganzzahlen aussehen|Edm.Int32, Edm.Int64, Edm.String|
+|Zahlen, die wie Gleitkommas aussehen|Edm.Double, Edm.String|
+|String|Edm.String|
+|Arrays primitiver Typen, z. B. "a", "b", "c" |Collection(Edm.String)|
+|Zeichenfolgen, die wie Datumsangaben aussehen| Edm.DateTimeOffset, Edm.String|
+|GeoJSON-Objekte z. B. { „Typ“: „Punkt“, „Koordinaten“: [ long, lat ] } | Edm.GeographyPoint |
+|Andere JSON-Objekte|N/V|
 
 ###<a id="CreateIndexExample"></a>Beispiel für Anforderungstext
 
@@ -224,7 +192,7 @@ Der Anforderungstext umfasst die Indexerdefinition, welche die folgenden Felder 
 
 Ein Indexer kann optional einen Zeitplan angeben. Wenn ein Zeitplan vorliegt, wird der Indexer regelmäßig gemäß Zeitplan ausgeführt. Der Zeitplan besitzt die folgenden Attribute:
 
-- **Intervall**: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein \(eine eingeschränkte Teilmenge eines [ISO 8601-Zeitdauerwerts](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)\). Das Muster hierfür lautet wie folgt: `P(nD)(T(nH)(nM))`. Beispiele: `PT15M` = alle 15 Minuten, `PT2H` = alle 2 Stunden. 
+- **Intervall**: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines [ISO 8601-Zeitdauerwerts](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)). Das Muster hierfür lautet wie folgt: `P(nD)(T(nH)(nM))`. Beispiele: `PT15M` = alle 15 Minuten, `PT2H` = alle 2 Stunden. 
 
 - **startTime**: Erforderlich. Ein UTC-DateTime-Wert, der angibt, wann die Ausführung des Indexers beginnen soll.
 
@@ -263,7 +231,7 @@ Sie können eine HTTP GET-Anforderung ausgeben, um den aktuellen Status und den 
 
 ###Antwort
 
-Sie erhalten die Antwort "HTTP 200 OK", die zusammen mit einem Antworttext zurückgegeben wird. Dieser enthält Informationen über den Gesamtintegritätsstatus des Indexers, den letzten Indexer-Aufruf, sowie den Verlauf der jüngsten Indexer-Aufrufe \(sofern vorhanden\).
+Sie erhalten die Antwort "HTTP 200 OK", die zusammen mit einem Antworttext zurückgegeben wird. Dieser enthält Informationen über den Gesamtintegritätsstatus des Indexers, den letzten Indexer-Aufruf, sowie den Verlauf der jüngsten Indexer-Aufrufe (sofern vorhanden).
 
 Die Antwort sollte etwa wie folgt aussehen:
 
@@ -293,7 +261,7 @@ Die Antwort sollte etwa wie folgt aussehen:
         }]
     }
 
-Der Ausführungsverlauf enthält bis zu 50 der jüngsten abgeschlossenen Ausführungen. Diese sind in umgekehrter chronologischer Reihenfolge sortiert \(somit ist die neueste Ausführung als Erstes in der Antwort aufgelistet\).
+Der Ausführungsverlauf enthält bis zu 50 der jüngsten abgeschlossenen Ausführungen. Diese sind in umgekehrter chronologischer Reihenfolge sortiert (somit ist die neueste Ausführung als Erstes in der Antwort aufgelistet).
 
 ##<a name="NextSteps"></a>Nächste Schritte
 
@@ -304,4 +272,4 @@ Glückwunsch! Sie wissen nun, wie Azure DocumentDB mit Azure Search unter Verwen
  - Klicken Sie [hier](/services/search/), um weitere Informationen zu Azure Search zu erhalten.
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

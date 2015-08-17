@@ -34,7 +34,7 @@ Lassen Sie uns anfangen.
 
 ## Zulassen von Multisite
 
-Sie müssen Multisite zunächst über die Datei`wp-config.php` mit der Konstanten **WP_ALLOW_MULTISITE** aktivieren. Es gibt zwei Möglichkeiten zum Bearbeiten von Web-App-Dateien: über FTP und über Git. Wenn Sie sich weder mit der Einrichtung der einen noch der anderen Methode auskennen, finden Sie weitere Informationen in den folgenden Lernprogrammen:
+Sie müssen Multisite zunächst über die Datei`wp-config.php` mit der Konstanten **WP\_ALLOW\_MULTISITE** aktivieren. Es gibt zwei Möglichkeiten zum Bearbeiten von Web-App-Dateien: über FTP und über Git. Wenn Sie sich weder mit der Einrichtung der einen noch der anderen Methode auskennen, finden Sie weitere Informationen in den folgenden Lernprogrammen:
 
 * [PHP-Website mit MySQL und FTP][website-w-mysql-and-ftp-ftp-setup]
 
@@ -93,7 +93,7 @@ Bevor Azure-Web-Apps zulassen, dass Sie eine Domäne mit der Website verknüpfen
 
 * Melden Sie sich beim DNS-Manager Ihrer Domäne an.
 * Erstellen Sie den neuen CNAME *awverify*.
-* Verweisen Sie *awverify* auf *awverify.IHRE_DOMÄNE.azurewebsites.net*
+* Verweisen Sie *awverify* auf *awverify.IHRE\_DOMÄNE.azurewebsites.net*
 
 Es kann einige Zeit dauern, bis die DNS-Änderungen vollständig übernommen werden. Wenn die folgenden Schritte daher nicht sofort funktionieren, warten Sie eine Weile, und versuchen Sie es erneut.
 
@@ -113,7 +113,7 @@ Notieren Sie sich die IP-Adresse, die unten im Dialogfeld aufgeführt wird. Sie 
 
 Wenn die anderen Schritte erfolgreich durchgeführt wurden, können Sie Ihrer Azure-Web-App nun über einen DNS-A-Datensatz die Domäne zuordnen.
 
-Hierbei ist es wichtig zu beachten, dass Azure-Web-Apps sowohl CNAME- als auch A-Datensätze akzeptieren, wobei Sie jedoch einen A-Datensatz verwenden *müssen*, um die ordnungsgemäße Domänenzuordnung zu ermöglichen. Ein CNAME kann nicht an einen anderen CNAME weitergeleitet werden, den Azure für Sie mit "IHRE_DOMÄNE.azurewebsites.net" erstellt hat.
+Hierbei ist es wichtig zu beachten, dass Azure-Web-Apps sowohl CNAME- als auch A-Datensätze akzeptieren, wobei Sie jedoch einen A-Datensatz verwenden *müssen*, um die ordnungsgemäße Domänenzuordnung zu ermöglichen. Ein CNAME kann nicht an einen anderen CNAME weitergeleitet werden, den Azure für Sie mit "IHRE\_DOMÄNE.azurewebsites.net" erstellt hat.
 
 Kehren Sie mithilfe der IP-Adresse aus dem vorhergehenden Schritt zu Ihrem DNS-Manager zurück, und richten Sie den A-Datensatz so ein, das er auf diese IP verweist.
 
@@ -154,4 +154,4 @@ Azure-Web-Apps ermöglichen Ihnen, eine unbegrenzte Anzahl von Domänen zu einer
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

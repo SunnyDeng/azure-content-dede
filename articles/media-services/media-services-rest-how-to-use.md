@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="06/04/2015" 
 	ms.author="juliako"/>
+
 
 
 # Übersicht über die Media Services-REST-API 
@@ -27,29 +29,58 @@ Microsoft Azure Media Services ist ein Dienst, der OData-basierte HTTP-Anforderu
 Für jeden Media Services-Aufruf müssen Sie eine Reihe obligatorischer Header in Ihre Anforderung einschließen. Darüber hinaus stehen verschiedene optionale Header zur Auswahl. In der folgenden Tabelle sind die erforderlichen Header aufgeführt:
 
 
-<table border="1"> <tr><th>Header</th><th>Typ</th><th>Wert</th></tr> <tr><td>Authorization</td><td>Bearer</td><td>Das Bearer-Token ist der einzige zulässige Autorisierungsmechanismus. Der Wert muss auch das von ACS bereitgestellte Zugriffstoken enthalten.</td></tr> <tr><td>x-ms-version</td><td>Dezimal</td><td>2.11</td></tr> <tr><td>DataServiceVersion</td><td>Dezimal</td><td>3.0</td></tr> <tr><td>MaxDataServiceVersion</td><td>Dezimal</td><td>3.0</td></tr> </table><br/>
+Header|Typ|Wert
+---|---|---
+Autorisierung|Bearer|Das Bearer-Token ist der einzig zulässige Autorisierungsmechanismus. Der Wert muss außerdem das von ACS bereitgestellte Zugriffstoken enthalten.
+x-ms-version|Decimal|2\.11
+DataServiceVersion|Decimal|3\.0
+MaxDataServiceVersion|Decimal|3\.0
+
 
 
 >[AZURE.NOTE]Da Media Services OData verwendet, um das zugrunde liegenden Repository für Medienobjekt-Metadaten über REST-APIs verfügbar zu machen, sollten der DataServiceVersion- Header und der MaxDataServiceVersion-Header in jede Anforderung eingeschlossen werden. Falls dies nicht geschieht, geht Media Services aktuell davon aus, dass der DataServiceVersion-Wert 3.0 verwendet wird.
 
 Im Folgenden finden Sie eine Reihe optionaler Header:
 
-<table border="1"> <tr><th>Header</th><th>Typ</th><th>Wert</th></tr> <tr><td>Date</td><td>RFC 1123-Datum</td><td>Zeitstempel der Anforderung</td></tr> <tr><td>Accept</td><td>Inhaltstyp</td><td>Der angeforderte Inhaltstyp für die Antwort, Beispiele: <ul><li>application/json;odata=verbose</li><li>application/atom+xml</li></ul></br> Antworten können einen anderen Inhaltstyp wie z. B. einen Blobabruf aufweisen, wobei eine erfolgreiche Antwort den Blobstream als Nutzlast enthält.</td></tr> <tr><td>Accept-Encoding</td><td>Gzip, deflate</td><td>GZIP- und DEFLATE-Codierung, falls zutreffend. Hinweis: Bei großen Ressourcen kann Media Services diesen Header ignorieren und unkomprimierte Daten zurückgeben. </td></tr> <tr><td>Accept-Language</td><td>"en", "es" usw.</td><td>Gibt die bevorzugte Sprache für die Antwort an.</td></tr> <tr><td>Accept-Charset</td><td>Zeichensatztyp wie "UTF-8"</td><td>Der Standardwert ist UTF-8.</td></tr> <tr><td>X-HTTP-Method</td><td>HTTP-Methode</td><td>Ermöglicht Clients oder Firewalls, die keine HTTP-Methoden wie PUT oder DELETE unterstützen, die Verwendung dieser Methoden über einen getunnelten GET-Aufruf.</td></tr> <tr><td>Content-Type</td><td>Inhaltstyp</td><td>Der Inhaltstyp des Anforderungstexts in PUT- oder POST-Anforderungen.</td></tr> <tr><td>client-request-id</td><td>Zeichenfolge</td><td>Ein vom Aufrufer definierter Wert, der die angegebene Anforderung identifiziert. Falls angegeben, wird dieser Wert in die Antwortnachricht eingeschlossen, um die Anforderung zuzuordnen. <br/><br/><b>Wichtig</b><br/>Werte sollten auf 2.096 Bytes (2 KB) begrenzt sein.</td></tr></table><br/>
-
+Header|Typ|Wert
+---|---|---
+Date|RFC 1123-Datum|Zeitstempel der Anforderung
+Accept|Content-Typ|Der angeforderte Inhaltstyp für die Antwort, Beispiele: <p> - application/json;odata=verbose<p> - application/atom+xml<p> Antworten können einen anderen Inhaltstyp wie z. B. einen Blobabruf aufweisen, wobei eine erfolgreiche Antwort den Blobstream als Nutzlast enthält.
+Accept-Encoding|Gzip, deflate|GZIP- und DEFLATE-Codierung, falls zutreffend. Hinweis: Bei großen Ressourcen kann Media Services diesen Header ignorieren und unkomprimierte Daten zurückgeben.
+Accept-Language|„en“, „es“ usw.|Gibt die bevorzugte Sprache für die Antwort an.
+Accept-Charset|Charset-Typ, z. B. „UTF-8“|Der Standardwert ist UTF-8.
+X-HTTP-Method|HTTP-Methode|Ermöglicht Clients oder Firewalls, die keine HTTP-Methoden wie PUT oder DELETE unterstützen, die Verwendung dieser Methoden über einen getunnelten GET-Aufruf.
+Content-Typ|Content-Typ|Der Inhaltstyp des Anforderungstexts in PUT- oder POST-Anforderungen.
+client-request-id|String|Ein vom Aufrufer definierter Wert, der die angegebene Anforderung identifiziert. Falls angegeben, wird dieser Wert in die Antwortnachricht eingeschlossen, um die Anforderung zuzuordnen. <p><p>\*\*Wichtig\*\*<p>Werte sollten auf 2096b (2K) begrenzt werden.
 
 ## Von Media Services unterstützte standardmäßige HTTP-Antwortheader
 
 Im Folgenden lernen Sie einen Satz von Headern kennen, die je nach der angeforderten Ressource und beabsichtigten Aktion zurückgegeben werden können.
 
 
-<table border="1"> <tr><th>Header</th><th>Typ</th><th>Wert</th></tr> <tr><td>request-id</td><td>Zeichenfolge</td><td>Ein eindeutiger, vom Dienst generierter Bezeichner für den aktuellen Vorgang.</td></tr> <tr><td>client-request-id</td><td>Zeichenfolge</td><td>Ein Bezeichner, der vom Aufrufer in der ursprünglichen Anforderung angegeben wird, sofern vorhanden.</td></tr> <tr><td>Date</td><td>RFC 1123-Datum</td><td>Das Datum, zu dem die Anforderung verarbeitet wurde.</td></tr> <tr><td>Content-Type</td><td>Variiert</td><td>Der Inhaltstyp des Antworttexts.</td></tr> <tr><td>Content-Encoding</td><td>Variiert</td><td>GZIP oder DEFLATE, je nachdem, welche Codierung geeignet ist.</td></tr> </table><br/>
+Header|Typ|Wert
+---|---|---
+request-id|String|Ein eindeutiger, vom Dienst generierter Bezeichner für den aktuellen Vorgang.
+client-request-id|String|Ein Bezeichner, der vom Aufrufer in der ursprünglichen Anforderung angegeben wird, sofern vorhanden.
+Date|RFC 1123-Datum|Das Datum, zu dem die Anforderung verarbeitet wurde.
+Content-Typ|Variabel|Der Inhaltstyp des Antworttexts.
+Content-Encoding|Variabel|GZIP oder DEFLATE, je nachdem, welche Codierung geeignet ist.
+
 
 ## Von Media Services unterstützte standardmäßige HTTP-Verben
 
 Im Folgenden finden eine vollständige Liste der HTTP-Verben, die für HTTP-Anforderungen verwendet werden können:
 
 
-<table border="1"> <tr><th>Verb</th><th>Beschreibung</th></tr> <tr><td>GET</td><td>Gibt den aktuellen Wert eines Objekts zurück.</td></tr> <tr><td>POST</td><td>Erstellt ein Objekt auf Grundlage der bereitgestellten Daten oder sendet einen Befehl.</td></tr> <tr><td>PUT</td><td>Ersetzt ein Objekt oder erstellt ein benanntes Objekt (falls zutreffend).</td></tr> <tr><td>DELETE</td><td>Löscht ein Objekt.</td></tr> <tr><td>MERGE</td><td>Aktualisiert ein vorhandenes Objekt anhand von Änderungen der benannten Eigenschaft.</td></tr> <tr><td>HEAD</td><td>Gibt die Metadaten eines Objekts für eine GET-Antwort zurück.</td></tr></table><br/>
+Verb|Beschreibung
+---|---
+GET|Gibt den aktuellen Wert eines Objekts zurück.
+POST|Erstellt ein Objekt auf Grundlage der bereitgestellten Daten oder sendet einen Befehl.
+PUT|Ersetzt ein Objekt oder erstellt ein benanntes Objekt (falls zutreffend).
+LÖSCHEN|Löscht ein Objekt.
+MERGE|Aktualisiert ein vorhandenes Objekt anhand von Änderungen der benannten Eigenschaft.
+HEAD|Gibt die Metadaten eines Objekts für eine GET-Antwort zurück.
+
 
 ## Ermitteln des Media Services-Modells
 
@@ -68,4 +99,4 @@ Sie sollten "?api-version=2.x" an das Ende des URIs anhängen, wenn Sie die Meta
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

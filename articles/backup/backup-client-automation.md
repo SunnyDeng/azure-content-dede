@@ -7,7 +7,9 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="07/17/2015" ms.author="aashishr"; "jimpark"/>
+
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt\_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="07/17/2015" ms.author="aashishr"; "jimpark"/>
+
 
 
 # Bereitstellen und Verwalten der Sicherung auf Azure für Windows-Server/Windows-Clients mit Azure PowerShell
@@ -23,7 +25,7 @@ Die folgenden Installations- und Registrierungsaufgaben können mit Azure PowerS
 - Netzwerk
 
 ### Installieren des Azure Backup-Agents
-Bevor Sie den Azure Backup-Agent installieren, müssen Sie das Installationsprogramm herunterladen, damit es auf dem Windows-Server verfügbar ist. Sie erhalten die neueste Version des Installationsprogramms im [Microsoft Download Center](http://aka.ms/azurebackup_agent). Speichern Sie das Installationsprogramm an einem leicht zugänglichen Speicherort wie *C:\Downloads*.
+Bevor Sie den Azure Backup-Agent installieren, müssen Sie das Installationsprogramm herunterladen, damit es auf dem Windows-Server verfügbar ist. Sie erhalten die neueste Version des Installationsprogramms im [Microsoft Download Center](http://aka.ms/azurebackup_agent). Speichern Sie das Installationsprogramm an einem leicht zugänglichen Speicherort wie \*C:\\Downloads\*.
 
 Um den Agent zu installieren, führen Sie den folgenden Befehl in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
 
@@ -49,16 +51,7 @@ Die verfügbaren Optionen umfassen:
 
 | Option | Details | Standard |
 | ---- | ----- | ----- |
-| /q | Unbeaufsichtigte Installation | - |
-| /p: "location" | Der Pfad zum Installationsordner für den Azure Backup-Agent. | C:\Program Files\\Microsoft Azure Recovery Services Agent |
-| /s: "Location" | Der Pfad zum Cacheordner für den Azure Backup-Agent. | C:\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch |
-| /m | Microsoft Update abonnieren | - |
-| /nu | Nach Abschluss der Installation nicht nach Updates suchen | - |
-| /d | Microsoft Azure Recovery Services Agent wird deinstalliert | - |
-| /ph | Proxyhostadresse | - |
-| /po | Proxyhost-Portnummer | - |
-| /pu | Proxyhost-Benutzername | - |
-| /pw | Proxykennwort | - |
+| /q | Unbeaufsichtigte Installation | - | | /p: "location" | Der Pfad zum Installationsordner für den Azure Backup-Agent. | C:\\Program Files\\Microsoft Azure Recovery Services Agent || /s: "Location" | Der Pfad zum Cacheordner für den Azure Backup-Agent. | C:\\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch || /m | Microsoft Update abonnieren | - | | /nu | Nach Abschluss der Installation nicht nach Updates suchen | - | | /d | Microsoft Azure Recovery Services Agent wird deinstalliert | - | | /ph | Proxyhostadresse | - | | /po | Proxyhost-Portnummer | - | | /pu | Proxyhost-Benutzername | - | | /pw | Proxykennwort | - |
 
 
 ### Registrieren beim Azure Backup-Dienst
@@ -66,7 +59,8 @@ Vor der Registrierung beim Azure Backup-Dienst müssen Sie sicherstellen, dass d
 
 - Gültiges Azure-Abonnement
 - Erstellen eines Sicherungstresors
-- Herunterladen der Tresoranmeldedaten und Speichern der Daten an einem geeigneten Speicherort (z. B. *C:\Downloads*). Die Tresoranmeldedaten können auch der Einfachheit halber umbenannt werden.
+- Laden Sie die Tresoranmeldedaten herunter und speichern Sie die Daten an einem geeigneten Speicherort (z. B. \*C:\\Downloads\*). Die Tresoranmeldedaten können auch der Einfachheit halber umbenannt werden.
+
 Das Registrieren des Computer beim Tresor erfolgt mithilfe des [Start-OBRegistration](https://technet.microsoft.com/library/hh770398%28v=wps.630%29.aspx)-Cmdlets:
 
 ```
@@ -377,7 +371,7 @@ PS C:\> $item = Get-OBRecoverableItem -RecoveryPoint $rps[0] -Location "D:\MyDat
 ```
 
 ### Auslösen des Wiederherstellungsvorgangs
-Um den Wiederherstellungsvorgang auszulösen, müssen wir zunächst die Wiederherstellungsoptionen angeben. Dazu kann das [New-OBRecoveryOption](https://technet.microsoft.com/library/hh770417.aspx)-Cmdlet verwendet werden. In diesem Beispiel gehen wir davon aus, dass wir die Dateien in *C:\temp* wiederherstellen möchten. Außerdem sollen Dateien, die bereits im Zielordner *C:\temp* vorhanden sind, übersprungen werden. Um eine solche Wiederherstellungsoption zu erstellen, verwenden Sie den folgenden Befehl:
+Um den Wiederherstellungsvorgang auszulösen, müssen wir zunächst die Wiederherstellungsoptionen angeben. Dazu kann das [New-OBRecoveryOption](https://technet.microsoft.com/library/hh770417.aspx)-Cmdlet verwendet werden. In diesem Beispiel gehen wir davon aus, dass wir die Dateien in *C:\\temp* wiederherstellen möchten. Außerdem sollen Dateien, die bereits im Zielordner *C:\\temp* vorhanden sind, übersprungen werden. Um eine solche Wiederherstellungsoption zu erstellen, verwenden Sie den folgenden Befehl:
 
 ```
 PS C:\> $recovery_option = New-OBRecoveryOption -DestinationPath "C:\temp" -OverwriteType Skip
@@ -444,4 +438,4 @@ PS C:\> Invoke-Command -Session $s -Script { param($d, $a) Start-Process -FilePa
 ## Nächste Schritte
 Weitere Informationen zu Azure Backup für Windows-Server und -Clients finden Sie unter [Einführung in Azure Backup](backup-introduction-to-azure-backup.md)
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

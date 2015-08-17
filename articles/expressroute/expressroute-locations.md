@@ -4,15 +4,15 @@
    services="expressroute"
    documentationCenter="na"
    authors="cherylmc"
-   manager="adinah"
+   manager="carolz"
    editor="tysonn" />
 <tags 
    ms.service="expressroute"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/07/2015"
+   ms.date="08/04/2015"
    ms.author="cherylmc" />
 
 # ExpressRoute-Partner und Peeringstandorte
@@ -28,6 +28,7 @@ Wenn Sie mit mindestens einem ExpressRoute-Standort innerhalb der geopolitischen
 |**Geopolitische Region**|**Azure-Regionen**|**ExpressRoute-Standorte**|
 |---|---|---|
 |**USA**|Alle US-Regionen: Osten USA, Westen USA, Osten USA 2, USA Süd Mitte, USA Nord Mitte|Atlanta, Chicago, Dallas, Los Angeles, New York, Seattle, Silicon Valley, Washington DC|
+|**USGov**|Iowa, Virginia|Ashburn, Chicago|
 |**Südamerika**|Brasilien Süd|Sao Paulo|
 |**Europa**|Nordeuropa, Westeuropa|Amsterdam, London|
 |**Asien**|Ostasien, Südostasien|Hongkong, Singapur|
@@ -76,7 +77,7 @@ Unter [Konfigurieren einer ExpressRoute-Verbindung](expressroute-configuring-exp
 | **[SingTel](http://info.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** | Unterstützt | Nicht unterstützt | Singapur |
 | **[Tata Communications](http://www.tatacommunications.com/lp/izo/azure/azure_index.html)** | Unterstützt | In Kürze verfügbar | Amsterdam, Chennai+, Hongkong, London, Mumbai+, Singapur |
 | **[Telstra Corporation](http://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** | Unterstützt | Nicht unterstützt | Melbourne+, Sydney |
-| **[Verizon](http://news.verizonenterprise.com/2014/04/secure-cloud-interconnect-solutions-enterprise/)** | Unterstützt | Nicht unterstützt | London, Hongkong, Silicon Valley, Washington, D.C. |
+| **[Verizon](http://news.verizonenterprise.com/2014/04/secure-cloud-interconnect-solutions-enterprise/)** | Unterstützt | Nicht unterstützt | London, Hongkong, Silicon Valley, Washington D.C., USGov Iowa, USGov Virginia |
 
  **+** steht für "In Kürze"
 
@@ -112,7 +113,7 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 - Stellen Sie sicher, dass Sie die [ExpressRoute-Voraussetzungen](expressroute-prerequisites.md) erfüllen.
 - Weitere Informationen finden Sie in den [FAQs](expressroute-faqs.md).
 - Wenn Sie eine ExpressRoute-Verbindung konfigurieren möchten, lesen Sie [Konfigurieren der EXP-Verbindung](expressroute-configuring-exps.md) oder [Konfigurieren der NSP-Verbindung](expressroute-configuring-nsps.md).
-- Wenn Sie sowohl eine VPN-Verbindung zwischen Standorten und ExpressRoute für dasselbe virtuelle Netzwerk konfigurieren möchten, lesen Sie [Koexistenz von ExpressRoute und VPN-Verbindungen zwischen Standorten](expressroute-coexist.md).
+- Wenn Sie sowohl eine VPN-Verbindung zwischen Standorten und ExpressRoute für dasselbe virtuelle Netzwerk konfigurieren möchten, lesen Sie [Koexistenz von ExpressRoute und VPN-Verbindungen zwischen Standorten konfigurieren](expressroute-coexist.md).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

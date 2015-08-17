@@ -37,4 +37,4 @@ Veröffentlichen des Inhalts. Weitere Informationen finden Sie unter [Codieren v
 [checkstatus]: ./media/media-services-portal-check-job-progress/media-services-monitor-job-progress.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

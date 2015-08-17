@@ -63,15 +63,17 @@ SQL Data Warehouse wird problemlos in wenigen Sekunden bereitgestellt. Dieser Di
 
 
 ## Nächste Schritte
-Erfahren Sie mehr über die [Data Warehouse-Workload].
+Erfahren Sie mehr über die [Data Warehouse-Workload]. [Beispieldaten] [bereitstellen] und laden, um loszulegen.
 
 <!--Image references-->
 
 <!--Article references-->
 [Data Warehouse-Workload]: ./sql-data-warehouse-overview-workload.md
+[Beispieldaten]: ./sql-data-warehouse-get-started-load-samples.md
+[bereitstellen]: ./sql-data-warehouse-get-started-provision.md
 
 <!--MSDN references-->
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

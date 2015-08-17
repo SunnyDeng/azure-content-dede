@@ -62,4 +62,4 @@ Dieses Subsystem sorgt mithilfe des Naming-Diensts für zuverlässiges Messaging
 Das Prüfbarkeitssubsystem besteht aus mehreren Tools, die speziell zum Testen von mit Service Fabric erstellten Diensten entwickelt wurden. Entwickler können mit diesen Tools auf einfache Weise sinnvolle Fehler herbeiführen und Testszenarien ausführen, um die zahlreichen Zustände und Übergänge, die ein Dienst im Laufe seines Lebenszyklus durchläuft, sicher und kontrolliert zu prüfen. Das Prüfbarkeitssubsystem bietet außerdem einen Mechanismus für das Ausführen langer Testläufe, in denen mehrere Fehler ohne Verfügbarkeitsverlust durchlaufen werden. Benutzern wird hierfür eine Testproduktionsumgebung bereitgestellt.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

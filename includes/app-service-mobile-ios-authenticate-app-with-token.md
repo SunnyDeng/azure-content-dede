@@ -29,4 +29,4 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, die erfordert, 
 
 				[self loadAuthInfo];
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

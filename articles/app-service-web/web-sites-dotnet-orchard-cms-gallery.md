@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/29/2015" 
+	ms.date="08/03/2015" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer Orchard CMS-Web-App über den Azure Marketplace
@@ -71,7 +71,7 @@ Sie erstellen eine Orchard CMS-Web-App, die eine Standardvorlage verwendet. [Orc
 
 3. In der [Orchard Documentation](http://docs.orchardproject.net/) (Orchard-Dokumentation, in englischer Sprache) erfahren Sie mehr über Orchard und zur Konfiguration Ihrer neuen Web-App.
 
-## Nächster Schritt
+## Nächste Schritte
 
 * [Entwickeln und Bereitstellen einer Web-App mit Microsoft WebMatrix](web-sites-dotnet-using-webmatrix.md) – Erfahren Sie, wie Sie eine App Service-Web App in WebMatrix bearbeiten. 
 * [Erstellen einer ASP.NET MVC-App mit Authentifizierung und SQL-Datenbank und Bereitstellung in Azure App Service](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md)– Erfahren Sie, wie Sie eine neue Web-App in Azure App Service in Visual Studio zu erstellen.
@@ -92,4 +92,4 @@ Sie erstellen eine Orchard CMS-Web-App, die eine Standardvorlage verwendet. [Orc
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

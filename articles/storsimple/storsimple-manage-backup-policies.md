@@ -28,7 +28,7 @@ Auf der Seite **Sicherungsrichtlinien** können Sie außerdem die vorhandenen Si
 - **Richtlinienname** – Der der Richtlinie zugeordnete Name. Die folgenden verschiedenen Richtlinientypen sind verfügbar:
 
    - Geplante Richtlinien, die explizit vom Benutzer erstellt werden.
-   - Automatische Richtlinien, die erstellt werden, wenn die Option "Standardsicherung für dieses Volume" zum Zeitpunkt der Volumeerstellung aktiviert war Diese Richtlinien tragen den Namen "VolumeName_Default". Dabei bezieht sich "VolumeName" auf den Namen des StorSimple-Volumes, das vom Benutzer im Verwaltungsportal konfiguriert wird. Die automatischen Richtlinien bewirken tägliche Cloud-Momentaufnahmen, die um 22:30 Uhr Gerätezeit beginnen.
+   - Automatische Richtlinien, die erstellt werden, wenn die Option "Standardsicherung für dieses Volume" zum Zeitpunkt der Volumeerstellung aktiviert war Diese Richtlinien tragen den Namen "VolumeName\_Default". Dabei bezieht sich "VolumeName" auf den Namen des StorSimple-Volumes, das vom Benutzer im Verwaltungsportal konfiguriert wird. Die automatischen Richtlinien bewirken tägliche Cloud-Momentaufnahmen, die um 22:30 Uhr Gerätezeit beginnen.
    - Importierte Richtlinien, die ursprünglich im StorSimple-Momentaufnahme-Manager erstellt wurden. Diese weisen ein Tag auf, das den StorSimple-Momentaufnahme-Manager-Host beschreibt, von dem die Richtlinien importiert wurden.
 
 - **Volumes** – Die Volumes, die der Richtlinie zugeordnet sind. Alle Volumes, die einer Sicherungsrichtlinie zugeordnet sind, werden beim Erstellen von Sicherungen gruppiert.
@@ -84,4 +84,4 @@ Führen Sie die folgenden Schritte im Verwaltungsportal aus, um eine benutzerdef
 
 Erfahren Sie, wie Sie StorSimple-Sicherungen mit dem [StorSimple-Momentaufnahme-Manager](https://msdn.microsoft.com/library/azure/dn772365.aspx) verwalten.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -12,7 +12,7 @@
 	ms.workload="infrastructure-services" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="05/12/2015" 
 	ms.author="Justinha"/>
 
@@ -58,7 +58,8 @@ Wenn Sie einmaliges Anmelden mit dem Clouddienst verwenden möchten, empfehlen w
 ### Hinzufügen eines Domänennamens mithilfe des Azure-Verwaltungsportals
 
 1. Klicken Sie im Portal auf **Active Directory**, und klicken Sie dann auf den Namen des Verzeichnisses Ihrer Organisation. Sie können einen der folgenden Schritte unternehmen:
-    1. Klicken Sie auf der Standardverzeichnisseite auf **Domäne hinzufügen** im Abschnitt **Verbesserung der Anmeldeerfahrung für Benutzer**. 2. Klicken Sie auf **Domänen** und klicken Sie dann auf **Hinzufügen eine Kundendomäne** oder auf die Schaltfläche **Hinzufügen**.
+    1. Klicken Sie auf der Standardverzeichnisseite auf **Domäne hinzufügen** im Abschnitt **Verbesserung der Anmeldeerfahrung für Benutzer**.
+2. Klicken Sie auf **Domänen** und klicken Sie dann auf **Hinzufügen eine Kundendomäne** oder auf die Schaltfläche **Hinzufügen**.
 2. Auf der Seite **Domäne hinzufügen** geben Sie den Domänennamen ein, den Sie hinzufügen möchten, und führen Sie einen der folgenden Schritte aus:
     1. Wenn Sie Ihr lokales Active Directory nicht in Azure AD integrieren möchten, führen Sie folgende Schritte aus:
         1. Lassen Sie das Kontrollkästchen **Ich plane die Konfiguration dieser Domäne für einmaliges Anmelden mit meinem lokalen Active Directory** deaktiviert, und klicken Sie auf die Schaltfläche **Hinzufügen**.
@@ -211,4 +212,4 @@ Wenn Sie Ihren benutzerdefinierten Domänennamen zum Clouddienst hinzufügen, na
 - [Als Organisation für Azure registrieren](sign-up-organization.md)
 - [Verwalten von Domänen in Azure AD](https://msdn.microsoft.com/library/azure/dn919677.aspx) 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

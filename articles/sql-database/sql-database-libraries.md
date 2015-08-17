@@ -39,7 +39,7 @@ Die folgende Tabelle enthält die Bibliotheken, die von Microsoft veröffentlich
 
 | Plattform | Betriebssystem | Bibliotheken<br/>zum Herunterladen | Version<br/>des Treibers | Beschreibung<br/>des Treibers | Weitere<br/>Informationen |
 | :--- | :--- | :--- | :--- | :--- | :-- |
-| .NET | Plattformübergreifend \(.NET\) | [ADO.NET, System.Data .SqlClient](http://www.microsoft.com/download/details.aspx?id=30653) | 4\.5+ | SQL Server-Anbieter für .NET Framework | . |
+| .NET | Plattformübergreifend (.NET) | [ADO.NET, System.Data .SqlClient](http://www.microsoft.com/download/details.aspx?id=30653) | 4\.5+ | SQL Server-Anbieter für .NET Framework | . |
 | PHP | Windows | [PHP für SQL Server](http://www.microsoft.com/download/details.aspx?id=20098) | 2\.0+ | PHP-Treiber für SQL Server | [Link](http://msdn.microsoft.com/library/dn865013.aspx) |
 | Java | Windows | [JDBC für SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) | 2\.0+ | 4 JDBC-Treibertyp, der Datenbankverbindungen über die Standard-JDBC-API bereitstellt | [Link](http://msdn.microsoft.com/library/dn425070.aspx) |
 | ODBC | Windows | [ODBC für SQL Server](http://www.microsoft.com/download/details.aspx?id=36434) | 11\.0+ | Microsoft ODBC-Treiber für SQL Server | [Link](http://msdn.microsoft.com/library/jj730308.aspx) |
@@ -50,7 +50,7 @@ Die folgende Tabelle enthält die Bibliotheken, die von Microsoft veröffentlich
 ### OLE DB für DB2 und SQL Server für den Entwurf von DRDA
 
 
-Mit dem Microsoft OLE DB-Anbieter für DB2, Version 5.0 \(Datenanbieter\) können Sie verteilte Anwendungen für IBM DB2-Datenbanken erstellen. Der Datenanbieter nutzt die Vorteile der Datenzugriffsarchitektur von Microsoft SQL Server in Verbindung mit einem Microsoft-Netzwerkclient für DB2, der als Anwendungsanforderung für eine verteilte relationale Datenbankarchitektur \(Distributed Relational Database Architecture, DRDA\) fungiert. Der Datenanbieter konvertiert OLE DB-Befehle und -Datentypen vom Microsoft Component Object Model \(COM\) in DRDA-Protokollcodepunkte und -Datenformate.
+Mit dem Microsoft OLE DB-Anbieter für DB2, Version 5.0 (Datenanbieter) können Sie verteilte Anwendungen für IBM DB2-Datenbanken erstellen. Der Datenanbieter nutzt die Vorteile der Datenzugriffsarchitektur von Microsoft SQL Server in Verbindung mit einem Microsoft-Netzwerkclient für DB2, der als Anwendungsanforderung für eine verteilte relationale Datenbankarchitektur (Distributed Relational Database Architecture, DRDA) fungiert. Der Datenanbieter konvertiert OLE DB-Befehle und -Datentypen vom Microsoft Component Object Model (COM) in DRDA-Protokollcodepunkte und -Datenformate.
 
 
 Weitere Informationen finden Sie unter:
@@ -71,15 +71,15 @@ Die folgende Tabelle enthält die Bibliotheken, die von Drittanbietern, wie ande
 
 | Plattform | Bibliotheken |
 | :-- | :-- |
-| Python | [pymssql *\(org, stable\)*](http://pymssql.org/en/stable/)<br/><br/>[pymssql *\(org\)*](http://pymssql.org/) |
-| Node.js | [Tedious *\(npmjs\)*](http://www.npmjs.com/package/tedious) |
-| Node.js | [Node-MSSQL *\(github, patriksimek\)*](https://github.com/patriksimek/node-mssql)<br/><br/>[Node-MSSQL *\(npmjs\)*](https://www.npmjs.com/package/node-mssql)<br/><br/>[Node-MSSQL-Connector *\(npmjs\)*](https://www.npmjs.com/package/node-mssql-connector) |
-| Node.js | [Edge.js *\(github com, tjanczuk\)*](https://github.com/tjanczuk/edge)<br/><br/>[Edge.js *\(tjanczuk, github io\)*](http://tjanczuk.github.io/edge/) |
-| . | [FreeTDS *\(org\)*](http://www.freetds.org/) |
+| Python | [pymssql *(org, stable)*](http://pymssql.org/en/stable/)<br/><br/>[pymssql *(org)*](http://pymssql.org/) |
+| Node.js | [Tedious *(npmjs)*](http://www.npmjs.com/package/tedious) |
+| Node.js | [Node-MSSQL *(github, patriksimek)*](https://github.com/patriksimek/node-mssql)<br/><br/>[Node-MSSQL *(npmjs)*](https://www.npmjs.com/package/node-mssql)<br/><br/>[Node-MSSQL-Connector *(npmjs)*](https://www.npmjs.com/package/node-mssql-connector) |
+| Node.js | [Edge.js *(github com, tjanczuk)*](https://github.com/tjanczuk/edge)<br/><br/>[Edge.js *(tjanczuk, github io)*](http://tjanczuk.github.io/edge/) |
+| . | [FreeTDS *(org)*](http://www.freetds.org/) |
 
 
 <!--
 https://en.wikipedia.org/wiki/Draft:Microsoft_SQL_Server_Libraries/Drivers
 -->
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

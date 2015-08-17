@@ -24,4 +24,4 @@ Nachdem Sie die Azure-Befehlszeilenschnittstelle mit dem zu verwendenden Konto v
 
 > [AZURE.NOTE]Wenn Sie noch nicht über ein Azure-Konto, aber bereits über ein MSDN-Abonnement verfügen, erhalten Sie ein kostenloses Azure-Guthaben, indem Sie Ihren [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren. Sie können aber auch ein kostenloses Konto verwenden. Beides ist für den Azure-Zugriff möglich.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

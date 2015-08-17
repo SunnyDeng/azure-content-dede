@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="android" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="04/14/2015" 
+	ms.date="07/29/2015" 
 	ms.author="ricksal"/>
 
 # Pushbenachrichtigungen an Benutzer mithilfe von Mobile Services
@@ -23,4 +23,4 @@ Dieses Thema ist veraltet. In diesem Fall führen Sie stattdessen die aktualisie
 + [Hinzufügen von Pushbenachrichtigungen zu Ihrer Mobile Services-App](mobile-services-javascript-backend-android-get-started-push.md)<br/>Aktualisieren Sie Ihren mobilen TodoList-Dienst, um Azure Notification Hubs zum Senden von Benachrichtigungen an Benutzer der Aufgabenlisten-Beispiel-App zu verwenden.
 + [Senden von Pushbenachrichtigungen an authentifizierte Benutzer](mobile-services-javascript-backend-android-push-notifications-app-users.md)<br/>Erweitert das vorherige Lernprogramm, damit sich nur angemeldete Benutzer für Benachrichtigungen registrieren können. 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

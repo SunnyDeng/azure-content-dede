@@ -89,4 +89,4 @@ Sie können die Änderungsverlauf für Ihr Traffic Manager-Profil im Verwaltungs
 [Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

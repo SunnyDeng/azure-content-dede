@@ -7,6 +7,7 @@
 	documentationCenter=""
 	authors="mumian"/>
 
+
 <tags
 	ms.service="hdinsight"
 	ms.workload="big-data"
@@ -15,6 +16,7 @@
 	ms.topic="article"
 	ms.date="06/11/2015"
 	ms.author="jgao"/>
+
 
 #Verwenden von Sqoop mit Hadoop in HDInsight (Windows)
 
@@ -38,29 +40,26 @@ Informationen zu den unterstützten Sqoop-Versionen in HDInsight-Clustern finden
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren und Verwenden von Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/).
- Um Azure PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe [Ausführen von Windows PowerShell-Skripts][powershell-script].
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren und Verwenden von Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/). Um Azure PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe [Ausführen von Windows PowerShell-Skripts][powershell-script].
 
 - **Azure HDInsight-Cluster**: Anweisungen zur Bereitstellung von Clustern finden Sie unter [Erste Schritte mit HDInsight][hdinsight-get-started] oder unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision]. Sie benötigen die folgenden Daten, um das Lernprogramm durchzuarbeiten:
 
 	<table border="1">
-	<tr><th>Clustereigenschaft</th><th>Azure PowerShell-Variablenname</th><th>Wert</th><th>Beschreibung</th></tr>
-	<tr><td>HDInsight-Clustername</td><td>$clusterName</td><td></td><td>Ihr HDInsight-Clustername.</td></tr>
-	<tr><td>Azure-Speicherkontoname</td><td>$storageAccountName</td><td></td><td>Ein im HDInsight-Cluster verfügbares Azure-Speicherkonto. Verwenden Sie für dieses Lernprogramm das Standard-Speicherkonto, das Sie während der Bereitstellung des Clusters angegeben haben.</td></tr>
-	<tr><td>Azure-Blob-Containername</td><td>$containerName</td><td></td><td>Verwenden Sie in diesem Beispiel den Namen des Blobs, der für das Standarddateisystem des HDInsight-Clusters verwendet wird. Standardmäßig hat dieser denselben Namen wie der HDInsight-Cluster.</td></tr>
-	</table>
+<tr><th>Clustereigenschaft</th><th>Azure PowerShell-Variablenname</th><th>Wert</th><th>Beschreibung</th></tr>
+<tr><td>HDInsight-Clustername</td><td>$clusterName</td><td></td><td>Ihr HDInsight-Clustername.</td></tr>
+<tr><td>Azure-Speicherkontoname</td><td>$storageAccountName</td><td></td><td>Ein im HDInsight-Cluster verfügbares Azure-Speicherkonto. Verwenden Sie für dieses Lernprogramm das Standard-Speicherkonto, das Sie während der Bereitstellung des Clusters angegeben haben.</td></tr>
+<tr><td>Azure-Blob-Containername</td><td>$containerName</td><td></td><td>Verwenden Sie in diesem Beispiel den Namen des Blobs, der für das Standarddateisystem des HDInsight-Clusters verwendet wird. Standardmäßig hat dieser denselben Namen wie der HDInsight-Cluster.</td></tr>
+</table>
 
 - **Azure SQL-Datenbank**: Sie müssen eine Firewall-Regel für den Azure SQL-Datenbankserver konfigurieren, um Zugriff auf Ihre Arbeitsstation zu erlauben. Anweisungen zur Erstellung einer Azure SQL-Datenbank und zur Konfiguration der Firewall erhalten Sie unter [Erste Schritte mit Azure SQL-Datenbanken][sqldatabase-get-started]. Dieser Artikel beschreibt ein Windows PowerShell-Skript zur Erstellung der Azure SQL-Datenbanktabelle, die Sie für dieses Lernprogramm benötigen.
 
 	<table border="1">
-	<tr><th>Azure SQL-Datenbankeigenschaft</th><th>Azure PowerShell-Variablenname</th><th>Wert</th><th>Beschreibung</th></tr>
-	<tr><td>Servername der Azure SQL-Datenbank</td><td>$sqlDatabaseServer</td><td></td><td>Der Azure SQL-Datenbankserver, auf den Sqoop Daten exportiert oder von dem Sqoop Daten importiert. </td></tr>
-	<tr><td>Anmeldename der Azure SQL-Datenbank</td><td>$sqlDatabaseLogin</td><td></td><td>Ihr Anmeldename für die Azure SQL-Datenbank.</td></tr>
-	<tr><td>Anmeldekennwort der Azure SQL-Datenbank</td><td>$sqlDatabasePassword</td><td></td><td>Ihr Anmeldekennwort für die Azure SQL-Datenbank.</td></tr>
-	<tr><td>Azure SQL-Datenbankname</td><td>$sqlDatabaseName</td><td></td><td>Die Azure SQL-Datenbank, auf den Sqoop Daten exportiert oder von dem Sqoop Daten importiert. </td></tr>
-	</table>
-
-	> [AZURE.NOTE]Eine Azure SQL-Datenbank ermöglicht standardmäßig Verbindungen von Azure-Diensten wie Azure HDInsight. Wenn die Firewall-Einstellung deaktiviert ist, müssen Sie sie im Azure-Portal aktivieren. Anweisungen zum Erstellen einer Azure SQL-Datenbank und zum Konfigurieren von Firewall-Regeln finden Sie unter [Erstellen und Konfigurieren einer SQL-Datenbank][sqldatabase-create-configue].
+<tr><th>Azure SQL-Datenbankeigenschaft</th><th>Azure PowerShell-Variablenname</th><th>Wert</th><th>Beschreibung</th></tr>
+<tr><td>Servername der Azure SQL-Datenbank</td><td>$sqlDatabaseServer</td><td></td><td>Der Azure SQL-Datenbankserver, auf den Sqoop Daten exportiert oder von dem Sqoop Daten importiert. </td></tr>
+<tr><td>Anmeldename der Azure SQL-Datenbank</td><td>$sqlDatabaseLogin</td><td></td><td>Ihr Anmeldename für die Azure SQL-Datenbank.</td></tr>
+<tr><td>Anmeldekennwort der Azure SQL-Datenbank</td><td>$sqlDatabasePassword</td><td></td><td>Ihr Anmeldekennwort für die Azure SQL-Datenbank.</td></tr>
+<tr><td>Azure SQL-Datenbankname</td><td>$sqlDatabaseName</td><td></td><td>Die Azure SQL-Datenbank, auf den Sqoop Daten exportiert oder von dem Sqoop Daten importiert. </td></tr>
+</table>> [AZURE.NOTE]Eine Azure SQL-Datenbank ermöglicht standardmäßig Verbindungen von Azure-Diensten wie Azure HDInsight. Wenn die Firewall-Einstellung deaktiviert ist, müssen Sie sie im Azure-Portal aktivieren. Anweisungen zum Erstellen einer Azure SQL-Datenbank und zum Konfigurieren von Firewall-Regeln finden Sie unter [Erstellen und Konfigurieren einer SQL-Datenbank][sqldatabase-create-configue].
 
 * **SQL Server**: Falls sich Ihr HDInsight-Cluster im gleichen virtuellen Netzwerk in Azure wie ein SQL Server befindet, können Sie mit den hier beschriebenen Schritten Daten in einer SQL Server-Datenbank importieren und exportieren.
 
@@ -79,12 +78,12 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 	> [AZURE.NOTE]Der SQL Server muss eine Authentifizierung zulassen. Sie benötigen eine SQL-Serveranmeldung, um die Schritte in diesem Artikel abzuschließen.
 
 	<table border="1">
-	<tr><th>SQL Server-Datenbankeigenschaft</th><th>Azure PowerShell-Variablenname</th><th>Wert</th><th>Beschreibung</th></tr>
-	<tr><td>SQL Server-Name</td><td>$sqlDatabaseServer</td><td></td><td>Der SQL Server, in dem Sqoop Daten importiert bzw. exportiert. </td></tr>
-	<tr><td>SQL Server-Anmeldename</td><td>$sqlDatabaseLogin</td><td></td><td>Ihr Anmeldename für den SQL Server.</td></tr>
-	<tr><td>Kennwort für die SQL-Serveranmeldung</td><td>$sqlDatabasePassword</td><td></td><td>Ihr Anmeldekennwort für den SQL Server.</td></tr>
-	<tr><td>SQL Server-Datenbankname</td><td>$sqlDatabaseName</td><td></td><td>Die SQL-Serverdatenbank, auf die Sqoop Daten exportiert oder von der Sqoop Daten importiert. </td></tr>
-	</table>
+<tr><th>SQL Server-Datenbankeigenschaft</th><th>Azure PowerShell-Variablenname</th><th>Wert</th><th>Beschreibung</th></tr>
+<tr><td>SQL Server-Name</td><td>$sqlDatabaseServer</td><td></td><td>Der SQL Server, in dem Sqoop Daten importiert bzw. exportiert. </td></tr>
+<tr><td>SQL Server-Anmeldename</td><td>$sqlDatabaseLogin</td><td></td><td>Ihr Anmeldename für den SQL Server.</td></tr>
+<tr><td>Kennwort für die SQL-Serveranmeldung</td><td>$sqlDatabasePassword</td><td></td><td>Ihr Anmeldekennwort für den SQL Server.</td></tr>
+<tr><td>SQL Server-Datenbankname</td><td>$sqlDatabaseName</td><td></td><td>Die SQL-Serverdatenbank, auf die Sqoop Daten exportiert oder von der Sqoop Daten importiert. </td></tr>
+</table>
 
 
 > [AZURE.NOTE]Eingeben der Werte in die vorherigen Tabellen. Dies wird Ihnen helfen, wenn Sie dieses Lernprogramm durcharbeiten.
@@ -102,19 +101,19 @@ Ein HDInsight-Cluster wird mit einigen Beispieldaten geliefert. Sie verwenden di
 - Eine Hive-Tabelle namens *hivesampletable*, die auf die Datendatei unter */hive/warehouse/hivesampletable* verweist. Die Tabelle enthält einige Mobilgerätedaten. Die Hive-Tabelle hat folgendes Schema:
 
 	<table border="1">
-	<tr><th>Feld</th><th>Datentyp</th></tr>
-	<tr><td>clientid</td><td>string</td></tr>
-	<tr><td>querytime</td><td>string</td></tr>
-	<tr><td>market</td><td>string</td></tr>
-	<tr><td>deviceplatform</td><td>string</td></tr>
-	<tr><td>devicemake</td><td>string</td></tr>
-	<tr><td>devicemodel</td><td>string</td></tr>
-	<tr><td>state</td><td>string</td></tr>
-	<tr><td>country</td><td>string</td></tr>
-	<tr><td>querydwelltime</td><td>double</td></tr>
-	<tr><td>sessionid</td><td>bigint</td></tr>
-	<tr><td>sessionpagevieworder</td><td>bigint</td></tr>
-	</table>
+<tr><th>Feld</th><th>Datentyp</th></tr>
+<tr><td>clientid</td><td>string</td></tr>
+<tr><td>querytime</td><td>string</td></tr>
+<tr><td>market</td><td>string</td></tr>
+<tr><td>deviceplatform</td><td>string</td></tr>
+<tr><td>devicemake</td><td>string</td></tr>
+<tr><td>devicemodel</td><td>string</td></tr>
+<tr><td>state</td><td>string</td></tr>
+<tr><td>country</td><td>string</td></tr>
+<tr><td>querydwelltime</td><td>double</td></tr>
+<tr><td>sessionid</td><td>bigint</td></tr>
+<tr><td>sessionpagevieworder</td><td>bigint</td></tr>
+</table>
 
 Zunächst exportieren Sie *sample.log* und *hivesampletable* in die Azure SQL-Datenbank bzw. den SQL Server. Anschließend importieren Sie die Tabelle mit den Mobilgerätedaten über den folgenden Pfad zurück in HDInsight:
 
@@ -130,9 +129,9 @@ Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Ber
 
 	wasb[s]://<ContainerName>@<StorageAccountName>.blob.core.windows.net/<path>/<filename>
 
-> [AZURE.NOTE]In der HDInsight-Clusterversion 3.0 wird nur die *wasb://*-Syntax unterstützt. Die ältere *asv://*-Syntax wird in HDInsight 2.1- und 1.6-Clustern unterstützt, nicht aber in HDInsight 3.0-Clustern.
+> [AZURE.NOTE]In der HDInsight-Clusterversion 3.0 wird nur die \**wasb://*-Syntax unterstützt. Die ältere \**asv://*-Syntax wird in HDInsight 2.1- und 1.6-Clustern unterstützt, nicht aber in HDInsight 3.0-Clustern.
 
-> [AZURE.NOTE]Der *wasb://*-Pfad ist ein virtueller Pfad. Weitere Informationen finden Sie unter [Verwenden von Azure-Blob-Speicher mit HDInsight][hdinsight-storage].
+> [AZURE.NOTE]Der \**wasb://*-Pfad ist ein virtueller Pfad. Weitere Informationen finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight][hdinsight-storage].
 
 Auf eine im Standarddateisystem-Blob gespeicherte Datei kann in HDInsight über jeden der folgenden URIs zugegriffen werden (in diesem Beispiel mit der Datei sample.log):
 
@@ -153,7 +152,7 @@ Sie werden zwei Tabellen in der Azure SQL-Datenbank bzw. im SQL Server erstellen
 
 **Für eine Azure SQL-Datenbank**
 
-1. Öffnen Sie die Windows PowerShell ISE (geben Sie auf dem Startbildschirm von Windows 8 **PowerShell_ISE** ein, und klicken Sie dann auf **Windows PowerShell ISE**). Siehe [Start Windows PowerShell on Windows 8 and Windows][powershell-start] (Starten von Windows PowerShell unter Windows 8 und Windows, in englischer Sprache).
+1. Öffnen Sie die Windows PowerShell ISE (geben Sie auf dem Startbildschirm von Windows 8 **PowerShell\_ISE** ein, und klicken Sie dann auf **Windows PowerShell ISE**). Siehe [Start Windows PowerShell on Windows 8 and Windows][powershell-start] (Starten von Windows PowerShell unter Windows 8 und Windows, in englischer Sprache).
 
 2. Kopieren Sie das folgende Skript in den Skriptbereich, und stellen Sie dann die ersten vier Variablen ein.
 
@@ -355,7 +354,7 @@ In diesem Abschnitt verwenden Sie Azure PowerShell zur Ausführung des Sqoop-Exp
 
 > [AZURE.NOTE]Mit Ausnahme der Verbindungszeichenfolgen sollten die Schritte in diesem Abschnitt sowohl für Azure SQL-Datenbanken als auch für SQL Server funktionieren. Diese Schritte wurden mithilfe der folgenden Konfiguration getestet:
 >
-> * **Virtuelles Azure-Netzwerk mit Punkt-zu-Standort-Konfiguration**: Ein virtuelles Netzwerk verbindet das HDInsight-Cluster mit einem SQL Server in einem privaten Rechenzentrum. Weitere Informationen finden Sie unter [Konfigurieren eines Punkt-zu-Standort-VPN im Verwaltungsportal](http://msdn.microsoft.com/library/azure/dn133792.aspx).
+> * **Virtuelles Azure-Netzwerk mit Punkt-zu-Standort-Konfiguration**: Ein virtuelles Netzwerk verbindet das HDInsight-Cluster mit einem SQL Server in einem privaten Rechenzentrum. Weitere Informationen finden Sie unter [Konfigurieren eines Punkt-zu-Standort-VPN im Verwaltungsportal](../vpn-gateway/vpn-gateway-point-to-site-create.md).
 > * **Azure HDInsight 3.1**: Siehe [Benutzerdefinierte Bereitstellung eines Hadoop-Clusters in HDInsight](hdinsight-provision-clusters.md) für weitere Informationen zur Erstellung eines Clusters in einem virtuellen Netzwerk.
 > * **SQL Server 2014**: Konfiguriert für die Authentifizierung und mit dem Konfigurationspaket für VPN-Clients für eine sichere Verbindung zum virtuellen Netzwerk.
 
@@ -394,7 +393,7 @@ In diesem Abschnitt verwenden Sie Azure PowerShell zur Ausführung des Sqoop-Exp
 
 	Weitere Beschreibungen der Variablen finden Sie im Abschnitt [Voraussetzungen](#prerequisites) dieses Lernprogramms.
 
-	Bitte beachten Sie, dass in $exportDir_log4j der Name der Datei sample.log nicht angegeben ist. Sqoop exportiert die Daten aus allen Dateien in diesem Ordner.
+	Bitte beachten Sie, dass in $exportDir\_log4j der Name der Datei sample.log nicht angegeben ist. Sqoop exportiert die Daten aus allen Dateien in diesem Ordner.
 
 4. Fügen Sie das folgende Skript in den Skriptbereich ein:
 
@@ -408,7 +407,7 @@ In diesem Abschnitt verwenden Sie Azure PowerShell zur Ausführung des Sqoop-Exp
 		Write-Host "Standard Output" -BackgroundColor Green
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $sqoopJob.JobId -StandardOutput
 
-	Bitte beachten Sie, dass das Trennzeichen **\0x20** (Leerzeichen) ist. Das Trennzeichen ist im Azure PowerShell-Skript in der Datei sample.log definiert. Weitere Informationen über **-m 1** finden Sie in der [Sqoop-Benutzeranleitung][sqoop-user-guide-1.4.4].
+	Bitte beachten Sie, dass das Trennzeichen **\\0x20** (Leerzeichen) ist. Das Trennzeichen ist im Azure PowerShell-Skript in der Datei sample.log definiert. Weitere Informationen über **-m 1** finden Sie in der [Sqoop-Benutzeranleitung][sqoop-user-guide-1.4.4].
 
 5. Klicken Sie auf **Skript ausführen**, oder drücken Sie **F5**, um das Skript auszuführen.
 6. Untersuchen Sie die exportierten Daten im [Azure-Portal][azure-management-portal].
@@ -620,9 +619,9 @@ In diesem Abschnitt importieren Sie die log4j-Protokolle (die Sie in die Azure S
 
 Nun wissen Sie, wie Sqoop verwendet haben. Weitere Informationen finden Sie unter:
 
-- [Verwenden von Oozie mit HDInsight][hdinsight-use-oozie]: Verwenden der Sqoop-Aktion in einem Oozie-Workflow.
-- [Analysieren von Daten zu Flugverspätungen mit HDInsight][hdinsight-analyze-flight-data]: Verwenden von Hive zur Analyse von Daten zu Flugverspätungen und Verwenden von Sqoop zum Exportieren von Daten in die SQL-Datenbank.
-- [Hochladen von Daten in HDInsight][hdinsight-upload-data]: Andere Methoden zum Hochladen von Daten in HDInsight/Azure Blob-Speicher.
+- [Verwenden von Oozie mit HDInsight][hdinsight-use-oozie]\: Verwenden der Sqoop-Aktion in einem Oozie-Workflow.
+- [Analysieren von Daten zu Flugverspätungen mit HDInsight][hdinsight-analyze-flight-data]\: Verwenden von Hive zur Analyse von Daten zu Flugverspätungen und Verwenden von Sqoop zum Exportieren von Daten in die SQL-Datenbank.
+- [Hochladen von Daten in HDInsight][hdinsight-upload-data]\: Andere Methoden zum Hochladen von Daten in HDInsight/Azure Blob-Speicher.
 
 
 
@@ -648,4 +647,4 @@ Nun wissen Sie, wie Sqoop verwendet haben. Weitere Informationen finden Sie unte
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

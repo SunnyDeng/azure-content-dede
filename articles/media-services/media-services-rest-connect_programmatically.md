@@ -60,9 +60,9 @@ Das folgende Beispiel zeigt den HTTP-Anforderungsheader bzw. -text, die zum Abru
 	
 **Text**:
 
-Sie müssen den "client_id"-Wert und den "client_secret"-Wert im Text dieser Anforderung überprüfen. Die Werte "client_id" und "client_secret" entsprechen dem "AccountName"-Wert und dem "AccountKey"-Wert. Diese Werte werden Ihnen von Media Services bei der Einrichtung Ihres Kontos bereitgestellt.
+Sie müssen den "client\_id"-Wert und den "client\_secret"-Wert im Text dieser Anforderung überprüfen. Die Werte "client\_id" und "client\_secret" entsprechen dem "AccountName"-Wert und dem "AccountKey"-Wert. Diese Werte werden Ihnen von Media Services bei der Einrichtung Ihres Kontos bereitgestellt.
 
-Beachten Sie, dass der "AccountKey" für Ihr Media Services-Konto URL-codiert sein muss (siehe [Prozentcodierung](http://tools.ietf.org/html/rfc3986#section-2.1)), wenn Sie ihn als "client_secret"-Wert in Ihrer Zugriffstokenanforderung verwenden.
+Beachten Sie, dass der "AccountKey" für Ihr Media Services-Konto URL-codiert sein muss (siehe [Prozentcodierung](http://tools.ietf.org/html/rfc3986#section-2.1)), wenn Sie ihn als "client\_secret"-Wert in Ihrer Zugriffstokenanforderung verwenden.
 
 	grant_type=client_credentials&client_id=ams_account_name&client_secret=URL_encoded_ams_account_key&scope=urn%3aWindowsAzureMediaServices
 
@@ -93,9 +93,9 @@ Das folgende Beispiel zeigt die HTTP-Antwort, die das Zugriffstoken im Antwortte
 	}
 	
 
->[AZURE.NOTE]Es wird empfohlen, den access_token-Wert und den expires_in-Wert in einem externen Speicher zwischenzuspeichern. Die Tokendaten können später aus dem Speicher abgerufen und in den Media Services-REST-API-Aufrufen wiederverwendet werden. Dies ist besonders in Szenarien sinnvoll, in denen das Token auf sichere Weise von mehreren Prozessen oder Computern gemeinsam verwendet werden kann.
+>[AZURE.NOTE]Es wird empfohlen, den access\_token-Wert und den expires\_in-Wert in einem externen Speicher zwischenzuspeichern. Die Tokendaten können später aus dem Speicher abgerufen und in den Media Services-REST-API-Aufrufen wiederverwendet werden. Dies ist besonders in Szenarien sinnvoll, in denen das Token auf sichere Weise von mehreren Prozessen oder Computern gemeinsam verwendet werden kann.
 
-Überwachen Sie den expires_in-Wert des Zugriffstokens, und aktualisieren Sie Ihre REST-API-Aufrufe nach Bedarf anhand neuer Token.
+Überwachen Sie den expires\_in-Wert des Zugriffstokens, und aktualisieren Sie Ihre REST-API-Aufrufe nach Bedarf anhand neuer Token.
 
 ###Herstellen einer Verbindung mit dem Media Services-URI
 
@@ -167,4 +167,4 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 
 <!-- URLs. -->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -47,7 +47,7 @@ Bei der Erstellung eines virtuellen Computers wird eine Standard-ACL eingerichte
 
 | **Regelnr.** | **Remote-Subnetz** | **Endpunkt** | **Zulassen/Verweigern** |
 |--------|---------------|----------|-------------|
-| 100 | 0.0.0.0/0 | 3389 | Zulassen |
+| 100 | 0\.0.0.0/0 | 3389 | Zulassen |
 
 ## Zulassen und verweigern
 
@@ -75,8 +75,8 @@ Im folgenden Beispiel gilt: Wenn Sie den Zugriff auf den RDP-Endpunkt nur für z
 
 | **Regelnr.** | **Remote-Subnetz** | **Endpunkt** | **Zulassen/Verweigern** |
 |--------|---------------|----------|-------------|
-| 100 | 65.0.0.0/8 | 3389 | Zulassen |
-| 200 | 159.0.0.0/8 | 3389 | Zulassen |
+| 100 | 65\.0.0.0/8 | 3389 | Zulassen |
+| 200 | 159\.0.0.0/8 | 3389 | Zulassen |
 
 ### Reihenfolge der Regeln
 
@@ -86,8 +86,8 @@ Da für einen Endpunkt mehrere Regeln angegeben werden können, müssen die Rege
 
 | **Regelnr.** | **Remote-Subnetz** | **Endpunkt** | **Zulassen/Verweigern** |
 |--------|---------------|----------|-------------|
-| 100 | 175.1.0.1/24 | 80 | Verweigern |
-| 200 | 175.0.0.0/8 | 80 | Zulassen |
+| 100 | 175\.1.0.1/24 | 80 | Verweigern |
+| 200 | 175\.0.0.0/8 | 80 | Zulassen |
 
 ## Netzwerk-ACLs und Sätze mit Lastenausgleich
 
@@ -99,4 +99,4 @@ Netzwerk-ACLs können für einen Endpunkt eines Satzes mit Lastenausgleich (LB-S
 
 [Verwalten von Zugriffssteuerungslisten (Access Control Lists, ACLs) für Endpunkte mithilfe von PowerShell](../virtual-networks-acl-powershell)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

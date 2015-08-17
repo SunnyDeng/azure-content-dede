@@ -75,7 +75,7 @@ Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (
 9.	Wählen Sie den Trigger "Neue E-Mail", und die Eingabeparameter werden angezeigt.
 
 
-10.	Ändern Sie die Häufigkeit des Triggers in "Minuten", und klicken Sie auf ✓.
+10.	Ändern Sie die Häufigkeit des Triggers in „Minuten“, und klicken Sie auf ✓.
 
 	![][9]
 
@@ -157,4 +157,4 @@ Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (
 [20]: ./media/app-service-logic-connector-office365/20_Office365_Send_Configured.png
 [21]: ./media/app-service-logic-connector-office365/21-create-new-o365-api-app.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

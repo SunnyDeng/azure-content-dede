@@ -48,19 +48,9 @@ Die Aktion "XML validieren" validiert eine vorhandene XML-Eingabe gegen vorkonfi
 
 ![BizTalk XML Validator XML validieren][5]
 
-<table>
-	<tr>
-		<th>Parameter</th>
-		<th>Typ</th>
-		<th>Beschreibung des Parameters</th>
-	</tr>
-	<tr>
-		<td>Eingabe-XML</td>
-		<td>Zeichenfolge</td>
-		<td>Zu validierende XML</td>
-	</tr>
-</table>
-
+Parameter|Typ|Beschreibung des Parameters
+---|---|---
+Eingabe-XML|Zeichenfolge|Zu validierende XML
 
 Die Aktion gibt die Ausgabe als Objekt zurück. Die Ausgabe enthält das Modell, das die Antwort vom XML Validator darstellt. Es besteht aus Ergebnis, Namen des Schemas, Stammknoten und Fehlerbeschreibung.
 
@@ -75,4 +65,4 @@ Die Aktion gibt die Ausgabe als Objekt zurück. Die Ausgabe enthält das Modell,
 [6]: ./media/app-service-logic-xml-validator/img1.PNG
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

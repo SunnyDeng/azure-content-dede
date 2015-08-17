@@ -18,30 +18,20 @@
 
 # Verwalten der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle (Azure-CLI)#
 
-<div class="dev-center-tutorial-selector sublanding"><a href="/documentation/articles/powershell-rbac.md" title="WindowsPowerShell" class="current">WindowsPowerShell</a><a href="/documentation/articles/xplat-cli-rbac.md" title="Azure-Befehlszeilenschnittstelle">Azure-Befehlszeilenschnittstelle</a></div>
-
 Mit der rollenbasierten Zugriffssteuerung (RBAC) im Azure-Portal und in der Azure-Ressourcen-Manager-API können Sie den Zugriff auf Ihr Abonnement differenziert steuern. Mithilfe dieser Funktion lassen sich Zugriffsberechtigungen für Active Directory-Benutzer, -Gruppen oder -Dienstprinzipale festlegen, indem ihnen bestimmte Rollen für einen bestimmten Bereich zugewiesen werden.
 
 In diesem Lernprogramm erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle zum Verwalten der rollenbasierten Zugriffssteuerung (RBAC) verwenden. Das Lernprogramm beschreibt die Erstellung und Überprüfung von Rollenzuweisungen.
 
 **Geschätzter Zeitaufwand**: 15 Minuten.
 
-## Voraussetzungen ##
+## Voraussetzungen
 
 Bevor Sie RBAC mithilfe der Azure-Befehlszeilenschnittstelle verwalten können, benötigen Sie Folgendes:
 
 - Azure-Befehlszeilenschnittstelle, Version 0.8.8 oder höher. Informationen zur Installation der neuesten Version und zur Zuordnung zu Ihrem Azure-Abonnement finden Sie unter [Installieren](xplat-cli-install.md).
 - Lesen Sie sich auch die folgenden Lernprogramme durch, um sich mit der Einrichtung und Verwendung des Azure-Ressourcen-Managers in der Azure-Befehlszeilenschnittstelle vertraut zu machen: [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md).
 
-## Dieses Lernprogramm umfasst folgende Punkte ##
-
-* [Verbindungsherstellung mit Ihren Abonnements](#connect)
-* [Überprüfen bestehender Rollenzuweisungen](#check)
-* [Erstellen einer Rollenzuweisung](#create)
-* [Überprüfen von Berechtigungen](#verify)
-* [Nächste Schritte](#next)
-
-## <a id="connect"></a>Verbindungsherstellung mit Ihren Abonnements ##
+## Verbindungsherstellung mit Ihren Abonnements 
 
 Da RBAC nur mit Azure Resource Manager funktioniert, müssen Sie zunächst in den Azure Resource Manager-Modus wechseln. Geben Sie dazu Folgendes ein:
 
@@ -86,7 +76,7 @@ Mit diesem Befehl erhalten sie alle Rollenzuweisungen für einen bestimmten Benu
 
 Alle Parameter dieses Cmdlet sind optional. Sie können kombiniert werden, um Rollenzuweisungen mit verschiedenen Filtern zu überprüfen.
 
-## <a id="create"></a>Erstellen einer Rollenzuweisung ##
+## Erstellen einer Rollenzuweisung 
 
 Um eine Rollenzuweisung zu erstellen, müssen Sie folgende Überlegungen anstellen:
 
@@ -124,7 +114,7 @@ Verwenden Sie anschließend den Befehl `azure role assignment create`, um eine R
 
     `azure role assignment create --mail <user's email> -o Owner -g group1 -r Microsoft.Web/sites -u site1`
 
-## <a id="verify"></a>Überprüfen von Berechtigungen ##
+## Überprüfen von Berechtigungen 
 
 Nachdem Sie überprüft haben, ob mit Ihrem Konto Rollenzuweisungen verknüpft sind, können Sie die Berechtigungen der zugewiesenen Rollen anzeigen lassen. Führen Sie dazu folgende Befehle aus:
 
@@ -135,7 +125,7 @@ Mit diesen beiden Cmdlets werden Ressourcengruppen und Ressourcen mit Leseberech
 
 Wenn Sie versuchen, ein anderes Cmdlet wie z. B. `azure group create` auszuführen und nicht über die erforderlichen Berechtigung verfügen, wird ein Zugriffsverweigerungsfehler ausgegeben.
 
-## <a id="next"></a>Nächste Schritte ##
+## Nächste Schritte 
 
 In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Verwaltung der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle:
 
@@ -143,4 +133,4 @@ In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Ve
 - [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md)
 - [Using Resource groups to manage your Azure resources](resource-groups-overview.md) (in englischer Sprache): Erstellen und Verwalten von Ressourcengruppe im Azure-Verwaltungsportal.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

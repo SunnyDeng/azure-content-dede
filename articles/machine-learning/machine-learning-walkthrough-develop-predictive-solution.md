@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Eine Vorhersagelösung für die Kreditrisikobewertung mit Machine Learning| Microsoft Azure"
-	description="Eine ausführliche exemplarische Vorgehensweise zum Erstellen einer Lösung für die Vorhersageanalyse zur Kreditrisikobewertung in Azure Machine Learning Studio."
+	description="Eine ausführliche exemplarische Vorgehensweise zum Erstellen einer Lösung für die Vorhersageanalyse zur Kreditrisikobewertung in Azure Machine Learning Studio."	
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -41,4 +41,4 @@ Um eine Lösung zur Kreditrisikobewertung zu erstellen, müssen wir die folgende
 Diese Anleitung basiert auf einer vereinfachten Version des in Machine Learning Studio enthaltenen Artikels [Experiment zur Kreditrisiko-Vorhersage](../machine-learning-sample-credit-risk-prediction.md).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

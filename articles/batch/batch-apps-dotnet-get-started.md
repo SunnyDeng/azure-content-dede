@@ -10,7 +10,7 @@
 <tags
 	ms.service="batch"
 	ms.devlang="dotnet"
-	ms.topic="hero-article"
+	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-compute"
 	ms.date="07/21/2015"
@@ -194,4 +194,4 @@ Der folgende Code veranschaulicht eine einfache Implementierung von "ParallelTas
 ###Übermitteln von Aufträgen an Batch Apps
 Ein Auftrag beschreibt eine auszuführende Workloads und muss alle Informationen zur Workload mit Ausnahme der Dateiinhalte enthalten. Der Auftrag enthält z. B. Konfigurationseinstellungen, die vom Client zur Auftragsteilung und anschließend zu den Aufgaben gelangen. Die auf MSDN bereitgestellten Beispiele sind Beispiele für die Übermittlung von Aufträgen. Sie stellen mehrere Clients bereit, einschließlich eines Webportal- und Befehlszeilenclients.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

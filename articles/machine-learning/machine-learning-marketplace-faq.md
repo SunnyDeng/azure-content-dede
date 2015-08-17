@@ -77,4 +77,4 @@ Wenden Sie sich unter <datamarketbd@microsoft.com> an das Azure Marketplace-Team
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

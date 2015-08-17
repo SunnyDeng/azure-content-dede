@@ -95,4 +95,4 @@ Bei den meisten Fehlern können Sie die empfohlene Aktion befolgen, die unter "F
 ## Nächste Schritte
 - [Verwalten virtueller Computer](backup-azure-manage-vms)
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

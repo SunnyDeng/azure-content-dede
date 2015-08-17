@@ -2,7 +2,7 @@
 <properties 
     pageTitle="Verwenden von Office 365 mit Azure RemoteApp" 
     description="Erfahren Sie, wie Office 365 und Azure RemoteApp zusammenarbeiten" 
-    services="remoteapp" 
+    services="remoteapp"  
 	documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
@@ -48,4 +48,4 @@ Wenn Sie Ihr Konto aktivieren, wirkt sich dies auf alle RemoteApp-Sammlungen in 
 Wenn Sie nach Ablauf des Testzeitraums nicht zum Produktionsmodus wechseln, werden die RemoteApp-Sammlungen deaktiviert. Keine Sorge - Ihre Einstellungen und Benutzerdaten bleiben für weitere 90 Tage gespeichert, sodass Sie Ihren Dienst noch aktivieren und ohne Datenverlust in den Produktionsmodus wechseln können.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

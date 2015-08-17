@@ -25,8 +25,8 @@ Es gibt drei VPN-Gateway-SKUs: Basic, Standard und Leistung. In der folgenden Ta
 | SKU | Gemeinsame Verwendung von VPN-Gateway und ExpressRoute | ExpressRoute-Gateway-Durchsatz | VPN-Gateway-Durchsatz | Max. IPsec-Tunnel für VPN-Gateway |
 |-------------|-----------------------------------|---------------------------------|------------------------|-------------------------------|
 | Basic | Nein | 500 MBit/s | 100 MBit/s | 10 |
-| Standard | Ja | 1.000 MBit/s | 100 MBit/s | 10 |
-| Leistung | Ja | 2.000 MBit/s | 200 MBit/s | 30 |
+| Standard | Ja | 1\.000 MBit/s | 100 MBit/s | 10 |
+| Leistung | Ja | 2\.000 MBit/s | 200 MBit/s | 30 |
 
 **Hinweis:** Der VPN-Durchsatz ist eine grobe Schätzung, die auf Messungen zwischen den VNets einer Azure-Region basiert. Dies ist keine Garantie für den Wert, den Sie für standortübergreifende Verbindungen über das Internet erzielen können. Die Angabe sollte stattdessen als maximal möglicher Wert angesehen werden.
 
@@ -79,4 +79,4 @@ Informationen zum Verbinden mehrerer Standorte zu einem virtuellen Netzwerk find
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

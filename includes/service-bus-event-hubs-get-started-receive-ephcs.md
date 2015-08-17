@@ -16,7 +16,7 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
 
     Kopieren Sie den Zugriffsschlüssel für die spätere Verwendung in diesem Lernprogramm.
 
-4. Erstellen Sie in Visual Studio mithilfe der Projektvorlage **Konsolenanwendung** ein neues Visual C\#-Desktopanwendungsprojekt. Geben Sie dem Projekt den Namen **Receiver**.
+4. Erstellen Sie in Visual Studio mithilfe der Projektvorlage **Konsolenanwendung** ein neues Visual C#-Desktopanwendungsprojekt. Geben Sie dem Projekt den Namen **Receiver**.
 
     ![][14]
 
@@ -109,10 +109,10 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
           eventProcessorHost.UnregisterEventProcessorAsync().Wait();
         }
 
-> [AZURE.NOTE]In diesem Lernprogramm wird eine einzelne Instanz von [EventProcessorHost] verwendet. Um den Durchsatz zu erhöhen, sollten Sie mehrere Instanzen von [EventProcessorHost] ausführen, wie im Beispiel [Skalieren der Ereignisverarbeitung] beschrieben. In diesen Fällen koordinieren sich die verschiedenen automatisch untereinander, um die Last der eingegangenen Ereignisse ausgeglichen zu verteilen. Wenn mehrere Empfänger für jeden Prozess *alle* Ereignisse verarbeiten sollen, müssen Sie das **ConsumerGroup**-Konzept verwenden. Wenn Ereignisse von anderen Computern empfangen werden, kann es hilfreich sein, die [EventProcessorHost]-Instanzen nach den Computern \(oder Rollen\) zu benennen, auf denen sie bereitgestellt werden. Weitere Informationen zu diesen Themen finden Sie unter [Event Hubs – Übersicht] und im [Event Hubs-Programmierhandbuch].
+> [AZURE.NOTE]In diesem Lernprogramm wird eine einzelne Instanz von [EventProcessorHost] verwendet. Um den Durchsatz zu erhöhen, sollten Sie mehrere Instanzen von [EventProcessorHost] ausführen, wie im Beispiel [Skalieren der Ereignisverarbeitung] beschrieben. In diesen Fällen koordinieren sich die verschiedenen automatisch untereinander, um die Last der eingegangenen Ereignisse ausgeglichen zu verteilen. Wenn mehrere Empfänger für jeden Prozess *alle* Ereignisse verarbeiten sollen, müssen Sie das **ConsumerGroup**-Konzept verwenden. Wenn Ereignisse von anderen Computern empfangen werden, kann es hilfreich sein, die [EventProcessorHost]-Instanzen nach den Computern (oder Rollen) zu benennen, auf denen sie bereitgestellt werden. Weitere Informationen zu diesen Themen finden Sie unter [Event Hubs – Übersicht] und im [Event Hubs-Programmierhandbuch].
 
 <!-- Links -->
-[Event Hubs – Übersicht]: http://azure.microsoft.com/en-us/documentation/articles/event-hubs-overview/
+[Event Hubs – Übersicht]: http://azure.microsoft.com/documentation/articles/event-hubs-overview/
 [Skalieren der Ereignisverarbeitung]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [Azure-Speicherkonto]: http://azure.microsoft.com/documentation/articles/storage-create-storage-account/
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
@@ -125,8 +125,8 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 
-[Event Hubs-Programmierhandbuch]: http://azure.microsoft.com/en-us/documentation/articles/event-hubs-programming-guide/
+[Event Hubs-Programmierhandbuch]: http://azure.microsoft.com/documentation/articles/event-hubs-programming-guide/
 [Async Await in Console Apps]: http://blogs.msdn.com/b/pfxteam/archive/2012/01/20/10259049.aspx
 [AsyncPump.cs]: http://blogs.msdn.com/cfs-file.ashx/__key/communityserver-components-postattachments/00-10-25-90-49/AsyncPump_2E00_cs
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

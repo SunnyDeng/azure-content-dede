@@ -53,7 +53,7 @@ Sie können diese Technologien separat verwenden oder sie wie benötigt miteinan
 
 ### Azure Virtual Machines
 
-![Azure Virtual Machines ROBBCSIART_TEST](./media/fundamentals-introduction-to-azure/mscsiart_VirtualMachinesIntroNew_12345.png) *Azure Virtual Machines bietet Ihnen vollständige Kontrolle über die Instanzen virtueller Computer in der Cloud.*
+![Azure Virtual Machines ROBBCSIART\_TEST](./media/fundamentals-introduction-to-azure/mscsiart_VirtualMachinesIntroNew_12345.png) *Azure Virtual Machines bietet Ihnen vollständige Kontrolle über die Instanzen virtueller Computer in der Cloud.*
 
 Die Möglichkeit, bei Bedarf einen virtuellen Computer zu erstellen, sei es anhand eines Standard-Images oder anhand eines von Ihnen bereitgestellten Images, kann sehr nützlich sein. Genau diesen Ansatz, im Allgemeinen als Infrastructure-as-a-Services (IaaS) bezeichnet, bietet Ihnen Azure Virtual Machines. Abbildung 2 zeigt, wie ein virtueller Computer (VM) ausgeführt wird und wie ein solcher anhand einer VHD erstellt wird.
 
@@ -75,7 +75,7 @@ Dieser eher allgemeine Cloud Computing-Ansatz kann zur Lösung verschiedener Pro
 
 ### Web-Apps
 
-![Azure-Web-Apps ROBBCSIART_TEST](./media/fundamentals-introduction-to-azure/mscsiart_AzureWebsitesIntroNew_12345.png) *Abbildung: Azure-Web-Apps führen eine Websiteanwendung in der Cloud aus, ohne dass der zugrundeliegende Webserver verwaltet werden muss.*
+![Azure-Web-Apps ROBBCSIART\_TEST](./media/fundamentals-introduction-to-azure/mscsiart_AzureWebsitesIntroNew_12345.png) *Abbildung: Azure-Web-Apps führen eine Websiteanwendung in der Cloud aus, ohne dass der zugrundeliegende Webserver verwaltet werden muss.*
 
 Die Cloud wird am häufigsten dazu verwendet, Websites und Webanwendungen auszuführen. Azure Virtual Machines macht dies möglich; Sie sind jedoch für die Verwaltung der virtuellen Computer und der zugrunde liegenden Betriebssysteme verantwortlich. Die kann zwar mit Cloud Services-Webrollen geschehen, deren Bereitstellung und Verwaltung bedeutet dennoch einen gewissen Aufwand. Was, wenn Sie nur eine Website möchten, für die jemand anderes die Verwaltungsarbeiten übernimmt?
 
@@ -179,9 +179,9 @@ Gelegentlich möchten Sie große Datenmengen nach Azure verschieben. Dies kann v
 
 
 ### Dateidienst
-![Azure File Service](./media/fundamentals-introduction-to-azure/FileServiceIntroNew.png) *Abbildung: Azure File Services stellt "\\server\share"-SMB-Pfade für in der Cloud ausgeführte Anwendungen bereit.*
+![Azure File Service](./media/fundamentals-introduction-to-azure/FileServiceIntroNew.png) *Abbildung: Azure File Services stellt "\\\\server\\share"-SMB-Pfade für in der Cloud ausgeführte Anwendungen bereit.*
 
-Lokal stehen häufig große Mengen an Dateispeicher zur Verfügung, auf die über das SMB-Protokoll (Server Message Block) unter Verwendung eines \\server\share-Formats zugegriffen wird. Azure verfügt jetzt über einen Dienst, mit dem Sie dieses Protokoll in der Cloud verwenden können. Anwendungen, die in Azure ausgeführt werden, können damit über bekannte Dateisystem-APIs wie ReadFile und WriteFile Dateien zwischen virtuellen Computern freigeben. Darüber hinaus kann auf die Dateien gleichzeitig über eine REST-Schnittstelle zugegriffen werden. Dies ermöglicht den Zugriff auf die Freigaben über Ihr lokales System, wenn Sie auch ein virtuelles Netzwerk einrichten. Azure-Dateidienste setzt auf den Blobdienst auf und verhält sich daher in Bezug auf Verfügbarkeit, Stabilität, Skalierbarkeit und Georedundanz ebenso wie Azure Storage.
+Lokal stehen häufig große Mengen an Dateispeicher zur Verfügung, auf die über das SMB-Protokoll (Server Message Block) unter Verwendung eines \\\\server\\share-Formats zugegriffen wird. Azure verfügt jetzt über einen Dienst, mit dem Sie dieses Protokoll in der Cloud verwenden können. Anwendungen, die in Azure ausgeführt werden, können damit über bekannte Dateisystem-APIs wie ReadFile und WriteFile Dateien zwischen virtuellen Computern freigeben. Darüber hinaus kann auf die Dateien gleichzeitig über eine REST-Schnittstelle zugegriffen werden. Dies ermöglicht den Zugriff auf die Freigaben über Ihr lokales System, wenn Sie auch ein virtuelles Netzwerk einrichten. Azure-Dateidienste setzt auf den Blobdienst auf und verhält sich daher in Bezug auf Verfügbarkeit, Stabilität, Skalierbarkeit und Georedundanz ebenso wie Azure Storage.
 
 **Szenarien für Azure Files**
 
@@ -592,4 +592,4 @@ Nachdem Sie nun einen Überblick erhalten haben, besteht der nächste Schritt da
 
 [Azure Media Services Poster]: http://azure.microsoft.com/documentation/infographics/media-services/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

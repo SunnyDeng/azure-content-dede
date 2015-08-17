@@ -1,28 +1,28 @@
-<properties 
-	pageTitle="Erste Schritte mit Azure Storage" 
-	description="Beschreibt, was beim Erstellen eines Azure-Speichers in einem Visual Studio-Cloud-Dienstprojekts passiert ist" 
-	services="storage" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+<properties
+	pageTitle="Erste Schritte mit Azure Storage"
+	description="Beschreibt, was beim Verwenden eines Azure-Speichers in einem Visual Studio-Cloud-Dienstprojekt passiert"
+	services="storage"
+	documentationCenter=""
+	authors="patshea123"
+	manager="douge"
 	editor="tglee"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="vs-what-happened" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/22/2015" 
+<tags
+	ms.service="storage"
+	ms.workload="web"
+	ms.tgt_pltfrm="vs-what-happened"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/22/2015"
 	ms.author="patshea123"/>
 
 # Was ist mit meinem Projekt passiert?
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-storage-cloud-services-getting-started-blobs.md)
-> - [What Happened](vs-storage-cloud-services-what-happened.md)
+> - [Getting started](vs-storage-cloud-services-getting-started-blobs.md)
+> - [What happened](vs-storage-cloud-services-what-happened.md)
 
-###Was ist mit meinem Projekt passiert?</span>
+###Was ist mit meinem Projekt passiert?
 
 ###### Verweise wurden hinzugefügt
 
@@ -37,13 +37,11 @@ Das Azure Storage NuGet-Paket wurde zu Ihrem Visual Studio-Projekt hinzugefügt.
 - `System.Data`
 - `System.Spatial`
 
-######Die Verbindungszeichenfolge für Azure Storage wurde hinzugefügt 
+######Die Verbindungszeichenfolge für Azure Storage wurde hinzugefügt
 Elemente mit der Verbindungszeichenfolge und dem Schlüssel des ausgewählten Speicherkontos wurden erstellt. An den folgenden Dateien wurden Änderungen vorgenommen:
 
 - `ServiceDefinition.csdef`
 - `ServiceConfiguration.Cloud.cscfg`
 - `ServiceConfiguration.Local.cscfg`
 
- 
-
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

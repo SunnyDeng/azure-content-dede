@@ -19,7 +19,7 @@
 
 # Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen
 
-Die Azure Active Directory Connect-Synchronisierungsdienste \(Azure AD Connect-Synchronisierung\) sind eine Hauptkomponente von Azure AD Connect. Diese Dienste wickeln alle Vorgänge ab, die mit dem Synchronisieren von Identitätsdaten zwischen Ihrer lokalen Umgebung und Azure AD in der Cloud zusammenhängen. Hinsichtlich der Synchronisierung ist die Azure AD Connect-Synchronisierung der Nachfolger von DirSync, der Azure AD-Synchronisierung und Forefront Identity Manager mit konfiguriertem Active Directory-Connector.
+Die Azure Active Directory Connect-Synchronisierungsdienste (Azure AD Connect-Synchronisierung) sind eine Hauptkomponente von Azure AD Connect. Diese Dienste wickeln alle Vorgänge ab, die mit dem Synchronisieren von Identitätsdaten zwischen Ihrer lokalen Umgebung und Azure AD in der Cloud zusammenhängen. Hinsichtlich der Synchronisierung ist die Azure AD Connect-Synchronisierung der Nachfolger von DirSync, der Azure AD-Synchronisierung und Forefront Identity Manager mit konfiguriertem Active Directory-Connector.
 
 <center>![Azure AD Connect Sync](./media/active-directory-aadconnectsync-whatis/sync01.png) </center>
 
@@ -48,4 +48,4 @@ Was möchten Sie als Nächstes tun?
  
 <!--Image references-->
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

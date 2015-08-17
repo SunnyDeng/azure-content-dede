@@ -27,7 +27,7 @@ Nach dem Erstellen der Ressource erhalten Sie den Instrumentationsschlüssel und
 
 ## Anmelden bei Microsoft Azure
 
-Wenn Sie noch kein [Microsoft-Konto besitzen, erstellen Sie jetzt eins](http://live.com). \(Wenn Sie Dienste wie Outlook.com, OneDrive, Windows Phone oder XBox Live verwenden, besitzen Sie bereits ein Microsoft-Konto.\)
+Wenn Sie noch kein [Microsoft-Konto besitzen, erstellen Sie jetzt eins](http://live.com). (Wenn Sie Dienste wie Outlook.com, OneDrive, Windows Phone oder XBox Live verwenden, besitzen Sie bereits ein Microsoft-Konto.)
 
 Außerdem benötigen Sie ein [Microsoft Azure](http://azure.com)-Abonnement. Wenn Ihr Team oder Ihre Organisation über ein Azure-Abonnement verfügt, kann der Besitzer Sie anhand Ihrer Windows Live-ID hinzufügen.
 
@@ -41,7 +41,7 @@ Wenn Sie Zugang zu einem Abonnement besitzen, melden Sie sich über Ihre Live-ID
 
 Fügen Sie unter [portal.azure.com](https://portal.azure.com) eine neue Application Insights-Ressource hinzu:
 
-![Klicken Sie auf "Neu \> Application Insights"](./media/app-insights-create-new-resource/01-new.png)
+![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-create-new-resource/01-new.png)
 
 
 * **Anwendungstyp** bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften. Wenn Ihr App-Typ nicht angezeigt wird, wählen Sie einen der Webtypen für Webseiten und einen der Telefontypen für andere Geräte aus.
@@ -52,7 +52,7 @@ Fügen Sie unter [portal.azure.com](https://portal.azure.com) eine neue Applicat
 
 Wenn Ihre App erstellt wurde, wird ein neues Blatt geöffnet. Dort werden die Leistungs- und Nutzungsdaten über Ihre App angezeigt.
 
-Um bei der nächsten Anmeldung bei Azure dorthin zurückzugelangen, suchen Sie im Startmenü \(Startseite\) nach der Schnellstart-Kachel für Ihre App. Klicken Sie alternativ dazu auf "Durchsuchen", um sie zu finden.
+Um bei der nächsten Anmeldung bei Azure dorthin zurückzugelangen, suchen Sie im Startmenü (Startseite) nach der Schnellstart-Kachel für Ihre App. Klicken Sie alternativ dazu auf "Durchsuchen", um sie zu finden.
 
 
 ## Kopieren des Instrumentationsschlüssels
@@ -92,4 +92,4 @@ Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resour
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

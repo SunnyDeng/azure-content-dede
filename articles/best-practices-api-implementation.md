@@ -8,6 +8,7 @@
    editor=""
    tags=""/>
 
+
 <tags
    ms.service="best-practice"
    ms.devlang="rest-api"
@@ -16,6 +17,7 @@
    ms.workload="na"
    ms.date="05/13/2015"
    ms.author="masashin"/>
+
 
 # API-Implementierungsleitfaden
 
@@ -46,11 +48,11 @@ Bei einem Dienst, der mit der ASP.NET-Web-API implementiert wird, wird jede Anfo
 	);
 	```
 
-	Routen können generisch sein und Literale wie _api_ und Variablen wie _{controller}_ und _{id}_ umfassen. Beim konventionsbasierten Routing können einige Elemente der Route optional sein. Das Web-API-Framework bestimmt wie folgt, welche Methode im Controller aufgerufen wird: Die HTTP-Methode der Anforderung wird mit dem ersten Teil des Methodennamens in der API abgeglichen, und anschließend werden alle optionalen Parameter abgeglichen. Wenn ein Controller mit dem Namen _orders_ die Methoden _GetAllOrders()_ oder _GetOrderByInt(int id)_ enthält, wird die GET-Anforderung _http://www.adventure-works.com/api/orders/_ an die _GetAlllOrders()_-Methode geleitet, und die GET-Anforderung _http://www.adventure-works.com/api/orders/99_ wird an die _GetOrderByInt(int id)_-Methode weitergeleitet. Falls keine übereinstimmende Methode verfügbar ist, die im Controller mit dem Präfix „Get“ beginnt, antwortet das Web-API-Framework mit der Nachricht „HTTP 405 (Method Not Allowed)“. Außerdem muss der in der Routingtabelle angegebene Name des Parameters (id) dem Namen des Parameters für die _GetOrderById_-Methode entsprechen. Andernfalls antwortet das Web-API-Framework mit der Antwort „HTTP 404 (Not Found)“.
+	Routen können generisch sein und Literale wie _api_ und Variablen wie _{controller}_ und _{id}_ umfassen. Beim konventionsbasierten Routing können einige Elemente der Route optional sein. Das Web-API-Framework bestimmt wie folgt, welche Methode im Controller aufgerufen wird: Die HTTP-Methode der Anforderung wird mit dem ersten Teil des Methodennamens in der API abgeglichen, und anschließend werden alle optionalen Parameter abgeglichen. Wenn ein Controller mit dem Namen _orders_ die Methoden _GetAllOrders()_ oder _GetOrderByInt(int id)_ enthält, wird die GET-Anforderung \__http://www.adventure-works.com/api/orders/_ an die _GetAlllOrders()_-Methode geleitet, und die GET-Anforderung \__http://www.adventure-works.com/api/orders/99_ wird an die _GetOrderByInt(int id)_-Methode weitergeleitet. Falls keine übereinstimmende Methode verfügbar ist, die im Controller mit dem Präfix „Get“ beginnt, antwortet das Web-API-Framework mit der Nachricht „HTTP 405 (Method Not Allowed)“. Außerdem muss der in der Routingtabelle angegebene Name des Parameters (id) dem Namen des Parameters für die _GetOrderById_-Methode entsprechen. Andernfalls antwortet das Web-API-Framework mit der Antwort „HTTP 404 (Nicht gefunden)“.
 
-	Dieselben Regeln gelten für POST-, PUT- und DELETE HTTP-Anforderungen. Eine PUT-Anforderung, mit der die Details von Bestellung 101 aktualisiert werden, wird an den URI _http://www.adventure-works.com/api/orders/101_ geleitet. Der Text der Nachricht enthält die neuen Details der Bestellung, und diese Informationen werden als Parameter an eine Methode im orders-Controller mit einem Namen übergeben, der mit dem Präfix _Put_ beginnt, z. B. _PutOrder_.
+	Dieselben Regeln gelten für POST-, PUT- und DELETE HTTP-Anforderungen. Eine PUT-Anforderung, mit der die Details von Bestellung 101 aktualisiert werden, wird an den URI \__http://www.adventure-works.com/api/orders/101_ geleitet. Der Text der Nachricht enthält die neuen Details der Bestellung, und diese Informationen werden als Parameter an eine Methode im orders-Controller mit einem Namen übergeben, der mit dem Präfix _Put_ beginnt, z. B. _PutOrder_.
 
-	Die standardmäßige Routingtabelle ergibt keine Übereinstimmung mit einer Anforderung, bei der auf untergeordnete Ressourcen in einer REST-Web-API verwiesen wird, z. B. _http://www.adventure-works.com/api/customers/1/orders_ (Suche nach den Details aller Bestellungen von „customer 1“). Zum Behandeln dieser Fälle können Sie der Routingtabelle benutzerdefinierte Routen hinzufügen:
+	Die standardmäßige Routingtabelle ergibt keine Übereinstimmung mit einer Anforderung, bei der auf untergeordnete Ressourcen in einer REST-Web-API verwiesen wird, z. B. \__http://www.adventure-works.com/api/customers/1/orders_ (Suche nach den Details aller Bestellungen von „customer 1“). Zum Behandeln dieser Fälle können Sie der Routingtabelle benutzerdefinierte Routen hinzufügen:
 
 	```C#
 	config.Routes.MapHttpRoute(
@@ -145,7 +147,7 @@ Bei einem Dienst, der mit der ASP.NET-Web-API implementiert wird, wird jede Anfo
 
 - **Berücksichtigen Sie die Vor- und Nachteile einer Platzierung der API in einer Unterdomäne**.
 
-	Standardmäßig werden APIs von der ASP.NET-Web-API im Verzeichnis _/api_ einer Domäne angeordnet, z. B. _http://www.adventure-works.com/api/orders_. Dieses Verzeichnis befindet sich in derselben Domäne wie alle anderen Dienste, die vom Host verfügbar gemacht werden. Es kann vorteilhaft sein, eine Web-API in ihre eigenen Unterdomänen aufzuteilen, die auf einem separaten Host ausgeführt werden (mit URIs wie _http://api.adventure-works.com/orders_). Bei dieser Trennung können Sie die Web-API effektiver partitionieren und skalieren, ohne dass sich dies auf andere Webanwendungen oder Dienste auswirkt, die in der Domäne _www.adventure-works.com_ ausgeführt werden.
+	Standardmäßig werden APIs von der ASP.NET-Web-API im Verzeichnis _/api_ einer Domäne angeordnet, z. B. \__http://www.adventure-works.com/api/orders_. Dieses Verzeichnis befindet sich in derselben Domäne wie alle anderen Dienste, die vom Host verfügbar gemacht werden. Es kann vorteilhaft sein, eine Web-API in ihre eigenen Unterdomänen aufzuteilen, die auf einem separaten Host ausgeführt werden (mit URIs wie \__http://api.adventure-works.com/orders_). Bei dieser Trennung können Sie die Web-API effektiver partitionieren und skalieren, ohne dass sich dies auf andere Webanwendungen oder Dienste auswirkt, die in der Domäne _www.adventure-works.com_ ausgeführt werden.
 
 	Das Platzieren einer Web-API in einer anderen Unterdomäne kann aber auch zu Sicherheitsproblemen führen. Unter _www.adventure-works.com_ gehostete Webanwendungen oder Dienste, bei denen eine an einem anderen Ort ausgeführte Web-API aufgerufen wird, können die Richtlinie vieler Webbrowser zum identischen Ursprung verletzen. In diesem Fall ist es erforderlich, zwischen den Hosts das Cross-Origin Resource Sharing (CORS) zu ermöglichen. Weitere Informationen finden Sie im Leitfaden zur API-Sicherheit.
 
@@ -155,7 +157,7 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 
 - **GET-, PUT-, DELETE-, HEAD- und PATCH-Aktionen sollten idempotent sein**.
 
-	Der Code, mit dem diese Anforderungen implementiert werden, sollte nicht mit Nebeneffekten verbunden sein. Eine Anforderung, die für eine Ressource wiederholt ausgeführt wird, sollte zum gleichen Ergebnis führen. Wenn Sie beispielsweise mehrere DELETE-Anforderungen an denselben URI senden, sollte dies immer die gleiche Auswirkung haben. Hierbei kann der HTTP-Statuscode in den Antwortnachrichten variieren (für die erste DELETE-Anforderung wird ggf. Statuscode 204 (No Content) zurückgegeben, während für eine nachfolgende DELETE-Anforderung Statuscode 404 (Not Found) zurückgegeben werden kann).
+	Der Code, mit dem diese Anforderungen implementiert werden, sollte nicht mit Nebeneffekten verbunden sein. Eine Anforderung, die für eine Ressource wiederholt ausgeführt wird, sollte zum gleichen Ergebnis führen. Wenn Sie beispielsweise mehrere DELETE-Anforderungen an denselben URI senden, sollte dies immer die gleiche Auswirkung haben. Hierbei kann der HTTP-Statuscode in den Antwortnachrichten variieren (für die erste DELETE-Anforderung wird ggf. Statuscode 204 (No Content) zurückgegeben, während für eine nachfolgende DELETE-Anforderung Statuscode 404 (Nicht gefunden) zurückgegeben werden kann).
 
 > [AZURE.NOTE]Der Artikel [Idempotency Patterns](http://blog.jonathanoliver.com/idempotency-patterns/) (Muster der Idempotenz) im Blog von Jonathan Oliver enthält eine Übersicht über die Idempotenz und ihre Verbindung mit Datenverwaltungsvorgängen.
 
@@ -302,14 +304,15 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 
 	Mit den HATEOAS-Links in der HTTP-Beispielantwort wird angegeben, dass eine Clientanwendung die folgenden Vorgänge durchführen kann:
 
-	- Eine HTTP GET-Anforderung an den URI _http://adventure-works.com/customers/2_, um die Details des Kunden (erneut) abzurufen. Die Daten können im XML- oder JSON-Format zurückgegeben werden. 
-	- Eine HTTP PUT-Anforderung an den URI _http://adventure-works.com/customers/2_, um die Details des Kunden zu ändern. Die neuen Daten müssen in der Anforderungsnachricht im Format „x-www-form-urlencoded“ bereitgestellt werden.
+	- Eine HTTP GET-Anforderung an den URI \__http://adventure-works.com/customers/2_, um die Details des Kunden (erneut) abzurufen. Die Daten können im XML- oder JSON-Format zurückgegeben werden.
 
-	- Eine HTTP DELETE-Anforderung an den URI _http://adventure-works.com/customers/2_, um den Kunden zu löschen. Die Anforderung erwartet keine zusätzlichen Informationen oder Rückgabedaten im Text der Antwortnachricht.
+	- Eine HTTP PUT-Anforderung an den URI \__http://adventure-works.com/customers/2_, um die Details des Kunden zu ändern. Die neuen Daten müssen in der Anforderungsnachricht im Format „x-www-form-urlencoded“ bereitgestellt werden.
 
-	- Eine HTTP GET-Anforderung an den URI _http://adventure-works.com/customers/2/orders_, um nach allen Bestellungen des Kunden zu suchen. Die Daten können im XML- oder JSON-Format zurückgegeben werden.
+	- Eine HTTP DELETE-Anforderung an den URI \__http://adventure-works.com/customers/2_, um den Kunden zu löschen. Die Anforderung erwartet keine zusätzlichen Informationen oder Rückgabedaten im Text der Antwortnachricht.
 
-	- Eine HTTP PUT-Anforderung an den URI _http://adventure-works.com/customers/2/orders_, um für den Kunden eine neue Bestellung zu erstellen. Die Daten müssen in der Anforderungsnachricht im Format „x-www-form-urlencoded“ bereitgestellt werden.
+	- Eine HTTP GET-Anforderung an den URI \__http://adventure-works.com/customers/2/orders_, um nach allen Bestellungen des Kunden zu suchen. Die Daten können im XML- oder JSON-Format zurückgegeben werden.
+
+	- Eine HTTP PUT-Anforderung an den URI \__http://adventure-works.com/customers/2/orders_, um für den Kunden eine neue Bestellung zu erstellen. Die Daten müssen in der Anforderungsnachricht im Format „x-www-form-urlencoded“ bereitgestellt werden.
 
 ## Aspekte der Behandlung von Ausnahmen
 Wenn ein Vorgang im ASP.NET-Web-API-Framework eine unerwartete Ausnahme auslöst, gibt das Framework standardmäßig eine Antwortnachricht mit dem HTTP-Statuscode 500 (Internal Server Error) zurück. Häufig ist dieser allzu simple Ansatz allein nicht hilfreich und erschwert die Ermittlung der Ausnahmeursache. Daher sollten Sie zum Behandeln von Ausnahmen einen umfassenderen Ansatz wählen. Beachten Sie hierbei die folgenden Punkte:
@@ -534,7 +537,7 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
 
 	- Wenn das aktuelle ETag für die angeforderten Daten nicht mit dem von der Anforderung bereitgestellten ETag übereinstimmt, haben sich die Daten geändert. Die Web-API sollte also eine HTTP-Antwort mit den neuen Daten im Nachrichtentext und dem Statuscode 200 (OK) zurückgeben.
 
-	- Falls die angeforderten Daten nicht mehr vorhanden sind, sollte die Web-API eine HTTP-Antwort mit dem Statuscode 404 (Not Found) zurückgeben.
+	- Falls die angeforderten Daten nicht mehr vorhanden sind, sollte die Web-API eine HTTP-Antwort mit dem Statuscode 404 (Nicht gefunden) zurückgeben.
 
 	- Der Client verwendet den Statuscode zum Verwalten des Cache. Wenn sich die Daten nicht geändert haben (Statuscode 304), kann das Objekt zwischengespeichert bleiben, und die Clientanwendung sollte weiterhin diese Version des Objekts nutzen. Wenn sich die Daten geändert haben (Statuscode 200), sollte das zwischengespeicherte Objekt verworfen und das neue Objekt eingefügt werden. Falls die Daten nicht mehr verfügbar sind (Statuscode 404), sollte das Objekt aus dem Cache entfernt werden.
 
@@ -654,9 +657,9 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
 
 	- Wenn das aktuelle ETag für die angeforderten Daten nicht mit dem von der Anforderung bereitgestellten ETag übereinstimmt, wurden die Daten von einem anderen Benutzer geändert, seitdem sie abgerufen wurden. Die Web-API sollte eine HTTP-Antwort mit einem leeren Nachrichtentext und dem Statuscode 412 (Precondition Failed) zurückgeben.
 
-	- Falls die zu aktualisierende Ressource nicht mehr vorhanden ist, sollte die Web-API eine HTTP-Antwort mit dem Statuscode 404 (Not Found) zurückgeben.
+	- Falls die zu aktualisierende Ressource nicht mehr vorhanden ist, sollte die Web-API eine HTTP-Antwort mit dem Statuscode 404 (Nicht gefunden) zurückgeben.
 
-	- Der Client nutzt den Statuscode und die Antwortheader zum Verwalten des Cache. Wenn die Daten aktualisiert wurden (Statuscode 204), kann das Objekt zwischengespeichert bleiben (sofern im Cache-Control-Header nicht „no-store“ angegeben ist), aber das ETag muss aktualisiert werden. Falls die Daten von einem anderen Benutzer geändert (Statuscode 412) oder nicht gefunden wurden (Statuscode 404), sollte das zwischengespeicherte Objekt verworfen werden.
+	- Der Client nutzt den Statuscode und die Antwortheader zum Verwalten des Cache. Wenn die Daten aktualisiert wurden (Statuscode 204), kann das Objekt zwischengespeichert bleiben (sofern im Cache-Control-Header nicht „no-store“ angegeben ist), aber das ETag muss aktualisiert werden. Falls die Daten von einem anderen Benutzer geändert (Statuscode 412) oder Nicht gefunden wurden (Statuscode 404), sollte das zwischengespeicherte Objekt verworfen werden.
 
 	Im nächsten Codebeispiel wird eine Implementierung des PUT-Vorgangs für den Orders-Controller veranschaulicht:
 
@@ -923,7 +926,7 @@ Wenn eine Clientanwendung Anforderungen ausgibt, bei denen Daten gesendet oder e
 	}
 	```
 
-	Eine Clientanwendung kann eine Anforderung zum Abrufen von 30 Bestellungen ausgeben, bei der bei Offset = 50 begonnen wird. Hierfür wird der URI _http://www.adventure-works.com/api/orders?limit=30&offset=50_ verwendet.
+	Eine Clientanwendung kann eine Anforderung zum Abrufen von 30 Bestellungen ausgeben, bei der bei Offset = 50 begonnen wird. Hierfür wird der URI \__http://www.adventure-works.com/api/orders?limit=30&offset=50_ verwendet.
 
 	> [AZURE.TIP]Sie sollten verhindern, dass Clientanwendungen Abfragezeichenfolgen angeben können, die zu einem URI mit einer Länge von mehr als 2.000 Zeichen führen. Viele Webclients und -server können keine URIs dieser Länge verarbeiten.
 
@@ -1022,7 +1025,7 @@ Die Art einer Web-API bringt eigene zusätzliche Anforderungen in Bezug auf die 
 
 - Stellen Sie sicher, dass jeder Vorgang für unterschiedliche Eingabekombinationen die richtigen Statuscodes zurückgibt. Beispiel:
 	- Wenn eine Abfrage erfolgreich ist, sollte der Vorgang den Statuscode 200 (OK) zurückgeben.
-	- Wenn eine Ressource nicht gefunden wird, sollte der Vorgang den HTTP-Statuscode 404 (Not Found) zurückgeben.
+	- Wenn eine Ressource nicht gefunden wird, sollte der Vorgang den HTTP-Statuscode 404 (Nicht gefunden) zurückgeben.
 	- Wenn der Client eine Anforderung sendet, mit der eine Ressource erfolgreich gelöscht wird, sollte der Statuscode 204 (No Content) lauten.
 	- Wenn der Client eine Anforderung sendet, mit der eine neue Ressource erstellt wird, sollte der Statuscode 201 (Created) lauten.
 
@@ -1151,4 +1154,4 @@ Anhand dieser Informationen können Sie bestimmen, ob eine bestimmte Web-API ode
 - Auf der Seite [Überprüfen von Code mithilfe von Komponententests](https://msdn.microsoft.com/library/dd264975.aspx) der Microsoft-Website werden ausführliche Informationen zum Erstellen und Verwalten von Komponententests mit Visual Studio bereitgestellt.
 - Auf der Seite [Ausführen von Leistungstests für Ihre App](https://msdn.microsoft.com/library/dn250793.aspx) der Microsoft-Website wird beschrieben, wie Sie Visual Studio Ultimate zum Erstellen eines Projekts zum Testen der Webleistung und Auslastung verwenden.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

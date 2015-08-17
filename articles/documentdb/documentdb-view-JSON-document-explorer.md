@@ -3,7 +3,7 @@
 	description="Informationen zum DocumentDB-Dokument-Explorer, einem Azure-Vorschauportaltool zum Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mit DocumentDB."
 	services="documentdb"
 	authors="stephbaron"
-	manager="johnmac"
+	manager="jhubbard"
 	editor="monicar"
 	documentationCenter=""/>
 
@@ -113,7 +113,7 @@ Mit Dokument-Explorer können Sie problemlos Dokumente erstellen, bearbeiten und
 
 	![Screenshot des Dokument-Explorers – Ansicht der Dokumenteigenschaften](./media/documentdb-view-JSON-document-explorer/documentproperties.png)
 
-	> [AZURE.NOTE]Die Zeitstempeleigenschaft (_ts) wird intern als Epochenzeit dargestellt, im Dokument-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
+	> [AZURE.NOTE]Die Zeitstempeleigenschaft (\_ts) wird intern als Epochenzeit dargestellt, im Dokument-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
 
 ##<a id="BulkAdd"></a>Massenhinzufügen von Dokumenten mit dem Dokument-Explorer##
 
@@ -140,4 +140,4 @@ Dokument-Explorer unterstützt die Sammelerfassung von vorhandenen JSON-Dokument
 Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

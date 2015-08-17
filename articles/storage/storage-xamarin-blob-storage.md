@@ -179,4 +179,4 @@ Weitere Informationen zu Blobs, Tabellen und Warteschlangen finden Sie über die
 [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

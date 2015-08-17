@@ -24,7 +24,7 @@
 
 Service Fabric umfasst mehrere Upgrademodi zur Unterstützung von Entwicklungs- und Produktionsclustern. Die einzelnen Bereitstellungsoptionen sind jeweils ideal geeignet für die verschiedenen Umgebungen. Das überwachte parallele Anwendungsupgrade ist das typische in Produktionsumgebungen verwendete Upgrade. Wenn die Upgraderichtlinie angegeben ist, stellt Service Fabric sicher, dass die Anwendung fehlerfrei ist, bevor das Upgrade fortgesetzt wird. In bestimmten Situationen, in denen spezifischere oder komplexere Integritätsevaluierungsrichtlinien erforderlich sind oder ein außergewöhnliches Upgrade ausgeführt werden muss (in der Anwendung sind bereits Daten verloren gegangen usw.), kann der Anwendungsadministrator den manuellen parallelen Upgrademodus verwenden, um den Status des Upgrades in den verschiedenen Upgradedomänen vollständig kontrollieren zu können. Schließlich eignet sich der automatische parallele Upgrademodus in Entwicklungs- oder Testumgebungen zur Bereitstellung schneller Iterationszyklen während der Entwicklung von Diensten.
 
-**Manuell** – Das Anwendungsupgrade wird bei der aktuellen Upgradedomäne beendet und der Upgrademodus in den nicht überwachten manuellen Modus geändert. Der Administrator muss **MoveNextApplicationUpgradeDomainAsync** manuell aufrufen, um das Upgrade fortzusetzen, oder durch Initiieren eines neuen Upgrades einen Rollback auslösen. Wenn das Upgrade in den manuellen Modus wechselt, wird dieser Modus beibehalten, bis ein neues Upgrade initiiert wird. Der **GetApplicationUpgradeProgressAsync**-Befehl gibt "FABRIC_APPLICATION_UPGRADE_STATE_ROLLING_FORWARD_PENDING" zurück.
+**Manuell** – Das Anwendungsupgrade wird bei der aktuellen Upgradedomäne beendet und der Upgrademodus in den nicht überwachten manuellen Modus geändert. Der Administrator muss **MoveNextApplicationUpgradeDomainAsync** manuell aufrufen, um das Upgrade fortzusetzen, oder durch Initiieren eines neuen Upgrades einen Rollback auslösen. Wenn das Upgrade in den manuellen Modus wechselt, wird dieser Modus beibehalten, bis ein neues Upgrade initiiert wird. Der **GetApplicationUpgradeProgressAsync**-Befehl gibt "FABRIC\_APPLICATION\_UPGRADE\_STATE\_ROLLING\_FORWARD\_PENDING" zurück.
 
 ## Upgrade mit einem Diff-Paket
 
@@ -51,4 +51,4 @@ Situationen, in denen sich ein Diff-Paket anbietet:
 [Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -12,7 +12,7 @@
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="04/27/2015" 
 	ms.author="ccompy"/>
 
@@ -24,8 +24,8 @@ App Service-Umgebungen sind eine Premium-Dienstoption von Azure App Service, die
 
 Mit der Funktion der App Service-Umgebungen wird im Wesentlichen Azure App Service im VNET eines Kunden bereitgestellt. Hierzu sind folgende Voraussetzungen zu erfüllen:
 
-- Ein regionales VNET ist erforderlich mit 512 \(/23\) oder mehr Adressen.
-- Ein Subnetz in diesem VNET ist erforderlich mit 256 \(/24\) oder mehr Adressen.
+- Ein regionales VNET ist erforderlich mit 512 (/23) oder mehr Adressen.
+- Ein Subnetz in diesem VNET ist erforderlich mit 256 (/24) oder mehr Adressen.
 - Das Subnetz **darf keinen anderen Computeressourcen enthalten**. In einem Subnetz kann nur eine App Service-Umgebung bereitgestellt werden. Der Erstellungsversuch misslingt, wenn das Subnetz bereits andere Compute-Ressourcen enthält.
 
 Wenn Sie noch kein VNET besitzen, das Sie zum Hosten Ihrer App Service-Umgebung verwenden möchten, können Sie bei der Erstellung der App Service-Umgebung eines erstellen.
@@ -34,12 +34,12 @@ Jede Bereitstellung einer App Service-Umgebung ist ein gehosteter Dienst, der vo
 
 ## Erstellen einer App Service-Umgebung ##
 
-Es gibt zwei Möglichkeiten, auf die Benutzeroberfläche zur Erstellung der App Service-Umgebung zuzugreifen. Durchsuchen Sie den Azure Marketplace nach ***App Service-Umgebung***, oder wählen Sie "Neu" -\> "Web + Mobil".
+Es gibt zwei Möglichkeiten, auf die Benutzeroberfläche zur Erstellung der App Service-Umgebung zuzugreifen. Durchsuchen Sie den Azure Marketplace nach ***App Service-Umgebung***, oder wählen Sie "Neu" -> "Web + Mobil".
 
 ### Schnellerfassung ###
 Nach dem Aufrufen der Benutzeroberfläche zur Erstellung können Sie durch die Eingabe eines Namens für die Bereitstellung schnell eine App Service-Umgebung erstellen. Dadurch werden wiederum ein VNET mit 512 Adressen, ein Subnetz mit 256 Adressen in diesem VNET sowie eine App Service-Umgebung mit zwei Front-Ends und zwei Workern im Workerpool 1 erstellt. Achten Sie darauf, den Standort, an dem sich das System befinden soll, sowie das zugehörige Abonnement auszuwählen. Die einzigen Konten, die die App Service-Umgebung zum Hosten von Inhalten verwenden können, müssen in dem Abonnement enthalten sein, das zur Erstellung verwendet wurde.
 
-Der Name, der für die App Service-Umgebung angegeben wurde, wird für die in der App Service-Umgebung erstellten Web-Apps verwendet. Wenn der Name der App Service-Umgebung "appsvcenvdemo" ist, lautet der Domänenname ".\*appsvcenvdemo.p.azurewebsites.net\*". Wenn Sie also eine Web-App mit dem Namen "mytestapp" erstellt haben, wäre diese unter der Adresse *mytestapp.appsvcenvdemo.p.azurewebsites.net* aufrufbar. Sie können im Namen keine Leerzeichen verwenden. Bei Verwendung von Großbuchstaben im Namen wird der entsprechende Domänenname dennoch vollständig in Kleinbuchstaben geschrieben.
+Der Name, der für die App Service-Umgebung angegeben wurde, wird für die in der App Service-Umgebung erstellten Web-Apps verwendet. Wenn der Name der App Service-Umgebung "appsvcenvdemo" ist, lautet der Domänenname .*appsvcenvdemo.p.azurewebsites.net*. Wenn Sie also eine Web-App mit dem Namen "mytestapp" erstellt haben, wäre diese unter der Adresse *mytestapp.appsvcenvdemo.p.azurewebsites.net* aufrufbar. Sie können im Namen keine Leerzeichen verwenden. Bei Verwendung von Großbuchstaben im Namen wird der entsprechende Domänenname dennoch vollständig in Kleinbuchstaben geschrieben.
 
 
 ![][1]
@@ -103,10 +103,10 @@ Standardmäßig umfasst eine App Service-Umgebung eine IP-Adresse, die für IP-S
 
 Nach der Erstellung einer App Service-Umgebung können Sie die folgenden Einstellungen anpassen:
 
-- Anzahl der Front-Ends \(Minimum: 2\)
-- Anzahl der Worker \(Minimum: 2\)
+- Anzahl der Front-Ends (Minimum: 2)
+- Anzahl der Worker (Minimum: 2)
 - Anzahl der IP-Adressen
-- Größen der Compute-Ressourcen, die von den Front-Ends oder den Workern verwendet werden \(Mindestgröße für Front-Ends ist P2\)
+- Größen der Compute-Ressourcen, die von den Front-Ends oder den Workern verwendet werden (Mindestgröße für Front-Ends ist P2)
 
 Folgende Einstellungen können Sie nicht ändern:
 
@@ -143,4 +143,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AppServicePricing]: http://azure.microsoft.com/pricing/details/app-service/
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

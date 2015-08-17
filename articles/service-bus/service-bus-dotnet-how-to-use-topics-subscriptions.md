@@ -7,6 +7,7 @@
     manager="timlt"
     editor=""/>
 
+
 <tags
     ms.service="service-bus"
     ms.workload="tbd"
@@ -15,6 +16,7 @@
     ms.topic="get-started-article" 
     ms.date="07/02/2015"
     ms.author="sethm"/>
+
 
 # Verwenden von Service Bus-Themen und -Abonnements
 
@@ -45,7 +47,7 @@ Sie können nun Code für Service Bus erstellen.
 
 Service Bus verwendet eine Verbindungszeichenfolge zum Speichern von Endpunkten und Anmeldeinformationen. Sie können die Verbindungszeichenfolge in einer Konfigurationsdatei ablegen, statt sie fest zu programmieren:
 
-- Bei der Verwendung von Azure-Cloud-Diensten empfiehlt es sich, die Verbindungszeichenfolge mithilfe des Azure-Dienstkonfigurationssystems (Dateien ***.csdef** und ***.cscfg**) zu speichern.
+- Bei der Verwendung von Azure-Cloud-Diensten empfiehlt es sich, die Verbindungszeichenfolge mithilfe des Azure-Dienstkonfigurationssystems (Dateien ***\*.csdef** and ***\*.cscfg**) zu speichern.
 - Bei der Verwendung von Azure-Websites oder Azure Virtual Machines sollten Sie Ihre Verbindungszeichenfolge mithilfe des .NET-Konfigurationssystems speichern (z. B. die **Web.config**-Datei).
 
 In beiden Fällen können Sie Ihre Verbindungszeichenfolge über die `CloudConfigurationManager.GetSetting`-Methode abrufen, wie später in dieser Anleitung beschrieben.
@@ -59,12 +61,13 @@ Azure-Cloud-Dienst-Projekte bieten einen einzigartigen Dienstkonfigurationsmecha
         <WebRole name="MyRole" vmsize="Small">
             <ConfigurationSettings>
                 <Setting name="Microsoft.ServiceBus.ConnectionString" />
+
             </ConfigurationSettings>
         </WebRole>
     ...
     </ServiceDefinition>
 
-Anschließend geben Sie Werte in der Dienstkonfigurationsdatei (***.cscfg**) an:
+Anschließend geben Sie Werte in der Dienstkonfigurationsdatei (***\*.cscfg**) an:
 
     <ServiceConfiguration serviceName="Azure1">
     ...
@@ -72,6 +75,7 @@ Anschließend geben Sie Werte in der Dienstkonfigurationsdatei (***.cscfg**) an:
             <ConfigurationSettings>
                 <Setting name="Microsoft.ServiceBus.ConnectionString"
                          value="Endpoint=sb://yourServiceNamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourKey" />
+
             </ConfigurationSettings>
         </Role>
     ...
@@ -81,12 +85,13 @@ Verwenden Sie die aus dem Verwaltungsportal abgerufenen SAS-Schlüsselwerte und 
 
 ### Konfigurieren der Verbindungszeichenfolge bei Verwendung von Websites oder virtuellen Computern
 
-Bei der Verwendung von Azure Websites oder Virtual Machines sollten Sie das .NET-Konfigurationssystem verwenden (z. B. **Web.config**). Sie speichern die Verbindungszeichenfolge mit dem `<appSettings>`-Element:
+Bei der Verwendung von Azure Websites oder virtuellen Computern wird es empfohlen, das .NET-Konfigurationssystem zu verwenden (z. B. **Web.config**). Sie speichern die Verbindungszeichenfolge mit dem `<appSettings>`-Element:
 
     <configuration>
         <appSettings>
             <add key="Microsoft.ServiceBus.ConnectionString"
                  value="Endpoint=sb://yourServiceNamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourKey" />
+
         </appSettings>
     </configuration>
 
@@ -197,7 +202,7 @@ Der folgende Code veranschaulicht, wie ein [`TopicClient`](https://msdn.microsof
     Client.Send(new BrokeredMessage());
 
 
-Nachrichten, die an Service Bus-Themen gesendet werden, sind Instanzen der [`BrokeredMessage`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx)-Klasse. **BrokeredMessage**-Objekte verfügen über einen Satz von Standardeigenschaften (z. B. [`Label`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) und [`TimeToLive`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), ein Wörterbuch, in dem benutzerdefinierte anwendungsspezifische Eigenschaften enthalten sind, sowie einen Bestand beliebiger Anwendungsdaten. Eine Anwendung kann den Textkörper der Nachricht festlegen, indem ein beliebiges serialisierbares Objekt an den Konstruktor des [`BrokeredMessage`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx)-Objekts übergeben wird. Das entsprechende **DataContractSerializer-Objekt** wird dann zum Serialisieren des Objekts verwendet. Alternativ kann ein **System.IO.Stream**-Objekt zur Verfügung gestellt werden.
+Nachrichten, die an Service Bus-Themen gesendet werden, sind Instanzen der [`BrokeredMessage`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx)-Klasse. **BrokeredMessage**-Objekte verfügen über einen Satz von Standardeigenschaften (z. B. [`Label`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) und [`TimeToLive`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)), ein Wörterbuch, in dem benutzerdefinierte anwendungsspezifische Eigenschaften enthalten sind, sowie einen Bestand beliebiger Anwendungsdaten. Eine Anwendung kann den Textkörper der Nachricht festlegen, indem ein beliebiges serialisierbares Objekt an den Konstruktor des [`BrokeredMessage`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx)-Objekts übergeben wird. Der entsprechende **DataContractSerializer** wird dann zum Serialisieren des Objekts verwendet. Alternativ kann ein **System.IO.Stream**-Objekt zur Verfügung gestellt werden.
 
 Das folgende Beispiel zeigt, wie fünf Testnachrichten an das **TestTopic** [`TopicClient`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicclient.aspx)-Objekt gesendet werden, das im vorherigen Codeausschnitt abgerufen wurde: Beachten Sie, dass der Eigenschaftenwert [`MessageNumber`](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.properties.aspx) jeder Nachricht gemäß der Iteration der Schleife variiert (auf diese Weise wird bestimmt, welche Abonnements die Nachricht erhalten):
 
@@ -301,4 +306,4 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Themen und -Abonnements vertr
   [MSDN]: https://msdn.microsoft.com/library/azure/dn194201.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

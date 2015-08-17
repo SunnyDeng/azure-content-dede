@@ -36,7 +36,7 @@ Die Typen werden mit der folgenden Syntax ausgedrückt:
 - **num** – numerisch
 - **ref** – einwertiger Verweis
 - **str** – einwertige Zeichenfolge
-- **Var** – eine Variante \(fast\) jedes anderen Typs
+- **Var** – eine Variante (fast) jedes anderen Typs
 - **void** – gibt keinen Wert zurück
 
 
@@ -162,14 +162,14 @@ Gibt True zurück, wenn beide Attribute den gleichen Wert haben.
 
 - attribute: Das zu durchsuchende mehrwertige Attribut<br>
 - search: Die im Attribut zu findende Zeichenfolge<br>
-- Casetype: CaseInsensitive \(keine Berücksichtigung von Groß-/Kleinschreibung\) oder CaseSensitive \(Berücksichtigung von Groß-/Kleinschreibung\)<br>
+- Casetype: CaseInsensitive (keine Berücksichtigung von Groß-/Kleinschreibung) oder CaseSensitive (Berücksichtigung von Groß-/Kleinschreibung)<br>
 
 Gibt den Index in dem mehrwertigen Attribut zurück, in dem die Zeichenfolge gefunden wurde. Wenn die Zeichenfolge nicht gefunden wird, wird 0 zurückgegeben.
  
 
 **Hinweise:**<br> Bei mehrwertigen Zeichenfolgenattributen werden in den Werten Teilzeichenfolgen gefunden.<br> Für Verweisattribute muss die Suchzeichenfolge genau mit dem Wert übereinstimmen, der als Übereinstimmung betrachtet wird.
  
-**Beispiel:**<br> `IIF(Contains([proxyAddresses],”SMTP:”)>0,[proxyAddresses],Error(“No primary SMTP address found.”))`<br> Wenn das Attribut "proxyAddresses" eine primäre E-Mail-Adresse besitzt \(angegeben durch "SMTP:" \[in Großbuchstaben\]\), wird das Attribut "proxyAddress" zurückgegeben. Andernfalls wird ein Fehler zurückgegeben.
+**Beispiel:**<br> `IIF(Contains([proxyAddresses],”SMTP:”)>0,[proxyAddresses],Error(“No primary SMTP address found.”))`<br> Wenn das Attribut "proxyAddresses" eine primäre E-Mail-Adresse besitzt (angegeben durch "SMTP:" [in Großbuchstaben]), wird das Attribut "proxyAddress" zurückgegeben. Andernfalls wird ein Fehler zurückgegeben.
  
  
 
@@ -186,7 +186,7 @@ Gibt den Index in dem mehrwertigen Attribut zurück, in dem die Zeichenfolge gef
 
 **Beispiel:**<br> `ConvertFromBase64("SABlAGwAbABvACAAdwBvAHIAbABkACEA")`<br> `ConvertFromBase64("SGVsbG8gd29ybGQh", UTF8)`
 
-Beide Beispiele geben \*Hello world!\* zurück.
+Beide Beispiele geben "*Hello world!*" zurück.
  
  
 
@@ -200,9 +200,9 @@ Beide Beispiele geben \*Hello world!\* zurück.
 
 - source: UTF8-2-Byte-codierte Zeichenfolge
  
-**Hinweise:**<br> Der Unterschied zwischen dieser Funktion und "ConvertFromBase64\(,UTF8\)" ist, dass das Ergebnis vom DN-Attribut verwertet werden kann.<br> Dieses Format wird von Azure Active Directory als DN verwendet.
+**Hinweise:**<br> Der Unterschied zwischen dieser Funktion und "ConvertFromBase64(,UTF8)" ist, dass das Ergebnis vom DN-Attribut verwertet werden kann.<br> Dieses Format wird von Azure Active Directory als DN verwendet.
  
-**Beispiel:**<br> `ConvertFromUTF8Hex("48656C6C6F20776F726C6421")`<br> Gibt \*Hello world!\* zurück.
+**Beispiel:**<br> `ConvertFromUTF8Hex("48656C6C6F20776F726C6421")`<br> Gibt "*Hello world!*" zurück.
  
  
 
@@ -224,7 +224,7 @@ Beide Beispiele geben \*Hello world!\* zurück.
 
 **Beschreibung:**<br> Die Funktion "ConvertToUTF8Hex" konvertiert eine Zeichenfolge in einen UTF8-Hex-codierten Wert.
  
-**Syntax:**<br> `str ConvertToUTF8Hex(str source)`
+**Syntax:** <br> `str ConvertToUTF8Hex(str source)`
  
 **Hinweise:**<br> Das Ausgabeformat dieser Funktion wird von Azure Active Directory als DN-Attributformat verwendet.
  
@@ -297,7 +297,7 @@ Beide Beispiele geben \*Hello world!\* zurück.
  - h: Stunde
  - n: Minute
  - s: Sekunde
-- value: Die Anzahl der Einheiten, die Sie hinzufügen möchten. Der Wert kann positiv \(für Datumsangaben in der Zukunft\) oder negativ \(für Datumsangaben in der Vergangenheit\) sein. 
+- value: Die Anzahl der Einheiten, die Sie hinzufügen möchten. Der Wert kann positiv (für Datumsangaben in der Zukunft) oder negativ (für Datumsangaben in der Vergangenheit) sein. 
 - date: DateTime-Wert, der das Datum darstellt, dem das Intervall hinzugefügt wird.
  
 **Beispiel:** <br> `DateAdd("m", 3, CDate("2001-01-01"))` <br> Fügt 3 Monate hinzu und gibt einen DateTime-Wert zurück, der "2001-04-01" darstellt.
@@ -335,7 +335,7 @@ Beide Beispiele geben \*Hello world!\* zurück.
 ----------
 ### DNComponentRev
 
-**Beschreibung:** <br> Die Funktion "DNComponentRev" gibt den Wert einer angegebenen DN-Komponente von rechts \(vom Ende\) zurück.
+**Beschreibung:** <br> Die Funktion "DNComponentRev" gibt den Wert einer angegebenen DN-Komponente von rechts (vom Ende) zurück.
  
 **Syntax:** <br> `str DNComponentRev(ref dn, num ComponentNumber)` <br> `str DNComponentRev(ref dn, num ComponentNumber, enum Options)`
 
@@ -375,14 +375,14 @@ Beide Beispiele geben \*Hello world!\* zurück.
 ----------
 ### FormatDateTime
 
-**Beschreibung:**<br> Die Funktion "FormatDateTime" wird verwendet, um einen DateTime-Wert in eine Zeichenfolge in einem angegebenen Format zu formatieren.
+**Beschreibung:** <br> Die Funktion "FormatDateTime" wird verwendet, um einen DateTime-Wert in eine Zeichenfolge in einem angegebenen Format zu formatieren.
  
 **Syntax:** <br> `str FormatDateTime(dt value, str format)`
 
 - value: Ein Wert im DateTime-Format <br>
 - format: Eine Zeichenfolge, die das Format darstellt, in das konvertiert werden soll.
  
-**Hinweise:** <br> Die möglichen Werte für das Format finden Sie hier: [Benutzerdefinierte Datums-/Zeitformate (Format-Funktion)](http://msdn2.microsoft.com/library/73ctwf33(VS.90).aspx)
+**Hinweise:** <br> Die möglichen Werte für das Format finden Sie hier: [Benutzerdefinierte Datums-/Zeitformate (Format-Funktion)] (http://msdn2.microsoft.com/library/73ctwf33(VS.90).aspx)
  
 **Beispiel:** <br>
  
@@ -482,7 +482,7 @@ Beide Beispiele geben \*Hello world!\* zurück.
  
 **Syntax:** <br> `bool IsDate(var Expression)`
  
-**Hinweise:** <br> Wird verwendet, um zu bestimmen, ob "CDate\(\)" erfolgreich eingesetzt werden kann.
+**Hinweise:** <br> Wird verwendet, um zu bestimmen, ob "CDate()" erfolgreich eingesetzt werden kann.
  
 
 
@@ -490,7 +490,7 @@ Beide Beispiele geben \*Hello world!\* zurück.
 ----------
 ###IsEmpty
 
-**Beschreibung:**<br> Die Funktion "IsEmpty" gibt True zurück, wenn das Attribut in CS oder MV vorhanden ist, jedoch zu einer leeren Zeichenfolge ausgewertet wird.
+**Beschreibung:** <br> Die Funktion "IsEmpty" gibt True zurück, wenn das Attribut in CS oder MV vorhanden ist, jedoch zu einer leeren Zeichenfolge ausgewertet wird.
  
 **Syntax:** <br> `bool IsEmpty(var Expression)`
  
@@ -506,7 +506,7 @@ Beide Beispiele geben \*Hello world!\* zurück.
  
 **Hinweise:** <br> Eine GUID ist als eine Zeichenfolge definiert, die einem dieser Muster entspricht: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx oder {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
 
-Wird verwendet, um zu bestimmen, ob "CGuid\(\)" erfolgreich eingesetzt werden kann.
+Wird verwendet, um zu bestimmen, ob "CGuid()" erfolgreich eingesetzt werden kann.
  
 **Beispiel:** <br> `IIF(IsGuid([strAttribute]),CGuid([strAttribute]),NULL)` <br> Wenn "StrAttribute" ein GUID-Format hat, binäre Darstellung zurückgeben, andernfalls einen Nullwert.
  
@@ -530,7 +530,7 @@ Wird verwendet, um zu bestimmen, ob "CGuid\(\)" erfolgreich eingesetzt werden ka
 ----------
 ###IsNullOrEmpty
 
-**Beschreibung:**<br> Die Funktion "IsNullOrEmpty" gibt True zurück, wenn der Ausdruck einem Nullwert oder einer leeren Zeichenfolge entspricht.
+**Beschreibung:** <br> Die Funktion "IsNullOrEmpty" gibt True zurück, wenn der Ausdruck einem Nullwert oder einer leeren Zeichenfolge entspricht.
  
 **Syntax:** <br> `bool IsNullOrEmpty(var Expression)`
  
@@ -548,7 +548,7 @@ Wird verwendet, um zu bestimmen, ob "CGuid\(\)" erfolgreich eingesetzt werden ka
  
 **Syntax:** <br> `bool IsNumeric(var Expression)`
  
-**Hinweise:** <br> Wird verwendet, um zu bestimmen, ob "CNum\(\)" erfolgreich zum Analysieren des Ausdrucks eingesetzt werden kann.
+**Hinweise:** <br> Wird verwendet, um zu bestimmen, ob "CNum()" erfolgreich zum Analysieren des Ausdrucks eingesetzt werden kann.
 
 
 
@@ -560,7 +560,7 @@ Wird verwendet, um zu bestimmen, ob "CGuid\(\)" erfolgreich eingesetzt werden ka
  
 **Syntax:** <br> `bool IsString(var expression)`
  
-**Hinweise:** <br> Wird verwendet, um zu bestimmen, ob "CStr\(\)" erfolgreich zum Analysieren des Ausdrucks eingesetzt werden kann.
+**Hinweise:** <br> Wird verwendet, um zu bestimmen, ob "CStr()" erfolgreich zum Analysieren des Ausdrucks eingesetzt werden kann.
  
 
 
@@ -625,7 +625,7 @@ Wenn der Index außerhalb des gültigen Bereichs liegt, wird ein Nullwert zurüc
 **Syntax:** <br> `str Join(mvstr attribute)` <br> `str Join(mvstr attribute, str Delimiter)`
 
 - attribute: Mehrwertiges Attribut mit Zeichenfolgen, die verknüpft werden sollen. <br>
-- delimiter: Eine beliebige Zeichenfolge, die die Teilzeichenfolgen in der zurückgegebenen Zeichenfolge trennt. Wenn nicht angegeben, wird das Leerzeichen \(" "\) verwendet. Wenn "delimiter" eine Zeichenfolge der Länge 0 \(""\) oder "Nothing" ist, werden alle Elemente in der Liste ohne Trennzeichen verkettet.
+- delimiter: Eine beliebige Zeichenfolge, die die Teilzeichenfolgen in der zurückgegebenen Zeichenfolge trennt. Wenn nicht angegeben, wird das Leerzeichen (" ") verwendet. Wenn "delimiter" eine Zeichenfolge der Länge 0 ("") oder "Nothing" ist, werden alle Elemente in der Liste ohne Trennzeichen verkettet.
  
 **Hinweise:**<br> Zwischen den Funktionen "Join" und "Split" besteht Parität. Die Funktion "Join" nimmt ein Array von Zeichenfolgen entgegen, verknüpft sie mit einer Trennzeichenfolge und gibt eine einzige Zeichenfolge zurück. Die Funktion "Split" nimmt eine Zeichenfolge entgegen, trennt sie mit dem Trennzeichen und gibt ein Array von Zeichenfolgen zurück. Ein wichtiger Unterschied ist jedoch, dass "Join" Zeichenfolgen mit einer beliebigen Trennzeichenfolge verketten kann, "Split" aber nur Zeichenfolgen mit einem einzigen Trennzeichen trennen kann.
  
@@ -654,15 +654,15 @@ Wenn der Index außerhalb des gültigen Bereichs liegt, wird ein Nullwert zurüc
 **Syntax:** <br> `str Left(str string, num NumChars)`
 
 - string: Zeichenfolge, aus der Zeichen zurückgegeben werden <br>
-- numChars: Diese Zahl gibt die Anzahl der Zeichen an, die vom Anfang der Zeichenfolge \(links\) zurückgeben werden
+- numChars: Diese Zahl gibt die Anzahl der Zeichen an, die vom Anfang der Zeichenfolge (links) zurückgeben werden
  
 **Hinweise:** <br> Eine Zeichenfolge, die die ersten "numChars" Zeichen in der Zeichenfolge enthält:
 
 - Wenn "numChars" = 0, wird eine leere Zeichenfolge zurückgegeben.
-- Wenn "numChars" \< 0, wird die Eingabezeichenfolge zurückgegeben.
+- Wenn "numChars" < 0, wird die Eingabezeichenfolge zurückgegeben.
 - Wenn die Zeichenfolge einen Nullwert aufweist, wird eine leere Zeichenfolge zurückgegeben.
 
-Wenn die Zeichenfolge weniger Zeichen enthält als in "numChars" angegeben, wird eine identische \(alle in Parameter 1 enthaltenen Zeichen enthaltende\) Zeichenfolge zurückgegeben.
+Wenn die Zeichenfolge weniger Zeichen enthält als in "numChars" angegeben, wird eine identische (alle in Parameter 1 enthaltenen Zeichen enthaltende) Zeichenfolge zurückgegeben.
  
 **Beispiel:** <br> `Left(“John Doe”, 3)` <br> Gibt "Joh" zurück.
  
@@ -708,9 +708,9 @@ Wenn die Zeichenfolge weniger Zeichen enthält als in "numChars" angegeben, wird
 **Hinweise:** <br> Gibt "numChars" Zeichen ab der Ausgangsposition in der Zeichenfolge zurück.<br> Eine Zeichenfolge, die "numChars" Zeichen ab der Ausgangsposition in der Zeichenfolge enthält:
 
 - Wenn "numChars" = 0, wird eine leere Zeichenfolge zurückgegeben.
-- Wenn "numChars" \< 0, wird die Eingabezeichenfolge zurückgegeben.
-- Wenn "start" \> Länge der Zeichenfolge, wird die Eingabezeichenfolge zurückgegeben
-- Wenn "start" \< = 0, wird die Eingabezeichenfolge zurückgegeben
+- Wenn "numChars" < 0, wird die Eingabezeichenfolge zurückgegeben.
+- Wenn "start" > Länge der Zeichenfolge, wird die Eingabezeichenfolge zurückgegeben
+- Wenn "start" < = 0, wird die Eingabezeichenfolge zurückgegeben
 - Wenn die Zeichenfolge einen Nullwert aufweist, wird eine leere Zeichenfolge zurückgegeben.
 
 Wenn nicht "numChars" Zeichen ab der Ausgangsposition in der Zeichenfolge vorhanden sind, werden so viele Zeichen wie vorhanden zurückgegeben.
@@ -763,7 +763,7 @@ Wenn nicht "numChars" Zeichen ab der Ausgangsposition in der Zeichenfolge vorhan
 ----------
 ### Hinweise 
  
-- Wenn die Länge der Zeichenfolge "length" unterschreitet, wird "padCharacter" wiederholt an den Anfang der Zeichenfolge \(links\) gesetzt, bis ihre Länge "length" entspricht.
+- Wenn die Länge der Zeichenfolge "length" unterschreitet, wird "padCharacter" wiederholt an den Anfang der Zeichenfolge (links) gesetzt, bis ihre Länge "length" entspricht.
 - "padCharacter" kann ein Leerzeichen sein, jedoch kein Nullwert.
 - Wenn die Länge der Zeichenfolge gleich oder größer als "length" ist, wird die Zeichenfolge unverändert zurückgegeben.
 - Wenn die Länge der Zeichenfolge größer als oder gleich "length" ist, wird eine zur Zeichenfolge identische Zeichenfolge zurückgegeben.
@@ -788,7 +788,7 @@ Wenn nicht "numChars" Zeichen ab der Ausgangsposition in der Zeichenfolge vorhan
  
 **Hinweise:**
  
-- Wenn die Länge der Zeichenfolge kleiner als "length" ist, wird "padCharacter" wiederholt an das Ende der Zeichenfolge \(rechts\) gesetzt, bis ihre Länge "length" entspricht.
+- Wenn die Länge der Zeichenfolge kleiner als "length" ist, wird "padCharacter" wiederholt an das Ende der Zeichenfolge (rechts) gesetzt, bis ihre Länge "length" entspricht.
 - "padCharacter" kann ein Leerzeichen sein, jedoch kein Nullwert.
 - Wenn die Länge der Zeichenfolge gleich oder größer als "length" ist, wird die Zeichenfolge unverändert zurückgegeben.
 - Wenn die Länge der Zeichenfolge größer als oder gleich "length" ist, wird eine zur Zeichenfolge identische Zeichenfolge zurückgegeben.
@@ -882,12 +882,12 @@ Das Format lautet "{source1}:{target1},{source2}:{target2},{sourceN},{targetN}",
 **Hinweise:**
  
 - Die Funktion ersetzt alle Vorkommen von definierten Quellen durch die Ziele. 
-- Die Quelle muss genau ein Zeichen \(Unicode\) sein. 
-- Die Quelle kann nicht leer sein oder mehrere Zeichen enthalten \(Analysefehler\).
+- Die Quelle muss genau ein Zeichen (Unicode) sein. 
+- Die Quelle kann nicht leer sein oder mehrere Zeichen enthalten (Analysefehler).
 - Das Ziel kann mehrere Zeichen enthalten, z. B. ö:oe, β:ss.
 - Das Ziel kann leer sein, um anzugeben, dass das Zeichen entfernt werden soll. 
 - Bei der Quelle wird die Groß-/Kleinschreibung beachtet, und es muss eine genaue Übereinstimmung vorliegen.
-- Die reservierten Zeichen "," \(Komma\) und ":" \(Doppelpunkt\) können mit dieser Funktion nicht ersetzt werden. 
+- Die reservierten Zeichen "," (Komma) und ":" (Doppelpunkt) können mit dieser Funktion nicht ersetzt werden. 
 - Leerzeichen und andere Whitespaces in der Zeichenfolge "ReplacePattern" werden ignoriert.
  
 
@@ -903,19 +903,19 @@ Das Format lautet "{source1}:{target1},{source2}:{target2},{sourceN},{targetN}",
 ----------
 ### Right
 
-**Beschreibung:** <br> Die Funktion "Right" gibt eine angegebene Anzahl von Zeichen von der rechten Seite \(Ende\) einer Zeichenfolge zurück.
+**Beschreibung:** <br> Die Funktion "Right" gibt eine angegebene Anzahl von Zeichen von der rechten Seite (Ende) einer Zeichenfolge zurück.
  
 **Syntax:** <br> `str Right(str string, num NumChars)`
 
 - string: Zeichenfolge, aus der Zeichen zurückgegeben werden 
-- numChars: Diese Zahl gibt die Anzahl der Zeichen an, die vom Ende der Zeichenfolge \(rechts\) zurückgeben werden
+- numChars: Diese Zahl gibt die Anzahl der Zeichen an, die vom Ende der Zeichenfolge (rechts) zurückgeben werden
  
 **Hinweise:** <br> "numChars" Zeichen werden ab der letzten Position der Zeichenfolge zurückgegeben.
 
 Eine Zeichenfolge, die die letzten "numChars" Zeichen in der Zeichenfolge enthält:
 
 - Wenn "numChars" = 0, wird eine leere Zeichenfolge zurückgegeben.
-- Wenn "numChars" \< 0, wird die Eingabezeichenfolge zurückgegeben.
+- Wenn "numChars" < 0, wird die Eingabezeichenfolge zurückgegeben.
 - Wenn die Zeichenfolge einen Nullwert aufweist, wird eine leere Zeichenfolge zurückgegeben.
 
 Wenn die Zeichenfolge weniger Zeichen enthält als in "numChars" angegeben, wird eine identische Zeichenfolge zurückgegeben.
@@ -943,7 +943,7 @@ Wenn die Zeichenfolge weniger Zeichen enthält als in "numChars" angegeben, wird
 **Beschreibung:** <br> Die Funktion "Split" nimmt eine durch Trennzeichen getrennte Zeichenfolge entgegen und wandelt sie in eine mehrwertige Zeichenfolge um.
  
 
-**Syntax:** <br> `mvstr Split(str value, str delimiter)` \<br? `mvstr Split(str value, str delimiter, num limit)`
+**Syntax:** <br> `mvstr Split(str value, str delimiter)` <br? `mvstr Split(str value, str delimiter, num limit)`
 
 - value: Die Zeichenfolge mit Trennzeichen
 - delimiter: Einzelnes Zeichen, das als Trennzeichen verwendet werden soll 
@@ -1020,7 +1020,7 @@ Ein Wert kann auch die Funktion "Error" sein, die eine benutzerdefinierte Zeiche
 
 **Syntax:** <br> `str UCase(str string)`
  
-**Beispiel:** <br> `UCase(“TeSt”)` <br> Gibt "TEST" zurück.
+**Beispiel:** <br> `UCase(“TeSt”)` <br> Gibt "Test" zurück.
  
  
 
@@ -1034,11 +1034,11 @@ Ein Wert kann auch die Funktion "Error" sein, die eine benutzerdefinierte Zeiche
 
 - string: Zeichenfolge, aus der ein Wort zurückgegeben wird
 - WordNumber: Eine Zahl, die die Nummer des zurückzugebenden Worts angibt 
-- delimiters: Eine Zeichenfolge, die das/die Trennzeichen angibt, das/die verwendet werden soll\(en\), um Wörter zu identifizieren
+- delimiters: Eine Zeichenfolge, die das/die Trennzeichen angibt, das/die verwendet werden soll(en), um Wörter zu identifizieren
  
 **Hinweise:** <br> Alle Folgen von Zeichen in einer Zeichenfolge, die durch ein Zeichen getrennt werden, das in "delimiters" enthalten ist, werden als Wörter identifiziert:
 
-- Wenn "WordNumber" \< 1, wird eine leere Zeichenfolge zurückgegeben
+- Wenn "WordNumber" < 1, wird eine leere Zeichenfolge zurückgegeben
 - Wenn "string" einen Nullwert hat, wird eine leere Zeichenfolge zurückgegeben
 
 Wenn "string" weniger als "WordNumber" Wörter enthält, oder "string" keine Wörter enthält, die durch Trennzeichen identifiziert werden, wird eine leere Zeichenfolge zurückgegeben.
@@ -1058,4 +1058,4 @@ Wenn "string" weniger als "WordNumber" Wörter enthält, oder "string" keine Wö
  
 <!--Image references-->
 
-<!-----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

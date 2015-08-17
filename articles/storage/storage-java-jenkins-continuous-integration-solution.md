@@ -3,9 +3,10 @@
 	description="Dieses Lernprogramm zeigt, wie Sie den Azure-Blobdienst als Repository für Buildartefakte verwenden, die von einer Jenkins-Lösung für die fortlaufende Integration erstellt wurden." 
 	services="storage" 
 	documentationCenter="java" 
-	authors="rmcmurray" 
+	authors="rmcmurray"  
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor="jimbe" 
+/>
 
 <tags 
 	ms.service="storage" 
@@ -106,16 +107,16 @@ Für das Lernprogramm müssen wir zunächst einen Auftrag erstellen, der mehrere
  
 5. Klicken Sie in der Auftragskonfiguration im Bereich **Post-build Actions** auf **Add post-build action**, und wählen Sie **Upload artifacts to Azure Blob storage** aus.
 6. Wählen Sie unter **Storage account name** das zu verwendende Speicherkonto aus.
-7. Geben Sie unter **Container name** den Containernamen ein. (Der Container wird erstellt, wenn er beim Hochladen der Buildartefakte noch nicht vorhanden ist.) Sie können Umgebungsvariablen verwenden. Geben Sie also für dieses Beispiel **${JOB_NAME}** als Containernamen ein.
+7. Geben Sie unter **Container name** den Containernamen ein. (Der Container wird erstellt, wenn er beim Hochladen der Buildartefakte noch nicht vorhanden ist.) Sie können Umgebungsvariablen verwenden. Geben Sie also für dieses Beispiel **${JOB\_NAME}** als Containernamen ein.
 
     **Tipp**
     
-    Unter dem Bereich **Command**, in dem Sie ein Skript für **Execute Windows batch command** eingegeben haben, befindet sich ein Link zu den von Jenkins erkannten Umgebungsvariablen. Klicken Sie auf diesen Link, um die Namen und Beschreibungen der Umgebungsvariablen anzuzeigen. Beachten Sie, dass Umgebungsvariablen, die Sonderzeichen enthalten, z. B. die Umgebungsvariable **BUILD_URL**, nicht als Containername oder gemeinsamer virtueller Pfad zulässig sind.
+    Unter dem Bereich **Command**, in dem Sie ein Skript für **Execute Windows batch command** eingegeben haben, befindet sich ein Link zu den von Jenkins erkannten Umgebungsvariablen. Klicken Sie auf diesen Link, um die Namen und Beschreibungen der Umgebungsvariablen anzuzeigen. Beachten Sie, dass Umgebungsvariablen, die Sonderzeichen enthalten, z. B. die Umgebungsvariable **BUILD\_URL**, nicht als Containername oder gemeinsamer virtueller Pfad zulässig sind.
 
 8. Klicken Sie für dieses Beispiel auf **Make new container public by default**. (Wenn Sie einen privaten Container verwenden möchten, müssen Sie eine Shared Access Signature erstellen, um den Zugriff zu ermöglichen. Dies geht jedoch über den Rahmen dieses Thema hinaus. Sie finden weitere Informationen zu Shared Access Signatures unter [Erstellen und Verwenden einer SAS (Shared Access Signature)](http://go.microsoft.com/fwlink/?LinkId=279889).
 9. [Optional] Klicken Sie auf **Clean container before uploading**, wenn die Inhalte aus dem Container gelöscht werden sollen, bevor die Buildartefakte hochgeladen (lassen Sie die Option deaktiviert, wenn die Inhalte nicht aus dem Container gelöscht werden sollen) werden.
 10. Geben Sie unter **List of Artifacts to upload** die Zeichenfolge **text/*.txt** ein.
-11. Geben Sie **${BUILD_ID}/${BUILD_NUMBER}** für die Zwecke dieses Lernprogramms unter **Common virtual path for uploaded artifacts** ein.
+11. Geben Sie **${BUILD\_ID}/${BUILD\_NUMBER}** für die Zwecke dieses Lernprogramms unter **Common virtual path for uploaded artifacts** ein.
 12. Klicken Sie auf **Save**, um Ihre Einstellungen zu speichern.
 13. Klicken Sie im Jenkins-Dashboard auf **Build Now**, um **MyJob** auszuführen. Prüfen Sie den Status in der Ausgabe der Konsole. Statusmeldungen für Azure-Speicher werden in die Ausgabe der Konsole aufgenommen, wenn die Postbuildaktion mit dem Hochladen von Buildartefakten beginnt.
 14. Nach erfolgreichem Abschluss des Auftrags können Sie die Buildartefakte überprüfen, indem Sie den öffentlichen Blob öffnen.
@@ -154,7 +155,7 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
     
     (Das Format oben gilt für die öffentliche Azure-Cloud. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt im Azure-Verwaltungsportal, um Ihren URL-Endpunkt zu ermitteln.)
 
-    Bei obigem Format steht `storageaccount` für den Namen Ihres Speicherkontos, `container_name` für den Namen des Containers und `blob_name` für den Namen des Blobs. Der Containername kann mehrere Pfade umfassen, die durch einen Schrägstrich (**/**) getrennt sind. Der Beispielcontainername in diesem Lernprogramm war **MyJob**, und **${BUILD_ID}/${BUILD_NUMBER}** wurde für den gemeinsamen virtuellen Pfad verwendet. Der Blob hat also eine URL in folgendem Format:
+    Bei obigem Format steht `storageaccount` für den Namen Ihres Speicherkontos, `container_name` für den Namen des Containers und `blob_name` für den Namen des Blobs. Der Containername kann mehrere Pfade umfassen, die durch einen Schrägstrich (**/**) getrennt sind. Der Beispielcontainername in diesem Lernprogramm war **MyJob**, und **${BUILD\_ID}/${BUILD\_NUMBER}** wurde für den gemeinsamen virtuellen Pfad verwendet. Der Blob hat also eine URL in folgendem Format:
 
     `http://example.blob.core.windows.net/myjob/2014-04-14_23-57-00/1/hello.txt`
 
@@ -165,4 +166,4 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
   [ms-open-tech]: http://msopentech.com
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

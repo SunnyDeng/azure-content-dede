@@ -20,9 +20,9 @@
 
 ##Übersicht
 
-Für Tabellen, die mit dem JavaScript- oder .NET-Backend erstellt wurden, kann das vorläufige Löschen aktiviert sein. Bei Verwendung des vorläufigen Löschens wird eine neue Spalte *__deleted* vom [SQL-Bit-Typ] zur Datenbank hinzugefügt. Bei aktiviertem vorläufigem Löschen werden Reihen nicht physisch aus der Datenbank gelöscht; stattdessen wird der Wert der gelöschten Spalte auf „TRUE“ gesetzt.
+Für Tabellen, die mit dem JavaScript- oder .NET-Backend erstellt wurden, kann das vorläufige Löschen aktiviert sein. Bei Verwendung des vorläufigen Löschens wird eine neue Spalte *\_\_deleted* vom [SQL-Bit-Typ] zur Datenbank hinzugefügt. Bei aktiviertem vorläufigem Löschen werden Reihen nicht physisch aus der Datenbank gelöscht; stattdessen wird der Wert der gelöschten Spalte auf „TRUE“ gesetzt.
 
-Bei der Abfrage von Datensätzen in einer Tabelle mit aktiviertem vorläufigem Löschen werden gelöschte Reihen standardmäßig nicht zurückgegeben. Um diese Reihen anzufordern, müssen Sie einen Abfrageparameter *__includeDeleted=true* in den [REST-Abfragevorgang](http://msdn.microsoft.com/library/azure/jj677199.aspx) einschließen. Im .NET-Client-SDK können Sie zudem die Hilfsmethode `IMobileServiceTable.IncludeDeleted()` nutzen.
+Bei der Abfrage von Datensätzen in einer Tabelle mit aktiviertem vorläufigem Löschen werden gelöschte Reihen standardmäßig nicht zurückgegeben. Um diese Reihen anzufordern, müssen Sie einen Abfrageparameter *\_\_includeDeleted=true* in den [REST-Abfragevorgang](http://msdn.microsoft.com/library/azure/jj677199.aspx) einschließen. Im .NET-Client-SDK können Sie zudem die Hilfsmethode `IMobileServiceTable.IncludeDeleted()` nutzen.
 
 Unterstützung für vorläufiges Löschen für das .NET-Backend wurde erstmalig mit Version 1.0.402 des .NET-Backend von Microsoft Azure Mobile Services veröffentlicht. Die neuesten NuGet-Pakete stehen unter [Microsoft Azure Mobile Services .NET Backend](http://go.microsoft.com/fwlink/?LinkId=513165) (in englischer Sprache) zur Verfügung.
 
@@ -66,11 +66,11 @@ Wenn Sie eine neue Tabelle für Ihren mobilen Dienst erstellen, können Sie das 
 So aktivieren Sie das vorläufige Löschen für eine vorhandene Tabelle im JavaScript-Backend:
 
 1. Klicken Sie im [Verwaltungsportal] auf Ihren mobilen Dienst. Klicken Sie dann auf die Registerkarte Daten.
-2. Klicken Sie auf der Seite Daten, um die gewünschte Tabelle auszuwählen. Klicken Sie dann in der Befehlsleiste auf die Schaltfläche **Vorläufiges Löschen aktivieren**. Sollte das vorläufige Löschen bereits für die Tabelle aktiviert sein, wird die Schaltfläche nicht angezeigt, Sie können jedoch die Spalte *__deleted* sehen, wenn Sie auf die Registerkarte **Durchsuchen** oder **Spalten** für die Tabelle klicken.
+2. Klicken Sie auf der Seite Daten, um die gewünschte Tabelle auszuwählen. Klicken Sie dann in der Befehlsleiste auf die Schaltfläche **Vorläufiges Löschen aktivieren**. Sollte das vorläufige Löschen bereits für die Tabelle aktiviert sein, wird die Schaltfläche nicht angezeigt, Sie können jedoch die Spalte *\_\_deleted* sehen, wenn Sie auf die Registerkarte **Durchsuchen** oder **Spalten** für die Tabelle klicken.
 
     ![][0]
 
-    Um das vorläufige Löschen für die Tabelle zu deaktivieren, klicken Sie auf die Registerkarte **Spalten** und dann auf die Spalte *__deleted* und die Schaltfläche **Löschen**.
+    Um das vorläufige Löschen für die Tabelle zu deaktivieren, klicken Sie auf die Registerkarte **Spalten** und dann auf die Spalte *\_\_deleted* und die Schaltfläche **Löschen**.
 
     ![][1]
 
@@ -126,7 +126,7 @@ Um gelöschte Datensätze in das Abfrageergebnis in einem Skript einzuschließen
         }
     });
 
-Um gelöschte Datensätze über eine HTTP-Abfrage abzurufen, fügen Sie den Abfrageparameter „__includedeleted=true“ hinzu:
+Um gelöschte Datensätze über eine HTTP-Abfrage abzurufen, fügen Sie den Abfrageparameter „\_\_includedeleted=true“ hinzu:
 
     http://youservice.azure-mobile.net/tables/todoitem?__includedeleted=true
 
@@ -163,4 +163,4 @@ Weitere Informationen zum Planen von periodischen Aufträgen mit Mobiles Service
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

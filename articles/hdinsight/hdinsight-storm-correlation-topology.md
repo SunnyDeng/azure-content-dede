@@ -197,4 +197,4 @@ Wenn Sie die Topologie beenden möchten, kehren Sie zum Projekt **CorrelationTop
 Weitere Storm-Beispiele finden Sie unter [Beispieltopologien für Storm in HDInsight](hdinsight-storm-example-topology.md).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

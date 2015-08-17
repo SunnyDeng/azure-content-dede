@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="07/30/2015" 
+	ms.date="08/05/2015" 
 	ms.author="jeffstok"/>
 
 #Microsoft Stream Analytic Versionshinweise
@@ -29,23 +29,23 @@ Diese Version enthält die folgenden Updates.
 </tr>
 <tr>
 <td>Die Power BI-Organisations-ID wurde von der Azure-ID entkoppelt.</td>
-<td>Dieses Feature ermöglicht die Power BI-Ausgabe für ASA-Aufträge unter einem beliebigen Azure-Kontotyp (Live-ID oder Organisations-ID). Darüber hinaus können Sie eine Organisations-ID für Ihre Azure-Konto einrichten und eine andere ID für die Autorisierung der Power BI-Ausgabe verwenden.</td>
+<td>Dieses Feature ermöglicht die <a href="https://azure.microsoft.com/documentation/articles/stream-analytics-power-bi-dashboard/">Power BI-Ausgabe</a> für ASA-Aufträge unter einem beliebigen Azure-Kontotyp (Live-ID oder Organisations-ID). Darüber hinaus können Sie eine Organisations-ID für Ihre Azure-Konto einrichten und eine andere ID für die Autorisierung der Power BI-Ausgabe verwenden.</td>
 </tr>
 <tr>
 <td>Unterstützung für die Ausgabe von Service&#160;Bus-Warteschlangen</td>
-<td>Service&#160;Bus-Warteschlangenausgaben stehen nun in Stream&#160;Analytics Aufträgen zur Verfügung.</td>
+<td><a href="https://azure.microsoft.com/documentation/articles/stream-analytics-connect-data-event-outputs/#service-bus-queues">Service&#160;Bus-Warteschlangen</a>-Ausgaben stehen nun in Stream&#160;Analytics Aufträgen zur Verfügung.</td>
 </tr>
 <tr>
 <td>Unterstützung für die Ausgabe von Service Bus-Themen</td>
-<td>Ausgaben von Service Bus-Themen stehen nun in Stream Analytics-Aufträgen zur Verfügung.</td>
+<td><a href="https://azure.microsoft.com/documentation/articles/stream-analytics-connect-data-event-outputs/#service-bus-topics">Ausgaben von Service Bus</a>-Themen stehen nun in Stream Analytics-Aufträgen zur Verfügung.</td>
 </tr>
 <tr>
 <td>Neue Arrayfunktionen</td>
-<td>Die Arrayfunktionen „GetArrayElement“, „GetArrayElements“ und „GetArrayLength“ wurden hinzugefügt.</td>
+<td>Die Arrayfunktionen <a href="https://msdn.microsoft.com/library/azure/mt270218.aspx">GetArrayElement</a>, <a href="https://msdn.microsoft.com/library/azure/mt298451.aspx">GetArrayElements</a> und <a href="https://msdn.microsoft.com/library/azure/mt270226.aspx">GetArrayLength</a> wurden hinzugefügt.</td>
 </tr>
 <tr>
 <td>Neue Datensatzfunktionen</td>
-<td>Die Datensatzfunktionen „GetRecordProperties“ und „GetRecordPropertyValue“ wurden hinzugefügt.</td>
+<td>Die Datensatzfunktionen <a href="https://msdn.microsoft.com/library/azure/mt270221.aspx">GetRecordProperties</a> und <a href="https://msdn.microsoft.com/library/azure/mt270220.aspx">GetRecordPropertyValue</a> wurden hinzugefügt.</td>
 </tr>
 </table>
 
@@ -148,8 +148,8 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](../stream.analytics.get.started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
-- [Stream Analytics Query Language Reference \(in englischer Sprache\)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Erstellen einer Node.js-Webanwendung mit DocumentDB | Azure" 
+	pageTitle="Erstellen einer Node.js-Webanwendung mit DocumentDB | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mit Microsoft Azure DocumentDB Daten aus einer in Azure-Websites gehosteten Node.js Express-Webanwendung speichern und auf sie zugreifen." 
 	services="documentdb" 
 	documentationCenter="nodejs" 
 	authors="ryancrawcour" 
 	manager="jhubbard" 
 	editor="cgronlun"/>
+
 
 <tags 
 	ms.service="documentdb" 
@@ -15,6 +16,7 @@
 	ms.topic="hero-article" 
 	ms.date="07/24/2015" 
 	ms.author="ryancraw"/>
+
 
 # <a name="_Toc395783175"></a>Erstellen einer Node.js-Webanwendung mithilfe von DocumentDB
 
@@ -43,7 +45,7 @@ Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgende
 
 - Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](../../pricing/free-trial/).
 - [Node.js][] Version v0.10.29 oder höher.
-- [Express Generator](http://www.expressjs.com/starter/generator.html) \(Installation über `npm install express-generator -g`\)
+- [Express Generator](http://www.expressjs.com/starter/generator.html) (Installation über `npm install express-generator -g`)
 - [Git][].
 
 ## <a name="_Toc395637761"></a>Schritt 1: Erstellen eines DocumentDB-Datenbankkontos
@@ -93,7 +95,7 @@ Die Datei **package.json** ist eine der im Stammverzeichnis des Projekts erstell
 
 	![Screenshot der Registerkarte "package.json"](./media/documentdb-nodejs-application/image17.png)
 
-       Dadurch wird Node \(und später Azure\) darüber informiert, dass Ihre Anwendung von diesen zusätzlichen Modulen abhängig ist.
+       Dadurch wird Node (und später Azure) darüber informiert, dass Ihre Anwendung von diesen zusätzlichen Modulen abhängig ist.
 
 ## <a name="_Toc395783180"></a>Schritt 4: Verwenden des DocumentDB-Diensts in einer Knotenanwendung
 
@@ -423,7 +425,7 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 		app.post('/completetask', taskList.completeTask.bind(taskList));
 
 
-6. Diese Zeilen definieren eine neue Instanz unseres **TaskDao**-Objekts mit einer neuen Verbindung zu DocumentDB \(unter Verwendung der aus **config.js** gelesenen Werte\). Sie initialisieren das Task-Objekt und binden dann Formularaktionen an Methoden auf unserem **TaskList**-Controller.
+6. Diese Zeilen definieren eine neue Instanz unseres **TaskDao**-Objekts mit einer neuen Verbindung zu DocumentDB (unter Verwendung der aus **config.js** gelesenen Werte). Sie initialisieren das Task-Objekt und binden dann Formularaktionen an Methoden auf unserem **TaskList**-Controller.
 
 7. Speichern und schließen Sie abschließend die Datei **app.js**. Wir sind fast fertig.
  
@@ -559,4 +561,4 @@ Den Quellcode für die vollständige Referenzanwendung können Sie [hier](https:
   [Git]: http://git-scm.com/
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

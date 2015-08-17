@@ -106,4 +106,4 @@ Verwenden Sie zum Verbinden mit einem Azure ML-Webdienst die **urllib2**-Bibliot
 	
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

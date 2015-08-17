@@ -22,7 +22,7 @@ In diesem Thema wird erläutert, wie Azure-Ressourcen-Manager-Vorlagen verwendet
 
 Mit Azure-Ressourcen-Manager-Vorlagen können Sie schnell und einfach Ihre Anwendungen über eine deklarative JSON-Datei in Azure bereitstellen. In einer JSON-Vorlage können Sie mehrere Dienste bereitstellen, darunter beispielsweise Virtual Machines, Virtual Network, Storage, App Services und Datenbanken. Sie verwenden die gleiche Vorlage, um Ihre Anwendung während jeder Phase des Anwendungslebenszyklus wiederholt und konsistent bereitzustellen.
 
-Zur Vereinfachung der Verwaltung Ihrer Anwendung können Sie alle Ressourcen, die einen gemeinsamen Lebenszyklus aufweisen, in einer einzelnen Ressourcengruppe organisieren. Ressourcengruppen erleichtern Ihnen das gleichzeitige Bereitstellen, Aktualisieren und Löschen aller verwandten Ressourcen. In den meisten Fällen ist eine Ressourcengruppe einer einzelnen Anwendung oder einer Anwendungsebene \(bei großen Anwendungen\) zugeordnet. Die Ressource, die über eine Vorlage bereitgestellt wird, befindet sich in einer einzelnen Ressourcengruppe, sie kann aber Abhängigkeiten in anderen Ressourcengruppen enthalten.
+Zur Vereinfachung der Verwaltung Ihrer Anwendung können Sie alle Ressourcen, die einen gemeinsamen Lebenszyklus aufweisen, in einer einzelnen Ressourcengruppe organisieren. Ressourcengruppen erleichtern Ihnen das gleichzeitige Bereitstellen, Aktualisieren und Löschen aller verwandten Ressourcen. In den meisten Fällen ist eine Ressourcengruppe einer einzelnen Anwendung oder einer Anwendungsebene (bei großen Anwendungen) zugeordnet. Die Ressource, die über eine Vorlage bereitgestellt wird, befindet sich in einer einzelnen Ressourcengruppe, sie kann aber Abhängigkeiten in anderen Ressourcengruppen enthalten.
 
 Sie können innerhalb einer Ressourcengruppe die Ausführung einer Bereitstellung verfolgen und den Status der Bereitstellung und Ausgaben der Vorlagenausführung anzeigen.
 
@@ -257,4 +257,4 @@ Bei der Verwendung einer Parameterdatei zum Übergeben von Parameterwerten an Ih
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

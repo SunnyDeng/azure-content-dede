@@ -20,7 +20,7 @@
 
 Wenn Sie die mobile App als primäre Kontaktmethode verwenden möchten, finden Sie weitere Informationen in diesem Artikel. Hier erfahren Sie, wie Sie Multi-Factor Authentication einrichten, um Ihre mobile App als primäre Kontaktmethode zu verwenden.
 
-Die Azure Authenticator-App ist für [Windows Phone](http://www.windowsphone.com/en-us/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458) verfügbar.
+Die Azure Authenticator-App ist für [Windows Phone](http://www.windowsphone.com/de-de/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458) verfügbar.
 
 ## So verwenden Sie eine mobile App als Kontaktmethode
 
@@ -73,4 +73,4 @@ Wenn Sie ein Drittanbieterkonto mit der mobilen App verwenden, geben Sie den Kon
 >[AZURE.NOTE]Wenn Sie zum Hinzufügen eines Geschäftskontos aufgefordert werden, gilt dies für die Einbindung in den Arbeitsplatz und nicht für die mehrstufige Authentifizierung. Sie können dies ignorieren.
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

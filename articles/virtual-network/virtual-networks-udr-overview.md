@@ -90,4 +90,4 @@ Informationen zum Aktivieren der IP-Weiterleitung für einen virtuellen Computer
 - Erfahren Sie, wie Sie [Routen erstellen](../virtual-networks-udr-how-to#How-to-manage-routes) und Subnetzen zuordnen.
 - Erfahren Sie, wie Sie die [IP-Weiterleitung aktivieren](../virtual-networks-udr-how-to#How-to-Manage-IP-Forwarding) für einen virtuellen Computer, auf dem ein virtuelles Gerät ausgeführt wird. 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

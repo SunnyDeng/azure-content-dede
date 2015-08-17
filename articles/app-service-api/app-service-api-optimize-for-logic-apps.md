@@ -57,7 +57,7 @@ Bei der Entwicklung mit Visual Studio ist es eine bewährte Methode, die API-Con
 
 	![Festlegen der XML-Doc-Eigenschaft](./media/app-service-api-optimize-for-logic-apps/xml-documentation-file-property.png)
 
-4. Öffnen Sie die Datei *SwaggerConfig.cs* (diese befindet sich im Ordner **App_Start** des Projekts).
+4. Öffnen Sie die Datei *SwaggerConfig.cs* (diese befindet sich im Ordner **App\_Start** des Projekts).
 
 5. Fügen Sie am Anfang der Datei *SwaggerConfig.cs* **using**-Direktiven für die Namespaces **System** und **System.Globalization** ein.
 
@@ -235,4 +235,4 @@ Für API-Apps mit dynamischen Metadaten können Sie benutzerdefinierte Attribute
 In diesem Artikel haben Sie erfahren, wie Sie die Benutzerfreundlichkeit Ihrer API-App verbessern, wenn diese im Logik-Apps-Designer verwendet wird. Als bewährte Methode wird empfohlen, benutzerfreundliche Namen für alle Operationen (Aktionen und Trigger), Parameter und Eigenschaften bereitzustellen. Außerdem wird empfohlen, nicht mehr als 5 grundlegende Operationen bereitzustellen. Für Eingabeparameter lautet die Empfehlung, die Anzahl von grundlegenden Eigenschaften auf maximal 4 zu beschränken, für Eigenschaften liegt die Empfehlung bei 5 oder weniger. Die verbleibenden Operationen und Eigenschaften sollten als erweitert gekennzeichnet werden.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

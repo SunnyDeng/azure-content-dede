@@ -74,7 +74,7 @@ HealthEvents          :
 
 
 ### Zertifikatablauf
-System.FabricNode gibt die Meldung „Warning“ aus, wenn vom Knoten verwendete Zertifikate kurz vor dem Ablauf stehen. Es gibt drei Zertifikate pro Knoten: Certificate_cluster, Certificate_server und Certificate_default_client. Wenn das Ablaufdatum noch mindestens zwei Wochen entfernt ist, lautet der Berichtstyp „OK“. Wenn der Ablauf in weniger als zwei Wochen erfolgt, lautet der Berichtstyp „Warning“. Die Gültigkeitsdauer (TTL) dieser Ereignisse ist unendlich. Sie werden entfernt, wenn ein Knoten den Cluster verlässt.
+System.FabricNode gibt die Meldung „Warning“ aus, wenn vom Knoten verwendete Zertifikate kurz vor dem Ablauf stehen. Es gibt drei Zertifikate pro Knoten: Certificate\_cluster, Certificate\_server und Certificate\_default\_client. Wenn das Ablaufdatum noch mindestens zwei Wochen entfernt ist, lautet der Berichtstyp „OK“. Wenn der Ablauf in weniger als zwei Wochen erfolgt, lautet der Berichtstyp „Warning“. Die Gültigkeitsdauer (TTL) dieser Ereignisse ist unendlich. Sie werden entfernt, wenn ein Knoten den Cluster verlässt.
 
 - SourceId: System.FabricNode
 - Eigenschaft: Beginnt mit „Certificate“ (Zertifikat) und enthält weitere Informationen zum Zertifikatstyp.
@@ -530,4 +530,4 @@ System.Hosting gibt die Meldung „Error“ aus, wenn die Überprüfung während
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -2,50 +2,50 @@
 
 > [AZURE.NOTE]Schneller ans Ziel kommen – mit der NEUEN [Komplettanleitung für Azure](http://support.microsoft.com/kb/2990804). Mit dieser Anleitung wird das Zuordnen eines benutzerdefinierten Domänennamens zu Azure Cloud Services oder [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) sowie das Absichern der Kommunikation mittels SSL zum Kinderspiel.
 
-Sie können die Kommunikation zwischen Web-App und Browser mit HTTPS sichern, wobei SSL-Verschlüsselung \(Secure Socket Layer\) verwendet wird. Dies ist die gängigste Methode zum Schützen von Daten, die über das Internet gesendet werden, und bietet Besuchern die Sicherheit, dass ihre Transaktionen mit Ihrer Web-App sicher sind. In diesem Artikel wird die Vorgehensweise beim Konfigurieren von HTTPS für eine Web-App in Azure App Service beschrieben. In diesem Artikel wird die Clientzertifikatsauthentifizierung nicht behandelt. Informationen hierzu finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../articles/app-service-web/app-service-web-configure-tls-mutual-auth.md).
+Sie können die Kommunikation zwischen Web-App und Browser mit HTTPS sichern, wobei SSL-Verschlüsselung (Secure Socket Layer) verwendet wird. Dies ist die gängigste Methode zum Schützen von Daten, die über das Internet gesendet werden, und bietet Besuchern die Sicherheit, dass ihre Transaktionen mit Ihrer Web-App sicher sind. In diesem Artikel wird die Vorgehensweise beim Konfigurieren von HTTPS für eine Web-App in Azure App Service beschrieben. In diesem Artikel wird die Clientzertifikatsauthentifizierung nicht behandelt. Informationen hierzu finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../articles/app-service-web/app-service-web-configure-tls-mutual-auth.md).
 
 ##<a name="bkmk_azurewebsites"></a>HTTPS für die Domäne "\\\*.azurewebsites.net"
 
-Wenn Sie keinen benutzerdefinierten Domänennamen, sondern stattdessen die Domäne "\\\*.azurewebsites.net" verwenden möchten, die Ihrer Web-App von Azure zugewiesen wird \(z. B. "contoso.azurewebsites.net"\), wird Ihre Web-App bereits durch ein von Microsoft bereitgestelltes Zertifikat geschützt, das HTTPS aktiviert. Sie können **https://mywebsite.azurewebsites.net** für den Zugriff auf Ihre App verwenden. "\\\*.azurewebsites.net" ist jedoch eine Platzhalterdomäne. [Platzhalterdomänen](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/) sind generell nicht so sicher wie die Verwendung einer benutzerdefinierten Domäne mit Ihrem eigenen Zertifikat. 
+Wenn Sie keinen benutzerdefinierten Domänennamen, sondern stattdessen die Domäne "\\\*.azurewebsites.net" verwenden möchten, die Ihrer Web-App von Azure zugewiesen wird (z. B. "contoso.azurewebsites.net"), wird Ihre Web-App bereits durch ein von Microsoft bereitgestelltes Zertifikat geschützt, das HTTPS aktiviert. Sie können \*\***https://mywebsite.azurewebsites.net** für den Zugriff auf Ihre App verwenden. "\\\*.azurewebsites.net" ist jedoch eine Platzhalterdomäne. [Platzhalterdomänen](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/) sind generell nicht so sicher wie die Verwendung einer benutzerdefinierten Domäne mit Ihrem eigenen Zertifikat.
 
 In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie HTTPS für benutzerdefinierte Domänen wie **contoso.com**, **www.contoso.com** oder **\*.contoso.com** aktiviert wird.
 
 ##<a name="bkmk_domainname"></a>Aktivieren von SSL für Ihre benutzerdefinierte Domäne
 
-Wenn Sie HTTPS für eine benutzerdefinierte Domäne wie **contoso.com** aktivieren möchten, müssen Sie zuerst einen benutzerdefinierten Domänennamen bei einer Domänennamen-Registrierungsstelle registrieren. Weitere Informationen zum Konfigurieren des Domänennamens einer Web-App finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/en-us/develop/net/common-tasks/custom-dns-web-site/). Nachdem Sie einen benutzerdefinierten Domänennamen registriert und Ihre Web-App zum Antworten auf den benutzerdefinierten Namen konfiguriert haben, müssen Sie ein SSL-Zertifikat für die Domäne anfordern.
+Wenn Sie HTTPS für eine benutzerdefinierte Domäne wie **contoso.com** aktivieren möchten, müssen Sie zuerst einen benutzerdefinierten Domänennamen bei einer Domänennamen-Registrierungsstelle registrieren. Weitere Informationen zum Konfigurieren des Domänennamens einer Web-App finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](/de-de/develop/net/common-tasks/custom-dns-web-site/). Nachdem Sie einen benutzerdefinierten Domänennamen registriert und Ihre Web-App zum Antworten auf den benutzerdefinierten Namen konfiguriert haben, müssen Sie ein SSL-Zertifikat für die Domäne anfordern.
 
 > [AZURE.NOTE]Um HTTPS für benutzerdefinierte Domänennamen zu aktivieren, müssen Sie Ihre Web-App für den Modus **Standard** konfigurieren. Dadurch entstehen eventuell zusätzliche Kosten, wenn Sie derzeit den Modus "Free" oder "Shared" verwenden. Weitere Informationen zu den Preisen für die Modi "Shared" und **Standard** finden Sie in der [Preisübersicht][pricing].
 
 ##<a name="bkmk_getcert"></a>Abrufen eines SSL-Zertifikats
 
-Bevor Sie ein SSL-Zertifikat anfordern, müssen Sie zuerst festlegen, welche Domänennamen durch das Zertifikat geschützt werden. Davon hängt ab, welchen Typ von Zertifikat Sie benötigen. Wenn Sie lediglich einen einzelnen Domänennamen wie **contoso.com** oder **www.contoso.com** schützen müssen, reicht ein Basiszertifikat aus. Wenn Sie mehrere Domänennamen, wie z. B. **contoso.com**, **www.contoso.com** und **mail.contoso.com**, sichern müssen, erhalten Sie ein [Platzhalterzertifikat](http://en.wikipedia.org/wiki/Wildcard_certificate) oder ein [Zertifikat mit einem alternativen Antragstellernamen](http://en.wikipedia.org/wiki/SubjectAltName) \(SubjectAltName\).
+Bevor Sie ein SSL-Zertifikat anfordern, müssen Sie zuerst festlegen, welche Domänennamen durch das Zertifikat geschützt werden. Davon hängt ab, welchen Typ von Zertifikat Sie benötigen. Wenn Sie lediglich einen einzelnen Domänennamen wie **contoso.com** oder **www.contoso.com** schützen müssen, reicht ein Basiszertifikat aus. Wenn Sie mehrere Domänennamen, wie z. B. **contoso.com**, **www.contoso.com** und **mail.contoso.com**, sichern müssen, erhalten Sie ein [Platzhalterzertifikat](http://en.wikipedia.org/wiki/Wildcard_certificate) oder ein [Zertifikat mit einem alternativen Antragstellernamen](http://en.wikipedia.org/wiki/SubjectAltName) (SubjectAltName).
 
-Mit Web-Apps verwendete SSL-Zertifikate müssen durch eine [Zertifizierungsstelle](http://en.wikipedia.org/wiki/Certificate_authority) \(CA\) signiert werden. Wenn Sie noch kein Zertifikat haben, müssen Sie eines von einem Unternehmen erwerben, das SSL-Zertifikate ausstellt. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program \(Members CAs\)][cas] \(Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm \[Mitgliedszertifizierungsstellen\] – in englischer Sprache\) im Microsoft TechNet Wiki.
+Mit Web-Apps verwendete SSL-Zertifikate müssen durch eine [Zertifizierungsstelle](http://en.wikipedia.org/wiki/Certificate_authority) (CA) signiert werden. Wenn Sie noch kein Zertifikat haben, müssen Sie eines von einem Unternehmen erwerben, das SSL-Zertifikate ausstellt. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
 Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure erfüllen:
 
 * Das Zertifikat muss einen privaten Schlüssel enthalten.
-* Das Zertifikat muss für den Schlüsselaustausch erstellt werden und in eine PFX-Datei \(Persönlicher Informationsaustausch\) exportiert werden können.
+* Das Zertifikat muss für den Schlüsselaustausch erstellt werden und in eine PFX-Datei (Persönlicher Informationsaustausch) exportiert werden können.
 * Der Name des Antragstellers für das Zertifikat muss der Domäne entsprechen, über die auf die Web-App zugegriffen wird. Wenn dieses Zertifikat für mehrere Domänen gelten soll, müssen Sie, wie oben erläutert, einen Platzhalterwert verwenden oder Werte für alternative Antragstellernamen angeben.
 * Das Zertifikat muss mindestens eine 2048-Bit-Verschlüsselung haben.
 * Von Servern privater Zertifizierungsstellen ausgegebene Zertifikate werden von Azure-Web-Apps nicht unterstützt.
 
-Um ein SSL-Zertifikat für die Verwendung mit Azure-Web-Apps zu erhalten, müssen Sie eine Zertifikatsignieranforderungsdatei \(CSR\) an eine Zertifizierungsstelle senden und anschließend eine PFX-Datei aus dem Zertifikat generieren, das Sie zurückerhalten haben. Sie können dazu das Tool Ihrer Wahl verwenden. Im Folgenden finden Sie einige der häufigsten Möglichkeiten, ein Zertifikat abzurufen:
+Um ein SSL-Zertifikat für die Verwendung mit Azure-Web-Apps zu erhalten, müssen Sie eine Zertifikatsignieranforderungsdatei (CSR) an eine Zertifizierungsstelle senden und anschließend eine PFX-Datei aus dem Zertifikat generieren, das Sie zurückerhalten haben. Sie können dazu das Tool Ihrer Wahl verwenden. Im Folgenden finden Sie einige der häufigsten Möglichkeiten, ein Zertifikat abzurufen:
 
 - [Abrufen eines Zertifikats mit "Certreq.exe"](#bkmk_certreq)
 - [Abrufen eines Zertifikats mit IIS-Manager](#bkmk_iismgr)
 - [Erhalten eines Zertifikats mit OpenSSL](#bkmk_openssl)
 - [Abrufen eines SubjectAltName-Zertifikats mit OpenSSL](#bkmk_subjectaltname)
-- [Generieren selbstsignierter Zertifikate \(nur für Testzwecke\)](#bkmk_selfsigned) 
+- [Generieren selbstsignierter Zertifikate (nur für Testzwecke)](#bkmk_selfsigned) 
 
-> [AZURE.NOTE]Wenn Sie die Schritte befolgen, werden Sie aufgefordert, einen **Allgemeinen Namen**, z. B. `www.contoso.com` einzugeben. Für Platzhalterzertifikate sollte dieser Wert "\*.domainname" \(z. B. \*.contoso.com\) lauten. Wenn Sie einen Platzhalternamen wie "\*.contoso.com" und einen Stammdomänennamen wie "contoso.com" unterstützen müssen, können Sie ein Platzhalterzertifikat für einen alternativen Antragstellernamen \(subjectAltName\) verwenden.
+> [AZURE.NOTE]Wenn Sie die Schritte befolgen, werden Sie aufgefordert, einen **Allgemeinen Namen**, z. B. `www.contoso.com` einzugeben. Für Platzhalterzertifikate sollte dieser Wert "\*.domainname" (z. B. \*.contoso.com) lauten. Wenn Sie einen Platzhalternamen wie "\*.contoso.com" und einen Stammdomänennamen wie "contoso.com" unterstützen müssen, können Sie ein Platzhalterzertifikat für einen alternativen Antragstellernamen (subjectAltName) verwenden.
 >
-> Zertifikate für die Kryptografie für elliptische Kurven \(ECC\) werden für Azure-Web-Apps zwar unterstützt, sie sind jedoch noch relativ neu, daher sollten Sie bei Ihrer Zertifizierungsstelle erfragen, wie genau Sie die CSR-Datei erstellen.
+> Zertifikate für die Kryptografie für elliptische Kurven (ECC) werden für Azure-Web-Apps zwar unterstützt, sie sind jedoch noch relativ neu, daher sollten Sie bei Ihrer Zertifizierungsstelle erfragen, wie genau Sie die CSR-Datei erstellen.
 
-Eventuell müssen Sie auch **[Zwischenzertifikate](http://en.wikipedia.org/wiki/Intermediate_certificate_authorities)** \(auch Kettenzertifikate genannt\) anfordern, wenn diese von Ihrer Zertifizierungsstelle verwendet werden. Zwischenzertifikate gelten als sicherer als 'nicht verkettete Zertifikate', sodass sie von Zertifizierungsstellen üblicherweise verwendet werden. Zwischenzertifikate werden auf der Website der Zertifizierungsstelle häufig als separater Download bereitgestellt. In diesem Artikel wird dargestellt, wie Sie sicherstellen können, dass Zwischenzertifikate mit dem Zertifikat zusammengeführt werden, das zu Ihrer Azure-Web-App hochgeladen wurde.
+Eventuell müssen Sie auch **[Zwischenzertifikate](http://en.wikipedia.org/wiki/Intermediate_certificate_authorities)** (auch Kettenzertifikate genannt) anfordern, wenn diese von Ihrer Zertifizierungsstelle verwendet werden. Zwischenzertifikate gelten als sicherer als 'nicht verkettete Zertifikate', sodass sie von Zertifizierungsstellen üblicherweise verwendet werden. Zwischenzertifikate werden auf der Website der Zertifizierungsstelle häufig als separater Download bereitgestellt. In diesem Artikel wird dargestellt, wie Sie sicherstellen können, dass Zwischenzertifikate mit dem Zertifikat zusammengeführt werden, das zu Ihrer Azure-Web-App hochgeladen wurde.
 
 <a name="bkmk_certreq"></a>
-###Beziehen eines Zertifikats mit Certreq.exe \(nur Windows\)
+###Beziehen eines Zertifikats mit Certreq.exe (nur Windows)
 
 Certreq.exe ist ein Windows-Dienstprogramm zum Erstellen von Zertifikatanforderungen. Es gehört seit Windows XP/Windows Server 2000 zur Windows-Basisinstallation und dürfte daher auf Windows-Systemen jüngeren Datums verfügbar sein. Gehen Sie folgendermaßen vor, um mit certreq.exe ein SSL-Zertifikat zu erhalten.
 
@@ -65,7 +65,7 @@ Certreq.exe ist ein Windows-Dienstprogramm zum Erstellen von Zertifikatanforderu
 		[EnhancedKeyUsageExtension]
 		OID=1.3.6.1.5.5.7.3.1
 
-	Weitere Informationen über die oben angegebenen Optionen sowie über weitere verfügbare Optionen finden Sie in der [Certreq-Referenzdokumentation](http://technet.microsoft.com/library/cc725793.aspx) \(in englischer Sprache\).
+	Weitere Informationen über die oben angegebenen Optionen sowie über weitere verfügbare Optionen finden Sie in der [Certreq-Referenzdokumentation](http://technet.microsoft.com/library/cc725793.aspx) (in englischer Sprache).
 
 2. Speichern Sie die Textdatei unter **myrequest.txt**.
 
@@ -79,9 +79,9 @@ Certreq.exe ist ein Windows-Dienstprogramm zum Erstellen von Zertifikatanforderu
 
 5. Senden Sie die Datei **myrequest.csr** an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Dazu müssen Sie die Datei eventuell hochladen oder im Editor öffnen und den Inhalt direkt in ein Webformular eingeben.
 
-	Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program \(Members CAs\)][cas] \(Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm \[Mitgliedszertifizierungsstellen\] – in englischer Sprache\) im Microsoft TechNet Wiki.
+	Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
-6. Wenn die Zertifizierungsstelle Ihnen eine Zertifikatdatei \(.CER\) zur Verfügung gestellt hat, speichern Sie diese Datei auf dem Computer, mit dem die Anforderung generiert wurde. Verwenden Sie anschließend den folgenden Befehl, um die Anforderung zu akzeptieren und den Prozess der Zertifikatgenerierung abzuschließen.
+6. Wenn die Zertifizierungsstelle Ihnen eine Zertifikatdatei (.CER) zur Verfügung gestellt hat, speichern Sie diese Datei auf dem Computer, mit dem die Anforderung generiert wurde. Verwenden Sie anschließend den folgenden Befehl, um die Anforderung zu akzeptieren und den Prozess der Zertifikatgenerierung abzuschließen.
 
 		certreq -accept -user mycert.cer
 
@@ -99,7 +99,7 @@ Certreq.exe ist ein Windows-Dienstprogramm zum Erstellen von Zertifikatanforderu
 
 	![Privaten Schlüssel exportieren][certwiz1]
 
-10. Wählen Sie **Persönlicher Informationsaustausch - PKCS \#12**, **Alle Zertifikate in der Zertifikatkette berücksichtigen** und **Alle erweiterten Eigenschaften exportieren**. Klicken Sie auf **Weiter**.
+10. Wählen Sie **Persönlicher Informationsaustausch - PKCS #12**, **Alle Zertifikate in der Zertifikatkette berücksichtigen** und **Alle erweiterten Eigenschaften exportieren**. Klicken Sie auf **Weiter**.
 
 	![Alle Zertifikate und erweiterten Eigenschaften berücksichtigen][certwiz2]
 
@@ -136,7 +136,7 @@ Jetzt können Sie die exportierte PFX-Datei zu Ihrer Azure-Web-App hochladen.
 
 	Nach Abschluss dieses Prozesses haben Sie zwei Dateien: **myserver.key** und **server.csr**. Die Datei **server.csr** enthält die Zertifikatsignieranforderung.
 
-3. Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program \(Members CAs\)][cas] \(Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm \[Mitgliedszertifizierungsstellen\] – in englischer Sprache\) im Microsoft TechNet Wiki.
+3. Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
 4. Sobald Sie ein Zertifikat von einer Zertifizierungsstelle erhalten haben, speichern Sie es in einer Datei mit dem Namen **myserver.crt**. Wenn die Zertifizierungsstelle das Zertifikat im Textformat bereitgestellt hat, fügen Sie den Zertifikattext einfach in die Datei **myserver.crt** ein. In einem Texteditor sieht der Dateiinhalt etwa folgendermaßen aus:
 
@@ -168,7 +168,7 @@ Jetzt können Sie die exportierte PFX-Datei zu Ihrer Azure-Web-App hochladen.
 
 	Geben Sie bei der entsprechenden Aufforderung ein Kennwort ein, um die PFX-Datei zu schützen.
 
-	> [AZURE.NOTE]Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die Version, die als PEM-Datei \(Dateierweiterung .pem\) bereitgestellt wird.
+	> [AZURE.NOTE]Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die Version, die als PEM-Datei (Dateierweiterung .pem) bereitgestellt wird.
 	> 
 	> Der folgende Befehl zeigt, wie eine PFX-Datei erstellt wird, die Zwischenzertifikate enthält, die in der Datei **intermediate-cets.pem** enthalten sind:
 	>
@@ -183,17 +183,17 @@ Jetzt können Sie die exportierte PFX-Datei zu Ihrer Azure-Web-App hochladen.
 
 Wenn Sie mit IIS-Manager vertraut sind, können Sie damit ein Zertifikat generieren, das für Azure App Service verwendet werden kann.
 
-1. Generieren einer CSR-Datei mit IIS-Manager für die Zertifizierungsstelle. Weitere Informationen zum Generieren einer CSR finden Sie unter [Anfordern eines Internetserverzertifikats \(IIS 7\)][iiscsr].
+1. Generieren einer CSR-Datei mit IIS-Manager für die Zertifizierungsstelle. Weitere Informationen zum Generieren einer CSR finden Sie unter [Anfordern eines Internetserverzertifikats (IIS 7)][iiscsr].
 
-2. Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program \(Members CAs\)][cas] \(Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm \[Mitgliedszertifizierungsstellen\] – in englischer Sprache\) im Microsoft TechNet Wiki.
+2. Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
-3. Tragen Sie in die CSR das von der Zertifizierungsstelle bereitgestellte Zertifikat ein. Weitere Informationen zum Ausfüllen der CSR finden Sie unter [Installieren eines Internetserverzertifikats \(IIS 7\)][installcertiis].
+3. Tragen Sie in die CSR das von der Zertifizierungsstelle bereitgestellte Zertifikat ein. Weitere Informationen zum Ausfüllen der CSR finden Sie unter [Installieren eines Internetserverzertifikats (IIS 7)][installcertiis].
 
 4. Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die für Microsoft IIS bereitgestellte Version.
 
 	Klicken Sie nach dem Herunterladen des Zertifikats im Explorer mit der rechten Maustaste darauf, und wählen Sie **Zertifikat installieren**. Verwenden Sie die Standardwerte im **Zertifikat-Importassistenten**, und wählen Sie **Weiter** aus, bis der Import abgeschlossen ist.
 
-4. Exportieren Sie das Zertifikat aus IIS Manager. Weitere Informationen zum Exportieren des Zertifikats finden Sie unter [Exportieren eines Serverzertifikats \(IIS 7\)][exportcertiis]. Die exportierte Datei wird später nach Azure hochgeladen, um für Ihre Web-App verwendet zu werden.
+4. Exportieren Sie das Zertifikat aus IIS Manager. Weitere Informationen zum Exportieren des Zertifikats finden Sie unter [Exportieren eines Serverzertifikats (IIS 7)][exportcertiis]. Die exportierte Datei wird später nach Azure hochgeladen, um für Ihre Web-App verwendet zu werden.
 
 	> [AZURE.NOTE]Aktivieren Sie während des Exportprozesses die Option <strong>Ja, privaten Schlüssel exportieren</strong>. Damit wird der private Schlüssel in das exportierte Zertifikat einbezogen.
 
@@ -255,7 +255,7 @@ Mit OpenSSL kann eine Zertifikatanforderung erstellt werden, welche die SubjectA
 
 	Nach Abschluss dieses Prozesses haben Sie zwei Dateien: **myserver.key** und **server.csr**. Die Datei **server.csr** enthält die Zertifikatsignieranforderung.
 
-3. Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program \(Members CAs\)][cas] \(Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm \[Mitgliedszertifizierungsstellen\] – in englischer Sprache\) im Microsoft TechNet Wiki.
+3. Senden Sie die Zertifikatsignieranforderung an eine Zertifizierungsstelle, um ein SSL-Zertifikat zu erhalten. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
 4. Sobald Sie ein Zertifikat von einer Zertifizierungsstelle erhalten haben, speichern Sie es in einer Datei mit dem Namen **myserver.crt**. Wenn die Zertifizierungsstelle das Zertifikat im Textformat bereitgestellt hat, fügen Sie den Zertifikattext einfach in die Datei **myserver.crt** ein. In einem Texteditor sieht der Dateiinhalt etwa folgendermaßen aus:
 
@@ -287,7 +287,7 @@ Mit OpenSSL kann eine Zertifikatanforderung erstellt werden, welche die SubjectA
 
 	Geben Sie bei der entsprechenden Aufforderung ein Kennwort ein, um die PFX-Datei zu schützen.
 
-	> [AZURE.NOTE]Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die Version, die als PEM-Datei \(Dateierweiterung .pem\) bereitgestellt wird.
+	> [AZURE.NOTE]Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die Version, die als PEM-Datei (Dateierweiterung .pem) bereitgestellt wird.
 	> 
 	> Der folgende Befehl zeigt, wie eine PFX-Datei erstellt wird, die Zwischenzertifikate enthält, die in der Datei **intermediate-cets.pem** enthalten sind:
 	>
@@ -299,7 +299,7 @@ Mit OpenSSL kann eine Zertifikatanforderung erstellt werden, welche die SubjectA
 	Nach der Ausführung dieses Befehls verfügen Sie über die Datei **myserver.pfx**, die für Azure App Service geeignet ist.
 
 
-###<a name="bkmk_selfsigned"></a>Generieren eines selbstsignierten Zertifikats \(nur für Testzwecke\)
+###<a name="bkmk_selfsigned"></a>Generieren eines selbstsignierten Zertifikats (nur für Testzwecke)
 
 In bestimmten Fällen möchten Sie eventuell ein Zertifikat für Testzwecke erhalten und den Kauf eines Zertifikats von einer vertrauenswürdigen Zertifizierungsstelle verzögern, bis Sie die Produktion aufnehmen. Diese Lücke kann durch selbstsignierte Zertifikate gefüllt werden. Ein selbstsigniertes Zertifikat ist ein Zertifikat, das Sie erstellen und signieren, als wären Sie eine Zertifizierungsstelle. Zwar kann mit diesem Zertifikat eine Web-App geschützt werden, die meisten Browser geben jedoch Fehler zurück, wenn die Website besucht wird, da das Zertifikat nicht von einer vertrauenswürdigen Zertifizierungsstelle signiert wurde. Einige Browser verweigern möglicherweise sogar den Aufruf der Website.
 
@@ -395,7 +395,7 @@ Die Aktivierung von HTTPS für eine benutzerdefinierte Domäne steht nur für de
 4.	Klicken Sie auf den Namen der Web-App.
 5.	Klicken Sie auf der Seite **Essentials** auf **Einstellungen**.
 6.	Klicken Sie auf **Skalieren**.![Die Registerkarte "Skalierung"][scale]
-7.	Legen Sie im Abschnitt **Skalierung** den Modus für den App Service-Plan fest, indem Sie auf **Auswählen** klicken. !\[Den Tarif\]\[sslreserved\]
+7.	Legen Sie im Abschnitt **Skalierung** den Modus für den App Service-Plan fest, indem Sie auf **Auswählen** klicken. ![Den Tarif][sslreserved]
 
 	> [AZURE.NOTE]Wenn die Fehlermeldung "Fehler beim Konfigurieren der Skalierung für Web-App '&lt;App-Name&gt;'" angezeigt wird, können Sie mit der Schaltfläche "Details" weitere Informationen abrufen. Eventuell wird die Fehlermeldung "Not enough available standard instance servers to satisfy this request." angezeigt. Wenn diese Fehlermeldung angezeigt wird, rufen Sie [Supportoptionen für Azure](/support/options/) auf.
 
@@ -409,16 +409,16 @@ Bevor Sie die Schritte in diesem Abschnitt ausführen, müssen Sie einen benutze
 3.	Klicken Sie auf das Blatt **Web-Apps**.
 4.	Klicken Sie auf den Namen der Web-App.
 5.	Klicken Sie auf der Seite **Essentials** auf **Einstellungen**.	
-6.	Klicken Sie auf **Benutzerdefinierte Domänen und SSL**. !\[Die Registerkarte „Config“\] \[sslconfig\]
+6.	Klicken Sie auf **Benutzerdefinierte Domänen und SSL**. ![Die Registerkarte „Config“] [sslconfig]
 7.	Klicken Sie im Bereich **Zertifikate** auf **Hochladen**.
-8.	Wählen Sie mit dem Dialogfeld **Zertifikat hochladen** die zuvor mit dem IIS-Manager oder mit OpenSSL erstellte PFX-Zertifikatdatei aus. Geben Sie ggf. das Kennwort ein, mit dem die PFX-Datei geschützt wurde. Klicken Sie abschließend auf **Speichern**, um das Zertifikat hochzuladen. !\[ssl hochladen\]\[ssluploadcert\]
-9. Wählen Sie auf der Registerkarte **SSL-Einstellungen** im Abschnitt **SSL-Bindungen** mithilfe der Dropdownlisten den Domänennamen, der mit SSL geschützt werden soll, sowie das zu verwendende Zertifikat aus. Sie können auch auswählen, ob die SSL auf Basis der [Servernamensanzeige][sni] \(Server Name Indication, SNI\) oder eine IP-basierte SSL verwendet werden soll.
+8.	Wählen Sie mit dem Dialogfeld **Zertifikat hochladen** die zuvor mit dem IIS-Manager oder mit OpenSSL erstellte PFX-Zertifikatdatei aus. Geben Sie ggf. das Kennwort ein, mit dem die PFX-Datei geschützt wurde. Klicken Sie abschließend auf **Speichern**, um das Zertifikat hochzuladen. ![ssl hochladen][ssluploadcert]
+9. Wählen Sie auf der Registerkarte **SSL-Einstellungen** im Abschnitt **SSL-Bindungen** mithilfe der Dropdownlisten den Domänennamen, der mit SSL geschützt werden soll, sowie das zu verwendende Zertifikat aus. Sie können auch auswählen, ob die SSL auf Basis der [Servernamensanzeige][sni] (Server Name Indication, SNI) oder eine IP-basierte SSL verwendet werden soll.
 
 	![SSL-Bindungen][sslbindings]
 	
-	* Bei IP-basiertem SSL wird ein Zertifikat mit einem Domänennamen verknüpft, indem die dedizierte öffentliche IP-Adresse des Servers dem Domänennamen zugeordnet wird. Voraussetzung dafür ist, dass jeder mit Ihrem Dienst verknüpfte Domänenname \(contoso.com, fabricam.com usw.\) eine dedizierte IP-Adresse hat. Dies ist die herkömmliche Methode der Verknüpfung von SSL-Zertifikaten mit einem Webserver.
+	* Bei IP-basiertem SSL wird ein Zertifikat mit einem Domänennamen verknüpft, indem die dedizierte öffentliche IP-Adresse des Servers dem Domänennamen zugeordnet wird. Voraussetzung dafür ist, dass jeder mit Ihrem Dienst verknüpfte Domänenname (contoso.com, fabricam.com usw.) eine dedizierte IP-Adresse hat. Dies ist die herkömmliche Methode der Verknüpfung von SSL-Zertifikaten mit einem Webserver.
 
-	* SNI-basiertes SSL ist eine Erweiterung für SSL und [Transport Layer Security][tls] \(TLS\). Dabei können mehrere Domänen die gleiche IP-Adresse gemeinsam nutzen, während jede Domäne über eigene Sicherheitszertifikate verfügt. Die meisten modernen Browser \(einschließlich Internet Explorer, Chrome, Firefox und Opera\) unterstützen SNI, ältere Browser hingegen möglicherweise nicht. Weitere Informationen über SNI finden Sie im Wikipedia-Artikel [Server Name Indication][sni] \(in englischer Sprache\).
+	* SNI-basiertes SSL ist eine Erweiterung für SSL und [Transport Layer Security][tls] (TLS). Dabei können mehrere Domänen die gleiche IP-Adresse gemeinsam nutzen, während jede Domäne über eigene Sicherheitszertifikate verfügt. Die meisten modernen Browser (einschließlich Internet Explorer, Chrome, Firefox und Opera) unterstützen SNI, ältere Browser hingegen möglicherweise nicht. Weitere Informationen über SNI finden Sie im Wikipedia-Artikel [Server Name Indication][sni] (in englischer Sprache).
 
 10. Klicken Sie auf **Speichern**, um die Änderungen zu speichern und SSL zu aktivieren.
 
@@ -454,25 +454,28 @@ Die Regeln zu URL Rewrite sind in einer **web.config**-Datei im Stammverzeichnis
 	      <rules>
 	        <rule name="Force HTTPS" enabled="true">
 	          <match url="(.*)" ignoreCase="false" />
+
 	          <conditions>
 	            <add input="{HTTPS}" pattern="off" />
+
 	          </conditions>
 	          <action type="Redirect" url="https://{HTTP_HOST}/{R:1}" appendQueryString="true" redirectType="Permanent" />
+
 	        </rule>
 	      </rules>
 	    </rewrite>
 	  </system.webServer>
 	</configuration>
 
-Diese Regel funktioniert durch die Rückgabe eines HTTP-Statuscode von 301 \(Permanent Redirect\), wenn der Benutzer eine Seite mit HTTP anfragt. Der Code 301 leitet die Anfrage an die gleiche URL weiter, die der Besucher angefragt hat, aber ersetzt den HTTP-Teil der Anfrage mit HTTPS. Beispielsweise würde HTTP://contoso.com an HTTPS://contoso.com umgeleitet werden.
+Diese Regel funktioniert durch die Rückgabe eines HTTP-Statuscode von 301 (Permanent Redirect), wenn der Benutzer eine Seite mit HTTP anfragt. Der Code 301 leitet die Anfrage an die gleiche URL weiter, die der Besucher angefragt hat, aber ersetzt den HTTP-Teil der Anfrage mit HTTPS. Beispielsweise würde HTTP://contoso.com an HTTPS://contoso.com umgeleitet werden.
 
 > [AZURE.NOTE]Wenn Ihre Anwendung in **Node.js**, **PHP**, **Python Django** oder **Java** geschrieben ist, enthält sie wahrscheinliche keine Datei "web.config". Dennoch verwenden **Node.js**, **Python Django** und **Java** eine Datei "web.config", wenn sie in Azure App Service gehostet werden. Azure erstellt die Datei während der Bereitstellung automatisch, deshalb sehen Sie sie nicht. Wenn Sie eine solche Datei als Teil Ihrer Anwendung einfügen, wird die von Azure automatisch generierte Datei überschrieben.
 
 ###.NET
 
-Ändern Sie die web.config-Datei bei .NET-Anwendungen für Ihre Anwendung und fügen Sie den Abschnitt **&lt;rewrite\>** aus dem [Beispiel](#example) zum Abschnitt **&lt;system.WebServer\>** hinzu.
+Ändern Sie die web.config-Datei bei .NET-Anwendungen für Ihre Anwendung und fügen Sie den Abschnitt **&lt;rewrite>** aus dem [Beispiel](#example) zum Abschnitt **&lt;system.WebServer>** hinzu.
 
-Wenn Ihre web.config-Datei bereits einen Anschnitt **&lt;rewrite\>** enthält, fügen Sie die **&lt;rule\>** aus dem [Beispiel](#example) als ersten Eintrag im Abschnitt **&lt;rules\>** hinzu.
+Wenn Ihre web.config-Datei bereits einen Anschnitt **&lt;rewrite>** enthält, fügen Sie die **&lt;rule>** aus dem [Beispiel](#example) als ersten Eintrag im Abschnitt **&lt;rules>** hinzu.
 
 ###PHP
 
@@ -484,7 +487,7 @@ Für Node.js-, Python Django- und Java-Anwendungen wird automatisch eine web.con
 
 Um die automatisch generierte Datei von der Web-App abzurufen und zu ändern, verwenden Sie die folgenden Schritte.
 
-1. Laden Sie die Datei über FTP herunter \(siehe [Hochladen/herunterladen von Dateien über FTP und Sammeln von Diagnoseprotokollen](http://blogs.msdn.com/b/avkashchauhan/archive/2012/06/19/windows-azure-website-uploading-downloading-files-over-ftp-and-collecting-diagnostics-logs.aspx)\).
+1. Laden Sie die Datei über FTP herunter (siehe [Hochladen/herunterladen von Dateien über FTP und Sammeln von Diagnoseprotokollen](http://blogs.msdn.com/b/avkashchauhan/archive/2012/06/19/windows-azure-website-uploading-downloading-files-over-ftp-and-collecting-diagnostics-logs.aspx)).
 
 2. Fügen Sie die Datei dem Stammverzeichnis Ihrer Anwendung hinzu.
 
@@ -492,13 +495,13 @@ Um die automatisch generierte Datei von der Web-App abzurufen und zu ändern, ve
 
 	* **Node.js und Python Django**
 
-		Die Datei "web.config", die für Node.js- und Python Django-Anwendungen erstellt wurde, enthält bereits einen Abschnitt **&lt;rewrite\>** mit **&lt;rule\>**-Einträgen, die für die ordnungsgemäße Funktion der Website benötigt werden. Um für die Website die Verwendung von HTTPS zu erzwingen, fügen Sie **&lt;rule\>** aus dem Beispiel als ersten Eintrag im Abschnitt **&lt;rules\>** hinzu. Damit wird HTTPS erzwungen, während die übrigen Regeln bestehen bleiben.
+		Die Datei "web.config", die für Node.js- und Python Django-Anwendungen erstellt wurde, enthält bereits einen Abschnitt **&lt;rewrite>** mit **&lt;rule>**-Einträgen, die für die ordnungsgemäße Funktion der Website benötigt werden. Um für die Website die Verwendung von HTTPS zu erzwingen, fügen Sie **&lt;rule>** aus dem Beispiel als ersten Eintrag im Abschnitt **&lt;rules>** hinzu. Damit wird HTTPS erzwungen, während die übrigen Regeln bestehen bleiben.
 
 	* **Java**
 	
-		Die Datei "web.config" für Java-Anwendungen mit Apache Tomcat enthält keinen Abschnitt **&lt;rewrite\>**. Deshalb müssen Sie den Abschnitt **&lt;rewrite\>** aus dem Beispiel zum Abschnitt **&lt;system.webServer\>** hinzufügen.
+		Die Datei "web.config" für Java-Anwendungen mit Apache Tomcat enthält keinen Abschnitt **&lt;rewrite>**. Deshalb müssen Sie den Abschnitt **&lt;rewrite>** aus dem Beispiel zum Abschnitt **&lt;system.webServer>** hinzufügen.
 
-4. Stellen Sie das Projekt \(einschließlich der aktualisierten web.config-Datei\) erneut für Azure bereit
+4. Stellen Sie das Projekt (einschließlich der aktualisierten web.config-Datei) erneut für Azure bereit
 
 Sobald Sie eine web.config-Datei mit einer Umschreibungsregeln zur Erzwingung von HTTPS bereitstellen, sollte sie sofort in Kraft treten und alle Anfragen zu HTTPS umleiten.
 
@@ -541,4 +544,4 @@ Weitere Informationen zum IIS-URL-Rewrite-Modul finden Sie unter der Dokumentati
 [certwiz3]: ./media/configure-ssl-web-site/waws-certwiz3.png
 [certwiz4]: ./media/configure-ssl-web-site/waws-certwiz4.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

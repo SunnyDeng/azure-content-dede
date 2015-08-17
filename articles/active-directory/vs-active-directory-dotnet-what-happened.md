@@ -54,7 +54,7 @@
 
 ###Ihrem Projekt wurden Codedateien hinzugefügt
 
-Ihrem Projekt wurde die Authentifizierungsstartklasse `App_Start/Startup.Auth.cs` hinzugefügt. Sie enthält Startlogik für die Azure AD-Authentifizierung. Außerdem wurde eine Controllerklasse \("Controllers/AccountController.cs"\) hinzugefügt, die die Methoden `SignIn()` und `SignOut()` enthält. Schließlich wurde die Teilansicht `Views/Shared/_LoginPartial.cshtml` hinzugefügt, die einen Aktionslink für "SignIn/SignOut" enthält.
+Ihrem Projekt wurde die Authentifizierungsstartklasse `App_Start/Startup.Auth.cs` hinzugefügt. Sie enthält Startlogik für die Azure AD-Authentifizierung. Außerdem wurde eine Controllerklasse ("Controllers/AccountController.cs") hinzugefügt, die die Methoden `SignIn()` und `SignOut()` enthält. Schließlich wurde die Teilansicht `Views/Shared/_LoginPartial.cshtml` hinzugefügt, die einen Aktionslink für "SignIn/SignOut" enthält.
 
 ###Ihrem Projekt wurde Startcode hinzugefügt
 
@@ -70,19 +70,19 @@ Die folgenden Konfigurationseinträge wurden hinzugefügt. <pre> `<appSettings>
 	    <add key="ida:PostLogoutRedirectUri" value="Your project start page" />
 	</appSettings>` </pre>
 
-###Eine Azure Active Directory-App \(AD\) wurde erstellt
+###Eine Azure Active Directory-App (AD) wurde erstellt
 Eine Azure AD-Anwendung wurde in dem Verzeichnis erstellt, das Sie im Assistenten ausgewählt haben.
 
 ##Wenn ich *das Deaktivieren der Authentifizierung für einzelne Benutzerkonten* ausgewählt habe, welche zusätzlichen Änderungen wurden an meinem Projekt vorgenommen?
 NuGet-Paketverweise wurden entfernt, und die Dateien wurden entfernt und gesichert. Abhängig vom Status des Projekts müssen Sie möglicherweise manuell zusätzliche Verweise oder Dateien entfernen oder Code entsprechend ändern.
 
-###NuGet-Paketverweise entfernt \(die vorhanden waren\)
+###NuGet-Paketverweise entfernt (die vorhanden waren)
 
 - `Microsoft.AspNet.Identity.Core`
 - `Microsoft.AspNet.Identity.EntityFramework`
 - `Microsoft.AspNet.Identity.Owin`
 
-###Codedateien gesichert und entfernt \(die vorhanden waren\)
+###Codedateien gesichert und entfernt (die vorhanden waren)
 
 Jede der folgenden Dateien wurde gesichert und aus dem Projekt entfernt. Sicherungsdateien befinden sich in einem Ordner "Backup" im Stammverzeichnis des Projektverzeichnisses.
 
@@ -91,7 +91,7 @@ Jede der folgenden Dateien wurde gesichert und aus dem Projekt entfernt. Sicheru
 - `Models\IdentityModels.cs`
 - `Models\ManageViewModels.cs`
 
-###Codedateien gesichert \(die vorhanden waren\)
+###Codedateien gesichert (die vorhanden waren)
 
 Jede der folgenden Dateien wurde gesichert, bevor sie ersetzt wurde. Sicherungsdateien befinden sich in einem Ordner "Backup" im Stammverzeichnis des Projektverzeichnisses.
 
@@ -159,9 +159,9 @@ Die folgenden Konfigurationsabschnitte und eine Verbindungszeichenfolge wurden h
 	</entityFramework>`</pre>
 
 
-###Ihre Azure Active Directory-App \(AD\) wurde aktualisiert
+###Ihre Azure Active Directory-App (AD) wurde aktualisiert
 Ihre Azure Active Directory-App wurde aktualisiert und enthält nun die Berechtigung *Verzeichnis lesen*. Außerdem wurde ein zusätzlicher Schlüssel erstellt, der als *ida:ClientSecret* in der Datei `web.config` verwendet wird.
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -12,7 +12,7 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="hero-article"
+	ms.topic="article"
 	ms.date="07/07/2015"
 	ms.author="rkarlin"/>
 
@@ -31,7 +31,7 @@ Der Anwendungsproxy ermöglicht die einmalige Anmeldung und sicheren Remotezugri
 Um den Anwendungsproxy nutzen zu können, müssen Sie einen als Connector bezeichneten schlanken Windows Server-Dienst in Ihrem Netzwerk installieren. Für den Connector müssen Sie keine eingehenden Ports öffnen und keine Komponenten in der DMZ platzieren. Wenn der Datenverkehr für Ihre Apps ansteigt, können Sie weitere Connectors hinzufügen, und der Dienst übernimmt den Lastenausgleich. Connectors sind zustandslos und rufen alle Informationen nach Bedarf aus der Cloud ab. Beim Remotezugriff eines Benutzers auf Anwendungen mit einem beliebigen Gerät wird er von Azure Active Directory authentifiziert und erhält Zugriff auf die Anwendung.
 
 ### Einmaliges Anmelden
-Der Azure AD-Anwendungsproxy ermöglicht einmaliges Anmelden \(SSO\) für Anwendungen mit Verwendung von IWA oder für Anwendungen, die Ansprüche unterstützen. Wenn Ihre Anwendung die integrierte Windows-Authentifizierung verwendet, nimmt der Anwendungsproxy mithilfe der eingeschränkten Kerberos-Delegierung die Identität des Benutzers an, um SSO bereitzustellen. SSO für Anwendungen mit Unterstützung von Ansprüchen ist möglich, weil der Benutzer bereits über Azure Active Directory authentifiziert wurde.
+Der Azure AD-Anwendungsproxy ermöglicht einmaliges Anmelden (SSO) für Anwendungen mit Verwendung von IWA oder für Anwendungen, die Ansprüche unterstützen. Wenn Ihre Anwendung die integrierte Windows-Authentifizierung verwendet, nimmt der Anwendungsproxy mithilfe der eingeschränkten Kerberos-Delegierung die Identität des Benutzers an, um SSO bereitzustellen. SSO für Anwendungen mit Unterstützung von Ansprüchen ist möglich, weil der Benutzer bereits über Azure Active Directory authentifiziert wurde.
 
 ## Erste Schritte
 Stellen Sie sicher, dass Sie über ein Azure AD Basic- oder Premium-Abonnement und ein Azure AD-Verzeichnis verfügen, für die Sie als globaler Administrator angemeldet sind. Sie benötigen auch Azure AD Basic- oder Premium-Lizenzen für den Verzeichnisadministrator und Benutzer, die auf die Apps zugreifen. Hier finden Sie weitere Informationen.
@@ -61,4 +61,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 * [Als Organisation für Azure registrieren](../sign-up-organization.md)
 * [Azure-Identität](../fundamentals-identity.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

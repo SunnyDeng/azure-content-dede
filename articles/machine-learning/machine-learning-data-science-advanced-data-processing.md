@@ -24,4 +24,4 @@ Dieses Schema veranschaulicht das Vorbereiten von Daten für ein Azure Machine L
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/machine-learning-prepare-data-for-ml.svg" width="100%" height="100%"> </object>
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -128,4 +128,4 @@ Jetzt sind Sie möglicherweise bereit, einige Funktionen von Azure AD Premium zu
 - [Azure Multi-Factor Authentication](multi-factor-authentication.md)
 - [Direkter Erwerb von Azure AD Premium-Lizenzen](http://aka.ms/buyaadp)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

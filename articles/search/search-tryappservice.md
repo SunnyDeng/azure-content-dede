@@ -22,11 +22,11 @@
 
 Die Website bietet Ihnen mehrere Vorlagen zur Auswahl. Bei Auswahl der ASP.NET-Vorlage, die Azure Search umfasst, erhalten Sie eine Stunde unterstützt von den ausgewählten Diensten Zugriff auf eine voll funktionsfähige Website. Sie können keine von Azure Search verwalteten Daten aktualisieren oder löschen, aber Sie können Abfragen ausführen und eine beliebige Anzahl von Codeänderungen vornehmen, was die Benutzerfreundlichkeit entsprechend verändert. Wenn eine Sitzung abläuft, bevor Sie mit dem Ausprobieren fertig sind, können Sie immer wieder mit einer neuen Sitzung beginnen oder mit einem Test- oder Vollabonnement fortfahren, wenn Sie einen Index direkt erstellen möchten.
 
-Auf der Seite [Try Azure App Service](https://tryappservice.azure.com/) \(auf Englisch\) ist Azure Search Teil der Web-App-Vorlage und bietet eine umfassende Volltext-Suchfunktion sowie eine Fülle suchorientierter Funktionen, die nur in diesem Dienst auf der Azure-Plattform verfügbar sind.
+Auf der Seite [Try Azure App Service](https://tryappservice.azure.com/) (auf Englisch) ist Azure Search Teil der Web-App-Vorlage und bietet eine umfassende Volltext-Suchfunktion sowie eine Fülle suchorientierter Funktionen, die nur in diesem Dienst auf der Azure-Plattform verfügbar sind.
 
 Obwohl andere Azure-Dienste wie z. B. SQL-Datenbank die Volltextsuche bieten, kann ein Dienst wie Azure Search die Suche optimieren und bietet das Paginieren und Zählen, Trefferhervorhebungen, Abfragevorschläge automatisch vervollständigen, natürliche Sprachunterstützung, Facettennavigation, Filter und vieles mehr. Wie viele unserer [Beispiele](https://github.com/AzureSearch) veranschaulichen, ist es möglich, eine voll funktionsfähige suchbasierte Anwendung nur mit Azure Search und ASP.NET zu entwickeln.
 
-Als Teil des Online-Angebots [Try Azure App Service](https://tryappservice.azure.com/) ist Azure Search schreibgeschützt, d. h. Sie müssen den Suchkorpus nutzen, der in der Sitzung bereitgestellt wird. Sie können keine eigenen Indizes oder Daten hochladen. Sie arbeiten mit Daten aus der [United States Geological Survey \(USGS\)](), bestehend aus ca. 3 Millionen Zeilen mit Sehenswürdigkeiten, historischen Stätten, Gebäuden und Landmarken in den USA.
+Als Teil des Online-Angebots [Try Azure App Service](https://tryappservice.azure.com/) ist Azure Search schreibgeschützt, d. h. Sie müssen den Suchkorpus nutzen, der in der Sitzung bereitgestellt wird. Sie können keine eigenen Indizes oder Daten hochladen. Sie arbeiten mit Daten aus der [United States Geological Survey (USGS)](), bestehend aus ca. 3 Millionen Zeilen mit Sehenswürdigkeiten, historischen Stätten, Gebäuden und Landmarken in den USA.
 
 Damit Sie Ihre einstündige Sitzung optimal nutzen können, führen Sie die folgenden Anweisungen durch die Abfragen und den Code.
 
@@ -34,18 +34,18 @@ Bevor es weitergeht, sollten Sie sich ein paar Minuten Zeit nehmen und einige wi
 
 ##Fakten zum Code und Azure Search
 
-Azure Search ist ein Dienst-plus-Daten-[PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service)-Angebot, bestehend aus einem vollständig verwalteten Suchdienst, sowie durchsuchbaren Daten, die Sie hochladen, wenn Sie eine nicht eingeschränkte Instanz von Azure Search verwenden \(d. h., wenn Sie nicht die Testen-von-Azure-Diensten-Option nutzen\).
+Azure Search ist ein Dienst-plus-Daten-[PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service)-Angebot, bestehend aus einem vollständig verwalteten Suchdienst, sowie durchsuchbaren Daten, die Sie hochladen, wenn Sie eine nicht eingeschränkte Instanz von Azure Search verwenden (d. h., wenn Sie nicht die Testen-von-Azure-Diensten-Option nutzen).
 
 Daten, die bei Suchvorgängen verwendet werden, werden mit dem Search-Dienst in Azure gespeichert, wobei die Nähe von den Daten zu den Vorgängen eine niedrige Latenz und konsistentes Sucheverhalten sicherstellen. Zurzeit gibt es keinen Support für die Offline- oder remote Speicherung von durchsuchbaren Daten. Wir betrachten dies noch näher:
 
 - Suchdaten werden in einem von Azure Search verwalteten Index gespeichert, das mit Dokumenten aufgefüllt ist, ein Dokument pro Suchelement. 
 - Die meisten Indizes werden aus einem einzelnen Datensatz geladen, indem Sie im Voraus so vorbereitet werden, dass sie nur Felder enthalten, die im Kontext von Suchvorgängen nützlich sind. 
 - Das Schema, das Ihren Index definiert, ist benutzerdefiniert und gibt durchsuchbare Felder und nicht durchsuchbare Felder an, die in einem Filterausdruck und Konstrukten wie bei der Bewertung von Profile für die Optimierung der Ergebnisse nützlich sein können.
-- Daten können automatisch von einem Indexer \(nur für Azure SQL-Datenbank oder Azure DocumentDB unterstützt\) geladen oder in einem Suchindex über eine der Azure Search-APIs abgelegt werden. Mit der API können Sie Daten aus einer beliebigen Datenquelle übertragen, solange sie im JSON-Format vorliegen.
+- Daten können automatisch von einem Indexer (nur für Azure SQL-Datenbank oder Azure DocumentDB unterstützt) geladen oder in einem Suchindex über eine der Azure Search-APIs abgelegt werden. Mit der API können Sie Daten aus einer beliebigen Datenquelle übertragen, solange sie im JSON-Format vorliegen.
 
-Mit der Option [Try Azure App Service](https://tryappservice.azure.com/) bietet die ASP.NET- und Azure Search-Websitevorlage den Quellcode für die Webanwendung, die in Visual Studio Online bearbeitet werden kann \(verfügbar als Teil der einstündigen Sitzung\). Zum Anzeigen oder Ändern des Codes sind keine separaten Entwicklungstools erforderlich.
+Mit der Option [Try Azure App Service](https://tryappservice.azure.com/) bietet die ASP.NET- und Azure Search-Websitevorlage den Quellcode für die Webanwendung, die in Visual Studio Online bearbeitet werden kann (verfügbar als Teil der einstündigen Sitzung). Zum Anzeigen oder Ändern des Codes sind keine separaten Entwicklungstools erforderlich.
 
-Code wird mithilfe der [Azure Search-.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) in C\# geschrieben, zum Ausführen von Abfragen gegen den Index, zum Bereitstellen der Facettennavigation, und zum Anzeigen von Zahlen und Suchergebnissen auf einer Webseite.
+Code wird mithilfe der [Azure Search-.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) in C# geschrieben, zum Ausführen von Abfragen gegen den Index, zum Bereitstellen der Facettennavigation, und zum Anzeigen von Zahlen und Suchergebnissen auf einer Webseite.
 
 Anderer Code, der nicht in die Vorlage eingefügt ist, wurde dazu verwendet, den USGS-Suchindex zu erstellen und zu laden. Da der Dienst schreibgeschützt ist, mussten alle Vorgänge, die einen Schreibzugriff erfordern, im Voraus abgeschlossen werden. Sie sehen eine [Kopie des Schemas](#schema), die am Ende dieses Artikels dazu verwendet wird, das Schema zu erstellen.
 
@@ -83,9 +83,9 @@ Wenn die einstündige Sitzung noch nicht begonnen hat, gehen Sie wie folgt vor, 
 
 
 ##Anfängliche Vorgehensweise
-Da der Suchindex voll funktionsfähig ist, ist es ein guter erster Schritt, einige Abfragen auszuprobieren. Azure Search unterstützt alle Standardsuchoperatoren \(+, -, \|\), Anführungszeichen für Übereinstimmungen bei Zeichenfolgenliteralen, Platzhalter \(\*\) und die Rangfolge von Operatoren. Sie können den Syntaxverweis der Abfrage für die vollständige Liste der Operatoren überprüfen.
+Da der Suchindex voll funktionsfähig ist, ist es ein guter erster Schritt, einige Abfragen auszuprobieren. Azure Search unterstützt alle Standardsuchoperatoren (+, -, |), Anführungszeichen für Übereinstimmungen bei Zeichenfolgenliteralen, Platzhalter (*) und die Rangfolge von Operatoren. Sie können den Syntaxverweis der Abfrage für die vollständige Liste der Operatoren überprüfen.
 
-- Beginnen Sie mit einer Platzhaltersuche durch Hinzufügen eines Sternchens \(`*`\). Damit sehen Sie, wie viele Dokumente im Index gefunden werden: 2.262.578.
+- Beginnen Sie mit einer Platzhaltersuche durch Hinzufügen eines Sternchens (`*`). Damit sehen Sie, wie viele Dokumente im Index gefunden werden: 2.262.578.
 - Als Nächstes geben Sie "Yellowstone" ein, fügen dann "+center", "+building" und "-ND" hinzu, um die Suchergebnisse progressiv auf Yellowstone-Besucher in Zentren einzugrenzen, mit Ausnahme derjenigen in North Dakota: `Yellowstone +center +building -ND`.  
 - Probieren Sie es mit einem Suchbegriff, der die Rangfolge von Operatoren und den Zeichenfolgenabgleich kombiniert: `statue+(park+MT)`. Sie sollten ähnliche Ergebnisse wie im Screenshot unten erhalten. Beachten Sie, dass Facettenkategorien unter der Funktionsklasse erscheinen, und ds selbstgesteuerte Filtern durch die Facettennavigation bieten. Dies ist eine Funktion, die im Allgemeinen in den meisten Suchanwendungen vorhanden ist.
 
@@ -95,7 +95,7 @@ Möchten Sie fortfahren? Ändern Sie ein paar Codezeilen, um die Auswirkungen au
 
 ##Ändern Sie „SearchMode.All“.
 
-Azure Search bietet eine konfigurierbare **SearchMode**-Eigenschaft, die Sie verwenden können, um das Suchverhalten des Operators zu steuern. Gültige Werte für diese Eigenschaft sind `Any`\(Standard\) oder `All`. Weitere Anleitungen zum Festlegen dieser Optionen finden Sie unter [Einfache Abfragesyntax](https://msdn.microsoft.com/library/dn798920.aspx).
+Azure Search bietet eine konfigurierbare **SearchMode**-Eigenschaft, die Sie verwenden können, um das Suchverhalten des Operators zu steuern. Gültige Werte für diese Eigenschaft sind `Any`(Standard) oder `All`. Weitere Anleitungen zum Festlegen dieser Optionen finden Sie unter [Einfache Abfragesyntax](https://msdn.microsoft.com/library/dn798920.aspx).
 
 - **searchMode.Any** schreibt vor, dass eine Übereinstimmung für einen Suchbegriff ausreichet, damit ein Element in den Suchergebnissen enthalten ist. Wenn Ihre Suchphrase `Yellowstone visitor center` ist, dann ist jedes Dokument mit einem dieser Begriffe in den Suchergebnissen enthalten. Dieser Modus ist unvoreingenommen gegenüber der *Sensitivität*.
 - Das in diesem Beispiel verwendete **searchModel.All** erfordert, dass alle angegebenen Bedingungen im Dokument vorhanden sind. Dieser Modus ist strenger als **searchMode.Any**, aber wenn Sie *Genauigkeit* gegenüber Sensitivität bevorzugen, ist er wahrscheinlich die beste Wahl für Ihre Anwendung. 
@@ -122,19 +122,19 @@ Der Unterschied ist ziemlich groß. Anstelle von sieben Suchergebnissen erhalten
 
    ![][11]
  
-Das beobachtete Verhalten liegt am enthaltenen `NOT`-Operator \(in diesem Fall "-ND"\), der *ODER* statt *UND* verwendet, wenn **SearchMode** auf `Any` festgelegt ist.
+Das beobachtete Verhalten liegt am enthaltenen `NOT`-Operator (in diesem Fall "-ND"), der *ODER* statt *UND* verwendet, wenn **SearchMode** auf `Any` festgelegt ist.
 
 Bei dieser Konfiguration beinhalten die Suchergebnisse Treffer für die Suchbegriffe `Yellowstone`, `center`und `building`, aber auch jedes Dokument, das `NOT North Dakota` ist. Da nur 13.081 Dokumente mit dem Ausdruck `North Dakota` vorhanden sind, wird fast der komplette Datensatz zurückgegeben.
 
 Dieses Szenario ist zwar zugegebenermaßen unwahrscheinlich, veranschaulicht aber die Auswirkungen von **SearchMode** auf Suchausdrücke, die den `NOT`-Operator enthalten. Daher ist das Verständnis dafür hilfreich, warum das Verhalten auftritt, und wie es geändert werden kann, wenn es unerwünscht ist.
 
-Um mit diesem Lernprogramm fortzufahren, setzen Sie **SearchMode** wieder auf den ursprünglichen Wert zurück \(auf `All` in Zeile 39 festgelegt\), führen Sie das Programm aus, und verwenden Sie die neu erstellte App für die verbleibenden Vorgänge.
+Um mit diesem Lernprogramm fortzufahren, setzen Sie **SearchMode** wieder auf den ursprünglichen Wert zurück (auf `All` in Zeile 39 festgelegt), führen Sie das Programm aus, und verwenden Sie die neu erstellte App für die verbleibenden Vorgänge.
  
 ##Hinzufügen eines globalen Filters für den Bundesstaat Washington
 
 Wenn Sie normalerweise eine Teilmenge verfügbarer Daten durchsuchen wollen, würden Sie den Filter in der Datenquelle beim Importieren von Daten festlegen. Zu Lernzwecken und da mit schreibgeschützten Daten gearbeitet wird, müssen wir den Filter in unserer Anwendung so festlegen, dass nur die Dokumente zurückgegeben werden, die den US-Bundesstaat Washington enthalten.
 
-1. Öffnen Sie Search.cshtml, suchen Sie den **SearchParameters**-Codeblock \(ab Zeile 36\) und fügen Sie eine Kommentarzeile plus Filter hinzu.
+1. Öffnen Sie Search.cshtml, suchen Sie den **SearchParameters**-Codeblock (ab Zeile 36) und fügen Sie eine Kommentarzeile plus Filter hinzu.
 
         var sp = new SearchParameters
         {
@@ -153,11 +153,11 @@ Wenn Sie normalerweise eine Teilmenge verfügbarer Daten durchsuchen wollen, wü
 
 Filter werden mit OData-Syntax angegeben und häufig mit der Facettennavigation verwendet oder sind in der Abfragezeichenfolge zum Einschränken der Abfrage enthalten. Weitere Informationen finden Sie unter [OData Filtersyntax](https://msdn.microsoft.com/library/azure/dn798921.aspx).
 
-2. Klicken Sie auf **Run** \(Ausführen\).
+2. Klicken Sie auf **Run** (Ausführen).
 
 3. Öffnen Sie die Anwendung.
 
-4. Geben Sie den Platzhalter \(\*\) ein, um eine Anzahl zurückgeben. Beachten Sie, dass die Ergebnisse nun auf 42.411 Elemente beschränkt sind, die von allen Dokumenten für alle geografischen Eigenschaften im Bundesstaat Washington stammen.
+4. Geben Sie den Platzhalter (*) ein, um eine Anzahl zurückgeben. Beachten Sie, dass die Ergebnisse nun auf 42.411 Elemente beschränkt sind, die von allen Dokumenten für alle geografischen Eigenschaften im Bundesstaat Washington stammen.
 
    ![][12]
 
@@ -529,4 +529,4 @@ Der folgende Screenshot zeigt das verwendete Schema, um den in dieser Vorlage ve
 [13]: ./media/search-tryappservice/AzSearch-TryAppService-Schema.png
 [14]: ./media/search-tryappservice/AzSearch-TryAppService-HitHighlight.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

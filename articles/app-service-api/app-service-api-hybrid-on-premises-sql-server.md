@@ -3,7 +3,7 @@
 	description="Erstellen einer API-App in Microsoft Azure und Herstellen einer Verbindung von der API-App mit einer lokalen SQL Server-Datenbank"
 	services="app-service\api" 
 	documentationCenter="" 
-	authors="tarcher" 
+	authors="TomArcher" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
@@ -22,7 +22,7 @@ Hybridverbindungen ermöglichen die Verbindung von [Azure App Service](http://go
 
 In diesem Tutorial erfahren Sie, wie eine App Service-API-App in der [Azure-Vorschau](http://go.microsoft.com/fwlink/?LinkId=529715) erstellt wird, die mithilfe der neuen Funktion für Hybridverbindungen eine Verbindung mit einer lokalen SQL Server-Datenbank herstellt. Bei diesem Tutorial wird davon ausgegangen, dass Sie noch keine Erfahrungen mit der Verwendung von Azure oder SQL Server haben.
 
-[AZURE.INCLUDE app-service-web-try-app-service.md]
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Voraussetzungen
 
@@ -30,15 +30,13 @@ Zum Durchführen des Lernprogramms benötigen Sie folgende Produkte: Alle Produk
 
 - **Azure-Abonnement** - Informationen zu einem kostenlosen Abonnement finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/). 
 
-- **Visual Studio** – Zum Herunterladen einer kostenlosen Testversion von Visual Studio 2013 und Visual Studio 2015 besuchen Sie [Visual Studio-Downloads](http://www.visualstudio.com/downloads/download-visual-studio-vs). Installieren Sie eines dieser Produkte, bevor Sie fortfahren. \(Die Screenshots in diesem Tutorial wurden mit Visual Studio 2013 erstellt.\)
+- **Visual Studio** – Zum Herunterladen einer kostenlosen Testversion von Visual Studio 2013 und Visual Studio 2015 besuchen Sie [Visual Studio-Downloads](http://www.visualstudio.com/downloads/download-visual-studio-vs). Installieren Sie eines dieser Produkte, bevor Sie fortfahren. (Die Screenshots in diesem Tutorial wurden mit Visual Studio 2013 erstellt.)
 
-- **Microsoft .NET Framework 3.5 Service Pack 1** - Wenn Sie das Betriebssystem Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows 7 oder Windows Server 2008 R2 verwenden, können Sie diese Komponente in Systemsteuerung \> "Programme und Funktionen" bzw. "Programme und Features" \> "Windows-Funktionen ein- oder ausschalten" aktivieren. Andernfalls können Sie sie vom [Microsoft Download Center](http://www.microsoft.com/download/en/details.aspx?displaylang=en&id=22) herunterladen.
+- **SQL Server 2014 Express with Tools** - Laden Sie Microsoft SQL Server Express kostenlos von der [Microsoft Web Platform Datenbank-Seite](https://www.microsoft.com/de-de/download/details.aspx?id=42299) herunter. Später in diesem Tutorial erfahren Sie, wie Sie [SQL Server installieren](#InstallSQLDB), sodass eine ordnungsgemäße Konfiguration sichergestellt ist.
 
-- **SQL Server 2014 Express with Tools** - Laden Sie Microsoft SQL Server Express kostenlos von der [Microsoft Web Platform Datenbank-Seite](https://www.microsoft.com/en-us/download/details.aspx?id=42299) herunter. Später in diesem Tutorial erfahren Sie, wie [SQL Server installiert wird](#InstallSQLDB), sodass eine ordnungsgemäße Konfiguration sichergestellt ist.
+- **SQL Server Management Studio Express** - Dieses Produkt ist im oben angegebenen Download "SQL Server 2014 Express with Tools" enthalten, Sie müssen es jedoch getrennt installieren. Sie können es von der [Download-Seite für SQL Server Express](https://www.microsoft.com/de-de/download/details.aspx?id=42299) herunterladen und installieren.
 
-- **SQL Server Management Studio Express** - Dieses Produkt ist im oben angegebenen Download "SQL Server 2014 Express with Tools" enthalten, Sie müssen es jedoch getrennt installieren. Sie können es von der [Download-Seite für SQL Server Express](https://www.microsoft.com/en-us/download/details.aspx?id=42299) herunterladen und installieren.
-
-In diesem Lernprogramm wird davon ausgegangen, dass Sie ein Azure-Abonnement besitzen, Visual Studio 2013 installiert haben und .NET Framework 3.5 installiert oder aktiviert haben. In diesem Lernprogramm wird gezeigt, wie Sie SQL Server 2014 Express in einer Konfiguration installieren, die sich gut für die Azure-Funktion "Hybridverbindungen" eignet \(eine Standardinstanz mit einem statischen TCP-Port\). Bevor Sie mit dem Tutorial beginnen, laden Sie "SQL Server 2014 Express with Tools" vom oben angegebenen Speicherort herunter \(installieren Sie das Programm aber nicht\), sofern Sie SQL Server nicht installiert haben.
+In diesem Lernprogramm wird davon ausgegangen, dass Sie ein Azure-Abonnement besitzen, Visual Studio 2013 installiert haben und .NET Framework 3.5 installiert oder aktiviert haben. In diesem Lernprogramm wird gezeigt, wie Sie SQL Server 2014 Express in einer Konfiguration installieren, die sich gut für die Azure-Funktion "Hybridverbindungen" eignet (eine Standardinstanz mit einem statischen TCP-Port). Bevor Sie mit dem Tutorial beginnen, laden Sie "SQL Server 2014 Express with Tools" vom oben angegebenen Speicherort herunter (installieren Sie das Programm aber nicht), sofern Sie SQL Server nicht installiert haben.
 
 ### Hinweise
 Um eine lokale SQL Server- oder SQL Server Express-Datenbank mit einer Hybridverbindung verwenden zu können, muss TCP/IP an einem statischen Port aktiviert werden. Standardinstanzen von SQL Server verwenden den statischen Port 1433, benannte Instanzen dagegen nicht.
@@ -66,7 +64,7 @@ Der Computer, auf dem Sie den lokalen Hybridverbindungs-Manager-Agent installier
 	</tr>
 </table>
 
-- Muss in der Lage sein, *Hostname*:\*Portnummer\*Ihrer lokalen Ressource zu erreichen. 
+- Sie müssen in der Lage sein, *Hostname*:*Portnummer* Ihrer lokalen Ressource zu erreichen. 
 
 Bei den Schritten in diesem Artikel wird davon ausgegangen, dass Sie den Browser auf dem Computer verwenden, auf dem der lokale Hybridverbindungs-Agent installiert ist.
 
@@ -80,7 +78,7 @@ In diesem Abschnitt wird erläutert, wie Sie SQL Server Express installieren, TC
 <a name="InstallSQLDB"></a>
 ### SQL Server Express installieren
 
-1. Um SQL Server Express zu installieren, laden Sie entweder die Datei **SQLEXPRWT\_x64\_ENU.exe** \(64-Bit-Version\) oder **SQLEXPR\_x86\_ENU.exe** \(32-Bit-Version\) herunter, und extrahieren Sie sie im gewünschten Ordner. 
+1. Um SQL Server Express zu installieren, laden Sie entweder die Datei **SQLEXPRWT\_x64\_ENU.exe** (64-Bit-Version) oder **SQLEXPR\_x86\_ENU.exe** (32-Bit-Version) herunter, und extrahieren Sie sie im gewünschten Ordner. 
 
 2. Nachdem Sie die SQL Server Express-Installationsdateien extrahiert haben, führen Sie **setup.exe** aus.
 
@@ -98,7 +96,7 @@ In diesem Abschnitt wird erläutert, wie Sie SQL Server Express installieren, TC
 	
 6. Übernehmen Sie die Standardeinstellungen auf der Seite **Serverkonfiguration**, und klicken Sie auf **Weiter**.
 	
-7. Wählen Sie auf der Seite **Datenbankmodulkonfiguration** unter **Authentifizierungsmodus** die Option **Gemischter Modus \(SQL Server-Authentifizierung und Windows-Authentifizierung\)**, und geben Sie ein Kennwort an.
+7. Wählen Sie auf der Seite **Datenbankmodulkonfiguration** unter **Authentifizierungsmodus** die Option **Gemischter Modus (SQL Server-Authentifizierung und Windows-Authentifizierung)**, und geben Sie ein Kennwort an.
 	
 	![Konfiguration des Datenbankmoduls](./media/app-service-api-hybrid-on-premises-sql-server/database-engine-configuration.png)
 	
@@ -130,7 +128,7 @@ Zum Aktivieren von TCP/IP verwenden Sie den SQL Server-Konfigurations-Manager, d
 	
 ### Erstellen und Auffüllen einer SQL Server-Tabelle
 
-1. Erweitern Sie im **SQL Server Management Studio** im **Objekt-Explorer** den Eintrag `LocalDatabase`.
+1. Erweitern Sie in **SQL Server Management Studio** im **Objekt-Explorer** den Eintrag `LocalDatabase`.
 
 	![Erweiterte Datenbank](./media/app-service-api-hybrid-on-premises-sql-server/local-database-expanded.png)
 
@@ -158,9 +156,9 @@ Zum Aktivieren von TCP/IP verwenden Sie den SQL Server-Konfigurations-Manager, d
 
 In diesem Abschnitt wird das Erstellen der Demo-API-App erläutert.
 
-1. Öffnen Sie Visual Studio 2013, und wählen Sie **Datei \> Neu \> Projekt** aus. 
+1. Öffnen Sie Visual Studio 2013, und wählen Sie **Datei > Neu > Projekt** aus. 
 
-2. Wählen Sie die Vorlage **Visual C\# \> Web \> ASP.NET-Webanwendung** aus, deaktivieren Sie die Option zum Hinzufügen von Application Insights zum Projekt, nennen Sie das Projekt *SpeakersList*, und klicken Sie dann auf **OK**.
+2. Wählen Sie die Vorlage **Visual C# > Web > ASP.NET-Webanwendung** aus, deaktivieren Sie die Option zum Hinzufügen von Application Insights zum Projekt, nennen Sie das Projekt *SpeakersList*, und klicken Sie dann auf **OK**.
 
 	![](./media/app-service-api-hybrid-on-premises-sql-server/new-project.png)
 
@@ -168,7 +166,7 @@ In diesem Abschnitt wird das Erstellen der Demo-API-App erläutert.
 
 	![](./media/app-service-api-hybrid-on-premises-sql-server/new-project-api-app.png)
 
-4. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Modelle**, und wählen Sie dann im Kontextmenü **Hinzufügen \> Klasse...** aus.
+4. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Modelle**, und wählen Sie dann im Kontextmenü **Hinzufügen > Klasse...** aus.
 
 	![](./media/app-service-api-hybrid-on-premises-sql-server/new-model-menu.png)
 
@@ -188,7 +186,7 @@ In diesem Abschnitt wird das Erstellen der Demo-API-App erläutert.
 			}
 		}
 
-7. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Controller**, und wählen Sie dann im Kontextmenü **Hinzufügen \> Controller...** aus.
+7. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Controller**, und wählen Sie dann im Kontextmenü **Hinzufügen > Controller...** aus.
 
 	![](./media/app-service-api-hybrid-on-premises-sql-server/new-controller.png)
 
@@ -200,9 +198,9 @@ In diesem Abschnitt wird das Erstellen der Demo-API-App erläutert.
 
 	![](./media/app-service-api-hybrid-on-premises-sql-server/add-controller-name.png)
 
-10. Ersetzen Sie den Code in der Datei `SpeakersController.cs` durch den folgenden Code. Geben Sie Ihre eigenen Werte für die Platzhalter &lt;serverName\> und &lt;password\> in `connectionString` an. Der Wert &lt;serverName\> ist der Name des Computers, auf dem sich SQL Server befindet, und der Wert &lt;password\> ist der, den Sie beim Installieren und Konfigurieren von SQL Server festgelegt haben.
+10. Ersetzen Sie den Code in der Datei `SpeakersController.cs` durch den folgenden Code. Geben Sie Ihre eigenen Werte für die Platzhalter „&lt;serverName>“ und „&lt;password>“ in `connectionString` an. Der Wert &lt;serverName> ist der Name des Computers, auf dem sich SQL Server befindet, und der Wert &lt;password> ist der, den Sie beim Installieren und Konfigurieren von SQL Server festgelegt haben.
 
-	> [AZURE.NOTE]Der folgende Codeausschnitt enthält Kennwortinformationen. Dies dient dazu, die Demo einfach zu halten. In einer realen Produktionsumgebung sollten Sie Ihre Anmeldeinformationen nicht im Code speichern. Lesen Sie stattdessen die [bewährten Methoden für das Bereitstellen von Kennwörtern \(und anderen vertraulichen Daten\) auf ASP.NET und Azure](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
+	> [AZURE.NOTE]Der folgende Codeausschnitt enthält Kennwortinformationen. Dies dient dazu, die Demo einfach zu halten. In einer realen Produktionsumgebung sollten Sie Ihre Anmeldeinformationen nicht im Code speichern. Lesen Sie stattdessen die [bewährten Methoden für das Bereitstellen von Kennwörtern (und anderen vertraulichen Daten) in ASP.NET und Azure](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
 
 		using System;
 		using System.Collections.Generic;
@@ -314,11 +312,11 @@ Durch Aktivieren der Swagger-Benutzeroberfläche können Sie ganz einfach Ihre A
 
 Nachdem Sie die App lokal getestet haben, ist es Zeit, die App in Azure bereitzustellen.
 
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt \(nicht die Projektmappe\), und klicken Sie auf **Veröffentlichen...**. 
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt (nicht die Projektmappe), und klicken Sie auf **Veröffentlichen...**. 
 
 	![Menüoption zur Projektveröffentlichung](./media/app-service-api-hybrid-on-premises-sql-server/publish-menu.png)
 
-2. Klicken Sie auf die Registerkarte **Profil**, und klicken Sie auf **Microsoft Azure API-Apps \(Vorschau\)**.
+2. Klicken Sie auf die Registerkarte **Profil**, und klicken Sie auf **Microsoft Azure API-Apps (Vorschau)**.
 
 	![Menüoption zur Projektveröffentlichung](./media/app-service-api-hybrid-on-premises-sql-server/publish-web.png)
 
@@ -331,7 +329,7 @@ Nachdem Sie die App lokal getestet haben, ist es Zeit, die App in Azure bereitzu
 	- Geben Sie unter **Name der API-App** einen Namen für die App ein. 
 	- Wenn Sie über mehrere Azure-Abonnements verfügen, wählen Sie dasjenige aus, das Sie verwenden möchten.
 	- Treffen Sie unter **App Service-Plan** eine Auswahl aus Ihren vorhandenen App Service-Plänen, oder wählen Sie **Neuen App Service-Plan erstellen** aus, und geben Sie den Namen eines neuen Plans ein. 
-	- Wählen Sie unter **Ressourcengruppe** eine vorhandene Ressourcengruppe aus, oder wählen Sie **Neue Ressourcengruppe erstellen**, und geben Sie einen Namen ein. Der Name muss eindeutig sein. Verwenden Sie eventuell den App-Namen als Präfix, und hängen Sie persönliche Informationen wie z. B. Ihre Microsoft-ID \(ohne das @-Zeichen\) an.  
+	- Wählen Sie unter **Ressourcengruppe** eine vorhandene Ressourcengruppe aus, oder wählen Sie **Neue Ressourcengruppe erstellen**, und geben Sie einen Namen ein. Der Name muss eindeutig sein. Verwenden Sie eventuell den App-Namen als Präfix, und hängen Sie persönliche Informationen wie z. B. Ihre Microsoft-ID (ohne das @-Zeichen) an.  
 	- Wählen Sie unter **Zugriffsebene** die Option **Für alle Benutzer verfügbar** aus. Durch diese Option wird steht die gesamte API öffentlich zur Verfügung, was für dieses Lernprogramm in Ordnung ist. Sie können den Zugriff später über das [Azure-Vorschauportal](https://portal.azure.com) einschränken.
 	- Wählen Sie eine Region aus.
 
@@ -371,12 +369,12 @@ Im Fenster **Azure App Service-Aktivität** wird der Bereitstellungsfortschritt 
 	
 	![Hybridverbindungen](./media/app-service-api-hybrid-on-premises-sql-server/api-app-host-blade-hybrid-connections.png)
 	
-7. Klicken Sie im Blatt **Hybridverbindungen** auf **Hinzufügen** \> **Neue Hybridverbindung**.
+7. Klicken Sie auf dem Blatt **Hybridverbindungen** auf **Hinzufügen** > **Neue Hybridverbindung**.
 	
 8. Geben Sie im Fensterbereich **Create hybrid connection** Folgendes ein:
 	- Geben Sie unter **Name** einen Namen für die Verbindung ein.
 	- Geben Sie als **Hostname** den Computernamen Ihres SQL Server-Hostcomputers ein.
-	- Geben Sie bei **Port** den Wert `1433` ein \(Standardport für SQL Server\).
+	- Geben Sie bei **Port** den Wert `1433` ein (Standardport für SQL Server).
 	- Klicken Sie auf **Biz Talk Service**, und geben Sie einen Namen für den BizTalk-Dienst ein.
 	
 	![Hybridverbindung erstellen](./media/app-service-api-hybrid-on-premises-sql-server/create-biztalk-service.png)
@@ -399,7 +397,7 @@ Nachdem die Hybridverbindungsinfrastruktur jetzt vollständig ist, können Sie d
 <a name="CreateASPNET"></a>
 ## Testen der fertigen API-App in Azure
 
-1. Wechseln Sie im Azure-Vorschauportal zum Blatt "API-App-Host", und klicken Sie auf den Wert unter **URL**.
+1. Wechseln Sie im Azure-Vorschauportal zum Blatt „API-App-Host“, und klicken Sie auf den Wert unter **URL**.
 	
 2. Sobald die Hostseite der API-App in Ihrem Browser angezeigt wird, fügen Sie `/swagger` an die URL in der Adressleiste Ihres Browsers an, und drücken Sie die **EINGABETASTE**.
 	
@@ -416,20 +414,20 @@ Nachdem die Hybridverbindungsinfrastruktur jetzt vollständig ist, können Sie d
 ## Weitere Informationen
 [Überblick über Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274)
 
-[Einführung in Hybridverbindungen von Josh Twist \(Channel 9-Video\)](http://channel9.msdn.com/Shows/Azure-Friday/Josh-Twist-introduces-hybrid-connections)
+[Einführung in Hybridverbindungen von Josh Twist (Channel 9-Video)](http://channel9.msdn.com/Shows/Azure-Friday/Josh-Twist-introduces-hybrid-connections)
 
 [Überblick über Hybridverbindungen](/services/biztalk-services/)
 
 [BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Skalieren", "Konfigurieren" und "Hybridverbindungen"](../biztalk-dashboard-monitor-scale-tabs/)
 
-[Erstellen einer echten Hybrid-Cloud mit nahtloser Anwendungsportabilität \(Channel 9-Video\)](http://channel9.msdn.com/events/TechEd/NorthAmerica/2014/DCIM-B323#fbid=)
+[Erstellen einer echten Hybrid-Cloud mit nahtloser Anwendungsportabilität (Channel 9-Video)](http://channel9.msdn.com/events/TechEd/NorthAmerica/2014/DCIM-B323#fbid=)
 
 [Verbinden mit einem lokalen SQL Server über einen mobilen Azure-Dienst mithilfe von Hybridverbindungen](../mobile-services-dotnet-backend-hybrid-connections-get-started.md)
 
-[Verbinden mit einem lokalen SQL Server über Azure Mobile Services mithilfe von Hybridverbindungen \(Channel 9-Video\)](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Connect-to-an-on-premises-SQL-Server-from-Azure-Mobile-Services-using-Hybrid-Connections)
+[Verbinden mit einem lokalen SQL Server über Azure Mobile Services mithilfe von Hybridverbindungen (Channel 9-Video)](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Connect-to-an-on-premises-SQL-Server-from-Azure-Mobile-Services-using-Hybrid-Connections)
 
 [Übersicht über ASP.NET Identity](http://www.asp.net/identity)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

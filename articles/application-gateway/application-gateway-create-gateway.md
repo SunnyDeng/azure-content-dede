@@ -36,7 +36,7 @@ Die Werte sind:
 - **Back-End-Serverpool:** Die Liste der IP-Adressen der Back-End-Server. Die aufgelisteten IP-Adressen sollten entweder dem Subnetz des virtuellen Netzwerks angehören oder eine öffentliche IP-Adresse/VIP sein. 
 - **Einstellungen für den Back-End-Serverpool:** Jeder Pool weist Einstellungen wie Port, Protokoll und cookiebasierte Affinität auf. Diese Einstellungen sind an einen Pool gebunden und gelten für alle Server innerhalb des Pools.
 - **Front-End-Port:** Dieser Port ist der öffentliche Port, der im Anwendungsgateway geöffnet ist. Datenverkehr erreicht diesen Port und wird dann an einen der Back-End-Server umgeleitet.
-- **Listener:** Der Listener verfügt über einen Front-End-Port, ein Protokoll \(Http oder Https, bei beiden muss die Groß-/Kleinschreibung beachtet werden\) und den Namen des SSL-Zertifikats \(falls SSL-Auslagerung konfiguriert wird\). 
+- **Listener:** Der Listener verfügt über einen Front-End-Port, ein Protokoll (Http oder Https, bei beiden muss die Groß-/Kleinschreibung beachtet werden) und den Namen des SSL-Zertifikats (falls SSL-Auslagerung konfiguriert wird). 
 - **Regel:** Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und es wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden sollen, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel *basic* unterstützt. Die Regel *basic* ist eine Round-Robin-Lastverteilung.
 
 
@@ -214,7 +214,7 @@ Dann legen Sie das Anwendungsgateway fest. Verwenden Sie das `Set-AzureApplicati
 
 Das folgende Beispiel zeigt, wie Sie mithilfe von Konfigurationsobjekten das Anwendungsgateway konfigurieren. Alle Konfigurationselemente müssen einzeln konfiguriert und anschließend einem Konfigurationsobjekt für das Anwendungsgateway hinzugefügt werden. Nach dem Erstellen des Konfigurationsobjekts verwenden Sie den `Set-AzureApplicationGateway`-Befehl, um die Konfiguration auf die zuvor erstellte Anwendungsgatewayressource zu übertragen.
 
->[AZURE.NOTE]Bevor Sie dem Konfigurationsobjekt einen Wert zuweisen, müssen Sie deklarieren, in welcher Art von Objekt-PowerShell es gespeichert wird. Die erste Zeile zum Erstellen der einzelnen Elemente definiert, welches Microsoft.WindowsAzure.Commands.ServiceManagement.Network.ApplicationGateway.Model\(Objektname\) verwendet wird.
+>[AZURE.NOTE]Bevor Sie dem Konfigurationsobjekt einen Wert zuweisen, müssen Sie deklarieren, in welcher Art von Objekt-PowerShell es gespeichert wird. Die erste Zeile zum Erstellen der einzelnen Elemente definiert, welches Microsoft.WindowsAzure.Commands.ServiceManagement.Network.ApplicationGateway.Model(Objektname) verwendet wird.
 
 ### Schritt 1
 
@@ -242,7 +242,7 @@ Erstellen Sie den Back-End-Serverpool:
 	PS C:\> $servers.Add("10.0.0.1") 
 	PS C:\> $servers.Add("10.0.0.2")
 
- Fügen Sie mit dem $server-Objekt die Werte dem Back-End-Poolobjekt \($pool\) hinzu:
+ Fügen Sie mit dem $server-Objekt die Werte dem Back-End-Poolobjekt ($pool) hinzu:
 
 	PS C:\> $pool = New-Object Microsoft.WindowsAzure.Commands.ServiceManagement.Network.ApplicationGateway.Model.BackendAddressPool 
 	PS C:\> $pool.BackendServers = $servers 
@@ -276,7 +276,7 @@ Erstellen Sie die Regel:
  
 ### Schritt 2
 
-Weisen Sie die einzelnen Konfigurationselemente einem Konfigurationsobjekt für das Anwendungsgateway \($appgwconfig\) zu:
+Weisen Sie die einzelnen Konfigurationselemente einem Konfigurationsobjekt für das Anwendungsgateway ($appgwconfig) zu:
 
 Fügen Sie die Front-End-IP der Konfiguration hinzu:
 
@@ -396,11 +396,11 @@ Um sicherzustellen, dass der Dienst wurde entfernt, können Sie das `Get-AzureAp
 
 Wenn Sie die SSL-Auslagerung konfigurieren möchten, lesen Sie [Konfigurieren des Anwendungsgateways für die SSL-Auslagerung](application-gateway-ssl.md).
 
-Wenn Sie ein Anwendungsgateway für ILB konfigurieren möchten, lesen Sie [Erstellen eines Anwendungsgateways mit einem internen Lastenausgleich \(ILB\)](application-gateway-ilb.md).
+Wenn Sie ein Anwendungsgateway für ILB konfigurieren möchten, lesen Sie [Erstellen eines Anwendungsgateways mit einem internen Lastenausgleich (ILB)](application-gateway-ilb.md).
 
 Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unter:
 
 - [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

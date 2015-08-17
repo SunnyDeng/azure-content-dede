@@ -25,7 +25,7 @@ Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement.
 
 > [AZURE.NOTE]Mit dem Verfahren auf dieser Seite wird Ihrer Web-App zur Laufzeit das SDK hinzugefügt. Dies ist nützlich, wenn Sie den Quellcode nicht aktualisieren oder neu erstellen möchten. Sofern möglich, empfehlen wir jedoch, dass Sie stattdessen [das SDK zum Quellcode hinzufügen](app-insights-java-get-started.md). Dadurch erhalten Sie weitere Optionen, Sie können z. B. Code zum Nachverfolgen der Benutzeraktivität schreiben.
 
-## 1. Abrufen eines Application Insights-Instrumentationsschlüssels
+## 1\. Abrufen eines Application Insights-Instrumentationsschlüssels
 
 1. Melden Sie sich am [Microsoft Azure-Portal](https://portal.azure.com) an.
 2. Erstellen einer neuen Application Insights-Ressource
@@ -38,13 +38,13 @@ Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement.
 
     ![Klicken Sie in der Übersicht über neue Ressourcen auf "Eigenschaften", und kopieren Sie den Instrumentationsschlüssel](./media/app-insights-java-get-started/03-key.png)
 
-## 2. Herunterladen des SDK
+## 2\. Herunterladen des SDK
 
 1. Laden Sie das [Application Insights-SDK für Java](http://dl.windowsazure.com/applicationinsights/javabin/sdk.zip) herunter. 
 2. Extrahieren Sie auf dem Server den SDK-Inhalt in das Verzeichnis, aus dem die Projektbinärdateien geladen werden. Wenn Sie Tomcat verwenden, ist dies in der Regel unter `webapps<your_app_name>\WEB-INF\lib`.
 
 
-## 3. Hinzufügen der Datei "ApplicationInsights.XML"
+## 3\. Hinzufügen der Datei "ApplicationInsights.XML"
 
 Erstellen Sie "ApplicationInsights.xml" in dem Ordner, in dem Sie das SDK hinzugefügt haben. Fügen Sie den folgenden XML-Code ein.
 
@@ -86,7 +86,7 @@ Fügen Sie den Instrumentationsschlüssel ein, den Sie aus dem Azure-Portal abge
 * Die Korrelation von Ereignissen ist eine Ergänzung der HTTP-Anforderungskomponente. Sie weist den einzelnen Anforderungen, die vom Server empfangen wurden, einen Bezeichner zu und fügt diesen als Eigenschaft 'Operation.Id' jedem Telemetrieelement hinzu. Diese Eigenschaft ermöglicht das Korrelieren der jeder Anforderung zugeordneten Telemetriedaten, indem in [Diagnosesuche](app-insights-diagnostic-search.md) ein Filter festgelegt wird.
 
 
-## 4. Hinzufügen eines HTTP-Filters
+## 4\. Hinzufügen eines HTTP-Filters
 
 Suchen und öffnen Sie die Datei "web.xml" in Ihrem Projekt, und führen Sie den folgenden Codeausschnitt unter dem Knoten "web-app" zusammen, in dem Ihre Anwendungsfilter konfiguriert sind.
 
@@ -103,9 +103,9 @@ Um möglichst genaue Ergebnisse zu erhalten, muss der Filter vor allen anderen F
        <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-## 5. Starten Sie die Web-App neu.
+## 5\. Starten Sie die Web-App neu.
 
-## 6. Anzeigen Ihrer Telemetriedaten in Application Insights
+## 6\. Anzeigen Ihrer Telemetriedaten in Application Insights
 
 Kehren Sie zur Application Insights-Ressource im [Microsoft Azure-Portal](https://portal.azure.com) zurück.
 
@@ -139,4 +139,4 @@ Beim Anzeigen der Eigenschaften einer Anforderung können Sie die damit verbunde
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

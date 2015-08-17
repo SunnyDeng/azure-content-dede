@@ -22,7 +22,7 @@
 
 Der **Aufträge**-Knoten im Fenster **Bereich** zeigt Sicherungsaufträge in den Phasen **Geplant**, **Letzte 24 Stunden** und **Wird ausgeführt**, die Sie interaktiv oder durch eine konfigurierte Richtlinie initiiert haben.
 
-In diesem Lernprogramm wird erklärt, wie Sie den **Aufträge**-Knoten verwenden können, um Informationen über geplante, aktuelle und aktuell ausgeführte Sicherungsaufträge anzuzeigen. \(Die Liste der Aufträge und die entsprechenden Informationen werden im Bereich **Ergebnisse** angezeigt.\) Darüber hinaus können Sie mit der rechten Maustaste auf einen aufgelisteten Auftrag klicken, sodass ein Kontextmenü mit verfügbaren Aktionen erscheint.
+In diesem Lernprogramm wird erklärt, wie Sie den **Aufträge**-Knoten verwenden können, um Informationen über geplante, aktuelle und aktuell ausgeführte Sicherungsaufträge anzuzeigen. (Die Liste der Aufträge und die entsprechenden Informationen werden im Bereich **Ergebnisse** angezeigt.) Darüber hinaus können Sie mit der rechten Maustaste auf einen aufgelisteten Auftrag klicken, sodass ein Kontextmenü mit verfügbaren Aktionen erscheint.
 
 ## Anzeigen geplanter Aufträge
 
@@ -54,7 +54,7 @@ Verwenden Sie das folgende Verfahren zum Anzeigen von Sicherungs- und Wiederhers
 
 1. Klicken Sie auf das Desktopsymbol, um StorSimple Snapshot Manager zu starten.
 
-2. Erweitern Sie im Fenster **Bereich** den **Aufträge**-Knoten, und klicken Sie auf **Letzte 24 Stunden**. Der Bereich **Ergebnisse** zeigt Sicherungsaufträge für die letzten 24 Stunden an \(bis maximal 64 Aufträge\). Die folgenden Informationen erscheinen im Bereich **Ergebnisse**, abhängig von den unter **Ansicht** angegebenen Optionen:
+2. Erweitern Sie im Fenster **Bereich** den **Aufträge**-Knoten, und klicken Sie auf **Letzte 24 Stunden**. Der Bereich **Ergebnisse** zeigt Sicherungsaufträge für die letzten 24 Stunden an (bis maximal 64 Aufträge). Die folgenden Informationen erscheinen im Bereich **Ergebnisse**, abhängig von den unter **Ansicht** angegebenen Optionen:
 
     - **Name** – der Name der geplanten Momentaufnahme.
  
@@ -68,7 +68,7 @@ Verwenden Sie das folgende Verfahren zum Anzeigen von Sicherungs- und Wiederhers
 
     - **Informationen** – die Ursache für den Fehler.
 
-    - **Verarbeitete Bytes \(MB\)** – die Menge der Daten aus der Volumegruppe, die \(in MB\) verarbeitet wurde.
+    - **Verarbeitete Bytes (MB)** – die Menge der Daten aus der Volumegruppe, die (in MB) verarbeitet wurde.
 
     ![Aufträge, die in den letzten 24 Stunden ausgeführt wurden](./media/storsimple-snapshot-manager-manage-backup-jobs/HCS_SSM_Jobs_Last_24_hours.png)
 
@@ -96,11 +96,11 @@ Verwenden Sie das folgende Verfahren zum Anzeigen von Aufträgen, die derzeit au
     
     - **Verstrichene** – die Zeitspanne, die seit dem Start der Sicherung vergangen ist.
 
-    - **Durchschnittlicher Durchsatz \(MB\)** – die durchschnittliche Menge übermittelter Daten, ausgedrückt in Megabyte \(MB\).
+    - **Durchschnittlicher Durchsatz (MB)** – die durchschnittliche Menge übermittelter Daten, ausgedrückt in Megabyte (MB).
 
-    - **Verarbeitete Bytes \(MB\)** – die Menge der Daten aus der Volumegruppe, die \(in MB\) verarbeitet wurde.
+    - **Verarbeitete Bytes (MB)** – die Menge der Daten aus der Volumegruppe, die (in MB) verarbeitet wurde.
 
-    - **Geschriebene Bytes \(MB\)** – die Menge der Daten, die in die Sicherung \(in MB\) geschrieben wurde.
+    - **Geschriebene Bytes (MB)** – die Menge der Daten, die in die Sicherung (in MB) geschrieben wurde.
 
     ![Aufträge, die derzeit ausgeführt werden](./media/storsimple-snapshot-manager-manage-backup-jobs/HCS_SSM_Jobs_running.png)
 
@@ -129,4 +129,4 @@ Verwenden Sie das folgende Verfahren zum Anzeigen von Aufträgen, die derzeit au
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

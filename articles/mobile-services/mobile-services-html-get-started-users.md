@@ -35,9 +35,9 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 3. Starten Sie im Ordner der App eine der folgenden Befehlsdateien aus dem **server**-Unterordner.
 
-	+ **launch-windows** \(Windows-Computer\) 
-	+ **launch-mac.command** \(Mac OS X-Computer\)
-	+ **launch-linux.sh** \(Linux-Computer\)
+	+ **launch-windows** (Windows-Computer) 
+	+ **launch-mac.command** (Mac OS X-Computer)
+	+ **launch-linux.sh** (Linux-Computer)
 
 	>[AZURE.NOTE]Bei einem Windows-Computer geben Sie `R` ein, wenn Sie von PowerShell zur Bestätigung aufgefordert werden, dass Sie das Skript ausführen möchten. Ihr Webbrowser rät Ihnen unter Umständen von einer Ausführung des Skripts ab, weil es vom Internet heruntergeladenen wurde. In diesem Fall müssen Sie darauf bestehen, dass der Browser mit dem Laden des Skripts fortfährt.
 
@@ -47,7 +47,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 	Die Daten können nicht geladen werden. Dies liegt daran, dass die App als nicht authentifizierter Benutzer auf den mobilen Dienst zugreift und die _TodoItem_-Tabelle nun eine Authentifizierung verlangt.
 
-3. \(Optional\) Öffnen Sie den Skript-Debugger Ihres Webbrowsers und aktualisieren Sie die Seite. Vergewissern Sie sich, dass ein "Zugriff verweigert"-Fehler auftritt.
+3. (Optional) Öffnen Sie den Skript-Debugger Ihres Webbrowsers und aktualisieren Sie die Seite. Vergewissern Sie sich, dass ein "Zugriff verweigert"-Fehler auftritt.
 
 Anschließend werden Sie die App aktualisieren, sodass diese sich authentifiziert, bevor sie Ressourcen aus dem mobilen Dienst abfragt.
 
@@ -109,7 +109,7 @@ Anschließend werden Sie die App aktualisieren, sodass diese sich authentifizier
 
 	   Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
 
-	>[AZURE.NOTE]Falls Sie Internet Explorer verwenden, kann es sein, dass Sie nach der Anmeldung den folgenden Fehler erhalten: <code>Fensteröffner nicht erreichbar. Möglicherweise befindet sich dieser in einer anderen Internet Explorer-Zone</code>. Dies liegt daran, dass das Popup in einer anderen Sicherheitszone \(Internet\) als Localhost \(Intranet\) ausgeführt wird. Dies betrifft nur Apps während der Entwicklung mit Localhost. Um dies zu vermeiden, öffnen Sie die Registerkarte **Sicherheit** in den **Internet-Optionen**, klicken Sie auf **Lokales Intranet**, anschließend auf **Sites** und deaktivieren Sie **Intranetnetzwerk automatisch ermitteln**. Vergessen Sie nicht, diese Einstellung nach Abschluss Ihrer Tests wiederherzustellen.
+	>[AZURE.NOTE]Falls Sie Internet Explorer verwenden, kann es sein, dass Sie nach der Anmeldung den folgenden Fehler erhalten: <code>Fensteröffner nicht erreichbar. Möglicherweise befindet sich dieser in einer anderen Internet Explorer-Zone</code>. Dies liegt daran, dass das Popup in einer anderen Sicherheitszone (Internet) als Localhost (Intranet) ausgeführt wird. Dies betrifft nur Apps während der Entwicklung mit Localhost. Um dies zu vermeiden, öffnen Sie die Registerkarte **Sicherheit** in den **Internet-Optionen**, klicken Sie auf **Lokales Intranet**, anschließend auf **Sites** und deaktivieren Sie **Intranetnetzwerk automatisch ermitteln**. Vergessen Sie nicht, diese Einstellung nach Abschluss Ihrer Tests wiederherzustellen.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
@@ -138,4 +138,4 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Mobile Services HTML/JavaScript How-to Conceptual Reference]: mobile-services-html-how-to-use-client-library.md
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -96,4 +96,4 @@ Falls gewünscht, kann ein Tool wie **wget** oder Fiddler verwendet werden, um d
 
 [Verwalten des Ablaufs von Clouddienstinhalten in Azure CDN (Content Delivery Network)](./cdn-manage-expiration-of-cloud-service-content.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
    ms.date="07/07/2015"
@@ -298,7 +298,7 @@ Wie bei den vorherigen Schritten gibt es nur wenige Unterschiede zwischen der Im
   
 	Dieser Schritt konfiguriert einen Dienst, der die zuvor definierte standardmäßige **WebHttpRelayBinding**-Bindung verwendet. Darüber hinaus verwendet er den standardmäßigen **SbTokenProvider**-Anbieter, die im nächsten Schritt definiert wird.
 
-6. Erstellen Sie nach dem `<services>`-Element ein `<behaviors>`-Element mit dem folgenden Inhalt, der "SAS_KEY" gegen den *Shared Access Signature*-Schlüssel (SAS) ersetzt, den Sie in Schritt 1 aus dem Azure-Verwaltungsportal abgerufen haben.
+6. Erstellen Sie nach dem `<services>`-Element ein `<behaviors>`-Element mit dem folgenden Inhalt, der "SAS\_KEY" gegen den *Shared Access Signature*-Schlüssel (SAS) ersetzt, den Sie in Schritt 1 aus dem Azure-Verwaltungsportal abgerufen haben.
   
 	```xml
 	<behaviors>
@@ -568,7 +568,7 @@ namespace Microsoft.ServiceBus.Samples
 
 Führen Sie nach dem Erstellen der Projektmappe Folgendes aus, um die Anwendung auszuführen:
 
-1. Führen Sie den Dienst an einer Eingabeaufforderung aus (ImageListener\bin\Debug\ImageListener.exe).
+1. Führen Sie den Dienst an einer Eingabeaufforderung aus (ImageListener\\bin\\Debug\\ImageListener.exe).
 
 2. Kopieren Sie die Adresse aus der Eingabeaufforderung in einen Browser, um das Bild anzuzeigen.
 
@@ -580,4 +580,4 @@ Da Sie jetzt eine Anwendung erstellt haben, die den Service Bus Relay-Dienst ver
 
 - [Verwenden des Service Bus Relay-Diensts](service-bus-dotnet-how-to-use-relay.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

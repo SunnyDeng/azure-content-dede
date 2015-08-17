@@ -7,7 +7,9 @@
 	authors="dlepow"
 	services="virtual-machines"/>
 
-\<tags ms.service="virtual-machines" ms.workload="infrastructure-services"" ms.tgt\_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="06/09/2015" ms.author="danlep"/\>
+
+<tags ms.service="virtual-machines" ms.workload="infrastructure-services"" ms.tgt\_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="06/09/2015" ms.author="danlep"/>
+
 
 # Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager
 
@@ -22,9 +24,9 @@ In diesem Artikel erfahren Sie, wie Sie Ihre Azure-Ressourcen und Ihre virtuelle
 
 ## Azure-Ressourcen
 
-Mit dem Azure Ressourcen-Manager können Sie eine Gruppe von _Ressourcen_ \(vom Benutzer verwaltete Entitäten wie etwa virtuelle Computer, Datenbankserver, Datenbanken oder Websites\) als einzelne logische Einheit \(_Ressourcengruppe_\) verwalten. Diese Ressourcen können genau wie im Azure-Ressourcen-Manager-Modus imperativ über die Befehlszeile erstellt, verwaltet und gelöscht werden.
+Mit dem Azure Ressourcen-Manager können Sie eine Gruppe von _Ressourcen_ (vom Benutzer verwaltete Entitäten wie etwa virtuelle Computer, Datenbankserver, Datenbanken oder Websites) als einzelne logische Einheit (_Ressourcengruppe_) verwalten. Diese Ressourcen können genau wie im Azure-Ressourcen-Manager-Modus imperativ über die Befehlszeile erstellt, verwaltet und gelöscht werden.
 
-Im Azure-Ressourcen-Manager-Modus können Sie Ihre Azure-Ressourcen außerdem _deklarativ_ verwalten, indem Sie die Struktur und die Beziehungen einer bereitstellbaren Gruppe von Ressourcen in *JSON-Vorlagen* beschreiben. Die Vorlage beschreibt Parameter, die entweder beim Ausführen eines Befehls \(Inline\) ausgefüllt oder in einer separaten JSON-Datei \(„azuredeploy-parameters.json“\) gespeichert werden. Auf diese Weise können Sie mühelos neue Ressourcen mit derselben Vorlage erstellen, indem Sie unterschiedliche Parameter bereitstellen. So enthält beispielsweise eine Vorlage für die Websiteerstellung Parameter für den Websitenamen und die Region, in der sich die Website befinden soll, sowie andere allgemeine Parameter.
+Im Azure-Ressourcen-Manager-Modus können Sie Ihre Azure-Ressourcen außerdem _deklarativ_ verwalten, indem Sie die Struktur und die Beziehungen einer bereitstellbaren Gruppe von Ressourcen in *JSON-Vorlagen* beschreiben. Die Vorlage beschreibt Parameter, die entweder beim Ausführen eines Befehls (Inline) ausgefüllt oder in einer separaten JSON-Datei („azuredeploy-parameters.json“) gespeichert werden. Auf diese Weise können Sie mühelos neue Ressourcen mit derselben Vorlage erstellen, indem Sie unterschiedliche Parameter bereitstellen. So enthält beispielsweise eine Vorlage für die Websiteerstellung Parameter für den Websitenamen und die Region, in der sich die Website befinden soll, sowie andere allgemeine Parameter.
 
 Wenn mit einer Vorlage eine Gruppe geändert oder erstellt wird, wird eine _Bereitstellung_ erstellt, die dann auf die Gruppe angewendet wird. Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
@@ -34,7 +36,7 @@ Wenn Sie den Azure-Ressourcen-Manager über die Azure-Befehlszeilenschnittstelle
 
 Weitere Informationen zur Authentifizierung mit einem Geschäfts- oder Schulkonto finden Sie unter [Herstellen einer Verbindung mit einem Azure-Abonnement über die Azure-Befehlszeilenschnittstelle](../xplat-cli-connect.md).
 
-> [AZURE.NOTE]Dank der Verwendung eines \(von Azure Active Directory verwalteten\) Geschäfts- oder Schulkontos können Sie auch die rollenbasierte Zugriffssteuerung \(Role-Based Access Control, RBAC\) von Azure nutzen, um den Zugriff auf und die Verwendung von Azure-Ressourcen zu verwalten. Ausführlichere Informationen finden Sie unter [Verwalten und Überwachen des Ressourcen-Zugriffs](../resource-group-rbac.md).
+> [AZURE.NOTE]Dank der Verwendung eines (von Azure Active Directory verwalteten) Geschäfts- oder Schulkontos können Sie auch die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) von Azure nutzen, um den Zugriff auf und die Verwendung von Azure-Ressourcen zu verwalten. Ausführlichere Informationen finden Sie unter [Verwalten und Überwachen des Ressourcen-Zugriffs](../resource-group-rbac.md).
 
 ## Festlegen des Azure-Ressourcen-Manager-Modus
 
@@ -50,7 +52,7 @@ Bei den meisten Azure-Ressourcen-Manager-Befehlen muss für die Ressourcenerstel
 
 	azure location list
 
-Dadurch erhalten Sie eine regionsspezifische Standortliste \(beispielsweise für den Westen der USA, für den Osten der USA usw.\).
+Dadurch erhalten Sie eine regionsspezifische Standortliste (beispielsweise für den Westen der USA, für den Osten der USA usw.).
 
 ## Erstellen einer Ressourcengruppe
 
@@ -84,13 +86,13 @@ Dies ist die grundlegende Methode zum Konfigurieren und Erstellen eines virtuell
 
 #### Erstellen einer öffentlichen IP-Ressource
 
-Sie müssen eine öffentliche IP-Adresse erstellen, um eine SSH-Verbindung mit Ihrem neuen virtuellen Computer herstellen und diesen sinnvoll verwenden zu können. Das Erstellen einer öffentlichen IP-Adresse ist ganz einfach. Für den Befehl müssen Sie eine Ressourcengruppe, einen Namen für Ihre öffentliche IP-Ressource und einen Standort \(in dieser Reihenfolge\) angeben.
+Sie müssen eine öffentliche IP-Adresse erstellen, um eine SSH-Verbindung mit Ihrem neuen virtuellen Computer herstellen und diesen sinnvoll verwenden zu können. Das Erstellen einer öffentlichen IP-Adresse ist ganz einfach. Für den Befehl müssen Sie eine Ressourcengruppe, einen Namen für Ihre öffentliche IP-Ressource und einen Standort (in dieser Reihenfolge) angeben.
 
 	azure network public-ip create "testrg" "testip" "westus"
 
-#### Erstellen einer NIC-Ressource \(Netzwerkschnittstellenkarte\)
+#### Erstellen einer NIC-Ressource (Netzwerkschnittstellenkarte)
 
-Für die Netzwerkschnittstellenkarte \(Network Interface Card, NIC\) müssen zunächst ein Subnetz und ein virtuelles Netzwerk erstellt werden. Erstellen Sie mithilfe des Befehls **network vnet create** ein virtuelles Netzwerk an einem bestimmten Standort und in einer bestimmten Ressourcengruppe.
+Für die Netzwerkschnittstellenkarte (Network Interface Card, NIC) müssen zunächst ein Subnetz und ein virtuelles Netzwerk erstellt werden. Erstellen Sie mithilfe des Befehls **network vnet create** ein virtuelles Netzwerk an einem bestimmten Standort und in einer bestimmten Ressourcengruppe.
 
 	azure network vnet create "testrg" "testvnet" "westus"
 
@@ -150,7 +152,7 @@ Führen Sie den folgenden Befehl aus, um den virtuellen Computer zu starten:
 
 	azure vm start "testrg" "testvm"
 
-Führen Sie anschließend den Befehl **ssh username@ipaddress** aus, um eine SSH-Verbindung herzustellen. Mit dem folgenden Befehl können Sie schnell die IP-Adresse der öffentlichen IP-Ressource anzeigen.
+Führen Sie anschließend den Befehl „\*\*ssh username@ipaddress**“ aus, um eine SSH-Verbindung herzustellen. Mit dem folgenden Befehl können Sie schnell die IP-Adresse der öffentlichen IP-Ressource anzeigen.
 
 	azure network public-ip show "testrg" "testip"
 
@@ -177,11 +179,11 @@ Die Azure-Befehlszeilenschnittstelle erstellt einen virtuellen Computer mit Stan
 
 #### Suchen und Konfigurieren einer Ressourcengruppenvorlage
 
-1. Sie können eine eigene Vorlage erstellen, eine Vorlage aus dem Katalog auswählen oder die bei [GitHub](https://github.com/azurermtemplates/azurermtemplates) verfügbaren Vorlagen verwenden. Wir verwenden für den Anfang eine Vorlage namens „CoreOS.CoreOSStable.0.2.40-preview“ aus dem Vorlagenkatalog. Verwenden Sie zum Auflisten der verfügbaren Vorlagen im Katalog den folgenden Befehl. Da hier unzählige Vorlagen zur Auswahl stehen, empfiehlt es sich, die Ergebnisse auf Seiten umzubrechen. Für die Suche nach interessanten Vorlagen können Sie auch **grep** oder **findstr** \(unter Windows\) oder Ihren bevorzugten Befehl für die Zeichenfolgensuche verwenden. Alternativ können Sie die Option **--json** verwenden und die gesamte Liste im JSON-Format herunterladen, um die Suche zu vereinfachen.
+1. Sie können eine eigene Vorlage erstellen, eine Vorlage aus dem Katalog auswählen oder die bei [GitHub](https://github.com/azurermtemplates/azurermtemplates) verfügbaren Vorlagen verwenden. Wir verwenden für den Anfang eine Vorlage namens „CoreOS.CoreOSStable.0.2.40-preview“ aus dem Vorlagenkatalog. Verwenden Sie zum Auflisten der verfügbaren Vorlagen im Katalog den folgenden Befehl. Da hier unzählige Vorlagen zur Auswahl stehen, empfiehlt es sich, die Ergebnisse auf Seiten umzubrechen. Für die Suche nach interessanten Vorlagen können Sie auch **grep** oder **findstr** (unter Windows) oder Ihren bevorzugten Befehl für die Zeichenfolgensuche verwenden. Alternativ können Sie die Option **--json** verwenden und die gesamte Liste im JSON-Format herunterladen, um die Suche zu vereinfachen.
 
 		azure group template list
 
-	In der Antwort werden die Namen des Herausgebers und der Vorlage ähnlich wie im nachfolgenden Beispiel gezeigt aufgeführt \(es gibt allerdings bedeutend mehr Ergebnisse\).
+	In der Antwort werden die Namen des Herausgebers und der Vorlage ähnlich wie im nachfolgenden Beispiel gezeigt aufgeführt (es gibt allerdings bedeutend mehr Ergebnisse).
 
 		data:    Publisher               Name
 		data:    ----------------------------------------------------------------------------
@@ -208,7 +210,7 @@ Die Azure-Befehlszeilenschnittstelle erstellt einen virtuellen Computer mit Stan
 
 	Wenn Sie eine Vorlage verwenden, können Sie Parameter als Teil der Befehlszeilenparameter bereitstellen oder eine Datei angeben, die die Parameterwerte enthält. Wertfelder** können** zwar auch direkt in den **Parameterabschnitt** der Vorlage geschrieben werden, dadurch wird die Vorlage allerdings stark an eine bestimmte Bereitstellung gebunden und lässt sich nicht mehr ohne Weiteres wiederverwenden. In beiden Fällen müssen die Parameter im JSON-Format sein und Sie müssen Ihre eigenen Werte für solche Schlüssel angeben, die nicht über Standardwerte verfügen.
 
-	Wenn Sie also beispielsweise eine Datei mit den Parametern für die Vorlage „CoreOS.CoreOSStable.0.2.40-preview“ erstellen möchten, können Sie auf der Grundlage der folgenden Daten eine Datei namens „params.json“ erstellen. Ersetzen Sie die Werte in diesem Beispiel durch Ihre eigenen Werte. Geben Sie für **Location** eine Azure-Region in Ihrer Nähe an \(beispielsweise **North Europe** oder **South Central US**\). \(In diesem Beispiel wird **West US** verwendet.\)
+	Wenn Sie also beispielsweise eine Datei mit den Parametern für die Vorlage „CoreOS.CoreOSStable.0.2.40-preview“ erstellen möchten, können Sie auf der Grundlage der folgenden Daten eine Datei namens „params.json“ erstellen. Ersetzen Sie die Werte in diesem Beispiel durch Ihre eigenen Werte. Geben Sie für **Location** eine Azure-Region in Ihrer Nähe an (beispielsweise **North Europe** oder **South Central US**). (In diesem Beispiel wird **West US** verwendet.)
 
 		{
 		  "newStorageAccountName": {
@@ -285,7 +287,7 @@ Die Azure-Befehlszeilenschnittstelle erstellt einen virtuellen Computer mit Stan
 
 	Dieser Befehl gibt Informationen zu den Ressourcen in der Gruppe zurück. Sind mehreren Gruppen vorhanden, können Sie mit dem Befehl `azure group list` eine Liste mit Gruppennamen abrufen. Verwenden Sie dann `azure group show`, um die Details einer bestimmten Gruppe anzuzeigen.
 
-7. Anstelle der Vorlagen aus der Vorlagenbibliothek können Sie auch aktuelle Vorlagen über GitHub beziehen. Suchen Sie auf [GitHub.com](http://www.github.com) nach „AzureRmTemplates“. Wählen Sie das Repository „AzureRmTemplates“ aus, und suchen Sie nach Vorlagen, die für Sie interessant sind \(beispielsweise _101-simple-vm-from-image_\). Wenn Sie die Vorlage anklicken, sehen Sie, dass sie unter anderem die Datei „azuredeploy.json“ enthält. Das ist die Vorlage, die Sie in Ihrem Befehl mit einer Option vom Typ **--template-url** verwenden möchten. Öffnen Sie die Vorlage im _Rohmodus_, und kopieren Sie die URL aus der Adressleiste des Browsers. Mit dieser URL können Sie direkt eine Bereitstellung erstellen, anstatt eine Vorlage aus einem Katalog herunterzuladen. Verwenden Sie hierzu einen Befehl wie im folgenden Beispiel.
+7. Anstelle der Vorlagen aus der Vorlagenbibliothek können Sie auch aktuelle Vorlagen über GitHub beziehen. Suchen Sie auf [GitHub.com](http://www.github.com) nach „AzureRmTemplates“. Wählen Sie das Repository „AzureRmTemplates“ aus, und suchen Sie nach Vorlagen, die für Sie interessant sind (beispielsweise _101-simple-vm-from-image_). Wenn Sie die Vorlage anklicken, sehen Sie, dass sie unter anderem die Datei „azuredeploy.json“ enthält. Das ist die Vorlage, die Sie in Ihrem Befehl mit einer Option vom Typ **--template-url** verwenden möchten. Öffnen Sie die Vorlage im _Rohmodus_, und kopieren Sie die URL aus der Adressleiste des Browsers. Mit dieser URL können Sie direkt eine Bereitstellung erstellen, anstatt eine Vorlage aus einem Katalog herunterzuladen. Verwenden Sie hierzu einen Befehl wie im folgenden Beispiel.
 
 		azure group deployment create "testDeploy" -g "testResourceGroup" --template-uri https://raw/githubusercontent.com/azurermtemplates/azurermtemplates/master/101-simple-vm-from-image/azuredeploy.json
 
@@ -331,7 +333,7 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 
 * Weitere Informationen zur Verwendung der Azure-Befehlszeilenschnittstelle finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle][clisetup].
 * Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers mit Azure PowerShell finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
-* Weitere Informationen zur Verwendung des Ressourcen-Managers im Azure-Portal finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen][psrm].
+* Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers im Azure-Portal finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen][psrm].
 
 [signuporg]: http://www.windowsazure.com/documentation/articles/sign-up-organization/
 [adtenant]: http://technet.microsoft.com/library/jj573650#createAzureTenant
@@ -339,4 +341,4 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 [clisetup]: ../xplat-cli.md
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

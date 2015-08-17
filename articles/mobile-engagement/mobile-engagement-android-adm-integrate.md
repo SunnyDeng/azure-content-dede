@@ -102,7 +102,7 @@ Stellen Sie sicher, dass Sie die folgenden Berechtigungen in der Datei `AndroidM
 
 ##Gewähren von OAuth-Anmeldeinformationen für Engagement
 
-Übermitteln Sie Ihre OAuth-Anmeldeinformationen (Client-ID und Clientschlüssel) an $/#application/YOUR_APPID/native-push.
+Übermitteln Sie Ihre OAuth-Anmeldeinformationen (Client-ID und Clientschlüssel) an $/#application/YOUR\_APPID/native-push.
 
 Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Option "Any Time "(Jederzeit) auswählen.
 
@@ -113,4 +113,4 @@ Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Opti
 [dieses Verfahren]: https://developer.amazon.com/sdk/adm/integrating-app.html#Asset
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

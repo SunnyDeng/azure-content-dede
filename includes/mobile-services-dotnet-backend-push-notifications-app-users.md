@@ -1,5 +1,5 @@
 
-1. Erweitern Sie in Visual Studio im Projektmappen-Explorer den Ordner "App_Start", und öffnen Sie die Datei "WebApiConfig.cs".
+1. Erweitern Sie in Visual Studio im Projektmappen-Explorer den Ordner "App\_Start", und öffnen Sie die Datei "WebApiConfig.cs".
 
 2. Fügen Sie der Methode "Register" die folgende Codezeile nach der Definition von **ConfigOptions** hinzu:
 
@@ -92,4 +92,4 @@
 Nun verwendet der Dienst die Benutzer-ID-Markierung, um eine Pushbenachrichtigung (mit dem Text des eingefügten Elements) an alle Registrierungen zu senden, die vom angemeldeten Benutzer erstellt wurden.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

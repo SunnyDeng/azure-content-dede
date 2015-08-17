@@ -148,4 +148,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [9]: ./media/search-get-started-nodejs/rogerwilliamsschool.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -19,20 +19,20 @@
  
 #Erstellen und Laden von Daten in Hive-Tabellen aus Azure-Blob-Speicher
  
-In diesem Dokument werden generische Hive-Abfragen beschrieben, die Hive-Tabellen erstellen und Daten aus dem Azure-Blob-Speicher laden. Es werden auch einige Hinweise zur Partitionierung der Hive-Tabellen und zur Verwendung des ORC-Formats \(Optimized Row Columnar\) zur Verbesserung der Abfrageleistung bereitgestellt.
+In diesem Dokument werden generische Hive-Abfragen beschrieben, die Hive-Tabellen erstellen und Daten aus dem Azure-Blob-Speicher laden. Es werden auch einige Hinweise zur Partitionierung der Hive-Tabellen und zur Verwendung des ORC-Formats (Optimized Row Columnar) zur Verbesserung der Abfrageleistung bereitgestellt.
 
 
 Die Hive-Abfragen wurden im <a href="https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts/sample_hive_create_db_tbls_load_data_generic.hql" target="_blank">GitHub-Repository</a> freigegeben und können von dort heruntergeladen werden.
 
-Wenn Sie einen virtuellen Azure-Computer mithilfe der Anweisungen in [Einrichten eines virtuellen Azure-Computers für die erweiterte Analyse](machine-learning-data-science-setup-virtual-machine.md) erstellen, wurde diese Skriptdatei bereits in das Verzeichnis *C:\\Users\<Benutzername\>\\Documents\\Data Science Scripts* auf dem virtuellen Computer heruntergeladen. Sie müssen Ihr eigenes Datenschema implementieren und die Konfiguration des Azure-Blob-Speichers in den entsprechenden Feldern dieser Abfragen vornehmen. Danach sollten diese Hive-Abfragen für die Übermittlung bereit sein.
+Wenn Sie einen virtuellen Azure-Computer mithilfe der Anweisungen in [Einrichten eines virtuellen Azure-Computers für die erweiterte Analyse](machine-learning-data-science-setup-virtual-machine.md) erstellen, wurde diese Skriptdatei bereits in das Verzeichnis *C:\\Users<Benutzername>\\Documents\\Data Science Scripts* auf dem virtuellen Computer heruntergeladen. Sie müssen Ihr eigenes Datenschema implementieren und die Konfiguration des Azure-Blob-Speichers in den entsprechenden Feldern dieser Abfragen vornehmen. Danach sollten diese Hive-Abfragen für die Übermittlung bereit sein.
 
-Es wird davon ausgegangen, dass die Daten für die Hive-Tabellen in einem **unkomprimierten** Tabellenformat vorliegen und dass die Daten in den Standardcontainer \(oder einen zusätzlichen Container\) des Speicherkontos hochgeladen wurden, das vom Hadoop-Cluster verwendet wird. Wenn Sie mit den _NYC Taxi Trip-Daten_ üben möchten, müssen Sie zuerst alle 24 <a href="http://www.andresmh.com/nyctaxitrips/" target="_blank">NYC Taxi Trip-Daten</a>-Dateien herunterladen \(12 Fahrtendateien und 12 Preisdateien\), alle Dateien als CSV-Dateien **entpacken** und diese dann in den Standardcontainer \(oder einen geeigneten Container\) des Azure-Speicherkontos hochladen, das für das Verfahren im Thema [Anpassen des Azure HDInsight Hadoop-Clusters für den erweiterten Analyseprozess](machine-learning-data-science-customize-hadoop-cluster.md) erstellt wurde. Den Prozess zum Hochladen der CSV-Dateien in den Standardcontainer für das Speicherkonto finden Sie auf dieser [Seite](machine-learning-data-science-process-hive-walkthrough/#upload).
+Es wird davon ausgegangen, dass die Daten für die Hive-Tabellen in einem **unkomprimierten** Tabellenformat vorliegen und dass die Daten in den Standardcontainer (oder einen zusätzlichen Container) des Speicherkontos hochgeladen wurden, das vom Hadoop-Cluster verwendet wird. Wenn Sie mit den _NYC Taxi Trip-Daten_ üben möchten, müssen Sie zuerst alle 24 <a href="http://www.andresmh.com/nyctaxitrips/" target="_blank">NYC Taxi Trip-Daten</a>-Dateien herunterladen (12 Fahrtendateien und 12 Preisdateien), alle Dateien als CSV-Dateien **entpacken** und diese dann in den Standardcontainer (oder einen geeigneten Container) des Azure-Speicherkontos hochladen, das für das Verfahren im Thema [Anpassen des Azure HDInsight Hadoop-Clusters für den erweiterten Analyseprozess](machine-learning-data-science-customize-hadoop-cluster.md) erstellt wurde. Den Prozess zum Hochladen der CSV-Dateien in den Standardcontainer für das Speicherkonto finden Sie auf dieser [Seite](machine-learning-data-science-process-hive-walkthrough/#upload).
 
 Hive-Abfragen können an der Hadoop-Befehlszeile auf dem Hauptknoten des Hadoop-Clusters übermittelt werden. Dazu melden Sie sich auf dem Hauptknoten des Hadoop-Clusters an, öffnen die Hadoop-Befehlszeile und übermitteln die Hive-Abfragen von dort aus. Anweisungen dazu finden Sie unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im erweiterten Analyseprozess](machine-learning-data-science-process-hive-tables.md).
 
-Sie können auch die Abfrage-Konsole \(Hive-Editor\) verwenden, indem Sie die URL
+Sie können auch die Abfrage-Konsole (Hive-Editor) verwenden, indem Sie die URL
 
-https://&#60;Hadoop Clustername\>.azurehdinsight.net/Home/HiveEditor
+https://&#60;Hadoop Clustername>.azurehdinsight.net/Home/HiveEditor
 
 in einem Webbrowser eingeben. Beachten Sie, dass Sie zur Eingabe der Anmeldeinformationen für den Hadoop-Cluster aufgefordert werden. Alternativ können Sie [Hive-Aufträge mit PowerShell übermitteln](../hdinsight/hdinsight-submit-hadoop-jobs-programmatically.md#hive-powershell).
 
@@ -62,19 +62,19 @@ Mit dieser Hive-Abfrage erstellen Sie eine Hive-Tabelle.
 
 Im Folgenden werden die Felder beschrieben, mit denen Sie die Implementierung und andere Konfigurationen vornehmen:
 
-- **&\#60;Datenbankname\>**: Name der zu erstellenden Datenbank. Wenn Sie die Standarddatenbank verwenden möchten, kann die Abfrage *create database...* ausgelassen werden. 
-- **&\#60;Tabellenname\>**: Name der zu erstellenden Tabelle in der angegebenen Datenbank. Wenn Benutzer die Standarddatenbank verwenden möchten, kann auf die Tabelle direkt mit *&\#60;Tabellenname\>* ohne &\#60;Datenbankname\> verwiesen werden.
-- **&\#60;Feldtrennzeichen\>**: Trennzeichen für die Felder in der Datendatei, die in die Hive-Tabelle hochgeladen werden soll. 
-- **&\#60;Zeilentrennzeichen\>**: Trennzeichen für die Zeilen in der Datendatei. 
-- **&\#60;Speicherort\>**: Azure-Speicherort zum Speichern der Daten der Hive-Tabellen. Wenn Sie *LOCATION &\#60;Speicherort\>* nicht angeben, werden die Datenbank und die Tabellen im Verzeichnis *hive/warehouse/* im Standardcontainer des Hive-Clusters gespeichert. Wenn Sie den Speicherort angeben möchten, muss sich dieser im Standardcontainer für die Datenbank und die Tabellen befinden. Auf diesen Speicherort muss als relativer Speicherort zum Standardcontainer des Clusters im Format *'wasb:///&\#60;Verzeichnis 1\>/'* oder *'wasb:///&\#60;Verzeichnis 1\>/&\#60;Verzeichnis 2\>/'* usw. verwiesen werden. Nachdem die Abfrage ausgeführt wurde, werden die relativen Verzeichnisse innerhalb des Standardcontainers erstellt. 
-- **TBLPROPERTIES\("skip.header.line.count"="1"\)**: Wenn die Datendatei einen Header enthält, müssen Sie diese Eigenschaft **am Ende** der *create table*-Abfrage einfügen. Andernfalls wird der Header als ein Datensatz in die Tabelle geladen. Wenn die Datendatei keinen Header enthält, kann dieser Konfigurationsschritt in der Abfrage ausgelassen werden. 
+- **&#60;Datenbankname>**: Name der zu erstellenden Datenbank. Wenn Sie die Standarddatenbank verwenden möchten, kann die Abfrage *create database...* ausgelassen werden. 
+- **&#60;Tabellenname>**: Name der zu erstellenden Tabelle in der angegebenen Datenbank. Wenn Benutzer die Standarddatenbank verwenden möchten, kann auf die Tabelle direkt mit *&#60;Tabellenname>* ohne &#60;Datenbankname> verwiesen werden.
+- **&#60;Feldtrennzeichen>**: Trennzeichen für die Felder in der Datendatei, die in die Hive-Tabelle hochgeladen werden soll. 
+- **&#60;Zeilentrennzeichen>**: Trennzeichen für die Zeilen in der Datendatei. 
+- **&#60;Speicherort>**: Azure-Speicherort zum Speichern der Daten der Hive-Tabellen. Wenn Sie *LOCATION &#60;Speicherort>* nicht angeben, werden die Datenbank und die Tabellen im Verzeichnis *hive/warehouse/* im Standardcontainer des Hive-Clusters gespeichert. Wenn Sie den Speicherort angeben möchten, muss sich dieser im Standardcontainer für die Datenbank und die Tabellen befinden. Auf diesen Speicherort muss als relativer Speicherort zum Standardcontainer des Clusters im Format *'wasb:///&#60;Verzeichnis 1>/'* oder *'wasb:///&#60;Verzeichnis 1>/&#60;Verzeichnis 2>/'* usw. verwiesen werden. Nachdem die Abfrage ausgeführt wurde, werden die relativen Verzeichnisse innerhalb des Standardcontainers erstellt. 
+- **TBLPROPERTIES("skip.header.line.count"="1")**: Wenn die Datendatei einen Header enthält, müssen Sie diese Eigenschaft **am Ende** der *create table*-Abfrage einfügen. Andernfalls wird der Header als ein Datensatz in die Tabelle geladen. Wenn die Datendatei keinen Header enthält, kann dieser Konfigurationsschritt in der Abfrage ausgelassen werden. 
 
 ## <a name="load-data"></a>Laden von Daten in Hive-Tabellen
 Mit dieser Hive-Abfrage laden Sie Daten eine Hive-Tabelle.
 
     LOAD DATA INPATH '<path to blob data>' INTO TABLE <database name>.<table name>;
 
-- **&\#60;Pfad zu Blobdaten\>**: Wenn sich die in die Hive-Tabelle hochzuladende Blobdatei im Standardcontainer des HDInsight Hadoop-Clusters befindet, sollte *&\#60;Pfad zu Blobdaten\>* das Format *'wasb:///&\#60;Verzeichnis in diesem Container\>/&\#60;Blobdateiname\>'* haben. Die Blobdatei kann sich auch in einem zusätzlichen Container des HDInsight Hadoop-Clusters befinden. In diesem Fall muss *& \#60; Pfad zu Blobdaten \>* das Format *'wasb://&\#60;Containername\>@&\#60;Speicherkontoname\>.blob.windows.core.net/&\#60;Blobdateiname\>'* haben.
+- **&#60;Pfad zu Blobdaten>**: Wenn sich die in die Hive-Tabelle hochzuladende Blobdatei im Standardcontainer des HDInsight Hadoop-Clusters befindet, sollte *&#60;Pfad zu Blobdaten>* das Format *'wasb:///&#60;Verzeichnis in diesem Container>/&#60;Blobdateiname>'* haben. Die Blobdatei kann sich auch in einem zusätzlichen Container des HDInsight Hadoop-Clusters befinden. In diesem Fall muss *& #60; Pfad zu Blobdaten >* das Format *'wasb://&#60;Containername>@&#60;Speicherkontoname>.blob.windows.core.net/&#60;Blobdateiname>'* haben.
 
 	>[AZURE.NOTE]Die Blobdaten, die in die Hive-Tabelle hochgeladen werden sollen, müssen sich im Standard- oder einem zusätzlichen Container des Speicherkontos für den Hadoop-Cluster befinden. Andernfalls misslingt die Abfrage *LOAD DATA*, weil sie keinen Zugriff auf die Daten hat.
 
@@ -83,7 +83,7 @@ Mit dieser Hive-Abfrage laden Sie Daten eine Hive-Tabelle.
 
 Wenn die Daten sehr umfangreich sind, ist ein Partitionieren der Tabelle für Abfragen, die nur wenige Partitionen der Tabelle durchsuchen müssen, sehr hilfreich. Es ist z. B. sinnvoll, die Protokolldaten einer Website nach dem Datum zu partitionieren.
 
-Neben der Partitionierung der Hive-Tabellen ist es auch vorteilhaft, die Hive-Daten im ORC-Format \(Optimized Row Columnar\) zu speichern. Weitere Informationen zur ORC-Formatierung finden Sie unter <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC#LanguageManualORC-ORCFiles" target="_blank">Das Verwenden von ORC-Dateien verbessert die Leistung, wenn Hive Daten liest, schreibt und verarbeitet</a>.
+Neben der Partitionierung der Hive-Tabellen ist es auch vorteilhaft, die Hive-Daten im ORC-Format (Optimized Row Columnar) zu speichern. Weitere Informationen zur ORC-Formatierung finden Sie unter <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC#LanguageManualORC-ORCFiles" target="_blank">Das Verwenden von ORC-Dateien verbessert die Leistung, wenn Hive Daten liest, schreibt und verarbeitet</a>.
 
 ### Partitionierte Tabelle
 Mit dieser Hive-Abfrage erstellen Sie eine Hive-Tabelle und laden Daten in diese Tabelle.
@@ -140,17 +140,17 @@ Sie können nicht direkt Daten im ORC-Speicherformat aus dem Blob in Hive-Tabell
 		INSERT OVERWRITE TABLE <database name>.<ORC table name>
             SELECT * FROM <database name>.<external textfile table name>;
 
-	>[AZURE.NOTE]Wenn die TEXTFILE-Tabelle *&\#60;Datenbankname\>.&\#60;Name der externen TEXTFILE-Tabelle\>* Partitionen aufweist, fügt der `SELECT * FROM <database name>.<external textfile table name>`-Befehl in Schritt 3 die Partitionsvariable als ein Feld in das zurückgegebene Dataset ein. Das Einfügen in *&\#60;Datenbankname\>.&\#60;ORC-Tabellenname\>* misslingt, da *&\#60;Datenbankname\>.&\#60;ORC-Tabellenname\>* nicht die Partitionsvariable als Feld im Tabellenschema enthält. In diesem Fall müssen Sie die in *&\#60;Datenbankname\>.&\#60;ORC-Tabellenname\>* einzufügenden Felder explizit wie folgt auswählen:
+	>[AZURE.NOTE]Wenn die TEXTFILE-Tabelle *&#60;Datenbankname>.&#60;Name der externen TEXTFILE-Tabelle>* Partitionen aufweist, fügt der `SELECT * FROM <database name>.<external textfile table name>`-Befehl in Schritt 3 die Partitionsvariable als ein Feld in das zurückgegebene Dataset ein. Das Einfügen in *&#60;Datenbankname>.&#60;ORC-Tabellenname>* misslingt, da *&#60;Datenbankname>.&#60;ORC-Tabellenname>* nicht die Partitionsvariable als Feld im Tabellenschema enthält. In diesem Fall müssen Sie die in *&#60;Datenbankname>.&#60;ORC-Tabellenname>* einzufügenden Felder explizit wie folgt auswählen:
 
 		INSERT OVERWRITE TABLE <database name>.<ORC table name> PARTITION (<partition variable>=<partition value>)
 		   SELECT field1, field2, ..., fieldN
 		   FROM <database name>.<external textfile table name> 
 		   WHERE <partition variable>=<partition value>;
 
-4. Sie können *&\#60;Name der externen TEXTFILE-Tabelle\>* gefahrlos mithilfe der folgenden Abfrage löschen, nachdem alle Daten in *&\#60;Datenbankname\>.&\#60;ORC-Tabellenname\>* eingefügt wurden:
+4. Sie können *&#60;Name der externen TEXTFILE-Tabelle>* gefahrlos mithilfe der folgenden Abfrage löschen, nachdem alle Daten in *&#60;Datenbankname>.&#60;ORC-Tabellenname>* eingefügt wurden:
 
 		DROP TABLE IF EXISTS <database name>.<external textfile table name>;
 
 Sie besitzen nun eine einsatzbereite Tabelle mit Daten im ORC-Format.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

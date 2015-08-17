@@ -180,7 +180,7 @@ Weitere Informationen zu Event Hubs-Szenarien finden Sie unter diesen Links:
 
 - [Programmierleitfaden für Event Hubs](event-hubs-programming-guide.md)
 - [Übersicht über Event Hubs](event-hubs-overview.md)
-- \[Codebeispiele für Event Hubs\]\(http://code.msdn.microsoft.com/site/search?query=event hub&f\[0\].Value=event hub&f\[0\].Type=SearchText&ac=5\)
+- [Codebeispiele für Event Hubs](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hub&f[0].Type=SearchText&ac=5)
 
 Die .NET-API-Referenzen sind hier verfügbar:
 
@@ -188,4 +188,4 @@ Die .NET-API-Referenzen sind hier verfügbar:
 - [Referenz zur Ereignisprozessorhost-API](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.aspx)
 - 
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

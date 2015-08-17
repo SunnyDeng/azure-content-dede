@@ -34,4 +34,4 @@ Gehen Sie folgendermaßen vor, um eine MongoDB-Datenbank über den [Azure Store]
 [Azure Store]: ../articles/overview.md
 [portal]: http://windows.azure.com/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

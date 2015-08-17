@@ -158,4 +158,4 @@ Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluste
 [image-cli-clusterlisting]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png "Auflisten und Anzeigen von Clustern"
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

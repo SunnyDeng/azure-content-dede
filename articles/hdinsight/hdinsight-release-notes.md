@@ -7,17 +7,70 @@
 	manager="paulettm"
 	authors="nitinme"/>
 
+
 <tags
 	ms.service="hdinsight"
 	ms.workload="big-data"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/26/2015"
+	ms.date="07/30/2015"
 	ms.author="nitinme"/>
 
 
+
 # Versionshinweise zu Hadoop-Komponenten in Azure HDInsight
+
+## Hinweise für die HDInsight-Version vom 31.07.2015 ##
+
+Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
+
+* HDInsight 2.1.10.640.1695824 (HDP 1.3.12.0-01795 – unverändert)
+* HDInsight 3.0.6.640.1695824 (HDP 2.0.13.0-2117 – unverändert)
+* HDInsight 3.1.4.640.1695824 (HDP 2.1.15.0-2334 – unverändert)
+* HDInsight 3.2.6.640.1695824 (HDP 2.2.6.1-0012 – unverändert)
+* SDK 1.5.8
+
+Diese Version enthält die folgenden Updates.
+
+| Titel | Beschreibung | Betroffener Bereich (z. B. Dienst, Komponente oder SDK) | Clustertyp (z. B. Hadoop, HBase oder Storm) | JIRA (falls zutreffend) |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| Reimaging-Workflow des Spark-Clusterknotens beheben. | Ein Fehler wurde behoben, der verhinderte, dass Spark-Clusterknoten nach dem Reimaging nicht wiederhergestellt wurden. | Dienst | Spark| N/V |
+
+
+## Hinweise für die HDInsight-Version vom 31.07.2015 ##
+
+Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
+
+* HDInsight 2.1.10.635.1684502 (HDP 1.3.12.0-01795 – unverändert)
+* HDInsight 3.0.6.635.1684502 (HDP 2.0.13.0-2117 – unverändert)
+* HDInsight 3.1.4.635.1684502 (HDP 2.1.15.0-2334 – unverändert)
+* HDInsight 3.2.6.635.1684502 (HDP 2.2.6.1-0012 – unverändert)
+* SDK 1.5.8
+
+Diese Version enthält die folgenden Updates.
+
+| Titel | Beschreibung | Betroffener Bereich (z. B. Dienst, Komponente oder SDK) | Clustertyp (z. B. Hadoop, HBase oder Storm) | JIRA (falls zutreffend) |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| Aktualisierte Versionen von HDInsight aller HDInsight-Cluster | In dieser Version wurden HDInsight-Versionen aktualisiert | Dienst | Alle| N/V |
+
+
+## Hinweise für die HDInsight-Version vom 07.07.2015 ##
+
+Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
+
+* HDInsight 2.1.10.610.1630216 (HDP 1.3.12.0-01795 – unverändert)
+* HDInsight 3.0.6.610.1630216 (HDP 2.0.13.0-2117 – unverändert)
+* HDInsight 3.1.4.610.1630216 (HDP 2.1.15.0-2334 – unverändert)
+* HDInsight 3.2.4.610.1630216 (HDP 2.2.6.1-0012)
+* SDK 1.5.8
+
+
+Diese Version enthält die folgenden Updates.
+
+| Titel | Beschreibung | Betroffener Bereich (z. B. Dienst, Komponente oder SDK) | Clustertyp (z. B. Hadoop, HBase oder Storm) | JIRA (falls zutreffend) |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| Aktualisierte HDP-Versionen für HDInsight 3.2-Cluster | Mit dieser Version stellt HDInsight 3.2 HDP 2.2.6.1-0012 bereit. | Dienst | Alle | N/V |
 
 
 ## Hinweise für die HDInsight-Version vom 06.26.2015 ##
@@ -1017,7 +1070,7 @@ Dieser Hotfix korrigiert einen Speicherverlust in Templeton, der insbesondere Te
 
 ## Hinweise für die Version vom 07.10.2014 ##
 
-* Beim Verwenden des Ambari-Endpunkts https://{clusterDns}.azurehdinsight.net/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.net/services/{servicename}/components/{componentname} gibt das Feld *host_name* nun den vollqualifizierten Domänennamen (FQDN) des Knotens anstelle des Hostnamens zurück. Anstatt beispielsweise des Rückgabewerts **headnode0** erhalten Sie den FQDN **headnode0.{ClusterDNS}.azurehdinsight.net**. Diese Änderung war erforderlich, um Szenarien, in denen mehrere Clustertypen (z. B. HBase und Hadoop) in einem einzigen virtuellen Netzwerk (VNET) bereitgestellt werden, zu erleichtern. Dies ist z. B. der Fall, wenn HBase als Back-End-Plattform für Hadoop verwendet wird.
+* Beim Verwenden des Ambari-Endpunkts https://{clusterDns}.azurehdinsight.net/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.net/services/{servicename}/components/{componentname} gibt das Feld *host\_name* nun den vollqualifizierten Domänennamen (FQDN) des Knotens anstelle des Hostnamens zurück. Anstatt beispielsweise des Rückgabewerts "**headnode0**" erhalten Sie den FQDN "\*\*headnode0.{ClusterDNS}.azurehdinsight.net\*\*". Diese Änderung war erforderlich, um Szenarien, in denen mehrere Clustertypen (z. B. HBase und Hadoop) in einem einzigen virtuellen Netzwerk (VNET) bereitgestellt werden, zu erleichtern. Dies ist z. B. der Fall, wenn HBase als Back-End-Plattform für Hadoop verwendet wird.
 
 * Wir haben neue Speichereinstellungen für die Standardbereitstellung des HDInsight-Clusters bereitgestellt. Bei den vorherigen Speichereinstellungen wurden die Empfehlungen für die Anzahl der bereitgestellten CPU-Kerne nicht ausreichend berücksichtigt. Diese neuen Arbeitsspeichereinstellungen sollten (gemäß den Empfehlungen von Hortonworks) bessere Standardeinstellungen bieten. Um diese Einstellungen zu ändern, konsultieren Sie die SDK-Referenzdokumentation bezüglich des Änderns der Clusterkonfiguration. Die folgende Tabelle enthält die neuen Arbeitsspeichereinstellungen für ein Standard-HDInsight-Cluster mit 4 CPU-Kernen (8 Containern). (Die Werte, die in vorherigen Versionen verwendet wurden, sind in Klammern angegeben).
 
@@ -1147,7 +1200,7 @@ Die folgende Abhängigkeiten wurden in HDInsight 3.x (HDP2.x) hinzugefügt:
 * javax.inject
 * activation
 * jsr305
-* geronimo-jaspic_1.0_spec
+* geronimo-jaspic\_1.0\_spec
 * jul-to-slf4j
 * java-xmlbuilder
 * ant
@@ -1174,7 +1227,7 @@ Die folgende Abhängigkeiten wurden in HDInsight 3.x (HDP2.x) hinzugefügt:
 * jpam
 * jersey-client
 * aopalliance
-* geronimo-annotation_1.0_spec
+* geronimo-annotation\_1.0\_spec
 * ant-launcher
 * jersey-guice
 * xml-apis
@@ -1182,7 +1235,7 @@ Die folgende Abhängigkeiten wurden in HDInsight 3.x (HDP2.x) hinzugefügt:
 * asm-commons
 * asm-tree
 * wadl
-* geronimo-jta_1.1_spec
+* geronimo-jta\_1.1\_spec
 * guice
 * leveldbjni-all
 * velocity
@@ -1234,7 +1287,7 @@ Die folgenden Versionsänderungen wurden zwischen HDInsight 2.x (HDP1.x) und HDI
 * datanucleus-api-jdo: ['3.0.7'] -> ['3.2.6']
 * zookeeper: ['3.4.5.1.3.9.0-01320'] -> ['3.4.5.2.1.3.0-1948']
 * bonecp: ['0.7.1.RELEASE'] -> ['
-* 0.8.0.RELEASE']
+* 0\.8.0.RELEASE']
 
 
 ###Treiber
@@ -1280,4 +1333,4 @@ Versionshinweise zu den HDPs (Hortonworks Data Platforms), die von den Versionen
 [hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

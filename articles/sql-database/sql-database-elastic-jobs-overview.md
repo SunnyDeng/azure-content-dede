@@ -1,7 +1,8 @@
 <properties 
 	pageTitle="Übersicht über elastische Datenbankaufträge" 
 	description="Veranschaulicht den Dienst für elastische Datenbankaufträge" 
-	services="sql-database" documentationCenter=""  
+	services="sql-database" 
+	documentationCenter="" 
 	manager="jeffreyg" 
 	authors="sidneyh"/>
 
@@ -57,4 +58,4 @@ Die folgenden Komponenten arbeiten zusammen, um einen Azure-Clouddienst zu erste
 [1]: ./media/sql-database-elastic-jobs-overview/elastic-jobs.png
 <!--anchors-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

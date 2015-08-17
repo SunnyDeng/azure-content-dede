@@ -92,7 +92,7 @@ Die Anmeldeinformationen umfassen Benutzer-ID und Kennwort, die von der Abfrage 
     WITH IDENTITY = '<shard_map_username>',
     SECRET = '<shard_map_password>'
      [;]
-Stellen Sie sicher, dass &lt;shard_map_username> kein "@servername"-Suffix enthält.
+Stellen Sie sicher, dass &lt;shard\_map\_username> kein "@servername"-Suffix enthält.
 
 Verwenden Sie die folgende Syntax, um Hauptschlüssel und Anmeldeinformationen zu übergeben:
 
@@ -204,9 +204,9 @@ Sobald Sie Ihre externen Tabellen und die externe Datenquelle definiert haben, k
     where w_id > 100 and w_id < 200
     group by w_id, o_c_id
 
-### Gespeicherte Prozedur SP_EXECUTE_FANOUT
+### Gespeicherte Prozedur SP\_EXECUTE\_FANOUT
 
-SP_EXECUTE_FANOUT ist eine gespeicherte Prozedur, die Zugriff auf die Datenbanken bietet, die durch eine Shard-Zuordnung dargestellt werden. Die folgenden Parameter können für diese gespeicherte Prozedur verwendet werden:
+SP\_EXECUTE\_FANOUT ist eine gespeicherte Prozedur, die Zugriff auf die Datenbanken bietet, die durch eine Shard-Zuordnung dargestellt werden. Die folgenden Parameter können für diese gespeicherte Prozedur verwendet werden:
 
 -    **Servername** (nvarchar): Vollqualifizierter Name des logischen Servers, auf dem die Shard-Zuordnung gehostet wird.
 -    **Datenbankname der Shard-Zuordnung** (nvarchar): Der Name der Shard-Zuordnungsdatenbank.
@@ -240,7 +240,7 @@ Die Abfrage für elastische Datenbanken ist in den Kosten für Azure SQL-Datenba
 Bedenken Sie in Bezug auf die Vorschau Folgendes:
 
 *    Die Abfrage für elastische Datenbanken wird zunächst nur im SQL-DB-V12-Premium-Tarif verfügbar sein, obwohl die Remotedatenbanken, auf die mit einer Abfrage für elastischen Datenbanken zugegriffen wird, aus jedem Tarif sein können.
-* Externe Tabellen, auf die durch die externe Datenquelle verwiesen wird, unterstützen nur Lesevorgänge über die Remotedatenbanken. Sie können jedoch alle Transact-SQL-Funktionen auf die elastische Abfragedatenbank zeigen lassen, in der sich die Definition der externen Tabelle selbst befindet. Dies kann z. B. hilfreich sein, um temporäre Ergebnisse mit SELECT column_list INTO local_table beizubehalten oder um gespeicherte Prozeduren für die Datenbank der elastischen Datenbankabfrage zu definieren, die auf externe Tabellen verweisen.
+* Externe Tabellen, auf die durch die externe Datenquelle verwiesen wird, unterstützen nur Lesevorgänge über die Remotedatenbanken. Sie können jedoch alle Transact-SQL-Funktionen auf die elastische Abfragedatenbank zeigen lassen, in der sich die Definition der externen Tabelle selbst befindet. Dies kann z. B. hilfreich sein, um temporäre Ergebnisse mit SELECT column\_list INTO local\_table beizubehalten oder um gespeicherte Prozeduren für die Datenbank der elastischen Datenbankabfrage zu definieren, die auf externe Tabellen verweisen.
 *    Abfrageparameter können derzeit nicht auf Remotedatenbanken angewendet werden. Abfragen mit Parametern müssen alle Daten an den Hauptknoten übergeben und erzielen dadurch je nach Datengröße eine geringere Leistung. Eine temporäre Problemumgehung besteht darin, Parameter in Abfragen zu vermeiden oder die RECOMPILE-Option zu verwenden, sodass Parameter automatisch durch ihre aktuellen Werte ersetzt werden.
 * Statistiken auf Spaltenebene werden für externe Tabellen derzeit nicht unterstützt.
 * Die Abfrage für elastische Datenbanken führt derzeit keine Shard-Löschung durch, wenn Prädikate für Sharding-Schlüssel ein gefahrloses Ausschließen der Verarbeitung bestimmter Remotedatenbanken zulassen würden. Daher werden Abfragen immer alle Remotedatenbanken bearbeiten, die durch die externen Datenquellen der Abfrage dargestellt werden.
@@ -263,4 +263,4 @@ Führen Sie zum Einstieg in Abfragen für elastische Datenbanken unser schrittwe
 
 <!--anchors-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

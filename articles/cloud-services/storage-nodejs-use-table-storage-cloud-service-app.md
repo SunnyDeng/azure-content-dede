@@ -50,7 +50,7 @@ Führen Sie die folgenden Schritte aus, um die Anmeldeinformationen des Speicher
 
 1.  Öffnen Sie die Azure PowerShell im **Start**-Menü, indem Sie **All Programs, Azure** erweitern, mit der rechten Maustaste auf **Azure PowerShell** klicken und anschließend **Run As Administrator** ausführen.
 
-2.  Wechseln Sie in den Ordner, der Ihre Anwendung enthält. Zum Beispiel C:\node\tasklist\WebRole1.
+2.  Wechseln Sie in den Ordner, der Ihre Anwendung enthält. Zum Beispiel C:\\node\\tasklist\\WebRole1.
 
 3.  Geben Sie im Azure PowerShell-Fenster das folgende Cmdlet ein, um die Anmeldeinformationen für das Speicherkonto abzurufen:
 
@@ -321,7 +321,7 @@ In diesem Abschnitt erweitern Sie die durch den Befehl **express** erstellte Gru
 
 Die Datei **layout.jade** im Verzeichnis **views** dient als globale Vorlage für andere **.jade**-Dateien. In diesem Schritt werden Sie sie modifizieren, um [Twitter Bootstrap](https://github.com/twbs/bootstrap) zu verwenden, ein Toolkit zum mühelosen Gestalten ansprechender Websites.
 
-1. Laden Sie die Dateien für [Twitter Bootstrap](http://getbootstrap.com/) herunter, und extrahieren Sie sie. Kopieren Sie die Datei **bootstrap.min.css** aus dem Ordner **bootstrap\dist\css** in das Verzeichnis **public\stylesheets** Ihrer tasklist-Anwendung.
+1. Laden Sie die Dateien für [Twitter Bootstrap](http://getbootstrap.com/) herunter, und extrahieren Sie sie. Kopieren Sie die Datei **bootstrap.min.css** aus dem Ordner **bootstrap\\dist\\css** in das Verzeichnis **public\\stylesheets** Ihrer tasklist-Anwendung.
 
 2. Öffnen Sie im Ordner **views** die Datei **layout.jade** in einem Texteditor, und ersetzen Sie den Inhalt durch Folgendes:
 
@@ -408,4 +408,4 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
  
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

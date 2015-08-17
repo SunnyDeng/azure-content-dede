@@ -32,4 +32,4 @@ Wenn Sie ein VNet löschen möchten, können Sie einfach auf **Löschen** klicke
 1. **Weitere Schritte**: Sie können auch lokale Netzwerkeinstellungen, DNS-Server und die Affinitätsgruppe löschen, nachdem Sie das virtuelle Netzwerk gelöscht haben.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

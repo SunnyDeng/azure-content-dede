@@ -102,7 +102,7 @@ Sie können die RDP-Datei mit dem Cmdlet [Get-AzureRemoteDesktopFile](https://ms
 ### Herunterladen der Datei mithilfe von Visual Studio
 In Visual Studio können Sie mit dem Server-Explorer eine Remotedesktopverbindung erstellen.
 
-1.  Erweitern Sie in Server-Explorer den Knoten **Azure\Clouddienste\[Name des Clouddiensts]**.
+1.  Erweitern Sie in Server-Explorer den Knoten **Azure\\Clouddienste\\[Name des Clouddiensts]**.
 2.  Erweitern Sie entweder den Knoten **Staging** oder **Produktion**.
 3.  Erweitern Sie die jeweilige Rolle.
 4.  Klicken Sie mit der rechten Maustaste auf eine der Rolleninstanzen, klicken Sie auf **Mithilfe von Remotedesktop verbinden**, und geben Sie dann den Benutzernamen und das Kennwort ein.
@@ -113,4 +113,4 @@ Sie können den REST-Vorgang [Download RDP File](https://msdn.microsoft.com/libr
 ## Nächste Schritte
 Möglicherweise müssen Sie die Anwendung [packen ](cloud-services-model-and-package.md) oder [hochladen (bereitstellen)](cloud-services-how-to-create-deploy-portal.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

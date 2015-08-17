@@ -134,7 +134,7 @@ In diesem Abschnitt konfigurieren wir unsere Web-App, sodass sie die soeben erst
 
 1.  Klicken Sie im Projektmappen-Explorer unter **Python-Umgebungen** mit der rechten Maustaste auf die virtuelle Umgebung, und wählen Sie **Python-Paket installieren** aus.
 
-1. Installieren Sie das Paket `mysql-python` mithilfe von **easy_install**.
+1. Installieren Sie das Paket `mysql-python` mithilfe von **easy\_install**.
 
   	![Dialogfeld "Paket installieren"](./media/web-sites-python-ptvs-django-mysql/PollsDjangoMySQLInstallPackage.png)
 
@@ -211,4 +211,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 [MySQL]: http://www.mysql.com/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

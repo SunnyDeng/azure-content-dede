@@ -46,42 +46,41 @@ Im folgenden Abschnitt werden die Codecs und Dateiformate aufgelistet, die für 
 ###Audiocodecs
 
 - PCM
-- AAC \(AAC-LC, AAC-HE und AAC-HEv2\)
+- AAC (AAC-LC, AAC-HE und AAC-HEv2)
 - WMA9/Pro
-- MP3 \(MPEG-1 Audio Layer 3\)
+- MP3 (MPEG-1 Audio Layer 3)
 - FLAC
 - Opus
 - Vorbis
  
 ###Formate
 
-<table border="1">
-<tr><th>Dateiformat</th><th>Dateierweiterungen</th></tr>
-<tr><td>FLV (mit H.264- und AAC-Codecs) </td><td>.flv</td></tr>
-<tr><td>MP4/ISMV</td><td>*.ismv</td></tr>
-<tr><td>MPEG2-PS, MPEG2-TS, 3GP</td><td>.ts, .ps, .3gp</td></tr>
-<tr><td>MXF</td><td>.mxf</td></tr>
-<tr><td>WMV/ASF</td><td>.mwv, .asf</td></tr>
-<tr><td>DVR-MS</td><td>.dvr-ms </td></tr>
-<tr><td>AVI</td><td>.avi</td></tr>
-<tr><td>Matroska</td><td>.mkv</td></tr>
-<tr><td>GXF</td><td>.gxf</td></tr>
-<tr><td>WAVE/WAV </td><td>.wav</td></tr>
-</table>
+Dateiformat|Dateierweiterungen
+---|---
+FLV (mit H.264- und AAC-Codecs) |.flv
+MP4/ISMV|* .ismv
+MPEG2-PS, MPEG2-TS, 3GP|.ts, .ps, .3gp
+MXF|.mxf
+WMV/ASF|.mwv, .asf
+DVR-MS|.dvr-ms 
+AVI|.avi
+Matroska|.mkv
+GXF|.gxf
+WAVE/WAV |.wav
+
 
 ##<a id="export_formats"></a>Media Encoder-Exportformate
 
 In der folgenden Tabelle werden die Codecs und Dateiformate aufgeführt, die für den Export unterstützt werden.
 
 
-<table border="1">
-<tr><th>Dateiformat</th><th>Videocodec</th><th>Audiocodec</th></tr>
-<tr><td>MP4 (*.mp4)<br/><br/>(einschließlich Multi-Mitrate-MP4-Container) </td><td>H.264 (High, Main und Baseline Profile)</td><td>AAC-LC, HE-AAC v1, HE-AAC v2 </td></tr>
-<tr><td>MPEG2-TS </td><td>H.264 (High, Main und Baseline Profile)</td><td>AAC-LC, HE-AAC v1, HE-AAC v2 </td></tr>
-</table>
+Dateiformat|Videocodec|Audiocodec
+---|---|---
+MP4 (* .mp4)<br/><br/>(einschließlich Multi-Bitrate-MP4-Container) |H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2 
+MPEG2-TS |H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2 
 
 ##Weitere Informationen
 
 [Codieren von On-Demand-Inhalten mit Azure Media Services](media-services-encode-asset.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

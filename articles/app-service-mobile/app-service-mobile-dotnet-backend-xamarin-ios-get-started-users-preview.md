@@ -115,4 +115,4 @@ In diesem Abschnitt modifizieren Sie die App, sodass vor der Anzeige von Daten e
 [Azure Management Portal]: https://portal.azure.com
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

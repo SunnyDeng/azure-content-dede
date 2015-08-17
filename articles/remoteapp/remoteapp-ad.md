@@ -3,9 +3,11 @@
     pageTitle="Konfigurieren von Active Directory für Azure RemoteApp" 
     description="Erfahren Sie, wie Sie Active Directory für Azure RemoteApp einrichten können." 
     services="remoteapp" 
+    solutions="" 
 	documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
+
 
 <tags 
     ms.service="remoteapp" 
@@ -13,15 +15,16 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="04/28/2015" 
+    ms.date="08/03/2015" 
     ms.author="elizapo" />
+
 
 
 
 # Konfigurieren von Active Directory für Azure RemoteApp
 
 
-Bei einer Hybrid-Sammlung von RemoteApp müssen Sie eine lokale Active Directory-Domäneninfrastruktur und einen Azure Active Directory-Mandanten mit Verzeichnisintegration (und optional einmaliges Anmelden) einrichten. Darüber hinaus müssen Sie einige Active Directory-Objekte im lokalen Verzeichnis erstellen. Konfigurieren Sie das lokale Active Directory und Azure Active Directory anhand der folgenden Informationen, und integrieren Sie dann die beiden Dienste.
+Bei einer Hybrid-Sammlung von Azure RemoteApp müssen Sie eine lokale Active Directory-Domäneninfrastruktur und einen Azure Active Directory-Mandanten mit Verzeichnisintegration (und optional einmaliges Anmelden) einrichten. Darüber hinaus müssen Sie einige Active Directory-Objekte im lokalen Verzeichnis erstellen. Konfigurieren Sie das lokale Active Directory und Azure Active Directory anhand der folgenden Informationen, und integrieren Sie dann die beiden Dienste.
 
 ## Konfigurieren des lokalen Active Directory
 Beginnen Sie mit der Konfiguration des lokalen Active Directory. Sie müssen das zu verwendende UPN-Domänensuffix definieren und dann die Active Directory-Objekte für RemoteApp erstellen.
@@ -105,7 +108,7 @@ Wenn beim Konfigurieren der Verzeichnissynchronisierung Probleme auftreten, übe
 -	Unter **Active Directory->Standardverzeichnis->Benutzer** fügen Sie unter dieser Domäne einen neuen Benutzer hinzu (z. B. myAzureSyncUser@mydomain.com)).
 -	Sie haben in Ihrer Domäne in Active Directory einen neuen Domänenbenutzer hinzugefügt und ihn zu einem Mitglied der Gruppe Organisations-Admins gemacht (z. B. myDomainSyncUser@mydomain.com)).
 
-Starten Sie nun das Azure-Verzeichnissynchronisierungstool, und verwenden Sie die Anmeldeinformationen **myAzureSyncUser@mydomain.com** für die erste Eingabeaufforderung (Microsoft Azure Active Directory-Administrator-Anmeldeinformationen) und **myDomainSyncUser@mydomain.com** für die zweite Aufforderung.
+Starten Sie nun das Azure-Verzeichnissynchronisierungstool, und verwenden Sie die Anmeldeinformationen \*\***myAzureSyncUser@mydomain.com** für die erste Eingabeaufforderung (Microsoft Azure Active Directory-Administrator-Anmeldeinformationen) und \*\***myDomainSyncUser@mydomain.com** für die zweite Aufforderung.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -7,6 +7,7 @@
    manager="paulettm"
    editor="cgronlun"/>
 
+
 <tags
    ms.service="hdinsight"
    ms.devlang="na"
@@ -15,6 +16,7 @@
    ms.workload="big-data"
    ms.date="07/06/2015"
    ms.author="larryfr"/>
+
 
 # Verwenden von MapReduce mit Hadoop in HDInsight
 
@@ -67,13 +69,13 @@ Die Beispieldaten werden in einem Azure-Blobspeicher gespeichert, den HDInsight 
 
 Da Azure-Blobspeicher der Standardspeicher für HDInsight ist, können Sie auch über **/example/data/gutenberg/davinci.txt** auf die Datei zugreifen.
 
-> [AZURE.NOTE]In der vorherigen Syntax wird **wasb:///** für den Zugriff auf Dateien verwendet, die im Standardspeichercontainer für Ihren HDInsight-Cluster gespeichert werden. Wenn Sie beim Bereitstellen Ihres Clusters weitere Speicherkonten angegeben haben und auf die unter diesen Konten gespeicherten Dateien zugreifen möchten, können Sie hierfür den Containernamen und die Speicherkontoadresse angeben. Beispiel: **wasb://mycontainer@mystorage.blob.core.windows.net/example/data/gutenberg/davinci.txt**.
+> [AZURE.NOTE]In der vorherigen Syntax wird \*\***wasb:///** für den Zugriff auf Dateien verwendet, die im Standardspeichercontainer für Ihren HDInsight-Cluster gespeichert werden. Wenn Sie beim Bereitstellen Ihres Clusters weitere Speicherkonten angegeben haben und auf die unter diesen Konten gespeicherten Dateien zugreifen möchten, können Sie hierfür den Containernamen und die Speicherkontoadresse angeben. Zum Beispiel \*\***wasb://mycontainer@mystorage.blob.core.windows.net/example/data/gutenberg/davinci.txt**
 
 ##<a id="job"></a>Informationen zum Beispiel-MapReduce
 
-Der MapReduce-Auftrag, der in diesem Beispiel verwendet wird, befindet sich unter **wasb://example/jars/hadoop-mapreduce-examples.jar**, und er wird mit dem HDInsight-Cluster bereitgestellt. Er enthält ein Wortzählungsbeispiel, das Sie auf **davinci.txt** anwenden.
+Der MapReduce-Auftrag, der in diesem Beispiel verwendet wird, befindet sich unter \*\***wasb://example/jars/hadoop-mapreduce-examples.jar**, und er wird mit dem HDInsight-Cluster bereitgestellt. Er enthält ein Wortzählungsbeispiel, das Sie auf **davinci.txt** anwenden.
 
-> [AZURE.NOTE]In HDInsight 2.1-Clustern lautet der Speicherort **wasb:///example/jars/hadoop-examples.jar**.
+> [AZURE.NOTE]In HDInsight 2.1-Clustern lautet der Speicherort \*\***wasb:///example/jars/hadoop-examples.jar**.
 
 Zu Referenzzwecken ist im Folgenden der Java-Code für den MapReduce-Auftrag zum Zählen von Wörtern aufgeführt:
 
@@ -192,4 +194,4 @@ MapReduce bietet zwar leistungsstarke Diagnosemöglichkeiten, ist jedoch eventue
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-use-mapreduce/HDI.WordCountDiagram.gif
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

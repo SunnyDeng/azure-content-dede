@@ -7,6 +7,7 @@
 	manager="dwrede"
 	editor=""/>
 
+
 <tags
 	ms.service="media-services"
 	ms.workload="media"
@@ -15,6 +16,7 @@
 	ms.topic="get-started-article" 
 	ms.date="04/20/2015"
 	ms.author="juliako"/>
+
 
 
 #Erstellen eines Media Services-Kontos
@@ -35,7 +37,7 @@ Für den Zugriff auf Media Services sind zwei zugeordnete Konten erforderlich:
 
 -   **Ein Media Services-Konto**. Über Ihr Konto erhalten Sie Zugriff auf eine Reihe cloudbasierter Mediendienste in Azure. In einem Media Services-Konto wird kein Medieninhalt gespeichert. Stattdessen werden Metadaten über die Medieninhalte und Medienverarbeitungsaufträge in Ihrem Konto gespeichert. Beim Erstellen des Kontos wählen Sie eine verfügbare Media Services-Region aus. Bei der ausgewählten Region handelt es sich um ein Rechenzentrum, in dem Metadaten-Datensätze für Ihr Konto gespeichert werden.
 
-    > [AZURE.NOTE]**Nordeuropa****Westeuropa****USA (West)****USA (Ost)****Südostasien****Ostasien****Japan (Westen)****Japan (Osten)**
+    > [AZURE.NOTE]Folgende Media Services-Regionen sind verfügbar: **Nordeuropa**, **Westeuropa**, **USA (Westen)**, **USA (Osten)**, **Südostasien**, **Ostasien**, **Japan (Westen)**, **Japan (Osten)**. Media Services verwendet keine Affinitätsgruppen.
 -   **Ein zugeordnetes Speicherkonto**. Bei Ihrem Speicherkonto handelt es sich um ein Azure-Speicherkonto, das Ihrem Media Services-Konto zugeordnet ist. Das Speicherkonto stellt Blob-Speicher für Mediendateien zur Verfügung und muss sich in derselben geografischen Region befinden wie das Media Services-Konto. Bei der Erstellung eines Media Services-Kontos können Sie entweder ein vorhandenes Speicherkonto in derselben Region auswählen oder ein neues Speicherkonto in derselben Region erstellen. Wenn Sie ein Media Services-Konto löschen, bleiben die Blobs im zugehörigen Speicherkonto erhalten.
 
 ##<a id="quick"></a>Verfahrensweise: Erstellen eines Media Services-Kontos mithilfe der Schnellerfassung
@@ -81,4 +83,4 @@ Für den Zugriff auf Media Services sind zwei zugeordnete Konten erforderlich:
   [Verwaltungsportal]: http://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

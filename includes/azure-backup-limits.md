@@ -1,3 +1,4 @@
+
 Für Azure Backup gelten die folgenden Beschränkungen.
 
 | Bezeichnung | Standardlimit |
@@ -12,4 +13,4 @@ Für Azure Backup gelten die folgenden Beschränkungen.
 - <sup>1</sup>Die Beschränkung von 1,65 TB gilt nicht für IaaS-VM-Sicherungen.
 - <sup>2</sup>Mithilfe einer Permutation kann die Anzahl auf weniger als 366 festgelegt werden.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

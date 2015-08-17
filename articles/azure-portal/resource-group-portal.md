@@ -4,8 +4,10 @@
 	services="azure-portal" 
 	documentationCenter="" 
 	authors="" 
+	writer="tfitzmac" 
 	manager="wpickett" 
 	editor=""/>
+
 
 <tags 
 	ms.service="azure-portal" 
@@ -15,6 +17,7 @@
 	ms.topic="article" 
 	ms.date="06/22/2015" 
 	ms.author="tomfitz"/>
+
 
 
 # Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen
@@ -30,6 +33,7 @@ Es folgt ein kurzer Überblick über die Verwendung von Ressourcengruppen im Azu
 ## Erstellen von Ressourcengruppen
 
 Wenn im Portal eine Ressource erstellt wird, wird sie stets innerhalb einer Ressourcengruppe erstellt. Während der Erstellung können Sie wählen, ob eine neue Ressourcengruppe erstellt oder eine vorhandene Ressourcengruppe verwendet werden soll.<br><br />
+
 
 ![Ressourcengruppe erstellen](./media/resource-group-portal/1_createWebsite.png)
 
@@ -66,32 +70,13 @@ Da Sie mit Ressourcengruppen den Lebenszyklus aller darin enthaltenen Ressourcen
 ## Nächste Schritte
 Erste Schritte
 
-- [Azure Resource Manager Overview](../resource-group-overview.md) (Übersicht über den Azure-Ressourcen-Manager)  
-- [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](../powershell-azure-resource-manager.md)
-- [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](../xplat-cli-azure-resource-manager.md)  
-  
-Erstellen und Bereitstellen von Anwendungen
-  
-- [Authoring Azure Resource Manager Templates](../resource-group-authoring-templates.md) (Erstellen von Vorlagen im Azure-Ressourcen-Manager)  
-- [Deploy an application with Azure Resource Manager Template](resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)
-- [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](../app-service-web/app-service-deploy-complex-application-predictably.md)
-- [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](../resource-group-deploy-debug.md)  
-- [Azure Resource Manager Template Functions](../resource-group-template-functions.md) (Vorlagenfunktionen im Azure-Ressourcen-Manager)  
-- [Advanced Template Operations](../resource-group-advanced-template.md) (Erweiterte Anwendungen mit Vorlagen)  
-- [Deploy Azure Resources Using .NET Libraries and a Template](../arm-template-deployment.md) (Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage)
-  
-Organisieren von Ressourcen
-  
-- [Using tags to organize your Azure resources](../resource-group-using-tags.md) (Verwenden von Tags zum Organisieren von Azure-Ressourcen)  
-  
-Zugriffsverwaltung und -überwachung
-  
-- [Verwalten und Überwachen des Ressourcen-Zugriffs](resource-group-rbac.md)  
-- [Authentifizieren eines Dienstprinzipals mit Azure-Ressourcen-Manager](../resource-group-authenticate-service-principal.md)  
-- [Erstellen neuer Azure-Dienstprinzipale mit dem klassischen Azure-Portal](../resource-group-create-service-principal-portal.md)  
+- Eine Einführung in die Konzepte des Ressourcen-Managers finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).  
+- Eine Einführung zur Verwendung von Azure PowerShell für das Bereitstellen von Ressourcen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
+- Eine Einführung zur Verwendung der Azure-Befehlszeilenschnittstelle für das Bereitstellen von Ressourcen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung](../xplat-cli-azure-resource-manager.md). 
+- Informationen zum logischen Organisieren von Ressourcen finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](../resource-group-using-tags.md).
   
 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

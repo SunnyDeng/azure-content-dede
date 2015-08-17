@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="07/24/2015"
+   ms.date="07/30/2015"
    ms.author="v-sharos@microsoft.com"/>
 
 # Verwenden des StorSimple Manager-Diensts, um eine StorSimple-Gerätekonfiguration zu ändern
@@ -131,4 +131,4 @@ Führen Sie die folgenden Schritte aus, wenn Sie die VIPs für eine der Netzwerk
  
      
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

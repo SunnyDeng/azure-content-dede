@@ -8,6 +8,7 @@
    editor=""
    tags=""/>
 
+
 <tags
    ms.service="best-practice"
    ms.devlang="rest-api"
@@ -16,6 +17,7 @@
    ms.workload="na"
    ms.date="04/28/2015"
    ms.author="masashin"/>
+
 
 # Leitfaden zum API-Design
 
@@ -38,7 +40,7 @@ Dieser Leitfaden enthält Informationen zu den Problemen, die beim Entwerfen ein
 
 Roy Fielding schlug in seiner Dissertation im Jahr 2000 als Alternative zur Strukturierung der von Webdiensten verfügbar gemachten Vorgänge einen weiteren Architekturansatz vor: REST. REST ist ein Architekturstil zum Erstellen verteilter Systeme, die auf Hypermedia basieren. Ein wichtiger Vorteil des REST-Modells besteht darin, dass es auf offenen Standards basiert und die Implementierung des Modells oder der Clientanwendungen, die darauf zugreifen, nicht an eine bestimmte Implementierung bindet. Beispielsweise könnte ein REST-Webdienst mithilfe der Microsoft ASP.NET-Web-API implementiert werden, und Clientanwendungen könnten mit allen Sprachen und Toolsets entwickelt werden, die HTTP-Anforderungen generieren und HTTP-Antworten analysieren können.
 
-> [AZURE.NOTE]: REST tatsächlich unabhängig von zugrundeliegenden Protokollen und nicht unbedingt an HTTP gebunden. Dennoch verwenden die meisten gängigen Implementierungen von Systemen, die auf REST basieren, HTTP als Anwendungsprotokoll für das Senden und Empfangen von Anforderungen. Dieses Dokument behandelt insbesondere die Zuordnung von REST-Prinzipien an Systeme, die mit HTTP betrieben werden.
+> [AZURE.NOTE]\: REST tatsächlich unabhängig von zugrundeliegenden Protokollen und nicht unbedingt an HTTP gebunden. Dennoch verwenden die meisten gängigen Implementierungen von Systemen, die auf REST basieren, HTTP als Anwendungsprotokoll für das Senden und Empfangen von Anforderungen. Dieses Dokument behandelt insbesondere die Zuordnung von REST-Prinzipien an Systeme, die mit HTTP betrieben werden.
 
 Das REST-Modell verwendet ein Navigationsschema zur Darstellung von Objekten und Diensten über ein Netzwerk (als _Ressourcen_ bezeichnet). Viele Systeme, die REST implementieren, verwenden in der Regel das HTTP-Protokoll zum Übertragen von Anforderungen für den Zugriff auf diese Ressourcen. In diesen Systemen sendet eine Clientanwendung eine Anforderung in Form eines URI, der eine Ressource kennzeichnet, und einer HTTP-Methode (meist GET, POST, PUT oder DELETE), die angibt, welcher Vorgang für die Ressource ausgeführt wird. Der Hauptteil der HTTP-Anforderung enthält die zum Ausführen des Vorgangs erforderlichen Daten. Wichtig zu verstehen ist, dass REST ein zustandsloses Anforderungsmodell definiert. HTTP-Anforderungen sollten unabhängig sein und können in beliebiger Reihenfolge erfolgen, sodass der Versuch, Übergangsstatusinformationen zwischen Anforderungen beizubehalten, nicht möglich ist. Informationen werden ausschließlich in den Ressourcen selbst gespeichert, und jede Anforderung sollte eine atomare Operation sein. Ein REST-Modell implementiert im Grunde einen finiten Statuscomputer, wobei eine Anforderung eine Ressource von einem klar definierten, nicht flüchtigen Zustand in einen anderen Zustand versetzt.
 
@@ -171,7 +173,7 @@ Content-Length: ...
 
 Wenn der Webserver den angeforderten Medientyp nicht unterstützt, kann er diese Daten in einem anderen Format senden. In allen Fällen muss der Medientyp (z. B. _Text/XML_) im Content-Type-Header angegeben werden. Die Clientanwendung ist dafür verantwortlich, die Antwortnachricht zu analysieren und die Ergebnisse im Nachrichtentext richtig zu interpretieren.
 
-Beachten Sie, dass der Webserver in diesem Beispiel die angeforderten Daten erfolgreich abruft und im Antwortheader den Statuscode für die erfolgreiche Ausführung zurückgibt. Werden keine übereinstimmenden Daten gefunden, sollte stattdessen der Statuscode 404 (nicht gefunden) zurückgegeben werden, und der Text der Antwortnachricht kann zusätzliche Informationen enthalten. Das Format dieser Informationen wird wie im folgenden Beispiel gezeigt durch den Content-Type-Header angegeben:
+Beachten Sie, dass der Webserver in diesem Beispiel die angeforderten Daten erfolgreich abruft und im Antwortheader den Statuscode für die erfolgreiche Ausführung zurückgibt. Werden keine übereinstimmenden Daten gefunden, sollte stattdessen der Statuscode 404 (Nicht gefunden) zurückgegeben werden, und der Text der Antwortnachricht kann zusätzliche Informationen enthalten. Das Format dieser Informationen wird wie im folgenden Beispiel gezeigt durch den Content-Type-Header angegeben:
 
 ```HTTP
 GET http://adventure-works.com/orders/222 HTTP/1.1
@@ -262,7 +264,7 @@ HTTP/1.1 204 No Content
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 ```
 
-Wenn die Ressource nicht gefunden wird, sollte der Webserver stattdessen die Nachricht 404 (nicht gefunden) zurückgeben.
+Wenn die Ressource nicht gefunden wird, sollte der Webserver stattdessen die Nachricht 404 (Nicht gefunden) zurückgeben.
 
 > [AZURE.TIP]Wenn alle Ressourcen in einer Auflistung gelöscht werden müssen, aktivieren Sie eine HTTP DELETE-Anforderung, die für den URI der Auflistung angegeben wird, anstatt das Entfernen aller Ressourcen aus Auflistung nacheinander zu erzwingen.
 
@@ -272,7 +274,7 @@ Sie sollten sich bemühen, die URIs einfach und intuitiv zu halten. Das Verfügb
 
 Wenn Bestellungen beispielsweise den für die Bestellung bezahlten Preis enthalten, muss eine Clientanwendung, die alle Bestellungen mit Kosten über einen bestimmten Wert abrufen soll, möglicherweise alle Bestellungen aus dem URI _/Bestellungen_ abrufen und diese dann lokal filtern. Dieser Prozess ist eindeutig sehr ineffizient; er verschwendet Netzwerkbandbreite und Verarbeitungsleistung auf dem Server, der die Web-API hostet.
 
-Eine Lösung ist z. B. das Bereitstellen eines URI-Schemas wie _/Bestellungen/Bestellwert_größer_als_n_ wobei _n_ der Preis der Bestellung ist; dieser Ansatz ist jedoch nur für eine begrenzte Anzahl von Preisen geeignet. Wenn Sie Bestellungen auf Grundlage anderer Kriterien abfragen müssen, wird Ihnen möglicherweise eine lange Liste mit URIs bereitgestellt, die nicht intuitive Namen enthalten kann.
+Eine Lösung ist z. B. das Bereitstellen eines URI-Schemas wie _/Bestellungen/Bestellwert\_größer\_als\_n_ wobei _n_ der Preis der Bestellung ist; dieser Ansatz ist jedoch nur für eine begrenzte Anzahl von Preisen geeignet. Wenn Sie Bestellungen auf Grundlage anderer Kriterien abfragen müssen, wird Ihnen möglicherweise eine lange Liste mit URIs bereitgestellt, die nicht intuitive Namen enthalten kann.
 
 Eine bessere Strategie zum Filtern von Daten ist das Bereitstellen der Filterkriterien in der Abfragezeichenfolge, die an die Web-API übergeben wird, z. B. _/Bestellungen? Bestellwertgrenze = n_. In diesem Beispiel ist der entsprechende Vorgang in der Web-API für die Analyse und Behandlung der `ordervaluethreshold`-Parameter in der Abfragezeichenfolge und das Zurückgeben der gefilterten Ergebnisse in der HTTP-Antwort verantwortlich.
 
@@ -359,7 +361,7 @@ Accept: application/json
 ...
 ```
 
-Der Text der Antwortnachricht enthält ein `Links`-Array (im Codebeispiel hervorgehoben), das die Art der Beziehung (_Kunde_), den URI des Kunden (_http://adventure-works.com/customers/3_), die Methode zum Abrufen der Details dieses Kunden (_GET_) und die MIME-Typen angibt, die der Webserver Typen für das Abrufen dieser Informationen unterstützt (_text/xml_ und _application/json_). Dies sind alle Informationen, die eine Clientanwendung zum Abrufen der Details des Kunden benötigt. Das Links-Array enthält außerdem Links für andere Vorgänge, die ausgeführt werden können, z. B. PUT (zum Ändern des Kunden zusammen mit dem Format, das der Webserver vom Client erwartet) und DELETE.
+Der Text der Antwortnachricht enthält ein `Links`-Array (im Codebeispiel hervorgehoben), das die Art der Beziehung (_Kunde_), den URI des Kunden (\__http://adventure-works.com/customers/3_), die Methode zum Abrufen der Details dieses Kunden (_GET_) und die MIME-Typen angibt, die der Webserver Typen für das Abrufen dieser Informationen unterstützt (_text/xml_ und _application/json_). Dies sind alle Informationen, die eine Clientanwendung zum Abrufen der Details des Kunden benötigt. Das Links-Array enthält außerdem Links für andere Vorgänge, die ausgeführt werden können, z. B. PUT (zum Ändern des Kunden zusammen mit dem Format, das der Webserver vom Client erwartet) und DELETE.
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -395,7 +397,7 @@ Die Versionsverwaltung ermöglicht einer Web-API das Angeben der Funktionen und 
 
 Dies ist der einfachste Ansatz und ist möglicherweise für einige interne APIs akzeptabel. Umfassende Änderungen können als neue Ressourcen oder neue Links dargestellt werden. Das Hinzufügen von Inhalt zu vorhandenen Ressourcen stellt möglicherweise keine fehlerhafte Änderung dar, da Clientanwendungen, die diesen Inhalt nicht erwarten, ihn einfach ignorieren.
 
-Beispielsweise sollte eine Anforderung an den URI _http://adventure-works.com/customers/3_ die Details eines einzelnen Kunden mit den von der Clientanwendung erwarteten Feldern `Id`, `Name`, und `Address` zurückgeben:
+Beispielsweise sollte eine Anforderung an den URI \__http://adventure-works.com/customers/3_ die Details eines einzelnen Kunden mit den von der Clientanwendung erwarteten Feldern `Id`, `Name`, und `Address` zurückgeben:
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -440,7 +442,7 @@ Dieser Versionsverwaltungsmechanismus ist sehr einfach, hängt jedoch vom Server
 
 ### Versionsverwaltung der Abfragezeichenfolge
 
-Anstatt mehrere URIs bereitzustellen, können Sie auch die Version der Ressource angeben, indem Sie in der Abfragezeichenfolge einen Parameter an die HTTP-Anforderung anfügen, z. B. _http://adventure-works.com/customers/3?version=2_. Der Versionsparameter sollte einen aussagekräftigen Standardwert wie z. B. „1“ aufweisen, wenn er von älteren Clientanwendungen weggelassen wird.
+Anstatt mehrere URIs bereitzustellen, können Sie auch die Version der Ressource angeben, indem Sie in der Abfragezeichenfolge einen Parameter an die HTTP-Anforderung anfügen, z. B. \__http://adventure-works.com/customers/3?version=2_. Der Versionsparameter sollte einen aussagekräftigen Standardwert wie z. B. „1“ aufweisen, wenn er von älteren Clientanwendungen weggelassen wird.
 
 Dieser Ansatz hat den semantischen Vorteil, dass dieselbe Ressource immer vom gleichen URI abgerufen wird; er hängt jedoch davon ab, dass der Code, der die Anforderung behandelt, die Abfragezeichenfolge analysiert und die entsprechende HTTP-Antwort zurücksendet. Dieser Ansatz bringt beim Implementieren von HATEOAS dieselben Schwierigkeiten mit sich, wie der Mechanismus für die URI-Versionsverwaltung.
 
@@ -523,4 +525,4 @@ Dieser Ansatz ist wohl der ursprünglichste Mechanismus zur Versionsverwaltung u
 - Das [RESTful-Cookbook](http://restcookbook.com/) enthält eine Einführung zum Erstellen von RESTful-APIs.
 - Die [Web-API-Checkliste](https://mathieu.fenniak.net/the-api-checklist/) enthält eine nützliche Liste der zu berücksichtigenden Punkte beim Entwerfen und Implementieren einer Web-API.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

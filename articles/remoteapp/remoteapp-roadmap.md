@@ -39,4 +39,4 @@ Weitere Verbesserungen, die dieses Jahr bereits hinzugefügt wurden:
 - Verfügbarkeit in australischen Rechenzentren
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

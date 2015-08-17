@@ -72,14 +72,14 @@ In diesem Schritt erstellen Sie zuerst die erforderliche Datenbank und Tabelle a
 
 Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte Typen und gespeicherte Prozeduren erstellen. Diese werden zum Verschieben der Ergebnisse von **MarketingCampaignEffectiveness** aus dem Azure-Blob in die SQL Server-Datenbank verwendet.
 
-1.	Navigieren Sie in **Windows-Explorer** zum Unterordner **OnPremises** in **C:\ADFWalkthrough** (oder zu dem Speicherort, an dem Sie die Beispiele extrahiert haben).
+1.	Navigieren Sie in **Windows-Explorer** zum Unterordner **OnPremises** in **C:\\ADFWalkthrough** (oder zu dem Speicherort, an dem Sie die Beispiele extrahiert haben).
 2.	Öffnen Sie **prepareOnPremDatabase&Table.ps1** in Ihrem bevorzugten Editor, ersetzen Sie die markierten Informationen durch Ihre SQL Server-Informationen, und speichern Sie die Datei (geben Sie die Details der **SQL-Authentifizierung** ein). Aktivieren Sie für das Lernprogramm die SQL-Authentifizierung für die Datenbank. 
 			
 		$dbServerName = "<servername>"
 		$dbUserName = "<username>"
 		$dbPassword = "<password>"
 
-3. Navigieren Sie in **Azure PowerShell** zum Ordner **C:\ADFWalkthrough\OnPremises**.
+3. Navigieren Sie in **Azure PowerShell** zum Ordner **C:\\ADFWalkthrough\\OnPremises**.
 4.	Führen Sie **prepareOnPremDatabase&Table.ps1** aus **(entweder & in doppelten Anführungszeichen oder wie unten dargestellt)**.
 			
 		& '.\prepareOnPremDatabase&Table.ps1'
@@ -106,7 +106,8 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 7.	Geben Sie **MarketingCampaigns** als Datenbank ein. 
 8.	Klicken Sie auf **ANMELDEINFORMATIONEN**. 
 9.	Klicken Sie auf dem Blatt **Anmeldeinformationen** auf **Klicken Sie hier, um Anmeldeinformationen auf sichere Weise festzulegen**.
-10.	Daraufhin wird eine 1-Klick-Anwendung zum ersten Mal installiert und das Dialogfeld **Anmeldeinformationen festlegen** geöffnet.11.	Geben Sie im Dialogfeld **Anmeldeinformationen festlegen** den **Benutzernamen** und das **Kennwort** ein, und klicken Sie auf **OK**. Warten Sie, bis das Dialogfeld geschlossen wird. 
+10.	Daraufhin wird eine 1-Klick-Anwendung zum ersten Mal installiert und das Dialogfeld „Anmeldeinformationen festlegen“ geöffnet.
+11.	Geben Sie im Dialogfeld **Anmeldeinformationen festlegen** den **Benutzernamen** und das **Kennwort** ein, und klicken Sie auf **OK**. Warten Sie, bis das Dialogfeld geschlossen wird. 
 12.	Klicken Sie auf dem Blatt **Neuer Datenspeicher** auf **OK**. 
 13.	Vergewissern Sie sich, dass auf dem Blatt **Verknüpfte Dienste** in der Liste **OnPremSqlLinkedService** angezeigt wird und dass der **Status** des verknüpften Diensts **Gut** lautet.
 
@@ -114,7 +115,7 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 
 ### Erstellen der lokalen logischen Tabelle
 
-1.	Wechseln Sie in **Azure PowerShell** zum Ordner **C:\ADFWalkthrough\OnPremises**. 
+1.	Wechseln Sie in **Azure PowerShell** zum Ordner **C:\\ADFWalkthrough\\OnPremises**. 
 2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryTable**, um die Tabellen für **MarketingCampaignEffectivenessOnPremSQLTable.json** wie folgt zu erstellen.
 
 			
@@ -170,4 +171,4 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

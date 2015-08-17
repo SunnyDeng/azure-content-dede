@@ -25,4 +25,4 @@
 
    	Der gespeicherte Test wird in einer speicherinternen Sammlung gespeichert und in der folgenden Liste angezeigt.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

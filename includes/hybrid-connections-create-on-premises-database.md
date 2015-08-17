@@ -5,7 +5,7 @@ In diesem Abschnitt wird erläutert, wie Sie SQL Server Express installieren, TC
 
 Um eine lokale SQL Server- oder SQL Server Express-Datenbank mit einer Hybridverbindung verwenden zu können, muss TCP/IP an einem statischen Port aktiviert werden. Standardinstanzen von SQL Server verwenden den statischen Port 1433, benannte Instanzen dagegen nicht. Aus diesem Grund installieren wir die Standardinstanz. Wenn Sie bereits die Standardinstanz von SQL Server Express installiert haben, können Sie diesen Abschnitt überspringen.
 
-1. Um SQL Server Express zu installieren, führen Sie die Datei **SQLEXPRWT_x64_ENU.exe** oder **SQLEXPR_x86_ENU.exe** aus, die Sie heruntergeladen haben. Der SQL Server-Installationscenter-Assistent wird geöffnet.
+1. Um SQL Server Express zu installieren, führen Sie die Datei **SQLEXPRWT\_x64\_ENU.exe** oder **SQLEXPR\_x86\_ENU.exe** aus, die Sie heruntergeladen haben. Der SQL Server-Installationscenter-Assistent wird geöffnet.
 	
 2. Wählen Sie **Neue eigenständige SQL Server-Installation oder Hinzufügen von Features zu einer vorhandenen Installation** aus, befolgen Sie die Anweisungen, und übernehmen Sie die Standardeinstellungen, bis Sie zur Seite **Instanzkonfiguration** gelangen.
 	
@@ -78,4 +78,4 @@ Schließlich erstellen Sie eine neue SQL Server-Anmeldung mit eingeschränkten B
 
 4. **Führen** Sie die Abfrage aus, um die neue Anmeldung zu erstellen und die erforderlichen Berechtigungen für die lokale Datenbank zu erteilen.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

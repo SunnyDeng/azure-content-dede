@@ -1,4 +1,3 @@
-
 #### So installieren Sie Update 1 über Windows PowerShell für StorSimple
 
 1. Führen Sie die folgenden Schritte aus, um das Softwareupdate herunterzuladen.
@@ -20,7 +19,7 @@
  
         ![Warenkorb anzeigen](./media/storsimple-install-update-option-1/HCS_InstallBasket-include.png)
 
-    6. Klicken Sie auf **Download**. Geben Sie einen lokalen Speicherort an, oder navigieren Sie zu einem lokalen Speicherort, an dem der Download angezeigt werden soll. Das Update ("all-hcsmdssoftwareupdate_288da2cc8cd2e3c3958b603a79346cb586fb8fe3.exe") wird am ausgewählten Speicherort im Ordner "StorSimple Update 1.0-Anwendungsupdate-Paket (KB3063418)" heruntergeladen. Der Ordner kann auch in eine Netzwerkfreigabe kopiert werden, auf die vom Gerät aus zugegriffen werden kann.
+    6. Klicken Sie auf **Download**. Geben Sie einen lokalen Speicherort an, oder navigieren Sie zu einem lokalen Speicherort, an dem der Download angezeigt werden soll. Das Update ("all-hcsmdssoftwareupdate\_288da2cc8cd2e3c3958b603a79346cb586fb8fe3.exe") wird am ausgewählten Speicherort im Ordner "StorSimple Update 1.0-Anwendungsupdate-Paket (KB3063418)" heruntergeladen. Der Ordner kann auch in eine Netzwerkfreigabe kopiert werden, auf die vom Gerät aus zugegriffen werden kann.
         
 2. Greifen Sie zum Installieren des Softwareupdates über die serielle Konsole Ihres StorSimple-Geräts auf die Windows PowerShell-Benutzeroberfläche zu. Ausführliche Anweisungen dazu finden Sie unter [Verwenden von PuTTy zum Herstellen einer Verbindung mit der seriellen Konsole](#use-putty-to-connect-to-the-serial-console).
 
@@ -37,7 +36,7 @@
     Nachfolgend sehen Sie eine Beispielausgabe.
 
         ````
-        Controller0>Start-HcsHotfix -Path \10.100.100.100\share
+        Controller0>Start-HcsHotfix -Path \\10.100.100.100\share
         \hcsmdssoftwareupdate.exe -Credential contoso\John
       
         Confirm
@@ -97,4 +96,4 @@
 
     Der Firmwarestatus sollte **UpToDate** lauten.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

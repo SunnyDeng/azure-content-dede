@@ -6,6 +6,7 @@
 	authors="alancameronwills" 
 	manager="ronmart"/>
 
+
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
@@ -14,6 +15,7 @@
 	ms.topic="article" 
 	ms.date="05/27/2015" 
 	ms.author="awills"/>
+
 
 # Application Insights für ASP.NET 5
 
@@ -118,7 +120,7 @@ In der `Configure`-Methode:
 
 ## Hinzufügen von JavaScript-Clientinstrumentation
 
-Wenn Sie eine _Layout.cshtml-Datei verwenden, fügen Sie dort folgenden Code ein. Andernfalls fügen Sie diesen Code auf jeder Seite ein, die Sie nachverfolgen möchten.
+Wenn Sie eine \_Layout.cshtml-Datei verwenden, fügen Sie dort folgenden Code ein. Andernfalls fügen Sie den Code auf jeder Seite ein, die Sie nachverfolgen möchten.
 
 Definieren Sie die Einfügung am Anfang der Datei:
 
@@ -171,4 +173,4 @@ Kehren Sie zum [Azure-Portal][portal] zurück, und navigieren Sie zur Applicatio
 [start]: app-insights-get-started.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

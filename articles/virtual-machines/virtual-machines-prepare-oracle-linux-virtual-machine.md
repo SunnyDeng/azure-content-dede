@@ -1,19 +1,5 @@
-<properties 
-	pageTitle="Vorbereiten eines virtuellen Oracle Linux-Computers für Azure" 
-	description="Führen Sie die Schritte zum Konfigurieren eines virtuellen Oracle-Computers unter Linux in Microsoft Azure aus." 
-	services="virtual-machines" 
-	authors="bbenz" 
-	documentationCenter=""/>
-
-<tags 
-	ms.service="virtual-machines" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="infrastructure-services" 
-	ms.date="06/22/2015" 
-	ms.author="bbenz" />
-
+<properties title="Prepare an Oracle Linux Virtual Machine for Azure" pageTitle="Vorbereiten eines virtuellen Oracle Linux-Computers für Azure" description="Führen Sie die Schritte zum Konfigurieren eines virtuellen Oracle-Computers unter Linux in Microsoft Azure aus." services="virtual-machines" authors="bbenz" documentationCenter=""/>
+<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
 #Vorbereiten eines virtuellen Oracle Linux-Computers für Azure
 -   [Vorbereiten eines virtuellen Oracle Linux 6.4+-Computers für Azure](virtual-machines-linux-create-upload-vhd-oracle.md)
 
@@ -176,9 +162,9 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 		# sudo yum clean all
 		# sudo yum -y update
 
-9.  Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu "/etc/default/grub" in einem Text-Editor, und bearbeiten Sie den Parameter "GRUB_CMDLINE_LINUX", beispielsweise:
+9.  Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu "/etc/default/grub" in einem Text-Editor, und bearbeiten Sie den Parameter "GRUB\_CMDLINE\_LINUX", beispielsweise:
 
-		GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0"
+		GRUB\_CMDLINE\_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0"
 
 	Dadurch wird zudem sichergestellt, dass alle Konsolennachrichten zum ersten seriellen Port gesendet werden. Dieser kann Azure bei der Behebung von Fehlern unterstützen. Neben den oben erwähnten Punkten wird es empfohlen, die folgenden Parameter zu *entfernen*:
 
@@ -216,4 +202,4 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
 15.  Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -71,4 +71,4 @@ Sie können nun ein Twitter-Login für die Authentifizierung in Ihrer App verwen
 [Azure Management Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

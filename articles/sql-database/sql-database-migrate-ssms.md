@@ -71,4 +71,4 @@ Der Bereitstellungsprozess kann in zwei Schritte unterteilt werden: Export und I
 ##Alternativen
 Sie können auch das Befehlszeilen-Dienstprogramm "sqlpackage.exe" zum Bereitstellen der Datenbank oder zum Importieren bzw. Exportieren einer BACPAC-Datei verwenden. "sqlpackage.exe" verwendet die gleiche DAC-Technologie wie SSMS, sodass das Ergebnis identisch ist. Weitere Informationen finden Sie im MSDN unter [SqlPackage.exe](https://msdn.microsoft.com/library/hh550080.aspx).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

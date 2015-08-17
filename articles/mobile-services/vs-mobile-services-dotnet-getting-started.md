@@ -85,4 +85,4 @@ Löschen Sie eine Zeile in der Datenbank. Das Parameterelement ist das TodoItem-
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

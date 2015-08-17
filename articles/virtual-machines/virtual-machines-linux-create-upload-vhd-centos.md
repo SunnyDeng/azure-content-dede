@@ -364,4 +364,4 @@ Die Vorbereitung eines virtuellen CentOS 7-Computers für Azure entspricht in et
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

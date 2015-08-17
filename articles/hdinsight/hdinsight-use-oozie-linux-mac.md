@@ -17,7 +17,7 @@
 	ms.author="larryfr"/>
 
 
-# Verwenden von Oozie mit Hadoop zum Definieren und Ausführen eines Workflows in Linux-basiertem HDInsight \(Vorschau\)
+# Verwenden von Oozie mit Hadoop zum Definieren und Ausführen eines Workflows in Linux-basiertem HDInsight (Vorschau)
 
 [AZURE.INCLUDE [oozie-selector](../../includes/hdinsight-oozie-selector.md)]
 
@@ -47,9 +47,9 @@ Der Workflow, den Sie mithilfe der Anweisungen in diesem Dokument implementieren
 
 1. Eine Hive-Aktion führt ein HiveQL-Skript zum Extrahieren von Datensätzen aus der in HDInsight enthaltenen Tabelle **hivesampletable** aus. Jede Datenzeile beschreibt einen Besuch eines bestimmten Mobilgeräts. Das Format des Eintrags sieht wie folgt aus:
 
-		8       18:54:20        en-US   Android Samsung SCH-i500        California     United States    13.9204007      0       0
-		23      19:19:44        en-US   Android HTC     Incredible      Pennsylvania   United States    NULL    0       0
-		23      19:19:46        en-US   Android HTC     Incredible      Pennsylvania   United States    1.4757422       0       1
+		8       18:54:20        de-de   Android Samsung SCH-i500        California     United States    13.9204007      0       0
+		23      19:19:44        de-de   Android HTC     Incredible      Pennsylvania   United States    NULL    0       0
+		23      19:19:46        de-de   Android HTC     Incredible      Pennsylvania   United States    1.4757422       0       1
 
 	Das in diesem Dokument verwendete Hive-Skript zählt die gesamten Besuche für jede Plattform \(z. B. Android oder iPhone\) und speichert die Werte in einer neuen Hive-Tabelle.
 
@@ -87,7 +87,7 @@ Führen Sie die folgenden Schritte aus, um ein HiveQL-Skript zu erstellen, das e
 
 1. Stellen Sie über SSH eine Verbindung mit dem Linux-basierten HDInsight-Cluster her:
 
-    * **Linux-, Unix- oder OS X-Clients**: Siehe [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
+    * **Linux-, Unix- oder OS X-Clients**: Siehe [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, OS X oder Unix](hdinsight-hadoop-linux-use-ssh-unix.md)
 
     * **Windows-Clients**: Siehe [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 
@@ -104,18 +104,18 @@ Führen Sie die folgenden Schritte aus, um ein HiveQL-Skript zu erstellen, das e
 
 	Im Skript werden zwei Variablen verwendet:
 
-	- **${HiveTableName}**: Enthält den Namen der zu erstellenden Tabelle
-	- **${HiveDataFolder}**: Enthält den Speicherort der Datendateien für die Tabelle
+	- **${hiveTableName}**: Enthält den Namen der zu erstellenden Tabelle
+	- **${hiveDataFolder}**: Enthält den Speicherort der Datendateien für die Tabelle
 
 	Die Workflowdefinitionsdatei \("workflow.xml" in diesem Tutorial\) übergibt diese Werte zur Laufzeit an das HiveQL-Skript.
 
-2. Drücken Sie STRG+X, um den Editor zu verlassen. Wählen Sie bei Aufforderung **Y** aus, um die Datei zu speichern. Drücken Sie dann die **EINGABETASTE**, um den Dateinamen **useooziewf.hql** zu verwenden.
+2. Drücken Sie STRG+X, um den Editor zu verlassen. Wählen Sie bei entsprechender Aufforderung **Y** aus, um die Datei zu speichern. Drücken Sie dann die **EINGABETASTE**, um den Dateinamen **useooziewf.hql** zu verwenden.
 
 3. Verwenden Sie die folgenden Befehle zum Kopieren von **useooziewf.hql** in **wasb:///tutorials/useoozie/useooziewf.hql**:
 
 		hadoop fs -copyFromLocal useooziewf.hql /tutorials/useoozie/useooziewf.hql
 
-	Diese Befehle dienen zum Speichern der Datei **useooziewf.hql** im Azure Storage-Konto, das diesem Cluster zugeordnet ist, wodurch die Datei erhalten bleibt, selbst wenn der Cluster gelöscht wird. Dadurch können Sie Kosten sparen, indem Sie Cluster löschen, wenn sie nicht verwendet werden, während gleichzeitig Ihre Aufträge und Workflows erhalten bleiben.
+	Diese Befehle dienen zum Speichern der Datei **useooziewf.hql** im Azure-Speicherkonto, das diesem Cluster zugeordnet ist. Dadurch bleibt die Datei erhalten, selbst wenn der Cluster gelöscht wird. Dadurch können Sie Kosten sparen, indem Sie Cluster löschen, wenn sie nicht verwendet werden, während gleichzeitig Ihre Aufträge und Workflows erhalten bleiben.
 
 ##Definieren des Workflows
 
@@ -190,7 +190,7 @@ Definitionen von Oozie-Workflows werden in hPDL \(einer XML-Prozessdefinitionssp
 
 	Beachten Sie auch den Eintrag `<archive>sqljdbc4.jar</arcive>` im Abschnitt "Sqoop". Dieser weist Oozie an, dieses Archiv für Sqoop zur Verfügung zu stellen, wenn diese Aktion ausgeführt wird.
 
-2. Drücken Sie STRG+X, dann **Y** und die **EINGABETASTE** zum Speichern der Datei.
+2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
 
 3. Verwenden Sie den folgenden Befehl zum Kopieren der Datei **workflow.xml** in **wasb:///tutorials/useoozie/workflow.xml**:
 
@@ -293,7 +293,7 @@ Die Auftragsdefinition beschreibt den Speicherort der Datei "workflow.xml" sowie
 
 		headnode0.CLUSTERNAME-ssh.j7.internal.cloudapp.net
 
-	Der für den JobTracker verwendete Port ist 8050, weshalb die vollständige Adresse für den JobTracker **headnode0.CLUSTERNAME-ssh.j7.internal.cloudapp.net:8050** lautet.
+	Der für JobTracker verwendete Port ist 8050. Die vollständige Adresse für JobTracker lautet daher **headnode0.CLUSTERNAME-ssh.j7.internal.cloudapp.net:8050**.
 
 1. Verwenden Sie zum Erstellen der Konfiguration der Oozie-Auftragsdefinition Folgendes:
 
@@ -374,7 +374,7 @@ Die Auftragsdefinition beschreibt den Speicherort der Datei "workflow.xml" sowie
 
 	> [AZURE.NOTE]Der Eintrag **oozie.wf.application.path** definiert den Speicherort der Datei "workflow.xml", die den von diesem Auftrag ausgeführten Workflow enthält.
 
-2. Drücken Sie STRG+X, dann **Y** und die **EINGABETASTE** zum Speichern der Datei.
+2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
 
 ##Übermitteln und Verwalten des Auftrags
 
@@ -428,7 +428,7 @@ Die folgenden Schritte verwenden den Oozie-Befehl zum Übermitteln und Verwalten
 		CoordAction ID: -
 		------------------------------------------------------------------------------------------------------------------------------------
 
-	Dieser Auftrag hat den Status `PREP`, was bedeutet, dass er übermittelt, aber noch nicht gestartet wurde.
+	Dieser Auftrag hat den Status `PREP`. Das bedeutet, dass er übermittelt, aber noch nicht gestartet wurde.
 
 4. Starten Sie den Auftrag mit folgendem Befehl:
 
@@ -488,7 +488,7 @@ Um auf die Oozie-Webbenutzeroberfläche zuzugreifen, gehen Sie folgendermaßen v
 
 	![Abbildung der Menüs](./media/hdinsight-use-oozie-linux-mac/ooziewebuisteps.png)
 
-4. Die Oozie-Webbenutzeroberfläche zeigt standardmäßig aktive Workflowaufträge an. Um alle Workflowaufträge anzuzeigen, wählen Sie **All Jobs** aus.
+4. Die Oozie-Webbenutzeroberfläche zeigt standardmäßig aktive Workflowaufträge an. Wählen Sie zum Anzeigen aller Workflowaufträge **Alle Aufträge** aus.
 
 	![Alle angezeigten Aufträge](./media/hdinsight-use-oozie-linux-mac/ooziejobs.png)
 
@@ -498,7 +498,7 @@ Um auf die Oozie-Webbenutzeroberfläche zuzugreifen, gehen Sie folgendermaßen v
 
 6. Auf der Registerkarte "Auftragsinformationen" können Sie grundlegende Auftragsinformationen sowie die einzelnen Aktionen innerhalb des Auftrags anzeigen. Auf den Registerkarten am oberen Rand können Sie die Auftragsdefinition und Auftragskonfiguration anzeigen, auf das Auftragsprotokoll zugreifen oder einen gerichteten azyklischen Graph \(Directed Acyclic Graph, DAG\) des Auftrags anzeigen.
 
-	* **Auftragsprotokoll**: Klicken Sie auf die Schaltfläche **GetLogs**, um alle Protokolle für den Auftrag abzurufen, oder verwenden Sie das Feld **Suchfilter eingeben** zum Filtern von Protokollen.
+	* **Auftragsprotokoll**: Klicken Sie auf die Schaltfläche **GetLogs**, um alle Protokolle für den Auftrag abzurufen, oder verwenden Sie zum Filtern von Protokollen das Feld **Suchfilter eingeben**.
 
 		![Auftragsprotokoll](./media/hdinsight-use-oozie-linux-mac/joblog.png)
 
@@ -506,7 +506,7 @@ Um auf die Oozie-Webbenutzeroberfläche zuzugreifen, gehen Sie folgendermaßen v
 
 		![DAG des Auftrags](./media/hdinsight-use-oozie-linux-mac/jobdag.png)
 
-7. Bei Auswählen einer der Aktionen auf der Registerkarte **Auftragsinformationen** werden Informationen zur Aktion eingeblendet. Wählen Sie z. B. die Aktion **RunHiveScript** aus.
+7. Bei Auswählen einer der Aktionen auf der Registerkarte **Auftragsinformationen** werden Informationen zur Aktion eingeblendet. Wählen Sie z. B. die Aktion **RunHiveScript** aus.
 
 	![Aktionsinformationen](./media/hdinsight-use-oozie-linux-mac/action.png)
 
@@ -538,9 +538,9 @@ Um einen Zeitplan für den Workflow zu definieren, führen Sie die folgenden Sch
 	* **${coordStart}**: Startzeit des Auftrags
 	* **${CoordEnd}**: Endzeit des Auftrags
 	* **${coordTimezone}**: Koordinatoraufträge erfolgen in einer festen Zeitzone ohne Sommerzeit \(in der Regel unter Verwendung von UTC dargestellt\). Diese Zeitzone wird als "Oozie-Verarbeitungszeitzone" bezeichnet.
-	* **${wfPath}**: Pfad der Datei "workflow.xml".
+	* **${wfPath}**: Pfad zur Datei „workflow.xml“.
 
-2. Drücken Sie STRG+X, dann **Y** und die **EINGABETASTE** zum Speichern der Datei.
+2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
 
 3. Verwenden Sie den folgenden Befehl, um ihn in das Arbeitsverzeichnis dieses Auftrags zu kopieren:
 
@@ -561,7 +561,7 @@ Um einen Zeitplan für den Workflow zu definieren, führen Sie die folgenden Sch
 		      <value>wasb://mycontainer@mystorageaccount.blob.core.windows.net/tutorials/useoozie</value>
 		    </property>
 
-		Ersetzen Sie die Werte für **mycontainer** und **mystorageaccount** durch die Werte in anderen Einträgen der Datei "job.xml".
+		Ersetzen Sie die Werte für **mycontainer** und **mystorageaccount** durch die Werte in anderen Einträgen der Datei „job.xml“.
 
 	* Fügen Sie die folgenden Code hinzu, mit dem Start, Ende und Häufigkeit für die Datei "coordinator.xml" definiert werden:
 
@@ -587,7 +587,7 @@ Um einen Zeitplan für den Workflow zu definieren, führen Sie die folgenden Sch
 
 		Die Startzeit wird auf 12:00 Uhr am 25. Juni 2015, die Endzeit auf den 27. Juni 2015 und das Intervall für die Ausführung dieses Auftrags auf täglich festgelegt \(die Frequenz wird in Minuten angegeben: 24 Stunden x 60 Minuten = 1440 Minuten\). Schließlich wird die Zeitzone auf UTC festgelegt.
 
-5. Drücken Sie STRG+X, dann **Y** und die **EINGABETASTE** zum Speichern der Datei.
+5. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann die **EINGABETASTE**.
 
 6. Um den Auftrag auszuführen, geben Sie den folgenden Befehl ein:
 
@@ -595,17 +595,17 @@ Um einen Zeitplan für den Workflow zu definieren, führen Sie die folgenden Sch
 
 	Dadurch wird der Auftrag übermittelt und gestartet.
 
-7. Wenn Sie die Oozie-Webbenutzeroberfläche besuchen und die Registerkarte **Coordinator Jobs** auswählen, sollten die folgenden Informationen angezeigt werden:
+7. Wenn Sie die Oozie-Webbenutzeroberfläche besuchen und die Registerkarte **Koordinatoraufträge** auswählen, sollten die folgenden Informationen angezeigt werden:
 
 	![Registerkarte "Koordinatoraufträge"](./media/hdinsight-use-oozie-linux-mac/coordinatorjob.png)
 
-	Beachten Sie den Eintrag **Next Materialization**, der angibt, wann der Auftrag das nächste Mal ausgeführt wird.
+	Beachten Sie den Eintrag **Nächste Materialisierung**, der angibt, wann der Auftrag das nächste Mal ausgeführt wird.
 
 8. Ähnlich wie beim vorherigen Workflowauftrag werden beim Auswählen des Auftragseintrags auf der Webbenutzeroberfläche Informationen zum Auftrag angezeigt:
 
 	![Informationen zu Koordinatoraufträgen](./media/hdinsight-use-oozie-linux-mac/coordinatorjobinfo.png)
 
-	Beachten Sie, dass nur erfolgreiche Ausführungen des Auftrags und nicht einzelne Aktionen innerhalb des geplanten Workflows angezeigt werden. Um diese anzuzeigen, wählen einen der Einträge vom Typ **Aktion** aus. Dadurch werden ähnliche abgerufene Informationen wie beim vorherigen Workflowauftrag angezeigt.
+	Beachten Sie, dass nur erfolgreiche Ausführungen des Auftrags und nicht einzelne Aktionen innerhalb des geplanten Workflows angezeigt werden. Um diese anzuzeigen, wählen Sie einen der Einträge vom Typ **Aktion** aus. Dadurch werden ähnliche abgerufene Informationen wie beim vorherigen Workflowauftrag angezeigt.
 
 	![Aktionsinformationen](./media/hdinsight-use-oozie-linux-mac/coordinatoractionjob.png)
 
@@ -615,7 +615,7 @@ Bei der Behandlung von Problemen mit Oozie-Aufträgen ist die Oozie-Benutzerober
 
 1. Zeigen Sie den Auftrag auf der Oozie-Webbenutzeroberfläche an.
 
-2. Wenn eine bestimmte Aktion nicht erfolgreich war, wählen Sie die Aktion aus, um festzustellen, ob das Feld **Error Message** weitere Informationen zum Fehler bietet.
+2. Wenn eine bestimmte Aktion nicht erfolgreich war, wählen Sie die Aktion aus, um festzustellen, ob das Feld **Fehlermeldung** weitere Informationen zum Fehler enthält.
 
 3. Falls verfügbar, verwenden Sie die URL der Aktion, um weitere Details \(z. B. JobTracker-Protokolle\) für die Aktion anzuzeigen.
 
@@ -627,13 +627,13 @@ Es folgen Fehlermeldungen, die auftreten können, und Möglichkeiten zu ihrer Be
 
 	JA009: Cannot initialize Cluster. Please check your configuration for map
 
-**Ursache**: Die in der Datei **job.xml** verwendeten WASB-Adressen enthalten nicht den Speichercontainer oder Namen des Speicherkontos. Das WASB-Adressformat muss `wasb://containername@storageaccountname.blob.core.windows.net` sein.
+**Ursache**: Die in der Datei **job.xml** verwendeten WASB-Adressen enthalten nicht den Namen des Speichercontainers oder des Speicherkontos. Das WASB-Adressformat muss wie folgt lauten: `wasb://containername@storageaccountname.blob.core.windows.net`.
 
 **Lösung**: Ändern Sie die vom Auftrag verwendeten WASB-Adressen.
 
-###JA002: Oozie darf nicht die Identität von "&lt;USER\>" annehmen.
+###JA002: Oozie darf nicht die Identität von "&lt;USER>" annehmen.
 
-**Symptome**: Der Auftragsstatus ändert sich in **SUSPENDED**. In den Details für den Auftrag wird der Status von "RunHiveScript" als **START\_MANUAL** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
+**Symptome**: Der Auftragsstatus ändert sich in **SUSPENDED**. In den Details für den Auftrag wird der Status von „RunHiveScript“ als **START\_MANUAL** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
 
 	JA002: User: oozie is not allowed to impersonate <USER>
 
@@ -645,17 +645,17 @@ Es folgen Fehlermeldungen, die auftreten können, und Möglichkeiten zu ihrer Be
 
 > [AZURE.NOTE]Es dauert einige Minuten, bis HDInsight erkennt, dass der Benutzer der Gruppe hinzugefügt wurde.
 
-###Launcher ERROR \(Sqoop\)
+###Launcher ERROR (Sqoop)
 
-**Symptome**: Der Status wird in **KILLED** geändert. In den Details zum Auftrag wird der Status von "RunSqoopExport" als **ERROR** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
+**Symptome**: Der Auftragsstatus wird in **KILLED** geändert. In den Details zum Auftrag wird der Status von „RunSqoopExport“ als **ERROR** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
 
 	Launcher ERROR, reason: Main class [org.apache.oozie.action.hadoop.SqoopMain], exit code [1]
 
 **Ursache**: Sqoop kann den Datenbanktreiber nicht laden, der für den Zugriff auf die Datenbank erforderlich ist.
 
-**Lösung**: Bei Verwendung von Sqoop in einem Oozie-Auftrag müssen Sie den Datenbanktreiber mit anderen vom Auftrag verwendeten Ressourcen \(z. B. workflow.xml\) angeben.
+**Lösung**: Bei Verwendung von Sqoop in einem Oozie-Auftrag müssen Sie den Datenbanktreiber mit anderen vom Auftrag verwendeten Ressourcen (z. B. „workflow.xml“) angeben.
 
-Sie müssen auch im Abschnitt `<sqoop>...</sqoop>` der Datei "workflow.xml" auf das Archiv mit dem Datenbanktreiber verweisen.
+Sie müssen auch im Abschnitt `<sqoop>...</sqoop>` der Datei „workflow.xml“ auf das Archiv mit dem Datenbanktreiber verweisen.
 
 Für den Auftrag in diesem Dokument würden Sie z. B. folgendermaßen die folgenden Schritte ausführen:
 
@@ -663,7 +663,7 @@ Für den Auftrag in diesem Dokument würden Sie z. B. folgendermaßen die folgen
 
 		 hadoop fs -copyFromLocal /usr/share/java/sqljdbc_4.1/enu/sqljdbc4.jar /tutorials/useoozie/sqljdbc4.jar
 
-2. Ändern Sie die Datei "workflow.xml" durch Hinzufügen des folgenden Codes in eine neue Zeile über `</sqoop>`:
+2. Ändern Sie die Datei „workflow.xml“ durch Hinzufügen des folgenden Codes in eine neue Zeile über `</sqoop>`:
 
 		<archive>sqljdbc4.jar</archive>
 
@@ -714,7 +714,7 @@ In diesem Tutorial haben Sie gelernt, wie ein Oozie-Workflow definiert und ein O
 [powershell-about-profiles]: http://go.microsoft.com/fwlink/?LinkID=113729
 [powershell-install-configure]: powershell-install-configure.md
 [powershell-start]: http://technet.microsoft.com/library/hh847889.aspx
-[powershell-script]: https://technet.microsoft.com/en-us/library/ee176961.aspx
+[powershell-script]: https://technet.microsoft.com/de-de/library/ee176961.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
@@ -724,4 +724,4 @@ In diesem Tutorial haben Sie gelernt, wie ein Oozie-Workflow definiert und ein O
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!-----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

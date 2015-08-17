@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="05/26/2015" 
 	ms.author="juliako"/>
+
 
 #Kopieren eines vorhandenen Blobs in ein Media Services-Medienobjekt
 
@@ -60,11 +62,17 @@ In diesem Abschnitt werden Sie ein C#-Konsolenanwendungsprojekt erstellen und ei
 
 		<appSettings>
 		  <add key="MediaServicesAccountName" value="Media-Services-Account-Name"/>
+
 		  <add key="MediaServicesAccountKey" value="Media-Services-Account-Key"/>
+
 		  <add key="MediaServicesStorageAccountName" value="Media-Services-Storage-Account-Name"/>
+
 		  <add key="MediaServicesStorageAccountKey" value="Media-Services-Storage-Account-Key"/>
+
 		  <add key="ExternalStorageAccountName" value="External-Storage-Account-Name"/>
+
 		  <add key="ExternalStorageAccountKey" value="External-Storage-Account-Key"/>
+
 		</appSettings>
 
 
@@ -73,7 +81,10 @@ In diesem Abschnitt werden Sie ein C#-Konsolenanwendungsprojekt erstellen und ei
 Mit dem Codebeispiel unten werden die folgenden Aufgaben ausgeführt:
 
 1. Erstellen der CloudMediaContext-Instanz. 
-1. Erstellen der CloudStorageAccount-Instanzen: _sourceStorageAccount und _destinationStorageAccount. 1. Hochladen von Smooth Streaming-Dateien aus einem lokalen Verzeichnis in einen Blob-Container, der sich in _sourceStorageAccount befindet.1. Erstellen eines neuen Medienobjekts. Der Blob-Container, der für dieses Medienobjekt erstellt wird, befindet sich in _destinationStorageAccount.1. Kopieren der angegebenen Blobs mithilfe des Azure Storage-SDK in den mit dem Medienobjekt verknüpften Container.
+1. Erstellen der CloudStorageAccount-Instanzen: sourceStorageAccount und destinationStorageAccount.
+1. Hochladen von Smooth Streaming-Dateien aus einem lokalen Verzeichnis in einen Blob-Container, der sich in sourceStorageAccount befindet.
+1. Erstellen eines neuen Medienobjekts. Der Blob-Container, der für dieses Medienobjekt erstellt wird, befindet sich in destinationStorageAccount.
+1. Kopieren der angegebenen Blobs mithilfe des Azure Storage-SDK in den mit dem Medienobjekt verknüpften Container.
 
 >[AZURE.NOTE]Der Kopiervorgang löst keine Ausnahme aus, wenn der Locator abgelaufen ist.
 
@@ -283,4 +294,4 @@ Mit dem Codebeispiel unten werden die folgenden Aufgaben ausgeführt:
 		}
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

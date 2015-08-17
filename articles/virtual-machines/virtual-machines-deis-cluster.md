@@ -7,6 +7,7 @@
    manager="larar"
    editor=""/>
 
+
 <tags
    ms.service="virtual-machines"
    ms.devlang="multiple"
@@ -15,6 +16,7 @@
    ms.workload="infrastructure-services"
    ms.date="06/24/2015"
    ms.author="hbai"/>
+
 
 # Bereitstellen eines Deis-Clusters mit drei Knoten
 
@@ -57,7 +59,8 @@ In diesem Abschnitt verwenden Sie eine [Azure-Ressourcen-Manager](../resource-gr
 5. Wechseln Sie zu [https://discovery.etcd.io/new](https://discovery.etcd.io/new), um ein neues Cluster-Token zu erstellen, das in etwas so aussieht:
 
         https://discovery.etcd.io/6a28e078895c5ec737174db2419bb2f3
-<br /> Jeder CoreOS-Cluster muss über einen eindeutigen Token aus diesen kostenlosen Dienst verfügen. Weitere Informationen finden Sie in der [CoreOS-Dokumentation](https://coreos.com/docs/cluster-management/setup/cluster-discovery/).
+<br />
+ Jeder CoreOS-Cluster muss über einen eindeutigen Token aus diesen kostenlosen Dienst verfügen. Weitere Informationen finden Sie in der [CoreOS-Dokumentation](https://coreos.com/docs/cluster-management/setup/cluster-discovery/).
 
 6. Ändern Sie die Datei **cloud-config.yaml**, um das vorhandene **discovery**-Token durch das neue Token zu ersetzen.
 
@@ -74,7 +77,7 @@ In diesem Abschnitt verwenden Sie eine [Azure-Ressourcen-Manager](../resource-gr
 
 8. Ändern Sie den Parameter **newStorageAccountName**. Dies ist das Speicherkonto für Betriebssystem-Datenträger des virtuellen Computers. Dieser Kontoname muss global eindeutig sein.
 
-9. Ändern Sie den Parameter **publicDomainName**: Dieser ist Teil des DNS-Namens des Load Balancers, der mit der öffentlichen IP-Adresse des Load Balancers verknüpft ist. Der endgültige FQDN hat das Format _[Wert dieses Parameters]_. _ [Region] _.cloudapp.azure.com. Wenn Sie z. B. den Namen "deishbai32" angeben und die Ressourcengruppe in der Region "West US" bereitgestellt wird, lautet der endgültige FQDN für den Load Balancer "deishbai32.westus.cloudapp.azure.com".
+9. Ändern Sie den Parameter **publicDomainName**: Dieser ist Teil des DNS-Namens des Load Balancers, der mit der öffentlichen IP-Adresse des Load Balancers verknüpft ist. Der endgültige FQDN hat das Format _[Wert dieses Parameters]_._[Region]_.cloudapp.azure.com. Wenn Sie z. B. den Namen "deishbai32" angeben und die Ressourcengruppe in der Region "West US" bereitgestellt wird, lautet der endgültige FQDN für den Load Balancer "deishbai32.westus.cloudapp.azure.com".
 
 10. Speichern Sie die Parameterdatei. Stellen Sie anschließend den Cluster mit Azure PowerShell bereit:
 
@@ -168,6 +171,7 @@ Die folgenden Schritte zeigen, wie Sie die Go-Anwendung "Hello World" im Cluster
 
     ![GoDaddy-A-Datensatz](media/virtual-machines-deis-cluster/go-daddy.png)
 <p />
+
 2. Installieren Sie deis:
 
         mkdir deis
@@ -180,16 +184,19 @@ Die folgenden Schritte zeigen, wie Sie die Go-Anwendung "Hello World" im Cluster
         cd ~/.ssh
         ssh-keygen (press [Enter]s to use default file names and empty passcode)
 
-4. Fügen Sie "id_rsa.pub" oder einen öffentlichen Schlüssel Ihrer Wahl zu GitHub hinzu. Verwenden Sie hierzu die Schaltfläche zum Hinzufügen des SSH-Schlüssels im Konfigurationsbildschirm für SSH-Schlüssel:
+4. Fügen Sie "id\_rsa.pub" oder einen öffentlichen Schlüssel Ihrer Wahl zu GitHub hinzu. Verwenden Sie hierzu die Schaltfläche zum Hinzufügen des SSH-Schlüssels im Konfigurationsbildschirm für SSH-Schlüssel:
 
-  ![GitHub-Schlüssel](media/virtual-machines-deis-cluster/github-key.png) <p /> 5. Registrieren Sie einen neuen Benutzer:
+  ![GitHub-Schlüssel](media/virtual-machines-deis-cluster/github-key.png) <p />
+ 5. Registrieren Sie einen neuen Benutzer:
 
         deis register http://deis.[your domain]
 <p />
+
 6. Fügen Sie den SSH-Schlüssel hinzu:
 
         deis keys:add [path to your SSH public key]
   <p />
+
 7. Erstellen Sie eine Anwendung.
 
         git clone https://github.com/deis/helloworld.git
@@ -197,6 +204,7 @@ Die folgenden Schritte zeigen, wie Sie die Go-Anwendung "Hello World" im Cluster
         deis create
         git push deis master
 <p />
+
 8. Mit "git push" wird die Erstellung und Bereitstellung von Docker-Images ausgelöst. Dies kann einige Minuten dauern. Der Vorgang kann gelegentlich bei Schritt 10 (Übertragung des Images in das private Repository) hängen bleiben. Beenden Sie in diesem Fall den Prozess, entfernen Sie die Anwendung mit `deis apps:destroy –a <application name>` entfernen, und versuchen Sie es erneut. Den Namen der Anwendung können Sie mit `deis apps:list` ermitteln. Wenn alle Prozesse ordnungsgemäß funktioniert haben, sollte am Ende der Befehlsausgabe etwa Folgendes angezeigt werden:
 
         -----> Launching...
@@ -206,6 +214,7 @@ Die folgenden Schritte zeigen, wie Sie die Go-Anwendung "Hello World" im Cluster
         To ssh://git@deis.artitrack.com:2222/lambda-underdog.git
          * [new branch]      master -> master
 <p />
+
 9. Überprüfen Sie, ob die Anwendung funktioniert:
 
         curl -S http://[your application name].[your domain]
@@ -215,10 +224,12 @@ Die folgenden Schritte zeigen, wie Sie die Go-Anwendung "Hello World" im Cluster
         See the documentation at http://docs.deis.io/ for more information.
         (you can use geis apps:list to get the name of your application).
 <p />
+
 10. Skalieren Sie die Anwendung in drei Instanzen:
 
         deis scale cmd=3
 <p />
+
 11. Optional können Sie "deis info" verwenden, um die Details Ihrer Anwendung zu überprüfen. Die folgenden Ausgaben stammen aus der Bereitstellung der Anwendung:
 
         deis info
@@ -254,4 +265,4 @@ In diesem Artikel wurden Sie durch alle Schritte der Bereitstellung eines neuen 
 [resource-group-overview]: ../resource-group-overview.md
 [powershell-azure-resource-manager]: ../powershell-azure-resource-manager.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

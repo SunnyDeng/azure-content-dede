@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Entwurfsmuster in Service Fabric Actors für intelligenten Cache"
-   description="Entwurfsmuster für die Verwendung von Service Fabric Actors als Caching-Infrastruktur in webbasierten Anwendungen"
+   pageTitle="Reliable Actors: Entwurfsmuster für intelligenten Cache"
+   description="Entwurfsmuster für die Verwendung von Reliable Actors als Caching-Infrastruktur in webbasierten Anwendungen"
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
+
 
 <tags
    ms.service="service-fabric"
@@ -13,10 +14,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/06/2015"
+   ms.date="08/05/2015"
    ms.author="claudioc"/>
 
-# Entwurfsmuster in Service Fabric Actors: Intelligenter Cache
+
+# Reliable Actors-Entwurfsmuster: Intelligenter Cache
 Die Kombination von Webebene, Caching-Ebene, Speicherebene und gelegentlich auch Worker-Ebene sind im Großen und Ganzen die standardmäßigen Teile heutiger Anwendungen. Die Caching-Ebene ist in der Regel von entscheidender Bedeutung für die Leistung und kann wiederum selbst mehrere Ebenen umfassen. Viele Caches sind einfache Schlüsselwertpaare, während andere Systeme wie [Redis](http://redis.io), die als Cache verwendet werden, eine reichhaltigere Semantik bieten. Dennoch ist jede spezielle Caching-Ebene semantisch beschränkt, und noch wichtiger, es ist eine weitere Ebene, die verwaltet werden muss. Was, wenn anstatt Objekten nur der Status in lokalen Variablen gespeichert wird, und von diesen Objekten automatisch Snapshots erstellt oder sie in einem permanenten Speicher verschoben werden können? Außerdem werden umfassende Auflistungen, wie z. B. Listen, sortierte Sätze, Warteschlangen sowie auch jeder andere benutzerdefinierte Typ, einfach als Membervariablen und Methoden modelliert.
 
 ![][1]
@@ -301,6 +303,5 @@ Im Wesentlichen bietet der Smart Cache Folgendes:
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-pattern-smart-cache/smartcache-arch.png
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

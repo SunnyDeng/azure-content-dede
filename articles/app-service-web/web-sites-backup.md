@@ -142,7 +142,7 @@ Die unten angegebenen Schritte zeigen, wie Sie diese Dateien aus der Sicherung a
 
     \\site\\wwwroot\\Logs \\LogFiles \\site\\wwwroot\\Images\\2013 \\site\\wwwroot\\Images\\2014 \\site\\wwwroot\\Images\\brand.png
 
-3. Laden Sie diese Datei in das Verzeichnis `D:\home\site\wwwroot\` Ihrer Website hoch. Verwenden Sie dazu [ftp](web-sites-deploy.md#ftp)oder eine andere Methode. Wenn Sie möchten, können Sie die Datei direkt in `http://{yourapp}.scm.azurewebsites.net/DebugConsole` erstellen und den Inhalt dort einfügen.
+3. Laden Sie diese Datei in das Verzeichnis `D:\home\site\wwwroot` Ihrer Website hoch. Verwenden Sie dazu [ftp](web-sites-deploy.md#ftp)oder eine andere Methode. Wenn Sie möchten, können Sie die Datei direkt in `http://{yourapp}.scm.azurewebsites.net/DebugConsole` erstellen und den Inhalt dort einfügen.
 
 4. Führen Sie die Sicherungen durch, wie Sie es gewohnt sind, [manuell](#create-a-manual-backup) oder [automatisch](#configure-automated-backups).
 
@@ -220,4 +220,4 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
  
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

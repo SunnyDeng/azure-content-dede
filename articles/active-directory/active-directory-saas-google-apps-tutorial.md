@@ -18,7 +18,7 @@
 
 #Tutorial: Integrieren von Google Apps in Azure Active Directory
 
-In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azure Active Directory \(Azure AD\) verbinden. Sie lernen, wie Sie die einmalige Anmeldung bei Google Apps konfigurieren, die automatisierte Benutzerbereitstellung aktivieren und Benutzern den Zugriff auf Google Apps zuweisen.
+In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azure Active Directory (Azure AD) verbinden. Sie lernen, wie Sie die einmalige Anmeldung bei Google Apps konfigurieren, die automatisierte Benutzerbereitstellung aktivieren und Benutzern den Zugriff auf Google Apps zuweisen.
 
 ##Voraussetzungen
 
@@ -64,7 +64,7 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 	![Wählen Sie "Azure AD – einmaliges Anmelden".][7]
 
-	> [AZURE.NOTE]Um weitere Informationen zu den verschiedenen Optionen für die einmalige Anmeldung zu erhalten, [klicken Sie hier](https://msdn.microsoft.com/library/azure/dn308588.aspx).
+	> [AZURE.NOTE]Um weitere Informationen zu den verschiedenen Optionen für die einmalige Anmeldung zu erhalten, [klicken Sie hier](../active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work).
 
 3. Geben Sie auf der Seite **App-Einstellungen konfigurieren** für das Feld **Anmelde-URL** Ihre Google Apps-Mandanten-URL im folgenden Format ein: `https://mail.google.com/a/<yourdomain>`
 
@@ -80,7 +80,7 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 	![Klicken Sie auf "Sicherheit".][10]
 
-7. Klicken Sie auf der Seite **Sicherheit** auf **Einmaliges Anmelden \(SSO\) einrichten**.
+7. Klicken Sie auf der Seite **Sicherheit** auf **Einmaliges Anmelden (SSO) einrichten**.
 
 	![Klicken Sie auf "SSO".][11]
 
@@ -112,7 +112,7 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 ##Schritt 3: Aktivieren der automatisierten Benutzerbereitstellung
 
-> [AZURE.NOTE]Eine weitere Option für die Automatisierung der Benutzerbereitstellung für Google Apps ist die Verwendung von [Google Apps Directory Sync \(GADS\)](https://support.google.com/a/answer/106368?hl=en), um Ihre lokalen Active Directory-Identitäten für Google Apps bereitzustellen. Im Gegensatz dazu stellt die Lösung in diesem Tutorial Ihre Azure Active Directory-Benutzer \(Cloud\) und E-Mail-aktivierten Gruppen für Google Apps bereit.
+> [AZURE.NOTE]Eine weitere Option für die Automatisierung der Benutzerbereitstellung für Google Apps ist die Verwendung von [Google Apps Directory Sync (GADS)](https://support.google.com/a/answer/106368?hl=en), um Ihre lokalen Active Directory-Identitäten für Google Apps bereitzustellen. Im Gegensatz dazu stellt die Lösung in diesem Tutorial Ihre Azure Active Directory-Benutzer (Cloud) und E-Mail-aktivierten Gruppen für Google Apps bereit.
 
 1. Melden Sie sich bei der[Google Apps-Verwaltungskonsole](http://admin.google.com/) mit Ihrem Administratorkonto an, und klicken Sie auf **Sicherheit**. Wenn der Link nicht angezeigt wird, kann er unter dem Menü **Weitere Steuerelemente** im unteren Bereich des Bildschirms versteckt sein.
 
@@ -212,11 +212,7 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 
 4. Um Ihre Einstellungen für einmaliges Anmelden zu testen, öffnen Sie den Zugriffsbereich unter [https://myapps.microsoft.com](https://myapps.microsoft.com/), melden Sie sich bei Ihrem Testkonto an, und klicken Sie auf **Google Apps**.
 
-##Siehe auch
-
-- [Liste der Tutorials zur Integration von SaaS-Anwendungen](active-directory-saas-tutorial-list.md)
-- [Anwendungszugriff in Azure AD](https://msdn.microsoft.com/library/azure/dn308590.aspx)
-- [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/azure/dn308586.aspx)
+[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
 [0]: ./media/active-directory-saas-google-apps-tutorial/azure-active-directory.png
 [1]: ./media/active-directory-saas-google-apps-tutorial/applications-tab.png
@@ -250,4 +246,4 @@ In diesem Tutorial erfahren Sie, wie Sie Ihre Google Apps-Umgebung mit Ihrem Azu
 [29]: ./media/active-directory-saas-google-apps-tutorial/assign-users.png
 [30]: ./media/active-directory-saas-google-apps-tutorial/assign-confirm.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

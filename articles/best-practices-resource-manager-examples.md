@@ -252,4 +252,4 @@ Schließlich kann es wünschenswert sein, sicherzustellen, dass bestimmte Ressou
 - Empfehlungen für die Sicherheitseinstellungen in Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 - Informationen zur Freigabe des Status in Vorlagen finden Sie unter [Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-state.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

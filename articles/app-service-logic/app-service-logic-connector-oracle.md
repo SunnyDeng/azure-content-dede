@@ -57,10 +57,10 @@ Tabellen | Nein | Geben Sie die Tabellen in der Datenbank ein, die vom Connector
 Gespeicherte Prozeduren | Nein | Geben Sie die gespeicherten Prozeduren in der Datenbank ein, die vom Connector aufgerufen werden können. Geben Sie z. B. *IsEmployeeEligible,CalculateOrderDiscount* ein.
 Funktionen | Nein | Geben Sie die Funktionen in der Datenbank ein, die vom Connector aufgerufen werden können. Geben Sie z. B. *IsEmployeeEligible,CalculateOrderDiscount* ein.
 Paket-Entitäten | Nein | Geben Sie die Pakete in der Datenbank ein, die vom Connector aufgerufen werden können. Geben Sie z. B. *PackageOrderProcessing.CompleteOrder,PackageOrderProcessing.GenerateBill* ein.
-Anweisung für verfügbare Daten | Nein | Geben Sie die Anweisung ein, um festzustellen, ob Daten für den Abruf verfügbar sind. Geben Sie z. B. *SELECT * from table_name* ein.
+Anweisung für verfügbare Daten | Nein | Geben Sie die Anweisung ein, um festzustellen, ob Daten für den Abruf verfügbar sind. Geben Sie z. B. *SELECT * from table\_name* ein.
 Abruftyp | Nein | Geben Sie den Abruftyp ein. Zulässige Werte sind "Auswählen", "Prozedur", "Funktion" und "Paket".
-Abrufanweisung | Nein | Geben Sie die Anweisung zur Abfrage der Oracle-Datenbank ein. Geben Sie z. B. *SELECT * from table_name* ein.
-Anweisung nach Abruf | Nein | Geben Sie die Anweisung ein, die nach der Abfrage ausgeführt werden soll. Geben Sie z. B. *DELETE * from table_name* ein.
+Abrufanweisung | Nein | Geben Sie die Anweisung zur Abfrage der Oracle-Datenbank ein. Geben Sie z. B. *SELECT * from table\_name* ein.
+Anweisung nach Abruf | Nein | Geben Sie die Anweisung ein, die nach der Abfrage ausgeführt werden soll. Geben Sie z. B. *DELETE * from table\_name* ein.
 
 5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: <br/> ![][1]
 
@@ -115,4 +115,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-oracle/LogicApp7.png
 [12]: ./media/app-service-logic-connector-oracle/LogicApp8.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

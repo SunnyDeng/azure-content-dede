@@ -107,4 +107,4 @@ Console.WriteLine("Greeting is {0}", message.Content);
 >[AZURE.NOTE]Das Kommunikationsframework gibt vom Dienst ausgegebenen Ausnahmen an den Client weiter. Somit kann die Ausnahmebehandlungslogik auf dem Client, der ServiceProxy verwendet, gegebenenfalls vom Dienst ausgegebene Ausnahmen direkt behandeln.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

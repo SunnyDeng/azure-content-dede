@@ -7,6 +7,7 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
+
 <tags 
 	ms.service="app-service-web" 
 	ms.workload="web" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="06/08/2015" 
 	ms.author="tdykstra"/>
+
 
 # Verwenden von Azure-Blobspeicher mit dem WebJobs-SDK
 
@@ -152,7 +154,7 @@ Die maximale Anzahl von Wiederholungen ist konfigurierbar. Für die Verarbeitung
 
 Die Warteschlangennachricht für nicht verarbeitbare Blobs ist ein JSON-Objekt, das die folgenden Eigenschaften enthält:
 
-* FunctionId (im Format *{Webauftragsname}*.Functions.*{Funktionsname}*; Beispiel: WebJob1.Functions.CopyBlob)
+* FunctionId (im Format *{WebJob-Name}*.Functions.*{Funktionsname}*; Beispiel: WebJob1.Functions.CopyBlob)
 * BlobType ("BlockBlob" oder "PageBlob")
 * ContainerName
 * BlobName
@@ -203,7 +205,7 @@ Das WebJobs-SDK stellt sicher, dass `BlobTrigger`-Funktionen für ein neues oder
 
 Blobbelege werden in einem Container mit dem Namen *azure-webjobs-hosts* in dem Azure-Speicherkonto gespeichert, das in der Verbindungszeichenfolge "AzureWebJobsStorage" angegeben ist. Ein Blobbeleg enthält die folgenden Informationen:
 
-* Die Funktion, die für das Blob aufgerufen wurde ("*{Webauftragsname}*.Functions.*{Funktionsname}*"; Beispiel: "WebJob1.Functions.CopyBlob")
+* Die Funktion, die für das Blob aufgerufen wurde ("*{WebJob-Name}*.Functions.*{Funktionsname}*"; Beispiel: "WebJob1.Functions.CopyBlob")
 * Der Containername
 * Blobtyp ("BlockBlob" oder "PageBlob")
 * Blobname
@@ -232,4 +234,4 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Blobs behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

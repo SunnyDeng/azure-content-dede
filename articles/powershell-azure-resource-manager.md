@@ -7,6 +7,7 @@
 	manager="wpickett" 
 	editor=""/>
 
+
 <tags 
 	ms.service="azure-resource-manager" 
 	ms.workload="multiple" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/15/2015" 
 	ms.author="tomfitz"/>
+
 
 # Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager
 
@@ -185,7 +187,7 @@ Beachten Sie, dass der **administratorLoginPassword**-Parameter eine sichere Zei
 
 Im Abschnitt **resources** der Vorlagen werden die Ressourcen aufgelistet, die von der Vorlage erstellt werden. Diese Vorlage erstellt einen SQL-Datenbankserver und eine SQL-Datenbank, eine Serverfarm und eine Website sowie mehrere Verwaltungseinstellungen.
   
-Die Definition der einzelnen Ressource umfasst ihre Eigenschaften, zum Beispiel Name, Typ und Speicherort sowie Parameter für benutzerdefinierte Werte. In diesem Abschnitt der Vorlage wird beispielsweise die SQL-Datenbank definiert. Er enthält Parameter für den Datenbanknamen \(\[parameters\('databaseName'\)\]\), den Speicherort des Datenbankservers \[parameters\('serverLocation'\)\] und die Sortierungseigenschaft \[parameters\('collation'\)\].
+Die Definition der einzelnen Ressource umfasst ihre Eigenschaften, zum Beispiel Name, Typ und Speicherort sowie Parameter für benutzerdefinierte Werte. In diesem Abschnitt der Vorlage wird beispielsweise die SQL-Datenbank definiert. Er enthält Parameter für den Datenbanknamen ([parameters('databaseName')]), den Speicherort des Datenbankservers [parameters('serverLocation')] und die Sortierungseigenschaft [parameters('collation')].
 
     {
         "name": "[parameters('databaseName')]",
@@ -241,7 +243,7 @@ Sobald Sie den Vorlagennamen eingeben, ruft New-AzureResourceGroup die Vorlage a
 
 **Dynamische Vorlagenparameter**
 
-Um die Parameter abzurufen, geben Sie zur Angabe eines Parameternamens ein Minuszeichen \(-\) ein, und drücken Sie dann die TAB-Taste. Sie können auch die ersten Buchstaben eines Parameternamens eingeben, zum Beispiel siteName, und dann die TAB-Taste drücken.
+Um die Parameter abzurufen, geben Sie zur Angabe eines Parameternamens ein Minuszeichen (-) ein, und drücken Sie dann die TAB-Taste. Sie können auch die ersten Buchstaben eines Parameternamens eingeben, zum Beispiel siteName, und dann die TAB-Taste drücken.
 
     PS C:\> New-AzureResourceGroup -Name TestRG1 -Location "East Asia" -GalleryTemplateIdentity Microsoft.WebSiteSQLDatabase.0.2.6-preview -si<TAB>
 
@@ -280,7 +282,7 @@ Nach dem Erstellen einer Ressourcengruppe können Sie die Cmdlets im AzureResour
 
 - Um alle Ressourcengruppen in Ihrem Abonnement abzurufen, verwenden Sie das **Get-AzureResourceGroup**-Cmdlet:
 
-		PS C:>Get-AzureResourceGroup
+		PS C:\>Get-AzureResourceGroup
 
 		ResourceGroupName : TestRG
 		Location          : eastasia
@@ -372,29 +374,9 @@ Das AzureResourceManager-Modul umfasst Cmdlets, mit denen Sie Fehler vermeiden k
 
 
 ## Nächste Schritte
-Erste Schritte
 
-- [Übersicht über den Azure Resource Manager](./resource-group-overview.md)
-- [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](./xplat-cli-azure-resource-manager.md)
-- [Using the Azure Portal to manage your Azure resources](./resource-group-portal.md) \(Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen\)
+- Weitere Informationen zum Erstellen von Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-authoring-templates.md).
+- Informationen zum Bereitstellen von Vorlagen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](./resource-group-template-deploy.md).
+- Ein ausführliches Beispiel für das Bereitstellen eines Projekts finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 
-Erstellen und Bereitstellen von Anwendungen
-
-- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) \(Erstellen von Vorlagen im Azure-Ressourcen-Manager\)
-- [Deploy an application with Azure Resource Manager Template](./resource-group-template-deploy.md) \(Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager\)
-- [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-web/app-service-deploy-complex-application-predictably.md)
-- [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](./resource-group-deploy-debug.md)
-- [Azure Resource Manager Template Functions](./resource-group-template-functions.md) \(Vorlagenfunktionen im Azure-Ressourcen-Manager\)
-- [Erweiterte Vorlagenvorgänge](./resource-group-advanced-template.md)
-
-Organisieren von Ressourcen
-
-- [Using tags to organize your Azure resources](./resource-group-using-tags.md) \(Verwenden von Tags zum Organisieren von Azure-Ressourcen\)
-
-Zugriffsverwaltung und -überwachung
-
-- [Verwalten und Überwachen des Ressourcen-Zugriffs](./resource-group-rbac.md)
-- [Authentifizieren eines Dienstprinzipals mit Azure-Ressourcen-Manager](./resource-group-authenticate-service-principal.md)
-- [Erstellen neuer Azure-Dienstprinzipale mit dem Azure-Portal](./resource-group-create-service-principal-portal.md)
-
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

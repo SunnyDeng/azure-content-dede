@@ -10,7 +10,7 @@
 <tags
    ms.service="app-service-logic"
    ms.devlang="multiple"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
    ms.date="06/24/2015"
@@ -50,7 +50,7 @@ Als Nächstes fügen wir Trigger und Aktionen hinzu.
 ## Hinzufügen eines HTTP-Triggers
 
 1. Wählen Sie im Katalog **HTTP-Listener** aus, um einen neuen Listener zu erstellen. Nennen Sie ihn **HTTP1**.
-2. Belassen Sie die Einstellung **Antwort automatisch senden?** auf "False" festgelegt. Konfigurieren Sie die Triggeraktion, indem Sie _HTTP-Methode_ auf _POST_ und die Einstellung _Relative URL_ auf _\OneWayPipeline_ festlegen.
+2. Belassen Sie die Einstellung **Antwort automatisch senden?** auf "False" festgelegt. Konfigurieren Sie die Triggeraktion, indem Sie _HTTP-Methode_ auf _POST_ und die Einstellung _Relative URL_ auf _\\OneWayPipeline_ festlegen.
 
 ![HTTP-Trigger][2]
 
@@ -109,4 +109,4 @@ Jedes Mal, wenn jemand eine Nachricht an den HTTP-Endpunkt sendet, wird die App 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

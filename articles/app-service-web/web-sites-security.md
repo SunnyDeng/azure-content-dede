@@ -7,6 +7,7 @@
 	manager="wpickett"
 	editor=""/>
 
+
 <tags
 	ms.service="app-service-web"
 	ms.workload="web"
@@ -17,21 +18,22 @@
 	ms.author="cephalin"/>
 
 
+
 #Sichern einer Web-App in Azure App Service
 
 Eine der Herausforderungen bei der Entwicklung einer Web-App besteht darin, einen sicheren und zuverlässigen Dienst für Ihre Kunden bereitzustellen. In diesem Artikel erfahren Sie mehr über die Funktionen von [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714), die Ihre Web-App sichern können.
 
-> [AZURE.NOTE]Eine umfassende Erläuterung der Sicherheitsaspekte webbasierter Anwendungen wird über den Rahmen dieses Dokuments sprengen. Einen Ansatzpunkt für weitere Anleitungen zur Sicherung von Webanwendungen finden Sie unter [Open Web Application Security Project \(OWASP\)](https://www.owasp.org/index.php/Main_Page), insbesondere unter dem [Top 10-Projekt](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project), das die derzeit 10 kritischsten Sicherheitsschwachstellen auflistet, die von OWASP-Mitgliedern angegeben wurden.
+> [AZURE.NOTE]Eine umfassende Erläuterung der Sicherheitsaspekte webbasierter Anwendungen wird über den Rahmen dieses Dokuments sprengen. Einen Ansatzpunkt für weitere Anleitungen zur Sicherung von Webanwendungen finden Sie unter [Open Web Application Security Project (OWASP)](https://www.owasp.org/index.php/Main_Page), insbesondere unter dem [Top 10-Projekt](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project), das die derzeit 10 kritischsten Sicherheitsschwachstellen auflistet, die von OWASP-Mitgliedern angegeben wurden.
 
 ##<a name="https"></a> Sichern der Kommunikation
 
-Wenn Sie den Domänennamen ***.azurewebsites.net** nutzen, der für Ihre Web-App erstellt wurde, können Sie HTTPS sofort verwenden, da ein SSL-Zertifikat für alle Domänennamen vom Typ ***.azurewebsites.net** bereitgestellt wird. Wenn Ihre Site einen [kundenspezifischen Domänennamen](web-sites-custom-domain-name.md) verwendet, können Sie ein SSL-Zertifikat hochladen, um für die kundenspezifische Domäne [HTTPS zu aktivieren](web-sites-configure-ssl-certificate.md).
+Wenn Sie den Domänennamen ***\*.azurewebsites.net** nutzen, der für Ihre Web-App erstellt wurde, können Sie HTTPS sofort verwenden, da ein SSL-Zertifikat für alle Domänennamen vom Typ ***\*.azurewebsites.net** bereitgestellt wird. Wenn Ihre Site einen [kundenspezifischen Domänennamen](web-sites-custom-domain-name.md) verwendet, können Sie ein SSL-Zertifikat hochladen, um für die kundenspezifische Domäne [HTTPS zu aktivieren](web-sites-configure-ssl-certificate.md).
 
 ##<a name="develop"></a> Sichern der Entwicklung
 
 ### Veröffentlichung von Profilen und Einstellungen
 
-Bei der Entwicklung von Anwendungen, der Durchführung von Verwaltungsaufgaben oder bei der Automatisierung von Aufgaben, die **Visual Studio**, **Web Matrix**, **Azure PowerShell** oder die **Azure-Befehlszeilenschnittstelle \(Azure-CLI\)** verwenden, können Sie entweder eine Datei mit *Veröffentlichungseinstellungen* oder mit *Veröffentlichungsprofil* nutzen. Beides authentisiert hat Sie für Azure und sollte geschützt werden, um unautorisierten Zugriff zu verhindern.
+Bei der Entwicklung von Anwendungen, der Durchführung von Verwaltungsaufgaben oder bei der Automatisierung von Aufgaben, die **Visual Studio**, **Web Matrix**, **Azure PowerShell** oder die **Azure-Befehlszeilenschnittstelle (Azure-CLI)** verwenden, können Sie entweder eine Datei mit *Veröffentlichungseinstellungen* oder mit *Veröffentlichungsprofil* nutzen. Beides authentisiert hat Sie für Azure und sollte geschützt werden, um unautorisierten Zugriff zu verhindern.
 
 * Eine Datei mit **Veröffentlichungseinstellungen** enthält
 
@@ -45,7 +47,7 @@ Bei der Entwicklung von Anwendungen, der Durchführung von Verwaltungsaufgaben o
 
 Wenn Sie ein Dienstprogramm nutzen, das Veröffentlichungseinstellungen oder ein Veröffentlichungsprofil verwendet, importieren Sie die Datei, die die Veröffentlichungseinstellungen oder das Profil enthält, in das Dienstprogramm und **löschen** Sie anschließend die Datei. Wenn Sie die Datei behalten müssen, beispielsweise um sie mit anderen zu teilen, die an dem Projekt mitarbeiten, speichern Sie sie an einem sicheren Ort, z.B. in einem **verschlüsselten** Verzeichnis mit begrenzten Berechtigungen.
 
-Zusätzlich sollten Sie sicherstellen, dass die importierten Berechtigungsnachweise sicher sind. Beispielsweise speichern **Azure PowerShell** und die **Azure-Befehlszeilenschnittstelle** importierte Daten in Ihrem **Basisverzeichnis** \(\*\~\* bei Linux- oder OS X-Systemen und */Benutzer/IhrBenutzername* bei Windows-Systemen.\) Als zusätzliche Sicherheit können Sie diese Verzeichnisse mit Verschlüsselungstools **verschlüsseln**, die für Ihr Betriebssystem erhältlich sind.
+Zusätzlich sollten Sie sicherstellen, dass die importierten Berechtigungsnachweise sicher sind. Beispielsweise speichern **Azure PowerShell** und die **Azure-Befehlszeilenschnittstelle** importierte Daten in Ihrem **Basisverzeichnis** (*\~* bei Linux- oder OS X-Systemen und */Benutzer/IhrBenutzername* bei Windows-Systemen.) Als zusätzliche Sicherheit können Sie diese Verzeichnisse mit Verschlüsselungstools **verschlüsseln**, die für Ihr Betriebssystem erhältlich sind.
 
 ### Konfigurationseinstellungen und Verbindungszeichenfolgen
 Es ist üblich, Verbindungszeichenfolgen, Berechtigungsnachweise zur Authentisierung und andere sensible Daten in Konfigurationsdateien zu speichern. Leider können sich diese Dateien ungeschützt auf ihrer Website befinden oder in ein öffentliches Repository verschoben werden, wodurch diese Daten gefährdet werden können.
@@ -86,4 +88,4 @@ Weitere Informationen zum Protokollieren von Informationen für Web-Apps, die si
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -20,4 +20,4 @@
 
 Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie besitzen die Verbindungszeichenfolge, um die App für den Empfang von Benachrichtigungen zu registrieren und Pushbenachrichtigungen zu versenden.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

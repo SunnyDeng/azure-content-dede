@@ -64,7 +64,7 @@ Sie können die Georeplikation im Azure-Portal oder durch Aufrufen des entsprech
 3. Navigieren Sie zu Ihrem Datenbank-Blatt, wählen Sie die **Geo Replication map**, und klicken Sie auf **Configure Geo-Replication**.
 4. Navigieren Sie zum Blatt "Georeplikation". Wählen Sie die Zielregion aus. 
 5. Navigieren Sie zum Blatt "Create Secondary". Wählen Sie einen vorhandenen Server in der Zielregion aus, oder erstellen Sie einen neuen.
-6. Wählen Sie den Typ für das sekundäre Replikat aus (*lesbar* oder *nicht lesbar*)
+6. Wählen Sie den Typ für das sekundäre Replikat aus (*lesbar* oder *nicht lesbar*).
 7. Klicken Sie auf **Erstellen**, um die Konfiguration abzuschließen.
 
 > [AZURE.NOTE]Die gekoppelte Region für die Notfallwiederherstellung wird auf dem Blatt "Georeplikation" als *empfohlen* gekennzeichnet. Wenn Sie eine Datenbank der Premium-Ebene verwenden, können Sie eine andere Region auswählen. Bei Verwendung einer Standard-Datenbank können Sie diese nicht ändern. Bei einer Premium-Datenbank kann der Typ des sekundären Replikats (*lesbar* oder *nicht lesbar*) ausgewählt werden. Bei Standard-Datenbanken kann nur ein *nicht lesbares*, sekundäres Replikat ausgewählt werden.
@@ -80,7 +80,7 @@ So erstellen Sie Georeplikation mit einem lesbaren sekundären Replikat für ein
 
 		Start-AzureSqlDatabaseCopy -ServerName "SecondaryServerName" -DatabaseName "SecondaryDatabaseName" -PartnerServer "PartnerServerName" –ContinuousCopy
 		 
-Dieser Befehl ist asynchron. Verwenden Sie nach der Rückgabe das Cmdlet [Get-AzureSqlDatabaseCopy](https://msdn.microsoft.com/library/dn720235.aspx) zum Überprüfen des Status dieses Vorgangs. Das "ReplicationState"-Feld des zurückgegebenen Objekts muss nach Abschluss des Vorgangs den Wert "CATCH_UP" aufweisen.
+Dieser Befehl ist asynchron. Verwenden Sie nach der Rückgabe das Cmdlet [Get-AzureSqlDatabaseCopy](https://msdn.microsoft.com/library/dn720235.aspx) zum Überprüfen des Status dieses Vorgangs. Das "ReplicationState"-Feld des zurückgegebenen Objekts muss nach Abschluss des Vorgangs den Wert "CATCH\_UP" aufweisen.
 
 		Get-AzureSqlDatabaseCopy -ServerName "PrimaryServerName" -DatabaseName "PrimaryDatabaseName" -PartnerServer "SecondaryServerName"
 
@@ -89,7 +89,7 @@ Dieser Befehl ist asynchron. Verwenden Sie nach der Rückgabe das Cmdlet [Get-Az
 
 Mit der [Start Database Copy](https://msdn.microsoft.com/library/azure/dn509576.aspx)-API können Sie programmgesteuert eine Konfiguration für die Georeplikation erstellen.
 
-Diese API ist asynchron. Verwenden Sie nach der Rückgabe die [Get Database Copy](https://msdn.microsoft.com/library/azure/dn509570.aspx)-API zum Überprüfen des Status dieses Vorgangs. Das "ReplicationState"-Feld des Antworttexts muss nach Abschluss des Vorgangs den Wert "CATCH_UP" aufweisen.
+Diese API ist asynchron. Verwenden Sie nach der Rückgabe die [Get Database Copy](https://msdn.microsoft.com/library/azure/dn509570.aspx)-API zum Überprüfen des Status dieses Vorgangs. Das "ReplicationState"-Feld des Antworttexts muss nach Abschluss des Vorgangs den Wert "CATCH\_UP" aufweisen.
 
 
 ##Auswählen der Failover-Konfiguration 
@@ -99,4 +99,4 @@ Sie sollten beim Entwerfen der Anwendung für die Geschäftskontinuität verschi
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

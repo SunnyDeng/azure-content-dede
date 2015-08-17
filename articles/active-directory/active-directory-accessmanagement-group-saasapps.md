@@ -36,7 +36,7 @@ Diese Funktion kann für Hunderte von Anwendungen verwendet werden, die Sie aus 
 3. Geben Sie auf der Registerkarte "Benutzer und Gruppen" im Feld "Beginnend mit" den Namen der Gruppe ein, der Sie Zugriff zuweisen möchten, und klicken Sie auf das Häkchen in der oberen rechten Ecke. Sie müssen nur den ersten Teil des Gruppennamens eingeben. Klicken Sie auf die Gruppe, um sie zu markieren, klicken Sie auf die Schaltfläche **Zugriff zuweisen**, und klicken Sie auf **Ja**, wenn die Bestätigungsmeldung angezeigt wird.
 
 
-4. Sie können auch sehen, welche Benutzer der Anwendung entweder direkt oder durch die Mitgliedschaft in einer Gruppe zugewiesen sind. Ändern Sie hierzu die Anzeige der Dropdownliste **Gruppen** zu **Alle Benutzer**. Die Liste zeigt die Benutzer im Verzeichnis und zeigt an, ob ein Benutzer der Anwendung zugewiesen ist oder nicht. Die Liste zeigt außerdem an, ob die Benutzer der Anwendung direkt \(angezeigter Zuweisungstyp "Direkt"\) oder aufgrund der Gruppenmitgliedschaft \(angezeigter Zuweisungstyp "Geerbt"\) zugewiesen sind.
+4. Sie können auch sehen, welche Benutzer der Anwendung entweder direkt oder durch die Mitgliedschaft in einer Gruppe zugewiesen sind. Ändern Sie hierzu die Anzeige der Dropdownliste **Gruppen** zu **Alle Benutzer**. Die Liste zeigt die Benutzer im Verzeichnis und zeigt an, ob ein Benutzer der Anwendung zugewiesen ist oder nicht. Die Liste zeigt außerdem an, ob die Benutzer der Anwendung direkt (angezeigter Zuweisungstyp "Direkt") oder aufgrund der Gruppenmitgliedschaft (angezeigter Zuweisungstyp "Geerbt") zugewiesen sind.
 
 
 > [AZURE.NOTE]Die Registerkarte "Benutzer und Gruppen" wird nur angezeigt, wenn Sie Azure AD Premium aktiviert haben.
@@ -49,4 +49,4 @@ Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Di
 
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

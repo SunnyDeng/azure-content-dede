@@ -7,6 +7,7 @@
 	manager="dwrede"
 	editor=""/>
 
+
 <tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
@@ -16,6 +17,7 @@
 	ms.date="07/09/2015"
 	ms.author="craig.dunn@xamarin.com"/>
 
+
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
@@ -24,7 +26,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen
 
 Wenn Sie lieber ein Video zu diesem Thema ansehen möchten, können Sie den Clip unten auswählen. In diesem werden dieselben Schritte behandelt wie in diesem Lernprogramm.
 
-Video: "Erste Schritte mit Xamarin und Azure Mobile Services" mit Craig Dunn, Developer Evangelist für Xamarin \(Dauer: 10:05 Minuten\)
+Video: "Erste Schritte mit Xamarin und Azure Mobile Services" mit Craig Dunn, Developer Evangelist für Xamarin (Dauer: 10:05 Minuten)
 
 > [AZURE.VIDEO getting-started-with-xamarin-and-mobile-services]
 
@@ -58,7 +60,7 @@ In diesem Abschnitt erstellen Sie eine neue Xamarin.iOS-App, die mit dem mobilen
 
   	![][7]
 
-3. Falls noch nicht geschehen, laden Sie XCode \(wir empfehlen die neueste Version, XCode 6.0 oder höher\) und [Xamarin Studio] herunter, und installieren Sie beide Komponenten.
+3. Falls noch nicht geschehen, laden Sie XCode (wir empfehlen die neueste Version, XCode 6.0 oder höher) und [Xamarin Studio] herunter, und installieren Sie beide Komponenten.
 
 4. Klicken Sie auf **TodoItems-Tabelle erstellen**, um eine Tabelle zum Speichern der App-Daten zu erstellen.
 
@@ -78,13 +80,13 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 2. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App im iPhone-Emulator zu starten, was die Voreinstellung bei diesem Projekt darstellt.
 
-3. Geben Sie in der App einen sinnvollen Text ein, wie z. B. _Lernprogramm abschließen_, und klicken Sie dann auf das Plus-Symbol \(\*\*+\*\*\).
+3. Geben Sie in der App einen sinnvollen Text, wie z. B. _Tutorial fertigstellen_ ein, und klicken Sie dann auf das Plus-Symbol (**+**).
 
 	![][10]
 
 	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen Dienst zurückgegeben, und die Daten werden in der Liste angezeigt.
 
-	> [AZURE.NOTE]Sie können den Code überprüfen, der auf den Mobile Service zugreift, um Daten abzufragen und einzufügen. Sie finden ihn in der C\#-Datei "TodoService.cs".
+	> [AZURE.NOTE]Sie können den Code überprüfen, der auf den Mobile Service zugreift, um Daten abzufragen und einzufügen. Sie finden ihn in der C#-Datei "TodoService.cs".
 
 4. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
 
@@ -98,13 +100,17 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 ## Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
 
-* [Erste Schritte mit Daten] <br/>Hier erfahren Sie, wie Sie einem mobilen Dienst eine neue Tabelle hinzufügen und anschließend aus dieser Tabelle lesen und in sie schreiben.
+* [Erste Schritte mit Daten] <br/>
+Hier erfahren Sie, wie Sie einem mobilen Dienst eine neue Tabelle hinzufügen und anschließend aus dieser Tabelle lesen und in sie schreiben.
 
-* [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine flexible und stabile App zu erstellen.
+* [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>
+Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine flexible und stabile App zu erstellen.
 
-* [Erste Schritte mit der Authentifizierung] <br/>Informationen zur Authentifizierung von Benutzern Ihrer App bei einem Identitätsanbieter.
+* [Erste Schritte mit der Authentifizierung] <br/>
+Informationen zur Authentifizierung von Benutzern Ihrer App bei einem Identitätsanbieter.
 
-* [Erste Schritte mit Pushbenachrichtigungen] <br/>Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
+* [Erste Schritte mit Pushbenachrichtigungen] <br/>
+Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]: #getting-started
@@ -134,4 +140,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 [Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -36,4 +36,4 @@ Alle Datenverkehrsanforderungen an *www.contoso.com* werden jetzt an *contoso.tr
 [Traffic Manager – Übersicht](traffic-manager-overview.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

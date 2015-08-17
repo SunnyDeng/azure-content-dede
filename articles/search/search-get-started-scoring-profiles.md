@@ -27,7 +27,7 @@ Die Beispielanwendung veranschaulicht Bewertungsverhalten anhand fiktiver Daten,
 <a id="sub-1"></a>
 ## Voraussetzungen
 
-Die Beispielanwendung wird mit Visual Studio 2013 in C\# geschrieben. Wenn Sie nicht über Visual Studio verfügen, können Sie die [kostenlose Visual Studio 2013 Express-Edition](http://www.visualstudio.com/products/visual-studio-express-vs.aspx) ausprobieren.
+Die Beispielanwendung wird mit Visual Studio 2013 in C# geschrieben. Wenn Sie nicht über Visual Studio verfügen, können Sie die [kostenlose Visual Studio 2013 Express-Edition](http://www.visualstudio.com/products/visual-studio-express-vs.aspx) ausprobieren.
 
 Sie benötigen ein Azure-Abonnement und einen Azure Search-Dienst zum Abschließen dieses Lernprogramms. Hilfe beim Einrichten des Diensts finden Sie unter [Erstellen eines Search-Diensts im Portal](search-create-service-portal.md).
 
@@ -38,7 +38,7 @@ Sie benötigen ein Azure-Abonnement und einen Azure Search-Dienst zum Abschließ
 
 Wechseln Sie zu [Azure Search Scoring Profiles Demo](https://azuresearchscoringprofiles.codeplex.com/) auf Codeplex, um die in diesem Lernprogramm beschriebene Beispielanwendung herunterzuladen.
 
-Klicken Sie auf der Registerkarte "Source Code" \(Quellcode\) auf **Download**, um eine ZIP-Datei der Lösung herunterzuladen.
+Klicken Sie auf der Registerkarte "Source Code" (Quellcode) auf **Download**, um eine ZIP-Datei der Lösung herunterzuladen.
 
  ![][12]
 
@@ -93,7 +93,7 @@ Die folgende Abbildung zeigt die Ergebnisse der ersten drei Abfragen nebeneinand
 
 Die erste Abfrage verwendet die Standardwertung. Da der Suchbegriff nur in Albumtiteln enthalten ist und keine anderen Kriterien angegeben sind, werden Artikel mit "best" im Albumtitel in der Reihenfolge zurückgegeben, in der sie vom Search-Dienst gefunden werden.
 
-Die zweite Abfrage verwendet ein Wertungsprofil, aber beachten Sie, dass das Profil keine Auswirkungen hat. Die Ergebnisse sind identisch mit denen der ersten Abfrage. Dies liegt daran, dass ein Wertungsprofil ein Feld \("genre" "\) stärker berücksichtigt, das nicht von Belang für die Abfrage ist. Der Suchbegriff "best" existiert nicht in einem beliebigen Feld "genre" "für jedes Dokument. Wenn ein Wertungsprofil keine Auswirkungen hat, sind die Ergebnisse identisch mit der Standardwertung.
+Die zweite Abfrage verwendet ein Wertungsprofil, aber beachten Sie, dass das Profil keine Auswirkungen hat. Die Ergebnisse sind identisch mit denen der ersten Abfrage. Dies liegt daran, dass ein Wertungsprofil ein Feld ("genre" ") stärker berücksichtigt, das nicht von Belang für die Abfrage ist. Der Suchbegriff "best" existiert nicht in einem beliebigen Feld "genre" "für jedes Dokument. Wenn ein Wertungsprofil keine Auswirkungen hat, sind die Ergebnisse identisch mit der Standardwertung.
 
 Die dritte Abfrage ist der erste Beweis für die Auswirkungen des Wertungsprofils. Der Suchbegriff ist weiterhin "best", daher arbeiten wir mit dem gleichen Satz von Alben, aber da das Wertungsprofil zusätzliche Kriterien bietet, welche die Felder "rating" und "last-updated" stärker berücksichtigt, steigen einige Elemente höher in der Liste.
 
@@ -108,7 +108,7 @@ Nun, da Sie sich mit den Wertungsprofilen vertraut gemacht haben, ändern Sie da
 
 Erhalten Sie weitere Informationen zu Wertungsprofilen. Details finden Sie unter [Hinzufügen eines Bewertungsprofils zu einem Azure Search-Index](http://msdn.microsoft.com/library/azure/dn798928.aspx).
 
-Erhalten Sie weitere Informationen zu Syntax und Abfrageparametern. Details finden Sie unter [Suchen von Dokumenten \(REST-API für den Azure Search-Dienst\)](http://msdn.microsoft.com/library/azure/dn798927.aspx).
+Erhalten Sie weitere Informationen zu Syntax und Abfrageparametern. Details finden Sie unter [Suchen von Dokumenten (REST-API für den Azure Search-Dienst)](http://msdn.microsoft.com/library/azure/dn798927.aspx).
 
 Sie möchten einen Schritt zurückgehen und mehr über die Erstellung eines Indexes erfahren? [Sehen Sie sich dieses Video an](http://channel9.msdn.com/Shows/Cloud+Cover/Cloud-Cover-152-Azure-Search-with-Liam-Cavanagh), um die Grundlagen zu erlernen.
 
@@ -126,4 +126,4 @@ Sie möchten einen Schritt zurückgehen und mehr über die Erstellung eines Inde
 [10]: ./media/search-get-started-scoring-profiles/AzureSearch_XLSX1.PNG
 [9]: ./media/search-get-started-scoring-profiles/AzureSearch_XLSX2.PNG
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

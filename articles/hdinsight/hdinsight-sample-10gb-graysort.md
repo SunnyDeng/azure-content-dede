@@ -433,4 +433,4 @@ Lernprogramme, die Sie durch die Ausführung anderer Beispiele führen und Anwei
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

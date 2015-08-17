@@ -246,4 +246,4 @@ Wenden Sie Big Data-Analysen auf Daten Ihres Unternehmens an, um sich Einblicke 
 [zookeeper]: http://zookeeper.apache.org/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

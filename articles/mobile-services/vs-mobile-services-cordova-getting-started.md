@@ -93,4 +93,4 @@ Löschen Sie eine Zeile aus einer Datentabelle mithilfe der Methode **del**. Ruf
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

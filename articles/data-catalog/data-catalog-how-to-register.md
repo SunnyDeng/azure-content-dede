@@ -24,7 +24,7 @@
 ## Registrieren von Datenquellen
 Die Registrierung umfasst das Extrahieren der Metadaten aus der Datenquelle und das Kopieren der Daten in den **Azure Data Catalog**-Dienst. Die Daten verbleiben, wo sie sich derzeit befinden, und unter der Kontrolle der Administratoren und Richtlinien des aktuellen Systems.
 
-Um eine Datenquelle zu registrieren, starten Sie einfach im **Azure Data Catalog**-Portal das **Azure Data Catalog**-Tool für die Registrierung von Datenquellen. Melden Sie sich mit Ihrem Geschäfts- oder Schulkonto \(den gleichen Azure Active Directory-Anmeldeinformationen wie bei der Anmeldung beim Portal\) an, und wählen Sie dann die Datenquelle aus, die Sie registrieren möchten. Weitere detaillierte Informationen finden Sie im Tutorial [Erste Schritte mit Azure Data Catalog](data-catalog-get-started.md).
+Um eine Datenquelle zu registrieren, starten Sie einfach im **Azure Data Catalog**-Portal das **Azure Data Catalog**-Tool für die Registrierung von Datenquellen. Melden Sie sich mit Ihrem Geschäfts- oder Schulkonto (den gleichen Azure Active Directory-Anmeldeinformationen wie bei der Anmeldung beim Portal) an, und wählen Sie dann die Datenquelle aus, die Sie registrieren möchten. Weitere detaillierte Informationen finden Sie im Tutorial [Erste Schritte mit Azure Data Catalog](data-catalog-get-started.md).
 
 Nachdem die Datenquelle registriert wurde, verfolgt der Katalog ihren Speicherort nach und indiziert ihre Metadaten. Dadurch können Benutzer die Datenquelle suchen, durchsuchen und ermitteln und dann ihren Speicherort zum Herstellen einer Verbindung mit der Anwendung oder dem Tool ihrer Wahl verwenden.
 ## Unterstützte Datenquellen
@@ -32,7 +32,7 @@ In der aktuellen Vorschauversion unterstützt **Azure Data Catalog** die Registr
 
 * SQL Server-Datenbankmodultabellen und -sichten
 * Oracle-Datenbanktabellen und -sichten
-* SQL Server Analysis Services \(Mehrdimensionale Dimensionen, Measures und KPIs\)
+* SQL Server Analysis Services (Mehrdimensionale Dimensionen, Measures und KPIs)
 * SQL Server Analysis Services – Tabellarische Tabellen
 * SQL Server Reporting Services-Berichte
 
@@ -55,11 +55,11 @@ In der Standardeinstellung werden nur aus Datenquellen extrahierte Metadaten in 
 
 Das Registrierungstool für Datenquellen des **Azure Data Catalog**-Diensts ermöglicht Benutzern, eine Vorschau der Daten in Form einer Momentaufnahme jeder registrierten Tabelle oder Sicht hinzuzufügen. Wenn sich der Benutzer während der Registrierung für das Einschließen der Vorschau entscheidet, fügt das Registrierungstool bis zu 20 Datensätze aus jeder Tabelle oder Sicht hinzu. Diese Momentaufnahme wird dann zusammen mit den strukturellen und beschreibenden Metadaten in den Katalog kopiert. Hinweis: Bei der Vorschau auf breite Tabellen mit einer großen Anzahl von Spalten werden möglicherweise weniger als 20 Datensätze gezeigt.
 ## Aktualisieren von Registrierungen
-Durch das Registrieren einer Datenquelle kann sie im **Azure Data Catalog** mithilfe der Metadaten und optionalen Vorschau ermittelt werden, die während der Registrierung extrahiert werden. Wenn die Datenquelle im Katalog aktualisiert werden muss \(z. B. wenn das Schema eines Objekts geändert wurde, ursprünglich ausgeschlossene Tabellen eingeschlossen werden sollen oder ein Benutzer die in der Vorschau enthaltenen Daten aktualisieren möchte\), kann das Registrierungstool für Datenquellen erneut ausgeführt werden.
+Durch das Registrieren einer Datenquelle kann sie im **Azure Data Catalog** mithilfe der Metadaten und optionalen Vorschau ermittelt werden, die während der Registrierung extrahiert werden. Wenn die Datenquelle im Katalog aktualisiert werden muss (z. B. wenn das Schema eines Objekts geändert wurde, ursprünglich ausgeschlossene Tabellen eingeschlossen werden sollen oder ein Benutzer die in der Vorschau enthaltenen Daten aktualisieren möchte), kann das Registrierungstool für Datenquellen erneut ausgeführt werden.
 
 Beim erneuten Registrieren einer bereits registrierten Datenquelle werden neue Objekte erstellt, während vorhandene Objekte aktualisiert werden. Alle von Benutzern über das **Azure Data Catalog**-Portal bereitgestellten Metadaten bleiben erhalten.
 
 ## Zusammenfassung
 Durch Registrieren eine Datenquelle im **Azure Data Catalog** ist es einfacher, diese Datenquelle zu ermitteln und zu verstehen, denn strukturelle und beschreibende Metadaten aus der Datenquelle werden in den Katalogdienst kopiert. Nachdem eine Datenquelle registriert wurde, kann sie im **Azure Data Catalog**-Portal mit Anmerkungen versehen, verwaltet und ermittelt werden.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -25,4 +25,4 @@ Beachten Sie `apiDefinition` endpoint `/swagger/docs/v1`: Bei API-App-Projekten 
 
 Im Rahmen dieses Lernprogramms können Sie die Standardwerte übernehmen. Im Abschnitt [API-App-Metadaten](#api-app-metadata) später in diesem Lernprogramm wird erläutert, wie Sie diese Metadaten anpassen.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

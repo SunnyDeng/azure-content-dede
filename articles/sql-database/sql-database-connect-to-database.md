@@ -1,10 +1,10 @@
 <properties
-	pageTitle="Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SSMS" 
+	pageTitle="Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SSMS" metaKeywords=""
 	description="Erfahren Sie, wie Sie mit SSMS eine Verbindung mit einer Azure SQL-Datenbank herstellen."
 	services="sql-database"
 	documentationCenter=""
 	authors="sidneyh" 
-	manager="jhubbard" 
+	manager="jhubbard"
 	editor="" />
 
 <tags
@@ -77,4 +77,4 @@ Sie können Transact-SQL-Anweisungen zum Erstellen oder Verwalten von Datenbanke
 [5]: ./media/sql-database-connect-to-database/5-success.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

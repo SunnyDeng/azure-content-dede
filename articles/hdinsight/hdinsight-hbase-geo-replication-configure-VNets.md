@@ -37,7 +37,7 @@ Video anzeigen:
 
 Dieses Lernprogramm ist Teil der [Reihe][hdinsight-hbase-replication] zum Erstellen von HBase Georeplikation.
 
-- Konfigurieren einer VPN-Konnektivität zwischen zwei virtuellen Netzwerken \(dieses Lernprogramm\)
+- Konfigurieren einer VPN-Konnektivität zwischen zwei virtuellen Netzwerken (dieses Lernprogramm)
 - [Konfigurieren von DNS für virtuelle Netzwerke][hdinsight-hbase-geo-replication-DNS]
 - [Konfigurieren von HBase-Georeplikation][hdinsight-hbase-geo-replication]
 
@@ -62,7 +62,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 		Select-AzureSubscription <AzureSubscriptionName>
 
 
->[AZURE.NOTE]Azure Dienstnamen und die Namen der virtuellen Computer müssen eindeutig sein. Der in diesem Lernprogramm verwendete Name ist Contoso-\[Azure Service/VM name\]-\[EU/US\]. Contoso-VNet-EU ist z. B. das virtuelle Azure-Netzwerk im Rechenzentrum Nordeuropa; Contoso-DNS-US ist der DNS-Server VM im Datencenter im Osten der USA. Sie müssen sich Ihre eigenen Namen ausdenken.
+>[AZURE.NOTE]Azure Dienstnamen und die Namen der virtuellen Computer müssen eindeutig sein. Der in diesem Lernprogramm verwendete Name ist Contoso-[Azure Service/VM name]-[EU/US]. Contoso-VNet-EU ist z. B. das virtuelle Azure-Netzwerk im Rechenzentrum Nordeuropa; Contoso-DNS-US ist der DNS-Server VM im Datencenter im Osten der USA. Sie müssen sich Ihre eigenen Namen ausdenken.
  
 
 ##Erstellen Sie zwei Azure-VNets
@@ -81,15 +81,15 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 		In diesem Lernprogramm werden Datencenter in Nordeuropa und im Osten der USA verwendet. Sie können Ihr eigenes Datencenter auswählen.
 4.	Geben Sie Folgendes ein:
 
-	- **DNS-SERVER**: \(Lassen Sie diese Angabe leer\) 
+	- **DNS-SERVER**: (Lassen Sie diese Angabe leer) 
 	
-		Für die Namensauflösung innerhalb virtueller Netzwerke benötigen Sie einen eigenen DNS-Server. Wann die Verwendung der von Azure bereitgestellten Namensauflösung bzw. die Verwendung eines eigenen DNS-Servers angebracht ist, erfahren Sie unter [Namensauflösung \(DNS\)](https://msdn.microsoft.com/library/azure/jj156088.aspx). Anweisungen zur Konfiguration der Namensauflösung zwischen VNets finden Sie unter [Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-dns].
+		Für die Namensauflösung innerhalb virtueller Netzwerke benötigen Sie einen eigenen DNS-Server. Wann die Verwendung der von Azure bereitgestellten Namensauflösung bzw. die Verwendung eines eigenen DNS-Servers angebracht ist, erfahren Sie unter [Namensauflösung (DNS)](https://msdn.microsoft.com/library/azure/jj156088.aspx). Anweisungen zur Konfiguration der Namensauflösung zwischen VNets finden Sie unter [Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-dns].
   
-	- **Punkt-zu-Standort-VPN konfigurieren**: \(nicht aktiviert\)
+	- **Punkt-zu-Standort-VPN konfigurieren**: (nicht aktiviert)
 
 		Punkt-zu-Standort ist auf dieses Szenario nicht anwendbar.
 
- 	- **Standort-zu-Standort-VPN konfigurieren**: \(nicht aktiviert\)
+ 	- **Standort-zu-Standort-VPN konfigurieren**: (nicht aktiviert)
  	
 		Die Standort-zu-Standort-VPN-Verbindung mit dem virtuellen Azure-Netzwerk konfigurieren Sie für das Datencenter im Osten der USA.
 5.	Geben Sie Folgendes ein:
@@ -108,9 +108,9 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 	- **NAME**: Contoso-VNet-US
 	- **STANDORT**: USA, Osten
 	 
-	- **DNS-SERVER**: \(Lassen Sie diese Angabe leer\)
-	- **Punkt-zu-Standort-VPN konfigurieren**: \(nicht aktiviert\)
-	- **Standort-zu-Standort-VPN konfigurieren**: \(nicht aktiviert\)
+	- **DNS-SERVER**: (Lassen Sie diese Angabe leer)
+	- **Punkt-zu-Standort-VPN konfigurieren**: (nicht aktiviert)
+	- **Standort-zu-Standort-VPN konfigurieren**: (nicht aktiviert)
 	 
 	- **ADRESSRAUM START-IP**: 10.2.0.0
 	- **ADRESSRAUM CIDR**: / 16
@@ -148,7 +148,7 @@ Wenn Sie eine VNet-zu-VNet-Konfiguration erstellen, müssen Sie jedes VNet so ko
 3. Geben Sie Folgendes ein:
 
 	- **NAME**: Contoso-LNet-EU
-	- **IP-ADRESSE DES VPN-GERÄTS**: 192.168.0.1 \(diese Adresse wird später aktualisiert\)
+	- **IP-ADRESSE DES VPN-GERÄTS**: 192.168.0.1 (diese Adresse wird später aktualisiert)
 
 		Normalerweise verwenden Sie die tatsächliche externe IP-Adresse für ein VPN-Gerät. Für VNet-zu-VNet-Konfigurationen verwenden Sie die IP-Adresse des VPN-Gateways. Angesichts der Tatsache, dass Sie die VPN-Gateways für die beiden VNets noch nicht erstellt haben, geben Sie zunächst eine beliebige IP-Adresse ein, die Sie später korrigieren.
 4.	Geben Sie Folgendes ein:
@@ -163,7 +163,7 @@ Wenn Sie eine VNet-zu-VNet-Konfiguration erstellen, müssen Sie jedes VNet so ko
 - Wiederholen Sie das letzte Verfahren mit den folgenden Parametern:
 
 	- **NAME**: Contoso-LNet-US
-	- **IP-ADRESSE DES VPN-GERÄTS**: 192.168.0.1 \(diese Adresse wird später aktualisiert\)
+	- **IP-ADRESSE DES VPN-GERÄTS**: 192.168.0.1 (diese Adresse wird später aktualisiert)
 	 
 	- **ADRESSRAUM START-IP**: 10.2.0.0
 	- **ADRESSRAUM CIDR**: / 16
@@ -271,4 +271,4 @@ In diesem Lernprogramm haben Sie gelernt, eine VPN-Verbindung zwischen zwei virt
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

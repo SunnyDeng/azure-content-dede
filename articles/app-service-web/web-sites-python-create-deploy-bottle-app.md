@@ -400,4 +400,4 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 [Dokumentation zu Bottle]: http://bottlepy.org/docs/dev/index.html
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

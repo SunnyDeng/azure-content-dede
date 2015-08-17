@@ -61,4 +61,4 @@ In [Verschiedene Überlegungen zu Images für virtuelle Oracle-Computer](virtual
 
 [Konfigurieren von Oracle GoldenGate für Azure](virtual-machines-configuring-oracle-goldengate.md) führt Sie schrittweise durch das Datenbank- und Replikationssetup.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

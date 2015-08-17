@@ -11,7 +11,7 @@
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="06/16/2015" 
 	ms.author="awills"/>
 
@@ -182,7 +182,7 @@ Wenn Sie die Einrichtungsschritte lieber in Visual Studio ausführen möchten, i
 
 Wählen Sie Application Insights im Dialogfeld "Neues Projekt" aus.
 
-Wenn Sie aufgefordert werden, sich anzumelden, verwenden Sie die Anmeldeinformationen Ihres Azure-Kontos \(das vom Visual Studio Online-Konto getrennt ist\).
+Wenn Sie aufgefordert werden, sich anzumelden, verwenden Sie die Anmeldeinformationen Ihres Azure-Kontos (das vom Visual Studio Online-Konto getrennt ist).
 
 ![](./media/app-insights-windows-get-started/appinsights-d21-new.png)
 
@@ -229,4 +229,4 @@ Gehen Sie bei [Veröffentlichung einer neuen SDK-Version](app-insights-release-n
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

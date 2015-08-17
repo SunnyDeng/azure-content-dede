@@ -12,7 +12,7 @@
 	ms.workload="tbd"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="hero-article"
+	ms.topic="article"
 	ms.date="06/30/2015"
 	ms.author="adegeo"/>
 
@@ -66,9 +66,9 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 
 ## Erstellen eines Clouddiensts mithilfe der Schnellerfassung
 
-1. Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com/) auf **Neu**>**Server**>**Clouddienst**>**Schnellerfassung**.
+1. Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com/) auf **Neu**>**Server**>**Cloud-Dienst**>**Schnellerstellung**.
 
-	![CloudServices_QuickCreate](./media/cloud-services-how-to-create-deploy/CloudServices_QuickCreate.png)
+	![CloudServices\_QuickCreate](./media/cloud-services-how-to-create-deploy/CloudServices_QuickCreate.png)
 
 2. Geben Sie unter **URL** einen Unterdomänennamen ein, der in der öffentlichen URL für den Zugriff auf Ihren Clouddienst in Produktionsbereitstellungen verwendet werden soll. Das URL-Format für Produktionsbereitstellungen lautet: http://*myURL*.cloudapp.net.
 
@@ -76,20 +76,20 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 
 4. Klicken Sie auf **Clouddienst erstellen**.
 
-	![CloudServices_Region](./media/cloud-services-how-to-create-deploy/CloudServices_Regionlist.png)
+	![CloudServices\_Region](./media/cloud-services-how-to-create-deploy/CloudServices_Regionlist.png)
 
 	Sie können den Status des Prozesses im Meldungsbereich unten im Fenster überwachen.
 
 	Der Bereich **Clouddienste** wird geöffnet und der neue Clouddienst wird angezeigt. Wenn der Status auf "Erstellt" geändert wird, wurde die Erstellung des Clouddiensts erfolgreich abgeschlossen.
 
-	![CloudServices_CloudServicesPage](./media/cloud-services-how-to-create-deploy/CloudServices_CloudServicesPage.png)
+	![CloudServices\_CloudServicesPage](./media/cloud-services-how-to-create-deploy/CloudServices_CloudServicesPage.png)
 
 
 ## Hochladen eines Zertifikats für einen Clouddienst
 
 1. Klicken Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com/) auf **Clouddienste** und dann auf den Namen des Clouddiensts, und klicken Sie dann auf **Zertifikate**.
 
-	![CloudServices_QuickCreate](./media/cloud-services-how-to-create-deploy/CloudServices_EmptyDashboard.png)
+	![CloudServices\_QuickCreate](./media/cloud-services-how-to-create-deploy/CloudServices_EmptyDashboard.png)
 
 
 2. Klicken Sie auf **Zertifikat hochladen** oder auf **Hochladen**.
@@ -100,11 +100,11 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 
 5. Klicken Sie auf **OK** (Häkchen).
 
-	![CloudServices_AddaCertificate](./media/cloud-services-how-to-create-deploy/CloudServices_AddaCertificate.png)
+	![CloudServices\_AddaCertificate](./media/cloud-services-how-to-create-deploy/CloudServices_AddaCertificate.png)
 
 	Sie können des Fortschritt des Hochladens im unten angezeigten Nachrichtenbereich überwachen. Wenn das Hochladen abgeschlossen ist, wird das Zertifikat zur Tabelle hinzugefügt. Klicken Sie im Nachrichtenbereich auf "OK", um die Nachricht zu schließen.
 
-	![CloudServices_CertificateProgress](./media/cloud-services-how-to-create-deploy/CloudServices_CertificateProgress.png)
+	![CloudServices\_CertificateProgress](./media/cloud-services-how-to-create-deploy/CloudServices_CertificateProgress.png)
 
 ## Bereitstellen eines Clouddiensts
 
@@ -127,11 +127,11 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 
 6. Klicken Sie auf **OK** (Häkchen), um die Clouddienstbereitstellung zu starten.
 
-	![CloudServices_UploadaPackage](./media/cloud-services-how-to-create-deploy/CloudServices_UploadaPackage.png)
+	![CloudServices\_UploadaPackage](./media/cloud-services-how-to-create-deploy/CloudServices_UploadaPackage.png)
 
 	Sie können den Status der Bereitstellung im Nachrichtenbereich überwachen. Klicken Sie auf "OK", um die Nachricht zu schließen.
 
-	![CloudServices_UploadProgress](./media/cloud-services-how-to-create-deploy/CloudServices_UploadProgress.png)
+	![CloudServices\_UploadProgress](./media/cloud-services-how-to-create-deploy/CloudServices_UploadProgress.png)
 
 ## Überprüfen, ob Ihre Bereitstellung erfolgreich abgeschlossen wurde
 
@@ -141,10 +141,10 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 
 2. Klicken Sie unter **Schnellansicht** auf die Website-URL, um den Clouddienst in einem Webbrowser zu öffnen.
 
-    ![CloudServices_QuickGlance](./media/cloud-services-how-to-create-deploy/CloudServices_QuickGlance.png)
+    ![CloudServices\_QuickGlance](./media/cloud-services-how-to-create-deploy/CloudServices_QuickGlance.png)
 
 
 [TFSTutorialForCloudService]: http://go.microsoft.com/fwlink/?LinkID=251796&clcid=0x409
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

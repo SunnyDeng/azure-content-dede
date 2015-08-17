@@ -1,7 +1,9 @@
 
-| Resource	| Default limit 
+| Ressource | Standardlimit 
 --- | ---
-| Zones per subscription | 50
-| Record sets per zone| 1000
-| Records per record set| 20
+| Zonen pro Abonnement | 50
+| Datensätze pro Zone| 1\.000
+| Datensätze pro Datensatzgruppe| 20
  
+
+<!---HONumber=August15_HO6-->

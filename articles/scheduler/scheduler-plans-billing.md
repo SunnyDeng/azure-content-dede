@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na" 
  ms.devlang="dotnet" 
  ms.topic="article" 
- ms.date="05/12/2015" 
+ ms.date="08/04/2015" 
  ms.author="krisragh"/>
  
 # Pläne und Abrechnung in Azure Scheduler
@@ -87,4 +87,4 @@ Ausführliche Informationen finden Sie unter [Scheduler Preise](http://azure.mic
  [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
   
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

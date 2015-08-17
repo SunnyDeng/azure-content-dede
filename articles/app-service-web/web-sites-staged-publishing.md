@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/29/2015"
+	ms.date="08/03/2015"
 	ms.author="cephalin"/>
 
 # Einrichten von Stagingumgebungen für Web-Apps in Azure App Service
@@ -59,7 +59,7 @@ Die Web-App muss im **Standard**- oder **Premium**-Modus ausgeführt werden, dam
 
 	![Konfigurationsquellen][MultipleConfigurationSources]
 
-5. Klicken Sie auf dem Blatt **Bereitstellungsslots** auf den Bereitstellungsslot, um ein Blatt für den Slot mit einem Satz von Metriken und Konfiguration wie bei anderen Web-Apps zu öffnen <strong><i>Ihr Web-App-Name</i>-<i>Bereitstellungsslot-Name</i></strong> wird oben im Blatt angezeigt, um Sie daran zu erinnern, dass der Bereitstellungsslot angezeigt wird.
+5. Klicken Sie auf dem Blatt **Bereitstellungsslots** auf den Bereitstellungsslot, um ein Blatt für den Slot mit einem Satz von Metriken und Konfiguration wie bei anderen Web-Apps zu öffnen. **Ihr Web-App-Name-Bereitstellungsslot-Name** wird oben im Blatt angezeigt, um Sie daran zu erinnern, dass der Bereitstellungsslot angezeigt wird.
 
 	![Bereitstellungs-Steckplatz-Titel][StagingTitle]
 
@@ -259,4 +259,4 @@ Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie w
 [SlotSettings]: ./media/web-sites-staged-publishing/SlotSetting.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

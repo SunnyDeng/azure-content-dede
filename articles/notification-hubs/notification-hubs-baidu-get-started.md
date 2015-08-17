@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Azure-Benachrichtigungs-Hubs"
+	pageTitle="Erste Schritte mit Azure Notification Hubs"
 	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen."
 	services="notification-hubs"
 	documentationCenter="android"
@@ -264,7 +264,7 @@ Sie sehen die Nachricht **保存成功!(Erfolgreich gespeichert!)**.
 				public static String NotificationHubConnectionString = "...";
 			}
 
-	Legen Sie für den Wert von *API_KEY* den Wert fest, den Sie zuvor aus dem Baidu-Cloud-Projekt abgerufen haben, für *NotificationHubName* Ihren Notification Hub-Namen aus dem Azure-Portal und für *NotificationHubConnectionString* die DefaultListenSharedAccessSignature aus dem Azure-Portal.
+	Legen Sie für den Wert von *API\_KEY* den Wert fest, den Sie zuvor aus dem Baidu-Cloud-Projekt abgerufen haben, für *NotificationHubName* Ihren Notification Hub-Namen aus dem Azure-Portal und für *NotificationHubConnectionString* die DefaultListenSharedAccessSignature aus dem Azure-Portal.
 
 11. Fügen Sie eine neue Klasse namens **DemoApplication.java** mit folgendem Code hinzu:
 
@@ -480,4 +480,4 @@ So testen Sie diese App mit dem Emulator:
 [Baidu-Portal]: http://www.baidu.com/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

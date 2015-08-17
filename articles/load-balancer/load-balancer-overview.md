@@ -99,4 +99,4 @@ Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-
 [Erste Schritte – Lastenausgleich für Internetzugriff](load-balancer-internet-getstarted.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

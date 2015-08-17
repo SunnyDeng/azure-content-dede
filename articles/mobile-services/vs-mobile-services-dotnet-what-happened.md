@@ -14,7 +14,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="07/02/2015" 
-	ms.author="patshea123"/>
+	ms.author="patshea"/>
 
 # Was ist mit meinem Projekt passiert?
 
@@ -22,7 +22,7 @@
 > - [Getting Started](vs-mobile-services-dotnet-getting-started.md)
 > - [What Happened](vs-mobile-services-dotnet-what-happened.md)
 
-###Was ist mit meinem Projekt passiert?</span>
+###Was ist mit meinem Projekt passiert?
 
 #####Verweise wurden hinzugefügt
 
@@ -45,4 +45,4 @@ Wenn ein .NET Mobile Service im Anbieter für verbundene Dienste erstellt wird, 
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

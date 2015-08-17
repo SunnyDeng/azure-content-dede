@@ -93,13 +93,13 @@ Der Zeitraum, in dem die Nutzung stattgefunden hat.
 Datum, an dem die Rechnung generiert wurde.
 
 ### Payment Method
-Die Zahlungsart, die für das Konto verwendet wird \(d. h. Rechnung oder Kreditkarte\).
+Die Zahlungsart, die für das Konto verwendet wird (d. h. Rechnung oder Kreditkarte).
 
 ### Bill to
 Anschrift für Microsoft Azure-Rechnungen.
 
 ### Subscription Offer
-Typ des erworbenen Abonnementangebots \(also nutzungsbasierte Bezahlung, MSDN-Visual Studio Ultimate usw.\).
+Typ des erworbenen Abonnementangebots (also nutzungsbasierte Bezahlung, MSDN-Visual Studio Ultimate usw.).
 
 ### Account Owner Email
 Die E-Mail-Adresse, unter der das Microsoft Azure-Konto registriert ist.
@@ -119,8 +119,8 @@ Dies ist der fällige Gesamtbetrag Ihrer letzten Rechnung.
 ### Payments
 Dies sind sämtliche mit Ihrer letzten Rechnung verrechneten Zahlungen.
 
-### Outstanding balance \(from previous billing cycle\)
-Beträge \(Gutschriften oder Restbeträge\), die seit Ihrer letzten Rechnung mit Ihrem Konto verrechnet wurden.
+### Outstanding balance (from previous billing cycle)
+Beträge (Gutschriften oder Restbeträge), die seit Ihrer letzten Rechnung mit Ihrem Konto verrechnet wurden.
 
 
 ## Informationen zu aktuellen Gebühren
@@ -181,7 +181,7 @@ Rate | Rate | Unter „Rate“ wird der Satz angezeigt, der Ihnen pro abrechenba
 Value | Value | Zeigt das Ergebnis der Multiplikation der Spalte „Billable“ mit der Spalte „Rate“ an. Wenn der Betrag für „Consumed“ den Betrag für „Included“ nicht übersteigt, sind in dieser Spalte keine Kosten aufgeführt.
 
 ## Analyse der täglichen Nutzungsdaten
-Je nach Nutzung können Tausende von Zeilen an täglichen Nutzungsdaten vorhanden sein. Wenn Sie diese Daten analysieren möchten, klicken Sie auf **Nutzung herunterladen** und wählen eine Version der durch Trennzeichen getrennten Datei \(.csv\), um Ihre täglichen Nutzungsdaten für den entsprechenden Abrechnungszeitraum zu erhalten. Unten können Sie zur Ansicht eine CSV-Beispieldatei für jede Version herunterladen.
+Je nach Nutzung können Tausende von Zeilen an täglichen Nutzungsdaten vorhanden sein. Wenn Sie diese Daten analysieren möchten, klicken Sie auf **Nutzung herunterladen** und wählen eine Version der durch Trennzeichen getrennten Datei (.csv), um Ihre täglichen Nutzungsdaten für den entsprechenden Abrechnungszeitraum zu erhalten. Unten können Sie zur Ansicht eine CSV-Beispieldatei für jede Version herunterladen.
 
  NAME | DOWNLOAD |
  :----------:| :-------: |
@@ -212,16 +212,16 @@ Unit | Unit | Gibt die Einheit an, in der der Dienst in Rechnung gestellt wird. 
 Consumed | Consumed Quantity | Enthält den Betrag der Ressource, die an diesem Tag verbraucht wurde.
 Sub Region | Resource Location | Gibt das Rechenzentrum an, in dem die Ressource ausgeführt wird.
 Service | Consumed Service | Diese Spalte dient der Verfolgung des einzelnen Azure Platform-Diensts, der in der Spalte „Name“ möglicherweise nicht einzeln aufgeführt ist. In der Spalte „Service“ wird angegeben, auf welchen Dienst genau sich die jeweilige Nutzung bezieht.
-N/V | Resource Group | _**Neu hinzugefügte Spalte.**_ Die Ressourcengruppe, in der die bereitgestellte Ressource ausgeführt wird. Informationen unter http://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/.
+N/V | Resource Group | _**Neu hinzugefügte Spalte.**_ Die Ressourcengruppe, in der die bereitgestellte Ressource ausgeführt wird. Informationen unter http://azure.microsoft.com/documentation/articles/resource-group-overview/.
 Component | Instance ID | Der Bezeichner für die ausgeführte Ressource. Der Bezeichner enthält den Namen, den Sie für die Ressource bei der Erstellung angegeben haben.
-N/V | Tags | _**Neu hinzugefügte Spalte.**_ Bei den neuen Ressourcentypen in Azure können Sie Ressourcen markieren. Informationen unter http://azure.microsoft.com/en-us/updates/organize-your-azure-resources-with-tags/.
+N/V | Tags | _**Neu hinzugefügte Spalte.**_ Bei den neuen Ressourcentypen in Azure können Sie Ressourcen markieren. Informationen unter http://azure.microsoft.com/updates/organize-your-azure-resources-with-tags/.
 Additional Info | Additional Info | Zusätzliche Metadaten, die sich auf den Dienst beziehen.
 Service Info 1 | Service Info 1 | Diese Spalte enthält den Namen des Projekts, zu dem der Dienst in Ihrem Abonnement gehört.
 Service Info 2 | Service Info 2 | Dies ist ein Legacyfeld, in dem optionale dienstspezifische Metadaten erfasst werden.
 
 Zusätzlich zu einigen neuen Feldern und Namensänderungen für CSV-Version 2 wird eine standardisierte Formatierung für die Daten in den unten aufgeführten Feldern verwendet:
 
-- **Instance ID**: Im Feld „Instance ID“ wird der vom Benutzer festgelegte Bezeichner für den bereitgestellten Dienst angegeben. Derzeit gibt es zwei Formate, in denen die Instanz-ID angegeben wird: Dies ist entweder der Name der Ressource oder die vollqualifizierte Ressourcen-ID. Microsoft Azure-Dienste werden dahingehend umgestellt, dass die Instanz-ID in einem standardisierten vollqualifizierten Ressourcen-ID-Format angegeben wird _**\(/subscriptions/<subscription id>/resourcegroups/<resourcegroupname>/providers/<providername>/<resourcename>\)**_. Wenn die Dienste auf das neue Format umgestellt werden, wird das Datenfeld „Instance ID“ so geändert, dass nicht mehr nur der Ressourcenname zu sehen ist, sondern die Ressourcen-ID. Die Ressourcen-ID ist das Format, das von der [Azure-Ressourcen-Manager-API](https://msdn.microsoft.com/library/azure/dn790567.aspx) zum Identifizieren von Ressourcen in einem Abonnement verwendet wird.
+- **Instance ID**: Im Feld „Instance ID“ wird der vom Benutzer festgelegte Bezeichner für den bereitgestellten Dienst angegeben. Derzeit gibt es zwei Formate, in denen die Instanz-ID angegeben wird: Dies ist entweder der Name der Ressource oder die vollqualifizierte Ressourcen-ID. Microsoft Azure-Dienste werden dahingehend umgestellt, dass die Instanz-ID in einem standardisierten vollqualifizierten Ressourcen-ID-Format angegeben wird _**(/subscriptions/<subscription id>/resourcegroups/<resourcegroupname>/providers/<providername>/<resourcename>)**_. Wenn die Dienste auf das neue Format umgestellt werden, wird das Datenfeld „Instance ID“ so geändert, dass nicht mehr nur der Ressourcenname zu sehen ist, sondern die Ressourcen-ID. Die Ressourcen-ID ist das Format, das von der [Azure-Ressourcen-Manager-API](https://msdn.microsoft.com/library/azure/dn790567.aspx) zum Identifizieren von Ressourcen in einem Abonnement verwendet wird.
 
 ![instanceid](./media/billing-understand-your-bill/instanceid.png)
 
@@ -243,7 +243,7 @@ Ausführliche Informationen zu den einzelnen Diensten finden Sie in den unten an
 
 
 
-Um nach der aktuellen Version zu suchen, geben Sie Jahr und Monat an \(geben Sie bspw. für die Datei für Mai 2015 **052015** in den Abschnitt _**MMYYYY**_ der obigen URL ein\). Diese Tabelle enthält eine Liste aller möglichen Kombinationen „Service“-bezogener Felder im heruntergeladenen **Nutzungsbericht**.
+Um nach der aktuellen Version zu suchen, geben Sie Jahr und Monat an (geben Sie bspw. für die Datei für Mai 2015 **052015** in den Abschnitt _**MMYYYY**_ der obigen URL ein). Diese Tabelle enthält eine Liste aller möglichen Kombinationen „Service“-bezogener Felder im heruntergeladenen **Nutzungsbericht**.
 
 ## Weitere Ressourcen
 Im Abschnitt **Verwalten von Konten, Abonnements und Administratorrollen** unter [Verwalten von Diensten](https://msdn.microsoft.com/library/azure/dn578292.aspx) finden Sie einige sehr hilfreiche Links:
@@ -262,4 +262,4 @@ Im Abschnitt **Verwalten von Konten, Abonnements und Administratorrollen** unter
 
 <!--Image references-->
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

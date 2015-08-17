@@ -91,4 +91,4 @@ Nach dem Erstellen der Web-App und des App Service-Plans, sollten Sie eine Skali
 [HowtoConfigureASE]: http://azure.microsoft.com/documentation/articles/app-service-web-configure-an-app-service-environment
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

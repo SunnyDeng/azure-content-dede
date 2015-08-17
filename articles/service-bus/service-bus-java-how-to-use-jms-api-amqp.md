@@ -35,11 +35,11 @@ In diesem Leitfaden wird davon ausgegangen, dass Sie bereits einen Service Bus-N
 
 ## Herunterladen der AMQP 1.0 JMS-Clientbibliothek
 
-Informationen zum Downloadort der neuesten Version der Apache Qpid JMS AMQP 1.0-Clientbibliothek finden Sie unter: [http://people.apache.org/~rgodfrey/qpid-java-amqp-1-0-client-jms.html](http://people.apache.org/~rgodfrey/qpid-java-amqp-1-0-client-jms.html).
+Informationen zum Downloadort der neuesten Version der Apache Qpid JMS AMQP 1.0-Clientbibliothek finden Sie unter: [http://people.apache.org/\~rgodfrey/qpid-java-amqp-1-0-client-jms.html](http://people.apache.org/~rgodfrey/qpid-java-amqp-1-0-client-jms.html).
 
 Folgende vier JAR-Dateien müssen aus dem Apache Qpid JMS AMQP 1.0-Verteilungsarchiv zu dem Java-KLASSENPFAD hinzugefügt werden, wenn JMS-Anwendungen mit Service Bus erstellt und ausgeführt werden:
 
-*    geronimo-jms_1.1_spec-1.0.jar
+*    geronimo-jms\_1.1\_spec-1.0.jar
 *    qpid-amqp-1-0-client-[version].jar
 *    qpid-amqp-1-0-client-jms-[version].jar
 *    qpid-amqp-1-0-common-[version].jar
@@ -71,9 +71,9 @@ Der Eintrag zum Definieren einer **ConnectionFactory** in der Qpid Properties-Da
 connectionfactory.[jndi_name] = [ConnectionURL]
 ```
 
-Dabei bedeuten **[jndi_name]** und **[ConnectionURL]** Folgendes:
+Dabei bedeuten **[jndi\_name]** und **[ConnectionURL]** Folgendes:
 
-- **[jndi_name]**: Der logische Name der ConnectionFactory. Dieser Name wird in der Java-Anwendung mithilfe der JNDI-Methode IntialContext.lookup() aufgelöst.
+- **[jndi\_name]**: Der logische Name der ConnectionFactory. Dieser Name wird in der Java-Anwendung mithilfe der JNDI-Methode IntialContext.lookup() aufgelöst.
 - **[ConnectionURL]**: Diese URL liefert der JMS-Bibliothek die vom AMQP-Broker benötigten Informationen.
 
 **ConnectionURL** hat das folgende Format:
@@ -87,7 +87,7 @@ Dabei bedeuten **[namespace]**, **[benutzername]** und **[kennwort]** Folgendes:
 - **[benutzername]**: Der Service Bus-Ausstellername.
 - **[kennwort]**: URL-codierte Form des Service Bus-Ausstellerschlüssels.
 
-> [AZURE.NOTE]Sie müssen das Kennwort manuell URL-codieren. Ein nützliches URL-Codierungshilfsprogramm ist unter [http://www.w3schools.com/tags/ref_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) verfügbar.
+> [AZURE.NOTE]Sie müssen das Kennwort manuell URL-codieren. Ein nützliches URL-Codierungshilfsprogramm ist unter [http://www.w3schools.com/tags/ref\_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) verfügbar.
 
 #### Konfigurieren von Zielen
 
@@ -103,10 +103,10 @@ oder
 topic.[jndi_name] = [physical_name]
 ```
 
-Dabei bedeuten **[jndi_name]** und **[physical_name]** Folgendes:
+Dabei bedeuten **[jndi\_name]** und **[physical\_name]** Folgendes:
 
-- **[jndi_name]**: Der logische Name des Ziels. Dieser Name wird in der Java-Anwendung mithilfe der JNDI-Methode IntialContext.lookup() aufgelöst.
-- **[physischer_name]**: Der Name der Service Bus-Entität, mit der die Anwendung Nachrichten austauscht.
+- **[jndi\_name]**: Der logische Name des Ziels. Dieser Name wird in der Java-Anwendung mithilfe der JNDI-Methode IntialContext.lookup() aufgelöst.
+- **[physischer\_name]**: Der Name der Service Bus-Entität, mit der die Anwendung Nachrichten austauscht.
 
 > [AZURE.NOTE]Beim Empfang von einem Service Bus-Themenabonnement sollte der in JNDI angegebene physische Name dem Themennamen entsprechen. Der Abonnementname wird bei der Erstellung des Abonnements im JMS-Anwendungscode angegeben. Im [Entwicklerhandbuch für Service Bus AMQP 1.0](http://msdn.microsoft.com/library/jj841071.aspx) finden Sie weitere Details zum Arbeiten mit Service Bus-Themenabonnements in JMS.
 
@@ -338,4 +338,4 @@ Sie können Service Bus AMQP 1.0 auch mit anderen Sprachen verwenden, unter ande
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

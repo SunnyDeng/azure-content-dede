@@ -4,7 +4,6 @@
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="Rick-Anderson" 
-	writer="Rick-Anderson" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -76,10 +75,11 @@ Wenn Sie über einen Datenbankserver verfügen, verwenden Sie diesen, um eine ne
 ### Einrichten der Seitenkopf- und -fußzeile
 
 
-1. Erweitern Sie im **Projektmappen-Explorer** den Ordner *Views\Shared*, und öffnen Sie die Datei *_Layout.cshtml*. .
-	![_Layout.cshtml im Projektmappen-Explorer][newapp004]
+1. Erweitern Sie im **Projektmappen-Explorer** den Ordner *Views\\Shared*, und öffnen Sie die Datei "*\_Layout.cshtml*".
 
-1. Ersetzen Sie den Inhalt der Datei *Views\Shared_Layout.cshtml* durch den folgenden Code.
+	![\_Layout.cshtml in Solution Explorer][newapp004]
+
+1. Ersetzen Sie den Inhalt der Datei *Views\\Shared\_Layout.cshtml* durch den folgenden Code.
 
 
 		<!DOCTYPE html>
@@ -232,11 +232,11 @@ Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen](http://
 
 		add-migration Initial
 
-	Mit dem Befehl **add-migration Initial** wird eine Klasse namens **&lt;date_stamp&gt;Initial** generiert, mit der die Datenbank erstellt wird. Der erste Parameter (*Initial*) ist willkürlich und wird zum Erstellen des Dateinamens verwendet. Sie können die neue Klasse im **Projektmappen-Explorer** anzeigen.
+	Mit dem Befehl **add-migration Initial** wird eine Klasse namens **&lt;date\_stamp&gt;Initial** generiert, mit der die Datenbank erstellt wird. Der erste Parameter (*Initial*) ist willkürlich und wird zum Erstellen des Dateinamens verwendet. Sie können die neue Klasse im **Projektmappen-Explorer** anzeigen.
 
 	In der **Initial**-Klasse wird mit der **Up**-Methode die Tabelle **Contacts** erstellt und mit der Down-Methode (wird verwendet, wenn Sie zum vorherigen Status zurückkehren möchten) wieder verworfen.
 
-3. Öffnen Sie die Datei *Migrations\Configuration.cs*.
+3. Öffnen Sie die Datei *Migrations\\Configuration.cs*.
 
 4. Fügen Sie die folgenden Namespaces hinzu.
 
@@ -319,7 +319,7 @@ In der Anwendung werden die Seeddaten angezeigt und Links zum Bearbeiten und Lö
 
 ## Bearbeiten der Anzeige
 
-1. Öffnen Sie die Datei *Views\Home\Index.cshtml*. Im nächsten Schritt ersetzen wir das generierte Markup mit Code, der [jQuery](http://jquery.com/) und [Knockout.js](http://knockoutjs.com/) verwendet. Dieser neue Code ruft die Liste der Kontakte mithilfe von Web API und JSON ab und bindet die Kontaktdaten mithilfe von knockout.js an das UI. Weitere Informationen finden Sie unter [Nächste Schritte](#nextsteps) am Ende dieses Lernprogramms. 
+1. Öffnen Sie die Datei *Views\\Home\\Index.cshtml*. Im nächsten Schritt ersetzen wir das generierte Markup mit Code, der [jQuery](http://jquery.com/) und [Knockout.js](http://knockoutjs.com/) verwendet. Dieser neue Code ruft die Liste der Kontakte mithilfe von Web API und JSON ab und bindet die Kontaktdaten mithilfe von knockout.js an das UI. Weitere Informationen finden Sie unter [Nächste Schritte](#nextsteps) am Ende dieses Lernprogramms. 
 
 
 2. Ersetzen Sie den Inhalt der Datei durch den folgenden Code.
@@ -476,7 +476,7 @@ In der Anwendung werden die Seeddaten angezeigt und Links zum Bearbeiten und Lö
 
 	Wir verwenden dieses Stylesheet für das Layout, die Farben und die Stile, die in der App "Content Manager" verwendet werden.
 
-6. Öffnen Sie die Datei *App_Start\BundleConfig.cs*.
+6. Öffnen Sie die Datei *App\_Start\\BundleConfig.cs*.
 
 
 7. Fügen Sie den folgenden Code hinzu, um das [Knockout](http://knockoutjs.com/index.html "KO")-Plugin zu registrieren.
@@ -629,7 +629,7 @@ Weitere Informationen finden Sie unter [Open Web Application Security Project](h
 
 	[ValidateHttpAntiForgeryToken] public IHttpActionResult PutContact(int id, Contact contact) {
 
-1. Aktualisieren Sie den Abschnitt *Skripts* der Datei *Views\Home\Index.cshtml*, um Code für die XSRF-Tokens zu erhalten.
+1. Aktualisieren Sie den Abschnitt *Skripts* der Datei *Views\\Home\\Index.cshtml*, um Code für die XSRF-Tokens zu erhalten.
 
          @section Scripts {
             @Scripts.Render("~/bundles/knockout")
@@ -810,4 +810,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

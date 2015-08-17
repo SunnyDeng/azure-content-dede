@@ -176,4 +176,4 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
  * [Real User Monitoring](https://newrelic.com/docs/features/real-user-monitoring): Überblick darüber, wie mit RUM (Real User Monitoring) die Zeit gemessen wird, die das Laden Ihrer Webseiten in den Browsern von Benutzern dauert, woher diese Benutzer stammen und welche Browser sie verwenden
  * [Finding Help](https://newrelic.com/docs/site/finding-help): Über das Online-Hilfecenter von New Relic aufrufbare Ressourcen
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

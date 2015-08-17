@@ -30,7 +30,7 @@ Dieses Lernprogramm baut auf der Reihe der API-App-Lernprogramme auf:
 
 ## Ermöglichen des öffentlichen Zugriffs auf die API-App
 
-Wählen Sie die API-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) aus. Klicken Sie auf der Befehlsleiste auf die Schaltfläche **Einstellungen**. Ändern Sie im Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich \(authentifiziert\)**.
+Wählen Sie die API-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) aus. Klicken Sie auf der Befehlsleiste auf die Schaltfläche **Einstellungen**. Ändern Sie im Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich (authentifiziert)**.
 
 ![](./media/app-service-web-connect-web-app-to-saas-api/4-5-Change-Access-Level-To-Public.png)
 
@@ -38,7 +38,7 @@ Wählen Sie die API-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink
 
 1. Öffnen Sie Visual Studio. Fügen Sie im Dialogfeld **Neues Projekt** eine neue **ASP.NET-Webanwendung** hinzu. Klicken Sie auf **OK**.
 
-	![Datei \> Neu \> Web \> ASP.NET-Webanwendung](./media/app-service-web-connect-web-app-to-saas-api/1-Create-New-MVC-App-For-Consumption.png)
+	![Datei > Neu > Web > ASP.NET-Webanwendung](./media/app-service-web-connect-web-app-to-saas-api/1-Create-New-MVC-App-For-Consumption.png)
 
 1. Wählen Sie die Vorlage **MVC** aus. Klicken Sie auf **Authentifizierung ändern**, und wählen Sie dann **Keine Authentifizierung** aus. Klicken Sie zweimal auf **OK**.
 
@@ -94,4 +94,4 @@ Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure Web-App](web-sites
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

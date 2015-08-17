@@ -54,13 +54,13 @@ Nachstehend finden Sie einen Screenshot der vollständigen Anwendung:
 
 ## <a id="setup"> </a>Einrichten von Python und Django
 
-**Hinweis:** Für den Download mithilfe von Internet Explorer müssen Sie möglicherweise die erweiterten Sicherheitseinstellungen für Internet Explorer konfigurieren \("Start \> Verwaltung \> Server-Manager \> Lokaler Server". Klicken Sie dann auf **Verstärkte Sicherheitskonfiguration für IE**, und legen Sie "Aus" fest.\)
+**Hinweis:** Für den Download mithilfe von Internet Explorer müssen Sie möglicherweise die erweiterten Sicherheitseinstellungen für Internet Explorer konfigurieren ("Start > Verwaltung > Server-Manager > Lokaler Server". Klicken Sie dann auf **Verstärkte Sicherheitskonfiguration für IE**, und legen Sie "Aus" fest.)
 
 1. Installieren Sie den [Webplattform-Installer][].
 1. Installieren Sie Python und WFastCGI mit dem Webplattform-Installer. Dadurch wird wfastcgi.py in Ihrem Python-Skriptordner installiert.
 	1. Starten Sie den Webplattform-Installer.
 	1. Geben Sie „WFastCGI“ in der Suchleiste ein.
-	1. Wählen Sie den Eintrag „WFactCGI“ für die Python-Version aus, die Sie verwenden möchten \(2.7 oder 3.4\). Beachten Sie, dass dadurch Python als eine Abhängigkeit von WFastCGI installiert wird.
+	1. Wählen Sie den Eintrag „WFactCGI“ für die Python-Version aus, die Sie verwenden möchten (2.7 oder 3.4). Beachten Sie, dass dadurch Python als eine Abhängigkeit von WFastCGI installiert wird.
 1. Installieren Sie Django mit pip.
 
     Verwenden Sie für Python 2.7 den folgenden Befehl.
@@ -198,4 +198,4 @@ Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virt
 
 [Webplattform-Installer]: http://www.microsoft.com/web/downloads/platform.aspx
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

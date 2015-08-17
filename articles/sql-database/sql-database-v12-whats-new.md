@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="07/21/2015" 
+	ms.date="08/05/2015" 
 	ms.author="genemi"/>
 
 
@@ -150,17 +150,14 @@ Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Server
 ## <a name="V12AzureSqlDbPreviewGaTable"></a>Vorschauregionen
 
 
-V12 wurde im Dezember 2014 freigegeben, zunächst jedoch nur mit dem Status [Vorschau](http://azure.microsoft.com/support/legal/preview-supplemental-terms/). Seit April 2015 verfügt V12 über den heraufgestuften Status "General Availability" (GA) in fast allen geografischen Regionen.
+V12 wurde im Dezember 2014 freigegeben, zunächst jedoch nur mit dem Status "Vorschau".
 
 
-V12 ist in der Vorschau in den folgenden Regionen verfügbar:
+- [Ergänzende Nutzungsbedingungen für Microsoft Azure-Vorschauen](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 
-| Azure-Region | Aktuelle Version<br/>Status von V12 | Datum der Heraufstufung<br/>auf allgemeine Verfügbarkeit, geschätzt |
-| :--- | :--- | :--- |
-| Australien (Osten) | **Vorschau** | Drittes Quartal 2015, geschätzt |
-| Australien (Südosten) | **Vorschau** | Drittes Quartal 2015, geschätzt |
+Am 31. Juli 2015 wurden alle Regionen auf die "Allgemeine Verfügbarkeit" heraufgestuft.
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -1,7 +1,7 @@
 
 Als Nächstes müssen Sie die Art ändern, wie Pushbenachrichtigungen registriert werden, um sicherzustellen, dass der Benutzer vor dem Registrierungsversuch authentifiziert wird.
 
-1. Öffnen sie in Visual Studio im Projektmappen-Explorer die Projektdatei "app.xaml.cs", und kommentieren Sie im **Application_Launching**-Ereignishandler den Aufruf der **AcquirePushChannel**-Methode aus, oder löschen Sie ihn. 
+1. Öffnen sie in Visual Studio im Projektmappen-Explorer die Projektdatei "app.xaml.cs", und kommentieren Sie im **Application\_Launching**-Ereignishandler den Aufruf der **AcquirePushChannel**-Methode aus, oder löschen Sie ihn. 
  
 2. Ändern Sie den Zugriffsmodus der **AcquirePushChannel**-Methode von `private` in `public`, und fügen Sie den `static`-Modifizierer hinzu.
 
@@ -14,4 +14,4 @@ Als Nächstes müssen Sie die Art ändern, wie Pushbenachrichtigungen registrier
             RefreshTodoItems();
         }
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

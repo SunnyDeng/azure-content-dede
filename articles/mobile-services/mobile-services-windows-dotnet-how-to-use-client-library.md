@@ -699,4 +699,4 @@ Mit dieser Eigenschaft werden alle Eigenschaften während der Serialisierung in 
 [InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

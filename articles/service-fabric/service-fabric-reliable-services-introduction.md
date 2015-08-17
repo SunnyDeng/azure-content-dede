@@ -7,6 +7,7 @@
    manager="timlt"
    editor="jessebenson; mani-ramaswamy"/>
 
+
 <tags
    ms.service="Service-Fabric"
    ms.devlang="dotnet"
@@ -15,6 +16,7 @@
    ms.workload="NA"
    ms.date="07/17/2015"
    ms.author="masnider;jesseb"/>
+
 
 # Übersicht über Reliable Services
 Service Fabric vereinfacht das Schreiben und Verwalten zuverlässiger zustandsloser und zustandsbehafteter Dienste (Reliable Services). In diesem Dokument wird Folgendes behandelt:
@@ -115,13 +117,13 @@ Wenn einer der folgenden Punkte auf Ihre Anwendungsdienstanforderungen zutrifft,
 
 - Ihre Anwendung muss zuverlässige Wörterbücher oder Warteschlangen zur Laufzeit dynamisch erstellen oder zerstören.
 
-- Sie müssen von Service Fabric bereitgestellte Sicherungs- und Wiederherstellungsfunktionen für den Zustand Ihres Diensts programmgesteuert ausführen.*
+- Sie müssen von Service Fabric bereitgestellte Sicherungs- und Wiederherstellungsfunktionen für den Zustand Ihres Diensts programmgesteuert ausführen.\*
 
-- Ihre Anwendung muss den Änderungsverlauf ihrer Zustandseinheiten protokollieren.*
+- Ihre Anwendung muss den Änderungsverlauf ihrer Zustandseinheiten protokollieren.\*
 
-- Sie möchten benutzerdefinierte Zustandsanbieter selbst entwickeln oder von Dritten nutzen*
+- Sie möchten benutzerdefinierte Zustandsanbieter selbst entwickeln oder von Dritten nutzen\*
 
-> [AZURE.NOTE]*Diese Funktionen stehen mit der allgemeinen Verfügbarkeit des SDK zur Verfügung.
+> [AZURE.NOTE]\*Diese Funktionen stehen mit der allgemeinen Verfügbarkeit des SDK zur Verfügung
 
 
 ## Nächste Schritte
@@ -130,4 +132,4 @@ Wenn einer der folgenden Punkte auf Ihre Anwendungsdienstanforderungen zutrifft,
 + [Erfahren Sie mehr über das Reliable Actors-Programmiermodell](../service-fabric/service-fabric-reliable-actors-introduction.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

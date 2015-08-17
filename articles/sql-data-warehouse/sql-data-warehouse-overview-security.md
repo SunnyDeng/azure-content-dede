@@ -51,9 +51,9 @@ ALTER ROLE db_datareader ADD MEMBER ApplicationUser; -- allows ApplicationUser t
 ALTER ROLE db_datawriter ADD MEMBER ApplicationUser; -- allows ApplicationUser to write data
 ```
 
-Das Server-Admin-Konto, mit dem Sie eine Verbindung herstellen, ist Mitglied von db_owner und verfügt daher über alle Berechtigungen in der Datenbank. Speichern Sie dieses Konto für die Bereitstellung von Schemaänderungen und andere Verwaltungsvorgänge. Verwenden Sie das Konto "ApplicationUser" mit eingeschränkteren Berechtigungen, um eine Verbindung von Ihrer Anwendung zur Datenbank mit den geringsten Berechtigungen herzustellen, die von Ihrer Anwendung benötigt werden.
+Das Server-Admin-Konto, mit dem Sie eine Verbindung herstellen, ist Mitglied von db\_owner und verfügt daher über alle Berechtigungen in der Datenbank. Speichern Sie dieses Konto für die Bereitstellung von Schemaänderungen und andere Verwaltungsvorgänge. Verwenden Sie das Konto "ApplicationUser" mit eingeschränkteren Berechtigungen, um eine Verbindung von Ihrer Anwendung zur Datenbank mit den geringsten Berechtigungen herzustellen, die von Ihrer Anwendung benötigt werden.
 
-Es gibt Möglichkeiten, weiter einzuschränken, was für einen Benutzer mit einer Azure SQL-Datenbank möglich ist: – [Datenbankrollen][] außer db_datareader und db_datawriter können verwendet werden, um leistungsfähigere Anwendungsbenutzerkonten oder weniger leistungsfähige Verwaltungskonten zu erstellen. – Mit präzisen [Berechtigungen][] können Sie steuern, welche Vorgänge Sie für einzelne Spalten, Tabellen, Sichten, Prozeduren und andere Objekte in der Datenbank durchführen können. – [Gespeicherte Prozeduren][] können verwendet werden, um die Aktionen einzuschränken, die in der Datenbank ausgeführt werden können.
+Es gibt Möglichkeiten, weiter einzuschränken, was für einen Benutzer mit einer Azure SQL-Datenbank möglich ist: – [Datenbankrollen][] außer db\_datareader und db\_datawriter können verwendet werden, um leistungsfähigere Anwendungsbenutzerkonten oder weniger leistungsfähige Verwaltungskonten zu erstellen. – Mit präzisen [Berechtigungen][] können Sie steuern, welche Vorgänge Sie für einzelne Spalten, Tabellen, Sichten, Prozeduren und andere Objekte in der Datenbank durchführen können. – [Gespeicherte Prozeduren][] können verwendet werden, um die Aktionen einzuschränken, die in der Datenbank ausgeführt werden können.
 
 Die Verwaltung von Datenbanken und logischen Servern über das Azure-Verwaltungsportal oder mit der Azure-Ressourcen-Manager-API wird durch die Rollenzuweisungen Ihres Portal-Benutzerkontos gesteuert. Weitere Informationen zu diesem Thema finden Sie unter [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal][].
 
@@ -78,4 +78,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 <!--Other Web references-->
 [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal]: http://azure.microsoft.com/documentation/articles/role-based-access-control-configure.aspx
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

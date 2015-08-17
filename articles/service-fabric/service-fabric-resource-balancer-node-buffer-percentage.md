@@ -47,4 +47,4 @@ Wenn der Wert in diesem Abschnitt nicht angegeben ist, wird als Standardwert 0 
 Weitere Informationen: [Resource Balancer-Architektur](service-fabric-resource-balancer-architecture.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

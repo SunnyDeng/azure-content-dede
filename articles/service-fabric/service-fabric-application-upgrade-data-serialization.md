@@ -7,19 +7,21 @@
    manager="timlt"
    editor=""/>
 
+
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/22/2015"
+   ms.date="08/05/2015"
    ms.author="jesseb"/>
+
 
 
 # Service Fabric-Anwendungsupgrade: Datenserialisierung
 
-Bei einem [parallelen Anwendungsupgrade](service-fabric-application-upgrade.md) wird das Upgrade auf eine Teilmenge von Knoten angewendet. Dabei werden die einzelnen Upgradedomänen nacheinander abgearbeitet. Während dieses Vorgangs weisen einige Upgradedomänen die neuere Version Ihrer Anwendung auf und andere Upgradedomänen die ältere Version der Anwendung. Zu diesem Zeitpunkt muss die neue Version der Anwendung die alte Version Ihrer Daten sowie die alte Version der Anwendung die neue Version der Daten lesen können. Wenn das Datenformat nicht aufwärts- und abwärtskompatibel ist, kann das Upgrade fehlschlagen, oder es gehen möglicherweise Daten verloren. In diesem Artikel werden die Zusammensetzung des Datenformats sowie bewährte Methoden zum Sicherstellen der Aufwärts- und Abwärtskompatibilität der Daten erörtert.
+Bei einem [parallelen Anwendungsupgrade](service-fabric-application-upgrade.md) wird das Upgrade auf eine Teilmenge von Knoten angewendet. Dabei werden die einzelnen Upgradedomänen nacheinander abgearbeitet. Während dieses Vorgangs weisen einige Upgradedomänen die neuere Version Ihrer Anwendung auf und andere Upgradedomänen die ältere Version Ihrer Anwendung. Zu diesem Zeitpunkt muss die neue Version der Anwendung die alte Version Ihrer Daten sowie die alte Version der Anwendung die neue Version der Daten lesen können. Wenn das Datenformat nicht aufwärts- und abwärtskompatibel ist, kann das Upgrade fehlschlagen, oder es gehen möglicherweise Daten verloren. In diesem Artikel werden die Zusammensetzung des Datenformats sowie bewährte Methoden zum Sicherstellen der Aufwärts- und Abwärtskompatibilität der Daten erörtert.
 
 
 ## Woraus besteht das Datenformat?
@@ -64,6 +66,5 @@ Datenverträge sind die empfohlene Lösung zum Sicherstellen der Kompatibilität
 [Anwendungsupgradeparameter](service-fabric-application-upgrade-parameters.md)
 
 [Weiterführende Themen](service-fabric-application-upgrade-advanced.md)
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

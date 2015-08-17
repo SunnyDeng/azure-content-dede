@@ -93,7 +93,7 @@ Stellen Sie über PuTTY eine Verbindung mit dem virtuellen Linux-Computer her. W
     >[Azure.NOTE]Aus Gründen der Sicherheit verwendet PostgreSQL einen Benutzer ohne Root-Rechte zum Initialisieren, Starten oder Herunterfahren der Datenbank.
 
 
-4. Bearbeiten Sie das *bash_profile*, indem Sie die folgenden Befehle eingeben. Diese Zeilen werden am Ende der Datei für das *bash_profile* hinzugefügt:
+4. Bearbeiten Sie das *bash\_profile*, indem Sie die folgenden Befehle eingeben. Diese Zeilen werden am Ende der Datei für das *bash\_profile* hinzugefügt:
 
 		cat >> ~/.bash_profile <<EOF
 		export PGPORT=1999
@@ -108,7 +108,7 @@ Stellen Sie über PuTTY eine Verbindung mit dem virtuellen Linux-Computer her. W
 		alias ll='ls -lh'
 		EOF
 
-5. Führen Sie die *bash_profile*-Datei aus:
+5. Führen Sie die *bash\_profile*-Datei aus:
 
 		$ source .bash_profile
 
@@ -142,7 +142,7 @@ Führen Sie die folgenden Befehle aus:
 
 	# cp linux /etc/init.d/postgresql
 
-Ändern Sie zwei Variablen in der Datei "/etc/init.d/postgresql". Das Präfix wird auf den Installationspfad von PostgreSQL festgelegt: **/opt/pgsql**. PGDATA wird auf den Datenspeicherpfad von PostgreSQL festgelegt: **/opt/pgsql_data**.
+Ändern Sie zwei Variablen in der Datei "/etc/init.d/postgresql". Das Präfix wird auf den Installationspfad von PostgreSQL festgelegt: **/opt/pgsql**. PGDATA wird auf den Datenspeicherpfad von PostgreSQL festgelegt: **/opt/pgsql\_data**.
 
 	# sed -i '32s#usr/local#opt#' /etc/init.d/postgresql
 
@@ -251,4 +251,4 @@ Mit dem folgenden Befehl können Sie Daten in einer Tabelle aktualisieren: In di
 ##Weitere Informationen über PostgreSQL
 Sie schließen jetzt die Installation von PostgreSQL auf dem virtuellen Linux-Computer in Microsoft Azure ab und beginnen mit der Verwendung in Microsoft Azure. Weitere Informationen über PostgreSQL finden Sie [hier](http://www.postgresql.org/)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

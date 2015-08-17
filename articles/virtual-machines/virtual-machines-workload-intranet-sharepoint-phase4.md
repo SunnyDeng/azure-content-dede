@@ -5,15 +5,16 @@
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="vm-windows-sharepoint"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/05/2015"
+	ms.date="07/22/2015"
 	ms.author="josephd"/>
 
 # SharePoint-Intranetfarm-Workload Phase 4: Konfigurieren der SharePoint-Server
@@ -95,7 +96,7 @@ Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierende
 
 	New-AzureVM –ServiceName $serviceName -VMs $vm1 -VNetName $vnetName
 
-Gehen Sie für jeden der vier SharePoint-Server nach den Anweisungen der Prozedur [Anmelden bei einem virtuellen Computer über eine Remotedesktopverbindung](virtual-machines-workload-intranet-sharepoint-phase2.md#logon) vor, um sich mit den Anmeldeinformationen für das Konto "[Domäne]\sp_farm_db" anzumelden. Diese Anmeldeinformationen haben Sie in [Phase 2: Konfigurieren von Domänencontrollern](virtual-machines-workload-intranet-sharepoint-phase2.md) erstellt.
+Gehen Sie für jeden der vier SharePoint-Server nach den Anweisungen der Prozedur [Anmelden bei einem virtuellen Computer über eine Remotedesktopverbindung](virtual-machines-workload-intranet-sharepoint-phase2.md#logon) vor, um sich mit den Anmeldeinformationen für das Konto "[Domäne]\\sp\_farm\_db" anzumelden. Diese Anmeldeinformationen haben Sie in [Phase 2: Konfigurieren von Domänencontrollern](virtual-machines-workload-intranet-sharepoint-phase2.md) erstellt.
 
 Gehen Sie für jeden der vier SharePoint-Server nach den Anweisungen der Prozedur [Testen der Konnektivität](virtual-machines-workload-intranet-sharepoint-phase2.md#testconn) vor, um die Konnektivität der Standorte Ihres Unternehmensnetzwerks zu testen.
 
@@ -109,8 +110,8 @@ Führen Sie zum Konfigurieren des ersten SharePoint-Servers der Farm folgende Sc
 4.	Wählen Sie auf der Seite **Verbindung mit einer Serverfarm herstellen** die Option **Eine neue Serverfarm erstellen** aus, und klicken Sie auf **Weiter**.
 5.	Auf der Seite **Einstellungen für die Konfigurationsdatenbank angeben**:
  - Geben Sie unter **Datenbankserver** den Namen des primären Datenbankservers ein.
- - Geben Sie unter **Benutzername** den in [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-intranet-sharepoint-phase2.md) erstellten Namen "[Domäne]**\sp_farm_db**" ein. Das Konto "sp_farm_db" verfügt, wie Sie sich erinnern, über "sysadmin"-Berechtigungen für den Datenbankserver.
- - Geben Sie unter **Kennwort** das Kennwort für das Konto „sp_farm_db“ ein.
+ - Geben Sie unter **Benutzername** den in [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-intranet-sharepoint-phase2.md) erstellten Namen "[Domäne]**\\sp\_farm\_db**" ein. Das Konto "sp\_farm\_db" verfügt, wie Sie sich erinnern, über "sysadmin"-Berechtigungen für den Datenbankserver.
+ - Geben Sie unter **Kennwort** das Kennwort für das Konto „sp\_farm\_db“ ein.
 6.	Klicken Sie auf **Weiter**.
 7.	Geben Sie auf der Seite **Farmsicherheitseinstellungen angeben** eine Passphrase ein und bestätigen Sie diese. Notieren Sie die Passphrase, und bewahren Sie sie für den Bedarfsfall an einem sicheren Ort auf. Klicken Sie auf **Weiter**.
 8.	Klicken Sie auf der Seite **Webanwendung für die SharePoint-Zentraladministration konfigurieren** auf **Weiter**.
@@ -126,7 +127,7 @@ Gehen Sie auf dem zweiten SharePoint-Anwendungsserver und den beiden Front-End-W
 3.	Ein Dialogfeld des **Konfigurations-Assistenten für SharePoint-Produkte** weist Sie darauf hin, dass Dienste (z. B. IIS) neu gestartet oder zurückgesetzt werden. Klicken Sie auf **Ja**.
 4.	Klicken Sie auf der Seite **Verbindung mit einer Serverfarm herstellen** auf **Verbindung mit einer vorhandenen Serverfarm herstellen**, und klicken Sie dann auf **Weiter**.
 5.	Geben Sie auf der Seite **Einstellungen für die Konfigurationsdatenbank angeben** unter **Datenbankserver** den Namen des primären Datenbankservers ein, und klicken Sie dann auf **Datenbanknamen abrufen**.
-6.	Klicken Sie in der Liste mit den Datenbanknamen auf **SharePoint_Config**, und klicken Sie dann auf **Weiter**.
+6.	Klicken Sie in der Liste mit den Datenbanknamen auf **SharePoint\_Config**, und klicken Sie dann auf **Weiter**.
 7.	Geben Sie auf der Seite **Farmsicherheitseinstellungen angeben** die im vorherigen Verfahren festgelegte Passphrase ein. Klicken Sie auf **Weiter**.
 8.	Die Seite **Der Konfigurations-Assistent für SharePoint-Produkte wird abgeschlossen** wird angezeigt. Klicken Sie auf **Weiter**.
 9.	Klicken Sie auf der Seite **Konfiguration erfolgreich** auf **Fertig stellen**.
@@ -190,4 +191,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 5: Erstelle
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

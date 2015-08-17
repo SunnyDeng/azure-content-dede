@@ -57,7 +57,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
     * **-u** – Der Benutzername und das Kennwort für die Authentifizierung der Anforderung
     * **-G**: Gibt an, dass dies eine GET-Anforderung ist
 
-    Der Anfang der URL, **https://CLUSTERNAME.azurehdinsight.net/templeton/v1**, ist für alle Anforderungen identisch. Der Pfad **/status** gibt an, dass die Anforderung den Status von WebHCat (auch bekannt als Templeton) für den Server zurückgibt.
+    Der Anfang der URL, ****https://CLUSTERNAME.azurehdinsight.net/templeton/v1**, ist für alle Anforderungen identisch. Der Pfad **/status** gibt an, dass die Anforderung den Status von WebHCat (auch bekannt als Templeton) für den Server zurückgibt.
 
 2. Verwenden Sie den folgenden Code, um einen Pig Latin-Auftrag an den Cluster zu übermitteln.
 
@@ -69,7 +69,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
         * **user.name**: Der Benutzer, der den Befehl ausführt
         * **execute**: Die auszuführenden Pig Latin-Anweisungen
-        * **statusdir**: Das Verzeichnis, in das die Statusangaben für diesen Auftrag geschrieben werden
+        * **statusdir** – Das Verzeichnis, in das die Statusangaben für diesen Auftrag geschrieben werden.
 
     > [AZURE.NOTE]Beachten Sie, dass die Leerzeichen in Pig Latin-Anweisungen bei Curl durch das Zeichen `+` ersetzt werden.
 
@@ -87,7 +87,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
 ##<a id="results"></a>Anzeigen der Ergebnisse
 
-Sobald der Status des Auftrags zu **SUCCEEDED** wechselt, können Sie die Ergebnisse des Auftrags aus dem Azure-Blobspeicher abrufen. Der mit der Abfrage übergebene Parameter `statusdir` enthält den Speicherort der Ausgabedatei. In diesem Fall **wasb:///example/pigcurl**. Diese Adresse speichert die Ausgabe des Auftrags im Verzeichnis **example/pigcurl** des Standardspeichercontainers, der von Ihrem HDInsight-Cluster verwendet wird.
+Sobald der Status des Auftrags zu **SUCCEEDED** wechselt, können Sie die Ergebnisse des Auftrags aus dem Azure-Blobspeicher abrufen. Der mit der Abfrage übergebene Parameter `statusdir` enthält den Speicherort der Ausgabedatei. In diesem Fall ****wasb:///example/pigcurl**. Diese Adresse speichert die Ausgabe des Auftrags im Verzeichnis **example/pigcurl** des Standardspeichercontainers, der von Ihrem HDInsight-Cluster verwendet wird.
 
 Sie können diese Dateien mithilfe von [CLI Mac, Linux und Windows Azure](../xplat-cli.md) auflisten und herunterladen. Wenn Sie z. B. Dateien im Verzeichnis **example/pigcurl** auflisten möchten, verwenden Sie den folgenden Befehl:
 
@@ -97,7 +97,7 @@ Verwenden Sie den folgenden Befehl, um eine Datei herunterzuladen:
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE]Sie müssen den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE_STORAGE_ACCOUNT** und **AZURE_STORAGE_ACCESS_KEY** festlegen.
+> [AZURE.NOTE]Sie müssen den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** festlegen.
 
 ##<a id="summary"></a>Zusammenfassung
 
@@ -117,4 +117,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

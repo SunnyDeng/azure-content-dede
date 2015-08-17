@@ -1,9 +1,7 @@
 <properties
 	pageTitle="Virtuelle Data Science-Computer in Azure | Microsoft Azure"
 	description="Einrichten eines virtuellen Computers für Data Science"
-	metaKeywords=""
 	services="machine-learning"
-	solutions=""
 	documentationCenter=""
 	authors="msolhab"
 	manager="paulettm" 
@@ -34,4 +32,4 @@ Nach der Bereitstellung und Konfiguration können diese virtuellen Computer als 
 > [AZURE.NOTE]Virtuelle Azure-Computer werden **nach Nutzung abgerechnet**. Damit Sie nicht für ungenutzte virtuelle Computer bezahlen müssen, müssen Sie diese im [Azure-Verwaltungsportal](http://manage.windowsazure.com/) in den Status **Angehalten (Zuordnung aufgehoben)** versetzen. Eine Schrittanleitung dazu, wie Sie die Zuordnung Ihrer virtuellen Computer aufheben, finden Sie unter [Herunterfahren und Freigeben von nicht genutzten virtuellen Computern](machine-learning-data-science-setup-virtual-machine.md#shutdown).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

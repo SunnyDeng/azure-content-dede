@@ -7,14 +7,16 @@
    manager="dwrede"
    editor=""/>
 
+
 <tags
    ms.service="app-service-logic"
    ms.devlang="multiple"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/14/2015"
+   ms.date="07/28/2015"
    ms.author="sameerch"/>
+
 
 
 # Twitter-Connector
@@ -23,6 +25,7 @@ Verbinden Sie sich mit Ihrem Twitter-Feed, um Tweets zu posten und Tweets aus Ih
 
 - Abrufen neuer Tweets im Zusammenhang mit einem angegebenen Schlüsselwort oder Text. Wenn ein neuer Tweet abgerufen wird, wird eine neue Instanz Ihres Workflows ausgelöst, und die Daten werden an den nächsten Connector im Workflow übergeben. Beispielsweise können Sie einen Twitter-Connector erstellen und den Trigger "Neuer Tweet aus Suche" zum Überwachen von #peanutbutterandjelly verwenden. Bei jedem neuen Tweet für #peanutbutterandjelly wird der Workflow (d. h. die Logik-App) automatisch gestartet.
 - Mithilfe der verschiedenen Aktionen, z. B. "Tweets durchsuchen", können Sie die Antwort auswählen und in Ihrem Workflow verwenden. Sie können z. B. Tweets auf den Namen Ihres Unternehmens durchsuchen. Wenn er gefunden wird, können Sie eine Logik-App zum Schreiben dieser Daten in eine SQL Server-Datenbank verwenden. Nutzen Sie anschließend die SQL Server-Daten, um zu bestimmen, was zu Ihrem Unternehmen getweetet wird. 
+- Verwenden Sie alle Operatoren in der [Twitter-Suche](https://twitter.com/search). Wählen Sie den Link **Operatoren**. Der Twitter-Connector unterstützt alle aufgelisteten Operatoren.
 
 
 ## Trigger und Aktionen
@@ -69,12 +72,12 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den Twitter-Connector als 
 
 Sie können jetzt den Twitter-Connector zum Erstellen des Workflows konfigurieren. Sie können die vom Twitter-Trigger abgerufenen Tweets in anderen Aktionen im Workflow verwenden:
 
-	![][6]
+![][6]
 
 Auf ähnliche Weise können Sie die Twitter-Aktionen in Ihrem Workflow verwenden. Wählen Sie eine Twitter-Aktion aus, und konfigurieren Sie die Eingaben für die jeweilige Aktion:
 
-	![][7]
-	![][8]
+![][7] ![][8]
+
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
@@ -82,7 +85,7 @@ Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [R
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
-	<!--Image references-->
+<!--Image references-->
 [1]: ./media/app-service-logic-connector-twitter/img1.png
 [2]: ./media/app-service-logic-connector-twitter/img2.png
 [3]: ./media/app-service-logic-connector-twitter/img3.png
@@ -92,4 +95,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [7]: ./media/app-service-logic-connector-twitter/img7.png
 [8]: ./media/app-service-logic-connector-twitter/actions.png
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

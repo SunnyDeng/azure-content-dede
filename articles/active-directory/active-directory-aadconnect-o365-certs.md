@@ -35,9 +35,9 @@ Wenn Sie AD FS 2.0 oder höher verwenden, aktualisieren Office 365 und Azure AD
 
 	`PS C:\> Get-ADFSProperties`
 
-\(Beachten Sie, dass Sie bei Verwendung von AD FS 2.0 zuerst "Add-Pssnapin Microsoft.Adfs.Powershell" ausführen müssen.\)
+(Beachten Sie, dass Sie bei Verwendung von AD FS 2.0 zuerst "Add-Pssnapin Microsoft.Adfs.Powershell" ausführen müssen.)
 
-Überprüfen Sie, ob die Verbundmetadaten öffentlich zugänglich sind, indem Sie von einem Computer im öffentlichen Internet \(außerhalb des Unternehmensnetzwerks\) zur folgenden URL navigieren:
+Überprüfen Sie, ob die Verbundmetadaten öffentlich zugänglich sind, indem Sie von einem Computer im öffentlichen Internet (außerhalb des Unternehmensnetzwerks) zur folgenden URL navigieren:
 
 
 https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
@@ -60,7 +60,7 @@ Wenn die AutocertificateRollover-Einstellung "True" ist, aber die Verbundmetadat
 
 `PS C:\>Get-ADFSCertificate –CertificateType token-signing.`
 
-\(Beachten Sie, dass Sie bei Verwendung von AD FS 2.0 zuerst "Add-Pssnapin Microsoft.Adfs.Powershell" ausführen müssen.\)
+(Beachten Sie, dass Sie bei Verwendung von AD FS 2.0 zuerst "Add-Pssnapin Microsoft.Adfs.Powershell" ausführen müssen.)
 
 
 - Sehen Sie sich in der Ausgabe des Befehls die aufgeführten Zertifikate an. Wenn AD FS ein neues Zertifikat generiert hat, sollten Sie zwei Zertifikate in der Ausgabe sehen: Bei einem ist der IsPrimary-Wert "True" und das NotAfter-Datum ist innerhalb von 5 Tagen, und bei einem ist der IsPrimary-Wert "False" und das NotAfter-Datum ist etwa ein Jahr in der Zukunft.
@@ -85,4 +85,4 @@ Nun sollten zwei Zertifikate aufgeführt werden, bei denen eines ein NotAfter-Da
 
 >[AZURE.NOTE]Wenn Sie mehrere Domänen der obersten Ebene unterstützen müssen, z. B. "contoso.com" und "fabrikam.com", müssen Sie den SupportMultipleDomain-Switch mit den Cmdlets verwenden. Weitere Informationen finden Sie unter "Unterstützen mehrerer Domänen auf oberster Ebene". Stellen Sie abschließend sicher, dass alle Webanwendungsproxy-Server mit dem [Windows Server Mai 2014](http://support.microsoft.com/kb/2955164)-Rollup aktualisiert wurden. Andernfalls können sich die Proxys möglicherweise nicht mit dem neuen Zertifikat aktualisieren, was zu einem Ausfall führt.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

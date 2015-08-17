@@ -1,21 +1,21 @@
-## Repeatability during Copy
+## Wiederholbarkeit beim Kopieren
 
-When copying data from and to relational stores, you need to keep repeatability in mind to avoid unintended outcomes. 
+Beim Kopieren von Daten aus und in relationale Speicher müssen Sie die Wiederholbarkeit berücksichtigen, um unbeabsichtigte Ergebnisse zu vermeiden.
 
-**Note:** A slice can be re-run automatically in Azure Data Factory as per the retry policy specified. It is recommended to set a retry policy to guard against transient failures. Hence repeatability is an important aspect to take care of during data movement. 
+**Hinweis:** Ein Slice kann in Azure Data Factory automatisch gemäß der angegebenen Wiederholungsrichtlinie wiederholt werden. Es wird empfohlen, eine Wiederholungsrichtlinie zum Schutz vor vorübergehenden Fehlern festzulegen. Wiederholbarkeit ist ein wichtiger Aspekt, den Sie beim Verschieben von Daten berücksichtigen sollten.
 
-**As a source:**
+**Als Quelle:**
 
-In most cases when reading from relational stores, you would want to read only the data corresponding to that slice. A way to do so would be by using the WindowStart and WindowEnd variables available in Azure Data Factory. Read about the variables and functions in Azure Data Factory here in the [Scheduling and Execution](data-factory-scheduling-and-execution.md) article. Example: 
+In den meisten Fällen möchten Sie beim Lesen aus relationalen Speichern nur die Daten lesen, die dem Slice entsprechen. Sie können dies beispielsweise erreichen, indem Sie die Variablen "WindowStart" und "WindowEnd" verwenden, die in Azure Data Factory verfügbar sind. Im Artikel [Planung und Ausführung](data-factory-scheduling-and-execution.md) erfahren Sie mehr über die Variablen und Funktionen in Azure Data Factory. Beispiel:
 	
 	  "source": {
 	    "type": "SqlSource",
 	    "sqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \\'{0:yyyy-MM-dd HH:mm\\' AND timestampcolumn < \\'{1:yyyy-MM-dd HH:mm\\'', WindowStart, WindowEnd)"
 	  },
 
-The above query will read data from ‘MyTable’ that falls in the slice duration range. Re-run of this slice would also always ensure this behavior. 
+Mit der obigen Abfrage werden Daten aus "MyTable" gelesen, die zum Dauerbereich für den Slice gehören. Bei einer erneuten Ausführung dieses Slices wäre dieses Verhalten auch immer sichergestellt.
 
-In other cases, you may wish to read the entire Table (suppose for one time move only) and may define the sqlReaderQuery as follows:
+In anderen Fällen möchten Sie möglicherweise die gesamte Tabelle lesen (beispielsweise bei einer einmaligen Verschiebung) und könnten "sqlReaderQuery" wie folgt definieren:
 
 	
 	"source": {
@@ -23,3 +23,5 @@ In other cases, you may wish to read the entire Table (suppose for one time move
 	            "sqlReaderQuery": "select * from MyTable"
 	          },
 	
+
+<!---HONumber=August15_HO6-->

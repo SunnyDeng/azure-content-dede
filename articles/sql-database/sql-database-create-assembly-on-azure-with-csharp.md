@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="CREATE ASSEMBLY in Azure SQL-Datenbank mit CSharp"
-	description="C#-Quellcode zum Ausführen von ";CREATE ASSEMBLY"; in Azure SQL-Datenbank nach dem Codieren einer DLL-Datei in einer Zeichenfolge, die eine lange Hexadezimalzahl enthält." 
+	description="C#-Quellcode zum Ausführen von &quot;CREATE ASSEMBLY&quot; in Azure SQL-Datenbank nach dem Codieren einer DLL-Datei in einer Zeichenfolge, die eine lange Hexadezimalzahl enthält." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
@@ -50,7 +50,7 @@ Zum besseren Verständnis dieses Themas sollten Sie sich bereits mit dem folgend
 5. Verwenden Sie die T-SQL-Anweisung "SELECT" zum Aufrufen und Testen der Funktion.
 
 
-In dieser Liste wird Folgendes nicht erwähnt ...<br/> **execute sp_configure 'clr enabled', 1;**<br/> ... da dies zwar für Microsoft SQL Server, aber nicht für Azure SQL-Datenbank erforderlich ist.
+In dieser Liste wird Folgendes nicht erwähnt ...<br/> **execute sp\_configure 'clr enabled', 1;**<br/> ... da dies zwar für Microsoft SQL Server, aber nicht für Azure SQL-Datenbank erforderlich ist.
 
 
 Wenn dies für erneute Ausführungen notwendig ist, lautet der T-SQL-Code zum Löschen der Funktion und der Assembly wie folgt:
@@ -328,4 +328,4 @@ Dieser Transact-SQL-Codeblock endet mit einer SELECT-Anweisung, die die neue Fun
 
 <!-- EndOfFile -->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

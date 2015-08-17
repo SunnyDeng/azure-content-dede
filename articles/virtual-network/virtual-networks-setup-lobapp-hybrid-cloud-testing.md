@@ -118,14 +118,14 @@ Konfigurieren Sie anschließend SQL Server 2014 so, dass das Laufwerk F: für ne
 3.	Klicken Sie im Strukturbereich "Objekt-Explorer" mit der rechten Maustaste auf **SQL1**, und klicken Sie anschließend auf **Eigenschaften**.
 4.	Klicken Sie im Fenster **Servereigenschaften** auf **Datenbankeinstellungen**.
 5.	Suchen Sie den Eintrag **Standardspeicherorte für Datenbank**, und legen Sie die folgenden Werte fest: 
-	- Geben Sie für **Daten** den Pfad **f:\Data** ein.
-	- Geben Sie für **Protokoll** den Pfad **f:\Log** ein.
-	- Geben Sie für **Sicherung** den Pfad **f:\Backup** ein.
+	- Geben Sie für **Daten** den Pfad **f:\\Data** ein.
+	- Geben Sie für **Protokoll** den Pfad **f:\\Log** ein.
+	- Geben Sie für **Sicherung** den Pfad **f:\\Backup** ein.
 	- Hinweis: Nur neue Datenbanken verwenden diese Speicherorte.
 6.	Klicken Sie auf **OK**, um das Fenster zu schließen.
 7.	Öffnen Sie im Strukturbereich **Objekt-Explorer** den Abschnitt **Sicherheit**.
 8.	Klicken Sie mit der rechten Maustaste auf **Anmeldungen**, und klicken Sie dann auf **Neue Anmeldung**.
-9.	Geben Sie in das Feld **Anmeldename** den Namen **CORP\User1** ein.
+9.	Geben Sie in das Feld **Anmeldename** den Namen **CORP\\User1** ein.
 10.	Klicken Sie auf der Seite **Serverrollen** auf **Sysadmin** und anschließend auf **OK**.
 11.	Schließen Sie Microsoft SQL Server Management Studio.
 
@@ -146,7 +146,7 @@ Führen Sie als Erstes auf dem lokalen Computer die folgenden Befehlen in der Az
 	$vm1 | Set-AzureSubnet -SubnetNames TestSubnet
 	New-AzureVM –ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
 
-Stellen Sie dann unter Verwendung der Anmeldeinformationen des Kontos „CORP\User1“ eine Verbindung mit dem virtuellen Computer für LOB1 her.
+Stellen Sie dann unter Verwendung der Anmeldeinformationen des Kontos „CORP\\User1“ eine Verbindung mit dem virtuellen Computer für LOB1 her.
 
 Konfigurieren Sie anschließend eine Windows-Firewall-Regel, um Datenverkehr zum Testen der allgemeinen Konnektivität zuzulassen. Führen Sie auf LOB1 in einer Windows PowerShell-Eingabeaufforderung auf Administratorebene die folgenden Befehle aus.
 
@@ -168,8 +168,9 @@ Konfigurieren Sie dann LOB1 für IIS, und testen Sie den Zugriff von CLIENT1.
 9.	Aktivieren oder deaktivieren Sie auf der Seite "Rollendienste auswählen" die Kontrollkästchen für die Dienste, die Sie zum Testen der Branchenanwendung benötigen, und klicken Sie dann auf **Weiter**.
 10.	Klicken Sie auf der Seite "Installationsauswahl bestätigen" auf **Installieren**.
 11.	Warten Sie, bis die Installation der Komponenten abgeschlossen ist, und klicken Sie dann auf **Schließen**.
-12.	Melden Sie sich am Computer CLIENT1 mit den Anmeldeinformationen des Kontos „CORP\User1“ an, und starten Sie Internet Explorer.
-13.	Geben Sie in die Adressleiste **http://lob1/** ein, und drücken Sie dann die EINGABETASTE. Die Standardwebseite für IIS 8 sollte angezeigt werden.
+12.	Melden Sie sich am Computer CLIENT1 mit den Anmeldeinformationen des Kontos „CORP\\User1“ an, und starten Sie Internet Explorer.
+13.	Geben Sie in die Adressleiste ****http://lob1/** ein, und drücken Sie dann die EINGABETASTE. Die Standardwebseite für IIS 8 sollte angezeigt werden.
+
 Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ![](./media/virtual-networks-setup-lobapp-hybrid-cloud-testing/CreateLOBAppHybridCloud_3.png)
@@ -195,4 +196,4 @@ Diese Umgebung kann jetzt zum Bereitstellen von webbasierten Anwendungen auf LOB
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-infrastructure-services-implementation-guidelines.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

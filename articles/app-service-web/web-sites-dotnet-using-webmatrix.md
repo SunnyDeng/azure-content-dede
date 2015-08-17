@@ -250,4 +250,4 @@ Sie können die Site mit WebMatrix ändern und dann erneut in Ihrer Web-Apps-Ins
 [sendgridexample]: http://azure.microsoft.com/documentation/articles/sendgrid-dotnet-how-to-send-email/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

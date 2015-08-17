@@ -66,4 +66,4 @@ Das Geräteadministratorkennwort wurde jetzt aktualisiert. Sie können dieses ge
 
 [Erfahren Sie mehr über das Ändern Ihrer Gerätekonfiguration](storsimple-modify-device-config.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

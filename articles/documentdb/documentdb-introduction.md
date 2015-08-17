@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Einführung in Microsoft Azure DocumentDB | Azure" 
+	pageTitle="Einführung in Microsoft Azure DocumentDB | Microsoft Azure" 
 	description="Erfahren Sie mehr zur NoSQL-Dokumentdatenbank Azure DocumentDB und deren Nutzen für cloudbasierte und mobile Anwendungen. Erfahren Sie, wie Daten in DocumentDB verwaltet werden und wie Sie das Tool in der Anwendungsentwicklung einsetzen können." 
 	services="documentdb" 
 	authors="mimig1" 
 	manager="jhubbard" 
 	editor="monicar" 
 	documentationCenter=""/>
+
 
 <tags 
 	ms.service="documentdb" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="05/20/2015" 
 	ms.author="mimig"/>
+
 
 #Einführung in Microsoft Azure DocumentDB
 
@@ -104,4 +106,4 @@ Informationen zu den ersten Schritten mit Azure DocumentDB finden Sie in folgend
 [1]: ./media/documentdb-introduction/intro.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -102,7 +102,7 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 ## Erstellen einer Java-Anwendung für die Ausführung einer rechenintensiven Aufgabe
 
 1. Laden Sie auf dem Entwicklungscomputer (der nicht mit dem erstellten virtuellen Computer identisch sein muss) das [Azure-SDK für Java](http://azure.microsoft.com/develop/java/) herunter.
-2. Erstellen Sie eine Java-Konsolenanwendung mithilfe des Beispielcodes am Ende dieses Abschnitts. In diesem Lernprogramm wird **TSPSolver.java** als Java-Dateiname verwendet. Ändern Sie die Platzhalter **your_service_bus_namespace**, **your_service_bus_owner** und **your_service_bus_key** so, dass Ihre Service Bus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwendet werden.
+2. Erstellen Sie eine Java-Konsolenanwendung mithilfe des Beispielcodes am Ende dieses Abschnitts. In diesem Lernprogramm wird **TSPSolver.java** als Java-Dateiname verwendet. Ändern Sie die Platzhalter **your\_service\_bus\_namespace**, **your\_service\_bus\_owner** und **your\_service\_bus\_key** so, dass Ihre Service Bus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwendet werden.
 3. Exportieren Sie die Anwendung nach der Programmierung in ein ausführbares Java-Archiv (JAR), und packen Sie die erforderlichen Bibliotheken in die erzeugte JAR-Datei. In diesem Lernprogramm wird **TSPSolver.jar** als Name der erzeugten JAR-Datei verwendet.
 
 <p/>
@@ -265,7 +265,7 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 	                restCities.add(i);
 	            distances = new double[numCities][numCities];
 	            cityNames = new String[numCities];
-	            buildDistances("c:\TSP\cities.txt", numCities);
+	            buildDistances("c:\\TSP\\cities.txt", numCities);
 	            minDistance = -1;
 	            bestOrder = new int[numCities];
 	            permutation(startCities, 0, restCities);
@@ -292,7 +292,7 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 
 ## Erstellen einer Java-Anwendung zum Überwachen des Fortschritts der rechenintensiven Aufgabe
 
-1. Erstellen Sie auf dem Entwicklungscomputer eine Java-Konsolenanwendung mithilfe des Beispielcodes am Ende dieses Abschnitts. In diesem Lernprogramm wird **TSPClient.java** als Java-Dateiname verwendet. Ändern Sie wie oben die Platzhalter **your_service_bus_namespace**, **your_service_bus_owner** und **your_service_bus_key** so, dass Ihre Service Bus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwendet werden.
+1. Erstellen Sie auf dem Entwicklungscomputer eine Java-Konsolenanwendung mithilfe des Beispielcodes am Ende dieses Abschnitts. In diesem Lernprogramm wird **TSPClient.java** als Java-Dateiname verwendet. Ändern Sie wie oben die Platzhalter **your\_service\_bus\_namespace**, **your\_service\_bus\_owner** und **your\_service\_bus\_key** so, dass Ihre Service Bus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwendet werden.
 2. Exportieren Sie die Anwendung in ein ausführbares Java-Archiv (JAR), und packen Sie die erforderlichen Bibliotheken in die erzeugte JAR-Datei. In diesem Lernprogramm wird **TSPClient.jar** als Name der erzeugten JAR-Datei verwendet.
 
 <p/>
@@ -413,9 +413,9 @@ Führen Sie die rechenintensive Anwendung aus, zunächst um die Warteschlage zu 
 ### Ausführen der rechenintensiven Anwendung
 
 1. Melden Sie sich am virtuellen Computer an.
-2. Erstellen Sie einen Ordner, in dem die Anwendung ausgeführt wird. Zum Beispiel **c:\TSP**.
-3. Kopieren Sie **TSPSolver.jar** nach **c:\TSP**.
-4. Erstellen Sie eine Datei namens **c:\TSP\cities.txt** mit folgendem Inhalt:
+2. Erstellen Sie einen Ordner, in dem die Anwendung ausgeführt wird. Zum Beispiel **c:\\TSP**.
+3. Kopieren Sie **TSPSolver.jar** nach **c:\\TSP**.
+4. Erstellen Sie eine Datei namens **c:\\TSP\\cities.txt** mit folgendem Inhalt:
 
 		City_1, 1002.81, -1841.35
 		City_2, -953.55, -229.6
@@ -468,7 +468,7 @@ Führen Sie die rechenintensive Anwendung aus, zunächst um die Warteschlage zu 
 		City_49, -120.3, -463.13
 		City_50, 588.51, 679.33
 	
-5. Wechseln Sie an einer Eingabeaufforderung zum Verzeichnis "c:\TSP".
+5. Wechseln Sie an einer Eingabeaufforderung zum Verzeichnis "c:\\TSP".
 6. Stellen Sie sicher, dass sich der Ordner "bin" der JRE in der PATH-Umgebungsvariable befindet.
 7. Sie müssen die Service Bus-Warteschlange erstellen, bevor Sie die TSP-Solver-Permutationen ausführen. Führen Sie den folgenden Befehl aus, um die Service Bus-Warteschlange zu erstellen:
 
@@ -484,10 +484,10 @@ Führen Sie die rechenintensive Anwendung aus, zunächst um die Warteschlage zu 
  
 ### Ausführen der überwachenden Clientanwendung
 1. Melden Sie sich an dem Computer an, auf dem die Clientanwendung ausgeführt wird. Dieser Computer muss nicht zwingend mit dem Computer identisch sein, auf dem die **TSPSolver**-Anwendung ausgeführt wird.
-2. Erstellen Sie einen Ordner, in dem die Anwendung ausgeführt wird. Zum Beispiel **c:\TSP**.
-3. Kopieren Sie **TSPClient.jar** nach **c:\TSP**,
+2. Erstellen Sie einen Ordner, in dem die Anwendung ausgeführt wird. Zum Beispiel **c:\\TSP**.
+3. Kopieren Sie **TSPClient.jar** nach **c:\\TSP**,
 4. Stellen Sie sicher, dass sich der Ordner "bin" der JRE in der PATH-Umgebungsvariable befindet.
-5. Wechseln Sie an einer Eingabeaufforderung zum Verzeichnis "c:\TSP".
+5. Wechseln Sie an einer Eingabeaufforderung zum Verzeichnis "c:\\TSP".
 6. Führen Sie den folgenden Befehl aus:
 
         java -jar TSPClient.jar
@@ -519,4 +519,4 @@ Für Solver- und Clientanwendungen können Sie **Strg+C** drücken, um die Anwen
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

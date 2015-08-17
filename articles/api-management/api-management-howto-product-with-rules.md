@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="06/18/2015"
+	ms.date="08/05/2015"
 	ms.author="sdanie"/>
 
 # Schützen Ihrer API mithilfe von Aufruflimits in Azure API Management
@@ -292,4 +292,4 @@ Wenn das Aufruflimit von 10 Aufrufen pro Minute aktiv ist, werden nachfolgende A
 [Nutzungskontingent]: https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

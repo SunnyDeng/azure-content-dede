@@ -57,7 +57,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
     * **-u**: Gibt den Benutzernamen und das Kennwort für die Authentifizierung der Anforderung an
     * **-G**: Gibt an, dass dies eine GET-Anforderung ist
 
-    Der Anfang des URI, **https://CLUSTERNAME.azurehdinsight.net/templeton/v1**, ist für alle Anforderungen identisch.
+    Der Anfang des URI, ****https://CLUSTERNAME.azurehdinsight.net/templeton/v1**, ist für alle Anforderungen identisch.
 
 2. Verwenden Sie den folgenden Befehl, um einen MapReduce-Auftrag zu übermitteln.
 
@@ -84,7 +84,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
     > [AZURE.NOTE]Diese Curl-Anforderung gibt ein JSON-Dokument mit Informationen zum Auftrag zurück. Mithilfe von "jq" wird nur der Statuswert abgerufen.
 
-4. Sobald der Status des Auftrags zu **SUCCEEDED** wechselt, können Sie die Ergebnisse des Auftrags aus dem Azure-Blobspeicher abrufen. Der mit der Abfrage übergebene `statusdir`-Parameter enthält den Speicherort der Ausgabedatei. In diesem Fall **wasb:///example/curl**. Diese Adresse speichert die Ausgabe des Auftrags im Verzeichnis **example/curl** des Standardspeichercontainers, der von Ihrem HDInsight-Cluster verwendet wird.
+4. Sobald der Status des Auftrags zu **SUCCEEDED** wechselt, können Sie die Ergebnisse des Auftrags aus dem Azure-Blobspeicher abrufen. Der mit der Abfrage übergebene `statusdir`-Parameter enthält den Speicherort der Ausgabedatei. In diesem Fall ****wasb:///example/curl**. Diese Adresse speichert die Ausgabe des Auftrags im Verzeichnis **example/curl** des Standardspeichercontainers, der von Ihrem HDInsight-Cluster verwendet wird.
 
 Sie können diese Dateien mithilfe von [CLI Mac, Linux und Windows Azure](../xplat-cli.md) auflisten und herunterladen. Wenn Sie z. B. Dateien im Verzeichnis **example/curl** auflisten möchten, verwenden Sie den folgenden Befehl:
 
@@ -94,7 +94,7 @@ Verwenden Sie den folgenden Befehl, um eine Datei herunterzuladen:
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE]Sie müssen den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE_STORAGE_ACCOUNT** und **AZURE_STORAGE_ACCESS_KEY** festlegen. Weitere Informationen finden Sie unter [Hochladen von Daten in HDInsight](hdinsight-upload-data.md).
+> [AZURE.NOTE]Sie müssen den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **AZURE\_STORAGE\_ACCESS\_KEY** festlegen. Weitere Informationen finden Sie unter [Hochladen von Daten in HDInsight](hdinsight-upload-data.md).
 
 ##<a id="summary"></a>Zusammenfassung
 
@@ -114,4 +114,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Pig mit Hadoop in HDInsight](hdinsight-use-pig.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

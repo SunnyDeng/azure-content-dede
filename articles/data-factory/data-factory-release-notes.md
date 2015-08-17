@@ -7,14 +7,16 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
+
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/16/2015" 
+	ms.date="07/27/2015" 
 	ms.author="spelluru"/>
+
 
 # Versionshinweise für Azure Data Factory
 
@@ -115,7 +117,7 @@ Beachten Sie Folgendes:
 	        },
 	        "availability": {
 	            "frequency": "Hour",
-	            "interval": "1"
+	            "interval": 1
 	        }
 	    }
 	}
@@ -355,4 +357,4 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

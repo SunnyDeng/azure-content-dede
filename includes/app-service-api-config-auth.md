@@ -6,8 +6,8 @@
 
 	![Klicken Sie auf "Anwendungseinstellungen"](./media/app-service-api-config-auth/clickbasicsettings.png)
 
-3. Ändern Sie auf dem Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich \(authentifiziert\)**, und klicken Sie dann auf **Speichern**.
+3. Ändern Sie auf dem Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich (authentifiziert)**, und klicken Sie dann auf **Speichern**.
 
 	![Klicken Sie auf "Grundlegende Einstellungen"](./media/app-service-api-config-auth/setpublicauth.png)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

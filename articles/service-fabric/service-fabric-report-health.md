@@ -274,4 +274,4 @@ Basierend auf den Integritätsdaten können Dienstautoren und Cluster- bzw. Anwe
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

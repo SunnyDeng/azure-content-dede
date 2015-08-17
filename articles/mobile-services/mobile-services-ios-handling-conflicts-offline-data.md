@@ -51,7 +51,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
 ### <a name="update-list-view"></a>Aktualisieren des Todo-Listen-View-Controller
 
-1. Wählen Sie im Xcode Project Navigator **MainStoryboard_iPhone.storyboard** und dann **Todo List View Controller (Todo-Listen-View-Controller)**. Wählen Sie die Tabellenansichtszelle aus, und wählen Sie für den Modus "Accessory" die Option **Disclosure indicator** aus. Der Anzeigenindikator gibt Benutzern an, dass bei Tippen auf den zugehörigen Tabellenansichts-Controller eine neue Ansicht angezeigt wird. Der Anzeigenindikator löst kein Ereignis aus.
+1. Wählen Sie im Xcode Project Navigator **MainStoryboard\_iPhone.storyboard** und dann **Todo List View Controller (Todo-Listen-View-Controller)**. Wählen Sie die Tabellenansichtszelle aus, und wählen Sie für den Modus "Accessory" die Option **Disclosure indicator** aus. Der Anzeigenindikator gibt Benutzern an, dass bei Tippen auf den zugehörigen Tabellenansichts-Controller eine neue Ansicht angezeigt wird. Der Anzeigenindikator löst kein Ereignis aus.
 
       ![][update-todo-list-view-controller-2]
 
@@ -145,7 +145,7 @@ Anhand der Offlinefunktionen für die Synchronisierung im SDK können Sie solche
 
 ### <a name="add-segue"></a>Hinzufügen von Todo-Eintrags-View-Controller und Segue zum Storyboard
 
-1. Kehren Sie mit dem Project Navigator zur Datei **MainStoryboard_iPhone.storyboard** zurück.
+1. Kehren Sie mit dem Project Navigator zur Datei **MainStoryboard\_iPhone.storyboard** zurück.
 
 2. Fügen Sie einen neuen View Controller für den Todo-Eintrag zum Storyboard hinzu, und zwar rechts vom vorhandenen **Todo-Listen-View-Controller**. Legen Sie als benutzerdefinierte Klasse dieses neuen View Controller **QSItemViewController** fest. Weitere Informationen finden Sie unter [Adding a Scene to a Storyboard] (in englischer Sprache).
 
@@ -471,4 +471,4 @@ Nebenbei haben Sie eine Hilfsklasse **QSUIAlertViewWithBlock** hinzugefügt, dam
 [Get started with Mobile Services]: mobile-services-ios-get-started.md
 [Get started with data]: mobile-services-ios-get-started-data.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

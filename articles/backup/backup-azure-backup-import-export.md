@@ -6,14 +6,8 @@
    authors="aashishr"
    manager="shreeshd"
    editor=""/>
-<tags
-   ms.service="backup"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="storage-backup-recovery"
-   ms.date="07/14/2015"
-   ms.author="aashishr"; "jimpark"/>
+ <tags ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt\_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="07/14/2015" ms.author="aashishr"; "jimpark"/>
+
 
 # Workflow zur Offlinesicherung in Azure Backup
 
@@ -26,9 +20,9 @@ Mit Azure Backup und Azure Import/Export können die Daten einfach und unkompliz
 ## Voraussetzungen
 
 1. Machen Sie sich unbedingt mit dem Azure Import/Export-Workflow vertraut, der [hier](../storage-import-export-service.md) aufgeführt ist.
-2. Stellen Sie vor dem Initiieren des Workflows sicher, dass ein Azure-Sicherungstresor erstellt wurde, dass Tresoranmeldedaten heruntergeladen wurden, dass der Azure Backup-Agent entweder auf dem Windows Server/Windows-Client oder dem SCDPM-Server \(System Center Data Protection Manager\) installiert wurde und dass der Computer beim Azure Backup-Tresor registriert ist.
+2. Stellen Sie vor dem Initiieren des Workflows sicher, dass ein Azure-Sicherungstresor erstellt wurde, dass Tresoranmeldedaten heruntergeladen wurden, dass der Azure Backup-Agent entweder auf dem Windows Server/Windows-Client oder dem SCDPM-Server (System Center Data Protection Manager) installiert wurde und dass der Computer beim Azure Backup-Tresor registriert ist.
 3. Laden Sie [hier](https://manage.windowsazure.com/publishsettings) die Azure-Einstellungen zum Veröffentlichen von Dateien auf den Computer herunter, von dem die Daten gesichert werden sollen.
-4. Bereiten Sie einen *Stagingspeicherort* vor. Dabei kann es sich um eine Netzwerkfreigabe oder ein zusätzliches Laufwerk auf dem Computer handeln. Stellen Sie sicher, dass der Stagingspeicherort genügend Speicherplatz für Ihre erste Kopie bietet. Wenn Sie beispielsweise versuchen, einen 500-GB-Dateiserver zu sichern, sorgen Sie dafür, dass der Stagingbereich mindestens 500 GB umfasst \(auch wenn eine geringere Menge in Anspruch genommen wird\). Der Stagingbereich ist ein Übergangsspeicher, der während dieses Workflows temporär verwendet wird.
+4. Bereiten Sie einen *Stagingspeicherort* vor. Dabei kann es sich um eine Netzwerkfreigabe oder ein zusätzliches Laufwerk auf dem Computer handeln. Stellen Sie sicher, dass der Stagingspeicherort genügend Speicherplatz für Ihre erste Kopie bietet. Wenn Sie beispielsweise versuchen, einen 500-GB-Dateiserver zu sichern, sorgen Sie dafür, dass der Stagingbereich mindestens 500 GB umfasst (auch wenn eine geringere Menge in Anspruch genommen wird). Der Stagingbereich ist ein Übergangsspeicher, der während dieses Workflows temporär verwendet wird.
 5. Externer SATA-Laufwerkswriter und ein externes 3,5-Zoll-SATA-Laufwerk. Der Import-/Exportdienst unterstützt nur SATA II/III-Laufwerke im 3,5-Zoll-Format. Festplatten größer als 4 TB werden nicht unterstützt. Sie können SATA II/III-Laufwerke über einen SATA II/III-USB-Adapter extern an die meisten Computer anschließen. Schlagen Sie in der Dokumentation zu Azure Import/Export die aktuellen Laufwerke nach, die vom Dienst unterstützt werden.
 6. Aktivieren Sie BitLocker auf dem Computer, an den der SATA-Laufwerkswriter angeschlossen ist.
 7. Laden Sie das Azure Import/Export-Tool von [hier](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) auf den Computer herunter, mit dem der SATA-Laufwerkswriter verbunden ist.
@@ -38,16 +32,17 @@ Die in diesem Abschnitt bereitgestellten Informationen dienen zum Abschließen d
 
 ### Initiieren der Offlinesicherung
 
-1. Bei der zeitlichen Planung einer Sicherung wird Ihnen der folgender Bildschirm angezeigt \(in Windows Server, Windows-Client oder SCDPM\).
+1. Bei der zeitlichen Planung einer Sicherung wird Ihnen der folgender Bildschirm angezeigt (in Windows Server, Windows-Client oder SCDPM).
 
     ![ImportScreen](./media/backup-azure-backup-import-export/importscreen.png)
 
-    Der entsprechende SCDPM-Bildschirm sieht wie folgt aus. <br/> ![DPM-Importbildschirm](./media/backup-azure-backup-import-export/dpmoffline.png)
+    Der entsprechende SCDPM-Bildschirm sieht wie folgt aus. <br/>
+ ![DPM-Importbildschirm](./media/backup-azure-backup-import-export/dpmoffline.png)
 
     Hinweis:
 
     - **Stagingspeicherort** – Bezieht sich auf den temporären Speicherort, in den die erste Sicherungskopie geschrieben wird. Hierbei kann es sich um eine Netzwerkfreigabe oder den lokalen Computer handeln.
-    - **Name des Azure-Importauftrags** – Beim Abschließen dieses Workflows müssen Sie im Azure-Portal einen *Importauftrag* erstellen. \(Dies wird im weiteren Verlauf des Dokuments behandelt.\) Stellen Sie eine Eingabe bereit, die Sie später ebenfalls im Azure-Portal verwenden möchten.
+    - **Name des Azure-Importauftrags** – Beim Abschließen dieses Workflows müssen Sie im Azure-Portal einen *Importauftrag* erstellen. (Dies wird im weiteren Verlauf des Dokuments behandelt.) Stellen Sie eine Eingabe bereit, die Sie später ebenfalls im Azure-Portal verwenden möchten.
     - **Azure-Veröffentlichungseinstellungen** – Dies ist eine XML-Datei, die Informationen zu Ihrem Abonnementprofil enthält. Außerdem enthält sie sichere Anmeldeinformationen, die Ihrem Abonnement zugeordnet sind. Die Datei kann [hier](https://manage.windowsazure.com/publishsettings) heruntergeladen werden. Geben Sie den lokalen Pfad zu der Datei mit den Veröffentlichungseinstellungen an.
     - **Azure-Abonnement-ID** – Geben Sie die Azure-Abonnement-ID an, mit der Sie den Azure-Importauftrag initiieren möchten. Wenn Sie mehrere Azure-Abonnements besitzen, verwenden Sie die ID, die dem Importauftrag zugeordnet ist.
     - **Azure-Speicherkonto** – Geben Sie den Namen des Azure-Speicherkontos ein, dem dieser Importauftrag zugeordnet werden soll.
@@ -67,26 +62,27 @@ Die in diesem Abschnitt bereitgestellten Informationen dienen zum Abschließen d
 
 ### Vorbereiten der SATA-Festplatte
 
-1. Laden Sie das [Microsoft Azure Import/Export-Tool](http://go.microsoft.com/fwlink/?linkid=301900&clcid=0x409) auf den *Kopiercomputer* herunter. Stellen Sie sicher, dass der Bereitstellungsspeicherort \(im vorherigen Schritt\) von dem Computer aus zugänglich ist, auf dem der nächste Satz von Befehlen ausgeführt werden soll. Falls erforderlich, kann der Kopiercomputer mit dem Quellcomputer identisch sein.
+1. Laden Sie das [Microsoft Azure Import/Export-Tool](http://go.microsoft.com/fwlink/?linkid=301900&clcid=0x409) auf den *Kopiercomputer* herunter. Stellen Sie sicher, dass der Bereitstellungsspeicherort (im vorherigen Schritt) von dem Computer aus zugänglich ist, auf dem der nächste Satz von Befehlen ausgeführt werden soll. Falls erforderlich, kann der Kopiercomputer mit dem Quellcomputer identisch sein.
 
 2. Entpacken Sie die Datei *WAImportExport.zip*. Führen Sie das *WAImportExport*-Tool aus. Es formatiert das SATA-Laufwerk, schreibt die Sicherungsdaten auf das SATA-Laufwerk und verschlüsselt sie. Bevor Sie den folgenden Befehl ausführen, stellen Sie sicher, dass BitLocker auf dem Computer aktiviert ist. <br/>
 
-    *.\WAImportExport.exe PrepImport /j:<*JournalFile*>.jrn /id: <*SessionId*> /sk:<*StorageAccountKey*> /BlobType:**PageBlob** /t:<*TargetDriveLetter*> /format /encrypt /srcdir:<*staging location*> /dstdir: <*DestinationBlobVirtualDirectory*>/*
+
+    *.\\WAImportExport.exe PrepImport /j:<*JournalFile*>.jrn /id: <*SessionId*> /sk:<*StorageAccountKey*> /BlobType:**PageBlob*\* /t:<*TargetDriveLetter*> /format /encrypt /srcdir:<*staging location*> /dstdir: <*DestinationBlobVirtualDirectory*>/\*
 
 
 | Parameter | Beschreibung
 |-------------|-------------|
-| /j:<*Journaldatei*>| Der Pfad zur Journaldatei. Jedes Laufwerk muss über genau eine Journaldatei verfügen. Beachten Sie, dass die Journaldatei sich nicht auf dem Ziellaufwerk befinden darf. Die Dateierweiterung der Journaldatei lautet ".jrn" und wird bei der Ausführung dieses Befehls erstellt.|
-|/id:<*SitzungsID*> | Die Sitzungs-ID identifiziert eine *Kopiersitzung*. Sie wird verwendet, um eine exakte Wiederherstellung einer unterbrochenen Kopiersitzung sicherzustellen. Die in einer Kopiersitzung kopierten Dateien werden in einem Verzeichnis gespeichert, das nach der Sitzungs-ID auf dem Ziellaufwerk benannt wird.|
-| /sk:<*Speicherkontoschlüssel*> | Der Kontoschlüssel für das Speicherkonto, in das die Daten importiert werden. |
+| /j: <*JournalFile*>| Der Pfad zur Journaldatei. Jedes Laufwerk muss über genau eine Journaldatei verfügen. Beachten Sie, dass die Journaldatei sich nicht auf dem Ziellaufwerk befinden darf. Die Dateierweiterung der Journaldatei lautet ".jrn" und wird bei der Ausführung dieses Befehls erstellt.|
+|/ ID: <*SessionId*> | Die Sitzungs-ID identifiziert eine *Kopiersitzung*. Sie wird verwendet, um eine exakte Wiederherstellung einer unterbrochenen Kopiersitzung sicherzustellen. Die in einer Kopiersitzung kopierten Dateien werden in einem Verzeichnis gespeichert, das nach der Sitzungs-ID auf dem Ziellaufwerk benannt wird.|
+| /SK: <*StorageAccountKey*> | Der Kontoschlüssel für das Speicherkonto, in das die Daten importiert werden. |
 | /BlobType | Geben Sie **PageBlob** an. Dieser Workflow wird nur erfolgreich ausgeführt, wenn die Option "PageBlob" angegeben ist. Dies ist nicht die Standardoption und sollte in diesem Befehl angegeben werden. |
-|/t:<*Ziellaufwerkbuchstabe*> | Der Laufwerkbuchstabe der Zielfestplatte für die aktuelle Kopiersitzung ohne nachgestellten Doppelpunkt.|
+|/ t: <*TargetDriveLetter*> | Der Laufwerkbuchstabe der Zielfestplatte für die aktuelle Kopiersitzung ohne nachgestellten Doppelpunkt.|
 |/format | Geben Sie diesen Parameter an, wenn das Laufwerk formatiert werden muss. Andernfalls können Sie ihn auslassen. Bevor das Tool das Laufwerk formatiert, werden Sie von der Konsole aus zur Bestätigung aufgefordert. Um die Bestätigung zu unterdrücken, geben Sie den /silentmode-Parameter an.|
 |/encrypt | Dieser Parameter wird angegeben, wenn das Laufwerk noch nicht mit BitLocker verschlüsselt wurde und vom Tool verschlüsselt werden muss. Wenn das Laufwerk bereits mit BitLocker verschlüsselt wurde, lassen Sie diesen Parameter aus, und geben Sie den /bk-Parameter an, in dem Sie den vorhandenen BitLocker-Schlüssel bereitstellen. Wenn Sie den /format-Parameter angeben, müssen Sie auch den /encrypt-Parameter festlegen. |
-|/srcdir:<*Quellverzeichnis*> | Das Quellverzeichnis, das Dateien enthält, die auf das Ziellaufwerk kopiert werden. Der Verzeichnispfad muss ein absoluter Pfad sein \(kein relativer Pfad\).|
-|/dstdir:<*VirtuellesVerzeichnisZielblob*> | Der Pfad zum virtuellen Zielverzeichnis in Ihrem Microsoft Azure-Speicherkonto. Achten Sie darauf, gültige Containernamen zu verwenden, wenn Sie virtuelle Zielverzeichnisse oder Blobs angeben. Containernamen müssen kleingeschrieben werden.|
+|/srcdir: <*SourceDirectory*> | Das Quellverzeichnis, das Dateien enthält, die auf das Ziellaufwerk kopiert werden. Der Verzeichnispfad muss ein absoluter Pfad sein (kein relativer Pfad).|
+|/dstdir: <*DestinationBlobVirtualDirectory*> | Der Pfad zum virtuellen Zielverzeichnis in Ihrem Microsoft Azure-Speicherkonto. Achten Sie darauf, gültige Containernamen zu verwenden, wenn Sie virtuelle Zielverzeichnisse oder Blobs angeben. Containernamen müssen kleingeschrieben werden.|
 
-  > [AZURE.NOTE]Eine Journaldatei wird im Ordner "WAImportExport" erstellt. Darin werden die gesamten Informationen des Workflows erfasst. Sie benötigen diese Datei beim Erstellen eines Importauftrags im Azure-Portal.
+  >[AZURE.NOTE]Eine Journaldatei wird im Ordner "WAImportExport" erstellt. Darin werden die gesamten Informationen des Workflows erfasst. Sie benötigen diese Datei beim Erstellen eines Importauftrags im Azure-Portal.
 
   ![PowerShell-Ausgabe](./media/backup-azure-backup-import-export/psoutput.png)
 
@@ -115,4 +111,4 @@ Sobald die ersten Sicherungsdaten im Speicherkonto verfügbar sind, kopiert der 
 - Wenn Sie Fragen zum Azure Import/Export-Workflow haben, finden Sie weitere Informationen in diesem [Artikel](../storage-import-export-service.md).
 - Bei Fragen zum Workflow finden Sie weitere Informationen im Abschnitt zur Offlinesicherung in den [häufig gestellten Fragen](backup-azure-backup-faq.md) zu Azure Backup.
 
-<!-------HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

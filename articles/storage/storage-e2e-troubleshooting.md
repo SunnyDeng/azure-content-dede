@@ -46,13 +46,13 @@ Um Probleme in Clientanwendungen mit Microsoft Azure-Speicher zu beheben, könne
 
 ## Informationen zum Beispielszenario
 
-Für dieses Lernprogramm untersuchen wir ein Szenario, in denen Metriken des Azure-Speichers eine niedrige prozentuale Erfolgsrate für eine Anwendung anzeigt, die den Azure-Speicher aufruft. Die Metrik zur niedrigen prozentualen Erfolgsrate (im Azure-Portal und den Metrikentabellen als **PercentSuccess** angezeigt) erfasst Vorgänge, die zwar erfolgreich waren, aber einen HTTP-Statuscode über 299 zurückgeben. In den serverseitigen Speicher-Protokollierungsdateien sind diese Vorgänge mit dem Transaktionsstatus **ClientOtherErrors** erfasst. Ausführliche Informationen zur Metrik zur niedrigen prozentualen Erfolgsrate finden Sie unter [Metriken zeigen niedrigen PercentSuccess an, oder Analyse-Protokolleinträge enthalten Vorgänge mit Transaktionsstatus "ClientOtherErrors"](storage-monitoring-diagnosing-troubleshooting.md#metrics-show-low-percent-success).
+Für dieses Lernprogramm wird ein Szenario untersucht, in dem Metriken des Azure-Speichers für eine Anwendung, die den Azure-Speicher aufruft, eine niedrige prozentuale Erfolgsrate anzeigen. Die Metrik zur niedrigen prozentualen Erfolgsrate (im Azure-Portal und den Metrikentabellen als **PercentSuccess** angezeigt) erfasst Vorgänge, die zwar erfolgreich waren, aber einen HTTP-Statuscode über 299 zurückgeben. In den serverseitigen Speicher-Protokollierungsdateien sind diese Vorgänge mit dem Transaktionsstatus **ClientOtherErrors** erfasst. Ausführliche Informationen zur Metrik zur niedrigen prozentualen Erfolgsrate finden Sie unter [Metriken zeigen niedrigen PercentSuccess an, oder Analyse-Protokolleinträge enthalten Vorgänge mit Transaktionsstatus "ClientOtherErrors"](storage-monitoring-diagnosing-troubleshooting.md#metrics-show-low-percent-success).
 
 Azure-Speichervorgänge geben möglicherweise als Teil ihrer normalen Funktionalität HTTP-Statuscodes zurück, die höher sind als 299. Diese Fehler zeigen jedoch in einigen Fällen an, dass Sie Ihre Clientanwendung optimieren können, um eine bessere Leistung zu erzielen.
 
 In diesem Szenario gehen wir davon aus, dass es sich bei Werten unter 100 % um eine niedrige prozentuale Erfolgsrate handelt. Sie können jedoch Ihren Anforderungen entsprechend eine andere Metrikgrenze auswählen. Es wird empfohlen, dass Sie beim Testen der Anwendung eine grundlegende Toleranz für die wichtigen Leistungsmetriken festlegen. Beispielsweise können Sie basierend auf Tests bestimmen, dass Ihre Anwendung eine gleichbleibende prozentuale Erfolgsrate von 90 oder 85 % erzielen sollte. Wenn Ihre Metrikdaten anzeigen, dass die Anwendung von dieser Zahl abweicht, können Sie die Ursache der Abweichung untersuchen.
 
-Nachdem wir in unserem Beispielszenario eingerichtet haben, dass die Metrik für die prozentuale Erfolgsrate unter 100 % liegt, untersuchen wir die Protokolle, um die Fehler zu finden, die mit diesen Metriken zusammenhängen, und nutzen sie, um die Ursache der geringeren prozentualen Erfolgsrate zu finden. Insbesondere konzentrieren wir uns auf Fehler im Bereich von 400. Daraufhin untersuchen wir Fehler 404 (nicht gefunden) genauer.
+Nachdem wir in unserem Beispielszenario eingerichtet haben, dass die Metrik für die prozentuale Erfolgsrate unter 100 % liegt, untersuchen wir die Protokolle, um die Fehler zu finden, die mit diesen Metriken zusammenhängen, und nutzen sie, um die Ursache der geringeren prozentualen Erfolgsrate zu finden. Insbesondere konzentrieren wir uns auf Fehler im Bereich von 400. Daraufhin untersuchen wir Fehler 404 (Nicht gefunden) genauer.
 
 ### Einige Ursachen von Fehlern im Bereich von 400
 
@@ -60,7 +60,7 @@ Die Beispiele unten zeigen Stichproben einiger Fehler im Bereich von 400 für An
 
 Beachten Sie, dass die folgenden Listen nicht vollständig sind. Informationen zu allgemeinen Azure-Speicherfehlern und Fehlern der einzelnen Speicherdienste finden Sie unter [Status- und Fehlercodes](http://msdn.microsoft.com/library/azure/dd179382.aspx) auf MSDN.
 
-**Beispiele für Statuscode 404 (nicht gefunden)**
+**Beispiele für Statuscode 404 (Nicht gefunden)**
 
 Tritt auf, wenn ein Lesevorgang für einen Container oder einen Blob fehlschlägt, weil der Blob oder Container nicht gefunden wurde.
 
@@ -69,7 +69,7 @@ Tritt auf, wenn ein Lesevorgang für einen Container oder einen Blob fehlschläg
 
 **Beispiele für Statuscode 409 (Konflikt)**
 
-- Tritt auf, wenn Sie eine Create-API verwenden, um einen neuen Container oder Blob zu erstellen, ohne zunächst sein Vorhandensein zu überprüfen, sodass ein Container oder Blob mit einem bereits vorhandenen Namen erstellt wird. 
+- Tritt auf, wenn Sie eine Create-API verwenden, um einen neuen Container oder Blob zu erstellen, ohne zunächst sein Vorhandensein zu überprüfen, und bereits ein Container oder Blob mit diesem Namen vorhanden ist. 
 - Tritt auf, wenn ein Container gelöscht wird und Sie versuchen, einen neuen Container mit demselben Namen zu erstellen, bevor der Löschvorgang abgeschlossen ist.
 - Tritt auf, wenn Sie eine Lease für einen Container oder Blob angeben, obwohl bereits eine Lease vorhanden ist.
  
@@ -347,9 +347,9 @@ Nachdem Sie nun mit der Verwendung von Message Analyzer zum Analysieren Ihrer Da
 | Zum Untersuchen von... | Verwenden Sie folgenden Filterausdruck... | Ausdruck gilt für Protokoll (Client, Server, Netzwerk, Alle) |
 |------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
 | Unerwartete Verzögerungen bei der Nachrichtenübermittlung in einer Warteschlange | AzureStorageClientDotNetV4.Description contains "Retrying failed operation." | Client |
-| HTTP-Zunahme von PercentThrottlingError | HTTP.Response.StatusCode == 500 || HTTP.Response.StatusCode == 503 | Netzwerk |
+| HTTP-Zunahme von PercentThrottlingError | HTTP.Response.StatusCode == 500 &#124;&#124; HTTP.Response.StatusCode == 503 | Netzwerk |
 | Zunahme von PercentTimeoutError | HTTP.Response.StatusCode == 500 | Netzwerk |
-| Zunahme von PercentTimeoutError (alle) | *StatusCode == 500 | All | | Zunahme von PercentNetworkError | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | Client | | HTTP 403 (Forbidden)-Meldungen | HTTP.Response.StatusCode == 403 | Network | | HTTP 404 (Not found)-Meldungen | HTTP.Response.StatusCode == 404 | Network | | 404 (Alle) | *StatusCode == 404 | All | | Autorisierungsproblem für Shared Access Signature (SAS) | AzureStorageLog.RequestStatus == "SASAuthorizationError" | Network | | HTTP 409 (Conflict)-Meldungen | HTTP.Response.StatusCode == 409 | Network | | 409 (Alle) | *StatusCode == 409 | All | | "Low PercentSuccess" oder Analyseprotokolleinträge verfügen über Vorgänge mit Transaktionsstatus "ClientOtherErrors" | AzureStorageLog.RequestStatus == "ClientOtherError" | Server | | Nagle-Warnung | ((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) | Server | | Zeitraum in Server- und Netzwerkprotokollen | #Timestamp >= 2014-10-20T16:36:38 and #Timestamp <= 2014-10-20T16:36:39 | Server, Network | | Zeitraum in Serverprotokollen | AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 | Server |
+| Zunahme von PercentTimeoutError (alle) |    **StatusCode == 500 | All | | Zunahme von PercentNetworkError | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | Client | | HTTP 403 (Verboten)-Meldungen | HTTP.Response.StatusCode == 403 | Network | | HTTP 404 (Nicht gefunden)-Meldungen | HTTP.Response.StatusCode == 404 | Network | | 404 (Alle) | *StatusCode == 404 | All | | Autorisierungsproblem für Shared Access Signature (SAS) | AzureStorageLog.RequestStatus == "SASAuthorizationError" | Network | | HTTP 409 (Konflikt)-Meldungen | HTTP.Response.StatusCode == 409 | Network | | 409 (Alle) | *StatusCode == 409 | All | | "Low PercentSuccess" oder Analyseprotokolleinträge verfügen über Vorgänge mit Transaktionsstatus "ClientOtherErrors" | AzureStorageLog.RequestStatus == "ClientOtherError" | Server | | Nagle-Warnung | ((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) | Server | | Zeitraum in Server- und Netzwerkprotokollen | #Timestamp >= 2014-10-20T16:36:38 and #Timestamp <= 2014-10-20T16:36:39 | Server, Network | | Zeitraum in Serverprotokollen | AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 | Server |
 
 
 ## Nächste Schritte
@@ -364,4 +364,4 @@ Weitere Informationen zur Problembehandlung in End-to-End-Szenarien im Azure-Spe
  
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

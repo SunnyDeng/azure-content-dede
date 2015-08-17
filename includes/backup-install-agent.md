@@ -1,6 +1,6 @@
 ## Herunterladen, Installieren und Registrieren des Azure Backup-Agents
 
-Nach dem Erstellen des Azure-Sicherungstresors sollte auf jedem lokalen Server \(Windows Server, Windows-Client oder Data Protection Manager-Server\) ein Agent installiert werden, der das Sichern von Daten und Anwendungen in Azure ermöglicht.
+Nach dem Erstellen des Azure-Sicherungstresors sollte auf jedem lokalen Server (Windows Server, Windows-Client oder Data Protection Manager-Server) ein Agent installiert werden, der das Sichern von Daten und Anwendungen in Azure ermöglicht.
 
 1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com/) an.
 
@@ -16,7 +16,7 @@ Nach dem Erstellen des Azure-Sicherungstresors sollte auf jedem lokalen Server \
 
 5.	Wenn Sie einen Proxyserver für die Verbindung mit dem Internet verwenden, geben Sie im Bildschirm **Proxykonfiguration** die Details des Proxyservers ein. Wenn Sie einen authentifizierten Proxy verwenden, geben Sie in diesem Bildschirm die Informationen zum Benutzernamen und zum Kennwort ein.
 
-6.	Der Azure Backup-Agent installiert .NET Framework 4.5 und Windows PowerShell \(falls noch nicht verfügbar\), um die Installation abzuschließen.
+6.	Der Azure Backup-Agent installiert .NET Framework 4.5 und Windows PowerShell (falls noch nicht verfügbar), um die Installation abzuschließen.
 
 7.	Wenn der Agent installiert ist, klicken Sie auf die Schaltfläche **Mit Registrierung fortfahren**, um den Workflow fortzusetzen.
 
@@ -26,13 +26,13 @@ Nach dem Erstellen des Azure-Sicherungstresors sollte auf jedem lokalen Server \
 
     ![Tresoranmeldeinformationen](./media/backup-install-agent/vc.png)
 
-    Die Datei mit den Tresoranmeldeinformationen gilt nur für 48 Stunden \(nachdem sie aus dem Portal heruntergeladen wurde\). Wenn in diesem Bildschirm Fehler auftreten \(z. B. "Datei mit Tresoranmeldeinformationen abgelaufen"\), melden Sie sich beim Azure-Portal an, und laden Sie die Datei mit den Tresoranmeldeinformationen erneut herunter.
+    Die Datei mit den Tresoranmeldeinformationen gilt nur für 48 Stunden (nachdem sie aus dem Portal heruntergeladen wurde). Wenn in diesem Bildschirm Fehler auftreten (z. B. "Datei mit Tresoranmeldeinformationen abgelaufen"), melden Sie sich beim Azure-Portal an, und laden Sie die Datei mit den Tresoranmeldeinformationen erneut herunter.
 
     Stellen Sie sicher, dass die Datei mit den Tresoranmeldeinformationen an einem Speicherort verfügbar ist, der für die Setupanwendung zugänglich ist. Wenn Zugriffsfehler auftreten, kopieren Sie die Datei mit den Tresoranmeldeinformationen in einen temporären Speicherort auf diesem Computer, und wiederholen Sie den Vorgang.
 
-    Wenn ein Fehler wegen ungültiger Tresoranmeldeinformationen angezeigt wird \(z. B. "Ungültige Tresoranmeldeinformationen angegeben"\), ist die Datei entweder beschädigt oder enthält nicht die aktuellen Anmeldeinformationen, die dem Wiederherstellungsdienst zugeordnet sind. Wiederholen Sie den Vorgang, nachdem Sie eine neue Datei mit Tresoranmeldeinformationen vom Portal heruntergeladen haben. Dieser Fehler tritt i. d. R. auf, wenn der Benutzer im Azure-Portal in schneller Folge auf die Option **Tresoranmeldedaten herunterladen** klickt. In diesem Fall ist nur die zweite Datei mit Tresoranmeldeinformationen gültig.
+    Wenn ein Fehler wegen ungültiger Tresoranmeldeinformationen angezeigt wird (z. B. "Ungültige Tresoranmeldeinformationen angegeben"), ist die Datei entweder beschädigt oder enthält nicht die aktuellen Anmeldeinformationen, die dem Wiederherstellungsdienst zugeordnet sind. Wiederholen Sie den Vorgang, nachdem Sie eine neue Datei mit Tresoranmeldeinformationen vom Portal heruntergeladen haben. Dieser Fehler tritt i. d. R. auf, wenn der Benutzer im Azure-Portal in schneller Folge auf die Option **Tresoranmeldedaten herunterladen** klickt. In diesem Fall ist nur die zweite Datei mit Tresoranmeldeinformationen gültig.
 
-9. Im Bildschirm **Verschlüsselungseinstellung** können Sie entweder eine Passphrase generieren oder eine Passphrase angeben \(mindestens 16 Zeichen\). Vergessen Sie nicht, die Passphrase an einem sicheren Speicherort zu speichern.
+9. Im Bildschirm **Verschlüsselungseinstellung** können Sie entweder eine Passphrase generieren oder eine Passphrase angeben (mindestens 16 Zeichen). Vergessen Sie nicht, die Passphrase an einem sicheren Speicherort zu speichern.
 
     ![Verschlüsselung](./media/backup-install-agent/encryption.png)
 
@@ -48,4 +48,4 @@ Nach dem Erstellen des Azure-Sicherungstresors sollte auf jedem lokalen Server \
 
     ![Konfigurieren von Azure Backup](./media/backup-install-agent/configure.png)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

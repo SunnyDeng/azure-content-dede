@@ -44,4 +44,4 @@ Azure AD-Berichte werden für die hier angegebene Anzahl von Tagen aufbewahrt.
 |	Nutzung RMS-fähiger Anwendungen |	30 Tage |
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -33,9 +33,9 @@
  
         > [AZURE.NOTE]Sie müssen ggf. einige Minuten warten, bis die Subnetzmaske und die DNS-Einstellungen übernommen werden.
 
-      4. \(Optional\) Konfigurieren Sie Ihren Webproxyserver.
+      4. (Optional) Konfigurieren Sie Ihren Webproxyserver.
 
-      \>[AZURE.IMPORTANT]Die Webproxykonfiguration ist optional. Achten Sie jedoch bei Verwendung eines Webproxys darauf, dass dieser nur hier konfiguriert werden kann. Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](https://msdn.microsoft.com/library/azure/dn764937.aspx).
+      >[AZURE.IMPORTANT]Die Webproxykonfiguration ist optional. Achten Sie jedoch bei Verwendung eines Webproxys darauf, dass dieser nur hier konfiguriert werden kann. Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](https://msdn.microsoft.com/library/azure/dn764937.aspx).
 
 6. Drücken Sie STRG+C, um den Setup-Assistenten zu beenden.
  
@@ -86,11 +86,11 @@
 
      Der Firmwarestatus sollte **UpToDate** lauten.
 
-10. Führen Sie das folgende Cmdlet aus, um das Gerät auf das Microsoft Azure-Portal für Behörden zu verweisen. \(Es zeigt standardmäßig auf das öffentliche Azure-Verwaltungsportal.\) Beide Controller werden dadurch neu gestartet. Es wird empfohlen, dass Sie zwei PuTTY-Sitzungen verwenden, um gleichzeitig eine Verbindung mit beiden Controllern herzustellen, sodass Sie sehen können, wenn jeder Controller neu gestartet wird.
+10. Führen Sie das folgende Cmdlet aus, um das Gerät auf das Microsoft Azure-Portal für Behörden zu verweisen. (Es zeigt standardmäßig auf das öffentliche Azure-Verwaltungsportal.) Beide Controller werden dadurch neu gestartet. Es wird empfohlen, dass Sie zwei PuTTY-Sitzungen verwenden, um gleichzeitig eine Verbindung mit beiden Controllern herzustellen, sodass Sie sehen können, wenn jeder Controller neu gestartet wird.
 
      `Set-CloudPlatform -AzureGovt_US`
 
-    Es wird eine Bestätigungsmeldung angezeigt. Übernehmen Sie den Standardwert \(\*\*Y\*\*\).
+    Es wird eine Bestätigungsmeldung angezeigt. Übernehmen Sie den Standardwert (**Y**).
 
 11. Führen Sie das folgende Cmdlet aus, um die Installation fortzusetzen:
 
@@ -98,7 +98,7 @@
 
      ![Fortsetzen des Installations-Assistenten](./media/storsimple-configure-and-register-device-gov/HCS_ResumeSetup-gov-include.png)
 
-    Wenn Sie das Setup fortsetzen, wird die Assistenten-Version aus Update 1 verwendet \(entspricht Version 17469\).
+    Wenn Sie das Setup fortsetzen, wird die Assistenten-Version aus Update 1 verwendet (entspricht Version 17469).
 
 12. Akzeptieren Sie die Netzwerkeinstellungen. Es wird eine Validierungsmeldung angezeigt, nachdem Sie alle Einstellungen akzeptiert haben.
  
@@ -108,7 +108,7 @@
 
 14. Der letzte Schritt im Installations-Assistenten besteht im Registrieren Ihres Geräts beim StorSimple-Manager-Dienst. Zu diesem Zweck benötigen Sie den Dienstregistrierungsschlüssel, den Sie unter [Schritt 2: Abrufen des Dienstregistrierungsschlüssels](storsimple-get-service-registration-key-gov.md) abgerufen haben. Nachdem Sie den Registrierungsschlüssel bereitgestellt haben, müssen Sie ggf. einige Minuten warten, bis das Gerät registriert wurde.
 
-      \>[AZURE.NOTE]Sie können jederzeit STRG+C drücken, um den Installations-Assistenten zu beenden. Wenn Sie alle Netzwerkeinstellungen \(IP-Adresse für DATA 0, Subnetzmaske und Gateway\) angegeben haben, werden Ihre Einträge beibehalten.
+      >[AZURE.NOTE]Sie können jederzeit STRG+C drücken, um den Installations-Assistenten zu beenden. Wenn Sie alle Netzwerkeinstellungen (IP-Adresse für DATA 0, Subnetzmaske und Gateway) angegeben haben, werden Ihre Einträge beibehalten.
 
 	![Fortschritt der StorSimple-Registrierung](./media/storsimple-configure-and-register-device-gov/HCS_RegistrationProgress-gov-include.png)
 
@@ -116,7 +116,7 @@
 	
 	![StorSimple – Registrieren des Geräts 7](./media/storsimple-configure-and-register-device-gov/HCS_RegisterYourDevice7_gov-include.png)
 
-      \>[AZURE.IMPORTANT]Markieren Sie zum Kopieren des Texts aus dem Fenster der seriellen Konsole den Text einfach. Sie sollten Sie diese dann in die Zwischenablage kopieren und in einem beliebigen Texteditor einfügen können. \> \> VERWENDEN SIE NICHT STRG+C, um den Verschlüsselungsschlüssel für Dienstdaten zu kopieren. STRG+C bewirkt, dass der Installations-Assistent beendet wird. Dies führt dazu, dass das Geräteadministratorkennwort nicht geändert und das Gerät auf das Standardkennwort zurückgesetzt wird.
+      >[AZURE.IMPORTANT]Markieren Sie zum Kopieren des Texts aus dem Fenster der seriellen Konsole den Text einfach. Sie sollten Sie diese dann in die Zwischenablage kopieren und in einem beliebigen Texteditor einfügen können. > > VERWENDEN SIE NICHT STRG+C, um den Verschlüsselungsschlüssel für Dienstdaten zu kopieren. STRG+C bewirkt, dass der Installations-Assistent beendet wird. Dies führt dazu, dass das Geräteadministratorkennwort nicht geändert und das Gerät auf das Standardkennwort zurückgesetzt wird.
 
 16. Schließen Sie die serielle Konsole.
 
@@ -133,4 +133,4 @@
      
         
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

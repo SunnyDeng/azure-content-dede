@@ -77,7 +77,7 @@ Tarifempfehlungen bieten eine automatisierte Möglichkeit zum Erfassen von Telem
 
 ## Nächste Schritte
 
-Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung eines Upgrades oder Downgrades in der Regel nicht sofort. Das Verwaltungsportal stellt während des Übergangs der Datenbank auf einen neuen Tarif Benachrichtigungen bereit. Sie können den Upgradestatus jedoch auch überwachen, indem Sie die Sicht [Sys. dm_operation_status (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/dn270022.aspx) in der Master-Datenbank des SQL-Datenbankservers abfragen.
+Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung eines Upgrades oder Downgrades in der Regel nicht sofort. Das Verwaltungsportal stellt während des Übergangs der Datenbank auf einen neuen Tarif Benachrichtigungen bereit. Sie können den Upgradestatus jedoch auch überwachen, indem Sie die Sicht [Sys. dm\_operation\_status (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/dn270022.aspx) in der Master-Datenbank des SQL-Datenbankservers abfragen.
 
 
 <!--Image references-->
@@ -90,4 +90,4 @@ Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung e
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

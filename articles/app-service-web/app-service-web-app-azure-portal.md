@@ -68,7 +68,7 @@ Zum Konfigurieren von Anwendungseinstellungen klicken Sie im Blatt **Einstellung
 
 ![](./media/app-service-web-app-azure-portal/AppSettingsPreview.png)
 
-Neben dem Markennamen wurden einige Elemente im Portal umbenannt oder anders gruppiert, um ihr Auffinden zu erleichtern. Nachstehend sehen Sie beispielsweise einen Screenshot der entsprechenden Seite für App-Einstellungen (Konfigurieren) im alten Portal.
+Neben dem Markennamen wurden einige Elemente im Portal umbenannt oder anders gruppiert, um ihr Auffinden zu erleichtern. Nachstehend sehen Sie beispielsweise einen Screenshot der entsprechenden Seite für App-Einstellungen (**Konfigurieren**) im alten Portal.
 
 ![](./media/app-service-web-app-azure-portal/AppSettings.png)
 
@@ -86,4 +86,4 @@ Neben dem Markennamen wurden einige Elemente im Portal umbenannt oder anders gru
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

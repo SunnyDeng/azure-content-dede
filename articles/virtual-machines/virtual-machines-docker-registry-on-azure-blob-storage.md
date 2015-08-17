@@ -1,12 +1,12 @@
-<properties 
-	pageTitle="Bereitstellen einer privaten Docker-Registrierung in Azure"
-    description="Beschreibt, wie Sie eine Docker-Registrierung zum Hosten von Containerimages im Azure-Blob-Speicherdienst verwenden."
-    services="virtual-machines"
-    documentationCenter="virtual-machines"
-    authors="ahmetalpbalkan"
-    editor="squillace"
-    manager="" 
-    tags="" />
+<properties title="Deploying Your Own Private Docker Registry on Azure"
+  pageTitle="Bereitstellen einer privaten Docker-Registrierung in Azure"
+  description="Beschreibt, wie Sie eine Docker-Registrierung zum Hosten von Containerimages im Azure-Blob-Speicherdienst verwenden."
+  services="virtual-machines"
+  documentationCenter="virtual-machines"
+  authors="ahmetalpbalkan"
+  editor="squillace"
+  manager="" 
+  tags="" />
 
 <tags
   ms.service="virtual-machines"
@@ -92,4 +92,4 @@ Sobald Sie Ihre Registrierung eingerichtet haben, ist es an der Zeit, sie verstÃ
 [registry-config]: http://docs.docker.com/registry/configuration/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

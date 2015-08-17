@@ -88,7 +88,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 * [Debuggen von Notification Hubs-Anwendungen](http://go.microsoft.com/fwlink/p/?linkid=386630) </br>Hier finden Sie die Anleitungen zur Problembehandlung und zum Debuggen von Notification Hubs-Lösungen.
 
-* [Verwenden eines .NET-Clients für Azure Mobile Services] <br/>Erfahren Sie mehr über die Verwendung von Mobile Services in C\#-Windows-Apps.
+* [Verwenden eines .NET-Clients für Azure Mobile Services] <br/>Erfahren Sie mehr über die Verwendung von Mobile Services in C#-Windows-Apps.
 
 <!-- Anchors. -->
 
@@ -109,4 +109,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Verwenden eines .NET-Clients für Azure Mobile Services]: mobile-services-windows-dotnet-how-to-use-client-library.md
 [MobileServiceClient]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

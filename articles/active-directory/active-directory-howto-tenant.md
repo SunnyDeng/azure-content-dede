@@ -65,4 +65,4 @@ Wenn Ihnen diese genannten Schritte unverständlich sind, machen Sie sich keine 
 
 Im Rahmen der Registrierung bei Azure müssen Sie Kreditkarteninformationen angeben. Sie können vertrauensvoll fortfahren, da das Veröffentlichen von Anwendungen in Azure AD oder Erstellen neuer Mandanten nicht berechnet wird.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -12,7 +12,7 @@
 	ms.workload="infrastructure-services" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="05/05/2015" 
 	ms.author="Justinha"/>
 
@@ -126,4 +126,4 @@ Führen Sie diese Schritte aus, um beide Verzeichnisse im Verwaltungsportal zu v
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

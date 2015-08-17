@@ -29,11 +29,11 @@ Beachten Sie, dass es zwei Wartungsarten gibt, die die Verfügbarkeit Ihrer virt
 ## Speichererhaltende Updates
 Bei einer Klasse von Updates in Microsoft Azure sind für die Kunden keinerlei Auswirkungen auf die ausgeführten virtuellen Computer spürbar. Viele dieser Updates betreffen Komponenten oder Dienste, die ohne Beeinträchtigung der ausgeführten Instanz aktualisiert werden können. Bei einigen dieser Updates handelt es sich um Plattforminfrastrukturaktualisierungen für das Hostbetriebssystem, die ohne vollständigen Neustart des virtuellen Computers angewendet werden können.
 
-Diese Updates werden mit Techniken durchgeführt, die eine Live-Migration \(eine "speichererhaltende" Aktualisierung\) ermöglichen. Bei der Aktualisierung wird der virtuelle Computer in einen pausierten Zustand versetzt. Dadurch bleibt der Speicher im Arbeitsspeicher erhalten, während das zugrunde liegende Hostbetriebssystem die erforderlichen Updates und Patches erhält. Der virtuelle Computer wird innerhalb von 30 Sekunden Pause wieder fortgesetzt. Die Uhr des fortgesetzten virtuellen Computers wird automatisch synchronisiert.
+Diese Updates werden mit Techniken durchgeführt, die eine Live-Migration (eine "speichererhaltende" Aktualisierung) ermöglichen. Bei der Aktualisierung wird der virtuelle Computer in einen pausierten Zustand versetzt. Dadurch bleibt der Speicher im Arbeitsspeicher erhalten, während das zugrunde liegende Hostbetriebssystem die erforderlichen Updates und Patches erhält. Der virtuelle Computer wird innerhalb von 30 Sekunden Pause wieder fortgesetzt. Die Uhr des fortgesetzten virtuellen Computers wird automatisch synchronisiert.
 
 Nicht alle Updates können mit diesem Mechanismus bereitgestellt werden. Dank der Kürze der Pausierung verringert diese Art der Updatebereitstellung jedoch deutlich die Auswirkungen auf virtuelle Computer.
 
-Updates für mehrere Instanzen \(für virtuelle Computer in einer Verfügbarkeitsgruppe\) werden nach und nach auf die einzelnen Updatedomänen angewendet.
+Updates für mehrere Instanzen (für virtuelle Computer in einer Verfügbarkeitsgruppe) werden nach und nach auf die einzelnen Updatedomänen angewendet.
 
 ## Konfigurationen für virtuelle Computer
 Es gibt zwei Arten der Konfiguration virtueller Computer: mehrere Instanzen und eine Instanz. In einer Konfiguration mit mehreren Instanzen werden ähnliche virtuelle Computer in eine Verfügbarkeitsgruppe platziert.
@@ -42,9 +42,9 @@ Die Konfiguration mit mehreren Instanzen sorgt für Redundanz und wird empfohlen
 
 Weitere Informationen über das Konfigurieren Ihrer virtuellen Computer für hohe Verfügbarkeit finden Sie unter [Verwalten der Verfügbarkeit virtueller Computer](virtual-machines-manage-availability.md).
 
-Im Gegensatz dazu wird eine Einzelinstanz-Konfiguration für eigenständige virtuelle Computer verwendet, die nicht in einer Verfügbarkeitsgruppe platziert wurden. Diese virtuellen Computer fallen nicht unter die Vereinbarung zum Servicelevel \(SLA\), denn hier ist es erforderlich, dass mindestens zwei virtuelle Computer in derselben Verfügbarkeitsgruppe bereitgestellt werden.
+Im Gegensatz dazu wird eine Einzelinstanz-Konfiguration für eigenständige virtuelle Computer verwendet, die nicht in einer Verfügbarkeitsgruppe platziert wurden. Diese virtuellen Computer fallen nicht unter die Vereinbarung zum Servicelevel (SLA), denn hier ist es erforderlich, dass mindestens zwei virtuelle Computer in derselben Verfügbarkeitsgruppe bereitgestellt werden.
 
-Weitere Informationen zur SLA finden Sie im Abschnitt "Cloud Services und Virtual Machines" von [Vereinbarungen zum Servicelevel \(SLAs\)](http://azure.microsoft.com/support/legal/sla/).
+Weitere Informationen zur SLA finden Sie im Abschnitt "Cloud Services und Virtual Machines" von [Vereinbarungen zum Servicelevel (SLAs)](http://azure.microsoft.com/support/legal/sla/).
 
 
 ## Konfigurationsupdates bei mehreren Instanzen
@@ -52,7 +52,7 @@ Während der geplanten Wartung aktualisiert die Azure-Plattform zuerst den Satz 
 
 In einer Mehrfachinstanzkonfiguration werden virtuelle Computer so aktualisiert, dass die Verfügbarkeit während des Prozesses gegeben ist. Dabei wird davon ausgegangen, dass jeder virtuelle Computer die gleiche Funktion hat wie die anderen im Satz.
 
-Jeder virtuelle Computer in der Verfügbarkeitsgruppe wird einer Updatedomäne \(UD\) und einer Fehlerdomäne \(FD\) der zugrunde liegenden Azure-Plattform zugewiesen. Jede Updatedomäne ist eine Gruppe virtueller Computer, die im selben Zeitfenster neu gestartet wird. Jede Fehlerdomäne ist eine Gruppe virtueller Computer, die eine Stromquelle und einen Netzwerkswitch gemeinsam nutzen.
+Jeder virtuelle Computer in der Verfügbarkeitsgruppe wird einer Updatedomäne (UD) und einer Fehlerdomäne (FD) der zugrunde liegenden Azure-Plattform zugewiesen. Jede Updatedomäne ist eine Gruppe virtueller Computer, die im selben Zeitfenster neu gestartet wird. Jede Fehlerdomäne ist eine Gruppe virtueller Computer, die eine Stromquelle und einen Netzwerkswitch gemeinsam nutzen.
 
 Weitere Informationen zu Updatedomänen und Fehlerdomänen finden Sie unter [Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe für höhere Redundanz](virtual-machines-manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
 
@@ -87,18 +87,18 @@ Informationen zu aktuellen Regionspaaren finden Sie in der folgenden Tabelle:
 
 Region 1 | Region 2
 :----- | ------:
-USA \(Mitte/Norden\) | USA \(Mitte/Süden\)
-USA \(Ost\) | USA \(West\)
-USA \(Ost 2\) | USA \(Mitte\)
+USA (Mitte/Norden) | USA (Mitte/Süden)
+USA (Ost) | USA (West)
+USA (Ost 2) | USA (Mitte)
 Nordeuropa | Westeuropa
 Südostasien | Ostasien
 Ostchina | Nordchina
-Japan Ost | Japan \(Westen\)
-Brasilien Süd | USA \(Mitte/Süden\)
-Australien \(Südost\) | Australien \(Osten\)
+Japan Ost | Japan (Westen)
+Brasilien Süd | USA (Mitte/Süden)
+Australien (Südost) | Australien (Osten)
 US Government, Iowa | US Government, Virginia
 
-Beispiel: Während einer geplanten Wartung stellt Azure für "USA \(West\)" kein Update bereit, während "USA \(Ost\)" gewartet wird. Andere Regionen wie Nordeuropa können jedoch gleichzeitig mit USA \(Ost\) gewartet werden.
+Beispiel: Während einer geplanten Wartung stellt Azure für "USA (West)" kein Update bereit, während "USA (Ost)" gewartet wird. Andere Regionen wie Nordeuropa können jedoch gleichzeitig mit USA (Ost) gewartet werden.
 
 <!--Anchors-->
 [image1]: ./media/virtual-machines-planned-maintenance/vmplanned1.png
@@ -110,4 +110,4 @@ Beispiel: Während einer geplanten Wartung stellt Azure für "USA \(West\)" kein
 [Virtual Machines Manage Availability]: virtual-machines-windows-tutorial.md
 [Understand planned versus unplanned maintenance]: virtual-machines-manage-availability.md#Understand-planned-versus-unplanned-maintenance/
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

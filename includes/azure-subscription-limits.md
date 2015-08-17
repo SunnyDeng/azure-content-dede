@@ -78,4 +78,4 @@
 
 <sup>1</sup> Zusätzliche kleine Instanzen zählen als ganzer Prozessorkern im Sinn des Limits, obwohl nur ein Teil eines Kerns verwendet wird.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -7,6 +7,7 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
+
 <tags 
 	ms.service="hdinsight" 
 	ms.workload="big-data" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="05/28/2015" 
 	ms.author="jgao"/>
+
 
 #Analysieren von Flugverspätungsdaten mit Hive in HDInsight
 
@@ -41,6 +43,7 @@ In diesem Lernprogramm geht es hauptsächlich um die Verwendung eines PowerShell
 
 In den Anhängen finden Sie Anweisungen zum Hochladen der Flugverspätungsdaten, zum Erstellen/Hochladen der Hive-Abfragezeichenfolge und zum Vorbereiten der Azure SQL-Datenbank für den Sqoop-Auftrag.
 
+> [AZURE.NOTE]Die Schritte in diesem Dokument sind für Windows-basierte Cluster angegeben. Schritte für Linux-basierte Cluster finden Sie unter [Analysieren von Flugverspätungsdaten mit Hive in HDInsight](hdinsight-analyze-flight-delay-data-linux.md).
 
 ###Voraussetzungen
 
@@ -104,7 +107,7 @@ Folgendes sollten Sie über interne und externe Hive-Tabellen wissen:
 
 Weitere Informationen finden Sie unter [HDInsight: Hive Internal and External Tables Intro][cindygross-hive-tables].
 
-> [AZURE.NOTE]Eine der HiveQL-Anweisungen erstellt eine externe Hive-Tabelle. Die externe Hive-Tabelle hält die Datendatei am ursprünglichen Speicherort. Interne Hive-Tabellen verschieben die Datendatei nach "hive\warehouse". Bei internen Hive-Tabellen muss die Datendatei im Standardcontainer enthalten sein. Bei Daten, die nicht im Standardblobcontainer gespeichert sind, müssen Sie externe Hive-Tabellen verwenden.
+> [AZURE.NOTE]Eine der HiveQL-Anweisungen erstellt eine externe Hive-Tabelle. Die externe Hive-Tabelle hält die Datendatei am ursprünglichen Speicherort. Interne Hive-Tabellen verschieben die Datendatei nach "hive\\warehouse". Bei internen Hive-Tabellen muss die Datendatei im Standardcontainer enthalten sein. Bei Daten, die nicht im Standardblobcontainer gespeichert sind, müssen Sie externe Hive-Tabellen verwenden.
 
 
 
@@ -407,7 +410,7 @@ Das Hochladen der Datendatei und der HiveQL-Skriptdateien (siehe [Anhang B](#ap
 </table>
 
 3. Klicken Sie auf **Download**.
-4. Entpacken Sie die Datei im Ordner **C:\Tutorials\FlightDelays\Data**. Jede Datei ist eine CSV-Datei und hat eine Größe von ungefähr 60 GB.
+4. Entpacken Sie die Datei im Ordner **C:\\Tutorials\\FlightDelays\\Data**. Jede Datei ist eine CSV-Datei und hat eine Größe von ungefähr 60 GB.
 5.	Geben Sie der Datei den Monat, für den sie Daten enthält, als neuen Namen. Die Datei mit Daten aus dem Monat Januar hieße dann beispielsweise *January.csv*.
 6. Wiederholen Sie die Schritte 2 und 5, um eine Datei für jeden der 12 Monate des Jahres 2013 herunterzuladen. Für das Lernprogramm benötigen Sie mindestens eine Datei.  
 
@@ -504,11 +507,11 @@ Mit Azure PowerShell können Sie mehrere HiveQL-Anweisungen gleichzeitig ausfüh
 
 Das HiveQL-Skript führt Folgendes durch:
 
-1. **Löschen der Tabelle delays_raw**, wenn diese Tabelle bereits vorhanden ist.
-2. **Erstellen der externen Hive-Tabelle "delays_raw"**, die auf den Blobspeicherort mit den Dateien zu Flugverspätungen verweist. Diese Abfrage legt fest, dass Felder durch "," getrennt und Zeilen mit "\n" beendet werden. Dies stellt ein Problem dar, wenn Feldwerte Kommas enthalten, da Hive nicht zwischen einem Komma als Trennzeichen für Felder und einem Komma als Teil eines Feldwerts unterscheiden kann. (Letzteres ist der Fall bei Feldwerten für ORIGIN_CITY_NAME und DEST_CITY_NAME.) Zur Behebung dieses Problems erstellt die Abfrage TEMP-Spalten zur Aufbewahrung von Daten, die fehlerhaft in Spalten aufgeteilt sind.  
+1. **Löschen der Tabelle delays\_raw**, wenn diese Tabelle bereits vorhanden ist.
+2. **Erstellen der externen Hive-Tabelle "delays\_raw"**, die auf den Blobspeicherort mit den Dateien zu Flugverspätungen verweist. Diese Abfrage legt fest, dass Felder durch "," getrennt und Zeilen mit "\\n" beendet werden. Dies stellt ein Problem dar, wenn Feldwerte Kommas enthalten, da Hive nicht zwischen einem Komma als Trennzeichen für Felder und einem Komma als Teil eines Feldwerts unterscheiden kann. (Letzteres ist der Fall bei Feldwerten für ORIGIN\_CITY\_NAME und DEST\_CITY\_NAME.) Zur Behebung dieses Problems erstellt die Abfrage TEMP-Spalten zur Aufbewahrung von Daten, die fehlerhaft in Spalten aufgeteilt sind.  
 3. **Löschen der Tabelle "delays"**, falls diese Tabelle bereits vorhanden ist.
-4. **Erstellen der Tabelle delays**. Es ist hilfreich, die Daten vor der weiteren Verarbeitung zu bereinigen. Mit dieser Abfrage wird eine neue Tabelle *delays* aus der Tabelle "delays_raw" erstellt. Beachten Sie, dass die TEMP-Spalten (wie zuvor erwähnt) nicht kopiert werden und dass die **substring**-Funktion verwendet wird, um Anführungszeichen aus den Daten zu entfernen. 
-5. **Berechnen der durchschnittlichen Verspätungen aufgrund des Wetters und Gruppieren der Ergebnisse nach Stadt.** Darüber hinaus werden die Ergebnisse in den Blobspeicher ausgegeben. Beachten Sie, dass bei der Abfrage Apostrophe aus den Daten entfernt werden und dass Zeilen ausgeschlossen werden, bei denen der Wert für **weather_delay** Null ist. Dies ist erforderlich, da Sqoop, das Sie später in diesem Lernprogramm verwenden werden, diese Werte standardmäßig nicht ordnungsgemäß verarbeitet.
+4. **Erstellen der Tabelle delays**. Es ist hilfreich, die Daten vor der weiteren Verarbeitung zu bereinigen. Mit dieser Abfrage wird eine neue Tabelle *delays* aus der Tabelle "delays\_raw" erstellt. Beachten Sie, dass die TEMP-Spalten (wie zuvor erwähnt) nicht kopiert werden und dass die **substring**-Funktion verwendet wird, um Anführungszeichen aus den Daten zu entfernen. 
+5. **Berechnen der durchschnittlichen Verspätungen aufgrund des Wetters und Gruppieren der Ergebnisse nach Stadt.** Darüber hinaus werden die Ergebnisse in den Blobspeicher ausgegeben. Beachten Sie, dass bei der Abfrage Apostrophe aus den Daten entfernt werden und dass Zeilen ausgeschlossen werden, bei denen der Wert für **weather\_delay** Null ist. Dies ist erforderlich, da Sqoop, das Sie später in diesem Lernprogramm verwenden werden, diese Werte standardmäßig nicht ordnungsgemäß verarbeitet.
 
 Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive Data Definition Language][hadoop-hiveql] (Hive-Datendefinitionssprache, in englischer Sprache). Jeder HiveQL-Befehl muss mit einem Semikolon enden.
 
@@ -673,7 +676,7 @@ Eine vollständige Liste der HiveQL-Befehle finden Sie unter [Hive Data Definiti
 
 	Im Skript werden folgende Variablen verwendet:
 
-	- **$hqlLocalFileName** – Das Skript speichert die HiveQL-Skriptdatei lokal, bevor sie in den Blobspeicher hochgeladen wird. Dies ist der Dateiname. Der Standardwert ist <u>C:\tutorials\flightdelays\flightdelays.hql</u>.
+	- **$hqlLocalFileName** – Das Skript speichert die HiveQL-Skriptdatei lokal, bevor sie in den Blobspeicher hochgeladen wird. Dies ist der Dateiname. Der Standardwert ist <u>C:\\tutorials\\flightdelays\\flightdelays.hql</u>.
 	- **$hqlBlobName** – Dies ist der Blobname der HiveQL-Skriptdatei, der im Azure-Blobspeicher verwendet wird. Der Standardwert ist "tutorials/flightdelays/flightdelays.hql". Da die Datei direkt zum Azure-Blobspeicher geschrieben wird, befindet sich KEIN "/" am Anfang des Blobnamens. Wenn Sie im Blobspeicher auf die Datei zugreifen möchten, müssen Sie "/" an den Anfang des Dateinamens einfügen.
 	- **$srcDataFolder** und **$dstDataFolder** - = "tutorials/flightdelays/data" = "tutorials/flightdelays/output"
 
@@ -880,4 +883,4 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

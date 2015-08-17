@@ -43,4 +43,4 @@ Sie können das Azure Verwaltungsportal oder Azure Media Services-APIs verwenden
 3. Cacheheader zum Zwischenspeichern für 2 Sekunden werden unabhängig von der Azure Media- oder Azure Storage-Konfiguration auf Livestreamingmanifeste (Wiedergabelisten) angewendet. Dieser Wert kann nicht überschrieben werden.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

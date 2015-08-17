@@ -21,7 +21,7 @@ Möchten Sie Ihre Telemetriedaten einer angepassten Analyse unterziehen? Oder m�
 
 Der fortlaufende Export ist im kostenlosen Testzeitraum und in den [Standard- und Premium-Preisplänen](http://azure.microsoft.com/pricing/details/application-insights/) verfügbar.
 
-\(Wenn Sie die Daten in einem Ihrer Blätter "Metriken" oder "Suchen" nur [einmal exportieren](app-insights-metrics-explorer.md#export-to-excel) möchten, klicken Sie oben im Blatt auf "Export".\)
+(Wenn Sie die Daten in einem Ihrer Blätter "Metriken" oder "Suchen" nur [einmal exportieren](app-insights-metrics-explorer.md#export-to-excel) möchten, klicken Sie oben im Blatt auf "Export".)
 
 ## <a name="setup"></a> Einrichten des fortlaufenden Exports
 
@@ -38,7 +38,7 @@ Wählen Sie die Ereignistypen, die Sie exportieren möchten:
 ![Klicken Sie auf "Ereignistypen auswählen".](./media/app-insights-export-telemetry/03-types.png)
 
 
-Nachdem Sie Ihren Exportvorgang erstellt haben, geht es gleich los. \(Sie erhalten nur Daten, die nach Erstellung des Exportvorgangs eingehen.\)
+Nachdem Sie Ihren Exportvorgang erstellt haben, geht es gleich los. (Sie erhalten nur Daten, die nach Erstellung des Exportvorgangs eingehen.)
 
 
 Wenn Sie die Ereignistypen später ändern möchten, bearbeiten Sie einfach den Export:
@@ -173,7 +173,7 @@ Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/se
 
 * *Wie viele Blobs sollten im Speicher angezeigt werden?*
 
- * Für jeden Datentyp, den Sie zum Exportieren ausgewählt haben, wird jede Minute ein neues Blob erstellt \(falls Daten verfügbar sind\).
+ * Für jeden Datentyp, den Sie zum Exportieren ausgewählt haben, wird jede Minute ein neues Blob erstellt (falls Daten verfügbar sind).
  * Darüber hinaus werden weitere Partitionseinheiten für Anwendungen mit hohem Datenverkehr zugeordnet. In diesem Fall erstellt jede Einheit jede Minute ein Blob.
 
 
@@ -183,7 +183,7 @@ Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/se
 
 * *Kann ich den Export anhalten?*
 
-    Ja. Klicken Sie auf "Deaktivieren".
+    Ja. Klicken Sie auf „Deaktivieren“.
 
 
 <!--Link references-->
@@ -194,4 +194,4 @@ Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/se
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -40,4 +40,4 @@
 
 Verwenden Sie die Anleitungen, die in [diesem](active-directory-aadconnect-o365-certs.md) Artikel beschrieben sind, um das Zertifikat zu erneuern.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

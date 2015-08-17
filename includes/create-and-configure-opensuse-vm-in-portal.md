@@ -59,4 +59,4 @@ In Abhängigkeit von dem auf Ihrem Computer ausgeführten Betriebssystem verwend
 
 [Image6]: ./media/create-and-configure-opensuse-vm-in-portal/putty.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

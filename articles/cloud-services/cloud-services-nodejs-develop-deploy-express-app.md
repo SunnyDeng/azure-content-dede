@@ -39,7 +39,7 @@ Führen Sie die folgenden Schritte aus, um ein neues Cloud-Dienst-Projekt namens
 
 	[AZURE.INCLUDE [install-dev-tools](../../includes/install-dev-tools.md)]
 
-2. Ändern Sie das Verzeichnis auf **c:\node**, und geben Sie die folgenden Befehle ein, um eine neue Projektmappe mit dem Namen **expressapp** und eine Webrolle mit dem Namen **WebRole1** zu erstellen:
+2. Ändern Sie das Verzeichnis auf **c:\\node**, und geben Sie die folgenden Befehle ein, um eine neue Projektmappe mit dem Namen **expressapp** und eine Webrolle mit dem Namen **WebRole1** zu erstellen:
 
 		PS C:\node> New-AzureServiceProject expressapp
 		PS C:\Node\expressapp> Add-AzureNodeWebRole
@@ -135,4 +135,4 @@ Sobald die Bereitstellung abgeschlossen ist, wird der Browser geöffnet und die 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

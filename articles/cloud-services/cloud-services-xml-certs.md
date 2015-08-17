@@ -20,7 +20,7 @@
 
 # Konfigurieren der Dienstdefinition und Konfiguration für ein Zertifikat
 
-Virtuellen Computern, in denen Ihre Web- oder Workerrollen ausgeführt werden, können Zertifikate zugeordnet werden. Nachdem Sie das Zertifikat in das Portal hochgeladen haben, müssen Sie die Dienstdefinition \(.csdef\) und Dienstkonfigurationsdateien \(.cscfg\) für das Zertifikat konfigurieren.
+Virtuellen Computern, in denen Ihre Web- oder Workerrollen ausgeführt werden, können Zertifikate zugeordnet werden. Nachdem Sie das Zertifikat in das Portal hochgeladen haben, müssen Sie die Dienstdefinition (.csdef) und Dienstkonfigurationsdateien (.cscfg) für das Zertifikat konfigurieren.
 
 Der virtuelle Computer kann auf den privaten Schlüssel des Zertifikats zugreifen, nachdem es installiert wurde. Aus diesem Grund sollten Sie den Zugriff auf Prozesse mit erhöhten Berechtigungen einschränken.
 
@@ -42,11 +42,11 @@ Hier ist ein Beispiel eines in der Dienstdefinition definierten Zertifikats.
 ```
 
 ### Berechtigungen
-Berechtigungen \(`permisionLevel`-Attribut\) können auf eine der folgenden Einstellungen festgelegt werden:
+Berechtigungen (`permisionLevel`-Attribut) können auf eine der folgenden Einstellungen festgelegt werden:
 
 | Berechtigungswert | Beschreibung |
 | ----------------  | ----------- |
-| limitedOrElevated | **\(Standard\)** Alle Rollenprozesse können auf den privaten Schlüssel zugreifen. |
+| limitedOrElevated | **(Standard)** Alle Rollenprozesse können auf den privaten Schlüssel zugreifen. |
 | elevated | Nur Prozesse mit erhöhten Rechten können auf den privaten Schlüssel zugreifen.|
 
 ## Beispiel einer Dienstkonfiguration
@@ -70,4 +70,4 @@ Hier ist ein Beispiel eines in der Dienstkonfiguration definierten Zertifikats.
 ## Nächste Schritte
 Überprüfen Sie das [XML-Schema der Dienstdefinition](https://msdn.microsoft.com/library/azure/ee758711.aspx) und das [XML-Schema der Dienstkonfiguration](https://msdn.microsoft.com/library/azure/ee758710.aspx).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

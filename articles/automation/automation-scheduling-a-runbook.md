@@ -96,4 +96,4 @@ Die folgenden Beispielbefehle zeigen, wie ein Zeitplan deaktiviert wird.
 - [Zeitplanobjekte in Azure Automation](http://msdn.microsoft.com/library/azure/dn940016.aspx)
 - [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook.md) 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

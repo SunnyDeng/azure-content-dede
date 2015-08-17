@@ -81,7 +81,7 @@ Wenn Sie für Ihren mobilen Dienst das .NET-Backend verwenden, führen Sie diese
           }
 
 
-3. Erweitern Sie im Projektmappen-Explorer in Visual Studio den Ordner **App_Start**, und öffnen Sie die Datei "WebApiConfig.cs".
+3. Erweitern Sie im Projektmappen-Explorer in Visual Studio den Ordner **App\_Start**, und öffnen Sie die Datei "WebApiConfig.cs".
 
     Beachten Sie in der Datei "WebApiConfig.cs", dass die Standard-Datenbankinitialisiererklasse von der `DropCreateDatabaseIfModelChanges`-Klasse abgeleitet wird. Dies bedeutet, dass jede Änderung am Modell dazu führt, dass die Tabelle gelöscht und dem neuen Modell entsprechend erneut erstellt wird. Die Daten in der Tabelle gehen also verloren, und es wird ein erneutes Seeding für die Tabelle ausgeführt. Ändern Sie die "Seed"-Methode des Datenbankinitialisierers so, dass die `Seed()`-Initialisierungsfunktion wie folgt aussieht, um die neue "DueDate"-Spalte zu initialisieren. Speichern Sie die Datei "WebApiConfig.cs".
 
@@ -241,4 +241,4 @@ Wenn ein Pushvorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePush
 [Get started with data]: mobile-services-windows-phone-get-started-data.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

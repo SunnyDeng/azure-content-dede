@@ -111,7 +111,7 @@ adalProvider.init(
 ...
 ```
 
-Sie verfügen jetzt über eine sichere einseitige Anwendung, mit der Benutzer angemeldet und per Bearertoken geschützte Anforderungen für die Back-End-API ausgegeben werden können. Wenn ein Benutzer auf den Link `TodoList` klickt, wird „adal.js“ zur Anmeldung automatisch an Azure AD umgeleitet, falls dies erforderlich ist. Außerdem ordnet „adal.js“ allen AJAX-Anforderungen, die an das Back-End der Anwendung gesendet werden, automatisch ein access_token-Element zu. Die obigen Angaben beschreiben die erforderlichen Mindestvoraussetzungen, die zum Erstellen einer einseitigen Anwendung per „adal.js“ erforderlich sind. Es gibt aber noch einige andere Features, die in einseitigen Anwendungen nützlich sind:
+Sie verfügen jetzt über eine sichere einseitige Anwendung, mit der Benutzer angemeldet und per Bearertoken geschützte Anforderungen für die Back-End-API ausgegeben werden können. Wenn ein Benutzer auf den Link `TodoList` klickt, wird „adal.js“ zur Anmeldung automatisch an Azure AD umgeleitet, falls dies erforderlich ist. Außerdem ordnet „adal.js“ allen AJAX-Anforderungen, die an das Back-End der Anwendung gesendet werden, automatisch ein access\_token-Element zu. Die obigen Angaben beschreiben die erforderlichen Mindestvoraussetzungen, die zum Erstellen einer einseitigen Anwendung per „adal.js“ erforderlich sind. Es gibt aber noch einige andere Features, die in einseitigen Anwendungen nützlich sind:
 
 - Zum expliziten Ausgeben von Anmeldungs- und Abmeldungsanforderungen können Sie Funktionen in Ihren Controllern definieren, mit denen „adal.js“ aufgerufen wird. In `App/Scripts/homeCtrl.js`:
 
@@ -151,4 +151,4 @@ Als Referenz stellen wir [hier](https://github.com/AzureADQuickStarts/SinglePage
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

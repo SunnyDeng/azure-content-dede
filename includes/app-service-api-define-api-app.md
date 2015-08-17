@@ -71,7 +71,7 @@ Die API-Testseite wird jedoch durch die Vorlage für neue Azure API-App-Projekte
 
 **Hinweis:** Wenn Sie die API-App als *Öffentlich (anonym)* und mit aktivierter Swagger-Benutzeroberfläche bereitstellen, kann praktisch jeder die Swagger-Benutzeroberfläche zum Ermitteln und Aufrufen Ihrer APIs verwenden.
 
-1. Öffnen Sie die Datei *App_Start/SwaggerConfig.cs*, und suchen Sie nach **EnableSwaggerUI**:
+1. Öffnen Sie die Datei *App\_Start/SwaggerConfig.cs*, und suchen Sie nach **EnableSwaggerUI**:
 
 	![](./media/app-service-api-define-api-app/12-enable-swagger-ui-with-box.png)
 
@@ -97,4 +97,4 @@ Führen Sie die folgenden Schritte aus, um die API-Testseite anzuzeigen.
 
 	![](./media/app-service-api-define-api-app/15-swagger-ui-post-test.png)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

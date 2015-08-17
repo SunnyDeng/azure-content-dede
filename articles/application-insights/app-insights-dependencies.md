@@ -27,7 +27,7 @@ Aktuell steht die integrierte Abhängigkeitsüberwachung für folgende Apps und 
 * ASP.NET-Web-Apps und Dienste, die auf einem IIS-Server oder auf Azure ausgeführt werden
 * [Java-Web-Apps](app-insights-java-agent.md)
 
-Für andere Typen wie Geräte-Apps können Sie mithilfe der TrackDependency-API Ihre eigene Überwachung schreiben.
+Für andere Typen wie Geräte-Apps können Sie mithilfe der [TrackDependency-API](app-insights-api-custom-events-metrics.md#track-dependency) Ihre eigene Überwachung schreiben.
 
 Der standardmäßig verfügbare Abhängigkeitsmonitor meldet derzeit Aufrufe an diese Abhängigkeitstypen:
 
@@ -53,7 +53,7 @@ Java-Webserver | [Java-Web-Apps](app-insights-java-agent.md)
 
 Für den Statusmonitor für IIS-Server müssen Sie das Quellprojekt nicht mit dem Application Insights-SDK neu erstellen.
 
-## <a name="diagnosis"></a>Diagnostizieren von Leistungsproblemen der Abhängigkeit
+## <a name="diagnosis"></a> Diagnostizieren von Leistungsproblemen der Abhängigkeit
 
 So bewerten Sie die Leistung der Anforderungen an den Server
 
@@ -129,4 +129,4 @@ Wenn Sie das Standardmodul für die Nachverfolgung von Abhängigkeiten deaktivie
 
 <!--Link references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

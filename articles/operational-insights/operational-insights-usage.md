@@ -6,14 +6,16 @@
    authors="bandersmsft"
    manager="jwhit"
    editor="tysonn" />
+
 <tags
    ms.service="operational-insights"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/21/2015"
+   ms.date="08/05/2015"
    ms.author="banders" />
+
 
 # Verwalten von Servern und Nutzungsdaten
 
@@ -27,7 +29,7 @@ Sie können Ihre Nutzung über die Kachel **Server und Verwendung** im Dashboard
 
 ![Abbildung der Kachel "Server und Verwendung"](./media/operational-insights-usage/overview-servers-usage.png)
 
-Wenn Sie die tägliche Nutzungsgrenze überschritten haben oder sich dem Grenzwert nähern, können Sie optional eine Lösung entfernen, um die an den Operational Insights-Dienst gesendete Datenmenge zu reduzieren. Weitere Informationen zum Entfernen von Lösungen finden Sie unter [Verwenden von Solutions Gallery zum Hinzufügen oder Entfernen von Lösungen](operational-insights-add-solution.md).
+Wenn Sie die tägliche Nutzungsgrenze überschritten haben oder sich dem Grenzwert nähern, können Sie optional eine Lösung entfernen, um die an den Operational Insights-Dienst gesendete Datenmenge zu reduzieren. Weitere Informationen zum Entfernen von Lösungen finden Sie unter [Verwenden von Solutions Gallery zum Hinzufügen oder Entfernen von Lösungen](operational-insights-setup-workspace.md).
 
 Wenn eine Operations Manager-Verwaltungsgruppe beim Senden von Daten an den Operational Insights-Dienst Probleme feststellt, können Sie das Problem beheben oder die Gruppe nach Bedarf aus Operational Insights entfernen.
 
@@ -59,4 +61,4 @@ Im Dashboard **Nutzung** werden die folgenden Informationen angezeigt:
 
 [AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -63,4 +63,4 @@ Zusätzliche Informationen und Konfigurationen zu SharePoint in Azure finden Sie
 
 - [Bereitstellen von Office 365-Verzeichnissynchronisierung (DirSync) in Microsoft Azure](https://technet.microsoft.com/library/dn635310.aspx)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

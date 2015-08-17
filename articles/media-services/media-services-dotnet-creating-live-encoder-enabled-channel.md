@@ -501,4 +501,4 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 [Arbeiten mit Kanälen, von denen Livecodierung von Single-Bitrate- in Multi-Bitrate-Livedatenströme ausgeführt wird](media-services-manage-live-encoder-enabled-channels.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

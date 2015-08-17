@@ -35,7 +35,7 @@ Im nächsten Schritt erstellen Sie die Android-Anwendung.
 
 1. Führen Sie die Schritte im Lernprogramm [Erste Schritte mit Notification Hubs (Android)](notification-hubs-android-get-started.md) aus, um Ihre App zu erstellen und für den Empfang von Pushbenachrichtigungen von GCM zu konfigurieren.
 
-2. Öffnen Sie die Datei **res/layout/activity_main.xml**, und ersetzen Sie den Inhalt durch die folgenden Inhaltsdefinitionen.
+2. Öffnen Sie die Datei **res/layout/activity\_main.xml**, und ersetzen Sie den Inhalt durch die folgenden Inhaltsdefinitionen.
  
     Dadurch werden neue EditText-Steuerelemente für die Anmeldung als Benutzer hinzugefügt. Zudem wird ein Feld für eine Benutzernamenmarkierung hinzugefügt, die in den von Ihnen gesendeten Benachrichtigungen enthalten ist.
 			
@@ -133,7 +133,7 @@ Im nächsten Schritt erstellen Sie die Android-Anwendung.
 			Recipient username tag
 		</string>
 
-	Das Layout von „main_activity.xml“ sollte jetzt wie folgt aussehen:
+	Das Layout von „main\_activity.xml“ sollte jetzt wie folgt aussehen:
 
 	![][A1]
 
@@ -434,4 +434,4 @@ Im nächsten Schritt erstellen Sie die Android-Anwendung.
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Konfigurieren der Lastenausgleichsmethode ";Failover";";"
-   description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Lastenausgleichsmethode ";Failover"; in Traffic Manager"
+   pageTitle="Konfigurieren der Lastenausgleichsmethode &quot;Failover&quot;&quot;"
+   description="In diesem Artikel finden Sie Informationen zum Konfigurieren der Lastenausgleichsmethode &quot;Failover&quot; in Traffic Manager"
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
@@ -51,4 +51,4 @@ Beachten Sie, dass Azure Websites unabhängig vom Websitemodus bereits Failoverl
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -50,4 +50,4 @@ Fügen Sie beispielsweise folgenden Code hinzu, um Inhalt eine Stunde lang zwisc
 
 [Verwalten des Ablaufs von Blobinhalten in Azure CDN (Content Delivery Network)](./cdn-manage-expiration-of-blob-content.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

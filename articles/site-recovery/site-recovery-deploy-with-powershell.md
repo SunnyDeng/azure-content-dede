@@ -94,17 +94,17 @@ Führen Sie diese Cmdlets in PowerShell aus:
 	$AzureSubscription = Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
 
 
-Ersetzen Sie die Elemente in "\< \>" durch Ihre jeweiligen Informationen.
+Ersetzen Sie die Elemente in "< >" durch Ihre jeweiligen Informationen.
 
 ## Schritt 2: Erstellen eines Site Recovery-Tresors
 
-Ersetzen Sie in PowerShell die Elemente in "\< \>" durch Ihre jeweiligen Informationen. Führen Sie anschließend die folgenden Befehle aus:
+Ersetzen Sie in PowerShell die Elemente in "< >" durch Ihre jeweiligen Informationen. Führen Sie anschließend die folgenden Befehle aus:
 
 ```
 
 	$VaultName = "<testvault123>"
 	$VaultGeo  = "<Southeast Asia>"
-	$OutputPathForSettingsFile = "<c:\>"
+	$OutputPathForSettingsFile = "<C:\>"
 
 ```
 
@@ -125,7 +125,7 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 	
 		$VaultName = "<testvault123>"
 		$VaultGeo  = "<Southeast Asia>"
-		$OutputPathForSettingsFile = "<c:\>"
+		$OutputPathForSettingsFile = "<C:\>"
 	
 		$VaultSetingsFile = Get-AzureSiteRecoveryVaultSettingsFile -Location $VaultGeo -Name $VaultName -Path $OutputPathForSettingsFile;
 	
@@ -186,7 +186,7 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 	
 	$BinPath = $env:SystemDrive+"\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin"
 	pushd $BinPath
-	$encryptionFilePath = "C:\temp\"
+	$encryptionFilePath = "C:\temp"
 	.\DRConfigurator.exe /r /Credentials $VaultSettingFilePath /vmmfriendlyname $env:COMPUTERNAME /dataencryptionenabled $encryptionFilePath /startvmmservice
 	
 	```
@@ -329,9 +329,9 @@ Um den Schutz zu aktivieren, müssen die Eigenschaften "Betriebssystem" und "Bet
 	
 	```
 	
-2. Rufen Sie die Schutzentität \(VM\) durch Ausführen des folgenden Befehls ab:
+2. Rufen Sie die Schutzentität (VM) durch Ausführen des folgenden Befehls ab:
 		
-	\`\`\`
+	```
 	
 	$protectionEntity = Get-AzureSiteRecoveryProtectionEntity -Name $VMName -ProtectionContainer $protectionContainer
 		
@@ -356,7 +356,7 @@ Um den Abschluss des Vorgangs zu überprüfen, führen Sie die Schritte in [Übe
 
 1. Erstellen Sie eine XML-Datei als Vorlage für Ihren Wiederherstellungsplan mithilfe der unten aufgeführten Daten, und speichern Sie sie dann unter "C:\\RPTemplatePath.xml".
 2. Ändern Sie die RecoveryPlan-Knoten "Id", "Name", "PrimaryServerId" und "SecondaryServerId".
-3. Ändern Sie den "ProtectionEntity"-Knoten "PrimaryProtectionEntityId" \(vmid aus VMM\).
+3. Ändern Sie den "ProtectionEntity"-Knoten "PrimaryProtectionEntityId" (vmid aus VMM).
 4. Sie können weitere virtuelle Computer hinzufügen, indem Sie weitere "ProtectionEntity"-Knoten hinzufügen.
 	
 	```
@@ -461,4 +461,4 @@ if($isJobLeftForProcessing)
 
 <LI>Wenn Sie Fragen haben, besuchen Sie das<a href="http://go.microsoft.com/fwlink/?LinkId=313628"> Azure Recovery Services-Forum</a>.</LI></UL>
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -41,4 +41,4 @@ Verwenden Sie die oben abgerufene URL, um die archivierte Nachricht aus dem Azur
 [1]: ./media/app-service-logic-archive-as2-messages/Tracking.jpg
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

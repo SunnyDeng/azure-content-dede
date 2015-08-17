@@ -220,4 +220,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Namensauflösungen in virtuellen 
 
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-DNS/HDInsight.HBase.VPN.diagram.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

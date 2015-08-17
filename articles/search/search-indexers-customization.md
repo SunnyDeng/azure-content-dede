@@ -123,4 +123,4 @@ Selbst wenn Sie die Tolerierung einiger Fehler festlegen, werden durch den [API-
 Damit sind wir am Ende angelangt. Wenn Sie Ideen oder Vorschläge für zukünftige Artikel haben, senden Sie uns einen Tweet mit dem Hashtag #AzureSearch, oder geben Sie Ihre Anregungen auf unserer [UserVoice-Seite](http://feedback.azure.com/forums/263029-azure-search) ein.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

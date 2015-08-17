@@ -10,7 +10,7 @@
 <tags
    ms.service="dns"
    ms.devlang="na"
-   ms.topic="get-started-article"
+   ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="04/28/2015"
@@ -51,7 +51,7 @@ Wenn ein rekursiver DNS-Server eine Abfrage für einen DNS-Eintrag erhält, z. 
 
 Dieser Vorgang wird als "Auflösung von DNS-Namen" bezeichnet. (Streng genommen umfasst die DNS-Auflösung zusätzliche Schritte wie z. B. Folgen von CNAMEs, aber für das Verständnis der Funktionsweise der DNS-Delegierung ist dies nicht wichtig.)
 
-Wie verweist eine übergeordnete Zone auf die Namenserver für eine untergeordnete Zone? Dafür wird eine besondere Art von DNS-Eintrag verwendet, ein sogenannter NS-Eintrag (NS steht für Namenserver). Die Stammzone enthält beispielsweise NS-Einträge für "com", die die Namenserver für die Zone "com" anzeigen. Die com-Zone hingegen enthält NS-Einträge für "contoso.com", die die Namenserver für die Zone "contoso.com" anzeigen. Das Einrichten der NS-Einträge für eine untergeordnete Zone in einer übergeordneten Zone wird Delegieren der Domäne genannt.
+Wie verweist eine übergeordnete Zone auf die Namenserver für eine untergeordnete Zone? Dafür wird eine besondere Art von DNS-Eintrag verwendet, ein sogenannter NS-Eintrag (NS steht für Namenserver). Die Stammzone enthält beispielsweise NS-Einträge für „com“, die die Namenserver für die Zone „com“ anzeigen. Die com-Zone hingegen enthält NS-Einträge für "contoso.com", die die Namenserver für die Zone "contoso.com" anzeigen. Das Einrichten der NS-Einträge für eine untergeordnete Zone in einer übergeordneten Zone wird Delegieren der Domäne genannt.
 
 Die folgende Abbildung veranschaulicht dieses Konzept.
 
@@ -72,7 +72,7 @@ Zum Einrichten der Delegierung müssen Sie den Namenserver für die Zone kennen.
 
 Mithilfe von Azure PowerShell können die autoritativen NS-Einträge folgendermaßen abgerufen werden. (Der Eintragsname "@" wird verwendet, um auf Einträge an der Spitze der Zone zu verweisen.):
 
-	PS C:\> $zone = New-AzureDnsZone –Name contoso.com –ResourceGroupName MyAzureResourceGroup
+	PS C:\> $zone = Get-AzureDnsZone –Name contoso.com –ResourceGroupName MyAzureResourceGroup
 	PS C:\> Get-AzureDnsRecordSet –Name “@” –RecordType NS –Zone $zone
 
 	Name              : @
@@ -161,4 +161,4 @@ Wie beim Delegieren mithilfe einer Registrierungsstelle können wir überprüfen
 [REST-API-Referenz für Azure DNS](https://msdn.microsoft.com/library/azure/mt163862.aspx)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

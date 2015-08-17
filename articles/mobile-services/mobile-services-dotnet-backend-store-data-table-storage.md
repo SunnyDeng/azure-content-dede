@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="06/09/2015" 
 	ms.author="glenga"/>
+
 
 # Erstellen eines mobilen .NET-Back-End-Diensts, der den Tabellenspeicher anstelle einer SQL-Datenbank verwendet
 
@@ -54,6 +56,7 @@ Zunächst müssen Sie den mobilen Dienst und das .NET Back-End-Codeprojekt zum H
 
 		<add name="StorageConnectionString" connectionString="<STORAGE_CONNECTION_STRING>" />
 
+
 9. Ersetzen Sie den Platzhalter `<STORAGE_CONNECTION_STRING>` durch die Verbindungszeichenfolge aus Schritt 6.
 
 	Der mobile Dienst verwendet diese Verbindungszeichenfolge, wenn er auf dem lokalen Computer ausgeführt wird, sodass Sie den Code testen können, bevor Sie ihn veröffentlichen. Wenn der mobile Dienst in Azure ausgeführt wird, verwendet er stattdessen den im Portal festgelegten Verbindungszeichenfolgen-Wert und ignoriert die Verbindungszeichenfolge im Projekt.
@@ -70,7 +73,7 @@ Da das TodoList-Schnellstartprojekt für die Ausführung mit einer SQL-Datenbank
 	        public bool Complete { get; set; }
 	    }
 
-	>[AZURE.NOTE]Der Typ **StorageData** verfügt über eine Id-Eigenschaft, die einen zusammengesetzten Schlüssel erfordert. Dieser ist eine Zeichenfolge im Format *partitionId*,*rowValue*.
+	>[AZURE.NOTE]Der Typ **StorageData** verfügt über eine Id-Eigenschaft, die einen zusammengesetzten Schlüssel erfordert. Dieser ist eine Zeichenfolge im Format *partitionId*, *rowValue*.
 
 2. Fügen Sie in **TodoItemController** die folgende using-Anweisung hinzu.
 
@@ -93,7 +96,7 @@ Da das TodoList-Schnellstartprojekt für die Ausführung mit einer SQL-Datenbank
 
 	Hierdurch wird mit der Verbindungszeichenfolge für das Speicherkonto ein neuer Speicherdomänen-Manager für den angeforderten Controller erstellt.
 
-3. Ersetzen Sie die vorhandene **GetAllTodoItems**-Methode durch folgenden Code:
+3. Ersetzen Sie die vorhandene **GetAllTodoItems**-Methode durch folgenden Code.
 
 		public Task<IEnumerable<TodoItem>> GetAllTodoItems(ODataQueryOptions options)
         {
@@ -158,4 +161,4 @@ Da Sie jetzt gesehen haben, wie einfach sich der Tabellenspeicher mit dem .NET B
 [MongoLab Add-on Page]: /gallery/store/mongolab/mongolab
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

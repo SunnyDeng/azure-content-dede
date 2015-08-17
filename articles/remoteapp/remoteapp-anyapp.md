@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Mit RemoteApp jede Anwendung auf jedem Gerät ausführen"
-   description="Erfahren Sie, wie Sie mithilfe von RemoteApp jede Anwendung für Benutzer freigeben können."
+   pageTitle="Mit Azure RemoteApp jede Windows-Anwendung auf jedem Gerät ausführen"
+   description="Erfahren Sie, wie Sie mithilfe von Azure RemoteApp jede Windows-App für Benutzer freigeben können."
    services="remoteapp"
    documentationCenter=""
    authors="lizap"
@@ -13,16 +13,18 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="05/28/2015"
+   ms.date="08/03/2015"
    ms.author="elizapo"/>
 
-# Mit RemoteApp jede Anwendung auf jedem Gerät ausführen
+# Mit RemoteApp jede Windows-Anwendung auf jedem Gerät ausführen
 
 In diesem Lernprogramm erfahren Sie, wie eine Windows-Anwendung überall auf jedem Gerät ausgeführt werden kann – und zwar genau jetzt. Egal, ob Internet Explorer 6, eine vor zehn Jahren geschriebene benutzerdefinierte Anwendung oder eine Office-App – Ihre Benutzer sind für diese Anwendungen nicht länger an ein bestimmtes Betriebssystem (wie Windows XP) gebunden.
 
-Mithilfe von RemoteApp können Ihre Benutzer auch ihre eigenen Android- oder Apple-Geräte verwenden und die gleiche Nutzererfahrung wie mit Windows (oder Windows Phones) machen. Dies geschieht durch Hosten der Windows-Anwendung in einer Sammlung virtueller Windows-Computer in Azure, auf die Benutzer überall zugreifen können, wo eine Internetverbindung besteht. Lassen Sie uns anfangen.
+Mithilfe von Azure RemoteApp können Ihre Benutzer auch ihre eigenen Android- oder Apple-Geräte verwenden und die gleiche Nutzererfahrung wie mit Windows (oder Windows Phones) machen. Dies geschieht durch Hosten der Windows-Anwendung in einer Sammlung virtueller Windows-Computer in Azure, auf die Benutzer überall zugreifen können, wo eine Internetverbindung besteht.
 
-In diesem Lernprogramm teilen wir Access mit allen Benutzern. Da Access eine Datenbank ist und die Datenbank hilfreich sein soll, unternehmen wir einige zusätzliche Schritte, um Benutzern den Zugriff auf die Access-Datenfreigabe zu ermöglichen.
+In diesem Lernprogramm teilen wir Access mit allen Benutzern. Sie können jedoch jede BELIEBIGE Anwendung verwednen. Solange Sie die App auf einem Windows Server 2012 R2-Computer installieren können, können Sie sie mithilfe der nachfolgenden Schritte freigeben. Sie können die[App-Anforderungen](remoteapp-appreqs) überprüfen, um sicherzustellen, dass Ihre App funktioniert.
+
+Bitte beachten Sie, dass da Access eine Datenbank ist und die Datenbank hilfreich sein soll, wir einige zusätzliche Schritte unternehmen, um Benutzern den Zugriff auf die Access-Datenfreigabe zu ermöglichen. Wenn Ihre App keine Datenbank ist oder es nicht erforderlich ist, dass die Benutzer auf eine Dateifreigabe zugreifen können, können Sie die Schritte in diesem Lernprogramm überspringen.
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
@@ -113,4 +115,4 @@ Nun, da Sie eine Sammlung erstellen können, versuchen Sie das Erstellen einer [
 
 <!--Image references-->
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

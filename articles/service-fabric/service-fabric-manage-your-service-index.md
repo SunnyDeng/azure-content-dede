@@ -50,4 +50,4 @@ In den folgenden Artikeln wird die Skalierung und Partitionierung beschrieben:
 - [Skalieren von Service Fabric-Anwendungen](service-fabric-concepts-scalability.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

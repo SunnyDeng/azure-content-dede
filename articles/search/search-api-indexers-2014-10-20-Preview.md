@@ -1,8 +1,8 @@
-<properties pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" description="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" services="search"  documentationCenter="" authors="HeidiSteen" manager="mblythe" />
+<properties pageTitle="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" description="Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" />
 
 <tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="07/08/2015" ms.author="heidist" />
 
-#Indexer-Vorgänge \(REST-API für Azure Search-Dienst: 2014-10-20-Preview\)
+#Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2014-10-20-Preview)
 
 > [AZURE.NOTE]Dieser Artikel beschreibt den Prototyp einer neuen Funktion, die nicht in der veröffentlichten Version der API enthalten ist. Weitere Informationen zu Versionen und Unterstützungsmöglichkeiten finden Sie unter[Versionsverwaltung für den Azure Search-Dienst](http://msdn.microsoft.com/library/azure/dn864560.aspx) auf MSDN. Weitere Informationen zu anderen Funktionen in dieser Vorschau-API finden Sie unter [Azure Search-Dienst REST API-Version: 2014-10-20-Preview](search-api-2014-10-20-preview.md).
 
@@ -10,7 +10,7 @@
 
 Azure Search kann direkt mit einigen allgemeinen Datenquellen integrieren. Das Schreiben von Code zum Indizieren Ihrer Daten ist somit überflüssig. Um diese Funktion einzurichten, rufen Sie die Azure Search-API zum Erstellen und Verwalten mehrerer**Indexer** und **Datenquellen** auf.
 
-Eine **Datenquelle** gibt an, welche Daten indiziert werden müssen. Sie legt außerdem die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search fest, um Änderungen an den Daten effizient identifizieren zu können \(wie z. B. geänderte oder gelöschte Zeilen in einer Datenbanktabelle\).
+Eine **Datenquelle** gibt an, welche Daten indiziert werden müssen. Sie legt außerdem die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search fest, um Änderungen an den Daten effizient identifizieren zu können (wie z. B. geänderte oder gelöschte Zeilen in einer Datenbanktabelle).
 
 Ein **Indexer** beschreibt, wie die Daten von der Datenquelle in einen Suchindex fließen. Ein Indexer kann:
 
@@ -49,7 +49,7 @@ Die Schritte zum Einrichten der automatischen Indizierung lauten wie folgt:
 Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](http://msdn.microsoft.com/library/azure/dn798934.aspx).
 
 ## Vorgänge bezüglich Datenquellen
-Das Erstellen und Verwalten von Datenquellen in Azure Search erfolgt über einfache HTTP-Anforderungen \(POST, GET, PUT, DELETE\) für eine bestimmte Datenquelle, die als Ressource vorliegt.
+Das Erstellen und Verwalten von Datenquellen in Azure Search erfolgt über einfache HTTP-Anforderungen (POST, GET, PUT, DELETE) für eine bestimmte Datenquelle, die als Ressource vorliegt.
 
 ### Datenquelle erstellen
 
@@ -69,7 +69,7 @@ Alternativ können Sie PUT verwenden und den Namen der Datenquelle für den URI 
 
 HTTPS ist für alle Dienstanforderungen erforderlich. Die Anforderung **Datenquelle erstellen** kann mit der POST- oder PUT-Methode konstruiert werden. Wenn POST verwendet wird, müssen Sie einen Namen und eine Definition der Datenquelle im Anforderungstext bereitstellen. Bei Verwendung von PUT ist der Name Teil der URL. Wenn die Datenquelle nicht vorhanden ist, wird sie erstellt. Wenn sie bereits vorhanden ist, wird sie mit der neuen Definition aktualisiert.
 
-Der Name der Datenquelle muss in Kleinbuchstaben angegeben werden, mit einem Buchstaben oder einer Zahl beginnen, darf keine Schrägstriche oder Punkte enthalten und muss weniger als 128 Zeichen lang sein. Der Rest des Namens \(nach dem Buchstaben bzw. der Zahl zu Beginn des Namens\) kann beliebige Buchstaben, Zahlen und Bindestriche enthalten, solange die Striche nicht aufeinander folgen.
+Der Name der Datenquelle muss in Kleinbuchstaben angegeben werden, mit einem Buchstaben oder einer Zahl beginnen, darf keine Schrägstriche oder Punkte enthalten und muss weniger als 128 Zeichen lang sein. Der Rest des Namens (nach dem Buchstaben bzw. der Zahl zu Beginn des Namens) kann beliebige Buchstaben, Zahlen und Bindestriche enthalten, solange die Striche nicht aufeinander folgen.
 
 `api-version` ist erforderlich. Die gültigen Werte sind `2014-10-20-Preview` oder eine höhere Version.
 
@@ -78,7 +78,7 @@ Der Name der Datenquelle muss in Kleinbuchstaben angegeben werden, mit einem Buc
 In der folgenden Liste werden die erforderlichen und optionalen Anforderungsheader beschrieben.
 
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
-- `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgenwert. Die Anforderung **Datenquelle erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel \(im Gegensatz zum Abfrageschlüssel\) festgelegt ist. 
+- `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgenwert. Die Anforderung **Datenquelle erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel (im Gegensatz zum Abfrageschlüssel) festgelegt ist. 
  
 Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Vorschauportal. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 
@@ -105,7 +105,7 @@ Die Anforderung kann die folgenden Eigenschaften enthalten:
 - `description`: Eine optionale Beschreibung. 
 - `type`: Erforderlich. Verwenden Sie `azuresql` für eine Azure-SQL-Datenquelle und `docdb` für eine DocumentDB-Datenquelle.
 - `container`: 
-	- Die erforderliche Eigenschaft `name` gibt die Tabelle bzw. Ansicht \(für Azure SQL-Datenquelle\) oder eine Sammlung \(für DocumentDB-Datenquelle\) an, die indiziert werden soll. 
+	- Die erforderliche Eigenschaft `name` gibt die Tabelle bzw. Ansicht (für Azure SQL-Datenquelle) oder eine Sammlung (für DocumentDB-Datenquelle) an, die indiziert werden soll. 
 	- DocumentDB-Datenquellen unterstützen auch die optionale Eigenschaft `query` zum Angeben einer Abfrage, die ein beliebiges JSON-Dokumentlayout in ein Flatfile-Schema reduziert, welches von Azure Search indiziert werden kann.   
 - Die optionalen Richtlinien `dataChangeDetectionPolicy` und `dataDeletionDetectionPolicy` werden im Folgenden beschrieben.
 
@@ -282,9 +282,9 @@ Bei erfolgreicher Antwort wird der Statuscode "204 Kein Inhalt" zurückgegeben.
 
 Ein Indexer ist die Ressource, die Datenquellen mit Zielsuchindizes verbindet. Sie sollten jeweils einen Indexer pro Kombination aus Zielindex und Datenquelle erstellen. Sie können mehrere Indexer erstellen, die in den gleichen Index schreiben. Ein Indexer kann jedoch nur in einen einzigen Index schreiben.
 
-Das Erstellen und Verwalten der Indexer erfolgt über einfache HTTP-Anforderungen \(POST, GET, PUT, DELETE\) für die angegebene Indexer-Ressource.
+Das Erstellen und Verwalten der Indexer erfolgt über einfache HTTP-Anforderungen (POST, GET, PUT, DELETE) für die angegebene Indexer-Ressource.
 
-Nach dem Erstellen eines Indexers können Sie seinen Ausführungsstatus mit dem Vorgang [Indexer-Status abrufen](#GetIndexerStatus) ermitteln. Sie können einen Indexer jederzeit ausführen \(anstelle von oder zusätzlich zur regelmäßigen Ausführung nach einem Zeitplan\), indem Sie den Vorgang [Indexer ausführen](#RunIndexer) verwenden.
+Nach dem Erstellen eines Indexers können Sie seinen Ausführungsstatus mit dem Vorgang [Indexer-Status abrufen](#GetIndexerStatus) ermitteln. Sie können einen Indexer jederzeit ausführen (anstelle von oder zusätzlich zur regelmäßigen Ausführung nach einem Zeitplan), indem Sie den Vorgang [Indexer ausführen](#RunIndexer) verwenden.
 
 ### Indexer erstellen
 
@@ -320,7 +320,7 @@ Die Syntax für die Strukturierung der Anforderungsnutzlast ist wie folgt. Eine 
 
 Ein Indexer kann optional einen Zeitplan angeben. Wenn ein Zeitplan vorliegt, wird der Indexer regelmäßig gemäß Zeitplan ausgeführt. Der Zeitplan besitzt die folgenden Attribute:
 
-- `interval`: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein \(eine eingeschränkte Teilmenge eines [ISO 8601-Zeitdauerwerts](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)\). Das Muster hierfür lautet wie folgt: `P(nD)(T(nH)(nM))`. Beispiele: `PT15M` = alle 15 Minuten, `PT2H` = alle 2 Stunden. 
+- `interval`: Erforderlich. Ein Zeitdauerwert, der ein Intervall oder den Zeitraum für Indexer-Ausführungen angibt. Das kleinste zulässige Intervall beträgt 5 Minuten. Das längste ist ein Tag. Es muss als XSD-Wert "dayTimeDuration" formatiert sein (eine eingeschränkte Teilmenge eines [ISO 8601-Zeitdauerwerts](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration)). Das Muster hierfür lautet wie folgt: `P(nD)(T(nH)(nM))`. Beispiele: `PT15M` = alle 15 Minuten, `PT2H` = alle 2 Stunden. 
 
 - `startTime`: Erforderlich. Ein UTC-DateTime-Wert, der angibt, wann die Ausführung des Indexers beginnen soll.
 
@@ -462,7 +462,7 @@ Der Vorgang **Indexer-Status abrufen** ruft den aktuellen Status und den Ausfüh
 
 Statuscode: "200 OK" bei erfolgreicher Antwort.
 
-Der Antworttext enthält Informationen über den Gesamtintegritätsstatus des Indexers, den letzten Indexer-Aufruf, sowie den Verlauf der jüngsten Indexer-Aufrufe \(sofern vorhanden\).
+Der Antworttext enthält Informationen über den Gesamtintegritätsstatus des Indexers, den letzten Indexer-Aufruf, sowie den Verlauf der jüngsten Indexer-Aufrufe (sofern vorhanden).
 
 Ein Beispiel-Antworttext sieht folgendermaßen aus:
 
@@ -516,13 +516,13 @@ Das Indexer-Ausführungsergebnis enthält die folgenden Eigenschaften:
 
 - `errors`: Eine Liste der auf Elementebene aufgetretenen Fehler, falls vorhanden.
 
-- `itemsProcessed`: Die Anzahl der vom Indexer in dieser Ausführung zu indizierenden Datenquellen-Elemente \(z. B. Zeilen in Tabelle\).
+- `itemsProcessed`: Die Anzahl der vom Indexer in dieser Ausführung zu indizierenden Datenquellen-Elemente (z. B. Zeilen in Tabelle).
 
 - `itemsFailed`: Die Anzahl der Elemente, die während der Ausführung fehlgeschlagen sind.
  
-- `initialTrackingState`: Ist immer `null`, wenn der Indexer erstmalig ausgeführt wird oder wenn die Richtlinie für die Änderungsnachverfolgung für Daten für die verwendete Datenquelle nicht aktiviert ist. Wenn eine solche Richtlinie aktiviert ist, gibt dieser Wert in den nachfolgenden Ausführungen den ersten \(niedrigste Priorität\) Änderungsnachverfolgungswert an, der bei dieser Ausführung verarbeitet wurde.
+- `initialTrackingState`: Ist immer `null`, wenn der Indexer erstmalig ausgeführt wird oder wenn die Richtlinie für die Änderungsnachverfolgung für Daten für die verwendete Datenquelle nicht aktiviert ist. Wenn eine solche Richtlinie aktiviert ist, gibt dieser Wert in den nachfolgenden Ausführungen den ersten (niedrigste Priorität) Änderungsnachverfolgungswert an, der bei dieser Ausführung verarbeitet wurde.
 
-- `finalTrackingState`: Ist immer `null` wenn die Richtlinie für die Änderungsnachverfolgung für Daten für die verwendete Datenquelle nicht aktiviert ist. Andernfalls wird der neueste \(höchste Priorität\) Änderungsnachverfolgungswert angegeben, der bei dieser Ausführung erfolgreich verarbeitet wurde.
+- `finalTrackingState`: Ist immer `null` wenn die Richtlinie für die Änderungsnachverfolgung für Daten für die verwendete Datenquelle nicht aktiviert ist. Andernfalls wird der neueste (höchste Priorität) Änderungsnachverfolgungswert angegeben, der bei dieser Ausführung erfolgreich verarbeitet wurde.
 
 <a name="IndexerExecutionStatus"></a>**Status der Indexer-Ausführung**
 
@@ -534,14 +534,14 @@ Der Status der Indexer-Ausführung erfasst den Status einer einzelnen Indexer-Au
 
 - `transientFailure` Gibt an, dass beim Indexer-Aufruf ein Fehler aufgetreten ist, der Fehler jedoch möglicherweise nur vorübergehend ist. Die nachfolgenden Indexer-Aufrufe werden wie geplant ausgeführt, falls zutreffend.
 
-- `persistentFailure` Gibt an, dass der Indexer fehlgeschlagen ist und wahrscheinlich ein Eingreifen des Benutzers erforderlich ist \(z. B. aufgrund einer Schema-Inkompatibilität zwischen der Datenquelle und der Zielindex\). Die geplante Indexer-Ausführungen wird gestoppt; eine Benutzeraktion ist erforderlich, um das Problem zu beheben \(beschrieben in der `errorMessage`-Eigenschaft\); anschließend muss die Indexer-Ausführung neu gestartet werden.
+- `persistentFailure` Gibt an, dass der Indexer fehlgeschlagen ist und wahrscheinlich ein Eingreifen des Benutzers erforderlich ist (z. B. aufgrund einer Schema-Inkompatibilität zwischen der Datenquelle und der Zielindex). Die geplante Indexer-Ausführungen wird gestoppt; eine Benutzeraktion ist erforderlich, um das Problem zu beheben (beschrieben in der `errorMessage`-Eigenschaft); anschließend muss die Indexer-Ausführung neu gestartet werden.
 
-- `reset` gibt an, dass der Indexer durch den Aufruf der API zum Zurücksetzen des Indexers \(siehe unten\) zurückgesetzt wurde.
+- `reset` gibt an, dass der Indexer durch den Aufruf der API zum Zurücksetzen des Indexers (siehe unten) zurückgesetzt wurde.
 
 <a name="ResetIndexer"></a>
 ### Indexer zurücksetzen
 
-Der Vorgang **Indexer zurücksetzen** setzt den mit dem Indexer verknüpften Status der Änderungsnachverfolgung zurück. Dies ermöglicht Ihnen, eine komplett neue Indizierung durchführen \(z. B. wenn Ihr Datenquellenschema geändert wurde\) oder die Richtlinie für die Änderungsnachverfolgung für Daten für eine mit dem Indexer verknüpfte Datenquelle zu ändern.
+Der Vorgang **Indexer zurücksetzen** setzt den mit dem Indexer verknüpften Status der Änderungsnachverfolgung zurück. Dies ermöglicht Ihnen, eine komplett neue Indizierung durchführen (z. B. wenn Ihr Datenquellenschema geändert wurde) oder die Richtlinie für die Änderungsnachverfolgung für Daten für eine mit dem Indexer verknüpfte Datenquelle zu ändern.
 
 	POST https://[service name].search.windows.net/indexers/[indexer name]/reset?api-version=[api-version]
     api-key: [admin key]
@@ -657,4 +657,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

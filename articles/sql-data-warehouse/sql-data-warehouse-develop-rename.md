@@ -17,7 +17,7 @@
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Umbenennen in SQL Data Warehouse
-SQL Server unterstützt die Objekt- und Datenbankumbenennung mit den gespeicherten Prozeduren „sp_rename“ bzw. „sp_renamedb“.
+SQL Server unterstützt die Objekt- und Datenbankumbenennung mit den gespeicherten Prozeduren „sp\_rename“ bzw. „sp\_renamedb“.
 
 SQL Data Warehouse verwendet DDL-Syntax, um das gleiche Ziel zu erreichen. Die DDL-Befehle lauten RENAME OBJECT und RENAME DATABASE.
 
@@ -80,4 +80,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 <!--Other Web references-->
 [Azure management portal]: http://portal.azure.com/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

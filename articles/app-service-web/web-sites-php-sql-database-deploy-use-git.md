@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="PHP" 
 	ms.topic="article" 
-	ms.date="04/29/2015" 
+	ms.date="08/03/2015" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer PHP-SQL-Web-App und Bereitstellen in Azure App Service mit Git
@@ -132,7 +132,7 @@ Gehen Sie wie unten beschrieben vor, um die Anwendung lokal zu erstellen und aus
 
 	Die Werte für <code>$user</code> und <code>$pwd</code> müssen durch den lokalen SQL Server-Benutzernamen und das dazugehörige Kennwort ersetzt werden.
 
-4. Öffnen Sie einen Webbrowser, und navigieren Sie zu **http://localhost/registration/createtable.php**. Dadurch wird die Tabelle `registration_tbl` in der Datenbank erstellt.
+4. Öffnen Sie einen Webbrowser, und navigieren Sie zu ****http://localhost/registration/createtable.php**. Dadurch wird die Tabelle `registration_tbl` in der Datenbank erstellt.
 
 5. Öffnen Sie die Datei **index.php** in einem Texteditor oder IDE, und fügen Sie den Basis-HTML- und CSS-Code für die Seite hinzu (der PHP-Code wird in einem späteren Schritt hinzugefügt).
 
@@ -228,7 +228,7 @@ Gehen Sie wie unten beschrieben vor, um die Anwendung lokal zu erstellen und aus
 			echo "<h3>No one is currently registered.</h3>";
 		}
 
-Nun können Sie zu **http://localhost/registration/index.php** navigieren, um die Anwendung zu testen.
+Nun können Sie zu ****http://localhost/registration/index.php** navigieren, um die Anwendung zu testen.
 
 ##Veröffentlichen der Anwendung
 
@@ -292,4 +292,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [pdo-sqlsrv]: http://php.net/pdo_sqlsrv
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

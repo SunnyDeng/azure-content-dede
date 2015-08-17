@@ -76,4 +76,4 @@ Informationen zu Untertiteln und der Unterstützung von Werbeeinblendungen in Li
 [dash.js-Repository von GitHub](https://github.com/Dash-Industry-Forum/dash.js) (in englischer Sprache)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

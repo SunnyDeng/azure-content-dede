@@ -1,12 +1,13 @@
 
 <properties
-   pageTitle="Azure Service Fabric Actors für das Internet der Dinge"
-   description="Azure Service Fabric Actors ist der Schlüsselbaustein (als mittlere Ebene) in einem System, das ein Messaging-System-Front-End mit Unterstützung mehrerer Übertragungstypen, wie z. B. HTTPS, MQTT oder AMQP, kombiniert und dann mit Actors kommuniziert, die einzelne Geräte darstellen."
+   pageTitle="Reliable Actors für das Internet der Dinge"
+   description="Service Fabric Reliable Actors ist der Schlüsselbaustein (als mittlere Ebene) in einem System, das ein Messaging-System-Front-End mit Unterstützung mehrerer Übertragungstypen, wie z. B. HTTPS, MQTT oder AMQP, kombiniert und dann mit Actors kommuniziert, die einzelne Geräte darstellen."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
+
 
 <tags
    ms.service="service-fabric"
@@ -14,15 +15,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/01/2015"
+   ms.date="08/05/2015"
    ms.author="claudioc"/>
 
-# Entwurfsmuster in Service Fabric Actors : Internet der Dinge
-Seitdem das Internet der Dinge zusammen mit dem technologischen Fortschritt bei Geräten und Cloud-Diensten zum aktuellen Trend wurde, suchen Entwickler nach Schlüsselbausteinen für die Entwicklung ihrer Systeme. Das folgende Diagramm zeigt die wichtigsten Szenarien, die mithilfe von Azure Service Fabric Actors erreicht wurden:
+
+# Reliable Actors-Entwurfsmuster: Internet der Dinge
+Seitdem das Internet der Dinge zusammen mit dem technologischen Fortschritt bei Geräten und Cloud-Diensten zum aktuellen Trend wurde, suchen Entwickler nach Schlüsselbausteinen für die Entwicklung ihrer Systeme. Das folgende Diagramm zeigt die wichtigsten Szenarien, die mithilfe von Service Fabric Reliable Actors erreicht wurden:
 
 ![][1]
 
-Azure Service Fabric Actors ist der Schlüsselbaustein (als mittlere Ebene) in einem System, das ein Messaging-System-Front-End mit Unterstützung mehrerer Übertragungstypen, wie z. B. HTTPS, MQTT oder AMQP, kombiniert und dann mit Actors kommuniziert, die einzelne Geräte darstellen. Da die Actors ihren Status beibehalten können, sind Modellierungsstreams – insbesondere statusbehaftete Datenstromverarbeitung – und Aggregation pro Gerät einfach. Wenn die Daten beibehalten werden müssen, kann problemlos eine Leerung bei Bedarf oder auf einem Timer durchgeführt werden, während gleichzeitig die aktuellsten N-Bit-Daten für schnelle Abfragen in einer anderen Variablen beibehalten werden können. Beachten Sie, dass wir in unseren Beispielen absichtlich die Details der Ereignis-/Messaging-Ebene ausgelassen haben, die Actors die Kommunikation mit Geräten ermöglichen,um den Fokus auf dem Actor-Modell zu halten. Es gibt im Wesentlichen zwei Szenarien, die in der Regel miteinander kombiniert werden:
+Service Fabric Reliable Actors ist der Schlüsselbaustein (als mittlere Ebene) in einem System, das ein Messaging-System-Front-End mit Unterstützung mehrerer Übertragungstypen, wie z. B. HTTPS, MQTT oder AMQP, kombiniert und dann mit Actors kommuniziert, die einzelne Geräte darstellen. Da die Actors ihren Status beibehalten können, sind Modellierungsstreams – insbesondere statusbehaftete Datenstromverarbeitung – und Aggregation pro Gerät einfach. Wenn die Daten beibehalten werden müssen, kann problemlos eine Leerung bei Bedarf oder auf einem Timer durchgeführt werden, während gleichzeitig die aktuellsten N-Bit-Daten für schnelle Abfragen in einer anderen Variablen beibehalten werden können. Beachten Sie, dass wir in unseren Beispielen absichtlich die Details der Ereignis-/Messaging-Ebene ausgelassen haben, die Actors die Kommunikation mit Geräten ermöglichen,um den Fokus auf dem Actor-Modell zu halten. Es gibt im Wesentlichen zwei Szenarien, die in der Regel miteinander kombiniert werden:
 
 * *Erfassen von Telemetrie- und Statusdaten aus einem einzelnen Gerät oder einer Gerätegruppe und Beibehalten ihres Status*. Stellen Sie sich Zehntausende von Mausefallen vor (ja, es handelt sich um ein reales Kundenszenarien), die so elementare Daten senden wie beispielsweise, ob in der Vorrichtung ein lästigen Nager gefangen wurde oder nicht. Die Daten werden nach Region aggregiert, und wenn in einer Region genug Mäuse gefangen wurden, wird ein Techniker beauftragt, die Geräte zu leeren. Eine Mausefalle als Actor? Absolut. Ein Gruppen-Actor pro Region als der Aggregator? Aber sicher.
 
@@ -216,6 +218,5 @@ Abschließend sei bemerkt, dass immer mehr Kunden Azure Service Fabric Actors al
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-pattern-internet-of-things/internet-of-things-1.png
 [2]: ./media/service-fabric-reliable-actors-pattern-internet-of-things/internet-of-things-2.png
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

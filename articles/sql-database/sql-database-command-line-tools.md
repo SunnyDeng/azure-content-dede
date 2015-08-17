@@ -49,7 +49,7 @@ Nach der erfolgreichen Anmeldung sollten einige Informationen auf dem Bildschirm
 
 ## Auswählen des Azure-Abonnements
 
-Zur Auswahl des Abonnements, mit dem Sie arbeiten möchten, benötigen Sie Ihre Abonnement-ID \(\*\*-SubscriptionId\*\*\) oder den Abonnementnamen \(\*\*-SubscriptionName\*\*\). Sie können diese Informationen aus dem vorherigen Schritt kopieren. Falls Sie über mehrere Abonnements verfügen, können Sie sie über das Cmdlet **Get-AzureSubscription** abrufen und die gewünschten Abonnementinformationen aus dem ResultSet kopieren.
+Zur Auswahl des Abonnements, mit dem Sie arbeiten möchten, benötigen Sie Ihre Abonnement-ID (**-SubscriptionId**) oder den Abonnementnamen (**-SubscriptionName**). Sie können diese Informationen aus dem vorherigen Schritt kopieren. Falls Sie über mehrere Abonnements verfügen, können Sie sie über das Cmdlet **Get-AzureSubscription** abrufen und die gewünschten Abonnementinformationen aus dem ResultSet kopieren.
 
 Führen Sie das folgende Cmdlet mit den Informationen zu Ihrem Abonnement aus, um Ihr aktuelles Abonnement festlegen:
 
@@ -118,7 +118,7 @@ Sie können auch einen Server mit dem Befehl [Remove-AzureSqlServer](https://msd
 
 Wenn Sie diese oder ähnliche Azure SQL-Ressourcen erneut erstellen, haben Sie folgende Möglichkeiten:
 
-- Speichern als PowerShell-Skriptdatei \("\*.ps1"\)
+- Speichern als PowerShell-Skriptdatei ("*.ps1")
 - Speichern als Azure Automation-Runbook im Bereich "Automation" des Azure-Verwaltungsportals 
 
 ## Nächste Schritte
@@ -133,8 +133,8 @@ Kombinieren und Automatisieren von Befehlen. Ersetzen Sie z. B. alles innerhalb
 
 ## Verwandte Informationen
 
-- [Azure SQL Database Cmdlets](https://msdn.microsoft.com/library/mt163521.aspx) \(in englischer Sprache\)
-- [Azure SQL Database Cmdlets \(in englischer Sprache\)](https://msdn.microsoft.com/library/dn546726.aspx)
+- [Azure SQL Database Cmdlets](https://msdn.microsoft.com/library/mt163521.aspx) (in englischer Sprache)
+- [Azure SQL Database Cmdlets (in englischer Sprache)](https://msdn.microsoft.com/library/dn546726.aspx)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

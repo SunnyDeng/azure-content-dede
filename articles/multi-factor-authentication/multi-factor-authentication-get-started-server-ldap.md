@@ -63,4 +63,4 @@ Verwenden Sie die folgenden Richtlinien, um den LDAP-Client zu konfigurieren:
 - Konfigurieren Sie das LDAP-Timeout auf 30 bis 60 Sekunden, sodass genug Zeit ist, die Anmeldeinformationen des Benutzers mit dem LDAP-Verzeichnis zu überprüfen, die zweistufige Authentifizierung durchzuführen, deren Antwort zu empfangen und dann auf die LDAP-Zugriffsanforderung zu reagieren. 
 - Bei Verwendung von LDAPs muss die Appliance oder der Server, die das LDAP abfragen, dem auf dem Azure Multi-Factor Authentication-Server installierten SSL-Zertifikat vertrauen.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

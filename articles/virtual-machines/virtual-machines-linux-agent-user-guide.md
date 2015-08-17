@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/07/2015" 
+	ms.date="07/30/2015" 
 	ms.author="szark"/>
 
 
@@ -211,7 +211,7 @@ Typ: Boolean Standardwert: y
 
 Hiermit kann der Benutzer die Bereitstellungsfunktion im Agenten aktivieren oder deaktivieren. Gültige Werte sind "y" und "n". Bei deaktivierter Bereitstellung werden die SSH-Host- und -Benutzerschlüssel im Image beibehalten, und alle in der Azure-Bereitstellungs-API angegebenen Konfigurationen werden ignoriert.
 
-	Note that this parameter defaults to "n" on Ubuntu Cloud Images that use cloud-init for provisioning.
+**Hinweis:** Dieser Parameter ist für Ubuntu-Cloud-Images, die Cloud-init für die Bereitstellung verwenden, standardmäßig auf "n" gesetzt.
 
 **Provisioning.DeleteRootPassword:**
 
@@ -317,4 +317,4 @@ Beachten Sie, dass Cloud Ubuntu-Images für zahlreiche Konfigurationsaufgaben, d
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -32,7 +32,7 @@ Azure Virtual Machines, Azure-Ressourcen-Manager und Azure Key Vault sind vollst
 - Vollständige Trennung aller Ressourcen:
       - die Vorlagen zum Bereitstellen der Schlüssel 
       - die Vorlagen zum Bereitstellen eines virtuellen Computers mit Verweisen auf die Schlüssel 
-      - die tatsächlichen Schlüsseldaten im Tresor Jede Vorlage \(und Aktion\) kann für eine vollständige Trennung von Aufgaben verschiedenen Rollen für die rollenbasierte Zugriffssteuerung unterliegen.
+      - die tatsächlichen Schlüsseldaten im Tresor Jede Vorlage (und Aktion) kann für eine vollständige Trennung von Aufgaben verschiedenen Rollen für die rollenbasierte Zugriffssteuerung unterliegen.
 - Das Laden der geheimen Schlüssel in einen virtuellen Computer zum Zeitpunkt der Bereitstellung erfolgt über einen direkten Kanal zwischen Azure Fabric und dem Schlüsseltresor innerhalb der Grenzen des Microsoft-Datencenters. Sobald sich die Schlüssel im Schlüsseltresor befinden, sehen sie nie wieder das "Tageslicht" über einen nicht vertrauenswürdigen Kanal außerhalb des Datencenters.  
 - Da Schlüsseltresore stets regional sind, sind die geheimen Schlüssel in den VMs stets ortsbezogen. Es sind keine globalen Schlüsseltresore.
 
@@ -40,8 +40,8 @@ Azure Virtual Machines, Azure-Ressourcen-Manager und Azure Key Vault sind vollst
 
 Eine bewährte Methode ist das Vorhalten getrennter Vorlagen für die folgenden Aufgaben:
 
-1.	Erstellung von Tresoren \(die die Schlüsseldaten enthalten\)
-2.	Bereitstellung der VMs \(mit URI-Verweisen auf die in den Tresoren enthaltenen Schlüssel\)
+1.	Erstellung von Tresoren (die die Schlüsseldaten enthalten)
+2.	Bereitstellung der VMs (mit URI-Verweisen auf die in den Tresoren enthaltenen Schlüssel)
 
 Ein typisches Unternehmensszenario ist das Einrichten einer kleinen vertrauenswürdigen Gruppe mit Zugriff auf wichtige geheime Informationen in den bereitgestellten Workloads und einer größeren Gruppe von Dev/Ops-Mitarbeitern, die VM-Bereitstellungen erstellen oder aktualisieren können. Es folgt eine Beispiel einer ARM-Vorlage, die einen neuen Tresor im Kontext der Identität des derzeit authentifizierten Benutzers in Azure Active Directory erstellt und konfiguriert. Dieser Benutzer hat die Standardberechtigung zum Erstellen, Löschen, Auflisten, Aktualisieren, Sichern, Wiederherstellen und Abrufen der öffentliche Hälfte der Schlüssel in diesem neuen Schlüsseltresor.
 
@@ -147,7 +147,7 @@ Das nachstehende Vorlagenfragment besteht aus übergeordneten Bereitstellungskon
 
 ## Dienstprinzipale für abonnementübergreifende Interaktionen
 
-Dienstidentitäten werden in Active Directory als Dienstprinzipale dargestellt. Dienstprinzipale stehen im Mittelpunkt der Aktivierung von Schlüsselszenarien für IT-Abteilungen von Unternehmen, Systemintegratoren \(SI\) und Clouddienstanbietern \(Cloud Service Vendor, CSV\). Es gibt spezifische Anwendungsfälle, bei denen eine dieser Organisationen mit dem Abonnement eines ihrer Kunden interagieren muss.
+Dienstidentitäten werden in Active Directory als Dienstprinzipale dargestellt. Dienstprinzipale stehen im Mittelpunkt der Aktivierung von Schlüsselszenarien für IT-Abteilungen von Unternehmen, Systemintegratoren (SI) und Clouddienstanbietern (Cloud Service Vendor, CSV). Es gibt spezifische Anwendungsfälle, bei denen eine dieser Organisationen mit dem Abonnement eines ihrer Kunden interagieren muss.
 
 Ihre Organisation kann ein Angebot bereitstellen, das zum Überwachen einer Lösung dient, die in der Umgebung und im Abonnement Ihrer Kunden bereitgestellt ist. In diesem Fall benötigen Sie Zugriff auf Protokolle und andere Daten innerhalb des Kontos eines Kunden, damit Sie es in Ihrer Überwachungslösung nutzen können. Als IT-Abteilung eines Unternehmens oder Systemintegrator können Sie einem Kunden ein Angebot machen, bei dem Sie eine Funktion für ihn bereitstellen und verwalten, wie z. B. eine Datenanalyseplattform, und sich das Angebot im kundeneigenen Abonnement befindet.
 
@@ -157,7 +157,7 @@ Diese Szenarien führen bei Ihren Kunden zu verschiedenen Überlegungen:
 
 -	Aus Gründen der Sicherheit muss der Zugriff möglicherweise auf bestimmte Arten von Aktionen beschränkt werden, z. B. in Form eines schreibgeschützten Zugriffs.
 -	Da Ressourcen mit anfallenden Kosten bereitgestellt werden, gelten aus wirtschaftlichen Gründen ggf. ähnliche Einschränkungen für den Zugriff.
--	Aus Sicherheitsgründen muss der Zugriff u. U. auf nur eine bestimmte Ressource \(Speicherkonten\) oder Ressourcen \(Ressourcengruppe mit einer Umgebung oder Lösung\) begrenzt werden.
+-	Aus Sicherheitsgründen muss der Zugriff u. U. auf nur eine bestimmte Ressource (Speicherkonten) oder Ressourcen (Ressourcengruppe mit einer Umgebung oder Lösung) begrenzt werden.
 -	Sollte sich die Beziehung zu einem Anbieter ändern, benötigt der Kunden die Möglichkeit, den Zugriff für den Systemintegrator oder Clouddienstanbieter zu aktivieren/deaktivieren.
 -	Da Aktionen in diesem Konto Auswirkungen auf die Abrechnung haben, wünscht der Kunde Prüffähigkeit und Zuständigkeit für die Abrechnung.
 -	Was die Einhaltung von Vorschriften angeht, möchte der Kunde Ihr Verhalten in seiner Umgebung überwachen können.
@@ -166,32 +166,32 @@ Eine Kombination aus einem Dienstprinzipal und rollenbasierter Zugriffssteuerung
 
 ## Netzwerksicherheitsgruppen
 
-Viele Szenarien haben Anforderungen, die vorgeben, wie der Datenverkehr zu einer oder mehreren VM-Instanzen in Ihrem virtuellen Netzwerk gesteuert wird. Im Rahmen der Bereitstellung einer ARM- Vorlage können Sie dazu eine Netzwerksicherheitsgruppe \(NSG\) verwenden.
+Viele Szenarien haben Anforderungen, die vorgeben, wie der Datenverkehr zu einer oder mehreren VM-Instanzen in Ihrem virtuellen Netzwerk gesteuert wird. Im Rahmen der Bereitstellung einer ARM- Vorlage können Sie dazu eine Netzwerksicherheitsgruppe (NSG) verwenden.
 
-Bei einer NSG handelt es sich um ein Objekt oberster Ebene, das Ihrem Abonnement zugeordnet ist. Eine NSG enthält Zugriffssteuerungsregeln, die Datenverkehr zu VM-Instanzen zulassen oder verweigern. Die Regeln für eine NSG können jederzeit geändert werden, und die Änderungen werden auf alle zugeordneten Instanzen angewendet. Für die Verwendung einer NSG benötigen Sie ein virtuelles Netzwerk mit Regionszuordnung \(Standort\). NSGs sind nicht mit virtuellen Netzwerken kompatibel, die einer Affinitätsgruppe zugeordnet sind. Wenn Sie über kein regionales virtuelles Netzwerk verfügen und trotzdem den an Ihren Endpunkten eingehenden Datenverkehr steuern möchten, lesen Sie [Was ist eine Netzwerk-Zugriffssteuerungsliste \(Access Control List, ACL\)?](https://msdn.microsoft.com/library/azure/dn376541.aspx).
+Bei einer NSG handelt es sich um ein Objekt oberster Ebene, das Ihrem Abonnement zugeordnet ist. Eine NSG enthält Zugriffssteuerungsregeln, die Datenverkehr zu VM-Instanzen zulassen oder verweigern. Die Regeln für eine NSG können jederzeit geändert werden, und die Änderungen werden auf alle zugeordneten Instanzen angewendet. Für die Verwendung einer NSG benötigen Sie ein virtuelles Netzwerk mit Regionszuordnung (Standort). NSGs sind nicht mit virtuellen Netzwerken kompatibel, die einer Affinitätsgruppe zugeordnet sind. Wenn Sie über kein regionales virtuelles Netzwerk verfügen und trotzdem den an Ihren Endpunkten eingehenden Datenverkehr steuern möchten, lesen Sie [Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?](https://msdn.microsoft.com/library/azure/dn376541.aspx).
 
 Sie können eine NSG einem virtuellen Computer oder einem Subnetz innerhalb eines virtuellen Netzwerks zuordnen. Bei der Zuordnung zu einem virtuellen Computer gilt die NSG für den gesamten ein- und ausgehenden Datenverkehr der VM-Instanz. Bei der Zuordnung zu einem Subnetz in Ihrem virtuellen Netzwerk gilt sie für den gesamten ein- und ausgehenden Datenverkehr aller VM-Instanzen im Subnetz. Ein virtueller Computer bzw. ein Subnetz kann jeweils nur einer einzelnen NSG zugeordnet werden, wobei jede NSG bis zu 200 Regeln enthalten kann. Pro Abonnement können 100 NSGs verwendet werden.
 
->[AZURE.NOTE]Endpunktbasierte ACLs und Netzwerksicherheitsgruppen können nicht für die gleiche VM-Instanz verwendet werden. Wenn Sie eine NSG verwenden möchten und bereits eine Endpunkt-ACL eingerichtet ist, entfernen Sie zuerst die Endpunkt-ACL. Informationen zur Vorgehensweise finden Sie unter [Verwalten von Zugriffssteuerungslisten \(ACLs\) für Endpunkte mithilfe von PowerShell](https://msdn.microsoft.com/library/azure/dn376543.aspx).
+>[AZURE.NOTE]Endpunktbasierte ACLs und Netzwerksicherheitsgruppen können nicht für die gleiche VM-Instanz verwendet werden. Wenn Sie eine NSG verwenden möchten und bereits eine Endpunkt-ACL eingerichtet ist, entfernen Sie zuerst die Endpunkt-ACL. Informationen zur Vorgehensweise finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell](https://msdn.microsoft.com/library/azure/dn376543.aspx).
 
 ### Funktionsweise von Netzwerksicherheitsgruppen
 
 Netzwerksicherheitsgruppen unterscheiden sich von Endpunkt-basierten ACLs. Endpunkt-ACLs betreffen nur den öffentlichen Port, der über den Eingabeendpunkt verfügbar gemacht wird. Eine NSG kann für mehrere VM-Instanzen gelten und steuert den gesamten ein- und ausgehenden Datenverkehr des virtuellen Computers.
 
-Eine Netzwerksicherheitsgruppe hat einen *Namen*, ist einer *Region* zugeordnet \(einem der unterstützten Azure-Standorte\) und verfügt über eine aussagekräftige Bezeichnung. Sie enthält zwei Arten von Regeln: eingehende Regeln und ausgehende Regeln. Eingehende Regeln werden auf die eingehenden Pakete eines virtuellen Computers angewendet, ausgehende Regeln gelten für ausgehende Pakete. Die Regeln werden auf dem Servercomputer angewendet, auf dem sich der virtuelle Computer befindet. Ein eingehendes oder ausgehendes Paket muss einer Zulassungsregel entsprechen. Andernfalls wird es gelöscht.
+Eine Netzwerksicherheitsgruppe hat einen *Namen*, ist einer *Region* zugeordnet (einem der unterstützten Azure-Standorte) und verfügt über eine aussagekräftige Bezeichnung. Sie enthält zwei Arten von Regeln: eingehende Regeln und ausgehende Regeln. Eingehende Regeln werden auf die eingehenden Pakete eines virtuellen Computers angewendet, ausgehende Regeln gelten für ausgehende Pakete. Die Regeln werden auf dem Servercomputer angewendet, auf dem sich der virtuelle Computer befindet. Ein eingehendes oder ausgehendes Paket muss einer Zulassungsregel entsprechen. Andernfalls wird es gelöscht.
 
-Regeln werden gemäß ihrer Priorität verarbeitet. So wird beispielsweise eine Regel mit einer niedrigeren Prioritätsnummer \(z. B. 100\) vor einer Regel mit höherer Prioritätsnummer \(z. B. 200\) verarbeitet. Sobald eine Übereinstimmung gefunden wurde, werden keine weiteren Regeln mehr verarbeitet.
+Regeln werden gemäß ihrer Priorität verarbeitet. So wird beispielsweise eine Regel mit einer niedrigeren Prioritätsnummer (z. B. 100) vor einer Regel mit höherer Prioritätsnummer (z. B. 200) verarbeitet. Sobald eine Übereinstimmung gefunden wurde, werden keine weiteren Regeln mehr verarbeitet.
 
 Eine Regel umfasst Folgendes:
 
 -	Name: Ein eindeutiger Bezeichner für die Regel.
 -	Typ: Eingehend/ausgehend
--	Priorität: Eine ganze Zahl zwischen 100 und 4096 \(Regeln werden von niedrig nach hoch verarbeitet\)
+-	Priorität: Eine ganze Zahl zwischen 100 und 4096 (Regeln werden von niedrig nach hoch verarbeitet)
 -	Quell-IP-Adresse: CIDR des Quell-IP-Adressbereichs
 -	Quellportbereich: Eine ganze Zahl oder ein Bereich von 0 und bis 65536
 -	Ziel-IP-Adressbereich: CIDR des Ziel-IP-Adressbereichs
 -	Ziel-Portbereich: Eine ganze Zahl oder ein Bereich von 0 bis 65536
--	Protokoll: TCP, UDP oder ' \*'
+-	Protokoll: TCP, UDP oder ' *'
 -	Zugriff: Zulassen/Verweigern
 
 ### Standardregeln
@@ -206,24 +206,24 @@ Die Standardregeln sind in den folgenden Tabellen aufgeführt.
 
 Name |	Priorität |	Quell-IP |	Quellport |	Ziel-IP |	Zielport |	Protokoll |	Access
 --- | --- | --- | --- | --- | --- | --- | ---
-ALLOW VNET INBOUND | 65000 | VIRTUAL\_NETWORK |	\* |	VIRTUAL\_NETWORK | \* |	\* | ZULASSEN
-ALLOW AZURE LOAD BALANCER INBOUND | 65001 | AZURE\_LOADBALANCER | \* | \* | \* | \* | ZULASSEN
-DENY ALL INBOUND | 65500 | \* | \* | \* | \* | \* | VERWEIGERN
+ALLOW VNET INBOUND | 65000 | VIRTUAL\_NETWORK |	* |	VIRTUAL\_NETWORK | * |	* | ZULASSEN
+ALLOW AZURE LOAD BALANCER INBOUND | 65001 | AZURE\_LOADBALANCER | * | * | * | * | ZULASSEN
+DENY ALL INBOUND | 65500 | * | * | * | * | * | VERWEIGERN
 
 **Ausgehende Standardregeln**
 
 Name |	Priorität |	Quell-IP |	Quellport |	Ziel-IP |	Zielport |	Protokoll |	Access
 --- | --- | --- | --- | --- | --- | --- | ---
-ALLOW VNET OUTBOUND | 65000 | VIRTUAL\_NETWORK | \* | VIRTUAL\_NETWORK | \* | \* | ZULASSEN
-ALLOW INTERNET OUTBOUND | 65001 | \* | \* | INTERNET | \* | \* | ZULASSEN
-DENY ALL OUTBOUND | 65500 | \* | \* | \* | \* | \* | VERWEIGERN
+ALLOW VNET OUTBOUND | 65000 | VIRTUAL\_NETWORK | * | VIRTUAL\_NETWORK | * | * | ZULASSEN
+ALLOW INTERNET OUTBOUND | 65001 | * | * | INTERNET | * | * | ZULASSEN
+DENY ALL OUTBOUND | 65500 | * | * | * | * | * | VERWEIGERN
 
 ### Besondere Infrastrukturregeln
 
 NSG-Regeln sind explizit. Es wird nur der Datenverkehr zugelassen oder verweigert, der in der NSG angegeben ist. Es gibt jedoch zwei Arten von Datenverkehr, die unabhängig von der NSG-Angabe immer zulässig sind. Diese Vorkehrung wurde zur Unterstützung der Infrastruktur getroffen.
 
-- **Virtuelle IP des Hostknotens**: Grundlegende Infrastrukturdienste wie DHCP, DNS und die Systemüberwachung werden über die virtualisierte Host-IP-Adresse 168.63.129.16 bereitgestellt. Diese öffentliche IP-Adresse gehört Microsoft und ist die einzige virtuelle IP-Adresse, die in allen Regionen zu diesem Zweck verwendet wird. Die IP-Adresse wird der physischen IP-Adresse des Servercomputers \(Hostknotens\) zugeordnet, der die VM hostet. Der Hostknoten fungiert als DHCP-Relay, als rekursiver DNS-Resolver und als Integritätstestquelle für den Load Balancer und den Computer. Eingehende Kommunikation für diese IP-Adresse darf nicht als Angriff betrachtet werden.
-- **Lizenzierung \(Schlüsselverwaltungsdienst\)**: Die in den VMs verwendeten Windows-Images müssen lizenziert werden. Zu diesem Zweck wird eine Lizenzierungsanforderung an die Hostserver des Schlüsselverwaltungsdiensts gesendet, die solche Abfragen verarbeiten. Dafür wird immer der ausgehende Port 1688 verwendet.
+- **Virtuelle IP des Hostknotens**: Grundlegende Infrastrukturdienste wie DHCP, DNS und die Systemüberwachung werden über die virtualisierte Host-IP-Adresse 168.63.129.16 bereitgestellt. Diese öffentliche IP-Adresse gehört Microsoft und ist die einzige virtuelle IP-Adresse, die in allen Regionen zu diesem Zweck verwendet wird. Die IP-Adresse wird der physischen IP-Adresse des Servercomputers (Hostknotens) zugeordnet, der die VM hostet. Der Hostknoten fungiert als DHCP-Relay, als rekursiver DNS-Resolver und als Integritätstestquelle für den Load Balancer und den Computer. Eingehende Kommunikation für diese IP-Adresse darf nicht als Angriff betrachtet werden.
+- **Lizenzierung (Schlüsselverwaltungsdienst)**: Die in den VMs verwendeten Windows-Images müssen lizenziert werden. Zu diesem Zweck wird eine Lizenzierungsanforderung an die Hostserver des Schlüsselverwaltungsdiensts gesendet, die solche Abfragen verarbeiten. Dafür wird immer der ausgehende Port 1688 verwendet.
 
 ### Standardtags
 
@@ -233,17 +233,17 @@ Standardtags sind vom System bereitgestellte Bezeichner für eine Kategorie von 
 
 Tag |	Beschreibung
 --- | ---
-VIRTUAL\_NETWORK |	Gibt Ihren gesamten Netzwerkadressbereich an. Dieser umfasst den Adressraum des virtuellen Netzwerks \(IP-CIDR in Azure\) sowie den gesamten verbundenen lokalen Adressraum \(lokale Netzwerke\). Dazu gehören auch die VNET-zu-VNET-Adressräume.
+VIRTUAL\_NETWORK |	Gibt Ihren gesamten Netzwerkadressbereich an. Dieser umfasst den Adressraum des virtuellen Netzwerks (IP-CIDR in Azure) sowie den gesamten verbundenen lokalen Adressraum (lokale Netzwerke). Dazu gehören auch die VNET-zu-VNET-Adressräume.
 AZURE\_LOADBALANCER | Bezeichnet den Azure Infrastructure-Lastenausgleich und wird in eine IP-Adresse eines Azure-Datencenters umgewandelt, die als Ausgangspunkt für die Integritätstests von Azure fungiert. Nur erforderlich, wenn der virtuelle Computer oder die Gruppe virtueller Computer, der bzw. die der NSG zugeordnet ist, Teil eines Satzes mit Lastenausgleich ist.
 INTERNET | Gibt den IP-Adressraum an, der außerhalb des virtuellen Netzwerks liegt und über das öffentliche Internet erreichbar ist. Dieser Bereich schließt auch den Azure-eigenen öffentlichen IP-Adressraum mit ein.
 
 ### Ports und Portbereiche
 
-NSG-Regeln können für einen einzelnen Quell- oder Zielport oder einen Portbereich angegeben werden. Dieser Ansatz ist besonders dann hilfreich, wenn Sie eine Vielzahl von Ports für eine Anwendung \(beispielsweise FTP\) öffnen möchten. Der Bereich muss fortlaufend sein und kann nicht mit der Angabe einzelner Ports kombiniert werden. Um einen Bereich von Ports anzugeben, verwenden Sie das Bindestrichzeichen \(-\). Beispiel: **100-500**.
+NSG-Regeln können für einen einzelnen Quell- oder Zielport oder einen Portbereich angegeben werden. Dieser Ansatz ist besonders dann hilfreich, wenn Sie eine Vielzahl von Ports für eine Anwendung (beispielsweise FTP) öffnen möchten. Der Bereich muss fortlaufend sein und kann nicht mit der Angabe einzelner Ports kombiniert werden. Um einen Bereich von Ports anzugeben, verwenden Sie das Bindestrichzeichen (-). Beispiel: **100-500**.
 
 ### ICMP-Datenverkehr
 
-Mit den aktuellen NSG-Regeln können Sie TCP oder UDP, jedoch nicht ICMP als Protokoll angeben. ICMP-Datenverkehr ist in einem virtuellen Netzwerk jedoch standardmäßig über die eingehenden Regeln zulässig, die ein-/ausgehenden Datenverkehr für sämtliche Ports und Protokolle \(\*\) innerhalb des virtuellen Netzwerks zulassen.
+Mit den aktuellen NSG-Regeln können Sie TCP oder UDP, jedoch nicht ICMP als Protokoll angeben. ICMP-Datenverkehr ist in einem virtuellen Netzwerk jedoch standardmäßig über die eingehenden Regeln zulässig, die ein-/ausgehenden Datenverkehr für sämtliche Ports und Protokolle (*) innerhalb des virtuellen Netzwerks zulassen.
 
 ### Zuordnen einer NSG zu einer VM
 
@@ -255,19 +255,19 @@ Bei Zuordnung einer NSG zu einem Subnetz werden die Netzwerkzugriffsregeln in de
 
 ### Zuordnen einer NSG zu einem Subnetz und einer VM
 
-Sie können eine NSG einer VM und eine weitere NSG dem Subnetz zuordnen, in dem sich die VM befindet. Dieses Szenario wird unterstützt, um die VM mit zwei Schutzebenen zu versehen. Für eingehenden Datenverkehr befolgt das Paket die Zugriffsregeln, die im Subnetz angegeben sind, gefolgt von den Regeln in der VM. Falls ausgehend, befolgt das Paket zuerst die in der VM und dann die im Subnetz angegebenen Regeln \(siehe unten\).
+Sie können eine NSG einer VM und eine weitere NSG dem Subnetz zuordnen, in dem sich die VM befindet. Dieses Szenario wird unterstützt, um die VM mit zwei Schutzebenen zu versehen. Für eingehenden Datenverkehr befolgt das Paket die Zugriffsregeln, die im Subnetz angegeben sind, gefolgt von den Regeln in der VM. Falls ausgehend, befolgt das Paket zuerst die in der VM und dann die im Subnetz angegebenen Regeln (siehe unten).
 
 ![Zuordnen einer NSG zu einem Subnetz und einer VM](./media/best-practices-resource-manager-security/nsg-subnet-vm.png)
 
 Die Zuordnung einer NSG zu einer VM oder einem Subnetz macht die Netzwerkzugriffsregeln äußerst explizit. Die Plattform fügt keine implizite Regel ein, um eingehenden Datenverkehr für einen bestimmten Port zuzulassen. In diesem Fall gilt: Wenn Sie einen Endpunkt für die VM erstellen, müssen Sie auch eine Regel erstellen, die Datenverkehr aus dem Internet zulässt. Andernfalls kann von außen nicht auf die *VIP:{Port}* zugegriffen werden.
 
-Angenommen, Sie erstellen eine neue VM und eine neue NSG. Anschließend ordnen Sie die NSG der VM zu. Dank der Regel ALLOW VNET INBOUND kann die VM mit anderen VMs im virtuellen Netzwerk kommunizieren. Dank der Regel „ALLOW INTERNET OUTBOUND“ kann der virtuelle Computer zudem ausgehende Verbindungen mit dem Internet herstellen. Später erstellen Sie einen Endpunkt an Port 80, um Datenverkehr für Ihre auf dem virtuellen Computer ausgeführte Website empfangen zu können. An die VIP \(öffentliche virtuelle IP-Adresse\) an Port 80 gerichtete Pakete aus dem Internet erreichen die VM erst, wenn Sie der NSG eine Regel wie in der folgenden Tabelle hinzufügen:
+Angenommen, Sie erstellen eine neue VM und eine neue NSG. Anschließend ordnen Sie die NSG der VM zu. Dank der Regel ALLOW VNET INBOUND kann die VM mit anderen VMs im virtuellen Netzwerk kommunizieren. Dank der Regel „ALLOW INTERNET OUTBOUND“ kann der virtuelle Computer zudem ausgehende Verbindungen mit dem Internet herstellen. Später erstellen Sie einen Endpunkt an Port 80, um Datenverkehr für Ihre auf dem virtuellen Computer ausgeführte Website empfangen zu können. An die VIP (öffentliche virtuelle IP-Adresse) an Port 80 gerichtete Pakete aus dem Internet erreichen die VM erst, wenn Sie der NSG eine Regel wie in der folgenden Tabelle hinzufügen:
 
 **Explizite Regel, die Datenverkehr an einem bestimmten Port zulässt**
 
 Name |	Priorität |	Quell-IP |	Quellport |	Ziel-IP |	Zielport |	Protokoll |	Access
 --- | --- | --- | --- | --- | --- | --- | ---
-WEB | 100 | INTERNET | \* | \* | 80 | TCP | ZULASSEN
+WEB | 100 | INTERNET | * | * | 80 | TCP | ZULASSEN
 
 ## Benutzerdefinierte Routen
 
@@ -288,7 +288,7 @@ Pakete werden über ein TCP/IP-Netzwerk weitergeleitet, das auf einer Routentabe
   - Internet. Entspricht dem Standard-Internet-Gateway der Azure-Infrastruktur.
   - Virtuelles Gerät. Entspricht einem virtuellen Gerät, das Sie Ihrem virtuellen Azure-Netzwerk hinzugefügt haben.
   - NULL. Entspricht einem schwarzen Loch. Pakete, die an ein schwarzes Loch weitergeleitet werden, werden überhaupt nicht weitergeleitet.
--	Wert für den nächsten Hop. Der Wert für den nächsten Hop enthält die IP-Adresse, an die die Pakete weitergeleitet werden sollen. Die Werte für den nächsten Hop dürfen nur für Routen verwendet werden, für die als Typ des nächsten Hops *Virtuelles Gerät* ausgewählt wurde. Der nächste Hop muss im Subnetz sein \(die lokale Schnittstelle des virtuellen Geräts entsprechend der Netzwerk-ID\), nicht in einem Remotesubnetz. 
+-	Wert für den nächsten Hop. Der Wert für den nächsten Hop enthält die IP-Adresse, an die die Pakete weitergeleitet werden sollen. Die Werte für den nächsten Hop dürfen nur für Routen verwendet werden, für die als Typ des nächsten Hops *Virtuelles Gerät* ausgewählt wurde. Der nächste Hop muss im Subnetz sein (die lokale Schnittstelle des virtuellen Geräts entsprechend der Netzwerk-ID), nicht in einem Remotesubnetz. 
 
 ![Routing](./media/best-practices-resource-manager-security/routing.png)
 
@@ -315,10 +315,10 @@ Die oben angegebenen Standardrouten können in der Azure-Umgebung nicht angezeig
 
 In den oben genannten Szenarios müssen Sie eine Routentabelle erstellen und dieser benutzerdefinierte Routen hinzufügen. Sie können über mehrere Routentabellen verfügen, wobei eine Routentabelle einem oder mehreren Subnetzen zugeordnet werden kann. Die einzelnen Subnetze können jeweils nur einer Routentabelle zugeordnet werden. Alle virtuellen Computer und Clouddienste in einem Subnetz verwenden die diesem Subnetz zugeordnete Routentabelle.
 
-Für die Subnetze gelten solange Standardrouten, bis diesen eine Routentabelle zugeordnet wurde. Sobald eine Zuordnung vorhanden ist, erfolgt das Routing beruhend auf der [längsten Präfixübereinstimmung](https://en.wikipedia.org/wiki/Longest_prefix_match) \(Longest Prefix Match, LPM\) zwischen den benutzerdefinierten und Standardrouten. Wenn mehrere Routen mit identischer längster Präfixübereinstimmung vorhanden sind, wird die Route in der folgenden Reihenfolge beruhend ihrem Ursprung ausgewählt:
+Für die Subnetze gelten solange Standardrouten, bis diesen eine Routentabelle zugeordnet wurde. Sobald eine Zuordnung vorhanden ist, erfolgt das Routing beruhend auf der [längsten Präfixübereinstimmung](https://en.wikipedia.org/wiki/Longest_prefix_match) (Longest Prefix Match, LPM) zwischen den benutzerdefinierten und Standardrouten. Wenn mehrere Routen mit identischer längster Präfixübereinstimmung vorhanden sind, wird die Route in der folgenden Reihenfolge beruhend ihrem Ursprung ausgewählt:
 
 1.	Benutzerdefinierte Route
-2.	BGP-Route \(bei Verwendung von ExpressRoute\)
+2.	BGP-Route (bei Verwendung von ExpressRoute)
 3.	Standardroute
 
 >[AZURE.NOTE]Benutzerdefinierte Routen sind nur für virtuelle Azure-Computer und Clouddienste möglich. Wenn Sie beispielsweise zwischen dem lokalen Netzwerk und Azure ein virtuelles Firewallgerät hinzufügen möchten, müssen Sie eine benutzerdefinierte Route für die Azure-Routentabellen erstellen, die den gesamten Datenverkehr zum lokalen Adressraum an das virtuelle Gerät weiterleitet. Allerdings durchläuft der eingehende Datenverkehr vom lokalen Adressraum das VPN-Gateway oder den ExpressRoute-Kreis, um unter Umgehung des virtuellen Geräts direkt zur Azure-Umgebung zu gelangen.
@@ -335,4 +335,4 @@ Dieser virtuelle Computer muss eingehenden Datenverkehr empfangen können, der n
 - Informationen zum Konfigurieren von Routing und der IP-Weiterleitung finden Sie unter [Erstellen von Routen und Aktivieren der IP-Weiterleitung in Azure](virtual-network/virtual-networks-udr-how-to.md). 
 - Einen Überblick über die rollenbasierte Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

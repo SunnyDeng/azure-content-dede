@@ -91,4 +91,4 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, die erfordert, 
 
 	Beachten Sie, dass beim ersten Start die Anmeldung beim Anbieter wieder erforderlich ist. Beim zweiten Neustart jedoch werden die zwischengespeicherten Anmeldeinformationen verwendet, und die Anmeldung wird umgangen.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -73,4 +73,4 @@ Um beim Erstellen einer [Azure-Website][waws] eine MySQL-Datenbank als verknüpf
 [portal]: http://manage.windowsazure.com
 [configure]: ../article/app-service-web/web-sites-configure.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

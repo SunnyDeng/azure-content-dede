@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Muster für verteilte Berechnung in Azure Service Fabric Actors"
-   description="Azure Service Fabric ist sehr gut geeignet für parallele asynchrone Nachrichten, leicht zu verwaltenden verteilten Status sowie Parallelberechnung"
+   pageTitle="Reliable Actors: Muster für verteilte Berechnung"
+   description="Service Fabric Reliable Actors ist sehr gut geeignet für parallele asynchrone Nachrichten, leicht zu verwaltenden verteilten Status sowie Parallelberechnung."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
+
 
 <tags
    ms.service="service-fabric"
@@ -13,11 +14,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/01/2015"
+   ms.date="08/05/2015"
    ms.author="claudioc"/>
 
-# Entwurfsmuster in Service Fabric Actors: Verteilte Berechnung
-Dieses Beispiel verdanken wir zum Teil dem Umstand, dass wir einen realen Kunden dabei beobachten konnten, wie er eine Finanzberechnung in Azure Service Fabric Actors innerhalb verblüffend kurzer Zeit durchführte – eine Monte-Carlo-Simulation für die Risikoberechnung, um genau zu sein.
+
+# Reliable Actors-Entwurfsmuster: Verteilte Berechnung
+Dieses Beispiel verdanken wir zum Teil dem Umstand, dass wir einen realen Kunden dabei beobachten konnten, wie er eine Finanzberechnung in Service Fabric Reliable Actors innerhalb verblüffend kurzer Zeit durchführte – eine Monte-Carlo-Simulation für die Risikoberechnung, um genau zu sein.
 
 Zunächst mag die Behandlung dieser Art von Arbeitslast durch Azure Service Fabric im Vergleich zu eher herkömmlichen Ansätzen wie Zuordnen/Reduzieren oder MPI nicht offensichtlich sein, insbesondere nicht für diejenigen, die über keine domänenspezifischen Kenntnisse verfügen.
 
@@ -202,6 +204,5 @@ Es soll hier keineswegs behauptet werden, Azure Service Fabric sei ein Drop-in R
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-pattern-distributed-computation/distributed-computation-1.png
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

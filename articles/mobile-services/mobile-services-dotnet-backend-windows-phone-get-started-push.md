@@ -155,7 +155,7 @@ Daraufhin kann der mobile Dienst im nicht authentifizierten Modus eine Verbindun
 
     >[AZURE.NOTE]Beim Ausführen von Tests im Windows Phone-Emulator kann der Fehler "401 Nicht autorisiert – RegistrationAuthorizationException" auftreten. Der Fehler kann während des `RegisterNativeAsync()`-Aufrufs auftreten und wird dadurch verursacht, wie der Windows Phone-Emulator seine Uhr mit dem Host-PC synchronisiert. Dies kann dazu führen, dass ein Sicherheitstoken abgelehnt wird. Um das Problem zu beheben, stellen Sie die Uhrzeit im Emulator vor dem Testen einfach manuell ein.
 
-5. Geben Sie in der App in das Textfeld den Text "hello push" ein, und klicken Sie dann auf **Speichern**. Klicken Sie dann direkt auf die Schaltfläche "Start" oder "Zurück", um die App zu verlassen
+5. Geben Sie in der App in das Textfeld den Text „hello push“ ein, und klicken Sie dann auf **Speichern**. Klicken Sie dann direkt auf die Schaltfläche „Start“ oder „Zurück“, um die App zu verlassen
 
    	![Einfügen von Text][2]
 
@@ -204,4 +204,4 @@ Weitere Informationen zu Mobile Services und Notification Hubs:
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

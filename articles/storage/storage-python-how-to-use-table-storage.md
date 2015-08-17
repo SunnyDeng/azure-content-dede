@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Verwenden des Tabellenspeichers mit Python | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Tabellendienst aus Python zum Erstellen und Löschen von Tabellen sowie zum Einfügen und Abfragen in der Tabelle verwenden." 
-	services="storage" 
-	documentationCenter="python" 
-	authors="huguesv" 
-	manager="wpickett" 
+<properties
+	pageTitle="Verwenden des Tabellenspeichers mit Python | Microsoft Azure"
+	description="Erfahren Sie, wie Sie den Tabellendienst aus Python zum Erstellen und Löschen von Tabellen sowie zum Einfügen und Abfragen in der Tabelle verwenden."
+	services="storage"
+	documentationCenter="python"
+	authors="huguesv"
+	manager="wpickett"
 	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="03/11/2015" 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="03/11/2015"
 	ms.author="huvalo"/>
 
 
@@ -23,7 +23,7 @@
 
 ## Übersicht
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Tabellenspeicherdienst demonstriert. Die Beispiele sind in Python geschrieben und verwenden das [Python Azure-Paket][]. Die behandelten Szenarien umfassen das **Erstellen und Löschen einer Tabelle sowie das Einfügen und Abfragen von Tabellenentitäten**.
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Tabellenspeicherdienst demonstriert. Die Beispiele sind in Python geschrieben und verwenden das [Python Azure-Paket][]. Die behandelten Szenarien umfassen das Erstellen und Löschen einer Tabelle sowie das Einfügen und Abfragen von Tabellenentitäten.
 
 [AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
 
@@ -46,14 +46,14 @@ Der folgende Code erstellt ein **TableService**-Objekt unter Verwendung des Spei
 
 ## Hinzufügen einer Entität zu einer Tabelle
 
-Um eine Entität hinzuzufügen, erstellen Sie zunächst ein Wörterbuch, das die Eigenschaftsnamen der Entität und deren Werte definiert. Beachten Sie, dass Sie für jede Entität **PartitionKey** und **RowKey** angeben müssen. Hierbei handelt es sich um die eindeutigen Bezeichner der Entität und Werte, die viel schneller abgerufen werden können als andere Eigenschaften. Das System verwendet **PartitionKey**, um die Entitäten der Tabelle automatisch über viele Speicherknoten zu verteilen. Entitäten mit dem gleichen **PartitionKey** werden auf dem gleichen Knoten gespeichert. Der **RowKey**-Wert ist eine eindeutige ID der Entität innerhalb der Partition, zu der sie gehört.
+Um eine Entität hinzuzufügen, erstellen Sie zunächst ein Wörterbuch, das die Eigenschaftsnamen der Entität und deren Werte definiert. Beachten Sie, dass Sie für jede Entität **PartitionKey** und **RowKey** angeben müssen. Dies sind die eindeutigen Bezeichner der Entität. Sie können diese Werte viel schneller als andere Eigenschaften abfragen. Das System verwendet **PartitionKey**, um die Entitäten der Tabelle automatisch über viele Speicherknoten zu verteilen. Entitäten mit dem gleichen **PartitionKey** werden auf dem gleichen Knoten gespeichert. Der **RowKey**-Wert ist eine eindeutige ID der Entität innerhalb der Partition, zu der sie gehört.
 
-Um eine Entität zu Ihrer Tabelle hinzuzufügen, übergeben Sie das Wörterbuchobjekt an die **insert_entity**-Methode.
+Um eine Entität zu Ihrer Tabelle hinzuzufügen, übergeben Sie das Wörterbuchobjekt an die **insert\_entity**-Methode.
 
 	task = {'PartitionKey': 'tasksSeattle', 'RowKey': '1', 'description' : 'Take out the trash', 'priority' : 200}
 	table_service.insert_entity('tasktable', task)
 
-Sie können auch eine Instanz der **Entity**-Klasse an die **insert_entity**-Methode übergeben.
+Sie können auch eine Instanz der **Entity**-Klasse an die **insert\_entity**-Methode übergeben.
 
 	task = Entity()
 	task.PartitionKey = 'tasksSeattle'
@@ -69,7 +69,7 @@ Dieser Code zeigt, wie Sie die alte Version einer existierenden Entität durch e
 	task = {'description' : 'Take out the garbage', 'priority' : 250}
 	table_service.update_entity('tasktable', 'tasksSeattle', '1', task)
 
-Der Aktualisierungsvorgang schlägt fehl, wenn die zu aktualisierende Entität nicht existiert. Daher sollten Sie **insert_or_replace_entity** verwenden, wenn Sie eine Entität unabhängig davon speichern möchten, ob diese bereits vorhanden ist. Der erste Aufruf im folgenden Beispiel ersetzt die existierende Entität. Der zweite Aufruf fügt eine neue Entität ein, da keine Entität mit dem angegebenen **PartitionKey** und **RowKey** in der Tabelle existiert.
+Der Aktualisierungsvorgang schlägt fehl, wenn die zu aktualisierende Entität nicht existiert. Daher sollten Sie **insert\_or\_replace\_entity** verwenden, wenn Sie eine Entität unabhängig davon speichern möchten, ob diese bereits vorhanden ist. Der erste Aufruf im folgenden Beispiel ersetzt die existierende Entität. Der zweite Aufruf fügt eine neue Entität ein, da keine Entität mit dem angegebenen **PartitionKey** und **RowKey** in der Tabelle existiert.
 
 	task = {'description' : 'Take out the garbage again', 'priority' : 250}
 	table_service.insert_or_replace_entity('tasktable', 'tasksSeattle', '1', task)
@@ -79,7 +79,7 @@ Der Aktualisierungsvorgang schlägt fehl, wenn die zu aktualisierende Entität n
 
 ## Ändern einer Gruppe von Entitäten
 
-Gelegentlich ist es sinnvoll, mehrere Vorgänge zusammen in einem Stapel zu senden, um die atomische Verarbeitung durch den Server sicherzustellen. Hierzu rufen Sie zunächst die **begin_batch**-Methode für **TableService** auf, und dann rufen Sie die Folge von Vorgängen wie üblich auf. Wenn Sie den Batch übermitteln möchten, rufen Sie **commit_batch** auf. Beachten Sie, dass sich alle Entitäten in derselben Partition befinden müssen, um diese als Batch ändern zu können. Das folgende Beispiel fügt zwei Entitäten als Batch ein.
+Gelegentlich ist es sinnvoll, mehrere Vorgänge zusammen in einem Stapel zu senden, um die atomische Verarbeitung durch den Server sicherzustellen. Hierzu rufen Sie zunächst die **begin\_batch**-Methode für **TableService** auf, und dann rufen Sie die Folge von Vorgängen wie üblich auf. Wenn Sie den Batch übermitteln möchten, rufen Sie **commit\_batch** auf. Beachten Sie, dass sich alle Entitäten in derselben Partition befinden müssen, um diese als Batch ändern zu können. Das folgende Beispiel fügt zwei Entitäten als Batch ein.
 
 	task10 = {'PartitionKey': 'tasksSeattle', 'RowKey': '10', 'description' : 'Go grocery shopping', 'priority' : 400}
 	task11 = {'PartitionKey': 'tasksSeattle', 'RowKey': '11', 'description' : 'Clean the bathroom', 'priority' : 100}
@@ -90,7 +90,7 @@ Gelegentlich ist es sinnvoll, mehrere Vorgänge zusammen in einem Stapel zu send
 
 ## Abfragen einer Entität
 
-Um eine Entität in einer Tabelle abzufragen, verwenden Sie die **get_entity**-Methode und übergeben ihr **PartitionKey** und **RowKey**.
+Um eine Entität in einer Tabelle abzufragen, verwenden Sie die **get\_entity**-Methode und übergeben ihr **PartitionKey** und **RowKey**.
 
 	task = table_service.get_entity('tasktable', 'tasksSeattle', '1')
 	print(task.description)
@@ -111,13 +111,13 @@ Mit einer Abfrage einer Tabelle können nur einige wenige Eigenschaften einer En
 
 Mit der Abfrage im folgenden Code werden nur die Beschreibungen von Entitäten in der Tabelle zurückgegeben.
 
-*Beachten Sie, dass der folgende Codeausschnitt nur mit dem Cloud-Speicherdienst funktioniert, da diese Funktion vom Speicheremulator nicht unterstützt wird.*
+[AZURE.NOTE]Der folgende Codeausschnitt funktioniert nur mit dem Cloud-Speicherdienst. Er wird nicht vom Speicheremulator unterstützt.
 
 	tasks = table_service.query_entities('tasktable', "PartitionKey eq 'tasksSeattle'", 'description')
 	for task in tasks:
 		print(task.description)
 
-## Zum Löschen einer Entität
+## Löschen einer Entität
 
 Sie können eine Entität unter Verwendung ihres Partitions- und Zeilenschlüssels löschen.
 
@@ -131,15 +131,14 @@ Mit dem folgenden Code wird eine Tabelle aus einem Speicherkonto gelöscht.
 
 ## Nächste Schritte
 
-Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
+Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden:
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][].
--   [Besuchen Sie den Blog des Azure-Speicherteams][].
+-   Weitere Informationen finden Sie in der MSDN-Referenz [Azure-Speicher][].
+-   Besuchen Sie den [Blog des Azure-Speicherteams][].
 
-[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
-[Besuchen Sie den Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
+[Azure-Speicher]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure-Paket]: https://pypi.python.org/pypi/azure
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
- 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

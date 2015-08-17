@@ -94,4 +94,4 @@ PowerShell bietet auch andere Befehle für die Arbeit mit Sperren, z. B. **Set-
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](resource-group-using-tags.md)
 - [Verschieben von Ressourcen in eine neue Ressourcengruppe](resource-group-move-resources.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

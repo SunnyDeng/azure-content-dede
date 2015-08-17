@@ -46,7 +46,7 @@ Mit dieser Methode ist es auch möglich, sich mit einer Kennwortanforderung anzu
 
 Führen Sie die folgenden Schritte aus, um den SSH-Authentifizierungsschlüssel zu generieren.
 
-1.	Laden und installieren Sie puttygen von folgendem Speicherort: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) 
+1.	Laden und installieren Sie puttygen von folgendem Speicherort: [http://www.chiark.greenend.org.uk/\~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) 
 2.	Führen Sie "PUTTYGEN.EXE" aus.
 3.	Klicken Sie auf **Generieren**, um die Schlüssel zu generieren. Während des Vorgangs können Sie den Zufallsfaktor durch Bewegen der Maus über den leeren Bereich im Fenster erhöhen. ![][1]
 4.	Nach dem Generierungsvorgang zeigt "Puttygen.exe" den generierten Schlüssel an. Beispiel: ![][2]
@@ -303,4 +303,4 @@ Nachdem die Verbindung hergestellt wurde, müsste in etwa Folgendes angezeigt we
 [18]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-18.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

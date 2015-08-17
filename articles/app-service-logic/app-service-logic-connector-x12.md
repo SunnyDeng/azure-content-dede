@@ -65,28 +65,11 @@ Der X12-Connector kann als Trigger oder als Aktion verwendet werden.
 
 	![Konfigurierte Elemente codieren][10]
 
-<table>
-	<tr>
-		<th>Parameter</th>
-		<th>Typ</th>
-		<th>Beschreibung des Parameters</th>
-	</tr>
-	<tr>
-		<td>Inhalt</td>
-		<td>Zeichenfolge</td>
-		<td>XML-Nachricht</td>
-	</tr>
-	<tr>
-		<td>Vereinbarungs-ID</td>
-		<td>Zeichenfolge</td>
-		<td>Vereinbarungs-ID</td>
-	</tr>
-	<tr>
-		<td>Batchnachricht</td>
-		<td>Zeichenfolge</td>
-		<td>Batchnachricht</td>
-	</tr>
-</table>
+Parameter|Typ|Beschreibung des Parameters
+---|---|---
+Inhalt|Zeichenfolge|XML-Nachricht
+Vereinbarungs-ID|Zeichenfolge|Vereinbarungs-ID
+Batchnachricht|Zeichenfolge|Batchnachricht
 
 Die Aktion gibt ein Objekt mit der X12-Nutzlast zurück.
 
@@ -109,4 +92,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [10]: ./media/app-service-logic-connector-x12/EncodeConfigured.PNG
 [11]: ./media/app-service-logic-connector-x12/TriggerSettings.PNG
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

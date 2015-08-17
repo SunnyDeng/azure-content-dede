@@ -81,7 +81,7 @@ Die Azure-Befehlszeilenschnittstelle wird mit dem Befehl `azure` aufgerufen. Wen
 
 Die oben aufgeführten Befehle der obersten Ebene enthalten Befehle für die Arbeit mit einem bestimmten Azure-Bereich. Der Befehl `azure account` enthält beispielsweise Befehle für Ihr Azure-Abonnement. Hierzu zählen etwa die zuvor verwendeten Einstellungen `download` und `import`. Ausführlichere Informationen zu den verfügbaren Befehlen und Optionen finden Sie unter „Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows“.
 
-Die meisten Befehle werden im Format `azure <command> <operation> [parameters]` angegeben und führen einen Vorgang für einen Dienst oder ein Objekt \(beispielsweise Ihre Kontokonfiguration\) aus. Andere Befehle verfügen über untergeordnete Befehle und werden im Format `azure <command> <subcommand> <operation> [parameters]` angegeben. Mit den folgenden Beispielbefehlen wird Ihre Kontokonfiguration bearbeitet:
+Die meisten Befehle werden im Format `azure <command> <operation> [parameters]` angegeben und führen einen Vorgang für einen Dienst oder ein Objekt (beispielsweise Ihre Kontokonfiguration) aus. Andere Befehle verfügen über untergeordnete Befehle und werden im Format `azure <command> <subcommand> <operation> [parameters]` angegeben. Mit den folgenden Beispielbefehlen wird Ihre Kontokonfiguration bearbeitet:
 
 * Mit dem folgenden Befehl können Sie importierte Abonnements anzeigen:
 
@@ -131,7 +131,7 @@ Mit der Azure-Befehlszeilenschnittstelle können Sie Azure-Dienste komfortabel v
 
 		azure site create mywebsite
 
-	Sie werden aufgefordert, die Region anzugeben, in der die Website erstellt wird. Wählen Sie eine geografisch nahegelegene Region aus. Nach Abschluss dieses Befehls ist die Website unter http://mywebsite.azurewebsites.net verfügbar. \(Ersetzen Sie **mywebsite** durch den angegebenen Namen.\)
+	Sie werden aufgefordert, die Region anzugeben, in der die Website erstellt wird. Wählen Sie eine geografisch nahegelegene Region aus. Nach Abschluss dieses Befehls ist die Website unter http://mywebsite.azurewebsites.net verfügbar. (Ersetzen Sie **mywebsite** durch den angegebenen Namen.)
 
 	> [AZURE.NOTE]Wenn Sie Git für die Quellcodeverwaltung verwenden, können Sie den Parameter `--git` angeben, um bei Azure ein Git-Repository für diese Website zu erstellen. Damit wird auch ein Git-Repository in dem Verzeichnis initialisiert, aus dem der Befehl aufgerufen wurde, sofern noch keines vorhanden ist. Dadurch wird auch ein Git-Remote namens __azure__ erstellt, das verwendet werden kann, um mithilfe des Befehls `git push azure master` Push-Bereitstellungen für die Azure-Website vorzunehmen.
 
@@ -168,7 +168,7 @@ Sie können die Azure-Befehlszeilenschnittstelle nicht nur für manuelle Befehle
 
 	azure site list | grep 'Running' | awk '{system("azure site stop "$2)}'
 
-In diesem Beispiel wird dem Befehl `grep`, der jede Zeile nach der Zeichenfolge „Running“ durchsucht, eine Liste mit Websites übergeben. Alle übereinstimmenden Zeilen werden dann an den Befehl `awk` übergeben, der `azure site stop` aufruft und aus der zweiten übermittelten Spalte \(Name der ausgeführten Website\) den Namen der zu beendenden Website entnimmt.
+In diesem Beispiel wird dem Befehl `grep`, der jede Zeile nach der Zeichenfolge „Running“ durchsucht, eine Liste mit Websites übergeben. Alle übereinstimmenden Zeilen werden dann an den Befehl `awk` übergeben, der `azure site stop` aufruft und aus der zweiten übermittelten Spalte (Name der ausgeführten Website) den Namen der zu beendenden Website entnimmt.
 
 Hier wird zwar gezeigt, wie Sie Befehle miteinander verketten können, aber Sie können mit den Skriptfunktionen, die der Befehlszeileninterpreter bereitstellt, auch ausgeklügelte Skripts erstellen. Skriptfunktionen und -syntax sind von Befehlszeileninterpreter zu Befehlszeileninterpreter unterschiedlich. Bash ist wahrscheinlich der gängigste Befehlszeileninterpreter für auf UNIX basierende Systeme, einschließlich Linux und OS X.
 
@@ -180,7 +180,7 @@ Weitere Informationen zur Skripterstellung für Windows-basierte Systeme mit Sta
 
 ### Erläuterung der Ergebnisse
 
-Beim Erstellen von Skripts müssen Sie häufig die Ausgabe eines Befehls erfassen und an einen anderen Befehl übergeben oder einen Vorgang mit der Ausgabe ausführen, z. B. die Ausgabe nach einem bestimmten Wert durchsuchen. Die Azure-Befehlszeilenschnittstelle generiert die Ausgabe in STDOUT und STDERR. Jede Zeile beginnt mit einem Präfix: `info:` steht für informative Statusmeldungen, `data:` für Daten, die an einen Dienst zurückgegeben wurden. Mit dem Parameter `--verbose` oder `-v` können Sie die Azure-Befehlszeilenschnittstelle allerdings anweisen, ausführlichere Informationen zurückzugeben. Dadurch werden zusätzliche Informationen \(mit dem Präfix `verbose:`\) zurückgegeben.
+Beim Erstellen von Skripts müssen Sie häufig die Ausgabe eines Befehls erfassen und an einen anderen Befehl übergeben oder einen Vorgang mit der Ausgabe ausführen, z. B. die Ausgabe nach einem bestimmten Wert durchsuchen. Die Azure-Befehlszeilenschnittstelle generiert die Ausgabe in STDOUT und STDERR. Jede Zeile beginnt mit einem Präfix: `info:` steht für informative Statusmeldungen, `data:` für Daten, die an einen Dienst zurückgegeben wurden. Mit dem Parameter `--verbose` oder `-v` können Sie die Azure-Befehlszeilenschnittstelle allerdings anweisen, ausführlichere Informationen zurückzugeben. Dadurch werden zusätzliche Informationen (mit dem Präfix `verbose:`) zurückgegeben.
 
 Die folgende Ausgabe ist ein Beispiel für die Rückgabe des Befehls `azure site list`:
 
@@ -228,13 +228,13 @@ Wenn der Parameter `--verbose` oder `-v` angegeben wird, werden Informationen zu
 	data:    myawesomesite  Running  Free  myawesomesite.azurewebsites.net
 	info:    site list command OK
 
-Beachten Sie dass `verbose:`-Informationen im JSON-Datenformat dargestellt werden. Mit dem Parameter `--json` können Sie die Informationen im JSON-Format zurückgeben, falls Sie mit Hilfsprogrammen arbeiten, die das JSON-Format verarbeiten können \(etwa [jsawk](https://github.com/micha/jsawk) oder [jq](http://stedolan.github.io/jq/)\). Beispiel:
+Beachten Sie dass `verbose:`-Informationen im JSON-Datenformat dargestellt werden. Mit dem Parameter `--json` können Sie die Informationen im JSON-Format zurückgeben, falls Sie mit Hilfsprogrammen arbeiten, die das JSON-Format verarbeiten können (etwa [jsawk](https://github.com/micha/jsawk) oder [jq](http://stedolan.github.io/jq/)). Beispiel:
 
 	azure site list --json | jsawk -n 'out(this.Name)' | xargs -L 1 azure site delete -q
 
 Mit dem obigen Befehl wird eine Liste von Websites im JSON-Format abgerufen, dann werden mit jsawk die Namen der Websites abgerufen, und schließlich wird mit xargs ein Befehl zum Löschen von Websites für jede Website ausgeführt, wobei der Websitename als Parameter übergeben wird.
 
->[AZURE.NOTE]Der Parameter `--json` blockiert die Generierung von Status- oder Dateninformationen \(Zeichenfolgen mit dem Präfix `info:` und `data:`\). Wenn der Parameter `--json` beispielsweise für den Befehl `azure site create` angegeben wird, wird keine Ausgabe zurückgegeben, da dieser Befehl ausschließlich `info:`-Daten zurückgibt.
+>[AZURE.NOTE]Der Parameter `--json` blockiert die Generierung von Status- oder Dateninformationen (Zeichenfolgen mit dem Präfix `info:` und `data:`). Wenn der Parameter `--json` beispielsweise für den Befehl `azure site create` angegeben wird, wird keine Ausgabe zurückgegeben, da dieser Befehl ausschließlich `info:`-Daten zurückgibt.
 
 ### Arbeiten mit Fehlern
 
@@ -281,4 +281,4 @@ Wenn Sie ein Skript schreiben, das auf dem Beendigungsstatus basiert, müssen Si
 [signuporg]: http://www.windowsazure.com/documentation/articles/sign-up-organization/
 [Using the Azure CLI]: virtual-machines-command-line-tools.md
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

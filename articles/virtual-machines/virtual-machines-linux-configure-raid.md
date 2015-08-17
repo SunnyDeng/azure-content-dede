@@ -4,8 +4,10 @@
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="szarkos" 
+	writer="szark" 
 	manager="timlt" 
 	editor=""/>
+
 
 <tags 
 	ms.service="virtual-machines" 
@@ -13,8 +15,9 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/13/2015" 
+	ms.date="07/29/2015" 
 	ms.author="szark"/>
+
 
 
 
@@ -23,7 +26,7 @@ Ein häufiges Szenario ist die Verwendung von Software-RAID auf virtuellen Linux
 
 
 ## Anfügen von Datenträgern
-In der Regel sind zwei oder mehr leere Datenträger erforderlich, um ein RAID-Gerät zu konfigurieren. In diesem Artikel wird nicht erläutert, wie Sie Datenträger an einen virtuellen Linux-Computer anfügen. Eine ausführliche Anleitung, wie Sie einen leeren Datenträger an einen virtuellen Linux-Computer in Azure anfügen, finden Sie im Windows Azure-Artikel [Anfügen eines Datenträgers](storage-windows-attach-disk.md#attachempty).
+In der Regel sind zwei oder mehr leere Datenträger erforderlich, um ein RAID-Gerät zu konfigurieren. In diesem Artikel wird nicht erläutert, wie Sie Datenträger an einen virtuellen Linux-Computer anfügen. Eine ausführliche Anleitung, wie Sie einen leeren Datenträger an einen virtuellen Linux-Computer in Azure anfügen, finden Sie im Microsoft Azure-Artikel [Anfügen eines Datenträgers](storage-windows-attach-disk.md#attachempty).
 
 >[AZURE.NOTE]Die Größe "ExtraSmall" für virtuelle Computer unterstützt maximal einen angefügten Datenträger pro virtuellem Computer. Ausführliche Informationen zu den Größen virtueller Computer und zur Anzahl der unterstützten Datenträger finden Sie unter [Größen virtueller Computer und Clouddienste für Microsoft Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
 
@@ -108,20 +111,20 @@ In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät
 
 2. Erstellen des Dateisystems auf dem neuen RAID-Gerät
 
-	**CentOS, Oracle Linux, openSUSE und Ubuntu**
+	**CentOS, Oracle Linux, SLES 12, openSUSE und Ubuntu**
 
 		# sudo mkfs -t ext4 /dev/md127
 
-	**SLES**
+	**SLES 11**
 
 		# sudo mkfs -t ext3 /dev/md127
 
-3. **SLES und openSUSE** - boot.md aktivieren und mdadm.conf erstellen
+3. **SLES 11 und openSUSE** - boot.md aktivieren und mdadm.conf erstellen
 
 		# sudo -i chkconfig --add boot.md
 		# sudo echo 'DEVICE /dev/sd*[0-9]' >> /etc/mdadm.conf
 
-	>[AZURE.NOTE]Nach den Änderungen an den SUSE-Systemen kann ein Neustart erforderlich sein.
+	>[AZURE.NOTE]Nach den Änderungen an den SUSE-Systemen kann ein Neustart erforderlich sein. Dieser Schritt ist für SLES 12 *nicht* erforderlich.
 
 
 ## Hinzufügen des neuen Laufwerks zu "/etc/fstab"
@@ -142,7 +145,7 @@ In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät
 
 		UUID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee  /data  ext4  defaults  0  2
 
-	Oder für **SLES und openSUSE**:
+	Oder für **SLES 11 und openSUSE**:
 
 		/dev/disk/by-uuid/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee  /data  ext3  defaults  0  2
 
@@ -178,4 +181,4 @@ In diesem Beispiel wird nach dem Ausführen dieses Befehls ein neues RAID-Gerät
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -113,4 +113,4 @@ Erfahren Sie mehr über das [Verwalten Ihres StorSimple-Speicherkontos](../stors
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

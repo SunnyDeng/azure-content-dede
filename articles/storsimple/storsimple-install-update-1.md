@@ -100,4 +100,4 @@ Wenn Sie sichergestellt haben, dass die Verbindung vorhanden ist, und dieses Pro
 
 Erfahren Sie mehr über [Microsoft Azure StorSimple](storsimple-overview.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

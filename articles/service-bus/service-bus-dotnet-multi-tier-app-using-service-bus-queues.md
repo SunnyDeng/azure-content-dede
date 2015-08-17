@@ -7,14 +7,16 @@
 	manager="timlt"
 	editor=""/>
 
+
 <tags
 	ms.service="service-bus"
 	ms.workload="tbd"
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
-	ms.topic="get-started-article"
+	ms.topic="hero-article"
 	ms.date="07/02/2015"
 	ms.author="sethm"/>
+
 
 # .NET-Anwendungen mit mehreren Ebenen unter Verwendung von Service Bus-Warteschlangen
 
@@ -154,7 +156,7 @@ In diesem Abschnitt lernen Sie, das Front-End Ihrer Anwendung zu erstellen. Zun�
 
 6.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Verweise** und anschließend auf **NuGet-Pakete verwalten...** oder auf **Bibliothekspaketverweis hinzufügen**.
 
-7.  Wählen Sie im linken Bereich des Dialogfelds **Online** aus. Suchen Sie nach „** Service Bus **“ und wählen Sie das **Microsoft Azure Service Bus** Element aus. Schließen Sie die Installation ab und schließen Sie das Dialogfeld.
+7.  Wählen Sie im linken Bereich des Dialogfelds **Online** aus. Suchen Sie nach "**Service Bus**", und wählen Sie das Element **Microsoft Azure Service Bus** aus. Schließen Sie die Installation ab und schließen Sie das Dialogfeld.
 
     ![][13]
 
@@ -177,7 +179,7 @@ In diesem Abschnitt erstellen Sie die verschiedenen Seiten, aus denen Ihre Anwen
             }
         }
 
-2.  Doppelklicken Sie im **Projektmappen-Explorer** auf **Controllers\HomeController.cs**. Fügen Sie die folgenden **using**-Anweisungen am Anfang Ihrer Datei hinzu, um den Namespace für Ihr neu erstelltes Modell sowie den Servicebus einzuschließen:
+2.  Doppelklicken Sie im **Projektmappen-Explorer** auf **Controllers\\HomeController.cs**. Fügen Sie die folgenden **using**-Anweisungen am Anfang Ihrer Datei hinzu, um den Namespace für Ihr neu erstelltes Modell sowie den Servicebus einzuschließen:
 
         using FrontendWebRole.Models;
         using Microsoft.ServiceBus.Messaging;
@@ -246,7 +248,7 @@ In diesem Abschnitt erstellen Sie die verschiedenen Seiten, aus denen Ihre Anwen
 
 7.  Klicken Sie auf **Hinzufügen**.
 
-8.  Ändern Sie nun den angezeigten Namen Ihrer Anwendung. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei **Views\Shared\_Layout.cshtml**, um diese im Visual Studio-Editor zu öffnen.
+8.  Ändern Sie nun den angezeigten Namen Ihrer Anwendung. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei \*\*Views\\Shared\\\_Layout.cshtml\*\*, um diese im Visual Studio-Editor zu öffnen.
 
 9.  Ersetzen Sie alle Vorkommnisse von **My ASP.NET Application** mit **LITWARE's Products**.
 
@@ -254,7 +256,7 @@ In diesem Abschnitt erstellen Sie die verschiedenen Seiten, aus denen Ihre Anwen
 
 	![][28]
 
-11. Erweitern Sie anschließend die Übermittlungsseite um einige Informationen zur Warteschlange. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei **Views\Home\Submit.cshtml**, um diese im Visual Studio-Editor zu öffnen. Fügen Sie die folgende Zeile nach **&lt;h2>Submit&lt;/h2>** hinzu. **ViewBag.MessageCount** ist momentan leer. Sie werden diesen Bereich später ausfüllen.
+11. Erweitern Sie anschließend die Übermittlungsseite um einige Informationen zur Warteschlange. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei **Views\\Home\\Submit.cshtml**, um diese im Visual Studio-Editor zu öffnen. Fügen Sie die folgende Zeile nach **&lt;h2>Submit&lt;/h2>** hinzu. **ViewBag.MessageCount** ist momentan leer. Sie werden diesen Bereich später ausfüllen.
 
         <p>Current number of orders in queue waiting to be processed: @ViewBag.MessageCount</p>
 
@@ -333,13 +335,13 @@ Sie werden nun den Code für die Übermittlung von Elementen in die Warteschlang
 
     Später in diesem Lernprogramm erfahren Sie, wie Sie den Namen Ihres **Namespace** und Ihres SAS-Schlüsselwerts in einer Konfigurationsdatei speichern können.
 
-4.  Nun werden Sie sicherstellen, dass Ihre **Initialize**-Methode aufgerufen wird. Doppelklicken Sie im **Projektmappen-Explorer** auf **Global.asax\Global.asax.cs**.
+4.  Nun werden Sie sicherstellen, dass Ihre **Initialize**-Methode aufgerufen wird. Doppelklicken Sie im **Projektmappen-Explorer** auf **Global.asax\\Global.asax.cs**.
 
-5.  Fügen Sie die folgende Zeile am Ende der Methode **Application_Start** hinzu:
+5.  Fügen Sie die folgende Zeile am Ende der Methode **Application\_Start** hinzu:
 
         FrontendWebRole.QueueConnector.Initialize();
 
-6.  Zuletzt aktualisieren Sie den zuvor erstellten Webcode, um die Elemente an die Warteschlange zu übermitteln. Doppelklicken Sie im **Projektmappen-Explorer** auf **Controllers\HomeController.cs**.
+6.  Zuletzt aktualisieren Sie den zuvor erstellten Webcode, um die Elemente an die Warteschlange zu übermitteln. Doppelklicken Sie im **Projektmappen-Explorer** auf **Controllers\\HomeController.cs**.
 
 7.  Aktualisieren Sie die **Submit()**-Methode wie folgt, um die Anzahl der Nachrichten in der Warteschlange abzurufen:
 
@@ -392,6 +394,7 @@ Sie können die Konfigurationsdaten als Verbindungszeichenfolge angeben, um eine
 	<ConfigurationSettings>
     ...
     	<Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[yourServiceNamespace].servicebus.windows.net/;SharedSecretIssuer=RootManageSharedAccessKey;SharedSecretValue=[yourKey]" />
+
 	</ConfigurationSettings>
 
 Der folgende Code ruft die Verbindungszeichenfolge ab, erstellt eine Warteschlange und initialisiert die Verbindung zur Warteschlange:
@@ -445,7 +448,7 @@ Sie werden nun die Workerrolle zur Verarbeitung der übermittelten Nachrichten e
 
 9.  Erstellen Sie die **OnlineOrder**-Klasse, um die Nachrichten abzubilden, während diese aus der Warteschlange verarbeitet werden. Sie können dabei eine zuvor erstellte Klasse wiederverwenden. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **OrderProcessingRole** (klicken Sie auf das Projekt, nicht auf die Rolle). Klicken Sie auf **Hinzufügen** und anschließend auf **Vorhandenes Element**.
 
-10. Durchsuchen Sie den Unterordner nach **FrontendWebRole\Models** und doppelklicken Sie auf **OnlineOrder.cs**, um die Klasse zum Projekt hinzuzufügen.
+10. Durchsuchen Sie den Unterordner nach **FrontendWebRole\\Models** und doppelklicken Sie auf **OnlineOrder.cs**, um die Klasse zum Projekt hinzuzufügen.
 
 11. Ändern Sie in WorkerRole.cs den Wert der Variablen **QueueName** in **WorkerRole.cs** von `"ProcessingQueue"` zu `"OrdersQueue"`, wie im folgenden Code gezeigt:
 
@@ -540,4 +543,4 @@ Informationen zum Bereitstellen des Front-Ends für eine Azure-Website finden Si
   [executionmodels]: http://azure.microsoft.com/develop/net/fundamentals/compute/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

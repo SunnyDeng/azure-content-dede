@@ -89,4 +89,4 @@ Dieser Auftrag wird nun abgebrochen.
 
 [Erfahren Sie mehr über das Verwalten von StorSimple-Sicherungsrichtlinien](storsimple-manage-backup-policies.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

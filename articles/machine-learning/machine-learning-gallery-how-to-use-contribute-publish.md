@@ -113,4 +113,4 @@ Beschreibungen mit Rich Text-Renderingfunktionen sind nicht für alle Katalogben
 **[ZUM KATALOG >>](http://gallery.azureml.net)**
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -7,6 +7,7 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
+
 <tags 
 	ms.service="hdinsight" 
 	ms.workload="big-data" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/11/2015" 
 	ms.author="nitinme"/>
+
 
 # Installieren und Verwenden von Spark in HDInsight-Clustern
 
@@ -60,18 +62,16 @@ Ein Beispielskript zum Installieren von Spark in einem HDInsight-Cluster steht i
 	![Anpassen eines Clusters mit "Skriptaktion"](./media/hdinsight-hadoop-spark-install/HDI.CustomProvision.Page6.png "Anpassen eines Clusters mit "Skriptaktion"")
 	
 	<table border='1'>
-		<tr><th>Eigenschaft</th><th>Wert</th></tr>
-		<tr><td>Name</td>
-			<td>Geben Sie einen Namen für die Skriptaktion an. Z. B. <b>Spark installieren</b>.</td></tr>
-		<tr><td>Skript-URI</td>
-			<td>Geben Sie den Uniform Resource Identifier (URI) für das Skript an, das aufgerufen wird, um den Cluster anzupassen. Beispielsweise <i>https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1</i></td></tr>
-		<tr><td>Knotentyp</td>
-			<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
-		<tr><td>Parameter</td>
-			<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist. Für das Skript zum Installieren von Spark sind keine Parameter erforderlich, sodass Sie dieses Feld leer lassen können.</td></tr>
-	</table>
-
-	Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
+	<tr><th>Eigenschaft</th><th>Wert</th></tr>
+	<tr><td>Name</td>
+		<td>Geben Sie einen Namen für die Skriptaktion an. Z. B. <b>Spark installieren</b>.</td></tr>
+	<tr><td>Skript-URI</td>
+		<td>Geben Sie den Uniform Resource Identifier (URI) für das Skript an, das aufgerufen wird, um den Cluster anzupassen. Beispielsweise <i>https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1</i></td></tr>
+	<tr><td>Knotentyp</td>
+		<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
+	<tr><td>Parameter</td>
+		<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist. Für das Skript zum Installieren von Spark sind keine Parameter erforderlich, sodass Sie dieses Feld leer lassen können.</td></tr>
+</table>Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
 
 Sie können das Skript auch zum Installieren von Giraph auf HDInsight mit Azure PowerShell oder dem HDInsight .NET SDK verwenden. Anweisungen zu diesen Verfahren finden Sie nachfolgend in diesem Thema.
 
@@ -87,7 +87,7 @@ Führen Sie die folgenden Schritte aus, um Spark-Abfragen über eine interaktive
 
 1. Aktivieren Sie im Azure-Portal Remotedesktop für den Cluster, den Sie mit installiertem Spark erstellt haben, und stellen Sie dann eine Remoteverbindung mit dem Cluster her. Anweisungen hierzu finden Sie unter <a href="http://azure.microsoft.com/documentation/articles/hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung mit HDInsight-Clustern mit RDP</a>.
 
-2. Öffnen Sie in der RDP-Sitzung auf dem Desktop die Hadoop-Befehlszeile, und navigieren Sie zum Speicherort der Installation von Spark, z. B. **C:\apps\dist\spark-1.2.0**.
+2. Öffnen Sie in der RDP-Sitzung auf dem Desktop die Hadoop-Befehlszeile, und navigieren Sie zum Speicherort der Installation von Spark, z. B. **C:\\apps\\dist\\spark-1.2.0**.
 
 
 3. Führen Sie den folgenden Befehl aus, um die Spark-Shell zu starten:
@@ -119,9 +119,9 @@ Mit Spark SQL können Sie mit Spark relationale Abfragen (SQL = Structured Query
 
 >[AZURE.NOTE]Das folgende Beispiel wurde gegen **Spark 1.2.0** erstellt, das installiert wird, wenn Sie die Skript-Aktion beim Bereitstellen von HDInsight 3.2 Cluster ausführen.
 
-1. Aktivieren Sie im Azure-Portal Remotedesktop für den Cluster, den Sie mit installiertem Spark erstellt haben, und stellen Sie dann eine Remoteverbindung mit dem Cluster her. Anweisungen hierzu finden Sie unter <a href="http://azure.microsoft.com/documentation/articles/hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung mit HDInsight-Clustern mit RDP</a>.
+1. Aktivieren Sie im Azure-Portal Remotedesktop für den Cluster, den Sie mit installiertem Spark erstellt haben, und stellen Sie dann eine Remoteverbindung mit dem Cluster her. Anweisungen hierzu finden Sie unter </a>Herstellen einer Verbindung mit HDInsight-Clustern mit RDP.
 
-2. Öffnen Sie in der RDP-Sitzung auf dem Desktop die Hadoop-Befehlszeile, und navigieren Sie zum Speicherort der Installation von Spark, z. B. **C:\apps\dist\spark-1.2.0**.
+2. Öffnen Sie in der RDP-Sitzung auf dem Desktop die Hadoop-Befehlszeile, und navigieren Sie zum Speicherort der Installation von Spark, z. B. **C:\\apps\\dist\\spark-1.2.0**.
 
 
 3. Führen Sie den folgenden Befehl aus, um die Spark-Shell zu starten:
@@ -203,20 +203,20 @@ In diesem Abschnitt verwenden Sie das <a href="http://www.scala-sbt.org/0.13/doc
 	>[AZURE.NOTE]Stellen Sie sich, dass Sie die leeren Zeilen in der Datei beibehalten.
 
 	
-3. Erstellen Sie unter dem Ordner **SimpleScalaApp** die Verzeichnisstruktur **\src\main\scala**, und fügen Sie das zuvor erstellte Scala-Programm (**SimpleApp.scala**) unter dem Ordner \src\main\scala ein.
+3. Erstellen Sie unter dem Ordner **SimpleScalaApp** die Verzeichnisstruktur **\\src\\main\\scala**, und fügen Sie das zuvor erstellte Scala-Programm (**SimpleApp.scala**) unter dem Ordner \\src\\main\\scala ein.
 4. Öffnen Sie eine Eingabeaufforderung, navigieren Sie zum Verzeichnis SimpleScalaApp, und geben Sie den folgenden Befehl ein:
 
 
 		sbt package
 
 
-	Nach der Kompilierung der Anwendung wird im Stammordner SimpleScalaApp unter **\target\scala-2.10** die Datei **simpleapp_2.10-1.0.jar** angezeigt.
+	Nach der Kompilierung der Anwendung wird im Stammordner SimpleScalaApp unter **\\target\\scala-2.10** die Datei **simpleapp\_2.10-1.0.jar** angezeigt.
 
 
 #### Ausführen des Auftrags im Cluster
 In diesem Abschnitt stellen Sie eine Remoteverbindung mit dem Cluster mit installiertem Spark her und kopieren anschließend den Zielordner des Projekts SimpleScalaApp. Danach übermitteln Sie den Auftrag mit dem Befehl **spark-submit** an den Cluster.
 
-1. Stellen Sie eine Remoteverbindung mit dem Cluster mit installiertem Spark her. Kopieren Sie auf dem Computer, auf dem Sie das Programm SimpleApp.scala erstellt haben, den Ordner **SimpleScalaApp\target**, und fügen Sie ihn an einen Speicherort im Cluster ein.
+1. Stellen Sie eine Remoteverbindung mit dem Cluster mit installiertem Spark her. Kopieren Sie auf dem Computer, auf dem Sie das Programm SimpleApp.scala erstellt haben, den Ordner **SimpleScalaApp\\target**, und fügen Sie ihn an einen Speicherort im Cluster ein.
 2. Öffnen Sie in der RDP-Sitzung auf dem Desktop die Hadoop-Befehlszeile, und navigieren Sie zum Speicherort, dem Sie den **Ziel**-Ordner hinzugefügt haben.
 3. Geben Sie den folgenden Befehl ein, um das Programm SimpleApp.scala auszuführen:
 
@@ -409,7 +409,7 @@ Erstellen Sie ein selbstsigniertes Zertifikat, installieren Sie es auf Ihrer Arb
 
 **So führen Sie die Anwendung aus**
 
-Öffnen Sie eine Azure PowerShell-Konsole, wechseln Sie zum Speicherort, an dem Sie das Visual Studio-Projekt gespeichert haben, wechseln Sie innerhalb des Projekts zum Verzeichnis "\bin\debug", und führen Sie den folgenden Befehl aus:
+Öffnen Sie eine Azure PowerShell-Konsole, wechseln Sie zum Speicherort, an dem Sie das Visual Studio-Projekt gespeichert haben, wechseln Sie innerhalb des Projekts zum Verzeichnis "\\bin\\debug", und führen Sie den folgenden Befehl aus:
 
 	.\CreateSparkCluster <cluster-name>
 
@@ -431,4 +431,4 @@ Geben Sie einen Clusternamen ein, und drücken Sie die EINGABETASTE zum Bereitst
 [powershell-install-configure]: ../install-configure-powershell.md
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

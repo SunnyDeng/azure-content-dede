@@ -32,7 +32,7 @@ Die Testumgebung für die Basiskonfiguration besteht aus dem Corpnet-Subnetz in 
 
 Sie enthält folgende Elemente:
 
-- Einen virtuellen Azure-Computer mit Windows Server 2012 R2 mit dem Namen „DC1“, der als Intranetdomänencontroller und DNS-Server \(Domain Name System\) konfiguriert ist
+- Einen virtuellen Azure-Computer mit Windows Server 2012 R2 mit dem Namen „DC1“, der als Intranetdomänencontroller und DNS-Server (Domain Name System) konfiguriert ist
 - Einen virtuellen Azure-Computer mit Windows Server 2012 R2 und dem Namen „APP1“, der als allgemeine Anwendung und Webserver konfiguriert ist
 - Einen virtuellen Azure-Computer mit Windows Server 2012 R2 und dem Namen „CLIENT1“, der als Intranetclient verwendet wird
 
@@ -48,9 +48,9 @@ Die Einrichtung des Corpnet-Subnetzes der Testumgebung für die Basiskonfigurati
 3.	Konfigurieren von APP1
 4.	Konfigurieren von CLIENT1
 
-Wenn Sie noch nicht über ein Azure-Konto verfügen, erhalten Sie unter [Try Azure](http://azure.microsoft.com/pricing/free-trial/) \(Azure testen\) eine kostenlose Testversion. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+Wenn Sie noch nicht über ein Azure-Konto verfügen, erhalten Sie unter [Try Azure](http://azure.microsoft.com/pricing/free-trial/) (Azure testen) eine kostenlose Testversion. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
-> [AZURE.NOTE]Durch virtuelle Computer, die in Azure ausgeführt werden, entstehen fortlaufend Kosten. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zu den Kosten der in Azure ausgeführten virtuellen Computer finden Sie unter [Virtuelle Computer – Preisdetails](http://azure.microsoft.com/pricing/details/virtual-machines/) und [Azure-Preisrechner](http://azure.microsoft.com/pricing/calculator/). Informationen dazu, wie Sie die Kosten möglichst gering halten können, finden Sie unter [Minimizing the costs of test environment virtual machines in Azure](#costs) \(Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure\).
+> [AZURE.NOTE]Durch virtuelle Computer, die in Azure ausgeführt werden, entstehen fortlaufend Kosten. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zu den Kosten der in Azure ausgeführten virtuellen Computer finden Sie unter [Virtuelle Computer – Preisdetails](http://azure.microsoft.com/pricing/details/virtual-machines/) und [Azure-Preisrechner](http://azure.microsoft.com/pricing/calculator/). Informationen dazu, wie Sie die Kosten möglichst gering halten können, finden Sie unter [Minimizing the costs of test environment virtual machines in Azure](#costs) (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure).
 
 [AZURE.INCLUDE [resource-manager-pointer-to-service-management](../../includes/resource-manager-pointer-to-service-management.md)]
 
@@ -120,7 +120,7 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ## Phase 2: Konfigurieren von DC1
 
-Bei DC1 handelt es sich um einen Domänencontroller für die AD DS-Domäne \(Active Directory Domain Services\) „corp.contoso.com“ und zudem um einen DNS-Server für die virtuellen Computer im virtuellen Netzwerk „TestLab“.
+Bei DC1 handelt es sich um einen Domänencontroller für die AD DS-Domäne (Active Directory Domain Services) „corp.contoso.com“ und zudem um einen DNS-Server für die virtuellen Computer im virtuellen Netzwerk „TestLab“.
 
 Geben Sie zuerst den Namen der Ressourcengruppe, den Azure-Standort und den Namen des Speicherkontos an, und führen Sie mithilfe der Azure PowerShell-Eingabeaufforderung auf dem lokalen Computer die folgenden Befehle aus, um für DC1 einen virtuellen Computer in Azure zu erstellen:
 
@@ -149,14 +149,14 @@ Stellen Sie dann eine Verbindung mit dem virtuellen Computer DC1 her.
 3.	Öffnen Sie die heruntergeladene Datei „DC1.rdp“, wenn Sie dazu aufgefordert werden.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
-- Name: **DC1\\**\[Name des lokalen Administratorkontos\]
-- Kennwort: \[Kennwort des lokalen Administratorkontos\]
+- Name: **DC1\**[Name des lokalen Administratorkontos]
+- Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
 Fügen Sie anschließend einen zusätzlichen Datenträger als neues Volume mit dem Laufwerkbuchstaben F: hinzu.
 
 1.	Klicken Sie im linken Bereich des Server-Managers auf **Datei- und Speicherdienste** und anschließend auf **Datenträger**.
-2.	Klicken Sie im Inhaltsbereich in der Gruppe **Datenträger** auf **Datenträger 2** \(wobei **Partition** die Einstellung **Unbekannt** aufweisen muss\).
+2.	Klicken Sie im Inhaltsbereich in der Gruppe **Datenträger** auf **Datenträger 2** (wobei **Partition** die Einstellung **Unbekannt** aufweisen muss).
 3.	Klicken Sie auf **Aufgaben** und anschließend auf **Neues Volume**.
 4.	Klicken Sie auf der Seite „Voraussetzungen“ des Assistenten für neue Volumes auf **Weiter**.
 5.	Klicken Sie auf der Seite „Server und Datenträger auswählen“ auf **Datenträger 2** und anschließend auf **Weiter**. Wenn Sie dazu aufgefordert werden, klicken Sie auf **OK**.
@@ -178,8 +178,8 @@ Stellen Sie nach dem Neustart des virtuellen Computers DC1 erneut eine Verbindun
 3.	Wenn Sie zum Öffnen von „DC1.rdp“ aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
-- Name: **CORP\\**\[Name des lokalen Administratorkontos\]
-- Kennwort: \[Kennwort des lokalen Administratorkontos\]
+- Name: **CORP\**[Name des lokalen Administratorkontos]
+- Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
 Als Nächstes erstellen Sie in Active Directory ein Benutzerkonto zum Anmelden bei Mitgliedscomputern der CORP-Domäne. Führen Sie mithilfe einer Windows PowerShell-Eingabeaufforderung auf Administratorebene nacheinander die folgenden Befehle aus:
@@ -187,7 +187,7 @@ Als Nächstes erstellen Sie in Active Directory ein Benutzerkonto zum Anmelden b
 	New-ADUser -SamAccountName User1 -AccountPassword (read-host "Set user password" -assecurestring) -name "User1" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false
 	Add-ADPrincipalGroupMembership -Identity "CN=User1,CN=Users,DC=corp,DC=contoso,DC=com" -MemberOf "CN=Enterprise Admins,CN=Users,DC=corp,DC=contoso,DC=com","CN=Domain Admins,CN=Users,DC=corp,DC=contoso,DC=com"
 
-Beachten Sie, dass durch den ersten Befehl die Aufforderung ausgelöst wird, das Kontokennwort für User1 einzugeben. Wählen Sie ein sicheres Kennwort aus, da dieses Konto für Remotedesktopverbindungen sämtlicher Mitgliedscomputer der CORP-Domäne verwendet wird. Sie können die Sicherheit des Kennworts unter [Password Checker: Using Strong Passwords](https://www.microsoft.com/security/pc-security/password-checker.aspx) \(Kennwortprüfung – Verwenden sicherer Kennwörter\) überprüfen. Zeichnen Sie das User1-Kontokennwort auf, und speichern Sie es an einem sicheren Ort.
+Beachten Sie, dass durch den ersten Befehl die Aufforderung ausgelöst wird, das Kontokennwort für User1 einzugeben. Wählen Sie ein sicheres Kennwort aus, da dieses Konto für Remotedesktopverbindungen sämtlicher Mitgliedscomputer der CORP-Domäne verwendet wird. Sie können die Sicherheit des Kennworts unter [Password Checker: Using Strong Passwords](https://www.microsoft.com/security/pc-security/password-checker.aspx) (Kennwortprüfung – Verwenden sicherer Kennwörter) überprüfen. Zeichnen Sie das User1-Kontokennwort auf, und speichern Sie es an einem sicheren Ort.
 
 Schließen Sie die Remotedesktopsitzung mit DC1, und stellen Sie die Verbindung dann mit dem Konto „CORP\\User1“ wieder her.
 
@@ -289,7 +289,8 @@ Als Nächstes überprüfen Sie, ob Sie mit CLIENT1 auf die Web- und Dateifreigab
 2.	Klicken Sie unter **Eigenschaften von CLIENT1** neben **Verstärkte Sicherheitskonfiguration für IE** auf **Ein** .
 3.	Klicken Sie unter **Verstärkte Sicherheitskonfiguration für IE** bei **Administratoren** und **Benutzern** auf **Aus**, und klicken Sie dann auf **OK**.
 4.	Klicken Sie auf der Startseite auf **Internet Explorer** und dann auf **OK**.
-5.	Geben Sie in die Adressleiste **http://app1.corp.contoso.com/** ein, und drücken Sie dann die EINGABETASTE. Nun sollte die IIS-Standardwebseite \(Internet-Informationsdienste\) für APP1 angezeigt werden. 6.	Klicken Sie in der Desktopsymbolleiste auf das Symbol des Datei-Explorers.
+5.	Geben Sie in die Adressleiste ****http://app1.corp.contoso.com/** ein, und drücken Sie dann die EINGABETASTE. Nun sollte die IIS-Standardwebseite (Internet-Informationsdienste) für APP1 angezeigt werden.
+6.	Klicken Sie in der Desktopsymbolleiste auf das Symbol des Datei-Explorers.
 7.	Geben Sie in der Adressleiste **\\\\app1\\Files** ein, und drücken Sie dann die EINGABETASTE.
 8.	Es wird ein Fenster mit dem Inhalt des freigegebenen Ordners geöffnet.
 9.	Doppelklicken Sie im Fenster **Dateien** des freigegebenen Ordners auf die Datei **Example.txt**. Nun wird der Inhalt der Datei „Example.txt“ angezeigt.
@@ -303,12 +304,12 @@ Die Basiskonfiguration in Azure kann nun zur Anwendungsentwicklung, zu Testzweck
 
 ## Zusätzliche Ressourcen
 
-[Hybrid cloud test environments](../virtual-network/virtual-networks-setup-hybrid-cloud-environment-testing.md) \(Testumgebungen für Hybridclouds\)
+[Hybrid cloud test environments](../virtual-network/virtual-networks-setup-hybrid-cloud-environment-testing.md) (Testumgebungen für Hybridclouds)
 
 [Testumgebung für die Basiskonfiguration](virtual-machines-base-configuration-test-environment.md)
 
 
-## <a id="costs"></a>Minimizing the costs of test environment virtual machines in Azure \(Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure\)
+## <a id="costs"></a>Minimizing the costs of test environment virtual machines in Azure (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure)
 
 Zum Minimieren der Kosten ausgeführter virtueller Computer in Testumgebungen haben Sie folgende Möglichkeiten:
 
@@ -322,7 +323,7 @@ Zum Herunterfahren der virtuellen Computer mit Azure PowerShell geben Sie den Na
 	Stop-AzureVM -ResourceGroupName $rgName -Name "APP1"
 	Stop-AzureVM -ResourceGroupName $rgName -Name "DC1" -Force -StayProvisioned
 
-Um sicherzustellen, dass die virtuellen Computer ordnungsgemäß funktionieren, wenn sie aus dem Status „Beendet \(Zuordnung aufgehoben\)“ gestartet werden, starten Sie sie in folgender Reihenfolge:
+Um sicherzustellen, dass die virtuellen Computer ordnungsgemäß funktionieren, wenn sie aus dem Status „Beendet (Zuordnung aufgehoben)“ gestartet werden, starten Sie sie in folgender Reihenfolge:
 
 1.	DC1
 2.	APP1
@@ -335,4 +336,4 @@ Zum Starten der virtuellen Computer mit Azure PowerShell in der richtigen Reihen
 	Start-AzureVM -ResourceGroupName $rgName -Name "APP1"
 	Start-AzureVM -ResourceGroupName $rgName -Name "CLIENT1"
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

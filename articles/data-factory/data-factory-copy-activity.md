@@ -7,6 +7,7 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
+
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/21/2015" 
 	ms.author="spelluru"/>
+
 
 # Kopieren von Daten mit Azure Data Factory (Kopieraktivität)
 ## Übersicht
@@ -299,4 +301,4 @@ Unter [Aktivieren von Pipelines für die Arbeit mit lokalen Daten][use-onpremise
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity/ColumnMappingSample2.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -57,7 +57,7 @@ Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die entsprechenden App S
 
     Sie möchten vielleicht auch einige Anweisungen nach **MainPage.cs** übertragen.
 
-2. Verwenden Sie diese Methode direkt nach dem Aufruf von **AuthenticateAsync** in **ButtonLogin_Click**.
+2. Verwenden Sie diese Methode direkt nach dem Aufruf von **AuthenticateAsync** in **ButtonLogin\_Click**.
 
         await AuthenticateAsync();
         InitNotificationAsync();
@@ -107,4 +107,4 @@ Veröffentlichen Sie erneut Ihr mobiles Back-End-Projekt, und führen Sie eine b
 [Vorlagen]: https://msdn.microsoft.com/de-de/library/dn530748.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -43,7 +43,7 @@ Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Inte
 
 <!--Article references-->
 
-[Kopieren von Daten mit Azure Data Factory]: ./data-factory-copy-activity/
+[Copy data with Azure Data Factory]: ./data-factory-copy-activity/
 [Entwicklungsübersicht für SQL Data Warehouse]: ./sql-data-warehouse-overview-develop/
 [SQL Data Warehouse-Integration (Übersicht)]: ./sql-data-warehouse-overview-integration/
 
@@ -51,5 +51,6 @@ Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Inte
 
 <!--Other Web references-->
 [Azure Data Factory-Dokumentation]: https://azure.microsoft.com/documentation/services/data-factory/
+[Kopieren von Daten mit Azure Data Factory]: https://azure.microsoft.com/de-de/documentation/articles/data-factory-data-movement-activities/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

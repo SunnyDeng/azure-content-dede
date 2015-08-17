@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Ausführen eines Hadoop-Auftrags mit DocumentDB und HDInsight | Azure" 
+	pageTitle="Ausführen eines Hadoop-Auftrags mit DocumentDB und HDInsight | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie einen einfachen Hive-, Pig- und MapReduce-Auftrag mit DocumentDB und Azure HDInsight ausführen können."
 	services="documentdb" 
 	authors="AndrewHoh" 
@@ -19,7 +19,7 @@
 
 #<a name="DocumentDB-HDInsight"></a>Ausführen eines Hadoop-Auftrags mit DocumentDB und HDInsight
 
-In diesem Lernprogramm wird gezeigt, wie Sie [Apache Hive][apache-hive], [Apache Pig][apache-pig] und [Apache Hadoop][apache-hadoop] MapReduce-Aufträge in Azure HDInsight mit dem Hadoop-Connector von DocumentDB ausführen können. Der Hadoop-Connector der DocumentDB ermöglicht es dieser, sowohl als Quelle als auch als Senke für Hive-, Pig- und MapReduce-Jobs zu fungieren. In diesem Lernprogramm wird DocumentDB sowohl als Datenquelle als auch als Ziel für Hadoop-Jobs verwendet. 
+In diesem Lernprogramm wird gezeigt, wie Sie [Apache Hive][apache-hive]-, [Apache Pig][apache-pig]- und [Apache Hadoop][apache-hadoop]-MapReduce-Aufträge in Azure HDInsight mit dem Hadoop-Connector von DocumentDB ausführen können. Der Hadoop-Connector der DocumentDB ermöglicht es dieser, sowohl als Quelle als auch als Senke für Hive-, Pig- und MapReduce-Jobs zu fungieren. In diesem Lernprogramm wird DocumentDB sowohl als Datenquelle als auch als Ziel für Hadoop-Jobs verwendet.
 
 Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:
 
@@ -492,4 +492,4 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [powershell-install-configure]: ../install-configure-powershell.md
  
 
-<!--------HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

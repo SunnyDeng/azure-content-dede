@@ -12,7 +12,7 @@
 	ms.workload="infrastructure-services" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="05/05/2015" 
 	ms.author="Justinha"/>
 
@@ -71,7 +71,7 @@ Ein Abgleich der Verzeichnisse wurde im Oktober 2013 als Teil der generellen Ver
 
 Die Verwendung von Azure AD ist kostenlos. Das Verzeichnis ist eine kostenlose (free) Ressource. Zusätzlich gibt es Azure Active Directory Premium, das separat lizenziert ist und zusätzliche Funktionen wie Unternehmensbranding und Self-Service-Kennwortzurücksetzung bietet.
 
-Um den Anzeigenamen des Verzeichnisses zu ändern, klicken Sie im Portal auf das Verzeichnis und anschließend auf **Konfigurieren**. Wie später in diesem Thema erläutert wird, können Sie ein neues Verzeichnis hinzufügen oder ein nicht mehr benötigtes löschen. Um Ihrem Abonnement ein anderes Verzeichnis zuzuordnen, klicken Sie im linken Navigationsbereich auf die Erweiterung **Einstellungen**, und unten auf der Seite **Abonnements** auf **Verzeichnis bearbeiten**. Sie können auch eine benutzerdefinierte Domäne mit einem DNS-Namen erstellen, die Sie anstelle der standardmäßigen *.onmicrosoft.com-Domäne registriert haben. Dies ist mit einem Dienst wie SharePoint Online möglicherweise empfehlenswert. 
+Um den Anzeigenamen des Verzeichnisses zu ändern, klicken Sie im Portal auf das Verzeichnis und anschließend auf **Konfigurieren**. Wie später in diesem Thema erläutert wird, können Sie ein neues Verzeichnis hinzufügen oder ein nicht mehr benötigtes löschen. Um Ihrem Abonnement ein anderes Verzeichnis zuzuordnen, klicken Sie im linken Navigationsbereich auf die Erweiterung **Einstellungen**, und unten auf der Seite **Abonnements** auf **Verzeichnis bearbeiten**. Sie können auch eine benutzerdefinierte Domäne mit einem DNS-Namen erstellen, die Sie anstelle der standardmäßigen *.onmicrosoft.com-Domäne registriert haben. Dies ist mit einem Dienst wie SharePoint Online möglicherweise empfehlenswert.
 
 ## Wie kann ich Verzeichnisdaten verwalten?
 
@@ -147,4 +147,4 @@ Die folgenden Bedingungen werden überprüft:
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

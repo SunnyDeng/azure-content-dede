@@ -1,4 +1,3 @@
-
 #### So erstellen Sie ein Volume
 
 1. Klicken Sie auf dem Gerät auf der Seite **Schnellstart** auf **Volume hinzufügen**. Dadurch wird der Assistent "Volume hinzufügen" gestartet.
@@ -22,4 +21,4 @@
 
 4. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-create-volume/HCS_CheckIcon-include.png). Ein Volume wird mit den angegebenen Einstellungen erstellt.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

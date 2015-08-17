@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="get-started-article" 
- ms.date="05/12/2015"
+ ms.date="08/04/2015"
  ms.author="krisragh"/>
 
 # Was ist Azure Scheduler?
@@ -51,4 +51,4 @@ Mit Scheduler können Sie ["Auftragssammlungen" und "Aufträge"](scheduler-conce
  [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

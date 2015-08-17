@@ -30,7 +30,7 @@ Application Gateway unterstützt derzeit die Anwendungsbereitstellung der Ebene�
 
 ## Lastenausgleich der HTTP-Ebene 7
 
-Azure bietet Lastenausgleich der Ebene 4 über Azure Load Balancer, der auf der Transportebene \(TCP/UDP\) eingesetzt wird und den Lastenausgleich des gesamten eingehenden Netzwerkverkehr für den Anwendungsgatewaydienst übernimmt. Das Anwendungsgateway wendet dann Routingregeln auf den HTTP-Datenverkehr an und ermöglicht so Lastenausgleich der Ebene 7 \(HTTP\). Wenn Sie ein Anwendungsgateway erstellen, wird ein Endpunkt \(VIP\) zugeordnet und als öffentliche IP-Adresse für eingehenden Netzwerkverkehr verwendet.
+Azure bietet Lastenausgleich der Ebene 4 über Azure Load Balancer, der auf der Transportebene (TCP/UDP) eingesetzt wird und den Lastenausgleich des gesamten eingehenden Netzwerkverkehr für den Anwendungsgatewaydienst übernimmt. Das Anwendungsgateway wendet dann Routingregeln auf den HTTP-Datenverkehr an und ermöglicht so Lastenausgleich der Ebene 7 (HTTP). Wenn Sie ein Anwendungsgateway erstellen, wird ein Endpunkt (VIP) zugeordnet und als öffentliche IP-Adresse für eingehenden Netzwerkverkehr verwendet.
 
 Das Anwendungsgateway leitet den HTTP-Datenverkehr auf Grundlage der Konfiguration weiter: virtueller Computer, Clouddienst, Web-App oder eine externe IP-Adresse.
 
@@ -59,4 +59,4 @@ Erstellen Sie ein Anwendungsgateway. Weitere Informationen finden Sie unter [Ers
 
 Konfigurieren Sie die SSL-Auslagerung. Weitere Informationen finden Sie unter [Konfigurieren der SSL-Auslagerung mit Application Gateway](application-gateway-ssl.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

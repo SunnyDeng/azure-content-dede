@@ -188,4 +188,4 @@ Die folgende Abbildung zeigt das Filtern der Objekte, die in einer Variablen in 
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

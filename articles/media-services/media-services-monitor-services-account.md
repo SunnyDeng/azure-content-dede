@@ -34,7 +34,7 @@ Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene 
 
 1. Klicken Sie im [Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=256666) auf **Media Services** und dann auf den Media Services-Kontonamen, um das Dashboard zu öffnen. 
 
-	![MediaServices_Dashboard][dashboard]
+	![MediaServices\_Dashboard][dashboard]
 
 2. Um die Codierungsaufträge oder -daten zu überwachen, beginnen Sie einfach mit dem Senden von Codierungsaufträgen an Media Services oder mit dem Streaming von Inhalten an Kunden mithilfe von Azure Media On-Demand Streaming. Nach ca. einer Stunde sollten auf dem Dashboard Überwachungsdaten angezeigt werden.
 
@@ -67,4 +67,4 @@ Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

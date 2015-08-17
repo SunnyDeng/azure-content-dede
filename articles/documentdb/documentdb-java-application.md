@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Erstellen einer Java-Webanwendung mithilfe von DocumentDB" 
+	pageTitle="Erstellen einer Java-Webanwendung mit DocumentDB | Microsoft Azure" 
 	description="In diesem Lernprogramm erfahren Sie, wie Sie den Azure DocumentDB-Dienst verwenden, um Daten von einer auf Azure-Websites gehosteten Java-Anwendung zu speichern und abzurufen." 
 	services="documentdb" 
 	documentationCenter="java" 
 	authors="aliuy" 
 	manager="jhubbard" 
 	editor="monicar"/>
+
 
 <tags 
 	ms.service="documentdb" 
@@ -15,6 +16,7 @@
 	ms.workload="data-services" 
 	ms.date="07/21/2015" 
 	ms.author="andrl"/>
+
 
 # Erstellen einer Java-Webanwendung mithilfe von DocumentDB #
 
@@ -118,7 +120,7 @@ Dazu müssen Sie das Projekt zu einem Maven-Projekt konvertieren, indem Sie die 
 
 	In diesem Projekt verwenden wir [Project Lombok](http://projectlombok.org/), um den Konstruktor, die Getter, die Setter und einen Generator zu generieren. Alternativ können Sie diesen Code manuell eingeben oder von der IDE generieren lassen.
 
-2. Um den DocumentDB-Dienst aufrufen, müssen Sie ein neues **DocumentClient** instanziieren. Im Allgemeinen ist es am besten, **DocumentClient** wiederzuverwenden, anstatt für jede nachfolgende Anforderung einen neuen Client zu erstellen. Der Client kann wiederverwendet werden, indem der Client in ein **DocumentClientFactory** eingehüllt wird. Hier müssen Sie auch die Werte für den URI und den PRIMÄRSCHLÜSSEL einfügen, die Sie in [Schritt 1](#CreateDB) in der Zwischenablage gespeichert haben. Ersetzen Sie [YOUR_ENDPOINT_HERE] durch den URI und [YOUR_KEY_HERE] durch den PRIMÄRSCHLÜSSEL.
+2. Um den DocumentDB-Dienst aufrufen, müssen Sie ein neues **DocumentClient** instanziieren. Im Allgemeinen ist es am besten, **DocumentClient** wiederzuverwenden, anstatt für jede nachfolgende Anforderung einen neuen Client zu erstellen. Der Client kann wiederverwendet werden, indem der Client in ein **DocumentClientFactory** eingehüllt wird. Hier müssen Sie auch die Werte für den URI und den PRIMÄRSCHLÜSSEL einfügen, die Sie in [Schritt 1](#CreateDB) in der Zwischenablage gespeichert haben. Ersetzen Sie [YOUR\_ENDPOINT\_HERE] durch den URI und [YOUR\_KEY\_HERE] durch den PRIMÄRSCHLÜSSEL.
 
 	    private static final String HOST = "[YOUR_ENDPOINT_HERE]";
 	    private static final String MASTER_KEY = "[YOUR_KEY_HERE]";
@@ -474,6 +476,7 @@ Nachdem der angenehme Teil erledigt ist, muss nur noch schnell eine Benutzerober
 		<head>
 		  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
           <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+
 		  <title>Azure DocumentDB Java Sample</title>
 		
 		  <!-- Bootstrap -->
@@ -501,6 +504,7 @@ Nachdem der angenehme Teil erledigt ist, muss nur noch schnell eine Benutzerober
 		    <h1>My ToDo List</h1>
 		
 		    <hr/>
+
 		
 		    <!-- The ToDo List -->
 		    <div class = "todoList">
@@ -526,6 +530,7 @@ Nachdem der angenehme Teil erledigt ist, muss nur noch schnell eine Benutzerober
 		    </div>
 		
 		    <hr/>
+
 		
 		    <!-- Item Input Form -->
 		    <div class="todoForm">
@@ -747,7 +752,7 @@ Azure-Websites gestalten die Bereitstellung von Java-Anwendungen so einfach wie 
 3. Nachdem Sie jetzt über eine WAR-Datei verfügen, können Sie diese ganz einfach in das Verzeichnis **Webapps** auf Ihre Azure-Website hochladen. Anweisungen zum Hochladen der Datei finden Sie unter [Hinzufügen einer Anwendung zur Java-Website in Azure](../web-sites-java-add-app.md).
 
 	Sobald die WAR-Datei in das Verzeichnis "webapps" hochgeladen wurde, erkennt die Laufzeitumgebung, dass sie hinzugefügt wurde. Anschließend wird sie automatisch geladen.
-4. Navigieren Sie zum Anzeigen Ihres fertigen Produkts zu http://YOUR_SITE_NAME.azurewebsites.net/azure-documentdb-java-sample/, und beginnen Sie mit dem Hinzufügen Ihrer Aufgaben!
+4. Navigieren Sie zum Anzeigen Ihres fertigen Produkts zu http://YOUR\_SITE\_NAME.azurewebsites.net/azure-documentdb-java-sample/, und beginnen Sie mit dem Hinzufügen Ihrer Aufgaben!
 
 ##<a id="GetProject"></a>Abrufen des Projekts von GitHub##
 
@@ -763,7 +768,7 @@ Alle Beispiele in diesem Lernprogramm sind im [Todo](https://github.com/Azure/az
 8. Klicken Sie auf dem Bildschirm **Lokales Ziel** auf **Durchsuchen**, um einen Ordner auszuwählen, in den das Repository kopiert werden kann, und klicken Sie dann auf **Weiter**.
 9. Stellen Sie auf dem Bildschirm **Assistent zum Importieren von Projekten auswählen** sicher, dass **Vorhandene Projekte importieren** ausgewählt ist, und klicken Sie dann auf **Weiter**.
 10. Heben Sie auf dem Bildschirm **Projekte importieren** die Auswahl des Projekts **DocumentDB** auf, und klicken Sie dann auf **Fertig stellen**. Das DocumentDB-Projekt enthält das DocumentDB Java SDK, das wir stattdessen als Abhängigkeit hinzufügen.
-11. Navigieren Sie im **Projektexplorer** zu "azure-documentdb-java-sample\src\com.microsoft.azure.documentdb.sample.dao\DocumentClientFactory.java", und ersetzen Sie die Werte "HOST" und "MASTER_KEY" durch den URI und den PRIMÄRSCHLÜSSEL für Ihr DocumentDB-Konto. Speichern Sie dann die Datei. Weitere Informationen finden Sie unter [Schritt 1. Erstellen eines DocumentDB-Datenbankkontos](#CreateDB).
+11. Navigieren Sie im **Projektexplorer** zu "azure-documentdb-java-sample\\src\\com.microsoft.azure.documentdb.sample.dao\\DocumentClientFactory.java", und ersetzen Sie die Werte "HOST" und "MASTER\_KEY" durch den URI und den PRIMÄRSCHLÜSSEL für Ihr DocumentDB-Konto. Speichern Sie dann die Datei. Weitere Informationen finden Sie unter [Schritt 1. Erstellen eines DocumentDB-Datenbankkontos](#CreateDB).
 12. Klicken Sie im **Projektexplorer** mit der rechten Maustaste auf **azure-documentdb-java-sample**, klicken Sie auf **Buildpfad**, und klicken Sie dann auf **Buildpfad konfigurieren**.
 13. Wählen Sie auf dem Bildschirm **Java-Buildpfad** im rechten Bereich die Registerkarte **Bibliotheken** aus, und klicken Sie dann auf **Externe JARs hinzufügen**. Navigieren Sie zum Speicherort der Datei „lombok.jar“, und klicken Sie auf **Öffnen** und dann auf **OK**.
 14. Verwenden Sie Schritt 12, um das Fenster **Eigenschaften** erneut zu öffnen, und klicken Sie dann im linken Bereich auf **Vorgesehene Laufzeiten**.
@@ -779,4 +784,4 @@ Alle Beispiele in diesem Lernprogramm sind im [Todo](https://github.com/Azure/az
 [1]: media/documentdb-java-application/keys.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

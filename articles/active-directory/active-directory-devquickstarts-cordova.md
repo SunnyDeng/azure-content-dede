@@ -65,8 +65,8 @@ Für jede Zielplattform gelten unterschiedliche Voraussetzungen.
 	-   [ios-sim](https://www.npmjs.org/package/ios-sim): Ermöglicht Ihnen das Starten von iOS-Apps im iOS-Simulator über die Befehlszeile (einfache Installation über das Terminal: `npm install -g ios-sim`).
 
 - Erstellen und Ausführen der Anwendung für Android
-	- Installieren Sie das [Java Development Kit (JDK) 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) oder höher. Achten Sie darauf, dass `JAVA_HOME` (Umgebungsvariable) gemäß JDK-Installationspfad richtig festgelegt ist (z. B. C:\Programme\Java\jdk1.7.0_75).
-	- Installieren Sie das [Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools), und fügen Sie den Speicherort `<android-sdk-location>\tools` (z. B. C:\tools\Android\android-sdk\tools) Ihrer Umgebungsvariable `PATH` hinzu.
+	- Installieren Sie das [Java Development Kit (JDK) 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) oder höher. Achten Sie darauf, dass `JAVA_HOME` (Umgebungsvariable) gemäß JDK-Installationspfad richtig festgelegt ist (z. B. C:\\Programme\\Java\\jdk1.7.0\_75).
+	- Installieren Sie das [Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools), und fügen Sie den Speicherort `<android-sdk-location>\tools` (z. B. C:\\tools\\Android\\android-sdk\\tools) Ihrer Umgebungsvariable `PATH` hinzu.
 	- Öffnen Sie den Android SDK Manager (z. B. über das Terminal: `android`), und installieren Sie Folgendes:
     - *Android 5.0.1 (API 21)*-Plattform-SDK
     - *Android SDK Build-Tools* Version 19.1.0 oder höher
@@ -257,4 +257,4 @@ Als Referenz stellen wir hier das vollständige Beispiel (ohne Ihre Konfiguratio
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

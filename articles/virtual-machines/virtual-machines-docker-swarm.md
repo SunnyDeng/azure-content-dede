@@ -134,4 +134,4 @@ Führen Sie Aufgaben im Swarm aus. Anregungen finden Sie unter [https://github.c
 [docker-machine-azure]: virtual-machines-docker-machine.md
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

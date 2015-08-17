@@ -140,7 +140,7 @@ In den nächsten Schritten werden Sie die Tasklist-Anwendung entwickeln, indem S
 
 	Navigieren Sie im angezeigten Dialogfenster zu den zuvor heruntergeladenen Dateien, wählen Sie alle aus, und klicken Sie dann auf Open. Geben Sie bei entsprechender Aufforderung an, dass die Datei `index.php` ersetzt werden soll.
 
-7. Anschließend müssen Sie die Verbindungsinformationen für die lokale MySQL-Datenbank zur Datei `taskmodel.php` hinzufügen. Öffnen Sie die `taskmodel.php`-Datei, indem Sie darauf doppelklicken, und aktualisieren Sie die Datenbank-Verbindungsinformationen in der Funktion `connect`. (** Hinweis **: Wechseln Sie zu [Veröffentlichung der Anwendung](#Publish), wenn Sie Ihre Anwendung nicht lokal testen möchten und stattdessen direkt in Azure App Service-Web-Apps veröffentlichen möchten.)
+7. Anschließend müssen Sie die Verbindungsinformationen für die lokale MySQL-Datenbank zur Datei `taskmodel.php` hinzufügen. Öffnen Sie die Datei `taskmodel.php` durch einen Doppelklick, und aktualisieren Sie die Verbindungsinformationen für die Datenbank in der Funktion `connect`. (**Hinweis**: Gehen Sie zu [Veröffentlichen der Anwendung](#Publish), falls Sie die Anwendung nicht lokal testen möchten und diese stattdessen direkt in Azure App Service-Web-Apps veröffentlichen möchten.)
 
 		// DB connection info
 		$host = "localhost";
@@ -261,4 +261,4 @@ Sie können die Anwendung einfach ändern, indem Sie die lokale Kopie der zuvor 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

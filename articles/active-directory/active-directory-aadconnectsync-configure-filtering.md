@@ -60,7 +60,7 @@ Dieser Abschnitt enthält die Schritte, die Sie ausführen müssen, um den Filte
 
 6. Klicken Sie auf **Verzeichnispartitionen konfigurieren**.
 
-7. Stellen Sie in der Liste **Verzeichnispartitionen auswählen** sicher, dass nur die Partitionen ausgewählt sind, die Sie synchronisieren möchten. <br> \>[AZURE.Note]Um eine Domäne aus dem Synchronisierungsprozess zu entfernen, deaktivieren Sie deren Kontrollkästchen.
+7. Stellen Sie in der Liste **Verzeichnispartitionen auswählen** sicher, dass nur die Partitionen ausgewählt sind, die Sie synchronisieren möchten. <br> >[AZURE.Note]Um eine Domäne aus dem Synchronisierungsprozess zu entfernen, deaktivieren Sie deren Kontrollkästchen.
 
 8. Klicken Sie auf **OK**, um das Dialogfeld **Eigenschaften** zu schließen.
 
@@ -126,7 +126,7 @@ Wenn Sie der Liste der Verzeichnispartitionen eine Partition hinzugefügt haben,
 
 4. Klicken Sie auf **Verzeichnispartitionen konfigurieren**, wählen Sie die Domäne, die Sie konfigurieren möchten, und klicken Sie dann auf **Container**.
 
-5. Geben Sie bei Aufforderung die Domänenanmeldeinformationen für die lokale Active Directory-Gesamtstruktur ein.<br> \>[AZURE.NOTE]Wenn das Dialogfeld zur Eingabe der Anmeldeinformationen angezeigt wird, wird das zum Importieren aus und Exportieren nach AD DS verwendete Konto angezeigt. Wenn Sie das Kennwort für das Konto nicht kennen, können Sie ein anderes Konto eingeben. Das Konto, das Sie verwenden, muss über Leseberechtigungen für die Domäne verfügen, die gerade konfiguriert wird.
+5. Geben Sie bei Aufforderung die Domänenanmeldeinformationen für die lokale Active Directory-Gesamtstruktur ein.<br> >[AZURE.NOTE]Wenn das Dialogfeld zur Eingabe der Anmeldeinformationen angezeigt wird, wird das zum Importieren aus und Exportieren nach AD DS verwendete Konto angezeigt. Wenn Sie das Kennwort für das Konto nicht kennen, können Sie ein anderes Konto eingeben. Das Konto, das Sie verwenden, muss über Leseberechtigungen für die Domäne verfügen, die gerade konfiguriert wird.
 
 6. Deaktivieren Sie im Dialogfeld **Container auswählen** die Organisationseinheiten, die Sie nicht mit dem Cloudverzeichnis synchronisieren möchten, und klicken Sie auf **OK**.
 
@@ -155,14 +155,14 @@ Es gibt mehrere Methoden zur Konfiguration von Filtern auf Grundlage von Attribu
 
 Die eingehende Filterung nutzt die Standardkonfiguration, in der für Objekte, die an Azure AD gesendet werden, das Metaverseattribut "cloudFiltered" nicht auf einen Wert festgelegt werden darf und das Metaverseattribut "sourceObjectType" auf „User“ oder „Contact“ festgelegt ist.
 
-Das Attribut "cloudFiltered" sollte auf True festgelegt werden, wenn das Objekt nicht mit Azure AD synchronisiert werden und in anderen Fällen leer bleiben soll. Diese Methode wird verwendet, wenn für ein Objekt keine Synchronisierung erfolgen soll \(negative Filterung\).
+Das Attribut "cloudFiltered" sollte auf True festgelegt werden, wenn das Objekt nicht mit Azure AD synchronisiert werden und in anderen Fällen leer bleiben soll. Diese Methode wird verwendet, wenn für ein Objekt keine Synchronisierung erfolgen soll (negative Filterung).
 
 Im folgenden Beispiel werden alle Benutzer ausgefiltert, bei denen "extensionAttribute15" den Wert "NoSync" aufweist:
 
 1. Melden Sie sich bei dem Computer, auf dem die Azure AD Connect-Synchronisierung ausgeführt wird, mithilfe eines Kontos an, das Mitglied der Sicherheitsgruppe "ADSyncAdmins" ist.
 2. Öffnen Sie den **Synchronisierungsregeln-Editor** im **Startmenü**.
 3. Stellen Sie sicher, dass **Eingehend** ausgewählt ist, und klicken Sie auf **Neue Regel hinzufügen**.
-4. Geben Sie der Regel einen beschreibenden Namen, z. B. \*Eingehend aus AD – DoNotSyncFilter für Benutzer\*, wählen Sie die richtige Gesamtstruktur aus, und wählen Sie dann **Benutzer** als **CS-Objekttyp** und **Person** als **MV-Objekttyp** aus. Wählen Sie **Join** als **Verknüpfungsart** aus, und geben Sie als Rangfolge einen Wert ein, der zurzeit nicht von einer anderen Synchronisierungsregel verwendet wird \(z. B. 50\). Klicken Sie dann auf **Weiter**.
+4. Geben Sie der Regel einen beschreibenden Namen, z. B. "*Eingehend aus AD – DoNotSyncFilter für Benutzer*", wählen Sie die richtige Gesamtstruktur aus, und wählen Sie dann **Benutzer** als **CS-Objekttyp** und **Person** als **MV-Objekttyp** aus. Wählen Sie **Join** als **Verknüpfungsart** aus, und geben Sie als Rangfolge einen Wert ein, der zurzeit nicht von einer anderen Synchronisierungsregel verwendet wird (z. B. 50). Klicken Sie dann auf **Weiter**.
 5. Klicken Sie unter **Bereichsfilter** auf **Gruppe hinzufügen**, klicken Sie auf **Klausel hinzufügen**, und wählen Sie dann unter "Attribut" die Option **ExtensionAttribute15** aus. Stellen Sie sicher, dass der Operator auf **EQUAL** festgelegt ist, und geben Sie dann den Wert "NoSync" in das Feld **Wert** ein. Klicken Sie auf **Weiter**.
 6. Lassen Sie die **Joinregeln** leer, und klicken Sie dann auf **Weiter**.
 7. Klicken Sie auf **Transformation hinzufügen**, legen Sie **FlowType** auf **Konstante** fest, wählen Sie "cloudFiltered" als Zielattribut aus, und geben Sie dann im Feld "Quelltext" den Wert "True" ein. Klicken Sie auf "Hinzufügen", um die Regel zu speichern.
@@ -171,12 +171,12 @@ Im folgenden Beispiel werden alle Benutzer ausgefiltert, bei denen "extensionAtt
 
 Das Attribut **sourceObjectType** stellt einen **Benutzer** oder **Kontakt** für Azure AD bereit, wenn dieses Attribut den Wert **User** bzw. **Contact** besitzt. Durch Erstellen einer Synchronisierungsregel mit einer höheren Rangfolge als die integrierten Regeln kann das Standardverhalten außer Kraft gesetzt werden. Diese Methode bietet außerdem die Möglichkeit, positive und negative Regeln auszudrücken.
 
-In diesem Beispiel werden nur Benutzer synchronisiert, deren Abteilungsattribut \*Sales\* oder leer ist:
+In diesem Beispiel werden nur Benutzer synchronisiert, deren Abteilungsattribut *Sales* oder leer ist:
 
 1. Melden Sie sich bei dem Computer, auf dem die Azure AD Connect-Synchronisierung ausgeführt wird, mithilfe eines Kontos an, das Mitglied der Sicherheitsgruppe "ADSyncAdmins" ist.
 2. Öffnen Sie den **Synchronisierungsregeln-Editor** im **Startmenü**.
 3. Stellen Sie sicher, dass **Eingehend** ausgewählt ist, und klicken Sie auf **Neue Regel hinzufügen**.
-4. Geben Sie der Regel einen beschreibenden Namen \(z. B. \*Eingehend aus AD – DoNotSyncFilter für Benutzer\*\), wählen Sie die richtige Gesamtstruktur aus, und wählen Sie dann **Benutzer** als **CS-Objekttyp** und **Person** als **MV-Objekttyp** aus. Wählen Sie **Join** als **Verknüpfungsart** aus, und geben Sie als **Rangfolge** einen Wert ein, der zurzeit nicht von einer anderen Synchronisierungsregel verwendet wird \(z. B. 60\). Klicken Sie auf **Weiter**.
+4. Geben Sie der Regel einen beschreibenden Namen (z. B. "*Eingehend aus AD – DoNotSyncFilter für Benutzer*"), wählen Sie die richtige Gesamtstruktur aus, und wählen Sie dann **Benutzer** als **CS-Objekttyp** und **Person** als **MV-Objekttyp** aus. Wählen Sie **Join** als **Verknüpfungsart** aus, und geben Sie als **Rangfolge** einen Wert ein, der zurzeit nicht von einer anderen Synchronisierungsregel verwendet wird (z. B. 60). Klicken Sie auf **Weiter**.
 5. Lassen Sie den **Bereichsfilter** und die **Joinregeln** leer, und klicken Sie zweimal auf **Weiter**.
 6. Klicken Sie auf **Transformation hinzufügen**, legen Sie **FlowType** auf **Ausdruck** fest, und wählen Sie dann das **Zielattribut** als **sourceObjectType** aus. Geben Sie in der **Quelle** den folgenden Ausdruck ein:<br>`IIF(IsNullOrEmpty([department]),NULL,IIF([department]<>”Sales”,”DoNotSync”,NULL))`
 7. Klicken Sie auf "Hinzufügen", um die Regel zu speichern.
@@ -213,4 +213,4 @@ In diesem Beispiel wird die Filterung so geändert, dass nur Benutzer synchronis
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

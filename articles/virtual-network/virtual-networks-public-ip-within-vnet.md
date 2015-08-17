@@ -33,15 +33,15 @@ Sie fügen einen öffentlichen IP-Adressbereich genau wie einen privaten IP-Adre
 
 Es gibt einige IP-Adressbereiche, die nicht zulässig sind:
 
-- 224.0.0.0/4 (Multicast)
+- 224\.0.0.0/4 (Multicast)
 
-- 255.255.255.255/32 (Übertragung)
+- 255\.255.255.255/32 (Übertragung)
 
-- 127.0.0.0/8 (Loopback)
+- 127\.0.0.0/8 (Loopback)
 
-- 169.254.0.0/16 (Verbindungslokal)
+- 169\.254.0.0/16 (Verbindungslokal)
 
-- 68.63.129.16/32 (Internes DNS)
+- 68\.63.129.16/32 (Internes DNS)
 
 ## Nächste Schritte
 
@@ -51,4 +51,4 @@ Es gibt einige IP-Adressbereiche, die nicht zulässig sind:
 
 [Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

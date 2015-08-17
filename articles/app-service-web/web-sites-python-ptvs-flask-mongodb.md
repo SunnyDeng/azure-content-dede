@@ -100,7 +100,7 @@ In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass Sie die eben erst
 
 1.  Klicken Sie im [Azure-Verwaltungsportal] auf **MARKETPLACE** und dann auf den im Vorfeld erstellten MongoLab-Dienst.
 
-1.  Klicken Sie auf **VERBINDUNGSINFORMATIONEN**. Sie können die Schaltfläche "Kopieren" verwenden, um den Wert von **MONGOLAB_URI** in der Zwischenablage abzulegen.
+1.  Klicken Sie auf **VERBINDUNGSINFORMATIONEN**. Sie können die Schaltfläche "Kopieren" verwenden, um den Wert von **MONGOLAB\_URI** in der Zwischenablage abzulegen.
 
   	![Dialogfeld mit Verbindungsinformationen](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonMongoLabConnectionInfo.png)
 
@@ -130,17 +130,17 @@ In diesem Abschnitt konfigurieren wir unsere Anwendung, sodass Sie die eben erst
 
 Sie können eine App wie [RoboMongo] verwenden, um Abfragen auszuführen und Änderungen an einer MongoDB-Datenbank vorzunehmen. In diesem Abschnitt verwenden wir RoboMongo für die Anzeige der Inhalte aus der Datenbank der Umfrage-App.
 
-1.  Erstellen Sie eine neue Verbindung. Sie benötigen den **MONGOLAB_URI**, den wir im vorherigen Abschnitt abgerufen haben.
+1.  Erstellen Sie eine neue Verbindung. Sie benötigen den **MONGOLAB\_URI**, den wir im vorherigen Abschnitt abgerufen haben.
 
     Beachten Sie das Format des URI: `mongodb://<name>:<password>@<address>:<port>/<name>`.
 
     Der Name entspricht dem Namen, den Sie beim Erstellen des Diensts in Azure eingegeben haben. Er wird sowohl für den Datenbanknamen als auch den Benutzernamen verwendet.
 
-1.  Legen Sie auf der Seite "Verbindung" für **Name** einen beliebigen Namen fest, den Sie für die Verbindung verwenden möchten. Geben Sie außerdem in den Feldern **Adresse** und **Port** die Werte von *address* und *port* aus **MONGOLAB_URI** ein.
+1.  Legen Sie auf der Seite "Verbindung" für **Name** einen beliebigen Namen fest, den Sie für die Verbindung verwenden möchten. Geben Sie außerdem in den Feldern **Adresse** und **Port** die Werte von *address* und *port* aus **MONGOLAB\_URI** ein.
 
   	![Dialogfeld mit Verbindungseinstellungen](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonRobomongoCreateConnection1.png)
 
-1.  Geben Sie auf der Seite "Authentifizierung" die **Datenbank** und den **Benutzernamen** von *name* aus **MONGOLAB_URI** ein. Geben Sie schließlich bei **Kennwort** den Wert von *password* aus **MONGOLAB_URI** ein.
+1.  Geben Sie auf der Seite "Authentifizierung" die **Datenbank** und den **Benutzernamen** von *name* aus **MONGOLAB\_URI** ein. Geben Sie schließlich bei **Kennwort** den Wert von *password* aus **MONGOLAB\_URI** ein.
 
   	![Dialogfeld mit Verbindungseinstellungen](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonRobomongoCreateConnection2.png)
 
@@ -185,7 +185,7 @@ In diesem Abschnitt konfigurieren wir die Umgebungsvariablen für die Web-Apps-I
 
   	<!-- ![Top Menu](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonWebSiteTopMenu.png) -->
 
-1.  Navigieren Sie nach unten zum Abschnitt **App-Einstellungen**, und legen Sie die Werte für **REPOSITORY_NAME**, **MONGODB_HOST** und **MONGODB_DATABASE** wie im obigen Abschnitt beschrieben fest.
+1.  Navigieren Sie nach unten zum Abschnitt **App-Einstellungen**, und legen Sie die Werte für **REPOSITORY\_NAME**, **MONGODB\_HOST** und **MONGODB\_DATABASE** wie im obigen Abschnitt beschrieben fest.
 
   	<!-- ![App Settings](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonWebSiteConfigureSettingsMongoDB.png) -->
 
@@ -240,4 +240,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Fl
 [Cloud Service-Projekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

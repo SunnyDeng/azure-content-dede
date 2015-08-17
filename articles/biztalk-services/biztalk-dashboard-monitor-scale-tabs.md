@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Dashboard, Überwachen, Skalieren, Konfigurieren und Hybridverbindungen in BizTalk Services | Azure" 
-	description="Erfahren Sie mehr über die Steuerelemente und Leistungsüberwachung auf den Registerkarten des Verwaltungsportals für BizTalk Services: ";Dashboard";, ";Überwachen";, ";Skalieren";, ";Konfigurieren"; und ";Hybridverbindungen";. MABS, WABS" 
+	description="Erfahren Sie mehr über die Steuerelemente und Leistungsüberwachung auf den Registerkarten des Verwaltungsportals für BizTalk Services: &quot;Dashboard&quot;, &quot;Überwachen&quot;, &quot;Skalieren&quot;, &quot;Konfigurieren&quot; und &quot;Hybridverbindungen&quot;. MABS, WABS" 
 	services="biztalk-services" 
 	documentationCenter="" 
 	authors="MandiOhlinger" 
@@ -368,4 +368,4 @@ Nun, da Sie mit den verschiedenen Registerkarten vertraut sind, können Sie mehr
 [EnabledMetric]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_EnabledMetric.png
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

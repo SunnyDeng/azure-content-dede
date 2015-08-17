@@ -13,7 +13,7 @@
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="hero-article" 
+	ms.topic="article" 
 	ms.date="07/23/2015" 
 	ms.author="markusvi"/>
 
@@ -21,7 +21,7 @@
 # Windows Server Active Directory auf Azure-VMs
 
 
-Dieses Navigationsthema enthält Links zu anderen Themen zum Bereitstellen von Windows Server Active Directory-Domänendiensten \(AD DS\) oder Active Directory-Verbunddiensten \(AD FS\) auf einem virtuellen Azure-Computer \(VM\).
+Dieses Navigationsthema enthält Links zu anderen Themen zum Bereitstellen von Windows Server Active Directory-Domänendiensten (AD DS) oder Active Directory-Verbunddiensten (AD FS) auf einem virtuellen Azure-Computer (VM).
 
 ## Konzeptionelle Richtlinien
 
@@ -48,4 +48,4 @@ Dieses Navigationsthema enthält Links zu anderen Themen zum Bereitstellen von W
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

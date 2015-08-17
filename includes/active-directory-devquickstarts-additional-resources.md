@@ -4,4 +4,4 @@
 - [AzureADSamples auf GitHub >>](https://github.com/AzureAdSamples) (in englischer Sprache)
 - [CloudIdentity.com >>](https://cloudidentity.com) (in englischer Sprache)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

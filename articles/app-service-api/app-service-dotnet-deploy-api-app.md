@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/04/2015" 
-	ms.author="bradyg;tarcher"/>
+	ms.date="07/31/2015" 
+	ms.author="bradyg"/>
 
 # Bereitstellen einer API-App in Azure App Service 
 
@@ -92,4 +92,4 @@ In diesem Abschnitt zeigen Sie im Portal die für API-Apps verfügbaren grundleg
 Sie haben gesehen, wie die Visual Studio-Funktionen für die direkte Bereitstellung die Iteration und Bereitstellung vereinfachen und es Ihnen ermöglichen, die ordnungsgemäße Funktion der API zu testen. Im [nächsten Lernprogramm](../app-service-dotnet-remotely-debug-api-app.md) erfahren Sie, wie Sie die API-App debuggen, während sie in Azure ausgeführt wird.
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

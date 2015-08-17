@@ -1,7 +1,6 @@
 <properties 
 	pageTitle="Ausführen von Python-Machine Learning-Skripts | Microsoft Azure" 
 	description="Beschreibt die Entwurfsprinzipien, die der Unterstützung für Python-Skripts in Azure Machine Learning zugrunde liegen, sowie die grundlegenden Verwendungsszenarien, Funktionen und Einschränkungen." 
-	keywords="python machine learning,pandas,python pandas,python scripts, execute python scripts"
 	services="machine-learning"
 	documentationCenter="" 
 	authors="bradsev" 
@@ -119,7 +118,7 @@ Um Bilder aus MatplotLib zu generieren, müssen Sie das folgende Verfahren absch
 * Rufen Sie die Achse ab, und generieren Sie alle zugehörigen Plots. 
 * Speichern Sie die Abbildung als PNG-Datei. 
 
-Dieser Prozess wird unten in Abbildung 8 dargestellt, die mithilfe der scatter_matrix-Funktion in Pandas eine Punktdiagramm-Matrix erstellt.
+Dieser Prozess wird unten in Abbildung 8 dargestellt, die mithilfe der scatter\_matrix-Funktion in Pandas eine Punktdiagramm-Matrix erstellt.
  
 ![Bild1v](./media/machine-learning-execute-python-scripts/figure-v1-8.png)
 
@@ -171,4 +170,4 @@ In den nächsten Monaten werden wir zusätzliche Funktionen für das [Execute Py
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

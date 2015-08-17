@@ -74,7 +74,7 @@ Nachdem Sie Ihre Abonnement-ID abgerufen, ein Zertifikat erstellt und die `.cer`
 	from azure.servicemanagement import *
 
 	subscription_id = '<your_subscription_id>'
-	certificate_path = 'CURRENT_USER\my\AzureCertificate'
+	certificate_path = 'CURRENT_USER\\my\\AzureCertificate'
 
 	sms = ServiceManagementService(subscription_id, certificate_path)
 
@@ -82,7 +82,7 @@ Im vorstehenden Beispiel ist `sms` ein **ServiceManagementService**-Objekt. Die 
 
 ## <a name="ListAvailableLocations"> </a>Auflisten verfügbarer Standorte
 
-Um die für das Hosten von Diensten verfügbaren Standorte aufzulisten, verwenden Sie die Methode **list_locations**:
+Um die für das Hosten von Diensten verfügbaren Standorte aufzulisten, verwenden Sie die Methode **list\_locations**:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -93,7 +93,7 @@ Um die für das Hosten von Diensten verfügbaren Standorte aufzulisten, verwende
 	for location in result:
 		print(location.name)
 
-Wenn Sie einen Clouddienst oder einen Speicherdienst erstellen, müssen Sie einen gültigen Standort angeben. Die Methode **list_locations** gibt stets eine aktuelle Liste der derzeit verfügbaren Standorte zurück. Zum Zeitpunkt der Erstellung dieses Dokuments waren folgende Standorte verfügbar:
+Wenn Sie einen Clouddienst oder einen Speicherdienst erstellen, müssen Sie einen gültigen Standort angeben. Die Methode **list\_locations** gibt stets eine aktuelle Liste der derzeit verfügbaren Standorte zurück. Zum Zeitpunkt der Erstellung dieses Dokuments waren folgende Standorte verfügbar:
 
 - Westeuropa
 - Nordeuropa
@@ -112,7 +112,7 @@ Wenn Sie einen Clouddienst oder einen Speicherdienst erstellen, müssen Sie eine
 
 ## <a name="CreateCloudService"> </a>Erstellen eines Clouddiensts
 
-Wenn Sie eine Anwendung erstellen und in Azure ausführen, wird die Kombination aus Code und Konfiguration als Azure-[Clouddienst] bezeichnet (in früheren Azure-Versionen als *gehosteter Dienst*). Mit der Methode **create_hosted_service** können Sie einen neuen gehosteten Dienst erstellen, indem Sie einen Namen des gehosteten Diensts (der in Azure eindeutig sein muss), eine Bezeichnung (automatisch base64-codiert), eine Beschreibung und einen Standort angeben.
+Wenn Sie eine Anwendung erstellen und in Azure ausführen, wird die Kombination aus Code und Konfiguration als Azure-[Clouddienst] bezeichnet (in früheren Azure-Versionen als *gehosteter Dienst*). Mit der Methode **create\_hosted\_service** können Sie einen neuen gehosteten Dienst erstellen, indem Sie einen Namen des gehosteten Diensts (der in Azure eindeutig sein muss), eine Bezeichnung (automatisch base64-codiert), eine Beschreibung und einen Standort angeben.
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -126,7 +126,7 @@ Wenn Sie eine Anwendung erstellen und in Azure ausführen, wird die Kombination 
 
 	sms.create_hosted_service(name, label, desc, location)
 
-Mit der Methode **list_hosted_services** können Sie alle gehosteten Dienste für Ihr Abonnement auflisten:
+Mit der Methode **list\_hosted\_services** können Sie alle gehosteten Dienste für Ihr Abonnement auflisten:
 
 	result = sms.list_hosted_services()
 
@@ -136,7 +136,7 @@ Mit der Methode **list_hosted_services** können Sie alle gehosteten Dienste fü
 		print('Location: ' + hosted_service.hosted_service_properties.location)
 		print('')
 
-Wenn Sie Informationen über einen bestimmten gehosteten Dienst abrufen möchten, übergeben Sie den Namen des gehosteten Diensts an die Methode **get_hosted_service_properties**:
+Wenn Sie Informationen über einen bestimmten gehosteten Dienst abrufen möchten, übergeben Sie den Namen des gehosteten Diensts an die Methode **get\_hosted\_service\_properties**:
 
 	hosted_service = sms.get_hosted_service_properties('myhostedservice')
 
@@ -144,11 +144,11 @@ Wenn Sie Informationen über einen bestimmten gehosteten Dienst abrufen möchten
 	print('Management URL: ' + hosted_service.url)
 	print('Location: ' + hosted_service.hosted_service_properties.location)
 
-Nachdem Sie einen Clouddienst erstellt haben, können Sie Ihren Code mit der Methode **create_deployment** für den Dienst bereitstellen.
+Nachdem Sie einen Clouddienst erstellt haben, können Sie Ihren Code mit der Methode **create\_deployment** für den Dienst bereitstellen.
 
 ## <a name="DeleteCloudService"> </a>Löschen eines Clouddiensts
 
-Sie können einen Clouddienst löschen, indem Sie den Dienstnamen an die Methode **delete_hosted_service** übergeben:
+Sie können einen Clouddienst löschen, indem Sie den Dienstnamen an die Methode **delete\_hosted\_service** übergeben:
 
 	sms.delete_hosted_service('myhostedservice')
 
@@ -156,7 +156,7 @@ Bevor Sie einen Dienst löschen können, müssen zunächst alle Bereitstellungen
 
 ## <a name="DeleteDeployment"> </a>Löschen einer Bereitstellung
 
-Verwenden Sie zum Löschen einer Bereitstellung die Methode **delete_deployment**. Im folgenden Beispiel wird eine Bereitstellung namens `v1` gelöscht.
+Verwenden Sie zum Löschen einer Bereitstellung die Methode **delete\_deployment**. Im folgenden Beispiel wird eine Bereitstellung namens `v1` gelöscht.
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -184,9 +184,9 @@ Ein [Speicherdienst] gewährt Ihnen Zugriff auf Azure-[Blobs][azure-blobs], -[Ta
 	operation_result = sms.get_operation_status(result.request_id)
 	print('Operation status: ' + operation_result.status)
 
-Beachten Sie, dass im vorstehenden Beispiel der Status des Vorgangs **create_storage_account** abgerufen werden kann, indem das von **create_storage_account** zurückgegebene Ergebnis an die Methode **get_operation_status** übergeben wird.
+Beachten Sie, dass im vorstehenden Beispiel der Status des Vorgangs **create\_storage\_account** abgerufen werden kann, indem das von **create\_storage\_account** zurückgegebene Ergebnis an die Methode **get\_operation\_status** übergeben wird.
 
-Mit der Methode **list_storage_accounts** können Sie Ihre Speicherkonten und deren Eigenschaften auflisten:
+Mit der Methode **list\_storage\_accounts** können Sie Ihre Speicherkonten und deren Eigenschaften auflisten:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -201,7 +201,7 @@ Mit der Methode **list_storage_accounts** können Sie Ihre Speicherkonten und de
 
 ## <a name="DeleteStorageService"> </a>Löschen eines Speicherdiensts
 
-Sie können einen Speicherdienst löschen, indem Sie den Speicherdienstnamen an die Methode **delete_storage_account** übergeben. Beim Löschen eines Speicherdiensts werden alle im Dienst gespeicherten Daten ebenfalls gelöscht (Blobs, Tabellen und Warteschlangen).
+Sie können einen Speicherdienst löschen, indem Sie den Speicherdienstnamen an die Methode **delete\_storage\_account** übergeben. Beim Löschen eines Speicherdiensts werden alle im Dienst gespeicherten Daten ebenfalls gelöscht (Blobs, Tabellen und Warteschlangen).
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -212,7 +212,7 @@ Sie können einen Speicherdienst löschen, indem Sie den Speicherdienstnamen an 
 
 ## <a name="ListOperatingSystems"> </a>Auflisten verfügbarer Betriebssysteme
 
-Mit der Methode **list_operating_systems** können Sie die für das Hosten von Diensten verfügbaren Betriebssysteme auflisten:
+Mit der Methode **list\_operating\_systems** können Sie die für das Hosten von Diensten verfügbaren Betriebssysteme auflisten:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -226,7 +226,7 @@ Mit der Methode **list_operating_systems** können Sie die für das Hosten von D
 		print('Family: ' + os.family_label)
 		print('Active: ' + str(os.is_active))
 
-Alternativ können Sie die Methode **list_operating_system_families** verwenden, die die Betriebssysteme nach Familie gruppiert:
+Alternativ können Sie die Methode **list\_operating\_system\_families** verwenden, die die Betriebssysteme nach Familie gruppiert:
 
 	result = sms.list_operating_system_families()
 
@@ -240,7 +240,7 @@ Alternativ können Sie die Methode **list_operating_system_families** verwenden,
 
 ## <a name="CreateVMImage"> </a>Erstellen eines Betriebssystemimage
 
-Wenn Sie dem Imagerepository ein Betriebssystemimage hinzufügen möchten, verwenden Sie die Methode **add_os_image**:
+Wenn Sie dem Imagerepository ein Betriebssystemimage hinzufügen möchten, verwenden Sie die Methode **add\_os\_image**:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -257,7 +257,7 @@ Wenn Sie dem Imagerepository ein Betriebssystemimage hinzufügen möchten, verwe
 	operation_result = sms.get_operation_status(result.request_id)
 	print('Operation status: ' + operation_result.status)
 
-Mit der Methode **list_os_images** können Sie die verfügbaren Betriebssystemimages auflisten. Die Liste umfasst alle Plattformimages und Benutzerimages:
+Mit der Methode **list\_os\_images** können Sie die verfügbaren Betriebssystemimages auflisten. Die Liste umfasst alle Plattformimages und Benutzerimages:
 
 	result = sms.list_os_images()
 
@@ -273,7 +273,7 @@ Mit der Methode **list_os_images** können Sie die verfügbaren Betriebssystemim
 
 ## <a name="DeleteVMImage"> </a>Löschen eines Betriebssystemimage
 
-Verwenden Sie zum Löschen eines Betriebssystemimages die Methode **delete_os_image**:
+Verwenden Sie zum Löschen eines Betriebssystemimages die Methode **delete\_os\_image**:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -287,7 +287,7 @@ Verwenden Sie zum Löschen eines Betriebssystemimages die Methode **delete_os_im
 
 ## <a name="CreateVM"> </a>Erstellen eines virtuellen Computers
 
-Zum Erstellen eines virtuellen Computers müssen Sie zunächst einen [Clouddienst](#CreateCloudService) erstellen. Anschließend erstellen Sie die Bereitstellung des virtuellen Computers mit der Methode **create_virtual_machine_deployment**:
+Zum Erstellen eines virtuellen Computers müssen Sie zunächst einen [Clouddienst](#CreateCloudService) erstellen. Anschließend erstellen Sie die Bereitstellung des virtuellen Computers mit der Methode **create\_virtual\_machine\_deployment**:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -326,7 +326,7 @@ Zum Erstellen eines virtuellen Computers müssen Sie zunächst einen [Clouddiens
 
 ## <a name="DeleteVM"> </a>Löschen eines virtuellen Computers
 
-Zum Löschen eines virtuellen Computers löschen Sie zunächst die Bereitstellung mit der Methode **delete_deployment**:
+Zum Löschen eines virtuellen Computers löschen Sie zunächst die Bereitstellung mit der Methode **delete\_deployment**:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -336,13 +336,13 @@ Zum Löschen eines virtuellen Computers löschen Sie zunächst die Bereitstellun
 	sms.delete_deployment(service_name='myvm',
 		deployment_name='myvm')
 
-Anschließend kann der Clouddienst mit der Methode **delete_hosted_service** gelöscht werden:
+Anschließend kann der Clouddienst mit der Methode **delete\_hosted\_service** gelöscht werden:
 
 	sms.delete_hosted_service(service_name='myvm')
 
 ##Erstellen eines virtuellen Computers aus einem erfassten Image eines virtuellen Computers
 
-Um ein VM-Image zu erfassen, rufen Sie zuerst die **capture_vm_image**-Methode auf:
+Um ein VM-Image zu erfassen, rufen Sie zuerst die **capture\_vm\_image**-Methode auf:
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -369,11 +369,11 @@ Um ein VM-Image zu erfassen, rufen Sie zuerst die **capture_vm_image**-Methode a
 			image
 		)
 
-Um sicherzustellen, dass Sie das Image erfolgreich erfasst haben, verwenden Sie dann die **list_vm_images**-API und stellen sicher, dass das Image in den Ergebnissen angezeigt wird:
+Um sicherzustellen, dass Sie das Image erfolgreich erfasst haben, verwenden Sie dann die **list\_vm\_images**-API und stellen sicher, dass das Image in den Ergebnissen angezeigt wird:
 
 	images = sms.list_vm_images()
 
-Um schließlich den virtuellen Computer mithilfe des erfassten Image zu erstellen, verwenden die **create_virtual_machine_deployment**-Methode wie zuvor, übergeben Sie diesmal jedoch stattdessen "vm_image_name".
+Um schließlich den virtuellen Computer mithilfe des erfassten Image zu erstellen, verwenden die **create\_virtual\_machine\_deployment**-Methode wie zuvor, übergeben Sie diesmal jedoch stattdessen "vm\_image\_name".
 
 	from azure import *
 	from azure.servicemanagement import *
@@ -445,4 +445,4 @@ Da Sie nun mit den Grundlagen der Dienstverwaltung vertraut sind, können Sie au
 [Virtual Machines]: http://msdn.microsoft.com/library/windowsazure/jj156003.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

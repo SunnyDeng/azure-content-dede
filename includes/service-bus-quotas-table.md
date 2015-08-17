@@ -24,4 +24,4 @@ In der folgenden Tabelle sind die Kontingentinformationen für das Service Bus M
 |Anzahl der Korrelationsfilter pro Thema|Systemweit|Statisch|Nachfolgende Anforderungen für die Erstellung zusätzlicher Filter für das Thema werden abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen.|100.000|
 |Größe der SQL-Filter/-Aktionen|Systemweit|Statisch|Nachfolgende Anforderungen für die Erstellung zusätzlicher Filter werden abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen.|Maximale Länge der Bedingungszeichenfolge für Filter: 1.024 (1 K).<br /><br />Maximale Länge der Zeichenfolge für Regelaktionen: 1.024 (1 K).<br /><br />Maximale Anzahl der Ausdrücke pro Regelaktion: 32.|
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

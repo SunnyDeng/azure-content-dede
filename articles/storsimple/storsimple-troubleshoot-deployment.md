@@ -167,8 +167,8 @@ Ein Supportpaket enthält alle relevanten Protokolle, die das Microsoft Support-
 
 5. Wenn die Protokolle in der Ereignisanzeige geöffnet sind, suchen Sie nach den folgenden Protokollen, die Probleme im Zusammenhang mit der Gerätekonfiguration enthalten:
 
-  - hcs_pfconfig/Operational Log
-  - hcs_pfconfig/Config
+  - hcs\_pfconfig/Operational Log
+  - hcs\_pfconfig/Config
 
 6. Suchen Sie in den Protokolldateien nach Zeichenfolgen im Zusammenhang mit den Cmdlets, die vom Setup-Assistenten aufgerufen wurden. Eine Liste der Cmdlets finden Sie unter [Schritte bei der erstmaligen Ausführung des Setup-Assistenten](#first-time-setup-wizard-process). 
 
@@ -447,7 +447,7 @@ Wenn Sie z. B. über zwei mit dem Internet verbundene Netzwerkschnittstellen ver
 
 Wenn Sie Update 1 auf dem StorSimple-Gerät ausführen, hat die Netzwerkschnittstelle von DATA 0 die höchste Einstellung für den Cloud-Datenverkehr. Das bedeutet, dass der Cloud-Datenverkehr durch DATA 0 weitergeleitet wird, selbst wenn es andere cloudfähige Schnittstellen gibt.
 
-Wenn Sie das Cmdlet Get-HcsRoutingTable ausführen, ohne Parameter anzugeben (wie im folgenden Beispiel gezeigt), wird das Cmdlet sowohl IPv4 als auch IPv6-Routingtabellen ausgeben. Alternativ können Sie zum Abrufen einer entsprechenden Routingtabelle `Get-HcsRoutingTable -IPv4` oder `Get-HcsRoutingTable -IPv6` angeben .
+Wenn Sie das Cmdlet Get-HcsRoutingTable ausführen, ohne Parameter anzugeben (wie im folgenden Beispiel gezeigt), wird das Cmdlet sowohl IPv4 als auch IPv6-Routingtabellen ausgeben. Alternativ können Sie zum Abrufen einer entsprechenden Routingtabelle `Get-HcsRoutingTable -IPv4` oder `Get-HcsRoutingTable -IPv6` angeben.
 
       Controller0>
       Controller0>Get-HcsRoutingTable
@@ -575,4 +575,4 @@ Der Fehler kann eine der folgenden Ursachen haben:
 [1]: https://technet.microsoft.com/library/dd379547(v=ws.10).aspx
 [2]: https://technet.microsoft.com/library/dd392266(v=ws.10).aspx
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

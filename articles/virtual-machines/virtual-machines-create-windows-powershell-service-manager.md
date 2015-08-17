@@ -209,4 +209,4 @@ Führen Sie den folgenden Befehl zum Anfügen von Datenträgern aus einer vorhan
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -102,4 +102,4 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 [Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
 [Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-create-custom.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -122,4 +122,4 @@ Nach Abschluss der Konfiguration können Sie diese SharePoint-Farm gemäß den I
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

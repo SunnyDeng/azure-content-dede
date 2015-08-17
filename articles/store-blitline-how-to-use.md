@@ -47,7 +47,7 @@ Um zu erläutern, wozu Blitline nützlich ist, ist es zunächst häufig einfache
 
 - Blitline akzeptiert KEINE Bilduploads – Sie können Bilder nicht direkt per Push an Blitline übertragen. Sie müssen sie per Push an Azure Storage oder andere von Blitline unterstützte Speicherorte übertragen und Blitline dann mitteilen, wo sie abgerufen werden können.
 
-- Blitline arbeitet weitestgehend parallel und führt KEINE synchrone Verarbeitung durch. Sie müssen also einen Wert für "postback_url" angeben und werden informiert, sobald die Verarbeitung abgeschlossen ist.
+- Blitline arbeitet weitestgehend parallel und führt KEINE synchrone Verarbeitung durch. Sie müssen also einen Wert für "postback\_url" angeben und werden informiert, sobald die Verarbeitung abgeschlossen ist.
 
 ## <a id="createaccount"></a>Erstellen eines Blitline-Kontos
 
@@ -95,11 +95,11 @@ Sie erhalten ein JSON-Objekt ähnlich dem folgenden:
     }
 
 
-Dadurch wissen Sie, dass Blitline Ihre Anforderung erhalten und in eine Verarbeitungswarteschlange eingereiht hat. Nach Abschluss der Verarbeitung ist das Bild hier verfügbar: **https://s3.amazonaws.com/dev.blitline/2011110722/YOUR_APP_ID/CK3f0xBF_2bV6wf7gEZE8w.jpg**
+Dadurch wissen Sie, dass Blitline Ihre Anforderung erhalten und in eine Verarbeitungswarteschlange eingereiht hat. Nach Abschluss der Verarbeitung ist das Bild hier verfügbar: ****https://s3.amazonaws.com/dev.blitline/2011110722/YOUR\_APP\_ID/CK3f0xBF_2bV6wf7gEZE8w.jpg**
 
 ## <a id="saveazure"></a>Speichern eines Bilds im Azure-Speicherkonto
 
-Wenn Sie über eine Azure Storage-Konto verfügen, kann Blitline die verarbeiteten Bilder auch per Push in Ihren Azure-Container übertragen. Durch Hinzufügen von "azure_destination" definieren Sie den Speicherort und die Berechtigungen für den Push durch Blitline.
+Wenn Sie über eine Azure Storage-Konto verfügen, kann Blitline die verarbeiteten Bilder auch per Push in Ihren Azure-Container übertragen. Durch Hinzufügen von "azure\_destination" definieren Sie den Speicherort und die Berechtigungen für den Push durch Blitline.
 
 Beispiel:
 
@@ -150,4 +150,4 @@ Besuchen Sie "blitline.com", um Informationen zu allen anderen Funktionen zu erh
   [Erstellen eines Blitline-Jobs]: #createjob
   [Speichern eines Bilds in Azure Storage]: #saveazure
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

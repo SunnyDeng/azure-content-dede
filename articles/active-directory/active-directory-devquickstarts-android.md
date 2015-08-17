@@ -454,4 +454,4 @@ ADAL Version 1.1.0 unterstützt das NTLM-Dialogfeld, das über das onReceivedHt
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
  
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -7,6 +7,7 @@
    manager="wpickett"
    editor=""/>
 
+
 <tags
    ms.service="azure-resource-manager"
    ms.devlang="na"
@@ -15,6 +16,7 @@
    ms.workload="na"
    ms.date="07/15/2015"
    ms.author="tomfitz"/>
+
 
 # Verwalten und Überwachen des Zugriffs auf Ressourcen
 
@@ -34,7 +36,7 @@ Um RBAC-Konzepte zu verstehen, betrachten wir einige Beispiele allgemeiner Rolle
 
 | Rolle | Zulässige Aktionen |
 | ------- | ----------------- |
-| Leser | */Lesen (Lesezugriff für alles) | | Besitzer | * (Lese-/Schreibzugriff für alles) |
+| Reader | *\*/Lesen (Lesezugriff für alles) | | Besitzer | \* (Lese-/Schreibzugriff für alles) |
 
 Um die Rolle **Leser** zu **Benutzer A** für die Ressourcengruppe mit dem Namen **ExampleGroup** und die Rolle **Besitzer** zu **Benutzer B** für das gesamte Abonnement zuzuweisen, würden Sie Folgendes zuweisen:
 
@@ -270,4 +272,4 @@ Erstellen Sie die Rollenzuweisung.
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -1,22 +1,22 @@
-## Column mapping with translator rules
-Column mapping can be used to specify how columns specified in the “structure” of source table map to columns specified in the “structure” of sink table. The **columnMapping** property is available in the **typeProperties** section of the Copy activity.
+## Spaltenzuordnung mit Translator-Regeln
+Die Spaltenzuordnung kann verwendet werden, um anzugeben, wie die in "structure" der Quelltabelle angegebenen Spalten den in "structure" der Senkentabelle angegebenen Spalten zugeordnet werden. Die **columnMapping**-Eigenschaft ist im Abschnitt **typeProperties** der Kopieraktivität verfügbar.
 
-Column mapping supports the following scenarios:
+Spaltenzuordnungen unterstützen die folgenden Szenarien:
 
-1.	All columns in the source table “structure” are mapped to all columns in the sink table “structure”.
-2.	A subset of the columns in the source table “structure” are mapped to all columns in the sink table “structure”.
+1.	Alle Spalten in "structure" der Quelltabelle werden allen Spalten in "structure" der Senkentabelle zugeordnet.
+2.	Eine Teilmenge der Spalten in "structure" der Quelltabelle wird allen Spalten in "structure" der Senkentabelle zugeordnet.
 
-The following are error conditions and will result in an exception:
+Im Folgenden sind Fehlerbedingungen angegeben, die zu einer Ausnahme führen:
 
-1.	Either fewer columns or more columns in the “structure” of sink table than specified in the mapping.
-2.	Duplicate mapping.
-3.	SQL query result does not have a column name that is specified in the mapping.
+1.	Weniger Spalten oder mehr Spalten in "structure" der Senkentabelle als in der Zuordnung angegeben sind.
+2.	Doppelte Zuordnung.
+3.	Das Ergebnis der SQL-Abfrage enthält keinen Spaltennamen, der in der Zuordnung angegeben ist.
 
-## Column mapping samples
-> [AZURE.NOTE] The samples below are for Azure SQL and Azure Blob but are applicable in the same way for any data store that supports rectangular tables. You will have to adjust dataset and linked service definitions in examples below to point to data in the relevant data source.
+## Beispiele für Spaltenzuordnungen
+> [AZURE.NOTE]Die folgenden Beispiele beziehen sich auf Azure SQL und Azure-Blob, gelten jedoch auch für beliebige Datenspeicher, die rechteckige Tabellen unterstützen. Sie müssen die Definitionen von Datasets und verknüpften Diensten in den folgenden Beispielen anpassen, damit sie auf Daten in der relevanten Datenquelle verweisen.
 
-### Sample 1 – column mapping from Azure SQL to Azure blob
-In this sample, the input table has a structure and it points to a SQL table in an Azure SQL database.
+### Beispiel 1 – Spaltenzuordnung von Azure SQL zu Azure-Blob
+In diesem Beispiel verfügt die Eingabetabelle über eine Struktur und diese verweist auf eine SQL-Tabelle in einer Azure SQL-Datenbank.
 
 	{
 	    "name": "AzureSQLInput",
@@ -47,7 +47,7 @@ In this sample, the input table has a structure and it points to a SQL table in 
 	    }
 	}
 
-In this sample, the output table has a structure and it points to a blob in an Azure blob storage.
+In diesem Beispiel verfügt die Ausgabetabelle über eine Struktur und diese verweist auf ein Blob in einem Azure-Blobspeicher.
 
 	{
 	    "name": " AzureBlobOutput",
@@ -78,7 +78,7 @@ In this sample, the output table has a structure and it points to a blob in an A
 	    }
 	}
 
-The JSON for the activity is shown below. The columns from source mapped to columns in sink (**columnMappings**) by using **Translator** property.
+Die JSON für die Aktivität ist unten dargestellt. Die Spalten der Quelle werden mithilfe der **Translator**-Eigenschaft den Spalten der Senke (**columnMappings**) zugeordnet.
 
 	{
 	    "name": "CopyActivity",
@@ -107,12 +107,12 @@ The JSON for the activity is shown below. The columns from source mapped to colu
 	        }
 	}
 
-**Column mapping flow:**
+**Ablauf der Spaltenzuordnung:**
 
-![Column mapping flow](./media/data-factory-data-stores-with-rectangular-tables/column-mapping-flow.png)
+![Ablauf der Spaltenzuordnung](./media/data-factory-data-stores-with-rectangular-tables/column-mapping-flow.png)
 
-### Sample 2 – column mapping with SQL query from Azure SQL to Azure blob
-In this sample, a SQL query is used to extract data from Azure SQL instead of simply specifying the table name and the column names in “structure” section. 
+### Beispiel 2 – Spaltenzuordnung mit SQL-Abfrage von Azure SQL zu Azure-Blob
+In diesem Beispiel wird eine SQL-Abfrage zum Extrahieren von Daten aus SQL Azure verwendet, statt einfach den Tabellennamen und die Spaltennamen im Abschnitt "structure" anzugeben.
 
 	{
 	    "name": "CopyActivity",
@@ -143,15 +143,10 @@ In this sample, a SQL query is used to extract data from Azure SQL instead of si
 	        }
 	}
 
-In this case, the query results are first mapped to columns specified in “structure” of source. Next, the columns from source “structure” are mapped to columns in sink “structure” with rules specified in columnMappings.  Suppose the query returns 5 columns, two additional columns then those specified in the “structure” of source.
+In diesem Fall werden die Abfrageergebnisse zuerst den in "structure" der Quelle angegebenen Spalten zugeordnet. Anschließend werden die Spalten aus "structure" der Quelle mit Regeln, die in "columnMappings" angegeben sind, Spalten in "structure" der Senke zugeordnet. Wenn die Abfrage fünf Spalten zurückgibt, sind dies zwei zusätzliche Spalten, im Vergleich zu den in "structure" der Quelle angegebenen.
 
-**Column mapping flow**
+**Ablauf der Spaltenzuordnung**
 
-![Column mapping flow-2](./media/data-factory-data-stores-with-rectangular-tables/column-mapping-flow-2.png)
+![Ablauf der Spaltenzuordnung-2](./media/data-factory-data-stores-with-rectangular-tables/column-mapping-flow-2.png)
 
-
-
-
-
-
-
+<!---HONumber=August15_HO6-->

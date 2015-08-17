@@ -81,4 +81,4 @@ Die Notfallwiederherstellungsverfahren werden unter Verwendung eines parallelen 
 
 - Führen Sie das Verfahren aus, indem Sie die Anwendungsintegrität nach der Wiederherstellung sicherstellen (Verbindungszeichenfolgen, Anmeldungen, grundlegende Funktionstests oder andere Überprüfungen, die Teil der Standardabmeldeverfahren von Anwendungen sind).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

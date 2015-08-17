@@ -236,4 +236,4 @@ Auschecken von [Docker](https://www.docker.com) und [Windows Server-Containern](
 [microservice]: http://martinfowler.com/articles/microservices.html
 <!--Image references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

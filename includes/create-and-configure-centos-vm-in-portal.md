@@ -1,3 +1,4 @@
+
 **Hinweis**: In diesem Artikel wird die Erstellung eines virtuellen Computers beschrieben, der nicht mit einem virtuellen Netzwerk verbunden ist. Wenn Ihr virtueller Computer ein virtuelles Netzwerk verwenden soll, damit Sie über den Hostnamen direkte Verbindungen mit den virtuellen Computern herstellen können oder damit Sie standortübergreifende Verbindungen einrichten können, verwenden Sie stattdessen die Methode **From Gallery**, und legen Sie das virtuelle Netzwerk fest, wenn Sie den virtuellen Computer erstellen. Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke](http://go.microsoft.com/fwlink/p/?LinkID=294063).
 
 1. Melden Sie sich mit Ihrem Azure-Konto beim Azure-Verwaltungsportal an.
@@ -68,4 +69,4 @@ Geben Sie das Kennwort erneut ein. Warten Sie, während die Aktualisierungen ins
 
 [Image6]: ./media/create-and-configure-centos-vm-in-portal/putty.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

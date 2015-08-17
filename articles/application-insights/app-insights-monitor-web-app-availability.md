@@ -6,14 +6,16 @@
 	authors="alancameronwills" 
 	manager="douge"/>
 
+
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="07/08/2015" 
 	ms.author="awills"/>
+
  
 # Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites
 
@@ -42,7 +44,7 @@ Es gibt zwei Arten von Webtests:
 
 Melden Sie sich bei [Microsoft Azure](http://azure.com) an, wechseln Sie zum [Azure-Portal](https://portal.azure.com), und erstellen Sie eine neue Application Insights-Ressource.
 
-![Neu \> Application Insights](./media/app-insights-monitor-web-app-availability/11-new-app.png)
+![Neu > Application Insights](./media/app-insights-monitor-web-app-availability/11-new-app.png)
 
 Das Blatt "Übersicht" für die neue Ressource wird geöffnet. Um dieses zu einem beliebigen Zeitpunkt im [Azure-Portal](https://portal.azure.com) zu finden, klicken Sie auf "Durchsuchen".
 
@@ -69,12 +71,12 @@ Suchen Sie in der Application Insights-Ressource nach der Kachel "Verfügbarkeit
 
 #### Testen weiterer URLs
 
-Sie können weitere Tests für beliebig viele URLs hinzufügen. Neben dem Testen der Startseite können Sie sich auch vergewissern, dass die Datenbank läuft, indem Sie eine Such-URL testen.
+Fügen Sie weitere Tests hinzu. Neben dem Testen der Startseite können Sie sich auch vergewissern, dass die Datenbank läuft, indem Sie eine Such-URL testen.
 
 
 ### <a name="monitor"></a>3. Anzeigen von Verfügbarkeitsberichten
 
-Klicken Sie nach 1 bis 2 Minuten auf dem Blatt "Verfügbarkeit/Webtests" auf "Aktualisieren". \(Die Aktualisierung erfolgt nicht automatisch.\)
+Klicken Sie nach 1 bis 2 Minuten auf dem Blatt "Verfügbarkeit/Webtests" auf "Aktualisieren". (Die Aktualisierung erfolgt nicht automatisch.)
 
 ![Ergebnisübersicht im Startfenster](./media/app-insights-monitor-web-app-availability/14-availSummary.png)
 
@@ -154,7 +156,7 @@ Verwenden Sie Visual Studio Ultimate, um eine Websitzung aufzuzeichnen.
     ![Öffnen Sie in Visual Studio die WEBTEST-Datei, und klicken Sie auf "Ausführen".](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-run.png)
  
 
-\(Fügen Sie keinen Schleifen in den Webtestcode ein.\)
+(Fügen Sie keinen Schleifen in den Webtestcode ein.)
 
 #### 2\. Hochladen des Webtests in Application Insights
 
@@ -207,6 +209,16 @@ Laden Sie jetzt den Tests in das Portal hoch. Bei jeder Ausführung des Tests we
 
 Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten für den Dienst durchführen.
 
+## Fragen? Probleme?
+
+* Ich erhalte eine Fehlermeldung "ungültige Zeichen", wenn ich 
+
+* *\*Gibt es einen Unterschied zwischen "Webtests" und "Verfügbarkeit"?
+
+    Wir verwenden die beiden Begriffe synonym.
+
+
+
 ## <a name="video"></a>Video
 
 > [AZURE.VIDEO monitoring-availability-with-application-insights]
@@ -229,4 +241,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

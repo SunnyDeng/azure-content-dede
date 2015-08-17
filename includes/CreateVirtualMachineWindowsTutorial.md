@@ -126,4 +126,4 @@ Weitere Informationen zur Konfiguration von virtuellen Windows-Computern auf Azu
 [How to attach a data disk to the new virtual machine]: #attachdisk
 [How to set up communication with the virtual machine]: #endpoints
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

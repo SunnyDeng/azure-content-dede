@@ -96,4 +96,4 @@ Möglicherweise benötigen Sie den Ziel-IQN des Geräts, wenn Sie das Challenge 
 
 [Erfahren Sie mehr über das StorSimple Manager-Service-Dashboard](storsimple-service-dashboard.md).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

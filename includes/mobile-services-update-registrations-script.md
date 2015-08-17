@@ -28,4 +28,4 @@
 
    Auf diese Weise wird ein neues Einfügeskript registriert, das die Registrierungsinformationen in der neuen Tabelle speichert.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

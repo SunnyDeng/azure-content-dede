@@ -13,7 +13,7 @@
 
 3. Notieren Sie sich die Projektnummer im Abschnitt **Projects**.
 
-	Zu einem späteren Zeitpunkt im Lernprogramm legen Sie diesen Wert im Client als PROJECT_ID-Variable fest.
+	Zu einem späteren Zeitpunkt im Lernprogramm legen Sie diesen Wert im Client als PROJECT\_ID-Variable fest.
 
 4. Erweitern Sie in der linken Spalte **APIs & auth**, klicken Sie auf **APIs**, scrollen Sie anschließend nach unten, klicken Sie auf die Umschaltfläche, um **Google Cloud Messaging for Android** zu aktivieren, und akzeptieren Sie die Nutzungsbedingungen.
 
@@ -33,4 +33,4 @@
 
 	Mit diesem API-Schlüsselwert geben Sie Azure die Möglichkeit, sich bei GCM zu authentifizieren und Pushbenachrichtigungen im Auftrag Ihrer App zu verschicken.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

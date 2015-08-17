@@ -19,12 +19,12 @@
 
 SQL Server-AlwaysOn-Verfügbarkeitsgruppen können nun mit ILB ausgeführt werden. Verfügbarkeitsgruppen sind eine führende SQL Server-Lösung für hohe Verfügbarkeit und Notfallwiederherstellung. Der Verfügbarkeitsgruppenlistener ermöglicht Clientanwendungen eine nahtlose Verbindung mit dem primären Replikat unabhängig von der Anzahl der Replikate in der Konfiguration.
 
-Der Listenername \(DNS\) wird einer IP-Adresse mit Lastenausgleich zugeordnet, und der Azure-Lastenausgleich leitet den eingehenden Datenverkehr nur an den primären Server in der Replikatgruppe.
+Der Listenername (DNS) wird einer IP-Adresse mit Lastenausgleich zugeordnet, und der Azure-Lastenausgleich leitet den eingehenden Datenverkehr nur an den primären Server in der Replikatgruppe.
 
 
-Sie können ILB-Unterstützung für SQL Server-AlwaysOn-Endpunkte \(Listener\) verwenden. Sie steuern den Zugriff auf den Listener und können die IP-Adresse mit Lastenausgleich aus einem bestimmten Subnetz im virtuellen Netzwerk \(VNet\) auswählen.
+Sie können ILB-Unterstützung für SQL Server-AlwaysOn-Endpunkte (Listener) verwenden. Sie steuern den Zugriff auf den Listener und können die IP-Adresse mit Lastenausgleich aus einem bestimmten Subnetz im virtuellen Netzwerk (VNet) auswählen.
 
-Mithilfe von ILB auf dem Listener kann auf den SQL Server-Endpunkt \(z. B. Server=tcp:ListenerName,1433;Database=DatabaseName\) nur über Folgendes zugegriffen werden:
+Mithilfe von ILB auf dem Listener kann auf den SQL Server-Endpunkt (z. B. Server=tcp:ListenerName,1433;Database=DatabaseName) nur über Folgendes zugegriffen werden:
 
 Dienste und virtuelle Computer im gleichen virtuellen Netzwerk, Dienste und virtuelle Computer aus dem lokalen Netzwerk, Dienste und virtuelle Computer aus verbundenen VNets
 
@@ -63,4 +63,4 @@ Schritt 2.
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

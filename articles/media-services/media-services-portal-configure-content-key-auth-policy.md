@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="05/24/2015" 
 	ms.author="juliako"/>
+
 
 
 
@@ -62,7 +64,7 @@ Bei Verwendung einer **Open**-Einschränkung übermittelt das System den Schlüs
 
 Zum Auswählen der durch "Token" eingeschränkten Richtlinie klicken Sie auf die Schaltfläche **TOKEN**.
 
-Die durch **Token** eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem **Secure Token Service** (STS) ausgestellt wurde. Media Services unterstützt Tokens im **Simple Web Tokens**-Format ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2)) und **JSON Web Token**-Format (JWT). Informationen finden Sie unter [JWT token authentication](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/) ("JWT-Tokenauthentifizierung", in englischer Sprache).
+Eine durch **Token** eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem **Secure Token Service** (STS) ausgestellt wurde. Media Services unterstützt Token im **Simple Web Tokens** ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2))-Format und **JSON Web Token** (JWT)-Format. Informationen finden Sie unter [JWT token authentication](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/) ("JWT-Tokenauthentifizierung", in englischer Sprache).
 
 **Secure Token Services** werden von Media Services nicht bereitgestellt. Sie können einen benutzerdefinierten STS erstellen oder Microsoft Azure ACS zum Ausstellen von Token nutzen. Der STS muss für die Erstellung eines mit dem angegebenen Schlüssel signierten Tokens und die Ausstellungsansprüche konfiguriert sein, die Sie in der Konfiguration der Tokeneinschränkung angegeben haben. Der Schlüsselübermittlungsdienst von Media Services gibt den Verschlüsselungsschlüssel an den Client zurück, wenn das Token gültig ist und die Ansprüche im Token mit den für den Inhaltsschlüssel konfigurierten Ansprüchen übereinstimmen. Weitere Informationen finden Sie unter [Use Azure ACS to issue tokens](http://mingfeiy.com/acs-with-key-services) ("Ausstellen von Token mithilfe von Azure ACS", in englischer Sprache).
 
@@ -70,12 +72,13 @@ Beim Konfigurieren der durch **TOKEN** eingeschränkten Richtlinie müssen Sie W
 
 ###PlayReady
 
-Wenn Sie Inhalte mit **PlayReady** schützen, müssen Sie in Ihrer Autorisierungsrichtlinie u. a. eine XML-Zeichenfolge zur Definition der PlayReady-Lizenzvorlage angeben. Standardmäßig ist die folgende Richtlinie festgelegt:
+Wenn Sie Inhalte mit PlayReady schützen, müssen Sie in Ihrer Autorisierungsrichtlinie u. a. eine XML-Zeichenfolge zur Definition der **PlayReady-Lizenzvorlage** angeben. Standardmäßig ist die folgende Richtlinie festgelegt:
 		
 	<PlayReadyLicenseResponseTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1">
 	  <LicenseTemplates>
 	    <PlayReadyLicenseTemplate><AllowTestDevices>true</AllowTestDevices>
 	      <ContentKey i:type="ContentEncryptionKeyFromHeader" />
+
 	      <LicenseType>Nonpersistent</LicenseType>
 	      <PlayRight>
 	        <AllowPassingVideoContentToUnknownOutput>Allowed</AllowPassingVideoContentToUnknownOutput>
@@ -95,4 +98,4 @@ Nachdem Sie die Autorisierungsrichtlinie für den Inhaltsschlüssel konfiguriert
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

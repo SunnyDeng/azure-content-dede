@@ -47,4 +47,4 @@ Ein weiteres Beispiel ist das Blockieren des Internetzugriffs für eine bestimmt
 - [Office 2013-Richtlinien](https://technet.microsoft.com/library/cc178969.aspx) (einschließlich[Informationen zum Anpassen der Office-Symbolleiste](https://technet.microsoft.com/library/cc179143.aspx)).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

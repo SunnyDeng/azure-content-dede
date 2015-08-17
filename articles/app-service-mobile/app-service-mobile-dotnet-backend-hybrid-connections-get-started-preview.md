@@ -12,8 +12,8 @@
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+	ms.topic="get-started-article" 
+	ms.date="07/30/2015" 
 	ms.author="glenga"/>
 
   
@@ -107,15 +107,9 @@ In diesem Schritt definieren Sie eine Verbindungszeichenfolge für die lokale Da
 
 	Der Dienst verwendet jetzt die neue Verbindung zur SQL Server-Datenbank.
  
-##Lokales Testen der Datenbankverbindung
-
-Vor dem Veröffentlichen in Azure und dem Verwenden der Hybridverbindung sollten Sie sicherstellen, dass die Datenbankverbindung funktioniert, wenn sie lokal ausgeführt wird. Auf diese Weise können Sie leichter Verbindungsprobleme diagnostizieren und beheben, bevor Sie erneut veröffentlichen und die Hybridverbindung verwenden.
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-test-local-service-api-documentation](../../includes/app-service-mobile-dotnet-backend-test-local-service-api-documentation.md)]
-
 ## Aktualisieren von Azure, um die lokale Verbindungszeichenfolge zu verwenden
 
-Da Sie jetzt die Datenbankverbindung überprüft haben, müssen Sie eine App-Einstellung für diese neue Verbindungszeichenfolge hinzufügen, damit sie von Azure verwendet werden kann.
+Als Nächstes müssen Sie eine App-Einstellung für diese neue Verbindungszeichenfolge hinzufügen, damit sie von Azure verwendet werden kann.
 
 1. Klicken Sie im [Azure-Portal] im Web-App-Back-End-Code für die mobile App auf **Alle Einstellungen** und dann auf **Anwendungseinstellungen**. 
 
@@ -168,4 +162,4 @@ Abschließend müssen Sie das mobile App-Back-End auf Azure veröffentlichen und
 [Get started with Mobile Services]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

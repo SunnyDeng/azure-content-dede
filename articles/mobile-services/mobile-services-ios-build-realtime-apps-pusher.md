@@ -18,9 +18,6 @@
 
 
 # Erstellen von Echtzeit-Apps mit Mobile Services und Pusher
-<div class="dev-center-tutorial-selector sublanding">
-	<a href="" title="iOS" class="current">iOS</a>
-</div>
 
 In diesem Thema erfahren Sie, wie Sie Echtzeitfunktionen zu Ihrer Azure Mobile Services-basierten App hinzufügen können. Abschließend werden die TodoList-Daten in Echtzeit in allen laufenden Instanzen Ihrer App synchronisiert.
 
@@ -76,11 +73,11 @@ Mit der [libPusher][]-Bibliothek erhalten Sie Zugriff auf den Pusher von iOS aus
 	- Security.framework
 	- SystemConfiguration.framework
 
-9. Ermitteln Sie innerhalb der **Build Settings** abschließend die Build-Zieleinstellung **Other Linker Flags**, und fügen Sie das Kennzeichen **-all_load** hinzu.
+9. Ermitteln Sie innerhalb der **Build Settings** abschließend die Build-Zieleinstellung **Other Linker Flags**, und fügen Sie das Kennzeichen **-all\_load** hinzu.
 
 	![][add-linker-flag]
 
-	Dadurch wird das Kennzeichen **-all_load** angezeigt, welches für das Debug-Buildziel eingerichtet ist.
+	Dadurch wird das Kennzeichen **-all\_load** angezeigt, welches für das Debug-Buildziel eingerichtet ist.
 
 Die Bibliothek ist nun installiert und einsatzbereit.
 
@@ -240,7 +237,7 @@ Die Bibliothek ist nun installiert und einsatzbereit.
 		    }];
 		}
 
-11. Ersetzen Sie den Platzhalter `**your_app_key**` durch den app_key-Wert, den Sie zuvor aus dem Dialogfeld "Verbindungsinformationen" kopiert haben.
+11. Ersetzen Sie den Platzhalter `**your_app_key**` durch den app\_key-Wert, den Sie zuvor aus dem Dialogfeld "Verbindungsinformationen" kopiert haben.
 
 12. Ersetzen Sie die **onAdd**-Methode durch den folgenden Code:
 
@@ -444,4 +441,4 @@ Weitere Informationen zu Registrierung und Verwendung von Serverskripts finden S
 [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/p/?LinkId=262293
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -77,4 +77,4 @@ In diesem Artikel werden die verschiedenen Parameter beschrieben, die während d
 [Datenserialisierung](service-fabric-application-upgrade-data-serialization.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -333,7 +333,7 @@ Einige der beschriebenen Funktionen akzeptieren eine Liste als Argument. Die dur
 
 	doubleVecList := ( (double | doubleVec)+(, (double | doubleVec) )* )?
 
-Der doubleVecList-Wert wird vor der Auswertung in einen einzelnen doubleVec konvertiert. Falls beispielsweise v = \[1, 2, 3\] ist, dann entspricht der Aufruf avg\(v\) dem Aufruf avg\(1,2,3\), und avg \(v, 7\) entspricht dem Aufruf avg\(1,2,3,7\).
+Der doubleVecList-Wert wird vor der Auswertung in einen einzelnen doubleVec konvertiert. Falls beispielsweise v = [1, 2, 3] ist, dann entspricht der Aufruf avg(v) dem Aufruf avg(1,2,3), und avg (v, 7) entspricht dem Aufruf avg(1,2,3,7).
 
 ### Beispieldaten
 
@@ -359,8 +359,8 @@ Folgende Methoden können zum Abrufen von Sampledaten verwendet werden.
           <li><p><b>doubleVec GetSample(double count)</b>: legt die Anzahl der Samplewerte fest, die von der jüngsten Datenerfassung benötigt werden.</p>
 				  <p>Eine Datenerfassung entspricht 5&#160;Sekunden Metrikdaten. GetSample(1) gibt den letzten verfügbaren Samplewert zurück, aber Sie sollten diese Funktion nicht für Metriken wie $CPUPercent verwenden, da nicht festgestellt werden kann, wann der Samplewert erfasst wurde. Möglicherweise ist der Wert aktuell, er kann jedoch aufgrund von Systemeigenschaften auch deutlich älter sein. Es ist besser, ein Zeitintervall zu verwenden, wie unten dargestellt.</p></li>
           <li><p><b>doubleVec GetSample((timestamp | timeinterval) startTime [, double samplePercent])</b>: legt einen Zeitrahmen für das Erfassen von Beispieldaten und optional den Prozentsatz der Samplewerte fest, die im angeforderten Bereich liegen müssen.</p>
-          <p>$CPUPercent.GetSample(TimeInterval\_Minute\*10), sollte 200&#160;Samplewerte zurückliefern, wenn alle Samplewerte der letzten zehn Minuten im CPUPercent-Verlauf vorhanden sind. Wenn der Verlauf der letzten Minute noch nicht vorhanden ist, werden nur 180&#160;Samplewerte zurückgegeben.</p>
-					<p>$CPUPercent.GetSample (TimeInterval\_Minute\ * 10, 80) wird erfolgreich ausgeführt, $CPUPercent.GetSample(TimeInterval_Minute\*10, 95) schlägt fehl.</p></li>
+          <p>$CPUPercent.GetSample(TimeInterval\_Minute*10), sollte 200&#160;Samplewerte zurückliefern, wenn alle Samplewerte der letzten zehn Minuten im CPUPercent-Verlauf vorhanden sind. Wenn der Verlauf der letzten Minute noch nicht vorhanden ist, werden nur 180&#160;Samplewerte zurückgegeben.</p>
+					<p>$CPUPercent.GetSample (TimeInterval\_Minute\ * 10, 80) wird erfolgreich ausgeführt, $CPUPercent.GetSample(TimeInterval_Minute*10, 95) schlägt fehl.</p></li>
           <li><p><b>doubleVec GetSample((timestamp | timeinterval) startTime, (timestamp | timeinterval) endTime [, double samplePercent])</b>: legt einen Zeitrahmen für die Datenerfassung mit einer Startzeit und Endzeit fest.</p></li></ul></td>
   </tr>
   <tr>
@@ -407,9 +407,9 @@ Folgende Metriken lassen sich über eine Formel definieren.
       <li>$NetworkInBytes</li>
       <li>$NetworkOutBytes</li></ul></p>
     <p>Das folgende Beispiel zeigt eine Formel, mit der die Anzahl der Rechenknoten im Pool auf 110&#160;% der aktuellen Zielanzahl von Knoten festgelegt wird, wenn in den vergangenen 10&#160;Minuten die minimale durchschnittliche CPU-Auslastung über 70&#160;% lag:</p>
-    <p><b>totalTVMs = (min($CPUPercent.GetSample(TimeInterval\_Minute\*10)) > 0.7) ? ($CurrentDedicated \* 1.1) : $CurrentDedicated;</b></p>
+    <p><b>totalTVMs = (min($CPUPercent.GetSample(TimeInterval\_Minute*10)) > 0.7) ? ($CurrentDedicated * 1.1) : $CurrentDedicated;</b></p>
     <p>Das folgende Beispiel zeigt eine Formel, die verwendet wird, um die Anzahl der Rechenknoten im Pool auf 90&#160;% der aktuellen Knotenanzahl festzulegen, wenn die durchschnittliche CPU-Nutzung der letzten 60&#160;Minuten unter 20&#160;% liegt:</p>
-    <p><b>totalTVMs = (avg($CPUPercent.GetSample(TimeInterval\_Minute\*60)) &lt; 0.2) ? ($CurrentDedicated \* 0.9) : totalTVMs;</b></p>
+    <p><b>totalTVMs = (avg($CPUPercent.GetSample(TimeInterval\_Minute*60)) &lt; 0.2) ? ($CurrentDedicated * 0.9) : totalTVMs;</b></p>
     <p>In diesem Beispiel wird die vorgegebene Anzahl dedizierter Rechenknoten auf maximal 400 eingestellt:</p>
     <p><b>$TargetDedicated = min(400, totalTVMs);</b></p></td>
   </tr>
@@ -424,7 +424,7 @@ Folgende Metriken lassen sich über eine Formel definieren.
       <li>$FailedTasks</li>
       <li>$CurrentDedicated</li></ul></p>
     <p>Folgendes Beispiel zeigt eine Formel, die erkennt, ob 70&#160;% der Beispiele in den letzten 15&#160;Minuten erfasst wurden. Falls dies nicht der Fall ist, wird das letzte Beispiel verwendet. Es wird versucht, die Anzahl der Rechenknoten auf die Anzahl der aktiven Aufgaben, jedoch maximal auf 3, zu erhöhen. Die Knotenanzahl wird auf ein Viertel der Anzahl der aktiven Aufgaben eingestellt, da die MaxTasksPerVM-Eigenschaft des Pools auf 4 festgelegt wurde. Dabei wird auch die Deallokationsoption als "Taskcompletion" festgelegt, um den Computer beizubehalten, bis die Aufgabe beendet ist.</p>
-    <p><b>$Samples = $ActiveTasks.GetSamplePercent(TimeInterval\_Minute \* 15); $Tasks = $Samples &lt; 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1),avg($ActiveTasks.GetSample(TimeInterval\_Minute \* 15))); $Cores = $TargetDedicated \* 4; $ExtraVMs = ($Tasks - $Cores) / 4; $TargetVMs = ($TargetDedicated+$ExtraVMs);$TargetDedicated = max(0,min($TargetVMs,3)); $TVMDeallocationOption = taskcompletion;</b></p></td>
+    <p><b>$Samples = $ActiveTasks.GetSamplePercent(TimeInterval\_Minute * 15); $Tasks = $Samples &lt; 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1),avg($ActiveTasks.GetSample(TimeInterval\_Minute * 15))); $Cores = $TargetDedicated * 4; $ExtraVMs = ($Tasks - $Cores) / 4; $TargetVMs = ($TargetDedicated+$ExtraVMs);$TargetDedicated = max(0,min($TargetVMs,3)); $TVMDeallocationOption = taskcompletion;</b></p></td>
   </tr>
 </table>
 
@@ -476,4 +476,4 @@ Sie sollten in regelmäßigen Abständen die Ergebnisse der Durchläufe des auto
 	- [Get-AzureBatchRDPFile](https://msdn.microsoft.com/library/mt149851.aspx): Dieses Cmdlet ruft die RDP-Datei aus dem angegebenen Rechenknoten ab und speichert sie am festgelegten Speicherort oder in einen Stream.
 2.	Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit, dies zu lösen, besteht in [effizienten Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

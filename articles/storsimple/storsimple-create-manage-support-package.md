@@ -33,13 +33,13 @@ In diesem Tutorial lernen Sie Folgendes:
 
 
 ## Erstellen eines Unterstützungspakets im Verwaltungsportal
-Zur Behandlung möglicher Probleme mit dem StorSimple Manager-Dienst können Sie im Verwaltungsportal über die Wartungsseite des Diensts ein Unterstützungspaket erstellen und an die Microsoft Support-Website hochladen. Für den Upload wird ein Unterstützungshauptschlüssel benötigt. Den Unterstützungshauptschlüssel erhalten Sie per E-Mail vom zuständigen Supporttechniker. Ein unverschlüsseltes, komprimiertes Unterstützungspaket \(CAB-Datei\) wird erstellt. Dieses Paket kann dann vom Supporttechniker über die Support-Website abgerufen werden, wenn er den Hauptschlüssel bereitstellt.
+Zur Behandlung möglicher Probleme mit dem StorSimple Manager-Dienst können Sie im Verwaltungsportal über die Wartungsseite des Diensts ein Unterstützungspaket erstellen und an die Microsoft Support-Website hochladen. Für den Upload wird ein Unterstützungshauptschlüssel benötigt. Den Unterstützungshauptschlüssel erhalten Sie per E-Mail vom zuständigen Supporttechniker. Ein unverschlüsseltes, komprimiertes Unterstützungspaket (CAB-Datei) wird erstellt. Dieses Paket kann dann vom Supporttechniker über die Support-Website abgerufen werden, wenn er den Hauptschlüssel bereitstellt.
 
 Führen Sie im Verwaltungsportal die folgenden Schritte aus, um ein Unterstützungspaket zu erstellen:
 
 #### So erstellen Sie ein Unterstützungspaket im Verwaltungsportal
 
-1. Navigieren Sie zu **Geräte \> Wartung**.
+1. Navigieren Sie zu **Geräte > Wartung**.
 
 1. Klicken Sie im Abschnitt **Unterstützungspaket** auf **Unterstützungspaket erstellen und hochladen**.
 
@@ -95,10 +95,10 @@ Führen Sie die folgenden Schritte aus, um ein Unterstützungspaket in Windows P
 
 		`Export-HcsSupportPackage –PackageTag "MySupportPackage" –Credential "Username" -Force`
 
-		Sie werden aufgefordert, ein Kennwort, einen Pfad zum freigegebenen Netzwerkordner und eine Verschlüsselungspassphrase \(da das Unterstützungspaket verschlüsselt ist\) einzugeben. Anschließend wird im angegebenen Ordner ein Unterstützungspaket erstellt.
+		Sie werden aufgefordert, ein Kennwort, einen Pfad zum freigegebenen Netzwerkordner und eine Verschlüsselungspassphrase (da das Unterstützungspaket verschlüsselt ist) einzugeben. Anschließend wird im angegebenen Ordner ein Unterstützungspaket erstellt.
 											
 
-	- Bei offenen freigegebenen Netzwerkordnern \(ohne Kennwortschutz\) wird der Parameter „-Credential“ nicht benötigt. Geben Sie Folgendes ein:
+	- Bei offenen freigegebenen Netzwerkordnern (ohne Kennwortschutz) wird der Parameter „-Credential“ nicht benötigt. Geben Sie Folgendes ein:
 
 		`Export-HcsSupportPackage –PackageTag "MySupportPackage" -Force`
 
@@ -114,8 +114,8 @@ Die folgende Tabelle enthält die verschiedenen Parameter, die für das Cmdlet �
 | 2 | EncryptionPassphrase | Erforderlich | Dient zum Angeben einer Passphrase für die Verschlüsselung des Unterstützungspakets. |
 | 3 | Credential | Optional | Dient zum Angeben von Anmeldeinformationen für den Zugriff auf den freigegebenen Netzwerkordner. |
 | 4 | Force | Optional | Dient zum Überspringen des Bestätigungsschritts für die Verschlüsselungspassphrase. |
-| 5 | PackageTag | Optional | Dient zum Angeben eines Verzeichnisses unter „Path“, in dem das Unterstützungspaket platziert werden soll. Standardmäßig wird Folgendes verwendet: \[Gerätename\]-\[ aktuelles Datum und aktuelle Uhrzeit:JJJJ-MM-TT-HH-mm-ss\]. |
-| 6 | Scope | Optional | Geben Sie **Cluster** \(Standardeinstellung\) an, um ein Unterstützungspaket für beide Controller zu erstellen. Wenn Sie nur ein Paket für den aktuellen Controller erstellen möchten, geben Sie **Controller** an. |
+| 5 | PackageTag | Optional | Dient zum Angeben eines Verzeichnisses unter „Path“, in dem das Unterstützungspaket platziert werden soll. Standardmäßig wird Folgendes verwendet: [Gerätename]-[ aktuelles Datum und aktuelle Uhrzeit:JJJJ-MM-TT-HH-mm-ss]. |
+| 6 | Scope | Optional | Geben Sie **Cluster** (Standardeinstellung) an, um ein Unterstützungspaket für beide Controller zu erstellen. Wenn Sie nur ein Paket für den aktuellen Controller erstellen möchten, geben Sie **Controller** an. |
 
 
 ## Bearbeiten eines Unterstützungspakets
@@ -199,4 +199,4 @@ Das folgende Beispiel veranschaulicht das Entschlüsseln, Bearbeiten und erneute
 
 Informieren Sie sich darüber, wie Sie [mithilfe von Unterstützungspaketen und Geräteprotokollen Probleme bei der Gerätebereitstellung behandeln](storsimple-troubleshoot-deployment.md#support-packages-and-device-logs-available-for-troubleshooting).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

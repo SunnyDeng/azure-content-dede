@@ -103,4 +103,4 @@ Das Zonenobjekt kann auch weitergeleitet werden, anstatt als Parameter übergebe
 
 [Automatisieren von Vorgängen mit dem .NET SDK](../dns-sdk)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

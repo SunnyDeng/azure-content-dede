@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="05/24/2015" 
 	ms.author="juliako"/>
+
 
 
 
@@ -33,7 +35,7 @@ Wenn ein Medienobjekt durch Media Services verschlüsselt werden soll, müssen S
 
 Wenn ein Player einen Stream anfordert, verwendet Media Services den angegebenen Schlüssel, um Ihren Inhalt mit AES- oder PlayReady-Verschlüsselung dynamisch zu verschlüsseln. Um den Stream zu entschlüsseln, fordert der Player den Schlüssel vom Schlüsselübermittlungsdienst an. Um zu entscheiden, ob der Benutzer berechtigt ist, den Schlüssel zu erhalten, wertet der Dienst die Autorisierungsrichtlinien aus, die Sie für den Schlüssel angegeben haben.
 
-Media Services unterstützt mehrere Möglichkeiten zur Authentifizierung von Benutzern, die Schlüssel anfordern. Die Autorisierungsrichtlinie für Inhaltsschlüssel kann eine oder mehrere Autorisierungseinschränkungen aufweisen: **offen**, **Tokeneinschränkung** oder **IP-Einschränkung**. Die durch Token eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem Secure Token Service (STS) ausgestellt wurde. Media Services unterstützt Tokens im **Simple Web Tokens**-Format ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2)) und **JSON Web Token-Format **(JWT). 
+Media Services unterstützt mehrere Möglichkeiten zur Authentifizierung von Benutzern, die Schlüssel anfordern. Die Autorisierungsrichtlinie für Inhaltsschlüssel kann eine oder mehrere Autorisierungseinschränkungen aufweisen: **offen**, **Tokeneinschränkung** oder **IP-Einschränkung**. Die durch Token eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem Secure Token Service (STS) ausgestellt wurde. Media Services unterstützt Token im **Simple Web Tokens** ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2))-Format und \*\*JSON Web Token \*\*(JWT)-Format.
 
 Secure Token Services werden von Media Services nicht bereitgestellt. Sie können einen benutzerdefinierten STS erstellen oder Microsoft Azure ACS zum Ausstellen von Token nutzen. Der STS muss für die Erstellung eines mit dem angegebenen Schlüssel signierten Tokens und die Ausgabe von Ansprüchen konfiguriert sein, die Sie in der Konfiguration der Token-Einschränkung angegeben haben (wie in diesem Artikel beschrieben). Der Schlüsselübermittlungsdienst von Media Services gibt den Verschlüsselungsschlüssel an den Client zurück, wenn das Token gültig ist und die Ansprüche im Token mit den für den Inhaltsschlüssel konfigurierten Ansprüchen übereinstimmen.
 
@@ -113,49 +115,66 @@ Zur Konfiguration der Token-Einschränkungsoption müssen die Autorisierungsanfo
 	  <xs:complexType name="TokenClaim">
 	    <xs:sequence>
 	      <xs:element name="ClaimType" nillable="true" type="xs:string" />
+
 	      <xs:element minOccurs="0" name="ClaimValue" nillable="true" type="xs:string" />
+
 	    </xs:sequence>
 	  </xs:complexType>
 	  <xs:element name="TokenClaim" nillable="true" type="tns:TokenClaim" />
+
 	  <xs:complexType name="TokenRestrictionTemplate">
 	    <xs:sequence>
 	      <xs:element minOccurs="0" name="AlternateVerificationKeys" nillable="true" type="tns:ArrayOfTokenVerificationKey" />
+
 	      <xs:element name="Audience" nillable="true" type="xs:anyURI" />
+
 	      <xs:element name="Issuer" nillable="true" type="xs:anyURI" />
+
 	      <xs:element name="PrimaryVerificationKey" nillable="true" type="tns:TokenVerificationKey" />
+
 	      <xs:element minOccurs="0" name="RequiredClaims" nillable="true" type="tns:ArrayOfTokenClaim" />
+
 	    </xs:sequence>
 	  </xs:complexType>
 	  <xs:element name="TokenRestrictionTemplate" nillable="true" type="tns:TokenRestrictionTemplate" />
+
 	  <xs:complexType name="ArrayOfTokenVerificationKey">
 	    <xs:sequence>
 	      <xs:element minOccurs="0" maxOccurs="unbounded" name="TokenVerificationKey" nillable="true" type="tns:TokenVerificationKey" />
+
 	    </xs:sequence>
 	  </xs:complexType>
 	  <xs:element name="ArrayOfTokenVerificationKey" nillable="true" type="tns:ArrayOfTokenVerificationKey" />
+
 	  <xs:complexType name="TokenVerificationKey">
 	    <xs:sequence />
+
 	  </xs:complexType>
 	  <xs:element name="TokenVerificationKey" nillable="true" type="tns:TokenVerificationKey" />
+
 	  <xs:complexType name="ArrayOfTokenClaim">
 	    <xs:sequence>
 	      <xs:element minOccurs="0" maxOccurs="unbounded" name="TokenClaim" nillable="true" type="tns:TokenClaim" />
+
 	    </xs:sequence>
 	  </xs:complexType>
 	  <xs:element name="ArrayOfTokenClaim" nillable="true" type="tns:ArrayOfTokenClaim" />
+
 	  <xs:complexType name="SymmetricVerificationKey">
 	    <xs:complexContent mixed="false">
 	      <xs:extension base="tns:TokenVerificationKey">
 	        <xs:sequence>
 	          <xs:element name="KeyValue" nillable="true" type="xs:base64Binary" />
+
 	        </xs:sequence>
 	      </xs:extension>
 	    </xs:complexContent>
 	  </xs:complexType>
 	  <xs:element name="SymmetricVerificationKey" nillable="true" type="tns:SymmetricVerificationKey" />
+
 	</xs:schema>
 
-Bei der Konfiguration der Richtlinie mit **token**-Einschränkung müssen die Parameter "primary **verification key**", **issuer** und **audience** angegeben werden. Der **primary verification key **enthält den Schlüssel, mit dem das Token signiert wurde, und **issuer** ist der STS (Secure Token Service), von dem das Token ausgestellt wurde. **audience** (manchmal auch **scope**) beschreibt den Verwendungszweck des Tokens oder die Ressource, auf die durch das Token Zugriff gewährt wird. Der Schlüsselübermittlungsdienst von Media Services überprüft, ob die Werte im Token mit den Werten in der Vorlage übereinstimmen. 
+Bei der Konfiguration der Richtlinie mit **token**-Einschränkung müssen die Parameter "primary \*\*verification key\*\*", **issuer** und **audience** angegeben werden. \*\*PrimaryVerificationKey\*\* enthält den Schlüssel, mit dem das Token signiert wurde, und **Issuer** ist der STS (Secure Token Service), von dem das Token ausgestellt wurde. **audience** (manchmal auch **scope**) beschreibt den Verwendungszweck des Tokens oder die Ressource, auf die durch das Token Zugriff gewährt wird. Der Schlüsselübermittlungsdienst von Media Services überprüft, ob die Werte im Token mit den Werten in der Vorlage übereinstimmen.
 
 Bei Verwendung des **Media Services SDK für .NET** können Sie die **TokenRestrictionTemplate**-Klasse zum Generieren des Einschränkungstokens verwenden. Im folgenden Beispiel wird eine Autorisierungsrichtlinie mit einer Token-Einschränkung erstellt. In diesem Beispiel müsste der Client ein Token vorlegen, das einen Signaturschlüssel (VerificationKey), einen Tokenherausgeber und erforderliche Ansprüche enthält.
 	
@@ -395,4 +414,4 @@ Um ein Testtoken abzurufen, das auf der Token-Einschränkung basiert, die für d
 Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Konfigurieren einer Übermittlungsrichtlinie für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md) fort.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

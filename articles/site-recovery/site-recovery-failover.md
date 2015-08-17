@@ -7,6 +7,7 @@
 	manager="jwhit" 
 	editor=""/>
 
+
 <tags 
 	ms.service="site-recovery" 
 	ms.devlang="na"
@@ -15,6 +16,7 @@
 	ms.workload="storage-backup-recovery" 
 	ms.date="05/29/2015" 
 	ms.author="raynew"/>
+
 
 # Failover in Site Recovery
 
@@ -115,7 +117,7 @@ Hier erfahren Sie, wie Sie ein Test-Failover für einen Wiederherstellungsplan d
 5. Sie können an Ihrem lokalen Standort über eine RDP-Verbindung auf Replikatcomputer in Azure zugreifen. Dabei muss am Endpunkt für den virtuellen Computer der Port 3389 geöffnet sein.
 5. Klicken Sie anschließend auf **Test abschließen**, wenn das Failover die Endphase des Tests erreicht.
 5. Erfassen und speichern Sie unter **Notizen** alle Beobachtungen im Zusammenhang mit dem Test-Failover.
-8. Klicken Sie auf **Das Test-Failover ist abgeschlossen.**, um eine automatische Bereinigung der Testumgebung durchzuführen. Nach Abschluss dieses Vorgangs wird für das Test-Failover der Status **Abgeschlossen** angezeigt.
+8. Klicken Sie auf **Das Test-Failover ist abgeschlossen.**, um eine automatische Bereinigung der Testumgebung durchzuführen. Nach Abschluss dieses Vorgangs wird für das Test-Failover der Status \*\*Abgeschlossen\*\* angezeigt.
 
 > [AZURE.NOTE]Sollte das Test-Failover länger als zwei Wochen bestehen bleiben, wird der Abschluss des Vorgangs erzwungen. Alle Elemente und virtuellen Computer, die automatisch im Zuge des Test-Failovers erstellt wurden, werden gelöscht.
   
@@ -208,7 +210,8 @@ Hinweis: Sollte das Test-Failover länger als zwei Wochen bestehen bleiben, wird
 
 1. Vergewissern Sie sich zunächst, dass bei allen virtuellen Computern, für die ein Failover durchgeführt werden soll, die erste Replikation abgeschlossen ist.
 2. Wählen Sie **Wiederherstellungspläne** > *<Name des Wiederherstellungsplans>*. Klicken Sie auf **Failover** > **Geplantes Failover**. 
-3. Wählen Sie auf der Bestätigungsseite für das geplante Failover**** den Quell- und Zielort aus. Beachten Sie die Failover-Richtung. 
+3. Wählen Sie auf der Seite \*\*Geplantes Failover bestätigen\*\* den Quell- und Zielort aus. Beachten Sie die Failover-Richtung.
+
 	- Wenn bisherige Failover wie erwartet funktioniert haben und sich alle virtuellen Servercomputer entweder am Quell- oder am Zielort befinden, dienen die Angaben zur Failover-Richtung nur zu Informationszwecken. 
 	- Wenn virtuelle Computer sowohl am Quell- als auch am Zielort aktiv sind, erscheint die Schaltfläche **Richtung ändern**. Mit dieser Schaltfläche können Sie die Richtung für das Failover ändern.
 
@@ -222,7 +225,8 @@ Hinweis: Sollte das Test-Failover länger als zwei Wochen bestehen bleiben, wird
 Hier erfahren Sie, wie Sie ein nicht geplantes Failover für einen Wiederherstellungsplan durchführen. Alternativ können Sie das Failover über die Registerkarte **Virtuelle Computer** auch für einen einzelnen virtuellen Computer oder physischen Server durchführen.
 
 1. Wählen Sie **Wiederherstellungspläne** > *<Name des Wiederherstellungsplans>*. Klicken Sie auf **Failover** > **Nicht geplantes Failover**. 
-3. Wählen Sie auf der Bestätigungsseite für das nicht geplante Failover**** den Quell- und Zielort aus. Beachten Sie die Failover-Richtung. 
+3. Wählen Sie auf der Seite \*\*Nicht geplantes Failover bestätigen\*\* den Quell- und Zielort aus. Beachten Sie die Failover-Richtung.
+
 	- Wenn bisherige Failover wie erwartet funktioniert haben und sich alle virtuellen Servercomputer entweder am Quell- oder am Zielort befinden, dienen die Angaben zur Failover-Richtung nur zu Informationszwecken. 
 	- Wenn virtuelle Computer sowohl am Quell- als auch am Zielort aktiv sind, erscheint die Schaltfläche **Richtung ändern**. Mit dieser Schaltfläche können Sie die Richtung für das Failover ändern.
 
@@ -238,7 +242,8 @@ Hier erfahren Sie, wie Sie ein nicht geplantes Failover für einen Wiederherstel
  Nach dem Failover vom primären zum sekundären Standort sind die virtuellen Replikatcomputer nicht durch Site Recovery geschützt, und der sekundäre Standort fungiert nun als primärer Standort. Gehen Sie wie folgt vor, um ein Failback zum ursprünglichen primären Standort durchzuführen. Hier erfahren Sie, wie Sie ein geplantes Failover für einen Wiederherstellungsplan durchführen. Alternativ können Sie das Failover über die Registerkarte **Virtuelle Computer** auch für einen einzelnen virtuellen Computer durchführen.
 
 1. Wählen Sie **Wiederherstellungspläne** > *<Name des Wiederherstellungsplans>*. Klicken Sie auf **Failover** > **Geplantes Failover**.
-2. Wählen Sie auf der Bestätigungsseite für das geplante Failover**** den Quell- und Zielort aus. Beachten Sie die Failover-Richtung. Wenn das Failover vom primären Standort erwartungsgemäß funktioniert hat und sich alle virtuellen Computer am sekundären Standort befinden, dient diese Angabe nur zu Informationszwecken. 3. Wählen Sie bei einem Failback von Azure Einstellungen unter **Datensynchronisierung** aus:
+2. Wählen Sie auf der Seite \*\*Geplantes Failover bestätigen\*\* den Quell- und Zielort aus. Beachten Sie die Failover-Richtung. Wenn das Failover vom primären Standort erwartungsgemäß funktioniert hat und sich alle virtuellen Computer am sekundären Standort befinden, dient diese Angabe nur zu Informationszwecken.
+3. Wählen Sie bei einem Failback von Azure Einstellungen unter **Datensynchronisierung** aus:
 
 	- **Daten vor dem Failover synchronisieren**: Diese Option minimiert die Ausfallzeiten der virtuellen Computer, da diese für die Synchronisierung nicht heruntergefahren werden. Die Option bewirkt Folgendes:
 		- Phase 1: Sie erstellt eine Momentaufnahme des virtuellen Computers in Azure und kopiert sie auf den lokalen Hyper-V-Host. Der Computer wird weiterhin in Azure ausgeführt.
@@ -279,4 +284,4 @@ Wenn Sie den Schutz zwischen einem [Hyper-V-Standort und Azure](site-recovery-hy
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

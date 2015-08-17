@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="article"
-	ms.date="04/29/2015"
+	ms.date="08/03/2015"
 	ms.author="tomfitz"/>
 
 #Erstellen einer PHP-MySQL-Web-App in Azure App Service und Bereitstellen über Git
@@ -41,17 +41,11 @@ Voraussetzung für dieses Lernprogramm sind [PHP][install-php], das MySQL-Befehl
 Befolgen Sie diese Schritte, um eine Web-App und eine MySQL-Datenbank zu erstellen:
 
 1. Melden Sie sich beim [Azure-Portal][management-portal] an.
-2. Klicken Sie unten links im Portal auf das Symbol **Neu**.
-
-	![Neue Azure-Web-App erstellen][new-website]
+2. Klicken Sie auf das Symbol **Neu**.
 
 3. Klicken Sie auf **Web + Mobile** und dann auf **Azure Marketplace**.
 
-	![Neue Web-App benutzerdefiniert erstellen][custom-create]
-
 4. Klicken Sie auf**Web-Apps** und dann auf **Web-App + MySQL**. Klicken Sie dann auf **Erstellen**.
-
-	![](./media/web-sites-php-mysql-deploy-use-git/create_marketplace.png)
 
 4. Geben Sie einen gültigen Namen für die Ressourcengruppe ein.
 
@@ -66,8 +60,6 @@ Befolgen Sie diese Schritte, um eine Web-App und eine MySQL-Datenbank zu erstell
 	![Neue MySQL-Datenbank erstellen][new-mysql-db]
 
 7. Wenn die Web-App erstellt wurde, wird die neue Ressourcengruppe angezeigt. Klicken Sie auf den Namen der Web-App, um deren Einstellungen zu konfigurieren.
-
-	![Web-App öffnen][go-to-webapp]
 
 7. Klicken Sie auf **Kontinuierliche Bereitstellung einrichten**.
 
@@ -210,7 +202,7 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 		</body>
 		</html>
 
-Nun können Sie zu **http://localhost/registration/index.php** navigieren, um die Anwendung zu testen.
+Nun können Sie zu ****http://localhost/registration/index.php** navigieren, um die Anwendung zu testen.
 
 
 ##Veröffentlichen der App
@@ -296,4 +288,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [sql-database-editions]: http://msdn.microsoft.com/library/windowsazure/ee621788.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -77,4 +77,4 @@
 
 <sup>4</sup> Locators sind nicht für die Verwaltung der Zugriffssteuerung pro Benutzer konzipiert. Um einzelnen Benutzern verschiedene Zugriffsrechte zu erteilen, verwenden Sie Lösungen zur Verwaltung digitaler Rechte (Digital Rights Management, DRM).
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

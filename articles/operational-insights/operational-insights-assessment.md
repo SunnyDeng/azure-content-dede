@@ -6,14 +6,16 @@
    authors="bandersmsft"
    manager="jwhit"
    editor="" />
+
 <tags
    ms.service="operational-insights"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/21/2015"
+   ms.date="08/05/2015"
    ms.author="banders" />
+
 
 # Optimieren der Umgebung mit Assessment-Lösungen
 
@@ -105,7 +107,7 @@ Zu jeder Empfehlung gehört eine Anleitung, in der erläutert wird, warum die Em
 
 ## Befolgen von Empfehlungen anhand der Bewertung des Schwerpunktbereichs
 
-Bevor Sie eine Assessment-Lösung in Microsoft Azure Operational Insights verwenden können, müssen Sie die Lösung installiert haben. Weitere Informationen zum Installieren von Lösungen finden Sie unter [Verwenden von Solution Gallery zum Hinzufügen oder Entfernen von Lösungen](operational-insights-add-solution.md). Nach der Installation können Sie die Zusammenfassung der Empfehlungen anzeigen, indem Sie in Operational Insights auf der Seite "Overview" die Kachel "Assessment" verwenden.
+Bevor Sie eine Assessment-Lösung in Microsoft Azure Operational Insights verwenden können, müssen Sie die Lösung installiert haben. Weitere Informationen zum Installieren von Lösungen finden Sie unter [Verwenden von Solution Gallery zum Hinzufügen oder Entfernen von Lösungen](operational-insights-setup-workspace.md). Nach der Installation können Sie die Zusammenfassung der Empfehlungen anzeigen, indem Sie in Operational Insights auf der Seite "Overview" die Kachel "Assessment" verwenden.
 
 Sie können Bewertungen der Einhaltung für Ihre Infrastruktur zusammenfassen und dann Details in den Empfehlungen untersuchen.
 
@@ -125,4 +127,4 @@ Sie können Bewertungen der Einhaltung für Ihre Infrastruktur zusammenfassen un
 
 [AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

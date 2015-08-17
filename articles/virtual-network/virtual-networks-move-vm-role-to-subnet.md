@@ -51,4 +51,4 @@ Bearbeiten Sie zum Verschieben einer Rolleninstanz die CSCFG-Datei. Im folgenden
 	    </AddressAssignments>
 	</NetworkConfiguration> 
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

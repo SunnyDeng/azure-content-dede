@@ -37,4 +37,4 @@ Dieser Ordner enthält alle von Mobile Engagement benötigten Ressourcen. Sie k�
 - `EngagementConfiguration.xml` : Die Konfigurationsdatei von Mobile Engagement, hier können Sie Engagement-Einstellungen (Engagement-Verbindungszeichenfolge, Absturzberichte...) anpassen.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

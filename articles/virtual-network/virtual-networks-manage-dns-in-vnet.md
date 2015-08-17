@@ -65,4 +65,4 @@ Um eine DNS-Serverliste mithilfe einer Netzwerkkonfigurationsdatei zu bearbeiten
 
 [Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

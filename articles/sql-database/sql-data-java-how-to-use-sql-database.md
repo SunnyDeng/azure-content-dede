@@ -76,9 +76,9 @@ Bevor Sie Azure SQL-Datenbank in Ihrem Java-Code verwenden können, müssen Sie 
     ![Ermitteln der JDBS-Verbindungszeichenfolge][get_jdbc_connection_string]
 
 6. Klicken Sie mit der rechten Maustaste auf den Inhalt der **JDBC**-Verbindungszeichenfolge und klicken Sie auf **Copy**.
-7. Sie können diesen Wert nun in Ihrem Code einfügen, um eine Verbindungszeichenfolge mit dem folgenden Format zu erstellen. Ersetzen Sie *your_server* (an zwei Stellen) durch den im vorherigen Schritt kopierten Text, und ersetzen Sie *your_password* durch das Kennwort, das Sie bei der Erstellung Ihres SQL-Datenbank-Kontos festgelegt haben. (Ersetzen Sie außerdem die Werte **database=** und **user=**, falls Sie nicht **gettingstarted** und **MySQLAdmin** verwenden.) 
+7. Sie können diesen Wert nun in Ihrem Code einfügen, um eine Verbindungszeichenfolge mit dem folgenden Format zu erstellen. Ersetzen Sie *your\_server* (an zwei Stellen) durch den im vorherigen Schritt kopierten Text, und ersetzen Sie *your\_password* durch das Kennwort, das Sie bei der Erstellung Ihres SQL-Datenbank-Kontos festgelegt haben. (Ersetzen Sie außerdem die Werte **database=** und **user=**, falls Sie nicht **gettingstarted** und **MySQLAdmin** verwenden.) 
 
-    String connectionString = "jdbc:sqlserver://*your_server*.database.windows.net:1433" + ";" + "database=gettingstarted" + ";" + "user=MySQLAdmin@*your_server*" + ";" + "password=*your_password*" + ";" + "encrypt=true" + ";" + "hostNameInCertificate=*.int.mscds.com" + ";" + "loginTimeout=30";
+    String connectionString = "jdbc:sqlserver://*your_server*.database.windows.net:1433" + ";" + "database=gettingstarted" + ";" + "user=MySQLAdmin@*your\_server*" + ";" + "password=*your\_password*" + ";" + "encrypt=true" + ";" + "hostNameInCertificate=*.int.mscds.com" + ";" + "loginTimeout=30";
 
 Wir werden diese Zeichenfolge später in dieser Anleitung verwenden. Momentan ist es nur wichtig, dass Sie mit der Bestimmung der Verbindungszeichenfolge vertraut sind. Je nach Anforderungen Ihrer Anwendung brauchen Sie die Einstellungen **encrypt** und **hostNameInCertificate** möglicherweise nicht. Außerdem können Sie die Einstellung **loginTimeout** ändern.
 
@@ -117,7 +117,7 @@ Wir werden diese Zeichenfolge später in dieser Anleitung verwenden. Momentan is
         import java.sql.*;
         import com.microsoft.sqlserver.jdbc.*;
 
-5. Geben Sie die Verbindungszeichenfolge an. Dies ist ein Beispiel. Ersetzen Sie wie oben *your_server* (an zwei Stellen), *your_user* und *your_password* mit den entsprechenden Werten für Ihren SQL-Datenbankserver.
+5. Geben Sie die Verbindungszeichenfolge an. Dies ist ein Beispiel. Ersetzen Sie wie oben *your\_server* (an zwei Stellen), *your\_user* und *your\_password* mit den entsprechenden Werten für Ihren SQL-Datenbankserver.
 
         String connectionString =
         	"jdbc:sqlserver://your_server.database.windows.net:1433" + ";" +  
@@ -726,4 +726,4 @@ Weitere Informationen zum Microsoft JDBC-Treiber für SQL Server finden Sie unte
 [allowed_ips_dialog]: ./media/sql-data-java-how-to-use-sql-database/WA_Allowed_IPs.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

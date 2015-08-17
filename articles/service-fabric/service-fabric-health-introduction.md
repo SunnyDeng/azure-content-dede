@@ -7,6 +7,7 @@
    manager="timlt"
    editor=""/>
 
+
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
@@ -15,6 +16,7 @@
    ms.workload="na"
    ms.date="06/16/2015"
    ms.author="oanapl"/>
+
 
 # Einführung in die Service Fabric-Integritätsüberwachung
 Service Fabric führt ein Integritätsmodell ein, das eine umfassende, flexible und erweiterbare Integritätsevaluierung und -berichterstellung bietet. Dies umfasst das Überwachen des Clusterzustands und der darin ausgeführten Dienste in nahezu Echtzeit. Integritätsdaten können auf einfache Weise abgerufen werden, um Maßnahmen zum Korrigieren potenzieller Probleme zu ergreifen, bevor sich diese ausbreiten und massive Ausfälle verursachen. In einem typischen Modell senden die Dienste Berichte basierend auf ihrer lokalen Informationen. Anhand dieser Informationen wird ein Gesamtüberblick auf Clusterebene erstellt.
@@ -98,8 +100,11 @@ Hier sehen Sie einen Auszug aus einem Clustermanifest:
 <FabricSettings>
   <Section Name="HealthManager/ClusterHealthPolicy">
     <Parameter Name="ConsiderWarningAsError" Value="False" />
+
     <Parameter Name="MaxPercentUnhealthyApplications" Value="0" />
+
     <Parameter Name="MaxPercentUnhealthyNodes" Value="20" />
+
   </Section>
 </FabricSettings>
 ```
@@ -133,10 +138,12 @@ Hier sehen Sie einen Auszug aus einem Anwendungsmanifest:
                    MaxPercentUnhealthyServices="0"
                    MaxPercentUnhealthyPartitionsPerService="10"
                    MaxPercentUnhealthyReplicasPerPartition="0"/>
+
             <ServiceTypeHealthPolicy ServiceTypeName="FrontEndServiceType"
                    MaxPercentUnhealthyServices="0"
                    MaxPercentUnhealthyPartitionsPerService="20"
                    MaxPercentUnhealthyReplicasPerPartition="0"/>
+
             <ServiceTypeHealthPolicy ServiceTypeName="BackEndServiceType"
                    MaxPercentUnhealthyServices="20"
                    MaxPercentUnhealthyPartitionsPerService="0"
@@ -245,7 +252,7 @@ Die hinzugefügte Metadaten enthalten Folgendes:
 Die Felder für die Zustandsübergänge können für erweiterte Warnungen verwendet werden und geben Verlaufsinformationen für das Integritätsereignis an. Sie ermöglichen beispielsweise folgende Szenarien:
 
 - Warnung ausgeben, wenn der Zustand einer Eigenschaft länger als X Minuten den Zustand "Warning/Error/" aufweist. Dadurch werden Warnungen zu vorübergehenden Bedingungen vermieden. Beispiel: Eine Warnung, die ausgegeben wird, wenn der Integritätsstatus "Warning" länger als 5 Minuten besteht, wird folgendermaßen angegeben: (HealthState == Warning und Now - LastWarningTransitionTime > 5 minutes).
-> 
+> 5 Minuten).
 
 - Warnung nur zu Bedingungen ausgeben, die in den letzten X Minuten geändert wurden. Bericht, die vor diesem Zeitpunkt den Status "Error" haben, werden ignoriert (da dieser bereits zuvor signalisiert wurde).
 
@@ -336,4 +343,4 @@ Das Integritätsmodell wird hauptsächlich für Überwachung und Diagnose, Evalu
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

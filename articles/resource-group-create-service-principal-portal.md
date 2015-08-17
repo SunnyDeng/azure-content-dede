@@ -24,7 +24,7 @@ Dienstprinzipale sind automatisierte Prozesse, Anwendungen oder Dienste, die auf
 Hier wird erklärt, wie ein neues Dienstprinzipal mithilfe des Azure-Portals erstellt werden kann. Aktuell müssen Sie das Microsoft Azure-Portal zum Erstellen eines neuen Dienstprinzipals verwenden. Das Azure-Vorschauportal wird in einer späteren Version um diese Möglichkeit erweitert.
 
 ## Konzepte
-1. Azure Active Directory \(AAD\) - ein Cloud-Dienst für Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist das Azure Active Directory](./active-directory-whatis/)
+1. Azure Active Directory (AAD) - ein Cloud-Dienst für Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist das Azure Active Directory](./active-directory-whatis/)
 2. Dienstprinzipal - ein Anwendungsbeispiel in einem Verzeichnis.
 3. AD-Anwendung - ein Verzeichnisdatensatz im AAD, der eine Anwendung für AAD identifiziert. Weitere Informationen finden Sie unter [Grundlagen der Authentifizierung im Azure AD](https://msdn.microsoft.com/library/azure/874839d9-6de6-43aa-9a5c-613b0c93247e#BKMK_Auth).
 
@@ -116,4 +116,4 @@ Ihre Anwendung ist nun bereit und das Dienstprinzipal in Ihrem Mandanten erstell
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

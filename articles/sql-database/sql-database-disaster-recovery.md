@@ -101,4 +101,4 @@ Verwenden Sie REST für eine programmgesteuerte Durchführung der Datenbankwiede
 Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestellte Datenbank für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Abschließen einer wiederhergestellten Datenbank](sql-database-recovered-finalize.md).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

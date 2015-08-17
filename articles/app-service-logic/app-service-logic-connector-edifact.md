@@ -65,68 +65,19 @@ Der Edifact-Connector kann als Trigger oder als Aktion verwendet werden.
 
 	![Konfigurierte Elemente codieren][10]
 
-<table>
-	<tr>
-		<th>Parameter</th>
-		<th>Typ</th>
-		<th>Beschreibung des Parameters</th>
-	</tr>
-	<tr>
-		<td>Inhalt</td>
-		<td>Zeichenfolge</td>
-		<td>XML-Nachricht</td>
-	</tr>
-	<tr>
-		<td>Vereinbarungs-ID</td>
-		<td>ganze Zahl</td>
-		<td>Vereinbarungs-ID</td>
-	</tr>
-	<tr>
-		<td>Batchnachricht</td>
-		<td>Boolescher Wert</td>
-		<td>Batchnachricht</td>
-	</tr>
-	<tr>
-		<td>Datenelementtrennzeichen</td>
-		<td>Zeichenfolge</td>
-		<td>Datenelementtrennzeichen</td>
-	</tr>
-	<tr>
-		<td>Komponententrennzeichen</td>
-		<td>Zeichenfolge</td>
-		<td>Komponententrennzeichen</td>
-	</tr>
-	<tr>
-		<td>Segmentabschlusszeichen</td>
-		<td>Zeichenfolge</td>
-		<td>Segmentabschlusszeichen</td>
-	</tr>
-	<tr>
-		<td>Indikator für das Dezimaltrennzeichen</td>
-		<td>Zeichenfolge</td>
-		<td>Indikator für das Dezimaltrennzeichen</td>
-	</tr>
-	<tr>
-		<td>Wiederholungstrennzeichen</td>
-		<td>Zeichenfolge</td>
-		<td>Wiederholungstrennzeichen</td>
-	</tr>
-	<tr>
-		<td>Escape-Zeichen</td>
-		<td>Zeichenfolge</td>
-		<td>Escape-Zeichen</td>
-	</tr>
-	<tr>
-		<td>Ersetzungszeichen</td>
-		<td>Zeichenfolge</td>
-		<td>Ersetzungszeichen</td>
-	</tr>
-	<tr>
-		<td>Segmentabschlusszeichensuffix</td>
-		<td>Zeichenfolge</td>
-		<td>Segmentabschlusszeichensuffix</td>
-	</tr>
-</table>
+Parameter|Typ|Beschreibung des Parameters
+---|---|---
+Inhalt|Zeichenfolge|XML-Nachricht
+Vereinbarungs-ID|ganze Zahl|Vereinbarungs-ID
+Batchnachricht|Boolescher Wert|Batchnachricht
+Datenelementtrennzeichen|Zeichenfolge|Datenelementtrennzeichen
+Komponententrennzeichen|Zeichenfolge|Komponententrennzeichen
+Segmentabschlusszeichen|Zeichenfolge|Segmentabschlusszeichen
+Indikator für das Dezimaltrennzeichen|Zeichenfolge|Indikator für das Dezimaltrennzeichen
+Wiederholungstrennzeichen|Zeichenfolge|Wiederholungstrennzeichen
+Escape-Zeichen|Zeichenfolge|Escape-Zeichen
+Ersetzungszeichen|Zeichenfolge|Ersetzungszeichen
+Segmentabschlusszeichensuffix|Zeichenfolge|Segmentabschlusszeichensuffix
 
 Die Aktion gibt bei erfolgreichem Abschluss ein Objekt mit der EDIFACT-Nutzlast zurück.
 
@@ -148,4 +99,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-edifact/EncodeInput.PNG
 [10]: ./media/app-service-logic-connector-edifact/EncodeConfigured.PNG
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

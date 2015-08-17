@@ -129,4 +129,4 @@ Der Abschnitt "Dashboard" der Benutzeroberfläche erlaubt Kunden das Erstellen a
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

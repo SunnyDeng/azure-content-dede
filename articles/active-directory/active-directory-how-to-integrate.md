@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="04/29/2015"
+   ms.date="07/30/2015"
    ms.author="mbaldwin"/>
 
 # Integration in Azure Active Directory
@@ -90,6 +90,4 @@ Die Integration in Azure AD bietet den Vorteil, dass Sie keinen zusätzlichen Co
 
 [Anmelden von Benutzern über Azure AD](active-directory-authentication-scenarios.md)
 
- 
-
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -15,10 +15,10 @@ Sie können Push-Benachrichtigungen wahlweise testen, wobei der mobile Dienst au
 
 	![](./media/mobile-services-dotnet-backend-configure-local-push/notification-hub-connection-string.png)
 
-4. Öffnen Sie in Visual Studio die Datei "Web.config" für das mobile Dienstprojekt, und ersetzen Sie im Abschnitt **connectionStrings** die Verbindungszeichenfolge für **MS_NotificationHubConnectionString** durch die Verbindungszeichenfolge aus dem vorigen Schritt.
+4. Öffnen Sie in Visual Studio die Datei "Web.config" für das mobile Dienstprojekt, und ersetzen Sie im Abschnitt **connectionStrings** die Verbindungszeichenfolge für **MS\_NotificationHubConnectionString** durch die Verbindungszeichenfolge aus dem vorigen Schritt.
 
-5. Ersetzen Sie in **appSettings** den Wert der Anwendungseinstellung **MS_NotificationHubName** durch den Namen des Benachrichtigungs-Hubs.
+5. Ersetzen Sie in **appSettings** den Wert der Anwendungseinstellung **MS\_NotificationHubName** durch den Namen des Benachrichtigungs-Hubs.
 
 Ihr mobiles Dienstprojekt ist so konfiguriert, dass eine Verbindung mit dem Benachrichtigungs-Hub in Azure hergestellt wird, wenn es lokal ausgeführt wird. Beachten Sie, dass Sie den gleichen Benachrichtigungs-Hubnamen und die gleiche Verbindungszeichenfolge wie im Portal verwenden müssen, weil diese Web.config-Projekteinstellungen bei der Ausführung in Azure überschrieben werden.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -6,6 +6,7 @@
 	authors="alancameronwills" 
 	manager="douge"/>
 
+
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
@@ -14,6 +15,7 @@
 	ms.topic="article" 
 	ms.date="07/11/2015" 
 	ms.author="awills"/>
+
  
 # Diagnostizieren von Fehlern und Ausnahmen in ASP.NET-Anwendungen mit Application Insights  
 
@@ -64,9 +66,9 @@ Um spezifische Diagnosedaten für Ihre App zu erhalten, können Sie Code zum Sen
 
 Sie haben mehrere Möglichkeiten:
 
-* [TrackEvent\(\)](app-insights-api-custom-events-metrics.md#track-event) wird normalerweise zum Überwachen von Verwendungsmustern verwendet, jedoch werden die damit gesendeten Daten auch unter den benutzerdefinierten Ereignissen in der Diagnosesuche angezeigt. Ereignisse werden benannt und können Zeichenfolgeneigenschaften und numerische Metriken aufweisen, nach denen Sie [Ihre Diagnosesuchvorgänge filtern][diagnostic] können.
-* Mit [TrackTrace\(\)](app-insights-api-custom-events-metrics.md#track-trace) können Sie längere Daten wie POST-Informationen senden.
-* [TrackException\(\)](#exceptions) sendet Stapelüberwachungen. [Weitere Informationen über Ausnahmen](#exceptions).
+* [TrackEvent()](app-insights-api-custom-events-metrics.md#track-event) wird normalerweise zum Überwachen von Verwendungsmustern verwendet, jedoch werden die damit gesendeten Daten auch unter den benutzerdefinierten Ereignissen in der Diagnosesuche angezeigt. Ereignisse werden benannt und können Zeichenfolgeneigenschaften und numerische Metriken aufweisen, nach denen Sie [Ihre Diagnosesuchvorgänge filtern][diagnostic] können.
+* Mit [TrackTrace()](app-insights-api-custom-events-metrics.md#track-trace) können Sie längere Daten wie POST-Informationen senden.
+* [TrackException()](#exceptions) sendet Stapelüberwachungen. [Weitere Informationen über Ausnahmen](#exceptions).
 * Wenn Sie bereits ein Protokollierungsframework wie Log4Net oder NLog verwenden, können Sie [diese Protokolle erfassen][netlogs] und in der Diagnosesuche neben Anforderungs- und Ausnahmedaten anzeigen.
 
 Öffnen Sie zum Anzeigen dieser Ereignisse [Search][diagnostic] und anschließend "Filter", und wählen Sie dann "Benutzerdefiniertes Ereignis", "Ablaufverfolgung" oder "Ausnahme" aus.
@@ -79,7 +81,7 @@ Sie haben mehrere Möglichkeiten:
 Anforderungsdetails enthalten nicht die Daten, die in einem POST-Aufruf an Ihre App gesendet wurden. So werden diese Daten gemeldet:
 
 * [Installieren Sie das SDK][greenbrown] in Ihrem Anwendungsprojekt.
-* Fügen Sie Code in die Anwendung ein, um [Microsoft.ApplicationInsights.TrackTrace\(\)][api] aufzurufen. Senden Sie die POST-Daten im "message"-Parameter. Es gibt eine Größenbeschränkung, daher sollten Sie versuchen, nur die notwendigen Daten zu senden.
+* Fügen Sie Code in die Anwendung ein, um [Microsoft.ApplicationInsights.TrackTrace()][api] aufzurufen. Senden Sie die POST-Daten im "message"-Parameter. Es gibt eine Größenbeschränkung, daher sollten Sie versuchen, nur die notwendigen Daten zu senden.
 * Wenn Sie eine fehlerhafte Anforderung untersuchen, suchen Sie die zugehörigen Ablaufverfolgungen.  
 
 ![Drillthrough](./media/app-insights-asp-net-exceptions/060-req-related.png)
@@ -87,7 +89,7 @@ Anforderungsdetails enthalten nicht die Daten, die in einem POST-Aufruf an Ihre 
 
 ## <a name="exceptions"></a> Erfassen von Ausnahmen und zugehörigen Diagnosedaten
 
-Zunächst werden im Portal nicht alle Ausnahmen angezeigt, die in Ihrer App zu Fehlern führen. Sie sehen alle Browserausnahmen \(bei Verwendung des [JavaScript-SDK][client] in Ihren Webseiten\). Die meisten Serverausnahmen werden jedoch von IIS abgefangen, und Sie müssen ein wenig Code schreiben, um sie anzuzeigen.
+Zunächst werden im Portal nicht alle Ausnahmen angezeigt, die in Ihrer App zu Fehlern führen. Sie sehen alle Browserausnahmen (bei Verwendung des [JavaScript-SDK][client] in Ihren Webseiten). Die meisten Serverausnahmen werden jedoch von IIS abgefangen, und Sie müssen ein wenig Code schreiben, um sie anzuzeigen.
 
 Sie können:
 
@@ -96,7 +98,7 @@ Sie können:
 
 ## Explizites Melden von Ausnahmen
 
-Am einfachsten ist es, in einem Ausnahmehandler einen Aufruf in TrackException\(\) einzufügen.
+Am einfachsten ist es, in einem Ausnahmehandler einen Aufruf in TrackException() einzufügen.
 
 JavaScript
 
@@ -110,7 +112,7 @@ JavaScript
          State: currentGame.State.ToString()});
     }
 
-C\#
+C#
 
     var telemetry = new TelemetryClient();
     ...
@@ -160,9 +162,9 @@ Wenn Ihre Webseite Skriptdateien aus Content Delivery Networks oder anderen Dom�
 
 Für Webformulare kann das HTTP-Modul die Ausnahmen erfassen, wenn keine Umleitungen mit CustomErrors konfiguriert sind.
 
-Wenn jedoch aktive Umleitungen bestehen, fügen Sie der Funktion "Application\_Error" in "Global.asax.cs" die folgenden Zeilen hinzu. \(Fügen Sie eine Datei "Global.asax" hinzu, falls noch keine vorhanden ist.\)
+Wenn jedoch aktive Umleitungen bestehen, fügen Sie der Funktion "Application\_Error" in "Global.asax.cs" die folgenden Zeilen hinzu. (Fügen Sie eine Datei "Global.asax" hinzu, falls noch keine vorhanden ist.)
 
-*C\#*
+*C#*
 
     void Application_Error(object sender, EventArgs e)
     {
@@ -177,7 +179,7 @@ Wenn jedoch aktive Umleitungen bestehen, fügen Sie der Funktion "Application\_E
 
 ## MVC
 
-Wenn die [CustomErrors](https://msdn.microsoft.com/library/h0hfz6fc.aspx)-Konfiguration `Off` lautet, stehen für das zu erfassende [HTTP-Modul](https://msdn.microsoft.com/library/ms178468.aspx) Ausnahmen zur Verfügung. Lautet sie allerdings `RemoteOnly` \(Standardeinstellung\) oder `On`, wird die Ausnahme gelöscht und steht für die automatische Erfassung durch Application Insights nicht zur Verfügung. Diesen Umstand können Sie beheben, indem Sie die [System.Web.Mvc.HandleErrorAttribute-Klasse](http://msdn.microsoft.com/library/system.web.mvc.handleerrorattribute.aspx) außer Kraft setzen und die außer Kraft gesetzte Klasse wie unten gezeigt für die verschiedenen MVC-Versionen anwenden \([Github-Quelle](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions/blob/master/MVC2App/Controllers/AiHandleErrorAttribute.cs)\):
+Wenn die [CustomErrors](https://msdn.microsoft.com/library/h0hfz6fc.aspx)-Konfiguration `Off` lautet, stehen für das zu erfassende [HTTP-Modul](https://msdn.microsoft.com/library/ms178468.aspx) Ausnahmen zur Verfügung. Lautet sie allerdings `RemoteOnly` (Standardeinstellung) oder `On`, wird die Ausnahme gelöscht und steht für die automatische Erfassung durch Application Insights nicht zur Verfügung. Diesen Umstand können Sie beheben, indem Sie die [System.Web.Mvc.HandleErrorAttribute-Klasse](http://msdn.microsoft.com/library/system.web.mvc.handleerrorattribute.aspx) außer Kraft setzen und die außer Kraft gesetzte Klasse wie unten gezeigt für die verschiedenen MVC-Versionen anwenden ([Github-Quelle](https://github.com/AppInsightsSamples/Mvc2UnhandledExceptions/blob/master/MVC2App/Controllers/AiHandleErrorAttribute.cs)):
 
     using System;
     using System.Web.Mvc;
@@ -357,8 +359,8 @@ Fügen Sie den Diensten in WebApiConfig Folgendes hinzu:
 
 Als Alternativen können Sie folgende Aktionen ausführen:
 
-2. Ersetzen Sie den einzigen ExceptionHandler durch eine benutzerdefinierte Implementierung von IExceptionHandler. Diese wird nur aufgerufen, wenn das Framework weiterhin wählen kann, welche Antwortnachricht gesendet wird \(nicht wenn z. B. die Verbindung abgebrochen wird\). 
-3. Ausnahmefilter \(wie im obigen Abschnitt zu Web-API-1.x-Controllern beschrieben\) – werden nicht in allen Fällen aufgerufen.
+2. Ersetzen Sie den einzigen ExceptionHandler durch eine benutzerdefinierte Implementierung von IExceptionHandler. Diese wird nur aufgerufen, wenn das Framework weiterhin wählen kann, welche Antwortnachricht gesendet wird (nicht wenn z. B. die Verbindung abgebrochen wird). 
+3. Ausnahmefilter (wie im obigen Abschnitt zu Web-API-1.x-Controllern beschrieben) – werden nicht in allen Fällen aufgerufen.
 
 
 ## WCF
@@ -441,4 +443,4 @@ Fügen Sie das Attribut den Dienstimplementierungen hinzu:
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

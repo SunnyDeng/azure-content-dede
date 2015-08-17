@@ -70,7 +70,7 @@ Der erste Schritt beim Erstellen einer App ist das Erstellen der Web-App über d
 
 Hier sehen Sie eine Übersicht der Dateien, die sich im Git-Ausgangsrepository befinden, das wir im nächsten Abschnitt klonen.
 
-    \FlaskWebProject__init__.py
+    \FlaskWebProject\__init__.py
     \FlaskWebProject\views.py
     \FlaskWebProject\static\content\
     \FlaskWebProject\static\fonts\
@@ -401,4 +401,4 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 [Dokumentation zu Flask]: http://flask.pocoo.org/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

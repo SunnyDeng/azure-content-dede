@@ -39,4 +39,4 @@ Im Folgenden wird der Vorgang für Multi-Factor Authentication mit der mobilen A
 
 <li>Sie sollten jetzt angemeldet sein.</li>
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

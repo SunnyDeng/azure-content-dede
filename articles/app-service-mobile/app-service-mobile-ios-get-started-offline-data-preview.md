@@ -114,10 +114,10 @@ In diesem Abschnitt wird der für die Offlinesynchronisierung relevante Code am 
 Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und Felder in Ihrem Datenmodell definieren. Die Beispiel-App enthält bereits ein Datenmodell mit dem richtigen Format. In diesem Abschnitt durchlaufen wir diese Tabellen und ihre Verwendung.
 
 - Öffnen Sie **QSDataModel.xcdatamodeld**. Es sind vier Tabellen definiert – drei, die durch das SDK verwendet werden, und eine Tabelle für die Todo-Elemente selbst:
-      * MS_TableOperations: Zum Nachverfolgen der Elemente, die mit dem Server synchronisiert werden müssen
-      * MS_TableOperationErrors: Zum Nachverfolgen von Fehlern, die während der Offlinesynchronisierung auftreten
-      * MS_TableConfig: Zum Nachverfolgen der letzten aktualisierten Zeit für die letzte Synchronisierung für alle Pullvorgänge
-      * TodoItem: Zum Speichern der TODO-Elemente. Die Systemspalten **ms_createdAt**, **ms_updatedAt** und **ms_version** sind optionale Systemeigenschaften.
+      * MS\_TableOperations: Zum Nachverfolgen der Elemente, die mit dem Server synchronisiert werden müssen
+      * MS\_TableOperationErrors: Zum Nachverfolgen von Fehlern, die während der Offlinesynchronisierung auftreten
+      * MS\_TableConfig: Zum Nachverfolgen der letzten aktualisierten Zeit für die letzte Synchronisierung für alle Pullvorgänge
+      * TodoItem: Zum Speichern der TODO-Elemente. Die Systemspalten **ms\_createdAt**, **ms\_updatedAt** und **ms\_version** sind optionale Systemeigenschaften.
 
 >[AZURE.NOTE]Das Mobile App-SDK reserviert Spaltennamen, die mit "**`ms_`**" beginnen. Dieses Präfix sollte nur für Systemspalten verwendet werden, andernfalls werden die Spaltennamen bei Verwendung des Remote-Back-Ends geändert.
 
@@ -125,7 +125,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
 
     ### Systemtabellen
 
-    **MS_TableOperations**
+    **MS\_TableOperations**
 
     ![][defining-core-data-tableoperations-entity]
 
@@ -137,7 +137,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
     | Tabelle | String |
     | tableKind | Integer 16 |
 
-    <br>**MS_TableOperationErrors**
+    <br>**MS\_TableOperationErrors**
 
     ![][defining-core-data-tableoperationerrors-entity]
 
@@ -148,7 +148,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
     | Eigenschaften | Binärdaten |
     | tableKind | Integer 16 |
 
-    <br>**MS_TableConfig**
+    <br>**MS\_TableConfig**
 
     ![][defining-core-data-tableconfig-entity]
 
@@ -172,7 +172,7 @@ Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und
     | id | String | Primärschlüssel im Remotespeicher |
     | complete | Boolean | Todo-Elementfeld |
     | Text | String | Todo-Elementfeld |
-    | ms_createdAt | Datum | (optional) Zuordnung zur __createdAt-Systemeigenschaft | | ms_updatedAt | Datum | (optional) Zuordnung zur __updatedAt-Systemeigenschaft | | ms_version | String | (optional) Zum Erkennen von Konflikten, Zuordnung zu __version |
+    | ms\_createdAt | Date | (optional) Zuordnung zur \_\_createdAt-Systemeigenschaft | | ms\_updatedAt | Datum | (optional) Zuordnung zur \_\_updatedAt-Systemeigenschaft | | ms\_version | String | (optional) Zum Erkennen von Konflikten, Zuordnung zu \_\_version |
 
 
 ## <a name="setup-sync"></a>Ändern des Synchronisierungsverhaltens der App
@@ -282,4 +282,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [Azure Friday: Offlinefähige Apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

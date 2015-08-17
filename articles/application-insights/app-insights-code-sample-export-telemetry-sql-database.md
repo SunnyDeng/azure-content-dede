@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/07/2015" 
+	ms.date="08/04/2015" 
 	ms.author="awills"/>
  
 # Codebeispiel: Exportieren aus Application Insights in SQL über eine Workerrolle
@@ -134,7 +134,7 @@ Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt 
  * EntityFramework 6.1.2 oder höher – Zum dynamischen Generieren des DB-Tabellenschemas basierend auf dem Inhalt der JSON-Daten im Blob.
  * JsonFx – Zum Reduzieren der JSON-Daten auf C#-Klasseneigenschaften
 
-Verwenden Sie dieses Tool zum Generieren von C#-Klassendaten aus dem einzelnen JSON-Dokument. Dazu sind einige kleinere Änderungen erforderlich, wie das Reduzieren von JSON-Arrays in einzelne C#-Eigenschaften in einer einzigen Spalte in der Datenbanktabelle (z. B. urlData_port).
+Verwenden Sie dieses Tool zum Generieren von C#-Klassendaten aus dem einzelnen JSON-Dokument. Dazu sind einige kleinere Änderungen erforderlich, wie das Reduzieren von JSON-Arrays in einzelne C#-Eigenschaften in einer einzigen Spalte in der Datenbanktabelle (z. B. urlData\_port).
 
  * [C#-Klassen-Generator aus JSON](http://jsonclassgenerator.codeplex.com/)
 
@@ -519,6 +519,7 @@ Um dieses Beispiel in Aktion zu sehen, [laden Sie den vollständigen Arbeitscode
 * [Exportieren in SQL über eine Workerrolle](app-insights-code-sample-export-telemetry-sql-database.md)
 * [Fortlaufender Export in Application Insights](app-insights-export-telemetry.md)
 * [Application Insights](https://azure.microsoft.com/services/application-insights/)
+* [Weitere Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
 
 <!--Link references-->
 
@@ -530,4 +531,4 @@ Um dieses Beispiel in Aktion zu sehen, [laden Sie den vollständigen Arbeitscode
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

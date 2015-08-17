@@ -6,14 +6,16 @@
 	authors="alancameronwills" 
 	manager="douge"/>
 
+
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="07/22/2015" 
 	ms.author="awills"/>
+
  
 # Application Insights: Plattformen
 
@@ -22,9 +24,9 @@
 
 ## Sprachen
 
-+ [C\#\|VB \(.NET\)](app-insights-start-monitoring-app-health-usage.md)
-+ [C\#\|VB \(Windows Store\)](app-insights-windows-get-started.md)
-+ [C++ \(Windows Store\)](app-insights-windows-cpp.md)
++ [C#|VB (.NET)](app-insights-start-monitoring-app-health-usage.md)
++ [C#|VB (Windows Store)](app-insights-windows-get-started.md)
++ [C++ (Windows Store)](app-insights-windows-cpp.md)
 + [Java](../app-insights-java-get-started.md)
 + [JavaScript-Webseiten](app-insights-web-track-usage.md)
 + [PHP](https://github.com/Microsoft/ApplicationInsights-PHP)
@@ -47,7 +49,7 @@
 + [Joomla](https://github.com/fidmor89/AppInsights-Joomla)
 + [SharePoint](app-insights-sharepoint.md)
 + [WordPress](https://wordpress.org/plugins/application-insights/)
-+ [Windows Store C\#\|VB](app-insights-windows-get-started.md)
++ [Windows Store C#|VB](app-insights-windows-get-started.md)
 + [Windows Store C++](app-insights-windows-cpp.md)
 + [Windows-Desktopanwendungen und -Dienste](app-insights-windows-desktop.md)
 + [Alles andere](#projects)
@@ -58,6 +60,7 @@
 +	[Log4Net, NLog oder System.Diagnostics.Trace](app-insights-diagnostic-search.md)
 +	[Java, Log4J oder Logback](app-insights-java-trace-logs.md)
 +   [Semantic Logging](https://github.com/fidmor89/SLAB_AppInsights) – in [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx) integriert
++   [Cloudbasierte Auslastungstests](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/30/getting-application-insights-counters-with-cloud-based-load-testing.aspx)
 
 ## <a name="projects"></a> Erstellen eines eigenen SDK
 
@@ -72,4 +75,4 @@ Wenn für Ihre Sprache oder Plattform noch kein SDK vorhanden ist, können Sie e
 
 <!--Link references-->
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

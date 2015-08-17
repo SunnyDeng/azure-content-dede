@@ -20,8 +20,8 @@
 
 | Beschreibung | Speicherort des Berichts |
 | :-------------     | :-------        |
-| <p>Verwenden Sie diesen Bericht, um alle Benutzerkonten anzuzeigen, für die anomale Anmeldeaktivitäten identifiziert wurden. Dieser Bericht enthält Daten aus allen anderen Berichten zu anomalen Aktivitäten. Ergebnisse in diesem Bericht enthalten Details zum Benutzer, zum Grund, warum das Anmeldeereignis als anomal eingestuft wurde, zu Datum und Uhrzeit und andere relevante Informationen zum Ereignis.</p> | Verzeichnis \> Registerkarte "Berichte" |
+| <p>Verwenden Sie diesen Bericht, um alle Benutzerkonten anzuzeigen, für die anomale Anmeldeaktivitäten identifiziert wurden. Dieser Bericht enthält Daten aus allen anderen Berichten zu anomalen Aktivitäten. Ergebnisse in diesem Bericht enthalten Details zum Benutzer, zum Grund, warum das Anmeldeereignis als anomal eingestuft wurde, zu Datum und Uhrzeit und andere relevante Informationen zum Ereignis.</p> | Verzeichnis > Registerkarte "Berichte" |
 
 ![Benutzer mit anomalen Anmeldeaktivitäten](./media/active-directory-reporting-users-with-anomalous-sign-in-activity/usersWithAnomalousSignInActivity.PNG)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -45,7 +45,7 @@ Gehen Sie wie folgt vor, um eine SharePoint-Farm mit der Vorlage "SharePoint-Ser
 4. Falls Sie eine Hochverfügbarkeitsfarm wünschen, klicken Sie auf **Hohe Verfügbarkeit aktivieren**.
 5. Klicken Sie zur Konfiguration des Domänencontrollers auf den Pfeil. Sie können ein Hostnamenpräfix (standardmäßig der Ressourcengruppenname), einen Gesamtstruktur-Stammdomänennamen (standardmäßig contoso.com) und die Größe des Domänencontrollers (standardmäßig A1) angeben.
 6. Klicken Sie zur Konfiguration des SQL-Servers auf den Pfeil. Sie können ein Hostnamenpräfix (standardmäßig der Ressourcengruppenname), die Größe des SQL-Servers (standardmäßig A5), Name und Kennwort des Datenbankzugriffskontos (standardmäßig das Administratorkonto), einen SQL-Server-Dienstkontonamen (standardmäßig sqlservice) sowie das Kennwort (standardmäßig dasselbe wie im Administratorkonto) angeben.
-7. Klicken Sie zur Konfiguration des SharePoint-Servers auf den Pfeil. Sie können ein Hostnamenpräfix (standardmäßig der Ressourcengruppenname), die Größe des SharePoint-Servers (standardmäßig A2), Name und Kennwort des SharePoint-Benutzerkontos (Standardname ist "sp_setup"), Name und Kennwort des SharePoint-Farmkontos (Standardname ist "sp_farm") sowie die Passphrase der SharePoint-Farm angeben. Standardmäßig wird das Administratorkennwort für das Benutzerkonto, das Farmkonto und die Passphrase von SharePoint verwendet.
+7. Klicken Sie zur Konfiguration des SharePoint-Servers auf den Pfeil. Sie können ein Hostnamenpräfix (standardmäßig der Ressourcengruppenname), die Größe des SharePoint-Servers (standardmäßig A2), Name und Kennwort des SharePoint-Benutzerkontos (Standardname ist "sp\_setup"), Name und Kennwort des SharePoint-Farmkontos (Standardname ist "sp\_farm") sowie die Passphrase der SharePoint-Farm angeben. Standardmäßig wird das Administratorkennwort für das Benutzerkonto, das Farmkonto und die Passphrase von SharePoint verwendet.
 8. Um die optionalen Konfigurationseinstellungen für das virtuelle Netzwerk, das Speicherkonto und die Diagnose zu konfigurieren, klicken Sie auf den entsprechenden Pfeil.
 9. Klicken Sie auf den Pfeil, um das Abonnement anzugeben.
 10. Klicken Sie auf **Erstellen**, wenn Sie fertig sind.
@@ -95,4 +95,4 @@ Die SharePoint-Serverfarm-Funktion des Azure-Vorschauportals erstellt virtuelle 
 
 [In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

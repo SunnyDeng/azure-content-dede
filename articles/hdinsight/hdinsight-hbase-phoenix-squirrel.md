@@ -216,7 +216,7 @@ Eine Möglichkeit zum Erstellen eines X.509-Zertifikats ist mithilfe des Tools z
 2. Die Jar-Datei öffnen/ausführen. Hierzu ist die [Java-Laufzeitumgebung](http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html) erforderlich.
 3. Klicken Sie zwei Mal auf **Weiter**.
 4. Geben Sie einen Pfad an, an dem die Schreibberechtigung besitzen und klicken Sie dann auf **Weiter**.
-	>[AZURE.NOTE]Der Standardinstallationsordner ist im Ordner „C:\Programme\Microsoft Files\squirrel-Sql-3.6“. Um in diesen Pfad schreiben zu können, müssen dem Installationsprogramm Administratorrechte gewährt werden. Sie können eine Eingabeaufforderung als Administrator öffnen, zum Ordner „Bin“ von Java navigieren und dann ausführen
+	>[AZURE.NOTE]Der Standardinstallationsordner ist im Ordner „C:\\Programme\\Microsoft Files\\squirrel-Sql-3.6“. Um in diesen Pfad schreiben zu können, müssen dem Installationsprogramm Administratorrechte gewährt werden. Sie können eine Eingabeaufforderung als Administrator öffnen, zum Ordner „Bin“ von Java navigieren und dann ausführen
 	>
 	>     java.exe -jar [the path of the SQuirreL jar file] 
 5. Klicken Sie auf **OK**, um das Zielverzeichnis zu erstellen.
@@ -282,10 +282,10 @@ STRG + V).
 ##Nächste Schritte
 In diesem Artikel haben Sie erfahren, wie Sie Apache Phoenix in HDInsight verwenden. Weitere Informationen finden Sie unter
 
-- [Übersicht HBase mit HDInsight][hdinsight-hbase-overview]: HBase ist eine Open-Source-NoSQL-Datenbank von Apache, die auf Hadoop aufbaut und wahlfreien Zugriff sowie starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten bietet.
-- [Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk][hdinsight-hbase-provision-vnet]: Mit der Integration in virtuelle Netzwerke können HBase-Cluster im selben virtuellen Netzwerk bereitgestellt werden wie Ihre Anwendungen, sodass Anwendungen direkt mit HBase kommunizieren können.
+- [Übersicht HBase mit HDInsight][hdinsight-hbase-overview]\: HBase ist eine Open-Source-NoSQL-Datenbank von Apache, die auf Hadoop aufbaut und wahlfreien Zugriff sowie starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten bietet.
+- [Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk][hdinsight-hbase-provision-vnet]\: Mit der Integration in virtuelle Netzwerke können HBase-Cluster im selben virtuellen Netzwerk bereitgestellt werden wie Ihre Anwendungen, sodass Anwendungen direkt mit HBase kommunizieren können.
 - [Konfiguration von HBase-Replikation in HDInsight](hdinsight-hbase-geo-replication.md): Erfahren Sie, wie Sie HBase-Replikation über zwei Azure-Rechenzentren konfigurieren. 
-- [Analysieren der Twitter-Stimmungen mit HBase in HDInsight][hbase-twitter-sentiment]: Erfahren Sie, wie Sie in Echtzeit [Stimmungsanalysen](http://en.wikipedia.org/wiki/Sentiment_analysis) bei Big Data mithilfe von HBase in einem Hadoop-Cluster in HDInsight durchführen können.
+- [Analysieren der Twitter-Stimmungen mit HBase in HDInsight][hbase-twitter-sentiment]\: Erfahren Sie, wie Sie in Echtzeit [Stimmungsanalysen](http://en.wikipedia.org/wiki/Sentiment_analysis) bei Big Data mithilfe von HBase in einem Hadoop-Cluster in HDInsight durchführen können.
 
 [azure-portal]: https://manage.windowsazure.com
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
@@ -308,4 +308,4 @@ In diesem Artikel haben Sie erfahren, wie Sie Apache Phoenix in HDInsight verwen
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

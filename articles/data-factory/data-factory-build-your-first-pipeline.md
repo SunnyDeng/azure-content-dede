@@ -7,6 +7,7 @@
 	manager="jhubbard"
 	editor="monicar"/>
 
+
 <tags
 	ms.service="data-factory"
 	ms.workload="data-services"
@@ -15,6 +16,7 @@
 	ms.topic="hero-article" 
 	ms.date="07/27/2015"
 	ms.author="spelluru"/>
+
 
 # Erstellen der ersten Pipeline mit Azure Data Factory
 > [AZURE.SELECTOR]
@@ -37,7 +39,7 @@ Bevor Sie mit diesem Tutorial beginnen, benötigten Sie Folgendes:
 
 1.	**Azure-Abonnement** – Wenn Sie über kein Azure-Abonnement verfügen, können Sie in wenigen Minuten ein kostenloses Testversionskonto einrichten. Im Artikel [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) erfahren Sie, wie Sie ein kostenloses Testkonto erhalten.
 
-2.	**Azure-Speicher** – Sie benötigen ein Azure-Speicherkonto zum Speichern der Daten in diesem Tutorial. Falls Sie noch kein Azure-Speicherkonto haben, lesen Sie den Artikel [Erstellen eines Speicherkontos](../storage/storage-create-storage-account.md/#create-a-storage-account). Nachdem Sie das Speicherkonto erstellt haben, müssen Sie den Kontoschlüssel für den Zugriff auf den Speicher abrufen. Siehe [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](../storage/storage-create-storage-account.md/#view-copy-and-regenerate-storage-access-keys).
+2.	**Azure-Speicher** – Sie benötigen ein Azure-Speicherkonto zum Speichern der Daten in diesem Tutorial. Falls Sie noch kein Azure-Speicherkonto haben, lesen Sie den Artikel [Erstellen eines Speicherkontos](../storage-create-storage-account/#create-a-storage-account). Nachdem Sie das Speicherkonto erstellt haben, müssen Sie den Kontoschlüssel für den Zugriff auf den Speicher abrufen. Siehe [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](../storage-create-storage-account/#view-copy-and-regenerate-storage-access-keys).
 
 ## Inhalt dieses Tutorials	
 Azure Data Factory ermöglicht Ihnen das Zusammesetzen von Datenverschiebungs- und Datenverarbeitungsaufgaben zu einem datengesteuerten Workflow. Sie erfahren, wie Sie Ihre erste Pipeline erstellen, die HDInsight verwendet, um Webprotokolle monatlich zu transformieren und zu analysieren.
@@ -118,7 +120,7 @@ Bevor Sie mit dem Tutorial beginnen, müssen Sie den Azure-Speicher mit Dateien 
 		partitioned by ( year int, month int)
 		ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
 		STORED AS TEXTFILE 
-		LOCATION 'wasb://data@<storageaccountname>.blob.core.windows.net/partitioneddata';
+		LOCATION '${hiveconf:partitionedtable}';
 
 		INSERT INTO TABLE WebLogsPartitioned  PARTITION( year , month) 
 		SELECT
@@ -147,13 +149,13 @@ Bevor Sie mit dem Tutorial beginnen, müssen Sie den Azure-Speicher mit Dateien 
 	 
  
 2. So bereiten Sie den Azure-Speicher für das Tutorial vor:
-	1. Laden Sie die [neueste Version von **AzCopy**](http://aka.ms/downloadazcopy) oder die [neueste Vorschauversion](http://aka.ms/downloadazcopypr) herunter. Unter [AzCopy](../storage/storage-use-azcopy.md) erfahren Sie, wie AzCopy verwendet wird.
+	1. Laden Sie die [neueste Version von **AzCopy**](http://aka.ms/downloadazcopy) oder die [neueste Vorschauversion](http://aka.ms/downloadazcopypr) herunter. Finden Sie unter dem Artikel [Verwenden vonAzCopy ](../storage/storage-use-azcopy.md) eine Anleitung zur Verwendung des Dienstprogramms.
 	2. Nach der Installation von AzCopy können Sie das Tool dem Systempfad hinzufügen, indem Sie den folgenden Befehl an der Eingabeaufforderung ausführen. 
 	
 			set path=%path%;C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy
 	
 
-	3. Navigieren Sie zum Ordner "c:\\adfgettingstarted", und führen Sie den folgenden Befehl zum Hochladen der HQL-Datei von Hive in das Speicherkonto aus. Ersetzen Sie **\<StorageAccountName\>** durch den Namen Ihres Speicherkontos und **\<Storage Key\>** durch den Speicherkontoschlüssel.
+	3. Navigieren Sie zum Ordner "c:\\adfgettingstarted", und führen Sie den folgenden Befehl zum Hochladen der HQL-Datei von Hive in das Speicherkonto aus. Ersetzen Sie **<StorageAccountName>** durch den Namen Ihres Speicherkontos und **<Storage Key>** durch den Speicherkontoschlüssel.
 
 			AzCopy /Source:. /Dest:https://<StorageAccountName>.blob.core.windows.net/script /DestKey:<Storage Key>
 	4. Nachdem die Datei erfolgreich hochgeladen wurde, sehen Sie die folgende Ausgabe von AzCopy.
@@ -173,4 +175,4 @@ Gehen Sie wie folgt vor:
 - Klicken Sie oben auf den Link [PowerShell verwenden](data-factory-build-your-first-pipeline-using-powershell.md), um das Lernprogramm mit Azure PowerShell auszuführen.
 - Klicken Sie oben auf den Link [Mit Visual Studio](data-factory-build-your-first-pipeline-using-vs.md), um das Tutorial mit Visual Studio auszuführen. 
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

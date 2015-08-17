@@ -10,4 +10,4 @@ Nachdem Sie sich nun mit den Grundlagen des Azure-Warteschlangenspeichers vertra
   - Verwenden Sie [Tabellenspeicher](./storage-dotnet-how-to-use-tables.md) zum Speichern strukturierter Daten.
   - Verwenden Sie eine [SQL-Datenbank](../sql-database/sql-database-dotnet-how-to-use.md) zum Speichern relationaler Daten.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

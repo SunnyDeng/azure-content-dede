@@ -78,4 +78,4 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer SQL-Datenbank-Editi
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

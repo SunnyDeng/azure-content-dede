@@ -6,4 +6,4 @@ In Ihrem ASP.NET-Projekt sollte Folgendes angezeigt werden:
 
 * In der Datei "WebApiConfig.cs" wird die`UseDefaultConfiguration()`-Methode für das MobileAppConfiguration-Objekt aufgerufen. Dieses wiederum ruft die `AddPushNotifications()`-Erweiterungsmethode, auf, die von dem oben genannten NuGet-Paket bereitgestellt wird.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

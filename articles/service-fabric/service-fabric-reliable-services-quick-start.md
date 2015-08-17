@@ -57,7 +57,7 @@ protected override async Task RunAsync(CancellationToken cancellationToken)
 }
 ```
 
- - Einen Einstiegspunkt für die Kommunikation, in den Sie den gewünschten Kommunikationsstapel \(z. B. Web-API\) einbinden können, um Anforderungen von Benutzern oder anderen Diensten zu empfangen.
+ - Einen Einstiegspunkt für die Kommunikation, in den Sie den gewünschten Kommunikationsstapel (z. B. Web-API) einbinden können, um Anforderungen von Benutzern oder anderen Diensten zu empfangen.
 
 ```C#
 protected override ICommunicationListener CreateCommunicationListener()
@@ -96,7 +96,7 @@ Die Plattform ruft diese Methode auf, wenn eine Instanz des Diensts platziert wu
 
 Diese Orchestrierung wird vom System so verwaltet, dass der Dienst hoch verfügbar bleibt und die Lasten ordnungsgemäß verteilt sind.
 
-`RunAsync()` wird in einem eigenen **Task** ausgeführt. Im Codeausschnitt oben verwenden wir direkt eine **while**-Schleife, da für die Arbeitsauslastung keine separate Aufgabe geplant werden muss. Zum Abbrechen der Arbeitsauslastung ist das Zusammenspiel verschiedener Aktionen erforderlich, die vom bereitgestellten Abbruchtoken orchestriert werden. Das System wartet darauf, dass der Task beendet wird \(entweder durch erfolgreichen Abschluss, durch Abbruch oder Fehler\), bevor es fortfährt. Es ist **wichtig**, das Abbruchtoken zu berücksichtigen, etwaige Arbeiten abzuschließen und `RunAsync()` so schnell wie möglich zu beenden, wenn vom System ein Abbruch angefordert wird.
+`RunAsync()` wird in einem eigenen **Task** ausgeführt. Im Codeausschnitt oben verwenden wir direkt eine **while**-Schleife, da für die Arbeitsauslastung keine separate Aufgabe geplant werden muss. Zum Abbrechen der Arbeitsauslastung ist das Zusammenspiel verschiedener Aktionen erforderlich, die vom bereitgestellten Abbruchtoken orchestriert werden. Das System wartet darauf, dass der Task beendet wird (entweder durch erfolgreichen Abschluss, durch Abbruch oder Fehler), bevor es fortfährt. Es ist **wichtig**, das Abbruchtoken zu berücksichtigen, etwaige Arbeiten abzuschließen und `RunAsync()` so schnell wie möglich zu beenden, wenn vom System ein Abbruch angefordert wird.
 
 In diesem Beispiel eines zustandslosen Diensts wird die Anzahl in einer lokalen Variablen gespeichert. Da es sich jedoch um einen zustandslosen Dienst handelt, existiert der gespeicherte Wert nur für den aktuellen Lebenszyklus der Dienstinstanz, in der er sich befindet. Wenn der Dienst verschoben oder neu gestartet wird, geht der Wert verloren.
 
@@ -204,4 +204,4 @@ Sobald die Dienste ausgeführt werden, sehen Sie die generierten ETW-Ereignisse 
 
 [Entwicklerreferenz für zuverlässige Dienste](https://msdn.microsoft.com/library/azure/dn706529.aspx)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

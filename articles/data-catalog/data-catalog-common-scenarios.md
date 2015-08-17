@@ -3,17 +3,20 @@
    description="Häufige Szenarios mit Azure Data Catalog: Registrieren, Erweitern, Untersuchen, Verstehen und Nutzen von Datenquellen und Entfernen der Metadaten von Datenquellen."
    services="data-catalog"
    documentationCenter=""
-   authors="dvana"
-   manager="mblythe"
+   authors="steelanddata"
+   manager="NA"
    editor=""
-   tags=""/> <tags
+   tags=""/>
+
+<tags
    ms.service="data-catalog"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="07/13/2015"
-   ms.author="derrickv"/>
+   ms.date="07/31/2015"
+   ms.author="maroche"/>
+
 
 
 # Häufige Szenarios mit Azure Data Catalog
@@ -32,6 +35,8 @@ Häufig ist es für Benutzer schwierig zu erkennen, wo die Daten innerhalb diese
 - Ich weiß nicht, ob diese Zahlen korrekt sind. Von wem erhalte ich Informationen dazu, wie diese Daten verwendet werden sollen, bevor ich dieses Dashboard für mein Team freigebe?
 
 In diesen Fällen ist Azure Data Catalog hilfreich. Die zentralen, wertvollen und von IT-Experten verwalteten Datenquellen, die in der Organisation verwendet werden, sind häufig der logische Ausgangspunkt zum Auffüllen des Katalogs. Jeder Benutzer kann eine Datenquelle registrieren. Aber wenn der Katalog in Verbindung mit den Datenquellen eingeführt wird, die für die überwiegende Anzahl von Benutzern einen hohen Nutzen darstellen, fördert dies die Akzeptanz und Verwendung des Systems. Für Kunden, die Azure Data Catalog neu einführen, kann das Identifizieren und Registrieren der wichtigsten Datenquellen, die von vielen unterschiedlichen Teams mit Datennutzern verwendet werden, der erste Schritt zu einer erfolgreichen Nutzung sein.
+
+Dieses Szenario bietet auch die Möglichkeit, die hochwertigen Datenquellen mit Anmerkungen zu versehen, damit diese einfacher zu verstehen sind und der Zugriff leichter ist. Ein wichtiger Aspekt dieses Aufwand ist es, Informationen darüber aufzunehmen, wie Benutzer Zugriff auf die Datenquelle anfordern können. Azure Data Catalog ermöglicht es Benutzern, die E-Mail-Adresse des Benutzers oder Teams, das für die Steuerung des Datenquellenzugriffs zuständig ist, Links zu vorhandenen Tools oder Dokumentation oder Freitext, der den Zugriffgewährungsprozess beschreibt, zur Verfügung zu stellen. Mit diesen im Katalog enthalten Informationen können Benutzer, die registrierte Daten ermitteln aber noch keine Berechtigungen zum Zugriff auf die Daten haben, problemlos mithilfe der definierten Prozesse und gesteuert von den Quellbesitzern Zugriff anfordern.
 
 ## Szenario 2: Self-Service-Business Intelligence
 
@@ -63,4 +68,4 @@ Es kommt vor, dass diese Datenexperten ihr Wissen dokumentieren und per E-Mail o
 
 Azure Data Catalog ist ein Speicherort zum Bereitstellen dieses Stammeswissens, an dem es leicht auffindbar ist. Datenexperten können die Datenressourcen direkt mit Anmerkungen versehen und Links zur vorhandenen Dokumentation einfügen. Hierdurch wird nicht nur das Wissen selbst erfasst, sondern es wird auch in derselben Umgebung angeordnet, die für die Ermittlung von Datenquellen verwendet wird. Wenn der Katalog zum Ermitteln einer Datenquelle verwendet wird, finden Benutzer nicht nur die eigentliche Quelle, sondern auch das Expertenwissen, dass sich vorher nur im Kopf des Experten befunden hat.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

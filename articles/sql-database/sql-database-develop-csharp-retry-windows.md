@@ -14,11 +14,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/24/2015" 
+	ms.date="08/04/2015" 
 	ms.author="genemi"/>
 
 
-# Codebeispiel: Wiederholungslogik in C\# für das Herstellen einer Verbindung mit einer SQL-Datenbank
+# Codebeispiel: Wiederholungslogik in C# für das Herstellen einer Verbindung mit einer SQL-Datenbank
 
 
 <!--
@@ -37,7 +37,7 @@ Dx  4d7936fd-341c-4a37-8796-25e385ae6c5b
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
-Dieses Thema enthält ein C\#-Codebeispiel, mit dem die benutzerdefinierte Wiederholungslogik veranschaulicht wird. Die Wiederholungslogik dient zum kontrollierten Verarbeiten von vorübergehenden Fehlern \(auch: *Übergangsfehler*\), die meist nicht mehr vorhanden sind, wenn das Programm einige Sekunden wartet und den Vorgang dann erneut ausführt.
+Dieses Thema enthält ein C#-Codebeispiel, mit dem die benutzerdefinierte Wiederholungslogik veranschaulicht wird. Die Wiederholungslogik dient zum kontrollierten Verarbeiten von vorübergehenden Fehlern (auch: *Übergangsfehler*), die meist nicht mehr vorhanden sind, wenn das Programm einige Sekunden wartet und den Vorgang dann erneut ausführt.
 
 
 ADO.NET-Klassen, die Sie zum Herstellen einer Verbindung mit dem lokalen Microsoft SQL Server verwenden, können ebenfalls eine Verbindung mit Azure SQL-Datenbank herstellen. Allein können die ADO.NET-Klassen aber nicht für die Robustheit und Zuverlässigkeit sorgen, die für die Verwendung in der Produktion erforderlich ist. In Ihrem Clientprogramm können vorübergehende Fehler auftreten, die vom Programm unbeaufsichtigt und kontrolliert behoben werden können. Beispiele für vorübergehende Fehler:
@@ -61,10 +61,10 @@ Die Liste mit den Fehlernummern, die als vorübergehende Fehler kategorisiert we
  - Siehe Abschnitt *Vorübergehende Fehler, Verbindungsabbruchfehler*.
 
 
-## C\#-Codebeispiel
+## C#-Codebeispiel
 
 
-Das C\#-Codebeispiel in diesem Thema enthält eine benutzerdefinierte Erkennungs- und Wiederholungslogik zum Behandeln von vorübergehenden Fehlern.
+Das C#-Codebeispiel in diesem Thema enthält eine benutzerdefinierte Erkennungs- und Wiederholungslogik zum Behandeln von vorübergehenden Fehlern.
 
 
 Im Codebeispiel werden einige grundlegende Richtlinien oder Empfehlungen befolgt, die unabhängig davon gelten, welche Technologie Sie zum Interagieren mit Azure SQL-Datenbank verwenden. Allgemeine Empfehlungen finden Sie unter:
@@ -73,7 +73,7 @@ Im Codebeispiel werden einige grundlegende Richtlinien oder Empfehlungen befolgt
 - [Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen](sql-database-connect-central-recommendations.md)
 
 
-Das C\#-Codebeispiel besteht aus den beiden CS-Dateien, deren Inhalt in die folgenden Abschnitte eingefügt wird. Die Dateinamen lauten:
+Das C#-Codebeispiel besteht aus den beiden CS-Dateien, deren Inhalt in die folgenden Abschnitte eingefügt wird. Die Dateinamen lauten:
 
 
 - `Program.cs`
@@ -86,24 +86,24 @@ Das C\#-Codebeispiel besteht aus den beiden CS-Dateien, deren Inhalt in die folg
 Sie können das Beispiel mit den folgenden Schritten kompilieren:
 
 
-1. Erstellen Sie in Visual Studio ein neues Projekt mit der Vorlage für die C\#-Konsolenanwendung.
+1. Erstellen Sie in Visual Studio ein neues Projekt mit der Vorlage für die C#-Konsolenanwendung.
 
 2. Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und fügen Sie dann die CS-Datei hinzu, für die in diesem Thema Quellcode angegeben ist.
 
 3. Führen Sie in einem `cmd.exe`-Befehlsfenster das Programm wie unten gezeigt aus. Die tatsächliche Ausgabe einer Ausführung wird ebenfalls angezeigt.
 
 
-		[C:\MyVS\ConsoleApplication1\ConsoleApplication1\bin\Debug\]
+		[C:\MyVS\ConsoleApplication1\ConsoleApplication1\bin\Debug]
 		>> ConsoleApplication1.exe
 		database_firewall_rules_table   245575913
 		filestream_tombstone_2073058421 2073058421
 		filetable_updates_2105058535    2105058535
 		
-		[C:\MyVS\ConsoleApplication1\ConsoleApplication1\bin\Debug\]
+		[C:\MyVS\ConsoleApplication1\ConsoleApplication1\bin\Debug]
 		>>
 
 
-Der C\#-Quellcode für die CS-Dateien ist in den folgenden Abschnitten enthalten.
+Der C#-Quellcode für die CS-Dateien ist in den folgenden Abschnitten enthalten.
 
 
 ## Datei „Program.cs“
@@ -342,7 +342,7 @@ Die `Main`-Methode ist in `Program.cs` enthalten. Die Aufrufliste wird wie folgt
 ## Codedatei „Custom\_SqlDatabaseTransientErrorDetectionStrategy.cs“
 
 
-[`SqlDatabaseTransientErrorDetectionStrategy`](http://msdn.microsoft.com/library/microsoft.practices.enterpriselibrary.transientfaulthandling.sqldatabasetransienterrordetectionstrategy.aspx) ist eine Klasse in der Enterprise Library \(EntLib\)-API. In diesem Codebeispiel wird die folgende benutzerdefinierte Klasse verwendet, bei der die Idee der EntLib-Klasse genutzt wird.
+[`SqlDatabaseTransientErrorDetectionStrategy`](http://msdn.microsoft.com/library/microsoft.practices.enterpriselibrary.transientfaulthandling.sqldatabasetransienterrordetectionstrategy.aspx) ist eine Klasse in der Enterprise Library (EntLib)-API. In diesem Codebeispiel wird die folgende benutzerdefinierte Klasse verwendet, bei der die Idee der EntLib-Klasse genutzt wird.
 
 
 	using     System;
@@ -395,8 +395,7 @@ Die `Main`-Methode ist in `Program.cs` enthalten. Die Aufrufliste wird wie folgt
 	        static Custom_SqlDatabaseTransientErrorDetectionStrategy()
 	        {
 	            int[] arrayOfTransientErrorNumbers =
-	                {4060, 10928, 10929, 40197, 40501, 40613
-	};
+	                {4060, 10928, 10929, 40197, 40501, 40613 };
 	
 	            M_listTransientErrorNumbers = new G.List<int>(arrayOfTransientErrorNumbers);
 	        }
@@ -413,10 +412,10 @@ Die `Main`-Methode ist in `Program.cs` enthalten. Die Aufrufliste wird wie folgt
 ## Kurzversion der Datei „Program.cs“
 
 
-Der Quellcode in diesem Abschnitt ist eine verkürzte Version der längeren Datei `Program.cs`, die oben angegeben ist. Die gesamte Wiederholungslogik und `Exception`-Behandlung wurde entfernt.
+Der Quellcode in diesem Abschnitt ist eine verkürzte Version der längeren Datei `Program.cs`, die oben angegeben ist. Die gesamte Wiederholungslogik und Ausnahmebehandlung wurde entfernt.
 
 
-In der Kurzversion sind die ADO.NET-Aufrufe leichter zu sehen, und es ist bekannt, dass diese normalerweise funktionieren. In der Regel treten keine vorübergehenden Fehler auf, und es wird keine `Exception` ausgelöst. Und normalerweise braucht ein Skydiver keinen Zweitschirm.
+In der Kurzversion sind die ADO.NET-Aufrufe leichter zu sehen, und es ist bekannt, dass diese normalerweise funktionieren. In der Regel treten keine vorübergehenden Fehler auf, und es wird keine Ausnahme ausgelöst. Und normalerweise braucht ein Skydiver keinen Zweitschirm.
 
 
 	using     System;  // C#, pure ADO.NET, no retry logic, no Exception handling.
@@ -497,4 +496,4 @@ In der Kurzversion sind die ADO.NET-Aufrufe leichter zu sehen, und es ist bekann
 
 - [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

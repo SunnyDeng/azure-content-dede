@@ -92,4 +92,4 @@ Ein weiteres Szenario für LOB ist ein Standort-zu-Standort-VPN mit dem virtuell
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

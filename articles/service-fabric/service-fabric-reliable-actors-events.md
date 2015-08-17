@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Ereignisse für Azure Service Fabric Actors"
-   description="Einführung in Ereignisse für Azure Service Fabric Actors."
+   pageTitle="Reliable Actors-Ereignisse"
+   description="Einführung in Ereignisse für Service Fabric Reliable Actors."
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
+
 
 <tags
    ms.service="service-fabric"
@@ -13,8 +14,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/09/2015"
+   ms.date="08/05/2015"
    ms.author="amanbha"/>
+
 
 
 # Actor-Ereignisse
@@ -72,4 +74,4 @@ var ev = GetEvent<IGameEvents>();
 ev.GameScoreUpdated(Id.GetGuidId(), State.Status.Score);
 ```
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

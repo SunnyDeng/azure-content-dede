@@ -84,7 +84,7 @@ Lokaler System-Port | Öffnen Sie im lokalen System den Port, der vom System ver
  - Im IIS-Manager (inetmgr) sollte die ***MicrosoftAzureBizTalkHybridListener***-Website aufgeführt sein und ausgeführt werden. 
  - Diese Website verwendet den ***HybridListenerAppPool***, der als lokales, integriertes Benutzerkonto *NetworkService* ausgeführt wird. Dieser AppPool sollte auch gestartet werden.
 3. Bestätigen Sie auf dem IIS-Server, dass der Connector installiert ist und ausgeführt wird: 
- - Für Ihren App Service-Connector wird eine Website erstellt. Wenn Sie beispielsweise einen SQL-Connector erstellt haben, gibt es eine ***MicrosoftSqlConnector_nnn***-Website. Bestätigen Sie im IIS-Manager (inetmgr), dass diese Website aufgelistet ist und gestartet wird. 
+ - Für Ihren App Service-Connector wird eine Website erstellt. Wenn Sie beispielsweise einen SQL-Connector erstellt haben, gibt es eine ***MicrosoftSqlConnector\_nnn***-Website. Bestätigen Sie im IIS-Manager (inetmgr), dass diese Website aufgelistet ist und gestartet wird. 
  - Diese Website verwendet einen eigenen IIS-Anwendungspool mit dem Namen ***HybridAppPoolnnn***. Dieser AppPool wird als lokales, integriertes Benutzerkonto *NetworkService* ausgeführt. Diese Website und der AppPool sollten beide gestartet werden. 
  - Durchsuchen Sie den lokalen Connector. Wenn die Connector-Website z. B. Port 6569 verwendet, navigieren Sie zu http://localhost:6569. Ein Standarddokument ist nicht konfiguriert, also wird ein Fehler `HTTP Error 403.14 - Forbidden error` erwartet.
 4. Bestätigen Sie in Ihrer Firewall, dass die in diesem Thema aufgeführten TCP-Ports geöffnet sind.
@@ -133,4 +133,4 @@ Wenn Ihre benutzerdefinierte API einen TCP- oder HTTP-Port verwendet, können Si
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

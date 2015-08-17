@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="DocumentDB-Grenzen und -Kontingente | Azure" 
+	pageTitle="DocumentDB-Grenzwerte und -Kontingente | Microsoft Azure" 
 	description="Erfahren Sie mehr über die Grenzen und Kontingenterzwingungen von DocumentDB" 
 	services="documentdb" 
 	authors="mimig1" 
@@ -23,4 +23,4 @@ In der folgenden Tabelle werden die Grenzen und Kontingenterzwingungen von Docum
 
 [AZURE.INCLUDE [azure-documentdb-limits](../../includes/azure-documentdb-limits.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

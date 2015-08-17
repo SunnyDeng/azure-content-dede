@@ -9,7 +9,7 @@
 <tags
    ms.service="operational-insights"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="07/21/2015"
@@ -102,13 +102,13 @@ In der folgenden Tabelle sind die Ports im Zusammenhang mit diesen Aufgaben aufg
 |*.ods.opinsights.azure.com|Port 443| |service.systemcenteradvisor.com|Port 443| |scadvisor.accesscontrol.windows.net|Port 443| |scadvisorservice.accesscontrol.windows.net|Port 443| |*.blob.core.windows.net/*|Port 443|
 |data.systemcenteradvisor.com|Port 443|
 |ods.systemcenteradvisor.com|Port 443|
-|*.systemcenteradvisor.com|Port 443|
+|**.systemcenteradvisor.com|Port 443|
 
 
 |**Operational Insights- und Operations Manager-Konsolenressource**|**Ports**|
 |---|---|
 |*.systemcenteradvisor.com|Port 80 und 443| |*.live.com|Ports 80 und 443|
-|*.microsoftonline.com|Port 80 und 443| |login.windows.net|Port 80 und 443|
+|**.microsoftonline.com|Port 80 und 443| |login.windows.net|Port 80 und 443|
 
 
 Verwenden Sie die folgenden Verfahren, um die Operations Manager-Verwaltungsgruppe beim Operational Insights-Dienst zu registrieren. Wenn Sie Probleme mit der Kommunikation zwischen der Verwaltungsgruppe und dem Operational Insights-Dienst haben, verwenden Sie die Validierungsverfahren für eine Problembehandlung der Datenübertragung an den Operational Insights-Dienst.
@@ -129,7 +129,7 @@ Verwenden Sie die folgenden Verfahren, um die Operations Manager-Verwaltungsgrup
 
 3. Klicken Sie in der Ansicht "Operational Insights Connection" auf **Proxyserver konfigurieren**. ![Operations Manager, Operational Insights Connection, Proxyserver konfigurieren](./media/operational-insights-proxy-firewall/proxy-om02.png)
 
-4. Wählen Sie unter "Operational Insights Settings Wizard: Proxy Server" die Option **Use a proxy server to access the Operational Insights Web Service** aus, und geben Sie dann die URL mit der Portnummer ein, z. B. **http://myproxy:80**. ![Operations Manager, Proxyadresse Operational Insights](./media/operational-insights-proxy-firewall/proxy-om03.png)
+4. Wählen Sie unter "Operational Insights-Einstellungsassistent: Proxyserver" die Option **Einen Proxyserver verwenden, um auf den Operational Insights-Webdienst zuzugreifen** aus, und geben Sie dann die URL mit der Portnummer ein, z. B. ****http://myproxy:80**. ![Operations Manager, Proxyadresse Operational Insights](./media/operational-insights-proxy-firewall/proxy-om03.png)
 
 
 ### So geben Sie Anmeldeinformationen ein, wenn der Proxyserver eine Authentifizierung erfordert
@@ -166,4 +166,4 @@ Verwenden Sie die folgenden Verfahren, um die Operations Manager-Verwaltungsgrup
 3. Fügen Sie alle Leistungsindikatoren hinzu, die mit **HTTP** beginnen. ![Hinzufügen der Leistungsindikatoren](./media/operational-insights-proxy-firewall/sendingdata1.png)
 4. Wenn die Operations Manager-Konfiguration in Ordnung ist, werden Aktivitäten für die Leistungsindikatoren der Verwaltungsgruppen des Integritätsdiensts für Ereignisse und andere Datenelemente angezeigt. Die Grundlage bilden die in Operational Insights hinzugefügten Management Packs und die konfigurierten Richtlinien für die Protokollerfassung. ![Systemmonitor mit Aktivität](./media/operational-insights-proxy-firewall/sendingdata2.png)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

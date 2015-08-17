@@ -152,4 +152,4 @@ Der Wert von "LoadBalancerDistribution" kann "sourceIP" (2-Tupel-Affinität) ode
     </LoadBalancedEndpointList>
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

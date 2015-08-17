@@ -7,6 +7,7 @@
 	manager="jeffreyg" 
 	editor=""/>
 
+
 <tags 
 	ms.service="sql-database"
 	ms.devlang="NA"
@@ -17,17 +18,18 @@
 	ms.tgt_pltfrm="NA"/>
 
 
+
 # Verwalten des explosionsartigen Wachstums elastischer Datenbanken
 
 Für SaaS-Entwickler, die Dutzende, Hunderte oder sogar Tausende von Datenbanken haben, vereinfacht ein elastischer Datenbankpool das Erstellen, Warten und Verwalten der Leistung und der Kosten der gesamten Datenbankgruppe, sodass das geplante Budget eingehalten werden kann.
 
-Ein gängiges Muster bei SaaS-Anwendungen ist, für jede Datenbank einen anderen Kunden zu implementieren, jeweils mit unterschiedlichem und unvorhersehbarem Verbrauch von Systemressourcen \(CPU, E/A, Speicher zusammengefasst mit eDTU\). Mit diesen Spitzen- und Tiefstwerten beim Bedarf der einzelnen Datenbanken können Prognosen schwierig sein, sodass die Bereitstellung von Ressourcen erschwert wird. Es gibt zwei Möglichkeiten: entweder planen Sie Datenbankressourcen überdimensioniert für Spitzenauslastungen – und zahlen dann auch mehr. Oder Sie planen die Bereitstellung unterdimensioniert zur Kosteneinsparung und nehmen Einbußen bei der Leistung und Kundenzufriedenheit während Spitzenzeiten in Kauf.
+Ein gängiges Muster bei SaaS-Anwendungen ist, für jede Datenbank einen anderen Kunden zu implementieren, jeweils mit unterschiedlichem und unvorhersehbarem Verbrauch von Systemressourcen (CPU, E/A, Speicher zusammengefasst mit eDTU). Mit diesen Spitzen- und Tiefstwerten beim Bedarf der einzelnen Datenbanken können Prognosen schwierig sein, sodass die Bereitstellung von Ressourcen erschwert wird. Es gibt zwei Möglichkeiten: entweder planen Sie Datenbankressourcen überdimensioniert für Spitzenauslastungen – und zahlen dann auch mehr. Oder Sie planen die Bereitstellung unterdimensioniert zur Kosteneinsparung und nehmen Einbußen bei der Leistung und Kundenzufriedenheit während Spitzenzeiten in Kauf.
 
 Microsoft hat elastische Datenbankpools speziell zur Behebung dieses Problems entwickelt.
 
 > [AZURE.VIDEO elastic-databases-helps-saas-developers-tame-explosive-growth]
 
-Ein elastischer Datenbankpool stellt eine Sammlung der verfügbaren Ressourcen dar, die von den elastischen Datenbanken im Pool gemeinsam verwendet werden. Sie können Datenbanken zu einem beliebigen Zeitpunkt zum Pool hinzufügen oder daraus entfernen. Diese Datenbanken nutzen die Ressourcen \(in Form von elastischen Datenbank-Durchsatzeinheiten oder eDTUs\) und Speicherkapazitäten des Pools gemeinsam. Jede Datenbank verwendet jedoch nur die Ressourcen, die zu einem bestimmten Zeitpunkt erforderlich sind. Dadurch sind die Ressourcen für andere Datenbanken verfügbar, wenn diese benötigt werden. Anstelle einer Überdimensionierung einzelner Datenbanken mit daraus resultierenden Kosten für nicht genutzte Ressourcen, reservieren Sie diese nach Bedarf und zahlen einen vorhersagbaren Preis für zusammengefasste Ressourcen des Pools. Dadurch werden die Kosten verteilt, wodurch Sie ein konkurrenzfähiges Geschäftsmodell erhalten. Außerdem bietet jede Datenbank Anpassungsmöglichkeiten bei der Leistung.
+Ein elastischer Datenbankpool stellt eine Sammlung der verfügbaren Ressourcen dar, die von den elastischen Datenbanken im Pool gemeinsam verwendet werden. Sie können Datenbanken zu einem beliebigen Zeitpunkt zum Pool hinzufügen oder daraus entfernen. Diese Datenbanken nutzen die Ressourcen (in Form von elastischen Datenbank-Durchsatzeinheiten oder eDTUs) und Speicherkapazitäten des Pools gemeinsam. Jede Datenbank verwendet jedoch nur die Ressourcen, die zu einem bestimmten Zeitpunkt erforderlich sind. Dadurch sind die Ressourcen für andere Datenbanken verfügbar, wenn diese benötigt werden. Anstelle einer Überdimensionierung einzelner Datenbanken mit daraus resultierenden Kosten für nicht genutzte Ressourcen, reservieren Sie diese nach Bedarf und zahlen einen vorhersagbaren Preis für zusammengefasste Ressourcen des Pools. Dadurch werden die Kosten verteilt, wodurch Sie ein konkurrenzfähiges Geschäftsmodell erhalten. Außerdem bietet jede Datenbank Anpassungsmöglichkeiten bei der Leistung.
 
 Datenbanken, die sich gut für elastische Datenbankpools eignen, sind i. d. R. weniger als 50 % der Zeit aktiv. Ein typisches Aktivitätsmuster ist, dass Datenbanken einige Zeit inaktiv bleiben, einige Zeit mit wenig Ressourcenanforderungen aktiv und dann mit hohen Ressourcenanforderungen aktiv sind. Nicht alle Datenbanken entsprechen jedoch diesem Muster. Es gibt Datenbanken mit einem konstanteren Ressourcenbedarf. Diese Datenbanken eignen sich besser für die Basic-, Standard- und Premium-Dienstebenen, bei denen Ressourcen einzeln zugewiesen werden. Hilfe beim Ermitteln, ob Ihre Datenbanken von einem Pool für elastische Datenbanken profitieren würden, finden Sie unter[Überlegungen zum Preis und zur Leistung eines elastischen Datenbankpools](sql-database-elastic-pool-guidance.md).
 
@@ -44,9 +46,9 @@ Außerdem ist ein umfassender und leistungsfähiger Satz von Entwicklertools zum
 
 ## Funktionen der Geschäftskontinuität für Datenbanken in einem Pool
 
-Derzeit unterstützen Datenbanken in einem elastischen Datenbankpool \(auf Standardebene für elastische Datenbanken\) in der Vorschau die meisten Funktionen, die auch für die Standard-Datenbankebene zur Verfügung stehen.
+Derzeit unterstützen Datenbanken in einem elastischen Datenbankpool (auf Standardebene für elastische Datenbanken) in der Vorschau die meisten Funktionen, die auch für die Standard-Datenbankebene zur Verfügung stehen.
 
-### Sichern und Wiederherstellen von Datenbanken \(Zeitpunktwiederherstellung\)
+### Sichern und Wiederherstellen von Datenbanken (Zeitpunktwiederherstellung)
 
 Datenbanken in einem elastischen Datenbankpool werden automatisch vom System gesichert und die Aufbewahrungsrichtlinie für die Sicherung entspricht der Standard-Datenbankebene. Während der Vorschau werden die Datenbanken in einem Pool als neue Datenbanken im gleichen Pool wiederhergestellt. Gelöschte Datenbanken werden immer als eigenständige Standard-S0-Datenbank außerhalb des Pools wiederhergestellt. Sie können Datenbank-Wiederherstellungsvorgänge über das Azure-Verwaltungsportal oder programmgesteuert mithilfe der REST-API ausführen. PowerShell-Cmdlet-Unterstützung wird demnächst zur Verfügung stehen.
 
@@ -57,10 +59,10 @@ Mit der geografischen Wiederherstellung können Sie eine Datenbank in einem Pool
 
 ### Georeplikation
 
-Datenbanken, für die bereits die Georeplikation aktiviert wurde, können in und aus einem elastischen Datenbankpool verschoben werden, und die Replikation wird weiterhin wie gewohnt funktionieren. In der Vorschau können Sie derzeit die Georeplikation nicht für Datenbanken aktivieren, die bereits in einem Pool enthalten sind.
+Datenbanken, für die bereits die Georeplikation aktiviert wurde, können in und aus einem elastischen Datenbankpool verschoben werden, und die Replikation wird weiterhin wie gewohnt funktionieren. Sie können für eine Datenbank, die bereits im Pool ist, die Georeplikation aktivieren, wenn der angegebene Zielserver einen Pool mit dem gleichen Namen wie der Quellpool hat. Derzeit können Sie in der Vorschau die Georeplikation nicht für eine Datenbank aktivieren, die bereits in einem Pool zu einem Pool mit einem anderen Namen oder zu einer sekundären Singleton-Datenbank ist.
 
 
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -20,7 +20,7 @@
 
 ##Was ist eine automatisierte Benutzerbereitstellung für SaaS-Anwendungen?
 
-Azure Active Directory \(Azure AD\) ermöglicht Ihnen das automatisierte Erstellen, Warten und Entfernen von Benutzeridentitäten in Cloudanwendungen \(SaaS\), wie z. B. Dropbox, Salesforce, ServiceNow und weiteren.
+Azure Active Directory (Azure AD) ermöglicht Ihnen das automatisierte Erstellen, Warten und Entfernen von Benutzeridentitäten in Cloudanwendungen (SaaS), wie z. B. Dropbox, Salesforce, ServiceNow und weiteren.
 
 **Nachstehend finden Sie einige Beispiele für Aufgaben, die Sie mit diesem Feature ausführen können:**
 
@@ -43,13 +43,13 @@ Nachfolgend werden einige Gründe aufgeführt, die für die Verwendung dieser Fu
 - Vermeiden von Kosten, Ineffizienz und Fehlern, die in Zusammenhang mit manuellen Bereitstellungsvorgängen auftreten.
 - Sicherstellen, dass Ihre Organisation Benutzeridentitäten sofort aus wichtigen SaaS-Apps entfernen kann, wenn Benutzer die Organisation verlassen.
 - Einfacher Massenimport von Benutzern in eine bestimmte SaaS-Anwendung.
-- Mit dieser Bereitstellungslösung werden dieselben App-Zugriffsrichtlinien angewendet wie diejenigen, die Sie für die einmalige Azure AD-Anmeldung \(SSO\) definiert haben.
+- Mit dieser Bereitstellungslösung werden dieselben App-Zugriffsrichtlinien angewendet wie diejenigen, die Sie für die einmalige Azure AD-Anmeldung (SSO) definiert haben.
 
 ##Häufig gestellte Fragen
 
 **Wie häufig schreibt Azure AD Verzeichnisänderungen in die SaaS-Apps?**
 
-Azure AD prüft alle fünf bis zehn Minuten auf Änderungen. Wenn die SaaS-App mehrere Fehler zurückgibt \(beispielsweise bei ungültigen Administratoranmeldeinformationen\), verringert Azure AD die Häufigkeit auf eine Abfrage pro Tag, bis die Fehler behoben wurden.
+Azure AD prüft alle fünf bis zehn Minuten auf Änderungen. Wenn die SaaS-App mehrere Fehler zurückgibt (beispielsweise bei ungültigen Administratoranmeldeinformationen), verringert Azure AD die Häufigkeit auf eine Abfrage pro Tag, bis die Fehler behoben wurden.
 
 **Wie lange dauert die Bereitstellung meiner Benutzer?**
 
@@ -79,12 +79,12 @@ Azure AD stellt Benutzer für SaaS-Apps bereit, indem eine Verbindung mit Bereit
  - Azure AD versucht, vorhandene Benutzer in der SaaS-App mit den entsprechenden Identitäten im Verzeichnis abzugleichen. Wenn ein Benutzer dem Abgleich entspricht, wird ihm *nicht* automatisch das einmalige Anmelden ermöglicht. Damit ein Benutzer auf die Anwendung zugreifen kann, muss er explizit in Azure AD der App zugewiesen werden, entweder direkt oder über eine Gruppenmitgliedschaft.
  - Wenn Sie bereits angegeben haben, welche Benutzer der Anwendung zugewiesen werden sollen, aber Azure AD keine vorhandenen Konten für diese Benutzer findet, stellt Azure AD für die Benutzer neue Konten in der Anwendung bereit.
 2. Nachdem die anfängliche Synchronisierung wie oben beschrieben abgeschlossen wurde, prüft Azure AD alle 10 Minuten auf die folgenden Änderungen:
- - Wenn der Anwendung neue Benutzer zugewiesen werden \(entweder direkt oder über eine Gruppenmitgliedschaft\), wird für diese ein neues Konto in der SaaS-App bereitgestellt.
- - Wenn der Zugriff für einen Benutzer entfernt wurde, wird das zugehörige Konto in der SaaS-App als deaktiviert gekennzeichnet \(Benutzer werden niemals vollständig gelöscht, um Sie im Falle einer Fehlkonfiguration vor einem Datenverlust zu schützen\).
+ - Wenn der Anwendung neue Benutzer zugewiesen werden (entweder direkt oder über eine Gruppenmitgliedschaft), wird für diese ein neues Konto in der SaaS-App bereitgestellt.
+ - Wenn der Zugriff für einen Benutzer entfernt wurde, wird das zugehörige Konto in der SaaS-App als deaktiviert gekennzeichnet (Benutzer werden niemals vollständig gelöscht, um Sie im Falle einer Fehlkonfiguration vor einem Datenverlust zu schützen).
  - Wenn ein Benutzer vor Kurzem der Anwendung zugewiesen wurde und bereits über ein Konto in der SaaS-App verfügt, wird das Konto als aktiviert gekennzeichnet, und bestimmte Benutzereigenschaften werden möglicherweise aktualisiert, wenn sie gegenüber dem Verzeichnis veraltet sind.
- - Änderungen an Benutzerinformationen \(beispielsweise Telefonnummer, Bürostandort usw.\) im Verzeichnis werden auch in der SaaS-Anwendung entsprechend aktualisiert.
+ - Änderungen an Benutzerinformationen (beispielsweise Telefonnummer, Bürostandort usw.) im Verzeichnis werden auch in der SaaS-Anwendung entsprechend aktualisiert.
 
-Weitere Informationen dazu, wie Attribute zwischen Azure AD und Ihrer SaaS-App zugeordnet werden, finden Sie im Artikel [Anpassen von Attributzuordnungen](https://msdn.microsoft.com/library/azure/dn872469.aspx).
+Weitere Informationen dazu, wie Attribute zwischen Azure AD und Ihrer SaaS-App zugeordnet werden, finden Sie im Artikel [Anpassen von Attributzuordnungen](active-directory-saas-customizing-attribute-mappings.md).
 
 ##Liste der Apps, die eine automatisierte Benutzerbereitstellung unterstützen
 
@@ -100,10 +100,12 @@ Klicken Sie auf die App, um ein Lernprogramm zum Konfigurieren der automatisiert
 - [Salesforce](http://go.microsoft.com/fwlink/?LinkId=286017)
 - [Salesforce Sandbox](http://go.microsoft.com/fwlink/?LinkId=327869)
 - [ServiceNow](http://go.microsoft.com/fwlink/?LinkId=309587)
-- [Workday](https://msdn.microsoft.com/library/azure/dn762434.aspx) \(eingehende Bereitstellung\)
+- [Workday](https://msdn.microsoft.com/library/azure/dn762434.aspx) (eingehende Bereitstellung)
 
 Damit eine Anwendung die automatisierte Benutzerbereitstellung unterstützt, müssen zunächst die erforderlichen Endpunkte bereitgestellt werden, die es externen Programmen erlauben, die Erstellung, Wartung und Entfernung von Benutzern zu automatisieren. Daher sind nicht alle SaaS-Apps mit diesem Feature kompatibel. Für Apps, die diese Unterstützung bieten, kann das Azure AD-Entwicklerteam anschließend einen Bereitstellungsconnector erstellen. Dieser Tätigkeit wird in Abhängigkeit von den Anforderungen bestehender und potenzieller Kunden Priorität eingeräumt.
 
 Wenn Sie das Azure AD-Entwicklungsteam kontaktieren möchten, um Bereitstellungsunterstützung für zusätzliche Anwendungen anzufordern, senden Sie uns eine Nachricht über das [Azure Active Directory-Feedbackforum](http://feedback.azure.com/forums/169401-azure-active-directory).
 
-<!---HONumber=July15_HO5-->
+[AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
+
+<!---HONumber=August15_HO6-->

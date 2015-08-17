@@ -3,7 +3,7 @@
 	description="Übersicht darüber, wie eine Multichannel-App sich über lokale Ressourcen und cloudbasierte Softwaredienste erstreckt." 
 	services="app-service" 
 	documentationCenter="na" 
-	authors="stefsch" 
+	authors="stefsch"  
 	manager="wpickett" 
 	editor="jimbe"/>
 
@@ -97,4 +97,4 @@ Weitere Informationen finden Sie unter [Azure Application Services][AzureApplica
 [SharepointDocumentLibrary]: ./media/app-service-enterprise-multichannel-apps/05aSharepointDocumentLibrary.png
 [SalesforceIntegration]: ./media/app-service-enterprise-multichannel-apps/06aSalesforceIntegration.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

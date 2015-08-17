@@ -12,7 +12,7 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-phonegap"
 	ms.devlang="js"
-	ms.topic="get-started-article" 
+	ms.topic="article" 
 	ms.date="07/02/2015"
 	ms.author="piyushjo" />
 
@@ -233,7 +233,7 @@ Bearbeiten Sie **www/js/index.js**, um den Aufruf an Mobile Engagement zum Anfor
 
 **[iOS]**
 
-1. Wir erstellen mit XCode die App und stellen sie auf dem Gerät bereit, um Pushbenachrichtigungen zu testen, da iOS nur Pushbenachrichtigungen an ein echtes Gerät unterstützt. Wechseln Sie zu dem Speicherort, an dem das Cordova-Projekt erstellt wurde, und navigieren Sie zu **...\platforms\ios**. Öffnen Sie die systemeigene Datei ".xcodeproj" in XCode. 
+1. Wir erstellen mit XCode die App und stellen sie auf dem Gerät bereit, um Pushbenachrichtigungen zu testen, da iOS nur Pushbenachrichtigungen an ein echtes Gerät unterstützt. Wechseln Sie zu dem Speicherort, an dem das Cordova-Projekt erstellt wurde, und navigieren Sie zu **...\\platforms\\ios**. Öffnen Sie die systemeigene Datei ".xcodeproj" in XCode. 
 	
 2. Erstellen Sie die Cordova-App und stellen Sie sie auf dem iOS-Gerät bereit. Verwenden Sie hierzu das Konto, das über das Bereitstellungsprofil mit dem Zertifikat, das Sie gerade in das Mobile Engagement-Portal hochgeladen haben, und die App-ID verfügt, die mit der beim Erstellen der Cordova-App bereitgestellten ID übereinstimmt. Sie können die *Bündel-ID* in der Datei **Resources*-info.plist** in XCode nachschlagen, damit die IDs übereinstimmen.
 
@@ -273,13 +273,13 @@ Wir erstellen jetzt eine einfache Pushbenachrichtigungskampagne, die eine Pushbe
 
 	![][15]
 
-5. [Optional] Sie können auch eine Aktions-URL angeben. Stellen Sie sicher, dass dabei ein URL-Schema verwendet wird, das beim Konfigurieren der Variable **AZME REDIRECT URL** bereitgestellt wurde, z. B. *myapp://test*. 
+5. [Optional] Sie können auch eine Aktions-URL angeben. Stellen Sie sicher, dass dabei ein URL-Schema verwendet wird, das beim Konfigurieren der Variable **AZME REDIRECT URL** bereitgestellt wurde, z. B. **myapp://test*.
 
-5. Sie haben das Festlegen der Basiskampagne abgeschlossen. Scrollen Sie nun nach unten, und erstellen Sie Ihre Kampagne, um sie zu speichern.
+5. Sie haben das Festlegen der Basiskampagne abgeschlossen, scrollen Sie nun nach unten und **Erstellen** Sie Ihre Kampagne, um sie zu speichern!
 	
 	![][16]
 
-6. Als letzten Schritt aktivieren Sie die Kampagne.
+6. Als letzten Schritt **Aktivieren** Sie die Kampagne.
 	
 	![][17]
 
@@ -312,4 +312,4 @@ Wir erstellen jetzt eine einfache Pushbenachrichtigungskampagne, die eine Pushbe
 [20]: ./media/mobile-engagement-cordova-get-started/native-push-settings.png
 [21]: ./media/mobile-engagement-cordova-get-started/api-key.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

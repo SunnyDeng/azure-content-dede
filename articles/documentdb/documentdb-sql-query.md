@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Abfragen mit DocumentDB-SQL | Azure" 
+	pageTitle="Abfragen mit DocumentDB-SQL | Microsoft Azure" 
 	description="Der NoSQL-Dokumentdatenbankdienst DocumentDB unterstützt Abfragen hierarchischer JSON-Dokumente unter Verwendung SQL-ähnlicher Syntax, ohne dass ein explizites Schema oder die Erstellung sekundärer Indizes erforderlich ist." 
 	services="documentdb" 
 	documentationCenter="" 
@@ -296,7 +296,7 @@ Betrachten wir nun einige Abfragen mit binären Operatoren.
 	WHERE c.grade >= 5     -- matching grades == 5
 
 
-Die unären Operatoren "+,-, ~ und NOT" werden ebenfalls unterstützt und können in Abfragen verwendet werden, wie im folgenden Beispiel gezeigt:
+Die unären Operatoren "+,-, \~ und NOT" werden ebenfalls unterstützt und können in Abfragen verwendet werden, wie im folgenden Beispiel gezeigt:
 
 	SELECT *
 	FROM Families.children[0] c
@@ -311,7 +311,7 @@ Die unären Operatoren "+,-, ~ und NOT" werden ebenfalls unterstützt und könne
 Neben binären und unären Operatoren sind auch Eigenschaftsverweise zulässig. Beispielsweise gibt `SELECT * FROM Families f WHERE f.isRegistered` das JSON-Dokument zurück, das die `isRegistered`-Eigenschaft enthält und dessen Eigenschaftswert gleich dem JSON-Wert `true` ist. Alle anderen Werte (false, null, Undefined, `<number>`, `<string>`, `<object>`, `<array>` usw.) führen dazu, dass das Quelldokument aus dem Ergebnis ausgeschlossen wird.
 
 ###Gleichheits- und Vergleichsoperatoren
-Die folgende Tabelle zeigt die Ergebnisse für Gleichheitsvergleiche in DocumentDB-SQL zwischen den einzelnen JSON-Typen. <table style = "width:300px"> <tbody> <tr> <td valign="top"> <strong>Operator</strong> </td> <td valign="top"> <strong>Undefined</strong> </td> <td valign="top"> <strong>Null</strong> </td> <td valign="top"> <strong>Boolean</strong> </td> <td valign="top"> <strong>Number</strong> </td> <td valign="top"> <strong>String</strong> </td> <td valign="top"> <strong>Object</strong> </td> <td valign="top"> <strong>Array</strong> </td> </tr> <tr> <td valign="top"> <strong>Undefined<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Null<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Boolean<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Number<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>String<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Object<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Array<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> </tr> </tbody> </table>
+Die folgende Tabelle zeigt die Ergebnisse für Gleichheitsvergleiche in DocumentDB-SQL zwischen den einzelnen JSON-Typen. <table style = "width:300px"> <tbody> <tr> <td valign="top"> <strong>Op</strong> </td> <td valign="top"> <strong>Undefined</strong> </td> <td valign="top"> <strong>Null</strong> </td> <td valign="top"> <strong>Boolean</strong> </td> <td valign="top"> <strong>Number</strong> </td> <td valign="top"> <strong>String</strong> </td> <td valign="top"> <strong>Object</strong> </td> <td valign="top"> <strong>Array</strong> </td> </tr> <tr> <td valign="top"> <strong>Undefined<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Null<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Boolean<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Number<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>String<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Object<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> <td valign="top"> Undefined </td> </tr> <tr> <td valign="top"> <strong>Array<strong> </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> Undefined </td> <td valign="top"> <strong>OK</strong> </td> </tr> </tbody> </table>
 
 Für andere Vergleichsoperatoren wie >, >=, !=, < und <= gelten die folgenden Regeln:
 
@@ -1185,7 +1185,7 @@ Das vorherige Beispiel erstellt eine UDF mit dem Namen `REGEX_MATCH`. Es werden 
 
 Wir können diese UDF nun in einer Abfrage in einer Projektion verwenden. UDFs müssen mit dem Präfix "udf." qualifiziert werden (unter Berücksichtigung der Groß-/Kleinschreibung), wenn sie aus Abfragen aufgerufen werden.
 
->[AZURE.NOTE]Vor dem 17.3.2015 hat DocumentDB UDF-Aufrufe ohne das Präfix „udf.“, z. B. SELECT REGEX_MATCH(), unterstützt. Dieses Aufrufmuster ist veraltet.
+>[AZURE.NOTE]Vor dem 17.3.2015 hat DocumentDB UDF-Aufrufe ohne das Präfix „udf.“, z. B. SELECT REGEX\_MATCH(), unterstützt. Dieses Aufrufmuster ist veraltet.
 
 **Abfrage**
 
@@ -1651,7 +1651,7 @@ Arrayfunktionen können verwendet werden, um Arrays in JSON zu bearbeiten. Mit d
       "id": "WakefieldFamily"
     }]
 
-Dies ist ein weiteres Beispiel für die Verwendung von ARRAY_LENGTH. Hierbei wird die Anzahl der Kinder pro Familie abgerufen.
+Dies ist ein weiteres Beispiel für die Verwendung von ARRAY\_LENGTH. Hierbei wird die Anzahl der Kinder pro Familie abgerufen.
 
 **Abfrage**
 
@@ -1810,7 +1810,7 @@ Die Syntax ist `input.Select(x => f(x))`, wobei `f` ein skalarer Ausdruck ist.
 
 
 
-**LINQ Lambda-Ausdruck**
+**LINQ-Lambdaausdruck**
 
 	input.Select(family => family.children[0].grade + c); // c is an int variable
 
@@ -1822,7 +1822,7 @@ Die Syntax ist `input.Select(x => f(x))`, wobei `f` ein skalarer Ausdruck ist.
 
 
 
-**LINQ-Lambdaausdruck**
+**LINQ Lambda-Ausdruck**
 
 	input.Select(family => new
 	{
@@ -1868,7 +1868,7 @@ Die Syntax ist `input.Where(x => f(x))`, wobei `f` ein skalarer Ausdruck ist, de
 
 
 
-**LINQ-Lambdaausdruck**
+**LINQ Lambda-Ausdruck**
 
 	input.Where(
 	    family => family.parents[0].familyName == "Smith" && 
@@ -1887,7 +1887,7 @@ Die obigen Operatoren können zu komplexeren Abfragen zusammengesetzt werden. Da
 
 ####Verkettung 
 
-Die Syntax ist `input(.|.SelectMany())(.Select()|.Where())*`. Eine verkettete Abfrage kann mit einer optionalen `SelectMany`-Abfrage beginnen, gefolgt von mehreren `Select`- oder `Where`-Operatoren.
+Die Syntax ist `input(.|.SelectMany())(.Select()|.Where())*` Eine verkettete Abfrage kann mit einer optionalen `SelectMany`-Abfrage beginnen, gefolgt von mehreren `Select`- oder `Where`-Operatoren.
 
 
 **LINQ Lambda-Ausdruck**
@@ -1929,7 +1929,7 @@ Die Syntax ist `input(.|.SelectMany())(.Select()|.Where())*`. Eine verkettete Ab
 
 
 
-**LINQ-Lambdaausdruck**
+**LINQ Lambda-Ausdruck**
 
 	input.SelectMany(family => family.parents)
 	    .Where(parent => parents.familyName == "Smith");
@@ -2056,9 +2056,9 @@ Die folgenden Beispiele zeigen POST für eine DocumentDB-Abfrage an eine Sammlun
 	         },
 	         "_rid":"u1NXANcKogEcAAAAAAAAAA==",
 	         "_ts":1407691744,
-	         "_self":"dbs/u1NXAA==/colls/u1NXANcKogE=/docs/u1NXANcKogEcAAAAAAAAAA==/",
+	         "_self":"dbs\/u1NXAA==\/colls\/u1NXANcKogE=\/docs\/u1NXANcKogEcAAAAAAAAAA==\/",
 	         "_etag":"00002b00-0000-0000-0000-53e7abe00000",
-	         "_attachments":"_attachments/"
+	         "_attachments":"_attachments\/"
 	      }
 	   ],
 	   "count":1
@@ -2261,11 +2261,11 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von "queryDocuments" in der server
 2.	[DocumentDB-SQL-Spezifikation](http://go.microsoft.com/fwlink/p/?LinkID=510612)
 3.	[DocumentDB .NET-Beispiele](https://github.com/Azure/azure-documentdb-net)
 4.	[DocumentDB-Konsistenzebenen][consistency-levels]
-5.	ANSI SQL 2011 [http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
+5.	ANSI SQL 2011 [http://www.iso.org/iso/iso\_catalogue/catalogue\_tc/catalogue\_detail.htm?csnumber=53681](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
 6.	JSON [http://json.org/](http://json.org/)
 7.	JavaScript-Spezifikation [http://www.ecma-international.org/publications/standards/Ecma-262.htm](http://www.ecma-international.org/publications/standards/Ecma-262.htm) 
 8.	LINQ [http://msdn.microsoft.com/library/bb308959.aspx](http://msdn.microsoft.com/library/bb308959.aspx) 
-9.	Abfragetechniken für große Datenbanken [http://dl.acm.org/citation.cfm?id=152611](http://dl.acm.org/citation.cfm?id=152611)
+9.	Abfrageauswertungstechniken für große Datenbanken [http://dl.acm.org/citation.cfm?id=152611](http://dl.acm.org/citation.cfm?id=152611)
 10.	Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994
 11.	Lu, Ooi, Tan, Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994.
 12.	Christopher Olston, Benjamin Reed, Utkarsh Srivastava, Ravi Kumar, Andrew Tomkins: Pig Latin: A Not-So-Foreign Language for Data Processing, SIGMOD 2008.
@@ -2277,4 +2277,4 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von "queryDocuments" in der server
 [consistency-levels]: documentdb-consistency-levels.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

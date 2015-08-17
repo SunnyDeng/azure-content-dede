@@ -84,7 +84,7 @@ Sobald Sie den CDN-Zugriff auf ein Speicherkonto oder einen gehosteten Dienst ak
 
 Verwenden Sie für den Zugriff auf die im CDN zwischengespeicherten Inhalte den im Portal bereitgestellten CDN-URL. Die Adresse eines zwischengespeicherten Blobs hat etwa folgendes Format:
 
-http://<*CDNNamespace*>.vo.msecnd.net/<*myPublicContainer*>/<*BlobName*>
+http://<*CDNNamespace*>.vo.msecnd.net/<*meinOeffentlicherContainer*>/<*BlobName*>
 
 
 ## Schritt 4: Entfernen von Inhalten aus CDN
@@ -120,4 +120,4 @@ Die Möglichkeit zum sofortigen Löschen von Inhalten wird im Azure-Verwaltungsp
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

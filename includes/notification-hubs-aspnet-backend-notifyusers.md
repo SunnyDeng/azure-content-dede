@@ -101,7 +101,7 @@ In diesem Abschnitt erstellen Sie eine neue Meldungshandlerklasse mit dem Namen 
 
 	> [AZURE.NOTE]**Sicherheitshinweis**: Die `AuthenticationTestHandler`-Klasse liefert keine wirkliche Authentifizierung. Sie wird nur verwendet, um eine Standardauthentifizierung zu imitieren, und ist nicht sicher. Sie müssen einen sicheren Authentifizierungsmechanismus in Ihren Produktionsanwendungen und -diensten implementieren.
 
-4. Fügen Sie den folgenden Code am Ende der `Register`-Methode in der **App_Start/WebApiConfig.cs**-Klasse hinzu, um den Meldungshandler zu registrieren:
+4. Fügen Sie den folgenden Code am Ende der `Register`-Methode in der **App\_Start/WebApiConfig.cs**-Klasse hinzu, um den Meldungshandler zu registrieren:
 
 		config.MessageHandlers.Add(new AuthenticationTestHandler());
 
@@ -359,4 +359,4 @@ In diesem Abschnitt fügen Sie einen neuen Controller hinzu, über den Clientger
 [B16]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users16.PNG
 [B18]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users18.PNG
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

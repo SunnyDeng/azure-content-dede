@@ -11,7 +11,7 @@
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="07/10/2015" 
 	ms.author="awills"/>
  
@@ -27,7 +27,7 @@ Wenn Sie bereits Servertelemetrie für Ihre [ASP.NET][greenbrown]- oder [Java][j
 
 ## Erstellen einer Application Insights-Ressource
 
-Daten zur Leistung und Nutzung Ihrer Seite werden in der Application Insights-Ressource angezeigt. \(Wenn Sie bereits eine Ressource erstellt haben, um beispielsweise Daten von Ihrem Webserver zu erfassen, überspringen Sie diesen Schritt.\)
+Daten zur Leistung und Nutzung Ihrer Seite werden in der Application Insights-Ressource angezeigt. (Wenn Sie bereits eine Ressource erstellt haben, um beispielsweise Daten von Ihrem Webserver zu erfassen, überspringen Sie diesen Schritt.)
 
 Erstellen Sie im [Azure-Portal](http://portal.azure.com) eine neue Application Insights-Ressource:
 
@@ -49,14 +49,14 @@ Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie 
 
 Das Skript enthält den Instrumentationsschlüssel, der die Daten an Ihre Application Insights-Ressource leitet.
 
-*\(Wenn Sie ein bekanntes Webseitenframework verwenden, suchen Sie nach Application Insights-Adaptern. Beispielsweise gibt es [ein AngularJS-Modul](http://ngmodules.org/modules/angular-appinsights).\)*
+*(Wenn Sie ein bekanntes Webseitenframework verwenden, suchen Sie nach Application Insights-Adaptern. Beispielsweise gibt es [ein AngularJS-Modul](http://ngmodules.org/modules/angular-appinsights).)*
 
  
 ## <a name="run"></a>Ausführen Ihrer App
 
 Führen Sie die Web-App aus, verwenden Sie sie eine Weile, um Telemetrie zu generieren, und warten Sie einige Sekunden. Sie können sie entweder durch Drücken von F5 auf dem Entwicklungscomputer ausführen, oder Sie können sie veröffentlichen und von Benutzern ausprobieren lassen.
 
-Wenn Sie die Telemetrie, die von einer Web-App an Application Insights gesendet wird, prüfen möchten, verwenden Sie dazu die Debugtools Ihres Browsers \(F12 auf vielen Browsern\). Daten werden an "dc.services.visualstudio.com" gesendet.
+Wenn Sie die Telemetrie, die von einer Web-App an Application Insights gesendet wird, prüfen möchten, verwenden Sie dazu die Debugtools Ihres Browsers (F12 auf vielen Browsern). Daten werden an "dc.services.visualstudio.com" gesendet.
 
 ## Untersuchen Ihrer Daten
 
@@ -96,9 +96,9 @@ Klicken Sie auf dem Blatt "Übersicht" auf "Nutzung":
 
 ![](./media/app-insights-javascript/14-usage.png)
 
-* **Benutzer:** Die Anzahl der unterschiedlichen Benutzer über den Zeitbereich des Diagramms. \(Wiederkehrende Benutzer werden mithilfe von Cookies identifiziert.\)
+* **Benutzer:** Die Anzahl der unterschiedlichen Benutzer über den Zeitbereich des Diagramms. (Wiederkehrende Benutzer werden mithilfe von Cookies identifiziert.)
 * **Sitzungen:** Eine Sitzung wird gezählt, wenn ein Benutzer seit 30 Minuten keine Anforderungen gestellt hat.
-* **Seitenaufrufe** Zählt die Anzahl der Aufrufe von trackPageView\(\), wird in der Regel einmal auf jeder Webseite aufgerufen.
+* **Seitenaufrufe** Zählt die Anzahl der Aufrufe von trackPageView(), wird in der Regel einmal auf jeder Webseite aufgerufen.
 
 
 ### Für mehr Details durchklicken
@@ -124,7 +124,7 @@ Fügen Sie an geeigneter Stelle in Ihren Client-Code einen JavaScript-Aufruf wie
 
     appInsights.trackPageView(myPageName);
 
-Der Seitenname kann die gleichen Zeichen wie eine URL enthalten, allerdings wird alles nach den Zeichen „\#“ oder „?“ ignoriert.
+Der Seitenname kann die gleichen Zeichen wie eine URL enthalten, allerdings wird alles nach den Zeichen „#“ oder „?“ ignoriert.
 
 
 ## Überprüfen einzelner Seitenaufruf-Ereignisse
@@ -137,7 +137,7 @@ Legen Sie im Fenster "Diagnosesuche" als Filter die Einstellung "Seitenansicht" 
 
 Wählen Sie ein Ereignis, um weitere Details anzuzeigen. Klicken Sie auf der Detailseite auf "...", um weitere Details anzuzeigen.
 
-> [AZURE.NOTE]Beachten Sie bei Verwendung von [Search][diagnostic], dass Sie ganze Wörter suchen müssen: "Info" und "nfo" stimmen nicht mit "Informationen" überein, "Info\*" hingegen schon. Ein Suchbegriff darf nicht mit einem Platzhalterzeichen beginnen. Beispielsweise ergibt die Suche nach „\*bou“ nicht „About“.
+> [AZURE.NOTE]Beachten Sie bei Verwendung von [Search][diagnostic], dass Sie ganze Wörter suchen müssen: "Info" und "nfo" stimmen nicht mit "Informationen" überein, "Info*" hingegen schon. Ein Suchbegriff darf nicht mit einem Platzhalterzeichen beginnen. Beispielsweise ergibt die Suche nach „*bou“ nicht „About“.
 
 > [Erfahren Sie mehr über Diagnosesuche][diagnostic]
 
@@ -182,4 +182,4 @@ Falls Sie dies noch nicht durchgeführt haben, können Sie Einblicke von Ihrem S
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -99,4 +99,4 @@ Spark in HDInsight verfügt auch über einen [ODBC-Treiber](http://go.microsoft.
 
 [hdinsight-storage]: ../hdinsight-use-blob-storage/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

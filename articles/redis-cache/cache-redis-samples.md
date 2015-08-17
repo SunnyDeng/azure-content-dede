@@ -38,7 +38,7 @@ Dieses Beispiel zeigt Folgendes:
 
 Weitere Informationen finden Sie in der [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis)-Dokumentation auf GitHub, weitere Verwendungsszenarien finden Sie in den [StackExchange.Redis.Tests](https://github.com/StackExchange/StackExchange.Redis/tree/master/StackExchange.Redis.Tests)-Einheitentests.
 
-[Verwenden von Azure Redis Cache mit Node.js](cache-nodejs-get-started.md) zeigt die ersten Schritte mit Azure Redis Cache mit Node.js und dem [node_redis](https://github.com/mranney/node_redis)-Client.
+[Verwenden von Azure Redis Cache mit Node.js](cache-nodejs-get-started.md) zeigt die ersten Schritte mit Azure Redis Cache mit Node.js und dem [node\_redis](https://github.com/mranney/node_redis)-Client.
 
 [Verwenden von Azure Redis Cache mit Java](cache-java-get-started.md) zeigt die ersten Schritte mit Azure Redis Cache mit Java und dem [Jedis](https://github.com/xetorthio/jedis)-Client.
 
@@ -79,4 +79,4 @@ Das Beispiel [Retwis](https://github.com/SyntaxC4-MSFT/retwis) ist die Hello-Wor
 
 Das Beispiel [Bandbreitenüberwachung](https://github.com/JonCole/SampleCode/tree/master/BandWidthMonitor) ermöglicht die Überwachung der auf dem Client genutzten Bandbreite. Um die Bandbreite zu messen, führen Sie das Beispiel auf dem Cacheclientcomputer aus, rufen Sie den Cache auf, und beobachten Sie die durch das Beispiel gemeldete Bandbreite.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

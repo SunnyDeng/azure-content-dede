@@ -452,4 +452,4 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 [18]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-18.jpg
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

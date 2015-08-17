@@ -41,7 +41,7 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass die folgenden Vorausset
 - Ein Azure-Abonnement
 - Aktuelle Version von Azure PowerShell
 
-###  1. Importieren Sie das PowerShell-Modul für ExpressRoute
+###  1\. Importieren Sie das PowerShell-Modul für ExpressRoute
 
 Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. Weitere Informationen finden Sie in der PowerShell-Dokumentation in [MSDN](https://msdn.microsoft.com/library/windowsazure/jj156055.aspx).
 
@@ -52,7 +52,7 @@ Importieren Sie das PowerShell-Modul für ExpressRoute mit den folgenden Cmdlets
 	    Import-Module 'C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ServiceManagement\Azure\ExpressRoute\ExpressRoute.psd1'
 
 
-### 2. Konfigurieren Sie eine neue ExpressRoute-Verbindung mit aktivierten Features des Premium-Add-Ons
+### 2\. Konfigurieren Sie eine neue ExpressRoute-Verbindung mit aktivierten Features des Premium-Add-Ons
 
 Die Features des Premium-Add-Ons können bei der Erstellung einer neuen ExpressRoute-Verbindung aktiviert werden. Folgen Sie den Anweisungen zum Erstellen von ExpressRoute-Verbindungen mit [NSPs](expressroute-configuring-nsps.md) oder [EXPs](expressroute-configuring-exps.md). Mit dem neuen optionalen Parameter des Cmdlets New-AzureDedicatedCircuit können Sie die SKU angeben. Die SKU kann Standard oder Premium sein. Der Standardwert ist "Standard". Wenn für die SKU "Premium" angegeben ist, wird die Verbindung mit den Features des Premium-Add-Ons aktiviert.
 
@@ -60,7 +60,7 @@ Die Features des Premium-Add-Ons können bei der Erstellung einer neuen ExpressR
 		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -Sku Premium
 
 
-### 3. Überprüfen Sie, ob das ExpressRoute Premium-Add-on aktiviert ist
+### 3\. Überprüfen Sie, ob das ExpressRoute Premium-Add-on aktiviert ist
 Sie können überprüfen, ob das ExpressRoute Premium-Add-On für Ihre Verbindung aktiviert ist. Im folgenden Beispiel ist die ExpressRoute-Verbindung nicht mit den Features des ExpressRoute Premium-Add-Ons aktiviert. Wenn das Add-on aktiviert ist, wird als SKU ***Premium*** angezeigt.
 
 		PS C:\> Get-AzureDedicatedCircuit -ServiceKey *********************************
@@ -177,4 +177,4 @@ Für eine ExpressRoute-Verbindung mit aktiviertem Premium-Add-On kann das Add-On
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

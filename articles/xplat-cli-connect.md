@@ -85,7 +85,7 @@ Daraufhin wird Ihr Standardwebbrowser geöffnet, und Sie werden aufgefordert, si
 
 > [AZURE.NOTE]Wenn Ihr Konto mit mehreren Azure Active Directory-Mandanten verknüpft ist, werden Sie möglicherweise aufgefordert, das Active Directory auszuwählen, für das eine Datei mit Veröffentlichungseinstellungen heruntergeladen werden soll.
 >
-> Das Active Directory, das Sie auf der Downloadseite oder im Azure-Portal ausgewählt haben, wird zur Standardeinstellung, die vom Portal und der Downloadseite verwendet wird. Nachdem eine Standardeinstellung festgelegt wurde, wird am oberen Rand der Downloadseite der Text „click here to return to the selection page“ (Klicken Sie hier, um zur Auswahlseite zurückzukehren) angezeigt. Klicken Sie auf den bereitgestellten Link, um zur Auswahlseite zurückzukehren.
+> Das Active Directory, das Sie auf der Downloadseite oder im Azure-Portal ausgewählt haben, wird zur Standardeinstellung, die vom Portal und der Downloadseite verwendet wird. Nachdem eine Standardeinstellung festgelegt wurde, wird am oberen Rand der Downloadseite der Text '__click here to return to the selection page__' (Klicken Sie hier, um zur Auswahlseite zurückzukehren) angezeigt. Klicken Sie auf den bereitgestellten Link, um zur Auswahlseite zurückzukehren.
 
 Importieren Sie anschließend die `.publishsettings`-Datei, indem Sie den folgenden Befehl ausführen:
 
@@ -145,4 +145,4 @@ Nachdem Sie mit Ihrem Azure-Abonnement verbunden sind, können Sie beginnen, die
 [cliasm]: virtual-machines/virtual-machines-command-line-tools.md
 [cliarm]: virtual-machines/xplat-cli-azure-resource-manager.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

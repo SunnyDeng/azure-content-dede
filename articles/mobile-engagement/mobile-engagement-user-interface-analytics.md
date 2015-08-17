@@ -174,4 +174,4 @@ Die Bindungsübersicht wird in der Mitte in mehrere Karten aufgeteilt, die jewei
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -46,4 +46,4 @@ Um Blitline verwenden zu können, benötigen Sie Ihre Anwendungs-ID.
 [blitline-connection-info-button]: ./media/blitline-signup/blitline_connection_info_button.png
 [blitline-connection-info]: ./media/blitline-signup/blitline_connection_info_screen.jpeg
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

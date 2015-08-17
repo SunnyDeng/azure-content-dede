@@ -7,6 +7,7 @@
 	manager="mblythe"
 	editor=""/>
 
+
 <tags
 	ms.service="search"
 	ms.devlang="rest-api"
@@ -15,6 +16,7 @@
 	ms.tgt_pltfrm="na"
 	ms.date="07/08/2015"
 	ms.author="heidist"/>
+
 
 #Erste Schritte mit der ersten Azure Search-Anwendung in .NET#
 
@@ -129,20 +131,23 @@ Jedes Projekt enthält Konfigurationsdateien, die den Dienstnamen und den API-Sc
 
 1. Ersetzen Sie in **DataIndexer** die Datei "App.config" durch folgendes Beispiel, wobei Sie [SERVICE NAME] und [SERVICE KEY] mit den für Ihren Dienst gültigen Werten aktualisieren.
 
-   Der Dienstname ist nicht die vollständige URL. Wenn z. B. der Endpunkt des Search-Diensts *https://mysearchsrv.search.microsoft.net* heißt, dann geben Sie in "App.config" als Dienstnamen *Mysearchsrv* ein.
+   Der Dienstname ist nicht die vollständige URL. Wenn z. B. der Endpunkt Ihres Search-Diensts \**https://mysearchsrv.search.microsoft.net* ist, dann würden Sie in "App.config" als Dienstnamen *mysearchsrv* eingeben.
 
 	    <?xml version="1.0" encoding="utf-8"?>
 	    <configuration>
 	      <startup>
 	         <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+
 	      </startup>
 	      <appSettings>
 	        <add key="SearchServiceName" value="[SERVICE NAME]" />
+
 	        <add key="SearchServiceApiKey" value="[SERVICE KEY]" />
+
 	      </appSettings>
 	    </configuration>
 
-2. Ersetzen Sie in **SimpleSearchMVCApp** die Datei "App.config" durch folgendes Beispiel, wobei Sie [SERVICE NAME] und [SERVICE KEY] mit den für Ihren Dienst gültigen Werten aktualisieren.
+2. Ersetzen Sie in **SimpleSearchMVCApp** die Datei "App.config" durch folgendes Beispiel, wobei Sie [SERVICE NAME] und [SERVICE KEY] erneut mit den für Ihren Dienst gültigen Werten aktualisieren.
 
 		<?xml version="1.0" encoding="utf-8"?>
 		<!--
@@ -153,50 +158,72 @@ Jedes Projekt enthält Konfigurationsdateien, die den Dienstnamen und den API-Sc
 		  <configSections>
 		    <!-- For more information on Entity Framework configuration, visit http://go.microsoft.com/fwlink/?LinkID=237468 -->
 		    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+
 		  </configSections>
 		  <connectionStrings>
 		    <add name="DefaultConnection" providerName="System.Data.SqlClient" connectionString="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-SimpleMVCApp-20150303114355;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-SimpleMVCApp-20150303114355.mdf" />
+
 		  </connectionStrings>
 		  <appSettings>
 		    <add key="SearchServiceName" value="[SEARCH SERVICE NAME]" />
+
 		    <add key="SearchServiceApiKey" value="[API KEY]" />
 
+
 		    <add key="webpages:Version" value="2.0.0.0" />
+
 		    <add key="webpages:Enabled" value="false" />
+
 		    <add key="PreserveLoginUrl" value="true" />
+
 		    <add key="ClientValidationEnabled" value="true" />
+
 		    <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+
 		  </appSettings>
 		  <system.web>
 		    <httpRuntime targetFramework="4.5" />
+
 		    <compilation debug="true" targetFramework="4.5" />
+
 		    <authentication mode="Forms">
 		      <forms loginUrl="~/Account/Login" timeout="2880" />
+
 		    </authentication>
 		    <pages>
 		      <namespaces>
 		        <add namespace="System.Web.Helpers" />
+
 		        <add namespace="System.Web.Mvc" />
+
 		        <add namespace="System.Web.Mvc.Ajax" />
+
 		        <add namespace="System.Web.Mvc.Html" />
+
 		        <add namespace="System.Web.Optimization" />
+
 		        <add namespace="System.Web.Routing" />
+
 		        <add namespace="System.Web.WebPages" />
+
 		      </namespaces>
 		    </pages>
 		    <profile defaultProvider="DefaultProfileProvider">
 		      <providers>
 		        <add name="DefaultProfileProvider" type="System.Web.Providers.DefaultProfileProvider, System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" connectionStringName="DefaultConnection" applicationName="/" />
+
 		      </providers>
 		    </profile>
 		    <membership defaultProvider="DefaultMembershipProvider">
 		      <providers>
 		        <add name="DefaultMembershipProvider" type="System.Web.Providers.DefaultMembershipProvider, System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" connectionStringName="DefaultConnection" enablePasswordRetrieval="false" enablePasswordReset="true" requiresQuestionAndAnswer="false" requiresUniqueEmail="false" maxInvalidPasswordAttempts="5" minRequiredPasswordLength="6" minRequiredNonalphanumericCharacters="0" passwordAttemptWindow="10" applicationName="/" />
+
 		      </providers>
 		    </membership>
 		    <roleManager defaultProvider="DefaultRoleProvider">
 		      <providers>
 		        <add name="DefaultRoleProvider" type="System.Web.Providers.DefaultRoleProvider, System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" connectionStringName="DefaultConnection" applicationName="/" />
+
 		      </providers>
 		    </roleManager>
 		    <!--
@@ -208,26 +235,37 @@ Jedes Projekt enthält Konfigurationsdateien, die den Dienstnamen und den API-Sc
 		    <sessionState mode="InProc" customProvider="DefaultSessionProvider">
 		      <providers>
 		        <add name="DefaultSessionProvider" type="System.Web.Providers.DefaultSessionStateProvider, System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" connectionStringName="DefaultConnection" />
+
 		      </providers>
 		    </sessionState>
 		  </system.web>
 		  <system.webServer>
 		    <validation validateIntegratedModeConfiguration="false" />
+
 		    <handlers>
 		      <remove name="ExtensionlessUrlHandler-ISAPI-4.0_32bit" />
+
 		      <remove name="ExtensionlessUrlHandler-ISAPI-4.0_64bit" />
+
 		      <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
+
 		      <add name="ExtensionlessUrlHandler-ISAPI-4.0_32bit" path="*." verb="GET,HEAD,POST,DEBUG,PUT,DELETE,PATCH,OPTIONS" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+
 		      <add name="ExtensionlessUrlHandler-ISAPI-4.0_64bit" path="*." verb="GET,HEAD,POST,DEBUG,PUT,DELETE,PATCH,OPTIONS" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+
 		      <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="GET,HEAD,POST,DEBUG,PUT,DELETE,PATCH,OPTIONS" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
+
 		      <remove name="OPTIONSVerbHandler" />
+
 		      <remove name="TRACEVerbHandler" />
+
 		    </handlers>
 		  </system.webServer>
 		  <entityFramework>
 		    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework">
 		      <parameters>
 		        <parameter value="v12.0" />
+
 		      </parameters>
 		    </defaultConnectionFactory>
 		  </entityFramework>
@@ -235,31 +273,45 @@ Jedes Projekt enthält Konfigurationsdateien, die den Dienstnamen und den API-Sc
 		    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
 		      <dependentAssembly>
 		        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral" />
+
 		        <bindingRedirect oldVersion="0.0.0.0-6.0.0.0" newVersion="6.0.0.0" />
+
 		      </dependentAssembly>
 		      <dependentAssembly>
 		        <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" culture="neutral" />
+
 		        <bindingRedirect oldVersion="0.0.0.0-1.6.5135.21930" newVersion="1.6.5135.21930" />
+
 		      </dependentAssembly>
 		      <dependentAssembly>
 		        <assemblyIdentity name="Antlr3.Runtime" publicKeyToken="eb42632606e9261f" culture="neutral" />
+
 		        <bindingRedirect oldVersion="0.0.0.0-3.5.0.2" newVersion="3.5.0.2" />
+
 		      </dependentAssembly>
 		      <dependentAssembly>
 		        <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
+
 		        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+
 		      </dependentAssembly>
 		      <dependentAssembly>
 		        <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
+
 		        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+
 		      </dependentAssembly>
 		      <dependentAssembly>
 		        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+
 		        <bindingRedirect oldVersion="1.0.0.0-5.2.3.0" newVersion="5.2.3.0" />
+
 		      </dependentAssembly>
 		      <dependentAssembly>
 		        <assemblyIdentity name="System.Web.WebPages.Razor" publicKeyToken="31bf3856ad364e35" />
+
 		        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+
 		      </dependentAssembly>
 		    </assemblyBinding>
 		  </runtime>
@@ -280,7 +332,7 @@ Bevor Sie dieses Programm ausführen können, müssen Sie zwei Änderungen vorne
 
 ###Erstellen von "AzureSearchHelper.cs"
 
-Code, der die REST-API aufruft, sollte eine Klasse enthalten, die Verbindungen sowie die Serialisierung und Deserialisierung der JSON-Anforderungen und -Antworten verwaltet. Diese Klasse wird in den Beispielen zu Azure Search in der Regel **AzureSearchHelper.cs** genannt. Sie können diese Klasse erstellen und sie mit dem folgenden Code **DataIndexer** hinzufügen.
+Code, der die REST-API aufruft, sollte eine Klasse enthalten, die Verbindungen sowie die Serialisierung und Deserialisierung der JSON-Anforderungen und -Antworten verwaltet. Diese Klasse wird in den Beispielen zu Azure Search in der Regel **AzureSearchHelper.cs** genannt. Sie können diese Klasse erstellen und sie mit dem folgenden Code zu **DataIndexer** hinzufügen.
 
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **DataIndexer** | **Hinzufügen** | **Neues Element** | **Code** | **Klasse**.
 2. Nennen Sie die Klasse **AzureSearchHelper**.
@@ -561,11 +613,11 @@ Im Portal sollte ein neuer Index namens **Geonames** angezeigt werden. Es kann e
 
 ##Ändern von SimpleSearchMVCApp
 
-**SimpleSearchMVC** ist die Webanwendung, die lokal in IIS Express ausgeführt wird. Sie stellt ein Suchfeld bereit und präsentiert die Suchergebnisse in einer Tabelle.
+**SimpleSearchMVC** ist die Web-App, die lokal in IIS Express ausgeführt wird. Sie stellt ein Suchfeld bereit und präsentiert die Suchergebnisse in einer Tabelle.
 
 Bevor Sie dieses Programm ausführen können, müssen Sie drei Änderungen vornehmen:
 
-- Ersetzen Sie die Klasse **HomeController.cs**, mit der Benutzereingaben akzeptiert werden. In diesem Beispiel wird der Suchbegriff in einer Variablen namens *q* gespeichert.
+- Ersetzen Sie **HomeController.cs**, mit der Benutzereingaben akzeptiert werden. In diesem Beispiel wird der Suchbegriff in einer Variablen namens *q* gespeichert.
 
 - Ersetzen Sie **index.cshtml**, eine Webseite, die Suchbegriffseingaben liefert und die Suchergebnisse anzeigt.
 
@@ -678,9 +730,11 @@ Ersetzen Sie den Standardcode durch den folgenden Code.
 	<h2>USGS Search for Rhode Island</h2>
 
 	<div class="container">
-	    <input type="search" name="q" id="q" autocomplete="off" size="100" /> <button onclick="Search();">Search</button>
+	    <input type="search" name="q" id="q" autocomplete="off" size="100" />
+ <button onclick="Search();">Search</button>
 	</div>
 	<br />
+
 	<div class="container">
 	    <div class="row">
 	        <table id="searchResults" border="1"></table>
@@ -762,7 +816,7 @@ Wenn Sie dieses Programm erstellen und ausführen, sollte in Ihrem Standard-Webb
 
 Das USGS-Dataset enthält Datensätze, die für den Bundesstaat Rhode Island relevant sind. Wenn Sie auf **Search** klicken und das Suchfeld leer ist, erhalten Sie die ersten 50 Einträge. Dies ist die Standardeinstellung.
 
-Durch die Eingabe eines Suchbegriffs werden die Suchmaschinenkriterien zum Eingrenzen der Suche definiert. Geben Sie einen regionalen Namen ein. *Roger Williams* war die erste Gouverneur von Rhode Island. Zahlreiche Parks, Gebäude und Schulen sind nach ihm benannt.
+Durch die Eingabe eines Suchbegriffs werden die Suchmaschinenkriterien zum Eingrenzen der Suche definiert. Geben Sie einen regionalen Namen ein. *Roger Williams* war der erste Gouverneur von Rhode Island. Zahlreiche Parks, Gebäude und Schulen sind nach ihm benannt.
 
 ![][9]
 
@@ -778,7 +832,7 @@ Dies ist das erste Azure Search-Lernprogramm, das auf .NET und dem USGS-Dataset 
 
 Wenn Sie bereits über Erfahrungen mit Azure Search verfügen, können Sie dieses Beispiel als Ausgangspunkt für das Testen von Vorschlägen (Typ-ahead- oder AutoVervollständigen-Abfragen), Filtern und Facettennavigation verwenden. Sie können auch die Suchergebnisseite verbessern, indem Sie Statistiken hinzufügen und Dokumente mit Batchvorgängen verarbeiten, damit die Benutzer die Ergebnisse seitenweise anzeigen können.
 
-Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten, damit Sie ein Verständnis dafür entwickeln, was Sie erstellen können. Besuchen Sie unsere [Dokumentationsseite](http://azure.microsoft.com/documentation/services/search/), um weitere Ressourcen zu finden. Sie können auch die Links in unserer [Video- und Lernprogrammliste](https://msdn.microsoft.com/library/azure/dn798933.aspx) besuchen, um auf weitere Informationen zuzugreifen.
+Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten, damit Sie ein Verständnis dafür entwickeln, was Sie erstellen können. Besuchen Sie unsere [Dokumentationsseite](http://azure.microsoft.com/documentation/services/search/), um weitere Ressourcen zu finden. Sie können auch die Links in unserer [Video- und Tutorialliste](https://msdn.microsoft.com/library/azure/dn798933.aspx) besuchen, um auf weitere Informationen zuzugreifen.
 
 <!--Image references-->
 [1]: ./media/search-get-started-dotnet/create-search-portal-1.PNG
@@ -798,4 +852,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [12]: ./media/search-get-started-dotnet/AzSearch-DotNet-NuGet-2.PNG
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

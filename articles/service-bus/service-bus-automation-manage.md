@@ -44,4 +44,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Verwendu
 * Artikel [Verwalten von Service Bus mit PowerShell](service-bus-powershell-how-to-provision.md)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

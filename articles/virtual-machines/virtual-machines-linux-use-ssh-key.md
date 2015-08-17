@@ -55,7 +55,7 @@ Die aktuelle Version des Azure-Verwaltungsportals akzeptiert nur öffentliche SS
 ## Erzeugen eines Schlüssels aus einem vorhandenen OpenSSH-kompatiblen Schlüssel
 Im vorherigen Beispiel wurde die Erstellung eines neuen Schlüssels zur Verwendung mit Azure beschrieben. In manchen Fällen verfügen Sie möglicherweise bereits über ein vorhandenes OpenSSH-kompatibles Schlüsselpaar (öffentlich und privat) und möchten dieselben Schlüssel in Azure verwenden.
 
-Private OpenSSH-Schlüssel können direkt vom Hilfsprogramm `openssl` gelesen werden. Mit dem folgenden Befehl wird aus dem vorhandenen privaten SSH-Schlüssel (im Beispiel unten id_rsa) der öffentliche Schlüssel `.pem` erstellt, der für Azure erforderlich ist:
+Private OpenSSH-Schlüssel können direkt vom Hilfsprogramm `openssl` gelesen werden. Mit dem folgenden Befehl wird aus dem vorhandenen privaten SSH-Schlüssel (im Beispiel unten id\_rsa) der öffentliche Schlüssel `.pem` erstellt, der für Azure erforderlich ist:
 
 	# openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem
 
@@ -79,7 +79,7 @@ Es gibt eine Reihe von Dienstprogrammen, die `openssl`-Client für Windows entha
 ### Verwenden von Msysgit ###
 
 1.	Laden Sie msysgit von folgendem Speicherort herunter, und installieren Sie es: [http://msysgit.github.com/](http://msysgit.github.com/)
-2.	Führen Sie `msys` aus dem installierten Verzeichnis aus (Beispiel: c:\msysgit\msys.exe).
+2.	Führen Sie `msys` aus dem installierten Verzeichnis aus (Beispiel: c:\\msysgit\\msys.exe).
 3.	Wechseln Sie zum Verzeichnis `bin`, indem Sie `cd bin` eingeben.
 
 
@@ -133,14 +133,14 @@ Es gibt eine Reihe von Dienstprogrammen, die `openssl`-Client für Windows entha
 
 ## Erstellen eines PPK für Putty ##
 
-1. Download and install Puttygen from the following location: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+1. Download and install Puttygen from the following location: [http://www.chiark.greenend.org.uk/\~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 
 2. Puttygen ist möglicherweise nicht in der Lage, den zuvor erstellten privaten Schlüssel (`myPrivateKey.key`) zu lesen. Führen Sie den folgenden Befehl aus, um ihn in einen privaten RSA-Schlüssel zu übersetzen, den Puttygen verstehen kann:
 
 		# openssl rsa -in ./myPrivateKey.key -out myPrivateKey_rsa
 		# chmod 600 ./myPrivateKey_rsa
 
-	Der obige Befehl sollte den neuen privaten Schlüssel "myPrivateKey_rsa" generieren.
+	Der obige Befehl sollte den neuen privaten Schlüssel "myPrivateKey\_rsa" generieren.
 
 3. Führen Sie `puttygen.exe` aus.
 
@@ -163,7 +163,7 @@ Es gibt eine Reihe von Dienstprogrammen, die `openssl`-Client für Windows entha
 
 ## Verwenden von Putty für eine Verbindung mit einem Linux-Computer ##
 
-1.	Laden und installieren Sie Putty von folgendem Speicherort: [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+1.	Laden und installieren Sie Putty von folgendem Speicherort: [http://www.chiark.greenend.org.uk/\~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 2.	Führen Sie putty.exe aus.
 3.	Geben Sie den Hostnamen ein. Verwenden Sie dafür die IP aus dem Verwaltungsportal:
 
@@ -176,4 +176,4 @@ Es gibt eine Reihe von Dienstprogrammen, die `openssl`-Client für Windows entha
 5.	Klicken Sie auf **Öffnen**, um die Verbindung mit Ihrem virtuellen Computer herzustellen.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

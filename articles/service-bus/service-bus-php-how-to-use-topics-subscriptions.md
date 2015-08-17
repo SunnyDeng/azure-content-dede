@@ -39,7 +39,7 @@ In diesem Leitfaden verwenden Sie Dienstfunktionen, die lokal innerhalb einer PH
 
 So verwenden Sie die Service Bus-APIs
 
-1. Verweisen Sie mithilfe der [require_once][require-once]-Anweisung auf die Autoloaderdatei.
+1. Verweisen Sie mithilfe der [require\_once][require-once]-Anweisung auf die Autoloaderdatei.
 2. Verweisen Sie auf alle Klassen, die Sie möglicherweise verwenden.
 
 Das folgende Beispiel zeigt, wie die Autoloaderdatei integriert und auf die **ServiceBusService**-Klasse verwiesen wird.
@@ -332,4 +332,4 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind,
 [require-once]: http://php.net/require_once
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

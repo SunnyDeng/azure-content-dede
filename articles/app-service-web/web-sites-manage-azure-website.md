@@ -3,7 +3,7 @@
 	description="Links zu Ressourcen für die Verwaltung einer Web-App in Azure App Service." 
 	services="app-service\web" 
 	documentationCenter="" 
-	authors="MikeWasson" 
+	authors="erikre" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/23/2015" 
-	ms.author="mwasson"/>
+	ms.date="07/31/2015" 
+	ms.author="erikre"/>
 
 # Verwalten einer Web-App in Azure App Service
 
@@ -103,4 +103,4 @@ Wenn Sie Visual Studio One verwenden, können Sie die fortlaufende Bereitstellun
 
   
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -6,14 +6,16 @@
    authors="alkohli"
    manager="carolz"
    editor="tysonn" />
+
 <tags 
    ms.service="storsimple"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/28/2015"
+   ms.date="07/31/2015"
    ms.author="alkohli" />
+
 
 # StorSimple-Hardwarekomponenten und Status
 
@@ -27,7 +29,7 @@ Die Seite **Wartung** zeigt den Hardwarestatus aller StorSimple-Gerätekomponent
 
 - **Controller 0-Komponenten**: Die Komponenten von Controller 0. Hierzu zählen beispielsweise Controller, SAS-Erweiterung und -Connector, Controllertemperaturfühler und die verschiedenen Netzwerkschnittstellen.
 
-- **Controller 1-Komponenten**: Die Komponenten von Controller 1 \(ähnlich wie bei Controller 0\).
+- **Controller 1-Komponenten**: Die Komponenten von Controller 1 (ähnlich wie bei Controller 0).
 
 Ein Gerät vom Typ 8600 verfügt über zusätzliche Komponenten für das EBOD-Gehäuse. Unter der Komponentenliste befinden sich fünf Abschnitte. Davon enthalten drei Abschnitte die Komponenten des primären Gehäuses. Diese entsprechen der Beschreibung für 8100. Die beiden zusätzlichen Abschnitte beziehen sich auf das EBOD-Gehäuse und beschreiben Folgendes:
 
@@ -35,9 +37,9 @@ Ein Gerät vom Typ 8600 verfügt über zusätzliche Komponenten für das EBOD-G
 
 - **EBOD-Controller 0-Komponenten**: Die Komponenten im EBOD-Gehäuse 0. Hierzu zählen beispielsweise EBOD-Controller, SAS-Erweiterung und -Connector sowie Controllertemperaturfühler.
 
-- **EBOD-Controller 1-Komponenten**: Die Komponenten von EBOD-Gehäuse 1 \(ähnlich wie bei EBOD-Gehäuse 0\).
+- **EBOD-Controller 1-Komponenten**: Die Komponenten von EBOD-Gehäuse 1 (ähnlich wie bei EBOD-Gehäuse 0).
 
->[AZURE.NOTE]**Bei virtuellen StorSimple-Geräten \(1100\) ist auf der Wartungsseite kein Hardwarestatusbereich vorhanden.**
+>[AZURE.NOTE]**Bei virtuellen StorSimple-Geräten (1100) ist auf der Wartungsseite kein Hardwarestatusbereich vorhanden.**
 
 
 ## Überwachen des Hardwarestatus
@@ -61,9 +63,9 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 
 ### Komponentenliste für das primäre Gehäuse
 
-|Komponente|Modul|Typ|Ort|FRU \(Field Replaceable Unit\)?|Beschreibung|
+|Komponente|Modul|Typ|Ort|FRU (Field Replaceable Unit)?|Beschreibung|
 |---|---|---|---|---|---|
-|Laufwerk in Slot *n*|Laufwerke|Physisch|Shared  
+|Laufwerk in Einschubfach [0-11]|Laufwerke|Physisch|Shared  
 |Ja|Die einzelnen SSD- oder HDD-Laufwerke des primären Gehäuses werden jeweils in einer eigenen Zeile angegeben.|
 |Ambiente-Temperatursensor|Gehäuse|Physisch|Shared  
 |Nein|Misst die Temperatur im Gehäuse.|
@@ -74,18 +76,18 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 |Gehäuse|Gehäuse|Physisch|Shared  
 |Ja|Gibt an, dass ein Gehäuse vorhanden ist.|
 |Gehäuseeinstellungen|Gehäuse|Physisch|Shared  
-|Nein|Bezieht sich auf das vordere Bedienungsfeld des Gehäuses.|
+|Nein|Bezieht sich auf das vordere Bedienfeld des Gehäuses.|
 |Spannungssensoren|PCM|Physisch|Shared  
 |Nein|Der angezeigte Zustand zahlreicher Spannungssensoren gibt Aufschluss darüber, ob die gemessene Spannung innerhalb des Toleranzbereichs liegt.|
 |Stromsensoren|PCM|Physisch|Shared  
 |Nein|Der angezeigte Zustand zahlreicher Stromsensoren gibt Aufschluss darüber, ob die gemessene Stromstärke innerhalb des Toleranzbereichs liegt.|
 |Temperatursensoren in PCM|PCM|Physisch|Shared  
-|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren \(beispielsweise Einlass- und Hotspot-Sensoren\) gibt Aufschluss darüber, ob die gemessene Temperatur innerhalb des Toleranzbereichs liegt.|
-|Stromversorgung n|PCM|Physisch|Shared  
+|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren (beispielsweise Einlass- und Hotspot-Sensoren) gibt Aufschluss darüber, ob die gemessene Temperatur innerhalb des Toleranzbereichs liegt.|
+|Netzteil [0-1]|PCM|Physisch|Shared  
 |Ja|Für die einzelnen Stromversorgungen in den beiden PCMs an der Geräterückseite wird jeweils eine eigene Zeile angezeigt.|
-|Kühlung *n*|PCM|Physisch|Shared  
+|Kühlung [0-1]|PCM|Physisch|Shared  
 |Ja|Für die vier Lüfter in den beiden PCMs wird jeweils eine eigene Zeile angezeigt.|
-|Akku *n*|PCM|Physisch|Shared  
+|Pufferbatterie [0-1]|PCM|Physisch|Shared  
 |Ja|Für die einzelnen Sicherungsakkumodule im PCM wird jeweils eine eigene Zeile angezeigt.|
 |Metis|–|Logisch|Shared  
 |–|Zeigt den Zustand der Akkus an und gibt Aufschluss über Ladebedarf und Haltbarkeit.|
@@ -110,23 +112,23 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 |–|Zeigt den Zustand des logischen Speicherpools an, der auf der Grundlage von Geräte-HDDs erstellt wird.|
 |SSD-Speicherpool|–|Logisch|Shared  
 |–|Zeigt den Zustand des logischen Speicherpools an, der auf der Grundlage von Geräte-SSDs erstellt wird.|
-|Controller *n* \[Zustand\]|E/A|Physisch|Controller|Ja|Zeigt den Zustand des Controllers im Gehäuse und gibt Aufschluss darüber, ob er aktiv oder im Standbymodus ist.|
-|Temperatursensoren im Controller|E/A|Physisch|Controller|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren \(etwa für das E/A-Modul, für die CPU-Temperatur sowie DIMM- und PCIe-Sensoren\) gibt Aufschluss darüber, ob die Temperatur innerhalb des Toleranzbereichs liegt.|
+|Controller [0-1] [Status]|E/A|Physisch|Controller|Ja|Zeigt den Zustand des Controllers im Gehäuse und gibt Aufschluss darüber, ob er aktiv oder im Standbymodus ist.|
+|Temperatursensoren im Controller|E/A|Physisch|Controller|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren (etwa für das E/A-Modul, für die CPU-Temperatur sowie DIMM- und PCIe-Sensoren) gibt Aufschluss darüber, ob die Temperatur innerhalb des Toleranzbereichs liegt.|
 |SAS-Erweiterung|E/A|Physisch|Controller|Nein|Gibt den Zustand der SAS-Erweiterung an, über die der integrierte Speicher mit dem Controller verbunden wird.|
-|SAS-Verbinder *n*|E/A|Physisch|Controller|Nein|Gibt den Zustand der einzelnen SAS-Verbinder an, über die der integrierte Speicher mit der SAS-Erweiterung verbunden wird.|
+|SAS-Anschluss [0-1]|E/A|Physisch|Controller|Nein|Gibt den Zustand der einzelnen SAS-Verbinder an, über die der integrierte Speicher mit der SAS-Erweiterung verbunden wird.|
 |SBB-Midplane-Interconnect|E/A|Physisch|Controller|Nein|Gibt den Zustand des Midplane-Verbinders an, über den die einzelnen Controller mit der mittleren Ebene verbunden werden.|
 |Prozessorkern|E/A|Physisch|Controller|Nein|Gibt den Zustand der Prozessorkerne in den einzelnen Controllern an.|
 |Gehäuseelektronikleistung|E/A|Physisch|Controller|Nein|Gibt den Zustand der Stromversorgung des Gehäuses an.|
 |Gehäuseelektronikdiagnose|E/A|Physisch|Controller|Nein|Gibt den Zustand der vom Controller bereitgestellten Diagnosesubsysteme an.|
-|Baseboard-Verwaltungscontroller|E/A|Physisch|Controller|Nein|Gibt den Zustand des Baseboard-Verwaltungscontrollers \(Baseboard Management Controller, BMC\) an. Hierbei handelt es sich um einen speziellen Dienstprozessor, der das Hardwaregerät mithilfe von Sensoren überwacht und mit dem Systemadministrator über eine unabhängige Verbindung kommuniziert.|
-|Ethernet|E/A|Physisch|Controller|Nein|Gibt den Zustand der einzelnen Netzwerkschnittstellen \(Verwaltungs- und Datenports des Controllers\) an.|
-|NVRAM|E/A|Physisch|Controller|Nein|Gibt den Zustand des NVRAM \(permanenter, vom Akku versorgter Arbeitsspeicher zur Bewahrung anwendungskritischer Informationen bei einem Stromausfall\) an.|
+|Baseboard-Verwaltungscontroller|E/A|Physisch|Controller|Nein|Gibt den Zustand des Baseboard-Verwaltungscontrollers (Baseboard Management Controller, BMC) an. Hierbei handelt es sich um einen speziellen Dienstprozessor, der das Hardwaregerät mithilfe von Sensoren überwacht und mit dem Systemadministrator über eine unabhängige Verbindung kommuniziert.|
+|Ethernet|E/A|Physisch|Controller|Nein|Gibt den Zustand der einzelnen Netzwerkschnittstellen (Verwaltungs- und Datenports des Controllers) an.|
+|NVRAM|E/A|Physisch|Controller|Nein|Gibt den Zustand des NVRAM (permanenter, vom Akku versorgter Arbeitsspeicher zur Bewahrung anwendungskritischer Informationen bei einem Stromausfall) an.|
 
 ### Komponentenliste für das EBOD-Gehäuse
 
 |Komponente|Modul|Typ|Standort|FRU?|Beschreibung|
 |---|---|---|---|---|---|
-|Laufwerk in Slot *n*|Laufwerke|Physisch|Shared  
+|Laufwerk in Einschubfach [0-11]|Laufwerke|Physisch|Shared  
 |Ja|Die einzelnen HDD-Laufwerke an der Vorderseite des EBOD-Gehäuses werden jeweils in einer eigenen Zeile angegeben.|
 |Ambiente-Temperatursensor|Gehäuse|Physisch|Shared  
 |Nein|Misst die Temperatur im Gehäuse.|
@@ -137,33 +139,32 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 |Gehäuse|Gehäuse|Physisch|Shared  
 |Ja|Gibt an, dass ein Gehäuse vorhanden ist.|
 |Gehäuseeinstellungen|Gehäuse|Physisch|Shared  
-|Nein|Bezieht sich auf das OPS oder vordere Bedienungsfeld des Gehäuses.|
-|Spannungssensoren|PCM|Physisch|Shared  
-|Nein|Der angezeigte Zustand zahlreicher Spannungssensoren gibt Aufschluss darüber, ob die gemessene Spannung innerhalb des Toleranzbereichs liegt.|
+|Nein|Bezieht sich auf das OPS oder vordere Bedienfeld des Gehäuses.|
+|Spannungssensoren|PCM|Physisch|Shared|Nein|Der angezeigte Zustand zahlreicher Spannungssensoren gibt Aufschluss darüber, ob die gemessene Spannung innerhalb des Toleranzbereichs liegt.|
 |Stromsensoren|PCM|Physisch|Shared  
 |Nein|Der angezeigte Zustand zahlreicher Stromsensoren gibt Aufschluss darüber, ob die gemessene Stromstärke innerhalb des Toleranzbereichs liegt.|
 |Temperatursensoren in PCM|PCM|Physisch|Shared  
-|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren \(beispielsweise Einlass- und Hotspot-Sensoren\) gibt Aufschluss darüber, ob die gemessene Temperatur innerhalb des Toleranzbereichs liegt.|
-|Stromversorgung *n*|PCM|Physisch|Shared  
+|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren (beispielsweise Einlass- und Hotspot-Sensoren) gibt Aufschluss darüber, ob die gemessene Temperatur innerhalb des Toleranzbereichs liegt.|
+|Netzteil [0-1]|PCM|Physisch|Shared  
 |Ja|Für die einzelnen Stromversorgungen in den beiden PCMs an der Geräterückseite wird jeweils eine eigene Zeile angezeigt.|
-|Kühlung *n*|PCM|Physisch|Shared  
+|Kühlung [0-1]|PCM|Physisch|Shared  
 |Ja|Für die vier Lüfter in den beiden PCMs wird jeweils eine eigene Zeile angezeigt.|
-|Lokaler Speicher \[HDD\]|–|Logisch|Shared  
+|Lokaler Speicher [HDD]|–|Logisch|Shared  
 |–|Zeigt den Zustand des logischen Speicherpools an, der auf der Grundlage von Geräte-HDDs erstellt wird.|
-|Controller *n* \[Zustand\]|E/A|Physisch|Controller|Ja|Zeigt den Zustand der Controller im EBOD-Modul an.|
+|Controller [0-1] [Status]|E/A|Physisch|Controller|Ja|Zeigt den Zustand der Controller im EBOD-Modul an.|
 |Temperatursensoren in EBOD|E/A|Physisch|Controller|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren der einzelnen Controller gibt Aufschluss darüber, ob die Temperatur innerhalb des Toleranzbereichs liegt.|
 |SAS-Erweiterung|E/A|Physisch|Controller|Nein|Gibt den Zustand der SAS-Erweiterung an, über die der integrierte Speicher mit dem Controller verbunden wird.|
-|SAS-Verbinder *n*|E/A|Physisch|Controller|Nein|Gibt den Zustand der einzelnen SAS-Verbinder an, über die der integrierte Speicher mit der SAS-Erweiterung verbunden wird.|
+|SAS-Anschluss [0-2]|E/A|Physisch|Controller|Nein|Gibt den Zustand der einzelnen SAS-Verbinder an, über die der integrierte Speicher mit der SAS-Erweiterung verbunden wird.|
 |SBB-Midplane-Interconnect|E/A|Physisch|Controller|Nein|Gibt den Zustand des Midplane-Verbinders an, über den die einzelnen Controller mit der mittleren Ebene verbunden werden.|
 |Gehäuseelektronikleistung|E/A|Physisch|Controller|Nein|Gibt den Zustand der Stromversorgung des Gehäuses an.|
 |Gehäuseelektronikdiagnose|E/A|Physisch|Controller|Nein|Gibt den Zustand der vom Controller bereitgestellten Diagnosesubsysteme an.|
 |Verbindung mit Gerätecontroller|E/A|Physisch|Controller|Nein|Gibt den Zustand der Verbindung zwischen dem EBOD-E/A-Modul und dem Gerätecontroller an.|
 
 ## Nächster Schritt
-Informationen zum Behandeln von Problemen mit einer beeinträchtigten oder fehlerhaften Gerätekomponente finden Sie unter [Problembehandlung mit der Überwachungsindikatoren](storsimple-monitoring-indicators).
+Informationen zum Behandeln von Problemen mit einer beeinträchtigten oder fehlerhaften Gerätekomponente finden Sie unter [Problembehandlung mit Überwachungsindikatoren](storsimple-monitoring-indicators).
 
 Informationen zum Austauschen einer fehlerhaften Hardwarekomponente finden Sie im [Handbuch für den Austausch von Hardwarekomponenten](https://msdn.microsoft.com/library/azure/dn757736.aspx).
 
-Sollten weiterhin Geräteprobleme auftreten, [wenden Sie sich an den Support von Microsoft](storsimple-contact-microsoft-support.md).
+Sollten weiterhin Geräteprobleme auftreten, [kontaktieren Sie den Microsoft-Support](storsimple-contact-microsoft-support.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

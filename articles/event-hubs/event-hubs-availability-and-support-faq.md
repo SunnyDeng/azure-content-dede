@@ -111,4 +111,4 @@ Weitere Informationen zu Event Hubs finden Sie unter den folgenden Themen:
 [Messaginglösung mit Warteschlange]: ../cloud-services-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

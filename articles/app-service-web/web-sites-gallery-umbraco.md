@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/21/2015" 
+	ms.date="08/03/2015" 
 	ms.author="tomfitz"/>
 
 #Erstellen einer Umbraco Web-App im Marketplace in Microsoft Azure#
@@ -34,15 +34,9 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 2. Wählen Sie das Symbol **Marketplace** aus.
 	
-	![Wählen Sie Web-Galerie][01Startboard]
-	
-3. Wählen Sie im **Marketplace** die Registerkarte **Web-Apps** und anschließend **Umbraco CMS** aus.
-	
-	![Wählen Sie Umbraco in der Web-Galerie][02WebGallery]
+3. Wählen Sie im **Marketplace** die Registerkarte **Web und mobil** und anschließend **Umbraco CMS** aus.
 	
 4. Zum Erstellen einer neuen Umbraco CMS-Web-App, klicken Sie auf **Erstellen**.
-	
-	![Klicken Sie auf Erstellen][03UmbracoCMS]
 	
 5. Im nächsten Schritt konfigurieren Sie alle Ressourcen, die mit Umbraco CMS verbunden sind. In diesem Fall sind die Ressourcen eine Web-App und eine SQL Server-Datenbank. Wählen Sie zuerst **Web-App** aus, um die Einstellungen der Web-App, wie die **URL**, den **App Service-Plan**, die **Web-App-Einstellungen** und den **Ort** zu konfigurieren.
 	
@@ -57,8 +51,6 @@ In diesem Lernprogramm lernen Sie Folgendes:
 	![Klicken Sie auf Erstellen][06UmbracoCMSGroup]
 	
 Nachdem die Bereitstellung abgeschlossen ist, wird im Portal das Blatt für die Ressourcengruppe Ihrer Umbraco CMS-Web-App angezeigt. Klicken Sie im Abschnitt **Zusammenfassung** auf den Web-App-Namen, um die Eigenschaften Ihrer Web-App anzuzeigen. Im Abschnitt **Zusammenfassung** können Sie auch die Ressourcen der Datenbank auswählen, um die Eigenschaften der entsprechenden Datenbank zu sehen.
-	
-![][07UmbracoCMSGroupBlade]
 
 ## Starten und Konfigurieren Ihrer Umbraco CMS-Web-App ##
 
@@ -135,4 +127,4 @@ Fertig! Sie haben in nur wenigen Minuten erfolgreich eine Blog-Web-App mit Umbra
 [17MyPage]: ./media/web-sites-gallery-umbraco/17MyPage.PNG
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

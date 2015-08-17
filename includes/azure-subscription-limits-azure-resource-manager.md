@@ -35,6 +35,11 @@
    <td valign="middle"><p>1.200 pro Stunde</p></td>
 </tr>
 <tr>
+   <td valign="middle"><p>Ressourcen-Manager-API-Anforderungsgröße</p></td>
+   <td valign="middle"><p>4.194.304 Bytes</p></td>
+   <td valign="middle"><p>4.194.304 Bytes</p></td>
+</tr>
+<tr>
    <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/cloud-services-what-is/">Clouddienste</a> pro Abonnement</p></td>
    <td valign="middle"><p>Veraltet<sup>3</sup></p></td>
    <td valign="middle"><p>Veraltet<sup>3</sup></p></td>
@@ -52,4 +57,4 @@
 
 <sup>3</sup> Diese Features sind für Azure-Ressourcengruppen und den Azure-Ressourcen-Manager nicht mehr erforderlich.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

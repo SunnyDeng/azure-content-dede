@@ -29,4 +29,4 @@
 
 [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](storage-windows-attach-disk.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

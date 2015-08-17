@@ -7,6 +7,7 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
+
 <tags 
 	ms.service="machine-learning" 
 	ms.workload="data-services" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="06/29/2015" 
 	ms.author="jeannt"/>
+
 
 
 
@@ -188,7 +190,7 @@ Weitere Informationen zu Konvolutionsnetzwerken und ihren Anwendungsmöglichkeit
 
 -	[http://deeplearning.net/tutorial/lenet.html ](http://deeplearning.net/tutorial/lenet.html)
 -	[http://research.microsoft.com/pubs/68920/icdar03.pdf](http://research.microsoft.com/pubs/68920/icdar03.pdf) 
--	[http://people.csail.mit.edu/jvb/papers/cnn_tutorial.pdf](http://people.csail.mit.edu/jvb/papers/cnn_tutorial.pdf)  
+-	[http://people.csail.mit.edu/jvb/papers/cnn\_tutorial.pdf](http://people.csail.mit.edu/jvb/papers/cnn_tutorial.pdf)  
 
 ##Poolingbündel
 Ein **Poolingbündel** wendet Geometrie ähnlich wie Konvolutionskonnektivität an, verwendet jedoch vordefinierte Funktionen für Quellknotenwerte, um die Zielknotenwerte abzuleiten. Daher haben Poolingbündel keinen trainierbaren Zustand (Gewichtungen oder Biase). Poolingbündel unterstützen alle Konvolutionsattribute mit Ausnahme von **Sharing**, **MapCount** und **Weights**.
@@ -205,15 +207,15 @@ Im folgenden Beispiel wird ein Poolingbündel veranschaulicht:
 	  }  
 
 -	Die Arität des Bündels ist 3 (die Länge der Tupel **InputShape**, **KernelShape** und **Stride**). 
--	Die Anzahl der Knoten in der Quellschicht beträgt _5 * 24 * 24 = 2880_. 
+-	Die Anzahl der Knoten in der Quellschicht beträgt _5 \* 24 \* 24 = 2880_. 
 -	Dies ist eine herkömmliche lokale Poolingschicht, da **KernelShape** und **Stride** gleich sind. 
--	Die Anzahl der Knoten in der Zielschicht beträgt _5 * 12 * 12 = 1440_.  
+-	Die Anzahl der Knoten in der Zielschicht beträgt _5 \* 12 \* 12 = 1440_.  
 	
 Weitere Informationen zu Poolingschichten finden Sie in den folgenden Artikeln (in englischer Sprache):
 
--	[http://www.cs.toronto.edu/~hinton/absps/imagenet.pdf](http://www.cs.toronto.edu/~hinton/absps/imagenet.pdf) (Abschnitt 3 4)
--	[http://cs.nyu.edu/~koray/publis/lecun-iscas-10.pdf](http://cs.nyu.edu/~koray/publis/lecun-iscas-10.pdf) 
--	[http://cs.nyu.edu/~koray/publis/jarrett-iccv-09.pdf](http://cs.nyu.edu/~koray/publis/jarrett-iccv-09.pdf)
+-	[http://www.cs.toronto.edu/\~hinton/absps/imagenet.pdf](http://www.cs.toronto.edu/~hinton/absps/imagenet.pdf) (Abschnitt 3 4)
+-	[http://cs.nyu.edu/\~koray/publis/lecun-iscas-10.pdf](http://cs.nyu.edu/~koray/publis/lecun-iscas-10.pdf) 
+-	[http://cs.nyu.edu/\~koray/publis/jarrett-iccv-09.pdf](http://cs.nyu.edu/~koray/publis/jarrett-iccv-09.pdf)
 	
 ##Antwortnormalisierungsbündel
 Die **Antwortnormalisierung** ist ein lokales Normalisierungsschema, das erstmals von Geoffrey Hinton et al. in einem Dokument namens "ImageNet Classiﬁcation with Deep Convolutional Neural Networks" (siehe Abschnitt 3.3) verwendet wurde. Die Antwortnormalisierung unterstützt die Generalisierung in neuronalen Netzwerken. Wenn ein Neuron auf einem sehr hohen Aktivierungsniveau auslöst, unterdrückt eine lokale Antwortnormalisierungsschicht das Aktivierungsniveau der umgebenden Neuronen. Hierzu werden die drei Parameter (***α***, ***β*** und ***k***) sowie eine Konvolutionsstruktur (bzw. eine Umgebungsform) verwendet. Jedes Neuron in der Zielschicht ***y*** entspricht einem Neuron ***x*** in der Quellschicht. Das Aktivierungsniveau ***y*** wird durch die folgende Formel angegeben, wobei ***f*** das Aktivierungsniveau eines Neurons und ***Nx*** der Kernel (bzw. der Satz mit den Neuronen in der Umgebung von ***x***) ist, wie durch die folgende Konvolutionsstruktur definiert:
@@ -227,7 +229,7 @@ Antwortnormalisierungsbündel unterstützen alle Konvolutionsattribute mit Ausna
 
 Da Antwortnormalisierungsbündel zur Bestimmung des Zielknotenwerts eine vordefinierte Funktion auf Quellknotenwerte anwenden, haben sie keinen trainierbaren Zustand (Gewichtungen oder Biase).
 
-**Alert**: Die Knoten in der Zielschicht entsprechen Neuronen, die die zentralen Knoten der Kernel darstellen. Beispiel: Wenn KernelShape[d] ungerade ist, entspricht _KernelShape[d]/2_ dem zentralen Kernelknoten. Wenn _KernelShape[d]_ gerade ist, befindet sich der zentrale Knoten bei _KernelShape[d]/2 - 1_. Wenn **Padding**[d] "False" ist, haben der erste und der letzte Knoten für _KernelShape[d]/2_ daher keinen entsprechenden Knoten in der Zielschicht. Um diese Situation zu vermeiden, definieren Sie **Padding** als [true, true, …, true].
+**Alert**: Die Knoten in der Zielschicht entsprechen Neuronen, die die zentralen Knoten der Kernel darstellen. Beispiel: Wenn "KernelShape[d]" ungerade ist, entspricht _KernelShape[d]/2_ dem zentralen Kernelknoten. Wenn _KernelShape[d]_ gerade ist, befindet sich der zentrale Knoten bei _KernelShape[d]/2 - 1_. Wenn **Padding**[d] "False" ist, haben der erste und der letzte Knoten für _KernelShape[d]/2_ daher keinen entsprechenden Knoten in der Zielschicht. Um diese Situation zu vermeiden, definieren Sie **Padding** als [true, true, …, true].
 
 Zusätzlich zu den vier weiter oben beschriebenen Attributen unterstützen Antwortnormalisierungsbündel auch die folgenden Attribute:
 
@@ -390,15 +392,15 @@ Die Definition des folgenden Netzwerks zur Erkennung von Ziffern veranschaulicht
 -	Das Netzwerk hat eine dritte verdeckte Schicht, „Hid3“; diese ist vollständig mit der zweiten verdeckten Schicht „Conv2“ verbunden.
 -	Die Ausgabeschicht „Digit“ ist nur mit der dritten verdeckten Schicht (Hid3) verbunden. Das Schlüsselwort **all** gibt an, dass die Ausgabeschicht vollständig mit „Hid3“ verbunden ist.
 -	Die Arität der Konvolution ist drei (die Länge der Tupel **InputShape**, **KernelShape**, **Stride** und **Sharing**). 
--	Die Anzahl der Gewichtungen pro Kernel ist _1 + **KernelShape**[0] * **KernelShape**\[1] * **KernelShape**[2] = 1 + 1 * 5 * 5 = 26. Oder 26 * 50 = 1300_.
+-	Die Anzahl der Gewichtungen pro Kernel ist _1 + **KernelShape**[0] \* **KernelShape**[1] \* **KernelShape**[2] = 1 + 1 \* 5 \* 5 = 26. Oder 26 \* 50 = 1300_.
 -	Sie können die Knoten in jeder verdeckten Schicht wie folgt berechnen:
 	-	**NodeCount**[0] = (5 - 1) / 1 + 1 = 5.
-	-	**NodeCount**\[1] = (13–5)/2+1 = 5. 
+	-	**NodeCount**[1] = (13–5)/2+1 = 5. 
 	-	**NodeCount**[2] = (13 - 5) / 2 + 1 = 5. 
--	Die Gesamtanzahl der Knoten kann anhand der deklarierten Dimensionalität der Schicht [50, 5, 5] wie folgt berechnet werden: _**MapCount** * **NodeCount**[0] * **NodeCount**\[1] * **NodeCount**[2] = 10 * 5 * 5 * 5_
--	Da **Sharing**[d] nur für _d == 0_ "False" ist, beträgt die Anzahl der Kernel _**MapCount** * **NodeCount**[0] = 10 * 5 = 50_. 
+-	Die Gesamtanzahl der Knoten kann anhand der deklarierten Dimensionalität der Schicht [50, 5, 5] wie folgt berechnet werden: _**MapCount** \* **NodeCount**[0] \* **NodeCount**[1] \* **NodeCount**[2] = 10 \* 5 \* 5 \* 5_
+-	Da **Sharing**[d] nur für _d == 0_ "False" ist, beträgt die Anzahl der Kernel _**MapCount** \* **NodeCount**[0] = 10 \* 5 = 50_. 
 
 [1]: ./media/machine-learning-azure-ml-netsharp-reference-guide/formula_large.gif
  
 
-<!----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

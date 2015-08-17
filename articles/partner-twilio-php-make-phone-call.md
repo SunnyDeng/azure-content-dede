@@ -30,7 +30,7 @@ Sie benötigen Folgendes, um den Code in diesem Artikel ausführen zu können:
 
 ## Erstellen eines Webformulars für den Anruf
 
-Mit dem folgenden HTML-Code erstellen Sie eine Webseite (**callform.html**), die Benutzerdaten für einen Anruf abruft:
+Der folgende HTML-Code erstellt eine Webseite (**callform.html**) zur Eingabe der Benutzerdaten für den Anruf:
 
     <html>
 	<head>
@@ -62,8 +62,8 @@ Mit dem folgenden HTML-Code erstellen Sie eine Webseite (**callform.html**), die
 	</body>
 	</html>
 
-## Erstellen eines Codes für den Anruf
-Mit dem folgenden Code erstellen Sie eine Webseite (**makecall.php**), die aufgerufen wird, wenn der Benutzer das Formular aus **callform.html** übermittelt. Der folgende Code erstellt die Anrufnachricht und führt den Anruf aus. (Ersetzen Sie die Platzhalterwerte **$sid** und **$token** im folgenden Code durch Ihr Twilio-Konto und Ihr Authentifizierungs-Token.)
+## Erstellen des Codes für den Anruf
+Der folgende Code erstellt eine Webseite (**makecall.php**), die aufgerufen wird, wenn der Benutzer das Formular aus **callform.html** übermittelt. Der folgende Code erstellt die Anrufnachricht und führt den Anruf aus. (Ersetzen Sie die Platzhalterwerte **$sid** und **$token** im folgenden Code durch Ihr Twilio-Konto und Ihr Authentifizierungs-Token.)
 
     <html>
 	<head><title>Making call...</title></head>
@@ -143,4 +143,4 @@ Weitere Informationen zu Twilio finden Sie unter [https://www.twilio.com/docs][t
 [website-webmatrix]: https://www.windowsazure.com/develop/php/tutorials/website-w-mysql-and-webmatrix/
 [twilio_php_github]: https://github.com/twilio/twilio-php
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

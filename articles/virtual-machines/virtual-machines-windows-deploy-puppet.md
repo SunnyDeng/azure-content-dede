@@ -37,7 +37,7 @@ Wenn Sie eine Anleitung benötigen, laden Sie "Erste Schritte" von der Seite [Mi
 
 [Anmelden bei einem mit Linux betriebenen virtuellen Computer]
 
-\[Verwalten von Erweiterungen\]
+[Verwalten von Erweiterungen]
 
 <!--Link references-->
 [New Integrations with Microsoft Azure and Visual Studio, in englischer Sprache]: http://puppetlabs.com/blog/new-integrations-windows-azure-and-visual-studio
@@ -45,4 +45,4 @@ Wenn Sie eine Anleitung benötigen, laden Sie "Erste Schritte" von der Seite [Mi
 [Anmelden bei einem mit Linux betriebenen virtuellen Computer]: virtual-machines-linux-how-to-log-on.md
 [Azure VM extensions and features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

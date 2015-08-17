@@ -7,6 +7,7 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
+
 <tags 
 	ms.service="cdn" 
 	ms.workload="web" 
@@ -16,6 +17,7 @@
 	ms.date="05/27/2015" 
 	ms.author="cephalin"/>
 
+
 # Bereitstellen von Inhalt aus Azure CDN in einer Webanwendung #
 
 Dieses Lernprogramm zeigt, wie Sie von Azure CDN profitieren können, um die Reichweite und Leistung Ihrer Webanwendung zu verbessern. Azure CDN kann Ihnen in folgenden Fällen helfen, die Leistung Ihrer Webanwendung zu verbessern:
@@ -23,7 +25,7 @@ Dieses Lernprogramm zeigt, wie Sie von Azure CDN profitieren können, um die Rei
 - Sie haben viele Links zu statischen oder halbstatischen Inhalten auf Ihren Seiten
 - Clients greifen global auf Ihre Anwendung zu
 - Sie möchten Datenverkehr von Ihrem Webserver auslagern
-- Sie möchten die Anzahl gleichzeitiger Clientverbindungen zu Ihrem Webserver reduzieren \(es gibt dazu eine großartige Diskussion unter [Bündelung und Minimierung](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)\) 
+- Sie möchten die Anzahl gleichzeitiger Clientverbindungen zu Ihrem Webserver reduzieren (es gibt dazu eine großartige Diskussion unter [Bündelung und Minimierung](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)) 
 - Sie möchten die erhaltene Lade-/Aktualisierungszeit Ihrer Seiten verbessern
 
 ## Sie lernen Folgendes ##
@@ -41,7 +43,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 -	Ein aktives [Microsoft Azure-Konto](/account/). Sie können sich für ein Testkonto anmelden.
 -	Visual Studio 2013 mit [Azure SDK](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) für die Blobverwaltungsoberfläche
--	[Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409) \(verwendet von [Automatisieren des Hochladens von Inhalten von einer ASP.NET-Anwendung zu einem CDN-Endpunkt](#upload)\)
+-	[Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409) (verwendet von [Automatisieren des Hochladens von Inhalten von einer ASP.NET-Anwendung zu einem CDN-Endpunkt](#upload))
 
 > [AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen. + Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/?WT.mc_id=A261C142F): – Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Websites nutzen, wenn das Guthaben aufgebraucht ist. + Sie können von [Vorteilen für MSDN-Abonnenten profitieren](/pricing/member-offers/msdn-benefits-details/): – Über Ihr MSDN-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
 
@@ -59,13 +61,13 @@ In diesem Abschnitt des Lernprogramms erfahren Sie, wie Sie ein CDN erstellen un
 Los geht's! Folgen Sie den Schritten unten, um mit der Verwendung des Azure CDN zu beginnen:
 
 1. Zum Erstellen eines CDN-Endpunkts melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com/) an. 
-1. Erstellen Sie ein Speicherkonto, indem Sie auf **Neu \> Datendienste \> Speicher \> Schnellerfassung** klicken. Geben Sie eine URL und einen Speicherort an, und klicken Sie auf **Speicherkonto erstellen**. 
+1. Erstellen Sie ein Speicherkonto, indem Sie auf **Neu > Datendienste > Speicher > Schnellerfassung** klicken. Geben Sie eine URL und einen Speicherort an, und klicken Sie auf **Speicherkonto erstellen**. 
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-1.PNG)
 
 	>[AZURE.NOTE]Ich verwende Ostasien als Region, da sich diese weit genug entfernt befindet, um mein CDN später von Nordamerika aus zu testen.
 
-2. Sobald der Status des neuen Speicherkontos **Online** ist, erstellen Sie einen neuen CDN-Endpunkt, der mit dem erstellten Speicherkonto verknüpft ist. Klicken Sie auf **Neu \> App-Dienste \> CDN \> Schnellerfassung**. Wählen Sie das erstellte Speicherkonto aus, und klicken Sie auf **Erstellen**.
+2. Sobald der Status des neuen Speicherkontos **Online** ist, erstellen Sie einen neuen CDN-Endpunkt, der mit dem erstellten Speicherkonto verknüpft ist. Klicken Sie auf **Neu > App-Dienste > CDN > Schnellerfassung**. Wählen Sie das erstellte Speicherkonto aus, und klicken Sie auf **Erstellen**.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2.PNG)
 
@@ -83,7 +85,7 @@ Los geht's! Folgen Sie den Schritten unten, um mit der Verwendung des Azure CDN 
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-4.PNG)
 
-	Eine Liste aller CDN-Knotenstandorte finden Sie unter [Standorte der Azure-CDN-Knoten \(Content Delivery Network\)](http://msdn.microsoft.com/library/azure/gg680302.aspx).
+	Eine Liste aller CDN-Knotenstandorte finden Sie unter [Standorte der Azure-CDN-Knoten (Content Delivery Network)](http://msdn.microsoft.com/library/azure/gg680302.aspx).
 
 3. Klicken Sie im Azure-Portal auf der Registerkarte **CDN** auf den Namen des gerade erstellten CDN-Endpunkts.
 
@@ -93,14 +95,14 @@ Los geht's! Folgen Sie den Schritten unten, um mit der Verwendung des Azure CDN 
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-2-enablequeryb.PNG)
 
-	>[AZURE.NOTE]Auch wenn die Aktivierung der Abfragezeichenfolge für diesen Teil des Lernprogramms nicht erforderlich ist, sollten Sie diesen Schritt so früh wie möglich durchführen, da die Verteilung einer hier vorgenommenen Änderung an die übrigen Knoten einige Zeit dauert und Sie verhindern möchten, dass Inhalte, für die Abfragezeichenfolgen nicht aktiviert wurden, den CDN-Cache verstopfen \(die Aktualisierung von CDN-Inhalten wird später erläutert\). Wie Sie davon profitieren können, erfahren Sie in [Sofortiges Verarbeiten neuer Inhalte mit Abfragezeichenfolgen](#query).
+	>[AZURE.NOTE]Auch wenn die Aktivierung der Abfragezeichenfolge für diesen Teil des Lernprogramms nicht erforderlich ist, sollten Sie diesen Schritt so früh wie möglich durchführen, da die Verteilung einer hier vorgenommenen Änderung an die übrigen Knoten einige Zeit dauert und Sie verhindern möchten, dass Inhalte, für die Abfragezeichenfolgen nicht aktiviert wurden, den CDN-Cache verstopfen (die Aktualisierung von CDN-Inhalten wird später erläutert). Wie Sie davon profitieren können, erfahren Sie in [Sofortiges Verarbeiten neuer Inhalte mit Abfragezeichenfolgen](#query).
 
 6. Klicken Sie in Visual Studio 2013 im Server-Explorer auf **Mit Microsoft Azure verbinden**.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-5.PNG)
 
 7.  Folgen Sie der Aufforderung, sich bei Ihrem Azure-Konto anzumelden.
-8.  Erweitern Sie nach der Anmeldung **Microsoft Azure \> Speicher \> Ihr Speicherkonto**. Klicken Sie mit der rechten Maustaste auf **Blob**, und wählen Sie **Blob-Container erstellen**.
+8.  Erweitern Sie nach der Anmeldung **Microsoft Azure > Speicher > Ihr Speicherkonto**. Klicken Sie mit der rechten Maustaste auf **Blob**, und wählen Sie **Blob-Container erstellen**.
 
 	![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-static-6.PNG)
 
@@ -142,12 +144,13 @@ Los geht's! Folgen Sie den Schritten unten, um mit der Verwendung des Azure CDN 
 
 		<img alt="Mugshot" src="http://az623979.vo.msecnd.net/cdn/cephas_lin.png" />
 
+
 In diesem Abschnitt haben Sie erfahren, wie Sie einen CDN-Endpunkt erstellen, Inhalte darauf hochladen, und diesen zu CDN-Inhalten einer beliebigen Webseite verknüpfen.
 
 <a name="upload"></a>
 ## Automatisieren des Hochladens von Inhalten aus einer ASP.NET-Anwendung zu einem CDN-Endpunkt ##
 
-Wenn Sie all Ihre statischen Inhalte Ihrer ASP.NET-Webanwendung zu einem CDN-Endpunkt hochladen möchten, oder wenn Sie die Webanwendung mit kontinuierlicher Zustellung bereitstellen \(ein Beispiel finden Sie unter [Kontinuierliche Zustellung für Cloud Services in Azure](../cloud-services/cloud-services-dotnet-continuous-delivery.md)\), können Sie Azure PowerShell verwenden, um die Synchronisierung der neuesten Inhaltsdateien zu Azure-Blobs bei jeder Bereitstellung der Webanwendung zu automatisieren. Sie können zum Beispiel das Skript unter [Upload Content Files from ASP.NET Application to Azure Blobs](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) ausführen, um alle Inhaltsdateien in einer ASP.NET-Anwendung hochzuladen. So verwenden Sie dieses Skript:
+Wenn Sie all Ihre statischen Inhalte Ihrer ASP.NET-Webanwendung zu einem CDN-Endpunkt hochladen möchten, oder wenn Sie die Webanwendung mit kontinuierlicher Zustellung bereitstellen (ein Beispiel finden Sie unter [Kontinuierliche Zustellung für Cloud Services in Azure](../cloud-services/cloud-services-dotnet-continuous-delivery.md)), können Sie Azure PowerShell verwenden, um die Synchronisierung der neuesten Inhaltsdateien zu Azure-Blobs bei jeder Bereitstellung der Webanwendung zu automatisieren. Sie können zum Beispiel das Skript unter [Upload Content Files from ASP.NET Application to Azure Blobs](http://gallery.technet.microsoft.com/scriptcenter/Upload-Content-Files-from-41c2142a) ausführen, um alle Inhaltsdateien in einer ASP.NET-Anwendung hochzuladen. So verwenden Sie dieses Skript:
 
 4. Führen Sie im Menü **Start** **Microsoft Azure PowerShell** aus.
 5. Führen Sie im Azure PowerShell-Fenster `Get-AzurePublishSettingsFile` aus, um eine Einstellungsveröffentlichungsdatei für Ihr Azure-Konto herunterzuladen.
@@ -178,6 +181,7 @@ Sobald die Inhalte hochgeladen sind, können Sie alle Elemente in den Ordnern *\
 
 	<img alt="Mugshot" src="http://az623979.vo.msecnd.net/MyMvcApp/Content/cephas_lin.png" />
 
+
 Ein Beispiel für die Integration von PowerShell-Skripten in Ihre kontinuierliche Zustellungskonfiguration finden Sie unter [Kontinuierliche Zustellung für Cloud Services in Azure](../cloud-services/cloud-services-dotnet-continuous-delivery.md).
 
 <a name="update"></a>
@@ -187,7 +191,7 @@ Angenommen, Sie möchten nach dem Hochladen der statischen Dateien von der Weban
 
 Dies liegt daran, dass CDN nicht automatisch vom Blob-Speicher aktualisiert, sondern nur, wenn Sie eine Standard-7-Tage-Zwischenspeicherungsregel für den Inhalt anwenden. Dies bedeutet, dass dieser Inhalt, sobald ein CDN-Knoten Inhalte aus dem Blob-Speicher zieht, nicht mehr aktualisiert wird, bis er im Cache abläuft.
 
-Die gute Nachricht ist, dass Sie den Cache-Ablauf anpassen können. Ähnlich wie die meisten Browser respektiert Azure CDN die Ablaufzeit, die im Cache-Control-Header angegeben wurde. Sie können einen benutzerdefinierten Wert für den Cache-Control-Header angeben, indem Sie zum Blob-Container im Azure-Portal navigieren und die Blob-Eigenschaften bearbeiten. Der Screenshot unten zeigt den auf 1 Stunde festgelegten Cache-Ablauf \(3.600 Sekunden\).
+Die gute Nachricht ist, dass Sie den Cache-Ablauf anpassen können. Ähnlich wie die meisten Browser respektiert Azure CDN die Ablaufzeit, die im Cache-Control-Header angegeben wurde. Sie können einen benutzerdefinierten Wert für den Cache-Control-Header angeben, indem Sie zum Blob-Container im Azure-Portal navigieren und die Blob-Eigenschaften bearbeiten. Der Screenshot unten zeigt den auf 1 Stunde festgelegten Cache-Ablauf (3.600 Sekunden).
 
 ![](media/cdn-serve-content-from-cdn-in-your-web-application/cdn-updates-1.PNG)
 
@@ -218,17 +222,17 @@ Es gibt natürlich berechtigte Zeiten und Orte für die Zwischenspeicherung. Ang
 <a name="query"></a>
 ## Sofortiges Bereitstellen neuer Inhalte mithilfe von Abfragezeichenfolgen ##
 
-In Azure CDN können Sie Abfragezeichenfolgen aktivieren, sodass Inhalte von URLs mit bestimmten Abfragezeichenfolgen separat zwischengespeichert werden. Dies ist eine sehr nützliche Funktion, wenn Sie bestimmte Inhaltsaktualisierungen sofort an Clientbrowser weitergeben möchten, anstatt darauf zu warten, dass der zwischengespeicherte CDN-Inhalt abläuft. Nehmen wir an, ich veröffentliche meine Webseite mit einer Versionsnummer in der URL. <pre class="prettyprint"> &lt;link href=&quot;http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=3.0.0</mark>&quot; rel=&quot;stylesheet&quot;/&gt; </pre>
+In Azure CDN können Sie Abfragezeichenfolgen aktivieren, sodass Inhalte von URLs mit bestimmten Abfragezeichenfolgen separat zwischengespeichert werden. Dies ist eine sehr nützliche Funktion, wenn Sie bestimmte Inhaltsaktualisierungen sofort an Clientbrowser weitergeben möchten, anstatt darauf zu warten, dass der zwischengespeicherte CDN-Inhalt abläuft. Nehmen wir an, ich veröffentliche meine Webseite mit einer Versionsnummer in der URL. <pre class="prettyprint"> &lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=3.0.0"; rel=";stylesheet";/&gt; </pre>
 
-Wenn ich eine CSS-Aktualisierung veröffentliche und eine andere Versionsnummer in meiner CSS-URL verwende: <pre class="prettyprint"> &lt;link href=&quot;http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=3.1.1</mark>&quot; rel=&quot;stylesheet&quot;/&gt; </pre>
+Wenn ich eine CSS-Aktualisierung veröffentliche und eine andere Versionsnummer in meiner CSS-URL verwende: <pre class="prettyprint"> &lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=3.1.1"; rel=";stylesheet";/&gt; </pre>
 
 Für einen CDN-Endpunkt, für den Abfragezeichenfolgen aktiviert sind, sind die beiden URLs jeweils eindeutig, sodass dieser eine neue Anfrage an meinen Webserver machen wird, um die neue *bootstrap.css* abzurufen. Für einen CDN-Endpunkt, für den Abfragezeichenfolgen nicht aktiviert sind, sind dies identische URLs, sodass einfach die zwischengespeicherte *bootstrap.css* abgerufen wird.
 
-Der Trick besteht darin, die Versionsnummer automatisch zu aktualisieren. In Visual Studio ist dies leicht zu bewerkstelligen. In einer CSHTML-Datei, in der ich den oben stehenden Link verwenden möchte, kann ich eine Versionsnummer basierend auf der Assemblynumber angeben. <pre class="prettyprint"> @{ <mark>var cdnVersion = System.Reflection.Assembly.GetAssembly\( typeof\(MyMvcApp.Controllers.HomeController\)\) .GetName\(\).Version.ToString\(\);</mark> }
+Der Trick besteht darin, die Versionsnummer automatisch zu aktualisieren. In Visual Studio ist dies leicht zu bewerkstelligen. In einer CSHTML-Datei, in der ich den oben stehenden Link verwenden möchte, kann ich eine Versionsnummer basierend auf der Assembly-Nummer angeben. <pre class="prettyprint"> @{ var cdnVersion = System.Reflection.Assembly.GetAssembly( typeof(MyMvcApp.Controllers.HomeController)) .GetName().Version.ToString(); }
 
 ...
 
-&lt;link href=&quot;http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css<mark>?v=@cdnVersion</mark>&quot; rel=&quot;stylesheet&quot;/&gt; </pre>
+&lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=@cdnVersion"; rel=";stylesheet";/&gt; </pre>
 
 Wenn Sie die Assemblynummer als Teil jedes Veröffentlichungszyklus ändern, können Sie sicher sein, dass Sie jedes Mal eine eindeutige Versionsnummer erhalten, wenn Sie die Webanwendung veröffentlichen. Diese bleibt bis zum nächsten Veröffentlichungszyklus identisch. Sie können Visual Studio auch die Assemblyversionsnummer jedes Mal automatisch erhöhen lassen, wenn die Webanwendung erstellt wird, indem Sie im Visual Studio-Projekt *Properties\\AssemblyInfo.cs* öffnen und `*` in `AssemblyVersion` verwenden. Beispiel:
 
@@ -240,7 +244,7 @@ Mit [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) 
 
 Die Integration von Azure App Service oder Azure Cloud Services in Azure CDN bietet folgende Vorteile:
 
-- Integration der Inhaltsbereitstellung \(Bilder, Skripts und Stylesheets\) als Teil des [kontinuierlichen Bereitstellungsprozesses](../web-sites-publish-source-control.md) Ihrer Azure-Web-App
+- Integration der Inhaltsbereitstellung (Bilder, Skripts und Stylesheets) als Teil des [kontinuierlichen Bereitstellungsprozesses](../web-sites-publish-source-control.md) Ihrer Azure-Web-App
 - Einfaches Upgrade Ihrer vom CDN verarbeiteten NuGet-Pakete wie jQuery- oder Bootstrap-Versionen 
 - Verwalten der Webanwendung und des vom CDN verarbeiteten Inhalts über dieselbe Visual Studio-Oberfläche
 
@@ -254,11 +258,11 @@ Ohne Integration in Azure App Service-Web-Apps oder Azure Cloud Services können
 		@Html.Raw(Styles.Render("~/Content/css").ToString().Insert(0, "http://<yourCDNName>.vo.msecnd.net"))
 
 ## Weitere Informationen ##
-- [Übersicht über das Azure Content Delivery Network \(CDN\)](cdn-overview.md)
+- [Übersicht über das Azure Content Delivery Network (CDN)](cdn-overview.md)
 - [Verwenden von Azure CDN in Azure App Service](../cdn-websites-with-cdn.md)
 - [Integrieren eines Clouddiensts in Azure CDN](cdn-cloud-service-with-cdn.md)
-- [Zuordnen von CDN-Inhalten \(Content Delivery Network\) zu einer benutzerdefinierten Domäne](http://msdn.microsoft.com/library/azure/gg680307.aspx)
+- [Zuordnen von CDN-Inhalten (Content Delivery Network) zu einer benutzerdefinierten Domäne](http://msdn.microsoft.com/library/azure/gg680307.aspx)
 - [Verwenden von CDN für Azure](cdn-how-to-use-cdn.md)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

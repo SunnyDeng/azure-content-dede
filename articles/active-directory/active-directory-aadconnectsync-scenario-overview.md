@@ -21,7 +21,7 @@
 
 Viele Organisationen verfügen über Umgebungen, die mehrere lokale Active Directory-Gesamtstrukturen umfassen. Es gibt verschiedene Gründe, mehrere lokale Active Directory-Gesamtstrukturen bereitzustellen. Typische Beispiele sind Entwürfe mit Kontoressourcengesamtstruktur, Gesamtstrukturen in Zusammenhang mit Unternehmensfusionen oder -übernahmen oder Gesamtstrukturen, die zum Auslagern von Daten verwendet werden.
 
-Microsoft bietet zwei Lösungen: DirSync für Szenarien mit einer Gesamtstruktur und Forefront Identity Manager \(FIM\) für Szenarien mit mehreren Gesamtstrukturen. Allerdings kann das Konfigurieren von FIM eine Herausforderung sein und sehr viel Zeit beanspruchen.
+Microsoft bietet zwei Lösungen: DirSync für Szenarien mit einer Gesamtstruktur und Forefront Identity Manager (FIM) für Szenarien mit mehreren Gesamtstrukturen. Allerdings kann das Konfigurieren von FIM eine Herausforderung sein und sehr viel Zeit beanspruchen.
 
 Mit der Azure AD Connect-Synchronisierung können Sie die Konfiguration erheblich vereinfachen und vorhersehbarer machen.
 
@@ -29,7 +29,7 @@ Die Standardkonfiguration der Azure AD Connect-Synchronisierung basiert auf fol
 
 1. Benutzer haben nur ein einziges aktiviertes Konto, und die Gesamtstruktur, in der sich dieses Konto befindet, wird verwendet, um den Benutzer einem Verbund zuzuordnen.
 2. Benutzer haben nur ein einziges Postfach.
-3. Die Gesamtstruktur, die das Postfach des Benutzers enthält, hat die beste Datenqualität für Attribute, die in der globalen Exchange-Adressliste \(Global Address List, GAL\) sichtbar sind. Wenn kein Postfach für den Benutzer vorhanden ist, kann jede Gesamtstruktur verwendet werden, um diese Attributwerte beizutragen.
+3. Die Gesamtstruktur, die das Postfach des Benutzers enthält, hat die beste Datenqualität für Attribute, die in der globalen Exchange-Adressliste (Global Address List, GAL) sichtbar sind. Wenn kein Postfach für den Benutzer vorhanden ist, kann jede Gesamtstruktur verwendet werden, um diese Attributwerte beizutragen.
 
 
 Ziel dieses Themas ist, einige allgemeine Szenarien und die Art und Weise zu beschreiben, in der sie im Azure AD Connect-Synchronisierungsdienst dargestellt werden:
@@ -57,7 +57,7 @@ Mit einer vollständig vernetzten Topologie können Benutzer und Ressourcen in j
 
 Wenn Exchange in mehreren Gesamtstrukturen vorhanden ist, kann optional eine GALSync-Lösung einen Benutzer aus einer Gesamtstruktur in jeder anderen Gesamtstruktur als Kontakt darstellen.
 
-In diesem Szenario werden in der Regel Identitätsobjekte über das E-Mail-Attribut verknüpft. In der Folge wird ein Benutzer mit einem Postfach in einer Gesamtstruktur mit den Kontakten in den anderen Gesamtstrukturen verknüpft. Verteiler- und Sicherheitsgruppen befinden sich in jeder Gesamtstruktur und können eine Kombination aus Benutzern, Kontakten und FSPs \(Foreign Security Principals, fremde Sicherheitsprinzipale\) enthalten.
+In diesem Szenario werden in der Regel Identitätsobjekte über das E-Mail-Attribut verknüpft. In der Folge wird ein Benutzer mit einem Postfach in einer Gesamtstruktur mit den Kontakten in den anderen Gesamtstrukturen verknüpft. Verteiler- und Sicherheitsgruppen befinden sich in jeder Gesamtstruktur und können eine Kombination aus Benutzern, Kontakten und FSPs (Foreign Security Principals, fremde Sicherheitsprinzipale) enthalten.
 
 Die folgende Abbildung zeigt dieses Szenario.
 
@@ -83,4 +83,4 @@ Die folgende Abbildung zeigt dieses Szenario mit nur einem Konto.
 [2]: ./media/active-directory-aadsync-scenario-overview/ic750600.png
 [3]: ./media/active-directory-aadsync-scenario-overview/ic750601.png
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

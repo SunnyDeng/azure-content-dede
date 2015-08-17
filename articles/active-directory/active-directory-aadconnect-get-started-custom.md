@@ -48,8 +48,8 @@ Nach dem Installieren der erforderlichen Komponenten werden Sie aufgefordert, di
 
 Option zum einmaligen Anmelden | Beschreibung 
 ------------- | ------------- |
-Kennwortsynchronisierung |Die Benutzer können sich bei Microsoft Cloud Services \(z. B. Office 365, Dynamics CRM und Windows InTune\) mit demselben Kennwort anmelden, mit dem sie sich bei ihrem lokalen Netzwerk anmelden. Das Kennwort der Benutzer wird über ein Kennworthash mit Azure synchronisiert, und Authentifizierung erfolgt in der Cloud.
-Verbund mit AD FS|Die Benutzer können sich bei Microsoft Cloud Services \(z. B. Office 365, Dynamics CRM und Windows InTune\) mit demselben Kennwort anmelden, mit dem sie sich bei ihrem lokalen Netzwerk anmelden. Die Benutzer werden an ihre lokale AD FS-Instanz für die Anmeldung umgeleitet, und die Authentifizierung erfolgt lokal.
+Kennwortsynchronisierung |Die Benutzer können sich bei Microsoft Cloud Services (z. B. Office 365, Dynamics CRM und Windows InTune) mit demselben Kennwort anmelden, mit dem sie sich bei ihrem lokalen Netzwerk anmelden. Das Kennwort der Benutzer wird über ein Kennworthash mit Azure synchronisiert, und Authentifizierung erfolgt in der Cloud.
+Verbund mit AD FS|Die Benutzer können sich bei Microsoft Cloud Services (z. B. Office 365, Dynamics CRM und Windows InTune) mit demselben Kennwort anmelden, mit dem sie sich bei ihrem lokalen Netzwerk anmelden. Die Benutzer werden an ihre lokale AD FS-Instanz für die Anmeldung umgeleitet, und die Authentifizierung erfolgt lokal.
 Nicht konfigurieren| Keines der Features wird installiert oder konfiguriert. Wählen Sie diese Option aus, wenn Sie bereits über einen Verbundserver eines Drittanbieters verfügen oder eine andere vorhandene Lösung eingesetzt wird.
 
 
@@ -83,7 +83,11 @@ Ihr eigenes Attribut|Mit dieser Option können Sie Ihr eigenes Attribut auswähl
 
 - **Quellanker** – Das Attribut "sourceAnchor" ist ein Attribut, das während der Lebensdauer eines Benutzerobjekts unveränderlich ist. Das Attribut ist der Primärschlüssel, der den lokalen Benutzer mit dem Benutzer in Azure AD verknüpft. Da das Attribut nicht geändert werden kann, müssen Sie sorgfältig planen, welches Attribut Sie verwenden möchten. Hier empfiehlt sich "objectGUID". Dieses Attribut wird nicht geändert, es sei denn, das Benutzerkonto wird zwischen Gesamtstrukturen/Domänen verschoben. In einer Umgebung mit mehreren Gesamtstrukturen, in der Sie Konten zwischen Gesamtstrukturen verschieben, muss ein anderes Attribut verwendet werden, z. B. ein Attribut mit der Mitarbeiter-ID. Sie sollten Attribute vermeiden, die sich ändern, wenn eine Person heiratet oder den Aufgabenbereich wechselt. Sie können keine Attribute mit einem @-Zeichen verwenden, daher sind E-Mail-Adressen und Benutzerprinzipalnamen ungeeignet. Bei dem Attribut wird die Groß-/Kleinschreibung beachtet. Wenn Sie also ein Objekts zwischen Gesamtstrukturen verschieben, müssen Sie darauf achten, die Groß-/Kleinschreibung beizubehalten. Bei binären Attributen ist der Wert base64-codiert. Für andere Attributtypen bleibt der Wert uncodiert. In Verbundszenarien und bei einigen Azure AD-Schnittstellen ist dieses Attribut auch als "immutableID" bekannt.
 
-- **UserPrincipalName** – Das Attribut "userPrincipalName" ist das Attribut, das Benutzer verwenden, wenn sie sich bei Azure AD und Office 365 anmelden. Die verwendeten Domänen, auch als UPN-Suffix bezeichnet, sollte in Azure AD überprüft werden, bevor die Benutzer synchronisiert werden. Es wird dringend empfohlen, das Standardattribut "userPrincipalName" beizubehalten. Wenn dieses Attribut nicht routingfähig ist und nicht überprüft werden kann, können Sie ein anderes Attribut als das Attribut mit der Anmelde-ID auswählen, beispielsweise "email". Warnung: Eine alternative ID ist nicht mit allen Office 365-Workloads kompatibel. Weitere Informationen finden Sie unter https://technet.microsoft.com/en-us/library/dn659436.aspx.
+- **UserPrincipalName** – Das Attribut "userPrincipalName" ist das Attribut, das Benutzer verwenden, wenn sie sich bei Azure AD und Office 365 anmelden. Die verwendeten Domänen, auch als UPN-Suffix bezeichnet, sollte in Azure AD überprüft werden, bevor die Benutzer synchronisiert werden. Es wird dringend empfohlen, das Standardattribut "userPrincipalName" beizubehalten. Wenn dieses Attribut nicht routingfähig ist und nicht überprüft werden kann, können Sie ein anderes Attribut als das Attribut mit der Anmelde-ID auswählen, beispielsweise "email".
+
+>[AZURE.WARNING]Eine alternative ID ist nicht mit allen Office 365-Workloads kompatibel. Weitere Informationen finden Sie unter [Konfigurieren der alternativen Anmelde-ID](https://technet.microsoft.com/library/dn659436.aspx.).
+
+
 
 
 
@@ -133,11 +137,11 @@ Diese Attribute sind jetzt über Graph verfügbar:
 ![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/extension4.png)
 
 
-## Benutzerrückschreiben \(Vorschau\)
+## Benutzerrückschreiben (Vorschau)
 
 > [AZURE.WARNING]Wenn derzeit DirSync oder Azure AD Sync aktiv sind, aktivieren Sie keine der Features zum Rückschreiben in Azure AD Connect.
 
-Benutzerrückschreiben ermöglicht es Ihnen, einen Benutzer in Azure AD auszuwählen \(über das Portal, Graph, PowerShell oder eine beliebige andere Methode\) und den Benutzer wieder in den lokalen AD DS zurückzuschreiben. Um das Feature zu aktivieren, wählen Sie auf der Seite "Optionale Features" die Option "Benutzerrückschreiben" aus. Daraufhin wird Ihnen der Speicherort angezeigt, an dem diese Benutzer erstellt werden sollen. Bei der Standardkonfiguration werden alle Benutzern am selben Speicherort in AD DS erstellt.
+Benutzerrückschreiben ermöglicht es Ihnen, einen Benutzer in Azure AD auszuwählen (über das Portal, Graph, PowerShell oder eine beliebige andere Methode) und den Benutzer wieder in den lokalen AD DS zurückzuschreiben. Um das Feature zu aktivieren, wählen Sie auf der Seite "Optionale Features" die Option "Benutzerrückschreiben" aus. Daraufhin wird Ihnen der Speicherort angezeigt, an dem diese Benutzer erstellt werden sollen. Bei der Standardkonfiguration werden alle Benutzern am selben Speicherort in AD DS erstellt.
 
 ![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/writeback2.png)
 
@@ -145,7 +149,7 @@ Die Benutzer werden mit einem zufälligen Kennwort erstellt. Daher müssen Sie d
 
 >[AZURE.NOTE]Die Kennwortsynchronisierung und das Rückschreiben von Kennwörtern sind nicht kompatibel mit diesem Vorschaufeature.
 
-## Gruppenrückschreiben \(Vorschau\)
+## Gruppenrückschreiben (Vorschau)
 
 > [AZURE.WARNING]Wenn derzeit DirSync oder Azure AD Sync aktiv sind, aktivieren Sie keine der Features zum Rückschreiben in Azure AD Connect.
 
@@ -159,7 +163,7 @@ Mit der Option zum Gruppenrückschreiben, die unter den optionalen Features aufg
 ![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/myapps.png)
 
 
-Diese Gruppe wird als Verteilergruppe im lokalen AD DS dargestellt. Auf dem lokalen Exchange-Server muss das kumulative Update 8 für Exchange Server 2013 \(vom März 2015\) installiert sein, damit dieser neue Gruppentyp erkannt wird.
+Diese Gruppe wird als Verteilergruppe im lokalen AD DS dargestellt. Auf dem lokalen Exchange-Server muss das kumulative Update 8 für Exchange Server 2013 (vom März 2015) installiert sein, damit dieser neue Gruppentyp erkannt wird.
 
 **Hinweis**
 
@@ -169,7 +173,7 @@ Diese Gruppe wird als Verteilergruppe im lokalen AD DS dargestellt. Auf dem loka
 
 Weitere Informationen finden Sie [hier](http://blogs.office.com/2014/09/25/delivering-first-chapter-groups-office-365/).
 
-## Geräterückschreiben \(Vorschau\)
+## Geräterückschreiben (Vorschau)
 
 > [AZURE.WARNING]Wenn derzeit DirSync oder Azure AD Sync aktiv ist, aktivieren Sie keine der Features zum Rückschreiben in Azure AD Connect.
 
@@ -209,7 +213,7 @@ Das Konfigurieren von AD FS mit Azure AD Connect ist mit nur wenigen Mausklicks 
 
 - Ein Windows Server 2012 R2-Server für den Verbundserver mit aktivierter Remoteverwaltung
 - Ein Windows Server 2012 R2-Server für den Webanwendungsproxy-Server mit aktivierter Remoteverwaltung
-- Ein SSL-Zertifikat für den Verbunddienstnamen, den Sie verwenden möchten \(z. B. "adfs.contoso.com"\)
+- Ein SSL-Zertifikat für den Verbunddienstnamen, den Sie verwenden möchten (z. B. "adfs.contoso.com")
 
 ### Erstellen einer neuen AD FS-Farm oder Verwenden einer vorhandenen AD FS-Farm
 Sie können eine vorhandene AD FS-Farm oder eine neue AD FS-Farm erstellen. Wenn Sie eine neue Farm erstellen, müssen Sie ein SSL-Zertifikat bereitstellen. Wenn das SSL-Zertifikat kennwortgeschützt ist, werden Sie aufgefordert, das Kennwort einzugeben.
@@ -230,7 +234,7 @@ An dieser Stelle geben Sie die spezifischen Server ein, auf denen Sie AD FS inst
 
  
 ### Angeben von Webanwendungsproxy-Servern
-An dieser Stelle geben Sie die spezifischen Server ein, die Sie als Webanwendungsproxy-Server verwenden möchten. Der Webanwendungsproxy-Server wird in Ihrer DMZ bereitgestellt \(Extranetzugriff\) und unterstützt Authentifizierungsanforderungen aus dem Extranet. Sie können je nach Ihren Kapazitätsplanungsanforderungen einen oder mehrere Server hinzufügen. Es empfiehlt sich, einen einzelnen Webanwendungs-Proxyserver für Test- und Pilotumgebungen zu installieren und zusätzliche Server bereitzustellen, indem Sie Azure AD Connect öffnen und den Webanwendungsproxy auf zusätzlichen Servern bereitstellen. Erfahrungsgemäß sollte eine entsprechende Anzahl an Proxyservern bereitgestellt werden, um die Authentifizierung für den Internetzugriff zu bewältigen.
+An dieser Stelle geben Sie die spezifischen Server ein, die Sie als Webanwendungsproxy-Server verwenden möchten. Der Webanwendungsproxy-Server wird in Ihrer DMZ bereitgestellt (Extranetzugriff) und unterstützt Authentifizierungsanforderungen aus dem Extranet. Sie können je nach Ihren Kapazitätsplanungsanforderungen einen oder mehrere Server hinzufügen. Es empfiehlt sich, einen einzelnen Webanwendungs-Proxyserver für Test- und Pilotumgebungen zu installieren und zusätzliche Server bereitzustellen, indem Sie Azure AD Connect öffnen und den Webanwendungsproxy auf zusätzlichen Servern bereitstellen. Erfahrungsgemäß sollte eine entsprechende Anzahl an Proxyservern bereitgestellt werden, um die Authentifizierung für den Internetzugriff zu bewältigen.
 
 > [AZURE.NOTE]<li>Wenn es sich bei dem Konto, das Sie für die Installation von Azure AD Connect verwenden, nicht um ein lokales Administratorkonto für die AD FS-Server handelt, werden Sie aufgefordert, die Anmeldeinformationen für ein Konto einzugeben, das über ausreichende Berechtigungen verfügt.</li><li>Stellen Sie sicher, dass eine HTTP/HTTPS-Verbindung zwischen dem Azure AD Connect-Server und dem Webanwendungsproxy-Server besteht, bevor Sie diesen Schritt durchführen.</li><li> Stellen Sie darüber hinaus sicher, dass eine HTTP/HTTPS-Verbindung zwischen dem Webanwendungsserver und dem AD FS-Server besteht, um Authentifizierungsanforderungen zu unterstützen.</li>
 
@@ -264,9 +268,9 @@ Diese Konfiguration wird verwendet, um die Verbundbeziehung zwischen AD FS und A
 ### Zusätzliche Aufgaben zum Abschließen der Verbundkonfiguration
 Sie müssen die folgenden zusätzlichen Aufgaben durchführen, um die Verbundkonfiguration abzuschließen.
 
-- Richten Sie DNS-Einträge für den AD FS-Verbunddienstnamen \(z. B. "adfs.contoso.com"\) für das Intranet \(Ihr interner DNS-Server\) sowie für das Extranet \(öffentlicher DNS durch Ihre Domänenregistrierung\) ein. Stellen Sie sicher, dass Sie für den Intranet-DNS-Eintrag A-Einträge verwenden und keine CNAME-Datensätze. Dies ist notwendig, damit die Windows-Authentifizierung ordnungsgemäß von dem mit der Domäne verknüpften Computer funktioniert.
-- Wenn Sie mehr als einen AD FS-Server oder Webanwendungsproxy-Server bereitstellen, vergewissern Sie sich, dass Sie Ihren Load Balancer konfiguriert haben und dass die DNS-Einträge für den AD FS-Verbunddienstnamen \(z. B. "adfs.contoso.com"\) auf den Load Balancer verweisen.
-- Damit die integrierte Windows-Authentifizierung für Browser-Anwendungen mithilfe von Internet Explorer in Ihrem Intranet genutzt werden kann, müssen Sie sicherstellen, dass der AD FS-Verbunddienstname \(z. B. "adfs.contoso.com"\) der Intranetzone in Internet Explorer hinzugefügt wurde. Diese kann über die Gruppenrichtlinie gesteuert und für alle Ihre mit der Domäne verknüpften Computer bereitgestellt werden. 
+- Richten Sie DNS-Einträge für den AD FS-Verbunddienstnamen (z. B. "adfs.contoso.com") für das Intranet (Ihr interner DNS-Server) sowie für das Extranet (öffentlicher DNS durch Ihre Domänenregistrierung) ein. Stellen Sie sicher, dass Sie für den Intranet-DNS-Eintrag A-Einträge verwenden und keine CNAME-Datensätze. Dies ist notwendig, damit die Windows-Authentifizierung ordnungsgemäß von dem mit der Domäne verknüpften Computer funktioniert.
+- Wenn Sie mehr als einen AD FS-Server oder Webanwendungsproxy-Server bereitstellen, vergewissern Sie sich, dass Sie Ihren Load Balancer konfiguriert haben und dass die DNS-Einträge für den AD FS-Verbunddienstnamen (z. B. "adfs.contoso.com") auf den Load Balancer verweisen.
+- Damit die integrierte Windows-Authentifizierung für Browser-Anwendungen mithilfe von Internet Explorer in Ihrem Intranet genutzt werden kann, müssen Sie sicherstellen, dass der AD FS-Verbunddienstname (z. B. "adfs.contoso.com") der Intranetzone in Internet Explorer hinzugefügt wurde. Diese kann über die Gruppenrichtlinie gesteuert und für alle Ihre mit der Domäne verknüpften Computer bereitgestellt werden. 
 
 ### Überprüfen der Verbundkonfiguration
 
@@ -286,4 +290,4 @@ Sie können die Abbildung und das Logo für Ihre AD FS-Anmeldeseiten anpassen, i
 	
 	Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"} –Illustration @{path=”c:\Contoso\illustration.png”}
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

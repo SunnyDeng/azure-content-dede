@@ -6,6 +6,7 @@
    authors="alkohli"
    manager="carolz"
    editor="tysonn" />
+
 <tags 
    ms.service="storsimple"
    ms.devlang="na"
@@ -14,6 +15,7 @@
    ms.workload="na"
    ms.date="07/30/2015"
    ms.author="alkohli" />
+
 
 # StorSimple-Gerätemodi
 
@@ -38,9 +40,9 @@ Dies ist der normale Betriebsmodus für ein vollständig konfiguriertes StorSimp
 
 ### Wartungsmodus
 
-Manchmal muss das StorSimple-Gerät in den Wartungsmodus versetzt werden. In diesem Modus können Sie Wartungsarbeiten auf dem Gerät ausführen und Updates installieren, die den Betrieb unterbrechen, wie etwa Updates für Festplattenfirmware und USM-Firmware \(dies können sowohl reguläre als auch den Betrieb unterbrechende Updates sein\).
+Manchmal muss das StorSimple-Gerät in den Wartungsmodus versetzt werden. In diesem Modus können Sie Wartungsarbeiten auf dem Gerät ausführen und Updates installieren, die den Betrieb unterbrechen, wie etwa Updates für Festplattenfirmware.
 
-Sie können das System nur über Windows PowerShell für StorSimple in den Wartungsmodus versetzen. Alle E/A-Anforderungen werden in diesem Modus angehalten. Auch werden die Dienste wie der NVRAM- \(Non-Volatile Random Access Memory\) oder der Clusterdienst beendet. Beide Controller werden neu gestartet, wenn Sie diesen Modus starten oder beenden. Wenn Sie den Wartungsmodus beenden, werden alle Dienste fortgesetzt und sollten fehlerfrei funktionieren. Dies kann einige Minuten dauern.
+Sie können das System nur über Windows PowerShell für StorSimple in den Wartungsmodus versetzen. Alle E/A-Anforderungen werden in diesem Modus angehalten. Auch werden die Dienste wie der NVRAM- (Non-Volatile Random Access Memory) oder der Clusterdienst beendet. Beide Controller werden neu gestartet, wenn Sie diesen Modus starten oder beenden. Wenn Sie den Wartungsmodus beenden, werden alle Dienste fortgesetzt und sollten fehlerfrei funktionieren. Dies kann einige Minuten dauern.
 
 >[AZURE.NOTE]**Der Wartungsmodus wird nur auf einem einwandfrei funktionierenden Gerät unterstützt. Auf einem Gerät, auf dem ein Controller oder beide Controller nicht funktionieren, wird der Modus nicht unterstützt.**</br>
 
@@ -52,7 +54,7 @@ Wenn Ihr System in den Wiederherstellungsmodus wechselt, sollten Sie sich mit de
 
 >[AZURE.NOTE]**Sie können das Gerät nicht in den Wiederherstellungsmodus versetzen. Wenn sich das Gerät in einem fehlerhaften Zustand befindet, versucht der Wiederherstellungsmodus das Gerät in einen Zustand zu versetzen, in dem Supportmitarbeiter von Microsoft das Gerät untersuchen können.**
 
-## Ermitteln der StorSimple-Gerätemodi
+## Ermitteln des StorSimple-Gerätemodus
 
 Um den Gerätemodus zu ermitteln, führen Sie die folgenden Schritte aus:
 
@@ -61,15 +63,15 @@ Um den Gerätemodus zu ermitteln, führen Sie die folgenden Schritte aus:
 
 ## Ändern des StorSimple-Gerätemodus 
 
-Sie können das StorSimple-Gerät \(vom normalen Modus\) in den Wartungsmodus versetzen, um Wartungsaufgaben auszuführen oder Wartungsmodus-Updates zu installieren. Führen Sie die folgenden Schritte aus, um den Wartungsmodus zu starten oder zu beenden.
+Sie können das StorSimple-Gerät (vom normalen Modus) in den Wartungsmodus versetzen, um Wartungsaufgaben auszuführen oder Wartungsmodus-Updates zu installieren. Führen Sie die folgenden Schritte aus, um den Wartungsmodus zu starten oder zu beenden.
 
-> [AZURE.IMPORTANT]Vergewissern Sie sich vor dem Starten des Wartungsmodus, dass beide Gerätecontroller fehlerfrei funktionieren, indem Sie den Hardwarestatus auf der Seite „Wartung“ im Verwaltungsportal überprüfen. Wenn der Controller nicht fehlerfrei funktioniert, wenden Sie sich für die nächsten Schritte an Microsoft-Support. Wenn Sie weitere Informationen benötigen, rufen Sie [Microsoft-Support kontaktieren](storsimple-contact-microsoft-support.md) auf.
+> [AZURE.IMPORTANT]Vergewissern Sie sich vor dem Starten des Wartungsmodus, dass beide Gerätecontroller fehlerfrei funktionieren, indem Sie den **Hardwarestatus** auf der Seite **Wartung** im Verwaltungsportal überprüfen. Wenn der Controller nicht fehlerfrei funktioniert, wenden Sie sich für die nächsten Schritte an Microsoft-Support. Für weitere Informationen [kontaktieren Sie den Microsoft-Support](storsimple-contact-microsoft-support.md).
 
 #### So wechseln Sie in den Wartungsmodus
 
 1. Melden Sie sich bei der seriellen Gerätekonsole an, indem Sie die Schritte unter [Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole](https://msdn.microsoft.com/library/azure/dn757808.aspx) ausführen.
 
-1. Wählen Sie im Menü der seriellen Konsole Option 1 aus, d. h. die** Anmeldung mit Vollzugriff**. Geben Sie bei entsprechender Aufforderung das **Geräteadministratorkennwort** ein. Das Standardkennwort lautet `Password1`.
+1. Wählen Sie im Menü der seriellen Konsole Option 1 aus, d. h. die** Anmeldung mit Vollzugriff**. Geben Sie das **Geräteadministratorkennwort** an, wenn Sie dazu aufgefordert werden. Das Standardkennwort lautet `Password1`.
 
 1. Geben Sie an der Eingabeaufforderung Folgendes ein:
 
@@ -97,4 +99,4 @@ Sie können das StorSimple-Gerät \(vom normalen Modus\) in den Wartungsmodus ve
 
 Hier erfahren Sie, wie Sie auf Ihrem StorSimple-Gerät [Updates im normalen Modus und im Wartungsmodus installieren](storsimple-update-device.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -80,7 +80,7 @@ Cachemetriken werden in verschiedenen Berichtsintervallen gemeldet, einschließl
 | set-Vorgänge | Die Anzahl von set-Vorgängen im Cache während des angegebenen Berichtsintervalls. Dieser Wert ist die Summe der folgenden Werte aus dem Redis-INFO-Befehl "all": `cmdstat_set`, `cmdstat_hset`, `cmdstat_hmset`, `cmdstat_hsetnx`, `cmdstat_lset`, `cmdstat_mset`, `cmdstat_msetnx`, `cmdstat_setbit`, `cmdstat_setex`, `cmdstat_setrange` und `cmdstat_setnx`. |
 | Vorgänge gesamt | Die Gesamtzahl aller Befehle, die während des angegebenen Berichtsintervalls vom Cacheserver verarbeitet wurden. Dieser Wert ist dem Redis-INFO-Befehl `total_commands_processed` zugeordnet. Beachten Sie: Wenn Azure Redis Cache ausschließlich für pub/sub-Vorgänge verwendet wird, sind keine Metriken für `Cache Hits`, `Cache Misses`, `Gets` oder `Sets` vorhanden. Stattdessen sind `Total Operations`-Metriken vorhanden, die die Cachenutzung für pub/sub-Vorgänge widerspiegeln. |
 | Verwendeter Arbeitsspeicher | Die Menge an verwendetem Cachearbeitsspeicher in MB während des angegebenen Berichtsintervalls. Dieser Wert ist dem Redis-INFO-Befehl `used_memory` zugeordnet. |
-| CPU | Die CPU-Auslastung des Azure Redis Cache-Servers in Prozent während des angegebenen Berichtsintervalls. Dieser Wert ist dem Betriebssystem-Leistungsindikator `\Processor(_Total)% Processor Time` zugeordnet, |
+| CPU | Die CPU-Auslastung des Azure Redis Cache-Servers in Prozent während des angegebenen Berichtsintervalls. Dieser Wert ist dem Betriebssystem-Leistungsindikator `\Processor(_Total)\% Processor Time` zugeordnet, |
 | Cache-Lesevorgänge | Die Menge an Daten in KB/s, die während des angegebenen Berichtsintervalls im Cache gelesen wurden. Dieser Wert wird von den Netzwerkschnittstellenkarten für die virtuelle Maschine abgeleitet, die den Cache hostet, und ist nicht Redis-spezifisch. |
 | Cache-Schreibvorgänge | Die Menge an Daten in KB/s, die während des angegebenen Berichtsintervalls in den Cache geschrieben wurden. Dieser Wert wird von den Netzwerkschnittstellenkarten für die virtuelle Maschine abgeleitet, die den Cache hostet, und ist nicht Redis-spezifisch. |
 
@@ -221,4 +221,4 @@ Weitere Informationen zu Warnungen in Azure finden Sie unter [Empfangen von Warn
 
 [redis-cache-add-alert]: ./media/cache-how-to-monitor/redis-cache-add-alert.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

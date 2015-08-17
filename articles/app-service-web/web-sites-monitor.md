@@ -42,7 +42,7 @@ Im Web-App-Modus **Standard** können Sie basierend auf den Web-App-Überwachung
 
 Web-Apps können im [Azure-Portal](https://manage.windowsazure.com) auf der Verwaltungsseite **Skalierung** der Web-App zur Ausführung entweder im Modus **Shared** oder **Standard** konfiguriert werden. Jedes Azure-Abonnement hat Zugriff auf einen Ressourcenpool, der für die Ausführung von bis zu 100 Web-Apps pro Region im Modus **Freigegeben** bereitgestellt wird. Der für jedes Web-App-Abonnement für diesen Zweck bereitgestellte Ressourcenpool wird in derselben geografischen Region auch von anderen Web-Apps genutzt, die im Modus **Freigegeben** konfiguriert sind. Da diese Ressourcen von anderen Web-Apps ebenfalls genutzt werden, verfügen alle Abonnements über begrenzte Ressourcennutzung. Die Höchstgrenzen für die Ressourcennutzung von Abonnements werden als Nutzungskontingente bezeichnet und sind im Abschnitt "Nutzungsübersicht" der Verwaltungsseite **Dashboard** jeder Web-App aufgelistet.
 
->[AZURE.NOTE]Wenn eine Web-App für die Ausführung im Modus **Standard** konfiguriert ist, werden ihr dedizierte Ressourcen entsprechend der Größe **Klein** \(Standard\), **Mittel** oder **Groß** des virtuellen Computers zugewiesen, die in der Tabelle unter [Größen virtueller Computer und Cloud-Dienste für Azure][vmsizes] aufgelistet sind. Es gibt kein Limit, wie viele Ressourcen ein Abonnement zum Ausführen von Web-Apps im **Standard**-Modus verwenden kann. Die Anzahl der im **Standard**-Modus erstellten Web-Apps pro Region ist jedoch auf 500 begrenzt.
+>[AZURE.NOTE]Wenn eine Web-App für die Ausführung im Modus **Standard** konfiguriert ist, werden ihr dedizierte Ressourcen entsprechend der Größe **Klein** (Standard), **Mittel** oder **Groß** des virtuellen Computers zugewiesen, die in der Tabelle unter [Größen virtueller Computer und Cloud-Dienste für Azure][vmsizes] aufgelistet sind. Es gibt kein Limit, wie viele Ressourcen ein Abonnement zum Ausführen von Web-Apps im **Standard**-Modus verwenden kann. Die Anzahl der im **Standard**-Modus erstellten Web-Apps pro Region ist jedoch auf 500 begrenzt.
 
 ### Vorgehensweise: Anzeigen der Nutzungskontingente für Web-Apps, die für den Modus "Freigegeben" konfiguriert sind ###
 Um zu bestimmen, in welchem Umfang eine Web-App sich auf die Ressourcennutzungskontingente auswirkt, führen Sie folgende Schritte aus:
@@ -59,7 +59,7 @@ Um zu bestimmen, in welchem Umfang eine Web-App sich auf die Ressourcennutzungsk
 
 Kontingente sind keine Angelegenheit von Leistung oder Kosten, sondern stellen die Art und Weise da, wie Azure die Ressourcennutzung in einem Umfeld mit vielen Mandanten handhabt. So wird die übermäßige Nutzung von Ressourcen durch einzelne Mandanten unterbunden. Weil das Überschreiten Ihres Kontingents Ausfallzeiten oder eingeschränkte Funktionalität Ihrer Web-App bedeutet, sollten Sie Folgendes berücksichtigen, damit Ihre Website funktionsfähig bleibt, wenn Sie dabei sind, das Kontingent auszuschöpfen:
 
-- Verschieben Sie die Web-App\(s\) in einen größeren App Service-Plan und nutzen Sie das höhere Kontingent dort. Das einzige Kontingent bei den Plänen **Basic** und **Standard** gilt für den Dateisystemspeicher.
+- Verschieben Sie die Web-App(s) in einen größeren App Service-Plan und nutzen Sie das höhere Kontingent dort. Das einzige Kontingent bei den Plänen **Basic** und **Standard** gilt für den Dateisystemspeicher.
 - Je mehr die Anzahl der Instanzen einer Web-App wächst, desto wahrscheinlicher werden die gemeinsam genutzten Ressourcenkontingente ausgeschöpft. Wenn machbar, können Sie zusätzliche Instanzen einer Web-App zurückfahren, wenn eine Überschreitung der gemeinsam genutzten Ressourcenkontingente droht.
 
 ##<a name="howtoconfigdiagnostics"></a>Vorgehensweise: Konfigurieren der Diagnose und Herunterladen von Protokollen für eine Web-App
@@ -72,17 +72,17 @@ Der Abschnitt **Anwendungsdiagnose** auf der Verwaltungsseite **Konfigurieren** 
 
 Sie können die folgenden Anwendungsdiagnose-Optionen aktivieren oder deaktivieren:
 
-- **Anwendungsprotokollierung \(Dateisystem\)** - Aktiviert die Protokollierung der von der Anwendung erzeugten Informationen. Das Feld **Protokolliergrad** bestimmt, ob Fehler, Warnmeldungen oder Informationen protokolliert werden. Sie können auch "Verbose" auswählen, um alle von der Anwendung erzeugten Informationen zu protokollieren.
+- **Anwendungsprotokollierung (Dateisystem)** - Aktiviert die Protokollierung der von der Anwendung erzeugten Informationen. Das Feld **Protokolliergrad** bestimmt, ob Fehler, Warnmeldungen oder Informationen protokolliert werden. Sie können auch "Verbose" auswählen, um alle von der Anwendung erzeugten Informationen zu protokollieren.
 
 	Die von dieser Einstellung erzeugten Protokolle werden im Dateisystem der Web-App gespeichert und können mithilfe der unter **Herunterladen von Protokolldateien für eine Website** beschriebenen Schritte heruntergeladen werden.
 
-- **Application Logging \(Table Storage\)** - Aktiviert die Protokollierung der von der Anwendung erzeugten Informationen, ähnlich wie die Option "Application Logging \(File System\)". Die Protokollinformationen werden jedoch in einer Tabelle im Azure-Speicherkonto gespeichert.
+- **Application Logging (Table Storage)** - Aktiviert die Protokollierung der von der Anwendung erzeugten Informationen, ähnlich wie die Option "Application Logging (File System)". Die Protokollinformationen werden jedoch in einer Tabelle im Azure-Speicherkonto gespeichert.
 
 	Zur Angabe des Azure-Speicherkontos und der Tabelle aktivieren Sie **Ein**, wählen **Protokolliergrad** aus und legen **Tabellenspeicher verwalten** fest. Geben Sie die zu verwendende Tabelle und das Speicherkonto an, oder erstellen Sie eine neue Tabelle.
 
 	Die in der Tabelle gespeicherten Protokollinformationen können über einen Azure-Speicherclient abgerufen werden.
 
-- **Anwendungsprotokollierung \(BLOB-Speicher\)** - Aktiviert die Protokollierung der von der Anwendung erzeugten Informationen, ähnlich wie die Option "Anwendungsprotokollierung \(Tabellenspeicher\)". Die Protokollinformationen werden jedoch in einem Blob im Azure-Speicherkonto gespeichert.
+- **Anwendungsprotokollierung (BLOB-Speicher)** - Aktiviert die Protokollierung der von der Anwendung erzeugten Informationen, ähnlich wie die Option "Anwendungsprotokollierung (Tabellenspeicher)". Die Protokollinformationen werden jedoch in einem Blob im Azure-Speicherkonto gespeichert.
 
 	Zur Angabe des Azure-Speicherkontos und des Blobs aktivieren Sie **Ein**, wählen **Protokolliergrad** aus und legen **BLOB-Speicher verwalten** fest. Geben Sie das Speicherkonto, den Blob-Container und den zu verwendenden Blob-Namen an, oder erstellen Sie einen neuen Container mit Blob.
 
@@ -92,7 +92,7 @@ Weitere Informationen zu Azure-Speicherkonten finden Sie unter [Verwalten von Sp
 
 Da die Anwendungsprotokollierung im Speicher die Verwendung eines Speicherclients zum Anzeigen der Protokolldaten erfordert, ist es hilfreich, wenn Sie eine Anwendung oder einen Dienst verwenden, die bzw. der Daten direkt aus der Azure-Tabelle oder dem Blob-Speicher lesen und verarbeiten kann. Bei der Protokollierung im Dateisystem werden Dateien erzeugt, die über FTP oder andere Dienstprogramme auf Ihren lokalen Computer heruntergeladen werden können, wie später in diesem Abschnitt beschrieben wird.
 
-**Anwendungsdiagnose \(Dateisystem\)**, **Anwendungsdiagnose \(Tabellenspeicher\)** und **Anwendungsdiagnose \(BLOB-Speicher\)** können parallel aktiviert werden und über individuelle Protokolliergrade aufweisen. Sie können beispielsweise Fehler und Warnmeldungen als langfristige Protokollierungslösung im Speicher protokollieren, während die Dateisystemprotokollierung nach der Instrumentierung des Anwendungscodes zum Zweck der Fehlerbehebung ausführlich erfolgt.
+**Anwendungsdiagnose (Dateisystem)**, **Anwendungsdiagnose (Tabellenspeicher)** und **Anwendungsdiagnose (BLOB-Speicher)** können parallel aktiviert werden und über individuelle Protokolliergrade aufweisen. Sie können beispielsweise Fehler und Warnmeldungen als langfristige Protokollierungslösung im Speicher protokollieren, während die Dateisystemprotokollierung nach der Instrumentierung des Anwendungscodes zum Zweck der Fehlerbehebung ausführlich erfolgt.
 
 Diagnosen können auch über die Azure PowerShell mit dem Cmdlet **Set-AzureWebsite** aktiviert werden. Wenn Sie Azure PowerShell nicht installiert haben oder nicht zur Verwendung des Azure-Abonnements konfiguriert haben, finden Sie weitere Informationen unter [Verwenden von Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
 
@@ -115,7 +115,7 @@ Der Abschnitt **Website-Diagnose** der Verwaltungsseite **Konfigurieren** steuer
 
  Standardmäßig werden Webserverprotokolle nie gelöscht. Wenn Sie einen Zeitraum angeben möchten, nach dem Protokolle automatisch gelöscht werden, wählen Sie **Aufbewahrung festlegen** aus, und geben Sie unter **Aufbewahrungsdauer** die Anzahl der Tage ein, für die Protokolle aufbewahrt werden sollen. Diese Einstellung ist für die Azure Speicher- oder Dateisystem-Option verfügbar.
 
-- **Detaillierte Fehlermeldungen** - Aktiviert die detaillierte Fehlerprotokollierung, um zusätzliche Informationen über HTTP-Fehler zu protokollieren \(höhere Statuscodes als 400\).
+- **Detaillierte Fehlermeldungen** - Aktiviert die detaillierte Fehlerprotokollierung, um zusätzliche Informationen über HTTP-Fehler zu protokollieren (höhere Statuscodes als 400).
 
 - **Ablaufverfolgung für Anforderungsfehler** - Aktiviert die Verfolgung fehlgeschlagener Anforderungen, um Informationen zu fehlgeschlagenen Clientanforderungen zu erfassen, wie HTTP-400-Statuscodes. Die Verfolgung fehlgeschlagener Anforderungen erzeugt ein XML-Dokument, in dem man verfolgen kann, welche Module die Anforderung in IIS durchlaufen hat, die vom Modul zurückgegebenen Details sowie den Zeitpunkt des Modulaufrufs. Diese Informationen können verwendet werden, um zu isolieren, in welcher Komponente der Fehler aufgetreten ist.
 
@@ -136,7 +136,7 @@ Die Diagnose kann weiter angepasst werden, indem Sie Schlüssel/Wert-Paare im Ab
 
 **DIAGNOSTICS\_TEXTTRACEMAXBUFFERSIZEBYTES**
 
-- Die maximale Puffergröße für das Erfassen von Anwendungsprotokollen. Die Informationen werden zunächst in den Puffer geschrieben, bevor sie in die Datei oder den Speicher übertragen werden. Wenn neue Informationen in den Puffer geschrieben werden, bevor dieser geleert \(übertragen\) wurde, können die zuvor erfassten Informationen verloren gehen. Falls Ihre Anwendung große Mengen von Protokollinformationen erzeugt, sollten Sie die Puffergröße erhöhen.
+- Die maximale Puffergröße für das Erfassen von Anwendungsprotokollen. Die Informationen werden zunächst in den Puffer geschrieben, bevor sie in die Datei oder den Speicher übertragen werden. Wenn neue Informationen in den Puffer geschrieben werden, bevor dieser geleert (übertragen) wurde, können die zuvor erfassten Informationen verloren gehen. Falls Ihre Anwendung große Mengen von Protokollinformationen erzeugt, sollten Sie die Puffergröße erhöhen.
 
 - Standardwert: 10 MB
 
@@ -197,13 +197,13 @@ Die Protokolldateien, die erzeugt werden, nachdem Sie Protokollierung und/oder V
 
 **Protokolldateityp: Anwendungsprotokollierung**
 
-- Verzeichnis: /LogFiles/Application/. Dieser Ordner enthält eine oder mehrere Textdateien mit Informationen, die bei der Anwendungsprotokollierung erzeugt wurden. Zu den protokollierten Informationen gehören Datum und Zeit, Prozess-ID \(PID\) der Anwendung sowie der von der Anwendungsinstrumentierung erzeugte Wert.
+- Verzeichnis: /LogFiles/Application/. Dieser Ordner enthält eine oder mehrere Textdateien mit Informationen, die bei der Anwendungsprotokollierung erzeugt wurden. Zu den protokollierten Informationen gehören Datum und Zeit, Prozess-ID (PID) der Anwendung sowie der von der Anwendungsinstrumentierung erzeugte Wert.
 
 - Lesen Sie Dateien mit: Einem Texteditor oder Parser, der die von der Anwendung erzeugten Werte versteht
 
 **Protokolldateityp: Ablaufverfolgung für Anforderungsfehler**
 
-- Speicherort: /LogFiles/W3SVC\#\#\#\#\#\#\#\#\#/. Dieser Ordner enthält eine XSL-Datei und eine oder mehrere XML-Dateien. Vergewissern Sie sich, dass Sie die XSL-Datei in dasselbe Verzeichnis wie die XML-Datei\(en\) herunterladen, da die XSL-Datei die Funktionalität zum Formatieren und Filtern des Inhalts der XML-Datei\(en\) zur Anzeige in Internet Explorer zur Verfügung stellt.
+- Speicherort: /LogFiles/W3SVC#########/. Dieser Ordner enthält eine XSL-Datei und eine oder mehrere XML-Dateien. Vergewissern Sie sich, dass Sie die XSL-Datei in dasselbe Verzeichnis wie die XML-Datei(en) herunterladen, da die XSL-Datei die Funktionalität zum Formatieren und Filtern des Inhalts der XML-Datei(en) zur Anzeige in Internet Explorer zur Verfügung stellt.
 
 - Lesen Sie Dateien mit: Internet Explorer
 
@@ -256,7 +256,7 @@ Nachdem Sie die Endpunktüberwachung konfiguriert haben, können Sie Details zu 
 9.	Klicken Sie in der Diensteleiste links auf **Verwaltungsdienste**.
 10.	Klicken Sie unten auf **Regel hinzufügen**.
 11.	Wählen Sie in **Diensttyp** die Option **Web-App** aus und dann die Web-App, für die Sie zuvor die Endpunktüberwachung konfiguriert haben. Klicken Sie auf **Weiter**.
-12.	In **Metrik** können Sie jetzt weitere Kennzahlen für den von Ihnen konfigurierten Endpunkt auswählen. Beispiel: **Reaktionszeit \(Homepage/USA: IL-Chicago\)**. Wählen Sie die Metrik "Reaktionszeit", und geben Sie in **Schwellenwert** den Wert "3" ein. Dadurch werden 3 Sekunden als Grenzwert festlegt.
+12.	In **Metrik** können Sie jetzt weitere Kennzahlen für den von Ihnen konfigurierten Endpunkt auswählen. Beispiel: **Reaktionszeit (Homepage/USA: IL-Chicago)**. Wählen Sie die Metrik "Reaktionszeit", und geben Sie in **Schwellenwert** den Wert "3" ein. Dadurch werden 3 Sekunden als Grenzwert festlegt.
 13.	Wählen Sie**E-Mail an Dienstadministrator und Co-Administratoren senden**. Klicken Sie auf **Fertig stellen**.
 
 	Azure überwacht nun aktiv den Endpunkt und sendet eine E-Mail-Mitteilung, wenn die Antwortzeit 3 Sekunden überschreitet.
@@ -277,4 +277,4 @@ Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folge
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

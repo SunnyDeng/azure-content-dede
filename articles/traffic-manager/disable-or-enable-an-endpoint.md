@@ -50,4 +50,4 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/?LinkId=313584)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

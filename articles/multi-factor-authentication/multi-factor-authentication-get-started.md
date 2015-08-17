@@ -12,7 +12,7 @@
 	ms.workload="identity" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
+	ms.topic="get-started-article" 
 	ms.date="06/02/2015" 
 	ms.author="billmath"/>
 
@@ -33,11 +33,11 @@ Um die richtige Multi-Factor Authentication-Lösung zu ermitteln, müssen Sie zu
 
 Was möchte ich sichern?| Multi-Factor Authentication in der Cloud|Multi-Factor Authentication-Server 
 ------------- | :-------------: | :-------------: |
-Erstanbieter-Microsoft-Apps|\* |\* |
-SaaS-Apps im Anwendungskatalog|\* |\* |
-Über den Azure AD-App-Proxy veröffentlichte IIS-Anwendungen|\* |\* |
-Nicht über den Azure AD-App-Proxy veröffentlichte IIS-Anwendungen | |\* |
-Remotezugriff, z. B. VPN, RDG| |\* |
+Erstanbieter-Microsoft-Apps|* |* |
+SaaS-Apps im Anwendungskatalog|* |* |
+Über den Azure AD-App-Proxy veröffentlichte IIS-Anwendungen|* |* |
+Nicht über den Azure AD-App-Proxy veröffentlichte IIS-Anwendungen | |* |
+Remotezugriff, z. B. VPN, RDG| |* |
 
 
 
@@ -74,7 +74,7 @@ Einmalumgehung | ● | ●
 Benutzerdefinierte Begrüßungen für Telefonanrufe | ● | ● 
 Benutzerdefinierte Anrufer-ID für Telefonanrufe | ● | ● 
 Vertrauenswürdige IP-Adressen | ● | ● 
-Aussetzen der Multi-Factor Authentication für gespeicherte Geräte \(öffentliche Vorschau\) | ● |  
+Aussetzen der Multi-Factor Authentication für gespeicherte Geräte (öffentliche Vorschau) | ● |  
 Bedingter Zugriff | ● | ● 
 Cache | ● | ● 
 
@@ -87,4 +87,4 @@ Sie haben nun ermittelt, ob Sie Multi-Factor Authentication in der Cloud oder de
 * [Für Benutzer](multi-factor-authentication-end-user.md)
 * [Azure Multi-Factor Authentication bei MSDN](https://msdn.microsoft.com/library/azure/dn249471.aspx) 
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

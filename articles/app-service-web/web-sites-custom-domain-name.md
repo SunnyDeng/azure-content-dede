@@ -44,17 +44,17 @@ In diesem grundlegenden Entwurf sind eine Sonderfälle zu berücksichtigen:
 
 - Zuordnen Ihrer Stammdomäne. Die Stammdomäne ist die Domäne, die Sie bei der Domänenregistrierungsstelle reserviert haben. Beispiel: **contoso.com**.
 - Zuordnen einer Unterdomäne. Beispiel: **blogs.contoso.com**. Sie können verschiedenen Web-Apps verschiedene Unterdomänen zuordnen.
-- Zuordnen eines Platzhalters. Beispiel: **\*.contoso.com**. Ein Platzhaltereintrag gilt für alle Unterdomänen der Domäne.
+- Zuordnen eines Platzhalters. Beispiel: ***.contoso.com**. Ein Platzhaltereintrag gilt für alle Unterdomänen der Domäne.
 
 [AZURE.INCLUDE [Modi](../../includes/custom-dns-web-site-modes.md)]
 
 
 ## DNS-Eintragstypen
 
-Das Domain Name System \(DNS\) verwendet Einträge für die Zuordnung von Domänennamen und IP-Adressen. Es gibt mehrere Typen von DNS-Einträgen. Für Web-Apps erstellen Sie entweder einen *A*-Eintrag oder einen *CNAME*-Eintrag.
+Das Domain Name System (DNS) verwendet Einträge für die Zuordnung von Domänennamen und IP-Adressen. Es gibt mehrere Typen von DNS-Einträgen. Für Web-Apps erstellen Sie entweder einen *A*-Eintrag oder einen *CNAME*-Eintrag.
 
-- Ein A-Eintrag **\(Adresse\)** ordnet einer IP-Adresse einen Domänennamen zu.
-- Ein **CNAME**-Eintrag \(kanonischer Name\) nimmt eine Zuordnung zwischen zwei Domänennamen vor. DNS verwendet den zweiten Namen für die Suche nach der Adresse. Die Benutzer sehen dabei immer noch den ersten Domänennamen in ihrem Browser. Beispielsweise können Sie eine Zuordnung zwischen "contoso.com" und *&lt;IhreWebApp&gt;*.azurewebsites.net vornehmen.
+- Ein A-Eintrag **(Adresse)** ordnet einer IP-Adresse einen Domänennamen zu.
+- Ein **CNAME**-Eintrag (kanonischer Name) nimmt eine Zuordnung zwischen zwei Domänennamen vor. DNS verwendet den zweiten Namen für die Suche nach der Adresse. Die Benutzer sehen dabei immer noch den ersten Domänennamen in ihrem Browser. Beispielsweise können Sie eine Zuordnung zwischen "contoso.com" und *&lt;IhreWebApp&gt;*.azurewebsites.net vornehmen.
 
 Wenn sich die IP-Adresse ändert, bleibt der CNAME-Entrag gültig, während ein A-Eintrag aktualisiert werden muss. Einige Domänenregistrierungsstellen lassen jedoch keine CNAME-Einträge für die Stammdomäne bzw. für Platzhalterdomänen zu. In diesem Fall müssen Sie einen A-Eintrag verwenden.
 
@@ -78,11 +78,11 @@ Wenn sich die IP-Adresse ändert, bleibt der CNAME-Entrag gültig, während ein 
 Melden Sie sich bei Ihrer Domänenregistrierungsstelle an, und verwenden Sie die verfügbaren Tools, um einen A-Eintrag oder einen CNAME-Eintrag zu erstellen. Die Web-Apps der einzelnen Registrierungsstellen unterscheiden sich geringfügig voneinander, folgen jedoch gemeinsamen Grundregeln.
 
 1.	Suchen Sie die Seite für die Verwaltung von DSN-Einträgen. Suchen Sie nach Links oder Bereichen der Website, die als **Domänenname**, **DNS** oder **Namenserververwaltung** bezeichnet werden. Häufig finden Sie in Ihren Kontoinformationen einen Link auf diese Seite. Suchen Sie anschließend nach einem Link, der Sie zu Ihren eigenen Domänen führt.
-2.	Wenn Sie die Verwaltungsseite finden, suchen Sie nach einen Link, über den Sie DNS-Einträge hinzufügen oder bearbeiten können. Dieser Konfigurationslink kann als **Zone file** \(Zonendatei\), **DNS Records** \(DNS-Eintrag\) oder als **Advanced** \(Erweitert\) bezeichnet werden.
+2.	Wenn Sie die Verwaltungsseite finden, suchen Sie nach einen Link, über den Sie DNS-Einträge hinzufügen oder bearbeiten können. Dieser Konfigurationslink kann als **Zone file** (Zonendatei), **DNS Records** (DNS-Eintrag) oder als **Advanced** (Erweitert) bezeichnet werden.
 
 Auf der Seite werden A-Einträge und CNAME-Einträge separat aufgeführt, oder es steht eine Dropdownliste zur Auswahl eines Eintragstyps zur Verfügung. Möglicherweise werden auch andere Namen für die Eintragstypen verwendet wie **IP-Adresseintrag** anstelle von A-Eintrag oder **Aliaseintrag** anstelle von CNAME-Eintrag. Normalerweise erstellt die Registrierungsstelle einige Einträge für Sie, sodass Einträge für die Stammdomäne oder allgemeine Unterdomänen wie **www** bereits vorhanden sein können.
 
-Wenn Sie einen Eintrag erstellen oder bearbeiten, können Sie die Felder verwenden, um Ihren Domänennamen einer IP-Adresse \(für A-Einträge\) oder einer anderen Domäne \(für CNAME-Einträge\) zuzuordnen. Bei einem CNAME-Eintrag erfolgt die Zuordnung *von* Ihrer benutzerdefinierten Domäne *zur* Unterdomäne mit dem Namen "azurewebsites.net".
+Wenn Sie einen Eintrag erstellen oder bearbeiten, können Sie die Felder verwenden, um Ihren Domänennamen einer IP-Adresse (für A-Einträge) oder einer anderen Domäne (für CNAME-Einträge) zuzuordnen. Bei einem CNAME-Eintrag erfolgt die Zuordnung *von* Ihrer benutzerdefinierten Domäne *zur* Unterdomäne mit dem Namen "azurewebsites.net".
 
 In vielen Registrierungsstellentools geben Sie einfach den Unterdomänenteil Ihrer Domäne und nicht den gesamten Domänennamen ein. Viele Tools verwenden anstelle der Stammdomäne einfach ein @-Zeichen. Beispiel:
 
@@ -112,7 +112,7 @@ Wenn der Name Ihrer benutzerdefinierten Domäne z. B. "contoso.com" lautet, wer
 >[AZURE.NOTE]Die erforderlichen Domäneneinträge für Ihre Web-App können mit Azure DNS gehostet werden. Informationen zum Konfigurieren Ihrer benutzerdefinierten Domäne sowie zum Erstellen Ihrer Einträge in Azure DNS finden Sie unter [Erstellen von benutzerdefinierten DNS-Einträgen für eine Web-App](../dns-web-sites-custom-domain).
 
 <a name="awverify" />
-## Erstellen eines awverify-Eintrags \(nur A-Einträge\)
+## Erstellen eines awverify-Eintrags (nur A-Einträge)
 
 Wenn Sie einen A-Datensatz erstellen, fordert die Web-App auch einen speziellen CNAME-Datensatz an. Über diesen wird sichergestellt, dass Sie der Besitzer der Domäne sind, die Sie verwenden möchten. Der CNAME-Eintrag muss das folgende Format aufweisen.
 
@@ -147,4 +147,4 @@ Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](../dns/dns
 [subdomain]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

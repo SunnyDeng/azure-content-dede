@@ -1,3 +1,3 @@
 Das Dataset enthält Kundendaten und Angaben über ihre Reaktion auf eine direkte Mailing-Kampagne. Jede Zeile stellt einen Kunden dar. Das Dataset enthält 9 Funktionen über demografische Benutzerdaten und Verhalten in der Vergangenheit und 3 Spalten (Visit, Conversion und Spend). „Visit“ ist eine binäre Spalte, die angibt, dass ein Kunde nach der Marketingkampagne die Seite besucht hat, „Conversion“ bedeutet, dass ein Kunde etwas gekauft hat, und „Spend“ ist der Betrag, den er ausgegeben hat. Das Dataset wurde von Kevin Hillstrom für MineThatData E-Mail Analytics And Data Mining Challenge zur Verfügung gestellt.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

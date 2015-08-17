@@ -169,9 +169,10 @@ Es folgen nun die allgemeinen Schritte zum Ausführen Ihrer Anwendung. Details z
 2. Ändern Sie **startup.cmd**, um Ihr TwilioCloud-WAR zu entzippen.
 3. Kompilieren Sie Ihre Anwendung für den Serveremulator.
 4. Starten Sie Ihre Bereitstellung im Serveremulator.
-5. Öffnen Sie einen Browser, und führen Sie **http://localhost:8080/TwilioCloud/callform.jsp** aus.6. Geben Sie Werte in das Formular ein, klicken Sie auf **Make this call** und sehen Sie sich die Ergebnisse in makecall.jsp an.
+5. Öffnen Sie einen Browser, und führen Sie ****http://localhost:8080/TwilioCloud/callform.jsp** aus.
+6. Geben Sie Werte in das Formular ein, klicken Sie auf **Make this call** und sehen Sie sich die Ergebnisse in makecall.jsp an.
 
-Wenn Sie die Anwendung in Azure bereitstellen möchten, kompilieren Sie diese für die Cloudbereitstellung, laden Sie sie in Azure hoch, und öffnen Sie http://*your_hosted_name*.cloudapp.net/TwilioCloud/callform.jsp in Ihrem Browser (ersetzen Sie *your_hosted_name* durch Ihren entsprechenden Wert).
+Wenn Sie die Anwendung in Azure bereitstellen möchten, kompilieren Sie diese für die Cloudbereitstellung, laden Sie sie in Azure hoch, und öffnen Sie http://*your_hosted_name*.cloudapp.net/TwilioCloud/callform.jsp in Ihrem Browser (ersetzen Sie *your\_hosted\_name* durch Ihren entsprechenden Wert).
 
 ## Nächste Schritte
 Dieser Code demonstriert die allgemeinen Funktionen für die Verwendung von Twilio mit Java in Azure. Bevor Sie dieses Beispiel in einer Produktionsumgebung bereitstellen, sollten Sie einige Funktionen zur Fehlerbehandlung oder andere Features hinzufügen. Beispiel:
@@ -208,4 +209,4 @@ Weitere Informationen zu Twilio finden Sie unter [https://www.twilio.com/docs][t
 [twilio_java]: ./media/partner-twilio-java-phone-call-example/WA_TwilioJavaCallForm.jpg
 [twilio_java_response]: ./media/partner-twilio-java-phone-call-example/WA_TwilioJavaMakeCall.jpg
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

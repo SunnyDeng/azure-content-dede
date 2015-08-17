@@ -485,4 +485,4 @@ Nachdem Sie sich nun mit den Grundlagen von Managed Cache Service vertraut gemac
 [Welches Azure Cache-Angebot ist für mich das richtige?]: http://msdn.microsoft.com/library/azure/dn766201.aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

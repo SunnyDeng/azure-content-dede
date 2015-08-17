@@ -131,4 +131,4 @@ In diesem Abschnitt werden Sie schrittweise durch ein Beispiel zum Migrieren ein
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

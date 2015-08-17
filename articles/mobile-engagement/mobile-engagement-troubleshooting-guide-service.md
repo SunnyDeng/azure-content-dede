@@ -89,4 +89,4 @@ Im Folgenden finden Sie mögliche Probleme, die bei der Ausführung von Azure Mo
     - Verwenden Sie eine Datei, die kleiner ist als die maximale Größe von 35 MB.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

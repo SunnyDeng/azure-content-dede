@@ -6,6 +6,7 @@
 	authors="alancameronwills" 
 	manager="douge"/>
 
+
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
@@ -14,6 +15,7 @@
 	ms.topic="article" 
 	ms.date="07/14/2015" 
 	ms.author="awills"/>
+
  
 # collectd: Unix-Leistungsmetriken in Application Insights
 
@@ -27,7 +29,7 @@ In der Regel verwenden Sie collectd, wenn Sie [Ihren Java-Webdienst bereits mith
 
 ## Abrufen des Instrumentationsschlüssels
 
-Öffnen Sie im [Microsoft Azure-Portal](http://portal.azure.com) die Ressource [Application Insights](start), in der die Daten angezeigt werden sollen. \(Oder [erstellen Sie eine neue Ressource](app-insights-create-new-resource.md).\)
+Öffnen Sie im [Microsoft Azure-Portal](http://portal.azure.com) die Ressource [Application Insights](start), in der die Daten angezeigt werden sollen. (Oder [erstellen Sie eine neue Ressource](app-insights-create-new-resource.md).)
 
 Kopieren Sie den Instrumentationsschlüssel, der die Ressource identifiziert.
 
@@ -143,4 +145,4 @@ Trennen Sie Direktiven mit einem Zeilenumbruch.
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

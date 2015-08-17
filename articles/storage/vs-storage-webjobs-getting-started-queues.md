@@ -16,7 +16,7 @@
 	ms.date="07/13/2015" 
 	ms.author="patshea123"/>
 
-# Erste Schritte mit Azure Storage \(Azure WebJob-Projekte\)
+# Erste Schritte mit Azure Storage (Azure WebJob-Projekte)
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-storage-webjobs-getting-started-queues.md)
@@ -32,7 +32,7 @@ Der Azure-Warteschlangenspeicher ist ein Dienst zum Speichern einer großen Anza
 
 Wenn Sie über das Dialogfeld **Verbundene Dienste hinzufügen** von Visual Studio ein Speicherkonto zu einem WebJob-Projekt hinzufügen, wird das entsprechende NuGet-Paket des Azure-Speichers installiert, die entsprechenden .NET-Verweise dem Projekt hinzugefügt, und die Verbindungszeichenfolgen für das Speicherkonto in der „App.config“-Datei aktualisiert.
 
-Dieser Artikel enthält C\#-Codebeispiele, die zeigen, wie das Azure WebJobs-SDK \(Version 1.x\) mit dem Azure-Warteschlangenspeicherdienst verwendet wird. Dieser Artikel umfasst die folgenden Themen:
+Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie das Azure WebJobs-SDK (Version 1.x) mit dem Azure-Warteschlangenspeicherdienst verwendet wird. Dieser Artikel umfasst die folgenden Themen:
 
 
 ## Auslösen einer Funktion, wenn eine Warteschlangennachricht empfangen wird
@@ -51,7 +51,7 @@ Im folgenden Beispiel enthält die Warteschlange eine Zeichenfolgenmeldung, wesh
 
 Neben `string` kann der Parameter ein Bytearray, ein `CloudQueueMessage`-Objekt oder ein POCO sein, das Sie definieren.
 
-### POCO-Warteschlangennachrichten [\(Plain Old CLR Object\)](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
+### POCO-Warteschlangennachrichten [(Plain Old CLR Object)](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
 
 Im folgenden Beispiel enthält die Warteschlangennachricht JSON für ein `BlobInformation`-Objekt, das eine `BlobName`-Eigenschaft enthält. Das SDK deserialisiert das Objekt automatisch.
 
@@ -75,7 +75,7 @@ Die folgende asynchrone Funktion [schreibt ein Protokoll in das Dashboard](#logs
 		    await logger.WriteLineAsync(logMessage);
 		}
 
-Async-Funktion können, wie in der folgenden Abbildung dargestellt, über ein [Abbruchtoken](http://www.asp.net/mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4#CancelToken) verfügen, das ein Blob kopiert. \(Eine Erläuterung des `queueTrigger`-Platzhalters finden Sie im Abschnitt [Blobs](#blobs).\)
+Async-Funktion können, wie in der folgenden Abbildung dargestellt, über ein [Abbruchtoken](http://www.asp.net/mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4#CancelToken) verfügen, das ein Blob kopiert. (Eine Erläuterung des `queueTrigger`-Platzhalters finden Sie im Abschnitt [Blobs](#blobs).)
 
 		public async static Task ProcessQueueMessageAsyncCancellationToken(
 		    [QueueTrigger("blobcopyqueue")] string blobName, 
@@ -116,7 +116,7 @@ Sie können die folgenden Nachrichteneigenschaften abrufen, indem Sie Parameter 
 * `DateTimeOffset` expirationTime
 * `DateTimeOffset` insertionTime
 * `DateTimeOffset` nextVisibleTime
-* `string` queueTrigger \(enthält Nachrichtentext\)
+* `string` queueTrigger (enthält Nachrichtentext)
 * `string` id
 * `string` popReceipt
 * `int` dequeueCount
@@ -195,7 +195,7 @@ Um eine Funktion zu schreiben, die eine neue Warteschlangennachricht erstellt, v
 
 ### Zeichenfolgen-Warteschlangennachrichten
 
-Im folgenden nicht asynchronen Beispiel wird eine neue Warteschlangennachricht in der Warteschlange mit dem Namen "outputqueue" mit dem gleichen Inhalt wie die Warteschlangennachricht erstellt, die in der Warteschlange mit dem Namen "inputqueue" empfangen wird. \(Für asynchrone Funktionen verwenden Sie `IAsyncCollector<T>`, wie weiter unten in diesem Abschnitt gezeigt.\)
+Im folgenden nicht asynchronen Beispiel wird eine neue Warteschlangennachricht in der Warteschlange mit dem Namen "outputqueue" mit dem gleichen Inhalt wie die Warteschlangennachricht erstellt, die in der Warteschlange mit dem Namen "inputqueue" empfangen wird. (Für asynchrone Funktionen verwenden Sie `IAsyncCollector<T>`, wie weiter unten in diesem Abschnitt gezeigt.)
 
 
 		public static void CreateQueueMessage(
@@ -205,7 +205,7 @@ Im folgenden nicht asynchronen Beispiel wird eine neue Warteschlangennachricht i
 		    outputQueueMessage = queueMessage;
 		}
   
-### POCO-Warteschlangennachrichten [\(Plain Old CLR Object\)](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
+### POCO-Warteschlangennachrichten [(Plain Old CLR Object)](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
 
 Zum Erstellen einer Warteschlangennachricht, die ein POCO-Objekt anstelle einer Zeichenfolge enthält, übergeben Sie den POCO-Typs als Ausgabeparameter an den `Queue`-Attributkonstruktor.
  
@@ -238,13 +238,13 @@ Jede Warteschlangennachricht wird unmittelbar nach dem Aufruf der `Add`-Methode 
 
 Sie können das `Queue`-Attribut für die folgenden Parametertypen verwenden:
 
-* `out string` \(Warteschlangennachricht wird erstellt, wenn der Parameterwert bei Funktionsbeendigung nicht NULL ist\)
-* `out byte[]` \(funktioniert wie `string`\) 
-* `out CloudQueueMessage` \(funktioniert wie `string`\) 
-* `out POCO` \(ein serialisierbarer Typ, erstellt eine Nachricht mit einem NULL-Objekt, wenn der Parameter bei Funktionsbeendigung NULL ist\)
+* `out string` (Warteschlangennachricht wird erstellt, wenn der Parameterwert bei Funktionsbeendigung nicht NULL ist)
+* `out byte[]` (funktioniert wie `string`) 
+* `out CloudQueueMessage` (funktioniert wie `string`) 
+* `out POCO` (ein serialisierbarer Typ, erstellt eine Nachricht mit einem NULL-Objekt, wenn der Parameter bei Funktionsbeendigung NULL ist)
 * `ICollector`
 * `IAsyncCollector`
-* `CloudQueue` \(zum manuellen Erstellen von Nachrichten, die die Azure Storage-API direkt verwenden\)
+* `CloudQueue` (zum manuellen Erstellen von Nachrichten, die die Azure Storage-API direkt verwenden)
 
 ###Verwenden von WebJobs-SDK-Attributen im Hauptteil einer Funktion
 
@@ -295,7 +295,7 @@ Im folgenden Beispiel wird ein `CloudBlockBlob`-Objekt zum Löschen eines Blobs 
 		    blobToDelete.Delete();
 		}
 
-###POCO-Warteschlangennachrichten [\(Plain Old CLR Object\)](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
+###POCO-Warteschlangennachrichten [(Plain Old CLR Object)](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)
 
 Für POCO-Objekte, die als JSON in der Warteschlangennachricht gespeichert werden, können Sie Platzhalter verwenden, die Eigenschaften des Objekts im `blobPath`-Parameter des `Queue`-Attributs benennen. Sie können auch [Metadateneigenschaftennamen](#queuemetadata) der Warteschlange als Platzhalter verwenden.
 
@@ -321,17 +321,17 @@ Wenn Sie an Ihrer Funktion vor dem Binden eines Blobs an ein Objekt einige Ände
  
 Das `Blob`-Attribut kann mit den folgenden Typen verwendet werden:
 
-* `Stream` \(Lesen oder Schreiben, wird mit dem FileAccess-Konstruktorparameter angegeben\)
+* `Stream` (Lesen oder Schreiben, wird mit dem FileAccess-Konstruktorparameter angegeben)
 * `TextReader`
 * `TextWriter`
-* `string` \(Lesen\)
-* `out string` \(Schreiben; erstellt ein Blob nur dann, wenn der Parameter bei Rückgabe der Funktion ungleich NULL ist\)
-* POCO \(Lesen\)
-* POCO \(Schreiben; erstellt immer ein Blob, erstellt ein NULL-Objekt , wenn der POCO-Parameter bei Rückgabe der Funktion NULL ist\)
-* `CloudBlobStream` \(Schreiben\)
-* `ICloudBlob` \(Lesen oder Schreiben\)
-* `CloudBlockBlob` \(Lesen oder Schreiben\) 
-* `CloudPageBlob` \(Lesen oder Schreiben\) 
+* `string` (Lesen)
+* `out string` (Schreiben; erstellt ein Blob nur dann, wenn der Parameter bei Rückgabe der Funktion ungleich NULL ist)
+* POCO (Lesen)
+* POCO (Schreiben; erstellt immer ein Blob, erstellt ein NULL-Objekt , wenn der POCO-Parameter bei Rückgabe der Funktion NULL ist)
+* `CloudBlobStream` (Schreiben)
+* `ICloudBlob` (Lesen oder Schreiben)
+* `CloudBlockBlob` (Lesen oder Schreiben) 
+* `CloudPageBlob` (Lesen oder Schreiben) 
 
 ##Behandeln von beschädigten Nachrichten
 
@@ -418,9 +418,9 @@ Durch Festlegen der SDK-Verbindungszeichenfolgen im Code können Sie Ihre eigene
 
 Sie können die folgenden Einstellungen konfigurieren, die für die Verarbeitung von Warteschlangennachrichten gelten:
 
-- Die maximale Anzahl von Warteschlangennachrichten, die gleichzeitig abgerufen werden, um parallel ausgeführt zu werden \(der Standardwert ist 16\).
-- Die maximale Anzahl von Wiederholungen, bevor eine Warteschlangennachricht an eine Warteschlange mit beschädigten Nachrichten gesendet wird \(der Standardwert ist 5\).
-- Die maximale Wartezeit bis zum erneuten Abrufen, wenn eine Warteschlange leer ist \(der Standardwert ist 1 Minute\).
+- Die maximale Anzahl von Warteschlangennachrichten, die gleichzeitig abgerufen werden, um parallel ausgeführt zu werden (der Standardwert ist 16).
+- Die maximale Anzahl von Wiederholungen, bevor eine Warteschlangennachricht an eine Warteschlange mit beschädigten Nachrichten gesendet wird (der Standardwert ist 5).
+- Die maximale Wartezeit bis zum erneuten Abrufen, wenn eine Warteschlange leer ist (der Standardwert ist 1 Minute).
 
 Das folgende Beispiel zeigt, wie diese Einstellungen konfiguriert werden können:
 
@@ -438,7 +438,7 @@ Das folgende Beispiel zeigt, wie diese Einstellungen konfiguriert werden können
 
 Mitunter möchten Sie einen Warteschlangennamen, einen Blobnamen oder Container oder einen Tabellennamen im Code angeben, anstatt ihn hart zu codieren. Sie möchten z. B. den Warteschlangennamen für `QueueTrigger` in einer Datei oder Umgebungsvariablen angeben.
 
-Möglich wird dies, indem Sie ein `NameResolver`-Objekts an den `JobHostConfiguration`-Typ übergeben. Sie fügen in Konstruktorparametern von WebJobs-SDK-Attributen spezielle Platzhalter hinzu, die von Prozentzeichen \(%\) umgeben werden, und Ihr `NameResolver`-Code gibt die tatsächlichen Werte an, die anstelle dieser Platzhalter verwendet werden sollen.
+Möglich wird dies, indem Sie ein `NameResolver`-Objekts an den `JobHostConfiguration`-Typ übergeben. Sie fügen in Konstruktorparametern von WebJobs-SDK-Attributen spezielle Platzhalter hinzu, die von Prozentzeichen (%) umgeben werden, und Ihr `NameResolver`-Code gibt die tatsächlichen Werte an, die anstelle dieser Platzhalter verwendet werden sollen.
 
 Angenommen, Sie möchten eine Warteschlange mit dem Namen "logqueuetest" in der Testumgebung und eine Warteschlange mit dem Namen "logqueueprod" in einer Produktionsumgebung verwenden. Anstelle eines hartcodierten Warteschlangennamens möchten Sie den Namen eines Eintrags in der `appSettings`-Auflistung angeben, die den tatsächlichen Namen der Warteschlange hätte. Wenn der `appSettings`-Schlüssel "logqueue" ist, könnte die Funktion wie im folgenden Beispiel aussehen.
 
@@ -504,7 +504,7 @@ Methoden für die Konsolenausgabe, die Sie in einer Funktion oder in der `Main()
 
 Die Konsolenausgabe kann nicht an einen bestimmten Methodenaufruf geknüpft werden, da die Konsole als Singlethread ausgeführt wird, während viele Aufgaben ggf. gleichzeitig ausgeführt werden. Deshalb versieht das SDK jeden Funktionsaufruf mit einem eigenen eindeutigen Protokollschreibobjekt.
 
-Zum [Schreiben von Ablaufverfolgungsprotokollen](web-sites-dotnet-troubleshoot-visual-studio.md#logsoverview) verwenden Sie `Console.Out` \(erstellt als INFO markierte Protokolle\) und `Console.Error` \(erstellt als FEHLER markierte Protokolle\). Eine Alternative ist die [Verwendung von Trace oder TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), um zusätzlich zu INFO und FEHLER die Stufen AUSFÜHRLICH, WARNUNG und KRITISCH bereitzustellen. Ablaufverfolgungsprotokolle von Anwendungen werden in den Web-App-Protokolldateien, Azure-Tabellen oder Azure-Blobs angezeigt, je nachdem, wie Sie Ihre Azure-Web-App konfigurieren. Wie bei sämtlichen Konsolenausgaben werden die 100 letzten Anwendungsprotokolle auch auf der Seite "Dashboard" für den Webauftrag und nicht auf der Seite für die Funktionsaufruf angezeigt.
+Zum [Schreiben von Ablaufverfolgungsprotokollen](web-sites-dotnet-troubleshoot-visual-studio.md#logsoverview) verwenden Sie `Console.Out` (erstellt als INFO markierte Protokolle) und `Console.Error` (erstellt als FEHLER markierte Protokolle). Eine Alternative ist die [Verwendung von Trace oder TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), um zusätzlich zu INFO und FEHLER die Stufen AUSFÜHRLICH, WARNUNG und KRITISCH bereitzustellen. Ablaufverfolgungsprotokolle von Anwendungen werden in den Web-App-Protokolldateien, Azure-Tabellen oder Azure-Blobs angezeigt, je nachdem, wie Sie Ihre Azure-Web-App konfigurieren. Wie bei sämtlichen Konsolenausgaben werden die 100 letzten Anwendungsprotokolle auch auf der Seite "Dashboard" für den Webauftrag und nicht auf der Seite für die Funktionsaufruf angezeigt.
 
 Die Konsolenausgabe wird nur im Dashboard angezeigt, wenn das Programm in einem Azure-Webauftrag ausgeführt wird, und nicht, wenn die Anwendung lokal oder in einer anderen Umgebung ausgeführt wird.
 
@@ -528,11 +528,11 @@ Im Dashboard des WebJobs-SDK wird die Ausgabe des `TextWriter`-Objekts angezeigt
 
 ![Protokolle auf Funktionsaufrufseiten](./media/vs-storage-webjobs-getting-started-queues/dashboardlogs.png)
 
-Im Dashboard des WebJobs-SDK werden die letzten 100 Zeilen der Konsolenausgabe angezeigt, wenn Sie zur Seite für den Webauftrag \(nicht für den Funktionsaufruf\) wechseln und auf **Toggle Output** klicken.
+Im Dashboard des WebJobs-SDK werden die letzten 100 Zeilen der Konsolenausgabe angezeigt, wenn Sie zur Seite für den Webauftrag (nicht für den Funktionsaufruf) wechseln und auf **Toggle Output** klicken.
  
 ![Ausgabe von "Click Toggle"](./media/vs-storage-webjobs-getting-started-queues/dashboardapplogs.png)
 
-In einem fortlaufenden Webauftrag werden Anwendungsprotokolle in "/data/jobs/continuous/\*{webjobname}\*/job\_log.txt" im Dateisystem der Web-App angezeigt.
+In einem fortlaufenden Webauftrag werden Anwendungsprotokolle in "/data/jobs/continuous/*{webjobname}*/job\_log.txt" im Dateisystem der Web-App angezeigt.
 
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Write - Hello world!
 		[09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!
@@ -551,4 +551,4 @@ In einer Azure-Tabelle sehen die Protokolle `Console.Out` und `Console.Error` wi
 In diesem Artikel wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

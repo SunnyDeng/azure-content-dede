@@ -7,6 +7,7 @@
 	manager="jwhit" 
 	editor="tysonn"/>
 
+
 <tags 
 	ms.service="site-recovery" 
 	ms.workload="backup-recovery" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="05/07/2015" 
 	ms.author="raynew"/>
+
 
 # Einrichten von Schutz zwischen lokalen VMM-Standorten mit einem SAN
 
@@ -217,7 +219,12 @@ Fahren Sie nach der Installation des Anbieters mit der Einrichtung fort, um den 
 
 	- Wenn Sie einen benutzerdefinierten Proxyserver verwenden möchten, richten Sie diesen vor der Anbieterinstallation ein.
 	- Der VMM-Server sollte auf die folgenden URLs Zugriff haben:
-		- *.hypervrecoverymanager.windowsazure.com - *.accesscontrol.windows.net - *.backup.windowsazure.com - *.blob.core.windows.net - *.store.core.windows.net - Lassen Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) angegebenen IP-Adressen sowie das HTTPS-Protokoll (443) zu. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu. 
+		- *\*.hypervrecoverymanager.windowsazure.com
+- *\*.accesscontrol.windows.net
+- *\*.backup.windowsazure.com
+- *\*.blob.core.windows.net
+- *\*.store.core.windows.net
+- Lassen Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) angegebenen IP-Adressen sowie das HTTPS-Protokoll (443) zu. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu. 
 	
 	- Bei Verwendung eines benutzerdefinierten Proxys wird automatisch ein ausführendes VMM-Konto (DRAProxyAccount) mit den angegebenen Proxyanmeldeinformationen erstellt. Konfigurieren Sie den Proxyserver so, dass dieses Konto erfolgreich authentifiziert werden kann.
 	- In der VMM-Konsole können die Einstellungen des ausführenden VMM-Kontos geändert werden. Zu diesem Zweck öffnen Sie den Arbeitsbereich "Einstellungen", erweitern Sie "Sicherheit", klicken Sie auf "Ausführende Konten", und ändern Sie das Kennwort für DRAProxyAccount. Sie müssen den VMM-Dienst neu starten, damit diese Einstellung wirksam wird.
@@ -356,4 +363,4 @@ Weitere Informationen zur Interaktion mit Aufträgen und dem Dashboard finden Si
 	
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -1,8 +1,6 @@
 <properties 
 	pageTitle="Computehostingoptionen in Azure" 
 	description="Erfahren Sie mehr über Computehostingoptionen in Azure und ihre Funktionsweise: Virtual Machines, Websites, Cloud Services und weitere Optionen." 
-	headerExpose="" 
-	footerExpose="" 
 	services="cloud-services,virtual-machines"
 	authors="Thraka" 
 	documentationCenter=""
@@ -80,4 +78,4 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 * Weitere Informationen zu [Cloud Services](services/cloud-services/)
 * Weitere Informationen zu [Virtual Machines](https://msdn.microsoft.com/library/azure/jj156143.aspx) 
 
-<!-----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -79,4 +79,4 @@ Geben Sie als Anzahl von Thrift-Serverkernen und Thrift-Executor-Serverspeicher 
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

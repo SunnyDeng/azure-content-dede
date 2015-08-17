@@ -54,8 +54,8 @@ Daher ist es unpraktisch, alle Objekte in einer einzigen Antwort aufzulisten. St
 
 Die Antwort für einen Vorgang mit segmentierter Auflistung enthält Folgendes:
 
--	<i>_segment</i>, das die Ergebnisse enthält, die für einen einzelnen Aufruf der Auflistungs-API zurückgegeben wurden. 
--	*continuation_token*, das an den nächsten Aufruf übergeben wird, damit die nächste Seite mit Ergebnissen abgerufen wird. Gibt es keine weiteren zurückzugebenden Ergebnisse, ist das Fortsetzungstoken (continuation_token) gleich NULL.
+-	<i>\_segment</i>, das die Ergebnisse enthält, die für einen einzelnen Aufruf der Auflistungs-API zurückgegeben wurden. 
+-	*continuation\_token*, das an den nächsten Aufruf übergeben wird, damit die nächste Seite mit Ergebnissen abgerufen wird. Gibt es keine weiteren zurückzugebenden Ergebnisse, ist das Fortsetzungstoken (continuation\_token) gleich NULL.
 
 Ein typischer Aufruf zum Auflisten alle BLOBs in einem Container könnte beispielsweise wie der folgende Codeausschnitt aussehen. Der Code ist in unseren [Beispielen](https://github.com/Azure/azure-storage-cpp/blob/master/Microsoft.WindowsAzure.Storage/samples/BlobsGettingStarted/Application.cpp) verfügbar:
 
@@ -80,15 +80,15 @@ Ein typischer Aufruf zum Auflisten alle BLOBs in einem Container könnte beispie
 	}
 	while (!token.empty());
 
-Beachten Sie, dass die Anzahl von Ergebnissen, die in einer Seite zurückgegeben werden, durch den Parameter *max_results* in der Überladung jeder API gesteuert werden kann. Beispiel:
+Beachten Sie, dass die Anzahl von Ergebnissen, die in einer Seite zurückgegeben werden, durch den Parameter *max\_results* in der Überladung jeder API gesteuert werden kann. Beispiel:
 	
 	list_blob_item_segment list_blobs_segmented(const utility::string_t& prefix, bool use_flat_blob_listing, 
 		blob_listing_details::values includes, int max_results, const continuation_token& token, 
 		const blob_request_options& options, operation_context context)
 
-Wenn Sie den *max_results*-Parameter nicht angeben, wird in einer einzelnen Seite der standardmäßige maximale Wert von bis zu 5000 Ergebnissen zurückgegeben.
+Wenn Sie den *max\_results*-Parameter nicht angeben, wird in einer einzelnen Seite der standardmäßige maximale Wert von bis zu 5000 Ergebnissen zurückgegeben.
 
-Beachten Sie außerdem, dass eine Abfrage auf den Azure-Tabellenspeicher möglicherweise keine Datensätze oder weniger Datensätze zurückgibt, als der Wert des von Ihnen angegebenen *max_results*-Parameters festlegt. Dies gilt selbst dann, wenn das Fortsetzungstoken nicht leer ist. Ein Grund hierfür ist möglicherweise, dass die Abfrage nicht in fünf Sekunden abgeschlossen werden konnte. Solange das Fortsetzungstoken nicht leer ist, sollte die Abfrage fortgesetzt werden, und Ihr Code sollte die Größe der Segmentergebnisse nicht voraussetzen.
+Beachten Sie außerdem, dass eine Abfrage auf den Azure-Tabellenspeicher möglicherweise keine Datensätze oder weniger Datensätze zurückgibt, als der Wert des von Ihnen angegebenen *max\_results*-Parameters festlegt. Dies gilt selbst dann, wenn das Fortsetzungstoken nicht leer ist. Ein Grund hierfür ist möglicherweise, dass die Abfrage nicht in fünf Sekunden abgeschlossen werden konnte. Solange das Fortsetzungstoken nicht leer ist, sollte die Abfrage fortgesetzt werden, und Ihr Code sollte die Größe der Segmentergebnisse nicht voraussetzen.
 
 Das empfohlene Codierungsmuster für die meisten Szenarios ist segmentiertes Auflisten, das expliziten Fortschritt für Auflisten oder Abfragen bereitstellt und festlegt, wie der Dienst auf jede Anforderungen reagiert. Insbesondere für C++-Anwendungen oder -Dienste kann eine auf niedrigerer Ebene erfolgende Steuerung des Auflistungsfortschritts hilfreich sein, den Arbeitsspeicher und die Leistung zu kontrollieren.
 
@@ -128,7 +128,7 @@ Für den Fall, dass in Ihrem Code diese gierigen APIs aufgerufen werden:
 	    token = segment.continuation_token();
 	} while (!token.empty());
 
-Durch Angeben des *max_results*-Parameters des Segments können Sie zwischen der Anzahl von Anforderungen und der Arbeitsspeichernutzung abwägen, um den Leistungsanforderungen Ihrer Anwendung gerecht zu werden.
+Durch Angeben des *max\_results*-Parameters des Segments können Sie zwischen der Anzahl von Anforderungen und der Arbeitsspeichernutzung abwägen, um den Leistungsanforderungen Ihrer Anwendung gerecht zu werden.
 
 Außerdem sollten Sie, wenn Sie APIs für segmentiertes Auflisten verwenden, die Daten aber in einer lokalen Sammlung in einem "gierigen" Stil speichern, Ihren Code so ändern, dass das Speichern von Daten in einer lokalen Sammlung sorgfältig entsprechend dem Umfang erfolgt.
 
@@ -138,7 +138,7 @@ Obwohl gieriges Auflisten möglicherweise Probleme verursacht, ist es praktisch,
 
 Wenn Sie auch C# oder Oracle Java SDKs verwenden, sind Sie vermutlich mit dem Enumerable-Programmiermodell vertraut, das ein faules Auflisten bereitstellt, bei dem die Daten an einem bestimmten Offset nur abgerufen werden, wenn dies erforderlich ist. In C++ bietet die iteratorbasierte Vorlage einen ähnlichen Ansatz.
 
-Eine typische API für faules Auflisten, in der **list_blobs** als Beispiel verwendet wird, sieht wie folgt:
+Eine typische API für faules Auflisten, in der **list\_blobs** als Beispiel verwendet wird, sieht wie folgt:
 
 	list_blob_item_iterator list_blobs() const;
 
@@ -184,4 +184,4 @@ Weitere Informationen zu Azure Storage und zur Client Library for C++ finden Sie
 -	[Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 -	[Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

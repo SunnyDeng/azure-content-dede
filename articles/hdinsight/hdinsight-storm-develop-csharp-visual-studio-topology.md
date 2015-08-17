@@ -417,13 +417,13 @@ HDInsight-Tools für Visual Studio können auch zum Erstellen von hybriden Topol
 
 Erstellen Sie für eine hybride Beispieltopologie z. B. ein neues Projekt, und wählen Sie **Storm-Hybridbeispiel** aus. Dadurch wird eine vollständig kommentierte Beispieldatei mit mehreren Topologien erstellt, die Folgendes veranschaulichen:
 
--	**Java-Spout** und **C#-Bolt**: Definition in **HybridTopology_javaSpout_csharpBolt**
+-	**Java-Spout** und **C#-Bolt**: Definition in **HybridTopology\_javaSpout\_csharpBolt**
 
-	-	Eine transaktionale Version ist in **HybridTopologyTx_javaSpout_csharpBolt** definiert.
+	-	Eine transaktionale Version ist in **HybridTopologyTx\_javaSpout\_csharpBolt** definiert.
 
--	**C#-Spout** und **Java-Bolt**: Definition in **HybridTopology_csharpSpout_javaBolt**
+-	**C#-Spout** und **Java-Bolt**: Definition in **HybridTopology\_csharpSpout\_javaBolt**
 
-	-	Eine transaktionale Version ist in **HybridTopologyTx_csharpSpout_javaBolt** definiert.
+	-	Eine transaktionale Version ist in **HybridTopologyTx\_csharpSpout\_javaBolt** definiert.
 
 		> [AZURE.NOTE]Diese Version veranschaulicht zudem, wie Sie Clojure-Code aus einer Textdatei als Java-Komponente verwenden.
 
@@ -595,7 +595,7 @@ Obwohl es relativ einfach ist, eine Topologie in einem Cluster bereitzustellen, 
 
 6.	Speichern Sie die Änderungen, und verwenden Sie dann **F5** oder **Debuggen** > **Debugging starten**, um das Projekt zu starten. Daraufhin sollte ein Konsolenfenster angezeigt und mit fortschreitendem Test der Status protokolliert werden. Nachdem **Tests abgeschlossen** angezeigt wurde, drücken Sie eine beliebige Taste, um das Fenster zu schließen.
 
-7.	Suchen Sie mithilfe von **Windows Explorer** das Verzeichnis, in dem Ihr Projekt gespeichert ist, z. B. **C:\Users\<Benutzername>\Documents\Visual Studio 2013\Projects\WordCount\WordCount**. Öffnen Sie in diesem Verzeichnis das Unterverzeichnis **Bin**, und klicken Sie dann auf **Debug**. Es sollten die beim Ausführen der Tests erstellten Textdateien vorhanden sein: "sentences.txt", "counter.txt" und "splitter.txt". Öffnen Sie die einzelnen Textdateien, und überprüfen Sie die Daten.
+7.	Suchen Sie mithilfe von **Windows Explorer** das Verzeichnis, in dem Ihr Projekt gespeichert ist, z. B. **C:\\Users\\<Benutzername>\\Documents\\Visual Studio 2013\\Projects\\WordCount\\WordCount**. Öffnen Sie in diesem Verzeichnis das Unterverzeichnis **Bin**, und klicken Sie dann auf **Debug**. Es sollten die beim Ausführen der Tests erstellten Textdateien vorhanden sein: "sentences.txt", "counter.txt" und "splitter.txt". Öffnen Sie die einzelnen Textdateien, und überprüfen Sie die Daten.
 
 	> [AZURE.NOTE]Zeichenfolgendaten werden in diesen Dateien als Array von Dezimalwerten beibehalten. Beispiel: [[97,103,111]] in der Datei **splitter.txt** entspricht dem Wort "and".
 
@@ -655,4 +655,4 @@ Weitere Möglichkeiten zum Arbeiten mit HDInsight sowie weitere Beispiele für S
 
 -	[Erste Schritte mit HBase in HDInsight](../hdinsight-hbase-get-started.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -7,6 +7,7 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
+
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="07/27/2015" 
 	ms.author="spelluru"/>
+
 
 # Lernprogramm: Erstellen und Überwachen einer Data Factory mit Visual Studio
 > [AZURE.SELECTOR]
@@ -37,7 +39,7 @@ In diesem Schritt erstellen Sie im Azure-Vorschauportal eine Azure Data Factory 
 
 1.	Nach der Anmeldung beim [Azure-Vorschauportal](http://portal.azure.com) klicken Sie links unten auf **NEU**, wählen **Datenanalyse** auf dem Blatt **Erstellen** aus und klicken auf dem Blatt **Datenanalyse** auf **Data Factory**. 
 
-	![Neu-\>DataFactory](./media/data-factory-get-started-using-vs/NewDataFactoryMenu.png)
+	![Neu->DataFactory](./media/data-factory-get-started-using-vs/NewDataFactoryMenu.png)
 
 6. Gehen Sie auf dem Blatt **Neue Data Factory** wie folgt vor:
 	1. Geben Sie **ADFTutorialDataFactoryVS** als **Namen** ein. 
@@ -53,7 +55,7 @@ In diesem Schritt erstellen Sie im Azure-Vorschauportal eine Azure Data Factory 
 7. Auf dem Blatt **Neue Data Factory** ist **Zum Startmenü hinzufügen** aktiviert.
 8. Klicken Sie auf dem Blatt **Neue Data Factory** auf **Erstellen**.
 
-	Der Name der Azure Data Factory muss global eindeutig sein. Wenn die Fehlermeldung **Data factory name "ADFTutorialDataFactoryVS" is not available** angezeigt wird, ändern Sie den Namen der Data Factory \(z. B.in "IhrNameADFTutorialDataFactoryVS"\) und wiederholen den Vorgang. Verwenden Sie diesen Namen beim Ausführen der restlichen Schritte in diesem Lernprogramm anstelle von "ADFTutorialFactory". Im Thema \[Data Factory – Benennungsregeln\]\[data-factory-naming-rules\] finden Sie Benennungsregeln für Data Factory-Artefakte.
+	Der Name der Azure Data Factory muss global eindeutig sein. Wenn die Fehlermeldung **Data factory name "ADFTutorialDataFactoryVS" is not available** angezeigt wird, ändern Sie den Namen der Data Factory (z. B.in "IhrNameADFTutorialDataFactoryVS") und wiederholen den Vorgang. Verwenden Sie diesen Namen beim Ausführen der restlichen Schritte in diesem Lernprogramm anstelle von "ADFTutorialFactory". Im Thema [Data Factory – Benennungsregeln][data-factory-naming-rules] finden Sie Benennungsregeln für Data Factory-Artefakte.
 	 
 	![Data Factory-Name nicht verfügbar](./media/data-factory-get-started-using-vs/getstarted-data-factory-not-available.png)
 
@@ -101,7 +103,8 @@ In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **AzureStorageLinkedSe
 
 5. Klicken Sie mit der rechten Maustaste erneut auf den Knoten **Verknüpfte Dienste** im **Projektmappen-Explorer**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**. 
 6. Wählen Sie dieses Mal **Azure SQL Linked Service** aus, und klicken Sie dann auf **Hinzufügen**. 
-7. Ersetzen Sie in der Datei **AzureSqlLinkedService1.json** die Werte **servername**, **databasename****username@servername** und **password** durch die betreffenden Angaben für Azure SQL-Server, -Datenbank, -Benutzerkonto und -Kennwort.8.  Speichern Sie die Datei **AzureSqlLinkedService1.json**. 
+7. Ersetzen Sie in der Datei **AzureSqlLinkedService1.json** die Werte **servername**, **databasename**, \*\***username@servername** und **password** durch die betreffenden Angaben für Azure SQL-Server, -Datenbank, -Benutzerkonto und -Kennwort.
+8.  Speichern Sie die Datei **AzureSqlLinkedService1.json**. 
 
 
 ### Erstellen von Eingabe- und Ausgabetabellen
@@ -228,7 +231,7 @@ Sie haben bisher verknüpfte Ein-/Ausgabe-Dienste und -Tabellen erstellt. Nun er
 19. Klicken Sie in der Symbolleiste **Data Factory** auf das **Dropdownlistenfeld**, um alle Data Factorys in Ihrem Azure-Abonnement anzuzeigen. Wenn das Dialogfeld **Anmelden bei Visual Studio** angezeigt wird: 
 	20. Geben Sie das **E-Mail-Konto** und das **Kennwort** für das Azure-Abonnement ein, in dem die Data Factory erstellt werden soll, und klicken Sie auf **Anmelden**.
 	21. Nachdem die Anmeldung abgeschlossen wurde, sollten alle Data Factorys des betreffenden Azure-Abonnements angezeigt werden. In diesem Lernprogramm erstellen Sie eine neue Data Factory.       
-22. Wählen Sie in der Dropdownliste die Option **ADFTutorialFactoryVS** aus, und klicken Sie auf die Schaltfläche **Veröffentlichen**, um die verknüpften Dienste und DataSets und die Pipeline bereitzustellen bzw. zu veröffentlichen.    
+22. Wählen Sie in der Dropdownliste die Option **ADFTutorialFactoryVS** aus, und klicken Sie auf die Schaltfläche **Veröffentlichen**, um die verknüpften Dienste und Datasets und die Pipeline bereitzustellen bzw. zu veröffentlichen.    
 
 	![Schaltfläche "Veröffentlichen"](./media/data-factory-get-started-using-vs/publish.png)
 
@@ -236,8 +239,8 @@ Sie haben bisher verknüpfte Ein-/Ausgabe-Dienste und -Tabellen erstellt. Nun er
 
 ## Verwenden Sie Server-Explorer, um Data Factory-Entitäten zu überprüfen
 
-1. Klicken Sie in **Visual Studio** im Menü auf **Ansicht**, und klicken Sie auf **Server-Explorer**.
-2. Erweitern Sie im Server-Explorer-Fenster die Option **Azure**, und erweitern Sie dann **Data Factory**. Wenn **Anmelden bei Visual Studio** angezeigt wird, geben Sie das mit Ihrem Azure-Abonnement verknüpfte **Konto** ein, und klicken Sie auf **Weiter**. Geben Sie Ihr **Kennwort** ein, und klicken Sie auf **Anmelden**. Visual Studio versucht, Informationen über alle Azure Data Factorys abzurufen, die in Ihrem Abonnement enthalten sind. Der Status dieses Vorgangs wird im Fenster **Data Factory-Aufgabenliste** angezeigt. ![Server-Explorer](./media/data-factory-get-started-using-vs/server-explorer.png)
+1. Klicken Sie in **Visual Studio** im Menü auf **Ansicht** und dann auf **Server-Explorer**.
+2. Erweitern Sie im Server-Explorer-Fenster erst die Option **Azure** und dann **Data Factory**. Wenn **Anmelden bei Visual Studio** angezeigt wird, geben Sie das mit Ihrem Azure-Abonnement verknüpfte **Konto** ein, und klicken Sie auf **Weiter**. Geben Sie Ihr **Kennwort** ein, und klicken Sie auf **Anmelden**. Visual Studio versucht, Informationen über alle Azure Data Factorys abzurufen, die in Ihrem Abonnement enthalten sind. Der Status dieses Vorgangs wird im Fenster **Data Factory-Aufgabenliste** angezeigt. ![Server-Explorer](./media/data-factory-get-started-using-vs/server-explorer.png)
 3. Durch Klicken mit der rechten Maustaste auf eine Data Factory und Auswählen von "Export Data Factory to New Project" können Sie anhand einer vorhandenen Data Factory ein Visual Studio-Projekt erstellen. ![Exportieren einer Data Factory in ein Visual Studio-Projekt](./media/data-factory-get-started-using-vs/export-data-factory-menu.png)  
 
 ## Aktualisieren von Data Factory-Tools für Visual Studio
@@ -247,6 +250,6 @@ Um die Azure Data Factory-Tools für Visual Studio zu aktualisieren, führen Sie
 2. Wählen Sie im linken Bereich **Updates** und dann **Visual Studio Gallery** aus.
 4. Wählen Sie **Azure Data Factory tools for Visual Studio** aus, und klicken Sie auf **Update**. Wenn dieser Eintrag nicht angezeigt wird, verfügen Sie bereits über die neueste Version der Tools. 
 
-Unter [Überwachen von DataSets und Pipelines](data-factory-get-started-using-editor.md/#MonitorDataSetsAndPipeline) finden Sie eine Anleitung zum Überwachen der in dieser Anleitung erstellten Pipeline und DataSets über das Azure-Vorschauportal.
+Unter [Überwachen von Datasets und Pipelines](data-factory-get-started-using-editor.md/#MonitorDataSetsAndPipeline) finden Sie eine Anleitung zum Überwachen der in dieser Anleitung erstellten Pipeline und Datasets über das Azure-Vorschauportal.
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

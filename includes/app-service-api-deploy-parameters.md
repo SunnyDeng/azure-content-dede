@@ -20,7 +20,7 @@ Der Name der zu erstellenden API-App. Der Name muss zwischen 8 und 50 Zeichen l
 
 ### apiAppSecret
 
-Der geheime Schlüssel für die API-App. Bei diesem Wert muss es sich um eine base64-codierte Zeichenfolge handeln.
+Der geheime Schlüssel für die API-App. Bei diesem Wert muss es sich um eine base64-codierte Zeichenfolge handeln. Es sollte eine beliebige Zeichenfolge mit 64 Zeichen sein, die nur aus ganzen Zahlen und Kleinbuchstaben besteht.
 
     "apiAppSecret": {
       "type": "securestring"
@@ -28,10 +28,10 @@ Der geheime Schlüssel für die API-App. Bei diesem Wert muss es sich um eine ba
 
 ### location
 
-Der Speicherort für die neue API-App.
+Der Speicherort für die neue API-App. Sie können durch Ausführen des PowerShell-Befehls `Get-AzureLocation` oder des Befehls `azure location list` der Azure-Befehlszeilenschnittstelle gültige Speicherorte abrufen.
 
     "location": {
       "type": "string"
     }
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

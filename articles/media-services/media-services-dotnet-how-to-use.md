@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="05/24/2015" 
 	ms.author="juliako"/>
+
 
 #Media Services-Entwicklung mit .NET 
 
@@ -77,7 +79,9 @@ Sie können auch die neuesten Media Services .NET SDK-Komponenten von GitHub ([g
 &lt;configuration>
     &lt;appSettings>
 	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
+
     	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
+
     &lt;/appSettings>
 &lt;/configuration>
 </code></pre>
@@ -98,4 +102,4 @@ Sie können auch die neuesten Media Services .NET SDK-Komponenten von GitHub ([g
 Nun können Sie mit der Entwicklung einer Mediendienste-Anwendung beginnen.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -46,7 +46,7 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
    	![][2]
 
-4. Klicken Sie auf den soeben erstellten Namespace (üblicherweise ***Name_des_Event_Hubs*-ns**).
+4. Klicken Sie auf den soeben erstellten Namespace (üblicherweise ***Name\_des\_Event\_Hubs*-ns**).
 
    	![][3]
 
@@ -110,4 +110,4 @@ Die folgenden Ressourcen sind für die Entwicklung von Anwendungen verfügbar, d
 [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm und HDInsight]: http://azure.microsoft.com/documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

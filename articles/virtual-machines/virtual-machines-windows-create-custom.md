@@ -33,4 +33,4 @@ Ein *benutzerdefinierter* virtueller Computer (VM) ist einfach ein virtueller Co
 
 [AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-WindowsVM.md)]
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

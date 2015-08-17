@@ -20,10 +20,10 @@
 
 ## Übersicht
 
-In diesem Lernprogramm wird gezeigt, wie Sie das App Service-SDK zum Schreiben von Code verwenden, mit dem eine [API-App](app-service-api-apps-why-best-platform.md) aufgerufen wird, die für die Zugriffsebene **Öffentlich \(anonym\)** oder **Öffentlich \(authentifiziert\)** konfiguriert wurde. In diesem Artikel werden die folgenden Beispielszenarien behandelt:
+In diesem Lernprogramm wird gezeigt, wie Sie das App Service-SDK zum Schreiben von Code verwenden, mit dem eine [API-App](app-service-api-apps-why-best-platform.md) aufgerufen wird, die für die Zugriffsebene **Öffentlich (anonym)** oder **Öffentlich (authentifiziert)** konfiguriert wurde. In diesem Artikel werden die folgenden Beispielszenarien behandelt:
 
-- Aufruf einer API-App mit der Zugriffsebene **Öffentlich \(anonym\)** aus einer Konsolenanwendung
-- Aufruf einer API-App mit der Zugriffsebene **Öffentlich \(authentifiziert\)** aus einer Windows Desktop-Anwendung 
+- Aufruf einer API-App mit der Zugriffsebene **Öffentlich (anonym)** aus einer Konsolenanwendung
+- Aufruf einer API-App mit der Zugriffsebene **Öffentlich (authentifiziert)** aus einer Windows Desktop-Anwendung 
 
 Die einzelnen Abschnitte dieses Lernprogramms können unabhängig voneinander bearbeitet werden. Sie können die Anweisungen des zweiten Szenarios befolgen, ohne die Schritte des ersten Szenarios ausgeführt zu haben.
 
@@ -51,9 +51,9 @@ In diesem Abschnitt erstellen Sie ein Konsolenanwendungsprojekt und fügen Code 
 
 1. Wenn Sie die erforderlichen Schritte noch nicht ausgeführt haben, befolgen Sie die Anweisungen unter [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md), um das Beispielprojekt "ContactsList" für eine API-App in Ihrem Azure-Abonnement bereitzustellen.
 
-	In diesem Lernprogramm werden Sie aufgefordert, die Zugriffsebene im Visual Studio-Dialogfeld zur Veröffentlichung auf **Für alle Benutzer verfügbar** zu setzen. Diese Zugriffsebene entspricht der Ebene **Öffentlich \(anonym\)** im Portal. Wenn Sie anschließend jedoch die Schritte im Lernprogramm [Schützen einer API-App](../app-service-dotnet-add-authentication.md) ausgeführt haben, wurde die Zugriffsebene auf **Öffentlich \(authentifiziert\)** gesetzt. In diesem Fall müssen Sie die Einstellung wie im folgenden Schritt beschrieben ändern.
+	In diesem Lernprogramm werden Sie aufgefordert, die Zugriffsebene im Visual Studio-Dialogfeld zur Veröffentlichung auf **Für alle Benutzer verfügbar** zu setzen. Diese Zugriffsebene entspricht der Ebene **Öffentlich (anonym)** im Portal. Wenn Sie anschließend jedoch die Schritte im Lernprogramm [Schützen einer API-App](../app-service-dotnet-add-authentication.md) ausgeführt haben, wurde die Zugriffsebene auf **Öffentlich (authentifiziert)** gesetzt. In diesem Fall müssen Sie die Einstellung wie im folgenden Schritt beschrieben ändern.
 
-2. Wechseln Sie im [Azure-Vorschauportal](https://portal.azure.com/)auf dem Blatt **API-App** für die API-App, die aufgerufen werden soll, zu **Einstellungen \> Anwendungseinstellungen**, und legen Sie für **Zugriffsebene** die Option **Öffentlich \(anonym\)** fest.
+2. Wechseln Sie im [Azure-Vorschauportal](https://portal.azure.com/)auf dem Blatt **API-App** für die API-App, die aufgerufen werden soll, zu **Einstellungen > Anwendungseinstellungen**, und legen Sie für **Zugriffsebene** die Option **Öffentlich (anonym)** fest.
 
 	![](./media/app-service-api-dotnet-consume/setpublicanon.png)
  
@@ -102,7 +102,7 @@ In diesem Abschnitt erstellen Sie ein Windows Desktop-Anwendungsprojekt und füg
 
 ### Einrichten der API-App und Erstellen des Projekts
 
-1. Führen Sie die Schritte im Lernprogramm [Schützen einer API-App](../app-service-dotnet-add-authentication.md) aus, um eine API-App mit Zugriffsebene **Öffentlich \(authentifiziert\)** einzurichten.
+1. Führen Sie die Schritte im Lernprogramm [Schützen einer API-App](../app-service-dotnet-add-authentication.md) aus, um eine API-App mit Zugriffsebene **Öffentlich (authentifiziert)** einzurichten.
 
 1. Erstellen Sie in Visual Studio ein Windows Forms-Desktopprojekt.
 
@@ -120,7 +120,7 @@ In diesem Abschnitt erstellen Sie ein Windows Desktop-Anwendungsprojekt und füg
 
 ### Hinzufügen von Clientcode, der über das App Service-SDK erstellt wurde
 
-3. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt \(nicht auf die Projektmappe\), und wählen Sie **Hinzufügen \> Azure-API-App-Client**. 
+3. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt (nicht auf die Projektmappe), und wählen Sie **Hinzufügen > Azure-API-App-Client**. 
 
 3. Klicken Sie im Dialogfeld **Azure-API-App-Client hinzufügen** auf **Aus Azure-API-App herunterladen**.
 
@@ -132,7 +132,7 @@ In diesem Abschnitt erstellen Sie ein Windows Desktop-Anwendungsprojekt und füg
 
 	![](./media/app-service-api-dotnet-consume/gatewayurl.png)
 
-4. Fügen Sie im Quellcode *Form1.cs* den folgenden Code vor dem Konstruktor `Form1()` hinzu, und ersetzen Sie dabei den Wert für GATEWAY\_URL durch den Wert, den Sie im vorherigen Schritt kopiert haben. Stellen Sie sicher, dass Sie den nachstehenden Schrägstrich \(/\) hinzufügen.
+4. Fügen Sie im Quellcode *Form1.cs* den folgenden Code vor dem Konstruktor `Form1()` hinzu, und ersetzen Sie dabei den Wert für GATEWAY\_URL durch den Wert, den Sie im vorherigen Schritt kopiert haben. Stellen Sie sicher, dass Sie den nachstehenden Schrägstrich (/) hinzufügen.
 
 		private const string GATEWAY_URL = "https://resourcegroupnameb4f3d966dfa43b6607f30.azurewebsites.net/";
 		private const string URL_TOKEN = "#token=";
@@ -141,7 +141,7 @@ In diesem Abschnitt erstellen Sie ein Windows Desktop-Anwendungsprojekt und füg
 
 		webBrowser1.Navigate(string.Format(@"{0}login/[authprovider]", GATEWAY_URL));
 
-	Ersetzen Sie "\[authprovider\]" durch den Code für den Identitätsdienstanbieter, den Sie im Gateway konfiguriert haben. Beispiele sind "aad", "twitter", "google", "microsoftaccount" oder "facebook". Beispiel:
+	Ersetzen Sie "[authprovider]" durch den Code für den Identitätsdienstanbieter, den Sie im Gateway konfiguriert haben. Beispiele sind "aad", "twitter", "google", "microsoftaccount" oder "facebook". Beispiel:
 
 		webBrowser1.Navigate(string.Format(@"{0}login/aad", GATEWAY_URL));
 
@@ -182,7 +182,7 @@ In diesem Abschnitt erstellen Sie ein Windows Desktop-Anwendungsprojekt und füg
 
 Die Beispielanwendung veranschaulicht den [Serverfluss](../app-service/app-service-authentication-overview.md#server-flow), was bedeutet, dass das Gateway das Zugriffstoken des Identitätsanbieters erhält. Für den [Clientfluss](../app-service/app-service-authentication-overview.md#client-flow), bei dem Ihre Clientanwendung das Zugriffstoken direkt vom Identitätsanbieter abruft und es an das Gateway sendet, rufen Sie `LoginAsync` statt `SetCurrentUser` auf.
 
-Im folgenden Codebeispiel wird davon ausgegangen, dass das Zugriffstoken des Identitätsanbieters in einer Zeichenfolgenvariablen namens `providerAccessToken` und der Identitätsanbieterindikator \("aad", "microsoftaccount", "google", "twitter" oder "facebook"\) in einer Zeichenfolgenvariablen mit dem Namen `idProvider` enthalten ist:
+Im folgenden Codebeispiel wird davon ausgegangen, dass das Zugriffstoken des Identitätsanbieters in einer Zeichenfolgenvariablen namens `providerAccessToken` und der Identitätsanbieterindikator ("aad", "microsoftaccount", "google", "twitter" oder "facebook") in einer Zeichenfolgenvariablen mit dem Namen `idProvider` enthalten ist:
 
 		var appServiceClient = new AppServiceClient(GATEWAY_URL);
 		var providerAccessTokenJSON = new JObject();
@@ -198,11 +198,11 @@ Im folgenden Codebeispiel wird davon ausgegangen, dass das Zugriffstoken des Ide
 
 ## Nächste Schritte
 
-In diesem Artikel haben Sie erfahren, wie Sie API-Apps mit der Zugriffsebene **Öffentlich \(authentifiziert\)** oder **Öffentlich \(anonym\)** von einem .NET-Client aus aufrufen und nutzen.
+In diesem Artikel haben Sie erfahren, wie Sie API-Apps mit der Zugriffsebene **Öffentlich (authentifiziert)** oder **Öffentlich (anonym)** von einem .NET-Client aus aufrufen und nutzen.
 
 Um weitere Codebeispiele für den Aufruf einer API-App aus einem .NET-Client zu erhalten, laden Sie die [Azure Cards](https://github.com/Azure-Samples/API-Apps-DotNet-AzureCards-Sample)-Beispielanwendung herunter.
 
 Informationen zur Authentifizierung in API-Apps finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

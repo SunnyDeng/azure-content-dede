@@ -62,7 +62,7 @@ Diese **OpenConnection**-Funktion wird zu Beginn in allen im Folgenden aufgefüh
 
 ## Ausführen einer Abfrage und Abrufen des Resultsets
 
-Mit der [sqlsrv_query()](http://php.net/manual/en/function.sqlsrv-query.php)-Funktion können Sie ein Resultset aus einer Abfrage einer SQL-Datenbank abrufen. Diese Funktion akzeptiert praktisch jede Abfrage und das Verbindungsobjekt und gibt ein Resultset zurück, das mithilfe von [sqlsrv_fetch_array()](http://php.net/manual/en/function.sqlsrv-fetch-array.php) durchlaufen werden kann.
+Mit der [sqlsrv\_query()](http://php.net/manual/en/function.sqlsrv-query.php)-Funktion können Sie ein Resultset aus einer Abfrage einer SQL-Datenbank abrufen. Diese Funktion akzeptiert praktisch jede Abfrage und das Verbindungsobjekt und gibt ein Resultset zurück, das mithilfe von [sqlsrv\_fetch\_array()](http://php.net/manual/en/function.sqlsrv-fetch-array.php) durchlaufen werden kann.
 
 	function ReadData()
 	{
@@ -126,11 +126,11 @@ In SQL-Datenbanken können die [IDENTITY](https://msdn.microsoft.com/library/ms1
 
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
 
-- Starten von Transaktionen
+\- Starten von Transaktionen
 
-- Hinzufügen einer Zeile mit Daten und Aktualisieren einer anderen Datenzeile
+\- Hinzufügen einer Zeile mit Daten und Aktualisieren einer anderen Datenzeile
 
-- Durchführen eines Commits der Transaktion, wenn Einfügung und Aktualisierung erfolgreich waren, und eines Rollbacks der Transaktion, wenn ein Vorgang fehlgeschlagen ist
+\- Durchführen eines Commits der Transaktion, wenn Einfügung und Aktualisierung erfolgreich waren, und eines Rollbacks der Transaktion, wenn ein Vorgang fehlgeschlagen ist
 
 
 	function Transactions()
@@ -180,4 +180,4 @@ Weitere Informationen über die Installation und Verwendung von PHP finden Sie u
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

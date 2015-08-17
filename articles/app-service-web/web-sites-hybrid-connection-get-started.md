@@ -30,7 +30,7 @@ Sie können eine Web-App in Azure App Service mit jeder lokalen Ressource verbin
 - Der Computer, auf dem Sie den lokalen Hybrid Connection Manager-Agent installieren, wird weiter hinten in diesem Artikel beschrieben:
 
 	- Sie müssen in der Lage sein, über Port 5671 eine Verbindung mit Azure herzustellen.
-	- Muss in der Lage sein, *Hostname*:*Portnummer* Ihrer lokalen Ressource zu erreichen. 
+	- Sie müssen in der Lage sein, *Hostname*:*Portnummer* Ihrer lokalen Ressource zu erreichen. 
 
 > [AZURE.NOTE]Bei den Schritten in diesem Artikel wird davon ausgegangen, dass Sie den Browser auf dem Computer verwenden, auf dem der lokale Hybridverbindungs-Agent installiert ist.
 
@@ -207,4 +207,4 @@ Nachdem die Hybridverbindungsinfrastruktur nun vollständig ist, können Sie ein
 [HCStatusConnected]: ./media/web-sites-hybrid-connection-get-started/D10HCStatusConnected.png
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

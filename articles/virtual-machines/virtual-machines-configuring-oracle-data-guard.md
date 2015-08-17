@@ -1,19 +1,5 @@
-<properties 
-	pageTitle="Konfigurieren von Oracle Data Guard für Azure" 
-	description="Bearbeiten Sie ein Lernprogramm für das Einrichten und Implementieren von Oracle Data Guard auf Azure Virtual Machines für hohe Verfügbarkeit und Notfallwiederherstellung." 
-	services="virtual-machines" 
-	authors="bbenz" 
-	documentationCenter=""/>
-
-<tags 
-	ms.service="virtual-machines" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="infrastructure-services" 
-	ms.date="06/22/2015" 
-	ms.author="bbenz" />
-
+<properties title="Configuring Oracle Data Guard for Azure" pageTitle="Konfigurieren von Oracle Data Guard für Azure" description="Bearbeiten Sie ein Lernprogramm für das Einrichten und Implementieren von Oracle Data Guard auf Azure Virtual Machines für hohe Verfügbarkeit und Notfallwiederherstellung." services="virtual-machines" authors="bbenz" documentationCenter=""/>
+<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
 #Konfigurieren von Oracle Data Guard für Azure
 Dieses Lernprogramm zeigt, wie Sie Oracle Data Guard für virtuelle Computer in einer Azure-Umgebung für hohe Verfügbarkeit und Notfallwiederherstellung einrichten und implementieren. Das Lernprogramm konzentriert sich auf die unidirektionale Replikation für Oracle-Datenbanken ohne RAC.
 
@@ -29,9 +15,9 @@ Das Lernprogramm geht zudem davon aus, dass Sie die folgenden Voraussetzungen be
 
 - Sie haben im Azure-Portal die Namen der virtuellen Computer auf Machine1 für den primären virtuellen Computer und Machine2 für den virtuellen Standbycomputer festgelegt.
 
-- Sie haben festgelegt, dass auf dem primären virtuellen Computer und auf dem virtuellen Standbycomputer die **ORACLE_HOME**-Umgebungsvariable auf denselben Oracle-Stamminstallationspfad verweist, z. B. `C:\OracleDatabase\product\11.2.0\dbhome_1\database`.
+- Sie haben festgelegt, dass auf dem primären virtuellen Computer und auf dem virtuellen Standbycomputer die **ORACLE\_HOME**-Umgebungsvariable auf denselben Oracle-Stamminstallationspfad verweist, z. B. `C:\OracleDatabase\product\11.2.0\dbhome_1\database`.
 
-- Sie melden Sie sich beim Windows-Server als Mitglied der Gruppe **Administratoren** oder als Mitglied der Gruppe **ORA_DBA** an.
+- Sie melden Sie sich beim Windows-Server als Mitglied der Gruppe **Administratoren** oder als Mitglied der Gruppe **ORA\_DBA** an.
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
@@ -78,14 +64,14 @@ Erstellen einer physischen Standbydatenbank
 >| **Oracle-Version** | Oracle11g Enterprise Release (11.2.0.4.0) | Oracle11g Enterprise Release (11.2.0.4.0) |
 >| **Computername** | Machine1 | Machine2 |
 >| **Betriebssystem** | Windows 2008 R2 | Windows 2008 R2 |
->| **Oracle SID** | TEST | TEST_STBY |
+>| **Oracle SID** | TEST | TEST\_STBY |
 >| **Arbeitsspeicher** | Mindestens 2 GB | Mindestens 2 GB |
 >| **Speicherplatz** | Mindestens 5 GB | Mindestens 5 GB |
 
 Nachfolgende Versionen von Oracle-Datenbanken und Oracle Data Guard enthalten möglicherweise einige zusätzlichen Änderungen, die Sie implementieren müssen. Bestimmte Informationen zur neuesten Version finden Sie in der Dokumentation zu [Data Guard](http://www.oracle.com/technetwork/database/features/availability/data-guard-documentation-152848.html) und [Oracle Database](http://www.oracle.com/us/corporate/features/database-12c/index.html) auf der Oracle-Website.
 
 ##Implementieren der physischen Standbydatenbankumgebung
-### 1. Erstellen einer primären Datenbank
+### 1\. Erstellen einer primären Datenbank
 
 - Erstellen Sie auf dem primären virtuellen Computer die primäre Datenbank "TEST". Informationen hierzu finden Sie unter "Erstellen und Konfigurieren einer Oracle-Datenbank".
 - Stellen Sie an der SQL*Plus-Eingabeaufforderung als Benutzer SYS mit der Rolle SYSDBA eine Verbindung mit der Datenbank her, und führen Sie die folgende Anweisung aus, um den Namen der Datenbank anzuzeigen:
@@ -97,7 +83,7 @@ Nachfolgende Versionen von Oracle-Datenbanken und Oracle Data Guard enthalten m�
 		NAME
 		---------
 		TEST
-- Fragen Sie anschließend die Namen der Datenbankdateien aus der Systemansicht "dba_data_files" ab:
+- Fragen Sie anschließend die Namen der Datenbankdateien aus der Systemansicht "dba\_data\_files" ab:
 
 		SQL> select file_name from dba_data_files; 
 		FILE_NAME 
@@ -108,7 +94,7 @@ Nachfolgende Versionen von Oracle-Datenbanken und Oracle Data Guard enthalten m�
 		C:<YourLocalFolder>\TEST\SYSTEM01.DBF
 		C:<YourLocalFolder>\TEST\EXAMPLE01.DBF
 
-### 2. Vorbereiten der primären Datenbank für die Erstellung der Standbydatenbank
+### 2\. Vorbereiten der primären Datenbank für die Erstellung der Standbydatenbank
 
 Es wird empfohlen, vor dem Erstellen einer Standbydatenbank sicherzustellen, dass die primäre Datenbank ordnungsgemäß konfiguriert ist. Sie müssen die folgenden Schritte ausführen:
 
@@ -132,9 +118,9 @@ Um archivierte Protokolle vom primären Server an den Standbyserver zu versenden
 
 >[AZURE.IMPORTANT]Bei Verwendung von Oracle Database 12c ist der neue Benutzer **SYSDG** vorhanden, mit dem Sie Oracle Data Guard verwalten können. Weitere Informationen finden Sie unter[Änderungen in der Version Oracle Database 12c](http://docs.oracle.com/cd/E16655_01/server.121/e10638/release_changes.htm).
 
-Stellen Sie außerdem sicher, dass in Machine1 die Umgebung "ORACLE_HOME" bereits definiert ist. Wenn sie noch nicht definiert ist, definieren Sie sie im Dialogfeld "Umgebungsvariablen" als Umgebungsvariable. Um auf dieses Dialogfeld zuzugreifen, starten Sie das Hilfsprogramm **System**, indem Sie in der **Systemsteuerung** auf das Symbol "System" doppelklicken. Klicken Sie dann auf die Registerkarte **Erweitert**, und wählen Sie **Umgebungsvariablen** aus. Klicken Sie unter **Systemvariablen** auf die Schaltfläche **Neu**, um die Umgebungsvariablen festzulegen. Nachdem Sie die Umgebungsvariablen eingerichtet haben, schließen Sie die vorhandene Windows-Eingabeaufforderung, und öffnen Sie eine neue Eingabeaufforderung.
+Stellen Sie außerdem sicher, dass in Machine1 die Umgebung "ORACLE\_HOME" bereits definiert ist. Wenn sie noch nicht definiert ist, definieren Sie sie im Dialogfeld "Umgebungsvariablen" als Umgebungsvariable. Um auf dieses Dialogfeld zuzugreifen, starten Sie das Hilfsprogramm **System**, indem Sie in der **Systemsteuerung** auf das Symbol "System" doppelklicken. Klicken Sie dann auf die Registerkarte **Erweitert**, und wählen Sie **Umgebungsvariablen** aus. Klicken Sie unter **Systemvariablen** auf die Schaltfläche **Neu**, um die Umgebungsvariablen festzulegen. Nachdem Sie die Umgebungsvariablen eingerichtet haben, schließen Sie die vorhandene Windows-Eingabeaufforderung, und öffnen Sie eine neue Eingabeaufforderung.
 
-Führen Sie die folgende Anweisung aus, um zum Verzeichnis "Oracle_Home", z. B. "C:\OracleDatabase\product\11.2.0\dbhome_1\database", zu wechseln.
+Führen Sie die folgende Anweisung aus, um zum Verzeichnis "Oracle\_Home", z. B. "C:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\database", zu wechseln.
 
 	cd %ORACLE_HOME%\database
 
@@ -142,7 +128,7 @@ Erstellen Sie dann mit dem Hilfsprogramm für die Kennwortdateierstellung [ORAPW
 
 	ORAPWD FILE=PWDTEST.ora PASSWORD=password FORCE=y
 
-Mit diesem Befehl wird im Verzeichnis "ORACLE_HOME\database" eine Kennwortdatei mit dem Namen "PWDTEST.ora" erstellt. Kopieren Sie diese Datei manuell in das Verzeichnis "%ORACLE_HOME%\database" auf Machine2.
+Mit diesem Befehl wird im Verzeichnis "ORACLE\_HOME\\database" eine Kennwortdatei mit dem Namen "PWDTEST.ora" erstellt. Kopieren Sie diese Datei manuell in das Verzeichnis "%ORACLE\_HOME%\\database" auf Machine2.
 
 #### Konfigurieren eines Standby Redo Logs
 
@@ -237,7 +223,7 @@ Sie können die Data Guard-Umgebung mit den Parametern in der Datei "INIT.ORA" s
 	SQL> create pfile from spfile;
 	File created.
 
-Anschließend müssen Sie die PFILE-Datei bearbeiten, um die Standbyparameter hinzuzufügen. Öffnen Sie hierzu im Verzeichnis "% ORACLE_HOME%\database" die Datei "INITTEST. ORA". Fügen Sie dann die folgenden Anweisungen an die Datei "INITTEST.ORA" an. Beachten Sie, dass die Datei "INIT.ORA" gemäß der Namenskonvention "INIT<Datenbankname>.ORA" benannt werden muss.
+Anschließend müssen Sie die PFILE-Datei bearbeiten, um die Standbyparameter hinzuzufügen. Öffnen Sie hierzu im Verzeichnis "% ORACLE\_HOME%\\database" die Datei "INITTEST. ORA". Fügen Sie dann die folgenden Anweisungen an die Datei "INITTEST.ORA" an. Beachten Sie, dass die Datei "INIT.ORA" gemäß der Namenskonvention "INIT<Datenbankname>.ORA" benannt werden muss.
 	
 	db_name='TEST' 
 	db_unique_name='TEST' 
@@ -258,7 +244,7 @@ Anschließend müssen Sie die PFILE-Datei bearbeiten, um die Standbyparameter hi
 	# ---------------------------------------------------------------------------------------------
 
 
-Der vorangegangene Anweisungsblock enthält drei wichtige Setupelemente: –**LOG_ARCHIVE_CONFIG...:** Mit dieser Anweisung definieren Sie die eindeutigen Datenbank-IDs. – **LOG_ARCHIVE_DEST_1...:** Mit dieser Anweisung definieren Sie den Speicherort des lokalen Archivordners. Es wird empfohlen, mit dieser Anweisung ein neues Verzeichnis für die Archivierungsanforderungen der Datenbank zu erstellen und den lokalen Archivspeicherort explizit anzugeben, statt den Standardordner "% ORACLE_HOME%\database\archive" von Oracle zu verwenden. – **LOG_ARCHIVE_DEST_2.... LGWR ASYNC...:** Sie definieren einen asynchronen Protokollschreiberprozess (LGWR), um Transaktionswiederholungsdaten zu erfassen und an Standbyziele zu übertragen. Hier gibt "DB_UNIQUE_NAME" einen eindeutigen Namen für die Datenbank auf dem Zielstandbyserver an.
+Der vorangegangene Anweisungsblock enthält drei wichtige Setupelemente: –**LOG\_ARCHIVE\_CONFIG...:** Mit dieser Anweisung definieren Sie die eindeutigen Datenbank-IDs. – **LOG\_ARCHIVE\_DEST\_1...:** Mit dieser Anweisung definieren Sie den Speicherort des lokalen Archivordners. Es wird empfohlen, mit dieser Anweisung ein neues Verzeichnis für die Archivierungsanforderungen der Datenbank zu erstellen und den lokalen Archivspeicherort explizit anzugeben, statt den Standardordner "% ORACLE\_HOME%\\database\\archive" von Oracle zu verwenden. – **LOG\_ARCHIVE\_DEST\_2.... LGWR ASYNC...:** Sie definieren einen asynchronen Protokollschreiberprozess (LGWR), um Transaktionswiederholungsdaten zu erfassen und an Standbyziele zu übertragen. Hier gibt "DB\_UNIQUE\_NAME" einen eindeutigen Namen für die Datenbank auf dem Zielstandbyserver an.
 
 Sobald die neue Parameterdatei erstellt ist, müssen Sie aus ihr die SPFILE-Datei erstellen.
 
@@ -284,7 +270,7 @@ Führen Sie dann den Befehl "startup nomount" wie folgt aus:
 
 Erstellen Sie jetzt eine SPFILE-Datei:
 
-	SQL>create spfile frompfile='c:\OracleDatabase\product\11.2.0\dbhome_1\database\initTEST.ora';
+	SQL>create spfile frompfile='c:\OracleDatabase\product\11.2.0\dbhome\_1\database\initTEST.ora';
 
 	File created.
 
@@ -311,7 +297,7 @@ In diesem Abschnitt werden die Schritte beschrieben, die Sie auf Machine2 ausfü
 
 Zunächst müssen Sie über das Azure-Portal eine Remotedesktopverbindung mit Machine2 herstellen.
 
-Erstellen Sie dann auf dem Standbyserver (Machine2) alle erforderlichen Ordner für die Standbydatenbank, z. B. "C:\<LokalerOrdner>\TEST". Stellen Sie in diesem Lernprogramm sicher, dass die Ordnerstruktur der Ordnerstruktur auf Machine1 entspricht, damit alle erforderlichen Dateien, z. B. Steuerungsdatei, Datendateien, Redo-Log-Dateien sowie die Dateien in den Verzeichnissen "UDUMP", "BDUMP" und "CDUMP", erhalten bleiben. Definieren Sie außerdem auf Machine2 die Umgebungsvariablen "ORACLE_HOME" und "ORACLE_BASE". Wenn sie noch nicht definiert sind, definieren Sie sie im Dialogfeld "Umgebungsvariablen". Um auf dieses Dialogfeld zuzugreifen, starten Sie das Hilfsprogramm **System**, indem Sie in der **Systemsteuerung** auf das Symbol "System" doppelklicken. Klicken Sie dann auf die Registerkarte **Erweitert**, und wählen Sie **Umgebungsvariablen** aus. Klicken Sie unter **Systemvariablen** auf die Schaltfläche **Neu**, um die Umgebungsvariablen festzulegen. Nachdem Sie die Umgebungsvariablen eingerichtet haben, müssen Sie die vorhandene Windows-Eingabeaufforderung schließen und eine neue Eingabeaufforderung öffnen, damit die Änderungen angezeigt werden.
+Erstellen Sie dann auf dem Standbyserver (Machine2) alle erforderlichen Ordner für die Standbydatenbank, z. B. "C:\\<LokalerOrdner>\\TEST". Stellen Sie in diesem Lernprogramm sicher, dass die Ordnerstruktur der Ordnerstruktur auf Machine1 entspricht, damit alle erforderlichen Dateien, z. B. Steuerungsdatei, Datendateien, Redo-Log-Dateien sowie die Dateien in den Verzeichnissen "UDUMP", "BDUMP" und "CDUMP", erhalten bleiben. Definieren Sie außerdem auf Machine2 die Umgebungsvariablen "ORACLE\_HOME" und "ORACLE\_BASE". Wenn sie noch nicht definiert sind, definieren Sie sie im Dialogfeld "Umgebungsvariablen". Um auf dieses Dialogfeld zuzugreifen, starten Sie das Hilfsprogramm **System**, indem Sie in der **Systemsteuerung** auf das Symbol "System" doppelklicken. Klicken Sie dann auf die Registerkarte **Erweitert**, und wählen Sie **Umgebungsvariablen** aus. Klicken Sie unter **Systemvariablen** auf die Schaltfläche **Neu**, um die Umgebungsvariablen festzulegen. Nachdem Sie die Umgebungsvariablen eingerichtet haben, müssen Sie die vorhandene Windows-Eingabeaufforderung schließen und eine neue Eingabeaufforderung öffnen, damit die Änderungen angezeigt werden.
 
 Führen Sie anschließend die folgenden Schritte aus:
 
@@ -333,9 +319,9 @@ Führen Sie anschließend die folgenden Schritte aus:
 
 6. Überprüfen der physischen Standbydatenbank
 
-### 1. Erstellen einer Initialisierungsparameterdatei für die Standbydatenbank
+### 1\. Erstellen einer Initialisierungsparameterdatei für die Standbydatenbank
 
-In diesem Abschnitt wird veranschaulicht, wie Sie eine Initialisierungsparameterdatei für die Standbydatenbank erstellen. Kopieren Sie zu diesem Zweck zunächst die Datei "INITTEST.ORA" manuell von Machine1 auf Machine2. Auf beiden Computern sollte die Datei "INITTEST.ORA" im Ordner "%ORACLE_HOME%\database" angezeigt werden. Ändern Sie dann die Datei "INITTEST.ORA" auf Machine2 wie folgt, um die Datenbank als Standbydatenbank einzurichten:
+In diesem Abschnitt wird veranschaulicht, wie Sie eine Initialisierungsparameterdatei für die Standbydatenbank erstellen. Kopieren Sie zu diesem Zweck zunächst die Datei "INITTEST.ORA" manuell von Machine1 auf Machine2. Auf beiden Computern sollte die Datei "INITTEST.ORA" im Ordner "%ORACLE\_HOME%\\database" angezeigt werden. Ändern Sie dann die Datei "INITTEST.ORA" auf Machine2 wie folgt, um die Datenbank als Standbydatenbank einzurichten:
 	
 	db_name='TEST'
 	db_unique_name='TEST_STBY'
@@ -356,21 +342,21 @@ In diesem Abschnitt wird veranschaulicht, wie Sie eine Initialisierungsparameter
 
 Der vorherige Anweisungsblock enthält zwei wichtige Setupelemente:
 
--	***.LOG_ARCHIVE_DEST_1:** Sie müssen den Ordner "C:\OracleDatabase\TEST_STBY\archives" auf Machine2 manuell erstellen.
--	***.LOG_ARCHIVE_DEST_2:** Dies ist ein optionaler Schritt. Sie legen diese Einstellung fest, da sie möglicherweise erforderlich ist, wenn der primäre Computer gewartet wird und aus dem Standbycomputer eine primäre Datenbank wird.
+-	***.LOG\_ARCHIVE\_DEST\_1:** Sie müssen den Ordner "C:\\OracleDatabase\\TEST\_STBY\\archives" auf Machine2 manuell erstellen.
+-	***.LOG\_ARCHIVE\_DEST\_2:** Dies ist ein optionaler Schritt. Sie legen diese Einstellung fest, da sie möglicherweise erforderlich ist, wenn der primäre Computer gewartet wird und aus dem Standbycomputer eine primäre Datenbank wird.
 
 Anschließend müssen Sie die Standbyinstanz starten. Geben Sie auf dem Standbydatenbankserver an einer Windows-Eingabeaufforderung den folgenden Befehl ein, um durch das Erstellen eines neuen Windows-Diensts eine Oracle-Instanz zu erstellen:
 
-	oradim -NEW -SID TEST_STBY -STARTMODE MANUAL
+	oradim -NEW -SID TEST\_STBY -STARTMODE MANUAL
 
-Beachten Sie, dass mit dem Befehl **oradim** eine Oracle-Instanz erstellt, jedoch nicht gestartet wird. Sie finden ihn im Verzeichnis "C:\OracleDatabase\product\11.2.0\dbhome_1\BIN".
+Beachten Sie, dass mit dem Befehl **oradim** eine Oracle-Instanz erstellt, jedoch nicht gestartet wird. Sie finden ihn im Verzeichnis "C:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\BIN".
 
 ##Konfigurieren von Listener und TNSNAMES für die Unterstützung der Datenbank auf dem primären und Standbycomputer
 Bevor Sie eine Standbydatenbank erstellen, müssen Sie sicherstellen, dass die primäre und Standbydatenbank in der Konfiguration miteinander kommunizieren können. Zu diesem Zweck müssen Sie den Listener und TNSNAMES manuell oder mit dem Netzwerkkonfigurationsprogramm NETCA konfigurieren. Dies ist eine obligatorische Aufgabe, wenn Sie das Hilfsprogramm Wiederherstellungs-Manager (RMAN) verwenden.
 
 ### Konfigurieren von "listener.ora" auf beiden Servern zum Speichern von Einträgen für beide Datenbanken
 
-Stellen Sie eine Remotedesktopverbindung mit Machine1 her, und bearbeiten Sie die Datei "listener.ora" wie unten gezeigt. Wenn Sie die Datei "listener.ora" bearbeiten, stellen Sie immer sicher, dass die öffnende und schließende Klammer in der gleichen Spalte angeordnet sind. Sie finden die Datei "listener.ora" im folgenden Ordner: "C:\OracleDatabase\product\11.2.0\dbhome_1\NETWORK\ADMIN\".
+Stellen Sie eine Remotedesktopverbindung mit Machine1 her, und bearbeiten Sie die Datei "listener.ora" wie unten gezeigt. Wenn Sie die Datei "listener.ora" bearbeiten, stellen Sie immer sicher, dass die öffnende und schließende Klammer in der gleichen Spalte angeordnet sind. Sie finden die Datei "listener.ora" im folgenden Ordner: "C:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\NETWORK\\ADMIN\".
 
 	# listener.ora Network Configuration File: C:\OracleDatabase\product\11.2.0\dbhome_1\network\admin\listener.ora
 	
@@ -394,7 +380,7 @@ Stellen Sie eine Remotedesktopverbindung mit Machine1 her, und bearbeiten Sie di
 	    )
 	  )
 
-Stellen Sie anschließend eine Remotedesktopverbindung mit Machine2 her, und bearbeiten Sie die Datei "listener.ora" Datei wie folgt: # listener.ora Network Configuration File: "C:\OracleDatabase\product\11.2.0\dbhome_1\network\admin\listener.ora"
+Stellen Sie anschließend eine Remotedesktopverbindung mit Machine2 her, und bearbeiten Sie die Datei "listener.ora" Datei wie folgt: # listener.ora Network Configuration File: "C:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\network\\admin\\listener.ora"
 	
 	# Generated by Oracle configuration tools.
 	
@@ -419,7 +405,7 @@ Stellen Sie anschließend eine Remotedesktopverbindung mit Machine2 her, und bea
 
 ### Konfigurieren von "tnsnames.ora" auf dem primären virtuellen Computer und virtuellen Standbycomputer zum Speichern von Einträgen für die primäre und Standbydatenbank
 
-Stellen Sie eine Remotedesktopverbindung mit Machine1 her, und bearbeiten Sie die Datei "tnsnames.ora" wie unten gezeigt. Sie finden die Datei "tnsnames.ora" im folgenden Ordner: "C:\OracleDatabase\product\11.2.0\dbhome_1\NETWORK\ADMIN\".
+Stellen Sie eine Remotedesktopverbindung mit Machine1 her, und bearbeiten Sie die Datei "tnsnames.ora" wie unten gezeigt. Sie finden die Datei "tnsnames.ora" im folgenden Ordner: "C:\\OracleDatabase\\product\\11.2.0\\dbhome\_1\\NETWORK\\ADMIN\".
 
 	TEST =
 	  (DESCRIPTION =
@@ -621,4 +607,4 @@ Es wird empfohlen, für die primäre und Standbydatenbank "flashback database" z
 ##Zusätzliche Ressourcen
 [Images des virtuellen Oracle-Computers für Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

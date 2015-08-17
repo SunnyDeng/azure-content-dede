@@ -41,7 +41,7 @@ Wenn ein Benutzer sich anmeldet, wird eine zusätzliche Bestätigung an den Benu
 
 Überprüfungsmethode | Beschreibung 
 ------------- | ------------- |
-Telefonanruf | Es wird ein automatisierter Anruf an das Smartphone des Benutzers ausgelöst. Der Benutzer bestätigt den Anmeldevorgang durch Drücken der \#-Taste. Dadurch wird der Überprüfungsprozess abgeschlossen. Statt der \#-Taste kann bei dieser Option wahlweise die Eingabe eines vorher festgelegten Codes verlangt werden.
+Telefonanruf | Es wird ein automatisierter Anruf an das Smartphone des Benutzers ausgelöst. Der Benutzer bestätigt den Anmeldevorgang durch Drücken der #-Taste. Dadurch wird der Überprüfungsprozess abgeschlossen. Statt der #-Taste kann bei dieser Option wahlweise die Eingabe eines vorher festgelegten Codes verlangt werden.
 Textnachricht | Eine Textnachricht mit einem sechsstelligen Code wird an das Smartphone des Benutzers gesendet. Dieser Code muss eingegeben werden, um die Überprüfung abzuschließen.
 Benachrichtigung über mobile App | Es wird eine Überprüfungsanforderung an das Smartphone des Benutzers gesendet. Der Benutzer bestätigt die Anforderung in der mobilen App, um die Überprüfung abzuschließen. Diese Variante wird verwendet, wenn Benutzer das Senden einer App-Benachrichtigung als primäre Überprüfungsmethode ausgewählt haben. Wenn Benutzer eine Anforderung erhalten, obwohl sie derzeit keinen Anmeldevorgang durchführen, können sie diese als Betrugsversuch melden.
 Überprüfungscode in der mobilen App | Es wird ein Überprüfungscode an die mobile App auf dem Smartphone des Benutzers gesendet. Diese Variante wird verwendet, wenn Benutzer das Senden eines Überprüfungscodes als primäre Überprüfungsmethode ausgewählt haben.
@@ -60,25 +60,25 @@ Azure Multi-Factor Authentication | Azure Multi-Factor Authentication bietet von
 In der folgenden Tabelle werden die Funktionen aufgeführt, die in den verschiedenen Versionen von Azure Multi-Factor Authentication verfügbar sind.
 
 
-Funktion | Multi-Factor Authentication für Office 365 \(in Office 365-SKUs enthalten\)|Multi-Factor Authentication für Azure-Administratoren \(enthalten in Azure-Abonnement\) | Azure Multi-Factor Authentication \(enthalten in Azure AD Premium und Enterprise Mobility Suite\) 
+Funktion | Multi-Factor Authentication für Office 365 (in Office 365-SKUs enthalten)|Multi-Factor Authentication für Azure-Administratoren (enthalten in Azure-Abonnement) | Azure Multi-Factor Authentication (enthalten in Azure AD Premium und Enterprise Mobility Suite) 
 ------------- | :-------------: |:-------------: |:-------------: |
-Administratoren können Konten mit MFA schützen.| \* | \* \(nur für Azure-Administratorkonten verfügbar\)|\*
-Mobile App als zweiter Faktor|\* | \* | \*
-Telefonanruf als zweiter Faktor|\* | \* | \*
-SMS als zweiter Faktor|\* | \* | \*
-App-Kennwörter für Clients, die MFA nicht unterstützen|\* | \* | \*
-Administrative Kontrolle über Authentifizierungsmethoden| | | \*
-PIN-Modus| | | \*
-Betrugswarnung| | | \*
-MFA-Berichte| | | \*
-Einmalumgehung| | | \*
-Benutzerdefinierte Begrüßungen für Telefonanrufe| | | \*
-Benutzerdefinierte Anrufer-ID für Telefonanrufe| | | \*
-Bestätigung von Ereignissen| | | \*
-Vertrauenswürdige IP-Adressen| | | \*
-Aussetzen der Multi-Factor Authentication für gespeicherte Geräte \(öffentliche Vorschau\)| | | \*
-MFA-SDK| | | \*
-MFA für lokale Anwendungen mit MFA-Server| | | \*
+Administratoren können Konten mit MFA schützen.| * | * (nur für Azure-Administratorkonten verfügbar)|*
+Mobile App als zweiter Faktor|* | * | *
+Telefonanruf als zweiter Faktor|* | * | *
+SMS als zweiter Faktor|* | * | *
+App-Kennwörter für Clients, die MFA nicht unterstützen|* | * | *
+Administrative Kontrolle über Authentifizierungsmethoden| | | *
+PIN-Modus| | | *
+Betrugswarnung| | | *
+MFA-Berichte| | | *
+Einmalumgehung| | | *
+Benutzerdefinierte Begrüßungen für Telefonanrufe| | | *
+Benutzerdefinierte Anrufer-ID für Telefonanrufe| | | *
+Bestätigung von Ereignissen| | | *
+Vertrauenswürdige IP-Adressen| | | *
+Aussetzen der Multi-Factor Authentication für gespeicherte Geräte (öffentliche Vorschau)| | | *
+MFA-SDK| | | *
+MFA für lokale Anwendungen mit MFA-Server| | | *
 
 
 ##Beziehen von Azure Multi-Factor Authentication
@@ -102,4 +102,4 @@ Wählen Sie das Modell, das am besten für Ihre Organisation geeignet ist. Lesen
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

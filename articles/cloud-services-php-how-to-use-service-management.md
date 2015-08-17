@@ -111,7 +111,7 @@ Wenn Sie einen Clouddienst, einen Speicherdienst oder eine Affinitätsgruppe ers
 - USA (Westen)
 - USA (Osten)
 
-In den folgenden Codebeispielen werden Standorte als Zeichenfolgen an Methoden übergeben. Mithilfe der <code>WindowsAzure\ServiceManagement\Models\Locations</code>-Klasse können Sie Standorte jedoch auch als Enumerationen übergeben. Anstatt beispielsweise "USA (Westen)" an eine Methode zu übergeben, die einen Standort akzeptiert, können Sie <code>Locations::WEST_US</code> übergeben.
+In den folgenden Codebeispielen werden Standorte als Zeichenfolgen an Methoden übergeben. Mithilfe der <code>WindowsAzure\\ServiceManagement\\Models\\Locations</code>-Klasse können Sie Standorte jedoch auch als Enumerationen übergeben. Anstatt beispielsweise "USA (Westen)" an eine Methode zu übergeben, die einen Standort akzeptiert, können Sie <code>Locations::WEST\_US</code> übergeben.
 
 ## Erstellen eines Clouddiensts
 
@@ -555,4 +555,4 @@ Sie können eine Affinitätsgruppe löschen, indem Sie den Gruppennamen an die M
 
 [Azure-Dienstkonfigurationsschema (.cscfg-Datei)]: http://msdn.microsoft.com/library/windowsazure/ee758710.aspx
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

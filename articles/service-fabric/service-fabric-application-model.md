@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/23/2015"
+   ms.date="07/22/2015"
    ms.author="alexwun"/>
 
 # Modellieren von Anwendungen in Service Fabric
@@ -232,6 +232,4 @@ Nachdem die Anwendung ordnungsgemäß gepackt und die Überprüfung erfolgreich 
 <!--Link references--In actual articles, you only need a single period before the slash-->
 [10]: service-fabric-deploy-remove-applications.md
 
- 
-
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

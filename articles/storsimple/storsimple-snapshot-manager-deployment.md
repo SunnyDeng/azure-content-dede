@@ -255,4 +255,4 @@ Weitere Informationen zum StorSimple Snapshot Manager finden Sie unter [Was ist 
 
 Weitere Informationen zur StorSimple Snapshot Manager-Benutzeroberfläche finden Sie unter [Benutzeroberfläche des StorSimple Snapshot Managers](storsimple-use-snapshot-manager.md)
 
-<!-----HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

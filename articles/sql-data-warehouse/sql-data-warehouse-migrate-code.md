@@ -60,8 +60,8 @@ Es werden auch einige Systemfunktionen nicht unterstützt. Zu den wichtigsten Fu
 - @@NESTLEVEL()
 - @@IDENTITY()
 - @@ROWCOUNT()
-- ROWCOUNT_BIG
-- ERROR_LINE()
+- ROWCOUNT\_BIG
+- ERROR\_LINE()
 
 Wieder können viele dieser Probleme umgangen werden.
 
@@ -100,4 +100,4 @@ Hinweise zur Entwicklung des Codes finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

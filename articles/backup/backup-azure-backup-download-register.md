@@ -5,10 +5,11 @@
    documentationCenter=""
    authors="Jim-Parker"
    manager="jwhit"
-   editor=""/> \<tags ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt\_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="07/01/2015" ms.author="jimpark"; "aashishr"/\>
+   editor=""/>
+<tagsms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="07/01/2015" ms.author="jimpark"; "aashishr"/>
 
 # Herunterladen, Installieren und Registrieren des Azure Backup-Agents
-Nach dem Erstellen des Azure Backup-Tresors sollte auf jedem lokalen Server \(Windows Server, Windows-Client oder System Center Data Protection Manager-Server\) ein Agent installiert werden, der Ihnen das Sichern von Daten und Anwendungen in Azure ermöglicht. Dieser Artikel behandelt die erforderlichen Schritte zur Einrichtung des Azure Backup-Agents auf einem Windows Server- oder Windows-Clientcomputer.
+Nach dem Erstellen des Azure Backup-Tresors sollte auf jedem lokalen Server (Windows Server, Windows-Client oder System Center Data Protection Manager-Server) ein Agent installiert werden, der Ihnen das Sichern von Daten und Anwendungen in Azure ermöglicht. Dieser Artikel behandelt die erforderlichen Schritte zur Einrichtung des Azure Backup-Agents auf einem Windows Server- oder Windows-Clientcomputer.
 
 1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com/) an.
 
@@ -26,7 +27,7 @@ Nach dem Erstellen des Azure Backup-Tresors sollte auf jedem lokalen Server \(Wi
 
 6.	Wenn Sie einen Proxyserver für die Verbindung mit dem Internet verwenden, geben Sie im Bildschirm **Proxykonfiguration** die Details des Proxyservers ein. Wenn Sie einen authentifizierten Proxy verwenden, geben Sie in diesem Bildschirm die Informationen zum Benutzernamen und zum Kennwort ein.
 
-7. Der Azure Backup-Agent installiert das .NET Framework 4.5 und Windows PowerShell \(falls noch nicht verfügbar\), um die Installation abzuschließen.
+7. Der Azure Backup-Agent installiert das .NET Framework 4.5 und Windows PowerShell (falls noch nicht verfügbar), um die Installation abzuschließen.
 
 8.	Sobald der Agent installiert ist, klicken Sie auf die Schaltfläche **Mit Registrierung fortfahren**, um den Workflow fortzusetzen.
 
@@ -36,13 +37,13 @@ Nach dem Erstellen des Azure Backup-Tresors sollte auf jedem lokalen Server \(Wi
 
     ![Tresoranmeldeinformationen](./media/backup-azure-backup-download-register/vc.png)
 
-    > [AZURE.NOTE]Die Datei mit den Tresoranmeldeinformationen gilt nur für 48 Stunden \(nachdem sie aus dem Portal heruntergeladen wurde\). Wenn in diesem Bildschirm Fehler auftreten \(z. B. "Datei mit Tresoranmeldeinformationen abgelaufen"\), melden Sie sich beim Azure-Portal an, und laden Sie die Datei mit den Tresoranmeldeinformationen erneut herunter.
+    > [AZURE.NOTE]Die Datei mit den Tresoranmeldeinformationen gilt nur für 48 Stunden (nachdem sie aus dem Portal heruntergeladen wurde). Wenn in diesem Bildschirm Fehler auftreten (z. B. "Datei mit Tresoranmeldeinformationen abgelaufen"), melden Sie sich beim Azure-Portal an, und laden Sie die Datei mit den Tresoranmeldeinformationen erneut herunter.
 
     Stellen Sie sicher, dass die Datei mit den Tresoranmeldeinformationen an einem Speicherort verfügbar ist, der für die Setupanwendung zugänglich ist. Wenn Zugriffsfehler auftreten, kopieren Sie die Datei mit den Tresoranmeldeinformationen in einen temporären Speicherort auf diesem Computer, und wiederholen Sie den Vorgang.
 
-    Wenn Sie einen Fehler wegen ungültiger Tresoranmeldeinformationen erhalten \(z. B. "Ungültige Tresoranmeldeinformationen angegeben"\), ist die Datei entweder beschädigt oder enthält nicht die aktuellen Anmeldeinformationen, die dem Wiederherstellungsdienst zugeordnet sind. Wiederholen Sie den Vorgang, nachdem Sie eine neue Datei mit Tresoranmeldeinformationen aus dem Portal heruntergeladen haben. Dieser Fehler tritt in der Regel auf, wenn der Benutzer im Azure-Portal in schneller Folge auf die Option zum Herunterladen der Tresoranmeldeinformationen klickt. In diesem Fall ist nur die zweite Datei mit Tresoranmeldeinformationen gültig.
+    Wenn Sie einen Fehler wegen ungültiger Tresoranmeldeinformationen erhalten (z. B. "Ungültige Tresoranmeldeinformationen angegeben"), ist die Datei entweder beschädigt oder enthält nicht die aktuellen Anmeldeinformationen, die dem Wiederherstellungsdienst zugeordnet sind. Wiederholen Sie den Vorgang, nachdem Sie eine neue Datei mit Tresoranmeldeinformationen aus dem Portal heruntergeladen haben. Dieser Fehler tritt in der Regel auf, wenn der Benutzer im Azure-Portal in schneller Folge auf die Option zum Herunterladen der Tresoranmeldeinformationen klickt. In diesem Fall ist nur die zweite Datei mit Tresoranmeldeinformationen gültig.
 
-10. Im Bildschirm **Verschlüsselungseinstellung** können Sie entweder eine Passphrase generieren oder eine Passphrase bereitstellen \(mindestens 16 Zeichen\) und die Passphrase an einem sicheren Ort aufbewahren.
+10. Im Bildschirm **Verschlüsselungseinstellung** können Sie entweder eine Passphrase generieren oder eine Passphrase bereitstellen (mindestens 16 Zeichen) und die Passphrase an einem sicheren Ort aufbewahren.
 
     ![Verschlüsselung](./media/backup-azure-backup-download-register/encryption.png)
 
@@ -55,4 +56,4 @@ Nach dem Erstellen des Azure Backup-Tresors sollte auf jedem lokalen Server \(Wi
 ## Nächste Schritte
 - Informationen zum Sichern von Daten und Anwendungen in Azure finden Sie unter [Planen von Sicherungen](backup-azure-backup-and-recover.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

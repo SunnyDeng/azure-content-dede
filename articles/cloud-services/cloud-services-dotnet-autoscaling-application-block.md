@@ -7,6 +7,7 @@
 	manager="timlt" 
 	editor=""/>
 
+
 <tags 
 	ms.service="cloud-services" 
 	ms.workload="tbd" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="05/18/2015" 
 	ms.author="rasquill"/>
+
 
 
 
@@ -132,7 +134,8 @@ In Visual Studio müssen Sie sicherstellen, dass die Dienstmodelldatei in den Au
                       certificateStoreLocation="CurrentUser"
                       certificateStoreName="My"> <services> <service dnsPrefix="[hostedservicednsprefix]" slot="Staging"> <roles> <role alias="AutoscalingApplicationRole"
                       roleName="[targetrolename]"
-                      wadStorageAccountName="targetstorage"/> </roles> </service> </services> <storageAccounts> <storageAccount alias="targetstorage"
+                      wadStorageAccountName="targetstorage"/>
+ </roles> </service> </services> <storageAccounts> <storageAccount alias="targetstorage"
               connectionString="DefaultEndpointsProtocol=https;AccountName=[storageaccountname];AccountKey=[storageaccountkey]"> </storageAccount> </storageAccounts> </subscription> </subscriptions> </serviceModel>
 
 Ersetzen Sie die Werte in eckigen Klammern durch spezifische Werte für Ihre Umgebung und Zielanwendung. Viele dieser Werte finden Sie nach der Anmeldung beim [Azure-Verwaltungsportal][].
@@ -162,7 +165,7 @@ Melden Sie sich beim Verwaltungsportal an.
 
     1.  Klicken Sie im Azure-Verwaltungsportal auf **Clouddienste**.
 
-    2.  Klicken Sie in der Liste der Clouddienste auf den Dienst, der die Anwendung hostet, in der Sie die automatische Skalierung verwenden möchten. Klicken Sie anschließend auf **Instanzen**. In der Spalte **Rolle* wird der Name der Zielrolle angezeigt.
+    2.  Klicken Sie in der Liste der Clouddienste auf den Dienst, der die Anwendung hostet, in der Sie die automatische Skalierung verwenden möchten. Klicken Sie anschließend auf **Instanzen**. In der Spalte \*\*Rolle\* wird der Name der Zielrolle angezeigt.
 
         ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling07.png)
 
@@ -209,6 +212,7 @@ Das folgende Codebeispiel enthält ein Beispiel für einen Regelsatz in der Date
         <rule name="default" enabled="true" rank="1" description="The default constraint rule">
           <actions>
             <range min="2" max="6" target="AutoscalingApplicationRole"/>
+
           </actions>
         </rule>
       </constraintRules>
@@ -217,28 +221,33 @@ Das folgende Codebeispiel enthält ein Beispiel für einen Regelsatz in der Date
           <when>
             <any>
                <greaterOrEqual operand="WebRoleA_CPU_Avg_5m" than="60"/>
+
             </any>
           </when>
           <actions>
             <scale target="AutoscalingApplicationRole" by="1"/>
+
           </actions>
         </rule>
         <rule name="ScaleDownOnLowUtilization" rank="10" description="Scale up the web role" enabled="true" >
           <when>
             <all>
               <less operand="WebRoleA_CPU_Avg_5m" than="60"/>
+
             </all>
           </when>
           <actions>
             <scale target="AutoscalingApplicationRole" by="-1"/>
+
           </actions>
         </rule>
       </reactiveRules>
       <operands>
         <performanceCounter alias="WebRoleA_CPU_Avg_5m"
-          performanceCounterName="\Processor(_Total)% Processor Time"
+          performanceCounterName="\Processor(_Total)\% Processor Time"
           source ="AutoscalingApplicationRole"
           timespan="00:05:00" aggregate="Average"/>
+
       </operands>
     </rules>
 
@@ -246,7 +255,7 @@ Dieses Beispiel enthält drei Regeln für die automatische Skalierung (eine **Ei
 
 -   Die Einschränkungsregel ist immer aktiv und legt die Mindestanzahl an Rolleninstanzen auf zwei und die Höchstzahl an Rolleninstanzen auf sechs fest.
 
--   Die beiden reaktiven Regeln verwenden einen **Operanden** namens **WebRoleA_CPU_Avg_5m**, der die durchschnittliche CPU-Auslastung während der letzten fünf Minuten für eine Azure-Rolle mit dem Namen **AutoscalingApplicationRole** prüft. Diese Rolle ist im **Dienstmodell** definiert.
+-   Die beiden reaktiven Regeln verwenden einen **Operanden** namens **WebRoleA\_CPU\_Avg\_5m**, der die durchschnittliche CPU-Auslastung während der letzten fünf Minuten für eine Azure-Rolle mit dem Namen **AutoscalingApplicationRole** prüft. Diese Rolle ist im **Dienstmodell** definiert.
 
 -   Die reaktive Rolle mit dem Namen **ScaleUpOnHighUtilization** erhöht die Zahl der Instanzen der Zielrolle um eins, wenn die durchschnittliche CPU-Auslastung während der letzten fünf Minuten größer als oder gleich 60 % war.
 
@@ -295,10 +304,13 @@ Um detaillierte Informationen über die Aktionen zu erhalten, die vom Anwendungs
           <system.diagnostics>
             <sources>
               <sourcename="Autoscaling General" switchName="SourceSwitch" switchType="System.Diagnostics.SourceSwitch" />
+
               <sourcename="Autoscaling Updates" switchName="SourceSwitch" switchType="System.Diagnostics.SourceSwitch" />
+
             </sources>
             <switches>
               <addname="SourceSwitch" value="Verbose, Information, Warning, Error, Critical" />
+
             </switches>
           </system.diagnostics>
         </configuration>
@@ -380,4 +392,4 @@ Da Sie jetzt die Grundlagen der Verwendung des Anwendungsblocks für die automat
   [Reduzieren der TechNet- und MSDN-Hostingkosten und der Umweltbelastung mit automatischer Skalierung in Azure]: http://msdn.microsoft.com/library/jj838718(PandP.50).aspx
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

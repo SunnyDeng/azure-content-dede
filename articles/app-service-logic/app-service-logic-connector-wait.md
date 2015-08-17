@@ -40,18 +40,9 @@ Der Warten-Connector kann als eine Aktion verwendet werden. Er besitzt keine Tri
 
 	![Konfigurierte Aktion][3]
 
-<table>
-	<tr>
-		<th>Parameter</th>
-		<th>Typ</th>
-		<th>Beschreibung des Parameters</th>
-	</tr>
-	<tr>
-		<td>Dauer In Minuten</td>
-		<td>Ganze Zahl</td>
-		<td>Dauer der Verzögerung in Minuten</td>
-	</tr>
-</table>
+Parameter|Typ|Beschreibung des Parameters
+---|---|---
+Dauer In Minuten|Ganze Zahl|Dauer der Verzögerung in Minuten
 
 
 ## Mehr mit Ihrem Connector machen
@@ -64,4 +55,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [2]: ./media/app-service-logic-wait/DelayInput.PNG
 [3]: ./media/app-service-logic-wait/ActionConfigured.PNG
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

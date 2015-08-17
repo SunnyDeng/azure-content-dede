@@ -67,4 +67,4 @@ Weitere Informationen finden Sie unter [Configuring intranet forms-based authent
 
 Starten Sie das Registrierungstool, um die Datei "RegistrationTool.exe.config" zu suchen, und öffnen Sie den Windows Task-Manager. Klicken Sie im Task-Manager auf der Registerkarte "Details" mit der rechten Maustaste auf "RegistrationTool.exe", und wählen Sie im Popupmenü "Dateispeicherort öffnen" aus.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

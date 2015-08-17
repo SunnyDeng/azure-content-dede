@@ -171,4 +171,4 @@ Das Codebeispiel in diesem Abschnitt wendet Parameter auf eine SQL-INSERT-Anweis
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -81,7 +81,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 		    }
 		};
 
-	Dieser Code gibt die ersten drei nicht abgeschlossenen Elemente aus der Tabelle "TodoItem" zurück und lädt sie in ein JSON-Objekt, das an die **wns**.**createTileSquareText01**-Funktion übergeben wird. Diese Funktion gibt das folgende XML für tile-Vorlagen zurück:
+	Dieser Code gibt die ersten 3 nicht abgeschlossenen Element aus der Tabelle TodoItem zurück und lädt sie in ein JSON-Objekt, das an die Funktion **wns**.**createTileSquareText01** übergeben wird. Diese Funktion gibt das folgende XML für tile-Vorlagen zurück:
 
 		<tile>
 			<visual>
@@ -167,4 +167,4 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

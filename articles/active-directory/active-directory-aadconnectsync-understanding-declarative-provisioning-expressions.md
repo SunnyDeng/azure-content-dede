@@ -19,9 +19,9 @@
 
 # Azure AD Connect-Synchronisierung: Grundlegendes zu Ausdrücken für die deklarative Bereitstellung
 
-Die Azure Active Directory Connect-Synchronisierungsdienste \(Azure AD Connect-Synchronisierung\) basieren auf der erstmals in Forefront Identity Manager 2010 eingeführten deklarativen Bereitstellung, die Ihnen ermöglicht, Ihre gesamte Geschäftslogik für die Identitätsintegration zu implementieren, ohne Code schreiben zu müssen.
+Die Azure Active Directory Connect-Synchronisierungsdienste (Azure AD Connect-Synchronisierung) basieren auf der erstmals in Forefront Identity Manager 2010 eingeführten deklarativen Bereitstellung, die Ihnen ermöglicht, Ihre gesamte Geschäftslogik für die Identitätsintegration zu implementieren, ohne Code schreiben zu müssen.
 
-Ein wesentlicher Bestandteil der deklarativen Bereitstellung ist die in den Attributflüssen verwendete Ausdruckssprache. Die verwendete Sprache ist eine Teilmenge von Microsoft ® Visual Basic ® for Applications \(VBA\). Diese Sprache wird in Microsoft Office verwendet, und Benutzer mit Erfahrungen mit VBScript werden sie wiedererkennen. Die Ausdruckssprache für die deklarative Bereitstellung verwendet nur Funktionen und ist keine strukturierte Sprache; es gibt keine Methoden oder Anweisungen. Funktionen werden stattdessen verschachtelt, um den Programmablauf auszudrücken.
+Ein wesentlicher Bestandteil der deklarativen Bereitstellung ist die in den Attributflüssen verwendete Ausdruckssprache. Die verwendete Sprache ist eine Teilmenge von Microsoft ® Visual Basic ® for Applications (VBA). Diese Sprache wird in Microsoft Office verwendet, und Benutzer mit Erfahrungen mit VBScript werden sie wiedererkennen. Die Ausdruckssprache für die deklarative Bereitstellung verwendet nur Funktionen und ist keine strukturierte Sprache; es gibt keine Methoden oder Anweisungen. Funktionen werden stattdessen verschachtelt, um den Programmablauf auszudrücken.
 
 Weitere Informationen finden Sie unter [Willkommen bei der VBA-Sprachreferenz (Visual Basic for Applications) für Office 2013](https://msdn.microsoft.com/library/gg264383(v=office.15).aspx).
 
@@ -33,8 +33,8 @@ Die Attribute sind stark typisiert. Eine Funktion, die ein einwertiges Zeichenfo
 
 ## Sprachdefinitionen und Bezeichner
 
-- Funktionen verfügen über einen Namen, gefolgt von Argumenten in Klammern: FunctionName\(\<<argument 1>\>,\<<argument N>\>\).
-- Attribute werden durch eckige Klammern gekennzeichnet: \[attributeName\].
+- Funktionen verfügen über einen Namen, gefolgt von Argumenten in Klammern: FunctionName(<<argument 1>>,<<argument N>>).
+- Attribute werden durch eckige Klammern gekennzeichnet: [attributeName].
 - Parameter werden durch Prozentzeichen gekennzeichnet: %ParameterName%.
 - Zeichenfolgenkonstanten sind in Anführungszeichen eingeschlossen. Beispiel: "Contoso".
 - Numerische Werte werden ohne Anführungszeichen ausgedrückt und im Dezimalformat vorliegen. Hexadezimalwerten weisen das Präfix "&H" auf. Beispiel: 98052, &HFF.
@@ -46,14 +46,15 @@ Die Attribute sind stark typisiert. Eine Funktion, die ein einwertiges Zeichenfo
 
 Folgende Operatoren können verwendet werden:
 
-- **Vergleich**: \<, \<=, \<\>, =, \>, \>=
-- **Mathematik**: +, -, *, - - **Zeichenfolge**: & \(concatenate\)
-- **Logischer Ausdruck**: && \(and\), \|\| \(or\)
-- **Auswertungsreihenfolge**: \( \)
+- **Vergleich**: <, <=, <>, =, >, >=
+- **Mathematik**: +, -, *, -
+- **Zeichenfolge**: & (concatenate)
+- **Logischer Ausdruck**: && (and), || (or)
+- **Auswertungsreihenfolge**: ( )
 
 
 
-Operatoren werden von links nach rechts ausgewertet. 2\*\(5+3\) ist nicht gleich 2\*5+3.<br> Die Klammern \( \) werden verwendet, um die Auswertungsreihenfolge zu ändern.
+Operatoren werden von links nach rechts ausgewertet. 2*(5+3) ist nicht gleich 2*5+3.<br> Die Klammern ( ) werden verwendet, um die Auswertungsreihenfolge zu ändern.
 
 
 
@@ -66,7 +67,7 @@ Ein Parameter wird entweder durch einen Connector oder einen Administrator unter
 Der Active Directory Connector stellt folgende Parameter für eingehende Synchronisierungsregeln bereit:
 
  
-\| Domain.Netbios \| Domain.FQDN \| Domain.LDAP \| \| Forest.Netbios \| Forest.FQDN \| Forest.LDAP \|
+| Domain.Netbios | Domain.FQDN | Domain.LDAP | | Forest.Netbios | Forest.FQDN | Forest.LDAP |
  
 
 Das System stellt den folgenden Parameter bereit:
@@ -75,7 +76,7 @@ Connector.ID
 
 Ein Beispiel, in dem die Metaverseattributdomäne mit dem NetBIOS-Namen der Domäne aufgefüllt wird, in der sich der Benutzer befindet:
 
-domain \<- %Domain.Netbios%
+domain <- %Domain.Netbios%
 
 ## Häufige Szenarien
 
@@ -87,9 +88,9 @@ Zeichenfolgenattribute sind standardmäßig als indizierbar festgelegt, die maxi
 
 ### Ändern von "userPrincipalSuffix"
 
-Das userPrincipalName-Attribut in Active Directory ist den Benutzern nicht immer bekannt und eignet sich möglicherweise nicht als Anmelde-ID. Das Installationshandbuch für die Azure AD-Synchronisierung ermöglicht die Auswahl eines anderen Attributs wie z. B. "mail". In einigen Fällen muss das Attribut jedoch berechnet werden. Das Unternehmen Contoso beispielsweise verfügt über zwei Azure AD-Verzeichnisse, eins für die Produktion und eins für Testzwecke. Das Unternehmen möchte, dass seine Benutzer im Testmandanten das Suffix in der Anmeldung ändern: ID.userPrincipalName \<- Word\(\[userPrincipalName\],1,"@"\) & "@contosotest.com".
+Das userPrincipalName-Attribut in Active Directory ist den Benutzern nicht immer bekannt und eignet sich möglicherweise nicht als Anmelde-ID. Das Installationshandbuch für die Azure AD-Synchronisierung ermöglicht die Auswahl eines anderen Attributs wie z. B. "mail". In einigen Fällen muss das Attribut jedoch berechnet werden. Das Unternehmen Contoso beispielsweise verfügt über zwei Azure AD-Verzeichnisse, eins für die Produktion und eins für Testzwecke. Das Unternehmen möchte, dass seine Benutzer im Testmandanten das Suffix in der Anmeldung ändern: ID.userPrincipalName <- Word([userPrincipalName],1,"@") & "@contosotest.com".
 
-In diesem Ausdruck werden alle Zeichen links des ersten @-Zeichens \(Word\) mit einer festgelegten Zeichenfolge verkettet.
+In diesem Ausdruck werden alle Zeichen links des ersten @-Zeichens (Word) mit einer festgelegten Zeichenfolge verkettet.
 
 
 
@@ -99,7 +100,7 @@ In diesem Ausdruck werden alle Zeichen links des ersten @-Zeichens \(Word\) mit 
 
 Einige Attribute in Active Directory weisen im Schema mehrere Werte auf, obwohl sie in "Active Directory-Benutzer und -Computer" wie einwertige Attribute aussehen. Das description-Attribut ist ein Beispiel hierfür.
 
-Falls das Attribut einen Wert besitzt, wird in diesem Ausdruck das erste Element \(Item\) im Attribut genommen, die voran- und nachgestellten Leerzeichen \(Trim\) werden entfernt, und die ersten 448 Zeichen \(Left\) der Zeichenfolge werden beibehalten.
+Falls das Attribut einen Wert besitzt, wird in diesem Ausdruck das erste Element (Item) im Attribut genommen, die voran- und nachgestellten Leerzeichen (Trim) werden entfernt, und die ersten 448 Zeichen (Left) der Zeichenfolge werden beibehalten.
 
 
 
@@ -115,9 +116,9 @@ Bei ausgehenden Synchronisierungsregeln können zwei verschiedene Konstanten ver
 
 #### ImportedValue
 
-Die Funktion ImportedValue unterscheidet sich von allen anderen Funktionen, da der Attributname in Anführungszeichen statt in eckige Klammern eingeschlossen werden muss: ImportedValue\("proxyAddresses"\).
+Die Funktion ImportedValue unterscheidet sich von allen anderen Funktionen, da der Attributname in Anführungszeichen statt in eckige Klammern eingeschlossen werden muss: ImportedValue("proxyAddresses").
 
-Üblicherweise verwendet ein Attribut während der Synchronisierung den erwarteten Wert, selbst wenn er noch nicht exportiert wurde oder während des Exports ein Fehler empfangen wurde \("top of the tower"\). Bei einer eingehenden Synchronisierung wird angenommen, dass ein Attribut, das ein verbundenes Verzeichnis noch nicht erreicht hat, dieses schließlich erreichen wird. In einigen Fällen ist es wichtig, nur Werte zu synchronisieren, die vom verbundenen Verzeichnis bestätigt wurden. In diesem Fall wird die Funktion "ImportedValue" verwendet \("hologram and delta import tower"\).
+Üblicherweise verwendet ein Attribut während der Synchronisierung den erwarteten Wert, selbst wenn er noch nicht exportiert wurde oder während des Exports ein Fehler empfangen wurde ("top of the tower"). Bei einer eingehenden Synchronisierung wird angenommen, dass ein Attribut, das ein verbundenes Verzeichnis noch nicht erreicht hat, dieses schließlich erreichen wird. In einigen Fällen ist es wichtig, nur Werte zu synchronisieren, die vom verbundenen Verzeichnis bestätigt wurden. In diesem Fall wird die Funktion "ImportedValue" verwendet ("hologram and delta import tower").
 
 Ein Beispiel dafür befindet sich in der einsatzbereiten Synchronisierungsregel "In from AD – User Common from Exchange", wobei in Hybrid-Exchange der durch Exchange online hinzugefügte Wert nur synchronisiert werden sollte, wenn bestätigt wurde, dass der Wert erfolgreich exportiert wurde:
 
@@ -134,4 +135,4 @@ Eine vollständige Liste der Funktionen finden Sie unter [Azure AD Connect-Synch
  
 <!--Image references-->
 
-<!------HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

@@ -105,7 +105,7 @@ Der Typ der zu erstellenden Datenbank.
 
 ### maxSizeBytes
 
-Die maximale Größe \(in Bytes\) der Datenbank.
+Die maximale Größe (in Bytes) der Datenbank.
 
     "maxSizeBytes": {
       "type": "string",
@@ -443,4 +443,4 @@ Erstellt einen neuen SQL-Server und eine Datenbank. Der Name des Servers wird im
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

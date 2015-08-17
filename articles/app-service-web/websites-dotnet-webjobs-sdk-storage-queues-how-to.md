@@ -562,7 +562,7 @@ Im Dashboard des WebJobs-SDK werden die letzten 100 Zeilen der Konsolenausgabe a
  
 ![Ausgabe von "Click Toggle"](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/dashboardapplogs.png)
 
-In einem fortlaufenden Webauftrag werden Anwendungsprotokolle in "/data/jobs/continuous/*{webjobname}*/job_log.txt" im Dateisystem der Web-App angezeigt.
+In einem fortlaufenden Webauftrag werden Anwendungsprotokolle in "/data/jobs/continuous/*{webjobname}*/job\_log.txt" im Dateisystem der Web-App angezeigt.
 
 		[09/26/2014 21:01:13 > 491e54: INFO] Console.Write - Hello world!
 		[09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!
@@ -581,4 +581,4 @@ In einer Azure-Tabelle sehen die Protokolle `Console.Out` und `Console.Error` wi
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

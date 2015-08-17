@@ -67,7 +67,7 @@ Das Zwischenspeichern für Clouddienste unterliegt folgenden Einschränkungen:
 
 - Das CDN darf nur verwendet werden, um statische Inhalte zwischenzuspeichern.
 
-	>[AZURE.WARNING]
+	>[AZURE.WARNING]Das Zwischenspeichern von überaus veränderlichen oder wirklich dynamischen Inhalten kann sich negativ auf die Leistung auswirken oder zu Problemen mit Inhalten führen, was alles höhere Kosten verursacht.
 - Ihr Clouddienst muss in einer Produktionsumgebung bereitgestellt werden.
 - Ihr Clouddienst muss das Objekt an Port 80 über HTTP bereitstellen.
 - Der Clouddienst muss den Inhalt, der zwischengespeichert oder übermittelt werden soll, im Ordner "/cdn" für den Clouddienst platzieren.
@@ -114,4 +114,4 @@ Weitere Informationen zum Zuordnen einer benutzerdefinierten Domäne finden Sie 
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

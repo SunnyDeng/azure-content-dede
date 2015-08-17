@@ -62,17 +62,17 @@ Installieren Sie wie folgt:
 
 1. Laden Sie die ZIP-Datei [das Update](http://download.microsoft.com/download/9/F/D/9FDC6001-1DD0-4C10-BDDD-8A9EBFC57FDF/ASR Scout 8.0.1 Update1.zip) herunter. Diese ZIP-Datei enthält die folgenden Dateien:
 
-	-  RX_8.0.1.0_GA_Update_1_3279231_23Jun15.tar.gz
-	-  CX_Windows_8.0.1.0_GA_Update_1_3259146_23Jun15.exe
-	-  UA_Windows_8.0.1.0_GA_Update_1_3259401_23Jun15.exe
-	-  UA_RHEL6-64_8.0.1.0_GA_Update_1_3259401_23Jun15.tar.gz
-	-  vCon_Windows_8.0.1.0_GA_Update_1_3259523_23Jun15.exe
+	-  RX\_8.0.1.0\_GA\_Update\_1\_3279231\_23Jun15.tar.gz
+	-  CX\_Windows\_8.0.1.0\_GA\_Update\_1\_3259146\_23Jun15.exe
+	-  UA\_Windows\_8.0.1.0\_GA\_Update\_1\_3259401\_23Jun15.exe
+	-  UA\_RHEL6-64\_8.0.1.0\_GA\_Update\_1\_3259401\_23Jun15.tar.gz
+	-  vCon\_Windows\_8.0.1.0\_GA\_Update\_1\_3259523\_23Jun15.exe
 2. Extrahieren Sie die ZIP-Dateien.
-2. **RX server**: Kopieren Sie **RX_8.0.1.0_GA_Update_1_3279231_23Jun15.tar.gz** auf den RX-Server, und extrahieren Sie die Datei. Führen Sie im extrahierten Ordner **/Install** aus.
-2. **Konfigurationsserver/Prozessserver**: Kopieren Sie **CX_Windows_8.0.1.0_GA_Update_1_3259146_23Jun15.exe** auf den Konfigurationsserver und den Prozessserver. Führen Sie sie durch Doppelklicken aus.
-3. **Windows-Masterzielserver**: Um die Kopie des vereinheitlichten Agents zu aktualisieren, kopieren Sie **UA_Windows_8.0.1.0_GA_Update_1_3259401_23Jun15.exe** auf den Masterzielserver. Führen Sie sie durch Doppelklicken aus. Beachten Sie, dass der vereinheitliche Agent für Windows nicht auf den Quellserver anwendbar ist. Er sollte nur auf dem Windows-Masterzielserver installiert werden.
-4. **Linux-Masterzielserver**: Um die Kopie des vereinheitlichten Agents zu aktualisieren, kopieren Sie **UA_RHEL6 64_8.0.1.0_GA_Update_1_3259401_23Jun15.tar.gz** auf den Masterzielserver, und extrahieren Sie die Datei. Führen Sie im extrahierten Ordner **/Install** aus.
-5. **vContinuum-Server**: Kopieren Sie **vCon_Windows_8.0.1.0_GA_Update_1_3259523_23Jun15.exe** auf den vContinuum-Server. Stellen Sie sicher, dass Sie den vContinuum Assistenten geschlossen haben. Doppelklicken Sie auf die Datei, um Sie auszuführen.
+2. **RX server**: Kopieren Sie **RX\_8.0.1.0\_GA\_Update\_1\_3279231\_23Jun15.tar.gz** auf den RX-Server, und extrahieren Sie die Datei. Führen Sie im extrahierten Ordner **/Install** aus.
+2. **Konfigurationsserver/Prozessserver**: Kopieren Sie **CX\_Windows\_8.0.1.0\_GA\_Update\_1\_3259146\_23Jun15.exe** auf den Konfigurationsserver und den Prozessserver. Führen Sie sie durch Doppelklicken aus.
+3. **Windows-Masterzielserver**: Um die Kopie des vereinheitlichten Agents zu aktualisieren, kopieren Sie **UA\_Windows\_8.0.1.0\_GA\_Update\_1\_3259401\_23Jun15.exe** auf den Masterzielserver. Führen Sie sie durch Doppelklicken aus. Beachten Sie, dass der vereinheitliche Agent für Windows nicht auf den Quellserver anwendbar ist. Er sollte nur auf dem Windows-Masterzielserver installiert werden.
+4. **Linux-Masterzielserver**: Um die Kopie des vereinheitlichten Agents zu aktualisieren, kopieren Sie **UA\_RHEL6 64\_8.0.1.0\_GA\_Update\_1\_3259401\_23Jun15.tar.gz** auf den Masterzielserver, und extrahieren Sie die Datei. Führen Sie im extrahierten Ordner **/Install** aus.
+5. **vContinuum-Server**: Kopieren Sie **vCon\_Windows\_8.0.1.0\_GA\_Update\_1\_3259523\_23Jun15.exe** auf den vContinuum-Server. Stellen Sie sicher, dass Sie den vContinuum Assistenten geschlossen haben. Doppelklicken Sie auf die Datei, um Sie auszuführen.
 
 ## Schritt 4: Einrichten der Replikation
 5. Richten Sie die Replikation zwischen den Quell- und Zielstandorten von VMware ein.
@@ -117,4 +117,4 @@ Dieses neueste Update enthält Fehlerbehebungen und neue Funktionen:
 
 Etwaige Fragen können Sie im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.<
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

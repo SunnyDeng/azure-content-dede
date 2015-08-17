@@ -8,4 +8,4 @@ Sie können Ihre Suchergebnisse nach Excel exportieren, indem Sie eine CSV-Datei
 2. In Ihrem Browser werden Sie aufgefordert, die CSV-Datei zu speichern. Öffnen oder speichern Sie die Datei.
 3. Öffnen Sie die Datei in Excel oder einer anderen Anwendung. Überprüfen Sie Ihre Daten, und passen Sie sie in jeder gewünschten Weise an. ![Excel-Ergebnisse](./media/operational-insights-export/export-excel.png)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

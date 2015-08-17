@@ -178,4 +178,4 @@ Sie können ihn auf einen beliebigen Wert festlegen. Dies ist nur ein Beispiel. 
 [13]: ./media/app-service-logic-connector-ftp/ConfiguredUploadFile.PNG
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

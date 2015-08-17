@@ -79,4 +79,4 @@ Wenn Sie mehr zu Kunden erfahren möchten, die DocumentDB verwenden, stehen Ihne
 - [XOMNI](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18667). Der Speicher der Zukunft basiert auf schnellen Suchvorgängen und problemlosem Datenfluss.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

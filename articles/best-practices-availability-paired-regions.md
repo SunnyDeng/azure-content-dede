@@ -61,36 +61,27 @@ Abbildung 2 – Hypothetisches Azure-Regionspaar
 ## Regionsübergreifende Aktivitäten
 Wie in Abbildung 2 dargestellt.
 
-![1Grün](./media/best-practices-availability-paired-regions/1Green.png) 
-**Azure Compute (PaaS)** – Sie müssen zusätzliche Serverressourcen im Voraus bereitstellen, um sicherzustellen, dass Ressourcen während eines Notfalls in einer anderen Region zur Verfügung stehen. Weitere Informationen finden Sie unter [Technische Dokumentation zur Geschäftskontinuität mit Azure](https://msdn.microsoft.com/library/azure/hh873027.aspx).
+![1Grün](./media/best-practices-availability-paired-regions/1Green.png) **Azure Compute (PaaS)** – Sie müssen zusätzliche Serverressourcen im Voraus bereitstellen, um sicherzustellen, dass Ressourcen während eines Notfalls in einer anderen Region zur Verfügung stehen. Weitere Informationen finden Sie unter [Technische Dokumentation zur Geschäftskontinuität mit Azure](https://msdn.microsoft.com/library/azure/hh873027.aspx).
 
-![2Grün](./media/best-practices-availability-paired-regions/2Green.png) 
-**Azure Storage** – Georedundanter Speicher (GRS) wird beim Erstellen eines Azure Storage-Kontos standardmäßig konfiguriert. Mithilfe von GRS werden Ihre Daten dreimal in der primären Region und dreimal im Regionspaar automatisch repliziert. Weitere Informationen finden Sie unter [Redundanzoptionen für Azure Storage](../storage/storage-redundancy.md).
+![2Grün](./media/best-practices-availability-paired-regions/2Green.png) **Azure Storage** – Georedundanter Speicher (GRS) wird beim Erstellen eines Azure Storage-Kontos standardmäßig konfiguriert. Mithilfe von GRS werden Ihre Daten dreimal in der primären Region und dreimal im Regionspaar automatisch repliziert. Weitere Informationen finden Sie unter [Redundanzoptionen für Azure Storage](../storage/storage-redundancy.md).
 
 
-![3Grün](./media/best-practices-availability-paired-regions/3Green.png) 
-**Azure SQL-Datenbanken** – Mithilfe der standardmäßigen Azure SQL-Georeplikation können Sie eine asynchrone Replikation von Transaktionen in ein Regionspaar konfigurieren. Bei Wahl der Option "Premium" für die Georeplikation können Sie die Replikation in jede Region der Welt konfigurieren. Allerdings wird empfohlen, dass Sie diese Ressourcen für die meisten Notfallwiederherstellungsszenarien in einem Regionspaar bereitstellen. Weitere Informationen finden Sie unter [Georeplikation in Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/dn783447.aspx).
+![3Grün](./media/best-practices-availability-paired-regions/3Green.png) **Azure SQL-Datenbanken** – Mithilfe der standardmäßigen Azure SQL-Georeplikation können Sie eine asynchrone Replikation von Transaktionen in ein Regionspaar konfigurieren. Bei Wahl der Option "Premium" für die Georeplikation können Sie die Replikation in jede Region der Welt konfigurieren. Allerdings wird empfohlen, dass Sie diese Ressourcen für die meisten Notfallwiederherstellungsszenarien in einem Regionspaar bereitstellen. Weitere Informationen finden Sie unter [Georeplikation in Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/dn783447.aspx).
 
-![4Grün](./media/best-practices-availability-paired-regions/4Green.png) 
-**Azure-Ressourcen-Manager (ARM)** – ARM bietet grundsätzlich eine regionsübergreifende logische Isolierung von Dienstverwaltungskomponenten. Dies bedeutet, dass sich logische Fehler in einer Region weniger wahrscheinlich auf eine andere auswirken.
+![4Grün](./media/best-practices-availability-paired-regions/4Green.png) **Azure-Ressourcen-Manager (ARM)** – ARM bietet grundsätzlich eine regionsübergreifende logische Isolierung von Dienstverwaltungskomponenten. Dies bedeutet, dass sich logische Fehler in einer Region weniger wahrscheinlich auf eine andere auswirken.
 
 ## Vorteile eines Regionspaars
 Wie in Abbildung 2 dargestellt.
 
-![5Orange](./media/best-practices-availability-paired-regions/5Orange.png) 
-**Physische Isolierung** – Sofern möglich, sollte zwischen Azure-Datencentern in einem Regionspaar eine Entfernung von mindestens 480 km bestehen, was allerdings nicht in allen Gebieten zweckmäßig oder möglich ist. Durch die Trennung physischer Datencenter wird die Wahrscheinlichkeit einer gleichzeitigen Beeinträchtigung beider Regionen durch Naturkatastrophen, politische Unruhen, Stromausfälle oder physische Netzwerkausfälle verringert. Die Isolierung unterliegt den Einschränkungen des jeweiligen Gebiets (Größe, Verfügbarkeit der Energieversorgungs-/Netzwerkinfrastruktur, Vorschriften usw.).
+![5Orange](./media/best-practices-availability-paired-regions/5Orange.png) **Physische Isolierung** – Sofern möglich, sollte zwischen Azure-Datencentern in einem Regionspaar eine Entfernung von mindestens 480 km bestehen, was allerdings nicht in allen Gebieten zweckmäßig oder möglich ist. Durch die Trennung physischer Datencenter wird die Wahrscheinlichkeit einer gleichzeitigen Beeinträchtigung beider Regionen durch Naturkatastrophen, politische Unruhen, Stromausfälle oder physische Netzwerkausfälle verringert. Die Isolierung unterliegt den Einschränkungen des jeweiligen Gebiets (Größe, Verfügbarkeit der Energieversorgungs-/Netzwerkinfrastruktur, Vorschriften usw.).
 
-![6Orange](./media/best-practices-availability-paired-regions/6Orange.png)
-**Von der Plattform bereitgestellte Replikation** – Einige Dienste, wie z. B. georedundanter Speicher, bieten eine automatische Replikation in das Regionspaar.
+![6Orange](./media/best-practices-availability-paired-regions/6Orange.png)**Von der Plattform bereitgestellte Replikation** – Einige Dienste, wie z. B. georedundanter Speicher, bieten eine automatische Replikation in das Regionspaar.
 
-![7Orange](./media/best-practices-availability-paired-regions/7Orange.png) 
-**Reihenfolge der Regionswiederherstellung** – Im Falle eines umfassenden Ausfalls hat bei jedem Paar die Wiederherstellung einer der Regionen Priorität. Für Anwendungen, die in Regionspaaren bereitgestellt sind, wird die priorisierte Wiederherstellung einer der Regionen garantiert. Wenn eine Anwendung in Regionen bereitgestellt ist, die kein Paar bilden, kann sich die Wiederherstellung verzögern. Im schlimmsten Fall werden die gewählten Regionen ggf. zuletzt wiederhergestellt.
+![7Orange](./media/best-practices-availability-paired-regions/7Orange.png) **Reihenfolge der Regionswiederherstellung** – Im Falle eines umfassenden Ausfalls hat bei jedem Paar die Wiederherstellung einer der Regionen Priorität. Für Anwendungen, die in Regionspaaren bereitgestellt sind, wird die priorisierte Wiederherstellung einer der Regionen garantiert. Wenn eine Anwendung in Regionen bereitgestellt ist, die kein Paar bilden, kann sich die Wiederherstellung verzögern. Im schlimmsten Fall werden die gewählten Regionen ggf. zuletzt wiederhergestellt.
 
-![8Orange](./media/best-practices-availability-paired-regions/8Orange.png) 
-**Sequenzielle Updates** – Geplante Azure-Systemupdates werden zur Minimierung von Ausfallzeit, der Auswirkungen von Fehlern und logischen Ausfällen im seltenen Fall eines fehlerhaften Updates sequenziell (nicht gleichzeitig) eingespielt.
+![8Orange](./media/best-practices-availability-paired-regions/8Orange.png) **Sequenzielle Updates** – Geplante Azure-Systemupdates werden zur Minimierung von Ausfallzeit, der Auswirkungen von Fehlern und logischen Ausfällen im seltenen Fall eines fehlerhaften Updates sequenziell (nicht gleichzeitig) eingespielt.
 
 
-![9Orange](./media/best-practices-availability-paired-regions/9Orange.png) 
-**Speicherort von Daten** – Eine Region befindet sich innerhalb desselben Gebiets wie ihr Paar (mit Ausnahme von Brasilien, Süden), um steuerliche und rechtliche Anforderungen an den Speicherort von Daten zu erfüllen.
+![9Orange](./media/best-practices-availability-paired-regions/9Orange.png) **Speicherort von Daten** – Eine Region befindet sich innerhalb desselben Gebiets wie ihr Paar (mit Ausnahme von Brasilien, Süden), um steuerliche und rechtliche Anforderungen an den Speicherort von Daten zu erfüllen.
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

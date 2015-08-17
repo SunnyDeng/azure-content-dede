@@ -8,10 +8,10 @@
 | Echtzeitmessaging/<br/>Websockets | Eingeschränkt | 350 pro mobilem Dienst | Unbegrenzt |
 | Offlinesynchronisierung | Eingeschränkt | Included | Included |
 | Geplante Aufträge | Eingeschränkt | Included | Included |
-| SQL-Datenbank \(erforderlich\) <br/>Für zusätzliche Kapazität gelten Standardtarife | 20 MB enthalten | 20 MB enthalten | 20 MB enthalten |
+| SQL-Datenbank (erforderlich) <br/>Für zusätzliche Kapazität gelten Standardtarife | 20 MB enthalten | 20 MB enthalten | 20 MB enthalten |
 | CPU-Kapazität | 60 Minuten pro Tag | Unbegrenzt | Unbegrenzt |
-| Übertragung ausgehender Daten | 165 MB pro Tag \(tägliche Rollover\) | Included | Included |
+| Übertragung ausgehender Daten | 165 MB pro Tag (tägliche Rollover) | Included | Included |
 
 Weitere Informationen zu diesen Einschränkungen und zu Preisen finden Sie unter [Mobile Services Preise](https://azure.microsoft.com/pricing/details/mobile-services/).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

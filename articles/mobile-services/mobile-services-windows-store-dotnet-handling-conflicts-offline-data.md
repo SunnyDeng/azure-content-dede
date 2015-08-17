@@ -29,7 +29,7 @@ Wenn Sie lieber ein Video zu diesem Thema ansehen möchten, können Sie den Clip
 
 > [AZURE.VIDEO build-offline-apps-azure-mobile-services]
 
-In diesem Tutorial laden Sie eine universelle Windows C\#-Lösung für eine App herunter, die die Behandlung von Konflikten bei der Offlinesynchronisierung unterstützt. Sie integrieren einen mobilen Dienst in die App und führen dann die Windows Store 8.1- und Windows Phone 8.1-Clients aus, um einen Synchronisierungskonflikt zu generieren und zu beheben.
+In diesem Tutorial laden Sie eine universelle Windows C#-Lösung für eine App herunter, die die Behandlung von Konflikten bei der Offlinesynchronisierung unterstützt. Sie integrieren einen mobilen Dienst in die App und führen dann die Windows Store 8.1- und Windows Phone 8.1-Clients aus, um einen Synchronisierungskonflikt zu generieren und zu beheben.
 
 Dieses Lernprogramm basiert auf den Schritten und der Beispiel-App aus dem vorherigen Lernprogramm [Erste Schritte mit Offlinedaten]. Bevor Sie mit diesem Lernprogramm beginnen, sollten Sie zunächst [Erste Schritte mit Offlinedaten] abschließen.
 
@@ -53,7 +53,7 @@ In diesem Lernprogramm wird exemplarisch gezeigt, wie das [Todo Offline-Beispiel
 
     >[AZURE.NOTE]Möglicherweise müssen Sie alte Verweise auf die SQLite-Laufzeit löschen und wie im Lernprogramm [Erste Schritte mit Offlinedaten] beschrieben durch den aktualisierten Verweis ersetzen.
 
-4. Geben Sie in der App Text unter **Insert a TodoItem** \(TodoItem einfügen\) ein, und klicken Sie auf **Save** \(Speichern\), um "todoitems" zum lokalen Store hinzuzufügen. Schließen Sie dann die App.
+4. Geben Sie in der App Text unter **Insert a TodoItem** (TodoItem einfügen) ein, und klicken Sie auf **Save** (Speichern), um "todoitems" zum lokalen Store hinzuzufügen. Schließen Sie dann die App.
 
 Beachten Sie, dass noch keine Verbindung zwischen der App und einem mobilen Dienst besteht, daher erzeugen die Schaltflächen **Push** und **Pull** Ausnahmefehler.
 
@@ -130,7 +130,7 @@ Um Konflikte zugunsten des lokalen Elements zu lösen, führen Sie den Vorgang e
 
 Um Konflikte zugunsten des Serverelements zu lösen, verlassen Sie einfach `ExecuteTableOperationAsync`. Die lokale Version des Objekts wird verworfen und durch den Wert vom Server ersetzt.
 
-Um den Pushvorgang zu beenden \(die Änderungen in der Warteschlange jedoch zu erhalten\), verwenden Sie die `AbortPush()`-Methode:
+Um den Pushvorgang zu beenden (die Änderungen in der Warteschlange jedoch zu erhalten), verwenden Sie die `AbortPush()`-Methode:
 
     operation.AbortPush();
 
@@ -164,4 +164,4 @@ Wenn ein Pushvorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePush
 [Todo Offline-Beispiel für Mobile Services]: http://go.microsoft.com/fwlink/?LinkId=512866
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

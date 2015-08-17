@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Erste Schritte mit der clientseitigen Verschlüsselung für Microsoft Azure Storage (Vorschau) | Microsoft Azure" 
-	description="Die Azure Storage-Clientvorschaubibliothek für .NET bietet Unterstützung für die clientseitige Verschlüsselung und die Integration in Azure Key Vault. Die clientseitige Verschlüsselung bietet maximale Sicherheit für Ihre Azure Storage-Anwendungen, da Ihre Zugriffsschlüssel im Dienst niemals verfügbar sind. Die clientseitige Verschlüsselung ist für Blobs, Warteschlangen und Tabellen verfügbar." 
+	pageTitle="Erste Schritte mit der clientseitigen Verschlüsselung für Microsoft Azure Storage | Microsoft Azure" 
+	description="Die Azure Storage-Clientbibliothek für .NET bietet Unterstützung für die clientseitige Verschlüsselung und die Integration in Azure Key Vault. Die clientseitige Verschlüsselung bietet maximale Sicherheit für Ihre Azure Storage-Anwendungen, da Ihre Zugriffsschlüssel im Dienst niemals verfügbar sind. Die clientseitige Verschlüsselung ist für Blobs, Warteschlangen und Tabellen verfügbar." 
 	services="storage" 
 	documentationCenter=".net" 
 	authors="tamram" 
 	manager="carolz" 
 	editor=""/>
+
 
 <tags 
 	ms.service="storage" 
@@ -13,15 +14,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/18/2015" 
+	ms.date="08/04/2015" 
 	ms.author="tamram"/>
 
 
-# Erste Schritte mit der clientseitigen Verschlüsselung für Microsoft Azure Storage (Vorschau)
+
+# Erste Schritte der clientseitigen Verschlüsselung für Microsoft Azure Storage
 
 ## Übersicht
 
-Willkommen bei der [Vorschau der neuen Azure Storage-Clientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage/4.4.1-preview). Diese Vorschaubibliothek enthält neue Funktionen, mit denen Entwickler Daten in Clientanwendungen vor dem Hochladen in Azure Storage verschlüsseln und beim Herunterladen entschlüsseln können. Die Vorschaubibliothek unterstützt außerdem die Integration in Azure [Key Vault](http://azure.microsoft.com/services/key-vault/) für die Schlüsselverwaltung von Speicherkonten.
+Die [Azure Storage-Clientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage) enthält Funktionen, mit denen Entwickler Daten in Clientanwendungen vor dem Hochladen in Azure Storage verschlüsseln und beim Herunterladen entschlüsseln können. Die Bibliothek unterstützt außerdem die Integration in Azure [Schlüsseltresor](http://azure.microsoft.com/services/key-vault/) (Key Vault) für die Schlüsselverwaltung von Speicherkonten.
 
 ## Verschlüsselung und Entschlüsselung über das Umschlagverfahren
 
@@ -52,19 +54,19 @@ Die Entschlüsselung über das Umschlagverfahren funktioniert wie folgt:
 
 Die Speicherclientbibliothek verwendet [AES](http://en.wikipedia.org/wiki/Advanced_Encryption_Standard), um Benutzerdaten zu verschlüsseln. Der [CBC-Modus (Blockchiffreverkettung, Cipher Block Chaining)](http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) mit AES wird verwendet. Da jeder Dienst eine andere Funktionsweise aufweist, werden die Dienste hier erörtert.
 
-### Blobs (in englischer Sprache)
+### Blobs
 
-In der Vorschauversion unterstützt die Clientbibliothek nur die Verschlüsselung vollständiger Blobs. Die Verschlüsselung wird unterstützt, wenn die Benutzer **UploadFrom***-Methoden oder **BlobWriteStream** verwenden. Es werden sowohl vollständige Downloads als auch Downloads von Bereichen unterstützt.
+Die Clientbibliothek unterstützt momentan nur die Verschlüsselung vollständiger Blobs. Insbesondere wird die Verschlüsselung unterstützt, wenn Benutzer die **UploadFrom**\*-Methoden oder die **OpenWrite**-Methode verwenden. Es werden sowohl vollständige Downloads als auch Downloads von Bereichen unterstützt.
 
 Bei der Verschlüsselung generiert die Clientbibliothek einen zufälligen Initialisierungsvektor (IV) mit einer Größe von 16 Byte zusammen mit einem zufälligen Inhaltsverschlüsselungsschlüssel (CEK) mit einer Größe von 32 Byte. Mithilfe dieser Informationen wird die Umschlagverschlüsselung der Blobdaten ausgeführt. Der umschlossene CEK und einige zusätzliche Verschlüsselungsmetadaten werden dann als Blobmetadaten zusammen mit dem verschlüsselten Blob für den Dienst gespeichert.
 
 > [AZURE.WARNING]Wenn Sie eigene Metadaten für den Blob bearbeiten oder hochladen, müssen Sie sicherstellen, dass diese Metadaten beibehalten werden. Wenn Sie neue Metadaten ohne diese Metadaten hochladen, gehen der umschlossene CEK, der IV und andere Metadaten verloren und der Blobinhalt wird nie wieder abrufbar sein.
 
-Beim Herunterladen eines verschlüsselten Blobs wird der Inhalt des gesamten Blobs mit den **DownloadTo***/**BlobReadStream**-Hilfsmethoden abgerufen. Der umschlossene CEK wird entpackt und zusammen mit dem IV (in diesem Fall als Blobmetadaten gespeichert) verwendet, um die entschlüsselten Daten an die Benutzer zurückzugeben.
+Beim Herunterladen eines verschlüsselten Blobs wird der Inhalt des gesamten Blobs mit den **DownloadTo**\*/\*\*BlobReadStream\*\*-Hilfsmethoden abgerufen. Der umschlossene CEK wird entpackt und zusammen mit dem IV (in diesem Fall als Blobmetadaten gespeichert) verwendet, um die entschlüsselten Daten an die Benutzer zurückzugeben.
 
-Beim Herunterladen eines beliebigen Bereichs (**DownloadRange***-Methoden) im verschlüsselten Blob wird der von den Benutzern angegebene Bereich angepasst, um eine kleine Menge zusätzlicher Daten abzurufen, die verwendet werden können, um den angeforderten Bereich erfolgreich zu entschlüsseln.
+Beim Herunterladen eines beliebigen Bereichs (**DownloadRange**-Methoden) im verschlüsselten Blob wird der von den Benutzern angegebene Bereich angepasst, um eine kleine Menge zusätzlicher Daten abzurufen, die verwendet werden können, um den angeforderten Bereich erfolgreich zu entschlüsseln.
 
-Alle Blobtypen (Blockblobs und Seitenblobs) können mit diesem Schema verschlüsselt/entschlüsselt werden.
+Alle Blobtypen (Blockblobs, Seitenblobs und Anfügeblobs) können mit diesem Schema verschlüsselt/entschlüsselt werden.
 
 ### Warteschlangen
 
@@ -78,18 +80,18 @@ Bei der Entschlüsselung wird der umschlossene Schlüssel aus der Warteschlangen
 
 ### Tabellen
 
-In der Vorschauversion unterstützt die Clientbibliothek die Verschlüsselung von Entitätseigenschaften für Insert- und Replace-Vorgänge.
+Die Clientbibliothek unterstützt die Verschlüsselung von Entitätseigenschaften für Einfüge- und Ersetzungsvorgänge.
 
 >[AZURE.NOTE]Das Zusammenführen wird derzeit nicht unterstützt. Da eine Teilmenge der Eigenschaften möglicherweise bereits mit einem anderen Schlüssel verschlüsselt wurde, führen das einfache Zusammenführen der neuen Eigenschaften und das Aktualisieren der Metadaten zu Datenverlusten. Das Zusammenführen erfordert entweder zusätzliche Dienstaufrufe, um die bereits vorhandene Entität aus dem Dienst zu lesen, oder die Verwendung eines neuen Schlüssels pro Eigenschaft. Beide Verfahren sind aus Leistungsgründen nicht geeignet.
 
 Die Verschlüsselung von Tabellendaten funktioniert wie folgt:
 
 1. Die Benutzer geben die Eigenschaften an, die verschlüsselt werden sollen.
-2. Die Clientbibliothek generiert einen zufälligen Initialisierungsvektor (IV) mit einer Größe von 16 Byte zusammen mit einem zufälligen Inhaltsverschlüsselungsschlüssel (CEK) mit einer Größe von 32 Byte für jede Entität und führt die Umschlagverschlüsselung für die einzelnen Eigenschaften durch, indem ein neuer IV pro Eigenschaft abgeleitet wird.
-3. Der umschlossene CEK und einige zusätzliche Verschlüsselungsmetadaten werden dann als zwei zusätzliche reservierte Eigenschaften gespeichert. Die erste reservierte Eigenschaft ("_ClientEncryptionMetadata1") ist eine Zeichenfolgeneigenschaft, die die Informationen über den IV, die Version und den umschlossenen Schlüssel enthält. Die andere reservierte Eigenschaft ("_ClientEncryptionMetadata2") ist eine binäre Eigenschaft, die die Informationen zu den Eigenschaften enthält, die verschlüsselt werden.
+2. Die Clientbibliothek generiert einen zufälligen Initialisierungsvektor (IV) mit einer Größe von 16 Byte zusammen mit einem zufälligen Inhaltsverschlüsselungsschlüssel (CEK) mit einer Größe von 32 Byte für jede Entität und führt die Umschlagverschlüsselung für die einzelnen zu verschlüsselnden Eigenschaften durch, indem ein neuer IV pro Eigenschaft abgeleitet wird. Die verschlüsselte Eigenschaft wird als Binärdaten gespeichert.
+3. Der umschlossene CEK und einige zusätzliche Verschlüsselungsmetadaten werden dann als zwei zusätzliche reservierte Eigenschaften gespeichert. Die erste reservierte Eigenschaft ("\_ClientEncryptionMetadata1") ist eine Zeichenfolgeneigenschaft, die die Informationen über den IV, die Version und den umschlossenen Schlüssel enthält. Die zweite reservierte Eigenschaft ("\_ClientEncryptionMetadata2") ist eine binäre Eigenschaft, die die Informationen zu den Eigenschaften enthält, die verschlüsselt werden. Die Informationen in dieser zweiten-Eigenschaft ("\_ClientEncryptionMetadata2") sind selbst verschlüsselt.
 4. Aufgrund dieser zusätzlichen reservierten Eigenschaften, die für die Verschlüsselung erforderlich sind, verfügen die Benutzer jetzt möglicherweise nur über 250 benutzerdefinierte Eigenschaften anstelle von 252. Die Gesamtgröße der Entität muss weniger als 1 MB betragen.
 
-Beachten Sie, dass nur Zeichenfolgeneigenschaften verschlüsselt werden können. Wenn andere Typen von Eigenschaften verschlüsselt werden sollen, müssen sie in Zeichenfolgen konvertiert werden.
+Beachten Sie, dass nur Zeichenfolgeneigenschaften verschlüsselt werden können. Wenn andere Typen von Eigenschaften verschlüsselt werden sollen, müssen sie in Zeichenfolgen konvertiert werden. Die verschlüsselten Zeichenfolgen werden als binäre Eigenschaften für den Dienst gespeichert, und sie werden nach der Entschlüsselung wieder in Zeichenfolgen konvertiert.
 
 Für Tabellen müssen die Benutzer zusätzlich zur Verschlüsselungsrichtlinie die Eigenschaften angeben, die verschlüsselt werden sollen. Dies kann erfolgen, indem ein [EncryptProperty]-Attribut (für POCO-Entitäten, die von "TableEntity" abgeleitet werden) oder ein Verschlüsselungsresolver in den Anforderungsoptionen angegeben werden. Ein Verschlüsselungsresolver ist ein Delegat, der einen Partitionsschlüssel, einen Zeilenschlüssel und einen Eigenschaftennamen annimmt und einen booleschen Wert zurückgibt, der angibt, ob die Eigenschaft verschlüsselt werden soll. Bei der Verschlüsselung verwendet die Clientbibliothek diese Informationen, um zu entscheiden, ob eine Eigenschaft beim Schreiben in das Netzwerk verschlüsselt werden soll. Der Delegat bietet zudem die Möglichkeit einer Logik bezüglich der Verschlüsselung der Eigenschaften. (Beispiel: Wenn X, dann wird Eigenschaft A verschlüsselt, andernfalls werden die Eigenschaften A und B verschlüsselt.) Beachten Sie, dass es nicht notwendig ist, diese Informationen beim Lesen oder Abfragen von Entitäten bereitzustellen.
 
@@ -99,11 +101,11 @@ Bei Batchvorgängen wird derselbe KEK für alle Zeilen in einem Batchvorgang ver
 
 ### Abfragen
 
-Zum Ausführen von Abfragevorgängen müssen Sie einen Schlüsselresolver angeben, der alle Schlüssel im Resultset auflösen kann. Wenn eine im Abfrageergebnis enthaltene Entität nicht in einen Anbieter aufgelöst werden kann, löst die Clientbibliothek einen Fehler aus. Für jede Abfrage, die serverseitige Projektionen ausführt, fügt die Clientbibliothek den ausgewählten Spalten standardmäßig die spezifischen Verschlüsselungsmetadateneigenschaften ("_ClientEncryptionMetadata1" und_ClientEncryptionMetadata2) hinzu.
+Zum Ausführen von Abfragevorgängen müssen Sie einen Schlüsselresolver angeben, der alle Schlüssel im Resultset auflösen kann. Wenn eine im Abfrageergebnis enthaltene Entität nicht in einen Anbieter aufgelöst werden kann, löst die Clientbibliothek einen Fehler aus. Für jede Abfrage, die serverseitige Projektionen ausführt, fügt die Clientbibliothek den ausgewählten Spalten standardmäßig die spezifischen Verschlüsselungsmetadateneigenschaften ("\_ClientEncryptionMetadata1" und "\_ClientEncryptionMetadata2") hinzu.
 
 ## Azure-Schlüsseltresor
 
-Der Azure-Schlüsseltresor (Vorschau) unterstützt Sie dabei, kryptografische und geheime Schlüssel zu schützen, die von Cloudanwendungen und -diensten verwendet werden. Durch Verwenden des Azure-Schlüsseltresors können Benutzer Schlüssel und geheime Schlüssel (beispielsweise Authentifizierungsschlüssel, Schlüssel für Speicherkonten, Datenverschlüsselungsschlüssel, PFX-Dateien und Kennwörter) verschlüsseln, indem sie durch Hardwaresicherheitsmodule (HSMs) geschützte Schlüssel verwenden. Weitere Informationen finden Sie unter [Was ist der Azure-Schlüsseltresor?](../articles/key-vault-whatis.md).
+Der Azure-Schlüsseltresor unterstützt Sie dabei, kryptografische Schlüssel und geheime Schlüssel zu schützen, die von Cloudanwendungen und -diensten verwendet werden. Durch Verwenden des Azure-Schlüsseltresors können Benutzer Schlüssel und geheime Schlüssel (beispielsweise Authentifizierungsschlüssel, Schlüssel für Speicherkonten, Datenverschlüsselungsschlüssel, PFX-Dateien und Kennwörter) verschlüsseln, indem sie durch Hardwaresicherheitsmodule (HSMs) geschützte Schlüssel verwenden. Weitere Informationen finden Sie unter [Was ist der Azure-Schlüsseltresor?](../articles/key-vault-whatis.md).
 
 Die Speicherclientbibliothek verwendet die Schlüsseltresor-Kernbibliothek, um ein gemeinsames Framework zum Verwalten von Schlüsseln innerhalb von Azure bereitzustellen. Ein zusätzlicher Vorteil für die Benutzer besteht in der Verwendung der Schlüsseltresor-Erweiterungsbibliothek. Die Erweiterungsbibliothek bietet nützliche Funktionen für die einfache und nahtlose Nutzung von lokalen und Cloudschlüsselanbietern von symmetrischen/RSA-Schlüsseln sowie für Aggregation und Zwischenspeicherung.
 
@@ -111,7 +113,7 @@ Die Speicherclientbibliothek verwendet die Schlüsseltresor-Kernbibliothek, um e
 
 Es gibt drei Schlüsseltresorpakete:
 
-- "Microsoft.Azure.KeyVault.Core" enthält "IKey" und "IKeyResolver". Dies ist ein kleines Paket ohne Abhängigkeiten. Die Speicherclientbibliotheken für .NET und Windows Phone definieren dies als Abhängigkeit.
+- "Microsoft.Azure.KeyVault.Core" enthält "IKey" und "IKeyResolver". Dies ist ein kleines Paket ohne Abhängigkeiten. Die Speicherclientbibliothek für .NET definiert es als Abhängigkeit.
 - "Microsoft.Azure.KeyVault" enthält den REST-Client des Schlüsseltresors.
 - "Microsoft.Azure.KeyVault.Extensions" enthält Erweiterungscode, der Implementierungen von kryptografischen Algorithmen sowie einen RSA-Schlüssel und einen symmetrischen Schlüssel beinhaltet. Dieser hängt von den Namespaces "Core" und "KeyVault" ab und bietet Funktionen zum Definieren eines Aggregatresolvers (wenn die Benutzer mehrere Schlüsselanbieter verwenden möchten) und eines Cacheschlüsselresolvers. Obwohl die Speicherclientbibliothek nicht direkt von diesem Paket abhängig ist, benötigen die Benutzer dieses Paket, wenn sie den Azure-Schlüsseltresor zum Speichern ihrer Schlüssel verwenden möchten oder wenn sie die Schlüsseltresorerweiterungen verwenden möchten, um die lokalen und Cloudkryptografieanbieter zu nutzen.
 
@@ -121,18 +123,18 @@ Der Schlüsseltresor ist für hochwertige Hauptschlüssel ausgelegt und der Begr
 2. Verwenden Sie den Basisbezeichner des geheimen Schlüssels als Parameter, um die aktuelle Version des geheimen Schlüssels für die Verschlüsselung aufzulösen und diese Informationen lokal zwischenzuspeichern. Verwenden Sie "CachingKeyResolver" für die Zwischenspeicherung. Es wird nicht erwartet, dass die Benutzer eigene Logik für das Zwischenspeichern implementieren.
 3. Verwenden Sie beim Erstellen der Verschlüsselungsrichtlinie den Zwischenspeicherungsresolver als Eingabe.
 
-Weitere Informationen zur Verwendung des Schlüsseltresors finden Sie in den [Beispielen für Verschlüsselungscode](https://github.com/Azure/azure-storage-net/tree/preview/Samples/GettingStarted/EncryptionSamples).
+Weitere Informationen zur Verwendung des Schlüsseltresors finden Sie in den [Beispielen für Verschlüsselungscode](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/EncryptionSamples).
 
-### Bewährte Methoden
+## Bewährte Methoden
 
-Die Verschlüsselungsunterstützung steht nur in den Speicherclientbibliotheken für .NET und Windows Phone zur Verfügung. Die Windows-Runtime unterstützt derzeit keine Verschlüsselung. Darüber hinaus werden für Windows Phone zurzeit keine Schlüsseltresorerweiterungen unterstützt. Wenn Sie die Speicherclientverschlüsselung auf dem Telefon verwenden möchten, müssen Sie eigene Schlüsselanbieter implementieren. Darüber hinaus wird aufgrund einer Einschränkung auf der .NET-Plattform für Windows Phone die Seiten-BLOB-Verschlüsselung derzeit nicht auf Windows Phone unterstützt.
+Verschlüsselungsunterstützung ist nur in der Speicherclientbibliothek für .NET verfügbar. Windows Phone und Windows-Runtime unterstützen derzeit keine Verschlüsselung.
 
->[AZURE.IMPORTANT]Beachten Sie bei Verwendung der Vorschaubibliothek die folgenden wichtigen Punkte:
+>[AZURE.IMPORTANT]Beachten Sie bei Verwendung einer clientseitigen Verschlüsselung die folgenden wichtigen Punkte:
 >
->- Verwenden Sie die Vorschaubibliothek nicht für Produktionsdaten. In Zukunft wirken sich Änderungen an der Bibliothek auf die verwendeten Schemas aus. Die Entschlüsselung von Daten, die mit der Vorschaubibliothek verschlüsselt wurden, wird in zukünftigen Versionen nicht gewährleistet.  
->- Verwenden Sie beim Lesen aus einem verschlüsselten Blob oder beim Schreiben in diesen Befehle zum Hochladen des vollständigen Blobs und zum Herunterladen des bereichsbasierten oder vollständigen Blobs. Vermeiden Sie beim Schreiben in einen verschlüsselten Blob Protokollvorgänge wie z. B. "Put Block", "Put Block List", "Write Pages" oder "Clear Pages". Andernfalls wird der verschlüsselte Blob möglicherweise beschädigt und kann nicht mehr gelesen werden.
+>- Verwenden Sie beim Lesen aus einem verschlüsselten Blob oder beim Schreiben in diesen Befehle zum Hochladen des vollständigen Blobs und zum Herunterladen des bereichsbasierten oder vollständigen Blobs. Vermeiden Sie beim Schreiben in einen verschlüsselten Blob Protokollvorgänge wie z. B. "Put Block", "Put Block List", "Write Pages", "Clear Pages" oder "Append Block". Andernfalls wird der verschlüsselte Blob möglicherweise beschädigt und kann nicht mehr gelesen werden.
 >- Für Tabellen gilt eine ähnliche Einschränkung. Achten Sie darauf, dass Sie beim Aktualisieren verschlüsselter Eigenschaften auch die Verschlüsselungsmetadaten aktualisieren.
->- Wenn Sie Metadaten für den verschlüsselten Blob festlegen, werden die für die Entschlüsselung erforderlichen verschlüsselungsbezogenen Metadaten möglicherweise überschrieben, da das Festlegen von Metadaten kein additiver Vorgang ist. Dies gilt auch für Momentaufnahmen: Geben Sie während der Erstellung einer Momentaufnahme eines verschlüsselten Blobs keine Metadaten an.
+>- Wenn Sie Metadaten für den verschlüsselten Blob festlegen, werden die für die Entschlüsselung erforderlichen verschlüsselungsbezogenen Metadaten möglicherweise überschrieben, da das Festlegen von Metadaten kein additiver Vorgang ist. Dies gilt auch für Momentaufnahmen: Geben Sie während der Erstellung einer Momentaufnahme eines verschlüsselten Blobs keine Metadaten an. Müssen Metadaten festgelegt werden, müssen Sie zunächst die **FetchAttributes**-Methode aufrufen, um die aktuellen Verschlüsselungsmetadaten abzurufen. Außerdem sollten Sie gleichzeitige Schreibvorgänge vermeiden, während Metadaten festgelegt werden.
+>- Aktivieren Sie die **RequireEncryption**-Eigenschaft in Standardanforderungsoptionen für Benutzer, die nur mit verschlüsselte Daten arbeiten sollen. Weitere Details finden Sie nachstehend.
 
 
 ## Client-API/Schnittstelle
@@ -142,13 +144,17 @@ Beim Erstellen eines EncryptionPolicy-Objekts können die Benutzer nur einen Sch
 - Für die Verschlüsselung wird immer der Schlüssel verwendet. Ein fehlender Schlüssel führt zu einem Fehler.
 - Für die Entschlüsselung gilt:
 	- Der Schlüsselresolver wird aufgerufen, wenn er angegeben wurde, um den Schlüssel abzurufen. Wenn der Resolver angegeben wird, dieser aber nicht über eine Zuordnung für die Schlüsselkennung verfügt, wird ein Fehler ausgelöst.
-	- Wenn kein Resolver, aber ein Schlüssel angegeben wird, wird die Schlüsselkennung für den Schlüssel mit den Angaben abgeglichen, die für den Dienst gespeichert sind.
+	- Ist kein Resolver, aber ein Schlüssel angegeben, wird der Schlüssel verwendet, wenn seine Kennung mit der geforderten Schlüsselkennung übereinstimmt. Stimmt die Kennung nicht überein, wird ein Fehler ausgelöst.
 
-Die [Verschlüsselungsbeispiele](https://github.com/Azure/azure-storage-net/tree/preview/Samples/GettingStarted/EncryptionSamples) veranschaulichen ein ausführlicheres End-to-End-Szenario für Blobs, Warteschlangen und Tabellen und für die Schlüsseltresorintegration.
+Die [Verschlüsselungsbeispiele](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/EncryptionSamples) veranschaulichen ein ausführlicheres End-to-End-Szenario für Blobs, Warteschlangen und Tabellen und für die Schlüsseltresorintegration.
 
-### Blobs (in englischer Sprache)
+### RequireEncryption-Modus
 
-Die Benutzer erstellen ein **BlobEncryptionPolicy**-Objekt und legen es in den Anforderungsoptionen fest (über die API oder auf einer Clientebene unter Verwendung von **DefaultRequestOptions**). Alles Weitere wird intern von der Clientbibliothek behandelt.
+Benutzer können optional einen Betriebsmodus aktivieren, in dem alle hoch- oder herunterzuladenden Daten verschlüsselt werden müssen. In diesem Modus schlagen Versuche, Daten ohne eine Verschlüsselungsrichtlinie hochzuladen oder Daten herunterzuladen, die nicht für den Dienst verschlüsselt sind, auf dem Client fehl. Die **RequireEncryption**-Eigenschaft des Objekts für Anforderungsoptionen steuert dieses Verhalten. Wenn Ihre Anwendung alle Objekte verschlüsselt, die in Azure Storage gespeichert sind, können Sie die **RequireEncryption**-Eigenschaft in den Standardanforderungsoptionen für das Dienstclientobjekt festlegen. Legen Sie beispielsweise **CloudBlobClient.DefaultRequestOptions.RequireEncryption** auf **true** fest, um Verschlüsselung für alle Blobvorgänge zu erfordern, die über dieses Clientobjekt ausgeführt werden.
+
+### Blob-Diensterschlüsselung
+
+Erstellen Sie ein **BlobEncryptionPolicy**-Objekt, und legen Sie es in den Anforderungsoptionen fest (über die API oder auf einer Clientebene über **DefaultRequestOptions**). Alles Weitere wird intern von der Clientbibliothek behandelt.
 
 	// Create the IKey used for encryption.
  	RsaKey key = new RsaKey("private:key1" /* key identifier */);
@@ -166,9 +172,9 @@ Die Benutzer erstellen ein **BlobEncryptionPolicy**-Objekt und legen es in den A
  	MemoryStream outputStream = new MemoryStream();
  	blob.DownloadToStream(outputStream, null, options, null);
 
-### Warteschlangen
+### Warteschlangendienst-Verschlüsselung
 
-Die Benutzer erstellen ein **QueueEncryptionPolicy**-Objekt und legen es in den Anforderungsoptionen fest (über die API oder auf einer Clientebene unter Verwendung von **DefaultRequestOptions**). Alles Weitere wird intern von der Clientbibliothek behandelt.
+Erstellen Sie ein **QueueEncryptionPolicy**-Objekt, und legen Sie es in den Anforderungsoptionen fest (über die API oder auf einer Clientebene über **DefaultRequestOptions**). Alles Weitere wird intern von der Clientbibliothek behandelt.
 
 
 	// Create the IKey used for encryption.
@@ -184,9 +190,9 @@ Die Benutzer erstellen ein **QueueEncryptionPolicy**-Objekt und legen es in den 
  	// Retrieve message
  	CloudQueueMessage retrMessage = queue.GetMessage(null, options, null);
 
-### Tabellen
+### Tabellendienstverschlüsselung
 
-Zusätzlich zum Erstellen einer Verschlüsselungsrichtlinie und zum Festlegen für die Anforderungsoptionen müssen die Benutzer einen **EncryptionResolver** in **TableRequestOptions** angeben oder Attribute für die Entität festlegen.
+Zusätzlich zum Erstellen einer Verschlüsselungsrichtlinie und zu deren Festlegen für die Anforderungsoptionen müssen Sie entweder einen **EncryptionResolver** in **TableRequestOptions** angeben oder das [EncryptProperty]-Attribut für die Entität festlegen.
 
 #### Verwenden des Resolvers
 
@@ -225,13 +231,17 @@ Zusätzlich zum Erstellen einer Verschlüsselungsrichtlinie und zum Festlegen f�
 
 #### Verwenden von Attributen
 
-Wenn die Entität "TableEntity" implementiert, können die Eigenschaften, wie bereits erwähnt, mit dem [EncryptProperty]-Attribut ergänzt werden, statt den "EncryptionResolver" anzugeben.
+Wenn die Entität "TableEntity" implementiert, können die Eigenschaften, wie bereits erwähnt, mit dem [EncryptProperty]-Attribut ergänzt werden, statt den **EncryptionResolver** anzugeben.
 
 	[EncryptProperty]
  	public string EncryptedProperty1 { get; set; }
 
+## Verschlüsselung und Leistung
+
+Beachten Sie, dass ein Verschlüsseln Ihrer Storage-Daten einen zusätzlichen Leistungsaufwand verursacht. Der Inhaltsschlüssel und der IV müssen generiert, der Inhalt selbst muss verschlüsselt, und zusätzliche Metadaten müssen formatiert und hochgeladen werden. Dieser Aufwand variiert abhängig von der Menge der zu verschlüsselnden Daten. Es empfiehlt sich, dass Kunden ihre Anwendungen während der Entwicklung immer hinsichtlich der Leistung testen.
+
 ## Nächste Schritte
 
-[Clientseitige Verschlüsselung für Microsoft Azure Storage – Vorschau](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/28/client-side-encryption-for-microsoft-azure-storage-preview.aspx) [Azure-Speicherclientbibliothek für .NET – NuGet-Paket](http://www.nuget.org/packages/WindowsAzure.Storage/4.4.0-preview) herunterladen [Azure-Speicherclientbibliothek für .NET-Quellcode](https://github.com/Azure/azure-storage-net/tree/preview) von GitHub herunterladen NuGet-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) für den Azure-Schlüsseltresor herunterladen Lesen Sie die [Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md)
+[Azure-Speicherclientbibliothek für .NET – NuGet-Paket](http://www.nuget.org/packages/WindowsAzure.Storage/5.0.0) herunterladen [Azure-Speicherclientbibliothek für .NET-Quellcode von GitHub](https://github.com/Azure/azure-storage-net) herunterladen NuGet-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) für den Azure-Schlüsseltresor herunterladen Lesen Sie die [Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

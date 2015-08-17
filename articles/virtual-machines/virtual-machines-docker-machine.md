@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Verwenden von ";docker-machine"; mit Azure"
-   description="Veranschaulicht das Abrufen und Ausführen auf Azure mit ";docker-machine"; auf Ubuntu."
+   pageTitle="Verwenden von &quot;docker-machine&quot; mit Azure"
+   description="Veranschaulicht das Abrufen und Ausführen auf Azure mit &quot;docker-machine&quot; auf Ubuntu."
    services="virtual-machines"
    documentationCenter="virtual-machines"
    authors="squillace"
@@ -30,7 +30,7 @@ Wenn Sie diese Elemente in der angegebenen Reihenfolge installiert haben, ist Ih
 
 ## Abrufen oder Erstellen von "docker-machine"
 
-Die schnellste Methode zum Einstieg mit **docker-machine** besteht darin, die geeignete Version direkt von der Seite mit der [freigegebenen Version](https://github.com/docker/machine/releases) herunterzuladen. Der Clientcomputer in diesem Lernprogramm führt Ubuntu auf einem x64-Computer aus, weshalb das Image **docker-machine_linux-amd64**4 verwendet wird.
+Die schnellste Methode zum Einstieg mit **docker-machine** besteht darin, die geeignete Version direkt von der Seite mit der [freigegebenen Version](https://github.com/docker/machine/releases) herunterzuladen. Der Clientcomputer in diesem Lernprogramm führt Ubuntu auf einem x64-Computer aus, weshalb das Image **docker-machine\_linux-amd64**4 verwendet wird.
 
 Sie können Ihre **docker-machine** auch selbst erstellen, indem Sie die Schritte unter [Beitragen zu "machine"](https://github.com/docker/machine#contributing) (in englischer Sprache) ausführen. Hierfür ist ein Download von 1 GB oder mehr erforderlich, anschließend können Sie aber genau die gewünschten Anpassungen vornehmen.
 
@@ -38,7 +38,7 @@ Sie können Ihre **docker-machine** auch selbst erstellen, indem Sie die Schritt
 
 <br />
 
->  Unabhängig von der gewählten Methode müssen Sie den binären Namen entweder direkt in der Befehlszeile aufrufen oder m Pfad platzieren, z. B. **/usr/local/bin**. Denken Sie daran, den Namen als ausführbar zu markieren, indem Sie `chmod +x` &lt;*`binaryName`*&gt; eingeben. Hierbei steht &lt;*`binaryName`*&gt; für den Namen der ausführbaren Docker-Machine. In diesem Lernprogramm wird **docker-machine_linux-amd64** verwendet.
+>  Unabhängig von der gewählten Methode müssen Sie den binären Namen entweder direkt in der Befehlszeile aufrufen oder m Pfad platzieren, z. B. **/usr/local/bin**. Denken Sie daran, den Namen als ausführbar zu markieren, indem Sie `chmod +x` &lt;*`binaryName`*&gt; eingeben. Hierbei steht &lt;*`binaryName`*&gt; für den Namen der ausführbaren Docker-Machine. In diesem Lernprogramm wird **docker-machine\_linux-amd64** verwendet.
 
 ## Erstellen Sie die Zertifikat- und Schlüsseldateien für Docker, "machine" und Azure.
 
@@ -210,4 +210,4 @@ Rufen Sie das [Docker-Benutzerhandbuch](https://docs.docker.com/userguide/) auf,
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -17,16 +17,16 @@
 	ms.date="07/08/2015" 
 	ms.author="josephd"/>
 
-# Office 365-Verzeichnissynchronisierung \(DirSync\) in einer hybridcloud zu Testzwecken einrichten
+# Office 365-Verzeichnissynchronisierung (DirSync) in einer hybridcloud zu Testzwecken einrichten
 
-Dieses Thema führt Sie durch die Erstellung einer hybriden Cloud-Umgebung zum Testen von Office 365-Verzeichnissynchronisierung \(DirSync\) mit Kennwortsynchronisierung in Microsoft Azure gehostet. Hier sehen Sie die daraus resultierende Konfiguration.
+Dieses Thema führt Sie durch die Erstellung einer hybriden Cloud-Umgebung zum Testen von Office 365-Verzeichnissynchronisierung (DirSync) mit Kennwortsynchronisierung in Microsoft Azure gehostet. Hier sehen Sie die daraus resultierende Konfiguration.
 
 ![](./media/virtual-networks-setup-dirsync-hybrid-cloud-testing/CreateDirSyncHybridCloud_3.png)
  
 Diese Konfiguration simuliert einen Dirsync-Server in Azure-Produktionsumgebung von Ihrem Speicherort im Internet. Sie besteht aus:
 
-- einem vereinfachten lokalen Netzwerk \(dem Corpnet-Subnetz\).
-- Einem standortübergreifenden virtuellen in Azure gehosteten Netzwerk \(TestVNET\)
+- einem vereinfachten lokalen Netzwerk (dem Corpnet-Subnetz).
+- Einem standortübergreifenden virtuellen in Azure gehosteten Netzwerk (TestVNET)
 - einer Site-to-Site-VPN-Verbindung.
 - Ein Office 365 Fast Track-Testabonnement.
 - Ein Dirsync-Server und sekundärer Domänencontroller im virtuellen Netzwerk TestVNET.
@@ -40,7 +40,7 @@ Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus drei Hauptphasen:
 
 1.	Einrichten der Hybrid Cloud-Umgebung zu Testzwecken
 2.	Konfigurieren Sie die Testversion von Office 365 Fast Track.
-3.	Konfigurieren Sie den DirSync-Server \(DS1\).
+3.	Konfigurieren Sie den DirSync-Server (DS1).
 
 Wenn Sie noch kein Azure-Abonnement besitzen, können Sie sich unter [Azure ausprobieren](http://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion registrieren. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
@@ -58,15 +58,16 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 Um Ihre Testversion von Office 365 Fast Track zu starten, benötigen Sie einen fiktiven Firmennamen und ein Microsoft-Konto. Es wird empfohlen, dass Sie eine Variante des Unternehmensnamens Contoso für den Namen Ihres Unternehmens, einem fiktiven Unternehmen, die in Microsoft-Beispielinhalt verwendet wird, aber nicht erforderlich unbedingt.
 
-Melden Sie sich als Nächstes ein neues Microsoft-Konto an. Wechseln Sie zu **http://outlook.com**, und erstellen Sie ein Konto mit einer E-Mail-Adresse wie user123@outlook.com. Mit diesem Konto melden Sie sich für eine Testversion von Office 365 Fast Track an.
+Melden Sie sich als Nächstes ein neues Microsoft-Konto an. Wechseln Sie zu ****http://outlook.com**, und erstellen Sie ein Konto mit einer E-Mail-Adresse wie user123@outlook.com. Sie können für eine Testversion von Office 365 Fast Track mit diesem Konto anmelden.
 
 Melden Sie sich als Nächstes für eine neue Office 365 Fast Track-Testversion an.
 
 1.	Melden Sie sich mit den Anmeldeinformationen des CORP\\User1 CLIENT1 an.
-2.	Öffnen Sie Internet Explorer, und wechseln Sie zu **http://fasttrack.office.com**.3.	Klicken Sie auf **Erste Schritte mit Fast Track**.
+2.	Öffnen Sie Internet Explorer, und wechseln Sie zu ****http://fasttrack.office.com**.
+3.	Klicken Sie auf **Erste Schritte mit Fast Track**.
 4.	Klicken Sie auf der Seite für die ersten Schritte mit Fast Track unter **Melden Sie sich zunächst für eine Testversion von Office 365 an** auf **Registrierung für Unternehmen**.
 5.	Füllen Sie auf der Seite für Schritt 1 alle Felder aus, und geben Sie unter **Geschäftliche E-Mail-Adresse** Ihr neues Microsoft-Konto an. Klicken Sie dann auf **Weiter**.
-6.	Geben Sie den Namen der ersten Office 365-Konto auf der Seite Schritt2 in das erste Feld der fiktiven Firmennamen und dann ein Kennwort. Notieren Sie die zurückgegebene E-Mail-Adresse \(z. B. user123@contoso123.onmicrosoft.com\), und bewahren Sie sie mit dem Kennwort sicher auf. Sie benötigen diese Informationen, um das Tool Active Directory-Synchronisierung in Phase 3 Konfigurations-Assistenten abgeschlossen haben. Klicken Sie auf **Weiter**.
+6.	Geben Sie den Namen der ersten Office 365-Konto auf der Seite Schritt2 in das erste Feld der fiktiven Firmennamen und dann ein Kennwort. Notieren Sie die zurückgegebene E-Mail-Adresse (z. B. user123@contoso123.onmicrosoft.com), und bewahren Sie sie mit dem Kennwort sicher auf. Sie benötigen diese Informationen, um das Tool Active Directory-Synchronisierung in Phase 3 Konfigurations-Assistenten abgeschlossen haben. Klicken Sie auf **Weiter**.
 7.	Geben Sie auf der Seite für Schritt 3 die Telefonnummer eines Mobiltelefons oder Smartphones an, auf dem Sie SMS empfangen können. Klicken Sie dann auf **SMS senden**.
 8.	Nachdem Sie die SMS auf Ihrem Mobiltelefon erhalten haben, geben Sie den Überprüfungscode ein, und klicken Sie dann auf **Mein Konto erstellen**. 
 9.	Wenn Office 365 Ihr Konto erstellt hat, klicken Sie auf **Sie sind jetzt startklar**.
@@ -76,7 +77,7 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ![](./media/virtual-networks-setup-dirsync-hybrid-cloud-testing/CreateDirSyncHybridCloud_2.png)
 
-## Phase 3: Konfigurieren des DirSync-Servers \(DS1\)
+## Phase 3: Konfigurieren des DirSync-Servers (DS1)
 
 Erstellen Sie zunächst einen virtuellen Computer in Azure für DS1 mit diesen Befehlen an der Eingabeaufforderung von Azure PowerShell auf dem lokalen Computer. Füllen Sie vor dem Ausführen dieser Befehle die Variablenwerte aus, und entfernen Sie die Zeichen < and >.
 
@@ -97,7 +98,7 @@ Schließen Sie dann den virtuellen Computer DS1.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
 	- Name: **CORP\\User1**
-	- Kennwort: \[Kontokennwort für "User1"\]
+	- Kennwort: [Kontokennwort für "User1"]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
 Konfigurieren Sie anschließend eine Windows-Firewall-Regel, um Datenverkehr zum Testen der allgemeinen Konnektivität zuzulassen. Ein auf Windows PowerShell-Eingabeaufforderung auf DS1 führen Sie diese Befehle.
@@ -113,7 +114,8 @@ Als Nächstes installieren Sie .NET 3.5 auf DS1 mit dem folgenden Befehl an der 
 
 Installieren Sie dann die Verzeichnissynchronisierung auf DS1.
 
-1.	Führen Sie Internet Explorer aus, geben Sie **http://go.microsoft.com/fwlink/?LinkID=278924** in der Adressleiste ein, und drücken Sie dann die EINGABETASTE. Wenn Sie aufgefordert werden, "dirsync.exe" auszuführen, klicken Sie auf den Pfeil neben **Speichern**, klicken Sie auf **Speichern unter**, und klicken Sie dann auf **Speichern**, um die Datei im Ordner "Downloads" zu speichern. Weitere Informationen zur Installation des Tools finden Sie unter [Installieren oder Aktualisieren des Verzeichnissynchronisierungstools](http://technet.microsoft.com/library/jj151800).2.	Öffnen Sie den Ordner **Downloads**, klicken Sie mit der rechten Maustaste auf die Datei **dirsync**, und klicken Sie dann auf **Als Administrator ausführen**.
+1.	Führen Sie Internet Explorer aus, geben Sie ****http://go.microsoft.com/fwlink/?LinkID=278924** in der Adressleiste ein, und drücken Sie dann die EINGABETASTE. Wenn Sie aufgefordert werden, "dirsync.exe" auszuführen, klicken Sie auf den Pfeil neben **Speichern**, klicken Sie auf **Speichern unter**, und klicken Sie dann auf **Speichern**, um die Datei im Ordner "Downloads" zu speichern. Weitere Informationen zur Installation des Tools finden Sie unter [Installieren oder Aktualisieren des Verzeichnissynchronisierungstools](http://technet.microsoft.com/library/jj151800).
+2.	Öffnen Sie den Ordner **Downloads**, klicken Sie mit der rechten Maustaste auf die Datei **dirsync**, und klicken Sie dann auf **Als Administrator ausführen**.
 3.	Klicken Sie auf der Willkommensseite des Assistenten für das Setup der Active Directory-Synchronisierung auf **Weiter**. 
 4.	Klicken Sie auf der Seite "Lizenzbedingungen" auf **Ich stimme zu**, und klicken Sie dann auf **Weiter**.
 5.	Klicken Sie auf der Seite "Installationsordner auswählen" auf **Weiter**. Zum Abschließen der Installation mehrere Minuten dauern.
@@ -161,10 +163,11 @@ Führen Sie dann die Office 365-Kennwortsynchronisierung mit Lynda Myer Active D
 
 1.	Wählen Sie auf CLIENT1 auf der Seite **Aktive Benutzer** das Konto **Lynda Meyer** aus.
 2.	Klicken Sie in den Eigenschaften des Kontos "Lynda Meyer" unter **Zugewiesene Lizenz** auf **Bearbeiten**.
-3.	Wählen Sie auf der Registerkarte **Lizenz zuweisen** einen Standort unter **Benutzerstandort einstellen** aus \(z. B. Vereinigte Staaten\).
-4.	Wählen Sie **Microsoft Office 365 \(Plan E3\)** aus, und klicken Sie dann auf **Speichern**.
+3.	Wählen Sie auf der Registerkarte **Lizenz zuweisen** einen Standort unter **Benutzerstandort einstellen** aus (z. B. Vereinigte Staaten).
+4.	Wählen Sie **Microsoft Office 365 (Plan E3)** aus, und klicken Sie dann auf **Speichern**.
 5.	Schließen Sie Internet Explorer.
-6.	Führen Sie Internet Explorer aus, und wechseln Sie zu **http://portal.microsoftonline.com**.7.	Melden Sie sich mit Lynda Meyers Office 365-Anmeldeinformationen an. Der Benutzername lautet dann "lyndam@\<\*Ihr fiktiver Name\*\>.onmicrosoft.com". Das Kennwort ist das Kennwort für das Lynda Dressler Active Directory-Benutzerkonto.
+6.	Führen Sie Internet Explorer aus, und wechseln Sie zu ****http://portal.microsoftonline.com**.
+7.	Melden Sie sich mit Lynda Meyers Office 365-Anmeldeinformationen an. Der Benutzername lautet dann "lyndam@<*Ihr fiktiver Name*>.onmicrosoft.com". Das Kennwort ist das Kennwort für das Lynda Dressler Active Directory-Benutzerkonto.
 8.	Nach der erfolgreichen Anmeldung sehen Sie die Hauptseite des Office 365-Portals mit **Heute machen wir einen Unterschied**.
 
 Die aktuelle Konfiguration sieht folgendermaßen aus.
@@ -175,7 +178,7 @@ Diese Umgebung ist nun bereit für Sie zum Testen des Office 365-Anwendungen, di
 
 ## Zusätzliche Ressourcen
 
-[Bereitstellen von Office 365-Verzeichnissynchronisierung \(DirSync\) in Microsoft Azure](http://technet.microsoft.com/library/dn635310.aspx)
+[Bereitstellen von Office 365-Verzeichnissynchronisierung (DirSync) in Microsoft Azure](http://technet.microsoft.com/library/dn635310.aspx)
 
 [Lösungen mit Office-Server und die Cloud](http://technet.microsoft.com/library/dn262744.aspx)
 
@@ -194,4 +197,4 @@ Diese Umgebung ist nun bereit für Sie zum Testen des Office 365-Anwendungen, di
 
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

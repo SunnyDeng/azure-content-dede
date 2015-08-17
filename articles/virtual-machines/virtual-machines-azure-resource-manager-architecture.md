@@ -79,4 +79,4 @@ Sie können die Komponentisierung sowie die Abhängigkeitsbeziehungen zwischen R
 
 [Azure Resource Manager Overview](resource-group-overview.md) (Übersicht über den Azure-Ressourcen-Manager)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

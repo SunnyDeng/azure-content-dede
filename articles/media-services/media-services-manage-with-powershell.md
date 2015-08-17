@@ -110,4 +110,4 @@ Wenn Sie das Azure Media Services-Konto löschen möchten, verwenden Sie [Remove
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

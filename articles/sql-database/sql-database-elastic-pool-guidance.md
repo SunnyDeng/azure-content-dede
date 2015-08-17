@@ -7,6 +7,7 @@
 	manager="jeffreyg" 
 	editor=""/>
 
+
 <tags 
 	ms.service="sql-database"
 	ms.devlang="NA"
@@ -15,6 +16,7 @@
 	ms.workload="data-management" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="NA"/>
+
 
 
 # Überlegungen zum Preis und zur Leistung eines elastischen Datenbankpools
@@ -110,7 +112,7 @@ Die folgende Heuristik kann bei der Einschätzung helfen, ob ein elastischer Poo
 
 1. Wir schätzen die für den Pool benötigten DTUs wie folgt:
     
-    MAX(*Gesamtanzahl Datenbanken* * *durchschnittliche DTU-Auslastung pro Datenbank*, *Anzahl von gleichzeitig unter Spitzenlast ausgeführten Datenbanken* * *Spitzen-DTU-Auslastung pro Datenbank*)
+    MAX(*Gesamtanzahl Datenbanken* \* *durchschnittliche DTU-Auslastung pro Datenbank*, *Anzahl von gleichzeitig unter Spitzenlast ausgeführten Datenbanken* \* *Spitzen-DTU-Auslastung pro Datenbank*)
 
 2. Wählen Sie den kleinsten verfügbaren DTU-Wert für den Pool aus, der größer als die Schätzung aus Schritt 1 ist. Die in Frage kommenden DTU-Auswahlmöglichkeiten finden Sie hier unter den gültigen Werten für DTUs: [DTUs und Speicherbeschränkungen für elastische Pools und elastische Datenbanken](sql-database-elastic-pool-reference.md#dtu-and-storage-limits-for-elastic-pools-and-elastic-databases).
 
@@ -119,7 +121,7 @@ Die folgende Heuristik kann bei der Einschätzung helfen, ob ein elastischer Poo
 
 3. Wir berechnen den Preis für den Pool wie folgt:
 
-    Preis für den Pool = (*Pool-DTUs* * *Preis pro Einheit per Pool-DTU*) + (*Gesamtanzahl Datenbanken* * *Preis pro Einheit per Pool-DTU*)
+    Preis für den Pool = (*Pool-DTUs* \* *Preis pro Einheit per Pool-DTU*) + (*Gesamtanzahl Datenbanken* \* *Preis pro Einheit per Pool-DTU*)
 
     Preisinformationen finden Sie unter [SQL-Datenbank – Preisgestaltung](http://azure.microsoft.com/pricing/details/sql-database/).
 
@@ -165,7 +167,7 @@ STA steht im Azure-Portal zur Verfügung, wenn Sie einem vorhandenen Server eine
 
 ### Schätzen der Größe von elastischen Pools mit DMVs (Dynamic Management Views) 
 
-Mit den von [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx) generierten Messwerten kann die Ressourcenverwendung einer einzelnen Datenbank gemessen werden. Diese DMV enthält Informationen zur CPU, zur E/A, zur Protokollierung und zur Protokollauslastung einer Datenbank als Prozentsatz der Leistungsbegrenzung der Datenbank. Diese Daten können zum Berechnen der DTU-Auslastung einer Datenbank in beliebigen Intervallen von jeweils 15 Sekunden verwendet werden.
+Mit den von [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx) generierten Messwerten kann die Ressourcenverwendung einer einzelnen Datenbank gemessen werden. Diese DMV enthält Informationen zur CPU, zur E/A, zur Protokollierung und zur Protokollauslastung einer Datenbank als Prozentsatz der Leistungsbegrenzung der Datenbank. Diese Daten können zum Berechnen der DTU-Auslastung einer Datenbank in beliebigen Intervallen von jeweils 15 Sekunden verwendet werden.
 
 Die zusammengefasste DTU-Auslastung eines elastischen Pools in einem 15 Sekunden-Intervall kann geschätzt werden, indem die DTU-Auslastung aller Datenbankkandidaten während dieser Zeit aggregiert wird. Abhängig von den jeweiligen Leistungszielen ist es sinnvoll, einen geringen Prozentsatz der Beispieldaten zu verwerfen. So kann der 99-zigste Perzentilwert der zusammengefassten DTUs über alle Zeitintervalle beispielsweise angewendet werden, um Ausreißer auszuschließen und einen DTU für den elastischen Pool bereitzustellen, der für 99 % der geprüften Zeitintervalle zutrifft.
 
@@ -181,8 +183,8 @@ Mit dem Skript werden nur zur Laufzeit Daten gesammelt. Bei einem typischen Prod
 
 Installieren Sie Folgendes, bevor Sie das Skript ausführen:
 
-- Die neuesten [Powershell-Befehlszeilentools](http://go.microsoft.com/?linkid=9811175&clcid=0x409)
-- Das [SQL Server 2014-Featurepack](https://www.microsoft.com/download/details.aspx?id=42295)
+- Die neuesten [Powershell-Befehlszeilentools](http://go.microsoft.com/?linkid=9811175&clcid=0x409).
+- Das [SQL Server 2014-Featurepack](https://www.microsoft.com/download/details.aspx?id=42295).
 
 
 ### Details zum Skript
@@ -402,4 +404,4 @@ Nicht alle eigenständigen Datenbanken sind gute Kandidaten für elastische Date
 [2]: ./media/sql-database-elastic-pool-guidance/four-databases.png
 [3]: ./media/sql-database-elastic-pool-guidance/twenty-databases.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

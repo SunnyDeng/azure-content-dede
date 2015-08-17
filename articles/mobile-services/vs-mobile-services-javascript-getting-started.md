@@ -92,4 +92,4 @@ L√∂schen Sie eine Zeile in einer Datentabelle. Rufen Sie die Methode [done]() f√
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -69,7 +69,7 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 			});      
 	}
 
-&nbsp;&nbsp;Dieses Einfügeskript sendet mithilfe des Benutzer-ID-Tags eine Pushbenachrichtigung \(mit dem Text des eingefügten Eintrags\) an alle Windows Phone-App-Registrierungen \(MPNS\), die vom angemeldeten Benutzer erstellt wurden.
+&nbsp;&nbsp;Dieses Einfügeskript sendet mithilfe des Benutzer-ID-Tags eine Pushbenachrichtigung (mit dem Text des eingefügten Eintrags) an alle Windows Phone-App-Registrierungen (MPNS), die vom angemeldeten Benutzer erstellt wurden.
 
 ##<a name="update-app"></a>Aktualisieren der App zum Anmelden vor der Registrierung
 
@@ -94,4 +94,4 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
  
 
-<!-------HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

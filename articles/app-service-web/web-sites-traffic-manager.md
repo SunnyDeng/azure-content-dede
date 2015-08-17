@@ -64,4 +64,4 @@ Detaillierte Informationen zum Lastenausgleich in Azure Traffic Manager finden S
 Weitere Informationen zur Verwendung von Traffic Manager mit Web-Apps finden Sie in den Blogbeiträgen [Verwenden von Azure Traffic Manager mit Azure-Websites](http://blogs.msdn.com/b/waws/archive/2014/03/18/using-windows-azure-traffic-manager-with-waws.aspx) und [(Azure Traffic Manager kann jetzt in Azure-Websites integriert werden](http://azure.microsoft.com/blog/2014/03/27/azure-traffic-manager-can-now-integrate-with-azure-web-sites/).
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

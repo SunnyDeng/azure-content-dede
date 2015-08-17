@@ -63,7 +63,7 @@ Folgende Annahme gilt: Wenn ein deaktiviertes Benutzerkonto gefunden wird, wird 
 
 ## Ändern von "sourceAnchor"
 
-Nachdem ein Objekt nach Azure AD exportiert wurde, kann der Wert für "sourceAnchor" nicht mehr geändert werden. Wenn das Objekt exportiert wurde, wird das Metaverseattribut **cloudSourceAnchor** mit dem **sourceAnchor**-Wert festgelegt, der von Azure AD akzeptiert wird. Wenn **sourceAnchor geändert** wird und nicht mit **cloudSourceAnchor** übereinstimmt, löst die Regel \*\*Out to AAD – User Join\*\* den Fehler aus, dass das **sourceAnchor-Attribut geändert wurde**. In diesem Fall müssen Konfiguration oder Daten korrigiert werden, sodass derselbe sourceAnchor-Wert wieder im Metaverse vorhanden ist, bevor das Objekt erneut synchronisiert werden kann.
+Nachdem ein Objekt nach Azure AD exportiert wurde, kann der Wert für "sourceAnchor" nicht mehr geändert werden. Wenn das Objekt exportiert wurde, wird das Metaverseattribut **cloudSourceAnchor** mit dem **sourceAnchor**-Wert festgelegt, der von Azure AD akzeptiert wird. Wenn **sourceAnchor geändert** wird und nicht mit **cloudSourceAnchor** übereinstimmt, löst die Regel **Out to AAD – User Join** den Fehler aus, dass das **sourceAnchor-Attribut geändert wurde**. In diesem Fall müssen Konfiguration oder Daten korrigiert werden, sodass derselbe sourceAnchor-Wert wieder im Metaverse vorhanden ist, bevor das Objekt erneut synchronisiert werden kann.
 
 
 
@@ -75,4 +75,4 @@ Nachdem ein Objekt nach Azure AD exportiert wurde, kann der Wert für "sourceAn
  
 <!--Image references-->
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

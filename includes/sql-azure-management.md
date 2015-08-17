@@ -103,7 +103,7 @@ Die Datenbank vom Typ **master** überwacht alle Anmeldungen und verfolgt, welch
 
             CREATE USER login1User FROM LOGIN login1;
 
--   Nutzen Sie die gespeicherte Prozedur **sp_addrolemember**, um das Benutzerkonto mit geeigneten Berechtigungen für die Datenbank auszustatten. Weitere Informationen finden Sie unter [sp_addrolemember (Transact-SQL)](http://msdn.microsoft.com/library/ms187750.aspx). Die folgende Anweisung erteilt **login1User** Lesezugriff auf die Datenbank, indem sie **login1User** der Rolle **db_datareader** hinzufügt.
+-   Nutzen Sie die gespeicherte Prozedur **sp\_addrolemember**, um das Benutzerkonto mit geeigneten Berechtigungen für die Datenbank auszustatten. Weitere Informationen finden Sie unter [sp\_addrolemember (Transact-SQL)](http://msdn.microsoft.com/library/ms187750.aspx). Die folgende Anweisung erteilt **login1User** Lesezugriff auf die Datenbank, indem sie **login1User** der Rolle **db\_datareader** hinzufügt.
 
         exec sp_addrolemember 'db_datareader', 'login1User';    
 
@@ -119,7 +119,7 @@ Die Datenbank vom Typ **master** überwacht alle Anmeldungen und verfolgt, welch
 
         DROP LOGIN login1;
 
--   Die Master-Datenbank verfügt über eine Ansicht **sys.sql_logins**, in der Sie die Anmeldungen einsehen können. Führen Sie zur Anzeige aller vorhandenen Anmeldungen die folgende Anweisung aus:
+-   Die Master-Datenbank verfügt über eine Ansicht **sys.sql\_logins**, in der Sie die Anmeldungen einsehen können. Führen Sie zur Anzeige aller vorhandenen Anmeldungen die folgende Anweisung aus:
 
         SELECT * FROM sys.sql_logins;
 
@@ -131,12 +131,12 @@ SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine 
 
         GRANT VIEW DATABASE STATE TO login1User;
 
--   Berechnen Sie die Datenbankgröße mithilfe der Ansicht **sys.dm_db_partition_stats**. Die Ansicht **sys.dm_db_partition_stats** gibt die Anzahl von Seiten und Zeilen für jede Partition der Datenbank zurück, aus denen Sie dann die Datenbankgröße errechnen können. Die folgende Abfrage gibt die Größe Ihrer Datenbank in Megabyte zurück:
+-   Berechnen Sie die Datenbankgröße mithilfe der Ansicht **sys.dm\_db\_partition\_stats**. Die Ansicht **sys.dm\_db\_partition\_stats** gibt die Anzahl von Seiten und Zeilen für jede Partition der Datenbank zurück, aus denen Sie dann die Datenbankgröße errechnen können. Die folgende Abfrage gibt die Größe Ihrer Datenbank in Megabyte zurück:
 
         SELECT SUM(reserved_page_count)*8.0/1024
         FROM sys.dm_db_partition_stats;   
 
--   In den Ansichten **sys.dm_exec_connections** und **sys.dm_exec_sessions** können Sie Informationen über aktuelle Benutzerverbindungen und der Datenbank zugeordnete interne Aufgaben abrufen. Die folgende Abfrage gibt Informationen über die aktuelle Verbindung zurück:
+-   In den Ansichten **sys.dm\_exec\_connections** und **sys.dm\_exec\_sessions** können Sie Informationen über aktuelle Benutzerverbindungen und der Datenbank zugeordnete interne Aufgaben abrufen. Die folgende Abfrage gibt Informationen über die aktuelle Verbindung zurück:
 
         SELECT
             e.connection_id,
@@ -149,7 +149,7 @@ SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine 
             INNER JOIN sys.dm_exec_connections e
               ON s.session_id = e.session_id;
 
--   In der Ansicht **sys.dm_exec_query_stats** können Sie aggregierte Leistungsstatistiken für zwischengespeicherte Abfragepläne abrufen. Die folgende Abfrage gibt Informationen über die "Top-Fünf"-Abfragen gemessen an durchschnittlicher CPU-Zeit zurück.
+-   In der Ansicht **sys.dm\_exec\_query\_stats** können Sie aggregierte Leistungsstatistiken für zwischengespeicherte Abfragepläne abrufen. Die folgende Abfrage gibt Informationen über die "Top-Fünf"-Abfragen gemessen an durchschnittlicher CPU-Zeit zurück.
 
         SELECT TOP 5 query_stats.query_hash AS "Query Hash",
             SUM(query_stats.total_worker_time), SUM(query_stats.execution_count) AS "Avg CPU Time",
@@ -166,4 +166,4 @@ SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine 
         GROUP BY query_stats.query_hash
         ORDER BY 2 DESC;
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

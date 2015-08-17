@@ -16,7 +16,7 @@
    ms.date="07/24/2015"
    ms.author="larryfr"/>
 
-#Verwalten von HDInsight-Clustern mit Ambari \(Vorschau\)
+#Verwalten von HDInsight-Clustern mit Ambari (Vorschau)
 
 Erfahren Sie, wie Sie Ambari zum Verwalten und Überwachen von Linux-basierten Azure HDInsight-Clustern verwenden.
 
@@ -30,7 +30,7 @@ Ambari wird standardmäßig mit Linux-basierten Clustern bereitgestellt. Windows
 
 ##SSH-Proxy
 
-> [AZURE.NOTE]Während Ambari für Ihren Cluster direkt über das Internet erreichbar ist, werden einige Links der Ambari-Webbenutzeroberfläche \(z. B. JobTracker\) nicht im Internet verfügbar gemacht. Sie erhalten also Fehler, dass der Server nicht gefunden wurde, wenn Sie versuchen, auf diese Funktionen zuzugreifen, sofern Sie keinen SSH-Tunnel \(Secure Shell\) für den Webdatenverkehr per Proxy auf dem Stammknoten des Clusters verwenden.
+> [AZURE.NOTE]Während Ambari für Ihren Cluster direkt über das Internet erreichbar ist, werden einige Links der Ambari-Webbenutzeroberfläche (z. B. JobTracker) nicht im Internet verfügbar gemacht. Sie erhalten also Fehler, dass der Server nicht gefunden wurde, wenn Sie versuchen, auf diese Funktionen zuzugreifen, sofern Sie keinen SSH-Tunnel (Secure Shell) für den Webdatenverkehr per Proxy auf dem Stammknoten des Clusters verwenden.
 
 Befolgen Sie die Informationen in den folgenden Artikeln, um von einem Port des lokalen Computers einen SSH-Tunnel zum Cluster einzurichten:
 
@@ -40,11 +40,11 @@ Befolgen Sie die Informationen in den folgenden Artikeln, um von einem Port des 
 
 ##Ambari-Webbenutzeroberfläche
 
-Die Ambari-Webbenutzeroberfläche steht auf jedem Linux-basierten HDInsight-Cluster zur Verfügung, den Sie unter **https://&lt;clustername\>.azurehdinsight.net** erstellen.
+Die Ambari-Webbenutzeroberfläche steht auf jedem Linux-basierten HDInsight-Cluster zur Verfügung, den Sie unter **https://&lt;clustername>.azurehdinsight.net** erstellen.
 
 Sie werden auf der Seite zweimal zur Authentifizierung aufgefordert. Die erste Aufforderung ist für die Authentifizierung beim HDInsight-Cluster, die zweite Aufforderung zur Authentifizierung bei Ambari vorgesehen.
 
-* **Clusterauthentifizierung**: Verwenden Sie den Benutzernamen \(Standardeinstellung ist **admin**\) und das Kennwort des Clusteradministrators.
+* **Clusterauthentifizierung**: Verwenden Sie den Benutzernamen (Standardeinstellung ist **admin**) und das Kennwort des Clusteradministrators.
 
 * **Ambari-Authentifizierung**: Die Standardeinstellung für Benutzername und Kennwort ist **admin**.
 
@@ -56,9 +56,9 @@ Beachten Sie beim Öffnen der Seite die Leiste im oberen Bereich. Diese enthält
 
 * **Ambari-Logo**: Zeigt das Dashboard an, mit dem der Cluster überwacht werden kann.
 
-* **Clustername \(Anzahl\) ops**: Zeigt die Anzahl der laufenden Ambari-Vorgänge an. Wenn Sie den Clusternamen oder die **\(Anzahl\) ops** auswählen, wird eine Liste der Hintergrundvorgänge angezeigt.
+* **Clustername (Anzahl) ops**: Zeigt die Anzahl der laufenden Ambari-Vorgänge an. Wenn Sie den Clusternamen oder die **(Anzahl) ops** auswählen, wird eine Liste der Hintergrundvorgänge angezeigt.
 
-* **\(Anzahl\) alerts**: Warnungen oder kritische Warnungen, die ggf. für den Cluster angezeigt werden. Wenn Sie diese Option auswählen, wird eine Liste der Warnungen angezeigt.
+* **(Anzahl) alerts**: Warnungen oder kritische Warnungen, die ggf. für den Cluster angezeigt werden. Wenn Sie diese Option auswählen, wird eine Liste der Warnungen angezeigt.
 
 * **Dashboard**: Zeigt das Dashboard an.
 
@@ -86,7 +86,7 @@ Ambari bietet viele Warnungen, die eine der folgenden Statusangaben aufweisen:
 
 * **UNKNOWN**
 
-Andere Warnungen als **OK** führen dazu, dass der Eintrag **\(Anzahl\) alerts** am Seitenanfang die Anzahl der Warnungen anzeigt. Wenn Sie diesen Eintrag auswählen, werden die Warnungen und deren Statusangaben angezeigt.
+Andere Warnungen als **OK** führen dazu, dass der Eintrag **(Anzahl) alerts** am Seitenanfang die Anzahl der Warnungen anzeigt. Wenn Sie diesen Eintrag auswählen, werden die Warnungen und deren Statusangaben angezeigt.
 
 Warnungen sind in mehrere Standardgruppen angeordnet, die über die Seite **Alerts** angezeigt werden können.
 
@@ -94,11 +94,11 @@ Warnungen sind in mehrere Standardgruppen angeordnet, die über die Seite **Aler
 
 Sie können die Gruppen verwalten, indem Sie das Menü **Actions** und dann die Option **Manage Alert Groups** auswählen. Dadurch können Sie vorhandene Gruppen ändern oder neue Gruppen erstellen.
 
-![Warnungsgruppen verwalten \(Dialogfeld\)](./media/hdinsight-hadoop-manage-ambari/manage-alerts.png)
+![Warnungsgruppen verwalten (Dialogfeld)](./media/hdinsight-hadoop-manage-ambari/manage-alerts.png)
 
 Sie können auch über das Menü **Aktionen** Warnbenachrichtigungen erstellen. Dadurch können Sie Auslöser erstellen, die Benachrichtigungen per **E-Mail** oder **SNMP** senden, wenn bestimmte Kombinationen von Warnung und Schweregrad auftreten. Sie können z. B. eine Warnung senden, wenn eine der Benachrichtigungen in der Gruppe **YARN Default** auf **Critical** festgelegt ist.
 
-![Warnung erstellen \(Dialogfeld\)](./media/hdinsight-hadoop-manage-ambari/create-alert-notification.png)
+![Warnung erstellen (Dialogfeld)](./media/hdinsight-hadoop-manage-ambari/create-alert-notification.png)
 
 ###bereitstellen
 
@@ -132,13 +132,13 @@ Einige Dienste zeigen oben auf der Seite den Link **Quick Links** an. Hierüber 
 
 * **Resource Manager**: Benutzeroberfläche des YARN-Ressourcen-Managers.
 
-* **NameNode**: NameNode-Benutzeroberfläche im Hadoop Distributed File System \(HDFS\).
+* **NameNode**: NameNode-Benutzeroberfläche im Hadoop Distributed File System (HDFS).
 
 * **Oozie Web UI**: Oozie-Benutzeroberfläche.
 
 Wenn Sie einen dieser Links öffnen, wird eine Registerkarte im Browser geöffnet, auf der die ausgewählte Seite angezeigt wird.
 
-> [AZURE.NOTE]Wenn Sie einen **Quick Link** für einen Dienst auswählen, führt dies zum Fehler "Server nicht gefunden", sofern Sie nicht einen SSL-Tunnel \(Secure Sockets Layer\) verwenden, um den Webdatenverkehr per Proxy an den Cluster weiterzuleiten. Die Ursache ist, dass die Webanwendungen, mit denen diese Informationen angezeigt werden, nicht im Internet verfügbar gemacht werden.
+> [AZURE.NOTE]Wenn Sie einen **Quick Link** für einen Dienst auswählen, führt dies zum Fehler "Server nicht gefunden", sofern Sie nicht einen SSL-Tunnel (Secure Sockets Layer) verwenden, um den Webdatenverkehr per Proxy an den Cluster weiterzuleiten. Die Ursache ist, dass die Webanwendungen, mit denen diese Informationen angezeigt werden, nicht im Internet verfügbar gemacht werden.
 >
 > Informationen zur Verwendung eines SSL-Tunnels mit HDInsight finden Sie in einem der folgenden Themen:
 >
@@ -222,7 +222,7 @@ Während die Schaltfläche **Actions** alle Dienste neu starten kann, ist es mö
 
 	> [AZURE.NOTE]Der Neustart einiger Dienste bei aktivem Cluster kann dazu führen, dass Warnungen generiert werden. Um dies zu vermeiden, können Sie die Schaltfläche **Service Actions** verwenden, um den **Maintenance mode** für den Dienst zu aktivieren, bevor Sie den Neustart durchführen.
 
-3. Nachdem eine Aktion ausgewählt wurde, wird der Eintrag **\(Anzahl\) ops** am Seitenanfang erhöht, um anzuzeigen, dass ein Hintergrundvorgang ausgeführt wird. Sofern die Anzeige konfiguriert ist, wird die Liste der Hintergrundvorgänge angezeigt.
+3. Nachdem eine Aktion ausgewählt wurde, wird der Eintrag **(Anzahl) ops** am Seitenanfang erhöht, um anzuzeigen, dass ein Hintergrundvorgang ausgeführt wird. Sofern die Anzeige konfiguriert ist, wird die Liste der Hintergrundvorgänge angezeigt.
 
 	> [AZURE.NOTE]Wenn Sie den **Maintenance mode** für den Dienst aktiviert haben, denken Sie daran, ihn mithilfe der Schaltfläche **Service Actions** wieder zu deaktivieren, sobald der Vorgang abgeschlossen ist.
 
@@ -240,7 +240,7 @@ Gehen Sie wie folgt vor, um einen Dienst zu konfigurieren:
 
 Ambari Web basiert auf einer zugrunde liegenden REST-API, die Sie zum Erstellen Ihrer eigenen Verwaltungs- und Überwachungstools nutzen können. Obwohl die API verhältnismäßig einfach zu verwenden ist, müssen für Azure einige Besonderheiten beachtet werden:
 
-* **Authentifizierung**: Für die Authentifizierung beim Dienst müssen der Benutzername \(Standardeinstellung ist **admin**\) und das Kennwort des Clusteradministrators verwendet werden.
+* **Authentifizierung**: Für die Authentifizierung beim Dienst müssen der Benutzername (Standardeinstellung ist **admin**) und das Kennwort des Clusteradministrators verwendet werden.
 
 * **Sicherheit**: Ambari verwendet die Standardauthentifizierung, daher sollten Sie für die Kommunikation mit der API immer HTTPS verwenden.
 
@@ -250,4 +250,4 @@ Ambari Web basiert auf einer zugrunde liegenden REST-API, die Sie zum Erstellen 
 
 Eine vollständige Referenz der REST-API finden Sie unter [Referenz zur Ambari-API V1](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

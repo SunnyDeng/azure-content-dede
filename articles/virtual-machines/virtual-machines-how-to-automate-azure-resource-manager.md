@@ -72,4 +72,4 @@ Der Azure-Ressourcen-Manager vereinfacht die Bereitstellung und Verwaltung von k
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

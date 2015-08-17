@@ -9,10 +9,10 @@
 <tags
    ms.service="automation"
    ms.devlang="na"
-   ms.topic="get-started-article"
+   ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/28/2015"
+   ms.date="07/22/2015"
    ms.author="bwren" />
 
 # Ausführen von Runbooks in Azure Automation
@@ -105,4 +105,4 @@ Sorgen Sie beim Erstellen eines Runbooks dafür, dass die Zeit zum Ausführen vo
 - [Anzeigen des Status eines Runbookauftrags in Azure Automation](automation-viewing-the-status-of-a-runbook-job)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

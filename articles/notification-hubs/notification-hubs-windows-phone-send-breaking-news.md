@@ -161,9 +161,9 @@ Durch diese Schritte findet beim Starten eine Registrierung beim Notification Hu
 
 	Dadurch werden die in der Klasse definierten Kategorien zurückgegeben.
 
-1. Öffnen Sie die Datei "App.xaml.cs", und fügen Sie den Modifizierer **async** zur Methode **Application_Launching** hinzu.
+1. Öffnen Sie die Datei "App.xaml.cs", und fügen Sie den Modifizierer **async** zur Methode **Application\_Launching** hinzu.
 
-2. Suchen und ersetzen Sie in der Methode **Application_Launching** den vorhandenen Notification Hub-Registrierungscode, den Sie in [Erste Schritte mit Notification Hubs] erstellt haben, durch die folgende Codezeile:
+2. Suchen und ersetzen Sie in der Methode **Application\_Launching** den vorhandenen Notification Hub-Registrierungscode, den Sie in [Erste Schritte mit Notification Hubs] erstellt haben, durch die folgende Codezeile:
 
 		await notifications.SubscribeToCategories(notifications.RetrieveCategories());
 
@@ -259,4 +259,4 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

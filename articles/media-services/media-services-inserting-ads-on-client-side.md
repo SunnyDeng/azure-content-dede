@@ -7,6 +7,7 @@
 	manager="dwrede" 
 	editor=""/>
 
+
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
@@ -15,6 +16,7 @@
 	ms.topic="article" 
 	ms.date="06/29/2015" 
 	ms.author="juliako"/>
+
 
 
 #Einfügen von Werbeeinblendungen auf Clientseite
@@ -32,17 +34,17 @@ Azure Media Services unterstützt Werbeeinblendungen über die Windows Media-Pla
 - **Nicht linear**: Overlay-Werbeeinblendungen, die während der Wiedergabe angezeigt werden; normalerweise ein Logo oder ein anderes statisches Bild im Player
 - **Begleitend**: Werbeeinblendungen, die außerhalb des Players angezeigt werden
 
-Werbeeinblendungen können an jeder Stelle auf der Zeitachse des Hauptvideos platziert werden. Sie müssen den Player anweisen, welche Werbeeinblendungen wann wiedergegeben werden. Dies erfolgt mithilfe einer Reihe von Standarddateien im XML-Format: Video Ad Service Template \(VAST\), Digital Video Multiple Ad Playlist \(VMAP\), Media Abstract Sequencing Template \(MAST\) und Digital Video Player Ad Interface Definition \(VPAID\). VAST-Dateien geben die anzuzeigenden Werbeeinblendungen an. VMAP-Dateien geben an, wann die verschiedenen Werbeeinblendungen wiedergegeben werden, sie enthalten VAST-XML. MAST-Dateien sind eine weitere Möglichkeit zum Anordnen von Werbeeinblendungen, die auch VAST-XML enthalten können. VPAID-Dateien definieren eine Schnittstelle zwischen Video-Player und Werbeeinblendung oder Werbungsserver.
+Werbeeinblendungen können an jeder Stelle auf der Zeitachse des Hauptvideos platziert werden. Sie müssen den Player anweisen, welche Werbeeinblendungen wann wiedergegeben werden. Dies erfolgt mithilfe einer Reihe von Standarddateien im XML-Format: Video Ad Service Template (VAST), Digital Video Multiple Ad Playlist (VMAP), Media Abstract Sequencing Template (MAST) und Digital Video Player Ad Interface Definition (VPAID). VAST-Dateien geben die anzuzeigenden Werbeeinblendungen an. VMAP-Dateien geben an, wann die verschiedenen Werbeeinblendungen wiedergegeben werden, sie enthalten VAST-XML. MAST-Dateien sind eine weitere Möglichkeit zum Anordnen von Werbeeinblendungen, die auch VAST-XML enthalten können. VPAID-Dateien definieren eine Schnittstelle zwischen Video-Player und Werbeeinblendung oder Werbungsserver.
 
 Jedes Player-Framework funktioniert anders und wird jeweils in einem eigenen Thema behandelt. In diesem Thema werden die grundlegenden Mechanismen zum Einfügen von Werbeeinblendungen beschrieben. Videoplayeranwendungen fordern Werbung von einem Adserver an. Der Adserver kann auf verschiedene Arten antworten:
 
 - Rückgabe einer VAST-Datei
-- Rückgabe einer VMAP-Datei \(mit eingebettetem VAST\)
-- Rückgabe einer MAST-Datei \(mit eingebettetem VAST\)
+- Rückgabe einer VMAP-Datei (mit eingebettetem VAST)
+- Rückgabe einer MAST-Datei (mit eingebettetem VAST)
 - Rückgabe einer VAST-Datei mit VPAID-Werbung
 
  
-###Verwenden einer VAST-Datei \(Video Ad Service Template\)
+###Verwenden einer VAST-Datei (Video Ad Service Template)
 
 Eine VAST-Datei gibt an, welche Werbeeinblendung bzw. Werbeeinblendungen angezeigt werden sollen. Der folgende XML-Code ist ein Beispiel für eine VAST-Datei für eine lineare Werbeeinblendung:
 	
@@ -151,11 +153,11 @@ Nicht lineare Werbeeinblendungen werden ebenfalls in einem <Creative>-Element an
 	</Creative>
 
  
-Das **<NonLinearAds>**-Element kann ein oder mehrere **<NonLinear>**-Elemente enthalten, von denen jedes eine nicht lineare Werbeeinblendung beschreiben kann. Das **<NonLinear>**-Element gibt die Ressource für die nicht lineare Werbeeinblendung an. Die Ressource kann **<StaticResouce>**, **<IFrameResource>** oder **<HTMLResouce>** sein.\*\*<StaticResource>\*\* beschreibt eine Nicht-HTML-Ressource und definiert ein creativeType-Attribut, das angibt, wie die Ressource angezeigt wird:
+Das **<NonLinearAds>**-Element kann ein oder mehrere **<NonLinear>**-Elemente enthalten, von denen jedes eine nicht lineare Werbeeinblendung beschreiben kann. Das **<NonLinear>**-Element gibt die Ressource für die nicht lineare Werbeeinblendung an. Die Ressource kann **<StaticResouce>**, **<IFrameResource>** oder **<HTMLResouce>** sein. **<StaticResource>** beschreibt eine Nicht-HTML-Ressource und definiert ein creativeType-Attribut, das angibt, wie die Ressource angezeigt wird:
 
 Image/gif, image/jpeg, image/png: Die Ressource wird in einem HTML-**<img>**-Tag angezeigt.
 
-Application/x-javascript: Die Ressource wird in einem HTML-\<\*\*script\*\*\>-Tag angezeigt.
+Application/x-javascript: Die Ressource wird in einem HTML-<**script**>-Tag angezeigt.
 
 Application/x-shockwave-flash: Die Ressource wird in einem Flash-Player angezeigt.
 
@@ -163,7 +165,7 @@ Application/x-shockwave-flash: Die Ressource wird in einem Flash-Player angezeig
 
 Begleitende Werbeeinblendungen werden in einem <CompanionAds>-Element definiert. Das <CompanionAds>-Element kann ein oder mehrere <Companion>-Elemente enthalten. Jedes <Companion>-Element beschreibt eine begleitende Werbeeinblendung und kann eine <StaticResource>, <IFrameResource> oder <HTMLResource> enthalten, die auf die gleiche Weise wie bei einer nichtlinearen Werbeeinblendung angegeben werden. Eine VAST-Datei kann mehrere begleitende Werbeeinblendungen enthalten und die Playeranwendung kann die für die Anzeige am besten geeignete Werbeeinblendung auswählen. Weitere Informationen zu VAST finden Sie unter [VAST 3.0](http://www.iab.net/media/file/VASTv3.0.pdf).
 
-###Verwenden einer VMAP-Datei \(Digital Video Multiple Ad Playlist\)
+###Verwenden einer VMAP-Datei (Digital Video Multiple Ad Playlist)
 
 Mithilfe einer VMAP-Datei können Sie angeben, wann Werbepausen erfolgen, wie lange die einzelnen Pausen dauern, wie viele Anzeigen in einer Pause angezeigt werden können und welche Typen von Werbung während einer Pause angezeigt werden können. Im Folgenden finden Sie eine VMAP-Datei, die eine einzelne Werbepause definiert:
 	
@@ -214,28 +216,28 @@ Mithilfe einer VMAP-Datei können Sie angeben, wann Werbepausen erfolgen, wie la
 	  </vmap:AdBreak>
 	</vmap:VMAP>
 	 
-Eine VMAP-Datei beginnt mit einem <VMAP>-Element, das ein oder mehrere <AdBreak>-Elemente enthält, die jeweils eine Werbepause definieren. Jede Werbepause gibt einen Pausentyp, eine Pausen-ID und ein Zeitoffset an. Das breakType-Attribut gibt den Typ der Werbung an, die während der Pause wiedergegeben werden kann: linear, nicht linear oder Display-Anzeigen. Display-Anzeigen entsprechen begleitenden VAST-Werbeeinblendungen. Mehrere Werbungstypen können in einer durch Trennzeichen getrennten Liste \(ohne Leerzeichen\) angegeben werden. Die breakID ist ein optionaler Bezeichner für die Werbeeinblendung. Mit "timeOffset" wird angegeben, wann die Werbeeinblendung angezeigt werden soll. Dies kann auf eine der folgenden Arten angegeben werden:
+Eine VMAP-Datei beginnt mit einem <VMAP>-Element, das ein oder mehrere <AdBreak>-Elemente enthält, die jeweils eine Werbepause definieren. Jede Werbepause gibt einen Pausentyp, eine Pausen-ID und ein Zeitoffset an. Das breakType-Attribut gibt den Typ der Werbung an, die während der Pause wiedergegeben werden kann: linear, nicht linear oder Display-Anzeigen. Display-Anzeigen entsprechen begleitenden VAST-Werbeeinblendungen. Mehrere Werbungstypen können in einer durch Trennzeichen getrennten Liste (ohne Leerzeichen) angegeben werden. Die breakID ist ein optionaler Bezeichner für die Werbeeinblendung. Mit "timeOffset" wird angegeben, wann die Werbeeinblendung angezeigt werden soll. Dies kann auf eine der folgenden Arten angegeben werden:
 
 1. Zeit: Im Format "hh:mm:ss" oder "hh:mm:ss.mmm", wobei ".mmm" Millisekunden sind. Der Wert dieses Attributs gibt die Zeit vom Anfang der Videozeitleiste bis zum Anfang der Werbepause an.
 1. Prozentsatz: Im Format "n%", wobei "n" der Prozentsatz der Videozeitleiste ist, der vor der Wiedergabe der Werbeeinblendung abgespielt werden soll.
 1. Start/Ende: Gibt an, dass eine Werbeeinblendung vor oder nach der Wiedergabe des Videos angezeigt werden soll.
-1. Position: Gibt die Reihenfolge von Werbepausen an, wenn der Zeitpunkt der Pausen nicht bekannt ist, z. B. beim Livestreaming. Die Reihenfolge der einzelnen Werbepausen wird im Format "\#n" angegeben, wobei "n" die ganze Zahl "1" oder größer ist. "1" bedeutet, dass die Werbeeinblendung bei der ersten Gelegenheit wiedergegeben werden soll, "2" gibt an, dass die Werbeeinblendung bei der zweiten Gelegenheit wiedergegeben werden soll usw.
+1. Position: Gibt die Reihenfolge von Werbepausen an, wenn der Zeitpunkt der Pausen nicht bekannt ist, z. B. beim Livestreaming. Die Reihenfolge der einzelnen Werbepausen wird im Format "#n" angegeben, wobei "n" die ganze Zahl "1" oder größer ist. "1" bedeutet, dass die Werbeeinblendung bei der ersten Gelegenheit wiedergegeben werden soll, "2" gibt an, dass die Werbeeinblendung bei der zweiten Gelegenheit wiedergegeben werden soll usw.
 
-Innerhalb des \<\*\*AdBreak\*\*\>-Elements kann sich ein \<\*\*AdSource\*\*\>-Element befinden. Das \<\*\*AdSource\*\*\>-Element enthält die folgenden Attribute:
+Innerhalb des <**AdBreak**>-Elements kann sich ein <**AdSource**>-Element befinden. Das <**AdSource**>-Element enthält die folgenden Attribute:
 
 1. Id: Gibt einen Bezeichner der Werbeeinblendungsquelle an.
 1. allowMultipleAds: Ein boolescher Wert, der angibt, ob mehrere Werbeeinblendungen während der Werbepause angezeigt werden können.
 1. followRedirects: Ein optionaler boolescher Wert, der angibt, ob der Videoplayer Weiterleitungen innerhalb einer Anzeigenantwort berücksichtigen soll.
 
-Das \<\*\*AdSource\*\*\>-Element stellt dem Player eine Inlineanzeigenantwort oder einen Verweis auf eine Anzeigenantwort bereit. Es kann eines der folgenden Elemente enthalten:
+Das <**AdSource**>-Element stellt dem Player eine Inline-Anzeigenantwort oder einen Verweis auf eine Anzeigenantwort bereit. Es kann eines der folgenden Elemente enthalten:
 
 - <VASTAdData>: Gibt an, dass eine VAST-Anzeigenantwort in der VMAP-Datei eingebettet ist.
 - <AdTagURI>: Ein URI, der auf eine Anzeigenantwort aus einem anderen System verweist.
 - <CustomAdData>: Eine beliebige Zeichenfolge, die eine nicht-VAST-Antwort darstellt.
 
-In diesem Beispiel wird eine Inlineanzeigenantwort mit einem <VASTAdData>-Element angegeben, das eine VAST-Anzeigenantwort enthält. Weitere Informationen zu den anderen Elementen finden Sie unter [VMAP](http://www.iab.net/guidelines/508676/digitalvideo/vsuite/vmap).
+In diesem Beispiel wird eine Inline-Anzeigenantwort mit einem <VASTAdData>-Element angegeben, das eine VAST-Anzeigenantwort enthält. Weitere Informationen zu den anderen Elementen finden Sie unter [VMAP](http://www.iab.net/guidelines/508676/digitalvideo/vsuite/vmap).
 
-Das \<\*\*AdBreak\*\*\>-Element kann außerdem ein \<\*\*TrackingEvents\*\*\>-Element enthalten. Das \<\*\*TrackingEvents\*\*\>-Element ermöglicht es Ihnen, den Start oder das Ende einer Werbepause zu verfolgen. Sie können auch verfolgen, ob während der Werbepause ein Fehler aufgetreten ist. Das \<\*\*TrackingEvents\*\*\>-Element enthält ein oder mehrere \<\*\*Tracking\*\*\>-Elemente, die jeweils ein Nachverfolgungsereignis und eine Nachverfolgungs-URI angeben. Mögliche Nachverfolgungsereignisse sind:
+Das <**AdBreak**>-Element kann außerdem ein <**TrackingEvents**>-Element enthalten. Das <**TrackingEvents**>-Element ermöglicht es Ihnen, den Start oder das Ende einer Werbepause zu verfolgen. Sie können auch verfolgen, ob während der Werbepause ein Fehler aufgetreten ist. Das <**TrackingEvents**>-Element enthält ein oder mehrere <**Tracking**>-Elemente, die jeweils ein Nachverfolgungsereignis und eine Nachverfolgungs-URI angeben. Mögliche Nachverfolgungsereignisse sind:
 
 1. breakStart: Verfolgt den Anfang einer Werbepause.
 1. breakEnd: Verfolgt den Abschluss einer Werbepause.
@@ -264,9 +266,9 @@ Das folgende Beispiel zeigt eine VMAP-Datei, die Nachverfolgungsereignisse angib
 	  </vmap:AdBreak>
 	</vmap:VMAP>
 
-Weitere Informationen zum \<\*\*TrackingEvents\*\*\>-Element und zu dessen untergeordneten Elementen finden Sie unter http://iab.org/VMAP.pdf.
+Weitere Informationen zum <**TrackingEvents**>-Element und zu dessen untergeordneten Elementen finden Sie unter http://iab.org/VMAP.pdf.
 
-###Verwenden einer MAST-Datei \(Media Abstract Sequencing Template\)
+###Verwenden einer MAST-Datei (Media Abstract Sequencing Template)
 
 Mithilfe einer MAST-Datei können Sie Auslöser angeben, die definieren, wann eine Werbeeinblendung angezeigt wird. Im Folgenden finden Sie eine MAST-Beispieldatei, die Auslöser für eine Pre-Roll-, eine Mid-Roll- und eine Post-Roll-Werbeeinblendung enthält.
 
@@ -275,10 +277,12 @@ Mithilfe einer MAST-Datei können Sie Auslöser angeben, die definieren, wann ei
 	    <trigger id="preroll" description="preroll every item"  >
 	      <startConditions>
 	        <condition type="event" name="OnItemStart" />
+
 	      </startConditions>
 	      <sources>
 	        <source uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" format="vast">
 	          <sources />
+
 	        </source>
 	      </sources>
 	    </trigger>
@@ -286,14 +290,17 @@ Mithilfe einer MAST-Datei können Sie Auslöser angeben, die definieren, wann ei
 	    <trigger id="midroll" description="midroll at 15 sec."  >
 	      <startConditions>
 	        <condition type="property" name="Position" value="00:00:15.0" operator="GEQ" />
+
 	      </startConditions>
 	      <endConditions>
 	        <condition type="event" name="OnItemEnd"/>
+
 	        <!--This 'resets' the trigger for the next clip-->
 	      </endConditions>
 	      <sources>
 	        <source uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" format="vast">
 	          <sources />
+
 	        </source>
 	      </sources>
 	    </trigger>
@@ -301,10 +308,12 @@ Mithilfe einer MAST-Datei können Sie Auslöser angeben, die definieren, wann ei
 	    <trigger id="postroll" description="postroll"  >
 	      <startConditions>
 	        <condition type="event" name="OnItemEnd"/>
+
 	      </startConditions>
 	      <sources>
 	        <source uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" format="vast">
 	          <sources />
+
 	        </source>
 	      </sources>
 	    </trigger>
@@ -315,12 +324,12 @@ Mithilfe einer MAST-Datei können Sie Auslöser angeben, die definieren, wann ei
 
 Eine MAST-Datei beginnt mit einem **<MAST>**-Element, das ein **<triggers>**-Element enthält. Das <triggers>-Element enthält ein oder mehrere **<trigger>**-Elemente, die definieren, wann eine Werbeeinblendung abgespielt werden soll.
 
-Das **<trigger>**-Element enthält ein **<startConditions>**-Element, das angibt, wann die Wiedergabe einer Werbeeinblendung beginnen soll. Das **<startConditions>**-Element enthält ein oder mehrere <condition>-Elemente. Wenn jede <condition> "true" ergibt, wird ein Auslöser initiiert oder widerrufen, abhängig davon, ob <condition> in einem **\<startConditions**\>-Element oder in einem **<endConditions>**-Element enthalten ist. Wenn mehrere <condition>-Elemente vorhanden sind, werden diese als implizit behandelt, ODER alle Bedingungen, die "true" ergeben, führen zur Initiierung des Auslösers. <condition>-Elemente können geschachtelt werden. Wenn untergeordnete <condition>-Elemente vordefiniert werden, werden diese als implizit behandelt UND alle Bedingungen müssen "true" ergeben, damit der Auslöser initiiert wird. Das <condition>-Element enthält die folgenden Attribute, die die Bedingung definieren:
+Das **<trigger>**-Element enthält ein **<startConditions>**-Element, das angibt, wann die Wiedergabe einer Werbeeinblendung beginnen soll. Das **<startConditions>**-Element enthält ein oder mehrere <condition>-Elemente. Wenn jede <condition> "true" ergibt, wird ein Auslöser initiiert oder widerrufen, abhängig davon, ob <condition> in einem **<startConditions**>-Element oder in einem **<endConditions>**-Element enthalten ist. Wenn mehrere <condition>-Elemente vorhanden sind, werden diese als implizit behandelt, ODER alle Bedingungen, die "true" ergeben, führen zur Initiierung des Auslösers. <condition>-Elemente können geschachtelt werden. Wenn untergeordnete <condition>-Elemente vordefiniert werden, werden diese als implizit behandelt UND alle Bedingungen müssen "true" ergeben, damit der Auslöser initiiert wird. Das <condition>-Element enthält die folgenden Attribute, die die Bedingung definieren:
 
 1. **type**: Gibt den Typ der Bedingung, des Ereignisses oder der Eigenschaft an.
 1. **name**: Der Name der Eigenschaft oder des Ereignisses, die bzw. das während der Auswertung verwendet wird.
 1. **value**: Der Wert, der für die Auswertung einer Eigenschaft verwendet wird.
-1. **operator**: Der während der Auswertung zu verwendende Vorgang: EQ \(gleich\), NEQ \(nicht gleich\), GTR \(größer als\), GEQ \(größer oder gleich\), LT \(kleiner als\), LEQ \(kleiner oder gleich\), MOD \(Modulo\)
+1. **operator**: Der während der Auswertung zu verwendende Vorgang: EQ (gleich), NEQ (nicht gleich), GTR (größer als), GEQ (größer oder gleich), LT (kleiner als), LEQ (kleiner oder gleich), MOD (Modulo)
 
 **<endConditions>** enthalten auch <condition>-Elemente. Wenn eine Bedingung als "true" ausgewertet wird, wird der Auslöser zurückgesetzt. Das <trigger>-Element enthält ein <sources>-Element, das ein oder mehrere <source>-Elemente enthält. Die <source>-Elemente definieren den URI und den Typ der Anzeigenantwort. In diesem Beispiel wird einer VAST-Antwort ein URI zugewiesen.
 
@@ -328,16 +337,18 @@ Das **<trigger>**-Element enthält ein **<startConditions>**-Element, das angibt
 	<trigger id="postroll" description="postroll"  >
       <startConditions>
         <condition/>
+
       </startConditions>
       <sources>
         <source uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" format="vast">
           <sources />
+
         </source>
       </sources>
     </trigger>
  
 
-###Verwenden von VPAID \(Video Player-Ad Interface Definition\)
+###Verwenden von VPAID (Video Player-Ad Interface Definition)
 
 VPAID ist eine API, mit der die Kommunikation von ausführbaren Werbeeinheiten mit einem Videoplayer aktiviert wird. Dies ermöglicht hochgradig interaktive Werbeerfahrungen. Der Benutzer kann mit der Werbeeinblendung interagieren und die Werbeeinblendung kann auf Aktionen des Betrachters reagieren. Beispielsweise können in einer Werbeeinblendung Schaltflächen angezeigt werden, über die der Benutzer weitere Informationen oder eine längere Version der Werbeeinblendung anzeigen kann. Der Videoplayer muss die VPAID-API unterstützen und die ausführbare Werbeeinheit muss die API implementieren. Wenn ein Player eine Werbeeinblendung von einem Adserver anfordert, kann der Server mit einer VAST-Antwort antworten, die eine VPAID-Werbung enthält.
 
@@ -356,7 +367,7 @@ Eine ausführbare Werbung kann mit dem <AdParameters>-Element innerhalb des <Lin
 
 ##Implementieren eines Windows- oder Windows Phone 8-Players mit Unterstützung für Werbeeinblendungen
 
-Microsoft Media-Plattform: Player Framework für Windows 8 und Windows Phone 8 enthält eine Sammlung von Beispielanwendungen, die zeigen, wie Sie eine Videoplayeranwendung mithilfe des Frameworks implementieren. Sie können Player Framework und die Beispiele unter [Player Framework for Windows 8 and Windows Phone 8](https://playerframework.codeplex.com/releases/view/105214) \(in englischer Sprache\) herunterladen.
+Microsoft Media-Plattform: Player Framework für Windows 8 und Windows Phone 8 enthält eine Sammlung von Beispielanwendungen, die zeigen, wie Sie eine Videoplayeranwendung mithilfe des Frameworks implementieren. Sie können Player Framework und die Beispiele unter [Player Framework for Windows 8 and Windows Phone 8](https://playerframework.codeplex.com/releases/view/105214) (in englischer Sprache) herunterladen.
 
 Weitere Informationen zum Einfügen von Werbeeinblendungen finden Sie unter [Einfügen von Werbeeinblendungen in Ihre Medien](media-services-inserting-ads-on-client-side.md#insert_ads_into_media).
 
@@ -376,7 +387,7 @@ In jedem dieser Beispiele wird die von Player Framework definierte MediaPlayer-K
 
 ###AdPodPage-Beispiel
 
-In diesem Beispiel wird "AdSchedulerPlugin" verwendet, um zu definieren, wann eine Werbeeinblendung angezeigt werden soll. In diesem Beispiel wird geplant, dass eine Mid-Roll-Werbung nach 5 Sekunden abgespielt werden soll. Der Ad Pod \(eine Gruppe von nacheinander angezeigten Werbeeinblendungen\) wird in einer VAST-Datei angegeben, die von einem Adserver zurückgegeben wird. Der URI für die VAST-Datei wird im <RemoteAdSource>-Element angegeben.
+In diesem Beispiel wird "AdSchedulerPlugin" verwendet, um zu definieren, wann eine Werbeeinblendung angezeigt werden soll. In diesem Beispiel wird geplant, dass eine Mid-Roll-Werbung nach 5 Sekunden abgespielt werden soll. Der Ad Pod (eine Gruppe von nacheinander angezeigten Werbeeinblendungen) wird in einer VAST-Datei angegeben, die von einem Adserver zurückgegeben wird. Der URI für die VAST-Datei wird im <RemoteAdSource>-Element angegeben.
 
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.windows.net/samples/videos/bigbuck.mp4">
 	
@@ -387,16 +398,18 @@ In diesem Beispiel wird "AdSchedulerPlugin" verwendet, um zu definieren, wann ei
 	                <ads:MidrollAdvertisement Time="00:00:05">
 	                    <ads:MidrollAdvertisement.Source>
 	                        <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_adpod.xml" Type="vast"/>
+
 	                    </ads:MidrollAdvertisement.Source>
 	                </ads:MidrollAdvertisement>
 	
 	            </ads:AdSchedulerPlugin.Advertisements>
 	        </ads:AdSchedulerPlugin>
 	        <ads:AdHandlerPlugin/>
+
 	    </mmppf:MediaPlayer.Plugins>
 	</mmppf:MediaPlayer>
 
-Weitere Informationen zu "AdSchedulerPlugin" finden Sie unter [Advertising in the Player Framework on Windows 8 and Windows Phone 8](http://playerframework.codeplex.com/wikipage?title=Advertising&referringTitle=Windows%208%20Player%20Documentation) \("Werbung im Player Framework für Windows 8 und Windows Phone 8", in englischer Sprache\).
+Weitere Informationen zu "AdSchedulerPlugin" finden Sie unter [Advertising in the Player Framework on Windows 8 and Windows Phone 8](http://playerframework.codeplex.com/wikipage?title=Advertising&referringTitle=Windows%208%20Player%20Documentation) ("Werbung im Player Framework für Windows 8 und Windows Phone 8", in englischer Sprache).
 
 ###AdSchedulingPage
 
@@ -410,24 +423,28 @@ In diesem Beispiel wird ebenfalls "AdSchedulerPlugin" verwendet. Geplant werden 
 	                        <ads:PrerollAdvertisement>
 	                            <ads:PrerollAdvertisement.Source>
 	                                <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" Type="vast"/>
+
 	                            </ads:PrerollAdvertisement.Source>
 	                        </ads:PrerollAdvertisement>
 	
 	                        <ads:MidrollAdvertisement Time="00:00:15">
 	                            <ads:MidrollAdvertisement.Source>
 	                                <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" Type="vast"/>
+
 	                            </ads:MidrollAdvertisement.Source>
 	                        </ads:MidrollAdvertisement>
 	
 	                        <ads:PostrollAdvertisement>
 	                            <ads:PostrollAdvertisement.Source>
 	                                <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" Type="vast"/>
+
 	                            </ads:PostrollAdvertisement.Source>
 	                        </ads:PostrollAdvertisement>
 	
 	                    </ads:AdSchedulerPlugin.Advertisements>
 	                </ads:AdSchedulerPlugin>
 	                <ads:AdHandlerPlugin/>
+
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -439,7 +456,9 @@ Dieses Beispiel verwendet "FreeWheelPlugin", das ein Quellattribut angibt, das e
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.windows.net/samples/videos/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
 	                <ads:FreeWheelPlugin Source="http://smf.blob.core.windows.net/samples/win8/ads/freewheel.xml"/>
+
 	                <ads:AdHandlerPlugin/>
+
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -450,7 +469,9 @@ Dieses Beispiel verwendet "MastSchedulerPlugin", das es Ihnen ermöglicht, eine 
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.windows.net/samples/videos/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
 	                <ads:MastSchedulerPlugin Source="http://smf.blob.core.windows.net/samples/win8/ads/mast.xml" />
+
 	                <ads:AdHandlerPlugin/>
+
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -459,6 +480,7 @@ Dieses Beispiel verwendet "MastSchedulerPlugin", das es Ihnen ermöglicht, eine 
 Dieses Beispiel interagiert programmgesteuert mit MediaPlayer. Die Datei "ProgrammaticAdPage.xaml" instanziiert MediaPlayer:
 
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.windows.net/samples/videos/bigbuck.mp4"/>
+
 
 Die Datei "ProgrammaticAdPage.xaml.cs" erstellt ein "AdHandlerPlugin", fügt einen "TimelineMarker" hinzu, um anzugeben, wann eine Werbeeinblendung angezeigt werden soll, und fügt dann einen Handler für das MarkerReached-Ereignis hinzu, das eine "RemoteAdSource" lädt, die einen URI für eine VAST-Datei angibt. Anschließend wird die Werbeeinblendung abgespielt.
 	
@@ -504,6 +526,7 @@ Dieses Beispiel verwendet "AdSchedulerPlugin" zum Planen einer Mid-Roll-Werbeein
 	                                <ads:AdSource Type="clip">
 	                                    <ads:AdSource.Payload>
 	                                        <ads:ClipAdPayload MediaSource="http://smf.blob.core.windows.net/samples/ads/media/XBOX_HD_DEMO_700_2_000_700_4x3.wmv" MimeType="video/x-ms-wmv" />
+
 	                                    </ads:AdSource.Payload>
 	                                </ads:AdSource>
 	                            </ads:MidrollAdvertisement.Source>
@@ -512,6 +535,7 @@ Dieses Beispiel verwendet "AdSchedulerPlugin" zum Planen einer Mid-Roll-Werbeein
 	                    </ads:AdSchedulerPlugin.Advertisements>
 	                </ads:AdSchedulerPlugin>
 	                <ads:AdHandlerPlugin/>
+
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -527,12 +551,14 @@ Dieses Beispiel veranschaulicht, wie Sie "AdSchedulerPlugin" verwenden, um eine 
 	                        <ads:MidrollAdvertisement Time="00:00:05">
 	                            <ads:MidrollAdvertisement.Source>
 	                                <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear_companions.xml" Type="vast"/>
+
 	                            </ads:MidrollAdvertisement.Source>
 	                        </ads:MidrollAdvertisement>
 	
 	                    </ads:AdSchedulerPlugin.Advertisements>
 	                </ads:AdSchedulerPlugin>
 	                <ads:AdHandlerPlugin/>
+
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -548,12 +574,14 @@ In diesem Beispiel wird "AdSchedulerPlugin" zum Planen einer linearen und einer 
 	                        <ads:MidrollAdvertisement Time="00:00:05">
 	                            <ads:MidrollAdvertisement.Source>
 	                                <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear_nonlinear.xml" Type="vast"/>
+
 	                            </ads:MidrollAdvertisement.Source>
 	                        </ads:MidrollAdvertisement>
 	                        
 	                    </ads:AdSchedulerPlugin.Advertisements>
 	                </ads:AdSchedulerPlugin>
 	                <ads:AdHandlerPlugin/>
+
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -564,14 +592,16 @@ In diesem Beispiel wird "VmapSchedulerPlugin" verwendet, um Werbeeinblendungen m
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.windows.net/samples/videos/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
 	                <ads:VmapSchedulerPlugin Source="http://smf.blob.core.windows.net/samples/win8/ads/vmap.xml"/>
+
 	                <ads:AdHandlerPlugin/>
+
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
 ##Implementieren eines iOS-Videoplayers mit Unterstützung für Werbeeinblendungen
 
 
-Microsoft Media-Plattform: Player Framework für iOS enthält eine Sammlung von Beispielanwendungen, die zeigen, wie Sie eine Videoplayeranwendung mithilfe des Frameworks implementieren. Sie können das Player Framework und die Beispiele unter [Azure Media Player Framework](https://github.com/Azure/azure-media-player-framework) herunterladen. Die GitHub-Seite enthält einen Link zu einem Wiki, das zusätzliche Informationen zum Player Framework und eine Einführung in das Playerbeispiel enthält: [Azure Media Player-Wiki](https://github.com/Azure/azure-media-player-framework/wiki/How-to-use-Azure-media-player-framework) \(in englischer Sprache\).
+Microsoft Media-Plattform: Player Framework für iOS enthält eine Sammlung von Beispielanwendungen, die zeigen, wie Sie eine Videoplayeranwendung mithilfe des Frameworks implementieren. Sie können das Player Framework und die Beispiele unter [Azure Media Player Framework](https://github.com/Azure/azure-media-player-framework) herunterladen. Die GitHub-Seite enthält einen Link zu einem Wiki, das zusätzliche Informationen zum Player Framework und eine Einführung in das Playerbeispiel enthält: [Azure Media Player-Wiki](https://github.com/Azure/azure-media-player-framework/wiki/How-to-use-Azure-media-player-framework) (in englischer Sprache).
 
 Weitere Informationen zum Einfügen von Werbeeinblendungen finden Sie unter [Einfügen von Werbeeinblendungen in Ihre Medien](media-services-inserting-ads-on-client-side.md#insert_ads_into_media).
 
@@ -624,7 +654,7 @@ Das folgende Beispiel zeigt, wie Sie eine VAST-Werbeeinblendung mit später Bind
         [self logFrameworkError];
     }
          
-   Das folgende Beispiel zeigt, wie Sie eine VAST-Werbeeinblendung mit früher Bindung planen. //Example:4 Schedule an early binding VAST ad //Download the VAST file if \(!\[framework.adResolver downloadManifest:&manifest withURL:\[NSURL URLWithString:@"http://portalvhdsq3m25bf47d15c.blob.core.windows.net/vast/PlayerTestVAST.xml"\]\]\) { \[self logFrameworkError\]; } else { adLinearTime.startTime = 7; adLinearTime.duration = 0;
+   Das folgende Beispiel zeigt, wie Sie eine VAST-Werbeeinblendung mit früher Bindung planen. //Example:4 Schedule an early binding VAST ad //Download the VAST file if (![framework.adResolver downloadManifest:&manifest withURL:[NSURL URLWithString:@"http://portalvhdsq3m25bf47d15c.blob.core.windows.net/vast/PlayerTestVAST.xml"]]) { [self logFrameworkError]; } else { adLinearTime.startTime = 7; adLinearTime.duration = 0;
         
 		// Create AdInfo instance
 	    AdInfo *vastAdInfo2 = [[[AdInfo alloc] init] autorelease];
@@ -640,7 +670,7 @@ Das folgende Beispiel zeigt, wie Sie eine VAST-Werbeeinblendung mit später Bind
 	    }
 	}
 
-Im folgenden Beispiel wird gezeigt, wie Sie eine Werbeeinblendung mithilfe der Schnitteditierung \(RCE, Rough Cut Editing\) einfügen.
+Im folgenden Beispiel wird gezeigt, wie Sie eine Werbeeinblendung mithilfe der Schnitteditierung (RCE, Rough Cut Editing) einfügen.
 
 	//Example:1 How to use RCE.
 	// specify manifest for ad content
@@ -802,6 +832,6 @@ Das folgende Beispiel zeigt, wie eine Mid-Roll-Overlay-Werbeeinblendung geplant 
  
 ##Siehe auch
 
-[Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md) [Introduction to the Azure Media Player Framework for iOS](https://channel9.msdn.com/Series/Windows-Azure-Media-Services-Tutorials/An-introduction-to-Azure-Media-Player-Framework-for-IOS) \("Einführung in Azure Media Player Framework für iOS", in englischer Sprache\)
+[Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md) [Introduction to the Azure Media Player Framework for iOS](https://channel9.msdn.com/Series/Windows-Azure-Media-Services-Tutorials/An-introduction-to-Azure-Media-Player-Framework-for-IOS) ("Einführung in Azure Media Player Framework für iOS", in englischer Sprache)
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

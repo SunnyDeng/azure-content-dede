@@ -212,4 +212,4 @@ Diese Sequenz kann auch weitergeleitet werden:
 [Erste Schritte mit Azure-Cmdlets](https://msdn.microsoft.com/library/jj554332.aspx)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

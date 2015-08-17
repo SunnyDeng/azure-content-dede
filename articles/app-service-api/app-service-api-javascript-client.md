@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="JavaScript" 
 	ms.topic="article" 
-	ms.date="04/20/2015" 
+	ms.date="07/31/2015" 
 	ms.author="bradygaster"/>
 
 # Nutzen einer Azure-API-App mithilfe von HTML und Javascript
@@ -371,4 +371,4 @@ Das vorliegende Beispiel hat gezeigt, wie Sie AngularJS als JavaScript-Plattform
 
 Dieses Beispiel veranschaulicht den nicht authentifizierten Zugriff auf eine API-App. Informationen zur Authentifizierung in App Service finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

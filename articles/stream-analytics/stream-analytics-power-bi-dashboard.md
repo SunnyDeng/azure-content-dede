@@ -1,11 +1,13 @@
 <properties 
 	pageTitle="Power BI-Dashboard auf Stream Analytics | Microsoft Azure" 
 	description="Verwenden Sie ein Power BI-Dashboard für Echtzeit-Streaming, um Business Intelligence zu erfassen und hohe Volumen von Daten aus einem Stream Analytics-Auftrag zu analysieren." 
+	keywords="business intelligence tools,power bi,streaming data,power bi dashboard"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
 	manager="paulettm" 
 	editor="cgronlun"/>
+
 
 <tags 
 	ms.service="stream-analytics" 
@@ -13,8 +15,9 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="06/30/2015" 
+	ms.date="08/03/2015" 
 	ms.author="jeffstok"/>
+
 	
 # Azure Stream Analytics & Power BI: Live-Dashboard für die Echtzeit-Analyse von Streamingdaten
 
@@ -30,7 +33,7 @@ In diesem Artikel erfahren Sie, wie Sie eigene benutzerdefinierte Business Intel
 
 * Microsoft Azure-Konto
 * Eine Eingabe für Ihren Stream Analytics-Auftrag, aus dem Streamingdaten verwendet werden können. Stream Analytics akzeptiert Eingaben von Azure Event Hubs oder dem Azure-Blob-Speicher.  
-* Microsoft Power BI-Organisations-ID
+* Geschäfts- oder Schulkonto für Power BI
 
 ## Erstellen eines Azure Stream Analytics-Auftrags ##
 
@@ -77,20 +80,20 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie Event Hub als Eingabe m
 
 1.  Klicken Sie am oberen Seitenrand auf **Ausgabe** und dann auf **Ausgabe hinzufügen**. Sie sehen, dass Power BI als Ausgabeoption aufgelistet ist.
 
-![Grafik2][graphic2]
+    ![Grafik2][graphic2]
 
 2.  Wählen Sie **Power BI**, und klicken Sie dann auf die rechte Taste.
 3.  Es wird ein Bildschirm ähnlich dem folgenden angezeigt:
 
-![Grafik3][graphic3]
+    ![Grafik3][graphic3]
 
-4.  Geben Sie in diesem Schritt eine Organisations-ID für die Stream Analytics-Auftragsausgabe an. Wenn Sie bereits ein Power BI-Konto haben, wählen Sie **Jetzt autorisieren**. Falls nicht, wählen Sie **Jetzt anmelden**. [Hier finden Sie ein gutes Blog über die Einzelheiten der Power BI-Anmeldung \(in englischer Sprache\)](http://blogs.technet.com/b/powerbisupport/archive/2015/02/06/power-bi-sign-up-walkthrough.aspx).
+4.  Geben Sie in diesem Schritt ein Geschäfts- oder Schulkonto für die Stream Analytics-Auftragsausgabe an. Wenn Sie bereits ein Power BI-Konto haben, wählen Sie **Jetzt autorisieren**. Falls nicht, wählen Sie **Jetzt anmelden**. [Hier finden Sie ein gutes Blog über die Einzelheiten der Power BI-Anmeldung (in englischer Sprache)](http://blogs.technet.com/b/powerbisupport/archive/2015/02/06/power-bi-sign-up-walkthrough.aspx).
 
-![Grafik11][graphic11]
+    ![Grafik11][graphic11]
 
 5.  Als Nächstes wird ein Bildschirm ähnlich dem folgenden angezeigt:
 
-![Grafik4][graphic4]
+    ![Grafik4][graphic4]
 
 Geben Sie die Werte wie nachfolgend gezeigt ein:
 
@@ -98,11 +101,11 @@ Geben Sie die Werte wie nachfolgend gezeigt ein:
 * **Datasetname** – Geben Sie einen Datasetnamen für die Power BI-Ausgabe an. Verwenden wir z. B. „pbidemo“.
 *	**Tabellenname** – Geben Sie einen Tabellennamen unter dem Dataset der Power BI-Ausgabe ein. Wir verwenden hier „pbidemo“. Derzeit darf die Power BI-Ausgabe von Stream Analytics-Aufträgen nur eine Tabelle pro Dataset aufweisen.
 
->	[AZURE.NOTE] Sie sollten Dataset und Tabelle nicht explizit in Ihrem Power BI-Konto erstellen. Sie werden automatisch beim Starten Ihres Stream Analytics-Auftrags erstellt, sobald der Auftrag eine Ausgabe an Power BI zurückgibt. Wenn Ihre Auftragsabfrage keine Ergebnisse zurückgibt, werden Dataset und Tabelle nicht erstellt.
+>	[AZURE.NOTE] You should not explicitly create this dataset and table in your Power BI account. They will be automatically created when you start your Stream Analytics job and the job starts pumping output into Power BI. If your job query doesn’t return any results, the dataset and table will not be created.
 
 *	Klicken Sie auf **OK** und anschließend auf **Testverbindung**. Die Ausgabekonfiguration ist abgeschlossen.
 
->	[AZURE.WARNING] Wenn Power BI bereits über ein Dataset und eine Tabelle mit demselben Namen verfügt, den Sie in diesem Stream Analytics-Auftrag angegeben haben, beachten Sie bitte, dass die vorhandenen Daten überschrieben werden.
+>	[AZURE.WARNING] Also be aware that if Power BI already had a dataset and table with the same name as the one you provided in this Stream Analytics job, the existing data will be overwritten.
 
 
 ## Schreiben von Abfragen ##
@@ -128,7 +131,7 @@ Starten Sie den Auftrag. Überprüfen Sie, ob der Event Hub Ereignisse empfängt
 
 ## Erstellen des Dashboards in Power BI ##
 
-Wechseln Sie zu [Powerbi.com](https://powerbi.com) und melden Sie sich mit Ihrer Organisations-ID an. Wenn die Stream Analytics-Auftragsabfrage Ergebnisse ausgibt, werden Sie feststellen, dass das Dataset bereits erstellt wurde:
+Wechseln Sie zu [Powerbi.com](https://powerbi.com) und melden Sie sich mit Ihrem Geschäfts- oder Schulkonto an. Wenn die Stream Analytics-Auftragsabfrage Ergebnisse ausgibt, werden Sie feststellen, dass das Dataset bereits erstellt wurde:
 
 ![Grafik5][graphic5]
 
@@ -167,8 +170,7 @@ In Power BI werden Parallelitäts- und Durchsatzeinschränkungen genutzt. Eine B
 
 Aufgrund dieser Einschränkungen eignet sich Power BI perfekt für Anwendungsfälle, bei denen Azure Stream Analytics eine erhebliche Datenlastverringerung ermöglicht. Es wird die Verwendung von "TumblingWindow" oder "HoppingWindow" empfohlen, um sicherzustellen, dass beim Datenpush maximal 1 Push pro Sekunde erfolgt und dass die Abfrage innerhalb der Durchsatzanforderungen liegt. Mit der folgenden Gleichung können Sie den Wert für das Fenster in Sekunden berechnen: ![Gleichung1](./media/stream-analytics-power-bi-dashboard/equation1.png).
 
-Beispiel: Wenn 1.000 Geräte jede Sekunde Daten senden und Sie das Power BI Pro-SKU verwenden, das 1.000.000 Zeilen pro Stunde unterstützt, und die durchschnittlichen Daten pro Gerät in Power BI berechnen möchten, können Sie maximal alle 4 Sekunden einen Push pro Gerät durchführen (wie im Folgenden gezeigt): 
-![Gleichung2](./media/stream-analytics-power-bi-dashboard/equation2.png)
+Beispiel: Wenn 1.000 Geräte jede Sekunde Daten senden und Sie das Power BI Pro-SKU verwenden, das 1.000.000 Zeilen pro Stunde unterstützt, und die durchschnittlichen Daten pro Gerät in Power BI berechnen möchten, können Sie maximal alle 4 Sekunden einen Push pro Gerät durchführen (wie im Folgenden gezeigt): ![Gleichung2](./media/stream-analytics-power-bi-dashboard/equation2.png)
 
 Das bedeutet, dass die ursprüngliche Abfrage wie folgt geändert wird:
 
@@ -211,4 +213,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic10]: ./media/stream-analytics-power-bi-dashboard/10-stream-analytics-power-bi-dashboard.png
 [graphic11]: ./media/stream-analytics-power-bi-dashboard/11-stream-analytics-power-bi-dashboard.png
 
-<!----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

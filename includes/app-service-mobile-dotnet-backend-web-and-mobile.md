@@ -32,7 +32,7 @@ In diesem Abschnitt erstellen Sie eine neue Web-App mithilfe einer Beispiellösu
 
     - Wählen Sie auf dem geöffneten Blatt **Alle Einstellungen** aus und dann **Anwendungseinstellungen**.
 
-    - Klicken Sie unter **Verbindungszeichenfolgen** auf **Verbindungszeichenfolgen anzeigen**. Kopieren Sie den Wert für die Einstellung **MS_TableConnectionString**. Dies ist die Verbindungszeichenfolge, die von der mobilen App verwendet wird, um eine Verbindung mit der SQL-Datenbank herzustellen.
+    - Klicken Sie unter **Verbindungszeichenfolgen** auf **Verbindungszeichenfolgen anzeigen**. Kopieren Sie den Wert für die Einstellung **MS\_TableConnectionString**. Dies ist die Verbindungszeichenfolge, die von der mobilen App verwendet wird, um eine Verbindung mit der SQL-Datenbank herzustellen.
 
 5. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Web-API-Projekt, und wählen Sie **Veröffentlichen** aus. Wählen Sie als Veröffentlichungsziel **Azure-Web-Apps** aus, und wählen Sie die Web-App aus, die Sie erstellt haben. Klicken Sie auf **Weiter** bis der Bereich **Einstellungen** im Assistenten "Web veröffentlichen" angezeigt wird.
 
@@ -77,4 +77,4 @@ In diesem Beispiel wurde die Verwendung derselben zugrunde liegenden Datenbank f
 [MultiChannelToDo]: https://github.com/Azure/mobile-services-samples/tree/web-mobile/MultiChannelToDo
 [Erstellen einer mobilen App]: ../article/app-service-mobile/app-service-mobile-dotnet-backend-xamarin-ios-get-started-preview.md
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

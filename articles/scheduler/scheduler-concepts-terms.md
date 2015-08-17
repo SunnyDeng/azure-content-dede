@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="get-started-article" 
- ms.date="05/12/2015"
+ ms.date="08/04/2015"
  ms.author="krisragh"/>
 
 # Konzepte, Terminologie und Entitätshierarchie für Scheduler
@@ -185,7 +185,7 @@ Für den Fall, dass bei einem Scheduler-Auftrag ein Fehler auftritt, kann durch 
 
 Für eine Wiederholungsrichtlinie können zwei zusätzliche Einstellungen angegeben werden: ein Wiederholungsintervall (**retryInterval**) und die Anzahl von Wiederholungen (**retryCount**).
 
-Das Wiederholungsintervall (**retryInterval**) ist das Intervall zwischen den Wiederholungen. Es ist standardmäßig auf den Mindestwert von einer Minute festgelegt. Der maximal zulässige Wert beträgt 18 Monate. Es wird im ISO-8601-Format definiert. Mit dem Wert für die Anzahl von Wiederholungen (Objekt **retryCount**) wird angegeben, wie oft versucht wird, den Vorgang zu wiederholen. Der Standardwert ist 5, der maximal zulässige Wert ist 20. Die Angabe von **retryInterval** und **retryCount** ist jeweils optional. Wenn **retryType** auf **fixed** festgelegt ist und keine expliziten Werte angegeben werden, werden die Standardwerte verwendet.
+Das Wiederholungsintervall, das durch das Objekt **retryInterval** angegeben wird, ist das Intervall zwischen den Wiederholungen. Es ist standardmäßig auf den Mindestwert von einer Minute festgelegt. Der maximal zulässige Wert beträgt 18 Monate. Es wird im ISO-8601-Format definiert. Gleichermaßen wird der Wert für die Anzahl von Wiederholungen mit dem Objekt **retryCount** angegeben; es bestimmt, wie oft versucht wird, einen Vorgang zu wiederholen. Der Standardwert ist 5, der maximal zulässige Wert ist 20. Die Angabe von **retryInterval** und **retryCount** ist jeweils optional. Wenn **retryType** auf **fixed** festgelegt ist und keine expliziten Werte angegeben werden, werden die Standardwerte verwendet.
 
 ## Siehe auch
 
@@ -208,4 +208,4 @@ Das Wiederholungsintervall (**retryInterval**) ist das Intervall zwischen den Wi
  [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

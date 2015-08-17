@@ -176,11 +176,11 @@ Der letzte Schritt besteht darin, die App zu testen und sicherzustellen, dass da
 
 	![](./media/mobile-services-windows-phone-upload-to-blob-storage/mobile-upload-blob-app-view-final-wp8.png)
 
-   > [AZURE.NOTE] Das Bild wird automatisch vom Blob-Speicherdienst heruntergeladen, wenn die <code>imageUri</code>-Eigenschaft des neuen Elements an das <strong>Image</strong>-Steuerelement gebunden wird.
+   >[AZURE.NOTE]Das Bild wird automatisch vom Blob-Speicherdienst heruntergeladen, wenn die <code>imageUri</code>-Eigenschaft des neuen Elements an das <strong>Image</strong>-Steuerelement gebunden wird.
 
 
 [Erste Schritte mit Mobile Services]: ../articles/mobile-services-windows-phone-get-started.md
 [CameraCaptureTask]: http://msdn.microsoft.com/library/windowsphone/develop/microsoft.phone.tasks.cameracapturetask(v=vs.105).aspx
 [PhotoCamera]: http://msdn.microsoft.com/library/windowsphone/develop/microsoft.devices.photocamera(v=vs.105).aspx
 
-<!-----HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

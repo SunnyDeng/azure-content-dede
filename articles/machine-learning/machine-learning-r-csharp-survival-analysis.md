@@ -34,10 +34,10 @@ Das Eingabedatenschema des Webdienstes wird in der folgenden Tabelle dargestellt
 
 - trainingdata – Eine Zeichenfolge. Zeilen werden durch Kommas und Spalten durch Semikolons getrennt. Jede Zeile enthält die Dimension "time", die Dimension "event" und Prädiktorvariablen.
 - testingdata – Eine Zeile mit Daten, die Prädiktorvariablen für ein bestimmtes Objekt enthält.
-- time_of_interest – Der verstrichene zu beobachtende Zeitraum n.
-- index_time – Der Spaltenindex der Dimension "time" (beginnend mit 1).
-- index_event – Der Spaltenindex der Dimension "event" (beginnend mit 1).
-- variable_types – Eine Zeichenfolge mit Semikolon als Trennzeichen. 0 stellt kontinuierliche und 1 Faktorvariablen dar.
+- time\_of\_interest – Der verstrichene zu beobachtende Zeitraum n.
+- index\_time – Der Spaltenindex der Dimension "time" (beginnend mit 1).
+- index\_event – Der Spaltenindex der Dimension "event" (beginnend mit 1).
+- variable\_types – Eine Zeichenfolge mit Semikolon als Trennzeichen. 0 stellt kontinuierliche und 1 Faktorvariablen dar.
 
 
 Die Ausgabe ist die Wahrscheinlichkeit, dass ein Ereignis zu einem bestimmten Zeitpunkt eintritt.
@@ -87,7 +87,7 @@ Die Interpretation dieses Tests lautet wie folgt. Angenommen, das Ziel der Daten
 
 >Dieser Webdienst wurde mithilfe von Azure Machine Learning erstellt. Eine kostenlose Testversion sowie Einführungsvideos zum Erstellen von Experimenten und [Veröffentlichen von Webdiensten](machine-learning-publish-a-machine-learning-web-service.md) finden Sie unter [azure.com/ml](http://azure.com/ml). Im Folgenden finden Sie einen Screenshot des Experiments, mit dem der Webdienst erstellt wurde und Beispielcode für die einzelnen Module im Experiment.
 
-In Azure Machine Learning wurde ein neues leeres Experiment erstellt, und es wurden zwei [Execute R Script][execute-r-script]-Module in den Arbeitsbereich gezogen. Das Datenschema wurde mit einem einfachen [Execute R Script][execute-r-script]-Modul erstellt, welches das Eingabedatenschema für den Webdienst definiert. Dieses Modul wird dann mit dem zweiten [Execute R Script][execute-r-script]-Modul verknüpft, das die Hauptarbeit übernimmt. Dieses Modul führt die Datenvorverarbeitung, Modellerstellung und Vorhersagen aus. Beim Schritt der Datenvorverarbeitung werden die Eingabedaten, die durch eine lange Zeichenfolge dargestellt werden, transformiert und in einem Datenrahmen konvertiert. Im Modellerstellungsschritt wird ein externes R-Paket "survival_2.37-7.zip" zuerst für die Durchführung von Lebensdaueranalysen installiert. Anschließend wird die Funktion "coxph" nach einer Reihe von Datenverarbeitungsaufgaben ausgeführt. Die Details der Funktion "coxph" für Lebensdaueranalysen können der R-Dokumentation entnommen werden. Im Prognoseschritt wird eine Testinstanz in das trainierte Modell mit der Funktion "surfit" ein gespeist und die Lebensdauerkurve für diese Testinstanz wird als Variable "curve" erstellt. Schließlich erhalten Sie die Wahrscheinlichkeit des erwarteten Zeitpunkts.
+In Azure Machine Learning wurde ein neues leeres Experiment erstellt, und es wurden zwei [Execute R Script][execute-r-script]-Module in den Arbeitsbereich gezogen. Das Datenschema wurde mit einem einfachen [Execute R Script][execute-r-script]-Modul erstellt, welches das Eingabedatenschema für den Webdienst definiert. Dieses Modul wird dann mit dem zweiten [Execute R Script][execute-r-script]-Modul verknüpft, das die Hauptarbeit übernimmt. Dieses Modul führt die Datenvorverarbeitung, Modellerstellung und Vorhersagen aus. Beim Schritt der Datenvorverarbeitung werden die Eingabedaten, die durch eine lange Zeichenfolge dargestellt werden, transformiert und in einem Datenrahmen konvertiert. Im Modellerstellungsschritt wird ein externes R-Paket "survival\_2.37-7.zip" zuerst für die Durchführung von Lebensdaueranalysen installiert. Anschließend wird die Funktion "coxph" nach einer Reihe von Datenverarbeitungsaufgaben ausgeführt. Die Details der Funktion "coxph" für Lebensdaueranalysen können der R-Dokumentation entnommen werden. Im Prognoseschritt wird eine Testinstanz in das trainierte Modell mit der Funktion "surfit" ein gespeist und die Lebensdauerkurve für diese Testinstanz wird als Variable "curve" erstellt. Schließlich erhalten Sie die Wahrscheinlichkeit des erwarteten Zeitpunkts.
 
 ###Experimentablauf:
 
@@ -207,4 +207,4 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im 
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

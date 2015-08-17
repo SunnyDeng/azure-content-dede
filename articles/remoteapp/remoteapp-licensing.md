@@ -34,4 +34,4 @@ Das ist einleuchtend, nicht wahr? Sie können jede App veröffentlichen, zu dere
 Bitte beachten Sie, dass Sie in einer Cloud-Sammlung keine Client-Zugriffslizenz (CAL) und keinen Volumenlizenzvertrag verwenden können. Sie *können* jedoch einen Volumenlizenzvertrag verwenden, um Anwendungen (mit Ausnahme von Office) in einer Hybrid-Sammlung zu aktivieren. Sie müssen sie lediglich auf dem Vorlagenimage von den Volumenlizenzmedien installieren. Befolgen Sie die Hinweise des Herstellers der Anwendung zum Installieren von Lizenzen in einer Remotedesktop-Umgebung.
  
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -71,7 +71,7 @@ GO
 20150101,1,3
 ```
 
-Speichern Sie diese im lokalen temporären Verzeichnis unter "C:\Temp\DimDate2.txt".
+Speichern Sie diese im lokalen temporären Verzeichnis unter "C:\\Temp\\DimDate2.txt".
 
 > [AZURE.NOTE]Es ist wichtig, daran zu denken, dass bcp.exe die UTF-8-Codierung nicht unterstützt. Verwenden Sie ASCII-codierte Dateien oder die UTF-16-Codierung für Ihre Dateien, wenn Sie bcp.exe verwenden.
 
@@ -107,7 +107,7 @@ DateId |CalendarQuarter |FiscalQuarter
 20151201 |4 |2
 
 ## Exportieren von Daten aus SQL Data Warehouse
-In diesem Lernprogramm erstellen Sie eine Datendatei aus einer Tabelle in SQL Data Warehouse. Wir werden die oben erstellten Daten in eine neue Datendatei namens "DimDate2_export.txt" exportieren.
+In diesem Lernprogramm erstellen Sie eine Datendatei aus einer Tabelle in SQL Data Warehouse. Wir werden die oben erstellten Daten in eine neue Datendatei namens "DimDate2\_export.txt" exportieren.
 
 ### Schritt 1: Exportieren der Daten
 
@@ -152,4 +152,4 @@ Eine Übersicht über das Laden finden Sie unter [Laden von Daten in SQL Data Wa
 <!--Other Web references-->
 [Microsoft Download Center]: http://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

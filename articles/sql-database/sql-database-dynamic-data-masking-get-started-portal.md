@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services" 
-   ms.date="04/02/2015"
-   ms.author="nadavh; ronmat; v-romcal; sstein"/>
+   ms.date="07/30/2015"
+   ms.author="nadavh; ronmat; v-romcal; sstein; ronitr"/>
 
 # Erste Schritte mit der dynamischen Datenmaskierung für SQL-Datenbanken (Azure-Portal)
 
@@ -31,9 +31,11 @@ In einem Callcenter kann ein Supportmitarbeiter beispielsweise Anrufer anhand me
 
 ## Grundlagen der dynamischen Datenmaskierung für SQL-Datenbanken
 
-Sie richten die dynamische Datenmaskierungsrichtlinie im Azure-Portal ein und schließen die Einrichtung ab, indem Sie die sicherheitsaktivierte Verbindungszeichenfolge einsetzen, die von der Anwendung oder anderen Clients genutzt wird, die auf die Datenbank zugreifen.
+Sie richten Sie dynamische Datenmaskierungsrichtlinie im Azure-Portal auf der Registerkarte "Überwachung und Sicherheit" für Ihre Datenbank ein. Überprüfen Sie vor der Einrichtung der dynamischen Datenmaskierung, ob Sie einen [kompatiblen Client](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md) verwenden.
+
 
 > [AZURE.NOTE]Informationen zum Einrichten der dynamischen Datenmaskierung im Azure-Vorschauportal finden Sie unter [Erste Schritte mit der dynamischen Datenmaskierung für SQL-Datenbanken (Azure-Vorschauportal)](sql-database-dynamic-data-masking-get-started.md).
+
 
 ### Berechtigungen für die dynamische Datenmaskierung
 
@@ -43,37 +45,25 @@ Die dynamische Datenmaskierung kann von den Rollen "Azure-Datenbankadministrator
 
 * **Privilegierte Anmeldungen:** eine Gruppe von Anmeldungen, die Daten ohne Maskierung in den SQL-Abfrageergebnissen erhalten.
   
-* **Maskierungsregeln:** eine Gruppe von Regeln, die die zu maskierenden Felder und verwendete Maskierungsfunktion definieren. Mithilfe eines Datenbanktabellen- und Spaltennamens bzw. eines Aliasnamens können die vorgesehenen Felder bestimmt werden.
-
-* **Maskieren nach:** kann in Quelle oder Ziel erfolgen. Die Maskierung kann auf Quellebene konfiguriert werden, indem der **Tabellenname** und der **Spaltenname** bestimmt werden, oder auf Ergebnisebene, indem der in der Abfrage verwendete **Alias** bestimmt wird. Wenn Sie mit der Datenarchitektur Ihrer Datenbank vertraut sind und die Anzeige aller Abfrageergebnisse begrenzen möchten, bevorzugen Sie ggf. Sie eine Quellmaskenregel. Sie können eine Ergebnismaskenregel hinzufügen, wenn Sie die Anzeige auf Abfrageergebnisse beschränken möchten, ohne die Datenarchitektur der Datenbank zu analysieren, oder auf ein Feld, das aus verschiedenen Quellen stammen kann.
-  
-* **Erweiterte Einschränkung:** schränkt die Anzeige sensibler Daten ein, kann sich aber negativ auf die Funktionalität einiger Anwendungen auswirken.
-
->[AZURE.TIP]Verwenden Sie die Option **Erweiterte Beschränkung** zum Beschränken des Zugriffs für Entwickler, die einen direkten Zugriff auf die Datenbank nutzen und SQL-Abfragen zu Problembehandlungszwecken ausführen.
+* **Maskierungsregeln:** eine Gruppe von Regeln, die die zu maskierenden Felder und verwendete Maskierungsfunktion definieren. Mithilfe eines Datenbanktabellen- und Spaltennamens können die vorgesehenen Felder bestimmt werden.
 
 * **Maskierungsfunktionen:** eine Reihe von Methoden, die die Anzeige von Daten in verschiedenen Szenarios steuern.
 
 | Maskierungsfunktion | Maskierungslogik |
 |----------|---------------|
-| **Standard** |**Vollständige Maskierung anhand des Datentyps der angegebenen Felder**<br/><br/>• XXXXXXXX oder weniger X-Zeichen verwenden, wenn die Feldbreite weniger als 8 Zeichen für Zeichenfolgendatentypen (nchar, ntext, nvarchar) beträgt.<br/>• Für numerische Datentypen (bigint, bit, decimal, int, money, numeric, smallint, smallmoney, tinyint, float, real) einen Nullwert verwenden.<br/>• Für Datum/Uhrzeit-Datentypen (date, datetime2, datetime, datetimeoffset, smalldatetime, time) die aktuelle Uhrzeit verwenden.<br/>• Für SQL-Varianten wird der Standardwert des aktuellen Typs verwendet.<br/>• Für XML wird das Dokument <masked/> verwendet.<br/>• Für spezielle Datentypen (timestamp table, hierarchyid, GUID, binary, image, räumliche varbinary-Typen) einen leeren Wert verwenden.
+| **Standard** |**Vollständige Maskierung anhand des Datentyps der angegebenen Felder**<br/><br/>• XXXXXXXX oder weniger X-Zeichen verwenden, wenn die Feldbreite weniger als 8 Zeichen für Zeichenfolgendatentypen (nchar, ntext, nvarchar) beträgt.<br/>• Für numerische Datentypen (bigint, bit, decimal, int, money, numeric, smallint, smallmoney, tinyint, float, real) einen Nullwert verwenden.<br/>• Für Datum/Uhrzeit-Datentypen (date, datetime2, datetime, datetimeoffset, smalldatetime, time) 01-01-1900 verwenden.<br/>• Für SQL-Varianten wird der Standardwert des aktuellen Typs verwendet.<br/>• Für XML wird das Dokument <masked/> verwendet.<br/>• Für spezielle Datentypen (timestamp table, hierarchyid, GUID, binary, image, räumliche varbinary-Typen) einen leeren Wert verwenden.
 | **Kreditkarte** |**Maskierungsmethode, die die letzten vier Ziffern der festgelegten Felder anzeigt** und eine Konstantenzeichenfolge als Präfix in Form einer Kreditkarte hinzufügt.<br/><br/>XXXX-XXXX-XXXX-1234|
 | **Sozialversicherungsnummer** |**Maskierungsmethode, die die letzten zwei Ziffern der festgelegten Felder anzeigt** und eine Konstantenzeichenfolge als Präfix in Form einer US-amerikanischen Sozialversicherungsnummer hinzufügt.<br/><br/>XXX-XX-XX12 |
-| **E-Mail** | **Maskierungsmethode, die den ersten Buchstaben und die Domäne anzeigt** und eine Konstantenzeichenfolge als Präfix in Form einer E-Mail-Adresse verwendet.<br/><br/>aXX@XXXX.com |
-| **Zufallszahl** | **Maskierungsmethode, die eine Zufallszahl** entsprechend den ausgewählten Grenzen und den tatsächlichen Datentypen generiert. Wenn die festgelegten Grenzen gleich sind, ist die Maskierungsfunktion eine konstante Zahl.<br/><br/>![Navigationsbereich][Image1] |
-| **Benutzerdefinierter Text** | **Maskierungsmethode, die den ersten und letzten Buchstaben anzeigt** und in der Mitte eine benutzerdefinierte Auffüllzeichenfolge hinzufügt.<br/>Präfix[Auffüllzeichenfolge]Suffix<br/><br/>![Navigationsbereich][Image2] |
+| **E-Mail** | **Maskierungsmethode, die den ersten Buchstaben und die Domäne durch XXX.com ersetzt,** und dafür eine Konstantenzeichenfolge als Präfix in Form einer E-Mail-Adresse verwendet.<br/><br/>aXX@XXXX.com |
+| **Zufallszahl** | **Maskierungsmethode, die eine Zufallszahl** entsprechend den ausgewählten Grenzen und den tatsächlichen Datentypen generiert. Wenn die festgelegten Grenzen gleich sind, ist die Maskierungsfunktion eine konstante Zahl.<br/><br/>![Navigationsbereich](./media/sql-database-dynamic-data-masking-get-started-portal/1_DDM_Random_number.png) |
+| **Benutzerdefinierter Text** | **Maskierungsmethode, die die ersten und letzten Zeichen anzeigt** und in der Mitte eine benutzerdefinierte Auffüllzeichenfolge hinzufügt.<br/>Präfix[Auffüllzeichenfolge]Suffix<br/><br/>![Navigationsbereich](./media/sql-database-dynamic-data-masking-get-started-portal/2_DDM_Custom_text.png) |
 
   
 <a name="Anchor1"></a>
 ### Verbindungszeichenfolge mit aktivierter Sicherheit
 
-Beim Einrichten der dynamische Datenmaskierung stellt Azure für die Datenbank eine Verbindungszeichenfolge mit aktivierter Sicherheit bereit. Nur bei Clients, die diese Verbindungszeichenfolge verwenden, werden sensible Daten gemäß der Richtlinie für die dynamische Datenmaskierung maskiert. Sie müssen auch vorhandene Clients (z. B. Anwendungen) so aktualisieren, dass sie das neue Format der Verbindungszeichenfolge verwenden.
+Bei Verwendung eines [kompatiblen Clients](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md) müssen Sie vorhandene Clients aktualisieren (Beispiel: Anwendungen), um ein geändertes Verbindungszeichenfolgenformat zu verwenden. Klicken Sie [hier](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md) für weitere Informationen.
 
-* Ursprüngliches Format der Verbindungszeichenfolge: <*Servername*>.database.windows.net
-* Sicherheitsaktivierte Verbindungszeichenfolge: <*Servername*>.database.**secure**.windows.net
-
-Sie können auch die Einstellung **FÜR SICHERHEIT AKTIVIERTER ZUGRIFF** von **OPTIONAL** in **ERFORDERLICH** ändern und dadurch sicherstellen, dass es keine Möglichkeit gibt, auf die Datenbank mit der ursprünglichen Verbindungszeichenfolge zuzugreifen und die Richtlinie für die dynamische Datenmaskierung zu ignorieren. Wenn Sie mit der dynamischen Datenmaskierung unter Verwendung bestimmter Clients (z. B. einer Anwendung in der Entwicklungsphase oder SSMS) experimentieren, wählen Sie **OPTIONAL** aus. Wählen Sie für Produktionsumgebungen **ERFORDERLICH** aus.<br/><br/>
-
-![Navigationsbereich][Image3]<br/><br/>
 
 ## Einrichten der dynamischen Datenmaskierung für Ihre Datenbank im Azure-Portal
 
@@ -85,35 +75,29 @@ Sie können auch die Einstellung **FÜR SICHERHEIT AKTIVIERTER ZUGRIFF** von **O
 
 4. Geben Sie die privilegierten Anmeldungen ein, die Zugriff auf sensible Daten ohne Maskierung haben sollen.
 
-	>[AZURE.TIP]Damit die Anwendungsschicht sensible Daten für die privilegierten Anwendungsbenutzer anzeigen kann, fügen Sie die Anwendungsanmeldung, die zum Abfragen der Datenbank verwendet wird, und die Datenbank hinzu. Es wird ausdrücklich empfohlen, dass diese Liste nur eine minimale Anzahl von Anmeldungen enthält, um die Anzeige sensibler Daten zu minimieren.
+	>[AZURE.TIP]Damit die Anwendungsschicht sensible Daten für die privilegierten Anwendungsbenutzer anzeigen kann, fügen Sie die SQL-Anmeldung, die zum Abfragen der Datenbank verwendet wird. Es wird ausdrücklich empfohlen, dass diese Liste nur eine minimale Anzahl von Anmeldungen enthält, um die Anzeige sensibler Daten zu minimieren.
 
-	![Navigationsbereich][Image4]
+	![Navigationsbereich](./media/sql-database-dynamic-data-masking-get-started-portal/4_ddm_policy_classic_portal.png)
 
 5. Klicken Sie unten auf der Seite auf der Menüleiste auf **MASKE HINZUFÜGEN**, um das Konfigurationsfenster für die Maskierungsregel zu öffnen.
 
-6. Wählen Sie **Maskieren nach** aus, um anzugeben, ob die Maskierung für die Quelle oder das Ziel erfolgen soll. Die Maskierung kann auf Quellebene konfiguriert werden, indem der **Tabellenname** und der **Spaltenname** bestimmt werden, oder auf Ergebnisebene, indem der in der Abfrage verwendete **Alias** bestimmt wird. Bitte beachten Sie, dass der **Tabellenname** sich auf alle Schemas in der Datenbank bezieht und kein Schemapräfix enthalten sollte. Wenn Sie mit der Datenarchitektur Ihrer Datenbank vertraut sind und die Anzeige aller Abfrageergebnisse begrenzen möchten, bevorzugen Sie ggf. Sie eine Quellmaskenregel. Sie können eine Ergebnismaskenregel hinzufügen, wenn Sie die Anzeige auf Abfrageergebnisse beschränken möchten, ohne die Datenarchitektur der Datenbank zu analysieren, oder auf ein Feld, das aus verschiedenen Quellen stammen kann.
+6. Wählen Sie die **Tabelle** und die **Spalte** aus den Dropdownlisten, um die Felder zu bestimmen, die maskiert werden sollen.
 
-7. Geben Sie den **Tabellennamen** und den **Spaltennamen** bzw. den **Aliasnamen** ein, um die Felder zu bestimmen, die maskiert werden sollen.
+7. Wählen Sie in der Liste der Kategorien für das Maskieren vertraulicher Daten eine **MASKIERUNGSFUNKTION** aus.
 
-8. Wählen Sie in der Liste der Kategorien für das Maskieren vertraulicher Daten eine **MASKIERUNGSFUNKTION** aus.
-
-	![Navigationsbereich][Image5]
+	![Navigationsbereich](./media/sql-database-dynamic-data-masking-get-started-portal/5_DDM_Add_Masking_Rule_Classic_Portal.png)
  	
-9. Klicken Sie im Fenster der Datenmaskierungsregel auf **Aktualisieren**, um die Gruppe von Maskierungsregeln in der Richtlinie für die dynamische Maskierung zu aktualisieren.
+8. Klicken Sie im Fenster der Datenmaskierungsregel auf **OK**, um die Gruppe von Maskierungsregeln in der Richtlinie für die dynamische Maskierung zu aktualisieren.
 
-10. Erwägen Sie das Aktivieren von **USE EXTENDED RESTRICTIONS**, um die Anzeige vertraulicher Daten mittels Ad-hoc-Abfragen zu begrenzen.
+9. Klicken Sie auf **Speichern**, um die neue oder aktualisierte Maskierungsrichtlinie zu speichern.
 
-11. Klicken Sie auf **Speichern**, um die neue oder aktualisierte Maskierungsregel zu speichern.
+
+## Einrichten der dynamischen Datenmaskierung für Ihre Datenbank mithilfe von Powershell-Cmdlets
+
+Siehe [Azure SQL-Datenbank-Cmdlets](https://msdn.microsoft.com/library/azure/mt163521.aspx).
 
 ## Einrichten der dynamischen Datenmaskierung für Ihre Datenbank mithilfe der REST-API
 
 Siehe [Vorgänge für Azure SQL-Datenbanken](https://msdn.microsoft.com/library/dn505719.aspx).
 
-[Image1]: ./media/sql-database-dynamic-data-masking-get-started-portal/1_DDM_Random_number.png
-[Image2]: ./media/sql-database-dynamic-data-masking-get-started-portal/2_DDM_Custom_text.png
-[Image3]: ./media/sql-database-dynamic-data-masking-get-started-portal/3_DDM_Current_Preview.png
-[Image4]: ./media/sql-database-dynamic-data-masking-get-started-portal/4_DMM_Policy_Classic_Portal.png
-[Image5]: ./media/sql-database-dynamic-data-masking-get-started-portal/5_DDM_Add_Masking_Rule_Classic_Portal.png
- 
-
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

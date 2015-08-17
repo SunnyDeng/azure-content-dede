@@ -38,7 +38,8 @@ Befolgen Sie die folgenden Schritte, um beim Erstellen einer Website einen virtu
 8. Wählen Sie in der Liste **Größe** die Größe für den virtuellen Computer aus.
 9. Geben Sie die Anmeldeinformationen für diesen virtuellen Computer an. Notieren Sie sich diese, da sie für den Zugriff auf den Computer über den Remotedesktop erforderlich sind.
 10. Wählen Sie in der Liste **Standort** die Region zum Hosten des virtuellen Computers aus.
-11. Klicken Sie auf **OK**, um mit der Erstellung des virtuellen Computers zu beginnen. Sie können den Fortschritt des Vorgangs im **Ausgabefenster verfolgen.
+11. Klicken Sie auf **OK**, um mit der Erstellung des virtuellen Computers zu beginnen. Sie können den Fortschritt des Vorgangs im **Ausgabefenster** verfolgen.
+
 	![][3]
 
 12. Bei der Bereitstellung des virtuellen Computers werden Veröffentlichungsskripts im Knoten **PublishScripts** Ihrer Projektmappe erstellt. Das Veröffentlichungsskript wird ausgeführt und verteilt einen virtuellen Computer in Azure. Das Fenster **Ausgabe** zeigt den Status an. Das Skript führt die folgenden Aktionen zum Einrichten des virtuellen Computers aus:
@@ -67,4 +68,4 @@ Wenn Sie die erstellten Veröffentlichungsskripts anpassen möchten, finden Sie 
 [4]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/CreateVM_SolutionExplorer.png
 [5]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/VS_Create_VM_Connect.png
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

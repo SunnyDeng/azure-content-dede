@@ -120,4 +120,4 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer Azure SQL-Datenbank
 
 <!--Other Web references-->
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

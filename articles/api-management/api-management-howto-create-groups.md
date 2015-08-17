@@ -107,4 +107,4 @@ Sobald ein Entwickler zu einer Gruppe hinzugefügt wurde, können diese die zu d
 [Erstellen einer API Management-Instanz]: api-management-get-started.md#create-service-instance
 [externe Gruppen in zugeordneten Azure Active Directory-Mandanten verwenden]: api-management-howto-aad.md#how-to-add-an-external-azure-active-directory-group
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

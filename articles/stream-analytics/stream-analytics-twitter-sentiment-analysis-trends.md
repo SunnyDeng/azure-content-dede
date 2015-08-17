@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="07/01/2015"
+	ms.date="08/04/2015"
 	ms.author="jeffstok"/>
 
 
@@ -33,11 +33,11 @@ Eine Nachrichtenwebsite ist daran interessiert, der Konkurrenz durch Seiteninhal
 
 ## Erstellen einer Event Hub-Eingabe und einer Verbrauchergruppe
 
-Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hub-Instanz \(kurz ein Event Hub\). Service Bus Event Hubs sind die bevorzugte Methode der Ereigniserfassung für Stream Analytics. Weitere Informationen finden Sie unter „Event Hubs“ in der [Service Bus-Dokumentation](/documentation/services/service-bus/).
+Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hub-Instanz (kurz ein Event Hub). Service Bus Event Hubs sind die bevorzugte Methode der Ereigniserfassung für Stream Analytics. Weitere Informationen finden Sie unter „Event Hubs“ in der [Service Bus-Dokumentation](/documentation/services/service-bus/).
 
 Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
 
-1.	Klicken Sie im Azure-Portal auf **NEU** \> **APP SERVICES** \> **SERVICE BUS** \> **EVENT HUB** \> **SCHNELLERFASSUNG**, und geben Sie einen Namen, eine Region und einen neuen oder vorhandenen Namespace an, um einen neuen Event Hub zu erstellen.  
+1.	Klicken Sie im Azure-Portal auf **NEU** > **APP SERVICES** > **SERVICE BUS** > **EVENT HUB** > **SCHNELLERFASSUNG**, und geben Sie einen Namen, eine Region und einen neuen oder vorhandenen Namespace an, um einen neuen Event Hub zu erstellen.  
 2.	Als bewährte Methode sollte jeder Stream Analytics-Auftrag aus einer einzelnen Event Hubs-Verbrauchergruppe lesen. Im Folgenden werden Sie durch den Prozess der Erstellung einer Verbrauchergruppe geführt und erfahren mehr über diese. Um eine Verbrauchergruppe zu erstellen, wechseln Sie zu dem neu erstellten Event Hub, klicken Sie auf die Registerkarte **VERBRAUCHERGRUPPEN** und anschließend auf **ERSTELLEN** am unteren Rand der Seite. Geben Sie einen Namen für die Verbrauchergruppe ein.
 3.	Um Zugriff auf den Event Hub zu gewähren, müssen wir eine Richtlinie für gemeinsamen Zugriff erstellen. Klicken Sie auf die Registerkarte **KONFIGURIEREN** des Event Hubs.
 4.	Erstellen Sie unter **RICHTLINIEN FÜR GEMEINSAMEN ZUGRIFF** eine neue Richtlinie mit Berechtigungen zum **VERWALTEN**.
@@ -46,11 +46,11 @@ Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
   	![Unter "Gemeinsame Zugriffsrichtlinien" können Sie eine neue Richtlinie mit Verwaltungsberechtigungen erstellen.](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-ananlytics-shared-access-policies.png)
 
 5.	Klicken Sie unten auf der Seite auf **Speichern**.
-6.	Gehen Sie zum **DASHBOARD**, klicken Sie dann am unteren Rand auf **VERBINDUNGSINFORMATIONEN**, und kopieren und speichern Sie die Verbindungszeichenfolge. \(Verwenden Sie das Symbol „Kopieren“, das unter dem Suchsymbol angezeigt wird.\)
+6.	Gehen Sie zum **DASHBOARD**, klicken Sie dann am unteren Rand auf **VERBINDUNGSINFORMATIONEN**, und kopieren und speichern Sie die Verbindungszeichenfolge. (Verwenden Sie das Symbol „Kopieren“, das unter dem Suchsymbol angezeigt wird.)
 
 ## Konfigurieren und Starten der Twitter-Clientanwendung
 
-Wir haben eine Clientanwendung bereitgestellt, die über die [Streaming-APIs von Twitter](https://dev.twitter.com/streaming/overview) auf Twitter-Daten zugreift, um Tweet-Ereignisse zu einer parametrisierten Reihe von Themen zu sammeln. Das Open-Source-Tool [Sentiment140](http://help.sentiment140.com/) eines Drittanbieters wird verwendet, um jedem Tweet einen Stimmungswert zuzuweisen \(0: negativ, 2: neutral, 4: positiv\). Danach werden die Tweet-Ereignisse mithilfe von Push an den Event Hub übertragen.
+Wir haben eine Clientanwendung bereitgestellt, die über die [Streaming-APIs von Twitter](https://dev.twitter.com/streaming/overview) auf Twitter-Daten zugreift, um Tweet-Ereignisse zu einer parametrisierten Reihe von Themen zu sammeln. Das Open-Source-Tool [Sentiment140](http://help.sentiment140.com/) eines Drittanbieters wird verwendet, um jedem Tweet einen Stimmungswert zuzuweisen (0: negativ, 2: neutral, 4: positiv). Danach werden die Tweet-Ereignisse mithilfe von Push an den Event Hub übertragen.
 
 Gehen Sie folgendermaßen vor, um die Anwendung einzurichten:
 
@@ -73,7 +73,7 @@ Nun, da wir einen Datenstrom von Tweet-Ereignissen haben, können wir einen Stre
 
 ### Bereitstellen eines Stream Analytics-Auftrags
 
-1.	Klicken Sie im [Azure-Portal](https://manage.windowsazure.com/) auf **NEU** \> **DATA SERVICES** \> **STREAM ANALYTICS** \> **SCHNELLERFASSUNG**.
+1.	Klicken Sie im [Azure-Portal](https://manage.windowsazure.com/) auf **NEU** > **DATA SERVICES** > **STREAM ANALYTICS** > **SCHNELLERFASSUNG**.
 2.	Geben Sie die folgenden Werte an, und klicken Sie dann auf **STREAM ANALYTICS-AUFTRAG ERSTELLEN**:
 
 	* **AUFTRAGSNAME**: Geben Sie einen Auftragsnamen ein.
@@ -186,7 +186,7 @@ Nun, da wir einen Datenstrom, eine Event Hub-Eingabe zum Erfassen von Ereignisse
 
 Befolgen Sie die nachstehenden Schritte zum Erstellen eines Containers für Blob-Speicher, wenn Sie noch keinen erstellt haben:
 
-1.	Verwenden Sie ein vorhandenes Speicherkonto oder erstellen Sie ein neues, indem Sie auf **NEU** \> **DATA SERVICES** \> **SPEICHER** \> **SCHNELLERFASSUNG** klicken und die Anweisungen auf dem Bildschirm befolgen.
+1.	Verwenden Sie ein vorhandenes Speicherkonto oder erstellen Sie ein neues, indem Sie auf **NEU** > **DATA SERVICES** > **SPEICHER** > **SCHNELLERFASSUNG** klicken und die Anweisungen auf dem Bildschirm befolgen.
 2.	Wählen Sie das Speicherkonto, klicken Sie anschließend auf **CONTAINER** am oberen Rand der Seite, und klicken Sie dann auf **HINZUFÜGEN**.
 3.	Geben Sie einen **NAMEN** für den Container an legen Sie seinen **ZUGRIFF** auf „Öffentlicher Blob“ fest.
 
@@ -218,9 +218,9 @@ Nachdem wir Eingabe, Abfrage und Ausgabe für den Auftrag angegeben haben, könn
 
 ## Anzeigen der Ausgabe für die Stimmungsanalyse
 
-Sobald Ihr Auftrag ausgeführt wird und den Twitter-Datenstrom in Echtzeit verarbeitet, wählen Sie aus, wie die Ausgabe für die Stimmungsanalyse angezeigt werden soll. Verwenden Sie ein Tool wie [Azure Storage Explorer](https://azurestorageexplorer.codeplex.com/) oder [Azure Explorer](http://www.cerebrata.com/products/azure-explorer/introduction), um die Auftragsausgabe in Echtzeit anzuzeigen. Von hier aus können Sie Ihre Anwendung erweitern, sodass diese über der Ausgabe ein an Ihre Bedürfnisse angepasstes Dashboard enthält, wie in der Abbildung unten gezeigt \([Power BI](https://powerbi.com/)\).
+Sobald Ihr Auftrag ausgeführt wird und den Twitter-Datenstrom in Echtzeit verarbeitet, wählen Sie aus, wie die Ausgabe für die Stimmungsanalyse angezeigt werden soll. Verwenden Sie ein Tool wie [Azure Storage Explorer](https://azurestorageexplorer.codeplex.com/) oder [Azure Explorer](http://www.cerebrata.com/products/azure-explorer/introduction), um die Auftragsausgabe in Echtzeit anzuzeigen. Von hier aus können Sie Ihre Anwendung erweitern, sodass diese über der Ausgabe ein an Ihre Bedürfnisse angepasstes Dashboard enthält, wie in der Abbildung unten gezeigt ([Power BI](https://powerbi.com/)).
 
-![Soziale Medienanalyse: Ausgabe der Stimmungsanalyse \(Opinion Mining\) mit Stream Analytics in einem Power BI-Dashboard.](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-analytics-output-power-bi.png)
+![Soziale Medienanalyse: Ausgabe der Stimmungsanalyse (Opinion Mining) mit Stream Analytics in einem Power BI-Dashboard.](./media/stream-analytics-twitter-sentiment-analysis-trends/stream-analytics-output-power-bi.png)
 
 ## Support
 Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
@@ -231,8 +231,8 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
-- [Stream Analytics Query Language Reference \(in englischer Sprache\)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->

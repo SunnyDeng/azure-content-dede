@@ -80,9 +80,9 @@ Um Pushbenachrichtigungen an eine iOS-App senden zu können, muss diese bei Appl
 
   	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-cert-downloaded.png)
 
-    > [AZURE.NOTE]Standardmäßig ist die heruntergeladene Datei ein Entwicklungszertifikat namens **aps_development.cer**.
+    > [AZURE.NOTE]Standardmäßig ist die heruntergeladene Datei ein Entwicklungszertifikat namens **aps\_development.cer**.
 
-7. Doppelklicken Sie auf dem heruntergeladenen Pushzertifikat **aps_development.cer**.
+7. Doppelklicken Sie auf dem heruntergeladenen Pushzertifikat **aps\_development.cer**.
 
    	Hierdurch wird das neue Zertifikat im Schlüsselbund installiert, wie unten gezeigt:
 
@@ -125,4 +125,4 @@ Später können Sie mit diesem Zertifikat eine P12-Datei generieren, um die Auth
 
    	![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-provisioning-profile-ready.png)
 
-<!---HONumber=July15_HO4-->
+<!---HONumber=August15_HO6-->

@@ -16,7 +16,7 @@
 	ms.date="07/22/2015" 
 	ms.author="patshea123"/>
 
-# Erste Schritte mit Azure Active Directory \(Web-API-Projekte\)
+# Erste Schritte mit Azure Active Directory (Web-API-Projekte)
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-active-directory-webapi-getting-started.md)
@@ -29,4 +29,4 @@ Alle Controller in Ihrem Projekt wurden mit dem Attribut **Authorize** versehen.
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
  
 
-<!---HONumber=July15_HO5-->
+<!---HONumber=August15_HO6-->
