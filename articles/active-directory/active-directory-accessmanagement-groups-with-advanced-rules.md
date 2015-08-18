@@ -55,22 +55,13 @@ Die folgende Tabelle enthält alle Ausdrucksregeloperatoren und ihre Syntax zur 
 | Match | -match |
 
 
-| Abfrageanalysefehler | Fehlerverwendung | Korrigierte Verwendung |
+|Abfrageanalysefehler                                                  | Fehlerverwendung                                                                                                        | Korrigierte Verwendung                                                                                                                                                                                                                                                            |
 |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Fehler: Das Attribut nicht unterstützt. | (user.invalidProperty -eq "Value") | (user.department -eq "value")  
-Die Eigenschaft sollte einer der unterstützten Eigenschaften aus der obigen Liste entsprechen. |
-| Fehler: Der Operator wird für das Attribut nicht unterstützt. | (user.accountEnabled -contains true) | (user.accountEnabled -eq true)  
-Die Eigenschaft weist den Typ "boolesch" auf. Verwenden Sie die unterstützten booleschen Operatoren (-eq oder -ne) aus der oben stehenden Liste. |
-| Fehler: Abfragekompilierungsfehler. | (user.department -eq "Sales") -and (user.department -eq "Marketing")(user.userPrincipalName -match "*@domain.ext") | (user.department -eq "Sales") -and (user.department -eq "Marketing")
-Der logische Operator sollte einer der unterstützten Eigenschaften aus der obigen Liste entsprechen.
-(user.userPrincipalName -match ".*@domain.ext")  
-oder  
-(user.userPrincipalName -match "@domain.ext$")  
-Fehler im regulären Ausdruck. |
-| Fehler: Die Binärausdruck weist nicht das richtige Format auf. | (user.department –eq “Sales”) (user.department -eq "Sales")(user.department-eq"Sales") | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain")  
-Abfrage enthält mehrere Fehler. Die Klammern befinden sich nicht an der richtigen Stelle. |
-| Fehler: Unbekannter Fehler beim Einrichten dynamischer Mitgliedschaften. | (user.accountEnabled -eq "True" AND user.userPrincipalName -contains "alias@domain") | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain")  
-Abfrage enthält mehrere Fehler. Die Klammern befinden sich nicht an der richtigen Stelle. |
+| Fehler: Das Attribut nicht unterstützt.                                      | (user.invalidProperty -eq "Value")                                                                                 | (user.department -eq "value") Die Eigenschaft sollte einer der unterstützten Eigenschaften aus der obigen Liste entsprechen.                                                                                                                                                                           |
+| Fehler: Der Operator wird für das Attribut nicht unterstützt.                       | (user.accountEnabled -contains true)                                                                               | (user.accountEnabled -eq true) Die Eigenschaft weist den Typ "boolesch" auf. Verwenden Sie die unterstützten booleschen Operatoren (-eq oder -ne) aus der oben stehenden Liste.                                                                                                                                   |
+| Fehler: Abfragekompilierungsfehler.                                      | (user.department -eq "Sales") -and (user.department -eq "Marketing")(user.userPrincipalName -match "*@domain.ext") | (user.department -eq "Sales") -and (user.department -eq "Marketing") Der logische Operator sollte einer der unterstützten Eigenschaften aus der obigen Liste entsprechen. (user.userPrincipalName -match ".*@domain.ext") oder (user.userPrincipalName -match "@domain.ext$") Fehler im regulären Ausdruck. |
+| Fehler: Die Binärausdruck weist nicht das richtige Format auf.                     | (user.department –eq “Sales”) (user.department -eq "Sales")(user.department-eq"Sales")                             | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain") Abfrage enthält mehrere Fehler. Die Klammern befinden sich nicht an der richtigen Stelle.                                                                                                                            |
+| Fehler: Unbekannter Fehler beim Einrichten dynamischer Mitgliedschaften. | (user.accountEnabled -eq "True" AND user.userPrincipalName -contains "alias@domain")                               | (user.accountEnabled -eq true) -and (user.userPrincipalName -contains "alias@domain") Abfrage enthält mehrere Fehler. Die Klammern befinden sich nicht an der richtigen Stelle.                                                                                                                            |
 
 ##Unterstützte Parameter
 Im Folgenden werden alle Benutzereigenschaften aufgelistet, die Sie in der erweiterten Regel verwenden können:
@@ -177,4 +168,4 @@ Hier sind einige Themen aufgeführt, die zusätzliche Informationen zu Azure Act
 
 * [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=August15_HO6-->
+<!------HONumber=August15_HO6-->
