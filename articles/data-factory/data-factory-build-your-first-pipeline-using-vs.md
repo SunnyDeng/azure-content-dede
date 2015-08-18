@@ -70,7 +70,9 @@ In den folgenden Schritten erfahren Sie, wie Sie die verknüpften Dienste, Datas
 
 ### Voraussetzungen
 
-Sie müssen Folgendes auf Ihrem Computer installiert haben: – Visual Studio 2013 – Herunterladen von Azure SDK für Visual Studio 2013. Navigieren Sie zur [Azure-Downloadseite](http://azure.microsoft.com/downloads/), und klicken Sie im Abschnitt **.NET** auf **VS 2013 installieren**.
+Sie müssen Folgendes auf Ihrem Computer installiert haben: 
+- Visual Studio 2013
+- Herunterladen von Azure SDK für Visual Studio 2013. Navigieren Sie zur [Azure-Downloadseite](http://azure.microsoft.com/downloads/), und klicken Sie im Abschnitt **.NET** auf **VS 2013 installieren**.
 
 
 ### Erstellen des Visual Studio-Projekts 
@@ -246,4 +248,4 @@ Unter [Überwachen von Datasets und Pipelines](data-factory-monitor-manage-pipel
 In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL](data-factory-get-started.md).
   
 
-<!---HONumber=August15_HO6-->
+<!-----HONumber=August15_HO6-->

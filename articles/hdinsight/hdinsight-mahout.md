@@ -43,7 +43,7 @@ Mahout ist eine [Bibliothek für maschinelles Lernen][ml] für Apache Hadoop. Ma
 
 * **Ein Windows-basierter Hadoop-Cluster in HDInsight**. Weitere Informationen zur Erstellung finden Sie unter [Erste Schritte mit Hadoop in HDInsight][getstarted].
 
-- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) (Installieren und Verwenden von Azure PowerShell, in englischer Sprache).
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) \(Installieren und Verwenden von Azure PowerShell, in englischer Sprache\).
 
 
 ##<a name="recommendations"></a>Generieren von Empfehlungen mithilfe von PowerShell
@@ -82,7 +82,7 @@ Praktischerweise stellt [GroupLens Research][movielens] Bewertungsdaten für Fil
 
     	PS C:\> Add-HDInsightFile -LocalPath "path\to\u.data" -DestinationPath "example/data/u.data" -ClusterName "your cluster name"
 
-    Dabei wird die Datei __u.data__ in __example/data/u.data__ im Standardspeicher Ihres Clusters hochgeladen. Sie können dann über den \_\___wasb:///example/data/u.data__URI von HDInsight-Aufträgen auf diese Daten zugreifen.
+    Dabei wird die Datei __u.data__ in __example/data/u.data__ im Standardspeicher Ihres Clusters hochgeladen. Sie können dann über den __wasb:///example/data/u.data__URI von HDInsight-Aufträgen auf diese Daten zugreifen.
 
 ###Ausführen des Auftrags
 
@@ -356,9 +356,9 @@ Mahout ist in HDInsight 3.1-Clustern bereits installiert. Die Installation kann 
 
 			mvn -Dhadoop2.version=2.2.0 -DskipTests clean package
 
-    	After the build completes, you can find the JAR file at __mahout\mrlegacy\target\mahout-mrlegacy-1.0-SNAPSHOT-job.jar__.
+    	Nachdem der Build abgeschlossen wurde, finden Sie die JAR-Datei unter „__mahout\mrlegacy\target\mahout-mrlegacy-1.0-SNAPSHOT-job.jar__“.
 
-    	> [AZURE.NOTE] When Mahout 1.0 is released, you should be able to use the prebuilt packages with HDInsight 3.0.
+    	> [AZURE.NOTE] Wenn Mahout 1.0 veröffentlicht wird, sollten Sie die vorgefertigten Pakete mit HDInsight 3.0 verwenden können.
 
 2. Laden Sie die jar-Datei hoch in __example/jars__ in den Standardspeicher Ihres Clusters. Im folgenden Beispiel wird die Datei mit "add-hdinsightfile" aus den [HDInsight-Tools][tools] hochgeladen:
 
@@ -423,4 +423,4 @@ Nachdem Sie sich mit Mahout vertraut gemacht haben, können Sie sich anderen Met
 [tools]: https://github.com/Blackmist/hdinsight-tools
  
 
-<!---HONumber=August15_HO6-->
+<!------HONumber=August15_HO6-->

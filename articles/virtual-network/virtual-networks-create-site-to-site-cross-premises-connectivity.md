@@ -64,7 +64,8 @@ Wenn Sie anhand dieses Lernprogramms ein funktionsfähiges, standortübergreifen
 
 -  VPN-Gerät mit einer öffentlichen IPv4-Adresse. Sie benötigen die IP-Adresse, um den Assistenten abzuschließen. Das VPN-Gerät darf sich nicht hinter der Netzwerkadressübersetzung (Network Address Translator, NAT) befinden und muss den Mindestgerätestandards entsprechen. Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten für virtuelle Netzwerke](http://go.microsoft.com/fwlink/p/?LinkID=248098).
 
-	Hinweis: Sie können den Routing- und RAS-Dienst (Routing and Remote Access Service, RRAS) in Windows Server als Teil Ihrer VPN-Lösung verwenden. In diesem Lernprogramm werden Sie jedoch nicht durch die RRAS-Konfigurationsschritte geführt. Informationen zur RRAS-Konfiguration finden Sie unter [Vorlagen für den Routing- und RAS-Dienst (RRAS)](http://msdn.microsoft.com/library/windowsazure/dn133801.aspx).
+	Hinweis: Sie können den Routing- und RAS-Dienst (Routing and Remote Access Service, RRAS) in Windows Server als Teil Ihrer VPN-Lösung verwenden. In diesem Lernprogramm werden Sie jedoch nicht durch die RRAS-Konfigurationsschritte geführt. 
+	Informationen zur RRAS-Konfiguration finden Sie unter [Vorlagen für den Routing- und RAS-Dienst (RRAS)](http://msdn.microsoft.com/library/windowsazure/dn133801.aspx).
 
 -  Kenntnisse in der Konfiguration eines Routers für eine Verbindung im IPsec-Tunnelmodus bzw. fachliche Unterstützung für diesen Schritt
 
@@ -98,7 +99,7 @@ So erstellen Sie ein virtuelles Netzwerk, das mit einem Unternehmensnetzwerk ver
 	
 4.	Geben Sie auf der Seite **DNS-Server und VPN-Konnektivität** die folgenden Informationen ein, und klicken Sie dann auf den Vorwärtspfeil unten rechts.
 
-> [AZURE.NOTE]Sie können auf dieser Seite sowohl die **Punkt-zu-Standort**- als auch die **Standort-zu-Standort**-Konfiguration gleichzeitig auswählen. Im Rahmen dieses Themas beschränken wir uns auf die Konfiguration von **Standort-zu-Standort**. Weitere Informationen zu den Einstellungen auf dieser Seite finden Sie unter **DNS-Server und VPN-Konnektivität** in [Konfigurieren eines virtuellen Netzwerks mit dem Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=248092).
+> [AZURE.NOTE] Sie können auf dieser Seite sowohl die **Punkt-zu-Standort**- als auch die **Standort-zu-Standort**-Konfiguration gleichzeitig auswählen. Im Rahmen dieses Themas beschränken wir uns auf die Konfiguration von **Standort-zu-Standort**. Weitere Informationen zu den Einstellungen auf dieser Seite finden Sie unter **DNS-Server und VPN-Konnektivität** in [Konfigurieren eines virtuellen Netzwerks mit dem Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=248092).
 
 	-  **DNS SERVERS:** Enter the DNS server name and IP address that you want to use for name resolution. Typically this would be a DNS server that you use for on-premises name resolution. This setting does not create a DNS server. For the example in this tutorial, type **YourDNS** for the name and **10.1.0.4** for the IP address.
 	-  **Configure Point-To-Site VPN:** Leave this field blank. 
@@ -215,30 +216,30 @@ Bei diesem Verfahren werden folgende Punkte vorausgesetzt:
 3.	Testen Sie die Verbindung, indem Sie einen der folgenden Befehle ausführen:
 
 	<table border="1">
-<tr>
-<th>-</th>
-<th>Cisco ASA</th>
-<th>Cisco ISR/ASR</th>
-<th>Juniper SSG/ISG</th>
-<th>Juniper SRX/J</th>
-</tr>
+	<tr>
+	<th>-</th>
+	<th>Cisco ASA</th>
+	<th>Cisco ISR/ASR</th>
+	<th>Juniper SSG/ISG</th>
+	<th>Juniper SRX/J</th>
+	</tr>
+	
+	<tr>
+	<td><b>SAs im Hauptmodus prüfen</b></td>
+	<td><FONT FACE="courier" SIZE="-1">show crypto isakmp sa</FONT></td>
+	<td><FONT FACE="courier" SIZE="-1">show crypto isakmp sa</FONT></td>
+	<td><FONT FACE="courier" SIZE="-1">get ike cookie</FONT></td>
+	<td><FONT FACE="courier" SIZE="-1">show security ike security-association</FONT></td>
+	</tr>
 
-<tr>
-<td><b>SAs im Hauptmodus prüfen</b></td>
-<td><FONT FACE="courier" SIZE="-1">show crypto isakmp sa</FONT></td>
-<td><FONT FACE="courier" SIZE="-1">show crypto isakmp sa</FONT></td>
-<td><FONT FACE="courier" SIZE="-1">get ike cookie</FONT></td>
-<td><FONT FACE="courier" SIZE="-1">show security ike security-association</FONT></td>
-</tr>
-
-<tr>
-<td><b>SAs im schnellen Modus prüfen</b></td>
-<td><FONT FACE="courier" SIZE="-1">show crypto ipsec sa</FONT></td>
-<td><FONT FACE="courier" SIZE="-1">show crypto ipsec sa</FONT></td>
-<td><FONT FACE="courier" SIZE="-1">get sa</FONT></td>
-<td><FONT FACE="courier" SIZE="-1">show security ipsec security-association</FONT></td>
-</tr>
-</table>
+	<tr>
+	<td><b>SAs im schnellen Modus prüfen</b></td>
+	<td><FONT FACE="courier" SIZE="-1">show crypto ipsec sa</FONT></td>
+	<td><FONT FACE="courier" SIZE="-1">show crypto ipsec sa</FONT></td>
+	<td><FONT FACE="courier" SIZE="-1">get sa</FONT></td>
+	<td><FONT FACE="courier" SIZE="-1">show security ipsec security-association</FONT></td>
+	</tr>
+	</table>
 
 
 ##  Nächste Schritte
@@ -271,4 +272,4 @@ Wenn Sie die Einstellungen des virtuellen Netzwerks in eine Netzwerkkonfiguratio
 
  
 
-<!---HONumber=August15_HO6-->
+<!--------HONumber=August15_HO6-->

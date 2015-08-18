@@ -47,7 +47,7 @@ Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory
 
 	![Blatt "Neue Data Factory"](./media/data-factory-build-your-first-pipeline-using-editor/new-data-factory-blade.png)
 
-	> [AZURE.IMPORTANT]Azure Data Factory-Namen sind global eindeutig. Sie müssen dem Namen der Data Factory Ihren Namen voranstellen, um die erfolgreiche Erstellung der Factory zu aktivieren. 
+	> [AZURE.IMPORTANT] Azure Data Factory-Namen sind global eindeutig. Sie müssen dem Namen der Data Factory Ihren Namen voranstellen, um die erfolgreiche Erstellung der Factory zu aktivieren.
 3.	Wenn Sie noch keine Ressourcengruppe erstellt haben, müssen Sie eine Ressourcengruppe erstellen. Gehen Sie dazu folgendermaßen vor:
 	1.	Klicken Sie auf **RESSOURCENGRUPPENNAME**.
 	2.	Wählen Sie auf dem Blatt **Ressourcengruppe** die Option **Neue Ressourcengruppe erstellen** aus.
@@ -154,12 +154,12 @@ Jetzt erstellen Sie das Ausgabedataset, das die im Azure- Blobspeicher gespeiche
 ## Schritt 3: Erstellen Ihrer ersten Pipeline
 In diesem Schritt erstellen Sie Ihre erste Pipeline.
 
-1. Klicken Sie im **Data Factory-Editor** auf **(...)** und dann auf **Neue Pipeline**.
+1. Klicken Sie im **Data Factory-Editor** auf **\(...\)** und dann auf **Neue Pipeline**.
 	
 	![Schaltfläche "Neue Pipeline"](./media/data-factory-build-your-first-pipeline-using-editor/new-pipeline-button.png)
 2. Kopieren Sie den Codeausschnitt, und fügen Sie ihn in das Fenster "Draft-1" ein.
 
-	> [AZURE.IMPORTANT]Ersetzen Sie im JSON-Code **storageaccountname** durch den Namen Ihres Speicherkontos.
+	> [AZURE.IMPORTANT] Ersetzen Sie im JSON-Code **storageaccountname** durch den Namen Ihres Speicherkontos.
 
 		{
 		  "name": "MyFirstPipeline",
@@ -232,4 +232,4 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline.
 In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL](./data-factory-get-started.md).
   
 
-<!---HONumber=August15_HO6-->
+<!-------HONumber=August15_HO6-->

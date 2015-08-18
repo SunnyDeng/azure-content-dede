@@ -199,7 +199,7 @@ Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 	armclient post /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/search/{SearchId}?api-version=2014-10-10
 ```
 
->[AZURE.NOTE]Wenn die Suche den Status "Ausstehend" zurückgibt, können die aktualisierten Ergebnisse über diese API aufgerufen werden. Nach 6 Minuten wird das Ergebnis der Suche aus dem Cache gelöscht, und es wird "Http Fehlend" zurückgegeben. Wenn die anfängliche Suchanforderung sofort den Status "Erfolgreich" zurückgibt, wird sie nicht zum Cache hinzugefügt. Dadurch gibt diese API bei einer Abfrage "Http Fehlend" zurück. Der Inhalt eines "Http 200"-Ergebnisses wird im gleichen Format wie die ursprüngliche Suchanforderung erstellt, nur mit aktualisierten Werten.
+>[AZURE.NOTE] Wenn die Suche den Status "Ausstehend" zurückgibt, können die aktualisierten Ergebnisse über diese API aufgerufen werden. Nach 6 Minuten wird das Ergebnis der Suche aus dem Cache gelöscht, und es wird "Http Fehlend" zurückgegeben. Wenn die anfängliche Suchanforderung sofort den Status "Erfolgreich" zurückgibt, wird sie nicht zum Cache hinzugefügt. Dadurch gibt diese API bei einer Abfrage "Http Fehlend" zurück. Der Inhalt eines "Http 200"-Ergebnisses wird im gleichen Format wie die ursprüngliche Suchanforderung erstellt, nur mit aktualisierten Werten.
 
 ### Gespeicherte Suchvorgänge - nur REST
 
@@ -207,7 +207,7 @@ Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 
 ```
 	armclient get /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/savedSearches?api-version=2014-10-10
-```
+  ```
 
 Unterstützte Methoden: GET PUT DELETE
 
@@ -223,7 +223,7 @@ Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 |properties.displayName|**Erforderlich**. Der benutzerdefinierte Anzeigename der Abfrage. Bei Modellierung als Azure-Ressource wäre dies ein Tag.|
 |properties.category|**Erforderlich**. Die benutzerdefinierte Kategorie der Abfrage. Bei Modellierung als Azure-Ressource wäre dies ein Tag.|
 
->[AZURE.NOTE]Beim Abrufen gespeicherter Suchvorgänge in einem Arbeitsbereich gibt die Operational Insights Search-API zurzeit vom Benutzer erstellte gespeicherte Suchvorgänge zurück. Momentan gibt die API keine von Lösungen bereitgestellten gespeicherten Suchvorgänge zurück. Diese Funktionalität wird zu einem späteren Zeitpunkt hinzugefügt.
+>[AZURE.NOTE] Beim Abrufen gespeicherter Suchvorgänge in einem Arbeitsbereich gibt die Operational Insights Search-API zurzeit vom Benutzer erstellte gespeicherte Suchvorgänge zurück. Momentan gibt die API keine von Lösungen bereitgestellten gespeicherten Suchvorgänge zurück. Diese Funktionalität wird zu einem späteren Zeitpunkt hinzugefügt.
 
 ### Löschen gespeicherter Suchvorgänge
 
@@ -302,7 +302,8 @@ Im Folgenden werden die verfügbaren optionalen Parameter beschrieben.
 
 Der Parameter "Highlight" ist ein optionaler Parameter, den Sie verwenden können, damit das Suchsubsystem einen Satz von Markern in die Antwort einbezieht.
 
-Diese Marker stehen für den Beginn und das Ende von hervorgehobenem Text, der den in Ihrer Suchabfrage angegebenen Begriffen entspricht. Sie können die Start- und Endmarker angeben, die bei der Suche zum Einschließen des markierten Begriffs verwendet werden.
+Diese Marker stehen für den Beginn und das Ende von hervorgehobenem Text, der den in Ihrer Suchabfrage angegebenen Begriffen entspricht.
+Sie können die Start- und Endmarker angeben, die bei der Suche zum Einschließen des markierten Begriffs verwendet werden.
 
 **Beispiel für eine Suchabfrage**
 
@@ -347,4 +348,4 @@ Diese Marker stehen für den Beginn und das Ende von hervorgehobenem Text, der d
 
 Beachten Sie, dass das oben genannte Ergebnis eine Fehlermeldung enthält, die mit dem Präfix versehen und angefügt wurde.
 
-<!---HONumber=August15_HO6-->
+<!------HONumber=August15_HO6-->
