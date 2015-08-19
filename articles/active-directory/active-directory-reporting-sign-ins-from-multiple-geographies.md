@@ -1,4 +1,11 @@
-<properties pageTitle="Anmeldungen aus mehreren geografischen Regionen" description="Ein Bericht, der auf Benutzer hinweist, bei denen zwei Anmeldungen aus unterschiedlichen Regionen zu kommen schienen, und der Benutzer im Zeitraum zwischen den Anmeldungen unmöglich von einer Region zur anderen gereist sein kann."" services="active-directory" documentationCenter="" authors="kenhoff" manager="ilanas" editor=""/ >
+<properties
+	pageTitle="Anmeldungen aus mehreren geografischen Regionen"
+	description="Ein Bericht, der auf Benutzer hinweist, bei denen zwei Anmeldungen aus unterschiedlichen Regionen zu kommen schienen, und der Benutzer im Zeitraum zwischen den Anmeldungen unmöglich von einer Region zur anderen gereist sein kann.""
+	services="active-directory"
+	documentationCenter=""
+	authors="kenhoff"
+	manager="ilanas"
+	editor=""/>
 
 <tags
 	ms.service="active-directory"
@@ -17,4 +24,4 @@
 
 ![Anmeldungen aus mehreren geografischen Regionen](./media/active-directory-reporting-sign-ins-from-multiple-geographies/signInsFromMultipleGeographies.PNG)
 
-<!---HONumber=August15_HO6-->
+<!-----HONumber=August15_HO6-->
