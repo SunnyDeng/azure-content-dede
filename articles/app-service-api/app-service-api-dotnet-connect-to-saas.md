@@ -448,7 +448,7 @@ Wenn Sie "%3d%3d" am Ende des Werts `error` der Abfragezeichenfolge entfernen, i
 
 Sie haben erfahren, wie Sie eine API-App programmieren und konfigurieren, die sich mit einer SaaS-Plattform verbindet. Links zu anderen Tutorials zur Authentifizierung in API-Apps finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service – Nächste Schritte](../app-service/app-service-authentication-overview.md#next-steps).
 
-[Azure preview portal]: https://portal.azure.com/
-[Azure portal]: https://manage.windowsazure.com/
+[Azure-Vorschauportal]: https://portal.azure.com/
+[Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

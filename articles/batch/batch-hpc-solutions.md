@@ -41,36 +41,10 @@ Im Gegensatz zu Webanwendungen und vielen Branchenanwendungen ist für Batch- un
 
 Typ | Merkmale | Beispiele
 ------------- | ----------- | ---------------
-**Intrinsisch parallel**<br/>
-<br/>
-![Intrinsisch parallel][parallel] |• Einzelcomputer führen Anwendungslogik unabhängig aus.<br/>
-<br/>
-• Durch Hinzufügen von Computern kann die Anwendung skaliert und die Rechenzeit verkürzt werden.<br/>
-<br/>
-• Anwendung besteht aus separaten ausführbaren Dateien oder aus einer Gruppe von Diensten, die von einem Client aufgerufen werden (Anwendung in einer serviceorientierten Architektur). |• Risikomodelle im Finanzbereich<br/>
-<br/>
-• Bildrendering und -verarbeitung<br/>
-<br/>
-• Codierung und Transcodierung von Medien<br/>
-<br/>
-• Monte Carlo-Simulationen<br/>
-<br/>
-• Softwaretests
-**Enge Kopplung**<br/>
-<br/>
-![Eng gekoppelt][coupled] |• Anwendung benötigt Compute-Knoten für die Interaktion oder den Austausch von Zwischenergebnissen.<br/>
-<br/>
-• Compute-Knoten können per MPI (Message Passing Interface; gängiges Kommunikationsprotokoll für paralleles Computing) kommunizieren.<br/>
-<br/>
-• Die Anwendung berücksichtigt Netzwerklatenz und Bandbreite.<br/>
-<br/>
-• Die Anwendungsleistung kann durch die Verwendung einer Compute-Infrastruktur verbessert werden, die Technologien für Hochgeschwindigkeitsnetzwerke wie etwa InfiniBand und RDMA (Remote Direct Memory Access) unterstützt. |• Modelle für Öl- und Gasvorkommen<br/>
-<br/>
-• Technische Entwicklung und Analyse (beispielsweise Strömungssimulationen)<br/>
-<br/>
-• Physiksimulationen (beispielsweise für Autounfälle und Kernreaktionen)<br/>
-<br/>
-• Wettervorhersage
+**Intrinsisch parallel**<br/><br/>![Intrinsisch parallel][parallel] |• Einzelcomputer führen Anwendungslogik unabhängig aus.<br/><br/>
+• Durch Hinzufügen von Computern kann die Anwendung skaliert und die Rechenzeit verkürzt werden.<br/><br/>• Anwendung besteht aus separaten ausführbaren Dateien oder aus einer Gruppe von Diensten, die von einem Client aufgerufen werden (Anwendung in einer serviceorientierten Architektur). |• Risikomodelle im Finanzbereich<br/><br/>• Bildrendering und -verarbeitung<br/><br/>• Codierung und Transcodierung von Medien<br/><br/>• Monte Carlo-Simulationen<br/><br/>• Softwaretests
+**Enge Kopplung**<br/><br/>![Eng gekoppelt][coupled] |• Anwendung benötigt Compute-Knoten für die Interaktion oder den Austausch von Zwischenergebnissen.<br/><br/>• Compute-Knoten können per MPI (Message Passing Interface; gängiges Kommunikationsprotokoll für paralleles Computing) kommunizieren.<br/><br/>
+• Die Anwendung berücksichtigt Netzwerklatenz und Bandbreite.<br/><br/>• Die Anwendungsleistung kann durch die Verwendung einer Compute-Infrastruktur verbessert werden, die Technologien für Hochgeschwindigkeitsnetzwerke wie etwa InfiniBand und RDMA (Remote Direct Memory Access) unterstützt. |• Modelle für Öl- und Gasvorkommen<br/><br/>• Technische Entwicklung und Analyse (beispielsweise Strömungssimulationen)<br/><br/>• Physiksimulationen (beispielsweise für Autounfälle und Kernreaktionen)<br/><br/>• Wettervorhersage
 
 ### Überlegungen zur Ausführung von Batch- und HPC-Anwendungen in der Cloud
 
@@ -134,27 +108,9 @@ Die Compute Services in Azure bilden das Herzstück einer Big Compute-Lösung. 
 
 Dienst | Beschreibung
 ------------- | -----------
-**[Clouddienste](http://azure.microsoft.com/documentation/services/cloud-services)**<br/>
-<br/>
- |• Ausführung von Big Compute-Anwendungen in Workerrolleninstanzen (virtuelle Computer mit einer Version von Windows Server, die vollständig von Azure verwaltet werden)<br/>
-<br/>
-• Möglichkeit zur Verwendung skalierbarer, zuverlässiger Anwendungen mit geringem Verwaltungsaufwand im Rahmen eines Platform-as-a-Service (PaaS)-Modells<br/>
-<br/>
-• Möglicherweise zusätzliche Tools oder Entwicklung für die Integration in lokale HPC-Clusterlösungen erforderlich
-**[Virtuelle Maschinen](http://azure.microsoft.com/documentation/services/virtual-machines)**<br/>
-<br/>
- |• Bereitstellung einer Compute-Infrastruktur als Dienst (Infrastructure-as-a-Service, IaaS) unter Verwendung von Microsoft Hyper-V-Technologie<br/>
-<br/>
-• Möglichkeit zur flexiblen Bereitstellung und Verwaltung persistenter Cloudcomputer auf der Grundlage standardmäßiger Windows Server- oder Linux-Images oder auf der Grundlage von Images und Datenträgern, die von Ihnen selbst oder über den [Azure Marketplace](https://azure.microsoft.com/marketplace/) bereitgestellt werden<br/>
-<br/>
-• Vollständige Ausführung lokaler Computeclustertools und -anwendungen in der Cloud
-**[Batch](http://azure.microsoft.com/documentation/services/batch)**<br/>
-<br/>
- |• Ausführung umfangreicher Parallel- und Batch-Workloads wie Bildrendering und Codierung/Transcodierung von Medien in einem vollständig verwalteten Dienst<br/>
-<br/>
-• Möglichkeit zur Auftragsplanung sowie zur automatischen Skalierung eines verwalteten Pools virtueller Computer<br/>
-<br/>
-• Möglichkeit zur Entwicklung und Ausführung von Anwendungen als Dienst sowie zur Nutzung vorhandener Anwendungen in der Cloud<br/>
+**[Clouddienste](http://azure.microsoft.com/documentation/services/cloud-services)**<br/><br/>|• Ausführung von Big Compute-Anwendungen in Workerrolleninstanzen (virtuelle Computer mit einer Version von Windows Server, die vollständig von Azure verwaltet werden)<br/><br/>• Möglichkeit zur Verwendung skalierbarer, zuverlässiger Anwendungen mit geringem Verwaltungsaufwand im Rahmen eines Platform-as-a-Service (PaaS)-Modells<br/><br/>• Möglicherweise zusätzliche Tools oder Entwicklung für die Integration in lokale HPC-Clusterlösungen erforderlich
+**[Virtuelle Maschinen](http://azure.microsoft.com/documentation/services/virtual-machines)**<br/><br/>|• Bereitstellung einer Compute-Infrastruktur als Dienst (Infrastructure-as-a-Service, IaaS) unter Verwendung von Microsoft Hyper-V-Technologie<br/><br/>• Möglichkeit zur flexiblen Bereitstellung und Verwaltung persistenter Cloudcomputer auf der Grundlage standardmäßiger Windows Server- oder Linux-Images oder auf der Grundlage von Images und Datenträgern, die von Ihnen selbst oder über den [Azure Marketplace](https://azure.microsoft.com/marketplace/) bereitgestellt werden<br/><br/>• Vollständige Ausführung lokaler Computeclustertools und -anwendungen in der Cloud
+**[Batch](http://azure.microsoft.com/documentation/services/batch)**<br/><br/>|• Ausführung umfangreicher Parallel- und Batch-Workloads wie Bildrendering und Codierung/Transcodierung von Medien in einem vollständig verwalteten Dienst<br/><br/>• Möglichkeit zur Auftragsplanung sowie zur automatischen Skalierung eines verwalteten Pools virtueller Computer<br/><br/>• Möglichkeit zur Entwicklung und Ausführung von Anwendungen als Dienst sowie zur Nutzung vorhandener Anwendungen in der Cloud<br/>
 
 
 ### Speicherdienste
@@ -271,4 +227,4 @@ Die folgende Abbildung zeigt einen typischen Workflow, den ein Entwickler mit Ba
 [burst_cluster]: ./media/batch-hpc-solutions/burst_cluster.png
 [batch_proc]: ./media/batch-hpc-solutions/batch_proc.png
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->
