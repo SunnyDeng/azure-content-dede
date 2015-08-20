@@ -30,7 +30,14 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Anwendung
 
 ## Inhaltsverzeichnis
 
-[Was ist der Anwendungsblock für die automatische Skalierung?][] [Konzepte][] [Erfassen von Leistungsindikatordaten aus der Azure-Zielanwendung][] [Einrichten einer Hostanwendung für den Anwendungsblock für die automatische Skalierung][] [Instanziieren und Ausführen der automatischen Skalierung][] [Definieren des Dienstmodells][] [Definieren der Regeln für die automatische Skalierung][] [Konfigurieren des Anwendungsblocks für die automatische Skalierung][] [Nächste Schritte][]
+[Was ist der Anwendungsblock für die automatische Skalierung?][]   
+[Konzepte][]   
+[Erfassen von Leistungsindikatordaten aus der Azure-Zielanwendung][]   
+[Einrichten einer Hostanwendung für den Anwendungsblock für die automatische Skalierung][]   
+[Instanziieren und Ausführen der automatischen Skalierung][] [Definieren des Dienstmodells][]   
+[Definieren der Regeln für die automatische Skalierung][]   
+[Konfigurieren des Anwendungsblocks für die automatische Skalierung][]   
+[Nächste Schritte][]
 
 ## <a id="WhatIs"> </a>Was ist der Anwendungsblock für die automatische Skalierung?
 
@@ -128,15 +135,31 @@ In Visual Studio müssen Sie sicherstellen, dass die Dienstmodelldatei in den Au
 
 	Das folgende Codebeispiel enthält ein Beispiel für ein Dienstmodell in der Datei **services.xml**:
 
-    <?xml version="1.0" encoding="utf-8" ?> <serviceModel xmlns="http://schemas.microsoft.com/practices/2011/entlib/autoscaling/serviceModel"> <subscriptions> <subscription name="[subscriptionname]"
+    <?xml version="1.0" encoding="utf-8" ?>
+    <serviceModel xmlns="http://schemas.microsoft.com/practices/2011/entlib/autoscaling/serviceModel">
+      <subscriptions>
+        <subscription name="[subscriptionname]"
                       certificateThumbprint="[managementcertificatethumbprint]"
                       subscriptionId="[subscriptionid]"
                       certificateStoreLocation="CurrentUser"
-                      certificateStoreName="My"> <services> <service dnsPrefix="[hostedservicednsprefix]" slot="Staging"> <roles> <role alias="AutoscalingApplicationRole"
+                      certificateStoreName="My">
+          <services>
+            <service dnsPrefix="[hostedservicednsprefix]" slot="Staging">
+              <roles>
+                <role alias="AutoscalingApplicationRole"
                       roleName="[targetrolename]"
                       wadStorageAccountName="targetstorage"/>
- </roles> </service> </services> <storageAccounts> <storageAccount alias="targetstorage"
-              connectionString="DefaultEndpointsProtocol=https;AccountName=[storageaccountname];AccountKey=[storageaccountkey]"> </storageAccount> </storageAccounts> </subscription> </subscriptions> </serviceModel>
+              </roles>
+            </service>
+          </services>
+          <storageAccounts>
+            <storageAccount alias="targetstorage"
+              connectionString="DefaultEndpointsProtocol=https;AccountName=[storageaccountname];AccountKey=[storageaccountkey]">
+            </storageAccount>
+          </storageAccounts>
+        </subscription>
+      </subscriptions>
+    </serviceModel>
 
 Ersetzen Sie die Werte in eckigen Klammern durch spezifische Werte für Ihre Umgebung und Zielanwendung. Viele dieser Werte finden Sie nach der Anmeldung beim [Azure-Verwaltungsportal][].
 
@@ -271,23 +294,27 @@ Standardmäßig erwartet der Anwendungsblock für die automatische Skalierung, d
 
 1.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die Datei **App.config**, und klicken Sie anschließend auf **Edit Configuration File**.
 
-2.  Klicken Sie im Menü **Blöcke** auf **Einstellungen für automatische Skalierung hinzufügen**:![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling10.png)
+2.  Klicken Sie im Menü **Blöcke** auf **Einstellungen für automatische Skalierung hinzufügen**:  
+	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling10.png)
   
 3.  Erweitern Sie die **Einstellungen für die automatische Skalierung**, und klicken Sie anschließend auf die Auslassungszeichen (...) neben **Datenpunktespeicher-Speicherkonto**, fügen Sie den **Kontonamen** und den **Kontoschlüssel** des Azure-Speicherkontos hinzu, in dem der Block die erfassten Datenpunkte speichert (siehe [Definieren des Dienstmodells][], wenn Sie nicht wissen, wo sich diese Werte befinden). Klicken Sie dann auf **OK**:
 
 	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling11.png)
 
-4.  Erweitern Sie den Abschnitt **Autoscaling Settings**, sodass die Abschnitte **Regelspeicher** und **Service Information Store** angezeigt werden. Standardmäßig sind sie für die Verwendung des Azure-Blobsspeichers konfiguriert: ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling12.png)
+4.  Erweitern Sie den Abschnitt **Autoscaling Settings**, sodass die Abschnitte **Regelspeicher** und **Service Information Store** angezeigt werden. Standardmäßig sind sie für die Verwendung des Azure-Blobsspeichers konfiguriert:  
+	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling12.png)
 
 
 5.  Klicken Sie auf das Pluszeichen (+) neben **Regelspeicher**, zeigen Sie auf **Set Rules Store**, klicken Sie dann auf **Use Local File Rules Store**, und klicken Sie auf **Ja**.
 
-6.  Geben Sie in das Feld **Dateiname** den Dateinamen **rules.xml** ein. Dies ist der Name der Datei, die die Regeln für die automatische Skalierung enthält: ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling13.png)
+6.  Geben Sie in das Feld **Dateiname** den Dateinamen **rules.xml** ein. Dies ist der Name der Datei, die die Regeln für die automatische Skalierung enthält:  
+	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling13.png)
 
 
 7.  Klicken Sie auf das Pluszeichen (+) neben **Service Information Store**, zeigen Sie auf **Set Service Information Store**, klicken Sie dann auf **Use Local File Service Information Store**, und klicken Sie auf **Ja**.
 
-8.  Geben Sie in das Feld **File Name** den Dateinamen **services.xml** ein. Dies ist der Name der Datei, die die Regeln für die automatische Skalierung enthält: ![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling14.png)
+8.  Geben Sie in das Feld **File Name** den Dateinamen **services.xml** ein. Dies ist der Name der Datei, die die Regeln für die automatische Skalierung enthält:  
+	![image](./media/cloud-services-dotnet-autoscaling-application-block/autoscaling14.png)
 
 
 9.  Klicken Sie im Fenster "Enterprise Library Configuration" im Menü **Datei** auf **Speichern**, um die Änderungen an der Konfiguration zu speichern. Klicken Sie danach im Fenster "Enterprise Library Configuration" im Menü **Datei** auf **Beenden**.
@@ -392,4 +419,4 @@ Da Sie jetzt die Grundlagen der Verwendung des Anwendungsblocks für die automat
   [Reduzieren der TechNet- und MSDN-Hostingkosten und der Umweltbelastung mit automatischer Skalierung in Azure]: http://msdn.microsoft.com/library/jj838718(PandP.50).aspx
  
 
-<!---HONumber=August15_HO6-->
+<!-----HONumber=August15_HO6-->

@@ -175,7 +175,7 @@ Sie verfügen über eine einfache `Index`-Aktion, mit der die Kunden die Superla
 Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichten:
 
 1. Erstellen Sie im Ordner *\\Controllers* eine neue CS-Datei namens *MemeGeneratorController.cs*, und ersetzen Sie den Inhalt durch den folgenden Code. Ersetzen Sie den Dateipfad durch `~/Content/chuck.bmp` und den CDN-Namen durch `yourCDNName`.
-		<pre class="prettyprint">
+	<pre class="prettyprint">
 	using System;
 	using System.Collections.Generic;
 	using System.Diagnostics;
@@ -597,4 +597,4 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!------HONumber=August15_HO6-->
+<!--------HONumber=August15_HO6-->

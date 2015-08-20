@@ -30,7 +30,10 @@ Azure BizTalk Services implementiert die Dienstdrosselung basierend auf zwei Bed
 
 In der folgenden Tabelle sind die Drosselungsquelle und -schwellenwerte aufgelistet:
 
-||Beschreibung|Niedriger Schwellenwert|Hoher Schwellenwert| |---|---|---|---| |Arbeitsspeicher|% des insgesamt verfügbaren Systemspeichers/PageFileBytes. <p><p>Verfügbarer PageFileBytes-Gesamtwert beträgt etwa das Zweifache des RAMs des Systems.|60%|70%| |Nachrichtenverarbeitung|Anzahl der simultan verarbeiteten Nachrichten|40 \* Anzahl der Kernspeicher|100 \* Anzahl der Kernspeicher|
+||Beschreibung|Niedriger Schwellenwert|Hoher Schwellenwert|
+|---|---|---|---|
+|Arbeitsspeicher|% des insgesamt verfügbaren Systemspeichers/PageFileBytes. <p><p>Verfügbarer PageFileBytes-Gesamtwert beträgt etwa das Zweifache des RAMs des Systems.|60%|70%|
+|Nachrichtenverarbeitung|Anzahl der simultan verarbeiteten Nachrichten|40 \* Anzahl der Kernspeicher|100 \* Anzahl der Kernspeicher|
 
 Wenn ein hoher Schwellenwert erreicht ist, beginnt Azure BizTalk Services mit der Drosselung. Die Drosselung wird beendet, wenn ein niedriger Schwellenwert erreicht wird. Der Dienst nutzt beispielsweise 65 % des Systemarbeitsspeichers. In dieser Situation führt der Dienst keine Drosselung durch. Der Dienst beginnt damit, wenn 70 % des Systemarbeitsspeichers genutzt werden. In dieser Situation führt der Dienst eine Drosselung durch und setzt diese fort, bis der Dienst 60 % (niedriger Schwellenwert) des Systemarbeitsspeichers nutzt.
 
@@ -42,9 +45,8 @@ Azure BizTalk Services verfolgen den Drosselungsstatus (normaler Status vs. gedr
 Wenn Azure BizTalk Services einen Drosselungsstatus erreichen, tritt Folgendes ein:
 
 - Die Drosselung wird pro Rolleninstanz durchgeführt. Beispiel:<br/>
- RoleInstanceA wird gedrosselt. RoleInstanceB wird nicht gedrosselt. In dieser Situation werden die Nachrichten in RoleInstanceB erwartungsgemäß verarbeitet. Die Nachrichten in RoleInstanceA werden verworfen und geben folgenden Fehler aus:<br/>
-<br/>
- **Server ist ausgelastet. Versuchen Sie es erneut.**<br/>
+RoleInstanceA wird gedrosselt. RoleInstanceB wird nicht gedrosselt. In dieser Situation werden die Nachrichten in RoleInstanceB erwartungsgemäß verarbeitet. Die Nachrichten in RoleInstanceA werden verworfen und geben folgenden Fehler aus:<br/><br/>
+ **Server ist ausgelastet. Versuchen Sie es erneut.**<br/><br/>
 <br/>
 
 - Keine der Pullquellen ruft eine Nachricht ab oder lädt eine herunter. Beispiel:<br/>
@@ -84,4 +86,4 @@ Wenn Azure BizTalk Services einen Drosselungsstatus erreichen, tritt Folgendes e
 
  
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

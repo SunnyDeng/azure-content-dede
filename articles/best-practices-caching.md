@@ -94,7 +94,7 @@ In den meisten Fällen handelt es sich bei den Daten in einem Cache um eine Kopi
 
 Beim Ablauf zwischengespeicherter Daten werden die Daten aus dem Cache entfernt, und die Anwendung muss die Daten bei Bedarf wieder aus dem ursprünglichen Datenspeicher abrufen (die neu abgerufenen Informationen können dann wieder im Cache gespeichert werden). Zu diesem Zweck können Sie bei der Konfiguration des Cache eine Standardrichtlinie für den Kennwortablauf festlegen. Bei vielen Cachediensten können Sie sogar das Ablaufdatum einzelner Elemente angeben, wenn diese programmgesteuert im Cache gespeichert werden. Dabei ist vorgegeben, ob das Ablaufdatum als absoluter Wert oder auch als gleitender Wert angegeben werden muss. In letzterem Fall wird das Element aus dem Cache entfernt, wenn es innerhalb des angegebenen Zeitraums nicht erneut abgerufen wurde. Durch diese Einstellung wird jede Cache-weite Ablaufrichtlinie überschrieben, allerdings nur für die angegebenen Elemente.
 
-> [AZURE.NOTE]Das Ablaufdatum für den Cache insgesamt sowie für einzelne Elemente muss sorgfältig bedacht werden. Wenn es zu kurz ist, veralten die Elemente zu schnell und werden entfernt, wodurch sich die Vorteile des Cache aufheben. Wenn es zu lang ist, kann es passieren, dass die im Cache vorliegenden Daten nicht mehr aktuell sind.
+> [AZURE.NOTE] Das Ablaufdatum für den Cache insgesamt sowie für einzelne Elemente muss sorgfältig bedacht werden. Wenn es zu kurz ist, veralten die Elemente zu schnell und werden entfernt, wodurch sich die Vorteile des Cache aufheben. Wenn es zu lang ist, kann es passieren, dass die im Cache vorliegenden Daten nicht mehr aktuell sind.
 
 Wenn die Zeitspanne bis zum Ablauf der Daten sehr lange ist, kann der Cache auch überlaufen. In diesem Fall müssen bei jeder erneuten Anfrage zum Hinzufügen von Daten ältere Elemente meist zwangsweise aus dem Cache entfernt werden. In der Regel entfernen Cachedienste die Daten auf Basis der am längsten zurückliegenden Verwendung (Least Recently Used, LRU), aber meist können Sie diese Richtlinie überschreiben und dadurch verhindern, dass Elemente entfernt werden. Allerdings riskieren Sie bei dieser Einstellung, dass der Cache die Größe des verfügbaren Arbeitsspeichers überschreitet, so dass eine Anwendung, die versucht, ein Element zum Cache hinzufügen, mit einer Ausnahme fehlschlägt.
 
@@ -123,7 +123,8 @@ Achten Sie darauf, Ihre Lösungen nicht abhängig von der Verfügbarkeit eines g
 
 Ein Zurückgreifen auf den ursprünglichen Datenspeicher bei einem vorübergehenden Ausfall des Cache zieht aber womöglich ein Skalierbarkeitsproblem für das System nach sich. Während der Wiederherstellung des Cache wird der ursprüngliche Datenspeicher derart mit Datenanforderungen überschwemmt, dass es zu Zeitlimitüberschreitungen und Verbindungsfehlern kommt. In diesem Sinne ist es durchaus sinnvoll, eine Strategie zu überdenken, bei der zusätzlich zum freigegebenen Cache, auf den alle Anwendungsinstanzen zugreifen, für jede Anwendungsinstanz ein lokaler privater Cache implementiert wird. Beim Abrufen eines Elements kann die Anwendung zunächst in ihrem lokalen Cache, dann im freigegebenen Cache und schließlich im ursprünglichen Datenspeicher nachsehen. Der lokale Cache kann mit den Daten des freigegebenen Cache bzw., sollte dieser nicht verfügbar sein, mit den Daten aus der ursprünglichen Datenbank gefüllt werden. Bei dieser Strategie ist eine sorgfältige Konfiguration erforderlich. Es sollte verhindert werden, dass der lokale Cache gegenüber dem freigegebenen Cache zu sehr veraltet, gleichzeitig sollte er aber für den Fall, dass der freigegebene Cache nicht verfügbar ist, als Puffer fungieren. Eine solche Struktur sehen Sie in Abbildung 3.
 
-![Verwenden eines lokalen privaten Cache mit einem freigegebenen Cache\_](media/best-practices-caching/Caching3.png) _Abbildung 3: Verwenden eines lokalen privaten Cache mit einem gemeinsam genutzten Cache_
+![Verwenden eines lokalen privaten Cache mit einem freigegebenen Cache\_](media/best-practices-caching/Caching3.png)
+_Abbildung 3: Verwenden eines lokalen privaten Cache mit einem gemeinsam genutzten Cache_
 
 Zur Unterstützung großer Caches, die relativ langlebige Daten enthalten, bieten einige Cachedienste eine Option für hohe Verfügbarkeit, die für den Fall, dass der Cache nicht verfügbar ist, automatisches Failover implementiert. Diese Strategie schließt in der Regel die Replikation der auf einem primären Cacheserver zwischengespeicherten Daten auf einem sekundären Cacheserver ein, so dass bei einem Ausfall des primären Cacheservers bzw. einem Verlust der Konnektivität sofort zum sekundären Server gewechselt werden kann. Zur Verkürzung der Latenzzeit, die das Schreiben an mehrere Ziele mit sich bringt, kann die Replikation der Daten auf den sekundären Server auch asynchron zum Caching der Daten auf dem primären Server erfolgen. Diese Strategie birgt zwar das Risiko, dass einige der zwischengespeicherten Informationen bei einem Fehler während dieses Prozesses verloren gehen, der Verlustanteil sollte jedoch gegenüber der Gesamtgröße des Cache vernachlässigbar sein.
 
@@ -161,7 +162,7 @@ Redis ist eine hochleistungsfähige Cachinglösung, die Verfügbarkeit, Skalierb
 
 Der Azure Redis-Cache ist mit zahlreichen der von Clientanwendungen verwendeten APIs kompatibel. Wenn Sie bereits über Anwendungen verfügen, die Redis lokal verwenden, stellt der Azure Redis-Cache einen schnellen Migrationspfad für den Übergang zum Caching in der Cloud bereit.
 
-> [AZURE.NOTE]Darüber hinaus bietet Azure den Managed Cache Service (Dienst für verwalteten Cache). Dieser Dienst basiert auf der Microsoft AppFabric Cache-Engine. Es ermöglicht die Erstellung eines verteilten Cache, der von lose verbundenen Anwendungen gemeinsam genutzt werden kann. Der Cache wird auf Hochleistungsservern im Azure-Datencenter bereitgestellt. Allerdings wird diese Option nicht mehr empfohlen und dient nur noch der Unterstützung vorhandener Anwendungen, die mit diesem Cachedienst entwickelt wurden. Für alle Neuentwicklungen sollten Sie stattdessen den Azure Redis-Cache verwenden.
+> [AZURE.NOTE] Darüber hinaus bietet Azure den Managed Cache Service (Dienst für verwalteten Cache). Dieser Dienst basiert auf der Microsoft AppFabric Cache-Engine. Es ermöglicht die Erstellung eines verteilten Cache, der von lose verbundenen Anwendungen gemeinsam genutzt werden kann. Der Cache wird auf Hochleistungsservern im Azure-Datencenter bereitgestellt. Allerdings wird diese Option nicht mehr empfohlen und dient nur noch der Unterstützung vorhandener Anwendungen, die mit diesem Cachedienst entwickelt wurden. Für alle Neuentwicklungen sollten Sie stattdessen den Azure Redis-Cache verwenden.
 >
 > Außerdem unterstützt Azure In-Role-Caching. Mit diesem Feature können Sie einen Cache speziell für einen Clouddienst erstellen. Der Cache wird von Instanzen einer Web- oder Workerrolle gehostet, und der Zugriff darauf ist nur über Rollen möglich, die als Teil der gleichen Clouddienst-Bereitstellungseinheit implementiert sind (eine Bereitstellungseinheit ist eine Gruppe von Rolleninstanzen, die als Clouddienst in einer bestimmten Region bereitgestellt werden). Der Cache ist geclustert, und alle Instanzen der Rolle innerhalb der gleichen Bereitstellungseinheit, die den Cache hostet, werden Teil des gleichen Cacheclusters. Bestehende Anwendungen, die bereits In-Role-Caching verwenden, können diese Art des Caching weiterhin nutzen, jedoch wäre eine Migration zum Azure Redis-Cache auch in diesem Fall vermutlich von Vorteil. Entscheidungshilfen zur Verwendung des Azure Redis-Cache bzw. des In-Role-Cache finden Sie auf der Seite [Welches Azure-Cacheangebot eignet sich am besten für mich?](http://msdn.microsoft.com/library/azure/dn766201.aspx) auf der Microsoft-Website.
 
@@ -174,7 +175,7 @@ Redis ist mehr als nur ein einfacher Cacheserver. Es bietet eine verteilte arbei
 
 Redis unterstützt sowohl Lese- als auch Schreibvorgänge. Gegenüber zahlreichen anderen Caches (die als transiente bzw. flüchtige Datenspeicher betrachtet werden sollten) können Schreibvorgänge in Redis bei Systemausfällen geschützt werden, indem sie regelmäßig in einer lokalen Snapshot-Datei oder in einer Append-only-Protokolldatei gespeichert werden. Alle Schreibvorgänge erfolgen asynchron und blockieren keine Clients, die gerade Daten lesen oder schreiben. Beim Start von Redis liest es die Daten aus der Snapshot- oder Protokolldatei ein und erstellt daraus den arbeitsspeicherinternen Cache. Weitere Informationen finden Sie unter [Persistenz Redis](http://redis.io/topics/persistence) (in englischer Sprache) auf der Redis-Website.
 
-> [AZURE.NOTE]Im Falle eines schwerwiegenden Fehlers garantiert Redis nicht, dass alle Schreibvorgänge gespeichert werden, im schlimmsten Fall verlieren Sie aber nur die aktualisierten Daten weniger Sekunden. Denken Sie jedoch daran, dass ein Cache keineswegs als autorisierende Datenquelle eingesetzt werden sollte und es den Anwendungen, die den Cache verwenden, obliegt, sicherzustellen, dass wichtige Daten erfolgreich in einem persistenten Datenspeicher abgelegt werden. Weitere Informationen finden Sie unter „Cache-Aside-Muster“.
+> [AZURE.NOTE] Im Falle eines schwerwiegenden Fehlers garantiert Redis nicht, dass alle Schreibvorgänge gespeichert werden, im schlimmsten Fall verlieren Sie aber nur die aktualisierten Daten weniger Sekunden. Denken Sie jedoch daran, dass ein Cache keineswegs als autorisierende Datenquelle eingesetzt werden sollte und es den Anwendungen, die den Cache verwenden, obliegt, sicherzustellen, dass wichtige Daten erfolgreich in einem persistenten Datenspeicher abgelegt werden. Weitere Informationen finden Sie unter „Cache-Aside-Muster“.
 
 #### Von Redis unterstützte Datentypen
 
@@ -186,7 +187,7 @@ Zur Sicherstellung einer hohen Verfügbarkeit und eines hohen Durchsatzes unters
 
 Darüber hinaus bietet Redis Clustering-Features, mit denen Daten auf Servern transparent in Shards partitioniert werden können, um so die Last zu verteilen. Dieses Feature verbessert die Skalierbarkeit, da neue Redis-Server hinzugefügt und die Daten neu partitioniert werden können, während der Cache anwächst. Darüber hinaus kann jeder Server im Cluster mithilfe der Master/Slave-Replikation repliziert werden, so dass die Daten auf jedem Knoten im Cluster verfügbar sind. Weitere Informationen zu Clustering und Sharding finden Sie auf der Seite [Redis Cluster Tutorial](http://redis.io/topics/cluster-tutorial) (in englischer Sprache) auf der Redis-Website.
 
-> [AZURE.NOTE]Das Redis-Cache von Azure unterstützt derzeit kein Clustering. Wenn Sie einen Redis-Cluster erstellen möchten, können Sie einen eigenen benutzerdefinierten Redis-Server erstellen. Weitere Informationen finden Sie im Abschnitt „Erstellen eines benutzerdefinierten Redis-Cache“ weiter unten in diesem Dokument.
+> [AZURE.NOTE] Das Redis-Cache von Azure unterstützt derzeit kein Clustering. Wenn Sie einen Redis-Cluster erstellen möchten, können Sie einen eigenen benutzerdefinierten Redis-Server erstellen. Weitere Informationen finden Sie im Abschnitt „Erstellen eines benutzerdefinierten Redis-Cache“ weiter unten in diesem Dokument.
 
 ### Arbeitsspeichernutzung in Redis
 
@@ -210,7 +211,7 @@ Redis unterstützt keine Form der Datenverschlüsselung direkt, d. h., eine Vers
 
 Weitere Informationen finden Sie auf der Seite [Redis Security](http://redis.io/topics/security) (in englischer Sprache) auf der Redis-Website.
 
-> [AZURE.NOTE]Der Redis-Cache von Azure bietet einen eigenen Sicherheitslayer, über den Clients die Verbindung herstellen. Die Redis-Server selbst sind dem öffentlichen Netzwerk nicht verfügbar.
+> [AZURE.NOTE] Der Redis-Cache von Azure bietet einen eigenen Sicherheitslayer, über den Clients die Verbindung herstellen. Die Redis-Server selbst sind dem öffentlichen Netzwerk nicht verfügbar.
 
 ### Verwenden des Redis-Cache von Azure
 
@@ -240,7 +241,7 @@ Die Verwendung des Sitzungsstatusanbieters mit dem Azure Redis-Cache bietet vers
 
 Weitere Informationen finden Sie auf der Seite [ASP.NET-Sitzungsstatusbieter für den Azure Redis-Cache](http://msdn.microsoft.com/library/azure/dn690522.aspx) auf der Microsoft-Website.
 
-> [AZURE.NOTE]Für ASP.NET-Anwendungen, die außerhalb der Azure-Umgebung ausgeführt werden, sollte der Sitzungsstatusanbieter für den Azure Redis-Cache nicht verwendet werden. Die Latenzzeiten für den Zugriff auf den Cache außerhalb von Azure können die Leistungsvorteile des Caching zunichte machen.
+> [AZURE.NOTE] Für ASP.NET-Anwendungen, die außerhalb der Azure-Umgebung ausgeführt werden, sollte der Sitzungsstatusanbieter für den Azure Redis-Cache nicht verwendet werden. Die Latenzzeiten für den Zugriff auf den Cache außerhalb von Azure können die Leistungsvorteile des Caching zunichte machen.
 
 Auf ähnliche Weise ermöglicht Ihnen der Ausgabecacheanbieter für den Azure Redis-Cache das Speichern der von einer ASP.NET-Webanwendung generierten HTTP-Antworten. Der Ausgabecacheanbieter kann in Verbindung mit dem Azure Redis-Cache die Antwortzeiten von Anwendungen mit komplexen HTML-Ausgaben verbessern. Anwendungsinstanzen, die ähnliche Antworten generieren, können auf freigegebene Ausgabefragmente im Cache zurückgreifen, anstatt die HTML-Ausgabe völlig neu generieren zu müssen. Weitere Informationen finden Sie auf der Seite [ASP.NET-Ausgabecacheanbieter für den Azure Redis-Cache](http://msdn.microsoft.com/library/azure/dn798898.aspx) auf der Microsoft-Website.
 
@@ -431,9 +432,20 @@ Redis unterstützt eine Reihe von atomaren Get- und Set-Vorgängen für Zeichenf
 
 - `INCR`, `INCRBY`, `DECR` und `DECRBY`, die atomare Inkrement- und Dekrementvorgänge an ganzzahligen numerischen Datenwerten ausführen. Die StackExchange-Bibliothek bietet zur Ausführung dieser Vorgänge und zur Rückgabe der Ergebniswerte aus dem Cache erweiterte Versionen der `IDatabase.StringIncrementAsync`- und `IDatabase.StringDecrementAsync`-Methoden. Folgender Codeausschnitt veranschaulicht die Verwendung dieser Methoden:
 
-  ```csharp ConnectionMultiplexer redisHostConnection = ...; IDatabase cache = redisHostConnection.GetDatabase(); ... await cache.StringSetAsync("data:counter", 99); ... long oldValue = await cache.StringIncrementAsync("data:counter"); // Increment by 1 (the default) // oldValue should be 100
+  ```csharp
+  ConnectionMultiplexer redisHostConnection = ...;
+  IDatabase cache = redisHostConnection.GetDatabase();
+  ...
+  await cache.StringSetAsync("data:counter", 99);
+  ...
+  long oldValue = await cache.StringIncrementAsync("data:counter");
+  // Increment by 1 (the default)
+  // oldValue should be 100
 
-  long newValue = await cache.StringDecrementAsync("data:counter", 50); // Decrement by 50 // newValue should be 50 ```
+  long newValue = await cache.StringDecrementAsync("data:counter", 50);
+  // Decrement by 50
+  // newValue should be 50
+  ```
 
 - `GETSET`, das den Wert eines Schlüssels abruft und ihn in einen neuen Wert ändert. Die StackExchange-Bibliothek stellt diesen Vorgang über die Methode `IDatabase.StringGetSetAsync` bereit. Nachfolgender Codeausschnitt zeigt ein Beispiel für diese Methode. Dieser Code gibt den aktuellen Wert des Schlüssels „data:counter“ aus dem vorherigen Beispiel zurück und setzt den Wert dieses Schlüssels im selben Vorgang auf 0 (null) zurück:
 
@@ -446,9 +458,28 @@ Redis unterstützt eine Reihe von atomaren Get- und Set-Vorgängen für Zeichenf
 
 - `MGET` und `MSET`, die einen Satz von Zeichenfolgewerten in einem Vorgang zurückgeben oder ändern können. Diese Funktionalität wird, wie das folgende Beispiel zeigt, auch von den erweiterten Methoden `IDatabase.StringGetAsync` und `IDatabase.StringSetAsync` unterstützt:
 
-  ```csharp ConnectionMultiplexer redisHostConnection = ...; IDatabase cache = redisHostConnection.GetDatabase(); ... // Create a list of key/value pairs var keysAndValues = new List<KeyValuePair<RedisKey  RedisValue>>() { new KeyValuePair<RedisKey  RedisValue>("data:key1", "value1"), new KeyValuePair<RedisKey  RedisValue>("data:key99", "value2"), new KeyValuePair<RedisKey  RedisValue>("data:key322", "value3") };
+  ```csharp
+  ConnectionMultiplexer redisHostConnection = ...;
+  IDatabase cache = redisHostConnection.GetDatabase();
+  ...
+  // Create a list of key/value pairs
+  var keysAndValues =
+      new List<KeyValuePair<RedisKey, RedisValue>>()
+      {
+          new KeyValuePair<RedisKey, RedisValue>("data:key1", "value1"),
+          new KeyValuePair<RedisKey, RedisValue>("data:key99", "value2"),
+          new KeyValuePair<RedisKey, RedisValue>("data:key322", "value3")
+      };
 
-  // Store the list of key/value pairs in the cache cache.StringSet(keysAndValues.ToArray()); ... // Find all values that match a list of keys RedisKey keys = { "data:key1", "data:key99", "data:key322"}; RedisValue values = null; values = cache.StringGet(keys); // values should contain { "value1", "value2", "value3" } ```
+  // Store the list of key/value pairs in the cache
+  cache.StringSet(keysAndValues.ToArray());
+  ...
+  // Find all values that match a list of keys
+  RedisKey[] keys = { "data:key1", "data:key99", "data:key322"};
+  RedisValue[] values = null;
+  values = cache.StringGet(keys);
+  // values should contain { "value1", "value2", "value3" }
+  ```
 
 Sie können auch mehrere Vorgänge zu einer einzigen Redis-Transaktion zusammenfassen, wie weiter vorne im Abschnitt „Transaktionen und Batches in Redis“ beschrieben. Die StackExchange-Bibliothek bietet über die `ITransaction`-Schnittstelle Unterstützung für Transaktionen. Mithilfe der Methode IDatabase.CreateTransaction können Sie ein ITransaction-Objekt erstellen und mit dem durch die Methoden bereitgestellten `ITransaction`-Objekt Befehle für die Transaktion aufrufen. Die `ITransaction`-Schnittstelle bietet auf die gleichen Methoden Zugriff wie die `IDatabase`-Schnittstelle, allerdings sind diese Methoden asynchron. Sie werden nur bei Aufruf der Methode `ITransaction.Execute` ausgeführt. Der von der Execute-Methode zurückgegebene Wert gibt an, ob die Transaktion erfolgreich erstellt wurde (true) oder fehlgeschlagen ist (false).
 
@@ -682,7 +713,7 @@ foreach (var post in await cache.SortedSetRangeByRankWithScoresAsync(redisKey))
 }
 ```
 
-> [AZURE.NOTE]Darüber hinaus stellt die StackExchange-Bibliothek die Methode IDatabase.SortedSetRangeByRankAsync bereit, die die Daten in Score-Reihenfolge, jedoch ohne Angabe des Scores zurückgibt.
+> [AZURE.NOTE] Darüber hinaus stellt die StackExchange-Bibliothek die Methode IDatabase.SortedSetRangeByRankAsync bereit, die die Daten in Score-Reihenfolge, jedoch ohne Angabe des Scores zurückgibt.
 
 Mit zusätzlichen Parametern, die Sie der Methode IDatabase.SortedSetRangeByRankWithScoresAsync übergeben, können Sie die Elemente auch in absteigender Score-Reihenfolge abrufen oder die Anzahl der abgerufenen Elemente begrenzen. Das nächste Beispiel zeigt die Titel und Scores der Blogbeiträge mit den zehn höchsten Scores:
 
@@ -739,7 +770,8 @@ subscriber.PublishAsync("messages:blogPosts", blogPost.Title);
 
 - Mehrere Abonnenten können denselben Kanal abonnieren. Sie alle erhalten dann die über diesen Kanal veröffentlichten Nachrichten.
 - Abonnenten empfangen nur Nachrichten, die nach dem Abschluss ihres Abonnements veröffentlicht wurden. Die Kanäle sind nicht gepuffert. Nach der Veröffentlichung einer Nachricht überträgt die Redis-Infrastruktur die Nachricht sofort an jeden Abonnenten und entfernt die Nachricht anschließend wieder aus dem Kanal.
-- Die Abonnenten erhalten die Nachrichten standardmäßig in der Reihenfolge, in der sie gesendet werden. Innerhalb eines sehr aktiven Systems mit sehr vielen Nachrichten und vielen Abonnenten und Publishern würde die garantierte Zustellung der Nachrichten in der sequenziell richtigen Reihenfolge die Leistung des Systems beeinträchtigen. Wenn die Nachrichten unabhängig voneinander sind und die Reihenfolge ihrer Zustellung unerheblich ist, können Sie die Parallelverarbeitung durch das Redis-System aktivieren, wodurch sich die Reaktionsfähigkeit verbessert. Dazu setzen Sie die Einstellung PreserveAsyncOrder der vom Abonnenten verwendeten Verbindung auf dem StackExchange-Client auf „false“: ```csharp
+- Die Abonnenten erhalten die Nachrichten standardmäßig in der Reihenfolge, in der sie gesendet werden. Innerhalb eines sehr aktiven Systems mit sehr vielen Nachrichten und vielen Abonnenten und Publishern würde die garantierte Zustellung der Nachrichten in der sequenziell richtigen Reihenfolge die Leistung des Systems beeinträchtigen. Wenn die Nachrichten unabhängig voneinander sind und die Reihenfolge ihrer Zustellung unerheblich ist, können Sie die Parallelverarbeitung durch das Redis-System aktivieren, wodurch sich die Reaktionsfähigkeit verbessert. Dazu setzen Sie die Einstellung PreserveAsyncOrder der vom Abonnenten verwendeten Verbindung auf dem StackExchange-Client auf „false“:
+  ```csharp
   ConnectionMultiplexer redisHostConnection = ...;
   redisHostConnection.PreserveAsyncOrder = false;
   ISubscriber subscriber = redisHostConnection.GetSubscriber();
@@ -777,4 +809,4 @@ Eventuell sind für Sie auch folgende Muster interessant, wenn Sie in den Anwend
 - Seite [Transactions in Redis](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Transactions.md) (in englischer Sprache) im GitHub-Repository StackExchange.Redis.
 - Seite [Data Partitioning Guidance](http://msdn.microsoft.com/library/dn589795.aspx) (in englischer Sprache) auf der Microsoft-Website.
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

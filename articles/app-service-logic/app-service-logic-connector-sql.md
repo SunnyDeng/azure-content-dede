@@ -55,10 +55,7 @@ Benutzername | Ja | Geben Sie einen Benutzernamen ein, mit dem Sie sich bei SQL 
 Kennwort | Ja | Geben Sie das Kennwort für den Benutzernamen ein.
 Datenbankname | Ja | Geben Sie die Datenbank ein, mit der Sie eine Verbindung herstellen. Sie können z. B. *Customers* oder *dbo/orders* eingeben.
 Lokal | Ja | Die Standardeinstellung ist "False". Geben Sie "False" ein, wenn Sie eine Verbindung mit einer Azure SQL-Datenbank herstellen. Geben Sie "True" ein, wenn Sie eine Verbindung zu einem lokalen SQL Server herstellen.
-Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/>
-<br/>
-[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>
-[Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/)
+Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/)
 Name des Partnerservers | Nein | Wenn der primäre Server nicht verfügbar ist, können Sie einen Partnerserver als Alternative oder einen Backup-Server eingeben.
 Tabellen | Nein | Listen Sie die Datenbanktabellen auf, die vom Connector aktualisiert werden können. Geben Sie z. B. *OrdersTable* oder *EmployeeTable* ein. Wenn keine Tabellen eingegeben werden, können alle Tabellen verwendet werden. Gültige Tabellen und/oder gespeicherte Prozeduren sind erforderlich, um diesen Connector als Aktion zu verwenden.
 Gespeicherte Prozeduren | Nein | Geben Sie eine vorhandene gespeicherte Prozedur ein, die vom Connector aufgerufen werden kann. Geben Sie z. B. *sp\_IsEmployeeEligible* oder *sp\_CalculateOrderDiscount* ein. Gültige Tabellen und/oder gespeicherte Prozeduren sind erforderlich, um diesen Connector als Aktion zu verwenden.
@@ -93,13 +90,16 @@ Der **Abruf der Datenabfrage** wird nur ausgeführt, wenn die Datenabfrage nach 
 		(SELECT Id FROM [Order] WHERE OrderStatus = 'ProcessedForCollection' ORDER BY Id DESC)
 
 ### Den Trigger hinzufügen
-1. Beim Erstellen oder Bearbeiten einer Logik-App wählen Sie den SQL-Connector als Trigger aus. Dadurch werden die verfügbaren Trigger aufgelistet: **Poll Data (JSON)** und **Poll Data (XML)**: <br/>
+1. Beim Erstellen oder Bearbeiten einer Logik-App wählen Sie den SQL-Connector als Trigger aus. Dadurch werden die verfügbaren Trigger aufgelistet: **Poll Data (JSON)** und **Poll Data (XML)**: 
+<br/>
 ![][5]
 
-2. Wählen Sie den Trigger **Poll Data (JSON)** aus, geben Sie die Häufigkeit an, und klicken Sie auf ✓: <br/>
+2. Wählen Sie den Trigger **Poll Data (JSON)** aus, geben Sie die Häufigkeit an, und klicken Sie auf ✓:
+<br/>
 ![][6]
 
-3. Der Trigger wird jetzt in der Logik-App als konfiguriert angezeigt. Die Ausgaben des Triggers werden angezeigt und können in nachfolgenden Aktionen als Eingabe verwendet werden: <br/>
+3. Der Trigger wird jetzt in der Logik-App als konfiguriert angezeigt. Die Ausgaben des Triggers werden angezeigt und können in nachfolgenden Aktionen als Eingabe verwendet werden: 
+<br/>
  ![][7]
 
 ## Verwenden des Connectors als Aktion
@@ -107,16 +107,20 @@ Mithilfe unseres einfachen Logik-App-Szenarios, das Daten aus einer SQL-Tabelle 
 
 Für die Verwendung des SQL-Connectors als Aktion geben Sie den Namen der Tabellen und/oder gespeicherte Prozeduren ein, die Sie schon bei der Erstellung des SQL-Connectors eingegeben haben:
 
-1. Fügen Sie nach dem Trigger (oder wählen Sie "Diese Logik manuell ausführen") den aus dem Katalog erstellten SQL-Connector hinzu. Wählen Sie eine der Einfügeaktionen aus, wie *Insert Into TempEmployeeDetails (JSON)*: <br/>
+1. Fügen Sie nach dem Trigger (oder wählen Sie "Diese Logik manuell ausführen") den aus dem Katalog erstellten SQL-Connector hinzu. Wählen Sie eine der Einfügeaktionen aus, wie *Insert Into TempEmployeeDetails (JSON)*: 
+<br/>
 ![][8]
 
-2. Geben Sie die einzufügenden Eingabewerte des Datensatzes ein, und klicken Sie auf ✓: <br/>
+2. Geben Sie die einzufügenden Eingabewerte des Datensatzes ein, und klicken Sie auf ✓: 
+<br/>
  ![][9]
 
-3. Wählen Sie aus dem Katalog denselben SQL-Connector aus, den Sie erstellt haben. Wählen Sie als Aktion die Aktualisierungsaktion für die gleiche Tabelle aus, z. B. *Update EmployeeDetails*: <br/>
+3. Wählen Sie aus dem Katalog denselben SQL-Connector aus, den Sie erstellt haben. Wählen Sie als Aktion die Aktualisierungsaktion für die gleiche Tabelle aus, z. B. *Update EmployeeDetails*: 
+<br/>
  ![][11]
 
-4. Geben Sie die Eingabewerte für die Aktualisierungsaktion ein, und klicken Sie auf ✓: <br/>
+4. Geben Sie die Eingabewerte für die Aktualisierungsaktion ein, und klicken Sie auf ✓: 
+<br/>
  ![][12]
 
 Sie können die Logik-App testen, indem Sie in der abgefragten Tabelle einen neuen Datensatz hinzufügen.
@@ -125,7 +129,8 @@ Sie können die Logik-App testen, indem Sie in der abgefragten Tabelle einen neu
 
 SQL-Abfrage | Unterstützt | Nicht unterstützt
 --- | --- | ---
-WHERE-Klausel | <ul><li>Operatoren: AND, OR, =, <>, <, <=, >, >= und LIKE</li><li>Mehrere Unterbedingungen können mithilfe von ‘(‘ und ‘)’ kombiniert werden.</li><li>Zeichenfolgenliterale, Datetime (in einfache Anführungszeichen eingeschlossen), Zahlen (dürfen nur numerische Zeichen enthalten)</li><li>Muss unbedingt ein Binärausdruckformat haben wie ((Operand Operator Operand) UND/ODER (Operand Operator Operand))\**</li></ul> | <ul><li>Operatoren: Between, IN</li><li>Alle integrierten Funktionen wie ADD(), MAX() NOW(), POWER() usw.</li><li>Mathematische Operatoren wie \*, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +.</li><li>Alle Joins</li><li>IS NULL und IS NOT NULL</li><li>Zahlen mit nicht numerischen Zeichen, wie z. B. Hexadezimalzahlen</li></ul>Felder (in der SELECT-Abfrage) |<ul><li>Gültige Spaltennamen (durch Kommas getrennt). Präfixe sind für Tabellennamen unzulässig (der Connector wird stets nur auf eine Tabelle angewendet).</li><li>Namen können mit den Escapezeichen ' [' und ']' versehen werden.</li></ul>|<ul><li>Schlüsselwörter wie TOP, DISTINCT usw.</li><li>Aliase wie Straße + Ort + PLZ AS Adresse</li><li>Alle integrierten Funktionen, z. B. ADD(), MAX() NOW(), POWER() usw.</li><li>Mathematische Operatoren, wie z. B. \*, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +</li></ul>
+WHERE-Klausel | <ul><li>Operatoren: AND, OR, =, <>, <, <=, >, >= und LIKE</li><li>Mehrere Unterbedingungen können mithilfe von ‘(‘ und ‘)’ kombiniert werden.</li><li>Zeichenfolgenliterale, Datetime (in einfache Anführungszeichen eingeschlossen), Zahlen (dürfen nur numerische Zeichen enthalten)</li><li>Muss unbedingt ein Binärausdruckformat haben wie ((Operand Operator Operand) UND/ODER (Operand Operator Operand))\**</li></ul> | <ul><li>Operatoren: Between, IN</li><li>Alle integrierten Funktionen wie ADD(), MAX() NOW(), POWER() usw.</li><li>Mathematische Operatoren wie \*, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +.</li><li>Alle Joins</li><li>IS NULL und IS NOT NULL</li><li>Zahlen mit nicht numerischen Zeichen, wie z. B. Hexadezimalzahlen</li></ul>
+Felder (in der SELECT-Abfrage) |<ul><li>Gültige Spaltennamen (durch Kommas getrennt). Präfixe sind für Tabellennamen unzulässig (der Connector wird stets nur auf eine Tabelle angewendet).</li><li>Namen können mit den Escapezeichen ' [' und ']' versehen werden.</li></ul>|<ul><li>Schlüsselwörter wie TOP, DISTINCT usw.</li><li>Aliase wie Straße + Ort + PLZ AS Adresse</li><li>Alle integrierten Funktionen, z. B. ADD(), MAX() NOW(), POWER() usw.</li><li>Mathematische Operatoren, wie z. B. \*, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +</li></ul>
 
 #### Tipps
 
@@ -161,4 +166,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-sql/LogicApp7.png
 [12]: ./media/app-service-logic-connector-sql/LogicApp8.png
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

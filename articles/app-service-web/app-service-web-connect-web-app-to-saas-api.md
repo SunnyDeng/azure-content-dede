@@ -71,17 +71,19 @@ Wählen Sie die API-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink
 
 1. Aktualisieren Sie die Ansicht `Contact` entsprechend der dynamischen Liste von Kontakten mit dem folgenden Code:
 	<pre>// Add to the very top of the view file
-@model IList&lt;MyContactsList.Web.Models.Contact>
+	@model IList&lt;MyContactsList.Web.Models.Contact&gt;
+	
+	// Replace the default email addresses with the following
+    &lt;h3&gt;Public Contacts&lt;/h3&gt;
+    &lt;ul&gt;
+        @foreach (var contact in Model)
+        {
+            &lt;li&gt;&lt;a href=&quot;mailto:@contact.EmailAddress&quot;&gt;@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a&gt;&lt;/li&gt;
+        }
+    &lt;/ul&gt; 
+	</pre>
 
-// Replace the default email addresses with the following
-&lt;h3>Public Contacts&lt;/h3>
-&lt;ul>
-    @foreach (var contact in Model)
-    {
-        &lt;li>&lt;a href="mailto:@contact.EmailAddress">@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a>&lt;/li>
-    }
-&lt;/ul> 
-</pre>![Codeaktualisierung in "Contact.cshtml"](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
+	![Contact.cshtml Code Updates](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
 
 ## Bereitstellen der Webanwendung in Web-Apps in App Service
 
@@ -94,4 +96,4 @@ Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure Web-App](web-sites
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

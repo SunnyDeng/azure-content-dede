@@ -23,7 +23,7 @@ In diesem Thema werden die verfügbaren Größen und Optionen für Cloud Service
 
 Azure Virtual Machines und Azure Cloud Services sind zwei von mehreren unterschiedlichen Typen von Compute-Ressourcen, die über Azure zur Verfügung stehen. Erläuterungen hierzu finden Sie unter [Compute Hosting Options Provided by Azure](fundamentals-application-models.md) (Compute-Hostingoptionen in Azure).
 
-> [AZURE.NOTE]Zugehörige Einschränkungen von Azure finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md).
+> [AZURE.NOTE] Zugehörige Einschränkungen von Azure finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md).
 
 ## Größen für Web- und Workerrolleninstanzen
 
@@ -118,4 +118,4 @@ Dies ist ein Beispiel, in der eine kleine Rollengröße für eine Webrolleninsta
 
 [Einrichten eines Clouddiensts für Azure](https://msdn.microsoft.com/library/hh124108)
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

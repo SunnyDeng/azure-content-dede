@@ -31,7 +31,20 @@ Zur Verwendung des SFTP-Connectors müssen Sie zunächst eine Instanz der SFTP-C
 2.	Wechseln Sie zu "Web und mobil", und suchen Sie nach "SFTP-Connector".
 3.	Konfigurieren Sie den SFTP-Connector wie folgt:
 
-	![][1] - **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten. - **Abonnement** – Wählen Sie ein Abonnement aus, unter dem dieser Connector erstellt werden soll. - **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll. - **Webhostingplan** – Wählen oder erstellen Sie einen Webhostingplan. - **Tarif** – Wählen Sie einen Tarif für den Connector. - **Name** – Geben Sie dem SFTP-Connector einen Namen. - **Paketeinstellungen** – **Serveradresse** – Geben Sie den Namen oder die IP-Adresse des SFTP-Servers an. - **Beliebigen SSH-Server-HostKey akzeptieren** – Bestimmt, ob beliebige Fingerabdrücke des öffentlichen SSH-Schlüssels vom Server akzeptiert werden sollen. Wenn dies auf "False" festgelegt ist, wird der Hostschlüssel mit dem in der "SSH Server Host Key Finger Print"-Eigenschaft angegebenen Schlüssel abgeglichen. - **SSH-Server-HostKey** – Geben Sie den Fingerabdruck des öffentlichen Schlüssels für den SSH-Server an. - *optional*. - **Stammordner** – Geben Sie einen Pfad für den Stammordner an. Falls leer, wir der Stammordner verwendet. - **Verschlüsselung verschlüsseln** – Geben Sie den Verschlüsselungsschlüssel an. - *optional*. **Serverport** – Geben Sie die Portnummer des SFTP-Servers an.
+	![][1]
+	- **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten. 
+	- **Abonnement** – Wählen Sie ein Abonnement aus, unter dem dieser Connector erstellt werden soll.
+	- **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
+	- **Webhostingplan** – Wählen oder erstellen Sie einen Webhostingplan. 
+	- **Tarif** – Wählen Sie einen Tarif für den Connector. 
+	- **Name** – Geben Sie dem SFTP-Connector einen Namen. 
+	- **Paketeinstellungen**
+		- **Serveradresse** – Geben Sie den Namen oder die IP-Adresse des SFTP-Servers an. 
+		- **Beliebigen SSH-Server-HostKey akzeptieren** – Bestimmt, ob beliebige Fingerabdrücke des öffentlichen SSH-Schlüssels vom Server akzeptiert werden sollen. Wenn dies auf "False" festgelegt ist, wird der Hostschlüssel mit dem in der "SSH Server Host Key Finger Print"-Eigenschaft angegebenen Schlüssel abgeglichen. 
+		- **SSH-Server-HostKey** – Geben Sie den Fingerabdruck des öffentlichen Schlüssels für den SSH-Server an. - *optional*. 
+		- **Stammordner** – Geben Sie einen Pfad für den Stammordner an. Falls leer, wir der Stammordner verwendet. 
+		- **Verschlüsselung verschlüsseln** – Geben Sie den Verschlüsselungsschlüssel an. - *optional*.
+		- **Serverport** – Geben Sie die Portnummer des SFTP-Servers an.
 4. Klicken Sie auf "Erstellen". Ein neuer SFTP-Connector wird erstellt.
 
 5. Navigieren Sie über "Durchsuchen" -> "API-Apps"-> <Name of the API App just created> zur soeben erstellten API-App. Sie werden bemerken, dass die Komponente "Sicherheit" noch nicht konfiguriert ist.
@@ -39,7 +52,9 @@ Zur Verwendung des SFTP-Connectors müssen Sie zunächst eine Instanz der SFTP-C
 	![][2]
 6. Klicken Sie auf die Komponente "Sicherheit", um die Sicherheitsoptionen (Benutzername, Kennwort, privater Schlüssel, PPK-Dateikennwort) für den SFTP-Connector zu konfigurieren. Wählen Sie auf der Registerkarte "Autorisierung" unter "Sicherheit" eine der Autorisierungsmethoden "Kennwort" oder "Privatekey" bzw. "MultiFactor" aus, und geben Sie die erforderlichen Eigenschaften an.
 
-	![][3] ![][4] ![][5]
+	![][3]
+	![][4]
+	![][5]
 6. Sobald die Sicherheitskonfiguration gespeichert wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des SFTP-Connectors erstellen.
 
 ## Verwenden des SFTP-Connectors in Logik-Apps ##
@@ -66,10 +81,11 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 	- **Ordnerpfad** – Geben Sie den Pfad des Ordners ein, aus dem die Dateien abgerufen werden sollen.
 	- **Typ der Datei: Text oder binär** – Wählen Sie den Dateityp aus.
 	- **Dateimaske** – Geben Sie die Dateimaske an, die für das Abrufen von Dateien angewendet werden soll. Mit "\*" werden alle Dateien im angegebenen Ordner abgerufen.
-- **Dateimaske ausschließen** – Geben Sie die Dateimaske zum Ausschließen von Dateien an. Wenn auch die Eigenschaft "Dateimaske" festgelegt ist, wird zuerst "Dateimaske ausschließen" angewendet.
+	- **Dateimaske ausschließen** – Geben Sie die Dateimaske zum Ausschließen von Dateien an. Wenn auch die Eigenschaft "Dateimaske" festgelegt ist, wird zuerst "Dateimaske ausschließen" angewendet.
 
 
-	![][9] ![][10]
+	![][9] 
+	![][10]
 
 7.	Auf ähnliche Weise können Sie die SFTP-Aktionen im Datenfluss verwenden. Sie können die Aktion "Datei hochladen" zum Hochladen einer Datei auf den SFTP-Server verwenden. Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Datei hochladen" wie folgt:
 
@@ -77,10 +93,11 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 	- **Codierung für die Inhaltsübertragung** – Geben Sie "Keine" oder "base64" an.
 	- **Dateipfad** – Geben Sie den Dateipfad der Datei an, die hochgeladen werden soll.
 	- **Überschreiben** – Legen Sie dies auf "True" fest, um die Datei ggf. zu überschreiben.
-	- **\*\*Anfügen, falls vorhanden\*\* – Legen Sie hierfür "True" oder "False" fest. Wenn diese Option auf "True" festgelegt ist, werden die Daten an die Datei angefügt, wenn sie vorhanden ist. Ist "False" angegeben, wird eine ggf. vorhandene Datei überschrieben.
-- **Temporärer Ordner** – Falls angegeben, lädt der Adapter die Datei in den "Pfad des temporären Ordners". Nach Abschluss des Uploads wird die Datei in den "Ordnerpfad" verschoben. Der Pfad des temporären Ordners sollte sich auf dem gleichen physischen Datenträger befinden wie der Ordnerpfad, um sicherzustellen, dass der Verschiebevorgang atomarisch verläuft. Temporäre Ordner können nur verwendet werden, wenn die Eigenschaft "Anfügen, falls vorhanden" deaktiviert ist.
+	- **Anfügen, falls vorhanden ** – Legen Sie hierfür "True" oder "False" fest. Wenn diese Option auf "True" festgelegt ist, werden die Daten an die Datei angefügt, wenn sie vorhanden ist. Ist "False" angegeben, wird eine ggf. vorhandene Datei überschrieben.
+	- **Temporärer Ordner** – Falls angegeben, lädt der Adapter die Datei in den "Pfad des temporären Ordners". Nach Abschluss des Uploads wird die Datei in den "Ordnerpfad" verschoben. Der Pfad des temporären Ordners sollte sich auf dem gleichen physischen Datenträger befinden wie der Ordnerpfad, um sicherzustellen, dass der Verschiebevorgang atomarisch verläuft. Temporäre Ordner können nur verwendet werden, wenn die Eigenschaft "Anfügen, falls vorhanden" deaktiviert ist.
 
-	![][11] ![][12]
+	![][11]
+	![][12]
 
 
 
@@ -100,4 +117,4 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 [11]: ./media/app-service-logic-connector-sftp/img11.PNG
 [12]: ./media/app-service-logic-connector-sftp/img12.PNG
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->
