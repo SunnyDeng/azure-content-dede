@@ -56,8 +56,6 @@ Die Diagramme veranschaulichen Ihre Schritte bei der Erstellung und Bereitstellu
 
 ![Erstellen](./media/web-sites-dotnet-get-started/Create_App.png)
 
-![Bereitstellen](./media/web-sites-dotnet-get-started/Deploy_App.png)
-
 1. Öffnen Sie Visual Studio 2015 oder Visual Studio 2013. 
 
 	Wenn Sie Visual Studio 2013 verwenden, weichen die Bildschirme geringfügig von den Screenshots ab, die Verfahren sind jedoch im Wesentlichen identisch.
@@ -303,4 +301,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO7-->
+<!----HONumber=August15_HO7-->

@@ -1,4 +1,10 @@
-\<properties pageTitle="Application Insights für C++-Apps" description="Analysieren Sie die Nutzung und Leistung Ihrer C++-App mit Application Insights." services="application-insights" documentationCenter="cpp" authors="crystk" manager="jakubo""/\>
+<properties 
+    pageTitle="Application Insights für C++-Apps" 
+    description="Analysieren Sie die Nutzung und Leistung Ihrer C++-App mit Application Insights." 
+    services="application-insights" 
+    documentationCenter="cpp"
+    authors="crystk" 
+    manager="jakubo""/>
 
 <tags 
     ms.service="application-insights" 
@@ -140,4 +146,4 @@ Klicken Sie auf ein beliebiges Diagramm, um weitere Details zu erhalten. Zum Bei
 
  
 
-<!---HONumber=August15_HO7-->
+<!-----HONumber=August15_HO7-->
