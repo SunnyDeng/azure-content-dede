@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="StorSimple-Systemanforderungen" 
+   pageTitle="StorSimple-Systemanforderungen | Microsoft Azure" 
    description="Beschreibt Systemanforderungen und bewährte Methoden für Software, hohe Verfügbarkeit und Netzwerke für Azure StorSimple-Lösungen." 
    services="storsimple" 
    documentationCenter="NA" 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="06/03/2015"
+   ms.date="08/12/2015"
    ms.author="alkohli"/>
 
 # StorSimple-Systemanforderungen
@@ -96,7 +96,7 @@ Die Controllermodule von StorSimple-Geräten verfügen jeweils über vier 1-Giga
 
 - Verwenden Sie nach Möglichkeit auf Servern MPIO, damit die Server Fehler bei Links, dem Netzwerk oder einzelnen Schnittstellen tolerieren können.
 
-Weitere Informationen zum Einrichten des Netzwerks für Ihr Gerät für hohe Verfügbarkeit und hohe Leistung finden Sie unter [Verkabeln eines Geräts vom Typ 8100](https://msdn.microsoft.com/library/azure/dn757738.aspx) oder [Verkabeln eines Geräts vom Typ 8600](https://msdn.microsoft.com/library/azure/dn757762.aspx).
+Informationen zur Einbindung Ihres Geräts in das Netzwerk, um eine hohe Verfügbarkeit und Leistung zu erzielen, finden Sie unter [Installieren des StorSimple 8100-Geräts](storsimple-8100-hardware-installation.md#cable-your-storsimple-8100-device) bzw. [Installieren des StorSimple 8600-Geräts](storsimple-8600-hardware-installation.md#cable-your-storsimple-8600-device).
 
 #### SSDs und HDDs
 
@@ -138,7 +138,7 @@ StorSimple-Geräte des Modells 8600 bieten zusätzlich zum normalen Gehäuse ei
 
 Lesen Sie sorgfältig diese Anforderungen und bewährten Methoden durch, um eine hohe Verfügbarkeit der Hosts sicherzustellen, die mit dem StorSimple-Gerät verbunden sind.
 
-- Konfigurieren von StorSimple mit [Dateiserverclustern mit zwei Knoten] (https://technet.microsoft.com/library/cc731844(v=WS.10).aspx). Wenn Sie einzelne Fehlerquellen eliminieren und auf Hostseite Redundanz erzeugen, wird die gesamte Lösung höher verfügbar.
+- Konfigurieren von StorSimple mit [Dateiserverclustern mit zwei Knoten][1]. Wenn Sie einzelne Fehlerquellen eliminieren und auf Hostseite Redundanz erzeugen, wird die gesamte Lösung höher verfügbar.
 
 - Verwenden Sie die in Windows Server 2012 (SMB 3.0) verfügbaren permanent verfügbaren Freigaben für eine hohe Verfügbarkeit während Failovern der Speichercontroller. Weitere Informationen zum Konfigurieren von Dateiserverclustern und permanent verfügbaren Freigaben mit Windows Server 2012 erhalten Sie in diesem [Vorführvideo](http://channel9.msdn.com/Events/IT-Camps/IT-Camps-On-Demand-Windows-Server-2012/DEMO-Continuously-Available-File-Shares) (in englischer Sprache).
 
@@ -184,12 +184,14 @@ Befolgen Sie zusätzlich zu den oben genannten Netzwerkanforderungen die folgend
 
 - Stellen Sie sicher, dass jederzeit eine Netzwerkverbindung mit dem Internet verfügbar ist. Zeitweise unterbrochene oder unzuverlässige Internetverbindungen mit den Geräten, also auch eine Unterbrechung der Internetverbindung, führt zu einer nicht unterstützten Konfiguration.
 
-- Isolieren Sie den Datenverkehr für iSCSI und Cloud durch Verwendung jeweils eigener Netzwerkschnittstellen auf dem Gerät für den iSCSI- und Cloudzugriff. Weitere Informationen finden Sie unter [Netzwerkanforderungen für das StorSimple-Gerät](https://msdn.microsoft.com/library/dn772371.aspx).
+- Isolieren Sie den Datenverkehr für iSCSI und Cloud durch Verwendung jeweils eigener Netzwerkschnittstellen auf dem Gerät für den iSCSI- und Cloudzugriff. Weitere Informationen finden Sie unter [Ändern von Netzwerkschnittstellen](storsimple-modify-device-config.md#modify-network-interfaces) für das StorSimple-Gerät.
 
 ## Nächste Schritte
 
-- [StorSimple-Einschränkungen](storsimple-limits.md)
-- [Bereitstellen der StorSimple-Lösung](storsimple-deployment-walkthrough.md)
+- Erfahren Sie mehr zu [StorSimple-Systemeinschränkungen](storsimple-limits.md).
+- [Bereitstellen der StorSimple-Lösung](storsimple-deployment-walkthrough.md).
  
+<!--Reference links-->
+[1]: https://technet.microsoft.com/library/cc731844(v=WS.10).aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/21/2015"
+   ms.date="08/04/2015"
    ms.author="ryanwi"/>
 
 # Diagnostizieren und Überwachen von Service Fabric-Diensten
@@ -40,4 +40,4 @@ Service Fabric führt ein Integritätsmodell ein, das eine umfassende, flexible 
 - [Gewusst wie: Hinzufügen von Service Fabric-Integritätsberichten](service-fabric-report-health.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

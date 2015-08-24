@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="NoSQL-Technologien in Azure | Azure" 
+	pageTitle="NoSQL-Technologien in Azure | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mit NoSQL-Technologien in HDInsight Daten verwalten können, die nicht für relationale Datenbanken geeignet sind, z. B. große Datensätze und JSON-Dokumente oder Graphen." 
 	editor="cgronlun" 
 	manager="jhubbard" 
@@ -22,7 +22,7 @@ Möchten Sie mehr über die in Azure verfügbaren NoSQL-Technologien wissen, sin
 
 In diesem Whitepaper werden die folgenden Themen behandelt:
 
- - Unterscheidung zwischen operativen Daten, die von Anwendungen gelesen und geschrieben werden, und analytischen Daten, die zur Bereitstellung von Business Intelligence (BI) dienen, damit Sie die richtige Technologie für Ihre Anforderungen bestimmen können.
+ - Unterscheidung zwischen operativen Daten, die von Anwendungen gelesen und geschrieben werden, und analytischen Daten, die zur Bereitstellung von Business Intelligence \(BI\) dienen, damit Sie die richtige Technologie für Ihre Anforderungen bestimmen können.
  - Eine kurze Übersicht über relationale Technologien.
  - Eine Einführung in die einzelnen NoSQL-Technologien von Azure: DocumentDB, Tabellenspeicher, HBase und HDInsight.
  - Ein Vergleich zwischen den NoSQL-Technologien und Azure SQL-Datenbank. 
@@ -31,4 +31,4 @@ In diesem Whitepaper werden die folgenden Themen behandelt:
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

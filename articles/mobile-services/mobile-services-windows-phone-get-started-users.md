@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit der Authentifizierung (Windows Store) | Mobile Dev Center" 
+	pageTitle="Erste Schritte bei der Authentifizierung (Windows Phone) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Windows Phone-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -80,4 +80,4 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 [Einmalige Anmeldung für Windows Phone-Apps mithilfe von Live Connect]: mobile-services-windows-phone-single-sign-on.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

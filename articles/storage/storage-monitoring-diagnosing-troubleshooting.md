@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Überwachung, Diagnose und Problembehandlung im Speicher | Azure" 
+	pageTitle="Überwachung, Diagnose und Problembehandlung von Speicher | Microsoft Azure" 
 	description="Verwenden Sie Funktionen wie Speicheranalyse, clientseitige Protokollierung und andere Tools von Drittanbietern, um mit Azure-Speicher verbundene Probleme zu erkennen, zu diagnostizieren und zu beheben." 
 	services="storage" 
 	documentationCenter="" 
@@ -18,9 +18,9 @@
 
 # Microsoft Azure-Speicher: Überwachung, Diagnose und Problembehandlung 
 
-Diagnose und Problembehandlung können in einer verteilten Anwendung, die in einer Cloud-Umgebung gehostet wird, komplexer sein als in herkömmlichen Umgebungen. Anwendungen können in einer PaaS- oder IaaS-Infrastruktur bereitgestellt werden, lokal, auf einem Mobilgerät oder in einer Kombination hiervon. In der Regel kann der Netzwerkverkehr der Anwendung öffentliche und private Netzwerke durchlaufen, und Ihre Anwendung kann mehrere Speichertechnologien wie Microsoft Azure-Speichertabellen, Blobs, Warteschlangen oder Dateien neben anderen Datenspeichern wie relationalen und Dokumentendatenbanken verwenden.
+Diagnose und Problembehandlung können in einer verteilten Anwendung, die in einer Cloudumgebung gehostet wird, komplexer sein als in herkömmlichen Umgebungen. Anwendungen können in einer PaaS- oder IaaS-Infrastruktur bereitgestellt werden, lokal, auf einem Mobilgerät oder in einer Kombination hiervon. In der Regel kann der Netzwerkverkehr der Anwendung öffentliche und private Netzwerke durchlaufen, und Ihre Anwendung kann mehrere Speichertechnologien wie Microsoft Azure-Speichertabellen, Blobs, Warteschlangen oder Dateien neben anderen Datenspeichern wie relationalen und Dokumentendatenbanken verwenden.
 
-Um solche Anwendungen erfolgreich zu verwalten, sollten Sie sie proaktiv überwachen und verstehen, wie die Diagnose und Problembehandlung aller Anwendungsaspekte und ihrer abhängigen Technologien durchzuführen sind. Als Nutzer des Azure-Speicherdiensts sollten Sie ständig die von Ihrer Anwendung verwendeten Speicherdienste überwachen, um unerwartete Verhaltensveränderungen zu erkennen (beispielsweise langsamere Antwortzeiten als üblich), und Protokollierung verwenden, um detailliertere Daten zu sammeln und ein Problem in der Tiefe zu analysieren. Die Diagnoseinformationen, die Sie sowohl aus der Überwachung als auch der Protokollierung erhalten, werden Ihnen helfen, die Ursache des Problems, das bei Ihrer Anwendung auftritt, zu bestimmen. Dann können Sie das Problem behandeln und die entsprechenden Schritte, die Sie für seine Beseitigung ergreifen können, festlegen. Azure-Speicher ist ein Kerndienst von Azure und ein wichtiger Bestandteil der meisten Lösungen, die Kunden auf der Azure-Infrastruktur bereitstellen. Azure-Speicher beinhaltet Funktionen zur vereinfachten Überwachung, Diagnose und Problembehandlung von Speicherproblemen in Ihren Cloud-basierten Anwendungen.
+Um solche Anwendungen erfolgreich zu verwalten, sollten Sie sie proaktiv überwachen und verstehen, wie die Diagnose und Problembehandlung aller Anwendungsaspekte und ihrer abhängigen Technologien durchzuführen sind. Als Nutzer des Azure-Speicherdiensts sollten Sie ständig die von Ihrer Anwendung verwendeten Speicherdienste überwachen, um unerwartete Verhaltensveränderungen zu erkennen (beispielsweise langsamere Antwortzeiten als üblich), und Protokollierung verwenden, um detailliertere Daten zu sammeln und ein Problem in der Tiefe zu analysieren. Die Diagnoseinformationen, die Sie sowohl aus der Überwachung als auch der Protokollierung erhalten, werden Ihnen helfen, die Ursache des Problems, das bei Ihrer Anwendung auftritt, zu bestimmen. Dann können Sie das Problem behandeln und die entsprechenden Schritte, die Sie für seine Beseitigung ergreifen können, festlegen. Azure-Speicher ist ein Kerndienst von Azure und ein wichtiger Bestandteil der meisten Lösungen, die Kunden auf der Azure-Infrastruktur bereitstellen. Azure-Speicher beinhaltet Funktionen zur vereinfachten Überwachung, Diagnose und Problembehandlung von Speicherproblemen in Ihren cloudbasierten Anwendungen.
 
 Eine praktische Anleitung für die End-to-End-Problembehandlung in Azure-Speicheranwendungen finden Sie unter [End-to-End-Problembehandlung mit Azure-Speichermetriken und -Protokollierung, AzCopy und Message Analyzer](../storage-e2e-troubleshooting/).
 
@@ -697,7 +697,7 @@ Sie testen Ihre die Speicher-Clientbibliothek verwendende Anwendung mit dem loka
 
 Sie können die Speicher-Clientbibliothek-Protokollierung verwenden, um den Wert des gesendeten **x-ms-version-Headers** anzuzeigen. Sie können den Wert des **x-ms-version-Headers** auch anzeigen, wenn Sie Fiddler verwenden, um die Anfragen Ihrer Clientanwendung zu verfolgen.
 
-Dieses Szenario tritt in der Regel ein, wenn Sie die neueste Version der Speicher-Clientbibliothek installieren und verwenden, ohne den Speicheremulator zu aktualisieren. Sie sollten entweder die neueste Version des Speicheremulators installieren oder für Entwicklung und Test Cloud-Speicher anstelle des Emulators verwenden.
+Dieses Szenario tritt in der Regel ein, wenn Sie die neueste Version der Speicher-Clientbibliothek installieren und verwenden, ohne den Speicheremulator zu aktualisieren. Sie sollten entweder die neueste Version des Speicheremulators installieren oder für Entwicklung und Test Cloudspeicher anstelle des Emulators verwenden.
 
 #### <a name="storage-emulator-requires-administrative-privileges"></a>Zum Ausführen des Speicheremulators sind Administratorrechte erforderlich
 
@@ -917,4 +917,4 @@ Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weit
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-2.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

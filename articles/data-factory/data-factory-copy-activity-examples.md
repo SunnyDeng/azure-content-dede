@@ -7,7 +7,6 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
-
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -17,9 +16,8 @@
 	ms.date="08/03/2015" 
 	ms.author="spelluru"/>
 
-
 # Beispiele für die Verwendung der Kopieraktivität in Azure Data Factory
-Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer Quelle an eine Senke (Ziel) in einem Batch kopieren. Dieses Thema enthält einige Beispiele für die Verwendung der Kopieraktivität in einer Data Factory-Pipeline. Eine ausführliche Übersicht über die Kopieraktivität und wichtige Szenarien, die davon unterstützt werden, finden Sie unter [Kopieren von Daten mit Azure Data Factory][adf-copyactivity].
+Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer Quelle an eine Senke \(Ziel\) in einem Batch kopieren. Dieses Thema enthält einige Beispiele für die Verwendung der Kopieraktivität in einer Data Factory-Pipeline.
 
 ## Kopieren von Daten aus einer lokalen SQL Server-Datenbank in ein Azure-Blob
 In diesem Beispiel werden eine Eingabe- und eine Ausgabetabelle definiert. Die Tabellen werden in einer Kopieraktivität in einer Pipeline verwendet, die Daten aus einer lokalen SQL Server-Datenbank in ein Azure-BLOB kopiert.
@@ -133,15 +131,15 @@ Beachten Sie Folgendes:
 - **fileName** ist auf **MyBlob** festgelegt, das Blob mit den Ausgabedaten.
 - **linkedServiceName** ist auf **MyAzureStorge** festgelegt, den verknüpften Dienst, den Sie für den Azure-Speicher erstellt haben.    
 
-Unter [Eigenschaften des Azure-Blob-Typs](https://msdn.microsoft.com/library/mt185722.aspx#AzureBlob) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
+Unter [Eigenschaften des Azure-Blobtyps](https://msdn.microsoft.com/library/mt185722.aspx#AzureBlob) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
 
-### JSON für Pipeline (mit Kopieraktivität)
+### JSON für Pipeline \(mit Kopieraktivität\)
 In diesem Beispiel, eine Pipeline: **CopyActivityPipeline** ist mit den folgenden Eigenschaften definiert:
 
 - Die **type**-Eigenschaft wird auf **CopyActivity** festgelegt.
-- **MyOnPremTable** wird als Eingabe angegeben (**Eingaben**-Tag).
-- **MyAzureBlob** wird als Ausgabe angegeben (**Ausgaben**-Tag)
-- Der Abschnitt **Transformation** enthält zwei Unterabschnitte: **Quelle** und **Senke**. Für den Typ der Quelle wird **SqlSource** und für den Typ der Senke **BlobSink** festgelegt. **sqlReaderQuery** definiert die Transformation (Projektion), die für die Quelle ausgeführt werden soll. Weitere Informationen zu allen Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
+- **MyOnPremTable** wird als Eingabe angegeben \(**Eingaben**-Tag\).
+- **MyAzureBlob** wird als Ausgabe angegeben \(**Ausgaben**-Tag\)
+- Der Abschnitt **Transformation** enthält zwei Unterabschnitte: **Quelle** und **Senke**. Für den Typ der Quelle wird **SqlSource** und für den Typ der Senke **BlobSink** festgelegt. **sqlReaderQuery** definiert die Transformation \(Projektion\), die für die Quelle ausgeführt werden soll. Weitere Informationen zu allen Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
 
          
 		{
@@ -177,17 +175,17 @@ In diesem Beispiel, eine Pipeline: **CopyActivityPipeline** ist mit den folgende
 		  }
 		}
 
-Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Pipeline. Unter [Unterstützte Quellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) finden Sie Eigenschaften von „SqlSource“ (z. B. \*\*SqlReaderQuery\*\*) und „BlobSink“.
+Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Pipeline. Unter [Unterstützte Quellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) finden Sie Eigenschaften von "SqlSource" \(z. B. "SqlReaderQuery"\) und "BlobSink".
 
 
 ## Kopieren von Daten aus einem lokalen Dateisystem in ein Azure-Blob
-Mithilfe der Kopieraktivität können Sie Dateien aus einem lokalen Dateisystem (Windows-/Linux-Netzwerkfreigaben oder lokaler Windows-Host) in ein Azure-Blob kopieren. Der Host kann entweder ein Windows- oder Linux-Host sein, für den Samba konfiguriert ist. Das Datenverwaltungsgateway muss auf einem Windows-Computer installiert werden, der eine Verbindung mit dem Host herstellen kann.
+Mithilfe der Kopieraktivität können Sie Dateien aus einem lokalen Dateisystem \(Windows-/Linux-Netzwerkfreigaben oder lokaler Windows-Host\) in ein Azure-Blob kopieren. Der Host kann entweder ein Windows- oder Linux-Host sein, für den Samba konfiguriert ist. Das Datenverwaltungsgateway muss auf einem Windows-Computer installiert werden, der eine Verbindung mit dem Host herstellen kann.
 
 ### Annahmen
 Bei diesem Beispiel wird Folgendes vorausgesetzt:
 
 - **Host** – Name des Servers, auf dem das Dateisystem gehostet wird: **\\contoso**.
-- **Ordner** – Name des Ordners mit den Eingabedateien: \*\*"marketingcampaign\\regionaldata\\{slice}". Hier sind Dateien in einem Ordner mit dem Namen "{slice}" aufgeteilt, wie z. B. 2014121112 (2014, 12. Monat, 11. Tag , 12. Stunde).
+- **Ordner** – Name des Ordners mit den Eingabedateien: "marketingcampaign\\regionaldata\\{slice}". Hier sind Dateien in einem Ordner mit dem Namen "{slice}" aufgeteilt, wie z. B. 2014121112 \(2014, 12. Monat, 11. Tag , 12. Stunde\).
 
 ### Erstellen eines mit dem lokalen Dateisystem verknüpften Diensts
 Im folgenden Beispiel kann JSON zum Erstellen eines verknüpften Diensts namens **FolderDataStore** vom Typ **OnPremisesFileServer** verwendet werden.
@@ -205,7 +203,7 @@ Im folgenden Beispiel kann JSON zum Erstellen eines verknüpften Diensts namens 
 	  }
 	}
 
-> [AZURE.NOTE]Denken Sie daran, für Host- und Ordnernamen in JSON-Dateien das Escapezeichen "\" zu verwenden. Für **\\Contoso** verwenden Sie **\\\\Contoso**.
+> [AZURE.NOTE]Denken Sie daran, für Host- und Ordnernamen in JSON-Dateien das Escapezeichen "\\" zu verwenden. Für **\\Contoso** verwenden Sie **\\\\Contoso**.
 
 Unter [Mit dem lokalen Dateisystem verknüpfter Dienst](https://msdn.microsoft.com/library/dn930836.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren eines mit dem lokalen Dateisystem verknüpften Diensts.
 
@@ -281,7 +279,7 @@ Das folgende JSON-Skript definiert die Ausgabetabelle **AzureBlobDest**, die auf
 	  }
 	}
 
-Unter [Eigenschaften des Azure-Blob-Typs](https://msdn.microsoft.com/library/mt185722.aspx#AzureBlob) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
+Unter [Eigenschaften des Azure-Blobtyps](https://msdn.microsoft.com/library/mt185722.aspx#AzureBlob) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
 
 ### Erstellen der Pipeline
 Die folgende JSON-Pipeline definiert eine Pipeline mit einer Kopieraktivität, die Daten aus dem lokalen Dateisystem in das Azure-Ziel-Blob kopiert.
@@ -336,7 +334,7 @@ Beachten Sie, dass nur **folderPath** im JSON-Beispiel angegeben ist.
 	}
  
 #### Kopieren aller CSV-Dateien in einem bestimmten Ordner
-Beachten Sie, dass **fileFilter** auf ***\*.csv** festgelegt ist.
+Beachten Sie, dass **fileFilter** auf ****.csv** festgelegt ist.
 
     "typeProperties": {
         "folderPath": "marketingcampaign\\regionaldata\\na",
@@ -434,7 +432,7 @@ Das folgende JSON-Skript definiert die Ausgabetabelle **MyAzureBlob**, die auf d
 	  }
 	}
 
-Unter [Eigenschaften des Azure-Blob-Typs](https://msdn.microsoft.com/library/mt185722.aspx#AzureBlob) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
+Unter [Eigenschaften des Azure-Blobtyps](https://msdn.microsoft.com/library/mt185722.aspx#AzureBlob) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Tabelle, die auf ein Azure-Blob verweist.
 
 ### Erstellen der Pipeline
 Die folgende Beispielpipeline enthält eine Kopieraktivität, die Daten aus einer Oracle-Datenbanktabelle in ein Azure-Speicher-Blob kopiert.
@@ -460,7 +458,7 @@ Die folgende Beispielpipeline enthält eine Kopieraktivität, die Daten aus eine
 	        "typeProperties": {
 	          "source": {
 	            "type": "OracleSource",
-	            "oracleReaderQuery": "$$Text.Format('select * from LOG where "Timestamp" >= to_date(\\'{0:yyyy-MM-dd}\\', \\'YYYY-MM-DD\\') AND "Timestamp" < to_date(\\'{1:yyyy-MM-dd}\\', \\'YYYY-MM-DD\\')', WindowStart, WindowEnd)"
+	            "oracleReaderQuery": "$$Text.Format('select * from LOG where \"Timestamp\" >= to_date(\\'{0:yyyy-MM-dd}\\', \\'YYYY-MM-DD\\') AND \"Timestamp\" < to_date(\\'{1:yyyy-MM-dd}\\', \\'YYYY-MM-DD\\')', WindowStart, WindowEnd)"
 	          },
 	          "sink": {
 	            "type": "BlobSink"
@@ -480,14 +478,11 @@ Die folgende Beispielpipeline enthält eine Kopieraktivität, die Daten aus eine
 
 Unter [Pipelines und Aktivitäten](https://msdn.microsoft.com/library/dn834988.aspx) finden Sie ausführliche Informationen zu JSON-Elementen zum Definieren einer Data Factory-Pipeline. Unter [Unterstützte Quellen und Senken](https://msdn.microsoft.com/library/dn894007.aspx) finden Sie Eigenschaften von "OracleSource" und "BlobSink".
 
-## Siehe auch
+## Weitere Informationen
 
-- [Kopieren von Daten mit Azure Data Factory][adf-copyactivity]
 - [Kopieraktivität: Referenz zur JSON-Skripterstellung](https://msdn.microsoft.com/library/dn835035.aspx)
 - [Video: Einführung in die Kopieraktivität mit Azure Data Factory][copy-activity-video]
 
-
-[adf-copyactivity]: data-factory-copy-activity.md
 [copy-activity-video]: http://azure.microsoft.com/documentation/videos/introducing-azure-data-factory-copy-activity/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

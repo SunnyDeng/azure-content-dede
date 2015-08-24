@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="07/17/2015"
+   ms.date="08/11/2015"
    ms.author="v-sharos@microsoft.com"/>
 
 # Verwenden des StorSimple Manager-Diensts, um StorSimple-Kennwörter zu ändern
@@ -26,7 +26,7 @@ Die Verwaltungsportalseite **Konfigurieren** enthält alle Geräteparameter, die
 
 Der StorSimple-Momentaufnahme-Manager befindet sich auf dem Windows-Host und ermöglicht Administratoren die Verwaltung der Sicherungen Ihres StorSimple-Geräts in Form von lokalen und Cloud-Momentaufnahmen.
 
-Beim Konfigurieren eines Geräts im StorSimple Snapshot Manager werden Sie aufgefordert, zur Authentifizierung des Speichergeräts die IP-Adresse und das Kennwort des Geräts anzugeben. Dieses Kennwort wird zunächst über die Windows PowerShell-Benutzeroberfläche konfiguriert. Weitere Informationen finden Sie unter [Schritt 3: Konfigurieren und Registrieren des Geräts über Windows PowerShell für StorSimple](storsimple-deployment-walkthrough.md#to-configure-and-register-the-device) in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md).
+Beim Konfigurieren eines Geräts im StorSimple Snapshot Manager werden Sie aufgefordert, zur Authentifizierung des Speichergeräts die IP-Adresse und das Kennwort des Geräts anzugeben. Dieses Kennwort wird zunächst über die Windows PowerShell-Benutzeroberfläche konfiguriert. Weitere Informationen finden Sie unter [Schritt 3: Konfigurieren und Registrieren des Geräts über Windows PowerShell für StorSimple](storsimple-deployment-walkthrough.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md).
 
 Das Kennwort, das zuerst über die Windows PowerShell-Schnittstelle während der Registrierung festgelegt wurde, kann dann über das Verwaltungsportal geändert werden. Führen Sie die folgenden Schritte aus, um das Kennwort für StorSimple Snapshot Manager ändern.
 
@@ -44,7 +44,7 @@ Das Kennwort für StorSimple Snapshot Manager sollte jetzt aktualisiert sein.
  
 ## Ändern des Geräteadministratorkennworts
 
-Wenn Sie über die Windows PowerShell-Benutzeroberfläche auf das StorSimple-Gerät zugreifen, müssen Sie ein Geräteadministratorkennwort eingeben. Wenn das erste StorSimple-Gerät mit einem Dienst registriert ist, ist das Standardkennwort für diese Schnittstelle gleich *Kennwort1*. Für die Sicherheit Ihrer Daten müssen Sie dieses Kennwort am Ende des Registrierungsprozesses ändern. Sie können den Registrierungsprozess nicht beenden, ohne dieses Kennwort geändert zu haben. Weitere Informationen finden Sie unter [Schritt 3: Konfigurieren und Registrieren des Geräts über Windows PowerShell für StorSimple](storsimple-deployment-walkthrough.md#to-configure-and-register-the-device) in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md).
+Wenn Sie über die Windows PowerShell-Benutzeroberfläche auf das StorSimple-Gerät zugreifen, müssen Sie ein Geräteadministratorkennwort eingeben. Wenn das erste StorSimple-Gerät mit einem Dienst registriert ist, ist das Standardkennwort für diese Schnittstelle gleich *Kennwort1*. Für die Sicherheit Ihrer Daten müssen Sie dieses Kennwort am Ende des Registrierungsprozesses ändern. Sie können den Registrierungsprozess nicht beenden, ohne dieses Kennwort geändert zu haben. Weitere Informationen finden Sie unter [Schritt 3: Konfigurieren und Registrieren des Geräts über Windows PowerShell für StorSimple](storsimple-deployment-walkthrough.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md).
 
 Das Kennwort, das zuerst über die Windows PowerShell-Schnittstelle während der Registrierung festgelegt wurde, kann dann über das Verwaltungsportal geändert werden. Führen Sie die folgenden Schritte aus, um das Geräteadministratorkennwort zu ändern.
 
@@ -66,4 +66,4 @@ Das Geräteadministratorkennwort wurde jetzt aktualisiert. Sie können dieses ge
 
 [Erfahren Sie mehr über das Ändern Ihrer Gerätekonfiguration](storsimple-modify-device-config.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

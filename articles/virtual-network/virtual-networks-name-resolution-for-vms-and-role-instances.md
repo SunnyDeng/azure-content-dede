@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/30/2015"
+   ms.date="08/10/2015"
    ms.author="joaoma" />
 
 # Namensauflösung für virtuelle Computer und Rolleninstanzen
@@ -21,9 +21,9 @@ Abhängig davon, wie Sie Azure zum Hosten von IaaS, PaaS und Hybridlösungen ver
 
 Wenn in Azure gehostete Rolleninstanzen und virtuelle Computer Hostnamen und Domänennamen in interne IP-Adressen auflösen müssen, können sie eine dieser beiden Methoden verwenden:
 
-- [Von Azure bereitgestellte Namensauflösung](azure-provided-name-resolution)
+- [Von Azure bereitgestellte Namensauflösung](#azure-provided-name-resolution)
 
-- [Namensauflösung mithilfe eines eigenen DNS-Servers](name-resolution-using-your-own-DNS-server)
+- [Namensauflösung mithilfe eines eigenen DNS-Servers](#name-resolution-using-your-own-dns-server)
 
 Welche Art der Namensauflösung Sie verwenden, hängt davon ab, wie die virtuellen Computer und Rolleninstanzen innerhalb Ihres Clouddiensts und mit anderen Clouddiensten kommunizieren müssen.
 
@@ -36,7 +36,7 @@ Welche Art der Namensauflösung Sie verwenden, hängt davon ab, wie die virtuell
 | Namensauflösung zwischen virtuellen Computern und Rolleninstanzen in unterschiedlichen virtuellen Netzwerken | Namensauflösung mithilfe eines eigenen DNS-Servers | – [Namensauflösung mithilfe eines eigenen DNS-Servers](#name-resolution-using-your-own-dns-server) – [Anforderungen für DNS-Server](#dns-server-requirements) |
 | Standortübergreifend: Namensauflösung zwischen Rolleninstanzen oder virtuellen Computern in Azure und lokalen Computern | Namensauflösung mithilfe eines eigenen DNS-Servers | – [Namensauflösung mithilfe eines eigenen DNS-Servers](#name-resolution-using-your-own-dns-server) – [Anforderungen für DNS-Server](#dns-server-requirements) |
 | Reverse-Lookup von internen IP-Adressen | Namensauflösung mithilfe eines eigenen DNS-Servers | – [Namensauflösung mithilfe eines eigenen DNS-Servers](#name-resolution-using-your-own-dns-server) – [Anforderungen für DNS-Server](#dns-server-requirements) |
-| Namensauflösung für benutzerdefinierte Domänen (z. B. Active Directory-Domänen, von Ihnen registrierte Domänen) | Namensauflösung mithilfe eines eigenen DNS-Servers | – [Namensauflösung mithilfe eines eigenen DNS-Servers](#name-resolution-using-your-own-dns-server) – [Anforderungen für DNS-Server](#dns-server-requirements) |
+| Namensauflösung für benutzerdefinierte Domänen \(z. B. Active Directory-Domänen, von Ihnen registrierte Domänen\) | Namensauflösung mithilfe eines eigenen DNS-Servers | – [Namensauflösung mithilfe eines eigenen DNS-Servers](#name-resolution-using-your-own-dns-server) – [Anforderungen für DNS-Server](#dns-server-requirements) |
 | Namensauflösung zwischen Rolleninstanzen in unterschiedlichen Clouddiensten, nicht in einem virtuellen Netzwerk | Nicht zutreffend Die Konnektivität zwischen virtuellen Computern und Rolleninstanzen in verschiedenen Clouddiensten wird außerhalb eines virtuellen Netzwerks nicht unterstützt. | Nicht zutreffend |
 
 > [AZURE.NOTE]Die Namensauflösung zwischen Computern im Internet und Ihren öffentlichen Endpunkten wird automatisch von Azure bereitgestellt und erfordert keine Konfiguration.
@@ -75,9 +75,9 @@ Zusammen mit der Auflösung für öffentliche Internetdomänen bietet Azure die 
 
 - Sie können keine eigenen Einträge im von Azure bereitgestellten DNS manuell registrieren.
 
-- WINS und NetBIOS werden nicht unterstützt. (Sie können Ihre virtuellen Computer nicht im Netzwerkbrowser in Windows Explorer auflisten.)
+- WINS und NetBIOS werden nicht unterstützt. \(Sie können Ihre virtuellen Computer nicht im Netzwerkbrowser in Windows Explorer auflisten.\)
 
-- Hostnamen müssen DNS-kompatibel sein. (Es dürfen nur 0-9, a-Z und "-" verwendet werden, und sie dürfen nicht mit "-" beginnen. Siehe RFC 3696 Abschnitt 2).
+- Hostnamen müssen DNS-kompatibel sein. \(Es dürfen nur 0-9, a-Z und "-" verwendet werden, und sie dürfen nicht mit "-" beginnen. Siehe RFC 3696 Abschnitt 2\).
 
 - Der DNS-Anfragedatenverkehr wird pro virtuellem Computer gedrosselt. Wenn Ihre Anwendung häufige DNS-Abfragen für mehrere Zielnamen ausführt, kann es bei einigen Abfragen zu Zeitüberschreitungen kommen. Um dies zu vermeiden, wird die Verwendung der clientseitigen Zwischenspeicherung empfohlen.
 
@@ -89,26 +89,26 @@ Wenn Ihre Anforderungen an die Namensauflösung über die von Azure bereitgestel
 
 ## Anforderungen für DNS-Server
 
-Wenn Sie planen, eine nicht von Azure bereitgestellte Namensauflösung zu verwenden, muss der von Ihnen angegebene DNS-Server Folgendes unterstützen: Der DNS-Server muss die dynamische DNS-Registrierung über dynamisches DNS (DDNS) akzeptieren.
+Wenn Sie planen, eine nicht von Azure bereitgestellte Namensauflösung zu verwenden, muss der von Ihnen angegebene DNS-Server Folgendes unterstützen: Der DNS-Server muss die dynamische DNS-Registrierung über dynamisches DNS \(DDNS\) akzeptieren.
 
 - Beim DNS-Server muss der Aufräumvorgang für Datensätze deaktiviert sein. Für Azure-IP-Adressen gilt eine lange Leasedauer, was dazu führen kann, dass Datensätze auf dem DNS-Server während des Aufräumvorgangs entfernt werden.
 
 - Bei dem DNS-Server muss die Rekursion aktiviert werden, um die Auflösung von externen Domänennamen zu ermöglichen.
 
-- Auf den DNS-Server muss von den Clients, die eine Namensauflösung anfordern, und den Diensten und virtuellen Computern, die ihre Namen registrieren, zugegriffen werden können (über TCP/UDP-Port 53).
+- Auf den DNS-Server muss von den Clients, die eine Namensauflösung anfordern, und den Diensten und virtuellen Computern, die ihre Namen registrieren, zugegriffen werden können \(über TCP/UDP-Port 53\).
 
 - Es wird außerdem empfohlen, den DNS-Server gegenüber einem Zugriff aus dem Internet zu sichern, da viele Bots nach offenen rekursiven DNS-Resolvern suchen.
 
 
 ## Angeben von DNS-Servern
 
-Sie können mehrere DNS-Server angeben, die von Ihren virtuellen Computern und Rolleninstanzen verwendet werden. DNS-Server werden dabei jedoch in der Reihenfolge verwendet, in der sie zum Failover angegeben sind (im Gegensatz zu Roundrobin). Für jede DNS-Abfrage verwendet der Client zunächst den bevorzugten DNS-Server und verwendet die alternativen Server nur dann, wenn der bevorzugte Server nicht reagiert. Stellen Sie daher sicher, dass die DNS-Server in der richtigen Reihenfolge für Ihre Umgebung aufgeführt werden.
+Sie können mehrere DNS-Server angeben, die von Ihren virtuellen Computern und Rolleninstanzen verwendet werden. DNS-Server werden dabei jedoch in der Reihenfolge verwendet, in der sie zum Failover angegeben sind \(im Gegensatz zu Roundrobin\). Für jede DNS-Abfrage verwendet der Client zunächst den bevorzugten DNS-Server und verwendet die alternativen Server nur dann, wenn der bevorzugte Server nicht reagiert. Stellen Sie daher sicher, dass die DNS-Server in der richtigen Reihenfolge für Ihre Umgebung aufgeführt werden.
 
 > [AZURE.NOTE]Wenn Sie die DNS-Einstellungen in einer Netzwerkkonfigurationsdatei für ein virtuelles Netzwerk ändern, das bereits bereitgestellt wurde, müssen Sie alle virtuellen Computer neu starten, damit die Änderungen wirksam werden.
 
 ### Angeben eines DNS-Servers über das Verwaltungsportal
 
-Beim Erstellen des virtuellen Netzwerks über das Verwaltungsportal können Sie die IP-Adresse und den Namen des DNS-Servers (oder der Server) angeben, die Sie verwenden möchten. Nach dem Erstellen des virtuellen Netzwerks werden die virtuellen Computer und Rolleninstanzen, die Sie im virtuellen Netzwerk bereitstellen, automatisch mit den angegebenen DNS-Einstellungen konfiguriert, es sei denn, Sie geben an, welche DNS-Server für die Bereitstellung verwendet werden sollen. Weitere Informationen zum Konfigurieren von Einstellungen für Azure Virtual Network finden Sie unter [Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal](https://msdn.microsoft.com/library/azure/jj156074.aspx).
+Beim Erstellen des virtuellen Netzwerks über das Verwaltungsportal können Sie die IP-Adresse und den Namen des DNS-Servers \(oder der Server\) angeben, die Sie verwenden möchten. Nach dem Erstellen des virtuellen Netzwerks werden die virtuellen Computer und Rolleninstanzen, die Sie im virtuellen Netzwerk bereitstellen, automatisch mit den angegebenen DNS-Einstellungen konfiguriert, es sei denn, Sie geben an, welche DNS-Server für die Bereitstellung verwendet werden sollen. Weitere Informationen zum Konfigurieren von Einstellungen für Azure Virtual Network finden Sie unter [Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal](virtual-networks-settings.md).
 
 > [AZURE.NOTE]Sie können maximal 9 DNS-Server verwenden.
 
@@ -123,8 +123,14 @@ Die Dienstkonfigurationsdatei wird für jeden Clouddienst erstellt, den Sie in A
 > [AZURE.NOTE]Einstellungen in der Dienstkonfigurationsdatei überschreiben die Einstellungen in der Netzwerkkonfigurationsdatei. Wenn z. B. ein virtueller Computer zu einem Clouddienst hinzugefügt wird, der Teil eines virtuellen Netzwerks ist, und sowohl die Netzwerkkonfigurationsdatei als auch die Dienstkonfigurationsdatei DNS-Einstellungen enthält, werden die DNS-Einstellungen in der Dienstkonfigurationsdatei auf den virtuellen Computer angewendet.
 
 
-## Siehe auch
+## Nächste Schritte
 
-[Azure-Dienstkonfigurationsschema](https://msdn.microsoft.com/library/azure/ee758710)[Konfigurationsschema für virtuelle Azure-Netzwerke](https://msdn.microsoft.com/library/azure/jj157100)[Konfigurieren eines virtuellen Netzwerks im Verwaltungsportal](https://msdn.microsoft.com/library/azure/jj156074.aspx)[Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](https://msdn.microsoft.com/library/azure/jj156097.aspx)[Aufgaben für die Azure Virtual Network-Konfiguration](https://msdn.microsoft.com/library/azure/jj156206.aspx)
+[Azure-Dienstkonfigurationsschema \(.cscfg-Datei\)](https://msdn.microsoft.com/library/azure/ee758710)
 
-<!---HONumber=August15_HO6-->
+[Konfigurationsschema für virtuelle Netzwerke](https://msdn.microsoft.com/library/azure/jj157100)
+
+[Informationen zum Konfigurieren von Einstellungen für virtuelle Netzwerke im Verwaltungsportal](virtual-networks-settings.md)
+
+[Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md)
+
+<!---HONumber=August15_HO7-->

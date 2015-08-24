@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen Anwendung (Xamarin.Android) – Azure Mobile Services" 
+	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (Xamarin.Android) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Daten von Ihrer Azure Mobile Services Xamarin.Android-App speichern und darauf zugreifen." 
 	documentationCenter="xamarin" 
 	authors="ggailey777" 
@@ -283,4 +283,4 @@ Wenn Sie die Datenreihe abgeschlossen haben, können Sie die folgenden weiteren 
 [abgeschlossene Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331302
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="08/12/2015" 
 	ms.author="awills"/>
  
 # Was ist Application Insights?
@@ -31,7 +31,7 @@ Er ist für das Entwicklungsteam vorgesehen. Damit können Sie folgende Aktionen
  *  Metriken zur Diagnose von Leistungsproblemen, z. B. Reaktionszeiten, CPU-Auslastung, Nachverfolgung von Abhängigkeiten.
  *  Verfügbarkeitstests für Web-Apps.
  *  Berichte und Warnungen zu Abstürzen und Ausnahmen.
- *  Leistungsstarke Suche für Diagnoseprotokolle (einschließlich Protokollablaufverfolgungen aus Ihren bevorzugten Protokollierungsframeworks).
+ *  Leistungsstarke Suche für Diagnoseprotokolle \(einschließlich Protokollablaufverfolgungen aus Ihren bevorzugten Protokollierungsframeworks\).
 
 Das SDK für jede Plattform umfasst eine Reihe von Modulen, die die Anwendung ohne Konfigurationsaufwand überwachen. Darüber hinaus können Sie Ihre eigene Telemetrie für detailliertere und besser abgestimmte Analysen codieren.
 
@@ -103,17 +103,19 @@ Die Auswirkungen auf die Leistung sind sehr gering. Aufrufe werden nicht blockie
 
 Wählen Sie für weitere Details Ihren App-Typ unter "Erste Schritte" in der Navigationsleiste links auf der Seite aus.
 
-## Beispiele
+## Code
 
 
 [Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
+
+[SDK Labs](https://www.myget.org/gallery/applicationinsights-sdk-labs) – NuGet-Pakete, die Sie als Ergänzungen des Application Insights SDK installieren und deinstallieren können. Probieren Sie sie aus, und geben Sie uns Feedback!
 
 
 ## Support und Feedback
 
 * Fragen und Probleme:
  * [Problembehandlung][qna]
- * [MSDN-Forum](https://social.msdn.microsoft.com/Forums/vstudio/de-de/home?forum=ApplicationInsights)
+ * [MSDN-Forum](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)
  * [StackOverflow](http://stackoverflow.com/questions/tagged/ms-application-insights)
 * Fehler:
  * [Kontakt](https://connect.microsoft.com/VisualStudio/Feedback/LoadSubmitFeedbackForm?FormID=6076)
@@ -150,4 +152,4 @@ Wählen Sie für weitere Details Ihren App-Typ unter "Erste Schritte" in der Nav
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

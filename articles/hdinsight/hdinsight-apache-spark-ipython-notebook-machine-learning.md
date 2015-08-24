@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Apache Spark zum Erstellen von Machine Learning-Anwendungen für HDInsight | Azure" 
+	pageTitle="Verwenden von Apache Spark zum Erstellen von Machine Learning-Anwendungen für HDInsight | Microsoft Azure" 
 	description="Schritt-für-Schritt-Anleitung zur Verwendung von Notebooks mit Apache Spark zum Erstellen von Machine Learning-Anwendungen" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -83,11 +83,11 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 		sc = SparkContext(conf=conf)
 		sqlContext = SQLContext(sc)
 
-	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebook-Titel der Status **(Busy)** (Beschäftigt) angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **Python 2**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
+	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebook-Titel der Status **\(Busy\)** \(Beschäftigt\) angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **Python 2**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
 
 	 ![Status eines Jupyter Notebook-Auftrags](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/HDI.Spark.Jupyter.Job.Status.png "Status eines Jupyter Notebook-Auftrags")
  
-4. Sie müssen die Daten (hvac.csv) jetzt laden, analysieren und zum Trainieren des Modells verwenden. Definieren Sie hierzu eine Funktion, mit der überprüft wird, ob die Ist-Temperatur des Gebäudes höher als die Zieltemperatur ist. Wenn die Ist-Temperatur höher ist, wird angegeben, dass es in dem Gebäude zu warm ist (Wert**1,0**). Wenn die Ist-Temperatur niedriger ist, wird angegeben, dass es in dem Gebäude zu kalt ist (Wert **0,0**).
+4. Sie müssen die Daten \(hvac.csv\) jetzt laden, analysieren und zum Trainieren des Modells verwenden. Definieren Sie hierzu eine Funktion, mit der überprüft wird, ob die Ist-Temperatur des Gebäudes höher als die Zieltemperatur ist. Wenn die Ist-Temperatur höher ist, wird angegeben, dass es in dem Gebäude zu warm ist \(Wert**1,0**\). Wenn die Ist-Temperatur niedriger ist, wird angegeben, dass es in dem Gebäude zu kalt ist \(Wert **0,0**\).
 
 	Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABETASTE**.
 
@@ -173,7 +173,7 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 	Beachten Sie, dass die Ist-Temperatur unterhalb der Zieltemperatur liegt. Im Gebäude ist es also zu kalt. In der Schulungsausgabe lautet der Wert **label** in der ersten Zeile daher **0,0**. Dies bedeutet, dass es im Gebäude nicht zu warm ist.
 
-8.  Bereiten Sie ein Dataset vor, für das das Schulungsmodell ausgeführt werden kann. Hierzu übergeben wir eine System-ID und ein Systemalter (in der Schulungsausgabe als **SystemInfo** bezeichnet). Mit dem Modell wird dann vorhergesagt, ob es im Gebäude mit der jeweiligen System-ID und dem Systemalter wärmer (1,0) oder kälter (0,0) wäre.
+8.  Bereiten Sie ein Dataset vor, für das das Schulungsmodell ausgeführt werden kann. Hierzu übergeben wir eine System-ID und ein Systemalter \(in der Schulungsausgabe als **SystemInfo** bezeichnet\). Mit dem Modell wird dann vorhergesagt, ob es im Gebäude mit der jeweiligen System-ID und dem Systemalter wärmer \(1,0\) oder kälter \(0,0\) wäre.
 
 	Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABETASTE**.
 		
@@ -204,7 +204,7 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 		Row(SystemInfo=u'17 10', prediction=1.0, probability=DenseVector([0.4925, 0.5075]))
 		Row(SystemInfo=u'7 22', prediction=0.0, probability=DenseVector([0.5015, 0.4985]))
 
-	In der ersten Zeile der Vorhersage können Sie sehen, dass das Gebäude für ein HVAC-System mit ID 20 und einem Systemalter von 25 Jahren zu warm ist (**prediction=1.0**). Der erste Wert für DenseVector (0.49999) entspricht der Vorhersage 0,0, und der zweite Wert (0.5001) entspricht der Vorhersage 1,0. Obwohl der zweite Wert in der Ausgabe nur unwesentlich höher ist, zeigt das Modell **prediction=1.0** an.
+	In der ersten Zeile der Vorhersage können Sie sehen, dass das Gebäude für ein HVAC-System mit ID 20 und einem Systemalter von 25 Jahren zu warm ist \(**prediction=1.0**\). Der erste Wert für DenseVector \(0.49999\) entspricht der Vorhersage 0,0, und der zweite Wert \(0.5001\) entspricht der Vorhersage 1,0. Obwohl der zweite Wert in der Ausgabe nur unwesentlich höher ist, zeigt das Modell **prediction=1.0** an.
 
 11. Sie können das Notebook jetzt beenden, indem Sie den Kernel neu starten. Klicken Sie in der oberen Menüleiste auf **Kernel** und **Neu starten**, und klicken Sie in der Aufforderung dann noch einmal auf **Neu starten**.
 
@@ -240,4 +240,4 @@ Apache Spark-Cluster unter HDInsight enthalten Anaconda-Bibliotheken. Dazu gehö
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

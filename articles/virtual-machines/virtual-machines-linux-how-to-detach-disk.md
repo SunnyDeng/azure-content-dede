@@ -13,16 +13,18 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/27/2015"
+	ms.date="08/11/2015"
 	ms.author="dkshir"/>
 
 # Trennen eines Datenträgers von einem virtuellen Linux-Computer
 
 
-[AZURE.INCLUDE [howto-detach-disk-windows-linux](../../includes/howto-detach-disk-windows-linux.md)]
+[AZURE.INCLUDE [howto-detach-disk-windows-linux](../../includes/howto-detach-disk-linux.md)]
 
 ## Zusätzliche Ressourcen
 
 [Vorgehensweise: Anfügen eines Datenträgers an einen virtuellen Linux-Computer](virtual-machines-linux-how-to-attach-disk.md)
 
-<!---HONumber=August15_HO6-->
+[Verwenden der Azure-Befehlszeilenschnittstelle mit Azure Service Management](virtual-machines-command-line-tools.md)
+
+<!---HONumber=August15_HO7-->

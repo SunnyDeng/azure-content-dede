@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/19/2015"
+   ms.date="08/11/2015"
    ms.author="bwren" />
 
 # Starten eines Runbooks in Azure Automation
@@ -232,4 +232,4 @@ Wenn der Benutzernamen in den Anmeldeinformationen *jsmith* lautet, erhalten Sie
 
 - [Starten eines Runbooks aus einem anderen Runbook](http://msdn.microsoft.com/library/azure/dn857355.aspx) 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

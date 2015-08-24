@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-linux"
 	ms.workload="infrastructure-services"
-	ms.date="05/08/2015"
+	ms.date="08/07/2015"
 	ms.author="rasquill"/>
 
 
@@ -112,12 +112,12 @@ CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalieru
 17. [Gewusst wie: Installieren des Azure Linux-Agents](virtual-machines-linux-agent-user-guide.md)
 18. [Marketplace: Kaspersky AV für Linux-Dateiserver](http://azure.microsoft.com/marketplace/partners/kaspersky-lab/kav-for-lfs-kav-for-lfs/)
 
-## Die Grundlagen
+## Grundlagen
 
-1. [Grundlagen: Installieren der Azure-Befehlszeilenschnittstelle (Azure-CLI)](../xplat-cli.md)
+1. [Grundlagen: Azure-Befehlszeilenschnittstelle (Azure-CLI)](../xplat-cli.md)
 4. [Grundlagen: Zertifikatverwendung und -verwaltung](http://msdn.microsoft.com/library/azure/gg981929.aspx)
 5. [Grundlagen: Auswählen von Linux-Benutzernamen](virtual-machines-linux-usernames.md)
-6. [Grundlagen: Anmelden bei einer Linux-VM mit dem Azure-Portal](virtual-machines-linux-how-to-log-on.md)
+6. [Grundlagen: Anmelden bei einem virtuellen Linux-Computer über das Azure-Portal](virtual-machines-linux-how-to-log-on.md)
 7. [Grundlagen: SSH](virtual-machines-linux-use-ssh-key.md)
 8. [Grundlagen: Zurücksetzen von Kennwörtern oder SSH-Eigenschaften für Linux](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md)
 9. [Grundlagen: Verwenden von Root](virtual-machines-linux-use-root-privileges.md)
@@ -127,9 +127,9 @@ CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalieru
 13. [Grundlagen: RAID](virtual-machines-linux-configure-raid.md)
 14. [Grundlagen: Erfassen eines virtuellen Linux-Computers zum Erstellen einer Vorlage](virtual-machines-linux-capture-image.md)
 15. [Grundlagen: Der Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md)
-16. [Grundlagen: Azure-VM-Erweiterungen und Features](http://msdn.microsoft.com/library/azure/dn606311.aspx)
-17. [Grundlagen: Einfügen benutzerdefinierter Daten in einen virtuellen Computer zur Verwendung mit Cloud-init](virtual-machines-how-to-inject-custom-data.md)
-18. [Blog zu den Grundlagen: Erstellen von Linux auf Azure in 12 Schritten für Hochverfügbarkeit](http://blogs.technet.com/b/keithmayer/archive/2014/10/03/quick-start-guide-building-highly-available-linux-servers-in-the-cloud-on-microsoft-azure.aspx)
+16. [Grundlagen: Azure-VM-Erweiterungen und -Features](http://msdn.microsoft.com/library/azure/dn606311.aspx)
+17. [Grundlagen: Einfügen benutzerdefinierter Daten in einen virtuellen Computer zur Verwendung mit "Cloud-init"](virtual-machines-how-to-inject-custom-data.md)
+18. [Blog zu den Grundlagen: Erstellen von Linux auf Azure in zwölf Schritten für Hochverfügbarkeit](http://blogs.technet.com/b/keithmayer/archive/2014/10/03/quick-start-guide-building-highly-available-linux-servers-in-the-cloud-on-microsoft-azure.aspx)
 19. [Blog zu den Grundlagen: Automatisieren der Bereitstellung von Linux auf Azure mit der Azure-CLI, node.js, jhawk](http://blogs.technet.com/b/keithmayer/archive/2014/11/24/step-by-step-automated-provisioning-for-linux-in-the-cloud-with-microsoft-azure-xplat-cli-json-and-node-js-part-1.aspx)
 19. [Erstellen einer Multi-VM-Bereitstellung über die Azure-Befehlszeilenschnittstelle](virtual-machines-create-multi-vm-deployment-../xplat-cli.md)
 20. [Grundlagen: Die Docker-VM-Erweiterung von Azure](virtual-machines-docker-vm-extension.md)
@@ -240,6 +240,15 @@ Authentifizierung und Verschlüsselung sind wichtige Themen in der Software-Entw
 8. [Grundlagen: Zurücksetzen von Kennwörtern oder SSH-Eigenschaften für Linux](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md)
 9. [Grundlagen: Verwenden von Root](virtual-machines-linux-use-root-privileges.md)
 
+## Linux HPC (High Performance Computing)
+
+Führen Sie HPC-Workloads auf Linux-VM-Clustern aus, die mit Open-Source-Tools oder mit dem Microsoft HPC Pack erstellt wurden.
+
+1.	[Schnellstartvorlage: Einrichten eines SLURM-Clusters](http://azure.microsoft.com/documentation/templates/slurm/) und [Blogbeitrag](http://blogs.technet.com/b/windowshpc/archive/2015/06/06/deploy-a-slurm-cluster-on-azure.aspx)
+2.	[Schnellstartvorlage: Einrichten eines Torque-Clusters](http://azure.microsoft.com/documentation/templates/torque-cluster/)
+3.	[Tutorial: Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster-hpcpack.md)
+4.	[Tutorial: Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](virtual-machines-linux-cluster-rdma.md)
+
 ## DevOps, Verwaltung und Optimierung
 
 Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter [Video: Virtuelle Azure-Computer: Verwenden von Chef, Puppet und Docker für die Verwaltung virtueller Linux-Computer.](http://azure.microsoft.com/blog/2014/12/15/azure-virtual-machines-using-chef-puppet-and-docker-for-managing-linux-vms/). Der Bereich "DevOps, Verwaltung und Optimierung" ist jedoch ziemlich umfangreich und verändert sich sehr schnell. Sie sollten die Liste unten also als Ausgangspunkt betrachten.
@@ -294,6 +303,5 @@ Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter 
 <!--Link references--In actual articles, you only need a single period before the slash. -->
 [How to use docker-machine on Azure]: virtual-machines-docker-machine.md
 [How to use docker with swarm on Azure]: virtual-machines-docker-swarm.md
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

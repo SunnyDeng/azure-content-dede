@@ -7,7 +7,6 @@
 	manager="paulettm" 
 	editor="cgronlun"/>
 
-
 <tags 
 	ms.service="hdinsight" 
 	ms.workload="big-data" 
@@ -19,10 +18,9 @@
 
 
 
+# Entwickeln von C\# Hadoop-Streamingprogrammen für HDInsight
 
-# Entwickeln von C# Hadoop-Streamingprogrammen für HDInsight
-
-Hadoop stellt eine Streaming-API für MapReduce zur Verfügung, mit der Sie Map- und Reduce-Funktionen in anderen Sprache als Java schreiben können. Dieses Lernprogramm begleitet Sie durch die Erstellung eines C#-Wortzählprogramms, mit dem Sie die Häufigkeit bestimmter Wörter in den angegebenen Eingangsdaten zählen. Die folgende Abbildung veranschaulicht die Wortzählung im MapReduce-Framework:
+Hadoop stellt eine Streaming-API für MapReduce zur Verfügung, mit der Sie Map- und Reduce-Funktionen in anderen Sprache als Java schreiben können. Dieses Lernprogramm begleitet Sie durch die Erstellung eines C\#-Wortzählprogramms, mit dem Sie die Häufigkeit bestimmter Wörter in den angegebenen Eingangsdaten zählen. Die folgende Abbildung veranschaulicht die Wortzählung im MapReduce-Framework:
 
 ![HDI.Wortzähldiagramm][image-hdi-wordcountdiagram]
 
@@ -30,7 +28,7 @@ Hadoop stellt eine Streaming-API für MapReduce zur Verfügung, mit der Sie Map-
 
 Dieses Lernprogramm beschreibt Folgendes:
 
-- Entwickeln und Testen eines Hadoop-Streaming-MapReduce-Programms mit C# im HDInsight-Emulator für Azure
+- Entwickeln und Testen eines Hadoop-Streaming-MapReduce-Programms mit C\# im HDInsight-Emulator für Azure
 - Ausführen desselben MapReduce-Jobs in Azure HDInsight 
 - Abrufen der Ergebnisse des MapReduce-Jobs
 
@@ -43,23 +41,23 @@ Bevor Sie mit diesem Lernprogramm beginnen, benötigten Sie Folgendes:
 - Schließen Sie ein Azure-Abonnement ab. Informationen dazu finden Sie unter [Erste Schritte mit Azure][azure-purchase-options], [Spezielle Angebote][azure-member-offers] oder [Kostenlose einmonatige Testversion][azure-free-trial].
 
 
-##<a name="develop"></a>Entwickeln eines Hadoop-Streamingprogramms zum Zählen von Wörtern in C&#35;
+##<a name="develop"></a>Entwickeln eines Hadoop-Streamingprogramms zum Zählen von Wörtern in C&\#35;
 
-Diese Wortzähllösung besteht aus zwei Konsolenanwendungsprojekten: Mapper und Reducer. Die Anwendung "Mapper" streamt jedes Wort in die Konsole, und die Anwendung "Reducer" zählt die Wörter, die aus einem Dokument gestreamt werden. Sowohl Mapper als auch Reducer lesen Zeichen Zeile für Zeile aus dem Standard-Eingabedatenstrom (stdin) und schreiben in den Standard-Ausgabedatenstrom (stdout).
+Diese Wortzähllösung besteht aus zwei Konsolenanwendungsprojekten: Mapper und Reducer. Die Anwendung "Mapper" streamt jedes Wort in die Konsole, und die Anwendung "Reducer" zählt die Wörter, die aus einem Dokument gestreamt werden. Sowohl Mapper als auch Reducer lesen Zeichen Zeile für Zeile aus dem Standard-Eingabedatenstrom \(stdin\) und schreiben in den Standard-Ausgabedatenstrom \(stdout\).
 
-**So erstellen Sie eine C#-Konsolenanwendung**
+**So erstellen Sie eine C\#-Konsolenanwendung**
 
 1. Öffnen Sie Visual Studio 2013.
 2. Klicken Sie auf **DATEI**, dann auf **Neu** und anschließend auf **Projekt**.
 3. Geben Sie folgende Werte ein bzw. wählen diese aus:
 
-	<table border="1">
-<tr><td>Feld</td><td>Wert</td></tr>
-<tr><td>Vorlage</td><td>Visual C#/Windows-Konsolenanwendung</td></tr>
-<tr><td>Name</td><td>WordCountMapper</td></tr>
-<tr><td>Standort</td><td>C:\Tutorials</td></tr>
-<tr><td>Projektmappenname</td><td>WordCount</td></tr>
-</table>
+Feld|Wert
+---|---
+Vorlage|Visual C\#/Windows-Konsolenanwendung
+Name|WordCountMapper
+Standort|C:\\Tutorials
+Projektmappenname|WordCount
+
 	
 4. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
@@ -73,7 +71,7 @@ Diese Wortzähllösung besteht aus zwei Konsolenanwendungsprojekten: Mapper und 
 
 		using System.IO;
 
-10. Ersetzen Sie die **Main()**-Funktion durch Folgendes:
+10. Ersetzen Sie die **Main\(\)**-Funktion durch Folgendes:
 
 		static void Main(string[] args)
 		{
@@ -102,12 +100,12 @@ Diese Wortzähllösung besteht aus zwei Konsolenanwendungsprojekten: Mapper und 
 1. Klicken Sie in Visual Studio 2013 auf **DATEI**, dann auf **Hinzufügen** und danach auf **Neues Projekt**.
 2. Geben Sie folgende Werte ein bzw. wählen diese aus:
 
-	<table border="1">
-<tr><td>Feld</td><td>Wert</td></tr>
-<tr><td>Vorlage</td><td>Visual C#/Windows-Konsolenanwendung</td></tr>
-<tr><td>Name</td><td>WordCountReducer</td></tr>
-<tr><td>Standort</td><td>C:\Tutorials\WordCount</td></tr>
-</table>
+Feld|Wert
+---|---
+Vorlage|Visual C\#/Windows-Konsolenanwendung
+Name|WordCountReducer
+Standort|C:\\Tutorials\\WordCount
+	
 3. Deaktivieren Sie das Kontrollkästchen **Projektmappenverzeichnis erstellen** und klicken Sie auf **OK**, um das Projekt zu erstellen.
 4. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Program.cs**. Klicken Sie dann auf **Umbenennen**.
 5. Benennen Sie die Datei in **WordCountReducer.cs** um, und drücken Sie dann die **Eingabetaste**.
@@ -117,7 +115,7 @@ Diese Wortzähllösung besteht aus zwei Konsolenanwendungsprojekten: Mapper und 
 
 		using System.IO;
 
-10. Ersetzen Sie die **Main()**-Funktion durch Folgendes:
+10. Ersetzen Sie die **Main\(\)**-Funktion durch Folgendes:
 
 		static void Main(string[] args)
 		{
@@ -165,11 +163,18 @@ Führen Sie die folgenden Schritte aus, um das Programm im HDInsight-Emulator zu
 4. Überprüfen Sie den Jobstatus
 5. Rufen Sie die Jobergebnisse ab
 
-Standardmäßig verwendet der HDInsight-Emulator HDFS (Hadoop Distributed File System) als Dateisystem. Optional können Sie angeben, dass der HDInsight-Emulator einen Azure-Blobspeicher verwenden soll. Informationen dazu finden Sie unter [Erste Schritte mit dem HDInsight-Emulator][hdinsight-emulator-wasb]. In diesem Abschnitt verwenden Sie den HDFS-Befehl **copyFromLocal**, um die Dateien hochzuladen. Im nächsten Abschnitt wird gezeigt, wie Sie Dateien mit Azure PowerShell hochladen. Weitere Methoden finden Sie unter [Hochladen von Daten zu HDInsight][hdinsight-upload-data].
+Standardmäßig verwendet der HDInsight-Emulator HDFS \(Hadoop Distributed File System\) als Dateisystem. Optional können Sie angeben, dass der HDInsight-Emulator einen Azure-Blobspeicher verwenden soll. Informationen dazu finden Sie unter [Erste Schritte mit dem HDInsight-Emulator][hdinsight-emulator-wasb]. In diesem Abschnitt verwenden Sie den HDFS-Befehl **copyFromLocal**, um die Dateien hochzuladen. Im nächsten Abschnitt wird gezeigt, wie Sie Dateien mit Azure PowerShell hochladen. Weitere Methoden finden Sie unter [Hochladen von Daten zu HDInsight][hdinsight-upload-data].
 
 In diesem Lernprogramm wird die folgende Ordnerstruktur verwendet:
 
-<table border="1"> <tr><td>Ordner</td><td>Hinweis</td></tr> <tr><td>\\WordCount</td><td>Der Stammordner des Wortzählungsprojekts. </td></tr> <tr><td>\\WordCount\\Apps</td><td>Der Ordner mit den ausführbaren Dateien für Mapper und Reducer.</td></tr> <tr><td>\\WordCount\\Input</td><td>Der MapReduce-Quelldateiordner.</td></tr> <tr><td>\\WordCount\\Output</td><td>Der MapReduce-Ausgabedateiordner.</td></tr> <tr><td>\\WordCount\\MRStatusOutput</td><td>Der Auftragsausgabeordner.</td></tr> </table></br>
+Ordner|Hinweis
+---|---
+\\WordCount|Der Stammordner für das Wortzählungsprojekt. 
+\\WordCount\\Apps|Der Ordner für die Mapper- und Reducer-Programme.
+\\WordCount\\Input|Der Ordner für die MapReduce-Quelldateien.
+\\WordCount\\Output|Der Ordner für die MapReduce-Ausgabedateien.
+\\WordCount\\MRStatusOutput|Der Ordner für die Jobergebnisse.
+
 
 In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop\_home% verwendet.
 
@@ -188,7 +193,7 @@ In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop\_home% ver
 
 2. Führen Sie den folgenden Befehl aus, um einige Textdateien in den Eingabeordner im HDFS zu kopieren:
 
-		hadoop fs -copyFromLocal %hadoop_home%\share\doc\hadoop\common\*.txt \WordCount\Input
+		hadoop fs -copyFromLocal %hadoop_home%\share\doc\hadoop\common*.txt \WordCount\Input
 
 3. Führen Sie den folgenden Befehl aus, um die hochgeladenen Dateien aufzulisten:
 
@@ -265,7 +270,7 @@ In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop\_home% ver
 
 **So prüfen Sie den Auftragsstatus**
 
-1. Klicken Sie auf dem Desktop auf **Hadoop YARN-Status**, oder öffnen Sie die Adresse \*\***http://localhost:50030/jobtracker.jsp** in einem Browser.
+1. Klicken Sie auf dem Desktop auf **Hadoop YARN-Status**, oder öffnen Sie die Adresse ****http://localhost:50030/jobtracker.jsp** in einem Browser.
 2. Suchen Sie anhand der Auftrags-ID in den Kategorien **WIRD AUSGEFÜHRT** oder **BEENDET** nach dem Auftrag. 
 3. Fehlgeschlagene Jobs finden Sie in der Kategorie **FAILED**. Außerdem können Sie die Jobdetails öffnen, um hilfreiche Debugging-Informationen zu erhalten.
 
@@ -278,7 +283,7 @@ In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop\_home% ver
 		hadoop fs -ls /WordCount/Output/
 		hadoop fs -cat /WordCount/Output/part-00000
 
-	Sie können auch "|more" an das Ende der Befehlszeile anhängen, um eine Seitenansicht zu öffnen.
+	Sie können auch "\|more" an das Ende der Befehlszeile anhängen, um eine Seitenansicht zu öffnen.
 
 ##<a id="upload"></a>Hochladen von Daten in Azure-Blobspeicher
 Azure HDInsight verwendet Azure-Blobspeicher als Standarddateisystem. Sie können ein HDInsight-Cluster für die Verwendung von zusätzlichem Blobspeicher für die Datendateien verwenden. In diesem Abschnitt erstellen Sie ein Azure-Speicherkonto und laden die Datendateien in den Blobspeicher hoch. Als Datendateien werden die .txt-Dateien im Verzeichnis %hadoop\_home%\\share\\doc\\hadoop\\common verwendet.
@@ -554,4 +559,4 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Hadoop-Streaming-MapReduce-Auf
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

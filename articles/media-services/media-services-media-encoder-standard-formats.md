@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 #Media Encoder Standard-Formate und -Codecs
@@ -83,4 +83,4 @@ MPEG2-TS |H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2
 
 [Codieren von On-Demand-Inhalten mit Azure Media Services](media-services-encode-asset.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="StorSimple – Virtuelles Gerät"
+   pageTitle="StorSimple – Virtuelles Gerät | Microsoft Azure"
    description="Beschreibt das Erstellen, Konfigurieren, Bereitstellen und Verwalten von virtuellen StorSimple-Geräten."
    services="storsimple"
    documentationCenter=""
@@ -12,21 +12,21 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/06/2015"
+   ms.date="08/13/2015"
    ms.author="alkohli" />
 
-# StorSimple – Virtuelles Gerät
+# StorSimple – virtuelles Gerät
 
 [AZURE.INCLUDE [storsimple-version-selector-sva](../../includes/storsimple-version-selector-sva.md)]
 
 ##Übersicht
-Das virtuelle StorSimple-Gerät ist eine zusätzliche, in der Microsoft Azure StorSimple-Lösung enthaltene Funktion. Das virtuelle StorSimple-Gerät wird auf einem virtuellen Computer in einem virtuellen Microsoft Azure-Netzwerk ausgeführt und kann zum Sichern und Klonen von Daten von Hosts verwendet werden. In den folgenden Themen erfahren Sie mehr über das Konfigurieren und Verwenden des virtuellen StorSimple-Geräts.
+Das virtuelle StorSimple-Gerät ist eine zusätzliche, in der Microsoft Azure StorSimple-Lösung enthaltene Funktion. Das virtuelle StorSimple-Gerät wird auf einem virtuellen Computer in einem virtuellen Microsoft Azure-Netzwerk ausgeführt und kann zum Sichern und Klonen von Daten von Hosts verwendet werden. In den folgenden Themen dieses Artikels erfahren Sie mehr über das Konfigurieren und Verwenden des virtuellen StorSimple-Geräts.
 
 
 
 - Unterschiede zwischen virtuellem und physischem Gerät
 
-- Sicherheitsüberlegungen für die Verwendung eines virtuellen Geräts
+- Sicherheitsüberlegungen zur Verwendung eines virtuellen Geräts
 
 - Voraussetzungen für das virtuelle Gerät
 
@@ -36,14 +36,12 @@ Das virtuelle StorSimple-Gerät ist eine zusätzliche, in der Microsoft Azure St
 
 - Ausführen eines Failovers auf das virtuelle Gerät
 
-- Herunterfahren oder Löschen virtueller Geräte
+- Herunterfahren oder Löschen des virtuellen Geräts
 
 
 ## Unterschiede zwischen virtuellem und physischem Gerät
 
 Das virtuelle StorSimple-Gerät ist eine reine Softwareversion von StorSimple, die auf einem einzelnen Knoten eines virtuellen Microsoft Azure-Computers ausgeführt wird. Das virtuelle Gerät unterstützt Notfallwiederherstellungsszenarios, in denen das physische Gerät nicht verfügbar ist. Zudem eignet es sich für Cloud-Entwicklungs- und Testszenarios.
-
-### Unterschiede im Vergleich zum physischen Gerät
 
 Im Folgenden werden einige wichtige Unterschiede zwischen virtuellen und physischen StorSimple-Geräten aufgeführt:
 
@@ -71,16 +69,16 @@ In den folgenden Abschnitten wird erläutert, wie Sie das virtuelle StorSimple-G
 
 Bevor Sie das virtuelle Gerät bereitstellen, müssen Sie in Ihrer Umgebung die folgenden Vorbereitungen treffen:
 
-- [Konfigurieren Sie ein virtuelles Netzwerk in Azure](https://msdn.microsoft.com/library/azure/jj156074.aspx) für das virtuelle Gerät.
-- Sie können die von Azure bereitgestellten DNS-Standardserver verwenden, anstatt einen eigenen DNS-Servernamen anzugeben.
+- [Konfigurieren Sie ein virtuelles Netzwerk in Azure](virtual-networks-create-vnet.md) für das virtuelle Gerät.
+- Es empfiehlt sich, die von Azure bereitgestellten DNS-Standardserver zu verwenden, anstatt einen eigenen DNS-Servernamen anzugeben. Wenn Ihr DNS-Servername nicht gültig ist, funktioniert die Erstellung des virtuellen Geräts nicht.
 - Punkt-zu-Standort und Standort-zu-Standort sind optional, aber nicht erforderlich. Sie können diese Optionen gegebenenfalls für erweiterte Szenarios konfigurieren.
 
 >[AZURE.IMPORTANT]**Stellen Sie sicher, dass sich das virtuelle Netzwerk in der gleichen Region befindet, wie die mit dem Gerät zu verwendenden Cloud-Speicherkonten.**
 
-- Erstellen Sie im virtuellen Netzwerk [virtuelle Azure-Computer](https://msdn.microsoft.com/library/azure/jj156003.aspx) (Hostserver). Diese Server müssen die folgenden Anforderungen erfüllen:
+- Sie können [Virtuelle Azure-Computer](https://msdn.microsoft.com/library/azure/jj156003.aspx) (Hostserver) im virtuellen Netzwerk erstellen, die die vom virtuellen Gerät verfügbar gemachten Volumes verwenden können. Diese Server müssen die folgenden Anforderungen erfüllen:
 	- Es muss sich um virtuelle Windows- oder Linux-Computer mit iSCSI-Initiatorsoftware handeln.
 	- Sie müssen im gleichen virtuellen Netzwerk wie das virtuelle Gerät ausgeführt werden.
-	- Das iSCSI-Ziel des virtuellen Geräts muss über die interne IP-Adresse des virtuellen Geräts eine Verbindung herstellen können.
+	- Sie müssen über die interne IP-Adresse des virtuellen Geräts eine Verbindung zum iSCSI-Ziel des virtuellen Geräts herstellen können.
 
 - Stellen Sie sicher, dass die iSCSI-Unterstützung und der Cloud-Datenverkehr im gleichen virtuellen Netzwerk konfiguriert wurden.
 
@@ -89,16 +87,16 @@ Bevor Sie das virtuelle Gerät bereitstellen, müssen Sie in Ihrer Umgebung die 
 Nehmen Sie vor dem Erstellen eines virtuellen Geräts die folgenden Updates für den Azure StorSimple-Dienst vor:
 
 
-- Fügen Sie den virtuellen Computern, die als Hostserver für Ihr virtuelles Gerät fungieren sollen, [Zugriffssteuerungsdatensätze](https://msdn.microsoft.com/library/1747f56e-858a-4cfe-a020-949d7db23b8b#sec02) hinzu.
+- Fügen Sie den virtuellen Computern, die als Hostserver für Ihr virtuelles Gerät fungieren sollen, [Zugriffssteuerungsdatensätze](storsimple-manage-acrs.md) hinzu.
 
-- Sie benötigen Sie ein [Speicherkonto](https://msdn.microsoft.com/library/1747f56e-858a-4cfe-a020-949d7db23b8b#sec01) in derselben Region wie das virtuelle Gerät. Speicherkonten in anderen Regionen können zu Leistungseinbußen führen.
+- Sie benötigen Sie ein [Speicherkonto](storsimple-manage-storage-accounts.md#add-a-storage-account) in derselben Region wie das virtuelle Gerät. Speicherkonten in anderen Regionen können zu Leistungseinbußen führen.
 
 - Stellen Sie sicher, dass zum Erstellen des virtuellen Geräts ein anderes Speicherkonto verwendet wird als für die Daten. Die Verwendung ein und desselben Speicherkontos kann zu Leistungseinbußen führen.
 
 Stellen Sie vorab sicher, dass die folgenden Informationen vorliegen:
 
 
-- Sie verfügen über ein Konto für das Azure-Verwaltungsportal sowie über die Anmeldeinformationen.
+- Sie verfügen über ein Konto für das Azure-Portal sowie die zugehörigen Anmeldeinformationen.
 
 - Sie verfügen über die Anmeldeinformationen für Ihr Azure-Speicherkonto.
 
@@ -109,23 +107,25 @@ Stellen Sie vorab sicher, dass die folgenden Informationen vorliegen:
 
 ## Erstellen und Konfigurieren des virtuellen Geräts
 
-Stellen Sie vor Durchführung dieser Schritte sicher, dass die [Voraussetzungen für das virtuelle Gerät](https://msdn.microsoft.com/library/dn772572.aspx) erfüllt sind.
+Stellen Sie vor Durchführung dieser Schritte sicher, dass die [Voraussetzungen für das virtuelle Gerät](#prerequisites-for-the-virtual-device) erfüllt sind.
 
-Nach Abschluss dieser Schritte können Sie [mit dem virtuellen Gerät arbeiten](https://msdn.microsoft.com/library/dn772527.aspx).
+Nach Abschluss dieser Schritte können Sie [mit dem virtuellen Gerät arbeiten](#work-with-the-storsimple-virtual-device).
 
 ### Erstellen des virtuellen Geräts
 
 Nachdem Sie ein virtuelles Netzwerk erstellt, den StorSimple-Manager-Dienst konfiguriert und das physische StorSimple-Gerät beim Dienst registriert haben, können Sie mithilfe der folgenden Schritte ein virtuelles StorSimple-Gerät erstellen.
 
-Führen Sie die folgenden Schritte durch, um das virtuelle StorSimple-Gerät zu erstellen:
+Führen Sie die folgenden Schritte aus, um das virtuelle StorSimple-Gerät zu erstellen.
 
 
 
-1.  Wechseln Sie im Verwaltungsportal zum **StorSimple-Manager**-Dienst.
+1.  Wechseln Sie im Azure-Portal zum **StorSimple Manager**-Dienst.
 
 - Wechseln Sie zur Seite **Geräte**.
 
 - Geben Sie im Dialogfeld **Virtuelles Gerät erstellen** Folgendes an:
+
+	![StorSimple – virtuelles Gerät erstellen](./media/storsimple-virtual-device/StorSimple_CreateVirtualDevice1.png)
 
 	a. **Name** – ein eindeutiger Name für Ihr virtuelles Gerät.
 
@@ -135,36 +135,48 @@ Führen Sie die folgenden Schritte durch, um das virtuelle StorSimple-Gerät zu 
 
 	d. **Speicherkonto zum Erstellen des virtuellen Geräts** – das Speicherkonto, das bei der Bereitstellung zum Speichern des Images des virtuellen Geräts verwendet wird. Dieses Speicherkonto sollte sich in der gleichen Region wie das virtuelle Gerät und das virtuelle Netzwerk befinden. Es sollte weder vom physischen noch vom virtuellen Gerät zum Speichern von Daten verwendet werden. Hierfür wird standardmäßig ein neues Speicherkonto erstellt. Wenn Sie jedoch bereits über ein hierfür geeignetes Speicherkonto verfügen, können Sie dieses aus der Liste auswählen.
 
-- Klicken Sie auf das Häkchen, um zu bestätigen, dass die auf dem virtuellen Gerät gespeicherten Daten in einem Microsoft-Datencenter gehostet werden. Wenn Sie lediglich ein physisches Gerät verwenden, wird der Verschlüsselungsschlüssel auf Ihrem Gerät beibehalten. Daher kann Microsoft dieses nicht entschlüsseln. Wenn Sie ein virtuelles Gerät verwenden, werden die Ver- und Entschlüsselungsschlüssel in Microsoft Azure gespeichert. Weitere Informationen finden Sie unter [Sicherheitsüberlegungen bei der Verwendung eines virtuellen Geräts](https://msdn.microsoft.com/library/dn772561.aspx).
+- Klicken Sie auf das Häkchen, um zu bestätigen, dass die auf dem virtuellen Gerät gespeicherten Daten in einem Microsoft-Datencenter gehostet werden. Nun wird ein virtuelles Gerät erstellt. Die Erstellung eines virtuellen Geräts kann zwischen 45 Minuten und einer Stunde in Anspruch nehmen. ![StorSimple – virtuelles Gerät in Erstellungsphase](./media/storsimple-virtual-device/StorSimple_VirtualDeviceCreating1M.png)
+
+Wenn Sie lediglich ein physisches Gerät verwenden, wird der Verschlüsselungsschlüssel auf Ihrem Gerät beibehalten. Daher kann Microsoft dieses nicht entschlüsseln. Wenn Sie ein virtuelles Gerät verwenden, werden die Ver- und Entschlüsselungsschlüssel in Microsoft Azure gespeichert. Weitere Informationen finden Sie unter [Sicherheitsüberlegungen bei der Verwendung eines virtuellen Geräts](#security-considerations-for-using-a-virtual-device).
 
 ### Konfigurieren und Registrieren virtueller Geräte
 
-Stellen Sie vorab sicher, dass Sie über eine Kopie des Verschlüsselungsschlüssels für die Dienstdaten verfügen. Der Schlüssel für die Dienstdatenverschlüsselung wurde beim Konfigurieren des ersten StorSimple-Geräts erstellt, und Sie wurden aufgefordert, diesen an einem sicheren Ort zu speichern. Wenn Sie über keine Kopie des Schlüssels für die Dienstdatenverschlüsselung verfügen, wenden Sie sich an den Microsoft-Support.
+Stellen Sie vorab sicher, dass Sie über eine Kopie des Verschlüsselungsschlüssels für die Dienstdaten verfügen. Der Schlüssel für die Dienstdatenverschlüsselung wurde beim Konfigurieren des ersten physischen StorSimple-Geräts erstellt, und Sie wurden aufgefordert, diesen an einem sicheren Ort zu speichern. Wenn Sie über keine Kopie des Schlüssels für die Dienstdatenverschlüsselung verfügen, wenden Sie sich an den [Microsoft-Support](storsimple-contact-microsoft-support.md).
 
 Führen Sie die folgenden Schritte durch, um das virtuelle StorSimple-Gerät zu konfigurieren und zu registrieren:
 
 
-1. Wählen Sie das **virtuelle StorSimple-Gerät** als Ihr Gerät aus, und doppelklicken Sie darauf, um auf den Schnellstart zuzugreifen.
+1. Wählen Sie das **virtuelle StorSimple-Gerät** aus, das Sie soeben auf der Seite **Geräte** erstellt haben.
+2. Klicken Sie auf **Gerätekonfiguration abschließen**. Dadurch wird der Konfigurationsassistent gestartet.
+ 
+	![StorSimple – Abschließen der Geräteeinrichtung auf der Seite "Geräte"](./media/storsimple-virtual-device/StorSimple_CompleteDeviceSetupSVA1M.png)
 
-- Klicken Sie auf **Gerätesetup abschließen**. Dadurch wird der Konfigurationsassistent gestartet.
+1. Gehen Sie im Konfigurationsassistenten folgendermaßen vor:
 
-- Geben Sie den **Verschlüsselungsschlüssel für Dienstdaten** in das entsprechende Feld ein.
+	1. Geben Sie den **Verschlüsselungsschlüssel für Dienstdaten** in das entsprechende Feld ein.
+	2. Geben Sie das **Snapshot Manager-Kennwort** ein. Das **Snapshot Manager-Kennwort** muss 14 oder 15 Zeichen lang sein und eine Kombination aus Großbuchstaben, Kleinbuchstaben, Ziffern und Sonderzeichen enthalten.
+	3. Geben Sie das **Geräteadministratorkennwort** ein. Das **Geräteadministratorkennwort** muss zwischen 8 und 15 Zeichen lang sein und eine Kombination aus Großbuchstaben, Kleinbuchstaben, Ziffern und Sonderzeichen enthalten.
+	4. Klicken Sie auf das Häkchensymbol, um die Erstkonfiguration und Registrierung des virtuellen Geräts abzuschließen. 
+	
+		![StorSimple – Einstellungen für virtuelles Gerät](./media/storsimple-virtual-device/StorSimple_VirtualDeviceSettings1.png)
 
-- Klicken Sie auf das Häkchen, um die Erstkonfiguration sowie die Registrierung des virtuellen Geräts abzuschließen. Die Kennwörter für den Momentaufnahme-Manager sowie den Geräteadministrator werden mit Standardwerten vorkonfiguriert und müssen im Anschluss an die Geräteregistrierung geändert werden.
+Nach dem Abschluss der Konfiguration und Registrierung wird das Gerät online geschaltet. Es kann mehrere Minuten dauern, bis das Gerät online ist.
 
-### Ändern der Konfigurationseinstellungen des Geräts
+![StorSimple – virtuelles Gerät ist online](./media/storsimple-virtual-device/StorSimple_VirtualDeviceOnline1M.png)
 
-Im folgenden Abschnitt werden die Gerätekonfigurationseinstellungen beschrieben, die für virtuelle StorSimple-Geräte konfiguriert werden müssen.
+### Ändern der Konfigurationseinstellungen des Geräts 
 
-#### Konfigurieren des CHAP-Initiators
+Im folgenden Abschnitt werden die Gerätekonfigurationseinstellungen beschrieben, die für virtuelle StorSimple-Geräte konfiguriert werden können. Dazu gehören z. B. CHAP, StorSimple Snapshot Manager-Kennwort und Geräteadministratorkennwort.
+
+#### Konfigurieren des CHAP-Initiators (optional)
 
 Dieser Parameter enthält die Anmeldeinformationen, die Ihr virtuelles Gerät (Ziel) von den Initiatoren (Servern) erwartet, die auf die Volumes zugreifen. Die Initiatoren stellen einen CHAP-Benutzernamen und ein CHAP-Kennwort bereit, um sich bei der Authentifizierung bei Ihrem Gerät zu identifizieren.
 
-#### Konfigurieren des CHAP-Ziels
+#### Konfigurieren des CHAP-Ziels (optional)
 
 Dieser Parameter enthält die Anmeldeinformationen, die Ihr virtuelles Gerät verwendet, wenn ein CHAP-fähiger Initiator eine wechselseitige oder bidirektionale Authentifizierung anfordert. Ihr virtuelles Gerät verwendet einen Benutzernamen und ein Kennwort für das Zurücksetzen von CHAP, um sich beim Authentifizierungsvorgang beim Initiator zu identifizieren. Beachten Sie, dass es sich bei den CHAP-Zieleinstellungen um globale Einstellungen handelt. Wenn diese angewendet werden, verwenden alle mit dem virtuellen Speichergerät verbundenen Volumes die CHAP-Authentifizierung.
 
-#### Konfigurieren des StorSimple-Momentaufnahme-Managers
+#### Konfigurieren des StorSimple Snapshot Managers
 
 Der StorSimple-Momentaufnahme-Manager befindet sich auf dem Windows-Host und ermöglicht Administratoren die Verwaltung der Sicherungen Ihres StorSimple-Geräts in Form von lokalen und Cloud-Momentaufnahmen.
 
@@ -172,7 +184,7 @@ Der StorSimple-Momentaufnahme-Manager befindet sich auf dem Windows-Host und erm
 
 Beim Konfigurieren eines Geräts im StorSimple-Momentaufnahme-Manager werden Sie aufgefordert, zur Authentifizierung des Speichergeräts die IP-Adresse und das Kennwort des StorSimple-Geräts anzugeben. Dieses Kennwort wird zunächst über die Windows PowerShell-Benutzeroberfläche konfiguriert.
 
-Führen Sie die folgenden Schritte durch, um den StorSimple-Momentaufnahme-Manager für die Verwendung mit dem virtuellen StorSimple-Gerät zu konfigurieren.
+Führen Sie die folgenden Schritte aus, um Einstellungen für den StorSimple Snapshot Manager zu ändern, wenn dieser mit dem virtuellen StorSimple-Gerät verwendet wird.
 
 1. Wechseln Sie auf dem virtuellen Gerät zu **Geräte > Konfigurieren**.
 
@@ -188,7 +200,7 @@ Das Kennwort für den StorSimple-Momentaufnahme-Manager wird jetzt aktualisiert 
 
 Wenn Sie über die Windows PowerShell-Benutzeroberfläche auf das virtuelle Gerät zugreifen, müssen Sie ein Kennwort eingeben. Für die Sicherheit Ihrer Daten müssen Sie dieses Kennwort ändern, bevor das virtuelle Gerät verwendet werden kann.
 
-Führen Sie die folgenden Schritte durch, um das Geräteadministratorkennwort für das virtuelle StorSimple-Gerät zu konfigurieren.
+Führen Sie die folgenden Schritte aus, um das Geräteadministratorkennwort für das virtuelle StorSimple-Gerät zu ändern.
 
 1. Wechseln Sie auf dem virtuellen Gerät zu **Geräte > Konfigurieren**.
 
@@ -200,7 +212,7 @@ Führen Sie die folgenden Schritte durch, um das Geräteadministratorkennwort f�
 
 Das Geräteadministratorkennwort wurde jetzt aktualisiert. Greifen Sie mit diesem geänderten Kennwort auf die Windows PowerShell-Benutzeroberfläche auf Ihrem virtuellen Gerät zu.
 
-#### Konfigurieren der Remoteverwaltung
+#### Konfigurieren der Remoteverwaltung (optional)
 
 Der Remotezugriff auf Ihr virtuelles Gerät über die Windows PowerShell-Benutzeroberfläche ist standardmäßig nicht aktiviert. Sie müssen die Remoteverwaltung zunächst auf dem virtuellen Gerät und anschließend auf dem Client aktivieren, der für den Zugriff auf das virtuelle Gerät verwendet wird.
 
@@ -227,11 +239,11 @@ Führen Sie die folgenden Schritte durch, um die Remoteverwaltung für das virtu
 Nachdem Sie das virtuelle StorSimple-Gerät erstellt und konfiguriert haben, können Sie mit diesem arbeiten. Sie können auf einem virtuellen wie auf einem physischen StorSimple-Gerät mit Volumecontainern, Volumes und Sicherungsrichtlinien arbeiten. Der einzige Unterschied besteht darin, dass das virtuelle Gerät aus der Geräteliste ausgewählt werden muss. Anweisungen zu den entsprechenden Aufgaben finden Sie in den folgenden Abschnitten:
 
 
-- [Volumecontainer](https://msdn.microsoft.com/library/dn757817.aspx)
+- [Volumecontainer](storsimple-manage-volume-containers.md)
 
-- [Volumes](https://msdn.microsoft.com/library/dn772417.aspx)
+- [Volumes](storsimple-manage-volumes.md)
 
-- [Sicherungsrichtlinien](https://msdn.microsoft.com/library/dn772382.aspx)
+- [Sicherungsrichtlinien](storsimple-manage-backup-policies)
 
 In den folgenden Abschnitten werden einige der Unterschiede bei der Arbeit mit virtuellen Geräten erläutert.
 
@@ -239,7 +251,6 @@ In den folgenden Abschnitten werden einige der Unterschiede bei der Arbeit mit v
 
 Da es sich um ein reines Softwaregerät handelt, ist der Verwaltungsaufwand im Vergleich zu einem physischen Gerät minimal. Folgende Optionen stehen zur Auswahl:
 
-- **Automatische Updates** – Sie können die automatischen Updates deaktivieren oder aktivieren. Wenn automatischen Updates aktiviert sind, wird das virtuelle Gerät automatisch heruntergefahren und (ggf.) neu gestartet, um alle veröffentlichten Updates zu übernehmen. Da nur eine einzige Schnittstelle zum virtuellen Gerät vorhanden ist, tritt beim Übernehmen der Updates eine kurze Dienstunterbrechung auf.
 - **Softwareupdates** – Sie können das Datum des letzten Softwareupdates sowie alle Updatestatusmeldungen anzeigen. Mit der Schaltfläche zum Suchen von Updates (unten auf der Seite) können Sie manuell nach Updates suchen.
 - **Supportpaket** – Sie können ein Supportpaket erstellen und hochladen, um den Microsoft-Support beim Beheben von Problemen mit Ihrem virtuellen Gerät zu unterstützen.
 
@@ -269,13 +280,13 @@ Wenn Sie Windows PowerShell-Remoting auf der Konfigurationsseite des StorSimple-
 
 >[AZURE.WARNING]**Aus Sicherheitsgründen wird dringend empfohlen, für Endpunktverbindungen HTTPS zu verwenden und die Endpunkte nach Abschluss der PowerShell-Remotesitzung zu löschen.**
 
-Beim Einrichten von Remoting für Ihr virtuelles Gerät sollten Sie die Schritte unter [Remoteverbindungen mit Windows PowerShell](https://msdn.microsoft.com/library/dn772393.aspx) durchführen.
+Beim Einrichten von Remoting für Ihr virtuelles Gerät sollten Sie die Schritte unter [Remoteverbindungen mit Windows PowerShell](storsimple-remote-connect.md) durchführen.
 
 Wenn Sie jedoch von einem anderen Computer außerhalb des virtuellen Netzwerks oder außerhalb der Microsoft Azure-Umgebung eine Direktverbindung mit dem virtuellen Gerät herstellen möchten, müssen Sie wie im Folgenden beschrieben zusätzliche Endpunkte erstellen.
 
 Führen Sie die folgenden Schritte durch, um auf dem virtuellen Gerät einen öffentlichen Endpunkt zu erstellen:
 
-1. Melden Sie sich beim Verwaltungsportal an.
+1. Melden Sie sich beim Azure-Portal an.
 
 - Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den als virtuelles Gerät zu verwendenden virtuellen Computer aus.
 
@@ -351,11 +362,11 @@ Der Failovervorgang wird gestartet. Wechseln Sie nach Abschluss des Failovers zu
 
 Wenn Sie zuvor ein virtuelles StorSimple-Gerät konfiguriert und verwendet haben, jedoch keine weiteren Verwendungsgebühren anfallen sollen, können Sie das virtuelle Gerät herunterfahren. Beim Herunterfahren des virtuellen Geräts werden dessen Betriebssystem oder die Datenträger im Speicher nicht gelöscht. Es fallen keine weiteren Gebühren für Ihr Abonnement an, die Speichergebühren für das Betriebssystem und die Datenträger laufen jedoch weiter.
 
-Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seite "Geräte" des StorSimple-Manager-Diensts als **Offline** angezeigt. Sie können dieses auch deaktivieren oder als Gerät löschen, wenn Sie zudem die vom virtuellen Gerät erstellten Sicherungen löschen möchten. Weitere Informationen finden Sie unter [Deaktivieren](https://msdn.microsoft.com/library/33b7811b-36ba-4609-b165-0796ad456435#BKMK_acis_deactivate).
+Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seite "Geräte" des StorSimple-Manager-Diensts als **Offline** angezeigt. Sie können dieses auch deaktivieren oder als Gerät löschen, wenn Sie zudem die vom virtuellen Gerät erstellten Sicherungen löschen möchten. Weitere Informationen finden Sie unter [Deaktivieren](storsimple-deactivate-and-delete-device.md#deactivate-a-device).
 
 ### So fahren Sie das virtuelle StorSimple-Gerät herunter
 
-1. Melden Sie sich beim Verwaltungsportal an.
+1. Melden Sie sich beim Azure-Portal an.
 
 2. Klicken Sie auf **Virtuelle Computer**, und wählen Sie das virtuelle Gerät aus.
 
@@ -368,6 +379,14 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 - Klicken Sie auf **Virtuelle Computer**, und wählen Sie das virtuelle Gerät aus.
 
 - Klicken Sie auf **Löschen**, und wählen Sie alle Datenträger des virtuellen Computers aus.
+
+
+## Nächste Schritte
+
+Informationen zum Verwalten Ihres virtuellen Geräts finden Sie in der detaillierten Liste der Workflows unter [Verwalten Ihres StorSimple-Geräts](storsimple-manager-service-administration.md#administer-storsimple-device-using-storsimple-manager-service).
+
+
+
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

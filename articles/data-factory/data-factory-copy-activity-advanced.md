@@ -7,7 +7,6 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
-
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -17,10 +16,9 @@
 	ms.date="07/21/2015" 
 	ms.author="spelluru"/>
 
-
 # Erweiterte Szenarien für die Verwendung der Kopieraktivität in Azure Data Factory 
 ## Übersicht
-Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer Quelle an eine Senke (Ziel) in einem Batch kopieren. Dieses Thema beschreibt die erweiterten Szenarien, die von der Kopieraktivität unterstützt werden. Eine ausführliche Übersicht über die Kopieraktivität und wichtige Szenarien, die davon unterstützt werden, finden Sie unter [Kopieren von Daten mit Azure Data Factory][adf-copyactivity].
+Mithilfe der **Kopieraktivität** in einer Pipeline können Sie Daten aus einer Quelle an eine Senke \(Ziel\) in einem Batch kopieren. Dieses Thema beschreibt die erweiterten Szenarien, die von der Kopieraktivität unterstützt werden.
 
 
 ## Strukturdefinition verwendende Spaltenfilterung
@@ -115,9 +113,9 @@ In diesem Beispiel wird die **Ausgabetabelle** wie folgt definiert. Die Ausgabet
 		}
 	}	
 
-Wenn Sie keinen **fileName** für eine **Ausgabetabelle** angeben, werden die generierten Dateien in **folderPath** im folgenden Format benannt: Data.<Guid>.txt (Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt).
+Wenn Sie keinen **fileName** für eine **Ausgabetabelle** angeben, werden die generierten Dateien in **folderPath** im folgenden Format benannt: Data.<Guid>.txt \(Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt\).
 
-Um **folderPath** und **fileName** dynamisch basierend auf der **SliceStart**-Zeit festzulegen, verwenden Sie die **partitionedBy**-Eigenschaft. Im folgenden Beispiel verwendet **folderPath** die Angaben für Jahr, Monat und Tag aus SliceStart (Startzeit des zu vearbeitenden Slices) und "fileName" die Angabe für Stunde aus SliceStart. Wenn beispielsweise ein Slice für den Zeitpunkt "2014-10-20T08:00:00" erzeugt wird, wird "folderName" auf "wikidatagateway/wikisampledataout/2014/10/20" und "filName" auf "08.csv" festgelegt.
+Um **folderPath** und **fileName** dynamisch basierend auf der **SliceStart**-Zeit festzulegen, verwenden Sie die **partitionedBy**-Eigenschaft. Im folgenden Beispiel verwendet **folderPath** die Angaben für Jahr, Monat und Tag aus SliceStart \(Startzeit des zu vearbeitenden Slices\) und "fileName" die Angabe für Stunde aus SliceStart. Wenn beispielsweise ein Slice für den Zeitpunkt "2014-10-20T08:00:00" erzeugt wird, wird "folderName" auf "wikidatagateway/wikisampledataout/2014/10/20" und "filName" auf "08.csv" festgelegt.
 
   	"folderPath": "wikidatagateway/wikisampledataout/{Year}/{Month}/{Day}",
     "fileName": "{Hour}.csv",
@@ -130,7 +128,7 @@ Um **folderPath** und **fileName** dynamisch basierend auf der **SliceStart**-Ze
     ],
 
 #### Beispiel – Definieren der Spaltenzuordnung
-In diesem Beispiel wird eine Aktivität in einer Pipeline wie folgt definiert. Die Spalten der Quelle werden mithilfe der **Translator-Eigenschaft** den Spalten der Senke (**columnMappings**) zugeordnet.
+In diesem Beispiel wird eine Aktivität in einer Pipeline wie folgt definiert. Die Spalten der Quelle werden mithilfe der **Translator**-Eigenschaft den Spalten der Senke \(**columnMappings**\) zugeordnet.
 
 	{
 		"name": "CopyActivity",
@@ -159,7 +157,7 @@ In diesem Beispiel wird eine Aktivität in einer Pipeline wie folgt definiert. D
 ![Spaltenzuordnung][image-data-factory-column-mapping-1]
 
 ### Beispiel 2 – Spaltenzuordnung mit SQL-Abfrage von SQL Server zu Azure-BLOB
-In diesem Beispiel wird eine SQL-Abfrage (im Vergleich zur Tabelle im vorherigen Beispiel) zum Extrahieren von Daten aus einem lokalen SQL Server verwendet, und Spalten aus Abfrageergebnissen werden zu Quellartefakten und dann zu Zielartefakten zugeordnet. Für dieses Beispiel gibt die Abfrage fünf Spalten zurück.
+In diesem Beispiel wird eine SQL-Abfrage \(im Vergleich zur Tabelle im vorherigen Beispiel\) zum Extrahieren von Daten aus einem lokalen SQL Server verwendet, und Spalten aus Abfrageergebnissen werden zu Quellartefakten und dann zu Zielartefakten zugeordnet. Für dieses Beispiel gibt die Abfrage fünf Spalten zurück.
 
 	{
 		"name": "CopyActivity",
@@ -196,7 +194,7 @@ Die im Abschnitt "Structure" der Tabellendefinition angegebenen Datentypen werde
 | ----------- | ------------------------ |
 | SqlSource | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf der zugrunde liegenden SQL-Datenbank definierte Datentypen werden während der Kopieraktivität zum Extrahieren der Daten verwendet. |
 | SqlSink | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Die Datentypen für die zugrunde liegende Quelle und für das Ziel werden verglichen, und es wird eine implizite Typkonvertierung durchgeführt, falls Typkonflikte auftreten. |
-| BlobSource | Beim Übertragen von BlobSource zu BlobSink findet keine Typentransformation statt. Datentypen, die im Abschnitt Structure der Tabellendefinition definiert sind, werden ignoriert. Für andere Ziele als BlobSink werden Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert wurden, berücksichtigt. Wenn die Struktur nicht in der Tabellendefinition angegeben wird, hängt die Typbehandlung von der format-Eigenschaft der BlobSource-Tabelle ab: TextFormat: Alle Spaltentypen werden als Zeichenfolge behandelt, und alle Spaltennamen werden als "Prop\_<0-N>" festgelegt. AvroFormat: Verwendet die integrierten Spaltentypen und -namen in der Avro-Datei.
+| BlobSource | Beim Übertragen von BlobSource zu BlobSink findet keine Typentransformation statt. Datentypen, die im Abschnitt Structure der Tabellendefinition definiert sind, werden ignoriert. Für andere Ziele als BlobSink werden Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert wurden, berücksichtigt. Wenn die Struktur nicht in der Tabellendefinition angegeben wird, hängt die Typbehandlung von der "format"-Eigenschaft der "BlobSource"-Tabelle ab: TextFormat: Alle Spaltentypen werden als Zeichenfolge behandelt, und alle Spaltennamen werden als "Prop\_<0-N>" festgelegt. AvroFormat: Verwendet die integrierten Spaltentypen und -namen in der Avro-Datei.
 | BlobSink | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf den zugrunde liegenden Eingabedaten definierte Datentypen werden verwendet. Für Spalten wird angegeben, dass sie für die Avro-Serialisierung NULL-Werte zulassen |
 | AzureTableSource | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf der zugrunde liegenden Azure-Tabelle definierte Datentypen werden verwendet. |
 | AzureTableSink | Datentypen, die im Structure-Abschnitt der Tabellendefinition definiert sind, werden ignoriert. Auf den zugrunde liegenden Eingabedaten definierte Datentypen werden verwendet. |
@@ -206,7 +204,7 @@ Die im Abschnitt "Structure" der Tabellendefinition angegebenen Datentypen werde
 ## Aufrufen der gespeicherten Prozedur für SQL-Senke
 Beim Kopieren von Daten in SQL Server oder Azure SQL-Datenbank konnte eine vom Benutzer angegebene gespeicherte Prozedur konfiguriert und mit zusätzlichen Parametern aufgerufen werden.
 ### Beispiel
-1. Definieren Sie die JSON der Ausgabetabelle wie folgt (verwenden Sie die Tabelle aus Azure SQL-Datenbank als Beispiel):
+1. Definieren Sie die JSON der Ausgabetabelle wie folgt \(verwenden Sie die Tabelle aus Azure SQL-Datenbank als Beispiel\):
 
     	{
     		"name": "MyAzureSQLTable",
@@ -267,8 +265,6 @@ Obwohl die UTF-8-Codierung sehr beliebt ist, verwenden Textdateien in Azure-Blob
 
 ## Weitere Informationen
 
-- [Beispiele für die Verwendung der Kopieraktivität][copy-activity-examples]
-- [Kopieren von Daten mit Azure Data Factory][adf-copyactivity]
 - [Kopieraktivität: Referenz zur JSON-Skripterstellung](https://msdn.microsoft.com/library/dn835035.aspx)
 - [Video: Einführung in die Kopieraktivität mit Azure Data Factory][copy-activity-video]
 
@@ -278,9 +274,7 @@ Obwohl die UTF-8-Codierung sehr beliebt ist, verwenden Textdateien in Azure-Blob
 
 
 [adfgetstarted]: data-factory-get-started.md
-[adf-copyactivity]: data-factory-copy-activity.md
 [use-onpremises-datasources]: data-factory-use-onpremises-datasources.md
-[copy-activity-examples]: data-factory-copy-activity-examples.md
 
 [json-script-reference]: http://go.microsoft.com/fwlink/?LinkId=516971
 [cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
@@ -291,4 +285,4 @@ Obwohl die UTF-8-Codierung sehr beliebt ist, verwenden Textdateien in Azure-Blob
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity-advanced/ColumnMappingSample2.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

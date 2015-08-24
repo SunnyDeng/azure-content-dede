@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von mehreren Clients mit einem einzelnen mobilen Dienst-Back-End | Azure Mobile" 
+	pageTitle="Verwenden mehrerer Clients mit einem einzelnen mobilen Dienst-Back-End | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie ein einzelnes mobiles Dienst-Back-End von mehreren Client-Apps verwenden, die auf verschiedene mobile Plattformen, einschließlich Windows Store und Windows Phone, abzielen." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -208,4 +208,4 @@ Die .NET-Clientbibliothek von Mobile Services unterstützt sowohl Windows Phone 
 [Projekt für eine universelle Windows-App für Azure Mobile Services unter Verwendung von MVVM]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

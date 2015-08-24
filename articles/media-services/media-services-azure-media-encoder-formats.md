@@ -7,16 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
-
 
 #Azure Media Encoder-Formate und -Codecs
 
@@ -109,9 +107,9 @@ In der folgenden Tabelle werden die Codecs und Dateiformate aufgeführt, die fü
 
 Dateiformat|Videocodec|Audiocodec
 ---|---|---
-Windows Media (\*.wmv; \*.wma)|VC-1 (Advanced, Main und Simple Profile)|Windows Media Audio Standard, Windows Media Audio Professional, Windows Media Audio Voice, Windows Media Audio Lossless
-MP4 (\*.mp4)|H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2, Dolby Digital Plus
-Smooth Streaming File Format (PIFF 1.1) (\*.ismv; \*.isma)|VC-1 (Advanced Profile)<p>H.264 (High, Main und Baseline Profile) |Windows Media Audio Standard, Windows Media Audio Professional<p><p>AAC-LC, HE-AAC v1, HE-AAC v2
+Windows Media (*.wmv; *.wma)|VC-1 (Advanced, Main und Simple Profile)|Windows Media Audio Standard, Windows Media Audio Professional, Windows Media Audio Voice, Windows Media Audio Lossless
+MP4 (*.mp4)|H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2, Dolby Digital Plus
+Smooth Streaming File Format (PIFF 1.1) (*.ismv; *.isma)|VC-1 (Advanced Profile)<p>H.264 (High, Main und Baseline Profile) |Windows Media Audio Standard, Windows Media Audio Professional<p><p>AAC-LC, HE-AAC v1, HE-AAC v2
 
 Zusätzliche unterstützte Codecs und Filter in Media Services finden Sie unter [Windows DirectShow-Filter](https://msdn.microsoft.com/library/windows/desktop/dd375464.aspx).
 
@@ -133,4 +131,4 @@ Daten im YUV 211-Format|Ein gepacktes YUV-Format. Ein Y-Sample bei jedem zweiten
 Cirrus Logic Jr YUV 411-Format|Das Cirrus Logic Jr YUV 411-Format mit weniger als 8 Bit pro Y-, U- und V-Sample. Ein Y-Sample bei jedem Pixel, ein U- und V-Sample bei jedem vierten Pixel horizontal in jeder Zeile. Jede vertikale Zeile enthält Sample-Werte.
 Von Indeo generiertes YVU9-Format|Das von Indeo generierte YVU9-Format mit zusätzlichen Informationen über die Unterschiede zum letzten Frame. 9,5 Bit pro Pixel, wird jedoch als 9 angezeigt.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

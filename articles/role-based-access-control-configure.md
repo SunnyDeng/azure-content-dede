@@ -55,7 +55,7 @@ Zugriffsrechte müssen nicht für das gesamte Abonnement gewährt werden. Rollen
 
 Abonnementadministrator und -Co-Administratoren erhalten weiterhin Vollzugriff auf Azure-Portale und Verwaltungs-APIs. Im RBAC-Modell wird ihnen die Besitzerrolle auf Abonnementebene zugewiesen. Das neue RBAC-Modell wird jedoch nur durch die APIs des Azure-Portals und des Azure-Ressourcen-Managers unterstützt. Benutzer und Dienste, denen RBAC-Rollen zugewiesen wurden, können nicht auf das Azure-Verwaltungsportal oder auf die Service Management-APIs zugreifen. Wenn ein Benutzer über das Azure-Portal zur Besitzerrolle eines Abonnements hinzugefügt wird, ist er nicht automatisch Co-Administrator eines Abonnements im normalen Azure-Portal.
 
-Wenn Sie einem Benutzer Zugriff auf eine Azure-Ressource gewähren möchten, die noch nicht zur Verwaltung im Azure-Portal zur Verfügung steht, fügen Sie den Benutzer über das normale Azure-Verwaltungsportal zu den Co-Administratoren des Abonnements hinzu. Die Verwaltung der Ressourcen „Service Bus“ und „Cloud Services“ wird noch nicht für die Verwendung mit RBAC unterstützt.
+Wenn Sie einem Benutzer Zugriff auf eine Azure-Ressource gewähren möchten, die noch nicht zur Verwaltung im Azure-Portal zur Verfügung steht, fügen Sie den Benutzer über das normale Azure-Verwaltungsportal zu den Co-Administratoren des Abonnements hinzu. Service Bus und StorSimple sind Beispiele für Ressourcen, die momentan nicht mit RBAC verwaltet werden können.
 
 ## Autorisierung für Verwaltungsvorgänge vs. Datenvorgänge
 
@@ -1128,7 +1128,7 @@ Rollenname | Beschreibung
 </tr>
 <tr>
 <td>Microsoft.ClassicCompute/domainNames/*</td>
-<td>Erstellen und Verwalten von Cloud-Diensten</td>
+<td>Erstellen und Verwalten von Clouddiensten</td>
 </tr>
 <tr>
 <td>Microsoft.ClassicCompute/virtualMachines/*</td>
@@ -1293,4 +1293,4 @@ Die folgenden Ressourcen bieten weitere Unterstützung für die Verwendung der r
 [9]: ./media/role-based-access-control-configure/RBACInviteExtUser_NEW.png
 [10]: ./media/role-based-access-control-configure/RBACDirConfigTab.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

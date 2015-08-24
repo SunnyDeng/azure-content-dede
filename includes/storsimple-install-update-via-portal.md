@@ -1,3 +1,19 @@
+<properties 
+   pageTitle="Installieren von Update 1 über das Azure-Verwaltungsportal"
+   description="Hier wird erläutert, wie Sie das Verwaltungsportal zum Installieren von Update 1 der StorSimple 8000-Serie verwenden."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="adinah"
+   editor="" />
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/12/2015"
+   ms.author="v-sharos" />
 
 #### So installieren Sie Update 1 über das Verwaltungsportal
 
@@ -45,4 +61,4 @@
 
     ![Seite "Wartung"](./media/storsimple-install-update-via-portal/HCS_SoftwareUpdates7-include.png)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

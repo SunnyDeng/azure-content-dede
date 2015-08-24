@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="08/10/2015" 
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure Service Bus mit dem WebJobs-SDK
@@ -81,6 +81,13 @@ Das SDK führt eine automatische Deserialisierung der Warteschlangennachricht du
 		}
 
 Codebeispiele, die zeigen, wie POCO-Eigenschaften zum Arbeiten mit Blobs und Tabellen in derselben Funktion verwendet werden, finden Sie in der [Artikelversion zu Speicherwarteschlangen](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#pocoblobs).
+
+Wenn Ihr Code zum Erstellen der Warteschlangennachricht nicht das WebJobs-SDK verwendet, verwenden Sie ähnlichen Code wie im folgenden Beispiel:
+
+		var client = QueueClient.CreateFromConnectionString(ConfigurationManager.ConnectionStrings["AzureWebJobsServiceBus"].ConnectionString, "blobadded");
+		BlobInformation blobInformation = new BlobInformation () ;
+		var message = new BrokeredMessage(blobInformation);
+		client.Send(message);
 
 ### Für "ServiceBusTrigger" verwendbare Typen
 
@@ -159,4 +166,4 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 In dieser Anleitung wurde anhand von Codebeispielen veranschaulicht, wie häufige Szenarien für das Arbeiten mit Azure Service Bus behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

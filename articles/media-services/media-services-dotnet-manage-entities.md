@@ -14,11 +14,17 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 
 #Verwalten von Medienobjekten und verwandten Entitäten mit dem Media Services .NET SDK
+
+
+> [AZURE.SELECTOR]
+- [.NET](media-services-dotnet-manage-entities.md)
+- [REST](media-services-rest-manage-entities.md)
+
 
 In diesem Thema wird gezeigt, wie Sie die folgenden Media Services-Verwaltungsaufgaben ausführen:
 
@@ -34,7 +40,7 @@ In diesem Thema wird gezeigt, wie Sie die folgenden Media Services-Verwaltungsau
 
 ##Voraussetzungen 
 
-Siehe [Einrichten der Umgebung](media-services-set-up-computer.md)
+Siehe [Einrichten der Umgebung](media-services-set-up-computer.md).
 
 ##Abrufen eines Verweises auf ein Medienobjekt
 
@@ -196,7 +202,7 @@ Weitere Informationen zu den Optionen für die Bereitstellung von Medienobjekten
 
 ##Auflisten aller Zugriffsrichtlinien
 
-In Media Services können Sie eine Zugriffsrichtlinie für ein Medienobjekt oder die zugehörigen Dateien definieren. Eine Zugriffsrichtlinie definiert die Berechtigungen für eine Datei oder ein Medienobjekt (den Zugriffstyp und die Dauer). Im Media Services-Code definieren Sie eine Zugriffsrichtlinie in der Regel, indem Sie ein IAccessPolicy-Objekt erstellen und dieses dann einem vorhandenen Medienobjekt zuordnen. Anschließend erstellen Sie ein ILocator-Objekt, über das Sie den direkten Zugriff auf Medienobjekte in Media Services bereitstellen können. Das Visual Studio-Projekt, das diese Dokumentationsreihe begleitet, enthält verschiedene Codebeispiele, die veranschaulichen, wie Zugriffsrichtlinien und Locators erstellt und Medienobjekten zugeordnet werden.
+In Media Services können Sie eine Zugriffsrichtlinie für ein Medienobjekt oder die zugehörigen Dateien definieren. Eine Zugriffsrichtlinie definiert die Berechtigungen für eine Datei oder ein Medienobjekt \(den Zugriffstyp und die Dauer\). Im Media Services-Code definieren Sie eine Zugriffsrichtlinie in der Regel, indem Sie ein IAccessPolicy-Objekt erstellen und dieses dann einem vorhandenen Medienobjekt zuordnen. Anschließend erstellen Sie ein ILocator-Objekt, über das Sie den direkten Zugriff auf Medienobjekte in Media Services bereitstellen können. Das Visual Studio-Projekt, das diese Dokumentationsreihe begleitet, enthält verschiedene Codebeispiele, die veranschaulichen, wie Zugriffsrichtlinien und Locators erstellt und Medienobjekten zugeordnet werden.
 
 Im folgenden Codebeispiel wird veranschaulicht, wie alle Zugriffsrichtlinien auf dem Server aufgelistet werden. Außerdem werden die Typen der jeweils zugeordneten Berechtigungen angezeigt. Eine weitere nützliche Methode zum Anzeigen der Zugriffsrichtlinien besteht darin, alle ILocator-Objekte auf dem Server aufzulisten. Dann können Sie für jeden Locator die zugeordnete Zugriffsrichtlinie auflisten, indem Sie die AccessPolicy-Eigenschaft verwenden.
 
@@ -324,4 +330,4 @@ Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Verweis auf eine Z
 	}
 	
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

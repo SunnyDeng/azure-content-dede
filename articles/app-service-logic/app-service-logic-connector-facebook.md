@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Facebook-Connector-API-App"
-   description="Verwenden des Facebook-Connectors"
+   pageTitle="Verwenden des Facebook-Connectors in Logik-Apps in Azure App Service"
+   description="Verwenden des Facebook-Connectors in Ihrer Logik-App"
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="anuragdalmia"
@@ -13,63 +13,54 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/02/2015"
+   ms.date="08/10/2015"
    ms.author="andalmia"/>
 
 
-# Verwenden des Facebook-Connectors in Logik-Apps #
+# Facebook-Connector
 
 Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten.
-
-Mit dem Facebook-Connector können Sie "Neuer Beitrag in Benutzerchronik", "Neuer Beitrag auf Seite", "Beitrag veröffentlichen", "Foto veröffentlichen" usw. aus Ihrem Facebook-Konto abrufen.
 
 - Der Facebook-Connector-Trigger ruft "Neuer Beitrag in Benutzerchronik" und "Neuer Beitrag auf Seite" ab. Wenn ein neuer Tweet empfangen wird, wird eine neue Instanz des Datenflusses ausgelöst, und die in der Anforderung empfangenen Daten werden zur Verarbeitung an den Datenfluss weitergegeben.
 - Mit Facebook-Connector-Aktionen können Sie "Beitrag veröffentlichen", "Foto veröffentlichen" und so weiter durchführen. Diese Aktionen erhalten eine Antwort und stellen sie den Aktionen im Datenfluss zur Nutzung zur Verfügung.
 
-## Erstellen eines Facebook-Connectors für Ihre Logik-App ##
+## Trigger und Aktionen
+
+Trigger | Aktionen
+--- | ---
+<ul><li>Neuer Beitrag in Benutzerchronik</li><li>Neuer Beitrag auf der Seite</li></ul> | <ul><li>Beitrag veröffentlichen</li><li>Fotos veröffentlichen</li></ul>
+
+
+
+## Erstellen des Facebook-Connectors für Ihre Logik-App
 Zur Verwendung des Facebook-Connectors müssen Sie zunächst eine Instanz der Facebook-Connector-API-App erstellen. Gehen Sie dazu folgendermaßen vor:
 
-1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" unten links im Azure-Portal.
-2.	Wechseln Sie zu "Web und Mobil > API-Apps", und suchen Sie nach "Facebook-Connector".
-3.	Konfigurieren Sie den Facebook-Connector wie folgt:
-
-	![][1]
-4.	Klicken Sie zum Erstellen auf "OK".
-5.	Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des Facebook-Connectors erstellen.
-	- Die API-App-Instanz des Facebook-Connectors kann auch von der Logik-App aus erstellt werden.
-	- Öffnen Sie den Logik-App-Editor, und klicken Sie auf den Facebook-Connector, der im Katalog auf der rechten Seite zur Verfügung steht.
-	- Dadurch wird eine API-App-Instanz des Facebook-Connectors in derselben Ressourcengruppe erstellt, in der die Logik-App erstellt wurde.
+1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
+2. Suchen Sie nach "Facebook-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
+3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein: ![][1]
+4.	Klicken Sie auf **Erstellen**.
 
 
-## Verwenden des Facebook-Connectors in Ihrer Logik-App ##
+## Verwenden des Facebook-Connectors in Ihrer Logik-App
 Sobald Ihre API-App erstellt wurde, können Sie jetzt den Facebook-Connector als Trigger oder Aktion für Ihre Logik-App verwenden. Gehen Sie hierzu wie folgt vor:
 
-1.	Erstellen Sie eine neue Logik-App, und wählen Sie dieselbe Ressourcengruppe aus, in der sich der Facebook-Connector befindet.
+1.	Öffnen Sie In Ihrer Logik-Apps **Trigger und Aktionen**, um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren: ![][3]
+2.	Der Facebook-Connector wird im Katalog aufgeführt: ![][4]
+3. Wählen Sie den Facebook-Connector aus, um ihn automatisch im Designer hinzuzufügen. Klicken Sie auf **Autorisieren**, geben Sie Ihre Anmeldeinformationen ein, und klicken Sie auf **Zulassen**: ![][5] ![][6] ![][7] ![][8]
+4.	Wählen Sie einen Trigger aus: ![][9]
 
-	![][2]
-2.	Öffnen Sie "Trigger und Aktionen", um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren.
+Sie können nun die vom Facebook-Trigger abgerufenen Beiträge in anderen Aktionen verwenden. Im nachstehenden Datenfluss wird immer, wenn ein neuer Beitrag in der Facebook-Chronik des Benutzers gepostet wird, derselbe Beitrag in der Twitter-Chronik des Benutzers gepostet: ![][10]
 
-	![][3]
-3.	Der Facebook-Connector wird im Abschnitt "Zuletzt verwendet" im Katalog auf der rechten Seite angezeigt. Wählen Sie ihn aus.
+Auf ähnliche Weise können Sie Datenflüsse mit Facebook-Connector-Aktionen erstellen. Im folgenden Datenfluss werden neue Nachrichten, die in der Yammer-Gruppe gepostet werden, abgerufen und auf der vom Benutzer verwalteten Facebook-Seite veröffentlicht: ![][11]
 
-	![][4]
-4.	Sie können die Facebook-Connector-API-App im Editor ablegen, indem Sie im Katalog auf der rechten Seite unter "Zuletzt verwendet" auf "Facebook-Connector" klicken. Klicken Sie auf die Schaltfläche "Autorisieren". Geben Sie Ihre Facebook-Anmeldeinformationen an.
+> [AZURE.TIP]Zum Abrufen der Facebook-Seiten-ID oder der Yammer-Gruppen-ID suchen Sie nach dem numerischen Code in der URL.
 
-	![][5]
-5.	Zulassen von "Azure AppService-Logik-Apps"
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-	![][6] ![][7] ![][8]
-6.	Wählen Sie einen Trigger aus.
+Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
-	![][9]
-7.	Sie können nun die vom Facebook-Trigger abgerufenen Beiträge in anderen Aktionen verwenden. Im unten stehenden Datenfluss wird immer, wenn ein neuer Beitrag in der Facebook-Chronik des Benutzers gepostet wird, derselbe Beitrag in der Twitter-Chronik des Benutzers gepostet.
-
-	![][10]
-8.	Auf ähnliche Weise können Sie Datenflüsse mit Facebook-Connector-Aktionen erstellen. Im folgenden Datenfluss werden neue Nachrichten, die in der Yammer-Gruppe gepostet werden, abgerufen und auf der vom Benutzer verwalteten Facebook-Seite veröffentlicht.
-
-	![][11]
-
-**TIPP** – Zum Abrufen der Facebook-Seiten-ID oder der Yammer-Gruppen-ID suchen Sie nach dem numerischen Code in der URL.
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
 <!--Image references-->
 [1]: ./media/app-service-logic-connector-facebook/img1.png
@@ -84,4 +75,4 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den Facebook-Connector als
 [10]: ./media/app-service-logic-connector-facebook/img10.png
 [11]: ./media/app-service-logic-connector-facebook/img11.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

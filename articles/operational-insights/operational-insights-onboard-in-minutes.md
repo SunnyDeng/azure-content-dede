@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="07/09/2015"
+    ms.date="08/06/2015"
     ms.author="banders"/>
 
 # Minutenschnelles Onboarding auf Operational Insights
@@ -97,4 +97,4 @@ Mit der Operations Management Suite können Sie schnell Ereignis- und IIS-Protok
 - Vertraut machen mit der [Suche](operational-insights-search.md)
 - Verwenden von [Dashboards](operational-insights-use-dashboards.md) zum Speichern und Anzeigen von benutzerdefinierten Suchvorgängen
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

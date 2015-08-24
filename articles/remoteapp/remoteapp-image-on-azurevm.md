@@ -1,6 +1,6 @@
 <properties 
     pageTitle="Erstellen von Azure RemoteApp-Images auf Grundlage einer Azure-VM"
-    description="Erfahren Sie, wie Sie ein Image für RemoteApp basierend auf einem virtuellen Azure-Computer erstellen." 
+    description="Erfahren Sie, wie Sie ein Image für Azure RemoteApp basierend auf einem virtuellen Azure-Computer erstellen." 
     services="remoteapp" 
     documentationCenter="" 
     authors="lizap" 
@@ -12,16 +12,16 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="05/28/2015" 
+    ms.date="08/12/2015" 
     ms.author="elizapo" />
 
 
 
 # Erstellen von Azure RemoteApp-Images auf Grundlage eines virtuellen Azure-Computers
 
-Sie können RemoteApp-Images (mit den Apps, die Sie in der Sammlung freigeben) von einem virtuellen Azure-Computer erstellen. Wir haben dem Azure-VM-Imagekatalog außerdem ein Image eines virtuellen Computers hinzugefügt, das allen Anforderungen an RemoteApp-Images entspricht. Sie können dieses VM-Image als Ausgangspunkt für eigene VMs verwenden. Suchen Sie in der Bibliothek einfach nach dem Image "Windows Server Remote Desktop Session Host".
+Sie können Azure RemoteApp-Images (mit den Apps, die Sie in der Sammlung freigeben) von einem virtuellen Azure-Computer erstellen. Alternativ können Sie ein Image eines virtuellen Computers aus dem Azure-VM-Imagekatalog verwenden, das allen Anforderungen an Azure RemoteApp-Images entspricht. Sie können dieses VM-Image als Ausgangspunkt für eigene VMs verwenden. Suchen Sie in der Bibliothek einfach nach dem Image "Windows Server Remote Desktop Session Host".
 
-Der Vorgang umfasst zwei Schritte – Erstellen des Images und anschließendes Hochladen aus der Azure-VM-Bibliothek nach Azure RemoteApp.
+Der Vorgang zum Erstellen eigener Images basierend auf einer Azure-VM umfasst zwei Schritte – Erstellen des Images und anschließendes Hochladen aus der Azure-VM-Bibliothek nach Azure RemoteApp.
 
 ## Erstellen benutzerdefinierter Images auf Grundlage einer Azure-VM
 
@@ -41,9 +41,9 @@ Führen Sie diese Schritte zum Erstellen eines Images auf Grundlage eines Azure-
 
  
 
-## Importieren von Images in die RemoteApp-Imagebibliothek
+## Importieren von Images in die Azure RemoteApp-Imagebibliothek
 
-Führen Sie diese Schritte aus, um das neue Image in RemoteApp zu importieren:
+Führen Sie diese Schritte aus, um das neue Image in Azure RemoteApp zu importieren:
 
 1. Auf der Registerkarte **Vorlagenimages**:
 	- Wenn keine Images vorhanden sind, klicken Sie auf **Vorlagenimage hochladen/importieren**. 
@@ -56,7 +56,7 @@ Führen Sie diese Schritte aus, um das neue Image in RemoteApp zu importieren:
 
 > [AZURE.NOTE]Sie können Images von jedem Azure-Speicherort, der virtuelle Azure-Computer unterstützt, in jeden Azure-Speicherort importieren, der von Azure-RemoteApp unterstützt wird. Je nach Speicherort kann der Importvorgang bis zu 25 Minuten dauern.
 
-Sie können jetzt Ihre neue Sammlung erstellen – je nach Anforderung entweder eine [Cloud](remoteapp-create-cloud-deployment.md)-Sammlung oder eine [Hybrid](remoteapp-create-hybrid-deployment.md)-Sammlung.
+Sie können jetzt Ihre neue Sammlung erstellen – je nach Anforderung entweder eine [Cloudsammlung](remoteapp-create-cloud-deployment.md) oder eine [Hybridsammlung](remoteapp-create-hybrid-deployment.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

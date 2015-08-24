@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="06/10/2015"
+   ms.date="08/12/2015"
    ms.author="mbaldwin"/>
 
 
@@ -67,9 +67,10 @@ In diesen Artikeln wird beschrieben, wie Sie mit Azure Active Directory (AD) bes
 - [Auflisten Ihrer Anwendung im Azure AD-Anwendungskatalog](active-directory-app-gallery-listing.md)
 - [Erste Schritte mit Office 365-APIs in Apps](https://msdn.microsoft.com/office/office365/howto/getting-started-Office-365-APIs)
 - [Submit Web apps for Office 365 to the Seller Dashboard](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard) (Senden von Web-Apps für Office 365 mit dem Verkäuferdashboard, in englischer Sprache)
+- [Vorschau: Erstellen von Apps, bei denen sich Benutzer sowohl mit persönlichen als auch mit Arbeits- oder Schulkonten anmelden können](active-directory-appmodel-v2-overview.md)
 
 
-## Verweis
+## Referenz
 
 Diese Artikel enthalten grundlegende Referenzen zu REST- und Authentifizierungsbibliothek-APIs, Protokollen, Fehlern, Codebeispielen und Endpunkten.
 
@@ -132,4 +133,4 @@ In diesen allgemeinen Präsentationen zur Entwicklung von Apps mit Azure Active 
 
 - **[Azure AD auf Twitter](https://twitter.com/azuread)**: Azure AD-Ankündigungen mit einer Länge von maximal 140 Zeichen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

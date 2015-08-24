@@ -22,7 +22,7 @@
 
 Azure bietet integrierte Diagnosefunktionen zur Unterstützung beim Debuggen einer [App Service-Web-App](http://go.microsoft.com/fwlink/?LinkId=529714). In diesem Artikel erfahren Sie, wie Sie die Diagnoseprotokollierung aktivieren und Ihrer Anwendung Instrumentierung hinzufügen sowie wie Sie die von Azure protokollierten Informationen abrufen.
 
-> [AZURE.NOTE]In diesem Artikel wird die Verwendung von Diagnoseprotokollen mit dem [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), Azure PowerShell und der Azure-Befehlszeilenschnittstelle (Azure-CLI) beschrieben. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure in Visual Studio](troubleshoot-web-sites-in-visual-studio.md).
+> [AZURE.NOTE]In diesem Artikel wird die Verwendung von Diagnoseprotokollen mit dem [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), Azure PowerShell und der Azure-Befehlszeilenschnittstelle (Azure-CLI) beschrieben. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 
 ## <a name="whatisdiag"></a>Webserver- und Anwendungsdiagnose
 
@@ -38,11 +38,11 @@ Sie können die folgenden Protokollarten aktivieren oder deaktivieren:
 
 ### Anwendungsdiagnose
 
-Mit der Option "Application Diagnostics" können Sie die von einer Webanwendung erzeugten Informationen erfassen. ASP.NET-Anwendungen können die Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/library/36hhw2t6.aspx) verwenden, um Informationen im Anwendungs-Diagnoseprotokoll aufzuzeichnen. Zum Beispiel:
+Mit der Option "Application Diagnostics" können Sie die von einer Webanwendung erzeugten Informationen erfassen. ASP.NET-Anwendungen können die Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/de-de/library/36hhw2t6.aspx) verwenden, um Informationen im Anwendungs-Diagnoseprotokoll aufzuzeichnen. Zum Beispiel:
 
 	System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 
-Sie können diese Protokolle zur Laufzeit abrufen und bei der Problembehandlung nutzen. Weitere Informationen finden Sie unter [Problembehandlung von Azure-Web-Apps in Visual Studio](../troubleshoot-web-sites-in-visual-studio.md).
+Sie können diese Protokolle zur Laufzeit abrufen und bei der Problembehandlung nutzen. Weitere Informationen finden Sie unter [Problembehandlung von Azure-Web-Apps in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 
 App Service-Web-Apps protokollieren auch Bereitstellungsinformationen, wenn Sie Inhalte in einer Web-App veröffentlichen. Dies erfolgt automatisch, und es gibt keine Konfigurationseinstellung für die Bereitstellungsprotokollierung. Anhand der Bereitstellungsprotokollierung können Sie bestimmen, warum eine Bereitstellung fehlgeschlagen ist. Wenn Sie beispielsweise ein benutzerdefiniertes Bereitstellungsskript verwenden, können Sie die Bereitstellungsprotokollierung verwenden, um festzustellen, warum das Skript fehlgeschlagen ist.
 
@@ -263,4 +263,4 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

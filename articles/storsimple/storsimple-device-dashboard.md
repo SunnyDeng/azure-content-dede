@@ -1,25 +1,25 @@
 <properties 
-   pageTitle="Verwenden des StorSimple Manager-Gerätedashboards"
-   description="Beschreibt das StorSimple Manager-Gerätedashboard und beschreibt, wie das Dashboard verwendet wird, um verbundene Initiatoren anzuzeigen sowie nach der Seriennummer und dem IQN eines Geräts zu suchen."
+   pageTitle="Verwenden des StorSimple Manager-Dienstdashboards für Geräte | Microsoft Azure"
+   description="Beschreibt das StorSimple Manager-Gerätedashboard und erläutert, wie das Dashboard verwendet wird, um Speichermetriken und verbundene Initiatoren anzuzeigen sowie nach der Seriennummer und dem IQN eines Geräts zu suchen."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
-   editor="tysonn" />
+   editor="" />
 <tags 
    ms.service="storsimple"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="07/21/2015"
+   ms.date="08/12/2015"
    ms.author="alkohli" />
 
 # Verwenden des StorSimple Manager-Gerätedashboards
 
 ## Übersicht
 
-Das StorSimple Manager-Gerätedashboard bietet Ihnen einen Überblick über die Informationen für ein bestimmtes StorSimple-Gerät, wodurch es sich deutlich vom Service-Dashboard unterscheidet, das Ihnen Informationen zu allen Geräten bietet, die in Ihrer Microsoft Azure StorSimple-Lösung enthalten sind.
+Das StorSimple Manager-Gerätedashboard bietet Ihnen einen Überblick über die Informationen für ein bestimmtes StorSimple-Gerät, wodurch es sich deutlich vom Dienstdashboard unterscheidet, das Ihnen Informationen zu allen Geräten bietet, die in Ihrer Microsoft Azure StorSimple-Lösung enthalten sind.
 
 ![Seite für Gerätedashboard](./media/storsimple-device-dashboard/HCS_DeviceDashboardPage.png)
 
@@ -27,18 +27,21 @@ Das Dashboard enthält die folgenden Informationen:
 
 - **Diagrammfläche** – Sie sehen die zugehörigen Speichermetriken im Diagrammbereich oben auf dem Dashboard. In diesem Diagramm können Sie Metriken für den gesamten primären Speicher (die Menge der Daten, die von Hosts in das Gerät geschrieben wurden) sowie für den gesamten Cloud-Speicher sehen, der von Ihrem Gerät in einem Zeitraum beansprucht wurde.
 
-     In diesem Zusammenhang bezieht sich *primärer Speicher* auf die Gesamtmenge der Daten, die vom Host geschrieben wurden. Er kann sowohl lokal gespeicherte Daten als auch Daten umfassen, die in die Cloud ausgelagert wurden. *Cloud-Speicher* ist demgegenüber ein Maß für die Gesamtmenge der Daten, die in der Cloud gespeichert sind. Dies umfasst ausgelagerte Daten und Sicherungen. Sowohl für primären als auch für Cloud-Speicher basieren die angezeigten Mengen auf der Nachverfolgungshäufigkeit, die Sie konfigurieren. Wenn Sie beispielsweise eine Häufigkeit von einer Woche wählen, werden im Diagramm Daten für jeden Tag der vorherigen Woche angezeigt.
+     In diesem Zusammenhang bezieht sich *primärer Speicher* auf die Gesamtmenge der Daten, die vom Host geschrieben wurden. Er kann sowohl lokal gespeicherte Daten als auch Daten umfassen, die in die Cloud ausgelagert wurden. *Cloud-Speicher* ist demgegenüber ein Maß für die Gesamtmenge der Daten, die in der Cloud gespeichert sind. Dies umfasst ausgelagerte Daten und Sicherungen. Beachten Sie Folgendes: In der Cloud gespeicherte Daten sind dedupliziert und komprimiert, der Primärspeicher dagegen zeigt die Menge an Speicherplatz an, der verwendet wird, bevor die Daten dedupliziert und komprimiert werden. (Sie können diese beiden Zahlen vergleichen, um einen Eindruck von der Komprimierungsrate zu erhalten.) Sowohl für primären als auch für Cloud-Speicher basieren die angezeigten Mengen auf der Nachverfolgungshäufigkeit, die Sie konfigurieren. Wenn Sie beispielsweise eine Häufigkeit von einer Woche wählen, werden im Diagramm Daten für jeden Tag der vorherigen Woche angezeigt.
  
 	 Sie können das Diagramm wie folgt konfigurieren:
 
 	 - Um die Menge des über einen Zeitraum beanspruchten Cloud-Speichers anzuzeigen, aktivieren Sie die Option **VERWENDETER CLOUD-SPEICHER**. Um die gesamte Speichermenge anzuzeigen, die vom Host geschrieben wurde, aktivieren Sie die Option **VERWENDETER PRIMÄRER SPEICHER**. In der Abbildung sind beide Optionen aktiviert. Daher werden im Diagramm sowohl die Menge für den Cloud- als auch die Menge für den primären Speicher angezeigt. 
 	 - Verwenden Sie das Dropdownmenü in der oberen rechten Ecke des Diagramms, um einen Zeitraum von einer Woche, einem Monat, drei Monaten oder einem Jahr anzugeben. Beachten Sie, dass das Diagramm auf oberster Ebene nur einmal täglich aktualisiert wird und daher die Gesamtmengen des Vortags wiedergibt.
 
-- **Verwendungsübersicht** – Im Bereich „Verwendungsübersicht“ können Sie die Menge des verwendeten primären Speichers, die Menge des bereitgestellten Speichers und die maximale Speicherkapazität für Ihr Gerät sehen. Durch Vergleichen dieser Verwendungszahlen mit der maximale Menge von Speicher, der verfügbar ist, können Sie auf einen Blick feststellen, ob Sie weiteren Speicher benötigen. Beachten Sie, dass diese Übersicht alle 15 Minuten aktualisiert wird und in ihr wegen der unterschiedlichen Aktualisierungshäufigkeit möglicherweise andere Zahlen angezeigt werden als im oberen Diagrammbereich, der täglich aktualisiert wird. Weitere Informationen finden Sie unter [Überwachen](https://msdn.microsoft.com/library/dn757759.aspx).
+     Weitere Informationen finden Sie unter [Überwachen Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-monitor-device.md).
 
-- **Warnungen** – Der Bereich „Warnungen“ enthält eine Übersicht über die Warnungen für das jeweilige Gerät. Warnungen sind nach Schweregrad gruppiert, und für jeden Schweregrad wird die Anzahl von Warnungen bereitgestellt. Durch Klicken auf den Warnungsschweregrad wird eine angepasste Ansicht der Registerkarte „Warnungen“ angezeigt, sodass nur Warnungen dieses Schweregrads für das Gerät angezeigt werden.
+- **Verwendungsübersicht** – Im Bereich **Verwendungsübersicht** können Sie die Menge des verwendeten primären Speichers, die Menge des bereitgestellten Speichers und die maximale Speicherkapazität für Ihr Gerät sehen. Durch Vergleichen dieser Verwendungszahlen mit der maximale Menge von Speicher, der verfügbar ist, können Sie auf einen Blick feststellen, ob Sie weiteren Speicher benötigen. Beachten Sie, dass diese Übersicht alle 15 Minuten aktualisiert wird und in ihr wegen der unterschiedlichen Aktualisierungshäufigkeit möglicherweise andere Zahlen angezeigt werden als im oberen Diagrammbereich, der täglich aktualisiert wird. Weitere Informationen finden Sie unter [Überwachen Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-monitor-device.md).
 
-- **Aufträge** – Im Bereich „Aufträge“ wird das Ergebnis der letzten Auftragsaktivität angezeigt. Hierüber können Sie sich vergewissern, dass das System erwartungsgemäß arbeitet, oder feststellen, dass Sie Korrekturmaßnahmen ergreifen müssen. Um weitere Informationen über zuletzt abgeschlossene Aufträge anzuzeigen, klicken Sie auf **Erfolgreiche Aufträge in den letzten 24 Stunden**.
+
+- **Warnungen** – Der Bereich **Warnungen** enthält eine Übersicht über die Warnungen für Ihr Gerät. Warnungen sind nach Schweregrad gruppiert, und für jeden Schweregrad wird die Anzahl von Warnungen bereitgestellt. Durch Klicken auf den Warnungsschweregrad wird eine angepasste Ansicht der Registerkarte „Warnungen“ angezeigt, sodass nur Warnungen dieses Schweregrads für das Gerät angezeigt werden.
+
+- **Aufträge** – Im Bereich **Aufträge** wird das Ergebnis der letzten Auftragsaktivität angezeigt. Hierüber können Sie sich vergewissern, dass das System erwartungsgemäß arbeitet, oder feststellen, dass Sie Korrekturmaßnahmen ergreifen müssen. Um weitere Informationen über zuletzt abgeschlossene Aufträge anzuzeigen, klicken Sie auf **Erfolgreiche Aufträge in den letzten 24 Stunden**.
 
 - Der Bereich **Auf einen Blick** auf der rechten Seite des Dashboards enthält hilfreiche Informationen wie Gerätemodell, Seriennummer, Status, Beschreibung und Anzahl von Volumes.
 
@@ -94,6 +97,6 @@ Möglicherweise benötigen Sie den Ziel-IQN des Geräts, wenn Sie das Challenge 
 
 ## Nächste Schritte
 
-[Erfahren Sie mehr über das StorSimple Manager-Service-Dashboard](storsimple-service-dashboard.md).
+[Erfahren Sie mehr über das StorSimple Manager-Dienstdashboard](storsimple-service-dashboard.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Häufige Anwendungsfälle für DocumentDB | Azure" 
+    pageTitle="Häufige Anwendungsfälle für DocumentDB | Microsoft Azure" 
     description="Erfahren Sie mehr über die fünf wichtigsten Anwendungsfälle für DocumentDB: benutzergenerierte Inhalte, Ereignisprotokollierung, Katalogdaten, Benutzereinstellungsdaten und das Internet der Dinge (Internet of Things, IoT)." 
     services="documentdb" 
     authors="h0n" 
@@ -26,13 +26,13 @@ Nach Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 - Welche Vorteile bietet die Verwendung von DocumentDB als Katalogdatenspeicher?
 - Welche Vorteile bietet die Verwendung von DocumentDB als Ereignisprotokollspeicher?
 - Welche Vorteile bietet die Verwendung von DocumentDB als Datenspeicher für Benutzereinstellungen?
-- Welche Vorteile bietet die Verwendung von DocumentDB als Datenspeicher für Systeme für das Internet der Dinge (Internet of Things, IoT)?
+- Welche Vorteile bietet die Verwendung von DocumentDB als Datenspeicher für Systeme für das Internet der Dinge \(Internet of Things, IoT\)?
 
     
 ## Benutzergenerierte Inhalte
 Ein häufiger Anwendungsfall für DocumentDB ist die Speicherung und Abfrage von benutzergenerierten Inhalten für Web- und mobile Anwendungen, insbesondere Anwendungen für soziale Medien. Einige Beispiele für benutzergenerierte Inhalte sind Chatsitzungen, Tweets, Blogbeiträge, Bewertungen und Kommentare. Benutzergenerierte Inhalte in Anwendungen für soziale Medien sind eine Mischung aus Freitext, Eigenschaften, Tags und Beziehungen, die nicht durch eine starre Struktur begrenzt sind.
 
-Inhalte wie Chats, Kommentare und Beiträge können in DocumentDB gespeichert werden, ohne dass hierzu Transformationen oder komplexe ORM-Ebenen (Object Relational Mapping) erforderlich sind. Dateneigenschaften können beim Durchlaufen des Anwendungscodes ganz einfach hinzugefügt oder geändert werden, um die jeweiligen Anforderungen zu erfüllen. Auf diese Weise wird die Entwicklung erheblich beschleunigt.
+Inhalte wie Chats, Kommentare und Beiträge können in DocumentDB gespeichert werden, ohne dass hierzu Transformationen oder komplexe ORM-Ebenen \(Object Relational Mapping\) erforderlich sind. Dateneigenschaften können beim Durchlaufen des Anwendungscodes ganz einfach hinzugefügt oder geändert werden, um die jeweiligen Anforderungen zu erfüllen. Auf diese Weise wird die Entwicklung erheblich beschleunigt.
 
 Anwendungen, die in verschiedene soziale Netzwerke integriert werden, müssen auf Schemaänderungen dieser Netzwerke reagieren. Da Daten in DocumentDB standardmäßig und automatisch indiziert werden, können Daten jederzeit abgefragt werden. Daher verfügen diese Anwendungen über die Flexibilität, Projektionen entsprechend ihren jeweiligen Anforderungen abzurufen.
 
@@ -79,4 +79,4 @@ Wenn Sie mehr zu Kunden erfahren möchten, die DocumentDB verwenden, stehen Ihne
 - [XOMNI](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=18667). Der Speicher der Zukunft basiert auf schnellen Suchvorgängen und problemlosem Datenfluss.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

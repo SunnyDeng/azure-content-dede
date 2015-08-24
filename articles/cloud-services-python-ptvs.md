@@ -12,7 +12,7 @@
 	ms.workload="tbd"
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
-	ms.topic="article" 
+	ms.topic="hero-article" 
 	ms.date="02/09/2015"
 	ms.author="huvalo"/>
 
@@ -139,4 +139,4 @@ Weitere Details zur Verwendung von Azure-Diensten Ihrer Web- und Workerrollen, e
 [Python 2.7 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517190
 [Python 3.4 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517191
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

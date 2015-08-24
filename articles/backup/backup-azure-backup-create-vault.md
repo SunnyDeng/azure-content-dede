@@ -7,9 +7,7 @@
    manager="shreeshd"
    editor=""/>
 
-
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt\_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="07/28/2015" ms.author="prvijay"; "jimpark"/>
-
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/11/2015" ms.author="aashishr"; "jimpark"/>
 
 # Erstellen eines Sicherungstresors
 Zum Sichern von Dateien und Daten von Windows Server oder System Center Data Protection Manager (SCDPM) in Azure oder beim Sichern von Sie IaaS-VMs in Azure müssen Sie einen Sicherungstresor in Ihrer geografischen Region erstellen, in dem die Daten gespeichert werden sollen.
@@ -62,7 +60,6 @@ Bei Verwendung von Azure als tertiären Speicherendpunkt (Sie verwenden beispiel
 
 ## Hinweis
 
-- Ab März 2015 Kunden steht den Kunden keine programmgesteuerte Möglichkeit (wie PowerShell) zur Erstellung eines Sicherungstresors zur Verfügung.
 - Die Speicherredundanz sollte unmittelbar nach der Erstellung des Tresors ausgewählt werden, bevor Computer beim Tresor registriert werden. Sobald ein Element beim Tresor registriert wurde, wird die Speicherredundanzoption gesperrt und kann nicht mehr geändert werden.
 
 <!--Image references-->
@@ -72,4 +69,4 @@ Bei Verwendung von Azure als tertiären Speicherendpunkt (Sie verwenden beispiel
 [4]: ./media/backup-azure-backup-create-vault/grs.png
 [5]: ./media/backup-azure-backup-create-vault/lrs.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

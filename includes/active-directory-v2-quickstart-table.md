@@ -1,8 +1,10 @@
-| Mobile & Native Apps | Web Apps & Web APIs | Integrate Directly with Protocols |
+| Mobile und systemeigene Apps | Web-Apps und Web-APIs | Direktes Integrieren mit Protokollen |
 | ----------------------- | ------------------------------- | --------------------- |
-| Add Sign-In to an iOS App (Coming Soon) | Add Sign-In to an AngularJS SPA (Coming Soon) | [Register an Application](active-directory-v2-app-registration.md) |
-| Add Sign-In to an Android App (Coming Soon) | [Add Sign-In to a .NET MVC App](active-directory-v2-devquickstarts-dotnet-web.md)  | [Mobile Apps with OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow) |
-| Add Sign-In to a Windows Universal App (Coming Soon) | Add Sign-In to a Node JS Web App (Coming Soon) | [Web Apps with OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow) |
-| [Add Sign-In to a Windows Desktop App](active-directory-v2-devquickstarts-wpf.md)| [Secure a .NET Web API](active-directory-v2-devquickstarts-dotnet-api.md) | Single Page Apps with OpenID Connect (Coming Soon)
-| [Call Office 365 Rest APIs from an app](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) | Secure a NodeJS Web API (Coming Soon) | Server Side Daemons (Coming Soon) |
-|  | [Call Office 365 REST APIs from the web](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) |
+| Hinzufügen der Anmeldung zu einer iOS-App \(in Kürze\) | Hinzufügen der Anmeldung zu einer AngularJS SPA \(Single Page App\) \(in Kürze\) | [Registrieren einer Anwendung](active-directory-v2-app-registration.md) |
+| Hinzufügen der Anmeldung zu einer Android-App \(in Kürze\) | [Hinzufügen der Anmeldung zu einer .NET MVC-App](active-directory-v2-devquickstarts-dotnet-web.md) | [Mobile Apps mit OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow) |
+| Hinzufügen der Anmeldung zu einer universellen Windows-App \(in Kürze\) | Hinzufügen der Anmeldung zu einer Node JS-Web-App \(in Kürze\) | [Web-Apps mit OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow) |
+| [Hinzufügen der Anmeldung zu einer Windows-Desktop-App](active-directory-v2-devquickstarts-wpf.md)| [Schützen einer .NET-Web-API](active-directory-v2-devquickstarts-dotnet-api.md) | Single Page Apps mit OpenID Connect \(in Kürze\)
+| [Aufrufen von Office 365-Rest-APIs aus einer App](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) | Schützen einer NodeJS-Web-API \(in Kürze\) | Serverseitige Daemons \(in Kürze\) |
+| | [Aufrufen von Office 365-Rest-APIs aus dem Web](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) |
+
+<!---HONumber=August15_HO7-->

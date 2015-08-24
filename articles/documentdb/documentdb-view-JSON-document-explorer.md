@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mithilfe von DocumentDB-Dokument-Explorer | Azure"
+	pageTitle="Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mithilfe von DocumentDB-Dokument-Explorer | Microsoft Azure"
 	description="Informationen zum DocumentDB-Dokument-Explorer, einem Azure-Vorschauportaltool zum Anzeigen, Bearbeiten, Erstellen und Hochladen von JSON-Dokumenten mit DocumentDB."
 	services="documentdb"
 	authors="stephbaron"
@@ -44,7 +44,7 @@ Dokument-Explorer kann über jedes DocumentDB-Blatt "Konto", "Datenbank" und "Sa
 
 	![Screenshot des Dokument-Explorers](./media/documentdb-view-JSON-document-explorer/documentexplorerinitial.png)
 
-3. Standardmäßig lädt der Dokument-Explorer die ersten 100 Dokumente in die ausgewählte Sammlung, sortiert nach Erstellungsdatum, vom ältesten bis zum neuesten. Sie können weitere Dokumente (in Batches von je 100) laden, indem Sie die Option **Mehr laden** am unteren Rand des Dokument-Explorer-Blatts wählen. Sie können das Standardverhalten ändern, indem Sie oben im Dokument-Explorer-Blatt auf den Befehl "Einstellungen" klicken.
+3. Standardmäßig lädt der Dokument-Explorer die ersten 100 Dokumente in die ausgewählte Sammlung, sortiert nach Erstellungsdatum, vom ältesten bis zum neuesten. Sie können weitere Dokumente \(in Batches von je 100\) laden, indem Sie die Option **Mehr laden** am unteren Rand des Dokument-Explorer-Blatts wählen. Sie können das Standardverhalten ändern, indem Sie oben im Dokument-Explorer-Blatt auf den Befehl "Einstellungen" klicken.
 
 	![Screenshot des Dokument-Explorers – Blatt "Einstellungen"](./media/documentdb-view-JSON-document-explorer/documentexplorersettings.png)
 
@@ -113,7 +113,7 @@ Mit Dokument-Explorer können Sie problemlos Dokumente erstellen, bearbeiten und
 
 	![Screenshot des Dokument-Explorers – Ansicht der Dokumenteigenschaften](./media/documentdb-view-JSON-document-explorer/documentproperties.png)
 
-	> [AZURE.NOTE]Die Zeitstempeleigenschaft (\_ts) wird intern als Epochenzeit dargestellt, im Dokument-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
+	> [AZURE.NOTE]Die Zeitstempeleigenschaft \(\_ts\) wird intern als Epochenzeit dargestellt, im Dokument-Explorer wird der Wert jedoch in einem vom Menschen lesbaren GMT-Format angezeigt.
 
 ##<a id="BulkAdd"></a>Massenhinzufügen von Dokumenten mit dem Dokument-Explorer##
 
@@ -140,4 +140,4 @@ Dokument-Explorer unterstützt die Sammelerfassung von vorhandenen JSON-Dokument
 Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

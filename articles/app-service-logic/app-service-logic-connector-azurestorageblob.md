@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="06/30/2015"
+   ms.date="08/09/2015"
    ms.author="rajram"/>
    
 # Azure Storage-Blobconnector
@@ -36,9 +36,9 @@ Keine | <ul><li>Blob abrufen: Abrufen eines bestimmten Blobs aus dem Container</
 Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
-2. Wählen Sie **API-Apps** aus, und suchen Sie nach "Blob":<br/> ![Wählen des Azure Storage-Blobconnectors][2]
+2. Suchen Sie nach "Blob": ![Wählen des Azure Storage-Blobconnectors][2]
 
-3. **Erstellen** Sie den Connector.
+3. Wählen Sie "Blob" aus, und klicken Sie auf **Erstellen**.
 4. Geben Sie den Namen, die App Service-Plan und andere Eigenschaften ein.
 5. Geben Sie die folgenden Paketeinstellungen ein:
 
@@ -54,21 +54,13 @@ Zugriffsschüssel | Nein | Geben Sie einen gültigen primären oder sekundären 
 ## Verwenden von Azure Storage-Blobconnectors in Logik-App
 Sobald der Azure Storage-Blobconnector erstellt wurde, kann er Ihrem Workflow hinzugefügt werden.
 
-1. Erstellen einer neuen Logik App: Neu -> Web + Mobil -> Logik-App. Geben Sie die Eigenschaften für Ihre Logik-App ein:
+1. Erstellen einer neuen Logik App: Neu -\> Web + Mobil -\> Logik-App. Geben Sie die Eigenschaften für Ihre Logik-App ein: ![Erstellen einer Logik-App][4]
 
-	![Erstellen einer Logik-App][4]
+2. Klicken Sie auf **Trigger und Aktionen**. Der Workflow-Designer wird geöffnet: ![Logik-App – Leerer Datenfluss-Designer][5]
 
-2. Klicken Sie auf **Trigger und Aktionen**. Der Workflow-Designer wird geöffnet:
+3. Wählen Sie im rechten Bereich Ihren Azure Storage-Blobconnector aus. Für den Connector werden die verfügbaren Aktionen aufgeführt: ![Liste der Azure Storage-Blobaktionen][10]
 
-	![Logik-App – Leerer Datenfluss-Designer][5]
-
-3. Wählen Sie im rechten Bereich Ihren Azure Storage-Blobconnector aus. Für den Connector werden die verfügbaren Aktionen aufgeführt:
-
-	![Liste der Azure Storage-Blobaktionen][10]
-
-4. In diesem Szenario verwenden wir die Aktion **Blob hochladen**:
-
-	![Eingaben der Aktion "Blob hochladen"][11]
+4. In diesem Szenario verwenden wir die Aktion **Blob hochladen**: ![Eingaben der Aktion "Blob hochladen"][11]
 
 5. Geben Sie die Eingabewerte ein, und klicken Sie auf das Häkchen, um die Konfiguration abzuschließen:
 
@@ -110,4 +102,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-azurestorageblob/BasicInputsUploadBlob.PNG
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

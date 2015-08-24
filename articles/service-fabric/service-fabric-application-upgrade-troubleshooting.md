@@ -7,16 +7,14 @@
    manager="samgeo"
    editor=""/>
 
-
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/24/2015"
+   ms.date="08/11/2015"
    ms.author="subramar"/>
-
 
 # Problembehandlung bei Anwendungsupgrades
 
@@ -190,7 +188,7 @@ Das Upgrade wird ab der Upgradedomäne fortgesetzt, in der es zuletzt angehalten
 
 Mögliche Ursache 1:
 
-Service Fabric übersetzt für die Integritätsevaluierung alle Prozentsätze in die tatsächliche Anzahl der Entitäten (z. B. Replikate, Partitionen und Dienste) und rundet immer auf die nächste Zahl der gesamten Entitäten auf. Wenn für _MaxPercentUnhealthyReplicasPerPartition_ beispielsweise maximal 21 % angegeben und 5 Replikate vorhanden sind, lässt Service Fabric bei der Evaluierung der Partitionsintegrität bis zu 2 Replikate (d. h. `Math.Ceiling (5\*0.21)`) zu. Dies sollte beim Festlegen der Integritätsrichtlinien berücksichtigt werden.
+Service Fabric übersetzt für die Integritätsevaluierung alle Prozentsätze in die tatsächliche Anzahl der Entitäten (z. B. Replikate, Partitionen und Dienste) und rundet immer auf die nächste Zahl der gesamten Entitäten auf. Wenn für _MaxPercentUnhealthyReplicasPerPartition_ beispielsweise maximal 21 % angegeben und 5 Replikate vorhanden sind, lässt Service Fabric bei der Evaluierung der Partitionsintegrität bis zu 2 Replikate (d. h. `Math.Ceiling (5*0.21)`) zu. Dies sollte beim Festlegen der Integritätsrichtlinien berücksichtigt werden.
 
 Mögliche Ursache 2:
 
@@ -227,4 +225,4 @@ Die Upgradezeit für eine Upgradedomäne wird durch *UpgradeDomainTimeout* begre
 [Datenserialisierung](service-fabric-application-upgrade-data-serialization.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

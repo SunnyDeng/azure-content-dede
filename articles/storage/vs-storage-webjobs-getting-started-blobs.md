@@ -1,26 +1,26 @@
 <properties 
-	pageTitle="Erste Schritte mit Azure Storage" 
-	description="Erste Schritte mit Azure-BLOB-Speicher in einem Azure WebJob-Projekt in Visual Studio" 
-	services="storage" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+	pageTitle="Erste Schritte mit Azure-Speicher und verbundenen Visual Studio-Diensten (WebJob-Projekte)" 
+	description="Erste Schritte mit Blobspeicher in einem Azure-Speicherkonto, das über das Visual Studio-Dialogfeld ";Verbundene Dienste hinzufügen"; in einem WebJob-Projekt erstellt wurde."
+	services="storage"
+	documentationCenter=""
+	authors="patshea123"
+	manager="douge"
 	editor="tglee"/>
 
 <tags 
-	ms.service="storage" 
-	ms.workload="web" 
+	ms.service="storage"
+	ms.workload="web"
 	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/13/2015" 
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/13/2015"
 	ms.author="patshea123"/>
 
 # Erste Schritte mit Azure Storage (Azure WebJob-Projekte)
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-storage-webjobs-getting-started-blobs.md)
-> - [What Happened](vs-storage-webjobs-what-happened.md)
+> - [Getting started](vs-storage-webjobs-getting-started-blobs.md)
+> - [What happened](vs-storage-webjobs-what-happened.md)
 
 > [AZURE.SELECTOR]
 > - [Blobs](vs-storage-webjobs-getting-started-blobs.md)
@@ -29,9 +29,9 @@
 
 ## Übersicht
 
-Wenn Sie über das Dialogfeld **Verbundene Dienste hinzufügen** von Visual Studio ein Speicherkonto zu einem WebJob-Projekt hinzufügen, wird das entsprechende NuGet-Paket des Azure-Speichers installiert, die entsprechenden .NET-Verweise dem Projekt hinzugefügt, und die Verbindungszeichenfolgen für das Speicherkonto in der „App.config“-Datei aktualisiert.
+Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-Blob erstellt oder aktualisiert wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet. Wenn Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** ein Speicherkonto zu einem WebJob-Projekt hinzufügen, wird das entsprechende Azure Storage-NuGet-Paket installiert, die entsprechenden .NET-Verweise werden dem Projekt hinzugefügt, und die Verbindungszeichenfolgen für das Speicherkonto werden in der Datei "App.config" aktualisiert.
 
-Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie Sie einen Prozess auslösen, wenn ein Azure-Blob erstellt oder aktualisiert wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet.
+
 
 ## Auslösen einer Funktion, wenn ein BLOB erstellt oder aktualisiert wird
 
@@ -86,7 +86,7 @@ Im folgenden Beispiel ändert sich die Dateierweiterung, wenn Blob aus dem Conta
 		    output = input.ReadToEnd();
 		}
 
-## <a id="types"></a> Typen, die Sie an Blobs binden können
+## Typen, die Sie an BLOBs binden können
 
 Sie können das `BlobTrigger`-Attribut für die folgenden Typen verwenden:
 
@@ -100,7 +100,7 @@ Sie können das `BlobTrigger`-Attribut für die folgenden Typen verwenden:
 
 Wenn Sie direkt mit dem Azure-Speicherkonto arbeiten möchten, können Sie der Methodensignatur auch einen `CloudStorageAccount`-Parameter hinzufügen.
 
-## <a id="string"></a> Abrufen von Blobtextinhalt durch Bindung an eine Zeichenfolge
+## Abrufen von BLOB-Textinhalt durch Bindung an eine Zeichenfolge
 
 Wenn Textblobs erwartet werden, kann `BlobTrigger` auf einen `string`-Parameter angewendet werden. Im folgenden Beispiel wird ein Textblob an einen `string`-Parameter mit dem Namen `logMessage` gebunden. Die Funktion verwendet diesen Parameter, um den Inhalt des Blobs in das Dashboard des WebJobs-SDK zu schreiben.
  
@@ -113,7 +113,7 @@ Wenn Textblobs erwartet werden, kann `BlobTrigger` auf einen `string`-Parameter 
 		     logger.WriteLine(logMessage);
 		}
 
-## <a id="icbsb"></a> Abrufen serialisierter Blobinhalte mithilfe von ICloudBlobStreamBinder
+## Abrufen serialisierter BLOB-Inhalte mithilfe von ICloudBlobStreamBinder
 
 Im folgenden Codebeispiel wird eine Klasse verwendet, die `ICloudBlobStreamBinder` implementiert, um das `BlobTrigger`-Attribut für das Binden eines Blobs an den `WebImage`-Typ zu aktivieren.
 
@@ -151,7 +151,7 @@ Der `WebImage`-Bindungscode wird in einer `WebImageBinder`-Klasse bereitgestellt
 		    }
 		}
 
-## <a id="poison"></a> Behandlung von nicht verarbeitbaren Blobs
+## Behandlung von nicht verarbeitbaren BLOBs
 
 Wenn bei einer `BlobTrigger`-Funktion ein Fehler auftritt, wird sie für den Fall, dass es sich um einen vorübergehenden Fehler handelt, erneut aufgerufen. Wenn der Inhalt des Blobs den Fehler verursacht hat, misslingt die Funktion bei jedem Versuch, das Blob zu verarbeiten. Standardmäßig ruft das SDK eine Funktion bis zu 5 Mal für ein angegebenes Blob auf. Ist auch der fünfte Versuch nicht erfolgreich, fügt das SDK einer Warteschlange namens *webjobs-blobtrigger-poison* eine Nachricht hinzu.
 
@@ -159,7 +159,7 @@ Die maximale Anzahl von Wiederholungen ist konfigurierbar. Für die Verarbeitung
 
 Die Warteschlangennachricht für nicht verarbeitbare Blobs ist ein JSON-Objekt, das die folgenden Eigenschaften enthält:
 
-* FunctionId (im Format *{Webauftragsname}*.Functions.*{Funktionsname}*; Beispiel: WebJob1.Functions.CopyBlob)
+* FunctionId (im Format *{WebJob-Name}*.Functions.*{Funktionsname}*; Beispiel: WebJob1.Functions.CopyBlob)
 * BlobType ("BlockBlob" oder "PageBlob")
 * ContainerName
 * BlobName
@@ -196,7 +196,7 @@ Das SDK deserialisiert die JSON-Nachricht automatisch. Hier sehen Sie die `Poiso
 		    public string ETag { get; set; }
 		}
 
-### <a id="polling"></a> Blobabrufalgorithmus
+### BLOB-Abrufalgorithmus
 
 Das WebJobs-SDK durchsucht beim Start der Anwendung alle vom `BlobTrigger`-Attribut angegebenen Container. Bei einem großen Speicherkonto kann diese Überprüfung durchaus länger dauern. Daher kann etwas Zeit vergehen, bis neue Blobs gefunden und `BlobTrigger`-Funktionen ausgeführt werden.
 
@@ -204,13 +204,13 @@ Um neue oder geänderte Blobs nach dem Start der Anwendung zu erkennen, liest da
 
 Für Blobs, die Sie mit dem `Blob`-Attribut erstellen, gibt es eine Ausnahme. Wenn das WebJobs-SDK ein neues Blob erstellt, übergibt es dieses sofort an alle entsprechenden `BlobTrigger`-Funktionen. Wenn Sie also eine Kette von Ein- und Ausgaben von Blobs haben, kann das SDK sie effizient verarbeiten. Wenn es Ihnen bei Ihren Blobverarbeitungsfunktionen für anderweitig erstellte oder aktualisierte Blobs allerdings auf eine geringe Latenz ankommt, empfiehlt sich die Verwendung von `QueueTrigger` anstelle von `BlobTrigger`.
 
-### <a id="receipts"></a> Blobbelege
+### BLOB-Zugänge
 
 Das WebJobs-SDK stellt sicher, dass `BlobTrigger`-Funktionen für ein neues oder aktualisiertes Blob nicht mehrmals aufgerufen werden. Zu diesem Zweck wird mittels Verwaltung der *Blobbelege* bestimmt, ob eine bestimmte Blobversion verarbeitet wurde.
 
 Blobbelege werden in einem Container mit dem Namen *azure-webjobs-hosts* in dem Azure-Speicherkonto gespeichert, das in der Verbindungszeichenfolge "AzureWebJobsStorage" angegeben ist. Ein Blobbeleg enthält die folgenden Informationen:
 
-* Die Funktion, die für das Blob aufgerufen wurde ("*{Webauftragsname}*.Functions.*{Funktionsname}*"; Beispiel: "WebJob1.Functions.CopyBlob")
+* Die Funktion, die für das Blob aufgerufen wurde ("*{WebJob-Name}*.Functions.*{Funktionsname}*"; Beispiel: "WebJob1.Functions.CopyBlob")
 * Der Containername
 * Blobtyp ("BlockBlob" oder "PageBlob")
 * Blobname
@@ -218,7 +218,7 @@ Blobbelege werden in einem Container mit dem Namen *azure-webjobs-hosts* in dem 
 
 Wenn Sie eine erneute Verarbeitung eines Blobs erzwingen möchten, können Sie den Blobbeleg für dieses Blob manuell aus dem Container *azure-webjobs-hosts* löschen.
 
-## <a id="queues"></a>Verwandte Themen aus dem Artikel zu Warteschlangen
+## Verwandte in den Artikeln zu Warteschlangen behandelte Themen
 
 Informationen zur Handhabung der Blobverarbeitung, die durch eine Warteschlangennachricht ausgelöst wird, oder zu Szenarien für das WebJobs-SDK, die sich nicht speziell auf die Blobverarbeitung beziehen, finden Sie unter [Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md).
 
@@ -234,9 +234,9 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 * Manuelles Auslösen einer Funktion
 * Schreiben von Protokollen
 
-## <a id="nextsteps"></a> Nächste Schritte
+## Nächste Schritte
 
-In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Blobs behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
+In diesem Artikel wurden Codebeispiele bereitgestellt, in denen der Umgang mit gängigen Szenarien für das Arbeiten mit Azure-Blobs veranschaulicht wird. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

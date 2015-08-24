@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit der Pushbenachrichtigungen (Android) | Mobile Dev Center" 
+	pageTitle="Erste Schritte mit Pushbenachrichtigungen (Android) | Microsoft Azure" 
 	description="Erfahren Sie mehr über die Verwendung von Azure Mobile Services zum Senden von Pushbenachrichtigungen an Ihre Android-.NET-App." 
 	services="mobile-services, notification-hubs" 
 	documentationCenter="android" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="05/12/2015" 
+	ms.date="08/08/2015" 
 	ms.author="ricksal"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
@@ -237,4 +237,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

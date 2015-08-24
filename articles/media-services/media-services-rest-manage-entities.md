@@ -14,12 +14,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
 
 #Verwalten von Media Services-Entitäten mit der REST-API
 
-Microsoft Azure Media Services ist ein REST-basierter Dienst auf Grundlage von OData v3. Aus diesem Grund können Sie Entitäten genauso wie bei anderen OData-Diensten hinzufügen, abfragen, aktualisieren und löschen. Auf Ausnahmen wird ggf. hingewiesen. Weitere Informationen zu OData finden Sie in der [Dokumentation zu Open Data Protocol](http://www.odata.org/documentation/) (in englischer Sprache).
+> [AZURE.SELECTOR]
+- [REST](media-services-rest-manage-entities.md)
+- [.NET](media-services-dotnet-manage-entities.md)
+
+Microsoft Azure Media Services ist ein REST-basierter Dienst auf Grundlage von OData v3. Aus diesem Grund können Sie Entitäten genauso wie bei anderen OData-Diensten hinzufügen, abfragen, aktualisieren und löschen. Auf Ausnahmen wird ggf. hingewiesen. Weitere Informationen zu OData finden Sie in der [Dokumentation zu Open Data Protocol](http://www.odata.org/documentation/) \(in englischer Sprache\).
 
 - Hinzufügen von Entitäten 
 - Abfragen von Entitäten 
@@ -44,7 +48,7 @@ Im folgenden Beispiel wird veranschaulicht, wie eine AccessPolicy erstellt wird:
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337067658&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=dithjGvlXR9HlyAf5DE99N5OCYkPAxsHIcsTSjm9%2fVE%3d
 	Host: media.windows.net
 	Content-Length: 74
@@ -62,7 +66,7 @@ Das Abfragen und Auflisten von Entitäten ist unkompliziert und umfasst nur die 
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337078831&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=suFkxhvPWxQVMjOYelOJfYEWkyTWJCBc02pF0N7NghI%3d
 	Host: media.windows.net
 
@@ -73,7 +77,7 @@ Sie können auch eine bestimmte Entität oder alle Entitätenmengen im Zusammenh
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.5
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1336907474&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=OpuY0CeTylqFFcFaP4pKUVGesT4PGx4CP55zDf2zXnc%3d
 	Host: media.windows.net
 
@@ -82,7 +86,7 @@ Sie können auch eine bestimmte Entität oder alle Entitätenmengen im Zusammenh
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1336907474&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=OpuY0CeTylqFFcFaP4pKUVGesT4PGx4CP55zDf2zXnc%3d
 	Host: media.windows.net
 
@@ -93,7 +97,7 @@ Im folgenden Beispiel wird nur die State-Eigenschaft aller Aufträge zurückgege
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337078831&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=suFkxhvPWxQVMjOYelOJfYEWkyTWJCBc02pF0N7NghI%3d
 	Host: media.windows.net
 	The following example returns all JobTemplates with the name "SampleTemplate."
@@ -102,16 +106,16 @@ Im folgenden Beispiel wird nur die State-Eigenschaft aller Aufträge zurückgege
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337078831&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=suFkxhvPWxQVMjOYelOJfYEWkyTWJCBc02pF0N7NghI%3d
 	Host: media.windows.net
 
->[AZURE.NOTE]Der $expand-Vorgang wird in Media Services nicht unterstützt, ebenso wie die in den LINQ-Informationen (WCF Data Services) beschriebenen LINQ-Methoden.
+>[AZURE.NOTE]Der $expand-Vorgang wird in Media Services nicht unterstützt, ebenso wie die in den LINQ-Informationen \(WCF Data Services\) beschriebenen LINQ-Methoden.
 
 
 ##Aktualisieren von Entitäten
 
-Abhängig vom Typ und dem Status der Entität können Sie Eigenschaften für diese Entität über die HTTP-Anforderungen PATCH, PUT oder MERGE aktualisieren. Weitere Informationen zu diesen Vorgängen finden Sie unter [PATCH, PUT, MERGE](https://msdn.microsoft.com/library/dd541276.aspx) (in englischer Sprache).
+Abhängig vom Typ und dem Status der Entität können Sie Eigenschaften für diese Entität über die HTTP-Anforderungen PATCH, PUT oder MERGE aktualisieren. Weitere Informationen zu diesen Vorgängen finden Sie unter [PATCH, PUT, MERGE](https://msdn.microsoft.com/library/dd541276.aspx).
 
 Im folgenden Codebeispiel wird veranschaulicht, wie die Name-Eigenschaft für eine Asset-Entität aktualisiert wird.
 
@@ -120,7 +124,7 @@ Im folgenden Codebeispiel wird veranschaulicht, wie die Name-Eigenschaft für ei
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337083279&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=DMLQXWah4jO0icpfwyws5k%2b1aCDfz9KDGIGao20xk6g%3d
 	Host: media.windows.net
 	Content-Length: 21
@@ -130,7 +134,7 @@ Im folgenden Codebeispiel wird veranschaulicht, wie die Name-Eigenschaft für ei
 
 ##Löschen von Entitäten
 
-Entitäten können in Media Services mithilfe der HTTP-Anforderung DELETE gelöscht werden. Abhängig von der Entität kann die Reihenfolge, in der Sie Entitäten löschen, wichtig sein. Für Entitäten wie Medienobjekte müssen Sie z. B. alle Locators widerrufen (oder löschen), die auf ein bestimmtes Medienobjekt verweisen, bevor das Medienobjekt gelöscht wird.
+Entitäten können in Media Services mithilfe der HTTP-Anforderung DELETE gelöscht werden. Abhängig von der Entität kann die Reihenfolge, in der Sie Entitäten löschen, wichtig sein. Für Entitäten wie Medienobjekte müssen Sie z. B. alle Locators widerrufen \(oder löschen\), die auf ein bestimmtes Medienobjekt verweisen, bevor das Medienobjekt gelöscht wird.
 
 Im folgenden Beispiel wird das Löschen eines Locator veranschaulicht, mit dem eine Datei in den BLOB-Speicher hochgeladen wurde.
 
@@ -139,9 +143,9 @@ Im folgenden Beispiel wird das Löschen eines Locator veranschaulicht, mit dem e
 	Accept: application/json;odata=verbose
 	DataServiceVersion: 3.0
 	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.9s
+	x-ms-version: 2.11
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337067658&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=dithjGvlXR9HlyAf5DE99N5OCYkPAxsHIcsTSjm9%2fVE%3d
 	Host: media.windows.net
 	Content-Length: 0
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

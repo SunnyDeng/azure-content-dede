@@ -7,7 +7,6 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
-
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -17,15 +16,13 @@
 	ms.date="07/16/2015" 
 	ms.author="spelluru"/>
 
-
 # Verwenden von benutzerdefinierten Aktivitäten in einer Azure Data Factory-Pipeline
 Azure Data Factory unterstützt integrierte Aktivitäten, z. B. **Kopieraktivität** und **HDInsight-Aktivität**, zum Verschieben und Verarbeiten von Daten in Pipelines. Sie können auch eine benutzerdefinierte .NET-Aktivität mit Ihrer eigenen Transformations-/Verarbeitungslogik erstellen und die Aktivität in einer Pipeline verwenden. Sie können die Aktivität so konfigurieren, dass entweder ein **Azure HDInsight**-Cluster oder ein **Azure Batch**-Dienst ausgeführt wird.
 
-Dieser Artikel beschreibt, wie Sie eine benutzerdefinierte Aktivität erstellen und in einer Azure Data Factory-Pipeline verwenden. Darüber hinaus bietet er eine ausführliche exemplarische Vorgehensweise mit einer schrittweisen Anleitung zum Erstellen und Verwenden einer benutzerdefinierten Aktivität. Für die exemplarische Vorgehensweise wird der mit HDInsight verknüpfte Dienst verwendet. Um stattdessen den mit Azure Batch verknüpften Dienst zu verwenden, erstellen Sie einen verknüpften Dienst vom Typ **AzureBatch** und verwenden ihn im Abschnitt "Aktivität" der JSON-Pipeline (**linkedServiceName**). Im Abschnitt [Mit Azure Batch verknüpfter Dienst](#AzureBatch) finden Sie Informationen zur Verwendung von Azure Batch mit der benutzerdefinierten Aktivität.
+Dieser Artikel beschreibt, wie Sie eine benutzerdefinierte Aktivität erstellen und in einer Azure Data Factory-Pipeline verwenden. Darüber hinaus bietet er eine ausführliche exemplarische Vorgehensweise mit einer schrittweisen Anleitung zum Erstellen und Verwenden einer benutzerdefinierten Aktivität. Für die exemplarische Vorgehensweise wird der mit HDInsight verknüpfte Dienst verwendet. Um stattdessen den mit Azure Batch verknüpften Dienst zu verwenden, erstellen Sie einen verknüpften Dienst vom Typ **AzureBatch** und verwenden ihn im Abschnitt "Aktivität" der JSON-Pipeline \(**linkedServiceName**\). Im Abschnitt [Mit Azure Batch verknüpfter Dienst](#AzureBatch) finden Sie Informationen zur Verwendung von Azure Batch mit der benutzerdefinierten Aktivität.
 
 
-## <a name="walkthrough" />
- Exemplarische Vorgehensweise
+## <a name="walkthrough" /> Exemplarische Vorgehensweise
 Diese exemplarische Vorgehensweise bietet Schritt-für-Schritt-Anleitungen zum Erstellen einer benutzerdefinierten Aktivität und zur Verwendung der Aktivität in einer Azure Data Factory-Pipeline. Diese exemplarische Vorgehensweise baut auf dem Lernprogramm in [Erste Schritte mit Azure Data Factory][adfgetstarted] auf. Wenn Sie die benutzerdefinierte Aktivität in Aktion sehen möchten, müssen Sie zuerst das Erste-Schritte-Lernprogramm durchlaufen und diese exemplarischen Vorgehensweise ausführen.
 
 **Voraussetzungen:**
@@ -93,7 +90,10 @@ Diese exemplarische Vorgehensweise bietet Schritt-für-Schritt-Anleitungen zum E
 
             Table inputTable = tables.Single(table => table.Name == activity.Inputs.Single().Name);
             inputLocation = inputTable.Properties.TypeProperties as CustomDataset;
-            inputLinkedService = linkedServices.Single(linkedService => linkedService.Name == inputTable.Properties.LinkedServiceName).Properties.TypeProperties as AzureStorageLinkedService;
+
+			// using First method instead of Single since we are using the same 
+			// Azure Storage linked service for input and output. 
+            inputLinkedService = linkedServices.First(linkedService => linkedService.Name == inputTable.Properties.LinkedServiceName).Properties.TypeProperties as AzureStorageLinkedService;
 
 
             string output = string.Empty;
@@ -161,7 +161,7 @@ Diese exemplarische Vorgehensweise bietet Schritt-für-Schritt-Anleitungen zum E
 
             Table outputTable = tables.Single(table => table.Name == activity.Outputs.Single().Name);
             outputLocation = outputTable.Properties.TypeProperties as AzureBlobDataset;
-            outputLinkedService = linkedServices.Single(linkedService => linkedService.Name == outputTable.Properties.LinkedServiceName).Properties.TypeProperties as AzureStorageLinkedService;
+            outputLinkedService = linkedServices.First(linkedService => linkedService.Name == outputTable.Properties.LinkedServiceName).Properties.TypeProperties as AzureStorageLinkedService;
 
             connectionString = GetConnectionString(outputLinkedService);
             folderPath = GetFolderPath(outputTable);
@@ -212,7 +212,7 @@ Diese exemplarische Vorgehensweise bietet Schritt-für-Schritt-Anleitungen zum E
 
 10. Kompilieren Sie das Projekt. Klicken Sie im Menü auf **Erstellen** und dann auf **Projektmappe erstellen**.
 11. Starten Sie **Windows-Explorer**, und navigieren Sie je nach Buildtyp zum Ordner **bin\\debug** oder **bin\\release**.
-12. Erstellen Sie die ZIP-Datei **MyDotNetActivity.zip**, die alle Binärdateien im Ordner "<project folder>\\bin\\Debug" enthält.
+12. Erstellen Sie die ZIP-Datei **MyDotNetActivity.zip**, die alle Binärdateien im Ordner "<project folder>\\bin\\Debug" enthält. Sie möchten ggf. die Datei "MyDotNetActivity.pdb" einbeziehen, damit Sie zusätzliche Details wie z. B. die Zeilennummer im Quellcode erhalten, der das Problem bei einem Fehler verursacht hat. 
 13. Laden Sie **MyDotNetActivity.zip** als Blob in den Blobcontainer **customactivitycontainer** im Azure-Blobspeicher hoch, den der verknüpfte Dienst **StorageLinkedService** in der **ADFTutorialDataFactory** verwendet. Erstellen Sie den Blobcontainer **customactivitycontainer**, sofern er noch nicht vorhanden ist. 
 
 
@@ -234,7 +234,7 @@ Wenn Sie das Lernprogramm [Erste Schritte mit Azure Data Factory][adfgetstarted]
 #### So verwenden Sie einen bedarfsgesteuerten HDInsight-Cluster
 
 1. Klicken Sie im **Azure-Portal** auf der Startseite der Data Factory auf **Erstellen und bereitstellen**.
-2. Klicken Sie im Data Factory-Editor auf der Befehlsleiste auf **Neu -> Compute**, und wählen Sie im Menü **On-Demand-HDInsight-Cluster** aus.
+2. Klicken Sie im Data Factory-Editor auf der Befehlsleiste auf **Neu -\> Compute**, und wählen Sie im Menü **On-Demand-HDInsight-Cluster** aus.
 2. Führen Sie im JSON-Skript folgende Schritte aus: 
 	1. Geben Sie für die Eigenschaft **clusterSize** die Größe des HDInsight-Clusters an.
 	2. Geben Sie für die Eigenschaft **jobsContainer** den Namen des Standardcontainers an, in dem die Clusterprotokolle gespeichert werden sollen. Geben Sie im Rahmen dieses Lernprogramms **adfjobscontainer** an.
@@ -249,7 +249,7 @@ Wenn Sie das Lernprogramm [Erste Schritte mit Azure Data Factory][adfgetstarted]
 #### So verwenden Sie Ihren eigenen HDInsight-Cluster: 
 
 1. Klicken Sie im **Azure-Portal** auf der Startseite der Data Factory auf **Erstellen und bereitstellen**.
-2. Klicken Sie im **Data Factory-Editor** auf der Befehlsleiste auf **Neu -> Compute**, und wählen Sie im Menü **HDInsight-Cluster** aus.
+2. Klicken Sie im **Data Factory-Editor** auf der Befehlsleiste auf **Neu -\> Compute**, und wählen Sie im Menü **HDInsight-Cluster** aus.
 2. Führen Sie im JSON-Skript folgende Schritte aus: 
 	1. Geben Sie für die **clusterUri**-Eigenschaft die URL für Ihr HDInsight ein. Beispiel: https://<clustername>.azurehdinsight.net/     
 	2. Geben Sie für die **UserName**-Eigenschaft den Benutzernamen ein, der Zugriff auf den HDInsight-Cluster hat.
@@ -295,7 +295,7 @@ Wenn Sie das Lernprogramm [Erste Schritte mit Azure Data Factory][adfgetstarted]
 
 ### Erstellen Sie eine Pipeline, die die benutzerdefinierte Aktivität verwendet, und führen Sie sie aus.
    
-1. Klicken Sie im Data Factory-Editor auf der Befehlsleiste auf die Schaltfläche **Neue Pipeline**. Wenn der Befehl nicht angezeigt wird, klicken Sie auf **... (Auslassungspunkte)**, um ihn anzuzeigen. 
+1. Klicken Sie im Data Factory-Editor auf der Befehlsleiste auf die Schaltfläche **Neue Pipeline**. Wenn der Befehl nicht angezeigt wird, klicken Sie auf **... \(Auslassungspunkte\)**, um ihn anzuzeigen. 
 2. Ersetzen Sie das JSON-Skript im rechten Bereich durch das folgende JSON-Skript. Wenn Sie einen eigenen Cluster verwenden möchten und die Schritte zum Erstellen des verknüpften Diensts **HDInsightLinkedService** ausgeführt haben, ersetzen Sie im folgenden JSON-Code **HDInsightOnDemandLinkedService** durch **HDInsightLinkedService**. 
 		
 		{
@@ -348,7 +348,7 @@ Wenn Sie das Lernprogramm [Erste Schritte mit Azure Data Factory][adfgetstarted]
 	- Im Abschnitt "activities" gibt es eine Aktivität vom Typ **DotNetActivity**.
 	- Verwenden Sie die gleiche Eingabetabelle **EmpTableFromBlob**, die Sie im Lernprogramm "Erste Schritte" verwendet haben.
 	- Verwenden Sie eine neue Ausgabetabelle **OutputTableForCustom**, die Sie im nächsten Schritt erstellen.
-	- **AssemblyName** wird auf den Namen der DLL (**MyActivities.dll**) festgelegt.
+	- **AssemblyName** wird auf den Namen der DLL \(**MyActivities.dll**\) festgelegt.
 	- **EntryPoint** wird auf **MyDotNetActivityNS.MyDotNetActivity** festgelegt.
 	- **PackageLinkedService** wird auf das **MyBlobStore**-Element festgelegt, das als Teil des Lernprogramms [Erste Schritte mit Azure Data Factory][adfgetstarted] erstellt wurde. Dieser Blobspeicher enthält die ZIP-Datei mit der benutzerdefinierten Aktivität.
 	- **PackageFile** wird auf **customactivitycontainer/MyCustomActivity.zip** festgelegt.
@@ -362,13 +362,14 @@ Wenn Sie das Lernprogramm [Erste Schritte mit Azure Data Factory][adfgetstarted]
 	
 	adftutorial/,EMP.txt,2,WORKERNODE0,03/27/2015 19:23:28
 
-	(Blobspeicherort), (Name des Blobs), (Anzahl der Zeilen im Blob) (Knoten, auf dem die Aktivität ausgeführt wurde), (Datum-/Uhrzeitstempel)
+	\(Blobspeicherort\), \(Name des Blobs\), \(Anzahl der Zeilen im Blob\) \(Knoten, auf dem die Aktivität ausgeführt wurde\), \(Datum-/Uhrzeitstempel\)
 
-10.	Verwenden Sie das [Azure-Portal][azure-preview-portal] oder die Azure PowerShell-Cmdlets zum Überwachen Ihrer Data Factory, Pipelines und Datasets. Sie können die Meldungen vom **ActivityLogger** im Code für die benutzerdefinierte Aktivität in den Protokollen sehen, die Sie aus dem Portal oder mithilfe von Cmdlets herunterladen können.
+10.	Verwenden Sie das [Azure-Portal][azure-preview-portal] oder die Azure PowerShell-Cmdlets zum Überwachen Ihrer Data Factory, Pipelines und Datasets. Sie können die Meldungen vom **ActivityLogger** im Code für die benutzerdefinierte Aktivität in den Protokollen \(insbesondere "user-0.log"\) sehen, die Sie aus dem Portal oder mithilfe von Cmdlets herunterladen können.
 
 	![Herunterladen von Protokollen aus einer benutzerdefinierten Aktivität][image-data-factory-download-logs-from-custom-activity]
+	
    
-Eine ausführliche Anleitung zum Überwachen von Datasets und Pipelines finden Sie in [Erste Schritte mit Azure Data Factory][adfgetstarted].
+Unter [Überwachen und Verwalten von Pipelines](data-factory-monitor-manage-pipelines.md) finden Sie eine ausführliche Anleitung zum Überwachen von Datasets und Pipelines.
 
 ## Aktualisieren einer benutzerdefinierten Aktivität
 Wenn Sie den Code für die benutzerdefinierte Aktivität aktualisieren, führen Sie einen Buildvorgang aus. Laden Sie die ZIP-Datei mit den neuen Binärdateien in den Blobspeicher hoch.
@@ -376,7 +377,7 @@ Wenn Sie den Code für die benutzerdefinierte Aktivität aktualisieren, führen 
 ## <a name="AzureBatch"></a> Verwenden des mit Azure Batch verknüpften Diensts 
 > [AZURE.NOTE]Unter [Technische Übersicht zu Azure Batch][batch-technical-overview] finden Sie eine Übersicht über den Azure Batch-Dienst. Unter [Erste Schritte mit der Azure Batch-Bibliothek für .NET][batch-get-started] werden die ersten Schritte mit dem Azure Batch-Dienst gezeigt.
 
-Sie können Ihre benutzerdefinierten .NET-Aktivitäten mithilfe von Azure Batch als eine Compute-Ressource ausführen. Sie müssen Ihren eigenen Azure Batch-Pools erstellen und die Anzahl der virtuellen Computer (VM) zusammen mit anderen Konfigurationen angeben. Azure Batch-Pools bieten Kunden die folgenden Funktionen:
+Sie können Ihre benutzerdefinierten .NET-Aktivitäten mithilfe von Azure Batch als eine Compute-Ressource ausführen. Sie müssen Ihren eigenen Azure Batch-Pools erstellen und die Anzahl der virtuellen Computer \(VM\) zusammen mit anderen Konfigurationen angeben. Azure Batch-Pools bieten Kunden die folgenden Funktionen:
 
 1. Pools erstellen, die von einem bis zu tausenden Kernen enthalten
 2. Automatische Skalierung der VM-Anzahl basierend auf einer Formel
@@ -390,7 +391,7 @@ Es folgen die allgemeinen Schritte zur Verwendung des mit Azure Batch verknüpft
 1. Erstellen Sie mit dem Azure-Verwaltungsportal ein Azure Batch-Konto. Eine Anleitung hierzu finden Sie unter [Azure Batch – Technische Übersicht][batch-create-account]. Notieren Sie den Azure Batch-Kontonamen und -Kontoschlüssel. 
 
 	Sie können auch das [New-AzureBatchAccount][new-azure-batch-account]-Cmdlet verwenden, um ein Azure Batch-Konto zu erstellen. Ausführliche Anweisungen zur Verwendung dieses Cmdlets finden Sie unter [Verwenden von Azure PowerShell zum Verwalten des Azure Batch-Kontos][azure-batch-blog]. 
-2. Erstellen Sie einen Azure Batch-Pool. Sie können zum Erstellen eines Azure Batch-Pools das [Azure Batch-Explorer-Tool][batch-explorer] herunterladen und verwenden (oder) die [Azure Batch-Bibliothek für .NET][batch-net-library]. Unter [Azure Batch-Explorer – Beispiel für eine exemplarische Vorgehensweise][batch-explorer-walkthrough] finden Sie Schritt-für-Schritt-Anweisungen zur Verwendung des Azure Batch-Explorers.
+2. Erstellen Sie einen Azure Batch-Pool. Sie können zum Erstellen eines Azure Batch-Pools das [Azure Batch-Explorer-Tool][batch-explorer] herunterladen und verwenden \(oder\) die [Azure Batch-Bibliothek für .NET][batch-net-library]. Unter [Azure Batch-Explorer – Beispiel für eine exemplarische Vorgehensweise][batch-explorer-walkthrough] finden Sie Schritt-für-Schritt-Anweisungen zur Verwendung des Azure Batch-Explorers.
 	
 	Sie können auch das [New-AzureBatchPool][new-azure-batch-pool]-Cmdlet verwenden, um einen Azure Batch-Pool zu erstellen.
 
@@ -409,7 +410,7 @@ Es folgen die allgemeinen Schritte zur Verwendung des mit Azure Batch verknüpft
 		  }
 		}
 
-	> [AZURE.NOTE]Erweitern Sie den Namen Ihres Batch-Kontos für die Eigenschaft **accountName** um "**.<Name der Region**". Beispiel: "mybatchaccount.eastus". Außerdem kann, wie nachfolgend gezeigt, auch der batchUri-Endpunkt angegeben werden.
+	> [AZURE.NOTE]Erweitern Sie den Namen Ihres Batch-Kontos für die Eigenschaft **accountName** um "**.\<Name der Region**". Beispiel: "mybatchaccount.eastus". Außerdem kann, wie nachfolgend gezeigt, auch der batchUri-Endpunkt angegeben werden.
 
 		accountName: "adfteam",
 		batchUri: "https://eastus.batch.azure.com",
@@ -466,4 +467,4 @@ Es folgen die allgemeinen Schritte zur Verwendung des mit Azure Batch verknüpft
 [image-data-factory-azure-batch-tasks]: ./media/data-factory-use-custom-activities/AzureBatchTasks.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -2,7 +2,7 @@
 <properties
     pageTitle="Zugreifen auf Apps"
     description="Sie erfahren, welche Clients für Azure RemoteApp unterstützt werden und wie Sie auf Ihre Apps zugreifen."
-    services="remoteapp" 
+    services="remoteapp"
 	documentationCenter=""
     authors="lizap"
     manager="mbaldwin" />
@@ -13,14 +13,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="07/23/2015"
+    ms.date="08/12/2015"
     ms.author="elizapo" />
 
 
 
 # Zugreifen auf Anwendungen in Azure RemoteApp
 
-Einer der unschlagbaren Vorteile von Azure RemoteApp ist, dass Sie auf Apps zugreifen können, die für Sie über Ihre Geräte veröffentlicht wurden. Und was noch besser ist: Sie können mit der Arbeit auf einem Gerät beginnen und dann nahtlos zu einem zweiten Gerät wechseln und an dem Punkt weiterarbeiten, an dem Sie aufgehört haben. Zuerst müssen Sie hierzu den entsprechenden Client für Ihr Gerät herunterladen und sich am Dienst anmelden.
+Einer der unschlagbaren Vorteile von Azure RemoteApp ist, dass Sie über sämtliche Ihrer Geräte auf Apps zugreifen können. Und was noch besser ist: Sie können mit der Arbeit auf einem Gerät beginnen und dann nahtlos zu einem zweiten Gerät wechseln und an dem Punkt weiterarbeiten, an dem Sie aufgehört haben. Zuerst müssen Sie hierzu den entsprechenden Client für Ihr Gerät herunterladen und sich am Dienst anmelden.
 
 Dieses Thema enthält die derzeit unterstützten Clients sowie Informationen zum Download. Anschließend wird beschrieben, wie Sie sich auf den einzelnen Clients bei RemoteApp anmelden.
 
@@ -207,4 +207,4 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem Windows Phone 8.1 Store ins
 	![Demofeed für Azure RemoteApp](./media/remoteapp-clients/WinPhone8.png)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

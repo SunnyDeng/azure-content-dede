@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden (Xamarin.iOS) | Mobile Dev Center" 
+	pageTitle="Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden (Xamarin.iOS) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Benutzer für das für einmalige Anmelden mit ADAL in Ihrer Xamarin.iOS-Anwendung authentifizieren." 
 	documentationCenter="xamarin" 
 	authors="mattchenderson" 
@@ -141,4 +141,4 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 [Xamarin]: http://xamarin.com/visual-studio
 [Xamarin Studio]: http://xamarin.com/download
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

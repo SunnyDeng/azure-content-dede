@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Importieren der Datei mit Veröffentlichungseinstellungen in Visual Studio 2013 | Mobile Services" 
+	pageTitle="Importieren der Datei mit Veröffentlichungseinstellungen in Visual Studio 2013 | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie eine Datei mit Abonnementveröffentlichungseinstellungen für Ihre Azure Mobile Services-Anwendung in Visual Studio 2013 importieren." 
 	documentationCenter="" 
 	services="mobile-services" 
@@ -62,4 +62,4 @@ Bevor Sie den mobilen Dienst erstellen können, müssen Sie die .publishsettings
 [Azure Management Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

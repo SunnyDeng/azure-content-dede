@@ -5,7 +5,7 @@
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
-	editor="mollybos"/>
+	editor="jimbe"/>
 
 <tags 
 	ms.service="app-service-web" 
@@ -96,4 +96,4 @@ Auf dem Blatt "Details" werden die verfügbaren Informationen im Zusammenhang mi
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

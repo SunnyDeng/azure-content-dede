@@ -7,37 +7,33 @@
 	manager="dwrede" 
 	editor=""/>
 
-
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/05/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
-
-
 
 
 #Dynamische Verschlüsselung: Konfigurieren von Autorisierungsrichtlinien für Inhaltsschlüssel 
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
-
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
+ 
 
 ##Übersicht
 
-Mit Microsoft Azure Media Services können Sie Inhalte (dynamisch) verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und PlayReady-DRM. Media Services umfasst auch einen Dienst für die Übermittlung von Schlüsseln und PlayReady-Lizenzen an autorisierte Clients.
+Mit Microsoft Azure Media Services können Sie Inhalte \(dynamisch\) verschlüsselt übermitteln, und zwar mit AES \(Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels\) und PlayReady-DRM. Media Services umfasst auch einen Dienst für die Übermittlung von Schlüsseln und PlayReady-Lizenzen an autorisierte Clients.
 
-Wenn ein Asset durch Media Services verschlüsselt werden soll, müssen Sie ihm einen Verschlüsselungsschlüssel (**CommonEncryption** oder **EnvelopeEncryption**) zuordnen (wie [hier](media-services-rest-create-contentkey.md) beschrieben) und zusätzlich Autorisierungsrichtlinien für den Schlüssel konfigurieren (wie in diesem Artikel beschrieben).
+Wenn ein Medienobjekt durch Media Services verschlüsselt werden soll, müssen Sie ihm einen Verschlüsselungsschlüssel \(**CommonEncryption** oder **EnvelopeEncryption**\) zuordnen \(wie [hier](media-services-rest-create-contentkey.md) beschrieben\) und zusätzlich Autorisierungsrichtlinien für den Schlüssel konfigurieren \(wie in diesem Artikel beschrieben\).
 
 Zur Zeit können Sie die folgenden Streamingformate verschlüsseln: HLS, MPEG DASH und Smooth Streaming. Das HDS-Streamingformat oder progressive Downloads können nicht verschlüsselt werden.
 
 Wenn ein Player einen Stream anfordert, verwendet Media Services den angegebenen Schlüssel, um Ihren Inhalt mit AES- oder PlayReady-Verschlüsselung dynamisch zu verschlüsseln. Um den Stream zu entschlüsseln, fordert der Player den Schlüssel vom Schlüsselübermittlungsdienst an. Um zu entscheiden, ob der Benutzer berechtigt ist, den Schlüssel zu erhalten, wertet der Dienst die Autorisierungsrichtlinien aus, die Sie für den Schlüssel angegeben haben.
 
-Media Services unterstützt mehrere Möglichkeiten zur Authentifizierung von Benutzern, die Schlüssel anfordern. Die Autorisierungsrichtlinie für Inhaltsschlüssel kann eine oder mehrere Autorisierungseinschränkungen aufweisen: **offen**, **Tokeneinschränkung** oder **IP-Einschränkung**. Die durch Token eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem Secure Token Service (STS) ausgestellt wurde. Media Services unterstützt Token im **Simple Web Tokens** ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2))-Format und \*\*JSON Web Token \*\*(JWT)-Format.
+Media Services unterstützt mehrere Möglichkeiten zur Authentifizierung von Benutzern, die Schlüssel anfordern. Die Autorisierungsrichtlinie für Inhaltsschlüssel kann eine oder mehrere Autorisierungseinschränkungen aufweisen: **offen**, **Tokeneinschränkung** oder **IP-Einschränkung**. Die durch Token eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem Secure Token Service \(STS\) ausgestellt wurde. Media Services unterstützt Token im Format **Simple Web Tokens** \([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2)\)und "JSON Web Token \(JWT\)".
 
-Secure Token Services werden von Media Services nicht bereitgestellt. Sie können einen benutzerdefinierten STS erstellen oder Microsoft Azure ACS zum Ausstellen von Token nutzen. Der STS muss für die Erstellung eines mit dem angegebenen Schlüssel signierten Tokens und die Ausgabe von Ansprüchen konfiguriert sein, die Sie in der Konfiguration der Token-Einschränkung angegeben haben (wie in diesem Artikel beschrieben). Der Schlüsselübermittlungsdienst von Media Services gibt den Verschlüsselungsschlüssel an den Client zurück, wenn das Token gültig ist und die Ansprüche im Token mit den für den Inhaltsschlüssel konfigurierten Ansprüchen übereinstimmen.
+Secure Token Services werden von Media Services nicht bereitgestellt. Sie können einen benutzerdefinierten STS erstellen oder Microsoft Azure ACS zum Ausstellen von Token nutzen. Der STS muss für die Erstellung eines mit dem angegebenen Schlüssel signierten Tokens und die Ausgabe von Ansprüchen konfiguriert sein, die Sie in der Konfiguration der Token-Einschränkung angegeben haben \(wie in diesem Artikel beschrieben\). Der Schlüsselübermittlungsdienst von Media Services gibt den Verschlüsselungsschlüssel an den Client zurück, wenn das Token gültig ist und die Ansprüche im Token mit den für den Inhaltsschlüssel konfigurierten Ansprüchen übereinstimmen.
 
 Weitere Informationen finden Sie unter
 
@@ -53,8 +49,8 @@ Weitere Informationen finden Sie unter
 - Ihr Medienobjekt muss einen Satz von MP4-Dateien bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten. Weitere Informationen finden Sie unter [Codieren von Medienobjekten](media-services-encode-asset.md).  
 - Zum Hochladen und Codieren Ihrer Medienobjekte verwenden Sie die Option **AssetCreationOptions.StorageEncrypted**.
 - Wenn Sie mehrere Inhaltsschlüssel verwenden möchten, die dieselbe Richtlinienkonfiguration erfordern, wird empfohlen, eine einzelne Autorisierungsrichtlinie zu erstellen und für mehrere Inhaltsschlüssel wiederzuverwenden.
-- ContentKeyAuthorizationPolicy und die zugehörigen Objekte (Richtlinienoptionen und Einschränkungen) werden vom Schlüsselübermittlungsdienst für 15 Minuten zwischengespeichert. Wenn Sie ContentKeyAuthorizationPolicy erstellen und angeben, dass eine „Token“-Einschränkung verwendet werden soll, diese anschließend testen und dann die Richtlinie auf eine „Open“-Einschränkung aktualisieren, dauert es ungefähr 15 Minuten, bis die Richtlinie zur „Open“-Version der Richtlinie wechselt.
-- Wenn Sie die Übermittlungsrichtlinie eines Medienobjekts hinzufügen oder aktualisieren, müssen Sie einen vorhandenen Locator (sofern vorhanden) löschen und einen neuen Locator erstellen.
+- ContentKeyAuthorizationPolicy und die zugehörigen Objekte \(Richtlinienoptionen und Einschränkungen\) werden vom Schlüsselübermittlungsdienst für 15 Minuten zwischengespeichert. Wenn Sie ContentKeyAuthorizationPolicy erstellen und angeben, dass eine „Token“-Einschränkung verwendet werden soll, diese anschließend testen und dann die Richtlinie auf eine „Open“-Einschränkung aktualisieren, dauert es ungefähr 15 Minuten, bis die Richtlinie zur „Open“-Version der Richtlinie wechselt.
+- Wenn Sie die Übermittlungsrichtlinie eines Medienobjekts hinzufügen oder aktualisieren, müssen Sie einen vorhandenen Locator \(sofern vorhanden\) löschen und einen neuen Locator erstellen.
 
 
 ##Dynamische AES-128-Verschlüsselung 
@@ -192,7 +188,7 @@ Antwort:
 
 ###Token-Einschränkung
 
-In diesem Abschnitt wird beschrieben, wie eine Autorisierungsrichtlinie für Inhaltsschlüssel erstellt und dem Inhaltsschlüssel zugeordnet wird. Durch die Autorisierungsrichtlinie wird beschrieben, welche Autorisierungsanforderungen der Benutzer erfüllen muss, um den Schlüssel zu erhalten (beispielsweise wird überprüft, ob der Schlüssel, mit dem das Token signiert wurde, in der Liste der Überprüfungsschlüssel enthalten ist).
+In diesem Abschnitt wird beschrieben, wie eine Autorisierungsrichtlinie für Inhaltsschlüssel erstellt und dem Inhaltsschlüssel zugeordnet wird. Durch die Autorisierungsrichtlinie wird beschrieben, welche Autorisierungsanforderungen der Benutzer erfüllen muss, um den Schlüssel zu erhalten \(beispielsweise wird überprüft, ob der Schlüssel, mit dem das Token signiert wurde, in der Liste der Überprüfungsschlüssel enthalten ist\).
 
 Zur Konfiguration der Token-Einschränkungsoption müssen die Autorisierungsanforderungen des Tokens in XML beschrieben werden. Die XML für die Konfiguration der Token-Einschränkung muss folgendem XML-Schema entsprechen.
 
@@ -203,68 +199,51 @@ Zur Konfiguration der Token-Einschränkungsoption müssen die Autorisierungsanfo
 	  <xs:complexType name="TokenClaim">
 	    <xs:sequence>
 	      <xs:element name="ClaimType" nillable="true" type="xs:string" />
-
 	      <xs:element minOccurs="0" name="ClaimValue" nillable="true" type="xs:string" />
-
 	    </xs:sequence>
 	  </xs:complexType>
 	  <xs:element name="TokenClaim" nillable="true" type="tns:TokenClaim" />
-
 	  <xs:complexType name="TokenRestrictionTemplate">
 	    <xs:sequence>
 	      <xs:element minOccurs="0" name="AlternateVerificationKeys" nillable="true" type="tns:ArrayOfTokenVerificationKey" />
-
 	      <xs:element name="Audience" nillable="true" type="xs:anyURI" />
-
 	      <xs:element name="Issuer" nillable="true" type="xs:anyURI" />
-
 	      <xs:element name="PrimaryVerificationKey" nillable="true" type="tns:TokenVerificationKey" />
-
 	      <xs:element minOccurs="0" name="RequiredClaims" nillable="true" type="tns:ArrayOfTokenClaim" />
-
 	    </xs:sequence>
 	  </xs:complexType>
 	  <xs:element name="TokenRestrictionTemplate" nillable="true" type="tns:TokenRestrictionTemplate" />
-
 	  <xs:complexType name="ArrayOfTokenVerificationKey">
 	    <xs:sequence>
 	      <xs:element minOccurs="0" maxOccurs="unbounded" name="TokenVerificationKey" nillable="true" type="tns:TokenVerificationKey" />
-
 	    </xs:sequence>
 	  </xs:complexType>
 	  <xs:element name="ArrayOfTokenVerificationKey" nillable="true" type="tns:ArrayOfTokenVerificationKey" />
-
 	  <xs:complexType name="TokenVerificationKey">
 	    <xs:sequence />
-
 	  </xs:complexType>
 	  <xs:element name="TokenVerificationKey" nillable="true" type="tns:TokenVerificationKey" />
-
 	  <xs:complexType name="ArrayOfTokenClaim">
 	    <xs:sequence>
 	      <xs:element minOccurs="0" maxOccurs="unbounded" name="TokenClaim" nillable="true" type="tns:TokenClaim" />
-
 	    </xs:sequence>
 	  </xs:complexType>
 	  <xs:element name="ArrayOfTokenClaim" nillable="true" type="tns:ArrayOfTokenClaim" />
-
 	  <xs:complexType name="SymmetricVerificationKey">
 	    <xs:complexContent mixed="false">
 	      <xs:extension base="tns:TokenVerificationKey">
 	        <xs:sequence>
 	          <xs:element name="KeyValue" nillable="true" type="xs:base64Binary" />
-
 	        </xs:sequence>
 	      </xs:extension>
 	    </xs:complexContent>
 	  </xs:complexType>
 	  <xs:element name="SymmetricVerificationKey" nillable="true" type="tns:SymmetricVerificationKey" />
-
 	</xs:schema>
 
-Bei der Konfiguration der Richtlinie mit **token**-Einschränkung müssen die Parameter "primary \*\*verification key\*\*", **issuer** und **audience** angegeben werden. \*\*PrimaryVerificationKey\*\* enthält den Schlüssel, mit dem das Token signiert wurde, und **Issuer** ist der STS (Secure Token Service), von dem das Token ausgestellt wurde. **audience** (manchmal auch **scope**) beschreibt den Verwendungszweck des Tokens oder die Ressource, auf die durch das Token Zugriff gewährt wird. Der Schlüsselübermittlungsdienst von Media Services überprüft, ob die Werte im Token mit den Werten in der Vorlage übereinstimmen.
+Bei der Konfiguration der Richtlinie mit **token**-Einschränkung müssen die Parameter "primary **verification key**", **issuer** und **audience** angegeben werden. "PrimaryVerificationKey" enthält den Schlüssel, mit dem das Token signiert wurde, und **issuer** ist der STS \(Secure Token Service\), von dem das Token ausgestellt wurde. **audience** \(manchmal auch **scope**\) beschreibt den Verwendungszweck des Tokens oder die Ressource, auf die durch das Token Zugriff gewährt wird. Der Schlüsselübermittlungsdienst von Media Services überprüft, ob die Werte im Token mit den Werten in der Vorlage übereinstimmen.
 
-Im folgenden Beispiel wird eine Autorisierungsrichtlinie mit einer Token-Einschränkung erstellt. In diesem Beispiel müsste der Client ein Token vorlegen, das einen Signaturschlüssel (VerificationKey), einen Tokenherausgeber und erforderliche Ansprüche enthält.
+Im folgenden Beispiel wird eine Autorisierungsrichtlinie mit einer Token-Einschränkung erstellt. In diesem Beispiel müsste der Client ein Token vorlegen, das einen Signaturschlüssel \(VerificationKey\), einen Tokenherausgeber und erforderliche Ansprüche enthält.
 	
 ###Erstellen von ContentKeyAuthorizationPolicies
 
@@ -287,8 +266,7 @@ Anforderung:
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 1079
 	
-	{"Name":"Token option for HLS","KeyDeliveryType":2,"KeyDeliveryConfiguration":null,"Restrictions":[{"Name":"Token Authorization Policy","KeyRestrictionType":1,"Requirements":"<TokenRestrictionTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/TokenRestrictionTemplate/v1"><AlternateVerificationKeys><TokenVerificationKey i:type="SymmetricVerificationKey"><KeyValue>BklyAFiPTQsuJNKriQJBZHYaKM2CkCTDQX2bw9sMYuvEC9sjW0W7GUIBygQL/+POEeUqCYPnmEU2g0o1GW2Oqg==</KeyValue></TokenVerificationKey></AlternateVerificationKeys><Audience>urn:test</Audience><Issuer>http://testacs.com/</Issuer><PrimaryVerificationKey i:type="SymmetricVerificationKey"><KeyValue>E5BUHiN4vBdzUzdP0IWaHFMMU3D1uRZgF16TOhSfwwHGSw+Kbf0XqsHzEIYk11M372viB9vbiacsdcQksA0ftw==</KeyValue></PrimaryVerificationKey><RequiredClaims><TokenClaim><ClaimType>urn:microsoft:azure:mediaservices:contentkeyidentifier</ClaimType><ClaimValue i:nil="true" />
-</TokenClaim></RequiredClaims><TokenType>SWT</TokenType></TokenRestrictionTemplate>"}]}
+	{"Name":"Token option for HLS","KeyDeliveryType":2,"KeyDeliveryConfiguration":null,"Restrictions":[{"Name":"Token Authorization Policy","KeyRestrictionType":1,"Requirements":"<TokenRestrictionTemplate xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/TokenRestrictionTemplate/v1\"><AlternateVerificationKeys><TokenVerificationKey i:type=\"SymmetricVerificationKey\"><KeyValue>BklyAFiPTQsuJNKriQJBZHYaKM2CkCTDQX2bw9sMYuvEC9sjW0W7GUIBygQL/+POEeUqCYPnmEU2g0o1GW2Oqg==</KeyValue></TokenVerificationKey></AlternateVerificationKeys><Audience>urn:test</Audience><Issuer>http://testacs.com/</Issuer><PrimaryVerificationKey i:type=\"SymmetricVerificationKey\"><KeyValue>E5BUHiN4vBdzUzdP0IWaHFMMU3D1uRZgF16TOhSfwwHGSw+Kbf0XqsHzEIYk11M372viB9vbiacsdcQksA0ftw==</KeyValue></PrimaryVerificationKey><RequiredClaims><TokenClaim><ClaimType>urn:microsoft:azure:mediaservices:contentkeyidentifier</ClaimType><ClaimValue i:nil=\"true\" /></TokenClaim></RequiredClaims><TokenType>SWT</TokenType></TokenRestrictionTemplate>"}]}
 
 Antwort:
 	
@@ -307,8 +285,7 @@ Antwort:
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Tue, 10 Feb 2015 09:10:37 GMT
 	
-	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicyOptions/@Element","Id":"nb:ckpoid:UUID:e1ef6145-46e8-4ee6-9756-b1cf96328c23","Name":"Token option for HLS","KeyDeliveryType":2,"KeyDeliveryConfiguration":null,"Restrictions":[{"Name":"Token Authorization Policy","KeyRestrictionType":1,"Requirements":"<TokenRestrictionTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/TokenRestrictionTemplate/v1"><AlternateVerificationKeys><TokenVerificationKey i:type="SymmetricVerificationKey"><KeyValue>BklyAFiPTQsuJNKriQJBZHYaKM2CkCTDQX2bw9sMYuvEC9sjW0W7GUIBygQL/+POEeUqCYPnmEU2g0o1GW2Oqg==</KeyValue></TokenVerificationKey></AlternateVerificationKeys><Audience>urn:test</Audience><Issuer>http://testacs.com/</Issuer><PrimaryVerificationKey i:type="SymmetricVerificationKey"><KeyValue>E5BUHiN4vBdzUzdP0IWaHFMMU3D1uRZgF16TOhSfwwHGSw+Kbf0XqsHzEIYk11M372viB9vbiacsdcQksA0ftw==</KeyValue></PrimaryVerificationKey><RequiredClaims><TokenClaim><ClaimType>urn:microsoft:azure:mediaservices:contentkeyidentifier</ClaimType><ClaimValue i:nil="true" />
-</TokenClaim></RequiredClaims><TokenType>SWT</TokenType></TokenRestrictionTemplate>"}]}
+	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicyOptions/@Element","Id":"nb:ckpoid:UUID:e1ef6145-46e8-4ee6-9756-b1cf96328c23","Name":"Token option for HLS","KeyDeliveryType":2,"KeyDeliveryConfiguration":null,"Restrictions":[{"Name":"Token Authorization Policy","KeyRestrictionType":1,"Requirements":"<TokenRestrictionTemplate xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/TokenRestrictionTemplate/v1\"><AlternateVerificationKeys><TokenVerificationKey i:type=\"SymmetricVerificationKey\"><KeyValue>BklyAFiPTQsuJNKriQJBZHYaKM2CkCTDQX2bw9sMYuvEC9sjW0W7GUIBygQL/+POEeUqCYPnmEU2g0o1GW2Oqg==</KeyValue></TokenVerificationKey></AlternateVerificationKeys><Audience>urn:test</Audience><Issuer>http://testacs.com/</Issuer><PrimaryVerificationKey i:type=\"SymmetricVerificationKey\"><KeyValue>E5BUHiN4vBdzUzdP0IWaHFMMU3D1uRZgF16TOhSfwwHGSw+Kbf0XqsHzEIYk11M372viB9vbiacsdcQksA0ftw==</KeyValue></PrimaryVerificationKey><RequiredClaims><TokenClaim><ClaimType>urn:microsoft:azure:mediaservices:contentkeyidentifier</ClaimType><ClaimValue i:nil=\"true\" /></TokenClaim></RequiredClaims><TokenType>SWT</TokenType></TokenRestrictionTemplate>"}]}
 	
 ####Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen
 
@@ -385,9 +362,7 @@ Anforderung:
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 593
 	
-	{"Name":"","KeyDeliveryType":1,"KeyDeliveryConfiguration":"<PlayReadyLicenseResponseTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1"><LicenseTemplates><PlayReadyLicenseTemplate><AllowTestDevices>false</AllowTestDevices><ContentKey i:type="ContentEncryptionKeyFromHeader" />
-<LicenseType>Nonpersistent</LicenseType><PlayRight />
-</PlayReadyLicenseTemplate></LicenseTemplates></PlayReadyLicenseResponseTemplate>","Restrictions":[{"Name":"Open","KeyRestrictionType":0,"Requirements":null}]}
+	{"Name":"","KeyDeliveryType":1,"KeyDeliveryConfiguration":"<PlayReadyLicenseResponseTemplate xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1\"><LicenseTemplates><PlayReadyLicenseTemplate><AllowTestDevices>false</AllowTestDevices><ContentKey i:type=\"ContentEncryptionKeyFromHeader\" /><LicenseType>Nonpersistent</LicenseType><PlayRight /></PlayReadyLicenseTemplate></LicenseTemplates></PlayReadyLicenseResponseTemplate>","Restrictions":[{"Name":"Open","KeyRestrictionType":0,"Requirements":null}]}
 	
 Antwort:
 	
@@ -406,9 +381,7 @@ Antwort:
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Tue, 10 Feb 2015 09:23:24 GMT
 	
-	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicyOptions/@Element","Id":"nb:ckpoid:UUID:1052308c-4df7-4fdb-8d21-4d2141fc2be0","Name":"","KeyDeliveryType":1,"KeyDeliveryConfiguration":"<PlayReadyLicenseResponseTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1"><LicenseTemplates><PlayReadyLicenseTemplate><AllowTestDevices>false</AllowTestDevices><ContentKey i:type="ContentEncryptionKeyFromHeader" />
-<LicenseType>Nonpersistent</LicenseType><PlayRight />
-</PlayReadyLicenseTemplate></LicenseTemplates></PlayReadyLicenseResponseTemplate>","Restrictions":[{"Name":"Open","KeyRestrictionType":0,"Requirements":null}]}
+	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicyOptions/@Element","Id":"nb:ckpoid:UUID:1052308c-4df7-4fdb-8d21-4d2141fc2be0","Name":"","KeyDeliveryType":1,"KeyDeliveryConfiguration":"<PlayReadyLicenseResponseTemplate xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1\"><LicenseTemplates><PlayReadyLicenseTemplate><AllowTestDevices>false</AllowTestDevices><ContentKey i:type=\"ContentEncryptionKeyFromHeader\" /><LicenseType>Nonpersistent</LicenseType><PlayRight /></PlayReadyLicenseTemplate></LicenseTemplates></PlayReadyLicenseResponseTemplate>","Restrictions":[{"Name":"Open","KeyRestrictionType":0,"Requirements":null}]}
 
 ####Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen
 
@@ -443,10 +416,7 @@ Anforderung:
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 1525
 	
-	{"Name":"Token option","KeyDeliveryType":1,"KeyDeliveryConfiguration":"<PlayReadyLicenseResponseTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1"><LicenseTemplates><PlayReadyLicenseTemplate><AllowTestDevices>false</AllowTestDevices><ContentKey i:type="ContentEncryptionKeyFromHeader" />
-<LicenseType>Nonpersistent</LicenseType><PlayRight />
-</PlayReadyLicenseTemplate></LicenseTemplates></PlayReadyLicenseResponseTemplate>","Restrictions":[{"Name":"Token Authorization Policy","KeyRestrictionType":1,"Requirements":"<TokenRestrictionTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/TokenRestrictionTemplate/v1"><AlternateVerificationKeys><TokenVerificationKey i:type="SymmetricVerificationKey"><KeyValue>w52OyHVqXT8aaupGxuJ3NGt8M6opHDOtx132p4r6q4hLI6ffnLusgEGie1kedUewVoIe1tqDkVE6xsIV7O91KA==</KeyValue></TokenVerificationKey></AlternateVerificationKeys><Audience>urn:test</Audience><Issuer>http://testacs.com/</Issuer><PrimaryVerificationKey i:type="SymmetricVerificationKey"><KeyValue>dYwLKIEMBljLeY9VM7vWdlhps31Fbt0XXhqP5VyjQa33bJXleBtkzQ6dF5AtwI9gDcdM2dV2TvYNhCilBKjMCg==</KeyValue></PrimaryVerificationKey><RequiredClaims><TokenClaim><ClaimType>urn:microsoft:azure:mediaservices:contentkeyidentifier</ClaimType><ClaimValue i:nil="true" />
-</TokenClaim></RequiredClaims><TokenType>SWT</TokenType></TokenRestrictionTemplate>"}]}
+	{"Name":"Token option","KeyDeliveryType":1,"KeyDeliveryConfiguration":"<PlayReadyLicenseResponseTemplate xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1\"><LicenseTemplates><PlayReadyLicenseTemplate><AllowTestDevices>false</AllowTestDevices><ContentKey i:type=\"ContentEncryptionKeyFromHeader\" /><LicenseType>Nonpersistent</LicenseType><PlayRight /></PlayReadyLicenseTemplate></LicenseTemplates></PlayReadyLicenseResponseTemplate>","Restrictions":[{"Name":"Token Authorization Policy","KeyRestrictionType":1,"Requirements":"<TokenRestrictionTemplate xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/TokenRestrictionTemplate/v1\"><AlternateVerificationKeys><TokenVerificationKey i:type=\"SymmetricVerificationKey\"><KeyValue>w52OyHVqXT8aaupGxuJ3NGt8M6opHDOtx132p4r6q4hLI6ffnLusgEGie1kedUewVoIe1tqDkVE6xsIV7O91KA==</KeyValue></TokenVerificationKey></AlternateVerificationKeys><Audience>urn:test</Audience><Issuer>http://testacs.com/</Issuer><PrimaryVerificationKey i:type=\"SymmetricVerificationKey\"><KeyValue>dYwLKIEMBljLeY9VM7vWdlhps31Fbt0XXhqP5VyjQa33bJXleBtkzQ6dF5AtwI9gDcdM2dV2TvYNhCilBKjMCg==</KeyValue></PrimaryVerificationKey><RequiredClaims><TokenClaim><ClaimType>urn:microsoft:azure:mediaservices:contentkeyidentifier</ClaimType><ClaimValue i:nil=\"true\" /></TokenClaim></RequiredClaims><TokenType>SWT</TokenType></TokenRestrictionTemplate>"}]}
 
 Antwort:
 	
@@ -465,10 +435,7 @@ Antwort:
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Tue, 10 Feb 2015 09:58:47 GMT
 	
-	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicyOptions/@Element","Id":"nb:ckpoid:UUID:e42bbeae-de42-4077-90e9-a844f297ef70","Name":"Token option","KeyDeliveryType":1,"KeyDeliveryConfiguration":"<PlayReadyLicenseResponseTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1"><LicenseTemplates><PlayReadyLicenseTemplate><AllowTestDevices>false</AllowTestDevices><ContentKey i:type="ContentEncryptionKeyFromHeader" />
-<LicenseType>Nonpersistent</LicenseType><PlayRight />
-</PlayReadyLicenseTemplate></LicenseTemplates></PlayReadyLicenseResponseTemplate>","Restrictions":[{"Name":"Token Authorization Policy","KeyRestrictionType":1,"Requirements":"<TokenRestrictionTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/TokenRestrictionTemplate/v1"><AlternateVerificationKeys><TokenVerificationKey i:type="SymmetricVerificationKey"><KeyValue>w52OyHVqXT8aaupGxuJ3NGt8M6opHDOtx132p4r6q4hLI6ffnLusgEGie1kedUewVoIe1tqDkVE6xsIV7O91KA==</KeyValue></TokenVerificationKey></AlternateVerificationKeys><Audience>urn:test</Audience><Issuer>http://testacs.com/</Issuer><PrimaryVerificationKey i:type="SymmetricVerificationKey"><KeyValue>dYwLKIEMBljLeY9VM7vWdlhps31Fbt0XXhqP5VyjQa33bJXleBtkzQ6dF5AtwI9gDcdM2dV2TvYNhCilBKjMCg==</KeyValue></PrimaryVerificationKey><RequiredClaims><TokenClaim><ClaimType>urn:microsoft:azure:mediaservices:contentkeyidentifier</ClaimType><ClaimValue i:nil="true" />
-</TokenClaim></RequiredClaims><TokenType>SWT</TokenType></TokenRestrictionTemplate>"}]}
+	{"odata.metadata":"https://wamsbayclus001rest-hs.cloudapp.net/api/$metadata#ContentKeyAuthorizationPolicyOptions/@Element","Id":"nb:ckpoid:UUID:e42bbeae-de42-4077-90e9-a844f297ef70","Name":"Token option","KeyDeliveryType":1,"KeyDeliveryConfiguration":"<PlayReadyLicenseResponseTemplate xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1\"><LicenseTemplates><PlayReadyLicenseTemplate><AllowTestDevices>false</AllowTestDevices><ContentKey i:type=\"ContentEncryptionKeyFromHeader\" /><LicenseType>Nonpersistent</LicenseType><PlayRight /></PlayReadyLicenseTemplate></LicenseTemplates></PlayReadyLicenseResponseTemplate>","Restrictions":[{"Name":"Token Authorization Policy","KeyRestrictionType":1,"Requirements":"<TokenRestrictionTemplate xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/TokenRestrictionTemplate/v1\"><AlternateVerificationKeys><TokenVerificationKey i:type=\"SymmetricVerificationKey\"><KeyValue>w52OyHVqXT8aaupGxuJ3NGt8M6opHDOtx132p4r6q4hLI6ffnLusgEGie1kedUewVoIe1tqDkVE6xsIV7O91KA==</KeyValue></TokenVerificationKey></AlternateVerificationKeys><Audience>urn:test</Audience><Issuer>http://testacs.com/</Issuer><PrimaryVerificationKey i:type=\"SymmetricVerificationKey\"><KeyValue>dYwLKIEMBljLeY9VM7vWdlhps31Fbt0XXhqP5VyjQa33bJXleBtkzQ6dF5AtwI9gDcdM2dV2TvYNhCilBKjMCg==</KeyValue></PrimaryVerificationKey><RequiredClaims><TokenClaim><ClaimType>urn:microsoft:azure:mediaservices:contentkeyidentifier</ClaimType><ClaimValue i:nil=\"true\" /></TokenClaim></RequiredClaims><TokenType>SWT</TokenType></TokenRestrictionTemplate>"}]}
 
 ####Verknüpfen von ContentKeyAuthorizationPolicies mit Optionen
 
@@ -505,4 +472,4 @@ Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguri
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

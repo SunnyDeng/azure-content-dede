@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/20/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 
@@ -76,4 +76,4 @@ Informationen zu Untertiteln und der Unterstützung von Werbeeinblendungen in Li
 [dash.js-Repository von GitHub](https://github.com/Dash-Industry-Forum/dash.js) (in englischer Sprache)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

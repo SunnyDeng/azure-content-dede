@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="multiple"
-	ms.date="07/21/2015"
+	ms.date="08/05/2015"
 	ms.author="davidmu"/>
 
 # Automatisches Skalieren von Rechenknoten in einem Azure Batch-Pool
@@ -23,7 +23,7 @@ Das automatische Skalieren von Rechenknoten in einem Azure Batch-Pool ist eine d
 
 Automatisches Skalieren findet statt, wenn diese Funktion für einen Pool aktiviert und dem Pool eine Formel zugeordnet ist. Die Formel wird verwendet, um die Anzahl der Rechenknoten zu bestimmen, die erforderlich sind, um die Anwendung zu bearbeiten. Automatisches Skalieren kann beim Erstellen eines Pools oder später für einen bereits vorhandenen Pool festgelegt werden. Die Formel kann in einem Pool, in dem automatisches Skalieren aktiviert wurde, auch nachträglich aktualisiert werden.
 
-Wenn automatisches Skalieren aktiviert ist, wird die Anzahl der verfügbaren Rechenknoten alle 15 Minuten auf Basis der Formel angepasst. Die Formel bezieht sich auf Sample-Werte, die alle 5 Sekunden erfasst werden, jedoch erst 75 Sekunden nach dem Erfassen von der Formel berücksichtigt werden können. Diese Zeitfaktoren müssen bei Verwendung der unten beschriebenen GetSample-Methode berücksichtigt werden.
+Wenn automatisches Skalieren aktiviert ist, wird die Anzahl der verfügbaren Rechenknoten alle 15 Minuten auf Basis der Formel angepasst. Die Formel bezieht sich auf Sample-Werte, die regelmäßig erfasst, jedoch erst mit einer gewissen Verzögerung nach dem Erfassen von der Formel berücksichtigt werden können. Diese Verzögerung muss bei Verwendung der unten beschriebenen GetSample-Methode berücksichtigt werden.
 
 Es empfiehlt sich stets, die Formel vor der Zuweisung an einen Pool auszuwerten, und es ist wichtig, den Status der ausgelösten automatischen Skalierung zu kontrollieren.
 
@@ -56,7 +56,7 @@ Vom System definierte Variablen und benutzerdefinierte Variablen können in eine
     <td>Die vorgegebene Anzahl dedizierter Rechenknoten für den Pool. Der Wert kann anhand der tatsächlichen Anforderungen laufender Aufgaben geändert werden.</td>
   </tr>
   <tr>
-    <td>$TVMDeallocationOption</td>
+    <td>$NodeDeallocationOption</td>
     <td>Dieser Vorgang wird ausgeführt, wenn Rechenknoten aus einem Pool entfernt werden. Mögliche Werte:
       <br/>
       <ul>
@@ -115,7 +115,7 @@ Sie können die Werte dieser vom System definierten Variablen nur lesen, um anha
     <td>Die Anzahl der ausgehenden Byte</td>
   </tr>
   <tr>
-    <td>$SampleTVMCount</td>
+    <td>$SampleNodeCount</td>
     <td>Die Anzahl der Rechenknoten</td>
   </tr>
   <tr>
@@ -323,10 +323,6 @@ Folgende vordefinierte Funktionen stehen zum Definieren einer Formel für das au
     <td>double val(doubleVec v, double i)</td>
     <td>Der Wert des Elements an Position i im Vektor v mit einem Anfangsindex von 0.</td>
   </tr>
-  <tr>
-    <td>doubleVec vec(doubleVecList)</td>
-    <td>Erstellt explizit einen einzelnen doubleVec aus einer doubleVecList.</td>
-  </tr>
 </table>
 
 Einige der beschriebenen Funktionen akzeptieren eine Liste als Argument. Die durch Komma getrennte Liste ist eine beliebige Kombination aus double und doubleVec. Beispiel:
@@ -392,7 +388,7 @@ Folgende Metriken lassen sich über eine Formel definieren.
     <td><p>Basierend auf der CPU-Nutzung, Bandbreitennutzung, Speicherauslastung und Anzahl der Rechenknoten. Die oben beschriebenen Systemvariablen werden in Formeln verwendet, um die Rechenknoten in einem Pool verwalten:</p>
     <p><ul>
       <li>$TargetDedicated</li>
-      <li>$TVMDeallocationOption</li>
+      <li>$NodeDeallocationOption</li>
     </ul></p>
     <p>Folgende Systemvariablen werden für Anpassungen anhand von Knotenmetriken verwendet:</p>
     <p><ul>
@@ -424,7 +420,7 @@ Folgende Metriken lassen sich über eine Formel definieren.
       <li>$FailedTasks</li>
       <li>$CurrentDedicated</li></ul></p>
     <p>Folgendes Beispiel zeigt eine Formel, die erkennt, ob 70&#160;% der Beispiele in den letzten 15&#160;Minuten erfasst wurden. Falls dies nicht der Fall ist, wird das letzte Beispiel verwendet. Es wird versucht, die Anzahl der Rechenknoten auf die Anzahl der aktiven Aufgaben, jedoch maximal auf 3, zu erhöhen. Die Knotenanzahl wird auf ein Viertel der Anzahl der aktiven Aufgaben eingestellt, da die MaxTasksPerVM-Eigenschaft des Pools auf 4 festgelegt wurde. Dabei wird auch die Deallokationsoption als "Taskcompletion" festgelegt, um den Computer beizubehalten, bis die Aufgabe beendet ist.</p>
-    <p><b>$Samples = $ActiveTasks.GetSamplePercent(TimeInterval\_Minute * 15); $Tasks = $Samples &lt; 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1),avg($ActiveTasks.GetSample(TimeInterval\_Minute * 15))); $Cores = $TargetDedicated * 4; $ExtraVMs = ($Tasks - $Cores) / 4; $TargetVMs = ($TargetDedicated+$ExtraVMs);$TargetDedicated = max(0,min($TargetVMs,3)); $TVMDeallocationOption = taskcompletion;</b></p></td>
+    <p><b>$Samples = $ActiveTasks.GetSamplePercent(TimeInterval\_Minute * 15); $Tasks = $Samples &lt; 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1),avg($ActiveTasks.GetSample(TimeInterval\_Minute * 15))); $Cores = $TargetDedicated * 4; $ExtraVMs = ($Tasks - $Cores) / 4; $TargetVMs = ($TargetDedicated+$ExtraVMs);$TargetDedicated = max(0,min($TargetVMs,3)); $NodeDeallocationOption = taskcompletion;</b></p></td>
   </tr>
 </table>
 
@@ -476,4 +472,4 @@ Sie sollten in regelmäßigen Abständen die Ergebnisse der Durchläufe des auto
 	- [Get-AzureBatchRDPFile](https://msdn.microsoft.com/library/mt149851.aspx): Dieses Cmdlet ruft die RDP-Datei aus dem angegebenen Rechenknoten ab und speichert sie am festgelegten Speicherort oder in einen Stream.
 2.	Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit, dies zu lösen, besteht in [effizienten Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

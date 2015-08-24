@@ -7,7 +7,6 @@
 	manager="jeffreyg"
 	editor="monicar" />
 
-
 <tags 
 	ms.service="virtual-machines"
 	ms.devlang="na"
@@ -16,7 +15,6 @@
 	ms.workload="infrastructure-services"
 	ms.date="08/05/2015"
 	ms.author="jroth" />
-
 
 # Sicherung und Wiederherstellung für SQL Server auf virtuellen Azure-Computern
 
@@ -48,11 +46,11 @@ Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2) unterstützt d
 
 - **Striping**: Für Sicherungen in Microsoft Azure-Blob-Speicher unterstützt SQL Server 2016 das Sichern in mehreren Blobs, um die Sicherung großer Datenbanken mit bis zu 12,8 TB zu ermöglichen.
 
-- **Momentaufnahmesicherung**: Durch die Verwendung von Azure-Momentaufnahmen ermöglicht die Dateimomentaufnahme-Sicherung von SQL Server nahezu sofortige Backups und schnelle Wiederherstellungen für Datenbankdateien, die mit dem Azure-Blob-Speicherdienst gespeichert werden. Sicherungs- und Wiederherstellungsrichtlinien lassen sich dank dieser Funktion vereinfachen. Die Dateimomentaufnahme-Sicherung unterstützt auch Point-in-Time-Wiederherstellungen. Weitere Informationen finden Sie im Artikel zu [Momentaufnahmesicherungen für Datenbankdateien in Azure](https://msdn.microsoft.com/library/mt169363(v=sql.130).aspx).
+- **Momentaufnahmesicherung**: Durch die Verwendung von Azure-Momentaufnahmen ermöglicht die Dateimomentaufnahme-Sicherung von SQL Server nahezu sofortige Backups und schnelle Wiederherstellungen für Datenbankdateien, die mit dem Azure-Blob-Speicherdienst gespeichert werden. Sicherungs- und Wiederherstellungsrichtlinien lassen sich dank dieser Funktion vereinfachen. Die Dateimomentaufnahme-Sicherung unterstützt auch Point-in-Time-Wiederherstellungen. Weitere Informationen finden Sie im Artikel zu [Momentaufnahmesicherungen für Datenbankdateien in Azure](https://msdn.microsoft.com/library/mt169363%28v=sql.130%29.aspx).
 
-- **Verwaltete Sicherungsplanung**: SQL Server Managed Backup unterstützt jetzt benutzerdefinierte Zeitpläne. Weitere Informationen finden Sie unter [SQL Server Managed Backup für Microsoft Azure](https://msdn.microsoft.com/library/dn449496.aspx).
+- **Verwaltete Sicherungsplanung**: SQL Server Managed Backup für Azure unterstützt jetzt benutzerdefinierte Zeitpläne. Weitere Informationen finden Sie unter [SQL Server Managed Backup für Microsoft Azure](https://msdn.microsoft.com/library/dn449496.aspx).
 
->[AZURE.NOTE]Eine praxisnahe Einführung in die Funktionen von SQL Server 2016 für Azure-Blob-Speicher bietet das [Lernprogramm zur Verwendung des Microsoft Azure-Blob-Speicherdiensts mit SQL Server 2016-Datenbanken](https://msdn.microsoft.com/library/dn466438.aspx).
+>[AZURE.NOTE]Eine praxisnahe Einführung in die Funktionen von SQL Server 2016 für Azure-Blobspeicher bietet das [Tutorial zur Verwendung des Microsoft Azure-Blobspeicherdiensts mit SQL Server 2016-Datenbanken](https://msdn.microsoft.com/library/dn466438.aspx).
 
 ## Sicherung und Wiederherstellung in SQL Server 2014
 
@@ -60,35 +58,35 @@ SQL Server 2014 enthält die folgenden Erweiterungen:
 
 1. **Sichern und Wiederherstellen in Azure**:
 
- - *SQL Server-URL-Sicherung* wird jetzt in SQL Server Management Studio unterstützt. Die Option zum Sichern in Azure ist jetzt bei der Verwendung der Aufgabe „Sichern oder Wiederherstellen“ oder des Wartungsplanungs-Assistenten in SQL Server Management Studio verfügbar. Weitere Informationen finden Sie unter [SQL Server-URL-Sicherung](https://msdn.microsoft.com/library/jj919148(v=sql.120).aspx).
- - *SQL Server Managed Backup für Azure* verfügt über neue Funktionen, die eine automatisierte Sicherungsverwaltung ermöglichen. Diese Funktionen erleichtern insbesondere die Automatisierung der Sicherungsverwaltung für SQL Server 2014-Instanzen auf einem Azure-Computer. Weitere Informationen finden Sie unter [SQL Server Managed Backup für Microsoft Azure](https://msdn.microsoft.com/library/dn449496(v=sql.120).aspx).
- - *Automatisierte Sicherung* bietet zusätzliche Automatisierungsfunktionen, mit denen *SQL Server Managed Backup für Azure* automatisch für alle vorhandenen und neuen Datenbanken für eine SQL Server-VM in Azure aktiviert werden kann. Weitere Informationen finden Sie unter [Automatisierte Sicherung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-automated-backup.md).
- - Eine Übersicht über alle Optionen für die SQL Server 2014-Sicherung in Azure finden Sie unter [SQL Server-Sicherung und -Wiederherstellung mit dem Microsoft Azure-Blob-Speicherdienst](https://msdn.microsoft.com/library/jj919148(v=sql.120).aspx).
+ - *SQL Server-URL-Sicherung* wird jetzt in SQL Server Management Studio unterstützt. Die Option zum Sichern in Azure ist jetzt bei der Verwendung der Aufgabe „Sichern oder Wiederherstellen“ oder des Wartungsplanungs-Assistenten in SQL Server Management Studio verfügbar. Weitere Informationen finden Sie unter [SQL Server-URL-Sicherung](https://msdn.microsoft.com/library/jj919148%28v=sql.120%29.aspx).
+ - *SQL Server Managed Backup für Azure* verfügt über neue Funktionen, die eine automatisierte Sicherungsverwaltung ermöglichen. Diese Funktionen erleichtern insbesondere die Automatisierung der Sicherungsverwaltung für SQL Server 2014-Instanzen auf einem Azure-Computer. Weitere Informationen finden Sie unter [SQL Server Managed Backup für Microsoft Azure](https://msdn.microsoft.com/library/dn449496%28v=sql.120%29.aspx).
+ - *Automatisierte Sicherung* bietet zusätzliche Automatisierungsfunktionen, mit denen *SQL Server Managed Backup für Azure* automatisch für alle vorhandenen und neuen Datenbanken für einen virtuellen SQL Server-Computer in Azure aktiviert werden kann. Weitere Informationen finden Sie unter [Automatisierte Sicherung für SQL Server in Azure Virtual Machines](virtual-machines-sql-server-automated-backup.md).
+ - Eine Übersicht über alle Optionen für die SQL Server 2014-Sicherung in Azure finden Sie unter [SQL Server-Sicherung und -Wiederherstellung mit dem Microsoft Azure-Blobspeicherdienst](https://msdn.microsoft.com/library/jj919148%28v=sql.120%29.aspx).
 
-1. **Verschlüsselung**: SQL Server 2014 unterstützt das Verschlüsseln von Daten beim Erstellen einer Sicherung. Es werden mehrere Verschlüsselungsalgorithmen und die Verwendung eines Zertifikats oder asymmetrischen Schlüssels unterstützt. Weitere Informationen finden Sie unter [Sicherungsverschlüsselung](https://msdn.microsoft.com/library/dn449489(v=sql.120).aspx).
+1. **Verschlüsselung**: SQL Server 2014 unterstützt das Verschlüsseln von Daten beim Erstellen einer Sicherung. Es werden mehrere Verschlüsselungsalgorithmen und die Verwendung eines Zertifikats oder asymmetrischen Schlüssels unterstützt. Weitere Informationen finden Sie unter [Sicherungsverschlüsselung](https://msdn.microsoft.com/library/dn449489%28v=sql.120%29.aspx).
 
 ## Sicherung und Wiederherstellung in SQL Server 2012
 
-Ausführliche Informationen zur SQL Server-Sicherung und -Wiederherstellung in SQL Server 2012 finden Sie unter [Sichern und Wiederherstellen von SQL Server-Datenbanken (SQL Server 2012)](https://msdn.microsoft.com/library/ms187048(v=sql.110).aspx).
+Ausführliche Informationen zur SQL Server-Sicherung und -Wiederherstellung in SQL Server 2012 finden Sie unter [Sichern und Wiederherstellen von SQL Server-Datenbanken (SQL Server 2012)](https://msdn.microsoft.com/library/ms187048%28v=sql.110%29.aspx).
 
-Ab SQL Server 2012 SP1, kumulatives Update 2, ist die Sicherung und Wiederherstellung im bzw. aus dem Azure-Blob-Speicherdienst möglich. Diese Erweiterung kann verwendet werden, um SQL Server-Datenbanken in einer SQL Server-Instanz auf einem virtuellen Azure-Computer oder einer lokalen Instanz zu sichern. Weitere Informationen finden Sie unter [SQL Server-Sicherung und -Wiederherstellung mit dem Windows Azure-Blob-Speicherdienst](https://msdn.microsoft.com/library/jj919148(v=sql.110).aspx).
+Ab SQL Server 2012 SP1, kumulatives Update 2, ist die Sicherung und Wiederherstellung im bzw. aus dem Azure-Blob-Speicherdienst möglich. Diese Erweiterung kann verwendet werden, um SQL Server-Datenbanken in einer SQL Server-Instanz auf einem virtuellen Azure-Computer oder einer lokalen Instanz zu sichern. Weitere Informationen finden Sie unter [SQL Server-Sicherung und -Wiederherstellung mit dem Azure-Blobspeicherdienst](https://msdn.microsoft.com/library/jj919148%28v=sql.110%29.aspx).
 
-Zu den Vorteilen des Azure-Blob-Speicherdiensts zählen die Möglichkeit, die Beschränkung auf 16 angefügte Datenträger zu umgehen, die einfache Verwaltung und die direkte Verfügbarkeit der Sicherungsdatei für eine andere SQL Server-Instanz auf einem virtuellen Azure-Computer oder eine lokale Instanz zur Migration oder Notfallwiederherstellung. Eine vollständige Liste der Vorteile, die die Verwendung des Azure-Blob-Speicherdiensts für SQL Server-Sicherungen bietet, finden Sie im Abschnitt *Vorteile* unter [SQL Server-Sicherung und -Wiederherstellung mit dem Azure-Blob-Speicherdienst](https://msdn.microsoft.com/library/jj919148(v=sql.110).aspx).
+Zu den Vorteilen des Azure-Blob-Speicherdiensts zählen die Möglichkeit, die Beschränkung auf 16 angefügte Datenträger zu umgehen, die einfache Verwaltung und die direkte Verfügbarkeit der Sicherungsdatei für eine andere SQL Server-Instanz auf einem virtuellen Azure-Computer oder eine lokale Instanz zur Migration oder Notfallwiederherstellung. Eine vollständige Liste der Vorteile, die die Verwendung des Azure-Blobspeicherdiensts für SQL Server-Sicherungen bietet, finden Sie im Abschnitt *Vorteile* unter [SQL Server-Sicherung und -Wiederherstellung mit dem Azure-Blobspeicherdienst](https://msdn.microsoft.com/library/jj919148%28v=sql.110%29.aspx).
 
-Bewährte Methoden, Empfehlungen und Informationen zur Problembehandlung finden Sie unter [Bewährte Methoden für die Sicherung und Wiederherstellung (Azure-Blob-Speicherdienst)](https://msdn.microsoft.com/library/jj919149(v=sql.110).aspx).
+Bewährte Methoden, Empfehlungen und Informationen zur Problembehandlung finden Sie unter [Bewährte Methoden für die Sicherung und Wiederherstellung (Azure-Blobspeicherdienst)](https://msdn.microsoft.com/library/jj919149%28v=sql.110%29.aspx).
 
 ## Sicherung und Wiederherstellung in anderen unterstützten SQL Server-Versionen auf virtuellen Azure-Computern
 
-Informationen zur SQL Server-Sicherung und -Wiederherstellung in SQL Server 2008 R2 finden Sie unter [Sichern und Wiederherstellen von Datenbanken in SQL Server (SQL Server 2008 R2)](https://msdn.microsoft.com/library/ms187048(v=sql.105).aspx).
+Informationen zur SQL Server-Sicherung und -Wiederherstellung in SQL Server 2008 R2 finden Sie unter [Sichern und Wiederherstellen von Datenbanken in SQL Server (SQL Server 2008 R2)](https://msdn.microsoft.com/library/ms187048%28v=sql.105%29.aspx).
 
-Informationen zur SQL Server-Sicherung und -Wiederherstellung in SQL Server 2008 finden Sie unter [Sichern und Wiederherstellen von Datenbanken in SQL Server (SQL Server 2008)](https://msdn.microsoft.com/library/ms187048(v=sql.100).aspx).
+Informationen zur SQL Server-Sicherung und -Wiederherstellung in SQL Server 2008 finden Sie unter [Sichern und Wiederherstellen von Datenbanken in SQL Server (SQL Server 2008)](https://msdn.microsoft.com/library/ms187048%28v=sql.100%29.aspx).
 
 ## Nächste Schritte
 
-Wenn Sie noch an der Planung Ihrer Bereitstellung von SQL Server auf einer Azure-VM arbeiten, finden Sie im folgenden Lernprogramm Informationen zur Bereitstellung: [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](virtual-machines-provision-sql-server.md).
+Wenn Sie noch an der Planung Ihrer Bereitstellung von SQL Server auf einem virtuellen Azure-Computer arbeiten, finden Sie im folgenden Tutorial Informationen zur Bereitstellung: [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](virtual-machines-provision-sql-server.md).
 
-Obwohl Sie Ihre Daten durch Sicherung und Wiederherstellung migrieren können, sind möglicherweise einfachere Migrationspfade für SQL Server auf einer Azure-VM verfügbar. Eine vollständige Erläuterung der Migrationsoptionen und Empfehlungen finden Sie unter [Migration einer Datenbank zu SQL Server auf einer Azure-VM](virtual-machines-migrate-onpremises-database.md).
+Obwohl Sie Ihre Daten durch Sicherung und Wiederherstellung migrieren können, sind möglicherweise einfachere Migrationspfade für SQL Server auf einer Azure-VM verfügbar. Eine vollständige Erläuterung der Migrationsoptionen und Empfehlungen finden Sie unter [Migration einer Datenbank zu SQL Server auf einem virtuellen Azure-Computer](virtual-machines-migrate-onpremises-database.md).
 
-Lesen Sie auch die weiteren [Ressourcen für die Ausführung von SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
+Lesen Sie auch die weiteren [Ressourcen für die Ausführung von SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

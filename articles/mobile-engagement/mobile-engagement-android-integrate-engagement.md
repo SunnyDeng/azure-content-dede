@@ -3,7 +3,7 @@
 	description="Neueste Updates und Verfahren für das Android SDK für Azure Mobile Engagement"
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
-	authors="kpiteira" 
+	authors="piyushjo" 
 	manager="dwrede" 
 	editor="" />
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="02/12/2015" 
-	ms.author="kapiteir" />
+	ms.date="08/10/2015" 
+	ms.author="piyushjo" />
 
 #Integrieren von Mobile Engagement unter Android
 
@@ -311,4 +311,4 @@ Dann können Sie `CheckBoxPreference` wie folgt im Einstellungslayout hinzufüge
 [Geräte-API]: http://go.microsoft.com/?linkid=9876094
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

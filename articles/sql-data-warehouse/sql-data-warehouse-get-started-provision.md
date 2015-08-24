@@ -7,7 +7,6 @@
    manager="barbkess"
    editor=""/>
 
-
 <tags
    ms.service="sql-data-warehouse"
    ms.devlang="NA"
@@ -16,7 +15,6 @@
    ms.workload="data-services"
    ms.date="06/23/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
-
 
 # Erste Schritte: Bereitstellen von SQL Data Warehouses #
 
@@ -155,18 +153,21 @@ Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen 
 
 Nachdem der SQLDW-Dienst bereitgestellt wurde, können wir jetzt zu dessen Verwendung übergehen.
 
-In den nächsten Schritten erfahren Sie daher Folgendes: 1. Data Warehouse – [Verbinden und Abfragen][]. 2. Laden der [Beispieldaten].
+In den nächsten Schritten lernen Sie daher Folgendes:
+
+1. Wie Sie [eine Verbindung mit dem Data Warehouse herstellen, um es abzufragen][].
+2. Wie Sie [Beispieldaten laden].
 
 <!--Image references-->
 
 
 <!-- Articles -->
-[Verbinden und Abfragen]: sql-data-warehouse-get-started-connect-query.md
-[Beispieldaten]: ./sql-data-warehouse-get-started-load-samples.md
+[eine Verbindung mit dem Data Warehouse herstellen, um es abzufragen]: sql-data-warehouse-get-started-connect-query.md
+[Beispieldaten laden]: ./sql-data-warehouse-get-started-load-samples.md
 
 <!--External links-->
 [kostenlose Testversion]: https://azure.microsoft.com/de-de/pricing/free-trial/
 [Azure-Portal]: https://portal.azure.com/
 [Azure-Portals]: https://portal.azure.com/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

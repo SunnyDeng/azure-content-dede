@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="ne"
 	ms.topic="get-started-article" 
-	ms.date="08/03/2015"
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
 
 
@@ -193,21 +193,9 @@ Wenn die Streamingereignisse beendet sind und Sie die zuvor bereitgestellten Res
 
 
 
-##Nächster Schritt
-
-Erfahren Sie mehr über das Erstellen von Livestreaming-Anwendungen [Livestreaming-Anwendungen erstellen](media-services-live-streaming-workflow.md)
-
-###Zusätzliche Ressourcen
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Stellen Sie Ihr Video jetzt online!</a>
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamische Pakete und mobile Geräte</a>
-
-
-<!-- Anchors. -->
-
-
 <!-- URLs. -->
 [Management Portal]: http://manage.windowsazure.com/
 
 <!-- Images -->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

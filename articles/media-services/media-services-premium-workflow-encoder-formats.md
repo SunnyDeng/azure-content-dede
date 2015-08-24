@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="08/11/2015"  
 	ms.author="juliako"/>
 
 #Media Encoder Premium Workflow-Formate und -Codecs
@@ -127,4 +127,4 @@ Hinweis: Nicht alle der oben genannten Ausgabeformate werden zur Übermittlung p
 
 Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjekt trotzdem eine leere TTML-Datei.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

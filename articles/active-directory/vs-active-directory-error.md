@@ -56,45 +56,45 @@ Der Assistent versucht schließlich, Versionen von Authentifizierungscode zu erk
 
 Zum Erkennen der Windows-Authentifizierung in einem MVC-Projekt sucht der Assistent nach dem `authentication`-Element aus Ihrer Datei **web.config**.
 
-```
-	&lt;configuration&gt;
-	    &lt;system.web&gt;
-	        <span style="background-color: yellow">&lt;authentication mode="Windows" /&gt;</span>
-	    &lt;/system.web&gt;
-	&lt;/configuration&gt;
-```
+<pre>
+	&lt;configuration>
+	    &lt;system.web>
+	        <span style="background-color: yellow">&lt;authentication mode="Windows" /></span>
+	    &lt;/system.web>
+	&lt;/configuration>
+</pre>
 
 Zum Erkennen der Windows-Authentifizierung in einem Web-API-Projekt sucht der Assistent nach dem `IISExpressWindowsAuthentication`-Element aus der **CSPROJ**-Datei Ihres Projekts:
 
-```
-	&lt;Project&gt;
-	    &lt;PropertyGroup&gt;
-	        <span style="background-color: yellow">&lt;IISExpressWindowsAuthentication&gt;enabled&lt;/IISExpressWindowsAuthentication&gt;</span>
+<pre>
+	&lt;Project>
+	    &lt;PropertyGroup>
+	        <span style="background-color: yellow">&lt;IISExpressWindowsAuthentication>enabled&lt;/IISExpressWindowsAuthentication></span>
 	    &lt;/PropertyGroup>
-	&lt;/Project&gt;
-```
+	&lt;/Project>
+</pre>
 
 Zum Erkennen der Authentifizierung einzelner Benutzerkonten sucht der Assistent nach dem Paketelement aus Ihrer Datei **Packages.config**.
 
-```
-	&lt;packages&gt;
-	    <span style="background-color: yellow">&lt;package id="Microsoft.AspNet.Identity.EntityFramework" version="2.1.0" targetFramework="net45" /&gt;</span>
-	&lt;/packages&gt;
-```
+<pre>
+	&lt;packages>
+	    <span style="background-color: yellow">&lt;package id="Microsoft.AspNet.Identity.EntityFramework" version="2.1.0" targetFramework="net45" /></span>
+	&lt;/packages>
+</pre>
 
 Zum Erkennen der alten Form von Organisationskontoauthentifizierung sucht der Assistent nach dem folgenden Element aus der Datei **web.config**:
 
-```
-	&lt;configuration&gt;
-	    &lt;appSettings&gt;
-	        <span style="background-color: yellow">&lt;add key="ida:Realm" value="***" /&gt;</span>
-	    &lt;/appSettings&gt;
-	&lt;/configuration&gt;
-```
+<pre>
+	&lt;configuration>
+	    &lt;appSettings>
+	        <span style="background-color: yellow">&lt;add key="ida:Realm" value="***" /></span>
+	    &lt;/appSettings>
+	&lt;/configuration>
+</pre>
 
 Wenn Sie den Authentifizierungstyp ändern möchten, entfernen Sie den inkompatiblen Authentifizierungstyp, und führen Sie den Assistenten dann erneut aus.
 
 Weitere Informationen finden Sie unter [Authentifizierungsszenarien für Azure AD](active-directory-authentication-scenarios.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,38 +1,40 @@
 <properties 
-	pageTitle="Erste Schritte mit Azure Storage" 
-	description="Erste Schritte mit Azure-Warteschlangenspeicher in einem Azure WebJobs-Projekt in Visual Studio" 
-	services="storage" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+	pageTitle="Erste Schritte mit Azure-Warteschlangenspeicher und verbundenen Visual Studio-Diensten (WebJob-Projekte)" 
+	description="Erste Schritte mit Warteschlangenspeicher in einem Azure-Speicherkonto, das über das Visual Studio-Dialogfeld ";Verbundene Dienste hinzufügen"; in einem WebJob-Projekt erstellt wurde."
+	services="storage"
+	documentationCenter=""
+	authors="patshea123"
+	manager="douge"
 	editor="tglee"/>
 
 <tags 
-	ms.service="storage" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/13/2015" 
+	ms.service="storage"
+	ms.workload="web"
+	ms.tgt_pltfrm="vs-getting-started"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/13/2015"
 	ms.author="patshea123"/>
 
-# Erste Schritte mit Azure Storage (Azure WebJob-Projekte)
+# Erste Schritte mit Azure-Warteschlangenspeicher und verbundenen Visual Studio-Diensten (WebJob-Projekte)
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-storage-webjobs-getting-started-queues.md)
-> - [What Happened](vs-storage-webjobs-what-happened.md)
+> - [Getting started](vs-storage-webjobs-getting-started-queues.md)
+> - [What happened](vs-storage-webjobs-what-happened.md)
 
 > [AZURE.SELECTOR]
 > - [Blobs](vs-storage-webjobs-getting-started-blobs.md)
 > - [Queues](vs-storage-webjobs-getting-started-queues.md)
 > - [Tables](vs-storage-webjobs-getting-started-tables.md)
 
+## Übersicht
 
-Der Azure-Warteschlangenspeicher ist ein Dienst zum Speichern einer großen Anzahl von Nachrichten, auf die weltweit mit authentifizierten Aufrufen mithilfe von HTTP oder HTTPS zugegriffen werden kann. Eine einzelne Warteschlangennachricht kann bis zu 64 KB groß sein, und eine Warteschlange kann Millionen von Nachrichten enthalten. Deren Anzahl ist nur durch die Kapazität des Speicherkontos begrenzt. Weitere Informationen finden Sie unter [Verwenden des Warteschlangenspeichers aus .NET](storage-dotnet-how-to-use-queues.md). Weitere Informationen zu ASP.NET finden Sie unter [ASP.NET](http://www.asp.net).
+Dieser Artikel beschreibt die ersten Schritte bei der Verwendung von Azure-Warteschlangenspeicher in Visual Studio, nachdem Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** ein Azure-Speicherkonto erstellt oder referenziert haben. Wenn Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** einem WebJob-Projekt ein Speicherkonto hinzufügen, werden die entsprechenden Azure Storage-NuGet-Pakete installiert, die entsprechenden .NET-Verweise dem Projekt hinzugefügt und die Verbindungszeichenfolgen für das Speicherkonto in der Datei "App.config" aktualisiert.
 
-Wenn Sie über das Dialogfeld **Verbundene Dienste hinzufügen** von Visual Studio ein Speicherkonto zu einem WebJob-Projekt hinzufügen, wird das entsprechende NuGet-Paket des Azure-Speichers installiert, die entsprechenden .NET-Verweise dem Projekt hinzugefügt, und die Verbindungszeichenfolgen für das Speicherkonto in der „App.config“-Datei aktualisiert.
+Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie das Azure WebJobs-SDK (Version 1.x) mit dem Azure-Warteschlangenspeicherdienst verwendet wird.
 
-Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie das Azure WebJobs-SDK (Version 1.x) mit dem Azure-Warteschlangenspeicherdienst verwendet wird. Dieser Artikel umfasst die folgenden Themen:
+Die Warteschlangenspeicherung in Azure ist ein Dienst zur Speicherung großer Anzahlen von Nachrichten, auf die von überall auf der Welt mit authentifizierten Anrufen über HTTP oder HTTPS zugegriffen werden kann. Eine einzelne Warteschlangennachricht kann bis zu 64 KB groß sein, und eine Warteschlange kann Millionen von Nachrichten enthalten. Deren Anzahl ist nur durch die Kapazität des Speicherkontos begrenzt. Weitere Informationen finden Sie unter [Verwenden des Warteschlangenspeichers aus .NET](storage-dotnet-how-to-use-queues.md). Weitere Informationen zu ASP.NET finden Sie unter [ASP.NET](http://www.asp.net).
+
 
 
 ## Auslösen einer Funktion, wenn eine Warteschlangennachricht empfangen wird
@@ -551,4 +553,4 @@ In einer Azure-Tabelle sehen die Protokolle `Console.Out` und `Console.Error` wi
 In diesem Artikel wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

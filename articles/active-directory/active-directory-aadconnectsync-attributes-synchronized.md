@@ -302,8 +302,8 @@ In diesem Thema werden die Attribute aufgelistet, die von der Azure AD Connect-
 | Attributname| Benutzer| Kontakt| Gruppe| Kommentar |
 | --- | :-: | :-: | :-: | --- |
 | accountEnabled| X| | | Definiert, ob ein Konto aktiviert ist.|
-| cn| X| | X| Allgemeiner Name oder Alias. Meistens das Präfix des Werts [mail].|
-| displayName| X| X| X| Eine Zeichenfolge, die den häufig als Anzeigename (Vorname Nachname) angezeigten Namen darstellt.|
+| cn| X| | X| Allgemeiner Name oder Alias. Meistens das Präfix des Werts \[mail\].|
+| displayName| X| X| X| Eine Zeichenfolge, die den häufig als Anzeigename \(Vorname Nachname\) angezeigten Namen darstellt.|
 | mail| X| X| X| Vollständige E-Mail-Adresse|
 | member| | | X| |
 | objectSID| X| | X| Mechanische Eigenschaft. AD-Benutzer-ID, die verwendet wird, um die Synchronisierung zwischen Azure AD und AD aufrechtzuerhalten.|
@@ -312,7 +312,7 @@ In diesem Thema werden die Attribute aufgelistet, die von der Azure AD Connect-
 | securityEnabled| | | X| Abgeleitet von "groupType"|
 | sourceAnchor| X| X| X| Mechanische Eigenschaft. Unveränderlicher Bezeichner, mit dem die Beziehung zwischen AD DS und Azure AD aufrechterhalten wird.|
 | usageLocation| X| | | Mechanische Eigenschaft. Das Land des Benutzers. Wird für die Lizenzzuweisung verwendet.|
-| userPrincipalName| X| | | Dieser Benutzerprinzipalname ist die Anmelde-ID für den Benutzer. Meistens identisch mit dem Wert [mail].|
+| userPrincipalName| X| | | Dieser Benutzerprinzipalname ist die Anmelde-ID für den Benutzer. Meistens identisch mit dem Wert \[mail\].|
 
 
 ## Intune
@@ -378,4 +378,4 @@ In diesem Thema werden die Attribute aufgelistet, die von der Azure AD Connect-
  
 <!--Image references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

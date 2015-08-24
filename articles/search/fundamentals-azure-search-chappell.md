@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Einführung in Azure Search | Azure" 
+	pageTitle="Einführung in Azure Search | Microsoft Azure" 
 	description="Erfahren Sie, wie Azure Search Sie bei der Erstellung umfassender Suchanwendungen unterstützen kann." 
 	editor="monicar" 
 	manager="mblythe" 
@@ -42,4 +42,4 @@ Dieses Dokument bietet eine Übersicht über die Technologie und von ihr unterst
 * <a href="http://go.microsoft.com/fwlink/p/?LinkId=522547" target="_blank">"Einführung in Azure Search" (als PDF)</a>
 * <a href="http://go.microsoft.com/fwlink/p/?LinkId=529011" target="_blank">"Einführung in Azure Search" (in Microsoft Word)</a> 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -7,26 +7,24 @@
 	manager="dwrede"
 	editor=""/>
 
-
 <tags
 	ms.service="api-management"
 	ms.workload="mobile"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/03/2015"
+	ms.date="08/06/2015"
 	ms.author="sdanie"/>
-
 
 # So schützen Sie ein Web-API-Back-End mit Azure Active Directory und API Management
 
 Im folgenden Video wird gezeigt, wie Sie ein Web-API-Back-End erstellen und es mithilfe des OAuth 2.0-Protokolls mit Azure Active Directory und API Management schützen. Dieser Artikel enthält eine Übersicht und zusätzliche Informationen zu den Schritten in diesem Video. In diesem 24-minütigen Video wird Folgendes veranschaulicht:
 
--	Erstellen eines Web-API-Back-Ends und dessen Sicherung mit AAD
--	Importieren der API in API Management
--	Konfigurieren des Entwicklerportals für das Aufrufen der API
--	Konfigurieren einer Desktopanwendung für das Aufrufen der API
--	Konfigurieren einer JWT-Überprüfungsrichtlinie zur Vorautorisierung von Anforderungen
+-	Erstellen eines Web-API-Back-Ends und dessen Sicherung mit AAD – ab 1:30
+-	Importieren der API in API Management – ab 7:10
+-	Konfigurieren des Entwicklerportals für das Aufrufen der API – ab 9:09
+-	Konfigurieren einer Desktopanwendung für das Aufrufen der API – ab 18:08
+-	Konfigurieren einer JWT-Überprüfungsrichtlinie zur Vorautorisierung von Anforderungen – ab 20:47
 
 >[AZURE.VIDEO protecting-web-api-backend-with-azure-active-directory-and-api-management]
 
@@ -373,9 +371,9 @@ Wählen Sie **Web-Anwendung und/oder Web-API-**, geben Sie einen Namen ein, und 
 
 ![Neue Anwendung][api-management-aad-new-application-devportal-1]
 
-Geben Sie als **Anmelde-URL** die URL Ihres API Management-Diensts ein, und fügen Sie `/signin`an. In diesem Beispiel wird \*\***https://contoso5.portal.azure-api.net/signin \*\* verwendet.
+Geben Sie als **Anmelde-URL** die URL Ihres API Management-Diensts ein, und fügen Sie `/signin`an. In diesem Beispiel wird ****https://contoso5.portal.azure-api.net/signin ** verwendet.
 
-Geben Sie als **App-ID-URL** die URL Ihres API Management-Diensts ein, und fügen Sie einige eindeutige Zeichen an. Dabei kann es sich um beliebige Zeichen handeln. In diesem Beispiel wird \*\***https://contoso5.portal.azure-api.net/dp** verwendet. Wenn die gewünschten **App-Eigenschaften** konfiguriert sind, klicken Sie auf das Häkchen, um die Anwendung zu erstellen.
+Geben Sie als **App-ID-URL** die URL Ihres API Management-Diensts ein, und fügen Sie einige eindeutige Zeichen an. Dabei kann es sich um beliebige Zeichen handeln. In diesem Beispiel wird ****https://contoso5.portal.azure-api.net/dp** verwendet. Wenn die gewünschten **App-Eigenschaften** konfiguriert sind, klicken Sie auf das Häkchen, um die Anwendung zu erstellen.
 
 ![Neue Anwendung][api-management-aad-new-application-devportal-2]
 
@@ -487,7 +485,6 @@ Das letzte Verfahren im Video beginnt bei 20:48. Sie erfahren, wie Sie mit der R
 
     <validate-jwt header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized. Access token is missing or invalid.">
         <openid-config url="https://login.windows.net/DemoAPIM.onmicrosoft.com/.well-known/openid-configuration" />
-
         <required-claims>
             <claim name="aud">
                 <value>https://DemoAPIM.NOTonmicrosoft.com/APIMAADDemo</value>
@@ -550,4 +547,4 @@ Eine weitere Demonstration der Konfiguration und Verwendung dieser Richtlinie fi
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 [Verwalten Ihrer ersten API]: api-management-get-started.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

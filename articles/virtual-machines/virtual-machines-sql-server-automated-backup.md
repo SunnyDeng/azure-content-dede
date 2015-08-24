@@ -6,7 +6,6 @@
    authors="rothja"
    manager="jeffreyg"
    editor="monicar" />
-
 <tags 
    ms.service="virtual-machines"
    ms.devlang="na"
@@ -16,12 +15,11 @@
    ms.date="08/05/2015"
    ms.author="jroth" />
 
-
 # Automatisierte Sicherung für SQL Server auf virtuellen Azure-Computern
 
 Die automatisierte Sicherung konfiguriert automatisch [Managed Backup für Microsoft Azure](https://msdn.microsoft.com/library/dn449496.aspx) für alle vorhandenen und neuen Datenbanken auf einer Azure-VM, auf der SQL Server 2014 Standard oder Enterprise ausgeführt wird. Dies bietet Ihnen die Möglichkeit, reguläre Datenbanksicherungen zu konfigurieren, die permanenten Azure-Blob-Speicher nutzen.
 
->[AZURE.IMPORTANT]Die automatisierte Sicherung basiert auf dem SQL Server-IaaS-Agent. Zum Installieren und Konfigurieren des Agents muss der Azure-VM-Agent auf dem virtuellen Zielcomputer ausgeführt werden. Bei neueren Katalogimages für virtuelle Computer ist diese Option standardmäßig aktiviert, der Azure-VM-Agent ist auf vorhandenen VMs aber möglicherweise nicht installiert. Wenn Sie ein eigenes VM-Image verwenden, müssen Sie auch den SQL Server-IaaS-Agent installieren. Weitere Informationen finden Sie unter [VM-Agent und Erweiterungen](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
+>[AZURE.NOTE]Die automatisierte Sicherung basiert auf dem SQL Server-IaaS-Agent. Zum Installieren und Konfigurieren des Agents muss der Azure-VM-Agent auf dem virtuellen Zielcomputer ausgeführt werden. Bei neueren Katalogimages für virtuelle Computer ist diese Option standardmäßig aktiviert, der Azure-VM-Agent ist auf vorhandenen virtuellen Computern aber möglicherweise nicht installiert. Wenn Sie ein eigenes Image für virtuelle Computer verwenden, müssen Sie auch den SQL Server-IaaS-Agent installieren. Weitere Informationen finden Sie unter [VM-Agent und Erweiterungen](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
 
 ## Einstellungen für die automatisierte Sicherung
 
@@ -75,7 +73,7 @@ Führen Sie zum Deaktivieren der automatisierten Sicherung das gleiche Skript oh
 
 ## Deaktivieren und Deinstallieren des SQL Server-IaaS-Agents
 
-Verwenden Sie den folgenden Befehl, wenn Sie den SQL Server-IaaS-Agent für die automatisierte Sicherung und automatisiertes Patchen deaktivieren möchten:
+Verwenden Sie den folgenden Befehl, wenn Sie den SQL Server-IaaS-Agent für die automatisierte Sicherung und für automatisiertes Patchen deaktivieren möchten:
 
     Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -Disable | Update-AzureVM
 
@@ -111,4 +109,4 @@ Eine verwandte Funktion für SQL Server-VMs in Azure ist die [automatisierte Anw
 
 Lesen Sie auch die weiteren [Ressourcen für die Ausführung von SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

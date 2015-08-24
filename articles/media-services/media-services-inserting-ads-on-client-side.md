@@ -7,16 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="08/11/2015"  
 	ms.author="juliako"/>
-
 
 
 #Einfügen von Werbeeinblendungen auf Clientseite
@@ -161,7 +159,7 @@ Application/x-javascript: Die Ressource wird in einem HTML-<**script**>-Tag ange
 
 Application/x-shockwave-flash: Die Ressource wird in einem Flash-Player angezeigt.
 
-**<IFrameResource>** beschreibt eine HTML-Ressource, die in einem IFrame angezeigt werden kann. **<HTMLResource>** beschreibt einen HTML-Code, der in eine Webseite eingefügt werden kann. **<TrackingEvents>** gibt Nachverfolgungsereignisse sowie den URI an, der angefordert wird, wenn das Ereignis eintritt. In diesem Beispiel werden die acceptInvitation- und collapse-Ereignisse verfolgt. Weitere Informationen zum **<NonLinearAds>**-Element und zu dessen untergeordneten Elementen finden Sie unter "IAB.NET/VAST". Beachten Sie, dass sich das **<TrackingEvents>**-Element im\*\* <NonLinearAds>\*\*-Element und nicht im **<NonLinear>**-Element befindet.
+**<IFrameResource>** beschreibt eine HTML-Ressource, die in einem IFrame angezeigt werden kann. **<HTMLResource>** beschreibt einen HTML-Code, der in eine Webseite eingefügt werden kann. **<TrackingEvents>** gibt Nachverfolgungsereignisse sowie den URI an, der angefordert wird, wenn das Ereignis eintritt. In diesem Beispiel werden die acceptInvitation- und collapse-Ereignisse verfolgt. Weitere Informationen zum **<NonLinearAds>**-Element und zu dessen untergeordneten Elementen finden Sie unter "IAB.NET/VAST". Beachten Sie, dass sich das **<TrackingEvents>**-Element im** <NonLinearAds>**-Element und nicht im **<NonLinear>**-Element befindet.
 
 Begleitende Werbeeinblendungen werden in einem <CompanionAds>-Element definiert. Das <CompanionAds>-Element kann ein oder mehrere <Companion>-Elemente enthalten. Jedes <Companion>-Element beschreibt eine begleitende Werbeeinblendung und kann eine <StaticResource>, <IFrameResource> oder <HTMLResource> enthalten, die auf die gleiche Weise wie bei einer nichtlinearen Werbeeinblendung angegeben werden. Eine VAST-Datei kann mehrere begleitende Werbeeinblendungen enthalten und die Playeranwendung kann die für die Anzeige am besten geeignete Werbeeinblendung auswählen. Weitere Informationen zu VAST finden Sie unter [VAST 3.0](http://www.iab.net/media/file/VASTv3.0.pdf).
 
@@ -277,12 +275,10 @@ Mithilfe einer MAST-Datei können Sie Auslöser angeben, die definieren, wann ei
 	    <trigger id="preroll" description="preroll every item"  >
 	      <startConditions>
 	        <condition type="event" name="OnItemStart" />
-
 	      </startConditions>
 	      <sources>
 	        <source uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" format="vast">
 	          <sources />
-
 	        </source>
 	      </sources>
 	    </trigger>
@@ -290,17 +286,14 @@ Mithilfe einer MAST-Datei können Sie Auslöser angeben, die definieren, wann ei
 	    <trigger id="midroll" description="midroll at 15 sec."  >
 	      <startConditions>
 	        <condition type="property" name="Position" value="00:00:15.0" operator="GEQ" />
-
 	      </startConditions>
 	      <endConditions>
 	        <condition type="event" name="OnItemEnd"/>
-
 	        <!--This 'resets' the trigger for the next clip-->
 	      </endConditions>
 	      <sources>
 	        <source uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" format="vast">
 	          <sources />
-
 	        </source>
 	      </sources>
 	    </trigger>
@@ -308,12 +301,10 @@ Mithilfe einer MAST-Datei können Sie Auslöser angeben, die definieren, wann ei
 	    <trigger id="postroll" description="postroll"  >
 	      <startConditions>
 	        <condition type="event" name="OnItemEnd"/>
-
 	      </startConditions>
 	      <sources>
 	        <source uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" format="vast">
 	          <sources />
-
 	        </source>
 	      </sources>
 	    </trigger>
@@ -337,12 +328,10 @@ Das **<trigger>**-Element enthält ein **<startConditions>**-Element, das angibt
 	<trigger id="postroll" description="postroll"  >
       <startConditions>
         <condition/>
-
       </startConditions>
       <sources>
         <source uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" format="vast">
           <sources />
-
         </source>
       </sources>
     </trigger>
@@ -398,14 +387,12 @@ In diesem Beispiel wird "AdSchedulerPlugin" verwendet, um zu definieren, wann ei
 	                <ads:MidrollAdvertisement Time="00:00:05">
 	                    <ads:MidrollAdvertisement.Source>
 	                        <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_adpod.xml" Type="vast"/>
-
 	                    </ads:MidrollAdvertisement.Source>
 	                </ads:MidrollAdvertisement>
 	
 	            </ads:AdSchedulerPlugin.Advertisements>
 	        </ads:AdSchedulerPlugin>
 	        <ads:AdHandlerPlugin/>
-
 	    </mmppf:MediaPlayer.Plugins>
 	</mmppf:MediaPlayer>
 
@@ -423,28 +410,24 @@ In diesem Beispiel wird ebenfalls "AdSchedulerPlugin" verwendet. Geplant werden 
 	                        <ads:PrerollAdvertisement>
 	                            <ads:PrerollAdvertisement.Source>
 	                                <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" Type="vast"/>
-
 	                            </ads:PrerollAdvertisement.Source>
 	                        </ads:PrerollAdvertisement>
 	
 	                        <ads:MidrollAdvertisement Time="00:00:15">
 	                            <ads:MidrollAdvertisement.Source>
 	                                <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" Type="vast"/>
-
 	                            </ads:MidrollAdvertisement.Source>
 	                        </ads:MidrollAdvertisement>
 	
 	                        <ads:PostrollAdvertisement>
 	                            <ads:PostrollAdvertisement.Source>
 	                                <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear.xml" Type="vast"/>
-
 	                            </ads:PostrollAdvertisement.Source>
 	                        </ads:PostrollAdvertisement>
 	
 	                    </ads:AdSchedulerPlugin.Advertisements>
 	                </ads:AdSchedulerPlugin>
 	                <ads:AdHandlerPlugin/>
-
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -456,9 +439,7 @@ Dieses Beispiel verwendet "FreeWheelPlugin", das ein Quellattribut angibt, das e
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.windows.net/samples/videos/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
 	                <ads:FreeWheelPlugin Source="http://smf.blob.core.windows.net/samples/win8/ads/freewheel.xml"/>
-
 	                <ads:AdHandlerPlugin/>
-
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -469,9 +450,7 @@ Dieses Beispiel verwendet "MastSchedulerPlugin", das es Ihnen ermöglicht, eine 
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.windows.net/samples/videos/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
 	                <ads:MastSchedulerPlugin Source="http://smf.blob.core.windows.net/samples/win8/ads/mast.xml" />
-
 	                <ads:AdHandlerPlugin/>
-
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -480,7 +459,6 @@ Dieses Beispiel verwendet "MastSchedulerPlugin", das es Ihnen ermöglicht, eine 
 Dieses Beispiel interagiert programmgesteuert mit MediaPlayer. Die Datei "ProgrammaticAdPage.xaml" instanziiert MediaPlayer:
 
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.windows.net/samples/videos/bigbuck.mp4"/>
-
 
 Die Datei "ProgrammaticAdPage.xaml.cs" erstellt ein "AdHandlerPlugin", fügt einen "TimelineMarker" hinzu, um anzugeben, wann eine Werbeeinblendung angezeigt werden soll, und fügt dann einen Handler für das MarkerReached-Ereignis hinzu, das eine "RemoteAdSource" lädt, die einen URI für eine VAST-Datei angibt. Anschließend wird die Werbeeinblendung abgespielt.
 	
@@ -526,7 +504,6 @@ Dieses Beispiel verwendet "AdSchedulerPlugin" zum Planen einer Mid-Roll-Werbeein
 	                                <ads:AdSource Type="clip">
 	                                    <ads:AdSource.Payload>
 	                                        <ads:ClipAdPayload MediaSource="http://smf.blob.core.windows.net/samples/ads/media/XBOX_HD_DEMO_700_2_000_700_4x3.wmv" MimeType="video/x-ms-wmv" />
-
 	                                    </ads:AdSource.Payload>
 	                                </ads:AdSource>
 	                            </ads:MidrollAdvertisement.Source>
@@ -535,7 +512,6 @@ Dieses Beispiel verwendet "AdSchedulerPlugin" zum Planen einer Mid-Roll-Werbeein
 	                    </ads:AdSchedulerPlugin.Advertisements>
 	                </ads:AdSchedulerPlugin>
 	                <ads:AdHandlerPlugin/>
-
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -551,14 +527,12 @@ Dieses Beispiel veranschaulicht, wie Sie "AdSchedulerPlugin" verwenden, um eine 
 	                        <ads:MidrollAdvertisement Time="00:00:05">
 	                            <ads:MidrollAdvertisement.Source>
 	                                <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear_companions.xml" Type="vast"/>
-
 	                            </ads:MidrollAdvertisement.Source>
 	                        </ads:MidrollAdvertisement>
 	
 	                    </ads:AdSchedulerPlugin.Advertisements>
 	                </ads:AdSchedulerPlugin>
 	                <ads:AdHandlerPlugin/>
-
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -574,14 +548,12 @@ In diesem Beispiel wird "AdSchedulerPlugin" zum Planen einer linearen und einer 
 	                        <ads:MidrollAdvertisement Time="00:00:05">
 	                            <ads:MidrollAdvertisement.Source>
 	                                <ads:RemoteAdSource Uri="http://smf.blob.core.windows.net/samples/win8/ads/vast_linear_nonlinear.xml" Type="vast"/>
-
 	                            </ads:MidrollAdvertisement.Source>
 	                        </ads:MidrollAdvertisement>
 	                        
 	                    </ads:AdSchedulerPlugin.Advertisements>
 	                </ads:AdSchedulerPlugin>
 	                <ads:AdHandlerPlugin/>
-
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -592,9 +564,7 @@ In diesem Beispiel wird "VmapSchedulerPlugin" verwendet, um Werbeeinblendungen m
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.windows.net/samples/videos/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
 	                <ads:VmapSchedulerPlugin Source="http://smf.blob.core.windows.net/samples/win8/ads/vmap.xml"/>
-
 	                <ads:AdHandlerPlugin/>
-
 	            </mmppf:MediaPlayer.Plugins>
 	        </mmppf:MediaPlayer>
 
@@ -834,4 +804,4 @@ Das folgende Beispiel zeigt, wie eine Mid-Roll-Overlay-Werbeeinblendung geplant 
 
 [Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md) [Introduction to the Azure Media Player Framework for iOS](https://channel9.msdn.com/Series/Windows-Azure-Media-Services-Tutorials/An-introduction-to-Azure-Media-Player-Framework-for-IOS) ("Einführung in Azure Media Player Framework für iOS", in englischer Sprache)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -7,16 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="media" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/20/2015" 
+	ms.date="08/11/2015"  
 	ms.author="juliako"/>
-
 
 
 # Versionshinweise zu Azure Media Services
@@ -292,7 +290,7 @@ Die folgenden Fehlerkorrekturen wurden für Azure Media Services Packager und En
 
 ### <a id="may_14_changes"></a>Allgemeine Media Services-Updates
 
-Sie können nun die [Dynamische Paketerstellung] zum Streamen von HTTP Live Streaming (HLS) v3 verwenden. Fügen Sie zum Streamen von HLS v3 das folgende Format zum ursprünglichen Locator-Pfad hinzu: \*.ism/manifest(format=m3u8-aapl-v3). Weitere Informationen finden Sie unter [Nick Drouin's Blog] (in englischer Sprache).
+Sie können nun die [Dynamische Paketerstellung] zum Streamen von HTTP Live Streaming (HLS) v3 verwenden. Fügen Sie zum Streamen von HLS v3 das folgende Format zum ursprünglichen Locator-Pfad hinzu: *.ism/manifest(format=m3u8-aapl-v3). Weitere Informationen finden Sie unter [Nick Drouin's Blog] (in englischer Sprache).
 
 Die dynamische Paketerstellung unterstützt jetzt auch die Bereitstellung von mit PlayReady verschlüsseltem HLS (v3 und v4) basierend auf statisch mit PlayReady verschlüsseltem Smooth Streaming. Informationen zum Verschlüsseln von Smooth Streaming mit PlayReady finden Sie unter [Schützen von Smooth Streaming und MPEG DASH mit PlayReady].
 
@@ -565,4 +563,4 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

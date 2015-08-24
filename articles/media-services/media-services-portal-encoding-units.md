@@ -13,13 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/16/2015" 
+	ms.date="08/11/2015"  
 	ms.author="juliako"/>
 
 
 #Skalieren der Codierung
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).
+> [AZURE.SELECTOR]
+- [.NET](media-services-dotnet-encoding-units.md)
+- [Portal](media-services-portal-encoding-units.md)
+- [REST](https://msdn.microsoft.com/library/azure/dn859236.aspx)
 
 ##Übersicht
 
@@ -58,4 +61,4 @@ Informationen zu Kontingenten und Einschränkungen sowie zum Öffnen von Support
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -7,18 +7,17 @@
    manager="Adinah" 
    editor=""/>
 
-
 <tags
    ms.service="dns"
    ms.devlang="en"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="05/01/2015"
+   ms.date="08/02/2015"
    ms.author="joaoma"/>
 
-
 # Verwalten von DNS-Einträgen
+
 
 Diese Anleitung zeigt, wie Sie Datensatzgruppen und Einträge für die DNS-Zone verwalten.
 
@@ -49,7 +48,7 @@ Mit New-AzureDnsRecordSet wird ein lokales Objekt zurückgegeben, das die in Azu
 ### Platzhalterdatensätze
 Azure DNS unterstützt [Platzhalterdatensätze](https://en.wikipedia.org/wiki/Wildcard_DNS_record). Diese werden für alle Abfragen mit einem übereinstimmenden Namen zurückgegeben (es sei denn, es gibt eine genauere Übereinstimmung aus einer Datensatzgruppe ohne Platzhalter).
 
->[AZURE.NOTE]Um eine Datensatzgruppe mit Platzhaltern zu erstellen, verwenden Sie den Namen der Datensatzgruppe „\*“ oder einen Namen, dessen Bezeichnung mit „\*“ beginnt, z. B. „\*.foo“.
+>[AZURE.NOTE]Um eine Datensatzgruppe mit Platzhaltern zu erstellen, verwenden Sie den Namen der Datensatzgruppe „*“ oder einen Namen, dessen Bezeichnung mit „*“ beginnt, z. B. „*.foo“.
 
 >Datensatzgruppen mit Platzhaltern werden für alle Datensatztypen mit Ausnahme von NS und SOA unterstützt.
 
@@ -267,4 +266,4 @@ Das Datensatzgruppenobjekt kann auch weitergeleitet werden, anstatt als Paramete
 [Erste Schritte beim Erstellen von Datensatzgruppen und Einträgen](../dns-getstarted-create-recordset)<BR> [Durchführen von Vorgängen für DNS-Zonen](../dns-operations-dnszones)<BR> [Automatisieren von Vorgängen mit dem .NET SDK](../dns-sdk)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

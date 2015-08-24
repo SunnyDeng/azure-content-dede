@@ -7,7 +7,6 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
-
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="08/04/2015" 
 	ms.author="spelluru"/>
-
 
 # SQL Server-Aktivität "Gespeicherte Prozedur"
 
@@ -31,8 +29,8 @@ Sie können die SQL Server-Aktivität "Gespeicherte Prozedur" in einer Data Fact
     	"outputs":  [ { "name": "outputtable" } ],
     	"typeProperties":
     	{
-        	"storedProcedureName": “”,
-        	"storedProcedureParameters": “” 
+        	"storedProcedureName": "<name of the stored procedure>",
+        	"storedProcedureParameters":  
         	{
 				"param1": "param1Value"
 				…
@@ -47,7 +45,7 @@ Eigenschaft | Beschreibung | Erforderlich
 Name | Der Name der Aktivität | Ja
 description | Ein Text, der beschreibt, wofür die Aktivität verwendet wird. | Nein
 Typ | SqlServerStoredProcedure | Ja
-inputs | Eingaben müssen (im Status "Bereit") verfügbar sein, damit die Aktivität "Gespeicherte Prozedur" ausgeführt wird. | Nein
+inputs | Eingaben müssen \(im Status "Bereit"\) verfügbar sein, damit die Aktivität "Gespeicherte Prozedur" ausgeführt wird. | Nein
 outputs | Von der Aktivität "Gespeicherte Prozedur" generierte Ausgaben. Stellen Sie sicher, dass die Ausgabetabelle einen verknüpften Dienst verwendet, der eine Azure SQL-Datenbank mit der Data Factory verknüpft. | Ja
 storedProcedureName | Geben Sie den Namen der gespeicherten Prozedur in der Azure SQL-Datenbank an, die vom verknüpften Dienst dargestellt wird, den die Ausgabetabelle verwendet. | Ja
 storedProcedureParameters | Geben Sie Werte für Parameter der gespeicherten Prozedur an. | Nein
@@ -74,6 +72,8 @@ Datetime | Datum und Uhrzeit der Erstellung der betreffenden ID
 	    VALUES (newid(), @DateTime)
 	END
 
+> [AZURE.NOTE]**Name** und **Groß-und Kleinschreibung** des Parameters \("DateTime" bei diesem Beispiel\) müssen mit dem Parameter übereinstimmen, der in der nachstehenden JSON der Aktivität angegeben ist. Stellen Sie bei der Definition der gespeicherten Prozedur sicher, dass **@** als Präfix für den Parameter verwendet wird.
+
 Um diese gespeicherte Prozedur in einer Data Factory-Pipeline auszuführen, müssen Sie folgende Schritte ausführen:
 
 1.	Erstellen Sie einen [verknüpften Dienst](data-factory-azure-sql-connector.md/#azure-sql-linked-service-properties) zum Registrieren der Verbindungszeichenfolge der Azure SQL-Datenbank, in der die gespeicherte Prozedur ausgeführt werden soll.
@@ -88,25 +88,25 @@ Um diese gespeicherte Prozedur in einer Data Factory-Pipeline auszuführen, müs
 		        "activities":
 		        [
 		            {
-		             "name": "SprocActivitySample",
-		             "type": " SqlServerStoredProcedure ",
-		             "outputs": [ {"name": "sprocsampleout"} ],
-		             "typeproperties":
-		              {
-		                "storedProcedureName": "sp_sample",
-		        		"storedProcedureParameters": 
-		        		{
-		            	"DateTime": "$$Text.Format('{0:yyyy-MM-dd HH:mm:ss}', SliceStart)"
-		        		}
-				}
-		            }
-		          ]
+		            	"name": "SprocActivitySample",
+		             	"type": " SqlServerStoredProcedure",
+		             	"outputs": [ {"name": "sprocsampleout"} ],
+		             	"typeProperties":
+		              	{
+		                	"storedProcedureName": "sp_sample",
+			        		"storedProcedureParameters": 
+		        			{
+		            			"DateTime": "$$Text.Format('{0:yyyy-MM-dd HH:mm:ss}', SliceStart)"
+		        			}
+						}
+	            	}
+		        ]
 		     }
 		}
 5.	Stellen Sie die [Pipeline](data-factory-create-pipelines.md) bereit.
 6.	[Überwachen Sie die Pipeline](data-factory-monitor-manage-pipelines.md) mithilfe der Überwachungs- und Verwaltungsansichten von Data Factory.
 
-> [AZURE.NOTE]Im obigen Beispiel weist "SprocActivitySample" keine Eingaben auf. Wenn Sie dies mit einer vorgelagerten Aktivität verketten möchten, können die Ausgaben der vorgelagerten Aktivität als Eingaben in diese Aktivität verwendet werden. In diesem Fall wird diese Aktivität erst ausgeführt, nachdem die vorgelagerte Aktivität abgeschlossen und die Ausgaben (mit dem Status "Bereit") verfügbar sind. Die Eingaben können nicht direkt als Parameter für die Aktivität "Gespeicherte Prozedur" verwendet werden.
+> [AZURE.NOTE]Im obigen Beispiel weist "SprocActivitySample" keine Eingaben auf. Wenn Sie dies mit einer vorgelagerten Aktivität verketten möchten, können die Ausgaben der vorgelagerten Aktivität als Eingaben in diese Aktivität verwendet werden. In diesem Fall wird diese Aktivität erst ausgeführt, nachdem die vorgelagerte Aktivität abgeschlossen und die Ausgaben \(mit dem Status "Bereit"\) verfügbar sind. Die Eingaben können nicht direkt als Parameter für die Aktivität "Gespeicherte Prozedur" verwendet werden.
 > 
 > Namen und Groß-/Kleinschreibung der Parameter der gespeicherten Prozedur in der JSON-Datei müssen mit den Namen der Parameter der gespeicherten Prozedur in der Zieldatenbank übereinstimmen.
 
@@ -125,7 +125,7 @@ Lassen Sie uns nun der Tabelle eine weitere Spalte mit dem Namen "Scenario" hinz
 
 Um dies zu erreichen, übergeben Sie den Parameter "Scenario" und den Wert aus der Aktivität "Gespeicherte Prozedur". Der Abschnitt "typeProperties" im obigen Beispiel sieht folgendermaßen aus:
 
-	"typeproperties":
+	"typeProperties":
 	{
 		"storedProcedureName": "sp_sample",
 	    "storedProcedureParameters": 
@@ -135,4 +135,4 @@ Um dies zu erreichen, übergeben Sie den Parameter "Scenario" und den Wert aus d
 		}
 	}
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

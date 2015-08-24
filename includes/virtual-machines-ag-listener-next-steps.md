@@ -1,4 +1,5 @@
-In addition to automatically connecting clients to the primary replica, a listener can also be used to redirect read-only workloads to the secondaries. This can improve the performance and scalability of your overall solution. For more information, see 
-[Use ReadIntent Routing with Azure AlwaysOn Availability Group Listener](http://go.microsoft.com/fwlink/?LinkId=522515).
+Zusätzlich zum automatischen Verbinden von Clients mit dem primären Replikat kann ein Listener auch verwendet werden, um schreibgeschützte Workloads an sekundäre Replikate umzuleiten. Dies kann die Leistung und Skalierbarkeit Ihrer Lösung insgesamt verbessern. Weitere Informationen finden Sie unter [Use ReadIntent Routing with Azure AlwaysOn Availability Group Listener](http://go.microsoft.com/fwlink/?LinkId=522515) \(in englischer Sprache\).
 
-For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
+Weitere Informationen zur Verwendung von SQL Server in Azure finden Sie unter [SQL Server auf virtuellen Azure-Computern](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
+
+<!---HONumber=August15_HO7-->

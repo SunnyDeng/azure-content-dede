@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/04/2015"
+   ms.date="08/06/2015"
    ms.author="cherylmc" />
 
 # ExpressRoute-Partner und Peeringstandorte
@@ -77,7 +77,7 @@ Unter [Konfigurieren einer ExpressRoute-Verbindung](expressroute-configuring-exp
 | **[SingTel](http://info.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** | Unterstützt | Nicht unterstützt | Singapur |
 | **[Tata Communications](http://www.tatacommunications.com/lp/izo/azure/azure_index.html)** | Unterstützt | In Kürze verfügbar | Amsterdam, Chennai+, Hongkong, London, Mumbai+, Singapur |
 | **[Telstra Corporation](http://www.telstra.com.au/business-enterprise/network-services/networks/cloud-direct-connect/)** | Unterstützt | Nicht unterstützt | Melbourne+, Sydney |
-| **[Verizon](http://news.verizonenterprise.com/2014/04/secure-cloud-interconnect-solutions-enterprise/)** | Unterstützt | Nicht unterstützt | London, Hongkong, Silicon Valley, Washington D.C., USGov Iowa, USGov Virginia |
+| **[Verizon](http://news.verizonenterprise.com/2014/04/secure-cloud-interconnect-solutions-enterprise/)** | Unterstützt | Nicht unterstützt | London, Hongkong, Silicon Valley, Washington, D.C. |
 
  **+** steht für "In Kürze"
 
@@ -116,4 +116,4 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 - Wenn Sie sowohl eine VPN-Verbindung zwischen Standorten und ExpressRoute für dasselbe virtuelle Netzwerk konfigurieren möchten, lesen Sie [Koexistenz von ExpressRoute und VPN-Verbindungen zwischen Standorten konfigurieren](expressroute-coexist.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

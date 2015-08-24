@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Bereitstellung von Apache Spark-Clustern in HDInsight | Azure" 
+   pageTitle="Bereitstellung von Apache Spark-Clustern in HDInsight | Microsoft Azure" 
    description="Erfahren Sie, wie Sie Spark-Cluster für Azure HDInsight mithilfe des Azure-Portals, von Azure PowerShell, einer Befehlszeile oder das HDInsight .NET-SDK bereitstellen." 
    services="hdinsight" 
    documentationCenter="" 
@@ -33,7 +33,7 @@ Zum Ausführen der Anweisungen in diesem Artikel benötigen Sie ein Azure-Abonne
 
 Bei der Konfiguration müssen Sie ein Azure-Blobspeicherkonto und einen Standardcontainer angeben. Das Cluster verwendet diese Option als Standard-Speicherort. Sie können optional ein zusätzliches Azure-Speicherkonto angeben, das ebenfalls dem Cluster zugeordnet wird.
 
->[AZURE.NOTE] Geben Sie keinen Blob-Speichercontainer für mehrere Cluster frei. Dies wird nicht unterstützt.
+>[AZURE.NOTE]Geben Sie keinen Blob-Speichercontainer für mehrere Cluster frei. Dies wird nicht unterstützt.
 
 Weitere Informationen zu sekundären Blobspeichern finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight](hdinsight-use-blob-storage.md).
 
@@ -50,11 +50,11 @@ Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration 
 
 [Azure Virtual Network](http://azure.microsoft.com/documentation/services/virtual-network/) ermöglicht das Erstellen eines sicheren, beständigen Netzwerk mit allen Ressourcen, die Sie für Ihre Lösung benötigen. Virtuelle Netzwerken ermöglichen Folgendes:
 
-* Verbinden von Cloudressourcen in einem privaten Netzwerk (nur in der Cloud)
+* Verbinden von Cloudressourcen in einem privaten Netzwerk \(nur in der Cloud\)
 
 	![Diagramm der Nur-Cloud-Konfiguration](./media/hdinsight-apache-spark-provision-clusters/hdinsight-vnet-cloud-only.png)
 
-* Verbinden Ihrer Cloudressourcen mithilfe eines virtuellen privaten Netzwerks (VPN) mit dem Netzwerk in Ihrem lokalen Datencenter (Standort-zu-Standort oder Punkt-zu-Standort).
+* Verbinden Ihrer Cloudressourcen mithilfe eines virtuellen privaten Netzwerks \(VPN\) mit dem Netzwerk in Ihrem lokalen Datencenter \(Standort-zu-Standort oder Punkt-zu-Standort\).
 
 	In einer Standort-zu-Standort-Konfiguration können Sie mehrere Ressourcen aus Ihrem Rechenzentrum über ein Hardware-VPN oder den Routing- und RAS-Dienst mit dem virtuellen Azure-Netzwerk verbinden.
 
@@ -66,7 +66,7 @@ Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration 
 
 Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](http://msdn.microsoft.com/library/azure/jj156007.aspx).
 
-> [AZURE.NOTE] Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen Cluster bereitstellen. Weitere Informationen finden Sie unter [Konfigurationsaufgaben für virtuelle Netzwerke](http://msdn.microsoft.com/library/azure/jj156206.aspx).
+> [AZURE.NOTE]Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen Cluster bereitstellen. Weitere Informationen finden Sie unter [Konfigurationsaufgaben für virtuelle Netzwerke](http://msdn.microsoft.com/library/azure/jj156206.aspx).
 >
 > Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden.
 >
@@ -132,9 +132,7 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
 	<tr><td>Hive-/Oozie-Metastore eingeben</td>
 		<td>Aktivieren Sie dieses Kontrollkästchen, um eine SQL-Datenbank im gleichen Datencenter wie der Cluster für die Verwendung als Hive-/Oozie-Metastore anzugeben. Wenn Sie dieses Kontrollkästchen aktivieren, müssen Sie auf den nachfolgenden Seiten des Assistenten Details zur Azure SQL-Datenbank angeben. Dies ist praktisch, wenn Sie die Metadaten von Hive-/Oozie-Jobs behalten möchten, nachdem der Cluster gelöscht wurde. Anleitungen zum Erstellen eines Metastore finden Sie unter <a href="https://azure.microsoft.com/de-de/documentation/articles/sql-database-get-started/" target="_blank">Erstellen Ihrer ersten Azure SQL-Datenbank</a>.</td></tr>
 	</td></tr>
-	</table>
-
-	>[AZURE.NOTE] Die als Metastore verwendete Azure SQL-Datenbank muss für die Konnektivität mit anderen Azure-Diensten konfiguriert sein, inklusive Azure HDInsight. Klicken Sie im Dashboard der Azure SQL-Datenbank mit der rechten Maustaste auf den Servernamen. Dies ist der Server, auf dem die SQL-Datenbankinstanz läuft. Öffnen Sie die Serveransicht, klicken Sie auf **Konfigurieren**, klicken Sie für **Windows** **Azure-Dienste** auf **Ja**, und klicken Sie dann auf **Speichern**.
+</table>>[AZURE.NOTE]Die als Metastore verwendete Azure SQL-Datenbank muss für die Konnektivität mit anderen Azure-Diensten konfiguriert sein, inklusive Azure HDInsight. Klicken Sie im Dashboard der Azure SQL-Datenbank mit der rechten Maustaste auf den Servernamen. Dies ist der Server, auf dem die SQL-Datenbankinstanz läuft. Öffnen Sie die Serveransicht, klicken Sie auf **Konfigurieren**, klicken Sie für **Windows** **Azure-Dienste** auf **Ja**, und klicken Sie dann auf **Speichern**.
 
     Klicken Sie auf den Pfeil nach rechts.
 
@@ -211,7 +209,7 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
 
 Dieser Abschnitt enthält Anweisungen für die Bereitstellung eines Apache Spark-Clusters in Azure HDInsight mit Azure PowerShell. Weitere Informationen zum Konfigurieren einer Arbeitsstation für die Ausführung von HDInsight PowerShell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][powershell-install-configure]. Weitere Informationen zum Verwenden von Azure PowerShell mit HDInsight finden Sie unter [Verwalten von HDInsight mit PowerShell][hdinsight-admin-powershell]. Eine Liste der HDInsight Windows PowerShell-Cmdlets finden Sie unter [HDInsight-Cmdlet-Referenz][hdinsight-powershell-reference].
 
-> [AZURE.NOTE] Die Skripts in diesem Abschnitt dienen zum Konfigurieren eines HDInsight-Clusters in einem virtuellen Azure-Netzwerk, jedoch nicht zur Erstellung des virtuellen Azure-Netzwerks. Informationen zur Erstellung von virtuellen Azure-Netzwerken finden Sie unter [Aufgaben bei der Konfiguration virtueller Netzwerke](http://msdn.microsoft.com/library/azure/jj156206.aspx).
+> [AZURE.NOTE]Die Skripts in diesem Abschnitt dienen zum Konfigurieren eines HDInsight-Clusters in einem virtuellen Azure-Netzwerk, jedoch nicht zur Erstellung des virtuellen Azure-Netzwerks. Informationen zur Erstellung von virtuellen Azure-Netzwerken finden Sie unter [Aufgaben bei der Konfiguration virtueller Netzwerke](http://msdn.microsoft.com/library/azure/jj156206.aspx).
 
 Die folgenden Prozeduren müssen für die Bereitstellung eines HDInsight-Clusters mithilfe von Azure PowerShell ausgeführt werden:
 
@@ -219,7 +217,7 @@ Die folgenden Prozeduren müssen für die Bereitstellung eines HDInsight-Cluster
 - Erstellen eines Azure-Blobcontainers
 - Erstellen eines HDInsight-Clusters
 
-Sie können die Windows PowerShell-Konsole oder Windows PowerShell Integrated Scripting Environment (ISE) zum Ausführen der Skripts verwenden.
+Sie können die Windows PowerShell-Konsole oder Windows PowerShell Integrated Scripting Environment \(ISE\) zum Ausführen der Skripts verwenden.
  
 HDInsight verwendet Azure-Blobspeichercontainer als Standarddateisystem. Sie benötigen ein Speicherkonto und einen Speichercontainer, um einen HDInsight-Cluster erstellen zu können. Das Speicherkonto muss sich im selben Datencenter wie der HDInsight-Cluster befinden.
 
@@ -283,7 +281,7 @@ Sobald Sie Ihr Speicherkonto und Ihren Blobcontainer vorbereitet haben, können 
 		# Create a new HDInsight cluster
 		New-AzureHDInsightCluster -Name $clusterName -Credential $credentials -Location $location -DefaultStorageAccountName "$storageAccountName.blob.core.windows.net" -DefaultStorageAccountKey $storageAccountKey -DefaultStorageContainerName $containerName -ClusterSizeInNodes $clusterNodes -Version "3.2" -ClusterType Spark
 
-	>[AZURE.NOTE] Die von Ihnen angegebenen Anmeldeinformationen werden verwendet, um das Hadoop-Benutzerkonto für den Cluster zu erstellen. Sie verwenden dieses Konto, um die Verbindung mit dem Cluster herzustellen und Aufträge auszuführen.. Wenn Sie im Azure-Portal die Option "Schnellerfassung" verwenden, um einen Cluster bereitzustellen, lautet der Hadoop-Standardbenutzername "admin". Sie dürfen dieses Konto nicht mit dem Benutzerkonto für das Remotedesktopprotokoll (RDP) verwechseln. Das RDP-Benutzerkonto muss sich vom Hadoop-Benutzerkonto unterscheiden. Weitere Informationen finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Verwaltungsportal][hdinsight-admin-portal].
+	>[AZURE.NOTE]Die von Ihnen angegebenen Anmeldeinformationen werden verwendet, um das Hadoop-Benutzerkonto für den Cluster zu erstellen. Sie verwenden dieses Konto, um die Verbindung mit dem Cluster herzustellen und Aufträge auszuführen.. Wenn Sie im Azure-Portal die Option "Schnellerfassung" verwenden, um einen Cluster bereitzustellen, lautet der Hadoop-Standardbenutzername "admin". Sie dürfen dieses Konto nicht mit dem Benutzerkonto für das Remotedesktopprotokoll \(RDP\) verwechseln. Das RDP-Benutzerkonto muss sich vom Hadoop-Benutzerkonto unterscheiden. Weitere Informationen finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Verwaltungsportal][hdinsight-admin-portal].
 
 	Die Bereitstellung des Clusters kann einige Minuten dauern.
 
@@ -294,7 +292,7 @@ Sobald Sie Ihr Speicherkonto und Ihren Blobcontainer vorbereitet haben, können 
 
 Bei der Bereitstellung eines Clusters können Sie erweiterte Optionen verwenden, wie z. B. die Verbindung mit mehr als einem Azure-Blobspeichercontainer oder die Verwendung einer Azure SQL-Datenbank für Hive- und Oozie-Metastores. Auf diese Weise können Sie die Lebensdauer Ihrer Daten und Metadaten von der Lebensdauer des Clusters trennen.
 
-> [AZURE.NOTE] Die Windows PowerShell-Cmdlets sind die einzige empfohlene Methode zum Ändern von Konfigurationsvariablen in einem HDInsight-Cluster. Änderungen an Hadoop-Konfigurationsdateien, während Sie per Remotedesktop mit dem Cluster verbunden sind, können bei einem Patchvorgang des Clusters überschrieben werden. Die per Azure PowerShell festgelegten Konfigurationswerte bleiben erhalten, wenn das Cluster gepatcht wird.
+> [AZURE.NOTE]Die Windows PowerShell-Cmdlets sind die einzige empfohlene Methode zum Ändern von Konfigurationsvariablen in einem HDInsight-Cluster. Änderungen an Hadoop-Konfigurationsdateien, während Sie per Remotedesktop mit dem Cluster verbunden sind, können bei einem Patchvorgang des Clusters überschrieben werden. Die per Azure PowerShell festgelegten Konfigurationswerte bleiben erhalten, wenn das Cluster gepatcht wird.
 
 - Führen Sie die folgenden Befehle in einem Windows PowerShell-Fenster aus:
 
@@ -334,7 +332,7 @@ Bei der Bereitstellung eines Clusters können Sie erweiterte Optionen verwenden,
 		# Provision the cluster with custom configuration                
 		New-AzureHDInsightCluster -Name $clusterName -Config $config -Credential $clusterCredentials -Location $location -Version "3.2"
 
-	>[AZURE.NOTE] Die als Metastore verwendete Azure SQL-Datenbank muss für die Konnektivität mit anderen Azure-Diensten konfiguriert sein, inklusive Azure HDInsight. Klicken Sie im Dashboard der Azure SQL-Datenbank mit der rechten Maustaste auf den Servernamen. Dies ist der Server, auf dem die SQL-Datenbankinstanz läuft. Öffnen Sie die Serveransicht, klicken Sie auf **Konfigurieren**, klicken Sie für **Windows** **Azure-Dienste** auf **Ja**, und klicken Sie dann auf **Speichern**.
+	>[AZURE.NOTE]Die als Metastore verwendete Azure SQL-Datenbank muss für die Konnektivität mit anderen Azure-Diensten konfiguriert sein, inklusive Azure HDInsight. Klicken Sie im Dashboard der Azure SQL-Datenbank mit der rechten Maustaste auf den Servernamen. Dies ist der Server, auf dem die SQL-Datenbankinstanz läuft. Öffnen Sie die Serveransicht, klicken Sie auf **Konfigurieren**, klicken Sie für **Windows** **Azure-Dienste** auf **Ja**, und klicken Sie dann auf **Speichern**.
 
 	Die Bereitstellung des Clusters kann einige Minuten dauern.
 
@@ -407,7 +405,7 @@ Erstellen Sie ein selbstsigniertes Zertifikat, installieren Sie es auf Ihrer Arb
 		using Microsoft.WindowsAzure.Management.HDInsight.ClusterProvisioning.Data;
 
 
-9. Fügen Sie in der Main()-Funktion den folgenden Code ein:
+9. Fügen Sie in der Main\(\)-Funktion den folgenden Code ein:
 
         string thumbprint = "<CertificateFriendlyName>";  
         string subscriptionid = "<AzureSubscriptionID>";
@@ -459,7 +457,7 @@ Erstellen Sie ein selbstsigniertes Zertifikat, installieren Sie es auf Ihrer Arb
         Console.WriteLine("Press ENTER to continue ...");
         Console.ReadKey();
 
-10. Ersetzen Sie die Variablen am Anfang der main()-Funktion.
+10. Ersetzen Sie die Variablen am Anfang der main\(\)-Funktion.
 
 **So führen Sie die Anwendung aus**
 
@@ -507,4 +505,6 @@ Erstellen Sie ein selbstsigniertes Zertifikat, installieren Sie es auf Ihrer Arb
 
 [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO7-->
+
+<!---HONumber=August15_HO7-->

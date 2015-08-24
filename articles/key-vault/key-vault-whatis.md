@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Was ist der Azure-Schlüsseltresor? | Übersicht" 
+	pageTitle="Was ist der Azure-Schlüsseltresor? | Microsoft Azure" 
 	description="Der Azure-Schlüsseltresor unterstützt Sie dabei, kryptografische Schlüssel und geheime Schlüssel zu schützen, die von Cloudanwendungen und -diensten verwendet werden. Durch Verwenden des Schlüsseltresors können Kunden Schlüssel und geheime Schlüssel (beispielsweise Authentifizierungsschlüssel, Schlüssel für Speicherkonten, Datenverschlüsselungsschlüssel, PFX-Dateien und Kennwörter) verschlüsseln, indem sie durch Hardwaresicherheitsmodule (HSMs) geschützte Schlüssel verwenden." 
 	services="key-vault" 
 	documentationCenter="" 
@@ -68,4 +68,4 @@ Weitere Informationen zur Verwendung von Schlüsseln und geheimen Schlüsseln mi
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

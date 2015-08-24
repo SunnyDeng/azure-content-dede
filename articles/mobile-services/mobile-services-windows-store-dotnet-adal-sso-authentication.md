@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden (Windows Store) | Mobile Developer Center" 
+	pageTitle="Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden (Windows Store) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Benutzer für das für einmalige Anmelden mit ADAL in Ihrer Windows Store-Anwendung authentifizieren." 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -217,4 +217,4 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 [Windows Dev Center-Dashboard]: http://go.microsoft.com/fwlink/p/?LinkID=266734
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von BI-Tools mit Apache Spark für Azure HDInsight | Azure" 
+	pageTitle="Verwenden von BI-Tools mit Apache Spark für Azure HDInsight | Microsoft Azure" 
 	description="Schritt-für-Schritt-Anleitung zur Verwendung von Notebooks mit Apache Spark zum Erstellen von Schemas für Rohdaten, Speichern als Hive-Tabellen und Verwenden von BI-Tools in der Hive-Tabelle zur Datenanalyse" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -35,7 +35,7 @@ Sie benötigen Folgendes:
 
 ##<a name="hivetable"></a>Speichern von Rohdaten als Hive-Tabelle
 
-In diesem Abschnitt verwenden wir das [Jupyter](https://jupyter.org) Notebook, das einem Apache Spark-Cluster in HDInsight zugeordnet ist, zum Ausführen von Aufträgen, bei denen Ihre Beispielrohdaten verarbeitet und dann als Hive-Tabelle gespeichert werden. Die Beispieldaten sind in einer CSV-Datei (hvac.csv) enthalten, die standardmäßig auf allen Clustern verfügbar ist.
+In diesem Abschnitt verwenden wir das [Jupyter](https://jupyter.org) Notebook, das einem Apache Spark-Cluster in HDInsight zugeordnet ist, zum Ausführen von Aufträgen, bei denen Ihre Beispielrohdaten verarbeitet und dann als Hive-Tabelle gespeichert werden. Die Beispieldaten sind in einer CSV-Datei \(hvac.csv\) enthalten, die standardmäßig auf allen Clustern verfügbar ist.
 
 Nachdem Ihre Daten als Hive-Tabelle gespeichert wurden, können wir im nächsten Abschnitt eine Verbindung mit der Hive-Tabelle herstellen. Hierzu verwenden wir BI-Tools wie Power BI und Tableau.
 
@@ -59,7 +59,7 @@ Nachdem Ihre Daten als Hive-Tabelle gespeichert wurden, können wir im nächsten
 		sc = SparkContext('spark://headnodehost:7077', 'pyspark')
 		hiveCtx = HiveContext(sc)
 
-	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebook-Titel der Status **(Busy)** (Beschäftigt) angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **Python 2**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
+	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebook-Titel der Status **\(Busy\)** \(Beschäftigt\) angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **Python 2**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
 
 	 ![Status eines Jupyter Notebook-Auftrags](./media/hdinsight-apache-spark-use-bi-tools/HDI.Spark.Jupyter.Job.Status.png "Status eines Jupyter Notebook-Auftrags")
 
@@ -131,7 +131,7 @@ Nachdem Sie die Daten als Hive-Tabelle gespeichert haben, können Sie Power BI v
 
 	![Erstellen von Visualisierungen](./media/hdinsight-apache-spark-use-bi-tools/HDI.Spark.PowerBI.Visual.1.png "Erstellen von Visualisierungen")
 
-	Wählen Sie außerdem **Bereichskarte** (rot dargestellt), um Ihre Daten zu visualisieren.
+	Wählen Sie außerdem **Bereichskarte** \(rot dargestellt\), um Ihre Daten zu visualisieren.
 
 8. Standardmäßig werden in der Visualisierung die Summe für **ActualTemp** und **TargetTemp** angezeigt. Wählen Sie für beide Felder in der Dropdownliste die Option **Mittelwert** aus, um für beide Gebäude den Mittelwert der Ist- und Zieltemperaturen zu erhalten.
 
@@ -205,4 +205,4 @@ Nachdem Sie die Daten als Hive-Tabelle gespeichert haben, können Sie Power BI v
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

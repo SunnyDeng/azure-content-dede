@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="javascript" 
 	ms.topic="article" 
-	ms.date="04/08/2015" 
+	ms.date="08/08/2015" 
 	ms.author="glenga"/>
 
 # Authentifizieren Ihrer Windows Store-App mit auf dem Client verwalteter Authentifizierung mit Microsoft-Konto
@@ -114,7 +114,7 @@ Abschließend fügen Sie das Live SDK hinzu und verwenden es zum Authentifiziere
 
     Dies initialisiert den Live Connect-Client, sendet eine neue Anmelde-Anforderung an das Microsoft-Konto, sendet das zurückgegebene Authentifizierungstoken an Mobile Services und zeigt anschließend Informationen über den angemeldeten Benutzer an.
 
-	>[AZURE.NOTE]Sie sollten im Idealfall nicht bei jeder Ausführung der App Live Connection-Authentifizierungstoken oder Mobile Services-Autorisierungstoken anfordern. Diese Methode ist ineffizient, und zudem können nutzungsbedingte Probleme auftreten, wenn viele Kunden die App gleichzeitig starten möchten. Ein besserer Ansatz ist es daher, die Token zwischenzuspeichern und zunächst zu versuchen, die zwischengespeicherten Mobile Services-Token zu verwenden, bevor Sie **LoginWithMicrosoftAccountAsync** aufrufen. Ein Beispiel zum Zwischenspeichern dieses Tokens finden Sie unter [Erste Schritte mit der Authentifizierung](mobile-services-windows-store-javascript-get-started-users.md#tokens).
+	>[AZURE.NOTE]Sie sollten im Idealfall nicht bei jeder Ausführung der App Live Connection-Authentifizierungstoken oder Mobile Services-Autorisierungstoken anfordern. Diese Methode ist ineffizient, und zudem können nutzungsbedingte Probleme auftreten, wenn viele Kunden die App gleichzeitig starten möchten. Ein besserer Ansatz ist es daher, die Token zwischenzuspeichern und zunächst zu versuchen, die zwischengespeicherten Mobile Services-Token zu verwenden, bevor Sie **LoginWithMicrosoftAccountAsync** aufrufen. Ein Beispiel für das Zwischenspeichern dieses Tokens finden Sie unter [Erste Schritte bei der Authentifizierung](mobile-services-windows-store-javascript-get-started-users.md#tokens).
 	
 7. Ersetzen Sie den Wert `<yourClient>` in der ersten Zeile des oben angegebenen Codes mit der in der JS-Datei, die Sie beim Verbinden des Projekts mit Mobile Service hinzugefügt haben, definierten Variablen.
 		
@@ -145,4 +145,4 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Azure Management Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

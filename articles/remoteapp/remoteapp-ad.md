@@ -3,11 +3,9 @@
     pageTitle="Konfigurieren von Active Directory für Azure RemoteApp" 
     description="Erfahren Sie, wie Sie Active Directory für Azure RemoteApp einrichten können." 
     services="remoteapp" 
-    solutions="" 
 	documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
-
 
 <tags 
     ms.service="remoteapp" 
@@ -17,7 +15,6 @@
     ms.topic="article" 
     ms.date="08/03/2015" 
     ms.author="elizapo" />
-
 
 
 
@@ -108,7 +105,7 @@ Wenn beim Konfigurieren der Verzeichnissynchronisierung Probleme auftreten, übe
 -	Unter **Active Directory->Standardverzeichnis->Benutzer** fügen Sie unter dieser Domäne einen neuen Benutzer hinzu (z. B. myAzureSyncUser@mydomain.com)).
 -	Sie haben in Ihrer Domäne in Active Directory einen neuen Domänenbenutzer hinzugefügt und ihn zu einem Mitglied der Gruppe Organisations-Admins gemacht (z. B. myDomainSyncUser@mydomain.com)).
 
-Starten Sie nun das Azure-Verzeichnissynchronisierungstool, und verwenden Sie die Anmeldeinformationen \*\***myAzureSyncUser@mydomain.com** für die erste Eingabeaufforderung (Microsoft Azure Active Directory-Administrator-Anmeldeinformationen) und \*\***myDomainSyncUser@mydomain.com** für die zweite Aufforderung.
+Starten Sie nun das Azure-Verzeichnissynchronisierungstool, und verwenden Sie die Anmeldeinformationen ****myAzureSyncUser@mydomain.com** für die erste Eingabeaufforderung (Microsoft Azure Active Directory-Administrator-Anmeldeinformationen) und ****myDomainSyncUser@mydomain.com** für die zweite Aufforderung.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

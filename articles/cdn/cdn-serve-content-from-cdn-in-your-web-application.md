@@ -7,16 +7,14 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-
 <tags 
 	ms.service="cdn" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="05/27/2015" 
+	ms.date="08/06/2015" 
 	ms.author="cephalin"/>
-
 
 # Bereitstellen von Inhalt aus Azure CDN in einer Webanwendung #
 
@@ -144,7 +142,6 @@ Los geht's! Folgen Sie den Schritten unten, um mit der Verwendung des Azure CDN 
 
 		<img alt="Mugshot" src="http://az623979.vo.msecnd.net/cdn/cephas_lin.png" />
 
-
 In diesem Abschnitt haben Sie erfahren, wie Sie einen CDN-Endpunkt erstellen, Inhalte darauf hochladen, und diesen zu CDN-Inhalten einer beliebigen Webseite verknüpfen.
 
 <a name="upload"></a>
@@ -180,7 +177,6 @@ Für den `-StorageContainer`-Parameter ist es sinnvoll, den Namen Ihrer Webanwen
 Sobald die Inhalte hochgeladen sind, können Sie alle Elemente in den Ordnern *\\Content* und *\\Scripts* mithilfe von `http://<yourCDNName>.vo.msecnd.net/<containerName>` in Ihrem HTML-Code – zum Beispiel in Ihren CSHTML-Dateien – verknüpfen. Hier ist ein Beispiel von etwas, das ich in einer Razor-Ansicht verwenden kann:
 
 	<img alt="Mugshot" src="http://az623979.vo.msecnd.net/MyMvcApp/Content/cephas_lin.png" />
-
 
 Ein Beispiel für die Integration von PowerShell-Skripten in Ihre kontinuierliche Zustellungskonfiguration finden Sie unter [Kontinuierliche Zustellung für Cloud Services in Azure](../cloud-services/cloud-services-dotnet-continuous-delivery.md).
 
@@ -222,17 +218,27 @@ Es gibt natürlich berechtigte Zeiten und Orte für die Zwischenspeicherung. Ang
 <a name="query"></a>
 ## Sofortiges Bereitstellen neuer Inhalte mithilfe von Abfragezeichenfolgen ##
 
-In Azure CDN können Sie Abfragezeichenfolgen aktivieren, sodass Inhalte von URLs mit bestimmten Abfragezeichenfolgen separat zwischengespeichert werden. Dies ist eine sehr nützliche Funktion, wenn Sie bestimmte Inhaltsaktualisierungen sofort an Clientbrowser weitergeben möchten, anstatt darauf zu warten, dass der zwischengespeicherte CDN-Inhalt abläuft. Nehmen wir an, ich veröffentliche meine Webseite mit einer Versionsnummer in der URL. <pre class="prettyprint"> &lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=3.0.0"; rel=";stylesheet";/&gt; </pre>
+In Azure CDN können Sie Abfragezeichenfolgen aktivieren, sodass Inhalte von URLs mit bestimmten Abfragezeichenfolgen separat zwischengespeichert werden. Dies ist eine sehr nützliche Funktion, wenn Sie bestimmte Inhaltsaktualisierungen sofort an Clientbrowser weitergeben möchten, anstatt darauf zu warten, dass der zwischengespeicherte CDN-Inhalt abläuft. Nehmen wir an, ich veröffentliche meine Webseite mit einer Versionsnummer in der URL.
+  
+	<link href="http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=3.0.0" rel="stylesheet"/>
 
-Wenn ich eine CSS-Aktualisierung veröffentliche und eine andere Versionsnummer in meiner CSS-URL verwende: <pre class="prettyprint"> &lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=3.1.1"; rel=";stylesheet";/&gt; </pre>
+Wenn ich eine CSS-Aktualisierung veröffentliche und eine andere Versionsnummer in meiner CSS-URL verwende:
+
+	<link href="http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=3.1.1" rel="stylesheet"/>
 
 Für einen CDN-Endpunkt, für den Abfragezeichenfolgen aktiviert sind, sind die beiden URLs jeweils eindeutig, sodass dieser eine neue Anfrage an meinen Webserver machen wird, um die neue *bootstrap.css* abzurufen. Für einen CDN-Endpunkt, für den Abfragezeichenfolgen nicht aktiviert sind, sind dies identische URLs, sodass einfach die zwischengespeicherte *bootstrap.css* abgerufen wird.
 
-Der Trick besteht darin, die Versionsnummer automatisch zu aktualisieren. In Visual Studio ist dies leicht zu bewerkstelligen. In einer CSHTML-Datei, in der ich den oben stehenden Link verwenden möchte, kann ich eine Versionsnummer basierend auf der Assembly-Nummer angeben. <pre class="prettyprint"> @{ var cdnVersion = System.Reflection.Assembly.GetAssembly( typeof(MyMvcApp.Controllers.HomeController)) .GetName().Version.ToString(); }
+Der Trick besteht darin, die Versionsnummer automatisch zu aktualisieren. In Visual Studio ist dies leicht zu bewerkstelligen. In einer CSHTML-Datei, in der ich den Link oben verwenden würde, kann ich eine Versionsnummer basierend auf der Assemblynummer angeben.
 
-...
-
-&lt;link href=";http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=@cdnVersion"; rel=";stylesheet";/&gt; </pre>
+	@{
+	    var cdnVersion = System.Reflection.Assembly.GetAssembly(
+	        typeof(MyMvcApp.Controllers.HomeController))
+	        .GetName().Version.ToString();
+	}
+	
+	...
+	
+	<link href="http://az623979.vo.msecnd.net/MyMvcApp/Content/bootstrap.css?v=@cdnVersion" rel="stylesheet"/>
 
 Wenn Sie die Assemblynummer als Teil jedes Veröffentlichungszyklus ändern, können Sie sicher sein, dass Sie jedes Mal eine eindeutige Versionsnummer erhalten, wenn Sie die Webanwendung veröffentlichen. Diese bleibt bis zum nächsten Veröffentlichungszyklus identisch. Sie können Visual Studio auch die Assemblyversionsnummer jedes Mal automatisch erhöhen lassen, wenn die Webanwendung erstellt wird, indem Sie im Visual Studio-Projekt *Properties\\AssemblyInfo.cs* öffnen und `*` in `AssemblyVersion` verwenden. Beispiel:
 
@@ -265,4 +271,4 @@ Ohne Integration in Azure App Service-Web-Apps oder Azure Cloud Services können
 - [Verwenden von CDN für Azure](cdn-how-to-use-cdn.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

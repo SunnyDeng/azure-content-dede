@@ -13,9 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/23/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
-
 
 
 #Hochladen von Dateien in ein Media Services-Konto mit der REST-API
@@ -367,4 +366,4 @@ Im Erfolgsfall wird Folgendes zurückgegeben:
 [How to Get a Media Processor]: media-services-get-media-processor.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

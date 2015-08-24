@@ -6,7 +6,6 @@
    authors="rothja"
    manager="jeffreyg"
    editor="monicar" />
-
 <tags 
    ms.service="virtual-machines"
    ms.devlang="na"
@@ -16,12 +15,11 @@
    ms.date="08/05/2015"
    ms.author="jroth" />
 
-
 # Automatisches Patchen für SQL Server auf virtuellen Azure-Computern
 
 Beim automatischen Patchen wird ein Wartungsfenster für einen virtuellen Azure-Computer mit SQL Server 2012 oder 2014 eingerichtet. Automatische Updates können nur während dieses Wartungsfensters installiert werden. Dadurch wird bei SQL Server sichergestellt, dass Systemupdates und alle erforderlichen Neustarts zum bestmöglichen Zeitpunkt für die Datenbank stattfinden. Dieser ist abhängig vom SQL Server-IaaS Agent.
 
->[AZURE.IMPORTANT]Das automatische Patchen basiert auf dem SQL Server-IaaS-Agent. Zum Installieren und Konfigurieren des Agents muss der Azure-VM-Agent auf dem virtuellen Zielcomputer ausgeführt werden. Bei neueren Katalogimages für virtuelle Computer ist diese Option standardmäßig aktiviert, der Azure-VM-Agent ist auf vorhandenen virtuellen Computern aber möglicherweise nicht installiert. Wenn Sie ein eigenes Image für virtuelle Computer verwenden, müssen Sie auch den SQL Server-IaaS-Agent installieren. Weitere Informationen finden Sie unter [VM-Agent und Erweiterungen](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
+>[AZURE.NOTE]Das automatische Patchen basiert auf dem SQL Server-IaaS-Agent. Zum Installieren und Konfigurieren des Agents muss der Azure-VM-Agent auf dem virtuellen Zielcomputer ausgeführt werden. Bei neueren Katalogimages für virtuelle Computer ist diese Option standardmäßig aktiviert, der Azure-VM-Agent ist auf vorhandenen virtuellen Computern aber möglicherweise nicht installiert. Wenn Sie ein eigenes Image für virtuelle Computer verwenden, müssen Sie auch den SQL Server-IaaS-Agent installieren. Weitere Informationen finden Sie unter [VM-Agent und Erweiterungen](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
 
 ## Konfigurieren des automatischen Patchens im Portal
 
@@ -90,4 +88,4 @@ Eine verwandte Funktion für virtuelle SQL Server-Computer in Azure ist die [aut
 
 Lesen Sie auch die weiteren [Ressourcen für die Ausführung von SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

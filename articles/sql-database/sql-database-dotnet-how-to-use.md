@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von SQL-Datenbank (.NET) – Azure-Featureleitfaden" 
+	pageTitle="Verwenden von Azure SQL-Datenbank (.NET) | Microsoft Azure" 
 	description="Erste Schritte mit SQL-Datenbank. Erfahren Sie, wie Sie eine SQL-Datenbankinstanz erstellen und über ADO.NET, ODBC und EntityClient Provider eine Verbindung zu dieser herstellen." 
 	services="sql-database" 
 	documentationCenter=".net" 
@@ -126,7 +126,7 @@ Dieser Abschnitt beschreibt, wie Sie sich über die unterschiedlichen .NET Frame
 
 Falls Sie Visual Studio verwenden und Ihre Konfiguration keine Azure-Webanwendung als Front-End enthält, müssen Sie keine weiteren Tools oder SDKs auf dem Entwicklungscomputer installieren. Sie können direkt mit der Entwicklung Ihrer Anwendung beginnen.
 
-Sie können in Visual Studio für SQL Database dieselben Designer-Tools verwenden, mit denen Sie auch unter SQL Server arbeiten. Im Server Explorer können Sie Datenbankobjekte anzeigen (jedoch nicht bearbeiten). Der Visual Studio Entity Data Model-Designer ist voll funktionstüchtig und kann zur Erstellung von Modellen in SQL Database für die Arbeit mit dem Entity Framework verwendet werden.
+Sie können in Visual Studio für SQL Database dieselben Designer-Tools verwenden, mit denen Sie auch unter SQL Server arbeiten. Im Server Explorer können Sie Datenbankobjekte anzeigen \(jedoch nicht bearbeiten\). Der Visual Studio Entity Data Model-Designer ist voll funktionstüchtig und kann zur Erstellung von Modellen in SQL Database für die Arbeit mit dem Entity Framework verwendet werden.
 
 ## Verwenden des .NET Framework-Datenanbieters für SQL Server
 
@@ -208,7 +208,7 @@ Weitere Informationen finden Sie unter [EntityClient-Anbieter für das Entity Fr
 
 ## Nächste Schritte
 
-Nachdem Sie nun die Grundlagen der Verbindung mit der SQL-Datenbank kennengelernt haben, informieren Sie sich weiter unter [Entwicklung: Gewusst-wie-Themen (SQL-Datenbank)](http://msdn.microsoft.com/library/windowsazure/ee621787.aspx)
+Nachdem Sie nun die Grundlagen der Verbindung mit der SQL-Datenbank kennengelernt haben, informieren Sie sich weiter unter [Entwicklung: Gewusst-wie-Themen \(SQL-Datenbank\)](http://msdn.microsoft.com/library/windowsazure/ee621787.aspx)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

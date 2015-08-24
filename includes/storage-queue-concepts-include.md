@@ -4,7 +4,7 @@ Die Warteschlangenspeicherung in Azure ist ein Dienst zur Speicherung großer An
 
 Warteschlangenspeicherungen werden hauptsächlich für folgende Zwecke verwendet:
 
--   <span>Erstellung eines Arbeits-Backlogs zur asynchronen Verarbeitung</span>
+-   Erstellung eines Arbeits-Backlogs zur asynchronen Verarbeitung
 -   Weiterleitung von Nachrichten von einer Azure-Webrolle an eine Azure-Workerrolle
 
 ## Konzepte des Warteschlangendiensts
@@ -16,12 +16,14 @@ Der Warteschlangendienst umfasst die folgenden Komponenten:
 
 - **URL-Format:** Warteschlangen sind über das folgende URL-Format adressierbar: http://`<storage account>`.queue.core.windows.net/`<queue>` 
       
-Mit der folgenden URL kann eine der Warteschlangen im Diagramm adressiert werden: http://myaccount.queue.core.windows.net/imagesToDownload
+	Mit der folgenden URL kann eine der Warteschlangen im Diagramm adressiert werden:
+		
+		http://myaccount.queue.core.windows.net/imagesToDownload
 
-**Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Azure Storage Scalability and Performance Targets](../articles/storage/storage-scalability-targets.md) (Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher, in englischer Sprache).
+- **Speicherkonto:** Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Weitere Informationen zur Kapazität der Speicherkonten finden Sie unter [Azure Storage Scalability and Performance Targets](../articles/storage/storage-scalability-targets.md) (Skalierbarkeits- und Leistungsziele für Windows Azure-Speicher, in englischer Sprache).
 
 - **Warteschlange:** Eine Warteschlange enthält einen Satz von Nachrichten. Alle Nachrichten müssen sich in Warteschlangen befinden.
 
 - **Nachricht:** Eine Nachricht in einem beliebigen Format und mit einer Größe von bis zu 64 KB.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

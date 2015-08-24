@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Vorläufiges Löschen in Mobile Services (Windows Store) | Mobile Dev Center" 
+	pageTitle="Vorläufiges Löschen in Mobile Services (Windows Store) | Microsoft Azure" 
 	description="Lernen Sie, wie Sie die Funktion zum vorläufigen Löschen von Azure Mobile Services in Ihrer Anwendung nutzen" 
 	documentationCenter="" 
 	authors="wesmc7777" 
@@ -163,4 +163,4 @@ Weitere Informationen zum Planen von periodischen Aufträgen mit Mobiles Service
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

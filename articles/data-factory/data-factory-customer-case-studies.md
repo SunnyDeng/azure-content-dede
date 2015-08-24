@@ -1,12 +1,11 @@
 <properties 
-	pageTitle="Fallstudien | Azure Data Factory" 
+	pageTitle="Fallstudien | Microsoft Azure" 
 	description="Erfahren Sie, wie einige unserer Kunden Azure Data Factory verwendet haben." 
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
 	manager="jhubbard" 
 	editor="monicar"/>
-
 
 <tags 
 	ms.service="data-factory" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="08/04/2015" 
 	ms.author="spelluru"/>
-
 
 # Fallstudien
 
@@ -50,4 +48,4 @@ Data Factory ist ein cloudbasierter Dienst zur Verwaltung von Informationen, der
 
 [Durch Cloud Machine Learning den Kundenkontakt stärken](https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11257)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

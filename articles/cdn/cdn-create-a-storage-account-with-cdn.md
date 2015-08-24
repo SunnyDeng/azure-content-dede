@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von CDN – Azure-Funktionsleitfaden" 
+	pageTitle="Verwenden von CDN | Microsoft Azure" 
 	description="Erfahren Sie, wie das Azure Content Delivery Network (CDN) für die Übermittlung breitbandiger Inhalte eingesetzt wird, indem Blobs und statische Inhalte zwischengespeichert werden." 
 	services="cdn" 
 	documentationCenter=".net" 
@@ -120,4 +120,4 @@ Die Möglichkeit zum sofortigen Löschen von Inhalten wird im Azure-Verwaltungsp
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

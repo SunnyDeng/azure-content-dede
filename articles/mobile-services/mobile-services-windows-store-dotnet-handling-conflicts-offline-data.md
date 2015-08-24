@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Behandeln von Konflikten mit Offlinedaten in universellen Windows-Apps | Azure Mobile Services" 
+	pageTitle="Behandeln von Konflikten mit Offlinedaten in universellen Windows-Apps | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mithilfe von Azure Mobile Services Konflikte beim Synchronisieren von Offlinedaten in Ihrer universellen Windows-Anwendung behandeln." 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -164,4 +164,4 @@ Wenn ein Pushvorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePush
 [Todo Offline-Beispiel für Mobile Services]: http://go.microsoft.com/fwlink/?LinkId=512866
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Tätigen eines Telefonanrufs über Twilio (.NET) - Azure" 
+	pageTitle="Tätigen eines Telefonanrufs über Twilio (.NET) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. In .NET geschriebene Codebeispiele." 
 	services="" 
 	documentationCenter=".net" 
@@ -192,4 +192,4 @@ Dieser Code demonstriert die allgemeinen Funktionen für die Verwendung von Twil
 
 [azure_runtime_ref_dotnet]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

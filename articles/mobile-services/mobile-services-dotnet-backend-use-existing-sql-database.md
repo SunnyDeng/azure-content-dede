@@ -1,12 +1,11 @@
 <properties 
-	pageTitle="Erstellen eines Diensts mithilfe einer vorhandenen SQL-Datenbank mit dem Mobile Services .NET-Back-End - Azure Mobile Services" 
+	pageTitle="Erstellen eines Diensts mithilfe einer vorhandenen SQL-Datenbank mit dem Mobile Services .NET-Backend | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie eine vorhandene Cloud- oder lokale SQL-Datenbank mit Ihrem .NET-basierten mobilen Dienst verwenden." 
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="ggailey777" 
 	manager="dwrede" 
 	editor="mollybos"/>
-
 
 <tags 
 	ms.service="mobile-services" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="05/20/2015" 
 	ms.author="glenga"/>
-
 
 
 # Erstellen eines Diensts mithilfe einer vorhandenen SQL-Datenbank mit dem Mobile Services .NET-Backend
@@ -617,4 +615,4 @@ Beachten Sie, dass beide Controllerimplementierungen die DTOs **MobileCustomer**
 
 Als nächsten Schritt können Sie nun die Client-App erstellen, um auf den Dienst zuzugreifen. Weitere Informationen finden Sie unter [Hinzufügen von Mobile Services zu einer vorhandenen App](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-data.md#update-the-app-to-use-the-mobile-service).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

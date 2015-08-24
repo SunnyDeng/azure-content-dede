@@ -1,7 +1,9 @@
 
-| Resource	| Soft limit 
+| Ressource | Weicher Grenzwert 
 --- | ---
-| CDN endpoints | 50
-| Custom domains per one customer| 16
+| CDN-Endpunkte | 50
+| Benutzerdefinierte Domänen pro Kunde| 16
 
-You can request to update soft limits by opening a support ticket.
+Sie können die Aktualisierung weicher Grenzwerte anfordern, indem Sie ein Supportticket öffnen.
+
+<!---HONumber=August15_HO7-->

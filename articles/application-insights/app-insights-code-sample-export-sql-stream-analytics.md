@@ -3,7 +3,7 @@
 	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export." 
 	services="application-insights" 
     documentationCenter=""
-	authors="alancameronwills" 
+	authors="noamben" 
 	manager="douge"/>
 
 <tags 
@@ -305,4 +305,4 @@ Nach einigen Minuten wechseln Sie zurück zu den SQL Server-Verwaltungstools, un
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

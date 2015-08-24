@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="07/07/2015"
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
 
 #Einrichten der Umgebung
@@ -42,4 +42,4 @@ Wählen Sie **.NET** oder **REST API**, um eine programmgesteuerte Verbindung mi
 [AZURE.INCLUDE [media-services-selector-connect](../../includes/media-services-selector-connect.md)]
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

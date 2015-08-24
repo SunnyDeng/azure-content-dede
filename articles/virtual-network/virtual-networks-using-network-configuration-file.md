@@ -3,8 +3,8 @@
 	description="Anweisungen zum Exportieren und Importieren einer Netzwerkkonfigurationsdatei mithilfe des Azure-Verwaltungsportals zum Erstellen oder Ändern von virtuellen Netzwerken." 
 	services="virtual-network" 
 	documentationCenter="" 
-	authors="cherylmc" 
-	manager="adinah" 
+	authors="telmosampaio" 
+	manager="carolz" 
 	editor="tysonn"/>
 
 <tags
@@ -13,29 +13,21 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services" 
-	ms.date="07/09/2015"
-	ms.author="cherylmc"/>
+	ms.date="08/10/2015"
+	ms.author="telmos"/>
 
 # Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei
 
-## Übersicht
-
-Wenn Sie ein virtuelles Netzwerk konfigurieren möchten, können Sie den Assistenten des Verwaltungsportals verwenden oder eine Netzwerkkonfigurationsdatei erstellen und importieren. Azure verwendet die Netzwerkkonfigurationsdatei zum Definieren der Einstellungen des virtuellen Netzwerks.
-
-Sie können den Assistenten des Verwaltungsportals für die Erstkonfiguration des virtuellen Netzwerks verwenden und später Änderungen daran vornehmen, indem Sie die Konfigurationsdatei direkt bearbeiten. Wenn Sie z. B. mehrere virtuelle Netzwerke für separate Abonnements konfigurieren, können Sie zuerst mithilfe des Assistenten des Verwaltungsportals eine Netzwerkkonfigurationsdatei erstellen. Anschließend können Sie die Datei exportieren, um sie als Vorlage zu verwenden oder verschiedene Einstellungen in ihr zu bearbeiten, und wieder in das Verwaltungsportal importieren. Dies kann eine effiziente Möglichkeit sein, mehrere virtuelle Netzwerke zu erstellen, wenn Sie mehr als ein Abonnement haben.
-
-Wenn Sie Änderungen an Ihren Netzwerkkonfigurationseinstellungen vornehmen möchten, bevor Sie Cloud-Dienste oder virtuelle Computer im Netzwerk bereitstellen, können Sie die Datei exportieren, bearbeiten und dann wieder in Azure importieren. Sie können eine Netzwerkkonfigurationsdatei auch verwenden, um Ihre Netzwerkkonfigurationseinstellungen zu sichern, wenn Sie ein virtuelles Netzwerk wiederherstellen möchten.
+Sie können ein virtuelles Netzwerk \(VNet\) mithilfe des Azure-Verwaltungsportals oder einer Netzwerkkonfigurationsdatei konfigurieren.
 
 ## Erstellen und Ändern einer Netzwerkkonfigurationsdatei 
-Die einfachste Möglichkeit zum Erstellen einer Netzwerkkonfigurationsdatei ist der Export der Netzwerkeinstellungen aus einer vorhandenen Konfiguration eines virtuellen Netzwerks und die anschließende Bearbeitung der Datei, damit sie die Einstellungen enthält, die Sie für Ihre virtuellen Netzwerke konfigurieren möchten. Sie können auch eine Beispieldatei abrufen und ändern.
+Die einfachste Möglichkeit zum Erstellen einer Netzwerkkonfigurationsdatei ist der Export der Netzwerkeinstellungen aus einer vorhandenen Konfiguration eines virtuellen Netzwerks und die anschließende Bearbeitung der Datei, damit sie die Einstellungen enthält, die Sie für Ihre virtuellen Netzwerke konfigurieren möchten.
 
-Wenn Sie die Netzwerkkonfigurationsdatei bearbeiten möchten, können Sie sie einfach öffnen, die notwendigen Änderungen vornehmen und diese speichern. Sie können einen beliebigen *XML*-Editor verwenden, um Änderungen an der Netzwerkkonfigurationsdatei vorzunehmen.
+Wenn Sie die Netzwerkkonfigurationsdatei bearbeiten möchten, können Sie sie einfach öffnen, die notwendigen Änderungen vornehmen und die Datei speichern. Sie können einen beliebigen *XML*-Editor verwenden, um Änderungen an der Netzwerkkonfigurationsdatei vorzunehmen.
 
-Befolgen Sie die Anleitungen für Schemaeinstellungen zur Netzwerkkonfigurationsdatei. Wenn Sie Ihre Netzwerkkonfigurationsdatei erstellen, werden die Einstellungen für Ihr aktuelles Abonnement in Azure mit den Einstellungen in der Datei überschrieben. Wenn Sie Änderungen an Werten in der Datei vornehmen, die mit den Einstellungsrichtlinien nicht kompatibel sind, wird das virtuelle Netzwerk möglicherweise nicht auf die gewünschte Weise konfiguriert, und in einigen Fällen erlaubt Azure nicht, die Datei zu importieren. Informationen zu den in einer Netzwerkkonfigurationsdatei enthaltenen spezifischen Einstellungen finden Sie unter [Konfigurationsschema für virtuelle Azure-Netzwerke](https://msdn.microsoft.com/library/azure/jj157100.aspx).
+Befolgen Sie die Anleitungen zu [Schemaeinstellungen zur Netzwerkkonfigurationsdatei](https://msdn.microsoft.com/library/azure/jj157100.aspx).
 
-Azure betrachtet ein Subnetz, in dem etwas bereitgestellt wurde, als „in Gebrauch“. Wenn Sie ein Subnetz in Gebrauch ist, kann es nicht geändert werden. Verschieben Sie vor allen Änderungen alles, was Sie im Subnetz bereitgestellt haben, in ein anderes Subnetz, das nicht verändert wird. Siehe [Verschieben eines virtuellen Computers oder einer Rolleninstanz in ein anderes Subnetz](virtual-networks-move-vm-role-to-subnet.md).
-
-
+Azure betrachtet ein Subnetz, in dem etwas bereitgestellt wurde, als **in Gebrauch**. Wenn Sie ein Subnetz in Gebrauch ist, kann es nicht geändert werden. Verschieben Sie vor allen Änderungen alles, was Sie im Subnetz bereitgestellt haben, in ein anderes Subnetz, das nicht verändert wird. Siehe [Verschieben eines virtuellen Computers oder einer Rolleninstanz in ein anderes Subnetz](virtual-networks-move-vm-role-to-subnet.md).
 
 ## Exportieren und Importieren von Einstellungen eines virtuellen Netzwerks mithilfe des Verwaltungsportals  
 Sie können Netzwerkkonfigurationseinstellungen, die in Ihrer Netzwerkkonfigurationsdatei enthalten sind, mithilfe von PowerShell oder des Verwaltungsportals importieren oder exportieren. Die folgenden Anweisungen helfen Ihnen beim Exportieren und Importieren mithilfe des Verwaltungsportals.
@@ -52,22 +44,8 @@ Beim Export werden alle Einstellungen für die virtuellen Netzwerke in Ihrem Abo
 ### So importieren Sie die Netzwerkeinstellungen
 
 1. Klicken Sie im Navigationsbereich im **Verwaltungsportal** unten links auf **Neu**.
-2. Klicken Sie auf **Netzwerkdienste** -> **Virtuelles Netzwerk** -> **Konfiguration importieren**.
+2. Klicken Sie auf **Network Services** -\> **Virtuelles Netzwerk** -\> **Konfiguration importieren**.
 3. Wechseln Sie auf der Seite **Die Netzwerkkonfigurationsdatei importieren** zu Ihrer Netzwerkkonfigurationsdatei, und klicken Sie dann auf den Pfeil für **Weiter**.
 4. Auf der Seite **Netzwerk wird erstellt** wird auf dem Bildschirm angezeigt, welche Teile Ihrer Netzwerkkonfiguration geändert oder erstellt werden. Wenn die Änderungen Ihnen richtig erscheinen, markieren Sie das Häkchen, um mit dem Aktualisieren oder Erstellen Ihres virtuellen Netzwerks fortzufahren. 
 
-
-## Nächste Schritte
-Weitere Informationen zu Einstellungen für virtuelle Netzwerke finden Sie unter:
-
--  [Netzwerkkonfigurationsschema - Optionale Einstellungen für Cloud-Dienste](https://msdn.microsoft.com/library/azure/jj156091.aspx)
--  [Einstellungen für virtuelle Netzwerke im Verwaltungsportal](https://msdn.microsoft.com/library/azure/jj156074.aspx)
--  [Häufig gestellte Fragen zu virtuellen Netzwerken](https://msdn.microsoft.com/library/azure/dn133803.aspx)
-
-
-
-
-
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

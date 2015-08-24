@@ -13,11 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="08/04/2015"
+   ms.date="08/09/2015"
    ms.author="rajram"/>
 
 # Microsoft AS2-Connector
-Der Microsoft Azure AS2-Connector kann bei der Business-to-Business-Kommunikation Nachrichten über das AS2-Transportprotokoll (Applicability Statement 2) empfangen und senden. Daten werden sicher und zuverlässig über das Internet übertragen. Die Sicherheit wird mithilfe von digitalen Zertifikaten und Verschlüsselung gewährleistet.
+Der Microsoft Azure AS2-Connector kann bei der Business-to-Business-Kommunikation Nachrichten über das AS2-Transportprotokoll \(Applicability Statement 2\) empfangen und senden. Daten werden sicher und zuverlässig über das Internet übertragen. Die Sicherheit wird mithilfe von digitalen Zertifikaten und Verschlüsselung gewährleistet.
 
 ## Trigger und Aktionen
 Ein Trigger startet eine neue Instanz basierend auf einem bestimmten Ereignis wie dem Eingang einer AS2-Nachricht von einem Partner. Eine Aktion ist das Ergebnis. Nach dem Empfang einer AS2-Nachricht wird die Nachricht beispielsweise mit AS2 gesendet.
@@ -42,7 +42,7 @@ Azure-Blobspeichercontainer | Speichert Nachrichteneigenschaften, wenn die AS2-A
 Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
-2. Wählen Sie **API-Apps** aus, und suchen Sie nach "AS2-Connector".
+2. Suchen Sie nach "AS2-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
 3. Geben Sie den Namen, die App Service-Plan und andere Eigenschaften ein.
 4. Geben Sie die folgenden Paketeinstellungen ein:
 
@@ -55,36 +55,36 @@ TPM-Instanzname | Geben Sie den Namen der API-App **BizTalk Trading Partner Mana
 
 5. Klicken Sie auf **Erstellen**.
 
-Handelspartner sind die Entitäten, die an einer B2B-Kommunikation (Business-to-Business) beteiligt sind. Wenn zwei Partner eine Beziehung eingehen, wird dies als "Vereinbarung" bezeichnet. Diese Vereinbarung basiert auf der Kommunikation, die beide Partner wünschen, und ist protokoll- oder transportspezifisch.
+Handelspartner sind die Entitäten, die an einer B2B-Kommunikation \(Business-to-Business\) beteiligt sind. Wenn zwei Partner eine Beziehung eingehen, wird dies als "Vereinbarung" bezeichnet. Diese Vereinbarung basiert auf der Kommunikation, die beide Partner wünschen, und ist protokoll- oder transportspezifisch.
 
 Die Schritte zum Erstellen einer Handelspartnervereinbarung sind [hier][2] dokumentiert.
 
 ## Verwenden des Connectors als Trigger
 
-1. Beim Erstellen oder Bearbeiten einer Logik-App wählen Sie im rechten Bereich den von Ihnen erstellten AS2-Connector aus: <br/> ![Triggereinstellungen][3]
+1. Beim Erstellen oder Bearbeiten einer Logik-App wählen Sie im rechten Bereich den von Ihnen erstellten AS2-Connector aus: ![Triggereinstellungen][3]
 
-2. Klicken Sie auf den Pfeil nach rechts →: <br/> ![Triggeroptionen][4]
+2. Klicken Sie auf den Pfeil nach rechts →: ![Triggeroptionen][4]
 
-3. Der AS2-Connector macht einen einzelnen Trigger verfügbar. Wählen Sie *Empfangen und decodieren* aus: <br/> ![Eingaben empfangen und decodieren][5]
+3. Der AS2-Connector macht einen einzelnen Trigger verfügbar. Wählen Sie *Empfangen und decodieren* aus: ![Eingaben empfangen und decodieren][5]
 
-4. Dieser Trigger weist keine Eingaben auf. Klicken Sie auf den Pfeil nach rechts →: <br/> ![Konfigurierte Elemente empfangen und decodieren][6]
+4. Dieser Trigger weist keine Eingaben auf. Klicken Sie auf den Pfeil nach rechts →: ![Konfigurierte Elemente empfangen und decodieren][6]
 
 Als Teil der Ausgabe gibt der Connector die AS2-Nutzlast sowie die AS2-spezifischen Metadaten zurück.
 
-Der Trigger wird ausgelöst, wenn eine AS2-Nutzlast wie ein POST an "https://{Host-URL}/decode" ist. Sie finden die Host-URL in den API-App-Einstellungen. Sie müssen möglicherweise auch die Zugriffsebene der API-App in den Anwendungseinstellungen in "Öffentlich" (authentifiziert oder anonym) ändern.
+Der Trigger wird ausgelöst, wenn eine AS2-Nutzlast wie ein POST an "https://{Host-URL}/decode" ist. Sie finden die Host-URL in den API-App-Einstellungen. Sie müssen möglicherweise auch die Zugriffsebene der API-App in den Anwendungseinstellungen in "Öffentlich" \(authentifiziert oder anonym\) ändern.
 
 ## Verwenden des Connectors als Aktion
-1. Fügen Sie nach dem Trigger (oder wählen Sie "Diese Logik manuell ausführen") den im rechten Bereich erstellten AS2-Connector hinzu: <br/> ![Aktionseinstellungen][7]
+1. Fügen Sie nach dem Trigger \(oder wählen Sie "Diese Logik manuell ausführen"\) den im rechten Bereich erstellten AS2-Connector hinzu: ![Aktionseinstellungen][7]
 
-2. Klicken Sie auf den Pfeil nach rechts →: <br/> ![Liste der Aktionen][8]
+2. Klicken Sie auf den Pfeil nach rechts →: ![Liste der Aktionen][8]
 
-3. Der AS2-Connector unterstützt nur eine Aktion. Wählen Sie *Codieren und senden* aus: <br/> ![Eingaben codieren und senden][9]
+3. Der AS2-Connector unterstützt nur eine Aktion. Wählen Sie *Codieren und senden* aus: ![Eingaben codieren und senden][9]
 
-4. Nehmen Sie die Eingaben für die Aktion vor, und konfigurieren Sie sie: <br/> ![Konfigurierte Elemente codieren und senden][10]
+4. Nehmen Sie die Eingaben für die Aktion vor, und konfigurieren Sie sie: ![Konfigurierte Elemente codieren und senden][10]
 
-Parameter:
+	Parameter:
 
-Parameter | Typ | Beschreibung
+	Parameter | Typ | Beschreibung
 --- | --- | ---
 Nutzlast | Objekt| Der Inhalt der Nutzlast, die codiert und zum konfigurierten Endpunkt übermittelt werden soll. Die Nutzlast muss als JSON-Objekt bereitgestellt werden.
 AS2-From | string | Die AS2-Identität des Absenders der AS2-Nachricht. Dieser Parameter wird verwendet, um die entsprechende Vereinbarung zum Senden der Nachricht suchen.
@@ -113,4 +113,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-as2/EncodeAndSendInput.PNG
 [10]: ./media/app-service-logic-connector-as2/EncodeAndSendConfigured.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

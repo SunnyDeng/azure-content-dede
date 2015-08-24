@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Mobile Services für Xamarin Android-Apps - Azure Mobile Services"
+	pageTitle="Erste Schritte mit Mobile Services für Xamarin Android-Apps | Microsoft Azure"
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Xamarin Android-Entwicklung."
 	services="mobile-services"
 	documentationCenter="xamarin"
@@ -136,4 +136,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

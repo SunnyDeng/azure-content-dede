@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Speichern von Projektcode in der Quellcodeverwaltung – Azure Mobile Services" 
+	pageTitle="Speichern von Projektcode in der Quellcodeverwaltung | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Serverskriptdateien und -module in einem lokalen Git-Repository auf Ihrem Computer speichern." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -164,4 +164,4 @@ Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinier
 [node-uuid]: https://npmjs.org/package/node-uuid
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,4 +1,4 @@
-<properties pageTitle="Application Insights für C++-Apps" description="Analysieren Sie die Nutzung und Leistung Ihrer C++-App mit Application Insights." services="application-insights" documentationCenter="cpp" authors="crystk" manager="jakubo""/>
+\<properties pageTitle="Application Insights für C++-Apps" description="Analysieren Sie die Nutzung und Leistung Ihrer C++-App mit Application Insights." services="application-insights" documentationCenter="cpp" authors="crystk" manager="jakubo""/\>
 
 <tags 
     ms.service="application-insights" 
@@ -19,6 +19,7 @@ Sie benötigen Folgendes:
 
 * Ein Abonnement für [Microsoft Azure](http://azure.com). Sie melden sich mit einem Microsoft-Konto an, das Sie möglicherweise für Windows, XBox Live oder andere Microsoft-Clouddienste verwenden.
 * Visual Studio 2015 oder höher.
+* Universelle Windows 10-Anwendung
 
 ## Erstellen einer Application Insights-Ressource
 
@@ -46,11 +47,11 @@ Der Schlüssel identifiziert die Ressource, den Sie bald im SDK installieren kö
     ![Aktivieren Sie **Vorabversion einschließen**, und suchen Sie nach "Application Insights".](./media/app-insights-windows-cpp/04-nuget.png)
 
 3. Gehen Sie in den Projekteinstellungen für Veröffentlichung und Debugging folgendermaßen vor:
-  - Fügen Sie "$(SolutionDir)packages\\ApplicationInsights-CPP.1.0.0-Beta\\src\\inc" zu den Projekteigenschaften hinzu -> VC++-Verzeichnisse -> Includeverzeichnisse
-  - Fügen Sie "$(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native<PLATFORM TYPE>\\release\\AppInsights\_Win10-UAP" zu den Projekteigenschaften hinzu -> VC++-Verzeichnisse -> Bibliotheksverzeichnisse
+  - Fügen Sie "$\(SolutionDir\)packages\\ApplicationInsights-CPP.1.0.0-Beta\\src\\inc" zu den Projekteigenschaften hinzu -\> VC++-Verzeichnisse -\> Includeverzeichnisse
+  - Fügen Sie "$\(SolutionDir\)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native\<PLATFORM TYPE\>\\release\\AppInsights\_Win10-UAP" zu den Projekteigenschaften hinzu -\> VC++-Verzeichnisse -\> Bibliotheksverzeichnisse
 
-4. Fügen Sie "ApplicationInsights.winmd" aus "$(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native<PLATFORM TYPE>\\release\\ApplicationInsights" als Verweis auf Ihr Projekt hinzu.
-5. Fügen Sie "AppInsights\_Win10-UAP.dll" aus "$(SolutionDir)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native<PLATFORM TYPE>\\release\\AppInsights\_Win10-UAP" hinzu. Wechseln Sie zu den Eigenschaften und legen Sie die Inhalte auf JA fest. Damit wird die DLL in Ihr Buildverzeichnis kopiert.
+4. Fügen Sie "ApplicationInsights.winmd" aus "$\(SolutionDir\)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native\<PLATFORM TYPE\>\\release\\ApplicationInsights" als Verweis auf Ihr Projekt hinzu.
+5. Fügen Sie "AppInsights\_Win10-UAP.dll" aus "$\(SolutionDir\)packages\\ApplicationInsights.1.0.0-Beta\\lib\\native\<PLATFORM TYPE\>\\release\\AppInsights\_Win10-UAP" hinzu. Wechseln Sie zu den Eigenschaften und legen Sie die Inhalte auf JA fest. Damit wird die DLL in Ihr Buildverzeichnis kopiert.
 
 
 #### So aktualisieren Sie das SDK auf zukünftige Versionen
@@ -69,11 +70,11 @@ Initialisieren Sie das SDK, und beginnen Sie mit der Nachverfolgung der Telemetr
 2. In App.xaml.cpp:
   - Fügen Sie Folgendes hinzu: `using namespace ApplicationInsights::CX;`
 
-  - In App:App()
+  - In App:App\(\)
 	
      `// this will do automatic session tracking and automatic page view collection` `m_session = ref new ApplicationInsights::CX::SessionTracking();`
 
-  - Wenn Sie den Stammframe erstellt haben (üblicherweise am Ende von App::OnLaunched), initialisieren Sie "m\_session":
+  - Wenn Sie den Stammframe erstellt haben \(üblicherweise am Ende von App::OnLaunched\), initialisieren Sie "m\_session":
 	
     ```
     String^ iKey = L"<YOUR INSTRUMENTATION KEY>";
@@ -139,4 +140,4 @@ Klicken Sie auf ein beliebiges Diagramm, um weitere Details zu erhalten. Zum Bei
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

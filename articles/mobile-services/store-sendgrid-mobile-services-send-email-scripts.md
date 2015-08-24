@@ -1,12 +1,11 @@
 <properties 
-	pageTitle="Senden von E-Mails mit SendGrid - Azure Mobile Services" 
+	pageTitle="Senden von E-Mails mit SendGrid | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mit dem SendGrid-Dienst E-Mails von Ihrer Azure Mobile Services-App senden." 
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="Erikre" 
 	manager="sendgrid" 
 	editor=""/>
-
 
 <tags 
 	ms.service="mobile-services" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="07/31/2015" 
 	ms.author="Erikre"/>
-
 
 
 # Senden von E-Mails in Mobile Services mit SendGrid
@@ -90,7 +88,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 	- **_from-address_**: die Adresse, von der aus die E-Mail gesendet wird. Verwenden Sie nach Möglichkeit eine Adresse aus einer registrierten Domäne, die zu Ihrer Organisation gehört.
 
-     >[AZURE.NOTE]Wenn Sie über keine registrierte Domäne verfügen, können Sie stattdessen die Domäne Ihres mobilen Diensts im Format \**notifications@_your-mobile-service_.azure-mobile.net* verwenden. Allerdings werden Nachrichten, die an die Domäne Ihres mobilen Dienstes gesendet werden, ignoriert.
+     >[AZURE.NOTE]Wenn Sie über keine registrierte Domäne verfügen, können Sie stattdessen die Domäne Ihres mobilen Diensts im Format **notifications@_your-mobile-service_.azure-mobile.net* verwenden. Allerdings werden Nachrichten, die an die Domäne Ihres mobilen Dienstes gesendet werden, ignoriert.
 
 6. Klicken Sie auf die Schaltfläche **Save**. Sie haben nun ein Skript so konfiguriert, dass jedes Mal, wenn ein Datensatz in die Tabelle **TodoItem** eingefügt wird, eine E-Mail gesendet wird.
 
@@ -139,4 +137,4 @@ Nun, da Sie wissen, wie leicht die Verwendung des SendGrid-E-Mail-Dienstes mit M
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

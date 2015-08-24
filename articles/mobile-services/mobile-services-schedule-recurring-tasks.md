@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Planen von Back-End-Aufgaben mit der Scheduler - Mobile Services" 
+	pageTitle="Planen von Back-End-Aufgaben mit Scheduler | Microsoft Azure" 
 	description="Verwenden Sie den Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -167,4 +167,4 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
 [App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="java"
 	ms.topic="get-started-article"
-	ms.date="04/21/2015"
+	ms.date="08/11/2015"
 	ms.author="pakefali"/>
 
 # Erstellen und Bereitstellen einer Java-API-App in Azure App Service
@@ -270,4 +270,4 @@ Sie können diese Beispiel-API-App unter [TryApp Service](http://tryappservice.a
 [api-definition-blade]: ./media/app-service-api-java-api-app/apidefblade.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

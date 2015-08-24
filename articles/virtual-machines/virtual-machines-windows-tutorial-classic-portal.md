@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="KBDAzure"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/05/2015"
+	ms.date="08/11/2015"
 	ms.author="kathydav"/>
 
 # Erstellen Sie einen virtuellen Windows-Computer im Azure-Portal
@@ -41,7 +42,7 @@ Hier finden Sie eine exemplarische Vorgehensweise für dieses Lernprogramm.
 
 In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** ￼￼￼￼im Azure-Portal verwenden, um einen virtuellen Computer zu erstellen. Mit dieser Option erhalten Sie mehr Konfigurationsoptionen als mit **Schnellerfassung**. Wenn Sie beispielsweise einen virtuellen Computer mit einem virtuellen Netzwerk verbinden möchten, sollten Sie die Option **Aus Galerie** verwenden.
 
-> [AZURE.NOTE]Sie können auch das funktionsreichere, anpassbare [Azure-Vorschauportal](https://portal.azure.com) verwenden, um einen virtuellen Computer zu erstellen, die Bereitstellung von Anwendungsvorlagen für mehrere virtuelle Computer zu automatisieren, erweiterte VM-Überwachungs- und Diagnosefeatures zu verwenden und mehr. Die verfügbaren VM-Konfigurationsoptionen in den beiden Portalen sind ähnlich, aber nicht identisch.
+> [AZURE.NOTE]Sie können auch das funktionsreichere, anpassbare [Azure-Vorschauportal](https://portal.azure.com) verwenden, um einen virtuellen Computer zu erstellen, erweiterte Überwachungs- und Diagnosefeatures zu verwenden, Premium-Speicher einzusetzen und vieles mehr. Die verfügbaren Optionen zum Konfigurieren eines virtuellen Computers sind in den beiden Portalen im Wesentlichen ähnlich, aber nicht identisch. Verwenden Sie z. B. das Vorschauportal, um einen virtuellen Computer mit Premium-Speicher zu konfigurieren.
 
 [AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-WindowsVM.md)]
 
@@ -55,4 +56,4 @@ In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** ￼￼￼�
 
 Weitere Informationen zur Konfiguration eines virtuellen Computers und den geeigneten Zeitpunkten finden Sie unter [Informationen zu Azure-VM-Konfigurationseinstellungen](http://msdn.microsoft.com/library/azure/dn763935.aspx).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

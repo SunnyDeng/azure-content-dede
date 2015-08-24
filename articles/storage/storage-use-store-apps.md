@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Azure Storage in Windows Store-Apps | Azure" 
+	pageTitle="Verwenden von Azure Storage in Windows Store-Apps | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Azure-Blobs, -Warteschlangen und -Tabellen zum Speichern von Daten für eine Windows Store-App verwenden." 
 	services="storage" 
 	documentationCenter="" 
@@ -94,4 +94,4 @@ Sie können auch einen Verweis zu "Microsoft.WindowsAzure.Storage.Table.dll" hin
 [store-apps-storage-package-manager]: ./media/storage-use-store-apps/store-apps-storage-package-manager.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

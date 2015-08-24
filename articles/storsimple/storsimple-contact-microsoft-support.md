@@ -5,7 +5,7 @@
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
-   editor="tysonn" />
+   editor="" />
 <tags 
    ms.service="storsimple"
    ms.devlang="na"
@@ -29,18 +29,17 @@ Führen Sie die folgenden Schritte aus, um eine Supportanfrage zu erstellen.
 
 	![Kontaktieren des Supports von MS über das Verwaltungsportal](./media/storsimple-contact-microsoft-support/IC777286.png)
 
-1. Führen Sie im Dialogfenster **Microsoft-Support kontaktieren** die folgenden Schritte aus:
+2. Führen Sie im Dialogfenster **Microsoft-Support kontaktieren** die folgenden Schritte aus:
 
+	1. Wählen Sie in der Dropdownliste das **Abonnement** für Ihren StorSimple Manager-Dienst aus. Geben Sie unter **Supporttyp** die Option **Technisch** an. Sie benötigen einen kostenpflichtigen Supportplan, um technischen Support zu erhalten.
 
-	- Wählen Sie in der Dropdownliste das **Abonnement** für Ihren StorSimple Manager-Dienst aus. Geben Sie unter **Supporttyp** die Option **Technisch** an. Sie benötigen einen kostenpflichtigen Supportplan, um technischen Support zu erhalten.
+	2. Aktivieren Sie mit dem Häkchen ![Häkchensymbol](./media/storsimple-contact-microsoft-support/IC740895.png) die Option **Ticket erstellen**.
 
-	1. Aktivieren Sie mit dem Häkchen ![Häkchensymbol](./media/storsimple-contact-microsoft-support/IC740895.png) die Option **Ticket erstellen**.
-
-1. Wählen Sie im Fenster **Microsoft-Support** in der Dropdownliste **Produkt** die Option **StorSimple**.
+3. Wählen Sie im Fenster **Microsoft-Support** in der Dropdownliste **Produkt** die Option **StorSimple**.
 
 	![Microsoft-Support kontaktieren – Produkt](./media/storsimple-contact-microsoft-support/IC777288.png)
 
-1. Folgen Sie den Anweisungen auf dem Bildschirm, um Ihre Anfrage ordnungsgemäß zu klassifizieren, und geben Sie eine eindeutige Beschreibung Ihres Problems ein.
+4. Folgen Sie den Anweisungen auf dem Bildschirm, um Ihre Anfrage ordnungsgemäß zu klassifizieren, und geben Sie eine eindeutige Beschreibung Ihres Problems ein.
 
 Nach dem Übermitteln Ihrer Anfrage setzt sich baldmöglichst ein Supporttechniker mit Ihnen in Verbindung, um Ihre Anfrage zu bearbeiten.
 
@@ -52,24 +51,24 @@ Führen Sie zum Starten einer Supportsitzung die folgenden Schritte aus:
 
 #### So starten Sie eine Supportsitzung
 
-1. Greifen Sie auf das Gerät direkt über die serielle Konsole oder von einem Remotecomputer über eine Telnet-Sitzung zu. Führen Sie hierzu die Schritte unter [Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole](storsimple-deployment-walkthrough.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) aus.
+1. Greifen Sie auf das Gerät direkt über die serielle Konsole oder von einem Remotecomputer über eine Telnet-Sitzung zu. Führen Sie hierzu die Schritte unter [Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole](storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-device-serial-console) aus.
 
-1. Drücken Sie in der Sitzung, die geöffnet wird, die **EINGABETASTE**, um eine Eingabeaufforderung zu öffnen.
+2. Drücken Sie in der Sitzung, die geöffnet wird, die **EINGABETASTE**, um eine Eingabeaufforderung zu öffnen.
 
-1. Wählen Sie im Menü der seriellen Konsole Option 1 aus, d. h. die **Anmeldung mit Vollzugriff**.
+3. Wählen Sie im Menü der seriellen Konsole Option 1 aus, d. h. die **Anmeldung mit Vollzugriff**.
 
-1. Geben Sie an der Eingabeaufforderung das folgende Kennwort ein:
+4. Geben Sie an der Eingabeaufforderung das folgende Kennwort ein:
 
 	`Password1`
 
-1. Geben Sie an der Eingabeaufforderung den folgenden Befehl ein:
+5. Geben Sie an der Eingabeaufforderung den folgenden Befehl ein:
 
 	`Enable-HcsSupportAccess`
 
-1. Eine verschlüsselte Zeichenfolge wird angezeigt. Kopieren Sie diese Zeichenfolge in einen Text-Editor wie beispielsweise Notepad.
+6. Eine verschlüsselte Zeichenfolge wird angezeigt. Kopieren Sie diese Zeichenfolge in einen Text-Editor wie beispielsweise Notepad.
 
-1. Speichern Sie diese Zeichenfolge, und senden Sie sie in einer E-Mail-Nachricht an den Microsoft-Support.
+7. Speichern Sie diese Zeichenfolge, und senden Sie sie in einer E-Mail-Nachricht an den Microsoft-Support.
 
-> [AZURE.IMPORTANT]Sie können den Supportzugriff durch die Ausführung von `Disable-HcsSupportAccess` deaktivieren. Das StorSimple-Gerät versucht acht Stunden nach dem Initiieren der Sitzung ebenfalls, den Supportzugriff zu deaktivieren. Es wird empfohlen, die Anmeldeinformationen für das StorSimple-Gerät nach dem Initiieren einer Supportsitzung zu ändern.
+> [AZURE.IMPORTANT]Sie können den Supportzugriff deaktivieren, indem Sie `Disable-HcsSupportAccess` deaktivieren. Das StorSimple-Gerät versucht acht Stunden nach dem Initiieren der Sitzung ebenfalls, den Supportzugriff zu deaktivieren. Es wird empfohlen, die Anmeldeinformationen für das StorSimple-Gerät nach dem Initiieren einer Supportsitzung zu ändern.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -6,16 +6,14 @@
    authors="alkohli"
    manager="carolz"
    editor="" />
-
 <tags 
    ms.service="storsimple"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/05/2015"
+   ms.date="08/12/2015"
    ms.author="alkohli" />
-
 
 # Austauschen eines Festplattenlaufwerks im StorSimple-Gerät
 
@@ -126,4 +124,4 @@ Nachdem ein Laufwerk in einem Microsoft Azure StorSimple-Gerät ausgefallen ist 
 
 Erfahren Sie mehr zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

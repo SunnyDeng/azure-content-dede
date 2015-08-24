@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von AMQP 1.0 mit der .NET-Programmierschnittstelle für Service Bus – Azure" 
+	pageTitle="Verwenden von AMQP 1.0 mit der .NET-Programmierschnittstelle für Service Bus | Microsoft Azure" 
 	description="Erfahren Sie mehr über die Verwendung von AMQP (Advanced Message Queuing Protocol) 1.0 mit der Azure .NET Service Bus-API." 
 	services="service-bus" 
 	documentationCenter=".net" 
@@ -18,11 +18,11 @@
 
 # Verwenden von AMQP 1.0 mit der .NET-Programmierschnittstelle für Service Bus
 
-AMQP (Advanced Message Queuing Protocol) 1.0 ist ein effizientes, zuverlässiges Messagingprotokoll auf Wire-Ebene, mit dem Sie robuste und plattformübergreifende Messaginganwendungen erstellen können.
+AMQP \(Advanced Message Queuing Protocol\) 1.0 ist ein effizientes, zuverlässiges Messagingprotokoll auf Wire-Ebene, mit dem Sie robuste und plattformübergreifende Messaginganwendungen erstellen können.
 
 Unterstützung für AMQP 1.0 im Service Bus bedeutet, dass Sie die gebrokerten Messagingfunktionen für Warteschlangen und Veröffentlichen/Abonnieren mithilfe eines effizienten binären Protokolls auf unterschiedlichen Plattformen nutzen können. Zudem können Sie Anwendungen erstellen, deren Komponenten mit einer Mischung aus Sprachen, Frameworks und Betriebssystemen erstellt wurden.
 
-In dieser Anleitung wird erklärt, wie Sie die gebrokerten Messagingfunktionen (Warteschlangen und Veröffentlichen/Abonnieren) für Servicebus aus .NET-Anwendungen mithilfe der .NET-API für Servicebus verwenden. In einer separaten Anleitung wird erklärt, wie Sie dieselbe Aufgabe mithilfe der standardmäßigen Java Message Service (JMS)-API durchführen. Sie können diese beiden Anleitungen verwenden, um weitere Informationen zur plattformübergreifenden Nachrichtenübermittlung unter Verwendung von AMQP 1.0 zu erhalten.
+In dieser Anleitung wird erklärt, wie Sie die gebrokerten Messagingfunktionen \(Warteschlangen und Veröffentlichen/Abonnieren\) für Servicebus aus .NET-Anwendungen mithilfe der .NET-API für Servicebus verwenden. In einer separaten Anleitung wird erklärt, wie Sie dieselbe Aufgabe mithilfe der standardmäßigen Java Message Service \(JMS\)-API durchführen. Sie können diese beiden Anleitungen verwenden, um weitere Informationen zur plattformübergreifenden Nachrichtenübermittlung unter Verwendung von AMQP 1.0 zu erhalten.
 
 ## Erste Schritte mit Service Bus
 
@@ -40,7 +40,7 @@ In der aktuellen Version gibt es ein paar API-Funktionen, die bei der Verwendung
 
 ### Konfigurieren über "App.config"
 
-Es ist empfehlenswert, für Anwendungen die Konfigurationsdatei "App.config" zu verwenden, um die Einstellungen zu speichern. Bei Servicebus-Anwendungen können Sie die Datei "App.config" verwenden, um die Servicebus-Verbindungszeichenfolge (**ConnectionString**) zu speichern. Diese Beispielanwendung verwendet auch "App.config", um den Name der Servicebus-Nachrichtenentität zu speichern, den sie verwendet.
+Es ist empfehlenswert, für Anwendungen die Konfigurationsdatei "App.config" zu verwenden, um die Einstellungen zu speichern. Bei Servicebus-Anwendungen können Sie die Datei "App.config" verwenden, um die Servicebus-Verbindungszeichenfolge \(**ConnectionString**\) zu speichern. Diese Beispielanwendung verwendet auch "App.config", um den Name der Servicebus-Nachrichtenentität zu speichern, den sie verwendet.
 
 Nachfolgend wird eine beispielhafte "App.config"-Datei dargestellt:
 
@@ -59,7 +59,7 @@ Beim Wert der Einstellung **Microsoft.ServiceBus.ConnectionString** handelt es s
 
 	Endpoint=sb://[namespace].servicebus.windows.net;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 
-Die Werte für [namespace] und [SAS key] werden über das Azure-Verwaltungsportal zur Verfügung gestellt. Weitere Informationen finden Sie unter [Verwenden von Servicebus-Warteschlangen][].
+Die Werte für \[namespace\] und \[SAS key\] werden über das Azure-Verwaltungsportal zur Verfügung gestellt. Weitere Informationen finden Sie unter \[Verwenden von Servicebus-Warteschlangen\]\[\].
 
 Wenn AMQP zum Einsatz kommt, wird ";TransportType=Amqp" an die Verbindungszeichenfolge angehängt, sodass die Clientbibliothek angewiesen wird, mithilfe von AMQP 1.0 eine Verbindung mit dem Servicebus herzustellen.
 
@@ -218,7 +218,7 @@ Das Ergebnis nach Ausführen der Anwendung sieht folgendermaßen aus:
 
 In dieser Anleitung wurde gezeigt, wie Nachrichten mithilfe von .NET an den Servicebus gesendet werden. Darüber hinaus wurde auch der Empfang dieser Nachrichten mithilfe von .NET erläutert. Ein wesentlicher Vorteil von AMQP 1.0 besteht darin, dass Anwendungen aus Komponenten erstellt werden können, die in unterschiedlichen Sprachen geschrieben wurden. Weiterhin werden Nachrichten zuverlässig und sicher ausgetauscht.
 
-Mithilfe der zuvor beschriebenen beispielhaften .NET-Anwendung und einer ähnlichen Java-Anwendung aus der separaten Anleitung [Verwenden der JMS (Java Message Service)-API mit Servicebus & AMQP 1.0](service-bus-java-how-to-use-jms-api-amqp.md) können Nachrichten zwischen .NET und Java ausgetauscht werden.
+Mithilfe der zuvor beschriebenen beispielhaften .NET-Anwendung und einer ähnlichen Java-Anwendung aus der separaten Anleitung [Verwenden der JMS \(Java Message Service\)-API mit Servicebus & AMQP 1.0](service-bus-java-how-to-use-jms-api-amqp.md) können Nachrichten zwischen .NET und Java ausgetauscht werden.
 
 Weitere Informationen zur plattformübergreifenden Nachrichtenübermittlung mit Servicebus und AMQP 1.0 finden Sie im [Entwicklerhandbuch für Servicebus mit AMQP 1.0](http://msdn.microsoft.com/library/azure/jj841071.aspx).
 
@@ -296,16 +296,16 @@ Weitere Informationen finden Sie im [Entwicklerhandbuch für Servicebus mit AMQP
 
 ## Zusammenfassung
 
-In dieser Anleitung wurde gezeigt, wie Sie auf die gebrokerten Messagingfunktionen (Warteschlangen und Veröffentlichen/Abonnieren) für Servicebus aus .NET mithilfe von AMQP 1.0 und der .NET-API für Servicebus zugreifen.
+In dieser Anleitung wurde gezeigt, wie Sie auf die gebrokerten Messagingfunktionen \(Warteschlangen und Veröffentlichen/Abonnieren\) für Servicebus aus .NET mithilfe von AMQP 1.0 und der .NET-API für Servicebus zugreifen.
 
 Sie können Servicebus AMQP 1.0 auch in anderen Sprachen verwenden, einschließlich Java, C, Python und PHP. Komponenten, die mit diesen Sprachen geschrieben wurden, können mit AMQP 1.0 in Service Bus Nachrichten zuverlässig und bei voller Vertraulichkeit austauschen. Weitere Informationen finden Sie im [Entwicklerhandbuch für Servicebus mit AMQP 1.0](http://msdn.microsoft.com/library/azure/jj841071.aspx).
 
 ## Nächste Schritte
 
 * [AMQP 1.0-Unterstützung in Azure Service Bus](service-bus-amqp-overview.md)
-* [Verwenden der JMS-Programmierschnittstelle (Java Message Service) mit Service Bus & AMQP 1.0](service-bus-java-how-to-use-jms-api-amqp.md)
+* [Verwenden der JMS-Programmierschnittstelle \(Java Message Service\) mit Service Bus & AMQP 1.0](service-bus-java-how-to-use-jms-api-amqp.md)
 * [Entwicklerhandbuch für Service Bus AMQP 1.0](http://msdn.microsoft.com/library/azure/jj841071.aspx)
 * [Verwenden von Servicebus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

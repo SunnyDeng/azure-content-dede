@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="02/17/2015"
+   ms.date="08/10/2015"
    ms.author="piyushjo"/>
 
 # Verwalten Ihres Konto-Profils und Testen der Geräte 
@@ -145,4 +145,4 @@ Zum Verwenden der Push-API oder Device-API müssen Sie die eindeutige Geräteken
  
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

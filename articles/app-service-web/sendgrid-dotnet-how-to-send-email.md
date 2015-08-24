@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Gewusst wie: Verwenden des E-Mail-Diensts SendGrid (.NET) – Azure" 
+	pageTitle="Verwenden des E-Mail-Diensts SendGrid (.NET) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure senden. Die Codebeispiele wurden in C# geschrieben und verwenden die .NET-API." 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -24,11 +24,11 @@
 
 Letzte Aktualisierung: 24. Februar 2015
 
-<h2><a name="overview"></a><span  class="short-header">Übersicht</span></h2>
+## Übersicht
 
 Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufgaben mit dem E-Mail-Dienst SendGrid in Azure. Die Beispiele sind in C# geschrieben und verwenden die .NET API. Beschrieben werden die Szenarien **Schreiber einer E-Mail**, **Senden einer E-Mail**, **Hinzufügen von Anhängen** und **Verwenden von Filtern**. Weitere Informationen zu SendGrid und zum Senden von E-Mails erhalten Sie im Abschnitt [Nächste Schritte][].
 
-<h2><a name="whatis"></a><span  class="short-header">Was ist der SendGrid-E-Mail-Dienst?</span></h2>
+## Was ist der SendGrid-E-Mail-Dienst?
 
 SendGrid ist ein [cloudbasierter E-Mail-Dienst], der zuverlässige [transaktionale E-Mail-Übermittlung], Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs bietet, die die benutzerdefinierte Integration erleichtern. Häufige Verwendungsszenarien für SendGrid:
 
@@ -41,11 +41,11 @@ SendGrid ist ein [cloudbasierter E-Mail-Dienst], der zuverlässige [transaktiona
 
 Weitere Informationen finden Sie unter [https://sendgrid.com](https://sendgrid.com).
 
-<h2><a name="createaccount"></a>Erstellen von SendGrid-Konten</h2>
+## Erstellen eines SendGrid-Kontos
 
 [AZURE.INCLUDE [sendgrid-sign-up](../../includes/sendgrid-sign-up.md)]
 
-<h2><a name="reference"></a>Verweisen auf die SendGrid .NET-Klassenbibliothek</h2>
+## Verweisen auf die SendGrid .NET-Klassenbibliothek
 
 Der einfachste Weg, die SendGrid-API abzurufen und Ihre Anwendung mit allen Abhängigkeiten zu konfigurieren, ist das [SendGrid NuGet-Paket](https://www.nuget.org/packages/Sendgrid). NuGet ist eine Erweiterung von Microsoft Visual Studio 2012, die die Installation und die Aktualisierung von Bibliotheken und Tools erleichtert.
 
@@ -75,7 +75,7 @@ Fügen Sie zu Beginn aller C#-Dateien, in denen Sie programmgesteuert auf den E-
     using System.Net.Mail;
     using SendGrid;
 
-<h2><a name="createemail"></a>Erstellen einer E-Mail</h2>
+## Vorgehensweise: Eine E-Mail erstellen
 
 Mit dem **SendGridMessage**-Objekt können Sie eine E-Mail-Nachricht erstellen. Nachdem das Nachrichtenobjekt erstellt wurde, können Sie Eigenschaften und Methoden festlegen, beispielsweise den E-Mail-Absender, den E-Mail-Empfänger, den Betreff und den Text der E-Mail.
 
@@ -105,7 +105,7 @@ Das folgende Beispiel zeigt, wie ein vollständig ausgefülltes E-Mail-Objekt er
 
 Weitere Informationen über die vom Typ **SendGrid** unterstützen Eigenschaften und Methoden finden Sie unter [sendgrid-csharp][] auf GitHub.
 
-<h2><a name="sendemail"></a>Senden von E-Mails</h2>
+## Vorgehensweise: Eine E-Mail senden
 
 Nach der Erstellung einer E-Mail können Sie diese über die von SendGrid bereitgestellte Web-API senden. Alternativ können Sie die [integrierte .NET-Bibliothek](https://sendgrid.com/docs/Code_Examples/csharp.html) verwenden.
 
@@ -143,7 +143,7 @@ Die folgenden Beispiele zeigen, wie Sie eine Nachricht über die Web-API senden.
     // You can also use the **DeliverAsync** method, which returns an awaitable task.
     transportWeb.Deliver(myMessage);
 
-<h2><a name="addattachment"></a>Hinzufügen von Anhängen</h2>
+## Vorgehensweise: Einen Anhang hinzufügen
 
 Anhänge können mithilfe der Methode **AddAttachment** und durch Angabe des Namens der hinzuzufügenden Datei und des Dateipfads eingefügt werden. Sie können mehrere Anhänge einfügen, indem Sie diese Methode für jede Datei aufrufen, die Sie anhängen möchten. Das folgende Beispiel veranschaulicht, wie ein Anhang in einer Nachricht eingefügt wird:
 
@@ -169,7 +169,7 @@ Sie können Anhänge auch über den **Datenstrom** der Daten hinzufügen. Dazu r
     }
 
 
-<h2><a name="usefilters"></a><span  class="short-header">Verwenden von Apps zum Aktivieren von Fußzeilen sowie für Nachverfolgung und Analysen</span></h2>
+## Vorgehensweise: Verwenden von Apps zum Aktivieren von Fußzeilen sowie für Nachverfolgung und Analysen
 
 SendGrid bietet zusätzliche E-Mail-Funktionen durch die Verwendung von Apps. Dies sind Einstellungen, die zu einer E-Mail-Nachricht hinzugefügt werden können, um bestimmte Funktionen wie Klickprotokollierung, Google Analytics, Abonnementsverfolgung usw. zu aktivieren. Eine vollständige Liste der Apps finden Sie unter [App-Einstellungen][].
 
@@ -203,11 +203,11 @@ Die folgenden Beispiele veranschaulichen die Filter für die Fußzeile und die K
     // should also be overwritten for link tracking purposes. 
     myMessage.EnableClickTracking(true);
 
-<h2><a name="useservices"></a><span  class="short-header">Verwenden zusätzlicher SendGrid-Dienste</h2>
+## Vorgehensweise: Zusätzliche SendGrid-Dienste verwenden
 
 SendGrid bietet webbasierte APIs und Webhooks, die Sie zur Nutzung zusätzlicher SendGrid-Funktionen aus Ihrer Azure-Anwendung einsetzen können. Ausführliche Informationen finden Sie in der [SendGrid-API-Dokumentation][].
 
-<h2><a name="nextsteps"></a>Nächste Schritte</h2>
+## Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, finden Sie unter diesen Links weitere Informationen.
 
@@ -240,4 +240,4 @@ Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, f
   [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

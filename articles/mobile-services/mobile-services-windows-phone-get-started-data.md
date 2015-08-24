@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen Anwendung (WP8) – Azure Mobile Services" 
+	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (WP8) | Microsoft Azure" 
 	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Daten aus Ihrer Azure Mobile Services Windows Phone 8-App." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -119,9 +119,9 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
         private IMobileServiceTable<TodoItem> todoTable = 
 			App.MobileService.GetTable<TodoItem>();
 
-   	Dieser Code erstellt eine Bindungssammlung \(\*\*items\*\*\), die Mobile Services unterstützt, und eine Proxyklasse für die SQL-Datenbanktabelle **TodoItem** \(\*\*todoTable\*\*\).
+   	Dieser Code erstellt eine Bindungssammlung (**items**), die Mobile Services unterstützt, und eine Proxyklasse für die SQL-Datenbanktabelle **TodoItem** (**todoTable**).
 
-7. Entfernen Sie aus der **InsertTodoItem**-Methode die Codezeile, in der die **TodoItem.**.\*\*id\*\*-Eigenschaft festgelegt wird, fügen Sie der Methode den **async**-Modifizierer hinzu, und heben Sie die Auskommentierung der folgenden Codezeile auf:
+7. Entfernen Sie aus der **InsertTodoItem**-Methode die Codezeile, in der die **TodoItem**.**Id**-Eigenschaft festgelegt wird. Fügen Sie der Methode den **async**-Modifizierer hinzu, und heben Sie die Auskommentierung der folgenden Codezeile auf:
 
         await todoTable.InsertAsync(todoItem);
 
@@ -193,4 +193,4 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Windows Phone
 [Codebeispielen für Entwickler]: http://go.microsoft.com/fwlink/p/?LinkId=271146
  
 
-<!------HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

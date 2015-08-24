@@ -46,7 +46,7 @@ Ein Datenverarbeitungsschritt in einer Pipeline, bei dem aus einem oder mehreren
 
 Der Azure Data Factory-Dienst unterstützt die folgenden Aktivitäten in einer Pipeline:
 
-- Die **Kopieraktivität** kopiert die Daten aus einem Datenspeicher in einen anderen. Unter [Kopieren von Daten mit Azure Data Factory][copy-data-with-adf] finden Sie ausführliche Informationen, welche Datenspeicher die Kopieraktivität unterstützt. 
+- Die **Kopieraktivität** kopiert die Daten aus einem Datenspeicher in einen anderen.  
 - Die **HDInsight-Aktivität** verarbeitet Daten durch Anwenden von Hive/Pig-Skripts oder MapReduce-Programmen auf einen HDInsight-Cluster. Unter [Verwenden von Pig und Hive mit Data Factory][use-pig-hive] und [Aufrufen von MapReduce-Programmen aus Data Factory][run-map-reduce] finden Sie weitere Informationen. 
 - Die Aktivität **Azure Machine Learning-Stapelbewertung** ruft die Azure Machine Learning-Stapelbewertungs-API auf. Weitere Informationen finden Sie unter [Erstellen von Vorhersagepipelines mithilfe von Data Factory und Azure Machine Learning][azure-ml-adf]. 
 - Die **Aktivität "Gespeicherte Prozedur"** ruft eine gespeicherte Prozedur in einer Azure SQL-Datenbank auf. Weitere Informationen finden Sie in der MSDN-Bibliothek unter [Aktivität "Gespeicherte Prozedur"][msdn-stored-procedure-activity].   
@@ -82,7 +82,6 @@ Ein wichtiges Merkmal eines Hubs besteht darin, dass eine Pipeline auf einem ein
 
 [adf-faq]: data-factory-faq.md
 [adf-intro]: data-factory-introduction.md
-[copy-data-with-adf]: data-factory-copy-activity.md
 [use-pig-hive]: data-factory-pig-hive-activities.md
 [run-map-reduce]: data-factory-map-reduce.md
 [azure-ml-adf]: data-factory-create-predictive-pipelines.md
@@ -113,4 +112,4 @@ Ein wichtiges Merkmal eines Hubs besteht darin, dass eine Pipeline auf einem ein
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hinzufügen von Authentifizierung zu Ihrer universellen Windows 8.1-App | Azure Mobile Services" 
+	pageTitle="Hinzufügen von Authentifizierung zu Ihrer universellen Windows 8.1-App | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer universellen Windows Phone 8.1-App über verschiedene Identitätsanbieter wie Google, Facebook, Twitter oder Microsoft zu authentifizieren." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -97,4 +97,4 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 [Register your Windows Store app package for Microsoft authentication]: ../mobile-services-how-to-register-store-app-package-microsoft-authentication.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

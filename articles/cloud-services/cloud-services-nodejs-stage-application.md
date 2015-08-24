@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Staging einer Cloud-Dienst-Bereitstellung (Node.js) – Azure" 
+	pageTitle="Staging einer Cloud-Dienst-Bereitstellung (Node.js) | Microsoft Azure" 
 	description="Hier erfahren Sie, wie Sie eine Azure-Anwendung durch einen Austausch der virtuellen IP (VIP) zu einer Stagingumgebung und anschließend zu einer Produktionsumgebung bereitstellen." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -18,13 +18,9 @@
 
 
 
-
-
-
-
 # Staging von Anwendungen in Azure
 
-Gepackte Anwendungen können in der Stagingumgebung von Azure bereitgestellt werden, um diese zu testen, bevor sie in eine Produktionsumgebung mit Internetzugriff verschoben werden. Die Stagingumgebung entspricht genau der Produktionsumgebung, außer, dass Sie auf die Staginganwendung nur mit einer verborgenen URL zugreifen können, die von Azure generiert wird. Nachdem Sie die korrekte Funktionsweise Ihrer Anwendung geprüft haben, können Sie diese durch einen Austausch der virtuellen IP (VIP) in der Produktionsumgebung bereitstellen.
+Gepackte Anwendungen können in der Stagingumgebung von Azure bereitgestellt werden, um diese zu testen, bevor sie in eine Produktionsumgebung mit Internetzugriff verschoben werden. Die Stagingumgebung entspricht genau der Produktionsumgebung, außer, dass Sie auf die Staginganwendung nur mit einer verborgenen URL zugreifen können, die von Azure generiert wird. Nachdem Sie die korrekte Funktionsweise Ihrer Anwendung geprüft haben, können Sie diese durch einen Austausch der virtuellen IP \(VIP\) in der Produktionsumgebung bereitstellen.
 
 > [AZURE.NOTE]Die Schritte in diesem Beitrag gelten nur für Node-Anwendungen, die als Azure-Clouddienst gehostet werden.
 
@@ -33,7 +29,7 @@ Diese Aufgabe umfasst die folgenden Schritte:
 -   [Schritt 1: Staging einer Anwendung]
 -   [Schritt 2: Bereitstellen eine Anwendung in der Produktionsumgebung durch Austausch der VIPs]
 
-<h2><a id="step1"></a>Schritt&#160;1: Staging einer Anwendung</h2>
+## Schritt 1: Staging einer Anwendung
 
 Dieser Abschnitt beschreibt das Staging einer Anwendung mit der **Azure PowerShell**.
 
@@ -57,9 +53,9 @@ Mit der URL der Staging-Website können Sie nun prüfen, ob Ihre Anwendung in de
 
 In Upgrade-Szenarien, in denen die Staging-Anwendung eine erweiterte Version der bereits in Produktion bereitgestellten Anwendung ist, können Sie [die Anwendung durch Austausch der VIPs in die Produktionsumgebung überführen][Step 2: Deploy an Application to Production by Swapping VIPs].
 
-<h2><a id="step2"></a>Schritt&#160;2: Bereitstellen eine Anwendung in der Produktionsumgebung durch Austausch der VIPs</h2>
+## Schritt 2: Upgrade einer Anwendung in die Produktionsumgebung durch Austausch der VIPs
 
-Nachdem Sie die erweiterte Version einer Anwendung in der Stagingumgebung geprüft haben, können Sie diese schnell und einfach in der Produktionsumgebung verfügbar machen, indem Sie die virtuellen IPs (VIPs) von Staging- und Produktionsumgebung austauschen.
+Nachdem Sie die erweiterte Version einer Anwendung in der Stagingumgebung geprüft haben, können Sie diese schnell und einfach in der Produktionsumgebung verfügbar machen, indem Sie die virtuellen IPs \(VIPs\) von Staging- und Produktionsumgebung austauschen.
 
 > [AZURE.NOTE]Dieser Schritt geht davon aus, dass Sie bereits eine Anwendung in der Produktionsumgebung bereitgestellt haben und dass sich eine erweiterte Version der Anwendung in der Stagingumgebung befindet.
 
@@ -90,4 +86,4 @@ Sie haben nun eine Bereitstellung in Staging getestet und eine Produktionsbereit
   [Übersicht über das Verwalten von Bereitstellungen in Azure]: http://msdn.microsoft.com/library/windowsazure/hh386336.aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

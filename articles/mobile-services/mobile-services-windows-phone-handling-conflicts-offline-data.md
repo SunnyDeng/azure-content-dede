@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Behandeln von Konflikten mit Offlinedaten in Mobile Services (Windows Phone) | Mobile Dev Center" 
+	pageTitle="Behandeln von Konflikten mit Offlinedaten in Mobile Services (Windows Phone) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mithilfe von Azure Mobile Services Konflikte beim Synchronisieren von Offlinedaten in Ihrer Windows Phone-Anwendung behandeln." 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -241,4 +241,4 @@ Wenn ein Pushvorgang abgebrochen wird, löst `PushAsync` eine `MobileServicePush
 [Get started with data]: mobile-services-windows-phone-get-started-data.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

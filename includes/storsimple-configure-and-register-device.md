@@ -1,3 +1,20 @@
+<properties 
+   pageTitle="Konfigurieren und Registrieren von Geräten"
+   description="Erläutert, wie Sie Windows PowerShell für StorSimple zum Konfigurieren und Registrieren Ihres Geräts verwenden."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="adinah"
+   editor="tysonn" />
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/05/2015"
+   ms.author="v-sharos" />
+
 
 #### So konfigurieren und registrieren Sie das Gerät
 
@@ -30,7 +47,7 @@
    
       >[AZURE.NOTE]Sie müssen ggf. einige Minuten warten, bis die Subnetzmaske und die DNS-Einstellungen übernommen werden. Wenn die Fehlermeldung "Das Gerät ist nicht bereit" angezeigt wird, überprüfen Sie die physische Netzwerkverbindung für die Netzwerkschnittstelle DATA 0 Ihres aktiven Controllers.
 
-8. (Optional) Konfigurieren Sie Ihren Webproxyserver. Die Webproxykonfiguration ist optional. **Achten Sie jedoch bei Verwendung eines Webproxys darauf, dass dieser nur hier konfiguriert werden kann.** Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](https://msdn.microsoft.com/library/azure/dn764937.aspx).
+8. (Optional) Konfigurieren Sie Ihren Webproxyserver. Die Webproxykonfiguration ist optional. **Achten Sie jedoch bei Verwendung eines Webproxys darauf, dass dieser nur hier konfiguriert werden kann.** Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](https://msdn.microsoft.com/library/azure/dn764937.aspx). Wenn während dieses Schritts Probleme auftreten, finden Sie Informationen zur Problembehandlung unter [Fehler während der Webproxykonfiguration](storsimple-troubleshoot-deployment.md#errors-during-the-optional-web-proxy-settings).
  
 
       >[AZURE.NOTE]Sie können jederzeit STRG+C drücken, um den Installations-Assistenten zu beenden. Alle Einstellungen, die Sie vor dem Ausgeben dieses Befehls angewendet haben, werden beibehalten.
@@ -41,11 +58,17 @@
 
     ![StorSimple – Registrieren des Geräts 4](./media/storsimple-configure-and-register-device/HCS_RegisterYourDevice4-include.png)
 
-    Sie können das Kennwort für den StorSimple-Momentaufnahme-Manager auch über die Benutzeroberfläche des StorSimple-Manager-Diensts zurückzusetzen.
+    Sie können das Kennwort für den StorSimple-Momentaufnahme-Manager auch über die Benutzeroberfläche des StorSimple-Manager-Diensts zurückzusetzen. Die ausführlichen Schritte finden Sie unter [Ändern der StorSimple-Kennwörter mithilfe des StorSimple Manager-Diensts](storsimple-change-passwords.md).
+
+	Wenn während dieses Schritts Probleme auftreten, finden Sie Informationen zur Problembehandlung unter [Fehler bei Kennwörtern](storsimple-troubleshoot-deployment.md#errors-related-to-device-administrator-and-storsimple-snapshot-manager-passwords).
 
 11. Der letzte Schritt im Installations-Assistenten besteht im Registrieren Ihres Geräts beim StorSimple-Manager-Dienst. Zu diesem Zweck benötigen Sie den Dienstregistrierungsschlüssel, den Sie in Schritt 2 abgerufen haben. Nachdem Sie den Registrierungsschlüssel bereitgestellt haben, müssen Sie ggf. einige Minuten warten, bis das Gerät registriert wurde.
 
-12. Nachdem das Gerät registriert wurde, wird ein Schlüssel für die Dienstdatenverschlüsselung angezeigt. Kopieren Sie diesen Schlüssel, und bewahren Sie ihn an einem sicheren Ort auf. **Dieser Schlüssel ist mit dem Dienstregistrierungsschlüssel zum Registrieren weiterer Geräte bei StorSimple-Manager-Dienst erforderlich.** Weitere Informationen zu diesem Schlüssel finden Sie unter [StorSimple-Sicherheit](../articles/storsimple/storsimple-security.md).
+	Informationen zum Beheben möglicher Fehler bei der Geräteregistrierung finden Sie unter [Fehler während der Geräteregistrierung](storsimple-troubleshoot-deployment.md#errors-during-device-registration). Ausführliche Informationen zur Problembehandlung finden Sie unter [Schrittanleitung mit Beispielen zur Problembehandlung](storsimple-troubleshoot-deployment.md#step-by-step-storsimple-troubleshooting-example).
+
+12. Nachdem das Gerät registriert wurde, wird ein Schlüssel für die Dienstdatenverschlüsselung angezeigt. Kopieren Sie diesen Schlüssel, und bewahren Sie ihn an einem sicheren Ort auf.
+	
+	> [AZURE.WARNING]Dieser Schlüssel ist mit dem Dienstregistrierungsschlüssel zum Registrieren weiterer Geräte bei StorSimple-Manager-Dienst erforderlich. Weitere Informationen zu diesem Schlüssel finden Sie unter [StorSimple-Sicherheit](../articles/storsimple/storsimple-security.md).
 
      ![StorSimple – Registrieren des Geräts 6](./media/storsimple-configure-and-register-device/HCS_RegisterYourDevice6-include.png)
 
@@ -56,10 +79,12 @@
 14. Kehren Sie zum Verwaltungsportal zurück, und führen Sie die folgenden Schritte aus:
   1. Doppelklicken auf Ihren StorSimple-Manager-Dienst, um auf die Seite **Schnellstart** zuzugreifen.
   2. Klicken Sie auf **View connected devices**.
-  3. Vergewissern Sie sich auf der Seite **Geräte**, dass das Gerät erfolgreich mit dem Dienst verbunden wurde, indem Sie seinen Status überprüfen. Als Gerätestatus sollte **Online** angezeigt werden.
+  3. Vergewissern Sie sich auf der Seite **Geräte**, dass das Gerät erfolgreich mit dem Dienst verbunden wurde, indem Sie seinen Status überprüfen. Als Gerätestatus sollte **Online** angezeigt werden. Wenn der Gerätestatus **Offline** ist, warten Sie einige Minuten, bis das Gerät online geschaltet wird.
    
     ![StorSimple – Seite "Geräte"](./media/storsimple-configure-and-register-device/HCS_DevicesPageM-include.png)
   
-      >[AZURE.NOTE]Wenn der Gerätestatus **Offline** ist, warten Sie einige Minuten, bis das Gerät online geschaltet wird.
+      >[AZURE.IMPORTANT]Nachdem das Gerät online geschaltet wurde, schließen Sie die Netzwerkkabel wieder an, die Sie am Anfang dieses Schritts ausgesteckt haben.
 
-<!---HONumber=August15_HO6-->
+Wenn das Gerät erfolgreich registriert wurde, jedoch nicht online geschaltet wird, führen Sie `Test-HcsmConnection -Verbose` aus, um sicherzustellen, dass die Netzwerkverbindungen funktionieren. Ausführliche Informationen zur Verwendung dieses Cmdlets finden Sie in der [Cmdlet-Referenz für "Test-HcsmConnection"](https://technet.microsoft.com/library/dn715782.aspx).
+
+<!---HONumber=August15_HO7-->

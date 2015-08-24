@@ -2,21 +2,18 @@
     pageTitle="Verwenden von Umleitungen in Azure RemoteApp" 
     description="Informieren Sie sich über die Konfiguration und Verwendung der Umleitung in RemoteApp." 
     services="remoteapp" 
-    solutions="" 
-	documentationCenter="" 
+    documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
 
-
 <tags 
     ms.service="remoteapp" 
-    ms.workload="tbd" 
+    ms.workload="compute" 
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="05/29/2015" 
+    ms.date="08/10/2015" 
     ms.author="elizapo" />
-
 
 # Verwenden von Umleitungen in Azure RemoteApp
 
@@ -34,7 +31,7 @@ Bei Verwendung von RemoteApp sind die folgenden Umleitungen standardmäßig akti
 - Smartcardgerät (redirectsmartcards:i:1)
 - Zwischenablage (zum Kopieren und Einfügen) (redirectclipboard:i:1)
 - Schriftartglättung (allow font smoothing:i:1)
-- Alle unterstützten Plug & Play-Geräte umleiten (devicestoredirect:s:\*)
+- Alle unterstützten Plug & Play-Geräte umleiten (devicestoredirect:s:*)
 
 ## Welche anderen Umleitungen sind verfügbar?
 Zwei Umleitungsoptionen sind standardmäßig deaktiviert:
@@ -79,7 +76,9 @@ Wenn Sie die USB-Umleitung auf einem mit RemoteApp verbundenen Computer verwende
 > [AZURE.NOTE]Die USB-Umleitung mit Azure RemoteApp wird nur für Windows-Computer unterstützt.
 
 ### Aktivieren der USB-Umleitung für die RemoteApp-Sammlung
-Verwenden Sie das folgende Cmdlet, um die USB-Umleitung auf Sammlungsebene zu aktivieren: Set-AzureRemoteAppCollection -CollectionName <collection_name> -CustomRdpProperty "nusbdevicestoredirect:s:\*"
+Verwenden Sie das folgende Cmdlet, um die USB-Umleitung auf Sammlungsebene zu aktivieren:
+
+    Set-AzureRemoteAppCollection -CollectionName <collection_name> -CustomRdpProperty "nusbdevicestoredirect:s:*"
 
 ### Aktivieren der USB-Umleitung für den Clientcomputer
 
@@ -91,7 +90,7 @@ Gehen Sie zum Konfigurieren der USB-Umleitungseinstellungen auf Ihrem Computer w
 4. Wählen Sie **Aktiviert** und anschließend unter **Zugriffsrechte für RemoteFX USB-Umleitung** die Option für Administratoren und Benutzer aus.
 5. Öffnen Sie eine Eingabeaufforderung mit Administratorrechten, und führen Sie den folgenden Befehl ein: 
 
-    gpupdate /force
+		gpupdate /force
 6. Starten Sie den Computer neu.
 
 Sie können auch das Gruppenrichtlinienverwaltungstool verwenden, um die USB-Umleitungsrichtlinie zu erstellen und auf alle Computer in Ihrer Domäne anzuwenden:
@@ -105,4 +104,4 @@ Sie können auch das Gruppenrichtlinienverwaltungstool verwenden, um die USB-Uml
 7. Wählen Sie **Aktiviert** und anschließend unter **Zugriffsrechte für RemoteFX USB-Umleitung** die Option für Administratoren und Benutzer aus.
 8. Klicken Sie auf **OK**.  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

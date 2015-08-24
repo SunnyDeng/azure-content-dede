@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Ausstellername und Ausstellerschlüssel in BizTalk Services | Azure" 
+	pageTitle="Ausstellername und Ausstellerschlüssel in BizTalk Services | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie den Ausstellernamen und -schlüssel für Service Bus oder Access Control (ACS) in BizTalk Services abrufen. MABS, WABS" 
 	services="biztalk-services" 
 	documentationCenter="" 
@@ -42,7 +42,7 @@ Access Control-Ausstellername und -schlüssel werden von den folgenden Komponent
 1. Melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
 2. Klicken Sie im linken Navigationsbereich auf **BizTalk Services**.
 3. Wählen Sie Ihren BizTalk Service aus. 
-4. Wählen Sie in der Taskleiste **Verbindungsinformationen** aus. Dort sind Access Control-Namespace, -Standardaussteller (Ausstellername) und -Standardschlüssel (Ausstellerschlüssel) aufgelistet. Sie können diese Werte kopieren und einfügen.<br/><br/> Zusammenfassung: <br/> Ausstellername = Standardaussteller <br/> Ausstellerschlüssel = Standardschlüssel
+4. Wählen Sie in der Taskleiste **Verbindungsinformationen** aus. Dort sind Access Control-Namespace, -Standardaussteller \(Ausstellername\) und -Standardschlüssel \(Ausstellerschlüssel\) aufgelistet. Sie können diese Werte kopieren und einfügen.<br/><br/> Zusammenfassung: <br/> Ausstellername = Standardaussteller <br/> Ausstellerschlüssel = Standardschlüssel
 
 
 Alternativ können Sie auf **ACS-Verwaltungsportal öffnen** klicken, um die Access Control-Werte abzurufen:
@@ -55,17 +55,17 @@ Alternativ können Sie auf **ACS-Verwaltungsportal öffnen** klicken, um die Acc
 
 Im linken Navigationsbereich können Sie außerdem **Active Directory** auswählen, um die Access Control-Werte abzurufen.
 
-> [AZURE.IMPORTANT]Wenn Sie einen Access Control-Namespace mit **Active Directory** erstellen, wird die Dienstidentität **nicht** automatisch erstellt. Wenn Sie einen BizTalk Service einrichten, werden automatisch ein Access Control-Namespace, eine Dienstidentität mit dem Namen "owner" (Ausstellername), ein Kennwort (Ausstellerschlüssel) und ein symmetrischer Schlüssel erstellt.<br /> [Verwenden des ACS-Verwaltungsdiensts zum Konfigurieren von Dienstidentitäten](http://go.microsoft.com/fwlink/p/?LinkID=303942) bietet weitere Informationen zu Access Control-Dienstidentitäten.
+> [AZURE.IMPORTANT]Wenn Sie einen Access Control-Namespace mit **Active Directory** erstellen, wird die Dienstidentität **nicht** automatisch erstellt. Wenn Sie einen BizTalk Service einrichten, werden automatisch ein Access Control-Namespace, eine Dienstidentität mit dem Namen "owner" \(Ausstellername\), ein Kennwort \(Ausstellerschlüssel\) und ein symmetrischer Schlüssel erstellt.<br /> [Verwenden des ACS-Verwaltungsdiensts zum Konfigurieren von Dienstidentitäten](http://go.microsoft.com/fwlink/p/?LinkID=303942) bietet weitere Informationen zu Access Control-Dienstidentitäten.
 
 
 ## Service Bus-Ausstellername und -schlüssel
-Service Bus-Ausstellername und -schlüssel werden von BizTalk-Adapterdiensten verwendet. In Ihrem BizTalk Services-Projekt in Visual Studio können Sie die BizTalk-Adapterdienste verwenden, um sich mit einem lokalen LOB-System (Line of Business) zu verbinden. Erstellen Sie dazu das LOB-Relay und geben Sie Ihre LOB-Systemdetails ein. Bei diesem Prozess geben Sie ebenfalls Ihren Service Bus-Ausstellernamen und -schlüssel ein.
+Service Bus-Ausstellername und -schlüssel werden von BizTalk-Adapterdiensten verwendet. In Ihrem BizTalk Services-Projekt in Visual Studio können Sie die BizTalk-Adapterdienste verwenden, um sich mit einem lokalen LOB-System \(Line of Business\) zu verbinden. Erstellen Sie dazu das LOB-Relay und geben Sie Ihre LOB-Systemdetails ein. Bei diesem Prozess geben Sie ebenfalls Ihren Service Bus-Ausstellernamen und -schlüssel ein.
 
 ### Abrufen von Service Bus-Ausstellername und -schlüssel
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
 2. Klicken Sie im linken Navigationsbereich auf **Service Bus**.
-3. Wählen Sie Ihren Namespace aus. Klicken Sie in der Taskleiste auf **Verbindungsinformationen**: Daraufhin werden **Standardaussteller** (Ausstellername) und **Standardschlüssel** (Ausstellerschlüssel) angezeigt. Diese Werte können kopiert werden.<br/><br/> Zusammenfassung: <br/> Ausstellername = Standardaussteller <br/> Ausstellerschlüssel = Standardschlüssel
+3. Wählen Sie Ihren Namespace aus. Klicken Sie in der Taskleiste auf **Verbindungsinformationen**: Daraufhin werden **Standardaussteller** \(Ausstellername\) und **Standardschlüssel** \(Ausstellerschlüssel\) angezeigt. Diese Werte können kopiert werden.<br/><br/> Zusammenfassung: <br/> Ausstellername = Standardaussteller <br/> Ausstellerschlüssel = Standardschlüssel
 
 ## Weiter
 Zusätzliche Azure BizTalk Services-Themen:
@@ -86,4 +86,4 @@ Zusätzliche Azure BizTalk Services-Themen:
 - [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit der Authentifizierung (JavaScript) | Mobile Dev Center" 
+	pageTitle="Erste Schritte bei der Authentifizierung (JavaScript) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Windows Store-JavaScript-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -94,4 +94,4 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 [Register your Windows Store app package for Microsoft authentication]: /develop/mobile/how-to-guides/register-windows-store-app-package
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -13,10 +13,10 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="08/03/2015"
+   ms.date="08/10/2015"
    ms.author="elizapo"/>
 
-# Mit RemoteApp jede Windows-Anwendung auf jedem Gerät ausführen
+# Mit Azure RemoteApp jede Windows-Anwendung auf jedem Gerät ausführen
 
 In diesem Lernprogramm erfahren Sie, wie eine Windows-Anwendung überall auf jedem Gerät ausgeführt werden kann – und zwar genau jetzt. Egal, ob Internet Explorer 6, eine vor zehn Jahren geschriebene benutzerdefinierte Anwendung oder eine Office-App – Ihre Benutzer sind für diese Anwendungen nicht länger an ein bestimmtes Betriebssystem (wie Windows XP) gebunden.
 
@@ -115,4 +115,4 @@ Nun, da Sie eine Sammlung erstellen können, versuchen Sie das Erstellen einer [
 
 <!--Image references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

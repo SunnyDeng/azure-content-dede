@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden (iOS) | Mobile Dev Center" 
+	pageTitle="Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden (iOS) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Benutzer für das für einmalige Anmelden mit ADAL in Ihrer iOS-Anwendung authentifizieren." 
 	documentationCenter="ios" 
 	authors="mattchenderson" 
@@ -121,4 +121,4 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 [Active Directory-Authentifizierungsbibliothek für iOS]: https://github.com/MSOpenTech/azure-activedirectory-library-for-ios
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

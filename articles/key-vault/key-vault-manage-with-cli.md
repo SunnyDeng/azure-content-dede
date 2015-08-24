@@ -1,11 +1,10 @@
 <properties
-	pageTitle="Verwalten von Schlüsseltresor mit CLI | Übersicht"
+	pageTitle="Verwalten des Schlüsseltresors mit der CLI | Microsoft Azure"
 	description="Verwenden Sie dieses Lernprogramm zum Automatisieren von häufigen Aufgaben in Schlüsseltresor mithilfe der CLI"
 	services="key-vault"
 	documentationCenter=""
 	authors="msmbaldwin"
 	manager="mbaldwin"tags="azure-resource-manager"/>
-
 
 <tags
 	ms.service="key-vault"
@@ -15,7 +14,6 @@
 	ms.topic="article"
 	ms.date="06/25/2015"
 	ms.author="bruceper"/>
-
 
 # Verwalten von Schlüsseltresor mit CLI #
 Azure-Schlüsseltresor ist in den meisten Regionen verfügbar. Weitere Informationen finden Sie auf der Seite [Preisdetails für Schlüsseltresor](../../../../pricing/details/key-vault/).
@@ -135,13 +133,13 @@ Wenn Sie jedoch einen vorhandenen Schlüssel in einer PEM-Datei als lokale Datei
 
     azure keyvault key import --vaultName 'ContosoKeyVault' --key-name 'ContosoFirstKey' --pem-file './softkey.pem' –-password 'PaSSWORD' --destination software
 
-Jetzt können Sie mittels seiner URI auf den Schlüssel verweisen, den Sie erstellt oder in Azure-Schlüsseltresor hochgeladen haben. Verwenden Sie \*\***https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey**, um immer die aktuelle Version zu erhalten, und verwenden Sie \*\***https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**, um diese bestimmte Version abzurufen.
+Jetzt können Sie mittels seiner URI auf den Schlüssel verweisen, den Sie erstellt oder in Azure-Schlüsseltresor hochgeladen haben. Verwenden Sie ****https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey**, um immer die aktuelle Version zu erhalten, und verwenden Sie ****https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**, um diese bestimmte Version abzurufen.
 
 Um einen geheimen Schlüssel zum Schlüsseltresor hinzuzufügen – in diesem Fall das Kennwort "SQLPassword" mit dem Wert "Pa$$w0rd" für den Azure-Schlüsseltresor – geben Sie Folgendes ein:
 
     azure keyvault secret set --vault-name 'ContosoKeyVault' --secret-name 'SQLPassword' --value 'Pa$$w0rd'
 
-Jetzt können Sie mit dem zugehörigen URI auf das Kennwort verweisen, das Sie dem Azure-Schlüsseltresor hinzugefügt haben. Verwenden Sie \*\***https://ContosoVault.vault.azure.net/secrets/SQLPassword**, um immer die aktuelle Version zu erhalten, und verwenden Sie \*\***https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**, um diese bestimmte Version abzurufen.
+Jetzt können Sie mit dem zugehörigen URI auf das Kennwort verweisen, das Sie dem Azure-Schlüsseltresor hinzugefügt haben. Verwenden Sie ****https://ContosoVault.vault.azure.net/secrets/SQLPassword**, um immer die aktuelle Version zu erhalten, und verwenden Sie ****https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**, um diese bestimmte Version abzurufen.
 
 Zeigen wir den Schlüssel oder geheimen Schlüssel an, den Sie soeben erstellt haben:
 
@@ -254,4 +252,4 @@ Hier ist ein Beispiel, wie ein bestimmten geheimer Schlüssel entfernt werden ka
 
 Eine Referenz zur Programmierung finden Sie unter [Azure-Schlüsseltresor – REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn903609.aspx) und [Azure-Schlüsseltresor – C# Client-API-Referenz](https://msdn.microsoft.com/library/azure/dn903628.aspx).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

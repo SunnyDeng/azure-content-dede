@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/24/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 #Gewusst wie: Aktualisieren von Media Services nach dem Austausch der Speicherschlüssel
@@ -43,7 +43,7 @@ Aktualisieren Sie Media Services, damit der sekundäre Speicherzugriffsschlüsse
 
 - Mit der Media Services REST-API.
 
-	Im folgenden Codebeispiel wird veranschaulicht, wie die Abfrage "https://endpoint/<subscriptionId>/services/mediaservices/Accounts/<accountName>/StorageAccounts/<storageAccountName>/Key" erstellt wird, um den angegebenen Speicherschlüssel mit Media Services zu synchronisieren. In diesem Fall wird der Wert des sekundären Speicherschlüssels verwendet. Weitere Informationen finden Sie unter [Vorgehensweise: Verwenden der Media Services-Verwaltungs-REST-API](http://msdn.microsoft.com/library/azure/dn167656.aspx).
+	Im folgenden Codebeispiel wird veranschaulicht, wie die Abfrage "https://endpoint/<subscriptionId>/services/mediaservices/Accounts/<accountName>/StorageAccounts/<storageAccountName>/Key" erstellt wird, um den angegebenen Speicherschlüssel mit Media Services zu synchronisieren. In diesem Fall wird der Wert des sekundären Speicherschlüssels verwendet. Weitere Informationen finden Sie unter [Vorgehensweise: Verwenden der Media Services-Verwaltungs-REST-API](http://msdn.microsoft.com/de-de/library/azure/dn167656.aspx).
  
 		public void UpdateMediaServicesWithStorageAccountKey(string mediaServicesAccount, string storageAccountName, string storageAccountKey)
 		{
@@ -108,4 +108,4 @@ Verwenden Sie zum Aktualisieren des Ablaufdatums für einen Locator die [REST](h
  
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

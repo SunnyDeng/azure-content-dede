@@ -39,7 +39,7 @@ Schritt | Beschreibung
 [Schritt 1: Erstellen einer Azure Data Factory](#CreateDataFactory) | In diesem Schritt erstellen Sie eine Azure Data Factory mit dem Namen **ADFTutorialDataFactoryPSH**. 
 [Schritt 2: Erstellen von verknüpften Diensten](#CreateLinkedServices) | In diesem Schritt erstellen Sie die beiden verknüpften Dienste **StorageLinkedService** und **AzureSqlLinkedService**. Der Dienst StorageLinkedService verbindet einen Azure-Speicher und der Dienst AzureSqlLinkedService die Azure SQL-Datenbank mit "ADFTutorialDataFactoryPSH".
 [Schritt 3: Erstellen von Eingabe- und Ausgabedatasets](#CreateInputAndOutputDataSets) | In diesem Schritt definieren Sie zwei Datasets (**EmpTableFromBlob** und **EmpSQLTable**), die als Ein- und Ausgabetabellen für die **Kopieraktivität** in der ADFTutorialPipeline (die im nächsten Schritt erstellt wird) verwendet werden.
-[Schritt 4: Erstellen und Ausführen einer Pipeline9](#CreateAndRunAPipeline) | In diesem Schritt erstellen Sie die Pipeline **ADFTutorialPipeline** in der Data Factory **ADFTutorialDataFactoryPSH**. Die Pipeline weist eine **Kopieraktivität** auf, die Daten aus einem Azure-Blob in eine Ausgabedatenbanktabelle in Azure kopiert.
+[Schritt 4: Erstellen und Ausführen einer Pipeline](#CreateAndRunAPipeline) | In diesem Schritt erstellen Sie die Pipeline **ADFTutorialPipeline** in der Data Factory **ADFTutorialDataFactoryPSH**. Die Pipeline weist eine **Kopieraktivität** auf, die Daten aus einem Azure-Blob in eine Ausgabedatenbanktabelle in Azure kopiert.
 [Schritt 5: Überwachen der Datasets und Pipeline](#MonitorDataSetsAndPipeline) | In diesem Schritt überwachen Sie die Datasets und die Pipeline mit Azure PowerShell.
 
 ## <a name="CreateDataFactory"></a>Schritt 1: Erstellen einer Azure Data Factory
@@ -409,22 +409,7 @@ In diesem Schritt verwenden Sie Azure PowerShell zur Überwachung der Aktivität
 
 In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets.
 
-## Nächste Schritte
 
-Artikel | Beschreibung
------- | ---------------
-[Kopieren von Daten mit Azure Data Factory (Kopieraktivität)][copy-activity] | Dieser Artikel enthält eine ausführliche Beschreibung der **Kopieraktivität**, die in diesem Lernprogramm verwendet wird. 
-[Aktivieren von Pipelines zum Arbeiten mit lokalen Daten][use-onpremises-datasources] | Dieser Artikel enthält eine exemplarische Vorgehensweise zum Kopieren von Daten aus einer **lokalen SQL Server-Datenbank** in einen Azure-Blob. 
-[Verwenden von Pig und Hive mit Data Factory][use-pig-and-hive-with-data-factory] | Dieser Artikel zeigt in einer exemplarischen Vorgehensweise, wie eine **HDInsight-Aktivität** verwendet wird, um ein **Hive/Pig-Skript** zur Verarbeitung von Eingabedaten so auszuführen, dass Ausgabedaten generiert werden.
-[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][adf-tutorial] | In diesem Artikel wird in einer **umfassenden exemplarischen Vorgehensweise** die Implementierung eines **realen Szenarios** mithilfe von Azure Data Factory veranschaulicht, um Einblicke aus Protokolldateien zu gewinnen.
-[Verwenden benutzerdefinierter Aktivitäten in einer Data Factory][use-custom-activities] | Dieser Artikel enthält eine exemplarische Vorgehensweise mit schrittweisen Anleitungen zum Erstellen einer **benutzerdefinierten Aktivität** und deren Verwendung in einer Pipeline. 
-[Problembehandlung bei Data Factory][troubleshoot] | In diesem Artikel wird die **Problembehandlung** in Azure Data Factory beschrieben. Sie können die exemplarische Vorgehensweise in diesem Artikel mit "ADFTutorialDataFactory" ausprobieren, indem Sie einen Fehler einbauen (die Tabelle in der Azure SQL-Datenbank löschen). 
-[Azure Data Factory-Cmdlet-Referenz][cmdlet-reference] | Diese Referenz enthält Details zu allen **Data Factory-Cmdlets**.
-[Azure Data Factory-Entwicklerreferenz][developer-reference] | Die Entwicklerreferenz enthält umfassende Referenzinformationen für Cmdlets, JSON-Skripts, Funktionen usw. 
-
-[copy-activity]: data-factory-copy-activity.md
-[use-onpremises-datasources]: data-factory-use-onpremises-datasources.md
-[use-pig-and-hive-with-data-factory]: data-factory-pig-hive-activities.md
 [adf-tutorial]: data-factory-tutorial.md
 [use-custom-activities]: data-factory-use-custom-activities.md
 [troubleshoot]: data-factory-troubleshoot.md
@@ -444,4 +429,4 @@ Artikel | Beschreibung
 [sql-management-studio]: ../sql-database-manage-azure-ssms.md#Step2
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

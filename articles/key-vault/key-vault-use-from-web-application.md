@@ -1,4 +1,4 @@
-<properties pageTitle="Verwenden des Azure-Schlüsseltresors aus einer Webanwendung | Übersicht" description="In diesem Lernprogramm erfahren Sie, wie Sie den Azure-Schlüsseltresor aus einer Webanwendung verwenden." services="key-vault" documentationCenter="" authors="adamhurwitz" manager="" tags="azure-resource-manager"//>
+<properties pageTitle="Verwenden des Azure-Schlüsseltresors aus einer Webanwendung | Microsoft Azure" description="In diesem Lernprogramm erfahren Sie, wie Sie den Azure-Schlüsseltresor aus einer Webanwendung verwenden." services="key-vault" documentationCenter="" authors="adamhurwitz" manager="" tags="azure-resource-manager"//>
 
 <tags 
 	ms.service="key-vault" 
@@ -47,8 +47,7 @@ Alle drei Pakete können mithilfe der Paket-Manager-Konsole mit dem Befehl "Inst
 	// this is currently the latest stable version of ADAL
 	Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.16.204221202
 
-	//this is a preview version of the Key Vault Library
-	Install-Package Microsoft.Azure.KeyVault -Pre
+	Install-Package Microsoft.Azure.KeyVault 
 
 
 ## <a id="webconfig"></a>Ändern der Datei "web.config" ##
@@ -91,6 +90,10 @@ Im Folgenden finden Sie den Code für das Abrufen eines Zugriffstokens von Azure
 	    return result.AccessToken;
     }
 
+> [AZURE.NOTE]Die Verwendung eines geheimen Clientschlüssels und einer Client-ID stellt einfachste Möglichkeit zur Authentifizierung einer Azure AD-Anwendung dar. Die Verwendung in Ihrer Webanwendung erlaubt auch die Trennung von Aufgaben und mehr Kontrolle über die Schlüsselverwaltung. Dafür muss jedoch der geheime Clientschlüssel in die Konfigurationseinstellungen eingefügt werden, was für einige als potenziell riskant angesehen wird. Nachfolgend finden Sie eine Erläuterung zur Verwendung einer Client-ID und eines Zertifikats anstelle von Client-ID und geheimem Clientschlüssel, um die Azure AD-Anwendung zu authentifizieren.
+
+
+
 ## <a id="appstart"></a>Abrufen des geheimen Schlüssel beim Anwendungsstart ##
 Sie benötigen nun Code zum Aufrufen der Schlüsseltresor-API, um den geheimen Schlüssel abzurufen. Der folgende Code kann an einer beliebigen Stelle eingefügt werden, sofern er aufgerufen wird, bevor er verwendet werden muss. Ich haben diesen Code im "Application Start"-Ereignis in der Datei "Global.asax" eingefügt, sodass es einmal beim Start ausgeführt wird und den geheimen Schlüssel für die Anwendung verfügbar macht.
 
@@ -114,6 +117,115 @@ Wenn Sie über eine Azure-Web-App verfügen, können Sie jetzt die tatsächliche
 ![Anwendungseinstellungen im Azure-Portal][1]
 
 
+## Authentifizieren mit einem Zertifikat anstelle eines geheimen Clientschlüssels 
+Eine weitere Möglichkeit zur Authentifizierung einer Azure AD-Anwendung bietet die Verwendung einer Client-ID und eines Zertifikats anstelle einer Client-ID mit dem geheimen Clientschlüssel. Mit den folgenden Schritten können Sie ein Zertifikat in einer Azure-Web-App verwenden:
+
+1. Abrufen oder Erstellen eines Zertifikats
+2. Zuordnen des Zertifikats zu einer Azure AD-Anwendung
+3. Hinzufügen von Code zur Web-App für die Verwendung des Zertifikats
+4. Hinzufügen eines Zertifikats zur Web-App
+
+
+**Abrufen oder Erstellen eines Zertifikats** Für unsere Zwecke werden wir ein Testzertifikat erstellen. Die folgenden Befehle können Sie an einer Entwicklerbefehlszeile verwenden, um ein Zertifikat zu erstellen. Passen Sie das Verzeichnis an, um den Speicherort für die Zertifikatdateien festzulegen.
+
+	makecert -sv mykey.pvk -n "cn=KVWebApp" KVWebApp.cer -b 07/31/2015 -e 07/31/2016 -r
+	pvk2pfx -pvk mykey.pvk -spc KVWebApp.cer -pfx KVWebApp.pfx -po test123
+
+Notieren Sie sich das Enddatum und das Kennwort für die PFX-Datei (in diesem Beispiel: 31.07.2016 und "test123"). Sie benötigen sie später.
+
+Weitere Informationen zum Erstellen eines Testzertifikats finden Sie unter [How to: Create Your Own Test Certificate](https://msdn.microsoft.com/en-in/library/ff699202.aspx) (in englischer Sprache).
+
+
+**Zuordnen des Zertifikats zu einer Azure AD-Anwendung** Nachdem Sie ein Zertifikat erstellt haben, müssen Sie es einer Azure AD-Anwendung zuordnen. Dies wird jedoch noch nicht im Azure-Verwaltungsportal unterstützt. Sie müssen stattdessen PowerShell verwenden. Im Folgenden finden Sie die Befehle, die Sie ausführen müssen:
+
+	$x509 = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2
+	
+	PS C:\> $x509.Import("C:\data\KVWebApp.cer")
+	
+	PS C:\> $credValue = [System.Convert]::ToBase64String($x509.GetRawCertData())
+	
+	PS C:\> $now = [System.DateTime]::Now
+	
+	# this is where the end date from the cert above is used
+	PS C:\> $yearfromnow = [System.DateTime]::Parse("2016-07-31") 
+	
+	PS C:\> $adapp = New-AzureADApplication -DisplayName "KVWebApp" -HomePage "http://kvwebapp" -IdentifierUris "http://kvwebapp" -KeyValue $credValue -KeyType "AsymmetricX509Cert" -KeyUsage "Verify" -StartDate $now -EndDate $yearfromnow
+	
+	PS C:\> $sp = New-AzureADServicePrincipal -ApplicationId $adapp.ApplicationId
+
+Nachdem Sie diese Befehle ausgeführt haben, wird die Anwendung in Azure AD angezeigt. Wenn die Anwendung nicht sofort angezeigt wird, suchen Sie nach "Anwendungen im Besitz meines Unternehmens" anstelle von "Anwendungen, die mein Unternehmen verwendet".
+
+Weitere Informationen zu Azure AD-Anwendungsobjekten und -Dienstprinzipalobjekten finden Sie unter [Anwendungsobjekte und Dienstprinzipalobjekte](../active-directory/active-directory-application-objects.md)
+
+
+
+**Hinzufügen von Code zur Web-App für die Verwendung des Zertifikats** Nun fügen wir der Web-App Code hinzu, um auf das Zertifikat zuzugreifen und es für die Authentifizierung zu verwenden.
+
+Zunächst erstellen wir den Code für den Zugriff auf das Zertifikat.
+
+    public static class CertificateHelper
+    {
+        public static X509Certificate2 FindCertificateByThumbprint(string findValue)
+        {
+            X509Store store = new X509Store(StoreName.My, StoreLocation.CurrentUser);
+            try
+            {
+                store.Open(OpenFlags.ReadOnly);
+                X509Certificate2Collection col = store.Certificates.Find(X509FindType.FindByThumbprint, 
+                    findValue, false); // Don't validate certs, since the test root isn't installed.
+                if (col == null || col.Count == 0)
+                    return null;
+                return col[0];
+            }
+            finally
+            {
+                store.Close();
+            }
+        }
+    }
+
+
+Beachten Sie, dass "StoreLocation" den Wert "CurrentUser" anstelle von "LocalMachine" hat und dass wir "False" bereitstellen, um die Find-Methode zu suchen, da wir ein Testzertifikat verwenden.
+
+
+Als Nächstes folgt Code, der "CertificateHelper" verwendet und das für die Authentifizierung benötigte "ClientAssertionCertificate" erstellt.
+
+    public static ClientAssertionCertificate AssertionCert { get; set; }
+
+    public static void GetCert()
+    {
+        var clientAssertionCertPfx = CertificateHelper.FindCertificateByThumbprint(WebConfigurationManager.AppSettings["thumbprint"]);
+        AssertionCert = new ClientAssertionCertificate(WebConfigurationManager.AppSettings["clientid"], clientAssertionCertPfx);
+    }
+
+
+Dies ist der neue Code zum Abrufen des Zugriffstokens. Dieser ersetzt die GetToken-Methode von oben. Ich habe ihr der Einfachheit halber einen anderen Namen gegeben.
+
+    public static async Task<string> GetAccessToken(string authority, string resource, string scope)
+    {
+        var context = new AuthenticationContext(authority, TokenCache.DefaultShared);
+        var result = await context.AcquireTokenAsync(resource, AssertionCert);
+        return result.AccessToken;
+    }
+
+Zur einfacheren Handhabung habe ich all diesen Code in die Utils-Klasse meines Web-App-Projekts eingefügt.
+
+Die letzte Codeänderung betrifft die Application\_Start-Methode. Zunächst müssen wir die GetCert()-Methode aufrufen, um das "ClientAssertionCertificate" zu laden. Außerdem ändern wir die Callback-Methode, die wir beim Erstellen eines neues "KeyVaultClient" bereitstellen. Beachten Sie, dass dies den Code von oben ersetzt.
+
+    Utils.GetCert();
+    var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(Utils.GetAccessToken));
+
+
+**Hinzufügen eines Zertifikats zur Web-App** Das Hinzufügen eines Zertifikats zur Web-App ist ein einfacher Vorgang in zwei Schritten. Navigieren Sie zunächst im Azure-Portal zu Ihrer Web-App. Klicken Sie auf dem Blatt "Einstellungen" für Ihre Web-App auf den Eintrag "Benutzerdefinierte Domänen und SSL". Auf dem daraufhin geöffneten Blatt können Sie das oben erstellte Zertifikat "KVWebApp.pfx" hochladen. Sie müssen sich unbedingt das Kennwort für die PFX-Datei merken.
+
+![Hinzufügen von Zertifikaten zu Web-Apps im Azure-Portal][2]
+
+
+Abschließend müssen Sie Ihrer Web-App eine Anwendungseinstellung mit dem Namen "WEBSITE\_LOAD\_CERTIFICATES" und dem Wert "*" hinzufügen. Dadurch wird sichergestellt, dass alle Zertifikate geladen werden. Wenn Sie nur die von Ihnen hochgeladenen Zertifikate laden möchten, können Sie eine durch Kommas getrennte Liste ihrer Fingerabdrücke eingeben.
+
+Weitere Informationen zum Hinzufügen von Zertifikaten zu Web-Apps finden Sie unter [Using Certificates in Azure Websites Applications](https://azure.microsoft.com/blog/2014/10/27/using-certificates-in-azure-websites-applications/) (in englischer Sprache).
+
+
 
 ## <a id="next"></a>Nächste Schritte ##
 
@@ -123,6 +235,7 @@ Eine Referenz zur Programmierung finden Sie unter [C#-Client-API-Referenz für d
 
 <!--Image references-->
 [1]: ./media/key-vault-use-from-web-application/PortalAppSettings.png
+[2]: ./media/key-vault-use-from-web-application/PortalAddCertificate.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/20/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 
@@ -69,4 +69,4 @@ Im Video von Tag 3 werden folgende Themen behandelt:
 
 [Azure Premium Encoder Workflow-Designer – Schulungsvideos](http://johndeutscher.com/2015/07/06/azure-premium-encoder-workflow-designer-training-videos/)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

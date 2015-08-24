@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hybride lokale/Cloudanwendung (.NET) - Azure"
+	pageTitle="Hybride lokale/Cloudanwendung (.NET) | Microsoft Azure"
 	description="Erfahren Sie, wie eine lokale/Cloud-.NET-Hybridanwendung mithilfe von Microsoft Azure Service Bus Relay erstellen."
 	services="service-bus"
 	documentationCenter=".net"
@@ -35,7 +35,7 @@ Geschäftslösungen bestehen normalerweise aus einer Kombination von benutzerdef
 
 Lösungsarchitekten setzen die Cloud inzwischen ein, um Skalierungsanforderungen leichter bewältigen zu können und die Betriebskosten zu senken. Dabei stellen sie fest, dass sich vorhandene Dienstressourcen, die sie als Bausteine für ihre Lösungen nutzen möchten, innerhalb der Unternehmensfirewall befinden und somit nicht problemlos von der Cloudlösung darauf zugegriffen werden kann. Viele interne Dienste werden nicht so erstellt oder gehostet, dass sie einfach am Rand des Unternehmensnetzwerks verfügbar gemacht werden können.
 
-*Service Bus Relay* wurde konzipiert, damit vorhandene WCF (Windows Communication Foundation)-Webdienste sicher von Lösungen aufgerufen werden können, die sich außerhalb des Unternehmensumkreises befinden, ohne dass aufwändige Änderungen an der Netzwerkinfrastruktur des Unternehmens ausgeführt werden müssen. Service Bus Relay-Dienste dieser Art werden weiterhin in der vorhandenen Umgebung gehostet, das Überprüfen auf eingehende Sitzungen und Anforderungen wird jedoch an den in der Cloud gehosteten Servicebus delegiert. Dieser schützt die Dienste durch die SAS-Authentifizierung ([Shared Access Signature](https://msdn.microsoft.com/library/dn170478.aspx)) außerdem vor unbefugten Zugriffen.
+*Service Bus Relay* wurde konzipiert, damit vorhandene WCF \(Windows Communication Foundation\)-Webdienste sicher von Lösungen aufgerufen werden können, die sich außerhalb des Unternehmensumkreises befinden, ohne dass aufwändige Änderungen an der Netzwerkinfrastruktur des Unternehmens ausgeführt werden müssen. Service Bus Relay-Dienste dieser Art werden weiterhin in der vorhandenen Umgebung gehostet, das Überprüfen auf eingehende Sitzungen und Anforderungen wird jedoch an den in der Cloud gehosteten Servicebus delegiert. Dieser schützt die Dienste durch die SAS-Authentifizierung \([Shared Access Signature](https://msdn.microsoft.com/library/dn170478.aspx)\) außerdem vor unbefugten Zugriffen.
 
 ##Das Lösungszenario
 
@@ -43,7 +43,7 @@ In diesem Lernprogramm erstellen Sie eine ASP.NET MVC-Website, mit der Sie eine 
 
 ![][0]
 
-In diesem Lernprogramm wird davon ausgegangen, dass Sie über Produktinformationen in einem vorhandenen lokalen System verfügen, auf das über Service Bus Relay zugegriffen werden kann. Dies wird durch einen Webdienst simuliert, der in einer einfachen Konsolenanwendung ausgeführt und durch einen im Arbeitsspeicher befindlichen Produktsatz unterstützt wird. Sie können diese Konsolenanwendung auf Ihrem eigenen Computer ausführen und die Webrolle in Azure bereitstellen. Dabei werden Sie feststellen, dass die im Azure-Datencenter ausgeführte Webrolle tatsächlich Aufrufe an Ihren Computer sendet, obwohl dieser sich mit ziemlicher Sicherheit hinter mindestens einer Firewall und einer NAT (Network Address Translation)-Ebene befindet.
+In diesem Lernprogramm wird davon ausgegangen, dass Sie über Produktinformationen in einem vorhandenen lokalen System verfügen, auf das über Service Bus Relay zugegriffen werden kann. Dies wird durch einen Webdienst simuliert, der in einer einfachen Konsolenanwendung ausgeführt und durch einen im Arbeitsspeicher befindlichen Produktsatz unterstützt wird. Sie können diese Konsolenanwendung auf Ihrem eigenen Computer ausführen und die Webrolle in Azure bereitstellen. Dabei werden Sie feststellen, dass die im Azure-Datencenter ausgeführte Webrolle tatsächlich Aufrufe an Ihren Computer sendet, obwohl dieser sich mit ziemlicher Sicherheit hinter mindestens einer Firewall und einer NAT \(Network Address Translation\)-Ebene befindet.
 
 Im Folgenden wird ein Bildschirmfoto der Startseite der vollständigen Webanwendung dargestellt.
 
@@ -87,11 +87,11 @@ Sie können Namespaces und Service Bus-Nachrichtenentitäten im [Azure-Verwaltun
 
 4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.![][6]
 
-5.  Wählen Sie nach der Bestätigung, dass der Name für den Namespace verfügbar ist, das Land oder die Region, wo dieser Namespace gehostet werden soll. (Stellen Sie sicher, dass dies dasselbe Land/dieselbe Region ist, in dem/der Sie Ihre Rechnerressourcen bereitstellen.)
+5.  Wählen Sie nach der Bestätigung, dass der Name für den Namespace verfügbar ist, das Land oder die Region, wo dieser Namespace gehostet werden soll. \(Stellen Sie sicher, dass dies dasselbe Land/dieselbe Region ist, in dem/der Sie Ihre Rechnerressourcen bereitstellen.\)
 
     WICHTIG: Wählen Sie **dieselbe Region**, in der Sie auch Ihre Anwendung einsetzen möchten. Dies sorgt für die beste Leistung.
 
-6.	Übernehmen Sie für die weiteren Felder im Dialogfeld die Standardwerte (**Messaging** und **Standardstufe**), und klicken Sie anschließend auf das Häkchen. Ihr Dienstnamespace wird nun erstellt und aktiviert. Ggf. müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto durch das System bereitgestellt werden.
+6.	Übernehmen Sie für die weiteren Felder im Dialogfeld die Standardwerte \(**Messaging** und **Standardstufe**\), und klicken Sie anschließend auf das Häkchen. Ihr Dienstnamespace wird nun erstellt und aktiviert. Ggf. müssen Sie einige Minuten warten, bis die Ressourcen für Ihr Konto durch das System bereitgestellt werden.
 
 	![][38]
 
@@ -120,19 +120,19 @@ Um Verwaltungsvorgänge für den neuen Namespace auszuführen, z. B. das Erstell
 
 ## Erstellen eines lokalen Servers
 
-Zunächst erstellen Sie ein (falsches) lokales Produktkatalogsystem. Dies ist relativ einfach; Sie können es sich als ein echtes lokales Produktkatalogsystem mit einer vollständigen Dienstoberfläche vorstellen, das integriert werden soll.
+Zunächst erstellen Sie ein \(falsches\) lokales Produktkatalogsystem. Dies ist relativ einfach; Sie können es sich als ein echtes lokales Produktkatalogsystem mit einer vollständigen Dienstoberfläche vorstellen, das integriert werden soll.
 
 Zu Anfang ist das Projekt eine Visual Studio-Konsolenanwendung. Mithilfe des Service Bus NuGet-Pakets werden die Servicebusbibliotheken und -konfigurationseinstellungen hinzugefügt. Die NuGet Visual Studio-Erweiterung ermöglicht eine problemlose Installation und Aktualisierung von Bibliotheken und Tools in Visual Studio und Visual Studio Express. Das Service Bus NuGet-Paket stellt die einfachste Möglichkeit zum Abrufen der Service Bus-API und Konfigurieren der Anwendung mit allen Service Bus-Abhängigkeiten dar. Weitere Informationen zum Verwenden von NuGet und dem Service Bus-Paket finden Sie unter [Verwenden des NuGet Service Bus-Pakets][].
 
 ### Erstellen des Projekts
 
-1.  Starten Sie Microsoft Visual Studio 2013 oder Microsoft Visual Studio Express mit Administratorberechtigungen. Klicken Sie mit der rechten Maustaste auf **Microsoft Visual Studio 2013** (oder **Microsoft Visual Studio Express**), und klicken Sie dann auf Als Administrator ausführen, um Visual Studio mit Administratorberechtigungen zu starten.
+1.  Starten Sie Microsoft Visual Studio 2013 oder Microsoft Visual Studio Express mit Administratorberechtigungen. Klicken Sie mit der rechten Maustaste auf **Microsoft Visual Studio 2013** \(oder **Microsoft Visual Studio Express**\), und klicken Sie dann auf Als Administrator ausführen, um Visual Studio mit Administratorberechtigungen zu starten.
 
 2.  Klicken Sie in Visual Studio im Menü **Datei** auf **Neu** und anschließend auf **Projekt**.
 
     ![][10]
 
-3.  Klicken Sie in **Installierte Vorlagen** unter **Visual C#** auf **Konsolenanwendung**. Geben Sie in das Feld **Name** den Namen **ProductsServer** ein:
+3.  Klicken Sie in **Installierte Vorlagen** unter **Visual C\#** auf **Konsolenanwendung**. Geben Sie in das Feld **Name** den Namen **ProductsServer** ein:
 
     ![][11]
 
@@ -288,11 +288,11 @@ In diesem Abschnitt erstellen Sie eine einfache ASP.NET-Anwendung, in der von Ih
 
 ### Erstellen des Projekts
 
-1.  Stellen Sie sicher, dass Visual Studio mit Administratorberechtigungen ausgeführt wird. Wenn dies nicht der Fall ist, klicken Sie mit der rechten Maustaste auf **Microsoft Visual Studio 2013** (oder **Microsoft Visual Studio Express**), und klicken Sie dann auf Als Administrator ausführen, um Visual Studio mit Administratorberechtigungen zu starten. Für den später in diesem Leitfaden behandelten Microsoft Azure-Serveremulator muss Visual Studio mit Administratorberechtigungen gestartet worden sein.
+1.  Stellen Sie sicher, dass Visual Studio mit Administratorberechtigungen ausgeführt wird. Wenn dies nicht der Fall ist, klicken Sie mit der rechten Maustaste auf **Microsoft Visual Studio 2013** \(oder **Microsoft Visual Studio Express**\), und klicken Sie dann auf Als Administrator ausführen, um Visual Studio mit Administratorberechtigungen zu starten. Für den später in diesem Leitfaden behandelten Microsoft Azure-Serveremulator muss Visual Studio mit Administratorberechtigungen gestartet worden sein.
 
 2.  Klicken Sie in Visual Studio im Menü **Datei** auf **Neu** und anschließend auf **Projekt**.
 
-3.  Klicken Sie in **Installierte Vorlagen** unter **Visual C#** auf **ASP.NET-Webanwendung**. Nennen Sie das Projekt **ProductsPortal**. Klicken Sie dann auf **OK**.
+3.  Klicken Sie in **Installierte Vorlagen** unter **Visual C\#** auf **ASP.NET-Webanwendung**. Nennen Sie das Projekt **ProductsPortal**. Klicken Sie dann auf **OK**.
 
     ![][15]
 
@@ -497,7 +497,7 @@ Im nächsten Schritt wird der lokale Produktserver mit der ASP.NET MVC-Webanwend
 
 1.  Klicken Sie im Menü **Datei** in Visual Studio auf **Save All**.
 
-2.  Drücken Sie **F5**, um die Anwendung zu erstellen und auszuführen. Der lokale Server (die Konsolenanwendung **ProductsServer**) sollte zuerst gestartet werden, danach die Anwendung **ProductsWeb** in einem Browserfenster, wie im Bildschirmfoto unten dargestellt. Dieses Mal werden Sie feststellen, dass in der Produktbestandsliste Daten aus dem lokalen Produktdienstsystem aufgeführt werden.
+2.  Drücken Sie **F5**, um die Anwendung zu erstellen und auszuführen. Der lokale Server \(die Konsolenanwendung **ProductsServer**\) sollte zuerst gestartet werden, danach die Anwendung **ProductsWeb** in einem Browserfenster, wie im Bildschirmfoto unten dargestellt. Dieses Mal werden Sie feststellen, dass in der Produktbestandsliste Daten aus dem lokalen Produktdienstsystem aufgeführt werden.
 
     ![][1]
 
@@ -514,7 +514,7 @@ Im nächsten Schritt wird der lokale Produktserver mit der ASP.NET MVC-Webanwend
 3.  Melden Sie sich mit Ihrem Microsoft-Konto an.
 
 
-8.  Klicken Sie auf **Weiter**. Wenn das Abonnement noch keine gehosteten Dienste enthält, werden Sie aufgefordert, einen zu erstellen. Der gehostete Dienst dient als Container für Ihre Anwendung im Microsoft Azure-Abonnement. Geben Sie einen Namen für Ihre Anwendung ein, und wählen Sie die Region aus, für die die Anwendung optimiert werden soll. (Benutzer aus dieser Region können schnellere Ladezeiten beim Zugriff erwarten.)
+8.  Klicken Sie auf **Weiter**. Wenn das Abonnement noch keine gehosteten Dienste enthält, werden Sie aufgefordert, einen zu erstellen. Der gehostete Dienst dient als Container für Ihre Anwendung im Microsoft Azure-Abonnement. Geben Sie einen Namen für Ihre Anwendung ein, und wählen Sie die Region aus, für die die Anwendung optimiert werden soll. \(Benutzer aus dieser Region können schnellere Ladezeiten beim Zugriff erwarten.\)
 
 9.  Wählen Sie den gehosteten Dienst aus, in dem Sie die Anwendung veröffentlichen möchten. Behalten Sie die unten angezeigten Standardwerte bei den restlichen Einstellungen bei. Klicken Sie auf **Weiter**:
 
@@ -524,7 +524,7 @@ Im nächsten Schritt wird der lokale Produktserver mit der ASP.NET MVC-Webanwend
 
     ![][34]
 
-Dies dauert etwa 5-7 Minuten. Da es sich hierbei um Ihre erste Veröffentlichung handelt, wird von Azure ein virtueller Computer (VM) bereitgestellt, eine Sicherheitshärtung durchgeführt, eine Webrolle auf der VM zum Hosten der Anwendung erstellt, der Code für die Webrolle bereitgestellt und schließlich der Lastenausgleich und das Netzwerk konfiguriert, damit Ihre Anwendung öffentlich verfügbar ist.
+Dies dauert etwa 5-7 Minuten. Da es sich hierbei um Ihre erste Veröffentlichung handelt, wird von Azure ein virtueller Computer \(VM\) bereitgestellt, eine Sicherheitshärtung durchgeführt, eine Webrolle auf der VM zum Hosten der Anwendung erstellt, der Code für die Webrolle bereitgestellt und schließlich der Lastenausgleich und das Netzwerk konfiguriert, damit Ihre Anwendung öffentlich verfügbar ist.
 
 11. Während der Veröffentlichung können Sie die Aktivität im Fenster **Azure-Aktivitätsprotokoll** überwachen, das normalerweise unten in Visual Studio oder Visual Web Developer verankert ist:
 
@@ -542,9 +542,9 @@ Weitere Informationen zum Unterschied zwischen Websites und Cloud-Diensten finde
 
 ## Beenden und Löschen der Anwendung
 
-Nach der Bereitstellung der Anwendung empfiehlt es sich, sie zu deaktivieren, damit Sie andere Anwendungen im Rahmen der kostenlosen 750 Stunden/Monat (31 Tage/Monat) Serverzeit erstellen und bereitstellen können.
+Nach der Bereitstellung der Anwendung empfiehlt es sich, sie zu deaktivieren, damit Sie andere Anwendungen im Rahmen der kostenlosen 750 Stunden/Monat \(31 Tage/Monat\) Serverzeit erstellen und bereitstellen können.
 
-Bei Azure werden Webrolleninstanzen pro genutzter Serverzeitstunde berechnet. Serverzeit wird genutzt, sobald die Anwendung bereitgestellt wird, selbst wenn die Instanzen nicht ausgeführt werden und sich im Status Beendet befinden. Ein kostenloses Konto umfasst 750 Stunden/Monat (31 Tage/Monat) dedizierte Serverzeit für virtuelle Computer zum Hosten dieser Webrolleninstanzen.
+Bei Azure werden Webrolleninstanzen pro genutzter Serverzeitstunde berechnet. Serverzeit wird genutzt, sobald die Anwendung bereitgestellt wird, selbst wenn die Instanzen nicht ausgeführt werden und sich im Status Beendet befinden. Ein kostenloses Konto umfasst 750 Stunden/Monat \(31 Tage/Monat\) dedizierte Serverzeit für virtuelle Computer zum Hosten dieser Webrolleninstanzen.
 
 In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und löschen.
 
@@ -620,4 +620,4 @@ Weitere Informationen zum Service Bus finden Sie in den folgenden Ressourcen:
   [executionmodels]: http://azure.microsoft.com/develop/net/fundamentals/compute/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

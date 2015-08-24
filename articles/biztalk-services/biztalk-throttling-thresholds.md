@@ -1,12 +1,11 @@
 <properties 
-	pageTitle="Informationen zur Drosselung in BizTalk Services | Azure" 
+	pageTitle="Informationen zur Drosselung in BizTalk Services | Microsoft Azure" 
 	description="Erfahren Sie mehr über Drosselungsschwellenwerte und das daraus resultierende Laufzeitverhalten für BizTalk Services. Die Drosselung basiert auf der Arbeitsspeicherauslastung und der Nachrichtenanzahl. MABS, WABS" 
 	services="biztalk-services" 
 	documentationCenter="" 
 	authors="MandiOhlinger" 
 	manager="dwrede" 
 	editor="cgronlun"/>
-
 
 <tags 
 	ms.service="biztalk-services" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="06/07/2015" 
 	ms.author="mandia"/>
-
 
 
 
@@ -47,8 +45,6 @@ Wenn Azure BizTalk Services einen Drosselungsstatus erreichen, tritt Folgendes e
 - Die Drosselung wird pro Rolleninstanz durchgeführt. Beispiel:<br/>
 RoleInstanceA wird gedrosselt. RoleInstanceB wird nicht gedrosselt. In dieser Situation werden die Nachrichten in RoleInstanceB erwartungsgemäß verarbeitet. Die Nachrichten in RoleInstanceA werden verworfen und geben folgenden Fehler aus:<br/><br/>
  **Server ist ausgelastet. Versuchen Sie es erneut.**<br/><br/>
-<br/>
-
 - Keine der Pullquellen ruft eine Nachricht ab oder lädt eine herunter. Beispiel:<br/>
  Eine Pipeline ruft Nachrichten per Pullaktion aus einer externen FTP-Quelle ab. Die Rolleninstanz, welche die Pullaktion durchführt, geht in einen Drosselungsstatus über. In dieser Situation setzt die Pipeline das Herunterladen zusätzlicher Nachrichten aus, bis die Rolleninstanz die Drosselung beendet.
 - Eine Antwort wird an den Client gesendet, so dass dieser die Nachricht neu senden kann.
@@ -63,27 +59,21 @@ RoleInstanceA wird gedrosselt. RoleInstanceB wird nicht gedrosselt. In dieser Si
 ## Zusätzliche Azure BizTalk Services-Themen
 
 -  [Installieren des Azure BizTalk Services SDK](http://go.microsoft.com/fwlink/p/?LinkID=241589)<br/>
-
 -  [Lernprogramme: Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=236944)<br/>
-
 -  [Wie verwende ich das Azure BizTalk Services SDK?](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
-
 -  [Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=303664)<br/>
 
 
 ## Weitere Informationen
 - [BizTalk Services: Editionsübersicht](http://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
-
 - [BizTalk Services: Erstellen eines BizTalk Service im Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
-
 - [BizTalk Services: Bereitstellungsstatusübersicht](http://go.microsoft.com/fwlink/p/?LinkID=329870)<br/>
-
 - [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"](http://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
-
 - [BizTalk Services: Sichern und Wiederherstellen](http://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
-
 - [BizTalk Services: Name und Schlüssel des Ausstellers](http://go.microsoft.com/fwlink/p/?LinkID=303941)<br/>
 
  
 
-<!----HONumber=August15_HO6-->
+<!-----HONumber=August15_HO7-->
+
+<!---HONumber=August15_HO7-->

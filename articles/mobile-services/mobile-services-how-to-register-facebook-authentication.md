@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Registrieren für die Facebook-Authentifizierung – Mobile Services" 
+	pageTitle="Registrieren für die Facebook-Authentifizierung | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie die Facebook-Authentifizierung mit Ihrer Azure Mobile Services-App verwenden." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -73,4 +73,4 @@ Sie können nun ein Facebook-Login für die Authentifizierung in Ihrer App verwe
 [Azure Mobile Services]: http://azure.microsoft.com/services/mobile-services/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

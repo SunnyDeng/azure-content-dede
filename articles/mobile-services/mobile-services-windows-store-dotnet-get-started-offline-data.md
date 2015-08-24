@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Offlinedaten in Ihrer universellen Windows-App | Azure Mobile Services" 
+	pageTitle="Verwenden von Offlinedaten in Ihrer universellen Windows-App | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mit Azure Mobile Services Offlinedaten in Ihrer universellen Windows-App zwischenspeichern und synchronisieren." 
 	documentationCenter="mobile-services" 
 	authors="lindydonna" 
@@ -283,4 +283,4 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

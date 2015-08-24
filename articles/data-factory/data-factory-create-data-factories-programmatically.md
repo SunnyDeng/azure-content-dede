@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/22/2015" 
+	ms.date="08/06/2015" 
 	ms.author="spelluru"/>
 
 # Erstellen, Überwachen und Verwalten von Azure Data Factorys mithilfe des Data Factory .NET SDK
@@ -42,7 +42,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 2. Klicken Sie auf <b>Extras</b>, zeigen Sie auf <b>NuGet-Paket-Manager</b>, und klicken Sie auf <b>Paket-Manager-Konsole</b>.
 3.	Führen Sie in der <b>Paket-Manager-Konsole</b> die folgenden Befehle nacheinander aus.</b> 
 
-		Install-Package Microsoft.Azure.Management.DataFactories –Pre
+		Install-Package Microsoft.Azure.Management.DataFactories
 		Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
 6. Fügen Sie den folgenden **appSettings**-Abschnitt zur Datei **App.config** hinzu. Diese werden von der Hilfsmethode **GetAuthorizationHeader** verwendet. 
 
@@ -393,4 +393,4 @@ Artikel | Beschreibung
 [azure-developer-center]: http://azure.microsoft.com/downloads/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

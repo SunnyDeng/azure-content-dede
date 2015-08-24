@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwalten der Verfügbarkeit virtueller Computer – Azure"
+	pageTitle="Verwalten der Verfügbarkeit virtueller Computer | Microsoft Azure"
 	description="Erfahren Sie, wie Sie mehrere virtuelle Computer verwenden, um hohe Verfügbarkeit für Ihre Azure-Anwendung sicherzustellen."
 	services="virtual-machines"
 	documentationCenter=""
@@ -69,4 +69,4 @@ Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine
 [Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen]: #avoid-single-instance-virtual-machines-in-availability-sets
 [Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer]: virtual-machines-how-to-configure-availability.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

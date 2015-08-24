@@ -18,10 +18,11 @@
 
 # Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service
 
-<div class="dev-center-tutorial-selector sublanding">
-  <a href="/documentation/articles/custom-dns-web-site-buydomains-web-app" title="Web-Apps">Kaufen einer Domäne für Web-Apps</a> <a href="/documentation/articles/web-sites-custom-domain-name" title="Web-Apps" class="current">Web-Apps mit externen Domänen</a> <a href="/documentation/articles/web-sites-traffic-manager-custom-domain-name/" title="Web-Apps mit Traffic Manager">Web-Apps mit Traffic Manager</a> <a href="/documentation/articles/web-sites-godaddy-custom-domain-name" title="GoDaddy">GoDaddy</a>
-
-</div>
+> [AZURE.SELECTOR]
+- [Buy Domain for Web Apps](custom-dns-web-site-buydomains-web-app.md)
+- [Web Apps with External Domains](web-sites-custom-domain-name.md)
+- [Web Apps with Traffic Manager](web-sites-traffic-manager-custom-domain-name.md)
+- [GoDaddy](web-sites-godaddy-custom-domain-name.md)
 
 [AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
@@ -71,7 +72,7 @@ Wenn sich die IP-Adresse ändert, bleibt der CNAME-Entrag gültig, während ein 
 4.	Klicken Sie auf den Namen der Web-App.
 5.	Klicken Sie auf der Seite **Essentials** auf **Alle Einstellungen**.
 6.	Klicken Sie auf **Benutzerdefinierte Domänen und SSL**. 
-7.	Klicken Sie auf dem Blatt **Benutzerdefinierte Domänen und SSL** auf **Externe Domänen verwenden**. Die IP-Adresse befindet sich unten in diesem Bereich.
+7.	Klicken Sie auf dem Blatt **Benutzerdefinierte Domänen und SSL** auf **Externe Domänen einreichen**. Die IP-Adresse befindet sich unten in diesem Bereich.
 
 ## Erstellen von DNS-Einträgen
 
@@ -147,4 +148,4 @@ Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](../dns/dns
 [subdomain]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

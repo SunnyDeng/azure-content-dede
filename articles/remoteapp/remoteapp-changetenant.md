@@ -3,7 +3,7 @@
     pageTitle="Ändern des Azure Active Directory-Mandanten in Azure RemoteApp"
     description="Erfahren Sie, wie Sie den Azure Active Directory-Mandanten ändern, der Azure RemoteApp zugeordnet ist."
     services="remoteapp"
-	documentationCenter="" 
+    documentationCenter="" 
     authors="lizap"
     manager="mbaldwin" />
 
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="06/24/2015"
+    ms.date="08/12/2015"
     ms.author="elizapo" />
 
 
@@ -22,7 +22,7 @@
 
 Azure RemoteApp ermöglicht Benutzerzugriff mithilfe von Azure Active Directory (Azure AD). Der einzige Azure AD-Mandant, den Sie verwenden können, ist derjenige, der mit dem Azure-Abonnement verknüpft ist. Sie können das entsprechende Abonnement im Portal auf der Seite "Einstellungen" anzeigen. Prüfen Sie dafür die Spalte Verzeichnis auf der Registerkarte Abonnements.
 
-> [AZURE.NOTE]Damit die Änderung von Azure Active Directory erfolgreich ist, sollten Sie zunächst alle Benutzer des vorhandenen Azure Active Directory-Mandanten aus allen Azure RemoteApp-Sammlungen entfernen. Wechseln Sie zu diesem Zweck im Azure-Portal zur Registerkarte "Azure RemoteApp", und öffnen Sie die einzelnen Azure RemoteApp-Sammlungen. Klicken Sie auf die Registerkarte **Benutzer**, und entfernen Sie Benutzer, die zu Ihrem aktuellen Azure Active Directory-Mandanten gehören. Wiederholen Sie dies für alle vorhandenen Azure RemoteApp-Sammlungen. Ohne diese Schritte ist es nicht möglich, Sammlungen zu erstellen oder zu patchen.
+> [AZURE.NOTE]Um diese Änderung erfolgreich auszuführen, müssen Sie zunächst alle Benutzer für den vorhandenen Azure Active Directory-Mandanten aus allen Azure RemoteApp-Sammlungen entfernen. Wechseln Sie zu diesem Zweck im Azure-Portal zur Registerkarte "Azure RemoteApp", und öffnen Sie die einzelnen Azure RemoteApp-Sammlungen. Klicken Sie auf die Registerkarte **Benutzer**, und entfernen Sie Benutzer, die zu Ihrem aktuellen Azure Active Directory-Mandanten gehören. Wiederholen Sie dies für alle vorhandenen Azure RemoteApp-Sammlungen. Ohne diese Schritte ist es nicht möglich, Sammlungen zu erstellen oder zu patchen.
 
 Wenn Sie einen anderen Mandanten verwenden möchten, führen Sie die folgenden Schritte aus, um die Verknüpfung mit Ihrem Abonnement zu ändern:
 
@@ -48,4 +48,4 @@ Wenn Sie einen anderen Mandanten verwenden möchten, führen Sie die folgenden S
 
 Nun können Sie den neuen Azure AD-Mandanten für die Zugriffskontrolle auf das Azure-Abonnement und zum Konfigurieren des Benutzerzugriffs in Azure RemoteApp verwenden.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

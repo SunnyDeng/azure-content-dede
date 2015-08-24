@@ -9,7 +9,7 @@
 <tags 
    ms.service="application-gateway"
    ms.devlang="na"
-   ms.topic="hero-article" 
+   ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
    ms.date="06/30/2015"
@@ -229,4 +229,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

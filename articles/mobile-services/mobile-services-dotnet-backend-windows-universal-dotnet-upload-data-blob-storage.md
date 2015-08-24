@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hochladen von Bildern in Azure BLOB-Speicher über eine universelle Windows-App | Azure Mobile Services" 
+	pageTitle="Hochladen von Bildern in Azure-Blobspeicher über eine universelle Windows-App | Microsoft Azure" 
 	description="Erfahren Sie, wie mithilfe eines mobilen .NET Back-End-Dienstes Bilder in Azure-BLOB-Speicher hochladen und dann über Ihre universelle Windows-App darauf zugreifen." 
 	documentationCenter="windows" 
 	authors="ggailey777" 
@@ -71,4 +71,4 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

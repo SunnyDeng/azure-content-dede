@@ -1,9 +1,9 @@
 
 <properties 
-    pageTitle="Neuerungen in Azure RemoteApp"
+    pageTitle="Neuigkeiten in Azure RemoteApp"
     description="Erfahren Sie, welche Änderungen und Verbesserungen an Azure RemoteApp vorgenommen wurden." 
     services="remoteapp" 
-	documentationCenter="" 
+    documentationCenter="" 
     authors="lizap" 
     manager="mbaldwin" />
 
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="06/30/2015" 
+    ms.date="08/12/2015" 
     ms.author="elizapo" />
 
 
@@ -22,6 +22,16 @@
 
 Einer der Vorteile von RemoteApp ist, dass wir ständig an Verbesserungen arbeiten. Hier werden Sie über solche Änderungen informiert.
 
+## Juli 2015
+
+Im Juli wurden die für August geplanten Änderungen vorbereitet, deshalb gibt es neben verschiedenen Aktualisierungen an der Dokumentation nicht viel zu berichten. Nachfolgend werden die neuesten Änderungen aufgeführt:
+
+- Dem Portal wurde eine Registerkarte **Support** hinzugefügt, um einen leichteren Zugang zu Supportressourcen (z. B. den Foren) zu ermöglichen.
+- Die Informationen zur Problembehandlung beim Erstellen einer Hybridsammlung wurden überarbeitet. Sehen Sie sich die [neuesten und besten](remoteapp-hybridtrouble.md) Tipps zur Problembehandlung an, beispielsweise Informationen dazu, wie Sie die richtigen Ports für Ihr VNET ermitteln.
+- Die Dokumentation wurde um Informationen dazu ergänzt, wie [Benutzerdaten](remoteapp-upd.md) in Azure RemoteApp erstellt und gespeichert werden.
+- Die Dokumentation wurde um Informationen dazu ergänzt, wie [Apps gesperrt werden](remoteapp-secure.md).
+- Die [Cmdlets für Azure RemoteApp](https://msdn.microsoft.com/library/mt428031.aspx) wurden veröffentlicht.
+- Und schließlich wurde eine Konversation über die Terminologie mit einigen Azure RemoteApp-Benutzern gestartet. Sehen Sie sich an, inwiefern die Verweise auf verschiedene Sammlungsoptionen geändert wurden.
 
 ## Juni 2015
 
@@ -51,4 +61,4 @@ Möchten Sie Azure RemoteApp in der Praxis testen? Sehen Sie sich das Lernprogra
 
 Vielen Dank, dass Sie uns treu bleiben. Im nächsten Monat gibt es weitere Updates.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

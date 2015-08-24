@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Einführung zu Linux in Azure – Azure-Lernprogramm"
+	pageTitle="Einführung in Linux in Azure | Microsoft Azure"
 	description="Erfahren Sie, wie Sie virtuelle Linux-Computer in Azure verwenden."
 	services="virtual-machines"
 	documentationCenter="python"
@@ -110,4 +110,4 @@ Der Datenträger unter Linux kann vom Kernel den Namen `/dev/sdc` erhalten. Die 
  - **Siehe auch:** [Konfigurieren des Software-RAID unter Linux](virtual-machines-linux-configure-raid.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

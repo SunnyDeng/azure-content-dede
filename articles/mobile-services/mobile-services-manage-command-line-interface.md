@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwalten von Mobile Services über die Befehlszeile | Azure Mobile Services" 
+	pageTitle="Verwalten von Mobile Services über die Befehlszeile | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Azure Mobile Services mithilfe von Befehlszeilentools erstellen, bereitstellen und verwalten." 
 	services="mobile-services" 
 	documentationCenter="Mobile" 
@@ -184,4 +184,4 @@ Weitere Informationen über das Registrieren von Skripts finden Sie unter [Mobil
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

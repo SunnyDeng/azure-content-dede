@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Erste Schritte mit dem Azure-Blob-Speicher und verbundenen Visual Studio-Diensten" 
-	description="Erste Schritte mit Azure-BLOB-Speicher in einem Cloud-Dienstprojekt in Visual Studio" 
-	services="storage" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+	pageTitle="Erste Schritte mit dem Azure-Blob-Speicher und verbundenen Visual Studio-Diensten"
+	description="Erste Schritte mit Azure-BLOB-Speicher in einem Cloud-Dienstprojekt in Visual Studio"
+	services="storage"
+	documentationCenter=""
+	authors="patshea123"
+	manager="douge"
 	editor="tglee"/>
 
 <tags 
-	ms.service="storage" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.service="storage"
+	ms.workload="web"
+	ms.tgt_pltfrm="vs-getting-started"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2015"
 	ms.author="patshea123"/>
 
 # Erste Schritte mit dem Azure-Blob-Speicher und verbundenen Visual Studio-Diensten
@@ -262,10 +262,10 @@ Da die Beispielmethode eine asynchrone Methode aufruft, muss sie mit dem Schlüs
             continuationToken = resultSegment.ContinuationToken;
         }
         while (continuationToken != null);
-    }ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+    }
 
 ## Nächste Schritte
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

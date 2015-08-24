@@ -10,7 +10,7 @@
 <tags
    ms.service="service-fabric"
    ms.devlang="dotNet"
-   ms.topic="hero-article"
+   ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="07/29/2015"
@@ -53,4 +53,4 @@ Das ist alles! Sie können Visual Studio jetzt starten und mit dem Erstellen von
 
  [1]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI-Link"
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

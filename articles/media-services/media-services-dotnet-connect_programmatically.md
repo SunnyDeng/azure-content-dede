@@ -13,13 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="05/24/2015" 
+	ms.date="08/11/2015"  
 	ms.author="juliako"/>
 
 
 # Herstellen einer Verbindung mit einem Media Services-Konto über das Media Services SDK für .NET
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
+> [AZURE.SELECTOR]
+- [REST](media-services-rest-connect_programmatically.md)
+- [.NET](media-services-dotnet-connect_programmatically.md)
+
 
 In diesem Thema wird beschrieben, wie bei der Programmierung mit dem Media Services SDK für .NET eine programmgesteuerte Verbindung mit Microsoft Azure Media Services hergestellt wird.
 
@@ -171,14 +174,14 @@ Es wird dringend empfohlen, Verbindungswerte in der Konfiguration zu speichern. 
 Die folgende Datei „App.config“ enthält die erforderlichen Verbindungswerte. Die Werte im <appSettings>-Element sind die erforderlichen Werte, die Sie bei der Einrichtung des Media Services-Kontos erhalten haben.
 
 
-```
-&lt;configuration&gt;
-    &lt;appSettings&gt;
-	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" /&gt;
-    	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" /&gt;
-    &lt;/appSettings&gt;
-&lt;/configuration&gt;
-```
+<pre>
+&lt;configuration>
+    &lt;appSettings>
+	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
+    	&lt;add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
+    &lt;/appSettings>
+&lt;/configuration>
+</pre>
 
 Zum Abrufen von Verbindungswerten aus der Konfiguration können Sie die **ConfigurationManager**-Klasse verwenden und die Werte dann Feldern in Ihrem Code zuweisen:
 	
@@ -191,4 +194,4 @@ Zum Abrufen von Verbindungswerten aus der Konfiguration können Sie die **Config
 
 <!-- URLs. -->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

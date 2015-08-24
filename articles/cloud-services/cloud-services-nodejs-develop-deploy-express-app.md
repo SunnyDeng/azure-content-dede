@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Webanwendung mit Express (Node.js) – Azure-Lernprogramm" 
+	pageTitle="Web-App mit Express (Node.js) | Microsoft Azure" 
 	description="Dieses Lernprogramm baut auf dem Lernprogramm für Clouddienste auf und zeigt, wie das Express-Modul verwendet wird." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -86,7 +86,7 @@ Führen Sie die folgenden Schritte aus, um ein neues Cloud-Dienst-Projekt namens
 
 		var app = require('./app');
 
-	Diese Änderung ist erforderlich, da die Datei (ehemals **bin/www**,) in dasselbe Verzeichnis wie die benötigte App-Datei verschoben wurde. Speichern Sie die Datei **server.js** anschließend.
+	Diese Änderung ist erforderlich, da die Datei \(ehemals **bin/www**,\) in dasselbe Verzeichnis wie die benötigte App-Datei verschoben wurde. Speichern Sie die Datei **server.js** anschließend.
 
 8.  Verwenden Sie den folgenden Befehl, um die Anwendung im Azure-Emulator auszuführen:
 
@@ -108,7 +108,7 @@ Führen Sie die folgenden Schritte aus, um ein neues Cloud-Dienst-Projekt namens
 
 2.  Ändern Sie die letzte Textzeile, indem Sie **in Azure** anhängen.
 
-	![Die letzte Zeile in der Datei "index.jade" lautet: p Welcome to #{Title} in Azure](./media/cloud-services-nodejs-develop-deploy-express-app/node31.png)
+	![Die letzte Zeile in der Datei "index.jade" lautet: p Welcome to \#{Title} in Azure](./media/cloud-services-nodejs-develop-deploy-express-app/node31.png)
 
 3.  Speichern Sie die Datei, und beenden Sie den Editor.
 
@@ -135,4 +135,4 @@ Sobald die Bereitstellung abgeschlossen ist, wird der Browser geöffnet und die 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

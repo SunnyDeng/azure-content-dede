@@ -1,11 +1,11 @@
 
 1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
-2. Klicken Sie auf die Registerkarte **Push**, wählen Sie **Nur authentifizierte Benutzer** für **Berechtigungen** aus, und klicken Sie auf **Skript bearbeiten**.
+2. Klicken Sie auf die Registerkarte **Push**, wählen Sie **Nur authentifizierte Benutzer** für **Berechtigungen** aus, klicken Sie auf **Speichern** und anschließend auf **Skript bearbeiten**.
 	
 	Damit können Sie die Registrierungs-Rückruffunktion für Pushbenachrichtigungen anpassen. Wenn Sie den Quellcode mit Git bearbeiten, finden Sie dieselbe Registrierungsfunktion in `.\service\extensions\push.js`.
 
-3. Ersetzen Sie die vorhandene Funktion **register** durch den folgenden Code:
+3. Ersetzen Sie die vorhandene **Registrierungsfunktion** durch den folgenden Code. Klicken Sie dann auf **Speichern**.
 
 		exports.register = function (registration, registrationContext, done) {   
 		    // Get the ID of the logged-in user.
@@ -42,4 +42,4 @@
 
 4. Klicken Sie nacheinander auf den Pfeil für "Zurück", auf die Registerkarte **Daten**, auf **TodoItem** und auf **Skript**. Wählen Sie anschließend **Einfügen** aus.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

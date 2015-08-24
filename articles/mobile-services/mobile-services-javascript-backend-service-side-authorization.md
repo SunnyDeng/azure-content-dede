@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Dienstseitige Autorisierung von Bentuzern in einem mobilen JavaScript-Back-End-Dienst | Azure Mobile Services"
+	pageTitle="Dienstseitige Autorisierung von Benutzern in einem mobilen JavaScript-Back-End-Dienst | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Benutzer im JavaScript-Back-End von Azure Mobile Services autorisieren."
 	services="mobile-services"
 	documentationCenter=""
@@ -70,4 +70,4 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

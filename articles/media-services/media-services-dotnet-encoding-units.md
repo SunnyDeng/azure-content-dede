@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
 
 
@@ -21,8 +21,12 @@
 
 #Skalieren der Codierung mit .NET SDK
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).
-  
+
+> [AZURE.SELECTOR]
+- [Portal](media-services-portal-encoding-units.md)
+- [.NET](media-services-dotnet-encoding-units.md)
+- [REST](https://msdn.microsoft.com/library/azure/dn859236.aspx)
+
 ##Übersicht
 
 Ein Media Services-Konto ist dem Typ einer reservierten Einheit zugeordnet, der die Geschwindigkeit bestimmt, mit der Codierungsaufträge verarbeitet werden. Sie können zwischen den folgenden Typen reservierter Einheiten auswählen: Basic, Standard oder Premium. Derselbe Codierungsauftrag wird bei Verwendung der reservierten Einheit Standard beispielsweise schneller ausgeführt als mit dem Typ Basic. Weitere Informationen finden Sie im Blog "Encoding Reserved Unit Types" (Typen reservierter Codierungseinheiten, in englischer Sprache) von [Milan Gada](http://azure.microsoft.com/blog/author/milanga/).
@@ -70,4 +74,4 @@ Um ein Supportticket zu öffnen, gehen Sie folgendermaßen vor:
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

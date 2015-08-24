@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit Daten (Android) | Mobile Dev Center" 
+	pageTitle="Erste Schritte mit Daten (Android) | Microsoft Azure" 
 	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Android-App." 
 	services="mobile-services" 
 	documentationCenter="android" 
@@ -156,4 +156,4 @@ Nach Abschluss der Daten-Lernprogramme können Sie diese anderen Android-Lernpro
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

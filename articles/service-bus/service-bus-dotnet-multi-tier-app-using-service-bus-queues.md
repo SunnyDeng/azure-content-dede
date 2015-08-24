@@ -1,12 +1,11 @@
 <properties
-	pageTitle=".NET-Anwendungen mit mehreren Ebenen – Azure-Lernprogramm"
+	pageTitle=".NET-Anwendungen mit mehreren Ebenen | Microsoft Azure"
 	description="Ein Lernprogramm, das Ihnen hilft, eine Anwendung mit mehreren Ebenen in Azure zu erstellen, die Service Bus-Warteschlangen für die Kommunikation zwischen Ebenen verwendet. Beispiele in .NET."
 	services="service-bus"
 	documentationCenter=".net"
 	authors="sethmanheim"
 	manager="timlt"
 	editor=""/>
-
 
 <tags
 	ms.service="service-bus"
@@ -16,7 +15,6 @@
 	ms.topic="hero-article"
 	ms.date="07/02/2015"
 	ms.author="sethm"/>
-
 
 # .NET-Anwendungen mit mehreren Ebenen unter Verwendung von Service Bus-Warteschlangen
 
@@ -45,7 +43,7 @@ Hier wird ein Screenshot der fertigen Anwendung angezeigt:
 
 Um eine Bestellung zur Verarbeitung zu übermitteln, muss die Front-End-GUI in ihrer Funktion als Webrolle mit der Logikkomponente in der mittleren Ebene interagieren, die eine Arbeiterrolle erfüllt. Dieses Beispiel verwendet die verwaltete Servicebus-Messaging-Funktion für die Kommunikation zwischen Ebenen.
 
-Durch die verwaltete Messaging-Funktion zwischen Web- und mittlerer Ebene werden die Komponenten voneinander entkoppelt. Im Gegensatz zur direkten Kommunikation (z. B. per TCP oder HTTP) verbindet sich die Webebene nicht direkt mit der mittleren Ebene, sondern schiebt Arbeitseinheiten in Form von Nachrichten zum Servicebus, der diese zuverlässig aufbewahrt, bis die mittlere Ebene diese konsumieren und verarbeiten kann.
+Durch die verwaltete Messaging-Funktion zwischen Web- und mittlerer Ebene werden die Komponenten voneinander entkoppelt. Im Gegensatz zur direkten Kommunikation \(z. B. per TCP oder HTTP\) verbindet sich die Webebene nicht direkt mit der mittleren Ebene, sondern schiebt Arbeitseinheiten in Form von Nachrichten zum Servicebus, der diese zuverlässig aufbewahrt, bis die mittlere Ebene diese konsumieren und verarbeiten kann.
 
 Service Bus bietet zwei Entitäten für das Brokermessaging: Warteschlangen und Themen. Mit Warteschlangen wird jede Nachricht von einem einzelnen Empfänger konsumiert. Themen unterstützen das Veröffentlichungs- und Abonnementsmuster, mit dem jede veröffentlichte Nachricht den für das entsprechende Thema registrierten Abonnements zugänglich gemacht wird. Jedes Abonnement pflegt eine eigene Nachrichten-Warteschlange. Abonnements können mit Filterregeln konfiguriert werden. Diese sorgen dafür, dass nur Nachrichten in der Abonnement-Warteschlange landen, welche die Filterregeln erfüllen. Dieses Beispiel verwendet Servicebus-Warteschlangen.
 
@@ -55,7 +53,7 @@ Dieser Kommunikationsmechanismus bietet verschiedene Vorteile gegenüber direkte
 
 -   **Zeitliche Entkopplung.** Dank des asynchronen Nachrichtenmusters müssen Producer und Consumer nicht gleichzeitig online sein. Der Servicebus speichert die Nachrichten zuverlässig, bis der Consumer diese entgegennehmen kann. Auf diese Weise können die Komponenten verteilter Anwendungen voneinander entkoppelt werden, z. B. zu Wartungszwecken oder bei einem Komponentenausfall, ohne das Gesamtsystem zu beeinträchtigen. Außerdem genügt es unter Umständen, wenn die konsumierende Anwendung nur zu bestimmten Tageszeiten online ist.
 
--   **Belastungsausgleich.** In vielen Anwendungen schwankt die Systemlast mit der Zeit, während die Bearbeitungszeit pro Arbeitseinheit normalerweise konstant ist. Durch die Einführung einer Warteschlange zwischen Nachrichtenproducer und Consumer muss der Consumer (Arbeiter) anstatt der Spitzenlast nur die durchschnittliche Last verarbeiten können. Die Länge der Warteschlange schwankt ebenso wie die eingehende Last. Dies ermöglicht direkte Einsparungen bei der Infrastruktur, die zur Bearbeitung der Anwendungslast benötigt wird.
+-   **Belastungsausgleich.** In vielen Anwendungen schwankt die Systemlast mit der Zeit, während die Bearbeitungszeit pro Arbeitseinheit normalerweise konstant ist. Durch die Einführung einer Warteschlange zwischen Nachrichtenproducer und Consumer muss der Consumer \(Arbeiter\) anstatt der Spitzenlast nur die durchschnittliche Last verarbeiten können. Die Länge der Warteschlange schwankt ebenso wie die eingehende Last. Dies ermöglicht direkte Einsparungen bei der Infrastruktur, die zur Bearbeitung der Anwendungslast benötigt wird.
 
 -   **Lastenausgleich.** Mit zunehmender Last können zusätzliche Arbeitsprozesse zur Verarbeitung der Warteschlange eingesetzt werden. Jede Nachricht wird nur von einem der Arbeitsprozesse verarbeitet. Außerdem ermöglicht dieser entnahmebasierte Lastenausgleich eine optimale Auslastung der Arbeiter, selbst wenn sich deren Rechenleistung stark unterscheidet, da jeder Arbeiter die Nachrichten mit seinem eigenen Maximaldurchsatz aus der Warteschlange entnimmt. Dieses Schema nennt man auch das "Konkurrierende Consumer"-Schema.
 
@@ -87,7 +85,7 @@ Bevor Sie mit der Entwicklung Ihrer Azure-Anwendung beginnen können, laden Sie 
 
 ## Einrichten des Service Bus-Namespace
 
-Der nächste Schritt ist die Einrichtung des Dienstnamespace und das Abrufen eines SAS (Shared Access Signature)-Schlüssels. Ein Dienstnamespace stellt eine Anwendungsgrenze für jede Anwendung, die über Service Bus zur Verfügung steht. Das System generiert einen SAS-Schlüssel, wenn ein Dienstnamespace erstellt wird. Dienstnamespace und SAS-Schlüssel bilden gemeinsam die Anmeldeinformationen, mit denen sich der Servicebus gegenüber der Anwendung authentifiziert.
+Der nächste Schritt ist die Einrichtung des Dienstnamespace und das Abrufen eines SAS \(Shared Access Signature\)-Schlüssels. Ein Dienstnamespace stellt eine Anwendungsgrenze für jede Anwendung, die über Service Bus zur Verfügung steht. Das System generiert einen SAS-Schlüssel, wenn ein Dienstnamespace erstellt wird. Dienstnamespace und SAS-Schlüssel bilden gemeinsam die Anmeldeinformationen, mit denen sich der Servicebus gegenüber der Anwendung authentifiziert.
 
 Namespaces und Entitäten für die Service Bus-Nachrichten können auch im Visual Studio Server-Explorer verwaltet werden, neue Namespaces können dagegen nur im Portal erstellt werden.
 
@@ -103,7 +101,7 @@ Namespaces und Entitäten für die Service Bus-Nachrichten können auch im Visua
 
 4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.![][7]
 
-5.  Wählen Sie nach der Bestätigung, dass der Name für den Namespace verfügbar ist, das Land oder die Region, wo dieser Namespace gehostet werden soll. (Stellen Sie sicher, dass dies dasselbe Land/dieselbe Region ist, in dem/der sie Ihre Rechnerressourcen einsetzen.) Stellen Sie außerdem sicher, dass Sie **Messaging** im Namespace **Typ**-Feld und **Standard** im **Messaging-Ebene**-Feld auswählen.
+5.  Wählen Sie nach der Bestätigung, dass der Name für den Namespace verfügbar ist, das Land oder die Region, wo dieser Namespace gehostet werden soll. \(Stellen Sie sicher, dass dies dasselbe Land/dieselbe Region ist, in dem/der sie Ihre Rechnerressourcen einsetzen.\) Stellen Sie außerdem sicher, dass Sie **Messaging** im Namespace **Typ**-Feld und **Standard** im **Messaging-Ebene**-Feld auswählen.
 
     WICHTIG: Wählen Sie **dieselbe Region**, in der Sie auch Ihre Anwendung einsetzen möchten. Dies sorgt für die beste Leistung.
 
@@ -131,14 +129,14 @@ In diesem Abschnitt lernen Sie, das Front-End Ihrer Anwendung zu erstellen. Zun�
 
 ### Erstellen des Projekts
 
-1.  Starten Sie entweder Microsoft Visual Studio 2013 oder Microsoft Visual Studio Express mit Administratorrechten. Um Visual Studio mit Administratorrechten zu starten, klicken Sie mit der rechten Maustaste auf **Microsoft Visual Studio 2013 (oder Microsoft Visual Studio Express)** und klicken Sie anschließend auf **Als Administrator ausführen**. Für den ebenfalls in diesem Leitfaden behandelten Azure-Serveremulator muss Visual Studio mit Administratorrechten gestartet werden.
+1.  Starten Sie entweder Microsoft Visual Studio 2013 oder Microsoft Visual Studio Express mit Administratorrechten. Um Visual Studio mit Administratorrechten zu starten, klicken Sie mit der rechten Maustaste auf **Microsoft Visual Studio 2013 \(oder Microsoft Visual Studio Express\)** und klicken Sie anschließend auf **Als Administrator ausführen**. Für den ebenfalls in diesem Leitfaden behandelten Azure-Serveremulator muss Visual Studio mit Administratorrechten gestartet werden.
 
     Klicken Sie in Visual Studio im Menü **Datei** auf **Neu** und anschließend auf **Projekt**.
 
     ![][8]
 
 
-2.  Klicken Sie im Menü **Installierte Vorlagen** unter **Visual C#** auf **Cloud** und anschließend auf **Azure-Clouddienst**. Geben Sie dem Projekt den Namen **MultiTierApp**. Klicken Sie dann auf **OK**.
+2.  Klicken Sie im Menü **Installierte Vorlagen** unter **Visual C\#** auf **Cloud** und anschließend auf **Azure-Clouddienst**. Geben Sie dem Projekt den Namen **MultiTierApp**. Klicken Sie dann auf **OK**.
 
     ![][9]
 
@@ -146,7 +144,7 @@ In diesem Abschnitt lernen Sie, das Front-End Ihrer Anwendung zu erstellen. Zun�
 
     ![][10]
 
-4.  Zeigen Sie auf **WebRole1** unter **Azure-Clouddienst-Lösung**, klicken Sie auf das Stiftsymbol und geben Sie der Webrolle den Namen **FrontendWebRole**. Klicken Sie anschließend auf **OK**. (Achten Sie darauf „Frontend“ mit kleinem „e“ einzugeben, nicht als „FrontEnd“.)
+4.  Zeigen Sie auf **WebRole1** unter **Azure-Clouddienst-Lösung**, klicken Sie auf das Stiftsymbol und geben Sie der Webrolle den Namen **FrontendWebRole**. Klicken Sie anschließend auf **OK**. \(Achten Sie darauf „Frontend“ mit kleinem „e“ einzugeben, nicht als „FrontEnd“.\)
 
     ![][11]
 
@@ -238,7 +236,7 @@ In diesem Abschnitt erstellen Sie die verschiedenen Seiten, aus denen Ihre Anwen
 
 4.  Klicken Sie im Menü **Build** auf **Projektmappe erstellen**, um die Richtigkeit Ihrer bisherigen Arbeit zu überprüfen.
 
-5.  Anschließend erstellen Sie die Ansicht für die neu erstellte **Submit()**-Methode. Klicken Sie mit der rechten Maustaste innerhalb der Submit()-Methode und wählen Sie **Ansicht hinzufügen**
+5.  Anschließend erstellen Sie die Ansicht für die neu erstellte **Submit\(\)**-Methode. Klicken Sie mit der rechten Maustaste innerhalb der Submit\(\)-Methode und wählen Sie **Ansicht hinzufügen**
 
     ![][14]
 
@@ -248,7 +246,7 @@ In diesem Abschnitt erstellen Sie die verschiedenen Seiten, aus denen Ihre Anwen
 
 7.  Klicken Sie auf **Hinzufügen**.
 
-8.  Ändern Sie nun den angezeigten Namen Ihrer Anwendung. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei \*\*Views\\Shared\\\_Layout.cshtml\*\*, um diese im Visual Studio-Editor zu öffnen.
+8.  Ändern Sie nun den angezeigten Namen Ihrer Anwendung. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei **Views\\Shared\\\_Layout.cshtml**, um diese im Visual Studio-Editor zu öffnen.
 
 9.  Ersetzen Sie alle Vorkommnisse von **My ASP.NET Application** mit **LITWARE's Products**.
 
@@ -256,7 +254,7 @@ In diesem Abschnitt erstellen Sie die verschiedenen Seiten, aus denen Ihre Anwen
 
 	![][28]
 
-11. Erweitern Sie anschließend die Übermittlungsseite um einige Informationen zur Warteschlange. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei **Views\\Home\\Submit.cshtml**, um diese im Visual Studio-Editor zu öffnen. Fügen Sie die folgende Zeile nach **&lt;h2>Submit&lt;/h2>** hinzu. **ViewBag.MessageCount** ist momentan leer. Sie werden diesen Bereich später ausfüllen.
+11. Erweitern Sie anschließend die Übermittlungsseite um einige Informationen zur Warteschlange. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei **Views\\Home\\Submit.cshtml**, um diese im Visual Studio-Editor zu öffnen. Fügen Sie die folgende Zeile nach **&lt;h2\>Submit&lt;/h2\>** hinzu. **ViewBag.MessageCount** ist momentan leer. Sie werden diesen Bereich später ausfüllen.
 
         <p>Current number of orders in queue waiting to be processed: @ViewBag.MessageCount</p>
 
@@ -269,11 +267,11 @@ In diesem Abschnitt erstellen Sie die verschiedenen Seiten, aus denen Ihre Anwen
 
 Sie werden nun den Code für die Übermittlung von Elementen in die Warteschlange hinzufügen. Erstellen Sie zunächst die Klasse mit den Verbindungsinformationen für die Servicebus-Warteschlange. Anschließend initialisieren Sie Ihre Verbindung in der Klasse **Global.aspx.cs**. Zuletzt aktualisieren Sie den zuvor in **HomeController.cs** erstellten Code, um die Elemente an die Service Bus-Warteschlange zu übermitteln.
 
-1.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **FrontendWebRole** (klicken Sie auf das Projekt, nicht auf die Rolle). Klicken Sie auf **Hinzufügen** und anschließend auf **Klasse**.
+1.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **FrontendWebRole** \(klicken Sie auf das Projekt, nicht auf die Rolle\). Klicken Sie auf **Hinzufügen** und anschließend auf **Klasse**.
 
 2.  Geben Sie der Klasse den Namen **QueueConnector.cs**. Klicken Sie auf **Hinzufügen**, um die Klasse zu erstellen.
 
-3.  Sie werden nun den Code hinzufügen, der Ihre Verbindungsinformationen kapselt und die Verbindung zur Servicebus-Warteschlange initialisiert. Fügen Sie in QueueConnector.cs den folgenden Code hinzu und geben Sie Werte für **Namespace** (Ihren Dienstnamespace) und **yourKey** ein, dabei handelt es sich um den SAS-Schlüssel, den Sie weiter oben über das [Azure-Verwaltungsportal][Azure Management Portal] erhalten haben.
+3.  Sie werden nun den Code hinzufügen, der Ihre Verbindungsinformationen kapselt und die Verbindung zur Servicebus-Warteschlange initialisiert. Fügen Sie in QueueConnector.cs den folgenden Code hinzu und geben Sie Werte für **Namespace** \(Ihren Dienstnamespace\) und **yourKey** ein, dabei handelt es sich um den SAS-Schlüssel, den Sie weiter oben über das [Azure-Verwaltungsportal][Azure Management Portal] erhalten haben.
 
         using System;
         using System.Collections.Generic;
@@ -343,7 +341,7 @@ Sie werden nun den Code für die Übermittlung von Elementen in die Warteschlang
 
 6.  Zuletzt aktualisieren Sie den zuvor erstellten Webcode, um die Elemente an die Warteschlange zu übermitteln. Doppelklicken Sie im **Projektmappen-Explorer** auf **Controllers\\HomeController.cs**.
 
-7.  Aktualisieren Sie die **Submit()**-Methode wie folgt, um die Anzahl der Nachrichten in der Warteschlange abzurufen:
+7.  Aktualisieren Sie die **Submit\(\)**-Methode wie folgt, um die Anzahl der Nachrichten in der Warteschlange abzurufen:
 
         public ActionResult Submit()
         {
@@ -358,7 +356,7 @@ Sie werden nun den Code für die Übermittlung von Elementen in die Warteschlang
             return View();
         }
 
-8.  Aktualisieren Sie die **Submit(OnlineOrder order)**-Methode wie folgt, um Informationen an die Warteschlange zu übermitteln:
+8.  Aktualisieren Sie die **Submit\(OnlineOrder order\)**-Methode wie folgt, um Informationen an die Warteschlange zu übermitteln:
 
         public ActionResult Submit(OnlineOrder order)
         {
@@ -385,16 +383,15 @@ Sie werden nun den Code für die Übermittlung von Elementen in die Warteschlang
 
 Die **GetSettings** -Methode in der **Microsoft.WindowsAzure.Configuration.CloudConfigurationManager** -Klasse ermöglicht es Ihnen, Konfigurationseinstellungen aus dem Konfigurationsspeicher für Ihre Plattform zu lesen. Wenn Ihr Code zum Beispiel in einer Web- oder Workerrolle ausgeführt wird, liest die **GetSettings**-Methode die Datei „ServiceConfiguration.cscfg“ und wenn Ihr Code in eine Standard-Konsolenanwendung ausgeführt wird, liest die **GetSettings**-Methode die Datei „App.config“.
 
-Wenn Sie eine Verbindungszeichenfolge für Ihren Servicebus-Namespace in einer Konfigurationsdatei speichern, können Sie die **GetSettings**-Methode verwenden, um eine Verbindungszeichenfolge zu lesen, die Sie zum Instanziiern eines **NamespaceMananger**-Objekts verwenden können. Sie können eine **NamespaceMananger**-Instanz verwenden, um den Servicebus-Namespace programmatisch zu konfigurieren. Sie können die gleiche Verbindungszeichenfolge verwenden, um ein Clientobjekt zu instanziieren (z. B. **QueueClient**, **TopicClient**, und **EventHubClient**-Objekt), das Sie nutzen können, um Vorgänge wie das Senden und Empfangen von Nachrichten während des laufenden Betriebs durchzuführen.
+Wenn Sie eine Verbindungszeichenfolge für Ihren Servicebus-Namespace in einer Konfigurationsdatei speichern, können Sie die **GetSettings**-Methode verwenden, um eine Verbindungszeichenfolge zu lesen, die Sie zum Instanziiern eines **NamespaceMananger**-Objekts verwenden können. Sie können eine **NamespaceMananger**-Instanz verwenden, um den Servicebus-Namespace programmatisch zu konfigurieren. Sie können die gleiche Verbindungszeichenfolge verwenden, um ein Clientobjekt zu instanziieren \(z. B. **QueueClient**, **TopicClient**, und **EventHubClient**-Objekt\), das Sie nutzen können, um Vorgänge wie das Senden und Empfangen von Nachrichten während des laufenden Betriebs durchzuführen.
 
 ### Verbindungszeichenfolge
 
-Sie können die Konfigurationsdaten als Verbindungszeichenfolge angeben, um einen Client zu instanziieren (z. B. einen Service Bus-**QueueClient**). Auf der Clientseite existiert die `CreateFromConnectionString()` Methode, die diesen Clienttyp anhand der Verbindungszeichenfolge instanziiert. Als Beispiel dient der folgende Konfigurationsabschnitt:
+Sie können die Konfigurationsdaten als Verbindungszeichenfolge angeben, um einen Client zu instanziieren \(z. B. einen Service Bus-**QueueClient**\). Auf der Clientseite existiert die `CreateFromConnectionString()` Methode, die diesen Clienttyp anhand der Verbindungszeichenfolge instanziiert. Als Beispiel dient der folgende Konfigurationsabschnitt:
 
 	<ConfigurationSettings>
     ...
     	<Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://[yourServiceNamespace].servicebus.windows.net/;SharedSecretIssuer=RootManageSharedAccessKey;SharedSecretValue=[yourKey]" />
-
 	</ConfigurationSettings>
 
 Der folgende Code ruft die Verbindungszeichenfolge ab, erstellt eine Warteschlange und initialisiert die Verbindung zur Warteschlange:
@@ -440,13 +437,13 @@ Sie werden nun die Workerrolle zur Verarbeitung der übermittelten Nachrichten e
 
 	![][24]
 
-7.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die in Schritt 5 erstellte **OrderProcessingRole** (klicken Sie auf **OrderProcessingRole** unter **Rollen**, nicht auf die Klasse). Klicken Sie anschließend auf **Eigenschaften**.
+7.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die in Schritt 5 erstellte **OrderProcessingRole** \(klicken Sie auf **OrderProcessingRole** unter **Rollen**, nicht auf die Klasse\). Klicken Sie anschließend auf **Eigenschaften**.
 
 8.  Klicken Sie in der Registerkarte **Einstellungen** im Dialogfeld **Eigenschaften** in das Textfeld **Wert** für **Microsoft.ServiceBus.ConnectionString** und fügen Sie den in Schritt 6 kopierten Endpunktwert ein.
 
 	![][25]
 
-9.  Erstellen Sie die **OnlineOrder**-Klasse, um die Nachrichten abzubilden, während diese aus der Warteschlange verarbeitet werden. Sie können dabei eine zuvor erstellte Klasse wiederverwenden. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **OrderProcessingRole** (klicken Sie auf das Projekt, nicht auf die Rolle). Klicken Sie auf **Hinzufügen** und anschließend auf **Vorhandenes Element**.
+9.  Erstellen Sie die **OnlineOrder**-Klasse, um die Nachrichten abzubilden, während diese aus der Warteschlange verarbeitet werden. Sie können dabei eine zuvor erstellte Klasse wiederverwenden. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **OrderProcessingRole** \(klicken Sie auf das Projekt, nicht auf die Rolle\). Klicken Sie auf **Hinzufügen** und anschließend auf **Vorhandenes Element**.
 
 10. Durchsuchen Sie den Unterordner nach **FrontendWebRole\\Models** und doppelklicken Sie auf **OnlineOrder.cs**, um die Klasse zum Projekt hinzuzufügen.
 
@@ -543,4 +540,4 @@ Informationen zum Bereitstellen des Front-Ends für eine Azure-Website finden Si
   [executionmodels]: http://azure.microsoft.com/develop/net/fundamentals/compute/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

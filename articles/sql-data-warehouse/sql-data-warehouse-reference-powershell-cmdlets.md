@@ -20,7 +20,7 @@
 
 Für die Verwaltung von SQL Data Warehouse können entweder Azure PowerShell-Cmdlets oder REST-APIs verwendet werden.
 
-Die Befehle für **Azure SQL-Datenbank** werden auch für **SQL Data Warehouse** verwendet. Eine aktuelle Liste finden Sie unter [Azure SQL-Cmdlets](https://msdn.microsoft.com/library/azure/dn546726.aspx). Die Cmdlets **Suspend-AzureSqlDatabase** und **Resume-AzureSqlDatabase** (siehe weiter unten) wurden speziell für SQL Data Warehouse hinzugefügt.
+Die Befehle für **Azure SQL-Datenbank** werden auch für **SQL Data Warehouse** verwendet. Eine aktuelle Liste finden Sie unter [Azure SQL-Cmdlets](https://msdn.microsoft.com/library/azure/dn546726.aspx). Die Cmdlets **Suspend-AzureSqlDatabase** und **Resume-AzureSqlDatabase** \(siehe weiter unten\) wurden speziell für SQL Data Warehouse hinzugefügt.
 
 Analog dazu können die REST-APIs für **SQL Azure-Datenbank** auch für Instanzen von **SQL Data Warehouse** verwendet werden. Eine aktuelle Liste finden Sie unter [Vorgänge für Azure SQL-Datenbanken](https://msdn.microsoft.com/library/azure/dn505719.aspx).
 
@@ -67,7 +67,14 @@ In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server 
 
 ## Get-AzureSqlDatabaseRestorePoints
 
-Dieses Cmdlet führt die Sicherungswiederherstellungspunkte für eine Azure SQL-Datenbank auf. Die Wiederherstellungspunkte dienen zum Wiederherstellen der Datenbank. Das zurückgegebene Objekt besitzt folgende Eigenschaften: <table> <tr> <td>Eigenschaft</td> <td>Beschreibung</td> </tr> <tr> <td>RestorePointType</td> <td>DISCRETE / CONTINUOUS. Diskrete Wiederherstellungspunkte beschreiben die möglichen Zeitpunkte, zu denen eine Azure SQL-Datenbank wiederhergestellt werden kann. Kontinuierliche Wiederherstellungspunkte beschreiben die frühestmöglichen Zeitpunkte, zu denen eine Azure SQL-Datenbank wiederhergestellt werden kann. Die Datenbank kann zu jedem Zeitpunkt wiederhergestellt werden, der nach dem frühestmöglichen Zeitpunkt liegt.</td> </tr> <tr> <td>EarliestRestoreDate</td> <td>Frühestmögliche Wiederherstellungszeit (angegeben bei „restorePointType = CONTINUOUS“)</td> </tr> <tr> <td>RestorePointCreationDate </td> <td>Zeitpunkt der Sicherungsmomentaufnahme (angegeben bei „restorePointType = DISCRETE“)</td> </tr> </table>
+Dieses Cmdlet führt die Sicherungswiederherstellungspunkte für eine Azure SQL-Datenbank auf. Die Wiederherstellungspunkte dienen zum Wiederherstellen der Datenbank. Das zurückgegebene Objekt besitzt folgende Eigenschaften:
+
+Eigenschaft|Beschreibung
+---|---
+RestorePointType|DISCRETE/CONTINUOUS. Diskrete Wiederherstellungspunkte beschreiben die möglichen Zeitpunkte, zu denen eine Azure SQL-Datenbank wiederhergestellt werden kann. Kontinuierliche Wiederherstellungspunkte beschreiben die frühestmöglichen Zeitpunkte, zu denen eine Azure SQL-Datenbank wiederhergestellt werden kann. Die Datenbank kann zu jedem Zeitpunkt wiederhergestellt werden, der hinter dem frühestmöglichen Zeitpunkt liegt.
+EarliestRestoreDate|Früheste Wiederherstellungszeit \(wird aufgefüllt, wenn "restorePointType" = CONTINUOUS ist\)
+RestorePointCreationDate |Uhrzeit der Sicherungsmomentaufnahme \(aufgefüllt, wenn "restorePointType = DISCRETE"\)
+
 ### Beispiel 1: Abrufen der Wiederherstellungspunkte einer Datenbank auf einem Server anhand des Namens
 In diesem Beispiel werden die Wiederherstellungspunkte für eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet.
 
@@ -99,4 +106,4 @@ Weitere Referenzinformationen finden Sie unter [SQL Data Warehouse-Referenz – 
 [yah]: http://search.yahoo.com/
 [msn]: http://search.msn.com/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

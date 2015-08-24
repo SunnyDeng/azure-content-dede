@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="05/23/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 #Arbeiten mit Kanälen, die Livedatenströme mit mehreren Bitraten von lokalen Encodern empfangen
@@ -330,4 +330,4 @@ Informationen zum Skalieren von Streamingeinheiten finden Sie unter [Skalieren v
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

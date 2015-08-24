@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="08/11/2015"  
 	ms.author="juliako"/>
 
 #Codieren Ihrer Medien mit Dolby Digital Plus
@@ -651,4 +651,4 @@ Alle Attribute werden im Folgenden beschrieben.
 **TruePeak**: Dieses Ergebnis enthält den größten absoluten True Peak-Wert in jedem Kanal, seit die Messung zurückgesetzt wurde. Eine Beschreibung von True Peak finden Sie unter ITU‐R BS.1770‐2. Die Werte liegen im Bereich von -70 bis 12.04 dBTP.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

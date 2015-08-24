@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (Windows Store JavaScript) | Mobile Dev Center" 
+	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (Windows Store JavaScript) | Microsoft Azure" 
 	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Windows Store-JavaScript-App." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -141,4 +141,4 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer Windows Store
 [Mobile Services HTML/JavaScript How-to Conceptual Reference]: mobile-services-html-how-to-use-client-library.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

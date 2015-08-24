@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwenden von Offlinedaten mit mobilen Azure-Apps (Windows Store) | Mobile Dev Center"
+	pageTitle="Verwenden von Offlinedaten mit mobilen Azure-Apps (Windows Store) | Microsoft Azure"
 	description="Erfahren Sie, wie Sie eine mobile Azure-App verwenden, um Offlinedaten in Ihrer Windows Store-Anwendung zwischenzuspeichern und zu synchronisieren."
 	documentationCenter="windows"
 	authors="christopheranderson"
@@ -37,13 +37,13 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 * Visual Studio 2013 für Windows 8.1.
 * Durchführung des Lernprogramms [Erstellen einer Windows-App][create a windows app].
-* [Azure Mobile Services SDK Version 2.0.0 (oder höher)][azure mobile app sdk nuget]
-* [Azure Mobile Services SQLite Store Version 1.0.2 (oder höher)][sqlite store nuget]
+* [Azure Mobile Services SDK Version 2.0.0 \(oder höher\)][azure mobile app sdk nuget]
+* [Azure Mobile Services SQLite Store Version 1.0.2 \(oder höher\)][sqlite store nuget]
 * [SQLite für Windows 8.1](www.sqlite.org/downloads)
 
 >[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=AE564AB28" target="_blank">Kostenlose Azure-Testversion</a>.
 
-##<a name="review"></a>Überprüfen der Konfiguration der Serverprojekts (optional)
+##<a name="review"></a>Überprüfen der Konfiguration der Serverprojekts \(optional\)
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-enable-offline-preview](../../includes/app-service-mobile-dotnet-backend-enable-offline-preview.md)]
 
@@ -199,7 +199,7 @@ In diesem Abschnitt ändern Sie die Anwendung so, dass sie bei Einfüge- und Upd
 
 3. Kommentieren Sie in `InitLocalStoreAsync()` den Aufruf von `SyncAsync()` aus, sodass die App beim Start keine Synchronisierung durchführt.
 
-4. Drücken Sie **F5**, um die Anwendung zu erstellen und auszuführen. Geben Sie neue "todoitems" ein, und klicken Sie jeweils auf **Speichern**. Die neuen Todo-Elemente existieren nur im lokalen Speicher, bis sie per Push zum mobilen App-Back-End übertragen werden können. Die Client-App verhält sich so, als ob eine Verbindung zum mobilen App-Back-End vorhanden wäre, und unterstützt alle Erstellungs-, Lese-, Aktualisierungs- und Löschaktionen (CRUD).
+4. Drücken Sie **F5**, um die Anwendung zu erstellen und auszuführen. Geben Sie neue "todoitems" ein, und klicken Sie jeweils auf **Speichern**. Die neuen Todo-Elemente existieren nur im lokalen Speicher, bis sie per Push zum mobilen App-Back-End übertragen werden können. Die Client-App verhält sich so, als ob eine Verbindung zum mobilen App-Back-End vorhanden wäre, und unterstützt alle Erstellungs-, Lese-, Aktualisierungs- und Löschaktionen \(CRUD\).
 
 5. Schließen Sie die App, und starten Sie sie neu, um zu überprüfen, ob die neuen Elemente dauerhaft im lokalen Speicher gespeichert wurden.
 
@@ -213,7 +213,7 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen App-Back-End. D
 
 3. Melden Sie sich beim Azure-Portal an, und überprüfen Sie die Datenbank für das mobile App-Back-End.
 
-    Wechseln Sie in Visual Studio zu **Server-Explorer** -> **Azure** -> **SQL-Datenbanken**. Klicken Sie mit der rechten Maustaste auf Ihre Datenbank, und wählen Sie **In SQL Server-Objekt-Explorer öffnen** aus.
+    Wechseln Sie in Visual Studio zu **Server-Explorer** -\> **Azure** -\> **SQL-Datenbanken**. Klicken Sie mit der rechten Maustaste auf Ihre Datenbank, und wählen Sie **In SQL Server-Objekt-Explorer öffnen** aus.
 
     Beachten Sie, dass die Daten zwischen Datenbank und lokalem Speicher nicht synchronisiert wurden.
 
@@ -236,13 +236,13 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
 *  Anschließend haben Sie `IMobileServiceSyncContext.PushAsync()` aufgerufen, um die Änderungen per Push-Vorgang auf den Server zu übertragen. Diese Methode ist ein Element von `IMobileServicesSyncContext` und nicht der Synchronisierungstabelle, da Änderungen per Push auf alle Tabellen übertragen werden.
 
-    Nur Datensätze, die lokal geändert wurden (mit CRUD-Operationen), werden an den Server gesendet.
+    Nur Datensätze, die lokal geändert wurden \(mit CRUD-Operationen\), werden an den Server gesendet.
 
 * Um Daten per Pull-Vorgang von einer Tabelle auf dem Server in die App zu übertragen, haben Sie `IMobileServiceSyncTable.PullAsync` aufgerufen.
 
     Ein Pull-Vorgang führt immer zuerst einen Push-Vorgang aus. Dadurch wird sichergestellt, dass alle Tabellen im lokalen Speicher und die Beziehungen konsistent bleiben.
 
-    Es gibt auch Überladungen von `PullAsync()`, die es ermöglichen, eine Abfrage zu bestimmen, um die Daten zu filtern, die auf dem Client gespeichert sind. Wenn eine Abfrage nicht weitergegeben wird, bezieht `PullAsync()` alle Zeilen in der entsprechenden Tabelle (oder Abfrage). Sie können die Abfrage weitergeben, um nur die Änderungen zu filtern, mit denen Ihre App synchronisiert werden soll.
+    Es gibt auch Überladungen von `PullAsync()`, die es ermöglichen, eine Abfrage zu bestimmen, um die Daten zu filtern, die auf dem Client gespeichert sind. Wenn eine Abfrage nicht weitergegeben wird, bezieht `PullAsync()` alle Zeilen in der entsprechenden Tabelle \(oder Abfrage\). Sie können die Abfrage weitergeben, um nur die Änderungen zu filtern, mit denen Ihre App synchronisiert werden soll.
 
 * Um die inkrementelle Synchronisierung zu aktivieren, übergeben Sie eine Abfrage-ID an `PullAsync()`. Die Abfrage-ID wird verwendet, um den zuletzt aktualisierten Zeitstempel aus den Ergebnissen des letzten Pullvorgangs zu speichern. Die Abfrage-ID muss eine beschreibende Zeichenfolge sein, die für jede logische Abfrage in Ihrer App eindeutig ist. Wenn die Abfrage einen Parameter aufweist, muss derselbe Parameterwert Teil der Abfrage-ID sein.
 
@@ -278,4 +278,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [sqlite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.2
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

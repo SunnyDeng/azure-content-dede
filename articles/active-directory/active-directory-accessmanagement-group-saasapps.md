@@ -1,21 +1,20 @@
 
-<properties 
-	pageTitle="Verwenden einer Gruppe zum Verwalten des Zugriffs auf SaaS-Anwendungen | Microsoft Azure" 
-	description="Dieses Thema erklärt, wie Sie in Azure AD Premium Gruppen verwenden, um den Zugriff auf SaaS-Anwendungen zuzuweisen, die in Azure AD integriert sind." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="femila" 
-	manager="swadhwa" 
-	editor=""
-	tags="azure-classic-portal"/>
+<properties
+	pageTitle="Verwenden einer Gruppe zum Verwalten des Zugriffs auf SaaS-Anwendungen | Microsoft Azure"
+	description="Erfahren Sie, wie Sie in Azure AD Premium oder Basic Gruppen verwenden, um den Zugriff auf SaaS-Anwendungen zuzuweisen, die in Azure AD integriert sind."
+	services="active-directory"
+	documentationCenter=""
+	authors="femila"
+	manager="swadhwa"
+	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
+<tags
+	ms.service="active-directory"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
 	ms.devlang="na" identity
-	ms.topic="article" 
-	ms.date="07/13/2015" 
+	ms.topic="article"
+	ms.date="08/10/2015"
 	ms.author="femila"/>
 
 
@@ -39,9 +38,9 @@ Diese Funktion kann für Hunderte von Anwendungen verwendet werden, die Sie aus 
 4. Sie können auch sehen, welche Benutzer der Anwendung entweder direkt oder durch die Mitgliedschaft in einer Gruppe zugewiesen sind. Ändern Sie hierzu die Anzeige der Dropdownliste **Gruppen** zu **Alle Benutzer**. Die Liste zeigt die Benutzer im Verzeichnis und zeigt an, ob ein Benutzer der Anwendung zugewiesen ist oder nicht. Die Liste zeigt außerdem an, ob die Benutzer der Anwendung direkt (angezeigter Zuweisungstyp "Direkt") oder aufgrund der Gruppenmitgliedschaft (angezeigter Zuweisungstyp "Geerbt") zugewiesen sind.
 
 
-> [AZURE.NOTE]Die Registerkarte "Benutzer und Gruppen" wird nur angezeigt, wenn Sie Azure AD Premium aktiviert haben.
+> [AZURE.NOTE]Die Registerkarte "Benutzer und Gruppen" wird nur angezeigt, wenn Sie Azure AD Premium oder Azure AD Basic aktiviert haben.
 
-Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Directory bieten:
+Hier sind einige Themen aufgeführt, die zusätzliche Informationen zu Azure Active Directory bieten.
 
 * [Verwalten des Zugriffs auf Ressourcen mit Azure Active Directory-Gruppen](active-directory-manage-groups.md)
 
@@ -49,4 +48,4 @@ Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Di
 
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

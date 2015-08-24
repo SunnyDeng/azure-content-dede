@@ -1,12 +1,11 @@
 <properties
-	pageTitle="Erste Schritte mit der Offline-Datensynchronisierung in Mobile Services (iOS) | Mobile Dev Center"
+	pageTitle="Erste Schritte mit der Offlinedatensynchronisierung in Mobile Services (iOS) | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Azure Mobile Services verwenden, um Offlinedaten in Ihrer iOS-Anwendung zwischenzuspeichern und zu synchronisieren."
 	documentationCenter="ios"
 	authors="krisragh"
 	manager="dwrede"
 	editor=""
 	services="mobile-services"/>
-
 
 <tags
 	ms.service="mobile-services"
@@ -16,7 +15,6 @@
 	ms.topic="article"
 	ms.date="07/01/2015"
 	ms.author="krisragh;donnam"/>
-
 
 # Erste Schritte mit der Synchronisierung von Offlinedaten in Mobile Services
 
@@ -273,4 +271,4 @@ Um den lokalen Speicher mit dem Server zu synchronisieren, wurden `MSSyncTable.p
 
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

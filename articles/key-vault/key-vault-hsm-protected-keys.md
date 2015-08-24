@@ -1,12 +1,11 @@
 <properties
-	pageTitle="Gewusst wie: Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor | Microsoft Azure"
+	pageTitle="Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor | Microsoft Azure"
 	description="Verwenden Sie diesen Artikel zum Planen, Generieren und anschließenden Übertragen Ihrer eigenen HSM-geschützten Schlüssel für die Nutzung mit dem Azure-Schlüsseltresor."
 	services="key-vault"
 	documentationCenter=""
 	authors="cabailey"
 	manager="mbaldwin"
 	tags="azure-resource-manager"/>
-
 
 <tags
 	ms.service="key-vault"
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="07/22/2015"
 	ms.author="cabailey"/>
-
 #Gewusst wie: Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor
 
 ##Einführung
@@ -63,15 +61,7 @@ Die folgende Tabelle enthält eine Liste mit Voraussetzungen, die beim Azure-Sch
 |Azure-Abonnement|Um einen Azure-Schlüsseltresor erstellen zu können, benötigen Sie ein Azure-Abonnement: [Registrieren Sie sich für die kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/).|
 |Azure-Schlüsseltresor, der HSMs unterstützt|Weitere Informationen zu den Dienstebenen und Funktionen für den Azure-Schlüsseltresor finden Sie auf der Website [Azure-Schlüsseltresor – Preise](http://azure.microsoft.com/pricing/details/key-vault/).|
 |Thales-HSM, Smartcards und Supportsoftware|Sie benötigen Zugriff auf ein Thales-Hardwaresicherheitsmodul sowie grundlegende Kenntnisse zum Betrieb von Thales-HSMs. Eine Liste mit kompatiblen Modellen bzw. Informationen zum Kauf eines HSM, falls Sie noch keins besitzen, finden Sie unter [Thales-Hardwaresicherheitsmodul](https://www.thales-esecurity.com/msrms/buy).|
-|Folgende Hardware und Software:<ol><li>x64-Offlinearbeitsstation mit Windows 7 als Betriebssystem-Mindestversion und Thales nShield-Software (mindestens Version 11.50).<br/>
-<br/>
-Wenn auf der Arbeitsstation Windows 7 ausgeführt wird, müssen Sie [Microsoft .NET Framework 4.5 installieren](http://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe).</li><li>Eine Arbeitsstation mit Internetverbindung und Windows 7 als Betriebssystem-Mindestversion.</li><li>Ein USB-Laufwerk oder anderes tragbares Speichergerät mit mindestens 16 MB freiem Speicherplatz.</li></ol>|Aus Sicherheitsgründen wird empfohlen, die erste Arbeitsstation nicht mit einem Netzwerk zu verbinden. Dies wird jedoch nicht programmgesteuert erzwungen.<br/>
-<br/>
-Beachten Sie, dass diese Arbeitsstation in den folgenden Anleitungen als „verbindungslose Arbeitsstation“ bezeichnet wird.</p></blockquote><br/>
-Falls Ihr Mandantenschlüssel für ein Produktionsnetzwerk gilt, empfehlen wir außerdem, eine zweite separate Arbeitsstation zu verwenden, um das Toolset herunterzuladen und den Mandantenschlüssel hochzuladen. Zu Testzwecken können Sie aber auch ein und dieselbe Arbeitsstation verwenden.<br/>
-<br/>
-Beachten Sie, dass diese zweite Arbeitsstation in den folgenden Anleitungen als „Arbeitsstation mit Internetverbindung“ bezeichnet wird.</p></blockquote><br/>
-|
+|Folgende Hardware und Software:<ol><li>x64-Offlinearbeitsstation mit Windows 7 als Betriebssystem-Mindestversion und Thales nShield-Software (mindestens Version 11.50).<br/><br/>Wenn auf der Arbeitsstation Windows 7 ausgeführt wird, müssen Sie [Microsoft .NET Framework 4.5 installieren](http://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe).</li><li>Eine Arbeitsstation mit Internetverbindung und Windows 7 als Betriebssystem-Mindestversion.</li><li>Ein USB-Laufwerk oder anderes tragbares Speichergerät mit mindestens 16 MB freiem Speicherplatz.</li></ol>|Aus Sicherheitsgründen wird empfohlen, die erste Arbeitsstation nicht mit einem Netzwerk zu verbinden. Dies wird jedoch nicht programmgesteuert erzwungen.<br/><br/>Beachten Sie, dass diese Arbeitsstation in den folgenden Anleitungen als „verbindungslose Arbeitsstation“ bezeichnet wird.</p></blockquote><br/>Falls Ihr Mandantenschlüssel für ein Produktionsnetzwerk gilt, empfehlen wir außerdem, eine zweite separate Arbeitsstation zu verwenden, um das Toolset herunterzuladen und den Mandantenschlüssel hochzuladen. Zu Testzwecken können Sie aber auch ein und dieselbe Arbeitsstation verwenden.<br/><br/>Beachten Sie, dass diese zweite Arbeitsstation in den folgenden Anleitungen als „Arbeitsstation mit Internetverbindung“ bezeichnet wird.</p></blockquote><br/>|
 
 ##Generieren und Übertragen des Schlüssels an das HSM des Azure-Schlüsseltresors
 
@@ -124,7 +114,7 @@ Das Toolset enthält Folgendes:
 
 - Ein Schlüsselaustauschschlüssel-Paket (Key Exchange Key, KEK), dessen Name mit **BYOK-KEK-pkg-.** beginnt.
 - Ein Security World-Paket, dessen Name mit **BYOK-SecurityWorld-pkg-.** beginnt.
-- Ein Python-Skript mit dem Namen „v\*\*erifykeypackage.py.\*\*“.
+- Ein Python-Skript mit dem Namen „v**erifykeypackage.py.**“.
 - Eine ausführbare Befehlszeilendatei mit dem Namen **KeyTransferRemote.exe** und die zugehörigen DLLs.
 - Ein Visual C++ Redistributable Package mit dem Namen **vcredist\_x64.exe**.
 
@@ -298,7 +288,7 @@ Gehen Sie wie folgt vor, wenn Sie diesen Befehl ausführen:
 
 - Ersetzen Sie *ContosoFirstHSMKey* durch eine Bezeichnung, die als Name Ihrer Ausgabedatei verwendet werden soll.
 
-Wenn dieser Vorgang erfolgreich ist, wird **Result: SUCCESS** angezeigt, und im aktuellen Ordner ist eine neue Datei mit dem folgenden Namen enthalten: "TransferPackage-*ContosoFirstHSMkey\**byok".
+Wenn dieser Vorgang erfolgreich ist, wird **Result: SUCCESS** angezeigt, und im aktuellen Ordner ist eine neue Datei mit dem folgenden Namen enthalten: "TransferPackage-*ContosoFirstHSMkey**byok".
 
 ###Schritt 4.4: Kopieren des Schlüsselübertragungspakets auf die Arbeitsstation mit Internetverbindung 
 
@@ -316,4 +306,4 @@ Wenn der Upload erfolgreich ist, werden die Eigenschaften des gerade hinzugefüg
 
 Sie können diesen HSM-geschützten Schlüssel jetzt in Ihrem Schlüsseltresor verwenden. Weitere Informationen finden Sie im Abschnitt **Verwenden eines Hardwaresicherheitsmoduls (HSM)** im Lernprogramm [Erste Schritte mit dem Azure-Schlüsseltresor](key-vault-get-started.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

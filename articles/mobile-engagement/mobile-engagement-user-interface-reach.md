@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="02/17/2015"
+   ms.date="08/10/2015"
    ms.author="piyushjo"/>
 
 
@@ -150,4 +150,4 @@ Sie können von der Detail- zur Statistikansicht einer geöffneten Kampagne wech
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

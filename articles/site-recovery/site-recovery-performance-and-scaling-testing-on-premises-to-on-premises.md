@@ -7,16 +7,14 @@
 	manager="jwhit"
 	editor="tysonn"/>
 
-
 <tags
 	ms.service="site-recovery"
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="05/14/2015"
+	ms.date="08/05/2015"
 	ms.author="lauraa"/>
-
 
 # Leistungs- und Skalierungstest: lokal zu lokal
 
@@ -126,12 +124,7 @@ Die Ergebnisse zeigen deutlich, dass Azure Site Recovery in Kombination mit Hype
 
 |Server|RAM|Modell|Prozessor|Anzahl der Prozessoren|NIC|Software|
 |---|---|---|---|---|---|---|
-|Hyper-V-Server im Cluster: <br />
-ESTLAB-HOST11<br />
-ESTLAB-HOST12<br />
-ESTLAB-HOST13<br />
-ESTLAB-HOST14<br />
-ESTLAB-HOST25|128 MB (ESTLAB-HOST25: 256 MB)|Dell™ PowerEdge™ R820|Intel(R) Xeon(R)-CPU E5-4620 0 (2,20 GHz)|4|1 GBit/s (4x)|Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
+|Hyper-V-Server im Cluster: <br />ESTLAB-HOST11<br />ESTLAB-HOST12<br />ESTLAB-HOST13<br />ESTLAB-HOST14<br />ESTLAB-HOST25|128 MB (ESTLAB-HOST25: 256 MB)|Dell™ PowerEdge™ R820|Intel(R) Xeon(R)-CPU E5-4620 0 (2,20 GHz)|4|1 GBit/s (4x)|Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
 |VMM-Server|2|||2|1 GBit/s|Windows Server Datacenter 2012 R2 (x64) + VMM 2012 R2|
 
 ### Sekundärer Standort (Wiederherstellung)
@@ -144,11 +137,7 @@ ESTLAB-HOST25|128 MB (ESTLAB-HOST25: 256 MB)|Dell™ PowerEdge™ R820|Intel(R
 
 |Server|RAM|Modell|Prozessor|Anzahl der Prozessoren|NIC|Software|
 |---|---|---|---|---|---|---|
-|Hyper-V-Server im Cluster: <br />
-ESTLAB-HOST07<br />
-ESTLAB-HOST08<br />
-ESTLAB-HOST09<br />
-ESTLAB-HOST10|96|Dell™ PowerEdge™ R720|Intel(R) Xeon(R)-CPU E5-2630 0 (2,30 GHz)|2|1 GBit/s (4x)|Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
+|Hyper-V-Server im Cluster: <br />ESTLAB-HOST07<br />ESTLAB-HOST08<br />ESTLAB-HOST09<br />ESTLAB-HOST10|96|Dell™ PowerEdge™ R720|Intel(R) Xeon(R)-CPU E5-2630 0 (2,30 GHz)|2|1 GBit/s (4x)|Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
 |ESTLAB-HOST17|128|Dell™ PowerEdge™ R820|Intel(R) Xeon(R)-CPU E5-4620 0 (2,20 GHz)|4||Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
 |ESTLAB-HOST24|256|Dell™ PowerEdge™ R820|Intel(R) Xeon(R)-CPU E5-4620 0 (2,20 GHz)|2||Windows Server Datacenter 2012 R2 (x64) + Hyper-V-Rolle|
 |VMM-Server|2|||2|1 GBit/s|Windows Server Datacenter 2012 R2 (x64) + VMM 2012 R2|
@@ -219,4 +208,4 @@ So stellen Sie ASR bereit:
 - [Einrichten von Schutz mit einem einzelnen VMM-Server](site-recovery-single-vmm.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -13,13 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/14/2015"
+   ms.date="08/11/2015"
    ms.author="cherylmc"/>
 
 
-# Konfigurieren einer VNet-zu-VNet-Verbindung
+# Konfigurieren von VNet-zu-VNet-Verbindungen
 
-Das Verbinden eines virtuellen Azure-Netzwerks (VNets) mit einem anderen virtuellen Azure-Netzwerk ähnelt dem Verbinden eines virtuellen Netzwerks mit einem lokalen Standort. Beide Verbindungstypen verwenden ein Gateway des virtuellen Netzwerks, um einen sicheren Tunnel mit IPSec/IKE bereitzustellen. Die VNets, die Sie verbinden, können sich in verschiedenen Abonnements und Regionen befinden. Sie können sogar VNet-zu-VNet-Kommunikation mit Konfigurationen für mehrere Standorte kombinieren. Auf diese Weise können Sie Netzwerktopologien einrichten, die standortübergreifende Konnektivität mit Konnektivität zwischen virtuellen Netzwerken kombinieren, wie in der folgenden Abbildung dargestellt:
+In diesem Artikel werden Sie durch den Vorgang zum Verbinden virtueller Netzwerke geleitet, die im klassischen Bereitstellungsmodus erstellt wurden. Azure verfügt derzeit über zwei Bereitstellungsmodelle: das klassische Bereitstellungsmodell und das Azure-Ressourcen-Manager-Bereitstellungsmodell. Die Konfigurationsschritte unterscheiden sich je nach Modell, das für die Bereitstellung Ihres virtuellen Netzwerks verwendet wurde. Wenn Sie ein im klassischen Bereitstellungsmodus erstelltes virtuelles Netzwerk mit einem virtuellen Netzwerk verbinden möchten, das im Ressourcen-Manager erstellt wurde, finden Sie weitere Informationen unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+
+
+Das Verbinden eines virtuellen Azure-Netzwerks \(VNets\) mit einem anderen virtuellen Azure-Netzwerk ähnelt dem Verbinden eines virtuellen Netzwerks mit einem lokalen Standort. Beide Verbindungstypen verwenden ein Gateway des virtuellen Netzwerks, um einen sicheren Tunnel mit IPSec/IKE bereitzustellen. Die VNets, die Sie verbinden, können sich in verschiedenen Abonnements und Regionen befinden. Sie können sogar VNet-zu-VNet-Kommunikation mit Konfigurationen für mehrere Standorte kombinieren. Auf diese Weise können Sie Netzwerktopologien einrichten, die standortübergreifende Konnektivität mit Konnektivität zwischen virtuellen Netzwerken kombinieren, wie in der folgenden Abbildung dargestellt:
 
 ![VNet-zu-VNet-Konnektivitätsdiagramm](./media/virtual-networks-configure-vnet-to-vnet-connection/IC727360.png)
 
@@ -42,7 +45,7 @@ Aus den folgenden Gründen empfiehlt sich das Herstellen von Verbindungen zwisch
 
 - Die virtuellen Netzwerke können sich im gleichen Abonnement oder in verschiedenen Abonnements befinden.
 
-- Die virtuellen Netzwerke können sich in der gleichen Azure-Region oder in verschiedenen Azure-Regionen (Standorte) befinden.
+- Die virtuellen Netzwerke können sich in der gleichen Azure-Region oder in verschiedenen Azure-Regionen \(Standorte\) befinden.
 
 - Ein Clouddienst oder Endpunkt mit Lastenausgleich darf auch dann NICHT mehrere virtuelle Netzwerke umfassen, wenn diese verbunden sind.
 
@@ -58,11 +61,11 @@ Aus den folgenden Gründen empfiehlt sich das Herstellen von Verbindungen zwisch
 
 - Redundante Tunnel zwischen einem Paar virtueller Netzwerke werden nicht unterstützt.
 
-- Alle VPN-Tunnel des virtuellen Netzwerks (einschließlich P2S-VPNs) verwenden die verfügbare Bandbreite auf dem Azure-VPN-Gateway und die gleiche SLA für die Verfügbarkeit des VPN-Gateways in Azure gemeinsam.
+- Alle VPN-Tunnel des virtuellen Netzwerks \(einschließlich P2S-VPNs\) verwenden die verfügbare Bandbreite auf dem Azure-VPN-Gateway und die gleiche SLA für die Verfügbarkeit des VPN-Gateways in Azure gemeinsam.
 
 ## Konfigurieren von VNet-zu-VNet-Verbindungen
 
-In diesem Verfahren erstellen Sie schrittweise eine Verbindung zwischen zwei virtuellen Netzwerken: VNet1 und VNet2. Sie müssen mit Netzwerken vertraut sein, um die IP-Adressbereiche zu ersetzen, die mit Ihren Anforderungen an den Netzwerkentwurf kompatibel sind. Das Verbinden aus einem virtuellen Azure-Netzwerk mit einem anderen virtuellen Azure-Netzwerk ist mit dem Herstellen einer Verbindung mit einem lokalen Netzwerk über ein Standort-zu-Standort-VPN (Site-to-Site, S2S) identisch.
+In diesem Verfahren erstellen Sie schrittweise eine Verbindung zwischen zwei virtuellen Netzwerken: VNet1 und VNet2. Sie müssen mit Netzwerken vertraut sein, um die IP-Adressbereiche zu ersetzen, die mit Ihren Anforderungen an den Netzwerkentwurf kompatibel sind. Das Verbinden aus einem virtuellen Azure-Netzwerk mit einem anderen virtuellen Azure-Netzwerk ist mit dem Herstellen einer Verbindung mit einem lokalen Netzwerk über ein Standort-zu-Standort-VPN \(Site-to-Site, S2S\) identisch.
 
 Dieses Verfahren verwendet in erster Linie das Verwaltungsportal. Sie müssen jedoch Microsoft Azure PowerShell-Cmdlets verwenden, um Verbindungen mit den VPN-Gateways herzustellen.
 
@@ -79,7 +82,7 @@ Es gibt fünf Abschnitte, die geplant und konfiguriert werden müssen. Konfiguri
 
 ## Planen der IP-Adressbereiche
 
-Eine wichtige Entscheidung betrifft die Bereiche, die Sie zum Konfigurieren Ihrer Netzwerkkonfigurationsdatei (NETCFG-Datei) verwenden. Aus der Perspektive von VNet1 ist VNet2 nur eine weitere VPN-Verbindung, die in der Azure-Plattform definiert ist. Aus der Sicht von VNet2 ist VNet1 nur eine weitere VPN-Verbindung. Beide Netzwerke identifizieren sich gegenseitig als lokaler Netzwerkstandort. Denken Sie daran, dass Sie sicherstellen müssen, dass keiner der VNet-Bereiche oder der Bereiche des lokalen Netzwerks Überschneidungen aufweist.
+Eine wichtige Entscheidung betrifft die Bereiche, die Sie zum Konfigurieren Ihrer Netzwerkkonfigurationsdatei \(NETCFG-Datei\) verwenden. Aus der Perspektive von VNet1 ist VNet2 nur eine weitere VPN-Verbindung, die in der Azure-Plattform definiert ist. Aus der Sicht von VNet2 ist VNet1 nur eine weitere VPN-Verbindung. Beide Netzwerke identifizieren sich gegenseitig als lokaler Netzwerkstandort. Denken Sie daran, dass Sie sicherstellen müssen, dass keiner der VNet-Bereiche oder der Bereiche des lokalen Netzwerks Überschneidungen aufweist.
 
 Tabelle 1 zeigt ein Beispiel, wie VNets definiert werden. Verwenden Sie die unten aufgeführten Bereiche nur als Richtlinie. Notieren Sie sich die Bereiche, die Sie für Ihre virtuellen Netzwerke verwenden. Sie benötigen diese Informationen in den späteren Schritten.
 
@@ -87,8 +90,8 @@ Tabelle 1 zeigt ein Beispiel, wie VNets definiert werden. Verwenden Sie die unt
 
 |Virtuelles Netzwerk |Definition des virtuellen Netzwerkstandorts |Definition des lokalen Netzwerkstandorts|
 |:----------------|:-------------------------------|:----------------------------|
-|VNet1 |VNet1 (10.1.0.0/16) |VNet2 (10.2.0.0/16) |
-|VNet2 |VNet2 (10.2.0.0/16) |VNet1 (10.1.0.0/16) |
+|VNet1 |VNet1 \(10.1.0.0/16\) |VNet2 \(10.2.0.0/16\) |
+|VNet2 |VNet2 \(10.2.0.0/16\) |VNet1 \(10.1.0.0/16\) |
 
 ## Erstellen der virtuellen Netzwerke
 
@@ -102,12 +105,12 @@ VNet2: Adressraum = 10.2.0.0/16, Region=Japan Ost
 
 2. Klicken Sie unten links auf dem Bildschirm auf **Neu**. Klicken Sie im Navigationsbereich auf **Netzwerkdienste** und dann auf **Virtuelles Netzwerk**. Klicken Sie auf **Custom Create**, um den Konfigurationsassistenten zu starten.
 
-Geben Sie auf der Seite **Details zum virtuellen Netzwerk** die folgenden Informationen ein.
+Geben Sie auf der Seite **Details zum virtuellen Netzwerk** die folgenden Informationen ein:
 
   ![Details zum virtuellen Netzwerk](./media/virtual-networks-configure-vnet-to-vnet-connection/IC736055.png)
 
   - **Name** – Der Name des virtuellen Netzwerks. Beispiel: VNet1
-  - **Standort** – Wenn Sie ein virtuelles Netzwerk erstellen, ordnen Sie dieses einem Azure-Standort (einer Region) zu. Wenn Sie z. B. wünschen, dass Ihre virtuellen Computer, die Sie für Ihr virtuelles Netzwerk bereitgestellt haben, physisch in "USA West" vorhanden sind, wählen Sie diesen Standort aus. Sie können den Ihrem virtuellen Netzwerk zugeordnete Standort nach dem Erstellen nicht mehr ändern.
+  - **Standort** – Wenn Sie ein virtuelles Netzwerk erstellen, ordnen Sie dieses einem Azure-Standort \(einer Region\) zu. Wenn Sie z. B. wünschen, dass Ihre virtuellen Computer, die Sie für Ihr virtuelles Netzwerk bereitgestellt haben, physisch in "USA West" vorhanden sind, wählen Sie diesen Standort aus. Sie können den Ihrem virtuellen Netzwerk zugeordnete Standort nach dem Erstellen nicht mehr ändern.
 
 
 
@@ -120,7 +123,7 @@ Geben Sie auf der Seite **DNS Server und VPN-Konnektivität** die folgenden Info
 
   - Aktivieren Sie keines der Kontrollkästchen. Klicken Sie nur unten rechts auf den Pfeil, um zum nächsten Bildschirm zu gelangen.
 
-Geben Sie auf der Seite **Adressräume von Virtual Network** die Adressräume an, die für das virtuelle Netzwerk verwendet werden sollen. Dies sind die dynamischen IP-Adressen (DIPS), die den virtuellen Computern und anderen Rolleninstanzen zugewiesen werden, die Sie für dieses virtuelle Netzwerk bereitstellen. Es ist besonders wichtig, einen Bereich auszuwählen, der sich nicht mit den anderen Bereichen überschneidet, die für Ihr lokales Netzwerk verwendet werden. Sie müssen sich mit Ihrem Netzwerkadministrator abstimmen, der ggf. einen Bereich von IP-Adressen aus dem Adressraum Ihres lokalen Netzwerks reservieren muss, den Sie für Ihr virtuelles Netzwerk verwenden können.
+Geben Sie auf der Seite **Adressräume des virtuellen Netzwerks** die Adressräume an, die für das virtuelle Netzwerk verwendet werden sollen. Dies sind die dynamischen IP-Adressen \(DIPS\), die den virtuellen Computern und anderen Rolleninstanzen zugewiesen werden, die Sie für dieses virtuelle Netzwerk bereitstellen. Es ist besonders wichtig, einen Bereich auszuwählen, der sich nicht mit den anderen Bereichen überschneidet, die für Ihr lokales Netzwerk verwendet werden. Sie müssen sich mit Ihrem Netzwerkadministrator abstimmen, der ggf. einen Bereich von IP-Adressen aus dem Adressraum Ihres lokalen Netzwerks reservieren muss, den Sie für Ihr virtuelles Netzwerk verwenden können.
 
 
   ![Seite "Adressräume des virtuellen Netzwerks"](./media/virtual-networks-configure-vnet-to-vnet-connection/IC736057.jpg)
@@ -137,7 +140,7 @@ Geben Sie auf der Seite **Adressräume von Virtual Network** die Adressräume an
 Wiederholen Sie anschließend die oben aufgeführten Schritte, um ein weiteres virtuelles Netzwerk zu erstellen. Im weiteren Verlauf dieser Übung stellen Sie eine Verbindung zwischen diesen beiden virtuellen Netzwerken her. Beachten Sie, dass keine doppelten oder sich überlappenden Adressräume vorhanden sein dürfen. Verwenden Sie für dieses Lernprogramm die folgenden Werte:
 
 - **VNet2**: Adressraum = 10.2.0.0/16
-- **Region**=Japan Ost
+- **Region**= Japan Ost
 
 ## Hinzufügen lokaler Netzwerke
 
@@ -210,11 +213,11 @@ Warten Sie, bis die Verbindung initialisiert wird. Nachdem das Gateway initialis
 Weitere Informationen zu den standortübergreifenden Verbindungen von Virtual Network finden Sie unter [Informationen zu sicheren, standortübergreifenden virtuellen Netzwerkverbindungen](https://msdn.microsoft.com/library/azure/dn133798.aspx).
 
 
-Wenn Sie eine Standort-zu-Standort-VPN-Verbindung konfigurieren möchten, lesen Sie [Konfigurieren einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-site-to-site-create.md).
+Wenn Sie eine Site-to-Site-VPN-Verbindung konfigurieren möchten, lesen Sie [Konfigurieren einer Site-to-Site-VPN-Verbindung](vpn-gateway-site-to-site-create.md).
 
 Informationen zum Hinzufügen virtueller Computer zu Ihrem virtuellen Netzwerk finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines/virtual-machines-create-custom.md).
 
-Informationen zum Konfigurieren einer VNet-Verbindung mit RRAS finden Sie unter [Konfigurieren eines Site-to-Site-VPN mit Windows Server 2012 RRAS (Routing- und RAS-Dienst)](https://msdn.microsoft.com/library/dn636917.aspx).
+Informationen zum Konfigurieren einer VNet-Verbindung mit RRAS finden Sie unter [Konfigurieren eines Site-to-Site-VPN mit Windows Server 2012 RRAS \(Routing- und RAS-Dienst\)](https://msdn.microsoft.com/library/dn636917.aspx).
 
 Informationen zum Konfigurationsschema finden Sie unter [Konfigurationsschema für virtuelle Azure-Netzwerke](https://msdn.microsoft.com/library/azure/jj157100.aspx).
 
@@ -223,4 +226,4 @@ Informationen zum Konfigurationsschema finden Sie unter [Konfigurationsschema f�
 [2]: http://channel9.msdn.com/Series/Getting-started-with-Windows-Azure-HDInsight-Service/Configure-the-VPN-connectivity-between-two-Azure-virtual-networks
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

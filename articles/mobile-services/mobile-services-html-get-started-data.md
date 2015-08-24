@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (HTML 5) | Mobile Dev Center" 
+	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (HTML 5) | Microsoft Azure" 
 	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services in einer vorhandenen HTML-App." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -257,4 +257,4 @@ In diesem Lernprogramm wurden die Grundlagen für die Integration von Daten in H
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

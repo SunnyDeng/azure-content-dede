@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="compute"
-   ms.date="06/09/2015"
+   ms.date="08/12/2015"
    ms.author="elizapo"/>
 
 # Aktualisieren einer Sammlung in Azure RemoteApp
@@ -36,4 +36,4 @@ In diesem Artikel erfahren Sie, wie Sie Ihre Sammlung aktualisieren. Es ist ganz
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

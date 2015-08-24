@@ -127,8 +127,8 @@ Führen Sie die folgenden Schritte aus, wenn Sie die VIPs für eine der Netzwerk
 
 ## Nächste Schritte
 
-[Konfigurieren von MPIO für Ihr StorSimple-Gerät](storsimple-configure-mpio-windows-server.md)
+[Konfigurieren von MPIO für Ihr StorSimple-Gerät](storsimple-configure-mpio-windows-server.md).
  
      
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

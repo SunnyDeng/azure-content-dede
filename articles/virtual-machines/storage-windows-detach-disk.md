@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Trennen eines Datenträgers von einem virtuellen Computer unter Windows | Azure"
+	pageTitle="Trennen eines Datenträgers von einem virtuellen Computer unter Windows | Microsoft Azure"
 	description="Erfahren Sie, wie Sie einen Datenträger von einem virtuellen Computer in Azure trennen."
 	services="virtual-machines, storage"
 	documentationCenter=""
@@ -29,4 +29,4 @@
 
 [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](storage-windows-attach-disk.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

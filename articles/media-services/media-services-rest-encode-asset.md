@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/23/2015" 
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
 
 
@@ -257,7 +257,6 @@ Im Erfolgsfall wird die folgende Antwort zurückgegeben:
 	. . . 
 
 
-
 ##Nächste Schritte
 Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erstellen und können mit dem Thema [How To Check Job Progress with Media Services](media-services-rest-check-job-progress.md) (Prüfen des Auftragsfortschritts mit Mediendiensten, in englischer Sprache) fortfahren.
 
@@ -266,4 +265,4 @@ Sie sind nun in der Lage, einen Auftrag zur Codierung von Medienobjekten zu erst
 
 [Abrufen von Medienprozessoren](media-services-rest-get-media-processor.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

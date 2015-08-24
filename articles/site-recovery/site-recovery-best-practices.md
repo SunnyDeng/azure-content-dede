@@ -7,16 +7,14 @@
 	manager="jwhit"
 	editor="tysonn"/>
 
-
 <tags
 	ms.service="site-recovery"
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="05/08/2015"
+	ms.date="08/05/2015"
 	ms.author="raynew"/>
-
 
 # Bewährte Methoden für die Site Recovery-Bereitstellung
 
@@ -105,11 +103,11 @@ Anbieter und Agents werden auf lokalen Servern installiert, damit darüber Verbi
 
 	- Richten Sie den benutzerdefinierten Proxyserver ein, bevor Sie den Anbieter installieren.
 	- Lassen Sie die folgenden URLs für die Firewall zu:
-		- *\*.hypervrecoverymanager.windowsazure.com
-- *\*.accesscontrol.windows.net
-- *\*.backup.windowsazure.com
-- *\*.blob.core.windows.net
-- *\*.store.core.windows.net
+		- **.hypervrecoverymanager.windowsazure.com
+- **.accesscontrol.windows.net
+- **.backup.windowsazure.com
+- **.blob.core.windows.net
+- **.store.core.windows.net
 
 	- Wenn Sie Site Recovery mit VMM bereitstellen und einen benutzerdefinierten Proxy verwenden, wird automatisch ein VMM-RunAs-Konto (DRAProxyAccount) erstellt. Hierfür werden die Proxyanmeldeinformationen genutzt, die Sie im Site Recovery-Portal in den Einstellungen für den benutzerdefinierten Proxy angegeben haben. Sie müssen den Proxyserver so konfigurieren, dass für dieses Konto eine erfolgreiche Authentifizierung möglich ist.
 
@@ -196,4 +194,4 @@ Nachdem Sie diese bewährten Methoden überprüft haben, können Sie mit der Ber
 - [Einrichten von Schutz mit einem einzelnen VMM-Server](site-recovery-single-vmm.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

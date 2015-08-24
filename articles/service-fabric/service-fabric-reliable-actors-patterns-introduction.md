@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Service Fabric Reliable Actors: Einführung in Muster und Antimuster"
-   description="Erfahren Sie mehr über das Reliable Actors-Programmiermodell von Service Fabric und Entwurfsmuster, die gut für Actors geeignet sind."
+   pageTitle="Einführung in Muster und Antimuster von Azure Service Fabric Actors"
+   description="Entwurfsmuster, die für Service Fabric Actors gut geeignet sind"
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/05/2015"
+   ms.date="08/11/2015"
    ms.author="claudioc"/>
 
 # Einführung in Reliable Actors-Entwurfsmuster
@@ -70,4 +70,4 @@ Die Hauptvorteile von Azure Fabric Actors sind: (1) **Entwicklerproduktivität**
 
 * *Explizite Asynchronie.* Das Programmiermodell Azure Fabric Actors expliziert die asynchrone Natur einer verteilten Anwendung und weist Programmierern den Weg zum Schreiben von nicht-blockierendem, asynchronem Code. Dadurch wird ein hohes Maß an verteilter Parallelität und Gesamtdurchsatz ermöglicht, ohne dass die explizite Verwendung von Multithreading erforderlich ist.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

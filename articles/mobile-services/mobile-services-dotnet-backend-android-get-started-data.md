@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit Daten (Android) | Mobile Dev Center" 
+	pageTitle="Erste Schritte mit Daten (Android) | Microsoft Azure" 
 	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Android-App." 
 	services="mobile-services" 
 	documentationCenter="android" 
@@ -133,4 +133,4 @@ Probieren Sie als Nächstes eines der anderen Lernprogramme aus:
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=328660
    
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

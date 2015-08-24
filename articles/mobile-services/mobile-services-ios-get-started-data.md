@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (iOS) | Mobile Dev Center"
+	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (iOS) | Microsoft Azure"
 	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer iOS-App."
 	services="mobile-services"
 	documentationCenter="ios"
@@ -81,4 +81,4 @@ Laden Sie die [iOS-App GetStartedWithData] herunter. Öffnen Sie in Xcode das he
 [iOS-App GetStartedWithData]: http://go.microsoft.com/fwlink/p/?LinkId=268622
 [iOS-App GetStartedWithData-App]: http://go.microsoft.com/fwlink/p/?LinkId=268622
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

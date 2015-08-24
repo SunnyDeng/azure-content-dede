@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="02/17/2015"
+   ms.date="08/10/2015"
    ms.author="piyushjo"/>
 
 # Durch die Benutzeroberfläche navigieren
@@ -142,4 +142,4 @@ Das Front-End-Portal der Benutzeroberfläche unter https://YourApp.portal.mobile
  
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

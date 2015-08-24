@@ -1,12 +1,11 @@
 <properties 
-	pageTitle="Erstellen eines Diensts, der den Tabellenspeicher anstelle einer SQL-Datenbank verwendet | Azure Mobile Services" 
+	pageTitle="Erstellen eines Diensts, der den Tabellenspeicher anstelle einer SQL-Datenbank verwendet | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie den Azure-Tabellenspeicher mit dem mobilen .NET-Back-End-Dienst verwenden." 
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="ggailey777" 
 	manager="dwrede" 
 	editor=""/>
-
 
 <tags 
 	ms.service="mobile-services" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="06/09/2015" 
 	ms.author="glenga"/>
-
 
 # Erstellen eines mobilen .NET-Back-End-Diensts, der den Tabellenspeicher anstelle einer SQL-Datenbank verwendet
 
@@ -55,7 +53,6 @@ Zunächst müssen Sie den mobilen Dienst und das .NET Back-End-Codeprojekt zum H
 8. Öffnen Sie im Projektmappen-Explorer in Visual Studio die Datei "Web.config" für das Projekt mit dem mobilen Dienst, und fügen Sie die folgende neue Verbindungszeichenfolge hinzu:
 
 		<add name="StorageConnectionString" connectionString="<STORAGE_CONNECTION_STRING>" />
-
 
 9. Ersetzen Sie den Platzhalter `<STORAGE_CONNECTION_STRING>` durch die Verbindungszeichenfolge aus Schritt 6.
 
@@ -161,4 +158,4 @@ Da Sie jetzt gesehen haben, wie einfach sich der Tabellenspeicher mit dem .NET B
 [MongoLab Add-on Page]: /gallery/store/mongolab/mongolab
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

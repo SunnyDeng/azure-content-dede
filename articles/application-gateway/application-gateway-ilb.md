@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Erstellen und Konfigurieren eines Anwendungsgateways mit internem Lastenausgleich (ILB) in einem virtuellen Netzwerk | Microsoft Azure"
-   description="Diese Seite enthält Anweisungen zum Konfigurieren eines Azure-Anwendungsgateways mit einem Endpunkt für internen Lastenausgleich"
+   pageTitle="Erstellen und Konfigurieren eines Application Gateways mit internem Lastenausgleich (ILB) in einem virtuellen Netzwerk | Microsoft Azure"
+   description="Diese Seite enthält Anweisungen zum Konfigurieren eines Azure-Application Gateways mit einem Endpunkt für internen Lastenausgleich."
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
@@ -15,21 +15,25 @@
    ms.date="06/30/2015"
    ms.author="joaoma"/>
 
-# Erstellen eines Anwendungsgateways mit einem internen Lastenausgleich (ILB)
+# Erstellen eines Application Gateways mit einem internen Lastenausgleich (ILB)
+
+> [AZURE.SELECTOR]
+- [Azure classic steps](application-gateway-ilb.md)
+- [Resource Manager Powershell steps](application-gateway-ilb-arm.md)
 
 
-Ein Anwendungsgateway kann mit einer VIP mit Internetzugriff oder mit einem internen Endpunkt konfiguriert werden, der nicht über das Internet erreichbar ist. Dies wird auch als Endpunkt für internen Lastenausgleich (Internal Load Balancer, ILB) bezeichnet. Das Konfigurieren des Gateways mit einem ILB ist für interne Branchenanwendungen nützlich, die nicht für das Internet verfügbar gemacht werden. Es ist auch hilfreich für die Dienste/Ebenen in einer Anwendung mit mehreren Ebenen, die sich innerhalb einer Sicherheitsgrenze befindet und nicht für das Internet verfügbar gemacht wird, aber dennoch eine Round-Robin-Lastverteilung, Sitzungsbindungen oder SSL-Beendigung erfordert. Dieser Artikel führt Sie durch die Schritte zum Konfigurieren eines Anwendungsgateways mit einem ILB.
+Ein Application Gateway kann mit einer VIP mit Internetzugriff oder mit einem internen Endpunkt konfiguriert werden, der nicht über das Internet erreichbar ist. Dies wird auch als Endpunkt für internen Lastenausgleich (Internal Load Balancer, ILB) bezeichnet. Das Konfigurieren des Gateways mit einem ILB ist für interne Branchenanwendungen nützlich, die nicht für das Internet verfügbar gemacht werden. Es ist auch hilfreich für die Dienste/Ebenen in einer Anwendung mit mehreren Ebenen, die sich innerhalb einer Sicherheitsgrenze befindet und nicht für das Internet verfügbar gemacht wird, aber dennoch eine Round-Robin-Lastverteilung, Sitzungsbindungen oder SSL-Beendigung erfordert. Dieser Artikel führt Sie durch die Schritte zum Konfigurieren eines Application Gateways mit einem ILB.
 
 ## Voraussetzungen
 
-1. Installieren Sie die neueste Version der Azure PowerShell-Cmdlets mit dem Webplattform-Installer. Sie können die neueste Version aus dem Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+1. Installieren Sie die neueste Version der Azure PowerShell-Cmdlets mit dem Webplattform-Installer. Sie können die neueste Version im Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
 2. Stellen Sie sicher, dass Sie über ein funktionierendes virtuelles Netzwerk mit einem gültigen Subnetz verfügen.
 3. Stellen Sie sicher, dass Sie über Back-End-Server im virtuellen Netzwerk verfügen oder dass ihnen eine öffentliche IP-Adresse/VIP zugewiesen ist.
 
 
-Um ein neues Anwendungsgateway zu erstellen, führen Sie die folgenden Schritte in der angegebenen Reihenfolge aus.
+Um ein neues Application Gateway zu erstellen, führen Sie die folgenden Schritte in der angegebenen Reihenfolge aus.
 
-1. [Erstellen eines neuen Anwendungsgateways](#create-a-new-application-gateway)
+1. [Erstellen eines neuen Application Gateways](#create-a-new-application-gateway)
 2. [Konfigurieren des Gateways](#configure-the-gateway)
 3. [Festlegen der Gatewaykonfiguration](#set-the-gateway-configuration)
 4. [Starten des Gateways](#start-the-gateway)
@@ -37,9 +41,9 @@ Um ein neues Anwendungsgateway zu erstellen, führen Sie die folgenden Schritte 
 
 
 
-## Erstellen Sie ein neues Anwendungsgateway:
+## Erstellen Sie ein neues Application Gateway:
 
-**Zum Erstellen des Gateways** verwenden Sie das `New-AzureApplicationGateway`-Cmdlet und ersetzen die Werte durch eigene. Beachten Sie, dass die Abrechnung für das Gateway jetzt noch nicht gestartet wird. Die Abrechnung beginnt in einem späteren Schritt, wenn das Gateway erfolgreich gestartet wurde.
+**Zum Erstellen des Gateways** verwenden Sie das Cmdlet `New-AzureApplicationGateway` und ersetzen die Werte durch eigene. Beachten Sie, dass die Abrechnung für das Gateway jetzt noch nicht gestartet wird. Die Abrechnung beginnt in einem späteren Schritt, wenn das Gateway erfolgreich gestartet wurde.
 
 	PS C:\> New-AzureApplicationGateway -Name AppGwTest -VnetName testvnet1 -Subnets @("Subnet-1")
 
@@ -71,13 +75,13 @@ In diesem Beispiel sind *Description*, *InstanceCount* und *GatewaySize* optiona
 
 ## Konfigurieren des Gateways
 
-Eine Anwendungsgatewaykonfiguration besteht aus mehreren Werten. Die Werte können verknüpft werden, um die Konfiguration zu erstellen.
+Eine Application Gateway-Konfiguration besteht aus mehreren Werten. Die Werte können verknüpft werden, um die Konfiguration zu erstellen.
  
 Die Werte sind:
 
 - **Back-End-Serverpool:** Die Liste der IP-Adressen der Back-End-Server. Die aufgelisteten IP-Adressen sollten entweder dem VNet-Subnetz angehören oder eine öffentliche IP-Adresse/VIP sein. 
 - **Einstellungen für den Back-End-Serverpool:** Jeder Pool weist Einstellungen wie Port, Protokoll und cookiebasierte Affinität auf. Diese Einstellungen sind an einen Pool gebunden und gelten für alle Server innerhalb des Pools.
-- **Front-End-Port:** Dieser Port ist der öffentliche Port, der im Anwendungsgateway geöffnet ist. Datenverkehr erreicht diesen Port und wird dann an einen der Back-End-Server umgeleitet.
+- **Front-End-Port:** Dieser Port ist der öffentliche Port, der im Application Gateway geöffnet ist. Datenverkehr erreicht diesen Port und wird dann an einen der Back-End-Server umgeleitet.
 - **Listener:** Der Listener verfügt über einen Front-End-Port, ein Protokoll (Http oder Https, bei beiden muss die Groß-/Kleinschreibung beachtet werden) und den Namen des SSL-Zertifikats (falls SSL-Auslagerung konfiguriert wird). 
 - **Regel:** Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und es wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden sollen, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel *basic* unterstützt. Die Regel *basic* ist eine Round-Robin-Lastverteilung.
 
@@ -88,13 +92,13 @@ Sie können die Konfiguration erzeugen, indem Sie ein Konfigurationsobjekt erste
 Beachten Sie Folgendes:
 
 
-- Das *FrontendIPConfigurations*-Element beschreibt die ILB-Details, die zum Konfigurieren eines Anwendungsgateways mit einem ILB relevant sind. 
+- Das *FrontendIPConfigurations*-Element beschreibt die ILB-Details, die zum Konfigurieren eines Application Gateways mit einem ILB relevant sind. 
 
-- Der Wert für *Type* der Front-End-IP sollte auf "Private" festgelegt werden.
+- Der Wert für *Type* der Front-End-IP-Adresse muss auf "Private" festgelegt werden.
 
-- *StaticIPAddress* sollte auf die gewünschte interne IP-Adresse festgelegt werden, an der das Gateway Datenverkehr empfangen wird. Beachten Sie, dass das *StaticIPAddress*-Element optional ist. Wenn es nicht festgelegt ist, wird eine verfügbare interne IP-Adresse aus dem bereitgestellten Subnetz ausgewählt.
+- *StaticIPAddress* muss auf die gewünschte interne IP-Adresse festgelegt werden, an der das Gateway Datenverkehr empfangen wird. Beachten Sie, dass das *StaticIPAddress*-Element optional ist. Wenn es nicht festgelegt ist, wird eine verfügbare interne IP-Adresse aus dem bereitgestellten Subnetz ausgewählt.
 
-- Der Wert des *Name*-Elements, das für *FrontendIPConfiguration* angegeben wurde, sollte im *FrontendIP*-Element von HTTPListener verwendet werden, um auf FrontendIPConfiguration zu verweisen.
+- Der Wert des *Name*-Elements, das für *FrontendIPConfiguration* angegeben wurde, sollte im *FrontendIP*-Element von HTTPListener verwendet werden, um auf "FrontendIPConfiguration" zu verweisen.
 
  **XML-Konfigurationsbeispiel**
 
@@ -155,7 +159,7 @@ Beachten Sie Folgendes:
 
 ## Festlegen der Gatewaykonfiguration
 
-Dann legen Sie das Anwendungsgateway fest. Sie können das `Set-AzureApplicationGatewayConfig`-Cmdlet mit einem Konfigurationsobjekt oder mit einer XML-Konfigurationsdatei verwenden.
+Dann legen Sie das Application Gateway fest. Sie können das `Set-AzureApplicationGatewayConfig`-Cmdlet mit einem Konfigurationsobjekt oder mit einer XML-Konfigurationsdatei verwenden.
 
 	PS C:\> Set-AzureApplicationGatewayConfig -Name AppGwTest -ConfigFile D:\config.xml
 
@@ -167,7 +171,7 @@ Dann legen Sie das Anwendungsgateway fest. Sie können das `Set-AzureApplication
 
 ## Starten des Gateways
 
-Sobald das Gateway konfiguriert wurde, verwenden Sie das `Start-AzureApplicationGateway`-Cmdlet, um das Gateway zu starten. Die Abrechnung für ein Anwendungsgateway beginnt, nachdem das Gateway erfolgreich gestartet wurde.
+Sobald das Gateway konfiguriert ist, verwenden Sie das Cmdlet `Start-AzureApplicationGateway`, um es zu starten. Die Abrechnung für ein Application Gateway beginnt, nachdem das Gateway erfolgreich gestartet wurde.
 
 
 **Hinweis:** Bis zum Abschluss des `Start-AzureApplicationGateway`-Cmdlets können bis zu 15 – 20 Minuten vergehen.
@@ -182,9 +186,9 @@ Sobald das Gateway konfiguriert wurde, verwenden Sie das `Start-AzureApplication
 
 ## Überprüfen des Gatewaystatus
 
-Verwenden Sie das `Get-AzureApplicationGateway`-Cmdlet zum Überprüfen des Status des Gateways. Wenn *Start-AzureApplicationGateway* im vorherigen Schritt erfolgreich ausgeführt wurde, sollte der Status *Running* sein, und "Vip" und "DnsName" sollten gültige Einträge aufweisen. Dieses Beispiel zeigt das Cmdlet in der ersten Zeile, gefolgt von der Ausgabe. In diesem Beispiel wird das Gateway ausgeführt und kann Datenverkehr verarbeiten.
+Überprüfen Sie mit dem Cmdlet `Get-AzureApplicationGateway` den Status des Gateways. Wenn *Start-AzureApplicationGateway* im vorherigen Schritt erfolgreich ausgeführt wurde, sollte der Status *Running* sein, und "Vip" und "DnsName" sollten gültige Einträge aufweisen. Dieses Beispiel zeigt das Cmdlet in der ersten Zeile, gefolgt von der Ausgabe. In diesem Beispiel wird das Gateway ausgeführt und kann Datenverkehr verarbeiten.
 
-**Hinweis:** Das Anwendungsgateway ist so konfiguriert, dass in diesem Beispiel Datenverkehr am konfigurierten ILB-Endpunkt 10.0.0.10 akzeptiert wird.
+**Hinweis:** Das Application Gateway ist so konfiguriert, dass in diesem Beispiel Datenverkehr am konfigurierten ILB-Endpunkt 10.0.0.10 akzeptiert wird.
 
 	PS C:\> Get-AzureApplicationGateway AppGwTest 
 
@@ -208,4 +212,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

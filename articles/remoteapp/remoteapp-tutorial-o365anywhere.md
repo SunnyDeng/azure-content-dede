@@ -10,14 +10,14 @@
 <tags
    ms.service="remoteapp"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="07/07/2015"
+   ms.date="08/12/2015"
    ms.author="guscatal;elizapo"/>
 
 
-# Holen Sie sich die Office 365-Lösung für jedes Gerät
+# Bereitstellen der gleichen Office 365-Umgebung auf jedem Gerät mit Azure RemoteApp
 
 In diesem Artikel wird behandelt, wie Office 365 auf jedem Gerät in Ihrem Unternehmen bereitgestellt werden kann. Ihre Benutzer erhalten die gleichen Funktionen und die gleiche Benutzeroberfläche für Android, Apple und Windows.
 
@@ -64,4 +64,4 @@ Klicken Sie auf die Anwendungen, um sie auf dem virtuellen Azure-Computer zu sta
 ![PowerPoint](https://raw.githubusercontent.com/guscatalano/azure-content/master/articles/media/remoteapp-tutorial-o365anywhere/11-pp.PNG)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

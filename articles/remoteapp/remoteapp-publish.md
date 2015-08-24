@@ -1,8 +1,8 @@
 <properties
-    pageTitle="Veröffentlichen einer App in RemoteApp"
-    description="Erfahren Sie, wie Sie Anwendungen und Ressourcen in RemoteApp veröffentlichen."
+    pageTitle="Veröffentlichen einer App in Azure RemoteApp"
+    description="Erfahren Sie, wie Sie Anwendungen und Ressourcen in Azure RemoteApp veröffentlichen."
     services="remoteapp"
-	documentationCenter=""
+    documentationCenter=""
     authors="lizap"
     manager="mbaldwin" />
 
@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="06/10/2015"
+    ms.date="08/12/2015"
     ms.author="elizapo" />
 
 
@@ -27,4 +27,4 @@ Klicken Sie im Portal auf der Registerkarte **Veröffentlichung** auf **Veröffe
 > [AZURE.NOTE]Wenn Sie die App aus dem Startmenü hinzufügen möchten, müssen Sie diese *App im Vorlagenimage dem Startmenü hinzugefügt haben*. Andernfalls wird in RemoteApp nur angezeigt, was sich *im* Startmenü befindet, was zu Verwechslungen führen kann. Wenn Sie beim Erstellen der Vorlage vergessen haben, die App dem **Startmenü** hinzufügen, fügen Sie der App den Pfad hinzu. (Oder erstellen Sie Ihr Vorlagenimage neu. Dies bedeutet allerdings einen etwas höheren Arbeitsaufwand.)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

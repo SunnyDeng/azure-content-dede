@@ -13,26 +13,32 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/25/2015" 
-	ms.author="sidneyh"/>
+	ms.date="08/09/2015" 
+	ms.author="ddove; sidneyh"/>
 
-# Deinstallieren der Komponenten für elastische Datenbankaufträge
+#Deinstallieren von Komponenten der Aufträge für die elastische Datenbank
+Komponenten der **Aufträge für die elastische Datenbank** können wahlweise mithilfe des Portals oder von PowerShell deinstalliert werden.
 
-Tritt beim Installieren des Auftragsdiensts für elastische Datenbanken ein Fehler auf, löschen Sie die Ressourcengruppe für den Dienst.
+##Deinstallieren von Komponenten der Aufträge für die elastische Datenbank mithilfe des Azure-Portals
 
-## So deinstallieren Sie die Dienstkomponenten
-
-1. Öffnen Sie das [Azure-Vorschauportal](https://ms.portal.azure.com/).
-2. Navigieren Sie zum Abonnement, das den elastischen Auftrag enthält.
+1. Öffnen Sie das [Azure-Portal](https://ms.portal.azure.com/).
+2. Navigieren Sie zu dem Abonnement, das die Komponenten der **Aufträge für die elastische Datenbank** enthält, also dem Abonnement, in dem die Komponenten der Aufträge für die elastische Datenbank installiert wurden.
 3. Klicken Sie auf **Durchsuchen** und dann auf **Ressourcengruppen**.
 4. Wählen Sie die Ressourcengruppe mit dem Namen "\_\_ElasticDatabaseJob".
 5. Löschen Sie die Ressourcengruppe.
 
-Wahlweise können Sie folgendes PowerShell-Skript verwenden:
+##Deinstallieren von Komponenten der Aufträge für die elastische Datenbank mithilfe von PowerShell
 
-1. Öffnen Sie ein [Microsoft Azure PowerShell-Fenster](../powershell-install-configure.md). 
-2. Stellen Sie sicher, dass Sie das PowerShell SDK in der Version 0.8.10 oder höher verwenden.
-3. Führen Sie das Skript aus:
+1.	Öffnen Sie ein Microsoft Azure PowerShell-Befehlsfenster, und navigieren Sie zum Unterverzeichnis „tools“ unter dem Ordner „Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x“: Geben „cd tools“ ein.
+
+		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*>cd tools
+
+2.	Führen Sie das PowerShell-Skript „.\\UninstallElasticDatabaseJobs.ps1“ aus.
+
+		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>Unblock-File .\UninstallElasticDatabaseJobs.ps1
+		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>.\UninstallElasticDatabaseJobs.ps1
+
+Oder führen Sie alternativ einfach das folgende Skript aus, unter der Voraussetzung, dass bei der Installation der Komponenten die Standardwerte übernommen wurden:
 
 		$ResourceGroupName = "__ElasticDatabaseJob"
 		Switch-AzureMode AzureResourceManager
@@ -40,22 +46,22 @@ Wahlweise können Sie folgendes PowerShell-Skript verwenden:
 		$resourceGroup = Get-AzureResourceGroup -Name $ResourceGroupName
 		if(!$resourceGroup)
 		{
-		    Write-Host "The Azure Resource Group: $ResourceGroupName has already been deleted.  Elastic database job is uninstalled."
+		    Write-Host "The Azure Resource Group: $ResourceGroupName has already been deleted.  Elastic database job components are uninstalled."
 		    return
 		}
 		
 		Write-Host "Removing the Azure Resource Group: $ResourceGroupName.  This may take a few minutes.”
 		Remove-AzureResourceGroup -Name $ResourceGroupName -Force
-		Write-Host "Completed removing the Azure Resource Group: $ResourceGroupName.  Elastic database job is now uninstalled."
+		Write-Host "Completed removing the Azure Resource Group: $ResourceGroupName.  Elastic database job compoennts are now uninstalled."
 
 ## Nächste Schritte
 
-Informationen zur erneuten Installation von elastischen Datenbankaufträgen finden Sie unter [Installieren des Diensts für elastische Datenbankaufträge](sql-database-elastic-jobs-service-installation.md).
+Informationen zur erneuten Installation von Aufträgen für die elastische Datenbank finden Sie unter [Installieren des Diensts für Aufträge für die elastische Datenbank](sql-database-elastic-jobs-service-installation.md).
 
-Eine Übersicht über den Dienst für elastische Datenbankaufträge finden Sie unter [Übersicht über elastische Aufträge](sql-database-elastic-jobs-overview.md).
+Weitere Informationen zu Aufträgen für die elastische Datenbank finden Sie unter [Übersicht über Aufträge für die elastische Datenbank](sql-database-elastic-jobs-overview.md).
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-job-uninstall/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

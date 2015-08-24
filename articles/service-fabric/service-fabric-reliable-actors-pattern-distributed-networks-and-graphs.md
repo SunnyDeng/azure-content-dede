@@ -1,12 +1,11 @@
 <properties
-   pageTitle="Reliable Actors: Entwurfsmuster für verteilte Netzwerke und Diagramme"
-   description="Entwurfsmuster für die Verwendung von Service Fabric Reliable Actors zum Modellieren der Anwendung als verteilte Netzwerke und Diagramme"
+   pageTitle="Entwurfsmuster in Azure Service Fabric Actors für verteilte Netzwerke und Diagramme"
+   description="Entwurfsmuster für die Verwendung von Service Fabric Actors zum Modellieren der Anwendung als verteilte Netzwerke und Diagramme"
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
-
 
 <tags
    ms.service="service-fabric"
@@ -14,9 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/05/2015"
+   ms.date="08/11/2015"
    ms.author="claudioc"/>
-
 
 # Reliable Actors-Entwurfsmuster: Verteilte Netzwerke und Diagramme
 Service Fabric Reliable Actors ist ideal geeignet für die Modellierung von komplexen Lösungen mit Beziehungen und für die Modellierung dieser Beziehungen als Objekte.
@@ -226,4 +224,4 @@ Eigentlich wird lediglich die Fähigkeit von Reliable Actors genutzt, jeden ande
 [1]: ./media/service-fabric-reliable-actors-pattern-distributed-networks-and-graphs/distributedNetworks_arch1.png
 [2]: ./media/service-fabric-reliable-actors-pattern-distributed-networks-and-graphs/distributedNetworks_arch2.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen, Verwalten oder Löschen eines Speicherkontos | Azure"
+	pageTitle="Erstellen, Verwalten oder Löschen eines Speicherkontos | Microsoft Azure"
 	description="Erfahren Sie, wie ein Speicherkonto im Azure-Verwaltungsportal erstellen, verwalten oder löschen."
 	services="storage"
 	documentationCenter=""
@@ -59,7 +59,7 @@ Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finde
 
 	Unter [Speicherkontoendpunkte](#storage-account-endpoints) (siehe unten) finden Sie Details dazu, wie der Name des Speicherkontos zum Adressieren Ihrer Objekte in Azure Storage verwendet wird.
 
-4. Wählen Sie unter **Standort/Affinitätsgruppe** einen Standort für Ihr Speicherkonto aus, der in Ihrer Nähe oder der Nähe Ihrer Kunden ist. Wird von einem anderen Azure-Dienst aus auf die Daten zugegriffen, wie etwa einem virtuellen Azure-Computer oder Cloud-Dienst, empfiehlt es sich, eine Affinitätsgruppe aus der Liste auszuwählen. Damit gruppieren Sie das Speicherkonto im selben Rechenzentrum wie andere von Ihnen verwendete Azure-Dienste und senken die Kosten.
+4. Wählen Sie unter **Standort/Affinitätsgruppe** einen Standort für Ihr Speicherkonto aus, der in Ihrer Nähe oder der Nähe Ihrer Kunden ist. Wird von einem anderen Azure-Dienst aus auf die Daten zugegriffen, wie etwa einem virtuellen Azure-Computer oder Clouddienst, empfiehlt es sich, eine Affinitätsgruppe aus der Liste auszuwählen. Damit gruppieren Sie das Speicherkonto im selben Rechenzentrum wie andere von Ihnen verwendete Azure-Dienste und senken die Kosten.
 
 	Beachten Sie, dass Sie die Affinitätsgruppe beim Erstellen des Speicherkontos auswählen müssen; ein bestehendes Konto kann nicht einer Affinitätsgruppe zugeordnet werden. Weitere Informationen zu Affinitätsgruppen finden Sie unter [Dienst am selben Standort wie Affinitätsgruppe](#service-co-location-with-an-affinity-group) (siehe unten).
 
@@ -167,4 +167,4 @@ Um ein nicht mehr verwendetes Speicherkonto zu entfernen, verwenden Sie **Lösch
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

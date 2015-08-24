@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="In verschiedenen Status in BizTalk Services zulässige Aufgaben | Azure" 
+	pageTitle="In verschiedenen Status in BizTalk Services zulässige Aufgaben | Microsoft Azure" 
 	description="Zulässige Aktionen/Vorgänge in verschiedenen MABS-Status: Beenden, Starten, Neustarten, Anhalten, Wiederaufnehmen, Löschen, Skalieren, Aktualisieren der Konfiguration und Sichern" 
 	services="biztalk-services" 
 	documentationCenter="" 
@@ -267,4 +267,4 @@ RestoreFailed<br/></b></td>
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

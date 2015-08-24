@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="05/27/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 
@@ -259,4 +259,4 @@ Wenn die Streamingereignisse beendet sind und Sie die zuvor bereitgestellten Res
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

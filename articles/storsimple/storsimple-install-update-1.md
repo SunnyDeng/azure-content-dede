@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Installieren von Update 1 auf dem StorSimple-Gerät"
+   pageTitle="Installieren von Update 1 auf dem StorSimple-Gerät | Microsoft Azure"
    description="Erfahren Sie, wie Sie Update 1 der StorSimple 8000 Serie auf Ihrem Gerät installieren."
    services="storsimple"
    documentationCenter="NA"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="06/18/2015"
+   ms.date="08/12/2015"
    ms.author="alkohli" />
 
 # Installieren von Update 1 auf dem StorSimple-Gerät
@@ -100,4 +100,4 @@ Wenn Sie sichergestellt haben, dass die Verbindung vorhanden ist, und dieses Pro
 
 Erfahren Sie mehr über [Microsoft Azure StorSimple](storsimple-overview.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

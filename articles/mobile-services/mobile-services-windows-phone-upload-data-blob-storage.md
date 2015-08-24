@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hochladen von Bildern in Azure Storage über eine Windows Phone Silverlight-App | Azure Mobile Services" 
+	pageTitle="Hochladen von Bildern in Azure Storage über eine Windows Phone Silverlight-App | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mithilfe von Mobile Services Bilder von einer Windows Phone Silverlight-App in den Azure-Blobspeicher hochladen." 
 	documentationCenter="windows" 
 	authors="ggailey777" 
@@ -103,4 +103,4 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

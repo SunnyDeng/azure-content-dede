@@ -20,28 +20,28 @@
 
 # Erste Schritte mit Azure Stream Analytics: Betrugserkennung in Echtzeit
 
-Erfahren Sie, wie Sie mit Stream Analytics eine End-to-End-Lösung zur Betrugserkennung in Echtzeit erstellen können. Binden Sie Ereignisse in Azure Event Hubs ein, schreiben Sie Stream Analytics-Abfragen für das Erfassen von Daten oder für Warnungen, und senden Sie das Ergebnis an eine Ausgabesenke, um in Echtzeit einen Dateneinblick zu erhalten.
+Erfahren Sie, wie Sie mit Azure Stream Analytics eine End-to-End-Lösung zur Betrugserkennung in Echtzeit erstellen können. Binden Sie Ereignisse in Azure Event Hubs ein, schreiben Sie Stream Analytics-Abfragen für das Erfassen von Daten oder für Warnungen, und senden Sie das Ergebnis an eine Ausgabesenke, um in Echtzeit einen Dateneinblick zu erhalten.
 
-Azure Stream Analytics ist ein vollständig verwalteter Dienst, der eine geringe Latenz, hohe Verfügbarkeit und eine skalierbare komplexe Ereignisverarbeitung durch das Streaming von Daten in der Cloud bietet. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md).
+Stream Analytics ist ein vollständig verwalteter Dienst, der eine geringe Latenz, Hochverfügbarkeit und eine skalierbare komplexe Ereignisverarbeitung für das Streaming von Daten in der Cloud bietet. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md).
 
 
 ## Szenario: Telekommunikation und SIM-Betrugserkennung in Echtzeit
 
-Ein Telekommunikationsunternehmen hat eine große Datenmenge durch eingehende Anrufe. Im Hinblick auf diese Daten ist für das Unternehmen Folgendes wichtig: * Die Daten sollen auf eine verwaltbare Menge reduziert werden, und es sollen Erkenntnisse über die Kundennutzung anhand der geografischen Regionen und der Zeit gewonnen werden. * Zudem möchte das Unternehmen SIM-Betrug (mehrere mehr oder weniger gleichzeitige Anrufe derselben Person von geografisch unterschiedlichen Standorten) in Echtzeit erkennen, damit es problemlos reagieren und die Kunden benachrichtigen oder den Dienst einstellen kann.
+Ein Telekommunikationsunternehmen hat eine große Datenmenge durch eingehende Anrufe. Im Hinblick auf diese Daten ist für das Unternehmen Folgendes wichtig: * Die Daten sollen auf eine verwaltbare Menge reduziert werden, und es sollen Erkenntnisse über die Kundennutzung anhand der geografischen Regionen und der Zeit gewonnen werden. * Zudem möchte das Unternehmen SIM-Betrug \(mehrere mehr oder weniger gleichzeitige Anrufe derselben Person von geografisch unterschiedlichen Standorten\) in Echtzeit erkennen, damit es problemlos reagieren und die Kunden benachrichtigen oder den Dienst einstellen kann.
 
-In typischen Szenarien des Internet der Dinge (IoT) werden unzählige Telemetrie- oder Sensordaten generiert, die die Kunden erfassen möchten oder über die bei Abweichungen Benachrichtigungen in Echtzeit erstellt werden sollen.
+In typischen Szenarien des Internet der Dinge \(IoT\) werden unzählige Telemetrie- oder Sensordaten generiert, die die Kunden erfassen möchten oder über die bei Abweichungen Benachrichtigungen in Echtzeit erstellt werden sollen.
 
 ## Voraussetzungen
 
 Für dieses Szenario wird ein Ereignisgenerator verwendet, der sich auf GitHub befindet. Laden Sie ihn [hier](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TelcoGenerator) herunter, und befolgen Sie die Schritte dieses Lernprogramms, um Ihre Lösung einzurichten.
 
-## Erstellen einer Event Hub-Eingabe und einer Verbrauchergruppe
+## Erstellen einer Azure Event Hub-Eingabe und einer Consumergruppe
 
 Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hub-Instanz für die Echtzeitverarbeitung. Service Bus Event Hubs sind in Stream Analytics die bevorzugte Methode für das Ereignis "Ingestion". Weitere Informationen zu den Event Hubs finden Sie in der [Azure Service Bus-Dokumentation](/documentation/services/service-bus/).
 
-Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
+So erstellen Sie ein Event Hub
 
-1.	Klicken Sie im [Azure-Portal](https://manage.windowsazure.com/) auf **Neu** > **App Services** > **Service Bus** > **Event Hub** > **Schnellerfassung**. Geben Sie einen Namen, eine Region und den neuen oder vorhandenen Namespace an, um einen neuen Ereignis-Hub zu erstellen.  
+1.	Klicken Sie im [Azure-Portal](https://manage.windowsazure.com/) auf **Neu** \> **App Services** \> **Service Bus** \> **Event Hub** \> **Schnellerfassung**. Geben Sie einen Namen, eine Region und den neuen oder vorhandenen Namespace an, um einen neuen Ereignis-Hub zu erstellen.  
 2.	Als bewährte Methode sollte jeder Stream Analytics-Auftrag eine einzelne Event Hub-Verbrauchergruppe lesen. Im Folgenden werden Sie durch den Prozess des Erstellens einer Verbrauchergruppe geführt. Zudem können Sie [mehr über Verbrauchergruppen erfahren](https://msdn.microsoft.com/library/azure/dn836025.aspx). Um eine Verbrauchergruppe zu erstellen, wechseln Sie zu dem neu erstellten Event Hub, klicken Sie auf die Registerkarte **Verbrauchergruppen** und anschließend auf **Erstellen** am unteren Rand der Seite. Geben Sie einen Namen für die Verbrauchergruppe ein.
 3.	Um Zugriff auf den Event Hub zu gewähren, müssen wir eine Richtlinie für gemeinsamen Zugriff erstellen. Klicken Sie auf die Registerkarte **Konfigurieren** des Event Hubs.
 4.	Erstellen Sie unter **Freigegebene Zugriffsrichtlinien** eine neue Richtlinie mit Berechtigungen zum **Verwalten**.
@@ -49,7 +49,7 @@ Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
 	![Unter "Gemeinsame Zugriffsrichtlinien" können Sie eine neue Richtlinie mit Verwaltungsberechtigungen erstellen.](./media/stream-analytics-get-started/stream-ananlytics-shared-access-policies.png)
 
 5.	Klicken Sie unten auf der Seite auf **Speichern**.
-6.	Gehen Sie zum **Dashboard**, klicken Sie am unteren Rand auf **Verbindungsinformationen**, und kopieren und speichern Sie die Verbindungszeichenfolge.
+6.	Wechseln Sie zum **Dashboard**, klicken Sie unten auf der Seite auf **Verbindungsinformationen**, und kopieren und speichern Sie dann die Verbindungsinformationen.
 
 ## Konfigurieren und starten der Ereignisgenerator-Anwendung
 
@@ -62,7 +62,7 @@ Wir haben eine Clientanwendung bereitgestellt, die Beispielmetadaten für eingeh
 
     	telcodatagen [#NumCDRsPerHour] [SIM Card Fraud Probability] [#DurationHours]
 
-Im folgende Beispiel werden im Lauf von zwei Stunden 1.000 Ereignisse mit einer Betrugswahrscheinlichkeit von 20 % generiert:
+Im folgenden Beispiel werden im Lauf von zwei Stunden 1000 Ereignisse mit einer Betrugswahrscheinlichkeit von 20 Prozent generiert:
 
     TelcoDataGen.exe 1000 .2 2
 
@@ -70,12 +70,12 @@ Sie sehen, dass Datensätze an Ihren Event Hub gesendet werden. Einige wichtige 
 
 | Datensatz | Definition |
 | ------------- | ------------- |
-| CallrecTime | Zeitstempel für die Startzeit des Anrufs |
-| SwitchNum | Die für die Anrufverbindung verwendete Vermittlungsstelle |
-| CallingNum | Die Rufnummer des Anrufers |
-| CallingIMSI | International Mobile Subscriber Identity (IMSI). Die eindeutige ID des Anrufers |
-| CalledNum | Die Rufnummer des Empfängers |
-| CalledIMSI | International Mobile Subscriber Identity (IMSI). Die eindeutige ID des Empfängers |
+| CallrecTime | Zeitstempel für die Startzeit des Anrufs. |
+| SwitchNum | Die für die Anrufverbindung verwendete Vermittlungsstelle. |
+| CallingNum | Die Rufnummer des Anrufers. |
+| CallingIMSI | International Mobile Subscriber Identity \(IMSI\). Die eindeutige ID des Anrufers. |
+| CalledNum | Die Rufnummer des Empfängers. |
+| CalledIMSI | International Mobile Subscriber Identity \(IMSI\). Die eindeutige ID des Empfängers. |
 
 
 ## Erstellen eines Stream Analytics-Auftrags
@@ -83,14 +83,14 @@ Nun, da wir einen Datenstrom von Telekommunikationsereignissen haben, können wi
 
 ### Bereitstellen eines Stream Analytics-Auftrags
 
-1.	Klicken Sie im Azure-Portal auf **Neu** > **Data Services** > **Stream Analytics** > **Schnellerfassung**.
+1.	Klicken Sie im Azure-Portal auf **Neu \> Datendienste \> Stream Analytics \> Schnellerfassung**.
 2.	Geben Sie die folgenden Werte an, und klicken Sie dann auf **Create Stream Analytics Job**:
 
 	* **Auftragsname**: Geben Sie einen Auftragsnamen ein.
 
-	* **Region**: Wählen Sie die Region aus, in der der Auftrag ausgeführt werden soll. Sie sollten erwägen, den Auftrag und das Event Hub in derselben Region zu platzieren, um für eine bessere Leistung zu sorgen und sicherzustellen, dass Sie nicht für die Übertragung von Daten zwischen Regionen bezahlen.
+	* **Region**: Wählen Sie die Region aus, in der der Auftrag ausgeführt werden soll. Ziehen Sie es in Betracht, den Auftrag und das Event Hub in derselben Region zu platzieren, um für eine bessere Leistung zu sorgen und sicherzustellen, dass Sie nicht für die Übertragung von Daten zwischen Regionen bezahlen.
 
-	* **Speicherkonto**: Wählen Sie das Speicherkonto aus, das Sie zum Speichern von Überwachungsdaten für alle Stream Analytics-Aufträge verwenden möchten, die innerhalb dieser Region ausgeführt werden. Sie haben die Möglichkeit, ein vorhandenes Speicherkonto auszuwählen oder ein neues zu erstellen.
+	* **Speicherkonto**: Wählen Sie das Azure-Speicherkonto aus, das Sie zum Speichern von Überwachungsdaten für alle Stream Analytics-Aufträge verwenden möchten, die innerhalb dieser Region ausgeführt werden. Sie haben die Möglichkeit, ein vorhandenes Speicherkonto auszuwählen oder ein neues zu erstellen.
 
 3.	Klicken Sie im linken Bereich auf **Stream Analytics**, um die Stream Analytics-Aufträge aufzulisten.
 
@@ -107,13 +107,13 @@ Nun, da wir einen Datenstrom von Telekommunikationsereignissen haben, können wi
 	* **Input Alias**: Geben Sie einen Anzeigenamen für diese Auftragseingabe ein, z. B. *CallStream*. Beachten Sie, dass Sie diesen Namen später in der Abfrage verwenden werden.
 	* **Event Hub**: Wenn der Event Hub, den Sie erstellt haben, sich in demselben Abonnement wie der Stream Analytics-Auftrag befindet, wählen Sie den Namespace aus, in dem sich der Event Hub befindet.
 
-	Wenn sich Ihr Event Hub in einem anderen Abonnement befindet, wählen Sie **Use Event Hub from Another Subscription**, und geben Sie manuell **Service Bus-Namespace**, **Event Hub Name**, **Event Hub Policy Name**, **Event Hub Policy Key** und **Event Hub Partition Count** ein.
+	Wenn sich Ihr Event Hub in einem anderen Abonnement befindet, wählen Sie **Event Hub aus anderem Abonnement verwenden**, und geben Sie manuell den **Service Bus-Namespace**, **Event Hub-Namen**, **Event Hub-Richtliniennamen**, **Event Hub-Richtlinienschlüssel** und die **Event Hub-Partitionsanzahl** ein.
 
-	* **Event Hub Name**: Wählen Sie den Namen des Event Hubs aus.
+	* **Event Hub-Name**: Wählen Sie den Namen des Event Hubs aus.
 
 	* **Event Hub Policy Name**: Wählen Sie die Event Hub-Richtlinie aus, die Sie zuvor in diesem Lernprogramm erstellt haben.
 
-	* **Event Hub Consumer Group**: Geben Sie die Consumer-Gruppe ein, die Sie zuvor in diesem Lernprogramm erstellt haben.
+	* **Event Hub-Consumergruppe**: Geben Sie die Consumergruppe ein, die Sie zuvor in diesem Tutorial erstellt haben.
 5.	Klicken Sie auf die rechte Taste.
 6.	Geben Sie die folgenden Werte an:
 
@@ -123,7 +123,7 @@ Nun, da wir einen Datenstrom von Telekommunikationsereignissen haben, können wi
 
 ### Festlegen der Auftragsabfrage
 
-Stream Analytics unterstützt ein einfaches, deklaratives Abfragemodell zum Beschreiben der Transformationen für Echtzeitverarbeitung. Weitere Informationen zur Sprache finden Sie in der [Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/dn834998.aspx) (in englischer Sprache). Dieses Lernprogramm hilft Ihnen beim Erstellen und Testen mehrerer Abfragen über Ihren Anrufdatenstrom in Echtzeit.
+Stream Analytics unterstützt ein einfaches, deklaratives Abfragemodell zum Beschreiben der Transformationen für Echtzeitverarbeitung. Weitere Informationen zur Sprache finden Sie in der [Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/dn834998.aspx) \(in englischer Sprache\). Dieses Lernprogramm hilft Ihnen beim Erstellen und Testen mehrerer Abfragen über Ihren Anrufdatenstrom in Echtzeit.
 
 #### Optional: Beispieleingabedaten
 Um die Abfrage mit den tatsächlichen Auftragsdaten zu überprüfen, können Sie die **Beispieldaten**-Funktion verwenden, um Ereignisse aus Ihrem Datenstrom zu extrahieren und eine JSON-Datei der Ereignisse zum Testen zu erstellen. Die folgenden Schritte veranschaulichen die Vorgehensweise. Zudem finden Sie die Beispieldatei [Telco.json](https://github.com/Azure/azure-stream-analytics/blob/master/Sample%20Data/telco.json) für Testzwecke.
@@ -146,8 +146,8 @@ Wenn Sie alle Ereignisse archivieren möchten, können Sie eine Pass-Through-Abf
 	> Stellen Sie sicher, dass der Name der Eingabequelle dem Namen der Eingabe entspricht, die Sie zuvor angegeben haben.
 
 3.	Klicken Sie im Abfrage-Editor auf **Test**.
-4.	Geben Sie eine Testdatei an. Hierbei kann es sich um eine im Rahmen der angeführten Schritte von Ihnen erstellte oder um die Datei [Telco.json](https://github.com/Azure/azure-stream-analytics/blob/master/Sample%20Data/telco.json) handeln.
-5.	Klicken Sie auf das Häkchen. Die Ergebnisse werden unterhalb der Abfragedefinition angezeigt.
+4.	Geben Sie eine Testdatei an. Hierbei kann es sich um die im Rahmen der angeführten Schritte von Ihnen erstellte Datei oder um die Datei [Telco.json](https://github.com/Azure/azure-stream-analytics/blob/master/Sample%20Data/telco.json) handeln.
+5.	Klicken Sie auf die Schaltfläche „Prüfen“. Die Ergebnisse werden unterhalb der Abfragedefinition angezeigt.
 
 	![Ergebnisse der Abfragedefinition](./media/stream-analytics-get-started/stream-analytics-sim-fraud-output.png)
 
@@ -175,9 +175,9 @@ Um die Anzahl der eingehenden Anrufe pro Region zu vergleichen, rufen wir alle f
 		FROM CallStream TIMESTAMP BY CallRecTime
 		GROUP BY TUMBLINGWINDOW(s, 5), SwitchNum
 
-	Diese Abfrage gibt mit dem Schlüsselwort **Timestamp By** ein Zeitstempelfeld für die Nutzlast an, das für die zeitliche Berechnung verwendet wird. Wird dieses Feld nicht angegeben, wird die Zeit verwendet, zu der jedes Ereignis beim Event Hub eingeht. Weitere Informationen erhalten Sie unter ["Arrival Time Vs Application Time" in der Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx) (in englischer Sprache).
+	Diese Abfrage gibt mit dem Schlüsselwort **Timestamp By** ein Zeitstempelfeld für die Nutzlast an, das für die zeitliche Berechnung verwendet wird. Wird dieses Feld nicht angegeben, wird die Zeit verwendet, zu der jedes Ereignis beim Event Hub eingeht. Weitere Informationen erhalten Sie unter ["Arrival Time Vs Application Time" in der Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx) \(in englischer Sprache\).
 
-	Beachten Sie, dass Sie mit der Eigenschaft "System.Timestamp" jeweils auf einen Zeitstempel für das Ende der einzelnen Fenster zugreifen können.
+	Beachten Sie, dass Sie mit der Eigenschaft **System.Timestamp** jeweils auf einen Zeitstempel für das Ende der einzelnen Fenster zugreifen können.
 
 2.	Klicken Sie im Abfrage-Editor auf **Erneut ausführen**, um die Ergebnisse der Abfrage anzuzeigen.
 
@@ -203,22 +203,22 @@ Um eine potenziell betrügerische Verwendung erkennen zu können, betrachten wir
 
 ### Erstellen der Ausgabetabelle
 
-Nun, da wir einen Datenstrom, eine Event Hub-Eingabe zum Erfassen von Ereignissen und eine Abfrage zur Ausführung einer Umwandlung über den Stream definiert haben, ist der letzte Schritt die Definition einer Ausgabetabelle für den Auftrag. Die Ereignisse im Zusammenhang mit betrügerischem Verhalten werden in den Blob-Speicher geschrieben.
+Nun, da wir einen Datenstrom, eine Event Hub-Eingabe zum Erfassen von Ereignissen und eine Abfrage zur Ausführung einer Umwandlung über den Stream definiert haben, ist der letzte Schritt die Definition einer Ausgabetabelle für den Auftrag. Die Ereignisse im Zusammenhang mit betrügerischem Verhalten werden in den Blobspeicher geschrieben.
 
-Befolgen Sie die nachstehenden Schritte, um (sofern noch nicht erfolgt) einen Container für den Blob-Speicher zu erstellen.
+Befolgen Sie die nachstehenden Schritte, um \(sofern noch nicht erfolgt\) einen Container für den Blob-Speicher zu erstellen.
 
-1.	Verwenden Sie ein vorhandenes Speicherkonto, oder erstellen Sie ein neues, indem Sie auf **NEU** > **DATA SERVICES** > **SPEICHER** > **SCHNELLERFASSUNG** klicken und die Anweisungen befolgen.
-2.	Wählen Sie das Speicherkonto aus, und klicken Sie am oberen Seitenrand auf **CONTAINER** und dann auf **HINZUFÜGEN**.
+1.	Verwenden Sie ein vorhandenes Speicherkonto, oder erstellen Sie ein neues, indem Sie auf **NEU \> DATENDIENSTE \> SPEICHER \> SCHNELLERFASSUNG** klicken und die Anweisungen befolgen.
+2.	Wählen Sie das Speicherkonto aus, klicken Sie oben auf der Seite auf **CONTAINER**, und klicken Sie dann auf **HINZUFÜGEN**.
 3.	Geben Sie den Wert **NAME** für den Container an, und legen Sie **ZUGRIFF** auf "Öffentliches Blob" fest.
 
 ## Festlegen der Auftragsausgabe
 
-1.	Klicken Sie in Ihrem Stream Analytics-Auftrag am oberen Rand der Seite auf **AUSGABE**, und klicken Sie dann auf **AUSGABE HINZUFÜGEN**. Im daraufhin geöffneten Dialogfeld richten Sie in einer Reihe von Schritten Ihre Ausgabe ein.
+1.	Klicken Sie in Ihrem Stream Analytics-Auftrag am oberen Rand der Seite auf **AUSGABE**, und klicken Sie dann auf **AUSGABE HINZUFÜGEN**. Das aufgerufene Dialogfeld führt Sie durch eine Reihe von Schritten, um Ihre Ausgabe einzurichten.
 2.	Wählen Sie **BLOB-SPEICHER**, und klicken Sie dann mit der rechten Maustaste.
 3.	Geben Sie die folgenden Werte auf der dritten Seite ein, oder wählen Sie sie aus:
 
 	* **AUSGABEALIAS**: Geben Sie einen Anzeigenamen für diese Auftragsausgabe ein.
-	* **ABONNEMENT**: Befindet sich der Blob-Speicher, den Sie erstellt haben, in demselben Abonnement wie der Stream Analytics-Auftrag, wählen Sie **Use Storage Account from Current Subscription** aus. Wenn sich der Speicher in einem anderen Abonnement befindet, wählen Sie **Use Storage Account from Another Subscription** aus, und geben Sie manuell **SPEICHERKONTO**, **SPEICHERKONTOSCHLÜSSEL** und **CONTAINER** ein.
+	* **ABONNEMENT**: Befindet sich der Blobspeicher, den Sie erstellt haben, in demselben Abonnement wie der Stream Analytics-Auftrag, wählen Sie **Speicherkonto aus dem aktuellen Abonnement verwenden**. Wenn sich der Speicher in einem anderen Abonnement befindet, wählen Sie **Use Storage Account from Another Subscription** aus, und geben Sie manuell **SPEICHERKONTO**, **SPEICHERKONTOSCHLÜSSEL** und **CONTAINER** ein.
 	* **SPEICHERKONTO**: Wählen Sie den Namen des Speicherkontos aus.
 	* **CONTAINER**: Wählen Sie den Namen des Containers aus.
 	* **DATEINAMENPRÄFIX**: Geben Sie ein Präfix ein, das beim Schreiben von Blob-Ausgaben verwendet wird.
@@ -253,8 +253,7 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
-- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Stream Analytics Query Language Reference \(in englischer Sprache\)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

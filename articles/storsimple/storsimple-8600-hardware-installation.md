@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Installieren des StorSimple 8600-Geräts"
+   pageTitle="Installieren des StorSimple 8600-Geräts | Microsoft Azure"
    description="Beschreibt, wie Sie das StorSimple 8600-Gerät auspacken, in ein Rack einbauen und verkabeln."
    services="storsimple"
    documentationCenter="NA"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="07/17/2015"
+   ms.date="08/06/2015"
    ms.author="alkohli" />
 
 # Installieren des StorSimple 8600-Geräts
@@ -44,7 +44,7 @@ Führen Sie dann die folgenden Schritte aus, um das Gerät auszupacken.
 
     ![Auspacken des Speichergeräts](./media/storsimple-8600-hardware-installation/HCSUnpackyour4Udevice.png)
  
-    **Abbildung 1: Das ausgepackte Speichergerät**
+    **Das ausgepackte Speichergerät**
 
      Bezeichnung | Beschreibung 
      ----- | -------------
@@ -114,7 +114,7 @@ Im Lieferumfang ist ein Satz Montageschienen für die Verwendung mit einem 19-Zo
 
     ![Befestigen von Gleitschienen am Gehäuse](./media/storsimple-8600-hardware-installation/HCSAttachingRailSlidestoEnclosureChassis.png)
 
-    **Abbildung 2: Befestigen der Gleitschienen an den Seiten des Gehäuses**
+    **Befestigen der Gleitschienen an den Seiten des Gehäuses**
 
     Bezeichnung | Beschreibung
     ----- | -----------
@@ -131,7 +131,7 @@ Im Lieferumfang ist ein Satz Montageschienen für die Verwendung mit einem 19-Zo
 
      ![Befestigen von Gleitschienen am Rackschrank](./media/storsimple-8600-hardware-installation/HCSAttachingRailSlidestoRackCabinet.png)
 
-    **Abbildung 3: Befestigen der Schienenbaugruppen am Rack**
+    **Befestigen der Schienenbaugruppen am Rack**
 
      Bezeichnung | Beschreibung
      ----- | -----------
@@ -153,7 +153,7 @@ Führen Sie die folgenden Schritte aus, um das EBOD-Gehäuse unter Verwendung de
 
     ![Einführen des Geräts in das Rack](./media/storsimple-8600-hardware-installation/HCSInsertingDeviceintheRack.png)
 
-    **Abbildung 4: Einbauen des Gehäuses in das Rack**
+    **Einbauen des Gehäuses in das Rack**
 
 3. Sichern Sie das Gehäuse im Rack am linken und am rechten Flansch mit je einer der mitgelieferten Kreuzschlitzschrauben.
 
@@ -161,7 +161,7 @@ Führen Sie die folgenden Schritte aus, um das EBOD-Gehäuse unter Verwendung de
 
      ![Anbringen der Flanschkappen](./media/storsimple-8600-hardware-installation/HCSInstallingFlangeCaps.png)
 
-    **Abbildung 5: Anbringen der Flanschkappen**
+    **Anbringen der Flanschkappen**
  
      Bezeichnung | Beschreibung
      ----- | -----------
@@ -196,110 +196,17 @@ Bevor Sie mit dem Verkabeln des Geräts beginnen können, benötigen Sie Folgend
 - Mitgelieferte serielle Kabel
 - Seriell-USB-Konverter, für den der entsprechende Treiber auf dem PC installiert ist (sofern erforderlich)
 - Mitgelieferte einzelne QSFP-zu-SFP+-Adapter für die Verwendung mit 10-GbE-Netzwerkschnittstellen
-- [Unterstützte Transceiver, Kabel und Switches für 10-GbE-Netzwerkschnittstellen](https://msdn.microsoft.com/library/azure/dn891474.aspx) 
+- [Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät](storsimple-supported-hardware-for-10-gbe-network-interfaces/) 
 
-### SAS-Verkabelung
+### SAS- und Stromverkabelung
 
-Das Gerät umfasst ein primäres Gehäuse und ein EBOD-Gehäuse. Diese Gehäuse müssen über die SAS-Kabel miteinander verbunden werden.
+Das Gerät verfügt sowohl über ein primäres als auch ein EBOD-Gehäuse. Daher müssen die Einheiten für SAS-Konnektivität (Serial Attached SCSI) und Stromversorgung miteinander verbunden werden.
 
-Im nächsten Schritt identifizieren Sie das primäre Gehäuse und das EBOD-Gehäuse.
+Wenn Sie dieses Gerät zum ersten Mal einrichten, führen Sie zuerst die Schritte für die SAS-Verkabelung und danach die Schritte für die Stromverkabelung aus.
 
-#### So identifizieren Sie das primäre Gehäuse und das EBOD-Gehäuse
+[AZURE.INCLUDE [storsimple-cable-8600-for-power](../../includes/storsimple-sas-cable-8600.md)]
 
-1. Identifizieren Sie das primäre Gehäuse und das EBOD-Gehäuse. Sehen Sie sich dazu die Rückwand des jeweiligen Gehäuses an. Die folgende Abbildung bietet eine Orientierung.
-
-    ![Primäres Gehäuse und EBOD-Gehäuse](./media/storsimple-8600-hardware-installation/HCSBackplaneofprimaryandEBODenclosure.png)
-
-    **Abbildung 6: Rückseite des primären Gehäuses und des EBOD-Gehäuses**
-
-     Bezeichnung | Beschreibung
-     ----- | -----------
-     1 | Primäres Gehäuse
-     2 | EBOD-Gehäuse
-
-
-2. Suchen Sie am primären Gehäuse und am EBOD-Gehäuse nach der jeweiligen Seriennumer. Der Aufkleber mit der Seriennummer befindet sich jeweils an der hinteren Lasche des Gehäuses. Die Seriennummern beider Gehäuse müssen identisch sein. Wenn die Seriennummern nicht übereinstimmen, wenden Sie sich umgehend an den Microsoft Support. Die folgende Abbildung zeigt die Position der Seriennummern.
-
-    ![Position der Seriennummer](./media/storsimple-8600-hardware-installation/HCSRearviewofenclosureindicatinglocationofserialnumbersticker.png)
-
-    **Abbildung 7: Rückansicht des Gehäuses mit Position der Seriennummer**
-
-     Bezeichnung | Beschreibung
-     ----- | -----------
-     1 | Lasche des Gehäuses
-
-
-Im nächsten Schritt verwenden Sie die mitgelieferten SAS-Kabel, um das EBOD-Gehäuse mit dem primären Gehäuse zu verbinden.
-
-#### So verbinden Sie das primäre Gehäuse mit dem EBOD-Gehäuse
-
-1. Identifizieren Sie die vier SAS (Serial Attached SCSI)-Anschlüsse am primären Gehäuse und am EBOD-Gehäuse. Die SAS-Anschlüsse sind am primären Gehäuse mit "EBOD" und am EBOD-Gehäuse mit "CTRL" beschriftet, wie in Abbildung 8 dargestellt.
-
-    ![Position der SAS-Anschlüsse](./media/storsimple-8600-hardware-installation/HCSSAScablingforyourdevice.png)
-
-    **Abbildung 8: Position der SAS-Anschlüsse am primären Gehäuse und am EBOD-Gehäuse**
-
-     Bezeichnung | Beschreibung
-     ----- | -----------
-     Eine Datei | Primäres Gehäuse
-     B | EBOD-Gehäuse
-     1 | Controller 0
-     2 | Controller 1
-     3 | EBOD-Controller 0
-     4 | EBOD-Controller 1
-     5,6 | SAS-Anschlüsse am primären Gehäuse (mit der Beschriftung "EBOD")
-     7,8 | SAS-Anschlüsse am EBOD-Gehäuse (mit der Beschriftung "CTRL")
-
-2. Verwenden Sie die mitgelieferten SAS-Kabel, um die EBOD-Anschlüsse mit den CTRL-Anschlüssen zu verbinden.
-
-    Der EBOD-Anschluss am Controller 0 sollte mit dem CTRL-Anschluss am EBOD-Controller 0 verbunden sein. Der EBOD-Anschluss am Controller 1 sollte mit dem CTRL-Anschluss am EBOD-Controller 1 verbunden sein. Orientieren Sie sich dazu an Abbildung 8.
-
-### Stromverkabelung
-
-Sowohl das primäre Gehäuse als auch das EBOD-Gehäuse enthalten redundante Stromversorgungs- und Kühleinheiten (Power and Cooling Modules, PCMs). Die PCMs in beiden Gehäusen müssen installiert und mit unterschiedlichen Stromquellen verbunden sein, um eine hohe Verfügbarkeit sicherzustellen.
-
-Führen Sie die folgenden Schritte aus, um das Gerät für die Stromversorgung zu verkabeln.
-
-#### So verkabeln Sie das Gerät für die Stromversorgung
-
-1. Stellen Sie sicher, dass sich die Netzschalter aller PCMs in ausgeschalteter Position befinden.
-
-2. Schließen Sie an beide PCMs des primären Gehäuses die Netzkabel an. Die Netzkabel sind in der folgenden Abbildung rot dargestellt.
-
-3. Stellen Sie sicher, dass die beiden PCMs des primären Gehäuses separate Stromquellen verwenden.
-
-4. Schließen Sie die Netzkabel an die Rack-PDUs an, wie in der folgenden Abbildung dargestellt.
-
-5. Wiederholen Sie die Schritte 2 bis 4 für das EBOD-Gehäuse.
-
-6. Schalten Sie das EBOD-Gehäuse ein, indem Sie die Netzschalter der PCMs in die eingeschaltete Position bringen.
-
-7. Stellen Sie sicher, dass das EBOD-Gehäuse eingeschaltet ist. Überprüfen Sie hierzu, ob die EBOD-Controller-LEDs (grüne LEDs an der Rückseite des Gehäuses) leuchten.
-
-8. Schalten Sie nun das primäre Gehäuse ein, indem Sie die PCM-Schalter in die eingeschaltete Position bringen.
-
-9. Stellen Sie sicher, dass das System eingeschaltet ist. Überprüfen Sie hierzu, ob die Controller-LEDs leuchten.
-
-10. Vergewissern Sie sich, dass die Verbindung zwischen dem EBOD-Controller und dem Gerätecontroller aktiv ist, indem Sie die SAS-LEDs (vier LEDs neben dem SAS-Anschluss) am EBOD-Controller überprüfen. Die SAS-LEDs sollten grün leuchten.
-
-> [AZURE.IMPORTANT]Damit eine hohe Verfügbarkeit des Systems sichergestellt ist, sollten Sie sich unbedingt an das im folgenden Diagramm dargestellte Stromverkabelungsschema halten.
-
-   ![Diagramm für die Stromverkabelung](./media/storsimple-8600-hardware-installation/HCSCableYour4UDeviceforPower.png)
-
-   **Abbildung 9: Stromverkabelung des Geräts**
-
-     Label | Description
-     ----- | -----------
-     1     | Primary enclosure
-     2     | PCM 0
-     3     | PCM 1
-     4     | Controller 0
-     5     | Controller 1
-     6     | EBOD controller 0
-     7     | EBOD controller 1
-     8     | EBOD enclosure
-     9     | PDUs
- 
+[AZURE.INCLUDE [storsimple-cable-8600-for-power](../../includes/storsimple-cable-8600-for-power.md)]
 
 ### Netzwerkverkabelung
 
@@ -313,7 +220,7 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
 
      ![Rückwand des 8600-Geräts](./media/storsimple-8600-hardware-installation/HCSBackplaneof2UDevicewithPortsLabeled.jpg)
 
-    **Abbildung 10: Rückseite des Geräts mit Datenanschlüssen**
+    **Rückseite des Geräts mit Datenanschlüssen**
  
      Bezeichnung | Beschreibung
      ------- | -----------
@@ -334,7 +241,7 @@ Konfigurieren Sie mindestens eine Netzwerkschnittstelle für den Cloudzugriff un
 
 ![Netzwerkverkabelung des 4 HE-Geräts](./media/storsimple-8600-hardware-installation/HCSCableYour4UDeviceforNetwork.png)
 
-**Abbildung 11: Netzwerkverkabelung des Geräts**
+**Netzwerkverkabelung des Geräts**
 
 Bezeichnung | Beschreibung
 ----- | -----------
@@ -356,7 +263,7 @@ Führen Sie die folgenden Schritte aus, um den seriellen Anschluss zu verkabeln.
 
 #### So verkabeln Sie das Gerät für serielle Verbindungen
 
-1. Das Gerät verfügt über einen seriellen Anschluss an jedem Controller, der durch ein Schraubenschlüsselsymbol gekennzeichnet ist. Die Position der seriellen Anschlüsse an der Rückwand des Geräts ist in Abbildung 10 dargestellt.
+1. Das Gerät verfügt über einen seriellen Anschluss an jedem Controller, der durch ein Schraubenschlüsselsymbol gekennzeichnet ist. Sehen Sie sich die Abbildung der Datenanschlüsse an der Rückseite des Geräts an, um die seriellen Anschlüsse zu identifizieren.
 
 2. Identifizieren Sie den aktiven Controller anhand der Rückwand des Geräts. Eine blinkende blaue LED zeigt an, dass der Controller aktiv ist.
 
@@ -382,4 +289,4 @@ Das Gerät ist nun für Stromversorgung, Netzwerkzugriff und serielle Verbindung
 Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

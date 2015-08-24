@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit Daten (Android) | Mobile Dev Center" 
+	pageTitle="Erste Schritte mit Daten (Android) | Microsoft Azure" 
 	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Android-App." 
 	services="mobile-services" 
 	documentationCenter="android" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="05/06/2015" 
+	ms.date="08/08/2015" 
 	ms.author="ricksal"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
@@ -37,7 +37,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 + Ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-android-get-started-data-EC%2F). 
 
-+ Das [Mobile Services Android SDK]; das <a href="https://go.microsoft.com/fwLink/p/?LinkID=280125" target="_blank">Android-SDK</a>, das die integrierte Eclipse-Entwicklungsumgebung (IDE) und das Android Developer Tools (ADT)-Plug-In enthält, sowie Android 4.2 oder eine höhere Version.
++ Das [Mobile Services Android SDK]; das <a href="https://go.microsoft.com/fwLink/p/?LinkID=280125" target="_blank">Android-SDK</a>, das die integrierte Eclipse-Entwicklungsumgebung \(IDE\) und das Android Developer Tools \(ADT\)-Plug-In enthält, sowie Android 4.2 oder eine höhere Version.
 
 > [AZURE.NOTE]Dieses Lernprogramm enthält Anleitungen für die Installation des Android-SDK und des Android-SDK für mobile Dienste. Das heruntergeladene GetStartedWithData-Projekt benötigt Android 4.2 oder eine neuere Version. Das SDK für mobile Dienste benötigt dagegen nur Android 2.2 oder eine neuere Version.
 
@@ -132,4 +132,4 @@ Als Nächstes können Sie diese anderen Android-Lernprogramme ausführen:
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

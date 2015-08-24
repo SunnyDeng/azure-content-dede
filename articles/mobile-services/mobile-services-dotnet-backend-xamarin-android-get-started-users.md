@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte bei der Authentifizierung in Mobile Services für Xamarin Android-Apps - Azure Mobile Services" 
+	pageTitle="Erste Schritte bei der Authentifizierung in Mobile Services für Xamarin Android-Apps | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Xamarin Android-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
 	services="mobile-services" 
 	documentationCenter="xamarin" 
@@ -112,4 +112,4 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [Azure Management Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

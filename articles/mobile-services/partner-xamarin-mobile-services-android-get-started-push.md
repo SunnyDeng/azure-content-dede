@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hinzufügen von Pushbenachrichtigungen zur Xamarin Android-App | Azure Mobile Services" 
+	pageTitle="Hinzufügen von Pushbenachrichtigungen zur Xamarin Android-App | Microsoft Azure" 
 	description="Hier erfahren Sie, wie Sie Pushbenachrichtigungen mit Google Cloud Messaging für Ihre Xamarin.Android-App über Azure Mobile Services und Azure Notification Hubs konfigurieren." 
 	documentationCenter="xamarin" 
 	authors="ggailey777" 
@@ -86,4 +86,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Azure Mobile Services-Komponente]: http://components.xamarin.com/view/azure-mobile-services/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

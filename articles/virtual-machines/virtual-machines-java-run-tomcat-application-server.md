@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Tomcat auf einem virtuellen Computer – Azure-Lernprogramm"
+	pageTitle="Tomcat auf einem virtuellen Computer | Microsoft Azure"
 	description="Erfahren Sie, wie Sie einen virtuellen Computer unter Windows erstellen und den Computer konfigurieren können, damit darauf ein Apache Tomcat-Anwendungsserver ausgeführt wird."
 	services="virtual-machines"
 	documentationCenter="java"
@@ -142,4 +142,4 @@ Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Serv
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

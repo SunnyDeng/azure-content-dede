@@ -13,12 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/25/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 #Vorgehensweise: Prüfen des Auftragsfortschritts
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).
+> [AZURE.SELECTOR]
+- [Portal](media-services-portal-check-job-progress.md)
+- [.NET](media-services-check-job-progress.md)
+- [REST](media-services-rest-check-job-progress.md)
 
 ##Überprüfen des Auftragsstatus im Portal
 
@@ -37,4 +40,4 @@ Veröffentlichen des Inhalts. Weitere Informationen finden Sie unter [Codieren v
 [checkstatus]: ./media/media-services-portal-check-job-progress/media-services-monitor-job-progress.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="07/16/2015" 
+    ms.date="08/12/2015" 
     ms.author="elizapo" />
 
 
@@ -33,7 +33,7 @@ Ein weiteres Beispiel ist das Blockieren des Internetzugriffs für eine bestimmt
 1.	Wenn Ihre RemoteApp-Sammlung mit einer Domäne verbunden ist, können Sie eine [Gruppenrichtlinie](https://technet.microsoft.com/library/cc725828.aspx) erzwingen (mit Ausnahme der Timeout-Richtlinien "Im Leerlauf" und "Trennen", die [hier](../azure-subscription-service-limits.md) beschrieben werden).
 2.	Konfigurieren Sie als Alternative zur Gruppenrichtlinie (wenn Ihre Sammlung nicht mit einer Domäne verbunden ist oder Sie nicht die richtigen Berechtigungen in Active Directory haben) [Lokale Richtlinien](https://technet.microsoft.com/library/cc775702.aspx) in Ihrem Vorlagenimage. Beachten Sie, dass Gruppenrichtlinien Vorrang vor lokalen Richtlinien haben, wenn ein Konflikt vorliegt.
 3.	Einige OS-/App-Einstellungen können nicht über Richtlinien konfiguriert werden. Dies funktioniert jedoch beim Konfigurieren des Vorlagenimages über den Registrierungsschlüssel mit dem [Programm "RegEdit"](./remoteapp-hybridtrouble.md).
-4.	Sie können die [Windows-Firewall](http://windows.microsoft.com/en-US/windows-8/Windows-Firewall-from-start-to-finish) nutzen, um den Netzwerkzugriff auf und von dem Computer zu steuern, auf dem die Anwendung ausgeführt wird. Achten Sie darauf, dass Sie die hier definierten URLs und Ports nicht blockieren.
+4.	Sie können die [Windows-Firewall](http://windows.microsoft.com/de-de/windows-8/Windows-Firewall-from-start-to-finish) nutzen, um den Netzwerkzugriff auf und von dem Computer zu steuern, auf dem die Anwendung ausgeführt wird. Achten Sie darauf, dass Sie die hier definierten URLs und Ports nicht blockieren.
 5.	Sie können [AppLocker](https://technet.microsoft.com/library/hh831440.aspx) verwenden, um zu steuern, welche Anwendungen und Dateien Benutzer ausführen können. Beispielsweise könnten gewiefte Benutzer herausfinden, wie nicht veröffentlichte Anwendungen ausgeführt werden, die aber im Image vorhanden sind, das Sie zum Erstellen der Sammlung erzeugt haben – AppLocker kann das blockieren.
  
 ## Ausführliche Informationen
@@ -47,4 +47,4 @@ Ein weiteres Beispiel ist das Blockieren des Internetzugriffs für eine bestimmt
 - [Office 2013-Richtlinien](https://technet.microsoft.com/library/cc178969.aspx) (einschließlich[Informationen zum Anpassen der Office-Symbolleiste](https://technet.microsoft.com/library/cc179143.aspx)).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

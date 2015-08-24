@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hinzufügen von Pushbenachrichtigungen zu Ihrer universellen Windows 8.1-App | Azure Mobile Services" 
+	pageTitle="Hinzufügen von Pushbenachrichtigungen zu Ihrer universellen Windows 8.1-App | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie über einen mobilen .NET-Back-End-Dienst mithilfe von Azure Notification Hubs Pushbenachrichtigungen an Ihre universelle Windows 8.1-App senden können." 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
@@ -109,4 +109,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Verwenden eines .NET-Clients für Azure Mobile Services]: mobile-services-windows-dotnet-how-to-use-client-library.md
 [MobileServiceClient]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="billing"
-   ms.date="07/7/2015"
+   ms.date="07/07/2015"
    ms.author="mobandyo;bryanla"/>
 
 # Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure 
@@ -78,4 +78,4 @@ Unter [Integration von Cloud Cruiser und Microsoft Azure-Abrechnungs-API](billin
 + Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 + Weitere Informationen zu den Tools, die zum Entwickeln eines Verständnisses der Cloudausgaben erforderlich sind, finden Sie im Gartner-Artikel [Market Guide for IT Financial Management (ITFM) Tools](http://www.gartner.com/technology/reprints.do?id=1-212F7AL&ct=140909&st=sb) (Marktleitfaden für IT Financial Management (ITFM)-Tools).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

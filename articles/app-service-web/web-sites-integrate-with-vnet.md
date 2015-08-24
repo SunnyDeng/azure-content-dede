@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/24/2015" 
+	ms.date="08/11/2015" 
 	ms.author="cephalin"/>
 
 # Integrieren einer Web-App in einem Azure Virtual Network #
@@ -26,13 +26,13 @@ Weitere Informationen zu Azure Virtual Networks, den Vorteilen und Anwendungsfä
 ## Erste Schritte ##
 Sie müssen Folgendes beachten, bevor Sie Ihre Web-App mit einem virtuellen Netzwerk verbinden:
 
-1.	Web-Apps können nur mit einem virtuellen Netzwerk verbunden werden, wenn sie mit einem App Service-Plan der Preisstufe "Standard" ausgeführt werden. Web-Apps der Stufen "Kostenlos", "Freigegeben" und "Basic" können nicht mit einem virtuellen Netzwerk verbunden werden.
+1.	Web-Apps können nur mit einem virtuellen Netzwerk verbunden werden, wenn sie mit einem App Service-Plan des Tarifs **Standard** ausgeführt werden. Web-Apps der Stufen "Kostenlos", "Freigegeben" und "Basic" können nicht mit einem virtuellen Netzwerk verbunden werden.
 2.	Wenn Ihr virtuelles Zielnetzwerk bereits vorhanden ist, muss es über Punkt-zu-Standort mit einem dynamischen Routing-Gateway aktiviert werden, bevor es mit einer Web-App verbunden werden kann. Sie können Punkt-zu-Standort-VPN (Virtual Private Network) nicht aktivieren, wenn Ihr Gateway mit statischem Routing konfiguriert ist.
-3.	Sie können nur bis zu 5 Netzwerke in Ihrem App Service-Plan konfigurieren. Eine Web-App kann jeweils nur mit einem Netzwerk verbunden werden. Diese 5 Netzwerke können von einer beliebigen Anzahl von Web-Apps im selben App Service-Plan verwendet werden.  
+3.	Sie können nur bis zu fünf Netzwerke in Ihrem App Service-Plan konfigurieren. Eine Web-App kann jeweils nur mit einem Netzwerk verbunden werden. Diese fünf Netzwerke können von einer beliebigen Anzahl von Web-Apps im selben App Service-Plan verwendet werden.  
 
 Sie haben die Möglichkeit, sich mit einem neuen oder bereits vorhandenen virtuellen Netzwerk zu verbinden. Wenn Sie ein neues Netzwerk einrichten, wird ein Gateway für Sie vorkonfiguriert. Beachten Sie, dass die Erstellung und Konfiguration eines neuen virtuellen Netzwerks mehrere Minuten dauern wird.
 
-Wenn Ihre Web-App nicht mit einem App Service-Standardplan ausgeführt wird, erhalten Sie einen Hinweis mit einem Link zu den entsprechenden Preisstufen für eine Hochstufung.
+Wenn Ihre Web-App nicht mit einem App Service-Plan des Tarifs "Standard" ausgeführt wird, erhalten Sie einen Hinweis mit einem Link zu den entsprechenden Preisstufen für eine Hochstufung.
 
 ![](./media/web-sites-integrate-with-vnet/upgrade-to-standard.png)
 
@@ -50,7 +50,7 @@ Um eine Web-App mit einem virtuellen Netzwerk zu verbinden, klicken Sie im Blatt
 
 ![](./media/web-sites-integrate-with-vnet/connect-to-existing-vnet.png)
  
-Das System erstellt dann ein Zertifikat, um in Ihrem virtuellen Netzwerk zu authentifizieren, ob es sich um die erste Web-App in Ihrem Abonnement handelt, die eine Verbindung zu diesem Netzwerk herstellt. Um die Übergabe des Zertifikats an das [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) anzuzeigen, navigieren Sie zu "Virtuelle Netzwerke" und wählen das Netzwerk und die Registerkarte "Zertifikate" aus.
+Das System erstellt dann ein Zertifikat, um in Ihrem virtuellen Netzwerk zu authentifizieren, ob es sich um die erste Web-App in Ihrem Abonnement handelt, die eine Verbindung zu diesem Netzwerk herstellt. Um die Übergabe des Zertifikats an das [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) anzuzeigen, navigieren Sie zu "Virtual Networks" und wählen das Netzwerk und die Registerkarte "Zertifikate" aus.
 
 Die Abbildung oben zeigt ein Netzwerk mit dem Namen "cantConnectVnet", das ausgegraut und nicht ausgewählt werden kann. Es gibt hierfür nur zwei Gründe. Es bedeutet, dass Sie entweder Punkt-zu-Standort-VPN nicht in Ihrem Netzwerk aktiviert haben oder dass Sie kein dynamisches Routing-Gateway in Ihrem virtuellen Netzwerk bereitgestellt haben. Wenn beide Voraussetzungen erfüllt sind, können Sie das virtuelle Netzwerk für die Integration mit Ihrer Web-App auswählen.
 
@@ -63,20 +63,20 @@ Die Erstellung eines neuen virtuellen Netzwerks mit konfigurierten Gateways kann
 
 ![](./media/web-sites-integrate-with-vnet/new-vnet-progress.png)
 
-Sobald das Netzwerk mit der Web-App verbunden wurde, hat diese über TCP oder UDP Zugriff auf Ressourcen in diesem virtuellen Netzwerk. Wenn Sie auf Ressourcen in Ihrem lokalen System zugreifen möchten, die über Standort-zu-Standort-VPN-Zugriff in Ihrem virtuelles Netzwerk verfügbar sind, müssen Sie Routen in Ihrem eigenen Firmennetzwerk hinzufügen, um Datenverkehr von Ihrem Netzwerk zu den in Ihrem virtuellen Netzwerk konfigurierten Punkt-zu-Standort-Adressen zu erlauben.
+Sobald das Netzwerk mit der Web-App verbunden wurde, hat diese über TCP oder UDP Zugriff auf Ressourcen in diesem virtuellen Netzwerk. Wenn Sie auf Ressourcen in Ihrem lokalen System zugreifen möchten, die über Standort-zu-Standort-VPN-Zugriff in Ihrem virtuellen Netzwerk verfügbar sind, müssen Sie Routen in Ihrem eigenen Firmennetzwerk hinzufügen, um Datenverkehr von Ihrem Netzwerk zu den in Ihrem virtuellen Netzwerk konfigurierten Punkt-zu-Standort-Adressen zu erlauben.
 
 Nach erfolgreicher Integration wird das Azure-Portal grundlegende Informationen über die Verbindung anzeigen. Sie können die Web-App vom Netz trennen und die Zertifikate für die Verbindungsauthentifizierung synchronisieren. Die Synchronisation kann erforderlich sein, wenn ein Zertifikat abgelaufen ist oder widerrufen wurde.
 
 ![](./media/web-sites-integrate-with-vnet/vnet-status-portal.png)
 
 ##Verwalten die Verbindung des virtuellen Netzwerks##
-Auf dem Blatt zum App Service-Plan können Sie eine Liste aller virtuellen Netzwerke anzeigen, die derzeit Web-Apps in einem App Service-Plan zugeordnet sind. Sie können einem 'Standard' App Service Plan maximal 5 Netzwerke zuordnen.
+Auf dem Blatt zum App Service-Plan können Sie eine Liste aller virtuellen Netzwerke anzeigen, die derzeit Web-Apps in einem App Service-Plan zugeordnet sind. Sie können einem App Service-Plan des Tarifs "Standard" maximal fünf Netzwerke zuordnen.
 
 Sollte der App Service-Plan in einen niedrigeren Plan wie "Kostenlos", "Freigegeben" oder "Basic" geändert werden, werden die virtuellen Netzwerkverbindungen, die von den Web-Apps in diesem Plan verwendet werden, deaktiviert. Falls der Plan wieder zum Standardplan zurückskaliert wird, können diese Netzwerkverbindungen wieder hergestellt werden.
 
 Zu diesem Zeitpunkt ist es in Azure nicht möglich, einen vorhandenen virtuellen Computer in ein virtuelles Netzwerk zu verschieben. Der virtuelle Computer muss bei der Erstellung in diesem virtuellen Netzwerk bereitgestellt werden.
 
-## Zugriff auf Betriebsressourcen ##
+## Zugreifen auf lokale Ressourcen ##
 Bei der Arbeit mit einem virtuellen Netzwerk, das mit Standort-zu-Standort-VPN konfiguriert wurde, ist ein zusätzlicher Schritt erforderlich, um Zugriff auf Ihre lokalen Ressourcen von Ihrer Web-App bereitzustellen. Routen müssen Ihrem lokalen Netzwerk hinzugefügt werden, um Datenverkehr von Ihrem Netzwerk zu den in Ihrem virtuellen Netzwerk konfigurierten Punkt-zu-Standort-Adressen zu ermöglichen. Um den IP-Bereich für Ihre Punkt-zu-Standort-Verbindungen anzuzeigen, wechseln Sie im Azure-Portal wie hier dargestellt in den Netzwerkbereich.
 
 ![](./media/web-sites-integrate-with-vnet/vpn-to-onpremise.png)
@@ -106,4 +106,4 @@ Es gibt zurzeit auch bei den Preisebenen noch Unterschiede zwischen den beiden F
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

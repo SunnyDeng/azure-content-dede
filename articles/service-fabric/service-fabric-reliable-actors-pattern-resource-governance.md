@@ -1,12 +1,11 @@
 <properties
-   pageTitle="Reliable Actors: Entwurfsmuster für Ressourcenkontrolle"
-   description="Entwurfsmuster zur Verwendung von Reliable Actors zum Modellieren von Anwendungen, die skaliert werden sollen, jedoch beschränkte Ressourcen verwenden"
+   pageTitle="Entwurfsmuster für Ressourcenkontrolle in Azure Service Fabric Actors"
+   description="Entwurfsmuster zur Verwendung von Service Fabric Actors zum Modellieren von Anwendungen, die skaliert werden sollen, jedoch beschränkte Ressourcen verwenden"
    services="service-fabric"
    documentationCenter=".net"
    authors="jessebenson"
    manager="timlt"
    editor=""/>
-
 
 <tags
    ms.service="service-fabric"
@@ -14,9 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/05/2015"
+   ms.date="08/11/2015"
    ms.author="claudioc"/>
-
 
 # Reliable Actors-Entwurfsmuster: Ressourcenkontrolle
 Dieses Muster und verwandte Szenarien sind leicht erkennbar für Entwickler – in Unternehmen oder anderswo – die über beschränkte Ressourcen auf lokaler Ebene oder in der Cloud verfügen, die sie nicht sofort skalieren können, oder die große Anwendungen und Daten in die Cloud senden möchten.
@@ -419,4 +417,4 @@ Dieses Muster ist sehr gängig in Szenarien, in denen Entwickler entweder über 
 [2]: ./media/service-fabric-reliable-actors-pattern-resource-governance/resourcegovernance_arch2.png
 [3]: ./media/service-fabric-reliable-actors-pattern-resource-governance/resourcegovernance_arch3.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

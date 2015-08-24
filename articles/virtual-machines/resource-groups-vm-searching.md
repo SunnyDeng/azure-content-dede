@@ -135,6 +135,13 @@ Mit diesen Informationen können Sie nun genau das von Ihnen gewünschte Datentr
     
 Jetzt können Sie genau das Datenträgerabbild auswählen, das Sie verwenden möchten. Weitere Informationen, um schnell mithilfe der von Ihnen soeben gefundenen URN-Informationen einen virtuellen Computer zu erstellen oder eine Vorlage mit diesen URN-Informationen zu verwenden, finden Sie unter [Verwenden der Azure Befehlszeilenschnittstelle für Mac, Linux und Windows mit Azure Resource Manager](xplat-cli-azure-resource-manager.md).
 
+### Video zur exemplarischen Vorgehensweise
+
+Dieses Video zeigt die oben genannten Schritte mithilfe der Befehlszeilenschnittstelle.
+
+[AZURE.VIDEO resource-groups-vm-searching-cli]
+
+
 ## PowerShell
 
 Wenn Sie mit Azure Resource Manager einen neuen virtuellen Computer erstellen, kann es sein, dass Sie in einigen Fällen ein Datenträgerabbild mit den folgenden Datenträgerabbild-Eigenschaften angeben müssen:
@@ -214,6 +221,12 @@ Für das Angebot „WindowsServer“:
 
 Wenn Sie den gewählten SKU-Namen aus dieser Liste kopieren, erhalten Sie alle Informationen für das PowerShell-Cmdlet **Set-AzureVMSourceImage** oder für eine Vorlagendatei einer Ressourcengruppe, für die Sie den Herausgeber, das Angebot und SKU für ein Datenträgerabbild angeben müssen.
 
+### Video zur exemplarischen Vorgehensweise
+
+Dieses Video zeigt die oben genannten Schritte mithilfe von PowerShell.
+
+[AZURE.VIDEO resource-groups-vm-searching-posh]
+
 
 <!--Image references-->
 [5]: ./media/markdown-template-for-new-articles/octocats.png
@@ -227,4 +240,4 @@ Wenn Sie den gewählten SKU-Namen aus dieser Liste kopieren, erhalten Sie alle I
 [msn]: http://search.msn.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

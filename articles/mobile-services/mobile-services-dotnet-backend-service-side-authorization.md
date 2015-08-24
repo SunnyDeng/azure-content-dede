@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Dienstseitige Autorisierung von Benutzern in einem mobilen .NET-Back-End-Dienst | Azure Mobile Services"
+	pageTitle="Dienstseitige Autorisierung von Benutzern in einem mobilen .NET-Back-End-Dienst | Microsoft Azure"
 	description="Informationen zum Beschränken des Zugriffs zur Autorisierung von Benutzern in einem mobilen .NET-Back-End-Dienst"
 	services="mobile-services"
 	documentationCenter="windows"
@@ -80,4 +80,4 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 [Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App]: mobile-services-dotnet-backend-ios-get-started-users.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

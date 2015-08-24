@@ -7,16 +7,14 @@
    manager="dwrede"
    editor=""/>
 
-
 <tags
    ms.service="app-service-logic"
    ms.devlang="multiple"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="06/30/2015"
+   ms.date="08/09/2015"
    ms.author="sameerch"/>
-
 
 
 # Microsoft SQL-Connector
@@ -30,7 +28,7 @@ Stellen Sie eine Verbindung mit einem lokalen SQL Server oder einer Azure SQL-Da
 ## Trigger und Aktionen
 *Trigger* sind Ereignisse, die stattfinden. Z. B. wenn ein Auftrag aktualisiert oder ein neuer Kunde hinzugefügt wird. Eine *Aktion* ist das Ergebnis des Triggers. Z. B. bei Aktualisierung eines Auftrags eine Warnung an den Verkäufer senden. Oder bei Hinzufügen eines neuen Kunden eine E-Mail zur Begrüßung an den neuen Kunden senden.
 
-Der SQL-Connector kann als ein Trigger oder eine Aktion in einer Logik-App verwendet werden und unterstützt Daten im JSON- und XML-Format. Für jede Tabelle, die in den Paketeinstellungen enthalten ist (mehr dazu weiter unten in diesem Thema), gibt es eine Reihe von JSON-Aktionen und einen Satz von XML-Aktionen.
+Der SQL-Connector kann als ein Trigger oder eine Aktion in einer Logik-App verwendet werden und unterstützt Daten im JSON- und XML-Format. Für jede Tabelle, die in den Paketeinstellungen enthalten ist \(mehr dazu weiter unten in diesem Thema\), gibt es eine Reihe von JSON-Aktionen und einen Satz von XML-Aktionen.
 
 Der SQL-Connector verfügt über folgende Trigger und Aktionen:
 
@@ -43,7 +41,7 @@ Umfragedaten | <ul><li>In die Tabelle einfügen</li><li>Tabelle aktualisieren</l
 Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
-2. Wählen Sie **API-Apps** aus und suchen Sie nach "SQL-Connector".
+2. Suchen Sie nach "SQL-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
 3. Geben Sie den Namen, die App Service-Plan und andere Eigenschaften ein.
 4. Geben Sie die folgenden Paketeinstellungen ein:
 
@@ -59,13 +57,14 @@ Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung her
 Name des Partnerservers | Nein | Wenn der primäre Server nicht verfügbar ist, können Sie einen Partnerserver als Alternative oder einen Backup-Server eingeben.
 Tabellen | Nein | Listen Sie die Datenbanktabellen auf, die vom Connector aktualisiert werden können. Geben Sie z. B. *OrdersTable* oder *EmployeeTable* ein. Wenn keine Tabellen eingegeben werden, können alle Tabellen verwendet werden. Gültige Tabellen und/oder gespeicherte Prozeduren sind erforderlich, um diesen Connector als Aktion zu verwenden.
 Gespeicherte Prozeduren | Nein | Geben Sie eine vorhandene gespeicherte Prozedur ein, die vom Connector aufgerufen werden kann. Geben Sie z. B. *sp\_IsEmployeeEligible* oder *sp\_CalculateOrderDiscount* ein. Gültige Tabellen und/oder gespeicherte Prozeduren sind erforderlich, um diesen Connector als Aktion zu verwenden.
-Abfrage zu verfügbaren Daten | Für Trigger-Support | Die SQL-Anweisung, mit der bestimmt wird, ob Daten zum Abrufen einer SQL Server-Datenbanktabelle verfügbar sind. Dies sollte einen numerischen Wert für die Anzahl der Zeilen der verfügbaren Daten zurückgeben. Beispiel: SELECT COUNT(*) from Table\_name. Abrufen der Datenabfrage | Unterstützung für Trigger | Die SQL-Anweisung zum Abrufen der SQL Server-Datenbanktabelle. Sie können eine beliebige Anzahl von SQL-Anweisungen durch ein Semikolon getrennt eingeben. Diese Anweisung wird im Hinblick auf Transaktionen ausgeführt und nur übernommen, wenn die Daten in Ihrer Logik-App sicher gespeichert sind. Beispiel: SELECT \* FROM Table\_name; DELETE FROM Table\_name. <br/>
-<br/>
-*\*\* Hinweis \*\*<br/>
-Sie müssen eine Umfrageanweisung bereitstellen, die eine Endlosschleife durch Löschen, Verschieben oder Aktualisieren der ausgewählten Daten vermeidet, um sicherzustellen, dass die gleichen Daten nicht erneut abgefragt werden.
+Abfrage zu verfügbaren Daten | Für Trigger-Support | Die SQL-Anweisung, mit der bestimmt wird, ob Daten zum Abrufen einer SQL Server-Datenbanktabelle verfügbar sind. Dies sollte einen numerischen Wert für die Anzahl der Zeilen der verfügbaren Daten zurückgeben. Beispiel: SELECT COUNT(*) from Table_name
+ Abrufen der Datenabfrage | Unterstützung für Trigger | Die SQL-Anweisung zum Abrufen der SQL Server-Datenbanktabelle. Sie können eine beliebige Anzahl von SQL-Anweisungen durch ein Semikolon getrennt eingeben. Diese Anweisung wird im Hinblick auf Transaktionen ausgeführt und nur übernommen, wenn die Daten in Ihrer Logik-App sicher gespeichert sind. Beispiel: SELECT * FROM Table_name; DELETE FROM Table\_name. <br/><br/>** Hinweis**<br/>Sie müssen eine Umfrageanweisung bereitstellen, die eine Endlosschleife durch Löschen, Verschieben oder Aktualisieren der ausgewählten Daten vermeidet, um sicherzustellen, dass die gleichen Daten nicht erneut abgefragt werden.
 
-5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: <br/>
- ![][1]
+5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus:  
+	![][1]  
+
+6. Klicken Sie auf **Erstellen**. 
+
 
 ## Verwenden des Connectors als Trigger
 Betrachten wir eine einfache Logik-App, die Daten aus einer SQL-Tabelle abruft, die Daten dann einer anderen Tabelle hinzufügt und anschließend aktualisiert.
@@ -90,38 +89,31 @@ Der **Abruf der Datenabfrage** wird nur ausgeführt, wenn die Datenabfrage nach 
 		(SELECT Id FROM [Order] WHERE OrderStatus = 'ProcessedForCollection' ORDER BY Id DESC)
 
 ### Den Trigger hinzufügen
-1. Beim Erstellen oder Bearbeiten einer Logik-App wählen Sie den SQL-Connector als Trigger aus. Dadurch werden die verfügbaren Trigger aufgelistet: **Poll Data (JSON)** und **Poll Data (XML)**: 
-<br/>
-![][5]
+1. Beim Erstellen oder Bearbeiten einer Logik-App wählen Sie den SQL-Connector als Trigger aus. Dadurch werden die verfügbaren Trigger aufgelistet: **Poll Data (JSON)** und **Poll Data (XML)**:  
+	![][5]
 
-2. Wählen Sie den Trigger **Poll Data (JSON)** aus, geben Sie die Häufigkeit an, und klicken Sie auf ✓:
-<br/>
-![][6]
+2. Wählen Sie den Trigger **Poll Data \(JSON\)** aus, geben Sie die Häufigkeit an, und klicken Sie auf ✓:  
+	![][6]
 
-3. Der Trigger wird jetzt in der Logik-App als konfiguriert angezeigt. Die Ausgaben des Triggers werden angezeigt und können in nachfolgenden Aktionen als Eingabe verwendet werden: 
-<br/>
- ![][7]
+3. Der Trigger wird jetzt in der Logik-App als konfiguriert angezeigt. Die Ausgaben des Triggers werden angezeigt und können in nachfolgenden Aktionen als Eingabe verwendet werden:  
+	![][7]
 
 ## Verwenden des Connectors als Aktion
 Mithilfe unseres einfachen Logik-App-Szenarios, das Daten aus einer SQL-Tabelle abruft, die Daten dann einer anderen Tabelle hinzufügt und anschließend aktualisiert.
 
 Für die Verwendung des SQL-Connectors als Aktion geben Sie den Namen der Tabellen und/oder gespeicherte Prozeduren ein, die Sie schon bei der Erstellung des SQL-Connectors eingegeben haben:
 
-1. Fügen Sie nach dem Trigger (oder wählen Sie "Diese Logik manuell ausführen") den aus dem Katalog erstellten SQL-Connector hinzu. Wählen Sie eine der Einfügeaktionen aus, wie *Insert Into TempEmployeeDetails (JSON)*: 
-<br/>
-![][8]
+1. Fügen Sie nach dem Trigger (oder wählen Sie "Diese Logik manuell ausführen") den aus dem Katalog erstellten SQL-Connector hinzu. Wählen Sie eine der Einfügeaktionen aus, wie *Insert Into TempEmployeeDetails (JSON)*:  
+	![][8]
 
-2. Geben Sie die einzufügenden Eingabewerte des Datensatzes ein, und klicken Sie auf ✓: 
-<br/>
- ![][9]
+2. Geben Sie die einzufügenden Eingabewerte des Datensatzes ein, und klicken Sie auf ✓:  
+	![][9]
 
-3. Wählen Sie aus dem Katalog denselben SQL-Connector aus, den Sie erstellt haben. Wählen Sie als Aktion die Aktualisierungsaktion für die gleiche Tabelle aus, z. B. *Update EmployeeDetails*: 
-<br/>
- ![][11]
+3. Wählen Sie aus dem Katalog denselben SQL-Connector aus, den Sie erstellt haben. Wählen Sie als Aktion die Aktualisierungsaktion für die gleiche Tabelle aus, z. B. *Update EmployeeDetails*:  
+	![][11]
 
-4. Geben Sie die Eingabewerte für die Aktualisierungsaktion ein, und klicken Sie auf ✓: 
-<br/>
- ![][12]
+4. Geben Sie die Eingabewerte für die Aktualisierungsaktion ein, und klicken Sie auf ✓:  
+	![][12]
 
 Sie können die Logik-App testen, indem Sie in der abgefragten Tabelle einen neuen Datensatz hinzufügen.
 
@@ -129,8 +121,7 @@ Sie können die Logik-App testen, indem Sie in der abgefragten Tabelle einen neu
 
 SQL-Abfrage | Unterstützt | Nicht unterstützt
 --- | --- | ---
-WHERE-Klausel | <ul><li>Operatoren: AND, OR, =, <>, <, <=, >, >= und LIKE</li><li>Mehrere Unterbedingungen können mithilfe von ‘(‘ und ‘)’ kombiniert werden.</li><li>Zeichenfolgenliterale, Datetime (in einfache Anführungszeichen eingeschlossen), Zahlen (dürfen nur numerische Zeichen enthalten)</li><li>Muss unbedingt ein Binärausdruckformat haben wie ((Operand Operator Operand) UND/ODER (Operand Operator Operand))\**</li></ul> | <ul><li>Operatoren: Between, IN</li><li>Alle integrierten Funktionen wie ADD(), MAX() NOW(), POWER() usw.</li><li>Mathematische Operatoren wie \*, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +.</li><li>Alle Joins</li><li>IS NULL und IS NOT NULL</li><li>Zahlen mit nicht numerischen Zeichen, wie z. B. Hexadezimalzahlen</li></ul>
-Felder (in der SELECT-Abfrage) |<ul><li>Gültige Spaltennamen (durch Kommas getrennt). Präfixe sind für Tabellennamen unzulässig (der Connector wird stets nur auf eine Tabelle angewendet).</li><li>Namen können mit den Escapezeichen ' [' und ']' versehen werden.</li></ul>|<ul><li>Schlüsselwörter wie TOP, DISTINCT usw.</li><li>Aliase wie Straße + Ort + PLZ AS Adresse</li><li>Alle integrierten Funktionen, z. B. ADD(), MAX() NOW(), POWER() usw.</li><li>Mathematische Operatoren, wie z. B. \*, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +</li></ul>
+WHERE-Klausel | <ul><li>Operatoren: AND, OR, =, \<\>, \<, \<=, \>, \>= und LIKE</li><li>Mehrere Unterbedingungen können mithilfe von ‘\(‘ und ‘\)’ kombiniert werden.</li><li>Zeichenfolgenliterale, Datetime \(in einfache Anführungszeichen eingeschlossen\), Zahlen \(dürfen nur numerische Zeichen enthalten\)</li><li>Muss unbedingt ein Binärausdruckformat haben wie \(\(Operand Operator Operand\) UND/ODER \(Operand Operator Operand\)\)**</li></ul> \| <ul><li>Operatoren: Between, IN</li><li>Alle integrierten Funktionen wie ADD\(\), MAX\(\) NOW\(\), POWER\(\) usw.</li><li>Mathematische Operatoren wie *, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +.</li><li>Alle Joins</li><li>IS NULL und IS NOT NULL</li><li>Zahlen mit nicht numerischen Zeichen, wie z. B. Hexadezimalzahlen</li></ul>Felder \(in der SELECT-Abfrage\) \|<ul><li>Gültige Spaltennamen \(durch Kommas getrennt\). Präfixe sind für Tabellennamen unzulässig \(der Connector wird stets nur auf eine Tabelle angewendet\).</li><li>Namen können mit den Escapezeichen ' \[' und '\]' versehen werden.</li></ul>\|<ul><li>Schlüsselwörter wie TOP, DISTINCT usw.</li><li>Aliase wie Straße + Ort + PLZ AS Adresse</li><li>Alle integrierten Funktionen, z. B. ADD\(\), MAX\(\) NOW\(\), POWER\(\) usw.</li><li>Mathematische Operatoren, wie z. B. *, -, + usw.</li><li>Zeichenfolgenverkettungen unter Verwendung von +</li></ul>
 
 #### Tipps
 
@@ -138,7 +129,7 @@ Felder (in der SELECT-Abfrage) |<ul><li>Gültige Spaltennamen (durch Kommas getr
 - Wenn Sie innere Abfragen verwenden, verwenden Sie sie innerhalb gespeicherter Prozeduren.
 - Zum Verknüpfen mehrerer Bedingungen können Sie die Operatoren AND und OR verwenden.
 
-## Hybridkonfiguration (optional)
+## Hybridkonfiguration \(optional\)
 
 > [AZURE.NOTE]Dieser Schritt ist nur bei lokaler Verwendung von SQL Server hinter Ihrer Firewall erforderlich.
 
@@ -166,4 +157,6 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-sql/LogicApp7.png
 [12]: ./media/app-service-logic-connector-sql/LogicApp8.png
 
-<!----HONumber=August15_HO6-->
+<!----HONumber=August15_HO7-->
+
+<!---HONumber=August15_HO7-->

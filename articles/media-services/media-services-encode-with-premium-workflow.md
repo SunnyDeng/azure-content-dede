@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/23/2015" 
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
 
 #Erweiterte Codierung mit dem Media Encoder Premium Workflow
@@ -32,9 +32,12 @@ In den folgenden Themen erhalten Sie nähere Informationen zum **Media Encoder P
 
 Dieses Thema demonstriert die Codierung mit **Media Encoder Premium Workflow** unter Verwendung von .NET.
 
+Für Codieraufgaben für den **Media Encoder Premium Workflow** ist eine separate Konfigurationsdatei, die sogenannte Workflowdatei, erforderlich. Diese Dateien haben die Erweiterung .workflow und werden mit dem [Workflow Designer](media-services-workflow-designer.md) erstellt.
+
 ##Codieren
 
 Für Codieraufgaben für den **Media Encoder Premium Workflow** ist eine separate Konfigurationsdatei, die sogenannte Workflowdatei, erforderlich. Diese Dateien haben die Erweiterung .workflow und werden mit dem [Workflow Designer](media-services-workflow-designer.md) erstellt.
+
 
 Sie können die standardmäßigen Workflowdateien [hier](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows) abrufen. Der Ordner enthält auch Beschreibungen dieser Dateien.
 
@@ -265,4 +268,4 @@ Im folgenden finden Sie ein vollständiges Beispiel. Informationen zum Einrichte
 
 Wenn Ihr Eingabevideo keine Untertitel enthält, enthält das Ausgabemedienobjekt trotzdem eine leere TTML-Datei.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

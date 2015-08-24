@@ -7,18 +7,16 @@
     manager="jhubbard"
     editor="cgronlun"/>
 
-
 <tags
     ms.service="documentdb"
     ms.workload="data-management"
     ms.tgt_pltfrm="na"
     ms.devlang="python"
-    ms.topic="hero-article" 
+    ms.topic="hero-article"
     ms.date="07/07/2015"
     ms.author="ryancraw"/>
 
-
-# Erstellen einer Webanwendung mit Python und Flask (MVC) mithilfe von DocumentDB
+# Erstellen einer Webanwendung mit Python und Flask \(MVC\) mithilfe von DocumentDB
 
 Dieses Dokument bietet eine vollständige Anleitung zur Erstellung einer Webanwendung für eine Wahl mithilfe von Azure DocumentDB, um zu zeigen, wie Azure DocumentDB von Kunden effizient zum Speichern und Abfragen von JSON-Dokumenten genutzt werden kann.
 
@@ -40,11 +38,11 @@ Im Verlauf dieses Lernprogramms erstellen Sie eine einfache Wahlanwendung, über
 
 Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgendes installiert ist:
 
-- [Visual Studio 2013](http://www.visualstudio.com/) oder höher oder [Visual Studio Express] (die kostenlose Version).
-- Python Tools für Visual Studio ([hier][] erhältlich)
-- Azure SDK für Visual Studio 2013, Version 2.4 oder höher ([hier][1] erhältlich)
-- Python 2.7 ([hier][2] erhältlich)
-- Microsoft Visual C++-Compiler für Python 2.7 ([hier][3] erhältlich)
+- [Visual Studio 2013](http://www.visualstudio.com/) oder höher oder Visual Studio Express \(die kostenlose Version\).
+- Python Tools für Visual Studio \([hier][] erhältlich\)
+- Azure SDK für Visual Studio 2013, Version 2.4 oder höher \([hier][1] erhältlich\)
+- Python 2.7 \([hier][2] erhältlich\)
+- Microsoft Visual C++-Compiler für Python 2.7 \([hier][3] erhältlich\)
 
 ## Schritt 1: Erstellen eines DocumentDB-Datenbankkontos
 
@@ -54,18 +52,17 @@ Erstellen Sie zunächst ein DocumentDB-Konto. Wenn Sie bereits über ein Konto v
 
 [AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
 
-<br/>
- Im Folgenden wird erläutert, wie Sie eine Python Flask-Webanwendung von Grund auf neu erstellen.
+<br/> Im Folgenden wird erläutert, wie Sie eine Python Flask-Webanwendung von Grund auf neu erstellen.
 
 ## Schritt 2: Erstellen einer neuen Python Flask-Webanwendung
 
-1. Öffnen Sie Visual Studio, klicken Sie auf **Datei** -> **Neues Projekt** -> **Python** ->, **Flask-Webprojekt**, und erstellen Sie ein neues Projekt mit dem Namen **tutorial**.
+1. Öffnen Sie Visual Studio, klicken Sie auf **Datei** -\> **Neues Projekt** -\> **Python** -\>, **Flask-Webprojekt**, und erstellen Sie ein neues Projekt mit dem Namen **tutorial**.
 
 	Bei Flask handelt es sich um ein Webframework, das uns beim schnelleren Erstellen von Webanwendungen in Python unterstützt. [Klicken Sie hier, um Flask-Lernprogramme zu öffnen][].
 
-	![Screenshot des Fensters „Neues Projekt“ in Visual Studio: Links ist Python hervorgehoben, das Flask Webprojekt ist in der Mitte ausgewählt, und der Name „tutorial“ steht im Feld „Name“.](./media/documentdb-python-application/image9.png)
+	![Screenshot des Fensters "Neues Projekt" in Visual Studio: Links ist Python hervorgehoben, das Flask-Webprojekt ist in der Mitte ausgewählt, und der Name "tutorial" steht im Feld "Name".](./media/documentdb-python-application/image9.png)
 
-2. Sie werden dann gefragt, ob Sie externe Pakete installieren möchten. Klicken Sie auf die Option zum **Installieren in einer virtuellen Umgebung**. Achten Sie darauf, dass Sie Python 2.7 als Basisumgebung verwenden, da PyDocumentDB Python 3.x derzeit nicht unterstützt. Dadurch wird die erforderliche virtuelle Python-Umgebung für das Projekt eingerichtet.
+2. Sie werden dann gefragt, ob Sie externe Pakete installieren möchten. Wählen Sie **In einer virtuellen Umgebung installieren** aus. Achten Sie darauf, dass Sie Python 2.7 als Basisumgebung verwenden, da PyDocumentDB Python 3.x derzeit nicht unterstützt. Dadurch wird die erforderliche virtuelle Python-Umgebung für das Projekt eingerichtet.
 
 	![Screenshot des Lernprogramms – Python-Tools für Visual Studio-Fenster](./media/documentdb-python-application/image10.png)
 
@@ -74,9 +71,9 @@ Erstellen Sie zunächst ein DocumentDB-Konto. Wenn Sie bereits über ein Konto v
 
 ### Hinzufügen von Flask-Paketen zum Projekt
 
-Nachdem das Projekt eingerichtet ist, müssen Sie bestimmte Flask-Pakete hinzufügen, die für unser Projekt erforderlich sind, z. B. PyDocumentDB, das Python-Paket für DocumentDB.
+Nachdem das Projekt eingerichtet ist, müssen Sie bestimmte Flask-Pakete hinzufügen, die für unser Projekt erforderlich sind, z. B. "pydocumentdb", das Python-Paket für DocumentDB.
 
-1. Öffnen Sie die Datei **requirements.txt**, und ersetzen Sie den Inhalt durch Folgendes.
+1. Öffnen Sie die Datei **requirements.txt**, und ersetzen Sie den Inhalt durch Folgendes:
 
     	flask==0.9
     	flask-mail==0.7.6
@@ -92,9 +89,9 @@ Nachdem das Projekt eingerichtet ist, müssen Sie bestimmte Flask-Pakete hinzuf�
 
 2. Klicken Sie mit der rechten Maustaste auf **env**, und klicken Sie auf den Link zum **Installieren aus requirements.txt**.
 
-	![Screenshot mit „env“ (Python 2.7) ausgewählt, „Installieren aus requirements.txt“ in der Liste markiert](./media/documentdb-python-application/image11.png)
+	![Screenshot mit „env“ \(Python 2.7\) ausgewählt, „Installieren aus requirements.txt“ in der Liste markiert](./media/documentdb-python-application/image11.png)
 
-> [AZURE.NOTE]In seltenen Fällen wird eventuell ein Fehler im Ausgabefenster angezeigt. Wenn dies geschieht, prüfen Sie, ob der Fehler mit der Bereinigung zusammenhängt. Gelegentlich schlägt die Bereinigung fehl, aber die Installation verläuft dennoch erfolgreich (blättern Sie im Ausgabefenster nach oben, um dies zu prüfen). <a name="verify-the-virtual-environment"></a> In diesem Fall können Sie fortfahren.
+> [AZURE.NOTE]In seltenen Fällen wird eventuell ein Fehler im Ausgabefenster angezeigt. Wenn dies geschieht, prüfen Sie, ob der Fehler mit der Bereinigung zusammenhängt. Gelegentlich misslingt die Bereinigung, aber die Installation verläuft dennoch erfolgreich \(führen Sie im Ausgabefenster einen Bildlauf nach oben durch, um dies zu prüfen\). <a name="verify-the-virtual-environment"></a> In diesem Fall können Sie fortfahren.
 
 
 ### Überprüfen der virtuellen Umgebung
@@ -107,9 +104,9 @@ Stellen Sie sicher, dass alles einwandfrei installiert ist.
 
 ### Erstellen der Datenbank-, Sammlungs- und Dokumentdefinitionen
 
-Jetzt erstellen wir selbst eine Wahlanwendung.
+Jetzt erstellen wir selbst eine Abstimmungsanwendung.
 
-- Fügen Sie eine Python-Datei hinzu, indem Sie mit der rechten Maustaste auf den Ordner **Lernprogramm** im Projektmappen-Explorer klicken. Nennen Sie die Datei **forms.py**.  
+- Fügen Sie eine Python-Datei hinzu, indem Sie mit der rechten Maustaste auf den Ordner **tutorial** im Projektmappen-Explorer klicken. Nennen Sie die Datei **forms.py**.  
 
     	from flask.ext.wtf import Form
     	from wtforms import RadioField
@@ -163,7 +160,7 @@ Jetzt erstellen wir selbst eine Wahlanwendung.
             	year=datetime.now().year,
             	message='You just created a new database, collection, and document.  Your old votes have been deleted')
 
-> [AZURE.TIP]Die CreateCollection-Methode verwendet den optionalen Wert „RequestOptions“ als dritten Parameter. Dieser kann verwendet werden, um den Angebotstyp für die Sammlung zu verwenden. Wenn kein offerType-Wert angegeben ist, dann wird die Sammlung mit dem Standardangebotstyp erstellt. Weitere Informationen zu DocumentDB-Angebotstypen finden Sie in [Leistungsstufen in DocumentDB](documentdb-performance-levels.md)
+> [AZURE.TIP]Die **CreateCollection**-Methode verwendet den optionalen Wert **RequestOptions** als dritten Parameter. Dieser kann verwendet werden, um den Angebotstyp für die Sammlung zu verwenden. Wenn kein "offerType"-Wert angegeben ist, wird die Sammlung mit dem Standardangebotstyp erstellt. Weitere Informationen zu DocumentDB-Angebotstypen finden Sie in [Leistungsebenen in DocumentDB](documentdb-performance-levels.md).
 >
 ### Lesen von Datenbank, Sammlung und Dokument und Übermitteln des Formulars
 
@@ -176,16 +173,16 @@ Jetzt erstellen wir selbst eine Wahlanwendung.
         	if form.validate_on_submit(): # is user submitted vote  
             	client = document_client.DocumentClient(config.DOCUMENTDB_HOST, {'masterKey': config.DOCUMENTDB_KEY})
 
-            	# Read databases and take first since id should not be duplicated.
+            	# Read databases and take the first since the id should not be duplicated.
             	db = next((data for data in client.ReadDatabases() if data['id'] == config.DOCUMENTDB_DATABASE))
 
-            	# Read collections and take first since id should not be duplicated.
+            	# Read collections and take the first since the id should not be duplicated.
             	coll = next((coll for coll in client.ReadCollections(db['_self']) if coll['id'] == config.DOCUMENTDB_COLLECTION))
 
-            	# Read documents and take first since id should not be duplicated.
+            	# Read documents and take the first since the id should not be duplicated.
             	doc = next((doc for doc in client.ReadDocuments(coll['_self']) if doc['id'] == config.DOCUMENTDB_DOCUMENT))
 
-            	# Take the data from the deploy_preference and increment our database
+            	# Take the data from the deploy_preference and increment your database
             	doc[form.deploy_preference.data] = doc[form.deploy_preference.data] + 1
             	replaced_document = client.ReplaceDocument(doc['_self'], doc)
 
@@ -235,7 +232,6 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
     	<h2>Results of the vote</h2>
    	 	<br />
 
-
     	{% for choice in vote_object.choices %}
     	<div class="row">
         	<div class="col-sm-5">{{choice}}</div>
@@ -251,7 +247,6 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
     	{% endfor %}
 
     	<br />
-
     	<a class="btn btn-primary" href="{{ url_for('vote') }}">Vote again?</a>
     	{% endblock %}
 
@@ -280,7 +275,7 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
 
 ### Hinzufügen einer Konfigurationsdatei und Ändern von \\\_\\\_init\\\_\\\_.py
 
-1. Klicken Sie mit der rechten Maustaste auf den Projektnamen „tutorial“, und fügen Sie die Datei **config.py** hinzu. Diese Konfiguration ist für Formulare in Flask erforderlich. Sie können damit auch einen geheimen Schlüssel bereitstellen. Dies ist jedoch für dieses Lernprogramm nicht erforderlich.
+1. Klicken Sie mit der rechten Maustaste auf den Projektnamen "tutorial", und fügen Sie die Datei **config.py** hinzu. Diese Konfiguration ist für Formulare in Flask erforderlich. Sie können damit auch einen geheimen Schlüssel bereitstellen. Dies ist jedoch für dieses Tutorial nicht erforderlich.
 
 2. Fügen Sie folgenden Code zur Datei "config.py" hinzu: Ändern Sie die Werte von **DOCUMENTDB\\\_HOST** und **DOCUMENTDB\\\_KEY**.
 
@@ -308,7 +303,7 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
 
 ## Schritt 4: Lokales Ausführen der Anwendung
 
-1. Drücken Sie F5, oder klicken Sie in Visual Studio auf die Schaltfläche "Ausführen". Daraufhin sollte Folgendes auf Ihrem Bildschirm angezeigt werden.
+1. Drücken Sie F5, oder klicken Sie in Visual Studio auf die Schaltfläche **Ausführen**. Daraufhin sollte Folgendes auf Ihrem Bildschirm angezeigt werden.
 
 	![Screenshot der Python + DocumentDB Abstimmungsanwendung in einem Webbrowser](./media/documentdb-python-application/image16.png)
 
@@ -320,16 +315,16 @@ Fügen Sie die folgenden HTML-Dateien zum Ordner "templates" hinzu: create.html,
 
 	![Screenshot der Webanwendung mit einem Abstimmungsfrage](./media/documentdb-python-application/image18.png)
 
-4. Für jede abgegebene Stimme wird der entsprechende Zähler inkrementiert.
+4. Für jede abgegebene Stimme wird der entsprechende Zähler erhöht.
 
 	![Screenshot der Ergebnisse der Abstimmungsseite](./media/documentdb-python-application/image19.png)
 
 
 ## Schritt 5: Bereitstellen der Anwendung in Azure-Websites
 
-Nachdem eine vollständige, DocumentDB korrekt entgegenwirkende, Anwendung erstellt ist, stellen wir sie auf Azure Websites bereit.
+Nachdem Sie eine vollständige Anwendung erstellt haben, die DocumentDB ordnungsgemäß nutzt, stellen wir diese in Azure Websites bereit.
 
-1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt(stellen Sie sicher,dass es nicht lokal ausgeführt wird), und wählen Sie dann "Veröffentlichen" aus. Wählen Sie dann "Microsoft Azure-Websites" aus.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt \(stellen Sie sicher,dass es nicht lokal ausgeführt wird\), und wählen Sie dann **Veröffentlichen** aus. Wählen Sie dann **Microsoft Azure Websites** aus.
 
  	![Screenshot des im Projektmappen-Explorer ausgewählten Lernprogramms mit hervorgehobener Option „Veröffentlichen“](./media/documentdb-python-application/image20.png)
 
@@ -343,7 +338,7 @@ Nachdem eine vollständige, DocumentDB korrekt entgegenwirkende, Anwendung erste
 
 Glückwunsch! Sie haben Ihre erste Python-Anwendung mit Azure DocumentDB erstellt und auf Azure-Websites veröffentlicht.
 
-Um Ihrer Anwendung weitere Funktionen hinzuzufügen, überprüfen Sie die im [DocumentDB Python-SDK](https://pypi.python.org/pypi/pydocumentdb) verfügbaren APIs.
+Um Ihrer Anwendung weitere Funktionen hinzuzufügen, überprüfen Sie die im [Python SDK für DocumentDB](https://pypi.python.org/pypi/pydocumentdb) verfügbaren APIs.
 
   [Klicken Sie hier, um Flask-Lernprogramme zu öffnen]: http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
   [Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
@@ -352,7 +347,6 @@ Um Ihrer Anwendung weitere Funktionen hinzuzufügen, überprüfen Sie die im [Do
   [2]: https://www.python.org/downloads/windows/
   [3]: http://aka.ms/vcpython27
   [Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
-  [Azure Management Portal]: http://portal.azure.com
- 
+  [Azure portal]: http://portal.azure.com
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

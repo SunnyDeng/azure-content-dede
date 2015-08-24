@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Behandeln von Datenbank-Schreibkonflikten mit optimistischer Parallelität (Windows Store) | Mobile Developer Center" 
+	pageTitle="Behandeln von Datenbankschreibkonflikten mit optimistischer Parallelität (Windows Store) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Datenbankschreibkonflikte auf dem Server und in Ihrer Windows Store-Anwendung behandeln." 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -367,4 +367,4 @@ In diesem Lernprogramm wurden die Grundlagen der Behandlung von Schreibkonflikte
 [Systemeigenschaften]: http://go.microsoft.com/fwlink/?LinkId=331143
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

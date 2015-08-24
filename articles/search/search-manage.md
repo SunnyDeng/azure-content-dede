@@ -102,7 +102,7 @@ Im Bereich Nutzung im Dienst-Dashboard können Sie direkt ablesen, ob die Partit
 
 Mit der Suchdienst-API können Sie Gesamtzahlen für Dokumente und Indizes abrufen. Für diese Werte gelten feste Obergrenzen basierend auf dem Tarif. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](http://msdn.microsoft.com/library/dn798934.aspx).
 
-+	[Abrufen von Indexstatistiken](http://msdn.microsoft.com/library/dn798942.aspx)
++	Abrufen von Indexstatistiken
 +	[Dokumentenanzahl](http://msdn.microsoft.com/library/dn798924.aspx)
 
 > [AZURE.NOTE]Durch Caching-Eigenheiten können die Obergrenzen vorübergehend überschritten werden. Wenn Sie z. B. den gemeinsam genutzten Dienst verwenden, kann es passieren, dass eine Dokumentenanzahl oberhalb der Grenze von 10.000 Dokumenten angezeigt wird. Dies ist vorübergehend und wird bei der nächsten Einhaltungsprüfung für die Obergrenze entdeckt.
@@ -163,29 +163,12 @@ Azure bietet ein globales rollenbasiertes Autorisierungsmodell für alle Dienste
 
 Bei Azure Search bestimmt die rollenbasierte Zugriffssteuerung die folgenden Verwaltungsaufgaben:
 
-<table>
-<tr>
-<td>Besitzer</td>
-<td>
-Starten, Beenden oder löschen des Diensts</br>
-Generieren und Anzeigen von Admin-Schlüssel und Abfrageschlüsseln</br>
-Anzeigen des Dienststatus, einschließlich Indexanzahl, Indexnamen, Dokumentanzahl und Speichergröße</br>
-Hinzufügen oder Löschen von Rollenmitgliedschaften (Nur ein Besitzer kann die Rollenmitgliedschaften verwalten.)</br>
-</br>
-Abonnement- und Dienstadministratoren haben automatisch die Mitgliedschaft in der Besitzerrolle.
-</td>
-</tr>
-<tr>
-<td>Mitwirkender</td>	
-<td>Verfügt über die gleiche Zugriffsebene wie Besitzer mit Ausnahme der Rollenverwaltung. Z. B. kann ein Mitwirkender API-Schlüssel anzeigen und neu generieren, aber nicht die Rollenmitgliedschaften ändern.
-</td>
-</tr>
-<tr>
-<td>Reader</td>
-<td>Dienststatus und Abfrageschlüssel anzeigen. Mitglieder dieser Rolle können einen Dienst nicht starten oder beenden und auch keine Admin-Schlüssel anzeigen.
-</td>
-</tr>
-</table>
+
+Rolle|Aufgabe
+---|---
+Besitzer|Starten, Beenden oder Löschen des Diensts.<p>Erstellen und Anzeigen von Administrator- und Abfrageschlüsseln.<p>Anzeigen des Dienststatus, einschließlich Indexanzahl, Indexnamen, Dokumentanzahl und Speichergröße.<p>Hinzufügen oder Löschen von Rollenmitgliedschaften (Nur ein Besitzer kann die Rollenmitgliedschaften verwalten).<p>Abonnement- und Dienstadministratoren sind automatisch Mitglieder der Besitzerrolle.
+Mitwirkender|Verfügt über die gleiche Zugriffsebene wie Besitzer mit Ausnahme der Rollenverwaltung. So kann z. B. ein Mitwirkender den `api-key` anzeigen und neu generieren, aber nicht die Rollenmitgliedschaften ändern.
+Reader|Dienststatus und Abfrageschlüssel anzeigen. Mitglieder dieser Rolle können einen Dienst nicht starten oder beenden und auch keine Admin-Schlüssel anzeigen.
 
 Beachten Sie, dass die Rollen keine Zugriffsrechte für den Dienstendpunkt erteilen. Suchdienstoperationen, wie z. B. die Indexverwaltung, Auffüllung des Indexes und Abfragen von Suchdaten werden durch die API-Schlüssel und nicht durch Rollen gesteuert. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal](../role-based-access-control-configure.md) im Abschnitt "Autorisierung für Verwaltungsvorgänge vs. Datenvorgänge".
 
@@ -210,4 +193,4 @@ Rollen bieten Zugriffssteuerung, nachdem der Dienst erstellt wurde. Nur Abonneme
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

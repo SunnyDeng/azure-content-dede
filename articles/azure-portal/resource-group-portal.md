@@ -3,11 +3,9 @@
 	description="Gruppieren Sie mehrere Ressourcen als logische Gruppe, die zur Lebenszyklusbegrenzung für enthaltene Ressourcen wird." 
 	services="azure-portal" 
 	documentationCenter="" 
-	authors="" 
-	writer="tfitzmac" 
+	authors="tfitzmac" 
 	manager="wpickett" 
 	editor=""/>
-
 
 <tags 
 	ms.service="azure-portal" 
@@ -17,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="06/22/2015" 
 	ms.author="tomfitz"/>
-
 
 
 # Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen
@@ -33,7 +30,6 @@ Es folgt ein kurzer Überblick über die Verwendung von Ressourcengruppen im Azu
 ## Erstellen von Ressourcengruppen
 
 Wenn im Portal eine Ressource erstellt wird, wird sie stets innerhalb einer Ressourcengruppe erstellt. Während der Erstellung können Sie wählen, ob eine neue Ressourcengruppe erstellt oder eine vorhandene Ressourcengruppe verwendet werden soll.<br><br />
-
 
 ![Ressourcengruppe erstellen](./media/resource-group-portal/1_createWebsite.png)
 
@@ -79,4 +75,4 @@ Erste Schritte
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -13,12 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="05/25/2015" 
+	ms.date="08/11/2015"  
 	ms.author="juliako"/>
 
 #Vorgehensweise: Prüfen des Auftragsfortschritts
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md).
+> [AZURE.SELECTOR]
+- [Portal](media-services-portal-check-job-progress.md)
+- [.NET](media-services-check-job-progress.md)
+- [REST](media-services-rest-check-job-progress.md)
 
 Beim Ausführen von Aufträgen ist es nützlich, deren Fortschritt verfolgen zu können. Sie können den Status überprüfen, indem Sie [einen StateChanged-Ereignishandler definieren](#statechange_event_handler) oder [Azure-Warteschlangenspeicher zur Überwachung von Media Services-Auftragsbenachrichtigungen verwenden](#check_progress_with_queues). Beide Methoden werden in diesem Thema beschrieben.
 
@@ -427,4 +430,4 @@ Das Beispiel oben generiert die folgende Ausgabe. Die Werte können variieren.
 	
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

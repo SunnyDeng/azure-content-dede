@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (Windows Phone) | Mobile Dev Center" 
+	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen App (Windows Phone) | Microsoft Azure" 
 	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Windows Phone-App." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -272,4 +272,4 @@ Dieses Lernprogramm hat die Grundlagen der Zusammenarbeit einer Windows Phone 8-
 [How to add a new Windows Firewall port rule]: http://go.microsoft.com/fwlink/?LinkId=392240
    
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -7,16 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/23/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
-
 
 
 # Verwalten von Inhalten mit Media Services auf dem Azure-Verwaltungsportal
@@ -101,7 +99,7 @@ Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zus
 Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre Inhalte mit Azure Media Encoder im Verwaltungsportal zu codieren.
 
 1.  Wählen Sie die Datei aus, die Sie codieren möchten. Wenn die Codierung für diesen Dateityp unterstützt wird, wird die Schaltfläche "Prozess" unten auf der Inhaltsseite aktiviert.
-4. Wählen Sie im Dialogfeld **Prozess** den\*\* Azure Media Encoder-Prozessor aus.
+4. Wählen Sie im Dialogfeld **Prozess** den** Azure Media Encoder-Prozessor aus.
 5. Wählen Sie eine der **Codierungskonfigurationen** aus.
 
 	![Prozess2][process2]
@@ -217,4 +215,4 @@ Folgende Überlegungen sollten berücksichtigt werden:
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-manage-content/media-services-portal-player.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

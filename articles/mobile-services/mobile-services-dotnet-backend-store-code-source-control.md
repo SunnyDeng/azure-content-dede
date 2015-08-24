@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Speichern von Projektcode in der Quellcodeverwaltung – Azure Mobile Services" 
+	pageTitle="Speichern von Projektcode in der Quellcodeverwaltung | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Ihr .NET-Back-End-Projekt in einem lokalen Git-Repository auf Ihrem Computer speichern und von dort veröffentlichen." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -104,4 +104,4 @@ Ihr mobiles Dienstprojekt wird jetzt in der Quellcodeverwaltung verwaltet, und S
 [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts]: mobile-services-dotnet-backend-how-to-use-code-first-migrations.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

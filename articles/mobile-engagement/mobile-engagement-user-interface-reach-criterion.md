@@ -7,16 +7,14 @@
    manager="dwrede" 
    editor=""/>
 
-
 <tags
    ms.service="mobile-engagement"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="02/17/2015"
+   ms.date="08/10/2015"
    ms.author="piyushjo"/>
-
 
 
 # Zielgruppenadressierung anhand bestimmter Kriterien zur Versendung von Pushkampagnen an eine Teilmenge der Benutzer
@@ -28,7 +26,7 @@ Die Zielgruppenadressierung anhand spezifischer Kriterien mithilfe der neuen Sch
 - [Dokumentation zur Benutzeroberfläche – Reichweite – Neue Pushkampagne][Link 27]
 
 ## Kriterien für die Zielgruppe können Folgendes umfassen:
-- **\*\*Technische Informationen: \*\* Sie können die Zielgruppe basierend auf den gleichen technischen Informationen bestimmen, die Sie in den Bereichen "Analyse" und "Überwachen" sehen können. **Weitere Informationen:** [Dokumentation zur Benutzeroberfläche – Analyse][Link 15], [Dokumentation zur Benutzeroberfläche – Monitor][Link 16]
+- ****Technische Informationen: ** Sie können die Zielgruppe basierend auf den gleichen technischen Informationen bestimmen, die Sie in den Bereichen "Analyse" und "Überwachen" sehen können. **Weitere Informationen:** [Dokumentation zur Benutzeroberfläche – Analyse][Link 15], [Dokumentation zur Benutzeroberfläche – Monitor][Link 16]
 - **Standort:** Anwendungen, die "Echtzeit-Berichterstellung für Standorte" mit Geofencing verwenden, ist es möglich, Geolocation als Kriterium auszuwählen, um eine Zielgruppe über den GPS-Standort zu bestimmen. "Verzögerte Berichterstellung für Standorte" kann ebenfalls verwendet werden, um eine Zielgruppe über den Standort des Mobiltelefons zu bestimmen ("Echtzeit-Berichterstellung für Standorte" und "Verzögerte Berichterstellung für Standorte" müssen im SDK aktiviert sein). **Weitere Informationen:** [SDK-Dokumentation – iOS – Integration][Link 5], [SDK-Dokumentation – Android – Integration][Link 5]
 - **Reichweiten-Feedback:** Durch Reichweiten-Feedback aus Ankündigungen, Umfragen und Datenpushes können Sie Ihre Zielgruppe basierend auf deren Feedback aus vorherigen Reichweitenbenachrichtigungen bestimmen. So können Sie Ihre Zielgruppe nach zwei oder drei Kampagnen besser bestimmen als bei der ersten. Die Funktion kann auch Benutzer herausfiltern, die bereits eine Benachrichtigung mit ähnlichem Inhalt erhalten haben. Hierfür erstellt sie eine Kampagne, die NICHT an Benutzer verschickt wird, die eine solche vorherige Kampagne schon erhalten haben. Sie können sogar Benutzer, die Teil einer aktiven Kampagne sind, vom Erhalt neuer Pushes ausschließen. **Weitere Informationen:** [Dokumentation zur Benutzeroberfläche – Reichweite – Pushübertragung von Inhalten][Link 29]
 - **Nachverfolgen der Installation:** Sie können nachverfolgen, wo die Benutzer Ihre App installiert haben. **Weitere Informationen:** [Dokumentation zur Benutzeroberfläche – Einstellungen][Link 20]
@@ -176,4 +174,4 @@ Wenn Sie eine Ankündigung per Push nur an die Teilmenge der Benutzer verteilen 
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

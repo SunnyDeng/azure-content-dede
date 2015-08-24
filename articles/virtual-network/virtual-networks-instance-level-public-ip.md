@@ -1,10 +1,10 @@
 <properties 
-   pageTitle="Öffentliche IP auf Instanzebene (ILPIP)"
+   pageTitle="Öffentliche IP-Adresse auf Instanzebene (ILPIP)"
    description="Grundlegendes zu ILPIP (PIP) und deren Verwaltung"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="adinah"
+   manager="carolz"
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
@@ -12,11 +12,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/03/2015"
+   ms.date="08/10/2015"
    ms.author="telmos" />
 
-# Überblick über die öffentliche IP auf Instanzebene
-Eine öffentliche IP auf Instanzebene (Instance-Level Public IP, ILPIP) ist eine IP-Adresse, die Sie Ihrer VM- oder Rolleninstanz direkt zuweisen können, statt dem Clouddienst, in dem sich die VM- oder Rolleninstanz befindet. Sie tritt nicht an die Stelle der VIP (Virtual IP), die dem Clouddienst zugeordnet ist. Es ist vielmehr eine zusätzliche IP-Adresse, mit der Sie direkt eine Verbindung mit der VM oder Rolleninstanz herstellen können.
+# Überblick über die öffentliche IP-Adresse auf Instanzebene
+Eine öffentliche IP-Adresse auf Instanzebene \(Instance-Level Public IP, ILPIP\) ist eine IP-Adresse, die Sie Ihrer VM- oder Rolleninstanz direkt zuweisen können, statt dem Clouddienst, in dem sich die VM- oder Rolleninstanz befindet. Sie tritt nicht an die Stelle der VIP \(Virtual IP\), die dem Clouddienst zugeordnet ist. Es ist vielmehr eine zusätzliche IP-Adresse, mit der Sie direkt eine Verbindung mit der VM oder Rolleninstanz herstellen können.
 
 >[AZURE.NOTE]In der Vergangenheit wurde die ILPIP als PIP bezeichnet, was für Public IP bzw. öffentliche IP-Adresse steht.
 
@@ -24,7 +24,7 @@ Eine öffentliche IP auf Instanzebene (Instance-Level Public IP, ILPIP) ist eine
 
 Wie in Abbildung 1 dargestellt, erfolgt der Zugriff auf den Clouddienst über eine VIP-Adresse, während auf die einzelnen virtuellen Computer normalerweise unter Angabe von VIP:&lt;Portnummer&gt; zugegriffen wird. Die Zuweisung einer ILPIP zu einem bestimmten virtuellen Computer ermöglicht es, über diese IP-Adresse direkt auf diesen virtuellen Computer zuzugreifen.
 
-Bei der Erstellung eines Clouddiensts in Azure werden automatisch entsprechende DNS A-Datensätze für den Zugriff auf den Dienst über einen vollständig qualifizierten Domänennamen (FQDN) anstelle der tatsächlichen VIP-Adresse erstellt. Dasselbe geschieht für die ILPIP, um den Zugriff auf die VM- oder Rolleninstanz über den FQDN statt der ILPIP zu ermöglichen. Wenn Sie beispielsweise einen Clouddienst namens *contosoadservice* erstellen und eine Webrolle namens *contosoweb* mit zwei Instanzen konfigurieren, registriert Azure die folgenden A-Datensätze für die Instanzen:
+Bei der Erstellung eines Clouddiensts in Azure werden automatisch entsprechende DNS A-Datensätze für den Zugriff auf den Dienst über einen vollständig qualifizierten Domänennamen \(FQDN\) anstelle der tatsächlichen VIP-Adresse erstellt. Dasselbe geschieht für die ILPIP, um den Zugriff auf die VM- oder Rolleninstanz über den FQDN statt der ILPIP zu ermöglichen. Wenn Sie beispielsweise einen Clouddienst namens *contosoadservice* erstellen und eine Webrolle namens *contosoweb* mit zwei Instanzen konfigurieren, registriert Azure die folgenden A-Datensätze für die Instanzen:
 
 - contosoweb\_IN\_0.contosoadservice.cloudapp.net
 - contosoweb\_IN\_1.contosoadservice.cloudapp.net 
@@ -125,4 +125,4 @@ Eine ILPIP kann auch mithilfe einer Dienstkonfigurationsdatei einem virtuellen C
 [Reservierte IP-REST-APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

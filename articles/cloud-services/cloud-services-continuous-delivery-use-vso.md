@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Kontinuierliche Bereitstellung in Azure mit Visual Studio Online" 
-	description="Hier erfahren Sie, wie Sie Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch für die Web-App-Funktion in Azure App Service oder in Clouddiensten erstellt und bereitgestellt werden." 
-	services="cloud-services" 
-	documentationCenter=".net" 
-	authors="kempb" 
-	manager="douge" 
+<properties
+	pageTitle="Kontinuierliche Bereitstellung in Azure mit Visual Studio Online"
+	description="Hier erfahren Sie, wie Sie Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch für die Web-App-Funktion in Azure App Service oder in Clouddiensten erstellt und bereitgestellt werden."
+	services="cloud-services"
+	documentationCenter=".net"
+	authors="kempb"
+	manager="douge"
 	editor="tglee"/>
 
-<tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="05/08/2015" 
+<tags
+	ms.service="cloud-services"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/07/2015" 
 	ms.author="kempb"/>
 
 
@@ -306,4 +306,4 @@ Weitere Informationen finden Sie unter [Visual Studio Online](http://go.microsof
 [50]: ./media/cloud-services-continuous-delivery-use-vso/TestsResultsFailed.PNG
  
 
-<!-----HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

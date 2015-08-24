@@ -7,16 +7,14 @@
 	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags
 	ms.service="data-factory"
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="hero-article" 
+	ms.topic="get-started-article" 
 	ms.date="07/27/2015"
 	ms.author="spelluru"/>
-
 
 # Erstellen der ersten Pipeline mit Azure Data Factory
 > [AZURE.SELECTOR]
@@ -175,4 +173,4 @@ Gehen Sie wie folgt vor:
 - Klicken Sie oben auf den Link [PowerShell verwenden](data-factory-build-your-first-pipeline-using-powershell.md), um das Lernprogramm mit Azure PowerShell auszuführen.
 - Klicken Sie oben auf den Link [Mit Visual Studio](data-factory-build-your-first-pipeline-using-vs.md), um das Tutorial mit Visual Studio auszuführen. 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

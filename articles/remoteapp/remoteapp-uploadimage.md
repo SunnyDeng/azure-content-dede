@@ -3,7 +3,7 @@
     pageTitle="Hochladen eines benutzerdefinierten Images für Azure RemoteApp"
     description="Erfahren Sie, wie Sie ein benutzerdefiniertes Image für Azure RemoteApp hochladen." 
     services="remoteapp" 
-	documentationCenter="" 
+    documentationCenter="" 
     authors="ericorman" 
     manager="mbaldwin" />
 
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="05/28/2015" 
+    ms.date="08/12/2015" 
     ms.author="ericor" />
 
 
@@ -35,7 +35,7 @@ Nachdem Sie Ihr benutzerdefiniertes Vorlagenimage erstellt oder aktualisiert hab
 4.      Geben Sie einen aussagekräftigen Namen für Ihr Image und einen Speicherort im Speicherkonto an. Achten Sie darauf, dass der Speicherort mit dem Ihrer RemoteApp-Sammlung übereinstimmt (oder an dem Sie planen, sie zu erstellen). 
 5.      Laden Sie, wenn Sie dazu aufgefordert werden, das Skript auf Ihren lokalen Computer herunter.
 6.      Kopieren Sie die Befehlsparameter im Textfeld in die Zwischenablage.
-7.      Öffnen Sie ein Windows PowerShell-Fenster mit erhöhten Rechten.  
+7.      Öffnen Sie ein Windows PowerShell-Fenster mit erhöhten Rechten.
 8.      Navigieren Sie im Windows PowerShell-Fenster mit erhöhten Rechten zu dem Verzeichnis, in das Sie das Skript heruntergeladen haben.
 9.      Fügen Sie den kopierten Befehl ein, und drücken Sie die **Eingabetaste**.
 
@@ -52,4 +52,4 @@ Nachdem Sie Ihr benutzerdefiniertes Vorlagenimage erstellt oder aktualisiert hab
 - Wenn die VHD-Datei beim Upload ausgesperrt wird, kopieren oder verschieben Sie sie an den neuen Speicherort, und wiederholen Sie den Upload. Möglicherweise verhindern bestimmte Windows-Prozesse den Upload.  
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

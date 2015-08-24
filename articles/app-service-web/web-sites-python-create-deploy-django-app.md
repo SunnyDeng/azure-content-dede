@@ -36,7 +36,7 @@ Sie erstellen eine Anwendung mit dem Webframework Django (siehe auch alternative
 - Python 2.7 oder 3.4
 - setuptools, pip, virtualenv (nur Python 2.7)
 - Git
-- [Python Tools 2.1 für Visual Studio](optional)
+- [Python Tools 2.1 für Visual Studio] (optional)
 
 **Hinweis**: TFS-Veröffentlichung wird derzeit für Python-Projekte nicht unterstützt.
 
@@ -509,10 +509,11 @@ Weitere Informationen zur Verwendung von SQL-Datenbank und MySQL:
 [GitHub für Windows]: https://windows.github.com/
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.1 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
+[Python Tools 2.1 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
 [Visual Studio]: http://www.visualstudio.com/
 [PTVS-Dokumentation]: http://pytools.codeplex.com/documentation
 [Python Tools für Visual Studio – Dokumentation]: http://pytools.codeplex.com/documentation
 [Dokumentation zu Django]: https://www.djangoproject.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

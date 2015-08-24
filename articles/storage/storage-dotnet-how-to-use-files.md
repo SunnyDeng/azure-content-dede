@@ -1,6 +1,6 @@
 <properties
 			pageTitle="Verwenden des Azure-Dateispeichers mit PowerShell und .NET | Microsoft Azure"
-            description="Erfahren Sie, wie Sie den Azure-Dateispeicher zum Erstellen von Cloud-Dateifreigaben und zum Verwalten des Dateiinhalts verwenden. Der Dateispeicher ermöglicht Unternehmen, von SMB-Dateifreigaben abhängige Anwendungen nach Azure zu verschieben. Beibehalten Ihrer Speicherkonto-Anmeldeinformationen auf dem virtuellen Computer, sodass die Verbindung mit der Dateifreigabe beim Neustart des Computers hergestellt wird."
+            description="Erfahren Sie, wie Sie den Azure-Dateispeicher zum Erstellen von Clouddateifreigaben und zum Verwalten des Dateiinhalts verwenden. Der Dateispeicher ermöglicht Unternehmen, von SMB-Dateifreigaben abhängige Anwendungen nach Azure zu verschieben. Beibehalten Ihrer Speicherkonto-Anmeldeinformationen auf dem virtuellen Computer, sodass die Verbindung mit der Dateifreigabe beim Neustart des Computers hergestellt wird."
             services="storage"
             documentationCenter=".net"
             authors="tamram"
@@ -122,14 +122,14 @@ Windows stellt nun bei einem Neustart des virtuellen Computers erneut eine Verbi
 
 Nachdem Sie eine Remoteverbindung zu dem virtuellen Computer hergestellt haben, können Sie den Befehl `net use` mit folgender Syntax ausführen, um die Dateifreigabe bereitzustellen. Ersetzen Sie `<storage-account-name>` durch den Namen Ihres Speicherkontos und `<share-name>` durch den Namen Ihrer Dateispeicher-Freigabe:
 
-    net use <drive-letter>: \<storage-account-name>.file.core.windows.net<share-name>
+    net use <drive-letter>: <storage-account-name>.file.core.windows.net<share-name>
 
 	example :
 	net use z: \\samples.file.core.windows.net\logs
 
 Da Sie die Speicherkonto-Anmeldeinformationen im vorherigen Schritt dauerhaft gespeichert haben, müssen Sie diese nicht mit dem Befehl `net use` angeben. Wenn Sie Ihre Anmeldeinformationen noch nicht dauerhaft gespeichert haben, fügen Sie sie als Parameter hinzu, der an den Befehl `net use` übergeben wird, wie in diesem Beispiel gezeigt:
 
-    net use <drive-letter>: \<storage-account-name>.file.core.windows.net<share-name> /u:<storage-account-name> <storage-account-key>
+    net use <drive-letter>: <storage-account-name>.file.core.windows.net<share-name> /u:<storage-account-name> <storage-account-key>
 
 	example :
 	net use z: \\samples.file.core.windows.net\logs /u:samples <storage-account-key>
@@ -140,7 +140,7 @@ Sie können die Dateifreigabe auch über eine im Azure-Clouddienst ausgeführte 
 
 ## Erstellen einer lokalen Anwendung für den Zugriff auf den Dateispeicher
 
-Sie können die Dateifreigabe von einem virtuellen Computer aus oder von einem in Azure ausgeführten Cloud-Dienst einbinden, wie oben gezeigt. Sie können die Dateifreigabe jedoch nicht von einer lokalen Anwendung aus einbinden. Zum Zugriff auf freigegebene Daten von einer lokalen Anwendung aus verwenden Sie die Dateispeicher-API. In diesem Beispiel wird gezeigt, wie Sie über die [Azure .NET-Speicherclientbibliothek](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409) mit einer Dateifreigabe arbeiten.
+Sie können die Dateifreigabe von einem virtuellen Computer aus oder von einem in Azure ausgeführten Clouddienst einbinden, wie oben gezeigt. Sie können die Dateifreigabe jedoch nicht von einer lokalen Anwendung aus einbinden. Zum Zugriff auf freigegebene Daten von einer lokalen Anwendung aus verwenden Sie die Dateispeicher-API. In diesem Beispiel wird gezeigt, wie Sie über die [Azure .NET-Speicherclientbibliothek](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409) mit einer Dateifreigabe arbeiten.
 
 Um die Verwendung der API von einer lokalen Anwendung aus zu veranschaulichen, erstellen wir eine einfache Konsolenanwendung, die auf dem Desktop ausgeführt wird.
 
@@ -225,11 +225,11 @@ Führen Sie die Konsolenanwendung aus, um die Ausgabe zu sehen.
 
 ## Festlegen der maximalen Größe für eine Dateifreigabe
 
-Ab Version 5.x der Azure Storage-Clientbibliothek können Sie das Kontingent (oder die maximale Größe) für eine Freigabe in Gigabyte festlegen. Durch Festlegen des Kontingents für eine Freigabe können Sie die Gesamtgröße der Dateien einschränken, die in der Freigabe gespeichert werden.
+Ab Version 5.x der Azure Storage-Clientbibliothek können Sie das Kontingent (oder die maximale Größe) für eine Dateifreigabe in Gigabyte festlegen. Sie können auch überprüfen, wie viele Daten sich aktuell auf der Freigabe befinden.
 
-Überschreitet die Gesamtgröße der Dateien in der Freigabe das für die Freigabe festgelegte Kontingent, können die Clients weder die Größe von vorhandenen Dateien ändern noch neue Dateien erstellen, es sei denn, diese sind leer.
+Durch Festlegen des Kontingents für eine Freigabe können Sie die Gesamtgröße der Dateien einschränken, die in der Freigabe gespeichert werden. Überschreitet die Gesamtgröße der Dateien in der Freigabe das für die Freigabe festgelegte Kontingent, können die Clients weder die Größe von vorhandenen Dateien ändern noch neue Dateien erstellen – es sei denn, diese sind leer.
 
-Im folgende Beispiel wird gezeigt, wie das Kontingent für eine vorhandene Dateifreigabe festgelegt wird.
+Das folgende Beispiel zeigt, wie Sie die aktuelle Nutzung einer Freigabe überprüfen und das Kontingent für die Freigabe festlegen.
 
     //Parse the connection string for the storage account.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -244,12 +244,20 @@ Im folgende Beispiel wird gezeigt, wie das Kontingent für eine vorhandene Datei
     //Ensure that the share exists.
     if (share.Exists())
     {
-		//Specify the maximum size of the share, in GB.
-	    share.Properties.Quota = 100;
-	    share.SetProperties();
-	}
+        //Check current usage stats for the share.
+		//Note that the ShareStats object is part of the protocol layer for the File service.
+        Microsoft.WindowsAzure.Storage.File.Protocol.ShareStats stats = share.GetStats();
+        Console.WriteLine("Current share usage: {0} GB", stats.Usage.ToString());
 
-Um den Wert eines vorhandenen Kontingents für die Freigabe zu ermitteln, rufen Sie die **FetchAttributes()**-Methode auf, um die Eigenschaften der Freigabe abzurufen.
+        //Specify the maximum size of the share, in GB.
+        //This line sets the quota to be 10 GB greater than the current usage of the share.
+        share.Properties.Quota = 10 + stats.Usage;
+        share.SetProperties();
+
+        //Now check the quota for the share. Call FetchAttributes() to populate the share's properties. 
+        share.FetchAttributes();
+        Console.WriteLine("Current share quota: {0} GB", share.Properties.Quota);
+    }
 
 ## Generieren einer SAS für eine Datei oder Dateifreigabe
 
@@ -299,7 +307,7 @@ Im folgenden Beispiel wird eine SAS-Richtlinie für eine Freigabe erstellt und d
         Console.WriteLine(fileSas.DownloadText());
     }
 
-Weitere Informationen zum Erstellen und Verwenden von Shared Access Signatures finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md) und [Erstellen und Verwenden einer SAS mit dem Blob-Dienst](storage-dotnet-shared-access-signature-part-2.md).
+Weitere Informationen zum Erstellen und Verwenden von Shared Access Signatures finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md) und [Erstellen und Verwenden einer SAS mit dem Blobdienst](storage-dotnet-shared-access-signature-part-2.md).
 
 ## Kopieren von Dateien
 
@@ -408,7 +416,7 @@ Um eine Dateifreigabe aus Linux zu erstellen und zu verwalten, verwenden Sie die
 
 Sie können eine Azure-Dateifreigabe aus einem virtuellen Computer unter Linux bereitstellen. Wenn Sie Ihren virtuellen Azure-Computer erstellen, können Sie ein Linux-Image, das SMB 2.1 unterstützt, aus dem Azure-Imagekatalog angeben, z. B. die neueste Version von Ubuntu. Jede Linux-Distribution, die SMB 2.1 unterstützt, kann die Azure-Dateifreigabe einbinden.
 
-Weitere Informationen dazu, wie eine Azure-Dateifreigabe unter Linux eingebunden wird, finden Sie unter [Freigegebener Speicher unter Linux mithilfe der Vorschau der Azure-Dateien - Teil 1](http://channel9.msdn.com/Blogs/Open/Shared-storage-on-Linux-via-Azure-Files-Preview-Part-1) auf Channel 9.
+Weitere Informationen dazu, wie eine Azure-Dateifreigabe unter Linux eingebunden wird, finden Sie unter [Freigegebener Speicher unter Linux mithilfe der Vorschau der Azure-Dateien –Teil 1](http://channel9.msdn.com/Blogs/Open/Shared-storage-on-Linux-via-Azure-Files-Preview-Part-1) auf Channel 9.
 
 ## Nächste Schritte
 
@@ -428,4 +436,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

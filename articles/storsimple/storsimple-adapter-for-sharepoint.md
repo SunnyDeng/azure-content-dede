@@ -6,16 +6,14 @@
    authors="SharS"
    manager="carolz"
    editor="" />
-
 <tags 
    ms.service="storsimple"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="07/30/2015"
+   ms.date="08/11/2015"
    ms.author="v-sharos" />
-
 
 # StorSimple-Adapter für SharePoint
 
@@ -232,7 +230,7 @@ Verwenden Sie das folgende Verfahren zum Aktualisieren des SharePoint-Servers mi
 
 ## Nächste Schritte
 
-[Weitere Informationen über StorSimple](storsimple-overview.md)
+[Weitere Informationen zu StorSimple](storsimple-overview.md).
 
 <!--Reference links-->
 [1]: https://www.microsoft.com/download/details.aspx?id=44073
@@ -242,4 +240,4 @@ Verwenden Sie das folgende Verfahren zum Aktualisieren des SharePoint-Servers mi
 [5]: https://technet.microsoft.com/library/ff628583(v=office.15).aspx
 [8]: https://technet.microsoft.com/de-de/library/ff943565.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

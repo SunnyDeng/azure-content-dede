@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="07/16/2015" 
+    ms.date="08/12/2015" 
     ms.author="elizapo" />
 
 
@@ -81,4 +81,4 @@ Stellen Sie sicher, dass die Domänendetails gültig sind und dass der Domänenc
 
 Der erstellte oder hinzugefügte Domänenname muss ein interner Domänenname sein (nicht Ihr Azure AD-Domänenname), und er muss in das DNS-Format auflösbar sein (contoso.local). Angenommen, Sie verfügen über einen internen Active Directory-Namen (contoso.local) und eine Active Directory-UPN (contoso.com), dann müssen Sie den internen Namen verwenden, wenn Sie eine Sammlung erstellen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

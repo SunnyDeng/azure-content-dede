@@ -229,6 +229,7 @@ Stagingmodus aktivieren | Hiermit können Sie Informationen bereitstellen, die s
 ### Zusätzliche Dokumentation
 Zusätzliche Dokumentation zur Verwendung von Azure AD Connect:
 
+- [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md) 
 - [Changing the Azure AD Connect default configuration](active-directory-aadconnect-whats-next-change-default-config.md) (in englischer Sprache)
 - [Using the Azure AD Connect Synchronization Rules Editor](active-directory-aadconnect-whats-next-synch-rules-editor.md) (in englischer Sprache)
 - [Using declarative provisioning](active-directory-aadconnect-whats-next-declarative-prov.md) (in englischer Sprache)
@@ -248,7 +249,7 @@ Ignite 2015-Präsentation über die Erweiterung lokaler Verzeichnisse in die Cl
 
 [Azure AD Connect Health](active-directory-aadconnect-health.md) – Überwachen Sie die Integrität der lokalen AD FS-Infrastruktur.
 
-[Azure D Connect FAQ](active-directory-aadconnect-faq.md) – häufig gestellte Fragen zu Azure AD Connect.
+[Azure AD Connect FAQ](active-directory-aadconnect-faq.md) – häufig gestellte Fragen zu Azure AD Connect.
 
 
 
@@ -257,4 +258,4 @@ Ignite 2015-Präsentation über die Erweiterung lokaler Verzeichnisse in die Cl
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

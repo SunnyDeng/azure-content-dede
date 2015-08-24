@@ -24,13 +24,29 @@ Sichten sind in SQL Data Warehouse besonders nützlich. Sie können auf verschie
 In diesem Artikel werden einige Beispiele zum Verbessern der Lösung mit einer Implementierung von Sichten dargestellt. Es gibt einige Einschränkungen, die ebenfalls berücksichtigt werden müssen.
 
 ## Architekturabstraktion
-Ein häufig verwendetes Anwendungsmuster ist das erneute Erstellen von Tabellen mit CREATE TABLE AS SELECT (CTAS) gefolgt von einem Muster zur Objektumbenennung beim Laden von Daten.
+Ein häufig verwendetes Anwendungsmuster ist das erneute Erstellen von Tabellen mit CREATE TABLE AS SELECT \(CTAS\) gefolgt von einem Muster zur Objektumbenennung beim Laden von Daten.
 
-Im folgenden Beispiel werden einer Datumsdimension neue Datumsdatensätze hinzugefügt. Beachten Sie, wie zunächst ein neues Objekt "DimDate\_New" erstellt und dann umbenannt wird, um die ursprüngliche Version des Objekts zu ersetzen. ``` CREATE TABLE dbo.DimDate\_New WITH (DISTRIBUTION = REPLICATE , CLUSTERED INDEX (DateKey ASC) ) AS SELECT * FROM dbo.DimDate AS prod UNION ALL SELECT * FROM dbo.DimDate\_stg AS stg ;
+Im folgenden Beispiel werden einer Datumsdimension neue Datumsdatensätze hinzugefügt. Beachten Sie, wie das neue Objekt "DimDate\_New" zuerst erstellt und dann umbenannt wird, um die ursprüngliche Version des Objekts zu ersetzen.
 
-RENAME OBJECT DimDate TO DimDate\_Old; RENAME OBJECT DimDate\_New TO DimDate;
+```
+CREATE TABLE dbo.DimDate_New
+WITH (DISTRIBUTION = REPLICATE
+, CLUSTERED INDEX (DateKey ASC)
+)
+AS 
+SELECT *
+FROM   dbo.DimDate  AS prod
+UNION ALL
+SELECT *
+FROM   dbo.DimDate_stg AS stg
+;
 
-``` Allerdings können dadurch Tabellenobjekte in der Benutzersicht im SSDT SQL Server-Objekt-Explorer auftauchen oder daraus verschwinden. Sichten können verwendet werden, um eine konsistente Darstellungsschicht für Warehouse-Datenconsumer bereitzustellen, während die zugrunde liegenden Objekte umbenannt werden. Beim Bereitstellen von Datenzugriff über eine Sicht benötigen Benutzer keine Einblicke in die zugrunde liegenden Tabellen. Dadurch wird eine konsistente Benutzererfahrung gewährleistet, während die Data Warehouse-Designer das Datenmodell weiterentwickeln und die Leistung maximieren können, indem sie beim Datenladevorgang CTAS verwenden.
+RENAME OBJECT DimDate TO DimDate_Old;
+RENAME OBJECT DimDate_New TO DimDate;
+
+```
+
+Allerdings können dadurch Tabellenobjekte in der Benutzersicht im SSDT SQL Server-Objekt-Explorer auftauchen oder daraus verschwinden. Sichten können verwendet werden, um eine konsistente Darstellungsschicht für Warehouse-Datenconsumer bereitzustellen, während die zugrunde liegenden Objekte umbenannt werden. Beim Bereitstellen von Datenzugriff über eine Sicht benötigen Benutzer keine Einblicke in die zugrunde liegenden Tabellen. Dadurch wird eine konsistente Benutzererfahrung gewährleistet, während die Data Warehouse-Designer das Datenmodell weiterentwickeln und die Leistung maximieren können, indem sie beim Datenladevorgang CTAS verwenden.
 
 ## Leistungsoptimierung
 Sichten bieten eine intelligente Möglichkeit, leistungsoptimierte Verknüpfungen zwischen Tabellen zu erzwingen. Beispielsweise kann die Sicht einen redundanten Verteilungsschlüssel als Teil des Verknüpfungskriteriums enthalten, um die Datenverschiebung zu minimieren. Ein weiterer Grund besteht im Erzwingen von bestimmten Abfragen oder Verknüpfungshinweisen. Dadurch wird sichergestellt, dass die Verknüpfung immer auf optimale Weise ausgeführt wird und nicht davon abhängt, dass sich der Benutzer an eine ordnungsgemäße Konstruktion der Verknüpfung erinnern muss.
@@ -53,4 +69,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

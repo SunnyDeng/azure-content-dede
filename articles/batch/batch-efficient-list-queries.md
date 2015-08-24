@@ -1,42 +1,41 @@
 <properties
-	pageTitle="Effiziente Listenabfragen"
-	description="Erfahren Sie, wie Sie die Anzahl der in einer Liste zurückgegebenen Elemente sowie die für jedes Element zurückgegebenen Informationen reduzieren können."
+	pageTitle="Effiziente Listenabfragen in Azure Batch | Microsoft Azure"
+	description="Erfahren Sie, wie Sie die Anzahl der in einer Liste zurückgegebenen Azure Batch-Elemente sowie die für jedes Element zurückgegebenen Informationen verringern können."
 	services="batch"
 	documentationCenter=""
 	authors="davidmu1"
 	manager="timlt"
-	editor="tysonn"
+	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
-	ms.service="multiple"
-	ms.devlang="na"
+	ms.service="Batch"
+	ms.devlang="multiple"
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows"
-	ms.workload="multiple"
-	ms.date="07/28/2015"
+	ms.workload="big-compute"
+	ms.date="08/04/2015"
 	ms.author="davidmu"/>
 
-# Effiziente Listenabfragen
+# Effiziente Listenabfragen mit Batch
 
 Die folgenden Methoden sind Beispiele für Vorgänge, die in nahezu jeder Anwendung, in der Azure Batch verwendet wird, ausgeführt werden müssen, häufig sogar regelmäßig:
 
-- [ListTasks](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.iworkitemmanager.listtasks.aspx)
-- [ListJobs](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.iworkitemmanager.listjobs.aspx)
-- [ListWorkitems](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.iworkitemmanager.listworkitems.aspx)
-- [ListPools](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.ipoolmanager.listpools.aspx)
-- [ListCertificates](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.icertificatemanager.listcertificates.aspx)
+- [ListTasks](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listtasks.aspx)
+- [ListJobs](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx)
+- [ListPools](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.listpools.aspx)
+- [ListCertificates](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.certificateoperations.listcertificates.aspx)
 
-Überwachung ist ein häufiger Anwendungsfall. Bei der Ermittlung der Kapazität und des Status eines Pools müssen beispielsweise alle virtuellen Computer des Pools abgefragt werden. Ein weiteres Beispiel ist die Abfrage der Aufgaben für einen Auftrag, um zu ermitteln, ob sich noch Aufgaben in der Warteschlange befinden. In einigen Fällen sind umfangreiche Daten erforderlich, in anderen Fällen wiederum ist nur eine Zählung der Gesamtanzahl aller Elemente oder der Elemente mit einem bestimmten Status erforderlich.
+Überwachung ist ein häufiger Anwendungsfall. Bei der Ermittlung der Kapazität und des Status eines Pools müssen beispielsweise alle Computeknoten (VMs) in einem Pool abgefragt werden. Ein weiteres Beispiel ist die Abfrage der Aufgaben für einen Auftrag, um zu ermitteln, ob sich noch Aufgaben in der Warteschlange befinden. In einigen Fällen sind umfangreiche Daten erforderlich, in anderen Fällen wiederum ist nur eine Zählung der Gesamtanzahl aller Elemente oder der Elemente mit einem bestimmten Status erforderlich.
 
-Dabei ist zu beachten, dass die Anzahl der Elemente, die zurückgegeben werden, sehr groß sein kann, und dass auch der Umfang der Daten, die zum Anzeigen der Liste der Elemente erforderlich sind, sehr groß sein kann. Die Abfrage von vielen Elementen mit umfangreichen Antworten kann zu verschiedenen Problemen führen:
+Dabei ist zu beachten, dass sowohl die Anzahl von zurückgegebenen Elementen als auch der Umfang der Daten, die zum Anzeigen der Liste der Elemente erforderlich sind, sehr groß sein kann. Die Abfrage von vielen Elementen mit umfangreichen Antworten kann zu verschiedenen Problemen führen:
 
-- Die Antwortzeiten der Batch-API können zu langsam werden. Je größer die Anzahl der Elemente, desto länger ist die vom Batch-Dienst benötigte Antwortzeit. Bei einer großen Anzahl von Elementen müssen diese in Blöcke aufgeteilt werden. Daher müssen möglicherweise mehrere Dienst-API-Aufrufe von der Clientbibliothek an den Dienst durchgeführt werden, um alle Elemente für die Liste abzurufen.
+- Die Antwortzeiten der Batch-API können zu langsam werden. Je größer die Anzahl der Elemente, desto länger ist die vom Batch-Dienst benötigte Antwortzeit. Bei einer großen Anzahl von Elementen müssen diese in Blöcke aufgeteilt werden. Daher muss die Clientbibliothek möglicherweise mehrere Dienst-API-Aufrufe an den Dienst ausführen, um alle Elemente für die Liste abzurufen.
 - Je mehr Elemente zu verarbeiten sind, desto länger dauert die API-Verarbeitung durch die Anwendung, die Batch aufruft.
 - Je mehr Elemente vorhanden sind und/oder je größer die Elemente werden, desto mehr Speicher wird in der Anwendung verbraucht, die Batch aufruft.
 - Mehr Elemente und/oder größere Elemente führen zu einem erhöhten Netzwerkdatenverkehr. Die Übertragung dauert länger, und je nach Architektur der Anwendung erhöhen sich möglicherweise die Kosten für Daten, die außerhalb der Region des Batch-Kontos übertragen werden.
 
-Die Batch-API bietet die Möglichkeit, sowohl die Anzahl der in einer Liste zurückgegebenen Elemente als auch die für jedes Element zurückgegebenen Informationen zu reduzieren. Ein Parameter vom Typ [DetailLevel](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.detaillevel.aspx) kann für Auflistungsvorgänge angegeben werden. Bei "DetailLevel" handelt es sich um eine abstrakte Basisklasse, sodass ein Objekt vom Typ [ODATADetailLevel](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.aspx) erstellt und als Parameter übergeben werden muss.
+Mithilfe der Batch-API können Sie sowohl die Anzahl der in einer Liste zurückgegebenen Elemente als auch den Umfang der für jedes Element zurückgegebenen Informationen verringern. Ein Parameter vom Typ [DetailLevel](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.detaillevel.aspx) kann für Auflistungsvorgänge angegeben werden. Bei "DetailLevel" handelt es sich um eine abstrakte Basisklasse, sodass ein Objekt vom Typ [ODATADetailLevel](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.aspx) erstellt und als Parameter übergeben werden muss.
 
 Für alle APIs gelten folgende Bedingungen:
 
@@ -47,7 +46,7 @@ Für alle APIs gelten folgende Bedingungen:
 	- RFC1123 (z. B. "creationTime gt DateTime’Sun, 08 May 2011 08:49:37 GMT’")
 - Boolesche Zeichenfolgen sind "true" oder "false".
 - Wenn eine ungültige Eigenschaft oder ein ungültiger Operator angegeben ist, wird eine Ausnahme mit der internen Ausnahme "400 (Ungültige Anforderung)" erstellt.
-- Der DetailLevel-Parameter mit Select- und Expand-Klauseln kann auch an die entsprechenden Get-Methoden übergeben werden, z. B. an "IPoolManager.GetPool()".
+- Der DetailLevel-Parameter mit Select- und Expand-Klauseln kann auch an die entsprechenden Get-Methoden übergeben werden, z. B. an "PoolOperations.GetPool()".
 
 Das ODataDetailLevel-Objekt verfügt über drei öffentliche Eigenschaften, die entweder im Konstruktor angegeben oder direkt festgelegt werden können. Alle drei Eigenschaften sind Zeichenfolgen:
 
@@ -57,7 +56,7 @@ Das ODataDetailLevel-Objekt verfügt über drei öffentliche Eigenschaften, die 
 
 ### <a id="filter"></a> FilterClause
 
-Die Anzahl der zurückgegebenen Elemente kann durch eine Filterzeichenfolge reduziert werden. Ein oder mehrere Eigenschaftswerte können angegeben werden, um sicherzustellen, dass nur die erforderlichen Elemente zurückgegeben werden. Beispiel: nur Elemente mit aktiven Arbeitsaufgaben auflisten; nur aktuell ausgeführte Aufgaben für einen Auftrag auflisten; nur virtuelle Computer auflisten, auf denen Aufgaben ausgeführt werden können.
+Die Anzahl der zurückgegebenen Elemente kann durch eine Filterzeichenfolge reduziert werden. Ein oder mehrere Eigenschaftswerte können angegeben werden, um sicherzustellen, dass nur die erforderlichen Elemente zurückgegeben werden. Beispiele: nur aktuell ausgeführte Aufgaben für einen Auftrag auflisten; nur Computeknoten auflisten, auf denen Aufgaben ausgeführt werden können.
 
 Eine [FilterClause](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.filterclause.aspx) ist eine Zeichenfolge, die aus einem oder mehreren Ausdrücken besteht, wobei ein Ausdruck aus einem Eigenschaftennamen, einem Operator und einem Wert besteht. Die Eigenschaften, die angegeben werden können, sind spezifisch für jeden API-Aufruf. Dies gilt auch für die für jede Eigenschaft unterstützten Operatoren. Mehrere Ausdrücke können mithilfe der logischen Operatoren "and" und "or" kombiniert werden.
 
@@ -77,8 +76,8 @@ Die Eigenschaftswerte, die für jedes Element zurückgegeben werden, können mit
 
 Die Anzahl der API-Aufrufe kann durch eine expand-Zeichenfolge reduziert werden. Ausführlichere Informationen zu jedem Listenelement können mit dem API-Aufruf für eine Liste abgerufen werden, anstatt die Liste abzurufen und dann für jedes Element in der Liste einen Aufruf durchzuführen.
 
-[ExpandClause](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.expandclause.aspx) ähnelt der select-Klausel. Mit der expand-Klausel wird festgelegt, ob bestimmte Daten in den Ergebnissen zurückgegeben werden. Die expand-Klausel wird nur für die Arbeitsaufgabenliste, die Aufgabenliste, die Poolliste und die Auftragsliste unterstützt. Zum gegenwärtigen Zeitpunkt werden nur statistische Informationen unterstützt. Wenn alle Eigenschaften erforderlich sind und keine select-Klausel festgelegt ist, müssen statistische Informationen mit der expand-Klausel abgerufen werden. Wenn eine Teilmenge der Eigenschaften mit einer select-Klausel abgerufen werden, können statistische Informationen in der select-Klausel angegeben und die expand-Klausel auf "null" gesetzt werden.
+[ExpandClause](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.odatadetaillevel.expandclause.aspx) ähnelt der select-Klausel, da mit ihr gesteuert wird, ob bestimmte Daten in den Ergebnissen zurückgegeben werden. Die expand-Klausel wird nur für die Aufgabenliste, die Poolliste und die Auftragsliste unterstützt. Zum gegenwärtigen Zeitpunkt werden nur statistische Informationen unterstützt. Wenn alle Eigenschaften erforderlich sind und keine select-Klausel festgelegt ist, müssen statistische Informationen mit der expand-Klausel abgerufen werden. Wenn eine Teilmenge der Eigenschaften mit einer select-Klausel abgerufen werden, können statistische Informationen in der select-Klausel angegeben und die expand-Klausel auf "null" gesetzt werden.
 
 > [AZURE.NOTE]Es wird empfohlen, dass Sie immer filter- und select-Klauseln für Ihre API-Aufrufe zur Listenerstellung verwenden, um die maximale Effizienz und optimale Leistung der Anwendung zu gewährleisten.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

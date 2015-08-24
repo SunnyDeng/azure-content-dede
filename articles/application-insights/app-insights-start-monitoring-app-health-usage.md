@@ -48,7 +48,7 @@ Erforderlich:
 
 Melden Sie sich beim [Azure-Portal][portal] an, und erstellen Sie eine neue Application Insights-Ressource. Wählen Sie als Anwendungstyp "ASP.NET" aus.
 
-![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-start-monitoring-app-health-usage/01-new-asp.png)
+![Klicken Sie auf "Neu \> Application Insights"](./media/app-insights-start-monitoring-app-health-usage/01-new-asp.png)
 
 Eine [Ressource][roles] in Azure ist eine Instanz eines Diensts. In dieser Ressource werden Telemetriedaten aus Ihrer App analysiert und Ihnen angezeigt.
 
@@ -75,11 +75,11 @@ Installieren und Konfigurieren des Application Insights-SDK variiert abhängig v
     ![Suchen Sie nach "Application Insights".](./media/app-insights-start-monitoring-app-health-usage/04-ai-nuget.png)
 
 
-3. Bearbeiten Sie die Datei "ApplicationInsights.config" (die bei der NuGet-Installation hinzugefügt wurde). Fügen Sie Folgendes direkt vor dem Endtag ein:
+3. Bearbeiten Sie die Datei "ApplicationInsights.config" \(die bei der NuGet-Installation hinzugefügt wurde\). Fügen Sie Folgendes direkt vor dem Endtag ein:
 
     `<InstrumentationKey>` *Der kopierte Instrumentationsschlüssel* `</InstrumentationKey>`
 
-    (Alternativ können Sie [den Schlüssel durch Schreiben von Code][apikey] in Ihrer App festlegen.)
+    \(Alternativ können Sie [den Schlüssel durch Schreiben von Code][apikey] in Ihrer App festlegen.\)
 
 #### So aktualisieren Sie auf zukünftige SDK-Versionen
 
@@ -118,7 +118,7 @@ Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass 
 
 * Öffnen Sie die Kachel [Suche][diagnostic], um einzelne Ereignisse anzuzeigen.
 * Verwenden Sie die Anwendung, und öffnen Sie verschiedene Seiten, damit einige Telemetriedaten generiert werden.
-* Warten Sie einige Sekunden, und klicken Sie auf "Aktualisieren".
+* Warten Sie einige Sekunden, und klicken Sie auf "Aktualisieren". Diagramme aktualisieren sich in regelmäßigen Abständen selbst, doch Sie können sie auch manuell aktualisieren, wenn Sie auf anzuzeigende Daten warten.
 * Informationen hierzu finden Sie unter [Problembehandlung][qna].
 
 #### Probleme auf dem Buildserver?
@@ -133,7 +133,7 @@ Das SDK benötigt beim Zugriff auf bestimmte Daten etwas Hilfe. Dieser zusätzli
 
 Melden Sie sich auf Ihrem Server mit Administratorrechten an, und installieren Sie den [Application Insights-Statusmonitor](http://go.microsoft.com/fwlink/?LinkId=506648).
 
-(Sie können den Statusmonitor auch zum [Instrumentieren einer Anwendung verwenden, die bereits ausgeführt wird](app-insights-monitor-performance-live-website-now.md), selbst wenn sie nicht mit dem SDK erstellt wurde.)
+\(Sie können den Statusmonitor auch zum [Instrumentieren einer Anwendung verwenden, die bereits ausgeführt wird](app-insights-monitor-performance-live-website-now.md), selbst wenn sie nicht mit dem SDK erstellt wurde.\)
 
 #### Wenn Ihre App eine Azure-Web-App ist
 
@@ -141,11 +141,11 @@ Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-
 
 ![Klicken Sie in der Web-App auf "Extras", "Leistungsüberwachung", "Hinzufügen" und "Application Insights".](./media/app-insights-start-monitoring-app-health-usage/05-extend.png)
 
-(Die Erweiterung unterstützt nur Apps, die mit dem SDK erstellt wurden. Im Gegensatz zum Statusmonitor kann sie keine vorhandene App instrumentieren.)
+\(Die Erweiterung unterstützt nur Apps, die mit dem SDK erstellt wurden. Im Gegensatz zum Statusmonitor kann sie keine vorhandene App instrumentieren.\)
 
 ## Hinzufügen der clientseitigen Überwachung
 
-Sie haben das SDK installiert, das Telemetriedaten vom Server (Back-End) Ihrer Anwendung sendet. Nun können Sie die clientseitige Überwachung hinzufügen. Dadurch erhalten Sie Daten zu Benutzern, Sitzungen, Seitenaufrufen und allen Ausnahmen oder Abstürzen des Clients.
+Sie haben das SDK installiert, das Telemetriedaten vom Server \(Back-End\) Ihrer Anwendung sendet. Nun können Sie die clientseitige Überwachung hinzufügen. Dadurch erhalten Sie Daten zu Benutzern, Sitzungen, Seitenaufrufen und allen Ausnahmen oder Abstürzen des Clients.
 
 Sie können zudem eigenen Code schreiben, um nachzuverfolgen, wie Ihre Benutzer Ihre App verwenden – bis hin zu Mausklicks und Tastaturanschläge.
 
@@ -176,9 +176,9 @@ Führen Sie folgende Zusatzschritte aus, um einen umfassenden Überblick über I
 
 ## <a name="ide"></a>Der automatisierte Weg
 
-Zu Beginn dieses Artikels haben wir erwähnt, dass wir Ihnen den manuellen Weg zum Erstellen einer Application Insights-Ressource und zum Installieren des SDK zeigen. Wir glauben, dass es gut ist, die beiden Teile dieses Verfahrens zu verstehen. Für ASP.NET-Apps (und viele andere) gibt es jedoch einen noch schnelleren, automatisierten Weg.
+Zu Beginn dieses Artikels haben wir erwähnt, dass wir Ihnen den manuellen Weg zum Erstellen einer Application Insights-Ressource und zum Installieren des SDK zeigen. Wir glauben, dass es gut ist, die beiden Teile dieses Verfahrens zu verstehen. Für ASP.NET-Apps \(und viele andere\) gibt es jedoch einen noch schnelleren, automatisierten Weg.
 
-Sie benötigen [Visual Studio](http://go.microsoft.com/fwlink/?linkid=397827&clcid=0x409) (2013 Update 3 oder höher) und ein Konto in [Microsoft Azure](http://azure.com).
+Sie benötigen [Visual Studio](http://go.microsoft.com/fwlink/?linkid=397827&clcid=0x409) \(2013 Update 3 oder höher\) und ein Konto in [Microsoft Azure](http://azure.com).
 
 #### Falls es sich um ein neues Projekt handelt ...
 
@@ -203,7 +203,7 @@ In diesem Fall wird das [JavaScript-SDK][client] nicht Ihren Webseiten hinzugef�
 
 #### Setupoptionen
 
-Falls Sie erstmals ein Projekt erstellen, werden Sie nach einer Anmeldung bei Microsoft Azure Preview gefragt. (Dies ist nicht zu verwechseln mit Ihrem Visual Studio Online-Konto.)
+Falls Sie erstmals ein Projekt erstellen, werden Sie nach einer Anmeldung bei Microsoft Azure Preview gefragt. \(Dies ist nicht zu verwechseln mit Ihrem Visual Studio Online-Konto.\)
 
 Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithilfe von **Einstellungen konfigurieren** in derselben Ressourcengruppe wie die anderen Komponenten abzulegen.
 
@@ -243,4 +243,4 @@ Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithi
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

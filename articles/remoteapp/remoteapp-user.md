@@ -1,6 +1,6 @@
 <properties 
-    pageTitle="Hinzufügen eines Benutzers in RemoteApp" 
-    description="Erfahren Sie, wie Sie in RemoteApp Benutzerhinzufügen" 
+    pageTitle="Hinzufügen eines Benutzers zu Ihrer Azure RemoteApp-Sammlung" 
+    description="Erfahren Sie, wie Sie Benutzer zu Ihrer Azure RemoteApp-Sammlung hinzufügen." 
     services="remoteapp" 
 	documentationCenter="" 
     authors="lizap" 
@@ -12,24 +12,24 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="06/30/2015" 
+    ms.date="08/12/2015" 
     ms.author="elizapo" />
 
-# Gewusst wie: Hinzufügen eines Benutzers in RemoteApp
+# Hinzufügen eines Benutzers zu Ihrer Azure RemoteApp-Sammlung
 
-Damit Ihre Benutzer die Apps in RemoteApp anzeigen und verwenden können, müssen Sie ihnen Zugriff auf Ihre Sammlung gewähren. Dies ist der einfache Teil: Geben Sie auf der Registerkarte **Benutzerzugriff** die Kontoinformationen für den Benutzer ein und klicken Sie auf das Häkchen.
+Damit Ihre Benutzer die Apps in Azure RemoteApp anzeigen und verwenden können, müssen Sie ihnen Zugriff auf Ihre Sammlung gewähren. Dies ist der einfache Teil: Geben Sie auf der Registerkarte **Benutzerzugriff** die Kontoinformationen für den Benutzer ein, und klicken Sie auf das Häkchen.
 
 Welche Kontoinformationen benötigen Sie? Das hängt vom dem Typ der erstellten Sammlung (Cloud oder Hybrid) und der möglichen Verwendung von Office 365 ProPlus in dieser Sammlung ab.
 
 ## Unterstützte Benutzeridentitäten
 
-Die unterschiedlichen Sammlungstypen (Cloud oder Hybrid) unterstützen für den Benutzerzugriff auf Anwendungen die Verwendung unterschiedlicher Benutzeridentitäten.
+Die unterschiedlichen Sammlungstypen (Cloud oder Hybrid) unterstützen für den Zugriff auf Anwendungen die Verwendung unterschiedlicher Benutzeridentitäten.
 
-Bei einer Hybrid-Sammlung von RemoteApp müssen Sie eine lokale Active Directory-Domäneninfrastruktur und einen Azure Active Directory-Mandanten mit Verzeichnisintegration (und optional einmaliges Anmelden) einrichten. Darüber hinaus müssen Sie einige Active Directory-Objekte im lokalen Verzeichnis erstellen.
+Bei einer Hybridsammlung von RemoteApp müssen Sie eine lokale Active Directory-Domäneninfrastruktur und einen Azure Active Directory-Mandanten mit Verzeichnisintegration (und optional einmaliges Anmelden) einrichten. Darüber hinaus müssen Sie einige Active Directory-Objekte im lokalen Verzeichnis erstellen.
 
-Für eine RemoteApp-Cloud-Sammlung kann beliebigen Benutzern mit Azure Active Directory-Supportidentitäten der Benutzerzugriff auf RemoteApp einschließlich der Microsoft-Konten erteilt werden. Beachten Sie die folgende Tabelle.
+Für eine RemoteApp-Cloudsammlung kann beliebigen Benutzern mit Azure Active Directory-Supportidentitäten der Benutzerzugriff auf RemoteApp einschließlich der Microsoft-Konten erteilt werden. Siehe hierzu die nachstehende Tabelle.
 
-Office 365-Benutzer sind Azure Active Directory-Benutzer. Wenn diese über mit dem Verzeichnis synchronisierte Azure Active Directory-Hybrid-Konten verfügen, kann ihnen der Benutzerzugriff in einer Hybrid-Bereitstellung von RemoteApp erteilt werden.
+Office 365-Benutzer sind Azure Active Directory-Benutzer. Wenn diese über mit dem Verzeichnis synchronisierte Azure Active Directory-Hybridkonten verfügen, kann ihnen der Benutzerzugriff in einer Hybridbereitstellung von RemoteApp erteilt werden.
 
 Diese Tabelle dient als Kurzübersicht zu den für Ihre Sammlung unterstützten Identitäten und den Active Directory-Anforderungen.
 
@@ -53,4 +53,4 @@ Beachten Sie die [weiteren Informationen](remoteapp-ad.md) zum Konfigurieren von
 Bei Verwendung des Vorlagenimages von Office 365 ProPlus in Ihrer Sammlung *oder* bei Erstellung eines benutzerdefinierten Images, das Office 365 verwendet, dürfen Sie nur Azure Active Directory-Benutzer hinzufügen, die Office 365-Abonnements für die Standarddomäne Ihres Abonnements haben. Weitere Informationen finden Sie unter [Verwenden von Office 365 mit Azure RemoteApp](remoteapp-o365.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

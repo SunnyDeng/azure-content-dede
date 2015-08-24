@@ -6,7 +6,6 @@
 	authors="alancameronwills" 
 	manager="douge"/>
 
-
 <tags 
 	ms.service="application-insights" 
 	ms.workload="mobile" 
@@ -15,7 +14,6 @@
 	ms.topic="article" 
 	ms.date="07/22/2015" 
 	ms.author="awills"/>
-
  
 # Problembehandlung und Fragen zu Application Insights für ASP.NET
 
@@ -99,7 +97,7 @@ Die Details hängen von der Art des Projekts ab. Für eine Webanwendung:
 
  - packages.config
 
-+ (Nur neue Projekte – wenn Sie [Application Insights zu einem vorhandenen Webprojekt hinzufügen][start], müssen Sie dies manuell ausführen.) Fügen Sie Codeausschnitte in den Client- und Servercode ein, um diese mit der Application Insights-Ressourcen-ID zu initialisieren. Beispielsweise wird in einer MVC-App Code auf der Masterseite "Views/Shared/\_Layout.cshtml" eingefügt.
++ \(Nur neue Projekte – wenn Sie [Application Insights zu einem vorhandenen Webprojekt hinzufügen][start], müssen Sie dies manuell ausführen.\) Fügen Sie Codeausschnitte in den Client- und Servercode ein, um diese mit der Application Insights-Ressourcen-ID zu initialisieren. Beispielsweise wird in einer MVC-App Code auf der Masterseite "Views/Shared/\_Layout.cshtml" eingefügt.
 
 ####<a name="NuGetBuild"></a> Ich erhalte eine Fehlermeldung, dass auf meinem Buildserver NuGet-Pakete fehlen, obwohl die Erstellung auf meinen Entwicklungscomputern fehlerfrei funktioniert.
 
@@ -113,18 +111,15 @@ Gehen Sie dazu folgendermaßen vor:
 
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie "Projekt entladen" aus.
 2. Klicken Sie erneut mit der rechten Maustaste auf das Projekt, und wählen Sie *yourProject.csproj* zur Bearbeitung aus. 
-3. Entfernen Sie am Ende der Projektdatei die BCL-Ziele, die wie folgt aussehen: ``` <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
-
+3. Entfernen Sie am Ende der Projektdatei die BCL-Ziele, die wie folgt aussehen: \`\`\` <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
 	  
 	  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
 	  
 	    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
-
 	    
 	    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
-
 	    
-	</Target> ```
+	</Target> \`\`\`
 4. Speichern Sie die Datei .
 5. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie *yourProject.csproj* zum erneuten Laden aus.
 
@@ -138,7 +133,7 @@ Informationen hierzu finden Sie in den [Versionshinweisen](app-insights-release-
 #### <a name="q03"></a>Ich habe Application Insights erfolgreich hinzugefügt und meine App ausgeführt, sehe aber keine Daten im Portal.
 
 + Klicken Sie auf der Übersichtsseite auf die Kachel "Suchen", um die Diagnosesuche zu öffnen. Hier werden zunächst Daten angezeigt.
-+ Klicken Sie auf die Schaltfläche "Aktualisieren". In der aktuellen Version wird der Blattinhalt nicht automatisch aktualisiert.
++ Klicken Sie auf die Schaltfläche "Aktualisieren". Das Blatt aktualisiert sich in regelmäßigen Abständen selbst, doch Sie können es auch manuell aktualisieren. Das Aktualisierungsintervall für größere Zeiträume ist länger.
 + Schauen Sie sich im Startmenü der Microsoft Azure-Vorschau die Dienststatusübersicht an. Falls es eine Warnungsanzeige gibt, warten Sie, bis sie wieder "OK" anzeigt, schließen Sie das Blatt Ihrer Application Insights-Anwendung, und öffnen Sie es erneut.
 + Schauen Sie auch in [unserem Statusblog](http://blogs.msdn.com/b/applicationinsights-status/) nach.
 + In Ihrer Firewall müssen Sie möglicherweise die TCP-Ports 80 und 443 für ausgehenden Datenverkehr zu "dc.services.visualstudio.com" und "f5.services.visualstudio.com" öffnen.
@@ -149,7 +144,7 @@ Informationen hierzu finden Sie in den [Versionshinweisen](app-insights-release-
 
 + Die Daten kommen aus Skripts auf den Webseiten. Wenn Sie Application Insights zu einem vorhandenen Webprojekt hinzugefügt haben, müssen Sie die [Skripts manuell hinzufügen][start].
 + Stellen Sie sicher, dass Internet Explorer Ihre Website nicht im Kompatibilitätsmodus anzeigt.
-+ Verwenden Sie die Debugfunktion Ihres Browsers (bei einigen Browsern drücken Sie F12 und wählen anschließend "Netzwerk" aus), um sicherzustellen, dass Daten an dc.services.visualstudio.com gesendet werden.
++ Verwenden Sie die Debugfunktion Ihres Browsers \(bei einigen Browsern drücken Sie F12 und wählen anschließend "Netzwerk" aus\), um sicherzustellen, dass Daten an dc.services.visualstudio.com gesendet werden.
 
 #### <a name="q08"></a>Kann ich Application Insights verwenden, um einen Intranetwebserver zu überwachen?
 
@@ -186,7 +181,7 @@ Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf `Application
 
 #### <a name="q06"></a>Zeigt die Übersicht auf dem Startbildschirm der Microsoft Azure-Vorschau den Status meiner Anwendung?
 
-Nein! Sie zeigt den Status des Azure-Diensts an. Um die Ergebnisse des Webtests anzuzeigen, wählen Sie "Durchsuchen > Application Insights > (Ihre Anwendung)" aus. Sehen Sie sich dann die Webtest-Ergebnisse an.
+Nein! Sie zeigt den Status des Azure-Diensts an. Um die Ergebnisse des Webtests anzuzeigen, wählen Sie "Durchsuchen \> Application Insights \> \(Ihre Anwendung\)" aus. Sehen Sie sich dann die Webtest-Ergebnisse an.
 
 
 #### <a name="q07"></a>Wenn ich Application Insights zu meiner Anwendung hinzufüge und das Application Insights-Portal öffne, sehe ich eine ganz andere Ansicht als in den Screenshots.
@@ -218,9 +213,7 @@ Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
 <tr><th>Diese Daten sollten angezeigt werden</th><th>So erhalten Sie die Daten</th><th>Deshalb benötigen Sie die Daten</th></tr>
 <tr><td>Verfügbarkeitsdiagramme</td><td><a href="../app-insights-monitor-web-app-availability/">Webtests</a></td><td>Information, ob Ihre Web-App verfügbar ist</td></tr>
 <tr><td>Leistung der Server-App: Antwortzeiten usw. ...
-</td><td><a href="../app-insights-start-monitoring-app-health-usage/">Hinzufügen von Application Insights zu Ihrem Projekt</a><br/>
-oder <br/>
-<a href="../app-insights-monitor-performance-live-website-now/">Installieren Sie den AI-Statusmonitor auf dem Server</a> (oder schreiben Sie Ihren eigenen Code in die <a href="../app-insights-api-custom-events-metrics/#track-dependency">Nachverfolgung von Aufrufen</a>)</td><td>Erkennen von Leistungsproblemen</td></tr>
+</td><td><a href="../app-insights-start-monitoring-app-health-usage/">Hinzufügen von Application Insights zu Ihrem Projekt</a><br/>oder <br/><a href="../app-insights-monitor-performance-live-website-now/">Installieren Sie den AI-Statusmonitor auf dem Server</a> (oder schreiben Sie Ihren eigenen Code in die <a href="../app-insights-api-custom-events-metrics/#track-dependency">Nachverfolgung von Aufrufen</a>)</td><td>Erkennen von Leistungsproblemen</td></tr>
 <tr><td>Telemetriedaten zu Abhängigkeiten</td><td><a href="../app-insights-monitor-performance-live-website-now/">Installieren des AI-Statusmonitors auf dem Server</a></td><td>Diagnostizieren von Problemen mit Datenbanken oder anderen externen Komponenten</td></tr>
 <tr><td>Abrufen von Stapelüberwachungen aus Ausnahmen</td><td><a href="../app-insights-search-diagnostic-logs/#exceptions">Einfügen von TrackException-Aufrufen in Ihren Code</a> (einige werden jedoch automatisch gemeldet)</td><td>Erkennen und Diagnostizieren von Ausnahmen</td></tr>
 <tr><td>Durchsuchen von Ablaufprotokollen</td><td><a href="../app-insights-search-diagnostic-logs/">Hinzufügen eines Protokollierungsadapters</a></td><td>Diagnostizieren von Ausnahmen und Leistungsproblemen</td></tr>
@@ -246,4 +239,4 @@ Sie können ein [PowerShell-Skript schreiben](app-insights-powershell-script-cre
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="JavaScript" 
 	ms.topic="article" 
-	ms.date="05/06/2015" 
-	ms.author="patshea123"/>
+	ms.date="08/12/2015" 
+	ms.author="patshea"/>
 
 # Erste Schritte mit Mobile Services
 
@@ -28,13 +28,13 @@ Für einen mobilen JavaScript-Back-End-Dienst erstellen Sie eine Tabelle namens 
 
 Wenn Sie stattdessen einen mobilen .NET-Back-End-Dienst verwenden, ist bereits eine Tabelle TodoItem in der Standardprojektvorlage enthalten, die Visual Studio für Sie erstellt hat. Sie müssen diese jedoch noch in Azure veröffentlichen. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Mobile Services-Projekt, und wählen Sie dann **Web veröffentlichen** aus. Übernehmen Sie die Standardwerte, und klicken Sie dann auf die Schaltfläche **Veröffentlichen**.
 
-#####Abrufen des Verweises auf eine Tabelle
+##Abrufen eines Verweises auf eine Tabelle
 
 Das client-Objekt wurde Ihrem Projekt bereits hinzugefügt. Sein Name ist der Name Ihres mobilen Diensts mit der Anfügung "Client". Der folgende Code ruft einen Verweis auf eine Tabelle ab, die Daten für ein TodoItem enthält. Sie können ihn in nachfolgenden Vorgängen zum Lesen und Aktualisieren der Datentabelle verwenden.
 
 	var todoTable = yourMobileServiceClient.getTable('TodoItem');
 
-#####Hinzufügen eines Eintrags 
+##Hinzufügen eines Eintrags 
 
 Fügen Sie ein neues Element in eine Datentabelle ein. Eine ID (eine GUID vom Typ string) wird automatisch als primärer Schlüssel für die neue Zeile erstellt. Ändern Sie den Typ der ID-Spalte nicht, weil er von der Infrastruktur des mobilen Diensts verwendet wird.
 
@@ -46,7 +46,7 @@ Fügen Sie ein neues Element in eine Datentabelle ein. Eine ID (eine GUID vom Ty
         });
     };
 
-#####Lesen/Abfragen einer Tabelle
+##Lesen/Abfragen einer Tabelle
 
 Der folgende Code fragt alle Elemente einer Tabelle ab, aktualisiert eine lokale Auflistung und bindet das Ergebnis an das Oberflächenelement listItems.
 
@@ -72,9 +72,9 @@ Sie können die where-Methode zum Ändern der Abfrage verwenden. Das folgende Be
 
 Weitere Beispiele für Abfragen, die verwendet werden können, finden Sie unter dem [Objekt "query"](http://msdn.microsoft.com/library/azure/jj613353.aspx).
 
-#####Aktualisieren eines Eintrags
+##Aktualisieren eines Eintrags
 
-Aktualisieren Sie eine Zeile in einer Datentabelle. In diesem Beispiel ist todoItem das aktualisierte Element, und item ist das Element, das vom mobilen Dienst zurückgegeben wird. Wenn der mobile Dienst antwortet, wird das Element in der lokalen [todoItems](http://msdn.microsoft.com/library/windows/apps/Hh700810.aspx)-Liste mithilfe der Methode splice aktualisiert. Rufen Sie die Methode [done]() für das zurückgegebene [Promise]()-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
+Aktualisieren Sie eine Zeile in einer Datentabelle. In diesem Beispiel ist *todoItem* das aktualisierte Element, und *item* ist dasselbe Element, das vom mobilen Dienst zurückgegeben wird. Wenn der mobile Dienst antwortet, wird das Element in der lokalen [todoItems](http://msdn.microsoft.com/library/windows/apps/Hh700810.aspx)-Liste mithilfe der Methode splice aktualisiert. Rufen Sie die Methode **done** für das zurückgegebene [Promise](https://msdn.microsoft.com/library/dn802826.aspx)-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
 
         todoTable.update(todoItem).done(function (item) {
             todoItems.splice(todoItems.indexOf(item), 1, item);
@@ -82,7 +82,7 @@ Aktualisieren Sie eine Zeile in einer Datentabelle. In diesem Beispiel ist todoI
 
 #####Löschen eines Eintrags
 
-Löschen Sie eine Zeile in einer Datentabelle. Rufen Sie die Methode [done]() für das zurückgegebene [Promise]()-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
+Löschen Sie eine Zeile in einer Datentabelle. Rufen Sie die Methode [done]() für das zurückgegebene [Promise](https://msdn.microsoft.com/library/dn802826.aspx)-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
 
 	todoTable.del(todoItem).done(function (item) {
 	    todoItems.splice(todoItems.indexOf(item), 1);
@@ -92,4 +92,4 @@ Löschen Sie eine Zeile in einer Datentabelle. Rufen Sie die Methode [done]() f�
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

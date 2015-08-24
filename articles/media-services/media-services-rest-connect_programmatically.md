@@ -13,13 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/13/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 
 # Herstellen einer Verbindung mit einem Media Services-Konto über die Media Services-REST-API
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
+> [AZURE.SELECTOR]
+- [.NET](media-services-dotnet-connect_programmatically.md)
+- [REST](media-services-rest-connect_programmatically.md)
 
 In diesem Thema wird beschrieben, wie bei der Programmierung mit der Media Services-REST-API eine programmgesteuerte Verbindung mit Microsoft Azure Media Services hergestellt wird.
 
@@ -167,4 +169,4 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 
 <!-- URLs. -->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

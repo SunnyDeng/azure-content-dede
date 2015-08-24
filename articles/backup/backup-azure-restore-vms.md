@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Azure Backup – Wiederherstellen eines virtuellen Computers"
+	pageTitle="Azure Backup – Wiederherstellen eines virtuellen Computers | Microsoft Azure"
 	description="Erfahren Sie, wie ein virtueller Azure-Computer wiederhergestellt wird."
 	services="backup"
 	documentationCenter=""
@@ -8,7 +8,7 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="07/17/2015" ms.author="trinadhk"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/11/2015" ms.author="trinadhk"; "jimpark"/>
 
 # Wiederherstellen eines virtuellen Computers
 Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus den Sicherungen im Azure-Sicherungstresor in einem neuen virtuellen Computer wiederherstellen.
@@ -93,6 +93,6 @@ Bei den meisten Fehlern können Sie die empfohlene Aktion befolgen, die unter "F
 | Wiederherstellen | Cloudinterner Fehler bei der Wiederherstellung | <ol><li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit DNS-Einstellungen konfiguriert. Prüfen Sie <br>$deployment = Get-AzureDeployment -ServiceName "ServiceName" -Slot "Production" Get-AzureDns -DnsSettings $deployment.DnsSettings<br>Wenn "Address" konfiguriert ist, bedeutet dies, dass DNS-Einstellungen konfiguriert wurden.<br> <li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit ReservedIP konfiguriert, und vorhandene virtuelle Computer im Clouddienst befinden sich im Zustand "Beendet".<br>Mit den folgenden Powershell-Cmdlets können Sie prüfen, ob ein Clouddienst über eine reservierte IP-Adresse verfügt:<br>$deployment = Get-AzureDeployment -ServiceName "servicename" -Slot "Production" $dep.ReservedIPName</ol> |
 
 ## Nächste Schritte
-- [Verwalten virtueller Computer](backup-azure-manage-vms)
+- [Verwalten virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

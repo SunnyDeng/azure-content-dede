@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden des SendGrid-E-Mail-Diensts (Java) – Azure" 
+	pageTitle="Verwenden des E-Mail-Diensts SendGrid (Java) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure senden. Die Codebeispiele wurden in Java geschrieben." 
 	services="" 
 	documentationCenter="java" 
@@ -56,6 +56,7 @@ Rufen Sie die javax.mail-Bibliotheken z. B. unter <http://www.oracle.com/techne
 
 1.  Geben Sie die SMTP-Werte einschließlich des SMTP-Servers an, welcher bei SendGrid unter smtp.sendgrid.net geführt wird.
     
+```
         import java.util.Properties;
         import javax.activation.*;
         import javax.mail.*;
@@ -78,8 +79,9 @@ Rufen Sie die javax.mail-Bibliotheken z. B. unter <http://www.oracle.com/techne
            	  properties.put("mail.smtp.port", 587);
            	  properties.put("mail.smtp.auth", "true");
            	  // …
+```
 
-2.  Erweitern Sie die Klasse <span class="auto-style1">javax.mail.Authenticator</span>. Geben Sie außerdem in der Implementierung der Methode <span class="auto-style1">getPasswordAuthentication</span> den SendGrid-Benutzernamen und das dazugehörige Kennwort an.
+2.  Erweitern Sie die Klasse *javax.mail.Authenticator*. Geben Sie außerdem in der Implementierung der Methode *getPasswordAuthentication* den SendGrid-Benutzernamen und das -Kennwort an.  
 
         private class SMTPAuthenticator extends javax.mail.Authenticator {
         public PasswordAuthentication getPasswordAuthentication() {
@@ -88,13 +90,13 @@ Rufen Sie die javax.mail-Bibliotheken z. B. unter <http://www.oracle.com/techne
            return new PasswordAuthentication(username, password);
         }
 
-3.  Richten Sie eine authentifizierte E-Mail-Sitzung über ein Objekt vom Typ <span class="auto-style1">javax.mail.Session</span> ein.
+3.  Richten Sie eine authentifizierte E-Mail-Sitzung über ein *javax.mail.Session*-Objekt ein.
 
         Authenticator auth = new SMTPAuthenticator();
         Session mailSession = Session.getDefaultInstance(properties, auth);
 
 4.  Erstellen Sie Ihre Nachricht, und ordnen Sie die Werte für **An**, **Von**, **Betreff** und die Inhalte zu. Die entsprechende Vorgehensweise wird im Abschnitt [Erstellen einer E-Mail](#bkmk_HowToCreateEmail) erläutert.
-5.  Senden Sie die Nachricht über ein Objekt vom Typ <span class="auto-style1">javax.mail.Transport</span>. Die entsprechende Vorgehensweise wird im Abschnitt [Senden von E-Mails][How to: Send an Email] erläutert.
+5.  Versenden Sie eine Nachricht über ein *javax.mail.Transport*-Objekt. Die entsprechende Vorgehensweise wird im Abschnitt [Senden von E-Mails][How to: Send an Email] erläutert.
 
 ## <a name="bkmk_HowToCreateEmail"> </a>Erstellen einer E-Mail
 
@@ -136,7 +138,7 @@ Der folgende Code zeigt, wie Sie eine Anlage hinzufügen.
 
     // Local file name and path.
     String attachmentName = "myfile.zip";
-    String attachmentPath = "c:\\myfiles\"; 
+    String attachmentPath = "c:\\myfiles"; 
     MimeBodyPart attachmentPart = new MimeBodyPart();
     // Specify the local file to attach.
     DataSource source = new FileDataSource(attachmentPath + attachmentName);
@@ -228,4 +230,4 @@ Nachdem Sie sich nun mit den Grundlagen des SendGrid-E-Mail-Dienstes vertraut ge
   [cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
   [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

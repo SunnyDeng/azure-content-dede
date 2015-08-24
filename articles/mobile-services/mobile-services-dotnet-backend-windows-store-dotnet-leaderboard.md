@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen einer Windows Store-Bestenlisten-App mit .NET-Back-End | Azure Mobile Services" 
+	pageTitle="Erstellen einer Windows Store-Bestenlisten-App mit .NET-Back-End | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie eine Windows Store-Bestenlisten-App mithilfe von Azure Mobile Services mit einem .NET-Back-End erstellen." 
 	documentationCenter="windows" 
 	authors="MikeWasson" 
@@ -590,7 +590,7 @@ Fügen Sie zuletzt Methoden hinzu, welche die Dienstebene aufrufen.
 
 ## Hinzufügen einer MobileServiceClient-Instanz
 
-Öffnen Sie die Datei „App.xaml.cs\*“, und fügen Sie der `App`-Klasse eine **MobileServiceClient**-Instanz hinzu.
+Öffnen Sie die Datei „App.xaml.cs*“, und fügen Sie der `App`-Klasse eine **MobileServiceClient**-Instanz hinzu.
 
 	// New code:
 	using Microsoft.WindowsAzure.MobileServices;
@@ -771,4 +771,4 @@ Wenn Sie nun die App ausführen, kommuniziert diese mit dem echten Dienst.
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

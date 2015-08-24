@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/13/2015" 
+	ms.date="08/12/2015" 
 	ms.author="awills"/>
  
 # Einrichten von Warnungen in Application Insights
@@ -36,17 +36,19 @@ Um eine E-Mail zu erhalten, wenn eine Metrik einen Schwellenwert überschreitet,
 
 ![Klicken Sie auf dem Blatt "Warnungsregeln" auf "Warnung hinzufügen". Legen Sie Ihre App als die zu messende Ressource fest, geben Sie einen Namen für die Warnung ein, und wählen eine Metrik.](./media/app-insights-alerts/01-set-metric.png)
 
-Legen Sie die Ressource vor den anderen Eigenschaften fest. **Wählen Sie die Ressource "(Komponenten)" aus**, wenn Sie Benachrichtigungen für Leistungs- oder Nutzungsmetriken festlegen möchten.
+Legen Sie die Ressource vor den anderen Eigenschaften fest. **Wählen Sie die Ressource "\(Komponenten\)" aus**, wenn Sie Benachrichtigungen für Leistungs- oder Nutzungsmetriken festlegen möchten.
 
 Achten Sie auf die Einheiten, die beim Eingeben des Schwellenwerts gefordert sind.
 
-*Die Schaltfläche "Warnung hinzufügen" wird nicht angezeigt.* – Verwenden Sie ein Organisationskonto? Sie können Warnungen festlegen, wenn Sie für diese Anwendungsressource über Zugriffsberechtigungen für Besitzer oder Mitwirkende verfügen. Sehen Sie unter "Einstellungen" -> "Benutzer" nach. [Erfahren Sie mehr über die Zugriffssteuerung][roles].
+*Die Schaltfläche "Warnung hinzufügen" wird nicht angezeigt.* – Verwenden Sie ein Organisationskonto? Sie können Warnungen festlegen, wenn Sie für diese Anwendungsressource über Zugriffsberechtigungen für Besitzer oder Mitwirkende verfügen. Sehen Sie unter "Einstellungen" -\> "Benutzer" nach. [Erfahren Sie mehr über die Zugriffssteuerung][roles].
 
 ## Anzeigen Ihrer Warnungen
 
-Warnungen werden Ihnen per E-Mail gesendet.
+Sie erhalten eine E-Mail, wenn sich ein Warnungsstatus von "Inaktiv" in "Aktiv" ändert und umgekehrt.
 
-Außerdem werden sie im Ereignisprotokoll "Vorgänge" angezeigt:
+Der aktuelle Status jeder Warnung wird im Fenster "Warnungsregeln" angezeigt.
+
+Der Verlauf von Statusänderungen befindet sich im Ereignisprotokoll "Vorgänge":
 
 ![Klicken Sie auf dem Blatt "Übersicht" im unteren Bereich auf "Ereignisse der letzten Woche"](./media/app-insights-alerts/09-alerts.png)
 
@@ -80,4 +82,4 @@ Zu den gängigen Warnungen zählen Folgende:
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

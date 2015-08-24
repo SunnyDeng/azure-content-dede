@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Skalieren eines Clouddiensts | Azure" 
+	pageTitle="Skalieren eines Clouddiensts| Microsoft Azure" 
 	description="Hier erfahren Sie, wie Sie einen Cloud-Dienst und verknüpfte Ressourcen in Azure skalieren." 
 	services="cloud-services" 
 	documentationCenter="" 
@@ -30,7 +30,7 @@ Folgendes ist allerdings zu beachten, bevor die Skalierung einer Anwendung konfi
 
 - Virtuelle Computer müssen nach der Erstellung zu einer Verfügbarkeitsgruppe hinzugefügt werden, um sie für die Skalierung einer Anwendung verwenden zu können. Die derart in eine Gruppe eingefügten virtuellen Computer können zunächst beliebig aktiviert oder deaktiviert sein. Beim Hochskalieren werden sie allerdings definitiv aktiviert und beim Herunterskalieren deaktiviert. Weitere Information zu virtuellen Computern und Verfügbarkeitsgruppen finden Sie unter [Verwaltung der Verfügbarkeit virtueller Computer](../virtual-machines-manage-availability.md).
 
-- Die Skalierung ist abhängig von der Kernspeichernutzung. Größere Rolleninstanzen oder virtuelle Computer erfordern mehr Kernspeicher. Sie können eine Anwendung nur innerhalb der für Ihr Abonnement geltenden Kernspeichergrenzwerte skalieren. Wenn als Grenzwert für Ihr Abonnement beispielsweise zwanzig Kernspeicher festgelegt sind und Sie eine Anwendung mit zwei mittelgroßen virtuellen Computern ausführen (insgesamt vier Kernspeicher), stehen für das Hochskalieren anderer bereitgestellter Clouddienste in Ihrem Abonnement nur noch sechzehn Kernspeicher zur Verfügung. Für die Skalierung einer Anwendung können nur gleich große virtuelle Computer einer Verfügbarkeitsgruppe verwendet werden. Weitere Informationen über Kernspeichernutzung und Größen von virtuellen Computern finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure](http://msdn.microsoft.com/library/dn197896.aspx).
+- Die Skalierung ist abhängig von der Kernspeichernutzung. Größere Rolleninstanzen oder virtuelle Computer erfordern mehr Kernspeicher. Sie können eine Anwendung nur innerhalb der für Ihr Abonnement geltenden Kernspeichergrenzwerte skalieren. Wenn als Grenzwert für Ihr Abonnement beispielsweise zwanzig Kernspeicher festgelegt sind und Sie eine Anwendung mit zwei mittelgroßen virtuellen Computern ausführen \(insgesamt vier Kernspeicher\), stehen für das Hochskalieren anderer bereitgestellter Clouddienste in Ihrem Abonnement nur noch sechzehn Kernspeicher zur Verfügung. Für die Skalierung einer Anwendung können nur gleich große virtuelle Computer einer Verfügbarkeitsgruppe verwendet werden. Weitere Informationen über Kernspeichernutzung und Größen von virtuellen Computern finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure](http://msdn.microsoft.com/library/dn197896.aspx).
 
 - Sie müssen eine Warteschlange anlegen und diese einer Rolle oder einer Verfügbarkeitsgruppe zuweisen, bevor Sie eine Anwendung auf Basis eines Nachrichtenschwellwerts skalieren können. Weitere Informationen finden Sie unter [Verwenden des Warteschlangenspeicherdiensts](../storage-dotnet-how-to-use-queues.md).
 
@@ -51,7 +51,7 @@ Auf der Skalierungsseite können Sie die Anzahl der in einem Clouddienst laufend
 
 3. Jede Rolle in einem Clouddienst hat einen Regler, über den die Anzahl der verwendbaren Instanzen geändert werden kann. Um eine Rolleninstanz hinzuzufügen, ziehen Sie den Regler nach rechts. Um eine Rolleninstanz zu entfernen, ziehen Sie den Regler nach links.
     
-    ![Skalierung (Rolle)][slider_role]
+    ![Skalierung \(Rolle\)][slider_role]
     
     Sie können die Anzahl der verwendeten Instanzen nur dann erhöhen, wenn ausreichend Kernspeicher für die Unterstützung dieser Instanzen zur Verfügung stehen. Die Farben des Reglers lassen erkennen, wie viele Kernspeicher Ihres Abonnements belegt bzw. noch verfügbar sind:
     
@@ -104,23 +104,23 @@ Auf der Skalierungsseite können Sie Ihren Clouddienst so konfigurieren, dass di
 
 6. Sie können die Anzahl der Instanzen festlegen, die beim Hochskalieren Ihrer Anwendung jeweils hinzugefügt bzw. aktiviert werden sollen. Um diese Anzahl zu erhöhen, ziehen Sie den Regler nach rechts. Um sie zu verringern, ziehen Sie den Regler nach links.
 
-    ![Hochskalieren (CPU)][scale_cpuup]
+    ![Hochskalieren \(CPU\)][scale_cpuup]
 
 7. Geben Sie die Wartezeit zwischen der letzten Skalierungsaktion und dem nächsten Hochskalieren in Minuten ein. Bei der letzten Skalierungsaktion kann es sich entweder um ein Hoch- oder Herunterskalieren handeln.
 
-    ![Wartezeit (Hochskalieren)][scale_uptime]
+    ![Wartezeit \(Hochskalieren\)][scale_uptime]
 
     Bei der Berechnung der durchschnittlichen prozentualen CPU-Nutzung werden alle Instanzen erfasst. Der Durchschnittswert basiert auf der Nutzung in der jeweils vorhergehenden Stunde. Je nachdem, wie viele Instanzen Ihre Anwendung verwendet, und wenn die festgelegte Wartezeit sehr kurz ist, kann es länger dauern, bis die nächste Skalierungsaktion stattfindet. Das Mindestintervall zwischen Skalierungsaktionen ist fünf Minuten. Skalierungsaktionen können nicht stattfinden, wenn sich eine oder mehrere Instanzen in einem Übergangszustand befinden.
 
 8. Sie können auch die Anzahl der Instanzen festlegen, die beim Herunterskalieren Ihrer Anwendung jeweils gelöscht bzw. deaktiviert werden sollen. Um diese Anzahl zu erhöhen, ziehen Sie den Regler nach rechts. Um sie zu verringern, ziehen Sie den Regler nach links.
 
-    ![Herunterskalieren (CPU)][scale_cpudown]
+    ![Herunterskalieren \(CPU\)][scale_cpudown]
     
     Wenn bei Ihrer Anwendung ein plötzlicher Anstieg der CPU-Nutzung auftreten kann, müssen Sie sicherstellen, dass eine ausreichende Mindestanzahl von Instanzen verfügbar ist, um diese Nutzungsspitzen abzufangen.
 
 9. Geben Sie die Wartezeit zwischen der letzten Skalierungsaktion und dem nächsten Herunterskalieren in Minuten ein. Bei der letzten Skalierungsaktion kann es sich entweder um ein Hoch- oder Herunterskalieren handeln.
 
-    ![Wartezeit (Herunterskalieren)][scale_downtime]
+    ![Wartezeit \(Herunterskalieren\)][scale_downtime]
 
 10. Klicken Sie auf **Speichern**. Die Skalierungsaktion kann bis zu fünf Minuten dauern.
 
@@ -130,11 +130,11 @@ Auf der Skalierungsseite können Sie Ihren Clouddienst so konfigurieren, dass di
 2. Klicken Sie auf **Skalieren**.
 3. Führen Sie einen Bildlauf zu dem Abschnitt für die Rolle bzw. Verfügbarkeitsgruppe aus, und klicken Sie dann auf **Warteschlange**. Dann kann Ihre Anwendung basierend auf einer vorgegebenen Anzahl Warteschlangennachrichten automatisch skaliert werden.
 
-    ![Skalieren (Warteschlange)][scale_queue]
+    ![Skalieren \(Warteschlange\)][scale_queue]
 
 4. Jede im Clouddienst definierte Rolle bzw. Verfügbarkeitsgruppe hat einen Regler, über den die Anzahl der verwendbaren Instanzen geändert werden kann. Um die maximale Anzahl verwendbarer Instanzen einzustellen, ziehen Sie den rechten Regler nach rechts. Um die Mindestanzahl verwendbarer Instanzen einzustellen, ziehen Sie den linken Regler nach links.
 
-    ![Warteschlangen (Bereich)][queue_range]
+    ![Warteschlangen \(Bereich\)][queue_range]
     
     **Hinweis:** Auf der Skalierungsseite steht **Instanz** entweder für eine Rolleninstanz oder für eine Instanz eines virtuellen Computers.
     
@@ -154,21 +154,21 @@ Auf der Skalierungsseite können Sie Ihren Clouddienst so konfigurieren, dass di
 
 8. Sie können die Anzahl der Instanzen festlegen, die beim Hochskalieren Ihrer Anwendung jeweils hinzugefügt bzw. aktiviert werden sollen. Um diese Anzahl zu erhöhen, ziehen Sie den Regler nach rechts. Um sie zu verringern, ziehen Sie den Regler nach links.
 
-    ![Hochskalieren (CPU)][scale_cpuup]
+    ![Hochskalieren \(CPU\)][scale_cpuup]
 
 9. Geben Sie die Wartezeit zwischen der letzten Skalierungsaktion und dem nächsten Hochskalieren in Minuten ein. Bei der letzten Skalierungsaktion kann es sich entweder um ein Hoch- oder Herunterskalieren handeln.
 
-    ![Wartezeit (Hochskalieren)][scale_uptime]
+    ![Wartezeit \(Hochskalieren\)][scale_uptime]
     
     Das Mindestintervall zwischen Skalierungsaktionen ist fünf Minuten. Skalierungsaktionen können nicht stattfinden, wenn sich eine oder mehrere Instanzen in einem Übergangszustand befinden.
 
 10. Sie können auch die Anzahl der Instanzen festlegen, die beim Herunterskalieren Ihrer Anwendung jeweils gelöscht bzw. nicht mehr verwendet werden sollen. Das Skalierungsinkrement kann über einen Regler eingestellt werden. Um die Anzahl der beim Herunterskalieren der Anwendung gelöschten bzw. nicht mehr verwendeten Instanzen zu erhöhen, ziehen Sie den Regler nach rechts. Um sie zu verringern, ziehen Sie den Regler nach links.
 
-    ![Herunterskalieren (CPU)][scale_cpudown]
+    ![Herunterskalieren \(CPU\)][scale_cpudown]
 
 11.	Geben Sie die Wartezeit zwischen der letzten Skalierungsaktion und dem nächsten Herunterskalieren in Minuten ein. Bei der letzten Skalierungsaktion kann es sich entweder um ein Hoch- oder Herunterskalieren handeln.
 
-    ![Wartezeit (Herunterskalieren)][scale_downtime]
+    ![Wartezeit \(Herunterskalieren\)][scale_downtime]
 
 12. Klicken Sie auf **Speichern**. Die Skalierungsaktion kann bis zu fünf Minuten dauern.
 
@@ -199,7 +199,7 @@ Sie können die automatische Skalierung Ihrer Anwendung planen, indem Sie Zeitpl
 2. Klicken Sie auf **Skalieren**.
 3. Klicken Sie in der Skalierungsseite auf **set up schedule times**.
 
-    ![Zeitplan (Skalierung)][scale_schedule]
+    ![Zeitplan \(Skalierung\)][scale_schedule]
 
 4. Wählen Sie den Skalierungszeitplantyp aus, den Sie einrichten möchten.
 
@@ -227,4 +227,4 @@ Sie können die automatische Skalierung Ihrer Anwendung planen, indem Sie Zeitpl
 [scale_schedule]: ./media/cloud-services-how-to-scale/CloudServices_SetUpSchedule.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

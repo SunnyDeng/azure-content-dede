@@ -7,16 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="05/26/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
-
 
 #Kopieren eines vorhandenen Blobs in ein Media Services-Medienobjekt
 
@@ -62,17 +60,11 @@ In diesem Abschnitt werden Sie ein C#-Konsolenanwendungsprojekt erstellen und ei
 
 		<appSettings>
 		  <add key="MediaServicesAccountName" value="Media-Services-Account-Name"/>
-
 		  <add key="MediaServicesAccountKey" value="Media-Services-Account-Key"/>
-
 		  <add key="MediaServicesStorageAccountName" value="Media-Services-Storage-Account-Name"/>
-
 		  <add key="MediaServicesStorageAccountKey" value="Media-Services-Storage-Account-Key"/>
-
 		  <add key="ExternalStorageAccountName" value="External-Storage-Account-Name"/>
-
 		  <add key="ExternalStorageAccountKey" value="External-Storage-Account-Key"/>
-
 		</appSettings>
 
 
@@ -294,4 +286,4 @@ Mit dem Codebeispiel unten werden die folgenden Aufgaben ausgeführt:
 		}
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

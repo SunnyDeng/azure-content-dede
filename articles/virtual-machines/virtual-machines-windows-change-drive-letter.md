@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="KBDAzure"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -64,4 +65,4 @@ Wenn Sie einen vorhandenen Datenträger auf Laufwerk D verwenden möchten, stell
 
 [Storage]: ../storage-whatis-account.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

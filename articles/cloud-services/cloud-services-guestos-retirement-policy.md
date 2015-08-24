@@ -1,12 +1,11 @@
 <properties 
-   pageTitle="Unterstützungs- und Deaktivierungsrichtlinien für Azure-Gastbetriebssysteme | Azure" 
+   pageTitle="Unterstützungs- und Deaktivierungsrichtlinien für Azure-Gastbetriebssysteme | Microsoft Azure" 
    description="Bietet Informationen zu den Elementen, die Microsoft hinsichtlich des von Clouddiensten verwendeten Azure-Gastbetriebssystems unterstützt." 
    services="cloud-services" 
    documentationCenter="na" 
    authors="Thraka" 
    manager="timlt" 
    editor=""/>
-
 
 <tags
    ms.service="cloud-services"
@@ -17,9 +16,8 @@
    ms.date="05/19/2015"
    ms.author="adegeo"/>
 
-
 # Unterstützungs- und Deaktivierungsrichtlinien für Azure-Gastbetriebssysteme
-Die Informationen auf dieser Seite beziehen sich auf das Azure-Gastbetriebssystem ([Gast-BS](https://msdn.microsoft.com/library/azure/ff729422.aspx)) für Worker- und Webrollen für Clouddienste (PaaS). Sie gelten nicht für virtuelle Computer (IaaS).
+Die Informationen auf dieser Seite beziehen sich auf das Azure-Gastbetriebssystem \([Gast-BS](https://msdn.microsoft.com/library/azure/ff729422.aspx)\) für Worker- und Webrollen für Clouddienste \(PaaS\). Sie gelten nicht für virtuelle Computer \(IaaS\).
 
 Microsoft verfügt über eine veröffentlichte [Unterstützungsrichtlinie für das Gastbetriebssystem](http://support.microsoft.com/gp/azure-cloud-lifecycle-faq). Auf der vorliegenden Seite wird beschrieben, wie diese Richtlinie implementiert wird.
 
@@ -69,7 +67,7 @@ Diese Zeiträume können nach Ermessen von Microsoft verlängert werden, um den 
 
 ### Benachrichtigungen während der Deaktivierung 
 
-* **Deaktivierung der Familie** <br>Microsoft verwendet Blogbeiträge sowie Benachrichtigungen im Verwaltungsportal, um die Kunden zu informieren. Bei Kunden, die eine deaktivierte Gastbetriebssystemfamilie weiterhin verwenden, werden zugewiesene Dienstadministratoren auf direktem Weg benachrichtigt (E-Mail, Mitteilung im Portal, Telefonanruf). Alle Änderungen werden auf dieser Seite und im oben auf dieser Seite aufgeführten RSS-Feed veröffentlicht. 
+* **Deaktivierung der Familie** <br>Microsoft verwendet Blogbeiträge sowie Benachrichtigungen im Verwaltungsportal, um die Kunden zu informieren. Bei Kunden, die eine deaktivierte Gastbetriebssystemfamilie weiterhin verwenden, werden zugewiesene Dienstadministratoren auf direktem Weg benachrichtigt \(E-Mail, Mitteilung im Portal, Telefonanruf\). Alle Änderungen werden auf dieser Seite und im oben auf dieser Seite aufgeführten RSS-Feed veröffentlicht. 
 
 
 * **Deaktivierung der Version** <br>Alle Änderungen, einschließlich des Veröffentlichungs-, Deaktivierungs- und Ablaufdatums, werden auf dieser Seite und im oben auf dieser Seite aufgeführten RSS-Feed veröffentlicht. Dienstadministratoren erhalten E-Mails, wenn sie über Bereitstellungen verfügen, die unter einer deaktivierten Gastbetriebssystemversion oder -familie ausgeführt werden. Diese E-Mails können zu verschiedenen Zeitpunkten gesendet werden. Im Allgemeinen werden sie mindestens einen Monat vor der Deaktivierung gesendet, dies ist jedoch keine offizielle SLA.
@@ -83,11 +81,11 @@ Sie sollten die neueste Gastbetriebssystemfamilie verwenden, um Ihre Clouddienst
 
 1. Starten Sie die Planung der Migration zu einer neueren Familie frühzeitig. 
 2. Richten Sie temporäre Testbereitstellungen ein, um die Ausführung Ihres Clouddiensts unter der neuen Gastbetriebssystemfamilie zu testen. 
-3. [Legen Sie die Gastbetriebssystemversion](https://msdn.microsoft.com/library/azure/gg433101.aspx) auf „Automatisch“ fest (osVersion=\* in der [CSCFG](https://msdn.microsoft.com/library/azure/gg456324.aspx)-Datei), sodass die Migration zu neuen Gastbetriebssystemversionen automatisch erfolgt.
+3. [Legen Sie die Gastbetriebssystemversion](https://msdn.microsoft.com/library/azure/gg433101.aspx) auf „Automatisch“ fest \(osVersion=* in der [CSCFG](https://msdn.microsoft.com/library/azure/gg456324.aspx)-Datei\), sodass die Migration zu neuen Gastbetriebssystemversionen automatisch erfolgt.
 
 **Was geschieht, wenn meine Webanwendung eine tiefer greifende tiefere Integration in das Betriebssystem erfordert?**
 
-Wenn die Architektur Ihrer Webanwendung eine tiefer gehende Abhängigkeit vom zugrunde liegenden Betriebssystem erfordert, verwenden Sie von der Plattform unterstützte Funktionen wie z. B. "[Startaufgaben](https://msdn.microsoft.com/library/windowsazure/gg456327.aspx)" oder andere, zukünftig verfügbare Mechanismen zur Erweiterbarkeit. Alternativ dazu können Sie auch [Azure Virtual Machines](http://azure.microsoft.com/documentation/scenarios/virtual-machines/) (IaaS – Infrastructure-as-a-Service) verwenden, wo die Verwaltung des zugrunde liegenden Betriebssystems in Ihrem Verantwortungsbereich liegt.
+Wenn die Architektur Ihrer Webanwendung eine tiefer gehende Abhängigkeit vom zugrunde liegenden Betriebssystem erfordert, verwenden Sie von der Plattform unterstützte Funktionen wie z. B. "[Startaufgaben](https://msdn.microsoft.com/library/windowsazure/gg456327.aspx)" oder andere, zukünftig verfügbare Mechanismen zur Erweiterbarkeit. Alternativ dazu können Sie auch [Azure Virtual Machines](http://azure.microsoft.com/documentation/scenarios/virtual-machines/) \(IaaS – Infrastructure-as-a-Service\) verwenden, wo die Verwaltung des zugrunde liegenden Betriebssystems in Ihrem Verantwortungsbereich liegt.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

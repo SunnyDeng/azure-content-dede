@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Tätigen eines Telefonanrufs über Twilio (PHP) - Azure" 
+	pageTitle="Tätigen eines Telefonanrufs über Twilio (PHP) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. Die Beispiele sind für eine PHP-Anwendung vorgesehen." 
 	documentationCenter="php" 
 	services="" 
@@ -143,4 +143,4 @@ Weitere Informationen zu Twilio finden Sie unter [https://www.twilio.com/docs][t
 [website-webmatrix]: https://www.windowsazure.com/develop/php/tutorials/website-w-mysql-and-webmatrix/
 [twilio_php_github]: https://github.com/twilio/twilio-php
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

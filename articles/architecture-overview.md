@@ -13,11 +13,65 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/06/2015" 
+	ms.date="08/11/2015" 
 	ms.author="robb"/>
 
 #Anwendungsarchitektur in Microsoft Azure
-Ressourcen zum Erstellen von Anwendungen, die Microsoft Azure verwenden.
+Ressourcen zum Erstellen von Anwendungen, die Microsoft Azure verwenden. Dies umfasst Tools, mit denen Sie die Diagramme zeichnen können, um Softwaresysteme visuell zu beschreiben.
+
+##Microsoft-Architektur – Zertifizierungskurs
+
+Microsoft hat vor Kurzem einen neuen Architekturkurs zur Vorbereitung auf die Microsoft-Zertifizierungsprüfung 70-534 veröffentlicht. Der Kurs [steht auf EDX.ORG kostenlos zur Verfügung](https://www.edx.org/course/architecting-microsoft-azure-solutions-microsoft-dev205x). Im Kurs wird die neue [Visio-Vorlage "3D Blueprint"](#3d-blueprint-visio-template) verwendet.
+
+![Microsoft-Architektur – Zertifizierungskurs](./media/architecture-overview/EDXCourse.png)
+
+##Microsoft-Architekturpläne
+
+Microsoft veröffentlicht eine Reihe allgemeiner [Architekturpläne](http://aka.ms/azblueprints), die veranschaulichen, wie bestimmte Systemtypen mithilfe von Microsoft Azure-Diensten erstellt werden.
+
+Jeder Plan enthält Folgendes:
+
+- Eine einfache **Visio 2003-basierte 2D-Datei**, die Sie herunterladen und bearbeiten können. 
+- Eine lebendigere **3D-PDF-Datei** zur Einführung in den Plan für weniger technisch orientierte Zielgruppen.
+- Ein **Video**, das durch die 3D-Version führt. 
+
+In den Plänen wird der [Cloud- und Enterprise-Symbolsatz](#symbol-and-icon-sets) verwendet.
+
+![Microsoft-Architekturpläne – 3D-Diagramm](./media/architecture-overview/BluePrintThumb.jpg)
+
+
+
+##Visio-Vorlage "3D Blueprint"
+Die 3D-Versionen der [Microsoft-Architekturpläne](http://aka.ms/azblueprints) wurden ursprünglich in einem nicht von Microsoft stammenden Tool erstellt. Doch am 5. August 2015 wurde eine neue Visio 2013-Vorlage als Teil des [auf EDX.ORG verteilten Zertifizierungskurses zur Microsoft-Architektur](#microsoft-architecture-certification-course) veröffentlicht.
+
+Die Vorlage steht auch außerhalb des Kurses zur Verfügung.
+
+- [Sehen Sie sich zunächst das Traningsvideo](http://aka.ms/3dBlueprintTemplateVideo) an, damit Sie wissen, was die Vorlage leisten kann.   
+- Laden Sie die [Microsoft Visio-Vorlage "3D Blueprint"](http://aka.ms/3DBlueprintTemplate) herunter.
+- Laden Sie die [Cloud- und Enterprise-Symbole](#symbol-and-icon-sets) herunter, die mit der 3D-Vorlage verwendet werden.
+
+Wenn Sie noch Fragen haben, die mithilfe der Trainingsmaterialien nicht beantwortet werden oder uns Feedback geben möchten, senden Sie eine E-Mail an [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com). Zweckmäßigkeit ist eines der Hauptziele der Vorlage. Lassen Sie uns deshalb wissen, was gut ist und was verbessert werden sollte.
+
+![Microsoft Visio-Vorlage "3D Blueprint"](./media/architecture-overview/3DBlueprintVisioTemplate.jpg)
+
+
+
+##Symbolsätze 
+
+[Sehen Sie sich das Trainingsvideo zu Visio und Symbolen an](http://aka.ms/CnESymbolsVideo), und [laden Sie den Cloud- und Enterprise-Symbolsatz herunter](http://aka.ms/CnESymbols), um technische Materialien zu erstellen, die Azure, Windows Server, SQL Server und andere Microsoft-Produkte beschreiben. Sie können die Symbole in Architekturdiagrammen, Trainingsmaterialien, Präsentationen, Datenblättern, Infografiken, Whitepapers und sogar in Büchern von Drittanbietern verwenden, wenn diese Schulungsinformationen für die Verwendung von Microsoft-Produkten enthalten. Die Symbole sind jedoch nicht für die Verwendung auf Benutzeroberflächen vorgesehen.
+
+Die CnE-Symbole liegen im Visio- und PNG-Format vor. Weitere Anweisungen zur Verwendung der PNG-Dateien in PowerPoint sind in dem Satz enthalten.
+
+Der Symbolsatz wird vierteljährlich herausgegeben und aktualisiert, wenn neue Dienste erscheinen.
+
+Zusätzliche Symbole stehen in der [Microsoft Office Visio-Schablone](http://www.microsoft.com/de-de/download/details.aspx?id=35772) zur Verfügung, allerdings sind diese nicht wie der CnE-Satz für Architekturdiagramme optimiert.
+
+
+**Feedback:** Wenn Sie die CnE-Symbole verwendet haben, beantworten Sie die fünf Fragen unserer [Umfrage](http://aka.ms/azuresymbolssurveyv2). Wenn Sie Fragen oder Anliegen haben, senden Sie eine E-Mail an [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com). Ihre Meinung und Ihr Feedback interessieren uns, damit wir weiter an Verbesserungen arbeiten können.
+
+
+![Cloud- und Enterprise-Symbolsatz](./media/architecture-overview/CnESymbols.png)
+
 
 ##Entwurfsmuster für die Azure-Architektur
 Microsoft veröffentlicht eine Reihe von Architekturentwurfsmustern, mit deren Hilfe Sie eigene benutzerdefinierte Entwürfe erstellen können. Diese Muster dienen als Bausteine für die Architektur. Sie können miteinander kombiniert werden, damit Sie Microsoft Azure Platform optimal für die geschäftlichen Anforderungen Ihres Unternehmens nutzen können.
@@ -36,29 +90,10 @@ Jedes Muster enthält Folgendes:
 - Antimuster
 - Wichtige grundlegende Überlegungen zur Architektur: Verfügbarkeit und Stabilität, zusammengesetzte SLAs für die verwendeten Dienste, Skalierung und Leistung, Kosten und operative Überlegungen.
 
-##Microsoft-Architekturpläne
 
-Microsoft veröffentlicht eine Reihe von allgemeinen Architekturplänen, die veranschaulichen, wie bestimmte Systemtypen mit Microsoft-Produkten und Microsoft Azure-Diensten erstellt werden. Jeder Plan umfasst eine Visio-basierte 2D-Datei, die Sie herunterladen und bearbeiten können, eine lebendigere 3D-PDF-Datei zur Einführung sowie ein Video, das durch die 3D-Version führt. Siehe [Microsoft-Architekturpläne](http://msdn.microsoft.com/dn630664).
+![Entwurfsmuster für die Azure-Architektur](./media/architecture-overview/AzureArchPatterns.jpg)
 
-Die 2D-Plandiagramme verwenden den nachstehend genannten Cloud- und Enterprise-Symbolsatz.
-
-Die 3D-PDF-Plandateien wurden in einem Nicht-Microsoft-Tool erstellt, eine Visio-Vorlage befindet sich jedoch in Entwicklung. Weitere Informationen finden Sie im [Trainingsvideo zur BETA-Vorlage](http://aka.ms/3dBlueprintTemplate). Wenn Sie die 3D-Visio-Vorlage (Beta) erhalten möchten, senden Sie eine E-Mail an [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com).
-
-![Microsoft-Architekturpläne – 3D-Diagramm](./media/architecture-overview/BluePrintThumb.jpg)
-
-##Cloud- und Enterprise-Symbolsatz
-
-[Laden Sie den Cloud- und Enterprise-Symbolsatz herunter](http://aka.ms/CnESymbols), um technische Materialien zu erstellen, die Azure, Windows Server, SQL Server und andere Microsoft-Produkte beschreiben. Sie können diese in Architekturdiagrammen, Trainingsmaterialien, Präsentationen, Datenblättern, Infografiken, Whitepapers und sogar in Büchern von Drittanbietern verwenden, wenn diese Schulungsinformationen für die Verwendung von Microsoft-Produkten enthalten. Die Symbole liegen in Visio- und PNG-Formaten vor. Anweisungen zur Verwendung der PNG-Dateien in PowerPoint sind enthalten.
-
-Der Symbolsatz wird vierteljährlich herausgegeben und aktualisiert, wenn neue Dienste erscheinen. Wenn Sie eine Vorschau der neuesten Version anzeigen möchten, die möglicherweise zusätzliche Azure-Dienste einschließt, senden Sie eine E-Mail an [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com).
-
-Ihr Feedback ist uns sehr wichtig. Daher ist im Download eine Feedback-Anleitung enthalten. Wenn Sie die Symbole verwendet haben, beantworten Sie die fünf Fragen unserer [Umfrage](http://aka.ms/azuresymbolssurveyv2) um uns mitzuteilen, ob die Symbole für Sie nützlich sind und wie Sie sie verwenden.
-
-Zusätzliche Symbole stehen in der [Microsoft Office Visio-Schablone](http://www.microsoft.com/de-de/download/details.aspx?id=35772) zur Verfügung, allerdings sind diese nicht wie der CnE-Satz für Architekturdiagramme optimiert.
-
-![Cloud- und Enterprise-Symbolsatz](./media/architecture-overview/CnESymbols.png)
-
-##Entwurfsmuster
+##Poster mit Entwurfsmustern
 Microsoft Patterns and Practices hat das Buch zu [Cloudentwurfsmustern](http://msdn.microsoft.com/library/dn568099.aspx) veröffentlicht, das sowohl auf MSDN als auch als PDF-Download erhältlich ist. Es ist zudem ein großformatiges Poster verfügbar, auf dem alle Muster aufgelistet sind.
 
 ![Patterns und Practices – Poster zu Cloudmustern](./media/architecture-overview/PnPPatternPosterThumb.jpg)
@@ -68,4 +103,4 @@ Microsoft veröffentlicht mehrere architekturbezogene Poster/Infografiken. Dazu 
 
 ![Infografiken zur Azure-Architektur](./media/architecture-overview/AzureArchInfographicThumb.jpg)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

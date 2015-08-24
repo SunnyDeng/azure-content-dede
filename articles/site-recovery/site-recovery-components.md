@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Site Recovery-Komponenten" 
-	description="Dieser Artikel bietet einen Überblick über die Site Recovery-Komponenten und deren Verwaltung." 
+	pageTitle="Site Recovery-Komponenten"
+	description="Dieser Artikel bietet einen Überblick über die Site Recovery-Komponenten und deren Verwaltung."
 	services="site-recovery"
 	documentationCenter=""
 	authors="rayne-wiselman"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="07/09/2015"
+	ms.date="08/10/2015"
 	ms.author="raynew"/>
 
 # Site Recovery-Komponenten
@@ -53,7 +53,7 @@ Sie stellen Azure Site Recovery bereit, um virtuelle Computer zwischen einem Rec
 
 ![Lokaler VMM zu Azure](./media/site-recovery-components/Components_OnpremHyperVSite2Azure.png)
 
-### Schutz zwischen einem lokalen physischen Server oder virtuellen VMware-Computern und Azure 
+### Schutz zwischen einem lokalen physischen Server oder virtuellen VMware-Computern und Azure
 
 In diesem Szenario kann die Replikation auf zweierlei Weise geschehen:
 
@@ -74,11 +74,11 @@ Die gesamte Kommunikation von lokalen Servern wird an zugeordnete öffentliche E
 
 #### Ports
 
-**Komponente** | **Port** | **Details** 
+**Komponente** | **Port** | **Details**
 --- | --- | --- | ---
 **Prozessserver** |9080 | Geschützte Computer senden Daten für die Replikation an den Prozessserver über TCP 9080.
 **Konfigurationsserver** | HTTPS/443 | Der Mobilitätsdienst auf geschützten Computern sendet Replikationsmetadaten zum Konfigurationsserver auf Port 443.
- | HTTPS/443 | Der Konfigurationsserver koordiniert und orchestriert den Computerschutz. Der Prozessserver kommuniziert mit dem Konfigurationsserver auf 443 oder dem zugeordneten öffentlichen Endpunkt, um Verwaltungs- und Steuerungsinformationen zu erhalten. 
+ | HTTPS/443 | Der Konfigurationsserver koordiniert und orchestriert den Computerschutz. Der Prozessserver kommuniziert mit dem Konfigurationsserver auf 443 oder dem zugeordneten öffentlichen Endpunkt, um Verwaltungs- und Steuerungsinformationen zu erhalten.
  | 9443 | In der Failbackrichtung fordert das vContinuum-Tool Steuerungs- und Metadaten vom Konfigurationsserver auf Port 9443 (nicht im Diagramm dargestellt) an.
  | 5986 | Remoteverwaltung mit PowerShell verwendet Port 5986 (nicht im Diagramm dargestellt).
  | 3389 | Die RDP-Verbindung zum Konfigurationsserver verwendet Port 3389 (nicht im Diagramm dargestellt).
@@ -93,7 +93,7 @@ Die gesamte Kommunikation von lokalen Servern wird an zugeordnete öffentliche E
 **Komponente** | **Details** | **Installation** | **Bereitstellungsszenario**
 --- | --- | --- | ---
 **Azure Site Recovery-Anbieter für VMM** | Verarbeitet die Kommunikation zwischen dem VMM-Server und dem Site Recovery-Dienst. | Auf einem VMM-Server installiert | Verwendet, wenn Sie den Schutz zwischen zwei VMM-Standorten oder zwischen einem VMM-Standort und Azure einrichten
-**Azure Site Recovery-Anbieter für Hyper-V** | Verarbeitet die Kommunikation zwischen den Hyper-V-Host und dem Site Recovery-Dienst, wenn VMM nicht bereitgestellt wird. | Auf einem Hyper-V-Hostserver installiert | Verwendet, wenn Sie den Schutz zwischen einem Hyper-V-Standort und Azure einrichten.   
+**Azure Site Recovery-Anbieter für Hyper-V** | Verarbeitet die Kommunikation zwischen den Hyper-V-Host und dem Site Recovery-Dienst, wenn VMM nicht bereitgestellt wird. | Auf einem Hyper-V-Hostserver installiert | Verwendet, wenn Sie den Schutz zwischen einem Hyper-V-Standort und Azure einrichten.
 **Microsoft Recovery Services-Agent** | Verarbeitet die Kommunikation zwischen dem Hyper-V-Hostserver und dem Site Recovery-Dienst. | Auf dem Hyper-V-Hostserver installiert | <p>Verwendet beim Einrichten des Schutzes zwischen einem Hyper-V-Standort und Azure.</p><p>Sie laden einen einzigen Anbieter herunter, der den Azure Site Recovery-Anbieter für Hyper-V und den Microsoft Recovery Services-Agent enthält.</p>
 **Prozessserver/Failbackprozessserver** | <p>Optimiert Daten vom geschützten VMware-Computern oder physischen Windows-/Linux-Servern vor dem Senden an den Masterzielserver in Azure.</p><p>Führt die Pushinstallation des Mobilitätsdiensts auf virtuellen VMware-Computern oder physischen Servern durch.</p><p>Führt die automatische Ermittlung von virtuellen VMware-Computern durch.</p> <p>Failbackprozessserver: Nur der erste Punkt zum Optimieren der Daten vor der Replikation gilt für den Failbackprozessserver.</p> | <p>Wird auf einem lokalen Server installiert, auf dem mindestens Windows Server 2012 R2 ausgeführt wird.</p><p>Failbackprozessserver: Wird auf einem virtuellen Azure-Computer der Standardgröße A4 ausgeführt.</p> | <p>Wird beim Einrichten des Schutzes zwischen einem lokalen physischen Server oder virtuellen VMware-Computern und Azure verwendet.</p><p>Failbackprozessserver: Wird für das Failback von Azure zu lokal verwendet.</p>
 **Mobilitätsdienst** | Zeichnet Änderungen auf geschützten Computern auf und leitet sie an den lokalen Prozessserver für die Replikation in Azure weiter. | Wird auf lokalen virtuellen VMware-Computern oder auf physischen Servern installiert, die Sie schützen möchten.| Wird beim Einrichten des Schutzes zwischen einem lokalen physischen Server oder virtuellen VMware-Computern und Azure verwendet.
@@ -115,7 +115,7 @@ Der Anbieter wird auf Ihren VMM-Servern, Ihren Hyper-V-Hostservern, wenn Sie kei
 -  .backup.windowsazure.com
 	-  **.blob.core.windows.net
 -  **.store.core.windows.net
-	
+
 - Wenn Sie IP-Adressen basierende Regeln in der Firewall verwenden, stellen Sie sicher, dass die Kommunikation zwischen dem Konfigurationsserver und den in den [IP-Bereichen des Azure-Rechenzentrums](https://www.microsoft.com/download/details.aspx?id=41653) beschriebenen IP-Adressen sowie für HTTPS (443) zulässig ist. Sie müssen eine Positivliste der IP-Adressbereiche der Azure-Region, die Sie verwenden möchten, und für den Westen der USA erstellen.
 - Wenn Sie Site Recovery mit VMM bereitstellen und einen benutzerdefinierten Proxy verwenden, wird automatisch ein VMM-RunAs-Konto (DRAProxyAccount) erstellt. Hierfür werden die Proxyanmeldeinformationen genutzt, die Sie im Site Recovery-Portal in den Einstellungen für den benutzerdefinierten Proxy angegeben haben. Sie müssen den Proxyserver so konfigurieren, dass für dieses Konto eine erfolgreiche Authentifizierung möglich ist.
 - Bei Verwendung eines Proxys muss der Datenverkehr vom Anbieter, der auf einem Hyper-V-Hostserver installiert ist, zum Proxy über HTTP gesendet werden.
@@ -134,7 +134,7 @@ Der Agent stellt eine Verbindung mit dem Site Recovery-Dienst über das Internet
 - Ein standardmäßiger D14-Masterzielserver ist nur dann erforderlich, wenn Sie einen Server schützen möchten, an den mehr als 15 Datenträger angefügt sind. Für alle anderen Konfigurationen können Sie standardmäßige A4-Masterzielserver bereitstellen.
 - Beachten Sie, dass eine mit dem Masterzielserver verbundene Festplatte als Beibehaltungslaufwerk reserviert ist. Mit Azure Site Recovery können Sie Beibehaltungszeitfenster definieren und geschützte Computer auf einen Wiederherstellungspunkt innerhalb dieser Zeitfenster wiederherstellen. Das Beibehaltungslaufwerk verwaltet ein Journal mit Datenträgeränderungen für die Dauer der Zeitfenster. Dadurch wird die maximale Datenträgeranzahl für die Replikation für einen A4 auf 15 und für einen D14 auf 31 reduziert.
 
-#### Prozessserver 
+#### Prozessserver
 
 - Der Prozessserver verwendet einen datenträgerbasierten Cache. Stellen Sie sicher, dass auf C:/ genügend freier Speicherplatz für den Cache bereitsteht. Die Cachegröße wird von der Datenänderungsrate der geschützten Computer beeinflusst. In der Regel wird für mittelgroße Bereitstellungen eine Cacheverzeichnisgröße von 600 GB empfohlen.
 - Wenn die Datenänderungsrate der geschützten Computer die Kapazität eines vorhandenen Prozessservers übersteigt, sollten Sie einen zusätzlichen Prozessserver bereitstellen.
@@ -168,14 +168,14 @@ Ausführliche Planungsinformationen zu diesen Komponenten finden Sie im Abschnit
 
 ## Aktualisieren von Komponenten
 
-**Komponente** | **Vorgehensweise beim Aktualisieren** 
---- | --- 
+**Komponente** | **Vorgehensweise beim Aktualisieren**
+--- | ---
 <p>**Azure Site Recovery-Anbieter für VMM**</p><p>**Azure Recovery Services-Agent**</p> | <p></p>**Erstmalige Installation **: Laden Sie die neueste Version von der Seite "Schnellstart" herunter<p></p>**In Betrieb**: Sie können die neuesten (und vorherigen) Versionen aus dem Dashboard im Site Recovery herunterladen. Wenn Sie sich für Microsoft Updates entscheiden, wird die neueste Version des Anbieters und des Agents automatisch auf dem Server installiert.
-<p>**Prozessserver**</p><p>**Konfigurationsserver**</p><p>**Masterzielserver**</p> | Suchen Sie im Site Recovery-Dashboard nach Updates. 
+<p>**Prozessserver**</p><p>**Konfigurationsserver**</p><p>**Masterzielserver**</p> | Suchen Sie im Site Recovery-Dashboard nach Updates.
 **Mobilitätsdienst** | <p>Stellen Sie sicher, dass die neuesten Updates des Mobilitätsdiensts auf jedem Computer, die Sie schützen möchten, vorhanden sind:<p><p>Sie können die neuesten Updates herunterladen:</p><p>[Windows](http://download.microsoft.com/download/7/C/7/7C70CA53-2D8E-4FE0-BD85-8F7A7A8FA163/Microsoft-ASR_UA_8.3.0.0_Windows_GA_03Jul2015_release.exe)</p><p>[RHELP6-64-](http://download.microsoft.com/download/B/4/5/B45D1C8A-C287-4339-B60A-70F2C7EB6CFE/Microsoft-ASR_UA_8.3.0.0_RHEL6-64_GA_03Jul2015_release.tar.gz)</p><p>[OL6-64-](http://download.microsoft.com/download/9/4/8/948A2D75-FC47-4DED-B2D7-DA4E28B9E339/Microsoft-ASR_UA_8.3.0.0_OL6-64_GA_03Jul2015_release.tar.gz)</p><p>[SLES11-SP3-64](http://download.microsoft.com/download/6/A/2/6A22BFCD-E978-41C5-957E-DACEBD43B353/Microsoft-ASR_UA_8.3.0.0_SLES11-SP3-64_GA_03Jul2015_release.tar.gz)</p><p>Nachdem Sie sichergestellt haben, dass der Prozessserver auf dem neuesten Stand ist, können Sie alternativ auch die neueste Version des Mobilitätsdiensts aus dem Ordner "C:\\pushinstallsvc\\repository" auf dem Prozessserver herunterladen</p>  
 
 ## Nächste Schritte
 
 Starten Sie die Konfiguration der Komponenten für Ihr Bereitstellungsszenario. [Weitere Informationen](site-recovery-overview.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

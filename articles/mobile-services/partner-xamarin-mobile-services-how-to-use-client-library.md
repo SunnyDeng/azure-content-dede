@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden des Clients der Xamarin-Komponente - Azure Mobile Services-Funktionsleitfaden" 
+	pageTitle="Verwenden des Clients der Xamarin-Komponente | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie den Client der Xamarin-Komponente für Azure Mobile Services verwenden." 
 	authors="lindydonna" 
 	manager="dwrede" 
@@ -472,4 +472,4 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit Mobile Analytics | Mobile Dev Center" 
+	pageTitle="Erste Schritte mit Mobile Analytics | Microsoft Azure" 
 	description="Erste Schritte mit Mobile Analytics." 
 	documentationCenter="ios" 
 	authors="mattchenderson" 
@@ -98,4 +98,4 @@ Unter [http://www.capptain.com](http://www.capptain.com) erfahren Sie mehr zu de
 [Mobile Services Stufe „Standard“]: /pricing/details/mobile-services/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

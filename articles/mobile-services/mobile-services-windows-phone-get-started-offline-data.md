@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Offlinedaten in Mobile Services (Windows Phone) | Mobile Dev Center" 
+	pageTitle="Verwenden von Offlinedaten in Mobile Services (Windows Phone) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Azure Mobile Services mit synchronisierten Offlinedaten in Ihrer Windows Phone-Anwendung verwenden." 
 	documentationCenter="mobile-services" 
 	authors="lindydonna" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-phone" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/16/2015" 
+	ms.date="08/08/2015" 
 	ms.author="wesmc;donnam"/>
 
 # Verwendung der Offlinedatensynchronisierung in Mobile Services
@@ -245,8 +245,6 @@ In diesem Abschnitt testen Sie die Push- und Pull-Vorgänge zur Synchronisierung
 
 ##Zusammenfassung
 
-##Zusammenfassung
-
 [AZURE.INCLUDE [mobile-services-offline-summary-csharp](../../includes/mobile-services-offline-summary-csharp.md)]
 
 ## Nächste Schritte
@@ -291,4 +289,4 @@ In diesem Abschnitt testen Sie die Push- und Pull-Vorgänge zur Synchronisierung
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

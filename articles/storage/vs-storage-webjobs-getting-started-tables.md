@@ -1,26 +1,26 @@
 <properties 
-	pageTitle="Erste Schritte mit Azure Storage" 
-	description="Erste Schritte mit Azure-Tabellenspeicher in einem Azure WebJobs 5-Projekt in Visual Studio" 
-	services="storage" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+	pageTitle="Erste Schritte mit Azure-Speicher und verbundenen Visual Studio-Diensten (WebJob-Projekte)" 
+	description="Erste Schritte mit Azure-Tabellenspeicher in einem Azure WebJobs 5-Projekt in Visual Studio"
+	services="storage"
+	documentationCenter=""
+	authors="patshea123"
+	manager="douge"
 	editor="tglee"/>
 
 <tags 
-	ms.service="storage" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/13/2015" 
+	ms.service="storage"
+	ms.workload="web"
+	ms.tgt_pltfrm="vs-getting-started"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/13/2015"
 	ms.author="patshea123"/>
 
 # Erste Schritte mit Azure Storage (Azure WebJob-Projekte)
 
 > [AZURE.SELECTOR]
-> - [Getting Started](vs-storage-webjobs-getting-started-tables.md)
-> - [What Happened](vs-storage-webjobs-what-happened.md)
+> - [Getting started](vs-storage-webjobs-getting-started-tables.md)
+> - [What happened](vs-storage-webjobs-what-happened.md)
 
 > [AZURE.SELECTOR]
 > - [Blobs](vs-storage-webjobs-getting-started-blobs.md)
@@ -31,9 +31,9 @@
 
 ## Übersicht
 
-Der Azure-Tabellenspeicherdienst ermöglicht das Speichern großer Mengen von strukturierten Daten. Der Dienst ist ein NoSQL-Datenspeicher, der authentifizierte Aufrufe von innerhalb und außerhalb der Azure-Cloud akzeptiert. Azure-Tabellen sind hervorragend zur Speicherung strukturierter nicht relationaler Daten geeignet. Weitere Informationen finden Sie unter [Verwenden von Tabellenspeicher aus .NET](storage-dotnet-how-to-use-tables.md/#create-a-table "Verwenden des Tabellenspeichers mit .NET").
-
 Dieser Artikel enthält C#-Codebeispiele, die zeigen, wie das Azure WebJobs-SDK (Version 1.x) mit dem Azure-Tabellenspeicherdienst verwendet wird. In den Codebeispielen wird Version 1.x des [WebJobs-SDK](websites-dotnet-webjobs-sdk.md) verwendet.
+
+Der Azure-Tabellenspeicherdienst ermöglicht das Speichern großer Mengen von strukturierten Daten. Der Dienst ist ein NoSQL-Datenspeicher, der authentifizierte Aufrufe von innerhalb und außerhalb der Azure-Cloud akzeptiert. Azure-Tabellen sind hervorragend zur Speicherung strukturierter nicht relationaler Daten geeignet. Weitere Informationen finden Sie unter [Verwenden von Tabellenspeicher aus .NET](storage-dotnet-how-to-use-tables.md/#create-a-table "Verwenden des Tabellenspeichers mit .NET").
 
 		
 Einige der Codeausschnitte zeigen das `Table`-Attribut in Funktionen, die [manuell aufgerufen](vs-storage-webjobs-getting-started-blobs.md#manual) werden, d. h. nicht mit einem der Triggerattribute.
@@ -166,4 +166,4 @@ Informationen zur Handhabung der durch eine Warteschlangennachricht ausgelösten
 In diesem Artikel wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Tabellen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

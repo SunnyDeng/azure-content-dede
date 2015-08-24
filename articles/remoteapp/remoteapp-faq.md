@@ -12,8 +12,8 @@
 	ms.workload="compute" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/30/2015" 
+	ms.topic="get-started-article" 
+	ms.date="08/06/2015" 
 	ms.author="elizapo"/>
 
 # Azure RemoteApp – Häufig gestellte Fragen
@@ -22,23 +22,23 @@ Folgende Fragen wurden zu Azure RemoteApp an uns gestellt. Haben Sie weitere Fra
 ## Was ist Azure RemoteApp? ##
 
 
-- **Was ist Azure RemoteApp?** Azure RemoteApp stattet Azure mit der Funktionalität des lokalen Microsoft RemoteApp-Programms aus und wird von den Remotedesktopdiensten unterstützt. RemoteApp sorgt für den sicheren Remotezugriff auf Anwendungen von vielen unterschiedlichen Benutzergeräten aus. Erfahren Sie mehr über [Azure RemoteApp](remoteapp-whatis.md).
+- **Was ist Azure RemoteApp?** RemoteApp ist ein Azure-Dienst, mit dessen Hilfe Sie für einen sicheren Remotezugriff auf Anwendungen von vielen unterschiedlichen Benutzergeräten aus sorgen können. Erfahren Sie mehr über [Azure RemoteApp](remoteapp-whatis.md).
 - **Welches sind die beiden Bereitstellungsoptionen?** Es gibt zwei Arten von RemoteApp-Bereitstellungen (oder -Sammlungen): Cloud und Hybrid. Ermitteln Sie, welche [Bereitstellungsoption](remoteapp-whatis.md) sich für Ihr Unternehmen am besten eignet.
 
 ## Unterstützte Konfigurationen ##
 
-- **Was sind die Dienstgrenzwerte?** Wir haben ein neues Thema hinzugefügt, in dem alle [Dienstgrenzwerte und Standardwerte](remoteapp-servicelimits.md) beschrieben werden. Sie können sich gern an uns wenden, wenn Sie weitere Fragen haben.
-- **Wie viele Benutzer benötige ich?** Es sind mindestens 20 Benutzer erforderlich. Ich wiederhole dies noch einmal, damit es klar verständlich ist: das MINIMUM beträgt 20. Ihnen werden 20 Benutzer berechnet. Weitere Benutzergrenzwerte und Standardwerte finden Sie [hier](remoteapp-servicelimits.md).
+- **Was sind die Dienstgrenzwerte?** Informationen zu den Standardeinstellungen und Dienstbeschränkungen für Azure RemoteApp finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](.\azure-subscription-service-limits.md). Sie können sich gern an uns wenden, wenn Sie weitere Fragen haben.
+- **Wie viele Benutzer benötige ich?** Es sind mindestens 20 Benutzer erforderlich. Ich wiederhole dies noch einmal, damit es klar verständlich ist: das MINIMUM beträgt 20. Ihnen werden 20 Benutzer berechnet. 
 - **Werden benutzerdefinierte Line-of-Business-Anwendungen (LOB) unterstützt?** Ja. Zum Verwenden einer benutzerdefinierten Anwendung in Azure RemoteApp müssen Sie ein [benutzerdefiniertes Vorlagenimage](remoteapp-create-custom-image.md) erstellen und anschließend in die RemoteApp-Sammlung hochladen.
 - **Kann ich meine benutzerdefinierte LOB-Anwendung in Azure RemoteApp ausführen?** Dies lässt sich am besten im Rahmen eines Tests ermitteln. Überprüfen Sie die [Anforderungen an die Anwendungskompatibilität](http://www.microsoft.com/download/details.aspx?id=18704), und informieren Sie sich im [RD-Kompatibilitätscenter](http://www.rdcompatibility.com/compatibility/default.aspx).
-- **Welche Bereitstellungsmethode (Cloud oder Hybrid) eignet sich am besten für mein Unternehmen?** Hybrid-Sammlungen sind die umfassendste Lösung, wenn Sie eine vollständige Integration mit einmaligem Anmelden und einer sicheren lokalen Netzwerkverbindung anstreben. Cloud-Sammlungen sind eine flexible und einfache Möglichkeit, Ihre Bereitstellung mithilfe mehrerer Authentifizierungsmethoden zu isolieren. Erfahren Sie mehr über die [Bereitstellungsoptionen](remoteapp-whatis.md).
-- **Für die Hybrid-Sammlung ist ein virtuelles Netzwerk (VNET) erforderlich. Können wir unser vorhandenes VNET verwenden?** Das ist möglich, wenn das vorhandene VNET ein Azure VNET ist. Weitere Informationen finden Sie unter „Schritt 1: Einrichten des virtuellen Netzwerks“ in den [Anweisungen zur Hybrid-Sammlung](remoteapp-create-hybrid-deployment.md).
+- **Welche Bereitstellungsmethode (Cloud oder Hybrid) eignet sich am besten für mein Unternehmen?** Hybridsammlungen sind die umfassendste Lösung, wenn Sie eine vollständige Integration mit einmaligem Anmelden und einer sicheren lokalen Netzwerkverbindung anstreben. Cloudsammlungen sind eine flexible und einfache Möglichkeit, Ihre Bereitstellung mithilfe mehrerer Authentifizierungsmethoden zu isolieren. Erfahren Sie mehr über die [Bereitstellungsoptionen](remoteapp-whatis.md).
+- **Für die Hybridsammlung ist ein virtuelles Netzwerk (VNET) erforderlich. Können wir unser vorhandenes VNET verwenden?** Das ist möglich, wenn das vorhandene VNET ein Azure VNET ist. Weitere Informationen finden Sie unter "Schritt 1: Einrichten des virtuellen Netzwerks" in den [Anweisungen zu Hybridsammlungen](remoteapp-create-hybrid-deployment.md).
 - **Kann ich eine Cloud oder die vorhandenen virtuellen Computer als Vorlage für meine RemoteApp-Sammlung verwenden?** Ja. Sie können beruhend auf einem virtuellen Azure-Computer ein Image erstellen, eines der im Abonnement enthaltenen Images verwenden oder ein benutzerdefiniertes Image erstellen. Beachten Sie die [RemoteApp-Image-Optionen](remoteapp-imageoptions.md).
-- **Wir haben eine SQL- oder andere Datenbank entweder lokal oder in Azure. Welchen Bereitstellungstyp sollten wir verwenden?** Das hängt davon ab, wo sich Ihre SQL- oder Back-End-Datenbank befindet. Befindet sich die Datenbank in einem privaten Netzwerk, sollten Sie die Hybrid-Sammlung verwenden. Wenn die Datenbank über das Internet verfügbar ist und Clientverbindungen zulässt, können Sie die Cloud-Sammlung verwenden.
+- **Wir haben eine SQL- oder andere Datenbank entweder lokal oder in Azure. Welchen Bereitstellungstyp sollten wir verwenden?** Das hängt davon ab, wo sich Ihre SQL- oder Back-End-Datenbank befindet. Befindet sich die Datenbank in einem privaten Netzwerk, sollten Sie die Hybridsammlung verwenden. Wenn die Datenbank über das Internet verfügbar ist und Clientverbindungen zulässt, können Sie die Cloudsammlung verwenden.
 - **Wie sieht es mit der Laufwerkzuordnung, USB und seriellen Ports, der Freigabe der Zwischenablage und der Druckerumleitung aus?** Alle diese Funktionen werden in Azure RemoteApp unterstützt. Die Freigabe der Zwischenablage und die Druckerumleitung sind standardmäßig aktiviert. [Hier](remoteapp-redirection.md) erfahren Sie mehr über die Umleitung. 
 
 
-- **Wie sieht es mit der Authentifizierung aus? Welche Methoden werden unterstützt?** Die Cloud-Sammlung unterstützt Microsoft-Konten und Azure Active Directory-Konten, die gleichzeitig auch Office 365-Konten sind. Die Hybrid-Sammlung unterstützt nur Azure Active Directory-Konten, die von einer Windows Server Active Directory-Bereitstellung synchronisiert wurden (mithilfe eines Tools wie z. B. [Azure Active Directory Sync](http://blogs.technet.com/b/ad/archive/2014/09/16/azure-active-directory-sync-is-now-ga.aspx)). Dies gilt insbesondere für Konten, die entweder mit der Option "Kennwortsynchronisierung" oder mit Active Directory Federation Services (AD FS) in einer Verbundkonfiguration synchronisiert wurden. Sie können auch die [Multi-Factor Authentication (MFA)](../../services/multi-factor-authentication/) konfigurieren.
+- **Wie sieht es mit der Authentifizierung aus? Welche Methoden werden unterstützt?** Die Cloudsammlung unterstützt Microsoft-Konten und Azure Active Directory-Konten, die gleichzeitig auch Office 365-Konten sind. Die Hybridsammlung unterstützt nur Azure Active Directory-Konten, die von einer Windows Server Active Directory-Bereitstellung synchronisiert wurden (mithilfe eines Tools wie z. B. [Azure Active Directory Sync](http://blogs.technet.com/b/ad/archive/2014/09/16/azure-active-directory-sync-is-now-ga.aspx)). Dies gilt insbesondere für Konten, die entweder mit der Option "Kennwortsynchronisierung" oder mit Active Directory Federation Services (AD FS) in einer Verbundkonfiguration synchronisiert wurden. Sie können auch die [Multi-Factor Authentication (MFA)](../../services/multi-factor-authentication/) konfigurieren.
 
 	**Hinweis:** Azure Active Directory-Benutzer müssen dem Ihrem Abonnement zugeordneten Mandanten angehören. (Sie können Ihr Abonnement im Portal auf der Registerkarte **Einstellungen** anzeigen und bearbeiten. Weitere Informationen finden Sie unter [Ändern des von RemoteApp verwendeten Azure Active Directory-Mandanten](remoteapp-changetenant.md).)
 
@@ -70,16 +70,16 @@ Folgende Fragen wurden zu Azure RemoteApp an uns gestellt. Haben Sie weitere Fra
 		- [Wie funktioniert die Umleitung in RemoteApp](remoteapp-redirection.md)?
 	- **Bereitstellen:**
 		- [Erstellen eines benutzerdefinierten Vorlagenimages](remoteapp-create-custom-image.md)
-		- [Erstellen einer Hybrid-Sammlung](remoteapp-create-hybrid-deployment.md)
-		- [Erstellen einer Cloud-Sammlung](remoteapp-create-cloud-deployment.md)
+		- [Erstellen einer Hybridsammlung](remoteapp-create-hybrid-deployment.md)
+		- [Erstellen einer Cloudsammlung](remoteapp-create-cloud-deployment.md)
 		- [Konfigurieren von Azure Active Directory für RemoteApp](remoteapp-ad.md)
 		- [Veröffentlichen einer App in RemoteApp](remoteapp-publish.md)
 	- **Verwalten:**
 		- [Hinzufügen von Benutzern](remoteapp-user.md)
 		- [Bewährte Methoden zum Konfigurieren und Verwenden von Azure RemoteApp](remoteapp-bestpractices.md)	
 
-	Videos! Wir haben auch eine Reihe von Videos zu RemoteApp. Einige enthalten eine Einführung ([Einführung in Azure RemoteApp](http://azure.microsoft.com/documentation/videos/cloud-cover-ep-150-azure-remote-app-with-thomas-willingham-and-nihar-namjoshi/)), während andere die Bereitstellung erläutern ([Cloud-Bereitstellung](https://www.youtube.com/watch?v=3NAv2iwZtGc&feature=youtu.be) und [Hybrid-Bereitstellung](https://www.youtube.com/watch?v=GCIMxPUvg0c&feature=youtu.be)). Schauen Sie sie an!
+	Videos! Wir haben auch eine Reihe von Videos zu RemoteApp. Einige enthalten eine Einführung ([Einführung in Azure RemoteApp](http://azure.microsoft.com/documentation/videos/cloud-cover-ep-150-azure-remote-app-with-thomas-willingham-and-nihar-namjoshi/)), während andere die Bereitstellung erläutern ([Cloudbereitstellung](https://www.youtube.com/watch?v=3NAv2iwZtGc&feature=youtu.be) und [Hybridbereitstellung](https://www.youtube.com/watch?v=GCIMxPUvg0c&feature=youtu.be)). Schauen Sie sie an!
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

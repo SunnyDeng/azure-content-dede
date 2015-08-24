@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Node.js-Anleitung, erste Schritte – Azure-Lernprogramm"
+	pageTitle="Node.js-Anleitung, erste Schritte | Microsoft Azure"
 	description="Erfahren Sie, wie Sie eine einfache Node.js-Webanwendung erstellen und in einem Azure-Clouddienst bereitstellen können."
 	services="cloud-services"
 	documentationCenter="nodejs"
@@ -7,16 +7,14 @@
 	manager="wpickett"
 	editor=""/>
 
-
 <tags
 	ms.service="cloud-services"
 	ms.workload="tbd"
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs"
-	ms.topic="article"
+	ms.topic="hero-article"
 	ms.date="06/01/2015"
 	ms.author="mwasson"/>
-
 
 
 # Erstellen und Bereitstellen einer Node.js-Anwendung in einem Azure-Clouddienst
@@ -27,7 +25,7 @@
 
 Dieses Lernprogramm veranschaulicht, wie Sie eine einfache Node.js-Anwendung erstellen können, die in einem Azure-Clouddienst ausgeführt wird. Clouddienste sind die Bausteine skalierbarer Cloudanwendungen in Azure. Sie ermöglichen die Trennung und unabhängige Verwaltung und Skalierung von Front-End- und Back-End-Komponenten von Anwendungen. Clouddienste bieten stabile und dedizierte virtuelle Computer, um jede Rolle zuverlässig zu hosten.
 
-Weitere Informationen zu Cloud Services und einen Vergleich mit Azure-Websites und Virtual Machines finden Sie unter [Azure Websites, Cloud Services and Virtual Machines comparison](../choose-web-site-cloud-service-vm.md) (Vergleich von Azure-Websites, Cloud Services und Virtual Machines, in englischer Sprache).
+Weitere Informationen zu Cloud Services und einen Vergleich mit Azure-Websites und Virtual Machines finden Sie unter [Azure Websites, Cloud Services and Virtual Machines comparison](../choose-web-site-cloud-service-vm.md) \(Vergleich von Azure-Websites, Cloud Services und Virtual Machines, in englischer Sprache\).
 
 >[AZURE.TIP]Möchten Sie eine einfache Website erstellen? Wenn Ihr Szenario nur ein einfaches Website-Front-End umfasst, sollten Sie die <a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">Verwendung einer einfachen Web-App</a> in Betracht ziehen. Sie können einen Clouddienst mühelos aktualisieren, wenn die Web-App größer wird und sich Ihre Anforderungen ändern.
 
@@ -53,7 +51,7 @@ Die Anwendung ist eine einfache "Hello World"-Anwendung:
 Führen Sie folgende Aufgaben durch, um ein neues Azure-Clouddienstprojekt sowie ein einfaches Node.js-Gerüst zu erstellen:
 
 
-1. Führen Sie **Azure PowerShell** als Administrator aus. (Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Azure PowerShell**.)
+1. Führen Sie **Azure PowerShell** als Administrator aus. \(Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Azure PowerShell**.\)
 
 2.  Geben Sie das folgende PowerShell-Cmdlet ein, um das Projekt zu erstellen:
 
@@ -80,7 +78,7 @@ Führen Sie folgende Aufgaben durch, um ein neues Azure-Clouddienstprojekt sowie
 	> [AZURE.NOTE]Wenn Sie keinen Rollennamen angeben, wird ein Standardname verwendet. Sie können einen Namen als ersten Cmdlet-Parameter angeben: `Add-AzureNodeWebRole MyRole`
 
 
-Die Node.js-App wird in der Datei **server.js** im Verzeichnis für die Webrolle (Standardeinstellung: **WebRole1**) definiert. Hier folgt der Code:
+Die Node.js-App wird in der Datei **server.js** im Verzeichnis für die Webrolle \(Standardeinstellung: **WebRole1**\) definiert. Hier folgt der Code:
 
 	var http = require('http');
 	var port = process.env.port || 1337;
@@ -194,4 +192,4 @@ Nachdem Sie Ihre Anwendung bereitgestellt haben, möchten Sie diese möglicherwe
 [powershell-menu]: ./media/cloud-services-nodejs-develop-deploy-app/azure-powershell-start.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

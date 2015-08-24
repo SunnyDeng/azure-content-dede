@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Node.js-Anwendung mit Socket.io – Azure-Lernprogramm" 
+	pageTitle="Node.js-Anwendung mit Socket.io| Microsoft Azure" 
 	description="Erfahren Sie, wie Sie socket.io in einer node.js-Anwendung verwenden können, die in Azure gehostet wird." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -71,7 +71,7 @@ Bevor die Anwendung im Azure-Emulator gestestet wird, müssen einige kleinere Ä
 
 1.  Öffnen Sie die Datei server.js im Editor oder in einem anderen Texteditor.
 
-2.  Suchen Sie den Abschnitt **Module dependencies** am Anfang der Datei server.js, und ändern Sie die Zeile **sio = require('..//..//lib//socket.io')** in **sio = require('socket.io')**, wie unten dargestellt:
+2.  Suchen Sie den Abschnitt **Module dependencies** am Anfang der Datei server.js, und ändern Sie die Zeile **sio = require\('..//..//lib//socket.io'\)** in **sio = require\('socket.io'\)**, wie unten dargestellt:
 
 		var express = require('express')
   		, stylus = require('stylus')
@@ -121,11 +121,11 @@ Nachdem Sie die Änderungen in server.js gespeichert haben, gehen Sie folgenderm
 
 	> [AZURE.IMPORTANT]Verwenden Sie einen eindeutigen Namen, da der Veröffentlichungsprozess ansonsten fehlschlägt. Sobald die Bereitstellung erfolgt ist, wird der Browser geöffnet und navigiert zum bereitgestellten Dienst.
 	> 
-	> Wenn Sie eine Fehlermeldung erhalten, die besagt, dass der angegebene Abonnementname im importierten Veröffentlichungsprofil nicht vorhanden ist, müssen Sie das Veröffentlichungsprofil für Ihr Abonnement vor der Bereitstellung in Azure herunterladen und installieren. Weitere Informationen hierzu finden Sie im Abschnitt **Deploying the Application to Azure** (Bereitstellen der Anwendung in Azure) auf der Seite [Build and deploy a Node.js application to an Azure Cloud Service](https://www.windowsazure.com/develop/nodejs/tutorials/getting-started/) (Erstellen und Bereitstellen einer Node.js-Anwendung in einem Azure-Cloud-Dienst, in englischer Sprache).
+	> Wenn Sie eine Fehlermeldung erhalten, die besagt, dass der angegebene Abonnementname im importierten Veröffentlichungsprofil nicht vorhanden ist, müssen Sie das Veröffentlichungsprofil für Ihr Abonnement vor der Bereitstellung in Azure herunterladen und installieren. Weitere Informationen hierzu finden Sie im Abschnitt **Deploying the Application to Azure** \(Bereitstellen der Anwendung in Azure\) auf der Seite [Build and deploy a Node.js application to an Azure Cloud Service](https://www.windowsazure.com/develop/nodejs/tutorials/getting-started/) \(Erstellen und Bereitstellen einer Node.js-Anwendung in einem Azure-Cloud-Dienst, in englischer Sprache\).
 
     ![Browserfenster, in dem der in Azure gehostete Dienst angezeigt wird][completed-app]
 
-	> [AZURE.NOTE]Wenn Sie eine Fehlermeldung erhalten, die besagt, dass der angegebene Abonnementname im importierten Veröffentlichungsprofil nicht vorhanden ist, müssen Sie das Veröffentlichungsprofil für Ihr Abonnement vor der Bereitstellung in Azure herunterladen und installieren. Weitere Informationen hierzu finden Sie im Abschnitt **Deploying the Application to Azure** (Bereitstellen der Anwendung in Azure) auf der Seite [Build and deploy a Node.js application to an Azure Cloud Service](https://www.windowsazure.com/develop/nodejs/tutorials/getting-started/) (Erstellen und Bereitstellen einer Node.js-Anwendung in einem Azure-Cloud-Dienst, in englischer Sprache).
+	> [AZURE.NOTE]Wenn Sie eine Fehlermeldung erhalten, die besagt, dass der angegebene Abonnementname im importierten Veröffentlichungsprofil nicht vorhanden ist, müssen Sie das Veröffentlichungsprofil für Ihr Abonnement vor der Bereitstellung in Azure herunterladen und installieren. Weitere Informationen hierzu finden Sie im Abschnitt **Deploying the Application to Azure** \(Bereitstellen der Anwendung in Azure\) auf der Seite [Build and deploy a Node.js application to an Azure Cloud Service](https://www.windowsazure.com/develop/nodejs/tutorials/getting-started/) \(Erstellen und Bereitstellen einer Node.js-Anwendung in einem Azure-Cloud-Dienst, in englischer Sprache\).
 
 Ihre Anwendung wird jetzt in Azure ausgeführt und kann Chat-Nachrichten zwischen verschiedenen Clients mithilfe von Socket.IO vermitteln.
 
@@ -158,4 +158,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine grundlegende Chat-Anwendung 
   
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Liste der Updates für das Azure-Gastbetriebssystem | Azure" 
+   pageTitle="Liste der Updates für das Azure-Gastbetriebssystem | Microsoft Azure" 
    description="Liste der Updates für Azure-Gastbetriebssystemreleases" 
    services="cloud-services" 
    documentationCenter="na" 
@@ -18,7 +18,7 @@
 
 # Azure-Gastbetriebssystem 
 
-Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MSRC), die auf das Azure-Gastbetriebssystem angewendet wurden. Durchsuchen Sie diesen Artikel, um zu ermitteln, ob ein bestimmtes Update für das Gastbetriebssystem gilt, das Sie verwenden. Updates werden für die [Familie][family-explain], in der sie eingeführt wurden, immer in die jeweils neueste Version übertragen.
+Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates \(MSRC\), die auf das Azure-Gastbetriebssystem angewendet wurden. Durchsuchen Sie diesen Artikel, um zu ermitteln, ob ein bestimmtes Update für das Gastbetriebssystem gilt, das Sie verwenden. Updates werden für die [Familie][family-explain], in der sie eingeführt wurden, immer in die jeweils neueste Version übertragen.
 
 ## Gastbetriebssystem Juli
 
@@ -62,11 +62,11 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 | MS15-052 | [3050514] | Sicherheitsanfälligkeit im Windows-Kernel kann Umgehung von Sicherheitsfunktionen ermöglichen | 4\.20, 3.27, 2.39 | 12\. Mai 2015 |
 | MS15-053 | [3057263] | Sicherheitsanfälligkeiten im JScript- und VBScript-Skriptmodul können Umgehung der Sicherheitsfunktion ermöglichen | 4\.20, 3.27, 2.39 | 12\. Mai 2015 |
 | MS15-054 | [3051768] | Sicherheitsanfälligkeit im Microsoft-Verwaltungskonsolen-Dateiformat kann Denial-of-Service-Angriffe ermöglichen | 4\.20, 3.27, 2.39 | 12\. Mai 2015 |
-| MS15-055 | [3061518] | Sicherheitsanfälligkeit in Schannel kann Umgehung der Sicherheitsfunktion ermöglichen (Offenlegung wichtiger Daten) | 4\.20, 3.27, 2.39 | 12\. Mai 2015 |
+| MS15-055 | [3061518] | Sicherheitsanfälligkeit in Schannel kann Umgehung der Sicherheitsfunktion ermöglichen \(Offenlegung wichtiger Daten\) | 4\.20, 3.27, 2.39 | 12\. Mai 2015 |
 | MS15-032 | [3038314] | Kumulatives Sicherheitsupdate für Internet Explorer | 4\.20, 3.27, 2.39 | 17\. April 2015 |
 | MS15-035 | [3046306] | Sicherheitsanfälligkeit in Microsoft-Grafikkomponente kann Remotecodeausführung ermöglichen | 4\.20, 3.27, 2.39 | 17\. April 2015 |
 | MS15-037 | [3046269] | Sicherheitsanfälligkeit im Windows-Taskplaner kann Erhöhung von Berechtigungen ermöglichen | 4\.20, 3.27, 2.39 | 17\. April 2015 |
-| MS15-038 | [3049576] | Sicherheitsanfälligkeiten in Microsoft Windows können Erhöhung von Berechtigungen ermöglichen (Wichtig) | 4\.20, 3.27, 2.39 | 17\. April 2015 |
+| MS15-038 | [3049576] | Sicherheitsanfälligkeiten in Microsoft Windows können Erhöhung von Berechtigungen ermöglichen \(Wichtig\) | 4\.20, 3.27, 2.39 | 17\. April 2015 |
 | MS15-039 | [3046482] | Sicherheitsanfälligkeit in XML Core Services kann Umgehung von Sicherheitsfunktionen ermöglichen | 4\.20, 3.27, 2.39 | 17\. April 2015 |
 | MS15-040 | [3045711] | Sicherheitsanfälligkeit in ADFS kann Offenlegung von Daten ermöglichen | 4\.20, 3.27, 2.39 | 17\. April 2015 |
 | MS15-041 | [3048010] | Sicherheitsanfälligkeit im .NET Framework kann Offenlegung von Daten ermöglichen | 4\.20, 3.27, 2.39 | 17\. April 2015 |
@@ -239,4 +239,4 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 [family-explain]: cloud-services-guestos-update-matrix.md#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

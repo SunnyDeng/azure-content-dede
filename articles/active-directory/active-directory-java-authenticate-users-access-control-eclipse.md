@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Verwenden von Access Control (Java) - Leitfaden zu Azure-Features"
+    pageTitle="Verwenden von Access Control (Java) | Microsoft Azure"
     description="Erfahren Sie, wie Sie Access Control mit Java in Azure entwickeln und verwenden."
 	services="active-directory" 
     documentationCenter="java"
@@ -310,4 +310,4 @@ An diesem Punkt wird Ihr Zertifikat in Ihre Bereitstellung aufgenommen. Bitte be
 [add_token_signing_cert]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddTokenSigningCertificate.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

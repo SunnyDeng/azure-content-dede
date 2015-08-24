@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Cable your StorSimple 8600 for power | Microsoft Azure"
-   description="Explains how to attach the power cables and then turn on a StorSimple 8600 device for the first time.."
+   pageTitle="Stromverkabelung des StorSimple 8600-Geräts | Microsoft Azure"
+   description="Dieses Thema erläutert, wie ein StorSimple 8600-Gerät an die Stromversorgung angeschlossen und anschließend zum ersten Mal eingeschaltet wird."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
@@ -15,44 +15,46 @@
    ms.date="08/06/2015"
    ms.author="alkohli" />
 
-#### To cable your device for power
+#### So verkabeln Sie das Gerät für die Stromversorgung
 
->[AZURE.NOTE] Both enclosures on your StorSimple device include redundant PCMs. For each enclosure, the PCMs must be installed and connected to different power sources to ensure high availability.
+>[AZURE.NOTE]Zu beiden Gehäusen des StorSimple-Geräts gehören redundante Stromversorgungs- und Kühleinheiten (Power and Cooling Modules, PCMs). Für jedes Gehäuse müssen die PCMs installiert und mit unterschiedlichen Stromquellen verbunden sein, um eine hohe Verfügbarkeit sicherzustellen.
 
-1. Make sure that the power switches on all the PCMs are in the OFF position.
+1. Stellen Sie sicher, dass sich die Netzschalter aller PCMs in ausgeschalteter Position befinden.
 
-2. On the primary enclosure, connect the power cords to both PCMs. The power cords are identified in red in the power cabling diagram, below.
+2. Schließen Sie an beide PCMs im primären Gehäuse die Netzkabel an. Die Netzkabel sind im folgenden Verkabelungsdiagramm rot dargestellt.
 
-3. Make sure that the two PCMs on the primary enclosure use separate power sources.
+3. Stellen Sie sicher, dass die beiden PCMs des primären Gehäuses separate Stromquellen verwenden.
 
-4. Attach the power cords to the power on the rack distribution units as shown in the power cabling diagram.
+4. Schließen Sie die Netzkabel über die Rack-PDUs an die Stromversorgung an, wie im Verkabelungsdiagramm dargestellt.
 
-5. Repeat steps 2 through 4 for the EBOD enclosure.
+5. Wiederholen Sie die Schritte 2 bis 4 für das EBOD-Gehäuse.
 
-6. Turn on the EBOD enclosure by flipping the power switch on each PCM to the ON position.
+6. Schalten Sie das EBOD-Gehäuse ein, indem Sie die Netzschalter der PCMs in die Position ON bringen.
 
-7. Verify that the EBOD enclosure is turned on by checking that the green LEDs on the back of the EBOD controller are turned ON.
+7. Stellen Sie sicher, dass das EBOD-Gehäuse eingeschaltet ist, indem Sie überprüfen, ob die grünen LEDs an der Rückseite des EBOD-Controllers leuchten.
 
-8. Turn on the primary enclosure by flipping each PCM switch to the ON position.
+8. Schalten Sie das primäre Gehäuse ein, indem Sie die PCM-Schalter in die Position ON bringen.
 
-9. Verify that the system is on by ensuring the device controller LEDs have turned ON.
+9. Stellen Sie sicher, dass das System eingeschaltet ist, indem Sie überprüfen, ob die Controller-LEDs leuchten.
 
-10. Make sure that the connection between the EBOD controller and the device controller is active by verifying that the four LEDs next to the SAS port on the EBOD controller are green.
+10. Vergewissern Sie sich, dass die Verbindung zwischen dem EBOD-Controller und dem Gerätecontroller aktiv ist, indem Sie überprüfen, ob die vier LEDs neben dem SAS-Anschluss am EBOD-Controller grün leuchten.
 
-    >[AZURE.IMPORTANT] To ensure high availability for your system, we recommend that you strictly adhere to the power cabling scheme shown in the following diagram.
+    >[AZURE.IMPORTANT]Damit eine hohe Verfügbarkeit des Systems sichergestellt ist, empfiehlt es sich dringend, sich strikt an das im folgenden Diagramm dargestellte Stromverkabelungsschema zu halten.
 
-    ![Cable your 4U device for power](./media/storsimple-cable-8600-for-power/HCSCableYour4UDeviceforPower.png)
+    ![Stromverkabelung des 4 HE-Geräts](./media/storsimple-cable-8600-for-power/HCSCableYour4UDeviceforPower.png)
 
-    **Power cabling**
+    **Stromverkabelung**
 
-    |Label|Description|
+    |Bezeichnung|Beschreibung|
     |:----|:----------|
-    |1|Primary enclosure|
-    |2|PCM 0|
-    |3|PCM 1|
-    |4|Controller 0|
-    |5|Controller 1|
-    |6|EBOD controller 0|
-    |7|EBOD controller 1|
-    |8|EBOD enclosure|
+    |1|Primäres Gehäuse|
+    |2|PCM 0|
+    |3|PCM 1|
+    |4|Controller 0|
+    |5|Controller 1|
+    |6|EBOD-Controller 0|
+    |7|EBOD-Controller 1|
+    |8|EBOD-Gehäuse|
     |9|PDUs|
+
+<!---HONumber=August15_HO7-->

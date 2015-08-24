@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/19/2015" 
+	ms.date="08/11/2015" 
 	ms.author="sdanie"/>
 
 # Erstellen von APIs, Operationen und Produkten in Azure API Management
@@ -62,4 +62,4 @@ Produkte in API Management enthalten eine oder mehrere APIs sowie ein Nutzungsko
 [Importieren einer API-Definition mit Operationen]: api-management-howto-import-api.md
 [Erstellen und Konfigurieren erweiterter Produkteinstellungen]: api-management-howto-product-with-rules.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

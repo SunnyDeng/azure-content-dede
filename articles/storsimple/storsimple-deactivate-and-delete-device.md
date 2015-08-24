@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/09/2015"
+   ms.date="08/12/2015"
    ms.author="v-sharos" />
 
 # Deaktivieren und Löschen eines StorSimple-Geräts
@@ -47,7 +47,7 @@ Wenn Sie das Gerät löschen, aber die Gerätedaten beibehalten wollen, führen 
 
 1. Deaktivieren Sie das Gerät. Alle Volumecontainer und die Momentaufnahmen des Geräts bleiben erhalten. Anweisungen finden Sie unter [Schritte zum Deaktivieren](#steps-to-deactivate).
 
-2. Sie können nun ein Failover der Volumecontainer und der zugehörigen Momentaufnahmen durchführen. Prozeduren finden Sie unter [Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md).
+2. Sie können nun ein Failover der Volumecontainer und der zugehörigen Momentaufnahmen durchführen. Informationen zu den Verfahren finden Sie unter [Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md).
 
 3. Sie können nach der Deaktivierung und der Ausführung des Failovers das Gerät vollständig löschen. Anweisungen finden Sie unter [Löschen eines Geräts](#delete-a-device).
 
@@ -87,8 +87,8 @@ Sie können nur Geräte löschen, die deaktiviert wurden. Das Löschen eines Ger
 Es dauert einige Minuten, bis das Gerät gelöscht wird.
 
 ## Nächste Schritte
-Um das deaktivierte Geräts mit den Werkseinstellungen wiederherzustellen, gehen Sie zu [Zurücksetzen des Geräts auf die Standardwerkseinstellungen](https://msdn.microsoft.com/library/dn772373.aspx).
+Um das deaktivierte Gerät mit den Werkseinstellungen wiederherzustellen, wechseln Sie zu [Zurücksetzen des Geräts auf die Standardwerkseinstellungen](storsimple-manage-device-controller.md#reset-the-device-to-factory-default-settings).
 
-Für technische Unterstützung [wenden Sie sich an den Microsoft Support](https://msdn.microsoft.com/library/azure/dn757750.aspx).
+Um technische Unterstützung zu erhalten, [kontaktieren Sie den Microsoft-Support](storsimple-contact-microsoft-support.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

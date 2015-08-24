@@ -13,17 +13,21 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/15/2015" 
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
 
 
 #Erstellen von ContentKeys mit REST
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
+
+> [AZURE.SELECTOR]
+- [REST](media-services-rest-create-contentkey.md)
+- [.NET](media-services-dotnet-create-contentkey.md)
+
 
 Media Services ermöglicht das Erstellen neuer und Übermitteln verschlüsselter Medienobjekte. Ein **ContentKey** ermöglicht den sicheren Zugriff auf Ihre **Medienobjekte**.
 
-Beim Erstellen eines neuen Medienobjekts (z. B. vor dem [Hochladen von Dateien](media-services-rest-upload-files.md)) können Sie die folgenden Verschlüsselungsoptionen angeben: **StorageEncrypted**, **CommonEncryptionProtected** oder **EnvelopeEncryptionProtected**.
+Beim Erstellen eines neuen Medienobjekts \(z. B. vor dem [Hochladen von Dateien](media-services-rest-upload-files.md)\) können Sie die folgenden Verschlüsselungsoptionen angeben: **StorageEncrypted**, **CommonEncryptionProtected** oder **EnvelopeEncryptionProtected**.
 
 Wenn Sie Medienobjekte an Ihre Clients übermitteln, können Sie mithilfe einer der beiden folgenden Verschlüsselungen die [dynamische Verschlüsselung von Medienobjekten konfigurieren](media-services-rest-configure-asset-delivery-policy.md): **DynamicEnvelopeEncryption** oder **DynamicCommonEncryption**.
 
@@ -31,14 +35,14 @@ Verschlüsselte Medienobjekte müssen **ContentKeys** zugeordnet werden. In dies
 
 Im Folgenden finden Sie allgemeine Schritte zum Generieren von Inhaltsschlüsseln, die Sie den zu verschlüsselnden Medienobjekten zuordnen.
 
-1. Generieren Sie nach dem Zufallsprinzip einen 16-Byte-AES-Schlüssel (für die allgemeine und Umschlagsverschlüsselung) oder einen 32-Byte-AES-Schlüssel (für die Speicherverschlüsselung). 
+1. Generieren Sie nach dem Zufallsprinzip einen 16-Byte-AES-Schlüssel \(für die allgemeine und Umschlagsverschlüsselung\) oder einen 32-Byte-AES-Schlüssel \(für die Speicherverschlüsselung\). 
 
 	Dies ist der Inhaltsschlüssel für Ihr Medienobjekt. Das bedeutet, dass alle mit diesem Medienobjekt verknüpften Dateien denselben Inhaltsschlüssel zur Entschlüsselung verwenden müssen. 
 2.	Rufen Sie die [GetProtectionKeyId](https://msdn.microsoft.com/library/azure/jj683097.aspx#getprotectionkeyid)-Methode und die [GetProtectionKey](https://msdn.microsoft.com/library/azure/jj683097.aspx#getprotectionkey)-Methode auf, um das richtige X.509-Zertifikat zur Verschlüsselung Ihres Inhaltsschlüssels abzurufen.
 3.	Verschlüsseln Sie Ihren Inhaltsschlüssel mit dem öffentlichen Schlüssel des X.509-Zertifikats. 
 
 	Das Media Services .NET SDK verwendet RSA mit OAEP zur Verschlüsselung. Ein Beispiel finden Sie in der [EncryptSymmetricKeyData-Funktion](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/EncryptionUtils.cs).
-4.	Erstellen Sie einen Prüfsummenwert (basierend auf den Prüfsummenalgorithmus des PlayReady AES-Schlüssels), der anhand der Schlüsselkennung und des Inhaltsschlüssels berechnet wird. Weitere Informationen finden Sie [hier](http://www.microsoft.com/playready/documents/) im Abschnitt "Prüfsummenalgorithmus für den PlayReady AES-Schlüssel" zum PlayReady-Headerobjekt.
+4.	Erstellen Sie einen Prüfsummenwert \(basierend auf den Prüfsummenalgorithmus des PlayReady AES-Schlüssels\), der anhand der Schlüsselkennung und des Inhaltsschlüssels berechnet wird. Weitere Informationen finden Sie [hier](http://www.microsoft.com/playready/documents/) im Abschnitt "Prüfsummenalgorithmus für den PlayReady AES-Schlüssel" zum PlayReady-Headerobjekt.
 
 	Im folgenden .NET-Beispiel wird die Prüfsumme anhand des GUID-Abschnitts der Schlüsselkennung und des unverschlüsselten Inhaltsschlüssels berechnet.
 	
@@ -59,7 +63,7 @@ Im Folgenden finden Sie allgemeine Schritte zum Generieren von Inhaltsschlüssel
 		    return Convert.ToBase64String(array2);
 		}
 
-5. Erstellen Sie den Inhaltsschlüssel mit dem (in eine base64-codierte Zeichenfolge konvertierten) **EncryptedContentKey** und den Werten für **ProtectionKeyId**, **ProtectionKeyType**, **ContentKeyType** und **Checksum**, die Sie in den vorherigen Schritten erhalten haben.
+5. Erstellen Sie den Inhaltsschlüssel mit dem \(in eine base64-codierte Zeichenfolge konvertierten\) **EncryptedContentKey** und den Werten für **ProtectionKeyId**, **ProtectionKeyType**, **ContentKeyType** und **Checksum**, die Sie in den vorherigen Schritten erhalten haben.
 6. Verwenden Sie den $links-Vorgang, um die **ContentKey**-Entität mit der **Asset**-Entität zu verknüpfen.
 
 In diesem Thema wurden die Beispiele zum Generieren eines AES-Schlüssels, zur Schlüsselverschlüsselung und zur Berechnung der Prüfsumme ausgelassen. Es wird nur auf Beispiele eingegangen, die die Interaktion mit Media Services betreffen.
@@ -173,7 +177,7 @@ Beim Erstellen des Inhaltsschlüssels muss neben anderen Werten auch der Typ fes
     }
 
 
-Das folgende Beispiel zeigt, wie Sie einen **ContentKey** mit einem **ContentKeyType** erstellen, für den die Speicherverschlüsselung festgelegt ("1") und **ProtectionKeyType** auf "0" festgelegt wurde. Dies zeigt an, dass es sich bei der Schutzschlüssel-ID um den X. 509-Zertifikatfingerabdruck handelt.
+Das folgende Beispiel zeigt, wie Sie einen **ContentKey** mit einem **ContentKeyType** erstellen, für den die Speicherverschlüsselung festgelegt \("1"\) und **ProtectionKeyType** auf "0" festgelegt wurde. Dies zeigt an, dass es sich bei der Schutzschlüssel-ID um den X. 509-Zertifikatfingerabdruck handelt.
 
 
 Anforderung
@@ -247,4 +251,4 @@ Antwort:
 
 	HTTP/1.1 204 No Content 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

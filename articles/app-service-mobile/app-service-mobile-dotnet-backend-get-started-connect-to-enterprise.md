@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verbinden einer mobilen App mit einer SaaS-Unternehmensressource | Mobile Dev Center"
+	pageTitle="Verbinden einer mobilen App mit einer SaaS-Unternehmensressource | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Unternehmensressourcen wie beispielsweise SharePoint Online aufrufen."
 	documentationCenter=""
 	authors="mattchenderson"
@@ -18,7 +18,7 @@
 
 # Verbinden Ihrer mobilen App mit SaaS-APIs
 
-In diesem Lernprogramm verbinden Sie Ihre mobile App mit einer SaaS-Unternehmenslösung (Software-as-a-Service). Sie aktualisieren die App mithilfe der Informationen unter [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden], um immer dann ein Word-Dokument in SharePoint Online zu erstellen, wenn ein neues "TodoItem" hinzugefügt wird.
+In diesem Lernprogramm verbinden Sie Ihre mobile App mit einer SaaS-Unternehmenslösung \(Software-as-a-Service\). Sie aktualisieren die App mithilfe der Informationen unter [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden], um immer dann ein Word-Dokument in SharePoint Online zu erstellen, wenn ein neues "TodoItem" hinzugefügt wird.
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
@@ -187,4 +187,4 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 [Mobile Apps .NET Backend App Service Extension]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.AppService/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

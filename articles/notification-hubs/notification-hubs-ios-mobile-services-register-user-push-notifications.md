@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe eines mobilen Diensts – Notification Hubs" 
+	pageTitle="Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe eines mobilen Diensts | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie eine Pushbenachrichtigungsregistrierung in einer iOS-App mit Azure Notification Hubs anfordern, wenn die Registrierung von Azure Mobile Services durchgeführt wird." 
 	services="notification-hubs" 
 	documentationCenter="ios" 
@@ -20,7 +20,7 @@
 
 > [AZURE.SELECTOR]
 [Windows Store C#](notification-hubs-windows-store-mobile-services-register-user-push-notifications.md)
-[Windows Store C#](notification-hubs-ios-mobile-services-register-user-push-notifications.md)
+[iOS](notification-hubs-ios-mobile-services-register-user-push-notifications.md)
 
 In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mit Azure Notification Hubs anfordern können, wenn die Registrierung von Azure Mobile Services durchgeführt wird. Dieses Lernprogramm baut auf dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs] auf. Sie müssen zuvor die Schritte in diesem Lernprogramm abgeschlossen haben, in denen der authentifizierte Mobile Service erstellt wird. Weitere Informationen zum Benachrichtigen von Benutzern finden Sie unter [Benachrichtigen von Benutzern mit Notification Hubs].
 
@@ -59,7 +59,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 
 	> [AZURE.NOTE]Die Methode sollte nun keinen weiteren Code mehr enthalten. Falls Sie bereits einen Aufruf der **registerNativeWithDeviceToken**-Methode aus dem Lernprogramm [Erste Schritte mit Notification Hubs](/manage/services/notification-hubs/get-started-notification-hubs-ios/"%20target="_blank") haben, müssen Sie diesen Aufruf auskommentieren oder entfernen.
 
-5.  (Optional) Fügen Sie in der Datei "QSAppDelegate.m" die folgende Handlermethode hinzu:
+5.  \(Optional\) Fügen Sie in der Datei "QSAppDelegate.m" die folgende Handlermethode hinzu:
 
 			- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
 			    NSLog(@"%@", userInfo);
@@ -74,7 +74,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 6. Fügen Sie in der Datei "QSTodoListViewController.m" die **registerForNotificationsWithBackEnd**-Methode hinzu:
 
 			- (void)registerForNotificationsWithBackEnd {
-			    NSString* json = [NSString  stringWithFormat:@"{"platform":"ios", "deviceToken":"%@"}", [self.todoService getDeviceTokenInHex] ];
+			    NSString* json = [NSString  stringWithFormat:@"{\"platform\":\"ios\", \"deviceToken\":\"%@\"}", [self.todoService getDeviceTokenInHex] ];
 
 			    [self.todoService.client invokeAPI:@"register_notifications" data:[json dataUsingEncoding:NSUTF8StringEncoding] HTTPMethod:@"POST" parameters:nil headers:nil completion:^(id result, NSHTTPURLResponse *response, NSError *error) {
 			        if (error != nil) {
@@ -122,4 +122,4 @@ Nun haben Sie die Client-App aktualisiert und können zum Thema [Benachrichtigen
 [Get Started with Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

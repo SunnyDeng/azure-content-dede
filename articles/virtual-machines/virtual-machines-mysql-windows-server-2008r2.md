@@ -5,8 +5,8 @@
 	documentationCenter=""
 	authors="KBDAzure"
 	manager="timlt"
-	editor="tysonn"/>
-
+	editor="tysonn"
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -16,7 +16,6 @@
 	ms.topic="article"
 	ms.date="07/10/2015"
 	ms.author="kathydav"/>
-
 
 
 # Installieren von MySQL auf einem virtuellen Computer mit Windows Server 2012 R2 in Azure
@@ -39,7 +38,7 @@ Dieses Lernprogramm beschreibt Folgendes:
 
 ## Datenträger anfügen
 
-Nachdem der virtuelle Computer erstellt wurde, können Sie optional einen zusätzlichen Datenträger anfügen. Dies empfiehlt sich für Produktionsarbeitslasten und um zu vermeiden, dass zu wenig Speicherplatz auf dem OS-Laufwerk (C:) verfügbar ist. Dieses ist aktuell auf 127 GB begrenzt und beinhaltet das Betriebssystem.
+Nachdem der virtuelle Computer erstellt wurde, können Sie optional einen zusätzlichen Datenträger anfügen. Dies empfiehlt sich für Produktionsworkloads und um zu vermeiden, dass zu wenig Speicherplatz auf dem OS-Laufwerk (C:) verfügbar ist, welches das Betriebssystem beinhaltet.
 
 Befolgen Sie die Anweisungen zum Anfügen eines leeren Datenträgers unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](storage-windows-attach-disk.md). Setzen Sie die Hostcacheeinstellung auf **Keine** oder **Schreibgeschützt**.
 
@@ -129,4 +128,4 @@ Um die Remoteverbindung zum MySQL Server-Dienst zu testen, der auf dem virtuelle
 
 Informationen zu MySQL finden Sie in der [MySQL-Dokumentation](http://dev.mysql.com/doc/)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

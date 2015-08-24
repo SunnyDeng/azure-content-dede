@@ -35,9 +35,9 @@ Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource
 
 Auf dem nun geöffneten Blatt werden die Leistungs- und Nutzungsdaten über Ihre App angezeigt. Um bei der nächsten Anmeldung bei Azure dorthin zu gelangen, sollten Sie eine Kachel auf dem Startbildschirm anlegen. Klicken Sie alternativ auf "Durchsuchen", um das Blatt zu finden.
 
-## Herunterladen von Application Insights für Mac
+## Herunterladen von Application Insights für iOS
 
-(Falls Sie dies noch nicht durchgeführt haben.)
+\(Falls Sie dies noch nicht durchgeführt haben.\)
 
 1. Herunterladen von [Application Insights für Mac](http://go.microsoft.com/fwlink/?LinkID=533209)
 
@@ -141,4 +141,4 @@ Klicken Sie auf ein beliebiges Diagramm, um weitere Details zu erhalten. Zum Bei
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

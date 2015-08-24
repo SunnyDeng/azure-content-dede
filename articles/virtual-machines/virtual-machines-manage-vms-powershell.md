@@ -5,8 +5,8 @@
    documentationCenter="windows"
    authors="singhkay"
    manager="timlt"
-   editor=""/>
-
+   editor=""
+   tags="azure-service-management"/>
 
    <tags
    ms.service="virtual-machines"
@@ -16,7 +16,6 @@
    ms.workload="infrastructure-services"
    ms.date="06/24/2015"
    ms.author="kasing"/>
-
 
 # Verwalten Ihrer virtuellen Computer mithilfe von Azure PowerShell
 
@@ -65,7 +64,7 @@ Führen Sie den folgenden Befehl aus:
     Start-AzureVM -ServiceName "<cloud service name>" -Name "<virtual machine name>"
 
 ## Datenträger anfügen
-Diese Aufgabe erfordert einige Schritte. Zunächst verwenden Sie das Cmdlet \*\*\*\*Add-AzureDataDisk\*\*\*\* zum Hinzufügen des Datenträgers zum $vm-Objekt. Dann verwenden Sie das Cmdlet **Update-AzureVM**, um die Konfiguration des virtuellen Computers zu aktualisieren.
+Diese Aufgabe erfordert einige Schritte. Zunächst verwenden Sie das Cmdlet ****Add-AzureDataDisk**** zum Hinzufügen des Datenträgers zum $vm-Objekt. Dann verwenden Sie das Cmdlet **Update-AzureVM**, um die Konfiguration des virtuellen Computers zu aktualisieren.
 
 Sie müssen auch entscheiden, ob Sie einen neuen Datenträger anfügen oder einen, der Daten enthält. Für einen neuen Datenträger erstellt der Befehl die VHD-Datei und fügt sie an.
 
@@ -95,4 +94,4 @@ Zum Erstellen eines auf Windows basierenden virtuellen Computers in Azure folgen
 - Als Mitglied in einer vorhandenen Lastenausgleichsgruppe.
 - Mit einer statischen IP-Adresse.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

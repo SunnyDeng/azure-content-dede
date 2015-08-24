@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden des SendGrid-E-Mail-Diensts (Node.js) - Azure" 
+	pageTitle="Verwenden des E-Mail-Diensts SendGrid (Node.js) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure senden. Die Codebeispiele wurden mithilfe der Node.js-API geschrieben." 
 	services="" 
 	documentationCenter="nodejs" 
@@ -224,4 +224,4 @@ Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, f
   [cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
   [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

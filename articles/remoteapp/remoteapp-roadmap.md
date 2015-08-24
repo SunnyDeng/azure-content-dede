@@ -1,8 +1,8 @@
 <properties
-    pageTitle="Das ist neu bei RemoteApp"
-    description="Erfahren Sie mehr über neue Funktionen von RemoteApp"
+    pageTitle="Geplante Neuerungen in Azure RemoteApp"
+    description="Erfahren Sie, welche neuen Funktionen für Azure RemoteApp geplant sind."
     services="remoteapp"
-	documentationCenter=""
+    documentationCenter=""
     authors="lizap"
     manager="mbaldwin" />
 
@@ -12,18 +12,18 @@
     ms.tgt_pltfrm="NA"
     ms.devlang="NA"
     ms.topic="article"
-    ms.date="06/10/2015"
+    ms.date="08/12/2015"
     ms.author="elizapo" />
 
-# Das ist neu bei RemoteApp
+# Geplante Neuerungen in Azure RemoteApp
 
-Wir arbeiten immer daran, RemoteApp mithilfe Ihres Feedbacks zu verbessern. Das ist der grobe Zeitrahmen für die Verfügbarkeit neuer Funktionen.
+Wir arbeiten stetig daran, Azure RemoteApp mithilfe Ihres Feedbacks zu verbessern. Nachstehend finden Sie einen ungefähren Zeitrahmen für die Verfügbarkeit neuer Funktionen.
 
 |Funktion|Januar - März 2015|April - Juni 2015|Juli - September 2015|Oktober - Dezember 2015|
 |-----------|-------|-------|-------|-------|
 |PowerShell-Cmdlets für RemoteApp und SDK für die Bereitstellung und Verwaltung|X| | | |
 |Ein Image von einer Azure-VM erstellen und hochladen|X| | | |
-|Ohne Beitritt zu einer Domäne (Verbindung der Cloud-Sammlung zu den Azure-VMs) auf einem VNET bereitstellen ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5928457-provide-ability-to-add-vnet-to-cloud-deloyment-th))| |X| | |
+|Ohne Beitritt zu einer Domäne (Verbindung der Cloudsammlung zu den Azure-VMs) auf einem VNET bereitstellen ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5928457-provide-ability-to-add-vnet-to-cloud-deloyment-th))| |X| | |
 |Ein vorhandenes virtuelles Netzwerk für die RemoteApp-Hybridsammlung erneut verwenden (ermöglicht auch ExpressRoute) ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5933123-existing-virtual-network-does-not-appear-when-tryi))| |X| | |
 |ExpressRoute ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5933123-existing-virtual-network-does-not-appear-when-tryi))| |X| | |
 |Azure RemoteApp verfügbar im neuen [Azure-Vorschauportal](http://azure.microsoft.com/overview/preview-portal/)| | | |X|
@@ -32,11 +32,11 @@ Wir arbeiten immer daran, RemoteApp mithilfe Ihres Feedbacks zu verbessern. Das 
 
 Weitere Verbesserungen, die dieses Jahr bereits hinzugefügt wurden:
 
-- Hochladen von Branchenanwendungen in eine Cloud-Sammlung sowie in eine Hybrid-Sammlung
+- Hochladen von Branchenanwendungen in eine Cloudsammlung sowie in eine Hybridsammlung
 - Support für Windows Phone
 - Dashboard für Nutzungsmetriken
 - Mithilfe einer CSV-Datei eine große Anzahl an Benutzern bereitstellen
 - Verfügbarkeit in australischen Rechenzentren
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

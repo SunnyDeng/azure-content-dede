@@ -7,17 +7,14 @@
    manager="timlt"
    editor=""/>
 
-
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/05/2015"
+   ms.date="08/11/2015"
    ms.author="claudioc"/>
-
-
 
 # Hinweise zur Typserialisierung von Service Fabric Reliable Actors
 
@@ -85,4 +82,4 @@ public class VoicemailBox
 
 ```
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="storage"
-   ms.date="06/30/2015"
+   ms.date="08/07/2015"
    ms.author="tamram" />
 
 # Skalierbarkeits- und Leistungsziele für Azure Storage
@@ -27,7 +27,7 @@ In diesem Thema werden die Skalierbarkeits- und Leistungsaspekte von Microsoft A
 
 >Wenn Ihre Anwendung die Grenze dessen erreicht, was eine Partition an Workload bewältigen kann, dann gibt Azure Storage den Fehlercode 503 (Server ausgelastet) oder den Fehlercode 500 (Zeitüberschreitung für Vorgang) zurück. In diesem Fall sollte die Anwendung eine exponentielle Backoffrichtlinie für Wiederholungen verwenden. Durch exponentielle Backoffs kann die Auslastung der Partition verringert werden, um die Datenverkehrsspitzen bei dieser Partition auszugleichen.
 
-Wenn die Anforderungen Ihrer Anwendung die Skalierbarkeitsziele eines einzelnen Speicherkontos überschreiten, können Sie die Anwendung so erstellen, dass mehrere Speicherkonten verwendet werden, und die Datenobjekte in diesen Speicherkonten partitionieren. In einem einzelnen Azure-Abonnement sind 100 Speicherkonten zulässig. Informationen zu Volumenpreisen finden Sie unter [Speicherpreisdetails](http://azure.microsoft.com/pricing/details/storage/).
+Wenn die Anforderungen Ihrer Anwendung die Skalierbarkeitsziele eines einzelnen Speicherkontos überschreiten, können Sie die Anwendung so erstellen, dass mehrere Speicherkonten verwendet werden, und die Datenobjekte in diesen Speicherkonten partitionieren. Informationen zu Volumenpreisen finden Sie unter [Speicherpreisdetails](http://azure.microsoft.com/pricing/details/storage/).
 
 ## Skalierbarkeitsziele für Standardspeicherkonten
 
@@ -50,6 +50,8 @@ In der Tabelle oben unter [Skalierbarkeitsziele für Standardspeicherkonten](#sc
 Partitionen wirken sich wie folgt auf den Lastenausgleich und die Skalierbarkeit der einzelnen Speicherdienste aus:
 
 - **Blobs**: Der Partitionsschlüssel für ein Blob setzt sich aus dem Containernamen und dem Blob-Namen zusammen. Dies bedeutet, dass jedes Blob eine eigene Partition besitzt. Blobs können daher über mehrere Server verteilt werden, um den Zugriff darauf zu skalieren. Blobs können zwar logisch in Blob-Containern zusammengefasst werden, allerdings wirkt sich dies nicht auf die Partitionierung einer solchen Gruppierung aus.
+
+- **Dateien**: Der Partitionsschlüssel für eine Datei ist der Kontoname plus der Name der Dateifreigabe. Dies bedeutet, dass alle Dateien in einer Dateifreigabe sich auch in einer einzelnen Partition befinden.
 
 - **Nachrichten**: Der Partitionsschlüssel für eine Nachricht entspricht dem Namen der Warteschlange, damit alle Nachrichten in einer Warteschlange in einer einzelnen Partition gruppiert und von einem einzelnen Server bedient werden. Verschiedene Warteschlangen können von verschiedenen Servern verarbeitet werden, um einen Lastenausgleich für die gegebene Anzahl von Warteschlangen eines Speicherkonto durchzuführen .
 
@@ -74,4 +76,4 @@ Partitionen wirken sich wie folgt auf den Lastenausgleich und die Skalierbarkeit
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

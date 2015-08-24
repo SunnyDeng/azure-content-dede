@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Klonen von StorSimple-Volumes"
+   pageTitle="Klonen von StorSimple-Volumes | Microsoft Azure"
    description="Beschreibt die verschiedenen Klontypen und ihre Verwendung und wie Sie mit einem Sicherungssatz ein einzelnes Volume klonen."
    services="storsimple"
    documentationCenter="NA"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="05/27/2015"
+   ms.date="08/11/2015"
    ms.author="alkohli" />
 
 # Klonen von StorSimple-Volumes
@@ -91,4 +91,4 @@ Erfahren Sie, wie Sie [StorSimple-Volumes aus einem Sicherungssatz wiederherstel
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

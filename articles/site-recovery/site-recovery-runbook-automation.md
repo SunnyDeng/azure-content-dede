@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.topic="article"
    ms.workload="required" 
-   ms.date="07/03/2015"
+   ms.date="08/05/2015"
    ms.author="ruturajd@microsoft.com"/>
 
   
@@ -59,7 +59,7 @@ Im nächsten Schritt erstellen wir die erforderlichen Artefakte in Azure Automat
 
 ## Erstellen des Automation-Kontos und der dazugehörigen Ressourcen
 
-Für die Erstellung von Runbooks benötigen Sie ein Azure Automation-Konto. Falls Sie noch kein Konto besitzen, navigieren Sie zur Registerkarte für Azure Automation (![](media/site-recovery-runbook-automation/02.png)), und erstellen Sie ein neues Konto.
+Für die Erstellung von Runbooks benötigen Sie ein Azure Automation-Konto. Falls Sie noch kein Konto besitzen, navigieren Sie zur Registerkarte für Azure Automation \(![](media/site-recovery-runbook-automation/02.png)\), und erstellen Sie ein neues Konto.
 
 1.  Benennen Sie das Konto.
 
@@ -73,7 +73,7 @@ Erstellen Sie anschließend folgende Ressourcen in dem Konto:
 
 ### Hinzufügen eines Abonnements als Ressource
 
-1.  Fügen Sie den Azure Automation-Ressourcen eine neue Einstellung hinzu (![](media/site-recovery-runbook-automation/04.png)), und klicken Sie auf ![](media/site-recovery-runbook-automation/05.png).
+1.  Fügen Sie den Azure Automation-Ressourcen eine neue Einstellung hinzu \(![](media/site-recovery-runbook-automation/04.png)\), und klicken Sie auf ![](media/site-recovery-runbook-automation/05.png).
 
 2.  Wählen Sie als Variablentyp die Option **Zeichenfolge** aus.
 
@@ -91,7 +91,7 @@ Den Namen Ihres Abonnements finden Sie im Azure-Portal auf der Seite mit den Ein
 
 Azure Automation stellt mithilfe von Azure PowerShell eine Verbindung mit dem Abonnement her und verwendet die Artefakte dort. Dazu ist eine Authentifizierung mit Ihrem Microsoft-Konto oder mit einem Geschäfts- oder Schulkonto erforderlich. Sie können die Anmeldeinformationen für das Konto in einer Ressource speichern, damit das Runbook sie gefahrlos verwenden kann.
 
-1.  Fügen Sie den Azure Automation-Ressourcen eine neue Einstellung hinzu (![](media/site-recovery-runbook-automation/04.png)), und klicken Sie auf ![](media/site-recovery-runbook-automation/09.png).
+1.  Fügen Sie den Azure Automation-Ressourcen eine neue Einstellung hinzu \(![](media/site-recovery-runbook-automation/04.png)\), und klicken Sie auf ![](media/site-recovery-runbook-automation/09.png).
 
 2.  Legen Sie den Anmeldeinformationstyp auf **Windows PowerShell-Anmeldeinformationen** fest.
 
@@ -135,8 +135,18 @@ Hier sehen Sie ein Beispiel für die Kontextvariable:
 
 
 Die folgende Tabelle enthält jeweils den Namen und die Beschreibung der einzelnen Variablen im Kontext:
-  
-<table border="1"> <tr><th>Name der Variablen</th><th>Beschreibung der Variablen</th></tr> <tr><td>RecoveryPlanName</td><td>Der Name des ausgeführten Wiederherstellungsplans. <p> Mit dieser Variablen können Sie verschiedene, Wiederherstellungsplan-spezifische Aktionen mit dem gleichen Skript durchführen.</td></tr> <tr><td>FailoverType</td><td>Gibt an, ob es sich um ein Test-Failover, um ein geplantes Failover oder um ein nicht geplantes Failover handelt. <p> Diese Variable ermöglicht die Durchführung verschiedener Aktionen auf der Grundlage des Failovertyps. </td></tr> <tr><td>FailoverDirection</td><td>Gibt an, ob es sich um eine Wiederherstellung vom primären Standort zum Wiederherstellungsstandort oder um eine Wiederherstellung in umgekehrter Richtung handelt. <p>Mögliche Werte: **PrimaryToSecondary** und **SecondaryToPrimary**. </td></tr> <tr><td>GroupId</td><td> Gibt die Gruppennummer innerhalb des Wiederherstellungsplans an, in dessen Rahmen das Runbook ausgeführt wird. <p> Gehört das Runbook also beispielsweise der zweiten Gruppe an, ist unter „GroupId“ der Wert „2“ angegeben. </td></tr> <tr><td>VmMap</td><td> Ein Array mit allen virtuellen Computern in der Gruppe. </td></tr> <tr><td>VmMap-Schlüssel</td><td>Jeder virtuelle Computer besitzt einen eindeutigen Schlüssel (GUID). Diese GUID entspricht der VMM-ID des virtuellen Computers. <p> Mit dieser GUID können Sie deterministisch angeben, auf welchem virtuellen Computer Sie arbeiten möchten. </td></tr> <tr><td>RoleName</td><td>Gibt den Namen des wiederherzustellenden virtuellen Azure-Computers an.</td></tr> <tr><td>CloudServiceName</td><td> Gibt den Azure-Clouddienstnamen an, unter dem der virtuelle Computer erstellt wird. </td></tr> </table><br />
+
+**Variablenname** | **Beschreibung**
+---|---
+RecoveryPlanName | Name des ausgeführten Plans. Ermöglicht die Durchführung von Aktionen auf der Grundlage des Namens mithilfe des gleichen Skripts.
+FailoverType | Gibt an, ob es sich um ein Testfailover, um ein geplantes Failover oder um ein nicht geplantes Failover handelt. 
+FailoverDirection | Gibt an, ob die Wiederherstellung auf den primären oder sekundären Standort erfolgt.
+GroupID | Identifiziert die Gruppennummer innerhalb des Wiederherstellungsplans, wenn der Plan ausgeführt wird
+VmMap | Array mit allen virtuellen Computern in der Gruppe.
+VMMap-Schlüssel | Eindeutiger Schlüssel \(GUID\) für jeden virtuellen Computer. Die GUID entspricht der VMM-ID des virtuellen Computers, sofern zutreffend. 
+RoleName | Name der Azure-VM, die wiederhergestellt wird.
+CloudServiceName | Name des Azure Cloud-Diensts, unter dem der virtuelle Computer erstellt wird.
+
 
 Den kontextspezifischen VmMap-Schlüssel können Sie in ASR auf der Eigenschaftenseite des virtuellen Computers unter der VM-GUID-Eigenschaft ermitteln.
 
@@ -175,7 +185,7 @@ Erstellen Sie nun das Runbook, um auf dem virtuellen Front-End-Computer den Port
 
 > Hinweis: Hier werden die Azure-Ressourcen **AzureCredential** und **AzureSubscriptionName** verwendet.
 
-5.  Geben Sie die Endpunktdetails und die GUID des virtuellen Computers an, für den Sie den Endpunkt verfügbar machen möchten (in diesem Fall der virtuelle Front-End-Computer).
+5.  Geben Sie die Endpunktdetails und die GUID des virtuellen Computers an, für den Sie den Endpunkt verfügbar machen möchten \(in diesem Fall der virtuelle Front-End-Computer\).
 
 ```
 	# Specify the parameters to be used by the script
@@ -210,7 +220,7 @@ Hierbei werden das Azure-Endpunktprotokoll, der lokale Port auf dem virtuellen C
 	}
 ```
 
-7. Klicken Sie anschließend auf die Veröffentlichungsoption (![](media/site-recovery-runbook-automation/20.png)), um das Skript für die Ausführung verfügbar zu machen. 
+7. Klicken Sie anschließend auf die Veröffentlichungsoption \(![](media/site-recovery-runbook-automation/20.png)\), um das Skript für die Ausführung verfügbar zu machen. 
 
 Hier sehen Sie noch einmal das gesamte Skript:
 
@@ -271,7 +281,7 @@ Wenn das Skript bereit ist, können Sie es dem zuvor erstellten Wiederherstellun
 
 ## Primäre serverseitige Skripts
 
-Wenn Sie ein Failover an Azure ausführen, können Sie auch auswählen, primäre serverseitige Skripts auszuführen. Diese Skripts werden während des Failovers auf dem VMM-Server ausgeführt. Primäre serverseitige Skripts sind nur für die Phasen vor und nach dem Herunterfahren verfügbar. Dies liegt daran, dass typischerweise zu erwarten ist, dass der primäre Standort nicht erreichbar ist, wenn ein Notfall eintritt. Bei einem ungeplanten Failover werden primäre serverseitige Skripts nur dann ausgeführt, wenn Sie sich für primäre serverseitige Vorgänge entscheiden. Wenn sie nicht erreichbar sind oder das Zeitlimit überschritten wurde, wird das Failover weiterhin die virtuellen Computer wiederherstellen. Primäre serverseitige Skripts stehen nicht für VMware/physische/Hyper-V-Sites ohne VMM in mit Schutz in Azure – während der Failover an Azure übergeben wird. Bei einem Failback von Azure an den lokalen Standort können primäre serverseitige Skrips (Runbooks) für alle Ziele außer VMware verwendet werden.
+Wenn Sie ein Failover an Azure ausführen, können Sie auch auswählen, primäre serverseitige Skripts auszuführen. Diese Skripts werden während des Failovers auf dem VMM-Server ausgeführt. Primäre serverseitige Skripts sind nur für die Phasen vor und nach dem Herunterfahren verfügbar. Dies liegt daran, dass typischerweise zu erwarten ist, dass der primäre Standort nicht erreichbar ist, wenn ein Notfall eintritt. Bei einem ungeplanten Failover werden primäre serverseitige Skripts nur dann ausgeführt, wenn Sie sich für primäre serverseitige Vorgänge entscheiden. Wenn sie nicht erreichbar sind oder das Zeitlimit überschritten wurde, wird das Failover weiterhin die virtuellen Computer wiederherstellen. Primäre serverseitige Skripts stehen nicht für VMware/physische/Hyper-V-Sites ohne VMM in mit Schutz in Azure – während der Failover an Azure übergeben wird. Bei einem Failback von Azure an den lokalen Standort können primäre serverseitige Skrips \(Runbooks\) für alle Ziele außer VMware verwendet werden.
 
 ## Testen des Wiederherstellungsplans
 
@@ -293,7 +303,7 @@ Nachdem Sie dem Plan das Runbook hinzugefügt haben, können Sie ein Test-Failov
 
 ## Beispielskripts
 
-In diesem Lernprogramm haben Sie gesehen, wie Sie eine häufig verwendete Aufgabe (das Hinzufügen eines Endpunkts zu einem virtuellen Azure-Computer) automatisieren können. Azure Automation bietet jedoch noch viele weitere Automatisierungsmöglichkeiten. Microsoft und die Azure Automation-Community stellen Beispiel-Runbooks, die Ihnen das Erstellen eigener Lösungen erleichtern, sowie Hilfsprogramm-Runbooks zur Verfügung, die Sie als Bausteine für umfangreichere Automatisierungen verwenden können. Erstellen Sie mithilfe des Katalogs leistungsstarke, mit nur einem Klick ausführbare Wiederherstellungspläne für Ihre Anwendungen mit Azure Site Recovery.
+In diesem Lernprogramm haben Sie gesehen, wie Sie eine häufig verwendete Aufgabe \(das Hinzufügen eines Endpunkts zu einem virtuellen Azure-Computer\) automatisieren können. Azure Automation bietet jedoch noch viele weitere Automatisierungsmöglichkeiten. Microsoft und die Azure Automation-Community stellen Beispiel-Runbooks, die Ihnen das Erstellen eigener Lösungen erleichtern, sowie Hilfsprogramm-Runbooks zur Verfügung, die Sie als Bausteine für umfangreichere Automatisierungen verwenden können. Erstellen Sie mithilfe des Katalogs leistungsstarke, mit nur einem Klick ausführbare Wiederherstellungspläne für Ihre Anwendungen mit Azure Site Recovery.
 
 ## Zusätzliche Ressourcen
 
@@ -303,4 +313,4 @@ In diesem Lernprogramm haben Sie gesehen, wie Sie eine häufig verwendete Aufgab
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -7,7 +7,6 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
-
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -17,24 +16,23 @@
 	ms.date="06/16/2015" 
 	ms.author="spelluru"/>
 
-
 # Azure Data Factory – Häufig gestellte Fragen
 
 ## Allgemeine Fragen
 
-### F: Was ist Azure Data Factory?
+### Was ist Azure Data Factory?
 
 Data Factory ist ein cloud-basierter Daten-Integrationsdienst, der das Verschieben und Transformieren von Daten organisiert und automatisiert. Genau wie ein Fertigungsbetrieb, in dem Anlagen Rohmaterialien verarbeiten und in Endprodukte umwandeln, organisiert Data Factory vorhandene Dienste so, dass Rohdaten gesammelt und in nutzbare Informationen transformiert werden.
 
-Data Factory arbeitet mit lokalen und Clouddatenquellen und SaaS, um Daten zu erfassen, vorzubereiten, umzuwandeln, zu analysieren und zu veröffentlichen. Nutzen Sie Data Factory, um Dienste in verwalteten Datenflusspipelines zusammenzusetzen und Ihre Daten mithilfe von Diensten wie [Azure HDInsight (Hadoop)](http://azure.microsoft.com/documentation/services/hdinsight/) und [Azure Batch](http://azure.microsoft.com/documentation/services/batch/) für Ihre Big Data-Anforderungen und [Azure Machine Learning](http://azure.microsoft.com/documentation/services/machine-learning/) zu transforimieren, um Ihre Analyselösungen in Betrieb zu nehmen. Lassen Sie bloße tabellarische Überwachungsansichten hinter sich, und nutzen Sie die umfassenden Visualisierungen von Data Factory, um schnell die Herkunft und Abhängigkeiten zwischen Ihren Datenpipelines anzuzeigen. Überwachen Sie alle Ihre Datenflusspipelines über eine zentrale einheitliche Ansicht, um Probleme einfach auszumachen und Überwachungswarnungen einzurichten.
+Data Factory arbeitet mit lokalen und Clouddatenquellen und SaaS, um Daten zu erfassen, vorzubereiten, umzuwandeln, zu analysieren und zu veröffentlichen. Nutzen Sie Data Factory, um Dienste in verwalteten Datenflusspipelines zusammenzusetzen und Ihre Daten mithilfe von Diensten wie [Azure HDInsight \(Hadoop\)](http://azure.microsoft.com/documentation/services/hdinsight/) und [Azure Batch](http://azure.microsoft.com/documentation/services/batch/) für Ihre Big Data-Anforderungen und [Azure Machine Learning](http://azure.microsoft.com/documentation/services/machine-learning/) zu transforimieren, um Ihre Analyselösungen in Betrieb zu nehmen. Lassen Sie bloße tabellarische Überwachungsansichten hinter sich, und nutzen Sie die umfassenden Visualisierungen von Data Factory, um schnell die Herkunft und Abhängigkeiten zwischen Ihren Datenpipelines anzuzeigen. Überwachen Sie alle Ihre Datenflusspipelines über eine zentrale einheitliche Ansicht, um Probleme einfach auszumachen und Überwachungswarnungen einzurichten.
 
 Unter [Übersicht und Schlüsselkonzepte](data-factory-introduction.md) finden Sie weitere Informationen.
  
-### F: Welche Kundenherausforderung lässt sich mit Data Factory meistern?
+### Welche Kundenherausforderung lässt sich mit Data Factory meistern?
 
 Azure Data Factory verteilt die Flexibilität der Nutzung verschiedener Dienste für Datenspeicherung, Verarbeitung und Datentransfers auf traditionelle relationale Speicher auf Basis unstrukturierter Daten mit den Steuerungs- und Überwachungsfunktionen eines vollständig verwalteten Diensts.
 
-### F: Für welche Zielgruppen ist Data Factory konzipiert?
+### Für welche Zielgruppen ist Data Factory konzipiert?
 
 
 - Datenentwickler: die für das Erstellen von Integrationsdiensten zwischen Hadoop und anderen Systemen zuständig sind:
@@ -46,31 +44,31 @@ Azure Data Factory verteilt die Flexibilität der Nutzung verschiedener Dienste 
 	- müssen Rechen- und Speicherressourcen verwalten, um Kosten und Größe auf lokale und Cloud-Lösungen zu verteilen
 	- müssen schnell diverse Quellen und Verarbeitungsmöglichkeiten hinzufügen, um neue Geschäftsanforderungen zu behandeln, während der Überblick über alle Rechen- und Speicherressourcen erhalten bleibt
 
-###  F: Wo finde ich Preisinformationen zu Azure Data Factory?
+### Wo finde ich Preisinformationen zu Azure Data Factory?
 
 Preisinformationen zu Azure Data Factory finden Sie auf der Seite [Data Factory – Preisübersicht][adf-pricing-details].
 
-### F: F: Was sind die ersten Schritte mit Azure Data Factory?
+### F: Was sind die ersten Schritte mit Azure Data Factory?
 
 - Eine Übersicht über Azure Data Factory finden Sie unter [Einführung in Azure Data Factory][adf-introduction].
 - Ein kurzes Lernprogramm finden Sie unter [Erste Schritte mit Azure Data Factory][adfgetstarted].
 - Die umfassende Dokumentation finden Sie in der [Dokumentation zu Azure Data Factory][adf-documentation-landingpage].
 
   
-### F: Wie können Kunden auf Data Factory zugreifen?
+### Wie können Kunden auf Data Factory zugreifen?
 
 Kunden können über das [Azure-Vorschauportal][azure-preview-portal] auf Data Factory zugreifen.
 
-### F: In welchen Regionen ist Data Factory verfügbar?
+### In welchen Regionen ist Data Factory verfügbar?
 
 Data Factory ist verfügbar in USA, Westen sowie in Nordeuropa. Die von Data Factory verwendeten Rechen- und Speicherdienste können in anderen Regionen verfügbar sein.
  
-### F: Welche Grenzwerte gelten hinsichtlich der Anzahl von Data Factorys/Pipelines/Aktivitäten/Datasets?
+### Welche Grenzwerte sind hinsichtlich der Anzahl der Data Factorys/Pipelines/Aktivitäten/Datasets gegeben?
  
-Weitere Informationen finden Sie im Abschnitt **Einschränkungen von Azure Data Factory** unter dem Artikel [Begrenzungen, Kontingente und Einschränkungen von Azure-Abonnements und -Diensten](azure-subscription-service-limits.md/#data-factory-limits).
+Weitere Informationen finden Sie im Abschnitt **Einschränkungen von Azure Data Factory** unter dem Artikel [Begrenzungen, Kontingente und Einschränkungen von Azure-Abonnements und -Diensten](../azure-subscription-service-limits.md#data-factory-limits).
 
 
-### F: Was sieht die Erstellung-/Entwicklungsumgebung im Azure Data Factory-Dienst aus?
+### Was sieht die Erstellung-/Entwicklungsumgebung im Azure Data Factory-Dienst aus?
 
 Sie können Data Factorys mithilfe einer der folgenden Methoden erstellen:
 
@@ -80,45 +78,45 @@ Sie können Data Factorys mithilfe einer der folgenden Methoden erstellen:
 - **Klassenbibliothek von .NET**. Sie können Daten Factorys mithilfe des Data Factory .NET SDK programmgesteuert erstellen. Unter [Erstellen, Überwachen und Verwalten von Daten Factorys mit dem .NET SDK][create-factory-using-dotnet-sdk] finden Sie eine exemplarische Vorgehensweise zum Erstellen einer Data Factory mit dem .NET SDK. Unter [Data Factory-Klassenbibliotheksreferenz][msdn-class-library-reference] finden Sie eine umfassende Dokumentation zum Data Factory .NET SDK.  
 - **REST-API**. Sie können auch die vom Azure-Data Factory-Dienst verfügbar gemachte REST-API zum Erstellen und Bereitstellen von Data Factorys nutzen. Unter [Data Factory-REST-API][msdn-rest-api-reference] finden Sie eine umfassende Dokumentation zur Data Factory-REST-API. 
 
-### F: Können Data Factorys umbenannt werden?
+### Können Data Factorys umbenannt werden?
 Nein. Wie bei anderen Azure-Ressourcen auch kann der Name einer Azure Data Factory nicht geändert werden.
 
 ## Aktivitäten – Häufig gestellte Fragen
-### F: Welche Datenquellen und Aktivitäten werden unterstützt?
+### Welche Datenquellen und Aktivitäten werden unterstützt?
 
 Unter den Artikeln [Aktivitäten für die Verschiebung von Daten](data-factory-data-movement-activities.md) und [Daten-Transformationsaktivitäten](data-factory-data-transformation-activities.md) finden Sie Informationen zu den unterstützten Datenquellen und Aktivitäten.
 
 ### Wann wird eine Aktivität ausgeführt?
-Die Konfigurationseinstellung **availability** in der Ausgabedatentabelle bestimmt, wann die Aktivität erfolgt. Die Aktivität prüft, ob alle Eingabedatenabhängigkeiten erfüllt sind (den Status **ready** haben), bevor die Ausführung beginnt.
+Die Konfigurationseinstellung **availability** in der Ausgabedatentabelle bestimmt, wann die Aktivität erfolgt. Die Aktivität prüft, ob alle Eingabedatenabhängigkeiten erfüllt sind \(den Status **ready** haben\), bevor die Ausführung beginnt.
 
 ## Kopieraktivität – Häufig gestellte Fragen
-### F: In welchen Regionen wird die Kopieraktivität unterstützt?
+### Welche Regionen werden von der Kopieraktivität unterstützt?
 
-Die Kopieraktivität zum Kopieren von Daten wird in den folgenden Regionen unterstützt: USA (Ost), USA (Ost) 2, USA (West), USA (Mitte), USA (Mitte/Süden), Nordeuropa, Westeuropa, Südostasien, Japan (Ost), Brasilien (Süd)
+Die Kopieraktivität zum Kopieren von Daten wird in den folgenden Regionen unterstützt: USA \(Ost\), USA \(Ost\) 2, USA \(West\), USA \(Mitte\), USA \(Mitte/Süden\), Nordeuropa, Westeuropa, Südostasien, Japan \(Ost\), Brasilien \(Süd\)
 
 Das Kopieren von Daten in andere Regionen wird ebenfalls unterstützt, wenn eine der oben genannten fünf Regionen zur Weiterleitung der Daten genutzt wird. Der Kopiervorgang wird auf Basis der Region gemessen, über die die Daten weitergeleitet werden.
 
 Region des Kopierziels | Für die Weiterleitung genutzte Region
 -------------------------- | -----------------------
 Ostasien | Südostasien
-Japan (Westen) | Japan Ost
+Japan \(Westen\) | Japan Ost
  
 ### Ist es besser, eine Pipeline mit mehreren Aktivitäten oder eine separate Pipeline für jede Aktivität einzurichten? 
 Pipelines dienen zum Bündeln verwandter Aktivitäten. Natürlich können Sie die Aktivitäten in einer Pipeline halten, wenn die Tabellen, die diese verbinden, nicht von anderen Aktivitäten außerhalb der Pipeline genutzt werden. Auf diese Weise müssen Sie Pipelineaktivitäten nicht verknüpfen, damit diese sich aneinander ausrichten. Darüber hinaus kann die Datenintegrität in den Tabellen, die für die Pipeline intern sind, beim Aktualisieren der Pipeline besser beibehalten werden. Bei einer Pipelineaktualisierung werden alle Aktivitäten in der Pipeline beendet, entfernt und neu erstellt. Aus Erstellungssicht kann es auch einfacher sein, den Datenfluss innerhalb der zugehörigen Aktivitäten in einer JSON-Datei für die Pipeline nachzuverfolgen.
 
 ## HDInsight-Aktivität – Häufig gestellte Fragen
 
-### F: In welchen Regionen wird HDInsight unterstützt?
+### In welchen Regionen wird HDInsight unterstützt?
 
 Weitere Informationen finden Sie im Abschnitt zur geografischen Verfügbarkeit des folgenden Artikels oder unter [HDInsight – Preisübersicht][hdinsight-supported-regions].
 
-### F: Welche Region wird von einem bedarfsgesteuerten HDInsight-Cluster verwendet?
+### Welche Region wird von einem bedarfsgesteuerten HDInsight-Cluster verwendet?
 
 Der bedarfsgesteuerte HDInsight-Cluster wird in derselben Region erstellt, in der sich der Speicher befindet, den Sie für die Verwendung mit dem Cluster angegeben haben.
 
-### F: Wie können weitere Speicherkonten mit Ihrem HDInsight-Cluster verknüpft werden?
+### Wie können weitere Speicherkonten mit Ihrem HDInsight-Cluster verknüpft werden?
 
-Wenn Sie Ihren eigenen HDInsight-Cluster (BYOC - Bring Your Own Cluster) verwenden, lesen Sie die folgenden Themen:
+Wenn Sie Ihren eigenen HDInsight-Cluster \(BYOC - Bring Your Own Cluster\) verwenden, lesen Sie die folgenden Themen:
 
 - [Verwenden eines HDInsight-Clusters mit alternativen Speicherkonten und Metastores][hdinsight-alternate-storage]
 - [Verwenden zusätzlicher Speicherkonten mit HDInsight Hive][hdinsight-alternate-storage-2]
@@ -194,4 +192,4 @@ Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige M�
 [hdinsight-alternate-storage-2]: http://blogs.msdn.com/b/cindygross/archive/2014/05/05/use-additional-storage-accounts-with-hdinsight-hive.aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

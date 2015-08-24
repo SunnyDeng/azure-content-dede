@@ -6,7 +6,6 @@
    authors="alkohli"
    manager="carolz"
    editor="tysonn" />
-
 <tags 
    ms.service="storsimple"
    ms.devlang="na"
@@ -15,7 +14,6 @@
    ms.workload="na"
    ms.date="07/31/2015"
    ms.author="alkohli" />
-
 
 # StorSimple-Hardwarekomponenten und Status
 
@@ -57,11 +55,9 @@ Führen Sie die folgenden Schritte aus, um den Hardwarestatus einer Gerätekompo
 3. Sollte sich eine Komponente nicht in einem fehlerfreien Zustand befinden, wenden Sie sich an den Support von Microsoft. Sind Warnungen auf dem Gerät aktiviert, werden Sie per E-Mail benachrichtigt. Informationen zum Austauschen fehlerhafter Hardwarekomponenten finden Sie im [Handbuch für den Austausch von Hardwarekomponenten](https://msdn.microsoft.com/library/azure/dn757736.aspx).
 
 
-## Komponentenliste für das StorSimple-Gerät
+## Komponentenliste für das primäre Gehäuse eines StorSimple-Geräts
 
-Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponenten Ihres lokalen StorSimple-Geräts. Das Gerät verfügt über zwei Gehäuse: ein primäres Gehäuse und ein EBOD-Gehäuse. Für die beiden Gehäuse ist jeweils eine eigene Tabelle vorhanden.
-
-### Komponentenliste für das primäre Gehäuse
+Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponenten im primären Gehäuse Ihres lokalen StorSimple-Geräts.
 
 |Komponente|Modul|Typ|Ort|FRU (Field Replaceable Unit)?|Beschreibung|
 |---|---|---|---|---|---|
@@ -124,7 +120,9 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 |Ethernet|E/A|Physisch|Controller|Nein|Gibt den Zustand der einzelnen Netzwerkschnittstellen (Verwaltungs- und Datenports des Controllers) an.|
 |NVRAM|E/A|Physisch|Controller|Nein|Gibt den Zustand des NVRAM (permanenter, vom Akku versorgter Arbeitsspeicher zur Bewahrung anwendungskritischer Informationen bei einem Stromausfall) an.|
 
-### Komponentenliste für das EBOD-Gehäuse
+## Komponentenliste für das EBOD-Gehäuse eines StorSimple-Geräts
+
+Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponenten im EBOD-Gehäuse Ihres lokalen StorSimple-Geräts.
 
 |Komponente|Modul|Typ|Standort|FRU?|Beschreibung|
 |---|---|---|---|---|---|
@@ -140,7 +138,8 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 |Ja|Gibt an, dass ein Gehäuse vorhanden ist.|
 |Gehäuseeinstellungen|Gehäuse|Physisch|Shared  
 |Nein|Bezieht sich auf das OPS oder vordere Bedienfeld des Gehäuses.|
-|Spannungssensoren|PCM|Physisch|Shared|Nein|Der angezeigte Zustand zahlreicher Spannungssensoren gibt Aufschluss darüber, ob die gemessene Spannung innerhalb des Toleranzbereichs liegt.|
+|Spannungssensoren|PCM|Physisch|Shared  
+|Nein|Der angezeigte Zustand zahlreicher Spannungssensoren gibt Aufschluss darüber, ob die gemessene Spannung innerhalb des Toleranzbereichs liegt.|
 |Stromsensoren|PCM|Physisch|Shared  
 |Nein|Der angezeigte Zustand zahlreicher Stromsensoren gibt Aufschluss darüber, ob die gemessene Stromstärke innerhalb des Toleranzbereichs liegt.|
 |Temperatursensoren in PCM|PCM|Physisch|Shared  
@@ -160,11 +159,11 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 |Gehäuseelektronikdiagnose|E/A|Physisch|Controller|Nein|Gibt den Zustand der vom Controller bereitgestellten Diagnosesubsysteme an.|
 |Verbindung mit Gerätecontroller|E/A|Physisch|Controller|Nein|Gibt den Zustand der Verbindung zwischen dem EBOD-E/A-Modul und dem Gerätecontroller an.|
 
-## Nächster Schritt
+## Nächste Schritte
 Informationen zum Behandeln von Problemen mit einer beeinträchtigten oder fehlerhaften Gerätekomponente finden Sie unter [Problembehandlung mit Überwachungsindikatoren](storsimple-monitoring-indicators).
 
 Informationen zum Austauschen einer fehlerhaften Hardwarekomponente finden Sie im [Handbuch für den Austausch von Hardwarekomponenten](https://msdn.microsoft.com/library/azure/dn757736.aspx).
 
 Sollten weiterhin Geräteprobleme auftreten, [kontaktieren Sie den Microsoft-Support](storsimple-contact-microsoft-support.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

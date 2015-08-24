@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Übersicht über Hybridverbindungen | Azure" 
+	pageTitle="Übersicht über Hybridverbindungen | Microsoft Azure" 
 	description="Erfahren Sie mehr zu Hybridverbindungen, unter anderen zu den Aspekten Sicherheit, TCP-Ports und unterstützte Konfigurationen. MABS, WABS" 
 	services="biztalk-services" 
 	documentationCenter="" 
@@ -23,7 +23,7 @@ In diesem Thema werden Hybridverbindungen vorgestellt und die unterstützten Kon
 
 ## Was ist eine Hybridverbindung
 
-Hybridverbindungen sind eine Funktion von Azure BizTalk Services. Hybridverbindungen bieten eine einfache und praktische Möglichkeit, Azure-Web-Apps (früher Websites) und mobile Azure-Apps (früher Mobile Services) mit lokalen Ressourcen hinter der Firewall zu verbinden:
+Hybridverbindungen sind eine Funktion von Azure BizTalk Services. Hybridverbindungen bieten eine einfache und praktische Möglichkeit, Azure-Web-Apps \(früher Websites\) und mobile Azure-Apps \(früher Mobile Services\) mit lokalen Ressourcen hinter der Firewall zu verbinden:
 
 ![Hybridverbindungen][HCImage]
 
@@ -35,9 +35,9 @@ Zu den Vorteilen von Hybridverbindungen zählen:
 - Anwendungen, die Hybridverbindungen verwenden, greifen nur auf die spezifische lokale Ressource zu, die über die Hybridverbindung veröffentlicht wurde.
 - Es sind Verbindungen zu allen lokalen Ressourcen möglich, die einen statischen TCP-Port verwenden, inklusive SQL Server, MySQL, HTTP Web-APIs und die meisten benutzerdefinierten Webdienste.
 
-	> [AZURE.NOTE]TCP-basierte Dienste, die dynamische Ports verwenden (wie passiver oder erweiterter passiver FTP-Modus) werden derzeit nicht unterstützt.
+	> [AZURE.NOTE]TCP-basierte Dienste, die dynamische Ports verwenden \(wie passiver oder erweiterter passiver FTP-Modus\) werden derzeit nicht unterstützt.
 
-- Sie können zusammen mit allen Frameworks verwendet werden, die von Azure-Web-Apps (.NET, PHP, Java, Python, Node.js) und mobilen Azure-Apps (Node.js, .NET) unterstützt werden.
+- Sie können zusammen mit allen Frameworks verwendet werden, die von Azure-Web-Apps \(.NET, PHP, Java, Python, Node.js\) und mobilen Azure-Apps \(Node.js, .NET\) unterstützt werden.
 - Web-Apps und Mobile Apps können auf lokale Ressourcen genauso zugreifen, als ob sich die Web-App oder die mobile Apps im lokalen Netzwerk befände. So kann z. B. die lokal verwendete Verbindungszeichenfolge auch in Azure verwendet werden.
 
 
@@ -68,7 +68,7 @@ Wenn Hybridverbindungen für den Zugriff auf lokale SQL Server verwendet wird, b
 
 ## Sicherheit und Ports
 
-Hybridverbindungen verwenden SAS-Autorisierung (Shared Access Signature) zum Sichern der Verbindungen von den Azure-Anwendungen und dem lokalen Hybrid Connection Manager zur Hybridverbindung. Es werden getrennte Verbindungsschlüssel für die Anwendung und den lokalen Hybrid Connection Manager erstellt. Diese Verbindungsschlüssel können unabhängig voneinander ausgetauscht oder widerrufen werden.
+Hybridverbindungen verwenden SAS-Autorisierung \(Shared Access Signature\) zum Sichern der Verbindungen von den Azure-Anwendungen und dem lokalen Hybrid Connection Manager zur Hybridverbindung. Es werden getrennte Verbindungsschlüssel für die Anwendung und den lokalen Hybrid Connection Manager erstellt. Diese Verbindungsschlüssel können unabhängig voneinander ausgetauscht oder widerrufen werden.
 
 Hybridverbindungen stellen eine reibungslose und sichere Verteilung der Schlüssel an die Anwendungen und den lokalen Hybrid Connection Manager bereit.
 
@@ -103,4 +103,4 @@ Port | Grund
 [HCOnPremSetup]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionOnPremSetup.png
 [HCManageConnection]: ./media/integration-hybrid-connection-overview/WABS_HybridConnectionManageConn.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

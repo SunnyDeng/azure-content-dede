@@ -1,12 +1,11 @@
 <properties 
-   pageTitle="Erstellen und Verwalten einer SQL-Datenbank mit der Azure SQL-Datenbankbibliothek für .NET" 
-   description="In diesem Artikel wird gezeigt, wie Sie eine Azure SQL-Datenbank mithilfe der Azure SQL-Datenbankbibliothek für .NET erstellen und verwalten." 
+   pageTitle="Erstellen und Verwalten von Azure SQL-Datenbanken mit C#" 
+   description="In diesem Artikel wird gezeigt, wie Sie eine Azure SQL-Datenbank mithilfe von C# und der Azure SQL-Datenbankbibliothek für .NET erstellen und verwalten." 
    services="sql-database" 
    documentationCenter="" 
    authors="stevestein" 
    manager="jeffreyg" 
    editor=""/>
-
 
 <tags
    ms.service="sql-database"
@@ -14,26 +13,24 @@
    ms.topic="article"
    ms.tgt_pltfrm="powershell"
    ms.workload="data-management" 
-   ms.date="08/04/2015"
+   ms.date="08/07/2015"
    ms.author="sstein"/>
 
-
-# Erstellen und Verwalten einer SQL-Datenbank mit der Azure SQL-Datenbankbibliothek für .NET
+# Erstellen und Verwalten von SQL-Datenbanken mit C&\#x23;
 
 > [AZURE.SELECTOR]
-- [Azure portal](sql-database-elastic-pool-portal.md)
+- [Azure Preview Portal](sql-database-elastic-pool-portal.md)
 - [C#](sql-database-client-library.md)
 - [PowerShell](sql-database-elastic-pool-powershell.md)
 
 
 ## Übersicht
 
-Dieser Artikel enthält Befehle zum Ausführen einer Vielzahl von Verwaltungsaufgaben für die Azure SQL-Datenbank mit C#. Aus Gründen der Übersichtlichkeit beschränken sich die Beispiele auf einzelne Codeausschnitte. In dem Abschnitt am Ende dieses Artikels sind alle Befehle in einer Beispielkonsolenanwendung zusammengeführt.
+Dieser Artikel enthält Befehle zum Ausführen einer Vielzahl von Verwaltungsaufgaben für die Azure SQL-Datenbank mithilfe von C\# und der [Azure SQL-Datenbankbibliothek für .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql).
 
-Die Azure SQL-Datenbankbibliothek für .NET bietet eine [Azure-Ressourcen-Manager](resource-group-overview.md)-basierte API, die die [Ressourcen-Manager-basierte REST-API für die SQL-Datenbank](https://msdn.microsoft.com/library/azure/mt163571.aspx) umfasst. Diese Clientbibliothek folgt dem allgemeinen Muster für Ressourcen-Manager-basierte Clientbibliotheken.
+Aus Gründen der Übersichtlichkeit beschränken sich die Beispiele auf einzelne Codeausschnitte. In dem Abschnitt am Ende dieses Artikels sind alle Befehle in einer Beispielkonsolenanwendung zusammengeführt.
 
-
-Der Ressourcen-Manager erfordert Ressourcengruppen und die Authentifizierung mit [Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) (AAD).
+Die Azure SQL-Datenbankbibliothek für .NET bietet eine [Azure-Ressourcen-Manager](resource-group-overview.md)-basierte API, die die [Ressourcen-Manager-basierte REST-API für die SQL-Datenbank](https://msdn.microsoft.com/library/azure/mt163571.aspx) umfasst. Diese Clientbibliothek folgt dem allgemeinen Muster für Ressourcen-Manager-basierte Clientbibliotheken. Der Ressourcen-Manager erfordert Ressourcengruppen und die Authentifizierung mit [Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) \(AAD\).
 
 <br>
 
@@ -62,11 +59,11 @@ Zur Authentifizierung der Clientanwendung basierend auf dem aktuellen Benutzer, 
 
 Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registrieren, führen Sie die folgenden Schritte aus:
 
-1. Scrollen Sie durch das Menü auf der linken Seite, um nach dem Dienst **Active Directory** zu suchen und ihn zu öffnen.
+1. Führen Sie im Menü auf der linken Seite einen Bildlauf durch, um den Dienst **Active Directory** zu suchen und zu öffnen.
 
     ![AAD][1]
 
-2. Wählen Sie das Verzeichnis zum Authentifizieren Ihrer Anwendung aus, und klicken Sie auf dessen Namen.
+2. Wählen Sie das Verzeichnis zum Authentifizieren Ihrer Anwendung aus, und klicken Sie auf dessen **Namen**.
 
     ![Verzeichnisse][4]
 
@@ -88,15 +85,15 @@ Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registr
 
     ![Anwendung hinzufügen][8]
 
-7. Beenden Sie das Erstellen der Anwendung, klicken Sie auf **KONFIGURIEREN**, und kopieren Sie die **CLIENT-ID** (Sie benötigen die Client-ID in Ihrem Code).
+7. Beenden Sie das Erstellen der Anwendung, klicken Sie auf **KONFIGURIEREN**, und kopieren Sie die **CLIENT-ID** \(Sie benötigen die Client-ID in Ihrem Code\).
 
     ![Client-ID abrufen][9]
 
 
 1. Klicken Sie unten auf der Seite auf **Anwendung hinzufügen**.
 1. Wählen Sie **Microsoft-Apps** aus.
-1. Wählen Sie **Azure-Service-Verwaltungs-API** aus, und schließen Sie dann den Assistenten ab.
-2. Nun müssen Sie bei ausgewählter API die jeweiligen Berechtigungen für den Zugriff auf diese API erteilen, indem Sie **Access Azure Service Management (preview)** auswählen.
+1. Wählen Sie **Azure Service-Verwaltungs-API** aus, und schließen Sie dann den Assistenten ab.
+2. Nun müssen Sie bei ausgewählter API die jeweiligen Berechtigungen für den Zugriff auf diese API erteilen, indem Sie **Auf Azure Service-Verwaltung \(Preview\) zugreifen** auswählen.
 
     ![Berechtigungen][2]
 
@@ -252,9 +249,9 @@ Mit dem folgenden Befehl wird eine neue Basic-Datenbank erstellt, wenn keine Dat
 
 ## Aktualisieren einer Datenbank 
 
-Zum Aktualisieren einer Datenbank (z. B. Ändern der Dienst- und Leistungsebene) rufen Sie die Methode **Databases.CreateOrUpdate** wie beim oben gezeigten Erstellen bzw. Aktualisieren einer Datenbank auf. Legen Sie die Eigenschaften **Edition** und **RequestedServiceObjectiveName** auf die gewünschte Dienst- und Leistungsebene fest. Beachten Sie, dass beim Ändern der Eigenschaft "Edition" von oder in **Premium**, das Update – je nach Größe der Datenbank – eine Weile dauern kann.
+Zum Aktualisieren einer Datenbank \(z. B. Ändern der Dienst- und Leistungsebene\) rufen Sie die Methode **Databases.CreateOrUpdate** wie beim oben gezeigten Erstellen bzw. Aktualisieren einer Datenbank auf. Legen Sie die Eigenschaften **Edition** und **RequestedServiceObjectiveName** auf die gewünschte Dienst- und Leistungsebene fest. Beachten Sie, dass beim Ändern der Eigenschaft "Edition" von oder in **Premium** das Update je nach Größe der Datenbank eine Weile dauern kann.
 
-Im folgenden Beispiel wird eine SQL-Datenbank auf die Ebene "Standard" (S0) aktualisiert:
+Im folgenden Beispiel wird eine SQL-Datenbank auf die Ebene "Standard" \(S0\) aktualisiert:
 
     // Retrieve current database properties 
     var currentDatabase = sqlClient.Databases.Get("resourecegroup-name", "server-name", "Database1").Database;
@@ -405,7 +402,7 @@ So listen Sie alle Datenbanken in einem Pool auf:
 
 ## Löschen eines Servers
 
-Zum Löschen eines Servers (wodurch auch die Datenbanken und alle elastischen Datenbankpools auf dem Server gelöscht werden), führen Sie den folgenden Code aus:
+Zum Löschen eines Servers \(wodurch auch die Datenbanken und alle elastischen Datenbankpools auf dem Server gelöscht werden\), führen Sie den folgenden Code aus:
 
     var serverOperationResponse = sqlClient.Servers.Delete("resourcegroup-name", "server-name");
 
@@ -797,4 +794,4 @@ So löschen Sie eine Ressourcengruppe:
 [8]: ./media/sql-database-client-library/add-application2.png
 [9]: ./media/sql-database-client-library/clientid.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

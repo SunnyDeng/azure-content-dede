@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Multi-Tenant Web Anwendungsmuster - Azure-Architektur"
+	pageTitle="Mehrinstanzenfähige Anwendungen in Azure | Microsoft Azure"
 	description="Hier finden Sie Übersichten über die Architektur und Entwurfsmuster, die beschreiben, wie Sie eine mehrinstanzenfähige Webanwendung in Azure implementieren."
 	services=""
 	documentationCenter=".net"
@@ -38,7 +38,7 @@ Eine korrekt implementierte mehrinstanzenfähige Anwendung bietet Benutzern die 
 
 Kurz, obwohl es einige Überlegungen gibt, die Sie bei der Bereitstellung eines hochskalierbaren Dienstes berücksichtigen müssen, gibt es auch einige Ziele und Anforderungen, die bei vielen mehrinstanzenfähigen Anwendungen üblich sind. Einige sind möglicherweise für bestimmte Szenarien nicht relevant, und die Wichtigkeit einzelner Ziele und Anforderungen unterscheidet sich je nach Szenario. Als Anbieter einer mehrinstanzenfähigen Anwendung gibt es für Sie ebenfalls Ziele und Anforderungen wie das Erfüllen der Ziele und Anforderungen des Mandanten, Rentabilität, mehrere Serviceebenen, Bereitstellung, Wartbarkeit, Überwachung und Automatisierung.
 
-Weitere Informationen zu zusätzlichen Überlegungen bei der Entwicklung einer mehrinstanzenfähigen Anwendung finden Sie unter [Hosting a Multi-Tenant Application on Azure][] (Hosten einer mehrinstanzenfähigen Anwendung in Azure, in englischer Sprache).
+Weitere Informationen zu zusätzlichen Überlegungen bei der Entwicklung einer mehrinstanzenfähigen Anwendung finden Sie unter [Hosting a Multi-Tenant Application on Azure][] \(Hosten einer mehrinstanzenfähigen Anwendung in Azure, in englischer Sprache\).
 
 Azure bietet viele Funktionen, mit denen Sie die entscheidenden Probleme lösen können, die bei der Entwicklung eines mehrinstanzenfähigen Systems auftreten.
 
@@ -57,7 +57,7 @@ Datenverwaltung wie eine Azure SQL-Datenbank oder Azure-Speicherdienste wie der 
 - Sichern mehrinstanzenfähiger Daten in einer SQL-Datenbank mit geeigneten SQL-Server-Anmeldungen pro Mandant
 - Wenn Sie Azure Tables für Anwendungsressourcen verwenden können Sie über das Festlegen einer Zugriffssteuerung auf Containerebene Berechtigungen anpassen, ohne neue URLs für die Ressourcen ausgeben zu müssen, die mit gemeinsamen Zugriffssignaturen geschützt sind.
 - Azure-Warteschlangen für Anwendungsressourcen: Azure-Warteschlangen werden meist verwendet, um die Verarbeitung für die Mandanten zu beschleunigen, können jedoch auch eingesetzt werden, um erforderliche Aufgaben für Bereitstellung oder Verwaltung zu verteilen.
-- Service Bus-Warteschlangen für Anwendungsressourcen lenken Aufgaben zu einem gemeinsamen Dienst. Sie können eine einzelne Warteschlange verwenden, bei der jeder sendende Mandant nur über Berechtigungen dazu verfügt (die sich von den ausgegebenen Ansprüchen aus ACS ableiten), Aufgaben in diese Warteschlange zu leiten, wobei nur die Empfänger des Dienstes die Berechtigung besitzen, aus dieser Warteschlange die Daten zu beziehen, die von mehreren Mandanten stammen.
+- Service Bus-Warteschlangen für Anwendungsressourcen lenken Aufgaben zu einem gemeinsamen Dienst. Sie können eine einzelne Warteschlange verwenden, bei der jeder sendende Mandant nur über Berechtigungen dazu verfügt \(die sich von den ausgegebenen Ansprüchen aus ACS ableiten\), Aufgaben in diese Warteschlange zu leiten, wobei nur die Empfänger des Dienstes die Berechtigung besitzen, aus dieser Warteschlange die Daten zu beziehen, die von mehreren Mandanten stammen.
 
 
 **Verbindungs- und Sicherheitsdienste**
@@ -68,10 +68,10 @@ Datenverwaltung wie eine Azure SQL-Datenbank oder Azure-Speicherdienste wie der 
 
 Azure bietet mehrere Netzwerkdienste, die Authentifizierung unterstützen und die Verwaltbarkeit gehosteter Anwendungen verbessern. Diese Dienste umfassen Folgendes:
 
-- Mit Azure – Virtuelles Netzwerk können Sie in Azure virtuelle private Netzwerke (VPN) bereitstellen und verwalten und diese sicher mit Ihrer IT-Infrastruktur vor Ort verbinden.
+- Mit Azure – Virtuelles Netzwerk können Sie in Azure virtuelle private Netzwerke \(VPN\) bereitstellen und verwalten und diese sicher mit Ihrer IT-Infrastruktur vor Ort verbinden.
 - Der Traffic Manager für das virtuelle Netzwerk ermöglicht Ihnen einen Lastenausgleich für eingehenden Datenverkehr über mehrere gehostete Azure-Dienste, gleich, ob sie im selben Datencenter ausgeführt werden oder über verschiedene Datencenter weltweit.
-- Azure Active Directory (Azure AD) ist ein moderner, REST-basierter Dienst, der Identitätsverwaltung und Funktionen zur Zugriffssteuerung für Ihre Cloudanwendungen bietet. Die Verwendung von Azure AD für Anwendungsressourcen bietet einen einfachen Weg der Authentifizierung und Autorisierung von Benutzern für den Zugang zu Ihren Webanwendungen und Webdiensten. Gleichzeitig werden die Funktionen zur Authentifizierung und Autorisierung aus Ihrem Code herausgenommen.
-- Azure Service Bus bietet eine sichere Nachrichten- und Datenflussfunktion für verteilte und hybride Anwendungen, beispielsweise Kommunikation zwischen Anwendungen, die von Azure gehostet werden, und lokalen Anwendungen/Diensten, ganz ohne komplexe Firewall- und Sicherheitsinfrastruktur. Verwendung von Service Bus Relay für Anwendungsressourcen: Die Dienste, die als Endpunkte erreichbar sind, können dem Mandanten gehören (beispielsweise außerhalb des Systems gehostete, lokale Dienste) oder speziell für den Mandanten bereitgestellt werden (da sensible, mandantenspezifische Daten bewegt werden).
+- Azure Active Directory \(Azure AD\) ist ein moderner, REST-basierter Dienst, der Identitätsverwaltung und Funktionen zur Zugriffssteuerung für Ihre Cloudanwendungen bietet. Die Verwendung von Azure AD für Anwendungsressourcen bietet einen einfachen Weg der Authentifizierung und Autorisierung von Benutzern für den Zugang zu Ihren Webanwendungen und Webdiensten. Gleichzeitig werden die Funktionen zur Authentifizierung und Autorisierung aus Ihrem Code herausgenommen.
+- Azure Service Bus bietet eine sichere Nachrichten- und Datenflussfunktion für verteilte und hybride Anwendungen, beispielsweise Kommunikation zwischen Anwendungen, die von Azure gehostet werden, und lokalen Anwendungen/Diensten, ganz ohne komplexe Firewall- und Sicherheitsinfrastruktur. Verwendung von Service Bus Relay für Anwendungsressourcen: Die Dienste, die als Endpunkte erreichbar sind, können dem Mandanten gehören \(beispielsweise außerhalb des Systems gehostete, lokale Dienste\) oder speziell für den Mandanten bereitgestellt werden \(da sensible, mandantenspezifische Daten bewegt werden\).
 
 
 
@@ -79,7 +79,7 @@ Azure bietet mehrere Netzwerkdienste, die Authentifizierung unterstützen und di
 
 Azure bietet viele verschiedene Möglichkeiten zur Bereitstellung neuer Mandanten. Bei mehrinstanzenfähigen Anwendungen mit einer großen Zahl an Mandanten ist es normalerweise notwendig, diesen Prozess mittels Self-Service-Bereitstellung zu automatisieren.
 
-- Mit Workerrollen können Sie für einzelne Mandanten Ressourcen bereitstellen oder entfernen (wenn sich beispielsweise ein neuer Mandant anmeldet oder ein bereits vorhandener kündigt), Metriken zu Messzwecken sammeln und die Skalierung verwalten, indem einem bestimmten Zeitplan gefolgt oder das Überschreiten bestimmter Schwellen von wesentlichen Leistungsindikatoren als Auslöser genommen wird. Diese Rolle können Sie außerdem verwenden, um Aktualisierungen und Upgrades für die Lösung bereitzustellen.
+- Mit Workerrollen können Sie für einzelne Mandanten Ressourcen bereitstellen oder entfernen \(wenn sich beispielsweise ein neuer Mandant anmeldet oder ein bereits vorhandener kündigt\), Metriken zu Messzwecken sammeln und die Skalierung verwalten, indem einem bestimmten Zeitplan gefolgt oder das Überschreiten bestimmter Schwellen von wesentlichen Leistungsindikatoren als Auslöser genommen wird. Diese Rolle können Sie außerdem verwenden, um Aktualisierungen und Upgrades für die Lösung bereitzustellen.
 - Sie können Azure Blobs verwenden, um Rechen- oder vorinitialisierte Speicherressourcen für neue Mandanten bereitzustellen und gleichzeitig Zugriffsrichtlinien auf Containerebene zu bieten, um die Rechendienstpakete, VHD-Images und andere Ressourcen zu schützen.
 - Optionen für die Bereitstellung von SQL-Datenbank-Ressourcen für einen Mandanten umfassen:
 
@@ -95,4 +95,4 @@ Azure bietet viele verschiedene Möglichkeiten zur Bereitstellung neuer Mandante
 [Hosting a Multi-Tenant Application on Azure]: http://msdn.microsoft.com/library/hh534480.aspx
 [Designing Multitenant Applications on Azure]: http://msdn.microsoft.com/library/windowsazure/hh689716
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

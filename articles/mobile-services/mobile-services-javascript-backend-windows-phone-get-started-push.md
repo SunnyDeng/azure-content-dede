@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App (Windows Store) | Mobile Dev Center" 
+	pageTitle="Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App (Windows Store) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Azure Mobile Services und Notification Hubs verwenden, um Pushbenachrichtigungen an Ihre Windows Store-App zu senden." 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
@@ -180,4 +180,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden des Ressourcen-Managers zum Zuteilen von Ressourcen an den Apache Spark-Cluster in HDInsight| Azure" 
+	pageTitle="Verwenden des Ressourcen-Managers zum Zuteilen von Ressourcen an den Apache Spark-Cluster in HDInsight| Microsoft Azure" 
 	description="Erfahren Sie, wie Sie den Ressourcen-Manager für Spark-Cluster in HDInsight zum Verbessern der Leistung verwenden." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -33,7 +33,7 @@ Hier finden Sie einige gängige Szenarien, die bei Ihrem Spark Cluster ggf. auft
 
 ### Mein Spark-Cluster in HDInsight ist langsam
 
-Apache Spark-Cluster in HDInsight ist mehrinstanzenfähig, sodass Ressourcen über mehrere Komponenten (Notebooks, Auftragsserver usw.) aufgeteilt sind. Dadurch können Sie alle Spark-Komponenten gleichzeitig verwenden, ohne sich darüber Gedanken machen zu müssen, ob für eine Komponente die zum Ausführen erforderlichen Ressourcen nicht vorhanden sind. Die einzelnen Komponente sind jedoch langsamer, da Ressourcen fragmentiert sind. Dies kann Ihren Anforderungen entsprechend angepasst werden.
+Apache Spark-Cluster in HDInsight ist mehrinstanzenfähig, sodass Ressourcen über mehrere Komponenten \(Notebooks, Auftragsserver usw.\) aufgeteilt sind. Dadurch können Sie alle Spark-Komponenten gleichzeitig verwenden, ohne sich darüber Gedanken machen zu müssen, ob für eine Komponente die zum Ausführen erforderlichen Ressourcen nicht vorhanden sind. Die einzelnen Komponente sind jedoch langsamer, da Ressourcen fragmentiert sind. Dies kann Ihren Anforderungen entsprechend angepasst werden.
 
 
 ### Ich verwende das Jupyter Notebook nur mit dem Spark-Cluster. Wie kann ich ihm alle Ressourcen zuweisen?
@@ -42,7 +42,7 @@ Apache Spark-Cluster in HDInsight ist mehrinstanzenfähig, sodass Ressourcen üb
 
 	![Ressourcenzuteilung](./media/hdinsight-apache-spark-resource-manager/HDI.Spark.UI.Resource.png "Suchen nach Ressourcen, die einem Spark-Cluster zugeteilt sind")
 
-	Laut der Bildschirmaufnahme oben können Sie höchstens 7 Kerne (insgesamt 8 Kerne, wovon einer in Gebrauch ist) und höchstens 9 GB Arbeitsspeicher (insgesamt 12 GB, wovon 2 GB vom System und 1 GB von anderen Anwendungen genutzt werden) zuteilen.
+	Laut der Bildschirmaufnahme oben können Sie höchstens 7 Kerne \(insgesamt 8 Kerne, wovon einer in Gebrauch ist\) und höchstens 9 GB Arbeitsspeicher \(insgesamt 12 GB, wovon 2 GB vom System und 1 GB von anderen Anwendungen genutzt werden\) zuteilen.
 
 	Sie sollten auch alle ausgeführten Anwendungen berücksichtigen. Die ausgeführten Anwendungen können Sie auf der Registerkarte **Spark-Benutzeroberfläche** anzeigen.
 
@@ -79,4 +79,4 @@ Geben Sie als Anzahl von Thrift-Serverkernen und Thrift-Executor-Serverspeicher 
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,80 +1,39 @@
-<table cellspacing="0" border="1">
-<tr>
-   <th align="left" valign="middle">Ressource</th>
-   <th align="left" valign="middle">Standardlimit</th>
-</tr>
-<tr>
-   <td valign="middle"><p>TB pro Speicherkonto</p></td>
-   <td valign="middle"><p>500&#160;TB</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximale Größe eines einzelnen Blob-Containers, einer Tabelle oder einer Warteschlange</p></td>
-   <td valign="middle"><p>500&#160;TB</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximale Anzahl an Blob-Containern, Blobs, Dateifreigaben, Tabellen, Warteschlangen, Entitäten oder Meldungen pro Speicherkonto</p></td>
-   <td valign="middle"><p>Die einzige Einschränkung besteht in der Speicherkontokapazität von 500&#160;TB.</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximale Größe einer Dateifreigabe</p></td>
-   <td valign="middle"><p>5&#160;TB</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximale Anzahl an Dateien in einer Dateifreigabe</p></td>
-   <td valign="middle"><p>Die einzige Einschränkung besteht in der Gesamtkapazität der Dateifreigabe von 5&#160;TB.</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximal 8 KB IOPS pro persistentem Laufwerk (virtueller Computer mit Basic-Tarif)</p></td>
-   <td valign="middle"><p>300<sup>1</sup></p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Maximal 8 KB IOPS pro persistentem Laufwerk (virtueller Computer mit Standard-Tarif)</p></td>
-   <td valign="middle"><p>500<sup>1</sup></p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Gesamtanfragerate (ausgehend von einer Objektgröße von 1&#160;KB) pro Speicherkonto</p></td>
-   <td valign="middle"><p>Bis zu 20.000 IOPS, Entitäten pro Sekunde oder Nachrichten pro Sekunde</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Zieldurchsatz bei Einzel-Blob</p></td>
-   <td valign="middle"><p>Bis zu 60&#160;MB pro Sekunde, oder bis zu 500 Anforderungen pro Sekunde</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Zieldurchsatz bei Einzelwarteschlange (Meldungen mit 1&#160;KB)</p></td>
-   <td valign="middle"><p>Bis zu 2000 Meldungen pro Sekunde</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Zieldurchsatz bei einzelner Tabellenpartition (Entitäten mit 1&#160;KB)</p></td>
-   <td valign="middle"><p>Bis zu 2000 Entitäten pro Sekunde</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Zieldurchsatz für eine einzelne Dateifreigabe (Vorschau)</p></td>
-   <td valign="middle"><p>Bis 60 MB pro Sekunde</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Max. Eingang<sup>2</sup> pro Speicherkonto (US-Regionen)</p></td>
-   <td valign="middle"><p>10 Gbps mit aktiviertem GRS<sup>3</sup>, 20 Gbps bei LRS</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Max. Ausgang<sup>2</sup> pro Speicherkonto (US-Regionen)</p></td>
-   <td valign="middle"><p>20&#160;Gbps mit aktiviertem GRS<sup>3</sup>, 30&#160;Gbps bei LRS</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Max. Eingang<sup>2</sup> pro Speicherkonto (Regionen Europa und Asien)</p></td>
-   <td valign="middle"><p>5&#160;Gbps mit aktiviertem GRS<sup>3</sup>, 10&#160;Gbps bei LRS</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Max. Ausgang<sup>2</sup> pro Speicherkonto (Regionen Europa und Asien)</p></td>
-   <td valign="middle"><p>10&#160;GBit/s mit aktiviertem GRS<sup>3</sup>, 15&#160;GBit/s bei LRS</p></td>
-</tr>
-</table>
+Ressource|Standardlimit
+---|---
+Max. Anzahl von Speicherkonten pro Abonnement|100<sup>1</sup>
+TB pro Speicherkonto|500 TB
+Maximale Größe eines einzelnen Blob-Containers, einer Tabelle oder einer Warteschlange|500 TB
+Max. Anzahl von Blöcken in einen Blockblob|50\.000
+Maximale Größe eines Blocks in einem Blockblob|4 MB
+Maximale Größe eines Blockblobs|50\.000 x 4 MB \(ca. 195 GB\) 
+Max. Größe eines Seitenblobs |1 TB
+Maximale Größe einer Tabellenentität|1 MB
+Max. Anzahl von Eigenschaften in einer Tabellenentität|252
+Maximale Größe einer Nachricht in einer Warteschlange|64 KB
+Maximale Größe einer Dateifreigabe|5 TB
+Maximale Größe einer Datei in einer Dateifreigabe|1 TB
+Maximale Anzahl an Dateien in einer Dateifreigabe|Die einzige Einschränkung besteht in der Gesamtkapazität der Dateifreigabe von 5 TB.
+Maximale Anzahl an Blob-Containern, Blobs, Dateifreigaben, Tabellen, Warteschlangen, Entitäten oder Meldungen pro Speicherkonto|Die einzige Einschränkung besteht in der Speicherkontokapazität von 500 TB.
+Maximal 8 KB IOPS pro persistentem Laufwerk \(virtueller Computer mit Basic-Tarif\)|300<sup>2</sup>
+Maximal 8 KB IOPS pro persistentem Laufwerk \(virtueller Computer mit Standard-Tarif\)|500<sup>2</sup>
+Gesamtanfragerate \(ausgehend von einer Objektgröße von 1 KB\) pro Speicherkonto|Bis zu 20.000 IOPS, Entitäten pro Sekunde oder Nachrichten pro Sekunde
+Zieldurchsatz bei Einzel-Blob|Bis zu 60 MB pro Sekunde, oder bis zu 500 Anforderungen pro Sekunde
+Zieldurchsatz bei Einzelwarteschlange \(Meldungen mit 1 KB\)|Bis zu 2000 Meldungen pro Sekunde
+Zieldurchsatz bei einzelner Tabellenpartition \(Entitäten mit 1 KB\)|Bis zu 2000 Entitäten pro Sekunde
+Zieldurchsatz für eine einzelne Dateifreigabe \(Vorschau\)|Bis 60 MB pro Sekunde
+Max. Eingang<sup>3</sup> pro Speicherkonto \(US-Regionen\)|10 GBit/s mit aktiviertem GRS/ZRS<sup>4</sup>, 20 GBit/s bei LRS
+Max. Ausgang<sup>3</sup> pro Speicherkonto \(US-Regionen\)|20 GBit/s mit aktiviertem GRS/ZRS<sup>4</sup>, 30 GBit/s bei LRS
+Max. Eingang<sup>3</sup> pro Speicherkonto \(Regionen Europa und Asien\)|5 GBit/s mit aktiviertem GRS/ZRS<sup>4</sup>, 10 GBit/s bei LRS
+Max. Ausgang<sup>3</sup> pro Speicherkonto \(Regionen Europa und Asien\)|10 GBit/s mit aktiviertem GRS/ZRS<sup>4</sup>, 15 GBit/s bei LRS
 
-<sup>1</sup>Die gesamte Anforderungsrate für ein Speicherkonto ist auf 20.000 IOPS beschränkt. Wenn ein virtueller Computer die maximalen IOPS pro Datenträger belegt, sollten Sie sicherstellen, dass die gesamten IOPS auf allen virtuellen Festplatten der virtuellen Computer die Beschränkung für das Speicherkonto (20.000 IOPS) nicht überschreiten, um eine Drosselung zu vermeiden.
+<sup>1</sup>Wenn Sie mehr als 100 Speicherkonten benötigen, wenden Sie sich an den [Azure-Support](http://azure.microsoft.com/support/faq/).
 
-Basierend auf der Begrenzung für Transaktionen können Sie die Anzahl der Datenträger mit hoher Auslastung, die in einem Speicherkonto unterstützt werden, grob berechnen. Im Basic-Tarif liegt die maximal zulässige Anzahl der Datenträger mit hoher Auslastung für einen virtuellen Computer beispielsweise bei 66 Datenträgern (20.000/300 IOPS pro Datenträger) und im Standard-Tarif bei ungefähr 40 Datenträgern (20.000/500 IOPS pro Datenträger). Beachten Sie jedoch, dass das Speicherkonto eine größere Anzahl von Datenträgern unterstützen kann, wenn nicht alle Datenträger gleichzeitig eine hohe Auslastung aufweisen.
+<sup>2</sup>Die gesamte Anforderungsrate für ein Speicherkonto ist auf 20.000 IOPS beschränkt. Wenn ein virtueller Computer die maximalen IOPS pro Datenträger belegt, sollten Sie sicherstellen, dass die gesamten IOPS auf allen virtuellen Festplatten der virtuellen Computer die Beschränkung für das Speicherkonto \(20.000 IOPS\) nicht überschreiten, um eine Drosselung zu vermeiden.
 
-<sup>2</sup>*Eingehend* bezieht sich auf alle Daten (Anforderungen), die an ein Speicherkonto gesendet werden. *Ausgehend* bezieht sich auf alle Daten (Antworten), die von einem Speicherkonto empfangen werden.
+Basierend auf der Begrenzung für Transaktionen können Sie die Anzahl der Datenträger mit hoher Auslastung, die in einem Speicherkonto unterstützt werden, grob berechnen. Im Basic-Tarif liegt die maximal zulässige Anzahl der Datenträger mit hoher Auslastung für einen virtuellen Computer beispielsweise bei 66 Datenträgern \(20.000/300 IOPS pro Datenträger\) und im Standard-Tarif bei ungefähr 40 Datenträgern \(20.000/500 IOPS pro Datenträger\). Beachten Sie jedoch, dass das Speicherkonto eine größere Anzahl von Datenträgern unterstützen kann, wenn nicht alle Datenträger gleichzeitig eine hohe Auslastung aufweisen.
 
-<sup>3</sup>GRS bezieht sich auf den georedundanten Speicher und LRS auf den lokal redundanten Speicher.
+<sup>3</sup>*Eingang* bezieht sich auf alle Daten \(Anforderungen\), die an ein Speicherkonto gesendet werden. *Ausgang* bezieht sich auf alle Daten \(Antworten\), die von einem Speicherkonto empfangen werden.
 
-<!---HONumber=August15_HO6-->
+<sup>4</sup>GRS bedeutet "Georedundanter Speicher". ZRS bedeutet "Zonenredundanter Speicher", der nur für Blockblobs zur Verfügung steht. LRS bedeutet "Lokal redundanter Speicher".
+
+<!---HONumber=August15_HO7-->

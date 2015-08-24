@@ -13,23 +13,25 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/15/2015" 
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
 
 
 #Erstellen von ContentKeys mit .NET
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
+> [AZURE.SELECTOR]
+- [REST](media-services-rest-create-contentkey.md)
+- [.NET](media-services-dotnet-create-contentkey.md)
 
 Media Services ermöglicht das Erstellen und Übermitteln verschlüsselter Medienobjekte. Ein **ContentKey** ermöglicht den sicheren Zugriff auf Ihre **Medienobjekte**.
 
-Beim Erstellen eines neuen Medienobjekts (z. B. vor dem [Hochladen von Dateien](media-services-dotnet-upload-files.md)) können Sie die folgenden Verschlüsselungsoptionen angeben: **StorageEncrypted**, **CommonEncryptionProtected** oder **EnvelopeEncryptionProtected**.
+Beim Erstellen eines neuen Medienobjekts \(z. B. vor dem [Hochladen von Dateien](media-services-dotnet-upload-files.md)\) können Sie die folgenden Verschlüsselungsoptionen angeben: **StorageEncrypted**, **CommonEncryptionProtected** oder **EnvelopeEncryptionProtected**.
 
 Wenn Sie Medienobjekte an Ihre Clients übermitteln, können Sie mithilfe einer der beiden folgenden Verschlüsselungen die [dynamische Verschlüsselung von Medienobjekten konfigurieren](media-services-dotnet-configure-asset-delivery-policy.md): **DynamicEnvelopeEncryption** oder **DynamicCommonEncryption**.
 
 Verschlüsselte Medienobjekte müssen **ContentKeys** zugeordnet werden. In diesem Artikel wird beschrieben, wie ein Inhaltsschlüssel erstellt wird.
 
->[AZURE.NOTE]Beim Erstellen eines neuen **StorageEncrypted**-Medienobjekts mithilfe des Media Services .NET SDKs wird der **ContentKey** automatisch erstellt und mit dem Medienobjekt verknüpft.
+>[AZURE.NOTE]Beim Erstellen eines neuen **StorageEncrypted**-Medienobjekts mithilfe des Media Services .NET SDK wird der **ContentKey** automatisch erstellt und mit dem Medienobjekt verknüpft.
 
 ##ContentKeyType
 
@@ -57,7 +59,7 @@ Einer der Werte, die Sie beim Erstellen eines Inhaltsschlüssels festlegen müss
         ConfigurationEncryption = 2,
     }
 
-##<a id="envelope_contentkey"></a>Erstellen eines ContentKey vom Typ "Umschlagverschlüsselung"
+##<a id="envelope_contentkey"></a>Erstellen eines "ContentKey" vom Typ "Umschlagverschlüsselung"
 
 Im folgenden Codeausschnitt wird ein Inhaltsschlüssel vom Typ „Umschlagverschlüsselung“ erstellt. Anschließend wird der Schlüssel dem angegebenen Medienobjekt zugeordnet.
 
@@ -95,7 +97,7 @@ Aufruf
 
 
 
-##<a id="common_contentkey"></a>Erstellen eines ContentKey vom Typ "Allgemeine Verschlüsselung"    
+##<a id="common_contentkey"></a>Erstellen eines "ContentKey" vom Typ "Allgemeine Verschlüsselung"    
 
 Im folgenden Codeausschnitt wird ein Inhaltsschlüssel vom Typ „Allgemeine Verschlüsselung“ erstellt. Anschließend wird der Schlüssel dem angegebenen Medienobjekt zugeordnet.
 
@@ -133,4 +135,4 @@ Aufruf
 
 	IContentKey key = CreateCommonTypeContentKey(encryptedsset); 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

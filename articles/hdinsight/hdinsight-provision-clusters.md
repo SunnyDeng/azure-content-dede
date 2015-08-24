@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="07/22/2015"
+   ms.date="08/10/2015"
    ms.author="jgao"/>
 
 #Bereitstellen von Hadoop-Clustern in HDInsight
@@ -43,14 +43,14 @@ Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
  
 - **Betriebssystem**
 
-	Sie können HDInsight-Cluster unter einem der folgenden beiden Betriebssysteme bereitstellen: – **HDInsight für Windows \(Windows Server 2012 R2 Datacenter\)**: – **HDInsight unter Linux \(Ubuntu 12.04 LTS für Linux\) \(Vorschau\)**: HDInsight bietet die Möglichkeit der Konfiguration von Linux-Clustern in Azure. Konfigurieren Sie einen Linux-Cluster, wenn Sie mit Linux oder Unix und der Migration von einer vorhandenen Linux-basierten Hadoop-Lösung vertraut sind, oder Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert sind. Weitere Informationen finden Sie unter [Erste Schritte mit Hadoop unter Linux in HDInsight](hdinsight-hadoop-linux-get-started.md).
+	Sie können HDInsight-Cluster unter einem der folgenden beiden Betriebssysteme bereitstellen: – **HDInsight für Windows (Windows Server 2012 R2 Datacenter)**: – **HDInsight unter Linux (Ubuntu 12.04 LTS für Linux) (Vorschau)**: HDInsight bietet die Möglichkeit der Konfiguration von Linux-Clustern in Azure. Konfigurieren Sie einen Linux-Cluster, wenn Sie mit Linux oder Unix und der Migration von einer vorhandenen Linux-basierten Hadoop-Lösung vertraut sind, oder Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert sind. Weitere Informationen finden Sie unter [Erste Schritte mit Hadoop unter Linux in HDInsight](hdinsight-hadoop-linux-get-started.md).
 
 
 - **HDInsight-Version**
 
 	Dient zum Ermitteln der Version von HDInsight, die für diesen Cluster verwendet werden soll. Weitere Informationen finden Sie unter [Hadoop-Clusterversionen und -komponenten in HDInsight](https://go.microsoft.com/fwLink/?LinkID=320896&clcid=0x409).
 
-- **Clustertyp** und **Clustergröße \(auch Datenknoten\)**
+- **Clustertyp** und **Clustergröße (auch Datenknoten)**
 
 	Mit HDInsight können Kunden verschiedene Clustertypen für unterschiedliche Datenanalyseworkloads bereitstellen. Aktuell angebotene Clustertypen sind:
 	
@@ -773,7 +773,7 @@ Erstellen Sie ein selbstsigniertes Zertifikat, installieren Sie es auf Ihrer Arb
 ##<a id="nextsteps"></a> Nächste Schritte
 In diesem Artikel haben Sie mehrere Möglichkeiten zu Bereitstellung von HDInsight-Clustern kennen gelernt. Weitere Informationen finden Sie in den folgenden Artikeln:
 
-* [Erste Schritte mit Azure HDInsight](../hdinsight-get-started.md) – Erfahren Sie, wie Sie die Arbeit mit Ihrem HDInsight-Cluster aufnehmen können.
+* [Erste Schritte mit Azure HDInsight](hdinsight-get-started.md) – Erfahren Sie, wie Sie die Arbeit mit Ihrem HDInsight-Cluster aufnehmen können.
 * [Verwenden von Sqoop mit HDInsight](hdinsight-use-sqoop.md) – Erfahren Sie, wie Sie Daten zwischen HDInsight und der SQL-Datenbank oder SQL Server kopieren können.
 * [Verwalten von HDInsight mit PowerShell](hdinsight-administer-use-powershell.md) – Erfahren Sie, wie Sie mit HDInsight unter Verwendung von Azure PowerShell arbeiten können.
 * [Programmgesteuerte Übermittlung von Hadoop-Jobs](hdinsight-submit-hadoop-jobs-programmatically.md) – Erfahren Sie, wie Sie Aufträge programmgesteuert an HDInsight übermitteln können.
@@ -783,4 +783,4 @@ In diesem Artikel haben Sie mehrere Möglichkeiten zu Bereitstellung von HDInsig
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/library/dn479185.aspx
 [azure-management-portal]: https://manage.windowsazure.com
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

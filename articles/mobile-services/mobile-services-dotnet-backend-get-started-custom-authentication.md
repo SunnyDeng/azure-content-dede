@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit der benutzerdefinierten Authentifizierung | Mobile Dev Center" 
+	pageTitle="Erste Schritte mit der benutzerdefinierten Authentifizierung | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Benutzer mit einem Benutzernamen und einem Kennwort authentifizieren." 
 	documentationCenter="Mobile" 
 	authors="mattchenderson" 
@@ -420,4 +420,4 @@ Damit ist dieses Lernprogramm abgeschlossen.
 [ProviderCredentials]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

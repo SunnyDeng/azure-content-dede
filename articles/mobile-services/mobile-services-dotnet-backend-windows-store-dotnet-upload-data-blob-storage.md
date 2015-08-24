@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Mobile Services zum Hochladen von Daten in Blobspeicher (Windows Store) | Mobile Services" 
+	pageTitle="Verwenden von Mobile Services zum Hochladen von Bildern in Blobspeicher (Windows Store) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Mobile Services zum Hochladen von Bildern in den Azure-Blobspeicher verwenden." 
 	documentationCenter="windows" 
 	authors="ggailey777" 
@@ -81,4 +81,4 @@ Als Nächstes aktualisieren Sie die Schnellstart-App zum Aufnehmen und Hochladen
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

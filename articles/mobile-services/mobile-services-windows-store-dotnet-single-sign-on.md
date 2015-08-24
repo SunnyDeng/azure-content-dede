@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/08/2015" 
+	ms.date="08/08/2015" 
 	ms.author="glenga"/>
 
 # Authentifizieren Ihrer Windows Store-App mit auf dem Client verwalteter Authentifizierung mit Microsoft-Konto
@@ -163,4 +163,4 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Live SDK]: http://go.microsoft.com/fwlink/p/?LinkId=262253
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

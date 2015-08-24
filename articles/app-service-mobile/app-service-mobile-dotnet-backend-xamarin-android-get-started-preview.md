@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Mobile Apps für Xamarin Android-Apps – Azure Mobile App"
+	pageTitle="Erste Schritte mit Azure Mobile Apps für Xamarin Android-Apps – Microsoft Azure"
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Apps für die Xamarin Android-Entwicklung."
 	services="app-service\mobile"
 	documentationCenter="xamarin"
@@ -84,15 +84,15 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 2. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App zu starten. Sie werden zur Auswahl eines Emulators oder eines angeschlossenen USB-Geräts aufgefordert.
 
-	> [AZURE.NOTE]Sie müssen mindestens ein Android Virtual Device (AVD) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
+	> [AZURE.NOTE]Sie müssen mindestens ein Android Virtual Device \(AVD\) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
 
-3. Geben Sie in der App einen sinnvollen Text, wie z. B. _Tutorial fertigstellen_ ein, und klicken Sie dann auf das Plus-Symbol (**+**).
+3. Geben Sie in der App einen sinnvollen Text, wie z. B. _Tutorial fertigstellen_ ein, und klicken Sie dann auf das Plus-Symbol \(**+**\).
 
 	![][10]
 
 	Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden vom mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
 
-	> [AZURE.NOTE]Sie können den Code überprüfen, der zum Abfragen und Einfügen von Daten auf das mobile App-Back-End zugreift. Der Code befindet sich in der C#-Datei "ToDoActivity.cs".
+	> [AZURE.NOTE]Sie können den Code überprüfen, der zum Abfragen und Einfügen von Daten auf das mobile App-Back-End zugreift. Der Code befindet sich in der C\#-Datei "ToDoActivity.cs".
 
 
 
@@ -110,4 +110,4 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 [Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

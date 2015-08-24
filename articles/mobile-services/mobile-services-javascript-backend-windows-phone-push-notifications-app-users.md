@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer der Windows Phone Silverlight-App | Azure Mobile Services" 
+	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer der Windows Phone Silverlight-App | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mit Azure Mobile Services Pushbenachrichtigungen an bestimmte Benutzer Ihrer Windows Phone Silverlight-App senden können." 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
@@ -94,4 +94,4 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

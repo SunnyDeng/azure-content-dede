@@ -7,16 +7,14 @@
 	manager="dwrede" 
 	editor=""/>
 
-
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/23/2015" 
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
-
 
 
 
@@ -43,7 +41,7 @@ Wenn Sie für Ihr Medienobjekt eine Verschlüsselung unter Verwendung der **Comm
 
 Wenn Sie für Ihr Medienobjekt eine Verschlüsselung mit einer **StorageEncrypted**-Option angeben, wird vom Media Services SDK für .NET ein **StorateEncrypted** **ContentKey** für Ihr Medienobjekt erstellt.
 
->[AZURE.NOTE]Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den Wert der IAssetFile.Name-Eigenschaft (z. B. http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.). Aus diesem Grund ist die Prozentcodierung nicht zulässig. Der Wert der **Name**-Eigenschaft darf keines der folgenden [für die Prozentcodierung reservierten Zeichen enthalten](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !\*'();:@&=+$,/?%#". Darüber hinaus wird für die Dateinamenerweiterung nur ein Punkt (.) unterstützt.
+>[AZURE.NOTE]Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den Wert der IAssetFile.Name-Eigenschaft (z. B. http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.). Aus diesem Grund ist die Prozentcodierung nicht zulässig. Der Wert der **Name**-Eigenschaft darf keines der folgenden [für die Prozentcodierung reservierten Zeichen enthalten](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#". Darüber hinaus wird für die Dateinamenerweiterung nur ein Punkt (.) unterstützt.
 
 In diesem Thema wird beschrieben, wie Sie mit dem Media Services .NET SDK und den Media Services .NET SDK-Erweiterungen Dateien in ein Media Services-Medienobjekt hochladen.
 
@@ -307,4 +305,4 @@ Sie haben nun ein Medienobjekt in den Mediendienst hochgeladen und können mit d
 [Abrufen eines Medienprozessors]: media-services-get-media-processor.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

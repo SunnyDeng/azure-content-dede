@@ -6,16 +6,14 @@
    authors="alkohli"
    manager="carolz"
    editor="" />
-
 <tags 
    ms.service="storsimple"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/05/2015"
+   ms.date="08/12/2015"
    ms.author="alkohli" />
-
 
 # Ersetzen des Controllermoduls auf dem StorSimple-Gerät
 
@@ -85,7 +83,7 @@ Führen Sie folgende Schritte aus, wenn einer der Controller in Ihrem Microsoft 
 
 3. Verwenden Sie Abbildung 1 und die folgende Tabelle zum Feststellen des fehlerhaften Controllermoduls.
 
-    ![Rückwand des Geräts – primäre Gehäusemodule](./media/storsimple-controller-replacement/IC740994.png)
+    ![Rückwand des Geräts – Module für primäre Gehäuse](./media/storsimple-controller-replacement/IC740994.png)
 
     **Abbildung 1:** Rückseite des StorSimple-Geräts
 
@@ -254,7 +252,7 @@ Suchen Sie zum Identifizieren des aktiven Controllers in Ihrem Gerät die blaue 
 
 Wenn diese LED blinkt, ist der Controller aktiv, und der andere Controller befindet sich im Standbymodus. Verwenden Sie das folgende Diagramm und die Tabelle als Hilfsmittel.
 
-![Primäre Gehäuserückwand des Geräts mit Datenanschlüssen](./media/storsimple-controller-replacement/IC741055.png)
+![Gehäuserückwand des primären Geräts mit Datenanschlüssen](./media/storsimple-controller-replacement/IC741055.png)
 
 **Abbildung 8:** Rückseite des primären Gehäuses mit Datenanschlüssen und Überwachungs-LEDs
 
@@ -268,4 +266,4 @@ Wenn diese LED blinkt, ist der Controller aktiv, und der andere Controller befin
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

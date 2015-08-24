@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Mobile Services zum Hochladen von Daten in Blob-Speicher (Windows Store) | Mobile Services" 
+	pageTitle="Verwenden von Mobile Services zum Hochladen von Bildern in Blobspeicher (Windows Store) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mithilfe von Mobile Services Bilder in den Azure-Blobspeicher hochladen und von Ihrer Windows Store-App auf die Bilder zugreifen." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -103,4 +103,4 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 [App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

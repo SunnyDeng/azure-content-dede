@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Introducing DocumentDB - Eine NoSQL-Datenbank für Microsoft Azure | Azure" 
+	pageTitle="Einführung in DocumentDB - Eine NoSQL-Datenbank für Microsoft Azure | Microsoft Azure" 
 	description="Laden Sie ein Whitepaper von David Chappell zu DocumentDB herunter, einer verwalteten NoSQL-Datenbank in Azure." 
 	services="documentdb" 
 	documentationCenter="" 
@@ -24,11 +24,11 @@ Dieses Whitepaper führt Sie auch durch die folgenden Aspekte:
 
  - Verwenden des DocumentDB-Datenmodells, um JSON-Daten in Dokumente und Auflistungen innerhalb einer Datenbank zu speichern. 
  - Arbeiten mit Ihren Daten mithilfe von Clientbibliotheken, der RESTful-Zugriffsmethoden oder DocumentDB-SQL. 
- - Ausführen von Logik von der Datenbank durch Schreiben von gespeicherten Prozeduren (gespeicherte Prozeduren), Triggern oder benutzerdefinierten Funktionen (UDFs) und deren Speicherung in der Auflistung.
+ - Ausführen von Logik von der Datenbank durch Schreiben von gespeicherten Prozeduren \(gespeicherte Prozeduren\), Triggern oder benutzerdefinierten Funktionen \(UDFs\) und deren Speicherung in der Auflistung.
  - Auswählen einer Konsistenz-Option, um die Zuverlässigkeits- und Leistungsanforderungen Ihrer Anwendung zu erfüllen.
  - Auswählen einer Preisoption entsprechend Ihrer Durchsatzanforderungen.
 
 **Herunterladen von PDF-Dateien:** [ Introducing DocumentDB - Eine NoSQL-Datenbank für Microsoft Azure](http://go.microsoft.com/fwlink/?LinkId=511318)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

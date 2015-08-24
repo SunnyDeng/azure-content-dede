@@ -1,30 +1,30 @@
-<properties 
-	pageTitle="Rechenintensive Java-Anwendung auf einem virtuellen Computer – Azure" 
-	description="Erfahren Sie, wie Sie einen virtuellen Azure-Computer erstellen können, der eine rechenintensive Java-Anwendung ausführt, die durch eine andere Java-Anwendung überwacht werden kann." 
-	services="virtual-machines" 
-	documentationCenter="java" 
-	authors="rmcmurray" 
-	manager="wpickett" 
+<properties
+	pageTitle="Rechenintensive Java-Anwendung auf einem virtuellen Computer | Microsoft Azure"
+	description="Erfahren Sie, wie Sie einen virtuellen Azure-Computer erstellen können, der eine rechenintensive Java-Anwendung ausführt, die durch eine andere Java-Anwendung überwacht werden kann."
+	services="virtual-machines"
+	documentationCenter="java"
+	authors="rmcmurray"
+	manager="wpickett"
 	editor="jimbe"/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-windows" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="06/03/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="06/03/2015"
 	ms.author="robmcm"/>
 
 # Gewusst wie: Ausführen einer rechenintensiven Aufgabe in Java auf einem virtuellen Computer
 
-Mit Azure können Sie einen virtuellen Computer zum Verarbeiten rechenintensiver Aufgaben verwenden. Ein virtueller Computer kann beispielsweise Aufgaben verarbeiten und Clientcomputern oder mobilen Anwendungen Ergebnisse bereitstellen. Nach Abschluss dieses Leitfadens wissen Sie, wie ein virtueller Computer erstellt wird, der eine rechenintensive Java-Anwendung ausführt, die durch eine andere Java-Anwendung überwacht werden kann.
+Mit Azure können Sie einen virtuellen Computer zum Verarbeiten rechenintensiver Aufgaben verwenden. Ein virtueller Computer kann beispielsweise Aufgaben verarbeiten und Clientcomputern oder mobilen Anwendungen Ergebnisse bereitstellen. Nach dem Lesen dieses Artikels wissen Sie, wie ein virtueller Computer erstellt wird, der eine rechenintensive Java-Anwendung ausführt, die durch eine andere Java-Anwendung überwacht werden kann.
 
-Dieses Lernprogramm setzt voraus, dass Sie wissen, wie Java-Konsolenanwendungen erstellt, Bibliotheken in Ihre Java-Anwendung importiert und Java-Archive (JAR) erzeugt werden. Wissen über Azure ist keine Voraussetzung.
+Dieses Tutorial setzt voraus, dass Sie wissen, wie Java-Konsolenanwendungen erstellt werden, und dass Sie Bibliotheken in Ihre Java-Anwendung importieren und Java-Archive (JAR) generieren können. Kenntnisse zu Microsoft Azure werden nicht vorausgesetzt.
 
 Sie erhalten Informationen zu folgenden Themen:
 
-* Erstellen eines virtuellen Computers mit bereits installiertem JDK
+* Erstellen eines virtuellen Computers, auf dem bereits ein Java Development Kit (JDK) installiert ist
 * Remoteanmeldung an Ihrem virtuellen Computer
 * Erstellen eines Service Bus-Namespace
 * Erstellen einer Java-Anwendung, die eine rechenintensive Aufgabe ausführt
@@ -32,11 +32,11 @@ Sie erhalten Informationen zu folgenden Themen:
 * Ausführen der Java-Anwendungen
 * Anhalten der Java-Anwendungen
 
-Dieses Lernprogramm verwendet das "Traveling Salesman"-Problem für die rechenintensive Aufgabe. Es folgt ein Beispiel der Java-Anwendung, in der die rechenintensive Aufgabe ausgeführt wird:
+Dieses Lernprogramm verwendet das "Traveling Salesman"-Problem für die rechenintensive Aufgabe. Es folgt ein Beispiel für die Java-Anwendung, in der die rechenintensive Aufgabe ausgeführt wird.
 
 !["Traveling Salesman"-Problemlösung][solver_output]
 
-Es folgt ein Beispiel der Java-Anwendung, die die rechenintensive Aufgabe überwacht:
+Es folgt ein Beispiel für die Java-Anwendung, die die rechenintensive Aufgabe überwacht.
 
 !["Traveling Salesman"-Problemclient][client_output]
 
@@ -54,7 +54,7 @@ Es folgt ein Beispiel der Java-Anwendung, die die rechenintensive Aufgabe überw
     3. Geben Sie im Feld **Benutzername** einen Namen für den Administrator ein. Merken Sie sich diesen Namen und das als nächstes eingegebene Kennwort. Sie benötigen diese Daten, wenn Sie sich von einem Remotestandort aus an dem virtuellen Computer anmelden.
     4. Geben Sie ein Kennwort in das Feld **Neues Kennwort** ein, und geben Sie das Kennwort dann erneut in das Feld **Kennwort bestätigen** ein. Dies ist das Kennwort für das Administratorkonto.
     5. Klicken Sie auf **Weiter**.
-5. Gehen Sie im folgenden Dialogfeld **Konfiguration des virtuellen Computers** wie folgt vor:
+5. Gehen Sie im nächsten Dialogfeld **Konfiguration des virtuellen Computers** wie folgt vor:
     1. Verwenden Sie für den **Cloud-Dienst** die Standardeinstellung **Neuen Cloud-Dienst erstellen**.
     2. Der Wert für **DNS-Name des Cloud-Diensts** muss auf cloudapp.net eindeutig sein. Ändern Sie wenn nötig diesen Wert, sodass Azure angibt, dass er eindeutig ist.
     2. Geben Sie eine Region, eine Affinitätsgruppe oder ein virtuelles Netzwerk an. Geben Sie für dieses Lernprogramm als Region **West-USA** an.
@@ -73,7 +73,7 @@ Es folgt ein Beispiel der Java-Anwendung, die die rechenintensive Aufgabe überw
 4. Klicken Sie auf **Verbinden**.
 5. Befolgen Sie die Anweisungen, um eine Verbindung mit dem virtuellen Computer herzustellen. Wenn Sie zur Eingabe des Administratornamens und des Kennworts aufgefordert werden, verwenden Sie die Werte, die Sie beim Erstellen des virtuellen Computers bereitgestellt haben.
 
-Beachten Sie, dass die Azure Service Bus-Funktion erfordert, dass das Baltimore CyberTrust-Stammzertifikat als Teil des JRE-**cacerts**-Stores installiert wird. Dieses Zertifikat ist automatisch in der in diesem Lernprogramm verwendeten JRE enthalten. Falls Sie dieses Zertifikat nicht in Ihrem JRE-**cacerts**-Store haben, finden Sie Informationen zum Hinzufügen (und zum Anzeigen der Zertifikate in Ihrem cacerts-Store) unter [Hinzufügen eines Zertifikats zum Java CA-Zertifikatspeicher][add_ca_cert].
+Beachten Sie, dass die Azure Service Bus-Funktion erfordert, dass das Baltimore CyberTrust-Stammzertifikat als Teil des JRE-**cacerts**-Stores installiert wird. Dieses Zertifikat ist automatisch in der in diesem Lernprogramm verwendeten JRE (Java Runtime Environment) enthalten. Falls Sie dieses Zertifikat nicht in Ihrem JRE-**cacerts**-Store haben, finden Sie Informationen zum Hinzufügen (und zum Anzeigen der Zertifikate in Ihrem cacerts-Store) unter [Hinzufügen eines Zertifikats zum Java CA-Zertifikatspeicher][add_ca_cert].
 
 ## Erstellen eines Service Bus-Namespace
 
@@ -82,33 +82,33 @@ Um Service Bus-Warteschlangen in Azure zu verwenden, müssen Sie zunächst einen
 So erstellen Sie einen Dienstnamespace
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com) an.
-2.  Klicken Sie unten links im Navigationsbereich auf **Service Bus, Zugriffssteuerung & Caching**.
+2.  Klicken Sie unten links im Navigationsbereich des Verwaltungsportals auf **Service Bus, Zugriffssteuerung und Cache**.
 3.  Klicken Sie im Verwaltungsportal links oben auf den Knoten **Service Bus** und dann auf die Schaltfläche **Neu**. ![Screenshot des Service Bus-Knotens][svc_bus_node]
 4.  Geben Sie im Dialogfeld zum Erstellen eines neuen Dienstnamespace einen **Namespace** ein, und klicken Sie dann auf die Schaltfläche **Verfügbarkeit prüfen**, um sicherzustellen, dass er eindeutig ist. ![Screenshot des Erstellens eines neuen Namespace][create_namespace]
 5.  Nachdem Sie sichergestellt haben, dass der Namespace verfügbar ist, wählen Sie das Land oder die Region aus, in dem bzw. der Ihr Namespace gehostet werden soll, und klicken Sie dann auf die Schaltfläche **Create Namespace**.  
-      
+
     Der erstellte Namespace wird dann im Verwaltungsportal angezeigt und nach einem Moment aktiviert. Warten Sie, bis **Active** als Status angezeigt wird, bevor Sie mit dem nächsten Schritt fortfahren.
 
-## Abrufen der Standard-Anmeldeinformationen für den Namespace
+## Abrufen der Standard-Anmeldeinformationen für die Namespaceverwaltung
 
 Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Erstellen einer Warteschlange, müssen Sie die Verwaltungsanmeldeinformationen für den Namespace abrufen.
 
-1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste verfügbarer Namespaces anzuzeigen: ![Screenshot der verfügbaren Namespaces][avail_namespaces]
-2.  Wählen Sie in der angezeigten Liste den Namespace, den Sie gerade erstellt haben: ![Screenshot der Namespaceliste][namespace_list]
-3.  Im Bereich **Eigenschaften** auf der rechten Seite werden die Eigenschaften des neuen Namespace aufgelistet: ![Screenshot des Eigenschaftenbereichs][properties_pane]
-4.  Der **Standardschlüssel** ist ausgeblendet. Klicken Sie auf die Schaltfläche **Anzeigen**, um die Sicherheitsanmeldeinformationen anzuzeigen: ![Screenshot des Standardschlüssels][default_key]
-5.  Notieren Sie sich den **Standardaussteller** und den **Standardschlüssel**, da Sie diese Informationen weiter unten zum Durchführen von Vorgängen mit dem Namespace verwenden werden. 
+1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste der verfügbaren Namespaces anzuzeigen. ![Screenshot der verfügbaren Namespaces][avail_namespaces]
+2.  Wählen Sie in der angezeigten Liste den Namespace, den Sie gerade erstellt haben. ![Screenshot der Namespaceliste][namespace_list]
+3.  Im Bereich **Eigenschaften** auf der rechten Seite werden die Eigenschaften des neuen Namespace aufgelistet. ![Screenshot des Eigenschaftenbereichs][properties_pane]
+4.  Der **Standardschlüssel** ist ausgeblendet. Klicken Sie auf die Schaltfläche **Anzeigen**, um die Sicherheitsanmeldeinformationen anzuzeigen. ![Screenshot des Standardschlüssels][default_key]
+5.  Notieren Sie sich den **Standardaussteller** und den **Standardschlüssel**, da Sie diese Informationen weiter unten zum Durchführen von Vorgängen mit dem Namespace verwenden werden.
 
 ## Erstellen einer Java-Anwendung für die Ausführung einer rechenintensiven Aufgabe
 
 1. Laden Sie auf dem Entwicklungscomputer (der nicht mit dem erstellten virtuellen Computer identisch sein muss) das [Azure-SDK für Java](http://azure.microsoft.com/develop/java/) herunter.
-2. Erstellen Sie eine Java-Konsolenanwendung mithilfe des Beispielcodes am Ende dieses Abschnitts. In diesem Lernprogramm wird **TSPSolver.java** als Java-Dateiname verwendet. Ändern Sie die Platzhalter **your\_service\_bus\_namespace**, **your\_service\_bus\_owner** und **your\_service\_bus\_key** so, dass Ihre Service Bus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwendet werden.
-3. Exportieren Sie die Anwendung nach der Programmierung in ein ausführbares Java-Archiv (JAR), und packen Sie die erforderlichen Bibliotheken in die erzeugte JAR-Datei. In diesem Lernprogramm wird **TSPSolver.jar** als Name der erzeugten JAR-Datei verwendet.
+2. Erstellen Sie eine Java-Konsolenanwendung mithilfe des Beispielcodes am Ende dieses Abschnitts. In diesem Tutorial wird **TSPSolver.java** als Java-Dateiname verwendet. Ändern Sie die Platzhalter **your\_service\_bus\_namespace**, **your\_service\_bus\_owner** und **your\_service\_bus\_key** so, dass Ihre Service Bus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwendet werden.
+3. Exportieren Sie die Anwendung nach der Programmierung in ein ausführbares Java-Archiv (JAR), und packen Sie die erforderlichen Bibliotheken in die erzeugte JAR-Datei. In diesem Tutorial wird **TSPSolver.jar** als Name der erzeugten JAR-Datei verwendet.
 
 <p/>
 
 	// TSPSolver.java
-	
+
 	import com.microsoft.windowsazure.services.core.Configuration;
 	import com.microsoft.windowsazure.services.core.ServiceException;
 	import com.microsoft.windowsazure.services.serviceBus.*;
@@ -119,20 +119,20 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 	import java.util.ArrayList;
 	import java.util.Date;
 	import java.util.List;
-	
+
 	public class TSPSolver {
-	
+
 	    //  Value specifying how often to provide an update to the console.
 	    private static long loopCheck = 100000000;  
-	
+
 	    private static long nTimes = 0, nLoops=0;
-	
+
 	    private static double[][] distances;
 	    private static String[] cityNames;
 	    private static int[] bestOrder;
 	    private static double minDistance;
 	    private static ServiceBusContract service;
-	
+
 	    private static void buildDistances(String fileLocation, int numCities) throws Exception{
 	        try{
 	            BufferedReader file = new BufferedReader(new InputStreamReader(new DataInputStream(new FileInputStream(new File(fileLocation)))));
@@ -141,7 +141,7 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 	                String[] line = file.readLine().split(", ");
 	                cityNames[i] = line[0];
 	                cityLocs[i][0] = Double.parseDouble(line[1]);
-	                cityLocs[i][1] = Double.parseDouble(line[2]);               
+	                cityLocs[i][1] = Double.parseDouble(line[2]);
 	            }
 	            for (int i = 0; i<numCities; i++){
 	                for (int j = i; j<numCities; j++){
@@ -153,9 +153,9 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 	            throw e;
 	        }
 	    }
-	
+
 	    private static void permutation(List<Integer> startCities, double distSoFar, List<Integer> restCities) throws Exception {
-	
+
 	        try
 	        {
 	            nTimes++;
@@ -168,7 +168,7 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 	                System.out.print("Current time is " + dateFormat.format(date) + ". ");
 	                System.out.println(  "Completed " + nLoops + " iterations of size of " + loopCheck + ".");
 	            }
-	    
+
 	            if ((restCities.size() == 1) && ((minDistance == -1) || (distSoFar + distances[restCities.get(0)][startCities.get(0)] + distances[restCities.get(0)][startCities.get(startCities.size()-1)] < minDistance))){
 	                startCities.add(restCities.get(0));
 	                newBestDistance(startCities, distSoFar + distances[restCities.get(0)][startCities.get(0)] + distances[restCities.get(0)][startCities.get(startCities.size()-2)]);
@@ -189,9 +189,9 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 	            throw e;
 	        }
 	    }
-	
+
 	    private static void newBestDistance(List<Integer> cities, double distance) throws ServiceException, Exception {
-	        try 
+	        try
 	        {
 		        minDistance = distance;
 		        String cityList = "Shortest distance is "+minDistance+", with route: ";
@@ -203,61 +203,61 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 		        }
 		        System.out.println(cityList);
 	            service.sendQueueMessage("TSPQueue", new BrokeredMessage(cityList));
-	        } 
-	        catch (ServiceException se) 
+	        }
+	        catch (ServiceException se)
 	        {
 	            throw se;
 	        }
-	        catch (Exception e) 
+	        catch (Exception e)
 	        {
 	            throw e;
 	        }
 	    }
-	
+
 	    public static void main(String args[]){
-	
+
 	        try {
-	
+
 	            Configuration config = ServiceBusConfiguration.configureWithWrapAuthentication(
 	                    "your_service_bus_namespace", "your_service_bus_owner",
                         "your_service_bus_key",
                         ".servicebus.windows.net",
                         "-sb.accesscontrol.windows.net/WRAPv0.9");
-	
+
 	            service = ServiceBusService.create(config);
-	
-	            int numCities = 10;  // Use as the default, if no value is specified at command line. 
-	            if (args.length != 0) 
+
+	            int numCities = 10;  // Use as the default, if no value is specified at command line.
+	            if (args.length != 0)
 	            {
 	                if (args[0].toLowerCase().compareTo("createqueue")==0)
 	                {
 	                    // No processing to occur other than creating the queue.
 	                    QueueInfo queueInfo = new QueueInfo("TSPQueue");
-	
+
 	                    service.createQueue(queueInfo);
-	
+
 	                    System.out.println("Queue named TSPQueue was created.");
-	
+
 	                    System.exit(0);
 	                }
-	
+
 	                if (args[0].toLowerCase().compareTo("deletequeue")==0)
 	                {
 	                    // No processing to occur other than deleting the queue.
 	                    service.deleteQueue("TSPQueue");
-	
+
 	                    System.out.println("Queue named TSPQueue was deleted.");
-	
+
 	                    System.exit(0);
 	                }
-	
+
 	                // Neither creating or deleting a queue.
 	                // Assume the value passed in is the number of cities to solve.
 	                numCities = Integer.valueOf(args[0]);  
 	            }
-	
+
 	            System.out.println("Running for " + numCities + " cities.");
-	
+
 	            List<Integer> startCities = new ArrayList<Integer>();
 	            List<Integer> restCities = new ArrayList<Integer>();
 	            startCities.add(0);
@@ -271,98 +271,98 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 	            permutation(startCities, 0, restCities);
 	            System.out.println("Final solution found!");
 	            service.sendQueueMessage("TSPQueue", new BrokeredMessage("Complete"));
-	        } 
-	        catch (ServiceException se) 
+	        }
+	        catch (ServiceException se)
 	        {
 	            System.out.println(se.getMessage());
 	            se.printStackTrace();
 	            System.exit(-1);
-	        }        
-	        catch (Exception e) 
+	        }
+	        catch (Exception e)
 	        {
 	            System.out.println(e.getMessage());
 	            e.printStackTrace();
 	            System.exit(-1);
 	        }
 	    }
-	
+
 	}
 
 
 
 ## Erstellen einer Java-Anwendung zum Überwachen des Fortschritts der rechenintensiven Aufgabe
 
-1. Erstellen Sie auf dem Entwicklungscomputer eine Java-Konsolenanwendung mithilfe des Beispielcodes am Ende dieses Abschnitts. In diesem Lernprogramm wird **TSPClient.java** als Java-Dateiname verwendet. Ändern Sie wie oben die Platzhalter **your\_service\_bus\_namespace**, **your\_service\_bus\_owner** und **your\_service\_bus\_key** so, dass Ihre Service Bus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwendet werden.
-2. Exportieren Sie die Anwendung in ein ausführbares Java-Archiv (JAR), und packen Sie die erforderlichen Bibliotheken in die erzeugte JAR-Datei. In diesem Lernprogramm wird **TSPClient.jar** als Name der erzeugten JAR-Datei verwendet.
+1. Erstellen Sie auf dem Entwicklungscomputer eine Java-Konsolenanwendung mithilfe des Beispielcodes am Ende dieses Abschnitts. In diesem Tutorial wird **TSPClient.java** als Java-Dateiname verwendet. Ändern Sie wie zuvor gezeigt die Platzhalter **your\_service\_bus\_namespace**, **your\_service\_bus\_owner** und **your\_service\_bus\_key** so, dass Ihre Service Bus-Werte für **Namespace**, **Standardaussteller** und **Standardschlüssel** verwendet werden.
+2. Exportieren Sie die Anwendung in ein ausführbares Java-Archiv (JAR), und packen Sie die erforderlichen Bibliotheken in die erzeugte JAR-Datei. In diesem Tutorial wird **TSPClient.jar** als Name der erzeugten JAR-Datei verwendet.
 
 <p/>
 
 	// TSPClient.java
-	
+
 	import java.util.Date;
 	import java.text.DateFormat;
 	import java.text.SimpleDateFormat;
 	import com.microsoft.windowsazure.services.serviceBus.*;
 	import com.microsoft.windowsazure.services.serviceBus.models.*;
 	import com.microsoft.windowsazure.services.core.*;
-	
-	public class TSPClient 
+
+	public class TSPClient
 	{
-	
-	    public static void main(String[] args) 
+
+	    public static void main(String[] args)
 	    {
 	            try
 	            {
-	
+
 	                DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 	                Date date = new Date();
 	                System.out.println("Starting at " + dateFormat.format(date) + ".");
-	
+
 	                String namespace = "your_service_bus_namespace";
 	                String issuer = "your_service_bus_owner";
 	                String key = "your_service_bus_key";
-	
+
 	                Configuration config;
 	                config = ServiceBusConfiguration.configureWithWrapAuthentication(
 	                        namespace, issuer, key,
                             ".servicebus.windows.net",
                             "-sb.accesscontrol.windows.net/WRAPv0.9");
-	
+
 	                ServiceBusContract service = ServiceBusService.create(config);
-	
+
 	                BrokeredMessage message;
-	
-	                int waitMinutes = 3;  // Use as the default, if no value is specified at command line. 
-	                if (args.length != 0) 
+
+	                int waitMinutes = 3;  // Use as the default, if no value is specified at command line.
+	                if (args.length != 0)
 	                {
 	                    waitMinutes = Integer.valueOf(args[0]);  
 	                }
-	
+
 	                String waitString;
-	
-	                waitString = (waitMinutes == 1) ? "minute." : waitMinutes + " minutes."; 
-	
+
+	                waitString = (waitMinutes == 1) ? "minute." : waitMinutes + " minutes.";
+
 	                // This queue must have previously been created.
 	                service.getQueue("TSPQueue");
-	
+
 	                int numRead;
-	
+
 	                String s = null;
-	
+
 	                while (true)
 	                {
-	
+
 	                    ReceiveQueueMessageResult resultQM = service.receiveQueueMessage("TSPQueue");
 	                    message = resultQM.getValue();
-	
+
 	                    if (null != message && null != message.getMessageId())
-	                    {                        
-	
+	                    {
+
 	                        // Display the queue message.
 	                        byte[] b = new byte[200];
-	
+
 	                        System.out.print("From queue: ");
-	
+
 	                        s = null;
 	                        numRead = message.getBody().read(b);
 	                        while (-1 != numRead)
@@ -387,8 +387,8 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 	                        System.out.println("Queue is empty. Sleeping for another " + waitString);
 	                        Thread.sleep(60000 * waitMinutes);
 	                    }
-	                } 
-	
+	                }
+
 	        }
 	        catch (ServiceException se)
 	        {
@@ -402,15 +402,15 @@ Um Verwaltungsvorgänge im neuen Namespace auszuführen, wie zum Beispiel das Er
 	            e.printStackTrace();
 	            System.exit(-1);
 	        }
-	
+
 	    }
-	    
+
 	}
- 
+
 ## Ausführen der Java-Anwendungen
 Führen Sie die rechenintensive Anwendung aus, zunächst um die Warteschlage zu erstellen, dann um das "Traveling Salesman"-Problem zu lösen. Dadurch wird die aktuelle beste Route zur Service Bus-Warteschlange hinzugefügt. Während die rechenintensive Anwendung ausgeführt wird (oder danach), führen Sie den Client aus, um Ergebnisse aus der Service Bus-Warteschlange anzuzeigen.
 
-### Ausführen der rechenintensiven Anwendung
+### So führen Sie die rechenintensive Anwendung aus
 
 1. Melden Sie sich am virtuellen Computer an.
 2. Erstellen Sie einen Ordner, in dem die Anwendung ausgeführt wird. Zum Beispiel **c:\\TSP**.
@@ -467,7 +467,7 @@ Führen Sie die rechenintensive Anwendung aus, zunächst um die Warteschlage zu 
 		City_48, 363.68, 768.21
 		City_49, -120.3, -463.13
 		City_50, 588.51, 679.33
-	
+
 5. Wechseln Sie an einer Eingabeaufforderung zum Verzeichnis "c:\\TSP".
 6. Stellen Sie sicher, dass sich der Ordner "bin" der JRE in der PATH-Umgebungsvariable befindet.
 7. Sie müssen die Service Bus-Warteschlange erstellen, bevor Sie die TSP-Solver-Permutationen ausführen. Führen Sie den folgenden Befehl aus, um die Service Bus-Warteschlange zu erstellen:
@@ -481,7 +481,7 @@ Führen Sie die rechenintensive Anwendung aus, zunächst um die Warteschlage zu 
  Falls Sie keine Zahl angeben, wird er für zehn Städte ausgeführt. Wenn der Solver aktuelle kürzeste Routen findet, fügt er sie der Warteschlange hinzu.
 
 > [AZURE.NOTE]Je größer die angegebene Zahl, desto länger wird der Solver ausgeführt. Die Ausführung für 14 Städte könnte zum Beispiel mehrere Minuten dauern, und die Ausführung für 15 Städte könnte mehrere Stunden dauern. Wird der Wert auf 16 oder darüber hinaus erhöht, könnte die Ausführung mehrere Tage (und schließlich Wochen, Monate und Jahre) dauern. Dies liegt an der schnellen Zunahme der Anzahl der Permutationen, die vom Solver analysiert werden, wenn die Anzahl der Städte zunimmt.
- 
+
 ### Ausführen der überwachenden Clientanwendung
 1. Melden Sie sich an dem Computer an, auf dem die Clientanwendung ausgeführt wird. Dieser Computer muss nicht zwingend mit dem Computer identisch sein, auf dem die **TSPSolver**-Anwendung ausgeführt wird.
 2. Erstellen Sie einen Ordner, in dem die Anwendung ausgeführt wird. Zum Beispiel **c:\\TSP**.
@@ -492,7 +492,7 @@ Führen Sie die rechenintensive Anwendung aus, zunächst um die Warteschlage zu 
 
         java -jar TSPClient.jar
 
-    Geben Sie optional die Pause zwischen den Überprüfungen der Warteschlange in Minuten an, indem Sie ein Befehlszeilenargument übergeben. Die Standardpause beim Überprüfen der Warteschlange ist drei Minuten. Dieser Wert wird verwendet, wenn kein Befehlszeilenargument an **TSPClient** übergeben wird. Wenn Sie einen anderen Wert für das Intervall verwenden möchten, zum Beispiel eine Minute, führen Sie Folgendes aus:
+    Geben Sie optional die Pause zwischen den Überprüfungen der Warteschlange in Minuten an, indem Sie ein Befehlszeilenargument übergeben. Die Standardpause beim Überprüfen der Warteschlange ist drei Minuten. Dieser Wert wird verwendet, wenn kein Befehlszeilenargument an **TSPClient** übergeben wird. Wenn Sie einen anderen Wert für das Intervall verwenden möchten, zum Beispiel eine Minute, führen Sie den folgenden Befehl aus:
 
 	    java -jar TSPClient.jar 1
 
@@ -516,7 +516,4 @@ Für Solver- und Clientanwendungen können Sie **Strg+C** drücken, um die Anwen
 [default_key]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_07_DefaultKey.jpg
 [add_ca_cert]: ../java-add-certificate-ca-store.md
 
-
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,12 +1,11 @@
 <properties 
-	pageTitle="Verwenden des Anwendungsblocks (.NET) für die automatische Skalierung – Azure" 
+	pageTitle="Verwenden des Anwendungsblocks (.NET) für die automatische Skalierung | Microsoft Azure" 
 	description="Hier erfahren Sie, wie Sie die Anwendung für die automatische Skalierung verwenden. Die Codebeispiele sind in C# geschrieben und verwenden die .NET API." 
 	services="cloud-services" 
 	documentationCenter=".net" 
 	authors="squillace" 
 	manager="timlt" 
 	editor=""/>
-
 
 <tags 
 	ms.service="cloud-services" 
@@ -23,10 +22,9 @@
 
 
 
-
 # Verwenden des Anwendungsblocks für die automatische Skalierung
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Anwendungsblock für die automatische Skalierung im [Microsoft Enterprise Library 5.0 Integration Pack for Azure][] demonstriert. Die Beispiele sind in C# geschrieben und verwenden die .NET API. Die behandelten Szenarien umfassen das **Hosten des Blocks**, das **Verwenden von Einschränkungsregeln** und das **Verwenden von reaktiven Regeln**. Weitere Informationen zum Anwendungsblock für die automatische Skalierung finden Sie im Abschnitt [Nächste Schritte][].
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Anwendungsblock für die automatische Skalierung im [Microsoft Enterprise Library 5.0 Integration Pack for Azure][] demonstriert. Die Beispiele sind in C\# geschrieben und verwenden die .NET API. Die behandelten Szenarien umfassen das **Hosten des Blocks**, das **Verwenden von Einschränkungsregeln** und das **Verwenden von reaktiven Regeln**. Weitere Informationen zum Anwendungsblock für die automatische Skalierung finden Sie im Abschnitt [Nächste Schritte][].
 
 ## Inhaltsverzeichnis
 
@@ -419,4 +417,6 @@ Da Sie jetzt die Grundlagen der Verwendung des Anwendungsblocks für die automat
   [Reduzieren der TechNet- und MSDN-Hostingkosten und der Umweltbelastung mit automatischer Skalierung in Azure]: http://msdn.microsoft.com/library/jj838718(PandP.50).aspx
  
 
-<!-----HONumber=August15_HO6-->
+<!----HONumber=August15_HO7-->
+
+<!---HONumber=August15_HO7-->

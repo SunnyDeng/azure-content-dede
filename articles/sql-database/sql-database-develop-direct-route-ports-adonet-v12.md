@@ -8,43 +8,20 @@
 	editor="" />
 
 
-
 <tags 
 	ms.service="sql-database" 
 	ms.workload="data-management" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/05/2015" 
+	ms.date="08/06/2015" 
 	ms.author="genemi"/>
-
 
 
 # Andere Ports als 1433 für ADO.NET 4.5, ODBC 11 und SQL-Datenbank V12
 
 
 Dieses Thema beschreibt die Änderungen, die Azure SQL-Datenbank V12 im Hinblick auf das Verbindungsverhalten von Clients mit ADO.NET 4.5 oder einer höheren Version aufweist.
-
-
-## Erläuterungen zu Versionen
-
-
-#### ADO.NET
-
-
-- ADO.NET 4.0 unterstützt das Protokoll TDS 7.3, aber nicht 7.4.
-- ADO.NET 4.5 und höher unterstützt das Protokoll TDS 7.4.
-- ADO.NET 4.5 verwendet intern ODBC 11.
- - Die hier angegebenen Informationen für ADO.NET 4.5 gelten auch für ODBC 11.
-
-
-#### SQL-Datenbank V11 und V12
-
-
-In diesem Thema werden die Unterschiede bei der Clientverbindung zwischen SQL-Datenbank V11 und V12 hervorgehoben.
-
-
-*Hinweis:* Die Transact-SQL-Anweisung `SELECT @@version;` gibt einen Wert zurück, der mit einer Zahl wie "11." oder "12." beginnt, und diese Zahlen stimmen mit den Versionsnamen V11 und V12 für die SQL-Datenbank überein.
 
 
 ## SQL-Datenbank V11: Port 1433
@@ -60,7 +37,7 @@ Wenn Ihr Clientprogramm ADO.NET 4.5 zum Herstellen einer Verbindung und Abfragen
 3. Die SQL-Datenbank sendet die Antwort zurück an die Middleware, welche die Antwort an ADO.NET an Port 1433 weiterleitet.
 
 
-**Terminologie:** Bei dem zuvor beschriebenen Ablauf wird davon gesprochen, dass ADO.NET mithilfe der *Proxyroute* mit der SQL-Datenbank interagiert. Wäre keine Middleware einbezogen, würde von einer Verwendung der *direkten Route* gesprochen.
+**Terminologie:** Bei dem zuvor beschriebenen Ablauf ist davon die Rede, dass ADO.NET mithilfe der *Proxyroute* mit der SQL-Datenbank interagiert. Wäre keine Middleware einbezogen, wäre von einer Verwendung der *direkten Route* die Rede.
 
 
 ## SQL-Datenbank V12: "Außerhalb" im Vergleich zu "Innerhalb"
@@ -69,22 +46,22 @@ Wenn Ihr Clientprogramm ADO.NET 4.5 zum Herstellen einer Verbindung und Abfragen
 Bei Verbindungen mit V12 muss gefragt werden, ob das Clientprogramm *außerhalb* oder *innerhalb* der Azure-Cloudgrenzen ausgeführt wird. In den Unterabschnitten werden zwei häufige Szenarien erläutert.
 
 
-#### *Außerhalb:* Client wird auf dem Desktopcomputer ausgeführt
+#### *Außerhalb:* Client wird auf dem Desktopcomputer ausgeführt.
 
 
 Port 1433 ist der einzige Port, der auf dem Desktopcomputer geöffnet sein muss, auf dem die Clientanwendung der SQL-Datenbank gehostet ist.
 
 
-#### *Innerhalb:* Client wird auf einer Azure-VM ausgeführt
+#### *Innerhalb:* Client wird in Azure ausgeführt.
 
 
-Wenn der Client innerhalb der Azure-Cloudgrenzen ausgeführt wird, verwendet er die sogenannte *direkte Route* für die Interaktion mit dem SQL-Datenbankserver. Nachdem eine Verbindung hergestellt wurde, ist bei weiteren Interaktionen zwischen dem Client und der Datenbank kein Middleware-Proxy eingebunden.
+Wenn der Client innerhalb der Azure-Cloudgrenzen ausgeführt wird, verwendet er die sogenannte *direkte Route* für die Interaktion mit dem Azure SQL-Datenbankserver. Nachdem eine Verbindung hergestellt wurde, ist bei weiteren Interaktionen zwischen dem Client und der Datenbank kein Middleware-Proxy eingebunden.
 
 
 Der Ablauf ist wie folgt:
 
 
-1. ADO.NET 4.5 (oder höher) initiiert eine kurze Interaktion mit der Azure-Cloud und empfängt eine dynamisch ermittelte Portnummer.
+1. ADO.NET 4.5 \(oder höher\) initiiert eine kurze Interaktion mit der Azure-Cloud und empfängt eine dynamisch ermittelte Portnummer.
  - Die dynamisch ermittelte Portnummer liegt im Bereich von 11000 bis 11999.
 
 2. ADO.NET stellt dann eine direkte Verbindung mit dem SQL-Datenbankserver ohne Einbindung von Middleware her.
@@ -115,7 +92,29 @@ Die Proxyroute, die zuvor in diesem Thema behandelt wurde, ist für die Frage de
 In beiden Szenarien wird empfohlen, dass Clients eine Wiederholungslogik im eigenen Code implementieren. Die Notwendigkeit einer Wiederholungslogik im Client ist bei der neuesten Proxyroute höher, da diese keine Wiederholungslogik bereitstellt.
 
 
-Codebeispiele für die Wiederholungslogik finden Sie unter [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md).
+Codebeispiele für die Wiederholungslogik finden Sie unter: [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md).
+
+
+## Erläuterungen zu Versionen
+
+
+In diesem Abschnitt werden die Moniker erläutert, die auf Produktversionen verweisen. Außerdem sind einige Kombinationen von Versionen zwischen Produkten aufgeführt.
+
+
+#### ADO.NET
+
+
+- ADO.NET 4.0 unterstützt das Protokoll TDS 7.3, aber nicht 7.4.
+- ADO.NET 4.5 und höher unterstützt das Protokoll TDS 7.4.
+
+
+#### SQL-Datenbank V11 und V12
+
+
+In diesem Thema werden die Unterschiede bei der Clientverbindung zwischen SQL-Datenbank V11 und V12 hervorgehoben.
+
+
+*Hinweis:* Die Transact-SQL-Anweisung `SELECT @@version;` gibt einen Wert zurück, der mit einer Zahl wie "11." oder "12." beginnt, und diese Zahlen stimmen mit den Versionsnamen V11 und V12 für die SQL-Datenbank überein.
 
 
 ## Verwandte Links
@@ -132,4 +131,4 @@ Codebeispiele für die Wiederholungslogik finden Sie unter [Clientcodebeispiele 
 
 - [Liste der TDS-Protokollversionen](http://www.freetds.org/userguide/tdshistory.htm)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

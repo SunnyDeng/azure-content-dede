@@ -34,14 +34,14 @@ In diesem Beispiel verfügt die Eingabetabelle über eine Struktur und diese ver
 	        },
 	        "availability": {
 	            "frequency": "Hour",
-	            "interval": "1",
+	            "interval": 1
 	        },
 			"external": true,
 			"policy": {
 	            "externalData": {
 	                "retryInterval": "00:01:00",
 	                "retryTimeout": "00:10:00",
-	                "maximumRetry": "3"
+	                "maximumRetry": 3
 	            }
 			}
 	    }
@@ -50,7 +50,7 @@ In diesem Beispiel verfügt die Eingabetabelle über eine Struktur und diese ver
 In diesem Beispiel verfügt die Ausgabetabelle über eine Struktur und diese verweist auf ein Blob in einem Azure-Blobspeicher.
 
 	{
-	    "name": " AzureBlobOutput",
+	    "name": "AzureBlobOutput",
 	    "properties":
 	    {
 	         "structure": 
@@ -83,9 +83,9 @@ Die JSON für die Aktivität ist unten dargestellt. Die Spalten der Quelle werde
 	{
 	    "name": "CopyActivity",
 	    "description": "description", 
-	    "type": "CopyActivity",
-	    "inputs":  [ { "name": " AzureSQLInput"  } ],
-	    "outputs":  [ { "name": " AzureBlobOutput" } ],
+	    "type": "Copy",
+	    "inputs":  [ { "name": "AzureSQLInput"  } ],
+	    "outputs":  [ { "name": "AzureBlobOutput" } ],
 	    "typeProperties":    {
 	        "source":
 	        {
@@ -95,7 +95,7 @@ Die JSON für die Aktivität ist unten dargestellt. Die Spalten der Quelle werde
 	        {
 	            "type": "BlobSink"
 	        },
-	        "Translator": 
+	        "translator": 
 	        {
 	            "type": "TabularTranslator",
 	            "ColumnMappings": "UserId: MyUserId, Group: MyGroup, Name: MyName"
@@ -149,4 +149,4 @@ In diesem Fall werden die Abfrageergebnisse zuerst den in "structure" der Quelle
 
 ![Ablauf der Spaltenzuordnung-2](./media/data-factory-data-stores-with-rectangular-tables/column-mapping-flow-2.png)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

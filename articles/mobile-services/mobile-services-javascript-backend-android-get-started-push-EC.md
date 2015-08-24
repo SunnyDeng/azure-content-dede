@@ -1,9 +1,10 @@
 <properties 
-	pageTitle="Erste Schritte mit Pushbenachrichtigungen (Android JavaScript) | Mobile Dev Center" 
+	pageTitle="Erste Schritte mit Pushbenachrichtigungen (Android JavaScript) | Microsoft Azure" 
 	description="Erfahren Sie mehr über die Verwendung von Azure Mobile Services zum Senden von Pushbenachrichtigungen an Ihre Android-JavaScript-App." 
 	services="mobile-services, notification-hubs" 
 	documentationCenter="android" 
 	authors="RickSaling" 
+	writer="ricksal" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -212,4 +213,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Send template-based notifications to subscribers]: ../notification-hubs-android-send-localized-breaking-news.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

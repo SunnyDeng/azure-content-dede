@@ -7,7 +7,6 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
-
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="07/21/2015" 
 	ms.author="spelluru"/>
-
 
 # Kopieren von Daten mit Azure Data Factory (Kopieraktivität)
 ## Übersicht
@@ -249,7 +247,6 @@ In diesem Beispiel, eine Pipeline: **CopyActivityPipeline** ist mit den folgende
          
 		New-AzureDataFactoryPipeline -ResourceGroupName ADF –DataFactoryName CopyFactory –File <Filepath>
 
-> [AZURE.NOTE]Finden Sie unter [Beispiele für die Verwendung der Kopieraktivität in Azure Data Factory][copy-activity-examples] weitere Beispiele für die Verwendung der Kopieraktivität.
 
 ## Sicherheit
 Dieser Abschnitt enthält allgemeine Richtlinien und bewährte Methoden, die dazu beitragen, sicheren Zugriff auf Datenspeicher für die Kopieraktivität herzustellen.
@@ -266,7 +263,6 @@ Für traditionelle Datenbanken, wie z. B. **SQL Server**, insbesondere wenn die 
 - **Datentypbehandlung durch die Kopieraktivität**. Erklärt, in welchem Fall die im Abschnitt "Struktur" angegebenen Datentypen der Tabellendefinition berücksichtigt/ignoriert werden.
 - **Aufrufen der gespeicherten Prozedur für SQL-Senke**. Beim Kopieren von Daten in den SQL Server oder die Azure SQL-Datenbank konnte eine benutzerspezifische gespeicherte Prozedur konfiguriert und aufgerufen werden.
 
-Im Artikel [Erweiterte Szenarien für die Verwendung der Kopieraktivität mit Azure Data Factory][copy-activity-advanced] finden Sie weitere Informationen zu diesen Szenarien.
 
 ## Exemplarische Vorgehensweisen
 Unter [Erste Schritte mit Azure Data Factory][adfgetstarted] finden Sie ein Lernprogramm, das das Kopieren von Daten aus einem Azure-Blob-Speicher mithilfe der Kopieraktivität in eine Azure-SQL-Datenbank veranschaulicht.
@@ -274,10 +270,8 @@ Unter [Erste Schritte mit Azure Data Factory][adfgetstarted] finden Sie ein Lern
 Unter [Aktivieren von Pipelines für die Arbeit mit lokalen Daten][use-onpremises-datasources] finden Sie eine exemplarische Vorgehensweise, die das Kopieren von Daten aus einer lokalen SQL Server-Datenbank mithilfe der Kopieraktivität in einen Azure-Blob-Speicher veranschaulicht.
 
 ## Weitere Informationen
-- [Kopieraktivität – Beispiele][copy-activity-examples]
-- Video: [Einführung in die Kopieraktivität mit Azure Data Factory][copy-activity-video]
+- [Video: Einführung in die Kopieraktivität mit Azure Data Factory][copy-activity-video]
 - [Thema "Kopieraktivität" in der MSDN Library][msdn-copy-activity]
-- [Erweiterte Szenarien für die Verwendung der Kopieraktivität mit Azure Data Factory][copy-activity-advanced]
 
 [msdn-copy-activity]: https://msdn.microsoft.com/library/dn835035.aspx
 [msdn-linkedservices]: https://msdn.microsoft.com/library/dn834986.aspx
@@ -290,9 +284,7 @@ Unter [Aktivieren von Pipelines für die Arbeit mit lokalen Daten][use-onpremise
 
 [adfgetstarted]: data-factory-get-started.md
 [use-onpremises-datasources]: data-factory-use-onpremises-datasources.md
-[copy-activity-examples]: data-factory-copy-activity-examples.md
 
-[copy-activity-advanced]: data-factory-copy-activity-advanced.md
 [json-script-reference]: http://go.microsoft.com/fwlink/?LinkId=516971
 [cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
 
@@ -301,4 +293,4 @@ Unter [Aktivieren von Pipelines für die Arbeit mit lokalen Daten][use-onpremise
 [image-data-factory-column-mapping-2]: ./media/data-factory-copy-activity/ColumnMappingSample2.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

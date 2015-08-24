@@ -19,11 +19,14 @@
 
 # Kaufen und Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service
 
-<div class="dev-center-tutorial-selector sublanding">
-  <a href="/documentation/articles/custom-dns-web-site-buydomains-web-app" title="Web-Apps" class="current">Kaufen einer Domäne für Web-Apps</a> <a href="/documentation/articles/web-sites-custom-domain-name" title="Web-Apps">Web-Apps mit externen Domänen</a> <a href="/documentation/articles/web-sites-traffic-manager-custom-domain-name/" title="Web-Apps mit Traffic Manager">Web-Apps mit Traffic Manager</a> <a href="/documentation/articles/web-sites-godaddy-custom-domain-name" title="GoDaddy">GoDaddy</a>
+> [AZURE.SELECTOR]
+- [Buy Domain for Web Apps](custom-dns-web-site-buydomains-web-app.md)
+- [Web Apps with External Domains](web-sites-custom-domain-name.md)
+- [Web Apps with Traffic Manager](web-sites-traffic-manager-custom-domain-name.md)
+- [GoDaddy](web-sites-godaddy-custom-domain-name.md)
 
 
-</div>
+
 
 [AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
@@ -95,4 +98,4 @@ Gehen Sie folgendermaßen vor, um Domänennamen zu erwerben und Ihrer Web-App zu
 Zu diesem Zeitpunkt sollten Sie den benutzerdefinierten Domänennamen in Ihren Browser eingeben können und sehen, dass er Sie erfolgreich zu Ihrer Web-App bringt.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

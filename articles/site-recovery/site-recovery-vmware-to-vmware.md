@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/16/2015" 
+	ms.date="08/05/2015" 
 	ms.author="raynew"/>
 
 
@@ -117,4 +117,4 @@ Dieses neueste Update enthält Fehlerbehebungen und neue Funktionen:
 
 Etwaige Fragen können Sie im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.<
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

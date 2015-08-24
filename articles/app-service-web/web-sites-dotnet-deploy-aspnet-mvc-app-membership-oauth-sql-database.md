@@ -3,7 +3,8 @@
 	description="Erfahren Sie, wie Sie eine ASP.NET-MVC 5-App mit einem SQL-Datenbank-Back-End und Authentifizierung sowie Autorisierung entwickeln und in Azure bereitstellen." 
 	services="app-service\web" 
 	documentationCenter=".net" 
-	authors="Rick-Anderson"  
+	authors="Rick-Anderson" 
+	writer="Rick-Anderson" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/16/2015" 
+	ms.date="08/07/2015" 
 	ms.author="riande"/>
 
 
@@ -36,7 +37,7 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 b
 
 ![Anmeldeseite][rxb]
 
->[AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie <a href="/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">Ihre MSDN-Abonnentenvorteile aktivieren</a> oder <a href="/de-de/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">sich für eine kostenlose Testversion registrieren</a>.
+>[AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](../de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](../de-de/pricing/free-trial/?WT.mc_id=A261C142F).
 
 >Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -64,15 +65,15 @@ Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Updat
 
 1. Der Konfigurationsassistent schlägt basierend auf *ContactManager* einen eindeutigen Namen vor. Sie müssen sich entscheiden, ob Sie einen neuen App Service-Plan und eine neue Ressourcengruppe erstellen. Entscheidungshilfen hierzu finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md). Für dieses Lernprogramm empfiehlt es sich, mindestens eine neue Ressourcengruppe zu erstellen. Wählen Sie eine Region in Ihrer Nähe. Über [azurespeed.com](http://www.azurespeed.com/ "AzureSpeed.com") können Sie das Rechenzentrum mit der niedrigsten Latenz suchen. Die Datenbank richten Sie erst im nächsten Schritt ein, klicken Sie also noch nicht auf **OK**.
 
-   ![Neue Plan- und Ressourcengruppe](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newplanandgroup.png)
+	![Neue Plan- und Ressourcengruppe](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newplanandgroup.png)
  
 2. Wenn Sie zuvor noch keinen Datenbankserver erstellt haben, wählen Sie **Neuen Server erstellen**, und geben Sie einen Namen und ein Kennwort für den Datenbankbenutzer ein.
 
-   ![Verwenden einer neuen Datenbank](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newdb.png)
+	![Verwenden einer neuen Datenbank](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newdb.png)
 
 3. Wenn Sie über einen Datenbankserver verfügen, verwenden Sie diesen, um eine neue Datenbank zu erstellen. Datenbankserver sind wertvolle Ressourcen, und Sie möchten in der Regel zwecks Test und Entwicklung mehrere Datenbanken auf demselben Server erstellen, anstatt einen Datenbankserver pro Datenbank zu erstellen. Vergewissern Sie sich, dass sich Web-App und Datenbank in derselben Region befinden.
 
-    ![Verwenden einer bestehenden Datenbank](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/useexistingdb.png)
+	![Verwenden einer bestehenden Datenbank](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/useexistingdb.png)
 
 ### Einrichten der Seitenkopf- und -fußzeile
 
@@ -83,52 +84,50 @@ Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Updat
 
 1. Ersetzen Sie das Markup in der Datei *Layout.cshtml* durch den folgenden Code. Die Änderungen sind unten hervorgehoben.
 
-```
-			&lt;!DOCTYPE html&gt;
-			&lt;html&gt;
-			&lt;head&gt;
-			    &lt;meta charset="utf-8" /&gt;
-			    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-			    &lt;title&gt;@ViewBag.Title - <mark>Contact Manager</mark>&lt;/title&gt;
-			    @Styles.Render("~/Content/css")
-			    @Scripts.Render("~/bundles/modernizr")
-			
-			&lt;/head&gt;
-			&lt;body&gt;
-			    &lt;div class="navbar navbar-inverse navbar-fixed-top"&gt;
-			        &lt;div class="container"&gt;
-			            &lt;div class="navbar-header"&gt;
-			                &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"&gt;
-			                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
-			                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
-			                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
-			                &lt;/button&gt;
-			                @Html.ActionLink("<mark>CM Demo</mark>", "Index", "<mark>Cm</mark>", new { area = "" }, new { @class = "navbar-brand" })
-			            &lt;/div&gt;
-			            &lt;div class="navbar-collapse collapse"&gt;
-			                &lt;ul class="nav navbar-nav"&gt;
-			                    &lt;li&gt;@Html.ActionLink("Home", "Index", "Home")&lt;/li&gt;
-			                    &lt;li&gt;@Html.ActionLink("About", "About", "Home")&lt;/li&gt;
-			                    &lt;li&gt;@Html.ActionLink("Contact", "Contact", "Home")&lt;/li&gt;
-			                &lt;/ul&gt;
-			                @Html.Partial("_LoginPartial")
-			            &lt;/div&gt;
-			        &lt;/div&gt;
-			    &lt;/div&gt;
-			    &lt;div class="container body-content"&gt;
-			        @RenderBody()
-			        &lt;hr /&gt;
-			        &lt;footer&gt;
-			            &lt;p&gt;&amp;copy; @DateTime.Now.Year - <mark>Contact Manager</mark>&lt;/p&gt;
-			        &lt;/footer&gt;
-			    &lt;/div&gt;
-			
-			    @Scripts.Render("~/bundles/jquery")
-			    @Scripts.Render("~/bundles/bootstrap")
-			    @RenderSection("scripts", required: false)
-			&lt;/body&gt;
-			&lt;/html&gt;
-```
+		<!DOCTYPE html>
+		<html>
+		<head>
+		    <meta charset="utf-8" />
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		    <title>@ViewBag.Title - Contact Manager</title>
+		    @Styles.Render("~/Content/css")
+		    @Scripts.Render("~/bundles/modernizr")
+		
+		</head>
+		<body>
+		    <div class="navbar navbar-inverse navbar-fixed-top">
+		        <div class="container">
+		            <div class="navbar-header">
+		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                    <span class="icon-bar"></span>
+		                </button>
+		                @Html.ActionLink("CM Demo", "Index", "Cm", new { area = "" }, new { @class = "navbar-brand" })
+		            </div>
+		            <div class="navbar-collapse collapse">
+		                <ul class="nav navbar-nav">
+		                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+		                    <li>@Html.ActionLink("About", "About", "Home")</li>
+		                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+		                </ul>
+		                @Html.Partial("_LoginPartial")
+		            </div>
+		        </div>
+		    </div>
+		    <div class="container body-content">
+		        @RenderBody()
+		        <hr />
+		        <footer>
+		            <p>&copy; @DateTime.Now.Year - Contact Manager</p>
+		        </footer>
+		    </div>
+		
+		    @Scripts.Render("~/bundles/jquery")
+		    @Scripts.Render("~/bundles/bootstrap")
+		    @RenderSection("scripts", required: false)
+		</body>
+		</html>
 
 ### Lokales Ausführen der Anwendung
 
@@ -185,7 +184,7 @@ Darüber hinaus müssen Sie keine weiteren Aktionen ausführen, um die Anwendung
 
 	!["Veröffentlichen" im Kontextmenü des Projekts](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/GS13publish.png)
 	
-   Der Assistent **Web veröffentlichen** wird geöffnet.
+	Der Assistent **Web veröffentlichen** wird geöffnet.
 
 1. Klicken Sie im Dialogfeld **Web veröffentlichen** auf **Veröffentlichen**.
 
@@ -371,40 +370,39 @@ In diesem Abschnitt fügen Sie der Mitgliedschaftsdatenbank einen lokalen Benutz
 
 1. Fügen Sie der Klasse die folgende **AddUserAndRole**-Methode hinzu:
 
-    
-         bool AddUserAndRole(ContactManager.Models.ApplicationDbContext context)
-         {
-            IdentityResult ir;
-            var rm = new RoleManager<IdentityRole>
-                (new RoleStore<IdentityRole>(context));
-            ir = rm.Create(new IdentityRole("canEdit"));
-            var um = new UserManager<ApplicationUser>(
-                new UserStore<ApplicationUser>(context));
-            var user = new ApplicationUser()
-            {
-               UserName = "user1@contoso.com",
-            };
-            ir = um.Create(user, "P_assw0rd1");
-            if (ir.Succeeded == false)
-               return ir.Succeeded;
-            ir = um.AddToRole(user.Id, "canEdit");
-            return ir.Succeeded;
-         }
+		 bool AddUserAndRole(ContactManager.Models.ApplicationDbContext context)
+		 {
+		    IdentityResult ir;
+		    var rm = new RoleManager
+		        (new RoleStore(context));
+		    ir = rm.Create(new IdentityRole("canEdit"));
+		    var um = new UserManager(
+		        new UserStore(context));
+		    var user = new ApplicationUser()
+		    {
+		       UserName = "user1@contoso.com",
+		    };
+		    ir = um.Create(user, "P_assw0rd1");
+		    if (ir.Succeeded == false)
+		       return ir.Succeeded;
+		    ir = um.AddToRole(user.Id, "canEdit");
+		    return ir.Succeeded;
+		 }
 
 1. Rufen Sie die neue Methode über die **Seed**-Methode auf:
-	<pre>
-    protected override void Seed(ContactManager.Models.ApplicationDbContext context)
-    {
-        <mark>AddUserAndRole(context);</mark>
-        context.Contacts.AddOrUpdate(p => p.Name,
-            // Code aus Platzgründen entfernt
-    }
-</pre>
-<span></span> Die folgenden Abbildungen zeigen die Änderungen an der *Seed*-Methode:
+
+		protected override void Seed(ContactManager.Models.ApplicationDbContext context)
+		{
+		    AddUserAndRole(context);
+		    context.Contacts.AddOrUpdate(p => p.Name,
+		        // Code removed for brevity
+		}
+
+	In den folgenden Bildern werden die Änderungen an der *Seed*-Methode gezeigt:
 
 	![Codebild](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss24.PNG)
 
-   Dieser Code erstellt eine neue Rolle namens *canEdit* sowie den neuen lokalen Benutzer *user1@contoso.com* und fügt *user1@contoso.com* zur Rolle *canEdit* hinzu. Weitere Informationen finden Sie in den [ASP.NET Identity-Lernprogrammen](http://www.asp.net/identity/overview/features-api).
+	Dieser Code erstellt eine neue Rolle namens *canEdit* sowie den neuen lokalen Benutzer *user1@contoso.com* und fügt *user1@contoso.com* zur Rolle *canEdit* hinzu. Weitere Informationen finden Sie in den [ASP.NET Identity-Tutorials](http://www.asp.net/identity/overview/features-api).
 
 ## Verwenden von temporärem Code zum Hinzufügen neuer Benutzer mit Anmeldung zu sozialen Netzwerken zur Rolle "canEdit"  ##
 In diesem Abschnitt ändern Sie die Methode **ExternalLoginConfirmation** im Kontocontroller vorübergehend, um neue Benutzer hinzuzufügen, die sich mit einem OAuth-Anbieter bei der Rolle *canEdit* registrieren. Die **ExternalLoginConfirmation**-Methode wird automatisch geändert, um einer Administratorrolle neue Benutzer hinzuzufügen. Bis ein Tool zum Hinzufügen und Verwalten von Rollen bereitgestellt wird, verwenden wir den unten dargestellten Code zur temporären automatischen Registrierung. Es ist geplant, in Zukunft ein [WSAT](http://msdn.microsoft.com/library/ms228053.aspx) vergleichbares Tool bereitzustellen, mit dem Benutzerkonten und -rollen erstellt und bearbeitet werden können.
@@ -412,45 +410,45 @@ In diesem Abschnitt ändern Sie die Methode **ExternalLoginConfirmation** im Kon
 1. Öffnen Sie die Datei **Controllers\AccountController.cs**, und navigieren Sie zur **ExternalLoginConfirmation**-Methode.
 1. Fügen Sie **AddToRoleAsync** unmittelbar vor dem Aufruf **SignInAsync** den folgenden Aufruf hinzu.
 
-                await UserManager.AddToRoleAsync(user.Id, "canEdit");
+		await UserManager.AddToRoleAsync(user.Id, "canEdit");
 
-   Mit dem oben dargestellten Code wird der neu registrierte Benutzer der Rolle "canEdit" hinzugefügt, sodass er auf Aktionsmethoden zugreifen kann, die das Ändern (Bearbeiten) von Daten erlauben. ```
-	      // POST: /Account/ExternalLoginConfirmation
-	      [HttpPost]
-	      [AllowAnonymous]
-	      [ValidateAntiForgeryToken]
-	      public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
-	      {
-	         if (User.Identity.IsAuthenticated)
-	         {
-	            return RedirectToAction("Index", "Manage");
-	         }
-	         if (ModelState.IsValid)
-	         {
-	            // Abrufen von Informationen zum Benutzer über den externen Anmeldebieter provider 
-	            var info = await AuthenticationManager.GetExternalLoginInfoAsync();
-	            if (info == null)
-	            {
-	               return View("ExternalLoginFailure");
-	            }
-	            var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
-	            var result = await UserManager.CreateAsync(user);
-	            if (result.Succeeded)
-	            {
-	               result = await UserManager.AddLoginAsync(user.Id, info.Login);
-	               if (result.Succeeded)
-	               {
-	                  <mark>await UserManager.AddToRoleAsync(user.Id, "canEdit");</mark>
-	                  await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-	                  return RedirectToLocal(returnUrl);
-	               }
-	            }
-	            AddErrors(result);
-	         }
-	         ViewBag.ReturnUrl = returnUrl;
-	         return View(model);
-	      }
-```
+   Mit dem oben dargestellten Code wird der neu registrierte Benutzer der Rolle "canEdit" hinzugefügt, sodass er auf Aktionsmethoden zugreifen kann, die das Ändern (Bearbeiten) von Daten erlauben.
+
+		  // POST: /Account/ExternalLoginConfirmation
+		  [HttpPost]
+		  [AllowAnonymous]
+		  [ValidateAntiForgeryToken]
+		  public async Task ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
+		  {
+		     if (User.Identity.IsAuthenticated)
+		     {
+		        return RedirectToAction("Index", "Manage");
+		     }
+		     if (ModelState.IsValid)
+		     {
+		        // Get the information about the user from the external login provider
+		        var info = await AuthenticationManager.GetExternalLoginInfoAsync();
+		        if (info == null)
+		        {
+		           return View("ExternalLoginFailure");
+		        }
+		        var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+		        var result = await UserManager.CreateAsync(user);
+		        if (result.Succeeded)
+		        {
+		           result = await UserManager.AddLoginAsync(user.Id, info.Login);
+		           if (result.Succeeded)
+		           {
+		              await UserManager.AddToRoleAsync(user.Id, "canEdit");
+		              await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+		              return RedirectToLocal(returnUrl);
+		           }
+		        }
+		        AddErrors(result);
+		     }
+		     ViewBag.ReturnUrl = returnUrl;
+		     return View(model);
+		  }
 
 An späterer Stelle in diesem Lernprogramm stellen Sie die Anwendung für Azure bereit. Die Anmeldung erfolgt dann über Google oder einen anderen Authentifizierungsdrittanbieter. Dadurch wird Ihr neu registriertes Konto der Rolle *canEdit* hinzugefügt. Jede Person, die die URL Ihrer Web-App findet und über eine Google-ID verfügt, kann sich dann registrieren und die Datenbank aktualisieren. Sie können die Website beenden, um dies zu verhindern. Durch eine Untersuchung der Datenbank können Sie überprüfen, wer der Rolle *canEdit* angehört.
 
@@ -466,76 +464,69 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 1. Fügen Sie der Anwendung die Filter [Authorize](http://msdn.microsoft.com/library/system.web.mvc.authorizeattribute.aspx) und [RequireHttps](http://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx) hinzu. Alternativ können Sie das [Authorize](http://msdn.microsoft.com/library/system.web.mvc.authorizeattribute.aspx)-Attribut und das [RequireHttps](http://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx)-Attribut jedem Controller hinzufügen, es wird jedoch als Best Practice im Bereich Sicherheit betrachtet, die Attribute der gesamten Anwendung hinzuzufügen. Auf diese Weise wird jeder neu hinzugefügte Controller und jede neu hinzugefügte Aktionsmethode automatisch geschützt und Sie müssen nicht daran denken, die Attribute anzuwenden. Weitere Informationen finden Sie unter [Securing your ASP.NET MVC App and the new AllowAnonymous Attribute](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx) (in englischer Sprache). Öffnen Sie die Datei *App\_Start\\FilterConfig.cs*, und ersetzen Sie die *RegisterGlobalFilters*-Methode durch den folgenden Code (damit werden die zwei Filter hinzugefügt):
 
-```
-        public static void
-        RegisterGlobalFilters(GlobalFilterCollection filters)
-        {
-            filters.Add(new HandleErrorAttribute());
-            <mark>filters.Add(new System.Web.Mvc.AuthorizeAttribute());
-            filters.Add(new RequireHttpsAttribute());</mark>
-        }
-```
-
-
-
-
+		public static void
+		RegisterGlobalFilters(GlobalFilterCollection filters)
+		{
+		    filters.Add(new HandleErrorAttribute());
+		    filters.Add(new System.Web.Mvc.AuthorizeAttribute());
+		    filters.Add(new RequireHttpsAttribute());
+		}
+		
 	Der im obigen Code angewendete Filter [Authorize](http://msdn.microsoft.com/library/system.web.mvc.authorizeattribute.aspx) verhindert, dass anonyme Benutzer auf Methoden in der Anwendung zugreifen. Sie verwenden das [AllowAnonymous](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)-Attribut, um die Autorisierungsanforderung in einigen Methoden zu deaktivieren, sodass anonyme Benutzer sich anmelden und die Startseite anzeigen können. [RequireHttps](http://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx) erfordert, dass der gesamte Zugriff auf die Webanwendung durch HTTPS erfolgen muss.
 
-1. Fügen Sie der **Index**-Methode des Controllers "Home" das [AllowAnonymous](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)-Attribut hinzu. Mit dem [AllowAnonymous](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)-Attribut lassen Sie die Methoden zu, die von der Autorisierung ausgenommen werden sollen. 
+1. Fügen Sie der **Index**-Methode des Controllers "Home" das [AllowAnonymous](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)-Attribut hinzu. Mit dem [AllowAnonymous](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)-Attribut lassen Sie die Methoden zu, die von der Autorisierung ausgenommen werden sollen.
 
-```
-	public class HomeController : Controller
-   {
-      <mark>[AllowAnonymous]</mark>
-      public ActionResult Index()
-      {
-         return View();
-      }
-```
+		public class HomeController : Controller
+		{
+		  [AllowAnonymous]
+		  public ActionResult Index()
+		  {
+		     return View();
+		  }
 
 2. Führen Sie eine globale Suche nach *AllowAnonymous* durch. Sie werden feststellen, dass es in den Anmelde- und Registrierungsmethoden des Kontocontrollers verwendet wird.
-1. Fügen Sie in der Datei *CmController.cs* den Code `[Authorize(Roles = "canEdit")]` zu den HttpGet- und HttpPost-Methoden hinzu, mit denen Daten im Controller *Cm* geändert werden (Erstellen, Bearbeiten, Löschen sowie jede Aktionsmethode abgesehen von Index und Details). Im Folgenden wird ein Teil des fertigen Codes angezeigt: ```
-	// GET: Cm/Create
-       <mark>[Authorize(Roles = "canEdit")]</mark>
-        public ActionResult Create()
-        {
-           return View(new Contact { Address = "123 N 456 W",
-            City="Great Falls", Email = "ab@cd.com", Name="Joe Smith", State="MT",
-           Zip = "59405"});
-        }
-        // POST: Cm/Create
-        // Zum Schutz vor Overposting-Angriffen aktivieren Sie die jeweiligen Bind-Eigenschaften. 
-        // Weitere Informationen finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598. 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-         <mark>[Authorize(Roles = "canEdit")]</mark>
-        public ActionResult Create([Bind(Include = "ContactId,Name,Address,City,State,Zip,Email")] Contact contact)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Contacts.Add(contact);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(contact);
-        }
-        // GET: Cm/Edit/5
-       <mark>[Authorize(Roles = "canEdit")]</mark>
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Contact contact = db.Contacts.Find(id);
-            if (contact == null)
-            {
-                return HttpNotFound();
-            }
-            return View(contact);
-        }
-```
+1. Fügen Sie in der Datei *CmController.cs* den Code `[Authorize(Roles = "canEdit")]` zu den HttpGet- und HttpPost-Methoden hinzu, mit denen Daten im Controller *Cm* geändert werden (Erstellen, Bearbeiten, Löschen sowie jede Aktionsmethode abgesehen von Index und Details). Im Folgenden wird ein Teil des fertigen Codes angezeigt: 
 
+		// GET: Cm/Create
+		[Authorize(Roles = "canEdit")]
+		public ActionResult Create()
+		{
+		   return View(new Contact { Address = "123 N 456 W",
+		    City="Great Falls", Email = "ab@cd.com", Name="Joe Smith", State="MT",
+		   Zip = "59405"});
+		}
+		// POST: Cm/Create
+		// Zum Schutz vor Overposting-Angriffen aktivieren Sie die jeweiligen Bind-Eigenschaften. 
+		// Weitere Informationen finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598. 
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		 [Authorize(Roles = "canEdit")]
+		public ActionResult Create([Bind(Include = "ContactId,Name,Address,City,State,Zip,Email")] Contact contact)
+		{
+		    if (ModelState.IsValid)
+		    {
+		        db.Contacts.Add(contact);
+		        db.SaveChanges();
+		        return RedirectToAction("Index");
+		    }
+		    return View(contact);
+		}
+		// GET: Cm/Edit/5
+		[Authorize(Roles = "canEdit")]
+		public ActionResult Edit(int? id)
+		{
+		    if (id == null)
+		    {
+		        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+		    }
+		    Contact contact = db.Contacts.Find(id);
+		    if (contact == null)
+		    {
+		        return HttpNotFound();
+		    }
+		    return View(contact);
+		}
+		
 1. Wenn Sie immer noch von einer vorherigen Sitzung angemeldet sind, klicken Sie auf den Link **Abmelden**.
 1. Klicken Sie auf den Link **About** oder **Contact**. Sie werden zur Anmeldeseite weitergeleitet, da anonyme Benutzer diese Seiten nicht anzeigen können. 
 1. Klicken Sie auf den Link **Register as a new user**, und fügen Sie einen lokalen Benutzer mit der E-Mail-Adresse **joe@contoso.com* hinzu. Stellen Sie sicher, dass *Joe* die Seiten Home, About und Contact anzeigen kann.
@@ -550,7 +541,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 ## Bereitstellen der Anwendung in Azure
 
-1. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf das Projekt, und wählen Sie im Kontextmenü **Veröffentlichen** aus.
+1. Klicken Sie im **Projektmappen-Explorer** von Visual Studio mit der rechten Maustaste auf das Projekt, und wählen Sie im Kontextmenü **Veröffentlichen** aus.
 
 	!["Veröffentlichen" im Kontextmenü des Projekts][firsdeploy003]
 
@@ -586,7 +577,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 1. Kommentieren Sie den folgenden Code aus der Methode **ExternalLoginConfirmation** im Kontocontroller aus, oder entfernen Sie ihn: `await UserManager.AddToRoleAsync(user.Id, "canEdit");`
 1. Erstellen Sie das Projekt (die Dateiänderungen werden dabei gespeichert und es wird sichergestellt, dass keine Kompilierungsfehler vorhanden sind).
-5. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie **Veröffentlichen** aus.
+5. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Veröffentlichen** aus.
 
 	   !["Veröffentlichen" im Kontextmenü des Projekts](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/GS13publish.png)
 	
@@ -618,16 +609,16 @@ Falls Sie Ihren Vornamen und Nachnamen im Google-Konto nicht ausgefüllt haben, 
 
 ## Überprüfen der SQL Azure-DB ##
 
-1. Navigieren Sie im Server-Explorer zu **ContactDB**.
+1. Navigieren Sie im **Server-Explorer** zu **ContactDB**.
 2. Klicken Sie mit der rechten Maustaste auf **ContactDB**, und wählen Sie **Open in SQL Server Object Explorer** aus.
  
 	![In SSOX öffnen](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/rrr12.png)
  
 3. Bei der erstmaligen Verbindung mit dieser Datenbank werden Sie unter Umständen zum Hinzufügen einer Firewallregel aufgefordert, die den Zugriff Ihrer aktuellen IP-Adresse erlaubt. Die IP-Adresse ist bereits eingetragen. Klicken Sie einfach auf **Firewallregel hinzufügen**, um den Zugriff zu erlauben.
 
-  ![Firewallregel hinzufügen](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/addfirewallrule.png)
+	![Firewallregel hinzufügen](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/addfirewallrule.png)
         
-  Melden Sie sich dann bei der Datenbank mit dem Benutzernamen und dem Kennwort an, die Sie bei der Erstellung der Datenbank angegeben haben.
+	Melden Sie sich dann bei der Datenbank mit dem Benutzernamen und dem Kennwort an, die Sie bei der Erstellung der Datenbank angegeben haben.
  
 1. Klicken Sie mit der rechten Maustaste auf die Tabelle **AspNetUsers**, und wählen Sie **Daten anzeigen** aus.
 
@@ -637,7 +628,7 @@ Falls Sie Ihren Vornamen und Nachnamen im Google-Konto nicht ausgefüllt haben, 
 
 	![CM-Seite](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/s2.png)
  
-2. Klicken Sie im SQL Server-Objekt-Explorer mit der rechten Maustaste auf **AspNetUserRoles**, und wählen Sie **Daten anzeigen** aus.
+2. Klicken Sie im **SQL Server-Objekt-Explorer** mit der rechten Maustaste auf **AspNetUserRoles**, und wählen Sie **Daten anzeigen** aus.
 
 	![CM-Seite](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/rs1.png)
  
@@ -725,4 +716,4 @@ Dieses Lernprogramm und die Beispielanwendung wurden von [Rick Anderson](http://
 [ImportPublishSettings]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/ImportPublishSettings.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

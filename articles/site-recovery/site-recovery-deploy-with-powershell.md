@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/08/2015"
+	ms.date="08/05/2015"
 	ms.author="lauraa"/>
 
 #  Bereitstellen von Azure Site Recovery mit PowerShell
@@ -104,7 +104,7 @@ Ersetzen Sie in PowerShell die Elemente in "< >" durch Ihre jeweiligen Informati
 
 	$VaultName = "<testvault123>"
 	$VaultGeo  = "<Southeast Asia>"
-	$OutputPathForSettingsFile = "<C:\>"
+	$OutputPathForSettingsFile = "<c:>"
 
 ```
 
@@ -125,7 +125,7 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 	
 		$VaultName = "<testvault123>"
 		$VaultGeo  = "<Southeast Asia>"
-		$OutputPathForSettingsFile = "<C:\>"
+		$OutputPathForSettingsFile = "<c:>"
 	
 		$VaultSetingsFile = Get-AzureSiteRecoveryVaultSettingsFile -Location $VaultGeo -Name $VaultName -Path $OutputPathForSettingsFile;
 	
@@ -461,4 +461,4 @@ if($isJobLeftForProcessing)
 
 <LI>Wenn Sie Fragen haben, besuchen Sie das<a href="http://go.microsoft.com/fwlink/?LinkId=313628"> Azure Recovery Services-Forum</a>.</LI></UL>
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

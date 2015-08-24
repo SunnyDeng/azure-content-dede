@@ -5,16 +5,14 @@
     documentationCenter=""
 	authors="alancameronwills" 
 	manager="douge"/>
-
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/18/2015" 
+	ms.date="08/06/2015" 
 	ms.author="sergkanz"/>
-
  
 # Versionshinweise für das Application Insights-SDK für .NET
 
@@ -30,7 +28,7 @@ Informationen dazu finden Sie unter [Application Insights – Beginnen Sie damit
 * Nach dem Upgrade müssen Sie alle an "ApplicationInsights.config" vorgenommenen Anpassungen wieder zusammenführen. Wenn Sie nicht sicher sind, ob Sie Anpassungen vorgenommen haben, erstellen Sie ein neues Projekt, fügen Sie ihm Application Insights hinzu, und vergleichen Sie die CONFIG-Datei mit der Datei im neuen Projekt. Notieren Sie sich alle Unterschiede.
 * Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie dann **NuGet-Pakete verwalten** aus.
 * Legen Sie einen Filter fest, um nur die installierten Pakete anzuzeigen. 
-* Wählen Sie **Microsoft.ApplicationInsights.Web** und dann **Upgrade** aus. (Damit werden auch alle abhängigen Pakete aktualisiert.)
+* Wählen Sie **Microsoft.ApplicationInsights.Web** und dann **Upgrade** aus. \(Damit werden auch alle abhängigen Pakete aktualisiert.\)
 * Vergleichen Sie "ApplicationInsights.config" mit der alten Kopie. Die meisten Änderungen sind darauf zurückzuführen, dass einige Module entfernt und andere parametrisierbar gemacht wurden. Reaktivieren Sie alle Anpassungen, die Sie an der alten Datei vorgenommen haben.
 * Erstellen Sie die Projektmappe neu.
 
@@ -38,9 +36,9 @@ Informationen dazu finden Sie unter [Application Insights – Beginnen Sie damit
 
 - Telemetrieinitialisierer, die keine Abhängigkeiten von ASP.NET-Bibliotheken haben, wurden von `Microsoft.ApplicationInsights.Web` zu dem neuen Abhängigkeit-NuGet `Microsoft.ApplicationInsights.WindowsServer` verschoben
 - `Microsoft.ApplicationInsights.Web.dll` wurde umbenannt in `Microsoft.AI.Web.dll`
-- NuGet `Microsoft.Web.TelemetryChannel` wurde umbenannt in `Microsoft.WindowsServer.TelemetryChannel`. Assembly `Microsoft.ApplicationInsights.Extensibility.Web.TelemetryChannel` wurde umbenannt in `Microsoft.AI.ServerTelemetryChannel.dll`. Klasse `Microsoft.ApplicationInsights.Extensibility.Web.TelemetryChannel` wurde umbenannt in `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel`.
+- NuGet `Microsoft.ApplicationInsights.Web.TelemetryChannel` wurde umbenannt in `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel`. Assembly `Microsoft.ApplicationInsights.Extensibility.Web.TelemetryChannel` wurde umbenannt in `Microsoft.AI.ServerTelemetryChannel.dll`. Klasse `Microsoft.ApplicationInsights.Extensibility.Web.TelemetryChannel` wurde umbenannt in `Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.ServerTelemetryChannel`.
 - Alle Namespaces, die Teil des Web-SDK sind, wurden geändert, um Teil `Extensibility` auszuschließen. Dazu gehören alle Telemetrieinitialisierer in ApplicationInsights.config und Modul `ApplicationInsightsWebTracking` in web.config.
-- Abhängigkeiten, die mit dem Laufzeitinstrumentierungs-Agent (aktiviert über den Statusmonitor oder die Azure WebSite-Erweiterung) erfasst werden, werden nicht als asynchron markiert, wenn HttpContext.Current für den Thread nicht vorhanden ist.
+- Abhängigkeiten, die mit dem Laufzeitinstrumentierungs-Agent \(aktiviert über den Statusmonitor oder die Azure WebSite-Erweiterung\) erfasst werden, werden nicht als asynchron markiert, wenn HttpContext.Current für den Thread nicht vorhanden ist.
 - Eigenschaft `SamplingRatio` von `DependencyTrackingTelemetryModule` führt keine Aktion aus und ist als veraltet markiert.
 - Assembly `Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector` wurde umbenannt in `Microsoft.AI.PerfCounterCollector`
 - Mehrere kleinere Fehlerbehebungen in Web- und Geräte-SDKs
@@ -48,7 +46,7 @@ Informationen dazu finden Sie unter [Application Insights – Beginnen Sie damit
 
 ## Version 1.1
 
-- Der neue Telemetrietyp `DependencyTelemetry` wurde hinzugefügt. Er kann zum Senden von Informationen über Aufrufe von Abhängigkeiten durch die Anwendung verwendet werden (z. B. SQL, HTTP-Aufrufe usw.).
+- Der neue Telemetrietyp `DependencyTelemetry` wurde hinzugefügt. Er kann zum Senden von Informationen über Aufrufe von Abhängigkeiten durch die Anwendung verwendet werden \(z. B. SQL, HTTP-Aufrufe usw.\).
 - Die neue Überladungsmethode `TelemetryClient.TrackDependency` wurde hinzugefügt, mit der Sie Informationen zu Aufrufen von Abhängigkeiten senden können.
 - Die feste NullReferenceException wird vom Diagnosemodul ausgelöst, wenn TelemetryConfiguration.CreateDefault verwendet wird.
 
@@ -88,4 +86,4 @@ Für ältere Versionen sind keine Versionshinweise verfügbar.
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

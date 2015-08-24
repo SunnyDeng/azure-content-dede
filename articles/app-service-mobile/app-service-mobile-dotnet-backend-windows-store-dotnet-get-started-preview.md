@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit mobilen App-Back-Ends für Windows Store-Apps | Mobile Dev Center"
+	pageTitle="Erste Schritte mit mobilen App-Back-Ends für Windows Store-Apps | Microsoft Azure"
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung mobiler Azure-App-Back-Ends für die Windows Store-Entwicklung in C#, VB oder JavaScript."
 	services="app-service\mobile"
 	documentationCenter="windows"
@@ -44,7 +44,7 @@ In diesem Abschnitt erstellen Sie eine neue universelle Windows-App, die mit dem
 
 1. Klicken Sie im Azure-Portal auf **Mobile App** und anschließend auf die mobile App, die Sie gerade erstellt haben.
 
-2. Klicken Sie oben auf dem Blatt auf **Client hinzufügen**, und erweitern Sie **Windows (C#)**.
+2. Klicken Sie oben auf dem Blatt auf **Client hinzufügen**, und erweitern Sie **Windows \(C\#\)**.
 
     ![Mobile App – Schritte für den Schnellstart](./media/app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview/windows-quickstart.png)
 
@@ -88,4 +88,4 @@ Nachdem das mobile App-Back-End veröffentlicht wurde und der Client mit dem in 
 [Azure Portal]: https://portal.azure.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

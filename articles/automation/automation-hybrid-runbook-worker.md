@@ -1,6 +1,6 @@
 <properties
    pageTitle="Azure Automation – Hybrid-Runbook-Worker"
-   description="Der vorliegende Artikel stellt Informationen zum Installieren und Verwendung der Azure Automation-Funktion &quot;Hybrid-Runbook-Worker&quot; bereit, mit der Sie Runbooks auf Computern in Ihrem lokalen Datencenter ausführen können."
+   description="Der vorliegende Artikel stellt Informationen zum Installieren und Verwendung der Azure Automation-Funktion ";Hybrid-Runbook-Worker"; bereit, mit der Sie Runbooks auf Computern in Ihrem lokalen Datencenter ausführen können."
    services="automation"
    documentationCenter=""
    authors="bwren"
@@ -42,10 +42,10 @@ Wenn Sie ein Runbook auf einen Hybrid-Runbook-Worker starten, geben Sie die Grup
 Führen Sie die folgenden Schritte aus, um Ihre Azure Automation-Umgebung für Hybrid-Runbook-Worker vorzubereiten.
 
 #### 1\. Erstellen eines Azure Operational Insights-Arbeitsbereichs
-Sofern Sie noch nicht über einen Operational Insights-Arbeitsbereich in Ihrem Azure-Konto verfügen, erstellen Sie diesen mithilfe der Anweisungen unter [Einrichten Ihres Operational Insights-Arbeitsbereichs](../operational-insights-setup-workspace). Wenn Sie bereits über einen Arbeitsbereich verfügen, können Sie diesen verwenden.
+Sofern Sie noch nicht über einen Operational Insights-Arbeitsbereich in Ihrem Azure-Konto verfügen, erstellen Sie diesen mithilfe der Anweisungen unter [Einrichten Ihres Operational Insights-Arbeitsbereichs](../operational-insights/operational-insights-setup-workspace.md). Wenn Sie bereits über einen Arbeitsbereich verfügen, können Sie diesen verwenden.
 
 #### 2\. Bereitstellen der Automation-Lösung
-Die Automation-Lösung in Operational Insights lädt per Push Komponenten herunter, die zum Konfigurieren und Unterstützen der Runbookumgebung erforderlich sind. Befolgen Sie die Anweisungen unter [Operational Insights-Lösungen](../operational-insights-add-solution), um das **Azure Automation**-Pack zu installieren.
+Die Automation-Lösung in Operational Insights lädt per Push Komponenten herunter, die zum Konfigurieren und Unterstützen der Runbookumgebung erforderlich sind. Befolgen Sie die Anweisungen unter [Operational Insights-Lösungen](../operational-insights/operational-insights-setup-workspace.md#1-add-solutions), um das **Azure Automation**-Pack zu installieren.
 
 ### Konfigurieren der lokalen Computer
 Führen Sie die folgenden Schritte für jeden lokalen Computer aus, der als Hybrid-Runbook-Worker fungieren soll.
@@ -136,4 +136,4 @@ Sie können anhand der folgenden Kriterien prüfen, ob Azure Automation mit Hybr
 - [Bearbeiten eines Runbooks in Azure Automation](https://msdn.microsoft.com/library/dn879137.aspx)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

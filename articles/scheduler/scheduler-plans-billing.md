@@ -25,7 +25,7 @@ In Azure Scheduler wird nach Auftragssammlungen abgerechnet. Auftragssammlungen 
 |:---|:---|:---|:---|:---|
 |**Free**|Fünf Aufträge pro Auftragssammlung|Einmal pro Stunde. Aufträge können maximal einmal pro Stunde ausgeführt werden.|Ein Abonnement kann maximal eine Auftragssammlung vom Typ „Free“ enthalten.|Das [HTTP-Objekt für die ausgehende Autorisierung](scheduler-outbound-authentication.md) kann nicht verwendet werden.
 |**Standard**|50 Aufträge pro Auftragssammlung|Einmal pro Minute. Aufträge können maximal einmal pro Minute ausgeführt werden.|Ein Abonnement kann maximal 100 Auftragssammlungen vom Typ „Standard“ enthalten.|Zugriff auf sämtliche Scheduler-Features|
-|**Premium**|50 Aufträge pro Auftragssammlung|Einmal pro Minute. Aufträge können maximal einmal pro Minute ausgeführt werden.|Ein Abonnement kann eine unbegrenzte Anzahl von Auftragssammlungen des Typs „Premium“ enthalten.|Zugriff auf sämtliche Scheduler-Features|
+|**Premium**|50 Aufträge pro Auftragssammlung|Einmal pro Minute. Aufträge können maximal einmal pro Minute ausgeführt werden.|Ein Abonnement kann maximal 10.000 Auftragssammlungen vom Typ "Premium" enthalten. <a href="mailto:wapteams@microsoft.com">Setzen Sie sich mit uns in Verbindung</a>, um weitere Informationen zu erhalten.|Zugriff auf sämtliche Scheduler-Features|
 
 ## Upgrades und Downgrades für Auftragssammlungspläne
 
@@ -40,7 +40,7 @@ Sie können bei Ihren Auftragssammlungsplänen jederzeit zwischen „Free“, �
 
 Für Auftragssammlungen vom Typ „Free“ fallen in Abonnements keine Kosten an. Bei mehr als 100 Standard-Auftragssammlungen (entspricht zehn Standard-Abrechnungseinheiten) lohnt sich die Verlagerung der Auftragssammlungen in der Premium-Plan.
 
-Wenn Sie eine Auftragssammlung vom Typ „Standard“ und eine vom Typ „Premium“ besitzen, werden Ihnen eine Standard-Abrechnungseinheit _und_ eine Premium-Abrechnungseinheit in Rechnung gestellt. Die Abrechnung des Scheduler-Diensts basiert auf der Anzahl aktiver Auftragssammlungen vom Typ „Standard“ oder „Premium“. Dies wird in den beiden folgenden Abschnitten ausführlicher erläutert.
+Wenn Sie eine Auftragssammlung vom Typ "Standard" und eine vom Typ "Premium" besitzen, werden Ihnen eine Standard-Abrechnungseinheit _und_ eine Premium-Abrechnungseinheit in Rechnung gestellt. Die Abrechnung des Scheduler-Diensts basiert auf der Anzahl aktiver Auftragssammlungen vom Typ „Standard“ oder „Premium“. Dies wird in den beiden folgenden Abschnitten ausführlicher erläutert.
 
 ## Standard-Abrechnungseinheiten
 
@@ -60,7 +60,7 @@ Premium-Auftragssammlungen haben den gleichen Funktionsumfang wie Standard-Auftr
 
 Auftragssammlungen sind immer aktiv, es sei denn, Ihr gesamtes Abonnement wurde aufgrund von Problemen bei der Abrechnung vorübergehend deaktiviert. Wenn Sie sichergehen möchten, dass eine Auftragssammlung nicht in Rechnung gestellt wird, müssen Sie sie entweder mit dem Plan _Free_ versehen oder die Auftragssammlung löschen.
 
-Sie können zwar mit einem einzelnen Vorgang alle Aufträge innerhalb einer Auftragssammlung deaktivieren, dies hat jedoch keine Auswirkungen auf deren Abrechnungsstatus. Mit anderen Worten: Die Auftragssammlung wird _weiterhin in Rechnung gestellt_. Darüber hinaus gelten auch leere Auftragssammlungen als aktiv und werden berechnet.
+Sie können zwar mit einem einzelnen Vorgang alle Aufträge innerhalb einer Auftragssammlung deaktivieren, dies hat jedoch keine Auswirkungen auf deren Abrechnungsstatus. Mit anderen Worten: Die Auftragssammlung wird _weiterhin_ in Rechnung gestellt. Darüber hinaus gelten auch leere Auftragssammlungen als aktiv und werden berechnet.
 
 ## Preise
 
@@ -87,4 +87,4 @@ Ausführliche Informationen finden Sie unter [Scheduler Preise](http://azure.mic
  [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
   
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

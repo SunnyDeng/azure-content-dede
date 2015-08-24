@@ -1,12 +1,11 @@
 <properties 
-	pageTitle="Überwachen eines Clouddiensts – Azure" 
+	pageTitle="Überwachen eines Clouddiensts| Microsoft Azure" 
 	description="Hier erfahren Sie mehr über die Überwachung von Clouddiensten im Azure-Verwaltungsportal." 
 	services="cloud-services" 
 	documentationCenter="" 
 	authors="rboucher" 
 	manager="jwhit" 
 	editor=""/>
-
 
 <tags 
 	ms.service="cloud-services" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="08/04/2014" 
 	ms.author="robb"/>
-
 
 
 #Überwachung von Clouddiensten
@@ -29,7 +27,7 @@ Die Überwachungsanzeigen im Verwaltungsportal können ausführlich konfiguriert
 
 ##Konzepte##
 
-Standardmäßig werden neue Clouddienste mit minimaler Überwachung eingerichtet. Dabei werden Leistungsindikatoren des Hostbetriebssystems für die Rolleninstanzen (virtuelle Computer) gesammelt. Die minimalen Metriken beschränken sich auf CPU-Auslastung, Dateneingang, Datenausgang, Lese- und Schreibdurchsatz von Laufwerken. Mit der ausführlichen Überwachung erhalten Sie zusätzliche Metriken auf Basis von Leistungsdaten der einzelnen virtuellen Computer (Rolleninstanzen). Die ausführliche Überwachung ermöglicht eine genauere Analyse von Problemen beim Betrieb von Anwendungen.
+Standardmäßig werden neue Clouddienste mit minimaler Überwachung eingerichtet. Dabei werden Leistungsindikatoren des Hostbetriebssystems für die Rolleninstanzen \(virtuelle Computer\) gesammelt. Die minimalen Metriken beschränken sich auf CPU-Auslastung, Dateneingang, Datenausgang, Lese- und Schreibdurchsatz von Laufwerken. Mit der ausführlichen Überwachung erhalten Sie zusätzliche Metriken auf Basis von Leistungsdaten der einzelnen virtuellen Computer \(Rolleninstanzen\). Die ausführliche Überwachung ermöglicht eine genauere Analyse von Problemen beim Betrieb von Anwendungen.
 
 Die Daten der Leistungsindikatoren aus Rolleninstanzen werden standardmäßig alle 3 Minuten von der Rolleninstanz gemessen und übertragen. Bei der ausführlichen Überwachung werden die Leistungsindikatorendaten für die einzelnen Rolleninstanzen und rolleninstanzübergreifend für die einzelnen Rollen in Intervallen von 5 Minuten, 1 Stunde und 12 Stunden aggregiert. Die aggregierten Daten werden nach 10 Tagen gelöscht.
 
@@ -44,7 +42,7 @@ Führen Sie die folgenden Schritte aus, um im Verwaltungsportal ausführliche od
 
 ###Voraussetzungen###
 
-- Erstellen Sie ein Speicherkonto zum Speichern der Überwachungsdaten. Sie können unterschiedliche Speicherkonten für unterschiedliche Rollen verwenden. Weitere Informationen finden Sie in der Hilfe zu **Speicherkonten** oder unter [How To Create a Storage Account](/manage/services/storage/how-to-create-a-storage-account/) (Erstellen eines Speicherkontos, in englischer Sprache).
+- Erstellen Sie ein Speicherkonto zum Speichern der Überwachungsdaten. Sie können unterschiedliche Speicherkonten für unterschiedliche Rollen verwenden. Weitere Informationen finden Sie in der Hilfe zu **Speicherkonten** oder unter [How To Create a Storage Account](/manage/services/storage/how-to-create-a-storage-account/) \(Erstellen eines Speicherkontos, in englischer Sprache\).
 
 - Aktivieren Sie die Azure-Diagnose für Ihre Clouddienstrollen. Siehe [Konfigurieren der Diagnose für Cloud Services](https://msdn.microsoft.com/library/azure/dn186185.aspx#BK_EnableBefore).
 
@@ -104,14 +102,14 @@ Sie können Warnungen auf Basis der Überwachungsmetriken Ihrer Clouddienste emp
  
 	![Suche zum Hinzufügen von Metriken](./media/cloud-services-how-to-monitor/CloudServices_AddMetrics_Search.png)
 
-3. Wählen Sie die gewünschten Metriken aus, und klicken Sie auf OK (Kontrollkästchen).
+3. Wählen Sie die gewünschten Metriken aus, und klicken Sie auf OK \(Kontrollkästchen\).
 
 	Die ausgewählten Metriken werden zur Metrikentabelle hinzugefügt, wie unten gezeigt.
 
 	![Überwachen von Metriken](./media/cloud-services-how-to-monitor/CloudServices_Monitor_UpdatedMetrics.png)
 
  
-4. Um eine Metrik aus der Metrikentabelle zu löschen, klicken Sie auf die Metrik, um diese auszuwählen, und anschließend auf **Metrik löschen**. (Die Option **Metrik löschen** ist nur sichtbar, wenn Sie eine Metrik ausgewählt haben.)
+4. Um eine Metrik aus der Metrikentabelle zu löschen, klicken Sie auf die Metrik, um diese auszuwählen, und anschließend auf **Metrik löschen**. \(Die Option **Metrik löschen** ist nur sichtbar, wenn Sie eine Metrik ausgewählt haben.\)
 
 ###So fügen Sie benutzerdefinierte Metriken zur Metrikentabelle hinzu###
 Die Überwachungsstufe **Ausführlich** bietet eine Liste der Standardmetriken, die Sie im Portal überwachen können. Darüber hinaus können Sie alle benutzerdefinierten Metriken oder Leistungsindikatoren über das Portal überwachen, die von der Anwendung definiert wurden.
@@ -145,7 +143,7 @@ Zum Anzeigen von benutzerdefinierten Leistungsindikatoren im Portal müssen Sie 
 	Die ausgewählten Metriken in der Metrikentabelle werden zum Metrikendiagramm hinzugefügt. Auf kleinen Bildschirmen wird eine Auswahlliste mit **n weitere** angezeigt. Diese enthält Metrikenheader, die nicht auf den Bildschirm passen.
 
  
-2. Wählen Sie Relativ oder Absolut im oberen Bereich des Diagramms, um zwischen relativen (nur endgültiger Wert für jede Metrik) und absoluten Werten (Y-Achse wird angezeigt) umzuschalten.
+2. Wählen Sie Relativ oder Absolut im oberen Bereich des Diagramms, um zwischen relativen \(nur endgültiger Wert für jede Metrik\) und absoluten Werten \(Y-Achse wird angezeigt\) umzuschalten.
 
 	![Relativ oder Absolut](./media/cloud-services-how-to-monitor/CloudServices_Monitor_RelativeAbsolute.png)
 
@@ -171,7 +169,7 @@ Zum Anzeigen von benutzerdefinierten Leistungsindikatoren im Portal müssen Sie 
 
 ##Zugreifen auf ausführliche Überwachungsdaten außerhalb des Verwaltungsportals##
 
-Ausführliche Überwachungsdaten werden in Tabellen in Speicherkonten gespeichert, die Sie für die einzelnen Rollen angeben. Pro Clouddienstbereitstellung werden sechs Tabellen für die Rolle erstellt. Jeweils zwei dieser Tabellen sind für die einzelnen Intervalle (5 Minuten, 1 Stunde und 12 Stunden). Eine dieser Tabellen speichert Aggregationen auf Rollenebene, und die andere Tabelle speichert Aggregationen für Rolleninstanzen.
+Ausführliche Überwachungsdaten werden in Tabellen in Speicherkonten gespeichert, die Sie für die einzelnen Rollen angeben. Pro Clouddienstbereitstellung werden sechs Tabellen für die Rolle erstellt. Jeweils zwei dieser Tabellen sind für die einzelnen Intervalle \(5 Minuten, 1 Stunde und 12 Stunden\). Eine dieser Tabellen speichert Aggregationen auf Rollenebene, und die andere Tabelle speichert Aggregationen für Rolleninstanzen.
 
 Die Tabellennamen haben das folgende Format:
 
@@ -194,4 +192,4 @@ Die folgenden Tabellen speichern z. B. ausführliche Überwachungsdaten aggregie
 	WAD8b7c4233802442b494d0cc9eb9d8dd9fPT1HRITable (hourly aggregations for role instances)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

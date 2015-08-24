@@ -1,12 +1,11 @@
 <properties
 	pageTitle="Verwalten von Kennwörtern in Azure AD | Microsoft Azure"
-	description="Ein Thema mit Erläuterungen zum Verwalten von Kennwörtern in Azure AD."
+	description="Verwalten von Kennwörtern in Azure AD"
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
-	manager="swadwha"
-	editor=""
-	tags="azure-classic-portal"/>
+	manager="stevenpo"
+	editor=""/>
 
 <tags
 	ms.service="active-directory"
@@ -14,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/28/2015"
+	ms.date="08/10/2015"
 	ms.author="curtand"/>
 
 # Verwalten von Kennwörtern in Azure AD
@@ -33,13 +32,15 @@ Im weiteren Verlauf dieses Themas werden die umfassenden Kennwortverwaltungsfunk
 
 Über die folgenden Links gelangen Sie zur Dokumentation, die für Sie am interessantesten ist:
 
-- [Übersicht: Kennwortverwaltung in Azure AD](https://msdn.microsoft.com/library/azure/dn683880.aspx)
-- [Self-Service-Kennwortzurücksetzung in Azure AD: Aktivierung, Konfiguration und Test der Self-Service-Kennwortzurücksetzung ](https://msdn.microsoft.com/library/azure/dn683881.aspx)
-- [Self-Service-Kennwortzurücksetzung in Azure AD: Anpassen der Kennwortzurücksetzung zum Erfüllen Ihrer Anforderungen](https://msdn.microsoft.com/library/azure/dn688249.aspx)
-- [Self-Service-Kennwortzurücksetzung in Azure AD: Bewährte Methoden für die Bereitstellung und Verwaltung](https://msdn.microsoft.com/library/azure/dn903643.aspx)
-- [Kennwortverwaltungsberichte in Azure AD: Anzeigen von Kennwortverwaltungsaktivitäten in Ihrem Mandanten](https://msdn.microsoft.com/library/azure/dn903641.aspx)
-- [Rückschreiben von Kennwörtern: Konfigurieren von Azure AD für die Verwaltung lokaler Kennwörter](https://msdn.microsoft.com/library/azure/dn903642.aspx)
-- [FAQ/Problembehandlung für die Kennwortverwaltung von Azure AD](https://msdn.microsoft.com/library/azure/dn683878.aspx)
+- [Übersicht: Kennwortverwaltung in Azure AD](active-directory-passwords-how-it-works.md)
+- [Self-Service-Kennwortzurücksetzung in Azure AD: Aktivierung, Konfiguration und Test der Self-Service-Kennwortzurücksetzung ](active-directory-passwords-getting-started.md#enable-users-to-reset-their-azure-ad-passwords)
+- [Self-Service-Kennwortzurücksetzung in Azure AD: Anpassen der Kennwortzurücksetzung zum Erfüllen Ihrer Anforderungen](active-directory-passwords-customize.md)
+- [Self-Service-Kennwortzurücksetzung in Azure AD: Bewährte Methoden für die Bereitstellung und Verwaltung](active-directory-passwords-best-practices.md)
+- [Kennwortverwaltungsberichte in Azure AD: Anzeigen von Kennwortverwaltungsaktivitäten in Ihrem Mandanten](active-directory-passwords-get-insights.md)
+- [Rückschreiben von Kennwörtern: Konfigurieren von Azure AD für die Verwaltung lokaler Kennwörter](active-directory-passwords-getting-started.md#enable-users-to-reset-or-change-their-ad-passwords)
+- [Behandeln von Problemen bei der Kennwortverwaltung von Azure AD](active-directory-passwords-troubleshoot.md)
+- [Häufig gestellte Fragen zur Kennwortverwaltung von Azure AD](active-directory-passwords-faq.md)
+
 
 ## Nächste Schritte
 
@@ -47,4 +48,4 @@ Im weiteren Verlauf dieses Themas werden die umfassenden Kennwortverwaltungsfunk
 - [Erstellen oder Bearbeiten von Benutzern in Azure AD](active-directory-create-users.md)
 - [Verwalten von Gruppen in Azure AD](active-directory-manage-groups.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

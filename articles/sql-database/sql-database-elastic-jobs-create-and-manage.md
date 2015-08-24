@@ -13,12 +13,17 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/25/2015"
-	ms.author="sidneyh"/>
+	ms.date="07/21/2015"
+	ms.author="ddove; sidneyh"/>
 
-# Erstellen und Verwalten von elastischen Datenbankaufträgen
+# Erstellen und Verwalten eines elastischen SQL-Datenbankauftrags im Portal \(Vorschau\)
 
-**Elastische Datenbankpools** bieten ein vorhersagbares Modell zur Bereitstellung einer großen Anzahl von Datenbanken. Sie können die minimalen Datendurchsatzeinheiten (DTUs) für jede Datenbank zu einem bestimmten Preis festlegen. Das Verwalten von häufig verwendeten Objekten in diesen Datenbanken erledigen Sie am einfachsten mit **elastischen Datenbankaufträgen**. Der Dienst ermöglicht es Ihnen, T-SQL-Skripts für alle Datenbanken im Pool in einem einzigen Vorgang auszuführen. Beispielsweise können Sie eine Richtlinie für jede Datenbank festlegen, sodass nur Personen mit den richtigen Anmeldeinformationen zum Anzeigen vertraulicher Daten berechtigt sind.
+> [AZURE.SELECTOR]
+- [Azure portal](sql-database-elastic-jobs-create-and-manage.md)
+- [PowerShell](sql-database-elastic-jobs-powershell.md)
+
+
+**Elastische Datenbankaufträge** ermöglichen eine einfache und zuverlässige Verwaltung einer Gruppe von Datenbanken. Dazu wird die Ausführung der folgenden administrativen Vorgänge vereinfacht: Schemaänderungen, Verwaltung von Anmeldeinformationen, Aktualisierungen von Verweisdaten, Sammlung von Leistungsdaten und Sammlung von Telemetriedaten zu Mandanten \(Kunden\). Elastische Datenbankaufträge sind derzeit über das Azure-Portal und PowerShell-Cmdlets verfügbar. Das Azure-Portal bietet allerdings nur eingeschränkte Funktionalität, die auf die Ausführung in allen Datenbanken in einem [elastischen Datenbankpool \(Vorschau\)](sql-database-elastic-pool.md) begrenzt ist. Informationen zum Zugriff auf zusätzliche Features und zum Anwenden von Skripts auf eine Gruppe von Datenbanken, einschließlich einer benutzerdefinierten Sammlung oder eines Shardsatzes \(erstellt mithilfe der [Clientbibliothek für elastische Datenbanken](sql-database-elastic-scale-introduction.md)\) finden Sie unter [Erstellen und Verwalten von Aufträgen mithilfe von PowerShell](sql-database-elastic-jobs-powershell.md). Weitere Informationen zu Aufträgen finden Sie unter [Übersicht über elastische Datenbankaufträge](sql-database-elastic-jobs-overview.md).
 
 ## Voraussetzungen
 
@@ -28,8 +33,8 @@
 
 ## Erstellen von Aufträgen
 
-1. Klicken Sie auf dem Blatt für elastische Datenbankauftragspools auf **Auftrag erstellen**.
-2. Geben Sie den Benutzernamen und das Kennwort des Datenbankadministrators (der bei der Installation der Aufträge erstellt wurde) für die Auftragsverwaltungs-Datenbank (Metadatenspeicher für Aufträge) ein.
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com) in einem vorhandenen elastischen Pool von Datenbankaufträgen auf **Auftrag erstellen**.
+2. Geben Sie den Benutzernamen und das Kennwort des Datenbankadministrators \(der bei der Installation der Aufträge erstellt wurde\) für die Auftragsverwaltungs-Datenbank \(Metadatenspeicher für Aufträge\) ein.
 
 	![Benennen Sie den Auftrag, geben Sie den Code ein, oder fügen Sie ihn ein, und klicken Sie auf "Ausführen".][1]
 2. Geben Sie auf dem Blatt **Auftrag erstellen** einen Namen für den Auftrag ein.
@@ -41,7 +46,7 @@
 
 ## Ausführen idempotenter Aufträge
 
-Beim Ausführen eines Skripts für einen Satz von Datenbanken müssen Sie darauf achten, dass das Skript idempotent ist. Das heißt, das Skript muss mehrmals ausgeführt werden können, auch wenn es zuvor in einem unvollständigen Zustand Fehler verursacht hat. Wenn beispielsweise ein Skript fehlschlägt, wird der Auftrag automatisch wiederholt, bis er erfolgreich abgeschlossen wurde (mit Einschränkungen, da die Wiederholungslogik irgendwann keine Wiederholung mehr ausführt). Die Vorgehensweise dabei ist, eine "IF EXISTS"-Klausel zu verwenden und jede gefundene Instanz zu löschen, bevor Sie ein neues Objekt erstellen. Im Folgenden ist ein Beispiel dargestellt:
+Beim Ausführen eines Skripts für einen Satz von Datenbanken müssen Sie darauf achten, dass das Skript idempotent ist. Das heißt, das Skript muss mehrmals ausgeführt werden können, auch wenn es zuvor in einem unvollständigen Zustand Fehler verursacht hat. Wenn beispielsweise ein Skript fehlschlägt, wird der Auftrag automatisch wiederholt, bis er erfolgreich abgeschlossen wurde \(mit Einschränkungen, da die Wiederholungslogik irgendwann keine Wiederholung mehr ausführt\). Die Vorgehensweise dabei ist, eine "IF EXISTS"-Klausel zu verwenden und jede gefundene Instanz zu löschen, bevor Sie ein neues Objekt erstellen. Im Folgenden ist ein Beispiel dargestellt:
 
 	IF EXISTS (SELECT name FROM sys.indexes
             WHERE name = N'IX_ProductVendor_VendorID')
@@ -83,11 +88,11 @@ Dieses Skript aktualisiert dann die zuvor erstellte Tabelle.
 
 Nachdem ein Auftrag gestartet wurde, können Sie seinen Fortschritt überprüfen.
 
-1. Klicken Sie auf der Seite für elastische Datenbankpools auf **Aufträge verwalten**.
+1. Klicken Sie auf der Seite "Pool für elastische Datenbank" auf **Aufträge verwalten**.
 
 	![Klicken Sie auf "Aufträge verwalten".][2]
 
-2. Klicken Sie auf den Namen (a) eines Auftrags. Der **STATUS** kann "Abgeschlossen" oder "Fehlgeschlagen" lauten. Die Auftragsdetails (b) werden mit Datum und Uhrzeit der Erstellung und Ausführung angezeigt. Die Liste (c) zeigt den Fortschritt des Skripts für jede Datenbank im Pool unter Angabe des Datums und der Uhrzeit an.
+2. Klicken Sie auf den Namen \(a\) eines Auftrags. Der **STATUS** kann "Abgeschlossen" oder "Fehlgeschlagen" lauten. Die Auftragsdetails \(b\) werden mit Datum und Uhrzeit der Erstellung und Ausführung angezeigt. Die Liste \(c\) zeigt den Fortschritt des Skripts für jede Datenbank im Pool unter Angabe des Datums und der Uhrzeit an.
 
 	![Überprüfen beendeter Aufträge][3]
 
@@ -110,4 +115,4 @@ Wenn ein Auftrag fehlschlägt, wird ein Protokoll zu seiner Ausführung erstellt
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

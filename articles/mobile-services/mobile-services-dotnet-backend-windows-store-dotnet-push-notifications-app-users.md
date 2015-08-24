@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer (Universal Windows 8.1) | Azure Mobile Services" 
+	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer (Universal Windows 8.1) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mit Azure Mobile Services Pushbenachrichtigungen an einen bestimmten authentifizierten Benutzer senden können, auf dessen Gerät Ihre universelle Windows 8.1-App ausgeführt wird." 
 	services="mobile-services,notification-hubs" 
 	documentationCenter="windows" 
@@ -66,4 +66,4 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

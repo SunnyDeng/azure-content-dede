@@ -1,81 +1,20 @@
-<table cellspacing="0" border="1">
-<tr>
-   <th align="left" valign="middle">Ressource</th>
-   <th align="left" valign="middle">Standardlimit</th>
-   <th align="left" valign="middle">Maximales Limit</th>
-</tr>
-<tr>
-   <td valign="middle"><p>Prozessorkerne pro <a href="http://msdn.microsoft.com/library/azure/hh531793.aspx">Abonnement</a><sup>1</sup></p></td>
-   <td valign="middle"><p>20</p></td>
-   <td valign="middle"><p>10.000</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/azure/gg456328.aspx">Co-Administratoren</a> pro Abonnement</p></td>
-   <td valign="middle"><p>200</p></td>
-   <td valign="middle"><p>200</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/storage-create-storage-account/">Speicherkonten</a> pro Abonnement</p></td>
-   <td valign="middle"><p>100</p></td>
-   <td valign="middle"><p>100</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/documentation/articles/cloud-services-what-is/">Clouddienste</a> pro Abonnement</p></td>
-   <td valign="middle"><p>20</p></td>
-   <td valign="middle"><p>200</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/jj157100.aspx">Lokale Netzwerke</a> pro Abonnement</p></td>
-   <td valign="middle"><p>10</p></td>
-   <td valign="middle"><p>500</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>SQL-Datenbankserver pro Abonnement</p></td>
-   <td valign="middle"><p>6</p></td>
-   <td valign="middle"><p>150</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>SQL-Datenbanken pro Server</p></td>
-   <td valign="middle"><p>150</p></td>
-   <td valign="middle"><p>500</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>DNS-Server pro Abonnement</p></td>
-   <td valign="middle"><p>9</p></td>
-   <td valign="middle"><p>100</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Reservierte IPs pro Abonnement</p></td>
-   <td valign="middle"><p>20</p></td>
-   <td valign="middle"><p>100</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Dedizierte ExpressRoute-Schaltkreise pro Abonnement</p></td>
-   <td valign="middle"><p>10</p></td>
-   <td valign="middle"><p>25</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Zertifikate für gehostete Dienste pro Abonnement</p></td>
-   <td valign="middle"><p>400</p></td>
-   <td valign="middle"><p>400</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/azure/jj156085.aspx">Affinitätsgruppen</a> pro Abonnement</p></td>
-   <td valign="middle"><p>256</p></td>
-   <td valign="middle"><p>256</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p><a href="http://azure.microsoft.com/services/batch/">Batchkonten</a> pro Region und Abonnement</p></td>
-   <td valign="middle"><p>1</p></td>
-   <td valign="middle"><p>50</p></td>
-</tr>
-<tr>
-   <td valign="middle"><p>Warnungsregeln pro Abonnement</p></td>
-   <td valign="middle"><p>250</p></td>
-   <td valign="middle"><p>250</p></td>
-</tr>
-</table>
+Ressource|Standardlimit|Maximales Limit
+---|---|---
+Prozessorkerne pro [Abonnement](http://msdn.microsoft.com/library/azure/hh531793.aspx) <sup>1</sup>|20|10\.000
+[Co-Administratoren](http://msdn.microsoft.com/library/azure/gg456328.aspx) pro Abonnement|200|200
+[Speicherkonten](storage-create-storage-account.md) pro Abonnement|100|100
+[Clouddienste](cloud-services-what-is.md) pro Abonnement|20|200
+[Lokale Netzwerke](http://msdn.microsoft.com/library/jj157100.aspx) pro Abonnement|10|500
+SQL-Datenbankserver pro Abonnement|6|150
+SQL-Datenbanken pro Server|150|500
+DNS-Server pro Abonnement|9|100
+Reservierte IPs pro Abonnement|20|100
+Dedizierte ExpressRoute-Schaltkreise pro Abonnement|10|25
+Zertifikate für gehostete Dienste pro Abonnement|400|400
+[Affinitätsgruppen](http://msdn.microsoft.com/library/azure/jj156085.aspx) pro Abonnement|256|256
+[Batch](http://azure.microsoft.com/services/batch/)-Konten pro Region und Abonnement|1|50
+Warnungsregeln pro Abonnement|250|250
 
 <sup>1</sup> Zusätzliche kleine Instanzen zählen als ganzer Prozessorkern im Sinn des Limits, obwohl nur ein Teil eines Kerns verwendet wird.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

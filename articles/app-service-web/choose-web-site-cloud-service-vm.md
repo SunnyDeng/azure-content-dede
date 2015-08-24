@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="04/29/2015"
+	ms.date="08/10/2015"
 	ms.author="tdykstra"/>
 
 # Azure App Service, Cloud Services und Virtual Machines im Vergleich
@@ -50,7 +50,7 @@ Im Folgenden sind einige Anwendungsszenarien mit Empfehlungen zur Auswahl der ge
 
 ### <a id="onprem"></a> Ich benötige ein Web-Front-End mit Hintergrundverarbeitung und Datenbank-Back-End, um Geschäftsanwendungen mit integrierten lokalen Medienobjekten auszuführen.
 
-Azure App Service stellt eine hervorragende Lösung für komplexe Geschäftsanwendungen dar. Mit Azure App Service können Sie Apps entwickeln, die automatisch auf einer Lastenausgleichsplattform skaliert, mit Active Directory geschützt und mit Ihren lokalen Ressourcen verbunden werden können. Das Verwalten dieser Apps wird dank eines erstklassigen Verwaltungsportals und mithilfe von APIs erleichtert. Sie erhalten außerdem mithilfe von App Insight-Tools Einblicke darin, wie Kunden die Apps verwenden. Mit der neuen Funktion [WebJobs][] können Sie Hintergrundprozesse und Aufgaben als Teil der Webebene ausführen, während Hybridkonnektivität und die [VNET-Funktionen](../fundamentals-introduction-to-azure.md#networking/) die Verbindung zurück zu den lokalen Ressourcen ermöglichen. Azure App Service bietet eine SLA mit 99,9 % Verfügbarkeit für Web-Apps und stellt folgende Möglichkeiten bereit:
+Azure App Service stellt eine hervorragende Lösung für komplexe Geschäftsanwendungen dar. Mit Azure App Service können Sie Apps entwickeln, die automatisch auf einer Lastenausgleichsplattform skaliert, mit Active Directory geschützt und mit Ihren lokalen Ressourcen verbunden werden können. Das Verwalten dieser Apps wird dank eines erstklassigen Verwaltungsportals und mithilfe von APIs erleichtert. Sie erhalten außerdem mithilfe von App Insight-Tools Einblicke darin, wie Kunden die Apps verwenden. Mit der Funktion [WebJobs][] können Sie Hintergrundprozesse und Aufgaben als Teil der Webebene ausführen, während Hybridkonnektivität und die [VNET-Funktionen](../fundamentals-introduction-to-azure.md#networking/) die Verbindung zurück zu den lokalen Ressourcen ermöglichen. Azure App Service bietet eine SLA mit 99,9 % Verfügbarkeit für Web-Apps und stellt folgende Möglichkeiten bereit:
 
 * Zuverlässige Ausführung Ihrer Anwendungen auf einer Cloudplattform mit Selbstreparatur und automatischem Patching.
 * Automatische Skalierung in einem globalen Netzwerk von Datencentern.
@@ -79,7 +79,7 @@ Mit Azure App Service lassen sich die mit dem Migrieren von älteren IIS6-Anwend
 
 ### <a id="smallbusiness"></a>Ich bin Inhaber eines kleinen Unternehmens und suche nach einem kostengünstigen Weg, meine Website zu hosten. Dabei sollen zukünftige Wachstumsmöglichkeiten berücksichtigt werden.
 
-Azure App Service ist eine hervorragende Lösung für dieses Szenario, da Sie mit einer kostenlosen Version beginnen und später bei Bedarf weitere Funktionen hinzufügen können. Jede kostenlose Web-App wird mit einer Domäne von Azure bereitgestellt (*Ihr\_Unternehmen*.azurewebsites.net). Die Plattform umfasst integrierte Bereitstellungs- und Verwaltungstools sowie einen Anwendungskatalog, der Ihnen den Einstieg erleichtert. Es gibt viele weitere Dienste und Skalierungsoptionen, dank derer Sie die Website mit steigenden Benutzeranforderungen weiterentwickeln können. Mit Azure App Service haben Sie folgende Möglichkeiten:
+Azure App Service ist eine hervorragende Lösung für dieses Szenario, da Sie mit einer kostenlosen Version beginnen und später bei Bedarf weitere Funktionen hinzufügen können. Jede kostenlose Web-App wird mit einer Domäne von Azure bereitgestellt \(*Ihr\_Unternehmen*.azurewebsites.net\). Die Plattform umfasst integrierte Bereitstellungs- und Verwaltungstools sowie einen Anwendungskatalog, der Ihnen den Einstieg erleichtert. Es gibt viele weitere Dienste und Skalierungsoptionen, dank derer Sie die Website mit steigenden Benutzeranforderungen weiterentwickeln können. Mit Azure App Service haben Sie folgende Möglichkeiten:
 
 - Starten Sie mit der kostenlosen Version, und führen Sie nach Bedarf eine Skalierung durch.
 - Verwenden Sie den Web-App-Katalog, um rasch gängige Webanwendungen wie z. B. WordPress einzurichten.
@@ -138,16 +138,16 @@ Zusätzlich verfügt Azure App Service über eine neue Vorschaufunktion für RES
 
 ##<a name="features"></a>Funktionsvergleich
 
-In der folgenden Tabelle werden die Funktionen von App Service, Cloud Services und Virtual Machines verglichen, um Ihnen die Auswahl der richtigen Option zu erleichtern. Aktuelle Informationen über die Vereinbarung zum Servicelevel (SLA) in Bezug auf die jeweilige Option finden Sie unter [Azure-Vereinbarung zum Servicelevel](/support/legal/sla/).
+In der folgenden Tabelle werden die Funktionen von App Service, Cloud Services und Virtual Machines verglichen, um Ihnen die Auswahl der richtigen Option zu erleichtern. Aktuelle Informationen über die Vereinbarung zum Servicelevel \(SLA\) in Bezug auf die jeweilige Option finden Sie unter [Azure-Vereinbarung zum Servicelevel](/support/legal/sla/).
 
-Funktion|App Service (Web-Apps)|Cloud Services (Webrollen)|Virtual Machines|Hinweise
+Funktion|App Service \(Web-Apps\)|Cloud Services \(Webrollen\)|Virtual Machines|Hinweise
 ---|---|---|---|---
 Zeitnahe Bereitstellung|X|||Die Bereitstellung einer Anwendung oder einer Anwendungsaktualisierung in Cloud Services oder das Erstellen eines virtuellen Computers nimmt mindestens einige Minuten in Anspruch. Die Bereitstellung einer Anwendung in einer Web-App dauert wenige Sekunden.
 Skalierung auf größere Computer ohne erneute Bereitstellung|X|||
 Webserverinstanzen weisen gemeinsame Inhalte und eine gemeinsame Konfiguration auf. Dies bedeutet, dass Sie sie bei einer Skalierung nicht neu bereitstellen oder neu konfigurieren müssen.|X|||
-Mehrere Bereitstellungsumgebungen (Produktion und Staging)|X|X||
+Mehrere Bereitstellungsumgebungen \(Produktion und Staging\)|X|X||
 Automatische Aktualisierungsverwaltung für das Betriebssystem|X|X||
-Nahtloser Plattformwechsel (einfacher Wechsel zwischen 32 Bit und 64 Bit)|X|X||
+Nahtloser Plattformwechsel \(einfacher Wechsel zwischen 32 Bit und 64 Bit\)|X|X||
 Bereitstellung von Code mit GIT, FTP|X||X|
 Bereitstellung von Code mit Web Deploy|X||X|Cloud Services unterstützt die Verwendung von Web Deploy, um Updates für einzelne Rolleninstanzen bereitzustellen. Ein Einsatz für die Erstbereitstellung einer Rolle ist jedoch nicht möglich. Wenn Sie Web Deploy für eine Aktualisierung verwenden, müssen Sie jeweils eine separate Bereitstellung für jede Instanz einer Rolle vornehmen. Es sind mehrere Instanzen sind erforderlich, um für die Cloud Services-SLA für Produktionsumgebungen qualifiziert zu sein.
 Unterstützung von WebMatrix|X||X|
@@ -180,9 +180,9 @@ Weitere Informationen zu den drei Webhostingoptionen finden Sie in den folgenden
 * [Einführung in Azure](../fundamentals-introduction-to-azure.md)
 * [Compute-Hostingoptionen in Azure](../fundamentals-application-models.md)
 
-Informationen zum Einstieg in die gewählte(n) Optionen für Ihre Anwendungen finden Sie in den folgenden Ressourcen:
+Informationen zum Einstieg in die gewählte\(n\) Optionen für Ihre Anwendungen finden Sie in den folgenden Ressourcen:
 
-* [Azure Websites](/documentation/services/app-service/)
+* [Azure App Service](/documentation/services/app-service/)
 * [Azure Cloud Services](/documentation/services/cloud-services/)
 * [Azure Virtual Machines](/documentation/services/virtual-machines/)
 
@@ -204,4 +204,4 @@ Informationen zum Einstieg in die gewählte(n) Optionen für Ihre Anwendungen fi
   [Storage]: http://www.windowsazure.com/documentation/services/storage/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

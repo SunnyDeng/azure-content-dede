@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="backup-recovery"
-	ms.date="05/04/2015"
+	ms.date="08/05/2015"
 	ms.author="raynew"/>
 
 #  Einrichten von Schutz mit einem einzelnen VMM-Server
@@ -100,4 +100,4 @@ Bei einem Notfall können Workloads auf folgende Weise wiederhergestellt werden:
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

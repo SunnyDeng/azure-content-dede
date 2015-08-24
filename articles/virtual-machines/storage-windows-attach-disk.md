@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Anfügen eines Datenträgers an einen virtuellen Computer | Azure"
+	pageTitle="Anfügen eines Datenträgers an einen virtuellen Computer | Microsoft Azure"
 	description="Erfahren Sie, wie Sie einen Datenträger an einen virtuellen Azure-Computer anfügen und initialisieren können, damit er betriebsbereit ist."
 	services="virtual-machines, storage"
 	documentationCenter=""
@@ -53,4 +53,4 @@ Sie können leere Datenträger und Datenträger mit Daten anfügen. In beiden F�
 
 [logon]: virtual-machines-log-on-windows-server.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

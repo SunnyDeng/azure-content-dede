@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/15/2015" 
+	ms.date="08/10/2015" 
 	ms.author="tomfitz"/>
 
 # Sperren von Ressourcen mit dem Azure-Ressourcen-Manager
@@ -83,7 +83,7 @@ Beispiele finden Sie in unter [REST-API für Verwaltungssperren](https://msdn.mi
 
 ## Erstellen einer Sperre mit Azure PowerShell
 
-Sie können bereitgestellte Ressourcen mit Azure PowerShell sperren, indem Sie wie unten gezeigt das **New-AzureResourceLock**-Cmdlet verwenden.
+Sie können bereitgestellte Ressourcen mit Azure PowerShell sperren, indem Sie wie unten gezeigt das **New-AzureResourceLock**-Cmdlet verwenden. Mithilfe von PowerShell können Sie nur **LockLevel** auf **CanNotDelete** festlegen.
 
     PS C:\> New-AzureResourceLock -LockLevel CanNotDelete -LockName LockSite -ResourceName examplesite -ResourceType Microsoft.Web/sites -ResourceGroupName ExampleGroup
 
@@ -91,7 +91,8 @@ PowerShell bietet auch andere Befehle für die Arbeit mit Sperren, z. B. **Set-
 
 ## Nächste Schritte
 
-- [Verwenden von Tags zum Organisieren von Azure-Ressourcen](resource-group-using-tags.md)
-- [Verschieben von Ressourcen in eine neue Ressourcengruppe](resource-group-move-resources.md)
+- Weitere Informationen zum Arbeiten mit Ressourcensperren finden Sie unter [Sperren Ihrer Azure-Ressourcen](http://blogs.msdn.com/b/cloud_solution_architect/archive/2015/06/18/lock-down-your-azure-resources.aspx).
+- Informationen zum logischen Organisieren von Ressourcen finden Sie unter [Verwenden von Tags zum Organisieren von Ressourcen](resource-group-using-tags.md).
+- Informationen dazu, wie Sie die Ressourcengruppe für eine Ressource ändern, finden Sie unter [Verschieben von Ressourcen in eine neue Ressourcengruppe](resource-group-move-resources.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

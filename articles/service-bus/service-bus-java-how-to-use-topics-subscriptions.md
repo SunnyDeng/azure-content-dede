@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwenden von Service Bus-Themen (Java) - Azure"
+	pageTitle="Verwenden von Service Bus-Themen (Java) | Microsoft Azure"
 	description="Erfahren Sie mehr zur Verwendung von Service Bus-Themen und -Abonnements in Azure. Die Codebeispiele wurden für Java-Anwendungen geschrieben."
 	services="service-bus"
 	documentationCenter="java"
@@ -61,7 +61,7 @@ Die **ServiceBusService**-Klasse enthält Methoden zum Erstellen, Aufzählen und
 		System.exit(-1);
 	}
 
-Mit den Methoden in **TopicInfo** können Sie Eigenschaften des Themas einstellen (z. B. den Standardwert "time-to-live", der auf an das Thema gesendete Nachrichten angewendet wird). Das folgenden Beispiel zeigt, wie ein Thema mit der Bezeichnung "TestTopic" mit einer maximalen Größe von 5 GB erstellt wird:
+Mit den Methoden in **TopicInfo** können Sie Eigenschaften des Themas einstellen \(z. B. den Standardwert "time-to-live", der auf an das Thema gesendete Nachrichten angewendet wird\). Das folgenden Beispiel zeigt, wie ein Thema mit der Bezeichnung "TestTopic" mit einer maximalen Größe von 5 GB erstellt wird:
 
     long maxSizeInMegabytes = 5120;  
 	TopicInfo topicInfo = new TopicInfo("TestTopic");  
@@ -74,7 +74,7 @@ Sie können die **listTopics**-Methode von **ServiceBusContract**-Objekten verwe
 
 Themenabonnements werden ebenfalls mit der **ServiceBusService**-Klasse erstellt. Abonnements werden benannt und können einen optionalen Filter aufweisen, der die Nachrichten einschränkt, die an die virtuelle Warteschlange des Abonnements übergeben werden.
 
-### Erstellen eines Abonnements mit dem Standardfilter (MatchAll)
+### Erstellen eines Abonnements mit dem Standardfilter \(MatchAll\)
 
 **MatchAll** ist der Standardfilter, der verwendet wird, wenn beim Erstellen eines neuen Abonnements kein Filter angegeben wird. Wenn der Filter **MatchAll** verwendet wird, werden alle für das Thema veröffentlichten Nachrichten in die virtuelle Warteschlange des Abonnements gestellt. Mit dem folgenden Beispiel wird ein Abonnement namens "AllMessages" erstellt, für das der Standardfilter **MatchAll** verwendet wird.
 
@@ -115,7 +115,7 @@ Im folgenden Beispiel wird in ähnlicher Weise ein Abonnement namens "LowMessage
     service.deleteRule("TestTopic", "LowMessages", "$Default");
 
 
-Wenn eine Nachricht an "TestTopic" gesendet wird, wird diese nun stets an die Empfänger des Themenabonnements "AllMessages" zugestellt. Sie wird selektiv an die Empfänger der Themenabonnements "HighMessages" und "LowMessages" zugestellt (je nach Inhalt der Nachricht).
+Wenn eine Nachricht an "TestTopic" gesendet wird, wird diese nun stets an die Empfänger des Themenabonnements "AllMessages" zugestellt. Sie wird selektiv an die Empfänger der Themenabonnements "HighMessages" und "LowMessages" zugestellt \(je nach Inhalt der Nachricht\).
 
 ## Senden von Nachrichten an ein Thema
 
@@ -124,9 +124,9 @@ Um eine Nachricht an ein Service Bus-Thema zu senden, benötigt Ihre Anwendung e
     BrokeredMessage message = new BrokeredMessage("MyMessage");
     service.sendTopicMessage("TestTopic", message);
 
-Nachrichten an Service Bus-Themen sind Instanzen der **BrokeredMessage**-Klasse. **BrokeredMessage**-Objekte enthalten eine Reihe von Standardmethoden (wie etwa **setLabel** und **TimeToLive**), ein Wörterbuch, das zur Aufnahme benutzerdefinierter anwendungsspezifischer Eigenschaften verwendet wird, und einen Körper beliebiger Anwendungsdaten. Eine Anwendung kann den Körper der Nachricht einstellen, indem ein beliebiges serialisierbares Objekt in den Konstruktor der **BrokeredMessage** weitergeleitet wird. Anschließend wird der passende **DataContractSerializer** zur Serialisierung des Objekts verwendet. Alternativ kann ein **java.io.InputStream** angegeben werden.
+Nachrichten an Service Bus-Themen sind Instanzen der **BrokeredMessage**-Klasse. **BrokeredMessage**-Objekte enthalten eine Reihe von Standardmethoden \(wie etwa **setLabel** und **TimeToLive**\), ein Wörterbuch, das zur Aufnahme benutzerdefinierter anwendungsspezifischer Eigenschaften verwendet wird, und einen Körper beliebiger Anwendungsdaten. Eine Anwendung kann den Körper der Nachricht einstellen, indem ein beliebiges serialisierbares Objekt in den Konstruktor der **BrokeredMessage** weitergeleitet wird. Anschließend wird der passende **DataContractSerializer** zur Serialisierung des Objekts verwendet. Alternativ kann ein **java.io.InputStream** angegeben werden.
 
-Im folgenden Beispiel wird dargelegt, wie fünf Testnachrichten an den **MessageSender** "TestTopic" gesendet werden, welche über das oben angegebene Code-Teilstück erhalten wurden: Beachten Sie, wie der **MessageNumber**-Eigenschaftswert jeder Nachricht gemäß der Iteration der Schleife variiert (dadurch wird bestimmt, welche Abonnements die Nachricht erhalten):
+Im folgenden Beispiel wird dargelegt, wie fünf Testnachrichten an den **MessageSender** "TestTopic" gesendet werden, welche über das oben angegebene Code-Teilstück erhalten wurden: Beachten Sie, wie der **MessageNumber**-Eigenschaftswert jeder Nachricht gemäß der Iteration der Schleife variiert \(dadurch wird bestimmt, welche Abonnements die Nachricht erhalten\):
 
     for (int i=0; i<5; i++)  {
        	// Create message, passing a string message for the body
@@ -137,7 +137,7 @@ Im folgenden Beispiel wird dargelegt, wie fünf Testnachrichten an den **Message
 		service.sendTopicMessage("TestTopic", message);
 	}
 
-Servicebus-Themen unterstützen eine maximale Nachrichtengröße von 256 MB (der Header, der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 MB haben). Es gibt keine Beschränkung für die Anzahl der Nachrichten, die ein Thema enthält. Es gibt jedoch eine Obergrenze für die Gesamtgröße der Nachrichten eines Themas. Die Themengröße wird bei der Erstellung definiert. Die Obergrenze beträgt 5 GB.
+Servicebus-Themen unterstützen eine maximale Nachrichtengröße von 256 MB \(der Header, der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 MB haben\). Es gibt keine Beschränkung für die Anzahl der Nachrichten, die ein Thema enthält. Es gibt jedoch eine Obergrenze für die Gesamtgröße der Nachrichten eines Themas. Die Themengröße wird bei der Erstellung definiert. Die Obergrenze beträgt 5 GB.
 
 ## Empfangen von Nachrichten aus einem Abonnement
 
@@ -145,9 +145,9 @@ Der einfachste Weg zum Empfangen von Nachrichten aus Abonnements sind **ServiceB
 
 Bei Verwendung des **ReceiveAndDelete**-Modus ist der Nachrichtenempfang ein Single-Shot-Vorgang. Dies bedeutet, wenn Service Bus eine Leseanforderung für eine Nachricht erhält, wird die Nachricht als verarbeitet gekennzeichnet und an die Anwendung zurück gesendet. **Der ReceiveAndDelete**-Modus ist das einfachste Modell. Es wird am besten für Szenarien eingesetzt, bei denen es eine Anwendung tolerieren kann, wenn eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da Service Bus die Nachricht als verwendet markiert hat, wird er jene Nachricht auslassen, die vor dem Absturz verwendet wurde, wenn die Anwendung neu startet und erneut mit der Verwendung von Nachrichten beginnt.
 
-Im **PeekLock**-Modus ist der Empfangsvorgang zweistufig. Dadurch können Anwendungen unterstützt werden, die das Auslassen bzw. Fehlen von Nachrichten nicht zulassen können. Wenn Service Bus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann zurück an die Anwendung. Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen hat (oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat), führt Sie die zweite Phase des Empfangsprozesses durch Aufruf von **Delete** für die empfangene Nachricht durch. Wenn Service Bus den **Delete**-Aufruf erkennt, markiert er die Nachricht als verwendet und entfernt sie aus dem Thema.
+Im **PeekLock**-Modus ist der Empfangsvorgang zweistufig. Dadurch können Anwendungen unterstützt werden, die das Auslassen bzw. Fehlen von Nachrichten nicht zulassen können. Wenn Service Bus eine Anfrage erhält, ermittelt der Dienst die nächste zu verarbeitende Nachricht, sperrt diese, um zu verhindern, dass andere Consumer sie erhalten, und sendet sie dann zurück an die Anwendung. Nachdem die Anwendung die Verarbeitung der Nachricht abgeschlossen hat \(oder sie zwecks zukünftiger Verarbeitung zuverlässig gespeichert hat\), führt Sie die zweite Phase des Empfangsprozesses durch Aufruf von **Delete** für die empfangene Nachricht durch. Wenn Service Bus den **Delete**-Aufruf erkennt, markiert er die Nachricht als verwendet und entfernt sie aus dem Thema.
 
-Das folgende Beispiel zeigt, wie Nachrichten mit dem nicht standardmäßig verwendeten **PeekLock**-Modus empfangen und verarbeitet werden können. Das folgende Beispiel verarbeitet Nachrichten aus dem "HighMessages"-Abonnement in einer Schleife und endet, wenn keine Nachrichten mehr vorhanden sind (alternativ könnte der Code auf neue Nachrichten warten).
+Das folgende Beispiel zeigt, wie Nachrichten mit dem nicht standardmäßig verwendeten **PeekLock**-Modus empfangen und verarbeitet werden können. Das folgende Beispiel verarbeitet Nachrichten aus dem "HighMessages"-Abonnement in einer Schleife und endet, wenn keine Nachrichten mehr vorhanden sind \(alternativ könnte der Code auf neue Nachrichten warten\).
 
 	try
 	{
@@ -202,11 +202,11 @@ Das folgende Beispiel zeigt, wie Nachrichten mit dem nicht standardmäßig verwe
 
 ## Behandeln von Anwendungsabstürzen und nicht lesbaren Nachrichten
 
-Service Bus stellt Funktionen zur Verfügung, die Sie bei der ordnungsgemäßen Behandlung von Fehlern in der Anwendung oder bei Problemen beim Verarbeiten einer Nachricht unterstützen. Wenn eine empfangene Anwendung eine Nachricht aus einem beliebigen Grund nicht verarbeiten kann, kann sie die **unlockMessage**-Methode für die empfangene Nachricht aufrufen (anstelle der **deleteMessage**-Methode). Dies führt dazu, dass Service Bus die Nachricht innerhalb des Themas entsperrt und verfügbar macht, damit sie erneut empfangen werden kann, und zwar entweder durch dieselbe verarbeitende Anwendung oder durch eine andere verarbeitende Anwendung.
+Service Bus stellt Funktionen zur Verfügung, die Sie bei der ordnungsgemäßen Behandlung von Fehlern in der Anwendung oder bei Problemen beim Verarbeiten einer Nachricht unterstützen. Wenn eine empfangene Anwendung eine Nachricht aus einem beliebigen Grund nicht verarbeiten kann, kann sie die **unlockMessage**-Methode für die empfangene Nachricht aufrufen \(anstelle der **deleteMessage**-Methode\). Dies führt dazu, dass Service Bus die Nachricht innerhalb des Themas entsperrt und verfügbar macht, damit sie erneut empfangen werden kann, und zwar entweder durch dieselbe verarbeitende Anwendung oder durch eine andere verarbeitende Anwendung.
 
-Zudem wird einer im Thema gesperrten Anwendung ein Zeitlimit zugeordnet. Wenn die Anwendung die Nachricht vor Ablauf des Sperrzeitlimits nicht verarbeiten kann (zum Beispiel, wenn die Anwendung abstürzt), entsperrt Service Bus die Nachricht automatisch und macht sie verfügbar, um erneut empfangen zu werden.
+Zudem wird einer im Thema gesperrten Anwendung ein Zeitlimit zugeordnet. Wenn die Anwendung die Nachricht vor Ablauf des Sperrzeitlimits nicht verarbeiten kann \(zum Beispiel, wenn die Anwendung abstürzt\), entsperrt Service Bus die Nachricht automatisch und macht sie verfügbar, um erneut empfangen zu werden.
 
-Falls die Anwendung nach der Verarbeitung der Nachricht aber vor Ausgabe der **deleteMessage**-Anforderung abstürzt, wird die Nachricht wieder an die Anwendung zugestellt, wenn diese neu gestartet wird. Dies wird häufig als **At Least Once Processing** (Verarbeitung mindestens einmal) bezeichnet und bedeutet, dass jede Nachricht mindestens einmal verarbeitet wird, wobei dieselbe Nachricht in bestimmten Situationen möglicherweise erneut zugestellt wird. Wenn eine doppelte Verarbeitung im betreffenden Szenario nicht geeignet ist, sollten Anwendungsentwickler ihrer Anwendung zusätzliche Logik für den Umgang mit der Übermittlung doppelter Nachrichten hinzufügen. Dies wird häufig durch die Verwendung der **getMessageId**-Methode der Nachricht erzielt, die über mehrere Zustellungsversuche hinweg konstant bleibt.
+Falls die Anwendung nach der Verarbeitung der Nachricht aber vor Ausgabe der **deleteMessage**-Anforderung abstürzt, wird die Nachricht wieder an die Anwendung zugestellt, wenn diese neu gestartet wird. Dies wird häufig als **At Least Once Processing** \(Verarbeitung mindestens einmal\) bezeichnet und bedeutet, dass jede Nachricht mindestens einmal verarbeitet wird, wobei dieselbe Nachricht in bestimmten Situationen möglicherweise erneut zugestellt wird. Wenn eine doppelte Verarbeitung im betreffenden Szenario nicht geeignet ist, sollten Anwendungsentwickler ihrer Anwendung zusätzliche Logik für den Umgang mit der Übermittlung doppelter Nachrichten hinzufügen. Dies wird häufig durch die Verwendung der **getMessageId**-Methode der Nachricht erzielt, die über mehrere Zustellungsversuche hinweg konstant bleibt.
 
 ## Löschen von Themen und Abonnements
 
@@ -248,4 +248,4 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind,
   [Service Bus-Warteschlangen, Themen und Abonnements]: http://msdn.microsoft.com/library/hh367516.aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

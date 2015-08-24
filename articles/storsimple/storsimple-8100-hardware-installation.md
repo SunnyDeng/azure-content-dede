@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Installieren des StorSimple 8100-Geräts"
+   pageTitle="Installieren des StorSimple 8100-Geräts | Microsoft Azure"
    description="Beschreibt, wie Sie das StorSimple 8100-Gerät auspacken, in ein Rack einbauen und verkabeln."
    services="storsimple"
    documentationCenter="NA"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="07/20/2015"
+   ms.date="08/06/2015"
    ms.author="alkohli" />
 
 # Installieren des StorSimple 8100-Geräts
@@ -47,7 +47,7 @@ Führen Sie dann die folgenden Schritte aus, um das Gerät auszupacken.
 
      ![Auspacken des Speichergeräts](./media/storsimple-8100-hardware-installation/HCSUnpackyour2Udevice.png)
 
-    **Abbildung 1: Das ausgepackte Speichergerät**
+    **Das ausgepackte Speichergerät**
 
      Bezeichnung | Beschreibung 
      ----- | -------------
@@ -115,7 +115,7 @@ Im Lieferumfang ist ein Satz Montageschienen für die Verwendung mit einem 19-Zo
 
     ![Befestigen von Gleitschienen am Gehäuse](./media/storsimple-8100-hardware-installation/HCSAttachingRailSlidestoEnclosureChassis.png)
 
-   **Abbildung 2: Befestigen der Gleitschienen an den Seiten des Gehäuses**
+   **Befestigen der Gleitschienen an den Seiten des Gehäuses**
 
     Label | Description
     ----- | -----------
@@ -132,7 +132,7 @@ Im Lieferumfang ist ein Satz Montageschienen für die Verwendung mit einem 19-Zo
 
      ![Befestigen von Gleitschienen am Rackschrank](./media/storsimple-8100-hardware-installation/HCSAttachingRailSlidestoRackCabinet.png)
 
-    **Abbildung 3: Befestigen der Schienenbaugruppen am Rack**
+    **Befestigen der Schienenbaugruppen am Rack**
 
      Bezeichnung | Beschreibung
      ----- | -----------
@@ -154,7 +154,7 @@ Führen Sie die folgenden Schritte aus, um das Gerät unter Verwendung der soebe
 
     ![Einführen des Geräts in das Rack](./media/storsimple-8100-hardware-installation/HCSInsertingDeviceintheRack.png)
 
-    **Abbildung 4: Einbauen des Geräts in das Rack**
+    **Einbauen des Geräts in das Rack**
 
 3. Sichern Sie das Gehäuse im Rack am linken und am rechten Flansch mit je einer der mitgelieferten Kreuzschlitzschrauben.
 
@@ -162,7 +162,7 @@ Führen Sie die folgenden Schritte aus, um das Gerät unter Verwendung der soebe
 
      ![Anbringen der Flanschkappen](./media/storsimple-8100-hardware-installation/HCSInstallingFlangeCaps.png)
  
-    **Abbildung 5: Anbringen der Flanschkappen**
+    **Anbringen der Flanschkappen**
 
      Bezeichnung | Beschreibung
      ----- | -----------
@@ -192,7 +192,7 @@ Bevor Sie mit dem Verkabeln des Geräts beginnen können, benötigen Sie Folgend
 
 - Mitgelieferte einzelne QSFP-zu-SFP+-Adapter für die Verwendung mit 10-GbE-Netzwerkschnittstellen
 
-- [Unterstützte Transceiver, Kabel und Switches für 10-GbE-Netzwerkschnittstellen](https://msdn.microsoft.com/library/azure/dn891474.aspx)
+- [Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät](storsimple-supported-hardware-for-10-gbe-network-interfaces.md)
 
 
 ### Stromverkabelung
@@ -201,29 +201,7 @@ Das Gerät enthält redundante Stromversorgungs- und Kühleinheiten (Power and C
 
 Führen Sie die folgenden Schritte aus, um das Gerät für die Stromversorgung zu verkabeln.
 
-#### So verkabeln Sie das Gerät für die Stromversorgung
-
-1. Stellen Sie sicher, dass sich die Netzschalter beider PCMs in ausgeschalteter Position befinden.
-
-2. Schließen Sie an beide PCMs die Netzkabel an.
-
-3. Schließen Sie die Netzkabel an die Rack-PDUs an, wie in der folgenden Abbildung dargestellt. Stellen Sie sicher, dass die beiden PCMs separate Stromquellen verwenden.
-
-4. Schalten Sie das System ein, indem Sie die Netzschalter der PCMs in die eingeschaltete Position bringen.
-
-    >[AZURE.NOTE]Damit eine hohe Verfügbarkeit des Systems sichergestellt ist, sollten Sie sich unbedingt an das im folgenden Diagramm dargestellte Stromverkabelungsschema halten.
-
-    ![Stromverkabelung des 2 HE-Geräts](./media/storsimple-8100-hardware-installation/HCSCableYour2UDeviceforPower.png)
-
-    **Abbildung 6: Stromverkabelung des Geräts**
-
-     Bezeichnung | Beschreibung
-     ----- | -----------
-     1 | PCM 0
-     2 | Controller 1
-     3 | Controller 0
-     4 | PCM 1
-     5 | PDUs
+[AZURE.INCLUDE [storsimple-cable-8100-for-power](../../includes/storsimple-cable-8100-for-power.md)]
 
 ### Netzwerkverkabelung
 
@@ -237,7 +215,7 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
 
     ![Rückwand des 8100-Geräts](./media/storsimple-8100-hardware-installation/HCSBackplaneof2UDevicewithPortsLabeled.jpg)
 
-    **Abbildung 7: Rückseite des Geräts mit Datenanschlüssen**
+    **Rückseite des Geräts mit Datenanschlüssen**
  
      Bezeichnung | Beschreibung
      ------- | -----------
@@ -258,7 +236,7 @@ Verkabeln Sie Ihr Gerätenetzwerk wie in den folgenden Schritten beschrieben, um
 
     ![Netzwerkverkabelung des 2 HE-Geräts](./media/storsimple-8100-hardware-installation/HCSCableYour2UDeviceforNetwork.png)
 
-    **Abbildung 8: Netzwerkverkabelung des Geräts**
+    **Netzwerkverkabelung des Geräts**
 
     Bezeichnung | Beschreibung
     ----- | -----------
@@ -276,7 +254,7 @@ Führen Sie die folgenden Schritte aus, um den seriellen Anschluss zu verkabeln.
 
 #### So verkabeln Sie das Gerät für serielle Verbindungen
 
-1. Das Gerät verfügt über einen seriellen Anschluss an jedem Controller, der durch ein Schraubenschlüsselsymbol gekennzeichnet ist. Die Position der seriellen Anschlüsse an der Rückwand des Geräts ist in Abbildung 7 dargestellt. 
+1. Das Gerät verfügt über einen seriellen Anschluss an jedem Controller, der durch ein Schraubenschlüsselsymbol gekennzeichnet ist. Sehen Sie sich die Abbildung im Abschnitt [Netzwerkverkabelung](#network-cabling) an, um die seriellen Anschlüsse an der Rückwand des Geräts zu identifizieren. 
 
 2. Identifizieren Sie den aktiven Controller anhand der Rückwand des Geräts. Eine blinkende blaue LED zeigt an, dass der Controller aktiv ist.
 
@@ -297,4 +275,4 @@ Das Gerät ist jetzt für Stromversorgung, Netzwerkzugriff und serielle Konnekti
 Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

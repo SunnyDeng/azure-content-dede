@@ -12,7 +12,7 @@
 	ms.workload="infrastructure-services"
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
-	ms.topic="get-started-article"
+	ms.topic="hero-article"
 	ms.date="07/13/2015"
 	ms.author="kathydav"/>
 
@@ -99,6 +99,6 @@ Nachdem Sie den virtuellen Computer erstellt haben, sollten Sie sich bei diesem 
 ## Nächste Schritte
 
 * Verwenden Sie Azure PowerShell und die Azure-Befehlszeilenschnittstelle zum [Suchen und Auswählen von VM-Images](resource-groups-vm-searching.md).
-* Automatisieren Sie die VM- und Workloadbereitstellung und die Verwaltung unter Verwendung des [Azure-Ressourcen-Managers](virtual-machines-how-to-automate-azure-resource-manager.md) und der [Azure-Ressourcen-Manager-Vorlagen](http://azure.microsoft.com/documentation/templates/).
+* Automatisieren Sie die VM- und Workloadbereitstellung und die Verwaltung unter Verwendung des [Azure-Ressourcen-Managers](virtual-machines-how-to-automate-azure-resource-manager.md) und der [Azure-Ressourcen-Manager-Vorlagen](http://azure.microsoft.com/de-de/documentation/templates/).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

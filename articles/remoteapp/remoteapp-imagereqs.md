@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="07/06/2015" 
+    ms.date="08/12/2015" 
     ms.author="elizapo" />
 
 
@@ -42,5 +42,6 @@ Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll,
 - Das Abbild muss mit SYSPREP unter Verwendung der Parameter **/oobe /generalize /shutdown** vorbereitet werden. Verwenden Sie nicht den Parameter **/mode:vm**.
 - VHD-Uploads aus einer Momentaufnahmenkette werden nicht unterstützt.
  
+Weitere Informationen zum Erstellen von Images für Azure RemoteApp finden Sie unter [Erstellen von Azure RemoteApp-Images](remoteapp-imageoptions.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Übersicht über die Media Services-REST-API - Azure" 
+	pageTitle="Übersicht über die Media Services-REST-API | Microsoft Azure" 
 	description="Übersicht über die Media Services-REST-API" 
 	services="media-services" 
 	documentationCenter="" 
@@ -7,19 +7,19 @@
 	manager="dwrede" 
 	editor=""/>
 
-
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/04/2015" 
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
 
 
-
 # Übersicht über die Media Services-REST-API 
+
+[AZURE.INCLUDE [media-services-selector-setup](../../includes/media-services-selector-setup.md)]
 
 Microsoft Azure Media Services ist ein Dienst, der OData-basierte HTTP-Anforderungen akzeptiert und mit ausführlichem JSON- oder atom+pub-Code darauf antworten kann. Da Media Services mit den Azure-Entwicklungsrichtlinien konform ist, muss jeder Client bei der Verbindung mit Media Services eine Reihe obligatorischer HTTP-Header verwenden. Darüber hinaus stehen verschiedene optionale Header zur Verfügung. In den folgenden Abschnitten werden die Header und HTTP-Verben beschrieben, die Sie verwenden können, um Anforderungen zu erstellen und Antworten von Media Services zu empfangen.
 
@@ -51,7 +51,7 @@ Accept-Language|„en“, „es“ usw.|Gibt die bevorzugte Sprache für die Ant
 Accept-Charset|Charset-Typ, z. B. „UTF-8“|Der Standardwert ist UTF-8.
 X-HTTP-Method|HTTP-Methode|Ermöglicht Clients oder Firewalls, die keine HTTP-Methoden wie PUT oder DELETE unterstützen, die Verwendung dieser Methoden über einen getunnelten GET-Aufruf.
 Content-Typ|Content-Typ|Der Inhaltstyp des Anforderungstexts in PUT- oder POST-Anforderungen.
-client-request-id|String|Ein vom Aufrufer definierter Wert, der die angegebene Anforderung identifiziert. Falls angegeben, wird dieser Wert in die Antwortnachricht eingeschlossen, um die Anforderung zuzuordnen. <p><p>\*\*Wichtig\*\*<p>Werte sollten auf 2096b (2K) begrenzt werden.
+client-request-id|String|Ein vom Aufrufer definierter Wert, der die angegebene Anforderung identifiziert. Falls angegeben, wird dieser Wert in die Antwortnachricht eingeschlossen, um die Anforderung zuzuordnen. <p><p>**Wichtig**<p>Werte müssen auf 2096 Bytes \(2 KB\) begrenzt werden.
 
 ## Von Media Services unterstützte standardmäßige HTTP-Antwortheader
 
@@ -76,7 +76,7 @@ Verb|Beschreibung
 ---|---
 GET|Gibt den aktuellen Wert eines Objekts zurück.
 POST|Erstellt ein Objekt auf Grundlage der bereitgestellten Daten oder sendet einen Befehl.
-PUT|Ersetzt ein Objekt oder erstellt ein benanntes Objekt (falls zutreffend).
+PUT|Ersetzt ein Objekt oder erstellt ein benanntes Objekt \(falls zutreffend\).
 LÖSCHEN|Löscht ein Objekt.
 MERGE|Aktualisiert ein vorhandenes Objekt anhand von Änderungen der benannten Eigenschaft.
 HEAD|Gibt die Metadaten eines Objekts für eine GET-Antwort zurück.
@@ -99,4 +99,4 @@ Sie sollten "?api-version=2.x" an das Ende des URIs anhängen, wenn Sie die Meta
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

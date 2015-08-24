@@ -1,5 +1,5 @@
 <properties
-	pageTitle="IPython Notebook – Azure-Lernprogramm"
+	pageTitle="IPython Notebook | Microsoft Azure"
 	description="Dieses Lernprogramm beschreibt die Bereitstellung von IPython Notebook in Azure mithilfe von virtuellen Linux- oder Windows-Computern (VMs)."
 	services="virtual-machines"
 	documentationCenter="python"
@@ -270,4 +270,4 @@ Die Kernfunktionen von IPython sind auch in Visual Studio unter [Python Tools fo
 [Python 2.7]: http://www.python.org/download
 [OpenSSL]: http://slproweb.com/products/Win32OpenSSL.html
 
-<!----------HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

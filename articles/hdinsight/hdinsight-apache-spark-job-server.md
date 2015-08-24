@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Apache Spark-Auftragsserver in HDInsight | Azure" 
+	pageTitle="Apache Spark-Auftragsserver in HDInsight | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie den Spark-Auftragsserver für die Remoteübermittlung und -verwaltung von Aufträgen in einem Spark-Cluster verwenden." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -81,4 +81,4 @@ Beispiel:
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

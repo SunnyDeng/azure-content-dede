@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/23/2015"
+   ms.date="08/12/2015"
    ms.author="alkohli" />
 
 # Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät
@@ -77,7 +77,7 @@ Führen Sie die folgenden Schritte aus, wenn Sie nur über ein einzelnes Gerät 
 
 1. Erstellen Sie Cloud-Momentaufnahmen aller Volumes auf Ihrem Gerät.
 
-1. Setzen Sie das Gerät auf die Werkseinstellungen zurück. Befolgen Sie die ausführlichen Anleitungen unter [Zurücksetzen des Geräts auf die Standardwerkseinstellungen](https://msdn.microsoft.com/library/dn772373.aspx).
+1. Setzen Sie das Gerät auf die Werkseinstellungen zurück. Befolgen Sie die ausführlichen Anleitungen unter [Zurücksetzen des Geräts auf die Standardwerkseinstellungen](storsimple-manage-device-controller.md#reset-the-device-to-factory-default-settings).
 
 1. Konfigurieren Sie das Gerät, und registrieren Sie es erneut im StorSimple-Manager-Dienst.
 
@@ -142,10 +142,7 @@ Nach einem Failover müssen Sie möglicherweise folgende Schritte ausführen:
 - [Deaktivieren des StorSimple-Geräts](storsimple-deactivate-and-delete-device.md#deactivate-a-device)
 - [Löschen des StorSimple-Geräts](storsimple-deactivate-and-delete-device.md#delete-a-device)
 
-Informationen zum Verwalten Ihres Geräts mit dem StorSimple-Manager-Dienst finden Sie unter:
-
-- [Administratorhandbuch](https://msdn.microsoft.com/library/dn772401.aspx)
-
+Informationen dazu, wie Sie den StorSimple Manager-Dienst verwenden, um Ihr Gerät zu verwalten, finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

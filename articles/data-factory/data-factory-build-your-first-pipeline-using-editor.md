@@ -7,16 +7,14 @@
 	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags
 	ms.service="data-factory"
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="hero-article" 
+	ms.topic="article" 
 	ms.date="07/27/2015"
 	ms.author="spelluru"/>
-
 
 # Erstellen der ersten Pipeline mit Azure Data Factory
 > [AZURE.SELECTOR]
@@ -154,7 +152,7 @@ Jetzt erstellen Sie das Ausgabedataset, das die im Azure- Blobspeicher gespeiche
 ## Schritt 3: Erstellen Ihrer ersten Pipeline
 In diesem Schritt erstellen Sie Ihre erste Pipeline.
 
-1. Klicken Sie im **Data Factory-Editor** auf **\(...\)** und dann auf **Neue Pipeline**.
+1. Klicken Sie im **Data Factory-Editor** auf **(...)** und dann auf **Neue Pipeline**.
 	
 	![Schaltfläche "Neue Pipeline"](./media/data-factory-build-your-first-pipeline-using-editor/new-pipeline-button.png)
 2. Kopieren Sie den Codeausschnitt, und fügen Sie ihn in das Fenster "Draft-1" ein.
@@ -232,4 +230,4 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline.
 In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL](./data-factory-get-started.md).
   
 
-<!-------HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

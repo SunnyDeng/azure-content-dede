@@ -7,16 +7,14 @@
 	manager="wpickett" 
 	editor=""/>
 
-
 <tags 
 	ms.service="azure-resource-manager" 
 	ms.workload="multiple" 
 	ms.tgt_pltfrm="AzurePortal" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/05/2015" 
+	ms.date="08/07/2015" 
 	ms.author="tomfitz"/>
-
 
 
 # Verwenden von Tags zum Organisieren von Azure-Ressourcen
@@ -25,61 +23,20 @@ Mit dem Ressourcen-Manager können Sie Ressourcen durch Anwenden von Tags logisc
 
 Wenn Sie Ressourcen mit einem bestimmten Tag anzeigen, sehen Sie Ressourcen aus allen Ressourcengruppen. Sie sind nicht auf Ressourcen in der gleichen Ressourcengruppe beschränkt, weshalb Sie Ihre Ressourcen unabhängig von Bereitstellungsbeziehungen organisieren können. Tags können besonders hilfreich sein, wenn Sie Ressourcen zur Abrechnung oder Verwaltung organisieren müssen.
 
-> [AZURE.NOTE]Sie können Tags nur auf Ressourcen anwenden, die Ressourcen-Manager-Vorgänge unterstützen. Wenn Sie einen virtuellen Computer, ein Virtual Network oder einen Speicher über das klassische Bereitstellungsmodell erstellt haben (z. B. über das Azure-Portal oder die [Dienstverwaltungs-API](https://msdn.microsoft.com/library/azure/dn948465.aspx)), können Sie auf diese Ressource kein Tag anwenden. Sie müssen diese Ressourcen über den Ressourcen-Manager erneut bereitstellen, damit Tags unterstützt werden. Alle anderen Ressourcen unterstützen die Markierung durch Tags.
+Jedes Tag, das Sie einer Ressource oder Ressourcengruppe hinzufügen, wird automatisch der Taxonomie für das Abonnement hinzugefügt. Sie können die Taxonomie für Ihr Abonnement auch vorab mit Tagnamen und -werten füllen, die Sie zukünftig zum Markieren von Ressourcen verwenden möchten.
+
+> [AZURE.NOTE]Sie können Tags nur auf Ressourcen anwenden, die Ressourcen-Manager-Vorgänge unterstützen. Wenn Sie einen virtuellen Computer, ein virtuelles Netzwerk (VNET) oder Speicher über das klassische Bereitstellungsmodell erstellt haben (z. B. über das Azure-Portal oder die [Dienstverwaltungs-API](https://msdn.microsoft.com/library/azure/dn948465.aspx)), können Sie auf diese Ressource kein Tag anwenden. Sie müssen diese Ressourcen über den Ressourcen-Manager erneut bereitstellen, damit Tags unterstützt werden. Alle anderen Ressourcen unterstützen die Markierung durch Tags.
+
 
 ## Tags im Vorschauportal
 
 Das Markieren von Ressourcen und Ressourcengruppen im Vorschauportal ist einfach. Verwenden Sie den Durchsuchenhub, um zu der Ressource oder Ressourcengruppe zu navigieren, die Sie markieren möchten. Klicken Sie dann auf den Tags-Teil im Übersichtsabschnitt oben im Fenster.
 
-![Tags-Bereich im Blatt für Ressourcen oder Ressourcengruppen](./media/resource-group-using-tags/rgblade.png)
+![Tags-Bereich im Blatt für Ressourcen oder Ressourcengruppen](./media/resource-group-using-tags/tag-icon.png)
 
 Dies öffnet ein Fenster mit der Liste der Tags, die bereits angewendet wurden. Ist dies der erste Tag, wird die Liste leer sein. Um ein Tag hinzuzufügen, geben Sie einfach einen Namen und Wert an, und drücken Sie die EINGABETASTE. Nachdem Sie einige Tags hinzugefügt haben, sehen Sie die AutoVervollständigen-Optionen basierend auf bereits vorhandenen Tag-Namen und -Werten, um eine konsistente Klassifizierung Ihrer Ressourcen sicherzustellen und häufige Fehler, wie Rechtschreibfehler, zu vermeiden.
 
 ![Markieren von Ressourcen mit Name-Wert-Paaren](./media/resource-group-using-tags/tag-resources.png)
-
-Von hier aus können Sie auf jedes einzelne Tag zum Anzeigen einer Liste aller Ressourcen mit demselben Tag klicken. Wenn dies das erste Tag ist, ist diese Liste natürlich nicht sehr interessant. Wechseln wir jetzt zu PowerShell, um alle unsere Ressourcen schnell zu markieren.
-
-
-## Markieren mit PowerShell
-
-Holen Sie sich zunächst das aktuelle [Azure PowerShell-Modul](./install-configure-powershell.md). Wenn Sie das Azure PowerShell-Modul zum ersten Mal verwenden, [lesen Sie die Dokumentation](./install-configure-powershell.md), um einen schnelleren Einstieg zu finden. Für diesen Artikel wird davon ausgegangen, dass Sie bereits ein Konto hinzugefügt und ein Abonnement mit den zu markierenden Ressourcen ausgewählt haben.
-
-Markierungen sind nur für Ressourcen und Ressourcengruppen verfügbar, die im [Ressourcen-Manager](http://msdn.microsoft.com/library/azure/dn790568.aspx) verfügbar sind, daher müssen Sie zunächst zur Verwendung des Ressourcen-Managers wechseln. Weitere Informationen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](powershell-azure-resource-manager.md).
-
-    Switch-AzureMode AzureResourceManager
-
-Markierungen sind direkt in Ressourcen und Ressourcengruppen vorhanden. Um festzustellen, welche Markierungen bereits angewendet wurden, können wir einfach eine Ressource oder Ressourcengruppe mit `Get-AzureResource` oder `Get-AzureResourceGroup` abrufen. Beginnen wir mit einer Ressourcengruppe.
-
-![Abrufen von Markierungen mit Get-AzureResourceGroup in PowerShell](./media/resource-group-using-tags/Get-AzureResourceGroup-in-PowerShell.png)
-
-Dieses Cmdlet gibt mehrere Teile der Metadaten für die Ressourcengruppe zurück, einschließlich welche Tags ggf. angewendet wurden. Um eine Ressourcengruppe zu markieren, verwenden wir einfach `Set-AzureResourceGroup` und geben einen Namen und Wert für die Markierung an.
-
-![Festlegen von Markierungen mit Set-AzureResourceGroup in PowerShell](./media/resource-group-using-tags/Set-AzureResourceGroup-in-PowerShell.png)
-
-Denken Sie daran, dass die Tags als Ganzes aktualisiert werden. Wenn Sie einer Ressource, die bereits markiert wurde, ein Tag hinzufügen, müssen Sie zum Speichern ein Array mit allen Tags verwenden, die Sie beibehalten möchten. Um eines zu entfernen, speichern Sie einfach das Array ohne dasjenige, das Sie entfernen möchten.
-
-Der Prozess ist für Ressourcen der gleiche, Sie verwenden jedoch die Cmdlets `Get-AzureResource` und `Set-AzureResource`. Um Ressourcen oder Ressourcengruppen mit einer bestimmten Markierung abzurufen, verwenden Sie die Cmdlets `Get-AzureResource` oder `Get-AzureResourceGroup` mit dem `-Tag`-Parameter.
-
-![Abrufen von markierten Ressourcen und Ressourcengruppen mit Get-AzureResource und Get-AzureResourceGroup in PowerShell](./media/resource-group-using-tags/Get-AzureResourceGroup-with-tags-in-PowerShell.png)
-
-
-## Markieren durch Tags mit der REST-API
-
-Das Vorschauportal und PowerShell verwenden im Hintergrund die [Ressourcen-Manager-REST-API](http://msdn.microsoft.com/library/azure/dn790568.aspx). Wenn Sie das Tagging in eine andere Umgebung integrieren müssen, können Sie Tags mit GET für die Ressourcen-ID abrufen und die Tags mit einem PATCH-Aufruf aktualisieren.
-
-
-## Verwalten der Taxonomie
-
-Zuvor haben wir uns damit befasst, wie AutoVervollständigen die Konsistenz sicherstellen und Fehler vermeiden kann. AutoVervollständigen wird basierend auf der Taxonomie verfügbarer Tags, die für das Abonnement eingerichtet werden, aufgefüllt. Jedes Tag, das Sie einer Ressource oder Ressourcengruppe hinzufügen, wird automatisch der abonnementweiten Taxonomie hinzugefügt. Sie können diese Taxonomie aber auch mit Tagnamen und -werten auffüllen, die Sie als Ressourcen verwenden möchten und in Zukunft markiert werden.
-
-Verwenden Sie das Cmdlet `Get-AzureTag`, um mithilfe von PowerShell eine Liste aller Markierungen innerhalb eines Abonnements abzurufen.
-
-![Get-AzureTag in PowerShell](./media/resource-group-using-tags/Get-AzureTag-in-PowerShell.png)
-
-
-Möglicherweise sehen Sie Tags, die mit "hidden-" und "link:" beginnen. Hierbei handelt es sich um interne Tags, die Sie ignorieren und nicht ändern sollten.
-
-Verwenden Sie das Cmdlet `New-AzureTag`, um der Taxonomie neue Markierungen hinzuzufügen. Diese Tags werden in die AutoVervollständigen-Funktion eingeschlossen, obwohl sie noch nicht auf Ressourcen oder Ressourcengruppen angewendet wurden. Um einen Markierungsnamen/Markierungswert zu entfernen, entfernen Sie zuerst die Markierung aus allen Ressourcen, mit denen es möglicherweise verwendet wird, und entfernen Sie es dann mit dem Cmdlet `Remove-AzureTag` aus der Taxonomie.
 
 Um die Taxonomie von Tags im Portal anzuzeigen, verwenden Sie den Durchsuchenhub, um alles anzuzeigen, und wählen Sie dann Tags aus.
 
@@ -89,11 +46,104 @@ Fixieren Sie die wichtigsten Tags für den schnellen Zugriff auf dem Startboard,
 
 ![Anheften von Markierungen am das Startmenü](./media/resource-group-using-tags/pin-tags.png)
 
+## Markieren mit PowerShell
+
+Wenn Sie Azure PowerShell noch nicht mit dem Ressourcen-Manager verwendet haben, finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md) weitere Informationen. Für diesen Artikel wird davon ausgegangen, dass Sie bereits ein Konto hinzugefügt und ein Abonnement mit den zu markierenden Ressourcen ausgewählt haben.
+
+Markierungen sind nur für Ressourcen und Ressourcengruppen verfügbar, die im [Ressourcen-Manager](http://msdn.microsoft.com/library/azure/dn790568.aspx) verfügbar sind, daher müssen Sie zunächst zur Verwendung des Ressourcen-Managers wechseln.
+
+    Switch-AzureMode AzureResourceManager
+
+Markierungen sind direkt in Ressourcen und Ressourcengruppen vorhanden. Um festzustellen, welche Markierungen bereits angewendet wurden, können wir einfach eine Ressource oder Ressourcengruppe mit `Get-AzureResource` oder `Get-AzureResourceGroup` abrufen. Beginnen wir mit einer Ressourcengruppe.
+
+    PS C:\> Get-AzureResourceGroup tag-demo
+
+    ResourceGroupName : tag-demo
+    Location          : southcentralus
+    ProvisioningState : Succeeded
+    Tags              :
+    Permissions       :
+                    Actions  NotActions
+                    =======  ==========
+                    *
+
+    Resources         :
+                    Name                             Type                                  Location
+                    ===============================  ====================================  ==============
+                    CPUHigh ExamplePlan              microsoft.insights/alertrules         eastus
+                    ForbiddenRequests tag-demo-site  microsoft.insights/alertrules         eastus
+                    LongHttpQueue ExamplePlan        microsoft.insights/alertrules         eastus
+                    ServerErrors tag-demo-site       microsoft.insights/alertrules         eastus
+                    ExamplePlan-tag-demo             microsoft.insights/autoscalesettings  eastus
+                    tag-demo-site                    microsoft.insights/components         centralus
+                    ExamplePlan                      Microsoft.Web/serverFarms             southcentralus
+                    tag-demo-site                    Microsoft.Web/sites                   southcentralus
+
+
+Dieses Cmdlet gibt mehrere Teile der Metadaten für die Ressourcengruppe zurück, einschließlich welche Tags ggf. angewendet wurden. Um eine Ressourcengruppe zu markieren, verwenden Sie einfach `Set-AzureResourceGroup` und geben einen Namen und Wert für das Tag an.
+
+    PS C:\> Set-AzureResourceGroup tag-demo -Tag @( @{ Name="project"; Value="tags" }, @{ Name="env"; Value="demo"} )
+
+    ResourceGroupName : tag-demo
+    Location          : southcentralus
+    ProvisioningState : Succeeded
+    Tags              :
+                    Name     Value
+                    =======  =====
+                    project  tags
+                    env      demo
+
+Tags werden als Ganzes aktualisiert. Wenn Sie einer Ressource, die bereits markiert wurde, ein Tag hinzufügen, müssen Sie zum Speichern ein Array mit allen Tags verwenden, die Sie beibehalten möchten. Hierzu können Sie zunächst die vorhandenen Tags auswählen und dann ein neues hinzufügen.
+
+    PS C:\> $tags = (Get-AzureResourceGroup -Name tag-demo).Tags
+    PS C:\> $tags += @{Name="status";Value="approved"}
+    PS C:\> Set-AzureResourceGroup tag-demo -Tag $tags
+
+    ResourceGroupName : tag-demo
+    Location          : southcentralus
+    ProvisioningState : Succeeded
+    Tags              :
+                    Name     Value
+                    =======  ========
+                    project  tags
+                    env      demo
+                    status   approved
+
+
+Um ein Tag oder mehrere Tags zu entfernen, speichern Sie einfach das Array ohne die Tags, die Sie entfernen möchten.
+
+Der Prozess ist für Ressourcen der gleiche, Sie verwenden jedoch die Cmdlets `Get-AzureResource` und `Set-AzureResource`. Um Ressourcen oder Ressourcengruppen mit einer bestimmten Markierung abzurufen, verwenden Sie die Cmdlets `Get-AzureResource` oder `Get-AzureResourceGroup` mit dem `-Tag`-Parameter.
+
+    PS C:\> Get-AzureResourceGroup -Tag @{ Name="env"; Value="demo" } | %{ $_.ResourceGroupName }
+    rbacdemo-group
+    tag-demo
+    PS C:\> Get-AzureResource -Tag @{ Name="env"; Value="demo" } | %{ $_.Name }
+    rbacdemo-web
+    rbacdemo-docdb
+    ...
+
+Verwenden Sie das Cmdlet `Get-AzureTag`, um mithilfe von PowerShell eine Liste aller Markierungen innerhalb eines Abonnements abzurufen.
+
+    PS C:/> Get-AzureTag
+    Name                      Count
+    ----                      ------
+    env                       8
+    project                   1
+
+Möglicherweise sehen Sie Tags, die mit "hidden-" und "link:" beginnen. Hierbei handelt es sich um interne Tags, die Sie ignorieren und nicht ändern sollten.
+
+Verwenden Sie das Cmdlet `New-AzureTag`, um der Taxonomie neue Markierungen hinzuzufügen. Diese Tags werden in die AutoVervollständigen-Funktion eingeschlossen, obwohl sie noch nicht auf Ressourcen oder Ressourcengruppen angewendet wurden. Um einen Markierungsnamen/Markierungswert zu entfernen, entfernen Sie zuerst die Markierung aus allen Ressourcen, mit denen es möglicherweise verwendet wird, und entfernen Sie es dann mit dem Cmdlet `Remove-AzureTag` aus der Taxonomie.
+
+## Markieren durch Tags mit der REST-API
+
+Das Vorschauportal und PowerShell verwenden im Hintergrund die [Ressourcen-Manager-REST-API](http://msdn.microsoft.com/library/azure/dn790568.aspx). Wenn Sie das Tagging in eine andere Umgebung integrieren müssen, können Sie Tags mit GET für die Ressourcen-ID abrufen und die Tags mit einem PATCH-Aufruf aktualisieren.
+
+
 ## Tags und Abrechnung
 
 Abrechnungsdaten können für unterstützte Dienste mithilfe von Tags gruppiert werden. So können Sie beispielsweise mithilfe von [in den Azure-Ressourcen-Manager integrierten virtuellen Computern](/virtual-machines/virtual-machines-azurerm-versus-azuresm.md) Tags definieren und anwenden, um die Abrechnung für virtuelle Computer zu organisieren. Wenn Sie mehrere virtuelle Computer für verschiedene Organisationen betreiben, können Sie die Nutzung mithilfe von Tags nach Kostenstelle gruppieren. Mit Tags können Sie auch Kosten nach Laufzeitumgebung kategorisieren (beispielsweise zur Abrechnung der Nutzung virtueller Computer in der Produktionsumgebung).
 
-Informationen zu Tags können über die [Nutzungs-API](billing-usage-rate-card-overview.md) oder aus der Nutzungsdatei im CSV-Format abgerufen werden, die Sie aus dem [Azure-Kontenportal](https://account.windowsazure.com/) oder aus dem [EA-Portal](https://ea.azure.com) herunterladen können.
+Informationen zu Tags können über die [Nutzungs-API](billing-usage-rate-card-overview.md) oder aus der Nutzungsdatei im CSV-Format abgerufen werden, die Sie aus dem [Azure-Kontenportal](https://account.windowsazure.com/) oder aus dem [EA-Portal](https://ea.azure.com) herunterladen können. Weitere Informationen zum programmgesteuerten Zugriff auf Abrechnungsinformationen finden Sie unter [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure](billing-usage-rate-card-overview.md).
 
 Wenn Sie die CSV-Nutzungsdatei für Dienste herunterladen, die die Verwendung von Tags für die Abrechnung unterstützen, sind die Tags in der Spalte **Tags** enthalten. Ausführlichere Informationen finden Sie unter [Informationen zu Ihrer Rechnung für Microsoft Azure](billing-understand-your-bill.md).
 
@@ -108,4 +158,4 @@ Wenn Sie die CSV-Nutzungsdatei für Dienste herunterladen, die die Verwendung vo
 
   
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

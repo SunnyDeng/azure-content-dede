@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit der Authentifizierung für mobile Apps in Windows | Azure App Service"
+	pageTitle="Erste Schritte mit der Authentifizierung für mobile Apps in Windows | Microsoft Azure"
 	description="Erfahren Sie, wie Sie mobile Apps zum Authentifizieren der Benutzer Ihrer Windows-App über eine Vielzahl von Identitätsanbietern nutzen können, z. B. AAD, Google, Facebook, Twitter und Microsoft."
 	services="app-service\mobile"
 	documentationCenter="windows"
@@ -26,7 +26,7 @@ In diesem Thema wird die Authentifizierung von Benutzern einer mobilen App Servi
 
 Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Ihrer mobilen App] abschließen.
 
-##<a name="review"></a>Überprüfen der Konfiguration der Serverprojekts (optional)
+##<a name="review"></a>Überprüfen der Konfiguration der Serverprojekts \(optional\)
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-enable-auth-preview](../../includes/app-service-mobile-dotnet-backend-enable-auth-preview.md)]
 
@@ -75,4 +75,4 @@ Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor 
 [Erste Schritte mit Ihrer mobilen App]: app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

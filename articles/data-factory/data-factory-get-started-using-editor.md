@@ -7,7 +7,6 @@
 	manager="jhubbard" 
 	editor="monicar"/>
 
-
 <tags 
 	ms.service="data-factory" 
 	ms.workload="data-services" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="07/27/2015" 
 	ms.author="spelluru"/>
-
 
 # Lernprogramm: Erstellen und Überwachen einer Data Factory mit dem Data Factory-Editor
 > [AZURE.SELECTOR]
@@ -100,7 +98,7 @@ In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **StorageLinkedService
 
 	![Editor – Azure SQL-Einstellungen][image-editor-azure-sql-settings]
 
-2. Ersetzen Sie **servername**, **databasename**, \*\***username@servername** und **password** durch die Namen von Azure SQL-Server, -Datenbank, -Benutzerkonto und -Kennwort.
+2. Ersetzen Sie **servername**, **databasename**, ****username@servername** und **password** durch die Namen von Azure SQL-Server, -Datenbank, -Benutzerkonto und -Kennwort.
 3. Klicken Sie auf der Symbolleiste auf **Bereitstellen**, um den verknüpften Dienst „AzureSqlLinkedService“ zu erstellen und bereitzustellen. 
    
 
@@ -383,17 +381,6 @@ Eine Liste unterstützten Aktivitäten finden Sie im Thema [Pipelines und Aktivi
  
 Informationen zum Ausführen dieses Lernprogramms mit Azure PowerShell finden Sie unter [Erstellen und Überwachen einer Data Factory mit Azure PowerShell][monitor-manage-using-powershell].
 
-## Nächste Schritte
-
-Artikel | Beschreibung
------- | ---------------
-[Kopieren von Daten mit Azure Data Factory (Kopieraktivität)][copy-activity] | Dieser Artikel enthält eine ausführliche Beschreibung der **Kopieraktivität**, die in diesem Lernprogramm verwendet wird. 
-[Aktivieren von Pipelines zum Arbeiten mit lokalen Daten][use-onpremises-datasources] | Dieser Artikel enthält eine exemplarische Vorgehensweise zum Kopieren von Daten aus einer **lokalen SQL Server-Datenbank** in einen Azure-Blob. 
-[Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][adf-tutorial] | In diesem Artikel wird in einer **umfassenden exemplarischen Vorgehensweise** die Implementierung eines **realen Szenarios** mithilfe von Azure Data Factory veranschaulicht, um Einblicke aus Protokolldateien zu gewinnen.
-[Problembehandlung bei Data Factory][troubleshoot] | In diesem Artikel wird die **Problembehandlung** in Azure Data Factory beschrieben. Sie können die exemplarische Vorgehensweise in diesem Artikel mit "ADFTutorialDataFactory" ausprobieren, indem Sie einen Fehler einbauen (die Tabelle in der Azure SQL-Datenbank löschen). 
-[Azure Data Factory-Entwicklerreferenz][developer-reference] | Die Entwicklerreferenz enthält umfassende Referenzinformationen für Cmdlets, JSON-Skripts, Funktionen usw. 
-
-
 <!--Link references-->
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
@@ -410,11 +397,9 @@ Artikel | Beschreibung
 
 [data-factory-editor]: data-factory-editor.md
 [monitor-manage-using-powershell]: data-factory-monitor-manage-using-powershell.md
-[use-onpremises-datasources]: data-factory-use-onpremises-datasources.md
 [adf-tutorial]: data-factory-tutorial.md
 [use-custom-activities]: data-factory-use-custom-activities.md
 [use-pig-and-hive-with-data-factory]: data-factory-pig-hive-activities.md
-[copy-activity]: data-factory-copy-activity.md
 [troubleshoot]: data-factory-troubleshoot.md
 [data-factory-introduction]: data-factory-introduction.md
 [data-factory-create-storage]: http://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account
@@ -514,4 +499,4 @@ Artikel | Beschreibung
 [image-data-factory-name-not-available]: ./media/data-factory-get-started-using-editor/getstarted-data-factory-not-available.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

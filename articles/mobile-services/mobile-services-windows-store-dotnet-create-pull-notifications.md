@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Definieren einer benutzerdefinierten API, die Pullbenachrichtigungen unterstützt – Azure Mobile Services" 
+	pageTitle="Definieren benutzerdefinierter APIs mit Unterstützung von Pullbenachrichtigungen | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren, die regelmäßige Benachrichtigungen in Windows Store-Apps unterstützt, die Azure Mobile Services verwenden." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -13,14 +13,10 @@
 	ms.tgt_pltfrm="windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/14/2015" 
+	ms.date="08/08/2015" 
 	ms.author="glenga"/>
 
 # Definieren benutzerdefinierter APIs mit Unterstützung für periodische Benachrichtigungen
-
-<div class="dev-center-tutorial-selector"> 
-	<a href="/documentation/articles/mobile-services-windows-store-dotnet-create-pull-notifications/" title="Windows Store C#" class="current">Windows Store C#</a><a href="/documentation/articles/mobile-services-windows-store-javascript-create-pull-notifications/" title="Windows Store JavaScript">Windows Store JavaScript</a>
-</div>
 
 In diesem Thema lernen Sie, wie Sie eine benutzerdefinierte API für periodische Benachrichtigungen aus einer Windows Store-App aufrufen. Durch die Aktivierung von periodischen Benachrichtigungen greift Windows periodisch auf Ihren benutzerdefinierten API-Endpunkt zu und verwendet die zurückgegebene XML, in einem kachelspezifischen Format, um die App-Kachel im Startmenü zu aktualisieren. Weitere Informationen finden Sie unter [Periodische Benachrichtigungen].
 
@@ -167,4 +163,4 @@ Da Sie nun eine periodische Benachrichtigung erstellt haben, können Sie weitere
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

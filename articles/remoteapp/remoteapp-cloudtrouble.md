@@ -3,7 +3,7 @@
     pageTitle="Problembehandlung bei RemoteApp-Cloud-Sammlungen – Erstellen"
     description="Erfahren Sie, wie Sie Probleme beim Erstellen von RemoteApp-Cloud-Sammlungen beheben." 
     services="remoteapp" 
-	documentationCenter="" 
+    documentationCenter="" 
     authors="vkbucha" 
     manager="mbaldwin" />
 
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="05/28/2015" 
+    ms.date="08/12/2015" 
     ms.author="vikbucha" />
 
 
@@ -38,4 +38,4 @@ Wenn Sie ein der Microsoft-Images verwenden, die in Ihrem Abonnement enthalten s
 Wenn dieser Fehler angezeigt wird, deutet dies i. d. R. darauf hin, dass ein Upgrade Ihres Konto auf ein Bezahlkonto durchgeführt wurde, Sie aber versuchen, ein von Microsoft bereitgestelltes Image zu verwenden, das nur während der Testphase des Diensts gültig ist. Versuchen Sie in diesem Fall, Ihre Cloud-Sammlung erneut zu erstellen, und geben Sie dabei das richtige Image an.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

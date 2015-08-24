@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="05/23/2015"
+	ms.date="08/10/2015"
 	ms.author="stepsic"/>
 
-#Erstellen einer neuen Logik-App
+# Erstellen einer neuen Logik-App
 In diesem Thema wird veranschaulicht, wie Sie in nur wenigen Minuten in [App Services-Logik-Apps](app-service-logic-what-are-logic-apps.md) einsteigen können. Wir durchlaufen einen Workflow, mit dessen Hilfe Sie eine Gruppe von Tweets, an denen Sie interessiert sind, an einen Dropbox-Ordner übermitteln können.
 
 Für dieses Szenario benötigen Sie Folgendes:
@@ -27,13 +27,13 @@ Für dieses Szenario benötigen Sie Folgendes:
 
 <!--- TODO: Add try it now information here -->
 
-##Erstellen von Connectors
+## Erstellen von Connectors
 
 Zunächst müssen Sie die beiden Connectors erstellen, die Sie verwenden möchten: den [**Dropbox-Connector**](app-service-logic-connector-dropbox.md) und den [**Twitter-Connector**](app-service-logic-connector-twitter.md). Gehen Sie so vor:
 
 0. Melden Sie sich beim Azure-Portal an.
 
-1. Klicken Sie auf der Startseite auf [**Marketplace**](https://portal.azure.com/#blade/HubsExtension/GalleryFeaturedMenuItemBlade/selectedMenuItemId/apiapps), und suchen Sie nach **Twitter** (oder [klicken Sie hier](https://portal.azure.com/#create/microsoft_com.TwitterConnector.0.2.2)).
+1. Klicken Sie auf der Startseite auf [**Marketplace**](https://portal.azure.com/#blade/HubsExtension/GalleryFeaturedMenuItemBlade/selectedMenuItemId/apiapps), und suchen Sie nach **Twitter** \(oder [klicken Sie hier](https://portal.azure.com/#create/microsoft_com.TwitterConnector.0.2.2)\).
 
 2. Wählen Sie "Twitter-Connector" aus, und klicken Sie auf die Schaltfläche "Erstellen". Eine Ansicht für alle Ihre Einstellungen wird angezeigt. Sie können als Name **Twitter-Connector** übernehmen.
 
@@ -59,7 +59,7 @@ Zunächst müssen Sie die beiden Connectors erstellen, die Sie verwenden möchte
 
 9. Wiederholen Sie nun den Vorgang für [Dropbox](https://portal.azure.com/#create/microsoft_com.DropboxConnector.0.2.2).
 
-##Starten der Logik-App
+## Starten der Logik-App
 
 Nun müssen Sie eine neue Logik-App erstellen:
 
@@ -90,7 +90,7 @@ Trigger sind die Grundlage der Ausführung Ihrer Logik-App. Als Nächstes fügen
 	![Serie](./media/app-service-logic-create-a-logic-app/recurrence.png)
 
 
-4.  Wählen Sie für die Wiederholung eine **Frequenz** und ein **Intervall** (z. B. einmal pro Stunde) aus, und klicken Sie dann auf das grüne Häkchen.
+4.  Wählen Sie für die Wiederholung eine **Frequenz** und ein **Intervall** \(z. B. einmal pro Stunde\) aus, und klicken Sie dann auf das grüne Häkchen.
 
 Nun fügen Sie dem Datenfluss eine Aktion hinzu.
 
@@ -106,6 +106,8 @@ Aktionen sind das, was in Ihrem Workflow stattfindet. Sie können eine beliebige
 	Dadurch wird dem Connector Zugriff auf Ihr Twitter-Konto gewährt. Eine Liste möglicher Vorgänge, die vom Twitter-Connector bereitgestellt werden, wird angezeigt.
 
 	![Aktionen](./media/app-service-logic-create-a-logic-app/actions.png)
+
+	> [AZURE.NOTE]Die Schaltfläche **Autorisieren** verwendet OAUTH-Sicherheitseinstellungen, um mit Saas-Diensten wie Twitter eine Verbindung herzustellen. Mehr zu OAUTH finden Sie unter [OAUTH-Sicherheit](app-service-logic-oauth-security.md).
 
 3. Klicken Sie auf **Tweets durchsuchen**, geben Sie dann in **Abfrage eingeben** beispielsweise `#MicrosoftAzure` ein, und klicken Sie auf das grüne Häkchen.
 
@@ -172,4 +174,4 @@ In weniger als 5 Minuten haben Sie eine einfache Logik-App eingerichtet, die in 
 [Verwenden von Logik-App-Features]: app-service-logic-use-logic-app-features.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

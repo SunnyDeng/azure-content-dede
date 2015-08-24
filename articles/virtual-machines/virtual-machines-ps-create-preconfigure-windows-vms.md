@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="KBDAzure"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -20,7 +21,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure Preview Portal](virtual-machines-windows-tutorial.md)
-- [Azure Management Portal](virtual-machines-windows-tutorial-classic-portal.md)
+- [Azure Portal](virtual-machines-windows-tutorial-classic-portal.md)
 - [PowerShell](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
 Diese Schritte zeigen, wie Sie eine Reihe von Azure PowerShell-Befehlen anpassen, mit denen ein Windows-basierter virtueller Azure-Computer mit einem Bausteinansatz erstellt und vorab konfiguriert wird. Sie können diesen Prozess verwenden, um schnell einen Befehlssatz für einen neuen Windows-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern oder mehrere Befehlssätze zu erstellen, die schnell eine benutzerdefinierte Entwicklungs-/Test- oder IT-Expertenumgebung erstellen.
@@ -46,7 +47,7 @@ Legen Sie Ihr Azure-Abonnement und Speicherkonto fest, indem Sie diese Befehle i
 	Select-AzureSubscription -SubscriptionName $subscr –Current
 	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 
-Sie erhalten den korrekten Abonnementnamen aus der Eigenschaft "SubscriptionName" der Ausgabe des Befehls **Get-AzureSubscription**. Sie erhalten den korrekten Speicherkontonamen aus der Eigenschaft "Beschriftung" der Ausgabe des Befehls **Get-AzureStorageAccount**, nachdem Sie den Befehl **Select-AzureSubscription** ausgeben.
+Sie erhalten den korrekten Abonnementnamen aus der Eigenschaft "SubscriptionName" der Ausgabe des Befehls **Get-AzureSubscription**. Sie erhalten den korrekten Speicherkontonamen aus der Eigenschaft "Label" der Ausgabe des Befehls **Get-AzureStorageAccount**, nachdem Sie den Befehl **Select-AzureSubscription** ausgeführt haben.
 
 ## Schritt 3: Bestimmen der ImageFamily
 
@@ -141,7 +142,7 @@ Legen Sie für einen Active Directory-Domänencontroller "$hcaching" auf "Kein" 
 
 Optional können Sie den virtuellen Computer einem vorhandenen Satz mit Lastenausgleich für den externen Datenverkehr hinzufügen.
 
-	$prot="<Specify one: tcp, udp>"
+	$port="<Specify one: tcp, udp>"
 	$localport=<port number of the internal port>
 	$pubport=<port number of the external port>
 	$endpointname="<name of the endpoint>"
@@ -151,7 +152,7 @@ Optional können Sie den virtuellen Computer einem vorhandenen Satz mit Lastenau
 	$probepath="<URL path for probe traffic>"
 	$vm1 | Add-AzureEndpoint -Name $endpointname -Protocol $prot -LocalPort $localport -PublicPort $pubport -LBSetName $lbsetname -ProbeProtocol $probeprotocol -ProbePort $probeport -ProbePath $probepath
 
-Schließlich starten Sie den Erstellungsprozess für die virtuellen Computer durch Auswahl eines dieser Befehlsblöcke (erforderlich).
+Abschließend wählen Sie einen dieser erforderlichen Befehlsblöcke zum Erstellen des virtuellen Computers.
 
 Option 1: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddienst.
 
@@ -256,7 +257,7 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 
 ## Zusätzliche Ressourcen
-<!-- For section headings, use sentence-case caps -->
+
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
 [Virtuelle Computer in Azure – häufig gestellte Fragen](http://msdn.microsoft.com/library/azure/dn683781.aspx)
@@ -269,4 +270,4 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -4,6 +4,7 @@
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
+	writer="juliako" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/16/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 
@@ -139,4 +140,4 @@ Weitere Informationen finden Sie unter [Ankündigung der Azure Media Services-In
 [configure-origin-configure-custom-host-names]: ./media/media-services-manage-origins/media-services-configure-custom-host-names.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

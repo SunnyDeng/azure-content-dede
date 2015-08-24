@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Verwenden des SQL Azure-Migrations-Assistenten | Microsoft" 
+   pageTitle="Verwenden des SQL Azure-Migrations-Assistenten | Microsoft Azure" 
    description="Microsoft Azure SQL-Datenbank, Datenbankmigration, Datenbank importieren, Datenbank exportieren, Migrations-Assistent" 
    services="sql-database" 
    documentationCenter="" 
@@ -60,7 +60,7 @@ Sie können den SQL Azure-Migrations-Assistenten von CodePlex herunterladen:
 ![alt text](./media/sql-database-migration-wizard/03MigrationWizard.png)
 
 
-&nbsp;4. Auf der nächsten Seite,"Objekte auswählen" haben Sie die Wahl zwischen den beiden Optionen "Skript für gesamte Datenbank erstellen" (Standard) und "Bestimmte Datenbankobjekte auswählen" Es empfiehlt sich, zunächst die Skripterstellung für alle Objekte auf einmal vorzunehmen und dann bei Bedarf zu diesem Schritt zurückzukehren und Objekte auszuschließen, wenn der Assistent Skript- oder Transformationsfehler meldet. Der Assistent führt zuerst die Skripterstellung für die Objekte in der Datenbank durch (unter Verwendung von SMO) und nimmt anschließend eine Nachbearbeitung des generierten Skripts vor, um eine Reihe von Regex-basierten Validierungs- und Transformationsregeln anzuwenden.
+&nbsp;4. Auf der nächsten Seite,"Objekte auswählen" haben Sie die Wahl zwischen den beiden Optionen "Skript für gesamte Datenbank erstellen" \(Standard\) und "Bestimmte Datenbankobjekte auswählen" Es empfiehlt sich, zunächst die Skripterstellung für alle Objekte auf einmal vorzunehmen und dann bei Bedarf zu diesem Schritt zurückzukehren und Objekte auszuschließen, wenn der Assistent Skript- oder Transformationsfehler meldet. Der Assistent führt zuerst die Skripterstellung für die Objekte in der Datenbank durch \(unter Verwendung von SMO\) und nimmt anschließend eine Nachbearbeitung des generierten Skripts vor, um eine Reihe von Regex-basierten Validierungs- und Transformationsregeln anzuwenden.
 
 
 ![alt text](./media/sql-database-migration-wizard/04MigrationWizard.png)
@@ -75,14 +75,14 @@ Sie können den SQL Azure-Migrations-Assistenten von CodePlex herunterladen:
 &nbsp;6. Klicken Sie auf **Weiter**, um die Optionen zu überprüfen. Klicken Sie dann erneut auf **Weiter**, um das Skript zu generieren und zu transformieren. Sie können das Skript auf der Registerkarte "SQL-Skript" überprüfen.
 
 
-&nbsp;7. Bei der Skriptgenerierung werden Fehler gemeldet, wenn das Schema inkompatibel mit der SQL-Datenbank ist und vom Assistenten nicht umgewandelt werden kann. Im nachfolgenden Screenshot wurden vom Transformationsprozess Probleme mit einer gespeicherten Prozedur festgestellt. In diesem Fall wurde eine Prozedur für Volltextsuche geschrieben, die in V12 noch nicht unterstützt wird (sie wird jedoch in einer späteren Version unterstützt).
+&nbsp;7. Bei der Skriptgenerierung werden Fehler gemeldet, wenn das Schema inkompatibel mit der SQL-Datenbank ist und vom Assistenten nicht umgewandelt werden kann. Im nachfolgenden Screenshot wurden vom Transformationsprozess Probleme mit einer gespeicherten Prozedur festgestellt. In diesem Fall wurde eine Prozedur für Volltextsuche geschrieben, die in V12 noch nicht unterstützt wird \(sie wird jedoch in einer späteren Version unterstützt\).
 
 
 ![alt text](./media/sql-database-migration-wizard/06MigrationWizard.png)
 
 
 - Abhängig von Ihrer Bewertung der Fehler empfiehlt es sich, zum Assistenten zurückzukehren und Objekte auszuschließen, die Probleme verursachen, und dann das Skript erneut zu generieren. Berücksichtigen Sie bei Ihren Überlegungen zur Behandlung der Fehler die Auswirkungen auf andere Objekte in der Datenbank und auf die Anwendungen, die die Datenbank verwenden.
-- Wenn das Skript Fehler enthält, die korrigiert werden müssen, können Sie auf der Registerkarte "SQL-Skript" eine Skriptdatei speichern, die nur das Schema enthält, und das Skript in Ihrem bevorzugten Texteditor öffnen und bearbeiten. Damit können Sie die Fehler korrigieren, bevor Sie es außerhalb des SQL Azure-Migrations-Assistenten (SAMW) für die neue Datenbank ausführen, die Sie in Schritt 1 erstellt haben. Wenn das Skript sehr groß ist oder eine große Anzahl von Fehlern enthält, sollten Sie Option 3 verwenden. Beachten Sie, dass Sie die generierte Skriptdatei zwar in Visual Studio importieren können, jedoch der Import aus einer SQL-Datei erheblich länger dauern kann als der Import aus einer Datenbank, wie in Option 3 beschrieben. 
+- Wenn das Skript Fehler enthält, die korrigiert werden müssen, können Sie auf der Registerkarte "SQL-Skript" eine Skriptdatei speichern, die nur das Schema enthält, und das Skript in Ihrem bevorzugten Texteditor öffnen und bearbeiten. Damit können Sie die Fehler korrigieren, bevor Sie es außerhalb des SQL Azure-Migrations-Assistenten \(SAMW\) für die neue Datenbank ausführen, die Sie in Schritt 1 erstellt haben. Wenn das Skript sehr groß ist oder eine große Anzahl von Fehlern enthält, sollten Sie Option 3 verwenden. Beachten Sie, dass Sie die generierte Skriptdatei zwar in Visual Studio importieren können, jedoch der Import aus einer SQL-Datei erheblich länger dauern kann als der Import aus einer Datenbank, wie in Option 3 beschrieben. 
 
 
 &nbsp;8. Wenn keine Fehler vorliegen oder Sie die aus der Generierung resultierende Fehlerquelle eliminiert haben, können Sie auf **Weiter** klicken und dann auf der Folgeseite auf **Verbindung mit Server herstellen**, um eine Verbindung zu dem Azure SQL-Datenbankserver herzustellen, den Sie in Schritt 1 erstellt haben.
@@ -98,4 +98,4 @@ Sie können den SQL Azure-Migrations-Assistenten von CodePlex herunterladen:
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

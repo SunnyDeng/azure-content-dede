@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/21/2015" 
+	ms.date="08/11/2015" 
 	ms.author="cephalin"/>
 
 
@@ -92,7 +92,7 @@ So installieren Sie den C#-Treiber für MongoDB
 
 	![NuGet-Pakete verwalten][VS2013ManageNuGetPackages]
 
-2. Klicken Sie im linken Bereich des Fensters **NuGet-Pakete verwalten** auf **Online**. Geben Sie auf der rechten Seite in das Feld **Online suchen** "mongocsharpdriver" ein. Klicken Sie auf **Installieren**, um den Treiber zu installieren.
+2. Klicken Sie im linken Bereich des Fensters **NuGet-Pakete verwalten** auf **Online**. Geben Sie auf der rechten Seite in das Feld **Online suchen** "mongodb.driver" ein. Klicken Sie auf **Installieren**, um den Treiber zu installieren.
 
 	![Nach C#-Treiber für MongoDB suchen][SearchforMongoDBCSharpDriver]
 
@@ -101,7 +101,7 @@ So installieren Sie den C#-Treiber für MongoDB
 4. Klicken Sie nach der Installation des Treibers auf **Schließen**. ![C#-Treiber für MongoDB installiert][MongoDBCsharpDriverInstalled]
 
 
-Der C#-Treiber für MongoDB ist jetzt installiert. Dem Projekt wurden Verweise auf die Bibliotheken **MongoDB.Driver.dll** und **MongoDB.Bson.dll** hinzugefügt.
+Der C#-Treiber für MongoDB ist jetzt installiert. Dem Projekt wurden Verweise auf die Bibliotheken **MongoDB.Bson**, **MongoDB.Driver** und **MongoDB.Driver.Core** hinzugefügt.
 
 ![Verweise auf C#-Treiber für MongoDB][MongoDBCSharpDriverReferences]
 
@@ -367,7 +367,7 @@ Um den Titel oben auf der Seite zu ändern, öffnen Sie die Datei "Views\\Shared
 	<div>  @Html.Partial("Create", new MyTaskListApp.Models.MyTask())</div>
 
 
-Um die Möglichkeit zum Erstellen eines neuen Tasks hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Ordner *Views\\Home\*, und fügen Sie eine neue **Ansicht** hinzu. Benennen Sie die Ansicht *Create*. Ersetzen Sie den Code durch den folgenden Code:
+Um die Möglichkeit zum Erstellen eines neuen Tasks hinzuzufügen, klicken Sie mit der rechten Maustaste auf den Ordner *Views\\Home*, und fügen Sie eine neue **Ansicht** hinzu. Benennen Sie die Ansicht *Create*. Ersetzen Sie den Code durch den folgenden Code:
 
 	@model MyTaskListApp.Models.MyTask
 	
@@ -499,4 +499,4 @@ Weitere Informationen zum Entwickeln von C#-Anwendungen für MongoDB finden Sie 
 [Deploy the ASP.NET application to the web site using Git]: #deployapp
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

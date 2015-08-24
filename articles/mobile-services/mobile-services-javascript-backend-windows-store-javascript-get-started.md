@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit Mobile Services für Windows Store-Apps | Mobile Dev Center" 
+	pageTitle="Erste Schritte mit Mobile Services für Windows Store-Apps | Microsoft Azure" 
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Windows Store-Entwicklung in C# oder JavaScript." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -93,4 +93,4 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 [Management Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

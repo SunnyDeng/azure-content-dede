@@ -220,14 +220,14 @@ In diesem Lernprogramm verwenden Sie den HDFS-Befehl **copyFromLocal**, um die D
 
 In diesem Lernprogramm wird die folgende HDFS-Ordnerstruktur verwendet:
 
-<table border="1">
-<tr><td>Ordner</td><td>Hinweis</td></tr>
-<tr><td>/WordCount</td><td>Der Stammordner für das Wortzählungsprojekt. </td></tr>
-<tr><td>/WordCount/Apps</td><td>Der Ordner für die Mapper- und Reducer-Programme.</td></tr>
-<tr><td>/WordCount/Input</td><td>Der Ordner für die MapReduce-Quelldateien.</td></tr>
-<tr><td>/WordCount/Output</td><td>Der Ordner für die MapReduce-Ausgabedateien.</td></tr>
-<tr><td>/WordCount/MRStatusOutput</td><td>Der Ordner für die Jobergebnisse.</td></tr>
-</table>
+Ordner|Hinweis
+---|---
+/WordCount|Der Stammordner für das Wortzählungsprojekt. 
+/WordCount/Apps|Der Ordner für die Mapper- und Reducer-Programme.
+/WordCount/Input|Der Ordner für die MapReduce-Quelldateien.
+/WordCount/Output|Der Ordner für die MapReduce-Ausgabedateien.
+/WordCount/MRStatusOutput|Der Ordner für die Jobergebnisse.
+
 
 In diesem Lernprogramm werden die .txt-Dateien im Verzeichnis %hadoop\_home% als Datendateien verwendet.
 
@@ -610,4 +610,4 @@ In diesem Lernprogramm haben Sie gelernt, wie Sie einen Java-MapReduce-Auftrag e
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

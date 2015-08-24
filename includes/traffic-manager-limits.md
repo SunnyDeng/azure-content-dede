@@ -1,6 +1,6 @@
-| Ressource | Standardlimit
---- | ---
-| Profile pro Abonnement | 100
-| Endpunkte pro Profil| 200
+Ressource| Standardlimit
+---|---
+Profile pro Abonnement | 100
+Endpunkte pro Profil| 200
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

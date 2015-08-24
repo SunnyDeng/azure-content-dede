@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/02/2015" 
+	ms.date="08/10/2015" 
 	ms.author="piyushjo" />
 
 #Windows Universal Apps SDK – Upgrade-Verfahren
@@ -169,4 +169,4 @@ Beachten Sie, dass sich die Umbenennung auch auf überschriebene Methoden auswir
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

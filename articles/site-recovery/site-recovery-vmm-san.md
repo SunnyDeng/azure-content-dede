@@ -7,16 +7,14 @@
 	manager="jwhit" 
 	editor="tysonn"/>
 
-
 <tags 
 	ms.service="site-recovery" 
 	ms.workload="backup-recovery" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/07/2015" 
+	ms.date="08/05/2015" 
 	ms.author="raynew"/>
-
 
 # Einrichten von Schutz zwischen lokalen VMM-Standorten mit einem SAN
 
@@ -219,11 +217,11 @@ Fahren Sie nach der Installation des Anbieters mit der Einrichtung fort, um den 
 
 	- Wenn Sie einen benutzerdefinierten Proxyserver verwenden möchten, richten Sie diesen vor der Anbieterinstallation ein.
 	- Der VMM-Server sollte auf die folgenden URLs Zugriff haben:
-		- *\*.hypervrecoverymanager.windowsazure.com
-- *\*.accesscontrol.windows.net
-- *\*.backup.windowsazure.com
-- *\*.blob.core.windows.net
-- *\*.store.core.windows.net
+		- **.hypervrecoverymanager.windowsazure.com
+- **.accesscontrol.windows.net
+- **.backup.windowsazure.com
+- **.blob.core.windows.net
+- **.store.core.windows.net
 - Lassen Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) angegebenen IP-Adressen sowie das HTTPS-Protokoll (443) zu. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu. 
 	
 	- Bei Verwendung eines benutzerdefinierten Proxys wird automatisch ein ausführendes VMM-Konto (DRAProxyAccount) mit den angegebenen Proxyanmeldeinformationen erstellt. Konfigurieren Sie den Proxyserver so, dass dieses Konto erfolgreich authentifiziert werden kann.
@@ -363,4 +361,4 @@ Weitere Informationen zur Interaktion mit Aufträgen und dem Dashboard finden Si
 	
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

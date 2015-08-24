@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="04/02/2015" 
+	ms.date="08/10/2015" 
 	ms.author="piyushjo" />
 
 #Übersicht über das Windows Universal SDK für Azure Mobile Engagement
@@ -53,4 +53,4 @@ Dieser Schritt betrifft nur angepasste Ressourcen. Wenn Sie die Ressourcen, die 
 
 Siehe [Upgrade-Verfahren](mobile-engagement-windows-store-upgrade-procedure/)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

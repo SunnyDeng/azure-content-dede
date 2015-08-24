@@ -7,16 +7,14 @@
 	manager="carolz"
 	editor="tysonn"/>
 
-
 <tags
 	ms.service="storage"
 	ms.workload="storage"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/30/2015"
+	ms.date="08/06/2015"
 	ms.author="tamram;selcint"/>
-
 
 
 # Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern
@@ -41,9 +39,9 @@ Die folgende Liste führt wichtige Informationen auf, die vor oder bei der Verwe
 
 - Der Premium-Speicher ist zurzeit im [Microsoft Azure-Vorschauportal](https://portal.azure.com/) verfügbar, und auf ihn kann über die folgenden SDK-Bibliotheken zugegriffen werden: [Speicher-REST-API](http://msdn.microsoft.com//library/azure/dd179355.aspx) Version 2014-02-14 oder höher, [Dienstverwaltungs-REST.API](http://msdn.microsoft.com/library/azure/ee460799.aspx) Version 2014-10-01 oder höher und [Azure PowerShell](../install-configure-powershell.md) Version 0.8.10 oder höher.
 
-- Premium-Speicher ist derzeit in den folgenden Regionen verfügbar: Westen USA, Osten USA 2, Westeuropa, Ostchina, Südostasien, Westjapan und Ostaustralien.
+- Eine Liste der Regionen mit Unterstützung für Storage Premium finden Sie unter [Azure-Dienste nach Region](http://azure.microsoft.com/regions/#services).
 
-- Der Premium-Speicher unterstützt nur Azure-Seiten-BLOBs, die verwendet werden, um persistente Datenträger für Azure Virtual Machines (VMs) zu speichern. Weitere Informationen zu Azure-Seitenblobs finden Sie unter [Grundlegendes zu Block-Blobs und Seitenblobs](http://msdn.microsoft.com/library/azure/ee691964.aspx). Der Premium-Speicher unterstützt keine Azure-Block-BLOBs, Azure-Dateien, Azure-Tabellen oder Azure-Warteschlangen.
+- Der Premium-Speicher unterstützt nur Azure-Seitenblobs, die verwendet werden, um persistente Datenträger für Azure Virtual Machines (VMs) zu speichern. Weitere Informationen zu Azure-Seitenblobs finden Sie unter [Grundlegendes zu Block-Blobs und Seitenblobs](http://msdn.microsoft.com/library/azure/ee691964.aspx). Der Premium-Speicher unterstützt keine Azure-Block-BLOBs, Azure-Dateien, Azure-Tabellen oder Azure-Warteschlangen.
 
 - Ein Premium-Speicherkonto ist lokal redundant (LRS) und verwaltet drei Kopien der Daten innerhalb einer einzelnen Region. Überlegungen zur Georeplikation bei der Verwendung von Premium-Speicher finden Sie in diesem Artikel im Abschnitt [Momentaufnahmen und Kopieren von Blob bei der Verwendung des Premium-Speichers](#snapshots-and-copy-blob-whde-deing-premium-storage).
 
@@ -233,7 +231,7 @@ Ihre Anwendung hat 495 E/A-Vorgänge mit 16 KB Datenträgergröße (dies entspr
 Alle Berechnungen basieren auf der E/A-Einheitengröße von 256 KB.
 
 ### Beispiel 2:
-Ihre Anwendung hat 400 E/A-Vorgänge mit 256 KB Datenträgergröße auf einem Datenträger des Typs P10 ausgeführt. Verwendete Gesamtbandbreite: (400 \* 256) / 1024 = 100 MB/s. Beachten Sie, dass 100 MB pro Sekunde das Durchsatzlimit eines P10-Datenträgers ist. Wenn Ihre Anwendung versucht, weitere E/A-Vorgänge in dieser Sekunde auszuführen, wird sie eingeschränkt, weil der zugewiesene Grenzwert überschritten wird.
+Ihre Anwendung hat 400 E/A-Vorgänge mit 256 KB Datenträgergröße auf einem Datenträger des Typs P10 ausgeführt. Verwendete Gesamtbandbreite: (400 * 256) / 1024 = 100 MB/s. Beachten Sie, dass 100 MB pro Sekunde das Durchsatzlimit eines P10-Datenträgers ist. Wenn Ihre Anwendung versucht, weitere E/A-Vorgänge in dieser Sekunde auszuführen, wird sie eingeschränkt, weil der zugewiesene Grenzwert überschritten wird.
 
 ### Beispiel 3:
 Sie besitzen einen virtuellen DS4-Computer mit zwei angefügten P30-Datenträgern. Bei jedem P30-Datenträger ist ein Durchsatz von 200 MB Datendurchsatz pro Sekunde möglich. Ein virtueller DS4-Computer verfügt jedoch über eine Datenträgerbandbreitenkapazität von insgesamt 256 MB pro Sekunde. Daher können Sie auf diesem virtuellen DS4-Computer für die angeschlossenen Datenträger nicht gleichzeitig den maximalen Durchsatz erzielen. Um dieses Problem zu beheben, können Sie auf einem Datenträger Datenverkehr von 200 MB pro Sekunde und auf dem anderen Datenträger 56 MB pro Sekunde tolerieren. Übersteigt die Summe des Datenträgerverkehrs 256 MB pro Sekunde, wird der Datenträgerverkehr gedrosselt.
@@ -264,11 +262,10 @@ Nachfolgend finden Sie wichtige Anweisungen zum Konfigurieren virtueller Linux-C
 
 - Bei Premium-Speicherdatenträgern mit der Cacheeinstellung „ReadWrite“ müssen Sperren aktiviert werden, um die Beständigkeit von Schreibvorgängen zu gewährleisten.
 
-Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher überprüft wurden. Es wird empfohlen, dass Sie Ihre virtuellen Computer auf mindestens eine dieser Versionen (oder eine höhere Version) aktualisieren, um eine bessere Leistung und Stabilität mit Premium-Speicher zu erzielen. Außerdem erfordern einige Versionen die neuesten LIS (Linux-Integrationsdienste v4.0 für Microsoft Azure). Der Download und die Installation sind über folgenden Link möglich: Wir fügen der Liste mehr Images hinzu, wenn weitere Überprüfungen ausgeführt wurden. Beachten Sie, dass unsere Überprüfungen ergaben, dass die Leistung für diese Images variiert. Sie hängt auch von den Arbeitsauslastungsmerkmalen und -einstellungen der Images ab. Verschiedene Images werden für verschiedene Arten von Arbeitsauslastung optimiert. <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;"> <tbody> <tr> <td><strong>Verteilung</strong></td> <td><strong>Version</strong></td> <td><strong>Unterstützter Kernel</strong></td> <td><strong>Unterstütztes Image</strong></td> </tr> <tr> <td rowspan="4"><strong>Ubuntu</strong></td> <td>12.04</td> <td>3.2.0-75.110</td> <td>Ubuntu-12\_04\_5-LTS-amd64-server-20150119-de-de-30GB</td> </tr> <tr> <td>14.04</td> <td>3.13.0-44.73</td> <td>Ubuntu-14\_04\_1-LTS-amd64-server-20150123-de-de-30GB</td> </tr> <tr> <td>14.10</td> <td>3.16.0-29.39</td> <td>Ubuntu-14\_10-amd64-server-20150202-de-de-30GB</td> </tr> <tr> <td>15.04</td> <td>3.19.0-15</td> <td>Ubuntu-15\_04-amd64-server-20150422-de-de-30GB</td> </tr> <tr> <td><strong>SUSE</strong></td> <td>SLES 12</td> <td>3.12.36-38.1</td> <td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td> </tr> <tr> <td><strong>CoreOS</strong></td> <td>584.0.0</td> <td>3.18.4</td> <td>CoreOS 584.0.0</td> </tr> <tr> <td rowspan="2"><strong>CentOS</strong></td> <td>6.5, 6.6, 7.0</td> <td></td> <td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 erforderlich</a></br> \*Siehe Hinweis unten </td> </tr> <tr>7.1<td> </td>3.10.0-229.1.2.el7<td> </td><td> LIS 4.0 empfohlen <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"></a> <br/>
- \*Siehe Hinweis unten </td> </tr>
+Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher überprüft wurden. Es wird empfohlen, dass Sie Ihre virtuellen Computer auf mindestens eine dieser Versionen (oder eine höhere Version) aktualisieren, um eine bessere Leistung und Stabilität mit Premium-Speicher zu erzielen. Außerdem erfordern einige Versionen die neuesten LIS (Linux-Integrationsdienste v4.0 für Microsoft Azure). Der Download und die Installation sind über folgenden Link möglich: Wir fügen der Liste mehr Images hinzu, wenn weitere Überprüfungen ausgeführt wurden. Beachten Sie, dass unsere Überprüfungen ergaben, dass die Leistung für diese Images variiert. Sie hängt auch von den Arbeitsauslastungsmerkmalen und -einstellungen der Images ab. Verschiedene Images werden für verschiedene Arten von Arbeitsauslastung optimiert. <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;"> <tbody> <tr> <td><strong>Distribution</strong></td> <td><strong>Version</strong></td> <td><strong>Unterstützter Kernel</strong></td> <td><strong>Unterstütztes Image</strong></td> </tr> <tr> <td rowspan="4"><strong>Ubuntu</strong></td> <td>12.04</td> <td>3.2.0-75.110</td> <td>Ubuntu-12\_04\_5-LTS-amd64-server-20150119-de-de-30GB</td> </tr> <tr> <td>14.04</td> <td>3.13.0-44.73</td> <td>Ubuntu-14\_04\_1-LTS-amd64-server-20150123-de-de-30GB</td> </tr> <tr> <td>14.10</td> <td>3.16.0-29.39</td> <td>Ubuntu-14\_10-amd64-server-20150202-de-de-30GB</td> </tr> <tr> <td>15.04</td> <td>3.19.0-15</td> <td>Ubuntu-15\_04-amd64-server-20150422-de-de-30GB</td> </tr> <tr> <td><strong>SUSE</strong></td> <td>SLES 12</td> <td>3.12.36-38.1</td> <td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td> </tr> <tr> <td><strong>CoreOS</strong></td> <td>584.0.0</td> <td>3.18.4</td> <td>CoreOS 584.0.0</td> </tr> <tr> <td rowspan="2"><strong>CentOS</strong></td> <td>6.5, 6.6, 7.0</td> <td></td> <td> <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 erforderlich </a> </br> *Siehe Hinweis unten</td> </tr> <tr> <td>7.1</td> <td>3.10.0-229.1.2.el7</td> <td> <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 empfohlen </a> <br/> *Siehe Hinweis unten </td> </tr>
 
 <tr>
-	<td rowspan="2"><link id="138" refid="139" url="virtual-machines-oracle-azure-virtual-machines.md">Oracle</link></td>
+	<td rowspan="2"><strong>Oracle</strong></td>
 	<td>6.4.</td>
 	<td></td>
 	<td><a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 erforderlich </a></td>
@@ -404,4 +401,4 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

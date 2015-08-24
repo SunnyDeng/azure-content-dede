@@ -1,3 +1,19 @@
+<properties 
+   pageTitle="Tabelle der StorSimple-Systembegrenzungen"
+   description="Beschreibt Systembegrenzungen und empfohlene Größen für StorSimple-Komponenten und Verbindungen."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="alkohli"
+   manager="adinah"
+   editor="" />
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/12/2015"
+   ms.author="alkohli" />
 
 | Begrenzungsbezeichner | Begrenzung | Kommentare |
 |----------------- | ------|--------- |
@@ -24,4 +40,4 @@
 
 & #42; Der maximale Durchsatz pro E/A-Typ wurde mit 100 %-Lese- und 100 %-Schreibszenarien gemessen. Der tatsächliche Durchsatz kann geringer sein und hängt von der E/A-Mischung und den Netzwerkbedingungen ab.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

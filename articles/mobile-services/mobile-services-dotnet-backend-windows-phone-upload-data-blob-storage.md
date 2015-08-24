@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verwenden von Mobile Services zum Hochladen von Daten in Blob-Speicher (Windows Phone) | Mobile Services" 
-	description="Erfahren Sie, wie Sie Mobile Services zum Hochladen von Bildern in den Azure Blob-Speicher verwenden." 
+	pageTitle="Verwenden von Mobile Services zum Hochladen von Bildern in Blobspeicher (Windows Phone) | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie Mobile Services zum Hochladen von Bildern in den Azure-Blobspeicher verwenden." 
 	documentationCenter="windows" 
 	authors="ggailey777" 
 	services="mobile-services,storage" 
@@ -81,4 +81,4 @@ Um eine SAS für das Hochladen von Bildern aus Ihrer App in den Blob-Speicher ve
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

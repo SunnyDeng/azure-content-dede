@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory (Windows Store) | Mobile Dev Center" 
+	pageTitle="Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory (Windows Store) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie den Zugriff basierend auf Azure Active Directory-Rollen in Ihrer Windows Store-Anwendung steuern." 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -285,4 +285,4 @@ Die folgenden Schritte zeigen, wie Sie rollenbasierte Zugriffssteuerung mithilfe
 [IsMemberOf]: http://msdn.microsoft.com/library/azure/dn151601.aspx
 [Zugriff auf Azure Active Directory Graph-Informationen]: mobile-services-javascript-backend-windows-store-dotnet-aad-graph-info.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

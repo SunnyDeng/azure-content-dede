@@ -308,15 +308,10 @@ Beide für das Ausführen der Beispiele verwendete PowerShell-Beispielskripte en
 
 Die Fehlermeldung (STDERR) und das Ergebnis des Jobs (STDERR) werden ebenfalls im standardmäßigen BLOB-Container an folgenden Orten für Ihren Cluster protokolliert.
 
-<table>
-<tr>
-<td>Für diesen Job...</td><td>Sehen Sie sich diese Dateien im BLOB-Container an</td>
-</tr>
-<td>Hive</td><td>/HivePython/stderr</br>/HivePython/stdout</td>
-</tr>
-<td>Pig</td><td>/PigPython/stderr</br>/PigPython/stdout</td>
-</tr>
-</table>
+Für diesen Job...|Sehen Sie sich diese Dateien im BLOB-Container an
+---|---
+Hive|/HivePython/stderr<p>/HivePython/stdout
+Pig|/PigPython/stderr<p>/PigPython/stdout
 
 ##<a name="next"></a>Nächste Schritte
 
@@ -330,4 +325,4 @@ Informationen zu anderen Möglichkeiten der Verwendung von Pig und Hive sowie In
 
 * [Verwenden von MapReduce mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

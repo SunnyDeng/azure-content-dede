@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Offlinedaten in Mobile Services (Xamarin iOS) | Mobile Dev Center" 
+	pageTitle="Verwenden von Offlinedaten in Mobile Services (Xamarin iOS) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Azure Mobile Services verwenden, um Offlinedaten in Ihrer Xamarin iOS-Anwendung zwischenzuspeichern und zu synchronisieren." 
 	documentationCenter="xamarin" 
 	authors="lindydonna" 
@@ -183,4 +183,4 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 [Xamarin-Erweiterung]: http://xamarin.com/visual-studio
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

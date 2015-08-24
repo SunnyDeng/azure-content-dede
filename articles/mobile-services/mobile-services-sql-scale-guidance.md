@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Skalieren von durch Azure SQL-Datenbank gesicherten mobilen Diensten – Azure Mobile Services" 
+	pageTitle="Skalieren von durch Azure SQL-Datenbank gesicherten mobilen Diensten | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Skalierbarkeitsprobleme in Ihren von SQL-Datenbank unterstützten mobilen Diensten diagnostizieren und beheben können." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="04/20/2015" 
+	ms.date="08/08/2015" 
 	ms.author="donnam;ricksal"/>
 
 # Skalieren von durch Azure SQL-Datenbank gesicherten mobillen Diensten
@@ -41,18 +41,18 @@ Sollte einer der obigen Punkte nicht zutreffen, können Sie die Skalierungseinst
 
 ### Auswahl der richtigen SQL-Datenbankstufe 
 
-Es ist wichtig, die verschiedenen verfügbaren Datenbankstufen zu verstehen, um sicherzustellen, dass Sie die passende Stufe für die Bedürfnisse Ihrer Anwendung gewählt haben. Die Azure SQL-Datenbank bietet zwei verschiedene Datenbankeditionen mit verschiedenen Stufen:
+Es ist wichtig, die verschiedenen verfügbaren Datenbankstufen zu verstehen, um sicherzustellen, dass Sie die passende Stufe für die Bedürfnisse Ihrer Anwendung gewählt haben. Die Azure SQL-Datenbank bietet zwei verschiedene Datenbankeditionen und drei verschiedene Diensttarife:
 
-- Web- und Business-Edition (ausgedient)
-- Basic-, Standard- und Premium-Edition 
+- Web und Business Edition (eingestellt)
+- Übersicht über die Diensttarife "Basic", "Standard" und "Premium".
 
-Die Web- und Business-Edition wird vollständig unterstützt; ihre Einstellung ist jedoch für den 24. April 2015 geplant, wie unter [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition](http://msdn.microsoft.com/library/azure/dn741330.aspx) besprochen. Wir empfehlen neuen Kunden die Verwendung der Basic-, Standard- und Premium-Edition in Vorbereitung auf diese Änderung. Diese neue Edition bietet eine Reihe neuer Stufen und Überwachungsfunktionen, mit denen es noch einfacher wird, die Datenbankleistung zu verstehen und Fehler zu beheben. Alle neuen mobilen Dienste werden mit der neuen Edition erstellt.
+Die Web und die Business Edition werden vollständig unterstützt; sie werden jedoch am 12. September 2015 eingestellt, wie unter [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition](http://msdn.microsoft.com/library/azure/dn741330.aspx) besprochen. Wir empfehlen neuen Kunden die Verwendung der Diensttarife "Basic", "Standard" und "Premium" in Vorbereitung auf diese Änderung. Diese bieten eine Reihe von Überwachungsfunktionen, mit denen es noch einfacher wird, die Datenbankleistung nachzuvollziehen und Fehler zu beheben. Alle neuen mobilen Dienste werden mit einem der neuen Diensttarife erstellt.
 
-Gehen Sie folgendermaßen vor, um einen mobilen Dienst mit der Web- und Business-Edition in die Basic-, Standard und Premium-Edition zu konvertieren.
+Gehen Sie folgendermaßen vor, um einen mobilen Dienst mit der Web und Business Edition in die Diensttarife "Basic", "Standard" und "Premium" zu konvertieren.
 
 1. Starten Sie das [Azure-Verwaltungsportal][].
 2. Wählen Sie **+NEU** in der Symbolleiste, und wählen Sie **Datendienste**, **SQL-Datenbank**, **Schnellerfassung**.
-3. Geben Sie einen Datenbanknamen ein, und wählen Sie **Neuer SQL-Datenbankserver** im Feld **Server** aus. Dadurch wird ein Server erstellt, der die neue Basic-, Standard- und Premium-Edition verwendet. 
+3. Geben Sie einen Datenbanknamen ein, und wählen Sie **Neuer SQL-Datenbankserver** im Feld **Server** aus. Dadurch wird ein Server erstellt, der den neuen Diensttarif "Basic", "Standard" oder "Premium" verwendet. 
 4. Füllen Sie die restlichen Felder aus, und wählen Sie **SQL-Datenbank erstellen** aus. Dadurch wird eine Datenbank mit 100 MB erstellt, die die Basic-Stufe verwendet.
 5. Konfigurieren Sie den mobilen Dienst für die Verwendung der soeben erstellten Datenbank. Navigieren Sie zur Registerkarte **Konfigurieren** für diesen Dienst, und wählen Sie **Datenbank ändern** in der Symbolleiste. Wählen Sie auf dem nächsten Bildschirm **Vorhandene SQL-Datenbank verwenden** im Feld **SQL-Datenbank** aus, und klicken Sie auf **Weiter**. Wählen Sie auf dem nächsten Bildschirm die in Schritt 5 erstellte Datenbank aus, und klicken Sie auf **OK**.
 
@@ -475,4 +475,4 @@ Um den Abfrageplan im **SQL-Datenbankverwaltungsportal** zu analysieren, verwend
 [Was kostet dieser Schlüssel?]: http://www.sqlskills.com/blogs/kimberly/how-much-does-that-key-cost-plus-sp_helpindex9/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

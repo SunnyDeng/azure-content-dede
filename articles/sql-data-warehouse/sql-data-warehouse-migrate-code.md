@@ -28,7 +28,6 @@ Die folgende Aufstellung enthält die wichtigsten Funktionen, die in Azure SQL D
 - ANSI-Joins bei Löschvorgängen
 - MERGE-Anweisung
 - Datenbankübergreifende Verknüpfungen
-- [PIVOT- und UNPIVOT-Anweisungen][]
 - [Cursor][]
 - [SELECT..INTO][]
 - INSERT..EXEC
@@ -86,7 +85,7 @@ Hinweise zur Entwicklung des Codes finden Sie in der [Entwicklungsübersicht][].
 <!--Image references-->
 
 <!--Article references-->
-[PIVOT- und UNPIVOT-Anweisungen]: sql-data-warehouse-develop-pivot-unpivot.md
+[pivot and unpivot statements]: sql-data-warehouse-develop-pivot-unpivot.md
 [Cursor]: sql-data-warehouse-develop-loops.md
 [SELECT..INTO]: sql-data-warehouse-develop-ctas.md
 [GROUP BY-Klausel mit ROLLUP-, CUBE- oder GROUPING SETS-Option]: sql-data-warehouse-develop-group-by-options.md
@@ -100,4 +99,4 @@ Hinweise zur Entwicklung des Codes finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

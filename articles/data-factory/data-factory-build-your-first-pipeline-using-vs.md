@@ -7,16 +7,14 @@
 	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags
 	ms.service="data-factory"
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article" 
+	ms.topic="article" 
 	ms.date="07/27/2015"
 	ms.author="spelluru"/>
-
 
 # Erstellen der ersten Pipeline mit Azure Data Factory
 > [AZURE.SELECTOR]
@@ -248,4 +246,4 @@ Unter [Überwachen von Datasets und Pipelines](data-factory-monitor-manage-pipel
 In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL](data-factory-get-started.md).
   
 
-<!-----HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

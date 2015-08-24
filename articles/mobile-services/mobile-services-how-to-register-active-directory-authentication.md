@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Registrieren für die Authentifizierung in Azure Active Directory | Azure Mobile Services" 
+	pageTitle="Registrieren für die Authentifizierung in Azure Active Directory | Microsoft Azure" 
 	description="Erfahren Sie mehr über die Registrierung für die Azure Active Directory-Authentifizierung in Ihrer Mobile Services-Anwendung." 
 	authors="wesmc7777" 
 	services="mobile-services" 
@@ -66,4 +66,4 @@ Sie können nun Azure Active Directory für die Authentifizierung in Ihrer App v
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

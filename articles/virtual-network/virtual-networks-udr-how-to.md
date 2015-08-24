@@ -4,7 +4,7 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="adinah"
+   manager="carolz"
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
@@ -12,13 +12,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="04/22/2015"
+   ms.date="08/10/2015"
    ms.author="telmos" />
 
 # Erstellen von Routen und Aktivieren der IP-Weiterleitung in Azure
 Mithilfe virtueller Geräte können Sie in Azure den Datenverkehr im virtuellen Azure-Netzwerk verwalten. Allerdings müssen Sie Routen erstellen, damit die virtuellen Computer und Clouddienste in Ihrem virtuellen Netzwerk Pakete an das virtuelle Gerät anstatt an das gewünschte Ziel des Pakets senden können. Zudem müssen Sie für den virtuellen Computer die IP-Weiterleitung aktivieren, damit dieser die Pakete empfangen und weiterleiten kann, die nicht eigentlich an ihn adressiert sind.
 
-##Verwalten von Routen
+## Verwalten von Routen
 Mithilfe von PowerShell können Sie in Azure Routen hinzufügen, entfernen und ändern. Bevor Sie eine Route erstellen können, müssen Sie eine Routentabelle als Host für die Route erstellen.
 
 ### Erstellen von Routentabellen
@@ -144,10 +144,6 @@ Führen Sie den folgenden PowerShell-Befehl aus, um den Status der IP-Weiterleit
 ```powershell
 Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
 	| Get-AzureIPForwarding
-```
+``` 
 
-## Weitere Informationen
-
-[Übersicht über benutzerdefinierte Routen und die IP-Weiterleitung](../virtual-networks-udr-overview)
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

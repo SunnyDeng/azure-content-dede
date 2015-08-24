@@ -13,21 +13,21 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/16/2015"
+   ms.date="08/09/2015"
    ms.author="stepsic"/>
 
-#Azure-Ressourcen-Connector
+# Azure-Ressourcen-Connector
 Der Azure-Ressourcen-Connector bietet Ihnen eine einfache Möglichkeit zum Verwalten von Azure-Ressourcen in Ihrer Logik-App.
 
-##Erstellen der API-App
+## Erstellen des Azure-Ressourcen-Connectors
 Um die API-App für den Azure-Ressourcen-Connector verwenden zu können, müssen Sie zuerst eine Instanz der App erstellen. Dies kann entweder inline beim Erstellen einer Logik-App oder durch Auswählen der API-App für den Azure-Ressourcen-Manager-Connector aus dem Azure Marketplace erfolgen.
 
 Um sie zu konfigurieren, müssen Sie einen Dienstprinzipal mit Berechtigungen für alles, was Sie in Azure ausführen möchten, einrichten. Alle Aufrufe erfolgen im Namen dieses Dienstprinzipals, den Sie eingerichtet haben. Dadurch können Sie für den Connector festlegen, dass er nur genau die gewünschten Bereiche verwendet, und nicht mehr.
 
 David Ebbo hat [einen hervorragenden Blogbeitrag](http://blog.davidebbo.com/2014/12/azure-service-principal.html) mit einer Anleitung dieser Einrichtung geschrieben. Folgen Sie den Anweisungen dieses Beitrags, und rufen Sie Ihre **Mandanten-ID**, **Client-ID** und den **geheimen Schlüssel** ab. Diese drei Felder sowie die **Abonnement-ID** sind zum Konfigurieren des Connectors erforderlich.
 
-##Verwenden des Azure-Ressourcen-Connectors auf der Designeroberfläche von Logik-Apps
-###Trigger
+## Verwenden des Azure-Ressourcen-Connectors im Logik-App-Designer
+### Trigger
 Es gibt zwei Trigger, die im Connector unterstützt werden:
 
 Name | Beschreibung 
@@ -35,7 +35,7 @@ Name | Beschreibung
 Ereignis tritt auf | Trigger, wenn ein Ereignis für eine Ressource in Ihrem Abonnement auftritt. 
 Metrik überschreitet Schwellenwert | Trigger, wenn eine Metrik einen bestimmten Schwellenwert erreicht.
 
-###Aktion
+### Aktion
 
 Ebenso können Sie eine große Anzahl von Aktionen innerhalb Ihres Azure-Abonnements bereitstellen:
  
@@ -94,4 +94,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Creating a Logic App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

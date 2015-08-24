@@ -1,19 +1,21 @@
-You must create a load-balanced endpoint for each VM hosting an Azure replica. If you have replicas in multiple regions, each replica for that region must be in the same cloud service in the same VNet. Creating Availability Group replicas that span multiple Azure regions requires configuring multiple VNets. For more information on configuring cross VNet connectivity, see  [Configure VNet to VNet Connectivity](../articles/vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md).
+Sie müssen einen Endpunkt mit Lastenausgleich für jeden virtuellen Computer mit einem Azure-Replikat erstellen. Wenn Sie Replikate in mehreren Regionen haben, muss sich jedes Replikat für diese Region im selben Clouddienst im selben VNet befinden. Das Erstellen von Verfügbarkeitsgruppenreplikaten, die sich über mehrere Azure-Regionen erstrecken, erfordert die Konfiguration mehrerer VNets. Weitere Informationen zum Konfigurieren von VNet-übergreifenden Verbindungen finden Sie unter [Konfigurieren von Verbindungen zwischen VNets](../articles/vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md).
 
-1. In the Azure portal, navigate to each VM hosting a replica and view the details.
+1. Navigieren Sie im Azure-Portal zu jedem virtuellen Computer, der ein Replikat hostet, und zeigen Sie die Details an.
 
-1. Click the **Endpoints** tab for each of the VMs.
+1. Klicken Sie auf die Registerkarte **Endpunkte** für jeden virtuellen Computer.
 
-1. Verify that the **Name** and **Public Port** of the listener endpoint you want to use is not already in use. In the example below, the name is “MyEndpoint” and the port is “1433”.
+1. Stellen Sie sicher, dass die Werte für **Name** und **Öffentlicher Port** des gewünschten Listenerendpunkts nicht bereits verwendet werden. Im folgenden Beispiel ist der Name "MyEndpoint" und der Port "1433".
 
-1. On your local client, download and install [the latest PowerShell module](http://azure.microsoft.com/downloads/).
+1. Laden Sie auf dem lokalen Client [das aktuelle PowerShell-Modul](http://azure.microsoft.com/downloads/) herunter, und installieren Sie es.
 
-1. Launch **Azure PowerShell**. A new PowerShell session is opened with the Azure administrative modules loaded.
+1. Starten Sie **Azure PowerShell**. Eine neue PowerShell-Sitzung wird geöffnet, und die Azure-Verwaltungsmodule werden geladen.
 
-1. Run **Get-AzurePublishSettingsFile**. This cmdlet directs you to a browser to download a publish settings file to a local directory. You may be prompted for your log-in credentials for your Azure subscription.
+1. Führen Sie **Get-AzurePublishSettingsFile** aus. Dieses Cmdlet leitet Sie zu einem Browser weiter, damit Sie eine Datei mit Veröffentlichungseinstellungen in ein lokales Verzeichnis herunterladen können. Möglicherweise werden Sie aufgefordert, die Anmeldeinformationen für Ihr Azure-Abonnement einzugeben.
 
-1. Run the **Import-AzurePublishSettingsFile** command with the path of the publish settings file that you downloaded:
+1. Führen Sie den Befehl **Import-AzurePublishSettingsFile** mit dem Pfad der Datei mit Veröffentlichungseinstellungen aus, die Sie heruntergeladen haben:
 
 		Import-AzurePublishSettingsFile -PublishSettingsFile <PublishSettingsFilePath>
 
-	Once the publish settings file is imported, you can manage your Azure subscription in the PowerShell session.
+	Nachdem die Datei mit Veröffentlichungseinstellungen importiert wurde, können Sie Ihr Azure-Abonnement in der PowerShell-Sitzung verwalten.
+
+<!---HONumber=August15_HO7-->

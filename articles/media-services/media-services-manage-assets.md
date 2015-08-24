@@ -13,13 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/24/2015" 
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 
 #Gewusst wie: Verwalten von Medienobjekten im Speicher
-
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
 
 
 Nachdem Sie Medienobjekte erstellt haben, können Sie auf dem Server auf Medienobjekte zugreifen und sie dort verwalten. Sie können auch andere Objekte auf dem Server verwalten, die Teil von Media Services sind, darunter Aufträge, Aufgaben, Zugriffsrichtlinien, Locators usw.
@@ -86,4 +84,4 @@ Der folgende Codeausschnitt löscht alle Medienobjekte aus dem Media Services-Ko
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

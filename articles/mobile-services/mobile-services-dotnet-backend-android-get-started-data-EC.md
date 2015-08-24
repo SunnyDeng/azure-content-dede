@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erste Schritte mit Daten (Android) | Mobile Dev Center" 
+	pageTitle="Erste Schritte mit Daten (Android) | Microsoft Azure" 
 	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Android-App." 
 	services="mobile-services" 
 	documentationCenter="android" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="05/06/2015" 
+	ms.date="08/08/2015" 
 	ms.author="ricksal"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
@@ -134,4 +134,4 @@ Probieren Sie die folgenden Lernprogramme aus:
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=328660
 [MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

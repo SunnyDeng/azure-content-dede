@@ -1,19 +1,19 @@
 <properties 
-    pageTitle="Technische Spezifikationen und Kompatibilität des StorSimple-Geräts"
-    description="Beschreibt die technischen Spezifikationen und die einzuhaltenden gesetzlichen Richtlinien für das StorSimple-Gerät."
-    services="storsimple"
-    documentationCenter="NA"
-    authors="alkohli"
-    manager="adinah"
-    editor="tysonn" />
+   pageTitle="Technische Spezifikationen und Kompatibilität des StorSimple-Geräts | Microsoft Azure"
+   description="Beschreibt die technischen Spezifikationen und die gesetzlichen Richtlinien für das StorSimple-Gerät."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="alkohli"
+   manager="adinah"
+   editor="" />
  <tags 
-    ms.service="storsimple"
-    ms.devlang="NA"
-    ms.topic="article"
-    ms.tgt_pltfrm="NA"
-    ms.workload="TBD"
-    ms.date="06/15/2015"
-    ms.author="alkohli" />
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/12/2015"
+   ms.author="alkohli" />
 
 # Technische Spezifikationen und Kompatibilität des StorSimple-Geräts
 
@@ -168,8 +168,8 @@ Der Stecker und das gesamte Netzkabelmodul müssen den Richtlinien des jeweilige
 
 ## Unterstützte Netzwerkkabel  
 
-Für die 10 GbE-Netzwerkschnittstellen, DATA 2 und DATA 3, finden Sie eine [Liste der unterstützten Netzwerkkabel und Module](https://msdn.microsoft.com/library/dn891474.aspx).
+Für die 10-GbE-Netzwerkschnittstellen, DATA 2 und DATA 3, finden Sie Informationen in der [Liste der unterstützten Netzwerkkabel und Module](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

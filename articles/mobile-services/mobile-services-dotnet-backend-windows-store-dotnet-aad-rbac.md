@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory (Windows Store) | Mobile Dev Center" 
+	pageTitle="Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory (Windows Store) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie den Zugriff basierend auf Azure Active Directory-Rollen in Ihrer Windows Store-Anwendung steuern." 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
@@ -393,4 +393,4 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 [Zugriff auf Azure Active Directory Graph-Informationen]: mobile-services-dotnet-backend-windows-store-dotnet-aad-graph-info.md
 [ADAL für .NET]: https://msdn.microsoft.com/library/azure/jj573266.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

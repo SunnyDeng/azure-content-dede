@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwenden von Offlinedaten in Mobile Services (Xamarin Android) | Mobile Dev Center"
+	pageTitle="Verwenden von Offlinedaten in Mobile Services (Xamarin Android) | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Azure Mobile Services verwenden, um Offlinedaten in Ihrer Xamarin Android-Anwendung zwischenzuspeichern und zu synchronisieren."
 	documentationCenter="xamarin"
 	authors="lindydonna"
@@ -172,4 +172,4 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 [NuGet Addin for Xamarin]: https://github.com/mrward/monodevelop-nuget-addin
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

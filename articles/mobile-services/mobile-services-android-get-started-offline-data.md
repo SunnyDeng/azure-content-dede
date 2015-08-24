@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hinzufügen von Offlinedatensynchronisierung zur Mobile Services-App für Android | Mobile Dev Center"
+	pageTitle="Hinzufügen von Offlinedatensynchronisierung zur Mobile Services-App für Android | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Azure Mobile Services verwenden, um Offlinedaten in Ihrer Android-Anwendung zwischenzuspeichern und zu synchronisieren."
 	documentationCenter="android"
 	authors="RickSaling"
@@ -36,9 +36,9 @@ Immer wenn mehrere Änderungen an den Daten vorgenommen werden, können Konflikt
 
 ## Aktualisieren der App für die Unterstützung von Offlinesynchronisierung
 
-Bei der Offlinesynchronisierung wird in eine *Synchronisierungstabelle* geschrieben und aus dieser gelesen (mit der *IMobileServiceSyncTable*-Schnittstelle). Diese ist Teil einer **SQL Light**-Datenbank auf Ihrem Gerät.
+Bei der Offlinesynchronisierung wird in eine *Synchronisierungstabelle* geschrieben und aus dieser gelesen \(mit der *IMobileServiceSyncTable*-Schnittstelle\). Diese ist Teil einer **SQL Light**-Datenbank auf Ihrem Gerät.
 
-Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure Mobile Services verwenden Sie einen *Synchronisierungskontext* (*MobileServiceClient.SyncContext*), den Sie mit der lokalen Datenbank initialisieren, in der Sie die Daten lokal speichern.
+Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure Mobile Services verwenden Sie einen *Synchronisierungskontext* \(*MobileServiceClient.SyncContext*\), den Sie mit der lokalen Datenbank initialisieren, in der Sie die Daten lokal speichern.
 
 1. Fügen Sie die Berechtigung zum Überprüfen der Netzwerkverbindung hinzu, indem Sie der Datei *AndroidManifest.xml* folgenden Code hinzufügen:
 
@@ -137,7 +137,7 @@ Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure 
 
 
  
-9. Aktualisieren Sie den Code in der `refreshItemsFromTable`-Methode, um diese Abfrage zu verwenden (erste Codezeile im `try`-Block):
+9. Aktualisieren Sie den Code in der `refreshItemsFromTable`-Methode, um diese Abfrage zu verwenden \(erste Codezeile im `try`-Block\):
 
 		final MobileServiceList<ToDoItem> result = mToDoTable.read(mPullQuery).get();
 
@@ -176,7 +176,7 @@ One thing which is important to point out: if there are pending changes in the l
 
 1. Schalten Sie das Gerät oder den Simulator in den *Flugzeugmodus*. Dies erzeugt ein Offlineszenario.
 
-2. Fügen Sie einige *TODO*-Elemente hinzu, oder markieren Sie einige Elemente als abgeschlossen. Schalten Sie das Gerät oder den Simulator aus (oder erzwingen Sie das Schließen der App), und starten Sie das Gerät bzw. den Simulator neu. Vergewissern Sie sich, dass die Änderungen auf dem Gerät beibehalten wurden, da sie im lokalen SQL Light-Speicher gespeichert sind.
+2. Fügen Sie einige *TODO*-Elemente hinzu, oder markieren Sie einige Elemente als abgeschlossen. Schalten Sie das Gerät oder den Simulator aus \(oder erzwingen Sie das Schließen der App\), und starten Sie das Gerät bzw. den Simulator neu. Vergewissern Sie sich, dass die Änderungen auf dem Gerät beibehalten wurden, da sie im lokalen SQL Light-Speicher gespeichert sind.
 
 3. Zeigen Sie den Inhalt der Azure-Tabelle *TodoItem* an. Stellen Sie sicher, dass die neuen Elemente _nicht_ auf dem Server synchronisiert wurden:
 
@@ -196,7 +196,7 @@ One thing which is important to point out: if there are pending changes in the l
 
 * [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]
 
-* [Azure Friday: Offlinefähige Apps in Azure Mobile Services] (Hinweis: Demos sind für Windows, Funktionserläuterungen gelten jedoch für alle Plattformen)
+* [Azure Friday: Offlinefähige Apps in Azure Mobile Services] \(Hinweis: Demos sind für Windows, Funktionserläuterungen gelten jedoch für alle Plattformen\)
 
 
 <!-- URLs. -->
@@ -221,4 +221,4 @@ One thing which is important to point out: if there are pending changes in the l
 
 [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"]: mobile-services-android-get-started.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen einer Hybrid-Sammlung für Azure RemoteApp" 
+	pageTitle="Erstellen einer Hybridsammlung für Azure RemoteApp" 
 	description="Erfahren Sie, wie Sie eine Bereitstellung von RemoteApp erstellen, die eine Verbindung mit Ihrem internen Netzwerk herstellt." 
 	services="remoteapp" 
 	documentationCenter="" 
@@ -13,17 +13,17 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/28/2015" 
+	ms.date="08/12/2015" 
 	ms.author="elizapo"/>
 
-# Erstellen einer Hybrid-Sammlung für Azure RemoteApp
+# Erstellen einer Hybridsammlung für Azure RemoteApp
 
 Es gibt zwei Arten von RemoteApp-Sammlungen:
 
 - Cloud: befindet sich vollständig in Azure und wird mithilfe der Option **Schnellerfassung** im Azure-Verwaltungsportal erstellt.  
-- Hybrid: enthält ein virtuelles Netzwerk für den lokalen Zugriff und wird mithilfe der Option **Create with VNET** im Verwaltungsportal erstellt.
+- Hybrid: enthält ein virtuelles Netzwerk für den lokalen Zugriff und wird mithilfe der Option **Mit VNET erstellen** im Verwaltungsportal erstellt.
 
-Dieses Lernprogramm führt Sie durch den Prozess für das Erstellen einer Hybrid-Sammlung. Der Vorgang umfasst acht Schritte:
+Dieses Lernprogramm führt Sie durch den Prozess für das Erstellen einer Hybridsammlung. Der Vorgang umfasst acht Schritte:
 
 1.	Entscheiden Sie, welches [Image](remoteapp-imageoptions.md) Sie für Ihre Sammlung verwenden möchten. Sie können ein benutzerdefiniertes Image erstellen oder ein Microsoft-Image erstellen, das in Ihrem Abonnement enthalten ist.
 2. Richten Sie Ihr virtuelles Netzwerk ein.
@@ -49,7 +49,7 @@ Bevor Sie mit der Erstellung der Sammlung beginnen, benötigen Sie Folgendes:
 
 
 ## Schritt 1: Einrichten des virtuellen Netzwerks
-Sie können eine RemoteApp-Hybrid-Sammlung für ein vorhandenes virtuelles Azure-Netzwerk bereitstellen oder ein neues virtuelles Netzwerk erstellen. Ein virtuelles Netzwerk ermöglicht es den Benutzern, auf Daten auf Ihrem lokalen Netzwerk über RemoteApp-Remoteressourcen zuzugreifen. Mit einem virtuellen Azure-Netzwerk verfügt Ihre Sammlung über direkten Zugriff auf andere Azure-Dienste und virtuelle Computer in diesem virtuellen Netzwerk.
+Sie können eine RemoteApp-Hybridsammlung für ein vorhandenes virtuelles Azure-Netzwerk bereitstellen oder ein neues virtuelles Netzwerk erstellen. Ein virtuelles Netzwerk ermöglicht es den Benutzern, auf Daten auf Ihrem lokalen Netzwerk über RemoteApp-Remoteressourcen zuzugreifen. Mit einem virtuellen Azure-Netzwerk verfügt Ihre Sammlung über direkten Zugriff auf andere Azure-Dienste und virtuelle Computer in diesem virtuellen Netzwerk.
 
 ### Erstellen eines Azure-VNET und Verknüpfen mit der Active Directory-Bereitstellung
 
@@ -73,20 +73,20 @@ Hat dies funktioniert? Ihr virtuelles Netzwerk und das Subnetz sind für RemoteA
 
 
 1. Gehen Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com) zur Seite "RemoteApp".
-2. Klicken Sie auf **Neu > Create with VNET**.
+2. Klicken Sie auf **Neu > Mit VNET erstellen**.
 3. Geben Sie einen Namen für die Sammlung ein.
 4. Wählen Sie den Plan aus, den Sie verwenden möchten: "Standard" oder "Einfach".
-5. Klicken Sie auf **Create RemoteApp collection**.
+5. Klicken Sie auf **RemoteApp-Sammlung erstellen**.
 
-Gehen Sie nach dem Erstellen der RemoteApp-Sammlung zur RemoteApp-Seite **Schnellstart**, um mit der Einrichtung fortzufahren.
+Nachdem Ihre RemoteApp-Sammlung erstellt wurde, doppelklicken Sie auf den Namen der Sammlung. Daraufhin wird die Seite **Schnellstart** geöffnet – hier können Sie die Konfiguration der Sammlung abschließen.
 
 ## Schritt 3: Verknüpfen der Sammlung mit dem virtuellen Netzwerk ##
 
  
-1. Klicken Sie auf der Seite **Schnellstart** auf **link a virtual network**.
+1. Klicken Sie auf der Seite **Schnellstart** auf **Virtuelles Netzwerk verknüpfen**.
 2. Wählen Sie das zu verwendende virtuelle Netzwerk aus der Dropdownliste aus.
 3. Wählen Sie die entsprechende Region aus, und stellen Sie sicher, dass das richtige Abonnement im Feld angezeigt wird. 
-5. Klicken Sie auf der wieder geöffneten Seite **Schnellstart** auf **join local domain**. Fügen Sie das Konto des RemoteApp-Dienstes zur lokalen Active Directory-Domäne hinzu. Dazu benötigen Sie den Domänennamen, die Organisationseinheit, den Benutzernamen des Kontos und das Kennwort. 
+5. Klicken Sie auf der wieder geöffneten Seite **Schnellstart** auf **Lokaler Domäne beitreten**. Fügen Sie das Konto des RemoteApp-Dienstes zur lokalen Active Directory-Domäne hinzu. Dazu benötigen Sie den Domänennamen, die Organisationseinheit, den Benutzernamen des Kontos und das Kennwort. 
 
 	Dies sind die Informationen, die Sie im Rahmen der Schritte unter [Konfigurieren von Active Directory für Azure RemoteApp](remoteapp-ad.md) erfasst haben.
 
@@ -131,9 +131,9 @@ Nach dem Erstellen der RemoteApp-Sammlung müssen Sie nun die Benutzer hinzufüg
 
 
 ## Nächste Schritte ##
-Das war alles: Sie haben die RemoteApp-Hybrid-Sammlung nun erfolgreich erstellt und bereitgestellt. Als Nächstes müssen die Benutzer den Remotedesktopclient herunterladen und installieren. Die URL für den Client finden Sie auf der RemoteApp-Schnellstartseite. Die Benutzer müssen sich nun beim Client anmelden und können dann auf die veröffentlichten Apps zugreifen.
+Das war alles: Sie haben die RemoteApp-Hybridsammlung nun erfolgreich erstellt und bereitgestellt. Als Nächstes müssen die Benutzer den Remotedesktopclient herunterladen und installieren. Die URL für den Client finden Sie auf der RemoteApp-Schnellstartseite. Die Benutzer müssen sich nun beim Client anmelden und können dann auf die veröffentlichten Apps zugreifen.
 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

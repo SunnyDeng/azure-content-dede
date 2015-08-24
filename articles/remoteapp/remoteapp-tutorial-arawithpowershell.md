@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="compute"
-   ms.date="07/07/2015"
+   ms.date="08/12/2015"
    ms.author="guscatal;spatnaik;elizapo"/>
 
 
@@ -26,11 +26,13 @@
 -------------
 Zunächst müssen Sie [hier](http://go.microsoft.com/?linkid=9811175) die Azure PowerShell-Cmdlets herunterladen. Die RemoteApp-Befehle sind darin enthalten.
 
+Die Azure RemoteApp-Cmdlet-Hilfe finden Sie [hier](https://msdn.microsoft.com/library/mt428031.aspx).
+
 ## Konfigurieren Sie Azure-Cmdlets, um Ihr Abonnement zu verwenden
 ------------------
 Folgen Sie den Anweisungen [dieses Handbuchs](../powershell-install-configure.md), sodass Sie die Cmdlets für Ihr Azure-Abonnement verwenden können.
 
-## Erstellen einer Cloud-Sammlung
+## Erstellen einer Cloudsammlung
 --------------------
 Es ist ganz leicht. Führen Sie den folgenden Befehl aus:
 
@@ -99,4 +101,4 @@ Andere RemoteApp-Cmdlets:
 - Get-AzureRemoteAppOperationResult
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

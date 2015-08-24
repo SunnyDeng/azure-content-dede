@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Optionen für die Übertragung von gespeicherten Daten in die Cloud | Azure" 
+	pageTitle="Optionen für die Übertragung von gespeicherten Daten in die Cloud | Microsoft Azure" 
 	description="Hilfestellung bei der Auswahl der besten Option für die Übertragung von Daten aus einer lokalen Bereitstellung oder anderen Cloudquellen in Microsoft Azure für eine erweiterte Analyse." 
 	services="data-factory, hdinsight, machine-learning, storage, sql-database" 
 	documentationCenter="" 
@@ -25,9 +25,9 @@ Themen in diesem Artikel:
 * [Azure Import/Export-Dienst für Blobspeicher](#blob)
 * [AZCopy-Hilfsprogramm](#azcopy-utility)
 * [Azure PowerShell](#ps)
-* [Azure Data Factory (Vorschau)](#data-factory)
+* [Azure Data Factory \(Vorschau\)](#data-factory)
 * [Azure SQL-Datenbankmigrationstools](#tools)
-* [Azure SQL-Datensynchronisierung (Vorschau)](#data-sync)
+* [Azure SQL-Datensynchronisierung \(Vorschau\)](#data-sync)
 * [Azure Event Hubs](#event-hubs)
 * [Weitere Optionen für die Datenübertragung](#other)
 * [Auswählen der geeigneten Option für die Datenübertragung](#choose)
@@ -35,7 +35,7 @@ Themen in diesem Artikel:
 
 ## Azure Import/Export-Dienst für Blobspeicher
 
-Mithilfe des Azure Import-/Export-Diensts können Sie große Mengen an Dateidaten an Azure-Blobspeicher übertragen, beispielsweise wenn das Hoch- oder Herunterladen über das Netzwerk unverhältnismäßig teuer oder nicht realisierbar ist. Der Upload oder Download großer Datensätze über das Netzwerk kann sehr viel Zeit in Anspruch nehmen. Beispielsweise dauert es einen Monat, 10 TB Daten über eine T3-Leitung (44,7 MBit/s) zu übertragen. Mit dem Microsoft Azure Import/Export-Dienst können Kunden die Festplatte einsenden, um den Upload oder Download von Daten zu verkürzen. Planen Sie mehrere Tage einschließlich Versand ein.
+Mithilfe des Azure Import-/Export-Diensts können Sie große Mengen an Dateidaten an Azure-Blobspeicher übertragen, beispielsweise wenn das Hoch- oder Herunterladen über das Netzwerk unverhältnismäßig teuer oder nicht realisierbar ist. Der Upload oder Download großer Datensätze über das Netzwerk kann sehr viel Zeit in Anspruch nehmen. Beispielsweise dauert es einen Monat, 10 TB Daten über eine T3-Leitung \(44,7 MBit/s\) zu übertragen. Mit dem Microsoft Azure Import/Export-Dienst können Kunden die Festplatte einsenden, um den Upload oder Download von Daten zu verkürzen. Planen Sie mehrere Tage einschließlich Versand ein.
 
 Sie können eine oder mehrere Festplatten mit Daten an ein Azure-Datencenter schicken, um eine große Menge an Dateidaten auf Blobspeicher zu übertragen. In diesem Datencenter werden Ihre Daten in Ihr Speicherkonto hochgeladen. Ähnlich funktioniert das Exportieren von Daten auf Blob-Speicher: Sie können leere Festplatten an ein Azure-Datacenter schicken. Dort werden Blob-Daten von Ihrem Speicherkonto auf Ihre Festplatten kopiert und an Sie zurückgesendet. Bevor Sie ein Laufwerk einsenden, das Daten enthält, verschlüsseln Sie die Daten auf dem Laufwerk. Wenn der Import-/Export-Dienst Ihre Daten exportiert, um Ihnen diese zu senden, werden die Daten vor dem Versand ebenfalls verschlüsselt.
 
@@ -59,13 +59,12 @@ Siehe auch:
 * [Installieren und Konfigurieren von Azure PowerShell][install]
 
 
-## Azure Data Factory (Vorschau)
+## Azure Data Factory \(Vorschau\)
 
 Azure Data Factory ist ein vollständig verwalteter Dienst für das Kombinieren von Diensten zur Datenspeicherung, -verschiebung und Verarbeitung in optimierten, skalierbaren und zuverlässigen Datenproduktions-Pipelines.
 
-Entwickler können datengesteuerte Workflows erstellen, die teilweise strukturierte, unstrukturierte und strukturierte Daten aus lokalen Diensten (über Data Management Gateway), cloudbasierten und Internetdiensten zusammenführen, aggregieren und transformieren. Darüber hinaus kann eine komplexe Datenverarbeitung über einfache JSON-Skripts eingerichtet werden. Die Ergebnisdaten können für eine erweiterte Analyse in Azure Storage oder Azure SQL-Datenbank gespeichert werden.
+Entwickler können datengesteuerte Workflows erstellen, die teilweise strukturierte, unstrukturierte und strukturierte Daten aus lokalen Diensten \(über Data Management Gateway\), cloudbasierten und Internetdiensten zusammenführen, aggregieren und transformieren. Darüber hinaus kann eine komplexe Datenverarbeitung über einfache JSON-Skripts eingerichtet werden. Die Ergebnisdaten können für eine erweiterte Analyse in Azure Storage oder Azure SQL-Datenbank gespeichert werden.
 
-Insbesondere können Entwickler regelmäßige Kopieraktivitäten zwischen verschiedenen Quellen und Zielen konfigurieren, wie unter [Kopieren von Daten mit Azure Data Factory](data-factory-copy-activity.md) im Abschnitt [Unterstützte Datenquellen und Senken](data-factory-copy-activity.md#SupportedSourcesAndSinks) erläutert. In diesem Thema werden auch Eigenschaften für unterschiedliche Arten von Datenspeichern, Spaltenzuordnungen, Serialisierungsformaten und Typenverarbeitungen behandelt.
 
 Der Dienst kann Fehler beim automatischen Start beheben und ermöglicht beim Verschieben von Daten die Formatierung von einem Format in ein anderes. Informationen zum Definieren einer Kopieraktivität finden Sie unter [Erste Schritte mit Data Factory][start]. Das Registrieren von Datenspeicher und die Gatewayinstallation werden unter [Aktivieren von Pipelines zum Arbeiten mit lokalen Daten][pipelines] beschrieben.
 
@@ -79,7 +78,7 @@ Es stehen viele Tools für die erfolgreiche Migration von lokalen SQL Server- un
 
 * Sie können sowohl das Schema als auch die Daten einer vorhandenen Azure SQL-Datenbank migrieren, indem Sie die Datenbank exportieren, die Datei in ein Azure Blobspeicherkonto exportieren und anschließend als neue Azure SQL-Datenbank importieren. Datei bei diesem Export erstellte Datei wird als BACPAC-Datei bezeichnet. Weitere Informationen finden Sie unter [Vorgehensweise: Verwenden des Import/Export-Diensts in Azure SQL-Datenbank][sql-import].
 * Mithilfe der Datenbankkopierfunktion wird eine neue Datenbank in Azure erstellt, bei der es sich um eine transaktional konsistente Kopie der vorhandenen Azure SQL-Datenbank handelt. Weitere Informationen finden Sie unter [Kopieren von Datenbanken in die Azure SQL-Datenbank][sql-copy].
-* Für komplexe Transaktionen von Daten können die SQL Server Integration Services (SSIS) eingesetzt werden. SSIS kann zum Verschieben von Daten in die und aus der Azure SQL-Datenbank verwendet werden. Weitere Informationen finden Sie unter [Vorgehensweise: Migrieren einer Datenbank mithilfe von Integration Services in eine Azure SQL-Datenbank][integrate] und [SSIS for Azure and Hybrid Data Movement][SSIS] (in englischer Sprache).
+* Für komplexe Transaktionen von Daten können die SQL Server Integration Services \(SSIS\) eingesetzt werden. SSIS kann zum Verschieben von Daten in die und aus der Azure SQL-Datenbank verwendet werden. Weitere Informationen finden Sie unter [Vorgehensweise: Migrieren einer Datenbank mithilfe von Integration Services in eine Azure SQL-Datenbank][integrate] und [SSIS for Azure and Hybrid Data Movement][SSIS] \(in englischer Sprache\).
 * Der Import/Export-Assistent von SQL Server bietet eine einfache Möglichkeit zum Erstellen eines SSIS-Pakets zum Migrieren von Daten. Nachdem die Quelle und das Ziel konfiguriert wurden, können Sie grundlegende Datentransformationen angeben. Diese Pakete können gespeichert, geändert, ausgeführt und als Auftrag geplant werden. Weitere Informationen finden Sie unter [Vorgehensweise: Migrieren einer Datenbank mithilfe des Import/Export-Assistenten in eine Azure SQL-Datenbank][wizard].
 * Der SQL-Datenbankmigrations-Assistent ist ein Tool zur Migration von Schema und Daten zwischen lokalen SQL Server- und Azure SQL-Datenbanken sowie zwischen Azure SQL-Datenbankservern. Das Tool untersucht außerdem Ablaufverfolgungsdateien und Skripts auf Kompatibilitätsprobleme mit Azure SQL-Datenbank. Weitere Informationen finden Sie unter [Vorgehensweise: Verwenden des SQL-Datenbankmigrations-Assistenten][use-wizard].
 * Das Hilfsprogramm "bcp" kann zum Importieren großer Mengen an neuen Zielen in SQL Server-Tabellen oder zum Exportieren von Daten aus Tabellen in Datendateien verwendet werden. Weitere Informationen finden Sie unter [Vorgehensweise: Verwenden von "bcp" zum Migrieren einer Datenbank zu einer Azure SQL-Datenbank][bcp].
@@ -89,9 +88,9 @@ Siehe auch:
 * [Migrieren von Datenbanken zur Azure SQL-Datenbank][migrate]
  
 
-## Azure SQL-Datensynchronisierung (Vorschau)
+## Azure SQL-Datensynchronisierung \(Vorschau\)
 
-SQL-Datensynchronisierung (Vorschau) ermöglicht das Erstellen und Planen regelmäßiger Synchronisierungen zwischen Azure SQL-Datenbank und Datenbanken, die in SQL Server oder Azure SQL-Datenbank gehostet werden.
+SQL-Datensynchronisierung \(Vorschau\) ermöglicht das Erstellen und Planen regelmäßiger Synchronisierungen zwischen Azure SQL-Datenbank und Datenbanken, die in SQL Server oder Azure SQL-Datenbank gehostet werden.
 
 SQL-Datensynchronisierung eignet sich für Entwickler, die Deltaänderungen zwischen lokalen und Azure-Clouddatenbanken synchronisieren möchten. Siehe [SQL-Datensynchronisierung][sync].
 
@@ -101,7 +100,7 @@ Microsoft Azure Event Hubs ist ein Dienst zur Ereignisverarbeitung, der riesige 
 
 Entwickler können Code zum Senden von Daten an Event Hub schreiben, die Daten verarbeiten und in Azure Blob speichern, oder die Daten zur späteren Verarbeitung in Azure SQL-Datenbank speichern.
 
-Alternativ können Entwickler Azure Stream Analytics nutzen, einen vollständig verwalteten Dienst, der eine skalierbare Verarbeitung komplexer Ereignisse durch das Streamen von Daten für die Ausgabe bereitstellt. Entwickler können einen Datenstrom in Azure Event Hub auswählen, geben das Format zum Serialisieren von eingehenden Ereignissen an (z. B. JSON, CSV oder Avro) und fügen dann den Ausgabespeicherort hinzu, darunter Azure-Blob oder Azure SQL-Datenbank.
+Alternativ können Entwickler Azure Stream Analytics nutzen, einen vollständig verwalteten Dienst, der eine skalierbare Verarbeitung komplexer Ereignisse durch das Streamen von Daten für die Ausgabe bereitstellt. Entwickler können einen Datenstrom in Azure Event Hub auswählen, geben das Format zum Serialisieren von eingehenden Ereignissen an \(z. B. JSON, CSV oder Avro\) und fügen dann den Ausgabespeicherort hinzu, darunter Azure-Blob oder Azure SQL-Datenbank.
 
 Siehe:
 
@@ -125,8 +124,8 @@ Mit [Virtual Network](/services/virtual-network/) können Sie in Azure Virtual M
 
 Hinweise zum Entscheidungsbaum:
 
-* SQL-Datensynchronisierung (Vorschau) löst eine Synchronisierung geänderter Daten aus.
-* Data Factory (Vorschau) unterstützt das Kopieren von Daten zwischen Azure Storage, Azure SQL-Datenbank und lokalen SQL Server-Datenbanken. 
+* SQL-Datensynchronisierung \(Vorschau\) löst eine Synchronisierung geänderter Daten aus.
+* Data Factory \(Vorschau\) unterstützt das Kopieren von Daten zwischen Azure Storage, Azure SQL-Datenbank und lokalen SQL Server-Datenbanken. 
 * Neben der Verwendung von Data Factory können Sie vorhandene SSIS-Pakete erweitern, um Daten nach einem Zeitplan in die Cloud zu verschieben.
 
 ### Verschieben von Daten im GB-Bereich
@@ -254,7 +253,6 @@ Hinweise zum Entscheidungsbaum:
 [install]: ../install-configure-powershell.md
 [start]: data-factory-get-started.md
 [pipelines]: data-factory-use-onpremises-datasources.md
-[copy]: data-factory-copy-activity.md
 [intro]: data-factory-introduction.md
 [sql-import]: http://msdn.microsoft.com/library/azure/hh335292.aspx
 [sql-copy]: http://msdn.microsoft.com/library/azure/ff951624.aspx
@@ -270,4 +268,4 @@ Hinweise zum Entscheidungsbaum:
 [hybrid]: ../integration-hybrid-connection-overview.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

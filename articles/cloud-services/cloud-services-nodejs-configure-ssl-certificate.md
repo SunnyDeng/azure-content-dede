@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Konfigurieren von SSL für einen Clouddienst (Node.js) – Azure" 
+	pageTitle="Konfigurieren von SSL für einen Clouddienst (Node.js) | Microsoft Azure" 
 	description="Geben Sie einen HTTPS-Endpunkt für eine Node.js-Webrolle an, und laden Sie ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hoch." 
 	services="cloud-services" 
 	documentationCenter="nodejs" 
@@ -21,7 +21,7 @@
 
 # Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Webrolle
 
-SSL-Verschlüsselung (Secure Socket Layer) ist die am häufigsten verwendete Methode zur Sicherung von Daten im Internet. Im Folgenden erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Node.js-Anwendung angeben können, die als Azure Clouddienst in einer Webrolle gehostet ist, und wie Sie ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können.
+SSL-Verschlüsselung \(Secure Socket Layer\) ist die am häufigsten verwendete Methode zur Sicherung von Daten im Internet. Im Folgenden erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Node.js-Anwendung angeben können, die als Azure Clouddienst in einer Webrolle gehostet ist, und wie Sie ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können.
 
 > [AZURE.NOTE]Die Schritte in diesem Beitrag gelten nur für Node-Anwendungen, die als Azure Cloud Services-Instanz in einer Webrolle gehostet werden. Weitere Informationen zu Websites finden Sie unter [Konfigurieren eines SSL-Zertifikats für eine Azure-Website](../web-sites-configure-ssl-certificate.md).
 
@@ -35,7 +35,7 @@ Diese Aufgabe umfasst die folgenden Schritte:
 
 ## <a name="step1"> </a>Schritt 1: Erstellen eines Node.js-Diensts und Veröffentlichen des Diensts in der Cloud
 
-Wenn eine Node.js-Anwendung in einer Azure-Webrolle bereitgestellt wird, werden das Serverzertifikat und die SSL-Verbindung von Internet Information Services (IIS) verwaltet, sodass der Node.js-Dienst geschrieben werden kann, als wäre er ein HTTP-Dienst. Mit den folgenden Schritten können Sie einen einfachen "Hello World"-Dienst in Node.js mit der Azure PowerShell erstellen:
+Wenn eine Node.js-Anwendung in einer Azure-Webrolle bereitgestellt wird, werden das Serverzertifikat und die SSL-Verbindung von Internet Information Services \(IIS\) verwaltet, sodass der Node.js-Dienst geschrieben werden kann, als wäre er ein HTTP-Dienst. Mit den folgenden Schritten können Sie einen einfachen "Hello World"-Dienst in Node.js mit der Azure PowerShell erstellen:
 
 1. Suchen Sie im **Startmenü** oder auf der **Startseite** nach **Azure PowerShell**. Klicken Sie dann mit der rechten Maustaste auf **Azure PowerShell**, und wählen Sie **Als Administrator ausführen**.
 
@@ -67,7 +67,7 @@ Sie müssen zuerst ein SSL-Zertifikat beziehen, um SSL für eine Anwendung zu ko
 Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure erfüllen:
 
 -   Das Zertifikat muss einen privaten Schlüssel enthalten.
--   Das Zertifikat muss für den Schlüsselaustausch erstellt werden (.pfx-Datei).
+-   Das Zertifikat muss für den Schlüsselaustausch erstellt werden \(.pfx-Datei\).
 -   Der Name des Antragstellers für das Zertifikat muss der Domäne entsprechen, über die auf den Clouddienst zugegriffen wird. Sie können kein SSL-Zertifikat für die Domäne cloudapp.net beziehen, daher muss der Name des Antragstellers für das Zertifikat der Domäne entsprechen, über die auf Ihre Anwendung zugegriffen wird. Beispiel: __mysecuresite.cloudapp.net__.
 -   Das Zertifikat muss mindestens eine 2048-Bit-Verschlüsselung haben.
 
@@ -85,7 +85,7 @@ Zum Importieren des SSL-Zertifikats führen Sie die folgenden Schritte durch:
 
 2.   Wählen Sie im Bereich **Store Location** die Option **Current User**, und klicken Sie dann auf **Weiter**. Das Zertifikat wird nun für Ihr Benutzerkonto in den Zertifikatspeicher installiert.
 
-3.   Fahren Sie im Assistenten fort, und akzeptieren Sie dabei sämtliche Voreinstellungen, bis Sie zum Bildschirm **Private key protection** gelangen. Hier müssen Sie das Kennwort (sofern vorhanden) für das Zertifikat eingeben. Außerdem müssen Sie **Mark this key as exportable** auswählen. Klicken Sie anschließend auf **Next**.
+3.   Fahren Sie im Assistenten fort, und akzeptieren Sie dabei sämtliche Voreinstellungen, bis Sie zum Bildschirm **Private key protection** gelangen. Hier müssen Sie das Kennwort \(sofern vorhanden\) für das Zertifikat eingeben. Außerdem müssen Sie **Mark this key as exportable** auswählen. Klicken Sie anschließend auf **Next**.
 
 	![Schutz durch privaten Schlüssel][key-protection]
 
@@ -97,7 +97,7 @@ Sie müssen nun Ihre Dienstdefinition modifizieren, um einen Bezug zu dem von Ih
 
 Ihre Anwendung muss so konfiguriert sein, dass auf das Zertifikat verwiesen wird. Außerdem muss ein HTTPS-Endpunkt hinzugefügt werden. Daher müssen die Definitions- und Konfigurationsdateien für den Dienst aktualisiert werden.
 
-1.  Öffnen Sie in Ihrem Dienstverzeichnis die Dienstdefinitionsdatei (ServiceDefinition.csdef). Fügen Sie innerhalb des Bereichs **WebRole** einen Bereich **Certificates** hinzu, und geben Sie die folgenden Informationen über das Zertifikat an:
+1.  Öffnen Sie in Ihrem Dienstverzeichnis die Dienstdefinitionsdatei \(ServiceDefinition.csdef\). Fügen Sie innerhalb des Bereichs **WebRole** einen Bereich **Certificates** hinzu, und geben Sie die folgenden Informationen über das Zertifikat an:
 
         <WebRole name="WebRole1" vmsize="ExtraSmall">
         ...
@@ -108,7 +108,7 @@ Ihre Anwendung muss so konfiguriert sein, dass auf das Zertifikat verwiesen wird
         ...
         </WebRole>
 
-    Der Bereich **Certificates** definiert den Namen des Zertifikats, dessen Speicherort sowie den Namen des Speichers. Da das Zertifikat im Benutzerzertifikatspeicher installiert ist, wird der Wert "My" verwendet. Andere Zertifikatspeicherorte können ebenfalls verwendet werden. Weitere Informationen finden Sie unter [Verknüpfen eines Zertifikats mit einem Dienst].
+    Der Bereich **Certificates** definiert den Namen des Zertifikats, dessen Speicherort sowie den Namen des Speichers. Da das Zertifikat im Benutzerzertifikatspeicher installiert ist, wird der Wert "My" verwendet. Andere Zertifikatspeicherorte können ebenfalls verwendet werden. Weitere Informationen finden Sie unter \[Verknüpfen eines Zertifikats mit einem Dienst\].
 
 2.  Aktualisieren Sie in der Dienstdefinitionsdatei im Abschnitt **Endpoints** das **InputEndpoint**-HTTP-Element, um HTTPS zu aktivieren:
 
@@ -123,7 +123,7 @@ Ihre Anwendung muss so konfiguriert sein, dass auf das Zertifikat verwiesen wird
 
     Alle erforderlichen Änderungen an der Dienstdefinitionsdatei sind jetzt abgeschlossen. Sie müssen jedoch noch die Zertifikatinformationen zur Dienstkonfigurationsdatei hinzufügen.
 
-3.  Fügen Sie in Ihren Dienstkonfigurationsdateien (**ServiceConfiguration.Cloud.cscfg** und **ServiceConfiguration.Local.cscfg**) das Zertifikat zum leeren Bereich **Certificates** innerhalb des Bereichs **Role** hinzu. Damit ersetzen Sie den unten angegebenen Beispielfingerabdruckwert durch den Wert Ihres Zertifikats:
+3.  Fügen Sie in Ihren Dienstkonfigurationsdateien \(**ServiceConfiguration.Cloud.cscfg** und **ServiceConfiguration.Local.cscfg**\) das Zertifikat zum leeren Bereich **Certificates** innerhalb des Bereichs **Role** hinzu. Damit ersetzen Sie den unten angegebenen Beispielfingerabdruckwert durch den Wert Ihres Zertifikats:
 
         <Role name="WebRole1">
         ...
@@ -192,4 +192,4 @@ Jetzt wird die Bereitstellung in Azure ausgeführt und Sie können eine HTTPS-Ve
   [Konfigurieren von SSL für eine Node.js-Anwendung in einer Azure-Workerrolle]: /develop/nodejs/common-tasks/enable-ssl-worker-role/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

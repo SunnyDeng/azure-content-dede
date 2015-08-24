@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen eines Diensts mit einem nicht-relationalen Datenspeicher | Azure Mobile Services" 
+	pageTitle="Erstellen eines Diensts mit einem nicht relationalen Datenspeicher | Microsoft Azure" 
 	description="Erfahren Sie, wie einen nicht relationalen Datenspeicher wie MongoDB oder Azure-Tabellenspeicher mit Ihrem .NET-basierten mobilen Dienst verwenden." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="04/24/2015" 
+	ms.date="08/08/2015" 
 	ms.author="mahender"/>
 
 # Erstellen eines mobilen .NET-Back-End-Diensts, der MongoDB anstelle einer SQL-Datenbank als Speicher verwendet
@@ -121,4 +121,4 @@ Da Sie jetzt gesehen haben, wie einfach sich der Tabellenspeicher mit dem .NET B
 [MongoLab-Add-On-Seite]: /gallery/store/mongolab/mongolab
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

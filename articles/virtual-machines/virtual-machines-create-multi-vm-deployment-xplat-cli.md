@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Erstellen einer Multi-VM-Bereitstellung über die Azure-Befehlszeilenschnittstelle | Azure"
+   pageTitle="Erstellen einer Multi-VM-Bereitstellung über die Azure-Befehlszeilenschnittstelle | Microsoft Azure"
    description="Erfahren Sie, wie Sie eine Bereitstellung mit mehreren virtuellen Computern über die Azure-Befehlszeilenschnittstelle erstellen."
    services="virtual-machines"
    documentationCenter="nodejs"
@@ -18,13 +18,13 @@
 
 # Erstellen einer Multi-VM-Bereitstellung über die Azure-Befehlszeilenschnittstelle
 
-Das folgende Skript zeigt, wie Sie eine Dienstbereitstellung mit mehreren virtuellen Computern und mehreren Clouds in einem VNET über die Azure-Befehlszeilenschnittstelle (Azure-CLI) konfigurieren.
+Das folgende Skript zeigt, wie Sie eine Dienstbereitstellung mit mehreren virtuellen Computern und mehreren Clouds in einem VNET über die Azure-Befehlszeilenschnittstelle \(Azure-CLI\) konfigurieren.
 
 Im unten gezeigten Bild wird erläutert, wie die Bereitstellung nach Abschluss des Skripts aussehen wird:
 
 ![](./media/virtual-machines-create-multi-vm-deployment-xplat-cli/multi-vm-xplat-cli.png)
 
-Das Skript erstellt im Clouddienst **servercs** einen virtuellen Computer (**servervm**) mit zwei angehängten Datenträgern und im Clouddienst **workercs** zwei virtuelle Computer (**clientvm1, clientvm2**). Beide Clouddienste werden im VNET **samplevnet** abgelegt. Der Clouddienst **servercs** verfügt auch über einen Endpunkt, der für externe Konnektivität konfiguriert ist.
+Das Skript erstellt im Clouddienst **servercs** einen virtuellen Computer \(**servervm**\) mit zwei angehängten Datenträgern und im Clouddienst **workercs** zwei virtuelle Computer \(**clientvm1, clientvm2**\). Beide Clouddienste werden im VNET **samplevnet** abgelegt. Der Clouddienst **servercs** verfügt auch über einen Endpunkt, der für externe Konnektivität konfiguriert ist.
 
 ## Dafür erforderliches CLI-Skript
 Der Code für diese Einrichtung ist relativ einfach:
@@ -67,4 +67,4 @@ Während Sie weitere Informationen zu jedem der Azure-CLI-Befehle mithilfe der O
 * [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

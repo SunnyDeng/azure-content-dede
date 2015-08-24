@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Was sind die Komponenten von StorSimple?" 
+   pageTitle="Was sind die Komponenten von StorSimple? | Microsoft Azure" 
    description="Beschreibt die StorSimple-Geräte, -Dienste und -Technologien." 
    services="storsimple" 
    documentationCenter="NA" 
@@ -7,16 +7,14 @@
    manager="AdinaH" 
    editor=""/>
 
-
 <tags
    ms.service="storsimple"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="08/03/2015"
+   ms.date="08/11/2015"
    ms.author="v-sharos"/>
-
 
 
 # Was sind die Komponenten von StorSimple? 
@@ -112,9 +110,13 @@ Windows PowerShell für StorSimple stellt eine Befehlszeilen-Schnittstelle zur V
 
 Sie können auf Windows PowerShell für StorSimple über eine serielle Konsole (auf einem Hostcomputer, der direkt mit dem Gerät verbunden ist) oder remote mithilfe von Windows PowerShell-Remoting zugreifen. Beachten Sie, dass einige der Windows PowerShell für StorSimple-Aufgaben (z. B. die anfängliche Registrierung des Geräts) nur in der seriellen Konsole erfolgen können.
 
-Weitere Informationen finden Sie unter [Windows PowerShell für StorSimple](https://msdn.microsoft.com/library/azure/dn772425.aspx).
+Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell für StorSimple zum Verwalten Ihres Geräts](storsimple-windows-powershell-administration.md).
 
-## StorSimple-Manager-Dienst
+## Azure PowerShell-Cmdlets für StorSimple
+
+Die Azure PowerShell-Cmdlets für StorSimple sind eine Sammlung von Windows PowerShell-Cmdlets, mit denen Sie Servicelevel- und Migrationsaufgaben über die Befehlszeile automatisieren können. Weitere Informationen zu den Azure PowerShell-Cmdlets für StorSimple finden Sie unter [Cmdlet-Referenz](https://msdn.microsoft.com/library/dn920427.aspx).
+
+## StorSimple Manager-Dienst
 
 Microsoft Azure StorSimple stellt eine webbasierte Benutzeroberfläche (den StorSimple-Manager-Dienst) zur Verfügung, die die zentrale Verwaltung des Datencenters und Cloud-Speichers ermöglicht. Mithilfe des StorSimple-Manager-Diensts können Sie die folgenden Aufgaben ausführen:
 
@@ -144,7 +146,7 @@ Sicherungen werden als Momentaufnahmen erfasst, die nur die Änderungen seit der
 
 Wenn ein Notfall eintritt oder Daten aus anderen Gründen wiederhergestellt werden müssen, stellt der StorSimple-Momentaufnahmen-Manager diese nach Bedarf inkrementell wieder her. Für die Datenwiederherstellung ist es nicht erforderlich, das gesamte System herunterzufahren, während eine Datei wiederhergestellt, Hardware ausgetauscht oder der Betrieb an einen anderen Standort verlagert wird.
 
-Weitere Informationen finden Sie unter [Was ist der StorSimple Snapshot Manager?](storsimple-what-is-snapshot-manager.md).
+Weitere Informationen finden Sie unter [Was ist der StorSimple Snapshot Manager?](storsimple-what-is-snapshot-manager.md)
 
 ## StorSimple-Adapter für SharePoint
 
@@ -165,7 +167,7 @@ Vor dem Bereitstellen Ihrer Microsoft Azure StorSimple-Projektmappe, empfehlen w
 | ------------------------------ | ---------------- |
 | Zugriffssteuerungsdatensätze (Access Control Record, ACR) | Ein Datensatz, der einem Volume auf dem Microsoft Azure StorSimple-Gerät zugeordnet ist, durch den festgelegt wird, welche Hosts eine Verbindung mit diesem herstellen können. Die Feststellung basiert auf den qualifizierten iSCSI-Namen (IQN) der Hosts (im ACR enthalten), die eine Verbindung mit dem StorSimple-Gerät herstellen.|
 | AES-256 | Ein erweiterter 256-Bit-Verschlüsselungsalgorithmus (Advanced Encryption Standard, AES) zum Verschlüsseln von Daten, die aus der und in die Cloud verschoben werden. |
-| Größe der Zuordnungseinheiten (Allocation Unit Size, AUS) | Die kleinste Menge an Speicherplatz, die zum Speichern einer Datei in Windows-Dateisystemen zugeordnet werden kann. Ist eine Dateigröße kein entsprechendes Vielfaches der Clustergröße, muss zusätzlicher Speicherplatz zum Speichern der Datei verwendet werden (bis zum nächsten Vielfachen der Clustergröße). Dies führt zu verlorenem Speicherplatz und zur Fragmentierung der Festplatte. <br>Die empfohlene AUS für Azure StorSimple-Volumes beträgt 64 KB, da diese Größe gut mit den Deduplizierungsalgorithmen funktioniert.|
+| Größe der Zuordnungseinheiten (Allocation Unit Size, AUS) | Die kleinste Menge an Speicherplatz, die zum Speichern einer Datei in Windows-Dateisystemen zugeordnet werden kann. Ist eine Dateigröße kein entsprechendes Vielfaches der Clustergröße, muss zusätzlicher Speicherplatz zum Speichern der Datei verwendet werden (bis zum nächsten Vielfachen der Clustergröße). Dies führt zu verlorenem Speicherplatz und zur Fragmentierung der Festplatte. <br> Die empfohlene AUS für Azure StorSimple-Volumes beträgt 64 KB, da diese Größe gut mit den Deduplizierungsalgorithmen funktioniert.|
 | Automatische Speicherstaffelung | Automatisches Verschieben von weniger aktiven Daten auf eine Ebene in der Cloud mit anschließender Verwaltung des gesamten Speichers über eine zentrale Benutzeroberfläche.|
 | Sicherungskatalog | Eine Auflistung von Backups, in der Regel verknüpft durch den Anwendungstyp, der verwendet wurde. Diese Auflistung wird auf der Seite "Sicherungskatalog" der Benutzeroberfläche des StorSimple Manager-Diensts angezeigt.|
 | Sicherungskatalogdatei | Eine Datei mit einer Liste von verfügbaren Momentaufnahmen, die derzeit in der Sicherungsdatenbank von StorSimple Snapshot Manager gespeichert sind. |
@@ -217,11 +219,11 @@ Vor dem Bereitstellen Ihrer Microsoft Azure StorSimple-Projektmappe, empfehlen w
 
 ## Nächste Schritte
 
-Lesen Sie die [StorSimple-Versionshinweise](https://msdn.microsoft.com/library/azure/dn772367.aspx).
+Erfahren Sie mehr zur [StorSimple-Sicherheit](storsimple-security.md).
 
 
 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

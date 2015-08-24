@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen universellen Windows-App – Azure Mobile Services" 
+	pageTitle="Hinzufügen von Mobile Services zu einer vorhandenen universellen Windows-App | Microsoft Azure" 
 	description="Erfahren Sie, wie Ihre vorhandene universelle Windows-App mit Azure Mobile Services verbinden." 
 	services="mobile-services" 
 	documentationCenter="windows" 
@@ -30,7 +30,7 @@ In diesem Lernprogramm laden Sie ein Visual Studio 2013-Projekt für eine univer
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-universal-dotnet-get-started-data%2F).
+* Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-universal-dotnet-get-started-data%2F).
 * [Visual Studio Express 2013 für Windows](https://go.microsoft.com/fwLink/p/?LinkID=257546) (Update 2 oder höhere Version). 
 
 ##<a name="download-app"></a>Herunterladen des GetStartedWithData-Projekts
@@ -114,4 +114,4 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen 
 [MobileServiceClient]: http://go.microsoft.com/fwlink/p/?LinkId=302030
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

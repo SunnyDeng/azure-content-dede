@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/21/2015" 
+	ms.date="08/11/2015" 
 	ms.author="juliako"/>
 
 #Spezifikation der Fragmented MP4-Echtzeiterfassung für Azure Media Services
@@ -206,4 +206,4 @@ Es folgt eine empfohlene Implementierung für redundante Audiospuren:
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

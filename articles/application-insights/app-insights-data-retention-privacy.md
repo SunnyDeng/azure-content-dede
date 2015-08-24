@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/11/2015" 
+	ms.date="08/11/2015" 
 	ms.author="awills"/>
 
 # Datensammlung, -aufbewahrung und -speicherung in Application Insights 
@@ -34,7 +34,13 @@ Application Insights SDKs und Agents, die Sie mit Ihrer Anwendung kombinieren, s
 
 #### Wie viele Daten können erfasst werden? 
 
-**Pro Sekunde**: Es können bis zu 500 Datenpunkte pro Sekunde und pro Instrumentationsschlüssel (d. h. pro Anwendung) erfasst werden. Beim [Tarif "Free"][pricing] gelten 100 Datenpunkte/s als Obergrenze.
+**Pro Sekunde**: Es können bis zu 500 Datenpunkte pro Sekunde und pro Instrumentationsschlüssel \(d. h. pro Anwendung\) erfasst werden. Beim [Tarif "Free"][pricing] gelten 100 Datenpunkte/s als Obergrenze.
+
+Es gibt drei Buckets, die getrennt gezählt werden:
+
+* [TrackTrace-Aufrufe](app-insights-api-custom-events-metrics.md#track-trace) und [erfasste Protokolle](app-insights-asp-net-trace-logs.md)
+* [Ausnahmen](app-insights-api-custom-events-metrics.md#track-exception), die einem unteren Grenzwert von 50 pro Sekunde unterliegen.
+* Alle anderen Telemetriedaten \(Seitenaufrufe, Anforderungen, Abhängigkeiten, Metriken, benutzerdefinierte Ereignisse\).
 
 **Pro Monat**: Es können pro Kalendermonat, abhängig von Ihrem [Tarif](http://azure.microsoft.com/pricing/details/application-insights/), zwischen 5 und 15 Millionen Datenpunkte erfasst werden. Mit Ausnahme des [Tarifs "Free"][pricing] können Sie zusätzliche Kapazitäten erwerben, wenn Sie den Grenzwert erreichen.
 
@@ -55,9 +61,9 @@ Ein *Datenpunkt* ist ein Telemetrie-Element, z. B.:
 
 Das hängt von Ihrem [Tarif](http://azure.microsoft.com/pricing/details/application-insights/) ab.
 
-Rohdatenpunkte (also Elemente, die Sie bei der Diagnosesuche überprüfen können): zwischen 7 und 30 Tagen.
+Rohdatenpunkte \(also Elemente, die Sie bei der Diagnosesuche überprüfen können\): zwischen 7 und 30 Tagen.
 
-Aggregierte Daten (d. h. Zählungen, Mittelwerte und andere statistischen Daten, die im Metrik-Explorer angezeigt werden) werden im Maß von 1 Minute für 30 Tage und 1 Stunde oder 1 Tag (abhängig vom Typ) für mindestens 13 Monate aufbewahrt.
+Aggregierte Daten \(d. h. Zählungen, Mittelwerte und andere statistischen Daten, die im Metrik-Explorer angezeigt werden\) werden im Maß von 1 Minute für 30 Tage und 1 Stunde oder 1 Tag \(abhängig vom Typ\) für mindestens 13 Monate aufbewahrt.
 
 #### Welche Grenzen gibt es für die verschiedenen Datentypen?
 
@@ -97,7 +103,7 @@ Die Daten werden auf Microsoft Azure-Servern gespeichert. Für Konten im Azure-V
 
 Der Zugriff auf Ihre Daten durch Microsoft-Mitarbeiter ist eingeschränkt. Wir werden nur mit Ihrer Erlaubnis und ausschließlich dann auf Ihre Daten zugreifen, wenn es erforderlich ist, Sie bei der Verwendung von Application Insights zu unterstützen.
 
-Aggregierte Daten in den Anwendungen unserer Kunden (z. B. Datenraten und die durchschnittliche Größe von Ablaufverfolgungen) werden zur Verbesserung von Application Insights verwendet.
+Aggregierte Daten in den Anwendungen unserer Kunden \(z. B. Datenraten und die durchschnittliche Größe von Ablaufverfolgungen\) werden zur Verbesserung von Application Insights verwendet.
 
 #### Könnte die Telemetrie eines anderen Benutzers meine Application Insights-Daten beeinträchtigen?
 
@@ -125,7 +131,7 @@ Ja.
 
 Allgemeine Hinweise:
 
-* Der Großteil der standardmäßigen Telemetrie (d. h. Telemetrie, die ohne das Schreiben von Code gesendet wird) enthält keine expliziten personenbezogenen Informationen. Allerdings können möglicherweise Rückschlüsse aus einer Ereignisauflistung auf einzelne Personen gezogen werden.
+* Der Großteil der standardmäßigen Telemetrie \(d. h. Telemetrie, die ohne das Schreiben von Code gesendet wird\) enthält keine expliziten personenbezogenen Informationen. Allerdings können möglicherweise Rückschlüsse aus einer Ereignisauflistung auf einzelne Personen gezogen werden.
 * Ausnahme- und Ablaufverfolgungsmeldungen können personenbezogene Informationen enthalten.
 * Benutzerdefinierte Telemetrie, z. B. Aufrufe wie "TrackEvent", die Sie mithilfe der API oder von Protokollnachverfolgungen in Code schreiben, kann alle von Ihnen ausgewählten Daten enthalten.
 
@@ -154,11 +160,11 @@ Die Daten werden von Application Insights weder gefiltert noch gelöscht. Verwal
 
 ## Von Application Insights gesendete Daten
 
-Die SDKs sind je nach Plattform unterschiedlich, und es gibt verschiedene Komponenten, die Sie installieren können. (Weitere Informationen finden Sie unter [Erste Schritte mit Application Insights][start].) Jede Komponente sendet unterschiedliche Daten.
+Die SDKs sind je nach Plattform unterschiedlich, und es gibt verschiedene Komponenten, die Sie installieren können. \(Weitere Informationen finden Sie unter [Erste Schritte mit Application Insights][start].\) Jede Komponente sendet unterschiedliche Daten.
 
 #### Klassen von in verschiedenen Szenarien gesendeten Daten
 
-Aktion | Gesammelte Datenklassen (siehe nächste Tabelle)
+Aktion | Gesammelte Datenklassen \(siehe nächste Tabelle\)
 ---|---
 [Hinzufügen des Application Insights SDK zu Ihrem .NET-Webprojekt][greenbrown] | ServerContext<br/>Inferred<br/>Perf counters<br/>Requests<br/>**Exceptions**<br/>Session<br/>users
 [Installieren des Statusmonitors unter IIS][redfield]<br/>[Hinzufügen einer AI-Erweiterung zu Azure-VM oder Web-App][azure]|Dependencies<br/>ServerContext<br/>Inferred<br/>Perf counters
@@ -178,7 +184,7 @@ Weitere Informationen zu [SDKs für andere Plattformen][platforms] finden Sie in
 
 #### Die Klassen der gesammelten Daten
 
-Gesammelte Datenklasse | Umfasst (keine vollständige Liste) 
+Gesammelte Datenklasse | Umfasst \(keine vollständige Liste\) 
 ---|---
 **Eigenschaften**|**Alle Daten – bestimmt durch Code**
 DeviceContext |ID, IP, Gebietsschema, Gerätemodell, Netzwerk, Netzwerktyp, OEM-Name, Bildschirmauflösung, Rolleninstanz, Rollenname, Gerätetyp
@@ -191,7 +197,7 @@ Ereignisse | Ereignisname und -wert
 PageViews | URL und Seitenname oder Bildschirmname
 Client perf | URL-/Seitenname, Browserladezeit
 Requests |URL, Dauer, Antwortcode
-Abhängigkeiten|Typ (SQL, HTTP,...), Verbindungszeichenfolge oder URI Sync/Async, Dauer, Erfolg, SQL-Anweisung (mit Statusmonitor)
+Abhängigkeiten|Typ \(SQL, HTTP,...\), Verbindungszeichenfolge oder URI Sync/Async, Dauer, Erfolg, SQL-Anweisung \(mit Statusmonitor\)
 **Exceptions** | Typ, **Meldung**, Aufrufliste, Quelldatei und Zeilennummer, Thread-ID
 Crashes | Prozess-ID, übergeordnete Vorgangs-ID, Thread-ID des Absturzes, Anwendungs-Patch, ID, Build, Typ der Ausnahme, Adresse, Ursache; abgeblendete Symbole und Registerkarten, binäre Start- und Endadressen, binärer Name und Pfad, CPU-Typ
 Trace | **Meldung** und Schweregrad
@@ -236,4 +242,4 @@ Dieses Produkt enthält GeoLite2-Daten, die von MaxMind erstellt wurden und unte
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->

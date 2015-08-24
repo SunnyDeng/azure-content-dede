@@ -7,7 +7,6 @@
    manager="barbkess"
    editor=""/>
 
-
 <tags
    ms.service="sql-data-warehouse"
    ms.devlang="NA"
@@ -16,12 +15,11 @@
    ms.workload="data-services"
    ms.date="06/23/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
-
    
 # Erste Schritte: Verbinden mit SQL Data Warehouse
 In diesem Artikel für den Schnelleinstieg ist dargestellt, wie Sie mit zwei verschiedenen Tools eine Verbindung mit einer bereitgestellten Instanz von SQL Data Warehouse herstellen und Abfragen an diese durchführen:
 
-**Visual Studio** – Der integrierte Code-Editor und Debugger von Visual Studio, SQL Server Data Tools (SSDT), ist vollständig kompatibel mit SQLDW, sodass Sie problemlos Verbindungen herstellen, Abfragen ausführen und SQL Data Warehouse verwalten können.
+**Visual Studio** – Der integrierte Code-Editor und Debugger von Visual Studio, SQL Server Data Tools \(SSDT\), ist vollständig kompatibel mit SQLDW, sodass Sie problemlos Verbindungen herstellen, Abfragen ausführen und SQL Data Warehouse verwalten können.
 
 > [AZURE.NOTE]SQL Data Warehouse setzt mindestens SSDT Preview, Version 12.0.50623 oder höher, voraus.
 
@@ -33,7 +31,7 @@ Im Laufe dieses Artikels werden folgende Aktionen ausgeführt:
 2. Herstellen einer Verbindung mit SQL Data Warehouse in SSDT
 3. Ausführen von Abfragen an die SQL Data Warehouse-Datenbank
 
->[AZURE.NOTE]Es wird vorausgesetzt, dass Sie entweder die Bereitstellungsanweisungen abgeschlossen haben oder über ein SQL Data Warehouse verfügen. Wenn Sie das SQL Data Warehouse nicht bereitgestellt haben, lesen Sie die [Ersten Schritte zur Bereitstellung].
+>[AZURE.NOTE]Es wird vorausgesetzt, dass Sie entweder die Bereitstellungsanweisungen abgeschlossen haben oder über ein SQL Data Warehouse verfügen. Wenn Sie das SQL Data Warehouse nicht bereitgestellt haben, lesen Sie die \[Ersten Schritte zur Bereitstellung\].
 
 ## Einrichten von Visual Studio für die Entwicklung##
 Das SQL Data Warehouse-Team empfiehlt, Visual Studio 2013 oder höher in Verbindung mit SQL Server Data Tools für die Entwicklung zu verwenden. Im Folgenden wird beschrieben, wie Sie Visual Studio 2013 herunterladen und aktualisieren, wenn Sie nicht bereits eine geeignete Version von Visual Studio installiert haben.
@@ -89,7 +87,7 @@ Hierdurch wird der Download der aktuellen SSDT-Version gestartet. Die folgende A
 
 Sie verfügen nun auf Ihrem Desktopcomputer über eine aktuelle Version von Visual Studio 2013 mit einer aktuellen SSDT-Erweiterung.
 
-> [AZURE.NOTE]Derzeit wird die Verwendung der [SSDT Preview for Visual Studio 2013, version 12.0.50623 oder höher](http://go.microsoft.com/fwlink/?LinkID=616714&clcid=0x409) (in englischer Sprache) empfohlen.
+> [AZURE.NOTE]Derzeit wird die Verwendung der [SSDT Preview for Visual Studio 2013, version 12.0.50623 oder höher](http://go.microsoft.com/fwlink/?LinkID=616714&clcid=0x409) \(in englischer Sprache\) empfohlen.
 
 ## Verbinden mit Visual Studio 2013
 Wenn Sie die gewünschte Version von Visual Studio verwenden, können Sie auf zwei verschiedene Arten eine Verbindung mit SQL Data Warehouse herstellen:
@@ -107,7 +105,7 @@ Der SQL Server-Objekt-Explorer wird angezeigt:
 
 3. Klicken Sie im SQL Server-Objekt-Explorer auf die Schaltfläche "Server hinzufügen". Dies ist in der folgenden Abbildung hervorgehoben:
 
-4. Füllen Sie das Dialogfeld "Verbindung mit Server" mit den Werten auf, die Sie beim Erstellen des logischen Servers ausgewählt haben. Klicken Sie außerdem auf die Schaltfläche "Optionen", und geben Sie vor dem Herstellen einer Verbindung die Datenbank an, zu der Sie eine Verbindung herstellen (Ihre SQL Data Warehouse-Instanz).
+4. Füllen Sie das Dialogfeld "Verbindung mit Server" mit den Werten auf, die Sie beim Erstellen des logischen Servers ausgewählt haben. Klicken Sie außerdem auf die Schaltfläche "Optionen", und geben Sie vor dem Herstellen einer Verbindung die Datenbank an, zu der Sie eine Verbindung herstellen \(Ihre SQL Data Warehouse-Instanz\).
 
 Sie können bei Bedarf das Kontrollkästchen "Kennwort speichern" aktivieren. Sie sparen so natürlich Zeit, aber denken Sie daran, dass dadurch jede Person mit physischem Zugriff auf Ihr Profil über dieses Konto Abfragen durchführen kann.
 
@@ -136,11 +134,11 @@ Sie können auch mit dem Befehlszeilenprogramm [sqlcmd](https://msdn.microsoft.c
 
 Für die Verbindung mit einer bestimmten Instanz von SQLDW müssen Sie bei Verwendung von sqlcmd die Eingabeaufforderung öffnen und *sqlcmd* gefolgt von der Verbindungszeichenfolge für die SQLDW-Datenbank eingeben. Die Verbindungszeichenfolge muss die folgenden Parameter enthalten:
 
-+ **Benutzer (-U)**: Serverbenutzer in Form von `<`Benutzer`>`@`<`Servername`>`.database.windows.net
-+ **Kennwort (-P)**: Das Kennwort des Benutzers
-+ **Server (-S)**: Server in Form von `<`Servername`>`.database.windows.net
-+ **Datenbank (-D)**: Datenbankname 
-+ **Bezeichner in Anführungszeichen aktivieren (-I)**: Bezeichner müssen in Anführungszeichen eingeschlossen sein, um die Verbindung mit einer SQLDW-Instanz herzustellen. 
++ **Benutzer \(-U\)**: Serverbenutzer in Form von `<`Benutzer`>`@`<`Servername`>`.database.windows.net
++ **Kennwort \(-P\)**: Das Kennwort des Benutzers
++ **Server \(-S\)**: Server in Form von `<`Servername`>`.database.windows.net
++ **Datenbank \(-D\)**: Datenbankname 
++ **Bezeichner in Anführungszeichen aktivieren \(-I\)**: Bezeichner müssen in Anführungszeichen eingeschlossen sein, um die Verbindung mit einer SQLDW-Instanz herzustellen. 
 
 Zur Verbindung mit einer SQLDW-Instanz geben Sie daher Folgendes ein:
 
@@ -185,7 +183,9 @@ Da wir jetzt unseren Server registriert haben, fahren wir mit dem Schreiben eine
 	Zum Ausführen der Abfrage klicken Sie unten auf den grünen Pfeil, oder Sie verwenden die folgende Tastenkombination `CTRL`+`SHIFT`+`F5`:
 
 ## Nächste Schritte ##
-[Load sample data.]: ./sql-data-warehouse-get-started-load-samples.md
-[Start developing code]: ./articles/sql-data-warehouse-overview-develop/
+Versuchen Sie nun, da Sie eine Verbindung herstellen und Abfragen senden können, [das Laden von Beispieldaten][] oder [Entwickeln von Code][].
 
-<!---HONumber=August15_HO6-->
+[das Laden von Beispieldaten]: ./sql-data-warehouse-get-started-load-samples.md
+[Entwickeln von Code]: ./articles/sql-data-warehouse-overview-develop/
+
+<!---HONumber=August15_HO7-->

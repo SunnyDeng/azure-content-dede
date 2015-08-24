@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Twilio für Telefonie- und SMS-Funktionen (Java) - Azure" 
+	pageTitle="Verwenden von Twilio für Sprachanrufe und SMS (Java) | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mit dem Twilio API-Dienst in Azure einen Telefonanruf tätigen und eine SMS-Nachricht senden. Die Codebeispiele wurden in Java geschrieben." 
 	services="" 
 	documentationCenter="java" 
@@ -232,4 +232,4 @@ Nachdem Sie nun mit den Grundlagen des Twilio-Dienstes vertraut sind, finden Sie
 [twilio_support]: http://www.twilio.com/help/contact
 [twilio_quickstarts]: http://www.twilio.com/docs/quickstart
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO7-->
