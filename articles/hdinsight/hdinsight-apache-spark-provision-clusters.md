@@ -85,20 +85,20 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
 	![Bereitstellen von Spark in HDInsight-Clustern – Details](./media/hdinsight-apache-spark-provision-clusters/HDI.CustomProvision.Page1.png "Bereitstellen von Spark in HDInsight-Clustern – Details")
 
     <table border='1'>
-	<tr><th>Eigenschaft</th><th>Wert</th></tr>
-	<tr><td>Clustername</td>
-		<td><p>Der Name des Clusters. </p>
-			<ul>
-			<li>Der DNS-Name (Domain Name System) muss mit einem alphanumerischen Zeichen beginnen und enden und darf Bindestriche enthalten.</li>
-			<li>Das Feld muss eine Zeichenfolge mit 3 bis 63 Zeichen enthalten.</li>
-			</ul></td></tr>
-	<tr><td>Clustertyp</td>
-		<td>Wählen Sie <strong>Spark</strong> als Clustertyp aus.</td></tr>
-	<tr><td>Betriebssystem</td>
-		<td>Wählen Sie <b>Windows Server 2012 R2 Data Center</b> um einen Spark-Cluster unter Windows bereitzustellen. </td></tr>
-	<tr><td>HDInsight-Version</td>
-		<td>Wählen Sie die Version aus. Für Spark ist <b>HDInsight 3.2</b> die einzige verfügbare Versionsoption, die Spark&#160;1.3.1 verwendet.</td></tr>
-	</table>
+		<tr><th>Eigenschaft</th><th>Wert</th></tr>
+		<tr><td>Clustername</td>
+			<td><p>Der Name des Clusters. </p>
+				<ul>
+				<li>Der DNS-Name (Domain Name System) muss mit einem alphanumerischen Zeichen beginnen und enden und darf Bindestriche enthalten.</li>
+				<li>Das Feld muss eine Zeichenfolge mit 3 bis 63 Zeichen enthalten.</li>
+				</ul></td></tr>
+		<tr><td>Clustertyp</td>
+			<td>Wählen Sie <strong>Spark</strong> als Clustertyp aus.</td></tr>
+		<tr><td>Betriebssystem</td>
+			<td>Wählen Sie <b>Windows Server 2012 R2 Data Center</b> um einen Spark-Cluster unter Windows bereitzustellen. </td></tr>
+		<tr><td>HDInsight-Version</td>
+			<td>Wählen Sie die Version aus. Für Spark ist <b>HDInsight 3.2</b> die einzige verfügbare Versionsoption, die Spark&#160;1.3.1 verwendet.</td></tr>
+		</table>
 
 	Geben Sie die Werte wie in der Tabelle gezeigt ein und klicken Sie auf den Pfeil nach rechts.
 
@@ -107,12 +107,12 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
 	![Angeben der Knotenanzahl und der Knotentypen für den Cluster](./media/hdinsight-apache-spark-provision-clusters/HDI.CustomProvision.Page2.png "Angeben der Knotenanzahl und der Knotentypen für den Cluster")
 
 	<table border="1">
-<tr><th>Name</th><th>Wert</th></tr>
-<tr><td>Datenknoten</td><td>Die Anzahl der Datenknoten, die Sie bereitstellen möchten. Erstellen Sie zu Testzwecken einen Cluster mit nur einem Knoten. <br />Die Größenbegrenzung für die Cluster variiert in Azure-Abonnements. Wenden Sie sich an das Azure-Abrechnungssupportteam, um diese Begrenzung zu erhöhen.</td></tr>
-<tr><td>Region/virtuelles Netzwerk:</td><td><p>Wählen Sie dieselbe Region wie für das Speicherkonto, das Sie im letzten Verfahren erstellt haben. HDInsight erfordert, dass sich das Speicherkonto in derselben Region befindet. Später in dieser Konfiguration können Sie nur ein Speicherkonto wählen, das sich in der hier angegebenen Region befindet.</p>.<br/>Wenn Sie ein virtuelles Azure-Netzwerk erstellt haben, können Sie das Netzwerk auswählen, für dessen Nutzung der HDInsight-Cluster konfiguriert wird.</p><p>Informationen zur Erstellung von virtuellen Azure-Netzwerken finden Sie unter <a href="http://msdn.microsoft.com/library/azure/jj156206.aspx">Aufgaben bei der Konfiguration virtueller Netzwerke</a>.</p></td></tr>
-<tr><td>Größe des Hauptknotens</td><td><p>Wählen Sie eine VM-Größe für den Hauptknoten aus.</p></td></tr>
-<tr><td>Datenknotengröße</td><td><p>Wählen Sie eine VM-Größe für die Datenknoten aus.</p></td></tr>
-</table>
+	<tr><th>Name</th><th>Wert</th></tr>
+	<tr><td>Datenknoten</td><td>Die Anzahl der Datenknoten, die Sie bereitstellen möchten. Erstellen Sie zu Testzwecken einen Cluster mit nur einem Knoten. <br />Die Größenbegrenzung für die Cluster variiert in Azure-Abonnements. Wenden Sie sich an das Azure-Abrechnungssupportteam, um diese Begrenzung zu erhöhen.</td></tr>
+	<tr><td>Region/virtuelles Netzwerk:</td><td><p>Wählen Sie dieselbe Region wie für das Speicherkonto, das Sie im letzten Verfahren erstellt haben. HDInsight erfordert, dass sich das Speicherkonto in derselben Region befindet. Später in dieser Konfiguration können Sie nur ein Speicherkonto wählen, das sich in der hier angegebenen Region befindet.</p>.<br/>Wenn Sie ein virtuelles Azure-Netzwerk erstellt haben, können Sie das Netzwerk auswählen, für dessen Nutzung der HDInsight-Cluster konfiguriert wird.</p><p>Informationen zur Erstellung von virtuellen Azure-Netzwerken finden Sie unter <a href="http://msdn.microsoft.com/library/azure/jj156206.aspx">Aufgaben bei der Konfiguration virtueller Netzwerke</a>.</p></td></tr>
+	<tr><td>Größe des Hauptknotens</td><td><p>Wählen Sie eine VM-Größe für den Hauptknoten aus.</p></td></tr>
+	<tr><td>Datenknotengröße</td><td><p>Wählen Sie eine VM-Größe für die Datenknoten aus.</p></td></tr>
+	</table>
 
 	>[AZURE.NOTE] Je nach Wahl der VMs können Ihre Kosten variieren. HDInsight verwendet für Clusterknoten VMs mit Standardtarif. Informationen über die Auswirkungen der VM-Größe auf Ihre Kosten finden Sie unter <a href="http://azure.microsoft.com/pricing/details/hdinsight/" target="_blank">HDInsight-Preise</a>.
 
@@ -122,17 +122,19 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
     ![Angeben der Admin- und RDP-Benutzerdetails](./media/hdinsight-apache-spark-provision-clusters/HDI.CustomProvision.Page3.png "Angeben der Admin- und RDP-Benutzerdetails")
 
     <table border='1'>
-	<tr><th>Eigenschaft</th><th>Wert</th></tr>
-	<tr><td>HTTP-Benutzername</td>
-		<td>Geben Sie den Benutzernamen für den HDInsight-Cluster an.</td></tr>
-	<tr><td>HTTP-Kennwort/Kennwort bestätigen</td>
-		<td>Geben Sie das Kennwort für den HDInsight-Cluster an.</td></tr>
-	<tr><td>Remotedesktop für Cluster aktivieren</td>
-		<td>Aktivieren Sie dieses Kontrollkästchen, um einen Benutzernamen, ein Kennwort und ein Ablaufdatum für einen Remotedesktopbenutzer einzugeben, der nach der Bereitstellung per Remotezugriff auf die Clusterknoten zugreifen kann. Sie können Remotedesktop auch noch nach der Bereitstellung des Clusters aktivieren. Anweisungen hierzu finden Sie unter <a href="hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung mit HDInsight-Clustern mit RDP</a>.</td></tr>
-	<tr><td>Hive-/Oozie-Metastore eingeben</td>
-		<td>Aktivieren Sie dieses Kontrollkästchen, um eine SQL-Datenbank im gleichen Datencenter wie der Cluster für die Verwendung als Hive-/Oozie-Metastore anzugeben. Wenn Sie dieses Kontrollkästchen aktivieren, müssen Sie auf den nachfolgenden Seiten des Assistenten Details zur Azure SQL-Datenbank angeben. Dies ist praktisch, wenn Sie die Metadaten von Hive-/Oozie-Jobs behalten möchten, nachdem der Cluster gelöscht wurde. Anleitungen zum Erstellen eines Metastore finden Sie unter <a href="https://azure.microsoft.com/de-de/documentation/articles/sql-database-get-started/" target="_blank">Erstellen Ihrer ersten Azure SQL-Datenbank</a>.</td></tr>
-	</td></tr>
-</table>>[AZURE.NOTE]Die als Metastore verwendete Azure SQL-Datenbank muss für die Konnektivität mit anderen Azure-Diensten konfiguriert sein, inklusive Azure HDInsight. Klicken Sie im Dashboard der Azure SQL-Datenbank mit der rechten Maustaste auf den Servernamen. Dies ist der Server, auf dem die SQL-Datenbankinstanz läuft. Öffnen Sie die Serveransicht, klicken Sie auf **Konfigurieren**, klicken Sie für **Windows** **Azure-Dienste** auf **Ja**, und klicken Sie dann auf **Speichern**.
+		<tr><th>Eigenschaft</th><th>Wert</th></tr>
+		<tr><td>HTTP-Benutzername</td>
+			<td>Geben Sie den Benutzernamen für den HDInsight-Cluster an.</td></tr>
+		<tr><td>HTTP-Kennwort/Kennwort bestätigen</td>
+			<td>Geben Sie das Kennwort für den HDInsight-Cluster an.</td></tr>
+		<tr><td>Remotedesktop für Cluster aktivieren</td>
+			<td>Aktivieren Sie dieses Kontrollkästchen, um einen Benutzernamen, ein Kennwort und ein Ablaufdatum für einen Remotedesktopbenutzer einzugeben, der nach der Bereitstellung per Remotezugriff auf die Clusterknoten zugreifen kann. Sie können Remotedesktop auch noch nach der Bereitstellung des Clusters aktivieren. Anweisungen hierzu finden Sie unter <a href="hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung mit HDInsight-Clustern mit RDP</a>.</td></tr>
+		<tr><td>Hive-/Oozie-Metastore eingeben</td>
+			<td>Aktivieren Sie dieses Kontrollkästchen, um eine SQL-Datenbank im gleichen Datencenter wie der Cluster für die Verwendung als Hive-/Oozie-Metastore anzugeben. Wenn Sie dieses Kontrollkästchen aktivieren, müssen Sie auf den nachfolgenden Seiten des Assistenten Details zur Azure SQL-Datenbank angeben. Dies ist praktisch, wenn Sie die Metadaten von Hive-/Oozie-Jobs behalten möchten, nachdem der Cluster gelöscht wurde. Anleitungen zum Erstellen eines Metastore finden Sie unter <a href="https://azure.microsoft.com/de-de/documentation/articles/sql-database-get-started/" target="_blank">Erstellen Ihrer ersten Azure SQL-Datenbank</a>.</td></tr>
+			</td></tr>
+		</table>
+
+	>[AZURE.NOTE]Die als Metastore verwendete Azure SQL-Datenbank muss für die Konnektivität mit anderen Azure-Diensten konfiguriert sein, inklusive Azure HDInsight. Klicken Sie im Dashboard der Azure SQL-Datenbank mit der rechten Maustaste auf den Servernamen. Dies ist der Server, auf dem die SQL-Datenbankinstanz läuft. Öffnen Sie die Serveransicht, klicken Sie auf **Konfigurieren**, klicken Sie für **Windows** **Azure-Dienste** auf **Ja**, und klicken Sie dann auf **Speichern**.
 
     Klicken Sie auf den Pfeil nach rechts.
 
@@ -151,29 +153,29 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
     ![Angeben der Speicherkontodetails](./media/hdinsight-apache-spark-provision-clusters/HDI.CustomProvision.Page5.png "Angeben der Speicherkontodetails")
 
 	<table border='1'>
-	<tr><th>Eigenschaft</th><th>Wert</th></tr>
-	<tr><td>Speicherkonto</td>
-		<td>Geben Sie das Azure-Speicherkonto an, das als Standard-Dateisystem für das HDInsight-Cluster verwendet werden soll. Sie haben drei Möglichkeiten:
-		<ul>
-			<li><strong>Vorhandenen Speicher verwenden</strong></li>
-			<li><strong>Neuen Speicher erstellen</strong></li>
-			<li><strong>Speicher aus anderem Abonnement verwenden</strong></li>
-		</ul>
-		</td></tr>
-	<tr><td>Kontoname</td>
-		<td><ul>
-			<li>Falls Sie vorhandenen Speicher verwenden, wählen Sie unter <strong>Kontoname</strong> ein vorhandenes Speicherkonto aus. Die Dropdownliste enthält nur die Storage-Konten in dem Datencenter, in dem Sie auch den Cluster eingerichtet haben.</li>
-			<li>Wenn Sie <strong>Neuen Speicher erstellen</strong> oder <strong>Speicher aus einem anderem Abonnement verwenden</strong> ausgewählt haben, müssen Sie den Namen des Speicherkontos angeben.</li>
-		</ul></td></tr>
-	<tr><td>Kontoschlüssel</td>
-		<td>Geben Sie den Speicherschlüssel für das entsprechende Konto ein, falls Sie <strong>Speicher aus anderem Abonnement verwenden</strong> ausgewählt haben.</td></tr>
-	<tr><td>Standardcontainer</td>
-		<td><p>Gibt den Standardcontainer im Speicherkonto an, der als Standarddateisystem für den HDInsight-Cluster verwendet werden soll. Wenn Sie <strong>Vorhandenen Speicher verwenden</strong> für das Feld <strong>Speicherkonto</strong> wählen und in dem betreffenden Konto keine Container vorhanden sind, wird der Container standardmäßig mit demselben Namen wie der des Clusters erstellt. Falls bereits ein Container mit dem Namen des Clusters existiert, wird eine Sequenznummer an den Containernamen angehängt. Zum Beispiel mycontainer1, mycontainer2 und so weiter. Sie können jedoch auch Container im vorhandenen Speicherkonto verwenden, die einen anderen Namen als der Cluster haben.</p>
-        <p>Falls Sie neuen Speicher erstellen oder einen Speicher aus einem anderen Azure-Abonnement verwenden, müssen Sie den Namen des Standardcontainers angeben.</p>
-    </td></tr>
-	<tr><td>Zusätzliche Speicherkonten</td>
-		<td>HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Storage-Konto wird eine zusätzliche Seite **Speicherkonto** im Assistenten hinzugefügt, auf der Sie die Kontoinformationen angeben können. Im obigen Bildschirmfoto wurde z. B. ein zusätzliches Speicherkonto ausgewählt, weshalb Seite 5 dem Dialogfeld hinzugefügt wurde.</td></tr>
-</table>
+		<tr><th>Eigenschaft</th><th>Wert</th></tr>
+		<tr><td>Speicherkonto</td>
+			<td>Geben Sie das Azure-Speicherkonto an, das als Standard-Dateisystem für das HDInsight-Cluster verwendet werden soll. Sie haben drei Möglichkeiten:
+			<ul>
+				<li><strong>Vorhandenen Speicher verwenden</strong></li>
+				<li><strong>Neuen Speicher erstellen</strong></li>
+				<li><strong>Speicher aus anderem Abonnement verwenden</strong></li>
+			</ul>
+			</td></tr>
+		<tr><td>Kontoname</td>
+			<td><ul>
+				<li>Falls Sie vorhandenen Speicher verwenden, wählen Sie unter <strong>Kontoname</strong> ein vorhandenes Speicherkonto aus. Die Dropdownliste enthält nur die Storage-Konten in dem Datencenter, in dem Sie auch den Cluster eingerichtet haben.</li>
+				<li>Wenn Sie <strong>Neuen Speicher erstellen</strong> oder <strong>Speicher aus einem anderem Abonnement verwenden</strong> ausgewählt haben, müssen Sie den Namen des Speicherkontos angeben.</li>
+			</ul></td></tr>
+		<tr><td>Kontoschlüssel</td>
+			<td>Geben Sie den Speicherschlüssel für das entsprechende Konto ein, falls Sie <strong>Speicher aus anderem Abonnement verwenden</strong> ausgewählt haben.</td></tr>
+		<tr><td>Standardcontainer</td>
+			<td><p>Gibt den Standardcontainer im Speicherkonto an, der als Standarddateisystem für den HDInsight-Cluster verwendet werden soll. Wenn Sie <strong>Vorhandenen Speicher verwenden</strong> für das Feld <strong>Speicherkonto</strong> wählen und in dem betreffenden Konto keine Container vorhanden sind, wird der Container standardmäßig mit demselben Namen wie der des Clusters erstellt. Falls bereits ein Container mit dem Namen des Clusters existiert, wird eine Sequenznummer an den Containernamen angehängt. Zum Beispiel mycontainer1, mycontainer2 und so weiter. Sie können jedoch auch Container im vorhandenen Speicherkonto verwenden, die einen anderen Namen als der Cluster haben.</p>
+	        <p>Falls Sie neuen Speicher erstellen oder einen Speicher aus einem anderen Azure-Abonnement verwenden, müssen Sie den Namen des Standardcontainers angeben.</p>
+	    </td></tr>
+		<tr><td>Zusätzliche Speicherkonten</td>
+			<td>HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Storage-Konto wird eine zusätzliche Seite **Speicherkonto** im Assistenten hinzugefügt, auf der Sie die Kontoinformationen angeben können. Im obigen Bildschirmfoto wurde z. B. ein zusätzliches Speicherkonto ausgewählt, weshalb Seite 5 dem Dialogfeld hinzugefügt wurde.</td></tr>
+	</table>
 
 	Klicken Sie auf den Pfeil nach rechts.
 
@@ -190,16 +192,16 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
 	Wenn Sie eine Skriptaktion verwenden müssen, müssen Sie die folgenden Eingaben bereitstellen.
 	
 	<table border='1'>
-	<tr><th>Eigenschaft</th><th>Wert</th></tr>
-	<tr><td>Name</td>
-		<td>Geben Sie einen Namen für die Skriptaktion an.</td></tr>
-	<tr><td>Skript-URI</td>
-		<td>Geben Sie den Uniform Resource Identifier (URI) für das Skript an, das aufgerufen wird, um den Cluster anzupassen.</td></tr>
-	<tr><td>Knotentyp</td>
-		<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
-	<tr><td>Parameter</td>
-		<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist.</td></tr>
-</table>
+		<tr><th>Eigenschaft</th><th>Wert</th></tr>
+		<tr><td>Name</td>
+			<td>Geben Sie einen Namen für die Skriptaktion an.</td></tr>
+		<tr><td>Skript-URI</td>
+			<td>Geben Sie den Uniform Resource Identifier (URI) für das Skript an, das aufgerufen wird, um den Cluster anzupassen.</td></tr>
+		<tr><td>Knotentyp</td>
+			<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
+		<tr><td>Parameter</td>
+			<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist.</td></tr>
+	</table>
 
 	Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
 
@@ -371,19 +373,19 @@ Erstellen Sie ein selbstsigniertes Zertifikat, installieren Sie es auf Ihrer Arb
 3. Unter **Neues Projekt** können Sie die folgenden Werte eingeben bzw. auswählen:
 
 	<table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
-<tr>
-<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Eigenschaft</th>
-<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Wert</th></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Kategorie</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">Vorlagen/Visual C#/Windows</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Vorlage</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Konsolenanwendung</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">CreateHDICluster</td></tr>
-</table>
+	<tr>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Eigenschaft</th>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Wert</th></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Kategorie</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">Vorlagen/Visual C#/Windows</td></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Vorlage</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Konsolenanwendung</td></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">CreateHDICluster</td></tr>
+	</table>
 
 4. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
@@ -505,6 +507,4 @@ Erstellen Sie ein selbstsigniertes Zertifikat, installieren Sie es auf Ihrer Arb
 
 [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
 
-<!----HONumber=August15_HO7-->
-
-<!---HONumber=August15_HO7-->
+<!--------HONumber=August15_HO7-->

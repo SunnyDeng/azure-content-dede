@@ -131,9 +131,9 @@ Damit sich Azure AD-Benutzer bei **ScreenSteps**, anmelden können, müssen sie 
 
     ![Neuer Benutzer](./media/active-directory-saas-screensteps-tutorial/IC778546.png "Neuer Benutzer")
 
-7.  Wählen Sie im Abschnitt Gruppen die Option **Authentifizierungsgruppe \(SAML\)** aus, und klicken Sie dann auf **Benutzer erstellen**.
+7.  Wählen Sie im Abschnitt Gruppen die Option **Authentifizierungsgruppe (SAML)** aus, und klicken Sie dann auf **Benutzer erstellen**.
 
-    ![Groups \(Gruppen\)](./media/active-directory-saas-screensteps-tutorial/IC778547.png "Groups (Gruppen)")
+    ![Groups Gruppen](./media/active-directory-saas-screensteps-tutorial/IC778547.png "Groups Gruppen")
 
 >[AZURE.NOTE]Sie können ScreenSteps-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von ScreenSteps-Benutzerkonten oder mithilfe der von FM:Systems bereitgestellten APIs erstellen.
 
@@ -155,4 +155,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die Einstellungen für einmaliges Anmelden testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!------HONumber=August15_HO7-->
