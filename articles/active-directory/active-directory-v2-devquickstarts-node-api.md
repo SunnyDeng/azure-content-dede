@@ -16,10 +16,11 @@
 	ms.date="08/12/2015"
 	ms.author="brandwe"/>
 
-  \# App-Modell v2.0 (Vorschauversion): Schützen einer NodeJS-Web-API
+  # App-Modell v2.0 (Vorschauversion): Schützen einer NodeJS-Web-API
 
   Das Schnellstart-Tutorial für NodeJS-Web-APIs ist noch nicht ausgereift... Kommen Sie bald zurück und halten Sie außerdem nach Updates von @AzureAD auf Twitter Ausschau.
 
-  >[AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+  > [AZURE.NOTE]
+    Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
-<!------HONumber=August15_HO7-->
+<!--------HONumber=August15_HO7-->
