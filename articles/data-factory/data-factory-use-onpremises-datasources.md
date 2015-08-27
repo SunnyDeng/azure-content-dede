@@ -161,7 +161,8 @@ In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **StorageLinkedService
 
 	![Editor – Schaltfläche "Neuer Datenspeicher"][image-editor-newdatastore-onpremsql-button]
     
-3.	Die JSON-Vorlage zum Erstellen eines mit einer lokalen SQL Server-Datenbank verknüpften Diensts sollte im rechten Bereich angezeigt werden. ![Mit lokalem SQL Server verknüpfter Dienst – Einstellungen][image-editor-newdatastore-onpremsql-settings]
+3.	Die JSON-Vorlage zum Erstellen eines mit einer lokalen SQL Server-Datenbank verknüpften Diensts sollte im rechten Bereich angezeigt werden. 
+	![Mit lokalem SQL Server verknüpfter Dienst – Einstellungen][image-editor-newdatastore-onpremsql-settings]
 
 4.	Führen Sie im JSON-Bereich folgende Schritte aus:
 	1.	Geben Sie **adftutorialgateway** für die **gatewayName**-Eigenschaft ein, um den gesamten Text in doppelten Anführungszeichen zu ersetzen.  
@@ -396,7 +397,7 @@ In diesem Schritt erstellen Sie eine **Pipeline** mit einer **Kopieraktivität**
 	- Der Abschnitt "activities" enthält nur eine Aktivität, deren **type** auf **Copy** festgelegt ist.
 	- **Input** für die Aktivität ist auf **EmpOnPremSQLTable** und **output** auf **OutputBlobTable** festgelegt.
 	- Im Abschnitt **transformation** ist **SqlSource** als **Quelltyp** und **BlobSink** als **Senkentyp** angegeben.
-- Die SQL-Abfrage **select * from emp** ist für die **sqlReaderQuery**-Eigenschaft von **SqlSource** angegeben.
+	- Die SQL-Abfrage **select * from emp** ist für die **sqlReaderQuery**-Eigenschaft von **SqlSource** angegeben.
 
 	Ersetzen Sie den Wert der **start**-Eigenschaft durch den aktuellen Tag und den Wert der **end**-Eigenschaft durch den nächsten Tag. Die Start- und Endzeit von Datums-/Uhrzeitangaben müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Angabe für **end** ist optional, wird aber in diesem Lernprogramm verwendet.
 	
@@ -626,4 +627,4 @@ Sie können ein Gateway mit dem **Remove-AzureDataFactoryGateway**-Cmdlet entfer
 
 [image-data-factory-preview-portal-storage-key]: ./media/data-factory-get-started/PreviewPortalStorageKey.png
 
-<!---HONumber=August15_HO7-->
+<!-----HONumber=August15_HO7-->

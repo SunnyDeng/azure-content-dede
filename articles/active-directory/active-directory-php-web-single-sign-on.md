@@ -125,7 +125,7 @@ In diesem Schritt erfahren Sie, wie Sie mit Windows Identity Foundation (WIF) un
 		federation.reply=https://localhost/phpSample/index.php 
 
 
-	> [AZURE.NOTE]Den Werten **audienceuris** und **realm** muss die Zeichenfolge "spn:" vorausgehen.
+> [AZURE.NOTE]Den Werten **audienceuris** und **realm** muss die Zeichenfolge "spn:" vorausgehen.
 
 4. Klicken Sie in Eclipse mit der rechten Maustaste auf das Projekt **phpSample**, und klicken Sie dann auf **Neu** sowie auf **PHP-Datei**.
 
@@ -203,4 +203,4 @@ Ein Beispiel für die Verwendung von Azure Active Directory und des einmaligen A
 [PHP-Beispielcode für Azure Active Directory]: https://github.com/WindowsAzure/azure-sdk-for-php-samples/tree/master/WAAD.WebSSO.PHP
  
 
-<!---HONumber=August15_HO6-->
+<!-----HONumber=August15_HO6-->

@@ -96,16 +96,17 @@ Beim Bereitstellen eines HDInsight-Clusters werden Azure-Serverressourcen bereit
 4. Geben Sie folgende Werte ein bzw. wählen diese aus:
 
 	<table border="1">
-<tr><th>Name</th><th>Wert</th></tr>
-<tr><td>Clustername</td><td>Der Name des Clusters.</td></tr>
-<tr><td>Clustergröße</td><td>Die Anzahl der Datenknoten, die Sie bereitstellen möchten. Der Standardwert ist 4. Die Option zur Verwendung von einem oder zwei Datenknoten ist jedoch ebenfalls im Dropdownmenü verfügbar. Mit der Option <strong>Benutzerdefinierte Erstellung</strong> können Sie eine beliebige Anzahl von Clusterknoten erstellen. Es sind Preisdetails zur Abrechnung für verschiedene Cluster-Größen verfügbar. Klicken Sie auf das Symbol <strong>?</strong> direkt über dem Dropdownfeld, und folgen Sie dem Link im Popupfenster.</td></tr>
-<tr><td>Kennwort</td><td>Das Kennwort für das <i>HTTP</i>-Konto (Standardbenutzername: admin) und das <i>SSH</i>-Konto (Standardbenutzername: hdiuser). Es handelt sich hierbei NICHT um die Administratorkonten für die virtuellen Computer, auf denen die Cluster bereitgestellt werden. </td></tr>
+	<tr><th>Name</th><th>Wert</th></tr>
+	<tr><td>Clustername</td><td>Der Name des Clusters.</td></tr>
+	<tr><td>Clustergröße</td><td>Die Anzahl der Datenknoten, die Sie bereitstellen möchten. Der Standardwert ist 4. Die Option zur Verwendung von einem oder zwei Datenknoten ist jedoch ebenfalls im Dropdownmenü verfügbar. Mit der Option <strong>Benutzerdefinierte Erstellung</strong> können Sie eine beliebige Anzahl von Clusterknoten erstellen. Es sind Preisdetails zur Abrechnung für verschiedene Cluster-Größen verfügbar. Klicken Sie auf das Symbol <strong>?</strong> direkt über dem Dropdownfeld, und folgen Sie dem Link im Popupfenster.</td></tr>
+	<tr><td>Kennwort</td><td>Das Kennwort für das <i>HTTP</i>-Konto (Standardbenutzername: admin) und das <i>SSH</i>-Konto (Standardbenutzername: hdiuser). Es handelt sich hierbei NICHT um die Administratorkonten für die virtuellen Computer, auf denen die Cluster bereitgestellt werden. </td></tr>
 
-<tr><td>Speicherkonto</td><td>Wählen Sie das erstellte Speicherkonto im Dropdownfeld aus. <br/>
+	<tr><td>Speicherkonto</td><td>Wählen Sie das erstellte Speicherkonto im Dropdownfeld aus. <br/>
 
-Sobald ein Speicherkonto ausgewählt wurde, kann es nicht mehr geändert werden. Wird das Speicherkonto entfernt, kann der Cluster nicht mehr verwendet werden. Der HDInsight-Cluster befindet sich im selben Datencenter wie das Speicherkonto.
-</td></tr>
-</table>Notieren Sie sich den Clusternamen. Sie werden ihn später im Lernprogramm benötigen.
+	Sobald ein Speicherkonto ausgewählt wurde, kann es nicht mehr geändert werden. Wird das Speicherkonto entfernt, kann der Cluster nicht mehr verwendet werden. Der HDInsight-Cluster befindet sich im selben Datencenter wie das Speicherkonto.
+	</td></tr>
+	</table>
+	Notieren Sie sich den Clusternamen. Sie werden ihn später im Lernprogramm benötigen.
 
 
 5. Klicken Sie auf **HDINSIGHT-CLUSTER ERSTELLEN**. Wenn die Bereitstellung abgeschlossen ist, wird in der Statusspalte **Wird ausgeführt** angezeigt.
@@ -271,4 +272,4 @@ In diesem Linux-Lernprogramm haben Sie erfahren, wie Sie einen Hadoop-Cluster un
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData2.png
  
 
-<!---HONumber=August15_HO6-->
+<!------HONumber=August15_HO6-->
