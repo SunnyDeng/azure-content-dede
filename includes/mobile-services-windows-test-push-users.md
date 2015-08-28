@@ -11,4 +11,4 @@
 
 	Vergewissern Sie sich, dass die Benachrichtigung nur auf diesem Gerät empfangen wird, da das vorherige Gerät nicht mit der aktuellen Benutzer-ID markiert wurde.
 
-<!---HONumber=August15_HO6-->
+<!-----HONumber=August15_HO6-->

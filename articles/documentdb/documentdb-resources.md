@@ -32,7 +32,7 @@ Nach dem Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 ##Hierarchisches Ressourcenmodell
 Wie das folgende Diagramm veranschaulicht, besteht das **Ressourcenmodell** von DocumentDB aus Gruppen von Ressourcen, die unter einem Datenbankkonto angeordnet sind und jeweils über einen logischen und beständigen URI adressiert werden können. Eine Ressourcengruppe wird in diesem Dokument als **Feed** bezeichnet.
 
->[AZURE.NOTE]DocumentDB bietet ein hoch effizientes TCP-Protokoll mit einem RESTful-basierten Kommunikationsmodell, das über das [.NET Client-SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx) verfügbar ist.
+>[AZURE.NOTE] DocumentDB bietet ein hoch effizientes TCP-Protokoll mit einem RESTful-basierten Kommunikationsmodell, das über das [.NET Client-SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx) verfügbar ist.
 
 ![][1]  
 **Hierarchisches Ressourcenmodell unter einem Datenbankkonto**
@@ -56,12 +56,16 @@ Um mit Ressourcen zu arbeiten, müssen Sie über Ihr Azure-Abonnement [ein Docum
 ##Vergleich von system- und benutzerdefinierten Ressourcen
 Ressourcen wie Datenbankkonten, Datenbanken, Sammlungen, Benutzer, Berechtigungen, gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen verfügen alle über ein festes Schema und werden als Systemressourcen bezeichnet. Im Gegensatz dazu weisen Ressourcen wie Dokumente und Anhänge keine Einschränkungen hinsichtlich des Schemas auf und sind somit ein Beispiel für benutzerdefinierte Ressourcen. In DocumentDB werden sowohl system- als auch benutzerdefinierte Ressourcen als standardkonformes JSON dargestellt und verwaltet. Alle Ressourcen, egal ob system- oder benutzerdefiniert, haben folgende Eigenschaften gemeinsam.
 
->[AZURE.NOTE]Beachten Sie, dass in allen systemgenierten Eigenschaften in einer Ressource ein Unterstrich \(\_\) in ihrer JSON-Darstellung voransteht.
+>[AZURE.NOTE] Beachten Sie, dass in allen systemgenierten Eigenschaften in einer Ressource ein Unterstrich \(\_\) in ihrer JSON-Darstellung voransteht.
 
 
 Eigenschaft |Vom Benutzer einstellbar oder systemgeneriert?|Zweck
 ---|---|---
-_\_rid\|Vom System generiert\|Vom System generierter, eindeutiger und hierarchischer Bezeichner der. \_etag\|Vom System generiert\|ETag der Ressource, das für die Steuerung optimistischer Parallelität erforderlich ist. \_ts\|Vom System generiert\|Zuletzt aktualisierter Zeitstempel der Ressource. \_self\|Vom System generiert\|Eindeutiger aufrufbarer URI der Ressource. id\|Vom Benutzer festlegbar\|Benutzerdefinierter eindeutiger Name der Ressource.
+_rid|Vom System generiert|Vom System generierter, eindeutiger und hierarchischer Bezeichner der.
+_etag|Vom System generiert|ETag der Ressource, das für die Steuerung optimistischer Parallelität erforderlich ist.
+_ts|Vom System generiert|Zuletzt aktualisierter Zeitstempel der Ressource.
+_self|Vom System generiert|Eindeutiger aufrufbarer URI der Ressource.
+id|Vom Benutzer festlegbar|Benutzerdefinierter eindeutiger Name der Ressource.
 
 ###Übermittlungsdarstellung der Ressourcen
 DocumentDB verfügt über keine proprietären Erweiterungen des JSON-Standards oder besonderer Codierungen, und kann nur mit standardkonformen JSON-Dokumenten verwendet werden.
@@ -69,7 +73,16 @@ DocumentDB verfügt über keine proprietären Erweiterungen des JSON-Standards o
 ###Adressieren einer Ressource
 Alle Ressourcen können über URI aufgerufen werden. Der Wert der **\_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /\<feed\>/{\_rid}-Pfadsegmenten:
 
-\|Wert von "\_self" \|Beschreibung \|-------------------\|----------- \|/dbs \|Feed der Datenbanken in einem Datenbankkonto \|/dbs/{\_rid-db} \|Datenbank mit einer eindeutigen ID-Eigenschaft mit dem Wert {\_rid-db} \|/dbs/{\_rid-db}/colls/ \|Feed der Sammlungen in einer Datenbank \|/dbs/{\_rid-db}/colls/{\_rid-coll} \|Sammlung mit der eindeutigen ID-Eigenschaft mit dem Wert {\_rid-coll} \|/dbs/{\_rid-db}/users/ \|Feed der Benutzer in einer Datenbank \|/dbs/{\_rid-db}/users/{\_rid-user} \|Benutzer mit einer eindeutigen ID-Eigenschaft mit dem Wert {\_rid-user} \|/dbs/{\_rid-db}/users/{\_rid-user}/permissions \|Feed der Berechtigungen in einer Datenbank \|/dbs/{\_rid-db}/users/{\_rid-user}/permissions/{\_rid-permission} \|Berechtigung mit der eindeutigen ID-Eigenschaft mit dem Wert {\_rid-permission}.
+|Wert von "_self" |Beschreibung
+|-------------------|-----------
+|/dbs	|Feed der Datenbanken in einem Datenbankkonto
+|/dbs/{_rid-db} |Datenbank mit einer eindeutigen ID-Eigenschaft mit dem Wert {_rid-db}
+|/dbs/{_rid-db}/colls/ |Feed der Sammlungen in einer Datenbank
+|/dbs/{_rid-db}/colls/{_rid-coll} |Sammlung mit der eindeutigen ID-Eigenschaft mit dem Wert {_rid-coll}
+|/dbs/{_rid-db}/users/ |Feed der Benutzer in einer Datenbank
+|/dbs/{_rid-db}/users/{_rid-user} |Benutzer mit einer eindeutigen ID-Eigenschaft mit dem Wert {_rid-user}
+|/dbs/{_rid-db}/users/{_rid-user}/permissions |Feed der Berechtigungen in einer Datenbank
+|/dbs/{_rid-db}/users/{_rid-user}/permissions/{_rid-permission} |Berechtigung mit der eindeutigen ID-Eigenschaft mit dem Wert {_rid-permission}.
   
 Eine Ressource verfügt ebenfalls über einen eindeutigen benutzerdefinierten Namen, der über die ID-Eigenschaft der Ressource bereitgestellt wird. Die ID ist eine benutzerdefinierte Zeichenfolge mit bis zu 256 Zeichen Länge, die innerhalb des Kontexts einer bestimmten übergeordneten Ressource eindeutig ist. Der Wert der ID-Eigenschaft aller Dokumente innerhalb einer bestimmten Sammlung ist z. B. eindeutig, ist jedoch sammlungsübergreifend möglicherweise nicht eindeutig. Der Wert der ID-Eigenschaft aller Berechtigungen eines bestimmten Benutzers ist ebenso eindeutig, ist jedoch benutzerübergreifend möglicherweise eindeutig. Die \_rid-Eigenschaft wird zum Erstellen eines aufrufbaren \_self-Links einer Ressource verwendet.
 
@@ -210,7 +223,8 @@ Beachten Sie, dass kein Typsystemkonflikt vorliegt und keine "OR-Zuordnung" oder
 
 Gespeicherte Prozeduren und Trigger interagieren über ein wohldefiniertes Objektmodell, das den aktuellen Sammlungskontext offenlegt, mit einer Sammlung und den Dokumenten in einer Sammlung.
 
-Sammlungen können in DocumentDB mithilfe der [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) problemlos erstellt, gelöscht, gelesen oder aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Sammlung immer eine hohe Konsistenz. Das Löschen einer Sammlung stellt automatisch sicher, dass Sie nicht auf die darin enthaltenen Dokumente, Anhänge, gespeicherten Prozeduren, Trigger und benutzerdefinierten Funktionen zugreifen können.
+Sammlungen können in DocumentDB mithilfe der [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) problemlos erstellt, gelöscht, gelesen oder aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Sammlung immer eine hohe Konsistenz. Das Löschen einer Sammlung stellt automatisch sicher, dass Sie nicht auf die darin enthaltenen Dokumente, Anhänge, gespeicherten Prozeduren, Trigger und benutzerdefinierten Funktionen zugreifen können.   
+
 ##Gespeicherte Prozeduren, Trigger und UDFs
 Wie im vorigen Abschnitt beschrieben, können Sie eine Anwendungslogik erstellen, die direkt innerhalb einer Transaktion im Datenbankmodul ausgeführt wird. Die Anwendungslogik kann vollständig in JavaScript geschrieben und als gespeicherte Prozedur, Trigger oder benutzerdefinierte Funktion \(UDF\) gestaltet werden. Der JavaScript-Code innerhalb einer gespeicherten Prozedur oder eines Triggers kann Dokumente in eine Sammlung einfügen, sie dort ersetzen, löschen, lesen oder abfragen. Andererseits kann der JavaScript-Code innerhalb einer benutzerdefinierten Funktion nur durch die Aufzählung der Dokumente der Abfrageergebnisgruppe ohne Nebenwirkungen berechnen und eine weitere Ergebnisgruppe erzeugen. Für die Mehrinstanzenfähigkeit erzwingt DocumentDB eine strikte, auf Reservierung basierende Ressourcensteuerung. Jede gespeicherte Prozedur, jeder Trigger oder jede benutzerdefinierte Funktion erhält für die Erledigung seiner Aufgaben einen festgelegten Anteil an den Betriebssystemressourcen. Zudem können gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen \(UDFs\) keine Verknüpfungen zu externen JavaScript-Bibliotheken herstellen und werden gesperrt, wenn sie den ihnen zugeordnete Ressourcenanteil überschreiten. Sie können gespeicherte Prozeduren, Trigger oder UDFs mithilfe der REST-APIs für eine Sammlung registrieren oder die Registrierung aufheben. Während der Registrierung werden eine gespeicherte Prozedur, ein Trigger oder eine benutzerdefinierte Funktion vorkompiliert und als Bytecode gespeichert, der später ausgeführt wird. Der folgende Abschnitt veranschaulicht, wie Sie eine gespeicherte Prozedur, einen Trigger und eine UDF mithilfe des DocumentDB-JavaScript-SDKs registrieren und ausführen und die Registrierung wieder aufheben. Das JavaScript-SDK ist ein einfacher Wrapper für die [DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx).
 
@@ -350,7 +364,7 @@ DocumentDB ist ein ganz und gar offener Datenbankdienst, der keine speziellen Da
 Wie die anderen Ressourcen können Dokumente mithilfe der REST-APIs oder eines [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) einfach erstellt, ersetzt, gelöscht, gelesen, aufgezählt und abgefragt werden. Durch das Löschen eines Dokuments wird sofort das Kontingent freigegeben, das allen geschachtelten Anhängen entspricht. Der Grad der Lesekonsistenz von Dokumenten folgt der Konsistenzrichtlinie des Datenbankkontos. Diese Richtlinie kann anforderungsbasiert in Abhängigkeit von den Anforderungen Ihrer Anwendung an die Datenkonsistenz außer Kraft gesetzt werden. Bei der Abfrage von Dokumenten folgt die Lesekonsistenz dem für die Sammlung festgelegten Indizierungsmodus. Die Konsistenz folgt der Konsistenzrichtlinie des Kontos.
 
 ##Anhänge und Medien
->[AZURE.NOTE]Anhangs- und Medienressourcen sind Vorschaufunktionen.
+>[AZURE.NOTE] Anhangs- und Medienressourcen sind Vorschaufunktionen.
  
 DocumentDB gestattet es Ihnen, binäre Blobs/Medien mit DocumentDB oder in einem eigenen Remotemedienspeicher zu speichern. Zudem haben Sie die Möglichkeit, die Metadaten eines Mediums in Form eines speziellen Dokuments, dem sogenannten Anhang, darzustellen. Ein Anhang in DocumentDB ist ein spezielles \(JSON-\)Dokument, das auf die/den an anderer Stelle gespeicherten Medien/Blob verweist. Ein Anhang ist einfach ein spezielles Dokument, das die Metadaten \(z. B. Speicherort, Autor usw.\) eines Mediums erfasst, das in einem Remotemedienspeicher gespeichert wird.
 
@@ -400,6 +414,5 @@ Weitere Informationen zum Arbeiten mit Ressourcen mithilfe von HTTP-Befehlen fin
 [3]: media/documentdb-resources/resources3.png
  
 
-<!----HONumber=August15_HO7-->
 
-<!---HONumber=August15_HO7-->
+<!-----HONumber=August15_HO7-->

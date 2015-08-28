@@ -22,9 +22,13 @@ Anhand von Transformationsaktivitäten werden in Azure Data Factory Ihre Rohdate
 
 Transformationsaktivität | Compute-Umgebung 
 ----------------------- | --------------------
-[Hive](data-factory-hive-activity.md) | HDInsight \[Hadoop\] \[Pig\]\(data-factory-pig-activity.md\) | HDInsight \[Hadoop\] \[MapReduce\]\(data-factory-map-reduce.md\) | HDInsight \[Hadoop\] \[Hadoop-Streaming\]\(https://msdn.microsoft.com/library/mt185698.aspx\) | HDInsight \[Hadoop\] \[Machine Learning Batch Scoring\]\(data-factory-create-predictive-pipelines.md\) | Azure-VM 
+[Hive](data-factory-hive-activity.md) | HDInsight \[Hadoop\] 
+[Pig](data-factory-pig-activity.md) | HDInsight [Hadoop]  
+[MapReduce](data-factory-map-reduce.md) | HDInsight [Hadoop]  
+[Hadoop-Streaming](https://msdn.microsoft.com/library/mt185698.aspx) | HDInsight [Hadoop]
+[Machine Learning Batch Scoring](data-factory-create-predictive-pipelines.md) | Azure-VM 
 [Gespeicherte Prozedur](data-factory-stored-proc-activity.md) | Azure SQL | 
-[DotNet](data-factory-use-custom-activities.md) | HDInsight \[Hadoop\] oder Azure Batch    
+[DotNet](data-factory-use-custom-activities.md) | HDInsight [Hadoop] oder Azure Batch    
 
 Sie müssen einen verknüpften Dienst für die Compute-Umgebung erstellen und dann den verknüpften Dienst verwenden, wenn Sie eine Transformationsaktivität definieren. Es gibt zwei Arten von Compute-Umgebungen, die von Data Factory unterstützt werden.
 
@@ -33,4 +37,4 @@ Sie müssen einen verknüpften Dienst für die Compute-Umgebung erstellen und da
 
 Unter dem Artikel [verknüpfte Compute-Dienste](data-factory-compute-linked-services.md) finden Sie Informationen zu verknüpften Compute-Diensten, die von Data Factory unterstützt werden.
 
-<!---HONumber=August15_HO7-->
+<!-----HONumber=August15_HO7-->

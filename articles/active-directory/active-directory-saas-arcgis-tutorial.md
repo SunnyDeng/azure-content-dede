@@ -63,7 +63,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-arcgis-tutorial/IC784739.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **ArcGIS-Anmelde-URL** die von Ihren Benutzern verwendete URL im Format "**https://company.maps.arcgis.com*" ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **ArcGIS-Anmelde-URL** die von Ihren Benutzern verwendete URL im Format "*https://company.maps.arcgis.com*" ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-arcgis-tutorial/IC784740.png "App-URL konfigurieren")
 
@@ -99,7 +99,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-arcgis-tutorial/IC784746.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
 
-Damit sich Azure AD-Benutzer bei ArcGIS anmelden können, müssen sie in ArcGIS bereitgestellt werden. Im Fall von ArcGIS ist die Bereitstellung eine manuelle Aufgabe.
+Damit sich Azure AD-Benutzer bei ArcGIS anmelden können, müssen sie in ArcGIS bereitgestellt werden.  
+Im Fall von ArcGIS ist die Bereitstellung eine manuelle Aufgabe.
 
 ###So konfigurieren Sie die Benutzerbereitstellung
 
@@ -113,18 +114,18 @@ Damit sich Azure AD-Benutzer bei ArcGIS anmelden können, müssen sie in ArcGIS
 
     ![Add Members Automatically](./media/active-directory-saas-arcgis-tutorial/IC784748.png "Add Members Automatically")
 
-4.  Führen Sie auf der Dialogfeldseite **Members** die folgenden Schritte aus:
+4.  Führen Sie auf der Dialogfeldseite **Mitglieder** die folgenden Schritte aus:
 
     ![Add and review](./media/active-directory-saas-arcgis-tutorial/IC784749.png "Add and review")
 
     1.  Geben Sie den **Vornamen**, den **Nachnamen** und die **E-Mail-Adresse** eines gültigen AAD-Benutzerkontos ein, das Sie bereitstellen möchten.
     2.  Klicken Sie auf**Add And Review**.
 
-5.  Überprüfen Sie die eingegebenen Daten, und klicken Sie dann auf **Add Members**.
+5.  Überprüfen Sie die eingegebenen Daten, und klicken Sie dann auf **Mitglieder hinzufügen**.
 
     ![Add member](./media/active-directory-saas-arcgis-tutorial/IC784750.png "Add member")
 
->[AZURE.NOTE]Sie können AAD-Benutzerkonten auch mithilfe von anderen Tools zum Erstellen von ArcGIS-Benutzerkonten oder mithilfe der von ArcGIS bereitgestellten APIs erstellen.
+>[AZURE.NOTE] Sie können AAD-Benutzerkonten auch mithilfe von anderen Tools zum Erstellen von ArcGIS-Benutzerkonten oder mithilfe der von ArcGIS bereitgestellten APIs erstellen.
 
 ##Zuweisen von Benutzern
 
@@ -144,4 +145,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!-----HONumber=August15_HO7-->

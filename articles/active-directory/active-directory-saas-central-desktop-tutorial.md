@@ -49,9 +49,11 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cen
     ![Central Desktop](./media/active-directory-saas-central-desktop-tutorial/IC769560.png "Central Desktop")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Central Desktop zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei in Ihren Central Desktop-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Central Desktop zu authentifizieren. 
+Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei in Ihren Central Desktop-Mandanten hochladen. 
+Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\) weitere Informationen.
 
- 
+Nase
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -66,7 +68,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 3.  Führen Sie auf der Seite **App-URL konfigurieren** die folgenden Schritte aus, und klicken Sie dann auf **Weiter**:
 
     -   Geben Sie im Textfeld**Central Desktop-Anmelde-URL** die URL Ihres Central Desktop-Mandanten ein \(z. B. **http://contoso.centraldesktop.com*).
--   Geben Sie im Textfeld "Central Desktop-Antwort-URL" Ihre Central Desktop AssertionConsumerService-URL ein \(z. B. https://contoso.centraldesktop.com/saml2-assertion.php).
+    -   Geben Sie im Textfeld "Central Desktop-Antwort-URL" Ihre Central Desktop AssertionConsumerService-URL ein \(z. B. https://contoso.centraldesktop.com/saml2-assertion.php).
 
     >[AZURE.NOTE]Sie finden den Wert in den Central Desktop-Metadaten \(z. B. **http://contoso.centraldesktop.com*).
 
@@ -152,4 +154,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!------HONumber=August15_HO7-->

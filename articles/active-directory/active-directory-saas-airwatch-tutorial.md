@@ -114,13 +114,13 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Attribut](./media/active-directory-saas-airwatch-tutorial/IC791927.png "Attribut")
 
-    1.  Geben Sie im Textfeld **Object Identifier** den Wert ****http://schemas.microsoft.com/identity/claims/objectidentifier** ein.
-2.  Geben Sie im Textfeld **Username** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
-3.  Geben Sie im Textfeld **Display Name** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
-4.  Geben Sie im Textfeld **First Name** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
-5.  Geben Sie im Textfeld **Last Name** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname** ein.
-6.  Geben Sie im Textfeld **Email** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
-7.  Klicken Sie auf **Speichern**.
+    1.  Geben Sie im Textfeld **Object Identifier** den Wert **http://schemas.microsoft.com/identity/claims/objectidentifier** ein.
+    2.  Geben Sie im Textfeld **Username** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
+    3.  Geben Sie im Textfeld **Display Name** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
+    4.  Geben Sie im Textfeld **First Name** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
+    5.  Geben Sie im Textfeld **Last Name** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname** ein.
+    6.  Geben Sie im Textfeld **Email** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
+    7.  Klicken Sie auf **Speichern**.
 
 14. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
@@ -168,4 +168,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!-------HONumber=August15_HO7-->

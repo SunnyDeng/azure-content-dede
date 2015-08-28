@@ -144,11 +144,11 @@ Installieren Sie Anbieter und Agent. Wenn Sie die Installation für einen Hyper-
 	- Wenn für den Standardproxy des Hyper-V-Servers eine Authentifizierung erforderlich ist, müssen Sie die Option für den benutzerdefinierten Proxyserver auswählen. Geben Sie die Details zum Standardproxy sowie die Anmeldeinformationen ein.
 	- Wenn Sie einen benutzerdefinierten Proxyserver verwenden möchten, richten Sie diesen vor der Anbieterinstallation ein. 
 	- Der Hyper-V-Host sollte auf die folgenden URLs Zugriff haben:
-		- **.hypervrecoverymanager.windowsazure.com
-- **.accesscontrol.windows.net
-- **.backup.windowsazure.com
-- **.blob.core.windows.net
-- **.store.core.windows.net
+		- *.hypervrecoverymanager.windowsazure.com
+		- *.accesscontrol.windows.net
+		- *.backup.windowsazure.com
+		- *.blob.core.windows.net
+		- *.store.core.windows.net
 
 	- Lassen Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) angegebenen IP-Adressen sowie das HTTPS-Protokoll \(443\) zu. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
@@ -306,4 +306,4 @@ Gehen Sie wie folgt vor, um das Testfailover durchzuführen:
 
 Wenn die Bereitstellung eingerichtet ist und ausgeführt wird, informieren Sie sich über [Failover](site-recovery-failover.md).
 
-<!---HONumber=August15_HO7-->
+<!-----HONumber=August15_HO7-->

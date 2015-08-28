@@ -141,20 +141,20 @@ Um ein Supportticket für ASR zu öffnen, wenden Sie sich an den Azure-Support u
 
 ## KB-Artikel
 
--   \[How to preserve the drive letter for protected virtual machines \(in englischer Sprache\)
-    > that are failed over or migrated to Azure\]\(http://support.microsoft.com/kb/3031135\)
+-   [How to preserve the drive letter for protected virtual machines (in englischer Sprache)
+    > that are failed over or migrated to Azure](http://support.microsoft.com/kb/3031135)
 
--   \[How to troubleshoot Azure Recovery
-    > Services \(in englischer Sprache\)\] \(http://support.microsoft.com/kb/3005185\)
+-   [How to troubleshoot Azure Recovery
+    > Services (in englischer Sprache)](http://support.microsoft.com/kb/3005185)
 
--   \[How to Enable Debug Logging for the Azure Site Recovery in Hyper-V
-    > Site Protection \(in englischer Sprache\)\] \(http://support.microsoft.com/kb/3033922\)
+-   [How to Enable Debug Logging for the Azure Site Recovery in Hyper-V
+    > Site Protection (in englischer Sprache)](http://support.microsoft.com/kb/3033922)
 
--   \[ASR: "The cluster resource could not be found" error when you try
-    > to enable protection for a virtual machine \(in englischer Sprache\)\] \(http://support.microsoft.com/kb/3010979\)
+-   [ASR: "The cluster resource could not be found" error when you try
+    > to enable protection for a virtual machine (in englischer Sprache)](http://support.microsoft.com/kb/3010979)
     
--   \[Understand & Troubleshoot Hyper-V Replica
-    > Guide \(in englischer Sprache\)\] \(http://www.microsoft.com/en-in/download/details.aspx?id=29016\)
+-   [Understand & Troubleshoot Hyper-V Replica
+    > Guide (in englischer Sprache)] (http://www.microsoft.com/en-in/download/details.aspx?id=29016)
 	
 	
 	
@@ -223,4 +223,4 @@ Konfigurationsserver \(Configuration Server, CS\), Prozessserver \(Process Serve
 ### Remotedesktop-Problembehandlung nach einem Failover
 Viele Kunden haben Probleme beim Herstellen einer Verbindung mit dem virtuellen Computer in Azure festgestellt, für den ein Failover ausgeführt wurde. Stellen Sie anhand des Dokuments für die Problembehandlung eine RDP-Verbindung mit dem virtuellen Computer her. [Link zum Dokument](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)
 
-<!---HONumber=August15_HO7-->
+<!----HONumber=August15_HO7-->

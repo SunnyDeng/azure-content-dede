@@ -110,9 +110,12 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     1.  Geben Sie im Textfeld „Name des Identitätsanbieters“ einen Anbieternamen ein \(z. B.: *SPInitiatedSSO*\).
     2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Workday** den Wert für die **Identitätsanbieter-ID**, und fügen Sie ihn in das Textfeld **Aussteller** ein.
-    3.  Klicken Sie auf **Öffentliches Schlüsselzertifikat des Identitätsanbieters**, und klicken Sie dann auf **Erstellen**. ![Erstellen](./media/active-directory-saas-workday-tutorial/IC782928.png "Erstellen")
-    4.  Klicken Sie auf **Öffentlichen x509-Schlüssel erstellen**. ![Erstellen](./media/active-directory-saas-workday-tutorial/IC782929.png "Erstellen")
-    5.  Führen Sie im Abschnitt **Öffentlichen x509-Schlüssel anzeigen** die folgenden Schritte aus: ![Öffentlichen x509-Schlüssel anzeigen](./media/active-directory-saas-workday-tutorial/IC782930.png "Öffentlichen x509-Schlüssel anzeigen")
+    3.  Klicken Sie auf **Öffentliches Schlüsselzertifikat des Identitätsanbieters**, und klicken Sie dann auf **Erstellen**.
+        ![Erstellen](./media/active-directory-saas-workday-tutorial/IC782928.png "Erstellen")
+    4.  Klicken Sie auf **Öffentlichen x509-Schlüssel erstellen**.
+        ![Erstellen](./media/active-directory-saas-workday-tutorial/IC782929.png "Erstellen")
+    5.  Führen Sie im Abschnitt **Öffentlichen x509-Schlüssel anzeigen** die folgenden Schritte aus:
+        ![Öffentlichen x509-Schlüssel anzeigen](./media/active-directory-saas-workday-tutorial/IC782930.png "Öffentlichen x509-Schlüssel anzeigen")
         1.  Geben Sie im Textfeld **Name** einen Namen für das Zertifikat ein \(z. B.: *PPE\_SP*\).
         2.  Geben Sie im Textfeld **Gültig ab** den „Gültig-ab“-Attributwert des Zertifikats ein.
         3.  Geben Sie im Textfeld **Gültig bis** den „Gültig-bis“-Attributwert des Zertifikats ein.
@@ -127,16 +130,19 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
         6.  Fügen Sie in der Textbox **Zertifikat** den Inhalt der Zwischenablage ein.
         7.  Klicken Sie auf **OK**.
 
-    6.  Führen Sie die folgenden Schritte aus: ![SSO-Konfiguration](./media/active-directory-saas-workday-tutorial/IC792131.png "SSO-Konfiguration")
+    6.  Führen Sie die folgenden Schritte aus:
+        ![SSO-Konfiguration](./media/active-directory-saas-workday-tutorial/IC792131.png "SSO-Konfiguration")
         1.  Geben Sie im Textfeld **Dienstanbieter-ID** ****http://www.workday.com** ein.
-2.  Wählen Sie **SP-initiierte SAML-Authentifizierung aktivieren**.
+        2.  Wählen Sie **SP-initiierte SAML-Authentifizierung aktivieren**.
         3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Workday** den Wert für **Dienst-URL für einmaliges Anmelden**, und fügen Sie ihn in das Textfeld **Dienst-URL des Identitätsanbieters für einmaliges Anmelden** ein.
         4.  Wählen Sie **SP-initiierte Authentifizierungsanfrage nicht verkleinern**.
 
-    7.  Führen Sie die folgenden Schritte aus: ![Signaturmethode für Authentifizierungsanfragen](./media/active-directory-saas-workday-tutorial/IC782932.png "Signaturmethode für Authentifizierungsanfragen")
+    7.  Führen Sie die folgenden Schritte aus:
+        ![Signaturmethode für Authentifizierungsanfragen](./media/active-directory-saas-workday-tutorial/IC782932.png "Signaturmethode für Authentifizierungsanfragen")
         1.  Wählen Sie als **Signaturmethode für Authentifizierungsanfragen** **SHA256**.
 
-    8.  Klicken Sie auf **OK**. ![OK](./media/active-directory-saas-workday-tutorial/IC782933.png "OK")
+    8.  Klicken Sie auf **OK**.
+        ![OK](./media/active-directory-saas-workday-tutorial/IC782933.png "OK")
 
 12. Klicken Sie im Azure AD-Portal auf der Seite **Einmaliges Anmelden bei Workday konfigurieren** auf **Fertig stellen**, um das Dialogfeld zu schließen.
 
@@ -164,4 +170,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!-----HONumber=August15_HO7-->

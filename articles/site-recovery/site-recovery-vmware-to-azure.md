@@ -23,7 +23,8 @@ In diesem Artikel wird beschrieben, wie Site Recovery zu folgenden Zwecken berei
 - **Schützen virtueller VMware-Computer** – Koordinieren von Replikation, Failover und Wiederherstellung von lokalen virtuellen VMware-Computern mit Azure
 - **Schützen physischer Server** – Koordinieren von Replikation, Failover und Wiederherstellung von lokalen physischen Windows- und Linux-Servern mit Azure mithilfe des Azure Site Recovery-Diensts
 
-Dieser Artikel enthält eine Übersicht, informiert über die Voraussetzungen für die Bereitstellung und bietet Setupanweisungen. Am Ende des Artikels wird das Replizieren der virtuellen VMware-Computer oder physischen Server in Azure beschrieben. Sollten Probleme auftreten, stellen Sie Ihre Fragen im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+Dieser Artikel enthält eine Übersicht, informiert über die Voraussetzungen für die Bereitstellung und bietet Setupanweisungen. Am Ende des Artikels wird das Replizieren der virtuellen VMware-Computer oder physischen Server in Azure beschrieben. 
+Sollten Probleme auftreten, stellen Sie Ihre Fragen im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
 ## Was ist Azure Site Recovery?
@@ -78,7 +79,7 @@ Wichtige zu berücksichtigende Punkte:
 - **Anzahl von Quellen pro Masterzielserver** – Mit einem einzelnen Masterzielserver können mehrere Quellcomputer geschützt werden. Ein einzelner Quellcomputer kann jedoch nicht über mehrere Masterzielserver geschützt werden, da bei der Datenträgerreplikation eine virtuelle Festplatte, die die Größe des Datenträgers widerspiegelt, in Azure-BLOB-Speicher erstellt und als Datenträger mit dem Masterzielserver verbunden wird.  
 - **Maximale tägliche Änderungsrate pro Quellcomputer** – Bei der empfohlenen Änderungsrate pro Quellcomputer müssen drei Faktoren berücksichtigt werden. Im Hinblick auf den Zieldatenträger sind für jeden Vorgang auf dem Quellcomputer zwei IOPS auf dem Zieldatenträger erforderlich. Der Grund dafür ist, dass auf dem Zieldatenträger ein Lesevorgang für alte Daten und ein Schreibvorgang für neue Daten erfolgen. 
 	- **Vom Prozessserver unterstützte tägliche Änderungsrate** – Ein Quellcomputer kann nicht mehrere Prozessserver umfassen. Ein einzelner Prozessserver unterstützt eine tägliche Änderungsrate von bis zu 1 TB. Daher beträgt die maximale Datenänderungsrate pro Tag, die für einen Quellcomputer unterstützt wird, 1 TB. 
-	- **Maximaler vom Zieldatenträger unterstützter Durchsatz ** – Die maximale Codeänderung pro Quelldatenträger darf nicht mehr als 144 GB/Tag \(mit einer Schreibgröße von 8 K\) betragen. Informationen zum Durchsatz und den IOPS des Ziels für verschiedene Schreibgrößen finden Sie in der Tabelle im Abschnitt zum Masterzielserver. Diese Zahl muss durch zwei dividiert werden, da jede Quell-IOPS 2 IOPS auf dem Zieldatenträger generiert. Ziehen Sie beim Konfigurieren des Ziels für das Premium-Speicherkonto den Artikel [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) zurate.
+	- **Maximaler vom Zieldatenträger unterstützter Durchsatz** – Die maximale Codeänderung pro Quelldatenträger darf nicht mehr als 144 GB/Tag \(mit einer Schreibgröße von 8 K\) betragen. Informationen zum Durchsatz und den IOPS des Ziels für verschiedene Schreibgrößen finden Sie in der Tabelle im Abschnitt zum Masterzielserver. Diese Zahl muss durch zwei dividiert werden, da jede Quell-IOPS 2 IOPS auf dem Zieldatenträger generiert. Ziehen Sie beim Konfigurieren des Ziels für das Premium-Speicherkonto den Artikel [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) zurate.
 	- **Maximaler vom Speicherkonto unterstützter Durchsatz** – Ein Quellcomputer kann nicht mehrere Speicherkonten umfassen. Da ein Speicherkonto bis zu 20.000 Anforderungen pro Sekunde annimmt und jede Quell-IOPS 2 IOPS auf dem Masterzielserver generiert, wird empfohlen, die Anzahl der IOPS für den Quellcomputer auf 10.000 zu beschränken. Ziehen Sie beim Konfigurieren der Quelle für das Premium-Speicherkonto den Artikel [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) zurate.
 
 ### Überlegungen zu Komponentenservern
@@ -228,7 +229,7 @@ Es gibt zwei Möglichkeiten, die Netzwerkkonnektivität zwischen Ihrem lokalen S
 4. Geben Sie unter **Details des neuen Konfigurationsservers** Folgendes an:
 
 	- Einen Namen für den Konfigurationsserver und die Anmeldeinformationen für die Verbindung mit dem Server.
-	- Wählen Sie im Dropdownmenü als Netzwerkkonnektivitätstyp die Option „Öffentliches Internet“ oder „VPN“.[AZURE.NOTE]Diese Einstellung ist eine Entscheidung, die zur Bereitstellungszeit getroffen werden muss und später nicht geändert werden kann.  
+	- Wählen Sie im Dropdownmenü als Netzwerkkonnektivitätstyp die Option „Öffentliches Internet“ oder „VPN“.[AZURE.NOTE] Diese Einstellung ist eine Entscheidung, die zur Bereitstellungszeit getroffen werden muss und später nicht geändert werden kann.  
 	- Wählen Sie das Azure-Netzwerk aus, in dem sich der Server befinden soll. Wenn Sie VPN als Netzwerkkonnektivitätstyp angegeben haben, sollten Sie sicherstellen, dass dieses virtuelle Azure-Netzwerk mit Ihrem lokalen Standort über eine ExpressRoute-Verbindung oder ein Standort-zu-Standort-VPN verbunden ist.
 	- Geben Sie die interne IP-Adresse und das Subnetz an, die bzw. das dem Server zugewiesen werden soll. Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne Verwendung durch Azure reserviert sind. Verwenden Sie eine beliebige andere verfügbare IP-Adresse.
 	
@@ -248,7 +249,7 @@ Es gibt zwei Möglichkeiten, die Netzwerkkonnektivität zwischen Ihrem lokalen S
 	
 	![VM-Endpunkte](./media/site-recovery-vmware-to-azure/ASRVMWare_VMEndpoints.png)
 
-    >[AZURE.WARNING]Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Konfigurationsservers erstellt wurden, nicht ändern oder löschen.
+    >[AZURE.WARNING] Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Konfigurationsservers erstellt wurden, nicht ändern oder löschen.
 
 Der Konfigurationsserver wird in einem automatisch erstellten Azure-Clouddienst mit einer reservierten IP-Adresse bereitgestellt. Die reservierte Adresse ist erforderlich, um sicherzustellen, dass die IP-Adresse des Konfigurationsserver-Clouddiensts nach Neustarts der virtuellen Computer \(einschließlich des Konfigurationsservers\) im Clouddienst gleich bleibt. Wenn der Konfigurationsserver außer Betrieb gesetzt wird und die Reservierung der öffentlichen IP-Adresse nicht manuell rückgängig gemacht wird, bleibt die öffentliche IP-Adresse reserviert. Standardmäßig sind bis zu 20 reservierte öffentliche IP-Adressen pro Abonnement zulässig. [Weitere Informationen](../virtual-network/virtual-networks-reserved-private-ip.md) über reservierte IP-Adressen.
 
@@ -346,7 +347,7 @@ Beachten Sie Folgendes:
 
 Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne Verwendung durch Azure reserviert sind. Geben Sie eine beliebige andere verfügbare IP-Adresse an.
 
->[AZURE.NOTE]Wählen Sie bei der Konfiguration des Schutzes für Workloads, die konsistent hohe E/A-Leistung und niedrige Latenz erfordern, "Standard DS4" mit [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal.md) aus, um E/A-intensive Workloads zu hosten.
+>[AZURE.NOTE] Wählen Sie bei der Konfiguration des Schutzes für Workloads, die konsistent hohe E/A-Leistung und niedrige Latenz erfordern, "Standard DS4" mit [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal.md) aus, um E/A-intensive Workloads zu hosten.
 
 
 3. Ein virtueller Computer des Windows-Masterzielservers mit den folgenden Endpunkten wird erstellt \(öffentliche Endpunkte werden nur erstellt, wenn der Bereitstellungstyp „Öffentliches Internet“ lautet\):
@@ -362,7 +363,7 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 	- Benutzerdefiniert1: Der öffentliche Port wird vom Prozessserver zum Senden von Steuerungsmetadaten über das Internet verwendet. Der private Port 9080 wird vom Prozessserver zum Senden von Steuerungsdaten an den Masterzielserver über ein VPN verwendet.
 	- SSH: Privater Port 22
 
-    >[AZURE.WARNING]Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Masterzielservers erstellt wurden, nicht ändern oder löschen.
+    >[AZURE.WARNING] Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Masterzielservers erstellt wurden, nicht ändern oder löschen.
 
 5. Warten Sie unter **Virtuelle Computer**, bis der virtuelle Computer gestartet wird.
 
@@ -380,9 +381,10 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 
 8. Wenn Sie Linux verwenden:
 	1. Stellen Sie sicher, dass Sie die aktuellen Linux Integration Services \(LIS\) installiert haben, bevor Sie die Masterzielserver-Software installieren. Die neueste Version von LIS sowie eine Anleitung zur Installation finden Sie [hier](https://www.microsoft.com/de-de/download/details.aspx?id=46842). Starten Sie den Computer nach der LIS-Installation neu.
-	2. Klicken Sie unter ** Zielressourcen \(Azure-Ressourcen\) vorbereiten** auf **Weitere Software herunterladen und installieren \(nur für Linux-Masterzielserver\)**, um das Linux-Masterzielserverpaket herunterzuladen. Kopieren Sie die heruntergeladene TAR-Datei mit einem SFTP-Client auf den virtuellen Computer. Alternativ können Sie sich bei dem bereitgestellten Linux-Masterzielserver anmelden und die Datei mithilfe von *wget http://go.microsoft.com/fwlink/?LinkID=529757&clcid=0x409* herunterladen.
-2. Melden Sie sich über einen Secure Shell-Client beim Server an. Wenn Sie über VPN mit dem Azure-Netzwerk verbunden sind, verwenden Sie die interne IP-Adresse. Verwenden Sie andernfalls die externe IP-Adresse und den öffentlichen SSH-Endpunkt.
-	3. Extrahieren Sie die Dateien aus dem GZIP-Installationsprogramm, indem Sie folgenden Befehl ausführen: **tar –xvzf Microsoft-ASR\_UA\_8.4.0.0\_RHEL6-64*** ![Linux-Masterzielserver](./media/site-recovery-vmware-to-azure/ASRVMWare_TSLinuxTar.png)
+	2. Klicken Sie unter **Zielressourcen \(Azure-Ressourcen\) vorbereiten** auf **Weitere Software herunterladen und installieren \(nur für Linux-Masterzielserver\)**, um das Linux-Masterzielserverpaket herunterzuladen. Kopieren Sie die heruntergeladene TAR-Datei mit einem SFTP-Client auf den virtuellen Computer. Alternativ können Sie sich bei dem bereitgestellten Linux-Masterzielserver anmelden und die Datei mithilfe von *wget http://go.microsoft.com/fwlink/?LinkID=529757&clcid=0x409* herunterladen.
+	2. Melden Sie sich über einen Secure Shell-Client beim Server an. Wenn Sie über VPN mit dem Azure-Netzwerk verbunden sind, verwenden Sie die interne IP-Adresse. Verwenden Sie andernfalls die externe IP-Adresse und den öffentlichen SSH-Endpunkt.
+	3. Extrahieren Sie die Dateien aus dem GZIP-Installationsprogramm, indem Sie folgenden Befehl ausführen: **tar –xvzf Microsoft-ASR\_UA\_8.4.0.0\_RHEL6-64***
+	![Linux-Masterzielserver](./media/site-recovery-vmware-to-azure/ASRVMWare_TSLinuxTar.png)
 	4. Stellen Sie sicher, dass Sie sich in dem Verzeichnis befinden, in das Sie den Inhalt der TAR-Datei extrahiert haben.
 	5. Kopieren Sie die Passphrase für den Konfigurationsserver mit dem Befehl **echo *`<passphrase>`* \>passphrase.txt** in eine lokale Datei.
 	6. Führen Sie den Befehl „**sudo ./install -t both -a host -R MasterTarget -d /usr/local/ASR -i *`<Configuration server internal IP address>`* -p 443 -s y -c https -P passphrase.txt**“ aus.
@@ -393,11 +395,11 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 
 	![Zielserver überprüfen](./media/site-recovery-vmware-to-azure/ASRVMWare_TSList.png)
 
->[AZURE.NOTE]Beachten Sie, dass es bis zu 15 Minuten nach Abschluss der Registrierung dauern kann, bis der Masterzielserver unter dem Konfigurationsserver aufgeführt wird. Wenn die Ansicht sofort aktualisiert werden soll, aktualisieren Sie den Konfigurationsserver, indem Sie unten auf der Seite "Konfigurationsserver" auf die Schaltfläche "Aktualisieren" klicken.
+>[AZURE.NOTE] Beachten Sie, dass es bis zu 15 Minuten nach Abschluss der Registrierung dauern kann, bis der Masterzielserver unter dem Konfigurationsserver aufgeführt wird. Wenn die Ansicht sofort aktualisiert werden soll, aktualisieren Sie den Konfigurationsserver, indem Sie unten auf der Seite "Konfigurationsserver" auf die Schaltfläche "Aktualisieren" klicken.
 
 ## Schritt 4: Bereitstellen eines lokalen Prozessservers
 
->[AZURE.NOTE]Es wird empfohlen, eine statische IP-Adresse für den Prozessserver zu konfigurieren, um sicherzustellen, dass diese nach einem Neustart beibehalten wird.
+>[AZURE.NOTE] Es wird empfohlen, eine statische IP-Adresse für den Prozessserver zu konfigurieren, um sicherzustellen, dass diese nach einem Neustart beibehalten wird.
 
 1. Klicken Sie auf „Schnellstart“ \> **Prozessserver lokal installieren** \> **Prozessserver herunterladen und installieren**.
 
@@ -449,7 +451,7 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 
 12. Beachten Sie, dass Sie möglicherweise den Server neu starten müssen, um die Installation abzuschließen. Überprüfen Sie unter **Konfigurationsserver** \> **Serverdetails**, ob der Prozessserver angezeigt wird und erfolgreich im Tresor registriert wurde.
 
->[AZURE.NOTE]Es kann bis zu 15 Minuten nach Abschluss der Registrierung dauern, bis der Prozessserver unter dem Konfigurationsserver aufgeführt wird. Wenn die Ansicht sofort aktualisiert werden soll, aktualisieren Sie den Konfigurationsserver, indem Sie unten auf der Seite "Konfigurationsserver" auf die Schaltfläche "Aktualisieren" klicken.
+>[AZURE.NOTE] Es kann bis zu 15 Minuten nach Abschluss der Registrierung dauern, bis der Prozessserver unter dem Konfigurationsserver aufgeführt wird. Wenn die Ansicht sofort aktualisiert werden soll, aktualisieren Sie den Konfigurationsserver, indem Sie unten auf der Seite "Konfigurationsserver" auf die Schaltfläche "Aktualisieren" klicken.
  
 ![Prozessserver überprüfen](./media/site-recovery-vmware-to-azure/ASRVMWare_ProcessServerRegister.png)
 
@@ -636,7 +638,7 @@ So installieren Sie den Dienst auf dem Zielserver:
 
     ./install -t both -a host -R MasterTarget -d /usr/local/ASR -i 104.40.75.37 -p 62519 -s y -c https -P passphrase.txt
 
->[AZURE.NOTE]Wenn Sie einer Schutzgruppe Computer hinzufügen, auf denen bereits eine geeignete Version des Mobilitätsdiensts ausgeführt wird, wird die Pushinstallation übersprungen.
+>[AZURE.NOTE] Wenn Sie einer Schutzgruppe Computer hinzufügen, auf denen bereits eine geeignete Version des Mobilitätsdiensts ausgeführt wird, wird die Pushinstallation übersprungen.
 
 
 ## Schritt 9: Aktivieren des Schutzes
@@ -771,4 +773,4 @@ The information in Section B is regarding Third Party Code components that are b
 
 Die vollständige Datei steht im [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428) zur Verfügung. Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
 
-<!------HONumber=August15_HO7-->
+<!--------HONumber=August15_HO7-->
