@@ -34,7 +34,7 @@ Dieses Lernprogramm beschreibt Folgendes:
 
 ## Erstellen eines virtuellen Computers unter Windows Server
 
-[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-WindowsVM.md)]
+[AZURE.INCLUDE [virtual-machines-create-windowsvm](../../includes/virtual-machines-create-windowsvm.md)]
 
 ## Datenträger anfügen
 
@@ -128,4 +128,4 @@ Um die Remoteverbindung zum MySQL Server-Dienst zu testen, der auf dem virtuelle
 
 Informationen zu MySQL finden Sie in der [MySQL-Dokumentation](http://dev.mysql.com/doc/)
 
-<!---HONumber=August15_HO7-->
+<!----HONumber=August15_HO7-->

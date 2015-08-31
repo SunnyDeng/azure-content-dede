@@ -51,7 +51,7 @@ Wenn Sie auf einem älteren Gerät testen, konsultieren Sie Einrichten des Googl
 
 ###Hinzufügen von Google Play Services zum Projekt
 
-[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-Google-play-services.md)]
+[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-google-play-services.md)]
 
 ###Hinzufügen des Codes
 
@@ -122,4 +122,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Azure Management Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO7-->
+<!----HONumber=August15_HO7-->

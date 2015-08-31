@@ -32,6 +32,6 @@ Ein *benutzerdefinierter* virtueller Computer ist einfach ein virtueller Compute
 
 ##So erstellen Sie den virtuellen Computer
 
-[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-WindowsVM.md)]
+[AZURE.INCLUDE [virtual-machines-create-windowsvm](../../includes/virtual-machines-create-windowsvm.md)]
 
-<!---HONumber=August15_HO7-->
+<!----HONumber=August15_HO7-->

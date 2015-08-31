@@ -41,7 +41,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 
 ##Erstellen eines Projekts, das Google Cloud Messaging unterstützt
 
-[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-Google-cloud-messaging.md)]
+[AZURE.INCLUDE [mobile-services-enable-google-cloud-messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 
 ##Konfigurieren eines neuen Notification Hubs
@@ -64,7 +64,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 
 ###Hinzufügen von Google Play Services zum Projekt
 
-[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-Google-play-services.md)]
+[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-google-play-services.md)]
 
 ###Hinzufügen des Codes
 
@@ -523,4 +523,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [Verwenden von Notification Hubs zum Übermitteln von Nachrichten]: notification-hubs-aspnet-backend-android-breaking-news.md
  
 
-<!---HONumber=August15_HO6-->
+<!-----HONumber=August15_HO6-->
