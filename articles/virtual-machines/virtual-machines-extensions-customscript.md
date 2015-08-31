@@ -74,9 +74,9 @@ Die CustomScript-Erweiterung kann mithilfe des nachstehenden Cmdlets von der VM 
 
 ### Verwenden der CustomScript-Erweiterung mit Vorlagen
 
-Um Informationen zur Verwendung der CustomScript-Erweiterung mit Vorlagen zu erhalten, klicken Sie auf die Dokumentation \[hier\] \(virtual-machines-extensions-customscript -with template.md\).
+Um Informationen zur Verwendung der CustomScript-Erweiterung mit Vorlagen zu erhalten, klicken Sie auf die Dokumentation [hier] (virtual-machines-extensions-customscript -with template.md).
 
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->
