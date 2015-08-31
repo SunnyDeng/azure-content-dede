@@ -42,7 +42,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 
 ##<a name="register"></a>Aktivieren von Google Cloud Messaging
 
-[AZURE.INCLUDE [Mobile-Services-aktivieren-Google-Cloud-Messaging](../../includes/mobile-services-enable-Google-cloud-messaging.md)]
+[AZURE.INCLUDE [Mobile-Services-aktivieren-google-cloud-Messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 ##<a name="configure-hub"></a>Konfigurieren Ihres Notification Hub
 
@@ -498,4 +498,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [Azure Messaging-Komponente]: http://components.xamarin.com/view/azure-messaging
  
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

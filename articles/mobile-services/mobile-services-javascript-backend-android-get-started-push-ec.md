@@ -39,7 +39,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 
 ##<a id="register"></a>Aktivieren von Google Cloud Messaging
 
-[AZURE.INCLUDE [Aktivieren von GCM](../../includes/mobile-services-enable-Google-cloud-messaging.md)]
+[AZURE.INCLUDE [Aktivieren von GCM](../../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 ##<a id="configure"></a>Konfigurieren von Mobile Services zum Senden von Pushanforderungen
 
@@ -212,4 +212,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Send template-based notifications to subscribers]: ../notification-hubs-android-send-localized-breaking-news.md
  
 
-<!----HONumber=August15_HO8-->
+<!-----HONumber=August15_HO8-->
