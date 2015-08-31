@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/29/2015"
+	ms.date="08/19/2015"
 	ms.author="andalmia"/>
 
 # Slack-Connector
@@ -76,7 +76,8 @@ Eigenschaft | Beschreibung
 --- | ---
 Text | Geben Sie den Text der zu veröffentlichenden Nachricht ein.
 Kanalname | Geben Sie den Slack-Kanal ein, über den diese Nachricht veröffentlicht wird. Wenn der Kanal nicht eingegeben wird, wird die Nachricht für "#general" veröffentlicht.
-Erweiterte Eigenschaften | <ul><li><strong>Bot-Benutzername</strong>: Name des Bots, der für diese Nachricht verwendet wird. Die Nachricht wird als "Bot" veröffentlicht, wenn diese Angabe nicht erfolgt.</li><li><strong>Symbol-URL</strong> – URL zu einem Bild, das als Symbol für diese Nachricht verwendet werden soll. </li><li><strong>Emoticon</strong> – Emoticon, das als Symbol für diese Nachricht verwendet werden soll. Diese Eigenschaft überschreibt die "Symbol-URL"-Eigenschaft.</li></ul>
+Erweiterte Eigenschaften | **Bot-Benutzername**: Name des Bots, der für diese Nachricht verwendet wird. Die Nachricht wird als "Bot" veröffentlicht, wenn diese Angabe nicht erfolgt.<p><p>**Symbol-URL** – URL zu einem Bild, das als Symbol für diese Nachricht verwendet werden soll. <p><p>**Emoticon** – Emoticon, das als Symbol für diese Nachricht verwendet werden soll. Diese Eigenschaft überschreibt die "Symbol-URL"-Eigenschaft.
+
 
 Für den Slack-Connector stehen REST-APIs zur Verfügung, sodass Sie den Connector außerhalb einer Logik-App verwenden können. Öffnen Sie den Slack-Connector, und wählen Sie **-API-Definition** aus:
 
@@ -86,7 +87,7 @@ Für den Slack-Connector stehen REST-APIs zur Verfügung, sodass Sie den Connect
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -102,4 +103,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [8]: ./media/app-service-logic-connector-slack/img8.PNG
 [9]: ./media/app-service-logic-connector-slack/img9.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

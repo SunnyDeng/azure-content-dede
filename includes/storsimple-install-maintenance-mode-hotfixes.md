@@ -1,9 +1,25 @@
+<properties
+   pageTitle="Installieren von Wartungsmodus-Hotfixes"
+   description="Beschreibt die Installation von Wartungsmodus-Hotfixes über Windows PowerShell für StorSimple."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor="" />
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/19/2015"
+   ms.author="v-sharos" />
 
 #### So installieren Sie Wartungsmodus-Hotfixes über Windows PowerShell für StorSimple
 
 > [AZURE.IMPORTANT]Im Wartungsmodus müssen Sie den Hotfix zunächst auf einem und dann auf dem anderen Controller anwenden.
 
-1. Versetzen Sie das Gerät in den Wartungsmodus. Informationen zum Wechseln in den Wartungsmodus finden Sie im Abschnitt [Wechseln in den Wartungsmodus](#enter-maintenance-mode).
+1. Versetzen Sie das Gerät in den Wartungsmodus. Weitere Informationen zum Wechseln in den Wartungsmodus finden Sie im Abschnitt [Schritt 2: Wechseln in den Wartungsmodus](storsimple-update-device.md#step2).
 
 2. Geben Sie zum Anwenden des Hotfixes Folgendes ein:
 
@@ -15,6 +31,6 @@
 
 5. Nachdem Sie den Hotfix auf einem Controller installiert haben, melden Sie sich bei dem anderen Controller an. Wenden Sie den Hotfix wie beim vorherigen Controller an.
 
-6. Nachdem alle Hotfixes angewendet wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [Beenden des Wartungsmodus](#exit-maintenance-mode).
+6. Nachdem alle Hotfixes angewendet wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [Schritt 4: Beenden des Wartungsmodus](storsimple-update-device.md#step4).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

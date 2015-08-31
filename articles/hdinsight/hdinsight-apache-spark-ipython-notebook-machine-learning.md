@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="nitinme" 
 	manager="paulettm" 
-	editor="cgronlun"/>
+	editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags 
 	ms.service="hdinsight" 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/19/2015" 
+	ms.date="07/31/2015" 
 	ms.author="nitinme"/>
 
 
@@ -42,7 +43,9 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 ##<a name="app"></a>Schreiben einer Machine Learning-Anwendung mit Spark MLlib
 
-1. Starten Sie das [Jupyter](https://jupyter.org) Notebook. Wählen Sie Ihren Spark-Cluster im Azure-Portal aus, und klicken Sie in der Taskleiste des Portals auf **Jupyter Notebook**. Geben Sie bei Aufforderung die Anmeldeinformationen für den Spark-Cluster ein.
+1. Klicken Sie im [Azure-Vorschauportal](https://ms.portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren. 
+ 
+2. Starten Sie [Jupyter](https://jupyter.org) Notebook. Klicken Sie auf dem Blatt mit dem Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Cluster-Dashboard** auf **Jupyter Notebook**. Geben Sie bei Aufforderung die Anmeldeinformationen für den Spark-Cluster ein.
 
 2. Erstellen Sie ein neues Notebook. Klicken Sie auf **Neu** und dann auf **Python2**.
 
@@ -54,7 +57,7 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 3. Beginnen Sie mit der Erstellung Ihrer Machine Learning-Anwendung. In dieser Anwendung verwenden wir eine Spark ML-Pipeline, um eine Dokumentklassifizierung durchzuführen. In der Pipeline teilen wir das Dokument in Wörter auf, konvertieren die Wörter in einen numerischen Featurevektor und erstellen dann mit den Featurevektoren und Beschriftungen ein Vorhersagemodell.
 
-	Um mit der Erstellung der Anwendung zu beginnen, importieren Sie zuerst die erforderlichen Module und weisen der Anwendung Ressourcen zu. Fügen Sie in die leere Zelle im neuen Notebook den folgenden Codeausschnitt ein, und drücken Sie **UMSCHALT+EINGABETASTE**.
+	Um mit der Erstellung der Anwendung zu beginnen, importieren Sie zuerst die erforderlichen Module und weisen der Anwendung Ressourcen zu. Fügen Sie in die leere Zelle im neuen Notebook den folgenden Codeausschnitt ein, und drücken Sie **UMSCHALT+EINGABE**.
 
 
 		from pyspark.ml import Pipeline
@@ -83,13 +86,13 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 		sc = SparkContext(conf=conf)
 		sqlContext = SQLContext(sc)
 
-	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebook-Titel der Status **\(Busy\)** \(Beschäftigt\) angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **Python 2**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
+	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebook-Titel der Status **(Beschäftigt)** angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **Python 2**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
 
 	 ![Status eines Jupyter Notebook-Auftrags](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/HDI.Spark.Jupyter.Job.Status.png "Status eines Jupyter Notebook-Auftrags")
  
-4. Sie müssen die Daten \(hvac.csv\) jetzt laden, analysieren und zum Trainieren des Modells verwenden. Definieren Sie hierzu eine Funktion, mit der überprüft wird, ob die Ist-Temperatur des Gebäudes höher als die Zieltemperatur ist. Wenn die Ist-Temperatur höher ist, wird angegeben, dass es in dem Gebäude zu warm ist \(Wert**1,0**\). Wenn die Ist-Temperatur niedriger ist, wird angegeben, dass es in dem Gebäude zu kalt ist \(Wert **0,0**\).
+4. Sie müssen die Daten (hvac.csv) jetzt laden, analysieren und zum Trainieren des Modells verwenden. Definieren Sie hierzu eine Funktion, mit der überprüft wird, ob die Ist-Temperatur des Gebäudes höher als die Zieltemperatur ist. Wenn die Ist-Temperatur höher ist, wird angegeben, dass es in dem Gebäude zu warm ist (Wert**1,0**). Wenn die Ist-Temperatur niedriger ist, wird angegeben, dass es in dem Gebäude zu kalt ist (Wert **0,0**).
 
-	Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABETASTE**.
+	Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABE**.
 
 		
 		# List the structure of data for better understanding. Becuase the data will be
@@ -135,11 +138,11 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 		lr = LogisticRegression(maxIter=10, regParam=0.01)
 		pipeline = Pipeline(stages=[tokenizer, hashingTF, lr])
 
-6. Passen Sie die Pipeline an das Schulungsdokument an. Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABETASTE**.
+6. Passen Sie die Pipeline an das Schulungsdokument an. Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABE**.
 
 		model = pipeline.fit(training)
 
-7. Überprüfen Sie das Schulungsdokument, um Ihre Fortschritte in Bezug auf die Anwendung zu ermitteln. Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABETASTE**.
+7. Überprüfen Sie das Schulungsdokument, um Ihre Fortschritte in Bezug auf die Anwendung zu ermitteln. Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABE**.
 
 		training.show()
 
@@ -173,9 +176,9 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 	Beachten Sie, dass die Ist-Temperatur unterhalb der Zieltemperatur liegt. Im Gebäude ist es also zu kalt. In der Schulungsausgabe lautet der Wert **label** in der ersten Zeile daher **0,0**. Dies bedeutet, dass es im Gebäude nicht zu warm ist.
 
-8.  Bereiten Sie ein Dataset vor, für das das Schulungsmodell ausgeführt werden kann. Hierzu übergeben wir eine System-ID und ein Systemalter \(in der Schulungsausgabe als **SystemInfo** bezeichnet\). Mit dem Modell wird dann vorhergesagt, ob es im Gebäude mit der jeweiligen System-ID und dem Systemalter wärmer \(1,0\) oder kälter \(0,0\) wäre.
+8.  Bereiten Sie ein Dataset vor, für das das Schulungsmodell ausgeführt werden kann. Hierzu übergeben wir eine System-ID und ein Systemalter (in der Schulungsausgabe als **SystemInfo** bezeichnet). Mit dem Modell wird dann vorhergesagt, ob es im Gebäude mit der jeweiligen System-ID und dem Systemalter wärmer (1,0) oder kälter (0,0) wäre.
 
-	Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABETASTE**.
+	Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABE**.
 		
 		# SystemInfo here is a combination of system ID followed by system age
 		Document = Row("id", "SystemInfo")
@@ -187,7 +190,7 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
                       (6L, "7 22")]) \
     		.map(lambda x: Document(*x)).toDF() 
 
-9. Treffen Sie als Letztes die Vorhersagen für die Testdaten. Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABETASTE**.
+9. Treffen Sie als Letztes die Vorhersagen für die Testdaten. Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABE**.
 
 		# Make predictions on test documents and print columns of interest
 		prediction = model.transform(test)
@@ -204,7 +207,7 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 		Row(SystemInfo=u'17 10', prediction=1.0, probability=DenseVector([0.4925, 0.5075]))
 		Row(SystemInfo=u'7 22', prediction=0.0, probability=DenseVector([0.5015, 0.4985]))
 
-	In der ersten Zeile der Vorhersage können Sie sehen, dass das Gebäude für ein HVAC-System mit ID 20 und einem Systemalter von 25 Jahren zu warm ist \(**prediction=1.0**\). Der erste Wert für DenseVector \(0.49999\) entspricht der Vorhersage 0,0, und der zweite Wert \(0.5001\) entspricht der Vorhersage 1,0. Obwohl der zweite Wert in der Ausgabe nur unwesentlich höher ist, zeigt das Modell **prediction=1.0** an.
+	In der ersten Zeile der Vorhersage können Sie sehen, dass das Gebäude für ein HVAC-System mit ID 20 und einem Systemalter von 25 Jahren zu warm ist (**prediction=1.0**). Der erste Wert für DenseVector (0.49999) entspricht der Vorhersage 0,0, und der zweite Wert (0.5001) entspricht der Vorhersage 1,0. Obwohl der zweite Wert in der Ausgabe nur unwesentlich höher ist, zeigt das Modell **prediction=1.0** an.
 
 11. Sie können das Notebook jetzt beenden, indem Sie den Kernel neu starten. Klicken Sie in der oberen Menüleiste auf **Kernel** und **Neu starten**, und klicken Sie in der Aufforderung dann noch einmal auf **Neu starten**.
 
@@ -217,7 +220,7 @@ Apache Spark-Cluster unter HDInsight enthalten Anaconda-Bibliotheken. Dazu gehö
 
 ##<a name="seealso"></a>Weitere Informationen
 
-* [Übersicht: Apache Spark in Azure HDInsight](hdinsight-apache-spark-overview.md)
+* [Übersicht: Apache Spark für Azure HDInsight](hdinsight-apache-spark-overview.md)
 * [Bereitstellen von Spark in einem HDInsight-Cluster](hdinsight-apache-spark-provision-clusters.md)
 * [Durchführen interaktiver Datenanalysen mithilfe von Spark in HDInsight mit BI-Tools](hdinsight-apache-spark-use-bi-tools.md)
 * [Verwenden von Spark in HDInsight zum Erstellen von Echtzeit-Streaminganwendungen](hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming.md)
@@ -240,4 +243,4 @@ Apache Spark-Cluster unter HDInsight enthalten Anaconda-Bibliotheken. Dazu gehö
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

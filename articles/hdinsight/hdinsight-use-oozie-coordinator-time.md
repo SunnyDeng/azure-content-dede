@@ -3,10 +3,10 @@
 	description="Verwenden eines zeitbasierten Hadoop Oozie-Koordinators in HDInsight, einer Big Data-Lösung. Erfahren Sie, wie Sie Oozie-Workflows und -Koordinatoren definieren und Aufträge übermitteln."
 	services="hdinsight"
 	documentationCenter=""
+	tags="azure-portal"
 	authors="mumian"
 	manager="paulettm"
 	editor="cgronlun"/>
-
 
 <tags
 	ms.service="hdinsight"
@@ -14,9 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/09/2015"
+	ms.date="07/28/2015"
 	ms.author="jgao"/>
-
 
 
 # Verwenden des zeitbasierten Oozie-Koordinators mit Hadoop in HDInsight zum Definieren von Workflows und Koordinieren von Aufträgen
@@ -84,7 +83,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 <tr><td>Anmeldename der SQL-Datenbank</td><td>$sqlDatabaseLogin</td><td></td><td>Anmeldename der SQL-Datenbank.</td></tr>
 <tr><td>Anmeldekennwort für die SQL-Datenbank</td><td>$sqlDatabaseLoginPassword</td><td></td><td>Anmeldekennwort für die SQL-Datenbank.</td></tr>
 <tr><td>SQL-Datenbankname</td><td>$sqlDatabaseName</td><td></td><td>Die Azure SQL-Datenbank, in die Sqoop Daten exportiert. </td></tr>
-</table>> [AZURE.NOTE]Eine Azure SQL-Datenbank ermöglicht standardmäßig Verbindungen von Azure-Diensten wie Azure HDInsight. Wenn die Firewalleinstellung deaktiviert ist, müssen Sie sie im Azure-Portal aktivieren. Anweisungen zum Erstellen einer SQL-Datenbank und zum Konfigurieren von Firewallregeln finden Sie unter [Erstellen und Konfigurieren einer SQL-Datenbank][sqldatabase-create-configue].
+</table>> [AZURE.NOTE]Eine Azure SQL-Datenbank ermöglicht standardmäßig Verbindungen von Azure-Diensten wie Azure HDInsight. Wenn die Firewalleinstellung deaktiviert ist, müssen Sie sie im Azure-Vorschauportal aktivieren. Anweisungen zum Erstellen einer SQL-Datenbank und zum Konfigurieren von Firewallregeln finden Sie unter [Erstellen und Konfigurieren einer SQL-Datenbank][sqldatabase-create-configue].
 
 
 > [AZURE.NOTE]Tragen Sie die Werte in die Tabellen ein. Dies wird Ihnen helfen, wenn Sie dieses Lernprogramm durcharbeiten.
@@ -642,7 +641,7 @@ Azure PowerShell stellt derzeit keine Cmdlets zum Definieren von Oozie-Jobs bere
 
 **So prüfen Sie das Auftragsfehlerprotokoll**
 
-Um Probleme mit einem Workflow zu beheben, suchen Sie die Oozie-Protokolldatei unter C:\\apps\\dist\\oozie-3.3.2.1.3.2.0-05\\oozie-win-distro\\logs\\Oozie.log im Hauptknoten des Clusters. Informationen über RDP finden Sie unter [Verwalten von HDInsight-Clustern mit dem Management portal][hdinsight-admin-portal].
+Um Probleme mit einem Workflow zu beheben, suchen Sie die Oozie-Protokolldatei unter C:\\apps\\dist\\oozie-3.3.2.1.3.2.0-05\\oozie-win-distro\\logs\\Oozie.log im Hauptknoten des Clusters. Informationen zu RDP finden Sie unter [Verwalten von HDInsight-Clustern mit dem Azure-Vorschauportal][hdinsight-admin-portal].
 
 **So führen Sie das Lernprogramm erneut aus**
 
@@ -720,7 +719,7 @@ In diesem Lernprogramm haben Sie einen Oozie-Workflow und einen Oozie-Koordinato
 [sqldatabase-create-configue]: ../sql-database-create-configure.md
 [sqldatabase-get-started]: ../sql-database-get-started.md
 
-[azure-management-portal]: https://manage.windowsazure.com/
+[azure-management-portal]: https://portal.azure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account.md
 
 [apache-hadoop]: http://hadoop.apache.org/
@@ -741,4 +740,4 @@ In diesem Lernprogramm haben Sie einen Oozie-Workflow und einen Oozie-Koordinato
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

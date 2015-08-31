@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Aktualisieren der Service Fabric-Entwicklungsumgebung"
+   pageTitle="Aktualisieren der Service Fabric-Entwicklungsumgebung | Microsoft Azure"
    description="Aktualisieren Sie die Service Fabric-Entwicklungsumgebung, um die neuesten Versionen von Laufzeit, SDK und Tools zu verwenden."
    services="service-fabric"
    documentationCenter=".net"
@@ -53,4 +53,4 @@ Das ist alles! Sie können Visual Studio jetzt starten und mit dem Erstellen von
 
  [1]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI-Link"
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

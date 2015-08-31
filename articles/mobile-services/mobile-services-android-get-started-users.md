@@ -51,7 +51,7 @@ In diesem Lernprogramm werden die grundlegenden Schritte zur Aktivierung der Aut
 
 1. Öffnen Sie in Android Studio das Projekt, das Sie während der Bearbeitung des Lernprogramms [Erste Schritte mit Mobile Services] erstellt haben. 
 
-2. Klicken Sie im Menü **Ausführen** auf **App ausführen**. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 \(nicht autorisiert\) ausgelöst wird.
+2. Klicken Sie im Menü **Ausführen** auf **App ausführen**. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) ausgelöst wird.
 
 	 Dies liegt daran, dass die App als nicht authentifizierter Benutzer auf Mobile Services zugreift und die _TodoItem_-Tabelle nun eine Authentifizierung verlangt.
 
@@ -117,4 +117,4 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Azure Management Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

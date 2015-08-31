@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie ein Web-API-Projekt mithilfe von Visual Studio 2013 als API-App konfigurieren." 
 	services="app-service\api" 
 	documentationCenter=".net" 
-	authors="tdykstra" 
+	authors="bradygaster" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/19/2015" 
-	ms.author="bradyg;tarcher"/>
+	ms.date="08/14/2015" 
+	ms.author="tdykstra"/>
 
 # Konfigurieren eines Web-API-Projekts als API-App
 
@@ -24,17 +24,17 @@ In diesem Lernprogramm wird gezeigt, wie Sie ein vorhandenes Web-API-Projekt fü
 
 Weitere Informationen zu API-Apps finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
 
-[AZURE.INCLUDE [install-sdk-2013-only](../../includes/install-sdk-2013-only.md)]
+[AZURE.INCLUDE [install-sdk-2015-2013](../../includes/install-sdk-2015-2013.md)]
 
-Für dieses Lernprogramm ist Version 2.5.1 oder höher des Azure-SDK für .NET erforderlich.
+Für dieses Lernprogramm ist die Version 2.6 des Azure-SDK für .NET erforderlich.
 
 ## Konfigurieren eines Web-API-Projekts 
 
 In diesem Abschnitt wird gezeigt, wie Sie ein vorhandenes Web-API-Projekt als API-App konfigurieren. Sie beginnen damit, die Web-API-Projektvorlage zum Erstellen eines Web-API-Projekts zu verwenden und diese anschließend als API-App zu konfigurieren.
 
-1. Öffnen Sie Visual Studio 2013.
+1. Öffnen Sie Visual Studio 2015 oder Visual Studio 2013.
 
-2. Wählen Sie **Datei > Neues Projekt** aus.
+2. Klicken Sie auf **Datei > Neues Projekt**.
 
 3. Wählen Sie die Vorlage **ASP.NET-Webanwendung**.
 
@@ -83,4 +83,4 @@ In diesem Abschnitt wird gezeigt, wie Sie ein vorhandenes Web-API-Projekt als AP
 Ihre API-App kann jetzt bereitgestellt werden. Dazu können Sie das Lernprogramm [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

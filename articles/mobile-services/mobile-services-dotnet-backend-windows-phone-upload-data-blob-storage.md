@@ -81,4 +81,4 @@ Um eine SAS für das Hochladen von Bildern aus Ihrer App in den Blob-Speicher ve
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

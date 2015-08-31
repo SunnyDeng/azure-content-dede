@@ -22,8 +22,8 @@
 > [AZURE.SELECTOR]
 - [Azure preview portal](virtual-machines-windows-tutorial.md)
 - [Azure portal](virtual-machines-windows-tutorial-classic-portal.md)
-- [PowerShell - Resource management](virtual-machines-deploy-rmtemplates-powershell.md)
-- [PowerShell - Service management](virtual-machines-ps-create-preconfigure-windows-vms.md)
+- [PowerShell: Resource Manager deployment](virtual-machines-deploy-rmtemplates-powershell.md)
+- [PowerShell: Classic deployment](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
 
 In diesem Lernprogramm erfahren Sie, wie einfach es ist, einen virtuellen Azure-Computer (VM) im Azure-Portal zu erstellen. Als Beispiel wird ein Windows Server-Image verwendet. Dies ist jedoch nur eines von vielen Images, die Azure bietet. Beachten Sie, dass Ihre Imageauswahl von Ihrem Abonnement abhängt. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
@@ -44,7 +44,7 @@ In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** ￼￼￼�
 
 > [AZURE.NOTE]Sie können auch das funktionsreichere, anpassbare [Azure-Vorschauportal](https://portal.azure.com) verwenden, um einen virtuellen Computer zu erstellen, erweiterte Überwachungs- und Diagnosefeatures zu verwenden, Premium-Speicher einzusetzen und vieles mehr. Die verfügbaren Optionen zum Konfigurieren eines virtuellen Computers sind in den beiden Portalen im Wesentlichen ähnlich, aber nicht identisch. Verwenden Sie z. B. das Vorschauportal, um einen virtuellen Computer mit Premium-Speicher zu konfigurieren.
 
-[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-WindowsVM.md)]
+[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-windowsvm.md)]
 
 ## Nächste Schritte
 
@@ -56,4 +56,4 @@ In diesem Abschnitt erfahren Sie, wie Sie die Option **Aus Galerie** ￼￼￼�
 
 Weitere Informationen zur Konfiguration eines virtuellen Computers und den geeigneten Zeitpunkten finden Sie unter [Informationen zu Azure-VM-Konfigurationseinstellungen](http://msdn.microsoft.com/library/azure/dn763935.aspx).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

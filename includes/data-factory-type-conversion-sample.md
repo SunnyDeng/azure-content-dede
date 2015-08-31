@@ -6,7 +6,7 @@ Es wird vorausgesetzt, dass das Blobdataset im CSV-Format vorliegt und drei Spal
 Sie definieren das Blob-Quelldataset wie folgt zusammen mit Typdefinitionen für die Spalten.
 
 	{
-	    "name": " AzureBlobTypeSystemInput",
+	    "name": "AzureBlobTypeSystemInput",
 	    "properties":
 	    {
 	         "structure": 
@@ -30,7 +30,7 @@ Sie definieren das Blob-Quelldataset wie folgt zusammen mit Typdefinitionen für
 	        "availability":
 	        {
 	            "frequency": "Hour",
-	            "interval": 1,
+	            "interval": 1
 	        },
 			"policy": {
 	            "externalData": {
@@ -69,4 +69,4 @@ Als Nächstes definieren Sie das Azure SQL-Dataset wie folgt. Hinweis: Sie müs
 
 In diesem Fall führt Data Factory die Typkonvertierungen automatisch einschließlich des Datetime-Felds mit dem benutzerdefinierten datetime-Format aus. Dabei wird die Kultur "fr-fr" beim Verschieben von Daten aus dem Blob in Azure SQL verwendet.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

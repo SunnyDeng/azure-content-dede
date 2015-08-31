@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/01/2015"
+   ms.date="08/12/2015"
    ms.author="joaoma" />
 
 # Konfigurieren des Lastenausgleichs für SQL-AlwaysOn
@@ -51,6 +51,10 @@ Schritt 2.
 
  	Get-AzureVM -ServiceName SqlSvc -Name sqlsvc2 | Add-AzureEndpoint -Name "LisEUep" -LBSetName "ILBSet1" -Protocol tcp -LocalPort 1433 -PublicPort 1433 -ProbePort 59999 -ProbeProtocol tcp -ProbeIntervalInSeconds 10 –DirectServerReturn $true -InternalLoadBalancerName ILB_SQL_AO | Update-AzureVM
 
+Im Beispiel oben werden 2 virtuelle Computer namens "sqlsvc1" und "sqlsvc2" im Clouddienst "Sqlsvc" ausgeführt. Nach dem Erstellen von ILB mit dem "DirectServerReturn"-Switch fügen Sie Endpunkte mit Lastenausgleich zu ILB hinzu, um SQL das Konfigurieren der Listener für Verfügbarkeitsgruppen zu ermöglichen.
+
+Weitere Details zum Erstellen einer SQL-AlwaysOn-Verfügbarkeitsgruppe finden Sie unter [Lernprogramm: AlwaysOn-Verfügbarkeitsgruppen in Azure](https://msdn.microsoft.com/library/dn249504.aspx) oder [Verwenden des Portal-Katalogs](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx).
+
 
 ## Siehe auch
 
@@ -63,4 +67,4 @@ Schritt 2.
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

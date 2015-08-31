@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/11/2015"
+   ms.date="08/18/2015"
    ms.author="v-sharos" />
 
 # Benutzeroberfläche des StorSimple Snapshot Managers
@@ -51,7 +51,7 @@ Die Benutzeroberfläche des StorSimple Snapshot Managers unterstützt die Featur
 
 ## Menüleiste
 
-Die Menüleiste am oberen Rand des Konsolenfensters enthält die Menüs [**Datei**](#file-menu), [**Aktion**](#action-menu), [**Ansicht**](#view-menu), [**Favoriten**](#favorites-menu), [**Fenster**](#window-menu) und [**Hilfe**](#help-menu).
+Die Menüleiste am oberen Rand des Konsolenfensters enthält die Menüs [Datei](#file-menu), [Aktion](#action-menu), [Ansicht](#view-menu), [Favoriten](#favorites-menu), [Fenster](#window-menu) und [Hilfe](#help-menu).
 
 Klicken Sie auf ein Element auf der Menüleiste, um eine Liste der verfügbaren Befehle in diesem Menü anzuzeigen. Das folgende Beispiel zeigt das ausgewählte Menü **Ansicht** auf der Menüleiste.
 
@@ -77,7 +77,7 @@ In der folgenden Tabelle werden die Elemente im Menü **Datei** beschrieben.
 
 | Menüelement | Beschreibung |
 |:----------|:-------------|
-| Neu | Klicken Sie auf **Neu**, um eine neue Konsole basierend auf dem StorSimple Snapshot Manager zu erstellen. |
+| Neu | Klicken Sie auf **Neu**, um mithilfe des StorSimple Snapshot Managers eine neue Konsole zu erstellen. |
 | Öffnen | Klicken Sie auf **Öffnen**, um eine vorhandene Konsole zu öffnen. |
 | Speichern | Klicken Sie auf **Speichern**, um die aktuelle Konsole zu speichern. |
 | Speichern unter | Klicken Sie auf **Speichern unter**, um eine neue, umbenannte Instanz der aktuellen Konsole zu erstellen. Verwenden Sie die Option **Speichern unter**, um eine Ansicht anzupassen und für den späteren Abruf zu speichern. Sie können beispielsweise StorSimple Snapshot Manager-Snap-Ins erstellen, die auf bestimmte Server verweisen. |
@@ -228,7 +228,7 @@ In der folgenden Tabelle werden die Elemente im Menü "Hilfe" beschrieben.
 |:-----------|:-------------|
 | Hilfe zum StorSimple Snapshot Manager | Klicken Sie auf **Hilfe zum StorSimple Snapshot Manager**, um die StorSimple Snapshot Manager-Hilfe in einem separaten Fenster zu öffnen. |
 | Hilfethemen |Klicken Sie auf **Hilfethemen**, um die MMC-Onlinehilfe in einem separaten Fenster zu öffnen. |
-| TechCenter-Website | Klicken Sie auf **TechCenter-Website**, um die Startseite des TechCenters im Microsoft TechNet in einem separaten Fenster zu öffnen. |
+| TechCenter-Website | Klicken Sie auf **TechCenter-Website**, um die Startseite des TechCenters in Microsoft TechNet in einem separaten Fenster zu öffnen. |
 | Info | Klicken Sie auf **Info**, um anzuzeigen, welche Version der Microsoft Management Console auf dem System installiert ist. |
 | Info zum StorSimple Snapshot Manager | Klicken Sie auf **Info zum StorSimple Snapshot Manager**, um anzuzeigen, welche Version des Snap-Ins auf dem System installiert ist. |
 
@@ -248,7 +248,7 @@ In der folgenden Tabelle werden die Symbole auf der Symbolleiste beschrieben.
 | ![Konsolenstruktur ein-/ausblenden](./media/storsimple-use-snapshot-manager/HCS_SSM_ShowConsoleTree.png) | Klicken Sie auf dieses Symbol, um das **Bereichsfenster** ein- oder auszublenden. |
 | ![Liste exportieren](./media/storsimple-use-snapshot-manager/HCS_SSM_ExportListIcon.png) | Klicken Sie auf dieses Symbol, um eine Liste in eine von Ihnen angegebene CSV-Datei zu exportieren. |
 | ![Symbol "Hilfe"](./media/storsimple-use-snapshot-manager/HCS_SSM_HelpIcon.png) |Klicken Sie auf das Hilfesymbol, um ein Thema in der MMC-Onlinehilfe zu öffnen. |
-| ![Bereich "Aktionen" ein-/ausblenden](./media/storsimple-use-snapshot-manager/HCS_SSM_ShowAction.png) | Klicken Sie auf dieses Symbol, um den Bereich **Aktionen** ein- oder auszublenden. 
+| ![Bereich "Aktionen" ein-/ausblenden](./media/storsimple-use-snapshot-manager/HCS_SSM_ShowAction.png) | Klicken Sie auf dieses Symbol für den Bereich **Aktionen**, um den Bereich **Aktionen** ein- oder auszublenden. 
  
 ## Bereichsfenster
 
@@ -319,7 +319,7 @@ Volumegruppen werden auch als Konsistenzgruppen bezeichnet. Jede Volumegruppe is
 
 ### Knoten "Sicherungsrichtlinien"
 
-Sicherungsrichtlinien sind Auftragszeitpläne für lokale und Cloudmomentaufnahmen. Über den Knoten **Sicherungsrichtlinien** können Sie angeben, wie oft eine Sicherung erstellt wird und wie lange eine Sicherung beibehalten werden soll.
+Sicherungsrichtlinien sind Auftragszeitpläne für lokale und Cloudmomentaufnahmen. Über den Knoten **Sicherungsrichtlinien** können Sie angeben, wie oft eine Sicherung erstellt wird und wie lange eine Sicherung aufbewahrt werden soll.
 
 - Zum Erweitern des Knotens klicken Sie auf das Pfeilsymbol neben **Sicherungsrichtlinien**.
 
@@ -332,7 +332,7 @@ Sicherungsrichtlinien sind Auftragszeitpläne für lokale und Cloudmomentaufnahm
 
 ### Knoten "Sicherungskatalog"
 
-Der Knoten **Sicherungskatalog** enthält Listen von Sicherungen von Azure StorSimple-Volumes, die vor Ort oder an einem anderen Standort gespeichert sind. Dieser Knoten wird über Volumegruppen organisiert, wobei jeder Volumegruppencontainer separate Strukturen für lokale Momentaufnahmen (Knoten **Lokale Momentaufnahmen**) und Cloudmomentaufnahmen (Knoten **Cloudmomentaufnahmen**) enthält. Wenn der Knoten erweitert wird, werden für jeden Volumegruppencontainer die erfolgreichen Sicherungen angezeigt, die interaktiv oder durch eine konfigurierte Richtlinie erstellt wurden.
+Der Knoten **Sicherungskatalog** enthält Listen von Sicherungen von Azure StorSimple-Volumes, die lokal oder an einem anderen Standort gespeichert sind. Dieser Knoten wird über Volumegruppen organisiert, wobei jeder Volumegruppencontainer separate Strukturen für lokale Momentaufnahmen (Knoten **Lokale Momentaufnahmen**) und Cloudmomentaufnahmen (Knoten **Cloudmomentaufnahmen**) enthält. Wenn der Knoten erweitert wird, werden für jeden Volumegruppencontainer die erfolgreichen Sicherungen angezeigt, die interaktiv oder durch eine konfigurierte Richtlinie erstellt wurden.
 
 - Zum Erweitern des Knotens klicken Sie auf das Pfeilsymbol neben **Sicherungskatalog**.
 
@@ -368,7 +368,7 @@ Der Knoten **Aufträge** enthält Informationen zu geplanten, ausgeführten und 
 
 - Um ein Menü der verfügbaren Aktionen anzuzeigen, klicken Sie mit der rechten Maustaste auf den Knoten **Aufträge** oder auf einen der Knoten in der erweiterten Ansicht.
 
-- Zum Anzeigen einer Liste der geplanten Aufträge erweitern Sie den Knoten **Aufträge**, und klicken Sie dann auf **Geplant**. Die Liste der zuvor konfigurierten Aufträge mit Informationen zu den einzelnen Aufträgen wird im **Ergebnisbereich** angezeigt.
+- Zum Anzeigen einer Liste der geplanten Aufträge erweitern Sie den Knoten **Aufträge** und klicken dann auf **Geplant**. Die Liste der zuvor konfigurierten Aufträge mit Informationen zu den einzelnen Aufträgen wird im **Ergebnisbereich** angezeigt.
 
 - Zum Anzeigen einer Liste der zuletzt abgeschlossenen Aufträge erweitern Sie den Knoten **Aufträge**, und klicken Sie dann auf **Letzte 24 Stunden**. Eine Liste der Aufträge, die in den letzten 24 Stunden abgeschlossen wurden, wird im **Ergebnisbereich** angezeigt. Der **Ergebnisbereich** enthält außerdem Informationen zu jedem abgeschlossenen Auftrag.
 
@@ -540,4 +540,4 @@ In den folgenden Tabellen werden die Tastenkombinationen für die einzelnen Knot
 
 Erfahren Sie, wie Sie [mit dem StorSimple Snapshot Manager Verbindungen mit Geräten herstellen und diese verwalten](storsimple-snapshot-manager-manage-devices.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

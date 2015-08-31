@@ -393,4 +393,4 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 [Zugriff auf Azure Active Directory Graph-Informationen]: mobile-services-dotnet-backend-windows-store-dotnet-aad-graph-info.md
 [ADAL für .NET]: https://msdn.microsoft.com/library/azure/jj573266.aspx
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

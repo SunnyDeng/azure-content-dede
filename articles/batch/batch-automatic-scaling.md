@@ -147,7 +147,14 @@ Folgende Typen werden in Formeln unterstützt:
 - double
 - doubleVec
 - string
-- timestamp
+- timestamp. „timestamp“ ist eine Verbundstruktur, die folgende Member enthält:
+	- year
+	- Monat (1-12)
+	- Tag (1-31)
+	- Wochentag (als Zahl. Beispiel: 1 für Montag)
+	- Stunde (im 24-Stunden-Format. Beispiel: 13 bedeutet 13 Uhr.)
+	- Minute (00-59)
+	- Sekunde (00-59)
 - timeInterval
 	- TimeInterval\_Zero
 	- TimeInterval\_100ns
@@ -428,16 +435,16 @@ Folgende Metriken lassen sich über eine Formel definieren.
 
 Es ist stets empfehlenswert, eine Formel auszuwerten, bevor Sie sie in Ihrer Anwendung verwenden. Die Formel wird ausgewertet, indem Sie einen Testlauf für einen vorhandenen Pool ausführen. Verwenden Sie hierzu eine der folgenden Methoden:
 
-- [IPoolManager.EvaluateAutoScale](https://msdn.microsoft.com/library/azure/dn931617.aspx) oder [IPoolManager.EvaluateAutoScaleAsync](https://msdn.microsoft.com/library/azure/dn931545.aspx): Diese .NET-Methoden erfordern den Namen eines vorhandenen Pools sowie die Zeichenkette mit der Formel für das automatische Skalieren. Die Ergebnisse des Aufrufs befinden sich in einer Instanz der[AutoScaleEvaluation-Klasse](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscaleevaluation.aspx).
-- [Auswerten von automatischer Skalierung](https://msdn.microsoft.com/library/azure/dn820183.aspx): Bei dieser REST-Anfrage wird der Pool-Name im URI übergeben und die Formel für das automatische Skalieren im autoScaleFormula-Element des Anforderungstexts. Die bei der Anfrage generierte Antwort enthält Fehlerinformationen, die in Zusammenhang mit der Formel stehen können.
+- [IPoolManager.EvaluateAutoScale](https://msdn.microsoft.com/library/azure/dn931617.aspx) oder [IPoolManager.EvaluateAutoScaleAsync](https://msdn.microsoft.com/library/azure/dn931545.aspx): Diese .NET-Methoden erfordern den Namen eines vorhandenen Pools sowie die Zeichenfolge mit der Formel für das automatische Skalieren. Die Ergebnisse des Aufrufs befinden sich in einer Instanz der [AutoScaleEvaluation-Klasse](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscaleevaluation.aspx).
+- [Auswerten von automatischer Skalierung](https://msdn.microsoft.com/library/azure/dn820183.aspx): Bei diesem REST-Vorgang wird der Poolname im URI und die Formel für das automatische Skalieren im autoScaleFormula-Element des Anforderungstexts angegeben. Die bei der Anfrage generierte Antwort enthält Fehlerinformationen, die in Zusammenhang mit der Formel stehen können.
 
 ## Erstellen eines Pools mit aktiviertem automatischen Skalieren
 
 Einen solchen Pool erstellen Sie mithilfe einer der folgenden Methoden:
 
 - [New-AzureBatchPool](https://msdn.microsoft.com/library/azure/mt125936.aspx): Dieses Cmdlet legt die Formel für das automatische Skalieren mit dem AutoScaleFormula-Parameter fest.
-- [IPoolManager.CreatePool Method](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.ipoolmanager.createpool.aspx): Nachdem diese .NET-Methode zum Erstellen eines Pools verwendet wurde, werden die Eigenschaften [ICloudPool.AutoScaleEnabled](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.icloudpool.autoscaleenabled.aspx) und [ICloudPool.AutoScaleFormula](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.icloudpool.autoscaleformula.aspx) für den Pool eingestellt, um das automatische Skalieren zu aktivieren.
-- [Hinzufügen eines Pools](https://msdn.microsoft.com/library/azure/dn820174.aspx): Die Elemente enableAutoScale und autoScaleFormula werden in dieser REST-API verwendet, um bei der Erstellung das automatische Skalieren für den Pool einzurichten.
+- [IPoolManager.CreatePool Method](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.ipoolmanager.createpool.aspx): Nachdem diese .NET-Methode zum Erstellen eines Pools verwendet wurde, werden die Eigenschaften [ICloudPool.AutoScaleEnabled](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.icloudpool.autoscaleenabled.aspx) und [ICloudPool.AutoScaleFormula](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.icloudpool.autoscaleformula.aspx) für den Pool festgelegt, um das automatische Skalieren zu aktivieren.
+- [Hinzufügen eines Pools zu einem Konto](https://msdn.microsoft.com/library/azure/dn820174.aspx): Die Elemente „enableAutoScale“ und „autoScaleFormula“ werden in dieser REST-API verwendet, um bei der Erstellung das automatische Skalieren für den Pool einzurichten.
 
 > [AZURE.NOTE]Wenn Sie bei der Erstellung eines Pools mithilfe der oben genannten Ressourcen das automatische Skalieren einrichten, wird der targetDedicated-Parameter für den Pool nicht verwendet.
 
@@ -446,7 +453,7 @@ Einen solchen Pool erstellen Sie mithilfe einer der folgenden Methoden:
 Wenn Sie bereits anhand des targetDedicated-Parameters einen Pool mit einer festgelegten Anzahl von Rechenknoten eingerichtet haben, können Sie den vorhandenen Pool zu einem späteren Zeitpunkt so aktualisieren, dass automatisch skaliert wird. Hierzu gehen Sie auf eine der beiden folgenden Arten vor:
 
 - [IPoolManager.EnableAutoScale-Methode](https://msdn.microsoft.com/library/azure/dn931709.aspx): Diese .NET-Methode erfordert den Namen des vorhandenen Pools und die Formel für das automatische Skalieren.
-- [Aktivieren/Deaktivieren der automatischen Skalierung](https://msdn.microsoft.com/library/azure/dn820173.aspx): Diese REST-API erfordert den Namen des vorhandenen Pools im URI und die Formel für das automatische Skalieren im Request-Body.
+- [Aktivieren/Deaktivieren der automatischen Skalierung](https://msdn.microsoft.com/library/azure/dn820173.aspx): Diese REST-API erfordert den Namen des vorhandenen Pools im URI und die Formel für das automatische Skalieren im Anforderungstext.
 
 > [AZURE.NOTE]Der beim Erstellen des Pools für den targetDedicated-Parameter festgelegte Wert wird beim Auswerten der Formel für das automatische Skalieren ignoriert.
 
@@ -454,22 +461,52 @@ Wenn Sie bereits anhand des targetDedicated-Parameters einen Pool mit einer fest
 
 Sie sollten in regelmäßigen Abständen die Ergebnisse der Durchläufe des automatischen Skalierens überprüfen. Gehen Sie dazu auf eine der beiden folgenden Arten vor:
 
-- [ICloudPool.AutoScaleRun-Eigenschaft](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.icloudpool.autoscalerun.aspx): Beim Verwenden der .NET-Bibliothek bietet diese Pool-Eigenschaft eine Instanz der [AutoScaleRun-Klasse](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.aspx), die die Eigenschaften [AutoScaleRun.Error](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.error.aspx), [AutoScaleRun.Results](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.results.aspx) und [AutoScaleRun.Timestamp](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.timestamp.aspx) zur Verfügung stellt.
-- [Pool abrufen](https://msdn.microsoft.com/library/dn820165.aspx): Diese REST-API gibt Informationen zu dem Pool zurück, einschließlich des neuesten Durchlaufs des automatischen Skalierens.
+- [ICloudPool.AutoScaleRun-Eigenschaft](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.icloudpool.autoscalerun.aspx): Beim Verwenden der .NET-Bibliothek bietet diese Pooleigenschaft eine Instanz der [AutoScaleRun-Klasse](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.aspx), die die Eigenschaften [AutoScaleRun.Error](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.error.aspx), [AutoScaleRun.Results](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.results.aspx) und [AutoScaleRun.Timestamp](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.autoscalerun.timestamp.aspx) zur Verfügung stellt.
+- [Pool abrufen](https://msdn.microsoft.com/library/dn820165.aspx): Diese REST-API gibt Informationen zum Pool zurück, einschließlich des neuesten Durchlaufs des automatischen Skalierens.
+
+## Beispiele
+
+### Beispiel 1:
+
+Sie möchten die Poolgröße basierend auf der Wochenzeit anpassen.
+
+    curTime=time();
+    workhours=curTime.hour>=8 && curTime.hour <18;
+    isweekday=curTime.weekday>=1 && curTime.weekday<=5;
+    isworkingweekdayhour = workhours && isweekday;
+    $TargetDedicated=workhours?20:10;
+    
+Mit dieser Formel wird die aktuelle Zeit ermittelt. Wenn es sich um einen Wochentag (1 bis 5) handelt und der Wert innerhalb der Geschäftszeiten (8 bis 18 Uhr) liegt, wird die Zielpoolgröße auf „20“ festgelegt. Andernfalls wird als Poolgröße „10“ festgelegt.
+
+### Beispiel 2:
+
+Hier sehen Sie ein weiteres Beispiel für das Anpassen der Poolgröße basierend auf den Aufgaben in der Warteschlange.
+
+    // Get pending tasks for the past 15 minutes
+    $Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15); 
+    // If we have less than 70% data points, we use the last sample point, otherwise we use the maximum of last sample point and the history average
+    $Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1), avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
+    // If number of pending task is not 0, set targetVM to pending tasks, otherwise half of current dedicated
+    $TargetVMs = $Tasks > 0? $Tasks:max(0, $TargetDedicated/2);
+    // The pool size is capped at 20, if target vm value is more than that, set it to 20. This value should be adjusted according to your case.
+    $TargetDedicated = max(0,min($TargetVMs,20));
+    // optionally, set vm Deallocation mode - shrink VM after task is done.
+    $TVMDeallocationOption = taskcompletion;
+    
 
 ## Nächste Schritte
 
 1.	Möglicherweise müssen Sie auf den Rechenknoten zugreifen, um die Effizienz der Anwendung vollständig bewerten zu können. Um den Remotezugriff nutzen zu können, muss dem Rechenknoten, auf den zugegriffen werden soll, ein Benutzerkonto hinzugefügt werden und eine RDP-Datei von dem Knoten abgerufen werden. Fügen Sie das Benutzerkonto auf eine der folgenden Arten hinzu:
 
-	- [New-AzureBatchVMUser](https://msdn.microsoft.com/library/mt149846.aspx): Dieses Cmdlet erfordert den Poolnamen, den Namen des Rechenknotens, den Kontonamen und das Kennwort als Parameter.
-	- [IVM.CreateUser](https://msdn.microsoft.com/library/microsoft.azure.batch.ivm.createuser.aspx): Diese .NET-Methode erstellt eine Instanz der [IUser-Schnittstelle](https://msdn.microsoft.com/library/microsoft.azure.batch.iuser.aspx), für die der Kontoname und das Kennwort für den Rechenknoten eingestellt werden können.
-	- [Hinzufügen von TVM-Benutzern](https://msdn.microsoft.com/library/dn820137.aspx): Der Name des Pools und des Rechenknotens werden im URI festgelegt und der Kontoname und das Kennwort im Anforderungstext dieser REST-API übertragen.
+	- [New-AzureBatchVMUser](https://msdn.microsoft.com/library/mt149846.aspx): Dieses Cmdlet erfordert den Poolnamen, den Namen des Computeknotens, den Kontonamen und das Kennwort als Parameter.
+	- [IVM.CreateUser](https://msdn.microsoft.com/library/microsoft.azure.batch.ivm.createuser.aspx): Diese .NET-Methode erstellt eine Instanz der [IUser-Schnittstelle](https://msdn.microsoft.com/library/microsoft.azure.batch.iuser.aspx), für die der Kontoname und das Kennwort für den Computeknoten eingestellt werden können.
+	- [Hinzufügen eines Benutzerkontos zu einem Knoten](https://msdn.microsoft.com/library/dn820137.aspx): Der Name des Pools und des Computeknotens werden im URI festgelegt. Der Kontoname und das Kennwort werden im Anforderungstext dieser REST-API an den Knoten gesendet.
 
 		Abrufen der RDP-Datei:
 
 	- [IVM.GetRDPFile](https://msdn.microsoft.com/library/microsoft.azure.batch.ivm.getrdpfile.aspx): Diese .NET-Methode erfordert den Namen der zu erstellenden RDP-Datei.
-	- [Abrufen der TVM RDP-Datei](https://msdn.microsoft.com/library/dn820120.aspx): Diese REST-API erfordert den Namen des Pools und den Namen des Rechenknotens. Die Antwort enthält den Inhalt der RDP-Datei.
-	- [Get-AzureBatchRDPFile](https://msdn.microsoft.com/library/mt149851.aspx): Dieses Cmdlet ruft die RDP-Datei aus dem angegebenen Rechenknoten ab und speichert sie am festgelegten Speicherort oder in einen Stream.
-2.	Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit, dies zu lösen, besteht in [effizienten Listenabfragen](batch-efficient-list-queries.md).
+	- [Abrufen der RDP-Datei von einem Knoten](https://msdn.microsoft.com/library/dn820120.aspx): Diese REST-API erfordert den Namen des Pools und den Namen des Computeknotens. Die Antwort enthält den Inhalt der RDP-Datei.
+	- [Get-AzureBatchRDPFile](https://msdn.microsoft.com/library/mt149851.aspx): Dieses Cmdlet ruft die RDP-Datei aus dem angegebenen Computeknoten ab und speichert sie am festgelegten Speicherort oder in einen Stream.
+2.	Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit zur Lösung dieses Problems ist die Verwendung [effizienter Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

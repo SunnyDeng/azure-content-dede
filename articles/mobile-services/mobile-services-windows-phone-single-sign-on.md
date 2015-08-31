@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Authentifizieren Ihrer App mit Live Connect (Windows Phone) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie das einmalige Anmelden mit Live Connect in Azure Mobile Services von einer Windows Phone-Anwendung verwenden." 
-	services="mobile-services" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Authentifizieren Ihrer App mit Live Connect (Windows Phone) | Microsoft Azure"
+	description="Erfahren Sie, wie Sie das einmalige Anmelden mit Live Connect in Azure Mobile Services von einer Windows Phone-Anwendung verwenden."
+	services="mobile-services"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="04/09/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows-phone"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/18/2015" 
 	ms.author="glenga"/>
 
 # Authentifizieren Ihrer Windows Phone-App mit auf dem Client verwalteter Authentifizierung mit Microsoft-Konto
@@ -30,11 +30,11 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + Microsoft Visual Studio 2013 Update 3 oder eine höhere Version.
 + Sie müssen außerdem zunächst das Lernprogramm [Hinzufügen von Mobile Services zu einer vorhandenen App] abschließen.
 
-##Registrieren Ihrer App für die Verwendung eines Microsoft-Kontos 
+##Registrieren Ihrer App für die Verwendung eines Microsoft-Kontos
 
 Damit Sie Benutzer authentifizieren können, müssen Sie Ihre App beim Microsoft-Konto für das Developer Center registrieren. Sie müssen dann diese Registrierung mit Ihrem mobilen Dienst verbinden. Führen Sie die Schritte im folgenden Thema aus, um eine Microsoft-Kontoregistrierung zu erstellen und mit Ihrem mobilen Dienst zu verbinden.
 
-+ [Registrieren Ihrer App für die Verwendung einer Microsoft-Kontoanmeldung](mobile-services-how-to-register-microsoft-authentication.md) 
++ [Registrieren Ihrer App für die Verwendung einer Microsoft-Kontoanmeldung](mobile-services-how-to-register-microsoft-authentication.md)
 
 ##<a name="permissions"></a>Einschränken von Berechtigungen für authentifizierte Benutzer
 
@@ -54,10 +54,10 @@ Abschließend fügen Sie das Live SDK hinzu und verwenden es zum Authentifiziere
 
 5. Öffnen Sie die Projektdatei "mainpage.xaml.cs", und fügen Sie folgende Ausdrücke ein:
 
-        using Microsoft.Live;      
+        using Microsoft.Live;
 
 6. Fügen Sie den folgenden Codeausschnitt zur MainPage-Klasse hinzu:
-	
+
         private LiveConnectSession session;
         private static string clientId = "<microsoft-account-client-id>";
         private async System.Threading.Tasks.Task AuthenticateAsync()
@@ -107,12 +107,12 @@ Abschließend fügen Sie das Live SDK hinzu und verwenden es zum Authentifiziere
             this.ButtonLogin.Visibility = System.Windows.Visibility.Collapsed;
             RefreshTodoItems();
         }
-		
+
 7. Öffnen Sie im App-Projekt die Projektdatei "MainPage.xaml", und fügen Sie das folgende **Button**-Elemente für **TitlePanel** hinzu. Dies erfolgt im Anschluss an das **TextBlock**-Element:
 
-		<Button Name="ButtonLogin" Click="ButtonLogin_Click" 
+		<Button Name="ButtonLogin" Click="ButtonLogin_Click"
                         Visibility="Visible">Sign in</Button>
-		
+
 9. Drücken Sie F5, um die App auszuführen, und melden Sie sich mit Ihrem Microsoft-Konto an.
 
    Wenn Sie sich erfolgreich angemeldet haben, sollte die App fehlerfrei ausgeführt werden, und Sie sollten Mobile Services abfragen und Daten aktualisieren können.
@@ -140,6 +140,5 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Autorisieren von Benutzern mit Skripts]: ../mobile-services-windows-phone-authorize-users-in-scripts.md
 
 [Azure Management Portal]: https://manage.windowsazure.com/
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

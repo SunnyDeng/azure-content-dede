@@ -6,7 +6,6 @@
 	authors="alancameronwills" 
 	manager="douge"/>
 
-
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
@@ -15,7 +14,6 @@
 	ms.topic="get-started-article" 
 	ms.date="07/08/2015" 
 	ms.author="awills"/>
-
  
 # Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites
 
@@ -31,8 +29,6 @@ Es gibt zwei Arten von Webtests:
 
 * [URL-Pingtest](#set-up-a-url-ping-test): Dies ist ein einfacher Test, den Sie im Azure-Portal erstellen können.
 * [Mehrstufiger Webtest](#multi-step-web-tests): Diesen Test erstellen Sie in Visual Studio Ultimate oder Visual Studio Enterprise und laden ihn in das Portal hoch.
-
-*Handelt es sich um eine Azure-Web-App? [Erstellen Sie den Webtest einfach auf dem Blatt der Web-App][azure-availability].*
 
 
 
@@ -213,7 +209,7 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
 * Ich erhalte eine Fehlermeldung "ungültige Zeichen", wenn ich 
 
-* *\*Gibt es einen Unterschied zwischen "Webtests" und "Verfügbarkeit"?
+* **Gibt es einen Unterschied zwischen "Webtests" und "Verfügbarkeit"?
 
     Wir verwenden die beiden Begriffe synonym.
 
@@ -241,4 +237,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

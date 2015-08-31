@@ -13,12 +13,16 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="05/21/2015" 
+    ms.date="08/14/2015" 
     ms.author="sidneyh"/>
 
 # Migration von Verbunden 
 
-Das Verbundfeature für die Azure SQL-Datenbank wird zusammen mit den Web-/Business-Editionen im September 2015 eingestellt. Zu diesem Zeitpunkt können Anwendungen, die das Verbundfeature verwenden, nicht mehr ausgeführt werden. Für eine erfolgreiche Migration wird dringend empfohlen, die Migration so bald wie möglich zu beginnen, um ausreichend Zeit für Planung und Ausführung zu sichern. Dieses Dokument liefert den Kontext, Beispiele und eine Einführung in das Dienstprogramm zur Migration von Verbunden, das zeigt, wie eine Verbunde-Anwendung erfolgreich und nahtlos in die APIS der [Clientbibliothek für elastische Datenbanken](http://go.microsoft.com/?linkid=9862592) für Sharding migriert werden kann. Das Ziel des Dokuments ist, Sie durch die vorgeschlagenen Schritte für die Migration einer Verbundanwendung zu führen, ohne Daten verschieben zu müssen.
+Das Verbundfeature für die Azure SQL-Datenbank wird zusammen mit den Web-/Business-Editionen im September 2015 eingestellt. Zu diesem Zeitpunkt können Anwendungen, die das Verbundfeature verwenden, nicht mehr ausgeführt werden. Für eine erfolgreiche Migration wird dringend empfohlen, die Migration so bald wie möglich zu beginnen, um ausreichend Zeit für Planung und Ausführung zu sichern.
+
+Wenn Ihre Anwendung noch nicht ohne Verbunde verwendet werden kann, wenden Sie sich anhand der [hier](https://support.microsoft.com/kb/3087180) genannten Anweisungen an den Microsoft-Support.
+
+Dieses Dokument liefert den Kontext, Beispiele und eine Einführung in das Dienstprogramm zur Migration von Verbunden, das zeigt, wie eine Verbunde-Anwendung erfolgreich und nahtlos in die APIS der [Clientbibliothek für elastische Datenbanken](http://go.microsoft.com/?linkid=9862592) für Sharding migriert werden kann. Das Ziel des Dokuments ist, Sie durch die vorgeschlagenen Schritte für die Migration einer Verbundanwendung zu führen, ohne Daten verschieben zu müssen.
 
 Es gibt drei Hauptschritte für die Migration einer vorhandenen Verbundanwendung zu einer Anwendung, die Tools für elastische Datenbanken verwendet.
 
@@ -129,6 +133,9 @@ Obwohl die Tools für elastische Datenbanken viele zusätzliche Funktionen biete
 
 * Durch die Durchführung der SWITCH OUT-Anweisung für ein Verbundmitglied kann die resultierende Datenbank alle Azure SQL-Datenbankfeatures verwenden (d. h. neue Editionen, Sicherung, PITR, Überwachung usw.)
 
+##Benötigen Sie mehr Zeit für die Migration? 
+Wenn Ihre Anwendung noch nicht ohne Verbunde verwendet werden kann, wenden Sie sich anhand der [hier](https://support.microsoft.com/kb/3087180) genannten Anweisungen an den Microsoft-Support.
+
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Anchors-->
@@ -143,4 +150,4 @@ Obwohl die Tools für elastische Datenbanken viele zusätzliche Funktionen biete
 [3]: ./media/sql-database-elastic-scale-federation-migration/migrate-3.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

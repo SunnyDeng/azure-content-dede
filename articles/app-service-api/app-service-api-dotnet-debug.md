@@ -13,38 +13,42 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/08/2015" 
-	ms.author="bradyg;tarcher"/>
+	ms.date="08/14/2015" 
+	ms.author="tdykstra"/>
 
 # Debuggen einer API-App in Azure App Service
 
 ## Übersicht
 
-In diesem Lernprogramm erfahren Sie, wie Sie ASP.NET-Web-API-Code debuggen, der zur Ausführung in einer [API-App](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md) konfiguriert ist. Das Debugging wird sowohl lokal als auch remote (während der Ausführung in Azure) durchgeführt. Im Lernprogramm wird die API-App verwendet, die Sie in den vorherigen Lernprogrammen in dieser Reihe [erstellt](app-service-dotnet-create-api-app.md) und [bereitgestellt](app-service-dotnet-deploy-api-app.md) haben.
+In diesem Lernprogramm erfahren Sie, wie Sie ASP.NET-Web-API-Code debuggen, der zur Ausführung in einer [API-App](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md) konfiguriert ist. Das Debugging wird sowohl lokal als auch remote (während der Ausführung in Azure) durchgeführt.
+
+Im Lernprogramm wird die API-App verwendet, die Sie in den vorherigen Lernprogrammen in dieser Reihe [erstellt](app-service-dotnet-create-api-app.md) und [bereitgestellt](app-service-dotnet-deploy-api-app.md) haben.
 
 ## Remotedebuggen einer API-App 
 
-Mit den folgenden Schritten ermöglichen Sie das Debuggen einer API-App, während diese in der Cloud unter Verwendung der Swagger-Benutzeroberfläche als Testclient ausgeführt wird.
+Um remotes Debuggen zu aktivieren, müssen Sie einen Debugbuild in Azure bereitstellen.
 
 1. Klicken Sie im **Projektmappen-Explorer** von Visual Studio mit der rechten Maustaste auf das Projekt, das Sie [im vorherigen Lernprogramm bereitgestellt haben](app-service-dotnet-deploy-api-app.md), und wählen Sie **Veröffentlichen**.
 
-	![Projekt veröffentlichen](./media/app-service-api-dotnet-debug/rd-publish.png)
+2. Wählen Sie im Dialogfeld **Webveröffentlichung** die Registerkarte **Einstellungen** aus, und wählen Sie die Buildkonfiguration **Debug** aus.
 
-2. Wählen Sie im Dialogfeld **Webveröffentlichung** die Registerkarte "Einstellungen" aus, und stellen Sie sicher, dass die Buildkonfiguration **Debug** ausgewählt ist. Klicken Sie anschließend auf **Veröffentlichen**, um alle Änderungen an Ihrem Azure-Abonnement zu speichern.
+4. Klicken Sie auf **Veröffentlichen**.
 
 	![Projekt veröffentlichen](./media/app-service-api-dotnet-debug/rd-debug-publish.png)
 
-3. Es sollte sich ein Browserfenster mit einer Bestätigungsmeldung öffnen, dass Ihre API-App erfolgreich erstellt wurde.
+	Ein Browserfenster wird basierend auf der URL Ihrer API-App geöffnet.
 
-4. Fügen Sie in der Adresszeile des Browsers am Ende der URL "/swagger" hinzu, und drücken Sie die &lt;Eingabetaste>. Daraufhin wird der Client mit der Swagger-Benutzeroberfläche angezeigt.
+4. Fügen Sie in der Adresszeile des Browsers am Ende der URL "/swagger" hinzu, und drücken Sie die Eingabetaste.
+
+	Dieser Schritt setzt voraus, dass Sie die Swagger-Benutzeroberfläche aktiviert haben, wie im Lernprogramm zum [Erstellen](app-service-dotnet-create-api-app.md) gezeigt.
 
 	![Swagger-Benutzeroberfläche](./media/app-service-api-dotnet-debug/rd-swagger-ui.png)
 
-5. Kehren Sie zu Visual Studio zurück, und klicken Sie im Menü **Ansicht** auf **Server-Explorer**.
+5. Kehren Sie zu Visual Studio zurück, und klicken Sie auf **Ansicht > Server-Explorer**.
 
 6. Erweitern Sie im **Server-Explorer** den Knoten **Azure > App Service**.
 
-7. Suchen Sie die Ressourcengruppe, die Sie beim Bereitstellen Ihrer API-App erstellt haben.
+7. Suchen Sie die Ressourcengruppe, die Sie beim Bereitstellen Ihrer API-App erstellt oder ausgewählt haben.
 
 8. Klicken Sie unterhalb der Ressourcengruppe mit der rechten Maustaste auf den Knoten für die API-App, und wählen Sie **Debugger anfügen**.
 
@@ -54,21 +58,19 @@ Mit den folgenden Schritten ermöglichen Sie das Debuggen einer API-App, währen
 
 	![Anfügen des Debuggers](./media/app-service-api-dotnet-debug/rd-attaching.png)
 
-9. Nachdem die Verbindung hergestellt wurde, öffnen Sie die Datei **ContactsController.cs** im API-App-Projekt, und fügen Sie Haltepunkte bei den Methoden `Get` und `Post` hinzu. Sie werden eventuell zunächst nicht als aktiv angezeigt. Wenn jedoch der Remotedebugger angefügt ist, sind Sie zum Debuggen bereit.
+9. Nachdem die Verbindung hergestellt wurde, öffnen Sie die Datei **ContactsController.cs** im API-App-Projekt, und fügen Sie Haltepunkte in der `Get`-Methode hinzu.
 
 	![Anwenden von Haltepunkten auf Controller](./media/app-service-api-dotnet-debug/rd-breakpoints.png)
 
-10. Kehren Sie zur Browsersitzung zurück, klicken Sie auf das **Get**-Verb, um das Schema für das *Contact*-Objekt anzuzeigen, und klicken Sie dann auf **Try it Out**. Wenn Sie einen Haltepunkt in der **Get**-Methode des Controllers setzen, stoppt Visual Studio die Programmausführung, und Sie können Ihre Controllerlogik debuggen.
+10. Kehren Sie zur Browsersitzung zurück, klicken Sie auf das **Get**-Verb, um das Schema für das *Contact*-Objekt anzuzeigen, und klicken Sie dann auf **Try it Out**. Visual Studio stoppt die Ausführung des Programms auf dem Haltepunkt, und kann die Logik des Controllers debuggen.
 
 	![Ausprobieren](./media/app-service-api-dotnet-debug/rd-try-it-out.png)
 
 ## Lokales Debuggen einer API-App 
 
-Möglicherweise möchten Sie in bestimmten Fällen Ihre API-App lokal debuggen – beispielsweise, um langsame Roundtrips im Test-/Debugzyklus zu vermeiden. Die folgenden Schritte zeigen, wie Sie Ihre API-App mit der Swagger-Benutzeroberfläche als Testclient lokal debuggen.
+Unter Umständen ist es erforderlich, Ihre API-App lokal zu debuggen, wenn z. B. Roundtrips zum Azure-Server das Debuggen verlangsamen. Der folgende Abschnitt zeigt, wie Sie Ihre API-App mit der Swagger-Benutzeroberfläche als Testclient lokal debuggen.
 
-1. Öffnen Sie in Visual Studio die Datei *web.config* des API-App-Projekts. 
- 
-2. Navigieren Sie in Ihrem Browser zum [Azure-Vorschauportal](https://portal.azure.com).
+2. Navigieren Sie in Ihrem Browser zum [Azure-Vorschauportal](https://portal.azure.com). 
 
 3. Klicken Sie in der Randleiste auf die Schaltfläche **Durchsuchen**, und wählen Sie **API-Apps**.
 
@@ -94,7 +96,9 @@ Möglicherweise möchten Sie in bestimmten Fällen Ihre API-App lokal debuggen �
 
 	![API-App-Host – Anwendungseinstellungen für das lokale Debuggen](./media/app-service-api-dotnet-debug/ld-app-settings-for-local-debugging.png)
 
-9. Suchen Sie in den **App-Einstellungen** nach den folgenden Werten, und fügen Sie sie dem Abschnitt *appSettings* in der Datei **web.config** hinzu.
+1. Öffnen Sie in Visual Studio die Datei *web.config* des API-App-Projekts.
+
+9. Fügen Sie aus den **App-Einstellungen** jeden der folgenden Schlüssel und Werte zum Abschnitt **appSettings** in der Datei *web.config* hinzu.
 	- **EMA\_MicroserviceId**
 	- **EMA\_Secret**
 	- **EMA\_RuntimeUrl**
@@ -103,23 +107,19 @@ Möglicherweise möchten Sie in bestimmten Fällen Ihre API-App lokal debuggen �
 
 	![API-App-Host – Anwendungseinstellungen für das lokale Debuggen](./media/app-service-api-dotnet-debug/ld-debug-settings.png)
 
-	**Hinweis:** Die *EMA\_*-Werte, die Sie der Datei *web.config* in diesem Abschnitt hinzufügen, enthalten sensible Autorisierungsinformationen. Daher wird empfohlen, mit Bedacht vorzugehen, wenn Sie diese Datei in einem öffentlich zugänglichen Repository für die Quellsteuerung (wie z. B. *github*) bereitstellen, da diese geheimen Schlüssel dann für andere Benutzer sichtbar sind. Weitere Informationen zur Sicherheit und zur Verwendung von Anmeldeinformationen finden Sie unter [Best Practices für das Bereitstellen von Kennwörtern und anderen vertraulichen Daten in ASP.NET und Azure App Service](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
+	**Hinweis:** Die *EMA\_*-Werte, die Sie der Datei *web.config* in diesem Abschnitt hinzufügen, enthalten sensible Autorisierungsinformationen. Aus diesem Grund sollten Sie es vermeiden, diese Werte in einem öffentlichen Quellcodeverwaltungsrepository zu speichern. Weitere Informationen finden Sie unter [Best Practices für das Bereitstellen von Kennwörtern und anderen vertraulichen Daten in ASP.NET und Azure App Service](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
 
-10. Platzieren Sie einen oder mehrere Haltepunkte in Ihrem API-App-Controllercode (in den `Get`- und `Post`-Methoden).
-
-	![Setzen von Haltepunkten](./media/app-service-api-dotnet-debug/ld-breakpoints.png)
+10. Platzieren Sie in der `Get`-Methode einen Haltepunkt in Ihrem API-App-Controllercode.
 
 11. Drücken Sie F5, um ein Visual Studio-Debugsitzung zu starten.
  
 13.  Wenn die Zugriffsebene der API-App auf **Öffentlich (anonym)** festgelegt ist, können Sie die Seite mit der Swagger-Benutzeroberfläche für Tests verwenden.
 
-	* Wenn der Browser die Seite lädt, wird eine Fehlermeldung angezeigt. Fügen Sie in der Adresszeile des Browsers am Ende der URL *swagger/* hinzu, und drücken Sie die EINGABETASTE.
+	* Wenn der Browser die Seite lädt, wird eine HTTP 403-Fehlerseite angezeigt. Fügen Sie in der Adresszeile des Browsers am Ende der URL *swagger/* hinzu, und drücken Sie die EINGABETASTE.
 
 	* Sobald die Swagger-Benutzeroberfläche geladen wurde, klicken Sie auf das **Get**-Verb im Browserfenster, um das Schema für das Contact-Objekt anzuzeigen, und klicken Sie dann auf **Try it Out**.
 
-		Visual Studio stoppt die Programmausführung an den zuvor gesetzten Haltepunkten, und Sie können Ihre Controllerlogik debuggen.
-
-		![Ausprobieren](./media/app-service-api-dotnet-debug/ld-try-it-out.png)
+		Visual Studio stoppt die Ausführung des Programms auf dem Haltepunkt, und kann die Logik des Controllers debuggen.
 
 14.	Wenn die Zugriffsebene der API-App auf **Öffentlich (authentifiziert)** festgelegt ist, müssen Sie gemäß den unter [Schützen einer API-App](app-service-api-dotnet-add-authentication.md#use-postman-to-send-a-post-request) gezeigten Verfahren für eine POST-Anforderung eine Authentifizierung vornehmen und ein Browsertool verwenden. Gehen Sie so vor:
 
@@ -132,11 +132,8 @@ Möglicherweise möchten Sie in bestimmten Fällen Ihre API-App lokal debuggen �
 
 ## Nächste Schritte
 
-Durch das Remotedebuggen für API-Apps können Sie einfacher sehen, wie Ihr Code in Azure App Service ausgeführt wird. Umfangreiche Diagnose- und Debugdaten stehen Ihnen direkt in der Visual Studio-IDE für Ihre remote ausgeführten Azure API-Apps zur Verfügung.
+In diesem Lernprogramm haben Sie erfahren, wie das Debuggen bei API-Apps erfolgt. Weitere Informationen zur Problembehandlung finden Sie unter [Problembehandlung einer Web-App in Azure App Service mithilfe von Visual Studio](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md). Da API-Apps Web-Apps sind, die über zusätzliche Features zum Hosten von Webdiensten verfügen, können Sie dieselben Debugging- und Problembehandlungstools für API-Apps verwenden, die Sie für Web-Apps nutzen.
 
-App Service-API-Apps sind App Service-Web-Apps, die über zusätzliche Features zum Hosten von Webdiensten verfügen, sodass Sie dieselben Debugging- und Problembehandlungstools für API-Apps verwenden können, die Sie für Web-Apps nutzen. Weitere Informationen finden Sie unter [Problembehandlung einer Web-App in Azure App Service mithilfe von Visual Studio](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md).
-
-Die im Rahmen dieser Lernprogrammreihe erstellte API-App ist öffentlich verfügbar und kann durch beliebige Benutzer aufgerufen werden. Informationen zum Schützen von API-Apps, damit nur authentifizierte Benutzer sie aufrufen können, finden Sie unter [Authentifizierung für API- und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

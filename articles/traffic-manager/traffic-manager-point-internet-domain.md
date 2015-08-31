@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Verweisen einer Unternehmens-Internetdomäne auf eine Traffic Manager-Domäne"
+   pageTitle="Verweisen einer Unternehmens-Internetdomäne auf eine Traffic Manager-Domäne | Microsoft Azure"
    description="In diesem Artikel erfahren Sie, wie Sie mit Ihrem Unternehmensdomänennamen auf einen Traffic Manager-Domänennamen verweisen."
    services="traffic-manager"
    documentationCenter=""
@@ -12,8 +12,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/27/2015"
-   ms.author="joaoma;cherylmc" />
+   ms.date="08/19/2015"
+   ms.author="joaoma" />
 
 # Verweisen einer Unternehmens-Internetdomäne auf eine Traffic Manager-Domäne
 
@@ -27,13 +27,15 @@ Alle Datenverkehrsanforderungen an *www.contoso.com* werden jetzt an *contoso.tr
 
 >[AZURE.IMPORTANT]Sie können nicht mit Domänen der zweiten Ebene wie *contoso.com* auf Traffic Manager-Domänen verweisen. Dies ist eine Einschränkung des DNS-Protokolls, das CNAME-Datensätze für Domänennamen der zweiten Ebene nicht zulässt.
 
-## Siehe auch
+## Nächste Schritte
 
-[Informationen zu Lastenausgleichsmethoden von Traffic Manager](traffic-manager-load-balancing-methods.md)
+[Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md)
 
-[Traffic Manager-Konfigurationsaufgaben](https://msdn.microsoft.com/library/azure/hh744830.aspx)
+[Deaktivieren, Aktivieren oder Löschen eines Traffic Manager-Profils](disable-enable-or-delete-a-profile.md)
 
-[Traffic Manager – Übersicht](traffic-manager-overview.md)
+[Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts](disable-or-enable-an-endpoint.md)
+
+[Was ist Traffic Manager?](traffic-manager-overview.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

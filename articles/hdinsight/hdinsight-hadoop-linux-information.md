@@ -5,8 +5,8 @@
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
-   editor="cgronlun"/>
-
+   editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
@@ -16,7 +16,6 @@
    ms.workload="big-data"
    ms.date="07/24/2015"
    ms.author="larryfr"/>
-
 
 # Informationen zur Verwendung von HDInsight unter Linux (Vorschau)
 
@@ -54,13 +53,16 @@ Der vollqualifizierte Domänenname (FQDN) für die Verbindung zum Cluster lautet
 	>
 	> Die Authentifizierung erfolgt unverschlüsselt. Verwenden Sie immer HTTPS, um eine sichere Verbindung zu gewährleisten.
 
-* **SSH** - &lt;Clustername>-ssh.azurehdinsight.net an Port 22
+* **SSH** - &lt;Custername>-ssh.azurehdinsight.net an Port 22 oder 23. Port 22 dient zum Herstellen einer Verbindung mit „headnode0“, während 23 zum Herstellen einer Verbindung mit „headnode1“ verwendet wird. Weitere Informationen zu Hauptknoten finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight](hdinsight-high-availability-linux.md).
 
-	> [AZURE.NOTE]Sie können auf einem Clientcomputer nur über SSH auf den Hauptknoten des Clusters zugreifen. Nachdem die Verbindung hergestellt ist, können Sie vom Hauptknoten aus über SSH auf die Workerknoten zugreifen.
+	> [AZURE.NOTE]Sie können auf einem Clientcomputer nur über SSH auf die Hauptknoten des Clusters zugreifen. Nachdem die Verbindung hergestellt ist, können Sie vom Hauptknoten aus über SSH auf die Workerknoten zugreifen.
 
 ## Dateispeicherorte
 
-Zu Hadoop zugehörige Dateien befinden sich auf den Clusterknoten in `/usr/hdp/current`.
+Zu Hadoop zugehörige Dateien befinden sich auf den Clusterknoten in `/usr/hdp`. Dieses Verzeichnis enthält die folgenden Unterverzeichnisse:
+
+* __2.2.4.9-1__: Dieses Verzeichnis wird gemäß der Version von Hortonworks Data Platform benannt, die von HDInsight verwendet wird. Die Zahl für Ihren Cluster kann sich daher von der hier angegebenen Zahl unterscheiden.
+* __current__: Dieses Verzeichnis enthält Links zu Verzeichnissen im Verzeichnis __2.2.4.9-1__. Dadurch müssen Sie nicht bei jedem Dateizugriff eine Versionsnummer eingeben (die sich außerdem ändern kann).
 
 Beispieldaten und JAR-Dateien für Hadoop Distributed File System (HDFS) oder Azure-Blobspeicher finden Sie unter '/example' oder 'wasb:///example'.
 
@@ -78,7 +80,7 @@ Da dies der Standardspeicher für HDInsight ist, sind für seine Verwendung in d
 
 	hadoop fs -ls /example/data
 
-Bei einigen Befehlen müssen Sie möglicherweise angeben, dass Sie Blobspeicher verwenden. Für diese Befehle können Sie die Zeichenfolge \*\***WASB://** voranstellen.
+Bei einigen Befehlen müssen Sie möglicherweise angeben, dass Sie Blobspeicher verwenden. Für diese Befehle können Sie die Zeichenfolge „****WASB://**“ voranstellen.
 
 Mit HDInsight können Sie auch mehrere Blobspeicherkonten einem Cluster zuordnen. Für den Zugriff auf Daten in einem nicht standardmäßigen Blobspeicherkonto können Sie das Format **WASB://&lt;container-name>@&lt;Kontoname>.blob.core.windows.net/** verwenden. Der folgende Befehl listet z. B. den Inhalt des Verzeichnisses **/example/data** für den angegebenen Container und das Blobspeicherkonto auf:
 
@@ -141,4 +143,4 @@ Neben dem vom Cluster aus gestarteten Hadoop-Befehl stehen eine Vielzahl von Mö
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

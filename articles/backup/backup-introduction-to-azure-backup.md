@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Einführung in Azure Backup"
+	pageTitle="Einführung in Azure Backup | Microsoft Azure"
 	description="Dieser Artikel bietet eine Übersicht über den Azure Backup-Dienst, mit dem Kunden Daten lokal und in Azure sichern können."
 	services="backup"
 	documentationCenter=""
@@ -7,33 +7,24 @@
 	manager="shreeshd"
 	editor="tysonn"/>
 
-<tags
-	ms.service="backup"
-	ms.workload="storage-backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/13/2015"
-	ms.author="trinadhk"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/18/2015" ms.author="trinadhk"; "jimpark"/>
 
 # Einführung in Azure Backup
 Dieser Artikel bietet eine allgemeine Übersicht über die in die Cloud integrierte Sicherungslösung von Microsoft, mit der Kunden ihre Daten entweder lokal oder in Azure sichern können.
 
 ## Was ist Azure Backup?
-Azure Backup ist ein Azure-Mehrinstanzendienst, mit dem Sie Ihre Daten sichern können: lokal oder in Azure. Ihre vorhandene lokale oder Offsite-Sicherungslösung wird durch eine zuverlässige und sichere Cloud-basierte Lösung mit wettbewerbsfähigen Kosten ersetzt. Zudem bietet dieser Dienst die Flexibilität, Ressourcen zu schützen, die in der Cloud ausgeführt werden. Azure Backup baut auf einer erstklassigen Infrastruktur auf, die skalierbar, robust und hoch verfügbar ist. Mit dieser Lösung können Sie Daten und Anwendungen von ihren System Center Data Protection Manager (SCDPM)-Servern, Windows-Servern, Windows-Clientcomputern oder virtuellen Azure IaaS-Computern sichern. Azure Backup und SCDPM bilden die technologischen Grundlagen der Cloud-basierten Microsoft-Sicherungslösung.
+Azure Backup ist ein Azure-Mehrinstanzendienst, mit dem Sie Ihre Daten lokal oder in Azure sichern können. Ihre vorhandene lokale oder Offsite-Sicherungslösung wird durch eine zuverlässige und sichere Cloud-basierte Lösung mit wettbewerbsfähigen Kosten ersetzt. Zudem bietet dieser Dienst die Flexibilität, Ressourcen zu schützen, die in der Cloud ausgeführt werden. Azure Backup baut auf einer erstklassigen Infrastruktur auf, die skalierbar, robust und hoch verfügbar ist. Mit dieser Lösung können Sie Daten und Anwendungen von ihren System Center Data Protection Manager (SCDPM)-Servern, Windows-Servern, Windows-Clientcomputern oder virtuellen Azure IaaS-Computern sichern. Azure Backup und SCDPM bilden die technologischen Grundlagen der Cloud-basierten Microsoft-Sicherungslösung.
 
 > [AZURE.VIDEO what-is-azure-backup]
 
 ## Cloud-Design
-Herkömmliche Sicherungslösungen haben sich dahingehend entwickelt, dass die Cloud ähnlich einer Festplatte oder einem Band als Endpunkt behandelt wird. Dieser Ansatz ist einfach, leicht bereitzustellen und bietet eine einheitliche Benutzererfahrung, ist jedoch in der Verwendung eingeschränkt und nutzt die zugrunde liegende Plattform nicht in vollem Umfang aus. Daraus ergibt sich eine ineffiziente und teure Lösung für Endkunden. Wenn Azure lediglich als Speicherendpunkt behandelt wird, können Sicherungslösungen nicht den vollen Umfang und die Leistungsfähigkeit der Public-Cloud-Plattform nutzen. Azure Backup hingegen ist ein echter Dienst, der die Cloud-Konstruktion nutzt und eine leistungsfähige und erschwingliche Sicherungslösung bietet. Azure Backup lässt sich in Ihre lokale Sicherungslösung (SCDPM) integrieren und bietet so eine End-to-End-Hybridlösung.
+Herkömmliche Sicherungslösungen haben sich dahingehend entwickelt, dass die Cloud ähnlich einer Festplatte oder einem Band als Endpunkt behandelt wird. Dieser Ansatz ist einfach, leicht bereitzustellen und bietet eine einheitliche Benutzererfahrung, ist jedoch in der Verwendung eingeschränkt und nutzt die zugrunde liegende Plattform nicht in vollem Umfang aus. Daraus ergibt sich eine ineffiziente und teure Lösung für Endkunden. Wenn Azure lediglich als Speicherendpunkt behandelt wird, können Sicherungslösungen nicht den vollen Umfang und die Leistungsfähigkeit der Public-Cloud-Plattform nutzen. Azure Backup hingegen ist ein echter Dienst, der die Cloud nutzt und eine leistungsfähige und erschwingliche Sicherungslösung bietet. Er lässt sich in Ihre lokale Sicherungslösung (SCDPM) integrieren und bietet so eine End-to-End-Hybridlösung.
 
 Dieser Ansatz bietet folgende Vorteile:
 
-+ Effiziente Cloud-Speicherarchitektur mit kostengünstiger und stabiler Datenspeicherung
-
-+ Nicht intrusive, automatische Skalierung des Diensts mit Gewährleistung einer hohen Verfügbarkeit
-
-+ Einheitliches Verfahren zur Sicherung von lokalen, Hybrid- und IaaS-Bereitstellungen
+- Effiziente Cloud-Speicherarchitektur mit kostengünstiger und stabiler Datenspeicherung
+- Nicht intrusive, automatische Skalierung des Diensts mit Gewährleistung einer hohen Verfügbarkeit
+- Einheitliches Verfahren zur Sicherung von lokalen Bereitstellungen sowie von Hybrid- und IaaS-Bereitstellungen
 
 Wichtigste Funktionen dieser Lösung:
 
@@ -66,7 +57,8 @@ Wichtigste Funktionen dieser Lösung:
 | Azure IaaS-VMs (Windows)| - | Azure Backup | | Azure IaaS-VMs (Linux) | - | Azure Backup |
 
 ## Nächste Schritte
-+ Häufig gestellte Fragen zum Azure Backup-Dienst sind [hier](backup-azure-backup-faq.md) aufgeführt.
-+ Besuchen Sie das [Azure Sicherungs-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
+- [Azure Backup testen](backup-try-azure-backup-in-10-mins.md)
+- Häufig gestellte Fragen zum Azure Backup-Dienst sind [hier](backup-azure-backup-faq.md) aufgeführt.
+- Besuchen Sie das [Azure Sicherungs-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

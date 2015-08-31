@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Verwenden des Clients der Xamarin-Komponente | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Client der Xamarin-Komponente für Azure Mobile Services verwenden." 
-	authors="lindydonna" 
-	manager="dwrede" 
-	editor="" 
-	services="mobile-services" 
+<properties
+	pageTitle="Verwenden des Clients der Xamarin-Komponente | Microsoft Azure"
+	description="Erfahren Sie, wie Sie den Client der Xamarin-Komponente für Azure Mobile Services verwenden."
+	authors="lindydonna"
+	manager="dwrede"
+	editor=""
+	services="mobile-services"
 	documentationCenter="xamarin"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-xamarin" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="04/24/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-xamarin"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/18/2015" 
 	ms.author="lindydonna"/>
 
 # So verwenden Sie den Client der Xamarin-Komponente für Azure Mobile Services
@@ -40,17 +40,17 @@ Der entsprechende typisierte clientseitige .NET-Typ sieht wie folgt aus:
 		[JsonProperty(PropertyName = "complete")]
 		public bool Complete { get; set; }
 	}
-	
+
 Wenn das dynamische Schema aktiviert ist, generieren die mobilen Azure-Dienste automatisch neue Spalten auf der Grundlage des Objekts in der Einfüge- oder Updateanforderung. Weitere Informationen finden Sie unter [Dynamisches Schema](http://go.microsoft.com/fwlink/?LinkId=296271).
 
 ## <a name="create-client"></a>Gewusst wie: Erstellen des Mobile Services-Clients
 
 Der folgende Code erstellt das `MobileServiceClient`-Objekt, das für den Zugriff auf Ihren mobilen Dienst verwendet wird.
-			
-	MobileServiceClient client = new MobileServiceClient( 
-		"AppUrl", 
-		"AppKey" 
-	); 
+
+	MobileServiceClient client = new MobileServiceClient(
+		"AppUrl",
+		"AppKey"
+	);
 
 Ersetzen Sie im obigen Code `AppUrl` und `AppKey` durch die URL und den Anwendungsschlüssel des mobilen Diensts in dieser Reihenfolge. Beide Werte finden Sie im Azure-Verwaltungsportal, indem Sie Ihren mobilen Dienst auswählen und auf "Dashboard" klicken.
 
@@ -58,35 +58,35 @@ Ersetzen Sie im obigen Code `AppUrl` und `AppKey` durch die URL und den Anwendun
 
 Jeglicher Code zum Abrufen oder Ändern von Daten in der Mobile Services-Tabelle ruft Funktionen des `MobileServiceTable`-Objekts auf. Sie erhalten einen Verweis auf die Tabelle, indem Sie die [GetTable](http://msdn.microsoft.com/library/windowsazure/jj554275.aspx)-Funktion für eine Instanz von `MobileServiceClient` aufrufen.
 
-    IMobileServiceTable<TodoItem> todoTable = 
+    IMobileServiceTable<TodoItem> todoTable =
 		client.GetTable<TodoItem>();
 
 Dies ist das typisierte Serialisierungsmodell. Eine Besprechung des <a href="#untyped">untypisierten Serialisierungsmodells</a> finden Sie weiter unten.
-			
-## <a name="querying"></a>Abfragen von Daten aus einem mobilen Dienst 
+
+## <a name="querying"></a>Abfragen von Daten aus einem mobilen Dienst
 
 Dieser Abschnitt beschreibt, wie Sie Abfragen an Ihren mobilen Dienst stellen können. Die Unterabschnitte beschreiben Aspekte wie z. B. Sortierung, Filterung und Seitenverwaltung.
-			
+
 ### <a name="filtering"></a>Filtern zurückgegebener Daten
 
 Der folgende Code zeigt, wie Sie Daten mithilfe einer `Where`-Klausel in einer Abfrage filtern. Die Abfrage gibt alle Elemente aus `todoTable` zurück, deren `Complete`-Eigenschaft gleich `false` ist. Die `Where`-Funktion wendet ein Zeilenfilterungsprädikat auf die Tabellenabfrage an.
-	
 
-	// This query filters out completed TodoItems and 
-	// items without a timestamp. 
+
+	// This query filters out completed TodoItems and
+	// items without a timestamp.
 	List<TodoItem> items = await todoTable
 	   .Where(todoItem => todoItem.Complete == false)
 	   .ToListAsync();
 
 Sie können den URI der an den mobilen Dienst gesendeten Anforderung anzeigen, indem Sie Software zur Überprüfung von Nachrichten verwenden, wie z. B. Browser-Entwicklertools oder Fiddler. Beachten Sie in der folgenden URI, dass wir die eigentliche Abfragezeichenfolge verändern:
 
-	GET /tables/todoitem?$filter=(complete+eq+false) HTTP/1.1				   
+	GET /tables/todoitem?$filter=(complete+eq+false) HTTP/1.1
 Diese Anfrage entspricht normalerweise in etwa der folgenden SQL-Abfrage auf der Serverseite:
-			
-	SELECT * 
-	FROM TodoItem 			
+
+	SELECT *
+	FROM TodoItem
 	WHERE ISNULL(complete, 0) = 0
-			
+
 Die an die `Where`-Methode übergebene Funktion kann beliebig viele Bedingungen enthalten. Die folgende Zeile:
 
 	// This query filters out completed TodoItems where Text isn't null
@@ -96,9 +96,9 @@ Die an die `Where`-Methode übergebene Funktion kann beliebig viele Bedingungen 
 	   .ToListAsync();
 
 Lässt sich (für die bereits gezeigte Abfrage) in etwa wie folgt übersetzen:
-			
-	SELECT * 
-	FROM TodoItem 
+
+	SELECT *
+	FROM TodoItem
 	WHERE ISNULL(complete, 0) = 0
 	      AND ISNULL(text, 0) = 0
 
@@ -125,13 +125,13 @@ Sie können `Take` aufrufen, um die Anzahl der zurückgegebenen Elemente zu erh�
 
 	// Sort items in ascending order by Text field
 	MobileServiceTableQuery<TodoItem> query = todoTable
-					.OrderBy(todoItem => todoItem.Text)       
+					.OrderBy(todoItem => todoItem.Text)
  	List<TodoItem> items = await query.ToListAsync();
 
 	// Sort items in descending order by Text field
 	MobileServiceTableQuery<TodoItem> query = todoTable
-					.OrderByDescending(todoItem => todoItem.Text)       
- 	List<TodoItem> items = await query.ToListAsync();			
+					.OrderByDescending(todoItem => todoItem.Text)
+ 	List<TodoItem> items = await query.ToListAsync();
 
 ### <a name="paging"></a>Seitenweises Zurückgeben von Daten
 
@@ -139,7 +139,7 @@ Der folgende Code zeigt, wie Sie mithilfe der `Take`-Klausel und der `Skip`-Klau
 
 	// Define a filtered query that returns the top 3 items.
 	MobileServiceTableQuery<TodoItem> query = todoTable
-					.Take(3);                              
+					.Take(3);
 	List<TodoItem> items = await query.ToListAsync();
 
 Die folgende geänderte Abfrage überspringt die ersten drei Ergebnisse und liefert die folgenden drei zurück. Dies ist die zweite "Seite" der Daten für eine Seitengröße von drei Elementen.
@@ -147,9 +147,9 @@ Die folgende geänderte Abfrage überspringt die ersten drei Ergebnisse und lief
 	// Define a filtered query that skips the top 3 items and returns the next 3 items.
 	MobileServiceTableQuery<TodoItem> query = todoTable
 					.Skip(3)
-					.Take(3);                              
+					.Take(3);
 	List<TodoItem> items = await query.ToListAsync();
-			
+
 Mit der [IncludeTotalCount](http://msdn.microsoft.com/library/windowsazure/jj730933.aspx)-Methode können Sie sicherstellen, dass die Abfrage die Gesamtanzahl für <i>alle</i> Datensätze abruft, die bei Ignorieren der angegebenen "Take Paging"-/"Limit"-Klausel zurückgegeben worden wären.
 
 	query = query.IncludeTotalCount();
@@ -164,12 +164,12 @@ Sie können angeben, welche Eigenschaften in den Ergebnissen enthalten sein soll
 	MobileServiceTableQuery<TodoItem> query = todoTable
 					.Select(todoItem => todoItem.Text);
 	List<string> items = await query.ToListAsync();
-	
+
 	// Select multiple fields -- both Complete and Text info
 	MobileServiceTableQuery<TodoItem> query = todoTable
 					.Select(todoItem => string.Format("{0} -- {1}", todoItem.Text.PadRight(30), todoItem.Complete ? "Now complete!" : "Incomplete!"));
 	List<string> items = await query.ToListAsync();
-			
+
 Alle bisher beschriebenen Funktionen sind additiv, d. h. wir können sie immer wieder aufrufen und bei jedem Aufruf einen größeren Teil der Abfrage beeinflussen. Ein weiteres Beispiel:
 
 	MobileServiceTableQuery<TodoItem> query = todoTable
@@ -178,7 +178,7 @@ Alle bisher beschriebenen Funktionen sind additiv, d. h. wir können sie immer w
 					.Skip(3).
 					.Take(3);
 	List<string> items = await query.ToListAsync();
-	
+
 ### <a name="lookingup"></a>Gewusst wie: Abrufen von Daten nach ID
 
 Die `LookupAsync`-Funktion kann verwendet werden, um Objekte mit einer bestimmten ID in der Datenbank zu suchen.
@@ -198,8 +198,8 @@ Nach Rückgabe des await `todoTable.InsertAsync`-Aufrufs wird die serverseitige 
 
 Zum Einfügen von untypisierten Daten können Sie Json.NET verwenden, wie unten gezeigt. Beachten Sie, dass auch hier beim Einfügen von Objekten keine Id angegeben wird.
 
-	JObject jo = new JObject(); 
-	jo.Add("Text", "Hello World"); 
+	JObject jo = new JObject();
+	jo.Add("Text", "Hello World");
 	jo.Add("Complete", false);
 	var inserted = await table.InsertAsync(jo);
 
@@ -214,15 +214,15 @@ Der folgende Code zeigt, wie Sie eine existierende Instanz mit derselben Id und 
 
 Zum Einfügen von untypisierten Daten können Sie Json.NET verwenden, wie hier gezeigt. Beachten Sie, dass Sie bei Änderungen eine Id angeben müssen, damit der mobile Dienst die zu aktualisierende Instanz identifizieren kann. Sie finden die ID im Ergebnis des `InsertAsync`-Aufrufs.
 
-	JObject jo = new JObject(); 
+	JObject jo = new JObject();
 	jo.Add("Id", 52);
-	jo.Add("Text", "Hello World"); 
+	jo.Add("Text", "Hello World");
 	jo.Add("Complete", false);
 	var inserted = await table.UpdateAsync(jo);
-			
+
 Wenn Sie versuchen, ein Element zu aktualisieren, ohne dass das "Id"-Feld bereits festgelegt ist, hat der Dienst keine Möglichkeit, die korrekte Instanz zu identifizieren, und der Dienst gibt `MobileServiceInvalidOperationException` zurück. Auch wenn Sie versuchen, ein nicht typisiertes Element zu aktualisieren, ohne dass das "Id"-Feld bereits festgelegt ist, gibt der Dienst ebenfalls `MobileServiceInvalidOperationException` zurück.
-			
-			
+
+
 ## <a name="deleting"></a>Löschen von Daten in einem mobilen Dienst
 
 Der folgende Code zeigt, wie Sie existierende Instanzen löschen können. Die Instanz wird durch das in `todoItem` festgelegte "Id"-Feld identifiziert.
@@ -231,12 +231,12 @@ Der folgende Code zeigt, wie Sie existierende Instanzen löschen können. Die In
 
 Zum Löschen von untypisierten Daten können Sie Json.NET verwenden, wie hier gezeigt. Beachten Sie, dass Sie bei Löschungen eine Id angeben müssen, damit der mobile Dienst die zu löschende Instanz identifizieren kann. Eine Löschanfrage benötigt nur die Id. Sonstige Eigenschaften werden nicht an den Dienst übergeben und eventuell vorhandene Eigenschaften werden vom Dienst ignoriert. Das Ergebnis eines `DeleteAsync`-Aufrufs ist üblicherweise auch `null`. Sie erhalten die zu übergebende ID im Ergebnis des `InsertAsync`-Aufrufs.
 
-	JObject jo = new JObject(); 
+	JObject jo = new JObject();
 	jo.Add("Id", 52);
 	await table.DeleteAsync(jo);
-			
+
 Wenn Sie versuchen, ein Element zu löschen, ohne dass das "Id"-Feld bereits festgelegt ist, hat der Dienst keine Möglichkeit, die korrekte Instanz zu identifizieren, und der Dienst gibt eine `MobileServiceInvalidOperationException` zurück. Auch wenn Sie versuchen, ein nicht typisiertes Element zu löschen, ohne dass das "Id"-Feld bereits festgelegt ist, gibt der Dienst ebenfalls `MobileServiceInvalidOperationException` zurück.
-		
+
 
 
 ## <a name="authentication"></a>Authentifizieren von Benutzern
@@ -260,7 +260,7 @@ Nach der Registrierung bei Ihrem Identitätsanbieter können Sie die [LoginAsync
 			{
 				user = await client
 					.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
-				message = 
+				message =
 					string.Format("You are now logged in - {0}", user.UserId);
 			}
 			catch (InvalidOperationException)
@@ -285,10 +285,10 @@ Ihre Anwendung kann den Identitätsanbieter auch unabhängig kontaktieren und da
 Der folgende Codeausschnitt zeigt die einfachste Form des Clientflusses für Facebook oder Google.
 
 	var token = new JObject();
-	// Replace access_token_value with actual value of your access token obtained 
+	// Replace access_token_value with actual value of your access token obtained
 	// using the Facebook or Google SDK.
 	token.Add("access_token", "access_token_value");
-			
+
 	private MobileServiceUser user;
 	private async System.Threading.Tasks.Task Authenticate()
 	{
@@ -297,11 +297,11 @@ Der folgende Codeausschnitt zeigt die einfachste Form des Clientflusses für Fac
 			string message;
 			try
 			{
-				// Change MobileServiceAuthenticationProvider.Facebook 
+				// Change MobileServiceAuthenticationProvider.Facebook
 				// to MobileServiceAuthenticationProvider.Google if using Google auth.
 				user = await client
 					.LoginAsync(MobileServiceAuthenticationProvider.Facebook, token);
-				message = 
+				message =
 					string.Format("You are now logged in - {0}", user.UserId);
 			}
 			catch (InvalidOperationException)
@@ -326,7 +326,7 @@ Manche Aufrufe der Anmeldemethode lassen sich vermeiden, nachdem sich der Benutz
 	var account = new Account (user.UserId, new Dictionary<string,string> {{"token",user.MobileServiceAuthenticationToken}});
 	accountStore.Save(account, "Facebook");
 
-	// Log in 
+	// Log in
 	var accounts = accountStore.FindAccountsForService ("Facebook").ToArray();
 	if (accounts.Count != 0)
 	{
@@ -342,7 +342,7 @@ Manche Aufrufe der Anmeldemethode lassen sich vermeiden, nachdem sich der Benutz
 		// Replace access_token_value with actual value of your access token
 		token.Add("access_token", "access_token_value");
 	}
-			
+
 	 // Log out
 	client.Logout();
 	accountStore.Delete(account, "Facebook");
@@ -354,7 +354,7 @@ Mobile Dienste bieten verschiedene Möglichkeiten zur Erkennung, Validierung und
 
 Ein Beispiel sind Serverskripts, die in einem mobilen Dienst registriert sind und für eine Vielzahl von Operationen auf einzufügende und zu aktualisierende Daten verwendet werden können, inklusive Validierung und Änderung der Daten. Sie könnten z. B. das folgende Serverskript erstellen und registrieren, das Daten validiert und ändert:
 
-	function insert(item, user, request) 
+	function insert(item, user, request)
 	{
 	   if (item.text.length > 10) {
 		  request.respond(statusCodes.BAD_REQUEST, { error: "Text cannot exceed 10 characters" });
@@ -387,7 +387,7 @@ Nun ist Ihr mobiler Dienst in der Lage, Daten zu validieren und Fehlermeldungen 
 Der Client der Xamarin-Komponente wurde für stark typisierte Szenarien entwickelt. Manchmal macht jedoch eine weniger starke Typisierung Sinn, z. B. beim Umgang mit Objekten mit offenem Schema. Dieses Szenario funktioniert wie folgt. In Ihren Abfragen verwenden Sie das Übertragungsformat anstelle von LINQ.
 
 	// Get an untyped table reference
-	IMobileServiceTable untypedTodoTable = client.GetTable("TodoItem");			
+	IMobileServiceTable untypedTodoTable = client.GetTable("TodoItem");
 
 	// Lookup untyped data using OData
 	JToken untypedItems = await untypedTodoTable.ReadAsync("$filter=complete eq 0&$orderby=text");
@@ -470,6 +470,5 @@ Sie haben das konzeptuelle Referenzthema abgeschlossen und können sich nun wich
 [MobileServiceUser]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.aspx
 [UserID]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid.aspx
 [MobileServiceAuthenticationToken]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken.aspx
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

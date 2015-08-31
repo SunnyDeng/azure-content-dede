@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/02/2015"
+   ms.date="08/19/2015"
    ms.author="sameerch"/>
 
 
@@ -116,6 +116,13 @@ Lassen Sie uns eine einfache Logik-App erstellen, die einen Kunden in Salesforce
 
 19. Sie können überprüfen, ob ein neues Konto mit dem Namen "Contoso" in Ihrem Salesforce-Konto erstellt wird.
 
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
+
 <!--Image references-->
 [1]: ./media/app-service-logic-connector-salesforce/1_New_Logic_App.png
 [2]: ./media/app-service-logic-connector-salesforce/2_Logic_App_Settings.png
@@ -133,4 +140,4 @@ Lassen Sie uns eine einfache Logik-App erstellen, die einen Kunden in Salesforce
 [14]: ./media/app-service-logic-connector-salesforce/14_Update_Account_Address.png
 [15]: ./media/app-service-logic-connector-salesforce/15_Create_new_salesforce_connector.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

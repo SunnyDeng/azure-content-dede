@@ -1,3 +1,19 @@
+<properties
+   pageTitle="Installieren von Wartungsmodus-Updates"
+   description="Beschreibt die Installation von Wartungsmodus-Updates über Windows PowerShell für StorSimple."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/18/2015"
+   ms.author="alkohli" />
 
 #### So installieren Sie Wartungsmodus-Updates über Windows PowerShell für StorSimple
 
@@ -9,7 +25,7 @@
 
      `Get-HcsUpdateAvailability`
     
-4. Sie werden benachrichtigt, wenn Updates verfügbar sind und ob diese Updates mit oder ohne Unterbrechungen installiert werden können. Um Updates anzuwenden, durch die der Betrieb unterbrochen wird, müssen Sie das Gerät in den Wartungsmodus versetzen. Anweisungen dazu finden Sie unter [Wechseln in den Wartungsmodus](#enter-maintenance-mode).
+4. Sie werden benachrichtigt, wenn Updates verfügbar sind und ob diese Updates mit oder ohne Unterbrechungen installiert werden können. Um Updates anzuwenden, durch die der Betrieb unterbrochen wird, müssen Sie das Gerät in den Wartungsmodus versetzen. Anweisungen dazu finden Sie unter [Schritt 2: Wechseln in den Wartungsmodus](storsimple-update-device.md#step2).
 
 5. Wenn sich Ihr Gerät im Wartungsmodus befindet, geben Sie an der Eingabeaufforderung folgenden Befehl ein: `Start-HcsUpdate`.
 
@@ -23,6 +39,6 @@
 
 7. Wurde der aktuelle Controller nach der Installation der Aktualisierung neu gestartet, stellen Sie eine Verbindung zu dem anderen Controller her und führen Sie die Schritte 1 bis 6 durch.
 
-8. Nachdem beide Controller aktualisiert wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [Beenden des Wartungsmodus](#exit-maintenance-mode).
+8. Nachdem beide Controller aktualisiert wurden, beenden Sie den Wartungsmodus. Anweisungen dazu finden Sie unter [Schritt 4: Beenden des Wartungsmodus](storsimple-update-device.md#step4).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

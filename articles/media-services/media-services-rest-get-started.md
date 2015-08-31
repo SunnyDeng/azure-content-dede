@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="08/14/2015" 
 	ms.author="juliako"/>
 
 #Erste Schritte zum Bereitstellen von Video-on-Demand (VoD) mit REST-APIs 
@@ -40,7 +40,6 @@ Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
 1.  Erstellen eines neuen Medienobjekts und Hochladen einer Videodatei mit der REST-API
 1.  Konfigurieren von Streamingeinheiten mit der REST-API
 2.  Codieren der Quelldatei in einen Satz von MP4-Dateien mit adaptiver Bitrate mit der REST-API
-1.  Konfigurieren der Übermittlungsrichtlinie für das codierte Medienobjekt mit der REST-API
 1.  Veröffentlichen des Medienobjekts und Abrufen von URLs für Streaming und progressiven Download mit der REST-API 
 1.  Wiedergeben Ihrer Inhalte 
 
@@ -908,7 +907,7 @@ Bei Erfolg wird ein Antwortcode 204 ohne Meldungstext zurückgegeben.
 
 ### Abrufen des Ausgabemedienobjekts 
 
-Im nächsten Abschnitt konfigurieren wir die Übermittlungsrichtlinie für das Ausgabemedienobjekt (das codierte Medienobjekt) des Auftrags. Der folgende Code zeigt, wie Sie die ID des Ausgabemedienobjekts anfordern.
+Der folgende Code zeigt, wie Sie die ID des Ausgabemedienobjekts anfordern.
 
 
 **HTTP-Anforderung**
@@ -976,7 +975,7 @@ Mit der folgenden HTTP-Anforderung **AssetDeliveryPolicies** wird angegeben, das
 	Accept: application/json
 	Accept-Charset: UTF-8
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=f7f09258-6753-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421679198&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=aUvBcDwRAFk1JLxceWu%2bf9dVrCZM7PrTRbZd0TtoKvU%3d
-	x-ms-version: 2.11
+	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 83
 	
@@ -1024,7 +1023,7 @@ Die folgende HTTP-Anforderung verknüpft die angegebene Übermittlungsrichtlinie
 	Accept-Charset: UTF-8
 	Content-Type: application/json
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=amstestaccount001&urn%3aSubscriptionId=z7f09258-2233-4ca2-b1ae-193798e2c9d8&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1421679198&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.windows.net%2f&HMACSHA256=aUvBcDwRAFk1JLxceWu%2bf9dVrCZM7PrTRbZd0TtoKvU%3d
-	x-ms-version: 2.11
+	x-ms-version: 2.8
 	Host: wamsbayclus001rest-hs.cloudapp.net
 	Content-Length: 140
 	
@@ -1268,6 +1267,7 @@ Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamische Pakete und mobile Geräte</a>
 
 
+<!-- Anchors. -->
 
 <!-- URLs. -->
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
@@ -1276,4 +1276,4 @@ Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

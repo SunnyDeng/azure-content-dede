@@ -1,29 +1,30 @@
-<properties 
-	pageTitle="Analysieren von Twitter-Daten mit Hadoop in HDInsight | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Twitterdaten mit Hive in Hadoop und HDInsight analysieren können, um die Häufigkeit bestimmter Wörter zu ermitteln." 
-	services="hdinsight" 
-	documentationCenter="" 
-	authors="mumian" 
-	manager="paulettm" 
+<properties
+	pageTitle="Analysieren von Twitter-Daten mit Hadoop in HDInsight | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Twitterdaten mit Hive in Hadoop und HDInsight analysieren können, um die Häufigkeit bestimmter Wörter zu ermitteln."
+	services="hdinsight"
+	documentationCenter=""
+	authors="mumian"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/28/2015" 
+<tags
+	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2015"
 	ms.author="jgao"/>
 
 # Analysieren von Twitter-Daten mit Hive in HDInsight
 
 Soziale Netzwerke sind einer der Hauptfaktoren für die Akzeptanz von Big Data. Öffentliche APIs von Websites wie Twitter sind eine nützliche Datenquelle für Analyse und Verständnis beliebter Trends. In diesem Lernprogramm werden Sie mit der Twitter-Streaming-API Tweets abrufen und dann mithilfe von Apache Hive in Azure HDInsight eine Liste der Twitter-Benutzer abrufen, die die meisten Tweets gesendet haben, die ein bestimmtes Wort enthalten.
 
-> [AZURE.NOTE]Die Schritte in diesem Artikel basieren auf der Verwendung eines Windows-basierten HDInsight-Clusters. Die Schritte für einen Linux-basierten Cluster finden Sie unter [Analysieren von Twitter-Daten mit Hive in HDInsight](hdinsight-analyze-twitter-data-linux.md).
+> [AZURE.NOTE]Die Schritte in diesem Dokument erfordern einen Windows-basierten HDInsight-Cluster. Die Schritte für einen Linux-basierten Cluster finden Sie unter [Analysieren von Twitter-Daten mit Hive in HDInsight (Linux)](hdinsight-analyze-twitter-data-linux.md).
 
-Ein ähnliches Beispiel befindet sich im HDInsight-Beispielkatalog. Sehen Sie sich das Channel 9-Video an: <a href="http://channel9.msdn.com/Series/Getting-started-with-Windows-Azure-HDInsight-Service/Analyze-Twitter-trend-using-Apache-Hive-in-HDInsight" target="_blank">Analyze Twitter trends using Apache Hive in HDInsight</a>.
 
+
+> [AZURE.TIP]Ein ähnliches Beispiel befindet sich im HDInsight-Beispielkatalog. Sehen Sie sich das Channel 9-Video an: <a href="http://channel9.msdn.com/Series/Getting-started-with-Windows-Azure-HDInsight-Service/Analyze-Twitter-trend-using-Apache-Hive-in-HDInsight" target="_blank">Analyze Twitter trends using Apache Hive in HDInsight</a>.
 
 ###Voraussetzungen
 
@@ -49,13 +50,13 @@ HDInsight verwendet zur Datenspeicherung Azure-Blobspeicher. Azure-Blobspeicher 
 
 Wenn Sie ein HDInsight-Cluster bereitstellen, wird ein Blobspeichercontainer ebenso wie HDFS als Standarddateisystem festgelegt. Zusätzlich zu diesem Container können Sie während des Bereitstellungsprozesses weitere Container aus demselben Azure-Speicherkonto oder anderen Azure-Speicherkonten hinzufügen. Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
 
-> [AZURE.NOTE]Um das in diesem Lernprogramm verwendete Windows PowerShell-Skript zu vereinfachen, werden alle Dateien im Container des Standarddateisystems unter */tutorials/twitter* gespeichert. Dieser Container hat standardmäßig denselben Namen wie der HDInsight-Cluster. Falls Sie einen anderen Container zum Speichern dieser Dateien verwenden, müssen Sie das Skript entsprechend anpassen.
+> [AZURE.NOTE] Um das in diesem Lernprogramm verwendete Windows PowerShell-Skript zu vereinfachen, werden alle Dateien im Container des Standarddateisystems unter */tutorials/twitter* gespeichert. Dieser Container hat standardmäßig denselben Namen wie der HDInsight-Cluster. Falls Sie einen anderen Container zum Speichern dieser Dateien verwenden, müssen Sie das Skript entsprechend anpassen.
 
 Die Syntax des Azure-Blobspeichers lautet:
 
 	wasb[s]://<ContainerName>@<StorageAccountName>.blob.core.windows.net/<path>/<filename>
 
-> [AZURE.NOTE]In der HDInsight-Clusterversion 3.0 wird nur die **wasb://*-Syntax unterstützt. Die ältere **asv://*-Syntax wird in HDInsight 2.1- und 1.6-Clustern unterstützt, nicht aber in HDInsight 3.0-Clustern; sie wird auch in späteren Versionen nicht unterstützt.
+> [AZURE.NOTE] In der HDInsight-Clusterversion 3.0 wird nur die \**wasb://*-Syntax unterstützt. Die ältere \**asv://*-Syntax wird in HDInsight 2.1- und 1.6-Clustern unterstützt, nicht aber in HDInsight 3.0-Clustern; sie wird auch in späteren Versionen nicht unterstützt.
 
 > Der Azure-Blobspeicherpfad ist ein virtueller Pfad. Weitere Informationen finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight][hdinsight-storage].
 
@@ -74,7 +75,7 @@ In der folgenden Tabelle sind die in diesem Lernprogramm verwendeten Dateien auf
 Dateien|Beschreibung
 ---|---
 /tutorials/twitter/data/tweets.txt|Die Quelldaten für den Hive-Job.
-/tutorials/twitter/output|Der Ausgabeordner für den Hive-Job. Der Standardname der Ausgabedatei des Hive-Auftrags lautet **000000\_0**. 
+/tutorials/twitter/output|Der Ausgabeordner für den Hive-Job. Der Standardname der Ausgabedatei des Hive-Auftrags lautet **000000\_0**.
 tutorials/twitter/twitter.hql|Die HiveQL-Skriptdatei.
 /tutorials/twitter/jobstatus|Der Status des Hadoop-Jobs.
 
@@ -83,7 +84,7 @@ tutorials/twitter/twitter.hql|Die HiveQL-Skriptdatei.
 
 In diesem Lernprogramm verwenden Sie die [Twitter-Streaming-APIs][twitter-streaming-api]. Die spezielle Twitter-Streaming-API, die Sie verwenden, heißt [statuses/filter][twitter-statuses-filter].
 
->[AZURE.NOTE] Eine Datei mit 10.000 Tweets und die Hive-Skriptdatei (siehe nächster Abschnitt) wurden in einen öffentlichen Blobcontainer hochgeladen. Wenn Sie die hochgeladenen Dateien verwenden möchten, können Sie diesen Abschnitt überspringen.
+>[AZURE.NOTE]Eine Datei mit 10.000 Tweets und die Hive-Skriptdatei (siehe nächster Abschnitt) wurden in einen öffentlichen Blobcontainer hochgeladen. Wenn Sie die hochgeladenen Dateien verwenden möchten, können Sie diesen Abschnitt überspringen.
 
 Die [Tweets-Daten](https://dev.twitter.com/docs/platform-objects/tweets) werden im JSON-Format (JavaScript Object Notation) in einer komplex verschachtelten Struktur gespeichert. Anstatt viele Codezeilen in einer herkömmlichen Programmiersprache zu schreiben, können Sie diese verschachtelte Struktur in eine Hive-Tabelle transformieren, die anschließend mit einer SQL-ähnlichen Sprache (Structured Query Language) namens HiveQL abgefragt werden kann.
 
@@ -245,13 +246,14 @@ In diesem Lernprogramm verwenden Sie Windows PowerShell, um einen Webdienstaufru
 
 3. Legen Sie die ersten fünf bis acht Variablen im Skript fest:
 
+
 Variable|Beschreibung
 ---|---
 $clusterName|Der Name des HDInsight-Clusters, in dem die Anwendung ausgeführt werden soll.
 $oauth\_consumer\_key|Dies ist der **Verbraucherschlüssel** der Twitter-Anwendung, den Sie beim Erstellen der Twitter-Anwendung notiert haben.
 $oauth\_consumer\_secret|Dies ist der zuvor notierte **consumer secret**-Schlüssel der Twitter-Anwendung.
 $oauth\_token|Dies ist das zuvor notierte **access token** der Twitter-Anwendung.
-$oauth\_token\_secret|Dies ist der zuvor notierte **access token secret**-Schlüssel der Twitter-Anwendung.	
+$oauth\_token\_secret|Dies ist der zuvor notierte **access token secret**-Schlüssel der Twitter-Anwendung.
 $destBlobName|Dies ist der Name des Ausgabe-Blobs. Der Standardwert lautet **tutorials/twitter/data/tweets.txt**. Wenn Sie den Standardwert ändern, müssen Sie die Windows PowerShell-Skripts entsprechend aktualisieren.
 $trackString|Der Webdienst gibt Tweets zurück, die mit diesen Schlüsselwörtern verknüpft sind. Der Standardwert lautet **Azure, Cloud, HDInsight**. Wenn Sie den Standardwert ändern, müssen Sie die Windows PowerShell-Skripts entsprechend aktualisieren.
 $lineMax|Der Wert bestimmt, wie viele Tweets das Skript liest. Das Lesen von 100 Tweets dauert etwa drei Minuten. Sie können einen größeren Wert festlegen, dann nimmt das Herunterladen jedoch mehr Zeit in Anspruch.
@@ -558,6 +560,5 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie ein unstrukturiertes JSON-Dat
 [hdinsight-power-query]: hdinsight-connect-excel-power-query.md
 [hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver.md
 [hdinsight-hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

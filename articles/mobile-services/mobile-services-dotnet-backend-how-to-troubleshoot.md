@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Problembehandlung beim Mobile Services .NET-Back-End | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Probleme mit Ihren mobilen Diensten mithilfe des .NET-Back-Ends diagnostizieren und beheben können." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="wesmc7777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Problembehandlung beim Mobile Services .NET-Back-End | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Probleme mit Ihren mobilen Diensten mithilfe des .NET-Back-Ends diagnostizieren und beheben können."
+	services="mobile-services"
+	documentationCenter=""
+	authors="wesmc7777"
+	manager="dwrede"
 	editor="mollybos"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="multiple" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="04/20/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="multiple"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="08/18/2015" 
 	ms.author="wesmc;ricksal"/>
 
 # Problembehandlung beim Mobile Services .NET-Back-End
@@ -34,7 +34,7 @@ Beim Entwickeln von Apps mit Mobile Services nutzt man normalerweise das Mobile 
 Sie können einen belieben HTTP-Debugger verwenden und HTTP-Traffic senden und inspizieren. [Fiddler](http://www.telerik.com/fiddler) ist ein beliebtes Tool, das Entwickler häufig zu diesem Zweck einsetzen. Um das Leben von Entwicklern einfacher zu machen, bündelt Mobile Services einen webbasierten HTTP-Debugger (auch als „Testclient“ bezeichnet) direkt mit Ihrem mobilen Dienst, was ein externes Tool unnötig macht. Wenn Sie Ihren mobilen Dienst lokal hosten, ist er unter einem URI im Stil von [http://localhost:59233](http://localhost:59233) verfügbar. Beim Hosten in der Cloud hat der URI das Format von [http://todo-list.azure-mobile.net](http://todo-list.azure-mobile.net). Die folgenden Schritte funktionieren gleich, unabhängig davon, wo der Dienst gehostet wird:
 
 1. Beginnen Sie mit einem Mobile Services-Serverprojekt in **Visual Studio 2013 Update 2** oder neuer. Falls Sie kein Projekt zur Hand haben, können Sie ein neues erstellen, indem Sie **Datei**, **Neu**, **Projekt** auswählen und dann den **Cloud**-Knoten und anschließend die **Windows Azure Mobile Services**-Vorlage auswählen.
-2. Drücken Sie **F5**, wodurch das Projekt erstellt und ausgeführt wird. Wählen Sie auf der Startseite **Ausprobieren**. 
+2. Drücken Sie **F5**, wodurch das Projekt erstellt und ausgeführt wird. Wählen Sie auf der Startseite **Ausprobieren**.
 
     >[AZURE.NOTE]Wenn der Dienst lokal gehostet wird, werden Sie beim Klicken auf den Link direkt auf die nächste Seite weitergeleitet. Beim Hosting in der Cloud hingegen werden Sie zur Eingabe von Anmeldeinformationen aufgefordert. Damit soll sichergestellt werden, dass nicht authentifizierte Benutzer keinen Zugriff auf die Daten über ihre API und Nutzlasten haben. Um die Seite sehen zu können, müssen Sie sich mit einem **leeren Benutzernamen** und Ihrem **Anwendungsschlüssel** als Kennwort anmelden. Ihren Anwendungsschlüssel für Ihren mobilen Dienst finden Sie im **Azure-Verwaltungsportal** auf der Registerkarte **Dashboard**, wenn Sie **Schlüssel verwalten** auswählen.
     >
@@ -69,7 +69,7 @@ Eine der Schlüsselfunktionen des .NET-Back-Ends ist die Möglichkeit, den Diens
     ![Konfigurieren des Ladens von Symbolen][SymbolLoading]
 
 3. Wählen Sie den Knoten **Symbole** links, und fügen Sie eine Referenz zum (SymbolSource)[http://symbolsource.org]-Server mithilfe der URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) hinzu. Symbole für das Mobile Services .NET-Back-End werden dort mit jeder neuen Version verfügbar gemacht.
- 
+
     ![Konfigurieren des Symbolservers][SymbolServer]
 
 4. Legen Sie einen Haltepunkt in der Codepassage fest, die Sie debuggen möchten. Legen Sie zum Beispiel einen Haltepunkt in der Methode **GetAllTodoItems()** des **TodoItemController** fest, der in der Mobile Services-Projektvorlage in Visual Studio enthalten ist.
@@ -154,4 +154,4 @@ Migrationen können komplex sein und erfordern, dass der Zustand der Datenbank s
 [LogsPortal]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/13.png
 [HelpConflict]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/14.png
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

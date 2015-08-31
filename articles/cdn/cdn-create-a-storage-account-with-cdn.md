@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/05/2015" 
+	ms.date="08/18/2015" 
 	ms.author="mazha"/>
 
 
@@ -120,4 +120,4 @@ Die Möglichkeit zum sofortigen Löschen von Inhalten wird im Azure-Verwaltungsp
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

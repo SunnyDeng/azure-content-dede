@@ -1,22 +1,23 @@
-<properties 
-	pageTitle="Entwickeln von Skriptaktionen mit HDInsight | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie mit Skriptaktionen Hadoop-Cluster anpassen können." 
-	services="hdinsight" 
-	documentationCenter="" 
-	authors="mumian" 
-	manager="paulettm" 
+<properties
+	pageTitle="Entwickeln von Skriptaktionen mit HDInsight | Microsoft Azure"
+	description="Erfahren Sie, wie Sie mit Skriptaktionen Hadoop-Cluster anpassen können."
+	services="hdinsight"
+	documentationCenter=""
+	tags="azure-portal"
+	authors="mumian"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/16/2015" 
+<tags
+	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/28/2015"
 	ms.author="jgao"/>
 
-# Entwickeln von Script Action-Skripts für HDInsight 
+# Entwickeln von Script Action-Skripts für HDInsight
 
 Mit Skriptaktionen (Script Action) kann zusätzliche Software in einem Hadoop-Cluster installiert oder die Konfiguration von in einem Cluster installierten Anwendungen geändert werden. Skriptaktionen sind Skripts, die auf Clusterknoten ausgeführt werden, wenn HDInsight-Cluster bereitgestellt sind. Sie werden dann ausgeführt, sobald die HDInsight-Konfiguration auf Knoten im Cluster abgeschlossen ist. Eine Skriptaktion wird mit Berechtigungen des Systemadministratorkontos ausgeführt und bietet umfassende Zugriffsrechte auf die Clusterknoten. Jeder Cluster kann mit einer Liste von Skriptaktionen bereitgestellt werden, die in der angegebenen Reihenfolge ausgeführt werden.
 
@@ -34,7 +35,7 @@ Name | Skript
 **Installieren von Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1. Siehe [Installieren und Verwenden von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md).
 **Installieren von Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1. Siehe [Installieren und Verwenden von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md).
 
-„Script Action“ kann über das Azure-Portal, Azure PowerShell oder das HDInsight .NET SDK bereitgestellt werden. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize].
+Die Skriptaktion kann über das Azure-Vorschauportal, Azure PowerShell oder das HDInsight .NET SDK bereitgestellt werden. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize].
 
 > [AZURE.NOTE]Die Beispielskripts funktionieren nur mit HDInsight-Clustern der Version 3.1 oder höher. Weitere Informationen zu HDInsight-Clusterversionen finden Sie unter [HDInsight-Clusterversionen](../hdinsight-component-versioning/).
 
@@ -48,11 +49,11 @@ Unten ist ein Beispielskript zum Konfigurieren der Website-Konfigurationsdateien
 	    [parameter(Mandatory)][string] $Value,
 	    [parameter()][string] $Description
 	)
-	
+
 	if (!$Description) {
 	    $Description = ""
 	}
-	
+
 	$hdiConfigFiles = @{
 	    "hive-site.xml" = "$env:HIVE_HOME\conf\hive-site.xml";
 	    "core-site.xml" = "$env:HADOOP_HOME\etc\hadoop\core-site.xml";
@@ -60,16 +61,16 @@ Unten ist ein Beispielskript zum Konfigurieren der Website-Konfigurationsdateien
 	    "mapred-site.xml" = "$env:HADOOP_HOME\etc\hadoop\mapred-site.xml";
 	    "yarn-site.xml" = "$env:HADOOP_HOME\etc\hadoop\yarn-site.xml"
 	}
-	
+
 	if (!($hdiConfigFiles[$ConfigFileName])) {
 	    Write-HDILog "Unable to configure $ConfigFileName because it is not part of the HDI configuration files."
 	    return
 	}
-	
+
 	[xml]$configFile = Get-Content $hdiConfigFiles[$ConfigFileName]
-	
+
 	$existingproperty = $configFile.configuration.property | where {$_.Name -eq $Name}
-	    
+
 	if ($existingproperty) {
 	    $existingproperty.Value = $Value
 	    $existingproperty.Description = $Description
@@ -80,12 +81,12 @@ Unten ist ein Beispielskript zum Konfigurieren der Website-Konfigurationsdateien
 	    $newproperty.Description = $Description
 	    $configFile.configuration.AppendChild($newproperty)
 	}
-	
+
 	$configFile.Save($hdiConfigFiles[$ConfigFileName])
-	
+
 	Write-HDILog "$configFileName has been configured."
 
-Eine Kopie der Skriptdatei finden Sie unter [https://hditutorialdata.blob.core.windows.net/customizecluster/editSiteConfig.ps1](https://hditutorialdata.blob.core.windows.net/customizecluster/editSiteConfig.ps1). Wenn Sie das Skript aus dem Azure-Portal aufrufen, können Sie die folgenden Parameter verwenden:
+Eine Kopie der Skriptdatei finden Sie unter [https://hditutorialdata.blob.core.windows.net/customizecluster/editSiteConfig.ps1](https://hditutorialdata.blob.core.windows.net/customizecluster/editSiteConfig.ps1). Wenn Sie das Skript aus dem Vorschauportal aufrufen, können Sie die folgenden Parameter verwenden:
 
 	hive-site.xml hive.metastore.client.socket.timeout 90
 
@@ -126,7 +127,7 @@ Wenn Sie ein benutzerdefiniertes Skript für einen HDInsight-Cluster entwickeln,
 
 	Die benutzerdefinierten Komponenten, die Sie auf den Clusterknoten installieren, sind möglicherweise standardmäßig so konfiguriert, dass sie den HDFS-Speicher (Hadoop Distributed File System) verwenden. Ändern Sie die Konfiguration, um stattdessen Azure-Blobspeicher zu verwenden. Auf einem Cluster-Reimage wird das HDFS-Dateisystem formatiert, sodass Sie alle darauf gespeicherten Daten verlieren würden. Mithilfe von Azure-Blobspeicher wird stattdessen sichergestellt, dass Ihre Daten erhalten bleiben.
 
-## Hilfsmethoden für benutzerdefinierte Skripts 
+## Hilfsmethoden für benutzerdefinierte Skripts
 
 Script Action bietet die folgenden Hilfsmethoden, mit denen Sie zum Schreiben von benutzerdefinierten Skripts verwenden können.
 
@@ -215,7 +216,7 @@ In diesem Abschnitt werden die Schritte zur lokalen Nutzung des HDInsight Emulat
 **Installieren des HDInsight-Emulators**: Um die Skriptaktion lokal auszuführen, muss der HDInsight-Emulator installiert sein. Installationsanweisungen finden Sie unter [Erste Schritte mit dem HDInsight-Emulator](../hdinsight-get-started-emulator/).
 
 **Festlegen der Ausführungsrichtlinie für Azure PowerShell**: Öffnen Sie Azure PowerShell, und führen Sie den folgenden Befehl (als Administrator) aus, um die Ausführungsrichtlinie auf *LocalMachine* und auf *Unrestricted* festzulegen:
- 
+
 	Set-ExecutionPolicy Unrestricted –Scope LocalMachine
 
 Diese Richtlinie muss uneingeschränkt sein, da Skripts nicht signiert sind.
@@ -243,44 +244,44 @@ Die Skriptfehlerprotokolle werden mit anderen Ausgaben im Standardspeicherkonto 
 
 Sie können auch remote auf die Clusterknoten zugreifen, um STDOUT und STDERR für benutzerdefinierte Skripts anzuzeigen. Die Protokolle auf jedem Knoten beziehen sich nur auf diesen Knoten und befinden sich unter **C:\\HDInsightLogs\\DeploymentAgent.log**. In diesen Protokolldateien werden alle Ausgaben aus dem benutzerdefinierten Skript aufgezeichnet. Ein Beispielprotokollauszug einer Spark-Skriptaktion sieht so aus:
 
-	Microsoft.Hadoop.Deployment.Engine.CustomPowershellScriptCommand; Details : BEGIN: Invoking powershell script https://configactions.blob.core.windows.net/sparkconfigactions/spark-installer.ps1.; 
-	Version : 2.1.0.0; 
-	ActivityId : 739e61f5-aa22-4254-aafc-9faf56fc2692; 
-	AzureVMName : HEADNODE0; 
-	IsException : False; 
-	ExceptionType : ; 
-	ExceptionMessage : ; 
-	InnerExceptionType : ; 
-	InnerExceptionMessage : ; 
+	Microsoft.Hadoop.Deployment.Engine.CustomPowershellScriptCommand; Details : BEGIN: Invoking powershell script https://configactions.blob.core.windows.net/sparkconfigactions/spark-installer.ps1.;
+	Version : 2.1.0.0;
+	ActivityId : 739e61f5-aa22-4254-aafc-9faf56fc2692;
+	AzureVMName : HEADNODE0;
+	IsException : False;
+	ExceptionType : ;
+	ExceptionMessage : ;
+	InnerExceptionType : ;
+	InnerExceptionMessage : ;
 	Exception : ;
 	...
 
 	Starting Spark installation at: 09/04/2014 21:46:02 Done with Spark installation at: 09/04/2014 21:46:38;
-	
-	Version : 2.1.0.0; 
-	ActivityId : 739e61f5-aa22-4254-aafc-9faf56fc2692; 
-	AzureVMName : HEADNODE0; 
-	IsException : False; 
-	ExceptionType : ; 
-	ExceptionMessage : ; 
-	InnerExceptionType : ; 
-	InnerExceptionMessage : ; 
+
+	Version : 2.1.0.0;
+	ActivityId : 739e61f5-aa22-4254-aafc-9faf56fc2692;
+	AzureVMName : HEADNODE0;
+	IsException : False;
+	ExceptionType : ;
+	ExceptionMessage : ;
+	InnerExceptionType : ;
+	InnerExceptionMessage : ;
 	Exception : ;
 	...
-	
-	Microsoft.Hadoop.Deployment.Engine.CustomPowershellScriptCommand; 
-	Details : END: Invoking powershell script https://configactions.blob.core.windows.net/sparkconfigactions/spark-installer.ps1.; 
-	Version : 2.1.0.0; 
-	ActivityId : 739e61f5-aa22-4254-aafc-9faf56fc2692; 
-	AzureVMName : HEADNODE0; 
-	IsException : False; 
-	ExceptionType : ; 
-	ExceptionMessage : ; 
-	InnerExceptionType : ; 
-	InnerExceptionMessage : ; 
+
+	Microsoft.Hadoop.Deployment.Engine.CustomPowershellScriptCommand;
+	Details : END: Invoking powershell script https://configactions.blob.core.windows.net/sparkconfigactions/spark-installer.ps1.;
+	Version : 2.1.0.0;
+	ActivityId : 739e61f5-aa22-4254-aafc-9faf56fc2692;
+	AzureVMName : HEADNODE0;
+	IsException : False;
+	ExceptionType : ;
+	ExceptionMessage : ;
+	InnerExceptionType : ;
+	InnerExceptionMessage : ;
 	Exception : ;
 
- 
+
 Aus diesem Protokoll geht hervor, dass die Spark-Skriptaktion auf dem virtuellen Computer HEADNODE0 ausgeführt wurde und keine Ausnahmen verursacht hat.
 
 Bei Auftreten eines Ausführungsfehlers enthält die Protokolldatei auch die beschreibende Ausgabe. Die Informationen in diesen Protokollen sind hilfreich zum Debuggen eventuell auftretender Probleme.
@@ -288,7 +289,7 @@ Bei Auftreten eines Ausführungsfehlers enthält die Protokolldatei auch die bes
 
 ## Weitere Informationen
 
-- [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize] 
+- [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize]
 - [Installieren und Verwenden von Spark in HDInsight-Clustern][hdinsight-install-spark]
 - [Installieren und Verwenden von R in HDInsight-Clustern][hdinsight-r-scripts]
 - [Installieren und Verwenden von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md)
@@ -302,6 +303,5 @@ Bei Auftreten eines Ausführungsfehlers enthält die Protokolldatei auch die bes
 
 <!--Reference links in article-->
 [1]: https://msdn.microsoft.com/library/96xafkes(v=vs.110).aspx
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

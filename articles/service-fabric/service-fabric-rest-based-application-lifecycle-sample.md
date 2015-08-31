@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="05/06/2015"
+   ms.date="08/17/2015"
    ms.author="ryanwi"/>
 
 # REST-basierter Anwendungslebenszyklus – Beispiel
@@ -49,7 +49,7 @@ In diesem Beispiel wird das [WordCount-Beispiel](https://github.com/azure/servic
 
 Führen Sie die folgenden Schritte aus, um die Anwendungspakete zu erstellen und in den ImageStore zu kopieren:
 
-1. Kopieren Sie „C:\\Samples\\Services\\VS2015\\WordCountUpgrade\\WordCount\\pkg\\Debug“ in „C:\\Temp\\WordCount“. Dadurch wird das WordCount-Anwendungspaket erstellt. 
+1. Kopieren Sie „C:\\Samples\\Services\\VS2015\\WordCountUpgrade\\WordCount\\pkg\\Debug“ in „C:\\Temp\\WordCount“. Dadurch wird das WordCount-Anwendungspaket erstellt.
 2. Kopieren Sie „C:\\Temp\\WordCount“ in „C:\\Temp\\WordCountUpgrade“. Dadurch wird das WordCountUpgrade-Anwendungspaket erstellt.
 3. Öffnen Sie „C:\\Temp\\WordCountUpgrade\\ApplicationManifest.xml“ in einem Texteditor.
 4. Ändern Sie im ApplicationManifest-Element das ApplicationTypeVersion-Attribut in „1.1.0.0“. Dadurch wird die Versionsnummer der Anwendung aktualisiert.
@@ -710,6 +710,4 @@ namespace ServiceFabricRestCaller
 
 [Service Fabric-Anwendungslebenszyklus](service-fabric-application-lifecycle.md)
 
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

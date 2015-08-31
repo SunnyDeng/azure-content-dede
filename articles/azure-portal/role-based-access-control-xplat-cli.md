@@ -3,8 +3,8 @@
 	description="Verwalten der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle"
 	services="azure-portal"
 	documentationCenter="na"
-	authors="Justinha"
-	manager="terrylan"
+	authors="IHenkel"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/02/2015"
-	ms.author="justinha"/>
+	ms.date="08/14/2015"
+	ms.author="inhenk"/>
 
 # Verwalten der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle (Azure-CLI) #
 
@@ -94,13 +94,15 @@ Um eine Rollenzuweisung zu erstellen, müssen Sie folgende Überlegungen anstell
 
 - Wem soll die Rolle zugewiesen werden: Verwenden Sie die folgenden Azure Active Directory-Cmdlets, um die in Ihrem Verzeichnis vorhandenen Benutzer, Gruppen und Dienstprinzipale anzuzeigen.
 
-    `azure ad user list
-    azure ad user show
-    azure ad group list
-    azure ad group show
-    azure ad group member list
-    azure ad sp list
-    azure ad sp show`
+    ```
+    azure ad user list  
+    azure ad user show  
+    azure ad group list  
+    azure ad group show  
+    azure ad group member list  
+    azure ad sp list  
+    azure ad sp show  
+    ```
 
 - Welche Rolle soll zugewiesen werden: Verwenden Sie das folgende Cmdlet, um die unterstützten Rollendefinitionen anzuzeigen.
 
@@ -148,6 +150,5 @@ In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Ve
 - [Azure-Blog](http://blogs.msdn.com/windowsazure): Informationen zu neuen Funktionen in Azure.
 - [Konfigurieren der rollenbasierten Zugriffssteuerung mit Windows PowerShell](role-based-access-control-powershell.md)
 - [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](role-based-access-control-troubleshooting.md)
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

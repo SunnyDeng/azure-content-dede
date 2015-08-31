@@ -104,9 +104,11 @@ Um zu testen, ob eine gewählte Domänennamensbezeichnung global eindeutig ist, 
 
 	$domName="<domain name label to test>"
 	$loc="<short name of an Azure location, for example, for West US, the short name is westus>"
-	Get-AzureCheckDnsAvailability -DomainQualifiedName $domName -Location $loc
+	Test-AzureDnsAvailability -DomainQualifiedName $domName -Location $loc
 
 Wenn DNSNameAvailability "True" ist, ist der vorgeschlagene Name global eindeutig.
+
+>[AZURE.NOTE]Das Cmdlet "Test-AzureDnsAvailability" hatte in Azure PowerShell-Versionen vor Version 0.9.5 die Bezeichnung "Get-AzureCheckDnsAvailability". Wenn Sie Version 0.9.4 oder früher verwenden, ersetzen Sie "Test AzureDnsAvailability" im obigen Befehl mit "Get-AzureCheckDnsAvailability".
 
 Virtuelle Computer auf Ressourcen-Manager-Basis können in eine Verfügbarkeitsgruppe auf Ressourcen-Manager-Basis eingefügt werden. Erstellen Sie bei Bedarf mit den folgenden Befehlen eine neue Verfügbarkeitsgruppe für den neuen virtuellen Computer.
 
@@ -211,7 +213,7 @@ Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie die erforderlichen N
 	$lbName="<name of the load balancer instance>"
 	$bePoolIndex=<index of the back end pool, starting at 0>
 	$natRuleIndex=<index of the inbound NAT rule, starting at 0>
-	$lb=Get-AzureLoadBalancer -Name $lbName -ResourceGroupName $rgName 
+	$lb=Get-AzureLoadBalancer -Name $lbName -ResourceGroupName $rgName
 	$nic=New-AzureNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $locName -Subnet $vnet.Subnets[$subnetIndex].Id -LoadBalancerBackendAddressPool $lb.BackendAddressPools[$bePoolIndex] -LoadBalancerInboundNatRule $lb.InboundNatRules[$natRuleIndex]
 
 Die „$nicName“-Zeichenfolge muss für die Ressourcengruppe eindeutig sein. Eine bewährte Methode ist die Integration des Namens des virtuellen Computers in der Zeichenfolge, wie z. B. "LOB07-NIC".
@@ -230,7 +232,7 @@ Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie die erforderlichen N
 	$nicName="<name of the NIC of the VM>"
 	$lbName="<name of the load balancer instance>"
 	$bePoolIndex=<index of the back end pool, starting at 0>
-	$lb=Get-AzureLoadBalancer -Name $lbName -ResourceGroupName $rgName 
+	$lb=Get-AzureLoadBalancer -Name $lbName -ResourceGroupName $rgName
 	$nic=New-AzureNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $locName -Subnet $vnet.Subnets[$subnetIndex].Id -LoadBalancerBackendAddressPool $lb.BackendAddressPools[$bePoolIndex]
 
 Als Nächstes erstellen Sie ein lokales Objekt für den virtuellen Computer und fügen es optional einer Verfügbarkeitsgruppe hinzu. Kopieren Sie eine der beiden folgenden Optionen in den Befehlssatz, und geben Sie den Namen, die Größe und den Verfügbarkeitsgruppennamen ein.
@@ -379,12 +381,12 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Übersicht über den Azure Resource Manager](../resource-group-overview.md)
+[Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
 
 [Bereitstellen und Verwalten von virtuellen Azure-Computern mit Ressourcen-Manager-Vorlagen und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
-[Erstellen eines virtuellen Windows-Computers mit einer Resource Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple)
+[Erstellen eines virtuellen Windows-Computers mit einer Ressourcen-Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple)
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

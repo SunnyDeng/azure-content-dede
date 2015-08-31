@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Anmeldeinformationsobjekte in Azure Automation"
+   pageTitle="Anmeldeinformationsobjekte in Azure Automation | Microsoft Azure"
    description="Anmeldeinformationsobjekte in Azure Automation enthalten Sicherheitsanmeldeinformationen, die zur Authentifizierung von Ressourcen verwendet werden können, auf die über das Runbook zugegriffen wird. Dieser Artikel beschreibt, wie Sie Anmeldeinformationsobjekte erstellen und in einem Runbook verwenden."
    services="automation"
    documentationCenter=""
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/21/2015"
+   ms.date="08/18/2015"
    ms.author="bwren" />
 
 # Anmeldeinformationsobjekte in Azure Automation
@@ -103,4 +103,4 @@ Die folgende Abbildung zeigt ein Beispiel für die Verwendung eines Anmeldeinfor
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

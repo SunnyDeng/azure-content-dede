@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/02/2015"
+	ms.date="08/19/2015"
 	ms.author="andalmia"/>
 
 # Verwenden des Datei-Connectors in Logik-Apps #
@@ -27,9 +27,7 @@ Zur Verwendung des Datei-Connectors müssen Sie zunächst eine Instanz der Datei
 
 1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" auf der linken Seite im Azure-Portal.
 2.	Navigieren Sie zu "Marketplace > API-Apps" und suchen Sie nach "Datei-Connector".
-3.	Konfigurieren Sie den Datei-Connector wie folgt:
-
-	![][1]
+3.	Konfigurieren Sie den Datei-Connector wie folgt: ![][1]
 
 	- **Name** – Geben Sie einen Namen für den Datei-Connector ein.
 	- **Paketeinstellungen**
@@ -55,24 +53,25 @@ Sobald Ihre API-App erstellt wurde, können Sie den Datei-Connector als Trigger 
 
 3.	Der Datei-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt.
 
-4.	Sie können die Datei-Connector-API-App im Editor bearbeiten, indem Sie auf "Datei-Connector" klicken. Der Datei-Connector macht einen Trigger und vier Aktionen verfügbar.
+4.	Sie können die Datei-Connector-API-App im Editor bearbeiten, indem Sie auf "Datei-Connector" klicken. Der Datei-Connector macht einen Trigger und vier Aktionen verfügbar: ![][5]
 
-	![][5]
-
-6.	Diese machen wiederum verschiedene Eigenschaften verfügbar. In der folgenden Abbildung sind die Eigenschaften für den Trigger und die Dateiabrufaktion aufgelistet.
-
-	![][6]
+6.	Diese machen wiederum verschiedene Eigenschaften verfügbar. In der folgenden Abbildung sind die Eigenschaften für den Trigger und die Dateiabrufaktion aufgelistet: ![][6]
 
 7. Nachdem Sie diese konfiguriert haben, können Sie die Trigger und Aktionen im Datenfluss nutzen. Auf ähnliche Weise können auch andere Aktionen konfiguriert werden.
 
 > [AZURE.NOTE]Der Datei-Trigger löscht die Datei, nachdem sie erfolgreich aus dem Ordner gelesen wurde.
 
 ## Datei-Connector-REST-APIs ##
-Um den Connector außerhalb einer Logik-App zu verwenden, können die vom Connector zur Verfügung gestellten REST-APIs genutzt werden. Sie können diese API-Definitionen mit "Durchsuchen" -> "API-App" -> "Datei-Connector" anzeigen. Klicken Sie jetzt auf die Lupe "API-Definition" im Abschnitt "Zusammenfassung", um alle APIs anzuzeigen, die von diesem Connector zur Verfügung gestellt werden.
-
-  ![][7]
+Um den Connector außerhalb einer Logik-App zu verwenden, können die vom Connector zur Verfügung gestellten REST-APIs genutzt werden. Sie können diese API-Definitionen mit "Durchsuchen" -> "API-App" -> "Datei-Connector" anzeigen. Klicken Sie jetzt auf die Lupe "API-Definition" im Abschnitt "Zusammenfassung", um alle APIs anzuzeigen, die von diesem Connector zur Verfügung gestellt werden: ![][7]
 
 Ausführliche Informationen zu den APIs finden sie unter [File Connector (in englischer Sprache)].
+
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
 <!-- Image reference -->
 [1]: ./media/app-service-logic-connector-file/img1.PNG
@@ -82,7 +81,7 @@ Ausführliche Informationen zu den APIs finden sie unter [File Connector (in eng
 
 <!-- Links -->
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
-[File Connector (in englischer Sprache)]: https://msdn.microsoft.com/en-US/library/dn936296.aspx
+[File Connector (in englischer Sprache)]: https://msdn.microsoft.com/library/dn936296.aspx
 [Hybrid Connection Manager verwenden]: app-service-logic-hybrid-connection-manager.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

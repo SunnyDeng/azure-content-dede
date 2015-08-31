@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="06/29/2015"
+   ms.date="08/19/2015"
    ms.author="rajram"/>
 
 #Warten-Connector
@@ -48,6 +48,8 @@ Dauer In Minuten|Ganze Zahl|Dauer der Verzögerung in Minuten
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
 
 <!--References -->
@@ -55,4 +57,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [2]: ./media/app-service-logic-wait/DelayInput.PNG
 [3]: ./media/app-service-logic-wait/ActionConfigured.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

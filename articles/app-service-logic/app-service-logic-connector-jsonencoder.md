@@ -13,19 +13,19 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="06/14/2015"
+   ms.date="08/19/2015"
    ms.author="rajram"/>
 
-#BizTalk JSON Encoder
+# BizTalk JSON Encoder
 Der BizTalk JSON Encode Decode-Connector unterstützt Ihre App in Bezug auf die Interoperabilität von JSON- und XML-Daten. Sie können damit eine angegebene JSON-Instanz in XML konvertieren und umgekehrt.
 
-##Verwenden des BizTalk JSON Encoder
+## Verwenden des BizTalk JSON Encoder
 Um den BizTalk JSON Encoder zu verwenden, müssen Sie zunächst eine Instanz der BizTalk JSON Encoder-API-App erstellen. Dies kann entweder inline beim Erstellen einer Logik-App oder durch Auswählen der BizTalk JSON-Encoder-API-App aus dem Azure Marketplace erfolgen.
 
-##Verwenden von BizTalk JSON Encoder auf der Designeroberfläche von Logik-Apps
+## Verwenden von BizTalk JSON Encoder auf der Designeroberfläche von Logik-Apps
 Führen Sie die Schritte zum [Erstellen einer Logik-App] aus. Der BizTalk JSON Encoder kann als Aktion verwendet werden. Er besitzt keine Trigger.
 
-###Aktion
+### Aktion
 - Klicken Sie im rechten Bereich auf BizTalk JSON Encoder.
 
 	![Aktionseinstellungen][3]
@@ -49,6 +49,8 @@ Die Aktion gibt eine JSON-Darstellung des eingegebenen Inhalts zurück.
 ## Optimale Nutzung Ihres Connectors
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
 
 <!--References -->
@@ -62,4 +64,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Erstellen einer Logik-App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

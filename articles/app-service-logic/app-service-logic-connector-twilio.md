@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/02/2015"
+   ms.date="08/19/2015"
    ms.author="sameerch"/>
 
 
@@ -63,11 +63,15 @@ Sobald Ihre API-App erstellt wurde, können Sie den Twilio-Connector als Aktion 
 	- **Von-Telefonnummer** - Geben Sie eine Twilio-Telefonnummer ein, die für den zu sendenden Nachrichtentyp aktiviert ist. Mit diesem Connector funktionieren nur Telefonnummern oder Shortcodes, die von Twilio erworben wurden.
 	- **Zu-Telefonnummer** - Die Zieltelefonnummer. Das akzeptierte Format lautet: + gefolgt vom Ländercode und der Telefonnummer. Beispiel: +16175551212 Wenn Sie das + weglassen, verwendet Twilio den Ländercode, den Sie für die Absendertelefonnummer in 'Von' angegeben haben.
 	- **Text** - Der zu sendende Nachrichtentext.
- 
+
 	![][5]
 	![][6]
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
 	<!--Image references-->
 [1]: ./media/app-service-logic-connector-twilio/img1.PNG
@@ -77,4 +81,4 @@ Sobald Ihre API-App erstellt wurde, können Sie den Twilio-Connector als Aktion 
 [5]: ./media/app-service-logic-connector-twilio/img5.PNG
 [6]: ./media/app-service-logic-connector-twilio/img6.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

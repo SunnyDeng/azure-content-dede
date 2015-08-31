@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Verwalten Sie Ihr Azure AD-Verzeichnis" 
-	description="Bei diesem Thema wird erklärt, was ein Azure AD-Mandant ist und wie ein Azure AD-Verzeichnis verwaltet wird." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
+<properties
+	pageTitle="Verwalten Sie Ihr Azure AD-Verzeichnis"
+	description="Bei diesem Thema wird erklärt, was ein Azure AD-Mandant ist und wie ein Azure AD-Verzeichnis verwaltet wird."
+	services="active-directory"
+	documentationCenter=""
+	authors="Markusvi"
+	manager="stevenpo"
 	editor="LisaToft"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="05/05/2015" 
-	ms.author="Justinha"/>
+<tags
+	ms.service="active-directory"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="05/05/2015"
+	ms.author="markvi"/>
 
 # Verwalten Sie Ihr Azure AD-Verzeichnis
 
@@ -97,17 +97,17 @@ Sie können ein Azure AD-Verzeichnis im Azure-Verwaltungsportal hinzufügen. Wä
 
 Sie können jedes Verzeichnis als vollständig unabhängige Ressource verwalten: Jedes Verzeichnis ist gleichberechtigt, voll funktionsfähig und logisch unabhängig von anderen Verzeichnissen, die Sie verwalten. Es ist keine unter- und übergeordnete Beziehung zwischen den Verzeichnissen vorhanden. Diese Unabhängigkeit zwischen den Verzeichnissen beinhaltet Ressourcen-, Verwaltungs- und Synchronisierungsunabhängigkeit.
 
-- **Ressourcenunabhängigkeit**. Wenn Sie eine Ressource in einem Verzeichnis erstellen oder löschen, hat dies keine Auswirkungen auf Ressourcen in einem anderen Verzeichnis. Eine teilweise geltende Ausnahme bilden externe Benutzer, wie unten beschrieben. Wenn Sie eine benutzerdefinierte Domäne "contoso.com" in einem Verzeichnis verwenden, kann sie in keinem anderen Verzeichnis verwendet werden. 
-- **Verwaltungsunabhängigkeit**. Wenn ein Benutzer ohne Administratorrechte aus dem Verzeichnis "Contoso" ein Testverzeichnis "Test" erstellt, dann gibt es/geschieht Folgendes: 
-    - ◦Das Verzeichnissynchronisierungstool zum Synchronisieren von Daten mit einer einzigen Active Directory-Gesamtstruktur. 
-    - ◦Die Administratoren des Verzeichnisses "Contoso" haben keine direkten Administratorberechtigungen für das Verzeichnis "Test", sofern ihnen nicht ein Administrator diese Verzeichnisses die Berechtigungen gesondert erteilt. Die Administratoren von "Contoso" steuern den Zugriff auf das Verzeichnis "Test", da sie das Benutzerkonto steuern, mit dem dieses Verzeichnis erstellt wurde. 
+- **Ressourcenunabhängigkeit**. Wenn Sie eine Ressource in einem Verzeichnis erstellen oder löschen, hat dies keine Auswirkungen auf Ressourcen in einem anderen Verzeichnis. Eine teilweise geltende Ausnahme bilden externe Benutzer, wie unten beschrieben. Wenn Sie eine benutzerdefinierte Domäne "contoso.com" in einem Verzeichnis verwenden, kann sie in keinem anderen Verzeichnis verwendet werden.
+- **Verwaltungsunabhängigkeit**. Wenn ein Benutzer ohne Administratorrechte aus dem Verzeichnis "Contoso" ein Testverzeichnis "Test" erstellt, dann gibt es/geschieht Folgendes:
+    - ◦Das Verzeichnissynchronisierungstool zum Synchronisieren von Daten mit einer einzigen Active Directory-Gesamtstruktur.
+    - ◦Die Administratoren des Verzeichnisses "Contoso" haben keine direkten Administratorberechtigungen für das Verzeichnis "Test", sofern ihnen nicht ein Administrator diese Verzeichnisses die Berechtigungen gesondert erteilt. Die Administratoren von "Contoso" steuern den Zugriff auf das Verzeichnis "Test", da sie das Benutzerkonto steuern, mit dem dieses Verzeichnis erstellt wurde.
 
     Und wenn Sie eine Administratorrolle für einen Benutzer in einem Verzeichnis ändern (hinzufügen oder entfernen), hat die Änderung keine Auswirkungen auf Administratorrollen, die der Benutzer möglicherweise in einem anderen Verzeichnis besitzt.
 
 
 - **Synchronisierungsunabhängigkeit**. Sie können jedes Azure AD unabhängig voneinander konfigurieren, damit Sie synchronisierte Daten einer einzelnen Instanz erhalten, mit folgenden Möglichkeiten:
     - Dem Verzeichnissynchronisierungstool zum Synchronisieren von Daten mit einer AD-Gesamtstruktur.
-    - Dem Azure Active Directory-Connector für Forefront Identity Manager zum Synchronisieren von Daten mit einer oder mehreren lokalen Gesamtstrukturen und/oder nicht-AD-Datenquellen. 
+    - Dem Azure Active Directory-Connector für Forefront Identity Manager zum Synchronisieren von Daten mit einer oder mehreren lokalen Gesamtstrukturen und/oder nicht-AD-Datenquellen.
 
 Beachten Sie außerdem, dass Ihre Verzeichnisse im Gegensatz zu anderen Azure-Ressourcen keine untergeordneten Ressourcen eines Azure-Abonnements sind. Wenn Sie also kündigen oder Ihr Azure-Abonnement ablaufen lassen, können Sie weiterhin auf Ihre Verzeichnisdaten mithilfe von Azure AD PowerShell, der Azure Graph-API oder anderen Schnittstellen wie Office 365 Admin Center zugreifen. Sie können dem Verzeichnis auch ein anderes Abonnement zuordnen.
 
@@ -123,8 +123,8 @@ Bei Azure AD müssen bestimmte Bedingungen erfüllt sein, um ein Verzeichnis zu 
 Die folgenden Bedingungen werden überprüft:
 
 - Der einzige Benutzer im Verzeichnis ist der globale Administrator, der das Verzeichnis löschen wird. Andere Benutzer müssen gelöscht werden, bevor das Verzeichnis gelöscht werden kann. Wenn Benutzer lokal synchronisiert werden, dann muss die Synchronisation deaktiviert werden und die Benutzer müssen über das Verwaltungsportal oder das Azure-Modul für Windows PowerShell im Cloudverzeichnis gelöscht werden. Es gibt keine Anforderung zum Löschen von Gruppen oder Kontakten, z. B. aus Office 365 Admin Center hinzugefügten Kontakten.
-- Es können keine Anwendungen im Verzeichnis vorhanden sein. Alle Anwendungen müssen gelöscht werden, bevor das Verzeichnis gelöscht werden kann. 
-- Es können keine Abonnements für Microsoft-Onlinedienste wie Microsoft Azure, Office 365 oder Azure AD Premium mit dem Verzeichnis verknüpft sein. Wenn z. B. ein Standardverzeichnis für Sie in Azure erstellt wurde, können Sie es nicht löschen, wenn Ihr Azure-Abonnement noch für die Authentifizierung darauf zugreifen muss. Auf ähnliche Weise können Sie kein Verzeichnis löschen, wenn ein anderer Benutzer über ein Abonnement damit verbunden ist. Um Ihr Abonnement einem anderen Verzeichnis zuzuordnen, melden Sie sich beim Azure-Verwaltungsportal an, und klicken Sie im linken Navigationsbereich auf **Einstellungen**. Klicken Sie dann unten auf der Seite **Abonnements** auf **Verzeichnis bearbeiten**. Weitere Informationen zu Azure-Abonnements finden Sie unter [Wie Azure-Abonnements mit Azure AD verknüpft sind](active-directory-how-subscriptions-associated-directory.md). 
+- Es können keine Anwendungen im Verzeichnis vorhanden sein. Alle Anwendungen müssen gelöscht werden, bevor das Verzeichnis gelöscht werden kann.
+- Es können keine Abonnements für Microsoft-Onlinedienste wie Microsoft Azure, Office 365 oder Azure AD Premium mit dem Verzeichnis verknüpft sein. Wenn z. B. ein Standardverzeichnis für Sie in Azure erstellt wurde, können Sie es nicht löschen, wenn Ihr Azure-Abonnement noch für die Authentifizierung darauf zugreifen muss. Auf ähnliche Weise können Sie kein Verzeichnis löschen, wenn ein anderer Benutzer über ein Abonnement damit verbunden ist. Um Ihr Abonnement einem anderen Verzeichnis zuzuordnen, melden Sie sich beim Azure-Verwaltungsportal an, und klicken Sie im linken Navigationsbereich auf **Einstellungen**. Klicken Sie dann unten auf der Seite **Abonnements** auf **Verzeichnis bearbeiten**. Weitere Informationen zu Azure-Abonnements finden Sie unter [Wie Azure-Abonnements mit Azure AD verknüpft sind](active-directory-how-subscriptions-associated-directory.md).
 
     > [AZURE.NOTE]Wenn der Benutzer mit einem Geschäfts- oder Schulkonto angemeldet ist, darf er das Basisverzeichnis nicht löschen. Wenn der Benutzer z. B. als joe@contoso.onmicrosoft.com angemeldet ist, kann dieser Benutzer nicht das Verzeichnis mit der Standarddomäne contoso.onmicrosoft.com löschen.
 
@@ -144,7 +144,4 @@ Die folgenden Bedingungen werden überprüft:
 [1]: ./media/active-directory-administer/aad_portals.png
 [2]: ./media/active-directory-administer/azure_tenants.png
 
-
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

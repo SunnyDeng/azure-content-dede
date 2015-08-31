@@ -19,7 +19,7 @@
 
 # Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure
 
-Dieses Thema enthält Informationen zum Erstellen eines *benutzerdefinierten* virtuellen Computers mithilfe der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows im Azure-Dienstverwaltungsdodus. Wir verwenden ein Linux-Image von den verfügbaren **IMAGES**in Azure. Die Azure-Befehlszeilenschnittstelle enthält u. a. folgende Konfigurationsoptionen:
+Dieses Thema enthält Informationen zum Erstellen eines *benutzerdefinierten* virtuellen Computers mithilfe der Azure-Befehlszeilenschnittstelle und des klassischen Bereitstellungsmodells. Wir verwenden ein Linux-Image von den verfügbaren **IMAGES**in Azure. Die Azure-Befehlszeilenschnittstelle enthält u. a. folgende Konfigurationsoptionen:
 
 - Verbinden des virtuellen Computers mit einem virtuellen Netzwerk
 - Hinzufügen des virtuellen Computers zu einem vorhandenen Cloud-Dienst
@@ -34,8 +34,8 @@ Dieses Thema enthält Informationen zum Erstellen eines *benutzerdefinierten* vi
 - [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md)
 
 
-## So erstellen Sie einen virtuellen Linux-Computer mit der Azure-Dienstverwaltung
+## Erstellen eines virtuellen Linux-Computers mithilfe des klassischen Bereitstellungsmodells
 
-[AZURE.INCLUDE [Virtueller-Computer-erstellen-LinuxVM](../../includes/virtual-machines-create-LinuxVM.md)]
+[AZURE.INCLUDE [Virtueller-Computer-erstellen-LinuxVM](../../includes/virtual-machines-create-linuxvm.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

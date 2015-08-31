@@ -5,14 +5,14 @@
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
-   editor="tysonn" />
+   editor="" />
 <tags 
    ms.service="storsimple"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/23/2015"
+   ms.date="08/13/2015"
    ms.author="alkohli" />
 
 # Verwalten von StorSimple-Gerätecontrollern
@@ -25,7 +25,7 @@ Dieses Tutorial enthält eine Schritt-für-Schritt-Anleitung zum Verwalten der G
 - Abschnitt **Controller** auf der Seite **Wartung** des StorSimple Manager-Diensts
 - Windows PowerShell für StorSimple 
 
-Es wird empfohlen, dass Benutzer die Gerätecontroller über den StorSimple Manager-Dienst verwalten. Wenn eine Aktion nur mit Windows PowerShell für StorSimple durchgeführt werden kann, ist dies im Tutorial entsprechend angegeben.
+Es wird empfohlen, die Gerätecontroller über den StorSimple Manager-Dienst zu verwalten. Wenn eine Aktion nur mithilfe von Windows PowerShell für StorSimple durchgeführt werden kann, ist dies im Tutorial entsprechend angegeben.
 
 In diesem Tutorial erfahren Sie Folgendes:
 
@@ -65,18 +65,18 @@ Führen Sie die unten angegebenen Schritte aus, um Gerätecontroller über das V
 
 	![Verwalten von StorSimple-Gerätecontrollern](./media/storsimple-manage-device-controller/IC766018.png)</br>
 
-	> [AZURE.NOTE]Wenn die Option „Controller verwalten“ nicht angezeigt wird, müssen Sie Updates installieren. Weitere Informationen finden Sie unter [Aktualisieren des Geräts](storsimple-update-device.md).
+	>[AZURE.NOTE]Wenn die Option **Controller verwalten** nicht angezeigt wird, müssen Sie Updates installieren. Weitere Informationen finden Sie unter [Aktualisieren von StorSimple-Geräten](storsimple-update-device.md).
 
 1. Gehen Sie im Dialogfeld **Controller-Einstellungen ändern** wie folgt vor:
 
 
 	- Wählen Sie in der Dropdownliste **Controller auswählen** den Controller aus, den Sie verwalten möchten. Die Optionen sind „Controller 0“ und „Controller 1“. Es wird auch angegeben, ob es sich bei diesen Controllern um aktive oder passive Controller handelt.
 
-		> [AZURE.NOTE]Ein Controller kann nicht verwaltet werden, wenn er nicht verfügbar oder ausgeschaltet ist, und er wird dann auch nicht in der Dropdownliste angezeigt.
+		>[AZURE.NOTE]Ein Controller kann nicht verwaltet werden, wenn er nicht verfügbar oder ausgeschaltet ist, und er wird dann auch nicht in der Dropdownliste angezeigt.
 	
 
 
-	- Wählen Sie in der Dropdownliste **Aktion auswählen** die Option **Controller neu starten** oder **Controller herunterfahren**.
+	- Wählen Sie in der Dropdownliste **Aktion auswählen** die Option **Controller neu starten** oder **Controller herunterfahren** aus.
 	
 		![Neustarten des passiven StorSimple-Gerätecontrollers](./media/storsimple-manage-device-controller/IC766020.png)
  
@@ -98,7 +98,7 @@ Der Controller wird neu gestartet bzw. heruntergefahren. In der folgenden Tabell
 Führen Sie die folgenden Schritte aus, um einen einzelnen Controller auf dem StorSimple-Gerät über das Verwaltungsportal herunterzufahren oder neu zu starten.
 
 
-1. Greifen Sie auf das Gerät zu, indem Sie die serielle Konsole oder eine Telnet-Sitzung von einem Remotecomputer verwenden. Stellen Sie eine Verbindung mit Controller 0 oder Controller 1 her, indem Sie die Schritte unter [Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole](storsimple-deployment-walkthrough.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) ausführen.
+1. Greifen Sie auf das Gerät zu, indem Sie die serielle Konsole oder eine Telnet-Sitzung von einem Remotecomputer verwenden. Stellen Sie eine Verbindung mit Controller 0 oder Controller 1 her, indem Sie die Schritte unter [Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole](storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-device-serial-console) ausführen.
 
 1. Wählen Sie im Menü der seriellen Konsole Option 1 aus, d. h. die** Anmeldung mit Vollzugriff**.
 
@@ -134,7 +134,7 @@ In diesem Abschnitt wird erklärt, wie Sie ein aktives oder ausgefallenes StorSi
 
 <!--#### To shut down a StorSimple device in Windows PowerShell for StorSimple
 
-1. Connect to the serial console of the StorSimple device by following the steps in [Use PuTTY to connect to the device serial console](storsimple-deployment-walkthrough.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple).
+1. Connect to the serial console of the StorSimple device by following the steps in [Use PuTTY to connect to the device serial console](storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-serial-console).
 
 1. In the serial console menu, verify from the banner message that the controller you are connected to is the passive controller. If you are connected to the active controller, disconnect from this controller and connect to the other controller.
 
@@ -170,9 +170,9 @@ Führen Sie die folgenden Schritte aus, um das Microsoft Azure StorSimple-Gerät
 
 	> [AZURE.TIP]
 	
-	> - Verwenden Sie den Befehl `Reset-HcsFactoryDefault –SkipFirmwareVersionCheck`, um die Prüfung der Firmwareversion zu überspringen, wenn das Cmdlet zum Zurücksetzen auf die werkseitigen Einstellungen (wie oben verwendet) einen Fehler aufgrund eines Firmwarekonflikts meldet: Die Zurücksetzung auf die werkseitigen Einstellungen kann aufgrund eines Konflikts bei den Firmwareversionen nicht fortgesetzt werden. Sie müssen die Firmwareprüfung überspringen (mit der Option `–SkipFirmwareCheck`), wenn Sie die Zurücksetzung auf die werkseitigen Einstellungen für ein Gerät durchführen, das zuvor per Microsoft Update oder Hotfixmechanismus aktualisiert wurde.
+	> - Verwenden Sie den Befehl `Reset-HcsFactoryDefault –SkipFirmwareVersionCheck`, um die Prüfung der Firmwareversion zu überspringen, wenn das Cmdlet zum Zurücksetzen auf die werksseitigen Einstellungen (wie oben verwendet) einen Fehler aufgrund eines Firmwarekonflikts meldet: Die Zurücksetzung auf die werksseitigen Einstellungen kann aufgrund eines Konflikts bei den Firmwareversionen nicht fortgesetzt werden. Sie müssen die Firmwareprüfung überspringen (mithilfe der Option `–SkipFirmwareCheck`), wenn Sie die Zurücksetzung auf die werksseitigen Einstellungen für ein Gerät durchführen, das zuvor per Microsoft Update oder Hotfixmechanismus aktualisiert wurde.
 	
-	> - Weitere Informationen zur Verwendung dieses Cmdlets finden Sie in der [Cmdlet-Referenz für Windows PowerShell für StorSimple](https://technet.microsoft.com/de-de/library/dn688168.aspx).
+	> - Weitere Informationen zur Verwendung dieses Cmdlets finden Sie in der [Cmdlet-Referenz für Windows PowerShell für StorSimple](https://technet.microsoft.com/library/dn688168.aspx).
 
 
 ## Fragen und Antworten zur Verwaltung von Gerätecontrollern
@@ -213,12 +213,12 @@ In diesem Abschnitt haben wir einige der häufig gestellten Fragen zur Verwaltun
 
 **A.** Die TCP-Verbindungen zwischen Initiatoren und aktivem Controller werden bei einem Failover des Controllers zurückgesetzt, aber wiederhergestellt, wenn der passive Controller den Betrieb übernimmt. Im Verlauf dieses Vorgangs kann es zu einer vorübergehenden Pause (weniger als 30 Sekunden) bei der E/A-Aktivität zwischen Initiatoren und dem Gerät kommen.
 
-**F.** Wie kann ich den Controller wieder in Betrieb nehmen, nachdem er heruntergefahren und außer Dienst gestellt wurde?
+**F.** Wie kann ich den Controller wieder in Betrieb nehmen, nachdem er heruntergefahren und entfernt wurde?
 
-**A.** Wenn Sie einen Controller wieder in Betrieb nehmen möchten, müssen Sie ihn wie unter [Handbuch für den Austausch von Hardwarekomponenten](https://msdn.microsoft.com/library/azure/dn757736.aspx) beschrieben wieder in das Gehäuse einsetzen.
+**A.** Wenn Sie einen Controller wieder in Betrieb nehmen möchten, müssen Sie ihn wie unter [Ersetzen des Controllermoduls auf dem StorSimple-Gerät](storsimple-controller-replacement.md) beschrieben wieder in das Gehäuse einsetzen.
 
 ## Nächste Schritte
 
-[Wenden Sie sich an den Microsoft Support](https://msdn.microsoft.com/library/azure/dn757750.aspx), falls ein Problem mit Ihren StorSimple-Gerätecontrollern auftritt, das Sie mit den Verfahren in diesem Tutorial nicht beheben können.
+[Wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md), falls ein Problem mit Ihren StorSimple-Gerätecontrollern auftritt, das Sie mit den Verfahren in diesem Tutorial nicht beheben können.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

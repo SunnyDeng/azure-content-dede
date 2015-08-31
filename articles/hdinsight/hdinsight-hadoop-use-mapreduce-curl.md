@@ -5,7 +5,8 @@
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
-   editor="cgronlun"/>
+   editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
@@ -114,4 +115,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Pig mit Hadoop in HDInsight](hdinsight-use-pig.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="07/24/2015"
+   ms.date="08/12/2015"
    ms.author="shkurhek"/>
 
 # Dienstebenen
@@ -68,16 +68,16 @@ Die Dienstebene "Premium" ist für unternehmenskritische Anwendungen ausgelegt. 
 **Leistung und Größe**
 
 
-| Dienstebene | Premium P1 | Premium P2 | Premium P6 (früher P3) |
-| :-- | :-- | :-- | :-- |
-| Datenbankdurchsatzeinheiten (DTUs) | 125 | 250 | 1000 |
-| Maximale Datenbankgröße | 500 GB | 500 GB | 500 GB |
+| Dienstebene | Premium P1 | Premium P2 | Premium P4 | Premium P6 (früher P3) |
+| :-- | :-- | :-- | :-- | :-- |
+| Datenbankdurchsatzeinheiten (DTUs) | 125 | 250 | 500 | 1000 |
+| Maximale Datenbankgröße | 500 GB | 500 GB | 500 GB | 500 GB |
 
 
 **Merkmale**
 
 
-| Dienstebene | Premium (P1, P2, P6) |
+| Dienstebene | Premium (P1, P2, P4, P6) |
 | :-- | :-- |
 | Zeitpunktwiederherstellung (PITR) | Bis zu Millisekunde innerhalb der letzten 35 Tage |
 | Notfallwiederherstellung. | Aktive geografische Replikation, bis zu 4 lesbare sekundäre Onlinedatenbanken |
@@ -89,4 +89,4 @@ Erfahren Sie mehr über die Preise für diese Ebenen unter [SQL-Datenbank Preise
 Nachdem Sie jetzt die Ebenen der SQL-Datenbank kennen, können Sie sie mit einer [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) ausprobieren und sich mit der [Erstellung Ihrer ersten SQL-Datenbank](sql-database-get-started.md) befassen!
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte zum Bereitstellen von Video-on-Demand (VoD) mit dem .NET SDK"
+	pageTitle="Erste Schritte zum Bereitstellen von Video-on-Demand-Inhalt (VoD) mit dem .NET SDK"
 	description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mit Azure Media Services mithilfe von .NET."
 	services="media-services"
 	documentationCenter=""
@@ -12,12 +12,12 @@
 	ms.workload="media"
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
-	ms.topic="hero-article" 
-	ms.date="08/11/2015" 
+	ms.topic="hero-article"
+	ms.date="08/18/2015"
 	ms.author="juliako"/>
 
 
-# Erste Schritte zum Bereitstellen von Video-on-Demand (VoD) mit dem .NET SDK
+# Erste Schritte zum Bereitstellen von Video-on-Demand-Inhalt (VoD) mit dem .NET SDK
 
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
@@ -32,27 +32,26 @@ Das Lernprogramm stellt den Media Services-Arbeitsfluss und die gängigsten Prog
 ## Voraussetzungen
 Die folgenden Voraussetzungen sind zum Einstieg in die Entwicklung mit dem Media Services SDK für .NET erforderlich.
 
-- Betriebssystem: Windows 7, Windows 2008 R2, Windows 8 oder höher.
+- Betriebssysteme: Windows 8 oder höher, Windows 2008 R2, Windows 7.
 - .NET Framework 4.5 oder .NET Framework 4.0
 - Visual Studio 2013, Visual Studio 2012, Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express).
 
 
 Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
 
-1.  Erstellen eines Media Services-Kontos (mithilfe des Portals)
+1.  Erstellen eines Media Services-Kontos (mithilfe des Azure-Portals)
 2.  Konfigurieren von Streamingendpunkten (mithilfe des Portals)
 3.  Erstellen und Konfigurieren eines Visual Studio-Projekts
 5.  Herstellen einer Verbindung mit dem Media Services-Konto
-1.  Erstellen eines neuen Medienobjekts und Hochladen einer Videodatei
-1.  Codieren der Quelldatei in einen Satz von MP4-Dateien mit adaptiver Bitrate
-1.  Konfigurieren der Übermittlungsrichtlinie für das codierte Medienobjekt
-1.  Veröffentlichen des Medienobjekts und Abrufen von URLs für Streaming und progressiven Download  
-1.  Wiedergeben Ihrer Inhalte
+6.  Erstellen eines neuen Medienobjekts und Hochladen einer Videodatei
+7.  Codieren der Quelldatei in einen Satz von MP4-Dateien mit adaptiver Bitrate
+8.  Veröffentlichen des Medienobjekts und Abrufen von URLs für Streaming und progressiven Download  
+9.  Wiedergeben Ihrer Inhalte
 
 
 ##Erstellen eines Media Services-Kontos mithilfe des Portals
 
-1. Klicken Sie im [Verwaltungsportal][] auf **Neu**, klicken Sie auf **Mediendienst** und dann auf **Schnellerfassung**.
+1. Klicken Sie im Azure-Portal auf **Neu**, klicken Sie auf **Mediendienst** und dann auf **Schnellerfassung**.
 
 	![Media Services-Schnellerfassung](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
 
@@ -68,62 +67,58 @@ Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
 
 	Sie können den Status des Prozesses im Meldungsbereich unten im Fenster überwachen.
 
-	Wenn das Konto erfolgreich erstellt wurde, ändert sich der Status in "Aktiv".
+	Wenn das Konto erfolgreich erstellt wurde, ändert sich der Status in **Aktiv**.
 
 	Am unteren Rand der Seite wird die Schaltfläche **SCHLÜSSEL VERWALTEN** angezeigt. Wenn Sie auf diese Schaltfläche klicken, wird ein Dialogfeld mit dem Media Services-Kontonamen und dem primären und sekundären Schlüssel angezeigt. Sie benötigen den Kontonamen und den Primärschlüssel, um programmgesteuert auf das Media Services-Konto zugreifen zu können.
 
-
 	![Seite "Media Services"](./media/media-services-dotnet-get-started/wams-mediaservices-page.png)
 
-	Wenn Sie auf den Kontonamen doppelklicken, wird standardmäßig die Seite "Schnellstart" angezeigt. Auf dieser Seite können Sie einige Verwaltungsaufgaben ausführen, die auch auf anderen Seiten des Portals verfügbar sind. Sie können beispielsweise eine Videodatei auf dieser Seite oder auf der Seite INHALT hochladen.
-
+	Wenn Sie auf den Kontonamen doppelklicken, wird standardmäßig die Seite **Schnellstart** angezeigt. Auf dieser Seite können Sie einige Verwaltungsaufgaben ausführen, die auch auf anderen Seiten des Portals verfügbar sind. Sie können beispielsweise eine Videodatei von dieser Seite oder der Seite INHALT hochladen.
 
 ##Konfigurieren von Streamingendpunkten mithilfe des Portals
 
-Bei der Arbeit mit Azure Media Services ist eines der häufigsten Szenarios das Streaming mit adaptiver Bitrate an Clients. Beim Streaming mit adaptiver Bitrate kann der Client während der Videodarstellung abhängig von der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren auf einen Stream mit höherer oder niedrigerer Bitrate wechseln. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
+Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarien darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Mit adaptivem Bitrate-Streaming kann der Client während der Videodarstellung auf einen höheren oder niedrigeren Bitraten-Stream wechseln, basierend auf der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
 Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Dateien mit adaptiver Bitrate oder Smooth Streaming-codierten Inhalte in Streamingformaten, die von Media Services unterstützt werden (MPEG DASH, HLS, Smooth Streaming, HDS), ohne dass Sie diese Streamingformate erneut verpacken müssen.
 
 Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
 
-- Codieren oder Transcodieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm veranschaulicht).  
-- Abrufen von mindestens einer Streamingeinheit für den **Streamingendpunkt**, von dem aus Sie die Bereitstellung Ihrer Inhalte planen.
+- Codieren oder Transcodieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm veranschaulicht)  
+- Abrufen von mindestens einer Streamingeinheit für den **Streamingendpunkt**, von dem aus Sie die Bereitstellung Ihrer Inhalte planen
 
 Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
 
 Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Sie folgendermaßen vor:
 
-1. Klicken Sie im [Management Portal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
+1. Klicken Sie im [Portal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
 
 2. Wählen Sie die Seite STREAMING-ENDPUNKTE aus. Klicken Sie anschließend auf den Streaming-Endpunkt, den Sie ändern möchten.
 
-3. Um die Anzahl der Streaming-Einheiten anzugeben, wählen Sie die Registerkarte SKALIERUNG aus und verschieben anschließend den Schieberegler für die **reservierte Kapazität**.
+3. Um die Anzahl der Streaming-Einheiten anzugeben, klicken Sie die auf Registerkarte "SKALIERUNG" und verschieben anschließend den Schieberegler für die **reservierte Kapazität**.
 
 	![Skalierungsseite](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
 
-4. Klicken Sie auf die Schaltfläche "Speichern", um die Änderungen zu speichern.
+4. Klicken Sie zum Speichern der Änderungen auf **SPEICHERN**.
 
 	Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
 
-
 	>[AZURE.NOTE]Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
 	>
-	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Media Services Pricing Details](http://go.microsoft.com/fwlink/?LinkId=275107).
+	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Preisdetails zu Media Services](http://go.microsoft.com/fwlink/?LinkId=275107).
 
 
 
 ##Erstellen und Konfigurieren eines Visual Studio-Projekts
 
-1. Erstellen Sie eine neue C#-Konsolenanwendung in Visual Studio 2013, Visual Studio 2012 oder Visual Studio 2010 SP1. Geben Sie **Name**, **Ort** und **Lösungsname** ein und klicken Sie auf OK.
+1. Erstellen Sie eine neue C#-Konsolenanwendung in Visual Studio 2013, Visual Studio 2012 oder Visual Studio 2010 SP1. Geben Sie **Name**, **Ort** und **Lösungsname** ein und klicken Sie auf **OK**.
 
 2. Verwenden Sie das NuGet-Paket [windowsazure.mediaservices.extensions](https://www.nuget.org/packages/windowsazure.mediaservices.extensions), um die **Azure Media Services .NET SDK-Erweiterungen** zu installieren. Media Services SDK-Erweiterungen für .NET ist ein Satz von Erweiterungsmethoden und Hilfsfunktionen, die Ihren Code vereinfachen und eine einfachere Entwicklung mit Media Services ermöglichen. Durch Installieren dieses Pakets werden auch das **Media Services .NET SDK** installiert und alle anderen erforderlichen Abhängigkeiten hinzugefügt.
 
-3. Fügen Sie einen Verweis auf die Assembly "System.Configuration" hinzu. Diese Assembly enthält die System.Configuration.ConfigurationManager-Klasse, die zum Zugriff auf die Konfigurationsdateien (z. B. "App.config") verwendet wird.
+3. Fügen Sie einen Verweis auf die Assembly "System.Configuration" hinzu. Diese Assembly enthält die **System.Configuration.ConfigurationManager**-Klasse, die zum Zugriff auf die Konfigurationsdateien (z. B. "App.config") verwendet wird.
 
-4. Öffnen Sie die Datei "App.config" (fügen Sie die Datei dem Projekt hinzu, wenn sie nicht standardmäßig hinzugefügt wurde), und fügen Sie einen *appSettings*-Abschnitt in der Datei hinzu. Legen Sie die Werte für Ihren Azure Media Services-Kontonamen und Schlüssel fest, wie im folgenden Beispiel gezeigt. Um den Kontonamen und wichtige Informationen zu erhalten, öffnen Sie das Azure-Verwaltungsportal, wählen Sie Ihr Media Services-Konto und klicken Sie auf die Schaltfläche **Schlüssel verwalten**.
+4. Öffnen Sie die Datei "App.config" (fügen Sie die Datei dem Projekt hinzu, wenn sie nicht standardmäßig hinzugefügt wurde), und fügen Sie einen *appSettings*-Abschnitt in der Datei hinzu. Legen Sie die Werte für Ihren Azure Media Services-Kontonamen und Schlüssel fest, wie im folgenden Beispiel gezeigt. Um den Kontonamen und wichtige Informationen zu erhalten, öffnen Sie das Azure-Portal, wählen Sie Ihr Media Services-Konto aus, und klicken Sie anschließend auf die Schaltfläche **Schlüssel verwalten**.
 
-
-	<pre><code>
+	 <pre><code>
 &lt;configuration>
     &lt;appSettings>
 	&lt;add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
@@ -132,8 +127,7 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 &lt;/configuration>
 </code></pre>
 
-
-5. Überschreiben Sie die existierenden using-Anweisungen am Anfang von Program.cs durch den folgenden Code.
+5. Überschreiben Sie die existierenden **using**-Anweisungen am Anfang der Datei "Program.cs" durch den folgenden Code.
 
 		using System;
 		using System.Collections.Generic;
@@ -152,7 +146,7 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 
 Wenn Sie Media Services mit .NET verwenden, müssen Sie die **CloudMediaContext**-Klasse für die meisten Media Services-Programmieraufgaben verwenden, z. B. für das Herstellen einer Verbindung mit dem Media Services-Konto, das Erstellen, Aktualisieren, den Zugriff auf und das Löschen der folgenden Objekte: Medienobjekte, Objektdateien, Aufträge, Zugriffsrichtlinien, Locators usw.
 
-Überschreiben Sie die Standardklasse des Programms durch den folgenden Code. Im Code wird veranschaulicht, wie die Werte aus der App.config-Datei gelesen und das CloudMediaContext-Objekt erstellt werden, um eine Verbindung zu Media Services herzustellen. Weitere Informationen zum Herstellen einer Verbindung mit Media Services finden Sie unter [Herstellen einer Verbindung mit Media Services mit dem Media Services SDK für .NET](http://msdn.microsoft.com/library/azure/jj129571.aspx).
+Überschreiben Sie die Standardklasse des Programms durch den folgenden Code. Im Code wird veranschaulicht, wie die Werte aus der App.config-Datei gelesen werden und das **CloudMediaContext**-Objekt erstellt wird, um eine Verbindung zu Media Services herzustellen. Weitere Informationen zum Herstellen einer Verbindung mit Media Services finden Sie unter [Herstellen einer Verbindung mit Media Services mit dem Media Services SDK für .NET](http://msdn.microsoft.com/library/azure/jj129571.aspx).
 
 Die Funktion **Main** ruft Methoden auf, die weiter unten in diesem Abschnitt definiert werden.
 
@@ -187,8 +181,6 @@ Die Funktion **Main** ruft Methoden auf, die weiter unten in diesem Abschnitt de
                 IAsset encodedAsset =
                     EncodeToAdaptiveBitrateMP4s(inputAsset, AssetCreationOptions.None);
 
-                ConfigureClearAssetDeliveryPolicy(encodedAsset);
-
                 PublishAssetGetURLs(encodedAsset);
             }
             catch (Exception exception)
@@ -214,7 +206,7 @@ Die unten definierte **UploadFile**-Methode ruft **CreateFromFile** auf (in den 
 Die **CreateFromFile**-Methode übernimmt **AssetCreationOptions**, wodurch Sie eine der folgenden Erstellungsoptionen für Medienobjekte angeben können:
 
 - **None:** Es wird keine Verschlüsselung verwendet. Dies ist der Standardwert. Beachten Sie, dass bei Verwendung dieser Option Ihre Inhalte während der Übertragung oder des Verbleibs im Speicher nicht geschützt sind. Wenn Sie planen, eine MP4-Datei über progressives Herunterladen zu übermitteln, verwenden Sie diese Option.
-- **StorageEncrypted:** Verschlüsselt Ihre Inhalte lokal mithilfe von AES-256-Bit-Verschlüsselung und lädt sie dann in Azure Storage hoch, wo sie verschlüsselt im Ruhezustand gespeichert werden. Medienobjekte, die durch Storage Encryption geschützt sind, werden automatisch entschlüsselt, vor der Codierung in einem verschlüsselten Dateisystem platziert und optional vor dem Hochladen als neues Ausgabemedienobjekt erneut verschlüsselt. Der primäre Anwendungsfall für Storage Encryption ist, wenn Sie Ihre qualitativ hochwertigen Eingabemediendateien mit starker Verschlüsselung beim Speichern im Ruhezustand auf dem Datenträger sichern möchten.
+- **StorageEncrypted**: Verwenden Sie diese Option, um Ihre unverschlüsselten Inhalte lokal mithilfe der AES-256-Bit-Verschlüsselung (Advanced Encryption Standard) zu verschlüsseln, von der sie dann in Azure Storage hochgeladen werden, wo sie verschlüsselt im Ruhezustand gespeichert werden. Medienobjekte, die durch Storage Encryption geschützt sind, werden automatisch entschlüsselt, vor der Codierung in einem verschlüsselten Dateisystem platziert und optional vor dem Hochladen als neues Ausgabemedienobjekt erneut verschlüsselt. Der primäre Anwendungsfall für Storage Encryption ist, wenn Sie Ihre qualitativ hochwertigen Eingabemediendateien mit starker Verschlüsselung beim Speichern im Ruhezustand auf dem Datenträger sichern möchten.
 - **CommonEncryptionProtected**: Verwenden Sie diese Option, wenn Sie Inhalte hochladen, die bereits verschlüsselt wurden und durch allgemeine Verschlüsselung oder PlayReady-DRM geschützt sind (z. B. mit PlayReady-DRM geschütztem Smooth Streaming).
 - **EnvelopeEncryptionProtected**: Verwenden Sie diese Option, wenn Sie mit AES verschlüsseltes HLS hochladen. Beachten Sie, dass die Dateien durch Transform Manager codiert und verschlüsselt sein müssen.
 
@@ -242,19 +234,18 @@ Fügen Sie die folgende Methode zur Program-Klasse hinzu.
 
 ##Codieren der Quelldatei in einen Satz von MP4-Dateien mit adaptiver Bitrate
 
-Nach dem Erfassen der Medienobjekte in Media Services können die Medien u. a. codiert, transcodiert/multiplexiert und mit einem Wasserzeichen versehen werden, bevor sie an die Clients übermittelt werden. Diese Aktivitäten werden geplant und für mehrere Hintergrundrolleninstanzen ausgeführt, um hohe Leistung und Verfügbarkeit zu gewährleisten. Diese Aktivitäten werden als Aufträge bezeichnet, und jeder Auftrag besteht aus atomaren Aufgaben, die die eigentliche Arbeit für die Medienobjektdatei leisten.
+Nach dem Erfassen der Medienobjekte in Media Services können die Medien u. a. codiert, transcodiert/multiplexiert und mit einem Wasserzeichen versehen werden, bevor sie an die Clients übermittelt werden. Diese Aktivitäten werden geplant und für mehrere Hintergrundrolleninstanzen ausgeführt, um hohe Leistung und Verfügbarkeit zu gewährleisten. Diese Aktivitäten werden als Aufträge bezeichnet, und jeder Auftrag besteht aus atomaren Aufgaben, welche die eigentliche Arbeit für die Medienobjektdatei leisten.
 
 Wie bereits erwähnt, besteht beim Arbeiten mit Azure Media Services eines der häufigsten Szenarios darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Media Services können eine Reihe von MP4-Dateien mit adaptiver Bitrate dynamisch in eines der folgenden Formate verpacken: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
 Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
 
 - Codieren oder Transcodieren Ihrer Zwischendatei (Quelldatei) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate  
-- Abrufen von mindestens einer Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen.
+- Abrufen von mindestens einer Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen
 
 Der folgende Code zeigt, wie Sie einen Codierungsauftrag senden. Der Auftrag enthält einen Task zum Transcodieren der Zwischendatei in eine Reihe von adaptiven MP4s mit **Azure Media Encoder**. Der Code sendet den Auftrag und wartet, bis er abgeschlossen ist.
 
 Wenn der Auftrag abgeschlossen ist, sind Sie in der Lage, das Medienobjekt zu streamen oder MP4-Dateien, die als Ergebnis der Transcodierung erstellt wurden, progressiv herunterzuladen. Beachten Sie, dass Sie keine Streamingeinheiten abrufen müssen, um MP4-Dateien progressiv herunterzuladen.
-
 
 Fügen Sie die folgende Methode zur Program-Klasse hinzu.
 
@@ -291,39 +282,20 @@ Fügen Sie die folgende Methode zur Program-Klasse hinzu.
 	    return outputAsset;
 	}
 
-##Konfigurieren der Übermittlungsrichtlinie für das codierte Medienobjekt
-
-Einer der Schritte im Workflow zur Inhaltsübermittlung in Media Services ist das Konfigurieren von Übermittlungsrichtlinien für das Medienobjekt. Die Konfiguration der Übermittlungsrichtlinien für das Medienobjekt umfasst u. a. Folgendes: die Protokolle, die verwendet werden können (z. B. MPEG DASH, HLS, HDS, Smooth Streaming oder alle), ob das Medienobjekt dynamisch verschlüsselt werden soll und wie dies geschehen soll (Umschlagverschlüsselung oder allgemeine Verschlüsselung).
-
-Mit der folgenden **ConfigureClearAssetDeliveryPolicy**-Methode wird angegeben, keine dynamische Verschlüsselung anzuwenden und den Stream unter Verwendung eines der folgenden Protokolle zu übermitteln: MPEG DASH, HLS und Smooth Streaming.
-
-Fügen Sie die folgende Methode zur Program-Klasse hinzu.
-
-    static public void ConfigureClearAssetDeliveryPolicy(IAsset asset)
-    {
-        IAssetDeliveryPolicy policy =
-            _context.AssetDeliveryPolicies.Create("Clear Policy",
-            AssetDeliveryPolicyType.NoDynamicEncryption,
-            AssetDeliveryProtocol.HLS | AssetDeliveryProtocol.SmoothStreaming | AssetDeliveryProtocol.Dash, null);
-
-        asset.DeliveryPolicies.Add(policy);
-    }
-
-
 ##Veröffentlichen des Medienobjekts und Abrufen von URLs für Streaming und progressiven Download
 
-Um ein Medienobjekt zu streamen oder herunterzuladen, müssen Sie es zunächst durch Erstellen eines Locators „veröffentlichen“. Locator ermöglichen den Zugriff auf Dateien im Medienobjekt. Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) und Access Signature (SAS)-Locator zum Herunterladen von Mediendateien.
+Um ein Medienobjekt zu streamen oder herunterzuladen, müssen Sie es zunächst durch Erstellen eines Locators "veröffentlichen". Locator ermöglichen den Zugriff auf Dateien im Medienobjekt. Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) und Access Signature (SAS)-Locator zum Herunterladen von Mediendateien.
 
 Nachdem Sie die Locator erstellt haben, können Sie die URLs erstellen, mit denen Sie die Dateien streamen oder herunterladen möchten.
 
 
 Eine URL für Smooth Streaming hat das folgende Format:
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest
+	 {streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest
 
 Eine Streaming-URL für HLS hat das folgende Format:
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
+	 {streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
 
 Eine Streaming-URL für MPEG DASH hat das folgende Format:
 
@@ -335,7 +307,7 @@ Eine SAS-URL zum Herunterladen von Dateien hat das folgende Format:
 
 Media Services .NET SDK-Erweiterungen bieten praktische Hilfsmethoden, die formatierte URLs für das veröffentlichte Medienobjekt zurückgeben.
 
-Der folgende Code verwendet .NET SDK-Erweiterungen, um Locator-, Get Streaming- und Progressive Download-URLs zu erstellen. Der Code zeigt auch das Herunterladen von Dateien in einen lokalen Ordner.
+Der folgende Code verwendet .NET SDK-Erweiterungen, um Locators zu erstellen sowie Streaming-URLs und URLs für progressive Downloads abzurufen. Der Code zeigt auch das Herunterladen von Dateien in einen lokalen Ordner.
 
 Fügen Sie die folgende Methode zur Program-Klasse hinzu.
 
@@ -368,7 +340,7 @@ Fügen Sie die folgende Methode zur Program-Klasse hinzu.
         Uri hlsUri = asset.GetHlsUri();
         Uri mpegDashUri = asset.GetMpegDashUri();
 
-        // Get progressive download URLs for each MP4 file that was generated as a result
+        // Get the URls for progressive download for each MP4 file that was generated as a result
 		// of encoding.
 		List<Uri> mp4ProgressiveDownloadUris = mp4AssetFiles.Select(af => af.GetSasUri()).ToList();
 
@@ -380,7 +352,7 @@ Fügen Sie die folgende Methode zur Program-Klasse hinzu.
         Console.WriteLine(mpegDashUri);
         Console.WriteLine();
 
-		// Display the progressive download URLs.
+		// Display the URLs for progressive download.
         Console.WriteLine("Use the following URLs for progressive download.");
         mp4ProgressiveDownloadUris.ForEach(uri => Console.WriteLine(uri + "\n"));
         Console.WriteLine();
@@ -443,7 +415,7 @@ URLs für progressiven Download (Audio und Video).
 
 Verwenden Sie zum Streamen von Videos [Azure Media Services Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
 
-Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (z. B. Internet Explorer, Chrome, Safari).
+Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (z. B. Internet Explorer, Chrome oder Safari).
 
 ##Nächster Schritt
 
@@ -451,7 +423,7 @@ Weitere Informationen zum Erstellen von Video-on-Demand-Anwendungen erhalten Sie
 
 ###Zusätzliche Ressourcen
 - <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-101-Get-your-video-online-now-">Azure Media Services 101 - Stellen Sie Ihr Video jetzt online!</a>
-- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 - Dynamische Pakete und mobile Geräte</a>
+- <a href="http://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-102-Dynamic-Packaging-and-Mobile-Devices">Azure Media Services 102 – Dynamische Pakete und mobile Geräte</a>
 
 
 <!-- Anchors. -->
@@ -459,7 +431,6 @@ Weitere Informationen zum Erstellen von Video-on-Demand-Anwendungen erhalten Sie
 
 <!-- URLs. -->
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
-  [Verwaltungsportal]: http://manage.windowsazure.com/
- 
+  [Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

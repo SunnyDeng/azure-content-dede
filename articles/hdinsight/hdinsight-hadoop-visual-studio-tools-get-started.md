@@ -3,6 +3,7 @@
 	description="Erfahren Sie, wie Hadoop-Tools für Visual Studio für HDInsight verwendet werden, um eine Verbindung mit einem Hadoop-Cluster herzustellen und eine Hive-Abfrage auszuführen."
 	services="HDInsight"
 	documentationCenter=""
+	tags="azure-portal"
 	authors="mumian"
 	manager="paulettm"
 	editor="cgronlun"/>
@@ -13,7 +14,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="07/21/2015"
+	ms.date="07/28/2015"
 	ms.author="jgao"/>
 
 # Erste Schritte bei der Verwendung von Hadoop-Tools für Visual Studio für HDInsight zum Ausführen einer Hive-Abfrage
@@ -68,7 +69,7 @@ Mithilfe der HDInsight-Tools für Visual Studio können Sie eine Verbindung mit 
 
 	>[AZURE.NOTE]Beachten Sie, dass das Fenster **HDInsight-Aufgabenliste** geöffnet sein sollte. Wenn es nicht angezeigt werden sollte, klicken Sie im Menü **Ansicht** auf **Andere Fenster** und dann auf das Fenster **HDInsight-Aufgabenliste**.  
 4.	Geben Sie die Anmeldeinformationen für Ihr Azure-Abonnement ein, und klicken Sie auf **Anmelden**. Dies ist nur erforderlich, wenn Sie bislang noch nicht in Visual Studio auf dieser Arbeitsstation eine Verbindung mit dem Azure-Abonnement hergestellt haben.
-5.	Im Server-Explorer wird eine Liste vorhandener HDInsight-Cluster angezeigt. Wenn Sie noch keine Cluster haben, können Sie einen über das Azure-Portal, Azure PowerShell oder das HDInsight SDK bereitstellen. Weitere Informationen finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
+5.	Im Server-Explorer wird eine Liste vorhandener HDInsight-Cluster angezeigt. Wenn Sie noch keine Cluster haben, können Sie einen über das Azure-Vorschauportal, Azure PowerShell oder das HDInsight SDK bereitstellen. Weitere Informationen finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – Clusterliste in Server-Explorer][5]
 6.	Erweitern Sie einen HDInsight-Cluster. Es werden **Hive-Datenbanken**, das Standardspeicherkonto, verknüpfte Speicherkonten und das **Hadoop-Dienstprotokoll** angezeigt. Sie können die einzelnen Elemente weiter erweitern.
@@ -134,7 +135,7 @@ Es gibt zwei Möglichkeiten zum Erstellen und Ausführen von Hive-Abfragen:
 
 1. Erweitern Sie in **Server-Explorer** erst **Azure** und dann **HDInsight-Cluster**.
 2. Klicken Sie mit der rechten Maustaste auf den Cluster, in dem Sie die Abfrage ausführen möchten, und klicken Sie dann auf **Hive-Abfrage schreiben**.
-3. Geben Sie die Hive-Abfragen ein. Beachten Sie, dass der Hive-Editor IntelliSense unterstützt. HDInsight-Tools für Visual Studio unterstützen das Laden von Remotemetadaten, wenn Sie Ihr Hive-Skript bearbeiten. Beispiel: Bei Eingabe von „SELECT * FROM“ listet IntelliSense alle vorgeschlagenen Tabellennamen auf. Wenn ein Tabellenname angegeben wird, werden die Spaltennamen von IntelliSense aufgeführt. Das Tool unterstützt fast alle Hive-DML-Anweisungen, Unterabfragen und die integrierten UDFs. 
+3. Geben Sie die Hive-Abfragen ein. Beachten Sie, dass der Hive-Editor IntelliSense unterstützt. HDInsight-Tools für Visual Studio unterstützen das Laden von Remotemetadaten, wenn Sie Ihr Hive-Skript bearbeiten. Beispiel: Bei Eingabe von „SELECT * FROM“ listet IntelliSense alle vorgeschlagenen Tabellennamen auf. Wenn ein Tabellenname angegeben wird, werden die Spaltennamen von IntelliSense aufgeführt. Das Tool unterstützt fast alle Hive-DML-Anweisungen, Unterabfragen und die integrierten UDFs.
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – IntelliSense][13]
 
@@ -235,4 +236,4 @@ In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio mithilfe des Hado
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

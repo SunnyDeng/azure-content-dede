@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Erste Schritte: Bereitstellen eines SQL Data Warehouse | Microsoft Azure"
+   pageTitle="Erste Schritte: Bereitstellen von SQL Data Warehouses | Microsoft Azure"
    description="Stellen Sie ein SQL Data Warehouse bereit, indem Sie diese Schritte und Richtlinien befolgen."
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -38,9 +38,9 @@ In den nächsten Schritten setzen wir schnell einen neuen logischen Server auf u
 
 ## Suchen des SQL Data Warehouse-Diensts
 
-Als Erstes müssen wir den SQL Data Warehouse-Dienst im Azure-Verwaltungsportal suchen.
+Als Erstes müssen wir den SQL Data Warehouse-Dienst im Azure-Portal suchen.
 
-In der unteren linken Ecke des Azure-Verwaltungsportals befindet sich die Schaltfläche "Neu". Die Schaltfläche "Neu" ist der Ausgangspunkt zum Erstellen eines neuen Diensts in Azure.
+In der unteren linken Ecke des Azure-Portals befindet sich die Schaltfläche "Neu". Die Schaltfläche "Neu" ist der Ausgangspunkt zum Erstellen eines neuen Diensts in Azure.
 
 - Klicken Sie jetzt auf die Schaltfläche "Neu".
 
@@ -48,13 +48,13 @@ In der unteren linken Ecke des Azure-Verwaltungsportals befindet sich die Schalt
 
 Durch Klicken auf die Schaltfläche "Neu" wurden alle Dienstkategorien in Azure geöffnet. SQL Data Warehouse befindet sich in der Kategorie "Daten + Speicher".
 
-- Klicken Sie auf "Daten + Speicher", um die von Azure angebotenen Dienste für diese Kategorie anzuzeigen.
+- Klicken Sie auf **Daten + Speicher**, um die von Azure angebotenen Dienste für diese Kategorie anzuzeigen.
 
 ### SQL Data Warehouse
 
 Wie Sie sehen können, bietet Azure viele Daten- und Speichermodule. Dieser Leitfaden bezieht sich jedoch auf SQL Data Warehouse.
 
-- Fahren Sie fort, und wählen Sie "SQL Data Warehouse".
+- Fahren Sie fort, und wählen Sie **SQL Data Warehouse**.
 
 ## Konfigurieren von SQL Data Warehouse
 
@@ -74,7 +74,7 @@ Die erste Konfiguration ist die Benennung der Datenbank.
 
 ### Leistung
 
-Die Leistungsoption ist sehr **wichtig**. Über diesen Schieberegler kann die Leistung von SQL Data Warehouse skaliert werden. Sie können die Leistung zu einem beliebigen Zeitpunkt erhöhen oder verringern – nicht nur während der Konfiguration von Data Warehouse. Je weiter Sie den Regler nach rechts schieben, desto mehr Ressourcen stehen zur Verfügung. Wenn diese Ressourcen nicht mehr benötigt werden, können Sie den Schieberegler sofort wieder zurückschieben, um Kosten zu sparen. In SQL Data Warehouse können Sie Ihr Leistungsprofil bei Bedarf ändern, ohne es neu erstellen oder Daten verschieben zu müssen.
+Die Leistungsoption ist sehr *wichtig*. Über diesen Schieberegler kann die Leistung von SQL Data Warehouse skaliert werden. Sie können die Leistung zu einem beliebigen Zeitpunkt erhöhen oder verringern – nicht nur während der Konfiguration von Data Warehouse. Je weiter Sie den Regler nach rechts schieben, desto mehr Ressourcen stehen zur Verfügung. Wenn diese Ressourcen nicht mehr benötigt werden, können Sie den Schieberegler sofort wieder zurückschieben, um Kosten zu sparen. In SQL Data Warehouse können Sie Ihr Leistungsprofil bei Bedarf ändern, ohne es neu erstellen oder Daten verschieben zu müssen.
 
 - Verwenden Sie den Schieberegler nun, um zu sehen, wie die Data Warehouse-Einheiten zunehmen, während Sie den Regler nachts rechts bewegen, und sich verringern, wenn Sie ihn wieder nach links schieben.
 
@@ -117,7 +117,7 @@ Sie müssen nur noch auf die Schaltfläche "Erstellen" klicken, um das Data Ware
 
 Glückwunsch! Sie haben Ihre erste SQL Data Warehouse-Datenbank erstellt.
 
-Jetzt sollte wieder die Startseite des [Azure-Portals][] angezeigt werden. Beachten Sie, dass die SQL Data Warehouse-Datenbank auf der Seite hinzugefügt wurde
+Jetzt sollte wieder das [Azure-Portal][] angezeigt werden. Beachten Sie, dass die SQL Data Warehouse-Datenbank auf der Seite hinzugefügt wurde.
 
 
 An diesem Punkt kann niemand auf die SQL Data Warehouse-Datenbank zugreifen. Aus Gründen der Sicherheit wird in der Standardeinstellung der Clientzugriff für die Datenbank noch nicht konfiguriert.
@@ -126,21 +126,21 @@ Daher wird im letzten Schritt des Bereitstellungsverfahrens der Dienst für den 
 
 ## Konfigurieren der Azure-Firewall ##
 
-Führen Sie zur erstmaligen Konfiguration der Azure-Firewall folgende Schritte aus:
+So führen Sie die erstmalige Konfiguration der Azure-Firewall aus:
 
-1. Klicken Sie im linken Navigationsbereich auf "Durchsuchen".
+1. Klicken Sie auf dem linken Navigationsblatt auf **Durchsuchen**.
 
-2. Wählen Sie "SQL Server" aus.
+2. Wählen Sie **SQL Server** aus.
 
 3. Wählen Sie Ihren logischen SQL Server aus.
 
-4. Wählen Sie "Einstellungen" aus.
+4. Wählen Sie Einstellungen aus.
 
-5. Klicken Sie auf "Firewall".
+5. Klicken Sie auf **Firewall**.
 
 6. Legen Sie die Firewallregel fest.
 
-    Sie müssen an dieser Stelle einige Einstellungen vornehmen. Die sind die folgenden: - Benennen der Firewallregel - Festlegen eines IP-Adressbereichs, wenn Sie nicht über eine statische IP-Adresse verfügen
+    Sie müssen an dieser Stelle einige Einstellungen vornehmen. Die sind die folgenden: – Benennen der Firewallregel –Festlegen eines IP-Adressbereichs, wenn Sie nicht über eine statische IP-Adresse verfügen
 
     > [AZURE.NOTE]Der Client IP-Adressbereich, den Sie einbeziehen müssen, ist Ihre externe oder öffentliche IP-Adresse. Sie können Ihre externe IP-Adresse über einige Websites wie z. B. <a href="http://www.whatismyip.com" target="\_blank">www.whatismyip.com</a> herausfinden.
 
@@ -151,23 +151,22 @@ Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen 
 
 ## Nächste Schritte
 
-Nachdem der SQLDW-Dienst bereitgestellt wurde, können wir jetzt zu dessen Verwendung übergehen.
+Nachdem der SQL Data Warehouse-Dienst bereitgestellt wurde, können wir jetzt zu dessen Verwendung übergehen.
 
 In den nächsten Schritten lernen Sie daher Folgendes:
 
-1. Wie Sie [eine Verbindung mit dem Data Warehouse herstellen, um es abzufragen][].
-2. Wie Sie [Beispieldaten laden].
+1. Data Warehouse – [Verbinden und Abfragen][].
+2. Laden der [Beispieldaten].
 
 <!--Image references-->
 
 
 <!-- Articles -->
-[eine Verbindung mit dem Data Warehouse herstellen, um es abzufragen]: sql-data-warehouse-get-started-connect-query.md
-[Beispieldaten laden]: ./sql-data-warehouse-get-started-load-samples.md
+[Verbinden und Abfragen]: sql-data-warehouse-get-started-connect-query.md
+[Beispieldaten]: ./sql-data-warehouse-get-started-load-samples.md
 
 <!--External links-->
 [kostenlose Testversion]: https://azure.microsoft.com/de-de/pricing/free-trial/
 [Azure-Portal]: https://portal.azure.com/
-[Azure-Portals]: https://portal.azure.com/
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

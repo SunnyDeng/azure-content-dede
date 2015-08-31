@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Variable Objekte in Azure Automation"
+   pageTitle="Variablenobjekte in Azure Automation | Microsoft Azure"
    description="Variable Objekte sind Werte, die allen Runbooks in Azure Automation zur Verfügung stehen. Dieser Artikel stellt eine ausführliche Beschreibung von Variablen bereit und zeigt, wie diese in Textrunbooks und grafischen Runbooks eingesetzt werden."
    services="automation"
    documentationCenter=""
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/21/2015"
+   ms.date="08/18/2015"
    ms.author="bwren" />
 
 # Variable Objekte in Azure Automation
@@ -188,4 +188,4 @@ Die folgende Abbildung zeigt das Filtern der Objekte, die in einer Variablen in 
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

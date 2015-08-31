@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Arbeiten mit der Mobile Services .NET-Clientbibliothek" 
-	description="Erfahren Sie mehr über die Verwendung eines .NET-Clients für Azure Mobile Services." 
-	services="mobile-services" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Arbeiten mit der Mobile Services .NET-Clientbibliothek"
+	description="Erfahren Sie mehr über die Verwendung eines .NET-Clients für Azure Mobile Services."
+	services="mobile-services"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="05/01/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/18/2015" 
 	ms.author="glenga"/>
 
 # So verwenden Sie einen .NET-Client für mobile Dienste in Azure
@@ -296,7 +296,7 @@ Mit dem Mobile Services-Client können Sie die App für Pushbenachrichtigungen m
 		    var channel =
 		        await PushNotificationChannelManager
 		            .CreatePushNotificationChannelForApplicationAsync();
-		
+
 		    // Register for notifications using the new channel and a tag collection.
 			var tags = new List<string>{ "mytag1", "mytag2"};
 		    await MobileService.GetPush().RegisterNativeAsync(channel.Uri, tags);
@@ -697,6 +697,5 @@ Mit dieser Eigenschaft werden alle Eigenschaften während der Serialisierung in 
 [Benutzerdefinierte API in Azure Mobile Services Client SDKs]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
 [Aufrufen einer benutzerdefinierten API aus dem Client]: mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api.md
 [InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -209,4 +209,4 @@ Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs
 [JobActionPageInScheduler]: ./media/web-sites-create-web-jobs/33JobActionPageInScheduler.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

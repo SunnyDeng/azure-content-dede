@@ -22,20 +22,20 @@ Um sicherzustellen, dass der Code mit SQL Data Warehouse kompatibel ist, müssen
 
 ## Transact-SQL-Codeänderungen
 
-Die folgende Aufstellung enthält die wichtigsten Funktionen, die in Azure SQL Data Warehouse nicht unterstützt werden:
+Die folgende Aufstellung enthält die wichtigsten Funktionen, die in Azure SQL Data Warehouse nicht unterstützt werden. Über die bereitgestellten Links gelangen Sie zu Problemumgehungen für die nicht unterstützten Funktionen:
 
-- ANSI-Joins bei Aktualisierungen
-- ANSI-Joins bei Löschvorgängen
-- MERGE-Anweisung
+- [ANSI-Joins bei Aktualisierungen][]
+- [ANSI-Joins bei Löschvorgängen][]
+- [MERGE-Anweisung][]
 - Datenbankübergreifende Verknüpfungen
 - [Cursor][]
 - [SELECT..INTO][]
-- INSERT..EXEC
+- [INSERT..EXEC][]
 - OUTPUT-Klausel
 - Benutzerdefinierte Inlinefunktionen
 - Funktionen mit mehreren Anweisungen
-- Rekursive allgemeine Tabellenausdrücke (CTE)
-- Aktualisierungen über allgemeine Tabellenausdrücke
+- [Rekursive allgemeine Tabellenausdrücke (CTE)] (\#Recursive-common-table-expressions-(CTE)
+- [Aktualisierungen über allgemeine Tabellenausdrücke](#Updates-through-CTEs)
 - CLR-Funktionen und -Prozeduren
 - $partition-Funktion
 - Tabellenvariablen
@@ -51,6 +51,16 @@ Die folgende Aufstellung enthält die wichtigsten Funktionen, die in Azure SQL D
 - [Kein MAX-Datentyp für dynamische SQL-Zeichenfolgen][]
 
 Glücklicherweise können die meisten dieser Einschränkungen umgangen werden. Die entsprechenden Erläuterungen finden Sie in den jeweiligen oben referenzierten Artikeln.
+
+### Rekursive allgemeine Tabellenausdrücke (CTE)
+
+Dies ist ein komplexes Szenario ohne Schnellkorrektur. Der allgemeine Tabellenausdruck muss unterteilt und in Schritten gehandhabt werden. In der Regel können Sie eine relativ komplexe Schleife verwenden und eine temporäre Tabelle auffüllen, während Sie die rekursiven Zwischenabfragen durchlaufen. Sobald die temporäre Tabelle aufgefüllt ist, können Sie die Daten als ein einzelnes Resultset zurückgeben. Ein ähnlicher Ansatz wurde als Lösung für `GROUP BY WITH CUBE` im Artikel zur [GROUP BY-Klausel mit ROLLUP-, CUBE- oder GROUPING SETS-Option][] verwendet.
+
+### Aktualisierungen über allgemeine Tabellenausdrücke
+
+Wenn der allgemeine Tabellenausdruck nicht rekursiv ist, können Sie die Abfrage so neu schreiben, dass Unterabfragen verwendet werden. Bei rekursiven allgemeinen Tabellenausdrücken müssen Sie zunächst wie oben beschrieben das Resultset erstellen. Anschließend verknüpfen Sie das Resultset mit der Zieltabelle und führen die Aktualisierung aus.
+
+### Systemfunktionen
 
 Es werden auch einige Systemfunktionen nicht unterstützt. Zu den wichtigsten Funktionen, die normalerweise in Data Warehousing verwendet, gehören u. a.:
 
@@ -85,7 +95,11 @@ Hinweise zur Entwicklung des Codes finden Sie in der [Entwicklungsübersicht][].
 <!--Image references-->
 
 <!--Article references-->
-[pivot and unpivot statements]: sql-data-warehouse-develop-pivot-unpivot.md
+[ANSI-Joins bei Aktualisierungen]: sql-data-warehouse-develop-ctas.md
+[ANSI-Joins bei Löschvorgängen]: sql-data-warehouse-develop-ctas.md
+[MERGE-Anweisung]: sql-data-warehouse-develop-ctas.md
+[INSERT..EXEC]: sql-data-warehouse-develop-temporary-tables.md
+
 [Cursor]: sql-data-warehouse-develop-loops.md
 [SELECT..INTO]: sql-data-warehouse-develop-ctas.md
 [GROUP BY-Klausel mit ROLLUP-, CUBE- oder GROUPING SETS-Option]: sql-data-warehouse-develop-group-by-options.md
@@ -99,4 +113,4 @@ Hinweise zur Entwicklung des Codes finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

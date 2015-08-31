@@ -1,19 +1,20 @@
-<properties 
-	pageTitle="Programmgesteuerter Zugriff auf YARN-Anwendungsprotokolle in Hadoop | Microsoft Azure" 
-	description="Greifen Sie programmgesteuert auf Anwendungsprotokolle auf einem Hadoop-Cluster in HDInsight zu." 
-	services="hdinsight" 
-	documentationCenter="" 
+<properties
+	pageTitle="Programmgesteuerter Zugriff auf YARN-Anwendungsprotokolle in Hadoop | Microsoft Azure"
+	description="Greifen Sie programmgesteuert auf Anwendungsprotokolle auf einem Hadoop-Cluster in HDInsight zu."
+	services="hdinsight"
+	documentationCenter=""
+	tags="azure-portal"
 	authors="mumian" 
-	manager="paulettm" 
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/09/2015" 
+<tags
+	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/09/2015"
 	ms.author="jgao"/>
 
 # Programmgesteuerter Zugriff auf YARN-Anwendungsprotokolle in Hadoop in HDInsight
@@ -39,16 +40,16 @@ Mit diesem Befehl werden dem aktuellen Visual Studio-Projekt .NET-Bibliotheken f
 
 Der <a href="http://hadoop.apache.org/docs/r2.4.0/hadoop-yarn/hadoop-yarn-site/TimelineServer.html" target="_blank">YARN Timeline Server</a> bietet mittels zweier Schnittstellen allgemeine Informationen zu abgeschlossenen Anwendungen sowie frameworkspezifische Anwendungsinformationen. Dies gilt insbesondere in folgenden Fällen:
 
-* Speicherung und Abruf allgemeiner Anwendungsinformationen zu HDInsight-Clustern sind für Versionen ab 3.1.1.374 aktiviert. 
+* Speicherung und Abruf allgemeiner Anwendungsinformationen zu HDInsight-Clustern sind für Versionen ab 3.1.1.374 aktiviert.
 * Die frameworkspezifische Anwendungsinformationskomponente des Timeline Servers steht für HDInsight-Cluster derzeit nicht zur Verfügung.
 
 
 Zu den allgemeinen Informationen zu Anwendungen zählen die folgenden Datenarten:
 
-* Die Anwendungs-ID, ein eindeutiger Bezeichner einer Anwendung 
-* Der Benutzer, der die Anwendung gestartet hat 
-* Informationen zu den erfolgten Versuchen, die Anwendung abzuschließen 
-* Die bei Anwendungsversuchen verwendeten Container 
+* Die Anwendungs-ID, ein eindeutiger Bezeichner einer Anwendung
+* Der Benutzer, der die Anwendung gestartet hat
+* Informationen zu den erfolgten Versuchen, die Anwendung abzuschließen
+* Die bei Anwendungsversuchen verwendeten Container
 
 In Ihren HDInsight-Clustern werden diese Informationen vom Azure-Ressourcen-Manager in einem Verlaufsspeicher im Standardcontainer Ihres Azure-Standardspeicherkontos gespeichert. Diese allgemeinen Daten zu abgeschlossenen Anwendungen können über eine REST-API abgerufen werden:
 
@@ -71,7 +72,7 @@ An diesem Speicherort ist *user* der Name des Benutzers, der die Anwendung gesta
 Die zusammengeführten Protokolle sind nicht unmittelbar lesbar, da sie in [TFile][T-file] geschrieben werden, einem nach Container indiziertem [Binärformat][binary-format]. YARN bietet CLI-Tools zum Ausgeben dieser Protokolle mit unformatiertem Text für Anwendungen und Container von Interesse. Sie können diese Protokolle als unformatierten Text anzeigen, indem Sie einen der folgenden YARN-Befehle direkt auf die Clusterknoten anwenden (nachdem über RDP eine Verbindung hergestellt wurde):
 
 	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application>
-	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application> -containerId <containerId> -nodeAddress <worker-node-address> 
+	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application> -containerId <containerId> -nodeAddress <worker-node-address>
 
 Im nächsten Abschnitt wird erläutert, wie auf anwendungs- oder containerspezifische Protokolle programmgesteuert zugegriffen werden kann, ohne über RDP eine Verbindung mit Ihren HDInsight-Clustern herstellen zu müssen.
 
@@ -91,24 +92,24 @@ die auf die neu definierten APIs im folgenden Code verweisen. Mit dem folgenden 
 	string subscriptionId = "<your-subscription-id>";
 	string clusterName = "<your-cluster-name>";
 	string certName = "<your-subscription-management-cert-name>";
-	
+
 	// Create an HDInsight client
 	X509Store store = new X509Store(StoreName.My, StoreLocation.LocalMachine);
 	store.Open(OpenFlags.ReadOnly);
 	X509Certificate2 cert = store.Certificates.Cast<X509Certificate2>()
 	                            .Single(x => x.FriendlyName == certName);
-	
-	HDInsightCertificateCredential creds = 
+
+	HDInsightCertificateCredential creds =
 				new HDInsightCertificateCredential(new Guid(subscriptionId), cert);
-	
+
 	IHDInsightClient client = HDInsightClient.Connect(creds);
-	
+
 	// Get the cluster on which your applications were run
 	// The cluster needs to be in the "Running" state
 	ClusterDetails cluster = client.GetCluster(clusterName);
-	
+
 	// Create an Application History client against your cluster
-	IHDInsightApplicationHistoryClient appHistoryClient = 
+	IHDInsightApplicationHistoryClient appHistoryClient =
 				cluster.CreateHDInsightApplicationHistoryClient(TimeSpan.FromMinutes(5));
 
 
@@ -116,7 +117,7 @@ Mit dem "Application History"-Client können Sie abgeschlossene Anwendungen aufl
 
 	// Local download folder location where the logs will be placed
 	string downloadLocation = "E:\\YarnApplicationLogs";
-	
+
 	// List completed applications on your cluster that were submitted in the last 24 hours but failed
 	// Search for applications based on application name
 	string appNamePrefix = "your-app-name-prefix";
@@ -124,10 +125,10 @@ Mit dem "Application History"-Client können Sie abgeschlossene Anwendungen aufl
 	DateTime startTime = endTime.AddHours(-24);
 	IEnumerable<ApplicationDetails> applications = appHistoryClient
 	                .ListCompletedApplications(startTime, endTime)
-	                .Where(app => 
-	                    app.GetApplicationFinalStatusAsEnum() == ApplicationFinalStatus.Failed 
+	                .Where(app =>
+	                    app.GetApplicationFinalStatusAsEnum() == ApplicationFinalStatus.Failed
 	                    && app.Name.StartsWith(appNamePrefix));
-	
+
 	// Download logs for failed or killed applications
 	// This will generate one log file for each application
 	foreach (ApplicationDetails application in applications)
@@ -147,18 +148,18 @@ Alternativ werden mit dem folgenden Codeausschnitt Protokolle für eine Anwendun
 Bei Bedarf können Sie auch Protokolle für jeden Container (oder einen bestimmten Container) herunterladen, die wie unten dargestellt von einer Anwendung verwendet werden.
 
 	ApplicationDetails someApplication = appHistoryClient.GetApplicationDetails(applicationId);
-	
+
 	// Download logs separately for each container of application(s) of interest
 	// This will generate one log file per container
 	IEnumerable<ApplicationAttemptDetails> applicationAttempts =
 				appHistoryClient.ListApplicationAttempts(someApplication);
-	
+
 	ApplicationAttemptDetails finalAttempt = applicationAttempts
 	    		.Single(x => x.ApplicationAttemptId == someApplication.LatestApplicationAttemptId);
-	
+
 	IEnumerable<ApplicationContainerDetails> containers =
 				appHistoryClient.ListApplicationContainers(finalAttempt);
-	
+
 	foreach (ApplicationContainerDetails container in containers)
 	{
 	    appHistoryClient.DownloadApplicationLogs(container, downloadLocation);
@@ -171,6 +172,5 @@ Bei Bedarf können Sie auch Protokolle für jeden Container (oder einen bestimmt
 [T-file]: https://issues.apache.org/jira/secure/attachment/12396286/TFile%20Specification%2020081217.pdf
 [binary-format]: https://issues.apache.org/jira/browse/HADOOP-3315
 [YARN-concepts]: http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

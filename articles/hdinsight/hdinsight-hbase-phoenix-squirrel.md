@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="05/05/2015"
+   ms.date="07/29/2015"
    ms.author="jgao"/>
 
 # Verwenden von Apache Phoenix und SQuirreL mit HBase-Clustern in HDInsight  
@@ -212,7 +212,7 @@ Eine Möglichkeit zum Erstellen eines X.509-Zertifikats ist mithilfe des Tools z
 
 **Installieren von SQuirreL**
 
-1. Laden Sie die SQuirreL SQL Client-JAR-Datei von [http://squirrel-sql.sourceforge.net/#installation](http://squirrel-sql.sourceforge.net/#installation) herunter.
+1. Laden Sie die SQuirreL SQL Client-JAR-Datei von [http://squirrel-sql.sourceforge.net/\#installation](http://squirrel-sql.sourceforge.net/#installation) herunter.
 2. Die Jar-Datei öffnen/ausführen. Hierzu ist die [Java-Laufzeitumgebung](http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html) erforderlich.
 3. Klicken Sie zwei Mal auf **Weiter**.
 4. Geben Sie einen Pfad an, an dem die Schreibberechtigung besitzen und klicken Sie dann auf **Weiter**.
@@ -287,7 +287,7 @@ In diesem Artikel haben Sie erfahren, wie Sie Apache Phoenix in HDInsight verwen
 - [Konfiguration von HBase-Replikation in HDInsight](hdinsight-hbase-geo-replication.md): Erfahren Sie, wie Sie HBase-Replikation über zwei Azure-Rechenzentren konfigurieren. 
 - [Analysieren der Twitter-Stimmungen mit HBase in HDInsight][hbase-twitter-sentiment]\: Erfahren Sie, wie Sie in Echtzeit [Stimmungsanalysen](http://en.wikipedia.org/wiki/Sentiment_analysis) bei Big Data mithilfe von HBase in einem Hadoop-Cluster in HDInsight durchführen können.
 
-[azure-portal]: https://manage.windowsazure.com
+[azure-portal]: https://portal.azure.com
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
 
 [hdinsight-versions]: hdinsight-component-versioning.md
@@ -308,4 +308,4 @@ In diesem Artikel haben Sie erfahren, wie Sie Apache Phoenix in HDInsight verwen
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

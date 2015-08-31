@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="Blackmist"
 	manager="paulettm"
-	editor="cgronlun"/>
+	editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
@@ -724,4 +725,4 @@ In diesem Tutorial haben Sie gelernt, wie ein Oozie-Workflow definiert und ein O
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

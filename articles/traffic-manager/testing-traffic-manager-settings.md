@@ -6,16 +6,14 @@
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-
 <tags 
    ms.service="traffic-manager"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/27/2015"
-   ms.author="joaoma;cherylmc" />
-
+   ms.date="08/19/2015"
+   ms.author="joaoma" />
 
 # Testen der Traffic Manager-Einstellungen
 
@@ -56,7 +54,7 @@ Sie können kostenlose webbasierte DNS-Lookup- und Analysedienste nutzen. Mit ei
 
 ## Siehe auch
 
-[Informationen zu Lastenausgleichsmethoden von Traffic Manager](../about-traffic-manager-balancing-methods.md) [Traffic Manager-Konfigurationsaufgaben](https://msdn.microsoft.com/library/azure/hh744830.aspx) [Traffic Manager](../traffic-manager.md)
+[Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](../about-traffic-manager-balancing-methods.md) [Traffic Manager](../traffic-manager.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

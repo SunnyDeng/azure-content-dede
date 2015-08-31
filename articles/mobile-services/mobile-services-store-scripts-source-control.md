@@ -1,22 +1,20 @@
-<properties 
-	pageTitle="Speichern von Projektcode in der Quellcodeverwaltung | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Serverskriptdateien und -module in einem lokalen Git-Repository auf Ihrem Computer speichern." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Speichern von Projektcode in der Quellcodeverwaltung | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Serverskriptdateien und -module in einem lokalen Git-Repository auf Ihrem Computer speichern."
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="04/24/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="08/18/2015" 
 	ms.author="ggailey777"/>
-
 
 # Speichern von Projektcode in der Quellcodeverwaltung
 
@@ -34,7 +32,7 @@ Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst durch Be
 
 ##<a name="clone-repo"></a>Installieren von Git und Erstellen des lokalen Repositorys
 
-1. Installieren Sie Git auf Ihrem lokalen Computer. 
+1. Installieren Sie Git auf Ihrem lokalen Computer.
 
 	Die erforderlichen Schritte zum Installieren von Git variieren je nach Betriebssystem. Informationen zu Betriebssystem-spezifischen Distributionen und zur Installation finden Sie unter [Installieren von Git].
 
@@ -77,13 +75,13 @@ Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Servers
 		    request.execute();
 		    console.log(JSON.stringify(item, null, 4));
 		}
-	
+
 	Dieser Code schreibt das eingefügte Element in das Protokoll. Falls diese Datei bereits Code enthält, fügen Sie einfach gültigen JavaScript-Code hinzu, z. B. einen Aufruf an `console.log()`, und speichern Sie Ihre Änderungen.
 
 3. Geben Sie den folgenden Befehl in der Git-Eingabeaufforderung ein, um die neue Skriptdatei zur Quellcodeverwaltung hinzuzufügen:
 
 		$ git add .
-	
+
 
 4. Geben Sie den folgenden Befehl ein, um die Änderungen nach Git zu übernehmen:
 
@@ -92,7 +90,7 @@ Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Servers
 5. Geben Sie den folgenden Befehl ein, um die Änderungen in das Remote-Repository zu übertragen:
 
 		$ git push origin master
-	
+
 	Daraufhin wird eine Reihe von Ausgaben für die Bereitstellung des Commits im mobilen Dienst angezeigt.
 
 6. Kehren Sie zurück zum Verwaltungsportal, klicken Sie auf die Registerkarte **Daten**, klicken Sie anschließend auf die Tabelle **TodoItem**, klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen** aus.
@@ -162,6 +160,5 @@ Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinier
 [Aufrufen einer benutzerdefinierten API vom Client]: mobile-services-ios-call-custom-api.md
 [Module]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

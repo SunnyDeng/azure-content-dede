@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="Blackmist" 
 	manager="paulettm" 
-	editor="cgronlun"/>
+	editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags 
 	ms.service="hdinsight" 
@@ -13,14 +14,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/22/2015" 
+	ms.date="08/04/2015" 
 	ms.author="larryfr"/>
 
 #Analysieren von Flugverspätungsdaten mit Hive in HDInsight
 
 Hier erfahren Sie, wie Sie Flugverspätungsdaten mithilfe von Hive in einem Linux-basierten HDInsight-Cluster (Vorschau) analysieren und anschließend die Daten mithilfe von Sqoop in die Azure SQL-Datenbank exportieren.
 
-> [AZURE.NOTE]Einzelne Teile dieses Artikels können zwar für Windows-basierte HDInsight-Cluster (beispielsweise Python und Hive) verwendet werden. Zahlreiche Schritte gelten jedoch spezifisch für Linux-basierte Cluster. Schritte für Windows-basierte Cluster finden Sie unter [Analysieren von Flugverspätungsdaten mit Hive in HDInsight](hdinsight-analyze-flight-delay-data.md).
+> [AZURE.NOTE]Einzelne Teile dieses Dokuments können zwar für Windows-basierte HDInsight-Cluster (beispielsweise Python und Hive) verwendet werden. Zahlreiche Schritte gelten jedoch spezifisch für Linux-basierte Cluster. Schritte für Windows-basierte Cluster finden Sie unter [Analysieren von Flugverspätungsdaten mit Hive in HDInsight](hdinsight-analyze-flight-delay-data.md).
 
 ###Voraussetzungen
 
@@ -304,4 +305,4 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

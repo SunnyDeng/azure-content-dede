@@ -5,7 +5,8 @@
    documentationCenter=".net"
    authors="Blackmist"
    manager="paulettm"
-   editor="cgronlun"/>
+   editor="cgronlun"
+   tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
@@ -13,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/06/2015"
+   ms.date="07/24/2015"
    ms.author="larryfr"/>
 
 #Ausführen von Pig-Aufträgen mithilfe des .NET SDK für Hadoop in HDInsight
@@ -23,6 +24,10 @@
 Dieses Dokument enthält ein Beispiel zur Verwendung von .NET SDK für Hadoop zur Übermittlung von Pig-Aufträgen an einen Hadoop-Cluster in HDInsight.
 
 Das HDInsight .NET SDK enthält .NET-Clientbibliotheken, die das Arbeiten mit HDInsight-Clustern in .NET vereinfachen. Mithilfe von Pig können Sie MapReduce-Vorgänge erstellen, indem Sie eine Reihe von Datentransformationen modellieren. Sie werden erfahren, wie Sie mit einer einfachen C#-Anwendung einen Pig-Auftrag an einen HDInsight-Cluster übermitteln.
+
+[AZURE.INCLUDE [azure-portal](../../includes/hdinsight-azure-portal.md)]
+
+* [Ausführen von Pig-Aufträgen mithilfe des .NET SDK für Hadoop in HDInsight](hdinsight-hadoop-use-pig-dotnet-sdk-v1.md)
 
 ##<a id="prereq"></a>Voraussetzungen
 
@@ -44,11 +49,11 @@ Anweisungen hierzu finden Sie unter [Erstellen eines selbstsignierten Zertifikat
 
 Jedes Azure-Abonnement wird durch einen GUID-Wert gekennzeichnet, der als Abonnement-ID bezeichnet wird. Ermitteln Sie diesen Wert mithilfe der folgenden Schritte.
 
-1. Öffnen Sie die [Azure-Verwaltungskonsole](https://manage.windowsazure.com/).
+1. Besuchen Sie das [Azure-Vorschauportal] [Vorschauportal].
 
-2. Wählen Sie im Portal auf der linken Leiste die Option **Einstellungen** aus.
+2. Klicken Sie links im Portal auf der Menüleiste auf __ALLE DURCHSUCHEN__, und wählen Sie dann auf dem Blatt __Durchsuchen__ die Option __Abonnements__.
 
-3. Suchen Sie in den auf der rechten Seite angezeigten Informationen das zu verwendende Abonnement, und beachten Sie den Wert in der Spalte **Abonnement-ID**.
+3. Suchen Sie in den Informationen auf dem Blatt __Abonnements__ das zu verwendende Abonnement, und notieren Sie den Wert in der Spalte **Abonnement-ID**.
 
 Speichern Sie die Abonnement-ID, da sie später verwendet wird.
 
@@ -81,7 +86,7 @@ Speichern Sie die Abonnement-ID, da sie später verwendet wird.
 
 4. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
-5. Wählen Sie im Menü **Extras** die Option **Library Package Manager** oder **Nuget Package Manager** und dann **Paket-Manager-Konsole** aus.
+5. Wählen Sie im Menü **Extras** die Option **Bibliothekspaket-Manager** oder **Nuget-Paket-Manager** und dann **Paket-Manager-Konsole** aus.
 
 6. Führen Sie den folgenden Befehl in der Konsole aus, um die .NET SDK-Pakete zu installieren.
 
@@ -197,7 +202,7 @@ Speichern Sie die Abonnement-ID, da sie später verwendet wird.
 
 ##<a id="run"></a>Ausführen der Anwendung
 
-Drücken Sie **F5**, um die Anwendung zu starten. Wenn Sie dazu aufgefordert werden, geben Sie **Abonnement-ID**, **Angezeigter Zertifikatname** und **HDInsight-Clustername** ein. Die Anwendung erzeugt während der Ausführung mehrere Zeilen mit Informationen, die ähnlich dem Folgenden enden.
+Drücken Sie **F5**, um die Anwendung zu starten. Geben Sie bei entsprechender Aufforderung **Abonnement-ID**, **Angezeigter Zertifikatname** und **HDInsight-Clustername** ein. Die Anwendung erzeugt während der Ausführung mehrere Zeilen mit Informationen, die ähnlich dem Folgenden enden.
 
 ```
 ----- The Pig job output log.
@@ -227,6 +232,6 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Hive mit Hadoop in HDInsight](hdinsight-use-hive.md)
 
-* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
+* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md) [Vorschauportal]: https://portal.azure.com/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

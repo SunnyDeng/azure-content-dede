@@ -5,8 +5,8 @@
 	documentationCenter=""
 	editor="cgronlun"
 	manager="paulettm"
-	authors="nitinme"/>
-
+	authors="nitinme"
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
@@ -16,7 +16,6 @@
 	ms.topic="article"
 	ms.date="07/30/2015"
 	ms.author="nitinme"/>
-
 
 
 # Versionshinweise zu Hadoop-Komponenten in Azure HDInsight
@@ -1070,7 +1069,7 @@ Dieser Hotfix korrigiert einen Speicherverlust in Templeton, der insbesondere Te
 
 ## Hinweise für die Version vom 07.10.2014 ##
 
-* Beim Verwenden des Ambari-Endpunkts https://{clusterDns}.azurehdinsight.net/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.net/services/{servicename}/components/{componentname} gibt das Feld *host\_name* nun den vollqualifizierten Domänennamen (FQDN) des Knotens anstelle des Hostnamens zurück. Anstatt beispielsweise des Rückgabewerts "**headnode0**" erhalten Sie den FQDN "\*\*headnode0.{ClusterDNS}.azurehdinsight.net\*\*". Diese Änderung war erforderlich, um Szenarien, in denen mehrere Clustertypen (z. B. HBase und Hadoop) in einem einzigen virtuellen Netzwerk (VNET) bereitgestellt werden, zu erleichtern. Dies ist z. B. der Fall, wenn HBase als Back-End-Plattform für Hadoop verwendet wird.
+* Beim Verwenden des Ambari-Endpunkts https://{clusterDns}.azurehdinsight.net/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.net/services/{servicename}/components/{componentname} gibt das Feld *host\_name* nun den vollqualifizierten Domänennamen (FQDN) des Knotens anstelle des Hostnamens zurück. Anstatt beispielsweise des Rückgabewerts "**headnode0**" erhalten Sie den FQDN "**headnode0.{ClusterDNS}.azurehdinsight.net**". Diese Änderung war erforderlich, um Szenarien, in denen mehrere Clustertypen (z. B. HBase und Hadoop) in einem einzigen virtuellen Netzwerk (VNET) bereitgestellt werden, zu erleichtern. Dies ist z. B. der Fall, wenn HBase als Back-End-Plattform für Hadoop verwendet wird.
 
 * Wir haben neue Speichereinstellungen für die Standardbereitstellung des HDInsight-Clusters bereitgestellt. Bei den vorherigen Speichereinstellungen wurden die Empfehlungen für die Anzahl der bereitgestellten CPU-Kerne nicht ausreichend berücksichtigt. Diese neuen Arbeitsspeichereinstellungen sollten (gemäß den Empfehlungen von Hortonworks) bessere Standardeinstellungen bieten. Um diese Einstellungen zu ändern, konsultieren Sie die SDK-Referenzdokumentation bezüglich des Änderns der Clusterkonfiguration. Die folgende Tabelle enthält die neuen Arbeitsspeichereinstellungen für ein Standard-HDInsight-Cluster mit 4 CPU-Kernen (8 Containern). (Die Werte, die in vorherigen Versionen verwendet wurden, sind in Klammern angegeben).
 
@@ -1333,4 +1332,4 @@ Versionshinweise zu den HDPs (Hortonworks Data Platforms), die von den Versionen
 [hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

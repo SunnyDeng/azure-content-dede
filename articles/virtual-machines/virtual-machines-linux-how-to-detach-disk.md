@@ -1,11 +1,12 @@
 <properties
 	pageTitle="Trennen eines Datenträgers von einem virtuellen Linux-Computer in Azure"
-	description="Erfahren Sie, wie Sie einen Datenträger von einem virtuellen Azure-Computer trennen."
+	description="Informationen zum Trennen eines Datenträgers von einem virtuellen Azure-Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dsk-2015"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -25,6 +26,6 @@
 
 [Vorgehensweise: Anfügen eines Datenträgers an einen virtuellen Linux-Computer](virtual-machines-linux-how-to-attach-disk.md)
 
-[Verwenden der Azure-Befehlszeilenschnittstelle mit Azure Service Management](virtual-machines-command-line-tools.md)
+[Verwenden der Azure-Befehlszeilenschnittstelle mit der Dienstverwaltungs-API](virtual-machines-command-line-tools.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

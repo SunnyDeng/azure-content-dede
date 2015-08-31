@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/07/2015" 
+	ms.date="08/18/2015" 
 	ms.author="paulettm"/>
 
 #Häufig gestellte Fragen zu Azure Machine Learning (FAQ): Abrechnung, Funktionen, Einschränkungen und Support
@@ -177,7 +177,7 @@ Derzeit nicht, mit dem Python-Standardmodul kann jedoch das gleiche Ergebnis erz
 
 **Gibt es eine REPL-Umgebung für Python?**
 
-Nein, es gibt keine REPL-Umgebung für Python in Machine Learning Studio.
+Sie können die „Jupyter Notebooks“ in Machine Learning Studio verwenden. Weitere Informationen finden Sie unter [Einführung in Jupyter Notebooks in Azure ML Studio](http://blogs.technet.com/b/machinelearning/archive/2015/07/24/introducing-jupyter-notebooks-in-azure-ml-studio.aspx)
 
 ## Webdienst
 ###Programmgesteuertes erneutes Trainieren von Modellen
@@ -202,6 +202,8 @@ Der Anfrage-Antwort-Dienst (Request Response Service, RRS) ist ein hoch skalierb
 
 Sie können das Vorhersagemodell für einen bereitgestellten Dienst einfach ändern, indem Sie das Experiment bearbeiten und erneut ausführen, das Sie beim Erstellen und Speichern des trainierten Modells verwendet haben. Sobald die neue Version des trainierten Modells verfügbar ist, werden sie von ML Studio gefragt, ob Sie Ihren Staging-Webdienst aktualisieren möchten. Nach dem Update des Stagingwebdiensts ist dasselbe Update auch für die Übernahme in den Produktionswebdienst verfügbar. Ausführliche Informationen zum Aktualisieren eines bereitgestellten Webdiensts finden Sie unter [Veröffentlichen von Machine Learning-Webdiensten](machine-learning-publish-a-machine-learning-web-service.md).
 
+Sie können auch die APIs zum erneuten Trainieren verwenden. Der Beispielcode steht [hier](https://azuremlretrain.codeplex.com/) zur Verfügung.
+
 
 **Wie überwache ich meinen Webdienst in der Produktionsumgebung?**
 
@@ -209,15 +211,16 @@ Sobald ein Vorhersagemodell in die Produktionsumgebung übernommen wurde, könne
 
 **Kann ich die Ausgabe meines RRS/BES an einer Stelle einsehen?**
 
-Ja. Sie müssen einen Blobspeicherort angeben, dann erfolgt dort die Ausgabe des RRS/BES.
-
-
+Für RRS wird das Ergebnis normalerweise in der Antwort des Webdiensts ausgegeben. Sie können es aber auch in ein Blob schreiben. Bei BES wird die Ausgabe standardmäßig in ein Blob geschrieben. Sie können die Ausgabe aber auch mithilfe des Schreibmoduls in eine Datenbank oder Tabelle schreiben.
+ 
+ ****Können Webdienste nur aus Modellen erstellt werden, die im Studio erstellt wurden? Nein. Webdienste können auch direkt aus Jupyter Notebooks und RStudio erstellt werden.
+ 
 
 ##Skalierbarkeit 
 
 **Wie skalierbar ist der Webdienst?**
 
-Derzeit gilt ein Höchstwert von 20 gleichzeitigen Anforderungen pro Endpunkt, es ist jedoch eine Skalierung auf 80 Endpunkte möglich. Dies ergibt 4.800 gleichzeitige Anforderungen bei Verwendung jeder Ressource (300 Worker).
+Derzeit gilt ein Höchstwert von 20 gleichzeitigen Anforderungen pro Endpunkt, es ist jedoch eine Skalierung auf 10.000 Endpunkte möglich. Dies ergibt 4.800 gleichzeitige Anforderungen bei Verwendung jeder Ressource (300 Worker).
 
 
 **Werden R-Aufträge auf die Knoten verteilt?**
@@ -259,7 +262,8 @@ Nr.
 
 **Wer hat standardmäßig Zugriff auf den HTTP-Endpunkt für den Webdienst in der Produktionsumgebung? Wie kann ich den Zugriff auf den Endpunkt einschränken?**
 
-Sobald ein Vorhersagemodell in die Produktionsumgebung übernommen wurde, wird die URL für die bereitgestellten Webdienste im Azure-Portal aufgelistet. Die URLs von Stagingdiensten sind in der Machine Learning Studio-Umgebung im Bereich "Webdienste" verfügbar, und die URLs von Produktionsdiensten sind im Azure-Portal im Bereich für Machine Learning verfügbar. Die Zugriffsschlüssel für die Staging- und Produktionswebdienste finden Sie im Webdienst-Dashboard in Machine Learning Studio bzw. im Azure-Portal. Die Zugriffsschlüssel werden für Aufrufe an die Webdienste in den Produktions- und Stagingumgebungen benötigt. Weitere Informationen finden Sie unter [Verbinden mit einem Machine Learning-Webdienst](machine-learning-connect-to-azure-machine-learning-web-service.md).
+Nach der Veröffentlichung eines Webdiensts wird ein Standardendpunkt für den Dienst erstellt. Dieser Standardendpunkt wird für die Produktion bereitgestellt und kann mithilfe seines API-Schlüssels aufgerufen werden. Zusätzliche Endpunkte können im Azure-Portal oder programmgesteuert mithilfe der APIs der Webdienstverwaltung unter Verwendung ihrer eigenen Schlüssel hinzugefügt werden. Die Zugriffsschlüssel werden für Aufrufe an die Webdienste in den Produktions- und Stagingumgebungen benötigt. Weitere Informationen finden Sie unter [Verbinden mit einem Machine Learning-Webdienst](machine-learning-connect-to-azure-machine-learning-web-service.md).
+
 
 **Was geschieht, wenn mein Speicherkonto nicht gefunden werden kann?**
 
@@ -303,4 +307,4 @@ Für Azure Machine Learning gibt es außerdem ein Community-Forum auf MSDN, in d
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

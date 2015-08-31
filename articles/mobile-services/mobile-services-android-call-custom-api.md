@@ -43,7 +43,7 @@ Sie fügen diese Funktionen zu der App hinzu, welche Sie beim Abschluss entweder
 
 ## Nächste Schritte
 
-In diesem Thema wurde gezeigt, wie Sie mithilfe der **InvokeApi**-Methode eine relativ einfache benutzerdefinierte API Ihrer Android-App aufrufen. Weitere Informationen zum Verwenden der **InvokeApi**-Methode finden Sie im Beitrag [Custom API in Azure Mobile Services](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx) \(in englischer Sprache\).
+In diesem Thema wurde gezeigt, wie Sie mithilfe der **InvokeApi**-Methode eine relativ einfache benutzerdefinierte API Ihrer Android-App aufrufen. Weitere Informationen zum Verwenden der **InvokeApi**-Methode finden Sie im Beitrag [Custom API in Azure Mobile Services](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx) (in englischer Sprache).
 
 Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 
@@ -69,4 +69,4 @@ Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

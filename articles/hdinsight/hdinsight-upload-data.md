@@ -3,6 +3,7 @@
 	description="Erfahren Sie, wie Sie Daten für Hadoop-Aufträge in HDInsight mithilfe der Azure-Befehlszeilenschnittstelle, Azure-Speicher-Explorer, Azure PowerShell, der Hadoop-Befehlszeile oder Sqoop hochladen und abrufen können."
 	services="hdinsight,storage"
 	documentationCenter=""
+	tags="azure-portal"
 	authors="mumian"
 	manager="paulettm"
 	editor="cgronlun"/>
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/10/2015"
+	ms.date="07/28/2015"
 	ms.author="jgao"/>
 
 
@@ -22,7 +23,7 @@
 
 Azure HDInsight stellt über Azure-Blobspeicher ein Hadoop Distributed File System (HDFS) mit vollem Funktionsumfang zur Verfügung. Es ist als eine HDFS-Erweiterung konzipiert, die eine nahtlose Benutzererfahrung bietet. Der vollständige Satz von Komponenten im Hadoop-Ökosystem kann direkt mit den verwalteten Daten verwendet werden. Azure-Blobspeicher und HDFS sind unterschiedliche Dateisysteme, die jeweils für die Datenspeicherung und Berechnungen dieser Daten optimiert sind. Die Vorteile der Verwendung von Azure-Blobspeicher werden unter [Verwenden von Azure-Blobspeicher mit HDInsight][hdinsight-storage] beschrieben.
 
-##Voraussetzungen
+**Voraussetzungen**
 
 Beachten Sie die folgenden Voraussetzungen, bevor Sie beginnen:
 
@@ -109,15 +110,20 @@ Azure PowerShell ist eine Skriptumgebung, mit der Sie die Bereitstellung und Ver
 2. Legen Sie die Werte der ersten fünf Variablen im folgenden Skript fest:
 
 		$subscriptionName = "<AzureSubscriptionName>"
+		$resourceGroupName = "<AzureResourceGroupName>"
 		$storageAccountName = "<StorageAccountName>"
 		$containerName = "<ContainerName>"
 
 		$fileName ="<LocalFileName>"
 		$blobName = "<BlobName>"
 
-		# Get the storage account key
+		Switch-AzureMode -Name AzureResourceManager
+
+		Add-AzureAccount
 		Select-AzureSubscription $subscriptionName
-		$storageaccountkey = get-azurestoragekey $storageAccountName | %{$_.Primary}
+
+		# Get the storage account key
+		$storageaccountkey = get-azurestoragekey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{$_.Primary}
 
 		# Create the storage context object
 		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
@@ -205,6 +211,9 @@ Bevor Sie das Tool verwenden können, müssen Sie den Namen Ihres Azure-Speicher
 
 7. Geben Sie eine hochzuladende Datei an, und klicken Sie auf **Öffnen**.
 
+##Bereitstellen von Azure-Blobspeicher als lokales Laufwerk
+
+Informationen finden Sie unter [Bereitstellen von Azure-Blobspeicher als lokales Laufwerk](http://blogs.msdn.com/b/bigdatasupport/archive/2014/01/09/mount-azure-blob-storage-as-local-drive.aspx).
 
 ##Dienste
 
@@ -247,7 +256,7 @@ Jetzt wissen Sie, wie Sie Daten in HDInsight importieren. Lesen Sie in den folge
 
 
 
-[azure-management-portal]: https://manage.windowsazure.com
+[azure-management-portal]: https://porta.azure.com
 [azure-powershell]: http://msdn.microsoft.com/library/windowsazure/jj152841.aspx
 
 [azure-storage-client-library]: /develop/net/how-to-guides/blob-storage/
@@ -277,6 +286,5 @@ Jetzt wissen Sie, wie Sie Daten in HDInsight importieren. Lesen Sie in den folge
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png
 [image-ase-addaccount]: ./media/hdinsight-upload-data/HDI.ASEAddAccount.png
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

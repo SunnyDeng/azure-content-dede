@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/27/2015"
+   ms.date="08/13/2015"
    ms.author="alkohli" />
 
 # Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts
@@ -71,8 +71,8 @@ Klicken Sie auf die Verfahren in der Tabelle, um weitere Informationen zu den ei
 |Gewünschte Aktion|Seite auf der Benutzeroberfläche|Verfahren|
 |---|---|---|
 |Dienst erstellen</br>Dienst löschen</br>Dienstregistrierungsschlüssel abrufen</br>Dienstregistrierungsschlüssel erneut generieren|StorSimple Manager-Dienst|[Bereitstellen eines StorSimple Manager-Diensts](storsimple-manage-service.md)
-|Dienstdaten-Verschlüsselungsschlüssel ändern</br>Vorgangsprotokolle anzeigen|StorSimple Manager-Dienst → Dashboard|[Verwenden des Dashboards des StorSimple Manager-Diensts](storsimple-service-dashboard.md)|
-|Gerät deaktivieren</br>Gerät löschen|StorSimple Manager-Dienst → Geräte|[Deaktivieren oder Löschen eines Geräts]()|
+|Dienstdaten-Verschlüsselungsschlüssel ändern</br>Vorgangsprotokolle anzeigen|StorSimple Manager-Dienst → Dashboard|[Verwenden des Dashboards des StorSimple Manager-Diensts](storsimple-service-dashboard.md)|
+|Gerät deaktivieren</br>Gerät löschen|StorSimple Manager-Dienst → Geräte|[Deaktivieren oder Löschen eines Geräts](storsimple-deactivate-and-delete-device.md)|
 |Über Notfallwiederherstellung und Gerätefailover informieren</br>Failover auf ein physisches Gerät ausführen</br>Failover auf ein virtuelles Gerät ausführen</br>BCDR (Business Continuity Disaster Recovery) ausführen|StorSimple Manager-Dienst → Geräte|[Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md)|
 |Liste mit Sicherungen für ein Volume anzeigen</br>Sicherungssatz auswählen</br>Sicherungssatz löschen|StorSimple Manager-Dienst → Sicherungskatalog|[Verwalten von Sicherungen](storsimple-manage-backup-catalog.md)|
 |Volume klonen|StorSimple Manager-Dienst → Sicherungskatalog|[Klonen eines Volumes](storsimple-clone-volume.md)|
@@ -83,7 +83,7 @@ Klicken Sie auf die Verfahren in der Tabelle, um weitere Informationen zu den ei
 |Auftragsdetails anzeigen</br>Auftrag abbrechen|StorSimple Manager-Dienst → Aufträge|[Verwalten von Aufträgen](storsimple-manage-jobs.md)
 |Warnungsbenachrichtigungen erhalten</br>Benachrichtigungen verwalten</br>Warnungen prüfen|StorSimple Manager-Dienst → Warnungen|[Anzeigen und Verwalten von StorSimple-Warnungen](storsimple-manage-alerts.md)
 |Verbundene Initiatoren anzeigen</br>Seriennummer des Geräts ermitteln</br>Ziel-IQN ermitteln|StorSimple Manager-Dienst → Geräte → Dashboard|[Verwenden des StorSimple-Gerätedashboards](storsimple-device-dashboard.md)|
-|Überwachungsdiagramme erstellen|StorSimple Manager-Dienst → Geräte → Überwachen|[Überwachen von StorSimple-Geräten](https://msdn.microsoft.com/library/azure/dn757759.aspx)|
+|Überwachungsdiagramme erstellen|StorSimple Manager-Dienst → Geräte → Überwachen|[Überwachen von StorSimple-Geräten](storsimple-monitor-device.md)|
 |Volumecontainer hinzufügen</br>Volumecontainer ändern</br>Volumecontainer löschen|StorSimple Manager-Dienst → Geräte → Volumecontainer|[Verwalten von Volumecontainern](storsimple-manage-volume-containers.md)|
 |Volume hinzufügen</br>Volume ändern</br>Volume offline schalten</br>Volume löschen</br>Volume überwachen|StorSimple Manager-Dienst → Geräte → Volumecontainer → Volumes|[Verwalten von Volumes](storsimple-manage-volumes.md)|
 |Geräteeinstellungen ändern</br>Zeiteinstellungen ändern</br>Einstellungen für „DNS.md“ ändern</br>Netzwerkschnittstellen konfigurieren|StorSimple Manager-Dienst → Geräte → Konfigurieren|[Ändern der Gerätekonfiguration für Ihr StorSimple-Gerät](storsimple-modify-device-config.md)|
@@ -107,6 +107,6 @@ Informationen zu Problemen beim alltäglichen Betrieb Ihres StorSimple-Geräts o
 
 Falls sich das Problem nicht beheben lässt und Sie eine Serviceanfrage erstellen müssen, finden Sie hier weitere Informationen:
 
--  [Kontaktaufnahme mit dem Microsoft-Support](https://msdn.microsoft.com/library/azure/dn757750.aspx)
+-  [Kontaktaufnahme mit dem Microsoft-Support](storsimple-contact-microsoft-support.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

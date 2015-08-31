@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/27/2015"
-   ms.author="joaoma;cherylmc" />
+   ms.date="08/19/2015"
+   ms.author="joaoma" />
 
 # Traffic Manager-Überwachung
 
@@ -27,7 +27,7 @@ Azure Traffic Manager kann Ihre Endpunkte inklusive Cloud-Diensten und Websites 
 
 ## Informationen zur Überwachung des Integritätsstatus
 
-Azure Traffic Manager zeigt die Integrität von Profil und Endpunkt im Verwaltungsportal an. In der Statusspalte für das Profil und dem Endpunkt wird der zuletzt ermittelte Status angezeigt. Mit diesem Status können Sie den Zustand der Profile gemäß Ihrer Traffic Manager-Überwachungseinstellungen ermitteln. Wenn das Profil fehlerfrei (integer) ist, werden DNS-Abfragen an Ihre Dienste basierend auf den Lastenausgleichseinstellungen für das Profil (Roundrobin, Leistung oder Failover) verteilt. Sobald das Traffic Manager-Überwachungssystem eine Änderung des überwachten Status erkennt, wird der Statuseintrag im Verwaltungsportal aktualisiert. Es kann bis zu fünf Minuten dauern, bis die Statusänderung aktualisiert wird.
+Azure Traffic Manager zeigt die Integrität von Profil und Endpunkt im Verwaltungsportal an. In der Statusspalte für das Profil und dem Endpunkt wird der zuletzt ermittelte Status angezeigt. Mit diesem Status können Sie den Zustand der Profile gemäß Ihrer Traffic Manager-Überwachungseinstellungen ermitteln. Wenn das Profil fehlerfrei ist, werden DNS-Abfragen an Ihre Dienste basierend auf den Routingeinstellungen für Datenverkehr für das Profil (Roundrobin, Leistung oder Failover) verteilt. Sobald das Traffic Manager-Überwachungssystem eine Änderung des überwachten Status erkennt, wird der Statuseintrag im Verwaltungsportal aktualisiert. Es kann bis zu fünf Minuten dauern, bis die Statusänderung aktualisiert wird.
 
 ### Überwachungsstatus von Endpunkten
 
@@ -89,7 +89,7 @@ Ein beispielhafter zeitlicher Ablauf zur Veranschaulichung der Überwachung mit 
 
 ## Status untergeordneter und übergeordneter Endpunkte bei geschachtelten Profilen
 
-Die folgende Tabelle zeigt das Verhalten der Traffic Manager-Überwachung bei den untergeordneten und übergeordneten Profilen eines geschachtelten Profils und die minChildEndpoints-Einstellung. Weitere Informationen finden Sie unter [Traffic Manager - Übersicht](traffic-manager-overview.md).
+Die folgende Tabelle zeigt das Verhalten der Traffic Manager-Überwachung bei den untergeordneten und übergeordneten Profilen eines geschachtelten Profils und die minChildEndpoints-Einstellung. Weitere Informationen finden Sie unter [Was ist Traffic Manager?](traffic-manager-overview.md).
 
 |Überwachungsstatus von untergeordneten Profilen|Überwachungsstatus von übergeordneten Endpunkten|Hinweise|
 |---|---|---|
@@ -108,15 +108,15 @@ Die folgende Tabelle zeigt das Verhalten der Traffic Manager-Überwachung bei de
 
 ## Siehe auch
 
-[Traffic Manager – Übersicht](traffic-manager-overview.md)
+[Was ist Traffic Manager?](traffic-manager-overview.md)
 
-[Informationen zu Lastenausgleichsmethoden von Traffic Manager](traffic-manager-load-balancing-methods.md)
+[Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md)
 
-[Cloud Services](http://go.microsoft.com/fwlink/p/?LinkId=314074)
+[Cloud-Dienste](http://go.microsoft.com/fwlink/p/?LinkId=314074)
 
 [Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
 
 [Problembehandlung beim Status "Heruntergestuft" in Azure Traffic Manager](traffic-manager-troubleshooting-degraded.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

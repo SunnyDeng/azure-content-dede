@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/02/2015"
+   ms.date="08/19/2015"
    ms.author="sameerch"/>
 
 
@@ -89,7 +89,14 @@ Sie können nun den Yammer-Connector im Datenfluss verwenden.
 
 	![][11]
 
-	<!--Image references-->
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
+
+<!--Image references-->
 [1]: ./media/app-service-logic-connector-yammer/img1.PNG
 [2]: ./media/app-service-logic-connector-yammer/img2.PNG
 [3]: ./media/app-service-logic-connector-yammer/img3.png
@@ -102,4 +109,4 @@ Sie können nun den Yammer-Connector im Datenfluss verwenden.
 [10]: ./media/app-service-logic-connector-yammer/img10.PNG
 [11]: ./media/app-service-logic-connector-yammer/img11.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

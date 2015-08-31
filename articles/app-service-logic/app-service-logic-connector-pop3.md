@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/02/2015"
+   ms.date="08/19/2015"
    ms.author="sameerch"/>
 
 
@@ -62,12 +62,18 @@ Sobald Ihre API-App erstellt wurde, können Sie den POP3-Connector als Trigger f
 
 5.	Sie können nun den POP3-Connector im Datenfluss verwenden. Wählen Sie den Trigger "E-Mail abrufen", und konfigurieren Sie die Häufigkeit und das Abrufintervall. Sie können nun die vom POP3-Trigger abgerufenen E-Mails in anderen Aktionen im Datenfluss verwenden.
 		 
-	
+
 	![][5]
 	![][6]
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
 
-	<!--Image references-->
+<!--Image references-->
 [1]: ./media/app-service-logic-connector-pop3/img1.PNG
 [2]: ./media/app-service-logic-connector-pop3/img2.PNG
 [3]: ./media/app-service-logic-connector-pop3/img3.png
@@ -75,4 +81,4 @@ Sobald Ihre API-App erstellt wurde, können Sie den POP3-Connector als Trigger f
 [5]: ./media/app-service-logic-connector-pop3/img5.PNG
 [6]: ./media/app-service-logic-connector-pop3/img6.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

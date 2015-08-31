@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Traffic Manager – Übersicht"
+   pageTitle="Was ist Traffic Manager? | Microsoft Azure"
    description="Dieser Artikel hilft Ihnen zu verstehen, was Traffic Manager ist und wie er funktioniert."
    services="traffic-manager"
    documentationCenter=""
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/10/2015"
+   ms.date="08/19/2015"
    ms.author="joaoma" />
 
 # Was ist Traffic Manager?
@@ -39,11 +39,11 @@ Beim Konfigurieren eines Traffic Manager-Profils legen Sie verschiedene Einstell
 1. **Benutzerdatenverkehr an den Domänennamen des Unternehmens**: Der Client fordert Informationen mithilfe des Domänennamens des Unternehmens an. Das Ziel ist, einen DNS-Namen in eine IP-Adresse aufzulösen. Unternehmensdomänen müssen über normale Internetdomänennamen reserviert werden, die außerhalb von Traffic Manager verwaltet werden. In Abbildung 1 lautet die Unternehmensdomäne *www.contoso.com*.
 2. **Zuordnen des Namens der Unternehmensdomäne zum Traffic Manager-Domänennamen**: Der DNS-Ressourceneintrag für die Unternehmensdomäne verweist auf einen Traffic Manager-Domänennamen, der in Azure Traffic Manager verwaltet wird. Dies wird mit einem CNAME-Ressourceneintrag erreicht, der den Domänennamen des Unternehmens dem Traffic Manager-Domänennamen zuordnet. Im Beispiel lautet der Traffic Manager-Domänenname *contoso.trafficmanager.net*.
 3. **Traffic Manager-Domänenname und -Profil**: Der Traffic Manager-Domänenname ist Bestandteil des Traffic Manager-Profils. Der DNS-Server des Benutzers sendet eine neue DNS-Abfrage für den Traffic Manager-Domänennamen (im Beispiel *contoso.trafficmanager.net*), die von den Traffic Manager-DNS-Namensservern empfangen wird.
-4. **Verarbeiten der Traffic Manager-Profilregeln**: Traffic Manager verwendet die ausgewählte Lastenausgleichsmethode sowie den zugehörigen Überwachungsstatus, um zu bestimmen, welcher Azure- oder anderer Endpunkt die Anforderung verarbeiten soll.
+4. **Verarbeiten der Traffic Manager-Profilregeln**: Traffic Manager verwendet die ausgewählte Routingmethode für Datenverkehr sowie den zugehörigen Überwachungsstatus, um zu bestimmen, welcher Azure- oder anderer Endpunkt die Anforderung verarbeiten soll.
 5. **Senden des Endpunktdomänennamens an den Benutzer**: Traffic Manager gibt einen CNAME-Eintrag zurück, der den Traffic Manager-Domänennamen dem Domänennamen des Endpunkts zuordnet. Der DNS-Server des Benutzers löst den Domänennamen des Endpunkts in seine IP-Adresse auf und sendet diese an den Benutzer.
 6. **Aufrufen des Endpunkts durch den Benutzer**: Der Benutzer ruft den zurückgegebenen Endpunkt mithilfe der zugehörigen IP-Adresse direkt auf.
 
-Da der Domänenname des Unternehmens und die aufgelöste IP-Adresse auf dem Clientcomputer zwischengespeichert werden, kann der Benutzer so lange mit dem ausgewählten Endpunkt interagieren, bis der lokale DNS-Cacheeintrag abläuft. Beachten Sie, dass die DNS-Hosteinträge bis zum Ablauf der Gültigkeitsdauer vom DNS-Client zwischengespeichert werden. Wenn Hosteinträge aus dem DNS-Clientcache abgerufen werden, wird das Traffic Manager-Profil umgangen. Es können Verbindungsverzögerungen auftreten, wenn der Endpunkt vor Ablauf der Gültigkeitsdauer nicht mehr verfügbar ist. Wenn die Gültigkeitsdauer eines DNS-Hosteintrags im Cache abläuft und der Clientcomputer den Domänennamen des Unternehmens erneut auflösen muss, sendet er eine neue DNS-Abfrage. Der Clientcomputer empfängt möglicherweise die IP-Adresse eines anderen Endpunkts. Dies hängt davon ab, welche Lastenausgleichsmethode verwendet wird und welche Integrität die Endpunkte zum Zeitpunkt der Anforderung aufweisen.
+Da der Domänenname des Unternehmens und die aufgelöste IP-Adresse auf dem Clientcomputer zwischengespeichert werden, kann der Benutzer so lange mit dem ausgewählten Endpunkt interagieren, bis der lokale DNS-Cacheeintrag abläuft. Beachten Sie, dass die DNS-Hosteinträge bis zum Ablauf der Gültigkeitsdauer vom DNS-Client zwischengespeichert werden. Wenn Hosteinträge aus dem DNS-Clientcache abgerufen werden, wird das Traffic Manager-Profil umgangen. Es können Verbindungsverzögerungen auftreten, wenn der Endpunkt vor Ablauf der Gültigkeitsdauer nicht mehr verfügbar ist. Wenn die Gültigkeitsdauer eines DNS-Hosteintrags im Cache abläuft und der Clientcomputer den Domänennamen des Unternehmens erneut auflösen muss, sendet er eine neue DNS-Abfrage. Der Clientcomputer empfängt möglicherweise die IP-Adresse eines anderen Endpunkts. Dies hängt davon ab, welche Routingmethode für Datenverkehr verwendet wird und welche Integrität die Endpunkte zum Zeitpunkt der Anforderung aufweisen.
 
 ## Implementieren von Traffic Manager
 
@@ -55,17 +55,17 @@ Da der Domänenname des Unternehmens und die aufgelöste IP-Adresse auf dem Clie
 
 1. **Stellen Sie Ihre Azure-Clouddienste, Azure-Websites oder anderen Endpunkte in Ihrer Produktionsumgebung bereit**. Wenn Sie ein Traffic Manager-Profil erstellen, muss es einem Abonnement zugeordnet sein. Anschließend fügen Sie Endpunkte für Clouddienste und Websites der Standardebene in der Produktionsumgebung hinzu, die Teil des gleichen Abonnements sind. Wenn ein Endpunkt Teil einer Stagingumgebung ist und sich nicht in einer Azure-Produktionsumgebung befindet oder zum gleichen Abonnement gehört, kann er als externer Endpunkt hinzugefügt werden. Weitere Informationen zu Clouddiensten finden Sie unter [Clouddienste](http://go.microsoft.com/fwlink/p/?LinkId=314074). Weitere Informationen zu Websites finden Sie unter [Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327).
 2. **Legen Sie einen Namen für Ihre Traffic Manager-Domäne fest**. Verwenden Sie für Ihre Domäne einen Namen mit einem eindeutigen Präfix. Der letzte Teil der Domäne ist dabei immer trafficmanager.net. Weitere Informationen finden Sie unter [Bewährte Methoden](#best-practices).
-3. **Legen Sie die zu verwendende Überwachungskonfiguration fest**. Traffic Manager überwacht die Endpunkte, um sicherzustellen, dass sie unabhängig von der Lastenausgleichsmethode online sind. Nachdem Sie die Überwachungseinstellungen konfiguriert haben, leitet Traffic Manager Datenverkehr nicht an Endpunkte, die laut Überwachungssystem offline sind. Dies gilt nicht, wenn alle Endpunkte offline sind oder der Status der im Profil enthaltenen Endpunkte nicht erkannt wurde. Weitere Informationen zur Überwachung finden Sie unter [Traffic Manager-Überwachung](traffic-manager-monitoring.md).
-4. **Legen Sie die zu verwendende Lastenausgleichsmethode fest**. Es sind drei verschiedene Lastenausgleichsmethoden verfügbar. Nehmen Sie sich Zeit, um zu verstehen, welche bewährte Methode Ihren Anforderungen entspricht. Wenn Sie die Methode zu einem späteren Zeitpunkt ändern müssen, können Sie dies jederzeit tun. Beachten Sie außerdem, dass für jede Methode etwas andere Konfigurationsschritte erforderlich sind. Informationen zu den Lastenausgleichsmethoden finden Sie unter [Informationen zu Lastenausgleichsmethoden von Traffic Manager](traffic-manager-load-balancing-methods.md).
+3. **Legen Sie die zu verwendende Überwachungskonfiguration fest**. Traffic Manager überwacht die Endpunkte, um sicherzustellen, dass sie unabhängig von der Routingmethode für Datenverkehr online sind. Nachdem Sie die Überwachungseinstellungen konfiguriert haben, leitet Traffic Manager Datenverkehr nicht an Endpunkte, die laut Überwachungssystem offline sind. Dies gilt nicht, wenn alle Endpunkte offline sind oder der Status der im Profil enthaltenen Endpunkte nicht erkannt wurde. Weitere Informationen zur Überwachung finden Sie unter [Traffic Manager-Überwachung](traffic-manager-monitoring.md).
+4. **Legen Sie die zu verwendende Routingmethode für Datenverkehr fest**. Es sind drei verschiedene Routingmethoden für Datenverkehr verfügbar. Nehmen Sie sich Zeit, um zu verstehen, welche bewährte Methode Ihren Anforderungen entspricht. Wenn Sie die Methode zu einem späteren Zeitpunkt ändern müssen, können Sie dies jederzeit tun. Beachten Sie außerdem, dass für jede Methode etwas andere Konfigurationsschritte erforderlich sind. Informationen zu Routingmethoden für Datenverkehr finden Sie unter [Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md).
 5. **Erstellen Sie Ihr Profil, und konfigurieren Sie die Einstellungen**. Sie können die REST-APIs, Windows PowerShell oder das Verwaltungsportal verwenden, um Ihr Traffic Manager-Profil zu erstellen und die Einstellungen zu konfigurieren. Weitere Informationen finden Sie unter [Konfigurieren der Traffic Manager-Einstellungen](#how-to-configure-traffic-manager-settings). Bei den folgenden Schritten wird davon ausgegangen, dass Sie die **Schnellerfassung** im Verwaltungsportal verwenden. 
    - **Erstellen Sie Ihr Traffic Manager-Profil**: Informationen zum Erstellen eines Profils mithilfe der Schnellerfassung im Verwaltungsportal finden Sie unter [Verwalten von Traffic Manager-Profilen](traffic-manager-manage-profiles.md).
-   - **Konfigurieren Sie die Einstellungen der Lastenausgleichsmethode**: Bei der Schnellerfassung müssen Sie die Lastenausgleichsmethode für das Profil auswählen. Diese Einstellung kann jederzeit geändert werden, nachdem Sie die Schritte für die Schnellerfassung ausgeführt haben. Die Konfigurationsschritte finden Sie im Thema zu Ihrer Lastenausgleichsmethode: [Konfigurieren der Lastenausgleichsmethode „Leistung“](traffic-manager-configure-performance-load-balancing.md), [Konfigurieren der Lastenausgleichsmethode „Failover“](traffic-manager-configure-failover-load-balancing.md), [Konfigurieren der Lastenausgleichsmethode „Roundrobin“](traffic-manager-configure-round-robin-load-balancing.md).
+   - **Konfigurieren Sie die Einstellungen der Routingmethode für Datenverkehr**: Bei der Schnellerfassung müssen Sie die Routingmethode für Datenverkehr für das Profil auswählen. Diese Einstellung kann jederzeit geändert werden, nachdem Sie die Schritte für die Schnellerfassung ausgeführt haben. Konfigurationsschritte finden Sie im Thema, das der Routingmethode für Datenverkehr entspricht: [Konfigurieren der Routingmethode für Datenverkehr "Leistung"](traffic-manager-configure-performance-load-balancing.md), [Konfigurieren der Routingmethode für Datenverkehr "Failover"](traffic-manager-configure-failover-load-balancing.md), [Konfigurieren der Routingmethode für Datenverkehr "Roundrobin"](traffic-manager-configure-round-robin-load-balancing.md).
    
-   >[AZURE.NOTE]Die Lastenausgleichsmethode "Roundrobin" unterstützt jetzt auch die gewichtete Verteilung von Netzwerkdatenverkehr. Zurzeit müssen Sie zum Konfigurieren von Gewichtung jedoch die REST-APIs oder Windows PowerShell verwenden. Weitere Informationen und ein Konfigurationsbeispiel finden Sie unter [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) (Azure Traffic Manager: Externe Endpunkte und gewichtetes Roundrobin über PowerShell; in englischer Sprache) im Azure-Blog.
+   >[AZURE.NOTE]Die Routingmethode für Datenverkehr "Roundrobin" unterstützt jetzt auch die gewichtete Verteilung von Netzwerkdatenverkehr. Zurzeit müssen Sie zum Konfigurieren von Gewichtung jedoch die REST-APIs oder Windows PowerShell verwenden. Weitere Informationen und ein Konfigurationsbeispiel finden Sie unter [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) (Azure Traffic Manager: Externe Endpunkte und gewichtetes Roundrobin über PowerShell; in englischer Sprache) im Azure-Blog.
 
-   - **Konfigurieren von Endpunkten**: Endpunkte werden während der Schnellerfassung nicht konfiguriert. Nachdem Sie das Profil erstellt und die Lastenausgleichsmethode angegeben haben, müssen Sie dem Traffic Manager Informationen zu den Endpunkten bereitstellen. Die Schritte zum Konfigurieren von Endpunkten finden Sie unter [Verwalten von Endpunkten in Traffic Manager](traffic-manager-endpoints.md).
+   - **Konfigurieren von Endpunkten**: Endpunkte werden während der Schnellerfassung nicht konfiguriert. Nachdem Sie das Profil erstellt und die Routingmethode für Datenverkehr angegeben haben, müssen Sie dem Traffic Manager Informationen zu den Endpunkten bereitstellen. Die Schritte zum Konfigurieren von Endpunkten finden Sie unter [Verwalten von Endpunkten in Traffic Manager](traffic-manager-endpoints.md).
 
-   - **Konfigurieren von Überwachungseinstellungen**: Überwachungseinstellungen werden während der Schnellerfassung nicht konfiguriert. Nachdem Sie das Profil erstellt und die Lastenausgleichsmethode angegeben haben, müssen Sie dem Traffic Manager mitteilen, welche Objekte überwacht werden sollen. Die Schritte zum Konfigurieren der Überwachung finden Sie unter [Traffic Manager-Überwachung](traffic-manager-monitoring.md).
+   - **Konfigurieren von Überwachungseinstellungen**: Überwachungseinstellungen werden während der Schnellerfassung nicht konfiguriert. Nachdem Sie das Profil erstellt und die Routingmethode für Datenverkehr angegeben haben, müssen Sie dem Traffic Manager angeben, was überwacht werden soll. Die Schritte zum Konfigurieren der Überwachung finden Sie unter [Traffic Manager-Überwachung](traffic-manager-monitoring.md).
 6. **Testen Sie Ihr Traffic Manager-Profil**. Testen Sie, ob das Profil und die Domäne ordnungsgemäß funktionieren. Informationen hierzu finden Sie unter [Testen der Traffic Manager-Einstellungen](traffic-manager-testing-settings.md).
 7. **Verweisen Sie mit dem DNS-Ressourceneintrag des Domänennamens Ihres Unternehmens auf das Profil, damit es aktiviert wird**. Weitere Informationen dazu finden Sie unter [Verweisen einer Unternehmens-Internetdomäne auf eine Traffic Manager-Domäne](traffic-manager-point-internet-domain.md).
 
@@ -79,7 +79,7 @@ Obwohl nicht jedes REST-API-Element im Verwaltungsportal sichtbar ist, können v
 
 Weitere Informationen zu Windows PowerShell-Cmdlets für Traffic Manager finden Sie unter [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769).
 
->[AZURE.NOTE]Zurzeit wird das Konfigurieren von externen Endpunkten (Typ = "Any"), von Gewichtungen für die Lastenausgleichsmethode "Roundrobin" sowie von geschachtelten Profilen mit dem Verwaltungsportal nicht unterstützt. Hierzu müssen Sie entweder REST (siehe [Definition erstellen](http://go.microsoft.com/fwlink/p/?LinkId=400772)) oder Windows PowerShell (siehe [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/library/azure/dn690257.aspx)) verwenden.
+>[AZURE.NOTE]Derzeit wird das Konfigurieren von externen Endpunkten (Typ = "Any"), von Gewichtungen für die Routingmethode für den Datenverkehr "Roundrobin" sowie von geschachtelten Profilen mit dem Verwaltungsportal nicht unterstützt. Hierzu müssen Sie entweder REST (siehe [Definition erstellen](http://go.microsoft.com/fwlink/p/?LinkId=400772)) oder Windows PowerShell (siehe [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/library/azure/dn690257.aspx)) verwenden.
 
 ### Konfigurieren von Einstellungen im Verwaltungsportal
 
@@ -90,8 +90,8 @@ Sie können die folgenden Einstellungen im Verwaltungsportal konfigurieren:
 - **DNS-Präfix** – Ein eindeutiges, von Ihnen erstelltes Präfix. Profile werden im Verwaltungsportal nach Präfix angezeigt.
 - **DNS-Gültigkeitsdauer (TTL)** – Der Wert für die DNS-Gültigkeitsdauer bestimmt, wie häufig der lokale Caching-Namensserver des Clients aktualisierte DNS-Einträge aus dem DNS-System von Azure Traffic Manager abfragt.
 - **Abonnement** – Wählen Sie das Abonnement aus, das Ihrem Profil zugeordnet ist. Beachten Sie, dass diese Option nur angezeigt wird, wenn Sie über mehrere Abonnements verfügen.
-- **Lastenausgleichsmethode** – Die Methode, die Traffic Manager für den Lastenausgleich verwendet.
-- **Failoverreihenfolge** – Wenn Sie die Lastenausgleichsmethode „Failover“ verwenden, ist dies die Reihenfolge der Endpunkte.
+- **Routingmethode für Datenverkehr** – Die Methode, die Traffic Manager für das Routing von Datenverkehr verwendet.
+- **Failoverreihenfolge** – Wenn Sie die Routingmethode für Datenverkehr "Failover" verwenden, die Reihenfolge der Endpunkte.
 - **Überwachung** – Die Überwachungseinstellungen enthalten das Protokoll (HTTP oder HTTPS), den Port sowie den relativen Pfad und Dateinamen.
 
 ### Konfigurieren von Einstellungen mithilfe von REST-APIs
@@ -102,7 +102,7 @@ Sie können das Traffic Manager-Profil mithilfe von REST-APIs erstellen und konf
 - **Definition** – Eine Definition enthält Richtlinien- und Überwachungseinstellungen. Eine Definition gehört zu einem Profil. Es kann nur eine Definition pro Profil vorhanden sein. Die Definition selbst ist nicht im Verwaltungsportal sichtbar, obwohl viele der in der Definition enthaltenen Einstellungen angezeigt und im Verwaltungsportal konfiguriert werden können.
 - **DNS-Optionen** – Jede Definition umfasst DNS-Optionen. Mit diesen Optionen wird die DNS-Gültigkeitsdauer konfiguriert.
 - **Überwachung** – Jede Definition umfasst Überwachungseinstellungen. Mit diesen Einstellungen werden Protokoll, Port, relativer Pfad und Dateiname konfiguriert. Überwachungseinstellungen sind sichtbar und können im Verwaltungsportal konfiguriert werden. Weitere Informationen finden Sie unter [Traffic Manager-Überwachung](traffic-manager-monitoring.md).
-- **Richtlinie** – Jede Definition umfasst Richtlinieneinstellungen. Mithilfe der Richtlinie werden Lastenausgleichsmethoden und Endpunkte definiert. Die Richtlinie selbst ist nicht im Verwaltungsportal sichtbar, obwohl viele der in der Richtlinie enthaltenen Einstellungen angezeigt und im Verwaltungsportal konfiguriert werden können. Weitere Informationen finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](traffic-manager-load-balancing-methods.md).
+- **Richtlinie** – Jede Definition umfasst Richtlinieneinstellungen. Mithilfe der Richtlinie werden Routingmethoden für Datenverkehr und Endpunkte definiert. Die Richtlinie selbst ist nicht im Verwaltungsportal sichtbar, obwohl viele der in der Richtlinie enthaltenen Einstellungen angezeigt und im Verwaltungsportal konfiguriert werden können. Weitere Informationen finden Sie unter [Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md).
 
 ## Konfigurieren von Einstellungen mithilfe von Windows PowerShell
 
@@ -136,12 +136,12 @@ Dies ermöglicht es Ihnen, Traffic Manager so zu konfigurieren, dass eingehende 
 
 **Abbildung 3**
 
-Sie können bis zu 10 Ebenen schachteln, und jedes Profil kann mit einer anderen Lastenausgleichsmethode konfiguriert werden.
+Sie können bis zu 10 Ebenen schachteln, und jedes Profil kann mit einer anderen Routingmethode für Datenverkehr konfiguriert werden.
 
 Beispielsweise könnten Sie eine Konfiguration für das folgende Szenario erstellen:
 
-- Auf der obersten Ebene (das Traffic Manager-Profil, das Ihrem externen DNS-Namen zugeordnet ist) konfigurieren Sie das Profil mit einer leistungsbezogenen Lastenausgleichsmethode.
-- Auf der mittleren Ebene entsprechen mehrere Traffic Manager-Profile unterschiedlichen Rechenzentren. Für diese Profile wird die Roundrobin-Lastenausgleichsmethode verwendet.
+- Auf der obersten Ebene (dem Traffic Manager-Profil, das Ihrem externen DNS-Namen zugeordnet ist) konfigurieren Sie das Profil für Routingmethode für Datenverkehr "Leistung".
+- Auf der mittleren Ebene entsprechen mehrere Traffic Manager-Profile unterschiedlichen Datencentern. Für diese Profile wird die Routingmethode für Datenverkehr "Roundrobin" verwendet.
 - Auf der untersten Ebene werden die Datenverkehrsanforderungen des Benutzers von den Clouddienst-Endpunkten des jeweiligen Rechenzentrums verarbeitet.
 
 Dies führt zu dem Ergebnis, dass Benutzer basierend auf der Leistung zu einem regional geeigneten Rechenzentrum und in diesem Rechenzentrum basierend auf einer gleichen oder gewichteten Lastenverteilung an einen Clouddienst weitergeleitet werden. Mithilfe der Gewichtung könnte beispielsweise ein kleiner Prozentsatz des Datenverkehrs zu Testzwecken oder für Kundenfeedback an eine neue oder an eine Testbereitstellung weitergeleitet werden.
@@ -172,4 +172,4 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

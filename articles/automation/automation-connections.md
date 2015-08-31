@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Verbindungsobjekte in Azure Automation"
+   pageTitle="Verbindungsobjekte in Azure Automation | Microsoft Azure"
    description="Verbindungsobjekte in Azure Automation enthalten die Informationen, die zur Verbindungsherstellung mit einem externen Dienst oder einer externen Anwendung aus einem Runbook erforderlich sind. Dieser Artikel stellt eine ausführliche Beschreibung von Verbindungen bereit und zeigt, wie diese in Textrunbooks und grafischen Runbooks eingesetzt werden."
    services="automation"
    documentationCenter=""
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/21/2015"
+   ms.date="08/18/2015"
    ms.author="bwren" />
 
 # Verbindungsobjekte in Azure Automation
@@ -120,4 +120,4 @@ Die folgende Abbildung zeigt das obige Beispiel, verwendet jedoch den Parameters
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

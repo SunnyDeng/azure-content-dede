@@ -21,7 +21,7 @@ Metriken in [Application Insights][start] sind gemessene Werte und Anzahlen von 
 
 Metriken und Ereignisanzahlen werden in Diagrammen aggregierter Werte z. B. als Summen, Mittelwerte oder Anzahlen angezeigt.
 
-Wenn Sie Application Insights z. B. einer Webanwendung hinzufügen, finden Sie im oberen Bereich der Übersicht Folgendes vor:
+Hier sehen Sie ein Beispieldiagramm:
 
 ![Öffnen Sie das Blatt "Übersicht" Ihrer Anwendung im Azure-Portal](./media/app-insights-metrics-explorer/01-overview.png)
 
@@ -40,12 +40,13 @@ Sie können den Zeitbereich der Diagramme oder Raster auf jedem Blatt ändern.
 
 Klicken Sie auf "Aktualisieren", wenn Sie einige Daten erwarten, die noch nicht angezeigt wurden. Diagramme aktualisieren sich regelmäßig selbst, wobei die Intervalle für größere Zeiträume länger sind. Im Freigabemodus kann es eine Weile dauern, bis Daten durch die Analysepipeline in ein Diagramm gelangen.
 
-Bewegen Sie auf dem Blatt "Übersicht" die Maus über einem Teil des Diagramms, um ihn in einem neuen Diagramm vergrößert anzuzeigen.
-
+Um einen Teil des Diagramms zu vergrößern, ziehen Sie die Maus über den gewünschten Bereich, und klicken Sie auf das Lupensymbol:
 
 ![Ziehen Sie die Maus über einen Teil eines Diagramms.](./media/app-insights-metrics-explorer/12-drag.png)
 
-## Abtastintervall und Punktwerte
+
+
+## Granularität und Punktwerte
 
 Bewegen Sie die Maus über dem Diagramm, um die Werte der Metriken zu diesem Zeitpunkt anzuzeigen.
 
@@ -53,15 +54,15 @@ Bewegen Sie die Maus über dem Diagramm, um die Werte der Metriken zu diesem Zei
 
 Der Wert der Eigenschaft zu einem bestimmten Zeitpunkt wird über das vorherige Abtastintervall aggregiert.
 
-Das Abtastintervall wird oben auf dem Blatt angezeigt.
+Das Abtastintervall, auch als „Granularität“ bezeichnet, wird oben auf dem Blatt angezeigt.
 
 ![Die Kopfzeile eines Blatts.](./media/app-insights-metrics-explorer/11-grain.png)
 
-Sie können das Abtastintervall auf dem Blatt "Zeitbereich" anpassen:
+Sie können die Granularität auf dem Blatt „Zeitbereich“ anpassen:
 
 ![Die Kopfzeile eines Blatts.](./media/app-insights-metrics-explorer/grain.png)
 
-Die verfügbaren Abtastintervalle hängen vom ausgewählten Zeitbereich ab. Die expliziten Abtastintervalle sind Alternativen für das "automatische" Abtastintervall für den Zeitbereich.
+Die verfügbaren Granularitäten hängen vom ausgewählten Zeitbereich ab. Die expliziten Granularitäten sind Alternativen für die „automatische“ Granularität für den Zeitbereich.
 
 ## Metrik-Explorer
 
@@ -76,17 +77,17 @@ Klicken Sie sich z. B. durch das Diagramm "Anforderungsfehler" der Web-App:
 
 In der Legende auf der Seite wird standardmäßig der über den Zeitraum des Diagramms aggregierte Wert gezeigt.
 
-Jeder Datenpunkt im Diagramm ist auch ein Aggregat der Datenwerte, die im vorherigen Abtastintervall empfangen wurden. Das Abtastintervall wird oben im Blatt angezeigt und unterscheidet sich abhängig von der gesamten Zeitskala des Diagramms.
+Jeder Datenpunkt im Diagramm ist auch ein Aggregat der Datenwerte, die im vorherigen Abtastintervall (Granularität) empfangen wurden. Die Granularität wird oben auf dem Blatt angezeigt und variiert abhängig von der gesamten Zeitskala des Diagramms.
 
 Verschiedene Metriken werden auf unterschiedliche Weise zusammengefasst:
 
  * Für eine Metrik wie Antwortzeit werden Werte über den Zeitraum des Diagramms **gemittelt**.
  * Für Anzahlen von Ereignissen, wie z. B. Anforderungsfehler, ist das Aggregat die **Summe** der Anzahlen über den Zeitraum.
- * Für Anzahlen von Benutzer ist das Aggregat ist die Anzahl **eindeutiger** Benutzer über den Zeitraum. \(Wenn ein Benutzer mehr als einmal im Zeitraum erfasst wird, wird er nur einmal gezählt.\)
+ * Für Anzahlen von Benutzer ist das Aggregat ist die Anzahl **eindeutiger** Benutzer über den Zeitraum. (Wenn ein Benutzer mehr als einmal im Zeitraum erfasst wird, wird er nur einmal gezählt.)
 
 Um zu überprüfen, ob der Wert eine Summe, ein Mittel- oder eindeutiger Wert ist, klicken Sie auf das Diagramm und führen einen Bildlauf nach unten zum ausgewählten Wert durch. Sie können auch eine kurze Beschreibung der Metrik abrufen.
 
-![Bewegen Sie den Mauszeiger über \(i\)](./media/app-insights-metrics-explorer/06-total.png)
+![Bewegen Sie den Mauszeiger über (i)](./media/app-insights-metrics-explorer/06-total.png)
  
 
 
@@ -102,7 +103,7 @@ Wählen Sie ein vorhandenes oder neues Diagramm aus, um dessen Anzeige zu bearbe
 
 Sie können in einem Diagramm mehr als eine Metrik anzeigen, wenngleich es Einschränkungen bezüglich der Kombinationen gibt, die zusammen angezeigt werden können. Sobald Sie eine Metrik auswählen, werden einige der anderen deaktiviert.
 
-Wenn Sie [benutzerdefinierte Metriken][track] in Ihrer App \(Aufrufe von "TrackMetric" und "TrackEvent"\) programmiert haben, werden sie hier aufgelistet.
+Wenn Sie [benutzerdefinierte Metriken][track] in Ihrer App (Aufrufe von "TrackMetric" und "TrackEvent") programmiert haben, werden sie hier aufgelistet.
 
 ## Segmentieren der Daten
 
@@ -197,8 +198,8 @@ Wenn Sie umfangreichere Ansichten der Daten wünschen, können Sie sie [nach Pow
 
 [alerts]: app-insights-alerts.md
 [start]: app-insights-get-started.md
-[track]: app-insights-custom-events-metrics-api.md
+[track]: app-insights-api-custom-events-metrics.md
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Verwenden von Azure Redis Cache mit Node.js"
-   description="Erste Schritte mit Azure Redis Cache mit Node.js und &quot;node_redis&quot;."
-   services="redis-cache"
-   documentationCenter=""
-   authors="MikeWasson"
-   manager="wpickett"
-   editor=""/>
+	pageTitle="Verwenden von Azure Redis Cache mit Node.js | Microsoft Azure"
+	description="Erste Schritte mit Azure Redis Cache mit Node.js und ";node_redis";."
+	services="redis-cache"
+	documentationCenter=""
+	authors="steved0x"
+	manager="dwrede"
+	editor="v-lincan"/>
 
 <tags
-   ms.service="cache"
-   ms.devlang="nodejs"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="cache-redis"
-   ms.workload="required"
-   ms.date="08/04/2015"
-   ms.author="mwasson"/>
+	ms.service="cache"
+	ms.devlang="nodejs"
+	ms.topic="hero-article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
+	ms.date="08/17/2015"
+	ms.author="sdanie"/>
 
 # Verwenden von Azure Redis Cache mit Node.js
 
@@ -42,7 +42,7 @@ Geben Sie einen DNS-Hostnamen ein. Das Format hierfür ist `<name>.redis.cache.w
   ![][2]
 
 
-Sobald der Cache erstellt wurde, klicken Sie im Portal darauf, um die Cache-Einstellungen anzuzeigen. Klicken Sie auf den Link unter **Schlüssel**, und kopieren Sie den Primärschlüssel. Sie benötigen ihn zum Authentifizieren von Anforderungen.
+Sobald Sie den Cache erstellt haben, klicken Sie im Azure-Portal darauf, um die Cache-Einstellungen anzuzeigen. Klicken Sie auf den Link unter **Schlüssel**, und kopieren Sie den Primärschlüssel. Sie benötigen ihn zum Authentifizieren von Anforderungen.
 
   ![][4]
 
@@ -59,7 +59,7 @@ Klicken Sie auf den Link unter **Ports**, und klicken Sie bei "Zugriff nur über
 
 	var redis = require("redis");
 
-    // Put in your cache name and access key.
+    // Add your cache name and access key.
 	var client = redis.createClient(6379,'<name>.redis.cache.windows.net', {auth_pass: '<key>' });
 
 	client.set("foo", "bar", function(err, reply) {
@@ -79,7 +79,7 @@ Ausgabe:
 
 ## Nächste Schritte
 
-- [Aktivieren Sie die Cachediagnose](https://msdn.microsoft.com/library/azure/dn763945.aspx#EnableDiagnostics), damit Sie die Integrität Ihres Caches [überwachen](https://msdn.microsoft.com/library/azure/dn763945.aspx) können.
+- [Aktivieren Sie die Cachediagnose](cache-how-to-monitor.md#enable-cache-diagnostics), damit Sie die Integrität Ihres Caches [überwachen](cache-how-to-monitor.md) können.
 - Lesen Sie die offizielle [Redis-Dokumentation](http://redis.io/documentation).
 
 
@@ -91,4 +91,4 @@ Ausgabe:
 
 [Erstellen einer Node.js-Chatanwendung mit Socket.IO auf einer Azure-Website]: ../app-service-web/web-sites-nodejs-chat-app-socketio.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

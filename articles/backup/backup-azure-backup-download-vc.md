@@ -6,7 +6,7 @@
    authors="Jim-Parker"
    manager="shreeshd"
    editor=""/>
-<tags ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="08/11/2015" ms.author="jimpark"; "aashishr"/>
+<tags  ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="08/11/2015" ms.author="jimpark"; "aashishr"/>
 
 # Verwenden von Tresoranmeldeinformationen zur Authentifizierung beim Azure Backup-Dienst
 Der lokale Server (Windows-Client oder Windows Server oder SCDPM-Server) muss bei einem Sicherungstresor authentifiziert werden, bevor Daten in Azure gesichert werden können. Die Authentifizierung erfolgt mithilfe von "Tresoranmeldeinformationen". Das Konzept der Tresoranmeldeinformationen ähnelt dem Konzept einer Datei mit "Veröffentlichungseinstellungen", die in Azure PowerShell verwendet wird.
@@ -37,7 +37,13 @@ Die Datei mit Tresoranmeldeinformationen wird über einen sicheren Kanal aus dem
 - Die Datei mit den Tresoranmeldeinformationen läuft nach 48 Stunden ab und kann über das Portal heruntergeladen werden.
 - Bei Fragen zum Workflow finden Sie Informationen in den [häufig gestellten Fragen](backup-azure-backup-faq.md) zu Azure Backup.
 
+##Video zur exemplarischen Vorgehensweise
+
+Hier finden Sie ein Video zur exemplarischen Vorgehensweise für dieses Tutorial.
+
+[AZURE.VIDEO using-vault-credentials-to-authenticate-with-the-azure-backup-service]
+
 ## Nächste Schritte
 [Herunterladen, Registrieren und Installieren des Azure Backup-Agents](backup-azure-backup-download-register)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

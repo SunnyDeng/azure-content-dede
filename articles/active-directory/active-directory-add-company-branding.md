@@ -1,25 +1,25 @@
-<properties 
-	pageTitle="Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite" 
-	description="Bei diesem Thema wird erklärt, wie viele Unternehmen ein einheitliches Erscheinungsbild für all ihre verwalteten Websites und Dienste anstreben, damit ihre Endbenutzer beim Besuch dieser Websites nicht verwirrt werden." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
+<properties
+	pageTitle="Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite"
+	description="Bei diesem Thema wird erklärt, wie viele Unternehmen ein einheitliches Erscheinungsbild für all ihre verwalteten Websites und Dienste anstreben, damit ihre Endbenutzer beim Besuch dieser Websites nicht verwirrt werden."
+	services="active-directory"
+	documentationCenter=""
+	authors="MarkusVi"
+	manager="stevenpo"
 	editor="LisaToft"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="05/05/2015" 
-	ms.author="Justinha"/>
+<tags
+	ms.service="active-directory"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="08/11/2015" 
+	ms.author="MarkVi"/>
 
 # Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite
 
 > [AZURE.NOTE]
-> 
+>
 - Unternehmensbranding ist ein Feature, das nur verfügbar ist, wenn Sie Ihr Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
 - Die Azure Active Directory Premium und Basic Editions stehen für Kunden in China zur Verfügung, die mit der weltweit verfügbaren Instanz von Azure Active Directory arbeiten. Allerdings werden die Azure Active Directory-Editionen Premium und Basic derzeit durch den in China von 21Vianet betriebenen Microsoft Azure-Dienst nicht unterstützt. Wenn Sie weitere Informationen benötigen, kontaktieren Sie uns im [Azure Active Directory-Forum](http://feedback.azure.com/forums/169401-azure-active-directory).
 
@@ -44,7 +44,7 @@ Benutzern wird eine Anmeldeseite mit Branding angezeigt, wenn sie einen Dienst m
 Wenn sie einen Dienst ohne mandantenspezifische URLs besuchen (z. B. https://mail.office365.com), sehen Sie eine Anmeldeseite ohne Branding. Der Anmeldeseite wird aktualisiert, um Ihr Branding anzuzeigen, sobald die Benutzer ihre Benutzer-ID eingegeben oder eine Benutzerkachel ausgewählt haben.
 
 > [AZURE.NOTE]
-> 
+>
 - Ihr Domänenname muss im Abschnitt **Active Directory** > **Verzeichnis** > **Domänen** im Azure-Verwaltungsportal, wo Sie das Branding konfiguriert haben, als "Aktiv" angezeigt werden.
 - Die Anmeldeseite mit dem Branding wird nicht auf die Verbraucheranmeldeseite von Microsoft übertragen. Dies bedeutet, dass Benutzer, die sich mit einem persönlichen Microsoft-Konto (früher Windows Live ID) anmelden, eine Liste an von Azure AD gerenderten Benutzerkacheln mit Branding sehen, aber das Branding Ihrer Organisation nicht auf die Microsoft-Kontoanmeldeseite übertragen wird.
 
@@ -167,7 +167,7 @@ Kachellogo | (zurzeit nicht auf der Anmeldeseite verwendet) Dieser Text kann in 
 Benutzernamenbezeichnung auf der Anmeldeseite | (zurzeit nicht auf der Anmeldeseite verwendet) Dieser Text kann in Zukunft verwendet werden, um die generische "Geschäfts- oder Schulkonto"-Zeichenfolge an unterschiedlichen Stellen zu platzieren. Sie können ihn beispielsweise auf "Contoso-Konto" oder "Contoso-ID" festlegen. | <p>Unicode-Text, bis zu 50 Zeichen</p><p>Ausschließlich Nur-Text (keine Links oder HTML-Tags)</p> | <p>Halten Sie es kurz und einfach</p><p>Fragen Sie die Benutzer, wie Sie sich in der Regel auf das Geschäfts- oder Schulkonto beziehen, das Sie zur Verfügung stellen.</p>
 Text der Anmeldeseite | Dieser "Textbaustein" wird unter dem Anmeldeseitenformular angezeigt und kann verwendet werden, um zusätzliche Anweisungen zu kommunizieren oder mitzuteilen, wo es Hilfe und Support gibt. | <p>Unicode-Text, bis zu 256 Zeichen</p><p>Ausschließlich Nur-Text (keine Links oder HTML-Tags)</p> | Verwenden Sie maximal 250 Zeichen (ungefähr drei Zeilen Text)
 Abbildung auf der Anmeldeseite | Die Abbildung zeigt ein großes Bild, das auf der Anmeldeseite links neben dem Anmeldeseitenformular angezeigt wird. | <p>JPG oder PNG-</p><p>1420 x 1200</p><p>500 KB</p> | <p>1420 x 1200 Pixel</p><p>Wichtig: Halten Sie es so klein wie möglich, idealerweise unter 200 KB. Wenn dieses Bild zu groß ist, beeinflusst dies die Leistung der Anmeldeseite, wenn das Bild nicht zwischengespeichert wird</p><p>Dieses Bild WIRD fast immer abgeschnitten, um verschiedene Bildschirm-Seitenverhältnisse zu ermöglichen. Halten die visuellen Hauptelemente in der oberen linken Ecke (oben rechts für RTL-Sprachen), weil die Größenänderung von der Ecke unten rechts nach oben links erfolgt, wenn das Browserfenster verkleinert wird.</p>
-Hintergrundfarbe auf der Anmeldeseite | Die Hintergrundfarbe auf der Anmeldeseite wird im Bereich links neben dem Anmeldeseitenformular verwendet. Dies wird sichtbar, wenn keine Abbildung auf der Anmeldeseite vorhanden ist. | Muss eine RGB-Farbe im hexadezimalen Format sein (Beispiel: #FFFFFF) | <p>Die Hintergrundfarbe wird möglicherweise bei Verbindungen mit geringer Bandbreite anstelle der großen Abbildung angezeigt</p><p>Wir empfehlen, die Grundfarbe des Bannerlogos zu auszuwählen</p>
+Hintergrundfarbe auf der Anmeldeseite | Die Hintergrundfarbe auf der Anmeldeseite wird im Bereich links neben dem Anmeldeseitenformular verwendet. Dies wird sichtbar, wenn keine Abbildung auf der Anmeldeseite vorhanden ist. | Muss eine RGB-Farbe im hexadezimalen Format sein (Beispiel: \#FFFFFF) | <p>Die Hintergrundfarbe wird möglicherweise bei Verbindungen mit geringer Bandbreite anstelle der großen Abbildung angezeigt</p><p>Wir empfehlen, die Grundfarbe des Bannerlogos zu auszuwählen</p>
 
 
 ## Nächste Schritte
@@ -185,6 +185,4 @@ Hintergrundfarbe auf der Anmeldeseite | Die Hintergrundfarbe auf der Anmeldeseit
 [7]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_croppedtop.png
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

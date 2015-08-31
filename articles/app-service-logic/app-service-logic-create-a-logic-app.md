@@ -29,13 +29,19 @@ Für dieses Szenario benötigen Sie Folgendes:
 
 ## Erstellen von Connectors
 
-Zunächst müssen Sie die beiden Connectors erstellen, die Sie verwenden möchten: den [**Dropbox-Connector**](app-service-logic-connector-dropbox.md) und den [**Twitter-Connector**](app-service-logic-connector-twitter.md). Gehen Sie so vor:
+Zunächst müssen Sie die beiden Connectors erstellen, die Sie verwenden möchten: den [**Dropbox-Connector**](app-service-logic-connector-dropbox.md) und den [**Twitter-Connector**](app-service-logic-connector-twitter.md). Aufgrund von Beschränkungen der Twitter-API müssen Sie außerdem eine kostenlose App bei Twitter registrieren. Gehen Sie so vor:
 
 0. Melden Sie sich beim Azure-Portal an.
 
-1. Klicken Sie auf der Startseite auf [**Marketplace**](https://portal.azure.com/#blade/HubsExtension/GalleryFeaturedMenuItemBlade/selectedMenuItemId/apiapps), und suchen Sie nach **Twitter** \(oder [klicken Sie hier](https://portal.azure.com/#create/microsoft_com.TwitterConnector.0.2.2)\).
+1. Klicken Sie auf der Startseite auf [**Marketplace**](https://portal.azure.com/#blade/HubsExtension/GalleryFeaturedMenuItemBlade/selectedMenuItemId/apiapps), und suchen Sie nach **Twitter** (oder [klicken Sie hier](https://portal.azure.com/#create/microsoft_com.TwitterConnector.0.2.2)).
 
 2. Wählen Sie "Twitter-Connector" aus, und klicken Sie auf die Schaltfläche "Erstellen". Eine Ansicht für alle Ihre Einstellungen wird angezeigt. Sie können als Name **Twitter-Connector** übernehmen.
+3. Wählen Sie "Paketeinstellungen" – hier müssen Sie die Informationen aus der Twitter-Anwendung eingeben. Sie können eine kostenlose Anwendung mit den folgenden Schritten einrichten:
+	1. Wechseln Sie zur [Twitter-App-Registrierungsseite](http://apps.twitter.com).
+	2. Erstellen Sie eine neue App.
+	3. Benennen Sie die App und fügen Sie eine Beschreibung hinzu. Sie können jeden URL für die Website eingeben und den Rückruf-URL leer lassen.
+	4. Kopieren Sie nach der Registrierung den "Verbraucherschlüssel" aus Twitter in das Feld "ClientId" in Azure, und den "geheimen Verbraucherschlüssel" aus Twitter in das Feld "ClientSecret".
+	5. Klicken Sie auf "OK" im Bereich "Azure", um zu den anderen API-Einstellungen zurückzukehren.
 
 3. Geben Sie in **Neuen App Service-Plan erstellen** einen Plannamen ein.
 
@@ -90,7 +96,7 @@ Trigger sind die Grundlage der Ausführung Ihrer Logik-App. Als Nächstes fügen
 	![Serie](./media/app-service-logic-create-a-logic-app/recurrence.png)
 
 
-4.  Wählen Sie für die Wiederholung eine **Frequenz** und ein **Intervall** \(z. B. einmal pro Stunde\) aus, und klicken Sie dann auf das grüne Häkchen.
+4.  Wählen Sie für die Wiederholung eine **Frequenz** und ein **Intervall** (z. B. einmal pro Stunde) aus, und klicken Sie dann auf das grüne Häkchen.
 
 Nun fügen Sie dem Datenfluss eine Aktion hinzu.
 
@@ -107,7 +113,7 @@ Aktionen sind das, was in Ihrem Workflow stattfindet. Sie können eine beliebige
 
 	![Aktionen](./media/app-service-logic-create-a-logic-app/actions.png)
 
-	> [AZURE.NOTE]Die Schaltfläche **Autorisieren** verwendet OAUTH-Sicherheitseinstellungen, um mit Saas-Diensten wie Twitter eine Verbindung herzustellen. Mehr zu OAUTH finden Sie unter [OAUTH-Sicherheit](app-service-logic-oauth-security.md).
+	> [AZURE.NOTE]Die Schaltfläche **Autorisieren** verwendet OAuth-Sicherheitseinstellungen, um mit Saas-Diensten wie Twitter eine Verbindung herzustellen. Mehr zu OAuth finden Sie unter [OAuth-Sicherheit](app-service-logic-oauth-security.md).
 
 3. Klicken Sie auf **Tweets durchsuchen**, geben Sie dann in **Abfrage eingeben** beispielsweise `#MicrosoftAzure` ein, und klicken Sie auf das grüne Häkchen.
 
@@ -174,4 +180,4 @@ In weniger als 5 Minuten haben Sie eine einfache Logik-App eingerichtet, die in 
 [Verwenden von Logik-App-Features]: app-service-logic-use-logic-app-features.md
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

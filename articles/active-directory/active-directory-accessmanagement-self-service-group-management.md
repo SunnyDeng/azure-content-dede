@@ -1,12 +1,20 @@
-<properties pageTitle="Einrichten von Azure AD zur Self-Service-Verwaltung des Anwendungszugriffs | Microsoft Azure" description="Dieses Thema erläutert die Verwaltung von Gruppen in Azure AD." services="active-directory" documentationCenter="" authors="femila" manager="swadhwa"" editor="" tags="azure-classic-portal"/>
+<properties
+	pageTitle="Einrichten von Azure AD zur Self-Service-Verwaltung des Anwendungszugriffs | Microsoft Azure"
+	description="Ein Thema mit Erläuterungen zum Verwalten von Gruppen in Azure AD."
+	services="active-directory"
+	documentationCenter=""
+    authors="femila"
+	manager="swadhwa" 
+	editor=""
+	tags="azure-classic-portal"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/13/2015" 
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/13/2015"
 	ms.author="femila"/>
 
 #Einrichten von Azure AD zur Self-Service-Verwaltung des Anwendungszugriffs
@@ -16,7 +24,7 @@ Die Self-Service-Gruppenverwaltung ermöglicht Benutzern das Erstellen und Verwa
 Die Self-Service-Gruppenverwaltung unterstützt zurzeit zwei grundlegende Szenarien: delegierte Gruppenverwaltung und Self-Service-Gruppenverwaltung.
 
 
-- **Delegierte Gruppenverwaltung** – Beispiel: Ein Administrator verwaltet den Zugriff auf eine SaaS-Anwendung, die in seinem Unternehmen verwendet wird. Die Verwaltung dieser Zugriffsrechte wird immer mühsamer, und der Administrator bittet den Geschäftsinhaber, eine neue Gruppe zu erstellen. Der Administrator weist den Zugriff auf die Anwendung einer neuen Gruppe zu, die der Geschäftsinhaber erstellt hat, und fügt dieser Gruppe alle Personen hinzu, die gegenwärtig Zugriff auf die Anwendung haben. Der Geschäftsinhaber kann dann weitere Benutzer hinzufügen, und die Benutzer erhalten wenige Augenblicke später automatisch zugriff auf die Anwendung. Der Geschäftsinhaber muss nicht warten, bis der Administrator diese Aufgabe erledigt, sondern kann den Zugriff für seine Benutzer selbst verwalten. Der Administrator kann den gleichen Prozess für einen Verwaltungsmitarbeiter einer anderen Geschäftsgruppe ausführen. Sowohl der Geschäftsinhaber als auch der Verwaltungsmitarbeiter können jetzt den Zugriff für ihre Benutzer verwalten, ohne dass sie die Benutzer des jeweils anderen anzeigen oder bearbeiten können. Der Administrator kann weiterhin alle Benutzer anzeigen, die auf die Anwendung zugreifen können, und kann die Zugriffsrechte bei Bedarf blockieren.
+- **Delegierte Gruppenverwaltung** – Beispiel: Ein Administrator verwaltet den Zugriff auf eine SaaS-Anwendung, die im Unternehmen verwendet wird. Die Verwaltung dieser Zugriffsrechte wird immer mühsamer, und der Administrator bittet den Geschäftsinhaber, eine neue Gruppe zu erstellen. Der Administrator weist den Zugriff auf die Anwendung einer neuen Gruppe zu, die der Geschäftsinhaber erstellt hat, und fügt dieser Gruppe alle Personen hinzu, die gegenwärtig Zugriff auf die Anwendung haben. Der Geschäftsinhaber kann dann weitere Benutzer hinzufügen, und die Benutzer erhalten wenige Augenblicke später automatisch zugriff auf die Anwendung. Der Geschäftsinhaber muss nicht warten, bis der Administrator diese Aufgabe erledigt, sondern kann den Zugriff für seine Benutzer selbst verwalten. Der Administrator kann den gleichen Prozess für einen Verwaltungsmitarbeiter einer anderen Geschäftsgruppe ausführen. Sowohl der Geschäftsinhaber als auch der Verwaltungsmitarbeiter können jetzt den Zugriff für ihre Benutzer verwalten, ohne dass sie die Benutzer des jeweils anderen anzeigen oder bearbeiten können. Der Administrator kann weiterhin alle Benutzer anzeigen, die auf die Anwendung zugreifen können, und kann die Zugriffsrechte bei Bedarf blockieren.
 
 
 - **Self-Service-Gruppenverwaltung** – Beispiel: Zwei Benutzer verfügen über SharePoint Online-Websites, die sie unabhängig voneinander eingerichtet haben. Um die Arbeit für alle Beteiligten zu erleichtern, möchten sie gern dem jeweils anderen Team Zugriff auf ihre Website gewähren. Sie erstellen eine Gruppe in Azure AD, und in SharePoint Online wählt jeder der beiden Benutzer diese Gruppe, um Zugriff auf ihre Websites bereitzustellen. Wenn ein weiterer Benutzer Zugriff benötigt, fordert er diesen einfach über den Zugriffsbereich an und erhält nach Genehmigung automatisch Zugriff auf beide SharePoint Online-Websites. Später entscheidet einer der Hauptbenutzer, dass alle Personen, die auf seine Website zugreifen, auch Zugriff auf eine bestimmte SaaS-Anwendung erhalten sollen. Er bittet den Administrator dieser SaaS-Anwendung, Zugriffsrechte für diese Anwendung auf seiner Website hinzuzufügen. Anschließend können alle Personen, deren Zugriff genehmigt wird, auf die beiden SharePoint Online-Websites und diese SaaS-Anwendung zugreifen.
@@ -39,6 +47,6 @@ Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Di
 
 * [Was ist Azure Active Directory?](active-directory-whatis.md)
 
-* [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+* [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

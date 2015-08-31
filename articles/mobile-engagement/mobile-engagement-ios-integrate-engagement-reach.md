@@ -7,7 +7,6 @@
 	manager="dwrede"
 	editor="" />
 
-
 <tags
 	ms.service="mobile-engagement"
 	ms.workload="mobile"
@@ -16,7 +15,6 @@
 	ms.topic="article"
 	ms.date="08/05/2015"
 	ms.author="MehrdadMzfr" />
-
 
 #So integrieren Sie Engagement Reach auf iOS
 
@@ -118,9 +116,13 @@ Anschließend muss das Engagement-SDK darüber informiert werden, wenn Ihre Anwe
 		[[EngagementAgent shared] applicationDidReceiveRemoteNotification:userInfo fetchCompletionHandler:handler];
 	}
 
-> [AZURE.NOTE]In iOS 7 wird die oben genannte Methode eingeführt. Wenn Ihr Ziel iOS < 7, stellen Sie sicher, dass Sie Methode `application:applicationDidReceiveRemoteNotification:` in Ihrem Anwendungsdelegaten implementieren und rufen Sie `applicationDidReceiveRemoteNotification` auf dem EngagementAgent auf, durch das Übergeben von NULL anstelle des `handler` Arguments:
+> [AZURE.NOTE]In iOS 7 wird die oben genannte Methode eingeführt. Wenn Ihr Ziel iOS < 7 ist, implementieren Sie unbedingt die Methode `application:didReceiveRemoteNotification:` in Ihrem Anwendungsdelegaten, und rufen Sie `applicationDidReceiveRemoteNotification` auf dem EngagementAgent durch Übergeben von NULL anstelle des `handler`Arguments auf:
 
-	[[EngagementAgent shared] applicationDidReceiveRemoteNotification:userInfo fetchCompletionHandler:nil];
+	- (void)application:(UIApplication*)application
+	didReceiveRemoteNotification:(NSDictionary*)userInfo
+	{
+		[[EngagementAgent shared] applicationDidReceiveRemoteNotification:userInfo fetchCompletionHandler:nil];
+	}
 
 > [AZURE.IMPORTANT]Standardmäßig steuert Engagement Reach den completionHandler. Wenn Sie den `handler` Blcok in Ihrem Code manuell bearbeiten möchten, können Sie NULL für das `handler` Argument übergeben und den completion-Block selbst kontrollieren. Unter `UIBackgroundFetchResult`-Typ finden Sie eine Liste möglicher Werte.
 
@@ -414,4 +416,4 @@ Wie bei der erweiterten Benachrichtigungsanpassung wird empfohlen, sich den Quel
 
 	@end
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

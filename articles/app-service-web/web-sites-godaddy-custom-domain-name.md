@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie einen Domänennamen von GoDaddy mit Azure-Web-Apps verwenden"
 	services="app-service\web"
 	documentationCenter=""
-	authors="MikeWasson"
+	authors="erikre"
 	manager="wpickett"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/12/2015"
-	ms.author="mwasson"/>
+	ms.date="08/18/2015"
+	ms.author="erikre"/>
 
 # Konfigurieren eines benutzerdefinierten (direkt von GoDaddy erworbenen) Domänennamens in Azure App Service
 
@@ -89,4 +89,4 @@ Um Ihre benutzerdefinierte Domäne mit einer Web-App im App Service zu verknüpf
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

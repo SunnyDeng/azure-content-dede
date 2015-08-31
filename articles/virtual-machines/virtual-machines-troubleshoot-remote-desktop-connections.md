@@ -134,7 +134,7 @@ Dass der Remotedesktopclient den Dienst der Remotedesktopdienste auf dem virtuel
 
 - Remotedesktop-Clientcomputer
 - Edgegerät im Intranet des Unternehmens
-- Cloud-Dienstendpunkt und die Zugriffssteuerungsliste (ACL)
+- Clouddienst-Endpunkt und die Zugriffssteuerungsliste (ACL)
 - Netzwerksicherheitsgruppen
 - Windows-basierter virtueller Azure-Computer
 
@@ -169,9 +169,9 @@ Wenn Sie eine Remotedesktopverbindung mit einem direkt mit dem Internet verbunde
 
 Korrigieren Sie zusammen mit Ihrem Netzwerkadministrator die Einstellungen des Edgegeräts für das Intranet Ihrer Organisation, um HTTPS-basierte Remotedesktopverbindungen mit dem Internet zu ermöglichen.
 
-### Quelle 3: Cloud-Dienstendpunkt und ACL
+### Quelle 3: Clouddienst-Endpunkt und ACL
 
-Um Clouddienst-Endpunkt und ACL als Problemquelle oder die Fehlkonfiguration virtueller Computer auszuschließen, die in der Dienstverwaltung erstellt wurden, überprüfen Sie, ob ein anderer virtueller Azure-Computer in demselben Clouddienst oder virtuellen Netzwerk Remotedesktopverbindungen mit Ihrem virtuellen Azure-Computer herstellen kann.
+Um Clouddienst-Endpunkt und ACL als Problemquelle oder die Fehlkonfiguration virtueller Computer auszuschließen, die in der Dienstverwaltungs-API erstellt wurden, überprüfen Sie, ob ein anderer virtueller Azure-Computer in demselben Clouddienst oder virtuellen Netzwerk Remotedesktopverbindungen mit Ihrem virtuellen Azure-Computer herstellen kann.
 
 ![](./media/virtual-machines-troubleshoot-remote-desktop-connections/tshootrdp_3.png)
 
@@ -188,7 +188,7 @@ Um den Endpunkt als Problemquelle auszuschließen, entfernen Sie den aktuellen E
 
 ### <a id="nsgs"></a>Quelle 4: Netzwerksicherheitsgruppen
 
-Netzwerk-Sicherheitsgruppen ermöglichen Ihnen eine präzisere Steuerung des zulässigen eingehenden und ausgehenden Datenverkehrs. Sie können Regeln erstellen, die mehrere Subnetze und Cloud-Dienste in einem virtuellen Azure-Netzwerk umfassen. Überprüfen Sie die Regeln der Netzwerk-Sicherheitsgruppe, um sicherzustellen, dass Remotedesktop-Datenverkehr aus dem Internet zulässig ist.
+Netzwerk-Sicherheitsgruppen ermöglichen Ihnen eine präzisere Steuerung des zulässigen eingehenden und ausgehenden Datenverkehrs. Sie können Regeln erstellen, die mehrere Subnetze und Clouddienste in einem virtuellen Azure-Netzwerk umfassen. Überprüfen Sie die Regeln der Netzwerk-Sicherheitsgruppe, um sicherzustellen, dass Remotedesktop-Datenverkehr aus dem Internet zulässig ist.
 
 Weitere Informationen finden Sie unter [Was ist eine Netzwerksicherheitsgruppe (NSG)?](../virtual-network/virtual-networks-nsg.md).
 
@@ -210,11 +210,11 @@ Versuchen Sie erneut, die Verbindung von Ihrem Computer aus herzustellen. Wenn S
 - Windows-Firewall oder eine andere lokale Firewall enthält eine Regel für ausgehenden Datenverkehr, durch die Remotedesktop-Datenverkehr verhindert wird.
 - Software zur Erkennung von Eindringversuchen oder zur Netzwerküberwachung, die auf dem virtuellen Azure-Computer ausgeführt wird, verhindert Remotedesktopverbindungen.
 
-Um diese möglichen Probleme für virtuelle Computer zu beheben, die in der Dienstverwaltung erstellt wurden, können Sie eine Azure PowerShell-Remotesitzung für den virtuellen Azure-Computer verwenden. Zunächst müssen Sie ein Zertifikat für den Cloud-Dienst installieren, der als Host des virtuellen Computers fungiert. Wechseln Sie zu [Konfigurieren eines sicheren PowerShell-Remotezugriffs auf virtuellen Azure-Computern](http://gallery.technet.microsoft.com/scriptcenter/Configures-Secure-Remote-b137f2fe), und laden Sie die Skriptdatei **InstallWinRMCertAzureVM.ps1** in einen Ordner auf Ihrem lokalen Computer herunter.
+Um diese möglichen Probleme für virtuelle Computer zu beheben, die mit der Dienstverwaltungs-API erstellt wurden, können Sie eine Azure PowerShell-Remotesitzung für den virtuellen Azure-Computer verwenden. Zunächst müssen Sie ein Zertifikat für den Clouddienst installieren, der als Host des virtuellen Computers fungiert. Wechseln Sie zu [Konfigurieren eines sicheren PowerShell-Remotezugriffs auf virtuellen Azure-Computern](http://gallery.technet.microsoft.com/scriptcenter/Configures-Secure-Remote-b137f2fe), und laden Sie die Skriptdatei **InstallWinRMCertAzureVM.ps1** in einen Ordner auf Ihrem lokalen Computer herunter.
 
 Installieren Sie dann Azure PowerShell, sofern noch nicht geschehen. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
 
-Als Nächstes öffnen Sie eine Azure-PowerShell-Eingabeaufforderung, und ändern Sie dann den aktuellen Ordner in den Speicherort der Skriptdatei **InstallWinRMCertAzureVM.ps1**. Um ein Azure PowerShell-Skript auszuführen, müssen Sie die richtige Ausführungsrichtlinie festlegen. Führen Sie den Befehl **Get-ExecutionPolicy** aus, um die aktuelle Richtlinienebene zu ermitteln. Weitere Informationen zum Festlegen der geeigneten Ebene finden Sie unter [Set-ExecutionPolicy](https://technet.microsoft.com/library/hh849812.aspx).
+Als Nächstes öffnen Sie eine Azure PowerShell-Eingabeaufforderung, und ändern Sie dann den aktuellen Ordner in den Speicherort der Skriptdatei **InstallWinRMCertAzureVM.ps1**. Um ein Azure PowerShell-Skript auszuführen, müssen Sie die richtige Ausführungsrichtlinie festlegen. Führen Sie den Befehl **Get-ExecutionPolicy** aus, um die aktuelle Richtlinienebene zu ermitteln. Weitere Informationen zum Festlegen der geeigneten Ebene finden Sie unter [Set-ExecutionPolicy](https://technet.microsoft.com/library/hh849812.aspx).
 
 Als Nächstes tragen Sie Ihren Azure-Abonnement-Namen, den Namen des Clouddiensts und den Name des virtuellen Computers ein (entfernen Sie die < and >-Zeichen), und führen Sie dann diese Befehle aus.
 
@@ -223,9 +223,9 @@ Als Nächstes tragen Sie Ihren Azure-Abonnement-Namen, den Namen des Clouddienst
 	$vmName="<Name of the target virtual machine>"
 	.\InstallWinRMCertAzureVM.ps1 -SubscriptionName $subscr -ServiceName $serviceName -Name $vmName
 
-Sie können den richtigen Abonnementnamen der SubscriptionName-Eigenschaft in der Ausgabe des Befehls **Get-AzureSubscription** entnehmen. Der Name des virtuellen Computers und der Name des Cloud-Diensts wird in der ServiceName-Spalte in der Ausgabe des Befehls **Get-AzureVM** angezeigt.
+Sie können den richtigen Abonnementnamen der SubscriptionName-Eigenschaft in der Ausgabe des Befehls **Get-AzureSubscription** entnehmen. Der Name des virtuellen Computers und der Name des Clouddiensts wird in der ServiceName-Spalte in der Ausgabe des Befehls **Get-AzureVM** angezeigt.
 
-Um sich davon zu überzeugen, dass Sie das neue Zertifikat besitzen, öffnen Sie ein Zertifikate-Snap-In für den aktuellen Benutzer, und zeigen Sie den Ordner **Trusted Root Certification Authorities\\Certificates** an. Es sollte ein Zertifikat mit dem DNS-Namen des Cloud-Diensts in der Spalte "Ausgestellt für" angezeigt werden (Beispiel: cloudservice4testing.cloudapp.net).
+Um sich davon zu überzeugen, dass Sie das neue Zertifikat besitzen, öffnen Sie ein Zertifikate-Snap-In für den aktuellen Benutzer, und zeigen Sie den Ordner **Trusted Root Certification Authorities\\Certificates** an. Es sollte ein Zertifikat mit dem DNS-Namen des Clouddiensts in der Spalte "Ausgestellt für" angezeigt werden (Beispiel: "cloudservice4testing.cloudapp.net").
 
 Starten Sie als Nächstes mit diesen Befehlen eine Azure Powershell-Remotesitzung.
 
@@ -233,7 +233,7 @@ Starten Sie als Nächstes mit diesen Befehlen eine Azure Powershell-Remotesitzun
 	$creds = Get-Credential
 	Enter-PSSession -ConnectionUri $uri -Credential $creds
 
-Nachdem Sie gültige Administratoranmeldeinformationen eingegeben haben, sollte Ihre Azure-PowerShell-Eingabeaufforderung etwa wie folgt angezeigt werden:
+Nachdem Sie gültige Administratoranmeldeinformationen eingegeben haben, sollte Ihre Azure PowerShell-Eingabeaufforderung etwa wie folgt angezeigt werden:
 
 	[cloudservice4testing.cloudapp.net]: PS C:\Users\User1\Documents>
 
@@ -287,4 +287,4 @@ Informationen zur Nutzung von Azure-Support finden Sie unter der [Microsoft Azur
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -122,6 +122,13 @@ Wenn Sie Azure PowerShell noch nicht mit dem Ressourcen-Manager verwendet haben,
 7. Abrufen detaillierter Informationen über Fehler bei der Bereitstellung.
 
         PS C:\> Get-AzureResourceGroupLog -ResourceGroup ExampleResourceGroup -Status Failed -DetailedOutput
+        
+### Video
+
+Hierbei handelt es sich um ein Video, in dem die Verwendung von Ressourcen-Manager-Vorlagen mit PowerShell veranschaulicht wird.
+
+[AZURE.VIDEO deploy-an-application-with-azure-resource-manager-template]
+
 
 ## Bereitstellen mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows
 
@@ -257,4 +264,4 @@ Bei der Verwendung einer Parameterdatei zum Übergeben von Parameterwerten an Ih
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

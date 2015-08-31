@@ -18,7 +18,7 @@
 
 # Senden von plattformübergreifenden Benachrichtigungen an einen bestimmten Benutzer
 
-[AZURE.INCLUDE [app-service-mobile-selector-push-users-preview](../../includes/app-service-mobile-selector-push-users-preview.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-push-users-preview](../../includes/app-service-mobile-selector-push-users-preview.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
 
 In diesem Thema wird das Senden von Benachrichtigungen an alle registrierten Geräte eines bestimmten Benutzers aus Ihrem mobilen Back-End veranschaulicht. Sie erhalten eine Einführung in das Konzept der [Vorlagen], mit denen Clientanwendungen die Möglichkeit erhalten, bei der Registrierung Nutzlastformate und variable Platzhalter anzugeben. Die Versendung erfolgt anschließend an alle Plattformen mit diesen Platzhaltern, sodass plattformübergreifende Benachrichtigungen ermöglicht werden.
 
@@ -106,4 +106,4 @@ Veröffentlichen Sie erneut Ihr mobiles Back-End-Projekt, und führen Sie eine b
 [Vorlagen]: https://msdn.microsoft.com/de-de/library/dn530748.aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

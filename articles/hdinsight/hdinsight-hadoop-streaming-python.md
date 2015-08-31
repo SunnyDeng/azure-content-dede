@@ -5,7 +5,8 @@
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
-   editor="cgronlun"/>
+   editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
@@ -13,14 +14,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/13/2015"
+   ms.date="08/04/2015"
    ms.author="larryfr"/>
 
 #Entwickeln von Python-Streamingprogrammen für HDInsight
 
 Hadoop stellt eine Streaming-API für MapReduce zur Verfügung, mit der Sie Map- und Reduce-Funktionen in anderen Sprache als Java schreiben können. In diesem Dokument erfahren Sie, wie Sie mit Python MapReduce-Vorgänge ausführen.
 
-> [AZURE.NOTE]Dieser Artikel basiert auf Informationen und Beispielen, die von Michael Noll unter \[http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/\] \(Schreiben eines MapReduce-Programms in Python\) veröffentlicht wurden.
+> [AZURE.NOTE]Während der Python-Code in diesem Dokument mit einem Windows-basierten HDInsight-Cluster verwendet werden kann, gelten die Schritte in diesem Dokument speziell für Linux-basierte Cluster.
+
+Dieser Artikel basiert auf Informationen und Beispielen, die von Michael Noll unter [http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/] (Schreiben eines MapReduce-Programms in Python) veröffentlicht wurden.
 
 ##Voraussetzungen
 
@@ -56,7 +59,7 @@ Mit Hadoop können Sie eine Datei angeben, die die von einem Auftrag verwendete 
 
 * **Datenformat**: Die verwendeten und erzeugten Daten müssen ein Schlüssel-/Wertpaar darstellen, das durch ein Tabulatorzeichen getrennt werden muss.
 
-Python kann diese Anforderungen einfach mithilfe des Moduls **sys** zum Lesen von STDIN und mithilfe des Moduls **print** für die Ausgabe an STDOUT behandeln. Der Rest besteht einfach aus der Formatierung der Daten mit einem Tabulatorzeichen \(`\t`\) zwischen Schlüssel und Wert.
+Python kann diese Anforderungen einfach mithilfe des Moduls **sys** zum Lesen von STDIN und mithilfe des Moduls **print** für die Ausgabe an STDOUT behandeln. Der Rest besteht einfach aus der Formatierung der Daten mit einem Tabulatorzeichen (`\t`) zwischen Schlüssel und Wert.
 
 ##Erstellen von Mapper und Reducer
 
@@ -133,7 +136,7 @@ Erstellen Sie eine neue Datei namens **mapper.py**, und verwenden Sie den folgen
 
 ##Hochladen der Dateien
 
-Sowohl **mapper.py** als auch **reducer.py** müssen sich auf dem Stammknoten des Clusters befinden, bevor sie ausgeführt werden können. Am einfachsten können sie mit **scp** \(**pscp**, wenn Sie einen Windows-Client verwenden\) hochgeladen werden.
+Sowohl **mapper.py** als auch **reducer.py** müssen sich auf dem Stammknoten des Clusters befinden, bevor sie ausgeführt werden können. Am einfachsten können sie mit **scp** (**pscp**, wenn Sie einen Windows-Client verwenden) hochgeladen werden.
 
 Verwenden Sie den folgenden Befehl auf dem Client im gleichen Verzeichnis, in dem sich auch **mapper.py** und **reducer.py** befinden. Ersetzen Sie **Benutzernamen** durch einen SSH-Benutzer und den **Clusternamen** durch den Namen des Clusters.
 
@@ -202,4 +205,4 @@ Nachdem Sie erfahren haben, wie Sie Streaming-MapReduce-Aufträge mit HDInsight 
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

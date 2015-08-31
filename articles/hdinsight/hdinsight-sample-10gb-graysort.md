@@ -4,6 +4,7 @@
 	description="Erfahren Sie mehr darüber, wie Sie ein allgemeines GraySort für eine sehr große Datenmenge, normalerweise mindestens 100 TB, auf Hadoop mit HDInsights mithilfe von Azure PowerShell ausführen können."
 	editor="cgronlun"
 	manager="paulettm"
+	tags="azure-portal"
 	services="hdinsight"
 	documentationCenter=""
 	authors="mumian"/>
@@ -433,4 +434,4 @@ Lernprogramme, die Sie durch die Ausführung anderer Beispiele führen und Anwei
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

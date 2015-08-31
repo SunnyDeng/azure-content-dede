@@ -45,7 +45,7 @@ Stellen Sie sicher, dass diese Voraussetzungen erfüllt werden:
 - Sie benötigen mindestens eine Cloud auf dem VMM-Server, den Sie schützen möchten. Die Cloud sollte Folgendes enthalten:
 	- Eine oder mehrere VMM-Hostgruppen.
 	- Einen oder mehrere Hyper-V-Hostserver oder Cluster in jeder Hostgruppe.
-	- Einen oder mehrere virtuelle Computer auf dem Hyper-V-Quellserver. Es muss sich um virtuelle Computer der 1. Generation handeln.
+	- Einen oder mehrere virtuelle Computer auf dem Hyper-V-Quellserver.
 - Erfahren Sie mehr über das Einrichten von VMM-Clouds:
 	- Weitere Informationen über private VMM-Clouds erhalten Sie unter [Private Cloud-Neuerungen mit System Center 2012 R2 VMM](http://go.microsoft.com/fwlink/?LinkId=324952) und unter [VMM 2012 und die Clouds](http://go.microsoft.com/fwlink/?LinkId=324956).
 	- Informationen zum [Konfigurieren der VMM-Cloudstruktur](https://msdn.microsoft.com/library/azure/dn469075.aspx#BKMK_Fabric)
@@ -461,4 +461,4 @@ if($isJobLeftForProcessing)
 
 <LI>Wenn Sie Fragen haben, besuchen Sie das<a href="http://go.microsoft.com/fwlink/?LinkId=313628"> Azure Recovery Services-Forum</a>.</LI></UL>
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

@@ -1,9 +1,9 @@
 <properties
-	pageTitle="Erste Schritte mit mobilen Azure App Service-iOS-Apps"
-	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure App Service für die iOS-Entwicklung."
+	pageTitle="Erstellen einer iOS-App unter Azure Mobile Apps"
+	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung mobiler Azure-App-Back-Ends für die iOS-Entwicklung in Objective-C oder Swift."
 	services="app-service\mobile"
 	documentationCenter="ios"
-	authors="ysxu"
+	authors="krisragh"
 	manager="dwrede"
 	editor=""/>
 
@@ -13,60 +13,50 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="hero-article"
-	ms.date="06/18/2015"
-	ms.author="yuaxu"/>
+	ms.date="08/11/2015"
+	ms.author="krisragh"/>
 
-# <a name="getting-started"> </a>Erstellen einer iOS-App
+#Erstellen einer iOS-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-preview](../../includes/app-service-mobile-selector-get-started-preview.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-preview](../../includes/app-service-mobile-selector-get-started-preview.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
 
-In diesem Lernprogramm erfahren Sie, wie eine iOS-App mit mobilen Azure App Service-Apps erstellt wird. Sie erstellen ein neues mobiles App-Back-End und eine einfache _To-Do-Listen_-App, in der App-Daten gespeichert werden. Das Lernprogramm verwendet .NET und Visual Studio für die serverseitige Logik.
+##Übersicht
+
+Dieses Lernprogramm zeigt Ihnen, wie Sie einen cloudbasierten Back-End-Dienst mithilfe eines mobilen Azure-App-Back-Ends zu einer mobilen iOS-App hinzufügen. Sie erstellen sowohl ein neues mobiles App-Back-End und eine einfache iOS-_Todo list_-App, die App-Daten in Azure speichert.
+
+Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Apps-Lernprogramme für iOS-Apps.
+
+##Voraussetzungen
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps, die Sie auch nach Ablauf der Testversion weiter nutzen können. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/).
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a>.
+* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
+ 
+* [Visual Studio Community 2013] oder höher.
+
+* Ein Mac, auf dem Xcode Version 7. 0 oder höher installiert ist.
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751&appServiceName=mobile) sofort kostenlos eine kurzlebige mobile Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-## <a name="create-new-service"> </a>Erstellen eines neuen mobilen App-Back-Ends
+## Erstellen eines neuen Azure Mobile App-Back-Ends
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-new-service-preview](../../includes/app-service-mobile-dotnet-backend-create-new-service-preview.md)]
 
-## Erstellen einer neuen iOS-App
+## Herunterladen des Serverprojekts
 
-Sobald Sie das mobile Back-End erstellt haben, können Sie einem einfachen Schnellstart im Azure-Vorschauportal folgen, um eine neue App zu erstellen oder eine vorhandene App für die Verbindung zum mobilen App-Back-End zu ändern.
+1. Besuchen Sie auf dem PC das [Azure-Portal]. Klicken Sie auf **Alle durchsuchen** > **Mobile Apps**, und klicken Sie dann auf das Back-End, das Sie gerade erstellt haben.
+ 
+2. Klicken Sie im Blatt "Mobile Anwendung" auf **Einstellungen**, und klicken Sie unter **Mobile Anwendung** auf **Schnellstart** > **iOS (Objective-C)**. Wenn Sie Swift bevorzugen, klicken Sie stattdessen auf **Schnellstart** > **iOS (Swift)**.
+ 
+3. Klicken Sie unter **Herunterladen und Serverprojekt ausführen** auf **Herunterladen**. Extrahieren Sie die komprimierten Projektdateien auf Ihrem PC, und öffnen Sie die Projektmappe in Visual Studio.
 
-1. Klicken Sie im Azure-Portal auf **Mobile App** und anschließend auf das mobile App-Back-End, das Sie gerade erstellt haben.
-
-2. Klicken Sie oben auf dem Blatt auf "Client hinzufügen", und erweitern Sie iOS.
-
-	![][6]
-
-	Dadurch werden Schritte zum Erstellen einer iOS-App angezeigt, die mit dem mobilen App-Back-End verbunden wird.
-
-3. Falls noch nicht geschehen, müssen Sie <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a> auf den lokalen oder virtuellen Computer herunterladen und installieren.
-
-4. Laden Sie [Xcode] v4.4 oder neuer herunter sowie [Xamarin Studio]. Sie können auch Xamarin für Visual Studio verwenden.
-
-5. Klicken Sie unter **Service in der Cloud herunterladen und veröffentlichen** auf **Herunterladen**.
-
- Daraufhin wird eine Lösung heruntergeladen, die Projekte für das mobile App-Back-End und für die beispielhafte _To-Do-Listen_-Anwendung enthält, die mit dem mobilen App-Back-End verbunden ist. Speichern Sie die komprimierte Projektdatei auf dem lokalen Computer und merken Sie sich, wo Sie sie gespeichert haben.
-
-6. Laden Sie das Veröffentlichungsprofil herunter, speichern Sie die heruntergeladene Datei auf dem lokalen Computer, und notieren Sie sich den Speicherort.
-
-## Testen der mobilen App
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-test-local-service-preview](../../includes/app-service-mobile-dotnet-backend-test-local-service-preview.md)]
-
-## Veröffentlichen der mobilen App
+## Veröffentlichen des Serverprojekts in Azure
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service-preview](../../includes/app-service-mobile-dotnet-backend-publish-service-preview.md)]
 
-## Ausführen der iOS-App
+## Herunterladen und Ausführen der iOS-App
 
 [AZURE.INCLUDE [app-service-mobile-ios-run-app-preview](../../includes/app-service-mobile-ios-run-app-preview.md)]
-
 
 
 <!-- Images. -->
@@ -82,8 +72,9 @@ Sobald Sie das mobile Back-End erstellt haben, können Sie einem einfachen Schne
 [11]: ./media/mobile-services-dotnet-backend-ios-get-started/mobile-data-tab.png
 [12]: ./media/mobile-services-dotnet-backend-ios-get-started/mobile-data-browse.png
 
-[Management Portal]: https://manage.windowsazure.com/
+[Azure-Portal]: https://portal.azure.com/
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
  
+[Visual Studio Community 2013]: https://go.microsoft.com/fwLink/p/?LinkID=534203
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

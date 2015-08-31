@@ -7,16 +7,14 @@
 	services="app-service\logic"
 	documentationCenter=""/>
 
-
 <tags
 	ms.service="app-service-logic"
 	ms.workload="integration"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/02/2015"
+	ms.date="08/19/2015"
 	ms.author="sameerch"/>
-
 
 # Verwenden des SFTP-Connectors in Logik-Apps #
 
@@ -99,8 +97,12 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 	![][11]
 	![][12]
 
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
 
 <!-- Image reference -->
@@ -117,4 +119,4 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Tri
 [11]: ./media/app-service-logic-connector-sftp/img11.PNG
 [12]: ./media/app-service-logic-connector-sftp/img12.PNG
 
-<!----HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

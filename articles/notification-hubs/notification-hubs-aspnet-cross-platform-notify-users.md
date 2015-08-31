@@ -1,18 +1,18 @@
-<properties 
-	pageTitle="Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs (ASP.NET)" description="Erfahren Sie, wie Sie mithilfe von Notification Hubs-Vorlagen in einer einzigen Anforderung eine plattformunabhängige Benachrichtigung senden können, die auf alle Plattformen abzielt." 
-	services="notification-hubs" 
-	documentationCenter="" 
-	authors="wesmc7777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Senden plattformübergreifender Benachrichtigungen an Benutzer mit Notification Hubs (ASP.NET)" description="Erfahren Sie, wie Sie mithilfe von Notification Hubs-Vorlagen in einer einzigen Anforderung eine plattformunabhängige Benachrichtigung senden können, die auf alle Plattformen abzielt."
+	services="notification-hubs"
+	documentationCenter=""
+	authors="wesmc7777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="04/27/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="08/18/2015" 
 	ms.author="wesmc"/>
 
 # Senden plattformübergreifender Benachrichtigungen an Benutzer mit Benachrichtigungs-Hubs
@@ -24,7 +24,7 @@ Im vorherigen Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs]
 
 Führen Sie die folgenden Schritte aus, um plattformunabhängige Benachrichtigungen mit Vorlagen zu verschicken:
 
-1. Erweitern Sie im Projektmappen-Explorer in Visual Studio den Ordner **Controllers** und öffnen Sie die Datei RegisterController.cs. 
+1. Erweitern Sie im Projektmappen-Explorer in Visual Studio den Ordner **Controllers** und öffnen Sie die Datei RegisterController.cs.
 
 2. Suchen Sie den Codeblock in der **Post**-Methode, der eine neue Registrierung erstellt, und ersetzen Sie den `switch`-Inhalt von durch den folgenden Code:
 
@@ -54,7 +54,7 @@ Führen Sie die folgenden Schritte aus, um plattformunabhängige Benachrichtigun
             default:
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
         }
-	
+
 	Dieser Code ruft die plattformspezifische Methode zur Erstellung einer Vorlagenregistrierung anstelle der Systemregistrierung auf. Existierende Registrierungen müssen nicht verändert werden, da Vorlagenregistrierungen von Systemregistrierungen abgeleitet sind.
 
 3. Ersetzen Sie im **Notifications**-Controller die Methode **sendNotification** durch den folgenden Code:
@@ -65,7 +65,7 @@ Führen Sie die folgenden Schritte aus, um plattformunabhängige Benachrichtigun
             var userTag = "username:" + user;
 
             var notification = new Dictionary<string, string> { { "message", "Hello, " + user } };
-            await Notifications.Instance.Hub.SendTemplateNotificationAsync(notification, userTag);   
+            await Notifications.Instance.Hub.SendTemplateNotificationAsync(notification, userTag);
 
             return Request.CreateResponse(HttpStatusCode.OK);
         }
@@ -84,7 +84,7 @@ Führen Sie die folgenden Schritte aus, um plattformunabhängige Benachrichtigun
 
 Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notification Hubs und Vorlagen in den folgenden Themen:
 
-+ **[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten ]** <br/>Stellt ein weiteres Szenario für die Verwendung von Vorlagen dar. 
++ **[Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten ]** <br/>Stellt ein weiteres Szenario für die Verwendung von Vorlagen dar.
 
 +  **[Übersicht über Benachrichtigungshubs][Templates]**<br/>Dieser Übersichtsartikel enthält weitere Detailinformationen zu Vorlagen.
 
@@ -110,6 +110,5 @@ Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notif
 [Benachrichtigen von Benutzern mit Notification Hubs]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
 [Templates]: http://go.microsoft.com/fwlink/p/?LinkId=317339
 [Notification Hub How to for Windows Store]: http://msdn.microsoft.com/library/windowsazure/jj927172.aspx
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -13,19 +13,19 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/30/2015"
+	ms.date="08/05/2015"
 	ms.author="kirillg"/>
 
-# <a name="getting-started"> </a>Was sind mobile Apps?
+# <a name="getting-started"> </a>Was sind Mobile Apps?
 
->[AZURE.NOTE]**[Hier](http://azure.microsoft.com/documentation/services/mobile-services/) finden Sie die Mobile Services-Dokumentation.**
+[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
 
-Azure App Service ist ein vollständiges PaaS-Angebot (Platform as a Service) für professionelle Entwickler, das einen umfangreichen Satz von Funktionen für Web-, mobile und Integrationsszenarien bereitstellt. *Mobile Apps* in *Azure App Service* bietet eine hochgradig skalierbare, global verfügbare Entwicklungsplattform für mobile Anwendungen für Unternehmensentwickler und Systemintegratoren, die umfassende Funktionen für mobile Apps bereitstellt.
+Azure App Service ist ein vollständiges PaaS-Angebot (Platform as a Service) für professionelle Entwickler, das einen umfangreichen Satz von Funktionen für Web-, mobile und Integrationsszenarien bereitstellt. *Mobile Apps* in *Azure App Service* bietet eine hochgradig skalierbare, global verfügbare Entwicklungsplattform für mobile Anwendungen für Unternehmensentwickler und Systemintegratoren, die umfassende Funktionen für mobile Entwickler bereitstellt.
 
 ![Mobile Apps](./media/app-service-mobile-value-prop-preview/overview.png)
 
 ##Warum Mobile Apps?
-*Mobile Apps* in *Azure App Service* bietet eine hochgradig skalierbare, global verfügbare Entwicklungsplattform für mobile Anwendungen für Unternehmensentwickler und Systemintegratoren, die umfassende Funktionen für mobile Apps bereitstellt. Mobile Apps bietet folgende Möglichkeiten:
+*Mobile Apps* in *Azure App Service* bietet eine hochgradig skalierbare, global verfügbare Entwicklungsplattform für mobile Anwendungen für Unternehmensentwickler und Systemintegratoren, die umfassende Funktionen für mobile Entwickler bereitstellt. Mobile Apps bietet folgende Möglichkeiten:
 
 - **Entwickeln systemeigener und plattformübergreifender Apps** – Unabhängig davon, ob Sie systemeigene iOS-, Android- und Windows-Apps oder plattformübergreifende Xamarin- oder Cordova-Apps (Phonegap) erstellen, können Sie mithilfe systemeigener SDKs die Vorteile von App Service nutzen.  
 - **Herstellen einer Verbindung mit Ihren Unternehmenssystemen** – Mit Mobile Apps können Sie die Unternehmensanmeldung innerhalb von Minuten hinzufügen und eine Verbindung mit Ihren lokalen Unternehmensressourcen oder Cloudressourcen herstellen.
@@ -44,6 +44,7 @@ Absolvieren Sie zum Einstieg in Mobile Apps das Lernprogramm [Erste Schritte].
 
 Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure App Service].
 
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 <!-- URLs. -->
 [Migrate your Mobile Service to App Service]: app-service-mobile-dotnet-backend-migrating-from-mobile-services-preview.md
@@ -56,4 +57,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [JavaScript backend version]: ../mobile-services-ios-get-started.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

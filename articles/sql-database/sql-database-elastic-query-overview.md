@@ -55,7 +55,7 @@ In Zukunft werden weitere Topologien von der Abfragefunktion für elastische Dat
 
 Zum Erstellen einer Abfragelösung für elastische Datenbanken muss die [**Shard-Zuordnung**](sql-database-elastic-scale-shard-map-management.md) der Tools für elastische Datenbanken die Remotedatenbank repräsentieren. Wenn Sie bereits die Clientbibliothek für elastische Datenbanken verwenden, können Sie Ihre vorhandene Shard-Zuordnung nutzen. Andernfalls müssen Sie mithilfe der Tools für elastische Datenbanken eine Shard-Zuordnung erstellen.
 
-Im folgenden C#-Beispielcode wird gezeigt, wie eine Shard-Zuordnung mit einer einzigen Remotedatenbank als Shard hinzugefügt wird.
+Im folgenden C\#-Beispielcode wird gezeigt, wie eine Shard-Zuordnung mit einer einzigen Remotedatenbank als Shard hinzugefügt wird.
 
     ShardMapManagerFactory.CreateSqlShardMapManager(
       "yourconnectionstring",
@@ -88,11 +88,13 @@ Die Abfragefunktion für elastische Datenbanken stützt sich auf diese vier DDL-
 Die Anmeldeinformationen umfassen Benutzer-ID und Kennwort, die von der Abfrage für elastische Datenbanken zur Verbindung mit der elastisch skalierten Shard-Zuordnung und den Remotedatenbanken in Azure SQL-Datenbank verwendet werden. Sie können den erforderlichen Hauptschlüssel und die Anmeldeinformationen mit der folgenden Syntax erstellen:
 
     CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'password';  
-    CREATE CREDENTIAL <credential_name> ON DATABASE
+    CREATE DATABASE SCOPED CREDENTIAL <credential_name>
     WITH IDENTITY = '<shard_map_username>',
     SECRET = '<shard_map_password>'
      [;]
 Stellen Sie sicher, dass &lt;shard\_map\_username> kein "@servername"-Suffix enthält.
+
+Hinweise zu Anmeldeinformationen werden in der Katalogsicht "sys.database\_scoped.credentials" angezeigt.
 
 Verwenden Sie die folgende Syntax, um Hauptschlüssel und Anmeldeinformationen zu übergeben:
 
@@ -227,7 +229,7 @@ Beachten Sie, dass die gleichen Anmeldeinformationen für die Verbindung mit der
 Sie können herkömmliche SQL-Datenbank-Verbindungszeichenfolgen für Ihre Abfragedatenbank für elastische Datenbanken zur Verbindung Ihrer BI und Datenintegrationstools verwenden. Stellen Sie sicher, dass SQL Server als Datenquelle für das Tool unterstützt wird. Verwenden Sie anschließend externe Objekte in der Abfragedatenbank für elastische Datenbanken wie mit jeder anderen SQL Server-Datenbank, die Sie mit dem Tool verbinden würden.
 
 ## Bewährte Methoden
-*    Stellen Sie sicher, dass die Verwaltungsdatenbank für die Shard-Zuordnung und die Datenbanken, die in der Shard-Zuordnung definiert sind, Zugriff von Microsoft Azure über Firewallregeln zulassen. Dies ist notwendig, damit die Abfragedatenbank für elastische Datenbanken eine Verbindung herstellen kann. Weitere Informationen finden Sie unter [Firewall für Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee621782.aspx).
+*    Stellen Sie sicher, dass die Verwaltungsdatenbank für die Shard-Zuordnung und die Datenbanken, die in der Shard-Zuordnung definiert sind, Zugriff von Microsoft Azure über Firewallregeln zulassen. Dies ist notwendig, damit die Abfragedatenbank für elastische Datenbanken eine Verbindung herstellen kann. Weitere Informationen finden Sie unter [Firewall für die Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee621782.aspx).
 *    Eine Abfrage für elastische Datenbanken überprüft die Verteilung der in der externen Tabelle definierten Daten nicht und erzwingt diese auch nicht. Wenn Ihre tatsächliche Datenverteilung sich von der Verteilung in der Tabellendefinition unterscheidet, können Ihre Abfragen zu unerwarteten Ergebnissen führen.
 *    Eine Abfrage für elastische Datenbanken funktioniert am besten für Abfragen, in denen der größte Teil der Berechnung in den Shards durchgeführt wird. In der Regel erhalten Sie optimale Abfrageleistung mit benutzerdefinierten Filterprädikaten, die in den Shards oder Verknüpfungen über die Partitionierungsschlüssel ausgewertet werden können, die auf partitionsbezogene Weise auf allen Shards ausgeführt werden können. Andere Abfragemuster müssen möglicherweise große Mengen an Daten aus den Shards auf den Hauptknoten laden, wodurch Leistungseinbußen auftreten.
 
@@ -263,4 +265,4 @@ Führen Sie zum Einstieg in Abfragen für elastische Datenbanken unser schrittwe
 
 <!--anchors-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -5,7 +5,8 @@
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
-   editor="cgronlun"/>
+   editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
@@ -655,4 +656,4 @@ Weitere Möglichkeiten zum Arbeiten mit HDInsight sowie weitere Beispiele für S
 
 -	[Erste Schritte mit HBase in HDInsight](../hdinsight-hbase-get-started.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

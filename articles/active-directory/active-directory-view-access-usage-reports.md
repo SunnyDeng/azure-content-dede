@@ -107,11 +107,11 @@ Weitere Informationen zu diesem Bericht finden Sie unter [Anmeldungen aus unbeka
 
 ### Anmeldungen nach mehreren Fehlern
 
-Weitere Informationen zu diesem Bericht finden Sie unter [Anmeldungen nach mehreren Fehlern](active-directory-sign-ins-after-multiple-failures.md).
+Weitere Informationen zu diesem Bericht finden Sie unter [Anmeldungen nach mehreren Fehlern](active-directory-reporting-sign-ins-after-multiple-failures.md).
 
 ### Anmeldungen aus mehreren geografischen Regionen
 
-Weitere Informationen zu diesem Bericht finden Sie unter [Anmeldungen aus mehreren geografischen Regionen](active-directory-sign-ins-from-multiple-geographies.md).
+Weitere Informationen zu diesem Bericht finden Sie unter [Anmeldungen aus mehreren geografischen Regionen](active-directory-reporting-sign-ins-from-multiple-geographies.md).
 
 ### Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten
 
@@ -302,4 +302,4 @@ Weitere Informationen zu den Benachrichtigungsfunktionen für Berichte in Azure�
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

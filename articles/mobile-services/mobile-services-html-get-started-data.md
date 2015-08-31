@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-html" 
 	ms.devlang="javascript" 
 	ms.topic="article" 
-	ms.date="05/02/2015" 
+	ms.date="08/16/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
@@ -133,7 +133,7 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 
    	Dieser Code erstellt ein Proxyobjekt (**todoItemTable**) für die SQL-Datenbank **TodoItem**.
 
-7. Ersetzen Sie den **$('#add-item').submit**-Ereignishandler durch den folgenden Code:
+7. Ersetzen Sie den **$('\#add-item').submit**-Ereignishandler durch den folgenden Code:
 
 		$('#add-item').submit(function(evt) {
 			var textbox = $('#new-item-text'),
@@ -257,4 +257,4 @@ In diesem Lernprogramm wurden die Grundlagen für die Integration von Daten in H
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

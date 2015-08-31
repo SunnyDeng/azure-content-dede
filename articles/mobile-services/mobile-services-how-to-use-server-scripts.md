@@ -7,24 +7,18 @@
 	manager="dwrede" 
 	editor=""/>
 
-
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
 	ms.tgt_pltfrm="javascript" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="06/05/2015" 
+	ms.date="08/17/2015" 
 	ms.author="ricksal"/>
-
 
 
 # Arbeiten mit einem mobilen JavaScript-Back-End-Dienst
 
-> [AZURE.SELECTOR]
-[.NET backend](mobile-services-dotnet-backend-how-to-use.md)
-[JavaScript backend](mobile-services-how-to-use-server-scripts.md)
- 
 Dieser Artikel enthält ausführliche Informationen und Beispiele zum Arbeiten mit einem JavaScript-Back-End in Azure Mobile Services.
 
 ##<a name="intro"></a>Einführung
@@ -42,7 +36,7 @@ Beschreibungen zu einzelnen Serverskript-Objekten und -Funktionen finden Sie unt
 
 ##<a name="table-scripts"></a>Tabellenvorgänge
 
-Ein Tabellenvorgangsskript ist ein Serverskript, der für einen Vorgang auf einer Tabelle registriert ist&mdash;einfügen, lesen, aktualisieren oder löschen (*del*). In diesem Abschnitt wird beschrieben, wie Sie mit Tabellenvorgänge in einem JavaScript-Back-End arbeiten. Darin sind die folgenden Abschnitte enthalten:
+Ein Tabellenvorgangsskript ist ein Serverskript, das für einen Vorgang auf einer Tabelle registriert ist: insert (Einfügen), read (Lesen), update (Aktualisieren) oder delete bzw. *del* (Löschen). In diesem Abschnitt wird beschrieben, wie Sie mit Tabellenvorgänge in einem JavaScript-Back-End arbeiten. Darin sind die folgenden Abschnitte enthalten:
 
 + [Übersicht über Tabellenvorgänge][Basic table operations]
 + [Gewusst wie: Registrierung für Tabellenvorgänge]
@@ -233,7 +227,7 @@ Wenn eine Anwendung einen Wert für eine ID übergibt, speichert Mobile Services
 Der `id`-Wert muss eindeutig sein und darf keine Zeichen aus den folgenden Sätzen enthalten:
 
 + Steuerzeichen: [0x0000-0x001F] und [0x007F-0x009F]. Weitere Informationen finden Sie unter [ASCII-Steuerzeichen C0 und C1](http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set).
-+  Druckbare Zeichen: **"**(0 x 0022), **+** (0x002B), **/** (0x002F), **?** (0x003F), **\\** (0x005C), **`** (0x0060)
++  Druckbare Zeichen: **"**(0 x 0022), **+** (0x002B), **/** (0x002F), **?** (0x003F), **\** (0x005C), **`** (0x0060)
 +  Die IDs "." und ".."
 
 Alternativ können Sie auch ganzzahlige IDs für Ihre Tabellen verwenden. Um ganzzahlige IDs zu verwenden, müssen Sie bei der Tabellenerstellung für den `mobile table create`-Befehl die Option `--integerId` verwenden. Dieser Befehl wird in der Befehlszeilenschnittstelle (CLI) für Azure verwendet. Weitere Informationen zur CLI finden Sie unter [CLI to manage Mobile Services tables](../virtual-machines-command-line-tools.md#Mobile_Tables) (CLI für Tabellen in mobilen Diensten, in englischer Sprache).
@@ -372,8 +366,7 @@ Die folgende **OrderPizza**-Funktion einer benutzerdefinierten API liefert ein e
 
 		exports.get = function(request, response) {
 		  response.set('content-type', 'application/xml');
-		  var xml = '<?xml version="1.0"?><PizzaOrderForm><PizzaOrderForm/>
-';
+		  var xml = '<?xml version="1.0"?><PizzaOrderForm><PizzaOrderForm/>';
 		  response.send(200, xml);
 		};
 
@@ -1063,4 +1056,4 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [Support for package.json in Azure Mobile Services]: http://go.microsoft.com/fwlink/p/?LinkId=391036
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -60,7 +60,7 @@ Kombinieren Sie den Azure-Lastenausgleich mit einer Verfügbarkeitsgruppe, um h�
 Wenn der Lastenausgleich nicht für die gleichmäßige Verteilung des Datenverkehrs auf mehrere virtuelle Computer konfiguriert ist, wirkt sich ein geplantes Wartungsereignis schließlich auf den einzigen virtuellen Computer, der den Datenverkehr aufrecht erhält, aus und führt zu einem Ausfall der Anwendungsebene. Werden dagegen mehrere virtuelle Computer derselben Ebene demselben Lastenausgleich und derselben Verfügbarkeitsgruppe zugeordnet, wird der Datenverkehr kontinuierlich von mindestens einer Instanz aufrechterhalten.
 
 ### Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen
-Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine einer Verfügbarkeitsgruppe zuzuordnen. Virtuelle Computer in dieser Konfiguration erfüllen nicht die zugesicherte SLA und sind während geplanter Azure-Wartungsereignisse nicht verfügbar. Wenn Sie außerdem eine einzelne Instanz eines virtuellen Computers in einer Verfügbarkeitsgruppe bereitstellen, erhalten Sie von der Plattformwartungsfunktion keine gesonderte Warnung oder Benachrichtigung. In dieser Konfiguration wird der aus einer Einzelinstanz bestehende virtuelle Computer ohne spezifische Warnung neu gestartet, wenn eine Plattformwartung durchgeführt wird.
+Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine einer Verfügbarkeitsgruppe zuzuordnen. Virtuelle Computer in dieser Konfiguration erfüllen nicht die zugesicherte SLA und sind während geplanter Azure-Wartungsereignisse nicht verfügbar. Beachten Sie, dass einzelne virtuelle Computerinstanzen innerhalb einer Verfügbarkeitsgruppe auch eine erweiterte E-Mail-Benachrichtigung im Rahmen der Benachrichtigung zur geplanten Wartung virtueller Computer mit mehreren Instanzen erhalten.
 
 <!-- Link references -->
 [Konfigurieren mehrerer virtueller Computer in einer Verfügbarkeitsgruppe für höhere Redundanz]: #configure-multiple-virtual-machines-in-an-availability-set-for-redundancy
@@ -69,4 +69,4 @@ Vermeiden Sie es, virtuelle Computer, die eine Einzelinstanz darstellen, alleine
 [Vermeiden virtueller Computer, die eine Einzelinstanz darstellen, in Verfügbarkeitsgruppen]: #avoid-single-instance-virtual-machines-in-availability-sets
 [Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer]: virtual-machines-how-to-configure-availability.md
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

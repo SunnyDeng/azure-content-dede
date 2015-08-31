@@ -26,7 +26,7 @@ Azure behandelt diese Vorlage als lokales Image und speichert es unter**Images**
 
 ## Voraussetzungen
 
-Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer erstellt, das Betriebssystem konfiguriert und beliebige Datenträger angefügt haben. Falls dies noch nicht geschehen ist, finden Sie hier Anweisungen:
+Diese Schritte setzen voraus, dass Sie bereits mithilfe des klassischen Bereitstellungsmodells einen virtuellen Azure-Computer erstellt, das Betriebssystem konfiguriert und beliebige Datenträger angefügt haben. Falls dies noch nicht geschehen ist, finden Sie hier Anweisungen:
 
 - [Erstellen eines virtuellen Linux-Computers][]
 
@@ -86,7 +86,7 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 
 
 ## Nächste Schritte
-Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet werden. Sie können den Azure-CLI-Befehl `azure vm create` verwenden und den Namen des Images angeben, das Sie gerade erstellt haben. Weitere Informationen zu dem Befehl finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Azure-Dienstverwaltung](virtual-machines-command-line-tools.md). Alternativ können Sie einen benutzerdefinierten virtuellen Computer über das [Verwaltungsportal][] erstellen, indem Sie die Methode **Aus Katalog** verwenden und das Image auswählen, das Sie gerade erstellt haben. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][].
+Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet werden. Sie können den Azure-CLI-Befehl `azure vm create` verwenden und den Namen des Images angeben, das Sie gerade erstellt haben. Weitere Informationen zu dem Befehl finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Dienstverwaltungs-API](virtual-machines-command-line-tools.md). Alternativ können Sie einen benutzerdefinierten virtuellen Computer über das [Verwaltungsportal][] erstellen, indem Sie die Methode **Aus Katalog** verwenden und das Image auswählen, das Sie gerade erstellt haben. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][].
 
 **Siehe auch**: [Benutzerhandbuch für Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md)
 
@@ -97,4 +97,4 @@ Das Image kann jetzt als Vorlage zum Erstellen virtueller Computer verwendet wer
 [How to Attach a Data Disk to a Virtual Machine]: storage-windows-attach-disk.md
 [Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

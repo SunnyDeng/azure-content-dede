@@ -1,11 +1,11 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Mobile Apps für Xamarin Android-Apps – Microsoft Azure"
+	pageTitle="Erste Schritte mit Azure Mobile Apps für Xamarin.Android-Apps"
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Apps für die Xamarin Android-Entwicklung."
 	services="app-service\mobile"
 	documentationCenter="xamarin"
-	authors="chrisanderson"
+	authors="normesta"
 	manager="dwrede"
-	editor="mollybos"/>
+	editor="" />
 
 <tags
 	ms.service="app-service-mobile"
@@ -13,87 +13,77 @@
 	ms.tgt_pltfrm="mobile-xamarin-android"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="05/01/2015"
-	ms.author="chrande"/>
+	ms.date="08/12/2015"
+	ms.author="normesta" />
 
-# <a name="getting-started"> </a>Erstellen einer Xamarin Android-App
+#Erstellen einer Xamarin.Android-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-preview](../../includes/app-service-mobile-selector-get-started-preview.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-preview](../../includes/app-service-mobile-selector-get-started-preview.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
+ 
+##Übersicht
 
-In diesem Lernprogramm erfahren Sie, wie Sie mit Azure Mobile Apps einen cloudbasierten Back-End-Dienst zu einer Xamarin Android-App hinzufügen. In diesem Lernprogramm erstellen Sie einen neuen .NET-Dienst und eine einfache _To-Do-Listen_-App, die App-Daten im .NET-Back-End speichert.
+Dieses Lernprogramm zeigt Ihnen, wie Sie einen cloudbasierten Back-End-Dienst mithilfe eines mobilen Azure-App-Back-Ends zu einer Xamarin.Android-App hinzufügen. Sie erstellen sowohl ein neues mobiles App-Back-End und eine einfache Xamarin.Android-_Todo list_-App, die App-Daten in Azure speichert.
 
 Unten sehen Sie einen Screenshot aus der fertigen App:
 
 ![][0]
 
-Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Azure Mobile Apps-Lernprogramme für Xamarin Android-Apps.
+Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Apps-Lernprogramme für Xamarin Android-Apps.
+ 
+##Voraussetzungen
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps, die Sie auch nach Ablauf der Testversion weiter nutzen können. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/).
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a>.
-
+* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
+ 
+* [Visual Studio Community 2013] oder höher. Wenn Sie Visual Studio Community 2013 installieren, dann installieren Sie [Xamarin] separat. Sie können die Xamarin-Tools bei der Installation von Visual Studio 2015 installieren.
+ 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751&appServiceName=mobile) sofort kostenlos eine kurzlebige mobile Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-## Erstellen eines neuen mobilen App-Back-Ends
+
+## Erstellen eines neuen Azure Mobile App-Back-Ends
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-new-service-preview](../../includes/app-service-mobile-dotnet-backend-create-new-service-preview.md)]
 
-## Erstellen einer neuen Xamarin Android-App
+## Herunterladen des Serverprojekts
 
-Sobald Sie das mobile App-Back-End erstellt haben, können Sie einem einfachen Schnellstart im [Azure-Portal] folgen, um eine neue App zu erstellen oder eine vorhandene App für die Verbindung zum mobilen App-Back-End zu ändern.
+1. Besuchen Sie auf dem PC das [Azure-Portal]. Klicken Sie auf **Alle durchsuchen** > **Mobile Apps**, und klicken Sie dann auf das Back-End, das Sie gerade erstellt haben.
 
-In diesem Lernprogramm laden Sie eine neue Xamarin Android-App und ein .NET-Back-End-Dienstprojekt für Ihre mobile App herunter.
-
-1. Klicken Sie im Azure-Portal auf **Durchsuchen**, dann auf **Mobile Apps** und anschließend auf die mobile App, die Sie gerade erstellt haben.
-
-2. Klicken Sie oben auf dem Blatt auf **Client hinzufügen**, und erweitern Sie **Xamarin.Android**.
-
-    ![][6]
-
-    Dadurch werden drei einfache Schritte zum Erstellen einer Xamarin Android-App angezeigt, die mit dem mobilen App-Back-End verbunden wird.
-
-
-3. Falls noch nicht geschehen, müssen Sie <a href="https://go.microsoft.com/fwLink/p/?LinkID=257546" target="_blank">Visual Studio Professional 2013</a> auf den lokalen oder virtuellen Computer herunterladen und installieren.
-
-4. Wenn Sie dies noch nicht durchgeführt haben, laden Sie [Xamarin Studio] herunter, und installieren Sie die entsprechende Anwendung. Sie können auch Xamarin für Visual Studio verwenden.
-
-5. Klicken Sie unter **Service in der Cloud herunterladen und veröffentlichen** auf **Herunterladen**.
-
-  	Daraufhin wird eine Projektmappe heruntergeladen, die Projekte für den Code des mobilen App-Back-Ends und für die _To-Do-Listen_-Beispielanwendung enthält, die mit dem mobilen App-Back-End verbunden ist. Speichern Sie die komprimierte Projektdatei auf dem lokalen Computer und merken Sie sich, wo Sie sie gespeichert haben.
-
-6. Laden Sie das Veröffentlichungsprofil herunter, speichern Sie die heruntergeladene Datei auf dem lokalen Computer, und notieren Sie sich den Speicherort.
-
-## Testen des mobilen App-Back-Ends
+2. Klicken Sie im Blatt "Mobile Anwendung" auf **Einstellungen**, und klicken Sie unter **Mobile Anwendung** auf **Schnellstart** > **Xamarin.Android**.
+ 
+3. Klicken Sie unter **Herunterladen und Serverprojekt ausführen** auf **Herunterladen**. Extrahieren Sie die komprimierten Projektdateien auf Ihrem PC, und öffnen Sie die Projektmappe in Visual Studio.
+ 
+## Testen Sie das Back-End-Projekt lokal.
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-test-local-service-preview](../../includes/app-service-mobile-dotnet-backend-test-local-service-preview.md)]
 
-## Veröffentlichen des mobilen App-Back-Ends
+## Veröffentlichen des Serverprojekts in Azure
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service-preview](../../includes/app-service-mobile-dotnet-backend-publish-service-preview.md)]
 
-## Ausführen der Xamarin Android-App
+## Herunterladen und Ausführen der Xamarin.Android-App
 
-Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der neuen App.
+1. Klicken Sie unter **Herunterladen und Xamarin.Android-Projekt ausführen** auf die Schaltfläche **Herunterladen**.
 
-1. Navigieren Sie entweder in Visual Studio oder in Xamarin Studio zum Clientprojekt mit der mobilen App-Projektmappe.
+  	Dadurch wird ein Projekt heruntergeladen, das eine Clientanwendung enthält, die mit der mobilen App verbunden ist. Speichern Sie die komprimierte Projektdatei auf dem lokalen Computer und merken Sie sich, wo Sie sie gespeichert haben.
 
 	![][8]
 
 	![][9]
 
-2. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App zu starten. Sie werden zur Auswahl eines Emulators oder eines angeschlossenen USB-Geräts aufgefordert.
+2. Drücken Sie die **F5**-Taste, um das Projekt zu erstellen und die App zu starten.
 
-	> [AZURE.NOTE]Sie müssen mindestens ein Android Virtual Device \(AVD\) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
-
-3. Geben Sie in der App einen sinnvollen Text, wie z. B. _Tutorial fertigstellen_ ein, und klicken Sie dann auf das Plus-Symbol \(**+**\).
+3. Geben Sie in der App einen sinnvollen Text, wie z. B. _Tutorial fertigstellen_ ein, und klicken Sie dann auf die Schaltfläche **Hinzufügen**.
 
 	![][10]
 
-	Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden vom mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
+	Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
 
 	> [AZURE.NOTE]Sie können den Code überprüfen, der zum Abfragen und Einfügen von Daten auf das mobile App-Back-End zugreift. Der Code befindet sich in der C\#-Datei "ToDoActivity.cs".
 
+##Nächste Schritte
+
+* [Hinzufügen von Authentifizierung zur App](app-service-mobile-dotnet-backend-xamarin-android-get-started-users-preview.md) <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
 
 <!-- Images. -->
@@ -105,9 +95,10 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 <!-- URLs. -->
 [Azure-Portal]: https://azure.portal.com/
-[Xamarin Studio]: http://xamarin.com/download
+[Xamarin]: http://xamarin.com/download
 [Xcode]: https://go.microsoft.com/fwLink/?LinkID=266532&clcid=0x409
 [Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
  
+[Visual Studio Community 2013]: https://go.microsoft.com/fwLink/p/?LinkID=534203
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

@@ -1,7 +1,6 @@
 <properties
 	pageTitle="App-Modell v2.0 | Microsoft Azure"
-	description="Vorgehensweise beim Erstellen einer .NET-MVC-Web-App, die sowohl Token von persönlichen Microsoft-Konten als auch Geschäfts- oder Schulkonten akzeptiert."
-	that signs users in with both personal Microsoft Account and work or school accounts.
+	description="Vorgehensweise beim Erstellen einer .NET MVC-Web-App, bei der sich Benutzer sowohl mit ihrem persönlichen Microsoft-Konto als auch ihrem Geschäfts- oder Schulkonto anmelden können."
 	services="active-directory"
 	documentationCenter=".net"
 	authors="dstrockis"
@@ -202,4 +201,4 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 Weitere Ressourcen: - [Die App-Modell v2.0-Vorschauversion >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-"azure-active-directory"-Tag >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

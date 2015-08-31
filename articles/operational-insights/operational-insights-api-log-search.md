@@ -6,7 +6,6 @@
    authors="bandersmsft"
    manager="jwhit"
    editor="" />
-
 <tags
    ms.service="operational-insights"
    ms.devlang="na"
@@ -15,7 +14,6 @@
    ms.workload="tbd"
    ms.date="07/21/2015"
    ms.author="banders" />
-
 
 
 
@@ -348,4 +346,4 @@ Sie können die Start- und Endmarker angeben, die bei der Suche zum Einschließe
 
 Beachten Sie, dass das oben genannte Ergebnis eine Fehlermeldung enthält, die mit dem Präfix versehen und angefügt wurde.
 
-<!------HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

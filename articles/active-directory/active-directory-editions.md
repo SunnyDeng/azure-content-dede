@@ -1,22 +1,22 @@
 <properties
-	pageTitle="Azure Active Directory Editions"
+	pageTitle="Azure Active Directory-Editionen| Microsoft Azure"
 	description="In diesem Thema werden die Features und Unterschiede der kostenlosen und kostenpflichtigen Editions von Azure Active Directory beschrieben."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
-	manager="TerryLan"
+	manager="msStevenPo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
-	ms.workload="infrastructure-services"
+	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/01/2015"
+	ms.date="08/14/2015"
 	ms.author="curtand"/>
 
-# Azure Active Directory Editions
+# Azure Active Directory-Editionen
 
 Azure Active Directory ist ein Dienst, der umfassende Funktionen zur Identitäts- und Zugriffsverwaltung in der Cloud bietet. Er kombiniert Verzeichnisdienste, eine erweiterte Identitätsgovernance, Zugriffsverwaltung für Anwendungen und eine standardbasierte Plattform für Entwickler mit einem reichhaltigen Funktionsangebot. Weitere Informationen [erhalten Sie in diesem Video](http://azure.microsoft.com/documentation/videos/teched-europe-2014-cloud-identity-microsoft-azure-active-directory-explained/).
 
@@ -66,6 +66,7 @@ Die Active Directory Premium Edition ist ein kostenpflichtiges Angebot von Azure
 
 - **Kennwortrücksetzung mit Zurückschreiben** – Die Self-Service-Kennwortrücksetzung kann zurück in die lokalen Verzeichnisse geschrieben werden.
 
+- [Azure Active Directory Connect Health](https://msdn.microsoft.com/library/azure/dn906722.aspx): Überwachen Sie die Integrität Ihrer lokalen Active Directory-Infrastruktur, und rufen Sie Nutzungsanalysen ab.
 
 
 
@@ -98,6 +99,7 @@ Die Active Directory Premium Edition ist ein kostenpflichtiges Angebot von Azure
 - Erweiterte Berichte zur Anwendungsnutzung
 - Multi-Factor Authentication-Dienst für Cloudbenutzer
 - Multi-Factor Authentication-Server für lokale Benutzer
+- Azure Active Directory Connect Health
 
 ## Derzeit in öffentlicher Vorschau verfügbare Features
 
@@ -105,7 +107,6 @@ Die folgenden Features sind derzeit in öffentlicher Vorschau verfügbar und wer
 
 - [Verwaltungseinheiten](https://msdn.microsoft.com/library/azure/dn832057.aspx): ein neuer Azure Active Directory-Container mit Ressourcen, die zum Delegieren administrativer Berechtigungen und Anwenden von Richtlinien für bestimmte Benutzergruppen verwendet werden können.
 - [Hinzufügen eigener SaaS-Anwendungen](https://msdn.microsoft.com/library/azure/dn893637.aspx) zu Azure Active Directory.
-- [Azure Active Directory Connect Health](https://msdn.microsoft.com/library/azure/dn906722.aspx): Überwachen Sie die Integrität Ihrer lokalen Active Directory-Infrastruktur, und rufen Sie Nutzungsanalysen ab.
 - Kennwortrollover für Facebook, Twitter und LinkedIn; [hier finden Sie weitere Informationen](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)
 - Dynamische Gruppenmitgliedschaft. [hier finden Sie weitere Informationen](https://msdn.microsoft.com/library/azure/dn913807.aspx)
 - [Bedingter Zugriff](https://msdn.microsoft.com/library/azure/dn906877.aspx): Multi-Factor Authentication pro Anwendung.
@@ -120,6 +121,5 @@ Die folgenden Features sind derzeit in öffentlicher Vorschau verfügbar und wer
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 - [Anzeigen Ihrer Zugriffs- und Nutzungsberichte](active-directory-view-access-usage-reports.md)
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

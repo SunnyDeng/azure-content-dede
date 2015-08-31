@@ -1,18 +1,18 @@
 <properties 
-    pageTitle="Versionsanmerkungen zu Update 0.2 der StorSimple 8000-Serie – Januar 2015"
+    pageTitle="Versionsanmerkungen zu Update 0.2 der StorSimple 8000-Serie – Januar 2015 | Microsoft Azure"
     description="Beschreibt die neuen Features, Probleme und Problemumgehungen für die Microsoft Azure StorSimple-Version vom Januar 2015."
     services="storsimple"
     documentationCenter="NA"
     authors="SharS"
-    manager="adinah"
-    editor="tysonn" />
+    manager="carolz"
+    editor="" />
  <tags 
     ms.service="storsimple"
     ms.devlang="NA"
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="TBD"
-    ms.date="06/02/2015"
+    ms.date="08/19/2015"
     ms.author="v-sharos" />
 
 
@@ -27,10 +27,10 @@ Dieses Update ändert die Softwareversion des physischen Geräts nach dem Oktobe
 Lesen Sie die folgenden Informationen in den Versionshinweisen für das Update vom Januar 2015.
 
 > [AZURE.IMPORTANT]
-
-- Dieses Update ist nicht über Windows Update verfügbar und kann nicht wie andere Updates installiert werden. Ihr Gerät erhält dieses Update selbst dann nicht, wenn Sie die Updates über das Verwaltungsportals angewendet haben. Dieses Update gilt nur für virtuelle Geräte, die nach dem 20. Januar 2015 erstellt wurden. 
- 
-- Die Januar-Version von StorSimple enthält keine Updates des physischen StorSimple-Geräts. Sie können weiterhin alle verfügbaren Windows-Updates für das virtuelle Gerät, einschließlich der neuesten Sicherheitsupdates, anwenden, es wird aber keine Änderung der Version für das physische StorSimple-Gerät angezeigt.
+>
+>- Dieses Update ist nicht über Windows Update verfügbar und kann nicht wie andere Updates installiert werden. Ihr Gerät erhält dieses Update selbst dann nicht, wenn Sie die Updates über das Verwaltungsportals angewendet haben. Dieses Update gilt nur für virtuelle Geräte, die nach dem 20. Januar 2015 erstellt wurden. 
+> 
+>- Die Januar-Version von StorSimple enthält keine Updates des physischen StorSimple-Geräts. Sie können weiterhin alle verfügbaren Windows-Updates für das virtuelle Gerät, einschließlich der neuesten Sicherheitsupdates, anwenden, es wird aber keine Änderung der Version für das physische StorSimple-Gerät angezeigt.
 
 ## Neuigkeiten in der Januar-Version
 
@@ -60,7 +60,7 @@ Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in die
 |6|	Speicherkonten|Das Verwenden des Speicherdiensts zum Löschen des Speicherkontos wird nicht unterstützt. Dies führt dazu, dass keine Benutzerdaten abgerufen werden können.|| Ja |	Ja
 |7|Gerätefailover|	Mehrere Failover eines Volumecontainers von demselben Quellgerät auf verschiedene Zielgeräte werden nicht unterstützt.|	Das Failover von einem einzelnen nicht reagierenden Gerät auf mehrere Geräte führt dazu, dass die Volumecontainer auf dem ersten Gerät mit erfolgtem Failover die Dateneigentümerschaft verlieren. Nach einem solchen Failover werden diese Volumecontainer anders angezeigt oder verhalten sich anders bei der Anzeige im Verwaltungsportal.|Ja|Nein
 |8|	Installation|Während der Installation von StorSimple-Adapter für SharePoint müssen Sie die IP-Adresse eines Geräts angeben, damit die Installation erfolgreich abgeschlossen wird.||Ja|Nein
-|9|	Webproxy|Wenn Ihre Webproxykonfiguration das Protokoll "HTTPS" verwendet, ist die Kommunikation zwischen dem Gerät und dem Dienst beeinträchtigt, und das Gerät wird offline geschaltet. Supportpakete werden bei diesem Vorgang ebenfalls generiert. Sie beanspruchen auf Ihrem Gerät erhebliche Ressourcen.|Stellen Sie sicher, dass "HTTP" als Protokoll für die Webproxy-URL angegeben ist. Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](https://msdn.microsoft.com/library/azure/dn764937.aspx).|Ja |Nein
+|9|	Webproxy|Wenn Ihre Webproxykonfiguration das Protokoll "HTTPS" verwendet, ist die Kommunikation zwischen dem Gerät und dem Dienst beeinträchtigt, und das Gerät wird offline geschaltet. Supportpakete werden bei diesem Vorgang ebenfalls generiert. Sie beanspruchen auf Ihrem Gerät erhebliche Ressourcen.|Stellen Sie sicher, dass "HTTP" als Protokoll für die Webproxy-URL angegeben ist. Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](storsimple-configure-web-proxy.md).|Ja |Nein
 |10|Webproxy|	Wenn Sie den Webproxy für ein registriertes Gerät konfigurieren und aktivieren, müssen Sie den aktiven Controller auf Ihrem Gerät neu starten.||	Ja |Nein
 |11|Hohe Cloud-Latenzen und hohe E/A-Arbeitsauslastung|Wenn Ihr StorSimple-Gerät mit einer Kombination aus sehr hohen Cloud-Latenzen (mehrere Sekunden) und hoher E/A-Arbeitsauslastung konfrontiert wird, verschlechtert sich die Leistung der Gerätevolumes, und es tritt ggf. der E/A-Fehler "Gerät nicht bereit" auf.|Sie müssen die Gerätecontroller manuell neu starten oder ein Gerätefailover ausführen, um dieses Problem zu beheben.|Ja|Nein
 
@@ -72,10 +72,10 @@ Dieses Update enthält keine anderen Änderungen am StorSimple-Gerät.
 
 Diese Version enthält keine Updates für den SAS-Controller (Serial Attached SCSI) oder die Firmware. Das Treiberupdate wurde in der Version vom Oktober 2014 durchgeführt.
 
-## Updates für das virtuelle Gerät in der Januar-Version
+## Updates für virtuelle Geräte in der Version vom Januar
 
 Diese Version enthält ein aktualisiertes Image für das virtuelle Gerät. Für alle nach dem 20.01.2015 erstellten virtuellen Geräte wird die Version 6.3.9600.17361 angezeigt.
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

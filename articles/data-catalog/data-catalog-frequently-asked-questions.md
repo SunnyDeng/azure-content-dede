@@ -3,17 +3,18 @@
    description="Azure Data Catalog: Häufig gestellte Fragen"
    services="data-catalog"
    documentationCenter=""
-   authors="dvana"
-   manager="mblythe"
+   authors="steelanddata"
+   manager="NA"
    editor=""
-   tags=""/> <tags
+   tags=""/>
+<tags
    ms.service="data-catalog"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="07/13/2015"
-   ms.author="derrickv"/>
+   ms.date="08/19/2015"
+   ms.author="maroche"/>
 
 # Häufig gestellte Fragen zu Azure Data Catalog
 
@@ -61,16 +62,18 @@ Während der Preview-Phase unterstützt Azure Data Catalog die folgenden Ressour
 - SQL Server-Ansicht
 - SQL Server Analysis Services-Dimension
 - SQL Server Analysis Services-Measure
-- SQL Server Analysis Services-KPI 
+- SQL Server Analysis Services-KPI
 - SQL Server Analysis Services-Tabelle
 - SQL Server Reporting Services-Bericht  
 - Oracle Database-Tabelle
 - Oracle Database-Ansicht
+- Azure Storage-Blob
+- Azure-Speicherverzeichnis
 
 ## F: Wie fordere ich die Unterstützung für eine andere Datenquelle an?
 
 Für Anfragen zu Features und anderes Feedback können Sie das [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409) verwenden.
- 
+
 ## F: Wie beginne ich mit der Nutzung von Azure Data Catalog?
 
 Befolgen Sie am besten die Anleitung unter „Erste Schritte mit Data Catalog“. Dieser Artikel enthält eine umfassende Vorstellung der Funktionen, die in der öffentlichen Preview-Version enthalten sind.
@@ -86,7 +89,7 @@ Die spezifischen Eigenschaften variieren je nach Datenquelle, aber im Allgemeine
 - Ressourcenname
 - Ressourcentyp
 - Ressourcenbeschreibung
-- Namen von Attributen/Spalten 
+- Namen von Attributen/Spalten
 - Datentypen von Attributen/Spalten
 - Beschreibung von Attributen/Spalten
 
@@ -102,7 +105,7 @@ Nach dem Registrieren von Ressourcen mit **Azure Data Catalog** kann es 5 bis 1
 
 ## F: Wie kann ich die Metadaten für meine registrierten Datenressourcen mit Anmerkungen versehen und erweitern?
 
-Die einfachste Möglichkeit zum Angeben von Metadaten für registrierte Ressourcen ist das Auswählen der Ressource im **Azure Data Catalog**-Portal und das anschließende Eingeben der Metadatenwerte im Eigenschaftenbereich oder Schemabereich für das ausgewählte Objekt.
+Die einfachste Möglichkeit zum Angeben von Metadaten für registrierte Ressourcen ist das Auswählen der Ressource im **Azure Data Catalog**-Portal und das anschließende Eingeben der Metadatenwerte im Eigenschaften- oder Schemabereich für das ausgewählte Objekt.
 
 Sie können auch während des Registrierungsvorgangs einige Metadaten angeben, z. B. Experten und Tags. Die im **Azure Data Catalog**-Veröffentlichungsdienst angegebenen Werte gelten für alle Ressourcen, die zum jeweiligen Zeitpunkt registriert werden. Um die zuletzt registrierten Objekte im Portal zum Hinzufügen zusätzlicher Anmerkungen anzuzeigen, wählen Sie auf dem letzten Bildschirm der **Azure Data Catalog**-Veröffentlichungsanwendung die Schaltfläche **Portal anzeigen**.
 
@@ -122,7 +125,7 @@ Während der Preview-Phase für **Azure Data Catalog** gilt keine besondere Vere
 
 Nutzen Sie das **Azure Data Catalog**-Forum, um Probleme zu melden, Informationen bereitzustellen und Fragen zu stellen. Sie finden das Forum unter http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409.
 
-##F: Funktioniert Azure Data Catalog auch mit anderen Datenquellen, an denen ich interessiert bin? 
+##F: Funktioniert Azure Data Catalog auch mit anderen Datenquellen, an denen ich interessiert bin?
 Wir arbeiten aktiv daran, **Azure Data Catalog** weitere Datenquellen hinzuzufügen. Wenn Sie sich für eine bestimmte Datenquelle Unterstützung wünschen, können Sie dies im [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409) vorschlagen (oder eine ggf. bereits vorhandene Anfrage unterstützen).
 
 ## F: Welche Verbindung besteht zwischen Azure Data Catalog und Data Catalog in Power BI für Office 365?
@@ -157,4 +160,4 @@ Wenn Probleme auftreten oder falls Sie Hilfe mit der Preview-Version von Azure D
 
 Wechseln Sie in das [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409). Fragen, die dort gestellt werden, werden in diesen Artikel aufgenommen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

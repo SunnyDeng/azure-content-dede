@@ -12,7 +12,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/12/2015"
+   ms.date="08/14/2015"
    ms.author="alkohli" />
 
 # Bereitstellen lokaler StorSimple-Geräte
@@ -123,15 +123,15 @@ Stellen Sie vor der Konfiguration des Geräts Folgendes sicher:
 
 - Ihr Gerät wurde vollständig ausgepackt, in einem Rack installiert und für Stromversorgung, Netzwerk- und seriellen Zugriff verkabelt, wie in folgenden Themen beschrieben:
 
-	-  [Auspacken des 8100-Geräts](storsimple-8100-hardware-installation.md)
-	-  [Auspacken des 8600-Geräts](storsimple-8600-hardware-installation.md)
+	-  [Auspacken, Einsetzen und Verkabeln – 8100-Gerät](storsimple-8100-hardware-installation.md)
+	-  [Auspacken, Einsetzen und Verkabeln – 8600-Gerät](storsimple-8600-hardware-installation.md)
 
 
 ### Für das Netzwerk im Datencenter
 
 Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
-- Die Ports in der Datencenter-Firewall werden geöffnet, um iSCSI- und Cloud-Datenverkehr zu ermöglichen, wie in [Netzwerkanforderungen für das StorSimple-Gerät]() beschrieben.
+- Die Ports in der Datencenter-Firewall werden geöffnet, um iSCSI- und Cloud-Datenverkehr zu ermöglichen, wie in [Netzwerkanforderungen für das StorSimple-Gerät](storsimple-system-requirements.md#networking-requirements-for-your-storsimple-device) beschrieben.
 - Das Gerät in Ihrem Datencenter kann eine Verbindung zum externen Netzwerk herstellen. Führen Sie folgende [Windows PowerShell 4.0](http://www.microsoft.com/download/details.aspx?id=40855)-Cmdlets (siehe unten stehende Tabelle) aus, um die Verbindung zum externen Netzwerk zu überprüfen. Führen Sie diese Überprüfung auf einem Computer (im Datencenternetzwerk) mit Verbindung zu Azure und an dem Standort durch, an dem Sie das StorSimple-Gerät bereitstellen.  
 
 | Parameter | Gültigkeitsprüfung | Ausführung dieser Befehle/Cmdlets |
@@ -139,14 +139,14 @@ Stellen Sie Folgendes sicher, bevor Sie beginnen:
 | **IP-**</br>Subnetz</br>-gateway | Ist dies eine gültige IPv4- oder IPv6-Adresse?</br>Ist dies ein gültiges Subnetz?</br>Ist dies ein gültiges Gateway?</br>Ist dies eine doppelte IP im Netzwerk? | `ping ip`</br>`arp -a`</br>Die Befehle `ping` und `arp` sollten einen Fehler zurückgeben mit dem Hinweis, dass kein Gerät im Datencenternetzwerk diese IP-Adresse verwendet.
 | | | |
 | **DNS** | Ist dies ein gültiges DNS, das Azure-URLs auflösen kann? | `Resolve-DnsName -Name www.bing.com -Server <DNS server IP address>` </br>Alternativ kann folgender Befehl verwendet werden:</br>`nslookup --dns-ip=<DNS server IP address> www.bing.com` |
-| | Prüfen Sie, ob Port 53 offen ist. Dies gilt nur, wenn Sie ein externes DNS für Ihr Gerät verwenden. Das interne DNS sollte die externen URLs automatisch auflösen. | `Test-Port -comp dc1 -port 53 -udp -UDPtimeout 10000` </br>[Weitere Informationen zu diesem Cmdlet]()|
+| | Prüfen Sie, ob Port 53 offen ist. Dies gilt nur, wenn Sie ein externes DNS für Ihr Gerät verwenden. Das interne DNS sollte die externen URLs automatisch auflösen. | `Test-Port -comp dc1 -port 53 -udp -UDPtimeout 10000` </br>[Weitere Informationen zu diesem Cmdlet](http://learn-powershell.net/2011/02/21/querying-udp-ports-with-powershell/)|
 | | | |
-| **NTP** | Wir lösen eine Zeitsynchronisierung aus, sobald der NTP-Server eingegeben wird. Prüfen Sie, ob UDP-Port 123 offen ist, wenn Sie `time.windows.com` oder öffentliche Zeitserver eingeben. | [Laden Sie dieses Skript herunter, und verwenden Sie es](). |
+| **NTP** | Wir lösen eine Zeitsynchronisierung aus, sobald der NTP-Server eingegeben wird. Prüfen Sie, ob UDP-Port 123 offen ist, wenn Sie `time.windows.com` oder öffentliche Zeitserver eingeben. | [Laden Sie dieses Skript herunter, und verwenden Sie es](https://gallery.technet.microsoft.com/scriptcenter/Get-Network-NTP-Time-with-07b216ca). |
 | | | |
-| **Proxy (optional)** | Ist dies ein gültiger Proxy-URI und -Port? </br> Ist der Authentifizierungsmodus korrekt? | `wget http://bing.com % {$_.StatusCode}`</br>Dieser Befehl sollte unmittelbar nach der Konfiguration des Webproxy ausgeführt werden. Wenn "200" zurückgegeben wird, weist dies darauf hin, dass die Verbindung erfolgreich hergestellt wurde. |
+| **Proxy (optional)** | Ist dies ein gültiger Proxy-URI und -Port? </br> Ist der Authentifizierungsmodus korrekt? | <code>wget http://bing.com &#124; % {$\_.StatusCode}</code></br>Dieser Befehl sollte unmittelbar nach der Konfiguration des Webproxys ausgeführt werden. Wenn der Statuscode "200" zurückgegeben wird, weist dies darauf hin, dass die Verbindung erfolgreich hergestellt wurde. |
 | | Kann der Datenverkehr durch den Proxy geroutet werden? | Führen Sie die DNS-, NTP- oder HTTP-Überprüfung einmal nach der Konfiguration der Proxyeinstellungen auf Ihrem Gerät aus. So erhalten Sie genaue Informationen darüber, ob Datenverkehr im Proxy oder an anderer Stelle blockiert wird. |
 | | | |
-| **Registrierung** | Prüfen Sie, ob die ausgehenden TCP-Ports 443, 80 und 9354 offen sind. | `Test-NetConnection -Port   443 -InformationLevel Detailed`</br>[Weitere Informationen zum Cmdlet "Test-NetConnection"]() |
+| **Registrierung** | Prüfen Sie, ob die ausgehenden TCP-Ports 443, 80 und 9354 offen sind. | `Test-NetConnection -Port   443 -InformationLevel Detailed`</br>[Weitere Informationen zum Cmdlet "Test-NetConnection"](https://technet.microsoft.com/library/dn372891.aspx) |
 
 ## Schrittweise Bereitstellung
 
@@ -164,7 +164,7 @@ Führen Sie die folgenden Schritte aus, um einen neuen StorSimple-Manager-Dienst
 
 > [AZURE.IMPORTANT]Wenn Sie nicht die automatische Erstellung eines Speicherkontos mit Ihrem Dienst aktiviert haben, müssen Sie mindestens ein Speicherkonto erstellen, nachdem Sie einen Dienst erstellt haben. Dieses Speicherkonto wird beim Erstellen eines Volumecontainers verwendet.
 >
-> Wenn Sie nicht automatisch ein Speicherkonto erstellt haben, finden Sie unter [Konfigurieren eines neuen Speicherkontos für den Dienst](#Configure-a-new-storage-account-for-the-service) ausführliche Anweisungen. Wenn Sie die automatische Erstellung eines Speicherkontos aktiviert haben, fahren Sie mit [Schritt 2: Abrufen des Dienstregistrierungsschlüssels](#step-2:-get-the-service-registration-key) fort.
+> Wenn Sie nicht automatisch ein Speicherkonto erstellt haben, finden Sie unter [Konfigurieren eines neuen Speicherkontos für den Dienst](#configure-a-new-storage-account-for-the-service) ausführliche Anweisungen. Wenn Sie die automatische Erstellung eines Speicherkontos aktiviert haben, fahren Sie mit [Schritt 2: Abrufen des Dienstregistrierungsschlüssels](#step-2:-get-the-service-registration-key) fort.
 
 ## Schritt 2: Abrufen des Dienstregistrierungsschlüssels
 
@@ -242,7 +242,7 @@ Dies ist ein optionaler Schritt, den Sie nur dann ausführen müssen, wenn Sie n
 
 Wenn Sie ein Azure-Speicherkonto in einer anderen Region erstellen müssen, finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md) schrittweise Anweisungen.
 
-Führen Sie die folgenden Schritte im Azure-Portal auf der Seite für den **StorSimple Manager-Dienst** aus.
+Führen Sie die folgenden Schritte im Azure-Portal auf der Seite **StorSimple Manager-Dienst** aus.
 
 [AZURE.INCLUDE [storsimple-configure-new-storage-account](../../includes/storsimple-configure-new-storage-account.md)]
 
@@ -261,7 +261,7 @@ Die Aktualisierung eines Geräts kann zwischen einer und vier Stunden dauern. F�
 
 #### So aktualisieren Sie Ihr Gerät
 1.	Klicken Sie auf der Seite **Schnellstart** für das Gerät auf **Geräte**. Wählen Sie das physische Gerät aus, klicken Sie auf **Wartung**, und klicken Sie dann auf **Updates scannen**.  
-2.	Für die Suche nach verfügbaren Updates wird ein Auftrag erstellt. Wenn Updates verfügbar sind, ändert sich die Option **Updates scannen** zu **Updates installieren**. Klicken Sie auf **Updates installieren**. Möglicherweise werden Sie dazu aufgefordert, DATA 2 und DATA 3 vor der Installation der Updates zu deaktivieren. Sie müssen diese Netzwerkschnittstellen deaktivieren, da die Updates sonst nicht installiert werden können.
+2.	Für die Suche nach verfügbaren Updates wird ein Auftrag erstellt. Wenn Updates verfügbar sind, ändert sich die Option **Updates scannen** in **Updates installieren**. Klicken Sie auf **Updates installieren**. Möglicherweise werden Sie dazu aufgefordert, DATA 2 und DATA 3 vor der Installation der Updates zu deaktivieren. Sie müssen diese Netzwerkschnittstellen deaktivieren, da die Updates sonst nicht installiert werden können.
 3.	Es wird ein Updateauftrag erstellt. Überwachen Sie den Status Ihres Updates, indem Sie zu **Aufträge** wechseln.
 
 	> [AZURE.NOTE]Wenn der Updateauftrag startet, wird der Status sofort mit 50 Prozent angezeigt. Der Status ändert sich erst zu 100 Prozent, wenn der Updateauftrag abgeschlossen ist. Für den Updateprozess gibt es keinen Echtzeitstatus.
@@ -290,4 +290,4 @@ Führen Sie die folgenden Schritte im Azure-Portal aus, um bei Bedarf eine manue
 
 - Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

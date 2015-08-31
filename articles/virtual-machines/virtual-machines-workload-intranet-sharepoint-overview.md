@@ -70,4 +70,6 @@ Zum Starten der Konfiguration für diese Arbeitsauslastung gehen Sie zu [Phase 1
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=August15_HO6-->
+[Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
+
+<!---HONumber=August15_HO8-->

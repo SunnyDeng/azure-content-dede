@@ -1,23 +1,21 @@
 <properties
 	pageTitle="Erste Schritte mit einem Hadoop-Emulator für HDInsight | Microsoft Azure"
 	description="Probieren Sie einen installierten Emulator mithilfe eines MapReduce-Lernprogramms und anderer Beispiele aus, um das Hadoop-Ökosystem kennenzulernen. Der HDInsight-Emulator verhält sich wie eine Hadoop-Sandbox."
-	keywords="emulator,hadoop ecosystem,hadoop sandbox,mapreduce tutorial"
 	editor="cgronlun"
 	manager="paulettm"
 	services="hdinsight"
 	authors="nitinme"
-	documentationCenter=""/>
-
+	documentationCenter=""
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
 	ms.workload="big-data"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article" 
-	ms.date="05/07/2015"
+	ms.topic="article" 
+	ms.date="08/07/2015"
 	ms.author="nitinme"/>
-
 
 # Erste Schritte im Hadoop-Ökosystem mit dem HDInsight-Emulator (einer Hadoop-Sandbox)
 
@@ -112,7 +110,7 @@ Sobald die Verbindung erfolgreich hergestellt wurde, können Sie die HDInsight V
 
 1. Zum Herstellen einer Verbindung mit dem HDInsight-Emulator müssen Sie, obwohl das Dialogfeld zeigt, dass "HiveServer2" erfolgreich eine Verbindung hergestellt hat, in der Hive-Konfigurationsdatei "C:\\hdp\\hive-*version*\\conf\\hive-site.xml" die Eigenschaft **hive.security.authorization.enabled** manuell auf **false** festlegen und dann den lokalen Emulator neu starten. Die HDInsight-Tools für Visual Studio stellen nur dann eine Verbindung mit "HiveServer2" her, wenn die obersten 100 Zeilen der Tabelle in der Vorschau angezeigt werden. Wenn Sie eine solche Abfrage nicht beabsichtigen, belassen Sie die Hive-Konfiguration unverändert.
 
-2. Wenn Sie dynamische IP-Zuweisung (DHCP) auf dem Computer mit dem HDInsight-Emulator verwenden, müssen Sie möglicherweise die Datei "C:\\hdp\\hadoop-*Version*\\etc\\hadoop\\core-site.xml" aktualisieren, indem Sie den Wert der Eigenschaft **hadoop.proxyuser.hadoop.hosts** in (\*) ändern. Dies ermöglicht Hadoop-Benutzern das Herstellen einer Verbindung von allen Hosts aus, um die Identität des Benutzers übernehmen, den Sie in Visual Studio eingegeben haben.
+2. Wenn Sie dynamische IP-Zuweisung (DHCP) auf dem Computer mit dem HDInsight-Emulator verwenden, müssen Sie möglicherweise die Datei "C:\\hdp\\hadoop-*Version*\\etc\\hadoop\\core-site.xml" aktualisieren, indem Sie den Wert der Eigenschaft **hadoop.proxyuser.hadoop.hosts** in (*) ändern. Dies ermöglicht Hadoop-Benutzern das Herstellen einer Verbindung von allen Hosts aus, um die Identität des Benutzers übernehmen, den Sie in Visual Studio eingegeben haben.
 
 		<property>
 			<name>hadoop.proxyuser.hadoop.hosts</name>
@@ -129,8 +127,8 @@ Das MapReduce-Programm zum Zählen von Wörtern befindet sich in der Datei *hado
 
 Der MapReduce-Job zum Zählen von Wörtern hat zwei Argumente:
 
-- Ein Eingabeordner. Verwenden Sie \**hdfs://localhost/user/HDIUser* als Eingabeordner.
-- Ein Ausgabeordner. Verwenden Sie \**hdfs://localhost/user/HDIUser/WordCount_Output* als Ausgabeordner. Der Ausgabeordner darf kein bereits vorhandener Ordner sein, weil andernfalls der MapReduce-Auftrag misslingt. Wenn Sie den MapReduce-Job zum zweiten Mal ausführen möchten, müssen Sie entweder einen anderen Ausgabeordner angeben oder den vorhandenen Ausgabeordner löschen.
+- Ein Eingabeordner. Verwenden Sie **hdfs://localhost/user/HDIUser* als Eingabeordner.
+- Ein Ausgabeordner. Verwenden Sie **hdfs://localhost/user/HDIUser/WordCount_Output* als Ausgabeordner. Der Ausgabeordner darf kein bereits vorhandener Ordner sein, weil andernfalls der MapReduce-Auftrag misslingt. Wenn Sie den MapReduce-Job zum zweiten Mal ausführen möchten, müssen Sie entweder einen anderen Ausgabeordner angeben oder den vorhandenen Ausgabeordner löschen.
 
 **So führen Sie den MapReduce-Auftrag zum Zählen von Wörtern aus**
 
@@ -149,7 +147,7 @@ Der MapReduce-Job zum Zählen von Wörtern hat zwei Argumente:
 
 3. Führen Sie den folgenden Hadoop-Befehl aus, um einige lokale Textdateien nach HDFS zu kopieren:
 
-		hadoop fs -copyFromLocal C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common\*.txt /user/HDIUser
+		hadoop fs -copyFromLocal C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common*.txt /user/HDIUser
 
 4. Führen Sie den folgenden Befehl aus, um die Dateien im Ordner "/user/HDIUser" aufzulisten:
 
@@ -398,13 +396,17 @@ Sie benötigen ein Speicherkonto, um die folgenden Schritte ausführen zu könne
 
 **So erstellen Sie einen Container**
 
-1. Melden Sie sich beim [Azure-Portal][azure-management-portal] an.
-2. Klicken Sie auf der linken Seite auf **Speicher**. Eine Liste der Speicherkonten für Ihr Abonnement wird angezeigt.
-3. Klicken Sie auf das Speicherkonto in der Liste, für das Sie den Container erstellen möchten.
-4. Klicken Sie oben auf der Seite auf **Container**.
-5. Klicken Sie unten auf der Seite auf **Hinzufügen**.
-6. Geben Sie den **Namen** ein, und wählen Sie **Zugriff** aus. Sie können jede der drei Zugriffsstufen verwenden. Die Standardstufe ist **Privat**.
-7. Klicken Sie zum Speichern der Änderungen auf **OK**. Der neue Container wird jetzt im Portal aufgeführt.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an.
+2. Klicken Sie auf der linken Seite auf **NEU**, auf **Daten + Speicher** und anschließend auf **Speicher**.
+3. Konfigurieren Sie auf dem Blatt „Speicherkonto“ die Eigenschaften wie im folgenden Screenshot dargestellt.
+	
+	![Speicherkonto erstellen](./media/hdinsight-hadoop-emulator-get-started/hdi.emulator.create.storage.png)
+
+	Wählen Sie **An Startmenü anheften**, und klicken Sie auf **Erstellen**.
+4. Nachdem das Speicherkonto erstellt wurde, klicken Sie auf dem Blatt „Neues Speicherkonto“ auf **Container**, um das Blatt „Container“ zu öffnen, und klicken Sie auf **Hinzufügen**.
+5. Geben Sie den Namen des Containers ein, und klicken Sie dann auf **Auswählen**.
+
+	![Erstellen eines Containers](./media/hdinsight-hadoop-emulator-get-started/hdi.emulator.create.container.png)
 
 Bevor Sie auf ein Azure-Speicherkonto zugreifen können, müssen Sie der Konfigurationsdatei den Kontonamen und den Kontoschlüssel hinzufügen.
 
@@ -451,7 +453,7 @@ Nachfolgend finden Sie ein Beispiel für die Übermittlung eines Hadoop-Jobs:
 	$hdinsightJob = <JobDefinition>
 	Start-AzureHDInsightJob -Cluster http://localhost:50111 -Credential $creds -JobDefinition $hdinsightJob
 
-Sie werden zu einer Eingabe aufgefordert, wenn Sie Get-Credential aufrufen. Sie müssen **hadoop** als Benutzernamen verwenden. Das Kennwort kann eine beliebige Zeichenfolge sein. Der Clustername ist stets \*\***http://localhost:50111**.
+Sie werden zu einer Eingabe aufgefordert, wenn Sie Get-Credential aufrufen. Sie müssen **hadoop** als Benutzernamen verwenden. Das Kennwort kann eine beliebige Zeichenfolge sein. Der Clustername ist immer „****http://localhost:50111**“.
 
 Weitere Informationen zur Übermittlung von Hadoop-Aufträgen finden Sie unter [Programmgesteuerte Übermittlung von Hadoop-Aufträgen](hdinsight-submit-hadoop-jobs-programmatically.md). Weitere Informationen zu den Azure PowerShell-Cmdlets für HDInsight finden Sie unter [HDInsight-Cmdlet-Referenz][hdinsight-powershell-reference].
 
@@ -495,4 +497,4 @@ In diesem Lernprogramm zu MapReduce haben Sie den HDInsight-Emulator – eine Ha
 [image-hdi-emulator-services]: ./media/hdinsight-hadoop-emulator-get-started/HDI.Emulator.Services.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

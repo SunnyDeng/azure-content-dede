@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="05/15/2015" 
+	ms.date="08/18/2015" 
 	ms.author="ricksal"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen Android-App
@@ -101,7 +101,7 @@ Damit ist das Android-Lernprogramm **Erste Schritte mit Daten** abgeschlossen.
 
 ## Ältere Codeversionen
 
-Die Eclipse-Version dieses Lernprogramms finden Sie unter [Erste Schritte mit Daten in Eclipse](mobile-services-android-get-started-data-EC.md).
+Die Eclipse-Version dieses Lernprogramms finden Sie unter [Erste Schritte mit Daten in Eclipse](mobile-services-android-get-started-data-ec.md).
 
 Eine vollständige Version des Quellcodes in einem Eclipse-Projekt finden Sie <a href="https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithData/Android">hier</a>.
 
@@ -156,4 +156,4 @@ Nach Abschluss der Daten-Lernprogramme können Sie diese anderen Android-Lernpro
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

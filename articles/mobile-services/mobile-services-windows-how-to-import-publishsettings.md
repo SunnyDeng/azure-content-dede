@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Importieren der Datei mit Veröffentlichungseinstellungen in Visual Studio 2013 | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie eine Datei mit Abonnementveröffentlichungseinstellungen für Ihre Azure Mobile Services-Anwendung in Visual Studio 2013 importieren." 
-	documentationCenter="" 
-	services="mobile-services" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="Importieren der Datei mit Veröffentlichungseinstellungen in Visual Studio 2013 | Microsoft Azure"
+	description="Erfahren Sie, wie Sie eine Datei mit Abonnementveröffentlichungseinstellungen für Ihre Azure Mobile Services-Anwendung in Visual Studio 2013 importieren."
+	documentationCenter=""
+	services="mobile-services"
+	manager="dwrede"
+	editor=""
 	authors="ggailey777"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="04/13/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="08/18/2015" 
 	ms.author="glenga"/>
 
 # Importieren Ihrer Abonnementdatei mit Veröffentlichungseinstellungen in Visual Studio 2013
@@ -22,7 +22,7 @@ Bevor Sie den mobilen Dienst erstellen können, müssen Sie die .publishsettings
 
 >[AZURE.NOTE]Ab Visual Studio 2013 Update 2 müssen Sie keine Datei mit Veröffentlichungseinstellungen mehr verwenden. Visual Studio kann über die von Ihnen bereitgestellten Anmeldeinformationen eine direkte Verbindung mit Azure herstellen.
 
-1. Öffnen Sie den Projektmappen-Explorer in Visual Studio 2013, klicken Sie mit der rechten Maustaste auf das Projekt, klicken Sie auf **Hinzufügen** und dann auf **Verbundener Dienst**. 
+1. Öffnen Sie den Projektmappen-Explorer in Visual Studio 2013, klicken Sie mit der rechten Maustaste auf das Projekt, klicken Sie auf **Hinzufügen** und dann auf **Verbundener Dienst**.
 
 	![verbundenen Dienst hinzufügen](./media/mobile-services-windows-how-to-import-publishsettings/mobile-add-connected-service.png)
 
@@ -60,6 +60,5 @@ Bevor Sie den mobilen Dienst erstellen können, müssen Sie die .publishsettings
 [JavaScript and HTML]: /develop/mobile/tutorials/get-started-with-users-js/
 
 [Azure Management Portal]: https://manage.windowsazure.com/
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

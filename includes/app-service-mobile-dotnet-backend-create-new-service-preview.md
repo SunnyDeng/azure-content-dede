@@ -1,44 +1,38 @@
 
 
-Führen Sie die folgenden Schritte aus, um eine neue mobile App zu erstellen.
+Führen Sie die folgenden Schritte aus, um ein neues mobiles App-Back-End zu erstellen.
 
-1. Melden Sie sich beim [Azure-Portal] an. Klicken Sie unten links im Fenster auf **+NEU**. Führen Sie einen Bildlauf aus bis Sie das Element **Mobile App** angezeigt wird.
+1. Melden Sie sich beim [Azure-Portal] an.
 
-    ![](./media/app-service-mobile-dotnet-backend-create-new-service-preview/new-mobile-app.png)
+2. Klicken Sie oben links im Fenster auf **+NEU** > **Web und mobil** > **Mobile App**, und geben Sie dann einen Namen für Ihr mobiles App-Back-End an.
 
-    Dies zeigt das Blatt **Neue Mobile App** an.
+3. Geben Sie im Feld **Ressourcengruppe** den gleichen Namen wie für Ihre App ein.
 
-2. Geben Sie einen Namen für die mobile App ein. Er muss mindestens 8 Zeichen lang sein und die Kleinbuchstaben (a bis z) enthalten.
+4. Es wird der App Service-Tarif "Standard" ausgewählt. Wenn Sie Ihren App Service-Tarif ändern möchten, klicken Sie dazu auf App Services-Plan > **+ Neu erstellen**. Geben Sie einen Namen für den neuen App Service-Tarif ein, und wählen Sie einen geeigneten Speicherort. Klicken Sie auf den Tarif, und wählen Sie einen geeigneten Tarif für den Dienst. Wählen Sie **Alle anzeigen** aus, um mehr Tarifoptionen anzuzeigen, z. B. **Free** und **Shared**. Nachdem Sie den Tarif ausgewählt haben, klicken Sie auf die Schaltfläche **Auswählen**. Klicken Sie wieder auf dem Blatt **App Service-Plan** auf **OK**.
 
-7. Wählen Sie eine Region aus. In diesem Lernprogramm verwenden wir **USA, Süden-Mitte**.
+5. Klicken Sie auf **Erstellen**. Damit erstellen Sie ein mobiles App-Back-End, auf dem Sie später das Serverprojekt bereitstellen. Das Bereitstellen eines mobilen App-Back-Ends kann einige Minuten in Anspruch nehmen. Nachdem das mobile App-Back-End bereitgestellt wurde, wird im Portal das Blatt **Einstellungen** für das mobile App-Back-End geöffnet. Im nächsten Schritt erstellen Sie eine neue SQL-Datenbank.
 
-    > [AZURE.NOTE]Im Rahmen dieses Lernprogramms erstellen Sie eine neue SQL-Datenbankinstanz und einen neuen SQL-Datenbankserver. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Wenn Sie bereits über eine Datenbank in derselben Region wie der des neuen mobilen App-Back-Ends verfügen, können Sie stattdessen **Vorhandene Datenbank verwenden** wählen und dann diese Datenbank auswählen. Die Verwendung einer Datenbank in einer anderen Region wird nicht empfohlen, da zusätzliche Kosten für Bandbreite anfallen können und es zu höherer Latenz kommen kann.
+    > [AZURE.NOTE]Im Rahmen dieses Lernprogramms erstellen Sie eine neue SQL-Datenbankinstanz und einen neuen SQL-Datenbankserver. Sie können diese neue Datenbank wiederverwenden und wie jede andere SQL-Datenbankinstanz verwalten. Wenn Sie bereits über eine Datenbank an demselben Standort wie dem des neuen mobilen App-Back-Ends verfügen, können Sie stattdessen **Vorhandene Datenbank verwenden** wählen und dann diese Datenbank auswählen. Die Verwendung einer Datenbank an einem anderen Standort wird nicht empfohlen, da zusätzliche Kosten für Bandbreite anfallen können und es zu höherer Latenz kommen kann.
 
-3. Wählen Sie Ihr Abonnement aus.
+6. Klicken Sie im neuen mobilen App-Back-End auf **Einstellungen** > **Mobile App** > **Daten** > **+Hinzufügen**.
 
-4. Erstellen Sie eine neue Ressourcengruppe mit demselben Namen wie Ihre mobile App.
+7. Klicken Sie auf dem Blatt **Add data connection** auf **SQL-Datenbank – Erforderliche Einstellungen konfigurieren** > **Neue Datenbank erstellen**. Geben Sie den Namen der neuen Datenbank in das Feld **Name** ein.
 
-5. Wählen Sie in **Paketeinstellungen** die Option **USERDATABASE** aus. Sie können eine vorhandene Datenbank auswählen oder eine neue erstellen. Für das Erstellen einer neuen Datenbank geben Sie den Namen der neuen **Datenbank** ein, erstellen einen neuen **Server**, geben den Namen des Servers ein und wählen dann einen **Anmeldenamen** aus. Dies ist der Administratoranmeldename für den neuen SQL-Datenbankserver. Geben Sie das Kennwort ein, und bestätigen Sie es, und klicken Sie auf die Schaltfläche "OK", um den Vorgang abzuschließen. Wenn Sie eine vorhandene Datenbank auswählen, müssen Sie ein **Kennwort für den Serveradministrator** angeben.
+8. Klicken Sie auf **Server**. Geben Sie auf dem Blatt **Neuer Server** in **Servername** einen eindeutigen Namen ein, und legen Sie einen geeigneten **Server admin login** mit einem **Kennwort** an. Stellen Sie sicher, dass **Allow azure services to access server** aktiviert ist. Klicken Sie auf **OK**.
 
     ![](./media/app-service-mobile-dotnet-backend-create-new-service-preview/dotnet-backend-create-db.png)
 
-6. Erstellen Sie einen neuen Webhostingplan mit demselben Namen wie Ihre mobile App.
+9. Klicken Sie auf dem Blatt **Neue Datenbank** auf **OK**.
 
-    > [AZURE.NOTE]Geben Sie den Namen Ihres Webhostingplans ein. Verwenden Sie hierzu nicht das Kopieren und Einfügen. Es erfolgt eine Überprüfung des Namens in diesem Feld, die fehlschlägt, wenn Sie den Namen nicht eingeben. Er muss nicht mit dem Namen der Website übereinstimmen (es müssen jedoch dieselben Regeln befolgt werden).
+10. Wählen Sie auf dem Blatt **Add data connection** die **Verbindungszeichenfolge** aus, und geben Sie den Anmeldenamen und das Kennwort ein, das Sie gerade beim Erstellen der Datenbank angegeben haben. Wenn Sie eine vorhandene Datenbank verwenden, geben Sie die Anmeldeinformationen für diese Datenbank an. Klicken Sie nach der Eingabe auf **OK**.
 
-8. Wählen Sie einen Tarif. In diesem Lernprogramm verwenden wir **Standard 1**.
+11. Klicken Sie auf dem Blatt **Add data connection** auf **OK**, um die Datenbank zu erstellen.
 
-    Die Einstellungsseite Ihrer neuen mobilen App wird in etwa wie folgt aussehen:
+Das Erstellen der Datenbank kann einige Minuten dauern. Im Bereich **Benachrichtigungen** können Sie den Fortschritt der Bereitstellung überwachen. Fahren Sie erst fort, wenn die Datenbank erfolgreich bereitgestellt wurde.
 
-    ![](./media/app-service-mobile-dotnet-backend-create-new-service-preview/dotnet-backend-create.png)
-
-9. Klicken Sie auf die Schaltfläche **Erstellen** am unteren Rand des Blatts. Dort sollte im Benachrichtigungsfenster der Start der Bereitstellung angezeigt werden.
-
-Sie haben nun ein neues mobiles App-Back-End erstellt, das Sie mit Ihren mobilen Apps verwenden können.
-
-> [AZURE.NOTE]Nachdem die mobile App erstellt wurde, navigieren Sie im Portal zum gerade erstellten SQL-Server (wählen Sie unbedingt den Server aus, nicht die Azure SQL-Datenbank). Klicken Sie dort auf den Einstellungsabschnitt, erweitern Sie den Firewall-Bereich, und ändern Sie "Zugriff auf Azure-Dienste zulassen". Wenn Sie dies nicht tun, funktioniert die App nicht.
+Sie haben nun ein Azure-Back-End für mobile Apps bereitgestellt, das von Ihren mobilen Clientanwendungen verwendet werden kann. Als Nächstes laden Sie ein Serverprojekt für ein einfaches "Aufgabenlisten"-Back-End herunter und veröffentlichen es in Azure.
 
 <!-- URLs. -->
 [Azure-Portal]: https://portal.azure.com/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

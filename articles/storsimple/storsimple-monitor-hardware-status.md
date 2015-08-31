@@ -1,18 +1,18 @@
 <properties 
-   pageTitle="StorSimple-Hardwarekomponenten und Status"
+   pageTitle="StorSimple-Hardwarekomponenten und Status | Microsoft Azure"
    description="Hier erfahren Sie, wie Sie mithilfe des StorSimple Manager-Diensts die Hardwarekomponenten Ihres StorSimple-Geräts überwachen."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
-   editor="tysonn" />
+   editor="" />
 <tags 
    ms.service="storsimple"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/31/2015"
+   ms.date="08/14/2015"
    ms.author="alkohli" />
 
 # StorSimple-Hardwarekomponenten und Status
@@ -45,14 +45,14 @@ Ein Gerät vom Typ 8600 verfügt über zusätzliche Komponenten für das EBOD-G
 Führen Sie die folgenden Schritte aus, um den Hardwarestatus einer Gerätekomponente anzuzeigen:
 
 1. Navigieren Sie zu **Geräte**, und wählen Sie ein bestimmtes StorSimple-Gerät aus. Klicken Sie im Menü auf Geräteebene auf die Registerkarte **Wartung**. 
-2. Navigieren Sie zum Abschnitt **Hardwarestatus**, und wählen Sie eine der verfügbaren Komponenten aus, die weiter oben beschrieben wurden. Klicken Sie einfach auf den Pfeil vor einer Komponentenbezeichnung, um die Liste zu erweitern und den Status der verschiedenen Gerätekomponenten anzuzeigen. Weitere Informationen finden Sie in der [ausführlichen Komponentenliste für das primäre Gehäuse](Component-list-for-primary-enclosure) sowie in der [ausführlichen Komponentenliste für das EBOD-Gehäuse](Component-list-for-EBOD-enclosure).
+2. Navigieren Sie zum Abschnitt **Hardwarestatus**, und wählen Sie eine der verfügbaren Komponenten aus, die weiter oben beschrieben wurden. Klicken Sie einfach auf den Pfeil vor einer Komponentenbezeichnung, um die Liste zu erweitern und den Status der verschiedenen Gerätekomponenten anzuzeigen. Weitere Informationen finden Sie in der [ausführlichen Komponentenliste für das primäre Gehäuse](#component-list-for-primary-enclosure-of-storsimple-device) sowie in der [ausführlichen Komponentenliste für das EBOD-Gehäuse](#component-list-for-ebod-enclosure-of-storsimple-device).
 2. Der Komponentenstatus basiert auf dem folgenden Farbschema:
 	-  **Grünes Häkchen**: Die Komponente ist frei von Fehlern oder hat den Status **OK**.
 	-  **Gelb**: Für die Komponente liegt eine Warnung vor.
 	-  **Rotes Ausrufezeichen**: Die Komponente ist fehlerhaft oder hat den Status **Eingreifen erforderlich**.
 	-  **Weiß mit schwarzem Text**: Die Komponente ist nicht vorhanden.
 
-3. Sollte sich eine Komponente nicht in einem fehlerfreien Zustand befinden, wenden Sie sich an den Support von Microsoft. Sind Warnungen auf dem Gerät aktiviert, werden Sie per E-Mail benachrichtigt. Informationen zum Austauschen fehlerhafter Hardwarekomponenten finden Sie im [Handbuch für den Austausch von Hardwarekomponenten](https://msdn.microsoft.com/library/azure/dn757736.aspx).
+3. Sollte sich eine Komponente nicht in einem fehlerfreien Zustand befinden, wenden Sie sich an den Support von Microsoft. Sind Warnungen auf dem Gerät aktiviert, werden Sie per E-Mail benachrichtigt. Informationen zum Austauschen fehlerhafter Hardwarekomponenten finden Sie unter [Austausch von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
 
 ## Komponentenliste für das primäre Gehäuse eines StorSimple-Geräts
@@ -160,10 +160,10 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 |Verbindung mit Gerätecontroller|E/A|Physisch|Controller|Nein|Gibt den Zustand der Verbindung zwischen dem EBOD-E/A-Modul und dem Gerätecontroller an.|
 
 ## Nächste Schritte
-Informationen zum Behandeln von Problemen mit einer beeinträchtigten oder fehlerhaften Gerätekomponente finden Sie unter [Problembehandlung mit Überwachungsindikatoren](storsimple-monitoring-indicators).
+Informationen zum Behandeln von Problemen mit einer beeinträchtigten oder fehlerhaften Gerätekomponente finden Sie unter [StorSimple-Überwachungsindikatoren](storsimple-monitoring-indicators.md).
 
-Informationen zum Austauschen einer fehlerhaften Hardwarekomponente finden Sie im [Handbuch für den Austausch von Hardwarekomponenten](https://msdn.microsoft.com/library/azure/dn757736.aspx).
+Informationen zum Austauschen fehlerhafter Hardwarekomponenten finden Sie unter [Austausch von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-Sollten weiterhin Geräteprobleme auftreten, [kontaktieren Sie den Microsoft-Support](storsimple-contact-microsoft-support.md).
+Sollten weiterhin Geräteprobleme auftreten, [wenden Sie sich an den Microsoft-Support](storsimple-contact-microsoft-support.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

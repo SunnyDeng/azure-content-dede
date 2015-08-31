@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Testen der Traffic Manager-Einstellungen"
+   pageTitle="Testen der Traffic Manager-Einstellungen | Microsoft Azure"
    description="In diesem Artikel erfahren Sie, wie Sie Traffic Manager-Einstellungen testen."
    services="traffic-manager"
    documentationCenter=""
@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/27/2015"
-   ms.author="joaoma;cherylmc" />
+   ms.date="08/19/2015"
+   ms.author="joaoma" />
 
 # Testen der Traffic Manager-Einstellungen
 
@@ -23,7 +23,7 @@ Die beste Möglichkeit, um Ihre Traffic Manager-Einstellungen zu testen, besteht
 
 - **Stellen Sie die DNS-Gültigkeitsdauer (TTL) sehr niedrig ein**, sodass die Änderungen schnell propagiert werden, beispielsweise auf 30 Sekunden.
 - **Halten Sie die IP-Adressen Ihrer Azure Cloud-Dienste und Websites** für das Profil bereit, das Sie testen.
-- **Verwenden Sie Tools, mit denen Sie einen DNS-Namen in eine IP-Adresse auflösen können**, und zeigen Sie diese Adresse an. Überprüfen Sie, ob der Name Ihrer Unternehmensdomäne in IP-Adressen der im Profil enthaltenen Endpunkte aufgelöst wird. Die Auflösung sollte in Übereinstimmung mit der Lastenausgleichsmethode Ihres Traffic Manager-Profils erfolgen. Wenn Sie einen Computer verwenden, der Windows ausführt, können Sie das Tool Nslookup.exe an einer Befehls- oder Windows PowerShell-Eingabeaufforderung ausführen. Weitere öffentlich verfügbare Tools, mit denen Sie eine IP-Adresse herausfinden können, sind ebenfalls im Internet verfügbar.
+- **Verwenden Sie Tools, mit denen Sie einen DNS-Namen in eine IP-Adresse auflösen können**, und zeigen Sie diese Adresse an. Überprüfen Sie, ob der Name Ihrer Unternehmensdomäne in IP-Adressen der im Profil enthaltenen Endpunkte aufgelöst wird. Die Auflösung sollte in Übereinstimmung mit der Routingmethode für Datenverkehr Ihres Traffic Manager-Profils erfolgen. Wenn Sie einen Computer verwenden, der Windows ausführt, können Sie das Tool Nslookup.exe an einer Befehls- oder Windows PowerShell-Eingabeaufforderung ausführen. Weitere öffentlich verfügbare Tools, mit denen Sie eine IP-Adresse herausfinden können, sind ebenfalls im Internet verfügbar.
 
 ### So überprüfen Sie ein Traffic Manager-Profil mit "nslookup"
 
@@ -33,9 +33,9 @@ Die beste Möglichkeit, um Ihre Traffic Manager-Einstellungen zu testen, besteht
    - Der DNS-Name und die IP-Adresse des DNS-Servers, auf den zugegriffen wird, um diesen Traffic Manager-Domänennamen aufzulösen.
    - Den Traffic Manager-Domänennamen, die Sie in der Befehlszeile nach "Nslookup" und die IP-Adresse in der Traffic Manager-Domäne aufgelöst wird eingegeben. Die zweite IP-Adresse ist für die Überprüfung wichtig. Es sollte eine öffentliche virtuelle IP-Adresse (VIP) Adresse für eines der Cloud-Dienste oder Websites in Traffic Manager-Profil, das Sie testen übereinstimmen.
 
-## Testen von Lastenausgleichsmethoden
+## Testen von Routingmethoden für Datenverkehr
 
-### So testen Sie die Lastenausgleichsmethode "Failover"
+### So testen Sie die Routingmethode für Datenverkehr "Failover"
 
 1. Alle Endpunkte müssen ausgeführt werden.
 2. Verwenden Sie einen einzelnen Client.
@@ -47,7 +47,7 @@ Die beste Möglichkeit, um Ihre Traffic Manager-Einstellungen zu testen, besteht
 8. Stellen Sie sicher, dass die abgerufene IP-Adresse zum sekundären Endpunkt gehört.
 9. Wiederholen Sie diesen Vorgang, indem Sie den sekundären Endpunkt beenden, dann den tertiären Endpunkt usw. In jedem dieser Fälle muss sichergestellt werden, dass von der DNS-Auflösung die IP-Adresse des nächsten Endpunkts in der Liste zurückgegeben wird. Wenn alle Endpunkte nicht betriebsbereit sind, sollte erneut die IP-Adresse des primären Endpunkts abgerufen werden.
 
-### So testen Sie die Lastenausgleichsmethode "Roundrobin"
+### So testen Sie die Routingmethode für Datenverkehr "Roundrobin"
 
 1. Alle Endpunkte müssen ausgeführt werden.
 2. Verwenden Sie einen einzelnen Client.
@@ -55,19 +55,21 @@ Die beste Möglichkeit, um Ihre Traffic Manager-Einstellungen zu testen, besteht
 4. Stellen Sie sicher, dass die erhaltene IP-Adresse eine Adresse aus Ihrer Liste ist.
 5. Leeren Sie den DNS-Clientcache, und wiederholen Sie dann immer wieder die Schritte 3 und 4. Für jeden Ihrer Endpunkte sollte eine andere IP-Adresse zurückgegeben werden. Anschließend wird der Prozess wiederholt.
 
-### So testen Sie die Lastenausgleichsmethode "Leistung"
+### So testen Sie die Routingmethode für Datenverkehr "Leistung"
 
-Um die Lastenausgleichsmethode "Leistung" effizient zu testen, müssen Sie weltweit über Clients verfügen. Sie können Clients in Azure erstellen, die versuchen, Ihre Dienste mithilfe des Domänennamens Ihres Unternehmens aufzurufen. Bei einem globalen Unternehmen können Sie sich auch remote bei Clients in anderen Teilen der Welt anmelden und den Test über diese Clients durchführen.
+Um die Routingmethode für Datenverkehr "Leistung" effizient zu testen, müssen Sie weltweit über Clients verfügen. Sie können Clients in Azure erstellen, die versuchen, Ihre Dienste mithilfe des Domänennamens Ihres Unternehmens aufzurufen. Bei einem globalen Unternehmen können Sie sich auch remote bei Clients in anderen Teilen der Welt anmelden und den Test über diese Clients durchführen.
 
 Sie können kostenlose webbasierte DNS-Lookup- und Analysedienste nutzen. Mit einigen davon können Sie die DNS-Namensauflösung von verschiedenen Standorten aus überprüfen. Führen Sie beispielsweise eine Suche nach "DNS-Lookup" aus, um Beispiele zu erhalten. Sie können auch eine Drittanbieterlösung wie Gomez oder Keynote verwenden, um sicherzustellen, dass der Datenverkehr von den Profilen wie erwartet verteilt wird.
 
 ## Siehe auch
 
-[Informationen zu Lastenausgleichsmethoden von Traffic Manager](traffic-manager-load-balancing-methods.md)
+[Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md)
 
-[Traffic Manager-Konfigurationsaufgaben](https://msdn.microsoft.com/library/azure/hh744830.aspx)
+[Deaktivieren, Aktivieren oder Löschen eines Traffic Manager-Profils](disable-enable-or-delete-a-profile.md)
 
-[Traffic Manager – Übersicht](traffic-manager-overview.md)
+[Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts](disable-or-enable-an-endpoint.md)
+
+[Was ist Traffic Manager?](traffic-manager-overview.md)
 
 [Cloud-Dienste](http://go.microsoft.com/fwlink/p/?LinkId=314074)
 
@@ -77,4 +79,4 @@ Sie können kostenlose webbasierte DNS-Lookup- und Analysedienste nutzen. Mit ei
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

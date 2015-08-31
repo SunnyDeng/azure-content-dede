@@ -1,23 +1,21 @@
 <properties
 	pageTitle="Abfragen von Daten aus HDFS-kompatiblen Blobspeicher | Microsoft Azure"
 	description="HDInsight verwendet Blobspeicher als Big Data-Speicher für HDFS. Erfahren Sie, wie Sie Daten aus Blobspeicher abfragen und die Ergebnisse der Analyse speichern."
-	keywords="blob storage,hdfs,structured data,unstructured data"
 	services="hdinsight,storage"
 	documentationCenter=""
+	tags="azure-portal"
 	authors="mumian"
 	manager="paulettm"
 	editor="cgronlun"/>
-
 
 <tags
 	ms.service="hdinsight"
 	ms.workload="big-data"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.date="06/10/2015"
+	ms.topic="article"
+	ms.date="07/28/2015"
 	ms.author="jgao"/>
-
 
 
 #Verwenden des HDFS-kompatiblen Azure-Blobspeichers mit Hadoop in HDInsight
@@ -28,7 +26,7 @@ Azure-Blobspeicher stellt eine robuste, universelle Speicherlösung dar, die pro
 
 Die Speicherung von Daten im Blobspeicher sorgt dafür, dass die HDInsight-Cluster, die für Berechnungen verwendet werden, sicher gelöscht werden können, ohne Benutzerdaten zu verlieren.
 
-> [AZURE.NOTE]Die \**asv://*-Syntax wird in HDInsight-Clustern der Version 3.0 nicht unterstützt. Dies bedeutet, dass alle an einen HDInsight-Cluster der Version 3.0 übermittelten Aufträge, die explizit die \**asv://*-Syntax verwenden, fehlschlagen. Stattdessen sollte die \**wasb://*-Syntax verwendet werden. An HDInsight-Cluster der Version 3.0 gesendete Aufträge, die mithilfe eines vorhandenen Metastores erstellt wurden, der explizite Verweise auf Ressourcen mit der asv://-Syntax enthält, schlagen ebenfalls fehl. Diese Metastores müssen mit der wasb://-Syntax neu erstellt werden, um die Ressourcen zu adressieren.
+> [AZURE.NOTE]Die **asv://*-Syntax wird in HDInsight-Clustern der Version 3.0 nicht unterstützt. Dies bedeutet, dass alle an einen HDInsight-Cluster der Version 3.0 übermittelten Aufträge, die explizit die **asv://*-Syntax verwenden, fehlschlagen. Stattdessen sollte die **wasb://*-Syntax verwendet werden. An HDInsight-Cluster der Version 3.0 gesendete Aufträge, die mithilfe eines vorhandenen Metastores erstellt wurden, der explizite Verweise auf Ressourcen mit der asv://-Syntax enthält, schlagen ebenfalls fehl. Diese Metastores müssen mit der wasb://-Syntax neu erstellt werden, um die Ressourcen zu adressieren.
 
 > HDInsight unterstützt aktuell nur Blockblobs.
 
@@ -79,7 +77,7 @@ Die Speicherung von Daten im Azure-Blobspeicher statt im HDFS hat mehrere Vortei
 * **Datenarchivierung:** Die Speicherung von Daten im Azure-Blobspeicher sorgt dafür, dass die HDInsight-Cluster, die für Berechnungen verwendet werden, sicher gelöscht werden können, ohne Benutzerdaten zu verlieren.
 * **Datenspeicherkosten:**Die langfristige Datenspeicherung in DFS ist kostspieliger als die Datenspeicherung im Azure-Blobspeicher, da die Kosten eines Rechenclusters höher liegen als diejenigen eines Azure-Blobspeichercontainers. Da die Daten nicht für jede Erzeugung eines neues Rechenclusters neu geladen werden, sparen Sie auch Kosten für das Laden von Daten.
 * **Elastische horizontale Skalierung:** Obwohl Ihnen HDFS ein horizontal skaliertes Dateisystem bietet, wird die Skalierung durch die Anzahl der Knoten bestimmt, die Sie für Ihren Cluster bereitstellen. Eine Änderung der Skalierung kann weitaus schwieriger werden, als auf die flexiblen Speicherkapazitäten zu vertrauen, die Ihnen der Azure-Blobspeicher automatisch bietet.
-* **Georeplikation:** Ihre Azure Blobspeichercontainer können über das Azure-Portal georepliziert werden. Obwohl Sie dadurch von geographischer Wiederherstellung und Datenredundanz profitieren, wirkt sich ein Ausfall des georeplizierten Standorts schwer auf Ihre Leistung aus und kann zusätzliche Kosten nach sich ziehen. Deshalb empfehlen wir, die Georeplikation mit Bedacht auszuwählen und nur dann anzuwenden, wenn der Wert der Daten die zusätzlichen Kosten rechtfertigt.
+* **Georeplikation:** Ihre Azure-Blobspeichercontainer können georepliziert werden. Obwohl Sie dadurch von geographischer Wiederherstellung und Datenredundanz profitieren, wirkt sich ein Ausfall des georeplizierten Standorts schwer auf Ihre Leistung aus und kann zusätzliche Kosten nach sich ziehen. Deshalb empfehlen wir, die Georeplikation mit Bedacht auszuwählen und nur dann anzuwenden, wenn der Wert der Daten die zusätzlichen Kosten rechtfertigt.
 
 Bestimmte MapReduce-Jobs und -Pakete können zu Zwischenergebnissen führen, die Sie nicht wirklich im Azure-Blobspeicher speichern möchten. In diesem Fall können Sie die Dateien auch im lokalen HDFS speichern. Tatsächlich verwendet HDInsight DFS für einige dieser Zwischenergebnisse in Hive-Jobs und anderen Prozessen.
 
@@ -94,23 +92,11 @@ Ein Blob gehört unabhängig davon, wo es sich befindet, stets zu einem Containe
 Geben Sie einen Standardspeichercontainer nicht für mehrere HDInsight-Cluster frei. Wenn Sie einen freigegebenen Container benötigen, um Zugriff auf Daten für mehrere HDInsight-Cluster bereitzustellen, sollten Sie ihn der Clusterkonfiguration als zusätzliches Speicherkonto hinzufügen. Weitere Informationen finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision]. Einen Standardspeichercontainer können Sie jedoch auch wiederverwenden, wenn der ursprüngliche HDInsight-Cluster gelöscht wurde. Bei HBase-Clustern können Sie das HBase-Tabellenschema sowie die darin enthaltenen Daten sogar beibehalten, indem Sie einen neuen HBase-Cluster mit dem Standard-Blobspeichercontainer bereitstellen, der von einem gelöschten HBase-Cluster verwendet wurde.
 
 
-###Verwenden des Azure-Portals
+###Mit dem Azure-Vorschauportal
 
-Zur Bereitstellung eines HDInsight-Clusters im Azure-Portal haben Sie zwei Optionen: **Schnellerstellung** und **Benutzerdefinierte Erstellung**. Für die Schnellerstellung muss das Azure-Speicherkonto bereits vorher erstellt worden sein. Informationen dazu finden Sie unter [Erstellen eines Speicherkontos][azure-storage-create].
+Bei der Bereitstellung eines HDInsight-Clusters im Vorschauportal können Sie ein vorhandenes Speicherkonto verwenden oder ein neues Speicherkonto erstellen:
 
-Wenn Sie die Option "Schnellerstellung" verwenden, können Sie ein vorhandenes Speicherkonto auswählen. Während des Bereitstellungsprozesses wird ein neuer Container mit dem Namen des HDInsight-Clusters erstellt. Wenn ein Container mit demselben Namen bereits vorhanden ist, wird <clusterName>-<x> verwendet. Beispiel: *myHDIcluster-1*. Dieser Container wird als Standard-Dateisystem verwendet.
-
-![Verwenden der Schnellerstellung für einen neuen Hadoop-Cluster in HDInsight im Azure-Portal.][img-hdi-quick-create]
-
-Bei der benutzerdefinierten Erstellung können Sie für das Standardspeicherkonto eine der folgenden Optionen auswählen:
-
-- Vorhandenen Speicher verwenden
-- "Neuen Speicher erstellen"
-- "Speicher aus anderem Abonnement verwenden"
-
-Sie haben außerdem die Auswahl, einen neuen Container zu erstellen oder einen vorhandenen zu verwenden.
-
-![Möglichkeit der Verwendung eines vorhandenen Speicherkontos für Ihren HDInsight-Cluster.][img-hdi-custom-create-storage-account]
+![Datenquelle für HDInsight Hadoop-Bereitstellung](./media/hdinsight-hadoop-use-blob-storage/hdinsight.provision.data.source.png)
 
 ###Verwenden der Azure-Befehlszeilenschnittstelle
 
@@ -328,6 +314,5 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [img-hdi-powershell-blobcommands]: ./media/hdinsight-hadoop-use-blob-storage/HDI.PowerShell.BlobCommands.png
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-hadoop-use-blob-storage/HDI.CustomCreateStorageAccount.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

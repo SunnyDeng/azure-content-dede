@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Anzeigen und Verwalten von StorSimple-Warnungen"
+   pageTitle="Anzeigen und Verwalten von StorSimple-Warnungen | Microsoft Azure"
    description="Beschreibt StorSimple-Warnungen und die Verwendung des StorSimple Manager-Diensts zum Anzeigen und Löschen der Warnungen."
    services="storsimple"
    documentationCenter="NA"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="07/30/2015"
+   ms.date="08/14/2015"
    ms.author="v-sharos" />
 
 # Anzeigen und Verwalten von StorSimple-Warnungen
@@ -137,8 +137,24 @@ In den folgenden Tabellen sind einige Microsoft Azure StorSimple-Warnungen aufge
 
 |Warnungstext|Ereignis|Weitere Informationen/Empfohlene Maßnahmen|
 |:---|:---|:---|
-|Es kann keine Verbindung zu <*Anmeldeinformationsname für Cloud*> hergestellt werden.|Die Verbindung mit dem Speicherkonto kann nicht hergestellt werden.|Anscheinend liegt ein Konnektivitätsproblem mit Ihrem Gerät vor. Führen Sie das Cmdlet **Test-HcsmConnection** in der Windows PowerShell-Schnittstelle für StorSimple auf Ihrem Gerät aus, um das Problem zu identifizieren und zu beheben. Wenn die Einstellungen korrekt sind, liegt möglicherweise ein Problem mit den Anmeldeinformationen des Speicherkontos vor, für das die Warnung ausgelöst wurde. Ermitteln Sie in diesem Fall mithilfe des Cmdlets **Test-HcsStorageAccountCredential**, ob Probleme vorliegen, die Sie lösen können.<ul><li>Überprüfen Sie die Netzwerkeinstellungen.</li><li>Überprüfen Sie die Speicherkonto-Anmeldedaten.</li></ul>|
-|Wir haben seit <*Anzahl*> Minuten kein Signal mehr von Ihrem Gerät erhalten.|Es kann keine Verbindung mit dem Gerät hergestellt werden.|Anscheinend liegt ein Konnektivitätsproblem mit Ihrem Gerät vor. Führen Sie das Cmdlet **Test-HcsmConnection** in der Windows PowerShell-Schnittstelle für StorSimple auf Ihrem Gerät aus, um das Problem zu identifizieren und zu beheben, oder wenden Sie sich an Ihren Netzwerkadministrator.|
+|Es kann keine Verbindung zu <*Anmeldeinformationsname für Cloud*> hergestellt werden.|Die Verbindung mit dem Speicherkonto kann nicht hergestellt werden.|Anscheinend liegt ein Konnektivitätsproblem mit Ihrem Gerät vor. Führen Sie das Cmdlet `Test-HcsmConnection` in der Windows PowerShell-Schnittstelle für StorSimple auf Ihrem Gerät aus, um das Problem zu identifizieren und zu beheben. Wenn die Einstellungen korrekt sind, liegt möglicherweise ein Problem mit den Anmeldeinformationen des Speicherkontos vor, für das die Warnung ausgelöst wurde. Ermitteln Sie in diesem Fall mithilfe des Cmdlets `Test-HcsStorageAccountCredential`, ob Probleme vorliegen, die Sie lösen können.<ul><li>Überprüfen Sie die Netzwerkeinstellungen.</li><li>Überprüfen Sie die Speicherkonto-Anmeldedaten.</li></ul>|
+|Wir haben seit <*Anzahl*> Minuten kein Signal mehr von Ihrem Gerät erhalten.|Es kann keine Verbindung mit dem Gerät hergestellt werden.|Anscheinend liegt ein Konnektivitätsproblem mit Ihrem Gerät vor. Führen Sie das Cmdlet `Test-HcsmConnection` in der Windows PowerShell-Schnittstelle für StorSimple auf Ihrem Gerät aus, um das Problem zu identifizieren und zu beheben, oder wenden Sie sich an Ihren Netzwerkadministrator.|
+
+### Verhalten von StorSimple beim Ausfall der Cloudverbindung
+
+Was geschieht beim Ausfall der Cloudverbindung des StorSimple-Geräts in der Produktionsumgebung?
+
+Wenn die Cloudverbindung für das StorSimple-Gerät in der Produktion ausfällt, können je nach Status des Geräts die folgenden Umstände eintreten:
+
+- **Für die lokalen Daten auf dem Gerät**: Es tritt keine Unterbrechung auf, und Lesevorgänge werden nach wie vor bedient. Bei ansteigender Anzahl ausstehender EA-Vorgänge und Überschreitung eines Grenzwerts kann es jedoch zu Ausfällen bei Lesevorgängen kommen. 
+
+	Abhängig von der Menge der Daten in den lokalen Schichten des Geräts werden innerhalb der ersten Stunden nach der Unterbrechung der Cloudverbindung auch Schreibvorgänge weiterhin ausgeführt. Die Schreibvorgänge werden dann langsamer, und es treten erste Fehler auf, wenn die Cloudverbindung für mehrere Stunden getrennt ist.
+
+ 
+- **Für die in der Cloud gespeicherten Daten**: Für die meisten Cloudverbindungsfehler wird eine Fehlermeldung zurückgegeben. Sobald die Verbindung wiederhergestellt ist, werden die EA-Vorgänge wieder aufgenommen, ohne dass der Benutzer das Volume online schalten muss. In seltenen Fällen ist unter Umständen ein Benutzereingriff erforderlich, um das Volume aus dem Azure-Portal wieder online zu schalten.
+ 
+- **Für aktuell ausgeführte Cloudmomentaufnahmen**: Der Vorgang wird innerhalb von 4–5 Stunden mehrfach erneut versucht, und wenn die Verbindung nicht wiederhergestellt wird, tritt ein Fehler bei den Cloudmomentaufnahmen auf.
+
 
 ### Clusterwarnungen
 
@@ -155,23 +171,23 @@ In den folgenden Tabellen sind einige Microsoft Azure StorSimple-Warnungen aufge
 
 |Warnungstext|Ereignis|Weitere Informationen/Empfohlene Maßnahmen|
 |:---|:---|:---|
-|Mit den Wiederherstellungsvorgängen konnten nicht alle Einstellungen für diesen Dienst wiederhergestellt werden. Die Gerätekonfigurationsdaten sind für einige Geräte inkonsistent.|Nach der Notfallwiederherstellung wurde eine Dateninkonsistenz erkannt.|Verschlüsselte Daten des Diensts sind nicht mit denen auf dem Gerät synchron. Autorisieren Sie das Gerät <*Gerätename*> in StorSimple Manager, um die Synchronisierung zu starten. Führen Sie das Cmdlet **Restore-HcsmEncryptedServiceData auf <*Gerätename*>** in der Windows PowerShell-Schnittstelle für StorSimple aus. Verwenden Sie dabei das alte Kennwort als Eingabe für das Cmdlet, um das Sicherheitsprofil wiederherzustellen. Führen Sie dann das Cmdlet **Invoke-HcsmServiceDataEncryptionKeyChange** aus, um den Dienst-Datenverschlüsselungsschlüssel zu aktualisieren. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite.|
-|Für den Dienst fand aufgrund eines unerwarteten Fehlers ein Failover auf ein sekundäres Rechenzentrum statt.|Andere/Unbekannte Ursache|Sie müssen Ihre Konfigurationseinstellungen in StorSimple Manager überprüfen, um fortfahren zu können. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite. Weitere Informationen zu StorSimple Manager finden Sie im [Administratorhandbuch](https://msdn.microsoft.com/library/azure/dn772401.aspx) für StorSimple Manager.|
+|Mit den Wiederherstellungsvorgängen konnten nicht alle Einstellungen für diesen Dienst wiederhergestellt werden. Die Gerätekonfigurationsdaten sind für einige Geräte inkonsistent.|Nach der Notfallwiederherstellung wurde eine Dateninkonsistenz erkannt.|Verschlüsselte Daten des Diensts sind nicht mit denen auf dem Gerät synchron. Autorisieren Sie das Gerät <*Gerätename*> in StorSimple Manager, um die Synchronisierung zu starten. Führen Sie das Cmdlet `Restore-HcsmEncryptedServiceData` auf dem Gerät <*Gerätename*> in der Windows PowerShell-Schnittstelle für StorSimple aus. Verwenden Sie dabei das alte Kennwort als Eingabe für das Cmdlet, um das Sicherheitsprofil wiederherzustellen. Führen Sie anschließend das Cmdlet `Invoke-HcsmServiceDataEncryptionKeyChange` aus, um den Verschlüsselungsschlüssel für Dienstdaten zu aktualisieren. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite.|
+|Für den Dienst fand aufgrund eines unerwarteten Fehlers ein Failover auf ein sekundäres Rechenzentrum statt.|Andere/Unbekannte Ursache|Sie müssen Ihre Konfigurationseinstellungen in StorSimple Manager überprüfen, um fortfahren zu können. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite. Weitere Informationen über den StorSimple Manager finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).|
 
 ### Hardwarewarnungen
 
 |Warnungstext|Ereignis|Weitere Informationen/Empfohlene Maßnahmen|
 |:---|:---|:---|
-|Hardwarekomponente <*Komponenten-ID*> berichtet Status <*Status*>.||Manchmal werden diese Warnungen durch vorübergehende Bedingungen verursacht. In diesem Fall wird die Warnung nach einiger Zeit automatisch gelöscht. Falls das Problem weiterhin besteht, wenden Sie sich an den Microsoft Support.|
+|Hardwarekomponente <*Komponenten-ID*> meldet den Status <*Status*>.||Manchmal werden diese Warnungen durch vorübergehende Bedingungen verursacht. In diesem Fall wird die Warnung nach einiger Zeit automatisch gelöscht. Falls das Problem weiterhin besteht, wenden Sie sich an den Microsoft Support.|
 |Passive Controllerfehlfunktion.|Der passive (sekundäre) Controller funktioniert nicht.|Ihr Gerät ist betriebsbereit, aber einer der Controller funktioniert nicht. Versuchen Sie, diesen Controller neu zu starten. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht.|
 
 ### Warnungen zu Auftragsfehlern
 
 |Warnungstext|Ereignis|Weitere Informationen/Empfohlene Maßnahmen|
 |:---|:---|:---|
-|Sicherung von <*Quellvolume-Gruppen-ID*> fehlgeschlagen.|Fehler beim Sicherungsauftrag.|Der Sicherungsvorgang kann aufgrund möglicher Konnektivitätsprobleme nicht erfolgreich abgeschlossen werden. Falls keine Konnektivitätsprobleme vorliegen, ist möglicherweise die maximale Anzahl von Sicherungen erreicht. Löschen Sie nicht mehr benötigte Sicherungen, und wiederholen Sie den Vorgang. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite.|
-|Klonen von <*Quellsicherungselement-IDs*> zu <*Zielvolume-Seriennummern*> fehlgeschlagen.|Fehler beim Klonauftrag.|Aktualisieren Sie die Sicherungsliste, um zu überprüfen, ob die Sicherung noch gültig ist. Wenn die Sicherung gültig ist, kann es an Cloudkonnektivitätsproblemen liegen, dass der Klonvorgang nicht erfolgreich abgeschlossen werden kann. Wenn keine Konnektivitätsprobleme vorliegen, haben Sie möglicherweise die Speicherbegrenzung erreicht. Löschen Sie nicht mehr benötigte Sicherungen, und wiederholen Sie den Vorgang. Nachdem Sie das Problem mit der entsprechenden Aktion behoben haben, löschen Sie diese Warnung von der Warnungsseite.|
-|Wiederherstellen von <*Quellsicherungselement-IDs*> fehlgeschlagen.|Fehler bei Wiederherstellungsauftrag.|Aktualisieren Sie die Sicherungsliste, um zu überprüfen, ob die Sicherung noch gültig ist. Wenn die Sicherung gültig ist, kann es an Cloudkonnektivitätsproblemen liegen, dass der Wiederherstellungsvorgang nicht erfolgreich abgeschlossen werden kann. Wenn keine Konnektivitätsprobleme vorliegen, haben Sie möglicherweise die Speicherbegrenzung erreicht. Löschen Sie nicht mehr benötigte Sicherungen, und wiederholen Sie den Vorgang. Nachdem Sie das Problem mit der entsprechenden Aktion behoben haben, löschen Sie diese Warnung von der Warnungsseite.|
+|Fehler bei der Sicherung von <*Quellvolume-Gruppen-ID*>.|Fehler beim Sicherungsauftrag.|Der Sicherungsvorgang kann aufgrund möglicher Konnektivitätsprobleme nicht erfolgreich abgeschlossen werden. Falls keine Konnektivitätsprobleme vorliegen, ist möglicherweise die maximale Anzahl von Sicherungen erreicht. Löschen Sie nicht mehr benötigte Sicherungen, und wiederholen Sie den Vorgang. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite.|
+|Fehler beim Klonen von <*Quellsicherungselement-IDs*> zu <*Zielvolume-Seriennummern*>.|Fehler beim Klonauftrag.|Aktualisieren Sie die Sicherungsliste, um zu überprüfen, ob die Sicherung noch gültig ist. Wenn die Sicherung gültig ist, kann es an Cloudkonnektivitätsproblemen liegen, dass der Klonvorgang nicht erfolgreich abgeschlossen werden kann. Wenn keine Konnektivitätsprobleme vorliegen, haben Sie möglicherweise die Speicherbegrenzung erreicht. Löschen Sie nicht mehr benötigte Sicherungen, und wiederholen Sie den Vorgang. Nachdem Sie das Problem mit der entsprechenden Aktion behoben haben, löschen Sie diese Warnung von der Warnungsseite.|
+|Fehler bei der Wiederherstellung von <*Quellsicherungselement-IDs*>.|Fehler bei Wiederherstellungsauftrag.|Aktualisieren Sie die Sicherungsliste, um zu überprüfen, ob die Sicherung noch gültig ist. Wenn die Sicherung gültig ist, kann es an Cloudkonnektivitätsproblemen liegen, dass der Wiederherstellungsvorgang nicht erfolgreich abgeschlossen werden kann. Wenn keine Konnektivitätsprobleme vorliegen, haben Sie möglicherweise die Speicherbegrenzung erreicht. Löschen Sie nicht mehr benötigte Sicherungen, und wiederholen Sie den Vorgang. Nachdem Sie das Problem mit der entsprechenden Aktion behoben haben, löschen Sie diese Warnung von der Warnungsseite.|
 
 ### Leistungswarnungen
 
@@ -184,10 +200,10 @@ In den folgenden Tabellen sind einige Microsoft Azure StorSimple-Warnungen aufge
 |Warnungstext|Ereignis|Weitere Informationen/Empfohlene Maßnahmen|
 |:---|:---|:---|
 |Microsoft Support-Sitzung hat begonnen.|Zugriff auf Supportsitzung durch Drittanbieter.|Bestätigen Sie, dass dieser Zugriff autorisiert ist. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite.|
-|Kennwort für <*Element*> läuft in <*Zeitraum*> ab.||Ändern Sie das Kennwort, bevor es abläuft.|
-|Sicherheitskonfigurationsinformationen fehlen für <*Element-ID*>.||Die diesem Volumecontainer zugeordneten Volumes können nicht zum Replizieren Ihrer StorSimple-Konfiguration verwendet werden. Um die sichere Speicherung Ihrer Daten sicherzustellen, empfehlen wir, den Volumecontainer und alle diesem zugeordneten Volumes zu löschen. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite.|
-|<*Anzahl*> Anmeldeversuche für <*Element-ID*> fehlgeschlagen.|Fehler bei mehreren Anmeldeversuchen.|Ihr Gerät wurde möglicherweise angegriffen, oder ein nicht autorisierter Benutzer versucht, sich mit einem falschen Kennwort anzumelden.<ul><li>Überprüfen Sie bei Ihren autorisierten Benutzern, ob diese Versuche von einer vertrauenswürdigen Quelle stammen. Wenn es weiterhin zu einer Vielzahl von fehlerhaften Anmeldeversuchen kommt, deaktivieren Sie ggf. die Remoteverwaltung, und wenden Sie sich an Ihren Netzwerkadministrator. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite.</li><li>Überprüfen Sie, ob Ihre Snapshot Manager-Instanzen mit dem richtigen Kennwort konfiguriert sind. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite.</li></ul>|
-|Ein oder mehrere Fehler beim Ändern des Dienst-Datenverschlüsselungsschlüssels.||Beim Ändern des Dienst-Datenverschlüsselungsschlüssels sind Fehler aufgetreten. Beheben Sie die Fehler, und führen Sie anschließend das Cmdlet **Invoke-HcsmServiceDataEncryptionKeyChange** in der Windows PowerShell-Schnittstelle für StorSimple auf Ihrem Gerät aus, um den Dienst zu aktualisieren. Falls das Problem weiterhin besteht, wenden Sie sich an den Microsoft Support. Nachdem das Problem behoben wurde, löschen Sie diese Warnung von der Warnungsseite.|
+|Das Kennwort für <*Element*> läuft in <*Zeitraum*> ab.||Ändern Sie das Kennwort, bevor es abläuft.|
+|Für <*Element-ID*> fehlen Sicherheitskonfigurationsinformationen.||Die diesem Volumecontainer zugeordneten Volumes können nicht zum Replizieren Ihrer StorSimple-Konfiguration verwendet werden. Um die sichere Speicherung Ihrer Daten sicherzustellen, empfehlen wir, den Volumecontainer und alle diesem zugeordneten Volumes zu löschen. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite.|
+|Fehler bei <*Anzahl*> Anmeldeversuchen für <*Element-ID*>.|Fehler bei mehreren Anmeldeversuchen.|Ihr Gerät wurde möglicherweise angegriffen, oder ein nicht autorisierter Benutzer versucht, sich mit einem falschen Kennwort anzumelden.<ul><li>Überprüfen Sie bei Ihren autorisierten Benutzern, ob diese Versuche von einer vertrauenswürdigen Quelle stammen. Wenn es weiterhin zu einer Vielzahl von fehlerhaften Anmeldeversuchen kommt, deaktivieren Sie ggf. die Remoteverwaltung, und wenden Sie sich an Ihren Netzwerkadministrator. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite.</li><li>Überprüfen Sie, ob Ihre Snapshot Manager-Instanzen mit dem richtigen Kennwort konfiguriert sind. Nachdem Sie die entsprechende Aktion ausgeführt haben, löschen Sie diese Warnung von der Warnungsseite.</li></ul>|
+|Ein oder mehrere Fehler beim Ändern des Dienst-Datenverschlüsselungsschlüssels.||Beim Ändern des Dienst-Datenverschlüsselungsschlüssels sind Fehler aufgetreten. Beheben Sie die Fehler, und führen Sie anschließend das Cmdlet `Invoke-HcsmServiceDataEncryptionKeyChange` in der Windows PowerShell-Schnittstelle für StorSimple auf Ihrem Gerät aus, um den Dienst zu aktualisieren. Falls das Problem weiterhin besteht, wenden Sie sich an den Microsoft Support. Nachdem das Problem behoben wurde, löschen Sie diese Warnung von der Warnungsseite.|
 
 ### Warnungen zum Supportpaket
 
@@ -211,10 +227,10 @@ In den folgenden Tabellen sind einige Microsoft Azure StorSimple-Warnungen aufge
 |Updates konnten nicht installiert werden.|Die Installation der Updates war nicht erfolgreich.|Die Updates konnten nicht installiert werden. Sie können diese Updates entweder über die **Wartungsseite** oder mit der Windows PowerShell-Schnittstelle für StorSimple auf Ihrem Gerät installieren. Wenn das Problem weiterhin besteht, wenden Sie sich an den Microsoft Support.|
 |Automatisch nach Updates suchen nicht möglich.|Fehler bei der automatischen Überprüfung.|Auf der **Wartungsseite** können Sie manuell nach Updates suchen.|
 |Neues Update für den WUA-Agent verfügbar.|Benachrichtigung über ein verfügbares Update.|Laden Sie den aktuellen Windows Update-Agent herunter, und installieren Sie ihn über die Windows PowerShell-Schnittstelle.|
-|Version der Firmwarekomponente <*Komponenten-ID*> entspricht nicht der Hardware.|Firmwareupdates wurden nicht erfolgreich installiert.|Wenden Sie sich an den Microsoft Support.|
+|Die Version der Firmwarekomponente <*Komponenten-ID*> entspricht nicht der Hardware.|Firmwareupdates wurden nicht erfolgreich installiert.|Wenden Sie sich an den Microsoft Support.|
 
 ## Nächste Schritte
 
-[Weitere Informationen zu StorSimple-Fehlern](storsimple-troubleshoot-operational-device.md)
+[Weitere Informationen zu StorSimple-Fehlern](storsimple-troubleshoot-operational-device.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

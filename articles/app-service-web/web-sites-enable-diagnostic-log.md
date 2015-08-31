@@ -38,7 +38,7 @@ Sie können die folgenden Protokollarten aktivieren oder deaktivieren:
 
 ### Anwendungsdiagnose
 
-Mit der Option "Application Diagnostics" können Sie die von einer Webanwendung erzeugten Informationen erfassen. ASP.NET-Anwendungen können die Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/de-de/library/36hhw2t6.aspx) verwenden, um Informationen im Anwendungs-Diagnoseprotokoll aufzuzeichnen. Zum Beispiel:
+Mit der Option "Application Diagnostics" können Sie die von einer Webanwendung erzeugten Informationen erfassen. ASP.NET-Anwendungen können die Klasse [System.Diagnostics.Trace](http://msdn.microsoft.com/library/36hhw2t6.aspx) verwenden, um Informationen im Anwendungs-Diagnoseprotokoll aufzuzeichnen. Zum Beispiel:
 
 	System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 
@@ -253,7 +253,7 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 ##<a name="nextsteps"></a> Nächste Schritte
 
 - [Überwachen von Web-Apps](/de-de/manage/services/web-sites/how-to-monitor-websites/)
-- [Problembehandlung von Azure-Web-Apps in Visual Studio](/de-de/develop/net/tutorials/troubleshoot-web-sites-in-visual-studio/)
+- [Problembehandlung von Azure-Web-Apps in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md)
 - [Analyse von Web-App-Protokollen in HDInsight](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)
 
 > [AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
@@ -263,4 +263,4 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

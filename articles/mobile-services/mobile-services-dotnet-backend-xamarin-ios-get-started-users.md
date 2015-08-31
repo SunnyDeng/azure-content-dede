@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Erste Schritte bei der Authentifizierung in Mobile Services für Xamarin iOS-Apps | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Xamarin iOS-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
-	services="mobile-services" 
-	documentationCenter="xamarin" 
-	authors="lindydonna" 
-	manager="dwrede" 
+<properties
+	pageTitle="Erste Schritte bei der Authentifizierung in Mobile Services für Xamarin iOS-Apps | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Xamarin iOS-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren."
+	services="mobile-services"
+	documentationCenter="xamarin"
+	authors="lindydonna"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-xamarin-ios" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="04/13/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-xamarin-ios"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/18/2015" 
 	ms.author="donnam"/>
 
 # Hinzufügen von Authentifizierung zur Mobile Services-App
@@ -42,7 +42,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 <ol start="6">
 <li><p>Führen Sie das Client-Projekt in Visual Studio oder Xamarin Studio auf einem Gerät oder Simulator aus. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.</p>
-   
+
    	<p>Dies liegt daran, dass die App als nicht authentifizierter Benutzer auf Mobile Services zugreift und die <em>TodoItem</em>-Tabelle nun eine Authentifizierung verlangt.</p></li>
 </ol>
 
@@ -55,7 +55,7 @@ In diesem Abschnitt modifizieren Sie die App, sodass vor der Anzeige von Daten e
 1. Öffnen Sie im Client-Projekt die Datei **QSTodoService.cs** und fügen Sie folgende Deklarationen zu QSTodoService hinzu:
 
 		// Mobile Service logged in user
-		private MobileServiceUser user; 
+		private MobileServiceUser user;
 		public MobileServiceUser User { get { return user; } }
 
 2. Fügen Sie eine neue Methode **Authenticate** zu **QSTodoService** hinzu mit der folgenden Definition:
@@ -85,7 +85,7 @@ In diesem Abschnitt modifizieren Sie die App, sodass vor der Anzeige von Daten e
 			todoService.BusyUpdate += (bool busy) => {
 				if (busy)
 					activityIndicator.StartAnimating ();
-				else 
+				else
 					activityIndicator.StopAnimating ();
 			};
 
@@ -107,15 +107,16 @@ In diesem Abschnitt modifizieren Sie die App, sodass vor der Anzeige von Daten e
 			}
 		}
 		// rest of RefreshAsync method
-	
+
 5. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App im iPhone-Simulator zu starten. Überprüfen Sie, dass die App keine Daten anzeigt.
 
 	Führen Sie die Aktualisierungsgeste durch Herunterziehen der Objektliste, was die Anzeige des Anmeldebildschirms auslöst. Nachdem Sie gültige Anmeldeinformationenen erfolgreich eingegeben haben, zeigt die App die Liste der To-Do-Objekte an, und Sie können die Daten ändern.
 
 <!-- ## <a name="next-steps"> </a>Next steps
 
-In the next tutorial, [Service-side authorization of Mobile Services users][Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services. 
+In the next tutorial, [Service-side authorization of Mobile Services users][Authorize users with scripts], you will take the user ID value provided by Mobile Services based on an authenticated user and use it to filter the data returned by Mobile Services.
  -->
+
 <!-- Anchors. -->
 [Registrieren Ihrer App für Authentifizierung und Konfigurieren von Mobile Services]: #register
 [Einschränken von Tabellenberechtigungen für authentifizierte Benutzer]: #permissions
@@ -134,6 +135,5 @@ In the next tutorial, [Service-side authorization of Mobile Services users][Auth
 [JavaScript and HTML]: ../mobile-services-dotnet-backend-windows-store-javascript-get-started-users.md
 
 [Azure Management Portal]: https://manage.windowsazure.com/
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

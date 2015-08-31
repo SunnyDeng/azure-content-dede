@@ -13,59 +13,43 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="06/14/2015"
+   ms.date="08/19/2015"
    ms.author="rajram"/>
 
-#BizTalk Edifact-Connector
+# BizTalk Edifact-Connector
 Der Microsoft Azure-Edifact-Dienst kann in der Business-to-Business-Kommunikation Nachrichten über das Edifact-Protokoll empfangen und senden. Edifact wird häufig auch als „ASC Edifact“ oder „Accredited Standards Committee Edifact“ bezeichnet. Der Dienst ist branchenweit verbreitet.
 
-##Voraussetzungen
+## Voraussetzungen
 - TPM-API-App: Bevor Sie einen Edifact-Connector erstellen, müssen Sie einen [BizTalk-Handelspartnerverwaltungs-Connector][1] erstellen.
 - SQL Azure-Datenbank: Jede der B2B-API-Apps erfordert eine eigene Azure-SQL-Datenbank.
 - Azure Service Bus: Optional, wird nur bei der Batchverarbeitung verwendet.
 
-##Verwenden des Edifact-Connectors
+## Verwenden des Edifact-Connectors
 Zur Verwendung des Edifact-Connectors müssen Sie zunächst eine Instanz der AS2-Connector-API-App erstellen. Dies kann entweder inline beim Erstellen einer Logik-App oder durch Auswählen der AS2-Connector-API-App aus dem Azure Marketplace erfolgen.
 
-##Konfigurieren des Edifact-Connectors
+## Konfigurieren des Edifact-Connectors
 Handelspartner sind die Entitäten, die an einer B2B-Kommunikation (Business-to-Business) beteiligt sind. Wenn zwei Partner eine Beziehung eingehen, wird dies als "Vereinbarung" bezeichnet. Diese Vereinbarung basiert auf der Kommunikation, die beide Partner wünschen, und ist protokoll- oder transportspezifisch.
 
-Die Schritte zum Erstellen eines Handelspartnervertrags sind [hier][2] dokumentiert.
+Die Schritte zum Erstellen einer Handelspartnervereinbarung sind [hier][2] dokumentiert.
 
-##Verwenden des Edifact-Connectors auf der Designeroberfläche von Logik-Apps
+## Verwenden des Edifact-Connectors auf der Designeroberfläche von Logik-Apps
 Der Edifact-Connector kann als Trigger oder als Aktion verwendet werden.
 
-###Trigger
+### Trigger
 - Starten Sie den Azure-Datenfluss-Designer für Logik-Apps.
-- Klicken Sie im rechten Bereich auf den Edifact-Connector.
-
-	![Triggereinstellungen][3]
-- Klicken Sie auf ->
-
-	![Triggeroptionen][4]
-- Der EDIFACT-Connector stellt einen einzelnen Trigger bereit. Wählen Sie *Batch veröffentlichen*.
-
-	![Eingabe für Release Batch][5]
-- Dieser Trigger weist keine Eingaben auf. Klicken Sie auf ->
-
-	![Release Batch konfiguriert][6]
+- Klicken Sie im rechten Bereich auf den Edifact-Connector: ![Triggereinstellungen][3]
+- Klicken Sie auf: ![Triggeroptionen][4]
+- Der EDIFACT-Connector stellt einen einzelnen Trigger bereit. Wählen Sie *Batch veröffentlichen*: ![Eingabe für Release Batch][5]
+- Dieser Trigger weist keine Eingaben auf. Klicken Sie auf: ![Release Batch konfiguriert][6]
 - Im Rahmen der Ausgabe gibt der Connector die Edifact-Nutzlast, die Vereinbarungs-ID sowie Informationen dazu zurück, ob die Nachricht als Batch ausgeführt wird.
 
-###Aktion
-- Klicken Sie im rechten Bereich auf den Edifact-Connector.
+### Aktion
+- Klicken Sie im rechten Bereich auf den Edifact-Connector: ![Aktionseinstellungen][7]
+- Klicken Sie auf: ![Liste der Aktionen][8]
+- Der Edifact-Connector unterstützt zahlreiche Aktionen. Wählen Sie *Codieren* aus: ![Eingabe codieren][9]
+- Nehmen Sie die Eingaben für die Aktion vor, und konfigurieren Sie sie: ![Konfigurierte Elemente codieren][10]
 
-	![Aktionseinstellungen][7]
-- Klicken Sie auf ->
-
-	![Liste der Aktionen][8]
-- Der Edifact-Connector unterstützt zahlreiche Aktionen. Wählen Sie *Codieren* aus.
-
-	![Eingabe codieren][9]
-- Nehmen Sie die Eingaben für die Aktion vor, und konfigurieren Sie sie.
-
-	![Konfigurierte Elemente codieren][10]
-
-Parameter|Typ|Beschreibung des Parameters
+	Parameter|Typ|Beschreibung des Parameters
 ---|---|---
 Inhalt|Zeichenfolge|XML-Nachricht
 Vereinbarungs-ID|ganze Zahl|Vereinbarungs-ID
@@ -84,6 +68,8 @@ Die Aktion gibt bei erfolgreichem Abschluss ein Objekt mit der EDIFACT-Nutzlast 
 ## Optimale Nutzung Ihres Connectors
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
 
 
@@ -99,4 +85,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-edifact/EncodeInput.PNG
 [10]: ./media/app-service-logic-connector-edifact/EncodeConfigured.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

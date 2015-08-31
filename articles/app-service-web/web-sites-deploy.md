@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/21/2015"
+	ms.date="08/14/2015"
 	ms.author="tdykstra"/>
 
 #Bereitstellen von Web-Apps in Azure App Service
@@ -135,7 +135,6 @@ Weitere Informationen zur Bereitstellung von WebMatrix in Web-Apps finden Sie in
 Weitere Informationen finden Sie in den folgenden Ressourcen:
 
 * [Erstellen einer PHP-MySQL-Web-App und Bereitstellen über FTP](web-sites-php-mysql-deploy-use-ftp.md).
-* [Verwalten von Web-Apps](web-sites-manage.md#ftp-credentials). Diese Ressource verfügt über zusätzliche Informationen zum Festlegen von FTP-Anmeldeinformationen, die nicht im PHP-Lernprogramm enthalten sind.
 
 ##<a name="tfs"></a>Team Foundation Server (TFS)
 
@@ -178,8 +177,11 @@ Weitere Informationen finden Sie in der folgenden Ressource:
 
 Sie können MSBuild- oder FTP-Bereitstellungsfunktionen mithilfe von [Windows PowerShell](http://msdn.microsoft.com/library/dd835506.aspx) ausführen. Wenn dies der Fall ist, können Sie auch eine Sammlung von Windows PowerShell-Cmdlets nutzen, mit denen die Azure-REST-Verwaltungs-API leicht aufgerufen werden kann.
 
-Weitere Informationen finden Sie in der folgenden Ressource:
+Weitere Informationen finden Sie in den folgenden Ressourcen:
 
+* [Bereitstellen einer Web-App in einem GitHub-Repository](app-service-web-arm-from-github-provision.md)
+* [Bereitstellen einer Web-App mit einer SQL-Datenbank](app-service-web-arm-with-sql-database-provision.md)
+* [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-deploy-complex-application-predictably.md)
 * [Building Real-World Cloud Apps with Azure - Automate Everything (Erstellen von Cloud-Anwendungen mit Azure – Automatisierung, in englischer Sprache)](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything). In diesem E-Book-Kapitel wird erklärt, wie die im E-Book dargestellte Beispielanwendung Windows PowerShell-Skripte nutzt, um eine Azure-Testumgebung zu erstellen und wie die Bereitstellung für diese Umgebung erfolgt. Im Abschnitt [Ressourcen](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything#resources) finden Sie Links für die weiterführende Azure PowerShell-Dokumentation.
 * [Veröffentlichung in Entwicklungs- und Testumgebungen mithilfe von Windows PowerShell-Skripts](http://msdn.microsoft.com/library/dn642480.aspx). Hier erfahren Sie, wie Sie Windows PowerShell-Bereitstellungsskripts verwenden, die von Visual Studio generiert werden.
 
@@ -226,4 +228,4 @@ Informationen zu weiteren Bereitstellungsthemen finden Sie in den entsprechenden
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

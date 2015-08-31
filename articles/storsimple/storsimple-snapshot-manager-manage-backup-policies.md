@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="07/09/2015"
+   ms.date="08/17/2015"
    ms.author="v-sharos" />
 
 # Verwenden des StorSimple Snapshot Managers zum Erstellen und Verwalten von Sicherungsrichtlinien
@@ -116,6 +116,6 @@ Verwenden Sie das folgende Verfahren, um eine Sicherungsrichtlinie zu löschen.
 
 ## Nächste Schritte
 
-[Verwenden von StorSimple Snapshot Manager zum Anzeigen und Verwalten von Sicherungsaufträgen](storsimple-snapshot-manager-manage-backup-jobs.md)
+[Verwenden von StorSimple Snapshot Manager zum Anzeigen und Verwalten von Sicherungsaufträgen](storsimple-snapshot-manager-manage-backup-jobs.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

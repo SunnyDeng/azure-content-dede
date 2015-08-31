@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/23/2015"
+	ms.date="08/19/2015"
 	ms.author="stepsic"/>
 	
 # Verwenden von Logik-App-Features
@@ -26,6 +26,15 @@ Im [vorherigen Thema][Create a new logic app] haben Sie Ihre erste Logik-App ers
 - Optionen zum Starten eines Workflows.
 
 Bevor Sie dieses Thema durchgehen, sollten Sie die Schritte unter [Erstellen einer neuen Logik-App] ausgeführt haben. Navigieren Sie im [Azure-Portal] zu Ihrer Logik-App, und klicken Sie in der Übersicht auf **Trigger und Aktionen**, um die Definition der Logik-App zu bearbeiten.
+
+## Referenzmaterial
+
+Die folgenden Dokumente könnten hilfreich sein:
+
+- [Verwaltungs- und Laufzeit-REST-APIs](https://msdn.microsoft.com/library/azure/dn948513.aspx): hier wird auch erklärt, wie Logik-Apps direkt aufgerufen werden.
+- [Sprachreferenz](https://msdn.microsoft.com/library/azure/dn948512.aspx): eine umfassende Liste aller Funktionen und Ausdrücke, die unterstützt werden.
+- [Trigger- und Aktionstypen](https://msdn.microsoft.com/library/azure/dn948511.aspx): die verschiedenen Arten von Aktionen und die dazugehörigen Eingaben.
+- [Übersicht über App Service](app-service-value-prop-what-is.md): Beschreibung, welche Komponenten für das Erstellen welcher Lösung ausgewählt werden.
 
 ## Hinzufügen von bedingter Logik und einer Wiederholung
 
@@ -112,8 +121,9 @@ Dienste können einen Logik-App-Endpunkt zum Starten eines Workflows aufrufen. S
 
 Über diesen Rückruf können Sie eine Logik-App in Ihrer benutzerdefinierten Anwendung aufrufen. Sie müssen die **Standardauthentifizierung** verwenden. Der Benutzername `default` wird für Sie erstellt, und das Kennwort ist das Feld **Primärer Zugriffsschlüssel** auf dem Blatt **Eigenschaften**. Zum Beispiel:
 
-        POST https://default:<<your primary access key>>@<< your endpoint>>/run?api-version=2015-02-01-preview
+        POST https://<< your endpoint >>/run?api-version=2015-02-01-preview
         Content-type: application/json
+        Authorization: Basic << base-64 encoded string of default:<access key> >>
         {
             "name" : "nameOfTrigger",
             "outputs" : { "property" : "value" }
@@ -133,4 +143,4 @@ Um eine Logik-App bei Bedarf zu starten, klicken Sie auf der Befehlsleiste auf d
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [Azure-Portal]: https://portal.azure.com
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

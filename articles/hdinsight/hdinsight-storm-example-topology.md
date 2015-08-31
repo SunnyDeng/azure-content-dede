@@ -5,7 +5,8 @@
  documentationCenter=""
  authors="Blackmist"
  manager="paulettm"
- editor="cgronlun"/>
+ editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
  ms.service="hdinsight"
@@ -57,4 +58,4 @@ Es folgt eine Liste von Beispielen zur Verwendung mit Apache Storm in HDInsight,
   [ce0c02a2]: https://github.com/hdinsight/hdinsight-storm-examples/tree/master/templates/HDInsightStormExamples "Dieses Projekt enthält Vorlagen für Spouts, Bolts und Topologien für die Interaktion mit verschiedenen Azure-Diensten wie Event Hubs, DocumentDB und SQL-Datenbank."
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

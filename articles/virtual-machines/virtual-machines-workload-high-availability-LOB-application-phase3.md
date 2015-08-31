@@ -27,7 +27,7 @@ Diese Phase muss vor Beginn von [Phase 4](virtual-machines-workload-high-availab
 
 ## Erstellen der virtuellen Computer des SQL Server-Clusters in Azure
 
-Es werden zwei virtuelle Computer mit SQL Server verwendet. Ein virtueller Computer enthält das primäre Datenbankreplikat einer Verfügbarkeitsgruppe, der zweite virtuelle Computer enthält das sekundäre \(Sicherungs-\) Replikat. Mithilfe der Sicherung wird eine hohe Verfügbarkeit gewährleistet. Ein weiterer virtueller Computer wird für den Hauptknoten des Clusters benötigt.
+Es werden zwei virtuelle Computer mit SQL Server verwendet. Ein virtueller Computer enthält das primäre Datenbankreplikat einer Verfügbarkeitsgruppe, der zweite virtuelle Computer enthält das sekundäre (Sicherungs-) Replikat. Mithilfe der Sicherung wird eine hohe Verfügbarkeit gewährleistet. Ein weiterer virtueller Computer wird für den Hauptknoten des Clusters benötigt.
 
 Mit dem folgenden PowerShell-Befehlsblock erstellen Sie die virtuellen Computer für diese drei Server. Geben Sie die Werte für die Variablen ein, lassen Sie dabei aber die < and >-Zeichen weg. Die Werte für diesen PowerShell-Befehlsblock entnehmen Sie den folgenden Tabellen:
 
@@ -132,7 +132,7 @@ Gehen Sie jeweils für beide virtuellen SQL Server-Computer nach den Anweisungen
 ### So initialisieren Sie einen leeren Datenträger und fügen Ordner hinzu
 
 1. Klicken Sie im linken Bereich des Server-Managers auf **Datei- und Speicherdienste** und anschließend auf **Datenträger**.
-2. Klicken Sie im Inhaltsbereich in der Gruppe **Datenträger** auf **Datenträger 2** \(wobei **Partition** die Einstellung **Unbekannt** aufweisen muss\).
+2. Klicken Sie im Inhaltsbereich in der Gruppe **Datenträger** auf **Datenträger 2** (wobei **Partition** die Einstellung **Unbekannt** aufweisen muss).
 3. Klicken Sie auf **Aufgaben** und anschließend auf **Neues Volume**.
 4. Klicken Sie auf der Seite „Voraussetzungen“ des Assistenten für neue Volumes auf **Weiter**.
 5. Klicken Sie auf der Seite „Server und Datenträger auswählen“ auf **Datenträger 2** und anschließend auf **Weiter**. Wenn Sie dazu aufgefordert werden, klicken Sie auf **OK**.
@@ -160,7 +160,7 @@ Gehen Sie jeweils für beide virtuellen SQL Server-Computer nach den Anweisungen
 6.	Klicken Sie auf **OK**, um das Fenster zu schließen.
 7.	Erweitern Sie im linken Bereich den **Ordner Sicherheit**.
 8.	Klicken Sie mit der rechten Maustaste auf **Anmeldungen**, und klicken Sie dann auf **Neue Anmeldung**.
-9.	Geben Sie unter **Anmeldename** die Zeichenfolge "*Domäne*\\sqladmin" ein \(wobei *Domäne* der Name der Domäne ist, in der in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) das Konto "\\sqladmin" erstellt wurde\). 
+9.	Geben Sie unter **Anmeldename** die Zeichenfolge "*Domäne*\\sqladmin" ein (wobei *Domäne* der Name der Domäne ist, in der in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) das Konto "\\sqladmin" erstellt wurde). 
 10.	Klicken Sie unter **Seite auswählen** auf **Serverrollen**, klicken Sie auf **sysadmin**, und klicken Sie dann auf **OK**.
 11.	Schließen Sie SQL Server 2014 Management Studio.
 
@@ -169,7 +169,7 @@ Gehen Sie jeweils für beide virtuellen SQL Server-Computer nach den Anweisunge
 1.	Klicken Sie auf dem Startbildschirm mit der rechten Maustaste auf **Dieser PC**, und klicken Sie dann auf **Eigenschaften**.
 2.	Klicken Sie im Fenster **System** auf **Remoteeinstellungen**.
 3.	Klicken Sie im Abschnitt **Remotedesktop** auf **Benutzer auswählen**, und klicken Sie dann auf **Hinzufügen**.
-4.	Geben Sie unter **Geben Sie die Namen der auszuwählenden Objekte ein** die Zeichenfolge "\[Domäne\]**\\sqladmin**" ein, und klicken Sie dann dreimal auf **OK**.
+4.	Geben Sie unter **Geben Sie die Namen der auszuwählenden Objekte ein** die Zeichenfolge "[Domäne]**\\sqladmin**" ein, und klicken Sie dann dreimal auf **OK**.
 
 Für den SQL Server-Dienst ist ein Port erforderlich, über den die Clients auf den Datenbankserver zugreifen. Zwei weitere Ports sind erforderlich für die Verbindung mit SQL Server Management Studio und die Verwaltung der Hochverfügbarkeitsgruppe. Führen Sie als Nächstes jeweils für beide virtuellen SQL Server.-Computer den folgenden Befehl an einer Windows PowerShell-Eingabeaufforderung auf Administratorebene aus, um eine Firewallregel hinzuzufügen, die diese Art von eingehendem Datenverkehr zulässt.
 
@@ -177,7 +177,7 @@ Für den SQL Server-Dienst ist ein Port erforderlich, über den die Clients auf 
 
 Melden Sie sich bei beiden virtuellen SQL Server-Computern als lokaler Administrator ab.
 
-Informationen zum Optimieren der SQL Server-Leistung in Azure finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](https://msdn.microsoft.com/library/azure/dn133149.aspx). Zur Optimierung der IOPs können Sie auch den georedundanten Speicher \(GRS\) für das Speicherkonto der Branchenanwendung deaktivieren und stattdessen Speicherplatz verwenden.
+Informationen zum Optimieren der SQL Server-Leistung in Azure finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](https://msdn.microsoft.com/library/azure/dn133149.aspx). Zur Optimierung der IOPs können Sie auch den georedundanten Speicher (GRS) für das Speicherkonto der Branchenanwendung deaktivieren und stattdessen Speicherplatz verwenden.
 
 ## Konfigurieren des Hauptknotenservers des Clusters
 
@@ -195,19 +195,19 @@ Stellen Sie nach dem Neustart unter Verwendung eines Kontos mit lokalen Administ
 
 ## Erstellen des WSFC-Clusters
 
-SQL Server AlwaysOn-Verfügbarkeitsgruppen basieren auf dem Windows Server-Feature Failoverclustering \(WSFC\). Dieses Feature ermöglicht die Gruppierung mehrerer Computer zu einem Cluster. Bei Ausfall eines Computers kann ein zweiter Computer seine Funktion übernehmen. Daher ist die erste und vorrangige Aufgabe die Aktivierung des Failoverclustering auf allen beteiligten Computern. Diese sind:
+SQL Server AlwaysOn-Verfügbarkeitsgruppen basieren auf dem Windows Server-Feature Failoverclustering (WSFC). Dieses Feature ermöglicht die Gruppierung mehrerer Computer zu einem Cluster. Bei Ausfall eines Computers kann ein zweiter Computer seine Funktion übernehmen. Daher ist die erste und vorrangige Aufgabe die Aktivierung des Failoverclustering auf allen beteiligten Computern. Diese sind:
 
 - Der primäre virtuelle Computer mit SQL Server
 - Der sekundäre virtuelle Computer mit SQL Server
 - Der Hauptknoten des Clusters
 
-Für einen Failovercluster sind mindestens drei virtuelle Computer erforderlich. Zwei Computer hosten SQL Server, wobei der sekundäre virtuelle Computer ein synchrones sekundäres Replikat ist, das bei einem Ausfall des primären Computers sicherstellt, dass keine Daten verloren gehen. Der dritte Computer muss kein SQL Server bereitstellen. Der Hauptknoten des Clusters fungiert innerhalb des WSFC als Quorumzeuge. Da der WSFC-Cluster zur Überwachung seines Zustands ein Quorum benötigt, muss immer eine Mehrheit vorhanden sein, die sicherstellt, dass der WSFC-Cluster online ist. Wenn ein Cluster nur aus zwei Computern besteht und einer von beiden ausfällt, gibt es keine Mehrheit mehr. Weitere Informationen finden Sie unter [WSFC-Quorummodi und Abstimmungskonfiguration \(SQL Server\)](http://msdn.microsoft.com/library/hh270280.aspx).
+Für einen Failovercluster sind mindestens drei virtuelle Computer erforderlich. Zwei Computer hosten SQL Server, wobei der sekundäre virtuelle Computer ein synchrones sekundäres Replikat ist, das bei einem Ausfall des primären Computers sicherstellt, dass keine Daten verloren gehen. Der dritte Computer muss kein SQL Server bereitstellen. Der Hauptknoten des Clusters fungiert innerhalb des WSFC als Quorumzeuge. Da der WSFC-Cluster zur Überwachung seines Zustands ein Quorum benötigt, muss immer eine Mehrheit vorhanden sein, die sicherstellt, dass der WSFC-Cluster online ist. Wenn ein Cluster nur aus zwei Computern besteht und einer von beiden ausfällt, gibt es keine Mehrheit mehr. Weitere Informationen finden Sie unter [WSFC-Quorummodi und Abstimmungskonfiguration (SQL Server)](http://msdn.microsoft.com/library/hh270280.aspx).
 
 Führen Sie für beide virtuellen SQL Server-Computer und für den Hauptknoten des Clusters an einer Windows PowerShell-Eingabeaufforderung auf Administratorebene den folgenden Befehl aus.
 
 	Install-WindowsFeature Failover-Clustering -IncludeManagementTools
 
-Aufgrund des noch nicht RFC-konformen Verhaltens von DHCP in Azure kann die Erstellung eines Clusters mit Windows Server-Failoverclustering \(WSFC\) fehlschlagen. Nähere Informationen hierzu finden Sie im Artikel „Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern“ unter „WSFC-Clusterverhalten in Azure-Netzwerken“. Dieses Problem kann jedoch umgangen werden. Führen Sie zum Erstellen des Clusters die folgenden Schritte aus:
+Aufgrund des noch nicht RFC-konformen Verhaltens von DHCP in Azure kann die Erstellung eines Clusters mit Windows Server-Failoverclustering (WSFC) fehlschlagen. Nähere Informationen hierzu finden Sie im Artikel „Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern“ unter „WSFC-Clusterverhalten in Azure-Netzwerken“. Dieses Problem kann jedoch umgangen werden. Führen Sie zum Erstellen des Clusters die folgenden Schritte aus:
 
 1.	Melden Sie sich beim primären virtuellen SQL Server-Computer mit dem Konto "sqladmin" an, das Sie in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) erstellt haben.
 2.	Geben Sie auf dem Startbildschirm **Failover** ein, und klicken Sie dann auf **Failovercluster-Manager**.
@@ -222,12 +222,12 @@ Aufgrund des noch nicht RFC-konformen Verhaltens von DHCP in Azure kann die Erst
 11.	Klicken Sie mit der rechten Maustaste auf die fehlgeschlagene Ressource **IP-Adresse**, und klicken Sie dann auf **Eigenschaften**.
 12.	Klicken Sie im Dialogfeld **Eigenschaften von IP-Adressen** auf **Statische IP-Adresse**.
 13.	Geben Sie im Adressraum für das Subnetz, in dem sich der SQL-Server befindet, eine nicht verwendete IP-Adresse ein, und klicken Sie dann auf **OK**.
-14.	Klicken Sie mit der rechten Maustaste auf die fehlgeschlagene IP-Adressressource, und klicken Sie dann auf **Online schalten**. Warten Sie, bis beide Ressourcen online sind. Beim Online-Schalten der Clusternamensressource wird für den Domänencontroller das Computerkonto in Active Directory \(AD\) aktualisiert. Dieses AD-Konto wird später zum Ausführen des Clusterdiensts der Verfügbarkeitsgruppe verwendet.
+14.	Klicken Sie mit der rechten Maustaste auf die fehlgeschlagene IP-Adressressource, und klicken Sie dann auf **Online schalten**. Warten Sie, bis beide Ressourcen online sind. Beim Online-Schalten der Clusternamensressource wird für den Domänencontroller das Computerkonto in Active Directory (AD) aktualisiert. Dieses AD-Konto wird später zum Ausführen des Clusterdiensts der Verfügbarkeitsgruppe verwendet.
 15.	Nachdem das AD-Konto erstellt wurde, können Sie den Clusternamen wieder offline schalten. Klicken Sie mit der rechten Maustaste im Bereich **Hauptressourcen des Clusters** auf den Clusternamen, und klicken Sie dann auf **Offline schalten**.
 16.	Klicken Sie zum Entfernen der IP-Adresse des Clusters mit der rechten Maustaste auf **IP-Adresse**, klicken Sie dann auf **Entfernen** und auf Aufforderung auf **Ja**. Die Clusterressource kann nun nicht mehr online geschaltet werden, da sie von der IP-Adressressource abhängig ist. Die einwandfreie Funktion einer Verfügbarkeitsgruppe ist jedoch nicht vom Clusternamen oder der IP-Adresse abhängig. Daher kann der Clustername offline bleiben.
 17.	Um die verbleibenden Knoten zum Cluster hinzuzufügen, klicken Sie im linken Bereich mit der rechten Maustaste auf den Clusternamen, und klicken Sie dann auf **Knoten hinzufügen**.
 18.	Klicken Sie auf der Seite **Vorbereitungen** auf **Weiter**. 
-19.	Geben Sie auf der Seite **Server auswählen** den Namen ein, und klicken Sie dann auf **Hinzufügen**, um sowohl den sekundären SQL Server-Computer als auch den Hauptknoten des Clusters zum Cluster hinzuzufügen. Klicken Sie nach dem Hinzufügen beider Computer auf **Weiter**. Wenn ein Computer nicht hinzugefügt werden kann und die Fehlermeldung darauf hinweist, dass die Remoteregistrierung nicht ausgeführt wird, führen Sie folgende Schritte aus. Melden Sie sich bei dem Computer an, öffnen Sie das Snap-in „Dienste“ \(services.msc\), und aktivieren Sie die Remoteregistrierung. Weitere Informationen finden Sie unter [Mit dem Remoteregistrierungsdienst kann keine Verbindung hergestellt werden](http://technet.microsoft.com/library/bb266998.aspx). 
+19.	Geben Sie auf der Seite **Server auswählen** den Namen ein, und klicken Sie dann auf **Hinzufügen**, um sowohl den sekundären SQL Server-Computer als auch den Hauptknoten des Clusters zum Cluster hinzuzufügen. Klicken Sie nach dem Hinzufügen beider Computer auf **Weiter**. Wenn ein Computer nicht hinzugefügt werden kann und die Fehlermeldung darauf hinweist, dass die Remoteregistrierung nicht ausgeführt wird, führen Sie folgende Schritte aus. Melden Sie sich bei dem Computer an, öffnen Sie das Snap-in „Dienste“ (services.msc), und aktivieren Sie die Remoteregistrierung. Weitere Informationen finden Sie unter [Mit dem Remoteregistrierungsdienst kann keine Verbindung hergestellt werden](http://technet.microsoft.com/library/bb266998.aspx). 
 20.	Klicken Sie auf der Seite **Validierungswarnung** auf **Nein. Microsoft-Support für diesen Cluster nicht nötig. Validierungstests nicht durchführen. Beim Klicken auf „Weiter“ Erstellung des Clusters fortsetzen.** Klicken Sie danach auf **Weiter**. 
 21.	Klicken Sie auf der Bestätigungsseite auf **Weiter**.
 22.	Klicken Sie auf der Seite **Zusammenfassung** auf **Fertig stellen**.
@@ -242,9 +242,9 @@ Führen Sie zur Aktivierung von Verfügbarkeitsgruppen in SQL Server folgende Sc
 1.	Melden Sie sich beim primären virtuellen SQL Server-Computer mit dem Konto "sqladmin" an, das Sie in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) erstellt haben.
 2.	Geben Sie auf dem Startbildschirm **SQL Server-Konfiguration** ein, und klicken Sie dann auf **SQL Server-Konfigurations-Manager**.
 3.	Klicken Sie im linken Bereich auf **SQL Server-Dienste**.
-4.	Doppelklicken Sie im Inhaltsbereich auf **SQL Server \(MSSQLSERVER\)**.
-5.	Klicken Sie im Fenster **Eigenschaften von SQL Server \(MSSQLSERVER\)** auf die Registerkarte **Hohe Verfügbarkeit mit AlwaysOn**, wählen Sie **AlwaysOn-Verfügbarkeitsgruppen aktivieren** aus, klicken Sie auf **Übernehmen**, und klicken Sie auf Aufforderung auf **OK**. Lassen Sie das Eigenschaftenfenster noch offen. 
-6.	Klicken Sie auf die Registerkarte "virtual-machines-manage-availability", und geben Sie unter **Kontoname** \[Domäne\]**\\sqlservice** ein. Geben Sie unter **Kennwort** das Kennwort für das Konto "sqlservice" ein, **bestätigen Sie das Kennwort**, und klicken Sie dann auf **OK**.
+4.	Doppelklicken Sie im Inhaltsbereich auf **SQL Server (MSSQLSERVER)**.
+5.	Klicken Sie im Fenster **Eigenschaften von SQL Server (MSSQLSERVER)** auf die Registerkarte **Hohe Verfügbarkeit mit AlwaysOn**, wählen Sie **AlwaysOn-Verfügbarkeitsgruppen aktivieren** aus, klicken Sie auf **Übernehmen**, und klicken Sie auf Aufforderung auf **OK**. Lassen Sie das Eigenschaftenfenster noch offen. 
+6.	Klicken Sie auf die Registerkarte "virtual-machines-manage-availability", und geben Sie unter **Kontoname** [Domäne]**\\sqlservice** ein. Geben Sie unter **Kennwort** das Kennwort für das Konto "sqlservice" ein, **bestätigen Sie das Kennwort**, und klicken Sie dann auf **OK**.
 7.	Klicken Sie im Meldungsfenster auf **Ja**, um den SQL Server-Dienst neu zu starten.
 8.	Melden Sie sich beim sekundären virtuellen SQL Server-Computer mit dem Konto "sqladmin" an, und wiederholen Sie die Schritte 2 bis 7. 
 
@@ -266,4 +266,6 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 4: Konfi
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=August15_HO7-->
+[Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
+
+<!---HONumber=August15_HO8-->

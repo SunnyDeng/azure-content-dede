@@ -5,8 +5,7 @@
    documentationCenter="NA"
    authors="lodipalm"
    manager="barbkess"
-   editor=""/>
-
+   editor="jrowlandjones"/>
 
 <tags
    ms.service="sql-data-warehouse"
@@ -16,7 +15,6 @@
    ms.workload="data-services"
    ms.date="06/21/2015"
    ms.author="lodipalm;barbkess"/>
-
 
 # Laden von Daten in SQL Data Warehouse
 SQL Data Warehouse bietet zahlreiche Optionen zum Laden von Daten. Dazu gehören:
@@ -45,16 +43,19 @@ In den folgenden Abschnitten werden die einzelnen Schritte ausführlich beschrie
 
 Um die Dateien für das Verschieben in Azure vorzubereiten, müssen Sie diese in Flatfiles exportieren. Dazu eignet sich besonders das Befehlszeilenprogramm BCP. Wenn Sie noch nicht über dieses Dienstprogramm verfügen, können Sie es mit den [Microsoft-Befehlszeilenprogrammen für SQL Server][] herunterladen. Ein BCP-Beispielbefehl kann wie folgt aussehen:
 
-	bcp "<Directory><File>" -c -T -S <Server Name> -d <Database Name>
+```
+bcp "<Directory><File>" -c -T -S <Server Name> -d <Database Name>
+```
 
 Mit diesem Befehl werden die Ergebnisse einer Abfrage übernommen und in eine Datei im Verzeichnis Ihrer Wahl exportiert. Sie können den Prozess parallelisieren, indem Sie mehrere BCP-Befehle für separate Tabellen gleichzeitig ausführen. Dadurch können Sie bis zu einen BCP-Prozess pro Kern des Servers ausführen. Es wird jedoch empfohlen, einige kleinere Vorgänge mit unterschiedlichen Konfigurationen auszuprobieren, um festzustellen, was für Ihre Umgebung am besten geeignet ist.
 
 Beachten Sie außerdem in Hinsicht auf das Laden mit PolyBase, dass UTF-16 noch nicht von PolyBase unterstützt wird und alle Dateien UTF-8 aufweisen müssen. Dies kann auf einfache Weise durch Einfügen des "-c"-Flags in den BCP-Befehl erreicht werden, oder Sie können auch mit dem folgenden Code Flatfiles aus UTF-16 in UTF-8 konvertieren:
 
-		Get-Content <input_file_name> -Encoding Unicode | Set-Content <output_file_name> -Encoding utf8
+```
+Get-Content <input_file_name> -Encoding Unicode | Set-Content <output_file_name> -Encoding utf8
+```
  
 Nachdem Sie die Daten erfolgreich in Dateien exportiert haben, können Sie sie in Azure verschieben. Dazu können Sie AZCopy oder den Import/Export-Dienst verwenden, wie es im folgenden Abschnitt beschrieben ist.
-
 
 ## Laden in Azure mit AZCopy oder Import/Export
 Wenn Sie Daten im Bereich von 5 bis 10 Terabyte oder mehr verschieben, wird empfohlen, den Datenträgerversanddienst [Import/Export][] zum Verschieben zu verwenden. Bei Untersuchungen konnten Daten im einstelligen TB-Bereich jedoch problemlos mit AZCopy über das öffentliche Internet verschoben werden. Dieser Prozess kann auch mit ExpressRoute beschleunigt oder erweitert werden.
@@ -65,7 +66,9 @@ In den folgenden Schritten wird ausführlich erläutert, wie Daten mit AZCopy vo
 
 Da eine Gruppe von Dateien vorhanden ist, die mit BCP erstellt wurden, kann AZCopy einfach aus Azure Powershell oder durch Ausführen eines Powershell-Skripts ausgeführt werden. Im Allgemeinen weist die zum Ausführen von AZCopy benötigte Eingabeaufforderung die folgende Form auf:
 
-	 AZCopy /Source:<File Location> /Dest:<Storage Container Location> /destkey:<Storage Key> /Pattern:<File Name> /NC:256
+```
+AZCopy /Source:<File Location> /Dest:<Storage Container Location> /destkey:<Storage Key> /Pattern:<File Name> /NC:256
+```
 
 Neben der grundlegenden Vorgehensweise werden die folgenden bewährten Methoden für das Laden mit AZCopy empfohlen:
 
@@ -89,31 +92,38 @@ Da sich die Daten nun in Azure-Speicher-Blobs befinden, werden sie mit PolyBase 
 
 4. **Erstellen einer externen Datenquelle.** Wenn auf ein Speicherkonto verwiesen wird, kann eine externe Datenquelle beim Laden aus demselben Container verwendet werden. Verwenden Sie für den Parameter "LOCATION" einen Speicherort im Format "wasbs://mycontainer@ test.blob.core.windows.net/path".
 
-		-- Creating master key
-		CREATE MASTER KEY;
+```
+-- Creating master key
+CREATE MASTER KEY;
 
-		-- Creating a database scoped credential
-		CREATE DATABASE SCOPED CREDENTIAL <Credential Name> WITH IDENTITY = '<User Name>', 
-    	Secret = '<Azure Storage Key>';
+-- Creating a database scoped credential
+CREATE DATABASE SCOPED CREDENTIAL <Credential Name> 
+WITH 
+    IDENTITY = '<User Name>'
+,   Secret = '<Azure Storage Key>'
+;
 
-		-- Creating external file format (delimited text file)
-		CREATE EXTERNAL FILE FORMAT text_file_format 
-		WITH (
-		    FORMAT_TYPE = DELIMITEDTEXT, 
-		    FORMAT_OPTIONS (
-		        FIELD_TERMINATOR ='|', 
-		        USE_TYPE_DEFAULT = TRUE
-		    )
-		);
+-- Creating external file format (delimited text file)
+CREATE EXTERNAL FILE FORMAT text_file_format 
+WITH 
+(
+    FORMAT_TYPE = DELIMITEDTEXT 
+,   FORMAT_OPTIONS  (
+                        FIELD_TERMINATOR ='|' 
+                    ,   USE_TYPE_DEFAULT = TRUE
+                    )
+);
 
-		--Creating an external data source
-		CREATE EXTERNAL DATA SOURCE azure_storage 
-		WITH (
-	    	TYPE = HADOOP, 
-	        LOCATION ='wasbs://<Container>@<Blob Path>’,
-	        CREDENTIAL = <Credential Name>
-		;
-
+--Creating an external data source
+CREATE EXTERNAL DATA SOURCE azure_storage 
+WITH 
+(
+    TYPE = HADOOP 
+,   LOCATION ='wasbs://<Container>@<Blob Path>'
+,   CREDENTIAL = <Credential Name>
+)
+;
+```
 
 Das Speicherkonto ist nun ordnungsgemäß konfiguriert, sodass Sie mit dem Laden der Daten in SQL Data Warehouse fortfahren können.
 
@@ -122,26 +132,36 @@ Nach dem Konfigurieren von PolyBase können Sie Daten direkt in SQL Data Warehou
 
 1. Verwenden Sie den Befehl "CREATE EXTERNAL TABLE" zum Definieren der Struktur Ihrer Daten. Um sicherzustellen, dass der Status Ihrer Daten schnell und effizient erfasst wird, wird empfohlen, ein Skript für die SQL Server-Tabelle in SSMS zu erstellen und dann eine manuelle Anpassung entsprechend den Unterschieden der externen Tabelle vorzunehmen. Nach dem Erstellen einer externen Tabelle in Azure verweist diese weiterhin auf den gleichen Speicherort, selbst wenn Daten aktualisiert oder zusätzliche Daten hinzugefügt werden.  
 
-		-- Creating external table pointing to file stored in Azure Storage
-		CREATE EXTERNAL TABLE <External Table Name> (
-		    <Column name>, <Column type>, <NULL/NOT NULL>
-		)
-		WITH (LOCATION='<Folder Path>',
-		      DATA_SOURCE = <Data Source>,
-		      FILE_FORMAT = <File Format>,      
-		);
+```
+-- Creating external table pointing to file stored in Azure Storage
+CREATE EXTERNAL TABLE <External Table Name> 
+(
+    <Column name>, <Column type>, <NULL/NOT NULL>
+)
+WITH 
+(   LOCATION='<Folder Path>'
+,   DATA_SOURCE = <Data Source>
+,   FILE_FORMAT = <File Format>      
+);
+```
 
-2. Laden Sie Daten mit einer Anweisung vom Typ "CREATE TABLE...AS SELECT".
+2. Laden Sie Daten mit einer Anweisung vom Typ "CREATE TABLE...AS SELECT". 
 
-		CREATE TABLE <Table Name> 
-		WITH (
-    		CLUSTERED COLUMNSTORE INDEX
-    		)
-		AS SELECT * from <External Table Name>;
+```
+CREATE TABLE <Table Name> 
+WITH 
+(
+	CLUSTERED COLUMNSTORE INDEX
+)
+AS 
+SELECT  * 
+FROM    <External Table Name>
+;
+```
 
-	Beachten Sie, dass Sie mit einer detaillierteren SELECT-Anweisung auch einen Unterabschnitt der Zeilen aus einer Tabelle laden können. Da PolyBase jedoch derzeit keine zusätzlichen Compute-Ressourcen per Push in Speicherkonten überträgt, ist der Vorgang beim Laden eines Unterabschnitts mit einer SELECT-Anweisung nicht schneller als das Laden des gesamten Datasets.
+Beachten Sie, dass Sie mit einer detaillierteren SELECT-Anweisung auch einen Unterabschnitt der Zeilen aus einer Tabelle laden können. Da PolyBase jedoch derzeit keine zusätzlichen Compute-Ressourcen per Push in Speicherkonten überträgt, ist der Vorgang beim Laden eines Unterabschnitts mit einer SELECT-Anweisung nicht schneller als das Laden des gesamten Datasets.
 
-Zusätzlich zur Anweisung "CREATE TABLE...AS SELECT" können Sie mit einer Anweisung vom Typ "INSERT...INTO" auch Daten aus externen Tabellen in bereits vorhandene Tabellen laden.
+Zusätzlich zur Anweisung "`CREATE TABLE...AS SELECT`" können Sie mit einer Anweisung vom Typ "INSERT...INTO" auch Daten aus externen Tabellen in bereits vorhandene Tabellen laden.
 
 ## Nächste Schritte
 Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
@@ -169,4 +189,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Azure-Speicherdokumentation]: https://azure.microsoft.com/de-de/documentation/articles/storage-create-storage-account/
 [Dokumentation zu ExpressRoute]: http://azure.microsoft.com/documentation/services/expressroute/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

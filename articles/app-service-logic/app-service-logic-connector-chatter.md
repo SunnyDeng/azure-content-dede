@@ -13,13 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="08/09/2015"
+   ms.date="08/19/2015"
    ms.author="sameerch"/>
 
 
 # Verwenden des Chatter-Connectors in Logik-Apps
 
-Mit dem Chatter-Connector können Sie eine Verbindung mit Chatter herstellen und verschiedene Aufgaben ausführen \(z. B. eine Nachricht senden\). Sie können z. B. einen Chatter-Feed durchsuchen, und sobald Sie etwas Bestimmtes finden, diese Chatter-Nachricht an die Gruppe "Vertrieb" senden.
+Mit dem Chatter-Connector können Sie eine Verbindung mit Chatter herstellen und verschiedene Aufgaben ausführen (z. B. eine Nachricht senden). Sie können z. B. einen Chatter-Feed durchsuchen, und sobald Sie etwas Bestimmtes finden, diese Chatter-Nachricht an die Gruppe "Vertrieb" senden.
 
 Sie können den Chatter-Connector Ihrem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows verarbeiten.
 
@@ -37,58 +37,55 @@ Neue Nachricht | <ul><li>Nachricht senden</li><li>Durchsuchen</li></ul>
 ## Erstellen des Chatter-Connectors für Ihre Logik-App
 Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
 
-1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
-2. Suchen Sie nach Chatter-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
-3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein:  
-	![][1]  
-	- **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten.
-	- **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
-	- **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
-	- **Webhostingplan** – Wählen oder erstellen Sie einen Webhostingplan.
-	- **Tarif** – Wählen Sie einen Tarif für den Connector.
-	- **Name** – Geben Sie einen Namen für den Chatter-Connector ein.
+1.	Öffnen Sie den Azure Marketplace mit der Option „+NEU“ unten links im Azure-Portal.
+2.	Wechseln Sie zu „Web und Mobil > API-Apps“, und suchen Sie nach „Chatter-Connector“.
+3.	Konfigurieren Sie den Chatter-Connector wie folgt:
 
-4. Klicken Sie auf **Erstellen**.
+	![][1]
+	- **Standort** - Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll.
+	- **Abonnement** - Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
+	- **Ressourcengruppe** - Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
+	- **Webhostingplan** - Wählen Sie einen Webhostingplan aus, oder erstellen Sie einen.
+	- **Tarif** - Wählen Sie einen Tarif für den Connector aus.
+	- **Name** - Geben Sie Ihrem Chatter-Connector einen Namen.
 
+4.	Klicken Sie auf „Erstellen“. Ein neuer Chatter-Connector wird erstellt.
+5.	Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des Chatter-Connectors erstellen.
 
-## Verwenden des Chatter-Connectors in Logik-Apps
-Sobald Ihre API-App erstellt wurde, können Sie den Chatter-Connector als Trigger oder Aktion in Ihrer Logik-App verwenden. Gehen Sie dazu folgendermaßen vor:
+## Verwenden des Chatter-Connectors in Logik-Apps ##
+Sobald Ihre API-App erstellt wurde, können Sie den Chatter-Connector als Trigger oder Aktion für Ihre Logik-App verwenden. Gehen Sie hierzu wie folgt vor:
 
-1. Öffnen Sie In Ihrer Logik-Apps **Trigger und Aktionen**, um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren.
+1.	Erstellen Sie eine neue Logik-App, und wählen Sie dieselbe Ressourcengruppe aus, in der sich der Chatter-Connector befindet.
 
-2. Der Chatter-Connector wird im Katalog aufgeführt:  
+	![][2]
+2.	Öffnen Sie „Trigger und Aktionen“, um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren.
+
+3.	Der Chatter-Connector wird im Katalog auf der rechten Seite im Abschnitt „API-Apps in dieser Ressourcengruppe“ angezeigt.
+
 	![][4]
-3. Wählen Sie den Chatter-Connector aus, um ihn automatisch im Designer hinzuzufügen. Klicken Sie auf **Autorisieren**, geben Sie Ihre Anmeldeinformationen ein, und klicken Sie auf **Zulassen**:  
+4. Sie können die Chatter-Connector-API-App im Editor bearbeiten, indem Sie auf „Chatter-Connector“ klicken. Klicken Sie auf die Schaltfläche „Autorisieren“. Geben Sie Ihre Anmeldeinformationen ein. Klicken Sie auf „Zulassen“.
+
 	![][5]
 	![][6]
 	![][7]
+5.	Sie können nun den Chatter-Connector im Datenfluss verwenden. Sie können die aus dem Chatter-Trigger („Neue Nachricht“) abgerufene neue Nachricht für andere Aktionen im Datenfluss verwenden. Konfigurieren Sie die Eingabeeigenschaften für den Chatter-Trigger wie folgt:
+	- **Gruppen-ID** – Gibt die ID der Gruppe an, aus der die neue Nachricht abgerufen werden soll. Wenn die Gruppen-ID nicht angegeben wird, werden neue Nachrichten aus dem Feed des Benutzers abgerufen.
 
-Sie können nun den Chatter-Connector im Datenfluss verwenden. Sie können die aus dem Chatter-Trigger \(„Neue Nachricht“\) abgerufene neue Nachricht für andere Aktionen im Datenfluss verwenden. Konfigurieren Sie die Eingabeeigenschaften für den Chatter-Trigger wie folgt:
+  ![][8]
+  ![][9]
 
-**Gruppen-ID** – Geben Sie die ID der Gruppe ein, aus der die neue Nachricht abgerufen werden soll. Wenn die Gruppen-ID nicht angegeben wird, werden neue Nachrichten aus dem Feed des Benutzers abgerufen:
-	![][8]
-	![][9]
+6. Auf ähnliche Weise können Sie die Chatter-Aktion im Datenfluss verwenden, um eine Nachricht bereitzustellen, indem Sie die Aktion „Nachricht bereitstellen“ auswählen. Konfigurieren Sie die Eingabeeigenschaften für die Aktion „Nachricht bereitstellen“ wie folgt:
+	- **Nachrichtentext** - Textinhalt der bereitzustellenden Nachricht.
+	- **Gruppen-ID** – Gibt die ID der Gruppe an, in der die neue Nachricht bereitgestellt werden soll. Wenn die Gruppen-ID nicht angegeben wird, wird die Nachricht im Feed des Benutzers bereitgestellt.
+	- 	**Dateiname** – Name der Datei, die dieser Nachricht angefügt werden soll
+	- 	**Inhaltsdaten** – Inhaltsdaten der Anlage
+	- 	**Inhaltstyp** – Inhaltstyp der Anlage
+	- 	**Codierung für die Inhaltsübertragung** – Codierung für die Inhaltsübertragung der Anlage („none“|„base64“)
+	- 	**Erwähnungen** – Bereich von Benutzernamen, die in der Nachricht markiert werden sollen
+	- 	**Hashtags** – Bereich von Hashtags, die mit der Nachricht bereitgestellt werden
 
-
-Auf ähnliche Weise können Sie die Chatter-Aktion im Datenfluss verwenden, um eine Nachricht bereitzustellen, indem Sie die Aktion „Nachricht bereitstellen“ auswählen. Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Nachricht bereitstellen" wie folgt:  
-	- **Nachrichtentext** – Textinhalt der bereitzustellenden Nachricht
-	- **Gruppen-ID** – Geben Sie die ID der Gruppe an, in der die Nachricht bereitgestellt werden soll. Wenn die Gruppen-ID nicht angegeben wird, wird die Nachricht im Feed des Benutzers bereitgestellt.
-	- **Dateiname** – Name der Datei, die dieser Nachricht angefügt werden soll
-	- **Inhaltsdaten** – Inhaltsdaten der Anlage – **Inhaltstyp** – Inhaltstyp der Anlage
-	- **Content Transfer Encoding** – Codierung für die Inhaltsübertragung der Nachricht ("none"|"base64")
-	- **Erwähnungen** – Bereich von Benutzernamen, die in der Nachricht markiert werden sollen
-	- **Hashtags** – Bereich von Hashtags, die mit der Nachricht bereitgestellt werden  
-
-![][10]
-![][11]
-
-## Mehr mit Ihrem Connector machen
-Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
-
-Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
-
-Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
-
+	![][10]
+	![][11]
 
 <!--Image references-->
 [1]: ./media/app-service-logic-connector-chatter/img1.PNG
@@ -103,6 +100,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [10]: ./media/app-service-logic-connector-chatter/img10.PNG
 [11]: ./media/app-service-logic-connector-chatter/img11.PNG
 
-<!----HONumber=August15_HO7-->
-
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

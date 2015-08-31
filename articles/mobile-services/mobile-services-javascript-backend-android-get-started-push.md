@@ -5,7 +5,6 @@
 	services="mobile-services, notification-hubs" 
 	documentationCenter="android" 
 	authors="RickSaling" 
-	writer="ricksal" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -37,7 +36,7 @@ In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pu
 
 ##<a id="register"></a>Aktivieren von Google Cloud Messaging
 
-[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-Google-cloud-messaging.md)]
+[AZURE.INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 ##<a id="configure"></a>Konfigurieren von Mobile Services zum Senden von Pushanforderungen
 
@@ -53,7 +52,7 @@ Wenn Sie den Testvorgang mit einem älteren Gerät durchführen, konsultieren Si
 
 ###Hinzufügen von Google Play Services zum Projekt
 
-[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-Google-play-services.md)]
+[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-google-play-services.md)]
 
 ###Hinzufügen des Codes
 
@@ -154,7 +153,7 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 
 
 <!-- URLs. -->
-[Erste Schritte mit Pushbenachrichtigungen (Eclipse)]: mobile-services-javascript-backend-android-get-started-push-EC.md
+[Erste Schritte mit Pushbenachrichtigungen (Eclipse)]: mobile-services-javascript-backend-android-get-started-push-ec.md
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Get started with Mobile Services]: mobile-services-android-get-started.md
@@ -179,4 +178,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Send template-based notifications to subscribers]: ../notification-hubs-android-send-localized-breaking-news.md
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erste Schritte mit der Authentifizierung für mobile Apps in Windows | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mobile Apps zum Authentifizieren der Benutzer Ihrer Windows-App über eine Vielzahl von Identitätsanbietern nutzen können, z. B. AAD, Google, Facebook, Twitter und Microsoft."
+	pageTitle="Hinzufügen von Authentifizierung zu Ihrer universellen Windows 8.1-Runtime-App | Azure Mobile Apps"
+	description="Erfahren Sie, wie Sie Azure App Service Mobile Apps zum Authentifizieren der Benutzer Ihrer Windows-App über eine Vielzahl von Identitätsanbietern nutzen können, z. B. AAD, Google, Facebook, Twitter und Microsoft."
 	services="app-service\mobile"
 	documentationCenter="windows"
 	authors="mattchenderson" 
@@ -13,22 +13,24 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="06/22/2015"
-	ms.author="mahender"/>
+	ms.date="08/14/2015"
+	ms.author="glenga"/>
 
 # Hinzufügen der Authentifizierung zu Ihrer Windows-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
-
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
 
 In diesem Thema wird die Authentifizierung von Benutzern einer mobilen App Service-App über Ihre Clientanwendung veranschaulicht. In diesem Lernprogramm fügen Sie dem Schnellstartprojekt durch Verwenden eines von App Service unterstützten Identitätsanbieters eine Authentifizierungsfunktion hinzu. Nach der erfolgreichen Authentifizierung und Autorisierung durch Ihre mobile App wird die Benutzer-ID angezeigt.
 
 Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Ihrer mobilen App] abschließen.
 
-##<a name="review"></a>Überprüfen der Konfiguration der Serverprojekts \(optional\)
+##<a name="review"></a>Überprüfen der Konfiguration des Serverprojekts (optional)
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-enable-auth-preview](../../includes/app-service-mobile-dotnet-backend-enable-auth-preview.md)]
+
+##<a name="create-gateway"></a>Erstellen eines App Service-Gateways
+
+[AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-gateway-preview](../../includes/app-service-mobile-dotnet-backend-create-gateway-preview.md)]
 
 ##<a name="register"></a>Registrieren Ihrer App für die Authentifizierung und Konfigurieren von App Service
 
@@ -38,12 +40,11 @@ Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen zunäc
 
 [AZURE.INCLUDE [app-service-mobile-restrict-permissions-dotnet-backend](../../includes/app-service-mobile-restrict-permissions-dotnet-backend.md)]
 
-<ol start="5">
-<li>Öffnen Sie Ihr Client-App-Projekt in Visual Studio, und stellen Sie sicher, dass die <b>MobileServiceClient</b>-Instanz zur Verwendung der Cloud-URL zur Mobile App-Ressource konfiguriert ist.</li>
-<li><p>Drücken Sie F5, um diese Schnellstart-basierte App auszuführen. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.</p>
+&nbsp;&nbsp;4. Öffnen Sie in Visual Studio die freigegebene Projektdatei "App.Xaml.cs" und stellen Sie sicher, dass die **MobileServiceClient**-Instanz so konfiguriert ist, dass sowohl die URL des Mobile App-Back-End als auch die des Gateway verwendet werden kann.
 
-   	<p>Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf den Code Ihrer mobilen App zuzugreifen, die <em>TodoItem</em>-Tabelle jetzt jedoch Authentifizierung erfordert.</p></li>
-</ol>
+&nbsp;&nbsp;5. Drücken Sie mit einem der Windows-App-Projekte als Startprojekt zum Ausführen der App F5. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.
+
+&nbsp;&nbsp;Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf den Code Ihrer mobilen App zuzugreifen, die *TodoItem*-Tabelle jetzt jedoch Authentifizierung erfordert.
 
 Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor diese Ressourcen von App Service anfordern.
 
@@ -52,27 +53,15 @@ Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor 
 [AZURE.INCLUDE [app-service-mobile-windows-universal-dotnet-authenticate-app](../../includes/app-service-mobile-windows-universal-dotnet-authenticate-app.md)]
 
 
->[AZURE.NOTE]Wenn Sie Ihre Windows Store-App-Paketinformationen unter App Service registriert haben, sollten Sie die <a href="http://go.microsoft.com/fwlink/p/?LinkId=311594" target="_blank">LoginAsync</a>-Methode aufrufen, indem Sie für den **useSingleSignOn**-Parameter den Wert <em>true</em> angeben. Wenn Sie dies nicht tun, werden Ihre Benutzer jedes Mal zur Anmeldung aufgefordert, wenn diese Anmeldemethode aufgerufen wird.
-
-
 ##<a name="tokens"></a>Speichern des Authentifizierungstokens auf dem Client
 
 [AZURE.INCLUDE [app-service-mobile-windows-store-dotnet-authenticate-app-with-token](../../includes/app-service-mobile-windows-store-dotnet-authenticate-app-with-token.md)]
 
-
-<!-- Anchors. -->
-[Register your app for authentication and configure the App Service]: #register
-[Restrict table permissions to authenticated users]: #permissions
-[Add authentication to the app]: #add-authentication
-[Store authentication tokens on the client]: #tokens
-[Next Steps]: #next-steps
+##Nächste Schritte
 
 
 <!-- URLs. -->
-[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Live SDK for Windows]: http://go.microsoft.com/fwlink/p/?LinkId=262253
 [Erste Schritte mit Ihrer mobilen App]: app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

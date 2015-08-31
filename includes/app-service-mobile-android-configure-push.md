@@ -1,7 +1,7 @@
 
-1. In the Azure Portal, click **Browse All**, click **Mobile Apps**, and then click the mobile app that you just created.
+1. Klicken Sie im Azure-Portal auf **Alle durchsuchen**, dann auf **Mobile Apps** und anschließend auf die mobile App, die Sie gerade erstellt haben.
 
-2. In the **Related** section of the blade, click **Push notification services**, click **Google Cloud Messaging**, enter the **API Key** value that you obtained from GCM in the previous procedure, and then click the **Save** button.
+2. Klicken Sie auf dem Blatt im Abschnitt **Related** auf **Push notification services**, anschließend auf **Google Cloud Messaging**, geben Sie den im letzten Schritt von GCM erhaltenen **API-Schlüssel** ein, und klicken Sie dann auf **Speichern**.
 
     ![][1]
 
@@ -10,3 +10,5 @@
 
 <!-- images -->
 [1]: ./media/app-service-mobile-android-configure-push/mobile-push-api-key.png
+
+<!---HONumber=August15_HO8-->

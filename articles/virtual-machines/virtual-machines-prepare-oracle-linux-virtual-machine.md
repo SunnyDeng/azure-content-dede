@@ -1,12 +1,12 @@
-<properties title="Prepare an Oracle Linux Virtual Machine for Azure" pageTitle="Vorbereiten eines virtuellen Oracle Linux-Computers für Azure" description="Führen Sie die Schritte zum Konfigurieren eines virtuellen Oracle-Computers unter Linux in Microsoft Azure aus." services="virtual-machines" authors="bbenz" documentationCenter=""/>
+<properties pageTitle="Vorbereiten eines virtuellen Oracle Linux-Computers für Azure" description="Führen Sie die Schritte zum Konfigurieren eines virtuellen Oracle-Computers unter Linux in Microsoft Azure aus." services="virtual-machines" authors="bbenz" documentationCenter=""/>
 <tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
 #Vorbereiten eines virtuellen Oracle Linux-Computers für Azure
--   [Vorbereiten eines virtuellen Oracle Linux 6.4+-Computers für Azure](virtual-machines-linux-create-upload-vhd-oracle.md)
+-   [Vorbereiten eines virtuellen Oracle Linux 6.4+-Computers für Azure](virtual-machines-linux-create-upload-vhd-oracle.md)
 
--   [Vorbereiten eines virtuellen Oracle Linux 7.0+-Computers für Azure](virtual-machines-linux-create-upload-vhd-oracle.md)
+-   [Vorbereiten eines virtuellen Oracle Linux 7.0+-Computers für Azure](virtual-machines-linux-create-upload-vhd-oracle.md)
 
 ##Voraussetzungen
-In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Oracle Linux-Betriebssystem auf einer virtuellen Festplatte installiert haben. Sie können VHD-Dateien mit unterschiedlichen Tools erstellen, beispielsweise mit einer Virtualisierungslösung wie Hyper-V. Anweisungen hierzu finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
+In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Oracle Linux-Betriebssystem auf einer virtuellen Festplatte installiert haben. Sie können VHD-Dateien mit unterschiedlichen Tools erstellen, beispielsweise mit einer Virtualisierungslösung wie Hyper-V. Anweisungen hierzu finden Sie unter [Installieren von Hyper-V und Erstellen eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
 
 **Installationshinweise für Oracle Linux**
 
@@ -14,11 +14,11 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Oracle Linux-Betr
 
 - Der UEK2 von Oracle wird auf Hyper-V und Azure nicht unterstützt, da er nicht die erforderlichen Treiber enthält.
 
-- Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem convert-vhd-Cmdlet in das VHD-Format konvertieren.
+- Das modernere VHDX-Format wird in Azure noch nicht unterstützt. Sie können den Datenträger mit dem Hyper-V-Manager oder dem Cmdlet "convert-vhd" in das VHD-Format konvertieren.
 
 - Beim Installieren des Linux-Systems wird empfohlen, anstelle von LVM (bei vielen Installationen oftmals voreingestellt) die Standardpartitionen zu verwenden. Dadurch lässt sich vermeiden, dass ein LVM-Namenskonflikt mit geklonten virtuellen Computern auftritt, besonders dann, wenn ein BS-Datenträger zu Fehlerbehebungszwecken mit einem anderen virtuellen Computer verbunden wird. LVM oder [RAID](virtual-machines-linux-configure-raid.md) können bei Bedarf auf Datenträgern verwendet werden.
 
-- NUMA wird bei größeren VMs aufgrund eines Fehlers in den Linux Kernel-Versionen unter 2.6.37 nicht unterstützt. Dieses Problem betrifft in erster Linie jene Verteilungen, die den Red Hat 2.6.32-Upstream-Kernel verwenden. Bei der manuellen Installation des Azure Linux Agent (waagent) wird NUMA in der GRUB-Konfiguration für das Linux-Kernel automatisch deaktiviert. Weitere Informationen dazu finden Sie in den folgenden Schritten.
+- NUMA wird bei größeren VMs aufgrund eines Fehlers in den Linux Kernel-Versionen unter 2.6.37 nicht unterstützt. Dieses Problem betrifft in erster Linie jene Verteilungen, die den Red Hat 2.6.32-Upstream-Kernel verwenden. Bei der manuellen Installation des Azure Linux Agent (waagent) wird NUMA in der GRUB-Konfiguration für das Linux-Kernel automatisch deaktiviert. Weitere Informationen dazu finden Sie in den folgenden Schritten.
 
 - Konfigurieren Sie keine SWAP-Partition auf einem Betriebssystemdatenträger. Der Linux-Agent kann konfiguriert werden, eine Auslagerungsdatei auf dem temporären Ressourcendatenträger zu erstellen. Weitere Informationen dazu finden Sie in den folgenden Schritten.
 
@@ -65,7 +65,7 @@ Sie müssen die spezifischen Konfigurationsschritte im Betriebssystem für den v
 
 		# sudo yum install python-pyasn1
 
-9.  Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür „/boot/grub/menu.lst“ in einem Text-Editor. Stellen Sie sicher, dass der Standardkernel die folgenden Parameter enthält:
+9.  Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür "/boot/grub/menu.lst" in einem Text-Editor. Stellen Sie sicher, dass der Standardkernel die folgenden Parameter enthält:
 
 		console=ttyS0 earlyprintk=ttyS0 rootdelay=300 numa=off
 
@@ -77,7 +77,7 @@ Sie müssen die spezifischen Konfigurationsschritte im Betriebssystem für den v
 
 	Weder der Graphical Boot noch der Quiet Boot sind in einer Cloudumgebung nützlich, in der alle Protokolle an den seriellen Port gesendet werden sollen.
 
-	Die Option `crashkernel` kann bei Bedarf konfiguriert bleiben. Beachten Sie jedoch, dass dieser Parameter die Menge an verfügbarem Arbeitsspeicher im virtuellen Computer um 128 MB oder mehr reduziert, was bei kleineren virtuellen Computern problematisch sein kann.
+	Die Option `crashkernel` kann bei Bedarf konfiguriert bleiben. Beachten Sie jedoch, dass dieser Parameter die Menge an verfügbarem Arbeitsspeicher im virtuellen Computer um 128 MB oder mehr reduziert. Dies kann bei kleineren virtuellen Computern problematisch sein.
 
 10.  Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung.
 
@@ -89,16 +89,16 @@ Sie müssen die spezifischen Konfigurationsschritte im Betriebssystem für den v
 
 12.  Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
 
-	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
+	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in "/etc/waagent.conf" entsprechend:
 
 		ResourceDisk.Format=y
-		
+
 		ResourceDisk.Filesystem=ext4
-		
+
 		ResourceDisk.MountPoint=/mnt/resource
-		
+
 		ResourceDisk.EnableSwap=y
-		
+
 		ResourceDisk.SwapSizeMB=2048 ## NOTE: set this to whatever you need it to be.
 
 13.  Führen Sie die folgenden Befehle aus, um den virtuellen Computer zurückzusetzen und ihn für die Bereitstellung in Azure vorzubereiten:
@@ -112,7 +112,7 @@ Sie müssen die spezifischen Konfigurationsschritte im Betriebssystem für den v
 ##Oracle Linux 7.0+
 **Änderungen in Oracle Linux 7**
 
-Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht in etwa der für Oracle Linux 6. Es gibt jedoch einige wichtige Unterschiede:
+Das Vorbereiten eines virtuellen Oracle Linux 7-Computers für Azure ähnelt dem Vorgehen für Oracle Linux 6. Es gibt jedoch einige wichtige Unterschiede zu beachten:
 
 -   Sowohl der Red Hat-kompatible Kernel als auch der UEK3 von Oracle werden in Azure unterstützt. Der UEK3-Kernel wird empfohlen.
 
@@ -162,7 +162,7 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 		# sudo yum clean all
 		# sudo yum -y update
 
-9.  Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu "/etc/default/grub" in einem Text-Editor, und bearbeiten Sie den Parameter "GRUB\_CMDLINE\_LINUX", beispielsweise:
+9.  Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu "/etc/default/grub" in einem Text-Editor, und bearbeiten Sie den Parameter "GRUB\_CMDLINE\_LINUX". Beispiel:
 
 		GRUB\_CMDLINE\_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0"
 
@@ -172,9 +172,9 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
 	Weder der Graphical Boot noch der Quiet Boot sind in einer Cloudumgebung nützlich, in der alle Protokolle an den seriellen Port gesendet werden sollen.
 
-	Die Option `crashkernel` kann bei Bedarf konfiguriert bleiben. Beachten Sie jedoch, dass dieser Parameter die Menge an verfügbarem Arbeitsspeicher im virtuellen Computer um 128 MB oder mehr reduziert, was bei kleineren virtuellen Computern problematisch sein kann.
+	Die Option `crashkernel` kann bei Bedarf konfiguriert bleiben. Beachten Sie jedoch, dass dieser Parameter die Menge an verfügbarem Arbeitsspeicher im virtuellen Computer um 128 MB oder mehr reduziert. Dies kann bei kleineren virtuellen Computern problematisch sein.
 
-10.  Sobald Sie die oben beschriebene Bearbeitung von "/etc/default/grub" abgeschlossen haben, führen Sie den folgenden Befehl zum erneuten Erstellen der Grub-Konfiguration aus:
+10.  Sobald Sie die Bearbeitung von "/etc/default/grub" abgeschlossen haben, führen Sie den folgenden Befehl zum erneuten Erstellen der Grub-Konfiguration aus:
 
 		# sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
@@ -186,13 +186,13 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
 13.  Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
 
-	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
+	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in "/etc/waagent.conf" entsprechend:
 
 		ResourceDisk.Format=y
 		ResourceDisk.Filesystem=ext4
 		ResourceDisk.MountPoint=/mnt/resource
 		ResourceDisk.EnableSwap=y
-		ResourceDisk.SwapSizeMB=2048 ## NOTE: set this to whatever you need it to be.
+		ResourceDisk.SwapSizeMB=2048 ## NOTE: Set this to whatever you need it to be.
 
 14.  Führen Sie die folgenden Befehle aus, um den virtuellen Computer zurückzusetzen und ihn für die Bereitstellung in Azure vorzubereiten:
 
@@ -202,4 +202,4 @@ Die Vorbereitung eines virtuellen Oracle Linux 7-Computers für Azure entspricht
 
 15.  Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -7,16 +7,16 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/11/2015" ms.author="aashishr"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/18/2015" ms.author="aashishr"; "jimpark"/>
 
 
-# Bereitstellen und Verwalten von Sicherungen auf Azure für Windows-Server/Windows-Clients mit PowerShell
-In diesem Artikel erfahren Sie, wie Sie PowerShell zum Einrichten von Azure Backup auf einem Windows-Server oder Windows-Client sowie zum Verwalten von Sicherungen und Wiederherstellungen verwenden.
+# Bereitstellen und Verwalten der Sicherung auf Azure für Windows-Server/Windows-Clients mit Azure PowerShell
+In diesem Artikel erfahren Sie, wie Sie Azure PowerShell zum Einrichten von Azure Backup auf einem Windows-Server oder Windows-Client sowie zum Verwalten von Sicherungen und Wiederherstellungen verwenden.
 
 [AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
 
 ## Einrichtung und Registrierung
-Die folgenden Installations- und Registrierungsaufgaben können mit PowerShell automatisiert werden:
+Die folgenden Installations- und Registrierungsaufgaben können mit Azure PowerShell automatisiert werden:
 
 - Erstellen eines Sicherungstresors
 - Installieren des Azure Backup-Agents
@@ -38,7 +38,7 @@ Mit dem Cmdlet **Get-AzureBackupVault** können Sie eine Liste aller Sicherungst
 ### Installieren des Azure Backup-Agents
 Bevor Sie den Azure Backup-Agent installieren, müssen Sie das Installationsprogramm herunterladen, damit es auf dem Windows-Server verfügbar ist. Die neueste Version des Installationsprogramms erhalten Sie im [Microsoft Download Center](http://aka.ms/azurebackup_agent) oder im Dashboard des Sicherungstresors. Speichern Sie das Installationsprogramm an einem leicht zugänglichen Speicherort wie *C:\\Downloads*.
 
-Um den Agent zu installieren, führen Sie den folgenden Befehl in einer PowerShell-Konsole mit erhöhten Rechten aus:
+Um den Agent zu installieren, führen Sie den folgenden Befehl in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
 
 ```
 PS C:\> MARSAgentInstaller.exe /q
@@ -80,7 +80,7 @@ Vor der Registrierung beim Azure Backup-Dienst müssen Sie sicherstellen, dass d
 - Gültiges Azure-Abonnement
 - Ein Sicherungstresor
 
-Führen Sie zum Herunterladen der Tresoranmeldedaten das Cmdlet **Get-AzureBackupVaultCredentials** in einer Azure PowerShell-Konsole aus, und speichern Sie sie an einem geeigneten Speicherort, z. B. *C:\Downloads*.
+Führen Sie zum Herunterladen der Tresoranmeldedaten das Cmdlet **Get-AzureBackupVaultCredentials** in einer Azure PowerShell-Konsole aus, und speichern Sie sie an einem geeigneten Speicherort, z. B. *C:\\Downloads*.
 
 ```
 PS C:\> $credspath = "C:"
@@ -92,7 +92,7 @@ f5303a0b-fae4-4cdb-b44d-0e4c032dde26_backuprg_backuprn_2015-08-11--06-22-35.Vaul
 Das Registrieren des Computer beim Tresor erfolgt mithilfe des [Start-OBRegistration](https://technet.microsoft.com/library/hh770398%28v=wps.630%29.aspx)-Cmdlets:
 
 ```
-PS C:\> $cred = $credspath + $credsfilename 
+PS C:\> $cred = $credspath + $credsfilename
 PS C:\> Start-OBRegistration -VaultCredentials $cred -Confirm:$false
 
 CertThumbprint      : 7a2ef2caa2e74b6ed1222a5e89288ddad438df2
@@ -309,25 +309,25 @@ Zum Ausführen eines Commits für das Richtlinienobjekt wird das [Set-OBPolicy](
 ```
 PS C:\> Set-OBPolicy -Policy $newpolicy
 Microsoft Azure Backup Do you want to save this backup policy ? [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
-BackupSchedule : 4:00 PM Saturday, Sunday, Every 1 week(s) 
+BackupSchedule : 4:00 PM Saturday, Sunday, Every 1 week(s)
 DsList : {DataSource
-         DatasourceId:4508156004108672185 
-         Name:C:\ 
-         FileSpec:FileSpec 
-         FileSpec:C:\ 
+         DatasourceId:4508156004108672185
+         Name:C:\
+         FileSpec:FileSpec
+         FileSpec:C:\
          IsExclude:False
          IsRecursive:True,
-         
-         FileSpec 
-         FileSpec:C:\windows 
-         IsExclude:True 
+
+         FileSpec
+         FileSpec:C:\windows
+         IsExclude:True
          IsRecursive:True,
-         
-         FileSpec 
-         FileSpec:C:\temp 
-         IsExclude:True 
+
+         FileSpec
+         FileSpec:C:\temp
+         IsExclude:True
          IsRecursive:True,
-         
+
          DataSource
          DatasourceId:4508156005178868542
          Name:D:\
@@ -336,7 +336,7 @@ DsList : {DataSource
          IsExclude:False
          IsRecursive:True
 	}
-PolicyName : c2eb6568-8a06-49f4-a20e-3019ae411bac 
+PolicyName : c2eb6568-8a06-49f4-a20e-3019ae411bac
 RetentionPolicy : Retention Days : 7
               WeeklyLTRSchedule :
               Weekly schedule is not set
@@ -353,39 +353,39 @@ Sie können die Details der vorhandenen Sicherungsrichtlinie mit dem [Get-OBPoli
 
 ```
 PS C:\> Get-OBPolicy | Get-OBSchedule
-SchedulePolicyName : 71944081-9950-4f7e-841d-32f0a0a1359a 
-ScheduleRunDays : {Saturday, Sunday} 
-ScheduleRunTimes : {16:00:00} 
+SchedulePolicyName : 71944081-9950-4f7e-841d-32f0a0a1359a
+ScheduleRunDays : {Saturday, Sunday}
+ScheduleRunTimes : {16:00:00}
 State : Existing
 
 PS C:\> Get-OBPolicy | Get-OBRetentionPolicy
-RetentionDays : 7 
-RetentionPolicyName : ca3574ec-8331-46fd-a605-c01743a5265e 
+RetentionDays : 7
+RetentionPolicyName : ca3574ec-8331-46fd-a605-c01743a5265e
 State : Existing
 
 PS C:\> Get-OBPolicy | Get-OBFileSpec
-FileName : * 
-FilePath : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\ 
-FileSpec : D:\ 
-IsExclude : False 
+FileName : *
+FilePath : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
+FileSpec : D:\
+IsExclude : False
 IsRecursive : True
 
-FileName : * 
-FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\ 
-FileSpec : C:\ 
-IsExclude : False 
+FileName : *
+FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\
+FileSpec : C:\
+IsExclude : False
 IsRecursive : True
 
-FileName : * 
-FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\windows 
-FileSpec : C:\windows 
-IsExclude : True 
+FileName : *
+FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\windows
+FileSpec : C:\windows
+IsExclude : True
 IsRecursive : True
 
-FileName : * 
-FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\temp 
-FileSpec : C:\temp 
-IsExclude : True 
+FileName : *
+FilePath : \?\Volume{cdd41007-a22f-11e2-be6c-806e6f6e6963}\temp
+FileSpec : C:\temp
+IsExclude : True
 IsRecursive : True
 ```
 
@@ -394,13 +394,13 @@ Nachdem eine Sicherungsrichtlinie festgelegt wurde, werden die Sicherungen entsp
 
 ```
 PS C:\> Get-OBPolicy | Start-OBBackup
-Taking snapshot of volumes... 
-Preparing storage... 
-Estimating size of backup items... 
-Estimating size of backup items... 
-Transferring data... 
-Verifying backup... 
-Job completed. 
+Taking snapshot of volumes...
+Preparing storage...
+Estimating size of backup items...
+Estimating size of backup items...
+Transferring data...
+Verifying backup...
+Job completed.
 The backup operation completed successfully.
 ```
 
@@ -417,13 +417,13 @@ Um ein Element aus Azure Backup wiederherzustellen, müssen Sie zunächst die Qu
 
 ```
 PS C:\> $source = Get-OBRecoverableSource
-PS C:\> $source 
-FriendlyName : C:\ 
-RecoverySourceName : C:\ 
+PS C:\> $source
+FriendlyName : C:\
+RecoverySourceName : C:\
 ServerName : myserver.microsoft.com
 
-FriendlyName : D:\ 
-RecoverySourceName : D:\ 
+FriendlyName : D:\
+RecoverySourceName : D:\
 ServerName : myserver.microsoft.com
 ```
 
@@ -432,26 +432,26 @@ Die Liste der Sicherungspunkte kann durch Ausführen des [Get-OBRecoverableItem]
 
 ```
 PS C:\> $rps = Get-OBRecoverableItem -Source $source[1]
-IsDir : False 
-ItemNameFriendly : D:\ 
-ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\ 
-LocalMountPoint : D:\ 
-MountPointName : D:\ 
-Name : D:\ 
-PointInTime : 18-Jun-15 6:41:52 AM 
-ServerName : myserver.microsoft.com 
-ItemSize : 
+IsDir : False
+ItemNameFriendly : D:\
+ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
+LocalMountPoint : D:\
+MountPointName : D:\
+Name : D:\
+PointInTime : 18-Jun-15 6:41:52 AM
+ServerName : myserver.microsoft.com
+ItemSize :
 ItemLastModifiedTime :
 
-IsDir : False 
-ItemNameFriendly : D:\ 
-ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\ 
-LocalMountPoint : D:\ 
-MountPointName : D:\ 
-Name : D:\ 
-PointInTime : 17-Jun-15 6:31:31 AM 
-ServerName : myserver.microsoft.com 
-ItemSize : 
+IsDir : False
+ItemNameFriendly : D:\
+ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
+LocalMountPoint : D:\
+MountPointName : D:\
+Name : D:\
+PointInTime : 17-Jun-15 6:31:31 AM
+ServerName : myserver.microsoft.com
+ItemSize :
 ItemLastModifiedTime :
 ```
 Das ```$rps```-Objekt ist ein Array von Sicherungspunkten. Das erste Element ist der neueste Punkt und das n. Element der älteste Punkte. Um den neuesten Punkt auszuwählen, verwenden wir ```$rps[0]```.
@@ -463,40 +463,40 @@ Wenn wir in diesem Beispiel die Datei *finances.xls* wiederherstellen möchten, 
 
 ```
 PS C:\> $filesFolders = Get-OBRecoverableItem $rps[0]
-PS C:\> $filesFolders 
-IsDir : True 
-ItemNameFriendly : D:\MyData\ 
-ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\ 
-LocalMountPoint : D:\ 
-MountPointName : D:\ 
-Name : MyData 
-PointInTime : 18-Jun-15 6:41:52 AM 
-ServerName : myserver.microsoft.com 
-ItemSize : 
+PS C:\> $filesFolders
+IsDir : True
+ItemNameFriendly : D:\MyData\
+ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\
+LocalMountPoint : D:\
+MountPointName : D:\
+Name : MyData
+PointInTime : 18-Jun-15 6:41:52 AM
+ServerName : myserver.microsoft.com
+ItemSize :
 ItemLastModifiedTime : 15-Jun-15 8:49:29 AM
 
 PS C:\> $filesFolders = Get-OBRecoverableItem $filesFolders[0]
-PS C:\> $filesFolders 
-IsDir : False 
-ItemNameFriendly : D:\MyData\screenshot.oxps 
-ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\screenshot.oxps 
-LocalMountPoint : D:\ 
-MountPointName : D:\ 
-Name : screenshot.oxps 
-PointInTime : 18-Jun-15 6:41:52 AM 
-ServerName : myserver.microsoft.com 
-ItemSize : 228313 
+PS C:\> $filesFolders
+IsDir : False
+ItemNameFriendly : D:\MyData\screenshot.oxps
+ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\screenshot.oxps
+LocalMountPoint : D:\
+MountPointName : D:\
+Name : screenshot.oxps
+PointInTime : 18-Jun-15 6:41:52 AM
+ServerName : myserver.microsoft.com
+ItemSize : 228313
 ItemLastModifiedTime : 21-Jun-14 6:45:09 AM
 
-IsDir : False 
-ItemNameFriendly : D:\MyData\finances.xls 
-ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\finances.xls 
-LocalMountPoint : D:\ 
-MountPointName : D:\ 
-Name : finances.xls 
-PointInTime : 18-Jun-15 6:41:52 AM 
-ServerName : myserver.microsoft.com 
-ItemSize : 96256 
+IsDir : False
+ItemNameFriendly : D:\MyData\finances.xls
+ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\finances.xls
+LocalMountPoint : D:\
+MountPointName : D:\
+Name : finances.xls
+PointInTime : 18-Jun-15 6:41:52 AM
+ServerName : myserver.microsoft.com
+ItemSize : 96256
 ItemLastModifiedTime : 21-Jun-14 6:43:02 AM
 ```
 
@@ -516,12 +516,12 @@ PS C:\> $recovery_option = New-OBRecoveryOption -DestinationPath "C:\temp" -Over
 Jetzt lösen wir die Wiederherstellung mithilfe des [Start-OBRecovery](https://technet.microsoft.com/library/hh770402.aspx)-Befehls für das ausgewählte ```$item``` in der Ausgabe des ```Get-OBRecoverableItem```-Cmdlets aus:
 
 ```
-PS C:\> Start-OBRecovery -RecoverableItem $item -RecoveryOption $recover_option 
-Estimating size of backup items... 
-Estimating size of backup items... 
-Estimating size of backup items... 
-Estimating size of backup items... 
-Job completed. 
+PS C:\> Start-OBRecovery -RecoverableItem $item -RecoveryOption $recover_option
+Estimating size of backup items...
+Estimating size of backup items...
+Estimating size of backup items...
+Estimating size of backup items...
+Job completed.
 The recovery operation completed successfully.
 ```
 
@@ -580,4 +580,4 @@ PS C:\> Invoke-Command -Session $s -Script { param($d, $a) Start-Process -FilePa
 ## Nächste Schritte
 Weitere Informationen zu Azure Backup für Windows-Server und -Clients finden Sie unter [Einführung in Azure Backup](backup-introduction-to-azure-backup.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

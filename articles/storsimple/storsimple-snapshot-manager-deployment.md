@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
-   manager="adinah"
+   manager="carolz"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="07/09/2015"
+   ms.date="08/17/2015"
    ms.author="v-sharos" />
 
 # Bereitstellung von StorSimple Snapshot Manager
@@ -35,9 +35,7 @@ Stellen Sie vor der Installation oder Aktualisierung des StorSimple Snapshot Man
 
 Die folgenden Schritte bieten einen allgemeinen Überblick über die Konfigurationsaufgaben, die Sie ausführen müssen, bevor Sie den StorSimple Snapshot Manager installieren. Vollständige Microsoft Azure StorSimple-Konfigurations- und Setupinformationen, einschließlich Systemanforderungen und detaillierten Anweisungen, finden Sie unter [Bereitstellen des lokalen StorSimple-Geräts](storsimple-deployment-walkthrough.md).
 
->[AZURE.IMPORTANT]Bevor Sie loslegen, gehen Sie die [Vorinstallationsliste](storsimple-deployment-walkthrough.md#pre-installation-checklist) 
-> und die [Bereitstellungsvoraussetzungen](storsimple-deployment-walkthrough.md#deployment-prerequisites) in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md) durch.
-<br>
+>[AZURE.IMPORTANT]Bevor Sie loslegen, gehen Sie die [Konfigurationsprüfliste für die Bereitstellung](storsimple-deployment-walkthrough.md#deployment-configuration-checklist) und die [Bereitstellungsvoraussetzungen](storsimple-deployment-walkthrough.md#deployment-prerequisites) in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md) durch. <br>
  
 ### Vor der Installation des StorSimple Snapshot Managers
 
@@ -63,7 +61,7 @@ Die folgenden Schritte bieten einen allgemeinen Überblick über die Konfigurati
     - Gespiegelte dynamische Volumes (RAID 1)
     - Freigegebene Clustervolumes
  
-    Informationen zum Erstellen von Volumes auf dem StorSimple-Gerät oder dem virtuellen StorSimple-Gerät finden Sie unter „Schritt 6: Erstellen eines Volumes“ in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md).
+    Informationen zum Erstellen von Volumes auf dem StorSimple-Gerät oder dem virtuellen StorSimple-Gerät finden Sie unter [Schritt 6: Erstellen eines Volumes](storsimple-deployment-walkthrough.md#step-6-create-a-volume) in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md).
 
 ## Installieren eines neuen StorSimple Snapshot Managers
 
@@ -113,7 +111,7 @@ Führen Sie die folgenden Schritte aus, um den StorSimple Snapshot Manager mit e
 
 #### So verbinden Sie den StorSimple Snapshot Manager mit einem Gerät
 
-1. Klicken Sie auf das StorSimple Snapshot Manager-Symbol auf Ihrem Desktop. Das StorSimple Snapshot Manager-Fenster wird angezeigt. Das Fenster enthält einen **Umfang**-, einen **Ergebnisse**- und einen **Aktionen**-Bereich. 
+1. Klicken Sie auf das StorSimple Snapshot Manager-Symbol auf Ihrem Desktop. Das StorSimple Snapshot Manager-Fenster wird angezeigt. Das Fenster enthält einen Bereich **Umfang**, einen Bereich **Ergebnisse** und einen Bereich **Aktionen**. 
 
     ![Benutzeroberfläche des StorSimple Snapshot Managers](./media/storsimple-snapshot-manager-deployment/HCS_SSM_gui_panes.png)
 
@@ -125,7 +123,7 @@ Führen Sie die folgenden Schritte aus, um den StorSimple Snapshot Manager mit e
 
     Eine vollständige Beschreibung der StorSimple Snapshot Manager-Benutzeroberfläche finden Sie unter [Benutzeroberfläche des StorSimple Snapshot Managers](storsimple-use-snapshot-manager.md).
 
-2. Klicken Sie im **Umfang**-Bereich mit der rechten Maustaste auf den Knoten **Geräte**, und klicken Sie dann auf **Gerät konfigurieren**. Das Dialogfeld **Gerät konfigurieren** wird angezeigt.
+2. Klicken Sie im **Bereichsfenster** mit der rechten Maustaste auf den Knoten **Geräte**, und klicken Sie dann auf **Gerät konfigurieren**. Das Dialogfeld **Gerät konfigurieren** wird angezeigt.
 
     ![Konfigurieren eines Geräts](./media/storsimple-snapshot-manager-deployment/HCS_SSM_config_device.png)
 
@@ -195,11 +193,11 @@ Führen Sie die folgenden Schritte aus, um eine Kopie der StorSimple Snapshot Ma
 
    1. Starten Sie den Server-Manager.
 
-   2. Wählen Sie im Dashboard des Server-Managers im Menü **Extras** die Option **Dienste** aus.
+   2. Wählen Sie im Dashboard des Server-Managers im Menü **Tools** das Element **Dienste** aus.
 
    3. Wählen Sie auf der Seite **Dienste** den Eintrag **Microsoft StorSimple-Verwaltungsdienst** aus.
 
-   4. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Dienst beenden**.
+   4. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Beenden des Dienstes**.
 
         ![Stop the StorSimple Manager service](./media/storsimple-snapshot-manager-deployment/HCS_SSM_stop_service.png)
 
@@ -213,11 +211,11 @@ Führen Sie die folgenden Schritte aus, um eine Kopie der StorSimple Snapshot Ma
 
 4. Starten Sie den Microsoft StorSimple-Verwaltungsdienst neu:
 
-    1. Wählen Sie im Dashboard des Server-Managers im Menü **Extras** die Option **Dienste** aus.
+    1. Wählen Sie im Dashboard des Server-Managers im Menü **Tools** das Element **Dienste** aus.
 
     2. Wählen Sie auf der Seite **Dienste** den **Microsoft StorSimple-Verwaltungsdienst** aus.
 
-    3. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Dienst neu starten**.
+    3. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Neustart des Dienstes**.
 
 ### Schritt 3: Erneutes Installieren von StorSimple Snapshot Manager und Wiederherstellen der Datenbank
 
@@ -229,13 +227,13 @@ Um den StorSimple Snapshot Manager erneut zu installieren, führen Sie die Schri
 
     1. Starten Sie den Server-Manager.
 
-    2. Wählen Sie im Dashboard des Server-Managers im Menü **Extras** die Option **Dienste** aus.
+    2. Wählen Sie im Dashboard des Server-Managers im Menü **Tools** das Element **Dienste** aus.
 
     3. Wählen Sie auf der Seite **Dienste** den Eintrag **Microsoft StorSimple-Verwaltungsdienst** aus.
 
-    4. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Dienst beenden**.
+    4. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Beenden des Dienstes**.
 
-2. Navigieren Sie zu „C:\ProgramData\Microsoft\StorSimple\BACatalog“.
+2. Navigieren Sie zu „C:\\ProgramData\\Microsoft\\StorSimple\\BACatalog“.
 
      >[AZURE.NOTE]„ProgramData“ ist ein versteckter Ordner.
 
@@ -243,11 +241,11 @@ Um den StorSimple Snapshot Manager erneut zu installieren, führen Sie die Schri
 
 4. Starten Sie den Microsoft StorSimple-Verwaltungsdienst neu:
 
-    1. Wählen Sie im Dashboard des Server-Managers im Menü **Extras** die Option **Dienste** aus.
+    1. Wählen Sie im Dashboard des Server-Managers im Menü **Tools** das Element **Dienste** aus.
 
     2. Wählen Sie auf der Seite **Dienste** den Eintrag **Microsoft StorSimple-Verwaltungsdienst** aus.
 
-    3. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Dienst neu starten**.
+    3. Klicken Sie im rechten Bereich unter **Microsoft StorSimple-Verwaltungsdienst** auf **Neustart des Dienstes**.
 
 ## Nächste Schritte
 
@@ -255,4 +253,4 @@ Weitere Informationen zum StorSimple Snapshot Manager finden Sie unter [Was ist 
 
 Weitere Informationen zur StorSimple Snapshot Manager-Benutzeroberfläche finden Sie unter [Benutzeroberfläche des StorSimple Snapshot Managers](storsimple-use-snapshot-manager.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

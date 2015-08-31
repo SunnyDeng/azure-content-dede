@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/02/2015"
+	ms.date="08/19/2015"
 	ms.author="andalmia"/>
 
 # Verwenden des OneDrive-Connectors in Logik-Apps #
@@ -78,6 +78,13 @@ Sobald Ihre API-App erstellt wurde, können Sie den OneDrive-Connector als Aktio
 
 9. Ausführliche Informationen zu den APIs finden sie unter [OneDrive Connector (in englischer Sprache)].
 
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
+
 <!-- Image reference -->
 [1]: ./media/app-service-logic-connector-onedrive/img1.PNG
 [2]: ./media/app-service-logic-connector-onedrive/img2.PNG
@@ -91,4 +98,4 @@ Sobald Ihre API-App erstellt wurde, können Sie den OneDrive-Connector als Aktio
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [OneDrive Connector (in englischer Sprache)]: https://msdn.microsoft.com/de-de/library/dn974227.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

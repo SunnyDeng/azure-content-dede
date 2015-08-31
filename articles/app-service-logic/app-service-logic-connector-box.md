@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="08/10/2015"
+   ms.date="08/19/2015"
    ms.author="andalmia"/>
 
 # Box-Connector
@@ -24,17 +24,21 @@ Es gibt Situationen, in denen Sie möglicherweise mit Box arbeiten müssen, um D
 ## Trigger und Aktionen
 Die Box-Katalog-App bietet Ihnen Aktionen als Mechanismen für die Interaktion mit Box:
 
-**Aktionen**: Über die Aktionen können Sie vordefinierte Aktionen für das Box-Konto ausführen, das mit der Logik-App konfiguriert wurde. Im Folgenden sind die Aktionen aufgeführt, die über ein Box-Konto mit dem Box-Connector durchgeführt werden können:
 
-a. *Dateien auflisten:* Dieser Vorgang gibt die Informationen aller Dateien in einem Ordner zurück. Liste der Parameter, die für die Aktion erforderlich sind:
+
+1. **Aktionen**: Über die Aktionen können Sie vordefinierte Aktionen für das Box-Konto ausführen, das mit der Logik-App konfiguriert wurde. Im Folgenden sind die Aktionen aufgeführt, die über ein Box-Konto mit dem Box-Connector durchgeführt werden können:
+
+	a. *Dateien auflisten:* Dieser Vorgang gibt die Informationen aller Dateien in einem Ordner zurück. Nachfolgend sind die Parameter aufgeführt, die für die Aktion erforderlich sind:
 
 Parametername | Beschreibung | Erforderlich
 --- | --- | ---
 Ordnerpfad | Pfad des Ordners zur Liste. | Ja
 
-> [AZURE.NOTE]Hierdurch werden keine Dateiinhalte zurückgegeben.
+	>[AZURE.NOTE] Hierdurch werden keine Dateiinhalte zurückgegeben.
 
-b. *Datei abrufen:* Dieser Vorgang ruft eine Datei mit ihren Inhalten und Eigenschaften ab. Liste der Parameter, die für die Aktion erforderlich sind:
+
+
+    b. *Datei abrufen:* Dieser Vorgang ruft eine Datei mit ihren Inhalten und Eigenschaften ab. Nachfolgend sind die Parameter aufgeführt, die für die Aktion erforderlich sind:
 
 Parametername | Beschreibung | Erforderlich
 --- | --- | ---
@@ -44,7 +48,8 @@ Dateityp | Gibt an, ob die Datei im Text- oder im Binärformat vorliegt. | Nein
 > [AZURE.NOTE]Bei diesem Vorgang wird die Datei nach dem Lesen nicht gelöscht.
 
 
-c. *Datei hochladen*: Wie der Name schon sagt, wird die Datei durch diese Aktion in ein Box-Konto hochgeladen. Wenn die Datei bereits vorhanden ist, wird sie nicht überschrieben, und ein Fehler wird ausgelöst. Liste der Parameter, die für die Aktion erforderlich sind:
+
+    c. Datei hochladen: Wie der Name schon sagt, wird die Datei durch diese Aktion in ein Box-Konto hochgeladen. Wenn die Datei bereits vorhanden ist, wird sie nicht überschrieben, und ein Fehler wird ausgelöst. Nachfolgend sind die Parameter aufgeführt, die für die Aktion erforderlich sind:
 
 Parametername | Beschreibung | Erforderlich
 --- | --- | ---
@@ -65,7 +70,7 @@ Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
 2. Suchen Sie nach "Box-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
-3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein:  
+3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein:
 	![][1]
 4. Klicken Sie auf **Erstellen**.
 
@@ -78,22 +83,22 @@ Sobald Ihre API-App erstellt wurde, können Sie den Box-Connector als Aktion in 
 
 	> [AZURE.NOTE]Wenn der Box-Connector am Anfang der Logik-App aktiviert ist, fungiert dieser wie ein Trigger. Andernfalls könnte Aktionen auf das Box-Konto über den Connector angewendet werden. Der Box-Connector verfügte über keine Trigger, als dieser Artikel verfasst wurde.
 
-2. Authentifizieren und autorisieren Sie Logik-Apps, um Vorgänge in Ihrem Namen durchzuführen. Wählen Sie **Autorisieren** für den Box-Connector aus:  
+2. Authentifizieren und autorisieren Sie Logik-Apps, um Vorgänge in Ihrem Namen durchzuführen. Wählen Sie **Autorisieren** für den Box-Connector aus:
 	![][2]
 
-3. Geben Sie die Anmeldeinformationen des Box-Kontos an, mit dem Sie die Vorgänge ausführen möchten:  
+3. Geben Sie die Anmeldeinformationen des Box-Kontos an, mit dem Sie die Vorgänge ausführen möchten:
 	![][3]
 
-4. Erteilen Sie Logik-Apps Zugriff auf Ihr Konto, um Vorgänge in Ihrem Namen auszuführen:  
+4. Erteilen Sie Logik-Apps Zugriff auf Ihr Konto, um Vorgänge in Ihrem Namen auszuführen:
 	![][4]
 
-5. Die Liste der Aktionen wird angezeigt, und Sie können die entsprechenden Vorgänge auswählen, die Sie ausführen möchten:  
+5. Die Liste der Aktionen wird angezeigt, und Sie können die entsprechenden Vorgänge auswählen, die Sie ausführen möchten:
 	![][5]
 
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -104,6 +109,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [4]: ./media/app-service-logic-connector-box/image_3.jpg
 [5]: ./media/app-service-logic-connector-box/image_4.jpg
 
-<!----HONumber=August15_HO7-->
-
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

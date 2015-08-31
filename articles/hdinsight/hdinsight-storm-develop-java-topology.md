@@ -5,7 +5,8 @@
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
-   editor="cgronlun"/>
+   editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
@@ -466,4 +467,4 @@ Sie haben erfahren, wie Sie eine Storm-Topologie mit Java erstellen. Nun lernen 
 
 Weitere Beispiel-Storm-Topologien finden Sie unter [Beispieltopologien für Storm auf HDInsight](hdinsight-storm-example-topology.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

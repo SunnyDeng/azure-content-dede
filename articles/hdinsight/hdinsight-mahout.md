@@ -5,8 +5,8 @@
 	documentationCenter=""
 	authors="Blackmist"
 	manager="paulettm"
-	editor=""/>
-
+	editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
@@ -16,7 +16,6 @@
 	ms.topic="article"
 	ms.date="07/24/2015"
 	ms.author="larryfr"/>
-
 
 #Erstellen von Filmempfehlungen mithilfe von Apache Mahout mit Hadoop in HDInsight
 
@@ -43,7 +42,7 @@ Mahout ist eine [Bibliothek für maschinelles Lernen][ml] für Apache Hadoop. Ma
 
 * **Ein Windows-basierter Hadoop-Cluster in HDInsight**. Weitere Informationen zur Erstellung finden Sie unter [Erste Schritte mit Hadoop in HDInsight][getstarted].
 
-- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) \(Installieren und Verwenden von Azure PowerShell, in englischer Sprache\).
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) (Installieren und Verwenden von Azure PowerShell, in englischer Sprache).
 
 
 ##<a name="recommendations"></a>Generieren von Empfehlungen mithilfe von PowerShell
@@ -423,4 +422,4 @@ Nachdem Sie sich mit Mahout vertraut gemacht haben, können Sie sich anderen Met
 [tools]: https://github.com/Blackmist/hdinsight-tools
  
 
-<!------HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

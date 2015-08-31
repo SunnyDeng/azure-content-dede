@@ -7,16 +7,14 @@
    manager="NA"
    editor=""
    tags=""/>
-
 <tags
    ms.service="data-catalog"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="07/31/2015"
+   ms.date="08/19/2015"
    ms.author="maroche"/>
-
 
 # Was ist Azure Data Catalog?
 
@@ -73,8 +71,10 @@ Der Registrierungsprozess umfasst drei grundlegende Schritte:
 - SQL Server Analysis Services – Mehrdimensionaler KPI
 - SQL Server Analysis Services – Tabellarische Tabelle
 - SQL Server Reporting Services-Bericht
+- Azure Storage-Blob
+- Azure-Speicherverzeichnis
 
-Zusätzliche Datenquellen und Ressourcentypen werden während der **Azure Data Catalog**-Vorschauphase hinzugefügt.
+Zusätzliche Datenquellen und Ressourcentypen werden während der **Azure Data Catalog**-Preview-Phase hinzugefügt.
 
 > [AZURE.IMPORTANT]Beim Registrieren einer Datenquelle in **Azure Data Catalog** werden die Daten nicht aus der Datenquelle kopiert, es sei denn, Sie wählen im Tool für die Datenquellenregistrierung die Option „Vorschau einfügen“. Bei der Registrierung werden Datenquellenmetadaten kopiert, keine Daten. Beispiele für Metadaten sind die Namen von Tabellen und anderen Datenquellenobjekten sowie die Namen und Datentypen von Spalten und anderen Datenquellenattributen. Die Metadaten enthalten auch den Speicherort der Datenquelle, damit Benutzer, die die Datenquelle mit **Azure Data Catalog** ermitteln, eine Verbindung damit herstellen können. Wenn Sie die Option „Vorschau einfügen“ wählen, werden mit dem Tool für die Registrierung von Datenquellen auch einige Datensätze nach **Azure Data Catalog** kopiert. Diese Datensätze werden Benutzern angezeigt, die die Datenquelle im **Azure Data Catalog**-Portal ermitteln.
 
@@ -83,7 +83,7 @@ Zusätzliche Datenquellen und Ressourcentypen werden während der **Azure Data C
 Nachdem die Registrierung abgeschlossen ist, können die Datenquellen ermittelt und genutzt werden. Der eigentliche Nutzen von **Azure Data Catalog** besteht aber darin, dass beschreibende geschäftliche Metadaten auf derselben Oberfläche wie die strukturellen Metadaten vorliegen, die aus der Datenquelle extrahiert wurden. Diese zusätzliche Metadaten bieten drei wesentliche Vorteile:
 
 -	Die registrierten Datenquellen sind leichter ermittelbar. Die vom Benutzer bereitgestellten Metadaten werden dem Suchindex von **Azure Data Catalog** hinzugefügt. So können Benutzer Daten ermitteln, indem sie Wörter und Begriffe verwenden, die in der ursprünglichen Datenquelle unter Umständen nicht vorhanden sind. Wenn eine Datenbanktabelle mit Kundendaten beispielsweise den Namen „tbl\_c45“ hat, wird sie durch die Angabe des Anzeigenamens „Kunde“ für Benutzer, die nach Kundendaten suchen, leichter ermittelbar. Ebenso wird eine Datenquelle durch die Angabe einer Beschreibung mit Namen von Berichten, Dashboards oder Prozessen, von denen die Daten verwendet werden, leichter für Benutzer ermittelbar, die nachgeschaltete Artefakte als Suchbegriffe verwenden.
--	Die registrierten Datenquellen sind nach ihrer Ermittlung leichter verständlich. Die von Benutzern bereitgestellten Metadaten werden allen **Azure Data Catalog**-Benutzern angezeigt, die die mit Anmerkungen versehene Datenquelle aufrufen, damit zusätzlicher Kontext und Informationen vorhanden sind. Die meisten Datenquellen enthalten häufig keine aussagekräftigen Beschreibungen oder Dokumentation, und wenn dies doch einmal der Fall ist, liegt der Schwerpunkt häufig auf technischen DBA-Angaben oder Informationen für Datenbankentwickler. Indem Datenquellen in **Azure Data Catalog** mit Beschreibungen und Tags versehen werden, die für die Zielgruppen relevant sind, können Benutzer mit dazu beitragen, dass bei der Ermittlung die Details und die beabsichtigte Nutzung verstanden werden.
+-	Die registrierten Datenquellen sind nach ihrer Ermittlung leichter verständlich. Die von Benutzern bereitgestellten Metadaten werden allen **Azure Data Catalog**-Benutzern angezeigt, die die mit Anmerkungen versehene Datenquelle aufrufen, damit zusätzlicher Kontext und zusätzliche Informationen vorhanden sind. Die meisten Datenquellen enthalten häufig keine aussagekräftigen Beschreibungen oder Dokumentation, und wenn dies doch einmal der Fall ist, liegt der Schwerpunkt häufig auf technischen DBA-Angaben oder Informationen für Datenbankentwickler. Indem Datenquellen in **Azure Data Catalog** mit Beschreibungen und Tags versehen werden, die für die Zielgruppen relevant sind, können Benutzer mit dazu beitragen, dass bei der Ermittlung die Details und die beabsichtigte Nutzung verstanden werden.
 -  Jede registrierte Datenquelle kann Informationen zur Zugriffsanforderung einschließen, sodass Benutzer vorhandene Prozesse einfach verstehen und ausführen können, um Zugriff auf die Datenquelle und ihre Daten anzufordern.
 
 > [AZURE.NOTE]Jeder **Azure Data Catalog**-Benutzer kann eigene Tags und Beschreibungen für Datenressourcen und Attribute hinzufügen. **Azure Data Catalog** verfolgt den Nutzen und die Quelle jeder Anmerkung und zeigt den Benutzer und das Datum an, an dem die Anmerkung hinzugefügt wurde. Mit diesem Crowdsourcing-Ansatz für Metadaten wird sichergestellt, dass jeder Benutzer mit Bezug zu den Daten und ihrer Nutzung Meinungen und Ressourcen mit der gesamten Community teilen kann.
@@ -105,7 +105,7 @@ Oben im Eigenschaftenbereich befinden sich weitere Schaltflächen:
 1.	Vorschau: Wenn Sie diese Schaltfläche auswählen, wird die statische Gruppe der Vorschaudatensätze aus der Datenquelle angezeigt, wenn während der Registrierung der Datenquelle die Vorschaufunktion ausgewählt wurde.
 2.	Schema: Wenn Sie diese Schaltfläche auswählen, werden das Schema für die Datenquelle, z. B. Spaltennamen und Datentypen, sowie alle Metadaten auf Spaltenebene in **Azure Data Catalog** angezeigt.
 
-> [AZURE.NOTE]Beachten Sie unbedingt, dass die **Ermittlung** auch ein Einstiegspunkt in die **Erweiterung** darstellen kann, nicht nur in die **Nutzung**. Der Crowdsourcing-Ansatz von **Azure Data Catalog** bedeutet, dass alle Benutzer, die eine registrierte Datenquelle ermitteln, die Daten nicht nur nutzen, sondern auch ihre Meinung zu den Daten teilen können.
+> [AZURE.NOTE]Beachten Sie unbedingt, dass die **Ermittlung** auch ein Einstiegspunkt in die **Erweiterung** darstellen kann, nicht nur in die **Nutzung**. Der Crowdsourcing-Ansatz von **Azure Data Catalog** bedeutet, dass alle Benutzer, die eine registrierte Datenquelle ermitteln, die ermittelten Daten nicht nur nutzen, sondern auch ihre Meinung zu den Daten teilen können.
 
 ## Entfernen der Metadaten von Datenquellen
 
@@ -113,7 +113,7 @@ Nachdem eine Datenquelle registriert wurde, kann es manchmal erforderlich sein, 
 
 > [AZURE.IMPORTANT]Beim Löschen einer Datenquelle aus **Azure Data Catalog** werden nur die Metadaten gelöscht, die im **Azure Data Catalog**-Dienst gespeichert sind. Dies wirkt sich nicht auf die ursprüngliche Datenquelle aus.
 
-## Nutzen von Datenquellen 
+## Nutzen von Datenquellen
 
 Das ultimative Ziel der Datenermittlung besteht darin, die erforderlichen Daten zu finden und im bevorzugten Datentool zu verwenden. Dies ist in der Azure Data Catalog-Umgebung für die Datennutzung auf zwei Arten möglich.
 
@@ -122,4 +122,4 @@ Das ultimative Ziel der Datenermittlung besteht darin, die erforderlichen Daten 
 
 > [AZURE.NOTE]Für die Vorschauversion von Azure Data Catalog werden nur Microsoft Excel und der SQL Server Reporting Services-Berichts-Manager direkt unterstützt. Beide Optionen sind im Menü **Öffnen in** verfügbar.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

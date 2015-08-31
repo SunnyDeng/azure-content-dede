@@ -1,24 +1,24 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Search in NodeJS"
+	pageTitle="Erste Schritte mit Azure Search in NodeJS | Microsoft Azure"
 	description="Exemplarische Vorgehensweise zur Erstellung einer benutzerdefinierten Azure Search-Anwendung in der Programmiersprache NodeJS."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
 	manager="mblythe"
-	editor=""/>
+	editor="v-lincan"/>
 
 <tags
 	ms.service="search"
 	ms.devlang="na"
 	ms.workload="search"
-	ms.topic="hero-article" 
+	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
-	ms.date="07/08/2015"
+	ms.date="08/18/2015"
 	ms.author="heidist"/>
 
-#Erste Schritte mit Azure Search in NodeJS#
+# Erste Schritte mit Azure Search in NodeJS
 
-Erfahren Sie, wie Sie eine benutzerdefinierte NodeJS-Suchanwendung erstellen, die Azure Search zum Suchen verwendet. Das Lernprogramm nutzt die [REST-API für den Azure Search-Dienst](https://msdn.microsoft.com/library/dn798935.aspx) zum Erstellen der Objekte und Vorgänge, die in dieser Übung verwendet werden.
+Erfahren Sie, wie Sie eine benutzerdefinierte NodeJS-Suchanwendung erstellen, die Azure Search zum Suchen verwendet. Dieses Lernprogramm verwendet die [REST-API für den Azure Search-Dienst](https://msdn.microsoft.com/library/dn798935.aspx) zum Erstellen der Objekte und Vorgänge, die in dieser Übung verwendet werden.
 
 Zum Entwickeln und Testen dieses Codes wurden [NodeJS](https://nodejs.org) und NPM, [Sublime Text 3](http://www.sublimetext.com/3) und Windows PowerShell unter Windows 8.1 verwendet.
 
@@ -26,7 +26,7 @@ Um dieses Beispiel auszuführen, benötigen Sie einen Azure Search-Dienst, für 
 
 > [AZURE.TIP]Laden Sie den Quellcode für dieses Lernprogramm von [AzureSearchNodeJSIndexerDemo](http://go.microsoft.com/fwlink/p/?LinkId=530198) herunter.
 
-##Informationen zu den Daten##
+## Informationen zu den Daten
 
 In dieser Beispielanwendung werden Daten von [United States Geological Services (USGS)](http://geonames.usgs.gov/domestic/download_data.htm) verwendet, die nach dem Bundesstaat Rhode Island gefiltert wurden, um die Größe des Datasets zu verringern. Wir verwenden diese Daten, um eine Suchanwendung zu erstellen, die markante Gebäude, wie Krankenhäuser und Schulen, sowie geologische Merkmale, wie Flüsse, Seen und Gipfel, zurückgibt.
 
@@ -34,7 +34,7 @@ In dieser Anwendung erstellt das Programm **DataIndexer** den Index und lädt ih
 
 > [AZURE.NOTE]Wir haben einen Filter auf dieses Dataset angewendet, um unter dem Limit des kostenlosen Tarifs von maximal 10.000 Dokumenten zu bleiben. Wenn Sie den Standardtarif verwenden, gilt dieses Limit nicht. Ausführliche Informationen zur Kapazität der einzelnen Tarife finden Sie unter [Limits und Einschränkungen](https://msdn.microsoft.com/library/azure/dn798934.aspx).
 
-##Erstellen des Diensts##
+## Erstellen des Diensts
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
@@ -64,9 +64,9 @@ In dieser Anwendung erstellt das Programm **DataIndexer** den Index und lädt ih
 Achten Sie auf Benachrichtigungen in der Navigationsleiste. Wenn der Dienst verwendet werden kann, erscheint eine Benachrichtigung.
 
 <a id="sub-2"></a>
-##Ermitteln des Dienstnamens und des API-Schlüssels des Azure Search-Diensts
+## Ermitteln des Dienstnamens und des API-Schlüssels des Azure Search-Diensts
 
-Nach der Diensterstellung können Sie zum Portal zurückkehren, um die URL oder den `api-key` zu ermitteln. Für Verbindungen mit Ihrem Search-Dienst benötigen Sie sowohl die URL als auch einen `api-key`, um den Aufruf zu authentifizieren.
+Nachdem Sie den Dienst erstellt haben, kehren Sie zum Portal zurück, um die URL oder den `api-key` zu ermitteln. Für Verbindungen mit Ihrem Search-Dienst benötigen Sie sowohl die URL als auch einen `api-key`, um den Aufruf zu authentifizieren.
 
 1. Klicken Sie auf der Navigationsleiste auf **Startseite** und anschließend auf den Search-Dienst, um das Service-Dashboard zu öffnen.
 
@@ -76,7 +76,7 @@ Nach der Diensterstellung können Sie zum Portal zurückkehren, um die URL oder 
 
 3. Kopieren Sie die Dienst-URL, einen Administratorschlüssel und einen Abfrageschlüssel. Sie benötigen diese später, wenn Sie sie der Datei "config.js" hinzufügen.
 
-##Herunterladen der Beispieldateien
+## Herunterladen der Beispieldateien
 
 Verwenden Sie eine der folgenden Vorgehensweisen zum Herunterladen des Beispiels.
 
@@ -87,9 +87,9 @@ Alle nachfolgenden Dateiänderungen und Ausführungsanweisungen werden an den Da
 
 Wenn die path-Anweisung GIT enthält, können Sie stattdessen ein PowerShell-Fenster öffnen und `git clone https://github.com/EvanBoyle/AzureSearchNodeJSIndexerDemo.git` eingeben.
 
-##Aktualisieren der Datei "config.js" mit der Search-Dienst-URL und dem API-Schlüssel
+## Aktualisieren der Datei "config.js" mit der Search-Dienst-URL und dem API-Schlüssel
 
-Unter Verwendung der URL und der API-Schlüssel, die Sie zuvor kopiert haben, geben Sie in der Konfigurationsdatei die URL, den Administratorschlüssel und den Abfrageschlüssel an.
+Unter Verwendung der URL und des API-Schlüssels, die Sie zuvor kopiert haben, geben Sie in der Konfigurationsdatei die URL, den Administratorschlüssel und den Abfrageschlüssel an.
 
 Administratorschlüssel gewähren Ihnen uneingeschränkte Kontrolle über die Dienstvorgänge, einschließlich Erstellen oder Löschen eines Indexes und Laden von Dokumenten. Abfrageschlüssel sind hingegen nur für schreibgeschützte Vorgänge vorgesehen und werden in der Regel von Clientanwendungen verwendet, die eine Verbindung mit Azure Search herstellen.
 
@@ -100,7 +100,7 @@ Der folgende Screenshot zeigt die in einem Text-Editor geöffnete Datei **config
 ![][5]
 
 
-##Hosten eine Laufzeitumgebung für das Beispiel
+## Hosten eine Laufzeitumgebung für das Beispiel
 
 Das Beispiel erfordert einen HTTP-Server, den Sie mit Npm global installieren können.
 
@@ -110,14 +110,14 @@ Verwenden Sie ein PowerShell-Fenster für die folgenden Befehle:
 2. Geben Sie `npm install` ein.
 2. Geben Sie `npm install -g http-server` ein.
 
-##Erstellen Sie den Index, und führen Sie die Anwendung aus.
+## Erstellen Sie den Index, und führen Sie die Anwendung aus.
 
 1. Geben Sie `npm run indexDocuments` ein.
 2. Geben Sie `npm run build` ein.
 3. Geben Sie `npm run start_server` ein.
 4. Wechseln Sie mit dem Browser zu `http://localhost:8080/index.html`
 
-##Suchen nach USGS-Daten##
+## Suchen nach USGS-Daten
 
 Das USGS-Dataset enthält Datensätze, die für den Bundesstaat Rhode Island relevant sind. Wenn Sie auf **Search** klicken und das Suchfeld leer ist, erhalten Sie die ersten 50 Einträge. Dies ist die Standardeinstellung.
 
@@ -132,7 +132,7 @@ Sie können auch einen dieser Begriffe ausprobieren:
 - goose +cape
 
 
-##Nächste Schritte##
+## Nächste Schritte
 
 Dies ist das erste Azure Search-Lernprogramm, das auf NodeJS und dem USGS-Dataset basiert. Im Laufe der Zeit werden wir dieses Lernprogramm erweitern, um zusätzliche Suchfunktionen zu veranschaulichen, die Sie in benutzerdefinierten Lösungen vielleicht verwenden möchten.
 
@@ -146,6 +146,5 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [3]: ./media/search-get-started-nodejs/create-search-portal-3.PNG
 [5]: ./media/search-get-started-nodejs/AzSearch-NodeJS-configjs.png
 [9]: ./media/search-get-started-nodejs/rogerwilliamsschool.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

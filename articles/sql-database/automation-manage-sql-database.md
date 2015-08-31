@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/20/2015"
+	ms.date="08/11/2015"
 	ms.author="jolevy"/>
 
 
@@ -53,4 +53,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation vertraut gemacht ha
  * Lesen Sie den Blogbeitrag [Azure Automation: Your SQL Agent in the Cloud](http://azure.microsoft.com/blog/2014/06/26/azure-automation-your-sql-agent-in-the-cloud/) (in englischer Sprache).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

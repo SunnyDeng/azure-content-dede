@@ -30,6 +30,12 @@ Sie benötigen ein Azure-Abonnement, um dieses Lernprogramm auszuführen. Wenn S
 
 [AZURE.INCLUDE [automation-note-authentication](../../includes/automation-note-authentication.md)]
 
+## Video zur exemplarischen Vorgehensweise
+
+Hier finden Sie eine exemplarische Vorgehensweise für dieses Lernprogramm.
+
+[AZURE.VIDEO get-started-with-azure-automation]
+
 ## <a name="automationaccount"></a>Erstellen eines Automation-Kontos
 
 Ein Automation-Konto ist ein Container für Ihre Azure Automation-Ressourcen: Es bietet eine Möglichkeit, Ihre Umgebungen zu trennen oder Ihre Workflows weiter zu organisieren. Weitere Informationen finden Sie unter [Automation-Konten](http://aka.ms/runbookauthor/azure/automationaccounts) in der Automation Library. Wenn Sie bereits ein Automation-Konto erstellt haben, können Sie diesen Schritt überspringen.
@@ -141,4 +147,4 @@ Microsoft und die Azure Automation-Community stellen Beispiel-Runbooks zur Verf�
 **Geben Sie uns Feedback!** Wenn Sie nach einer Azure Automation-Runbook-Lösung oder einem Integrationsmodul suchen, senden Sie im Script Center eine Skriptanforderung. Wenn Sie Feedback oder Vorschläge zu Features für Azure Automation haben, veröffentlichen Sie sie auf [User Voice](http://feedback.windowsazure.com/forums/34192--general-feedback). Vielen Dank!
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

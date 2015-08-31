@@ -1,3 +1,12 @@
+<properties pageTitle="Erstellen einer manuellen Sicherung" description="Erläutert das Starten einer manuellen Sicherung nach Bedarf." services="storsimple" documentationCenter="NA" authors="SharS" manager="carolz" edito**r="" />
+<tags  
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/13/2015"
+   ms.author="v-sharos" />
 
 #### So erstellen Sie eine manuelle Sicherung
 
@@ -21,4 +30,4 @@
 
   Die Sicherung sollte in der Liste der Sicherungssätze enthalten sein, die im Katalog angezeigt wird.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

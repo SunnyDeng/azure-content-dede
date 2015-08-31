@@ -3,10 +3,9 @@
 	description="Erfahren Sie, wie Sie mit Microsoft Azure DocumentDB gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen systemeigen in JavaScript schreiben." 
 	services="documentdb" 
 	documentationCenter="" 
-	authors="mimig1" 
+	authors="aliuy" 
 	manager="jhubbard" 
 	editor="cgronlun"/>
-
 
 <tags 
 	ms.service="documentdb" 
@@ -14,9 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/10/2015" 
-	ms.author="mimig"/>
-
+	ms.date="08/18/2015" 
+	ms.author="andrl"/>
 
 # DocumentDB-serverseitige Programmierung : gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen
 
@@ -51,7 +49,7 @@ Dieser Ansatz von *„JavaScript als modernes T-SQL„* befreit die Anwendungsen
 	-	Es wird eine Abstraktionsschicht über den Rohdaten hinzugefügt, die es Datenarchitekten gestattet, ihre Anwendungen unabhängig von den Daten zu entwickeln. Dies ist aufgrund der komplizierten Annahmen, die bei der direkten Behandlung der Daten zur Anwendung hinzugefügt werden müssen, insbesondere bei schemafreien Daten von Vorteil.  
 	-	Durch diese Abstraktion können Unternehmen ihre Daten schützen, indem sie den Zugriff über die Scripts optimieren.  
 
-Die Erstellung und Ausführung von Triggern, gespeicherten Prozeduren und benutzerdefinierten Abfrageoperatoren wird auf vielen Plattformen, einschließlich .NET, Node.js und JavaScript, über die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) und [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) unterstützt. **In diesem Lernprogramm wird das** **[Node.js-SDK](http://dl.windowsazure.com/documentDB/nodedocs/)** verwendet, um die Syntax und Verwendung von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen (User Defined Functions, UDFs) zu veranschaulichen.
+Die Erstellung und Ausführung von Triggern, gespeicherten Prozeduren und benutzerdefinierten Abfrageoperatoren wird auf vielen Plattformen, einschließlich .NET, Node.js und JavaScript, über die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) und [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) unterstützt. **In diesem Lernprogramm wird das [Node.js-SDK](http://dl.windowsazure.com/documentDB/nodedocs/)** verwendet, um die Syntax und Verwendung von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen (User Defined Functions, UDFs) zu veranschaulichen.
 
 ## Gespeicherte Prozeduren
 
@@ -473,8 +471,92 @@ Die UDF kann anschließend wie im folgenden Beispiel in Abfragen verwendet werde
 	    console.log("Error" , error);
 	});
 
+## JavaScript-Language Integrated Query (LINQ)-API
+Zusätzlich zu Abfragen mithilfe der SQL-Grammatik von DocumentDB ermöglicht das serverseitige SDK die Durchführung optimierter Abfragen mithilfe einer flüssigen JavaScript-Schnittstelle, die keinerlei SQL-Kenntnisse voraussetzt. Mit der JavaScript-Abfrage-API können Sie programmgesteuert Abfragen erstellen, indem Sie unter Verwendung einer Syntax, die mit den integrierten und weit verbreiteten JavaScript-Bibliotheken von ECMAScript5 wie lodash vergleichbar ist, Prädikatfunktionen in verkettbare Funktionsaufrufe übergeben. Abfragen werden von der JavaScript-Laufzeit zur effizienten Ausführung mithilfe von DocumentDB-Indizes analysiert.
+
+> [AZURE.NOTE]`__` (doppelter Unterstrich) ist ein Alias für `getContext().getCollection()`. <br/> Sie können also `__` oder `getContext().getCollection()` verwenden, um auf die JavaScript-Abfrage-API zuzugreifen.
+
+Folgende Funktionen werden unterstützt: <ul> <li> <b>chain() ... .value([callback] [, options])</b> <ul> <li> Startet einen verketteten Aufruf, der mit „value()“ abgeschlossen werden muss. </li> </ul> </li> <li> <b>filter(predicateFunction [, options] [, callback])</b> <ul> <li> Filtert die Eingabe anhand einer Prädikatfunktion, die „true/false“ zurückgibt, um Eingabedokumente in den resultierenden Satz einzuschließen oder auszuschließen. Diese Funktion verhält sich ähnlich wie eine WHERE-Klausel in SQL. </li> </ul> </li> <li> <b>map(transformationFunction [, options] [, callback])</b> <ul> <li> Wendet anhand einer angegebenen Transformationsfunktion eine Projektion an, die jedes Eingabeelement einem JavaScript-Objekt oder -Wert zuordnet. Diese Funktion verhält sich ähnlich wie eine SELECT-Klausel in SQL. </li> </ul> </li> <li> <b>pluck([propertyName] [, options] [, callback])</b> <ul> <li> Dies ist eine Kurzform für eine Zuordnung, die den Wert einer einzelnen Eigenschaft aus jedem Eingabeelement extrahiert. </li> </ul> </li> <li> <b>flatten([isShallow] [, options] [, callback])</b> <ul> <li> Kombiniert und vereinfacht Arrays aus jedem Eingabeelement zu einem einzigen Array. Diese Funktion verhält sich ähnlich wie „SelectMany“ in LINQ. </li> </ul> </li> <li> <b>sortBy([predicate] [, options] [, callback])</b> <ul> <li> Erzeugt einen neuen Satz von Dokumenten, indem die Dokumente im Eingabedokument-Datenstrom anhand des angegebenen Prädikats in aufsteigender Reihenfolge sortiert werden. Diese Funktion verhält sich ähnlich wie eine ORDER BY-Klausel in LINQ. </li> </ul> </li> <li> <b>sortByDescending([predicate] [, options] [, callback])</b> <ul> <li> Erzeugt einen neuen Satz von Dokumenten, indem die Dokumente im Eingabedokument-Datenstrom anhand des angegebenen Prädikats in absteigender Reihenfolge sortiert werden. Diese Funktion verhält sich ähnlich wie eine ORDER BY X DESC-Klausel in SQL. </li> </ul> </li> </ul>
+
+
+Bei der Verwendung innerhalb von Prädikat- und/oder Selektorfunktionen werden die folgenden JavaScript-Konstrukte automatisch optimiert, damit sie direkt für DocumentDB-Indizes ausgeführt werden:
+
+* Einfache Operatoren: = + - * / % | ^ &amp; == != === !=== &lt; &gt; &lt;= &gt;= || &amp;&amp; &lt;&lt; &gt;&gt; &gt;&gt;&gt;! \~
+* Literale, einschließlich des Objektliterals: {}
+* var, return
+
+Die folgenden JavaScript-Konstrukte werden nicht für DocumentDB-Indizes optimiert:
+
+* Ablaufsteuerung (z. B. if, for, while)
+* Funktionsaufrufe
+
+Weitere Informationen finden Sie in unseren [serverseitigen JSDocs](http://dl.windowsazure.com/documentDB/jsserverdocs/).
+
+### Beispiel: Schreiben einer gespeicherten Prozedur mit der JavaScript-Abfrage-API
+
+Das folgende Codebeispiel zeigt, wie die JavaScript-Abfrage-API im Kontext einer gespeicherten Prozedur verwendet werden kann. Die gespeicherte Prozedur fügt ein Dokument ein (angegeben durch einen Eingabeparameter) und aktualisiert mit der `__.filter()`-Methode ein Metadatendokument basierend auf der Size-Eigenschaft des Eingabedokuments mit „minSize“, „maxSize“ und „totalSize“.
+
+    /**
+     * Insert actual doc and update metadata doc: minSize, maxSize, totalSize based on doc.size.
+     */
+    function insertDocumentAndUpdateMetadata(doc) {
+      // HTTP error codes sent to our callback funciton by DocDB server.
+      var ErrorCode = {
+        RETRY_WITH: 449,
+      }
+
+      var isAccepted = __.createDocument(__.getSelfLink(), doc, {}, function(err, doc, options) {
+        if (err) throw err;
+
+        // Check the doc (ignore docs with invalid/zero size and metaDoc itself) and call updateMetadata.
+        if (!doc.isMetadata && doc.size > 0) {
+          // Get the meta document. We keep it in the same collection. it's the only doc that has .isMetadata = true.
+          var result = __.filter(function(x) {
+            return x.isMetadata === true
+          }, function(err, feed, options) {
+            if (err) throw err;
+
+            // We assume that metadata doc was pre-created and must exist when this script is called.
+            if (!feed || !feed.length) throw new Error("Failed to find the metadata document.");
+
+            // The metadata document.
+            var metaDoc = feed[0];
+
+            // Update metaDoc.minSize:
+            // for 1st document use doc.Size, for all the rest see if it's less than last min.
+            if (metaDoc.minSize == 0) metaDoc.minSize = doc.size;
+            else metaDoc.minSize = Math.min(metaDoc.minSize, doc.size);
+
+            // Update metaDoc.maxSize.
+            metaDoc.maxSize = Math.max(metaDoc.maxSize, doc.size);
+
+            // Update metaDoc.totalSize.
+            metaDoc.totalSize += doc.size;
+
+            // Update/replace the metadata document in the store.
+            var isAccepted = __.replaceDocument(metaDoc._self, metaDoc, function(err) {
+              if (err) throw err;
+              // Note: in case concurrent updates causes conflict with ErrorCode.RETRY_WITH, we can't read the meta again 
+              //       and update again because due to Snapshot isolation we will read same exact version (we are in same transaction).
+              //       We have to take care of that on the client side.
+            });
+            if (!isAccepted) throw new Error("replaceDocument(metaDoc) returned false.");
+          });
+          if (!result.isAccepted) throw new Error("filter for metaDoc returned false.");
+        }
+      });
+      if (!isAccepted) throw new Error("createDocument(actual doc) returned false.");
+    }
+
+## Cheat Sheet für SQL und Javascript
+In der folgenden Tabelle sind verschiedene SQL-Abfragen und die entsprechenden JavaScript-Abfragen aufgeführt.
+
+Wie bei SQL-Abfragen muss bei Key-Eigenschaften von Dokumenten (z. B. `doc.id`) die Groß-/Kleinschreibung beachtet werden.
+
+<br/> <table border="1" width="100%"> <colgroup> <col span="1" style="width: 40%;"> <col span="1" style="width: 40%;"> <col span="1" style="width: 20%;"> </colgroup> <tbody> <tr> <th>SQL</th> <th>JavaScript-Abfrage-API</th> <th>Details</th> </tr> <tr> <td> <pre> SELECT * FROM docs </pre> </td> <td> <pre> \_\_.map(function(doc) { return doc; }); </pre> </td> <td>Alle Dokumente (umgebrochen mit Fortsetzungstoken) bleiben unverändert.</td> </tr> <tr> <td> <pre> SELECT docs.id, docs.message AS msg, docs.actions FROM docs </pre> </td> <td> <pre> \_\_.map(function(doc) { return { id: doc.id, msg: doc.message, actions: doc.actions }; }); </pre> </td> <td>Projiziert die ID, Meldung (Alias für „msg“) und Aktion aus allen Dokumenten.</td> </tr> <tr> <td> <pre> SELECT * FROM docs WHERE docs.id="X998\_Y998" </pre> </td> <td> <pre> \_\_.filter(function(doc) { return doc.id === "X998\_Y998"; }); </pre> </td> <td>Fragt Dokumente mit dem folgenden Prädikat ab: id = "X998\_Y998".</td> </tr> <tr> <td> <pre> SELECT * FROM docs WHERE ARRAY\_CONTAINS(docs.Tags, 123) </pre> </td> <td> <pre> \_\_.filter(function(x) { return x.Tags && x.Tags.indexOf(123) > -1; }); </pre> </td> <td>Fragt Dokumente mit einer Tags-Eigenschaft ab, wobei „Tags“ ein Array mit dem Wert 123 ist.</td> </tr> <tr> <td> <pre> SELECT docs.id, docs.message AS msg FROM docs WHERE docs.id="X998\_Y998" </pre> </td> <td> <pre> \_\_.chain() .filter(function(doc) { return doc.id === "X998\_Y998"; }) .map(function(doc) { return { id: doc.id, msg: doc.message }; }) .value(); </pre> </td> <td>Fragt Dokumente mit einem Prädikat, id = "X998\_Y998", ab und projiziert anschließend die ID und die Meldung (Alias für „msg“).</td> </tr> <tr> <td> <pre> SELECT VALUE tag FROM docs JOIN tag IN docs.Tags ORDER BY docs.\_ts </pre> </td> <td> <pre> \_\_.chain() .filter(function(doc) { return doc.Tags && Array.isArray(doc.Tags); }) .sortBy(function(doc) { return doc.\_ts; }) .pluck("Tags") .flatten() .value() </pre> </td> <td>Filtert nach Dokumenten mit einer Array-Eigenschaft „Tags“, sortiert die resultierenden Dokumente anhand der Zeitstempel-Systemeigenschaft „\_ts“ und projiziert und vereinfacht anschließend das Tags-Array.</td> </tr> </tbody> </table>
+
 ## Laufzeitunterstützung
-Das [serverseitige DocumentDB JavaScript-SDK](http://dl.windowsazure.com/documentDB/jsserverdocs/) unterstützt die meisten gängigen Funktionen der JavaScript-Sprache gemäß des [ECMA-262](documentdb-interactions-with-resources.md)-Standards.
+Das [serverseitige DocumentDB JavaScript-SDK](http://dl.windowsazure.com/documentDB/jsserverdocs/) unterstützt die meisten gängigen Funktionen der JavaScript-Sprache gemäß dem [ECMA-262](documentdb-interactions-with-resources.md)-Standard.
 
 ### Sicherheit
 Gespeicherte Prozeduren und Trigger werden bei JavaScript in einer Sandkastenlösung verwaltet, damit die Auswirkungen eines Skripts nicht zu den anderen Skripts gelangen, ohne die Momentaufnahmetransaktionsisolation der Datenbankschicht zu durchlaufen. Die Laufzeitumgebungen werden in einem Pool zusammengefasst, aber nach jeder Ausführung vom Kontext bereinigt. Daher sind sie untereinander garantiert vor unbeabsichtigten Nebeneffekten geschützt.
@@ -483,7 +565,7 @@ Gespeicherte Prozeduren und Trigger werden bei JavaScript in einer Sandkastenlö
 Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen (UDFs) werden implizit in das Bytecodeformat vorkompiliert, um den Kompilierungsaufwand zum Zeitpunkt des jeweiligen Skriptaufrufs zu vermeiden. Dadurch wird sichergestellt, dass gespeicherte Prozeduren schnell aufgerufen werden können und kompakt sind.
 
 ## Client-SDK-Unterstützung
-Zusätzlich zum [Node.js](http://dl.windowsazure.com/documentDB/nodedocs/)-Client unterstützt DocumentDB [.NET](https://msdn.microsoft.com/library/azure/dn783362.aspx)-, [Java](http://dl.windowsazure.com/documentdb/javadoc/)-,[ JavaScript](http://dl.windowsazure.com/documentDB/jsclientdocs/)- und [Python-SDKs](http://dl.windowsazure.com/documentDB/pythondocs/). Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen können jedem dieser SDKs erstellt und ausgeführt werden. Das folgende Beispiel zeigt, wie eine gespeicherte Prozedur mithilfe des .NET-Clients erstellt und ausgeführt wird. Beachten Sie, wie die .NET-Typen als JSON an die gespeicherte Prozedur übergeben und eingelesen werden.
+Zusätzlich zum [Node.js](http://dl.windowsazure.com/documentDB/nodedocs/)-Client unterstützt DocumentDB [.NET](https://msdn.microsoft.com/library/azure/dn783362.aspx)-, [Java](http://dl.windowsazure.com/documentdb/javadoc/)-,[ JavaScript](http://dl.windowsazure.com/documentDB/jsclientdocs/)- und [Python](http://dl.windowsazure.com/documentDB/pythondocs/)-SDKs. Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen können jedem dieser SDKs erstellt und ausgeführt werden. Das folgende Beispiel zeigt, wie eine gespeicherte Prozedur mithilfe des .NET-Clients erstellt und ausgeführt wird. Beachten Sie, wie die .NET-Typen als JSON an die gespeicherte Prozedur übergeben und eingelesen werden.
 
 	var markAntiquesSproc = new StoredProcedure
 	{
@@ -516,7 +598,7 @@ Zusätzlich zum [Node.js](http://dl.windowsazure.com/documentDB/nodedocs/)-Clien
 	Document createdDocument = await client.ExecuteStoredProcedureAsync<Document>(createdStoredProcedure.SelfLink, document, 1920);
 
 
-Dieses Beispiel zeigt, wie mit dem [.NET SDK](https://msdn.microsoft.com/library/azure/dn783362.aspx) ein vorangestellter Trigger und ein Dokument mit aktiviertem Trigger erstellt wird.
+Dieses Beispiel zeigt, wie mit dem [.NET-SDK](https://msdn.microsoft.com/library/azure/dn783362.aspx) ein vorangestellter Trigger und ein Dokument mit aktiviertem Trigger erstellt werden.
 
 	Trigger preTrigger = new Trigger()
 	{
@@ -625,7 +707,7 @@ Hier wird der mit der Anforderung auszuführende vorangestellte Trigger im Heade
 
 ## Beispielcode
 
-Weitere Beispiele für serverseitigen Code (einschließlich[Upsert](https://github.com/Azure/azure-documentdb-js/blob/master/server-side/samples/stored-procedures/upsert.js), [Massenlöschungen](https://github.com/Azure/azure-documentdb-js/blob/master/server-side/samples/stored-procedures/bulkDelete.js) und [Aktualisieren](https://github.com/Azure/azure-documentdb-js/blob/master/server-side/samples/stored-procedures/update.js)) auf unsere [Github-Repository](https://github.com/Azure/azure-documentdb-js/tree/master/server-side/samples).
+Weitere Beispiele für serverseitigen Code (einschließlich [upsert](https://github.com/Azure/azure-documentdb-js/blob/master/server-side/samples/stored-procedures/upsert.js), [Massenlöschung](https://github.com/Azure/azure-documentdb-js/blob/master/server-side/samples/stored-procedures/bulkDelete.js) und [Aktualisieren](https://github.com/Azure/azure-documentdb-js/blob/master/server-side/samples/stored-procedures/update.js)) finden Sie in unserem [Github-Repository](https://github.com/Azure/azure-documentdb-js/tree/master/server-side/samples).
 
 Möchten Sie Ihre fantastische gespeicherte Prozedur freigeben? Bitte senden Sie uns eine Pull-Anforderung!
 
@@ -643,4 +725,4 @@ Weitere Informationen zur serverseitigen DocumentDB-Programmierung finden Sie au
 -	[Dienstorientierte Datenbankarchitektur](http://dl.acm.org/citation.cfm?id=1066267&coll=Portal&dl=GUIDE) 
 -	[Hosten der .NET-Lautzeitumgebung in Microsoft SQL Server](http://dl.acm.org/citation.cfm?id=1007669)  
 
-<!--------HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

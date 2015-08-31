@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/20/2015"
+	ms.date="08/11/2015"
 	ms.author="jolevy"/>
 
 
@@ -50,4 +50,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Verwendu
 Lernprogramm [Erste Schritte](../automation-create-runbook-from-samples.md) zu Azure Automation
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -3,10 +3,10 @@
 	description="Verwenden von Hadoop Oozie in HDInsight, einer Big Data-Lösung. Erfahren Sie, wie Sie einen Oozie-Workflow definieren und einen Oozie-Auftrag übermitteln können."
 	services="hdinsight"
 	documentationCenter=""
+	tags="azure-portal"
 	authors="mumian"
 	manager="paulettm"
 	editor="cgronlun"/>
-
 
 <tags
 	ms.service="hdinsight"
@@ -14,9 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/30/2015"
+	ms.date="07/28/2015"
 	ms.author="jgao"/>
-
 
 
 # Verwenden von Oozie mit Hadoop zum Definieren und Ausführen eines Workflows in HDInsight
@@ -527,7 +526,7 @@ Azure PowerShell stellt derzeit keine Cmdlets zum Definieren von Oozie-Jobs bere
 
 **So prüfen Sie das Auftragsfehlerprotokoll**
 
-Wenn Sie Probleme in einem Workflow beheben möchten, finden Sie die Oozie-Protokolldatei unter *C:\\apps\\dist\\oozie-3.3.2.1.3.2.0-05\\oozie-win-distro\\logs\\Oozie.log* oder *C:\\apps\\dist\\oozie-4.0.0.2.0.7.0-1528\\oozie-win-distro\\logs\\Oozie.log* im Clusterhauptknoten. Weitere Informationen zu RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Verwaltungsportal][hdinsight-admin-portal].
+Wenn Sie Probleme in einem Workflow beheben möchten, finden Sie die Oozie-Protokolldatei unter *C:\\apps\\dist\\oozie-3.3.2.1.3.2.0-05\\oozie-win-distro\\logs\\Oozie.log* oder *C:\\apps\\dist\\oozie-4.0.0.2.0.7.0-1528\\oozie-win-distro\\logs\\Oozie.log* im Clusterhauptknoten. Weitere Informationen zu RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Vorschauportal][hdinsight-admin-portal].
 
 **So führen Sie das Lernprogramm erneut aus**
 
@@ -609,7 +608,7 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Oozie-Workflow definiert und w
 [sqldatabase-create-configue]: ../sql-database-create-configure.md
 [sqldatabase-get-started]: ../sql-database-get-started.md
 
-[azure-management-portal]: https://manage.windowsazure.com/
+[azure-management-portal]: https://portal.azure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account.md
 
 [apache-hadoop]: http://hadoop.apache.org/
@@ -630,4 +629,4 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Oozie-Workflow definiert und w
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!------HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

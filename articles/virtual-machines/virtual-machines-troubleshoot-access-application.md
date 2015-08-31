@@ -29,7 +29,7 @@ Die Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen 
 
 1.	Die Anwendung, die auf dem virtuellen Azure-Computer ausgeführt wird.
 2.	Den virtuellen Azure-Computer.
-3.	Azure-Endpunkte für den Clouddienst, der den virtuellen Computer (bei virtuellen Computern, die mit der Dienstverwaltung erstellt wurden) enthält, eingehende NAT-Regeln (bei virtuellen Computern, die im Ressourcen-Manager erstellt wurden) und Netzwerk-Sicherheitsgruppen.
+3.	Azure-Endpunkte für den Clouddienst, der den virtuellen Computer enthält (bei virtuellen Computern, die mithilfe der Dienstverwaltungs-API erstellt wurden), eingehende NAT-Regeln (bei virtuellen Computern, die im Ressourcen-Manager erstellt wurden) und Netzwerk-Sicherheitsgruppen.
 4.	Ihre Internet-Edgegerät.
 
 Bei Clientcomputern, die über eine Site-to-Site-VPN- oder ExpressRoute-Verbindung auf die Anwendung zugreifen, sind die Hauptbereiche, die zu Problemen führen können, die Anwendung und der virtuelle Azure-Computer. Gehen Sie folgendermaßen vor, um die Quelle des Problems und dessen Korrektur zu bestimmen.
@@ -53,7 +53,7 @@ Verwenden Sie bei Windows- und Linux-basierten virtuellen Computern den Befehl *
 
 ## <a id="step2"></a>Schritt 2: Können von einem anderen virtuellen Computer im gleichen virtuellen Netzwerk aus auf die Anwendung zugreifen?
 
-Versuchen Sie, von einem anderen virtuellen Computer im gleichen virtuellen Netzwerk aus, in dem sich auch der virtuelle Computer befindet, auf dem die Anwendung ausgeführt wird, mithilfe des Hostnamens des virtuellen Computers oder seiner von Azure zugewiesenen öffentlichen, privaten oder Anbieter-IP-Adresse auf die Anwendung zuzugreifen. Verwenden Sie für virtuelle Computer, die in der Dienstverwaltung erstellt wurden, nicht die öffentliche IP-Adresse des Clouddiensts.
+Versuchen Sie, von einem anderen virtuellen Computer im gleichen virtuellen Netzwerk aus, in dem sich auch der virtuelle Computer befindet, auf dem die Anwendung ausgeführt wird, mithilfe des Hostnamens des virtuellen Computers oder seiner von Azure zugewiesenen öffentlichen, privaten oder Anbieter-IP-Adresse auf die Anwendung zuzugreifen. Verwenden Sie für virtuelle Computer, die mithilfe der Dienstverwaltungs-API erstellt wurden, nicht die öffentliche IP-Adresse des Clouddiensts.
 
 ![](./media/virtual-machines-troubleshoot-access-application/tshoot_app_access3.png)
 
@@ -80,9 +80,9 @@ Wenn es sich bei der Anwendung beispielsweise um einen Webserver handelt, versuc
 
 Wenn kein Zugriff auf die Anwendung möglich ist, überprüfen Sie Folgendes:
 
-- Bei virtuellen Computern, die in der Dienstverwaltung erstellt wurden, muss von der Endpunktkonfiguration für den virtuellen Computer eingehender Datenverkehr, insbesondere das Protokoll (TCP oder UDP) und die öffentlichen und privaten Portnummern, zugelassen werden. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
-- Bei virtuellen Computern, die in der Dienstverwaltung erstellt wurden, darf eingehender Datenverkehr aus dem Internet nicht durch Zugriffssteuerungslisten (ACLs) auf dem Endpunkt verhindert werden. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
-- Bei virtuellen Computern, die im Ressourcen-Manager erstellt wurden, muss die Konfiguration der eingehenden NAT-Regel eingehenden Datenverkehr zulassen, insbesondere das Protokoll (TCP oder UDP) und die öffentlichen und privaten Portnummern. 
+- Bei virtuellen Computern, die mithilfe der Dienstverwaltungs-API erstellt wurden, muss von der Endpunktkonfiguration für den virtuellen Computer eingehender Datenverkehr, insbesondere das Protokoll (TCP oder UDP) und die öffentlichen und privaten Portnummern, zugelassen werden. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
+- Bei virtuellen Computern, die mithilfe der Dienstverwaltungs-API erstellt wurden, darf eingehender Datenverkehr aus dem Internet nicht durch Zugriffssteuerungslisten (ACLs) auf dem Endpunkt verhindert werden. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
+- Bei virtuellen Computern, die im Ressourcen-Manager erstellt wurden, muss die Konfiguration der eingehenden NAT-Regel eingehenden Datenverkehr zulassen, insbesondere das Protokoll (TCP oder UDP) und die öffentlichen und privaten Portnummern.
 - Netzwerksicherheitsgruppen lassen die eingehende Anforderung und den ausgehende Antwortdatenverkehr zu. Weitere Informationen finden Sie unter [Was ist eine Netzwerksicherheitsgruppe (NSG)?](virtual-networks-nsg.md).
 
 Wenn der virtuelle Computer oder der Endpunkt Mitglied einer Gruppe mit Lastenausgleich ist:
@@ -110,4 +110,4 @@ Wenn Sie die Schritte 1 bis 3 in diesem Artikel ausgeführt haben und zur Behebu
 
 [Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-ssh-connections.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

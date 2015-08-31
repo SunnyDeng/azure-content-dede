@@ -60,14 +60,14 @@ Stellen Sie sicher, dass Sie in den PowerShell-Modus wechseln, um die ARM-Cmdlet
 
 ### Schritt 1
 
-    PS C:\> Switch-AzureMode -Name AzureResourceManager
+    Switch-AzureMode -Name AzureResourceManager
 
 ### Schritt 2
 
 Melden Sie sich beim Azure-Konto an.
 
 
-    PS C:\> Add-AzureAccount
+    Add-AzureAccount
 
 Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.
 
@@ -76,7 +76,7 @@ Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.
 
 Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.
 
-    PS C:\> Select-AzureSubscription -SubscriptionName "MySubscription"
+    Select-AzureSubscription -SubscriptionName "MySubscription"
 
 Um eine Liste der verfügbaren Abonnements anzuzeigen, verwenden Sie das Cmdlet „Get-AzureSubscription“.
 
@@ -85,7 +85,7 @@ Um eine Liste der verfügbaren Abonnements anzuzeigen, verwenden Sie das Cmdlet 
 
 Erstellen Sie eine neue Ressourcengruppe. (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
 
-    PS C:\> New-AzureResourceGroup -Name appgw-rg -location "West US"
+    New-AzureResourceGroup -Name appgw-rg -location "West US"
 
 Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speicherort angeben. Dieser wird als Standardspeicherort für Ressourcen in dieser Ressourcengruppe verwendet. Stellen Sie sicher, dass alle Befehle, mit denen ein Application Gateway erstellt wird, die gleiche Ressourcengruppe verwenden.
 
@@ -118,13 +118,13 @@ Dieser Befehl erstellt eine IP-Konfiguration für das Application Gateway mit de
  
 ### Schritt 2
 
-	$pool = New-AzureApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
+	$pool = New-AzureApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 10.0.0.10,10.0.0.11,10.0.0.12
 
-Dieser Schritt dient zum Konfigurieren des Back-End-IP-Adresspools "pool01" mit den IP-Adressen 134.170.185.46, 134.170.188.221 und 134.170.185.50. Dies sind die IP-Adressen, die den Netzwerkdatenverkehr vom Front-End-IP-Adressendpunkt empfangen werden.Ersetzen Sie die obigen IP-Adressen durch Ihre eigenen IP-Adressendpunkte der Anwendung.
+In diesem Schritt konfigurieren Sie den Back-End-IP-Adresspool „pool01“ mit den IP-Adressen 10.0.0.10, 10.0.0.11 und 10.0.0.12. Dies sind die IP-Adressen, die den Netzwerkdatenverkehr vom Front-End-IP-Endpunkt empfangen. Ersetzen Sie die obigen IP-Adressen durch Ihre eigenen IP-Adressendpunkte der Anwendung.
 
 ### Schritt 3
 
-	$poolSetting = New-AzureApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol HTTP -CookieBasedAffinity Disabled
+	$poolSetting = New-AzureApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Disabled
 
 Dient zum Konfigurieren der Application Gateway-Einstellungen "poolsetting01" für den Lastenausgleich des Netzwerkdatenverkehrs im Back-End-Pool.
 
@@ -136,21 +136,21 @@ Dieser Befehl konfiguriert den Front-End-IP-Port mit dem Namen "frontendport01" 
 
 ### Schritt 5
 
-	$fipconfig = New-AzureApplicationGatewayFrontendIPConfig -Name $fipconfigName -Subnet $subnet
+	$fipconfig = New-AzureApplicationGatewayFrontendIPConfig -Name fipconfig01 -Subnet $subnet
 
-Hiermit wird die Front-End-IP-Adresskonfiguration erstellt, indem eine private IP-Adresse im aktuellen Subnetz des virtuellen Netzwerks zugeordnet wird.
+Hiermit wird die Front-End-IP-Adresskonfiguration „fipconfig01“ erstellt und eine private IP-Adresse im aktuellen Subnetz des virtuellen Netzwerks zugewiesen.
 
 ### Schritt 6
 
-	$listener = New-AzureApplicationGatewayHttpListener -Name $listenerName  -Protocol http -FrontendIPConfiguration $fipconfig -FrontendPort $fp
+	$listener = New-AzureApplicationGatewayHttpListener -Name listener01  -Protocol Http -FrontendIPConfiguration $fipconfig -FrontendPort $fp
 
-Dieser Befehl dient zum Erstellen des Listeners, der den Front-End-Port der Front-End-IP-Andresskonfiguration zuordnet.
+Dieser Befehl dient zum Erstellen des Listeners „listener01“ und zum Zuweisen des Front-End-Ports zur Front-End-IP-Konfiguration.
 
 ### Schritt 7 
 
-	$rule = New-AzureApplicationGatewayRequestRoutingRule -Name $ruleName -RuleType basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
+	$rule = New-AzureApplicationGatewayRequestRoutingRule -Name rule01 -RuleType Basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
 
-Erstellt die Load Balancer-Routingregel und konfiguriert das Load Balancer-Verhalten.
+Erstellt die Load Balancer-Routingregel „rule01“ und konfiguriert das Load Balancer-Verhalten.
 
 ### Schritt 8
 
@@ -158,11 +158,11 @@ Erstellt die Load Balancer-Routingregel und konfiguriert das Load Balancer-Verha
 
 Dieser Befehl konfiguriert die Instanzgröße des Application Gateways.
 
->[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen "Small", "Medium" und "Large" auswählen.
+>[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
 
 ## Erstellen eines Application Gateways mit dem Cmdlet "New-AzureApplicationGateway"
 
-	$appgw = New-AzureApplicationGateway -Name appgwtest -ResourceGroupName $rgname -Location $location -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
+	$appgw = New-AzureApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
 
 Mit diesem Cmdlet wird ein Application Gateway mit allen Konfigurationselementen aus den vorangegangenen Schritten erstellt. Im Beispiel heißt das Application Gateway "appgwtest".
 
@@ -176,14 +176,14 @@ Sobald das Gateway konfiguriert ist, verwenden Sie das Cmdlet `Start-AzureApplic
 
 **Hinweis:** Bis zum Abschluss des `Start-AzureApplicationGateway`-Cmdlets können bis zu 15 – 20 Minuten vergehen.
 
-Im folgenden Beispiel heißt das Application Gateway "appgwtest" und die Ressourcengruppe "app-rg":
+Im folgenden Beispiel heißt das Anwendungsgateway „appgwtest“ und die Ressourcengruppe „app-rg“:
 
 
 ### Schritt 1
 
 Rufen Sie das Application Gateway-Objekt ab, und ordnen Sie es der Variablen "$getgw" zu:
  
-	$getgw =  Get-AzureApplicationGateway -Name appgwtest -ResourceGroupName app-rg
+	$getgw =  Get-AzureApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
 ### Schritt 2
 	 
@@ -283,4 +283,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure Load Balancer](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

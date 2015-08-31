@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts"
+   pageTitle="Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts | Microsoft Azure"
    description="Dieser Artikel hilft Ihnen, die Endpunkte Ihres Traffic Manager-Profils zu aktivieren oder zu deaktivieren."
    services="traffic-manager"
    documentationCenter="na"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/10/2015"
+   ms.date="08/19/2015"
    ms.author="joaoma" />
 
 # Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts
@@ -38,9 +38,9 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 
 ## Nächste Schritte
 
-[Traffic Manager-Konfigurationsaufgaben](https://msdn.microsoft.com/library/azure/hh744830.aspx)
+[Deaktivieren, Aktivieren oder Löschen eines Traffic Manager-Profils](disable-enable-or-delete-a-profile.md)
 
-[Traffic Manager – Übersicht](../traffic-manager.md)
+[Was ist Traffic Manager?](../traffic-manager.md)
 
 [Cloud-Dienste](http://go.microsoft.com/fwlink/?LinkId=314074)
 
@@ -50,4 +50,4 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/?LinkId=313584)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

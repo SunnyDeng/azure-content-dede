@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/13/2015" 
+	ms.date="08/14/2015" 
 	ms.author="femila"/>
 
 
@@ -92,4 +92,6 @@ Hier sind einige Themen aufgeführt, die zusätzliche Informationen zu Azure Act
 
 * [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=August15_HO6-->
+* [Graph-API-Referenz für Gruppen](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/groups-operations#GroupFunctions)
+
+<!---HONumber=August15_HO8-->

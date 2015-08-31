@@ -1,19 +1,20 @@
-<properties 
-	pageTitle="Was ist HBase in HDInsight | Microsoft Azure" 
-	description="Eine Einführung in Apache HBase in HDInsight, ein NoSQL-Datenbankbuild auf Hadoop. Erfahren Sie mehr über Anwendungsfälle, und vergleichen Sie HBase mit anderen Hadoop-Clustern." 
-	services="hdinsight" 
-	documentationCenter="" 
+<properties
+	pageTitle="Was ist HBase in HDInsight | Microsoft Azure"
+	description="Eine Einführung in Apache HBase in HDInsight, ein NoSQL-Datenbankbuild auf Hadoop. Erfahren Sie mehr über Anwendungsfälle, und vergleichen Sie HBase mit anderen Hadoop-Clustern."
+	services="hdinsight"
+	documentationCenter=""
+	tags="azure-portal"
 	authors="mumian" 
-	manager="paulettm" 
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/20/2015" 
+<tags
+	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/28/2015"
 	ms.author="jgao"/>
 
 
@@ -34,7 +35,7 @@ Die HDInsight-Implementierung nutzt die skalierbare Architektur von HBase für a
 ## Wie werden Daten in HDInsight HBase verwaltet?
 
 Daten können Sie in HBase mit den Befehlen `create`, `get`, `put` und `scan` über die HBase-Shell verwalten. Daten werden mit dem Befehl `put` in die Datenbank geschrieben und mit `get` gelesen. Der `scan`-Befehl wird verwendet, um Daten aus mehreren Zeilen in einer Tabelle abzurufen. Sie können Daten auch über die HBase-C#-API verwalten. Diese bietet eine Clientbibliothek auf der HBase-REST-API. Eine HBase-Datenbank können Sie auch mit Hive abfragen. Eine Einleitung für diese Programmiermodelle finden Sie unter [Erste Schritte mit HBase mit Hadoop in HDInsight][hbase-get-started]. Coprozessoren sind ebenfalls verfügbar und ermöglichen die Verarbeitung von Daten in den Knoten, die die Datenbank hosten.
- 
+
 
 ## Szenarios: Anwendungsfälle für HBase
 Der kanonische Anwendungsfall, für den BigTable (und daher auch HBase) erstellt wurde, ist die Websuche. Suchmaschinen erstellen Indizes, die Begriffe den Webseiten zuordnen, die diese Begriffe enthalten. Es gibt jedoch noch viele weitere Anwendungsfälle für HBase. Einige von ihnen werden in diesem Abschnitt beschrieben.
@@ -60,7 +61,7 @@ Der kanonische Anwendungsfall, für den BigTable (und daher auch HBase) erstellt
 
 - [Erste Schritte mit HBase mit Hadoop in HDInsight][hbase-get-started]
 - [Bereitstellen von HDInsight-Clustern in Azure Virtual Network][hbase-provision-vnet]
-- [Konfigurieren der HBase-Replikation in HDInsight](hdinsight-hbase-geo-replication.md) 
+- [Konfigurieren der HBase-Replikation in HDInsight](hdinsight-hbase-geo-replication.md)
 - [Analysieren der Twitter-Stimmungen mit HBase in HDInsight][hbase-twitter-sentiment]
 - [Verwenden von Maven zur Entwicklung von Java-Anwendungen, die HBase mit HDInsight (Hadoop) nutzen][hbase-build-java-maven]
 
@@ -87,20 +88,9 @@ Der kanonische Anwendungsfall, für den BigTable (und daher auch HBase) erstellt
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
-[azure-management-portal]: https://manage.windowsazure.com/
+[azure-management-portal]: https://portal.azure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account.md
 
 [apache-hadoop]: http://hadoop.apache.org/
 
-
-
-
-
-
-
-
-
-
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

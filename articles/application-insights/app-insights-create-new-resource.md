@@ -83,6 +83,8 @@ Klicken Sie nach einigen Sekunden auf "Aktualisieren", wenn Sie mehr Daten erwar
 Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resource.md) schreiben, um eine Ressource automatisch zu erstellen.
 
 
+
+
 <!--Link references-->
 
 [api]: app-insights-api-custom-events-metrics.md
@@ -92,4 +94,4 @@ Sie können ein [PowerShell-Skript](app-insights-powershell-script-create-resour
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

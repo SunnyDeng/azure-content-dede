@@ -73,4 +73,4 @@ Sie können nun ein Facebook-Login für die Authentifizierung in Ihrer App verwe
 [Azure Mobile Services]: http://azure.microsoft.com/services/mobile-services/
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

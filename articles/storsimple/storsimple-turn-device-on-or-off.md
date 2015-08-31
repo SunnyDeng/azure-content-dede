@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/06/2015"
+   ms.date="08/19/2015"
    ms.author="alkohli" />
 
 # Ein- und Ausschalten von StorSimple-Geräten 
@@ -28,7 +28,7 @@ Die folgende Tabelle führt verschiedene Szenarien auf, in denen StorSimple-Ger�
 |Einschalten eines neuen Geräts|[Einschalten eines neuen Geräts](#turn-on-a-new-device)<ul><li>[Neues Gerät nur mit primärem Gehäuse](#new-device-with-primary-enclosure-only)</li><li>[Neues Gerät mit EBOD-Gehäuse](#new-device-with-ebod-enclosure)</li></ul>|
 |Einschalten eines Geräts nach dem Herunterfahren|[Einschalten eines Geräts nach dem Herunterfahren](#turn-on-a-device-after-shutdown)<ul><li>[Gerät nur mit primärem Gehäuse](#device-with-primary-enclosure-only)</li><li>[Gerät mit EBOD-Gehäuse](#device-with-ebod-enclosure)</li></ul>|
 |Einschalten eines Geräts nach einem Stromausfall|[Einschalten eines Geräts nach einem Stromausfall](#turn-on-a-device-after-a-power-loss)<ul><li>[Gerät nur mit primärem Gehäuse](#8100)</li><li>[Gerät mit EBOD-Gehäuse](#8600)</li></ul>|
-|Einschalten eines Geräts nach Unterbrechung der Verbindung von primärem Gehäuse und EBOD|[Einschalten eines Geräts nach Unterbrechung der Verbindung von primärem Gehäuse und EBOD](turn-on-a-device-after-the-primary-and-EBOD-enclosure-connection-is-lost)|
+|Einschalten eines Geräts nach Unterbrechung der Verbindung von primärem Gehäuse und EBOD|[Einschalten eines Geräts nach Unterbrechung der Verbindung von primärem Gehäuse und EBOD](#turn-on-a-device-after-the-primary-and-EBOD-enclosure-connection-is-lost)|
 |Herunterfahren eines ausgeführten Geräts|[Herunterfahren eines ausgeführten Geräts](#turn-off-a-running-device)<ul><li>[Gerät nur mit primärem Gehäuse](#8100a)</li><li>[Gerät mit EBOD-Gehäuse](#8600a)</li></ul>|
 
 ## Einschalten eines neuen Geräts
@@ -37,7 +37,7 @@ Die Schritte zum erstmaligen Einschalten eines Microsoft Azure StorSimple-Gerät
 
 - [Neues Gerät nur mit primärem Gehäuse](#new-device-with-primary-enclosure-only)
 
-- [Neues Gerät mit EBOD-Gehäuse](#new-device-with-EBOD-enclosure)
+- [Neues Gerät mit EBOD-Gehäuse](#new-device-with-ebod-enclosure)
 
 ### Neues Gerät nur mit primärem Gehäuse
 
@@ -241,4 +241,4 @@ Sie können über die serielle Gerätekonsole oder über Windows PowerShell-Remo
 
 [Kontaktieren Sie den Microsoft-Support](storsimple-contact-microsoft-support.md), wenn beim Einschalten oder Herunterfahren eines StorSimple-Geräts Probleme auftreten.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

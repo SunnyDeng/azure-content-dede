@@ -6,16 +6,14 @@
 	authors="alancameronwills" 
 	manager="ronmart"/>
 
-
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/21/2015" 
+	ms.date="08/18/2015" 
 	ms.author="awills"/>
-
 
 #  Application Insights: Proaktive Erkennung von Anomalien
 
@@ -69,7 +67,11 @@ Klicken Sie auf ein Diagramm, um ein Blatt mit mehr Details zu öffnen.
 * *Muss ich diesen Dienst abonnieren, um Benachrichtigungen zu erhalten?*
  * Nein. Unser Bot überprüft in regelmäßigen Abständen die Daten aller Application Insights-Benutzer und sendet Benachrichtigungen, wenn Probleme erkannt werden.
 * *Kann ich das Abonnement abbestellen oder die Benachrichtigungen stattdessen an meine Kollegen senden lassen?*
- * Klicken Sie auf den Link in der Warnung oder in der E-Mail. Öffnen Sie die Einstellungen für Anomalien. ![](./media/app-insights-anomaly/01.png) Derzeit werden Sie an Personen gesendet, die über [Schreibzugriff auf die Application Insights-Ressource](app-insights-resources-roles-access-control.md) verfügen.
+ * Klicken Sie auf den Link in der Warnung oder in der E-Mail. Öffnen Sie die Einstellungen für Anomalien.
+ 
+    ![](./media/app-insights-anomaly/01.png)
+
+    Derzeit werden Sie an Personen gesendet, die über [Schreibzugriff für die Application Insights-Ressource](app-insights-resources-roles-access-control.md) verfügen.
 * *Ich möchte nicht mit diesen Nachrichten überflutet werden.*
  * Die Nachrichten sind auf drei pro Tag beschränkt. Sie erhalten Nachrichten nicht mehrfach.
 * *Erhalte ich eine Erinnerung, wenn ich nichts unternehme?*
@@ -84,4 +86,4 @@ Klicken Sie auf ein Diagramm, um ein Blatt mit mehr Details zu öffnen.
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -37,7 +37,7 @@ Integration Services (SSIS) ist ein leistungsfähiges und flexibles ETL-Tool (Ex
 
 > [AZURE.NOTE]Mit SSIS können Daten ohne die Bytereihenfolge-Marke in der Datei in das Format UTF-8 exportiert werden. Um dies zu konfigurieren, müssen Sie die Zeichendaten im Datenfluss mithilfe der abgeleiteten Spaltenkomponente zunächst so konvertieren, dass die UTF-8-Codepage 65001 verwendet wird. Nachdem die Spalten konvertiert wurden, schreiben Sie die Daten in den Flatfile-Zieladapter. Dabei müssen Sie sicherstellen, dass 65001 auch als Codepage für die Datei ausgewählt wurde.
 
-SSIS stellt eine Verbindung mit SQL Data Warehouse her. Die Verbindungsherstellung entspricht der mit einer SQL Server-Bereitstellung. Für die Verbindungen muss jedoch ein ADO.NET-Verbindungs-Manager verwendet werden. Zudem sollten Sie darauf achten, dass die Einstellung "" konfiguriert ist, um den Durchsatz zu maximieren.
+SSIS stellt eine Verbindung mit SQL Data Warehouse her. Die Verbindungsherstellung entspricht der mit einer SQL Server-Bereitstellung. Für die Verbindungen muss jedoch ein ADO.NET-Verbindungs-Manager verwendet werden. Zudem sollten Sie darauf achten, dass die Einstellung "Sofern verfügbar, Masseneinfügung verwenden" konfiguriert ist, um den Durchsatz zu maximieren. Weitere Informationen zu dieser Eigenschaft finden Sie in dem Artikel zum [ADO.NET-Zieladapter][].
 
 > [AZURE.NOTE]Die Verbindungsherstellung mit Azure SQL Data Warehouse mithilfe von OLEDB wird nicht unterstützt.
 
@@ -191,6 +191,7 @@ Weitere Informationen zur Migration finden Sie unter [Migrieren Ihrer Lösung na
 
 [Produktionsversion]: http://aka.ms/downloadazcopy/
 [Vorschauversion ]: http://aka.ms/downloadazcopypr/
+[ADO.NET-Zieladapter]: https://msdn.microsoft.com/de-de/library/bb934041.aspx
 [SSIS-Dokumentation]: https://msdn.microsoft.com/de-de/library/ms141026.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Verwalten von Zugriffssteuerungsdatensätzen in StorSimple"
+   pageTitle="Verwalten von Zugriffssteuerungsdatensätzen in StorSimple | Microsoft Azure"
    description="Beschreibt, wie Sie mit Zugriffssteuerungsdatensätzen (Access Control Record, ACR) angeben, welche Hosts Verbindungen mit einem Volume auf dem StorSimple-Gerät herstellen können."
    services="storsimple"
    documentationCenter=""
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/10/2015"
+   ms.date="08/13/2015"
    ms.author="alkohli" />
 
 # Verwalten von Zugriffssteuerungsdatensätzen in StorSimple
@@ -94,4 +94,4 @@ Erfahren Sie mehr über das [Verwalten von StorSimple-Volumes](storsimple-manage
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

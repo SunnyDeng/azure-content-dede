@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="nitinme" 
 	manager="paulettm" 
-	editor="cgronlun"/>
+	editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags 
 	ms.service="hdinsight" 
@@ -18,7 +19,7 @@
 
 # Übersicht: Apache Spark für Azure HDInsight 
  
-<a href="http://spark.apache.org/" target="_blank">Apache Spark</a> ist ein Open-Source-Framework für die Parallelverarbeitung, das die arbeitsspeicherinterne Verarbeitung unterstützt, um die Leistung von Anwendungen zur Analyse von großen Datenmengen zu steigern. Das Spark-Verarbeitungsmodul ist auf Geschwindigkeit, einfache Nutzung und anspruchsvolle Analysen ausgelegt. Dank seiner arbeitsspeicherinternen Datenverarbeitungsfunktionen eignet sich Spark besonders für iterative Algorithmen beim maschinellen Lernen und für Graphberechnungen. Spark ist auch mit Azure-BLOB-Speicher \(WASB\) kompatibel, sodass Ihre vorhandenen Daten, die in Azure gespeichert sind, leicht per Spark verarbeitet werden können.
+<a href="http://spark.apache.org/" target="_blank">Apache Spark</a> ist ein Open-Source-Framework für die Parallelverarbeitung, das die arbeitsspeicherinterne Verarbeitung unterstützt, um die Leistung von Anwendungen zur Analyse von großen Datenmengen zu steigern. Das Spark-Verarbeitungsmodul ist auf Geschwindigkeit, einfache Nutzung und anspruchsvolle Analysen ausgelegt. Dank seiner arbeitsspeicherinternen Datenverarbeitungsfunktionen eignet sich Spark besonders für iterative Algorithmen beim maschinellen Lernen und für Graphberechnungen. Spark ist auch mit Azure-BLOB-Speicher (WASB) kompatibel, sodass Ihre vorhandenen Daten, die in Azure gespeichert sind, leicht per Spark verarbeitet werden können.
 
 Wenn Sie einen Spark-Cluster in HDInsight bereitstellen, stellen Sie damit Azure-Serverressourcen bereit, für die Spark installiert und konfiguriert ist. Es dauert nur ungefähr zehn Minuten, einen Spark-Cluster in HDInsight bereitzustellen. Die zu verarbeitenden Daten werden im Azure-BLOB-Speicher gespeichert. Weitere Informationen finden Sie unter [Verwenden von Azure-BLOB-Speicher mit HDInsight][hdinsight-storage].
 
@@ -72,7 +73,7 @@ Apache Spark verfügt über [MLlib](http://spark.apache.org/mllib/), eine Machin
 
 [Lernprogramm anzeigen](hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming.md)
 
-Die Echtzeit-Datenanalyse wird für Szenarien eingesetzt, die von der Reduzierung des Zeitaufwands für Einblicke in Daten \(durch die sofortige Verarbeitung von Daten nach dem Eintreffen\) bis zur Erstellung einer echten Streaminglösung reichen. Spark in HDInsight bietet umfassende Unterstützung für die Erstellung von Echtzeit-Analyselösungen. Spark verfügt zwar bereits über Connectors zum Erfassen von Daten aus den unterschiedlichsten Quellen, z. B. Kafka, Flume, Twitter, ZeroMQ oder TCP-Sockets, aber mit Spark in HDInsight wird zusätzlich noch die erstklassige Unterstützung für das Erfassen von Daten aus Azure Event Hubs hinzugefügt. Event Hubs sind der Warteschlangendienst, der in Azure am häufigsten verwendet wird. Da die Unterstützung von Event Hubs im Lieferumfang enthalten ist, ist Spark in HDInsight eine ideale Plattform zum Erstellen einer Echtzeit-Analysepipeline.
+Die Echtzeit-Datenanalyse wird für Szenarien eingesetzt, die von der Reduzierung des Zeitaufwands für Einblicke in Daten (durch die sofortige Verarbeitung von Daten nach dem Eintreffen) bis zur Erstellung einer echten Streaminglösung reichen. Spark in HDInsight bietet umfassende Unterstützung für die Erstellung von Echtzeit-Analyselösungen. Spark verfügt zwar bereits über Connectors zum Erfassen von Daten aus den unterschiedlichsten Quellen, z. B. Kafka, Flume, Twitter, ZeroMQ oder TCP-Sockets, aber mit Spark in HDInsight wird zusätzlich noch die erstklassige Unterstützung für das Erfassen von Daten aus Azure Event Hubs hinzugefügt. Event Hubs sind der Warteschlangendienst, der in Azure am häufigsten verwendet wird. Da die Unterstützung von Event Hubs im Lieferumfang enthalten ist, ist Spark in HDInsight eine ideale Plattform zum Erstellen einer Echtzeit-Analysepipeline.
 
 ##<a name="next-steps"></a>Welche Komponenten sind Bestandteile eines Spark-Clusters?
 
@@ -99,4 +100,4 @@ Spark in HDInsight verfügt auch über einen [ODBC-Treiber](http://go.microsoft.
 
 [hdinsight-storage]: ../hdinsight-use-blob-storage/
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

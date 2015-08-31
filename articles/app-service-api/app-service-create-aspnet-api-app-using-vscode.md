@@ -184,7 +184,7 @@ Nun ändern Sie die **ContactsList**-App, indem Sie eine **Contact**- und eine *
 
 5. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
-	**http://localhost:5001/api/Contacts**
+	****http://localhost:5001/api/Contacts**
 
 	Anschließend können Sie die Inhalte von *Contacts.json* anzeigen. In dieser Datei wird folgender Inhalt angezeigt:
 
@@ -466,4 +466,4 @@ Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App-Host** für Ihre API-Ap
 In diesem Lernprogramm haben Sie erfahren, wie Sie eine API-App in Visual Studio Code erstellen. Weitere Informationen zu Visual Studio Code finden Sie unter [Visual Studio Code](https://code.visualstudio.com/Docs/). Weitere Informationen zu API-Apps finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

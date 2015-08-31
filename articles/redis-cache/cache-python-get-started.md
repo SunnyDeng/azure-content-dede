@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Verwenden von Azure Redis Cache mit Python"
-   description="Erste Schritte mit Azure Redis Cache und Python"
-   services="redis-cache"
-   documentationCenter=""
-   authors="MikeWasson"
-   manager="wpickett"
-   editor=""/>
+	pageTitle="Verwenden von Azure Redis Cache mit Python | Microsoft Azure"
+	description="Erste Schritte mit Azure Redis Cache und Python"
+	services="redis-cache"
+	documentationCenter=""
+	authors="steved0x"
+	manager="dwrede"
+	editor="v-lincan"/>
 
 <tags
-   ms.service="cache"
-   ms.devlang="python"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="cache-redis"
-   ms.workload="required"
-   ms.date="08/04/2015"
-   ms.author="mwasson"/>
+	ms.service="cache"
+	ms.devlang="python"
+	ms.topic="hero-article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
+	ms.date="08/17/2015"
+	ms.author="sdanie"/>
 
 # Verwenden von Azure Redis Cache mit Python
 
@@ -36,9 +36,9 @@ Geben Sie einen DNS-Hostnamen ein. Das Format hierfür ist `<name>.redis.cache.w
 
   ![][2]
 
-Sobald der Cache erstellt wurde, klicken Sie im Portal darauf, um die Cache-Einstellungen anzuzeigen. Was Sie benötigen:
+Sobald Sie den Cache erstellt haben, klicken Sie im Azure-Portal darauf, um die Cache-Einstellungen anzuzeigen. Was Sie benötigen:
 
-- **Hostname.** Diesen haben Sie beim Erstellen des Caches eingegeben.
+- **Hostname.** Sie haben diesen Namen beim Erstellen des Caches eingegeben.
 - **Port.** Klicken Sie auf den Link unter **Ports**, um die Ports anzuzeigen. Verwenden Sie den SSL-Port.
 - **Zugriffsschüssel.** Klicken Sie auf den Link unter **Schlüssel**, und kopieren Sie den Primärschlüssel.
 
@@ -59,4 +59,4 @@ Ersetzen Sie *&lt;name&gt;* durch den Namen Ihres Caches und *&lt;name&gt;* durc
 [1]: ./media/cache-python-get-started/cache01.png
 [2]: ./media/cache-python-get-started/cache02.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

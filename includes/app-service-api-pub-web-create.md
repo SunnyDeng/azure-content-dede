@@ -25,12 +25,10 @@
 
 	Da dieser Vorgang einige Minuten in Anspruch nehmen kann, zeigt Visual Studio ein Bestätigungsdialogfeld an.
 
-	![Bestätigungsmeldung zum Start der Erstellung von API-Diensten](./media/app-service-api-pub-web-create/25-api-provisioning-started-v3.png)
-
 6. Klicken Sie im Bestätigungsdialogfeld auf **OK**.
  
 	Im Rahmen des Bereitstellungsprozesses werden die Ressourcengruppe und die API-App in Ihrem Azure-Abonnement erstellt. Visual Studio zeigt den Fortschritt im Fenster **Azure App Service-Aktivität** an.
 
 	![Statusbenachrichtigung über das Fenster "Azure App Service-Aktivität"](./media/app-service-api-pub-web-create/26-provisioning-success-v3.png)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

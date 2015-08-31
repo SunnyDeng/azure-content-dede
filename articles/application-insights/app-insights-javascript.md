@@ -25,6 +25,10 @@ Informieren Sie sich über die Leistung und Nutzung Ihrer Webseite. Fügen Sie I
 
 Wenn Sie bereits Servertelemetrie für Ihre [ASP.NET][greenbrown]- oder [Java][java]-Web-App eingerichtet haben, erhalten Sie einen Überblick sowohl aus der Sicht des Clients als auch aus der des Servers. Die beiden Datenströme werden in das Application Insights-Portal integriert.
 
+#### Kurze Demo
+
+Wenn Sie kein Azure-Abonnement besitzen und Application Insights auf Ihrer Webseite testen möchten, besuchen Sie [Ausprobieren von Application Insights](http://aka.ms/ainow).
+
 ## Erstellen einer Application Insights-Ressource
 
 Daten zur Leistung und Nutzung Ihrer Seite werden in der Application Insights-Ressource angezeigt. (Wenn Sie bereits eine Ressource erstellt haben, um beispielsweise Daten von Ihrem Webserver zu erfassen, überspringen Sie diesen Schritt.)
@@ -143,7 +147,7 @@ Wählen Sie ein Ereignis, um weitere Details anzuzeigen. Klicken Sie auf der Det
 
 ### Eigenschaften von Seitenansichten
 
-* **Dauer der Seitenansicht**: Die Zeit, die das Laden der Seite und das Starten der Ausführung von Skripts dauert. Insbesondere das Intervall vom Beginn des Ladens der Seite bis zur Ausführung von trackPageView. Wenn Sie nach der Initialisierung des Skripts trackPageView von seiner üblichen Position verschoben haben, wird ein anderer Wert wiedergegeben. 
+* **Dauer der Seitenansicht**: Die Zeit, die das Laden der Seite und das Starten der Ausführung von Skripts in Anspruch nimmt. Insbesondere das Intervall vom Beginn des Ladens der Seite bis zur Ausführung von trackPageView. Wenn Sie nach der Initialisierung des Skripts trackPageView von seiner üblichen Position verschoben haben, wird ein anderer Wert wiedergegeben. 
 
 ## Benutzerdefinierte Nutzungsverfolgung
 
@@ -182,4 +186,4 @@ Falls Sie dies noch nicht durchgeführt haben, können Sie Einblicke von Ihrem S
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

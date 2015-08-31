@@ -161,6 +161,8 @@ CREATE CLUSTERED INDEX [pvTblIdx] ON [dbo].[PageViewsTable]
 
 ![](./media/app-insights-code-sample-export-sql-stream-analytics/34-create-table.png)
 
+In diesem Beispiel verwenden wir Daten aus Seitenaufrufen. Überprüfen Sie zum Anzeigen der anderen verfügbaren Daten die JSON-Ausgabe, und sehen Sie sich das [Exportdatenmodell](app-insights-export-data-model.md) an.
+
 ## Erstellen einer Azure Stream Analytics-Instanz
 
 Wählen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) den Azure Stream Analytics-Dienst aus, und erstellen Sie einen neuen Stream Analytics-Auftrags:
@@ -200,7 +202,7 @@ In diesem Beispiel:
 
 * `webapplication27` ist der Name der Application Insights-Ressource. 
 * `1000...` Ist der Instrumentationsschlüssel der Application Insights-Ressource. 
-* `PageViews` ist die Art der zu analysierenden Daten. Die verfügbaren Typen sind abhängig von dem Filter, den Sie im fortlaufenden Export festlegen. Untersuchen Sie die exportierten Daten, um die anderen verfügbaren Typen anzuzeigen.
+* `PageViews` ist die Art der zu analysierenden Daten. Die verfügbaren Typen sind abhängig von dem Filter, den Sie im fortlaufenden Export festlegen. Untersuchen Sie die exportierten Daten, um die anderen verfügbaren Typen anzuzeigen, und sehen Sie sich das [Exportdatenmodell](app-insights-export-data-model.md) an.
 * `/{date}/{time}` ist ein als Literal geschriebenes Muster.
 
 Um den Namen und iKey Ihrer Application Insights-Ressource zu erhalten, öffnen Sie auf der Seite "Übersicht" den Eintrag "Essentials", oder öffnen Sie "Einstellungen".
@@ -305,4 +307,4 @@ Nach einigen Minuten wechseln Sie zurück zu den SQL Server-Verwaltungstools, un
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

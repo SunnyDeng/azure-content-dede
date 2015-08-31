@@ -5,6 +5,7 @@
 	editor="cgronlun"
 	manager="paulettm"
 	authors="mumian"
+	tags="azure-portal"
 	documentationCenter=""/>
 
 <tags
@@ -17,6 +18,8 @@
 	ms.author="jgao"/>
 
 # Verwalten von Hadoop-Clustern in HDInsight mit der Azure-CLI
+
+[AZURE.INCLUDE [Auswahl](../../includes/hdinsight-portal-management-selector.md)]
 
 Erfahren Sie, wie Sie die Befehlszeilenschnittstelle von Azure (Azure-CLI) zur Verwaltung von Hadoop-Clustern in Azure HDInsight verwenden. Die Azure-CLI ist in Node.js implementiert. Sie kann auf allen Plattformen verwendet werden, die Node.js unterstützen, inklusive Windows, Mac und Linux.
 
@@ -52,7 +55,7 @@ Nachdem Sie die publishsettings-Datei importiert haben, können Sie mit dem folg
 > [AZURE.NOTE]Das Speicherkonto muss sich im selben Datencenter wie HDInsight befinden.
 
 
-Informationen zum Erstellen von Azure-Speicherkonten im Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos][azure-create-storageaccount].
+Informationen zum Erstellen von Azure-Speicherkonten mit dem Azure-Vorschauportal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos][azure-create-storageaccount].
 
 Falls Sie bereits ein Speicherkonto haben, aber dessen Kontonamen und Kontoschlüssel nicht kennen, können Sie diese Daten mit den folgenden Befehlen abrufen:
 
@@ -63,7 +66,7 @@ Falls Sie bereits ein Speicherkonto haben, aber dessen Kontonamen und Kontoschl�
 	-- Lists the keys for a Storage account
 	azure account storage keys list <StorageAccountName>
 
-Ausführliche Informationen zum Abrufen dieser Informationen im Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos][azure-create-storageaccount] im Abschnitt "Anzeigen, Kopieren und Neuerstellen von Speicherzugriffsschlüsseln".
+Ausführliche Informationen zum Abrufen dieser Informationen über das Azure-Vorschauportal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos][azure-create-storageaccount] im Abschnitt „Anzeigen, Kopieren und Neuerstellen von Speicherzugriffsschlüsseln“.
 
 
 Der Befehl **azure hdinsight cluster create** erstellt den Container, falls dieser nicht existiert. Falls Sie den Container zuvor erstellen möchten, können Sie den folgenden Befehl verwenden:
@@ -135,7 +138,7 @@ Mit dem folgenden Befehl können Sie ein Cluster löschen:
 ##Nächste Schritte
 Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluster auszuführen. Weitere Informationen finden Sie in den folgenden Artikeln:
 
-* [Verwalten von HDInsight mit dem Azure-Portal][hdinsight-admin-portal]
+* [Verwalten von HDInsight mit dem Azure-Vorschauportal][hdinsight-admin-portal]
 * [Verwalten von HDInsight mit Azure PowerShell][hdinsight-admin-powershell]
 * [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
 * [Verwenden der Azure-CLI][azure-command-line-tools]
@@ -156,6 +159,5 @@ Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluste
 [image-cli-clustercreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png
 [image-cli-clustercreation-config]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreationConfig.png
 [image-cli-clusterlisting]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png "Auflisten und Anzeigen von Clustern"
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

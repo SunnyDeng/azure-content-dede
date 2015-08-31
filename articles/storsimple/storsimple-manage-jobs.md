@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Anzeigen und Verwalten von StorSimple-Aufträgen | Microsoft Azure"
-   description="Beschreibt die Seite „Aufträge“ des StorSimple Manager-Diensts und deren Verwendung."
+   description="Beschreibt die Seite „Aufträge“ des StorSimple Manager-Diensts und ihre Verwendung zum Nachverfolgen kürzlich ausgeführter, aktueller und geplanter Sicherungsaufträge."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="07/20/2015"
+   ms.date="08/13/2015"
    ms.author="alkohli" />
 
 # Anzeigen und Verwalten von StorSimple-Aufträgen
@@ -89,4 +89,4 @@ Dieser Auftrag wird nun abgebrochen.
 
 [Erfahren Sie mehr über das Verwalten von StorSimple-Sicherungsrichtlinien](storsimple-manage-backup-policies.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

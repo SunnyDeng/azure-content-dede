@@ -5,7 +5,8 @@
  documentationCenter=""
  authors="Blackmist"
  manager="paulettm"
- editor="cgronlun"/>
+ editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
  ms.service="hdinsight"
@@ -54,9 +55,9 @@ Die folgenden Dateien in diesem Projekt implementieren die spezifische Power BI-
 
 ## Registrieren einer Power BI-Anwendung
 
-1. Führen Sie die Schritte im [Power BI-Schnellstart](https://msdn.microsoft.com/en-US/library/dn931989.aspx) durch, um sich bei Power BI anzumelden.
+1. Führen Sie die Schritte im [Power BI-Schnellstart](https://msdn.microsoft.com/de-de/library/dn931989.aspx) durch, um sich bei Power BI anzumelden.
 
-2. Führen Sie die Schritte in [Registrieren einer Anwendung](https://msdn.microsoft.com/en-US/library/dn877542.aspx) durch, um eine Anwendungsregistrierung zu erstellen. Diese wird beim Zugriff auf die Power BI-REST-API benötigt.
+2. Führen Sie die Schritte in [Registrieren einer Anwendung](https://msdn.microsoft.com/de-de/library/dn877542.aspx) durch, um eine Anwendungsregistrierung zu erstellen. Diese wird beim Zugriff auf die Power BI-REST-API benötigt.
 
     > [AZURE.IMPORTANT]Speichern Sie die **Client-ID** für die Anwendungsregistrierung.
 
@@ -138,4 +139,4 @@ In diesem Dokument haben Sie erfahren, wie Daten aus einer Storm-Topologie an Po
 
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

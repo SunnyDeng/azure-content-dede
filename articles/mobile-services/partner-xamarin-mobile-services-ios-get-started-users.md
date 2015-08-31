@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="05/14/2015"
+	ms.date="08/18/2015"
 	ms.author="donnam"/>
 
 # Hinzufügen von Authentifizierung zur Mobile Services-App
@@ -149,6 +149,5 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Azure Management Portal]: https://manage.windowsazure.com/
 [abgeschlossene Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 [Xamarin.iOS]: http://xamarin.com/download
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

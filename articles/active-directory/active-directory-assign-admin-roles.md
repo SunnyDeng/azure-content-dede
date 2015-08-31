@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Zuweisen von Administratorrollen in Azure AD" 
-	description="Bei dem Thema wird erklärt, welche Administratorrollen in Azure AD verfügbar sind und wie sie zugewiesen werden." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
+<properties
+	pageTitle="Zuweisen von Administratorrollen in Azure AD"
+	description="Bei dem Thema wird erklärt, welche Administratorrollen in Azure AD verfügbar sind und wie sie zugewiesen werden."
+	services="active-directory"
+	documentationCenter=""
+	authors="curtand" 
+	manager="stevenpo"
 	editor="LisaToft"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/05/2015" 
-	ms.author="Justinha"/>
+<tags
+	ms.service="active-directory"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/14/2015"
+	ms.author="curtand"/>
 
 # Zuweisen von Administratorrollen in Azure AD
 
@@ -89,4 +89,4 @@ Der globale Administrator hat Zugriff auf alle administrativen Funktionen. Stand
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

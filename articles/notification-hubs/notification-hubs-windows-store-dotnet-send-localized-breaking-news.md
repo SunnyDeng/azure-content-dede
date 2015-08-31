@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Lernprogramm zu lokalisierten aktuellen Nachrichten in Notification Hubs" 
-	description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu lokalisierten aktuellen Nachrichten." 
-	services="notification-hubs" 
-	documentationCenter="windows" 
-	authors="wesmc7777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Lernprogramm zu lokalisierten aktuellen Nachrichten in Notification Hubs"
+	description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu lokalisierten aktuellen Nachrichten."
+	services="notification-hubs"
+	documentationCenter="windows"
+	authors="wesmc7777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="04/27/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/18/2015" 
 	ms.author="wesmc"/>
 
 # Verwenden von Notification Hubs zum Senden lokalisierter Nachrichten
@@ -29,7 +29,7 @@ In diesem Thema wird gezeigt, wie Sie mit der **Vorlagen**-Funktion von Azure No
 
 Dieses Szenario besteht aus zwei Teilen:
 
-- In der Windows Store-App können Client-Geräte eine Sprache auswählen und verschiedene Nachrichtenkategorien abonnieren; 
+- In der Windows Store-App können Client-Geräte eine Sprache auswählen und verschiedene Nachrichtenkategorien abonnieren;
 
 - Das Back-End verteilt die Benachrichtigungen mithilfe der **tag**- und **template**-Features von Azure Notification Hubs.
 
@@ -146,7 +146,7 @@ Fügen Sie ein Sprachen-Kombinationsfeld zu Ihrer MainPage.xaml hinzu:
 3. Aktualisieren Sie in Ihrer MainPage.xaml.cs den Klick-Handler, indem Sie den aktuellen Wert des Sprachen-Kombinationsfelds abrufen und im Aufruf an die Notifications-Klasse angeben:
 
 		 var locale = (string)Locale.SelectedItem;
-            
+
          var categories = new HashSet<string>();
          if (WorldToggle.IsOn) categories.Add("World");
          if (PoliticsToggle.IsOn) categories.Add("Politics");
@@ -229,6 +229,5 @@ Weitere Informationen zum Verwenden von Vorlagen finden Sie unter [Benachrichtig
 [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
 [Notification Hub-Informationen für Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

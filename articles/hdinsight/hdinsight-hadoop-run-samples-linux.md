@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="Blackmist"
 	manager="paulettm"
-	editor="cgronlun"/>
+	editor="cgronlun"
+    tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
@@ -242,4 +243,4 @@ In diesem Artikel haben Sie gelernt, wie die Beispiele ausgeführt werden, die i
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

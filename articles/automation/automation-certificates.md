@@ -1,21 +1,19 @@
 <properties 
-   pageTitle="Zertifikatobjekte in Azure Automation"
+   pageTitle="Zertifikatobjekte in Azure Automation | Microsoft Azure"
    description="Zertifikate können sicher in Azure Automation gespeichert werden, sodass sie von Runbooks zur Authentifizierung bei Azure und Drittanbieterressourcen verwendet werden können. Dieser Artikel stellt eine ausführliche Beschreibung von Zertifikaten bereit und zeigt, wie diese in Textrunbooks und grafischen Runbooks eingesetzt werden."
    services="automation"
    documentationCenter=""
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-
 <tags 
    ms.service="automation"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/14/2015"
+   ms.date="08/18/2015"
    ms.author="bwren" />
-
 
 # Zertifikatobjekte in Azure Automation
 
@@ -109,4 +107,4 @@ In diesem Beispiel wird der Parametersatz **UseConnectionObject** für die Send-
 
 - [Verknüpfungen bei der grafischen Erstellung](automation-graphical-authoring-intro.md#links-and-workflow) 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

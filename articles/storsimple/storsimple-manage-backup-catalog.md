@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="06/24/2015"
+   ms.date="08/13/2015"
    ms.author="v-sharos" />
 
 # Verwalten von StorSimple-Sicherungskatalog
@@ -109,7 +109,7 @@ Löschen Sie eine Sicherung, wenn Sie die zugeordneten Daten nicht mehr beibehal
 
     Die dem ausgewählten Volume oder der Sicherungsrichtlinie zugeordneten Sicherungen sollten in der Liste der Sicherungssätze angezeigt werden.
 
-3. Wählen Sie einen Sicherungssatz aus und erweitern Sie diesen. Die Optionen **Wiederherstellen und Löschen** werden unten auf der Seite angezeigt. Klicken Sie auf **Löschen**. Sicherungssatz löschen
+3. Wählen Sie einen Sicherungssatz aus und erweitern Sie diesen. Die Optionen **Wiederherstellen und Löschen** werden unten auf der Seite angezeigt. Klicken Sie auf **Löschen**.
 
 4. Sie werden benachrichtigt, wenn der Löschvorgang durchgeführt wird und wenn er erfolgreich abgeschlossen wurde. Aktualisieren Sie die Abfrage auf dieser Seite, nachdem der Löschvorgang abgeschlossen wurde. Der gelöschte Sicherungssatz wird nicht mehr in der Liste der Sicherungssätze angezeigt.
 
@@ -117,4 +117,4 @@ Löschen Sie eine Sicherung, wenn Sie die zugeordneten Daten nicht mehr beibehal
 
 Erfahren sie mehr über die Verwendung des Sicherungskatalogs zum [Wiederherstellen Ihres Geräts aus einem Sicherungssatz](storsimple-restore-from-backup-set.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

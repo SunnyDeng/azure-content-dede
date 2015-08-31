@@ -18,14 +18,29 @@
 
 # Azure-Gastbetriebssystem 
 
-Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates \(MSRC\), die auf das Azure-Gastbetriebssystem angewendet wurden. Durchsuchen Sie diesen Artikel, um zu ermitteln, ob ein bestimmtes Update für das Gastbetriebssystem gilt, das Sie verwenden. Updates werden für die [Familie][family-explain], in der sie eingeführt wurden, immer in die jeweils neueste Version übertragen.
+Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MSRC), die auf das Azure-Gastbetriebssystem angewendet wurden. Durchsuchen Sie diesen Artikel, um zu ermitteln, ob ein bestimmtes Update für das Gastbetriebssystem gilt, das Sie verwenden. Updates werden für die [Familie][family-explain], in der sie eingeführt wurden, immer in die jeweils neueste Version übertragen.
+
+## Gastbetriebssystem August
+
+| Bulletin-ID | Übergeordneter KB-Artikel | Beschreibung des Sicherheitsrisikos | Gastbetriebssystem | Datum der ersten Einführung |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS15-079 | [3082442] | Kumulatives Sicherheitsupdate für Internet Explorer | 4\.23, 3.30, 2.42 | 11\. August 2015 |
+| MS15-080 | [3078662] | Schwachstellen in Microsoft-Grafikkomponente können Remotecodeausführung ermöglichen. | 4\.23, 3.30, 2.42 | 11\. August 2015 |
+| MS15-082 | [3080348] | Schwachstellen in RDP können Remotecodeausführung ermöglichen. | 4\.23, 3.30, 2.42 | 11\. August 2015 |
+| MS15-084 | [3080129] | Schwachstellen in XML Core Services können Offenlegung von Informationen ermöglichen. | 4\.23, 3.30, 2.42 | 11\. August 2015 |
+| MS15-085 | [3082487] | Schwachstelle im Bereitstellungs-Manager kann Erhöhung von Berechtigungen ermöglichen. | 4\.23, 3.30, 2.42 | 11\. August 2015 |
+| MS15-088 | [3082458] | Unsichere Übergabe der Befehlszeilenparameter kann Offenlegung von Informationen ermöglichen. | 4\.23, 3.30, 2.42 | 11\. August 2015 |
+| MS15-089 | [3060716] | Schwachstellen in Microsoft Windows können Erhöhung von Berechtigungen ermöglichen. | 4\.23, 3.30, 2.42 | 11\. August 2015 |
+| MS15-090 | [3076949] | Schwachstelle in WebDAV kann Offenlegung von Informationen ermöglichen. | 4\.23, 3.30, 2.42 | 11\. August 2015 |
+| MS15-092 | [3086251] | Sicherheitsanfälligkeiten im .NET Framework können Erhöhung von Berechtigungen ermöglichen | 4\.23, 3.30, 2.42 | 11\. August 2015 |
+
 
 ## Gastbetriebssystem Juli
 
 | Bulletin-ID | Übergeordneter KB-Artikel | Beschreibung des Sicherheitsrisikos | Gastbetriebssystem | Datum der ersten Einführung |
 | ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
 | MS15-065 | [3076321] | Kumulatives Sicherheitsupdate für Internet Explorer | 4\.22, 3.29, 2.41 | 14\. Juli 2015 |
-| MS15-066 | [3072604] | Sicherheitsanfälligkeit in VBScript kann Remotecodeausführung ermöglichen | 4\.22, 3.29, 2.41 | 14\. Juli 2015 |
+| MS15-066 | [3072604] | Sicherheitsanfälligkeit in VBScript kann Remotecodeausführung ermöglichen | 2\.41 | 14\. Juli 2015 |
 | MS15-067 | [3073094] | Sicherheitsanfälligkeit in RDP kann Remotecodeausführung ermöglichen | 4\.22, 3.29, 2.41 | 14\. Juli 2015 |
 | MS15-068 | [3072000] | Sicherheitsanfälligkeit in Windows Hyper-V kann Remotecodeausführung ermöglichen | 4\.22, 3.29, 2.41 | 14\. Juli 2015 |
 | MS15-069 | [3072631] | Sicherheitsanfälligkeiten in Windows können Remotecodeausführung ermöglichen | 4\.22, 3.29, 2.41 | 14\. Juli 2015 |
@@ -62,11 +77,11 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates \(M
 | MS15-052 | [3050514] | Sicherheitsanfälligkeit im Windows-Kernel kann Umgehung von Sicherheitsfunktionen ermöglichen | 4\.20, 3.27, 2.39 | 12\. Mai 2015 |
 | MS15-053 | [3057263] | Sicherheitsanfälligkeiten im JScript- und VBScript-Skriptmodul können Umgehung der Sicherheitsfunktion ermöglichen | 4\.20, 3.27, 2.39 | 12\. Mai 2015 |
 | MS15-054 | [3051768] | Sicherheitsanfälligkeit im Microsoft-Verwaltungskonsolen-Dateiformat kann Denial-of-Service-Angriffe ermöglichen | 4\.20, 3.27, 2.39 | 12\. Mai 2015 |
-| MS15-055 | [3061518] | Sicherheitsanfälligkeit in Schannel kann Umgehung der Sicherheitsfunktion ermöglichen \(Offenlegung wichtiger Daten\) | 4\.20, 3.27, 2.39 | 12\. Mai 2015 |
+| MS15-055 | [3061518] | Sicherheitsanfälligkeit in Schannel kann Umgehung der Sicherheitsfunktion ermöglichen (Offenlegung wichtiger Daten) | 4\.20, 3.27, 2.39 | 12\. Mai 2015 |
 | MS15-032 | [3038314] | Kumulatives Sicherheitsupdate für Internet Explorer | 4\.20, 3.27, 2.39 | 17\. April 2015 |
 | MS15-035 | [3046306] | Sicherheitsanfälligkeit in Microsoft-Grafikkomponente kann Remotecodeausführung ermöglichen | 4\.20, 3.27, 2.39 | 17\. April 2015 |
 | MS15-037 | [3046269] | Sicherheitsanfälligkeit im Windows-Taskplaner kann Erhöhung von Berechtigungen ermöglichen | 4\.20, 3.27, 2.39 | 17\. April 2015 |
-| MS15-038 | [3049576] | Sicherheitsanfälligkeiten in Microsoft Windows können Erhöhung von Berechtigungen ermöglichen \(Wichtig\) | 4\.20, 3.27, 2.39 | 17\. April 2015 |
+| MS15-038 | [3049576] | Sicherheitsanfälligkeiten in Microsoft Windows können Erhöhung von Berechtigungen ermöglichen (Wichtig) | 4\.20, 3.27, 2.39 | 17\. April 2015 |
 | MS15-039 | [3046482] | Sicherheitsanfälligkeit in XML Core Services kann Umgehung von Sicherheitsfunktionen ermöglichen | 4\.20, 3.27, 2.39 | 17\. April 2015 |
 | MS15-040 | [3045711] | Sicherheitsanfälligkeit in ADFS kann Offenlegung von Daten ermöglichen | 4\.20, 3.27, 2.39 | 17\. April 2015 |
 | MS15-041 | [3048010] | Sicherheitsanfälligkeit im .NET Framework kann Offenlegung von Daten ermöglichen | 4\.20, 3.27, 2.39 | 17\. April 2015 |
@@ -142,6 +157,17 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates \(M
 | – | [3007054][3007054] | PIN-geschützte Druckoption wird beim Drucken eines Dokuments aus einer Windows Store-Anwendung in Windows immer angezeigt | 4\.15, 3.22, 2.34 | 13\. Januar 2015 |
 | – | [2999802][2999802] | In Windows werden durchgezogene Linien statt gepunktete Linien gedruckt | 4\.15, 3.22, 2.34 | 13\. Januar 2015 |
 | – | [2896881][2896881] | Lange Anmeldezeit bei der Verwendung des VBScript-Befehls "AddPrinterConnection" zum Zuordnen von Druckern zu Benutzern während des Anmeldeprozesses in Windows | 4\.15, 3.22, 2.34 | 13\. Januar 2015 |
+
+[3082442]: http://support.microsoft.com/kb/3082442
+[3078662]: http://support.microsoft.com/kb/3078662
+[3080348]: http://support.microsoft.com/kb/3080348
+[3080129]: http://support.microsoft.com/kb/3080129
+[3082487]: http://support.microsoft.com/kb/3082487
+[3082458]: http://support.microsoft.com/kb/3082458
+[3060716]: http://support.microsoft.com/kb/3060716
+[3076949]: http://support.microsoft.com/kb/3076949
+[3086251]: http://support.microsoft.com/kb/3086251
+
 
 [3076321]: http://support.microsoft.com/kb/3076321
 [3072604]: http://support.microsoft.com/kb/3072604
@@ -239,4 +265,4 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates \(M
 [family-explain]: cloud-services-guestos-update-matrix.md#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

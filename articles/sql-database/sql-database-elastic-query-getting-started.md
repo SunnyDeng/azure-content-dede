@@ -22,17 +22,17 @@ Mit Abfragen für elastische Datenbanken (Vorschau) für Azure SQL-Datenbank kö
 Dieses Thema baut auf dem Beispiel unter [Erste Schritte mit den Tools für elastische Datenbanken](sql-database-elastic-scale-get-started.md) auf. Nach Abschluss haben Sie Folgendes gelernt: Konfigurieren und Verwenden einer Azure SQL-Datenbank zum Ausführen von Abfragen, die sich über viele verbundene Datenbanken erstrecken.
 ## Voraussetzungen
 
-Laden Sie das Beispiel [Erste Schritte mit den Tools für elastische Datenbanken](sql-database-elastic-scale-get-started.md) herunter, und führen Sie es aus.
+Laden Sie das Beispiel [Erste Schritte mit den Tools für die elastische Datenbank](sql-database-elastic-scale-get-started.md) herunter, und führen Sie es aus.
 
-## Erstellen eines Shard-Zuordnungs-Managers mithilfe der Beispiel-App
+## Erstellen eines Shardzuordnungs-Managers mithilfe der Beispiel-App
 
-Hier erstellen Sie einen Shard-Zuordnungs-Manager und mehrere Shards und fügen anschließend Daten in die Shards ein. Wenn Sie bereits über Shards verfügen, die Sharding-Daten enthalten, können Sie die folgenden Schritte überspringen und zum nächsten Abschnitt wechseln.
+Hier erstellen Sie einen Shardzuordnungs-Manager und mehrere Shards und fügen anschließend Daten in die Shards ein. Wenn Sie bereits über Shards verfügen, die Shardingdaten enthalten, können Sie die folgenden Schritte überspringen und zum nächsten Abschnitt wechseln.
 
-1. Erstellen Sie die Beispielanwendung aus **Erste Schritte mit den Tools für elastische Datenbanken**, und führen Sie sie aus. Führen Sie die Schritte bis Schritt 7 im Abschnitt [Herunterladen und Ausführen der Beispiel-App](sql-database-elastic-scale-get-started.md#Getting-started-with-elastic-database-tools) aus. Am Ende von Schritt 7 wird die folgende Eingabeaufforderung angezeigt:
+1. Erstellen Sie die Beispielanwendung aus **Erste Schritte mit den Tools für die elastische Datenbank**, und führen Sie sie aus. Führen Sie die Schritte bis Schritt 7 im Abschnitt [Herunterladen und Ausführen der Beispiel-App](sql-database-elastic-scale-get-started.md#Getting-started-with-elastic-database-tools) aus. Am Ende von Schritt 7 wird die folgende Eingabeaufforderung angezeigt:
 
 	![Eingabeaufforderung][1]
 
-2.  Geben Sie im Befehlsfenster "1" ein, und drücken Sie die **EINGABETASTE**. Dadurch wird der Shard-Zuordnungs-Manager erstellt, und es werden zwei Shards zum Server hinzugefügt. Geben Sie dann "3" ein, und drücken Sie die **EINGABETASTE**. Wiederholen Sie den Vorgang viermal. Dadurch werden Beispieldatenzeilen in die Shards eingefügt.
+2.  Geben Sie im Befehlsfenster "1" ein, und drücken Sie die **EINGABETASTE**. Dadurch wird der Shardzuordnungs-Manager erstellt, und es werden zwei Shards zum Server hinzugefügt. Geben Sie dann "3" ein, und drücken Sie die **EINGABETASTE**. Wiederholen Sie den Vorgang viermal. Dadurch werden Beispieldatenzeilen in die Shards eingefügt.
 3.  Im [Azure-Vorschauportal](https://portal.azure.com) sollten drei neue Datenbanken auf dem V12-Server angezeigt werden:
 
 	![Visual Studio-Bestätigung][2]
@@ -62,12 +62,11 @@ Diese Informationen werden für die Verbindung mit dem Shard-Zuordnungs-Manager 
 
 		CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<password>';
 
-		CREATE CREDENTIAL ElasticDBQueryCred ON DATABASE
+		CREATE DATABASE SCOPED CREDENTIAL ElasticDBQueryCred
 		WITH IDENTITY = '<username>',
 		SECRET = '<password>';
 
 	"username" und "password" sollten mit den Anmeldeinformationen aus Schritt 6 unter [Herunterladen und Ausführen der Beispiel-App](sql-database-elastic-scale-get-started.md#Getting-started-with-elastic-database-tools) in [Erste Schritte mit den Tools für elastische Datenbanken](sql-database-elastic-scale-get-started.md) übereinstimmen.
-
 
 ### Externe Datenquellen
 
@@ -143,4 +142,4 @@ Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](http://azu
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -7,7 +7,6 @@
 	manager="dwrede"
 	editor="" />
 
-
 <tags
 	ms.service="mobile-engagement"
 	ms.workload="mobile"
@@ -16,7 +15,6 @@
 	ms.topic="article"
 	ms.date="08/05/2015"
 	ms.author="MehrdadMzfr" />
-
 
 #Upgrade-Verfahren
 
@@ -27,9 +25,9 @@ Für jede neue SDK-Version müssen Sie zunächst die Ordner "EngagementSDK" und 
 ##Von 2.0.0 zu 3.0.0
 Wenn Sie Reach in Ihrer Anwendung verwenden, müssen Sie den `remote-notification`-Wert zum `UIBackgroundModes`-Array in Ihrer Datei "Info.plist" hinzufügen, um Remotebenachrichtigungen zu erhalten.
 
-Die Methode `application:applicationDidReceiveRemoteNotification:` muss in Ihrem Anwendungsdelegat durch `application:applicationDidReceiveRemoteNotification:fetchCompletionHandler:` ausgetauscht werden.
+Die Methode `application:didReceiveRemoteNotification:` muss in Ihrem Anwendungsdelegaten durch `application:didReceiveRemoteNotification:fetchCompletionHandler:` ausgetauscht werden.
 
-Die folgenden Delegatmethoden sind veraltet, und Sie müssen sie aus Ihrem Anwendungsdelegat entfernen:
+"AEPushDelegate.h" ist eine veraltete Schnittstelle, und Sie müssen alle Verweise darauf entfernen. Dies umfasst das Entfernen von `[[EngagementAgent shared] setPushDelegate:self]` und der Delegatmethoden aus Ihrem Anwendungsdelegaten:
 
 	-(void)willRetrieveLaunchMessage;
 	-(void)didFailToRetrieveLaunchMessage;
@@ -72,4 +70,4 @@ Beispiele:
 -   Die Klasse `CapptainUtils` wird umbenannt in `EngagementUtils`.
 -   Die Klasse `CapptainViewController` wird umbenannt in `EngagementViewController`.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

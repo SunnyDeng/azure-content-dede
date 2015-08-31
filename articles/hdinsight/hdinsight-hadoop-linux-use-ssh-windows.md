@@ -5,7 +5,8 @@
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
-   editor="cgronlun"/>
+   editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
@@ -13,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/06/2015"
+   ms.date="07/24/2015"
    ms.author="larryfr"/>
 
 #Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows (Vorschau)
@@ -68,21 +69,23 @@ Wenn Sie einen Linux-basierten HDInsight-Cluster erstellen, können Sie sich bei
 
 6. Klicken Sie auf **Save public key**, um den Schlüssel in einer **TXT**-Datei zu speichern. Dadurch können Sie den öffentlichen Schlüssel zukünftig wiederverwenden, wenn Sie zusätzliche Linux-basierte HDInsight-Cluster erstellen.
 
-	> [AZURE.NOTE]Der öffentliche Schlüssel wird auch am oberen Rand von PuTTYGen angezeigt. Sie können mit der rechten Maustaste auf dieses Felds klicken, den Wert kopieren und ihn dann in ein Formular einfügen, z. B. in den HDInsight-Assistenten im Azure-Portal.
+	> [AZURE.NOTE]Der öffentliche Schlüssel wird auch am oberen Rand von PuTTYGen angezeigt. Sie können mit der rechten Maustaste auf dieses Feld klicken, den Wert kopieren und ihn dann in ein Formular einfügen, wenn Sie einen Cluster mit dem Azure-Vorschauportal erstellen.
 
 ##Erstellen eines Linux-basierten HDInsight-Clusters
 
 Wenn Sie einen Linux-basierten HDInsight-Cluster erstellen, müssen Sie den zuvor erstellten öffentlichen Schlüssel bereitstellen. Es gibt Möglichkeiten, um über Windows-Clients einen Linux-basierten HDInsight-Cluster zu erstellen:
 
-* **Azure-Portal**: Zum Erstellen des Clusters wird ein webbasiertes Portal verwendet.
+* **Azure-Vorschauportal**: Zum Erstellen des Clusters wird ein webbasiertes Portal verwendet.
 
 * **Azure-CLI für Mac, Linux und Windows **: Zum Erstellen des Clusters werden Befehle über die Befehlszeile eingegeben.
 
 Für jede dieser Methoden ist der öffentliche Schlüssel erforderlich. Vollständige Informationen zum Erstellen eines Linux-basierten HDInsight-Clusters finden Sie unter [Bereitstellen von Linux-basierten HDInsight-Clustern](hdinsight-hadoop-provision-linux-clusters.md).
 
-###Azure-Portal
+###Azure-Vorschauportal
 
-Wenn Sie das Portal zum Erstellen eines Linux-basierten HDInsight-Clusters verwenden, müssen Sie einen Benutzernamen und ein Kennwort oder einen öffentlichen Schlüssel in das folgende Formular eingeben:
+Wenn Sie das [Azure-Vorschauportal][preview-portal] verwenden, um einen Linux-basierten HDInsight-Cluster zu erstellen, müssen Sie einen **SSH-Benutzernamen** eingeben und auswählen, ob Sie ein **Kennwort** oder einen **öffentlichen SSH-Schlüssel** eingeben.
+
+Wenn Sie **ÖFFENTLICHER SSH-SCHLÜSSEL** auswählen, können Sie den öffentlichen Schlüssel (angezeigt im Feld __Öffentliche Schlüssel für die Datei für autorisierte OpenSSH-Schlüssel__ in PuttyGen) in das Feld __Öffentlicher SSH-Schlüssel__ einfügen. Oder klicken Sie auf __Datei auswählen__, um die Datei mit dem öffentlichen Schlüssel zu suchen und auszuwählen.
 
 ![Abbildung eines Formulars, das den öffentlichen Schlüssel anfordert](./media/hdinsight-hadoop-linux-use-ssh-windows/ssh-key.png)
 
@@ -117,6 +120,8 @@ Weitere Informationen zur Verwendung dieses Befehls finden Sie unter [Benutzerde
 	> [AZURE.NOTE]Wenn Sie das erste Mal eine Verbindung mit dem Cluster hergestellt haben, wird eine Sicherheitswarnung angezeigt. Dies ist normal. Wählen Sie **Yes** aus, um den RSA2-Schlüssel des Servers zum Fortfahren zwischenzuspeichern.
 
 6. Geben Sie nach der entsprechenden Aufforderung den Benutzer ein, den Sie beim Erstellen des Clusters eingegeben haben. Wenn Sie für den Benutzer ein Kennwort angegeben haben, werden Sie auch zur Eingabe dieses Kennworts aufgefordert.
+
+> [AZURE.NOTE]In den oben genannten Schritten wird davon ausgegangen, dass Sie Port 22 verwenden. Über diesen Port wird eine Verbindung mit „headnode0“ auf dem HDInsight-Cluster hergestellt. Wenn Sie Port 23 verwenden, wird eine Verbindung mit „headnode1“ hergestellt. Weitere Informationen zu Hauptknoten finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight](hdinsight-high-availability-linux.md).
 
 ###Herstellen einer Verbindung mit den Workerknoten
 
@@ -194,9 +199,9 @@ Wenn Sie weitere Konten zum Cluster hinzufügen möchten, führen Sie die folgen
 
 ##<a id="tunnel"></a>SSH-Tunnel
 
-SSH kann auch zum Tunneln lokaler Anforderungen, z. B. Webanforderungen, zum HDInsight-Cluster verwendet werden. Die Anforderung wird dann zur angeforderten Ressource weitergeleitet, als ob sie vom Stammknoten des HDInsight-Clusters stammen würde.
+SSH kann auch zum Tunneln lokaler Anforderungen wie etwa Webanforderungen zum HDInsight-Cluster verwendet werden. Die Anforderung wird dann zur angeforderten Ressource weitergeleitet, als ob sie vom Stammknoten des HDInsight-Clusters stammen würde.
 
-Dies ist besonders beim Zugriff auf webbasierte Dienste auf dem HDInsight-Cluster hilfreich, die interne Domänennamen für den Stamm- oder Arbeitsknoten im Cluster verwenden. Einige Abschnitte der Ambari-Webseite verwenden z. B. interne Domänennamen wie **headnode0.mycluster.d1.internal.cloudapp.net**. Diese Namen können nicht außerhalb des Clusters aufgelöst werden, doch über SSH getunnelte Anforderungen haben ihren Ursprung im Cluster und werden ordnungsgemäß aufgelöst.
+> [AZURE.IMPORTANT]Ein SSH-Tunnel ist eine Voraussetzung für den Zugriff auf die Webbenutzeroberfläche für manche Hadoop-Dienste. Auf die Benutzeroberfläche des Auftragsverlaufs und des Ressourcen-Managers kann beispielsweise nur über einen SSH-Tunnel zugegriffen werden.
 
 Verwenden Sie die folgenden Schritte, um einen SSH-Tunnel zu erstellen und Ihren Browser zu konfigurieren, damit Sie mit ihm die Verbindung zum Cluster herstellen können:
 
@@ -278,4 +283,6 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=August15_HO6-->
+[preview-portal]: https://portal.azure.com/
+
+<!---HONumber=August15_HO8-->

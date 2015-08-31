@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Mein erstes Textrunbook in Azure Automation"
+	pageTitle="Mein erstes Textrunbook in Azure Automation | Microsoft Azure"
 	description="Tutorial, in dem Sie sich mit dem Erstellen, Testen und Veröffentlichen eines einfachen Textrunbooks unter Verwendung eines PowerShell-Workflows vertraut machen können. Dabei werden verschiedene Konzepte behandelt – beispielsweise die Authentifizierung gegenüber Azure-Ressourcen und Eingabeparameter."
 	services="automation"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="08/13/2015"
+	ms.date="08/18/2015"
 	ms.author="bwren"/>
 
 
@@ -72,24 +72,24 @@ Das soeben erstellte Runbook befindet sich immer noch im Entwurfsmodus. Wir müs
 3. Führen Sie wieder einen Bildlauf nach rechts durch, um den Bereich für **MyFirstRunbook-Textual** anzuzeigen. Mit den Optionen am oberen Rand können wir das Runbook starten, den Start für einen späteren Zeitpunkt planen oder einen [Webhook](automation-webhooks.md) erstellen, um den Start über einen HTTP-Aufruf zu ermöglichen. 
 4. Wir möchten das Runbook einfach nur starten. Klicken Sie daher auf **Starten** und anschließend auf **Ja**.<br> ![Runbook starten](media/automation-first-runbook-textual/runbook-toolbar-start.png)
 5. Ein Auftragsbereich für den soeben erstellten Runbookauftrag erscheint. Dieser Bereich kann zwar geschlossen werden, in diesem Fall lassen wir ihn jedoch geöffnet, um den Status des Auftrags verfolgen zu können.
-6.  Der Auftragsstatus wird unter **Auftragszusammenfassung** angezeigt und entspricht den Statusoptionen, die wir bereits beim Testen des Runbooks gesehen haben.<br> ![Auftragszusammenfassung](media/automation-first-runbook-textual/job-pane-summary.png)
-7.  Wenn der Runbookstatus *Abgeschlossen* lautet, klicken Sie auf **Ausgabe**. Der Bereich **Ausgabe** wird geöffnet, und der Text *Hello World* wird angezeigt.<br> ![Auftragszusammenfassung](media/automation-first-runbook-textual/job-pane-output.png)  
+6.  Der Auftragsstatus wird unter **Auftragszusammenfassung** angezeigt und entspricht den Statusoptionen, die wir bereits beim Testen des Runbooks gesehen haben.<br> ![API-Zusammenfassung](media/automation-first-runbook-textual/job-pane-summary.png)
+7.  Wenn der Runbookstatus *Abgeschlossen* lautet, klicken Sie auf **Ausgabe**. Der Bereich **Ausgabe** wird geöffnet, und der Text *Hello World* wird angezeigt.<br> ![API-Zusammenfassung](media/automation-first-runbook-textual/job-pane-output.png)  
 8.  Schließen Sie den Ausgabebereich.
-9.  Klicken Sie auf **Datenströme**, um den gleichnamigen Bereich für den Runbookauftrag zu öffnen. Im Ausgabestream sollte nur *Hello World* angezeigt werden. Hier können aber auch andere Datenströme für einen Runbookauftrag (wie etwa "Ausführlich" und "Fehler") angezeigt werden, sofern das Runbook in diese schreibt.<br> ![Auftragszusammenfassung](media/automation-first-runbook-textual/job-pane-streams.png) 
-9. Schließen Sie den Datenstrom- und den Auftragsbereich, um zum Bereich "MyFirstRunbook" zurückzukehren.
+9.  Klicken Sie auf **Datenströme**, um den gleichnamigen Bereich für den Runbookauftrag zu öffnen. Im Ausgabestream sollte nur *Hello World* angezeigt werden. Hier können aber auch andere Datenströme für einen Runbookauftrag (wie etwa "Ausführlich" und "Fehler") angezeigt werden, sofern das Runbook in diese schreibt.<br> ![API-Zusammenfassung](media/automation-first-runbook-textual/job-pane-streams.png) 
+9. Schließen Sie den Datenstrom- und den Auftragsbereich, um zum Bereich „MyFirstRunbook“ zurückzukehren.
 9.  Klicken Sie auf **Aufträge**, um den Auftragsbereich für dieses Runbook zu öffnen. Dadurch werden alle von diesem Runbook erstellten Aufträge aufgeführt. Hier wird nur ein einzelner Auftrag aufgeführt, da wir den Auftrag bislang erst einmal ausgeführt haben.<br> ![Aufträge](media/automation-first-runbook-textual/runbook-control-jobs.png) 
 9. Wenn Sie auf diesen Auftrag klicken, wird wieder der Auftragsbereich geöffnet, den wir uns beim Starten des Runbooks angesehen haben. So können Sie bereits ausgeführte Aufträge öffnen und Details zu jedem Auftrag anzeigen, der für ein bestimmtes Runbook erstellt wurde.
 
 ## Schritt 5: Hinzufügen von Authentifizierungsfunktionen für die Verwaltung von Azure-Ressourcen
 
-Wir haben unser Runbook inzwischen zwar getestet und veröffentlicht, bislang ist es aber noch nicht sonderlich hilfreich. Wir möchten damit Azure-Ressourcen verwalten. Dazu ist jedoch eine Authentifizierung mit den Anmeldeinformationen erforderlich, die in den [Voraussetzungen](#prerequisites) genannt sind. Wir verwenden zu diesem Zweck das Cmdlet **Set-AzureAccount**.
+Wir haben unser Runbook inzwischen zwar getestet und veröffentlicht, bislang ist es aber noch nicht sonderlich hilfreich. Wir möchten damit Azure-Ressourcen verwalten. Dazu ist jedoch eine Authentifizierung mit den Anmeldeinformationen erforderlich, die in den [Voraussetzungen](#prerequisites) genannt sind. Wir verwenden zu diesem Zweck das Cmdlet **Add-AzureAccount**.
 
 1.  Öffnen Sie den Text-Editor, indem Sie im Bereich "MyFirstRunbook-Textual" auf **Bearbeiten** klicken.<br> ![Runbook bearbeiten](media/automation-first-runbook-textual/runbook-toolbar-edit.png) 
 2.  Die Zeile **Write-Output** wird nicht mehr benötigt, also löschen Sie sie.
 3.  Positionieren Sie den Cursor in einer leeren Zeile zwischen den geschweiften Klammern.
 3.  Erweitern Sie im Bibliotheksteuerelement den Knoten **Cmdlets** und anschließend **Anmeldeinformationen**.
-4.  Klicken Sie mit der rechten Maustaste auf Ihr Anmeldeinformationsobjekt, und klicken Sie anschließend auf **Zum Zeichenbereich hinzufügen**. Auf diese Weise wird eine **Get-AutomationCredential**-Aktivität für Ihr Anmeldeinformationsobjekt hinzugefügt.
-5.  Geben Sie vor **Get-AutomationCredential** die Zeichenfolge *$Credential =* ein, um die Anmeldeinformationen einer Variablen zuzuweisen. 
+4.  Klicken Sie mit der rechten Maustaste auf Ihr Anmeldeinformationsobjekt, und klicken Sie anschließend auf **Zum Zeichenbereich hinzufügen**. Auf diese Weise wird eine **Get-AutomationPSCredential**-Aktivität für Ihr Anmeldeinformationsobjekt hinzugefügt.
+5.  Geben Sie vor **Get-AutomationPSCredential** die Zeichenfolge *$Credential =* ein, um die Anmeldeinformationen einer Variablen zuzuweisen. 
 3.  Geben Sie auf der nächsten Zeile *Add-AzureAccount -Credential $Credential* ein. <br> ![Authentifizieren](media/automation-first-runbook-textual/authentication.png) 
 3. Klicken Sie auf den **Testbereich**, um das Runbook zu testen.
 10. Klicken Sie auf **Starten**, um den Test zu starten. Nach Abschluss des Tests sollten Sie eine ähnliche Ausgabe wie die folgende erhalten, mit der Informationen für den Benutzer im Anmeldeinformationsobjekt zurückgegeben werden. Auf diese Weise wird bestätigt, dass die Anmeldeinformationen gültig sind.<br> ![Authentifizieren](media/automation-first-runbook-textual/authentication-test.png) 
@@ -122,4 +122,4 @@ Unser Runbook startet zwar nun den virtuellen Computer, den wir im Runbook hartc
 
 - [Mein erstes grafisches Runbook](automation-first-runbook-graphical.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

@@ -4,7 +4,7 @@
  services="traffic-manager, automation" 
  documentationCenter="" 
  authors="eamonoreilly" 
- manager="jwinter" 
+ manager="adinah" 
  editor=""/>
 
 <tags 
@@ -13,8 +13,8 @@
  ms.tgt_pltfrm="na" 
  ms.devlang="na" 
  ms.topic="article" 
- ms.date="04/13/2015" 
- ms.author="eamono"/>
+ ms.date="08/12/2015" 
+ ms.author="joaoma"/>
 
 
 #Verwalten von Azure Traffic Manager mit Azure Automation
@@ -42,4 +42,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Verwendu
 * Weitere Informationen finden Sie im Handbuch [Erste Schritte mit Azure Automation](http://go.microsoft.com/fwlink/?LinkId=390560).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -1,4 +1,5 @@
 1. Melden Sie sich bei Ihrem Azure-Abonnement an, indem Sie die Schritte unter [Herstellen einer Verbindung mit Azure von der Azure Befehlszeilenschnittstelle (Azure-CLI)](../articles/xplat-cli-connect.md) ausführen.
+
 2. Stellen Sie folgendermaßen sicher, dass der Dienstverwaltungsmodus aktiviert ist:
 
         azure config mode asm
@@ -36,6 +37,6 @@
 
 7. Der neu erstellte virtuelle Computer kann nun mit dem Befehl `azure vm start` gestartet werden.
 
-Ausführliche Informationen zu diesen Azure CLI-Befehlen für virtuelle Computer finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Azure-Dienstverwaltung](../articles/virtual-machines/virtual-machines-command-line-tools.md).
+Ausführliche Informationen zu diesen Azure-CLI-Befehlen für virtuelle Computer finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Dienstverwaltungs-API](../articles/virtual-machines/virtual-machines-command-line-tools.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

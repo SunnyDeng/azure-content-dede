@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/19/2015"
+	ms.date="08/14/2015"
 	ms.author="garye" />
 
 
-#Importieren von Trainingsdaten aus verschiedenen Datenquellen in Azure Machine Learning Studio
+# Importieren von Trainingsdaten aus verschiedenen Datenquellen in Azure Machine Learning Studio
 
 Bei der Entwicklung einer Predictive Analytics-Lösung in Azure Machine Learning Studio trainieren Sie Ihr Modell mit Daten, die für Ihren Problembereich repräsentativ sind. In diesem Lernprogramm wird das Importieren von Daten aus verschiedenen Datenquellen zum Trainieren des Modells in Machine Learning Studio veranschaulicht. Außerdem erfahren Sie, welche Datenformate unterstützt werden.
 
@@ -34,7 +34,7 @@ Um Ihre eigenen Daten in Machine Learning Studio zu verwenden, können Sie im Vo
 
 Machine Learning Studio ist für die Nutzung von rechteckigen oder tabellarischen Daten vorgesehen, z. B. Textdaten, bei denen es sich um mit Trennzeichen versehene oder strukturierte Daten aus einer Datenbank handelt. Unter Umständen können nicht rechteckige Daten verwendet werden.
 
-Ihre Daten sollten relativ sauber ist. Sie sollten also Probleme wie Zeichenfolgen ohne Anführungszeichen beheben, bevor Sie die Daten in das Experiment hochladen.
+Möglichst sollten relativ saubere Daten verwendet werden. Sie sollten also Probleme wie Zeichenfolgen ohne Anführungszeichen beheben, bevor Sie die Daten in das Experiment hochladen.
 
 Es stehen jedoch in Machine Learning Studio Module zur Verfügung, mit denen Sie einige Änderungen an Daten im Experiment ausführen können. Abhängig vom verwendeten Machine Learning-Algorithmen müssen Sie möglicherweise entscheiden, wie Sie mit Datenstrukturproblemen wie fehlenden Werten und geringen Datenmengen umgehen möchten. Es gibt Module, die dabei helfen können. Suchen Sie im Abschnitt **Data Transformation** der Modulpalette nach Modulen, die diese Funktionen ausführen.
 
@@ -141,6 +141,5 @@ Wenn der Speichervorgang abgeschlossen ist, ist das Dataset für die Verwendung 
 [convert-to-dataset]: https://msdn.microsoft.com/library/azure/72bf58e0-fc87-4bb1-9704-f1805003b975/
 [metadata-editor]: https://msdn.microsoft.com/library/azure/370b6676-c11c-486f-bf73-35349f842a66/
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

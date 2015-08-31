@@ -6,24 +6,22 @@
 	authors="alancameronwills" 
 	manager="douge"/>
 
-
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="08/19/2015" 
 	ms.author="awills"/>
-
  
 # Untersuchen von .NET-Ablaufverfolgungsprotokollen in Application Insights  
 
 Wenn Sie NLog, log4Net oder System.Diagnostics.Trace für die Diagnoseablaufverfolgung in Ihrer ASP.NET-Anwendung verwenden, können Sie Ihre Protokolle an [Visual Studio Application Insights][start] senden, um sie dort zu untersuchen und zu durchsuchen. Die Protokolle werden mit den anderen Telemetriedaten aus Ihrer Anwendung zusammengeführt, damit Sie die Ablaufverfolgungen für die Verarbeitung der einzelnen Benutzeranforderungen identifizieren und mit anderen Ereignissen und Ausnahmeberichten in Beziehung setzen können.
 
-Mithilfe des Application Insights-SDK können Sie auch Protokollablaufverfolgungen, Ereignis- und Ausnahmeberichte schreiben.
+> [AZURE.NOTE]Benötigen Sie das Protokollerfassungsmodul? Dabei handelt es sich um einen nützlichen Adapter für die Protokollierung von Drittanbietern. Falls Sie nicht bereits NLog, log4Net oder „System.Diagnostics.Trace“ verwenden, können Sie auch einfach direkt [Application Insights TrackTrace()](app-insights-api-custom-events-metrics.md#track-trace) aufrufen.
 
-Wenn Sie [Application Insights noch nicht in Ihrem Projekt installiert haben][start], holen Sie das jetzt nach.
+Wenn Sie [Application Insights noch nicht in Ihrem Projekt installiert haben][start], holen Sie das jetzt nach. Ihr Projekt muss die Datei `ApplicationInsights.config` und das NuGet-Paket `Microsoft.ApplicationInsights.Web` enthalten.
 
 
 ##  Installieren eines Adapters für Ihr Protokollierungsframework
@@ -32,7 +30,7 @@ Wenn Sie ein Protokollierungsframework wie log4Net, NLog oder System.Diagnostics
 
 1. Wenn Sie log4Net oder NLog verwenden möchten, installieren Sie es in Ihrem Projekt. 
 2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie dann **NuGet-Pakete verwalten** aus.
-3. Klicken Sie auf "Online > Alle", wählen Sie **Vorabversion einschließen** aus, und suchen Sie nach "Microsoft.ApplicationInsights".
+3. Suchen Sie nach "Application Insights".
 
     ![Vorabversion des entsprechenden Adapters auswählen](./media/app-insights-asp-net-trace-logs/appinsights-36nuget.png)
 
@@ -126,4 +124,4 @@ Bis zu 500 Ereignisse pro Sekunde für jede Anwendung. Ereignisse werden sieben 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

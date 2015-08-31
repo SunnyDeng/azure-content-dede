@@ -37,12 +37,12 @@ Sie lernen Folgendes:
 
 Sie benötigen ein Windows Azure-Konto, um dieses Lernprogramm durchführen zu können:
 
-* Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/?WT.mc_id=A261C142F). Sie erhalten ein Guthaben, das Sie zum Ausprobieren der zahlungspflichtigen Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlosen Azure-Dienste \(z. B. App Service-Web-Apps\) nutzen, wenn das Guthaben aufgebraucht ist.
+* Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/?WT.mc_id=A261C142F). Sie erhalten ein Guthaben, das Sie zum Ausprobieren der zahlungspflichtigen Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlosen Azure-Dienste (z. B. App Service-Web-Apps) nutzen, wenn das Guthaben aufgebraucht ist.
 * Sie können Ihre [Vorteile für MSDN-Abonnenten aktivieren](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Ihr MSDN-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste verwenden können.
 
 > [AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-In diesem Video zeigt Scott Hanselman, wie einfach Sie sich für eine kostenlose Testversion von Microsoft Azure anmelden können. \(Dauer: 1:58\)
+In diesem Video zeigt Scott Hanselman, wie einfach Sie sich für eine kostenlose Testversion von Microsoft Azure anmelden können. (Dauer: 1:58)
 
 > [AZURE.VIDEO sign-up-for-microsoft-azure]
 
@@ -52,17 +52,17 @@ In diesem Video zeigt Scott Hanselman, wie einfach Sie sich für eine kostenlose
 
 Der erste Schritt besteht darin, ein Webprojekt in Visual Studio und eine Web-App in Azure App Service zu erstellen. Wenn Sie damit fertig sind, werden Sie das Projekt der Web-App bereitstellen, um es im Internet verfügbar zu machen.
 
-Die Diagramme veranschaulichen Ihre Schritte bei der Erstellung und Bereitstellung.
+Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung.
 
-![Erstellen](./media/web-sites-dotnet-get-started/Create_App.png)
+![Erstellen und Bereitstellen](./media/web-sites-dotnet-get-started/Create_App.png)
 
 1. Öffnen Sie Visual Studio 2015 oder Visual Studio 2013. 
 
 	Wenn Sie Visual Studio 2013 verwenden, weichen die Bildschirme geringfügig von den Screenshots ab, die Verfahren sind jedoch im Wesentlichen identisch.
 
-2. Klicken Sie im Menü **Datei** auf **Neu \> Projekt**.
+2. Klicken Sie im Menü **Datei** auf **Neu > Projekt**.
 
-3. Klicken Sie im Dialogfeld **Neues Projekt** auf **C\#** \> **Web** \> **ASP.NET-Webanwendung**. Bei Bedarf können Sie auch **Visual Basic** verwenden.
+3. Klicken Sie im Dialogfeld **Neues Projekt** auf **C#** > **Web** > **ASP.NET-Webanwendung**. Bei Bedarf können Sie auch **Visual Basic** verwenden.
 
 3. Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5.2** ausgewählt ist.
 
@@ -104,7 +104,7 @@ Die Diagramme veranschaulichen Ihre Schritte bei der Erstellung und Bereitstellu
 
 	Wenn eine andere Person den eingegebenen Namen bereits verwendet hat, wird rechts ein rotes Ausrufungszeichen anstelle eines grünen Häkchens angezeigt, und Sie müssen einen anderen Namen eingeben.
 
-	Dieser Name wird von Azure als Präfix für die URL Ihrer Anwendung verwendet. Die vollständige URL besteht aus diesem Namen und *.azurewebsites.net* \(wie neben dem Textfeld **Web-App-Name** angezeigt\). Für den Namen `MyExample810` lautet die URL z. B. `MyExample810.azurewebsites.net`. Die URL muss eindeutig sein.
+	Dieser Name wird von Azure als Präfix für die URL Ihrer Anwendung verwendet. Die vollständige URL besteht aus diesem Namen und *.azurewebsites.net* (wie neben dem Textfeld **Web-App-Name** angezeigt). Für den Namen `MyExample810` lautet die URL z. B. `MyExample810.azurewebsites.net`. Die URL muss eindeutig sein.
 
 4. Wählen Sie in der Dropdownliste **App Service plan** die Option **Create new App Service plan** aus.
 
@@ -218,7 +218,7 @@ Dieser Abschnitt des Tutorials ist optional. In diesem Abschnitt ändern Sie die
 
 	![Geänderte Web-App bereitgestellt](./media/web-sites-dotnet-get-started/deployedandazure.png)
 
-**Tipp:** Für eine noch schnellere Bereitstellung können Sie die Symbolleiste **Webveröffentlichung mit einem Klick** aktivieren. Klicken Sie auf **Ansicht \> Symbolleisten**, und wählen Sie dann **Webveröffentlichung mit einem Klick** aus. Über diese Symbolleiste können Sie ein Profil auswählen, auf eine Schaltfläche klicken, um zu veröffentlichen, oder auf eine Schaltfläche klicken, um den Assistenten **Web veröffentlichen** zu öffnen.
+**Tipp:** Für eine noch schnellere Bereitstellung können Sie die Symbolleiste **Webveröffentlichung mit einem Klick** aktivieren. Klicken Sie auf **Ansicht > Symbolleisten**, und wählen Sie dann **Webveröffentlichung mit einem Klick** aus. Über diese Symbolleiste können Sie ein Profil auswählen, auf eine Schaltfläche klicken, um zu veröffentlichen, oder auf eine Schaltfläche klicken, um den Assistenten **Web veröffentlichen** zu öffnen.
 
 ![Symbolleiste "Webveröffentlichung mit einem Klick"](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
 
@@ -228,7 +228,7 @@ Das [Azure-Vorschauportal](/services/management-portal/) ist eine Weboberfläche
 
 1. Rufen Sie in Ihrem Browser [https://portal.azure.com]() auf, und melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
 
-2. Klicken Sie auf **Alle durchsuchen \> Web-Apps** und dann auf den Namen der Web-App.
+2. Klicken Sie auf **Alle durchsuchen > Web-Apps** und dann auf den Namen der Web-App.
 
 	Das Blatt **Web-App** zeigt eine Übersicht über die Einstellungen und Nutzungsstatistiken für Ihre Web-App an.
 
@@ -258,7 +258,7 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 	In diesem Lernprogramm wurde die schnellste Methode zum Erstellen und Bereitstellen einer Web-App in einem einzigen Vorgang erläutert. Eine Übersicht über andere Möglichkeiten der Bereitstellung mit Visual Studio oder durch die [Automatisierung der Bereitstellung](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery) über ein [Quellcode-Verwaltungssystem](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control) finden Sie unter [Bereitstellen von Azure-Web-Apps](web-sites-deploy.md).
 
-	Visual Studio kann auch Windows PowerShell-Skripte generieren, mit deren Hilfe Sie die Bereitstellung automatisieren können. Weitere Informationen finden Sie unter [Automate Everything \(Building Real-World Cloud Apps with Azure\)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything) \(in englischer Sprache\).
+	Visual Studio kann auch Windows PowerShell-Skripte generieren, mit deren Hilfe Sie die Bereitstellung automatisieren können. Weitere Informationen finden Sie unter [Automate Everything (Building Real-World Cloud Apps with Azure)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything) (in englischer Sprache).
 
 * Verwalten von Web-Apps in Visual Studio
 
@@ -274,7 +274,7 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 * So fügen Sie einen benutzerdefinierten Domänennamen und SSL hinzu
 
-	Informationen zur Verwendung von SSL und einer eigenen Domäne \(z. B. www.contoso.com statt contoso.azurewebsites.net\) finden Sie in den folgenden Ressourcen:
+	Informationen zur Verwendung von SSL und einer eigenen Domäne (z. B. www.contoso.com statt contoso.azurewebsites.net) finden Sie in den folgenden Ressourcen:
 
 	* [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](web-sites-custom-domain-name.md)
 	* [Aktivieren von HTTPS für Azure-Web-Apps](web-sites-configure-ssl-certificate.md)
@@ -285,11 +285,11 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 * Hinzufügen von Echtzeitfunktionen wie Chat
 
-	Wenn Ihre Web-App Echtzeitfunktionen \(Chat-Dienste, Spiele, Börsenticker usw.\) enthalten soll, erhalten Sie die beste Performance durch die Verwendung von [ASP.NET SignalR](http://www.asp.net/signalr) mit der Transportmethode [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/). Weitere Informationen finden Sie unter [Using SignalR with Web Apps in Azure App Service](http://www.asp.net/signalr/overview/signalr-20/getting-started-with-signalr-20/using-signalr-with-windows-azure-web-sites) \(in englischer Sprache\).
+	Wenn Ihre Web-App Echtzeitfunktionen (Chat-Dienste, Spiele, Börsenticker usw.) enthalten soll, erhalten Sie die beste Performance durch die Verwendung von [ASP.NET SignalR](http://www.asp.net/signalr) mit der Transportmethode [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/). Weitere Informationen finden Sie unter [Using SignalR with Web Apps in Azure App Service](http://www.asp.net/signalr/overview/signalr-20/getting-started-with-signalr-20/using-signalr-with-windows-azure-web-sites) (in englischer Sprache).
 
 * Auswählen zwischen App Service, Cloud Services und VMs für Webanwendungen
 
-	In Azure können Sie Webanwendungen in App Service-Web-Apps \(wie in diesem Lernprogramm gezeigt\), in Cloud Services oder in Virtual Machines ausführen. Weitere Informationen finden Sie unter [Azure App Service, Cloud Services und Virtual Machines im Vergleich](/manage/services/web-sites/choose-web-app-service/).
+	In Azure können Sie Webanwendungen in App Service-Web-Apps (wie in diesem Lernprogramm gezeigt), in Cloud Services oder in Virtual Machines ausführen. Weitere Informationen finden Sie unter [Azure App Service, Cloud Services und Virtual Machines im Vergleich](/manage/services/web-sites/choose-web-app-service/).
 
 * [Auswählen oder Erstellen eines App Service-Plans](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md)
 
@@ -301,4 +301,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!----HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

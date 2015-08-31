@@ -13,22 +13,26 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="05/26/2015"
+	ms.date="07/27/2015"
 	ms.author="mahender"/>
 
 # Konfigurieren Ihrer Anwendung zur Verwendung der Microsoft-Kontoanmeldung
 
 [AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
 
-In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung eines Microsoft-Kontos als Authentifizierungsanbieter konfigurieren.
+In diesem Thema wird veranschaulicht, wie Sie Azure Mobile Apps zur Verwendung eines Microsoft-Kontos als Authentifizierungsanbieter konfigurieren.
 
 ## <a name="register"> </a>Registrieren Ihrer Anwendung für ein Microsoft-Konto
 
-1. Navigieren Sie im Microsoft Account Developer Center zur Seite [Eigene Anwendungen], und melden Sie sich, falls erforderlich, mit Ihrem Microsoft-Konto an.
+1. Melden Sie sich am [Azure-Verwaltungsportal] an, und navigieren Sie zu Ihrer Mobile App.
 
-2. Klicken Sie auf **Anwendung erstellen**, geben Sie dann einen **Anwendungsnamen** ein, und klicken Sie auf **Ich stimme zu**.
+2. Klicken Sie auf **Einstellungen**, **Benutzerauthentifizierung**, und klicken Sie dann auf **Microsoft-Konto**. Kopieren Sie die **Umleitungs-URL**. Diesen verwenden Sie, um eine neue App für Ihr Microsoft-Konto zu konfigurieren.
 
-3. Klicken Sie auf **API-Einstellungen**. Wählen Sie für **Mobile oder Desktopclient-App** die Einstellung **Ja** aus. Geben Sie im Feld **Umleitungs-URL** die URL Ihres Gateways mit angehängtem Pfad _/signin-microsoft_ ein. Beispiel: `https://contosogateway.azurewebsites.net/signin-microsoft`. Stellen Sie sicher, dass Sie das HTTPS-Schema verwenden. Klicken Sie nach der Eingabe der Umleitungs-URL auf **Speichern**.
+3. Navigieren Sie im Microsoft Account Developer Center zur Seite [Eigene Anwendungen], und melden Sie sich, falls erforderlich, mit Ihrem Microsoft-Konto an.
+
+4. Klicken Sie auf **Anwendung erstellen**, geben Sie dann einen **Anwendungsnamen** ein, und klicken Sie auf **Ich stimme zu**.
+
+5. Klicken Sie auf **API-Einstellungen**. Wählen Sie für **Mobile oder Desktopclient-App** die Einstellung **Ja** aus. Geben Sie im Feld **Umleitungs-URL** die zuvor kopierte **Umleitungs-URL** ein. Dies ist das Mobile App-Gateway mit der Endung _/signin-microsoft_. Beispiel: `https://contosogateway.azurewebsites.net/signin-microsoft`. Stellen Sie sicher, dass Sie das HTTPS-Schema verwenden. Klicken Sie nach der Eingabe der Umleitungs-URL auf **Speichern**.
 
 	![][0]
 
@@ -41,9 +45,7 @@ In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung 
 
 ## <a name="secrets"> </a>Hinzufügen von Microsoft-Kontoinformationen zu Ihrer mobilen App
 
-5. Melden Sie sich am [Azure-Verwaltungsportal] an, und navigieren Sie zu Ihrem App Services-Gateway.
-
-6. Klicken Sie unter **Einstellungen** auf **Identität**, und wählen Sie anschließend **Microsoft-Konto**. Fügen Sie die Werte für App-ID und den geheimen App-Schlüssel ein, die Sie zuvor abgerufen haben. Klicken Sie anschließend auf **Save**.
+1. Fügen Sie zurück im [Azure-Verwaltungsportal] im Blatt mit den Microsoft-Kontoeinstellungen für Ihre Mobile App die Werte für die Client-ID und den geheimen Client-Schlüssel ein, die Sie zuvor abgerufen haben. Klicken Sie anschließend auf **Save**.
 
     ![][1]
 
@@ -60,7 +62,7 @@ Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verw
 <!-- Images. -->
 
 [0]: ./media/app-service-mobile-how-to-configure-microsoft-authentication-preview/app-service-microsoftaccount-redirect.png
-[1]: ./media/app-service-mobile-how-to-configure-microsoft-authentication-preview/app-service-microsoftaccount-settings.png
+[1]: ./media/app-service-mobile-how-to-configure-microsoft-authentication-preview/mobile-app-microsoftaccount-settings.png
 
 <!-- URLs. -->
 
@@ -68,4 +70,4 @@ Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verw
 [Azure-Verwaltungsportal]: https://portal.azure.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -5,7 +5,8 @@
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
-   editor="cgronlun"/>
+   editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
@@ -13,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/06/2015"
+   ms.date="07/24/2015"
    ms.author="larryfr"/>
 
 #Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X (Vorschau)
@@ -72,15 +73,17 @@ Wenn Sie einen Linux-basierten HDInsight-Cluster erstellen, können Sie sich bei
 
 Wenn Sie einen Linux-basierten HDInsight-Cluster erstellen, müssen Sie den zuvor erstellten öffentlichen Schlüssel bereitstellen. Es gibt zwei Möglichkeiten, um einen HDInsight-Cluster über einen Linux-, Unix- oder OS X-Client zu erstellen:
 
-* **Azure-Portal**: Zum Erstellen des Clusters wird ein webbasiertes Portal verwendet.
+* **Azure-Vorschauportal**: Zum Erstellen des Clusters wird ein webbasiertes Portal verwendet.
 
 * **Azure-CLI für Mac, Linux und Windows **: Zum Erstellen des Clusters werden Befehle über die Befehlszeile eingegeben.
 
 Jede dieser Methoden erfordert entweder ein Kennwort oder einen öffentlichen Schlüssel. Vollständige Informationen zum Erstellen eines Linux-basierten HDInsight-Clusters finden Sie unter [Bereitstellen von Linux-basierten HDInsight-Clustern](hdinsight-hadoop-provision-linux-clusters.md).
 
-###Azure-Portal
+###Azure-Vorschauportal
 
-Wenn Sie das Portal verwenden, um einen Linux-basierten HDInsight-Cluster zu erstellen, müssen Sie einen **SSH-Benutzernamen** eingeben und auswählen, ob Sie ein **Kennwort** oder einen **öffentlichen SSH-Schlüssel** eingeben. Wenn Sie einen **öffentlichen SSH-Schlüssel** verwenden, müssen Sie den öffentlichen Schlüssel (in der Datei mit der Erweiterung **.pub** enthalten) in das folgenden Formular einfügen:
+Wenn Sie das [Azure-Vorschauportal][preview-portal] verwenden, um einen Linux-basierten HDInsight-Cluster zu erstellen, müssen Sie einen **SSH-Benutzernamen** eingeben und auswählen, ob Sie ein **Kennwort** oder einen **öffentlichen SSH-Schlüssel** eingeben.
+
+Wenn Sie **ÖFFENTLICHER SSH-SCHLÜSSEL** auswählen, können Sie entweder den öffentlichen Schlüssel (aus der Datei mit der Erweiterung **.pub**) in das Feld __Öffentlicher SSH-Schlüssel__ einfügen oder auf __Datei auswählen__ klicken, um die Datei mit dem öffentlichen Schlüssel zu suchen und auszuwählen.
 
 ![Abbildung eines Formulars, das den öffentlichen Schlüssel anfordert](./media/hdinsight-hadoop-linux-use-ssh-unix/ssh-key.png)
 
@@ -116,6 +119,8 @@ Wenn Sie einen SSH-Schlüssel verwendet haben, der mit einer Passphrase geschüt
 >
 > `ssh -i ~/.ssh/id_rsa me@mycluster-ssh.azurehdinsight.net`
 
+Wenn kein Port angegeben ist, verwendet SSH standardmäßig Port 22. Über diesen Port wird eine Verbindung mit „headnode0“ auf dem HDInsight-Cluster hergestellt. Wenn Sie Port 23 verwenden, wird eine Verbindung mit „headnode1“ hergestellt. Weitere Informationen zu Hauptknoten finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight](hdinsight-high-availability-linux.md).
+
 ###Herstellen einer Verbindung mit den Workerknoten
 
 Auf die Workerknoten kann von außerhalb des Azure-Datencenters nicht direkt zugegriffen werden. Doch auf dem Hauptknoten des Clusters ist der Zugriff darauf über SSH möglich.
@@ -139,7 +144,7 @@ Wenn Sie einen SSH-Schlüssel verwenden, um Ihr Benutzerkonto zu authentifiziere
 
         /tmp/ssh-rfSUL1ldCldQ/agent.1792
 
-    Wenn nichts zurückgegeben wird, bedeutet dies, dass **ssh-agent** nicht ausgeführt wird. Suchen Sie in der Betriebssystemdokumentation nach detaillierten Informationen zur Installation und Konfiguration von **ssh-agent**, oder lesen Sie den Artikel [Using ssh-agent with ssh](http://mah.everybody.org/docs/ssh) (in englischer Sprache).
+    Wenn nichts zurückgegeben wird, bedeutet dies, dass **ssh-agent** nicht ausgeführt wird. Suchen Sie in der Betriebssystemdokumentation nach detaillierten Informationen zur Installation und Konfiguration von **ssh-agent**, oder lesen Sie den Artikel [Using ssh-agent with ssh](http://mah.everybody.org/docs/ssh) (Verwenden des SSH-Agents mit SSH; in englischer Sprache).
 
 4. Nachdem Sie sichergestellt haben, dass **ssh-Agent** ausgeführt wird, verwenden Sie folgenden Befehl, um Ihren privaten SSH-Schlüssel dem Agent hinzuzufügen:
 
@@ -203,9 +208,9 @@ Führen Sie die folgenden Schritte zum Verbinden mit den Workerknoten für Ihren
 
 ##<a id="tunnel"></a>SSH-Tunnel
 
-SSH kann auch zum Tunneln lokaler Anforderungen, z. B. Webanforderungen, zum HDInsight-Cluster verwendet werden. Die Anforderung wird dann zur angeforderten Ressource weitergeleitet, als ob sie vom Stammknoten des HDInsight-Clusters stammen würde.
+SSH kann auch zum Tunneln lokaler Anforderungen wie etwa Webanforderungen zum HDInsight-Cluster verwendet werden. Die Anforderung wird dann zur angeforderten Ressource weitergeleitet, als ob sie vom Stammknoten des HDInsight-Clusters stammen würde.
 
-Dies ist besonders für den Zugriff auf webbasierte Dienste im HDInsight-Cluster hilfreich, die interne Domänennamen für den Haupt- oder Workerknoten im Cluster verwenden. Einige Abschnitte der Ambari-Webseite verwenden z. B. interne Domänennamen wie **headnode0.mycluster.d1.internal.cloudapp.net**. Diese Namen können nicht außerhalb des Clusters aufgelöst werden, doch über SSH getunnelte Anforderungen haben ihren Ursprung im Cluster und werden ordnungsgemäß aufgelöst.
+> [AZURE.IMPORTANT]Ein SSH-Tunnel ist eine Voraussetzung für den Zugriff auf die Webbenutzeroberfläche für manche Hadoop-Dienste. Auf die Benutzeroberfläche des Auftragsverlaufs und des Ressourcen-Managers kann beispielsweise nur über einen SSH-Tunnel zugegriffen werden.
 
 Verwenden Sie die folgenden Schritte, um einen SSH-Tunnel zu erstellen und Ihren Browser zu konfigurieren, damit Sie mit ihm die Verbindung zum Cluster herstellen können.
 
@@ -241,7 +246,7 @@ Verwenden Sie die folgenden Schritte, um einen SSH-Tunnel zu erstellen und Ihren
 
 	> [AZURE.NOTE]Durch die Auswahl von **Remote-DNS** werden DNS-Anforderungen (Domain Name System) mithilfe des HDInsight-Clusters aufgelöst. Ist diese Option deaktiviert, wird DNS lokal aufgelöst.
 
-	Sie können überprüfen, ob Datenverkehr durch den Tunnel weitergeleitet wird, indem Sie eine Website wie z. B. [http://www.whatismyip.com/](http://www.whatismyip.com/) mit aktivierten und deaktivierten Proxyeinstellungen in Firefox aufrufen. Bei aktivierten Einstellungen wird die IP-Adresse eines Computers im Microsoft Azure-Datencenter angezeigt.
+	Sie können überprüfen, ob Datenverkehr durch den Tunnel weitergeleitet wird, indem Sie eine Website wie z. B. [http://www.whatismyip.com/](http://www.whatismyip.com/) mit aktivierten und deaktivierten Proxyeinstellungen in Firefox aufrufen. Bei aktivierten Einstellungen wird die IP-Adresse eines Computers im Microsoft Azure-Datencenter angezeigt.
 
 ###Browsererweiterungen
 
@@ -295,4 +300,6 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=August15_HO6-->
+[preview-portal]: https://portal.azure.com/
+
+<!---HONumber=August15_HO8-->

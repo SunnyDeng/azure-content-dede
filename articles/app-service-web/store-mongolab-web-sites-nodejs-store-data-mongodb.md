@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="08/10/2014"
-	ms.author="mwasson"/>
+	ms.date="08/18/2015"
+	ms.author="tdykstra"/>
 
 
 
@@ -510,7 +510,7 @@ Das Erstellen einer Web-App in Azure App Service ist sehr einfach. Wenn dies Ihr
 Sie sind fast fertig!
 
 ### Konfigurieren der Umgebung
-Erinnern Sie sich an "process.env.CUSTOMCONNSTR_MONGOLAB_URI" im Code? Wir möchten diese Umgebungsvariable mit dem Wert auffüllen, der Azure während der MongoLab-Datenbankbereitstellung bereitgestellt wird.
+Erinnern Sie sich an "process.env.CUSTOMCONNSTR\_MONGOLAB\_URI" im Code? Wir möchten diese Umgebungsvariable mit dem Wert auffüllen, der Azure während der MongoLab-Datenbankbereitstellung bereitgestellt wird.
 
 #### Abrufen der MongoLab-Verbindungszeichenfolge
 
@@ -575,4 +575,4 @@ Glückwunsch! Sie haben gerade eine "Node.js"-Anwendung mit einer von MongoLab g
 [mongolab-view]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/mongolab-view.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

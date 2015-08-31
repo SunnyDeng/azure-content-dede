@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/02/2015"
+   ms.date="08/19/2015"
    ms.author="sameerch"/>
 
 
@@ -119,6 +119,13 @@ Wir erstellen eine einfache Logik-App, die ein Konto in QuickBooks erstellt, und
 
 18. Sie können überprüfen, ob ein neues Konto mit dem Namen "Contoso" in Ihrem QuickBooks-Konto erstellt wird.
 
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
+
 <!--Image references-->
 [1]: ./media/app-service-logic-connector-quickbooks/1_New_Logic_App.png
 [2]: ./media/app-service-logic-connector-quickbooks/2_Logic_App_Settings.png
@@ -134,4 +141,4 @@ Wir erstellen eine einfache Logik-App, die ein Konto in QuickBooks erstellt, und
 [12]: ./media/app-service-logic-connector-quickbooks/12_Update_Account_Address.png
 [13]: ./media/app-service-logic-connector-quickbooks/13_Create_new_quickbooks_connector.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

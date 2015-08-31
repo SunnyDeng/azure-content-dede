@@ -1,14 +1,12 @@
 
-## <a id="add-push"></a>Hinzufügen von Pushbenachrichtigungen zur App
-
-* Importieren Sie das iOS-SDK und "QSTodoService.h" in "QSAppDelegate.m":
+* Importieren Sie das iOS-SDK und **QSTodoService.h** in **QSAppDelegate.m**:
 
 ```
         #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
         #import "QSTodoService.h"
 ```
 
-* Fügen Sie in "QSAppDelegate.m" in `didFinishLaunchingWithOptions` die folgenden Zeilen direkt vor `return YES;` ein:
+* Fügen Sie in **QSAppDelegate.m** in `didFinishLaunchingWithOptions` die folgenden Zeilen direkt vor `return YES;` ein:
 
 ```
         UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
@@ -16,7 +14,7 @@
         [[UIApplication sharedApplication] registerForRemoteNotifications];
 ```
 
-* Fügen Sie in "QSAppDelegate.m" die folgenden Handlermethoden hinzu. Ihre App kann Pushbenachrichtigungen nun unterstützen.
+* Fügen Sie in **QSAppDelegate.m** die folgenden Handlermethoden hinzu. Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
 ```
         // Registration with APNs is successful
@@ -57,4 +55,4 @@
         }
 ```
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

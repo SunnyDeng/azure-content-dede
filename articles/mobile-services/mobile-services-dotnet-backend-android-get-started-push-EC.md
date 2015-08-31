@@ -18,7 +18,7 @@
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push-EC.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push-ec.md)]
 
 ##Übersicht
 
@@ -28,7 +28,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 ##<a id="register"></a>Aktivieren von Google Cloud Messaging
 
-[AZURE.INCLUDE [Aktivieren von GCM](../../includes/mobile-services-enable-Google-cloud-messaging.md)]
+[AZURE.INCLUDE [Aktivieren von GCM](../../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 
 ##<a id="configure"></a>Konfigurieren von Mobile Services zum Senden von Pushanforderungen
@@ -99,7 +99,7 @@ Ihr mobiler Dienst ist jetzt für GCM und Benachrichtigungshubs konfiguriert.
 
 ###Prüfen der Version des Android-SDK
 
-[AZURE.INCLUDE [mobile-services-verify-android-sdk-version](../../includes/mobile-services-verify-android-sdk-version-EC.md)]
+[AZURE.INCLUDE [mobile-services-verify-android-sdk-version](../../includes/mobile-services-verify-android-sdk-version-ec.md)]
 
 
 Als Nächstes installieren Sie Google Play Services. Google Cloud Messaging verfügt über einige Mindestanforderungen an den API-Level für Entwicklung und Tests, denen die Eigenschaft **minSdkVersion** im Manifest entsprechen muss.
@@ -108,11 +108,11 @@ Wenn Sie auf einem älteren Gerät testen, konsultieren Sie Einrichten des Googl
 
 ###Hinzufügen von Google Play Services zum Projekt
 
-[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-Google-play-services-EC.md)]
+[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-google-play-services-ec.md)]
 
 ###Hinzufügen des Codes
 
-[AZURE.INCLUDE [mobile-services-android-getting-started-with-push](../../includes/mobile-services-android-getting-started-with-push-EC.md)]
+[AZURE.INCLUDE [mobile-services-android-getting-started-with-push](../../includes/mobile-services-android-getting-started-with-push-ec.md)]
 
 ##<a name="test-app"></a>Testen der App mit dem veröffentlichten mobilen Dienst
 
@@ -237,4 +237,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

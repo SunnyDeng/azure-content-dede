@@ -13,22 +13,24 @@
 	ms.tgt_pltfrm="mobile-xamarin-android" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/23/2015" 
+	ms.date="08/03/2015" 
 	ms.author="mahender"/>
 
 # Hinzufügen der Authentifizierung zu Ihrer Xamarin.Android-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
 
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
-
-In diesem Thema wird die Authentifizierung von Benutzern einer mobilen App Service-App über Ihre Clientanwendung veranschaulicht. In diesem Lernprogramm fügen Sie dem Schnellstartprojekt durch Verwenden eines von App Service unterstützten Identitätsanbieters eine Authentifizierungsfunktion hinzu. Nach der erfolgreichen Authentifizierung und Autorisierung durch Ihre mobile App wird die Benutzer-ID angezeigt.
+In diesem Thema wird die Authentifizierung von Benutzern einer mobilen App über Ihre Clientanwendung veranschaulicht. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Azure Mobile Apps unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung in Mobile Apps wird die Benutzer-ID angezeigt.
 
 Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen außerdem zunächst das Lernprogramm [Erstellen einer Xamarin.Android-App] abschließen.
 
-##<a name="review"></a>Überprüfen der Konfiguration der Serverprojekts (optional)
+##<a name="review"></a>Überprüfen der Konfiguration des Serverprojekts (optional)
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-enable-auth-preview](../../includes/app-service-mobile-dotnet-backend-enable-auth-preview.md)]
+
+##<a name="create-gateway"></a>Erstellen eines App Service-Gateways
+
+[AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-gateway-preview](../../includes/app-service-mobile-dotnet-backend-create-gateway-preview.md)]
 
 ##<a name="register"></a>Registrieren Ihrer App für die Authentifizierung und Konfigurieren von App Services
 
@@ -38,13 +40,13 @@ Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen außer
 
 [AZURE.INCLUDE [app-service-mobile-restrict-permissions-dotnet-backend](../../includes/app-service-mobile-restrict-permissions-dotnet-backend.md)]
 
-<ol start="5">
+<ol start="4">
 <li><p>Führen Sie das Clientprojekt in Visual Studio oder Xamarin Studio auf einem Gerät oder Emulator aus. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.</p>
    
-   	<p>Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf den Code Ihrer mobilen App zuzugreifen, die <em>TodoItem</em>-Tabelle jetzt jedoch Authentifizierung erfordert.</p></li>
+   	<p>Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf Ihr Mobile App-Back-End zuzugreifen. Die Tabelle <em>TodoItem</em> erfordert jetzt eine Authentifizierung.</p></li>
 </ol>
 
-Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor diese Ressourcen von App Service anfordern.
+Als Nächstes aktualisieren Sie die Client-App, um Ressourcen vom mobilen App-Back-End mit einem authentifizierten Benutzer zu aktualisieren.
 
 ##<a name="add-authentication"></a>Hinzufügen von Authentifizierung zur App
 
@@ -67,23 +69,24 @@ Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor 
 	            }
 	        }
 
-    Diese neue Methode erledigt den Authentifizierungsprozess. Der Benutzer wird mithilfe eines Facebook-Logins authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet.
+    Dadurch wird eine neue Methode zum Authentifizieren eines Benutzers erstellt. Der Benutzer wird im Codebeispiel oben mithilfe eines Facebook-Logins authentifiziert. Ein Dialogfeld wird verwendet, um die Benutzer-ID nach der Authentifizierung anzuzeigen.
 
-    > [AZURE.NOTE]Falls Sie einen anderen Identitätsanbieter als ein Facebook verwenden, ändern Sie den an **LoginAsync** übergebenen Wert auf einen der folgenden Werte: _MicrosoftAccount_, _Twitter_, _Google_ oder _WindowsAzureActiveDirectory_.
+    > [AZURE.NOTE]Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an **LoginAsync** übergebenen Wert auf einen der folgenden Werte: _MicrosoftAccount_, _Twitter_, _Google_ oder _WindowsAzureActiveDirectory_.
 
 3. Fügen Sie in der **onCreate**-Methode die folgende Codezeile im Anschluss an den Code hinzu, der das `MobileServiceClient`-Objekt instanziiert.
 
-		// Get the Mobile App Table instance to use
-        toDoTable = client.GetTable <ToDoItem> ();
-
-        await Authenticate(); // add this line
+		// Create the Mobile Service Client instance, using the provided
+		// Mobile Service URL, Gateway URL and key
+		client = new MobileServiceClient (applicationURL, gatewayURL, applicationKey);
+		
+		await Authenticate(); // Added for authentication
 
 	Dieser Aufruf startet den Authentifizierungsprozess und wartet asynchron auf eine Antwort.
 
 
-4. Klicken Sie im Menü **Ausführen** auf **Ausführen**, um die App zu starten und sich mit dem Identitätsanbieter Ihrer Wahl anzumelden.
+4. Führen Sie das Clientprojekt in Visual Studio oder Xamarin Studio auf einem Gerät oder Emulator aus, und melden Sie sich mit dem ausgewählten Identitätsanbieter an.
 
-   	Nachdem Sie sich erfolgreich angemeldet haben, zeigt die App die Liste der Todo-Objekte an, und Sie können die Daten ändern.
+   	Nachdem Sie sich erfolgreich angemeldet haben, zeigt die App Ihr Login-ID und die Liste der Todo-Objekte an, und Sie können die Daten ändern.
 
 
 <!-- URLs. -->
@@ -95,4 +98,4 @@ Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor 
 [Azure Management Portal]: https://portal.azure.com
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -3,8 +3,8 @@
 	description="Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell"
 	services="azure-portal"
 	documentationCenter="na"
-	authors="Justinha"
-	manager="terrylan"
+	authors="IHenkel"
+	manager="stevenpo"
 	editor="mollybos"/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="powershell"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/11/2015"
-	ms.author="justinha"/>
+	ms.date="08/14/2015"
+	ms.author="inhenk"/>
 
 # Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell #
 
@@ -163,6 +163,5 @@ In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Ve
 - ["Hey, Scripting Guy!"- Blog](http://blogs.technet.com/b/heyscriptingguy/): Praktische Tipps und Tricks aus der Windows PowerShell-Community.
 - [Konfigurieren der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle](role-based-access-control-xplat-cli.md)
 - [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](role-based-access-control-troubleshooting.md)
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -20,7 +20,7 @@ Verwenden Sie VNets für Folgendes:
 
 ### Wie finde ich heraus, ob ich ein virtuelles Netzwerk benötige?
 
-Auf der Webseite [Virtuelle Netzwerke im Überblick](http://go.microsoft.com/fwlink/?LinkId=296649) finden Sie eine Entscheidungstabelle, anhand derer Sie eine Wahl bezüglich des für Sie am besten geeigneten Netzwerkentwurfs treffen können.
+Auf der Webseite [Virtuelle Netzwerke im Überblick](https://azure.microsoft.com/documentation/articles/virtual-networks-overview/) finden Sie eine Entscheidungstabelle, anhand derer Sie eine Wahl bezüglich des für Sie am besten geeigneten Netzwerkentwurfs treffen können.
 
 ### Wie fange ich an?
 
@@ -264,4 +264,4 @@ Ja. VNets und die standortübergreifende Konnektivität können mithilfe von RES
 
 Ja. Sie können PowerShell und Befehlszeilentools für zahlreiche Plattformen verwenden. Weitere Informationen finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=317721).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

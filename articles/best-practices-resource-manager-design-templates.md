@@ -13,12 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/15/2015"
+	ms.date="08/13/2015"
 	ms.author="mmercuri"/>
 
 # Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen
 
 Bei unserer Arbeit mit Unternehmen, Systemintegratoren (SIs), Clouddienstanbietern und Projektteams für die Entwicklung von Open-Source-Software (OSS) ist es häufig erforderlich, Umgebungen oder Workloads schnell bereitzustellen oder Einheiten zu skalieren. Diese Bereitstellungen müssen unterstützt werden, bewährte Methoden befolgen und sich an bestimmte Richtlinien halten. Bei Verwenden eines flexiblen auf Azure-Ressourcen-Manager basierenden Ansatzes können Sie komplexe Topologien rasch und einheitlich bereitstellen und diese Bereitstellungen mühelos anpassen, sobald dies für wichtige Angebote erforderlich ist oder Varianten für besondere Szenarien oder Kunden unterstützt werden müssen.
+
+Dieses Thema ist Teil eines umfangreicheren Whitepapers. Um den vollständigen Artikel zu lesen, laden Sie [World Class ARM Templates Considerations and Proven Practices](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf) herunter.
 
 In Vorlagen werden die Vorteile des zugrunde liegenden Azure-Ressourcen-Managers mit der Flexibilität und besseren Lesbarkeit von JavaScript Object Notation (JSON) kombiniert. Mithilfe von Vorlagen können Sie die folgenden Schritte ausführen:
 
@@ -143,7 +145,7 @@ Es könnte anfangs angenommen werden, dass eine Vorlage den Nutzern die größtm
 
 Oberflächlich betrachtet erscheinen Konfigurationen in freier Form ideal. Sie ermöglichen Ihnen, einen VM-Typ auszuwählen und eine beliebige Anzahl von Knoten und an diese Knoten angeschlossene Datenträger anzugeben, und zwar als Parameter für eine Vorlage. Wenn Sie jedoch bei Vorlagen genauer hinsehen, mit denen mehrere virtuelle Computer mit verschiedenen Größen bereitgestellt werden, sind zusätzliche Überlegungen anzustellen, die diese Wahl in einer Vielzahl von Szenarien weniger geeignet erscheinen lassen.
 
-Im Artikel [VM- Clouddienstgrößen für Azure](http://msdn.microsoft.com/library/azure/dn641267.aspx) auf der Azure-Website sind die verschiedenen VM-Typen und verfügbaren Größen sowie jeweils die Anzahl langlebiger Datenträger (2, 4, 8, 16 oder 32) angegeben, die angefügt werden können. Jeder angeschlossene Datenträger bietet 500 IOPS (E/A-Vorgänge pro Sekunde), und Vielfache dieser Laufwerke können über einen Multiplikator dieser Anzahl von IOPS in einem Pool zusammengefasst werden. Beispielsweise können 16 Datenträger in einem Pool zusammengefasst werden, um 8.000 IOPS bereitzustellen. Das Bilden von Pools erfolgt über eine Konfiguration im Betriebssystem unter Verwendung von Microsoft Windows-Speicherplätzen oder RAID (Redundant Array of Inexpensive Disks) unter Linux.
+Im Artikel [Größen für Virtual Machine und Clouddienste in Azure](http://msdn.microsoft.com/library/azure/dn641267.aspx) auf der Azure-Website sind die verschiedenen VM-Typen und verfügbaren Größen sowie jeweils die Anzahl langlebiger Datenträger (2, 4, 8, 16 oder 32) angegeben, die angefügt werden können. Jeder angeschlossene Datenträger bietet 500 IOPS (E/A-Vorgänge pro Sekunde), und Vielfache dieser Laufwerke können über einen Multiplikator dieser Anzahl von IOPS in einem Pool zusammengefasst werden. Beispielsweise können 16 Datenträger in einem Pool zusammengefasst werden, um 8.000 IOPS bereitzustellen. Das Bilden von Pools erfolgt über eine Konfiguration im Betriebssystem unter Verwendung von Microsoft Windows-Speicherplätzen oder RAID (Redundant Array of Inexpensive Disks) unter Linux.
 
 Eine Konfiguration in freier Form ermöglicht die Auswahl einer Reihe von VM-Instanzen, von verschiedenen VM-Typen und -Größen für diese Instanzen, einer Anzahl von Datenträgern, die basierend auf dem VM-Typ variieren kann, sowie von einem oder mehreren Skripts zum Konfigurieren des VM-Inhalts.
 
@@ -321,7 +323,7 @@ Unter Verwendung von Vorlagenlinks werden die Hauptvorlagenlinks mit der Vorlage
 
 Logik wird der Hauptvorlage hinzugefügt, um Nutzern der Vorlage die Angabe zu ermöglichen, ob eine Jumpbox bereitgestellt werden soll. Der Wert *enabled* für den *EnableJumpbox*-Parameter gibt an, dass der Kunde eine Jumpbox bereitstellen möchte. Wenn dieser Wert angegeben ist, verkettet die Vorlage *\_enabled* als Suffix mit dem Basisvorlagennamen der Jumpbox-Funktion.
 
-Die Hauptvorlage wendet den Wert des Parameters *Large* als Suffix an den Basisvorlagenamen für T-Shirt-Größen an und verwendet dann diesen Wert in einem Vorlagenlink, um einen Link mit *technology\_on\_os\_large.json* herzustellen.
+Die Hauptvorlage wendet den Wert des Parameters *large* als Suffix an den Basisvorlagenamen für T-Shirt-Größen an und verwendet dann diesen Wert in einem Vorlagenlink, um einen Link mit *technology\_on\_os\_large.json* herzustellen.
 
 Die Topologie ähnelt dieser Abbildung.
 
@@ -378,7 +380,7 @@ Wenn Sie Ihre Vorlage im Marketplace veröffentlichen möchten, richten Sie einf
 ## Nächste Schritte
 
 - Kontextbezogene Beispiele zum Umsetzen der in diesem Thema vorgestellten Entwurfsgrundsätze finden Sie unter [Kontextbezogene Beispiele bewährter Methoden für die Implementierung von Vorlagen](best-practices-resource-manager-examples.md).
-- Empfehlungen für die Sicherheitseinstellungen in Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
+- Empfehlungen für die Sicherheitseinstellungen im Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 - Informationen zur Freigabe des Status in Vorlagen finden Sie unter [Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-state.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

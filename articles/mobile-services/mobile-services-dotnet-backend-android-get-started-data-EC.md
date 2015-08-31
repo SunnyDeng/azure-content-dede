@@ -18,13 +18,13 @@
 
 # Hinzufügen von Mobile Services zu einer vorhandenen App
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-data](../../includes/mobile-services-selector-get-started-data-EC.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-data](../../includes/mobile-services-selector-get-started-data-ec.md)]
 
 ##Übersicht
 
 In diesem Thema erfahren Sie, wie Sie Azure Mobile Services als Back-End-Datenquelle für Android-Apps nutzen können. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst, laden ein Eclipse Android-Projekt für eine App herunter, die Daten im Arbeitsspeicher ablegt, integrieren den mobilen Dienst mit der App und zeigen die Datenänderungen beim Ausführen der App an.
 
-Der mobile Dienst, den Sie in diesem Lernprogramm erstellen, unterstützt die .NET Runtime in Mobile Services. Auf diese Weise können Sie .NET-Sprachen und Visual Studio für die serverseitige Geschäftslogik im mobilen Dienst verwenden. Informationen zum Erstellen eines mobilen Diensts, dessen serverseitige Geschäftslogik Sie in JavaScript schreiben können, finden Sie in der [JavaScript-Backend-Version](mobile-services-android-get-started-data-EC.md) dieses Themas.
+Der mobile Dienst, den Sie in diesem Lernprogramm erstellen, unterstützt die .NET Runtime in Mobile Services. Auf diese Weise können Sie .NET-Sprachen und Visual Studio für die serverseitige Geschäftslogik im mobilen Dienst verwenden. Informationen zum Erstellen eines mobilen Diensts, dessen serverseitige Geschäftslogik Sie in JavaScript schreiben können, finden Sie in der [JavaScript-Backend-Version](mobile-services-android-get-started-data-ec.md) dieses Themas.
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
@@ -53,20 +53,20 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 ###Laden Sie den Beispielcode herunter
 
-[AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../../includes/download-android-sample-code-EC.md)]
+[AZURE.INCLUDE [mobile-services-dotnet-backend-create-new-service](../../includes/download-android-sample-code-ec.md)]
 
 ###Prüfen der Version des Android-SDK
 
-[AZURE.INCLUDE [mobile-services-verify-android-sdk-version](../../includes/mobile-services-verify-android-sdk-version-EC.md)]
+[AZURE.INCLUDE [mobile-services-verify-android-sdk-version](../../includes/mobile-services-verify-android-sdk-version-ec.md)]
 
 
 ###Prüfen und Ausführen des Beispielcodes
 
-[AZURE.INCLUDE [mobile-services-android-run-sample-code](../../includes/mobile-services-android-run-sample-code-EC.md)]
+[AZURE.INCLUDE [mobile-services-android-run-sample-code](../../includes/mobile-services-android-run-sample-code-ec.md)]
 
 ##<a name="update-app"></a>Aktualisieren der App für den Datenzugriff über mobile Dienste
 
-[AZURE.INCLUDE [mobile-services-android-getting-started-with-data](../../includes/mobile-services-android-getting-started-with-data-EC.md)]
+[AZURE.INCLUDE [mobile-services-android-getting-started-with-data](../../includes/mobile-services-android-getting-started-with-data-ec.md)]
 
 ##<a name="test-app"></a>Testen der App mit dem veröffentlichten mobilen Dienst
 
@@ -126,7 +126,7 @@ Probieren Sie die folgenden Lernprogramme aus:
 <!-- URLs. -->
 [Get started with Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 [Erste Schritte mit der Authentifizierung]: mobile-services-dotnet-backend-android-get-started-users.md
-[Erste Schritte mit Pushbenachrichtigungen]: mobile-services-dotnet-backend-android-get-started-push-EC.md
+[Erste Schritte mit Pushbenachrichtigungen]: mobile-services-dotnet-backend-android-get-started-push-ec.md
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Management Portal]: https://manage.windowsazure.com/
@@ -134,4 +134,4 @@ Probieren Sie die folgenden Lernprogramme aus:
 [Developer Code Samples site]: http://go.microsoft.com/fwlink/p/?LinkId=328660
 [MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

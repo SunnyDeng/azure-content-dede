@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Traffic Manager-Routingmethoden"
+   pageTitle="Traffic Manager – Routingmethoden für Datenverkehr | Microsoft Azure"
    description="Diese Artikel erläutern Ihnen die verschiedenen Routingmethode für Datenverkehr, die von Traffic Manager verwendet werden"
    services="traffic-manager"
    documentationCenter=""
@@ -12,16 +12,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/10/2015"
+   ms.date="08/19/2015"
    ms.author="joaoma" />
 
 # Traffic Manager-Routingmethoden
 
-Drei Routingmethoden sind in Traffic Manager verfügbar. Jedes Traffic Manager-Profil kann immer nur eine Routingmethode verwenden. Sie können jedoch jederzeit eine andere Routingmethode für Ihr Profil auswählen.
+Drei Routingmethoden für Datenverkehr sind in Traffic Manager verfügbar. Jedes Traffic Manager-Profil kann immer nur eine Routingmethode für Datenverkehr verwenden. Sie können jedoch jederzeit eine andere Routingmethode für Ihr Profil auswählen.
 
-Beachten Sie unbedingt, dass alle Routingmethoden eine Endpunktüberwachung beinhalten. Nachdem Sie bei der Konfiguration des Traffic Manager-Profils die Routingmethode angegeben haben, die Ihre Anforderungen am besten erfüllt, konfigurieren Sie die Überwachungseinstellungen. Wenn die Überwachung ordnungsgemäß konfiguriert ist, überwacht Traffic Manager den Status Ihrer Endpunkte, die aus Cloud-Diensten und Websites bestehen, und sendet keinen Datenverkehr an Endpunkte, die wahrscheinlich nicht verfügbar sind. Informationen zur Traffic Manager-Überwachung finden Sie unter [Traffic Manager-Überwachung](traffic-manager-monitoring.md).
+Beachten Sie unbedingt, dass alle Routingmethoden für Datenverkehr eine Endpunktüberwachung vorsehen. Nachdem Sie bei der Konfiguration des Traffic Manager-Profils die Routingmethode für Datenverkehr angegeben haben, die Ihre Anforderungen am besten erfüllt, konfigurieren Sie die Überwachungseinstellungen. Wenn die Überwachung ordnungsgemäß konfiguriert ist, überwacht Traffic Manager den Status Ihrer Endpunkte, die aus Cloud-Diensten und Websites bestehen, und sendet keinen Datenverkehr an Endpunkte, die wahrscheinlich nicht verfügbar sind. Informationen zur Traffic Manager-Überwachung finden Sie unter [Traffic Manager-Überwachung](traffic-manager-monitoring.md).
 
-Die drei folgenden Traffic Manager-Routingmethoden stehen zur Verfügung:
+Die drei folgenden Traffic Manager-Routingmethoden für Datenverkehr stehen zur Verfügung:
 
 - **Failover**: Wählen Sie "Failover" aus, wenn sich Endpunkte in demselben oder in verschiedenen Azure-Datencentern (im Verwaltungsportal als "Regionen" bezeichnet) befinden und Sie einen primären Endpunkt für den gesamten Datenverkehr verwenden, jedoch Sicherungen für den Fall bereitstellen möchten, dass die primären oder Sicherungsendpunkte nicht verfügbar sind. Weitere Informationen finden Sie unter [Routingmethode für Failoverdatenverkehr](#failover-traffic-routing-method).
 
@@ -123,7 +123,7 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
 ## Nächste Schritte
 
-[Traffic Manager – Übersicht](traffic-manager-overview.md)
+[Was ist Traffic Manager?](traffic-manager-overview.md)
 
 [Traffic Manager-Überwachung](traffic-manager-monitoring.md)
 
@@ -137,4 +137,4 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

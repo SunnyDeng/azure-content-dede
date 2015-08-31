@@ -12,8 +12,8 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-sencha"
 	ms.devlang="multiple"
-	ms.topic="article" 
-	ms.date="04/24/2015"
+	ms.topic="article"
+	ms.date="08/18/2015"
 	ms.author="glenga"/>
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services und Sencha Touch
@@ -710,6 +710,5 @@ Für weitere Informationen zu den ersten Schritten mit Sencha Touch besuchen Sie
 
 <!-- images -->
 [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -22,9 +22,9 @@
 
 ## Sprachen
 
-+ [C\#\|VB \(.NET\)](app-insights-start-monitoring-app-health-usage.md)
-+ [C\#\|VB \(Windows Store\)](app-insights-windows-get-started.md)
-+ [C++ \(Windows Store\)](app-insights-windows-cpp.md)
++ [C#|VB (.NET)](app-insights-start-monitoring-app-health-usage.md)
++ [C#|VB (Windows Store)](app-insights-windows-get-started.md)
++ [C++ (Windows Store)](app-insights-windows-cpp.md)
 + [Java](app-insights-java-get-started.md)
 + [JavaScript-Webseiten](app-insights-web-track-usage.md)
 + [Objective-C](app-insights-ios.md)
@@ -50,9 +50,9 @@
 + [Node.JS](https://www.npmjs.com/package/applicationinsights)
 + [OSX](https://github.com/Microsoft/ApplicationInsights-OSX)
 + [SharePoint](app-insights-sharepoint.md)
-+ [Windows Store C\#\|VB](app-insights-windows-get-started.md)
++ [Windows Store C#|VB](app-insights-windows-get-started.md)
 + [Windows Store C++](app-insights-windows-cpp.md)
-+ [Windows-Desktopanwendungen und -Dienste](app-insights-windows-desktop.md)
++ [Windows-Desktopanwendungen, -Dienste und -Workerrollen](app-insights-windows-desktop.md)
 + [WordPress](https://wordpress.org/plugins/application-insights/)
 + [Alles andere](#projects)
 
@@ -77,4 +77,4 @@ Wenn für Ihre Sprache oder Plattform noch kein SDK vorhanden ist, können Sie e
 
 <!--Link references-->
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

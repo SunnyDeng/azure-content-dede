@@ -28,7 +28,7 @@ Dieses Thema enthält ein Ruby-Codebeispiel, das auf einem Windows-Computer mit 
 
 Öffnen Sie das Terminal, und installieren Sie Folgendes:
 
-**1\) Ruby:** Falls Ruby auf Ihrem Computer nicht vorhanden ist, installieren Sie es. Neuen Benutzern von Ruby empfehlen wir, die Ruby 2.1.X-Installationsprogramme zu verwenden. Diese bieten eine stabile Sprache und eine umfassende Liste von Paketen \(Gems\), die kompatibel sind und aktualisiert werden. [Wechseln Sie zur Ruby-Downloadseite](), und laden Sie das entsprechende 2.1.x-Installationsprogramm herunter. Wenn Sie beispielsweise einen 64-Bit-Computer nutzen, laden Sie den Installer **Ruby 2.1.6 \(x 64\)** herunter. <br/><br/>Nachdem das Installationsprogramm heruntergeladen wurde, führen Sie folgende Schritte aus:
+**1) Ruby:** Falls Ruby auf Ihrem Computer nicht vorhanden ist, installieren Sie es. Neuen Benutzern von Ruby empfehlen wir, die Ruby 2.1.X-Installationsprogramme zu verwenden. Diese bieten eine stabile Sprache und eine umfassende Liste von Paketen (Gems), die kompatibel sind und aktualisiert werden. [Wechseln Sie zur Ruby-Downloadseite](http://rubyinstaller.org/downloads/), und laden Sie das entsprechende 2.1.x-Installationsprogramm herunter. Wenn Sie beispielsweise einen 64-Bit-Computer nutzen, laden Sie das Installationsprogrammr **Ruby 2.1.6 (x 64)** herunter. <br/><br/>Nachdem das Installationsprogramm heruntergeladen wurde, führen Sie folgende Schritte aus:
 
 
 - Doppelklicken Sie auf die Datei, um das Installationsprogramm zu starten.
@@ -38,7 +38,7 @@ Dieses Thema enthält ein Ruby-Codebeispiel, das auf einem Windows-Computer mit 
 - Aktivieren Sie auf dem Bildschirm mit den Installationseinstellungen die Kontrollkästchen neben *Add Ruby executables to your PATH* und *Associate .rb and .rbw files with this Ruby installation*.
 
 
-**2\) DevKit:** Laden Sie DevKit von der Seite [RubyInstaller](http://rubyinstaller.org/downloads/) herunter.
+**2) DevKit:** Laden Sie DevKit von der Seite [RubyInstaller](http://rubyinstaller.org/downloads/) herunter.
 
 Nachdem der Download abgeschlossen ist, führen Sie folgende Schritte aus:
 
@@ -59,7 +59,7 @@ Nachdem der Download abgeschlossen ist, führen Sie folgende Schritte aus:
 Sie verfügen jetzt über ein voll funktionsfähiges Ruby und RubyGems!
 
 
-**3\) TinyTDS:** Navigieren Sie zu "C:\\DevKit", und führen Sie den folgenden Befehl in Ihrem Terminal aus. Dadurch wird TinyTDS auf Ihrem Computer installiert.
+**3) TinyTDS:** Navigieren Sie zu "C:\\DevKit", und führen Sie den folgenden Befehl in Ihrem Terminal aus. Dadurch wird TinyTDS auf Ihrem Computer installiert.
 
 	gem inst tiny_tds --pre
 
@@ -84,7 +84,7 @@ Kopieren Sie den folgenden Code, und fügen Sie ihn in eine leere Datei ein. Nen
 
 	ruby test.rb
 
-Im Codebeispiel wird die Funktion [TinyTds::Result](https://github.com/rails-sqlserver/tiny_tds) verwendet, um ein Resultset aus einer Abfrage in einer SQL-Datenbank abzurufen. Diese Funktion akzeptiert eine Abfrage und gibt ein Resultset zurück. Das Resultset läuft mithilfe von [result.each do \|row\|](https://github.com/rails-sqlserver/tiny_tds) durch.
+Im Codebeispiel wird die Funktion [TinyTds::Result](https://github.com/rails-sqlserver/tiny_tds) verwendet, um ein Resultset aus einer Abfrage in einer SQL-Datenbank abzurufen. Diese Funktion akzeptiert eine Abfrage und gibt ein Resultset zurück. Das Resultset läuft mithilfe von [result.each do |row|](https://github.com/rails-sqlserver/tiny_tds) durch.
 
     require 'tiny_tds'  
     print 'test'     
@@ -131,4 +131,4 @@ Zum Ausrichten am [Datetime](http://msdn.microsoft.com/library/ms187819.aspx)-Fo
     puts row
     end
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

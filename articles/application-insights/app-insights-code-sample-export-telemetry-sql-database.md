@@ -105,6 +105,8 @@ Stellen Sie sicher, dass der Datenbankserver den Zugriff auf Azure-Dienste ermö
 
 Jetzt können wir [Code](https://sesitai.codeplex.com/) zum Analysieren der JSON-Daten in den exportierten Blobs und zum Erstellen von Datensätzen in der Datenbank schreiben. Da sich der Exportspeicher und die Datenbank in Azure befinden, führen wir den Code in einer Azure-Workerrolle aus.
 
+Dieser Code extrahiert automatisch alle Eigenschaften, die in den JSON-Daten vorhanden sind. Beschreibungen der Eigenschaften finden Sie unter [Exportdatenmodell](app-insights-export-data-model.md).
+
 
 #### Erstellen eines Workerrollenprojekts
 
@@ -356,6 +358,8 @@ Ersetzen Sie die vorhandene run-Methode, und wählen Sie das gewünschte Interva
 
 #### Aus JSON-Dokument generierte PageViewPerformance-Klassendatei
 
+
+
     public class PageViewPerformance
     {
     	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -519,6 +523,7 @@ Um dieses Beispiel in Aktion zu sehen, [laden Sie den vollständigen Arbeitscode
 * [Exportieren in SQL über eine Workerrolle](app-insights-code-sample-export-telemetry-sql-database.md)
 * [Fortlaufender Export in Application Insights](app-insights-export-telemetry.md)
 * [Application Insights](https://azure.microsoft.com/services/application-insights/)
+* [Exportdatenmodell](app-insights-export-data-model.md)
 * [Weitere Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
 
 <!--Link references-->
@@ -531,4 +536,4 @@ Um dieses Beispiel in Aktion zu sehen, [laden Sie den vollständigen Arbeitscode
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

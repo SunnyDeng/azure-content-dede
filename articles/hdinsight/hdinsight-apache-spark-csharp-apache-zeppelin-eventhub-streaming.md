@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="nitinme" 
 	manager="paulettm" 
-	editor="cgronlun"/>
+	editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags 
 	ms.service="hdinsight" 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/10/2015" 
+	ms.date="07/31/2015" 
 	ms.author="nitinme"/>
 
 
@@ -21,20 +22,22 @@
 
 Das Spark-Streaming ist eine Erweiterung der Spark-Kern-API zum Erstellen von skalierbaren, fehlertoleranten Anwendungen für die Datenstromverarbeitung mit hohem Durchsatz. Daten können aus vielen Quellen erfasst werden. In diesem Artikel verwenden wir Event Hubs zum Erfassen von Daten. Bei Event Hubs handelt es sich um ein hochskalierbares Erfassungssystem, mit dem Millionen von Ereignissen pro Sekunde verarbeitet werden können.
 
-In diesem Lernprogramm erfahren Sie, wie Sie einen Azure Event Hub erstellen, Nachrichten mit einer Konsolenanwendung in C\# für einen Event Hub erfassen und mit einem Zeppelin Notebook parallel abrufen, das für Apache Spark unter HDInsight konfiguriert ist.
+In diesem Lernprogramm erfahren Sie, wie Sie einen Azure Event Hub erstellen, Nachrichten mit einer Konsolenanwendung in C#  für einen Event Hub erfassen und mit einem Zeppelin Notebook parallel abrufen, das für Apache Spark unter HDInsight konfiguriert ist.
+
+> [AZURE.NOTE]Für die Anweisungen in diesem Artikel benötigen Sie beide Versionen des Azure-Portals. Zum Erstellen eines Event Hubs verwenden Sie das [Azure-Portal](https://manage.windowsazure.com). Für das Arbeiten mit dem HDInsight Spark-Cluster nutzen Sie das [Azure-Vorschauportal](https://ms.portal.azure.com/).
 
 **Voraussetzungen:**
 
 Sie benötigen Folgendes:
 
 - Ein Azure-Abonnement. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-- Einen Apache Spark-Cluster. Eine Anleitung finden Sie unter [Bereitstellen von Apache Spark-Clustern in Azure HDInsight](hdinsight-apache-spark-provision-clusters.md).
-- Einen [Azure Event Hub](service-bus-event-hubs-csharp-ephcs-getstarted.md).
-- Eine Arbeitsstation mit Microsoft Visual Studio 2013. Eine Anleitung finden Sie unter [Installieren von Visual Studio](https://msdn.microsoft.com/library/e2h7fzkw.aspx).
+- Einen Apache Spark-Cluster. Anweisungen finden Sie unter [Bereitstellen von Apache Spark-Clustern in Azure HDInsight](hdinsight-apache-spark-provision-clusters.md).
+- Einen [Azure Event Hub](service-bus-event-hubs-csharp-ephcs-getstarted.md)
+- Eine Arbeitsstation mit Microsoft Visual Studio 2013. Anweisungen finden Sie unter [Installieren von Visual Studio](https://msdn.microsoft.com/library/e2h7fzkw.aspx).
 
 ##<a name="createeventhub"></a>Erstellen eines Azure Event Hubs
 
-1. Wählen Sie im [Azure-Portal](https://manage.windowsazure.com) die Optionen **NEU** \> **Service Bus** \> **Event Hub** \> **Benutzerdefiniert erstellen**.
+1. Wählen Sie im [Azure-Portal](https://manage.windowsazure.com) die Optionen **NEU** > **Service Bus** > **Event Hub** > **Benutzerdefiniert erstellen**.
 
 2. Geben Sie im Bildschirm **Neuen Event Hub hinzufügen** einen Wert für **Event Hub-Name** ein, wählen Sie die **Region** aus, in der der Hub erstellt werden soll, und erstellen Sie einen neuen Namespace, oder wählen Sie einen vorhandenen Namespace aus. Klicken Sie auf den **Pfeil**, um fortzufahren.
 
@@ -52,7 +55,7 @@ Sie benötigen Folgendes:
 <tr><th>Name</th><th>Berechtigungen</th></tr>
 <tr><td>mysendpolicy</td><td>Send</td></tr>
 <tr><td>myreceivepolicy</td><td>Empfangen</td></tr>
-</table>Klicken Sie nach dem Erstellen der Berechtigungen auf das Symbol **Speichern** am unteren Seitenrand. Hiermit werden die freigegebenen Zugriffsrichtlinien erstellt, die zum Senden \(**mysendpolicy**\) und Überwachen \(**myreceivepolicy**\) dieses Event Hubs verwendet werden.
+</table>Klicken Sie nach dem Erstellen der Berechtigungen auf das Symbol **Speichern** am unteren Seitenrand. Hiermit werden die freigegebenen Zugriffsrichtlinien erstellt, die zum Senden (**mysendpolicy**) und Überwachen (**myreceivepolicy**) dieses Event Hubs verwendet werden.
 
 	![Richtlinien](./media/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming/HDI.Spark.Streaming.Event.Hub.Policies.png "Erstellen von Event Hub-Richtlinien")
 
@@ -71,7 +74,9 @@ Sie benötigen Folgendes:
 
 In diesem Abschnitt erstellen Sie ein [Zeppelin](https://zeppelin.incubator.apache.org) Notebook zum Empfangen von Nachrichten aus dem Event Hub im Spark-Cluster unter HDInsight.
 
-1. Starten Sie das Zeppelin Notebook. Wählen Sie Ihr Spark-Cluster im Azure-Portal aus, und klicken Sie in der Taskleiste des Portals auf **Zeppelin Notebook**. Geben Sie bei Aufforderung die Anmeldeinformationen für den Spark-Cluster ein. Folgen Sie den Anweisungen auf der angezeigten Seite, um das Notebook zu starten.
+1. Klicken Sie im [Azure-Vorschauportal](https://ms.portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren.   
+
+2. Starten Sie das Zeppelin Notebook. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Clusterdashboard** auf **Zeppelin Notebook**. Geben Sie die Anmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden. Folgen Sie den Anweisungen auf der angezeigten Seite, um das Notebook zu starten.
 
 2. Erstellen Sie ein neues Notebook. Klicken Sie im Headerbereich auf **Notebook**, und wählen Sie in der Dropdownliste die Option **Neue Notiz erstellen**.
 
@@ -112,7 +117,7 @@ In diesem Abschnitt erstellen Sie ein [Zeppelin](https://zeppelin.incubator.apac
 
 ##<a name="runapps"></a>Ausführen der Anwendungen
 
-1. Führen Sie den Absatz mit dem Codeausschnitt aus dem Zeppelin Notebook aus. Drücken Sie **UMSCHALT+EINGABETASTE**, oder wählen Sie oben rechts die Wiedergabeschaltfläche \(**Play**\).
+1. Führen Sie den Absatz mit dem Codeausschnitt aus dem Zeppelin Notebook aus. Drücken Sie **UMSCHALT+EINGABE**, oder wählen Sie oben rechts die Wiedergabeschaltfläche.
 
 	Der Status in der rechten Ecke des Absatzes sollte sich entsprechend ändern: BEREIT, AUSSTEHEND, WIRD AUSGEFÜHRT bis zu BEENDET. Die Ausgabe wird im unteren Teil des gleichen Absatzes angezeigt. Der Screenshot sieht folgendermaßen aus:
 
@@ -122,7 +127,8 @@ In diesem Abschnitt erstellen Sie ein [Zeppelin](https://zeppelin.incubator.apac
 
 3. Geben Sie im Zeppelin Notebook in einem neuen Absatz den folgenden Codeausschnitt ein, um die in Spark empfangenen Nachrichten zu lesen.
 
-		%sql select * from mytemptable limit 10
+		%sql 
+		select * from mytemptable limit 10
 
 	Der folgende Screenshot zeigt die Nachrichten, die in **mytemptable** empfangen werden.
 
@@ -164,4 +170,4 @@ Eine Anleitung zum Ausführen dieser Schritte und eine Streaming-Beispielanwendu
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

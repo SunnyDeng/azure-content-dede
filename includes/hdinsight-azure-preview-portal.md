@@ -1,7 +1,9 @@
-##Azure portal and Azure preview portal
+##Azure-Portal und Azure-Vorschauportal
 
-> [AZURE.IMPORTANT] The steps in this document use the Azure preview portal. Microsoft recommends using the Azure preview portal when creating new services. For an explanation of the advantages of the preview portal, see [DevOps just got a whole lot more awesome](http://azure.microsoft.com/overview/preview-portal/). 
+> [AZURE.IMPORTANT]Bei den Schritten in diesem Dokument wird das Azure-Vorschauportal verwendet. Microsoft empfiehlt das Azure-Vorschauportal für das Erstellen neuer Dienste. Eine Erläuterung der Vorteile des Vorschauportals finden Sie unter [DevOps ist jetzt noch cooler](http://azure.microsoft.com/overview/preview-portal/).
 > 
-> Services and resources created in the Azure preview portal are not visible in the Azure portal, as they use a new resource model.
+> Die im Azure-Vorschauportal erstellten Dienste und Ressourcen werden im Azure-Portal nicht angezeigt, da sie ein neues Ressourcenmodell verwenden.
 
-For a version of this document that uses the Azure portal, see the following link:
+Eine Version dieses Dokuments, in dem das Azure-Portal verwendet wird, finden Sie unter folgendem Link:
+
+<!---HONumber=August15_HO8-->

@@ -3,6 +3,7 @@
    description="Lernen Sie Hadoop schnell durch das Ausführen von Beispielanwendungen aus der HDInsight-Galerie für erste Schritte kennen. Verwenden Sie Beispieldaten, oder stellen Sie eigene Beispieldaten bereit."
    services="hdinsight"
    documentationCenter=""
+   tags="azure-portal"
    authors="mumian"
    manager="paulettm"
    editor="cgronlun"/>
@@ -12,7 +13,7 @@
    ms.workload="big-data"
    ms.tgt_pltfrm="na"
    ms.devlang="na"
-   ms.topic="get-started-article" 
+   ms.topic="get-started-article"
    ms.date="07/09/2015"
    ms.author="jgao"/>
 
@@ -29,20 +30,24 @@ Die HDInsight-Galerie für erste Schritte bietet eine schnelle und einfache Mög
 	- Analysieren von Website-Protokollen
 	- Mahout-Filmempfehlung
 
+[AZURE.INCLUDE [hdinsight-azure-preview-portal](../../includes/hdinsight-azure-preview-portal.md)]
+
+* [Kennenlernen von Hadoop mithilfe der HDInsight-Galerie für erste Schritte](hdinsight-learn-hadoop-use-sample-gallery-v1.md)
+
 ![Lösungen für HDInsight Hadoop, Storm und HBase-Galerie für erste Schritte enthalten Beispieldaten.][hdinsight.sample.gallery]
 
 Der folgende Videoclip zeigt, wie das Beispiel zur Twitter-Trendanalyse ausgeführt wird:
 
 <center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4></a></center>
 
+Auf das Dashboard kann über „http://<YourHDInsightClusterName>.azurehdinsight.net/“ oder über das Azure-Vorschauportal zugegriffen werden.
 
 **So führen Sie ein Beispiel aus der Galerie für erste Schritte aus**
 
-1.	Melden Sie sich beim [Azure-Portal][azure.portal] an.
-2.	Klicken Sie im linken Menü auf **HDInsight**. Es wird eine Liste der vorhandenen HDInsight-Cluster angezeigt, einschließlich der Hadoop-, Storm- und HBase-Cluster.
-3.	Klicken Sie auf den Cluster, in dem Sie das Beispiel ausführen möchten.
-4.	Wählen Sie am Ende der Seite die Option **ABFRAGEKONSOLE** aus.
-5.	Geben Sie den Hadoop-Benutzernamen und das zugehörige Kennwort für den Cluster ein.
+1. Melden Sie sich beim [Azure-Vorschauportal][azure.portal] an.
+2. Klicken Sie im linken Menü auf **Alle durchsuchen**, und klicken Sie auf **HDInsight-Cluster** und dann auf den Clusternamen.
+3. Klicken Sie im Hauptmenü auf **Dashboard**.
+4. Geben Sie Benutzername und Kennwort für den HTTP-Benutzer (auch als Clusterbenutzer bezeichnet) ein.
 6.	Klicken Sie oben auf **Erste Schritte mit der Galerie**.
 7.	Klicken Sie auf eines der Beispiele. Jedes Beispiel bietet ausführliche Anweisungen zur Ausführung. Die folgende Abbildung zeigt das Beispiel zur Twitter-Trendanalyse:
 
@@ -61,7 +66,6 @@ Andere Möglichkeiten zum Kennenlernen von HDInsight:
 <!--Link references-->
 [hdinsight.learn.map]: hdinsight-learn-map.md
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
-[azure.portal]: https://manage.windowsazure.com
- 
+[azure.portal]: https://portal.azure.com
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

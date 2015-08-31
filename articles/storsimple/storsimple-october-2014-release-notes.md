@@ -1,18 +1,18 @@
 <properties 
-    pageTitle="Versionsanmerkungen zu Update 0.1 der StorSimple 8000-Serie – Oktober 2014"
+    pageTitle="Versionsanmerkungen zu Update 0.1 der StorSimple 8000-Serie – Oktober 2014 | Microsoft Azure"
     description="Beschreibt die neuen Features, Probleme und Problemumgehungen für die StorSimple-Version vom Oktober 2014."
     services="storsimple"
     documentationCenter="NA"
     authors="SharS"
-    manager="adinah"
-    editor="tysonn" />
+    manager="carolz"
+    editor="" />
  <tags 
     ms.service="storsimple"
     ms.devlang="NA"
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="TBD"
-    ms.date="05/27/2015"
+    ms.date="08/19/2015"
     ms.author="v-sharos" />
 
 # Versionsanmerkungen zu Update 0.1 der StorSimple 8000-Serie – Oktober 2014  
@@ -21,7 +21,7 @@
 
 Die folgenden Versionsanmerkungen weisen auf wichtige offene Punkte bei Update 0.1 der StorSimple 8000-Serie von Oktober 2014 hin. Es enthält auch eine Liste der StorSimple-Software- und -Firmware-Updates, die in dieser Version enthalten sind. Dies ist die erste Version, nachdem die Freigabeversion der StorSimple 8000-Serie im Juli 2014 allgemein verfügbar gemacht wurde. Sie entspricht der Softwareversion 6.3.9600.17312.
 
-Es wird empfohlen, dass Sie sofort nach der Installation des Geräts nach allen verfügbaren Updates suchen und diese installieren. Sie können auch automatische Updates aktivieren, um Updates mit hoher Priorität von Microsoft herunterzuladen und zu installieren, sobald diese verfügbar sind. Weitere Informationen finden Sie im Thema zum Installieren von [Updates](https://msdn.microsoft.com/library/azure/1a2cd7de-706b-4d3c-8efb-02e322d3ae73#BKMK_Updates).
+Es wird empfohlen, dass Sie sofort nach der Installation des Geräts nach allen verfügbaren Updates suchen und diese installieren. Sie können auch automatische Updates aktivieren, um Updates mit hoher Priorität von Microsoft herunterzuladen und zu installieren, sobald diese verfügbar sind. Weitere Informationen finden Sie unter [Aktualisieren von StorSimple-Geräten](storsimple-update-device.md).
 
 Lesen Sie vor der Bereitstellung der Updates in Ihrer StorSimple-Lösung die Informationen in den Versionsanmerkungen sorgfältig durch.
 
@@ -35,16 +35,16 @@ Bevor Ihr StorSimple-Gerät aktualisiert wird, sollten folgende Voraussetzungen 
 
 - Stellen Sie sicher, dass beide Gerätecontroller ausgeführt werden, bevor Sie nach Updates suchen. Wenn einer der Controller nicht ausgeführt wird, treten bei der Überprüfung Fehler auf. Wechseln Sie unter der Seite **Wartung** zu **Hardwarestatus**, um sicherzustellen, dass die Controller fehlerfrei sind. Wenn Komponenten vorliegen, die **Aufmerksamkeit** erfordern, wenden Sie sich vor dem Fortfahren an den Microsoft-Support.  
 - Stellen Sie sicher, dass die festen IPs für Controller 0 und Controller 1 routingfähig sind und eine Verbindung zum Internet herstellen können, während sie für die Wartung der Updates für das Gerät verwendet werden. Sie können das [Cmdlet "Test-Connection"](https://technet.microsoft.com/library/hh849808.aspx) verwenden, um eine bekannte Adresse außerhalb des Netzwerks wie "outlook.com" per Ping abzufragen und so sicherzustellen, dass der Controller über eine Konnektivität zum Außennetzwerk verfügt.  
-- Stellen Sie sicher, dass die Ports 80 und 443 auf Ihrem StorSimple-Gerät für die ausgehende Kommunikation verfügbar sind. Weitere Informationen finden Sie unter [Netzwerkanforderungen für das StorSimple-Gerät](https://msdn.microsoft.com/library/azure/dn772371.aspx).  
+- Stellen Sie sicher, dass die Ports 80 und 443 auf Ihrem StorSimple-Gerät für die ausgehende Kommunikation verfügbar sind. Weitere Informationen finden Sie unter [Netzwerkanforderungen für das StorSimple-Gerät](storsimple-system-requirements.md#networking-requirements-for-your-storsimple-device).  
 - Deaktivieren Sie die Ports "Data 2" und "Data 3", sofern sie aktiviert sind, wenn die Softwareversion des Geräts älter als 6.3.9600.17312 (Oktober 2014-Update) ist, bevor Sie mit dem Update beginnen. Wenn Sie die Ports "Data 2" und "Data 3" aktiviert lassen, während Sie das Update anwenden, kann dies dazu führen, dass Ihr Gerätecontroller in den Wiederherstellungsmodus wechselt. Beachten Sie, dass beim Deaktivieren der Netzwerkschnittstellen alle zugehörigen Volumes offline geschaltet und ihre E/As für die Dauer des Updates unterbrochen werden.  
 
 ## Neuigkeiten in der Oktober-Version
 
 Dieses Update umfasst die folgenden Verbesserungen:
 
-- Sie können nun die Benutzeroberfläche des StorSimple-Manager-Diensts zur Verwaltung Ihrer Gerätecontroller verwenden. Zu den Verwaltungsaktionen zählen das Neustarten, Herunterfahren oder Einschalten eines Controllers. Weitere Informationen finden Sie unter [Verwalten von Gerätecontrollern](https://msdn.microsoft.com/library/azure/3216e992-f6ae-41c9-9ca4-f671342e1ab3#ManageControllers).  
-- Sie können die WAN-Bandbreitenzuordnung als Kombination von Wochentag und Uhrzeit planen. Dadurch erzielen Sie eine bessere Nutzung der WAN-Bandbreite in Spitzenzeiten. Verschiedene Bandbreitenvorlagen sind für verschiedene Volumecontainer zulässig. Weitere Informationen finden Sie unter [Bandbreitenvorlagen](https://msdn.microsoft.com/library/azure/1747f56e-858a-4cfe-a020-949d7db23b8b#bt).  
-- Sie können E-Mail-Benachrichtigungen konfigurieren, um die Administratoren und andere Personen proaktiv über vorhandene oder möglicherweise bevorstehende Probleme zu benachrichtigen. Weitere Informationen finden Sie unter [Konfigurieren von Warnungseinstellungen](https://msdn.microsoft.com/library/azure/02f1412f-e196-4a88-8eda-2113247ea47c#sec_11).  
+- Sie können nun die Benutzeroberfläche des StorSimple-Manager-Diensts zur Verwaltung Ihrer Gerätecontroller verwenden. Zu den Verwaltungsaktionen zählen das Neustarten, Herunterfahren oder Einschalten eines Controllers. Weitere Informationen finden Sie unter [Verwalten von StorSimple-Gerätecontrollern](storsimple-manage-device-controller.md).  
+- Sie können die WAN-Bandbreitenzuordnung als Kombination von Wochentag und Uhrzeit planen. Dadurch erzielen Sie eine bessere Nutzung der WAN-Bandbreite in Spitzenzeiten. Verschiedene Bandbreitenvorlagen sind für verschiedene Volumecontainer zulässig. Weitere Informationen finden Sie unter [Verwalten von StorSimple-Bandbreitenvorlagen](storsimple-manage-bandwidth-templates.md).  
+- Sie können E-Mail-Benachrichtigungen konfigurieren, um die Administratoren und andere Personen proaktiv über vorhandene oder möglicherweise bevorstehende Probleme zu benachrichtigen. Weitere Informationen finden Sie unter [Konfigurieren von Warnungseinstellungen](storsimple-manage-alerts.md#configure-alert-settings).  
 
 ## In der Oktober-Version behobene Probleme
 
@@ -80,7 +80,7 @@ Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in die
 | 7 | Speicherkonten | Das Verwenden des Speicherdiensts zum Löschen des Speicherkontos wird nicht unterstützt. Dies führt dazu, dass keine Benutzerdaten abgerufen werden können. | Ja | Ja |
 | 8 | Gerätefailover | Mehrere Failover eines Volumecontainers von demselben Quellgerät auf verschiedene Zielgeräte werden nicht unterstützt. | Das Failover von einem einzelnen nicht reagierenden Gerät auf mehrere Geräte führt dazu, dass die Volumecontainer auf dem ersten Gerät mit erfolgtem Failover die Dateneigentümerschaft verlieren. Nach einem solchen Failover werden diese Volumecontainer anders angezeigt oder verhalten sich anders bei der Anzeige im Verwaltungsportal. | Ja | Nein |
 | 9 | Installation | Während der Installation von StorSimple-Adapter für SharePoint müssen Sie die IP-Adresse eines Geräts angeben, damit die Installation erfolgreich abgeschlossen wird. | | Ja | Nein |
-| 10 | Webproxy | Wenn Ihre Webproxykonfiguration das Protokoll "HTTPS" verwendet, ist die Kommunikation zwischen dem Gerät und dem Dienst beeinträchtigt, und das Gerät wird offline geschaltet. Supportpakete werden bei diesem Vorgang ebenfalls generiert. Sie beanspruchen auf Ihrem Gerät erhebliche Ressourcen. | Stellen Sie sicher, dass "HTTP" als Protokoll für die Webproxy-URL angegeben ist. Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](https://msdn.microsoft.com/library/azure/dn764937.aspx). | Ja | Nein |
+| 10 | Webproxy | Wenn Ihre Webproxykonfiguration das Protokoll "HTTPS" verwendet, ist die Kommunikation zwischen dem Gerät und dem Dienst beeinträchtigt, und das Gerät wird offline geschaltet. Supportpakete werden bei diesem Vorgang ebenfalls generiert. Sie beanspruchen auf Ihrem Gerät erhebliche Ressourcen. | Stellen Sie sicher, dass "HTTP" als Protokoll für die Webproxy-URL angegeben ist. Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](storsimple-configure-web-proxy.md). | Ja | Nein |
 | 11 | Webproxy | Wenn Sie den Webproxy für ein registriertes Gerät konfigurieren und aktivieren, müssen Sie den aktiven Controller auf Ihrem Gerät neu starten. | | Ja | Nein |
 | 12 | Hohe Cloud-Latenzen und hohe E/A-Arbeitsauslastung | Wenn Ihr StorSimple-Gerät mit einer Kombination aus sehr hohen Cloud-Latenzen (mehrere Sekunden) und hoher E/A-Arbeitsauslastung konfrontiert wird, verschlechtert sich die Leistung der Gerätevolumes, und es tritt ggf. der E/A-Fehler "Gerät nicht bereit" auf. | Sie müssen die Gerätecontroller manuell neu starten oder ein Gerätefailover ausführen, um dieses Problem zu beheben. | Ja | Nein |
 
@@ -99,4 +99,4 @@ Diese Version wendet auch ein kumulatives Firmwareupdate zur Behebung von Zuverl
 Diese Version enthält keine Updates für das virtuelle Gerät. Durch die Installation des Updates ändert sich die Softwareversion des virtuellen Geräts nicht.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

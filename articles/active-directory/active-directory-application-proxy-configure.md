@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Mithilfe des Anwendungsproxys Anwendungen für sicheren Remotezugriff veröffentlichen" 
-	description="Bei dem Thema wird erklärt, wie Anwendungen veröffentlicht werden, z. B. SharePoint-Websites, Outlook Web Access und IIS-basierte Anwendungen innerhalb Ihres privaten Netzwerks und sicherer Zugriff für Benutzer außerhalb Ihres Netzwerks geboten wird." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
+<properties
+	pageTitle="Mithilfe des Anwendungsproxys Anwendungen für sicheren Remotezugriff veröffentlichen"
+	description="Bei dem Thema wird erklärt, wie Anwendungen veröffentlicht werden, z. B. SharePoint-Websites, Outlook Web Access und IIS-basierte Anwendungen innerhalb Ihres privaten Netzwerks und sicherer Zugriff für Benutzer außerhalb Ihres Netzwerks geboten wird."
+	services="active-directory"
+	documentationCenter=""
+	authors="rkarlin"
+	manager="stevenpo"
 	editor="LisaToft"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/04/2015" 
-	ms.author="Justinha"/>
+<tags
+	ms.service="active-directory"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/14/2015" 
+	ms.author="rkarlin"/>
 
 
 # Mithilfe des Anwendungsproxys Anwendungen für sicheren Remotezugriff veröffentlichen
@@ -30,6 +30,5 @@ Für erste Schritte mit dem Anwendungsproxy gehen Sie folgendermaßen vor: 1. [A
 ## Nächste Schritte
 
 [Microsoft Azure-Blog](http://azure.microsoft.com/blog/) [Anwendungsproxydienste aktivieren](https://msdn.microsoft.com/library/azure/dn768214.aspx) [Veröffentlichen von Anwendungen mit dem Anwendungsproxy](https://msdn.microsoft.com/library/azure/dn768220.aspx) [Problembehandlung Anwendungsproxy](https://msdn.microsoft.com/library/azure/dn768218.aspx)
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

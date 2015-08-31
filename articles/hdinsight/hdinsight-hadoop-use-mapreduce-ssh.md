@@ -5,7 +5,8 @@
    documentationCenter=""
    authors="Blackmist"
    manager="paulettm"
-   editor="cgronlun"/>
+   editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
@@ -75,7 +76,7 @@ Weitere Informationen zum Verwenden von PuTTY finden Sie unter [Verwenden von SS
 
 	Daraufhin sollten zwei Dateien angezeigt werden: **\_SUCCESS** und **part-r-00000**. Die Datei **part-r-00000** enthält die Ausgabe für diesen Auftrag.
 
-	> [AZURE.NOTE]Einige MapReduce-Aufträge teilen die Ergebnisse möglicherweise auf mehrere **part-r-#####**-Dateien auf. Verwenden Sie in diesem Fall das Suffix "#####", um die Reihenfolge der Dateien anzugeben.
+	> [AZURE.NOTE]Einige MapReduce-Aufträge teilen die Ergebnisse möglicherweise auf mehrere **part-r-\#\#\#\#\#**-Dateien auf. Verwenden Sie in diesem Fall das Suffix "\#\#\#\#\#", um die Reihenfolge der Dateien anzugeben.
 
 4. Verwenden Sie den folgenden Befehl, um die Ausgabe anzuzeigen:
 
@@ -107,4 +108,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Pig mit Hadoop in HDInsight](hdinsight-use-pig.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

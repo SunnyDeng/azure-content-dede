@@ -1,22 +1,21 @@
-<properties 
-	pageTitle="Verfügbarkeit von Hadoop-Clustern in HDInsight | Microsoft Azure" 
-	description="HDInsight stellt hochverfügbare und zuverlässige Cluster mit einem zusätzlichen Hauptknoten bereit." 
-	services="hdinsight" 
-	editor="cgronlun" 
-	manager="paulettm" 
-	authors="mumian" 
+<properties
+	pageTitle="Verfügbarkeit von Hadoop-Clustern in HDInsight | Microsoft Azure"
+	description="HDInsight stellt hochverfügbare und zuverlässige Cluster mit einem zusätzlichen Hauptknoten bereit."
+	services="hdinsight"
+	tags="azure-portal"
+	editor="cgronlun"
+	manager="paulettm"
+	authors="mumian"
 	documentationCenter=""/>
 
-
-<tags 
-	ms.service="hdinsight" 
-	ms.workload="big-data" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="07/10/2015" 
+<tags
+	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="07/28/2015"
 	ms.author="jgao"/>
-
 
 
 #Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight
@@ -39,7 +38,7 @@ Mit HDInsight können Kunden verschiedene Clustertypen für unterschiedliche Dat
 	- Nimbus-Knoten (2 Knoten)
 	- Supervisor-Server (mindestens 1 Knoten)
 	- Zookeeper-Knoten (3 Knoten)
- 
+
 Standardimplementierungen von Hadoop-Clustern verfügen in der Regel nur über einen Hauptknoten. HDInsight entfernt diesen „Single Point of Failure“ durch das Hinzufügen eines zweiten Hauptknotens/Hauptservers/Nimbus-Knotens, um die Verfügbarkeit bzw. Zuverlässigkeit des Diensts zu erhöhen, die zum Verwalten von Workloads erforderlich ist. Diese Hauptknoten/Hauptserver/Nimbus-Knoten dienen zur reibungslosen Verwaltung ausgefallener Workerknoten. Bei einem Ausfall eines Master-Diensts auf dem Hauptknoten würde jedoch das komplette Cluster ausfallen.
 
 
@@ -51,7 +50,7 @@ Standardimplementierungen von Hadoop-Clustern verfügen in der Regel nur über e
 
 
 ## Überprüfen des Dienststatus für den aktiven Hauptknoten
-Um festzustellen, welcher Hauptknoten aktiv ist und den Status der dort laufenden Dienste zu prüfen, müssen Sie sich unter Verwendung des Remotedesktopprotokolls (RDP) mit dem Hadoop-Cluster verbinden. Anweisungen zu RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-management-portal.md/#connect-to-hdinsight-clusters-by-using-rdp). Sobald Sie eine Remoteverbindung zum Cluster hergestellt haben, doppelklicken Sie auf das Symbol \*\*Hadoop-Dienst verfügbar\*\* auf dem Desktop, um zu erfahren, auf welchem Hauptknoten die Dienste Namenode, Jobtracker, Templeton, Oozieservice, Metastore und Hiveserver2 bzw. im Fall von HDI 3.0 die Dienste Namenode, Resource Manager, History Server, Templeton, Oozieservice, Metastore und Hiveserver2 ausgeführt werden.
+Um festzustellen, welcher Hauptknoten aktiv ist und den Status der dort laufenden Dienste zu prüfen, müssen Sie sich unter Verwendung des Remotedesktopprotokolls (RDP) mit dem Hadoop-Cluster verbinden. Anweisungen zu RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Vorschauportal](hdinsight-administer-use-management-portal.md#connect-to-hdinsight-clusters-by-using-rdp). Sobald Sie eine Remoteverbindung zum Cluster hergestellt haben, doppelklicken Sie auf das Symbol **Hadoop-Dienst verfügbar** auf dem Desktop, um zu erfahren, auf welchem Hauptknoten die Dienste Namenode, Jobtracker, Templeton, Oozieservice, Metastore und Hiveserver2 bzw. im Fall von HDI 3.0 die Dienste Namenode, Resource Manager, History Server, Templeton, Oozieservice, Metastore und Hiveserver2 ausgeführt werden.
 
 ![](./media/hdinsight-high-availability/Hadoop.Service.Availability.Status.png)
 
@@ -97,14 +96,6 @@ Das Verfahren für das SDK ist ähnlich. Die Erstellung und Bereitstellung eines
 
 - [ZooKeeper](http://zookeeper.apache.org/)
 - [Herstellen einer Verbindung zu HDInsight-Clustern mit RDP](hdinsight-administer-use-management-portal.md#rdp)
-- [Verwenden des HDInsight .NET SDK](hdinsight-provision-clusters.md#sdk) 
+- [Verwenden des HDInsight .NET SDK](hdinsight-provision-clusters.md#sdk)
 
-
-
-
-
-
-
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

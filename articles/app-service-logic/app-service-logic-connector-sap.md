@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/02/2015"
+   ms.date="08/19/2015"
    ms.author="sameerch"/>
 
 
@@ -52,7 +52,7 @@ Navigieren Sie zu der soeben erstellten API-App über "Durchsuchen" -> "API-Apps
 
 ![][2]
 
-Gehen Sie zum Einrichten der Hybridkonnektivität folgendermaßen vor:
+Der SAP-Connector erfordert eine Hybridkonnektivität zum Herstellen einer Verbindung mit einem *beliebigen* SAP-Endpunkt. Gehen Sie zum Einrichten der Hybridkonnektivität folgendermaßen vor:
 
 1. Kopieren Sie die primäre Verbindungszeichenfolge.
 2. Klicken Sie auf den Link "Herunterladen und konfigurieren".
@@ -85,6 +85,13 @@ Der Schritt/die Aktion wird nun als in der Logik-App konfiguriert angezeigt. Die
 
 Vervollständigen Sie die Logik-App, um den Geschäftsprozess zu definieren, und führen Sie sie dann aus, um den beabsichtigten Zweck zu erreichen.
 
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
+
 <!--Image references-->
 [1]: ./media/app-service-logic-connector-sap/Create.jpg
 [2]: ./media/app-service-logic-connector-sap/BrowseSetupIncomplete.jpg
@@ -94,4 +101,4 @@ Vervollständigen Sie die Logik-App, um den Geschäftsprozess zu definieren, und
 [6]: ./media/app-service-logic-connector-sap/LogicApp2.jpg
 [7]: ./media/app-service-logic-connector-sap/LogicApp3.jpg
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

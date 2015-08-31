@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Lernprogramm zu aktuellen Nachrichten mit Notification Hubs - Android" 
-	description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu aktuellen Nachrichten an Android-Geräte." 
-	services="notification-hubs" 
-	documentationCenter="android" 
-	authors="wesmc7777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Lernprogramm zu aktuellen Nachrichten mit Notification Hubs - Android"
+	description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu aktuellen Nachrichten an Android-Geräte."
+	services="notification-hubs"
+	documentationCenter="android"
+	authors="wesmc7777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="04/24/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="java"
+	ms.topic="article"
+	ms.date="08/18/2015" 
 	ms.author="wesmc"/>
 
 
@@ -37,7 +37,7 @@ Dieses Thema baut auf die App auf, die Sie in [Erste Schritte mit Notification H
 Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen Hauptaktivität hinzuzufügen, welche dem Benutzer die Auswahl der Kategorien für die Registrierung ermöglichen. Die durch den Benutzer ausgewählten Kategorien werden auf dem Gerät gespeichert. Wenn die App gestartet wird, wird eine Geräteregistrierung in Ihrem Notification Hub mit den ausgewählten Kategorien als Tags erstellt.
 
 1. Öffnen Sie die Datei „res/layout/activity\_main.xml“, und ersetzen Sie den Inhalt wie folgt:
-			
+
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		    xmlns:tools="http://schemas.android.com/tools"
 		    android:layout_width="match_parent"
@@ -48,7 +48,7 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 		    android:paddingTop="@dimen/activity_vertical_margin"
 		    tools:context="com.example.breakingnews.MainActivity"
 		    android:orientation="vertical">
-		
+
 		        <CheckBox
 		            android:id="@+id/worldBox"
 		            android:layout_width="wrap_content"
@@ -104,38 +104,38 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 
 		import java.util.HashSet;
 		import java.util.Set;
-		
+
 		import android.content.Context;
 		import android.content.SharedPreferences;
 		import android.os.AsyncTask;
 		import android.util.Log;
 		import android.widget.Toast;
-		
+
 		import com.google.android.gms.gcm.GoogleCloudMessaging;
-		import com.microsoft.windowsazure.messaging.NotificationHub;		
-		
+		import com.microsoft.windowsazure.messaging.NotificationHub;
+
 		public class Notifications {
 			private static final String PREFS_NAME = "BreakingNewsCategories";
 			private GoogleCloudMessaging gcm;
 			private NotificationHub hub;
 			private Context context;
 			private String senderId;
-			
+
 			public Notifications(Context context, String senderId) {
 				this.context = context;
 				this.senderId = senderId;
-				
+
 				gcm = GoogleCloudMessaging.getInstance(context);
 		        hub = new NotificationHub(<hub name>, <connection string with listen access>, context);
 			}
-			
+
 			public void storeCategoriesAndSubscribe(Set<String> categories)
 			{
 				SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 			    settings.edit().putStringSet("categories", categories).commit();
 			    subscribeToCategories(categories);
 			}
-			
+
 			public void subscribeToCategories(final Set<String> categories) {
 				new AsyncTask<Object, Object, Object>() {
 					@Override
@@ -149,7 +149,7 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 						}
 						return null;
 					}
-		
+
 					protected void onPostExecute(Object result) {
 						String message = "Subscribed for categories: "
 								+ categories.toString();
@@ -158,7 +158,7 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 					}
 				}.execute(null, null, null);
 			}
-			
+
 		}
 
 	Diese Klasse verwendet den lokalen Speicher, um Nachrichtenkategorien zu speichern, die das Gerät empfangen soll. Sie enthält zudem Methoden zum Registrieren dieser Kategorien.
@@ -172,25 +172,25 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 		// private GoogleCloudMessaging gcm;
 		// private NotificationHub hub;
 		private Notifications notifications;
- 
+
 5. Entfernen Sie dann in der **onCreate**-Methode die Initialisierung des **hub**-Felds und der **registerWithNotificationHubs**-Methode. Fügen Sie dann die folgenden Zeilen hinzu, die eine Instanz der Klasse **Notifications** initialisieren. Die Methode sollte die folgenden Zeilen enthalten:
 
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.activity_main);
-	
+
 			NotificationsManager.handleNotifications(this, SENDER_ID,
 					MyHandler.class);
-	
+
 			notifications = new Notifications(this, SENDER_ID);
 		}
 
 6. Fügen Sie anschließend die folgende Methode hinzu:
-	
+
 	    public void subscribe(View sender) {
 			final Set<String> categories = new HashSet<String>();
-	
+
 			CheckBox world = (CheckBox) findViewById(R.id.worldBox);
 			if (world.isChecked())
 				categories.add("world");
@@ -209,10 +209,10 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
 			CheckBox sports = (CheckBox) findViewById(R.id.sportsBox);
 			if (sports.isChecked())
 				categories.add("sports");
-	
+
 			notifications.storeCategoriesAndSubscribe(categories);
 	    }
-	
+
 	Diese Methode erstellt eine Liste von Kategorien und verwendet die **Notifications**-Klasse zum Speichern der Liste im lokalen Speicher sowie zum Registrieren der entsprechenden Tags bei Ihrem Notification Hub. Wenn Kategorien geändert werden, wird die Registrierung mit neuen Kategorien neu erstellt.
 
 Die App kann jetzt verschiedene Kategorien in einem lokalen Speicher auf dem Gerät speichern und beim Notification Hub registrieren, wenn der Benutzer die Auswahl der Kategorien ändert.
@@ -243,9 +243,9 @@ Durch diese Schritte findet beim Starten eine Registrierung beim Notification Hu
 		@Override
 		protected void onStart() {
 			super.onStart();
-			
+
 			Set<String> categories = notifications.retrieveCategories();
-			
+
 			CheckBox world = (CheckBox) findViewById(R.id.worldBox);
 			world.setChecked(categories.contains("world"));
 			CheckBox politics = (CheckBox) findViewById(R.id.politicsBox);
@@ -271,7 +271,7 @@ Die App kann ist jetzt vollständig und kann verschiedene Kategorien in einem lo
 ##Ausführen der App und Erzeugen von Benachrichtigungen
 
 1. Erstellen Sie die App in Eclipse, und starten Sie sie auf einem Gerät oder in einem Emulator.
-	
+
 	Die Benutzeroberfläche der App bietet verschiedene Umschaltmöglichkeiten, mit denen Sie die Kategorien auswählen können, die Sie abonnieren möchten.
 
 2. Aktivieren Sie eine oder mehrere Kategorien, und klicken Sie dann auf **Subscribe**.
@@ -317,6 +317,5 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

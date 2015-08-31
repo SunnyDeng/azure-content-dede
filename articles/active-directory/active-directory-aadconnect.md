@@ -103,8 +103,23 @@ Vor der Installation von Azure AD Connect mit Express-Einstellungen benötigen 
 - Azure AD Connect muss unter Windows Server 2008 oder höher installiert werden. Dieser Server kann ein Domänencontroller oder ein Mitgliedsserver sein.
 - Die AD-Schemaversion und die Gesamtstrukturebene müssen Windows Server 2003 oder höher entsprechen. Die Domänencontroller können eine beliebige Version ausführen, solange die Anforderungen an Schema und Gesamtstrukturebene erfüllt werden.
 - Wenn Active Directory-Verbunddienste bereitgestellt werden, müssen die Server, auf denen die Active Directory-Verbunddienste installiert werden, Windows Server 2012 oder höher ausführen.
+- Azure AD Connect erfordert eine SQL Server-Datenbank zum Speichern von Identitätsdaten. Standardmäßig wird SQL Server 2012 Express LocalDB (eine Light-Version von SQL Server Express) installiert, und das Dienstkonto für den Dienst wird auf dem lokalen Computer erstellt. Für SQL Server Express gilt ein 10-GB-Limit, mit dem Sie etwa 100.000 Objekte verwalten können.
+- Wenn Sie eine höhere Anzahl von Verzeichnisobjekten verwalten möchten, müssen Sie während der Installation auf eine andere Version von SQL Server verweisen. Azure AD Connect unterstützt sämtliche Versionen von Microsoft SQL Server – von SQL Server 2008 (mit SP4) bis hin zu SQL Server 2014.
 - Ein Enterprise-Administratorkonto für Ihr lokales Active Directory
-- Optional: Ein Testbenutzerkonto zur Überprüfung der Synchronisierung. 
+- Wenn Sie einen ausgehenden Proxy verwenden, muss die folgende Einstellung in der Datei **C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\Config\\machine.config** hinzugefügt werden, um die Installation abzuschließen. <code>
+		
+		<system.net>
+    		<defaultProxy>
+      		<proxy
+        	usesystemdefault="true"
+        	proxyaddress=http://<PROXYIP>:80"
+        	bypassonlocal="true"
+     		 />
+    		</defaultProxy>
+  		</system.net>
+</code> Dieser Text muss am Ende der Datei eingegeben werden. In diesem Codeabschnitt steht "&lt;PROXYIP&gt;" für die Proxy-IP-Adresse.
+
+- Optional: Ein Testbenutzerkonto zur Überprüfung der Synchronisierung.
 
 #### Hardwareanforderungen für Azure AD Connect
 Die folgende Tabelle zeigt die Mindestanforderungen für den Azure AD Connect-Computer.
@@ -258,4 +273,4 @@ Ignite 2015-Präsentation über die Erweiterung lokaler Verzeichnisse in die Cl
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="nitinme" 
 	manager="paulettm" 
-	editor="cgronlun"/>
+	editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags 
 	ms.service="hdinsight" 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/19/2015" 
+	ms.date="07/31/2015" 
 	ms.author="nitinme"/>
 
 
@@ -35,11 +36,13 @@ Sie benötigen Folgendes:
 
 ##<a name="hivetable"></a>Speichern von Rohdaten als Hive-Tabelle
 
-In diesem Abschnitt verwenden wir das [Jupyter](https://jupyter.org) Notebook, das einem Apache Spark-Cluster in HDInsight zugeordnet ist, zum Ausführen von Aufträgen, bei denen Ihre Beispielrohdaten verarbeitet und dann als Hive-Tabelle gespeichert werden. Die Beispieldaten sind in einer CSV-Datei \(hvac.csv\) enthalten, die standardmäßig auf allen Clustern verfügbar ist.
+In diesem Abschnitt verwenden wir das [Jupyter](https://jupyter.org) Notebook, das einem Apache Spark-Cluster in HDInsight zugeordnet ist, zum Ausführen von Aufträgen, bei denen Ihre Beispielrohdaten verarbeitet und dann als Hive-Tabelle gespeichert werden. Die Beispieldaten sind in einer CSV-Datei (hvac.csv) enthalten, die standardmäßig auf allen Clustern verfügbar ist.
 
 Nachdem Ihre Daten als Hive-Tabelle gespeichert wurden, können wir im nächsten Abschnitt eine Verbindung mit der Hive-Tabelle herstellen. Hierzu verwenden wir BI-Tools wie Power BI und Tableau.
 
-1. Starten Sie das Jupyter Notebook. Wählen Sie Ihren Spark-Cluster im Azure-Portal aus, und klicken Sie in der Taskleiste des Portals auf **Jupyter Notebook**. Geben Sie bei Aufforderung die Anmeldeinformationen für den Spark-Cluster ein.
+1. Klicken Sie im [Azure-Vorschauportal](https://ms.portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren. 
+ 
+2. Starten Sie [Jupyter](https://jupyter.org) Notebook. Klicken Sie auf dem Blatt mit dem Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Clusterdashboard** auf **Jupyter Notebook**. Geben Sie bei Aufforderung die Anmeldeinformationen für den Spark-Cluster ein.
 
 2. Erstellen Sie ein neues Notebook. Klicken Sie auf **Neu** und dann auf **Python2**.
 
@@ -49,7 +52,7 @@ Nachdem Ihre Daten als Hive-Tabelle gespeichert wurden, können wir im nächsten
 
 	![Angeben eines neuen Namens für das Notebook](./media/hdinsight-apache-spark-use-bi-tools/HDI.Spark.Note.Jupyter.Notebook.Name.png "Angeben eines neuen Namens für das Notebook")
 
-4. Importieren Sie die erforderlichen Module, und erstellen Sie die Spark- und Hive-Kontexte. Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABETASTE**.
+4. Importieren Sie die erforderlichen Module, und erstellen Sie die Spark- und Hive-Kontexte. Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABE**.
 
 		from pyspark import SparkContext
 		from pyspark.sql import *
@@ -59,13 +62,13 @@ Nachdem Ihre Daten als Hive-Tabelle gespeichert wurden, können wir im nächsten
 		sc = SparkContext('spark://headnodehost:7077', 'pyspark')
 		hiveCtx = HiveContext(sc)
 
-	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebook-Titel der Status **\(Busy\)** \(Beschäftigt\) angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **Python 2**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
+	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebook-Titel der Status **(Beschäftigt)** angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **Python 2**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
 
 	 ![Status eines Jupyter Notebook-Auftrags](./media/hdinsight-apache-spark-use-bi-tools/HDI.Spark.Jupyter.Job.Status.png "Status eines Jupyter Notebook-Auftrags")
 
 4. Laden Sie Beispieldaten in eine temporäre Tabelle. Wenn Sie einen Spark-Cluster in HDInsight bereitstellen, wird die Beispieldatei **hvac.csv** in das zugeordnete Speicherkonto unter **\\HdiSamples\\SensorSampleData\\hvac** kopiert.
 
-	Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABETASTE**. Mit diesem Codeausschnitt werden die Daten in einer Hive-Tabelle mit dem Namen **hvac** registriert.
+	Fügen Sie den folgenden Codeausschnitt in eine leere Zelle ein, und drücken Sie **UMSCHALT+EINGABE**. Mit diesem Codeausschnitt werden die Daten in einer Hive-Tabelle mit dem Namen **hvac** registriert.
 
 
 		# Create an RDD from sample data
@@ -80,7 +83,7 @@ Nachdem Ihre Daten als Hive-Tabelle gespeichert wurden, können wir im nächsten
 		hvacTable.registerAsTable("hvactemptable")
 		hvacTable.saveAsTable("hvac")
 
-5. Vergewissern Sie sich, dass die Tabelle erstellt wurde. Kopieren Sie den folgenden Codeausschnitt in eine leere Zelle im Notebook, und drücken Sie **UMSCHALT+EINGABETASTE**.
+5. Vergewissern Sie sich, dass die Tabelle erstellt wurde. Kopieren Sie den folgenden Codeausschnitt in eine leere Zelle im Notebook, und drücken Sie **UMSCHALT+EINGABE**.
 
 		hiveCtx.sql("SHOW TABLES").show()
 
@@ -91,9 +94,9 @@ Nachdem Ihre Daten als Hive-Tabelle gespeichert wurden, können wir im nächsten
 		hivesampletable false      
 		hvac            false
 
-	Nur die Tabellen, für die in der Spalte **isTemporary** „false“ angegeben ist, sind Hive-Tabellen, die im Metastore gespeichert werden und auf die mit den BI-Tools zugegriffen werden kann. In diesem Lernprogramm stellen wir eine Verbindung mit der gerade erstellten **hvac**-Tabelle her.
+	Nur die Tabellen, für die in der Spalte **isTemporary** „false“ angegeben ist, sind Hive-Tabellen, die im Metastore gespeichert werden und auf die mit den BI-Tools zugegriffen werden kann. In diesem Tutorial stellen wir eine Verbindung mit der gerade erstellten **hvac**-Tabelle her.
 
-6. Stellen Sie sicher, dass die Tabelle die gewünschten Daten enthält. Kopieren Sie den folgenden Codeausschnitt in eine leere Zelle im Notebook, und drücken Sie **UMSCHALT+EINGABETASTE**.
+6. Stellen Sie sicher, dass die Tabelle die gewünschten Daten enthält. Kopieren Sie den folgenden Codeausschnitt in eine leere Zelle im Notebook, und drücken Sie **UMSCHALT+EINGABE**.
 
 		hiveCtx.sql("SELECT * FROM hvac LIMIT 10").show()
 	
@@ -107,13 +110,13 @@ Nachdem Sie die Daten als Hive-Tabelle gespeichert haben, können Sie Power BI v
 
 1. Melden Sie sich bei [Power BI](http://www.powerbi.com/) an.
 
-2. Klicken Sie auf der Willkommen-Seite auf **Datenbanken und mehr**.
+2. Klicken Sie auf der Willkommensseite auf **Datenbanken und mehr**.
 
 	![Abrufen von Daten in Power BI](./media/hdinsight-apache-spark-use-bi-tools/HDI.Spark.PowerBI.Get.Data.png "Abrufen von Daten in Power BI")
 
 3. Klicken Sie auf dem nächsten Bildschirm auf **Spark** und dann auf **Verbinden**.
 
-4. Geben Sie auf der Spark für Azure HDInsight-Seite die Werte zum Herstellen der Verbindung mit Ihrem Spark-Cluster an, und klicken Sie auf **Verbinden**.
+4. Geben Sie auf der Seite für Spark für Azure HDInsight die Werte zum Herstellen der Verbindung mit Ihrem Spark-Cluster an, und klicken Sie auf **Verbinden**.
 
 	![Herstellen einer Verbindung mit einem Spark-Cluster unter HDInsight](./media/hdinsight-apache-spark-use-bi-tools/HDI.Spark.PowerBI.Connect.Spark.png "Herstellen einer Verbindung mit einem Spark-Cluster unter HDInsight")
 
@@ -131,7 +134,7 @@ Nachdem Sie die Daten als Hive-Tabelle gespeichert haben, können Sie Power BI v
 
 	![Erstellen von Visualisierungen](./media/hdinsight-apache-spark-use-bi-tools/HDI.Spark.PowerBI.Visual.1.png "Erstellen von Visualisierungen")
 
-	Wählen Sie außerdem **Bereichskarte** \(rot dargestellt\), um Ihre Daten zu visualisieren.
+	Wählen Sie außerdem **Bereichskarte** (rot dargestellt), um Ihre Daten zu visualisieren.
 
 8. Standardmäßig werden in der Visualisierung die Summe für **ActualTemp** und **TargetTemp** angezeigt. Wählen Sie für beide Felder in der Dropdownliste die Option **Mittelwert** aus, um für beide Gebäude den Mittelwert der Ist- und Zieltemperaturen zu erhalten.
 
@@ -159,7 +162,7 @@ Nachdem Sie die Daten als Hive-Tabelle gespeichert haben, können Sie Power BI v
 
 	![Suchen nach Schemas](./media/hdinsight-apache-spark-use-bi-tools/HDI.Spark.Tableau.Find.Schema.png "Suchen nach Schemas")
 
-4. Klicken Sie für das Feld **Tabelle** erneut auf das Symbol **Suchen**, um alle Hive-Tabellen aufzulisten, die im Cluster verfügbar sind. Daraufhin sollte die **hvac**-Tabelle angezeigt werden, die Sie mit dem Notebook erstellt haben.
+4. Klicken Sie für das Feld **Tabelle** erneut auf das Symbol **Suchen**, um alle Hive-Tabellen aufzulisten, die im Cluster verfügbar sind. Daraufhin sollte die **hvac**-Tabelle angezeigt werden, die Sie zuvor mit dem Notebook erstellt haben.
 
 	![Suchen nach Tabellen](./media/hdinsight-apache-spark-use-bi-tools/HDI.Spark.Tableau.Find.Table.png "Suchen nach Tabellen")
 
@@ -205,4 +208,4 @@ Nachdem Sie die Daten als Hive-Tabelle gespeichert haben, können Sie Power BI v
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Verwalten von Endpunkten in Traffic Manager"
+   pageTitle="Verwalten von Endpunkten in Traffic Manager | Microsoft Azure"
    description="Dieser Artikel bietet Informationen zum Hinzufügen, Entfernen, Aktivieren und Deaktivieren von Endpunkten in Traffic Manager."
    services="traffic-manager"
    documentationCenter=""
@@ -12,12 +12,12 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/27/2015"
-   ms.author="joaoma;cherylmc" />
+   ms.date="08/19/2015"
+   ms.author="joaoma" />
 
 # Hinzufügen, Deaktivieren, Aktivieren oder Löschen von Endpunkten
 
-Azure Websites stellt bereits Failover- Roundrobin-Lastenausgleichsfunktionen für Websites unabhängig vom Websitemodus in einem Datencenter zur Verfügung. Traffic Manager ermöglicht das Angeben von Failover- und Roundrobin-Lastenausgleich für Websites und Cloud-Dienste in verschiedenen Datencentern. Der erste erforderliche Schritt zum Bereitstellen dieser Funktionalität ist das Hinzufügen die Funktionen des Cloud-Dienst- oder Website-Endpunkts zu Traffic Manager.
+Azure Websites stellt bereits unabhängig vom Websitemodus Failover- und Roundrobin-Funktionen für das Routing von Datenverkehr für Websites in einem Datencenter zur Verfügung. Traffic Manager ermöglicht das Angeben des Failover- und Roundrobin-Routings von Datenverkehr für Websites und Clouddienste in verschiedenen Datencentern. Der erste erforderliche Schritt zum Bereitstellen dieser Funktionalität ist das Hinzufügen die Funktionen des Cloud-Dienst- oder Website-Endpunkts zu Traffic Manager.
 
 >[AZURE.NOTE]Sie können im Verwaltungsportal keine externe Speicherorte oder Traffic Manager-Profile als Endpunkte hinzufügen. Sie müssen die REST-API [Definition erstellen](http://go.microsoft.com/fwlink/p/?LinkId=400772) oder das Windows PowerShell-Cmdlet [Add-AzureTrafficManagerEndpoint](http://go.microsoft.com/fwlink/p/?LinkId=400774) verwenden.
 
@@ -36,7 +36,7 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 6. Wählen Sie die Websites in der Liste aus, um sie als Endpunkte für dieses Profil hinzuzufügen. Durch Löschen des Namen der Website wird diese aus der Liste der Endpunkte entfernt. Beachten Sie, dass Sie pro Azure-Datencenter (auch "Region" genannt) nur eine einzelne Website auswählen können. Wenn Sie eine Website in einem Datencenter auswählen, das mehrere Websites hostet, stehen nach Wahl der ersten Website die anderen im selben Datencenter nicht mehr zur Auswahl. Beachten Sie außerdem, dass nur Standardwebsites aufgelistet werden.
 7. Nachdem Sie die Endpunkte für dieses Profil ausgewählt haben, klicken Sie auf das Häkchen in der unteren rechten Ecke, um die Änderungen zu speichern.
 
->[AZURE.NOTE]Stellen Sie bei Verwendung der *Failover*-Lastenausgleichsmethode nach dem Hinzufügen oder Entfernen eines Endpunkts sicher, dass Sie die Failoverprioritätsliste auf der Seite Konfiguration entsprechend der für Ihre Konfiguration gewünschten Failoverreihenfolge anpassen. Weitere Informationen finden Sie unter [Konfigurieren der Lastenausgleichsmethode "Failover"](traffic-manager-configure-failover-load-balancing.md).
+>[AZURE.NOTE]Stellen Sie bei Verwendung der Methode *Failover* für das Routing von Datenverkehr nach dem Hinzufügen oder Entfernen eines Endpunkts sicher, dass Sie die Failoverprioritätsliste auf der Seite "Konfiguration" entsprechend der für Ihre Konfiguration gewünschten Failoverreihenfolge anpassen. Weitere Informationen finden Sie unter [Konfigurieren des Routings für Failoverdatenverkehr](traffic-manager-configure-failover-load-balancing.md).
 
 ## So deaktivieren Sie einen Endpunkt
 
@@ -68,7 +68,9 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 
 [Traffic Manager-Überwachung](traffic-manager-monitoring.md)
 
-[Traffic Manager-Konfigurationsaufgaben](https://msdn.microsoft.com/library/azure/hh744830.aspx)
+[Deaktivieren, Aktivieren oder Löschen eines Traffic Manager-Profils](disable-enable-or-delete-a-profile.md)
+
+[Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts](disable-or-enable-an-endpoint.md)
 
 [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/p/?LinkID=313584)
 
@@ -77,4 +79,4 @@ Sie können auch einzelne Endpunkte deaktivieren, die Teil eines Traffic Manager
 [Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

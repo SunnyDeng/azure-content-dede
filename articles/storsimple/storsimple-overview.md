@@ -4,9 +4,8 @@
    services="storsimple" 
    documentationCenter="NA" 
    authors="SharS" 
-   manager="AdinaH" 
+   manager="carolz" 
    editor=""/>
-
 
 <tags
    ms.service="storsimple"
@@ -14,9 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="08/03/2015"
+   ms.date="08/14/2015"
    ms.author="v-sharos@microsoft.com"/>
-
 
 # Was ist StorSimple? 
 
@@ -36,7 +34,7 @@ StorSimple verwendet zur Verwaltung von gespeicherten Daten auf verschiedenen Sp
 
 Zusätzlich zur Speicherverwaltung ermöglichen Ihnen StorSimple-Funktionen zum Schutz von Daten das Erstellen bedarfsgesteuerter und geplanter Sicherungen, und deren Speicherung entweder lokal oder in der Cloud. Sicherungen erfolgen in Form von inkrementellen Momentaufnahmen, sodass sie schnell erstellt und wiederhergestellt werden können. Cloud-Momentaufnahmen können bei Wiederherstellungen im Notfall extrem wichtig sein, da sie sekundäre Speichersystemen (z. B. Backup auf Bandlaufwerken) ersetzen und es Ihnen ermöglichen, Daten bei Bedarf in Ihrem Rechenzentrum oder an anderen Standorten wiederherzustellen.
 
->[AZURE.NOTE]Die StorSimple 8000-Serie mit Software Update 1 oder höher unterstützt Amazon S3 mit RRS, HP und OpenStack-Clouddiensten sowie Microsoft Azure. (Sie benötigen immer noch ein Microsoft Azure-Speicherkonto zur Geräteverwaltung.) Weitere Informationen finden Sie unter [Konfigurieren eines neuen Speicherkontos](storsimple-deployment-walkthrough.md#configure-a-new-storage-account) in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough-u1.md).
+>[AZURE.NOTE]Die StorSimple 8000-Serie mit Software Update 1 oder höher unterstützt Amazon S3 mit RRS, HP und OpenStack-Clouddiensten sowie Microsoft Azure. (Sie benötigen immer noch ein Microsoft Azure-Speicherkonto zur Geräteverwaltung.) Weitere Informationen finden Sie unter [Konfigurieren eines neuen Speicherkontos für den Dienst](storsimple-deployment-walkthrough.md#configure-a-new-storage-account-for-the-service).
 
 ## Gründe für die Verwendung von StorSimple
 
@@ -68,11 +66,11 @@ Die Microsoft Azure StorSimple-Lösung umfasst die folgenden Komponenten:
 
 ## Nächste Schritte
 
-Lesen Sie die [StorSimple-Lösungsübersicht](http://www.microsoft.com/de-de/server-cloud/products/storsimple/resources.aspx) und schauen Sie sich den [StorSimple-Vortrag](http://www.microsoft.com/de-de/server-cloud/products/storsimple/Features.aspx) an.
+Lesen Sie die [StorSimple-Lösungsübersicht zur Serie 8000](http://www.microsoft.com/server-cloud/products/storsimple/resources.aspx) und schauen Sie sich den [StorSimple-Vortrag](http://www.microsoft.com/server-cloud/products/storsimple/Features.aspx) an.
 
 Erfahren Sie mehr über [StorSimple-Komponenten und- Terminologie](storsimple-components.md).
 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

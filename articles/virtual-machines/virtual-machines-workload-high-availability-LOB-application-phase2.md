@@ -27,19 +27,19 @@ Diese Phase muss vor Beginn von [Phase 3](virtual-machines-workload-high-availab
 
 Zunächst müssen Sie in Tabelle M die Spalte **Name des virtuellen Computers** ausfüllen und die Größen der virtuellen Computer nach Bedarf in Spalte **Mindestgröße** ändern.
 
-Element | Name des virtuellen Computers | Gallery-Image | Mindestgröße 
+Element | Name des virtuellen Computers | Katalogimage | Mindestgröße 
 --- | --- | --- | --- 
-1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ \(erster Domänencontroller, Beispiel: DC1\) | Windows Server 2012 R2 Datacenter | Standard\_D1
-2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ \(zweiter Domänencontroller, Beispiel: DC2\) | Windows Server 2012 R2 Datacenter | Standard\_D1
-3\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ \(primärer Datenbankserver, Beispiel: SQL1\) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	Standard\_DS4
-4\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ \(sekundärer Datenbankserver, Beispiel: SQL2\) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	Standard\_DS4
-5\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ \(Mehrheitsknotenzeuge des Clusters, Beispiel: MN1\) | Windows Server 2012 R2 Datacenter | Standard\_D1
-6\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ \(erster Webserver, Beispiel: WEB1\) | Windows Server 2012 R2 Datacenter | Standard\_D3
-7\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ \(zweiter Webserver, Beispiel: WEB2\) | Windows Server 2012 R2 Datacenter | Standard\_D3
+1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (erster Domänencontroller, Beispiel: DC1) | Windows Server 2012 R2 Datacenter | Standard\_D1
+2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (zweiter Domänencontroller, Beispiel: DC2) | Windows Server 2012 R2 Datacenter | Standard\_D1
+3\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (primärer Datenbankserver, Beispiel: SQL1) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	Standard\_DS4
+4\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (sekundärer Datenbankserver, Beispiel: SQL2) | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | 	Standard\_DS4
+5\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (Mehrheitsknotenzeuge des Clusters, Beispiel: MN1) | Windows Server 2012 R2 Datacenter | Standard\_D1
+6\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (erster Webserver, Beispiel: WEB1) | Windows Server 2012 R2 Datacenter | Standard\_D3
+7\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (zweiter Webserver, Beispiel: WEB2) | Windows Server 2012 R2 Datacenter | Standard\_D3
 
 **Tabelle M: Virtuelle Computer für die Branchenanwendung mit hoher Verfügbarkeit in Azure**
 
-Einzelheiten zu den Größen der virtuellen Computer finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
+Einzelheiten zu den Größen der virtuellen Computer finden Sie unter [Größen für virtuelle Computer und Clouddienste](https://msdn.microsoft.com/library/azure/dn197896.aspx).
 
 Mit dem folgenden Azure PowerShell-Befehlsblock erstellen Sie die virtuellen Computer für die beiden Domänencontroller. Geben Sie die Werte für die Variablen ein, lassen Sie dabei aber die < and >-Zeichen weg. Die Werte für diesen PowerShell-Befehlsblock entnehmen Sie den folgenden Tabellen:
 
@@ -118,7 +118,7 @@ Als Nächstes müssen Sie dem ersten Domänencontroller den zusätzlichen Datent
 ### <a id="datadisk"></a>Initialisieren eines leeren Datenträgers
 
 1.	Klicken Sie im linken Bereich des Server-Managers auf **Datei- und Speicherdienste** und anschließend auf **Datenträger**.
-2.	Klicken Sie im Inhaltsbereich in der Gruppe **Datenträger** auf **Datenträger 2** \(wobei **Partition** die Einstellung **Unbekannt** aufweisen muss\).
+2.	Klicken Sie im Inhaltsbereich in der Gruppe **Datenträger** auf **Datenträger 2** (wobei **Partition** die Einstellung **Unbekannt** aufweisen muss).
 3.	Klicken Sie auf **Aufgaben** und anschließend auf **Neues Volume**.
 4.	Klicken Sie auf der Seite „Voraussetzungen“ des Assistenten für neue Volumes auf **Weiter**.
 5.	Klicken Sie auf der Seite „Server und Datenträger auswählen“ auf **Datenträger 2** und anschließend auf **Weiter**. Wenn Sie dazu aufgefordert werden, klicken Sie auf OK.
@@ -135,7 +135,7 @@ Testen Sie danach die Konnektivität des ersten Domänencontrollers mit Standort
 1.	Öffnen Sie vom Desktop eine Windows PowerShell-Eingabeaufforderung.
 2.	Testen Sie mit dem Befehl **Ping** die Konnektivität zu Namen und IP-Adressen von Ressourcen in Ihrem Unternehmensnetzwerk.
 
-Dadurch stellen Sie sicher, dass die DNS-Namensauflösung ordnungsgemäß funktioniert \(d. h., dass der virtuelle Computer korrekt für die lokalen DNS-Server konfiguriert ist\) und Pakete zum und vom standortübergreifenden virtuellen Netzwerk gesendet werden können. Wenn bei diesem grundlegenden Test ein Fehler auftritt, wenden Sie sich an Ihre IT-Abteilung, um die Probleme bei DNS-Namensauflösung und Paketübermittlung zu beheben.
+Dadurch stellen Sie sicher, dass die DNS-Namensauflösung ordnungsgemäß funktioniert (d. h., dass der virtuelle Computer korrekt für die lokalen DNS-Server konfiguriert ist) und Pakete zum und vom standortübergreifenden virtuellen Netzwerk gesendet werden können. Wenn bei diesem grundlegenden Test ein Fehler auftritt, wenden Sie sich an Ihre IT-Abteilung, um die Probleme bei DNS-Namensauflösung und Paketübermittlung zu beheben.
 
 Führen Sie danach an der Windows PowerShell-Eingabeaufforderung des ersten Domänencontrollers die folgenden Befehle aus:
 
@@ -159,18 +159,18 @@ Führen Sie danach an der Windows PowerShell-Eingabeaufforderung des zweiten Dom
 
 Sie werden aufgefordert, die Anmeldeinformationen eines Domänenadministratorkontos einzugeben. Der Computer wird neu gestartet.
 
-Anschließend müssen Sie die DNS-Server für Ihr virtuelles Netzwerk aktualisieren, damit Azure den virtuellen Computern die IP-Adressen der beiden neuen Domänencontroller als deren DNS-Server zuweist. Die für dieses Verfahren benötigten Werte stammen aus Tabelle V \(Einstellungen Ihres virtuellen Netzwerks\) und Tabelle M \(für Ihre virtuellen Computer\).
+Anschließend müssen Sie die DNS-Server für Ihr virtuelles Netzwerk aktualisieren, damit Azure den virtuellen Computern die IP-Adressen der beiden neuen Domänencontroller als deren DNS-Server zuweist. Die für dieses Verfahren benötigten Werte stammen aus Tabelle V (Einstellungen Ihres virtuellen Netzwerks) und Tabelle M (für Ihre virtuellen Computer).
 
-1.	Klicken Sie im linken Bereich des [Azure-Vorschauportals](https://portal.azure.com/) auf **Alle durchsuchen \> Virtuelle Netzwerke**, und klicken Sie dann auf den Namen Ihres virtuellen Netzwerks \(Tabelle V – Element 1 – Wertspalte\).
+1.	Klicken Sie im linken Bereich des [Azure-Vorschauportals](https://portal.azure.com/) auf **Alle durchsuchen > Virtuelle Netzwerke**, und klicken Sie dann auf den Namen Ihres virtuellen Netzwerks (Tabelle V – Element 1 – Wertspalte).
 2.	Klicken Sie im Bereich für Ihr virtuelles Netzwerk auf **Alle Einstellungen**.
 3.	Klicken Sie im Bereich **Einstellungen** auf **DNS-Server**.
 4.	Geben Sie im Bereich **DNS-Server** Folgendes ein:
 	- Für **Primärer DNS-Server**: Tabelle V – Element 6 – Wertspalte
 	- Für **Sekundärer DNS-Server**: Tabelle V – Element 7 – Wertspalte
-5.	Klicken Sie im Azure-Vorschauportal im linken Bereich auf **Alle durchsuchen \> Virtuelle Computer**.
-6.	Klicken Sie im Bereich **Virtuelle Computer** auf den Namen Ihres ersten Domänencontrollers \(Tabelle M – Element 1 – Spalte mit Namen der virtuellen Computer\).
+5.	Klicken Sie im Azure-Vorschauportal im linken Bereich auf **Alle durchsuchen > Virtuelle Computer**.
+6.	Klicken Sie im Bereich **Virtuelle Computer** auf den Namen Ihres ersten Domänencontrollers (Tabelle M – Element 1 – Spalte mit Namen der virtuellen Computer).
 7.	Klicken Sie im Bereich für den virtuellen Computer auf **Neu starten**.
-8.	Wenn der erste Domänencontroller gestartet wurde, klicken Sie im Bereich **Virtuelle Computer** auf den Namen des zweiten Domänencontrollers \(Tabelle M – Element 2 – Spalte mit Namen der virtuellen Computer\).
+8.	Wenn der erste Domänencontroller gestartet wurde, klicken Sie im Bereich **Virtuelle Computer** auf den Namen des zweiten Domänencontrollers (Tabelle M – Element 2 – Spalte mit Namen der virtuellen Computer).
 9.	Klicken Sie im Bereich für den virtuellen Computer auf **Neu starten**. Warten Sie, bis der zweite Domänencontroller gestartet ist.
 
 Die beiden Domänencontroller mussten neu gestartet werden, damit sie nicht mit dem lokalen DNS-Server als DNS-Server konfiguriert sind. Da es sich bei beiden selbst um DNS-Server handelt, wurden sie bei ihrer Heraufstufung auf Domänencontroller automatisch mit den lokalen DNS-Servern als DNS-Weiterleitung konfiguriert.
@@ -204,4 +204,6 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 3: Konfi
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=August15_HO7-->
+[Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
+
+<!---HONumber=August15_HO8-->

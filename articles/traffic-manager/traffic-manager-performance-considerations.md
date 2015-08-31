@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/17/2015"
+   ms.date="08/19/2015"
    ms.author="joaoma" />
 
 
@@ -85,9 +85,9 @@ Aus den oben stehenden Informationen wissen wir, dass sich die einzige Leistungs
 ## Nächste Schritte
 
 
-[Informationen zu Lastenausgleichsmethoden von Traffic Manager](traffic-manager-load-balancing-methods.md)
+[Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md)
 
-[Traffic Manager – Übersicht](../traffic-manmager-overview.md)
+[Was ist Traffic Manager?](../traffic-manmager-overview.md)
 
 [Cloud-Dienste](http://go.microsoft.com/fwlink/?LinkId=314074)
 
@@ -98,4 +98,4 @@ Aus den oben stehenden Informationen wissen wir, dass sich die einzige Leistungs
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

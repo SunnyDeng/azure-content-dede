@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal | Microsoft Azure"
+	pageTitle="Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Vorschauportal | Microsoft Azure"
 	description="Hier erfahren Sie, wie Sie den HDInsight-Dienst verwalten. Erstellen Sie ein HDInsight-Cluster, öffnen Sie die interaktive JavaScript-Konsole, und öffnen Sie die Hadoop-Befehlszeile."
 	services="hdinsight"
 	documentationCenter=""
+	tags="azure-portal"
 	authors="mumian"
 	manager="paulettm"
 	editor="cgronlun"/>
-
 
 <tags
 	ms.service="hdinsight"
@@ -14,22 +14,29 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/02/2015"
+	ms.date="08/11/2015"
 	ms.author="jgao"/>
 
+# Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Vorschauportal
 
-# Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal
+[AZURE.INCLUDE [Auswahl](../../includes/hdinsight-portal-management-selector.md)]
 
-Mit dem [Azure-Portal](https://manage.windowsazure.com) können Sie Hadoop-Cluster in Azure HDInsight bereitstellen, das Hadoop-Benutzerkennwort ändern und RDP (Remotedesktopprotokoll) aktivieren, sodass Sie auf die Hadoop-Befehlskonsole im Cluster zugreifen können.
+Mit dem [Azure-Vorschauportal][azure-portal] können Sie Hadoop-Cluster in Azure HDInsight bereitstellen, das Hadoop-Benutzerkennwort ändern und RDP (Remotedesktopprotokoll) aktivieren, sodass Sie auf die Hadoop-Befehlskonsole im Cluster zugreifen können.
 
-## Andere Tools zum Verwalten von HDInsight
-Neben dem Azure-Portal stehen auch andere Tools zum Verwalten von HDInsight zur Verfügung.
+[AZURE.INCLUDE [hdinsight-azure-preview-portal](../../includes/hdinsight-azure-preview-portal.md)]
 
-- Weitere Informationen zum Verwalten von HDInsight mit Azure PowerShell finden Sie unter [Verwalten von HDInsight mit Azure PowerShell](hdinsight-administer-use-powershell.md).
+* [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-management-portal-v1.md)
 
-- Weitere Informationen zum Verwalten von HDInsight mit der Azure-CLI finden Sie unter [Verwalten von HDInsight mit der Azure-CLI](hdinsight-administer-use-command-line.md).
+> [AZURE.NOTE]Die Schritte in diesem Dokument gelten für Windows-basierte Hadoop-Cluster. Informationen zur Verwendung von Linux-basierten Clustern finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Vorschauportal](hdinsight-administer-use-portal-linux.md).
 
-##Voraussetzungen
+
+
+> [AZURE.NOTE]Neben dem Azure-Vorschauportal stehen auch andere Tools zum Verwalten von HDInsight zur Verfügung.
+>
+> - [Verwalten von HDInsight mit Azure PowerShell](hdinsight-administer-use-powershell.md)
+> - [Verwalten von HDInsight mit der Azure-CLI](hdinsight-administer-use-command-line.md)
+
+**Voraussetzungen**
 
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
@@ -39,15 +46,9 @@ Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
 ##Bereitstellen von HDInsight-Clustern
 
-Mithilfe der Option "Schnellerfassung" oder "Benutzerdefiniert erstellen" können Sie HDInsight-Cluster über das Azure-Portal bereitstellen. Anweisungen finden Sie unter den folgenden Links:
+Informationen zur Bereitstellung mithilfe des Vorschauportals finden Sie unter [Bereitstellen von HDInsight-Clustern](hdinsight-provision-clusters.md#portal).
 
-- [Bereitstellen eines Clusters mithilfe von "Schnellerfassung"](../hdinsight-get-started.md#provision)
-- [Bereitstellen eines Clusters mithilfe von "Benutzerdefiniert erstellen"](hdinsight-provision-clusters.md#portal)
-
-[AZURE.INCLUDE [Datencenter-Liste](../../includes/hdinsight-pricing-data-centers-clusters.md)]
-
-
-##Anpassen von HDInsight-Clustern
+##Anpassen der Bereitstellung von HDInsight-Clustern
 
 In HDInsight kann eine Vielzahl von Hadoop-Komponenten verwendet werden. Eine Liste der überprüften und unterstützten Komponenten finden Sie unter [Neuheiten in den von HDInsight bereitgestellten Clusterversionen](hdinsight-component-versioning.md). Sie können HDInsight mit einer der folgenden Optionen anpassen:
 
@@ -63,65 +64,29 @@ In HDInsight kann eine Vielzahl von Hadoop-Komponenten verwendet werden. Eine Li
 
 Die Installation von benutzerdefinierter Software auf dem Cluster über eine Remotedesktopverbindung wird nicht unterstützt. Speichern Sie nach Möglichkeit keine Dateien auf den Laufwerken des Hauptknotens, da diese verloren gehen, wenn Sie die Cluster neu erstellen müssen. Wir empfehlen die Speicherung von Dateien im Azure-Blobspeicher. Blobspeicher ist persistent.
 
-##Ändern des Benutzernamens und Kennworts für einen HDInsight-Cluster
-Ein HDInsight-Cluster kann über zwei Benutzerkonten verfügen. Das Benutzerkonto des HDInsight-Clusters wird während der Bereitstellung erstellt. Sie können auch ein RDP-Benutzerkonto erstellen, um über das RDP auf den Cluster zuzugreifen. Weitere Informationen finden Sie unter [So aktivieren Sie den Remotedesktopzugriff](#connect-to-hdinsight-clusters-by-using-rdp).
+## Einführung in die Portaloberfläche für Cluster
 
-**So ändern Sie den Benutzernamen und das Kennwort für einen HDInsight-Cluster**
+**So greifen Sie auf den Cluster zu**
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) an.
-2. Klicken Sie im linken Bereich auf **HDINSIGHT**. Eine Liste bereitgestellter HDInsight-Cluster wird angezeigt.
-3. Klicken Sie auf den HDInsight-Cluster, dessen Benutzernamen und Kennwort Sie zurücksetzen möchten.
-4. Klicken Sie oben auf der Seite auf **KONFIGURATION**.
-5. Klicken Sie neben **HADOOP-DIENSTE** auf **AUS**.
-6. Klicken Sie unten auf der Seite auf **SPEICHERN**, und warten Sie, bis die Deaktivierung abgeschlossen ist.
-7. Nach der Deaktivierung des Diensts klicken Sie neben **HADOOP-DIENSTE** auf **EIN**.
-8. Geben Sie unter **BENUTZERNAME** und **NEUES KENNWORT** den neuen Benutzernamen bzw. das Kennwort für den Cluster ein.
-8. Klicken Sie auf **SPEICHERN**.
+1. Melden Sie sich beim [Vorschauportal][azure-portal] an.
+2. Klicken Sie im linken Menü auf **Alle durchsuchen**, um das Blatt **Durchsuchen** zu öffnen.
+3. Klicken Sie auf **HDInsight-Cluster**, um das Blatt **HDInsight-Cluster** zu öffnen.
+4. Klicken Sie auf einen der Cluster in der Liste, um das Blatt für den Cluster zu öffnen:
 
+	![HDInsight-Portal](./media/hdinsight-administer-use-management-portal/hdinsight.portal.cluster.blade.png)
 
-##Herstellen einer Verbindung zu HDInsight-Clustern mit RDP
+5. Klicken Sie auf **Einstellungen**, um die Konfigurationsdetails anzuzeigen und den Cluster zu konfigurieren:
 
-Mit den Anmeldeinformationen, die Sie bei der Erstellung des Clusters für dieses festgelegt haben, können Sie auf die Dienste im Cluster zugreifen, nicht jedoch über eine Remotedesktopverbindung auf den Cluster selbst. Der Remotedesktopzugriff ist standardmäßig deaktiviert, daher müssen nach der Erstellung einige zusätzliche Konfigurationsschritte durchgeführt werden, um den direkten Zugriff auf den Cluster mit dieser Methode zu ermöglichen.
+	![HDInsight-Portal Clustereinstellungen](./media/hdinsight-administer-use-management-portal/hdinsight.portal.cluster.settings.png)
 
-**So aktivieren Sie den Remotedesktopzugriff**
-
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) an.
-2. Klicken Sie im linken Bereich auf **HDINSIGHT**. Eine Liste bereitgestellter HDInsight-Cluster wird angezeigt.
-3. Klicken Sie auf den HDInsight-Cluster, zu dem Sie eine Verbindung herstellen möchten.
-4. Klicken Sie oben auf der Seite auf **KONFIGURATION**.
-5. Klicken Sie unten auf der Seite auf **REMOTE AKTIVIEREN**.
-6. Geben Sie im Assistenten **Remotedesktop konfigurieren** einen Benutzernamen und ein Kennwort für den Remotedesktop ein. Der Benutzername darf nicht mit dem Namen identisch sein, mit dem Sie den Cluster erstellt haben (bei Verwendung der Option "Schnellerfassung" standardmäßig **admin**). Geben Sie ein Ablaufdatum in das Feld **GÜLTIG BIS** ein. Beachten Sie, dass das Ablaufdatum in der Zukunft und maximal 90 Tage nach dem heutigen Tag liegen muss. Als Ablaufuhrzeit wird standardmäßig Mitternacht des angegebenen Datums angenommen. Klicken Sie dann auf das Häkchen.
-
-	![HDI.RDPBenutzerErstellen][image-hdi-create-rpd-user]
-
-
-> [AZURE.NOTE]Mit dem HDInsight .NET SDK können Sie auch Remotedesktop auf einem Cluster aktivieren. Verwenden Sie die **EnableRdp**-Methode folgendermaßen für das HDInsight-Client-Objekt: **client.EnableRdp(clustername, location, "rdpuser", "rdppassword", DateTime.Now.AddDays(6))**. Um Remotedesktop auf dem Cluster zu deaktivieren, können Sie auch **client.DisableRdp(clustername, location)** verwenden. Weitere Informationen zu diesen Methoden finden Sie unter [HDInsight .NET SDK-Referenz](http://go.microsoft.com/fwlink/?LinkId=529017). Dies gilt nur für HDInsight-Cluster unter Windows.
-
-
-
-> [AZURE.NOTE]Nach der Aktivierung von RDP für einen Cluster müssen Sie die Seite aktualisieren, bevor Sie eine Verbindung zum Cluster herstellen können.
-
-**So stellen Sie eine Verbindung über RDP mit dem Cluster her**
-
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) an.
-2. Klicken Sie im linken Bereich auf **HDINSIGHT**. Eine Liste bereitgestellter HDInsight-Cluster wird angezeigt.
-3. Klicken Sie auf den HDInsight-Cluster, zu dem Sie eine Verbindung herstellen möchten.
-4. Klicken Sie oben auf der Seite auf **KONFIGURATION**.
-5. Klicken Sie auf **VERBINDEN**, und befolgen Sie die Anweisungen.
-
-##Erstellen eines selbstsignierten Zertifikats
-
-Wenn Sie mithilfe des .NET-SDK Vorgänge auf dem Cluster ausführen möchten, müssen Sie ein selbstsigniertes Zertifikat auf der Arbeitsstation erstellen und das Zertifikat auch in Ihr Azure-Abonnement hochladen. Dies ist eine einmalige Aufgabe. Sie können dasselbe Zertifikat auf anderen Computern installieren, solange es gültig ist.
-
-**So erstellen Sie ein selbstsigniertes Zertifikat**
-
-1. Erstellen Sie ein selbstsigniertes Zertifikat für die Authentifizierung der Anfragen. Zum Erstellen des Zertifikats können Sie Internet Information Services (IIS) oder [Makecert](http://go.microsoft.com/fwlink/?LinkId=534000) verwenden.
-
-2. Navigieren Sie zum Speicherort des Zertifikats, klicken Sie mit der rechten Maustaste auf das Zertifikat, klicken Sie auf **Zertifikat installieren** und installieren Sie das Zertifikat im Zertifikatspeicher Ihres Computers. Bearbeiten Sie die Zertifikateigenschaften und geben Sie dem Zertifikat einen Anzeigenamen.
-
-3. Importieren Sie das Zertifikat in das Azure-Portal. Klicken Sie unten links im Portal auf **EINSTELLUNGEN** und anschließend auf **VERWALTUNGSZERTIFIKATE**. Klicken Sie am unteren Rand der Seite auf **HOCHLADEN**, und befolgen Sie die Anweisungen, um die CER-Datei hochzuladen, die Sie im vorigen Schritt erstellt haben.
-
-	![HDI.ClusterCreate.UploadCert][image-hdiclustercreate-uploadcert]
+	|Einstellung|Beschreibung|
+	|-----|-----|
+	|Eigenschaften| Clustereigenschaften anzeigen|
+	|Azure-Speicherschlüssel| Informationen zum standardmäßigen Azure-Speicherkonto anzeigen |
+	|Clusteranmeldung| Zugriff auf HTTP-Webdienste gewähren/widerrufen und Anmeldeinformationen für den Cluster konfigurieren |
+	|Externe Metastores| Informationen zum Hive/Oozie-Metastore anzeigen|
+	|Cluster skalieren| Anzahl der Workerknoten des Clusters erhöhen/verringern|
+	|Remotedesktop| Remotedesktopverbindung aktivieren/deaktivieren, über Remotedesktop eine Verbindung mit dem Cluster herstellen|
 
 
 ##Gewähren/Widerrufen von Zugriff auf HTTP-Dienste
@@ -140,13 +105,15 @@ Der Zugriff auf diese Dienste wird standardmäßig gewährt. Über das Azure-Por
 
 **So gewähren/widerrufen Sie den Zugriff auf HTTP-Webdienste**
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) an.
-2. Klicken Sie im linken Bereich auf **HDINSIGHT**. Eine Liste bereitgestellter HDInsight-Cluster wird angezeigt.
-3. Klicken Sie auf den HDInsight-Cluster, den Sie konfigurieren möchten.
-4. Klicken Sie oben auf der Seite auf **KONFIGURATION**.
-5. Klicken Sie neben **HADOOP-DIENSTE** auf **EIN** oder **AUS**.  
-6. Geben Sie unter **BENUTZERNAME** und **NEUES KENNWORT** den neuen Benutzernamen bzw. das Kennwort für den Cluster ein.
+1. Melden Sie sich beim [Vorschauportal][azure-portal] an.
+2. Klicken Sie im linken Menü auf **Alle durchsuchen**, klicken Sie auf **HDInsight-Cluster** und anschließend auf den Clusternamen.
+3. Klicken Sie im oberen Menü auf **Einstellungen** und anschließend auf **Clusteranmeldung**.
+5. Klicken Sie unter **Clusteranmeldezugriff** auf **EIN** oder **AUS**.  
+6. Geben Sie für **Clusterbenutzername** und **Clusteranmeldekennwort** den neuen Benutzernamen bzw. das Kennwort für den Cluster ein.
 7. Klicken Sie auf **SPEICHERN**.
+
+	![HDInsight HTTP-Webdienstzugriff gewähren widerrufen](./media/hdinsight-administer-use-management-portal/hdinsight.portal.change.username.password.png)
+
 
 Diese Aufgabe kann auch mithilfe der folgenden Azure PowerShell-Cmdlets ausgeführt werden:
 
@@ -155,20 +122,106 @@ Diese Aufgabe kann auch mithilfe der folgenden Azure PowerShell-Cmdlets ausgefü
 
 Siehe [Verwalten von HDInsight mit Azure PowerShell](hdinsight-administer-use-powershell.md)
 
+##Ändern von Benutzername und Kennwort für einen HDInsight-Cluster
+Ein HDInsight-Cluster kann über zwei Benutzerkonten verfügen. Das Benutzerkonto des HDInsight-Clusters wird während der Bereitstellung erstellt. Sie können auch ein RDP-Benutzerkonto erstellen, um über das RDP auf den Cluster zuzugreifen. Weitere Informationen finden Sie unter [So aktivieren Sie den Remotedesktopzugriff](#connect-to-hdinsight-clusters-by-using-rdp).
+
+**So ändern Sie den Benutzernamen und das Kennwort für einen HDInsight-Cluster**
+
+1. Melden Sie sich beim [Vorschauportal][azure-portal] an.
+2. Klicken Sie im linken Menü auf **Alle durchsuchen**, klicken Sie auf **HDInsight-Cluster** und anschließend auf den Clusternamen.
+3. Klicken Sie im oberen Menü auf **Einstellungen** und anschließend auf **Clusteranmeldung**.
+4. Ändern Sie den **Clusterbenutzernamen** und/oder das **Clusteranmeldekennwort**, und klicken Sie dann auf **Speichern**.
+
+	![HDInsight Clusterbenutzernamen ändern Clusterkennwort ändern HTTP-Benutzer](./media/hdinsight-administer-use-management-portal/hdinsight.portal.change.username.password.png)
+
+##Skalieren von Clustern
+Mithilfe der Clusterskalierung können Sie die Anzahl der von einem in Azure HDInsight ausgeführten Cluster verwendeten Workerknoten ändern, ohne den Cluster neu erstellen zu müssen.
+
+>[AZURE.NOTE]Es werden nur Cluster mit HDInsight-Versionen ab 3.1.3 unterstützt. Überprüfen Sie ggf. auf der Seite „Eigenschaften“ die Version Ihres Clusters. Siehe [Einführung in die Portaloberfläche für Cluster](hdinsight-adminster-use-management-portal/#Get-familiar-with-the-cluster-portal-interface).
+
+Auswirkungen der Änderung der Anzahl von Datenknoten für die von HDInsight unterstützten Clustertypen:
+
+- Hadoop
+
+	Sie können die Anzahl der Workerknoten in einem aktiven Hadoop-Cluster problemlos ohne Auswirkungen auf ausstehende oder aktive Aufträge erhöhen. Neue Aufträge können auch während des Vorgangs gesendet werden. Fehler bei einer Skalierung werden ordnungsgemäß behandelt, sodass der Cluster immer in einem funktionsfähigen Zustand verbleibt.
+
+	Wenn ein Hadoop-Cluster durch Verringern der Anzahl der Datenknoten zentral herunterskaliert wird, werden einige der Dienste im Cluster neu gestartet. Dies führt beim Abschluss des Skalierungsvorgangs bei allen aktiven und ausstehenden Aufträgen zu einem Fehler. Sie können die Aufträge jedoch nach Abschluss des Vorgangs erneut senden.
+
+- HBase
+
+	Sie können Knoten reibungslos Ihrem HBase-Cluster hinzufügen oder aus diesem entfernen, während er aktiv ist. Regionale Server werden innerhalb weniger Minuten nach Abschluss des Skalierungsvorgangs automatisch ausgeglichen. Allerdings können Sie die regionalen Server auch manuell ausgleichen, indem Sie sich am Hauptknoten des Clusters anmelden und in einem Eingabeaufforderungsfenster die folgenden Befehle ausführen:
+
+		>pushd %HBASE_HOME%\bin
+		>hbase shell
+		>balancer
+
+	Weitere Informationen zur Verwendung der HBase-Shell finden Sie unter
+- Storm
+
+	Sie können Datenknoten übergangslos zum Storm-Cluster hinzufügen oder aus diesem entfernen, während er aktiv ist. Nach erfolgreichen Abschluss des Skalierungsvorgangs müssen Sie die Topologie neu ausgleichen.
+
+	Es stehen zwei Methoden für den erneuten Ausgleich zur Verfügung:
+
+	* Storm-Webbenutzeroberfläche
+	* Befehlszeilenschnittstelle (CLI)
+
+	Weitere Informationen finden Sie in der Dokumentation zu [Apache Storm](http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html).
+
+	Die Storm-Webbenutzeroberfläche ist für den HDInsight-Cluster verfügbar:
+
+	![HDInsight Storm skalieren ausgleichen](./media/hdinsight-administer-use-management-portal/hdinsight.portal.scale.cluster.storm.rebalance.png)
+
+	Es folgt ein Beispiel, wie die Storm-Topologie mithilfe des CLI-Befehls neu ausgeglichen werden kann:
+
+		## Reconfigure the topology "mytopology" to use 5 worker processes,
+		## the spout "blue-spout" to use 3 executors, and
+		## the bolt "yellow-bolt" to use 10 executors
+
+		$ storm rebalance mytopology -n 5 -e blue-spout=3 -e yellow-bolt=10
+
+
+**So skalieren Sie Cluster**
+
+1. Melden Sie sich beim [Vorschauportal][azure-portal] an.
+2. Klicken Sie im linken Menü auf **Alle durchsuchen**, klicken Sie auf **HDInsight-Cluster** und anschließend auf den Clusternamen.
+3. Klicken Sie im oberen Menü auf **Einstellungen** und anschließend auf **Cluster skalieren**.
+4. Geben Sie die **Anzahl von Workerknoten** ein. Die maximal Anzahl von Clusterknoten variiert abhängig vom Azure-Abonnement. Sie können sich an den Azure-Abrechnungssupport wenden, falls Sie diese Begrenzung erhöhen möchten. Die Änderungen, die Sie an der Anzahl von Knoten vorgenommen haben, werden in den Kosteninformationen widergespiegelt.
+
+
+	![HDInsight Hadoop Hbase Storm Spark skalieren](./media/hdinsight-administer-use-management-portal/hdinsight.portal.scale.cluster.png)
+
+
+
+##Herstellen einer Verbindung zu HDInsight-Clustern mit RDP
+
+Mit den Anmeldeinformationen, die Sie bei der Erstellung des Clusters für dieses festgelegt haben, können Sie auf die Dienste im Cluster zugreifen, nicht jedoch über eine Remotedesktopverbindung auf den Cluster selbst. Sie können beim oder nach dem Bereitstellen eines Clusters den Remotedesktopzugriff aktivieren. Informationen zum Aktivieren von Remotedesktop bei der Bereitstellung finden Sie unter [Bereitstellen eines HDInsight-Clusters](hdinsight-provision-clusters.md).
+
+**So aktivieren Sie den Remotedesktopzugriff**
+
+1. Melden Sie sich beim [Vorschauportal][azure-portal] an.
+2. Klicken Sie im linken Menü auf **Alle durchsuchen**, klicken Sie auf **HDInsight-Cluster** und anschließend auf den Clusternamen.
+3. Klicken Sie im oberen Menü auf **Einstellungen** und anschließend auf **Remotedesktop**.
+4. Füllen Sie die Felder **Gültig bis**, **Remotedesktopbenutzername** und **Remotedesktopkennwort** aus, und klicken Sie dann auf **Aktivieren**.
+
+	![HDInsight Remotedesktop aktivieren deaktivieren konfigurieren](./media/hdinsight-administer-use-management-portal/hdinsight.portal.remote.desktop.png)
+
+	Der Standardwert für „Gültig bis“ ist eine Woche.
+> [AZURE.NOTE]Mit dem HDInsight .NET SDK können Sie auch Remotedesktop auf einem Cluster aktivieren. Verwenden Sie die **EnableRdp**-Methode folgendermaßen für das HDInsight-Client-Objekt: **client.EnableRdp(clustername, location, "rdpuser", "rdppassword", DateTime.Now.AddDays(6))**. Um Remotedesktop auf dem Cluster zu deaktivieren, können Sie auch **client.DisableRdp(clustername, location)** verwenden. Weitere Informationen zu diesen Methoden finden Sie unter [HDInsight .NET SDK-Referenz](http://go.microsoft.com/fwlink/?LinkId=529017). Dies gilt nur für HDInsight-Cluster unter Windows.
+
+**So stellen Sie eine Verbindung über RDP mit dem Cluster her**
+
+1. Melden Sie sich beim [Vorschauportal][azure-portal] an.
+2. Klicken Sie im linken Menü auf **Alle durchsuchen**, klicken Sie auf **HDInsight-Cluster** und anschließend auf den Clusternamen.
+3. Klicken Sie im oberen Menü auf **Einstellungen** und anschließend auf **Remotedesktop**.
+4. Klicken Sie auf **Verbinden**, und folgen Sie den Anweisungen. Falls „Verbinden“ deaktiviert ist, müssen Sie diese Option zunächst aktivieren. Achten Sie darauf, dass Sie den Benutzernamen und das Kennwort für Remotedesktop verwenden. Es ist nicht möglich die Benutzeranmeldeinformationen des Clusters zu verwenden.
+
 ##Öffnen Sie eine Hadoop-Befehlszeile.
 
 Wenn Sie die Verbindung zum Cluster über den Remotedesktop herstellen und die Hadoop-Befehlszeile verwenden möchten, müssen Sie zuerst den Remotedesktopzugriff auf dem Cluster aktivieren, wie im vorherigen Abschnitt beschrieben.
 
 **So öffnen Sie eine Hadoop-Befehlszeile**
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) an.
-2. Klicken Sie im linken Bereich auf **HDINSIGHT**. Sie sehen eine Liste bereitgestellter Hadoop-Cluster.
-3. Klicken Sie auf den HDInsight-Cluster, zu dem Sie eine Verbindung herstellen möchten.
-3. Klicken Sie oben auf der Seite auf **KONFIGURATION**.
-4. Klicken Sie unten auf der Seite auf **CONNECT**.
-5. Klicken Sie auf **Öffnen**.
-6. Geben Sie Ihre Anmeldeinformationen ein, und klicken Sie auf **OK**. Verwenden Sie den Benutzernamen und das Kennwort, den bzw. das Sie bei der Erstellung des Clusters konfiguriert haben.
-7. Klicken Sie auf **Ja**.
+1. Stellen Sie per Remotedesktop eine Verbindung mit dem Cluster her.
 8. Doppelklicken Sie auf dem Desktop auf **Hadoop Command Line**.
 
 	![HDI.HadoopCommandLine][image-hadoopcommandline]
@@ -176,19 +229,18 @@ Wenn Sie die Verbindung zum Cluster über den Remotedesktop herstellen und die H
 
 	Weitere Informationen zu Hadoop-Befehlen finden Sie in der [Hadoop-Befehlsreferenz](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/CommandsManual.html) (in englischer Sprache).
 
-Im vorherigen Screenshot ist die Hadoop-Versionsnummer im Ordnernamen enthalten. Die Versionsnummer kann sich je nach den im Cluster installierten Hadoop-Komponenten ändern. Sie können mithilfe von Hadoop-Umgebungsvariablen auf diese Ordner verweisen. Zum Beispiel:
+Im vorherigen Screenshot ist die Hadoop-Versionsnummer im Ordnernamen enthalten. Die Versionsnummer kann sich je nach den im Cluster installierten Hadoop-Komponenten ändern. Sie können mithilfe von Hadoop-Umgebungsvariablen auf diese Ordner verweisen. Beispiel:
 
 	cd %hadoop_home%
 	cd %hive_home%
+	cd %hbase_home%
 	cd %pig_home%
 	cd %sqoop_home%
 	cd %hcatalog_home%
 
-##Skalieren von Clustern
-Siehe [Skalieren von Hadoop-Clustern in HDInsight](hdinsight-hadoop-cluster-scaling.md).
 
 ##Nächste Schritte
-In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Azure-Portal erstellt und wie das Hadoop-Befehlszeilentool geöffnet wird. Weitere Informationen finden Sie in den folgenden Artikeln:
+In diesem Artikel haben Sie erfahren, wie Sie mit dem Azure-Vorschauportal einen HDInsight-Cluster erstellen und das Hadoop-Befehlszeilentool öffnen. Weitere Informationen finden Sie in den folgenden Artikeln:
 
 * [Verwalten von HDInsight mit Azure PowerShell](hdinsight-administer-use-powershell.md)
 * [Verwalten von HDInsight mit der Azure-CLI](hdinsight-administer-use-command-line.md)
@@ -197,11 +249,11 @@ In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Azure-Po
 * [Erste Schritte mit Azure HDInsight](../hdinsight-get-started.md)
 * [Welche Hadoop-Version wird in Azure HDInsight verwendet?](hdinsight-component-versioning.md)
 
+[azure-portal]: https://portal.azure.com
 [image-cluster-quickcreate]: ./media/hdinsight-administer-use-management-portal/HDI.QuickCreateCluster.png
 [image-cluster-landing]: ./media/hdinsight-administer-use-management-portal/HDI.ClusterLanding.PNG "Cluster-Angebotsseite"
 [image-hdi-create-rpd-user]: ./media/hdinsight-administer-use-management-portal/HDI.CreateRDPUser.png
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-management-portal/HDI.HadoopCommandLine.PNG "Hadoop-Befehlszeile"
 [image-hdiclustercreate-uploadcert]: ./media/hdinsight-administer-use-management-portal/HDI.ClusterCreate.UploadCert.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

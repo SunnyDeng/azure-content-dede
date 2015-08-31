@@ -12,9 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/27/2015"
+   ms.date="08/19/2015"
    ms.author="joaoma" />
-
 
 
 
@@ -207,9 +206,9 @@ Diese Sequenz kann auch weitergeleitet werden:
 
 ## Siehe auch
 
-[Traffic Manager – Übersicht](traffic-manager-overview.md)
+[Was ist Traffic Manager?](traffic-manager-overview.md)
 
 [Erste Schritte mit Azure-Cmdlets](https://msdn.microsoft.com/library/jj554332.aspx)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

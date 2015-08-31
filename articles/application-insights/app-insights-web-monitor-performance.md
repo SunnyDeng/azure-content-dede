@@ -102,11 +102,16 @@ Um andere verfügbare Metriken aufzurufen, klicken Sie auf einen Graphen und wä
 
 Wenn Sie eine Metrik auswählen, werden alle anderen deaktiviert, die nicht im selben Diagramm angezeigt werden können.
 
-## Sammeln weiterer Leistungsindikatoren
+## Systemleistungsindikatoren
 
 Einige der Metriken, aus denen Sie auswählen können, sind [Leistungsindikatoren](http://www.codeproject.com/Articles/8590/An-Introduction-To-Performance-Counters). Windows bietet eine Vielzahl solcher Indikatoren, und Sie können auch eigene definieren.
 
-Wenn sich die gewünschten Leistungsindikatoren nicht in der Liste befinden, können Sie sie zum SDK-Satz hinzufügen. Öffnen Sie die Datei "ApplicationInsights.config", und bearbeiten Sie die Sammlerdirektive für Leistungsdaten:
+Dieses Beispiel zeigt die Leistungsindikatoren, die standardmäßig verfügbar sind. Wir haben für jeden Leistungsindikator [ein eigenes Diagramm hinzugefügt](app-insights-metrics-explorer.md#editing-charts-and-grids) und das Diagramm benannt, indem wir es [als Favorit speichern](app-insights-metrics-explorer.md#editing-charts-and-grids):
+
+![](./media/app-insights-web-monitor-performance/sys-perf.png)
+
+
+Wenn sich die gewünschten Leistungsindikatoren nicht in der Eigenschaftenliste befinden, können Sie sie zum SDK-Satz hinzufügen. Öffnen Sie die Datei "ApplicationInsights.config", und bearbeiten Sie die Sammlerdirektive für Leistungsdaten:
 
     <Add Type="Microsoft.ApplicationInsights.Extensibility.PerfCollector.PerformanceCollectorModule, Microsoft.ApplicationInsights.Extensibility.PerfCollector">
       <Counters>
@@ -115,7 +120,7 @@ Wenn sich die gewünschten Leistungsindikatoren nicht in der Liste befinden, kö
       </Counters>
     </Add>
 
-Das Format lautet `\Category(instance)\Counter"` bzw. für Kategorien, die keine Instanzen besitzen, einfach `\Category\Counter`.
+Das Format lautet `\Category(instance)\Counter"` bzw. für Kategorien, die keine Instanzen besitzen, einfach `\Category\Counter`. Um zu ermitteln, welche Indikatoren in Ihrem System verfügbar sind, lesen Sie [diese Einführung](http://www.codeproject.com/Articles/8590/An-Introduction-To-Performance-Counters).
 
 `ReportAs` ist für Leistungsindikatornamen erforderlich, die andere Zeichen als die folgenden enthalten: Buchstaben, runde Klammern, Schrägstriche, Bindestriche, Unterstriche, Leerzeichen und Punkte.
 
@@ -178,4 +183,4 @@ Im Folgenden finden Sie einige Tipps zum Feststellen und Diagnostizieren von Lei
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erste Schritte mit SQL-Datenbank"
-	description="Erstellen Sie Ihre erste Clouddatenbank in wenigen Minuten mit Azure SQL-Datenbank, dem relationalen Datenbankverwaltungsdienst (RDBMS) von Microsoft in der Cloud, mit dem Azure-Verwaltungsportal und der AdventureWorks-Beispieldatenbank."
+	pageTitle="Erste Schritte mit SQL-Datenbank | Microsoft Azure"
+	description="Erstellen Sie Ihre erste Clouddatenbank in wenigen Minuten mit Azure SQL-Datenbank, dem relationalen Datenbankverwaltungsdienst (RDBMS) von Microsoft in der Cloud, mit dem Azure-Portal und der AdventureWorks-Beispieldatenbank."
 	services="sql-database"
 	documentationCenter=""
 	authors="MightyPen"
@@ -46,8 +46,8 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie ein Azure-Abonnement bes
 
 
 
-1. Wählen Sie auf dem Blatt "SQL-Datenbank" einen **Namen** für Ihre Datenbank aus, in diesem Beispiel **AdventureWorks**.
-2. Um den logischen Server für die Datenbank zu erstellen, klicken Sie auf **Server** und dann auf **Create a new server**.
+1. Wählen Sie auf dem Blatt **SQL-Datenbank** einen **Namen** für Ihre Datenbank aus, in diesem Beispiel **AdventureWorks**.
+2. Um den logischen Server für die Datenbank zu erstellen, klicken Sie auf **Server** und dann auf **Neuen Server erstellen**.
 
 
 ## Schritt 3: Konfigurieren des Servers
@@ -66,7 +66,7 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie ein Azure-Abonnement bes
 ## Schritt 4: Erstellen der Datenbank
 
 
-1. Geben Sie auf dem Blatt "SQL-Datenbank" die Quelle der Datenbank an, indem Sie auf **Quelle auswählen** klicken.
+1. Geben Sie auf dem Blatt **SQL-Datenbank** die Quelle der Datenbank an, indem Sie auf **Quelle auswählen** klicken.
  - Wenn Sie diesen Schritt überspringen, wird eine leere Datenbank erstellt.
 2. Wählen Sie **Beispiel** aus.
  - Dies erstellt eine Kopie der Standard-Beispieldatenbank mit dem Namen **AdventureWorks**.
@@ -86,7 +86,7 @@ Die folgenden Schritte veranschaulichen, wie Sie die IP-Adressbereiche mit Zugri
 1. Klicken Sie im Menüband auf der linken Seite des Bildschirms auf **Durchsuchen** und dann auf **SQL Server**.
 2. Wählen Sie aus den verfügbaren Optionen den SQL Server aus, den Sie zuvor erstellt haben.
 3. Klicken Sie auf **Einstellungen** und dann auf **Firewall**.
-4. Klicken Sie auf diesen Link, um Ihre aktuelle IP-Adresse von [Bing](http://www.bing.com/search?q=my%20ip%20address) abzurufen.
+4. Rufen Sie Ihre aktuelle IP-Adresse von [Bing](http://www.bing.com/search?q=my%20ip%20address) ab.
 5. Geben Sie in den Firewalleinstellungen einen **Regelnamen** ein, und fügen Sie die öffentliche IP-Adresse aus dem vorherigen Schritt in die Felder **Start-IP** und **End-IP** ein.
 6. Klicken Sie anschließend oben auf der Seite auf **Speichern**.
 
@@ -100,7 +100,7 @@ Die folgenden Schritte veranschaulichen, wie Sie die IP-Adressbereiche mit Zugri
 Sie können nun ein kleines Clientprogramm schreiben, das eine Verbindung mit der Datenbank herstellen kann. Für ein kurzes Codebeispiel klicken Sie auf einen der folgenden Links:
 
 
-- [Verbinden mit und Abfragen der SQL-Datenbank mit C#](sql-database-connect-query.md)
+- [Verbinden mit und Abfragen der SQL-Datenbank mit C\#](sql-database-connect-query.md)
 - *In Kürze verfügbar*: Codebeispiele für die Cliententwicklung und erste Schritte mit SQL-Datenbank
 
 
@@ -109,6 +109,5 @@ Sie können nun ein kleines Clientprogramm schreiben, das eine Verbindung mit de
 [2]: ./media/sql-database-get-started/GettingStarted_CreateServer.png
 [3]: ./media/sql-database-get-started/GettingStarted_BrowseServer.png
 [4]: ./media/sql-database-get-started/GettingStarted_FireWall.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

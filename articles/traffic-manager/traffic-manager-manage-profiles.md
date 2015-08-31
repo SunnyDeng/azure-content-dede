@@ -12,27 +12,28 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/27/2015"
+   ms.date="08/19/2015"
    ms.author="joaoma" />
 
 # Verwalten von Azure Traffic Manager-Profilen
 
-Sie verwenden ein Traffic Manager-Profil um anzugeben, welche Endpunkte für Clouddienste oder Websites von Traffic Manager überwacht werden und welche Lastenausgleichsmethode Sie für das Verteilen der Verbindungen mit diesen Endpunkten verwenden möchten.
+Sie verwenden ein Traffic Manager-Profil um anzugeben, welche Endpunkte für Clouddienste oder Websites von Traffic Manager überwacht werden und welche Routingmethode für Datenverkehr Sie für das Verteilen der Verbindungen mit diesen Endpunkten verwenden möchten.
 
 ## Erstellen von Traffic Manager-Profilen mithilfe der "Schnellerfassung"
 
-Sie können sehr schnell ein Traffic Manager-Profil erstellen, indem Sie im Azure-Portal die "Schnellerfassung" verwenden. Mit der Schnellerfassung können Sie Profile mit grundlegenden Konfigurationseinstellungen erstellen. Allerdings können Sie die Schnellerfassung nicht für Einstellungen wie die Gruppe von Endpunkten (Cloud-Dienste und Websites), die Failoverreihenfolge für die Failover-Lastenausgleichsmethode oder die Überwachungseinstellungen verwenden. Nach dem Erstellen Ihres Profils können Sie diese Einstellungen im Azure-Portal konfigurieren. Traffic Manager unterstützt bis zu 200 Endpunkte pro Profil. Die meisten Verwendungsszenarien erfordern jedoch nur eine kleine Anzahl von Endpunkten. Eine Liste der Konfigurationsschritte finden Sie unter [Traffic Manager-Konfigurationsaufgaben](https://msdn.microsoft.com/library/azure/hh744830.aspx).
+Sie können sehr schnell ein Traffic Manager-Profil erstellen, indem Sie im Azure-Portal die "Schnellerfassung" verwenden. Mit der Schnellerfassung können Sie Profile mit grundlegenden Konfigurationseinstellungen erstellen. Allerdings können Sie die Schnellerfassung nicht für Einstellungen wie die Gruppe von Endpunkten (Clouddienste und Websites), die Failoverreihenfolge für die Routingmethode für Failoverdatenverkehr oder die Überwachungseinstellungen verwenden. Nach dem Erstellen Ihres Profils können Sie diese Einstellungen im Azure-Portal konfigurieren. Traffic Manager unterstützt bis zu 200 Endpunkte pro Profil. Die meisten Verwendungsszenarien erfordern jedoch nur eine kleine Anzahl von Endpunkten.
 
 ### So erstellen Sie ein neues Traffic Manager-Profil
 
-1. **Stellen Sie Ihre Clouddienste und Websites in der Produktionsumgebung bereit.** Weitere Informationen zu Clouddiensten finden Sie unter [Clouddienste](http://go.microsoft.com/fwlink/p/?LinkId=314074). Weitere Informationen zu Clouddiensten finden Sie unter [Bewährte Methoden](https://msdn.microsoft.com/library/azure/5229dd1c-5a91-4869-8522-bed8597d9cf5#bkmk_TrafficManagerBestPracticesProfile). Weitere Informationen zu Websites finden Sie unter [Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327).
+1. **Stellen Sie Ihre Clouddienste und Websites in der Produktionsumgebung bereit.** Weitere Informationen zu Clouddiensten finden Sie unter [Clouddienste](http://go.microsoft.com/fwlink/p/?LinkId=314074). Informationen zu Clouddiensten finden Sie unter [Bewährte Methoden](https://msdn.microsoft.com/library/azure/5229dd1c-5a91-4869-8522-bed8597d9cf5#bkmk_TrafficManagerBestPracticesProfile). Weitere Informationen zu Websites finden Sie unter [Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327).
 
-2. **Melden Sie sich beim Azure-Portal an.** Um ein neues Traffic Manager-Profil zu erstellen, klicken Sie unten links im Portal auf **Neu**. Klicken Sie auf **Netzwerkdienste > Traffic Manager** und dann auf **Schnellerfassung**, um mit der Konfiguration des Profils zu beginnen.
+2. **Melden Sie sich beim Azure-Portal an.** Um ein neues Traffic Manager-Profil zu erstellen, klicken Sie links unten im Portal auf **Neu**. Klicken Sie auf **Netzwerkdienste > Traffic Manager** und dann auf **Schnellerfassung**, um mit der Konfiguration des Profils zu beginnen.
 3. **Konfigurieren Sie das DNS-Präfix.** Geben Sie Ihre Traffic Manager-Profilen einen eindeutigen DNS-Präfixnamen. Sie können nur das Präfix für einen Traffic Manager-Domänennamen angeben.
 4. **Wählen Sie das Abonnement.** Wählen Sie das entsprechende Azure-Abonnement. Jedes Profil ist einem einzelnen Abonnement zugeordnet. Wenn Sie nur über ein Abonnement verfügen, wird diese Option nicht angezeigt.
-5. **Wählen Sie die Lastenausgleichsmethode.** Wählen Sie die Lastenausgleichsmethode in **Load Balancing Policy** aus. Weitere Informationen zu den Lastenausgleichsmethoden finden Sie unter [Informationen zu Lastenausgleichsmethoden von Traffic Manager](traffic-manager-load-balancing-methods.md).
+5. **Wählen Sie die Routingmethode für Datenverkehr aus.** Wählen Sie die Routingmethode für Datenverkehr in der **Routingrichtlinie für Datenverkehr** aus. Weitere Informationen zu Routingmethoden für Datenverkehr finden Sie unter [Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md).
 6. **Klicken Sie auf "Erstellen", um ein neues Profil zu erstellen**. Nach Abschluss der Profilkonfiguration finden Sie Ihr Profil im Azure-Portal im Bereich "Traffic Manager".
-7. **Konfigurieren Sie Endpunkte, Überwachung und weitere Einstellungen im Azure-Portal.** Da Sie mithilfe der Schnellerfassung nur grundlegende Einstellungen konfigurieren können, ist es notwendig, zusätzliche Einstellungen, z. B. die Liste der Endpunkte und deren Failoverreihenfolge zu konfigurieren, um die gewünschte Konfiguration abzuschließen. Eine Liste der Aufgaben zum Vervollständigen der Konfiguration finden Sie unter [Traffic Manager-Konfigurationsaufgaben](https://msdn.microsoft.com/library/azure/hh744830.aspx).
+7. **Konfigurieren Sie Endpunkte, Überwachung und weitere Einstellungen im Azure-Portal.** Da Sie mithilfe der Schnellerfassung nur grundlegende Einstellungen konfigurieren können, ist es notwendig, zusätzliche Einstellungen, z. B. die Liste der Endpunkte und deren Failoverreihenfolge zu konfigurieren, um die gewünschte Konfiguration abzuschließen. 
+
 
 ## Deaktivieren, Aktivieren oder Löschen von Profilen
 
@@ -74,13 +75,15 @@ Sie können den Änderungsverlauf für Ihr Traffic Manager-Profil im Azure-Porta
 
 ## Zusätzliche Ressourcen
 
-[Traffic Manager – Übersicht](traffic-manager-overview.md)
+[Was ist Traffic Manager?](traffic-manager-overview.md)
 
 [Verwalten von Endpunkten in Traffic Manager](traffic-manager-endpoints.md)
 
 [Traffic Manager-Überwachung](traffic-manager-monitoring.md)
 
-[Traffic Manager-Konfigurationsaufgaben](https://msdn.microsoft.com/library/azure/hh744830.aspx)
+[Deaktivieren, Aktivieren oder Löschen eines Traffic Manager-Profils](disable-enable-or-delete-a-profile.md)
+
+[Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts](disable-or-enable-an-endpoint.md)
 
 [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/p/?LinkID=313584)
 
@@ -88,4 +91,4 @@ Sie können den Änderungsverlauf für Ihr Traffic Manager-Profil im Azure-Porta
 
 [Websites](http://go.microsoft.com/fwlink/p/?LinkId=393327)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

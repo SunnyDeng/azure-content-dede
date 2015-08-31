@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="08/11/2015"
+   ms.date="08/17/2015"
    ms.author="v-sharos"/>
 
 # StorSimple-Sicherheit 
@@ -135,7 +135,7 @@ Der Hauptzweck des StorSimple-Manager-Diensts ist die Verwaltung und Konfigurati
 > [AZURE.IMPORTANT]
 > 
 > * Der Verschlüsselungsschlüssel für Dienstdaten wird nur auf dem ersten Gerät generiert, das beim Dienst registriert wird. Alle nachfolgenden Geräte, die beim Dienst registriert werden, müssen denselben Verschlüsselungsschlüssel für Dienstdaten verwenden. Es ist sehr wichtig, Sie eine Kopie dieses Schlüssels zu erstellen und ihn an einem sicheren Ort aufzubewahren. Die Kopie des Verschlüsselungsschlüssels für Dienstdaten muss so gespeichert werden, dass autorisierte Personen darauf zugreifen und er problemlos dem Geräteadministrator mitgeteilt werden kann.
-> * Sie können den Verschlüsselungsschlüssel für Dienstdaten und das entsprechende Datenverschlüsselungszertifikat ändern, indem Sie im Dashboard des Diensts die Option **Verschlüsselungsschlüssel für Dienstdaten ändern** auswählen. Die Änderung der Verschlüsselungsschlüssel erfordert, dass alle Geräte mit dem neuen Schlüssel aktualisiert werden. Daher wird empfohlen, den Schlüssel zu ändern, wenn alle Geräte online sind. Wenn Geräte offline sind, können ihre Schlüssel zu einem anderen Zeitpunkt geändert werden. Die Geräte mit abgelaufenen Schlüsseln können weiterhin Sicherungen ausführen, aber Daten erst nach der Aktualisierung des Schlüssels wiederherstellen. Weitere Informationen finden Sie unter [Verwenden des Dienstdashboards](storsimple-service-dashboard.md).
+> * Sie können den Verschlüsselungsschlüssel für Dienstdaten und das entsprechende Datenverschlüsselungszertifikat ändern, indem Sie im Dashboard des Diensts die Option **Verschlüsselungsschlüssel für Dienstdaten ändern** auswählen. Die Änderung der Verschlüsselungsschlüssel erfordert, dass alle Geräte mit dem neuen Schlüssel aktualisiert werden. Daher wird empfohlen, den Schlüssel zu ändern, wenn alle Geräte online sind. Wenn Geräte offline sind, können ihre Schlüssel zu einem anderen Zeitpunkt geändert werden. Die Geräte mit abgelaufenen Schlüsseln können weiterhin Sicherungen ausführen, aber Daten erst nach der Aktualisierung des Schlüssels wiederherstellen. Weitere Informationen finden Sie unter [Verwenden des StorSimple-Manager-Dienstdashboards](storsimple-service-dashboard.md).
 > * Um sicherzustellen, dass die Datensicherheit nicht gefährdet ist, müssen Sie ein physisches StorSimple-Gerät verwenden, um den Verschlüsselungsschlüssel für Dienstdaten zu ändern.
 > * Wenn der Verschlüsselungsschlüssel für Dienstdaten verloren geht, kann Ihnen ein Microsoft-Supportmitarbeiter helfen, ihn abzurufen, vorausgesetzt, mindestens ein Gerät ist online. Wir empfehlen, den Verschlüsselungsschlüssel für Dienstdaten zu ändern, nachdem dieser abgerufen wurde. Anweisungen hierzu finden Sie unter [Ändern des Verschlüsselungsschlüssels für Dienstdaten](storsimple-service-dashboard.md#change-the-service-data-encryption-key).
 > * Der Verschlüsselungsschlüssel für Dienstdaten und das Datenverschlüsselungszertifikat haben kein Ablaufdatum. Wir empfohlen jedoch, den Verschlüsselungsschlüssel für Dienstdaten regelmäßig zu ändern, um eine Gefährdung des Schlüssels zu vermeiden.</li></ul>
@@ -153,7 +153,7 @@ Das StorSimple-Gerät verwaltet Daten, indem diese lokal und in der Cloud abhän
 
 ### Zusätzliche bewährte Methoden für die Sicherheit
 
-- Verwenden Sie die Multipfadfunktion (MPIO), um Redundanz zu implementieren und einen Single-Point-of-Failureim iSCSI-SAN zu vermeiden. Detaillierte Anweisungen finden Sie unter [Konfigurieren von MPIO für Ihr StorSimple-Gerät](#storsimple-configure-mpio-windows-server.md).
+- Verwenden Sie die Multipfadfunktion (MPIO), um Redundanz zu implementieren und einen Single-Point-of-Failureim iSCSI-SAN zu vermeiden. Detaillierte Anweisungen finden Sie unter [Konfigurieren von MPIO für Ihr StorSimple-Gerät](storsimple-configure-mpio-windows-server.md).
 
 - Aufteilen des Datenverkehrs: Isolieren Sie den iSCSI-SAN-Datenverkehr vom Benutzerdatenverkehr in einem Unternehmens-LAN, indem Sie ein vollständig getrenntes Netzwerk bereitstellen und VLANs einsetzen, wenn eine physische Isolation nicht möglich ist. Ein dediziertes Netzwerk für die iSCSI-Speicherung garantiert die Sicherheit und Leistung Ihrer unternehmenskritischen Daten. Die Mischung von Speicher- und Benutzerdatenverkehr in einem Unternehmens-LAN wird nicht empfohlen und kann die Latenz erhöhen sowie zu Netzwerkfehlern führen.
 
@@ -250,7 +250,7 @@ Die folgenden Fragen und Antworten beziehen sich auf die Sicherheit und Microsof
 
 ## Nächste Schritte
 
-[Bereitstellen von StorSimple-Geräten](storsimple-deployment-walkthrough.md)
+[Bereitstellen von StorSimple-Geräten](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

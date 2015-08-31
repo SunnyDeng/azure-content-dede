@@ -1,9 +1,5 @@
 
-1. Öffnen Sie die gemeinsam genutzte Projektdatei "MainPage.cs", und fügen Sie die folgende using-Anweisung hinzu:
-
-        using Windows.UI.Popups;
-
-2. Fügen Sie den folgenden Codeausschnitt zur MainPage-Klasse hinzu:
+1. Öffnen Sie die freigegebene Projektdatei "MainPage.cs", und fügen Sie der MainPage-Klasse den folgenden Codeausschnitt hinzu:
 	
 		// Define a member variable for storing the signed-in user. 
         private MobileServiceUser user;
@@ -35,13 +31,11 @@
             }
         }
 
-    Dieser Benutzer wird mithilfe eines Facebook-Logins authentifiziert. Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den Wert für **MobileServiceAuthenticationProvider** oben entsprechend Ihrem Anbieter.
+    Dieser Code authentifiziert den Benutzer mit einer Facebook-Anmeldung. Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den Wert für **MobileServiceAuthenticationProvider** oben entsprechend Ihrem Anbieter.
 
 3. Löschen Sie in der vorhandenen Methodenüberschreibung von **OnNavigatedTo** den Aufruf der Methode **RefreshTodoItems**, oder kommentieren Sie diesen Aufruf aus.
 
-	Dadurch wird sichergestellt, dass die Daten erst geladen werden, nachdem der Benutzer authentifiziert wurde.
-
-	>[AZURE.NOTE]Um sich aus einer App für Windows Phone Store 8.1 erfolgreich zu authentifizieren, müssen Sie LoginAsync aufrufen, nachdem die **OnNavigated**-Methode aufgerufen wurde und nachdem das **Loaded**-Ereignis der Seite ausgelöst wurde. In diesem Lernprogramm wird der App dazu die Schaltfläche **Sign in** hinzugefügt.
+	Dadurch wird sichergestellt, dass die Daten erst geladen werden, nachdem der Benutzer authentifiziert wurde. Als Nächstes fügen Sie der App die Schaltfläche **Sign in** hinzu, die die Authentifizierung auslöst.
 
 4. Fügen Sie den folgenden Codeausschnitt zur MainPage-Klasse hinzu:
 
@@ -65,11 +59,7 @@
         <Button Grid.Row ="1" Grid.Column="1" Name="ButtonLogin" Click="ButtonLogin_Click" 
         	Margin="10, 0, 0, 0" Visibility="Visible">Sign in</Button>
 
-7. Öffnen Sie die gemeinsam genutzte Projektdatei "App.xaml.cs", und fügen Sie die folgende using-Anweisung hinzu, sofern sie nicht bereits vorhanden ist:
-
-        using Microsoft.WindowsAzure.MobileServices;  
- 
-8. Fügen Sie in der Projektdatei "App.xaml.cs" folgenden Code hinzu:
+8. Öffnen Sie die gemeinsam genutzte Projektdatei "App.xaml.cs", und fügen Sie folgenden Code hinzu:
 
         protected override void OnActivated(IActivatedEventArgs args)
         {
@@ -94,4 +84,4 @@
 
 10. Klicken Sie mit der rechten Maustaste auf das Windows Phone Store-App-Projekt, klicken Sie auf **Als Startprojekt festlegen**, und führen Sie dann den obigen Schritt erneut aus, um sicherzustellen, dass die Windows Phone Store-App ebenfalls ordnungsgemäß ausgeführt wird.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

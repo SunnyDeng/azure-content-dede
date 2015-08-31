@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Lernprogramm – Erste Schritte mit der Azure Batch-Bibliothek für .NET"
+	pageTitle="Tutorial – Erste Schritte mit der Azure Batch-Bibliothek für .NET | Microsoft Azure"
 	description="Erfahren Sie mehr über grundlegende Konzepte zu Azure Batch, und lesen Sie, wie Sie den Batch-Dienst in einem einfachen Szenario für die Entwicklung einsetzen."
 	services="batch"
 	documentationCenter=".net"
@@ -18,23 +18,23 @@
 
 # Erste Schritte mit der Azure-Batch-Bibliothek für .NET  
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine Konsolenanwendung erstellen, die ein Programm mit den erforderlichen Dateien einrichtet, das auf mehreren Computeknoten in einem Azure Batch-Pool ausgeführt wird. Die in diesem Lernprogramm erstellten Aufgaben werten Text aus Dateien, die im Azure-Speicher enthalten sind, aus und geben die Wörter zurück, die am häufigsten verwendet werden. Die Beispiele sind in C# geschrieben und greifen auf die Azure Batch-Bibliothek für .NET zurück.
+Erstellen Sie zur Verwendung der Azure Batch-Bibliothek für .NET zunächst eine Konsolenanwendung, die Unterstützungsdateien und ein auf mehreren Computeknoten in einem Azure Batch-Pool ausgeführtes Programm einrichtet. Die in diesem Tutorial erstellten Aufgaben werten Text in Dateien aus, die in Azure Storage hochgeladen werden, und geben die in diesen Dateien am häufigsten verwendeten Wörter zurück. Die Beispiele sind in C#  geschrieben und verwenden die [Azure Batch-Bibliothek für .NET](https://msdn.microsoft.com/library/azure/mt348682.aspx).
 
 ## Voraussetzungen
 
 - Die Konten:
 
-	- **Azure-Konto:** Sie können ein kostenloses Testkonto in wenigen Minuten erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
+	- **Azure-Konto**: Sie können in wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
 
-	- **Batch-Konto:** Informationen zur Erstellung finden Sie unter [Azure Batch – Technische Übersicht](batch-technical-overview.md) im Abschnitt **Batch-Konto**.
+	- **Batch-Konto**: Weitere Informationen finden Sie unter [Azure Batch – Technische Übersicht](batch-technical-overview.md) im Abschnitt **Batch-Konto**.
 
-	- **Speicherkonto:** Weitere Informationen finden Sie im Abschnitt **Erstellen eines Speicherkontos** in [Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md). In diesem Lernprogramm erstellen Sie einen Container in diesem Konto mit dem Namen **testcon1**.
+	- **Speicherkonto**: Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md) im Abschnitt **Erstellen eines Speicherkontos**. In diesem Tutorial erstellen Sie einen Container im Konto **testcon1**.
 
 - Ein Projekt für eine Visual Studio-Konsolenanwendung:
 
 	1.  Klicken Sie in Visual Studio im Menü **Datei** auf **Neu** und anschließend auf **Projekt**.
 
-	2.	Klicken Sie in **Fenster** unter **Visual C#** auf **Konsolenanwendung**, weisen Sie dem Projekt den Namen **GettingStarted** und der Lösung den Namen **AzureBatch** zu, und klicken Sie dann auf **OK**.
+	2.	Klicken Sie in **Fenster** unter **Visual C\#** auf **Konsolenanwendung**, weisen Sie dem Projekt den Namen **GettingStarted** und der Lösung den Namen **AzureBatch** zu, und klicken Sie dann auf **OK**.
 
 - Die NuGet-Assemblys:
 
@@ -42,13 +42,15 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine Konsolenanwendung erstellen, d
 
 	2. Suchen Sie online nach **WindowsAzure.Storage**, und klicken Sie auf **Installieren**, um das Azure Storage-Paket und die zugehörigen Abhängigkeiten zu installieren.
 
+> [AZURE.TIP]In diesem Tutorial werden einige der grundlegenden Batch-Konzepte angewendet, die unter [API-Grundlagen für Azure Batch](batch-api-basics.md) erläutert werden. Sollten Sie noch nicht mit Batch gearbeitet haben, empfehlen wir dringend, zunächst dieses Thema zu lesen.
+
 ## Schritt 1: Erstellen und Hochladen der erforderlichen Dateien
 
 Zur Unterstützung der Anwendung wird in Azure Storage ein Container erstellt. Außerdem werden Textdateien erstellt, die dann in den Container hochgeladen werden.
 
 ### Einrichten der Storage-Verbindungszeichenfolge
 
-1. Öffnen Sie die Datei "App.config" für das Projekt "GettingStarted", und fügen Sie dann in &lt;configuration&gt; das &lt;appSettings&gt;-Element hinzu.
+1. Öffnen Sie die Datei „App.config“ für das Projekt „GettingStarted“, und fügen Sie dann in *&lt;configuration&gt;* das *&lt;appSettings&gt;*-Element hinzu.
 
 		<?xml version="1.0" encoding="utf-8" ?>
 		<configuration>
@@ -59,23 +61,26 @@ Zur Unterstützung der Anwendung wird in Azure Storage ein Container erstellt. A
 
 	Ersetzen Sie die folgenden Werte:
 
-	- **[account-name]**: der Name des Speicherkontos, das Sie zuvor erstellt haben
+	- **[account-name]**: Der Name des Speicherkontos, das Sie zuvor erstellt haben.
 
-	- **[account-key]**: der primäre Schlüssel für das Speicherkonto. Sie finden den primären Schlüssel im Verwaltungsportal auf der Seite "Storage"
+	- **[account-key]**: Der primäre Schlüssel des Speicherkontos. Den primären Schlüssel finden Sie im Azure-Portal auf der Seite „Storage“.
 
 2. Speichern Sie die Datei "App.config".
 
-Weitere Informationen finden Sie unter [Konfigurieren von Azure-Verbindungszeichenfolgen](http://msdn.microsoft.com/library/windowsazure/ee758697.aspx).
+Weitere Informationen zu Azure Storage-Verbindungszeichenfolgen finden Sie unter [Konfigurieren von Azure Storage-Verbindungszeichenfolgen](../storage/storage-configure-connection-string.md).
 
 ### Erstellen des Speichercontainers
 
-1. Fügen Sie im Projekt "GettingStarted" am Anfang der Datei "Program.cs" diese Namespacedeklarationen hinzu:
+1. Fügen Sie im Projekt „GettingStarted“ am Anfang der Datei „Program.cs“ die folgenden using-Direktiven hinzu:
 
 		using System.Configuration;
+		using System.IO;
 		using Microsoft.WindowsAzure.Storage;
 		using Microsoft.WindowsAzure.Storage.Blob;
 
-2. Fügen Sie diese Methode der Program-Klasse hinzu, die die Storage-Verbindungszeichenfolge abruft, den Container erstellt und die Berechtigungen festlegt:
+2. Fügen Sie im **Projektmappen-Explorer** unter **Verweise** einen Verweis auf *System.Configuration* für das Projekt „GettingStarted“ hinzu.
+
+3. Fügen Sie diese Methode der Program-Klasse hinzu, die die Storage-Verbindungszeichenfolge abruft, den Container erstellt und die Berechtigungen festlegt:
 
 		static void CreateStorage()
 		{
@@ -96,21 +101,27 @@ Weitere Informationen finden Sie unter [Konfigurieren von Azure-Verbindungszeich
 			Console.ReadLine();
 		}
 
-3. Fügen Sie diesen Code der Main-Methode hinzu, um die soeben hinzugefügte Methode aufzurufen:
+4. Fügen Sie diesen Code der Main-Methode hinzu, um die soeben hinzugefügte Methode aufzurufen:
 
 		CreateStorage();
 
-4. Speichern Sie die Datei "Program.cs".
+5. Speichern Sie die Datei "Program.cs".
 
-	> [AZURE.NOTE]In einer Produktionsumgebung wird empfohlen, dass Sie eine SAS (Shared Access Signature) verwenden.
+	> [AZURE.NOTE]In einer Produktionsumgebung wird die Verwendung einer [Shared Access Signature (SAS)](https://msdn.microsoft.com/library/azure/ee395415.aspx) empfohlen.
 
-Weitere Informationen finden Sie unter [Verwenden von Blob-Speicher aus .NET](../storage-dotnet-how-to-use-blobs.md).
+Weitere Informationen zu Blob-Speicher finden Sie unter [Verwenden des Blob-Speichers mit .NET](../storage/storage-dotnet-how-to-use-blobs.md).
 
 ### Erstellen des Verarbeitungsprogramms
 
-1. Erstellen Sie im Projektmappen-Explorer ein neues Konsolenanwendungsprojekt namens **ProcessTaskData**.
+1. Erstellen Sie im **Projektmappen-Explorer** ein neues Konsolenanwendungsprojekt mit dem Namen **ProcessTaskData**.
 
-2. Fügen Sie der Main-Methode diesen Code hinzu, der den Text aus den Dateien verarbeitet:
+2. Nachdem Sie das Projekt in Visual Studio erstellt haben, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **NuGet-Pakete verwalten** aus. Suchen Sie online nach **WindowsAzure.Storage**, und klicken Sie auf **Installieren**, um das Azure Storage-Paket und die zugehörigen Abhängigkeiten zu installieren.
+
+3. Fügen Sie am Anfang von „Program.cs“ die folgende using-Direktive hinzu:
+
+		using Microsoft.WindowsAzure.Storage.Blob;
+
+4. Fügen Sie der Main-Methode diesen Code hinzu, der den Text aus den Dateien verarbeitet:
 
 		string blobName = args[0];
 		Uri blobUri = new Uri(blobName);
@@ -132,54 +143,61 @@ Weitere Informationen finden Sie unter [Verwenden von Blob-Speicher aus .NET](..
 			Console.WriteLine("{0} {1}", pair.Key, pair.Value);
 		}
 
-3. Speichern und erstellen Sie das Projekt "ProcessTaskData".
+5. Speichern und erstellen Sie das Projekt "ProcessTaskData".
 
 ### Erstellen der Datendateien
 
-1. Erstellen Sie im Projekt "GettingStarted" eine neue Textdatei mit dem Namen **taskdata1**, kopieren Sie den folgenden Text in diese Datei, und speichern Sie die Datei.
+1. Erstellen Sie im Projekt „GettingStarted“ eine neue Textdatei mit dem Namen **taskdata1.txt**, kopieren Sie den folgenden Text in diese Datei, und speichern Sie die Datei.
 
 	Sie können virtuelle Azure-Computer verwenden, um bedarfsgesteuerte, skalierbare Serverinfrastruktur bereitzustellen, wenn für Ihre Geschäftsanforderungen flexible Ressourcen erforderlich sind. Über den Katalog können Sie virtuelle Computer erstellen, auf denen Windows-, Linux- und Unternehmensanwendungen wie SharePoint und SQL Server ausgeführt werden. Sie können auch eigene Images erfassen und verwenden, um benutzerdefinierte virtuelle Computer zu erstellen.
 
-2. Erstellen Sie eine neue Textdatei mit dem Namen **taskdata2**, kopieren Sie den folgenden Text in diese Datei, und speichern Sie die Datei.
+2. Erstellen Sie eine neue Textdatei mit dem Namen **taskdata2.txt**, kopieren Sie den folgenden Text in diese Datei, und speichern Sie die Datei.
 
 	Mit den Clouddiensten von Azure können Sie schnell leistungsstarke Anwendungen und Dienste bereitstellen und verwalten. Laden Sie einfach Ihre Anwendung hoch, und Azure kümmert sich um die Bereitstellungsdetails – von der Bereitstellung und dem Lastenausgleich über die Integritätsüberwachung bis hin zur kontinuierlichen Verfügbarkeit. Ihre Anwendung unterliegt dabei einer monatlichen SLA mit einem in der Branche führenden Wert von 99,95 Prozent. Sie konzentrieren sich nur auf die Anwendung, nicht auf die Infrastruktur.
 
-3. Erstellen Sie eine neue Textdatei mit dem Namen **taskdata3**, kopieren Sie den folgenden Text in diese Datei, und speichern Sie die Datei.
+3. Erstellen Sie eine neue Textdatei mit dem Namen **taskdata3.txt**, kopieren Sie den folgenden Text in diese Datei, und speichern Sie die Datei.
 
 	Azure-Websites bieten eine skalierbare, zuverlässige und benutzerfreundliche Umgebung für das Hosten von Webanwendungen. Wählen Sie aus einer Vielzahl von Frameworks und Vorlagen aus, um eine Website in Sekunden erstellen zu können. Verwenden Sie zum Entwickeln Ihrer Website mit .NET, PHP, Node.js oder Python beliebige Tools oder Betriebssysteme. Wählen Sie aus einer Vielzahl von Optionen für die Quellcodeverwaltung, einschließlich TFS, GitHub und BitBucket, um eine fortlaufende Integration einzurichten und als Team zu entwickeln. Erweitern Sie die Funktionalität der Website im Laufe der Zeit mithilfe zusätzlicher verwalteter Azure-Diensten wie Speicherung, CDN und SQL-Datenbank.
 
-### Hochladen der Dateien in den Container
+### Hochladen der Dateien in den Speichercontainer
 
-1. Öffnen Sie die Datei "Program.cs" des Projekts "GettingStarted", und fügen Sie diese Methode hinzu, die die Dateien hochlädt:
+1. Öffnen Sie die Datei „Program.cs“ des Projekts **GettingStarted**, und fügen Sie die folgende Methode zum Hochladen der Dateien hinzu:
 
 		static void CreateFiles()
 		{
-		  privateCloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-			ConfigurationManager.AppSettings["StorageConnectionString"]);
-		  CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-		  CloudBlobContainer container = blobClient.GetContainerReference("testcon1");
-		  CloudBlockBlob taskData1 = container.GetBlockBlobReference("taskdata1");
-		  CloudBlockBlob taskData2 = container.GetBlockBlobReference("taskdata2");
-		  CloudBlockBlob taskData3 = container.GetBlockBlobReference("taskdata3");
-	  	CloudBlockBlob dataprocessor = container.GetBlockBlobReference("ProcessTaskData.exe");
-	  	CloudBlockBlob storageassembly =
-			container.GetBlockBlobReference("Microsoft.WindowsAzure.Storage.dll");
-		  taskData1.UploadFromFile("..\\..\\taskdata1.txt", FileMode.Open);
-		  taskData2.UploadFromFile("..\\..\\taskdata2.txt", FileMode.Open);
-	  	taskData3.UploadFromFile("..\\..\\taskdata3.txt", FileMode.Open);
-		  dataprocessor.UploadFromFile("..\\..\\..\\ProcessTaskData\\bin\\debug\\ProcessTaskData.exe", FileMode.Open);
-		  storageassembly.UploadFromFile("Microsoft.WindowsAzure.Storage.dll", FileMode.Open);
-		  Console.WriteLine("Uploaded the files. Press Enter to continue.");
-		  Console.ReadLine();
+			CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+				ConfigurationManager.AppSettings["StorageConnectionString"]);
+			CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+			CloudBlobContainer container = blobClient.GetContainerReference("testcon1");
+
+			CloudBlockBlob taskData1 = container.GetBlockBlobReference("taskdata1");
+			CloudBlockBlob taskData2 = container.GetBlockBlobReference("taskdata2");
+			CloudBlockBlob taskData3 = container.GetBlockBlobReference("taskdata3");
+			taskData1.UploadFromFile("..\\..\\taskdata1.txt", FileMode.Open);
+			taskData2.UploadFromFile("..\\..\\taskdata2.txt", FileMode.Open);
+			taskData3.UploadFromFile("..\\..\\taskdata3.txt", FileMode.Open);
+
+			CloudBlockBlob storageassembly = container.GetBlockBlobReference("Microsoft.WindowsAzure.Storage.dll");
+			storageassembly.UploadFromFile("Microsoft.WindowsAzure.Storage.dll", FileMode.Open);
+
+			CloudBlockBlob dataprocessor = container.GetBlockBlobReference("ProcessTaskData.exe");
+			dataprocessor.UploadFromFile("..\\..\\..\\ProcessTaskData\\bin\\debug\\ProcessTaskData.exe", FileMode.Open);
+
+			Console.WriteLine("Uploaded the files. Press Enter to continue.");
+			Console.ReadLine();
 		}
 
-2. Speichern Sie die Datei "Program.cs".
+2. Fügen Sie diesen Code der Main-Methode hinzu, um die soeben hinzugefügte Methode aufzurufen:
 
-## Schritt 2. Hinzufügen eines Pools zu Ihrem Konto
+		CreateFiles();
+
+3. Speichern Sie die Datei "Program.cs".
+
+## Schritt 2. Hinzufügen eines Pools zum Batch-Konto
 
 Der erste Satz von Ressourcen, den Sie zum Ausführen von Aufgaben erstellen müssen, ist ein Pool von Computeknoten.
 
-1.	Fügen Sie im Projekt "GettingStarted" am Anfang der Datei "Program.cs" diese Namespacedeklarationen hinzu:
+1.	Fügen Sie im Projekt „GettingStarted“ am Anfang der Datei „Program.cs“ die folgenden using-Direktiven hinzu:
 
 			using Microsoft.Azure.Batch;
 			using Microsoft.Azure.Batch.Auth;
@@ -192,9 +210,9 @@ Der erste Satz von Ressourcen, den Sie zum Ausführen von Aufgaben erstellen mü
 
 	Ersetzen Sie die folgenden Werte:
 
-	- **[account-name]**: der Name des Batch-Kontos, das Sie zuvor erstellt haben
-	- **[region]**: die Region, in der sich das Konto befindet. Informationen zum Ermitteln der verfügbaren Regionen finden Sie unter [Azure-Regionen](http://azure.microsoft.com/regions/).
-	- **[account-key]**: der primäre Schlüssel für das Batch-Konto.
+	- **[account-name]**: Der Name des Batch-Kontos, das Sie zuvor erstellt haben.
+	- **[region]**: Die Region, in der sich Ihr Konto befindet. Informationen zum Ermitteln der verfügbaren Regionen finden Sie unter [Azure-Regionen](http://azure.microsoft.com/regions/).
+	- **[account-key]**: Der primäre Schlüssel des Batch-Kontos.
 
 3.	Fügen Sie der Program-Klasse diese Methode hinzu, die den Pool erstellt:
 
@@ -234,7 +252,7 @@ Der erste Satz von Ressourcen, den Sie zum Ausführen von Aufgaben erstellen mü
 
 7. Speichern Sie die Datei "Program.cs".
 
-## Schritt 2: Hinzufügen eines Auftrags zu einem Konto
+## Schritt 3: Hinzufügen eines Auftrags zum Konto
 
 Erstellen Sie einen Auftrag, mit dem die im Pool ausgeführten Aufgaben verwaltet werden. Alle Aufgaben müssen einem Auftrag zugeordnet werden.
 
@@ -276,7 +294,7 @@ Erstellen Sie einen Auftrag, mit dem die im Pool ausgeführten Aufgaben verwalte
 
 5. Speichern Sie die Datei "Program.cs".
 
-## Schritt 3: Hinzufügen von Aufgaben zum Auftrag.
+## Schritt 4: Hinzufügen von Aufgaben zum Auftrag
 
 Nachdem der Auftrag erstellt wurde, können Aufgaben hinzugefügt werden. Jede Aufgabe wird auf einem Serverknoten ausgeführt und verarbeitet eine Textdatei. In diesem Lernprogramm fügen Sie dem Auftrag drei Aufgaben hinzu.
 
@@ -286,7 +304,7 @@ Nachdem der Auftrag erstellt wurde, können Aufgaben hinzugefügt werden. Jede A
 		{
 			CloudJob job = client.JobOperations.GetJob("testjob1");
 			ResourceFile programFile = new ResourceFile(
-				"https://[account-name].blob.azure.com/[]/ProcessTaskData.exe",
+				"https://[account-name].blob.core.windows.net/testcon1/ProcessTaskData.exe",
 				"ProcessTaskData.exe");
       	  ResourceFile assemblyFile = new ResourceFile(
 				"https://[account-name].blob.core.windows.net/testcon1/Microsoft.WindowsAzure.Storage.dll",
@@ -320,7 +338,9 @@ Nachdem der Auftrag erstellt wurde, können Aufgaben hinzugefügt werden. Jede A
 			Console.ReadLine();
 		}
 
-	**[account-name]**: muss durch den Namen des Speicherkontos ersetzt werden, das Sie zuvor erstellt haben Stellen Sie sicher, dass Sie alle vier Stellen erhalten.
+
+	**[account-name]** muss durch den Namen des Speicherkontos ersetzt werden, das Sie zuvor erstellt haben. Aktualisieren Sie im vorangehenden Beispiel alle vier Instanzen von **[account-name]**.
+
 
 2. Fügen Sie diesen Code der Main-Methode hinzu, um die soeben hinzugefügte Methode aufzurufen:
 
@@ -346,9 +366,9 @@ Nachdem der Auftrag erstellt wurde, können Aufgaben hinzugefügt werden. Jede A
 
 5. Speichern Sie die Datei "Program.cs".
 
-## Schritt 4: Löschen der Ressourcen
+## Schritt 5: Löschen der Ressourcen
 
-Da Ihnen die Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer alle Ressourcen, die Sie nicht mehr benötigen, löschen.
+Da Ihnen Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer alle nicht mehr benötigten Ressourcen löschen.
 
 ### Löschen der Aufgaben
 
@@ -382,7 +402,7 @@ Da Ihnen die Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer 
 				Console.ReadLine();
 			}
 
-2. Fügen Sie diesen Code der Main-Methode hinzu, um die soeben hinzugefügte Methode auszuführen:
+2. Fügen Sie diesen Code der Main-Methode hinzu, um die soeben hinzugefügte Methode aufzurufen:
 
 		DeleteJob(client);
 
@@ -390,7 +410,7 @@ Da Ihnen die Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer 
 
 ### Löschen des Pools
 
-1. Fügen Sie der Program-Klasse diese Methode hinzu, die den Pool löscht:
+1. Fügen Sie der Program-Klasse die folgende Methode zum Löschen des Pools hinzu:
 
 		static void DeletePool (BatchClient client)
 		{
@@ -399,13 +419,13 @@ Da Ihnen die Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer 
 			Console.ReadLine();
 		}
 
-2. Fügen Sie diesen Code der Main-Methode hinzu, um die soeben hinzugefügte Methode auszuführen:
+2. Fügen Sie diesen Code der Main-Methode hinzu, um die soeben hinzugefügte Methode aufzurufen:
 
 		DeletePool(client);
 
 3. Speichern Sie die Datei "Program.cs".
 
-## Schritt 5: Ausführen der Anwendung
+## Schritt 6: Ausführen der Anwendung
 
 1. Starten Sie das GettingStarted-Projekt. Im Konsolenfenster sollte nach dem Erstellen des Containers Folgendes angezeigt werden:
 
@@ -467,12 +487,12 @@ Da Ihnen die Ressourcen in Azure in Rechnung gestellt werden, sollten Sie immer 
 			Task status: Completed
 			Task start: 7/17/2015 8:31:57 PM
 
-8. An diesem Punkt können Sie zum Azure-Portal wechseln, um die erstellten Ressourcen anzuzeigen. Zum Löschen der Ressourcen drücken Sie die EINGABETASTE, bis das Programm beendet wird.
+8. Jetzt können Sie im Azure-Portal die erstellten Ressourcen überprüfen. Zum Löschen der Ressourcen drücken Sie die EINGABETASTE, bis das Programm beendet wird.
 
 ## Nächste Schritte
 
-1. Nachdem Sie sich mit den Grundlagen der Ausführung von Aufgaben vertraut gemacht haben, können Sie etwas darüber erfahren, wie Computeknoten automatisch bei Änderungen der Anforderung an Ihre Anwendung skaliert werden. Informationen dazu finden Sie unter [Automatisches Skalieren von Computeknoten in einem Azure Batch-Pool](batch-automatic-scaling.md).
+1. Nachdem Sie sich mit den Grundlagen der Ausführung von Aufgaben vertraut gemacht haben, können Sie sich nun damit befassen, wie Sie Computeknoten automatisch entsprechend den Anforderungen an Ihre Anwendung skalieren. Informationen dazu finden Sie unter [Automatisches Skalieren von Computeknoten in einem Azure Batch-Pool](batch-automatic-scaling.md).
 
-2. Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit, dies zu lösen, besteht in [effizienten Listenabfragen](batch-efficient-list-queries.md).
+2. Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit zur Lösung dieses Problems ist die Verwendung [effizienter Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

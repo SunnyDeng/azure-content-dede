@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Problembehandlung beim Status &quot;Heruntergestuft&quot; in Azure Traffic Manager"
-   description="Problembehandlung bei Traffic Manager-Profilen, bei denen der Status &quot;Heruntergestuft&quot; angezeigt wird."
+   pageTitle="Problembehandlung beim Status ";Heruntergestuft"; in Azure Traffic Manager"
+   description="Problembehandlung bei Traffic Manager-Profilen, bei denen der Status ";Heruntergestuft"; angezeigt wird."
    services="traffic-manager"
    documentationCenter=""
    authors="kwill-MSFT"
@@ -13,8 +13,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/02/2015"
+   ms.date="08/19/2015"
    ms.author="joaoma" />
+
 # Problembehandlung beim Status "Heruntergestuft" in Azure Traffic Manager
 Auf dieser Seite wird beschrieben, wie Probleme bei einem Azure Traffic Manager-Profil mit dem Status "Heruntergestuft" behoben werden können. Weiterhin werden einige wichtige Punkte zu Traffic Manager-Tests erörtert.
 
@@ -66,9 +67,9 @@ Wenn bei dem Test das HTTPs-Protokoll verwendet wird, sollten Sie in Wget den Pa
 ## Nächste Schritte
 
 
-[Informationen zu Lastenausgleichsmethoden von Traffic Manager](traffic-manager-load-balancing-methods.md)
+[Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md)
 
-[Traffic Manager – Übersicht](../traffic-manmager-overview.md)
+[Was ist Traffic Manager?](../traffic-manmager-overview.md)
 
 [Cloud-Dienste](http://go.microsoft.com/fwlink/?LinkId=314074)
 
@@ -79,4 +80,4 @@ Wenn bei dem Test das HTTPs-Protokoll verwendet wird, sollten Sie in Wget den Pa
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

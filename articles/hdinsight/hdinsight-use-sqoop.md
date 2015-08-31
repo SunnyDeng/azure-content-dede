@@ -5,8 +5,8 @@
 	manager="paulettm"
 	services="hdinsight"
 	documentationCenter=""
+	tags="azure-portal"
 	authors="mumian"/>
-
 
 <tags
 	ms.service="hdinsight"
@@ -14,9 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/11/2015"
+	ms.date="07/28/2015"
 	ms.author="jgao"/>
-
 
 #Verwenden von Sqoop mit Hadoop in HDInsight (Windows)
 
@@ -629,7 +628,7 @@ Nun wissen Sie, wie Sqoop verwendet haben. Weitere Informationen finden Sie unte
 
 
 
-[azure-management-portal]: https://manage.windowsazure.com/
+[azure-management-portal]: https://portal.azure.com/
 
 [hdinsight-versions]: hdinsight-component-versioning.md
 [hdinsight-provision]: hdinsight-provision-clusters.md
@@ -648,6 +647,5 @@ Nun wissen Sie, wie Sqoop verwendet haben. Weitere Informationen finden Sie unte
 [powershell-script]: http://technet.microsoft.com/library/ee176949.aspx
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
- 
 
-<!------HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

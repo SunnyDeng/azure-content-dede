@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Bereitstellen von SQL Server AlwaysOn mit einer Azure-Ressourcen-Manager-Vorlage"
+	pageTitle="Bereitstellen von SQL Server AlwaysOn mit einer Azure-Ressourcen-Manager-Vorlage | Microsoft Azure"
 	description="Mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach fünf Server für die Unterstützung von SQL Server AlwaysOn bereitstellen."
 	services="virtual-machines"
 	documentationCenter=""
@@ -19,7 +19,7 @@
 
 # Bereitstellen von SQL Server AlwaysOn mit einer Azure-Ressourcen-Manager-Vorlage
 
-Folgen Sie den Anweisungen in diesem Abschnitt, um SQL Server AlwaysOn mit einer Resource Manager-Vorlage bereitzustellen. Mit dieser Vorlage werden fünf virtuelle Computer in einem neuen virtuellen Netzwerk in zwei verschiedenen Subnetzen erstellt.
+Folgen Sie den Anweisungen in diesem Artikel, um SQL Server AlwaysOn mit einer Azure-Ressourcen-Manager-Vorlage bereitzustellen. Mit dieser Vorlage werden fünf virtuelle Computer in einem neuen virtuellen Netzwerk in zwei verschiedenen Subnetzen erstellt.
 
 ![](./media/virtual-machines-workload-template-sql-alwayson/five-server-sqlao.png)
 
@@ -27,7 +27,7 @@ Sie können die Vorlage mit dem Azure-Vorschauportal, mit Azure PowerShell oder 
 
 ## Azure-Vorschauportal
 
-Wenn Sie diesen Workload mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal bereitstellen möchten, klicken Sie [hier](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsql-server-2014-alwayson-dsc%2Fazuredeploy.json).
+Wenn Sie diesen Workload mit einer Azure-Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal bereitstellen möchten, klicken Sie [hier](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsql-server-2014-alwayson-dsc%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-sql-alwayson/azure-portal-template.png)
 
@@ -63,7 +63,7 @@ Beispiel:
 	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
-Führen Sie anschließend den Befehlsblock in der Azure-PowerShell-Eingabeaufforderung aus.
+Führen Sie anschließend den Befehlsblock in der Azure PowerShell-Eingabeaufforderung aus.
 
 Beim Ausführen des Befehls **New-AzureResourceGroupDeployment** werden Sie aufgefordert, die Werte für eine Reihe von Parametern anzugeben. Sobald Sie alle Parameterwerte angegeben haben, werden die virtuellen Computer von **New-AzureResourceGroupDeployment** erstellt und konfiguriert.
 
@@ -95,14 +95,14 @@ Wenn die Ausführung der Vorlage abgeschlossen ist, verfügen Sie über eine neu
 
 [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
-[Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute-, Network- und Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Übersicht über den Azure Resource Manager](../resource-group-overview.md)
+[Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
 
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
+[Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

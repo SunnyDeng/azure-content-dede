@@ -34,7 +34,7 @@ Räumliche Daten beschreiben die Position und Form von Objekten im Raum. In den 
 DocumentDB unterstützt eine Volltextindizierung und Abfrage von Geodaten, die mithilfe der [GeoJSON-Spezifikation](http://geojson.org/geojson-spec.html) dargestellt werden. GeoJSON-Datenstrukturen sind stets gültige JSON-Objekte, weshalb sie mit DocumentDB gespeichert und ohne spezielle Tools oder Bibliotheken abgefragt werden können. Die DocumentDB SDKs bieten Hilfsklassen und Methoden, die das Arbeiten mit räumlichen Daten erleichtern.
 
 ### Punkte, LineStrings und Polygone
-Ein **Punkt** kennzeichnet eine einzelne Position im Raum. In Geodaten stellt ein Punkt den exakten Ort dar, der die Adresse eines Lebensmittelgeschäfts, ein Kiosk, ein Auto oder eine Stadt sein kann. Ein Punkt wird in GeoJSON \(und DocumentDB\) mithilfe seines Koordinatenpaares oder Längen- und Breitengrads dargestellt. Hier ist eine Beispiel-JSON für einen Punkt.
+Ein **Punkt** kennzeichnet eine einzelne Position im Raum. In Geodaten stellt ein Punkt den exakten Ort dar, der die Adresse eines Lebensmittelgeschäfts, ein Kiosk, ein Auto oder eine Stadt sein kann. Ein Punkt wird in GeoJSON (und DocumentDB) mithilfe seines Koordinatenpaares oder Längen- und Breitengrads dargestellt. Hier ist eine Beispiel-JSON für einen Punkt.
 
 **Punkte in DocumentDB**
 
@@ -85,7 +85,7 @@ Zusätzlich zu Punkten, LineStrings und Polygonen gibt GeoJSON auch das Darstell
 
 ### Koordinatenreferenzsysteme
 
-Da die Form der Erde unregelmäßig ist, werden Koordinaten von Geodaten in zahlreichen Koordinatenreferenzsystemen \(KRS\) abgebildet, die jeweils eigene Bezugsrahmen und Maßeinheiten aufweisen. Das "National Grid of Britain" ist beispielsweise ein Referenzsystem, das sehr genau für Großbritannien ist, außerhalb davon hingegen nicht.
+Da die Form der Erde unregelmäßig ist, werden Koordinaten von Geodaten in zahlreichen Koordinatenreferenzsystemen (KRS) abgebildet, die jeweils eigene Bezugsrahmen und Maßeinheiten aufweisen. Das "National Grid of Britain" ist beispielsweise ein Referenzsystem, das sehr genau für Großbritannien ist, außerhalb davon hingegen nicht.
 
 Das am häufigsten verwendete KRS ist derzeit das World Geodetic System [WGS 84](http://earth-info.nga.mil/GandG/wgs84/). GPS-Geräte und viele Kartendienste einschließlich Google Maps- und Bing Maps-APIs verwenden WGS-84. DocumentDB unterstützt ausschließlich die Indizierung und Abfrage von Geodaten mit dem Koordinatenreferenzsystem WGS-84.
 
@@ -106,7 +106,7 @@ Beim Erstellen von Dokumenten, die GeoJSON-Werte enthalten, werden diese automat
         // additional code within the callback
     });
 
-Wenn Sie mit dem .NET \(oder Java\) SDK arbeiten, können Sie die neuen "Point"- und "Polygon"-Klassen im Namespace "Microsoft.Azure.Documents.Spatial" verwenden, um Standortinformationen in Ihre Anwendungsobjekte einzubetten. Diese Klassen vereinfachen die Serialisierung und Deserialisierung räumlicher Daten in GeoJSON.
+Wenn Sie mit dem .NET (oder Java) SDK arbeiten, können Sie die neuen "Point"- und "Polygon"-Klassen im Namespace "Microsoft.Azure.Documents.Spatial" verwenden, um Standortinformationen in Ihre Anwendungsobjekte einzubetten. Diese Klassen vereinfachen die Serialisierung und Deserialisierung räumlicher Daten in GeoJSON.
 
 **Erstellen von Dokumenten mit Geodaten in .NET**
 
@@ -138,7 +138,7 @@ Wenn Sie die Informationen zu Breiten- und Längengrad nicht haben, aber über d
 Nachdem wir einen Blick auf das Einfügen von Geodaten geworfen haben, wollen wir uns nun das Abfragen dieser Daten mithilfe von DocumentDB sowie SQL und LINQ ansehen.
 
 ### Integrierte räumliche SQL-Funktionen
-DocumentDB unterstützt die folgenden integrierten OGC-Funktionen \(Open Geospatial Consortium \) für das Abfragen von Geodaten. Weitere Informationen zu sämtlichen integrierten Funktionen in der SQL-Sprache finden Sie unter [Abfragen von DocumentDB](documentdb-sql-query.md).
+DocumentDB unterstützt die folgenden integrierten OGC-Funktionen (Open Geospatial Consortium ) für das Abfragen von Geodaten. Weitere Informationen zu sämtlichen integrierten Funktionen in der SQL-Sprache finden Sie unter [Abfragen von DocumentDB](documentdb-sql-query.md).
 
 <table>
 <tr>
@@ -198,9 +198,9 @@ Polygonargumente in ST\_WITHIN dürfen nur einen einzigen Ring enthalten, d. h.
       "id": "WakefieldFamily",
     }]
     
->[AZURE.NOTE]Wenn \(ähnlich wie bei der Funktionsweise nicht übereinstimmender Typen in DocumentDB-Abfragen\) der in einem der Argumente angegebene Standortwert falsch formatiert oder ungültig ist, wird dieser mit **undefiniert** ausgewertet. Die ausgewerteten Dokumente werden aus den Abfrageergebnissen entfernt. Wenn Ihre Abfrage keine Ergebnisse zurückgibt, führen Sie ST\_ISVALIDDETAILED aus, um herauszufinden, warum der räumliche Typ ungültig ist.
+>[AZURE.NOTE]Wenn (ähnlich wie bei der Funktionsweise nicht übereinstimmender Typen in DocumentDB-Abfragen) der in einem der Argumente angegebene Standortwert falsch formatiert oder ungültig ist, wird dieser mit **undefiniert** ausgewertet. Die ausgewerteten Dokumente werden aus den Abfrageergebnissen entfernt. Wenn Ihre Abfrage keine Ergebnisse zurückgibt, führen Sie ST\_ISVALIDDETAILED aus, um herauszufinden, warum der räumliche Typ ungültig ist.
 
-ST\_ISVALID und ST\_ISVALIDDETAILED können verwendet werden, um zu prüfen, ob ein räumliches Objekt gültig ist. Die folgende Abfrage untersucht z. B. die Gültigkeit eines Punkts mit einem Längengradwert außerhalb des Gültigkeitsbereichs \(-132,8\). ST\_ISVALID gibt nur einen booleschen Wert zurück. ST\_ISVALIDDETAILED gibt den booleschen Wert und eine Zeichenfolge mit dem Grund zurück, warum das Argument als ungültig eingestuft wird.
+ST\_ISVALID und ST\_ISVALIDDETAILED können verwendet werden, um zu prüfen, ob ein räumliches Objekt gültig ist. Die folgende Abfrage untersucht z. B. die Gültigkeit eines Punkts mit einem Längengradwert außerhalb des Gültigkeitsbereichs (-132,8). ST\_ISVALID gibt nur einen booleschen Wert zurück. ST\_ISVALIDDETAILED gibt den booleschen Wert und eine Zeichenfolge mit dem Grund zurück, warum das Argument als ungültig eingestuft wird.
 
 ** Abfrage **
 
@@ -231,7 +231,7 @@ Diese Funktionen können auch verwendet werden, um Polygone zu überprüfen. Bei
     
 ### LINQ-Abfragen im .NET SDK
 
-Das .NET SDK für DocumentDB stellt auch die Stub-Methoden `Distance()` und `Within()` für die Verwendung in LINQ-Ausdrücken bereit. Der LINQ-Anbieter für DocumentDB übersetzt diese Methodenaufrufe in entsprechende integrierte SQL-Funktionsaufrufe \(ST\_DISTANCE bzw. ST\_WITHIN\).
+Das .NET SDK für DocumentDB stellt auch die Stub-Methoden `Distance()` und `Within()` für die Verwendung in LINQ-Ausdrücken bereit. Der LINQ-Anbieter für DocumentDB übersetzt diese Methodenaufrufe in entsprechende integrierte SQL-Funktionsaufrufe (ST\_DISTANCE bzw. ST\_WITHIN).
 
 Hier ist ein Beispiel einer LINQ-Abfrage, die alle Dokumente in der DocumentDB-Sammlung findet, deren Wert "location" sich in einem Radius von 30 km um den angegebenen Punkt befindet.
 
@@ -274,7 +274,7 @@ Wie im Dokument zur [vom Schema unabhängigen Indizierung mit Azure DocumentDB](
 
 Kurz gesagt, die Geometrie wird von geodätischen Koordinaten auf eine 2D-Ebene projiziert und dann schrittweise mithilfe eines **Quadtrees** in Zellen unterteilt. Diese Zellen werden zu 1D basierend auf der Position der Zelle auf einer **raumfüllenden Hilbert-Kurve** zugeordnet, die die Lage von Punkten beibehält. Wenn Positionsdaten darüber hinaus indiziert werden, durchlaufen sie einen als **Mosaikarbeit** bezeichneten Prozess, bei dem alle Zellen, die eine Position schneiden, im DocumentDB-Index als Schlüssel indiziert und gespeichert werden. Zur Abfragezeit werden Argumente wie Punkte und Polygone auch in den Mosaikprozess einbezogen, um die entsprechenden Zellen-ID-Bereiche zu extrahieren, und dann zum Abrufen von Daten aus dem Index verwendet.
 
-Wenn Sie eine Indizierungsrichtlinie angeben, die einen räumlichen Index für "/*" \(alle Pfade\) enthält, werden alle in der Sammlung gefundenen Punkte für effiziente räumliche Abfragen \(ST\_WITHIN und ST\_DISTANCE\) indiziert. Räumliche Indizes haben keinen Genauigkeitswert und verwenden stets einen Standardwert für die Genauigkeit.
+Wenn Sie eine Indizierungsrichtlinie angeben, die einen räumlichen Index für "/*" (alle Pfade) enthält, werden alle in der Sammlung gefundenen Punkte für effiziente räumliche Abfragen (ST\_WITHIN und ST\_DISTANCE) indiziert. Räumliche Indizes haben keinen Genauigkeitswert und verwenden stets einen Standardwert für die Genauigkeit.
 
 Der folgende JSON-Ausschnitt zeigt eine Indizierungsrichtlinie mit aktivierter räumlicher Indizierung, d. h. dass alle in Dokumenten für räumliche Abfragen gefundenen GeoJSON-Punkte indiziert werden. Wenn Sie die Indizierungsrichtlinie im Azure-Vorschauportal ändern, können Sie die folgende JSON für die Indizierungsrichtlinie angeben, um die räumliche Indizierung für Ihre Sammlung zu aktivieren.
 
@@ -351,8 +351,8 @@ Hier wird gezeigt, wie Sie eine vorhandene Sammlung so ändern können, dass die
 Nachdem Sie die ersten Schritte mit räumlichen Daten in DocumentDB ausgeführt haben, haben Sie folgende Möglichkeiten:
 
 - Starten der Programmierung mit den [.NET-Codebeispielen auf Github für räumliche Daten](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.Spatial)
-- Praktisches Arbeiten mit Abfragen von Geodaten im [DocumentDB Query Playground](www.documentdb.com/sql/demo)
+- Praktisches Arbeiten mit Abfragen von Geodaten im [DocumentDB Query Playground](http://www.documentdb.com/sql/demo#geospatial)
 - Weitere Informationen zu [DocumentDB-Abfragen](documentdb-sql-query.md)
 - Weitere Informationen zu [DocumentDB-Indizierungsrichtlinien](documentdb-indexing-policies.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

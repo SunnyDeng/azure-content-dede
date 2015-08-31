@@ -21,7 +21,7 @@
 
 Die folgende Dokumentation stellt Informationen zur Verwendung der benutzerdefinierten Installation für Azure AD Connect bereit. Sie können diese Option verwenden, wenn Sie zusätzliche Konfigurationsoptionen oder optionale Features benötigen, die von der Express-Installation nicht abgedeckt werden.
 
-Weitere Informationen zur Express-Installation finden Sie unter [Express-Installation](active-directory-aadconnect/#getting-started-with-azure-ad-connect). Informationen zum Upgrade von DirSync auf Azure AD Connect finden Sie unter [Upgrade von DirSync auf Azure Active Directory Connect](active-directory-aadconnect-dirsync-upgrade-get-started.md).
+Weitere Informationen zur Express-Installation finden Sie unter [Express-Installation](active-directory-aadconnect.md#getting-started-with-azure-ad-connect). Informationen zum Upgrade von DirSync auf Azure AD Connect finden Sie unter [Upgrade von DirSync auf Azure Active Directory Connect](active-directory-aadconnect-dirsync-upgrade-get-started.md).
 
 
 
@@ -290,4 +290,4 @@ Sie können die Abbildung und das Logo für Ihre AD FS-Anmeldeseiten anpassen, i
 	
 	Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"} –Illustration @{path=”c:\Contoso\illustration.png”}
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

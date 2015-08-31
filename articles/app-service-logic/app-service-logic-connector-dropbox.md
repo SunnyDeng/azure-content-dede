@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/09/2015"
+	ms.date="08/19/2015"
 	ms.author="sameerch"/>
 
 # Dropbox-Connector
@@ -36,32 +36,39 @@ Keine | <ul><li>Datei löschen</li><li>Datei abrufen</li><li>Datei hochladen</li
 ## Erstellen eines Dropbox-Connectors für Ihre Logik-App
 Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
 
-1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
-2. Suchen Sie nach Dropbox-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
-3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein:  
+1.	Öffnen Sie den Azure Marketplace mit der Option „+NEU“ unten links im Azure-Portal.
+2.	Navigieren Sie zu „Web und Mobil --> Azure Marketplace“, und suchen Sie nach „Dropbox-Connector“.
+3.	Konfigurieren Sie den Dropbox-Connector wie folgt:
+ 
 	![][1]
-	- **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten.
-	- **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
-	- **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
-	- **App Service-Plan** – Wählen oder erstellen Sie einen Webhostingplan.
-	- **Tarif** – Wählen Sie einen Tarif für den Connector.
-	- **Name** – Geben Sie einen Namen für den Dropbox-Connector ein.  
-4. Klicken Sie auf **Erstellen**.
-
+	- **Standort** - Wählen Sie den geografischen Standort, an dem der Connector bereitgestellt werden soll.
+	- **Abonnement** - Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
+	- **Ressourcengruppe** - Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
+	- **App Service-Plan** - Wählen Sie einen Webhostingplan aus, oder erstellen Sie einen.
+	- **Tarif** - Wählen Sie einen Tarif für den Connector aus.
+	- **Name** - Geben Sie Ihrem Dropbox-Connector einen Namen.
+4. Klicken Sie auf „Erstellen“. Ein neuer Dropbox-Connector wird erstellt.
+5. Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des Dropbox-Connectors erstellen.
 
 ## Verwenden des Dropbox-Connectors in Logik-Apps
 Sobald Ihre API-App erstellt wurde, können Sie den Dropbox-Connector als Aktion für Ihre Logik-App verwenden. Gehen Sie dazu folgendermaßen vor:
 
-1.	Öffnen Sie In Ihrer Logik-Apps **Trigger und Aktionen**, um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren:  
+1.	Erstellen Sie eine neue Logik-App, und wählen Sie dieselbe Ressourcengruppe aus, in der sich der Dropbox-Connector befindet.
+
+	![][2]
+2.	Öffnen Sie "Trigger und Aktionen", um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren.
+
 	![][3]
-2.	Der Dropbox-Connector wird im Katalog aufgeführt:  
+3.	Der Dropbox-Connector wird im Katalog auf der rechten Seite im Abschnitt „API-Apps in dieser Ressourcengruppe“ angezeigt.
+
 	![][4]
-3.	Wählen Sie den Dropbox-Connector aus, um ihn automatisch im Designer hinzuzufügen. Klicken Sie auf **Autorisieren**, geben Sie Ihre Anmeldeinformationen ein, und klicken Sie auf **Zulassen**:  
+4.	Sie können die Dropbox-Connector-API-App im Editor bearbeiten, indem Sie auf „Dropbox-Connector“ klicken. Klicken Sie auf die Schaltfläche „Autorisieren“. Geben Sie Ihre Dropbox-Anmeldeinformationen ein. Klicken Sie auf „Zulassen“.
+ 
 	![][5]
 	![][6]
 	![][7]
-
-Sie können nun den Dropbox-Connector im Datenfluss verwenden. Sie können die Dropbox-Aktion "Datei hochladen" zum Hochladen einer Datei in Ihr Dropbox-Konto verwenden:  
+6.	Sie können nun den Dropbox-Connector im Datenfluss verwenden. Sie können die Dropbox-Aktion „Datei hochladen“ zum Hochladen einer Datei in Ihr Dropbox-Konto verwenden.
+ 
 	![][8]
 	![][9]
 
@@ -75,7 +82,7 @@ Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Datei hochladen" wie
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -90,6 +97,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [8]: ./media/app-service-logic-connector-dropbox/img8.PNG
 [9]: ./media/app-service-logic-connector-dropbox/img9.PNG
 
-<!----HONumber=August15_HO7-->
-
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

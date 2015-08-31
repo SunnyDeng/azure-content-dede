@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015"  
+	ms.date="08/17/2015"  
 	ms.author="juliako"/>
 
 
@@ -356,9 +356,7 @@ Eine ausführbare Werbung kann mit dem <AdParameters>-Element innerhalb des <Lin
 
 ##Implementieren eines Windows- oder Windows Phone 8-Players mit Unterstützung für Werbeeinblendungen
 
-Microsoft Media-Plattform: Player Framework für Windows 8 und Windows Phone 8 enthält eine Sammlung von Beispielanwendungen, die zeigen, wie Sie eine Videoplayeranwendung mithilfe des Frameworks implementieren. Sie können Player Framework und die Beispiele unter [Player Framework for Windows 8 and Windows Phone 8](https://playerframework.codeplex.com/releases/view/105214) (in englischer Sprache) herunterladen.
-
-Weitere Informationen zum Einfügen von Werbeeinblendungen finden Sie unter [Einfügen von Werbeeinblendungen in Ihre Medien](media-services-inserting-ads-on-client-side.md#insert_ads_into_media).
+Microsoft Media-Plattform: Player Framework für Windows 8 und Windows Phone 8 enthält eine Sammlung von Beispielanwendungen, die zeigen, wie Sie eine Videoplayeranwendung mithilfe des Frameworks implementieren. Sie können Player Framework und die Beispiele unter [Player Framework for Windows 8 and Windows Phone 8](https://playerframework.codeplex.com) (in englischer Sprache) herunterladen.
 
 Wenn Sie die Microsoft.PlayerFramework.Xaml.Samples-Projektmappe öffnen, sehen Sie eine Reihe von Ordnern innerhalb des Projekts. Der Ordner "Advertising" enthält den Beispielcode, der für das Erstellen eines Videoplayers mit Unterstützung für Werbeeinblendungen relevant ist. Im Ordner "Advertising" befinden sich mehrere XAML/cs-Dateien, die jeweils verschiedene Arten für das Einfügen von Werbeeinblendungen zeigen. Diese werden in der folgende Liste beschrieben:
 
@@ -573,7 +571,6 @@ In diesem Beispiel wird "VmapSchedulerPlugin" verwendet, um Werbeeinblendungen m
 
 Microsoft Media-Plattform: Player Framework für iOS enthält eine Sammlung von Beispielanwendungen, die zeigen, wie Sie eine Videoplayeranwendung mithilfe des Frameworks implementieren. Sie können das Player Framework und die Beispiele unter [Azure Media Player Framework](https://github.com/Azure/azure-media-player-framework) herunterladen. Die GitHub-Seite enthält einen Link zu einem Wiki, das zusätzliche Informationen zum Player Framework und eine Einführung in das Playerbeispiel enthält: [Azure Media Player-Wiki](https://github.com/Azure/azure-media-player-framework/wiki/How-to-use-Azure-media-player-framework) (in englischer Sprache).
 
-Weitere Informationen zum Einfügen von Werbeeinblendungen finden Sie unter [Einfügen von Werbeeinblendungen in Ihre Medien](media-services-inserting-ads-on-client-side.md#insert_ads_into_media).
 
 ###Planen von Werbeeinblendungen mit VMAP
 
@@ -802,6 +799,6 @@ Das folgende Beispiel zeigt, wie eine Mid-Roll-Overlay-Werbeeinblendung geplant 
  
 ##Siehe auch
 
-[Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md) [Introduction to the Azure Media Player Framework for iOS](https://channel9.msdn.com/Series/Windows-Azure-Media-Services-Tutorials/An-introduction-to-Azure-Media-Player-Framework-for-IOS) ("Einführung in Azure Media Player Framework für iOS", in englischer Sprache)
+[Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

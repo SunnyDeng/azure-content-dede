@@ -5,7 +5,8 @@
  documentationCenter=""
  authors="Blackmist"
  manager="paulettm"
- editor="cgronlun"/>
+ editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
  ms.service="hdinsight"
@@ -71,4 +72,4 @@ Nachdem Sie erfahren haben, wie Sie JDBC mit Hive verwenden, können Sie mithilf
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

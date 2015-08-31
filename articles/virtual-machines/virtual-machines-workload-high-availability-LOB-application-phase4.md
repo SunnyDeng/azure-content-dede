@@ -25,13 +25,13 @@ Diese Phase muss vor Beginn von [Phase 5](virtual-machines-workload-high-availab
 
 ## Erstellen der virtuellen Computer für die Webserver in Azure
 
-Es gibt zwei virtuelle Computer, die als Webserver fungieren. Auf diesen können Sie ASP.NET-Anwendungen oder ältere Anwendungen bereitstellen, die von IIS 8 \(Internetinformationsdienste\) in Windows Server 2012 R2 gehostet werden können.
+Es gibt zwei virtuelle Computer, die als Webserver fungieren. Auf diesen können Sie ASP.NET-Anwendungen oder ältere Anwendungen bereitstellen, die von IIS 8 (Internetinformationsdienste) in Windows Server 2012 R2 gehostet werden können.
 
 Zunächst konfigurieren Sie den internen Lastenausgleich, sodass Azure den Clientdatenverkehr an die Branchenanwendung gleichmäßig auf die zwei Webserver verteilt. Dazu müssen Sie eine interne Lastenausgleichsinstanz konfigurieren, die aus einem Namen und einer eigenen IP-Adresse aus dem Adressraum des Subnetzes besteht, das Sie Ihrem virtuellen Azure-Netzwerk zugewiesen haben. Führen Sie die folgenden Befehle an der Azure PowerShell-Eingabeaufforderung aus, um die Verfügbarkeit einer IP-Adresse zu überprüfen, die Sie für den internen Load Balancer ausgewählt haben: Geben Sie die Werte für die Variablen ein, lassen Sie dabei aber die < and >-Zeichen weg.
 
 	Switch-AzureMode AzureServiceManagement
 	$vnet="<Table V – Item 1 – Value column>"
-	$testIP="<a chosen IP address from the subnet address space, Table S - Item 1 – Subnet address space column>"
+	$testIP="<a chosen IP address from the subnet address space, Table S - Item 2 – Subnet address space column>"
 	Test-AzureStaticVNetIP –VNetName $vnet –IPAddress $testIP
 
 Wenn das Feld **IsAvailable** in der Ausgabe des Test-AzureStaticVNetIP-Befehls den Wert **True** aufweist, können Sie die IP-Adresse verwenden.
@@ -56,7 +56,7 @@ Als Nächstes füllen Sie die Variablen und führen die folgenden Befehle aus:
 	$lbrule=New-AzureLoadBalancerRuleConfig -Name "WebTraffic" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol "TCP" -FrontendPort 80 -BackendPort 80
 	New-AzureLoadBalancer -ResourceGroupName $rgName -Name "WebServersInAzure" -Location $locName -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe -FrontendIpConfiguration $frontendIP
 
-Fügen Sie danach der DNS-Infrastruktur Ihres Unternehmens einen DNS-Adresseintrag hinzu, der den vollständig qualifizierten Domänennamen der Branchenanwendung \(z. B. "lobapp.corp.contoso.com"\) in die dem internen Load Balancer zugewiesene IP-Adresse auflöst \(der Wert von "$privIP" im vorangegangenen Azure PowerShell-Befehlsblock\).
+Fügen Sie danach der DNS-Infrastruktur Ihres Unternehmens einen DNS-Adresseintrag hinzu, der den vollständig qualifizierten Domänennamen der Branchenanwendung (z. B. "lobapp.corp.contoso.com") in die dem internen Load Balancer zugewiesene IP-Adresse auflöst (der Wert von "$privIP" im vorangegangenen Azure PowerShell-Befehlsblock).
 
 Anschließend erstellen Sie mit dem folgenden PowerShell-Befehlsblock die virtuellen Computer für die zwei Webserver. Die Werte für diesen PowerShell-Befehlsblock entnehmen Sie den folgenden Tabellen:
 
@@ -134,10 +134,10 @@ Installieren und konfigurieren Sie jetzt für jeden Webserver IIS.
 2. Klicken Sie auf der Seite "Vorbereitungen" auf **Weiter**.
 3. Klicken Sie auf der Seite "Installationstyp auswählen" auf **Weiter**.
 4. Klicken Sie auf der Seite "Zielserver auswählen" auf **Weiter**.
-5. Klicken Sie auf der Seite "Serverrollen" in der Liste **Rollen** auf **Webserver \(IIS\)**.
+5. Klicken Sie auf der Seite "Serverrollen" in der Liste **Rollen** auf **Webserver (IIS)**.
 6. Klicken Sie bei entsprechender Aufforderung auf **Features hinzufügen** und anschließend auf **Weiter**.
 7. Klicken Sie auf der Seite "Features auswählen" auf **Weiter**.
-8. Klicken Sie auf der Seite "Webserver \(IIS\)" auf **Weiter**.
+8. Klicken Sie auf der Seite "Webserver (IIS)" auf **Weiter**.
 9. Aktivieren oder deaktivieren Sie auf der Seite "Rollendienste auswählen" die Kontrollkästchen für die Dienste, die Sie für Ihre Branchenanwendung benötigen, und klicken Sie dann auf **Weiter**. 10. Klicken Sie auf der Seite "Installationsauswahl bestätigen" auf **Installieren**.
 
 ## Bereitstellen Ihrer Branchenanwendung auf den virtuellen Computern, die als Webserver fungieren
@@ -166,4 +166,6 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 5: Erste
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=August15_HO7-->
+[Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
+
+<!---HONumber=August15_HO8-->

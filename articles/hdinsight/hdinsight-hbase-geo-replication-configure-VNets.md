@@ -29,7 +29,7 @@ Die virtuelle Azure-Netzwerk Standort-zu-Standort-Konnektivität verwendet ein V
 - Regionale Anwendungen mit mehreren Ebenen mit starker Isolierungsgrenze 
 - Abonnementübergreifende Kommunikation zwischen Organisationen in Azure
 
-Weitere Informationen finden Sie unter [Konfiguration einer VNet-zu-VNet-Verbindung](../vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md).
+Weitere Informationen finden Sie unter [Konfiguration einer VNet-zu-VNet-Verbindung](https://msdn.microsoft.com/library/azure/dn690122.aspx).
 
 Video anzeigen:
 
@@ -256,8 +256,7 @@ In diesem Lernprogramm haben Sie gelernt, eine VPN-Verbindung zwischen zwei virt
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
-[azure-portal]: http://manage.windowsazure.com
-
+[azure-portal]: https://portal.azure.com
 
 [powershell-install]: ../install-configure-powershell
 
@@ -271,4 +270,4 @@ In diesem Lernprogramm haben Sie gelernt, eine VPN-Verbindung zwischen zwei virt
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="06/14/2015"
+   ms.date="08/19/2015"
    ms.author="rajram"/>
 
 #BizTalk Trading Partner Management
@@ -27,7 +27,14 @@ Die TPM-API-App ist die Basisanforderung des AS2-Connectors und der X12- oder ED
 ##Grundlegendes zu Partnern, Vereinbarungen und Profilen
 Klicken Sie [hier][1], um weitere Informationen zur Handelspartnervereinbarung (Trading Partner Management) zu erhalten.
 
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
+
 <!--References-->
 [1]: app-service-logic-create-a-trading-partner-agreement.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

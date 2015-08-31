@@ -30,17 +30,17 @@ Azure muss mit den folgenden grundlegenden Netzwerkkomponenten bereitgestellt we
 
 Füllen Sie vor der Konfiguration der Azure-Komponenten die folgenden Tabellen aus. Dieser Abschnitt soll Ihnen bei der Konfiguration von Azure helfen. Am besten drucken Sie die Seite aus und notieren Sie sich in den Lücken die erforderlichen Informationen oder kopieren Sie den Abschnitt in ein Dokument und füllen Sie es in der elektronischen Version aus.
 
-Die Einstellungen für das virtuelle Netzwerk \(VNet\) tragen Sie in Tabelle V ein.
+Die Einstellungen für das virtuelle Netzwerk (VNet) tragen Sie in Tabelle V ein.
 
 Element | Konfigurationselement | Beschreibung | Wert 
 --- | --- | --- | --- 
-1\. | VNet-Name | Der Name, den Sie dem virtuellen Azure-Netzwerk zuweisen \(z. B. SPFarmNet\) . | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+1\. | VNet-Name | Der Name, den Sie dem virtuellen Azure-Netzwerk zuweisen (z. B. SPFarmNet) . | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 2\. | VNet-Standort | Das Azure-Rechenzentrum, in dem sich das virtuelle Netzwerk befindet. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 3\. | Name des lokalen Netzwerks | Der Name, den Sie Ihrem Unternehmensnetzwerk zuweisen. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 4\. | IP-Adresse des VPN-Geräts | Die öffentliche IPv4-Adresse der Schnittstelle Ihres VPN-Geräts im Internet. Fragen Sie Ihre IT-Abteilung nach dieser Adresse. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-5\. | VNet-Adressraum | Der Adressraum des virtuellen Netzwerks \(definiert in einem einzigen privaten Adresspräfix\). Fragen Sie Ihre IT-Abteilung nach diesem Adressraum. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-6\. | Der erste DNS-Server für das virtuelle Netzwerk | Die vierte mögliche IP-Adresse für den Adressraum des zweiten Subnetzes des virtuellen Netzwerks \(siehe Tabelle S\). Fragen Sie Ihre IT-Abteilung nach dieser Adresse. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-7\. | Der zweite DNS-Server für das virtuelle Netzwerk | Die fünfte mögliche IP-Adresse für den Adressraum des zweiten Subnetzes des virtuellen Netzwerks \(siehe Tabelle S\). Fragen Sie Ihre IT-Abteilung nach dieser Adresse. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+5\. | VNet-Adressraum | Der Adressraum des virtuellen Netzwerks (definiert in einem einzigen privaten Adresspräfix). Fragen Sie Ihre IT-Abteilung nach diesem Adressraum. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+6\. | Der erste DNS-Server für das virtuelle Netzwerk | Die vierte mögliche IP-Adresse für den Adressraum des zweiten Subnetzes des virtuellen Netzwerks (siehe Tabelle S). Fragen Sie Ihre IT-Abteilung nach dieser Adresse. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+7\. | Der zweite DNS-Server für das virtuelle Netzwerk | Die fünfte mögliche IP-Adresse für den Adressraum des zweiten Subnetzes des virtuellen Netzwerks (siehe Tabelle S). Fragen Sie Ihre IT-Abteilung nach dieser Adresse. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 8\. | Gemeinsam verwendeter IPsec-Schlüssel | Eine aus 128 zufällig ausgewählten alphanumerischen Zeichen bestehende Zeichenfolge, die zur Authentifizierung beider Seiten der Site-to-Site-VPN-Verbindung verwendet wird. Fragen Sie Ihre IT- oder Sicherheitsabteilung nach diesem Schlüsselwert. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 
@@ -48,10 +48,10 @@ Element | Konfigurationselement | Beschreibung | Wert
 
 Füllen Sie für das Subnetz dieser Lösung Tabelle S aus.
 
-- Legen Sie für das erste Subnetz einen 29-Bit-Adressraum \(mit einer /29-Präfixlänge\) für das Azure-Gatewaysubnetz fest.
+- Legen Sie für das erste Subnetz einen 29-Bit-Adressraum (mit einer /29-Präfixlänge) für das Azure-Gatewaysubnetz fest.
 - Geben Sie für das zweite Subnetz einen Anzeigenamen, einen auf dem Adressraum des virtuellen Netzwerks basierenden einzelnen IP-Adressraum und einen beschreibenden Zweck an. 
 
-Fragen Sie Ihre IT-Abteilung nach diesen Adressräumen, die aus dem Adressraum des virtuellen Netzwerks bestimmt werden. Beide Adressräume muss im CIDR-Format \(Classless Interdomain Routing\) eingegeben werden, das auch als Netzwerkpräfixformat bezeichnet wird. Beispiel: 10.24.64.0/20.
+Fragen Sie Ihre IT-Abteilung nach diesen Adressräumen, die aus dem Adressraum des virtuellen Netzwerks bestimmt werden. Beide Adressräume muss im CIDR-Format (Classless Interdomain Routing) eingegeben werden, das auch als Netzwerkpräfixformat bezeichnet wird. Beispiel: 10.24.64.0/20.
 
 Item | Subnetzname | Subnetzadressraum | Zweck 
 --- | --- | --- | --- 
@@ -71,7 +71,7 @@ Element | Anzeigename des DNS-Servers | IP-Adresse des DNS-Servers
 
 **Tabelle D: Lokale DNS-Server**
 
-Zur Weiterleitung von Paketen aus dem virtuellen Azure-Netzwerk an Ihr Unternehmensnetzwerk über die Site-to-Site-VPN-Verbindung müssen Sie das virtuelle Netzwerk mit einem lokalen Netzwerk konfigurieren, das eine Liste der Adressräume \(in CIDR-Notation\) für alle erreichbaren Standorte im lokalen Netzwerk Ihres Unternehmens enthält. Die Liste der Adressräume, die Ihr lokales Netzwerk definieren, muss eindeutig sein und darf sich nicht mit den Adressräumen anderer virtueller oder lokaler Netzwerke überschneiden.
+Zur Weiterleitung von Paketen aus dem virtuellen Azure-Netzwerk an Ihr Unternehmensnetzwerk über die Site-to-Site-VPN-Verbindung müssen Sie das virtuelle Netzwerk mit einem lokalen Netzwerk konfigurieren, das eine Liste der Adressräume (in CIDR-Notation) für alle erreichbaren Standorte im lokalen Netzwerk Ihres Unternehmens enthält. Die Liste der Adressräume, die Ihr lokales Netzwerk definieren, muss eindeutig sein und darf sich nicht mit den Adressräumen anderer virtueller oder lokaler Netzwerke überschneiden.
 
 Füllen Sie zur Angabe der Adressräume Ihres lokalen Netzwerks Tabelle L aus. Hierfür sind zwar nur drei Einträge vorgesehen, vermutlich werden Sie aber mehr benötigen. Erarbeiten Sie die Liste dieser Adressräume gemeinsam mit Ihrer IT-Abteilung.
 
@@ -200,8 +200,8 @@ Konfigurieren Sie das lokale VPN-Gerät für die Verbindung zum Azure-VPN-Gatewa
 
 Zum Konfigurieren des lokalen VPN-Geräts benötigen Sie Folgendes:
 
-- Die öffentliche IPv4-Adresse des Azure-VPN-Gateways für Ihr virtuelles Netzwerk \(aus der Ergebnisanzeige des Befehls **Get-AzurePublicIpAddress -Name $publicGatewayVipName -ResourceGroupName $rgName**\)
-- Den vorinstallierten IPsec-Schlüssel für die Site-to-Site-VPN-Verbindung \(Tabelle V – Element 8 – Spalte "Wert"\)
+- Die öffentliche IPv4-Adresse des Azure-VPN-Gateways für Ihr virtuelles Netzwerk (aus der Ergebnisanzeige des Befehls **Get-AzurePublicIpAddress -Name $publicGatewayVipName -ResourceGroupName $rgName**)
+- Den vorinstallierten IPsec-Schlüssel für die Site-to-Site-VPN-Verbindung (Tabelle V – Element 8 – Spalte "Wert")
 
 Stellen Sie anschließend sicher, dass der Adressraum des virtuellen Netzwerks aus Ihrem lokalen Netzwerk erreichbar ist. Dies erfolgt in der Regel durch Hinzufügen einer Route zwischen dem Adressraum des virtuellen Netzwerks und Ihrem VPN-Gerät und der Bekanntgabe dieser Route für den Rest der Routinginfrastruktur Ihres Unternehmensnetzwerks. Erarbeiten Sie diese Lösung gemeinsam mit Ihrer IT-Abteilung.
 
@@ -234,7 +234,7 @@ Hier sehen Sie die nach erfolgreichem Abschluss dieser Phase erstellte Konfigura
 
 ## Nächster Schritt
 
-Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md).
+Zum Fortsetzen der Konfiguration für diesen Workload wechseln Sie zu [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md).
 
 ## Zusätzliche Ressourcen
 
@@ -246,4 +246,6 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 2:
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=August15_HO7-->
+[Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
+
+<!---HONumber=August15_HO8-->

@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Verwalten von StorSimple-Speicherkonten"
-   description="Beschreibt, wie Sie die Seite &quot;Konfigurieren&quot; zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten verwenden oder wie Sie die Sicherheitsschlüssel für ein Speicherkonto rotieren."
+   pageTitle="Verwalten des StorSimple-Speicherkontos | Microsoft Azure"
+   description="Beschreibt, wie Sie die Seite ";Konfigurieren"; zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten verwenden oder wie Sie die Sicherheitsschlüssel für ein Speicherkonto rotieren."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="06/25/2015"
+   ms.date="08/14/2015"
    ms.author="v-sharos" />
 
 # Verwalten von StorSimple-Speicherkonten
@@ -50,7 +50,7 @@ Im Folgenden werden die häufigsten auf der Seite **Konfigurieren** ausgeführte
 
 Es gibt drei Typen von Speicherkonten, die mit dem StorSimple-Gerät verwendet werden können.
 
-- **Auto-generated storage accounts** – diese Art von Speicherkonto wird bei der ersten Erstellung des Dienstes automatisch generiert. Weitere Informationen über die Erstellung dieses Speicherkontos finden Sie unter "Schritt 1: Erstellen eines neuen Diensts" in [Bereitstellen des StorSimple-Geräts](storsimple-deployment-walkthrough.md). 
+- **Auto-generated storage accounts** – diese Art von Speicherkonto wird bei der ersten Erstellung des Dienstes automatisch generiert. Weitere Informationen über die Erstellung dieses Speicherkontos finden Sie unter [Schritt 1: Erstellen eines neuen Diensts](storsimple-deployment-walkthrough-u1.md#step-1-create-a-new-service) in [Bereitstellen des lokalen StorSimple-Geräts](storsimple-deployment-walkthrough.md). 
 - **Storage accounts in the service subscription** – Azure-Speicherkonten, die demselben Abonnement zugeordnet sind wie der Dienst . Weitere Informationen zur Erstellung dieser Speicherkonten finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md). 
 - **Storage accounts outside of the service subscription** – Azure-Speicherkonten, die nicht mit dem Dienst verknüpft sind und wahrscheinlich schon vorhanden waren, bevor der Dienst erstellt wurde.
 
@@ -145,11 +145,11 @@ Um den StorSimple-Manager-Dienst über die Änderung zu informieren, müssen Sie
 3. Führen Sie im Dialogfeld folgende Schritte aus:
 
   1. Wählen Sie das Speicherkonto mit dem Zugriffsschlüssel, den Sie aktualisieren möchten, aus.
-  2. Sie müssen den Speicherzugriffsschlüssel im StorSimple-Manager-Dienst aktualisieren. In diesem Fall wird der Speicherzugriffsschlüssel angezeigt. Geben Sie den neuen Schlüssel im Feld **Storage Account Access Key** ein. 
+  2. Sie müssen den Speicherzugriffsschlüssel im StorSimple-Manager-Dienst aktualisieren. In diesem Fall wird der Speicherzugriffsschlüssel angezeigt. Geben Sie den neuen Schlüssel im Feld **Speicherkonto-Zugriffsschlüssel** ein. 
   3. Speichern Sie die Änderungen. Der Speicherkonten-Zugriffsschlüssel sollte jetzt aktualisiert sein.
 
 ## Nächste Schritte
 
 Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

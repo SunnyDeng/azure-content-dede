@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Benachrichtigungshubs - Pusharchitektur für Unternehmen" 
-	description="Anleitung zur Verwendung von Azure Notification Hubs (Benachrichtigungshubs) in einer Unternehmensumgebung" 
-	services="notification-hubs" 
-	documentationCenter="" 
-	authors="wesmc7777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Benachrichtigungshubs - Pusharchitektur für Unternehmen"
+	description="Anleitung zur Verwendung von Azure Notification Hubs (Benachrichtigungshubs) in einer Unternehmensumgebung"
+	services="notification-hubs"
+	documentationCenter=""
+	authors="wesmc7777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="04/27/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/18/2015" 
 	ms.author="wesmc"/>
 
 # Anleitung für eine unternehmensbezogene Pusharchitektur
@@ -21,7 +21,7 @@
 Unternehmen gehen mehr und mehr dazu über, mobile Anwendungen entweder für ihre Endbenutzer (extern) oder für ihre Mitarbeiter (intern) zu erstellen. Sie haben vorhandene Back-End-Systeme, seien es Mainframes oder einige Branchenanwendungen, die in die Architektur der mobilen Anwendungen integriert werden müssen. In dieser Anleitung wird gezeigt, wie sich diese Integration am besten umsetzen lässt, wozu mögliche Lösungen für allgemeine Szenarien vorgeschlagen werden.
 
 Eine häufige Anforderung besteht darin, Pushbenachrichtigung an die Benutzer über deren mobile Anwendung zu senden, wenn in den Back-End-Systemen ein interessierendes Ereignis auftritt. Beispielsweise möchte eine Bankkundin, die die Banking-App ihrer Bank auf ihrem iPhone hat, benachrichtigt werden, wenn ihr Konto mit einem Betrag belastet wird, der über einem bestimmten Betrag liegt. Oder es gibt ein Intranetszenario, in dem ein Mitarbeiter aus der Finanzabteilung, der auf seinem Windows Phone eine App zur Budgetgenehmigung hat, benachrichtigt werden möchte, wenn er eine Genehmigungsanforderung erhält.
- 
+
 Die Bankkonto- oder Genehmigungsverarbeitung wird wahrscheinlich in einem Back-End-System vorgenommen, das ein Pushbenachrichtigung an den Benutzer auslösen muss. Möglicherweise gibt es mehrere solcher Back-End-Systeme, für die Pushbenachrichtigungen gemäß derselben Logik implementiert sein müssen für den Fall, dass ein Ereignis eine Benachrichtigung auslöst. Die Komplexität liegt hier darin, mehrere Back-End-Systeme in ein einzelnes Pushsystem zu integrieren, bei dem die Endbenutzer möglicherweise unterschiedliche Benachrichtigungen abonniert haben. Und möglicherweise gibt es sogar mehrere mobile Anwendungen, z. B. bei mobilen Intranet-Apps, von denen eine mobile Anwendung Benachrichtigungen von mehreren solcher Back-End-Systeme empfangen möchte. Die Back-End-Systeme wissen üblicherweise nichts über die Semantik/Technologie von Pushbenachrichtigungen, also besteht eine herkömmliche allgemeine Lösung hierfür darin, eine Komponente bereitzustellen, die die Back-End-Systeme ständig auf alle interessierenden Ereignisse abfragt und dafür verantwortlich ist, die Pushnachrichten an die Clients zu senden. Hier wird eine noch bessere Lösung vorgestellt, für die das Modell „Azure Service Bus - Thema/Abonnement“ verwendet wird, durch das sich die Komplexität verringern und gleichzeitig die Lösung skalierbar gestalten lässt.
 
 Die allgemeine Architektur der Lösung (verallgemeinert mit mehreren mobilen Apps, jedoch gleichermaßen anwendbar, wenn es nur eine mobile App gibt) sieht wie folgt aus.
@@ -41,7 +41,7 @@ Das Schlüsselelement in dieser Architekturabbildung ist der Dienst Azure Servic
 	- Sendet Benachrichtigungen an Clients (über Azure-Benachrichtigungshub)
 3. Mobile Anwendung
 	- Empfängt Benachrichtigungen und zeigt diese an
-		
+
 ###Vorteile:
 
 1. Die Entkopplung von Empfänger (mobile App/mobiler Dienst über Benachrichtigunghub) und Sender (Back-End-Systeme) ermöglicht es, zusätzliche Back-End-Systeme bei minimalen Änderungen zu integrieren.
@@ -52,19 +52,19 @@ Das Schlüsselelement in dieser Architekturabbildung ist der Dienst Azure Servic
 ###Voraussetzungen
 Sie sollten die folgenden Lernprogramme durcharbeiten, um sich mit den Konzepten sowie den allgemeinen Erstellungs- und Konfigurationsschritten vertraut zu machen:
 
-1. [Verwenden von Service Bus-Themen und -Abonnements]\: Es werden die Details des Arbeitens mit Service Bus-Themen/-Abonnements erläutert, und es wird erläutert, wie ein Namespace erstellt wird, der Themen/Abonnements enthalten soll, und wie Nachrichten von diesen gesendet bzw. empfangen werden. 
-2. [Erste Schritte mit Notification Hubs]\: Hier wird erläutert, wie eine Windows Store-App eingerichtet wird und wie mithilfe von Notification Hubs Benachrichtigungen registriert und dann empfangen werden. 
+1. [Verwenden von Service Bus-Themen und -Abonnements]\: Es werden die Details des Arbeitens mit Service Bus-Themen/-Abonnements erläutert, und es wird erläutert, wie ein Namespace erstellt wird, der Themen/Abonnements enthalten soll, und wie Nachrichten von diesen gesendet bzw. empfangen werden.
+2. [Erste Schritte mit Notification Hubs]\: Hier wird erläutert, wie eine Windows Store-App eingerichtet wird und wie mithilfe von Notification Hubs Benachrichtigungen registriert und dann empfangen werden.
 
 ###Beispielcode
 
 Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englischer Sprache) verfügbar. Der Code ist in drei Komponenten aufgeteilt:
 
 1. **EnterprisePushBackendSystem**
-	
+
 	a. In diesem Projekt, das auf [Verwenden von Service Bus-Themen und -Abonnements] basiert, wird das *WindowsAzure.ServiceBus*-Nuget-Paket verwendet.
 
 	b. Das Paket enthält eine einfache C#-Konsolenanwendung, um ein Branchensystem (LoB-System) zu simulieren, das ein Senden der Nachricht an die mobile APp veranlasst.
-	
+
 		static void Main(string[] args)
         {
             string connectionString =
@@ -76,7 +76,7 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
             // Send message
             SendMessage(connectionString);
         }
-	
+
 	c. `CreateTopic` wird verwendet, um das Service Bus-Thema zu erstellen, in dem Nachrichten gesendet werden.
 
         public static void CreateTopic(string connectionString)
@@ -100,7 +100,7 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
                 TopicClient.CreateFromConnectionString(connectionString, sampleTopic);
 
             // Sends random messages every 10 seconds to the topic
-            string[] messages = 
+            string[] messages =
             {
                 "Employee Id '{0}' has joined.",
                 "Employee Id '{0}' has left.",
@@ -133,10 +133,10 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
 	    {
 	        string connectionString =
 	                 CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
-	
+
 	        // Create the subscription which will receive messages
-	        CreateSubscription(connectionString);   
-	
+	        CreateSubscription(connectionString);
+
 	        // Receive message
 	        ReceiveMessageAndSendNotification(connectionString);
 	    }
@@ -164,14 +164,14 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
                     ("Microsoft.NotificationHub.ConnectionString");
             hub = NotificationHubClient.CreateClientFromConnectionString
                     (hubConnectionString, "enterprisepushservicehub");
-            
+
             SubscriptionClient Client =
                 SubscriptionClient.CreateFromConnectionString
                         (connectionString, sampleTopic, sampleSubscription);
 
             Client.Receive();
 
-            // Continuously process messages received from the subscription 
+            // Continuously process messages received from the subscription
             while (true)
             {
                 BrokeredMessage message = Client.Receive();
@@ -198,7 +198,7 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
                         message.Abandon();
                     }
                 }
-            } 
+            }
         }
         static async void SendNotificationAsync(string message)
         {
@@ -210,7 +210,7 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
 	![][2]
 
 	f. Wählen Sie Ihr Veröffentlichungsprofil aus, und erstellen Sie eine neue Azure-Website, sofern noch keine vorhanden ist, die diesen Webauftrag hostet. Sobald die Website vorhanden ist, klicken Sie auf **Veröffentlichen**.
-	
+
 	![][3]
 
 	g. Konfigurieren Sie den WebJob mit „Dauerhaft ausführen“, sodass in etwa Folgendes angezeigt wird, wenn Sie sich beim Azure-Verwaltungsportal angemeldet haben:
@@ -221,7 +221,7 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
 3. **EnterprisePushMobileApp**
 
 	a. Dies ist eine Windows Store-Anwendung, die Popupbenachrichtigungen von dem WebJob empfängt, der als Bestandteil Ihres Mobil-Back-Ends ausgeführt wird, und diese Benachrichtigungen anzeigt. Diese Anwendung basiert auf [Erste Schritte mit Notification Hubs].
-	
+
 	b. Stellen Sie sicher, dass Ihre Anwendung so konfiguriert ist, dass sie Popupbenachrichtigungen empfangen kann.
 
 	c. Stellen Sie sicher, dass der folgende Notification Hubs-Registrierungscode beim App-Start aufgerufen wird (nachdem *HubName* und *DefaultListenSharedAccessSignature* ersetzt wurden):
@@ -244,9 +244,9 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
 
 ### Ausführen des Beispiels:
 
-1. Vergewissern Sie sich, dass Ihr WebJob erfolgreich ausgeführt wird und als „Dauerhaft ausführen“ geplant ist. 
-2. Führen Sie die **EnterprisePushMobileApp** aus, mit der die Windows Store-App gestartet wird. 
-3. Führen Sie die Konsolenanwendung **EnterprisePushBackendSystem** aus, die das Branchen-Back-End startet und damit beginnt, Nachrichten zu senden. Es sollten Popupbenachrichtigungen angezeigt werden, die wie die folgenden aussehen: 
+1. Vergewissern Sie sich, dass Ihr WebJob erfolgreich ausgeführt wird und als „Dauerhaft ausführen“ geplant ist.
+2. Führen Sie die **EnterprisePushMobileApp** aus, mit der die Windows Store-App gestartet wird.
+3. Führen Sie die Konsolenanwendung **EnterprisePushBackendSystem** aus, die das Branchen-Back-End startet und damit beginnt, Nachrichten zu senden. Es sollten Popupbenachrichtigungen angezeigt werden, die wie die folgenden aussehen:
 
 	![][5]
 
@@ -269,6 +269,5 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
 [Verwenden von Service Bus-Themen und -Abonnements]: http://azure.microsoft.com/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/
 [Azure-Webauftrag]: http://azure.microsoft.com/documentation/articles/web-sites-create-web-jobs/
 [Erste Schritte mit Notification Hubs]: http://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

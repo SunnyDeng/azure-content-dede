@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen Sie einen virtuellen Computer unter Windows im Azure-Vorschauportal | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mithilfe des Azure Marketplace im Azure-Vorschauportal eine Azure-VM-Ressource unter Windows erstellen."
+	description="Erfahren Sie, wie Sie mithilfe des Azure Marketplace im Azure-Vorschauportal einen virtuellen Azure-Computer erstellen, auf dem Windows ausgeführt wird."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="KBDAzure"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="07/13/2015"
+	ms.date="08/14/2015"
 	ms.author="kathydav"/>
 
 # Erstellen Sie einen virtuellen Windows-Computer im Azure-Vorschauportal#
@@ -21,14 +21,22 @@
 > [AZURE.SELECTOR]
 - [Azure preview portal](virtual-machines-windows-tutorial.md)
 - [Azure portal](virtual-machines-windows-tutorial-classic-portal.md)
-- [PowerShell - Resource manager](virtual-machines-deploy-rmtemplates-powershell.md)
-- [PowerShell - Service management](virtual-machines-ps-create-preconfigure-windows-vms.md)
+- [PowerShell: Resource Manager deployment](virtual-machines-deploy-rmtemplates-powershell.md)
+- [PowerShell: Classic deployment](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-In diesem Lernprogramm erfahren Sie, wie einfach es ist, in wenigen Minuten einen virtuellen Azure-Computer (VM) im Vorschauportal zu erstellen. Wir verwenden ein Windows Server 2012 R2 Datacenter-Image als Beispiel für die Erstellung des virtuellen Computers im Azure-Ressourcen-Manager, aber dies ist nur eines von vielen Images, die Azure bereitstellt. Beachten Sie, dass Ihre Imageauswahl von Ihrem Abonnement abhängt. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
+In diesem Lernprogramm erfahren Sie, wie einfach es ist, in wenigen Minuten einen virtuellen Azure-Computer im Vorschauportal zu erstellen. Wir verwenden ein Windows Server 2012 R2 Datacenter-Image als Beispiel für das Erstellen des virtuellen Computers, aber dies ist nur eines von vielen in Azure bereitgestellten Images. Ihre Imageauswahl hängt von Ihrem Abonnement ab. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
 
 Sie können virtuelle Computer auch unter Verwendung eigener Images, mithilfe von Ressourcen-Manager-Vorlagen oder mit Automatisierungstools erstellen. Informationen zu den verschiedenen Methoden finden Sie unter [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md).
 
+In diesem Lernprogramm wird das Bereitstellungsmodell des Ressourcen-Managers verwendet, um den virtuellen Computer zu erstellen. Dies wird anstelle des klassischen Bereitstellungsmodells empfohlen, das auf Dienstverwaltungs-APIs basiert. Ausführliche Informationen zum Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md). Weitere Informationen zu den Vorteilen der Verwendung des Ressourcen-Managers für virtuelle Maschinen finden Sie unter [Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md).
+
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
+
+## Exemplarische Vorgehensweise per Video
+
+Hier finden Sie eine exemplarische Vorgehensweise für dieses Lernprogramm.
+
+[AZURE.VIDEO create-a-virtual-machine-running-windows-in-the-azure-preview-portal]
 
 ## Auswählen des Images
 
@@ -36,13 +44,13 @@ Wechseln Sie im Vorschauportal zum Azure Marketplace, um das gewünschte Windows
 
 1. Melden Sie sich beim [Vorschauportal](https://portal.azure.com) an.
 
-2. Klicken Sie im Menü "Hub" auf **Neu** > **Compute** > **Windows Server 2012 R2 Datacenter**.
+2. Klicken Sie im Menü "Hub" auf **Neu** > **Compute** > **Windows Server 2012 R2 Datacenter**.
 
 	![Marketplace](./media/virtual-machines-windows-tutorial/marketplace_new.png)
 
 	>[AZURE.TIP]Um weitere Images zu suchen, klicken Sie auf **Marketplace**, und suchen oder filtern Sie dann die verfügbaren Elemente.
 
-3. Wählen Sie auf der Seite **Windows Server 2012 R2 Datacenter** die Option **Ressourcen-Manager-Stapel verwenden**, um den virtuellen Computer im Azure-Ressourcen-Manager zu erstellen. (Für die meisten neuen Workloads empfiehlt sich der Ressourcen-Manager-Stapel. Überlegungen hierzu finden Sie unter [Azure-Compute-, -Netzwerk- und -Speicheranbieter im Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md). Klicken Sie dann auf **Erstellen**.
+3. Wählen Sie auf der Seite **Windows Server 2012 R2 Datacenter** unter **Select a deployment model** die Option **Ressourcen-Manager** aus. Klicken Sie auf **Erstellen**.
 
 	![Suchen auf dem Marketplace](./media/virtual-machines-windows-tutorial/marketplace_search_select.png)
 
@@ -60,9 +68,9 @@ Nachdem Sie das Image ausgewählt haben, können Sie für den Großteil der Konf
 
 	![Konfigurieren der VM-Größe](./media/virtual-machines-windows-tutorial/create_vm_size.PNG)
 
-	>[AZURE.NOTE]Storage Premium steht für virtuelle Computer der DS-Reihe in bestimmten Regionen zur Verfügung. Storage Premium die beste Speicheroption für datenintensive Workloads wie Datenbanken. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
+	>[AZURE.NOTE]Storage Premium steht für virtuelle Computer der DS-Reihe in bestimmten Regionen zur Verfügung. Storage Premium die beste Speicheroption für datenintensive Workloads wie Datenbanken. Nähere Informationen finden Sie unter [Storage Premium: Hochleistungsspeicher für Azure Virtual Machines-Workloads](storage-premium-storage-preview-portal.md).
 
-3. Klicken Sie auf **Einstellungen**, um die Einstellungen für Hauptspeicher und Netzwerkfähigkeit des neuen virtuellen Computers anzuzeigen. Für einen ersten virtuellen Computer können Sie im Allgemeinen die Standardeinstellungen akzeptieren. Wenn Sie eine geeignete Größe für den virtuellen Computer ausgewählt haben, können Sie durch Auswahl von **Premium (SSD)** unter **Datenträgertyp** Storage Premium testen.
+3. Klicken Sie auf **Einstellungen**, um die Speicher- und Netzwerkeinstellungen des neuen virtuellen Computers anzuzeigen. Für einen ersten virtuellen Computer können Sie i. Allg. die Standardeinstellungen übernehmen. Wenn Sie eine geeignete Größe für den virtuellen Computer ausgewählt haben, können Sie durch Auswahl von **Premium (SSD)** unter **Datenträgertyp** Storage Premium testen.
 
 	![Konfigurieren von VM-Einstellungen](./media/virtual-machines-windows-tutorial/create_vm_settings.PNG)
 
@@ -70,19 +78,19 @@ Nachdem Sie das Image ausgewählt haben, können Sie für den Großteil der Konf
 
 	![Konfigurieren von VM-Einstellungen](./media/virtual-machines-windows-tutorial/create_vm_summary.PNG)
 
-8. Während Azure den virtuellen Computer erstellt, können Sie den Status unter **Benachrichtigungen** im Hub-Menü nachverfolgen. Nachdem Azure den virtuellen Computer erstellt hat, wird dieser in Ihrem Startmenü angezeigt, sofern Sie die Option **An Startmenü anheften** auf dem Blatt **Virtuellen Computer erstellen** nicht deaktiviert haben.
+8. Während Azure den virtuellen Computer erstellt, können Sie den Status unter **Benachrichtigungen** im Menü "Hub" nachverfolgen. Nachdem Azure den virtuellen Computer erstellt hat, wird dieser in Ihrem Startmenü angezeigt, sofern Sie die Option **An Startmenü anheften** auf dem Blatt **Virtuellen Computer erstellen** nicht deaktiviert haben.
 
-## Melden Sie sich beim virtuellen Computer an.
+## Anmelden beim virtuellen Computer
 
 Nachdem Sie den virtuellen Computer erstellt haben, sollten Sie sich bei diesem anmelden, um die Einstellungen und Anwendungen zu verwalten, die darauf ausgeführt werden.
 
 >[AZURE.NOTE]Tipps zu den Voraussetzungen und zur Problembehandlung finden Sie unter [Verbinden mit einem virtuellen Azure-Computer mit RDP oder SSH](https://msdn.microsoft.com/library/azure/dn535788.aspx).
 
-1. Melden Sie sich beim [Vorschauportal](https://portal.azure.com) an, falls noch nicht geschehen.
+1. Melden Sie sich auf dem [Vorschauportal](https://portal.azure.com) an, falls Sie dies noch nicht getan haben.
 
-2. Klicken Sie auf Ihren VM im Startboard Wenn Sie den virtuellen Computer suchen müssen, klicken Sie auf **Alle durchsuchen** > **Aktuell** oder **Alle durchsuchen** > **Virtuelle Computer**. Wählen Sie dann Ihren virtuellen Computer aus der Liste aus.
+2. Klicken Sie auf dem virtuellen Computer auf das Startmenü. Wenn Sie den virtuellen Computer suchen müssen, klicken Sie auf **Alle durchsuchen** > **Aktuell** oder **Alle durchsuchen** > **Virtuelle Computer**. Wählen Sie dann den virtuellen Computer aus der Liste aus.
 
-3. Klicken Sie im VM-Blatt auf **Verbinden**.
+3. Klicken Sie auf dem Blatt des virtuellen Computers auf **Verbinden**.
 
 	![Melden Sie sich beim virtuellen Computer an.](./media/virtual-machines-windows-tutorial/connect_vm_portal.png)
 
@@ -98,7 +106,7 @@ Nachdem Sie den virtuellen Computer erstellt haben, sollten Sie sich bei diesem 
 
 ## Nächste Schritte
 
-* Verwenden Sie Azure PowerShell und die Azure-Befehlszeilenschnittstelle zum [Suchen und Auswählen von VM-Images](resource-groups-vm-searching.md).
-* Automatisieren Sie die VM- und Workloadbereitstellung und die Verwaltung unter Verwendung des [Azure-Ressourcen-Managers](virtual-machines-how-to-automate-azure-resource-manager.md) und der [Azure-Ressourcen-Manager-Vorlagen](http://azure.microsoft.com/de-de/documentation/templates/).
+* Verwenden Sie Azure PowerShell und die Azure-Befehlszeilenschnittstelle zum [Suchen und Auswählen von Images für virtuelle Computer](resource-groups-vm-searching.md).
+* Automatisieren Sie die Bereitstellung und Verwaltung von virtuellen Computern und Workloads mithilfe von [Azure-Ressourcen-Manager](virtual-machines-how-to-automate-azure-resource-manager.md) und [Azure-Ressourcen-Manager-Vorlagen](http://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

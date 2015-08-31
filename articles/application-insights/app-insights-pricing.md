@@ -53,7 +53,10 @@ Sie können jederzeit zur kostenlosen 30-Tage-Testversion des Premium-Tarifs wec
 * Das Kontingent hängt von dem Tarif ab, den Sie ausgewählt haben.
 * Das Kontingent beginnt um Mitternacht UTC am ersten Tag jedes Monats.
 * Das Datenpunktediagramm zeigt, wie viel von Ihrem Kontingent in diesem Monat verwendet wurde.
-* Das Kontingent wird in *Datenpunkten* gemessen. Ein einzelner Datenpunkt ist ein Aufruf einer der Nachverfolgungsmethoden, unabhängig davon, ob sie explizit in Ihrem Code oder durch eines der Standardtelemetriemodule aufgerufen wird. Jede in der Diagnosesuche angezeigte Zeile ist ein Datenpunkt. Jede Messung einer Metrik wie z. B. eines Leistungsindikators ist ein Datenpunkt. 
+* Das Kontingent wird in *Datenpunkten* gemessen. Ein einzelner Datenpunkt ist ein Aufruf einer der Nachverfolgungsmethoden, unabhängig davon, ob sie explizit in Ihrem Code oder durch eines der Standardtelemetriemodule aufgerufen wird. Datenpunkte enthalten Folgendes:
+ * Alle Zeilen in der [Diagnosesuche](app-insights-diagnostic-search.md) 
+ * Jede Rohmessung einer [Metrik](app-insights-metrics-explorer.md), etwa eines Leistungsindikators. (Die Punkte, die Sie in den Diagrammen sehen, sind normalerweise Aggregate von mehreren Rohdatenpunkten).
+ * Alle Punkte in den Diagrammen zum [Webtest (Verfügbarkeit)](app-insights-monitor-web-app-availability.md). 
 * *Sitzungsdaten* werden im Kontingent nicht berücksichtigt. Hierzu zählen die Anzahl von Benutzern oder Sitzungen sowie Umgebungs- und Gerätedaten.
 
 
@@ -68,11 +71,11 @@ Wenn die Anwendung mehr als das monatliche Kontingent sendet, haben Sie folgende
 
 ### Wie viele Daten sende ich?
 
-Das Diagramm im unteren Bereich des Blatts mit der Preisübersicht zeigt das Datenpunktvolumen Ihrer Anwendung gruppiert nach Datenpunkttypen an. \(Sie können dieses Diagramm auch im Metrik-Explorer erstellen.\)
+Das Diagramm im unteren Bereich des Blatts mit der Preisübersicht zeigt das Datenpunktvolumen Ihrer Anwendung gruppiert nach Datenpunkttypen an. (Sie können dieses Diagramm auch im Metrik-Explorer erstellen.)
 
 ![Im unteren Bereich des Blatts mit der Preisübersicht](./media/app-insights-pricing/03-allocation.png)
 
-Klicken Sie auf das Diagramm, um weitere Details einzublenden, oder ziehen Sie den Mauszeiger darüber, um einen Zeitraum im Detail anzuzeigen.
+Klicken Sie auf das Diagramm, um weitere Details einzublenden, oder ziehen Sie den Mauszeiger darüber, und klicken Sie auf „(+)“, um einen Zeitraum im Detail anzuzeigen.
 
 
 ## Datenrate
@@ -81,9 +84,9 @@ Zusätzlich zum monatlichen Kontingent gibt es Begrenzungen der Datenrate. Beim 
 
 Es gibt drei Buckets, die getrennt gezählt werden:
 
-* [TrackTrace-Aufrufe](app-insights-api-custom-events-metrics.md#track-trace) und [erfasste Protokolle](app-insights-asp-net-trace-logs.md)
+* [TrackTrace-Aufrufe](app-insights-api-custom-events-metrics.md#track-trace) und [Erfasste Protokolle](app-insights-asp-net-trace-logs.md)
 * [Ausnahmen](app-insights-api-custom-events-metrics.md#track-exception), begrenzt auf 50 Punkte/s
-* Alle anderen Telemetriedaten \(Seitenaufrufe, Sitzungen, Anforderungen, Abhängigkeiten, Metriken, benutzerdefinierte Ereignisse\).
+* Alle anderen Telemetriedaten (Seitenaufrufe, Sitzungen, Anforderungen, Abhängigkeiten, Metriken, benutzerdefinierte Ereignisse).
 
 Wenn die App mehr Daten sendet, als der Grenzwert zulässt, werden einige Daten gelöscht. Sie erhalten zur Warnung eine Benachrichtigung, dass dies erfolgt ist.
 
@@ -91,7 +94,7 @@ Wenn die App mehr Daten sendet, als der Grenzwert zulässt, werden einige Daten 
 
 Wenn Begrenzungsdrosselungen auftreten, können Sie verschiedene Schritte ausführen:
 
-* Deaktivieren Sie die Erfassungsmodule, die Sie nicht benötigen, durch [Bearbeiten von "ApplicationInsights.config"](app-insights-configuration-with-applicationinsights-config.md). Das kann z. B. für Leistungsindikator- oder Abhängigkeitsdaten gelten.
+* Deaktivieren Sie nicht benötigte Erfassungsmodule durch [Bearbeiten von „ApplicationInsights.config“](app-insights-configuration-with-applicationinsights-config.md). Das kann z. B. für Leistungsindikator- oder Abhängigkeitsdaten gelten.
 * Aggregieren Sie Metriken vorab. Wenn Sie Ihrer App Aufrufe an TrackMetric eingefügt haben, können Sie Datenverkehr reduzieren, indem Sie die Überladung verwenden, die Ihre Berechnung des Durchschnitts und die Standardabweichung eines Batches von Messungen akzeptiert. Oder Sie können ein [vorab aggregierendes Paket](https://www.myget.org/gallery/applicationinsights-sdk-labs) verwenden. 
 
 
@@ -106,8 +109,8 @@ Wenn Begrenzungsdrosselungen auftreten, können Sie verschiedene Schritte ausfü
 Ihr Tarif bestimmt, wie lange Daten im Portal aufbewahrt werden und dadurch auch, wie weit zurück Sie die Zeiträume festlegen können.
 
 
-* Rohdatenpunkte \(also Instanzen, die Sie bei der Diagnosesuche überprüfen können\): 7 bis 30 Tage.
-* Aggregierte Daten \(d. h. Zählungen, Mittelwerte und andere statistischen Daten, die im Metrik-Explorer angezeigt werden\) werden im Maß von 1 Minute für 30 Tage und 1 Stunde oder 1 Tag \(abhängig vom Typ\) für mindestens 13 Monate aufbewahrt.
+* Rohdatenpunkte (also Instanzen, die Sie bei der Diagnosesuche überprüfen können): 7 bis 30 Tage.
+* Aggregierte Daten (d. h. Zählungen, Mittelwerte und andere statistischen Daten, die im Metrik-Explorer angezeigt werden) werden im Maß von 1 Minute für 30 Tage und 1 Stunde oder 1 Tag (abhängig vom Typ) für mindestens 13 Monate aufbewahrt.
 
 
 
@@ -118,7 +121,9 @@ Die Gebühren für Application Insights werden Ihrer Azure-Rechnung hinzugefügt
 
 ![Wählen Sie im seitlichen Menü die Option "Abrechnung".](./media/app-insights-pricing/02-billing.png)
 
+## Zusammenfassung der Grenzwerte
 
+[AZURE.INCLUDE [application-insights-limits](../../includes/application-insights-limits.md)]
 
 
 <!--Link references-->
@@ -130,4 +135,4 @@ Die Gebühren für Application Insights werden Ihrer Azure-Rechnung hinzugefügt
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

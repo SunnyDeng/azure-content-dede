@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/08/2015"
+   ms.date="08/13/2015"
    ms.author="telmos" />
 
 # Was ist eine Netzwerksicherheitsgruppe (NSG)?
 
 Mit einer NSG können Sie eingehenden Datenverkehr für Instanzen virtueller Computer in Ihrem virtuellen Netzwerk steuern. Bei einer Netzwerksicherheitsgruppe handelt es sich um ein übergeordnetes Objekt, das Ihrem Abonnement zugeordnet ist. Eine NSG enthält Zugriffsregeln, die eingehenden Datenverkehr für VM-Instanzen zulassen oder verweigern. Die Regeln für eine NSG können jederzeit geändert werden, und die Änderungen werden auf alle zugeordneten Instanzen angewendet. Für die Verwendung einer NSG benötigen Sie ein VNet mit Regionszuordnung (Standort).
 
->[AZURE.WARNING]NSGs sind nicht mit VNets kompatibel, die einer Affinitätsgruppe zugeordnet sind. Wenn Sie über kein regionales VNet verfügen und trotzdem den eingehenden Datenverkehr für Ihre Endpunkte steuern möchten, lesen Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?](../virtual-networks-acl) weiter.
+>[AZURE.WARNING]NSGs sind nicht mit VNets kompatibel, die einer Affinitätsgruppe zugeordnet sind. Wenn Sie über kein regionales VNet verfügen und trotzdem den eingehenden Datenverkehr für Ihre Endpunkte steuern möchten, lesen Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?](./virtual-networks-acl.md) weiter. Sie können auch [Ihr VNet in ein regionales VNet migrieren](./virtual-networks-migrate-to-regional-vnet.md).
 
 Sie können eine NSG einem virtuellen Computer oder einem Subnetz innerhalb eines VNets zuordnen. Bei der Zuordnung zu einem virtuellen Computer gilt die NSG für den gesamten ein- und ausgehenden Datenverkehr der VM-Instanz. Bei der Zuordnung zu einem Subnetz im VNet gilt sie für den gesamten ein- und ausgehenden Datenverkehr aller VM-Instanzen im Subnetz. Ein virtueller Computer bzw. ein Subnetz kann jeweils nur einer einzelnen NSG zugeordnet werden, und jede NSG kann bis zu 200 Regeln enthalten. Pro Abonnement können 100 NSGs verwendet werden.
 
@@ -132,7 +132,7 @@ Ein Beispiel: Sie erstellen einen neuen virtuellen Computer und eine neue NSG. A
 
 Sie müssen wissen, wie virtuelle Computer mit Infrastrukturdiensten und dem von Azure gehosteten PaaS-Dienst kommunizieren, wenn Sie Ihre NSGs entwerfen. Auf die meisten Azure-PaaS-Dienste, wie z. B. SQL-Datenbanken und Speicher, kann nur über eine öffentliche Internetadresse zugegriffen werden. Dies gilt auch für Lastenausgleichstests.
 
-Ein häufiges Szenario in Azure ist die Abtrennung von virtuellen Computern und PaaS-Rollen in Subnetze abhängig davon, ob für diese Objekte ein Internetzugriff erforderlich ist oder nicht. In solchen Szenarien kann ein Subnetz mit virtuellen Computern oder Rolleninstanzen vorhanden sein, die Zugriff auf Azure-PaaS-Dienste wie SQL-Datenbanken und Speicher benötigen, für die jedoch keine eingehende oder ausgehende Kommunikation mit dem öffentlichen Internet erforderlich ist.
+Ein häufiges Szenario in Azure ist die Abtrennung von virtuellen Computern und PaaS-Rollen in Subnetze abhängig davon, ob für diese Objekte ein Internetzugriff erforderlich ist oder nicht. In solchen Szenarios kann ein Subnetz mit virtuellen Computern oder Rolleninstanzen vorhanden sein, die Zugriff auf Azure-PaaS-Dienste wie SQL-Datenbanken und Speicher benötigen, für die jedoch keine eingehende oder ausgehende Kommunikation mit dem öffentlichen Internet erforderlich ist.
 
 Betrachten Sie z. B. die folgende NSG-Regel für ein solches Szenario:
 
@@ -149,6 +149,7 @@ Erwägen Sie, anstatt einer Verweigerungsregel eine Regel zu verwenden, mit der 
 |INS INTERNET|100| VIRTUAL\_NETWORK|&#42;|INTERNET|&#42;|TCP|ZULASSEN|
 |AUS DEM INTERNET|110| INTERNET|&#42;|VIRTUAL\_NETWORK|&#42;|TCP|VERWEIGERN| 
 
+>[AZURE.WARNING]Azure verwendet ein spezielles Subnetz, das als **Gatewaysubnetz** bezeichnet wird, um VPN-Gateways mit anderen VNets und lokalen Netzwerken zu verwalten. Das Zuordnen einer NSG zu diesem Subnetz bewirkt, dass das VPN-Gateway nicht mehr wie erwartet funktioniert. Ordnen Sie NSGs NICHT Gatewaysubnetzen zu!
 
 ## Planung – Workflow für eine Netzwerksicherheitsgruppe
 
@@ -244,8 +245,8 @@ Derzeit können NSGs ausschließlich über PowerShell-Cmdlets und REST-APIs konf
 
 	Get-AzureNetworkSecurityGroup -Name "MyVNetSG" -Detailed
  
-**Anzeigen aller Azure-PowerShell-Cmdlets für NSGs**
+**Anzeigen aller Azure PowerShell-Cmdlets für NSGs**
 
 	Get-Command *azurenetworksecuritygroup*
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

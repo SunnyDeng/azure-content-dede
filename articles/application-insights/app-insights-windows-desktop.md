@@ -12,10 +12,10 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/12/2015" 
+	ms.date="08/19/2015" 
 	ms.author="awills"/>
 
-# Application Insights für Windows-Desktop-Apps und -Dienste
+# Application Insights für Windows-Desktop-Apps, -Dienste und -Workerrollen
 
 *Application Insights befindet sich in der Vorschau.*
 
@@ -23,7 +23,7 @@
 
 Mit Application Insights können Sie die Nutzung und Leistung Ihrer bereitgestellten Anwendung überwachen:
 
-Unterstützung für Windows-Desktop-Apps und -Dienste wird über das Application Insights Core SDK bereitgestellt. Dieses SDK bietet vollständige API-Unterstützung für alle Telemetriedaten, jedoch keine automatische Sammlung von Telemetriedaten.
+Alle Windows-Anwendungen, einschließlich Desktop-Apps, Hintergrunddienste und Workerrollen, können das Application Insights Core SDK zum Senden von Telemetriedaten an Application Insights verwenden. Das Core SDK stellt nur eine API bereit: Im Gegensatz zu den Web- oder Geräte-SDKs enthält es keine Module, die automatisch Daten erfassen. Daher müssen Sie Code schreiben, um Ihre eigenen Telemetriedaten zu senden.
 
 
 ## <a name="add"></a> Erstellen einer Application Insights-Ressource
@@ -31,9 +31,9 @@ Unterstützung für Windows-Desktop-Apps und -Dienste wird über das Application
 
 1.  Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource. Wählen Sie als Anwendungstyp "Windows Store-App" aus. 
 
-    ![Klicken Sie auf "Neu \> Application Insights".](./media/app-insights-windows-desktop/01-new.png)
+    ![Klicken Sie auf "Neu > Application Insights".](./media/app-insights-windows-desktop/01-new.png)
 
-    \(Die Auswahl des Anwendungstyps bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften.\)
+    (Die Auswahl des Anwendungstyps bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften.)
 
 2.  Erstellen Sie eine Kopie des Instrumentationsschlüssels.
 
@@ -42,29 +42,34 @@ Unterstützung für Windows-Desktop-Apps und -Dienste wird über das Application
 ## <a name="sdk"></a>Installieren des SDK in Ihrer Anwendung
 
 
-1. Bearbeiten Sie die NuGet-Pakete Ihres Desktop-App-Projekts in Visual Studio.![Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie "NuGet-Pakete verwalten".](./media/app-insights-windows-desktop/03-nuget.png)
+1. Bearbeiten Sie die NuGet-Pakete Ihres Desktop-App-Projekts in Visual Studio.
+
+    ![Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie "NuGet-Pakete verwalten".](./media/app-insights-windows-desktop/03-nuget.png)
 
 2. Installieren Sie das Application Insights Core API-Paket.
 
     ![Suchen Sie nach "Application Insights".](./media/app-insights-windows-desktop/04-core-nuget.png)
 
-3. Legen Sie das "InstrumentationKey"-Element im Code fest, z. B. in "main\(\)".
+    Sie können andere Pakete wie beispielsweise das Leistungsindikator- oder das Protokollerfassungspaket installieren, wenn Sie ihre Funktionen verwenden möchten.
+
+3. Legen Sie das "InstrumentationKey"-Element im Code fest, z. B. in "main()".
 
     `TelemetryConfiguration.Active.InstrumentationKey = "your key";`
 
 *Weshalb gibt es die Datei "ApplicationInsights.config" nicht?*
 
 * Die CONFIG-Datei wird vom Core-API-Paket nicht installiert, das nur verwendet wird, um Telemetriedatensammler zu konfigurieren. Sie müssen eigenen Code schreiben, um den Instrumentationsschlüssel festzulegen und Telemetriedaten zu senden.
+* Wenn Sie eines der anderen Pakete installiert haben, besitzen Sie eine CONFIG-Datei. Sie können den Instrumentationsschlüssel dort einfügen, anstatt ihn im Code festzulegen.
 
 *Kann ich ein anderes NuGet-Paket verwenden?*
 
-* Ja, können Sie das Webserverpaket verwenden, das Datensammler für Leistungsindikatoren installiert. Sie müssen [den HTTP-Anforderungssammler deaktivieren](app-insights-configuration-with-applicationinsights-config.md). Er würde eine CONFIG-Datei installieren, in der Sie den Instrumentationsschlüssel ablegen würden.
+* Ja, Sie können das Webserverpaket (Microsoft.ApplicationInsights.Web) verwenden, das Sammler für eine Vielzahl von Sammlungsmodulen wie z. B. Leistungsindikatoren installiert. Er würde eine CONFIG-Datei installieren, in der Sie den Instrumentationsschlüssel ablegen würden. Verwenden Sie [ApplicationInsights.config, um nicht gewünschte Module zu deaktivieren](app-insights-configuration-with-applicationinsights-config.md), etwa den HTTP-Anforderungssammler. 
+* Wenn Sie das [Protokoll- oder Ablaufverfolgungssammler-Paket](app-insights-asp-net-trace-logs.md) verwenden möchten, beginnen Sie mit dem Webserverpaket. 
 
 ## <a name="telemetry"></a>Einfügen von Telemetrieaufrufen
 
 Erstellen Sie eine `TelemetryClient`-Instanz und [nutzen Sie sie anschließend, um Telemetriedaten zu senden][api].
 
-Verwenden Sie `TelemetryClient.Flush()` zum Senden von Nachrichten vor dem Schließen der App. Das Core SDK verwendet einen arbeitsspeicherinternen Puffer. Die Löschmethode stellt sicher, dass dieser Puffer geleert wird, damit beim Beenden des Prozesses keine Daten verloren gehen. \(Dies wird für andere Arten von Apps nicht empfohlen. Die Plattform-SDKs implementieren dieses Verhalten automatisch.\)
 
 Beispielsweise können Sie in einer Windows Forms-Anwendung Folgendes schreiben:
 
@@ -103,11 +108,15 @@ Beispielsweise können Sie in einer Windows Forms-Anwendung Folgendes schreiben:
 
 Verwenden Sie eine der [Application Insights-APIs][api], um Telemetriedaten zu senden. In Windows-Desktopanwendungen werden Telemetriedaten nicht automatisch gesendet. In der Regel würden Sie Folgendes verwenden:
 
-* "TrackPageView\(pageName\)" für umschaltbare Formulare, Seiten oder Registerkarten
-* "TrackEvent\(eventName\)" für andere Benutzeraktionen
-* "TrackMetric\(Name, Wert\)" bei einer Hintergrundaufgabe, um Berichte zu Metriken, die nicht bestimmten Ereignissen zugeordnet sind, regelmäßig zu senden.
-* "TrackTrace\(logEvent\)" für die [Diagnoseprotokollierung][diagnostic]
-* "TrackException\(exception\)" in Catch-Klauseln
+* "TrackPageView(pageName)" für umschaltbare Formulare, Seiten oder Registerkarten
+* "TrackEvent(eventName)" für andere Benutzeraktionen
+* "TrackMetric(Name, Wert)" bei einer Hintergrundaufgabe, um Berichte zu Metriken, die nicht bestimmten Ereignissen zugeordnet sind, regelmäßig zu senden.
+* "TrackTrace(logEvent)" für die [Diagnoseprotokollierung][diagnostic]
+* "TrackException(exception)" in Catch-Klauseln
+
+
+Um sicherzustellen, dass alle Telemetriedaten vor dem Schließen der App gesendet werden, verwenden Sie `TelemetryClient.Flush()`. In der Regel werden die Telemetriedaten zusammengefasst und in regelmäßigen Abständen gesendet. (Das Löschen wird nur empfohlen, wenn Sie lediglich die Haupt-API verwenden. Die Web- und Geräte-SDKs implementieren dieses Verhalten automatisch.)
+
 
 #### Kontextinitialisierer
 
@@ -181,4 +190,4 @@ Wenn Sie "TrackMetric" oder den Parameter "measurements" von "TrackEvent" verwen
 [CoreNuGet]: https://www.nuget.org/packages/Microsoft.ApplicationInsights
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

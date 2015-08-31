@@ -1,10 +1,10 @@
 <properties 
    pageTitle="Verwalten von StorSimple-Sicherungsrichtlinien | Microsoft Azure"
-   description="Beschreibt, wie Sie den StorSimple Manager-Dienst zum Erstellen und Verwalten von Sicherungsaufträgen und Sicherungszeitplänen verwenden können."
+   description="Beschreibt, wie Sie den StorSimple Manager-Dienst zum Erstellen und Verwalten von manuellen Sicherungen, Sicherungszeitplänen und zur Sicherungsaufbewahrung verwenden können."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
-   manager="adinah"
+   manager="carolz"
    editor=""/>
 <tags 
    ms.service="storsimple"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="06/17/2015"
+   ms.date="08/13/2015"
    ms.author="v-sharos"/>
 
 # Verwalten von StorSimple-Sicherungsrichtlinien
@@ -82,6 +82,6 @@ Führen Sie die folgenden Schritte im Verwaltungsportal aus, um eine benutzerdef
 
 ## Nächste Schritte
 
-Erfahren Sie, wie Sie StorSimple-Sicherungen mit dem [StorSimple-Momentaufnahme-Manager](https://msdn.microsoft.com/library/azure/dn772365.aspx) verwalten.
+Erfahren Sie mehr über das [Verwenden von StorSimple Snapshot Manager zum Anzeigen und Verwalten von Sicherungsaufträgen](storsimple-snapshot-manager-manage-backup-jobs.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

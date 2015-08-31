@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="08/09/2015"
+   ms.date="08/19/2015"
    ms.author="rajram"/>
    
 # Azure Storage-Blobconnector
@@ -54,7 +54,7 @@ Zugriffsschüssel | Nein | Geben Sie einen gültigen primären oder sekundären 
 ## Verwenden von Azure Storage-Blobconnectors in Logik-App
 Sobald der Azure Storage-Blobconnector erstellt wurde, kann er Ihrem Workflow hinzugefügt werden.
 
-1. Erstellen einer neuen Logik App: Neu -\> Web + Mobil -\> Logik-App. Geben Sie die Eigenschaften für Ihre Logik-App ein: ![Erstellen einer Logik-App][4]
+1. Erstellen einer neuen Logik App: Neu -> Web + Mobil -> Logik-App. Geben Sie die Eigenschaften für Ihre Logik-App ein: ![Erstellen einer Logik-App][4]
 
 2. Klicken Sie auf **Trigger und Aktionen**. Der Workflow-Designer wird geöffnet: ![Logik-App – Leerer Datenfluss-Designer][5]
 
@@ -85,7 +85,7 @@ Sie können ihn auf einen beliebigen Wert festlegen. Der Ausdruck nimmt die Ausg
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -102,4 +102,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-azurestorageblob/BasicInputsUploadBlob.PNG
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

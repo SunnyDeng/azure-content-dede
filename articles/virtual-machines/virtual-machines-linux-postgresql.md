@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Installieren und Konfigurieren von PostgreSQL auf einem virtuellen Microsoft Azure-Computer mit Linux"
-	description="Erfahren Sie, wie Sie PostgreSQL auf einem virtuellen Ubuntu- oder CentOS-Computer in Azure installieren und konfigurieren."
+	description="Erfahren Sie, wie Sie PostgreSQL auf einem virtuellen Linux-Computer (VM) in Azure installieren und konfigurieren."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="SuperScottz"
@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="linux"
 	ms.workload="infrastructure-services"
-	ms.date="06/04/2015"
+	ms.date="08/10/2015"
 	ms.author="mingzhan"/>
 
 
@@ -24,7 +24,7 @@ PostgreSQL ist eine erweiterte Open-Source-Datenbank, die Oracle und DB2 ähnlic
 
 In diesem Artikel erfahren Sie, wie Sie PostgreSQL auf einem virtuellen Azure-Computer, auf dem Linux ausgeführt wird, installieren und konfigurieren.
 
-> [Azure.NOTE]Sie benötigen einen virtuellen Microsoft Azure-Computer mit Linux, um dieses Lernprogramm auszuführen. Bevor Sie fortfahren, sollten Sie die Informationen zum Erstellen und Einrichten eines virtuellen Linux-Computers unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md) lesen.
+> [AZURE.NOTE]Sie benötigen einen virtuellen Microsoft Azure-Computer mit Linux, um dieses Lernprogramm auszuführen. Bevor Sie fortfahren, sollten Sie die Informationen zum Erstellen und Einrichten eines virtuellen Linux-Computers unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md) lesen.
 
 [Verwenden Sie in diesem Fall Port 1999 als PostgreSQL-Port.]
 
@@ -34,19 +34,19 @@ Stellen Sie über PuTTY eine Verbindung mit dem virtuellen Linux-Computer her. W
 
 1. Führen Sie den folgenden Befehl aus, um Root-Rechte (admin) zu erhalten:
 
-		$ sudo su -
+		# sudo su -
 
 2. Für einige Distributionen gelten bestimmte Abhängigkeiten, die Sie vor der Installation von PostgreSQL installieren müssen. Suchen Sie Ihre Distribution in dieser Liste, und führen Sie den entsprechenden Befehl aus:
 
-	- RedHat:
+	- Linux auf Red Hat-Basis:
 
 			# yum install readline-devel gcc make zlib-devel openssl openssl-devel libxml2-devel pam-devel pam  libxslt-devel tcl-devel python-devel -y  
 
-	- Debian:
+	- Linux auf Debian Basis:
 
  			# apt-get install readline-devel gcc make zlib-devel openssl openssl-devel libxml2-devel pam-devel pam libxslt-devel tcl-devel python-devel -y  
 
-	- SUSE:
+	- Suse Linux:
 
 			# zypper install readline-devel gcc make zlib-devel openssl openssl-devel libxml2-devel pam-devel pam  libxslt-devel tcl-devel python-devel -y  
 
@@ -90,7 +90,7 @@ Stellen Sie über PuTTY eine Verbindung mit dem virtuellen Linux-Computer her. W
 
 		# su - postgres
 
-    >[Azure.NOTE]Aus Gründen der Sicherheit verwendet PostgreSQL einen Benutzer ohne Root-Rechte zum Initialisieren, Starten oder Herunterfahren der Datenbank.
+   >[AZURE.NOTE]Aus Gründen der Sicherheit verwendet PostgreSQL einen Benutzer ohne Root-Rechte zum Initialisieren, Starten oder Herunterfahren der Datenbank.
 
 
 4. Bearbeiten Sie das *bash\_profile*, indem Sie die folgenden Befehle eingeben. Diese Zeilen werden am Ende der Datei für das *bash\_profile* hinzugefügt:
@@ -251,4 +251,4 @@ Mit dem folgenden Befehl können Sie Daten in einer Tabelle aktualisieren: In di
 ##Weitere Informationen über PostgreSQL
 Sie schließen jetzt die Installation von PostgreSQL auf dem virtuellen Linux-Computer in Microsoft Azure ab und beginnen mit der Verwendung in Microsoft Azure. Weitere Informationen über PostgreSQL finden Sie [hier](http://www.postgresql.org/)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.date="08/13/2015" 
 	ms.author="awills"/>
  
 # Exportieren von Telemetriedaten aus Application Insights
@@ -55,12 +55,9 @@ Um den Datenstrom dauerhaft zu beenden, löschen Sie den Exportvorgang. Dabei we
 
 ## <a name="analyze"></a> Welche Ereignisse werden abgerufen?
 
-Die exportierten Daten sind die rohen Telemetriedaten, die wir von Ihrer Anwendung empfangen. Es gelten diese Ausnahmen:
+Bei den exportierten Daten handelt es sich um die Telemetrierohdaten, die wir von Ihrer Anwendung empfangen. Wir fügen allerdings Standortdaten hinzu, die wir anhand der Client-IP-Adresse berechnen.
 
-* Webtestergebnisse werden derzeit nicht einbezogen. 
-* Wir fügen Standortdaten hinzu, die wir anhand der IP-Adresse des Clients berechnen.  
-
-Berechnete Metriken sind nicht enthalten. Wir exportieren z. B. nicht die durchschnittliche CPU-Auslastung, doch wir exportieren die rohen Telemetriedaten, anhand derer der Durchschnitt berechnet wird.
+Andere berechnete Metriken sind nicht enthalten. Wir exportieren z. B. nicht die durchschnittliche CPU-Auslastung, doch wir exportieren die rohen Telemetriedaten, anhand derer der Durchschnitt berechnet wird.
 
 ## <a name="get"></a>Untersuchen der Daten
 
@@ -85,7 +82,7 @@ Zeiten werden mithilfe von Teilstrichen dargestellt: 10.000 Teilstriche = 1 ms. 
 	"receiveRequest": {"value": 30000.0},
 	"clientProcess": {"value": 17970000.0}
 
-
+[Detaillierte Datenmodellreferenz für die Eigenschaftstypen und -werte.](app-insights-export-data-model.md)
 
 ## Verarbeiten der Daten
 
@@ -127,7 +124,7 @@ Der fortlaufende Export wird neu gestartet.
 
 ## Exportieren nach Power BI
 
-[Microsoft Power BI](https://powerbi.microsoft.com/) stellt die Daten mit umfangreichen und unterschiedlichen Grafiken dar und bietet die Möglichkeit, Informationen aus mehreren Quellen zu kombinieren. Sie können die Telemetriedaten über die Leistung und Nutzung Ihrer Apps von Application Insights zu Power BI streamen.
+[Microsoft Power BI](https://powerbi.microsoft.com/) stellt die Daten mit umfangreichen, unterschiedlichen Grafiken dar und bietet die Möglichkeit, Informationen aus mehreren Quellen zu kombinieren. Sie können die Telemetriedaten über die Leistung und Nutzung Ihrer Apps von Application Insights zu Power BI streamen.
 
 [Streamen von Application Insights zu Power BI](app-insights-export-power-bi.md)
 
@@ -185,6 +182,13 @@ Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/se
 
     Ja. Klicken Sie auf „Deaktivieren“.
 
+## Codebeispiele
+
+* [Streamen von Application Insights zu Power BI](app-insights-export-power-bi.md)
+* [Analysieren exportierter JSON-Daten mithilfe einer Workerrolle][exportcode]
+* [Exportieren in SQL mit Stream Analytics][exportasa]
+
+* [Detaillierte Datenmodellreferenz für die Eigenschaftstypen und -werte.](app-insights-export-data-model.md)
 
 <!--Link references-->
 
@@ -194,4 +198,4 @@ Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/se
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

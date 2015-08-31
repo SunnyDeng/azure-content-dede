@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/09/2015"
+   ms.date="08/18/2015"
    ms.author="v-sharos" />
 
 # Verwenden des StorSimple Snapshot Managers zum Verbinden und Verwalten von StorSimple-Geräten
@@ -252,14 +252,14 @@ Wenn ein StorSimple-Gerät ausfällt und durch ein Austauschgerät ersetzt wird 
 
 5. Starten Sie StorSimple Snapshot Manager.
 
-6. Um das neue StorSimple-Gerät zu konfigurieren, führen Sie die Schritte unter [Schritt 2: Herstellen einer Verbindung mit einem StorSimple-Geräts](storsimple-snapshot-manager-deployment.md#step-2:-connect-a-storsimple-device) in [Bereitstellen des StorSimple Snapshot Managers](storsimple-snapshot-manager-deployment.md) aus.
+6. Um das neue StorSimple-Gerät zu konfigurieren, führen Sie die Schritte unter „Schritt 2: Herstellen einer Verbindung mit einem StorSimple-Gerät“ in [Bereitstellen des StorSimple Snapshot Managers](storsimple-snapshot-manager-deployment.md) aus.
 
-7. Klicken Sie im **Bereichsfenster** mit der rechten Maustaste auf den Knoten der obersten Ebene (StorSimple Snapshot Manager im Beispiel), und klicken Sie dann auf **Toggle Imports Display**.
+7. Klicken Sie im **Bereichsfenster** mit der rechten Maustaste auf den Knoten der obersten Ebene (StorSimple Snapshot Manager im Beispiel), und klicken Sie dann auf **Importanzeige umschalten**.
 
 8. Es wird eine Meldung angezeigt, wenn die importierten Volumegruppen und Sicherungen im StorSimple Snapshot Manager angezeigt werden. Klicken Sie auf **OK**.
 
 ## Nächste Schritte
 
-[Verwenden des StorSimple Snapshot Managers zum Anzeigen und Verwalten von Volumes](storsimple-snapshot-manager-manage-volumes.md)
+[Verwenden des StorSimple Snapshot Managers zum Anzeigen und Verwalten von Volumes](storsimple-snapshot-manager-manage-volumes.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

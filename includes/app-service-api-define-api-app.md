@@ -65,7 +65,7 @@ In den folgenden Schritten fügen Sie Code für eine einfache HTTP-Get-Methode h
 
 ## Aktivieren der Swagger-Benutzeroberfläche
 
-Für API-App-Projekte wird standardmäßig das automatische Generieren von[Swagger](http://swagger.io/ "Offizielle Swagger-Informationen")-Metadaten aktiviert, und wenn Sie den Menüeintrag **API-App-SDK hinzufügen** verwendet haben, um ein Web-API-Projekt zu konvertieren, wird per Voreinstellung auch eine API-Testseite aktiviert.
+Für API-App-Projekte wird standardmäßig das automatische Generieren von [Swagger](http://swagger.io/ "Offizielle Swagger-Informationen")-Metadaten aktiviert, und wenn Sie den Menüeintrag **Add API App SDK** verwendet haben, um ein Web-API-Projekt zu konvertieren, wird per Voreinstellung auch eine API-Testseite aktiviert.
 
 Die API-Testseite wird jedoch durch die Vorlage für neue Azure API-App-Projekte deaktiviert. Wenn Sie Ihr API-Projekt mithilfe der API-App-Projektvorlage erstellt haben, müssen Sie die folgenden Schritte ausführen, um die Testseite zu aktivieren.
 
@@ -89,12 +89,18 @@ Die API-Testseite wird jedoch durch die Vorlage für neue Azure API-App-Projekte
 
 Führen Sie die folgenden Schritte aus, um die API-Testseite anzuzeigen.
 
-1. Führen Sie die App lokal aus (STRG-F5), und navigieren Sie zu `/swagger`. 
+1. Führen Sie die App lokal aus (STRG+F5).
 
-	![](./media/app-service-api-define-api-app/14-swagger-ui.png)
+	Der Browser wird geöffnet und zeigt einen HTTP 403-Fehler an, da die Basis-URL keine gültige URL einer Webseite oder API-Methode für dieses Projekt ist.
+ 
+3.  Navigieren Sie zur Swagger-Webseite, indem Sie `/swagger` an das Ende der Basis-URL anfügen.
 
-2. Klicken Sie auf die Schaltfläche **Try it out**. Sie sehen, dass die API funktioniert und das erwartete Ergebnis zurückgibt.
+	![](./media/app-service-api-define-api-app/swaggerhome.png)
 
-	![](./media/app-service-api-define-api-app/15-swagger-ui-post-test.png)
+2. Klicken Sie auf **Contacts > Abrufen > Jetzt testen**. Sie sehen, dass die API funktioniert und das erwartete Ergebnis zurückgibt.
 
-<!---HONumber=August15_HO6-->
+	![](./media/app-service-api-define-api-app/swaggertry.png)
+
+3. Klicken Sie in Visual Studio auf **Debuggen > Debuggen beenden**.
+
+<!---HONumber=August15_HO8-->

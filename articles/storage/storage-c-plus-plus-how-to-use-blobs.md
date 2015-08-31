@@ -234,8 +234,7 @@ Nachdem Sie sich nun mit den Grundlagen von Blob-Speichern vertraut gemacht habe
 -	[Verwenden des Warteschlangenspeichers in C++](storage-c-plus-plus-how-to-use-queues.md)
 -	[Verwenden des Tabellenspeichers mit C++](storage-c-plus-plus-how-to-use-tables.md)
 -	[Auflisten von Azure Storage-Ressourcen in C++](storage-c-plus-plus-enumeration.md)
--	[Speicherclientbibliothek für C++](https://msdn.microsoft.com/library/azure/gg433040.aspx) 
--	[MSDN-Referenz für Azure-Speicher](https://msdn.microsoft.com/library/azure/gg433040.aspx)
+-	[Referenz zur Speicherclientbibliothek für C++](http://azure.github.io/azure-storage-cpp)
 -	[Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
 
 
@@ -243,4 +242,4 @@ Nachdem Sie sich nun mit den Grundlagen von Blob-Speichern vertraut gemacht habe
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

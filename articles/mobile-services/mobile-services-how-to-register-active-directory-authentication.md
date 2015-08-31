@@ -66,4 +66,4 @@ Sie können nun Azure Active Directory für die Authentifizierung in Ihrer App v
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

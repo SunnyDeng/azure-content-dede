@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/14/2015"
+   ms.date="08/14/2015"
    ms.author="alkohli" />
 
 # Die Sicherheit Ihres Geräts
 
 ![Symbol "Warnung"](./media/storsimple-safety/IC740879.png)![Symbol "Sicherheitshinweis lesen"](./media/storsimple-safety/IC740885.png)**LESEN SIE DIE INFORMATIONEN ZUR SICHERHEIT UND INTEGRITÄT**
 
-Lesen Sie alle Informationen zur Sicherheit und Integrität in diesem Artikel, die sich auf Ihr Microsoft Azure StorSimple-Gerät beziehen. Bewahren Sie für die künftige Verwendung alle gedruckten Handbücher auf, die im Lieferumfang des StorSimple-Geräts enthalten waren. Wenn die Anweisungen nicht befolgt werden und das Produkt nicht ordnungsgemäß eingerichtet, verwendet und gewartet wird, kann sich das Risiko von schwerwiegenden Verletzungen, Todesfällen oder Schäden am Gerät/an den Geräten erhöhen. Eine [herunterladbare Version dieses Handbuchs](http://www.microsoft.com/de-de/download/details.aspx?id=44233) ist ebenfalls verfügbar.
+Lesen Sie alle Informationen zur Sicherheit und Integrität in diesem Artikel, die sich auf Ihr Microsoft Azure StorSimple-Gerät beziehen. Bewahren Sie für die künftige Verwendung alle gedruckten Handbücher auf, die im Lieferumfang des StorSimple-Geräts enthalten waren. Wenn die Anweisungen nicht befolgt werden und das Produkt nicht ordnungsgemäß eingerichtet, verwendet und gewartet wird, kann sich das Risiko von schwerwiegenden Verletzungen, Todesfällen oder Schäden am Gerät/an den Geräten erhöhen. Eine [herunterladbare Version dieses Handbuchs](http://www.microsoft.com/download/details.aspx?id=44233) ist ebenfalls verfügbar.
 
 ## Konventionen für Sicherheitssymbole
 
@@ -123,7 +123,7 @@ Für die ordnungsgemäße Kühlung des Gestellsystems:
 
 ## Vorsichtsmaßnahmen bei der Stromversorgungs- und Kühleinheit (PCM)
 
-Das Gerät ist für den Betrieb mit zwei Kühleinheiten ausgelegt. Jede der Kühleinheiten verfügt über eine Stromversorgung und ein Doppelachsgebläse. In kritischem Zustand lässt das System das Versagen einer Stromzufuhr zu, während der normale Betrieb aufrecht erhalten wird. Zwei Kühleinheiten (und daher Stromzufuhren) müssen immer installiert sein. Eine einzelne PCM bietet keine redundante Stromversorgung. Aus diesem Grund kann der Ausfall von nur einer PCM zu Ausfallzeiten und Datenverlusten führen.
+Das Gerät ist für den Betrieb mit zwei Kühleinheiten ausgelegt. Jede der Kühleinheiten verfügt über eine Stromversorgung und ein Doppelachsgebläse. In kritischem Zustand lässt das System das Versagen einer Stromzufuhr zu, während der normale Betrieb aufrecht erhalten wird. Zwei Kühleinheiten (und daher Stromzufuhren) müssen immer installiert sein. Ein einzelnes PCM bietet keine redundante Stromversorgung. Aus diesem Grund kann der Ausfall von nur einem PCM zu Ausfallzeiten und Datenverlusten führen.
 
 ![Symbol "Warnung"](./media/storsimple-safety/IC740879.png) ![Symbol "Stromschlag"](./media/storsimple-safety/IC740882.png) **WARNUNG!**
 
@@ -135,9 +135,9 @@ So reduzieren Sie die Wahrscheinlichkeit, dass Verletzungen, Elektroschocks oder
 
 Für den ordnungsgemäßen Betrieb Ihrer Geräte und um Schäden am Produkt zu vermeiden:
 
-- Ersetzen Sie die fehlerhafte PCM innerhalb von 24 Stunden. Nach dem Entfernen einer PCM zum Austausch muss der Ersatz innerhalb von 10 Minuten nach dem Entfernen installiert werden.
+- Ersetzen Sie das fehlerhafte PCM innerhalb von 24 Stunden. Nach dem Entfernen eines PCMs zum Austausch muss der Ersatz innerhalb von 10 Minuten nach dem Entfernen installiert werden.
 
-- Eine PCM kann nicht entfernt werden, sofern kein Ersatz sofort installiert werden kann. Das Gehäuse darf nicht ohne alle an der richtigen Stelle vorhandenen Module betrieben werden.
+- Ein PCM kann nicht entfernt werden, sofern kein Ersatz sofort installiert werden kann. Das Gehäuse darf nicht ohne alle an der richtigen Stelle vorhandenen Module betrieben werden.
 
 ## Vorsichtsmaßnahmen bei der elektrostatischen Entladung (ESD)
 
@@ -155,7 +155,7 @@ Beachten Sie die folgenden, auf ESD bezogene Vorsichtsmaßnahmen.
 
 ## Vorsichtsmaßnahmen bei der Batterieentsorgung
 
-Das Netzteil verwendet eine speziellen Batterie, um den Inhalt des Arbeitsspeichers während temporärer, kurzfristiger Stromausfälle zu schützen. Die Batterie ist in der PCM eingesetzt. Beachten Sie folgende Informationen zum Akku.
+Das Netzteil verwendet eine speziellen Batterie, um den Inhalt des Arbeitsspeichers während temporärer, kurzfristiger Stromausfälle zu schützen. Die Batterie ist im PCM eingesetzt. Beachten Sie folgende Informationen zum Akku.
 
 ![Symbol "Warnung"](./media/storsimple-safety/IC740879.png) **WARNUNG!**
 
@@ -163,7 +163,7 @@ Um das Risiko von Kurzschlüssen, Bränden, Explosionen, Verletzungen oder Todes
 
 - Entsorgen Sie Batterien gemäß nationaler/regionaler Bestimmungen.
 
-- Nicht auseinander bauen, zerbrechen oder über 60 Grad Celsius erhitzen oder verbrennen. Ersetzen Sie die Batterie der PCM mit durch eine mitgelieferte Batterie. Das Verwenden einer anderen Batterie kann Brände oder Explosionen verursachen.
+- Nicht auseinander bauen, zerbrechen oder über 60 Grad Celsius erhitzen oder verbrennen. Ersetzen Sie die Batterie des PCM mit durch eine mitgelieferte Batterie. Das Verwenden einer anderen Batterie kann Brände oder Explosionen verursachen.
 
 - Verwenden Sie Schutzkappen auf den Batterien, wenn diese von der Stromversorgung entfernt werden.
 
@@ -175,8 +175,8 @@ Nachdem Sie diese Sicherheitshinweise gelesen haben, ist der nächste Schritt, d
 
 ## Nächste Schritte
 
-- Für ein 8100-Gerät gehen Sie zu [Entpacken, Aufstellen und Verbinden Ihres 8100-Geräts](storsimple-8600-hardware-installation).
+- Wenn es sich um ein 8100-Gerät handelt, navigieren Sie zu [Installieren des StorSimple 8100-Geräts](storsimple-8100-hardware-installation.md).
 
-- Für ein 8600-Gerät gehen Sie zu [Entpacken, Aufstellen und Verbinden Ihres 8600-Geräts](storsimple-8600-hardware-installation).
+- Wenn es sich um ein 8600-Gerät handelt, navigieren Sie zu [Installieren des StorSimple 8600-Geräts](storsimple-8600-hardware-installation.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

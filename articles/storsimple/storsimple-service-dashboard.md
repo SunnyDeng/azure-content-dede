@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/25/2015"
+   ms.date="08/17/2015"
    ms.author="v-sharos" />
 
 # Verwenden des Dashboards des StorSimple Manager-Diensts
@@ -51,7 +51,7 @@ Durch Klicken auf **Registrierungsschlüssel** (unten auf der Seite) wird das Di
 
 Das erneute Generieren des Schlüssels wirkt sich nicht auf zuvor registrierte Geräte aus, sondern nur auf die Geräte, die nach der Neugenerierung des Schlüssels mit dem Dienst registriert werden.
 
-Weitere Informationen über das Anzeigen und Generieren des Dienstregistrierungsschlüssel finden Sie unter [Abrufen des Dienstregistrierungsschlüssels](storsimple-manage-service.md#get-the-service-registration-key)
+Weitere Informationen über das Anzeigen und Generieren des Dienstregistrierungsschlüssel finden Sie unter [Abrufen des Dienstregistrierungsschlüssels](storsimple-manage-service.md#get-the-service-registration-key).
 
 ## Ändern des Verschlüsselungsschlüssels für Dienstdaten
 
@@ -74,6 +74,6 @@ Sie können die Vorgangsprotokolle anzeigen, indem Sie auf den entsprechenden Li
 
 ## Nächste Schritte
 
-Erfahren Sie, wie Sie [Probleme bei StorSimple-Geräten behandeln](storsimple-troubleshoot-operational-device.md).
+[Behandeln von Problemen bei StorSimple-Geräten](storsimple-troubleshoot-operational-device.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

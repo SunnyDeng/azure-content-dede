@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Erste Schritte mit Azure Active Directory Premium" 
-	description="In diesem Thema wird die Registrierung für die Premium Edition von Azure Active Directory beschrieben." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
+<properties
+	pageTitle="Erste Schritte mit Azure Active Directory Premium"
+	description="In diesem Thema wird die Registrierung für die Premium Edition von Azure Active Directory beschrieben."
+	services="active-directory"
+	documentationCenter=""
+	authors="MarkusVi"
+	manager="stevenpo" 
 	editor="LisaToft"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="05/05/2015" 
-	ms.author="Justinha"/>
+<tags
+	ms.service="active-directory"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="08/14/2015"
+	ms.author="markvi"/>
 
 # Erste Schritte mit Azure Active Directory Premium
 
@@ -121,7 +121,4 @@ Die Verfügbarkeit der Dienste und Features eines Microsoft Clouddiensts variier
 [11]: ./media/active-directory-get-started-premium/Assignlicensespicker.png
 [12]: ./media/active-directory-get-started-premium/Usagelocation.png
 
-
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

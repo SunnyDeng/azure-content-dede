@@ -13,10 +13,20 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="08/10/2015" 
+	ms.date="08/20/2015" 
 	ms.author="jeffstok"/>
 
-#Microsoft Stream Analytic Versionshinweise
+#Microsoft Stream Analytic – Hinweise zu dieser Version
+
+## Hinweise zur Stream Analytics-Version vom 20.08.2015 ##
+
+Diese Version enthält die folgenden Updates.
+
+Titel|Beschreibung
+---|---
+Zusätzliche LAST-Funktion |Die [LAST](http://msdn.microsoft.com/library/mt421186.aspx)-Funktion steht nun in Stream Analytics-Aufträgen zur Verfügung und ermöglicht Ihnen, das letzte Ereignis in einem Ereignisdatenstrom innerhalb eines bestimmten Zeitrahmens abrufen.
+Neue Arrayfunktionen|Die Arrayfunktionen [GetArrayElement](http://msdn.microsoft.com/library/mt270218.aspx), [GetArrayElements](http://msdn.microsoft.com/library/mt298451.aspx) und [GetArrayLength](http://msdn.microsoft.com/library/mt270226.aspx) sind jetzt verfügbar.
+Neue Datensatzfunktionen|Die Datensatzfunktionen [GetRecordProperties](http://msdn.microsoft.com/library/mt270221.aspx) und [GetRecordPropertyValue](http://msdn.microsoft.com/library/mt270220.aspx) sind jetzt verfügbar.
 
 ## Hinweise zur Stream Analytics-Version vom 30.07.2015 ##
 
@@ -24,11 +34,11 @@ Diese Version enthält die folgenden Updates.
 
 Titel|Beschreibung
 ---|---
-Die Power BI-Organisations-ID wurde von der Azure-ID entkoppelt.|Dieses Feature ermöglicht die [Power BI-Ausgabe](stream-analytics-power-bi-dashboard.md) für ASA-Aufträge unter einem beliebigen Azure-Kontotyp \(Live-ID oder Organisations-ID\). Darüber hinaus können Sie eine Organisations-ID für Ihre Azure-Konto einrichten und eine andere ID für die Autorisierung der Power BI-Ausgabe verwenden.
+Die Power BI-Organisations-ID wurde von der Azure-ID entkoppelt.|Dieses Feature ermöglicht die [Power BI-Ausgabe](stream-analytics-power-bi-dashboard.md) für ASA-Aufträge unter einem beliebigen Azure-Kontotyp (Live-ID oder Organisations-ID). Darüber hinaus können Sie eine Organisations-ID für Ihre Azure-Konto einrichten und eine andere ID für die Autorisierung der Power BI-Ausgabe verwenden.
 Unterstützung für die Ausgabe von Service Bus-Warteschlangen|Ausgaben von [Service Bus-Warteschlangen](stream-analytics-connect-data-event-outputs.md#service-bus-queues) stehen nun in Stream Analytics-Aufträgen zur Verfügung.
 Unterstützung für die Ausgabe von Service Bus-Themen|Ausgaben von [Service Bus-Themen](stream-analytics-connect-data-event-outputs.md#service-bus-topics) stehen nun in Stream Analytics-Aufträgen zur Verfügung.
 
-## Hinweise zur Version von Stream Analytics vom 07/09/2015 ##
+## Hinweise zur Version von Stream Analytics vom 09.07.2015 ##
 
 Diese Version enthält die folgenden Updates.
 
@@ -37,24 +47,24 @@ Titel|Beschreibung
 ---|---
 Benutzerdefinierte Blob-Ausgabepartitionierung|Blob-Speicherausgaben erlauben einer Option nun, die Häufigkeit anzugeben, mit der Ausgabe-Blobs geschrieben werden und die Struktur und das Format der Ausgabepfad-Ordnerstruktur zu bestimmen. 
 
-## Hinweise zur Version von Stream Analytics vom 05/03/2015 ##
+## Hinweise zur Version von Stream Analytics vom 03.05.2015 ##
 
 Diese Version enthält die folgenden Updates.
 
 
 Titel|Beschreibung
 ---|---
-Erhöhter maximaler Wert des Toleranzfensters für falsche Reihenfolge|Die maximale Größe für das Toleranzfenster für falsche Reihenfolge ist jetzt 59:59 \(Min:Sek\)
+Erhöhter maximaler Wert des Toleranzfensters für falsche Reihenfolge|Die maximale Größe für das Toleranzfenster für falsche Reihenfolge ist jetzt 59:59 (Min:Sek)
 JSON-Ausgabeformat: Trennung durch Zeile oder Array|Es gibt jetzt die Option der Ausgabe an einen Blob-Speicher oder Event Hub als Array von JSON-Objekten oder durch die Trennung von JSON-Objekten mit einer neuen Zeile. 
 
-## Hinweise zur Version von Stream Analytics vom 04/16/2015 ##
+## Hinweise zur Version von Stream Analytics vom 16.04.2015 ##
 
 
 Titel|Beschreibung
 ---|---
 Verzögerung bei der Azure-Speicherkontokonfiguration|Wenn Sie einen Stream Analytics-Auftrag zum ersten Mal in einer Region erstellen, werden Sie aufgefordert, ein neues Speicherkonto zu erstellen oder ein vorhandenes Konto anzugeben, um Stream Analytics-Aufträge in dieser Region zu überwachen. Aufgrund der Wartezeit bei der Konfigurationsüberwachung werden Sie beim Erstellen eines anderen Stream Analytics-Auftrags in derselben Region innerhalb von 30 Minuten aufgefordert, ein zweites Speicherkonto anzugeben, anstatt das zuletzt konfigurierte in der Überwachungsspeicherkonto-Dropdownliste anzuzeigen. Um die Erstellung eines unnötigen Speicherkontos zu vermeiden, warten Sie 30 Minuten nach der erstmaligen Erstellung eines Auftrags in einer Region, bis Sie zusätzliche Aufträge in dieser Region bereitstellen.
 Auftrags-Upgrade|Zum aktuellen Zeitpunkt unterstützt Stream Analytics keine Echtzeitbearbeitungen der Definition oder Konfiguration eines laufenden Auftrags. Um die Eingabe, Ausgabe, Abfrage, Skalierung oder Konfiguration eines laufenden Auftrags zu ändern, müssen Sie den Auftrag zunächst beenden.
-Von der Eingabequelle abgeleitete Datentypen|Wird nicht die Anweisung CREATE TABLE verwendet, so wird der Eingabetyp vom Eingabeformat abgeleitet \(Beispiel: Alle Felder aus CSV sind Zeichenfolgen\). Um Typkonflikte zu vermeiden, müssen die Felder mithilfe der CAST-Funktion explizit in den richtigen Typ konvertiert werden.
+Von der Eingabequelle abgeleitete Datentypen|Wird nicht die Anweisung CREATE TABLE verwendet, so wird der Eingabetyp vom Eingabeformat abgeleitet (Beispiel: Alle Felder aus CSV sind Zeichenfolgen). Um Typkonflikte zu vermeiden, müssen die Felder mithilfe der CAST-Funktion explizit in den richtigen Typ konvertiert werden.
 Fehlende Felder werden als Nullwerte ausgegeben.|Der Verweis auf ein Feld, das in der Eingabequelle nicht vorhanden ist, führt zu Nullwerten im Ausgabeereignis.
 WITH-Anweisungen müssen SELECT-Anweisungen vorausgehen.|In der Abfrage müssen SELECT-Anweisungen in WITH-Anweisungen definierten Unterabfragen folgen.
 Arbeitsspeicherproblem|Stream Analytics-Aufträge mit großer Toleranz für unsortierte Ereignisse und/oder komplexe Abfragen, die eine große Statusmenge verwalten, führen dazu, dass nicht genügend Arbeitsspeicher verfügbar ist, wodurch der Auftrag neu gestartet wird. Die Start- und Beendigungsvorgänge sind in den Vorgangsprotokollen des Auftrags sichtbar. Um dieses Verhalten zu vermeiden, skalieren Sie die Abfrage auf mehrere Partitionen. In zukünftigen Versionen wird diese Einschränkung behoben werden, indem die Leistung von betroffenen Aufträgen verringert wird, anstatt sie neu zu starten.
@@ -63,15 +73,15 @@ Einschränkungen im Hinblick auf die SQL-Datenbank-Ereignismenge|Wenn Sie SQL-Da
 PowerBI-Datasets können nur eine Tabelle enthalten.|PowerBI unterstützt nicht mehr als eine Tabelle in einem bestimmten Dataset.
 
 ## Hier erhalten Sie Hilfe
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-de/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
 
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](../stream.analytics.get.started.md)
 - [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
-- [Stream Analytics Query Language Reference \(in englischer Sprache\)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+- [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

@@ -5,17 +5,15 @@
    documentationCenter=""
    authors="alkohli"
    manager="carolz"
-   editor="tysonn" />
-
+   editor="" />
 <tags 
    ms.service="storsimple"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/30/2015"
+   ms.date="08/14/2015"
    ms.author="alkohli" />
-
 
 # Ändern der DATA 0-Netzwerkschnittstelleneinstellungen auf dem StorSimple-Gerät
 
@@ -42,7 +40,7 @@ Sie können die DATA 0-Netzwerkeinstellungen neu konfigurieren, indem Sie eine 
 
 1. Ein Setup-Assistent wird angezeigt, mit dessen Hilfe sie die DATA 0-Schnittstelle Ihres Geräts konfigurieren können. Geben Sie neue Werte für die IP-Adresse, das Gateway und die Netzmaske an.
 
-> [AZURE.NOTE]Die festen IP-Adressen des Controllers müssen auf der Seite „Konfigurieren“ des StorSimple-Geräts im Azure-Verwaltungsportal neu konfiguriert werden. Weitere Informationen finden Sie unter [Ändern der Netzwerkschnittstelle über die Konfigurationsseite des Geräts](storsimple-modify-device-config.md#modify-network-interfaces).
+> [AZURE.NOTE]Die festen IP-Adressen des Controllers müssen auf der Seite **Konfigurieren** des StorSimple-Geräts im Azure-Verwaltungsportal neu konfiguriert werden. Weitere Informationen finden Sie unter [Ändern der Netzwerkschnittstelle](storsimple-modify-device-config.md#modify-network-interfaces).
 
 
 ## Ändern der DATA 0-Netzwerkeinstellungen über das Cmdlet „Set-HcsNetInterface“
@@ -50,14 +48,13 @@ Sie können die DATA 0-Netzwerkschnittstelle auch mithilfe des Cmdlets `Set-Hcs
 
 #### So ändern Sie DATA 0-Netzwerkeinstellungen über das Cmdlet „Set-HcsNetInterface“
 
-1. Wählen Sie im Menü der seriellen Konsole Option 1 aus, d. h. die** Anmeldung mit Vollzugriff**. Geben Sie bei entsprechender Aufforderung das **Geräteadministratorkennwort** ein. Das Standardkennwort lautet `Password1`.
+1. Wählen Sie im Menü der seriellen Konsole Option 1 aus, d. h. die** Anmeldung mit Vollzugriff**. Geben Sie das Geräteadministratorkennwort an, wenn Sie dazu aufgefordert werden. Das Standardkennwort lautet `Password1`.
 
-1. Geben Sie an der Eingabeaufforderung Folgendes ein:
+2. Geben Sie an der Eingabeaufforderung Folgendes ein:
 
 	`Set-HCSNetInterface -InterfaceAlias Data0 -IPv4Address <> -IPv4Netmask <> -IPv4Gateway <> -Controller0IPv4Address <> -Controller1IPv4Address <> -IsiScsiEnabled 1 -IsCloudEnabled 1`
-
 	
-1. Geben Sie Werte für DATA 0 in spitzen Klammern (< >) für Folgendes an:
+    Geben Sie folgenden Werte für DATA 0 in spitzen Klammern (< >) an:
 											
 	- IPv4-Adresse
 	
@@ -70,6 +67,7 @@ Sie können die DATA 0-Netzwerkschnittstelle auch mithilfe des Cmdlets `Set-Hcs
 	- Feste IPv4-Adresse für Controller 1
 
 ## Nächste Schritte
-Um Netzwerkschnittstellen nicht als DATA 0 zu konfigurieren, erkundigen Sie sich auf der [Seite „Konfigurieren“ im Verwaltungsportal](storsimple-modify-device-config.md). Wenn beim Konfigurieren der Netzwerkschnittstellen Probleme auftreten, lesen Sie die Informationen unter [Beheben von Bereitstellungsproblemen](storsimple-troubleshoot-deployment.md).
 
-<!---HONumber=August15_HO6-->
+Um Netzwerkschnittstellen nicht als DATA 0 zu konfigurieren, können Sie die [Seite „Konfigurieren“ im Verwaltungsportal](storsimple-modify-device-config.md) verwenden. Wenn beim Konfigurieren der Netzwerkschnittstellen Probleme auftreten, lesen Sie die Informationen unter [Beheben von Bereitstellungsproblemen](storsimple-troubleshoot-deployment.md).
+
+<!---HONumber=August15_HO8-->

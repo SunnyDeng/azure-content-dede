@@ -7,16 +7,14 @@
 	manager="wpickett" 
 	editor=""/>
 
-
 <tags 
 	ms.service="app-service-web" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/12/2015" 
+	ms.date="08/18/2015" 
 	ms.author="mwasson"/>
-
 
 #Konfigurieren eines benutzerdefinierten Domänennamens für eine Web-App in Azure App Services, der Traffic Manager verwendet.
 
@@ -53,7 +51,7 @@ Um Ihrer benutzerdefinierten Domäne eine Web-App in Azure App Services zuzuweis
 
 4. Sobald Sie die Verwaltungsseite für Ihren Domänennamen gefunden haben, suchen Sie nach einem Link, über den Sie die DNS-Datensätze bearbeiten können. Dieser Konfigurationslink kann als **Zone file** (Zonendatei), **DNS Records** (DNS-Datensatz) oder als **Advanced** (Erweitert) bezeichnet werden.
 
-	* Auf der Seite wurden wahrscheinlich bereits Datensätze wie ein Eintrag, der "**@**" oder '\*' mit einer Domain-Parking-Seite in Verbindung setzt. Möglicherweise sind auch bereits Datensätze wie übliche Unterdomänen wie **www** darauf gespeichert.
+	* Auf der Seite wurden wahrscheinlich bereits Datensätze wie ein Eintrag, der "**@**" oder '*' mit einer Domain-Parking-Seite in Verbindung setzt. Möglicherweise sind auch bereits Datensätze wie übliche Unterdomänen wie **www** darauf gespeichert.
 	* Auf der Seite werden **CNAME-Datensätze** angegeben oder Sie finden ein Dropdownmenü, aus dem Sie die Art des Datensatzes auswählen können. Möglicherweise werden auch andere Datensätze wie **A-Datensätze** und **MX-Datensätze** aufgeführt. In manchen Fällen werden CNAME-Datensätze anderweitig bezeichnet, z. B. als **Alias-Datensatz**.
 	* Auf der Seite werden außerdem Felder angezeigt, über die Sie über einen **Hostnamen** oder **Domainnamen** eine **Zuweisung** zu einem anderen Domainnamen vornehmen können.
 
@@ -72,4 +70,4 @@ Um Ihrer benutzerdefinierten Domäne eine Web-App in Azure App Services zuzuweis
  
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

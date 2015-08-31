@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="06/16/2015"
+   ms.date="08/18/2015"
    ms.author="adegeo"/>
 
 
@@ -57,7 +57,7 @@ Ihre Clouddienste sind von der Deaktivierung der Betriebssystemfamilie 1 betrof
 
 Wir empfehlen Ihnen, Ihre Clouddienstrollen zu einer der unterstützten Gastbetriebssystemfamilien zu migrieren:
 
-**Gastbetriebssystemfamilie 4.x** - Windows Server 2012 R2 *\(empfohlen\)*
+**Gastbetriebssystemfamilie 4.x** - Windows Server 2012 R2 *(empfohlen)*
 
 1. Stellen Sie sicher, dass Ihre Anwendung SDK 2.1 oder höher mit .NET-Framework 4.0, 4.5 oder 4.5.1 verwendet.
 2. Legen Sie in der Datei "ServiceConfiguration.cscfg" das osFamily-Attribut auf den Wert "4" fest, und stellen Sie Ihren Clouddienst erneut bereit.
@@ -78,4 +78,7 @@ Wir empfehlen Ihnen, Ihre Clouddienstrollen zu einer der unterstützten Gastbetr
 ## Erweiterte Unterstützung für Gastbetriebssystemfamilie 1 wurde am 3. November 2014 beendet
 Clouddienste unter Gastbetriebssystemfamilie 1 werden nicht mehr unterstützt. Migrieren Sie schnellst möglich von Familie 1 zu einer neueren Familie, um Dienstunterbrechungen zu vermeiden.
 
-<!---HONumber=August15_HO7-->
+## Nächste Schritte
+Überprüfen Sie die neuesten [Gastbetriebssystemreleases](cloud-services-guestos-update-matrix.md).
+
+<!---HONumber=August15_HO8-->

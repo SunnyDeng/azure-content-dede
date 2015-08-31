@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="dsk-2015"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -18,7 +19,7 @@
 
 # Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Linux-Computer
 
-Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. In beiden Fällen sind die Datenträger eigentlich VHD-Dateien, die sich in einem Azure-Speicherkonto befinden. Außerdem müssen Sie in beiden Fällen den Datenträger nach dem Anfügen initialisieren, damit er verwendet werden kann.
+Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. In beiden Fällen sind die Datenträger eigentlich VHD-Dateien, die sich in einem Azure-Speicherkonto befinden. Außerdem müssen Sie in beiden Fällen den Datenträger nach dem Anfügen initialisieren, damit er verwendet werden kann. Dieser Artikel bezieht sich auf virtuelle Computer, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
 
 > [AZURE.NOTE]Es empfiehlt sich, einen oder mehrere separate Datenträger zu verwenden, um die Daten eines virtuellen Computers zu speichern. Wenn Sie einen virtuellen Azure-Computer erstellen, verfügt dieser über einen Betriebssystem-Datenträger und über einen temporären Datenträger. **Verwenden Sie den temporären Datenträger nicht zum Speichern von Daten.** Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet. Unter Linux wird der temporäre Datenträger normalerweise vom Azure Linux Agent verwaltet und automatisch an **/mnt/resource** (oder auf Ubuntu-Images an **/mnt**) angefügt. Andererseits kann ein Datenträger vom Linux-Kernel beispielsweise den Namen `/dev/sdc` erhalten, und Sie müssen diese Ressource partitionieren, formatieren und einbinden. Weitere Informationen finden Sie im [Benutzerhandbuch für Azure Linux-Agent][Agent].
 
@@ -164,10 +165,10 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 
 [Trennen eines Datenträgers von einem virtuellen Linux-Computer](virtual-machines-linux-how-to-detach-disk.md)
 
-[Verwenden der Azure-Befehlszeilenschnittstelle mit Azure Service Management](virtual-machines-command-line-tools.md)
+[Verwenden der Azure-Befehlszeilenschnittstelle mit der Dienstverwaltungs-API](virtual-machines-command-line-tools.md)
 
 <!--Link references-->
 [Agent]: virtual-machines-linux-agent-user-guide.md
 [Logon]: virtual-machines-linux-how-to-log-on.md
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

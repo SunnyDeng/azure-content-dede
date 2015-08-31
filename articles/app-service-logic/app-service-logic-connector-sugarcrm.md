@@ -13,11 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/02/2015"
+   ms.date="08/19/2015"
    ms.author="sameerch"/>
 
 
-#Verwenden des SugarCRM-Connectors in Logik-Apps#
+# Verwenden des SugarCRM-Connectors in Logik-Apps
 
 Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Mit dem SugarCRM-Connector können Sie unterschiedliche Entitäten erstellen und ändern, z. B. Konten, Leads, Kontakte usw. Unten sind die typischen Integrationsszenarien aufgeführt, bei denen SugarCRM verwendet wird.
 
@@ -30,7 +30,7 @@ Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werd
 
 Im Rahmen der Connector-Paketeinstellungen kann der Benutzer Entitäten angeben, die der Connector verwalten kann. Aktionen, Eingabeparameter und Ausgabeparameter werden daraufhin dynamisch aufgefüllt.
 
-##SugarCRM-Connector-Aktionen##
+## SugarCRM-Connector-Aktionen
 Im Folgenden werden die verschiedenen im SugarCRM-Connector verfügbaren Aktionen aufgeführt.
 
 - Modul erstellen – Verwenden Sie diese Aktion, um einen neuen Datensatz für das SugarCRM-Modul zu erstellen, z. B. Konten, Leads, Kontakte.
@@ -47,55 +47,28 @@ Im Folgenden werden die verschiedenen im SugarCRM-Connector verfügbaren Aktione
 
 - Auf doppelte Module überprüfen – Verwenden Sie diese Aktion für eine Überprüfung auf doppelt vorhandene Datensätze im Modul.
 
-*Hinweis*: Weitere Informationen über die unterstützten Argumente in Abfragen finden Sie in der SugarCRM-REST-API-Dokumentation.
+*Hinweis*: Weitere Informationen über die unterstützten Argumente in Abfragen finden Sie in der [SugarCRM-REST-API](https://msdn.microsoft.com/library/dn705870)-Dokumentation.
 
-##Erstellen einer SugarCRM-Connector-API-App##
+## Erstellen einer SugarCRM-Connector-API-App
 1.	Navigieren Sie zu "portal.azure.com". Öffnen Sie den Azure Marketplace mit der Option "+NEU" oben links im Azure-Portal.
 2.	Navigieren Sie zu "Marketplace > Alles", und suchen Sie nach "SugarCRM".
 3.	Konfigurieren Sie den SugarCRM-Connector, indem Sie die Informationen für den App Service-Plan und die Ressourcengruppe angeben und einen Namen für die API-App eingeben.
 4. Konfigurieren Sie die Paketeinstellungen für den SugarCRM-Connector. Im Folgenden sind die Paketeinstellungen aufgeführt, die Sie zum Erstellen des Connectors bereitstellen müssen:
 
-	<table>
-  <tr>
-    <td><b>Name</b></td>
-    <td><b>Erforderlich</b></td>
-    <td><b>Beschreibung</b></td>
-  </tr>
-  <tr>
-    <td>Website-URL</td>
-    <td>Ja</td>
-    <td>Geben Sie die URL Ihrer SugarCRM-Instanz ein, z.&#160;B. "https://abcde1234.sugarcrm.com".</td>
-  </tr>
-  <tr>
-    <td>Client-ID</td>
-    <td>Ja</td>
-    <td>Geben Sie den Verbraucherschlüssel des OAuth&#160;2.0-Schlüssels in SugarCRM an. </td>
-  </tr>
-  <tr>
-    <td>Geheimer Clientschlüssel</td>
-    <td>Ja</td>
-    <td>Geben Sie den geheimen Clientschlüssel des OAuth&#160;2.0-Schlüssels in SugarCRM an. </td>
-  </tr>
-<tr>
-    <td>Benutzername</td>
-    <td>Ja</td>
-    <td>Geben Sie den Benutzernamen des SugarCRM-Benutzers an.</td>
-  </tr>
-	<tr>
-    <td>Kennwort</td>
-    <td>Ja</td>
-    <td>Geben Sie das Kennwort des SugarCRM-Benutzers an.</td>
-  </tr>
-  <tr>
-    <td>Modulnamen</td>
-    <td>Ja</td>
-    <td>Geben Sie die SugarCRM-Module an, z.&#160;B. Benutzerkonten, Kontakte, Produkte usw., für die der Vorgang ausgeführt werden soll.<br><br>Beispiel: Konten,Leads,Kontakte</td>
-  </tr>
-</table>![][9]
+	Name | Erforderlich | Beschreibung
+--- | --- | ---
+Website-URL | Ja | Geben Sie die URL der SugarCRM-Instanz ein. Geben Sie z. B. Folgendes ein: https://abcde1234.sugarcrm.com.
+Client-ID | Ja | Geben Sie den Verbraucherschlüssel des OAuth 2.0-Schlüssels in SugarCRM ein. 
+Geheimer Clientschlüssel | Ja | Geben Sie den geheimen Verbraucherschlüssel von OAuth ein.
+Benutzername | Ja | Geben Sie den Benutzernamen des SugarCRM-Benutzers ein.
+Kennwort | Ja | Geben Sie das Kennwort des SugarCRM-Benutzers ein.
+Modulnamen | Ja | Geben Sie die SugarCRM-Module ein (z. B. Benutzerkonten, Kontakte und Produkte), für die der Vorgang ausgeführt werden soll<br><br>Beispiel: Benutzerkonten, Leads, Kontakte  
+  
+![][9]
 
 
 
-##Erstellen einer Logik-App##
+## Erstellen einer Logik-App
 Wir erstellen eine einfache Logik-App, die einen Kunden in SugarCRM erstellt und die Details zur Rechnungsadresse für denselben Kunden aktualisiert.
 
 1.	Melden Sie sich beim Azure-Portal an, und klicken Sie auf "Neu -> Web + Mobil -> Logik-App"
@@ -142,6 +115,13 @@ Wir erstellen eine einfache Logik-App, die einen Kunden in SugarCRM erstellt und
 
 19. Überprüfen Sie, ob ein neues Konto mit dem Namen "Microsoft-Konto" im SugarCRM-Konto erstellt wurde. Dieses Konto wird auch mit den Abrechnungsadressinformationen aktualisiert.
 
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
+
 <!--Image references-->
 [1]: ./media/app-service-logic-connector-sugarcrm/1_New_Logic_App.png
 [2]: ./media/app-service-logic-connector-sugarcrm/2_Logic_App_Settings.png
@@ -153,4 +133,4 @@ Wir erstellen eine einfache Logik-App, die einen Kunden in SugarCRM erstellt und
 [8]: ./media/app-service-logic-connector-sugarcrm/8_Update_Account_Address.png
 [9]: ./media/app-service-logic-connector-sugarcrm/9_Create_new_SugarCRM_connector.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

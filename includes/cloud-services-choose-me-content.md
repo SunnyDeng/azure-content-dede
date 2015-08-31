@@ -5,7 +5,7 @@ Cloud Services ist ein Beispiel für Platform-as-a-Service (PaaS). Diese Technol
 
 ![cs_diagramcs_diagram](./media/cloud-services-choose-me-content/diagram.png)
 
-Mehr Kontrolle bedeutet auch weniger Anwenderfreundlichkeit; wenn Sie die zusätzlichen Verwaltungsoptionen nicht benötigen, ist es in der Regel im Vergleich zu Cloud Services schneller und einfacher eine Webanwendung auf Websites zum Laufen zu bringen.
+Mehr Kontrolle bedeutet auch weniger Anwenderfreundlichkeit; wenn Sie die zusätzlichen Verwaltungsoptionen nicht benötigen, ist es i. d. R. im Vergleich zu Cloud Services schneller und einfacher Webanwendungen in Web-Apps in App Service zum Laufen zu bringen.
 
 Diese Technologie bietet zwei leicht abweichende Optionen für VM: Auf Instanzen von *Webrollen* läuft eine Variante von Windows Server mit IIS, während auf Instanzen von *Workerrollen* dieselbe Windows Server-Variante ohne IIS läuft. Cloud Services-Anwendungen verwenden dieselbe Kombination dieser zwei Optionen.
 
@@ -32,4 +32,4 @@ Cloud Services bietet außerdem Überwachungsfunktionen. Wie auch bei Azure Virt
 
 Die PaaS-Funktionsweise von Cloud Services hat auch noch andere Auswirkungen. Zum Beispiel sollten Anwendungen für diese Technologie so entwickelt werden, dass sie auch dann korrekt funktionieren, wenn eine beliebige Web- oder Workerrolle ausfällt. Aus diesem Grund sollten Cloud Services-Anwendungen keinen Status im Dateisystem der eigenen virtuellen Computer speichern. Im Gegensatz zu virtuellen Computern mit Azure Virtual Machines sind Schreibvorgänge in virtuellen Cloud Services-Computern nicht persistent. Diese virtuellen Computer haben keine eigenen Datenträger. Cloud Services-Anwendungen sollten daher ihren Status in SQL-Datenbanken, Blobs, Tabellen oder andere externe Speichermedien schreiben. Die auf diese Weise erstellten Anwendungen sind skalierbarer und fehlerresistenter; zwei wichtige Ziele von Cloud Services.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

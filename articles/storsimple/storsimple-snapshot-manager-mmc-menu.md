@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="07/09/2015"
+   ms.date="08/17/2015"
    ms.author="v-sharos" />
 
 # Verwenden der MMC-Menüaktionen im StorSimple Snapshot Manager
@@ -125,6 +125,6 @@ Mit der Aktion **Liste exportieren** können Sie eine Liste in einer Datei mit k
 
 ## Nächste Schritte
 
-[Erfahren Sie mehr über die Benutzeroberfläche des StorSimple Snapshot Managers](storsimple-use-snapshot-manager.md)
+[Weitere Informationen über die Benutzeroberfläche des StorSimple Snapshot Managers](storsimple-use-snapshot-manager.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

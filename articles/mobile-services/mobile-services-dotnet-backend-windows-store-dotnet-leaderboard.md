@@ -7,7 +7,6 @@
 	editor="" 
 	services="mobile-services"/>
 
-
 <tags 
 	ms.service="mobile-services" 
 	ms.workload="mobile" 
@@ -16,7 +15,6 @@
 	ms.topic="article" 
 	ms.date="06/24/2015" 
 	ms.author="glenga"/>
-
 
 # Erstellen einer Bestenlisten-App mit Azure Mobile Services .NET-Back-End
 
@@ -637,7 +635,6 @@ Die Liste der Spieler wird in einem Listenfeld (**ListBox**) angezeigt:
 	<ListBox Width="200" Height="400" x:Name="PlayerListBox" 
 	    ItemsSource="{Binding Players}" DisplayMemberPath="Name"/>
 
-
 Die Rangfolge wird in einer Listenansicht (**ListView**) angezeigt:
 
 	<ListView x:Name="RankingsListView" ItemsSource="{Binding Ranks}" SelectionMode="None">
@@ -647,18 +644,12 @@ Die Rangfolge wird in einer Listenansicht (**ListView**) angezeigt:
 	            <Grid>
 	                <Grid.ColumnDefinitions>
 	                    <ColumnDefinition Width="*"/>
-
 	                    <ColumnDefinition Width="2*"/>
-
 	                    <ColumnDefinition Width="*"/>
-
 	                </Grid.ColumnDefinitions>
 	                <TextBlock Text="{Binding Path=Rank}"/>
-
 	                <TextBlock Text="{Binding Path=PlayerName}" Grid.Column="1"/>
-
 	                <TextBlock Text="{Binding Path=Score}" Grid.Column="2"/>
-
 	            </Grid>
 	        </DataTemplate>
 	    </ListView.ItemTemplate>
@@ -771,4 +762,4 @@ Wenn Sie nun die App ausführen, kommuniziert diese mit dem echten Dienst.
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

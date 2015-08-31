@@ -35,7 +35,7 @@ Der mobile Dienst, der in diesem Lernprogramm erstellt wird, ist ein mobiler .NE
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
 * Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-universal-dotnet-get-started-data%2F).
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio 2013</a> (Update 3 oder eine höhere Version). 
+* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio 2013</a> \(Update 3 oder eine höhere Version\). 
 
 ##Download des GetStartedWithData-Projekts
 
@@ -121,4 +121,4 @@ In diesem Lernprogramm wurden die Grundlagen der Aktivierung einer universellen 
 [MobileServiceClient class]: http://go.microsoft.com/fwlink/p/?LinkId=302030
   
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

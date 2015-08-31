@@ -13,11 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="08/09/2015"
+   ms.date="08/19/2015"
    ms.author="rajram"/>
 
 # Microsoft AS2-Connector
-Der Microsoft Azure AS2-Connector kann bei der Business-to-Business-Kommunikation Nachrichten über das AS2-Transportprotokoll \(Applicability Statement 2\) empfangen und senden. Daten werden sicher und zuverlässig über das Internet übertragen. Die Sicherheit wird mithilfe von digitalen Zertifikaten und Verschlüsselung gewährleistet.
+Der Microsoft Azure AS2-Connector kann bei der Business-to-Business-Kommunikation Nachrichten über das AS2-Transportprotokoll (Applicability Statement 2) empfangen und senden. Daten werden sicher und zuverlässig über das Internet übertragen. Die Sicherheit wird mithilfe von digitalen Zertifikaten und Verschlüsselung gewährleistet.
 
 ## Trigger und Aktionen
 Ein Trigger startet eine neue Instanz basierend auf einem bestimmten Ereignis wie dem Eingang einer AS2-Nachricht von einem Partner. Eine Aktion ist das Ergebnis. Nach dem Empfang einer AS2-Nachricht wird die Nachricht beispielsweise mit AS2 gesendet.
@@ -55,7 +55,7 @@ TPM-Instanzname | Geben Sie den Namen der API-App **BizTalk Trading Partner Mana
 
 5. Klicken Sie auf **Erstellen**.
 
-Handelspartner sind die Entitäten, die an einer B2B-Kommunikation \(Business-to-Business\) beteiligt sind. Wenn zwei Partner eine Beziehung eingehen, wird dies als "Vereinbarung" bezeichnet. Diese Vereinbarung basiert auf der Kommunikation, die beide Partner wünschen, und ist protokoll- oder transportspezifisch.
+Handelspartner sind die Entitäten, die an einer B2B-Kommunikation (Business-to-Business) beteiligt sind. Wenn zwei Partner eine Beziehung eingehen, wird dies als "Vereinbarung" bezeichnet. Diese Vereinbarung basiert auf der Kommunikation, die beide Partner wünschen, und ist protokoll- oder transportspezifisch.
 
 Die Schritte zum Erstellen einer Handelspartnervereinbarung sind [hier][2] dokumentiert.
 
@@ -71,10 +71,10 @@ Die Schritte zum Erstellen einer Handelspartnervereinbarung sind [hier][2] dokum
 
 Als Teil der Ausgabe gibt der Connector die AS2-Nutzlast sowie die AS2-spezifischen Metadaten zurück.
 
-Der Trigger wird ausgelöst, wenn eine AS2-Nutzlast wie ein POST an "https://{Host-URL}/decode" ist. Sie finden die Host-URL in den API-App-Einstellungen. Sie müssen möglicherweise auch die Zugriffsebene der API-App in den Anwendungseinstellungen in "Öffentlich" \(authentifiziert oder anonym\) ändern.
+Der Trigger wird ausgelöst, wenn eine AS2-Nutzlast wie ein POST an "https://{Host-URL}/decode" ist. Sie finden die Host-URL in den API-App-Einstellungen. Sie müssen möglicherweise auch die Zugriffsebene der API-App in den Anwendungseinstellungen in "Öffentlich" (authentifiziert oder anonym) ändern.
 
 ## Verwenden des Connectors als Aktion
-1. Fügen Sie nach dem Trigger \(oder wählen Sie "Diese Logik manuell ausführen"\) den im rechten Bereich erstellten AS2-Connector hinzu: ![Aktionseinstellungen][7]
+1. Fügen Sie nach dem Trigger (oder wählen Sie "Diese Logik manuell ausführen") den im rechten Bereich erstellten AS2-Connector hinzu: ![Aktionseinstellungen][7]
 
 2. Klicken Sie auf den Pfeil nach rechts →: ![Liste der Aktionen][8]
 
@@ -97,7 +97,7 @@ Die Aktion gibt bei erfolgreichem Abschluss einen HTTP 200-Antwortcode zurück.
 ## Mehr mit Ihrem Connector machen
 Mehr zu Logik-Apps erfahren Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Erstellen der API-Apps mithilfe von REST-APIs. Informationen finden Sie unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -113,4 +113,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-as2/EncodeAndSendInput.PNG
 [10]: ./media/app-service-logic-connector-as2/EncodeAndSendConfigured.PNG
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

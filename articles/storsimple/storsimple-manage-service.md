@@ -1,25 +1,25 @@
 <properties 
-   pageTitle="Bereitstellen des StorSimple Manager-Diensts"
+   pageTitle="Bereitstellen des StorSimple Manager-Diensts | Microsoft Azure"
    description="Erläutert das Erstellen und Löschen des StorSimple Manager-Diensts im Verwaltungsportal und beschreibt die Verwaltung des Dienstregistrierungsschlüssels."
    services="storsimple"
    documentationCenter=""
    authors="SharS"
    manager="carolz"
-   editor="tysonn" />
+   editor="" />
 <tags 
    ms.service="storsimple"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/12/2015"
+   ms.date="08/18/2015"
    ms.author="v-sharos" />
 
 # Bereitstellen des StorSimple Manager-Diensts
 
 ## Übersicht
 
-Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Er stellt Verbindungen mit mehreren StorSimple-Geräten her. Nachdem Sie den Dienst erstellen, können Sie damit diese Geräte über das in einem Browser ausgeführte Microsoft Azure-Verwaltungsportal verwalten. So können Sie alle Geräte, die mit den StorSimple Manager-Dienst verbunden sind, von einem zentralen Standort aus überwachen und damit den Verwaltungsaufwand minimieren.
+Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Er stellt Verbindungen mit mehreren StorSimple-Geräten her. Nach dem Erstellen können Sie den Dienst zum Verwalten der Geräte über das in einem Browser ausgeführte Microsoft Azure-Verwaltungsportal verwenden. So können Sie alle Geräte, die mit den StorSimple Manager-Dienst verbunden sind, von einem zentralen Standort aus überwachen und damit den Verwaltungsaufwand minimieren.
 
 Auf der Startseite von StorSimple Manager werden alle StorSimple Manager-Dienste aufgeführt, mit denen Sie Ihre StorSimple-Speichergeräte verwalten können. Für jeden StorSimple Manager-Dienst werden die folgende Informationen auf der Seite von StorSimple Manager angezeigt:
 
@@ -82,7 +82,7 @@ Führen Sie die folgenden Schritte durch, um den Dienstregistrierungsschlüssel 
 
 Bewahren Sie den Dienstregistrierungsschlüssel an einem sicheren Ort auf. Sie benötigen diesen Schlüssel sowie den Verschlüsselungsschlüssel für Dienstdaten, um zusätzliche Geräte bei diesem Dienst zu registrieren. Nach dem Abrufen des Dienstregistrierungsschlüssels müssen Sie das Gerät mithilfe von Windows PowerShell für StorSimple konfigurieren.
 
-Einzelheiten zum Verwenden des Registrierungsschlüssels finden Sie unter [Schritt 3: Konfigurieren und Registrieren des Geräts über Windows PowerShell für StorSimple](storsimple-deployment-walkthrough.md/#step-2:-configure-and-register-the-device-through-windows-powershell-for-storsimple).
+Einzelheiten zum Verwenden des Registrierungsschlüssels finden Sie unter [Schritt 3: Konfigurieren und Registrieren des Geräts über Windows PowerShell für StorSimple](storsimple-deployment-walkthrough.md#step-2-configure-and-register-the-device-through-windows-powershell-for-storsimple).
 
 ## Neugenerieren des Dienstregistrierungsschlüssels
 
@@ -107,10 +107,10 @@ Führen Sie die folgenden Schritte durch, um den Dienstregistrierungsschlüssel 
 
 ## Nächste Schritte
 
-Erfahren Sie mehr über den [StorSimple-Bereitstellungsprozess](storsimple-deployment-walkthrough.md)
+[Weitere Informationen zum StorSimple-Bereitstellungsprozess](storsimple-deployment-walkthrough.md)
 
-Erfahren Sie mehr über das [Verwalten Ihres StorSimple-Speicherkontos](../storsimple-manage-storage-account.md)
+[Weitere Informationen über das Verwalten des StorSimple-Speicherkontos](storsimple-manage-storage-accounts.md)
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

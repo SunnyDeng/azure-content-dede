@@ -3,7 +3,7 @@
 	description="Auswahl eines Azure Machine Learning-Algorithmus für überwachtes und unbeaufsichtigtes Lernen bei Clustering-, Klassifizierungs- oder Regressionsexperimenten."
 	services="machine-learning"
 	documentationCenter=""
-	authors="garyericson"
+	authors="brohrer"
 	manager="paulettm"
 	editor="cgronlun"
     tags=""/>
@@ -222,4 +222,4 @@ Azure Machine Learning umfasst außerdem Zugriff auf ein leistungsfähiges Machi
 [9]: ./media/machine-learning-algorithm-choice/image9.png
 [10]: ./media/machine-learning-algorithm-choice/image10.png
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

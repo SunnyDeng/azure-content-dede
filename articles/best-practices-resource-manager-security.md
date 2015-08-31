@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/24/2015"
+	ms.date="08/13/2015"
 	ms.author="georgem"/>
 
 
@@ -22,6 +22,8 @@
 Bei den Sicherheitsaspekten für Ihre Azure-Ressourcen-Manager-Vorlagen müssen mehrere Bereiche berücksichtigt werden: Schlüssel und geheime Schlüssel, rollenbasierte Zugriffssteuerung und Netzwerksicherheitsgruppen.
 
 Dieses Thema setzt voraus, dass Sie mit der rollenbasierten Zugriffssteuerung in Azure-Ressourcen-Manager vertraut sind. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung im Microsoft Azure-Portal](role-based-access-control-configure.md) und [Verwalten und Überwachen des Zugriffs auf Ressourcen](resource-group-rbac.md).
+
+Dieses Thema ist Teil eines umfangreicheren Whitepapers. Um den vollständigen Artikel zu lesen, laden Sie [World Class ARM Templates Considerations and Proven Practices](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf) herunter.
 
 ## Geheime Schlüssel und Zertifikate
 
@@ -45,7 +47,7 @@ Eine bewährte Methode ist das Vorhalten getrennter Vorlagen für die folgenden 
 
 Ein typisches Unternehmensszenario ist das Einrichten einer kleinen vertrauenswürdigen Gruppe mit Zugriff auf wichtige geheime Informationen in den bereitgestellten Workloads und einer größeren Gruppe von Dev/Ops-Mitarbeitern, die VM-Bereitstellungen erstellen oder aktualisieren können. Es folgt eine Beispiel einer ARM-Vorlage, die einen neuen Tresor im Kontext der Identität des derzeit authentifizierten Benutzers in Azure Active Directory erstellt und konfiguriert. Dieser Benutzer hat die Standardberechtigung zum Erstellen, Löschen, Auflisten, Aktualisieren, Sichern, Wiederherstellen und Abrufen der öffentliche Hälfte der Schlüssel in diesem neuen Schlüsseltresor.
 
-Während die meisten Felder in dieser Vorlage selbsterklärend sind, sind für die Einstellung **EnableVaultForDeployment** weitere Hintergrundinformationen erforderlich: auf Tresore besteht kein ständiger Zugriff durch andere Komponenten der Azure-Infrastruktur. Durch das Festlegen dieses Werts wird den Azure Compute-Infrastrukturkomponenten ein schreibgeschützter Zugriff auf diesen bestimmten benannten Tresor gewährt. Daher ist es eine weitere bewährte Methode, vertrauliche Unternehmensdaten nicht im selben Tresor mit geheimen VM-Schlüsseln zu vermengen.
+Während die meisten Felder in dieser Vorlage selbsterklärend sind, sind für die Einstellung **enableVaultForDeployment** weitere Hintergrundinformationen erforderlich: Auf Tresore besteht kein ständiger Zugriff durch andere Komponenten der Azure-Infrastruktur. Durch das Festlegen dieses Werts wird den Azure Compute-Infrastrukturkomponenten ein schreibgeschützter Zugriff auf diesen bestimmten benannten Tresor gewährt. Daher ist es eine weitere bewährte Methode, vertrauliche Unternehmensdaten nicht im selben Tresor mit geheimen VM-Schlüsseln zu vermengen.
 
     {
         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -259,7 +261,7 @@ Sie können eine NSG einer VM und eine weitere NSG dem Subnetz zuordnen, in dem 
 
 ![Zuordnen einer NSG zu einem Subnetz und einer VM](./media/best-practices-resource-manager-security/nsg-subnet-vm.png)
 
-Die Zuordnung einer NSG zu einer VM oder einem Subnetz macht die Netzwerkzugriffsregeln äußerst explizit. Die Plattform fügt keine implizite Regel ein, um eingehenden Datenverkehr für einen bestimmten Port zuzulassen. In diesem Fall gilt: Wenn Sie einen Endpunkt für die VM erstellen, müssen Sie auch eine Regel erstellen, die Datenverkehr aus dem Internet zulässt. Andernfalls kann von außen nicht auf die *VIP:{Port}* zugegriffen werden.
+Die Zuordnung einer NSG zu einer VM oder einem Subnetz macht die Netzwerkzugriffsregeln äußerst explizit. Die Plattform fügt keine implizite Regel ein, um eingehenden Datenverkehr für einen bestimmten Port zuzulassen. In diesem Fall gilt: Wenn Sie einen Endpunkt für die VM erstellen, müssen Sie auch eine Regel erstellen, die Datenverkehr aus dem Internet zulässt. Andernfalls kann von außen nicht auf *VIP:{Port}* zugegriffen werden.
 
 Angenommen, Sie erstellen eine neue VM und eine neue NSG. Anschließend ordnen Sie die NSG der VM zu. Dank der Regel ALLOW VNET INBOUND kann die VM mit anderen VMs im virtuellen Netzwerk kommunizieren. Dank der Regel „ALLOW INTERNET OUTBOUND“ kann der virtuelle Computer zudem ausgehende Verbindungen mit dem Internet herstellen. Später erstellen Sie einen Endpunkt an Port 80, um Datenverkehr für Ihre auf dem virtuellen Computer ausgeführte Website empfangen zu können. An die VIP (öffentliche virtuelle IP-Adresse) an Port 80 gerichtete Pakete aus dem Internet erreichen die VM erst, wenn Sie der NSG eine Regel wie in der folgenden Tabelle hinzufügen:
 
@@ -315,7 +317,7 @@ Die oben angegebenen Standardrouten können in der Azure-Umgebung nicht angezeig
 
 In den oben genannten Szenarios müssen Sie eine Routentabelle erstellen und dieser benutzerdefinierte Routen hinzufügen. Sie können über mehrere Routentabellen verfügen, wobei eine Routentabelle einem oder mehreren Subnetzen zugeordnet werden kann. Die einzelnen Subnetze können jeweils nur einer Routentabelle zugeordnet werden. Alle virtuellen Computer und Clouddienste in einem Subnetz verwenden die diesem Subnetz zugeordnete Routentabelle.
 
-Für die Subnetze gelten solange Standardrouten, bis diesen eine Routentabelle zugeordnet wurde. Sobald eine Zuordnung vorhanden ist, erfolgt das Routing beruhend auf der [längsten Präfixübereinstimmung](https://en.wikipedia.org/wiki/Longest_prefix_match) (Longest Prefix Match, LPM) zwischen den benutzerdefinierten und Standardrouten. Wenn mehrere Routen mit identischer längster Präfixübereinstimmung vorhanden sind, wird die Route in der folgenden Reihenfolge beruhend ihrem Ursprung ausgewählt:
+Für die Subnetze gelten solange Standardrouten, bis diesen eine Routentabelle zugeordnet wurde. Sobald eine Zuordnung vorhanden ist, erfolgt das Routing beruhend auf der [längsten Präfixübereinstimmung](https://en.wikipedia.org/wiki/Longest_prefix_match) (Longest Prefix Match, LPM) zwischen den benutzerdefinierten und den Standardrouten. Wenn mehrere Routen mit identischer längster Präfixübereinstimmung vorhanden sind, wird die Route in der folgenden Reihenfolge beruhend ihrem Ursprung ausgewählt:
 
 1.	Benutzerdefinierte Route
 2.	BGP-Route (bei Verwendung von ExpressRoute)
@@ -331,8 +333,8 @@ Dieser virtuelle Computer muss eingehenden Datenverkehr empfangen können, der n
 
 ## Nächste Schritte
 - Um zu verstehen, wie Sicherheitsprinzipale mit dem richtigen Zugriff für das Arbeiten mit Ressourcen in Ihrer Organisation eingerichtet werden, lesen Sie [Authentifizieren eines Dienstprinzipals mit Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md).
-- Wenn Sie den Zugriff auf eine Ressource sperren müssen, können Sie Verwaltungssperren verwenden. Weiter Informationen finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md)
+- Wenn Sie den Zugriff auf eine Ressource sperren müssen, können Sie Verwaltungssperren verwenden. Weitere Informationen finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 - Informationen zum Konfigurieren von Routing und der IP-Weiterleitung finden Sie unter [Erstellen von Routen und Aktivieren der IP-Weiterleitung in Azure](virtual-network/virtual-networks-udr-how-to.md). 
-- Einen Überblick über die rollenbasierte Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md).
+- Eine Übersicht über die rollenbasierte Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

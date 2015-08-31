@@ -1,10 +1,10 @@
 <properties
 	pageTitle="Anmeldungen aus mehreren geografischen Regionen"
-	description="Ein Bericht, der auf Benutzer hinweist, bei denen zwei Anmeldungen aus unterschiedlichen Regionen zu kommen schienen, und der Benutzer im Zeitraum zwischen den Anmeldungen unmöglich von einer Region zur anderen gereist sein kann.""
+	description="Ein Bericht, der auf Benutzer hinweist, bei denen zwei Anmeldungen aus verschiedenen Regionen zu stammen scheinen und die Zeit zwischen den Anmeldungen es dem jeweiligen Benutzer unmöglich macht, die Entfernung zwischen diesen Regionen reisend zurückgelegt zu haben."
 	services="active-directory"
 	documentationCenter=""
-	authors="kenhoff"
-	manager="ilanas"
+	authors="SSalahAhmed"
+	manager="gchander"
 	editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/01/2015"
-	ms.author="kenhoff"/>
+	ms.date="08/17/2015"
+	ms.author="saah;kenhoff"/>
 
 # Anmeldungen aus mehreren geografischen Regionen
 
@@ -24,4 +24,4 @@
 
 ![Anmeldungen aus mehreren geografischen Regionen](./media/active-directory-reporting-sign-ins-from-multiple-geographies/signInsFromMultipleGeographies.PNG)
 
-<!-----HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

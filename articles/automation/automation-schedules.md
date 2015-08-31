@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Zeitpläne in Azure Automation"
+   pageTitle="Zeitpläne in Azure Automation | Microsoft Azure"
    description="Automation-Zeitpläne werden verwendet, um die automatische Ausführung von Runbooks in Azure Automation zu planen. In diesem Artikel wird beschrieben, wie Zeitpläne erstellt werden."
    services="automation"
    documentationCenter=""
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/21/2015"
+   ms.date="08/18/2015"
    ms.author="bwren" />
 
 # Zeitpläne in Azure Automation
@@ -66,4 +66,4 @@ Das Cmdlet [New-AzureAutomationSchedule](http://msdn.microsoft.com/library/dn690
 - [Planen eines Runbooks in Azure Automation](automation-scheduling-a-runbook.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

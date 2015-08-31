@@ -53,9 +53,9 @@ Wenn Sie die Verbindung zur Windows PowerShell-Schnittstelle über die serielle 
 
     > [AZURE.NOTE]Dieser Prozess muss innerhalb von vier Stunden nach der Autorisierung eines StorSimple-Geräts initiiert werden.
 
-    Der neue Schlüssel wird dann an den Dienst gesendet und an alle bei diesem Dienst registrierten Geräte übermittelt. Im Dienst-Dashboard wird eine Warnung angezeigt. Der Dienst deaktiviert alle Vorgänge auf den registrierten Geräten. Dann muss der Geräteadministrator den Verschlüsselungsschlüssel für Dienstdaten auf den anderen Geräten aktualisieren. E/A-Vorgänge (von Hosts an die Cloud übermittelte Daten) werden jedoch nicht unterbrochen.
+   Der neue Schlüssel wird dann an den Dienst gesendet und an alle bei diesem Dienst registrierten Geräte übermittelt. Im Dienst-Dashboard wird eine Warnung angezeigt. Der Dienst deaktiviert alle Vorgänge auf den registrierten Geräten. Dann muss der Geräteadministrator den Verschlüsselungsschlüssel für Dienstdaten auf den anderen Geräten aktualisieren. E/A-Vorgänge (von Hosts an die Cloud übermittelte Daten) werden jedoch nicht unterbrochen.
 
-    Wenn Sie nur ein Gerät beim Dienst registriert haben, ist der Rollover-Prozess nun abgeschlossen und Sie können den nächsten Schritt überspringen. Wenn Sie mehrere Geräte beim Dienst registriert haben, fahren Sie mit Schritt 3 fort.
+   Wenn Sie nur ein Gerät beim Dienst registriert haben, ist der Rollover-Prozess nun abgeschlossen und Sie können den nächsten Schritt überspringen. Wenn Sie mehrere Geräte beim Dienst registriert haben, fahren Sie mit Schritt 3 fort.
 
 ### Schritt 3: Aktualisieren des Verschlüsselungsschlüssels für Dienstdaten auf anderen StorSimple-Geräten
 
@@ -71,6 +71,6 @@ Führen Sie die folgenden Schritte aus, um den Verschlüsselungsschlüssel für 
 
     `Invoke-HcsmServiceDataEncryptionKeyChange – ServiceDataEncryptionKey`
 
-3. Geben Sie den Verschlüsselungsschlüssel für Dienstdaten ein, den Sie in [Schritt2: Verwenden Sie Windows PowerShell für StorSimple, um die Änderung des Verschlüsselungsschlüssels für Dienstdaten zu initialisieren.](##to-initiate-the-service-data-encryption-key-change) erhalten haben.
+3. Geben Sie den Verschlüsselungsschlüssel für Dienstdaten ein, den Sie in [Schritt2: Verwenden Sie Windows PowerShell für StorSimple, um die Änderung des Verschlüsselungsschlüssels für Dienstdaten zu initialisieren.](#to-initiate-the-service-data-encryption-key-change) erhalten haben.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

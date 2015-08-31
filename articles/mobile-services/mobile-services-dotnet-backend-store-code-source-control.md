@@ -104,4 +104,4 @@ Ihr mobiles Dienstprojekt wird jetzt in der Quellcodeverwaltung verwaltet, und S
 [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts]: mobile-services-dotnet-backend-how-to-use-code-first-migrations.md
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

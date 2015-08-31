@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Was ist die Self-Service-Registrierung für Azure?" 
-	description="Eine Übersicht über die Self-Service-Registrierung für Azure und die Verwaltung des Registrierungsprozesses." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="Justinha" 
-	manager="TerryLan" 
+<properties
+	pageTitle="Was ist die Self-Service-Registrierung für Azure?"
+	description="Eine Übersicht über die Self-Service-Registrierung für Azure und die Verwaltung des Registrierungsprozesses."
+	services="active-directory"
+	documentationCenter=""
+	authors="curtand"
+	manager="stevenpo"
 	editor="LisaToft"/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="identity" 
-	ms.date="05/13/2015" 
-	ms.author="Justinha"/>
+<tags
+	ms.service="active-directory"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
+	ms.date="08/14/2015" 
+	ms.author="stevenpo"/>
 
 
 # Was ist die Self-Service-Registrierung für Azure?
@@ -26,12 +26,12 @@ In diesem Thema wird der Self-Service-Registrierungsvorgang und das Übernehmen 
 - Kunden erhalten schneller die gewünschten Dienste.
 - E-Mail-basierte Angebote für einen Dienst lassen sich rasch erstellen.
 - E-Mail-basierte Registrierungsabläufe lassen sich schnell erstellen, um Benutzern das Erstellen von Identitäten mithilfe ihrer einfach zu merkenden geschäftlichen E-Mail-Aliase zu ermöglichen.
-- Nicht verwaltete Azure-Mandanten können wachsen und später verwaltete Mandanten werden und für andere Dienste wiederverwendet werden. 
+- Nicht verwaltete Azure-Mandanten können wachsen und später verwaltete Mandanten werden und für andere Dienste wiederverwendet werden.
 
 ## Begriffe und Definitionen
 
-+ **Self-Service-Registrierung**: Dies ist die Methode, mit der sich ein Benutzer für einen Clouddienst registriert, wobei für ihn basierend auf seiner E-Mail-Domäne automatisch eine Identität in Azure Active Directory erstellt wird. 
-+ **Nicht verwalteter Azure-Mandant**: Dies ist das Verzeichnis, in dem diese Identität erstellt wird. Ein nicht verwalteter Mandant ist ein Verzeichnis ohne globalen Administrator. 
++ **Self-Service-Registrierung**: Dies ist die Methode, mit der sich ein Benutzer für einen Clouddienst registriert, wobei für ihn basierend auf seiner E-Mail-Domäne automatisch eine Identität in Azure Active Directory erstellt wird.
++ **Nicht verwalteter Azure-Mandant**: Dies ist das Verzeichnis, in dem diese Identität erstellt wird. Ein nicht verwalteter Mandant ist ein Verzeichnis ohne globalen Administrator.
 + **Über E-Mail verifizierter Benutzer**: Dies ist ein Typ von Benutzerkonto in Azure AD. Ein Benutzer, für den nach der Registrierung für ein Self-Service-Angebot automatisch eine Identität erstellt wird, wird als über E-Mail verifizierter Benutzer bezeichnet. Ein über E-Mail verifizierter Benutzer ist ein normales Mitglied eines Verzeichnisses mit der Kennzeichnung "creationmethod=EmailVerified".
 
 ## Kundenerfahrung
@@ -46,8 +46,8 @@ Wenn Dan der erste Benutzer mit einer E-Mail-Adresse von "BellowsCollege.com" is
 
 Ein Administrator, der Besitzer des DNS-Domänennamens eines nicht verwalteten Azure-Mandanten ist, kann den Mandanten nach dem Nachweis des Besitzes übernehmen oder zusammenführen. In den nächsten Abschnitten wird die Administratorerfahrung im Detail erläutert. Hier zunächst eine Zusammenfassung:
 
-- Wenn Sie einen nicht verwalteten Azure-Mandanten übernehmen, werden Sie zum globalen Administrator des nicht verwalteten Mandanten. Dies wird mitunter als interne Übernahme bezeichnet. 
-- Wenn Sie einen nicht verwalteten Azure-Mandanten zusammenführen, fügen Sie den DNS-Domänennamen des nicht verwalteten Mandanten Ihrem verwalteten Azure-Mandanten hinzu. Eine Zuordnung von Benutzern zu Ressourcen wird erstellt, damit Benutzer weiterhin ohne Unterbrechung auf Dienste zugreifen können. Dies wird mitunter als externe Übernahme bezeichnet. 
+- Wenn Sie einen nicht verwalteten Azure-Mandanten übernehmen, werden Sie zum globalen Administrator des nicht verwalteten Mandanten. Dies wird mitunter als interne Übernahme bezeichnet.
+- Wenn Sie einen nicht verwalteten Azure-Mandanten zusammenführen, fügen Sie den DNS-Domänennamen des nicht verwalteten Mandanten Ihrem verwalteten Azure-Mandanten hinzu. Eine Zuordnung von Benutzern zu Ressourcen wird erstellt, damit Benutzer weiterhin ohne Unterbrechung auf Dienste zugreifen können. Dies wird mitunter als externe Übernahme bezeichnet.
 
 ### Was wird im Microsoft Azure-Verzeichnis erstellt?
 
@@ -103,13 +103,13 @@ Angenommen, ein IT-Administrator am Bellows College ermittelt, dass Benutzer in 
 Bei einer externen Übernahme verfügen Sie bereits über einen verwaltete Mandanten und möchten, dass alle Benutzer und Gruppen in einem nicht verwalteten Mandanten diesem verwalteten Mandanten beitreten, anstatt zwei separate Mandanten einzurichten.
 
 Als Administrator eines verwalteten Mandanten fügen Sie eine Domäne hinzu, und dieser Domäne ist zufällig ein nicht verwalteter Mandant zugeordnet.
-	
+
 Angenommen, Sie sind IT-Administrator und verfügen bereits über einen verwalteten Mandanten für "Contoso.com", einen Domänennamen, der für Ihre Organisation registriert ist. Sie erkennen, dass Benutzer in Ihrer Organisation eine Self-Service-Registrierung für ein Angebot mithilfe des E-Mail-Domänennamens user@contoso.co.uk durchgeführt haben, der ein weiterer Domänenname im Besitz Ihrer Organisation ist. Diese Benutzer haben derzeit Konten in einem nicht verwalteten Mandanten für "contoso.co.uk".
 
 Sie möchten nicht zwei separate Mandanten verwalten, weshalb Sie den nicht verwalteten Mandanten für "contoso.co.uk" mit Ihrem vorhandenen von der IT-Abteilung verwalteten Mandanten für "contoso.com" zusammenführen.
-	
+
 Bei der externen Übernahme erfolgt der gleiche DNS-Überprüfungsprozess wie bei der internen Übernahme. Der Unterschied ist, dass Benutzer und Dienste dem von der IT verwalteten Mandanten neu zugeordnet werden.
-	
+
 #### Was sind die Auswirkungen einer externen Übernahme?
 
 Mit einer externen Übernahme erfolgt eine Zuordnung von Benutzern zu Ressourcen, damit Benutzer weiter ohne Unterbrechung auf Dienste zugreifen können. Viele Anwendungen, einschließlich RMS für Einzelpersonen, führen die Zuordnung von Benutzern zu Ressourcen ordnungsgemäß durch, sodass Benutzer ohne Änderungen weiterhin Zugriff auf diese Dienste haben. Wenn eine Anwendung die Zuordnung von Benutzern zu Ressourcen nicht effizient durchführt, kann die externe Übernahme explizit blockiert werden, um eine schlechte Benutzererfahrung zu verhindern.
@@ -160,7 +160,7 @@ Sie haben verschiedene Möglichkeiten zum Ausführen einer Domänenüberprüfung
 Beispiel:
 
 1. Stellen Sie eine Verbindung mit Azure AD mit den Anmeldeinformationen her, die verwendet wurden, um auf das Self-Service-Angebot zu reagieren: mport-module MSOnline $msolcred = get-credential connect-msolservice -credential $msolcred
-		
+
 2. Rufen Sie eine Liste von Domänen ab:
 
 	Get-MsolDomain
@@ -205,8 +205,8 @@ Administratoren stehen derzeit zwei Self-Service-Steuerungsmöglichkeiten zur Ve
 
 Ein Administrator kann diese Funktionen mit den Parametern des Azure AD-Cmdlets "Set-MsolCompanySettings" konfigurieren:
 
-+ **AllowEmailVerifiedUsers** steuert, ob ein Benutzer einen nicht verwalteten Mandanten erstellen oder diesem beitreten kann. Wenn Sie diesen Parameter auf "$false" festlegen, können keine über E-Mail verifizierten Benutzer dem Mandanten beitreten. 
-+ **AllowAdHocSubscriptions** steuert, ob Benutzern das Ausführen der Self-Service-Registrierung erlaubt ist. Wenn Sie diesen Parameter auf "$false" festlegen, können Benutzer keine Self-Service-Registrierung ausführen. 
++ **AllowEmailVerifiedUsers** steuert, ob ein Benutzer einen nicht verwalteten Mandanten erstellen oder diesem beitreten kann. Wenn Sie diesen Parameter auf "$false" festlegen, können keine über E-Mail verifizierten Benutzer dem Mandanten beitreten.
++ **AllowAdHocSubscriptions** steuert, ob Benutzern das Ausführen der Self-Service-Registrierung erlaubt ist. Wenn Sie diesen Parameter auf "$false" festlegen, können Benutzer keine Self-Service-Registrierung ausführen.
 
 
 ### Wie funktionieren diese Steuerungsmöglichkeiten zusammen?
@@ -234,6 +234,4 @@ Weitere Informationen und Beispiele zum Verwenden dieser Parameter finden Sie un
 <!--Image references-->
 [1]: ./media/active-directory-self-service-signup/SelfServiceSignUpControls.png
 
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

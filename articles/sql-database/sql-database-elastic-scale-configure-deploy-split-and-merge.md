@@ -1,8 +1,7 @@
 <properties
 	pageTitle="Lernprogramm zum Split-Merge-Tool für elastische Datenbanken | Microsoft Azure"
 	description="Aufteilen und Zusammenführen mit Tools für elastische Datenbanken"
-	services="sql-database" 
-	documentationCenter=""  
+	services="sql-database" documentationCenter=""  
 	manager="jeffreyg"
 	authors="sidneyh"/>
 
@@ -12,7 +11,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/14/2015"
+	ms.date="08/14/2015"
 	ms.author="sidneyh" />
 
 # Lernprogramm zum Split-Merge-Tool für elastische Datenbanken
@@ -45,7 +44,11 @@ Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle 
 
 2. Öffnen Sie „ServiceConfiguration.cscfg“ in Ihrem bevorzugten Text-Editor. Wir empfehlen die Verwendung von Visual Studio, da Eingaben, z. B. das Format von Zertifikatfingerabdrücken, von der Software überprüft werden.
 
-3. Erstellen Sie entweder eine neue Datenbank, oder wählen Sie eine vorhandene Datenbank als Statusdatenbank für Teilungs-/Zusammenführungsvorgänge (Split/Merge) aus, und rufen Sie die Verbindungszeichenfolge dieser Datenbank ab. Bei Azure SQL-Datenbanken hat die Verbindungszeichenfolge in der Regel folgendes Format:
+3. Erstellen Sie entweder eine neue Datenbank, oder wählen Sie eine vorhandene Datenbank als Statusdatenbank für Teilungs-/Zusammenführungsvorgänge (Split/Merge) aus, und rufen Sie die Verbindungszeichenfolge dieser Datenbank ab.
+
+	**Wichtig** Zu diesem Zeitpunkt muss die Statusdatenbank die Sortierreihenfolge "Latin" verwenden (SQL\_Latin1\_General\_CP1\_CI\_AS). Weitere Informationen finden Sie unter [Name der Windows-Sortierreihenfolge (Transact-SQL)](https://msdn.microsoft.com/library/ms188046.aspx).
+
+	Bei Azure SQL-Datenbanken hat die Verbindungszeichenfolge in der Regel folgendes Format:
 
         "Server=myservername.database.windows.net; Database=mydatabasename;User ID=myuserID; Password=mypassword; Encrypt=True; Connection Timeout=30" .
 4.    Geben Sie die Verbindungszeichenfolge in der CSCFG-Datei sowohl im Abschnitt für die **SplitMergeWeb**-Rolle als auch für die **SplitMergeWorker**-Rolle der Einstellung „ElasticScaleMetadata“ ein.
@@ -329,4 +332,4 @@ Wenn Sie keine Anforderungen übermitteln können, wird möglicherweise Folgende
 [5]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/storage.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -12,7 +12,7 @@ ms.service="virtual-machines"
  ms.topic="article"
  ms.tgt_pltfrm="vm-windows"
  ms.workload="big-compute"
- ms.date="07/27/2015"
+ ms.date="08/18/2015"
  ms.author="danlep"/>
 
 # Erste Schritte mit einem HPC Pack-Cluster in Azure zum Ausführen von Excel- und SOA-Workloads
@@ -26,7 +26,6 @@ Das folgende Diagramm gibt einen allgemeinen Überblick über den zu erstellende
 ## Voraussetzungen
 
 * **Clientcomputer**: Sie benötigen einen Windows-basierten Clientcomputer, um das Azure PowerShell-Clusterbereitstellungsskript auszuführen (sofern Sie diese Bereitstellungsmethode verwenden) und Excel- und SOA-Beispielaufträge an den Cluster zu übermitteln.
-
 
 * **Azure-Abonnement**: Falls Sie noch kein Konto haben, können Sie in wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
 
@@ -61,7 +60,7 @@ Verwenden Sie eine Azure-Schnellstartvorlage, um schnell und einfach einen HPC 
     >
     >Die virtuellen Computer für die Serverknoten werden auf der Grundlage des neuesten Image der ausgewählten Serverknotenfamilie erstellt. Wählen Sie die Option **ComputeNode** aus, um das neueste HPC Pack 2012 R2 Update 2-Serverimage für allgemeine Anwendungen zu erhalten. Wählen Sie die Option **ComputeNodeWithExcel** aus, um das neueste HPC Pack-Serverknotenimage mit einer Evaluierungsversion von Microsoft Excel Professional Plus 2013 zu erhalten. Wenn Sie einen Cluster für allgemeine SOA-Sitzungen oder für die Abladung von Excel-UDFs bereitstellen möchten, wählen Sie die Option **ComputeNode** (ohne Installation von Excel) aus.
     >
-    >Wenn Sie **ComputeNodeWithExcel** für Produktionsworkloads verwenden, müssen Sie eine gültige Excel-Lizenz angeben, um Excel auf den Serverknoten zu aktivieren. Andernfalls läuft die Evaluierungsversion von Excel nach 60 Tagen ab, und es können keine Excel-Workloads mehr ausgeführt werden.
+    >Wenn Sie **ComputeNodeWithExcel** für Produktionsworkloads verwenden, müssen Sie eine gültige Excel-Lizenz angeben, um Excel auf den Serverknoten zu aktivieren. Andernfalls läuft die Evaluierungsversion von Excel nach 30 Tagen ab, und es können keine Excel-Workloads mehr ausgeführt werden.
 
     c. Wählen Sie das Abonnement aus.
 
@@ -377,4 +376,4 @@ Für die SOA-Clientanwendung muss lediglich der Hauptname auf den vollständigen
 [endpoint]: ./media/virtual-machines-excel-cluster-hpcpack/endpoint.png
 [udf]: ./media/virtual-machines-excel-cluster-hpcpack/udf.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

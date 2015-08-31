@@ -25,9 +25,9 @@ Mit den Funktionen für virtuelle Computer und virtuelle Netzwerke der Azure-Inf
 
 ![](./media/virtual-machines-workload-high-availability-LOB-application/workload-lobapp-phase4.png)
  
-Da es sich bei Azure Virtual Network um eine Erweiterung Ihres lokalen Netzwerks mit den richtigen Benennungen und dem richtigen Datenverkehrsrouting handelt, greifen Ihre Benutzer so auf die Branchenanwendung zu, als ob diese sich im lokalen Datencenter befände.
+Da es sich bei Azure Virtual Network um eine Erweiterung Ihres lokalen Netzwerks mit den richtigen Benennungen und dem richtigen Datenverkehrsrouting handelt, greifen Ihre Benutzer so auf die Branchenanwendung zu, als ob diese sich im lokalen Rechenzentrum befände.
 
-Dank dieser Konfiguration können Sie die Kapazität der Anwendung mühelos erweitern, indem Sie neue virtuelle Azure-Computer hinzufügen, deren laufende Kosten für Hardware und Wartung geringer sind als bei der Ausführung einer vergleichbaren Anwendung in Ihrem Datencenter.
+Dank dieser Konfiguration können Sie die Kapazität der Anwendung mühelos erweitern, indem Sie neue virtuelle Azure-Computer hinzufügen, deren laufende Kosten für Hardware und Wartung geringer sind als bei der Ausführung einer vergleichbaren Anwendung in Ihrem Rechenzentrum.
 
 Der nächste Schritt besteht darin, eine in Azure gehostete Branchenanwendung zu Entwicklungs- und Testzwecken einzurichten.
 
@@ -101,4 +101,6 @@ Nach der Konfiguration können Sie diese Branchenanwendung problemlos erweitern,
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=August15_HO7-->
+[Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
+
+<!---HONumber=August15_HO8-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="07/09/2015"
+   ms.date="08/17/2015"
    ms.author="v-sharos" />
 
 
@@ -108,7 +108,7 @@ Verwenden Sie das folgende Verfahren zum Anzeigen von Aufträgen, die derzeit au
 
 ## Nächste Schritte
 
-[Verwenden Sie StorSimple Snapshot Manager zum Verwalten des Sicherungskatalogs](storsimple-snapshot-manager-manage-backup-catalog.md)
+[Verwenden von StorSimple Snapshot Manager zum Verwalten des Sicherungskatalogs](storsimple-snapshot-manager-manage-backup-catalog.md).
 
 
 
@@ -129,4 +129,4 @@ Verwenden Sie das folgende Verfahren zum Anzeigen von Aufträgen, die derzeit au
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

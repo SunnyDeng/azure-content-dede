@@ -1,18 +1,18 @@
 <properties 
-   pageTitle="Verwenden von Windows PowerShell für StorSimple zum Verwalten eines Geräts"
+   pageTitle="Verwenden von Windows PowerShell für StorSimple zum Verwalten des StorSimple-Geräts | Microsoft Azure"
    description="Hier erfahren Sie, wie Sie Ihr StorSimple-Gerät mit Windows PowerShell für StorSimple verwalten."
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
    manager="carolz"
-   editor="tysonn" />
+   editor="" />
 <tags 
    ms.service="storsimple"
    ms.devlang="NA"
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/04/2015"
+   ms.date="08/19/2015"
    ms.author="alkohli@microsoft.com" />
 
 # Verwenden von Windows PowerShell für StorSimple zum Verwalten eines StorSimple-Geräts
@@ -37,11 +37,9 @@ In diesem Artikel lernen Sie Folgendes:
 
 >- Die Azure PowerShell-Cmdlets für StorSimple sind eine andere Sammlung von Cmdlets, die Ihnen die Automatisierung von Aufgaben auf StorSimple-Dienstebene und Migrationsaufgaben über die Befehlszeile ermöglichen. Weitere Informationen zu den Azure PowerShell-Cmdlets für StorSimple finden Sie in der [Referenz zu den Azure StorSimple-Cmdlets](https://msdn.microsoft.com/library/azure/dn920427.aspx).
 
-
-
 Es gibt zwei Möglichkeiten des Zugriffs auf Windows PowerShell für StorSimple:
 
-- [Herstellen einer Verbindung mit StorSimple mithilfe der seriellen Konsole des Geräts](#connect-to-windows-powershell-for-storsimple-via-device-serial-console)
+- [Herstellen einer Verbindung mit StorSimple mithilfe der seriellen Konsole des Geräts](#connect-to-windows-powershell-for-storsimple-via-the-device-serial-console)
 - [Herstellen einer Remoteverbindung mit StorSimple mithilfe von Windows PowerShell](#connect-remotely-to-storsimple-using-windows-powershell-for-storsimple)
 	
 
@@ -64,13 +62,13 @@ Die Bannermeldung enthält grundlegende StorSimple-Geräteinformationen, z. B. M
 
 Die folgende Abbildung zeigt die Runspaceoptionen, die im Menü der seriellen Konsole verfügbar sind.
 
-![Registrieren Ihres Geräts 2](./media/storsimple-windows-powershell-administration/IC740906.png)
+![Registrieren des Geräts 2](./media/storsimple-windows-powershell-administration/IC740906.png)
 
 Sie können zwischen folgenden Einstellungen wählen:
 
-1. **Anmelden mit Vollzugriff** Diese Option erlaubt Ihnen das Herstellen einer Verbindung \(mit den richtigen Anmeldeinformationen\) mit dem **SSAdminConsole**-Runspace auf dem lokalen Controller. \(Der lokale Controller ist der Controller, auf den Sie aktuell über die serielle Konsole Ihres StorSimple-Geräts zugreifen.\) Diese Option kann auch verwendet werden, um dem Microsoft-Support den Zugriff auf den uneingeschränkten Runspace \(eine Supportsitzung\) zum Zweck der Behandlung möglicher Geräteprobleme zu erlauben. Nachdem Sie Option 1 für die Anmeldung verwendet haben, können Sie dem Microsoft-Supporttechniker durch Ausführen eines bestimmten Cmdlets den Zugriff auf den uneingeschränkten Runspace erlauben. Ausführliche Informationen finden Sie unter [Starten einer Supportsitzung](storsimple-contact-microsoft-support.md#start-a-support-session-in-windows-powershell-for-storsimple). Mit dieser Option wird eine Verbindung mit einem Runspace auf dem lokalen Controller hergestellt.
+1. **Anmelden mit Vollzugriff** Diese Option erlaubt Ihnen das Herstellen einer Verbindung (mit den richtigen Anmeldeinformationen) mit dem **SSAdminConsole**-Runspace auf dem lokalen Controller. (Der lokale Controller ist der Controller, auf den Sie aktuell über die serielle Konsole Ihres StorSimple-Geräts zugreifen.) Diese Option kann auch verwendet werden, um dem Microsoft-Support den Zugriff auf den uneingeschränkten Runspace (eine Supportsitzung) zum Zweck der Behandlung möglicher Geräteprobleme zu erlauben. Nachdem Sie Option 1 für die Anmeldung verwendet haben, können Sie dem Microsoft-Supporttechniker durch Ausführen eines bestimmten Cmdlets den Zugriff auf den uneingeschränkten Runspace erlauben. Ausführliche Informationen finden Sie unter [Starten einer Supportsitzung](storsimple-contact-microsoft-support.md#start-a-support-session-in-windows-powershell-for-storsimple). Mit dieser Option wird eine Verbindung mit einem Runspace auf dem lokalen Controller hergestellt.
 
-1. **Anmelden am Peercontroller mit Vollzugriff** Diese Option ist im Wesentlichen mit Option 1 identisch. Sie können jedoch eine Verbindung \(mit den richtigen Anmeldeinformationen\) mit dem **SSAdminConsole**-Runspace auf dem Peercontroller herstellen. Da ein StorSimple-Gerät für hohe Verfügbarkeit mit zwei Controllern in einer Aktiv/Passiv-Konfiguration betrieben wird, bezieht sich Peer auf den anderen Controller im Gerät, auf das Sie über die serielle Konsole zugreifen. Ähnlich wie Option 1 kann diese Option auch verwendet werden, um dem Microsoft-Support den Zugriff auf den uneingeschränkten Runspace auf einem Peercontroller zu erlauben.
+1. **Anmelden am Peercontroller mit Vollzugriff** Diese Option ist im Wesentlichen mit Option 1 identisch. Sie können jedoch eine Verbindung (mit den richtigen Anmeldeinformationen) mit dem **SSAdminConsole**-Runspace auf dem Peercontroller herstellen. Da ein StorSimple-Gerät für hohe Verfügbarkeit mit zwei Controllern in einer Aktiv/Passiv-Konfiguration betrieben wird, bezieht sich Peer auf den anderen Controller im Gerät, auf das Sie über die serielle Konsole zugreifen. Ähnlich wie Option 1 kann diese Option auch verwendet werden, um dem Microsoft-Support den Zugriff auf den uneingeschränkten Runspace auf einem Peercontroller zu erlauben.
 
 1. **Herstellen einer Verbindung mit beschränktem Zugriff** Diese Option wird für den Zugriff auf die Windows PowerShell-Benutzeroberfläche im eingeschränkten Modus verwendet. Sie werden nicht zur Eingabe von Anmeldeinformationen für den Zugriff aufgefordert. Diese Option stellt eine Verbindung mit einem eingeschränkteren Runspace im Vergleich zu den Optionen 1 und 2 her. Einige der Aufgaben, die über Option 1 verfügbar sind, die in diesem Runspace nicht ausgeführt werden können:
 
@@ -83,7 +81,7 @@ Sie können zwischen folgenden Einstellungen wählen:
 
 	>[AZURE.NOTE]**Dies ist die bevorzugte Option, wenn Sie das Administratorkennwort für das Gerät vergessen haben und keine Verbindung über Option 1 oder 2 herstellen können.**
 
-1. **Ändern der Sprache** Diese Option ermöglicht das Ändern der Anzeigesprache auf der Windows PowerShell-Benutzeroberfläche. Die unterstützten Sprachen sind Chinesisch, Deutsch, Englisch, Französisch, Italienisch, Japanisch, Portugiesisch \(Brasilien\), Russisch, Spanisch und Südkoreanisch.
+1. **Ändern der Sprache** Diese Option ermöglicht das Ändern der Anzeigesprache auf der Windows PowerShell-Benutzeroberfläche. Die unterstützten Sprachen sind Chinesisch, Deutsch, Englisch, Französisch, Italienisch, Japanisch, Portugiesisch (Brasilien), Russisch, Spanisch und Südkoreanisch.
 
 Stellen Sie sicher, dass die folgenden PuTTY-Einstellungen zum Herstellen einer Verbindung mit der Windows PowerShell-Benutzeroberfläche über die serielle Konsole verwendet werden.
 
@@ -91,13 +89,13 @@ Stellen Sie sicher, dass die folgenden PuTTY-Einstellungen zum Herstellen einer 
 
 1. Wählen Sie im Dialogfeld PuTTY-Neukonfiguration im Bereich **Kategorie** die Option **Tastatur** aus.
 
-1. Stellen Sie sicher, dass die folgenden Optionen aktiviert sind \(dies sind die Standardeinstellungen, wenn Sie eine neue Sitzung starten\).
+1. Stellen Sie sicher, dass die folgenden Optionen aktiviert sind (dies sind die Standardeinstellungen, wenn Sie eine neue Sitzung starten).
 
  	|Tastaturelement|Auswahl|
  	|---|---|
- 	|RÜCKTASTE|Strg+? \(127\)|
+ 	|RÜCKTASTE|Strg+? (127)|
 	|POS1- und Ende-Tasten|Standard|
-	|Funktionstasten und Zehnertastatur|ESC\[n\~|
+	|Funktionstasten und Zehnertastatur|ESC[n\~|
 	|Ursprünglicher Status der Pfeiltasten|Normal|
 	|Ursprünglicher Status der Zehnertastatur|Normal|
 	|Zusätzliche Tastaturfunktionen aktivieren|Strg+Alt unterscheidet sich von AltGr|
@@ -123,7 +121,7 @@ Sie können nun mit PuTTY eine Verbindung mit der seriellen Konsole des Geräts 
 
 
 ## Herstellen einer Remoteverbindung mit StorSimple mithilfe von Windows PowerShell für StorSimple
-Sie können Windows PowerShell-Remoting zum Herstellen einer Verbindung mit dem StorSimple-Gerät verwenden. Wenn Sie auf diese Weise eine Verbindung herstellen, wird kein Menü angezeigt. \(Sie sehen nur ein Menü, wenn Sie zum Verbinden die serielle Konsole auf dem Gerät verwenden.\) Mit Windows PowerShell-Remoting stellen Sie eine Verbindung mit einem bestimmten Runspace her. Sie können zudem die Anzeigesprache angeben.
+Sie können Windows PowerShell-Remoting zum Herstellen einer Verbindung mit dem StorSimple-Gerät verwenden. Wenn Sie auf diese Weise eine Verbindung herstellen, wird kein Menü angezeigt. (Sie sehen nur ein Menü, wenn Sie zum Verbinden die serielle Konsole auf dem Gerät verwenden.) Mit Windows PowerShell-Remoting stellen Sie eine Verbindung mit einem bestimmten Runspace her. Sie können zudem die Anzeigesprache angeben.
 
 Die Anzeigesprache ist unabhängig von der Sprache, die Sie mithilfe der Option "Sprache ändern" im Menü der seriellen Konsole festlegen. Remote PowerShell wählt automatisch das Gebietsschema des Geräts aus, mit dem Sie eine Verbindung herstellen, wenn keines angegeben ist.
 
@@ -194,9 +192,9 @@ Sie können die Hilfe in der Windows PowerShell-Schnittstelle problemlos aktuali
 1. Geben Sie nach der Installation der Hilfedateien Folgendes ein: `Get-Help Get-Command`. Dadurch wird eine Liste mit Cmdlets angezeigt, für die Hilfe verfügbar ist.
 
 
->[AZURE.NOTE]**Wenn Sie eine Liste aller verfügbaren Cmdlets in einem der Runspaces abrufen möchten, melden Sie sich bei der entsprechenden Menüoption an und führen dann das Cmdlet `Get-Command` aus.**
+>[AZURE.NOTE]Wenn Sie eine Liste aller verfügbaren Cmdlets in einem der Runspaces abrufen möchten, melden Sie sich bei der entsprechenden Menüoption an, und führen dann das Cmdlet `Get-Command` aus.
 
 ## Nächste Schritte
-Wenn Probleme auf Ihrem StorSimple-Gerät bei einem der zuvor genannten Workflows auftreten, konsultieren Sie die [Problembehandlung mit Cmdlets](storsimple-troubleshoot-deployment.md#cmdlets-available-for-troubleshooting).
+Wenn Probleme auf Ihrem StorSimple-Gerät bei einem der zuvor genannten Workflows auftreten, konsultieren Sie die [Tools zur Problembehandlung für StorSimple-Bereitstellungen](storsimple-troubleshoot-deployment.md#tools-for-troubleshooting-storsimple-deployments).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO8-->

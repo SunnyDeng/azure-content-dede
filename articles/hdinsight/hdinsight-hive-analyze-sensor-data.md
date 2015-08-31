@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="Blackmist"
 	manager="paulettm"
-	editor="cgronlun"/>
+	editor="cgronlun"
+	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
@@ -37,7 +38,7 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 * Microsoft Excel 2013 (PowerPivot für Datenanalysten – Microsoft Excel 2010)
 
-	> [AZURE.NOTE]Microsoft Excel dient zur Visualisierung von Daten mithilfe von [Power View](https://support.office.com/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=en-US&rs=en-US&ad=US).
+	> [AZURE.NOTE]Microsoft Excel dient zur Visualisierung von Daten mithilfe von [Power View](https://support.office.com/Article/Power-View-Explore-visualize-and-present-your-data-98268d31-97e2-42aa-a52b-a68cf460472e?ui=de-de&rs=de-de&ad=US).
 
 * [Microsoft Hive ODBC-Treiber](http://www.microsoft.com/download/details.aspx?id=40886)
 
@@ -53,4 +54,4 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 3. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

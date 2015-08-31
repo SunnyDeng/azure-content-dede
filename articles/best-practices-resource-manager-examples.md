@@ -13,12 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/16/2015"
+	ms.date="08/13/2015"
 	ms.author="mmercuri"/>
 
 # Kontextabhängige Beispiele bewährter Methoden für die Implementierung von Vorlagen
 
 Dieses Thema enthält 7 kontextbezogene Beispiele für die Implementierung Ihrer Azure-Ressourcen-Manager-Vorlagen. Eine Übersicht über die Prinzipien, die in diesen Beispielen veranschaulicht werden, finden Sie unter [Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-design-templates.md).
+
+Dieses Thema ist Teil eines umfangreicheren Whitepapers. Um den vollständigen Artikel zu lesen, laden Sie [World Class ARM Templates Considerations and Proven Practices](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf) herunter.
 
 ## Verschieben einer Vorlage aus dem Bereich "Funktionalität" in eine Vorlage aus dem Bereich "Komplettlösung"
 
@@ -212,7 +214,7 @@ Eine Organisation mit einer Überwachungsanwendung benötigt ggf. einen schreibg
 
 #### Implementierung mit Azure-Ressourcen-Manager
 
-Ausführliche Informationen zur entsprechenden Implementieren finden Sie [hier](http://www.dushyantgill.com/blog/2015/05/23/developers-guide-to-auth-with-azure-resource-manager-api/) in einer Anleitung für Entwickler zur Authentifizierung mit der Azure-Ressourcen-Manager-API. Dieses Dokument bietet schrittweise Implementierungsanweisungen sowie Beispielcode.
+Ausführliche Informationen zur entsprechenden Implementierung finden Sie [hier](http://www.dushyantgill.com/blog/2015/05/23/developers-guide-to-auth-with-azure-resource-manager-api/) in einer Anleitung für Entwickler zur Authentifizierung mit der Azure-Ressourcen-Manager-API. Dieses Dokument bietet schrittweise Implementierungsanweisungen sowie Beispielcode.
 
 ### Aktivieren des Drittanbieterzugriffs für die einmalige Bereitstellung von Software
 
@@ -252,4 +254,4 @@ Schließlich kann es wünschenswert sein, sicherzustellen, dass bestimmte Ressou
 - Empfehlungen für die Sicherheitseinstellungen in Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 - Informationen zur Freigabe des Status in Vorlagen finden Sie unter [Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-state.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="07/02/2015"
+   ms.date="08/19/2015"
    ms.author="sameerch"/>
 
 
@@ -29,92 +29,58 @@ Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werd
 - Ereignis senden
 - Kontakt hinzufügen
 
-##Erstellen der O365-Connector-API-Anwendung##
-Um die O365-Connector-API-Anwendung zu erstellen, führen Sie die folgenden Schritte aus:
+## Erstellen der O365-Connector-API-Anwendung
+Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
 
-1.	Öffnen Sie den Azure Marketplace mit der Option "+NEU" unten rechts im Azure-Portal.
-2.	Wechseln Sie zu "Web und Mobil > API-Apps", und suchen Sie nach "Office365".
-3.	Konfigurieren Sie den Office365-Connector, indem Sie die Informationen für den Hostingplan und die Ressourcengruppe angeben und einen Namen für die API-App wählen.
-
-	![][21]
+1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
+2. Suchen Sie nach dem "Office 365-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
+3.	Konfigurieren Sie den Office365-Connector, indem Sie die Informationen für den Hostingplan und die Ressourcengruppe angeben und einen Namen für die API-App wählen: ![][21]
 
 
-##Erstellen einer Logik-App##
+## Erstellen einer Logik-App
 Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (an Ihre E-Mail-ID für Vertriebsanfragen – z. B. sales@contoso.com)) eingeht. Zudem wird ein Ereignis erstellt, ein Kontakt mit den Absenderdetails hinzugefügt, eine E-Mail an Ihr persönliches Konto gesendet und schließlich eine Antwort mit einer Bestätigung gesendet.
 
-1.	Melden Sie sich beim Azure-Portal an, und klicken Sie auf "Neu -> Web + Mobil -> Logik-App"
+1.	Melden Sie sich beim Azure-Portal an, und klicken Sie auf "Neu -> Web + Mobil -> Logik-App": ![][1]
 
-	![][1]
+2.	Stellen Sie auf der Seite "Logik-App erstellen" die erforderlichen Details wie Name, App Service-Plan und -Ort bereit: ![][2]
 
-2.	Stellen Sie auf der Seite "Logik-App erstellen" die erforderlichen Details wie Name, App Service-Plan und -Ort bereit.
+3.	Klicken Sie auf "Trigger und Aktionen", sodass sich der Logik-App-Editor öffnet: ![][3]
 
-	![][2]
+4.	Wählen Sie den Office 365-Trigger aus dem Abschnitt "API-Apps in diese Ressourcengruppe" im Katalog, um ihn dem Datenfluss hinzufügen: ![][4]
 
-3.	Klicken Sie auf "Trigger und Aktionen". Der Bildschirm mit dem Logik-App-Editor wird angezeigt.
+6.	Zum Herstellen einer Verbindung mit Office 365 müssen Sie die Logik-App für den Zugriff auf Ihr Konto autorisieren. Klicken Sie auf "Autorisieren", um Office 365-Anmeldeinformationen bereitzustellen: ![][5]
 
-	![][3]
+7.	Sie werden zur Office 365-Anmeldeseite umgeleitet und können sich mit Ihren Office 365-Anmeldeinformationen authentifizieren: ![][6] ![][7]
 
-4.	Wählen Sie den Office 365-Trigger aus dem Abschnitt "API-Apps in diese Ressourcengruppe" im Katalog, um ihn dem Datenfluss hinzufügen.
-
-	![][4]
-
-6.	Zum Herstellen einer Verbindung mit Office 365 müssen Sie die Logik-App für den Zugriff auf Ihr Konto autorisieren. Klicken Sie auf "Autorisieren", um Office 365-Anmeldeinformationen bereitzustellen.
-
-	![][5]
-
-7.	Sie werden zur Office 365-Anmeldeseite umgeleitet und können sich mit Ihren Office 365-Anmeldeinformationen authentifizieren.
-
-	![][6]
-
-	![][7]
-
-8.	Sobald die Autorisierung abgeschlossen ist, werden die Office 365-Trigger angezeigt.
-
-	![][8]
+8.	Sobald die Autorisierung abgeschlossen ist, werden die Office 365-Trigger angezeigt: ![][8]
 
 9.	Wählen Sie den Trigger "Neue E-Mail", und die Eingabeparameter werden angezeigt.
 
 
-10.	Ändern Sie die Häufigkeit des Triggers in „Minuten“, und klicken Sie auf ✓.
+10.	Ändern Sie die Häufigkeit des Triggers in „Minuten“, und klicken Sie auf ✓: ![][9]
 
-	![][9]
-
-11. Der Office 365-Trigger "Neue E-Mail" wird konfiguriert, und Sie können die Ausgabeparameter ebenfalls anzeigen.
-
-	![][10]
+11. Der Office 365-Trigger "Neue E-Mail" wird konfiguriert, und Sie können die Ausgabeparameter ebenfalls anzeigen: ![][10]
 
 12.	Wählen Sie im Katalog im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
 
-13.	Wählen Sie "Ereignis senden" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "Ereignis senden" werden angezeigt.
+13.	Wählen Sie "Ereignis senden" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "Ereignis senden" werden angezeigt: ![][11]
 
-	![][11]
-
-14.	Geben Sie die Ereignisdetails an, und klicken Sie auf ✓.
-
-	![][12]
+14.	Geben Sie die Ereignisdetails an, und klicken Sie auf ✓: ![][12]
 
 15.	Wählen Sie im Katalog im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
 
-16.	Wählen Sie "Kontakt hinzufügen" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "Kontakt hinzufügen" werden angezeigt.
+16.	Wählen Sie "Kontakt hinzufügen" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "Kontakt hinzufügen" werden angezeigt: ![][13]
 
-	![][13]
+17.	Klicken Sie neben dem Feld "E-Mail-Adresse" auf "+", und wählen Sie den Wert des Ausgabefelds "Von" aus dem Trigger aus: ![][14]
 
-17.	Klicken Sie neben dem Feld "E-Mail-Adresse" auf "+", und wählen Sie den Wert des Ausgabefelds "Von" aus dem Trigger aus.
-
-	![][14]
-
-18. Klicken Sie auf ✓, und die Aktionskonfiguration ist abgeschlossen.
-
-	![][15]
+18. Klicken Sie auf ✓, und die Aktionskonfiguration ist abgeschlossen: ![][15]
 
 19.	Wählen Sie im Katalog im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
 
 
-20.	Wählen Sie "E-Mail senden" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "E-Mail senden" werden angezeigt.
+20.	Wählen Sie "E-Mail senden" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "E-Mail senden" werden angezeigt: ![][19]
 
-	![][19]
-
-21.	Geben Sie die Details an, die zum Senden der E-Mail erforderlich sind. Sie können eine Meldung erstellen, indem Sie zum Beispiel Folgendes eingeben. Sobald die-Aktion "E-Mail senden" konfiguriert ist, klicken Sie auf ✓.
+21.	Geben Sie die Details an, die zum Senden der E-Mail erforderlich sind. Sie können eine Meldung erstellen, indem Sie zum Beispiel Folgendes eingeben. Sobald die-Aktion "E-Mail senden" konfiguriert ist, klicken Sie auf ✓:
 
 		Body - @concat('You got a new sales enquiry from',triggers().output.body.From)
 
@@ -122,17 +88,20 @@ Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (
 22.	Wählen Sie im Katalog im Abschnitt "Zuletzt verwendet" den Eintrag "Office 365-Connector". Eine neue "Office 365"-Aktion wird hinzugefügt.
 
 
-23.	Wählen Sie "Antworten an" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "Antworten an" werden angezeigt.
+23.	Wählen Sie "Antworten an" aus der Liste der Aktionen, und die Eingabeparameter der Aktion "Antworten an" werden angezeigt: ![][16]
 
-	![][16]
-
-24.	Klicken Sie neben dem Feld "Von" auf "+", wählen Sie den Wert aus der Ausgabenachricht-ID des Triggers, und klicken Sie auf ✓.
-
-	![][17]
+24.	Klicken Sie neben dem Feld "Von" auf "+", wählen Sie den Wert aus der Ausgabenachricht-ID des Triggers, und klicken Sie auf ✓: ![][17]
 
 25. Klicken Sie im Bildschirm des Logik-App-Editors auf "OK", und klicken Sie dann auf "Erstellen". Es dauert ungefähr 30 Sekunden, bis die Erstellung abgeschlossen ist.
 
 26. Senden Sie eine E-Mail an das Konto, mit dem Sie den Trigger konfiguriert haben. Sie sollten eine E-Mail in Ihrem persönlichen E-Mail-Konto vorfinden sowie ein Ereignis und einen Kontakt in Ihrem Büro-E-Mail-Konto. Darüber hinaus sollten Sie eine Antwort zur Bestätigung erhalten, dass die Vertriebsanfrage in Kürze beantwortet wird.
+
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
 <!--Image references-->
 [1]: ./media/app-service-logic-connector-office365/1_New_Logic_App.png
@@ -157,4 +126,4 @@ Wir erstellen eine einfache Logik-App, die ausgelöst wird, sobald eine E-Mail (
 [20]: ./media/app-service-logic-connector-office365/20_Office365_Send_Configured.png
 [21]: ./media/app-service-logic-connector-office365/21-create-new-o365-api-app.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

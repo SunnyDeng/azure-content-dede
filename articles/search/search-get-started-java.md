@@ -1,24 +1,24 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Search in Java"
-	description="Exemplarische Vorgehensweise zur Erstellung einer benutzerdefinierten Azure Search-Anwendung in der Programmiersprache Java."
+	pageTitle="Erste Schritte mit Azure Search in Java | Microsoft Azure"
+	description="Erstellen einer benutzerdefinierten Azure Search-Anwendung in der Programmiersprache Java."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
 	manager="mblythe"
-	editor=""/>
+	editor="v-lincan"/>
 
 <tags
 	ms.service="search"
 	ms.devlang="na"
 	ms.workload="search"
-	ms.topic="hero-article" 
+	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
 	ms.date="06/24/2015"
 	ms.author="heidist"/>
 
-#Erste Schritte mit Azure Search in Java#
+# Erste Schritte mit Azure Search in Java
 
-Erfahren Sie, wie Sie eine benutzerdefinierte Java-Suchanwendung erstellen, die Azure Search zum Suchen verwendet. Das Lernprogramm nutzt die [REST-API für den Azure Search-Dienst](https://msdn.microsoft.com/library/dn798935.aspx) zum Erstellen der Objekte und Vorgänge, die in dieser Übung verwendet werden.
+Erfahren Sie, wie Sie eine benutzerdefinierte Java-Suchanwendung erstellen, die Azure Search zum Suchen verwendet. Dieses Lernprogramm verwendet die [REST-API für den Azure Search-Dienst](https://msdn.microsoft.com/library/dn798935.aspx) zum Erstellen der Objekte und Vorgänge, die in dieser Übung verwendet werden.
 
 Zum Erstellen und Testen dieses Beispiels wurde die folgende Software verwendet:
 
@@ -28,7 +28,7 @@ Zum Erstellen und Testen dieses Beispiels wurde die folgende Software verwendet:
 
 - [Apache Tomcat 8.0](http://tomcat.apache.org/download-80.cgi)
 
-Um dieses Beispiel auszuführen, benötigen Sie zudem einen Azure Search-Dienst, für den Sie sich im [Azure-Verwaltungsportal](https://portal.azure.com) anmelden können.
+Um dieses Beispiel auszuführen, benötigen Sie einen Azure Search-Dienst, für den Sie sich im [Azure-Verwaltungsportal](https://portal.azure.com) anmelden können.
 
 > [AZURE.TIP]Laden Sie den Quellcode für dieses Lernprogramm von [Azure Search Java demo](http://go.microsoft.com/fwlink/p/?LinkId=530197) von Github herunter.
 
@@ -107,7 +107,7 @@ Alle nachfolgenden Dateiänderungen und Ausführungsanweisungen werden an den Da
 
 ## Importieren des Projekts
 
-1. Wählen Sie in Eclipse **File** | **Import** | **General** | **Existing Projects into Workspace**.
+1. Wählen Sie in Eclipse **File** > **Import** > **General** > **Existing Projects into Workspace**.
 
     ![][4]
 
@@ -117,7 +117,7 @@ Alle nachfolgenden Dateiänderungen und Ausführungsanweisungen werden an den Da
 
 3. Klicken Sie auf **Fertig stellen**.
 
-4. Verwenden Sie **Project Explorer**, um die Dateien anzuzeigen und zu bearbeiten. Wenn Project Explorer noch nicht geöffnet ist, klicken Sie auf **Window** | **Show View** | **Project Explorer**, oder verwenden Sie die Verknüpfung, um Project Explorer zu öffnen.
+4. Verwenden Sie **Project Explorer**, um die Dateien anzuzeigen und zu bearbeiten. Wenn Project Explorer noch nicht geöffnet ist, klicken Sie auf **Window** > **Show View** > **Project Explorer**, oder verwenden Sie die Verknüpfung, um Project Explorer zu öffnen.
 
 ## Konfigurieren von Dienst-URL und API-Schlüssel
 
@@ -131,7 +131,7 @@ Alle nachfolgenden Dateiänderungen und Ausführungsanweisungen werden an den Da
 
 ## Konfigurieren der Projekt-, Build- und Laufzeitumgebungen
 
-1. Klicken Sie in Project Explorer in Eclipse mit der rechten Maustaste auf das Projekt | **Properties** | **Projekt Facets**.
+1. Klicken Sie in Project Explorer in Eclipse mit der rechten Maustaste auf das Projekt > **Properties** > **Projekt Facets**.
 
 2. Wählen Sie **Dynamic Web Module**, **Java** und **JavaScript** aus.
 
@@ -139,17 +139,17 @@ Alle nachfolgenden Dateiänderungen und Ausführungsanweisungen werden an den Da
 
 3. Klicken Sie auf **Apply**.
 
-4. Wählen Sie **Window** | **Preferences** | **Server** | **Runtime Environments** | **Add..** aus.
+4. Wählen Sie **Window** > **Preferences** > **Server** > **Runtime Environments** > **Add..** aus.
 
 5. Erweitern Sie Apache, und wählen Sie die Version des Apache Tomcat-Servers, die Sie zuvor installiert haben. Auf unserem System wurde Version 8 installiert.
 
 	![][7]
 
-6. Geben Sie auf der nächsten Seite das Tomcat-Installationsverzeichnis an. Auf einem Windows-Computer ist dies wahrscheinlich "C:\\Programme\\Apache Software Foundation\\Tomcat *Version*.
+6. Geben Sie auf der nächsten Seite das Tomcat-Installationsverzeichnis an. Auf einem Windows-Computer ist dies wahrscheinlich "C:\\Programme\\Apache Software Foundation\\Tomcat *Version*".
 
 6. Klicken Sie auf **Fertig stellen**.
 
-7. Wählen Sie **Window** | **Preferences** | **Java** | **Installed JREs** | **Add** aus.
+7. Wählen Sie **Window** > **Preferences** > **Java** > **Installed JREs** > **Add** aus.
 
 8. Wählen Sie in **Add JRE** die Option **Standard VM** aus.
 
@@ -157,13 +157,13 @@ Alle nachfolgenden Dateiänderungen und Ausführungsanweisungen werden an den Da
 
 11. Klicken Sie auf der JRE-Startseite in "JRE Definition" auf **Directory**.
 
-12. Navigieren Sie zu **Program Files** | **Java**, und wählen Sie das JDK aus, das Sie zuvor installiert haben. Es ist wichtig, dass Sie das JDK als JRE auswählen.
+12. Navigieren Sie zu **Program Files** > **Java**, und wählen Sie das JDK aus, das Sie zuvor installiert haben. Es ist wichtig, dass Sie das JDK als JRE auswählen.
 
 13. Wählen Sie unter "Installed JREs" die Option **JDK**. Ihre Einstellungen sollte in etwa wie folgender Screenshot aussehen.
 
     ![][9]
 
-14. Wählen Sie optional **Window** | **Webb Browser** | **Internet Explorer**, um die Anwendung in einem externen Browserfenster zu öffnen. In einem externen Browser wird die Webanwendung optimal dargestellt.
+14. Wählen Sie optional **Window** > **Web Browser** > **Internet Explorer**, um die Anwendung in einem externen Browserfenster zu öffnen. In einem externen Browser wird die Webanwendung optimal dargestellt.
 
     ![][8]
 
@@ -171,7 +171,7 @@ Sie haben die Konfigurationsaufgaben nun abgeschlossen. Als Nächstes erstellen 
 
 ## Erstellen des Projekts
 
-1. Klicken Sie in Project Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Run As** | **Maven build...**, um das Projekt zu konfigurieren.
+1. Klicken Sie in Project Explorer mit der rechten Maustaste auf den Projektnamen, und wählen Sie **Run As** > **Maven build...**, um das Projekt zu konfigurieren.
 
     ![][10]
 
@@ -187,9 +187,9 @@ Wenn Sie noch keine Server-Laufzeitumgebung in Eclipse angegeben haben, müssen 
 
 1. Erweitern Sie in Project Explorer **WebContent**.
 
-5. Klicken Sie mit der rechten Maustaste auf **Search.jsp** | **Run As** | **Run on Server**. Wählen Sie den Apache Tomcat-Server aus, und klicken Sie dann auf **Run**.
+5. Klicken Sie mit der rechten Maustaste auf **Search.jsp** > **Run As** > **Run on Server**. Wählen Sie den Apache Tomcat-Server aus, und klicken Sie dann auf **Run**.
 
-> [AZURE.TIP]Wenn Sie das Projekt nicht im Standardarbeitsbereich gespeichert haben, müssen Sie wahrscheinlich die Einstellung für **Run Configuration** ändern, damit sie auf den Speicherort des Projekts verweist, um einen Server-Startfehler zu vermeiden. Klicken Sie in Project Explorer mit der rechten Maustaste auf **Search.jsp** | **Run As** | **Run Configurations**. Wählen Sie den Apache Tomcat-Server aus. Klicken Sie auf **Arguments**. Klicken Sie auf **Workspace** oder **File System**, um den Ordner, der das Projekt enthält, festzulegen.
+> [AZURE.TIP]Wenn Sie das Projekt nicht im Standardarbeitsbereich gespeichert haben, müssen Sie die Einstellung für **Run Configuration** ändern, damit sie auf den Speicherort des Projekts verweist, um einen Server-Startfehler zu vermeiden. Klicken Sie in Project Explorer mit der rechten Maustaste auf **Search.jsp** > **Run As** > **Run Configurations**. Wählen Sie den Apache Tomcat-Server aus. Klicken Sie auf **Arguments**. Klicken Sie auf **Workspace** oder **File System**, um den Ordner, der das Projekt enthält, festzulegen.
 
 Wenn Sie die Anwendung ausführen, sollte ein Browserfenster angezeigt werden, das ein Suchfeld zur Eingabe von Suchbegriffen bereitstellt.
 
@@ -230,6 +230,5 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [10]: ./media/search-get-started-java/AzSearch-Java-BuildProject1.PNG
 [11]: ./media/search-get-started-java/rogerwilliamsschool1.PNG
 [12]: ./media/search-get-started-java/AzSearch-Java-SelectProject.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

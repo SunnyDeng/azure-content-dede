@@ -2,7 +2,7 @@
 
 Voraussetzungen:
 
-1. Windows 7, Windows 8, Windows Server 2008 oder Windows Server 2012. (Nicht verfügbar für Mac oder Linux).
+1. Windows 7, Windows 8, Windows Server 2008 oder Windows Server 2012.
 2. Eclipse Indigo oder höher.
 
 Installationsschritte:
@@ -13,4 +13,4 @@ Installationsschritte:
 
 Dieses Plug-In verwendet die aktuellste Version von Azure SDK. Diese können Sie mithilfe des Webplattform-Installer (WebPI) unter <http://go.microsoft.com/fwlink/?LinkID=252838> herunterladen. Falls Sie diesen jedoch noch nicht installiert haben, wenn Sie Ihr erstes Azure-Bereitstellungsprojekt erstellen, installiert das Azure-Plug-In für Eclipse mit Java (von Microsoft Open Technologies) automatisch die entsprechende Version von Azure SDK.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

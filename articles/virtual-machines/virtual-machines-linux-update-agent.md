@@ -30,7 +30,7 @@ Linux-Distributionen mit Azure-Unterstützung haben das Azure Linux Agent-Paket 
 
 Für Ubuntu, geben Sie einfach ein:
      
-    #sudo apt-get install waagent
+    #sudo apt-get install walinuxagent
 
 Für CentOS, geben Sie ein:
 
@@ -52,26 +52,52 @@ Installieren Sie wget (bei einigen Distributionen nicht standardmäßig installi
 
 ## Aktuelle Version herunterladen
 
-Öffnen Sie [die Version von Azure Linux Agent auf Github](https://github.com/Azure/WALinuxAgent/releases) in einer Webseite, und finden Sie die neueste Versionsnummer heraus, wie zum Beispiel: 2.0.12. (Die aktuelle Version finden Sie durch Eingabe von `#waagent --version`.)
+Öffnen Sie [die Version von Azure Linux Agent auf Github](https://github.com/Azure/WALinuxAgent/releases) auf einer Webseite, und finden Sie die neueste Versionsnummer heraus. (Die aktuelle Version finden Sie durch Eingabe von `#waagent --version`.)
+
+###Geben Sie für Version 2.0.x Folgendes ein:
 
     #wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-[version]/waagent  
 
-Als Beispiel verwendet die folgende Zeile Version 2.0.12:
+   In der folgenden Zeile wird als Beispiel Version 2.0.14 verwendet:
 
-    #wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.12/waagent  
+    #wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.14/waagent  
 
-## Waagent ausführbar machen
+###Geben Sie für Version 2.1.x oder höher Folgendes ein:
+  
+    #wget https://github.com/Azure/WALinuxAgent/archive/WALinuxAgent-[version].zip 
+    #unzip WALinuxAgent-[version].zip
+    #cd WALinuxAgent-[version]
+
+   In der folgenden Zeile wird als Beispiel Version 2.1.0 verwendet:
+
+    #wget https://github.com/Azure/WALinuxAgent/archive/WALinuxAgent-2.1.0.zip
+    #unzip WALinuxAgent-2.1.0.zip  
+    #cd WALinuxAgent-2.1.0
+
+##Installieren des Linux-Agents
+
+###Verwenden Sie für Version 2.0.x Folgendes:
+
+ Waagent ausführbar machen
 
     #chmod +x waagent
 
-## Kopieren Sie die neue ausführbare Datei nach in/usr/Sbin /
-    
-    #sudo cp waagent /usr/sbin
+ Kopieren Sie die neue ausführbare Datei nach in/usr/Sbin /
+   
+  Verwenden Sie für die meisten Linux-Distributionen Folgendes:
+         
+      #sudo cp waagent /usr/sbin
 
-Für CoreOS verwenden Sie:
+  Für CoreOS verwenden Sie:
 
     #sudo cp waagent /usr/share/oem/bin/
  
+###Verwenden Sie für Version 2.1.x Folgendes:
+
+Sie müssen ggf. zuerst das Paket `setuptools` installieren (siehe [hier](https://pypi.python.org/pypi/setuptools)). Führen Sie nachstehenden Befehl aus:
+
+    #sudo python setup.py install
+
 ## Waagent-Dienst neu starten
 
 Für die meisten Linux-Distributionen:
@@ -100,4 +126,4 @@ Weitere Informationen zu Azure Linux Agent finden Sie in der [Azure Linux Agent-
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->

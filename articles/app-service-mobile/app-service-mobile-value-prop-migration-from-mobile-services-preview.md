@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/30/2015"
+	ms.date="08/05/2015"
 	ms.author="kirillg"/>
 
 # <a name="getting-started"> </a>Ich verwende Mobile Services. Welche Vorteile bietet App Service?
@@ -36,9 +36,11 @@ Ihr vorhandener Mobile Service ist sicher und wird weiterhin unterstützt. Die *
 In *Azure App Service* wird der *Mobile App*-Back-End-Code in demselben Container ausgeführt wie Web-App und API-App. So können Sie alle Funktionen in diesem Container nutzen, einschließlich einiger, die derzeit nicht in Mobile Services vorhanden sind:
 
 - Hinzufügen ständig ausgeführter Back-End-Logik über Webaufträge
-- Sicherstellen der ständigen Ausführen des Back-End-Codes
+- Sicherstellen der ständigen Ausführung des Back-End-Codes
 - Verwenden benutzerdefinierter CNames zum Bereitstellen benutzerfreundlicher und stabiler Namen für Ihre mobilen Back-End-Endpunkte
 - Geoskalierung Ihrer App mit Traffic Manager
+- Fügen Sie alle Bibliotheken und Pakete hinzu, die Sie möchten. In .NET sind die von Ihnen bereitgestellten Assemblys diejenigen, die zur Laufzeit verwendet werden. In der Hostingumgebung gibt es nie Versionskonflikte.
+- (Für .NET) Nutzen Sie alle Features von ASP.NET, einschließlich MVC
 
 
 ##Verbinden Ihrer *Mobile App* mit SaaS-API
@@ -67,4 +69,4 @@ Mit *Azure App Service* können Sie jetzt mehrere private Test- und Stagingumgeb
 Sobald die Funktion *Mobile Azure App Service-App* allgemein verfügbar wird, stellen wir eine nahtlose Migrationsmöglichkeit für Ihre vorhandenen Mobile Services auf App Service bereit, falls Sie die Migration durchführen möchten. In der Zwischenzeit können Sie sich mithilfe dieses [Lernprogramms](app-service-mobile-dotnet-backend-migrating-from-mobile-services-preview.md) mit *App Service* vertraut machen und die Vorteile von *App Service* für Ihre vorhandenen Mobile Service-Projekte nutzen.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO8-->
