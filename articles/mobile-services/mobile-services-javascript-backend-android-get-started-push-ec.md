@@ -57,7 +57,7 @@ Wenn Sie den Testvorgang mit einem älteren Gerät durchführen, konsultieren Si
 
 ###Hinzufügen von Google Play Services zum Projekt
 
-[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-Google-play-services-ec.md)]
+[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-google-play-services-ec.md)]
 
 ###Hinzufügen des Codes
 
@@ -212,4 +212,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Send template-based notifications to subscribers]: ../notification-hubs-android-send-localized-breaking-news.md
  
 
-<!-----HONumber=August15_HO8-->
+<!------HONumber=August15_HO8-->
