@@ -1,4 +1,4 @@
-> [AZURE.SELECTOR-LIST (Platform | Backend )]
+> [AZURE.SELECTOR-LIST (Platform | Backend)]
 - [(iOS | .NET)](../articles/mobile-services-dotnet-backend-ios-get-started-push.md)
 - [(iOS | JavaScript)](../articles/mobile-services-javascript-backend-ios-get-started-push.md)
 - [(Windows Runtime 8.1 universal C# | .NET)](../articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push.md)
@@ -13,4 +13,4 @@
 - [(Xamarin.Android | Javascript)](../articles/partner-xamarin-mobile-services-android-get-started-push.md)
 - [(Xamarin.Android | .NET)](../articles/mobile-services-dotnet-backend-xamarin-android-get-started-push.md)
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

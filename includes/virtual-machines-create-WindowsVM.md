@@ -32,4 +32,4 @@
 
 	![Konfigurieren Sie den VM-Agent und die Endpunkte des virtuellen Computers.](./media/virtual-machines-create-WindowsVM/vmcreated.png)
 
-<!---HONumber=August15_HO7-->
+<!----HONumber=August15_HO7-->

@@ -38,4 +38,4 @@ Dieses Thema enthält Informationen zum Erstellen eines *benutzerdefinierten* vi
 
 [AZURE.INCLUDE [Virtueller-Computer-erstellen-LinuxVM](../../includes/virtual-machines-create-linuxvm.md)]
 
-<!---HONumber=August15_HO8-->
+<!----HONumber=August15_HO8-->

@@ -31,4 +31,4 @@
 
 	Mit diesem API-Schlüsselwert geben Sie Azure die Möglichkeit, sich bei GCM zu authentifizieren und Pushbenachrichtigungen im Auftrag Ihrer App zu verschicken.
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

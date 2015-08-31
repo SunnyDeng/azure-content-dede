@@ -87,4 +87,4 @@ Im vorhergehenden Beispiel wurde eine Standardanmeldung gezeigt, bei der der Cli
 
 6. Erstellen Sie die App und testen Sie die Authentifizierung mit einem gültigen Konto. Führen Sie sie mindestens zweimal aus. Bei der ersten Ausführung sollten Sie eine Aufforderung zur Anmeldung und Erstellung des Tokencaches erhalten. Danach wird bei jeder Anmeldung versucht, zur Authentifizierung den Tokencache zu laden, und es sollte keine Anmeldung mehr erforderlich sein.
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

@@ -18,7 +18,7 @@
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
 
-[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push-EC.md)]
+[AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push-ec.md)]
 
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pushbenachrichtigung per Google Cloud Messaging (GCM) an Ihre Android-App senden. In diesem Lernprogramm fügen Sie Pushbenachrichtigungen mithilfe von Azure-Benachrichtigungshubs zum Schnellstartprojekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
 
@@ -35,7 +35,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 
 ##Voraussetzungen
 
-[AZURE.INCLUDE [mobile-services-android-prerequisites](../../includes/mobile-services-android-prerequisites-EC.md)]
+[AZURE.INCLUDE [mobile-services-android-prerequisites](../../includes/mobile-services-android-prerequisites-ec.md)]
 
 ##<a id="register"></a>Aktivieren von Google Cloud Messaging
 
@@ -49,7 +49,7 @@ In diesem Lernprogramm werden die folgenden grundlegenden Schritte zur Aktivieru
 
 ###Prüfen der Version des Android-SDK
 
-[AZURE.INCLUDE [Prüfen des SDK](../../includes/mobile-services-verify-android-sdk-version-EC.md)]
+[AZURE.INCLUDE [Prüfen des SDK](../../includes/mobile-services-verify-android-sdk-version-ec.md)]
 
 Als Nächstes installieren Sie Google Play Services. Google Cloud Messaging verfügt über einige Mindestanforderungen an den API-Level für Entwicklung und Tests, denen die Eigenschaft **minSdkVersion** im Manifest entsprechen muss.
 
@@ -57,11 +57,11 @@ Wenn Sie den Testvorgang mit einem älteren Gerät durchführen, konsultieren Si
 
 ###Hinzufügen von Google Play Services zum Projekt
 
-[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-Google-play-services-EC.md)]
+[AZURE.INCLUDE [Hinzufügen von Play Services](../../includes/mobile-services-add-Google-play-services-ec.md)]
 
 ###Hinzufügen des Codes
 
-[AZURE.INCLUDE [mobile-services-android-getting-started-with-push](../../includes/mobile-services-android-getting-started-with-push-EC.md)]
+[AZURE.INCLUDE [mobile-services-android-getting-started-with-push](../../includes/mobile-services-android-getting-started-with-push-ec.md)]
 
 
 ##<a id="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
@@ -212,4 +212,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Send template-based notifications to subscribers]: ../notification-hubs-android-send-localized-breaking-news.md
  
 
-<!---HONumber=August15_HO8-->
+<!----HONumber=August15_HO8-->

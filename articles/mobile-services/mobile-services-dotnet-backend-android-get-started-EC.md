@@ -151,4 +151,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO8-->
+<!----HONumber=August15_HO8-->
