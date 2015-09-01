@@ -63,7 +63,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-bluejeans-tutorial/IC785864.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **BlueJeans-Anmelde-URL** die URL im Format **https://company.BlueJeans.com*" ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **BlueJeans-Anmelde-URL** die URL im Format "*https://company.BlueJeans.com*" ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-bluejeans-tutorial/IC785865.png "App-URL konfigurieren")
 
@@ -97,8 +97,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Änderungen speichern](./media/active-directory-saas-bluejeans-tutorial/IC785874.png "Änderungen speichern")
 
-    1.  Geben Sie in das Textfeld **Benutzer-ID** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name** ein.
-2.  Geben Sie in das Textfeld **E-Mail** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name** ein.
+    1.  Geben Sie in das Textfeld **Benutzer-ID** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name** ein.
+2.  Geben Sie in das Textfeld **E-Mail** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name** ein.
 3.  Klicken Sie auf **Änderungen speichern**.
 
 10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
@@ -145,4 +145,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!----HONumber=August15_HO7-->

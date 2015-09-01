@@ -130,7 +130,7 @@ Damit Sie die Vorteile des Premium-Speichers nutzen können, erstellen Sie zuers
 </tbody>
 </table>
 
-	For the most up-to-date information, see [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). To learn about the Premium storage disks and their IOPs and throughput limits, see the table in the [Scalability and Performance Targets when using Premium Storage](#scalability-and-performance-targets-whde-deing-premium-storage) section in this article.
+	Aktuelle Informationen finden Sie unter [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Informationen zu Premium Storage-Datenträgern und deren IOPs und Durchsatzlimits finden Sie in diesem Artikel im Abschnitt  [Scalability and Performance Targets when using Premium Storage](#scalability-and-performance-targets-when-using-premium-storage) in der Tabelle.
 
 > [AZURE.NOTE]Cachetreffer werden durch die zugeordneten IOPS-/Durchsatzwerte des Datenträgers nicht eingeschränkt. Das heißt, bei Verwendung eines Datenträgers mit der Cacheeinstellung „ReadOnly“ für einen virtuellen Computer der DS-Serie unterliegen Lesevorgänge, die vom Cache verarbeitet werden, nicht den Einschränkungen für Premium-Speicherdatenträger. Daher können Sie einen sehr hohen Durchsatz mit einem Datenträger erzielen, wenn die Arbeitsauslastung vorwiegend aus Lesevorgängen besteht. Beachten Sie, dass für den Cache separate IOPS-/Durchsatzlimits auf Ebene des virtuellen Computers basierend auf der Größe des virtuellen Computers gelten. Virtuelle Computer der DS-Serie bieten etwa 4.000 IOPS und 33 MB pro Sekunde und Kern für E/A von Caches und lokalen SSDs.
 
@@ -401,4 +401,4 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
  
 
-<!---HONumber=August15_HO8-->
+<!----HONumber=August15_HO8-->
