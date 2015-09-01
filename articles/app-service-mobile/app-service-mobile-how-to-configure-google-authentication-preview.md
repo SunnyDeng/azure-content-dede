@@ -33,13 +33,13 @@ Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um den in dies
 
 3. Navigieren Sie zur <a href="http://go.microsoft.com/fwlink/p/?LinkId=268303" target="_blank">Google APIs</a>-Website, melden Sie sich mit den Anmeldeinformationen für Ihr Google-Konto an, klicken Sie auf **Create project**, geben Sie einen **Project name** an, und klicken Sie auf **Create**.
 
-4. Klicken Sie in der links angezeigten Navigationsleiste auf **API und Authentifizierung**. Klicken Sie dann auf **Zustimmungsbildschirm**. Geben Sie Ihre **E-Mail-Adresse** und einen Wert für **Produktname** ein. Klicken Sie anschließend auf **Save**.
+4. Klicken Sie in der links angezeigten Navigationsleiste auf **API & Auth**. Klicken Sie dann auf **Consent screen**. Geben Sie Ihre **Email Address** und einen Wert für **Product name** ein. Klicken Sie anschließend auf **Save**.
 
-5. Wählen Sie ebenfalls unter **API und Authentifizierung** die Einstellung **APIs**, und aktivieren Sie **Google+ API**. Sie befindet sich unter **Social-APIs**. Sie können auch einfach nach der **Google+-API** suchen.
+5. Wählen Sie ebenfalls unter **API & Auth** die Einstellung **APIs**, und aktivieren Sie **Google+ API**. Sie befindet sich unter **Social-APIs**. Sie können auch einfach nach der **Google+-API** suchen.
 
-6. Wählen Sie erneut unter **API und Authentifizierung** die Einstellung **Zugangsdaten**, und klicken Sie dann auf **Neue Client-ID erstellen**.
+6. Wählen Sie erneut unter **API & Auth** die Einstellung **Credentials**, und klicken Sie dann auf **Create new Client ID**.
 
-7. Wählen Sie **Webanwendung**. Fügen Sie die zuvor kopierte **URL** in **Authorized JavaScript Origins** ein, und ersetzen Sie dann die generierte URL in **Autorisierte Umleitungs-URI** durch den zuvor kopierten **Umleitungs-URI** der Mobile App. Der URI ist Ihr Mobile App-Gateway mit dem Pfad _/signin-google_ am Ende. Beispiel: `https://contosogateway.azurewebsites.net/signin-google`. Stellen Sie sicher, dass Sie das HTTPS-Schema verwenden. Klicken Sie dann auf **Client-ID erstellen**.
+7. Wählen Sie **Web application**. Fügen Sie die zuvor kopierte **URL** in **Authorized JavaScript Origins** ein, und ersetzen Sie dann die generierte URL in **Authorized Redirect URI** durch den zuvor kopierten **Umleitungs-URI** der Mobile App. Der URI ist Ihr Mobile App-Gateway mit dem Pfad _/signin-google_ am Ende. Beispiel: `https://contosogateway.azurewebsites.net/signin-google`. Stellen Sie sicher, dass Sie das HTTPS-Schema verwenden. Klicken Sie dann auf **Create client ID**.
 
      ![][0]
 
