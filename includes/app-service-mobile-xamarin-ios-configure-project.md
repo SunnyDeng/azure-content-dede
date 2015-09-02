@@ -30,12 +30,12 @@
 
     Hierdurch wird sichergestellt, dass das Projekt das neue Profil für Codesignierung verwendet. Die offizielle Dokumentation zur Xamarin-Gerätebereitstellung finden Sie unter [Xamarin Device Provisioning] (Xamarin – Gerätebereitstellung, in englischer Sprache).
 
-[120]: ./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-20.png
-[121]: ./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-21.png
-[122]: ./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-22.png
-[123]: ./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-23.png
-[124]: ./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-24.png
+[120]:./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-20.png
+[121]:./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-21.png
+[122]:./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-22.png
+[123]:./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-23.png
+[124]:./media/app-service-mobile-xamarin-ios-configure-project/mobile-services-ios-push-24.png
 
 [Xamarin Device Provisioning]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
-<!---HONumber=August15_HO8-->
+<!----HONumber=August15_HO8-->

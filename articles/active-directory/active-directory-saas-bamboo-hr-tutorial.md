@@ -108,13 +108,13 @@ Im Fall von BambooHR ist die Bereitstellung eine manuelle Aufgabe.
 
 1.  Melden Sie sich bei Ihrer **BambooHR**-Unternehmenswebsite als Administrator an.
 
-2.  Klicken Sie oben auf der Symbolleiste auf **Settings**.
+2.  Klicken Sie oben auf der Symbolleiste auf **Einstellungen**.
 
     ![Einstellung](./media/active-directory-saas-bamboo-hr-tutorial/IC796694.png "Einstellung")
 
-3.  Klicken Sie auf **Overview**.
+3.  Klicken Sie auf **Übersicht**.
 
-4.  Wechseln Sie im linken Navigationsbereich zu **Security \> Users**.
+4.  Wechseln Sie im linken Navigationsbereich zu **Sicherheit \> Benutzer**.
 
 5.  Geben Sie Benutzername, Kennwort und E-Mail-Adresse eines gültigen AAD-Benutzerkontos, das Sie bereitstellen möchten, in die entsprechenden Textfelder ein.
 
@@ -140,4 +140,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---------HONumber=August15_HO7-->
+<!----------HONumber=August15_HO7-->

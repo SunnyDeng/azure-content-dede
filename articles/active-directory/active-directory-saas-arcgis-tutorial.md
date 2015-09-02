@@ -106,11 +106,11 @@ Im Fall von ArcGIS ist die Bereitstellung eine manuelle Aufgabe.
 
 1.  Melden Sie sich bei Ihrem **ArcGIS**-Mandanten an.
 
-2.  Klicken Sie auf **Invite Members**.
+2.  Klicken Sie auf **Mitglieder einladen**.
 
     ![Invite Members](./media/active-directory-saas-arcgis-tutorial/IC784747.png "Invite Members")
 
-3.  Wählen Sie **Add members automatically without sending an email** aus, und klicken Sie dann auf **Weiter**.
+3.  Wählen Sie **Mitglieder automatisch hinzufügen, ohne eine E-Mail zu senden** aus, und klicken Sie dann auf **Weiter**.
 
     ![Add Members Automatically](./media/active-directory-saas-arcgis-tutorial/IC784748.png "Add Members Automatically")
 
@@ -145,4 +145,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!-----HONumber=August15_HO7-->
+<!------HONumber=August15_HO7-->

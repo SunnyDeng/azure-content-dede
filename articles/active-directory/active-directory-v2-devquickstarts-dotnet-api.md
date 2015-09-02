@@ -20,7 +20,7 @@
 
 Mit dem App-Modell v2.0 können Sie eine Web-API mit [OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow)-Zugriffstoken schützen, sodass sowohl Benutzer mit persönlichen Microsoft-Konten als auch solche mit Geschäfts- oder Schulkonten sicher auf Ihre Web-API zugreifen können.
 
-> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 \(öffentliche Vorschauversion\). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE] Diese Informationen gelten für App-Modell v2.0 \(öffentliche Vorschauversion\). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
 Für ASP.NET-Web-APIs erreichen Sie das Gleiche durch die in .NET Framework 4.5 enthaltene OWIN-Middleware von Microsoft. Hier verwenden wir OWIN zur Erstellung einer MVC-Web-API mit einer Aufgabenliste, die folgende Aktionen ausführt: – Sie erlaubt Clients das Erstellen und Lesen von Aufgaben aus der Aufgabenliste eines Benutzers. – Sie legt fest, welche APIs geschützt sind. – Sie stellt sicher, dass die Web-API-Aufrufe ein gültiges Zugriffstoken enthalten.
 
@@ -34,28 +34,29 @@ Der Code für dieses Tutorial wird [auf GitHub](https://github.com/AzureADQuickS
 
 ```git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet.git```
 
-The completed app is provided at the end of this tutorial as well.
+Die fertige App wird außerdem am Ende dieses Lernprogramms bereitgestellt.
 
 
-## 1. Register an App
-Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](active-directory-v2-app-registration.md).  Make sure to:
+## 1. Registrieren einer App
+Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.microsoft.com), oder führen Sie die [ausführlichen Schritte aus](active-directory-v2-app-registration.md).  Stellen Sie sicher, dass Sie:
 
-- Copy down the **Application Id** assigned to your app, you'll need it soon.
+- Die der App zugewiesene **Anwendungs-ID** kopieren, da Sie sie demnächst benötigen.
 
-This visual studio solution also contains a "TodoListClient", which is a simple WPF app.  The TodoListClient is used to demonstrate how a user signs-in and how a client can issue requests to your Web API.  In this case, both the TodoListClient and the TodoListService are represented by the same app.  To configure the TodoListClient, you should also:
+Diese Visual Studio-Lösung enthält auch einen "TodoListClient", der eine einfache WPF-App ist. Der TodoListClient wurde dazu verwendet, um zu zeigen, wie sich ein Benutzer anmeldet und wie ein Client Anforderungen an die Web-API sendet. In diesem Fall werden sowohl der TodoListClient als auch der TodoListService von der gleichen App dargestellt. Um den TodoListClient zu konfigurieren, sollten Sie außerdem:
 
-- Add the **Mobile** platform for your app.
-- Copy down the **Redirect URI** from the portal. You must use the default value of `urn:ietf:wg:oauth:2.0:oob`.
+- die **mobile** Plattform zur App hinzufügen.
+- den **Umleitungs-URI** aus dem Portal kopieren. Sie müssen den Standardwert `urn:ietf:wg:oauth:2.0:oob` verwenden.
 
 
-## 2. Set up your app to use the OWIN authentication pipeline
+## 2. Einrichten der App zur Verwendung mit der OWIN-Authentifizierungspipeline
 
-Now that you’ve registered an app, you need to set up your app to communicate with the v2.0 endpoint in order to validate incoming requests & tokens.
+Nachdem Sie eine App registriert haben, müssen Sie sie so einrichten, dass sie mit dem v2.0-Endpunkt kommuniziert, damit eingehende Anforderungen und Token überprüft werden können.
 
--	To begin, open the solution and add the OWIN middleware NuGet packages to the TodoListService project using the Package Manager Console.
+-	Öffnen Sie dazu zunächst die Projektmappe, und fügen Sie dem Projekt „TodoListService“ über die Paket-Manager-Konsole die NuGet-Pakete der OWIN-Middleware hinzu.
 
 ```
-PM\> Installationspaket Microsoft.Owin.Security.OAuth - Projektname TodoListService PM\> Installationspaket Microsoft.Owin.Security.Jwt - Projektname TodoListService PM \> Installationspaket Microsoft.Owin.Host.SystemWeb - Projektname TodoListService '''
+PM\> Installationspaket Microsoft.Owin.Security.OAuth - Projektname TodoListService PM\> Installationspaket Microsoft.Owin.Security.Jwt - Projektname TodoListService PM \> Installationspaket Microsoft.Owin.Host.SystemWeb - Projektname TodoListService 
+```
 
 -	Fügen Sie dem Projekt „TodoListService“ eine OWIN-Startklasse mit dem Namen `Startup.cs` hinzu. Klicken Sie mit der rechten Maustaste auf das Projekt, wählen Sie **Hinzufügen** --\> **Neues Element** aus, und suchen Sie nach „OWIN“. Die OWIN-Middleware ruft beim Starten Ihrer Anwendung die Methode `Configuration(…)` auf.
 -	Ändern Sie die Klassendeklaration in `public partial class Startup` – einen Teil dieser Klasse haben wir bereits für Sie in einer anderen Datei implementiert. Rufen Sie in der Methode `Configuration(…)` „ConfigureAuth\(...\)“ auf, um die Authentifizierung für Ihre Webanwendung einzurichten.
@@ -155,4 +156,4 @@ Sie können sich nun weiteren Themen zuwenden. Wie wäre es zum Beispiel mit Fol
 
 Weitere Ressourcen: - [Die App-Modell v2.0-Vorschauversion \>\>](active-directory-appmodel-v2-overview.md) - [StackOverflow-"azure-active-directory"-Tag \>\>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=August15_HO7-->
+<!----HONumber=August15_HO7-->
