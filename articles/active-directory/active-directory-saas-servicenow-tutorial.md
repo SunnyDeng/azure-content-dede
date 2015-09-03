@@ -138,7 +138,7 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
 
      11\.4. Wählen Sie unter **Format** das Format **PEM** aus.
 
-     11\.5. Erstellen Sie eine Base64-codierte Datei aus dem heruntergeladenen Zertifikat.[AZURE.NOTE]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
+     11\.5. Erstellen Sie eine Base64-codierte Datei aus dem heruntergeladenen Zertifikat.  > [AZURE.NOTE]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
      11\.6. Öffnen Sie die Base64-codierte Datei in **Editor**, und kopieren Sie dann den Inhalt dieser Datei in die Zwischenablage.
 
@@ -213,4 +213,4 @@ Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich.
 * [Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory](active-directory-saas-tutorial-list.md)
 * [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md)
 
-<!---HONumber=August15_HO8-->
+<!----HONumber=August15_HO8-->

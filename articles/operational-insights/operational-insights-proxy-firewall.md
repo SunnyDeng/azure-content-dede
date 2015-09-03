@@ -25,9 +25,10 @@ Die erforderlichen Aktionen zum Konfigurieren von Proxy- und Firewalleinstellung
 
 Damit der Microsoft Monitoring Agent eine Verbindung herstellen und sich beim Operational Insights-Dienst registrieren kann, benötigt er Zugriff auf die Portnummer Ihrer Domänen und die URLs. Wenn Sie einen Proxyserver für die Kommunikation zwischen dem Agent und dem Operational Insights-Dienst verwenden, müssen Sie sicherstellen, dass auf die entsprechenden Ressourcen zugegriffen werden kann. Wenn Sie eine Firewall verwenden, um den Zugriff auf das Internet einzuschränken, müssen Sie die Firewall so konfigurieren, dass Operational Insights Zugriff erhält. In den folgenden Tabellen werden die von Operational Insights benötigten Ports aufgelistet.
 
-|**Agent-Ressource**|**Ports**|
+|**Agent Resource**|**Ports**|
 |--------------|-----|
-|*.ods.opinsights.azure.com|Port 443| |*.oms.opinsights.azure.com|Port 443|
+|*.ods.opinsights.azure.com|Port 443|
+|*.oms.opinsights.azure.com|Port 443|
 |ods.systemcenteradvisor.com|Port 443|
 |*.blob.core.windows.net/*|Port 443|
 
@@ -91,24 +92,31 @@ In der folgenden Tabelle sind die Ports im Zusammenhang mit diesen Aufgaben aufg
 
 >[AZURE.NOTE]In einigen der folgenden Ressourcen wird Advisor erwähnt. Die aufgelisteten Ressourcen werden jedoch in Zukunft geändert.
 
-|**Agent-Ressource**|**Ports**|
+|**Agent Resource**|**Ports**|
 |--------------|-----|
-|*.ods.opinsights.azure.com|Port 443| |*.oms.opinsights.azure.com|Port 443|
+|*.ods.opinsights.azure.com|Port 443|
+|*.oms.opinsights.azure.com|Port 443|
 |ods.systemcenteradvisor.com|Port 443|
 |*.blob.core.windows.net/*|Port 443|
 
 |**Verwaltungsserver-Ressource**|**Ports**|
 |--------------|-----|
-|*.ods.opinsights.azure.com|Port 443| |service.systemcenteradvisor.com|Port 443| |scadvisor.accesscontrol.windows.net|Port 443| |scadvisorservice.accesscontrol.windows.net|Port 443| |*.blob.core.windows.net/*|Port 443|
+|*.ods.opinsights.azure.com|Port 443|
+|service.systemcenteradvisor.com|Port 443|
+|scadvisor.accesscontrol.windows.net|Port 443|
+|scadvisorservice.accesscontrol.windows.net|Port 443|
+|*.blob.core.windows.net/*|Port 443|
 |data.systemcenteradvisor.com|Port 443|
 |ods.systemcenteradvisor.com|Port 443|
-|**.systemcenteradvisor.com|Port 443|
+|*.systemcenteradvisor.com|Port 443|
 
 
 |**Operational Insights- und Operations Manager-Konsolenressource**|**Ports**|
 |---|---|
-|*.systemcenteradvisor.com|Port 80 und 443| |*.live.com|Ports 80 und 443|
-|**.microsoftonline.com|Port 80 und 443| |login.windows.net|Port 80 und 443|
+|*.systemcenteradvisor.com|Port 80 and 443|
+|*.live.com|Port 80 and 443|
+|*.microsoftonline.com|Port 80 and 443|
+|login.windows.net|Port 80 and 443|
 
 
 Verwenden Sie die folgenden Verfahren, um die Operations Manager-Verwaltungsgruppe beim Operational Insights-Dienst zu registrieren. Wenn Sie Probleme mit der Kommunikation zwischen der Verwaltungsgruppe und dem Operational Insights-Dienst haben, verwenden Sie die Validierungsverfahren für eine Problembehandlung der Datenübertragung an den Operational Insights-Dienst.
@@ -166,4 +174,4 @@ Verwenden Sie die folgenden Verfahren, um die Operations Manager-Verwaltungsgrup
 3. Fügen Sie alle Leistungsindikatoren hinzu, die mit **HTTP** beginnen. ![Hinzufügen der Leistungsindikatoren](./media/operational-insights-proxy-firewall/sendingdata1.png)
 4. Wenn die Operations Manager-Konfiguration in Ordnung ist, werden Aktivitäten für die Leistungsindikatoren der Verwaltungsgruppen des Integritätsdiensts für Ereignisse und andere Datenelemente angezeigt. Die Grundlage bilden die in Operational Insights hinzugefügten Management Packs und die konfigurierten Richtlinien für die Protokollerfassung. ![Systemmonitor mit Aktivität](./media/operational-insights-proxy-firewall/sendingdata2.png)
 
-<!---HONumber=August15_HO6-->
+<!----HONumber=August15_HO6-->

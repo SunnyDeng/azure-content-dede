@@ -48,7 +48,6 @@ Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem
 	- **Tarif** - Wählen Sie einen Tarif für den Connector aus.
 	- **Name** - Geben Sie Ihrem Dropbox-Connector einen Namen.
 4. Klicken Sie auf „Erstellen“. Ein neuer Dropbox-Connector wird erstellt.
-5. Sobald die API-App-Instanz erstellt wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des Dropbox-Connectors erstellen.
 
 ## Verwenden des Dropbox-Connectors in Logik-Apps
 Sobald Ihre API-App erstellt wurde, können Sie den Dropbox-Connector als Aktion für Ihre Logik-App verwenden. Gehen Sie dazu folgendermaßen vor:
@@ -97,4 +96,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [8]: ./media/app-service-logic-connector-dropbox/img8.PNG
 [9]: ./media/app-service-logic-connector-dropbox/img9.PNG
 
-<!---HONumber=August15_HO8-->
+<!----HONumber=August15_HO8-->
