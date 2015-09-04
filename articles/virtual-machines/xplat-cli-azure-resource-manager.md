@@ -1,4 +1,4 @@
-<properties
+﻿<properties
 	pageTitle="Verwenden der Microsoft Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung | Microsoft Azure"
 	description="Verwenden der Microsoft Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit dem Azure-Ressourcen-Manager."
 	editor="tysonn"
@@ -8,7 +8,14 @@
 	services="virtual-machines"/>
 
 
-<tags ms.service="virtual-machines" ms.workload="infrastructure-services"" ms.tgt\_pltfrm="command-line-interface" ms.devlang="na" ms.topic="article" ms.date="06/09/2015" ms.author="danlep"/>
+<tags 
+ms.service="virtual-machines" 
+ms.workload="infrastructure-services" 
+ms.tgt_pltfrm="command-line-interface" 
+ms.devlang="na" 
+ms.topic="article" 
+ms.date="06/09/2015" 
+ms.author="danlep"/>
 
 
 # Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager

@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Verwenden von Azure Backup als Ersatz für Ihre Bandinfrastruktur | Microsoft Azure"
    description="Hier erfahren Sie, wie Azure Backup eine Semantik ähnlich wie bei Bändern bereitstellt, damit Sie Ihre Daten in Azure sichern und wiederherstellen können."
    services="backup"
@@ -6,7 +6,16 @@
    authors="Jim-Parker"
    manager="jwhit"
    editor=""/>
-<tagsms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="07/01/2015" ms.author="jimpark"; "aashishr"/>
+
+<tags
+ms.service="backup" 
+ms.devlang="na" 
+ms.topic="article" 
+ms.tgt_pltfrm="na" 
+ms.workload="storage-backup-recovery" 
+ms.date="07/01/2015" 
+ms.author="jimpark"; "aashishr"
+/>
 
 # Verwenden von Azure Backup als Ersatz für Ihre Bandinfrastruktur
 Azure Backup- und System Center Data Protection Manager-Kunden haben folgende Möglichkeiten: - Sichern von Daten in Zeitplänen, welche am besten ihren Organisationsanforderungen entsprechen - Längeres Aufbewahren der Sicherungsdaten - Integrieren von Azure in ihre Anforderungen zur langfristigen Aufbewahrung (anstelle von Bändern)
