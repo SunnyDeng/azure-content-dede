@@ -417,4 +417,4 @@ Dieses Muster ist sehr gängig in Szenarien, in denen Entwickler entweder über 
 [2]: ./media/service-fabric-reliable-actors-pattern-resource-governance/resourcegovernance_arch2.png
 [3]: ./media/service-fabric-reliable-actors-pattern-resource-governance/resourcegovernance_arch3.png
 
-<!---HONumber=August15_HO7-->
+<!----HONumber=August15_HO7-->
