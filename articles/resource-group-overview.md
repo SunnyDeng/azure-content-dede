@@ -1,22 +1,20 @@
 <properties
    pageTitle="Übersicht über Azure Resource Manager"
-   description="Es wird beschrieben, wie Sie den Azure-Ressourcen-Manager für die Bereitstellung, Verwaltung und Zugriffssteuerung von Ressourcen unter Azure verwenden."
-   services="azure-resource-manager"
-   documentationCenter="na"
-   authors="tfitzmac"
-   manager="wpickett"
-   editor=""/>
-
+	description="Es wird beschrieben, wie Sie den Azure-Ressourcen-Manager für die Bereitstellung, Verwaltung und Zugriffssteuerung von Ressourcen unter Azure verwenden."
+	services="azure-resource-manager"
+	documentationCenter="na"
+	authors="tfitzmac"
+	manager="wpickett"
+	editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="07/24/2015"
-   ms.author="tomfitz"/>
-
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="08/20/2015"
+	ms.author="tomfitz"/>
 
 # Übersicht über Azure Resource Manager
 
@@ -24,7 +22,9 @@ Anwendungen bestehen normalerweise aus vielen Komponenten, also z. B. Web-App, 
 
 Mit dem Azure-Ressourcen-Manager wird die Zugriffssteuerung auf systemeigene Weise in die Verwaltungsplattform integriert. So können Sie angeben, welche Aktionen ein Benutzer Ihrer Organisation für eine Ressourcengruppe durchführen kann.
 
-Hier ist eine Demonstration dieser Übersicht.
+Der Ressourcen-Manager stellt eine neue Möglichkeit zur Bereitstellung und Verwaltung Ihrer Lösungen bereit. Weitere Informationen zu den Änderungen in diesem neuen Bereitstellungsmodell finden Sie unter [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
+
+Hier sehen Sie eine Videodemonstration dieser Übersicht:
 
 [AZURE.VIDEO azure-resource-manager-overview]
 
@@ -131,4 +131,4 @@ Informationen zum Verwenden des Vorschauportals finden Sie unter [Verwenden des 
 - Grundlegende Informationen zu den Funktionen, die in einer Vorlage verwendet werden können, finden Sie unter [Vorlagenfunktionen](./resource-group-template-functions.md).
 - Anleitungen zum Entwerfen von Vorlagen finden Sie unter [Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-design-templates.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

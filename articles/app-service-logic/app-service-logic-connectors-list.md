@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Liste der Connectors und API-Apps | Microsoft Azure"
-	description="Informieren Sie sich über die Connectors und API-Apps in Azure App Service; Microservices-Architektur"
+	pageTitle="Liste der verfügbaren Connectors und API-Apps | Microsoft Azure App Service"
+	description="Erfahren Sie etwas über die Connectors und API-Apps in Azure App Service"
 	services="app-service\logic"
 	documentationCenter=""
 	authors="MandiOhlinger"
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/09/2015"
+	ms.date="08/23/2015"
 	ms.author="mandia"/>
 
 
-# Liste der Connectors und API-Apps in Microsoft Azure App Service
-In diesem Thema werden alle verfügbaren Connectors und API-Apps aufgelistet, die von Microsoft erstellt wurden.
+# Liste der Connectors und API-Apps in Logik-Apps
+Hier werden alle verfügbaren Connectors und API-Apps aufgelistet, die von Microsoft für die Verwendung in Logik-Apps erstellt wurden.
 
 Informationen zu Preisen und eine Liste der auf den einzelnen Dienstebenen verfügbaren Komponenten finden Sie unter [Azure App Service-Preise](http://azure.microsoft.com/pricing/details/app-service/).
 
@@ -43,10 +43,10 @@ Name | Beschreibung
 [Microsoft SharePoint](app-service-logic-connector-sharepoint.md) | Stellt eine Verbindung mit dem lokalen Microsoft SharePoint-Server oder SharePoint Online her und verwaltet Dokumente sowie Listenelemente. Verschiedene Authentifizierungsmethoden wie Standardanmeldeinformationen, OAuth 2.0, Windows-Authentifizierung und formularbasierte Authentifizierung werden unterstützt.
 [Microsoft SQL Server](app-service-logic-connector-sql.md) | Stellt eine Verbindung mit dem lokalen SQL Server oder einer Azure SQL-Datenbank her. Sie können Einträge in einer SQL-Datenbanktabelle erstellen, aktualisieren, abrufen und löschen.
 [Microsoft Yammer](app-service-logic-connector-yammer.md) | Stellt eine Verbindung mit Yammer her, um Nachrichten zu posten und neue Nachrichten abzurufen.
-[POP3](app-service-logic-connector-pop3.md) \(Post Office Protocol\)| Stellt eine Verbindung mit einem POP3-Server her, um E-Mails mit Anlagen abzurufen.
+[POP3](app-service-logic-connector-pop3.md) (Post Office Protocol)| Stellt eine Verbindung mit einem POP3-Server her, um E-Mails mit Anlagen abzurufen.
 [QuickBooks](app-service-logic-connector-quickbooks.md) | Mit diesem Connector können Sie verschiedene Aufgaben ausführen, u. a. unterschiedliche Entitäten aus Intuit QuickBooks erstellen, aktualisieren und abfragen, beispielsweise Kunden, Artikel, Rechnungen und so weiter.
-[SFTP](app-service-logic-connector-sftp.md) \(SSH File Transfer Protocol\)| Stellt eine Verbindung mit SFTP her und kann zum Hochladen, Abrufen und Löschen von Dateien verwendet werden.
-[SMTP](app-service-logic-connector-smtp.md) \(Simple Mail Transfer Protocol\) | Stellt eine Verbindung mit einem SMTP-Server her und kann E-Mails mit Anlagen senden.
+[SFTP](app-service-logic-connector-sftp.md) (SSH File Transfer Protocol)| Stellt eine Verbindung mit SFTP her und kann zum Hochladen, Abrufen und Löschen von Dateien verwendet werden.
+[SMTP](app-service-logic-connector-smtp.md) (Simple Mail Transfer Protocol) | Stellt eine Verbindung mit einem SMTP-Server her und kann E-Mails mit Anlagen senden.
 [Puffer](app-service-logic-connector-slack.md) | Herstellen einer Verbindung mit Slack und Veröffentlichen von Nachrichten auf Slack-Kanälen.
 [Salesforce](app-service-logic-connector-salesforce.md) | Stellt eine Verbindung mit Ihrem Salesforce-Konto her und dient zum Verwalten von Konten, Leads, Verkaufschancen und mehr.
 [SugarCRM](app-service-logic-connector-sugarcrm.md) | Stellt eine Verbindung mit SugarCRM Online her und dient u. a. zum Erstellen, Aktualisieren und Lesen verschiedener Modultypen, beispielsweise Konten, Kontakte usw.
@@ -71,8 +71,8 @@ Informix | Stellt lokal und auf einem virtuellen Azure-Computer unter einem Wind
 MQ | Stellt lokal und auf einem virtuellen Azure-Computer unter einem Windows-Betriebssystem eine Verbindung mit einem IBM WebSphere MQ-Server, Version 8, her. Bei lokaler Verwendung können VPN- oder Azure ExpressRoute-Verbindungen verwendet werden. Der Connector enthält außerdem den Microsoft-Client für MQ.<br/><br/>Keine Trigger. Keine Aktionen.<br/><br/>**Hinweis** Kann derzeit nicht mit Logik-Apps verwendet werden.
 [Oracle-Datenbank](app-service-logic-connector-oracle.md) | Stellt eine Verbindung mit der lokalen Oracle-Datenbank her und kann Einträge in einer Datenbanktabelle erstellen, aktualisieren, abrufen und löschen.
 [SAP](app-service-logic-connector-sap.md) | Stellt eine Verbindung mit einem lokalen SAP-Server her, ruft RFCs, BAPIs und tRFCs auf und sendet IDOCs.
-[BizTalk Flat File Encoder](app-service-logic-flatfile-encoder.md) | Ermöglicht die Interoperabilität zwischen Flatfiledaten \(wie Excel und CSV\) und XML-Daten. Mit dieser API-App können Sie eine Flatfile-Instanz in XML konvertieren und umgekehrt.
-[BizTalk-Transformationsdienst](app-service-logic-transform-xml-documents.md) | Konvertiert Daten von einem Format in ein anderes. Sie können auch ein vorhandenes Schema \(TRFM-Datei\) hochladen, die Links zwischen Quell- und Zielschema anzeigen und die Funktion „Test“ mit einem Beispieleingabe-XML-Inhalt verwenden. Verschiedene integrierte Funktionen sind ebenfalls verfügbar, einschließlich Zeichenfolgenbearbeitung, bedingte Zuweisung usw.
+[BizTalk Flat File Encoder](app-service-logic-flatfile-encoder.md) | Ermöglicht die Interoperabilität zwischen Flatfiledaten (wie Excel und CSV) und XML-Daten. Mit dieser API-App können Sie eine Flatfile-Instanz in XML konvertieren und umgekehrt.
+[BizTalk-Transformationsdienst](app-service-logic-transform-xml-documents.md) | Konvertiert Daten von einem Format in ein anderes. Sie können auch ein vorhandenes Schema (TRFM-Datei) hochladen, die Links zwischen Quell- und Zielschema anzeigen und die Funktion „Test“ mit einem Beispieleingabe-XML-Inhalt verwenden. Verschiedene integrierte Funktionen sind ebenfalls verfügbar, einschließlich Zeichenfolgenbearbeitung, bedingte Zuweisung usw.
 [BizTalk XML Validator](app-service-logic-xml-validator.md) | Überprüft XML-Daten im Abgleich mit vordefinierten XML-Schemas. Sie können vorhandene Schemas verwenden oder Schemas auf Grundlage einer Flatfile-Instanz, JSON-Instanz oder vorhandenen Connectors generieren.
 [BizTalk XPath Extractor](app-service-logic-xpath-extract.md) | Sucht und extrahiert Daten aus XML-Inhalt basierend auf der ausgewählten XPath-Sprache.
 
@@ -83,7 +83,7 @@ Mehrere Connectors bieten Trigger für Logik-Apps. Diese Trigger haben zwei Type
 2. Push-Trigger: Diese Trigger lauschen auf den Eingang von Daten an einem Endpunkt oder das Eintreten eines Ereignisses. Dann lösen sie eine neue Instanz einer Logik-App aus. Beispiele für solche Connectors sind "HTTP-Listener" und "Twitter".
 
 ## Connectors als Aktionen
-Connectors können innerhalb Ihrer Logik-App auch als Aktionen verwendet werden. Aktionen sind hilfreich für die Suche nach Daten in der Logik-App, die dann bei der Ausführung verwendet werden können. Beispielsweise kann es sein, dass Sie Daten aus einer SQL-­Datenbank für zusätzliche Informationen zu einem Kunden bei der Verarbeitung einer Bestellung nachschauen müssen. Oder Sie müssen möglicherweise Daten in ein Ziel schreiben, darin aktualisieren oder löschen. Sie können dazu die Aktionen verwenden, die von den Connectors bereitgestellt werden. Aktionen werden Vorgängen in API-Apps zugeordnet \(gemäß ihren Swagger-Metadaten\).
+Connectors können innerhalb Ihrer Logik-App auch als Aktionen verwendet werden. Aktionen sind hilfreich für die Suche nach Daten in der Logik-App, die dann bei der Ausführung verwendet werden können. Beispielsweise kann es sein, dass Sie Daten aus einer SQL-­Datenbank für zusätzliche Informationen zu einem Kunden bei der Verarbeitung einer Bestellung nachschauen müssen. Oder Sie müssen möglicherweise Daten in ein Ziel schreiben, darin aktualisieren oder löschen. Sie können dazu die Aktionen verwenden, die von den Connectors bereitgestellt werden. Aktionen werden Vorgängen in API-Apps zugeordnet (gemäß ihren Swagger-Metadaten).
 
 ## Erstellen Sie eigene Connectors und API-Apps
 [Referenz zu Connectors und API-Apps](http://aka.ms/appservicesconnectorreference) [Trigger für Azure App Service-API-Apps](../app-service-api/app-service-api-dotnet-triggers.md) [Referenz zu Logik-Apps](https://msdn.microsoft.com/library/azure/dn948510.aspx)
@@ -93,4 +93,4 @@ Connectors können innerhalb Ihrer Logik-App auch als Aktionen verwendet werden.
 
 [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md) [Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md) [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

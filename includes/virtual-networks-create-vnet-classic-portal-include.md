@@ -1,35 +1,37 @@
-## How to create a VNet in the Azure portal
+## Erstellen eines VNet im Azure-Portal.
 
-To create a VNet based on the scenario above, follow the steps below.
+Führen Sie zum Erstellen eines VNet basierend auf dem oben beschriebenen Szenario die folgenden Schritte aus.
 
-1. From a browser, navigate to http://manage.windowsazure.com and, if necessary, sign in with your Azure account.
-2. Click **NEW** > **NETWORK SERVICES** > **VIRTUAL NETWORK** > **CUSTOM CREATE** as shown in the figure below.
+1. Navigieren Sie in einem Browser zu http://manage.windowsazure.com, und melden Sie sich, falls erforderlich, mit Ihrem Azure-Konto an.
+2. Klicken Sie auf **NEU** > **NETZWERKDIENSTE** > **VIRTUELLES NETZWERK** > **BENUTZERDEFINIERT ERSTELLEN**, wie in der folgenden Abbildung dargestellt.
 
-	![Create VNet in portal](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure1.gif)
+	![Erstellen eines VNet im Portal](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure1.gif)
 
-3. On the **Virtual Network Details** page, type the **NAME** of the VNet, select its **LOCATION**, and then click on the arrow on the bottom right hand corner of the page to advance to step 2. The figure below shows the settings for our scenario.
+3. Geben Sie auf der Seite **Details zum virtuellen Netzwerk** den **NAMEN** des VNet ein, wählen Sie seinen **Speicherort** aus, und klicken Sie dann auf den Pfeil unten rechts auf der Seite auf, um mit Schritt 2 fortzufahren. Die folgende Abbildung zeigt die Einstellungen für dieses Szenario.
 
-	![Virtual network details page](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure2.png)
+	![Seite "Details zu Virtual Network"](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure2.png)
 
-4. On the **DNS Servers and VPN Connectivity** page, specify the name and IP address for up to 9 DNS servers to use. If you do not specify a DNS server, your VNet will use the internal naming resolution resolution provided by Azure. For our scenario, we will not configure DNS servers.
-5. If you want to provide point-to-site VPN access to your VNet, enable the **Configure a point-to-site VPN** checkbox. If you do not configure a point-to-site VPN, you can add it to your VNet at any time after creation. For our scenario, we will not configure a point-to-site VPN.
-6. If you want to provide site-to-site VPN connectivity between your VNet and another VNet or your on-premises network, enable the **Configure a site-to-site VPN** checkbox and specify if you want to use **ExpressRoute** or note, and the name of the network to connect to. If you do not configure a site-to-site VPN, you can add it to your VNet at any time after creation. For our scenario, we will not configure a site-to-site VPN.
-7. Click on the arrow on the bottom right hand corner of the page to advance to step 3.The figure below shows the settings for our scenario.
+4. Geben Sie auf der Seite **DNS-Server und VPN-Konnektivität** den Namen und die IP-Adresse für bis zu 9 DNS-Server an, die Sie verwenden möchten. Wenn Sie keinen DNS-Server angeben, verwendet Ihr VNet die interne Namensauflösung von Azure. In diesem Szenario werden keine DNS-Server konfiguriert.
+5. Wenn Sie Ihrem VNet Punkt-zu-Site-VPN-Zugriff gewähren möchten, aktivieren Sie das Kontrollkästchen **Punkt-zu-Site-VPN konfigurieren**. Wenn Sie kein Punkt-zu-Site-VPN konfigurieren, können Sie es auch nach der Erstellung jederzeit zu Ihrem VNet hinzufügen. In diesem Szenario wird kein Punkt-zu-Site-VPN konfiguriert.
+6. Wenn Sie Standort-zu-Standort-VPN-Konnektivität zwischen Ihrem VNet und einem anderen VNet oder Ihrem lokalen Netzwerk bereitstellen möchten, aktivieren Sie das Kontrollkästchen **Site-to-Site-VPN konfigurieren**, geben Sie an, ob Sie **ExpressRoute** verwenden möchten oder nicht, und geben Sie den Namen des Netzwerks an, mit dem eine Verbindung hergestellt werden soll. Wenn Sie kein Standort-zu-Standort-VPN konfigurieren, können Sie es auch nach der Erstellung jederzeit zu Ihrem VNet hinzufügen. In diesem Szenario wird kein Standort-zu-Site-VPN konfiguriert.
+7. Klicken Sie auf den Pfeil unten rechts auf der Seite, um mit Schritt 3 fortzufahren. Auf der folgenden Abbildung sind die Einstellungen für dieses Szenario dargestellt.
 
-	![DNS Servers and VPN connectivity page](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure3.png)
+	![Seite "DNS-Server und VPN-Konnektivität"](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure3.png)
 
-8. On the **Virtual Network Address Spaces** page, under **STARTING IP**, click on *10.0.0.0* to change the VNet address space, and then type the starting address space you want to use. For our scenario, type *192.168.0.0*. 
-9. Under **CIDR (ADDRESS COUNT)** select the number of bits for the subnet mask. For our scenario, select *16 (65536)*.
-10. Under **SUBNETS**, click *Subnet-1* and rename the subnet if necessary. For our scenario, rename it to *FrontEnd*.
+8. Klicken Sie auf der Seite ** Adressräume des virtuellen Netzwerks** unter **START-IP** auf *10.0.0.0*, um den VNet-Adressraum zu ändern, und geben Sie dann die Start-IP des gewünschten Adressraums ein. Geben Sie in diesem Szenario *192.168.0.0* ein.
+9. Wählen Sie unter **CIDR (ANZAHL ADRESSEN)** die Anzahl der Bits für die Subnetzmaske aus. Wählen in diesem Szenario *16 (65536)* aus.
+10. Klicken Sie unter **SUBNETZE** auf *Subnet-1*, und benennen Sie das Subnetz bei Bedarf um. Benennen sie es in diesem Szenario in *FrontEnd* um.
 
-	>[AZURE.NOTE] If you click outside the name textbox for a subnet you will not be able to edit the name if the subnet again. To fix that, you need to remove the subnet by clicking on the X button to its right, then add a new subnet as described in step 13 below.
+	>[AZURE.NOTE]Wenn Sie das Textfeld "Name" für ein Subnetz verlassen, können Sie den Namen nicht mehr bearbeiten. Um dieses Problem zu beheben, müssen Sie das Subnetz durch Klicken auf die Schaltfläche "X" rechts davon entfernen und dann ein neues Subnetz hinzufügen, wie in Schritt 13 unten beschrieben.
 
-11. Under **STARTING IP** for the first subnet, specify the starting IP address for the subnet. For our scenario, type *192.168.1.0*.
-12. Under **CIDR (ADDRESS COUNT)** select the number of bits for the subnet mask for the first subnet. For our scenario, select *24 (256)*.
-13. Click **add subnet** to add a new subnet, if necessary. For our scenario, add a subnet and repeat steps 10 to 12 to configure the VNet as shown in the figure below.
+11. Geben Sie unter **START-IP** für das erste Subnetz die IP-Startadresse für das Subnetz an. Geben Sie in diesem Szenario *192.168.1.0* ein.
+12. Wählen Sie unter **CIDR (ANZAHL ADRESSEN)** die Anzahl der Bits für die Subnetzmaske des ersten Subnetzes aus. Wählen in diesem Szenario *24 (256)* aus.
+13. Klicken Sie auf **Subnetz hinzufügen**, um bei Bedarf ein neues Subnetz hinzuzufügen. Fügen Sie in diesem Szenario ein Subnetz hinzu, und wiederholen Sie die Schritte 10 bis 12, um das VNet wie in der folgenden Abbildung dargestellt zu konfigurieren.
 
-	![Virtual network address spaces page](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure4.png)
+	![Seite "Adressräume von Virtual Network"](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure4.png)
 
-14. Click on the check mark button on the bottom right hand corner of the page to create the VNet. After a few seconds your VNet will be shown in the list of available VNets, as shown in the figure below.
+14. Klicken Sie auf das Häkchen in der unteren rechten Ecke der Seite, um das VNet zu erstellen. Nach einigen Sekunden wird das VNet in der Liste der verfügbaren VNets angezeigt, wie in der folgenden Abbildung dargestellt.
 
-	![New virtual network](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure5.png)
+	![Neues virtuelles Netzwerk](./media/virtual-networks-create-vnet-classic-portal-include/vnet-create-portal-figure5.png)
+
+<!---HONumber=August15_HO9-->

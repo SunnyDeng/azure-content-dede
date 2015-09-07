@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Überwachen von Azure Redis Cache" 
-	description="Erfahren Sie, wie Sie die Stabilität und Integrität Ihrer Azure Redis Cache-Instanzen überwachen." 
-	services="redis-cache" 
-	documentationCenter="" 
-	authors="steved0x" 
-	manager="dwrede" 
+	pageTitle="Überwachen von Azure Redis Cache"
+	description="Erfahren Sie, wie Sie die Stabilität und Integrität Ihrer Azure Redis Cache-Instanzen überwachen."
+	services="redis-cache"
+	documentationCenter=""
+	authors="steved0x"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="cache" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="cache-redis" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.service="cache"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="cache-redis"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/25/2015"
 	ms.author="sdanie"/>
 
 # Überwachen von Azure Redis Cache
@@ -24,11 +24,11 @@ Wenn die Cachediagnose aktiviert ist, werden ca. alle 30 Sekunden Metriken für
 
 Cachemetriken werden mithilfe des Redis-Befehls [INFO](http://redis.io/commands/info) gesammelt. Weitere Informationen zu den verschiedenen für die Cachemetriken verwendeten INFO-Befehlen finden Sie unter [Verfügbare Metriken und Berichtsintervalle](#available-metrics-and-reporting-intervals).
 
-Zum Anzeigen von Cachemetriken klicken Sie auf [Durchsuchen](https://msdn.microsoft.com/library/azure/cbe6d113-7bdc-4664-a59d-ff0df6f4e214#CacheSettings) im [Azure-Portal](https://portal.azure.com), um zu Ihrer Cache-Instanz zu navigieren. Sie können auf dem Blatt **Redis Cache** auf Metriken für Azure Redis Cache-Instanzen zugreifen.
+Zum Anzeigen von Cachemetriken klicken Sie auf [Durchsuchen](https://msdn.microsoft.com/library/azure/cbe6d113-7bdc-4664-a59d-ff0df6f4e214#CacheSettings) im [Azure-Vorschauportal](https://portal.azure.com), um zu Ihrer Cache-Instanz zu navigieren. Sie können auf dem Blatt **Redis Cache** auf Metriken für Azure Redis Cache-Instanzen zugreifen.
 
 ![Überwachen][redis-cache-monitor-overview]
 
->[AZURE.IMPORTANT]Wenn im Azure-Portal die folgende Meldung angezeigt wird, befolgen Sie die Anweisungen im Abschnitt [Aktivieren der Cachediagnose](#enable-cache-diagnostics), um die Cachediagnose zu aktivieren.
+>[AZURE.IMPORTANT]Wenn im Vorschauportal die folgende Meldung angezeigt wird, befolgen Sie die Anweisungen im Abschnitt [Aktivieren der Cachediagnose](#enable-cache-diagnostics), um die Cachediagnose zu aktivieren.
 >
 >`Monitoring may not be enabled. Click here to turn on Diagnostics.`
 
@@ -58,9 +58,9 @@ Wenn die Diagnoseeinstellungen konfiguriert sind, klicken Sie auf **Speichern**,
 
 >[AZURE.IMPORTANT]Caches innerhalb derselben Region und desselben Abonnements nutzen ein gemeinsames Speicherkonto für Diagnosedaten. Wenn die Konfiguration dieses Kontos geändert wird, gilt diese Änderung für alle Caches dieses Abonnements in dieser Region.
 
-Um die gespeicherten Metriken anzuzeigen, untersuchen Sie die Tabellen in Ihrem Speicherkonto, deren Namen mit `WADMetrics` beginnen. Weitere Informationen zum Zugriff auf die gespeicherten Metriken außerhalb des Azure-Portals finden Sie im Beispiel [Zugriff auf Redis Cache-Überwachungsdaten](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring).
+Um die gespeicherten Metriken anzuzeigen, untersuchen Sie die Tabellen in Ihrem Speicherkonto, deren Namen mit `WADMetrics` beginnen. Weitere Informationen zum Zugriff auf die gespeicherten Metriken außerhalb des Vorschauportals finden Sie im Beispiel [Zugriff auf Redis Cache-Überwachungsdaten](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring).
 
->[AZURE.NOTE]Im Portal werden nur Metriken angezeigt, die im ausgewählten Speicherkonto gespeichert sind. Wenn Sie das Speicherkonto ändern, sind die Daten im zuvor konfigurierten Speicherkonto weiterhin verfügbar, werden im Portal jedoch nicht angezeigt und nach Ablauf des Aufbewahrungszeitraums auch nicht gelöscht.
+>[AZURE.NOTE]Im Vorschauportal werden nur Metriken angezeigt, die im ausgewählten Speicherkonto gespeichert sind. Wenn Sie das Speicherkonto ändern, sind die Daten im zuvor konfigurierten Speicherkonto weiterhin verfügbar, werden im Vorschauportal jedoch nicht angezeigt und nach Ablauf des Aufbewahrungszeitraums auch nicht gelöscht.
 
 ## Verfügbare Metriken und Berichtsintervalle
 
@@ -80,7 +80,7 @@ Cachemetriken werden in verschiedenen Berichtsintervallen gemeldet, einschließl
 | set-Vorgänge | Die Anzahl von set-Vorgängen im Cache während des angegebenen Berichtsintervalls. Dieser Wert ist die Summe der folgenden Werte aus dem Redis-INFO-Befehl "all": `cmdstat_set`, `cmdstat_hset`, `cmdstat_hmset`, `cmdstat_hsetnx`, `cmdstat_lset`, `cmdstat_mset`, `cmdstat_msetnx`, `cmdstat_setbit`, `cmdstat_setex`, `cmdstat_setrange` und `cmdstat_setnx`. |
 | Vorgänge gesamt | Die Gesamtzahl aller Befehle, die während des angegebenen Berichtsintervalls vom Cacheserver verarbeitet wurden. Dieser Wert ist dem Redis-INFO-Befehl `total_commands_processed` zugeordnet. Beachten Sie: Wenn Azure Redis Cache ausschließlich für pub/sub-Vorgänge verwendet wird, sind keine Metriken für `Cache Hits`, `Cache Misses`, `Gets` oder `Sets` vorhanden. Stattdessen sind `Total Operations`-Metriken vorhanden, die die Cachenutzung für pub/sub-Vorgänge widerspiegeln. |
 | Verwendeter Arbeitsspeicher | Die Menge an verwendetem Cachearbeitsspeicher in MB während des angegebenen Berichtsintervalls. Dieser Wert ist dem Redis-INFO-Befehl `used_memory` zugeordnet. |
-| CPU | Die CPU-Auslastung des Azure Redis Cache-Servers in Prozent während des angegebenen Berichtsintervalls. Dieser Wert ist dem Betriebssystem-Leistungsindikator `\Processor(_Total)\% Processor Time` zugeordnet, |
+| CPU | Die CPU-Auslastung des Azure Redis Cache-Servers in Prozent während des angegebenen Berichtsintervalls. Dieser Wert ist dem Betriebssystem-Leistungsindikator `\Processor(_Total)% Processor Time` zugeordnet, |
 | Cache-Lesevorgänge | Die Menge an Daten in KB/s, die während des angegebenen Berichtsintervalls im Cache gelesen wurden. Dieser Wert wird von den Netzwerkschnittstellenkarten für die virtuelle Maschine abgeleitet, die den Cache hostet, und ist nicht Redis-spezifisch. |
 | Cache-Schreibvorgänge | Die Menge an Daten in KB/s, die während des angegebenen Berichtsintervalls in den Cache geschrieben wurden. Dieser Wert wird von den Netzwerkschnittstellenkarten für die virtuelle Maschine abgeleitet, die den Cache hostet, und ist nicht Redis-spezifisch. |
 
@@ -221,4 +221,4 @@ Weitere Informationen zu Warnungen in Azure finden Sie unter [Empfangen von Warn
 
 [redis-cache-add-alert]: ./media/cache-how-to-monitor/redis-cache-add-alert.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

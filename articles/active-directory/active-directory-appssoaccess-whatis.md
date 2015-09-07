@@ -78,7 +78,11 @@ In beiden Fällen werden Anmeldeinformationen verschlüsselt im Verzeichnis gesp
 
 Die kennwortbasierte einmalige Anmeldung nutzt eine Browsererweiterung, um die Anwendung und benutzerspezifische Informationen sicher aus Azure AD abzurufen und sie auf den Dienst anzuwenden. Die meisten von Azure AD unterstützten Drittanbieter-SaaS-Anwendungen unterstützen dieses Feature.
 
-Für die kennwortbasierte einmalige Anmeldung kann der Endbenutzer die folgenden Browser einsetzen: - IE8, IE9 und IE10 unter Windows 7 oder höher - Chrome unter Windows 7 oder höher oder MacOS X oder höher
+Für kennwortbasiertes SSO eignen sich folgende Browser des Endbenutzers:
+
+- Internet Explorer 8, 9 und 10 – unter Windows 7 oder höher
+- Chrome – unter Windows 7 oder höher und MacOS x oder höher
+- Firefox 26.0 oder höher – unter Windows XP SP2 oder höher und Mac OS X 10.6 oder höher
 
 **Hinweis:** Die Erweiterung für die kennwortbasierte einmalige Anmeldung steht für Edge in Windows 10 zur Verfügung, sobald Browsererweiterungen von Edge unterstützt werden.
 
@@ -216,4 +220,4 @@ Diese Links verwenden die gleichen Mechanismen der Zugriffssteuerung wie der Zug
 [5]: ./media/active-directory-appssoaccess-whatis/workdaymobile.png
 [6]: ./media/active-directory-appssoaccess-whatis/deeplink.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

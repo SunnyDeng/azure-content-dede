@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Bereitstellen von Medien-on-Demand mit Azure Media Services" 
-	description="In diesem Thema werden häufige Szenarios bei der Bereitstellung von Medien-on-Demand mit Azure Media Services beschrieben." 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
+	pageTitle="Bereitstellen von Medien-on-Demand mit Azure Media Services"
+	description="In diesem Thema werden häufige Szenarios bei der Bereitstellung von Medien-on-Demand mit Azure Media Services beschrieben."
+	services="media-services"
+	documentationCenter=""
+	authors="Juliako"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 
@@ -27,7 +27,7 @@ Beachten Sie, dass Sie Media Services in Ihre vorhandenen Tools und Prozesse int
 
 Das folgende Diagramm zeigt die Hauptbestandteile der Media Services-Plattform, die am Video-on-Demand-Workflow beteiligt sind. ![VoD-Workflow][vod-overview]
 
-##<a id="vod_scenarios"></a>Allgemeine Szenarien: Bereitstellen von Medien-On-Demand. 
+##<a id="vod_scenarios"></a>Allgemeine Szenarien: Bereitstellen von Medien-On-Demand
 
 ###Schützen von Inhalte im Speicher und Übermitteln von Streamingmedien ohne Verschlüsselung
 
@@ -220,4 +220,4 @@ Weitere Informationen finden Sie unter [Wiedergabe Ihrer Inhalte mit vorhandenen
 [vod-overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

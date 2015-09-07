@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Der Azure MFA-Anmeldevorgang mit Azure Multi-Factor Authentication" 
-	description="Auf dieser Seite finden Sie Anleitung zu den verschiedenen Anmeldemethoden, die mit Azure MFA verfügbar sind." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	pageTitle="Der Azure MFA-Anmeldevorgang mit Azure Multi-Factor Authentication"
+	description="Auf dieser Seite finden Sie Anleitung zu den verschiedenen Anmeldemethoden, die mit Azure MFA verfügbar sind."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
+	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/02/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Der Anmeldevorgang mit Azure Multi-Factor Authentication
@@ -33,4 +33,4 @@ Vorgehensweise|Beschreibung
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

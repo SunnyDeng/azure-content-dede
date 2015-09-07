@@ -9,12 +9,12 @@
 
 <tags
    ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="08/07/2015"
-   ms.author="jgao"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="08/07/2015"
+	ms.author="jgao"/>
 
 # Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk
 
@@ -60,7 +60,7 @@ Vor der Bereitstellung eines HBase-Clusters müssen Sie ein virtuelles Azure-Net
 	- **Adressraum** – Wählen Sie einen Adressraum für das virtuelle Netzwerk, der groß genug ist, um Adressen für alle Knoten im Cluster zur Verfügung zu stellen. Andernfalls schlägt die Bereitstellung fehl. Für dieses Lernprogramm haben Sie die Wahl zwischen den drei verfügbaren Optionen.
 	- **Maximale Anzahl virtueller Computer** – Wählen Sie einen Wert für die maximale Anzahl virtueller Computer aus. Dieser Wert bestimmt die Anzahl möglicher Hosts (VM), die in dem Adressbereich erstellt werden können. Für dieses Lernprogramm ist **4096 [CIDR: /20]** ausreichend.
 	- **Speicherort** – Der Speicherort muss derselbe sein wie der des zu erstellenden HBase-Clusters.
-	- **DNS-Server** – In diesem Lernprogramm wird ein interner von Azure bereitgestellter DNS-Server (Domain Name System) verwendet. Daher können Sie **Kein** auswählen. Erweiterte Netzwerkkonfigurationen mit benutzerdefinierten DNS-Servern werden ebenfalls unterstützt. Ausführliche Anleitungen finden Sie unter [Namensauflösung (DNS)](http://msdn.microsoft.com/library/azure/jj156088.aspx).
+	- **DNS-Server** – In diesem Lernprogramm wird ein interner von Azure bereitgestellter DNS-Server (Domain Name System) verwendet. Daher können Sie **Kein** auswählen. Erweiterte Netzwerkkonfigurationen mit benutzerdefinierten DNS-Servern werden ebenfalls unterstützt. Ausführliche Anleitungen finden Sie unter [Namensauflösung (DNS)](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 4. Klicken Sie unten rechts auf **VIRTUELLES NETZWERK ERSTELLEN**. Der Name des neuen virtuellen Netzwerks wird in der Liste angezeigt. Warten Sie, bis in der Statusspalte **Created** angezeigt wird.
 5. Klicken Sie im Hauptbereich auf das virtuelle Netzwerk, das Sie gerade erstellt haben.
 6. Klicken Sie oben auf der Seite auf **DASHBOARD**.
@@ -132,9 +132,7 @@ Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto
 	<tr><td>Größe des Hauptknotens</td><td><p>Wählen Sie eine VM-Größe für den Hauptknoten aus.</p></td></tr>
 	<tr><td>Datenknotengröße</td><td><p>Wählen Sie eine VM-Größe für die Datenknoten aus.</p></td></tr>
 	<tr><td>Zookeeper-Größe</td><td><p>Wählen Sie eine VM-Größe für den Zookeeper-Knoten aus.</p></td></tr>
-	</table>
-
-	>[AZURE.NOTE]Je nach Wahl der VMs können Ihre Kosten variieren. HDInsight verwendet für Clusterknoten VMs mit Standardtarif. Informationen über die Auswirkungen der VM-Größe auf Ihre Kosten finden Sie unter <a href="http://azure.microsoft.com/pricing/details/hdinsight/" target="_blank">HDInsight-Preise</a>.
+</table>>[AZURE.NOTE]Je nach Wahl der VMs können Ihre Kosten variieren. HDInsight verwendet für Clusterknoten VMs mit Standardtarif. Informationen über die Auswirkungen der VM-Größe auf Ihre Kosten finden Sie unter <a href="http://azure.microsoft.com/pricing/details/hdinsight/" target="_blank">HDInsight-Preise</a>.
 
 	Klicken Sie auf die rechte Taste.
 
@@ -150,13 +148,13 @@ Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto
 		<td>Geben Sie das Kennwort für den HDInsight-Cluster an.</td></tr>
 	<tr><td>Remotedesktop für Cluster aktivieren</td>
 		<td>Aktivieren Sie dieses Kontrollkästchen, um einen Benutzernamen, ein Kennwort und ein Ablaufdatum für einen Remotedesktopbenutzer einzugeben, der nach der Bereitstellung per Remotezugriff auf die Clusterknoten zugreifen kann. Sie können Remotedesktop auch noch nach der Bereitstellung des Clusters aktivieren. Anweisungen hierzu finden Sie unter <a href="hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung mit HDInsight-Clustern mit RDP</a>.</td></tr>
-	</table>
+</table>
 
 6. Geben Sie auf der Seite **Speicherkonto** die folgenden Werte ein:
 
     ![Bereitstellen eines Speicherkontos für Hadoop HDInsight-Cluster](./media/hdinsight-hbase-provision-vnet/hbasewizard4.png)
 
-<table border='1'>
+	<table border='1'>
 	<tr><th>Eigenschaft</th><th>Wert</th></tr>
 	<tr><td>Speicherkonto</td>
 		<td>Geben Sie das Azure-Speicherkonto an, das als Standard-Dateisystem für das HDInsight-Cluster verwendet werden soll. Sie haben drei Möglichkeiten:
@@ -179,8 +177,7 @@ Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto
     </td></tr>
 	<tr><td>Zusätzliche Speicherkonten</td>
 		<td>Geben Sie bei Bedarf weitere Storage-Konten für den Cluster an. HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Storage-Konto wird eine zusätzliche Seite <strong>Speicherkonto</strong> im Assistenten hinzugefügt, auf der Sie die Kontoinformationen angeben können. Im oben abgebildeten Screenshot wurde z. B. kein zusätzliches Speicherkonto hinzugefügt. Daher wurde dem Assistenten auch keine zusätzliche Seite hinzugefügt.</td></tr>
-</table>
-Klicken Sie auf den Pfeil nach rechts.
+</table>Klicken Sie auf den Pfeil nach rechts.
 
 7. Klicken Sie auf der Seite **Skriptaktionen** unten rechts auf das Häkchen. Klicken Sie nicht auf die Schaltfläche **Skriptaktion hinzufügen**, da in diesem Lernprogramm kein angepasstes Clustersetup erforderlich ist.
 
@@ -335,7 +332,7 @@ Führen Sie die unter [Verwenden von Maven zur Entwicklung von Java-Anwendungen,
     	<value>zookeeper0.<dns suffix>,zookeeper1.<dns suffix>,zookeeper2.<dns suffix></value>
 	</property>
 
-> [AZURE.NOTE]Weitere Informationen zur Namensauflösung in virtuellen Azure-Netzwerken und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](http://msdn.microsoft.com/library/azure/jj156088.aspx).
+> [AZURE.NOTE]Weitere Informationen zur Namensauflösung in virtuellen Azure-Netzwerken und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
 ##Bereitstellen von HBase-Clustern mit Azure PowerShell
 
@@ -394,7 +391,7 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 
 [hbase-get-started]: ../hdinsight-hbase-get-started.md
 [hbase-twitter-sentiment]: ../hdinsight-hbase-twitter-sentiment.md
-[vnet-overview]: http://msdn.microsoft.com/library/azure/jj156007.aspx
+[vnet-overview]: ../virtual-network/virtual-networks-overview.md
 [vm-create]: ../virtual-machines-windows-tutorial.md
 
 [azure-portal]: https://management.windowsazure.com
@@ -432,4 +429,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "Bereitstellen von Details für den neuen HBase-Cluster"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "Verwenden von Skriptaktionen zum Anpassen eines HBase-Clusters"
 
-<!-----HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

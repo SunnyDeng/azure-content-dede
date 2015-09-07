@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Kopieren der Ausgabedaten aus dem Lernprogramm in eine lokale SQL Server-Datenbank" 
+	pageTitle="Kopieren der Ausgabedaten aus dem Lernprogramm in eine lokale SQL Server-Datenbank"
 	description="Die exemplarische Vorgehensweise in diesem Lernprogramm baut auf dem Data Factory-Lernprogramm auf und beschreibt das Kopieren von Effektivitätsdaten für Marketingkampagnen in eine lokale SQL Server-Datenbank."
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/25/2015"
 	ms.author="spelluru"/>
-
 
 
 # Exemplarische Vorgehensweise: Kopieren von Daten zur Kampagneneffektivität in eine lokale SQL Server-Datenbank 
@@ -107,7 +105,7 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 	3.	Bei Verwendung der **SQL-Authentifizierung**
 		1.	Geben Sie **<username>** und **<password>** in **connectionString** an.
 		2.	Entfernen Sie die letzten beiden Zeilen. (Die JSON-Eigenschaften **username** und **password** sind nur erforderlich, wenn Sie die Windows-Authentifizierung verwenden.) 
-		3.	Entfernen Sie \*\*, (Komma)\*\* am Ende der Zeile **gatewayName**.
+		3.	Entfernen Sie **, (Komma)** am Ende der Zeile **gatewayName**.
 
 		**Bei Verwendung der Windows-Authentifizierung:** 1. Legen Sie in **connectionString** den Wert für **Integrierte Sicherheit** auf **True** fest. Entfernen Sie "**User ID=<username>;Password=<password>;**" aus "connectionString". 2. Geben Sie für die Eigenschaft **username** den Namen des Benutzers an, der auf die Datenbank zugreifen kann. 3. Geben Sie **password** für das Benutzerkonto an.   
 	4. Geben Sie den Namen des Gateways (**MyGateway**) für die gatewayName-Eigenschaft an. 		  	 
@@ -153,8 +151,7 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 [datafactorytutorial]: data-factory-tutorial.md
 [adfgetstarted]: data-factory-get-started.md
 [adfintroduction]: data-factory-introduction.md
-[useonpremisesdatasources]: data-factory-use-onpremises-datasources.md
-[usepigandhive]: data-factory-pig-hive-activities.md
+[useonpremisesdatasources]: data-factory-move-data-between-onprem-and-cloud.md
 
 [azure-preview-portal]: http://portal.azure.com
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
@@ -172,4 +169,4 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

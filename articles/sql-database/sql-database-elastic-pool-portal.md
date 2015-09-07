@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="08/13/2015"
+	ms.date="08/25/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -117,9 +117,11 @@ Es gibt drei Parameter, die Sie festlegen können und die die Leistung des Pools
 | **eDTU MAX**: eDTU-Obergrenze pro Datenbank | eDTU MAX pro Datenbank ist die maximale Anzahl von eDTUs, die von einer einzelnen Datenbank im Pool verwendet werden können. Legen Sie die eDTU-Obergrenze pro Datenbank hoch genug fest, um maximale Aktivitätsspitzen, die für Ihre Datenbanken auftreten können, verarbeiten zu können. Sie können diese Obergrenze bis auf den Systembegrenzungswert festlegen, der vom Tarif des Pools (1000 eDTUs beim Premium-Tarif) abhängig ist. Die spezifische Größe dieser Obergrenze sollte an maximalen Auslastungsmustern der Datenbanken innerhalb der Gruppe ausgerichtet sein. Sie sollten ein gewisses Maß an Mehrlast für die Gruppe einplanen, da für den Pool i. Allg. von Nutzungsmustern starker und schwacher Auslastung ausgegangen wird, bei der jedoch nicht alle Datenbanken gleichzeitig stark ausgelastet sind.<br> **Auf welchen Wert sollte die eDTU-Obergrenze pro Datenbank festgelegt werden?** <br> Legen Sie eDTU MAX oder die eDTU-Obergrenze pro Datenbank auf die ([Spitzenauslastung der Datenbank]) fest. Angenommen, die Spitzenauslastung pro Datenbank beträgt 50 DTUs und nur 20 % der 100 Datenbanken in der Gruppe springen gleichzeitig auf die Spitzenauslastung. Wenn die eDTU-Obergrenze pro Datenbank auf 50 eDTUs festgelegt ist, ist es sinnvoll, den Pool 5mal größer zu dimensionieren und die eDTU-Garantie für die Gruppe (POOL-eDTU) auf 1.000 eDTUs festzulegen. Es ist außerdem erwähnenswert, dass die eDTU-Obergrenze keine Ressourcengewährleitung für eine Datenbank darstellt, sondern ein eDTU-Grenzwert ist, der ggf. erreicht werden kann. |
 
 
-## Hinzufügen von Datenbanken zu einem elastischen Datenbankpool
+## Hinzufügen von Datenbanken zu einem Pool und Entfernen elastischer Datenbanken aus einem Pool
 
 Nachdem der Pool erstellt wurde, können Sie Datenbank zum Pool hinzufügen oder daraus entfernen, indem Sie Datenbanken auf der Seite **Datenbanken hinzufügen** aktivieren oder deaktivieren.
+
+*Nach dem Erstellen eines Pools können Sie Transact-SQL auch zum Erstellen von neuen elastischen Datenbanken im Pool verwenden und vorhandene Datenbanken in und aus Pools verschieben. Weitere Informationen finden Sie unter [Referenz für Pools für elastische Datenbanken – Transact-SQL](sql-database-elastic-pool-reference.md#Transact-SQL).*
 
 
 ## Überwachen und Verwalten elastischer Datenbankpools
@@ -163,7 +165,7 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie die Daten
 
 - [Elastische SQL-Datenbankpools](sql-database-elastic-pool.md)
 - [Erstellen eines elastischen SQL-Datenbankpools mit PowerShell](sql-database-elastic-pool-powershell.md)
-- [Erstellen und Verwalten von SQL-Datenbanken mit C\#](sql-database-client-library.md)
+- [Erstellen und Verwalten von SQL-Datenbanken mit C#](sql-database-client-library.md)
 - [Referenz für elastische Datenbanken](sql-database-elastic-pool-reference.md)
 
 
@@ -179,4 +181,4 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie die Daten
 [9]: ./media/sql-database-elastic-pool-portal/pricing-tier.png
 [10]: ./media/sql-database-elastic-pool-portal/star.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

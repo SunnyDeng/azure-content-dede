@@ -1,22 +1,22 @@
 <properties 
-   pageTitle="StorSimple-Sicherheit | Microsoft Azure" 
-   description="In diesem Abschnitt werden die Sicherheits- und Datenschutzfunktionen zum Schutz Ihres StorSimple-Diensts und -Geräts sowie Ihrer Daten beschrieben." 
-   services="storsimple" 
-   documentationCenter="NA" 
-   authors="SharS" 
-   manager="AdinaH" 
-   editor=""/>
+   pageTitle="StorSimple-Sicherheit | Microsoft Azure"
+	description="In diesem Abschnitt werden die Sicherheits- und Datenschutzfunktionen zum Schutz Ihres StorSimple-Diensts und -Geräts sowie Ihrer lokalen Daten und Daten in der Cloud beschrieben."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="SharS"
+	manager="Carolz"
+	editor=""/>
 
 <tags
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD" 
-   ms.date="08/17/2015"
-   ms.author="v-sharos"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/26/2015"
+	ms.author="v-sharos"/>
 
-# StorSimple-Sicherheit 
+# StorSimple-Sicherheit und -Datenschutz
 
 ## Übersicht
 
@@ -253,4 +253,4 @@ Die folgenden Fragen und Antworten beziehen sich auf die Sicherheit und Microsof
 [Bereitstellen von StorSimple-Geräten](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

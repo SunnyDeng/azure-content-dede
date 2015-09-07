@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Azure Data Catalog – Was ist Data Catalog?"
-   description="Microsoft Azure Data Catalog ist ein vollständig verwalteter Clouddienst, der als Registrierungs- und Ermittlungssystem für die Datenquellen von Unternehmen dient. Azure Data Catalog enthält Funktionen, mit denen alle Benutzer – von Analysten über Datenwissenschaftler bis zu Entwicklern – Datenquellen registrieren, ermitteln, verstehen und nutzen können."
-   services="data-catalog"
-   documentationCenter=""
-   authors="steelanddata"
-   manager="NA"
-   editor=""
-   tags=""/>
+   pageTitle="Azure Data Catalog – Was ist der Data Catalog?"
+	description="Übersicht über Microsoft Azure Data Catalog, einschließlich seiner Funktionen und der Probleme, die er beheben soll. Azure Data Catalog enthält Funktionen, mit denen alle Benutzer – von Analysten über Datenwissenschaftler bis zu Entwicklern – Datenquellen registrieren, ermitteln, verstehen und nutzen können."
+	services="data-catalog"
+	documentationCenter=""
+	authors="steelanddata"
+	manager="NA"
+	editor=""
+	tags=""/>
 <tags
    ms.service="data-catalog"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-catalog"
-   ms.date="08/19/2015"
-   ms.author="maroche"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-catalog"
+	ms.date="08/21/2015"
+	ms.author="maroche"/>
 
 # Was ist Azure Data Catalog?
 
@@ -22,15 +22,15 @@ Microsoft **Azure Data Catalog** ist ein vollständig verwalteter Clouddienst, d
 
 ## Beschreibung des Problems – Motivation und Übersicht
 
-Das Ermitteln der Datenquellen von Unternehmen war bisher ein natürlicher Prozess, der auf „Stammeswissen“ basierte. Dies schafft für Unternehmen, die aus ihren Informationsressourcen den größtmöglichen Nutzen ziehen möchten, eine Vielzahl von Problemen.
+Das Ermitteln der Datenquellen von Unternehmen war bisher ein natürlicher Prozess, der auf „Stammeswissen“ basierte. Dies schafft für Unternehmen, die aus ihren Informationsassets den größtmöglichen Nutzen ziehen möchten, eine Vielzahl von Problemen.
 
 -	Benutzer wissen erst, dass Datenquellen vorhanden sind, wenn sie im Rahmen eines anderen Prozesses darauf stoßen. Es gibt keinen zentralen Speicherort, an dem Datenquellen registriert sind.
 -	Nur wenn ein Benutzer den Speicherort der Datenquelle kennt, kann er mit einer Clientanwendung eine Verbindung damit herstellen. Für Oberflächen zur Datennutzung ist es erforderlich, dass Benutzer die Verbindungszeichenfolge bzw. den Pfad kennen.
 -	Wenn ein Benutzer den Speicherort der Dokumentation für eine Datenquelle nicht kennt, kann er die beabsichtigte Verwendung der Daten nicht verstehen. Datenquellen und Dokumentation liegen an unterschiedlichen Orten vor und werden über unterschiedliche Umgebungen genutzt.
--	Wenn ein Benutzer Fragen zu einer Informationsressource hat, muss er den für die Daten verantwortlichen Experten bzw. das Team finden und diese Experten offline ansprechen. Es besteht keine explizite Verbindung zwischen Daten und den Personen, die dafür über Expertenwissen zur Nutzung verfügen.
+-	Wenn ein Benutzer Fragen zu einem Informationsasset hat, muss er den für die Daten verantwortlichen Experten bzw. das Team finden und diese Experten offline ansprechen. Es besteht keine explizite Verbindung zwischen Daten und den Personen, die dafür über Expertenwissen zur Nutzung verfügen.
 -  Ein Benutzer muss den Prozess zum Anfordern des Zugriff auf die Datenquelle verstehen. Mit der ermittelten Datenquelle und der dazugehörigen Dokumentation allein kann er nämlich noch nicht auf die benötigten Daten zugreifen.
 
-Dies sind die Herausforderungen für die Nutzer der Daten. Aber für Benutzer, die für die Erstellung und Pflege von Informationsressourcen verantwortlich sind, gelten ebenso besondere Herausforderungen.
+Dies sind die Herausforderungen für die Nutzer der Daten. Aber für Benutzer, die für die Erstellung und Pflege von Informationsassets verantwortlich sind, gelten ebenso besondere Herausforderungen.
 
 -	Das Versehen von Datenquellen mit beschreibenden Metadaten führt häufig nicht zum gewünschten Erfolg. Beschreibungen, die in der Datenquelle gespeichert sind, werden von Clientanwendungen meist ignoriert.
 -	Das Erstellen von Dokumentation für Datenquellen ist oft sinnlos. Die ständige Synchronisierung der Dokumentation mit der Datenquelle ist eine kontinuierliche Aufgabe, und Benutzer haben kein Vertrauen in die Dokumentation, da sie häufig als veraltet angesehen wird.
@@ -42,7 +42,7 @@ Zusammen stellen diese Probleme eine erhebliche Hürde für Unternehmen dar, die
 
 ## Dienstbeschreibung
 
-**Azure Data Catalog** wurde zur Lösung dieser Probleme konzipiert. Unternehmen können damit den größtmöglichen Nutzen aus ihren vorhandenen Informationsressourcen ziehen, indem sie die Daten leicht zugänglich und verständlich für Benutzer machen, die die Daten für ihren Bereich benötigen.
+**Azure Data Catalog** wurde zur Lösung dieser Probleme konzipiert. Unternehmen können damit den größtmöglichen Nutzen aus ihren vorhandenen Informationsassets ziehen, indem sie die Daten leicht zugänglich und verständlich für Benutzer machen, die die Daten für ihren Bereich benötigen.
 
 **Azure Data Catalog** stellt einen cloudbasierten Dienst bereit, unter dem Datenquellen registriert werden können. Die Daten verbleiben an ihrem vorhandenen Speicherort, aber eine Kopie der Metadaten wird **Azure Data Catalog** hinzugefügt – zusammen mit einem Verweis auf den Speicherort der Datenquelle. Diese Metadaten werden außerdem indiziert, damit jede Datenquelle per Suchfunktion leicht ermittelt werden kann und für die Benutzer verständlich ist, die sie ermitteln.
 
@@ -60,7 +60,7 @@ Der Registrierungsprozess umfasst drei grundlegende Schritte:
 2.	Auswählen zu registrierender Objekte: Der Benutzer wählt die Objekte am angegebenen Speicherort aus, die in **Azure Data Catalog** registriert werden sollen. Dies kann der vollständige Tabellensatz in allen Datenbanken oder eine speziell ausgewählte Teilmenge der Tabellen und Sichten sein.
 3.	Vollständige Registrierung: Der Benutzer schließt den Prozess ab, und das Tool für die Datenquellenregistrierung extrahiert die strukturellen Metadaten aus der Datenquelle und sendet sie an den **Azure Data Catalog**-Clouddienst.
 
-> [AZURE.NOTE]Als Vorschauversion unterstützt **Azure Data Catalog** derzeit die folgenden Datenquellen und Ressourcentypen:
+> [AZURE.NOTE]Als Vorschauversion unterstützt **Azure Data Catalog** derzeit die folgenden Datenquellen und Assettypen:
 
 - SQL Server-Tabelle
 - SQL Server-Ansicht
@@ -74,7 +74,7 @@ Der Registrierungsprozess umfasst drei grundlegende Schritte:
 - Azure Storage-Blob
 - Azure-Speicherverzeichnis
 
-Zusätzliche Datenquellen und Ressourcentypen werden während der **Azure Data Catalog**-Preview-Phase hinzugefügt.
+Zusätzliche Datenquellen und Assettypen werden während der **Azure Data Catalog**-Preview-Phase hinzugefügt.
 
 > [AZURE.IMPORTANT]Beim Registrieren einer Datenquelle in **Azure Data Catalog** werden die Daten nicht aus der Datenquelle kopiert, es sei denn, Sie wählen im Tool für die Datenquellenregistrierung die Option „Vorschau einfügen“. Bei der Registrierung werden Datenquellenmetadaten kopiert, keine Daten. Beispiele für Metadaten sind die Namen von Tabellen und anderen Datenquellenobjekten sowie die Namen und Datentypen von Spalten und anderen Datenquellenattributen. Die Metadaten enthalten auch den Speicherort der Datenquelle, damit Benutzer, die die Datenquelle mit **Azure Data Catalog** ermitteln, eine Verbindung damit herstellen können. Wenn Sie die Option „Vorschau einfügen“ wählen, werden mit dem Tool für die Registrierung von Datenquellen auch einige Datensätze nach **Azure Data Catalog** kopiert. Diese Datensätze werden Benutzern angezeigt, die die Datenquelle im **Azure Data Catalog**-Portal ermitteln.
 
@@ -86,7 +86,7 @@ Nachdem die Registrierung abgeschlossen ist, können die Datenquellen ermittelt 
 -	Die registrierten Datenquellen sind nach ihrer Ermittlung leichter verständlich. Die von Benutzern bereitgestellten Metadaten werden allen **Azure Data Catalog**-Benutzern angezeigt, die die mit Anmerkungen versehene Datenquelle aufrufen, damit zusätzlicher Kontext und zusätzliche Informationen vorhanden sind. Die meisten Datenquellen enthalten häufig keine aussagekräftigen Beschreibungen oder Dokumentation, und wenn dies doch einmal der Fall ist, liegt der Schwerpunkt häufig auf technischen DBA-Angaben oder Informationen für Datenbankentwickler. Indem Datenquellen in **Azure Data Catalog** mit Beschreibungen und Tags versehen werden, die für die Zielgruppen relevant sind, können Benutzer mit dazu beitragen, dass bei der Ermittlung die Details und die beabsichtigte Nutzung verstanden werden.
 -  Jede registrierte Datenquelle kann Informationen zur Zugriffsanforderung einschließen, sodass Benutzer vorhandene Prozesse einfach verstehen und ausführen können, um Zugriff auf die Datenquelle und ihre Daten anzufordern.
 
-> [AZURE.NOTE]Jeder **Azure Data Catalog**-Benutzer kann eigene Tags und Beschreibungen für Datenressourcen und Attribute hinzufügen. **Azure Data Catalog** verfolgt den Nutzen und die Quelle jeder Anmerkung und zeigt den Benutzer und das Datum an, an dem die Anmerkung hinzugefügt wurde. Mit diesem Crowdsourcing-Ansatz für Metadaten wird sichergestellt, dass jeder Benutzer mit Bezug zu den Daten und ihrer Nutzung Meinungen und Ressourcen mit der gesamten Community teilen kann.
+> [AZURE.NOTE]Jeder **Azure Data Catalog**-Benutzer kann eigene Tags und Beschreibungen für Datenassets und Attribute hinzufügen. **Azure Data Catalog** verfolgt den Nutzen und die Quelle jeder Anmerkung und zeigt den Benutzer und das Datum an, an dem die Anmerkung hinzugefügt wurde. Mit diesem Crowdsourcing-Ansatz für Metadaten wird sichergestellt, dass jeder Benutzer mit Bezug zu den Daten und ihrer Nutzung Meinungen und Ressourcen mit der gesamten Community teilen kann.
 
 ## Untersuchen, Ermitteln und Verstehen
 
@@ -122,4 +122,4 @@ Das ultimative Ziel der Datenermittlung besteht darin, die erforderlichen Daten 
 
 > [AZURE.NOTE]Für die Vorschauversion von Azure Data Catalog werden nur Microsoft Excel und der SQL Server Reporting Services-Berichts-Manager direkt unterstützt. Beide Optionen sind im Menü **Öffnen in** verfügbar.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

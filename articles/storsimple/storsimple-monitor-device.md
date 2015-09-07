@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Verwenden des StorSimple Manager-Diensts zum Überwachen Ihres StorSimple-Geräts | Microsoft Azure"
-   description="Beschreibt, wie Sie den StorSimple Manager-Dienst verwenden, um E/A-Leistung, Kapazitätsauslastung, Netzwerkdurchsatz und Geräteleistung zu überwachen."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+	description="Beschreibt, wie Sie den StorSimple Manager-Dienst verwenden, um E/A-Leistung, Kapazitätsauslastung, Netzwerkdurchsatz und Geräteleistung zu überwachen."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/14/2015"
-   ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/25/2015"
+	ms.author="alkohli"/>
 
 # Verwenden des StorSimple Manager-Diensts zum Überwachen Ihres StorSimple-Geräts 
 
@@ -61,7 +61,7 @@ Die primäre, die Cloud- und die Gerätespeicherkapazität kann wie folgt beschr
 	![Kapazitätsauslastung des Cloudspeichers nach einer Cloudmomentaufnahme](./media/storsimple-monitor-device/StorSimple_CloudCapacityUtil_For_AllVolumeContainers1M.png)
 
 
-- **Kapazitätsauslastung Gerätespeicher** zeigt die Gesamtauslastung des Geräts an. Diese Zahl ist höher als die Auslastung des Primärspeichers, da sie auch die lineare SSD-Schicht umfasst. Diese Schicht enthält eine Menge an Daten, die auch auf den anderen Schichten des Geräts vorhanden ist. Die Kapazität der linearen SSD-Schicht ist zyklisch angelegt, d. h. wenn neue Daten eintreffen, werden die alten Daten in die Cloud verschoben (und zu diesem Zeitpunkt dedupliziert und komprimiert).
+- **Kapazitätsauslastung Gerätespeicher** zeigt die Gesamtauslastung des Geräts an. Diese Zahl ist höher als die Auslastung des Primärspeichers, da sie auch die lineare SSD-Schicht umfasst. Diese Schicht enthält eine Menge an Daten, die auch auf den anderen Schichten des Geräts vorhanden ist. Die Kapazität der linearen SSD-Schicht ist zyklisch angelegt, d. h. wenn neue Daten eintreffen, werden die alten Daten in die HDD-Schicht (und zu diesem Zeitpunkt dedupliziert und komprimiert) und anschließend in die Cloud verschoben.
 
 	Im Lauf der Zeit wird sich die Kapazitätsauslastung des Primärspeichers und des Geräts wahrscheinlich parallel erhöhen, bis die ersten Daten in die Cloud verschoben werden. Zu diesem Zeitpunkt wird die Kapazitätsauslastung des Geräts vermutlich auf dem gleichen Niveau bleiben, die Kapazitätsauslastung des Primärspeichers wird sich jedoch erhöhen, da mehr Daten geschrieben werden.
 
@@ -93,4 +93,4 @@ Das Diagramm unten stellt den Netzwerkdurchsatz für „Data 0“ und „Data 4�
 
 [Informationen zur Verwendung des StorSimple Manager-Dienstdashboards für Geräte](storsimple-device-dashboard.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Partitionieren von Service Fabric-Diensten"
-   description="Beschreibt, wie Sie die Service Fabric-Dienste partitionieren."
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="appi101"
-   manager="timlt"
-   editor=""/>
+	description="Beschreibt, wie Sie die Service Fabric-Dienste partitionieren."
+	services="service-fabric"
+	documentationCenter=".net"
+	authors="appi101"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="04/13/2015"
-   ms.author="aprameyr"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/26/2015"
+	ms.author="aprameyr"/>
 
 # Partitionieren von Service Fabric-Diensten
 Service Fabric erleichtert das Entwickeln skalierbare zustandsbehafteter Dienste, indem es die Partitionierung des Dienstzustands ermöglicht und jede Partition auf einer Teilmenge des Gesamtzustands ausgeführt wird. Jede Partition wird als Einheit behandelt, die mit [hoher Verfügbarkeit](service-fabric-availability-services.md) bereitgestellt wird. Die Replikate der Partitionen werden auf den Knoten im Cluster verteilt und ausgeglichen.
@@ -54,4 +54,4 @@ Informationen zu den Service Fabric-Konzepten finden Sie hier:
 - [Skalierbarkeit der Service Fabric-Dienste](service-fabric-concepts-scalability.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

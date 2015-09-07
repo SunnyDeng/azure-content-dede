@@ -1,6 +1,6 @@
 <properties
-	pageTitle="In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen"
-	description="Hier finden Sie die wichtigsten Artikel zum Einrichten einer Entwicklungs-/Test- oder Produktions-SharePoint 2013-Farm in Microsoft Azure-Infrastrukturdiensten."
+	pageTitle="SharePoint Server 2013-Farmen in Azure | Microsoft Azure"
+	description="In den hier genannten Artikeln erfahren Sie, wie Sie eine Entwicklungs-/Testumgebung oder eine SharePoint Server 2013-Produktionsfarm in Microsoft Azure einrichten."
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -63,4 +63,4 @@ Zusätzliche Informationen und Konfigurationen zu SharePoint in Azure finden Sie
 
 - [Bereitstellen von Office 365-Verzeichnissynchronisierung (DirSync) in Microsoft Azure](https://technet.microsoft.com/library/dn635310.aspx)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

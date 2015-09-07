@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Übersicht über die Konfiguration von Service Fabric Reliable Actors vom Typ &quot;ReliableDictionaryActorStateProvider&quot;"
-   description="Erfahren Sie mehr über das Konfigurieren von statusbehafteten Service Fabric Actors vom Typ &quot;ReliableDictionaryActorStateProvider&quot;"
-   services="Service-Fabric"
-   documentationCenter=".net"
-   authors="sumukhs"
-   manager="vipulm"
-   editor=""/>
+   pageTitle="Übersicht über die Konfiguration von Service Fabric Reliable Actors vom Typ ReliableDictionaryActorStateProvider"
+	description="Erfahren Sie mehr über das Konfigurieren von statusbehafteten Service Fabric Actors vom Typ ReliableDictionaryActorStateProvider"
+	services="Service-Fabric"
+	documentationCenter=".net"
+	authors="sumukhs"
+	manager="anuragg"
+	editor=""/>
 
 <tags
    ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="04/20/2015"
-   ms.author="sumukhs"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/26/2015"
+	ms.author="sumukhs"/>
 
 # Konfigurieren von Reliable Actors – ReliableDictionaryActorStateProvider
 Die Standardkonfiguration von "ReliableDictionaryActorStateProvider" kann geändert werden, indem die Datei "settings.xml", die im Stammverzeichnis des Visual Studio-Pakets im Ordner "Config" generiert wurde, für den betreffenden Actor geändert wird.
@@ -88,4 +88,4 @@ Die Einstellung "MaxRecordSizeInKB" definiert die maximale Größe eines Datensa
 Die Einstellungen "SharedLogId" und "SharedLogPath" werden immer zusammen verwendet. Sie ermöglichen einem Dienst, ein separates freigegebenes Protokoll aus dem freigegebenen Standardprotokoll für den Knoten zu verwenden. Zur Optimierung der Effizienz sollten so viele Dienste wie möglich dasselbe freigegebene Protokoll angeben. Freigegebene Protokolldateien sollten auf Datenträgern gespeichert werden, die ausschließlich für die freigegebene Protokolldatei verwendet werden. Dies reduziert Konflikte durch die Bewegungen des Lesekopfs. Eine Änderung sollte nur in seltenen Fällen erforderlich sein.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

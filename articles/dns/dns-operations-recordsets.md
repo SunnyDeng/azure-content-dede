@@ -1,22 +1,27 @@
 <properties 
-   pageTitle="Verwalten von DNS-Datensatzgruppen und Einträgen in Azure DNS | Microsoft Azure" 
-   description="Verwalten von DNS-Datensatzgruppen und Einträgen in Azure DNS, wenn Sie Ihre Domäne in Azure DNS hosten. Alle PowerShell-Befehle für Vorgänge für Datensatzgruppen und Einträge." 
-   services="dns" 
-   documentationCenter="na" 
-   authors="joaoma" 
-   manager="Adinah" 
-   editor=""/>
+   pageTitle="Verwalten von DNS-Datensatzgruppen und Einträgen in Azure DNS | Microsoft Azure"
+	description="Verwalten von DNS-Datensatzgruppen und Einträgen in Azure DNS, wenn Sie Ihre Domäne in Azure DNS hosten. Alle PowerShell-Befehle für Vorgänge für Datensatzgruppen und Einträge."
+	services="dns"
+	documentationCenter="na"
+	authors="joaoma"
+	manager="Adinah"
+	editor=""/>
 
 <tags
    ms.service="dns"
-   ms.devlang="en"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
-   ms.date="08/02/2015"
-   ms.author="joaoma"/>
+	ms.devlang="en"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/02/2015"
+	ms.author="joaoma"/>
 
 # Verwalten von DNS-Einträgen
+
+
+> [AZURE.SELECTOR]
+- [Azure CLI](dns-operations-recordsets-cli.md)
+- [Azure Powershell](dns-operations-recordsets.md)
 
 
 Diese Anleitung zeigt, wie Sie Datensatzgruppen und Einträge für die DNS-Zone verwalten.
@@ -266,4 +271,4 @@ Das Datensatzgruppenobjekt kann auch weitergeleitet werden, anstatt als Paramete
 [Erste Schritte beim Erstellen von Datensatzgruppen und Einträgen](../dns-getstarted-create-recordset)<BR> [Durchführen von Vorgängen für DNS-Zonen](../dns-operations-dnszones)<BR> [Automatisieren von Vorgängen mit dem .NET SDK](../dns-sdk)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

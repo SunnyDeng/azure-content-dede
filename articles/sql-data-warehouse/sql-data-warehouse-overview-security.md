@@ -1,20 +1,20 @@
 <properties
    pageTitle="Sichern einer Datenbank in SQL Data Warehouse | Microsoft Azure"
-   description="Tipps für das Sichern einer Datenbank in Azure SQL Data Warehouse für die Entwicklung von Lösungen."
-   services="sql-data-warehouse"
-   documentationCenter="NA"
-   authors="sahaj08"
-   manager="barbkess"
-   editor=""/>
+	description="Tipps für das Sichern einer Datenbank in Azure SQL Data Warehouse für die Entwicklung von Lösungen."
+	services="sql-data-warehouse"
+	documentationCenter="NA"
+	authors="sahaj08"
+	manager="barbkess"
+	editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="06/22/2015"
-   ms.author="sahajs"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-services"
+	ms.date="06/22/2015"
+	ms.author="sahajs"/>
 
 # Sichern einer Datenbank in SQL Data Warehouse
 
@@ -58,6 +58,28 @@ Es gibt Möglichkeiten, weiter einzuschränken, was für einen Benutzer mit eine
 Die Verwaltung von Datenbanken und logischen Servern über das Azure-Verwaltungsportal oder mit der Azure-Ressourcen-Manager-API wird durch die Rollenzuweisungen Ihres Portal-Benutzerkontos gesteuert. Weitere Informationen zu diesem Thema finden Sie unter [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal][].
 
 
+
+## Verschlüsselung
+
+Durch [Transparent Data Encryption][] kann die Azure SQL-Datenbank zum Schutz Ihrer Daten beitragen, indem ruhende oder in Datenbankdateien und Sicherungen gespeicherte Daten verschlüsselt werden. Um Ihre Datenbank zu verschlüsseln, stellen Sie als Datenbankbesitzer eine Verbindung her und führen Folgendes aus:
+
+
+```
+
+ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
+
+```
+
+Sie können Transparent Data Encryption auch über die Datenbankeinstellungen im [Azure-Portal][] aktivieren.
+
+
+
+## Überwachung
+
+Die Überwachung und Nachverfolgung von Datenbankereignissen kann Sie bei der Einhaltung von gesetzlichen Bestimmungen und der Erkennung von verdächtigen Aktivitäten unterstützen. Mit SQL Data Warehouse-Überwachung können Sie Ereignisse in der Datenbank in einem Überwachungsprotokoll in Ihrem Azure-Speicherkonto aufzeichnen. SQL Data Warehouse-Überwachung kann auch in Microsoft Power BI integriert werden, um detaillierte Berichte und Analysen zu ermöglichen. Weitere Informationen finden Sie unter [Erste Schritte mit der SQL-Datenbanküberwachung][].
+
+
+
 ## Nächste Schritte
 Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
@@ -73,9 +95,11 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank]: https://msdn.microsoft.com/library/ee336235.aspx
 [Berechtigungen]: https://msdn.microsoft.com/library/ms191291.aspx
 [Gespeicherte Prozeduren]: https://msdn.microsoft.com/library/ms190782.aspx
-[Transparent Data Encryption]: http://go.microsoft.com/fwlink/?linkid=526242&clcid=0x409
+[Transparent Data Encryption]: http://go.microsoft.com/fwlink/?LinkId=526242
+[Erste Schritte mit der SQL-Datenbanküberwachung]: sql-database-auditing-get-started.md
+[Azure-Portal]: https://portal.azure.com/
 
 <!--Other Web references-->
 [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal]: http://azure.microsoft.com/documentation/articles/role-based-access-control-configure.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

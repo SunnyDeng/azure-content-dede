@@ -1,25 +1,25 @@
 <properties 
    pageTitle="Erstellen eines virtuellen Netzwerks (VNet)"
-   description="Hier erfahren Sie, wie Sie ein virtuelles Netzwerk (VNet) erstellen."
-   services="virtual-network"
-   documentationCenter="na"
-   authors="telmosampaio"
-   manager="carolz"
-   editor="tysonn" />
+	description="Hier erfahren Sie, wie Sie ein virtuelles Netzwerk (VNet) erstellen."
+	services="virtual-network"
+	documentationCenter="na"
+	authors="telmosampaio"
+	manager="carolz"
+	editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="06/08/2015"
-   ms.author="telmos" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="06/08/2015"
+	ms.author="telmos"/>
 
 # Erstellen eines virtuellen Netzwerks (VNet)
 
 Wenn Sie ein virtuelles Netzwerk (VNet) erstellen, können Ihre Dienste und VMs im VNet sicher miteinander kommunizieren, ohne über das Internet gehen zu müssen. Das Erstellen eines Azure VNet ist ein relativ schneller und einfacher Prozess, wenn das VNet nicht mit anderen VNets oder Ihrem lokalen Netzwerk verbunden werden soll, da Sie in diesem Fall weder ein VPN-Gerät abrufen und konfigurieren noch die IP-Adressen für andere VNets oder das lokale Netzwerk koordinieren müssen.
 
->[AZURE.WARNING]Verwenden Sie dieses Verfahren nicht zum Erstellen eines VNet, das später mit anderen VNets oder Ihrem lokalen Netzwerk verbunden werden soll. Informationen zum Erstellen einer sicheren standortübergreifenden Verbindung oder Hybridverbindung finden Sie unter [Informationen zur sicheren standortübergreifenden Konnektivität für virtuelle Netzwerke](https://msdn.microsoft.com/library/azure/dn133798.aspx). Informationen Erstellen eines mit einem anderen VNet verbundenen VNet finden Sie unter [Konfigurieren einer Verbindung zwischen VNets](../vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md).
+>[AZURE.WARNING]Verwenden Sie dieses Verfahren nicht zum Erstellen eines VNet, das später mit anderen VNets oder Ihrem lokalen Netzwerk verbunden werden soll. Informationen zum Erstellen einer sicheren standortübergreifenden Verbindung oder Hybridverbindung finden Sie unter [Informationen zur sicheren standortübergreifenden Konnektivität für virtuelle Netzwerke](vpn-gateway-cross-premises-options.md). Informationen Erstellen eines mit einem anderen VNet verbundenen VNet finden Sie unter [Konfigurieren einer Verbindung zwischen VNets](../vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md).
 
 ## Konfigurieren des VNet
 
@@ -35,7 +35,7 @@ Wenn Sie ein virtuelles Netzwerk (VNet) erstellen, können Ihre Dienste und VMs 
 
 	- **Ort **: Wählen Sie den Ort (die Region) in der Dropdownliste aus. Der Ort steht in direkter Beziehung zu dem physischen Standort (Region), an dem sich Ihre Ressourcen (VMs) befinden sollen, wenn Sie sie in diesem VNet bereitstellen. Wenn sich Ihre VMs z. B. physisch in *USA, Osten* befinden sollen, wählen Sie diese Region aus. Sie können die Ihrem VNet zugeordnete Region nach dem Erstellen nicht mehr ändern.
 
-1. Nehmen Sie auf der Seite **DNS-Server und VPN-Konnektivität** keine Änderungen vor. Wechseln Sie einfach durch Klicken auf den Pfeil zur nächsten Seite. Standardmäßig verwendet Azure eine grundlegende Namensauflösung für Ihr VNet. Möglicherweise sind Ihre Anforderungen für die Namensauflösung komplexer, sodass die grundlegende Namensauflösung von Azure nicht eingesetzt werden kann. In diesem Fall können Sie Ihrem VNet später einen virtuellen Computer mit DNS hinzufügen. Weitere Informationen zur Azure-Namensauflösung und DNS finden Sie unter [Namensauflösung (DNS)](https://msdn.microsoft.com/library/azure/jj156088.aspx).
+1. Nehmen Sie auf der Seite **DNS-Server und VPN-Konnektivität** keine Änderungen vor. Wechseln Sie einfach durch Klicken auf den Pfeil zur nächsten Seite. Standardmäßig verwendet Azure eine grundlegende Namensauflösung für Ihr VNet. Möglicherweise sind Ihre Anforderungen für die Namensauflösung komplexer, sodass die grundlegende Namensauflösung von Azure nicht eingesetzt werden kann. In diesem Fall können Sie Ihrem VNet später einen virtuellen Computer mit DNS hinzufügen. Weitere Informationen zur Azure-Namensauflösung und DNS finden Sie unter [Namensauflösung (DNS)](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
 1. Auf der Seite **Virtuelle Netzwerkadressräume** geben Sie den Adressraum ein, den Sie für dieses VNet verwenden möchten. Sofern Sie keine bestimmte interne IP-Adresse für Ihre VMs benötigen oder ein spezifisches Subnetz für VMs erstellen möchten, die eine statische DIP erhalten, müssen Sie auf dieser Seite keine Änderungen vornehmen. Wenn Sie mehrere Subnetze erstellen möchten, klicken Sie auf dieser Seite auf **Subnetz hinzufügen**.
 
@@ -66,4 +66,4 @@ Nachdem Sie Ihr VNet erstellt haben, können Sie ihm neue VMs hinzufügen. Es is
 [Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

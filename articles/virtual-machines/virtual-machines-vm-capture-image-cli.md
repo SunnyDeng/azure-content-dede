@@ -4,7 +4,7 @@
 	services="virtual-machines"
 	documentationCenter=""
 	authors="karthmut"
-	manager="madhana"
+	manager="timlt"
 	editor="tysonn"/>
 
 <tags
@@ -162,4 +162,4 @@ Weitere Informationen und zusätzliche Befehlen finden Sie in der [Azure-CLI-Dok
 [Anfügen eines Datenträgers an einen virtuellen Computer]: storage-windows-attach-disk.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

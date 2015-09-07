@@ -5,8 +5,7 @@
 	documentationCenter="mobile"
 	authors="piyushjo"
 	manager="dwrede"
-	editor="" />
-
+	editor=""/>
 
 <tags
 	ms.service="mobile-engagement"
@@ -15,8 +14,7 @@
 	ms.devlang="objective-c"
 	ms.topic="article"
 	ms.date="08/05/2015"
-	ms.author="MehrdadMzfr" />
-
+	ms.author="MehrdadMzfr"/>
 
 #iOS SDK für Azure Mobile Engagement
 
@@ -34,9 +32,9 @@ Klicken Sie, um den [SDK-Inhalt](mobile-engagement-ios-sdk-content.md) anzuzeige
 
 ##Versionshinweise
 
-##3\.0.0 (05.08.2015)
+###3\.1.0 (26.08.2015)
 
--   Mobile Engagement verwendet stille Pushbenachrichtigungen.
+-   Behebung von iOS 9-Kompatibilitätsproblemen mit einer Drittanbieterbibliothek. Beim Senden von Umfrageergebnissen, Anwendungsinformationen oder extrahierten Daten wurden Abstürze verursacht.
 
 Eine frühere Version finden Sie unter [Vollständige Versionshinweise](mobile-engagement-ios-release-notes.md)
 
@@ -48,7 +46,17 @@ Möglicherweise müssen Sie mehrere Verfahren ausführen, wenn Sie mehrere SDK-V
 
 Für jede neue SDK-Version müssen Sie zunächst die Ordner "EngagementSDK" und "EngagementReach" ersetzen (entfernen und in Xcode neu importieren).
 
-###Version 2.0.0 bis 2.1.0
-Keiner.
+###Von 2.0.0 zu 3.0.0
+Unterstützung für iOS 4.X eingestellt. Ab dieser Version muss das Bereitstellungsziel Ihrer Anwendung mindestens über iOS 6 verfügen.
 
-<!---HONumber=August15_HO6-->
+Wenn Sie Reach in Ihrer Anwendung verwenden, müssen Sie den `remote-notification`-Wert zum `UIBackgroundModes`-Array in Ihrer Datei "Info.plist" hinzufügen, um Remotebenachrichtigungen zu erhalten.
+
+Die Methode `application:didReceiveRemoteNotification:` muss in Ihrem Anwendungsdelegaten durch `application:didReceiveRemoteNotification:fetchCompletionHandler:` ausgetauscht werden.
+
+"AEPushDelegate.h" ist eine veraltete Schnittstelle, und Sie müssen alle Verweise darauf entfernen. Dies umfasst das Entfernen von `[[EngagementAgent shared] setPushDelegate:self]` und der Delegatmethoden aus Ihrem Anwendungsdelegaten:
+
+	-(void)willRetrieveLaunchMessage;
+	-(void)didFailToRetrieveLaunchMessage;
+	-(void)didReceiveLaunchMessage:(AEPushMessage*)launchMessage;
+
+<!---HONumber=August15_HO9-->

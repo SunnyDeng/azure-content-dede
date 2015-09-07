@@ -1,9 +1,4 @@
-Für das über das Portal heruntergeladene Serverprojekt wurden bereits Pushbenachrichtigungen aktiviert.
 
-Sie können im ASP.NET-Projekt Folgendes überprüfen:
+>[AZURE.TIP]Das Pushbenachrichtigungs-Erweiterungspaket ist im Schnellstart-Erweiterungspaket enthalten. Für das Serverprojekt, das Sie über das Portal heruntergeladen haben, sind Pushbenachrichtigungen bereits aktiviert. Informationen dazu, wie Sie Pushbenachrichtigungen installieren und initialisieren, wenn Sie die Schnellstarterweiterung nicht verwenden, finden Sie unter [Hinzufügen von Pushbenachrichtigungen zu einem Serverprojekt](../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#how-to-add-push-notifications-to-a-server-project).
 
-* Das NuGet-Paket `Microsoft.Azure.Mobile.Server.Notifications` ist installiert.
-
-* In der Datei "WebApiConfig.cs" wird die`UseDefaultConfiguration()`-Methode für das MobileAppConfiguration-Objekt aufgerufen. Dieses wiederum ruft die `AddPushNotifications()`-Erweiterungsmethode, auf, die von dem oben genannten NuGet-Paket bereitgestellt wird.
-
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

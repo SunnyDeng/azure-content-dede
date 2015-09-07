@@ -1,23 +1,25 @@
 <properties 
-   pageTitle="Was sind die Komponenten von StorSimple? | Microsoft Azure" 
-   description="Beschreibt die StorSimple-Geräte, -Dienste und -Technologien." 
-   services="storsimple" 
-   documentationCenter="NA" 
-   authors="SharS" 
-   manager="AdinaH" 
-   editor=""/>
+   pageTitle="Was sind die Komponenten von StorSimple? | Microsoft Azure"
+	description="Beschreibt das StorSimple-Gerät, das virtuelle Gerät, Dienste und Verwaltungstechnologien und definiert in der Lösung verwendete wichtige Begriffe."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="SharS"
+	manager="AdinaH"
+	editor=""/>
 
 <tags
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD" 
-   ms.date="08/13/2015"
-   ms.author="v-sharos"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/26/2015"
+	ms.author="v-sharos"/>
 
 
-# Was sind die Komponenten von StorSimple? 
+# Informationen zu den Komponenten von StorSimple und ihrer Funktionsweise 
+
+## Übersicht
 
 Willkommen bei Microsoft Azure StorSimple, einer integrierten Speicherlösung, die Speicheraufgaben zwischen lokalen Geräten und Microsoft Azure-Cloud-Speicher verwaltet. StorSimple ist darauf ausgelegt, Speicherkosten zu senken, die Speicherverwaltung zu vereinfachen, die Fähigkeiten zur Notfallwiederherstellung und deren Effizienz zu verbessern und Datenmobilität zu ermöglichen.
 
@@ -40,7 +42,7 @@ Zum StorSimple-Gerät gehören Solid-State-Laufwerke (SSDs) und Festplattenlaufw
 
 Es ist nur ein Controller gleichzeitig aktiv. Wenn der aktive Controller ausfällt, wird automatisch der zweite Controller aktiviert.
 
-Weitere Informationen finden Sie unter [StorSimple-Hardwarekomponenten und Status](storsimple-monitor-hardware-status.md).
+Weitere Informationen finden Sie unter [StorSimple-Hardwarekomponenten und -Status](storsimple-monitor-hardware-status.md).
 
 ## StorSimple – Virtuelles Gerät
 
@@ -167,7 +169,7 @@ Vor dem Bereitstellen Ihrer Microsoft Azure StorSimple-Projektmappe, empfehlen w
 | ------------------------------ | ---------------- |
 | Zugriffssteuerungsdatensätze (Access Control Record, ACR) | Ein Datensatz, der einem Volume auf dem Microsoft Azure StorSimple-Gerät zugeordnet ist, durch den festgelegt wird, welche Hosts eine Verbindung mit diesem herstellen können. Die Feststellung basiert auf den qualifizierten iSCSI-Namen (IQN) der Hosts (im ACR enthalten), die eine Verbindung mit dem StorSimple-Gerät herstellen.|
 | AES-256 | Ein erweiterter 256-Bit-Verschlüsselungsalgorithmus (Advanced Encryption Standard, AES) zum Verschlüsseln von Daten, die aus der und in die Cloud verschoben werden. |
-| Größe der Zuordnungseinheiten (Allocation Unit Size, AUS) | Die kleinste Menge an Speicherplatz, die zum Speichern einer Datei in Windows-Dateisystemen zugeordnet werden kann. Ist eine Dateigröße kein entsprechendes Vielfaches der Clustergröße, muss zusätzlicher Speicherplatz zum Speichern der Datei verwendet werden (bis zum nächsten Vielfachen der Clustergröße). Dies führt zu verlorenem Speicherplatz und zur Fragmentierung der Festplatte. <br> Die empfohlene AUS für Azure StorSimple-Volumes beträgt 64 KB, da diese Größe gut mit den Deduplizierungsalgorithmen funktioniert.|
+| Größe der Zuordnungseinheiten (Allocation Unit Size, AUS) | Die kleinste Menge an Speicherplatz, die zum Speichern einer Datei in Windows-Dateisystemen zugeordnet werden kann. Ist eine Dateigröße kein entsprechendes Vielfaches der Clustergröße, muss zusätzlicher Speicherplatz zum Speichern der Datei verwendet werden (bis zum nächsten Vielfachen der Clustergröße). Dies führt zu verlorenem Speicherplatz und zur Fragmentierung der Festplatte. <br>Die empfohlene AUS für Azure StorSimple-Volumes beträgt 64 KB, da diese Größe gut mit den Deduplizierungsalgorithmen funktioniert.|
 | Automatische Speicherstaffelung | Automatisches Verschieben von weniger aktiven Daten auf eine Ebene in der Cloud mit anschließender Verwaltung des gesamten Speichers über eine zentrale Benutzeroberfläche.|
 | Sicherungskatalog | Eine Auflistung von Backups, in der Regel verknüpft durch den Anwendungstyp, der verwendet wurde. Diese Auflistung wird auf der Seite "Sicherungskatalog" der Benutzeroberfläche des StorSimple Manager-Diensts angezeigt.|
 | Sicherungskatalogdatei | Eine Datei mit einer Liste von verfügbaren Momentaufnahmen, die derzeit in der Sicherungsdatenbank von StorSimple Snapshot Manager gespeichert sind. |
@@ -226,4 +228,4 @@ Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

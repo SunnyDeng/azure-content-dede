@@ -1,21 +1,19 @@
 <properties 
    pageTitle="Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung."
-   description="Analysiert die Unterschiede und Gemeinsamkeiten zwischen den beiden zurzeit von Azure angebotenen Warteschlangentypen."
-   services="service-bus"
-   documentationCenter="na"
-   authors="sethmanheim"
-   manager="timlt"
-   editor="tysonn" />
-
+	description="Analysiert die Unterschiede und Gemeinsamkeiten zwischen den beiden zurzeit von Azure angebotenen Warteschlangentypen."
+	services="service-bus"
+	documentationCenter="na"
+	authors="sethmanheim"
+	manager="timlt"
+	editor="tysonn"/>
 <tags 
    ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="05/21/2015"
-   ms.author="sethm" />
-
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="tbd"
+	ms.date="08/25/2015"
+	ms.author="sethm"/>
 
 # Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung.
 
@@ -89,49 +87,17 @@ In diesem Abschnitt werden einige der grundlegenden Warteschlangenfunktionen ver
 
 |Vergleichskriterien|Azure-Warteschlangen|Service Bus-Warteschlangen|
 |---|---|---|
-|Reihenfolgengarantie|**Nein** <br/>
-<br>Weitere Informationen finden Sie in der ersten Anmerkung im Abschnitt "Weitere Informationen".</br>|**Ja – First-In-First-Out (FIFO)**<br/>
-<br>(durch Verwendung von Messagingsitzungen)|
-|Zustellungsgarantie|**At-Least-Once**|**At-Least-Once**<br/>
-<br/>
-\*\*At-Most-Once\*\*|
-|Unterstützung von Transaktionen|**Nein**|**Ja**<br/>
-<br/>
-(durch Verwendung lokaler Transaktionen)|
-|Empfangsverhalten|**Nicht blockierend**<br/>
-<br/>
-(wird sofort beendet, wenn keine neue Nachricht gefunden wird)|**Blockieren mit/ohne Timeout**<br/>
-<br/>
-(bietet ein langes Abrufintervall bzw. die ["Comet-Technik"](http://go.microsoft.com/fwlink/?LinkId=613759))<br/>
-<br/>
-\*\*Nicht blockierend\*\*<br/>
-<br/>
-(nur durch Verwendung .NET-verwalteter APIs)|
-|API im Pushstil|**Nein**|**Ja**<br/>
-<br/>
-[OnMessage](https://msdn.microsoft.com/library/jj908682.aspx)- und [OnMessage-Sitzungs](https://msdn.microsoft.com/library/dn790528.aspx)-API (.NET).|
-|Empfangsmodus|**Peek & Lease**|**Peek & Lock**<br/>
-<br/>
-\*\*Receive & Delete\*\*|
+|Reihenfolgengarantie|**Nein** <br/><br>Weitere Informationen finden Sie in der ersten Anmerkung im Abschnitt "Weitere Informationen".</br>|**Ja – First-In-First-Out (FIFO)**<br/><br>(durch Verwendung von Messagingsitzungen)|
+|Zustellungsgarantie|**At-Least-Once**|**At-Least-Once**<br/><br/>**At-Most-Once**|
+|Unterstützung von Transaktionen|**Nein**|**Ja**<br/><br/>(durch Verwendung lokaler Transaktionen)|
+|Empfangsverhalten|**Nicht blockierend**<br/><br/>(wird sofort beendet, wenn keine neue Nachricht gefunden wird)|**Blockieren mit/ohne Timeout**<br/><br/>(bietet ein langes Abrufintervall bzw. die ["Comet-Technik"](http://go.microsoft.com/fwlink/?LinkId=613759))<br/><br/>**Nicht blockierend**<br/><br/>(nur durch Verwendung .NET-verwalteter APIs)|
+|API im Pushstil|**Nein**|**Ja**<br/><br/>[OnMessage](https://msdn.microsoft.com/library/jj908682.aspx)- und [OnMessage-Sitzungs](https://msdn.microsoft.com/library/dn790528.aspx)-API (.NET).|
+|Empfangsmodus|**Peek & Lease**|**Peek & Lock**<br/><br/>**Receive & Delete**|
 |Exklusiver Zugriffsmodus|**Leasebasiert**|**Sperrenbasiert**|
-|Lease-/Sperrdauer|**30 Sekunden (Standard)**<br/>
-<br/>
-\*\*7 Tage (maximal)\*\* (Sie können eine Nachrichtenlease mithilfe der [UpdateMessage](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx)-API erneuern oder freigeben.)|**60 Sekunden (Standard)**<br/>
-<br/>
-Eine Nachrichtensperre kann mit der [RenewLock](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx)-API verlängert werden.|
-|Lease-/Sperrengranularität|**Nachrichtenebene**<br/>
-<br/>
-(Jede Nachricht kann einen anderen Timeoutwert aufweisen, den Sie nach Bedarf bei der Verarbeitung der Nachricht mithilfe der [UpdateMessage](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx)-API aktualisieren können.)|**Warteschlangenebene**<br/>
-<br/>
-(Jede Warteschlange weist eine Sperrengranularität auf, die auf alle enthaltenen Nachrichten angewendet wird; die Sperre kann jedoch mit der [RenewLock](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx)-API verlängert werden.)|
-|Batchempfang|**Ja**<br/>
-<br/>
-(explizit angebende Nachrichtenanzahl beim Abrufen von Nachrichten, bis maximal 32 Nachrichten)|**Ja**<br/>
-<br/>
-(implizites Aktivieren einer PreFetch-Eigenschaft oder explizites Aktivieren durch Verwendung von Transaktionen)|
-|Batchversand|**Nein**|**Ja**<br/>
-<br/>
-(durch Verwendung von Transaktionen oder clientseitiger Batchverarbeitung)|
+|Lease-/Sperrdauer|**30 Sekunden (Standard)**<br/><br/>**7 Tage (maximal)** (Sie können eine Nachrichtenlease mithilfe der [UpdateMessage](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx)-API erneuern oder freigeben.)|**60 Sekunden (Standard)**<br/><br/>Eine Nachrichtensperre kann mit der [RenewLock](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx)-API verlängert werden.|
+|Lease-/Sperrengranularität|**Nachrichtenebene**<br/><br/>(Jede Nachricht kann einen anderen Timeoutwert aufweisen, den Sie nach Bedarf bei der Verarbeitung der Nachricht mithilfe der [UpdateMessage](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.updatemessage.aspx)-API aktualisieren können.)|**Warteschlangenebene**<br/><br/>(Jede Warteschlange weist eine Sperrengranularität auf, die auf alle enthaltenen Nachrichten angewendet wird; die Sperre kann jedoch mit der [RenewLock](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.brokeredmessage.renewlock.aspx)-API verlängert werden.)|
+|Batchempfang|**Ja**<br/><br/>(explizit angebende Nachrichtenanzahl beim Abrufen von Nachrichten, bis maximal 32 Nachrichten)|**Ja**<br/><br/>(implizites Aktivieren einer PreFetch-Eigenschaft oder explizites Aktivieren durch Verwendung von Transaktionen)|
+|Batchversand|**Nein**|**Ja**<br/><br/>(durch Verwendung von Transaktionen oder clientseitiger Batchverarbeitung)|
 
 ### Zusätzliche Informationen
 
@@ -171,39 +137,19 @@ In diesem Abschnitt werden die von Azure-Warteschlangen und Service Bus-Wartesch
 |---|---|---|
 |Zeitgesteuerte Zustellung|**Ja**|**Ja**|
 |Automatisch generierte unzustellbare Nachrichten|**Nein**|**Ja**|
-|Vergrößern des TTL-Werts einer Warteschlange|**Ja**<br/>
-<br/>
-(über direktes Update des Sichtbarkeitstimeouts)|**Ja**<br/>
-<br/>
-(über eine dedizierte API-Funktion bereitgestellt)|
+|Vergrößern des TTL-Werts einer Warteschlange|**Ja**<br/><br/>(über direktes Update des Sichtbarkeitstimeouts)|**Ja**<br/><br/>(über eine dedizierte API-Funktion bereitgestellt)|
 |Unterstützung für nicht verarbeitbare Nachrichten|**Ja**|**Ja**|
 |Direktes Update|**Ja**|**Ja**|
 |Serverseitiges Transaktionsprotokoll|**Ja**|**Nein**|
-|Speichermetrik|**Ja**<br/>
-<br/>
-\*\*Minutenmetriken\*\*: stellen in Echtzeit Metriken für die Verfügbarkeit, TPS, Anzahl der API-Aufrufe, Fehleranzahl usw. zur Verfügung (aggregiert pro Minute und gemeldet innerhalb weniger Minuten nach Ereigniseintritt in der Produktion). Weitere Informationen finden Sie unter [Informationen zu Metriken der Speicheranalyse](https://msdn.microsoft.com/library/hh343258.aspx).|**Ja**<br/>
-<br/>
-(Massenabfragen durch Aufrufen von [GetQueues](https://msdn.microsoft.com/library/hh293128.aspx))|
-|Zustandsverwaltung|**Nein**|**Ja**<br/>
-<br/>
-[Microsoft.ServiceBus.Messaging.EntityStatus.Active](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.Disabled](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.SendDisabled](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.ReceiveDisabled](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx)|
+|Speichermetrik|**Ja**<br/><br/>**Minutenmetriken**: stellen in Echtzeit Metriken für die Verfügbarkeit, TPS, Anzahl der API-Aufrufe, Fehleranzahl usw. zur Verfügung (aggregiert pro Minute und gemeldet innerhalb weniger Minuten nach Ereigniseintritt in der Produktion). Weitere Informationen finden Sie unter [Informationen zu Metriken der Speicheranalyse](https://msdn.microsoft.com/library/hh343258.aspx).|**Ja**<br/><br/>(Massenabfragen durch Aufrufen von [GetQueues](https://msdn.microsoft.com/library/hh293128.aspx))|
+|Zustandsverwaltung|**Nein**|**Ja**<br/><br/>[Microsoft.ServiceBus.Messaging.EntityStatus.Active](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.Disabled](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.SendDisabled](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx), [Microsoft.ServiceBus.Messaging.EntityStatus.ReceiveDisabled](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.entitystatus.aspx)|
 |Automatische Nachrichtenweiterleitung|**Nein**|**Ja**|
 |Warteschlangeninhalt endgültig löschen|**Ja**|**Nein**|
-|Nachrichtengruppen|**Nein**|**Ja**<br/>
-<br/>
-(durch Verwendung von Messagingsitzungen)|
+|Nachrichtengruppen|**Nein**|**Ja**<br/><br/>(durch Verwendung von Messagingsitzungen)|
 |Anwendungszustand pro Nachrichtengruppe|**Nein**|**Ja**|
-|Duplikaterkennung|**Nein**|**Ja**<br/>
-<br/>
-(auf der Absenderseite konfigurierbar)|
-|WCF-Integration|**Nein**|**Ja**<br/>
-<br/>
-(stellt direkt einsatzbereite WCF-Bindungen bereit)|
-|WF-Integration|**Benutzerdefiniert**<br/>
-<br/>
-(erfordert das Erstellen einer benutzerdefinierten WF-Aktivität)|**Systemeigenes Format**<br/>
-<br/>
-(stellt sofort einsetzbare WF-Aktivitäten bereit)|
+|Duplikaterkennung|**Nein**|**Ja**<br/><br/>(auf der Absenderseite konfigurierbar)|
+|WCF-Integration|**Nein**|**Ja**<br/><br/>(stellt direkt einsatzbereite WCF-Bindungen bereit)|
+|WF-Integration|**Benutzerdefiniert**<br/><br/>(erfordert das Erstellen einer benutzerdefinierten WF-Aktivität)|**Systemeigenes Format**<br/><br/>(stellt sofort einsetzbare WF-Aktivitäten bereit)|
 |Durchsuchen von Nachrichtengruppen|**Nein**|**Ja**|
 |Abrufen von Nachrichtensitzungen anhand der ID|**Nein**|**Ja**|
 
@@ -231,31 +177,17 @@ In diesem Abschnitt werden Azure-Warteschlangen und Service Bus-Warteschlangen i
 
 |Vergleichskriterien|Azure-Warteschlangen|Service Bus-Warteschlangen|
 |---|---|---|
-|Maximale Warteschlangengröße|**200 TB**<br/>
-<br/>
-(beschränkt auf die Kapazität eines einzelnen Speicherkontos)|**1–80 GB**<br/>
-<br/>
-(wird bei Erstellung einer Warteschlange und dem [Aktivieren von Partitionierung](https://msdn.microsoft.com/library/dn520246.aspx) definiert – weitere Informationen finden Sie im Abschnitt "Zusätzliche Informationen")|
-|Maximale Nachrichtengröße|**64 KB**<br/>
-<br/>
-(48 KB bei Verwendung der **Base64**-Codierung)<br/>
-<br/>
-Azure unterstützt große Nachrichten, indem Warteschlangen und Blobs kombiniert werden – in diesem Fall können bis zu 200 GB für ein einzelnes Element in der Warteschlange gespeichert werden.|**256 KB**<br/>
-<br/>
-(Einschließlich Header und Text. Die maximale Headergröße beträgt 64 KB.)|
+|Maximale Warteschlangengröße|**200 TB**<br/><br/>(beschränkt auf die Kapazität eines einzelnen Speicherkontos)|**1–80 GB**<br/><br/>(wird bei Erstellung einer Warteschlange und dem [Aktivieren von Partitionierung](https://msdn.microsoft.com/library/dn520246.aspx) definiert – weitere Informationen finden Sie im Abschnitt "Zusätzliche Informationen")|
+|Maximale Nachrichtengröße|**64 KB**<br/><br/>(48 KB bei Verwendung der **Base64**-Codierung)<br/><br/>Azure unterstützt große Nachrichten, indem Warteschlangen und Blobs kombiniert werden – in diesem Fall können bis zu 200 GB für ein einzelnes Element in der Warteschlange gespeichert werden.|**256 KB**<br/><br/>(Einschließlich Header und Text. Die maximale Headergröße beträgt 64 KB.)|
 |Maximaler TTL-Wert der Nachricht|**7 Tage**|**Unbegrenzt**|
-|Maximale Anzahl von Warteschlangen|**Unbegrenzt**|**10.000**<br/>
-<br/>
-(pro Dienstnamespace, kann jedoch erhöht werden)|
-|Maximale Anzahl gleichzeitiger Clients|**Unbegrenzt**|**Unbegrenzt**<br/>
-<br/>
-(Die Beschränkung auf 100 gleichzeitige Verbindungen gilt nur für die Kommunikation über das TCP-Protokoll.)|
+|Maximale Anzahl von Warteschlangen|**Unbegrenzt**|**10.000**<br/><br/>(pro Dienstnamespace, kann jedoch erhöht werden)|
+|Maximale Anzahl gleichzeitiger Clients|**Unbegrenzt**|**Unbegrenzt**<br/><br/>(Die Beschränkung auf 100 gleichzeitige Verbindungen gilt nur für die Kommunikation über das TCP-Protokoll.)|
 
 ### Zusätzliche Informationen
 
 - In Service Bus werden Grenzwerte für die Warteschlangengröße durchgesetzt. Die maximale Warteschlangengröße wird bei der Erstellung der Warteschlange angegeben und kann einen Wert zwischen 1 und 80 GB aufweisen. Wenn der bei der Erstellung der Warteschlange festgelegte Größenwert erreicht ist, werden zusätzlich eingehende Nachrichten abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen. Weitere Informationen zu Kontingenten in Service Bus finden Sie unter [Service Bus-Kontingente](https://msdn.microsoft.com/library/ee732538.aspx).
 
-- Sie können Service Bus-Warteschlangen in Größen von 1, 2, 3, 4 oder 5 GB erstellen (die Standardgröße ist 1 GB). Bei aktivierter Partitionierung (Standardeinstellung) erstellt Service Bus 16 Partitionen für jedes angegebene GB. Wenn Sie also eine Warteschlange mit einer Größe von 5 GB erstellen, beträgt die maximale Warteschlangengröße bei 16 Partitionen 5\*16 = 80 GB. Die maximale Größe der partitionierten Warteschlange oder des Themas wird im zugehörigen Eintrag im Azure-Verwaltungsportal angezeigt.
+- Sie können Service Bus-Warteschlangen in Größen von 1, 2, 3, 4 oder 5 GB erstellen (die Standardgröße ist 1 GB). Bei aktivierter Partitionierung (Standardeinstellung) erstellt Service Bus 16 Partitionen für jedes angegebene GB. Wenn Sie also eine Warteschlange mit einer Größe von 5 GB erstellen, beträgt die maximale Warteschlangengröße bei 16 Partitionen 5*16 = 80 GB. Die maximale Größe der partitionierten Warteschlange oder des Themas wird im zugehörigen Eintrag im Azure-Verwaltungsportal angezeigt.
 
 - Wenn der Inhalt der Nachricht bei Azure-Warteschlangen nicht XML-sicher ist, muss er mit **Base64** codiert werden. Wenn Sie die Nachricht mit **Base64** codieren, darf die Benutzernutzlast statt 64 KB nur 48 KB betragen.
 
@@ -272,28 +204,14 @@ In diesem Abschnitt werden die von Azure-Warteschlangen und Service Bus-Wartesch
 |Vergleichskriterien|Azure-Warteschlangen|Service Bus-Warteschlangen|
 |---|---|---|
 |Verwaltungsprotokoll|**REST über HTTP/HTTPS**|**REST über HTTPS**|
-|Laufzeitprotokoll|**REST über HTTP/HTTPS**|**REST über HTTPS**<br/>
-<br/>
-\*\* AMQP 1.0 Standard (TCP mit TLS)**| |. NET-verwaltete API|**Ja\*\*<br/>
-<br/>
-(.NET verwaltete Speicherclient-API)|**Ja**<br/>
-<br/>
-(.NET-verwaltete API für Brokermessaging)|
+|Laufzeitprotokoll|**REST über HTTP/HTTPS**|**REST über HTTPS**<br/><br/>** AMQP 1.0 Standard (TCP mit TLS)**| |. NET-verwaltete API|**Ja**<br/><br/>(.NET verwaltete Speicherclient-API)|**Ja**<br/><br/>(.NET-verwaltete API für Brokermessaging)|
 |Systemeigenes C++|**Ja**|**Nein**|
 |Java-API|**Ja**|**Ja**|
 |PHP-API|**Ja**|**Ja**|
 |Node.js-API|**Ja**|**Ja**|
 |Unterstützung beliebiger Metadaten|**Ja**|**Nein**|
-|Benennungsregeln für Warteschlangen|**Bis zu 63 Zeichen**<br/>
-<br/>
-(Warteschlangennamen müssen in Kleinbuchstaben geschrieben sein.)|**Bis zu 260 Zeichen**<br/>
-<br/>
-(Bei Warteschlangennamen wird die Groß-/Kleinschreibung unterschieden.)|
-|Funktion zum Abrufen der Warteschlangenlänge|**Ja**<br/>
-<br/>
-(ungefährer Wert, wenn Nachrichten nach dem TTL-Wert ablaufen, ohne gelöscht zu werden)|**Ja**<br/>
-<br/>
-(genau, Zeitpunktwert)|
+|Benennungsregeln für Warteschlangen|**Bis zu 63 Zeichen**<br/><br/>(Warteschlangennamen müssen in Kleinbuchstaben geschrieben sein.)|**Bis zu 260 Zeichen**<br/><br/>(Bei Warteschlangennamen wird die Groß-/Kleinschreibung unterschieden.)|
+|Funktion zum Abrufen der Warteschlangenlänge|**Ja**<br/><br/>(ungefährer Wert, wenn Nachrichten nach dem TTL-Wert ablaufen, ohne gelöscht zu werden)|**Ja**<br/><br/>(genau, Zeitpunktwert)|
 |Peek-Funktion|**Ja**|**Ja**|
 
 ### Zusätzliche Informationen
@@ -314,19 +232,9 @@ In diesem Abschnitt werden Azure-Warteschlangen und Service Bus-Warteschlangen i
 
 |Vergleichskriterien|Azure-Warteschlangen|Service Bus-Warteschlangen|
 |---|---|---|
-|Maximaler Durchsatz|**Bis zu 2.000 Nachrichten pro Sekunde**<br/>
-<br/>
-(basierend auf Vergleichstests mit Nachrichten von 1 KB)|**Bis zu 2.000 Nachrichten pro Sekunde**<br/>
-<br/>
-(basierend auf Vergleichstests mit Nachrichten von 1 KB)|
-|Durchschnittliche Latenz|**10 ms**<br/>
-<br/>
-(mit deaktiviertem [TCP Nagle-Algorithmus](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/06/25/nagle-s-algorithm-is-not-friendly-towards-small-requests.aspx))|**20–25 ms**|
-|Begrenzungsverhalten|**Bei HTTP 503-Code ablehnen**<br/>
-<br/>
-(Begrenzte Anforderungen sind nicht abrechenbar.)|**Mit Ausnahme/HTTP 503 ablehnen**<br/>
-<br/>
-(Begrenzte Anforderungen sind nicht abrechenbar.)|
+|Maximaler Durchsatz|**Bis zu 2.000 Nachrichten pro Sekunde**<br/><br/>(basierend auf Vergleichstests mit Nachrichten von 1 KB)|**Bis zu 2.000 Nachrichten pro Sekunde**<br/><br/>(basierend auf Vergleichstests mit Nachrichten von 1 KB)|
+|Durchschnittliche Latenz|**10 ms**<br/><br/>(mit deaktiviertem [TCP Nagle-Algorithmus](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/06/25/nagle-s-algorithm-is-not-friendly-towards-small-requests.aspx))|**20–25 ms**|
+|Begrenzungsverhalten|**Bei HTTP 503-Code ablehnen**<br/><br/>(Begrenzte Anforderungen sind nicht abrechenbar.)|**Mit Ausnahme/HTTP 503 ablehnen**<br/><br/>(Begrenzte Anforderungen sind nicht abrechenbar.)|
 
 ### Zusätzliche Informationen
 
@@ -368,27 +276,11 @@ In diesem Abschnitt werden Azure-Warteschlangen und Service Bus-Warteschlangen i
 
 |Vergleichskriterien|Azure-Warteschlangen|Service Bus-Warteschlangen|
 |---|---|---|
-|Kosten für Warteschlangentransaktionen|**0,0005 $**<br/>
-<br/>
-(pro 10.000 Transaktionen)|**Basic-Stufe**: **0,05 $**<br/>
-<br/>
-(pro Million Vorgänge)|
-|Abrechenbare Vorgänge|**Alle**|**Nur Senden/Empfangen**<br/>
-<br/>
-(keine Gebühren für andere Vorgänge)|
-|Transaktionen im Leerlauf|**Abrechenbar**<br/>
-<br/>
-(Die Abfrage einer leeren Warteschlange wird als abrechenbare Transaktion angerechnet.)|**Abrechenbar**<br/>
-<br/>
-(Ein Empfangsvorgang für eine leere Warteschlange wird als abrechenbare Nachricht angerechnet.)|
-|Speicherkosten|**0,07 $**<br/>
-<br/>
-(pro GB/Monat)|**0,00 $**|
-|Übertragungskosten für ausgehende Daten|**0,12–0,19 $**<br/>
-<br/>
-(je nach Geografie)|**0,12–0,19 $**<br/>
-<br/>
-(je nach Geografie)|
+|Kosten für Warteschlangentransaktionen|**0,0005 $**<br/><br/>(pro 10.000 Transaktionen)|**Basic-Stufe**: **0,05 $**<br/><br/>(pro Million Vorgänge)|
+|Abrechenbare Vorgänge|**Alle**|**Nur Senden/Empfangen**<br/><br/>(keine Gebühren für andere Vorgänge)|
+|Transaktionen im Leerlauf|**Abrechenbar**<br/><br/>(Die Abfrage einer leeren Warteschlange wird als abrechenbare Transaktion angerechnet.)|**Abrechenbar**<br/><br/>(Ein Empfangsvorgang für eine leere Warteschlange wird als abrechenbare Nachricht angerechnet.)|
+|Speicherkosten|**0,07 $**<br/><br/>(pro GB/Monat)|**0,00 $**|
+|Übertragungskosten für ausgehende Daten|**0,12–0,19 $**<br/><br/>(je nach Geografie)|**0,12–0,19 $**<br/><br/>(je nach Geografie)|
 
 ### Zusätzliche Informationen
 
@@ -397,8 +289,6 @@ In diesem Abschnitt werden Azure-Warteschlangen und Service Bus-Warteschlangen i
 - Datenübertragungen zwischen Azure-Diensten, die sich in derselben Region befinden, sind nicht gebührenpflichtig.
 
 - Zum Zeitpunkt der Erstellung dieses Dokuments sind sämtliche eingehenden Datenübertragungen nicht gebührenpflichtig.
-
-- Die Kosten von ACS-Transaktionen sind unerheblich, wenn Messagingvorgänge mit Service Bus-Warteschlangen ausgeführt werden. Service Bus ruft ein ACS-Token pro Instanz des Messagingfactoryobjekts ab. Das Token wird so lange wiederverwendet, bis es nach etwa 20 Minuten abläuft. Folglich verhält sich das Volumen der Messagingvorgänge in Service Bus nicht direkt proportional zur Menge der ACS-Transaktionen, die zur Unterstützung dieser Vorgänge erforderlich sind.
 
 - Die Unterstützung langer Abrufintervalle vorausgesetzt, kann sich die Verwendung von Service Bus-Warteschlangen in Situationen, in denen eine Zustellung mit niedriger Latenz erforderlich ist, als kosteneffektiv erweisen.
 
@@ -425,4 +315,4 @@ Die folgenden Artikel enthalten weitere Anleitungen und Informationen zur Verwen
 - [Understanding Azure Storage Billing – Bandwidth, Transactions, and Capacity](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx) (Grundlagen zur Abrechnung von Azure Storage – Bandbreite, Transaktionen und Kapazität, in englischer Sprache)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

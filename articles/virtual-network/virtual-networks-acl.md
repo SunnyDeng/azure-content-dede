@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?"
-   description="Informationen zu ACLs"
-   services="virtual-network"
-   documentationCenter="na"
-   authors="telmosampaio"
-   manager="carolz"
-   editor="tysonn" />
+	description="Informationen zu ACLs"
+	services="virtual-network"
+	documentationCenter="na"
+	authors="telmosampaio"
+	manager="carolz"
+	editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="06/08/2015"
-   ms.author="telmos" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="06/08/2015"
+	ms.author="telmos"/>
 
 # Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?
 
@@ -21,7 +21,7 @@ Eine Netzwerk Zugriffssteuerungsliste (ACL) trägt zur Verbesserung der Sicherhe
 
 > [AZURE.IMPORTANT]Es wird empfohlen, anstelle von ACLs möglichst Netzwerksicherheitsgruppen (NSGs) zu verwenden. Weitere Informationen zu NSGs finden Sie unter [Was ist eine Netzwerksicherheitsgruppe?](../virtual-networks-nsg).
 
-ACLs können mithilfe von PowerShell sowie über das Verwaltungsportal konfiguriert werden. Informationen zum Konfigurieren von Netzwerk-ACLs mittels PowerShell finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell](https://msdn.microsoft.com/library/azure/dn376543.aspx). Informationen zum Konfigurieren von Netzwerk-ACLs mithilfe des Verwaltungsportals finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](../virtual-machines-set-up-endpoints/).
+ACLs können mithilfe von PowerShell sowie über das Verwaltungsportal konfiguriert werden. Informationen zum Konfigurieren von Netzwerk-ACLs mittels PowerShell finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell](virtual-networks-acl-powershell.md). Informationen zum Konfigurieren von Netzwerk-ACLs mithilfe des Verwaltungsportals finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](../virtual-machines-set-up-endpoints/).
 
 Netzwerk-ACLs bieten folgende Möglichkeiten:
 
@@ -99,4 +99,4 @@ Netzwerk-ACLs können für einen Endpunkt eines Satzes mit Lastenausgleich (LB-S
 
 [Verwalten von Zugriffssteuerungslisten (Access Control Lists, ACLs) für Endpunkte mithilfe von PowerShell](../virtual-networks-acl-powershell)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

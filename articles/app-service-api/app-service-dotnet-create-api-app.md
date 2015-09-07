@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen einer ASP.NET-API-App in Azure App Service"
+	pageTitle="Erstellen einer ASP.NET-API-App in Azure App Service | Microsoft Azure"
 	description="Erfahren Sie, wie Sie mithilfe von Visual Studio 2013 eine ASP.NET-API-App in Azure App Service erstellen."
 	services="app-service\api"
 	documentationCenter=".net"
@@ -12,7 +12,7 @@
 	ms.workload="web"
 	ms.tgt_pltfrm="dotnet"
 	ms.devlang="na"
-	ms.topic="hero-article" 
+	ms.topic="hero-article"
 	ms.date="08/14/2015"
 	ms.author="tdykstra"/>
 
@@ -34,7 +34,7 @@ Für dieses Lernprogramm ist die Version 2.6 des Azure-SDK für .NET erforderlic
 
 ## Erstellen eines API-App-Projekts
 
-Wenn Sie in den Anweisungen aufgefordert werden, einen Namen für das Projekt einzugeben, geben Sie *ContactsList* ein.
+Wenn Sie in den Anweisungen aufgefordert werden, einen Namen für das Projekt einzugeben, geben Sie **ContactsList** ein.
 
 [AZURE.INCLUDE [app-service-api-create](../../includes/app-service-api-create.md)]
 
@@ -47,6 +47,5 @@ Wenn Sie in den Anweisungen aufgefordert werden, einen Namen für das Projekt ei
 ## Nächste Schritte
 
 Ihre API-App kann jetzt bereitgestellt werden. Dazu können Sie das Lernprogramm [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
- 
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

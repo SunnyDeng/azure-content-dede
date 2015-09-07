@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Häufig gestellte Fragen zum VPN-Gateway von Virtual Network | Microsoft Azure"
-   description="Häufig gestellte Fragen zum VPN-Gateway. Häufig gestellte Fragen zu standortübergreifenden Verbindungen, Verbindungen mit Hybridkonfiguration und VPN-Gateways von Microsoft Azure Virtual Network "
-   services="vpn-gateway"
-   documentationCenter="na"
-   authors="cherylmc"
-   manager="jdial"
-   editor="tysonn" />
+	description="Häufig gestellte Fragen zum VPN-Gateway. Häufig gestellte Fragen zu standortübergreifenden Verbindungen, Verbindungen mit Hybridkonfiguration und VPN-Gateways von Microsoft Azure Virtual Network "
+	services="vpn-gateway"
+	documentationCenter="na"
+	authors="cherylmc"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="vpn-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/16/2015"
-   ms.author="cherylmc" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/20/2015"
+	ms.author="cherylmc"/>
 
 # Häufig gestellte Fragen zum VPN-Gateway
 
@@ -22,6 +22,7 @@
 ### Kann ich Verbindungen zwischen virtuellen Netzwerken in verschiedenen Azure-Regionen herstellen?
 
 Ja. Es gelten keine regionsbedingten Einschränkungen. Verbindungen können sowohl zwischen virtuellen Netzwerken in der gleichen Region als auch zwischen virtuellen Netzwerken in unterschiedlichen Azure-Regionen hergestellt werden.
+
 ### Kann ich Verbindungen zwischen virtuellen Netzwerken in unterschiedlichen Abonnements herstellen?
 
 Ja.
@@ -30,17 +31,17 @@ Ja.
 Verbindungen mit mehreren Standorten können mit Windows PowerShell und den REST-APIs von Azure hergestellt werden. Weitere Informationen finden Sie im Abschnitt [Mehrere Standorte und VNet-zu-VNet-Verbindungen](#multi-site-and-vnet-to-vnet-connectivity).
 ## Welche Optionen stehen mir bei standortübergreifenden Verbindungen zur Verfügung?
 
-Virtual Network unterstützt folgende standortübergreifende Verbindungen:
+Die folgenden standortübergreifende Verbindungen werden unterstützt:
 
 - [Standort zu Standort](vpn-gateway-site-to-site-create.md): VPN-Verbindung über IPsec (IKE v1 und IKE v2). Für diese Art von Verbindung wird ein VPN-Gerät oder RRAS benötigt.
 
 - [Punkt zu Standort](vpn-gateway-point-to-site-create.md): VPN-Verbindung über SSTP (Secure Socket Tunneling-Protokoll). Für diese Verbindung wird kein VPN-Gerät benötigt.
 
-- [VNet zu VNet](../virtual-networks-vnet-to-vnet-connection.md): Diese Verbindung entspricht der Standort-zu-Standort-Konfiguration. VNet zu VNet ist eine VPN-Verbindung über IPsec (IKE v1 und IKE v2). Für diese Verbindung wird kein VPN-Gerät benötigt.
+- [VNet zu VNet](virtual-networks-configure-vnet-to-vnet-connection.md): Diese Verbindung entspricht der Standort-zu-Standort-Konfiguration. VNet zu VNet ist eine VPN-Verbindung über IPsec (IKE v1 und IKE v2). Für diese Verbindung wird kein VPN-Gerät benötigt.
 
-- [Mehrere Standorte](http://go.microsoft.com/fwlink/?LinkID=615106): Hierbei handelt es sich um eine Variante der Standort-zu-Standort-Konfiguration, mit der Sie mehrere lokale Standorte mit einem virtuellen Netzwerk verbinden können.
+- [Mehrere Standorte](vpn-gateway-multi-site.md): Hierbei handelt es sich um eine Variante der Standort-zu-Standort-Konfiguration, mit der Sie mehrere lokale Standorte mit einem virtuellen Netzwerk verbinden können.
 
-- [ExpressRoute](../expressroute-overview.md): ExpressRoute ist eine Azure-Direktverbindung mit Ihrem WAN (nicht über das öffentliche Internet). Weitere Informationen finden Sie unter [ExpressRoute – Technische Übersicht](../expressroute-overview.md) sowie unter [ExpressRoute – FAQ](../expressroute-faqs.md).
+- [ExpressRoute](../expressroute/expressroute-introduction.md): ExpressRoute ist eine Azure-Direktverbindung mit Ihrem WAN (nicht über das öffentliche Internet). Weitere Informationen finden Sie unter [ExpressRoute – Technische Übersicht](../expressroute/expressroute-introduction.md) sowie unter [ExpressRoute – FAQ](../expressroute/expressroute-faqs.md).
 
 ### Was ist der Unterschied zwischen einer Standort-zu-Standort- und einer Punkt-zu-Standort-Verbindung?
 
@@ -48,7 +49,9 @@ Virtual Network unterstützt folgende standortübergreifende Verbindungen:
 
 **Punkt zu Standort**: Mit diesem Verbindungstyp können Sie ortsunabhängig eine Verbindung zwischen einem einzelnen Computer mit einer beliebigen Ressource in Ihrem virtuellen Netzwerk herstellen. Hierbei kommt der in Windows enthaltene VPN-Client zum Einsatz. Im Rahmen der Punkt-zu-Standort-Konfiguration installieren Sie ein Zertifikat und ein VPN-Clientkonfigurationspaket mit den Einstellungen, die es Ihrem Computer ermöglichen, eine Verbindung mit einem beliebigen virtuellen Computer oder einer beliebigen Rolleninstanz innerhalb des virtuellen Netzwerks herzustellen. Dieser Verbindungstyp eignet sich hervorragend, wenn Sie eine Verbindung mit einem virtuellen Netzwerk herstellen möchten, sich aber nicht vor Ort befinden. Er ist auch eine gute Wahl, wenn Ihnen keine VPN-Hardware oder keine extern ausgerichtete IPv4-Adresse zur Verfügung steht (beides Voraussetzungen für eine Standort-zu-Standort-Verbindung).
 
-Hinweis: Sie können Ihr virtuelles Netzwerk für die parallele Verwendung von Standort-zu-Standort- und Punkt-zu-Standort-Verbindungen konfigurieren. Hierzu müssen Sie Ihre Standort-zu-Standort-Verbindung mit einem Gateway für dynamisches Routing erstellen. Weitere Informationen finden Sie unter [Informationen zu sicheren, standortübergreifenden virtuellen Netzwerkverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=532884&clcid=0x409).
+Hinweis: Sie können Ihr virtuelles Netzwerk für die parallele Verwendung von Standort-zu-Standort- und Punkt-zu-Standort-Verbindungen konfigurieren. Hierzu müssen Sie Ihre Standort-zu-Standort-Verbindung mit einem Gateway für dynamisches Routing erstellen.
+
+Weitere Informationen finden Sie unter [Informationen zu sicheren, standortübergreifenden Verbindungen für virtuelle Netzwerke](vpn-gateway-cross-premises-options.md).
 
 ### Was ist ExpressRoute?
 
@@ -56,17 +59,17 @@ ExpressRoute ermöglicht es Ihnen, private Verbindungen zwischen Microsoft-Daten
 
 ExpressRoute-Verbindungen sind sicherer, zuverlässiger und bieten eine höhere Bandbreite sowie eine geringere Latenz als herkömmliche Verbindungen über das Internet. In einigen Fällen können durch die Verwendung von ExpressRoute-Verbindungen zum Übertragen von Daten zwischen einem lokalen Netzwerk und Azure auch drastische Kosteneinsparungen erzielt werden. Wenn Sie aus Ihrem lokalen Netzwerk heraus bereits eine standortübergreifende Verbindung mit Azure hergestellt haben, können Sie eine Migration auf eine ExpressRoute-Verbindung durchführen, während das virtuelle Netzwerk intakt bleibt.
 
-Weitere Informationen finden Sie unter [ExpressRoute – FAQ](../expressroute-faqs.md).
+Weitere Informationen finden Sie unter [ExpressRoute – FAQ](../expressroute/expressroute-faqs.md).
 
-## VPN-Geräte und Standort-zu-Standort-Verbindungen
+## Standort-zu-Standort-Verbindungen und VPN-Geräte
 
 ### Was muss ich bei der Wahl eines VPN-Geräts berücksichtigen?
 
-Wir haben in Zusammenarbeit mit Geräteherstellern eine Reihe von VPN-Geräten für standardmäßige Standort-zu-Standort-Verbindungen getestet. Eine Liste mit kompatiblen VPN-Geräten, entsprechenden Konfigurationsanweisungen oder -beispielen und Gerätespezifikationen finden Sie [hier](http://go.microsoft.com/fwlink/p/?LinkID=248098). Alle Geräte der als kompatibel angegebenen Gerätefamilien sollten mit Virtual Network verwendet werden können. Hilfreiche Informationen zur Konfiguration des VPN-Gerätes finden Sie im entsprechenden Konfigurationsbeispiel oder unter dem Link für die entsprechende Gerätefamilie.
+Wir haben in Zusammenarbeit mit Geräteherstellern eine Reihe von VPN-Geräten für standardmäßige Standort-zu-Standort-Verbindungen getestet. Eine Liste mit kompatiblen VPN-Geräten, entsprechenden Konfigurationsanweisungen oder -beispielen und Gerätespezifikationen finden Sie [hier](vpn-gateway-about-vpn-devices.md). Alle Geräte der als kompatibel angegebenen Gerätefamilien sollten mit Virtual Network verwendet werden können. Hilfreiche Informationen zur Konfiguration des VPN-Gerätes finden Sie im entsprechenden Konfigurationsbeispiel oder unter dem Link für die entsprechende Gerätefamilie.
 
 ### Was kann ich tun, wenn mein VPN-Gerät nicht in der Liste bekannter kompatibler Geräte enthalten ist?
 
-Wenn Ihr Gerät nicht in der Liste bekannter kompatibler VPN-Geräte enthalten ist und Sie das Gerät für Ihre VPN-Verbindung verwenden möchten, vergewissern Sie sich [hier](http://go.microsoft.com/fwlink/p/?LinkID=615099), dass es für die unterstützten IPsec-/IKE-Konfigurationsoptionen und -parameter geeignet ist. Geräte, die die Mindestanforderungen erfüllen, sollten problemlos mit Virtual Network verwendet werden können. Zusätzliche Unterstützung und Konfigurationsanweisungen erhalten Sie vom Gerätehersteller.
+Wenn Ihr Gerät nicht in der Liste bekannter kompatibler VPN-Geräte enthalten ist und Sie das Gerät für Ihre VPN-Verbindung verwenden möchten, vergewissern Sie sich [hier](vpn-gateway-about-vpn-devices.md#devices-not-on-the-compatible-list), dass es für die unterstützten IPsec-/IKE-Konfigurationsoptionen und -parameter geeignet ist. Geräte, die die Mindestanforderungen erfüllen, sollten problemlos mit VPN-Gateways verwendet werden können. Zusätzliche Unterstützung und Konfigurationsanweisungen erhalten Sie vom Gerätehersteller.
 
 ### Kann ich VPN-Softwarelösungen verwenden, um eine Verbindung mit Azure herzustellen?
 
@@ -152,17 +155,17 @@ Für die Authentifizierung können nur vorinstallierte Schlüssel (Pre-Shared Ke
 
 ### Was ist das Gatewaysubnetz, und wozu wird es benötigt?
 
-Es gibt einen Gatewaydienst, der ausgeführt wird, um standortübergreifende Verbindungen zu ermöglichen. Für das Routing zwischen Ihrem Standort und der Cloud benötigen wir zwei IP-Adressen aus Ihrer Routingdomäne. Sie müssen mindestens ein Subnetz vom Typ „/29“ angeben, aus dem wir IP-Adressen für die Einrichtung von Routen entnehmen können.
+Es gibt einen Gatewaydienst, der ausgeführt wird, um standortübergreifende Verbindungen zu ermöglichen. Für das Routing zwischen Ihrem Standort und der Cloud benötigen wir zwei IP-Adressen aus Ihrer Routingdomäne. Sie müssen mindestens ein Subnetz vom Typ „/29“ angeben, aus dem wir IP-Adressen für die Einrichtung von Routen entnehmen können. Obwohl Sie ein /29-Subnetz erstellen können, berücksichtigen Sie, dass für einige Features eine bestimmten Gatewaygröße erforderlich ist. Halten Sie sich bitte an die Anforderungen an das Gatewaysubnetz für das Feature, das Sie konfigurieren möchten.
 
 Beachten Sie, dass im Gatewaysubnetz keine virtuellen Computer oder Rolleninstanzen bereitgestellt werden dürfen.
 
 ### Wie kann ich angeben, welcher Datenverkehr über das VPN-Gateway abgewickelt werden soll?
 
-Fügen Sie die einzelnen Bereiche, die über das Gateway für Ihr virtuelles Netzwerk gesendet werden sollen, auf der Seite „Netzwerke“ unter „Lokale Netzwerke“ hinzu.
+Wenn Sie das Azure-Portal verwenden, fügen Sie die einzelnen Bereiche, die über das Gateway für Ihr virtuelles Netzwerk gesendet werden sollen, auf der Seite "Netzwerke" unter "Lokale Netzwerke" hinzu.
 
 ### Kann ich eine erzwungene Tunnelung konfigurieren?
 
-Ja. Weitere Informationen finden Sie unter [Informationen zu erzwungener Tunnelung](vpn-gateway-about-forced-tunneling.md).
+Ja. Weitere Informationen finden Sie unter [Konfigurieren der Tunnelerzwingung](vpn-gateway-about-forced-tunneling.md).
 
 ### Kann ich in Azure einen eigenen VPN-Server einrichten und damit eine Verbindung mit meinem lokalen Netzwerk herstellen?
 
@@ -186,6 +189,10 @@ Nein. Beide virtuellen Netzwerke müssen VPNs mit dynamischem Routing verwenden.
 
 Ja, er wird mittels IPsec-/IKE-Verschlüsselung geschützt.
 
+### Wird VNet-zu-VNet-Datenverkehr über den Azure-Backbone übertragen?
+
+Ja.
+
 ### Mit wie vielen lokalen Standorten und virtuellen Netzwerken kann ein virtuelles Netzwerk verbunden werden?
 
 Maximal zehn (kombiniert für Basic- und Standard-Gateways mit dynamischem Routing); 30 bei VPN-Hochleistungsgateways.
@@ -200,7 +207,7 @@ Nein. Redundante Tunnel zwischen einem virtuellen Netzwerk von Azure und einem l
 
 ### Dürfen sich die Adressräume der verbundenen virtuellen Netzwerke und der lokalen Standorte überschneiden?
 
-Nein. Bei einer Überschneidung der Adressräume kann die Netzwerkkonfiguration nicht hochgeladen und kein virtuelles Netzwerk erstellt werden.
+Nein. Bei einer Überschneidung der Adressräume kann die netcfg-Datei nicht hochgeladen und kein virtuelles Netzwerk erstellt werden.
 
 ### Erhalte ich durch mehr Standort-zu-Standort-VPNs mehr Bandbreite als bei einem einzelnen virtuellen Netzwerk?
 
@@ -208,7 +215,7 @@ Nein. Alle VPN-Tunnel (einschließlich Punkt-zu-Standort-VPNs) verwenden das gle
 
 ### Kann ich mit dem Azure-VPN-Gateway Datenverkehr zwischen meinen lokalen Standorten oder an ein anderes virtuelles Netzwerk übertragen?
 
-Datenverkehr kann über das Azure-VPN-Gateway übertragen werden, die Übertragung basiert jedoch auf statisch definierten Adressräumen aus der NETCFG-Konfigurationsdatei. BGP wird bei virtuellen Netzwerken von Azure und VPN-Gateways noch nicht unterstützt. Ohne BGP müssen die Adressräume für die Übertragung manuell in der NETCFG-Datei definiert werden. Dies ist jedoch sehr fehleranfällig und wird daher nicht empfohlen.
+Datenverkehr kann über das Azure-VPN-Gateway übertragen werden, die Übertragung basiert jedoch auf statisch definierten Adressräumen aus der netcfg-Konfigurationsdatei. BGP wird bei virtuellen Netzwerken von Azure und VPN-Gateways noch nicht unterstützt. Ohne BGP müssen die Adressräume für die Übertragung manuell in der netcfg-Datei definiert werden. Dies ist jedoch sehr fehleranfällig und wird daher nicht empfohlen.
 
 ### Generiert Azure für alle meine VPN-Verbindungen für das gleiche virtuelle Netzwerk den gleichen vorinstallierten IPsec-/IKE-Schlüssel?
 
@@ -216,11 +223,12 @@ Nein. Azure generiert für unterschiedliche VPN-Verbindungen standardmäßig unt
 
 ### Fallen bei Azure Kosten für den Datenverkehr zwischen virtuellen Netzwerken an?
 
-Beim Datenverkehr zwischen verschiedenen virtuellen Netzwerken fallen nur Kosten an, wenn sich die Daten zwischen verschiedenen Azure-Regionen bewegen. Die Höhe der Kosten finden Sie auf der Seite [Preise](https://azure.microsoft.com/pricing/details/vpn-gateway/) für das Azure-VPN-Gateway.
+Beim Datenverkehr zwischen verschiedenen virtuellen Netzwerken fallen nur Kosten an, wenn sich die Daten zwischen verschiedenen Azure-Regionen bewegen. Die Höhe der Kosten finden Sie auf der Azure-Seite [VPN Gateway Preise](https://azure.microsoft.com/pricing/details/vpn-gateway/).
+
 
 ### Kann ich eine Verbindung zwischen einem virtuellen Netzwerk mit IPsec-VPNs und meiner ExpressRoute-Verbindung herstellen?
 
-Nein, dies wird nicht unterstützt.
+Ja, diese Möglichkeit wird unterstützt. Weitere Informationen finden Sie unter [Konfigurieren von gleichzeitig vorhandenen ExpressRoute- und Standort-zu-Standort-VPN-Verbindungen](../expressroute/expressroute-coexist.md).
 
 ## Konnektivität und virtuelle Computer
 
@@ -238,10 +246,10 @@ Nein. Nur der Datenverkehr mit einer IP-Zieladresse, die innerhalb der angegeben
 
 Weitere Informationen finden Sie in anderen häufig gestellten Fragen zum Netzwerk:
 
-- [Häufig gestellte Fragen zu virtuellen Netzwerken](http://go.microsoft.com/fwlink/p/?LinkId=615155)
+- [Häufig gestellte Fragen zu virtuellen Netzwerken](../virtual-network/virtual-networks-faq.md)
 
-- [ExpressRoute – FAQ](../expressroute-faqs.md)
+- [ExpressRoute – FAQ](../expressroute/expressroute-faqs.md)
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

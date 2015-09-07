@@ -1,28 +1,28 @@
 <properties 
    pageTitle="Mehrere VIPs pro Clouddienst"
-   description="Übersicht über MultiVIP und das Festlegen von mehreren virtuellen IP-Adressen für einen Clouddienst"
-   services="load-balancer"
-   documentationCenter="na"
-   authors="joaoma"
-   manager="adinah"
-   editor="tysonn" />
+	description="Übersicht über MultiVIP und das Festlegen von mehreren virtuellen IP-Adressen für einen Clouddienst"
+	services="load-balancer"
+	documentationCenter="na"
+	authors="joaoma"
+	manager="adinah"
+	editor="tysonn"/>
 <tags 
    ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/23/2015"
-   ms.author="joaoma" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="07/23/2015"
+	ms.author="joaoma"/>
 
 # Mehrere VIPs pro Clouddienst
-Sie können über das öffentliche Internet auf Azure-Clouddienste zugreifen, indem Sie eine von Azure bereitgestellte IP-Adresse verwenden. Diese öffentliche IP-Adresse wird als VIP \(virtuelle IP\) bezeichnet, da sie mit dem Azure-Lastenausgleich verknüpft ist und nicht wirklich mit den VM-Instanzen im Clouddienst. Sie können auf jede VM-Instanz innerhalb eines Clouddiensts über eine einzelne VIP zugreifen.
+Sie können über das öffentliche Internet auf Azure-Clouddienste zugreifen, indem Sie eine von Azure bereitgestellte IP-Adresse verwenden. Diese öffentliche IP-Adresse wird als VIP (virtuelle IP) bezeichnet, da sie mit dem Azure-Lastenausgleich verknüpft ist und nicht wirklich mit den VM-Instanzen im Clouddienst. Sie können auf jede VM-Instanz innerhalb eines Clouddiensts über eine einzelne VIP zugreifen.
 
 Es gibt jedoch Szenarios, in denen Sie möglicherweise mehr als eine VIP-Adresse als Einstiegspunkt für den gleichen Clouddienst benötigen. Beispielsweise kann der Clouddienst mehrere Websites hosten, die SSL-Verbindungen über den SSL-Standardport 443 erfordern, wobei jede Website für einen anderen Kunden oder Mandanten gehostet wird. In diesem Fall benötigen Sie eine andere öffentlich zugängliche IP-Adresse für jede Website. Das folgende Diagramm zeigt eine typische Webhosting-Konfiguration mit mehreren Mandanten, die mehrere SSL-Zertifikate auf dem gleichen öffentlichen Port erfordern.
 
 ![Multi-VIP-SSL-Szenario](./media/load-balancer-multivip/Figure1.png)
 
-Im Szenario oben verwenden alle VIPs den gleichen öffentlichen Port \(443\), und der Datenverkehr wird zu einem oder mehreren virtuellen Computern mit Lastenausgleich auf einem eindeutigen privaten Port für die interne IP-Adresse des Clouddiensts umgeleitet, auf dem alle Websites gehostet werden.
+Im Szenario oben verwenden alle VIPs den gleichen öffentlichen Port (443), und der Datenverkehr wird zu einem oder mehreren virtuellen Computern mit Lastenausgleich auf einem eindeutigen privaten Port für die interne IP-Adresse des Clouddiensts umgeleitet, auf dem alle Websites gehostet werden.
 
 >[AZURE.NOTE]Ein weiteres Szenario für die Verwendung mehrerer VIPs besteht im Hosten mehrerer Listener für SQL-AlwaysOn-Verfügbarkeitsgruppen in der gleichen Gruppe von virtuellen Computern.
 
@@ -146,13 +146,13 @@ Sie können den Lastenausgleich auch zur Verwendung einer anderen VIP aktualisie
 
 ## Weitere Informationen
 
-[Lastenausgleich für Internetzugriff \(Übersicht\)](load-balancer-internet-overview.md)
+[Lastenausgleich für Internetzugriff (Übersicht)](load-balancer-internet-overview.md)
 
 [Erste Schritte mit Lastenausgleich für Internetzugriff](load-balancer-internet-getstarted.md)
 
-[Virtuelle Netzwerke im Überblick](https://msdn.microsoft.com/library/azure/jj156007.aspx)
+[Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md)
 
 [Reservierte IP-REST-APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

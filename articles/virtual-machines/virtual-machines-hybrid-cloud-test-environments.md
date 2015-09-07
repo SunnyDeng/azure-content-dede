@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Testumgebungen für Azure-Hybridclouds"
-	description="Bei diesen Schlüsselthemen erfahren Sie, wie Sie Testumgebungen erstellen, die Sie für Dev/Tests oder einer Machbarkeitsstudie für Ihre Azure-Hybridcloud verwenden können."
+	pageTitle="Testumgebungen für Hybridclouds in Azure | Microsoft Azure"
+	description="In den hier genannten Artikeln erfahren Sie, wie Sie Entwicklungs-/Testumgebungen oder IT Pro-Umgebungen für Machbarkeitsstudien für Ihre Azure-basierte Hybridcloud erstellen."
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -58,4 +58,4 @@ Für Organisationen und Einzelpersonen, für die eine direkte Internetverbindung
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

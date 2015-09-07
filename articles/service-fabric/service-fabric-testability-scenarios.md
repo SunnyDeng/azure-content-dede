@@ -1,20 +1,20 @@
 <properties
    pageTitle="Ausführen des Chaostests"
-   description="Dieser Artikel befasst sich mit den vorgefertigten Service Fabric-Szenarien von Microsoft."
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="anmolah"
-   manager="timlt"
-   editor=""/>
+	description="Dieser Artikel befasst sich mit den vorgefertigten Service Fabric-Szenarien von Microsoft."
+	services="service-fabric"
+	documentationCenter=".net"
+	authors="anmolah"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="04/14/2015"
-   ms.author="anmola"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/26/2015"
+	ms.author="anmola"/>
 
 # Testability-Szenarien
 Große verteilte Systeme, z. B. Cloudinfrastrukturen, sind häufig unzuverlässig. Mit Service Fabric können Entwickler Dienste schreiben, die für unzuverlässige Infrastrukturen ausgeführt werden. Um hochwertige Dienste schreiben zu können, müssen Entwickler dazu in der Lage sein, diese unzuverlässigen Infrastrukturen auszulösen, um die Stabilität ihrer Dienste testen zu können. Service Fabric ermöglicht Entwicklern das Auslösen von Fehleraktionen, um das Verhalten von Diensten beim Auftreten von Fehlern zu testen. Mit zielgerichteten simulierten Fehlern können Sie aber nicht alle Eventualitäten abdecken. Zur Erweiterung der Testoptionen enthält Service Fabric vorgefertigte Testszenarien. Mit den Szenarien werden im Cluster über längere Zeiträume hinweg fortlaufende überlappende Fehler simuliert (sowohl ordnungsgemäß als auch nicht ordnungsgemäß). Nachdem die Rate und die Art der Fehler konfiguriert wurde, wird dies als clientseitiges Tool ausgeführt. Hierbei werden entweder die C#-APIs oder PowerShell genutzt, um Fehler im Cluster und in Ihrem Dienst zu generieren. Das Testability-Feature bietet die folgenden Szenarien:
@@ -251,4 +251,4 @@ Invoke-ServiceFabricFailoverTestScenario -TimeToRunMinute $timeToRun -MaxService
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

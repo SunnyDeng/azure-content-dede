@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Anbieter von Netzwerkressourcen"
-   description="Anbieter von Netzwerkressourcen"
-   services="virtual-network"
-   documentationCenter="na"
-   authors="telmosampaio"
-   manager="adinah"
-   editor="tysonn" />
+	description="Anbieter von Netzwerkressourcen"
+	services="virtual-network"
+	documentationCenter="na"
+	authors="telmosampaio"
+	manager="adinah"
+	editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="04/22/2015"
-   ms.author="telmos" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/23/2015"
+	ms.author="telmos"/>
 
 # Anbieter von Netzwerkressourcen
 Ein zentrales Bedürfnis für den heutigen Geschäftserfolg ist die Fähigkeit, großmaßstäbliche netzwerksensible Anwendungen auf agile, flexible und wiederholbare Weise aufzubauen und zu verwalten. Mit Azure Resource Manager (ARM) können Sie solche Anwendungen als eine einzelne Ressourcensammlung in Ressourcengruppen erstellen. Solche Ressourcen werden durch mehrere Ressourcenanbieter unter ARM verwaltet.
@@ -210,7 +210,7 @@ Die Hauptvorteile des Verwenden von Vorlagen sind:
 
 Beispielvorlagen finden Sie unter [Azure Schnellstart-Vorlagen](https://github.com/Azure/azure-quickstart-templates).
 
-Weitere Informationen zur ARM-Vorlagensprache finden Sie unter [Azure Resource Manager-Vorlagensprache](https://msdn.microsoft.com/library/azure/dn835138.aspx).
+Weitere Informationen zur ARM-Vorlagensprache finden Sie unter [Azure Resource Manager-Vorlagensprache](../resource-group-authoring-templates.md).
 
 Die oben abgebildete Vorlage nutzt das virtuelle Netzwerk und Subnetzressourcen. Wie unten aufgeführt, gibt es weitere Netzwerkressourcen, die Sie nutzen können:
 
@@ -267,6 +267,19 @@ Lastenausgleichsmodule enthalten die folgenden untergeordneten Ressourcen:
 - **Überprüfungen** – Mit Überprüfungen können Sie die Integrität der VM-Instanzen nachverfolgen. Schlägt eine Integritätsüberprüfung fehl, wird die VM-Instanz automatisch aus der Rotation entfernt.
 - **Eingehende NAT-Regeln** – NAT-Regeln definieren den Eingangsdatenverkehr, der durch die Front-End-IP fließt und an die Back-End-IP verteilt wird.
 
+## Application Gateway
+
+Application Gateway bietet eine von Azure verwaltete HTTP-Lastenausgleichslösung, die auf Lastenausgleich der HTTP-Ebene 7 basiert. Anwendungslastenausgleich ermöglicht die Verwendung von Weiterleitungsregeln für Netzwerkverkehr auf Basis von HTTP.
+
+Application Gateways enthalten die folgenden untergeordneten Ressourcen:
+
+- **Back-End-Serverpool**: Die Liste der IP-Adressen der Back-End-Server. Die aufgelisteten IP-Adressen sollten entweder dem Subnetz des virtuellen Netzwerks angehören oder eine öffentliche IP-Adresse/VIP sein. 
+- **Einstellungen für den Back-End-Serverpool**: Jeder Pool weist Einstellungen wie Port, Protokoll und cookiebasierte Affinität auf. Diese Einstellungen sind an einen Pool gebunden und gelten für alle Server innerhalb des Pools.
+- **Front-End-Port**: Dieser Port ist der öffentliche Port, der im Application Gateway geöffnet ist. Datenverkehr erreicht diesen Port und wird dann an einen der Back-End-Server umgeleitet.
+- **Listener**: Der Listener hat einen Front-End-Port, ein Protokoll (Http oder Https, bei beiden muss die Groß-/Kleinschreibung beachtet werden) und den Namen des SSL-Zertifikats (falls SSL-Auslagerung konfiguriert wird). 
+- **Regel**: Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und mit ihr wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden sollen, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel „basic“ unterstützt. Die Regel „basic“ ist eine Round-Robin-Lastverteilung.
+
+
 ## Öffentliche IP
 Eine öffentliche IP-Adresse bietet entweder eine reservierte oder dynamische öffentliche IP-Adresse. Eine öffentliche IP-Adresse kann einem Lastausgleichsmodul, NAT, zugewiesen oder einer privaten IP-Adresse auf einer NIC eines virtuellen Computers zugeordnet sein.
 
@@ -307,6 +320,8 @@ Zu den Schlüsseleigenschaften eines VPN-Gateway zählen:
 - **Gateway-Typ** - dynamisch oder statisch weitergeleitetes Gateway. 
 - **Adresspool-Präfix des VPN-Client** – IP-Adressen, die den Clients mit Punkt-zu-Standort-Verbindung zuzuweisen sind.
 
+
+
 ## Traffic Manager-Profil
 Der Traffic Manager und seine untergeordnete Endpunkt-Ressource ermöglichen die Verteilung Ihres Datenverkehrs zu Endpunkten in und außerhalb von Azure. Eine solche Datenverkehrsverteilung wird durch Richtlinien bestimmt. Der Traffic Manager lässt auch eine Überwachung der Endpunkt-Integrität zu, sowie eine angemessene Umleitung des Datenverkehrs basierend auf der Integrität eines Endpunktes.
 
@@ -329,6 +344,16 @@ Zu den Schlüsseleigenschaften eines Endpunktes zählen:
 - **Gewichtung** - Endpunkt-Gewichtung, die für die Datenverkehrsverwaltung verwendet wird. 
 - **Priorität** - Priorität des Endpunktes, die zum Definieren einer Failover-Aktion verwendet wird. 
 
+## Azure DNS
+
+Azure DNS ist ein Hostingdienst für DNS-Domänen, der die Namensauflösung mithilfe der Microsoft Azure-Infrastruktur durchführt.
+
+Zu den Schlüsseleigenschaften von Azure DNS zählen:
+
+- ** DNS-Zonen ** – Domänenzoneninformationen zum Hosten von DNS-Einträgen einer bestimmten Domäne.
+- ** DNS-Eintragssätze ** – eine Auflistung der Einträge eines bestimmten Typs. Unterstützte Typen sind A, AAAA, CNAME, MX, NS, SOA, SRV und TXT.
+
+
 ## Verwenden einer Vorlage
 
 Sie können Dienste in Azure über eine Vorlage bereitstellen, indem Sie PowerShell oder AzureCLI verwenden oder indem Sie die Bereitstellung von GitHub per Klick ausführen. Führen Sie zum Bereitstellen von Diensten über eine Vorlage in GitHub die folgenden Schritte aus:
@@ -343,13 +368,14 @@ Sie können Dienste in Azure über eine Vorlage bereitstellen, indem Sie PowerSh
 
 ![Bereitstellung von Beispielvorlagen](./media/resource-groups-networking/Figure6.png)
 
+
 ## Weitere Informationen
 
 [Azure Netzwerk-API-Verweise](https://msdn.microsoft.com/library/azure/dn948464.aspx)
 
 [Azure PowerShell-Verweis für Netzwerke](https://msdn.microsoft.com/library/azure/mt163510.aspx)
 
-[Azure Resource Manager-Vorlagensprache](https://msdn.microsoft.com/library/azure/dn835138.aspx)
+[Azure Resource Manager-Vorlagensprache](../resource-group-authoring-templates.md)
 
 [Azure-Netzwerk – Häufig verwendete Vorlagen](https://github.com/Azure/azure-quickstart-templates)
 
@@ -363,4 +389,4 @@ Sie können Dienste in Azure über eine Vorlage bereitstellen, indem Sie PowerSh
 
 [Bereitstellungen von Vorlagen](https://msdn.microsoft.com/library/azure/dn790549.aspx)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Übersicht über die Konfiguration von Service Fabric Reliable Actors vom Typ KVSActorStateProviders"
-   description="Erfahren Sie mehr über das Konfigurieren von statusbehafteten Service Fabric Actors vom Typ KVSActorStateProvider"
-   services="Service-Fabric"
-   documentationCenter=".net"
-   authors="sumukhs"
-   manager="vipulm"
-   editor=""/>
+	description="Erfahren Sie mehr über das Konfigurieren von statusbehafteten Service Fabric Actors vom Typ KVSActorStateProvider"
+	services="Service-Fabric"
+	documentationCenter=".net"
+	authors="sumukhs"
+	manager="anuragg"
+	editor=""/>
 
 <tags
    ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="04/20/2015"
-   ms.author="sumukhs"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/26/2015"
+	ms.author="sumukhs"/>
 
 # Konfigurieren von Reliable Actors – KVSActorStateProvider
 Die Standardkonfiguration von KVSActorStateProvider kann geändert werden, indem die Datei "settings.xml", die im Stammverzeichnis des Visual Studio-Pakets im Ordner "Config" generiert wurde, für den betreffenden Actor geändert wird.
@@ -84,4 +84,4 @@ Speicherkonfigurationen werden zum Konfigurieren des lokalen Speichers verwendet
 "BatchAcknowledgementInterval" steuert die Replikationslatenz. Der Wert "0" ergibt die geringstmögliche Latenz, allerdings auf Kosten des Durchsatzes (da eine größer Anzahl von Bestätigungsnachrichten gesendet und verarbeitet werden muss, von denen jede weniger Bestätigungen enthält). Je größer der Wert für "BatchAcknowledgementInterval" ist, um so höher ist der Gesamtdurchsatz der Replikation, zu Lasten einer höheren Vorgangslatenz. Daraus ergibt sich direkt die Latenz von Transaktions-Commits.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

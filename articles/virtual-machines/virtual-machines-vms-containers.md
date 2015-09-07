@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Virtuelle Computer und Container in Azure" 
-	description="Beschreibt virtuelle Computer, Docker- und Linux-Container und ihre Verwendung in den entsprechenden Gruppen in Azure, einschließlich der jeweiligen Vorteile und von Szenarien, in denen jeder Ansatz gut funktioniert." 
-	services="virtual-machines" 
-	documentationCenter="virtual-machines" 
-	authors="squillace" 
-	manager="timlt" 
-/>
+	pageTitle="Virtuelle Computer und Container in Azure"
+	description="Beschreibt virtuelle Computer, Docker- und Linux-Container und ihre Verwendung in den entsprechenden Gruppen in Azure, einschließlich der jeweiligen Vorteile und von Szenarien, in denen jeder Ansatz gut funktioniert."
+	services="virtual-machines"
+	documentationCenter="virtual-machines"
+	authors="squillace"
+	manager="timlt"/>
 	
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="infrastructure" 
-	ms.workload="infrastructure" 
-	ms.date="07/02/2015" 
-	ms.author="rasquill" 
-/>
+	ms.service="virtual-machines"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="infrastructure"
+	ms.workload="infrastructure"
+	ms.date="07/02/2015"
+	ms.author="rasquill"/>
 
 <!--The next line, with one pound sign at the beginning, is the page title-->
 # Virtuelle Computer und Container in Azure
@@ -123,7 +121,7 @@ Diese Fähigkeiten werden dann oft in Tools wie [Puppet](https://puppetlabs.com/
 
 ### Azure-Ressourcengruppenvorlagen
 
-Vor Kurzem wurde die REST-API der [Azure Ressourcenverwaltung](virtual-machines-azurerm-versus-azuresm.md) veröffentlicht und die PowerShell- und Azure-Befehlszeilenschnittstellen-Tools wurden aktualisiert, um die Verwendung zu erleichtern. Sie können gesamte Anwendungstopologien bereitstellen, ändern oder erneut bereitstellen, indem Sie die [Azure-Ressourcen-Manager-Vorlagen](https://msdn.microsoft.com/library/azure/dn835138.aspx) mit der Azure Ressourcenverwaltungs-API verwenden. Hierzu verwenden Sie:
+Vor Kurzem wurde die REST-API der [Azure Ressourcenverwaltung](virtual-machines-azurerm-versus-azuresm.md) veröffentlicht und die PowerShell- und Azure-Befehlszeilenschnittstellen-Tools wurden aktualisiert, um die Verwendung zu erleichtern. Sie können gesamte Anwendungstopologien bereitstellen, ändern oder erneut bereitstellen, indem Sie die [Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md) mit der Azure Ressourcenverwaltungs-API verwenden. Hierzu verwenden Sie:
 
 - Das [Azure-Vorschauportal mit Vorlagen](https://github.com/Azure/azure-quickstart-templates) (Hinweis: Verwenden Sie die Schaltfläche "DeployToAzure".)
 - Die [Azure-Befehlszeilenschnittstelle](virtual-machines-deploy-rmtemplates-azure-cli.md)
@@ -236,4 +234,4 @@ Auschecken von [Docker](https://www.docker.com) und [Windows Server-Containern](
 [microservice]: http://martinfowler.com/articles/microservices.html
 <!--Image references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

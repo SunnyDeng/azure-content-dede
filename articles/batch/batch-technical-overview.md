@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Batch – Technische Übersicht"
+	pageTitle="Azure Batch – Technische Übersicht | Microsoft Azure"
 	description="Erfahren Sie mehr über die Konzepte, Workflows und Szenarien des Azure Batch-Diensts."
 	services="batch"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 	ms.author="danlep"/>
 
 
-#Azure Batch – Technische Übersicht
+# Azure Batch – Technische Übersicht
 Azure Batch unterstützt Sie beim effizienten Ausführen von größeren parallelen und leistungsstarken Anwendungen (High Performance Computing, HPC) in der Cloud. Es handelt sich dabei um einen Plattformdienst, über den die Auftragsplanung und automatische Skalierung einer verwalteten Sammlung virtueller Computer (VMs) zum Ausführen der Aufträge bereitgestellt werden. Mit dem Batch-Dienst können Sie Batchworkloads so konfigurieren, dass sie in Azure bei Bedarf oder nach einem Zeitplan ausgeführt werden. Das komplexe Konfigurieren und Verwalten von HPC-Clustern, VMs oder Auftragsplanern entfällt.
 
 >[AZURE.NOTE]Zum Verwenden von Batch benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)](http://azure.microsoft.com/develop/php/tutorials/create-a-windows-azure-account/).
@@ -25,11 +25,11 @@ Azure Batch unterstützt Sie beim effizienten Ausführen von größeren parallel
 
 ## Anwendungsfälle
 
-Batch nutzt die Flexibilität und die Skalierung der Cloud zur Unterstützung der *Batchverarbeitung* oder von *Batch Computing* – Es werden große Mengen an ähnlichen Aufgaben ausgeführt, um das gewünschte Ergebnis zu erzielen. Ein Befehlszeilenprogramm oder Skript erhält einen Satz von Dateien als Eingabe, verarbeitet die Daten in einer Reihe von Aufgaben und erstellt eine Gruppe von Ausgabedateien. Die Ausgabedateien können das endgültige Ergebnis oder ein Zwischenschritt in einem größeren Workflow sein.
+Batch nutzt die Flexibilität und die Skalierung der Cloud zur Unterstützung der *Batchverarbeitung* oder von *Batchcomputing* – Es werden große Mengen an ähnlichen Aufgaben ausgeführt, um das gewünschte Ergebnis zu erzielen. Ein Befehlszeilenprogramm oder Skript erhält einen Satz von Dateien als Eingabe, verarbeitet die Daten in einer Reihe von Aufgaben und erstellt eine Gruppe von Ausgabedateien. Die Ausgabedateien können das endgültige Ergebnis oder ein Zwischenschritt in einem größeren Workflow sein.
 
-Batch Computing ist ein häufig genutztes Muster für Unternehmen, die Verarbeiten, Transformieren und Analysieren großer Datenmengen durchführen, entweder nach einem Zeitplan oder bei Bedarf. Es umfasst Verarbeitung am Ende der Schleife, z. B. bei täglichen Risikoberichten einer Bank oder bei Lohnbuchhaltung, die planmäßig ausgeführt werden muss. Darüber hinaus umfasst es umfangreiche Geschäfts-, Wissenschafts- und Engineering-Anwendungen, die in der Regel Tools und Ressourcen von einem Computecluster oder -raster benötigen. Anwendungen umfassen herkömmliche HPC-Anwendungen wie fluiddynamische Simulationen sowie spezielle Workloads in Bereichen, die von der Erstellung digitaler Inhalte über Finanzdienstleistungen bis hin zur Biowissenschaftensforschung reichen.
+Batchcomputing ist ein häufig genutztes Muster für Unternehmen, die Verarbeiten, Transformieren und Analysieren großer Datenmengen durchführen, entweder nach einem Zeitplan oder bei Bedarf. Es umfasst Verarbeitung am Ende der Schleife, z. B. bei täglichen Risikoberichten einer Bank oder bei Lohnbuchhaltung, die planmäßig ausgeführt werden muss. Darüber hinaus umfasst es umfangreiche Geschäfts-, Wissenschafts- und Engineering-Anwendungen, die in der Regel Tools und Ressourcen von einem Computecluster oder -raster benötigen. Anwendungen umfassen herkömmliche HPC-Anwendungen wie fluiddynamische Simulationen sowie spezielle Workloads in Bereichen, die von der Erstellung digitaler Inhalte über Finanzdienstleistungen bis hin zur Biowissenschaftensforschung reichen.
 
-Batch funktioniert sehr gut bei intrinsisch parallelen (manchmal als "hochgradig parallel" bezeichnete) Anwendungen oder Workloads, mit denen parallele Aufgaben auf mehreren Computern ausgeführt werden, wie z. B. die Compute-VMs, die vom Batch-Dienst verwaltet werden. Siehe Abbildung 1.
+Batch funktioniert sehr gut bei intrinsisch parallelen (manchmal als "hochgradig parallel" bezeichnete) Anwendungen oder Workloads, mit denen parallele Aufgaben auf mehreren Computern ausgeführt werden, wie z. B. die Compute-VMs, die vom Batch-Dienst verwaltet werden.
 
 ![Parallele Aufgaben][parallel]
 
@@ -49,19 +49,19 @@ Batch können Sie auch nutzen, um parallele Berechnungen mit einem Reduzierungss
 
 ## Entwicklungsszenarien
 
-Batch unterstützt verschiedene Entwicklungsszenarien, mit denen Sie große, parallele Workloads mit dem Batch-Dienst konfigurieren und ausführen können. Diese Szenarien nutzen APIs zur Erstellung und Verwaltung von VM-Pools (Computeknoten) sowie zur Planung der Aufträge und Aufgaben, die auf ihnen ausgeführt werden. Unter [API-Grundlagen für Azure Batch](batch-api-basics.md) finden Sie weitere Informationen über die Batch-Konzepte.
+Batch unterstützt verschiedene Entwicklungsszenarien, mit denen Sie große, parallele Workloads mit dem Batch-Dienst konfigurieren und ausführen können. Diese Szenarios nutzen APIs zur Erstellung und Verwaltung von VM-Pools (Computeknoten) sowie zur Planung der Aufträge und Aufgaben, die auf ihnen ausgeführt werden. Unter [API-Grundlagen für Azure Batch](batch-api-basics.md) finden Sie weitere Informationen über die Batch-Konzepte.
 
 Typische Batch-Entwicklungsszenarien finden Sie in den folgenden Abschnitten.
 
-### Horizontales Skalieren eines parallelen Workloads
+### Horizontales Hochskalieren eines parallelen Workloads
 
-Verwenden Sie die Batch-API, um intrinsische parallele Aufgaben wie Bildrendering auf einem Pool von bis zu Tausenden Prozessorkernen horizontal zu skalieren. Anstatt einen Computecluster einrichten oder Code schreiben zu müssen, um Aufträge in die Warteschlange zu stellen und zu planen sowie die erforderlichen Ein- und Ausgabedaten zu verschieben, automatisieren Sie die Planung von großen Computeaufträgen und skalieren einen Pool von Compute-VMs nach oben oder unten, um sie auszuführen. Sie können Clientanwendungen oder Front-Ends schreiben, um Aufträge und Aufgaben nach Bedarf, nach einem Zeitplan oder als Teil eines größeren, von Tools wie [Azure Data Factory](https://azure.microsoft.com/documentation/services/data-factory/) verwalteten, Workflows auszuführen.
+Verwenden Sie die Batch-API, um intrinsische parallele Aufgaben wie Bildrendering auf einem Pool von bis zu Tausenden Prozessorkernen horizontal hochzuskalieren. Anstatt einen Computecluster einzurichten oder Code zu schreiben, um Aufträge in die Warteschlange zu stellen und zu planen sowie die erforderlichen Ein- und Ausgabedaten zu verschieben, automatisieren Sie die Planung von großen Computeaufträgen und skalieren einen Pool von Compute-VMs nach oben oder unten, um sie auszuführen. Sie können Client-Apps oder Front-Ends schreiben, um Aufträge und Aufgaben nach Bedarf, nach einem Zeitplan oder als Teil eines größeren, von Tools wie [Azure Data Factory](https://azure.microsoft.com/documentation/services/data-factory/) verwalteten, Workflows auszuführen.
 
 Abbildung 2 zeigt einen vereinfachten Workflow zum Übermitteln einer Anwendung in einen Batch-Pool, in dem er zur Verarbeitung verteilt wird.
 
 ![Workflow für Arbeitsaufgaben][work_item_workflow]
 
-**Abbildung 2: Horizontales Skalieren eines parallelen Workloads auf Batch**
+**Abbildung 2: Horizontales Hochskalieren eines parallelen Workloads auf Batch**
 
 1.	Hochladen von Eingabedateien (z. B. Quelldaten oder Bilder), die für einen Auftrag zu einem Azure-Speicherkonto erforderlich sind. Diese Dateien müssen im Speicherkonto sein, damit der Batch-Dienst darauf zugreifen kann. Der Batch-Dienst lädt Dateien in Computeknoten, wenn die Aufgaben ausgeführt werden.
 2.	Laden Sie die abhängigen Binärdateien in das Speicherkonto hoch. Die Binärdateien enthalten das Programm, das durch die Aufgabe und die abhängigen Assemblys ausgeführt wird. Auf diese Dateien muss auch aus dem Speicher zugegriffen werden, und sie werden auf die Computeknoten geladen.
@@ -73,9 +73,9 @@ Abbildung 2 zeigt einen vereinfachten Workflow zum Übermitteln einer Anwendung 
 
 ### Bereitstellen von rechenintensiven Apps für die Cloud
 
-Sie können die Vorschau-Batch-Apps-API verwenden, um eine vorhandene Anwendung zu umschließen, sodass sie als Dienst für einen Pool von Computenodes ausgeführt wird, die im Hintergrund von Batch verwaltet werden. Bei der Anwendung kann es sich um eine Anwendung handeln, die heute auf Clientworkstations oder einem Compute Cluster ausgeführt wird. Sie können den Dienst weiterentwickeln, sodass Benutzer Spitzenauslastungen in die Cloud auslagern oder vollständig in der Cloud arbeiten können. Das Batch-Apps-Framework ist für die Verschiebung von Eingabe- und Ausgabedaten, das Aufteilen von Aufträgen in Aufgaben, die Auftrags- und Aufgabenverarbeitung sowie die Datenpersistenz verantwortlich.
+Sie können die Vorschau-Batch-Apps-API verwenden, um eine vorhandene Anwendung zu umschließen, sodass sie als Dienst für einen Pool von Computeknoten ausgeführt wird, die im Hintergrund von Batch verwaltet werden. Bei der Anwendung kann es sich um eine Anwendung handeln, die heute auf Clientworkstations oder einem Computecluster ausgeführt wird. Sie können den Dienst weiterentwickeln, sodass Benutzer Spitzenauslastungen in die Cloud auslagern oder vollständig in der Cloud arbeiten können. Das Batch-Apps-Framework ist für die Verschiebung von Eingabe- und Ausgabedaten, das Aufteilen von Aufträgen in Aufgaben, die Auftrags- und Aufgabenverarbeitung sowie die Datenpersistenz verantwortlich.
 
->[AZURE.IMPORTANT]Azure wird die Batch-Apps-API nur in Vorschauform bieten. Sie sollten sie nur zur Entwicklung von Testprojekten oder Machbarkeitsstudien verwenden. Wichtige Batch-Apps-Funktionen werden in künftigen Versionen in die Batch-API integriert.
+>[AZURE.IMPORTANT]Azure bietet die Batch-Apps-API nur in Vorschauform an. Sie sollten sie nur zur Entwicklung von Testprojekten oder Machbarkeitsstudien verwenden. Wichtige Batch-Apps-Funktionen werden in künftigen Versionen in die Batch-API integriert.
 
 Abbildung 3 zeigt einen einfachen Arbeitsablauf zum Veröffentlichen einer Anwendung mit der Batch Apps-API und zur Genehmigung für Benutzer, Aufträge an die Anwendung zu übermitteln.
 
@@ -84,7 +84,7 @@ Abbildung 3 zeigt einen einfachen Arbeitsablauf zum Veröffentlichen einer Anwen
 **Abbildung 3: Workflow zum Veröffentlichen und Ausführen einer Anwendung mit Batch Apps**
 
 1.	Vorbereiten eines **Anwendungsabbilds** – Eine ZIP-Datei mit den vorhandenen ausführbaren Dateien der Anwendung und allen benötigten unterstützenden Dateien. Dabei kann es sich um dieselben ausführbaren Dateien handeln, die mit einer herkömmlichen Serverfarm oder einem Cluster ausgeführt werden.
-2.	Erstellen Sie eine ZIP-Datei der **Cloud-Assembly**, die Workloads für den Batch-Dienst aufruft und disponiert. Dies umfasst zwei Komponenten:
+2.	Erstellen Sie eine ZIP-Datei der **Cloudassembly**, die Workloads für den Batch-Dienst aufruft und disponiert. Dies umfasst zwei Komponenten:
 
 	a. **Auftragssplitter** – Unterteilt einen Auftrag in Aufgaben, die unabhängig voneinander verarbeitet werden können. Beispielsweise würde der Auftragssplitter bei einer Animation einen Auftrag zum Rendern eines Films in einzelne Frames unterteilen.
 
@@ -153,4 +153,4 @@ Nachdem das Konto erstellt wurde, finden Sie es im Portal vor, um Zugriffsschlü
 [work_item_workflow]: ./media/batch-technical-overview/work_item_workflow.png
 [app_pub_workflow]: ./media/batch-technical-overview/app_pub_workflow.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

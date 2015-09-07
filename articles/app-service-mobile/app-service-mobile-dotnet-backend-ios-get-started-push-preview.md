@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="07/29/2015"
+	ms.date="08/22/2015"
 	ms.author="krisragh"/>
 
 
@@ -21,7 +21,9 @@
 
 [AZURE.INCLUDE [app-service-mobile-selector-get-started-push-preview](../../includes/app-service-mobile-selector-get-started-push-preview.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
 
-In diesem Lernprogramm fügen Sie Pushbenachrichtigungen zum [iOS-Schnellstartprojekt] hinzu, damit jedes Mal, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung gesendet wird. Dieses Lernprogramm baut auf dem [iOS-Schnellstartlernprogramm] auf, das Sie zuerst abschließen müssen. Der [iOS-Simulator bietet keine Unterstützung für Pushbenachrichtigungen](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html), sodass Sie für dieses Lernprogramm ein physisches iOS-Gerät benötigen und eine [Apple-Entwicklerprogramm-Mitgliedschaft](https://developer.apple.com/programs/ios/).
+In diesem Lernprogramm fügen Sie Pushbenachrichtigungen zum [iOS-Schnellstartprojekt] hinzu, damit jedes Mal, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung gesendet wird. Dieses Lernprogramm baut auf dem [iOS-Schnellstartlernprogramm] auf, das Sie zuerst abschließen müssen. Wenn Sie das heruntergeladene Schnellstart-Serverprojekt nicht verwenden, müssen Sie Ihrem Projekt das Pushbenachrichtigungs-Erweiterungspaket hinzufügen. Weitere Informationen zu Servererweiterungspaketen finden Sie unter [Work with the .NET backend server SDK for Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) (in englischer Sprache).
+
+Der [iOS-Simulator bietet keine Unterstützung für Pushbenachrichtigungen](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html), sodass Sie für dieses Lernprogramm ein physisches iOS-Gerät benötigen und eine [Apple-Entwicklerprogramm-Mitgliedschaft](https://developer.apple.com/programs/ios/).
 
 ## <a id="register"></a>Registrieren der App für Pushbenachrichtigungen
 
@@ -31,11 +33,7 @@ In diesem Lernprogramm fügen Sie Pushbenachrichtigungen zum [iOS-Schnellstartpr
 
 [AZURE.INCLUDE [app-service-mobile-apns-configure-push-preview](../../includes/app-service-mobile-apns-configure-push-preview.md)]
 
-##<a name="review"></a>Überprüfen der Konfiguration des Serverprojekts (optional)
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-enable-push-preview](../../includes/app-service-mobile-dotnet-backend-enable-push-preview.md)]
-
-##<a id="update-server"></a> Aktualisieren des Serverprojekts zum Senden von Pushbenachrichtigungen
+##<a id="update-server"></a>Aktualisieren des Serverprojekts zum Senden von Pushbenachrichtigungen
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-configure-push-apns](../../includes/app-service-mobile-dotnet-backend-configure-push-apns.md)]
 
@@ -112,4 +110,4 @@ In diesem Lernprogramm fügen Sie Pushbenachrichtigungen zum [iOS-Schnellstartpr
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

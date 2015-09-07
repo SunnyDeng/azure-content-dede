@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SharePoint-Intranetfarm-Arbeitsauslastung Phase 1: Konfigurieren von Azure"
-	description="In dieser ersten Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen Sie das virtuelle Azure-Netzwerk und andere Elemente der Azure-Infrastruktur."
+	pageTitle="SharePoint Server 2013-Farm, Phase 1 | Microsoft Azure"
+	description="In Phase 1 der SharePoint Server 2013-Farm erstellen Sie in Azure das virtuelle Netzwerk und weitere Elemente der Azure-Infrastruktur."
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -53,7 +53,7 @@ Element | Subnetzname | Subnetzadressraum | Zweck
 
 **Tabelle S: Subnetze im virtuellen Netzwerk**
 
-> [AZURE.NOTE]Diese vordefinierte Architektur verwendet aus Gründen der Einfachheit nur ein Subnetz. Wenn Sie zur Emulierung einer Subnetzisolierung verschiedene Datenverkehrsfilter überlagern möchten, können Sie Azure-[Netzwerksicherheitsgruppen](https://msdn.microsoft.com/library/azure/dn848316.aspx) verwenden.
+> [AZURE.NOTE]Diese vordefinierte Architektur verwendet aus Gründen der Einfachheit nur ein Subnetz. Wenn Sie zur Emulierung einer Subnetzisolierung verschiedene Datenverkehrsfilter überlagern möchten, können Sie Azure-[Netzwerksicherheitsgruppen](virtual-networks-nsg.md) verwenden.
 
 Füllen Sie für die zwei lokalen DNS-Server, die Sie bei der anfänglichen Einrichtung der Domänencontroller in Ihrem virtuellen Netzwerk verwenden möchten, Tabelle D aus. Geben Sie jedem DNS-Server einen Anzeigenamen und eine einzelne IP-Adresse. Der Anzeigename muss nicht mit dem Hostnamen oder dem Computernamen des DNS-Servers übereinstimmen. Auch wenn hierfür nur zwei Einträge vorgesehen sind, können Sie noch weitere hinzufügen. Erarbeiten Sie diese Liste gemeinsam mit Ihrer IT-Abteilung.
 
@@ -78,7 +78,7 @@ Element | Adressraum des lokalen Netzwerks
 
 Zum Erstellen des virtuellen Netzwerks mit den Einstellungen der Tabellen V, S, D, und L gehen Sie nach den Anweisungen im Abschnitt [Erstellen eines standortübergreifenden virtuellen Netzwerks mithilfe von Konfigurationstabellen](virtual-machines-workload-deploy-vnet-config-tables.md) vor.
 
-> [AZURE.NOTE]Dieses Verfahren führt Sie durch die Erstellung eines virtuellen Netzwerks, das eine Site-to-Site-VPN-Verbindung verwendet. Informationen zur Verwendung von ExpressRoute für Ihre Site-to-Site-Verbindung finden Sie unter [ExpressRoute – technische Übersicht](http://msdn.microsoft.com/library/dn606309.aspx).
+> [AZURE.NOTE]Dieses Verfahren führt Sie durch die Erstellung eines virtuellen Netzwerks, das eine Site-to-Site-VPN-Verbindung verwendet. Informationen zur Verwendung von ExpressRoute für Ihre Site-to-Site-Verbindung finden Sie unter [ExpressRoute – technische Übersicht](../expressroute/expressroute-introduction.md).
 
 Nach der Erstellung des virtuellen Azure-Netzwerks ermittelt das Azure-Verwaltungsportal Folgendes:
 
@@ -87,9 +87,9 @@ Nach der Erstellung des virtuellen Azure-Netzwerks ermittelt das Azure-Verwaltun
 
 Um diese Informationen nach der Erstellung des virtuellen Netzwerks im Azure-Verwaltungsportal anzuzeigen, klicken Sie auf **Netzwerke**, den Namen des virtuellen Netzwerks und dann auf die Menüoption **Dashboard**.
 
-Als Nächstes konfigurieren Sie das Gateway für das virtuelle Netzwerk, um eine sichere Site-to-Site-VPN-Verbindung zu erstellen. Anweisungen hierzu finden Sie unter [Konfigurieren eines Gateways eines virtuellen Netzwerks im Verwaltungsportal](http://msdn.microsoft.com/library/jj156210.aspx).
+Als Nächstes konfigurieren Sie das Gateway für das virtuelle Netzwerk, um eine sichere Site-to-Site-VPN-Verbindung zu erstellen. Anweisungen hierzu finden Sie unter [Konfigurieren eines Gateways eines virtuellen Netzwerks im Verwaltungsportal](../vpn-gateway/vpn-gateway-configure-vpn-gateway-mp.md).
 
-Erstellen Sie die Site-to-Site-VPN-Verbindung zwischen dem neuen virtuellen Netzwerk und einem lokalen VPN-Gerät. Anweisungen hierzu finden Sie unter [Konfigurieren eines Gateways eines virtuellen Netzwerks im Verwaltungsportal](http://msdn.microsoft.com/library/jj156210.aspx).
+Erstellen Sie die Site-to-Site-VPN-Verbindung zwischen dem neuen virtuellen Netzwerk und einem lokalen VPN-Gerät. Anweisungen hierzu finden Sie unter [Konfigurieren eines Gateways eines virtuellen Netzwerks im Verwaltungsportal](../vpn-gateway/vpn-gateway-configure-vpn-gateway-mp.md).
 
 Stellen Sie anschließend sicher, dass der Adressraum des virtuellen Netzwerks aus Ihrem lokalen Netzwerk erreichbar ist. Dies erfolgt in der Regel durch Hinzufügen einer Route zwischen dem Adressraum des virtuellen Netzwerks und Ihrem VPN-Gerät und der Bekanntgabe dieser Route für den Rest der Routinginfrastruktur Ihres Unternehmensnetzwerks. Erarbeiten Sie diese Lösung gemeinsam mit Ihrer IT-Abteilung.
 
@@ -171,4 +171,4 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 2:
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

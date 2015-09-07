@@ -12,11 +12,15 @@
 	ms.workload="media"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article" 
-	ms.date="08/06/2015"
+	ms.topic="get-started-article"
+	ms.date="08/14/2015"
 	ms.author="juliako"/>
 
 #Verwenden der dynamischen AES-128-Verschlüsselung und des Schlüsselübermittlungsdiensts
+
+> [AZURE.SELECTOR]
+- [.NET](media-services-protect-with-aes128.md)
+- [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 
 ##Übersicht
 
@@ -24,7 +28,7 @@ Mit Microsoft Azure Media Services können Sie HTTP Live Streaming-Inhalte (HLS)
 
 Media Services unterstützt mehrere Möglichkeiten zur Authentifizierung von Benutzern, die Schlüssel anfordern. Die Autorisierungsrichtlinie für Inhaltsschlüssel kann eine oder mehrere Autorisierungseinschränkungen aufweisen: offen, Tokeneinschränkung oder IP-Einschränkung. Die durch Token eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem Secure Token Service (STS) ausgestellt wurde. Media Services unterstützt Token im Format [Simple Web Tokens (SWT)](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2) und [JSON Web Token (JWT)](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_3). Weitere Informationen finden Sie unter [Konfigurieren einer Autorisierungsrichtlinie für Inhaltsschlüssel](media-services-protect-with-aes128.md#configure_key_auth_policy).
 
-Damit dynamische Verschlüsselung genutzt werden kann, müssen Sie über ein Medienobjekt verfügen, das eine Sammlung aus MP4-Dateien mit mehreren Bitraten oder Smooth Streaming-Quelldateien mit mehreren Bitraten enthält. Außerdem müssen Sie die Übermittlungsrichtlinie für das Medienobjekt konfigurieren (weiter unten in diesem Thema beschrieben). Basierend auf dem angegebenen Format in der Streaming-URL stellt der On-Demand-Streaming-Server dann sicher, dass der Datenstrom im ausgewählten Protokoll übermittelt wird. Daher müssen Sie die Dateien nur in einem Speicherformat speichern, und es fallen nur Kosten für ein Speicherformat an. Der Media Services-Dienst erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
+Damit dynamische Verschlüsselung genutzt werden kann, müssen Sie über ein Medienobjekt verfügen, das eine Sammlung aus MP4-Dateien mit mehreren Bitraten oder Smooth Streaming-Quelldateien mit mehreren Bitraten enthält. Außerdem müssen Sie die Übermittlungsrichtlinie für das Medienobjekt konfigurieren (weiter unten in diesem Thema beschrieben). Basierend auf dem angegebenen Format in der Streaming-URL stellt der On-Demand-Streaming-Server dann sicher, dass der Datenstrom im ausgewählten Protokoll übermittelt wird. So müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Die entsprechende Antwort wird von Media Services basierend auf Clientanforderungen erstellt und verfügbar gemacht.
 
 Dieses Thema richtet sich an Entwickler, die an Anwendungen arbeiten, die geschützte Medieninhalte übermitteln. In dem Thema wird gezeigt, wie Sie den Schlüsselübermittlungsdienst mit Autorisierungsrichtlinien konfigurieren, damit nur autorisierte Clients die Verschlüsselungsschlüssel empfangen können. Außerdem wird gezeigt, wie dynamische Verschlüsselung verwendet wird.
 
@@ -99,7 +103,7 @@ Der folgende Codeausschnitt zeigt, wie ein Medienobjekt erstellt und die angegeb
 
 ##<a id="encode_asset"></a>Codieren eines Medienobjekts, das die Sammlung von MP4-Dateien mit adaptiver Bitrate enthält
 
-Bei der dynamischen Verschlüsselung müssen Sie nur ein Medienobjekt erstellen, das eine Sammlung aus MP4-Dateien mit mehreren Bitraten oder Smooth Streaming-Quelldateien mit mehreren Bitraten enthält. Dann wird durch den On-Demand-Streaming-Server auf Basis des in der Manifest- oder Fragmentanforderung angegebenen Formats sichergestellt, dass Sie den Datenstrom im ausgewählten Protokoll erhalten. So müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Die entsprechende Antwort wird von Media Services basierend auf Clientanforderungen erstellt und verfügbar gemacht. Weitere Informationen finden Sie unter [Dynamische Paketerstellung](media-services-dynamic-packaging-overview.md).
+Bei der dynamischen Verschlüsselung müssen Sie nur ein Medienobjekt erstellen, das eine Sammlung aus MP4-Dateien mit mehreren Bitraten oder Smooth Streaming-Quelldateien mit mehreren Bitraten enthält. Dann wird durch den bedarfsgesteuerten Streamingserver auf Basis des in der Manifest- oder Fragmentanforderung angegebenen Formats sichergestellt, dass Sie den Datenstrom im ausgewählten Protokoll erhalten. So müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Die entsprechende Antwort wird von Media Services basierend auf Clientanforderungen erstellt und verfügbar gemacht. Weitere Informationen finden Sie unter [Dynamische Paketerstellung](media-services-dynamic-packaging-overview.md).
 
 Der folgende Codeausschnitt zeigt das Codieren eines Medienobjekts in eine adaptive MP4-Bitratensammlung:
 	
@@ -144,7 +148,7 @@ In Media Services enthält der Inhaltsschlüssel den Schlüssel, mit dem ein Med
 
 Ausführliche Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-dotnet-create-contentkey.md).
 
-##<a id="configure_key_auth_policy"></a>Konfigurieren der Autorisierungsrichtlinie des Inhaltsschlüssels
+##<a id="configure_key_auth_policy"></a>Konfigurieren der Autorisierungsrichtlinie des Inhaltsschlüssels.
 
 Media Services unterstützt mehrere Möglichkeiten zur Authentifizierung von Benutzern, die Schlüssel anfordern. Die Inhaltsschlüssel-Authentifizierungsrichtlinie muss von Ihnen konfiguriert und vom Client (Player) erfüllt werden, damit der Schlüssel an den Client übermittelt wird. Die Autorisierungsrichtlinie für Inhaltsschlüssel kann eine oder mehrere Autorisierungseinschränkungen aufweisen: offen, Tokeneinschränkung oder IP-Einschränkung.
 
@@ -161,7 +165,7 @@ Konfigurieren Sie die Übermittlungsrichtlinie für Medienobjekte. Die Konfigura
 
 Weitere Informationen finden Sie unter [Konfigurieren der Übermittlungsrichtlinie für Medienobjekte](media-services-rest-configure-asset-delivery-policy.md).
 
-##<a id="create_locator"></a>Erstellen eines "OnDemand"-Locators, um eine Streaming-URL zu erhalten.
+##<a id="create_locator"></a>Erstellen eines "OnDemand"-Locators, um eine Streaming-URL zu erhalten
 
 Sie müssen die Streaming-URL für Smooth Streaming, DASH oder HLS für Ihre Benutzer bereitstellen.
 
@@ -186,7 +190,7 @@ Rufen Sie ein Testtoken ab, das auf der Tokeneinschränkung basiert, die für di
 
 Sie können den [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) zum Testen Ihres Streams verwenden.
 
-##<a id="client_request"></a> Wie kann der Client einen Schlüssel vom Schlüsselübermittlungsdienst anfordern?
+##<a id="client_request"></a>Wie kann der Client einen Schlüssel vom Schlüsselübermittlungsdienst anfordern?
 
 Im vorherigen Schritt haben Sie die URL erstellt, die auf eine Manifestdatei verweist. Der Client muss die notwendigen Informationen aus den Streamingmanifestdateien extrahieren, um die Anforderung an den Schlüsselübermittlungsdienst zu stellen.
 
@@ -217,7 +221,7 @@ Beispiel für das Stammmanifest: http://test001.origin.mediaservices.windows.net
 	QualityLevels(842459)/Manifest(video,format=m3u8-aapl)
 	…
 
-Wenn Sie eine der Segmentdateien in einem Text-Editor öffnen (z. B. http://test001.origin.mediaservices.windows.net/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/QualityLevels(514369)/Manifest(video,format=m3u8-aapl)), sollte sie \#EXT-X-KEY enthalten, was angibt, dass die Datei verschlüsselt ist.
+Wenn Sie eine der Segmentdateien in einem Text-Editor öffnen (z. B. http://test001.origin.mediaservices.windows.net/8bfe7d6f-34e3-4d1a-b289-3e48a8762490/BigBuckBunny.ism/QualityLevels(514369)/Manifest(video,format=m3u8-aapl)), sollte sie #EXT-X-KEY enthalten, was angibt, dass die Datei verschlüsselt ist.
 	
 	#EXTM3U
 	#EXT-X-VERSION:4
@@ -659,4 +663,4 @@ Im folgenden Code wird gezeigt, wie Sie eine Anforderung an den Media Services-S
 		    }
 		}
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

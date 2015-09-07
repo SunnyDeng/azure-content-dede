@@ -1,20 +1,20 @@
 <properties
    pageTitle="Definieren und Verwalten von Zuständen"
-   description="Definieren und Verwalten des Dienststatus in Service Fabric"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="appi101"
-   manager="timlt"
-   editor=""/>
+	description="Definieren und Verwalten des Dienststatus in Service Fabric"
+	services="service-fabric"
+	documentationCenter=".net"
+	authors="appi101"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="04/13/2015"
-   ms.author="aprameyr"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/26/2015"
+	ms.author="aprameyr"/>
 
 # Dienstzustand
 Der **Dienstzustand** entspricht den Daten, die der Dienst für seine Ausführung benötigt. Die Ausführung des Diensts besteht im Lesen und Schreiben der Datenstrukturen und Variablen.
@@ -41,4 +41,4 @@ Informationen zu den Service Fabric-Konzepten finden Sie hier:
 - [Partitionieren von Service Fabric-Diensten](service-fabric-concepts-partitioning.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,19 +1,19 @@
 <properties
    pageTitle="Hosten von Web-Apps in Docker | Microsoft Azure"
-   description="Erfahren Sie, wie Sie Visual Studio verwenden, um eine Web-App in einem Docker-Container zu hosten."
-   services="visual-studio-online"
-   documentationCenter="na"
-   authors="kempb"
-   manager="douge"
-   editor="tglee" />
+	description="Erfahren Sie, wie Sie Visual Studio verwenden, um eine Web-App in einem Docker-Container zu hosten."
+	services="visual-studio-online"
+	documentationCenter="na"
+	authors="kempb"
+	manager="douge"
+	editor="tglee"/>
 <tags
    ms.service="multiple"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="multiple"
-   ms.date="08/17/2015"
-   ms.author="kempb" />
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="multiple"
+	ms.date="08/20/2015"
+	ms.author="kempb"/>
 
 # Hosten von Web-Apps in Docker
 
@@ -25,11 +25,11 @@ Sie können die App auf einem neuen Docker-Host veröffentlichen, der in Azure g
 
 ## Erstellen und Veröffentlichen eines neuen Docker-Containers
 
-In diesen Verfahren erstellen Sie ein neues ASP.NET 5-Webanwendungsprojekt und einen Containerhost. Dann erstellen Sie das Web-App-Projekt im Docker-Container und führen es aus. Laden Sie zuerst die [Visual Studio 2015-Tools für Docker](aka.ms/DockerToolsForVS) herunter, und installieren Sie sie.
+In diesen Verfahren erstellen Sie ein neues ASP.NET 5-Webanwendungsprojekt und einen Containerhost. Dann erstellen Sie das Web-App-Projekt im Docker-Container und führen es aus. Laden Sie zuerst die [Visual Studio 2015-Tools für Docker](https://aka.ms/DockerToolsForVS) herunter, und installieren Sie sie.
 
 ### Hinzufügen eines ASP.NET 5-Webanwendungsprojekts
 
-1. Erstellen Sie ein neues ASP.NET-Webanwendungsprojekt. Wählen Sie im Hauptmenü **Datei** und dann **Neues Projekt** aus. Wählen Sie unter **C\#**, **Web** die Option **ASP.NET-Webanwendung** aus.
+1. Erstellen Sie ein neues ASP.NET-Webanwendungsprojekt. Wählen Sie im Hauptmenü **Datei** und dann **Neues Projekt** aus. Wählen Sie unter **C#**, **Web** die Option **ASP.NET-Webanwendung** aus.
 
 1. Wählen Sie in der Liste der **ASP.NET 5-Vorschauvorlagen** die Option **Website** aus.
 
@@ -63,9 +63,9 @@ In diesen Verfahren erstellen Sie ein neues ASP.NET 5-Webanwendungsprojekt und e
 
     Beachten Sie, dass Sie auch einen vorhandenen Docker-Host verwenden können. Wählen Sie dazu einen **vorhandenen virtuellen Azure-Docker-Computer** in der entsprechenden Dropdownliste aus, statt die Schaltfläche **Neu** zu verwenden. Diese Liste zeigt nicht nur Containerhosts an, sondern alle virtuellen Computer in Ihrem Azure-Mandanten.
 
-    Alternativ können Sie eine Veröffentlichung auf einem benutzerdefinierten Docker-Host vornehmen. Weitere Informationen finden Sie unter [Bereitstellen eines benutzerdefinierten Docker-Hosts](#BKMK_CustomHost) weiter unten in diesem Thema.
+    Alternativ können Sie eine Veröffentlichung auf einem benutzerdefinierten Docker-Host vornehmen. Weitere Informationen finden Sie unter **Bereitstellen eines benutzerdefinierten Docker-Hosts** weiter unten in diesem Thema.
 
-1. Geben Sie die folgenden Informationen im Dialogfeld **Einen virtuellen Computer in Microsoft Azure erstellen** ein. Wenn Sie fertig sind, wählen Sie die Schaltfläche **OK** aus. Dadurch wird ein virtueller Linux-Computer mit konfigurierter Docker-Erweiterung erstellt.
+1. Geben Sie die folgenden Informationen im Dialogfeld **Einen virtuellen Computer in Microsoft Azure erstellen** ein. Wenn Sie fertig sind, klicken Sie auf die Schaltfläche **OK**. Dadurch wird ein virtueller Linux-Computer mit konfigurierter Docker-Erweiterung erstellt.
 
     ![][4]
 
@@ -80,7 +80,7 @@ In diesen Verfahren erstellen Sie ein neues ASP.NET 5-Webanwendungsprojekt und e
     |Image|Wählen Sie ggf. ein Betriebssystemimage zur Verwendung auf dem Docker-Host aus. Wählen Sie in diesem Beispiel ein Ubuntu Server-Image aus. (Beachten Sie, dass ein Windows Server-Image nun in der Liste der verfügbaren Images enthalten ist.)|
     |Benutzername|Geben Sie einen eindeutigen Benutzernamen für den virtuellen Computer ein.|
     |Kennwörter|Geben Sie ein Kennwort für den Benutzer ein, und bestätigen Sie es dann.|
-    |Zertifikatverzeichnis |Hiermit wird der Ordner angegeben, in dem Ihre Docker-Zertifikate gespeichert werden. Sie können einen neuen Ordner erstellen oder auf einen vorhandenen Ordner verweisen, es wird aber empfohlen, dass Sie den Standardordner für Zertifikate verwenden (C:\\Users\\ [*Benutzername*]\\.docker). Andernfalls können die Authentifizierungsoptionen nicht automatisch abgerufen werden, wenn Sie den Host in einem anderen Projekt oder System wiederverwenden.|
+    |Zertifikatverzeichnis |Hiermit wird der Ordner angegeben, in dem Ihre Docker-Zertifikate gespeichert werden. Sie können einen neuen Ordner erstellen oder auf einen vorhandenen Ordner verweisen. Es wird aber empfohlen, dass Sie den Standardordner für Zertifikate verwenden (C:\\Users\\ [*Benutzername*]\\.docker). Andernfalls können die Authentifizierungsoptionen nicht automatisch abgerufen werden, wenn Sie den Host in einem anderen Projekt oder System wiederverwenden.|
 
 1. Wählen Sie die Schaltfläche mit den Auslassungspunkten (...) neben dem Eintrag **Zertifikatverzeichnis** aus, und erstellen Sie dann einen neuen Ordner für Docker-Zertifikate, oder navigieren Sie zu einem vorhandenen Ordner für Docker-Zertifikate.
 
@@ -102,7 +102,7 @@ In diesen Verfahren erstellen Sie ein neues ASP.NET 5-Webanwendungsprojekt und e
 
 1. Aktivieren Sie auf der Registerkarte **Verbindung** im Dialogfeld **Web veröffentlichen** das Feld **Verbindung prüfen**, um sicherzustellen, dass der Docker-Host bereit ist. Wenn die Verbindung in Ordnung ist, wählen Sie die Schaltfläche **Veröffentlichen** aus, um die Web-App zu veröffentlichen.
 
-    Wenn Sie zum ersten Mal eine App auf einem Docker-Host veröffentlichen, erfordert es Zeit, Basisimages herunterzuladen, auf die in der Docker-Datei verwiesen wird (z. B. **von** *Imagename*).
+    Wenn Sie zum ersten Mal eine App auf einem Docker-Host veröffentlichen, erfordert es Zeit, Basisimages herunterzuladen, auf die in der Docker-Datei verwiesen wird (z. B. **VON** *Imagename*).
 
     Beachten Sie, dass die Docker-Datei für das Betriebssystem spezifisch ist. Wenn Sie eine erneute Veröffentlichung in einem anderen Betriebssystem durchführen möchten, müssen Sie die Docker-Datei umbenennen, damit Visual Studio eine neue Standarddatei basierend auf dem Zielbetriebssystem erstellen kann. Beispiel: Wenn Sie zuerst in einem Linux-Container veröffentlichen und später in Windows veröffentlichen möchten, sollten Sie die Docker-Datei mit einem eindeutigen Namen wie DockerLinux umbenennen. Wenn Sie dann die Veröffentlichung in Windows erneut durchführen, erstellt Visual Studio die Docker-Standarddatei für Windows neu. Bei einer späteren erneuten Veröffentlichung einer der beiden Versionen wählen Sie einfach die entsprechende Docker-Datei für das Betriebssystem aus.
 
@@ -116,7 +116,7 @@ Im vorherigen Verfahren haben Sie einen virtueller Docker-Computer erstellt, der
 
     ![][5]
 
-1. Wählen Sie die Schaltfläche **OK** aus.
+1. Klicken Sie auf die Schaltfläche **OK**.
 
 1. Fügen Sie im Dialogfeld **Web veröffentlichen** Werte zu den Einstellungen im Abschnitt **CustomDockerHost** hinzu, beispielsweise die Server-URL, den Imagenamen, den Speicherort der Docker-Datei sowie Host- und Containerportnummern.
 
@@ -145,25 +145,27 @@ Das folgende Verfahren gilt für die Kommunikation mit einem Docker-Host, der in
     Set DOCKER_TLS_VERIFY=1
     ```
 
-    Wenn Sie diese Befehle aufrufen, müssen Sie nicht jedem Befehl, den Sie ausgeben, `–H (Host) tcp://<NameofAzureVM>.cloudapp.net:2376` und `--TLSVERIFY` hinzufügen.
+    Wenn Sie diese Befehle aufrufen, müssen Sie nicht jedem Befehl, den Sie ausführen, `–H (Host) tcp://<NameofAzureVM>.cloudapp.net:2376` und `--TLSVERIFY` hinzufügen.
 
 1. Jetzt können Sie Befehle wie die folgenden ausgeben, um zu prüfen, ob der Docker-Host vorhanden ist und funktioniert.
 
     |Befehlszeile|Beschreibung|
     |---|---|
-    |docker info|Abrufen der Docker-Versionsinformationen.|
-    |docker ps|Abrufen einer Liste der ausgeführten Container.|
-    |docker ps –a|Abrufen einer Liste von Containern, einschließlich der beendeten.|
-    |docker logs <Docker container name>|Abrufen eines Protokolls für den angegebenen Container.|
-    |docker images|Abrufen einer Liste von Images.|
+    |`docker info`|Abrufen der Docker-Versionsinformationen.|
+    |`docker ps`|Abrufen einer Liste der ausgeführten Container.|
+    |`docker ps –a`|Abrufen einer Liste von Containern, einschließlich der beendeten.|
+    |`docker logs <Docker container name>`|Abrufen eines Protokolls für den angegebenen Container.|
+    |`docker images`|Abrufen einer Liste von Images.|
 
-    Eine vollständige Liste der Docker-Befehle erhalten Sie, indem Sie einfach den Befehl `docker` an der Befehlszeile eingeben. Weitere Informationen finden Sie unter [Docker Command Line](https://docs.docker.com/reference/commandline/cli/) (in englischer Sprache).
+    Eine vollständige Liste der Docker-Befehle erhalten Sie, indem Sie einfach den Befehl `docker` an der Eingabeaufforderung eingeben. Weitere Informationen finden Sie unter [Docker Command Line](https://docs.docker.com/reference/commandline/cli/) (in englischer Sprache).
 
 ## Nächste Schritte
 
 Da Sie jetzt über einen Docker-Host verfügen, können Sie Docker-Befehle an ihn ausgeben. Weitere Informationen zu Docker finden Sie in der [Docker-Dokumentation](https://docs.docker.com/) und im [Docker-Onlinetutorial](https://www.docker.com/tryit/) (in englischer Sprache).
 
-Informationen zu Problemen bei der Verwendung von Docker in Visual Studio finden Sie unter [Problembehandlung von Docker-Fehlern](vs-docker-troubleshooting-docker-errors.md).
+Informationen zur Verwendung der Docker VM-Erweiterung für Linux in Azure finden Sie unter [Die Docker-Erweiterung für virtuelle Linux-Computer in Azure](virtual-machines-docker-vm-extension.md).
+
+Informationen zu Problemen bei der Verwendung von Docker in Visual Studio finden Sie unter [Problembehandlung von Docker-Clientfehlern unter Windows mithilfe von Visual Studio](vs-azure-tools-docker-troubleshooting-docker-errors.md).
 
 [0]: ./media/vs-azure-tools-docker-hosting-web-apps-in-docker/IC796678.png
 [1]: ./media/vs-azure-tools-docker-hosting-web-apps-in-docker/IC796679.png
@@ -175,4 +177,4 @@ Informationen zu Problemen bei der Verwendung von Docker in Visual Studio finden
 [7]: ./media/vs-azure-tools-docker-hosting-web-apps-in-docker/IC796685.png
 [8]: ./media/vs-azure-tools-docker-hosting-web-apps-in-docker/IC796686.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

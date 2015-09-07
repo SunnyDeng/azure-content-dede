@@ -1,44 +1,46 @@
-## Create a Backup Vault
-To back up files and data from your Windows Server or System Center Data Protection Manager (SCDPM) to Azure or when backing up IaaS VMs to Azure, you must create a backup vault in the geographic region where you want to store the data.
+## Erstellen eines Sicherungstresors
+Zum Sichern von Dateien und Daten von Windows Server oder System Center Data Protection Manager (SCDPM) in Azure oder beim Sichern von Sie IaaS-VMs in Azure müssen Sie einen Sicherungstresor in Ihrer geografischen Region erstellen, in dem die Daten gespeichert werden sollen.
 
-This article will walk you through the creation of the vault you will use to store backups.
+Dieser Artikel führt Sie durch die Erstellung des Tresors, den Sie zum Speichern von Sicherungen verwenden.
 
-## Video walkthrough
+## Exemplarische Vorgehensweise per Video
 
-Here's a quick video of the process.
+Hier ist eine kurze Video des Verfahrens.
 
 [AZURE.VIDEO azure-backup-vault-creation]
 
-The following steps will walk you through the creation of the vault used to store backups.
+Mit den folgenden Schritten erstellen Sie den zum Speichern von Sicherungen verwendeten Tresor.
 
-### Creating a backup vault
-1. Sign in to the [Management Portal](https://manage.windowsazure.com/)
-2. Click **New** > **Data Services** > **Recovery Services** > **Backup Vault** and choose **Quick Create**.
-3. For the **Name** parameter, enter a friendly name to identify the backup vault. This needs to be unique for each subscription.
-4. For the **Region** parameter, select the geographic region for the backup vault. The choice determines the geographic region to which your backup data is sent. By choosing a geographic region close to your location, you can reduce the network latency when backing up to Azure.
-5. Click on **Create Vault** to complete the workflow. It can take a while for the backup vault to be created. To check the status, you can monitor the notifications at the bottom of the portal.
+### Erstellen eines Sicherungstresors
+1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com/) an.
+2. Klicken Sie auf **Neu** > **Data Services** > **Recovery Services** > **Sicherungstresor**, und wählen Sie **Schnellerfassung** aus.
+3. Geben Sie für den Parameter **Name** einen benutzerfreundlichen Namen zur Identifizierung des Sicherungstresors ein. Dieser muss für jedes Abonnement eindeutig sein.
+4. Wählen Sie für den Parameter **Region** die geografische Region für den Sicherungstresor aus. Die Auswahl bestimmt die geografische Region, an die Ihre Sicherungsdaten gesendet werden. Wenn Sie eine geografische Region in der Nähe Ihres eigenen Standorts auswählen, können Sie dadurch die Netzwerklatenz beim Sichern in Azure reduzieren.
+5. Klicken Sie auf **Tresor erstellen**, um den Workflow abzuschließen. Es kann eine Weile dauern, bis der Sicherungstresor fertiggestellt wird. Sie können die Benachrichtigungen unten im Portal überwachen, um den Status zu überprüfen.
 
-    ![Creating Vault](./media/backup-create-vault-wgif/create-vault-wgif.gif)
+    ![Erstellen eines Tresors](./media/backup-create-vault-wgif/create-vault-wgif.gif)
 
-6. After the backup vault has been created, a message tells you the vault has been successfully created. The vault is also listed in the resources for Recovery Services as **Active**.
-
-
+6. Nach dem erfolgreichen Erstellen des Sicherungstresors wird dies in einer entsprechenden Meldung angezeigt. Der Tresor wird zudem in den Ressourcen für Recovery Services als **Aktiv** aufgeführt.
 
 
-### Azure Backup - Storage Redundancy Options
 
-The best time to identify your storage redundancy option is right after vault creation, and before any machines are registered to the vault. Once an item has been registered to the vault, the storage redundancy option is locked and cannot be modified.
 
-Your business needs would determine the storage redundancy of the Azure Backup backend storage. If you are using Azure as a primary backup storage endpoint (e.g. you are backing up to Azure from a Windows Server), you should consider picking (the default) Geo-Redundant storage option. This is seen under the **Configure** option of your Backup vault.
+### Azure Backup – Speicherredundanzoptionen
+
+Der beste Zeitpunkt zum Identifizieren von Speicherredundanzoptionen ist unmittelbar nach der Erstellung des Tresors, bevor Computer beim Tresor registriert werden. Sobald ein Element beim Tresor registriert wurde, wird die Speicherredundanzoption gesperrt und kann nicht mehr geändert werden.
+
+Die Speicherredundanz des Back-End-Speichers von Azure Backup wird durch Ihre geschäftlichen Anforderungen bestimmt. Wenn Sie Azure als primären Speicherendpunkt für die Sicherung verwenden (wenn Sie beispielsweise von einem Windows Server in Azure sichern), sollten Sie die Option "Georedundanter Speicher" in Betracht ziehen (Standardeinstellung). Diese finden Sie unter der Option **Konfigurieren** Ihres Sicherungstresors.
 
 ![GRS](./media/backup-create-vault/grs.png)
 
-#### Geo-Redundant Storage (GRS)
-GRS maintains six copies of your data. With GRS, your data is replicated three times within the primary region, and is also replicated three times in a secondary region hundreds of miles away from the primary region, providing the highest level of durability. In the event of a failure at the primary region, by storing data in GRS, Azure Backup ensures that your data is durable in two separate regions.
+#### Georedundanter Speicher (GRS)
+GRS bewahrt sechs Kopien Ihrer Daten auf. Mit GRS werden Ihre Daten dreimal innerhalb der primären Region und dreimal in einer sekundären Region Hunderte von Kilometern von der primären Region entfernt repliziert, wodurch höchste Beständigkeit erreicht wird. Im Fall eines Fehlers in der primären Region stellt Azure Backup durch das Speichern von Daten in GRS sicher, dass Ihre Daten dauerhaft in zwei verschiedenen Regionen aufbewahrt werden.
 
-#### Locally Redundant Storage (LRS)
-Loclly redundant storage (LRS) maintains three copies of your data. LRS is replicated three times within a single facility in a single region. LRS protects your data from normal hardware failures, but not from the failure of an entire Azure facility.
+#### Lokal redundanter Speicher (LRS)
+Lokal redundanter Speicher (LRS) verwaltet drei Kopien Ihrer Daten. LRS wird innerhalb eines einzelnen Standorts dreimal in einer einzelnen Region repliziert. LRS schützt Ihre Daten vor normalen Hardwareausfällen, jedoch nicht vor dem Ausfall einer ganzen Azure-Einrichtung.
 
-If you are using Azure as a tertiary backup storage endpoint (e.g. you are using SCDPM to have a local backup copy on-premises & using Azure for your long term retention needs), you should consider choosing Locally Redundant Storage from the **Configure** option of your Backup vault. This brings down the cost of storing data in Azure, while providing a lower level of durability for your data that might be acceptable for tertiary copies.
+Bei Verwendung von Azure als tertiären Speicherendpunkt (Sie verwenden beispielsweise SCDPM, um eine lokale Sicherungskopie vor Ort zu haben, und Azure für Ihre langfristigen Aufbewahrungsanforderungen), sollten Sie unter der Option **Konfigurieren** Ihres Sicherungstresors die Option "Lokal redundanter Speicher" auswählen. Dadurch werden die Kosten zum Speichern von Daten in Azure gesenkt, und es wird eine geringere Dauerhaftigkeit für Ihre Daten bereitgestellt, die möglicherweise für tertiäre Kopien ausreicht.
 
 ![LRS](./media/backup-create-vault/lrs.png)
+
+<!---HONumber=August15_HO9-->

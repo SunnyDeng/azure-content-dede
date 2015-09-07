@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure AD Connect – Benutzeranmeldung" 
-	description="Azure AD Connect-Benutzeranmeldung für benutzerdefinierte Einstellungen." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Azure AD Connect – Benutzeranmeldung"
+	description="Azure AD Connect-Benutzeranmeldung für benutzerdefinierte Einstellungen."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/28/2015" 
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 
@@ -35,7 +35,7 @@ Die Kennwortsynchronisierung kann mit der Kennwortrückschreibung kombiniert wer
 ### Verbund mit einem neuen oder vorhandenen AD FS in einer Windows Server 2012 R2-Farm
 Mit der Verbundanmeldung können sich Ihre Benutzer bei Azure AD-basierten Dienste mit ihren lokalen Kennwörtern anmelden. Während sie in ihrem Unternehmensnetzwerk angemeldet sind, können sie auf Cloudressourcen zugreifen, ohne ihre Kennwörter erneut eingeben zu müssen. Mit der Verbundoption für AD FS können Sie eine neue Windows Server 2012 R2-Farm bereitstellen oder eine Farm angeben. Wenn Sie eine vorhandene Farm angeben, konfiguriert Azure AD Connect die Vertrauensstellung zwischen der Farm und Azure AD, sodass sich Ihre Benutzer anmelden können.
 
-<center>![Cloud](./media/active-directory-aadconnect-user-signin/federatedsignin.png)</center>
+<center>! [Cloud] (. / media/active-directory-aadconnect-user-signin/federatedsignin.png)</center>
 
 #### Voraussetzungen für den Verbund mit AD FS unter Windows Server 2012 R2
 Wenn Sie eine neue Farm bereitstellen:
@@ -65,4 +65,4 @@ Für die meisten Organisationen, die lediglich die Benutzeranmeldung für Office
 	- Bedingte Zugriff auf lokale und Cloudressourcen mithilfe der Geräteregistrierung, Azure AD-Einbindung oder Intune-MDM-Richtlinien
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

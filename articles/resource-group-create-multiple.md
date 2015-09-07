@@ -1,26 +1,26 @@
 <properties
-   pageTitle="Erstellen von mehreren Instanzen von Ressourcen"
-   description="Beschreibt, wie Sie den copy-Vorgang in einer Azure-Ressourcen-Manager-Vorlage verwenden, um sie beim Bereitstellen von Ressourcen mehrere Male zu durchlaufen."
-   services="azure-resource-manager"
-   documentationCenter="na"
-   authors="tfitzmac"
-   manager="wpickett"
-   editor=""/>
+   pageTitle="Bereitstellen mehrerer Instanzen von Ressourcen | Microsoft Azure"
+	description="Verwenden Sie den copy-Vorgang und Arrays in einer Azure-Ressourcen-Manager-Vorlage, um sie beim Bereitstellen von Ressourcen mehrere Male zu durchlaufen."
+	services="azure-resource-manager"
+	documentationCenter="na"
+	authors="tfitzmac"
+	manager="wpickett"
+	editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="07/14/2015"
-   ms.author="tomfitz"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="08/21/2015"
+	ms.author="tomfitz"/>
 
 # Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager
 
 In diesem Thema erfahren Sie, wie Sie die Azure-Ressourcen-Manager-Vorlage durchlaufen können, um mehrere Instanzen einer Ressource zu erstellen.
 
-## copy und copyIndex()
+## "copy", "copyIndex" und "length"
 
 Um innerhalb der Ressource mehrere Instanzen zu erstellen, können Sie ein **copy**-Objekt definieren, das die Anzahl der Iterationen angibt. Die Kopie hat das folgende Format:
 
@@ -32,6 +32,13 @@ Um innerhalb der Ressource mehrere Instanzen zu erstellen, können Sie ein **cop
 Mit der **copyIndex()**-Funktion können Sie den aktuellen Iterationswert abrufen, wie nachfolgend in der Verkettungsfunktion gezeigt.
 
     [concat('examplecopy-', copyIndex())]
+
+Wenn Sie mehrere Ressourcen aus einem Array von Werten erstellen, können Sie die Anzahl über die Funktion **length** angeben. Das Array wird als Parameter für die length-Funktion bereitgestellt.
+
+    "copy": {
+        "name": "websitescopy",
+        "count": "[length(parameters('siteNames'))]"
+    }
 
 ## Verwenden des Indexwerts in Namen
 
@@ -89,11 +96,7 @@ Verwenden Sie die folgende Vorlage:
              "Fabrikam", 
              "Coho" 
           ] 
-      },
-      "count": { 
-         "type": "int", 
-         "defaultValue": 3 
-      } 
+      }
     }, 
     "resources": [ 
       { 
@@ -103,15 +106,15 @@ Verwenden Sie die folgende Vorlage:
           "apiVersion": "2014-06-01",
           "copy": { 
              "name": "websitescopy", 
-             "count": "[parameters('count')]" 
+             "count": "[length(parameters('org'))]" 
           }, 
           "properties": {} 
       } 
     ]
 
 ## Nächste Schritte
-- [Authoring Azure Resource Manager Templates](./resource-group-authoring-templates.md) (in englischer Sprache)
-- [Azure Resource Manager Template Functions](./resource-group-template-functions.md) (Vorlagenfunktionen im Azure-Ressourcen-Manager)
-- [Deploy an application with Azure Resource Manager Template](azure-portal/resource-group-template-deploy.md) (Bereitstellen einer Anwendung mit einer Vorlage im Azure-Ressourcen-Manager)
+- Informationen zu den Abschnitten einer Vorlage finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-authoring-templates.md).
+- Unter [Funktionen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-template-functions.md) finden Sie alle Funktionen, die Sie in einer Vorlage verwenden können.
+- Informationen zum Bereitstellen Ihrer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

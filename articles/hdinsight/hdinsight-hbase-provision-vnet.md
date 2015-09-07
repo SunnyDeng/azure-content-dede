@@ -9,12 +9,12 @@
 
 <tags
    ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="08/12/2015"
-   ms.author="jgao"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="08/12/2015"
+	ms.author="jgao"/>
 
 # Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk
 
@@ -89,7 +89,7 @@ Vor der Bereitstellung eines HBase-Clusters müssen Sie ein virtuelles Azure-Net
 
 5. Klicken Sie auf **Erstellen**.
 
-Standardmäßig verwendet das virtuelle Netzwerk einen von Azure bereitgestellten internen Domain Name System (DNS)-Server. Erweiterte Netzwerkkonfigurationen mit benutzerdefinierten DNS-Servern werden ebenfalls unterstützt. Ausführliche Anleitungen finden Sie unter [Namensauflösung (DNS)](http://msdn.microsoft.com/library/azure/jj156088.aspx).
+Standardmäßig verwendet das virtuelle Netzwerk einen von Azure bereitgestellten internen Domain Name System (DNS)-Server. Erweiterte Netzwerkkonfigurationen mit benutzerdefinierten DNS-Servern werden ebenfalls unterstützt. Ausführliche Anleitungen finden Sie unter [Namensauflösung (DNS)](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
 **(Optional) So fügen Sie dem virtuellen Netzwerk einen virtuellen Computer als DNS-Server hinzu**
 
@@ -281,7 +281,7 @@ Führen Sie die unter [Verwenden von Maven zur Entwicklung von Java-Anwendungen,
     	<value>zookeeper0.<dns suffix>,zookeeper1.<dns suffix>,zookeeper2.<dns suffix></value>
 	</property>
 
-> [AZURE.NOTE]Weitere Informationen zur Namensauflösung in virtuellen Azure-Netzwerken und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](http://msdn.microsoft.com/library/azure/jj156088.aspx).
+> [AZURE.NOTE]Weitere Informationen zur Namensauflösung in virtuellen Azure-Netzwerken und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
 ##Bereitstellen von HBase-Clustern mit Azure PowerShell
 
@@ -341,7 +341,7 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 
 [hbase-get-started]: ../hdinsight-hbase-get-started.md
 [hbase-twitter-sentiment]: ../hdinsight-hbase-twitter-sentiment.md
-[vnet-overview]: http://msdn.microsoft.com/library/azure/jj156007.aspx
+[vnet-overview]: ../virtual-network/virtual-networks-overview.md
 [vm-create]: ../virtual-machines-windows-tutorial.md
 
 [azure-portal]: https://portal.azure.com
@@ -379,4 +379,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "Bereitstellen von Details für den neuen HBase-Cluster"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "Verwenden von Skriptaktionen zum Anpassen eines HBase-Clusters"
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen eines standortübergreifenden virtuellen Netzwerks mithilfe von Konfigurationstabellen"
-	description="In diesem Thema wird beschrieben, wie ein standortübergreifendes virtuelles Netzwerk mithilfe vordefinierter Konfigurationstabellen konfiguriert wird."
+	pageTitle="Virtuelles Netzwerk mithilfe von Konfigurationstabellen | Microsoft Azure"
+	description="Erfahren Sie, wie ein standortübergreifendes virtuelles Azure-Netzwerks mit vordefinierten Einstellungen aus einer Konfigurationstabelle konfiguriert wird."
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -30,7 +30,7 @@ Diese Tabellen werden in der Regel in einem Thema ausgefüllt, in dem die Konfig
 
 In den nachfolgend dargestellten Schritten, die Sie durch die Konfiguration des virtuellen Netzwerks führen, wird auf die Informationen in diesen Tabellen verwiesen. Wenn Sie die Einstellungen in diesen Tabellen noch nicht in einem anderen Thema angegeben haben, aber dennoch ein standortübergreifendes virtuelles Netzwerk konfigurieren möchten, lesen Sie das Thema [Configure a Cross-Premises Site-to-Site connection to an Azure Virtual Network](../vpn-gateway/vpn-gateway-site-to-site-create.md) (Konfiguration einer standortübergreifenden Site-to-Site-Verbindung zu einem virtuellen Azure-Netzwerk).
 
-> [AZURE.NOTE]Dieses Verfahren führt Sie durch die Erstellung eines virtuellen Netzwerks, das eine Site-to-Site-VPN-Verbindung verwendet. Informationen zur Verwendung von Azure ExpressRoute für Ihre Site-to-Site-Verbindung finden Sie unter [ExpressRoute – technische Übersicht](https://msdn.microsoft.com/library/dn606309.aspx).
+> [AZURE.NOTE]Dieses Verfahren führt Sie durch die Erstellung eines virtuellen Netzwerks, das eine Site-to-Site-VPN-Verbindung verwendet. Informationen zur Verwendung von Azure ExpressRoute für Ihre Site-to-Site-Verbindung finden Sie unter [ExpressRoute – technische Übersicht](../expressroute/expressroute-introduction.md).
 
 ## Erstellen eines neuen standortübergreifenden virtuellen Azure-Netzwerks mit den Einstellungen Ihrer Konfigurationstabellen
 
@@ -61,10 +61,10 @@ In den nachfolgend dargestellten Schritten, die Sie durch die Konfiguration des 
 
 ## Zusätzliche Ressourcen
 
-[Virtuelle Netzwerke im Überblick](https://msdn.microsoft.com/library/jj156007.aspx)
+[Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md)
 
-[Konfigurationsaufgaben für virtuelle Netzwerke](https://msdn.microsoft.com/library/jj156206.aspx)
+[Konfigurationsaufgaben für virtuelle Netzwerke](../documentation/services/virtual-machines/)
 
 [Configure a cross-premises site-to-site connection to an Azure virtual network](../vpn-gateway/vpn-gateway-site-to-site-create.md) (Konfiguration einer standortübergreifenden Site-to-Site-Verbindung mit einem virtuellen Azure-Netzwerk).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

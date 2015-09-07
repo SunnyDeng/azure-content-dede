@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Bereitstellen von SharePoint-Farmen mit Azure-Ressourcen-Manager-Vorlagen"
+	pageTitle="Bereitstellen von SharePoint-Farmen mit Azure-Ressourcen-Manager-Vorlagen | Microsoft Azure"
 	description="Mit Ressourcen-Manager-Vorlagen und dem Azure-Vorschauportal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach eine SharePoint-Farm mit drei oder neun Servern bereitstellen."
 	services="virtual-machines"
 	documentationCenter=""
@@ -67,7 +67,7 @@ Beispiel:
 	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
-Führen Sie anschließend den Befehlsblock in der Azure-PowerShell-Eingabeaufforderung aus.
+Führen Sie anschließend den Befehlsblock in der Azure PowerShell-Eingabeaufforderung aus.
 
 Beim Ausführen des Befehls **New-AzureResourceGroupDeployment** werden Sie aufgefordert, die Werte für eine Reihe von Parametern anzugeben. Sobald Sie alle Parameterwerte angegeben haben, werden die virtuellen Computer von **New-AzureResourceGroupDeployment** erstellt und konfiguriert.
 
@@ -94,7 +94,7 @@ Beim Ausführen des Befehls **azure group deployment create** werden Sie aufgefo
 
 Sie verfügen nun über eine neue SharePoint-Farm mit drei Servern in der neuen Ressourcengruppe.
 
-##Bereitstellen einer SharePoint-Farm mit neun Servern
+## Bereitstellen einer SharePoint-Farm mit neun Servern
 
 Bei einer SharePoint Server 2013-Farm mit hoher Verfügbarkeit werden mit einer Ressourcen-Manager-Vorlage neun virtuelle Computer in einem neuen virtuellen Netzwerk in vier unterschiedlichen Subnetzen erstellt.
 
@@ -111,16 +111,16 @@ Wenn Sie diesen Workload mit einer Ressourcen-Manager-Vorlage und dem Azure-Vors
 3.	Klicken Sie bei Bedarf auf **Abonnement**, und wählen Sie das richtige Azure-Abonnement aus.
 4.	Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine vorhandene Ressourcengruppe aus. Sie können auch auf **Oder neu erstellen** klicken, um einen neuen Trigger für diesen Workload zu erstellen.
 5.	Sofern erforderlich, klicken Sie auf **Ressourcengruppenstandort**, und wählen Sie den richtigen Azure-Standort aus.
-6.	Klicken Sie ggf. auf "Rechtliche Bedingungen", um die Nutzungsbedingungen für die Vorlage zu lesen.
+6.	Klicken Sie ggf. auf **Rechtliche Bedingungen**, um die Nutzungsbedingungen für die Vorlage zu lesen.
 7.	Klicken Sie auf **Erstellen**.
 
 Je nach Vorlage kann es einige Zeit dauern, bis der Workload in Azure erstellt ist. Nach Abschluss dieses Vorgangs verfügen Sie über eine neue SharePoint-Farm mit neun Servern in der vorhandenen oder neuen Ressourcengruppe.
 
 ### Azure PowerShell
 
-Stellen Sie zunächst sicher, dass die richtige Version von Azure PowerShell installiert ist, dass Sie angemeldet sind und zum neuen Ressourcen-Manager-Modus gewechselt sind. Nähere Informationen finden Sie [hier](virtual-machines-deploy-rmtemplates-powershell.md#setting-up-powershell-for-resource-manager-templates).
+Stellen Sie zunächst sicher, dass die richtige Version von Azure PowerShell installiert ist, dass Sie angemeldet sind und zum neuen Ressourcen-Manager-Modus gewechselt sind. Ausführliche Informationen finden Sie [hier](virtual-machines-deploy-rmtemplates-powershell.md#setting-up-powershell-for-resource-manager-templates).
 
-Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue Ressourcengruppe und den Standort eines Azure-Rechenzentrums in die folgenden Befehle ein. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
+Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue Ressourcengruppe und den Standort eines Azure-Rechenzentrums in die folgenden Befehle ein. Entfernen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
 	$deployName="<deployment name>"
 	$RGName="<resource group name>"
@@ -138,7 +138,7 @@ Beispiel:
 	New-AzureResourceGroup -Name $RGName -Location $locName
 	New-AzureResourceGroupDeployment -Name $deployName -ResourceGroupName $RGName -TemplateUri $templateURI
 
-Führen Sie anschließend den Befehlsblock in der Azure-PowerShell-Eingabeaufforderung aus.
+Führen Sie anschließend den Befehlsblock in der Azure PowerShell-Eingabeaufforderung aus.
 
 Beim Ausführen des Befehls **New-AzureResourceGroupDeployment** werden Sie aufgefordert, die Werte für eine Reihe von Parametern anzugeben. Sobald Sie alle Parameterwerte angegeben haben, werden die virtuellen Computer von **New-AzureResourceGroupDeployment** erstellt und konfiguriert.
 
@@ -146,7 +146,7 @@ Nachdem die Vorlage vollständig ausgeführt wurde, verfügen Sie über eine neu
 
 ### Azure-Befehlszeilenschnittstelle
 
-Stellen Sie zunächst sicher, dass die richtige Version von Azure-Befehlszeilenschnittstelle installiert ist, dass Sie angemeldet sind und zum neuen Ressourcen-Manager-Modus gewechselt sind. Nähere Informationen finden Sie [hier](virtual-machines-deploy-rmtemplates-azure-cli.md#getting-ready).
+Stellen Sie zunächst sicher, dass die richtige Version von Azure-Befehlszeilenschnittstelle installiert ist, dass Sie angemeldet sind und zum neuen Ressourcen-Manager-Modus gewechselt sind. Ausführliche Informationen finden Sie [hier](virtual-machines-deploy-rmtemplates-azure-cli.md#getting-ready).
 
 Erstellen Sie zunächst eine neue Ressourcengruppe: Geben Sie mit dem folgenden Befehl den Namen der Gruppe und den Standort des Azure-Rechenzentrums für die Bereitstellung an.
 
@@ -170,9 +170,9 @@ Nachdem die Vorlage vollständig ausgeführt wurde, verfügen Sie über eine neu
 
 [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
-[Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute-, Network- und Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Übersicht über den Azure Resource Manager](../resource-group-overview.md)
+[Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
 
 [Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
 
@@ -180,4 +180,4 @@ Nachdem die Vorlage vollständig ausgeführt wurde, verfügen Sie über eine neu
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

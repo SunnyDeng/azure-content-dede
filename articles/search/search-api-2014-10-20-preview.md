@@ -1,8 +1,8 @@
-<properties pageTitle="Azure Search-Dienst-REST-API: Version 2014-10-20-Preview" description="Azure Search-Dienst-REST-API: Version 2014-10-20-Preview" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" editor="" />
+<properties pageTitle="Azure Search-Dienst-REST-API: Version 2014-10-20-Preview" description="Azure Search-Dienst-REST-API: Version 2014-10-20-Preview" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" editor=""/>
 
-<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="07/22/2015" ms.author="heidist" />
+<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="08/25/2015" ms.author="heidist"/>
 
-# Azure Search-Dienst-REST-API: Version 2014-10-20-Preview #
+#Azure Search-Dienst-REST-API: Version 2014-10-20-Preview
 
 Dieses Dokument beschreibt die ältere Version **2014-10-20-Preview** der Azure Search-Dienst-REST-API, die für die öffentliche Vorschau von Azure Search veröffentlicht wurde. Da diese Version in Kürze ausgemustert wird, empfehlen wir dringend, die Version der allgemein verfügbaren Veröffentlichung zu verwenden. Eine Anleitung zur Codemigration finden Sie unter [Umstellung von der Vorschau-API-Version auf die allgemein verfügbare API-Version](search-transition-from-preview.md).
 
@@ -12,7 +12,7 @@ Weitere API-Inhalte für die Version **2014-10-20-Preview** umfassen Folgendes:
 
 Eine Dokumentation der aktuellen, allgemein verfügbaren Version der Azure Search-Dienst-REST-API finden Sie auf MSDN. Weitere Informationen finden Sie unter [Azure Search-Dienst-REST-API](http://msdn.microsoft.com/library/azure/dn798935.aspx).
 
-##Grundlegendes zur Suchdienst-REST-API##
+##Grundlegendes zur Suchdienst-REST-API
 
 Azure Search ist ein cloudbasierter Dienst, mit dem Sie benutzerdefinierte Suchanwendungen erstellen können. Azure Search verwendet das Konzept der *Suchdienste* und *Indizes*, wobei ein Suchdienst einen Index oder mehrere Indizes umfasst. Ihr Suchdienst wird durch einen vollqualifizierten Domänennamen eindeutig identifiziert (z. B. `mysearchservice.search.windows.net`). Beim Bereitstellen des Diensts wird ein API-Schlüssel generiert. Dieser wird zum Authentifizieren von Anforderungen für Ihren Azure Search-Dienst verwendet.
 
@@ -126,7 +126,7 @@ Das folgende Beispiel veranschaulicht ein Schema für die Suche von Hotelinforma
       {"name": "hotelId", "type": "Edm.String", "key": true, "searchable": false},
       {"name": "baseRate", "type": "Edm.Double"},
       {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false},
-	  {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, analyzer: "fr.lucene"},
+	  {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "analyzer": "fr.lucene"},
       {"name": "hotelName", "type": "Edm.String"},
       {"name": "category", "type": "Edm.String"},
       {"name": "tags", "type": "Collection(Edm.String)"},
@@ -649,7 +649,7 @@ In der aktuellen Version der API kann die Vorschlagssammlung derzeit nur einen e
         {"name": "hotelId", "type": "Edm.String", "key": true, "searchable": false},
         {"name": "baseRate", "type": "Edm.Double"},
         {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false},
-	    {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, analyzer="fr.lucene"},
+	    {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "analyzer"="fr.lucene"},
         {"name": "hotelName", "type": "Edm.String"},
         {"name": "category", "type": "Edm.String"},
         {"name": "tags", "type": "Collection(Edm.String)"},
@@ -1455,4 +1455,4 @@ Rufen Sie 5 Vorschläge mit der Teilsuche nach "lux" ab.
 
     GET /indexes/hotels/docs/suggest?search=lux&$top=5&suggesterName=sg&api-version=2014-10-20-Preview
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

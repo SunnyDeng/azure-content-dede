@@ -1,20 +1,20 @@
 <properties
    pageTitle="Grundlegendes zu den Unterschieden zwischen dem Modell der Ressourcen-Manager-Bereitstellung und dem Modell der klassischen Bereitstellung"
-   description="Beschreibt die Unterschiede zwischen dem Ressourcen-Manager-Bereitstellungsmodell und dem klassischen Bereitstellungsmodell (auch als ";Dienstverwaltungsmodell"; bekannt)."
-   services="azure-resource-manager"
-   documentationCenter="na"
-   authors="tfitzmac"
-   manager="wpickett"
-   editor=""/>
+	description="Beschreibt die Unterschiede zwischen dem Ressourcen-Manager-Bereitstellungsmodell und dem klassischen Bereitstellungsmodell (auch als Dienstverwaltungsmodell bekannt)."
+	services="azure-resource-manager"
+	documentationCenter="na"
+	authors="tfitzmac"
+	manager="wpickett"
+	editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/13/2015"
-   ms.author="tomfitz"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="08/20/2015"
+	ms.author="tomfitz"/>
 
 # Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung
 
@@ -151,9 +151,11 @@ Eine Liste der entsprechenden Befehle der Azure-Befehlszeilenschnittstelle beim 
 
 Detaillierte Informationen zum Verschieben von Compute-, Speicher- und Netzwerkressourcen finden Sie unter [Azure-Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](./virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
 
+Informationen zum Verbinden virtueller Netzwerke aus verschiedenen Bereitstellungsmodellen finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](./virtual-network/virtual-networks-arm-asm-s2s.md).
+
 ## Nächste Schritte
 
-- Informationen zum Erstellen von deklarativen Bereitstellungsvorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
+- Informationen zum Erstellen deklarativer Bereitstellungsvorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Die Befehle zum Bereitstellen einer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

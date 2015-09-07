@@ -1,20 +1,20 @@
 <properties
    pageTitle="Wiederherstellen einer Datenbank nach einem Benutzerfehler in SQL Data Warehouse | Microsoft Azure"
-   description="Schritte zum Wiederherstellen einer Datenbank nach einem Benutzerfehler in SQL Data Warehouse"
-   services="sql-data-warehouse"
-   documentationCenter="NA"
-   authors="sahaj08"
-   manager="barbkess"
-   editor=""/>
+	description="Schritte zum Wiederherstellen einer Datenbank nach einem Benutzerfehler in SQL Data Warehouse"
+	services="sql-data-warehouse"
+	documentationCenter="NA"
+	authors="sahaj08"
+	manager="barbkess"
+	editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="06/26/2015"
-   ms.author="sahajs"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-services"
+	ms.date="06/26/2015"
+	ms.author="sahajs"/>
 
 # Wiederherstellen einer Datenbank nach einem Benutzerfehler in SQL Data Warehouse
 
@@ -58,6 +58,8 @@ $RestoreRequest = Start-AzureSqlDatabaseRestore -SourceServerName "<YourServerNa
 # Monitor progress of restore operation
 Get-AzureSqlDatabaseOperation -ServerName "<YourServerName>" –OperationGuid $RestoreRequest.RequestID
 ```
+
+Hinweis: Wenn Ihr Server „foo.database.windows.net“ heißt, verwenden Sie in den PowerShell-Cmdlets für „-ServerName“ den Namen „foo“.
 
 ### REST-API
 Verwenden Sie REST für eine programmatische Durchführung der Datenbankwiederherstellung.
@@ -116,8 +118,8 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer Azure SQL-Datenbank
 [Datenbank-Betriebsstatus]: http://msdn.microsoft.com/library/azure/dn720371.aspx
 [Wiederherstellbare gelöschte Datenbank abrufen]: http://msdn.microsoft.com/library/azure/dn509574.aspx
 [Wiederherstellbare gelöschte Datenbanken auflisten]: http://msdn.microsoft.com/library/azure/dn509562.aspx
-[Start-AzureSqlDatabaseRestore]: https://msdn.microsoft.com/de-de/library/dn720218.aspx
+[Start-AzureSqlDatabaseRestore]: https://msdn.microsoft.com/de-DE/library/dn720218.aspx
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

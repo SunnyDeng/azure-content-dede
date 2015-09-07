@@ -1,20 +1,20 @@
 <properties
    pageTitle="Erstellen eines virtuellen Netzwerks"
-   description="Führen Sie die genannten Schritte aus, um auf einfache Weise ein virtuelles Netzwerk zu erstellen."
-   services="virtual-network"
-   documentationCenter=""
-   authors="telmos"
-   manager="carolz"
-   editor="tysonn"/>
+	description="Führen Sie die genannten Schritte aus, um auf einfache Weise ein virtuelles Netzwerk zu erstellen."
+	services="virtual-network"
+	documentationCenter=""
+	authors="telmos"
+	manager="carolz"
+	editor="tysonn"/>
 
 <tags
    ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/06/2015"
-   ms.author="telmosampaio"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="07/06/2015"
+	ms.author="telmosampaio"/>
 
 # Erstellen eines virtuellen Netzwerks
 
@@ -22,7 +22,7 @@ Wenn Sie ein virtuelles Netzwerk erstellen, können Ihre Dienste und VMS sicher 
 
 Nachdem Sie Ihr virtuelles Netzwerk erstellt haben, können Sie ihm neue VMs und PaaS-Instanzen hinzufügen. Wenn Sie das Verwaltungsportal zum Erstellen Ihrer VMs verwenden, müssen Sie **Aus Katalog** wählen, um das virtuelle Netzwerk angeben zu können. Dies ist wichtig, da Sie dem Netzwerk nach dem Erstellen der VM nicht nachträglich eine VM hinzufügen können.
 
-[Azure-Hinweis] Verwenden Sie **dieses Verfahren** zum Erstellen eines dedizierten, ausschließlich cloudbasierten virtuellen Netzwerks. Aufgrund der höheren Komplexität einer standortübergreifenden Konfiguration sollte dieses Verfahren nicht zum Erstellen eines virtuellen Netzwerks verwendet werden, das später mit Ihrem lokalen Netzwerk verbunden wird. Wenn Sie eine sichere standortübergreifende Verbindung zwischen Azure und Ihrem lokalen Netzwerk erstellen möchten, finden Sie weitere Informationen unter [Sichere standortübergreifende Verbindungen](https://msdn.microsoft.com/library/azure/dn133798.aspx).
+[Azure-Hinweis] Verwenden Sie **dieses Verfahren** zum Erstellen eines dedizierten, ausschließlich cloudbasierten virtuellen Netzwerks. Aufgrund der höheren Komplexität einer standortübergreifenden Konfiguration sollte dieses Verfahren nicht zum Erstellen eines virtuellen Netzwerks verwendet werden, das später mit Ihrem lokalen Netzwerk verbunden wird. Wenn Sie eine sichere standortübergreifende Verbindung zwischen Azure und Ihrem lokalen Netzwerk erstellen möchten, finden Sie weitere Informationen unter [Sichere standortübergreifende Verbindungen](vpn-gateway-cross-premises-options.md).
 
 ## Erstellen des virtuellen Netzwerks
 
@@ -35,7 +35,7 @@ Nachdem Sie Ihr virtuelles Netzwerk erstellt haben, können Sie ihm neue VMs und
 
 
 
-4. Nehmen Sie auf der Seite **DNS-Server und VPN-Konnektivität** keine Änderungen vor. Wechseln Sie einfach durch Klicken auf den Pfeil zur nächsten Seite. Standardmäßig verwendet Azure eine grundlegende Namensauflösung für Ihr virtuelles Netzwerk. Möglicherweise sind Ihre Anforderungen für die Namensauflösung komplexer, sodass die grundlegende Namensauflösung von Azure nicht eingesetzt werden kann. In diesem Fall müssen Sie später möglicherweise einen virtuellen Computer mit DNS zu Ihrem virtuellen Netzwerk hinzufügen. Weitere Informationen zu Azure-Namensauflösung und DNS finden Sie unter [Namensauflösung](https://msdn.microsoft.com/library/azure/jj156088.aspx).
+4. Nehmen Sie auf der Seite **DNS-Server und VPN-Konnektivität** keine Änderungen vor. Wechseln Sie einfach durch Klicken auf den Pfeil zur nächsten Seite. Standardmäßig verwendet Azure eine grundlegende Namensauflösung für Ihr virtuelles Netzwerk. Möglicherweise sind Ihre Anforderungen für die Namensauflösung komplexer, sodass die grundlegende Namensauflösung von Azure nicht eingesetzt werden kann. In diesem Fall müssen Sie später möglicherweise einen virtuellen Computer mit DNS zu Ihrem virtuellen Netzwerk hinzufügen. Weitere Informationen zu Azure-Namensauflösung und DNS finden Sie unter [Namensauflösung](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 5. Auf der Seite **Virtuelle Netzwerkadressräume** geben Sie den Adressraum ein, den Sie für dieses VNet verwenden möchten. Sofern Sie keine bestimmte interne IP-Adresse für Ihre VMs benötigen oder ein spezifisches Subnetz für VMs erstellen möchten, die eine statische DIP erhalten, müssen Sie auf dieser Seite keine Änderungen vornehmen. Wenn Sie mehrere Subnetze erstellen möchten, klicken Sie auf dieser Seite auf **Subnetz hinzufügen**. Weitere Informationen zu den Einstellungen auf der Detailseite finden Sie unter **Gewusst wie: Verwalten der Eigenschaften eines Virtual Network (VNet)** im Abschnitt mit den Details zum virtuellen Netzwerk[](../virtual-networks-settings).
 
 	-  Weitere Informationen zu den Einstellungen auf der Detailseite finden Sie unter **Gewusst wie: Verwalten der Eigenschaften eines Virtual Network (VNet)** im Abschnitt mit den Details zum virtuellen Netzwerk[](../virtual-networks-settings).
@@ -48,8 +48,8 @@ Nachdem Sie Ihr virtuelles Netzwerk erstellt haben, können Sie ihm neue VMs und
 
 
 ## Nächste Schritte
--  Erfahren Sie mehr über [virtuelle Netzwerke](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx) in Azure. 
+-  Erfahren Sie mehr über [virtuelle Netzwerke](../virtual-network/virtual-networks-overview.md) in Azure. 
 
 -  [Hinzufügen eines virtuellen Computers zu einem virtuellen Netzwerk](../virtual-machines/virtual-machines-create-custom.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

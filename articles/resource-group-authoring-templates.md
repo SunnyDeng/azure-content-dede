@@ -1,26 +1,28 @@
 <properties
    pageTitle="Erstellen von Azure-Ressourcen-Manager-Vorlagen"
-   description="Erstellen Sie Azure-Ressourcen-Manager-Vorlagen mithilfe von deklarativer JSON-Syntax, um Anwendungen für Azure bereitzustellen."
-   services="azure-resource-manager"
-   documentationCenter="na"
-   authors="tfitzmac"
-   manager="wpickett"
-   editor=""/>
+	description="Erstellen Sie Azure-Ressourcen-Manager-Vorlagen mithilfe von deklarativer JSON-Syntax, um Anwendungen für Azure bereitzustellen."
+	services="azure-resource-manager"
+	documentationCenter="na"
+	authors="tfitzmac"
+	manager="wpickett"
+	editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="07/24/2015"
-   ms.author="tomfitz"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="08/20/2015"
+	ms.author="tomfitz"/>
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen
 
 Azure-Anwendungen erfordern i. d. R. eine Kombination von Ressourcen (z. B. Datenbankserver, Datenbanken oder Websites), um die gewünschten Ziele zu erreichen. Anstatt jede Ressource gesondert bereitzustellen und zu verwalten, können Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, die für die Bereitstellung aller Ressourcen für Ihre Anwendung in einem einzigen koordinierten Vorgang sorgt. In der Vorlage müssen Sie die Ressourcen definieren, die für die Anwendung erforderlich sind, und Bereitstellungsparameter für die Eingabe von Werten für unterschiedliche Umgebungen angeben. Die Vorlage besteht aus JSON und Ausdrücken, mit denen Sie Werte für die Bereitstellung erstellen können.
 
 In diesem Thema werden die Abschnitte der Vorlage beschrieben. Die tatsächlichen Schemas finden Sie unter [Schemas des Azure-Ressourcen-Manager](https://github.com/Azure/azure-resource-manager-schemas).
+
+Sie müssen die Größe der Vorlage auf 1 MB und jede Parameterdatei auf 64 KB beschränken. Die 1-MB-Beschränkung gilt für den endgültigen Status der Vorlage, nachdem sie durch iterative Ressourcendefinitionen und Werte für Variablen und Parametern erweitert wurde.
 
 ## Vorlagenformat
 
@@ -218,7 +220,7 @@ Sie definieren Ressourcen mit der folgenden Struktur:
 
 | Elementname | Erforderlich | Beschreibung
 | :----------------------: | :------: | :----------
-| apiVersion | Ja | Die Version der API, die die Ressource unterstützt. Die verfügbaren Versionen und Schemas für Ressourcen finden Sie unter [Schemas des Azure-Ressourcen-Manager](https://github.com/Azure/azure-resource-manager-schemas).
+| apiVersion | Ja | Die Version der API, die die Ressource unterstützt. Die verfügbaren Versionen und Schemas für Ressourcen finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
 | type | Ja | Der Typ der Ressource. Dieser Wert ist eine Kombination aus dem Namespace des Ressourcenanbieters und dem Ressourcentyp, den der Ressourcenanbieter unterstützt.
 | Name | Ja | Der Name der Ressource. Der Name muss die Einschränkungen für URI-Komponenten laut Definition in RFC3986 erfüllen.
 | location | Nein | Unterstützte Standorte der angegebenen Ressource
@@ -313,7 +315,7 @@ Dieses Thema bietet einen einführenden Einblick in die Vorlage. Ihr Szenario er
 
 Sie müssen möglicherweise zwei Vorlagen zusammenführen oder eine untergeordnete Vorlage innerhalb einer übergeordneten Vorlage verwenden. Weitere Informationen finden Sie unter [Verwenden von verknüpften Vorlagen mit Azure-Ressourcen-Manager](resource-group-linked-templates.md).
 
-Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
+Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmten Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 
 Möglicherweise müssen Sie Ressourcen verwenden, die in einer anderen Ressourcengruppe enthalten sind. Dies geschieht normalerweise bei der Arbeit mit Speicherkonten oder virtuellen Netzwerken, die in mehreren Ressourcengruppen gemeinsam verwendet werden. Weitere Informationen finden Sie unter der [resourceId-Funktion](../resource-group-template-functions#resourceid).
 
@@ -403,6 +405,6 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
 - Ausführliche Informationen zu den Funktionen, die Sie innerhalb einer Vorlage nutzen können, finden Sie unter [Funktionen der Azure-Ressourcen-Manager-Vorlagen](resource-group-template-functions.md).
 - Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
 - Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
-- Die verfügbaren Schemas finden Sie unter [Schemas des Azure-Ressourcen-Manager](https://github.com/Azure/azure-resource-manager-schemas).
+- Die verfügbaren Schemas finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

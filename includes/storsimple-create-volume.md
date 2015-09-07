@@ -5,7 +5,7 @@
 2. Geben Sie im Assistenten "Volume hinzufügen" unter **Grundeinstellungen**
    1. den **Namen** für das Volume ein.
    2. Geben Sie die **Bereitgestellte Kapazität** für das Volume an. **Die Volumekapazität muss zwischen 1 GB und 64 TB betragen.**
-   3. Wählen Sie aus der Dropdownliste den **Verwendungstyp** für das Volume aus. Wählen Sie für weniger häufig abgerufene Archivierungsdaten ein **Archivvolume** aus. Wählen Sie für alle anderen Datentypen **Primäres Volume** aus.
+   3. Wählen Sie aus der Dropdownliste den **Verwendungstyp** für das Volume aus. Wählen Sie für weniger häufig abgerufene Archivierungsdaten ein **Archivvolume** aus. Wählen Sie für alle anderen Datentypen **Mehrstufiges Volume** aus. (Mehrstufige Volumes wurden früher primäre Volumes genannt).
    4. Klicken Sie auf den Pfeil ![Pfeilsymbol](./media/storsimple-create-volume/HCS_ArrowIcon-include.png), um zur nächsten Seite zu wechseln.
 
      ![Volume hinzufügen](./media/storsimple-create-volume/HCS_AddVolume1M-include.png)
@@ -21,4 +21,4 @@
 
 4. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-create-volume/HCS_CheckIcon-include.png). Ein Volume wird mit den angegebenen Einstellungen erstellt.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

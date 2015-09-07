@@ -1,4 +1,3 @@
-
 #Lastenausgleich für Azure-Infrastrukturdienste#
 
 Für Azure-Infrastrukturdienste kann Lastenausgleich auf zwei Ebenen genutzt werden:
@@ -18,7 +17,7 @@ Azure Traffic Manager verwendet drei Lastenausgleichsmethoden, um den Datenverke
 - **Leistung**: Verwenden Sie diese Methode, wenn sich die Endpunkte an unterschiedlichen geografischen Standorten befinden und anfordernde Clients den "nächstgelegenen" Endpunkt (im Hinblick auf die geringste Latenzzeit) verwenden sollen.
 - **Roundrobin**: Verwenden Sie diese Methode, wenn Sie die Last auf eine Reihe von Clouddiensten im gleichen Rechenzentrum oder auf Clouddienste oder Websites in verschiedenen Rechenzentren verteilen möchten.
 
-Weitere Informationen finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](http://msdn.microsoft.com/library/azure/dn339010.aspx).
+Weitere Informationen finden Sie unter [Traffic Manager-Lastenausgleichsmethoden](../traffic-manager/traffic-manager-load-balancing-methods.md).
 
 Die folgende Abbildung zeigt ein Beispiel für die Roundrobin-Lastenausgleichsmethode, bei der der Datenverkehr zwischen unterschiedlichen Clouddiensten verteilt wird.
 
@@ -31,8 +30,6 @@ Im Folgenden die grundlegende Vorgehensweise:
 3.	Der Traffic Manager gibt den DNS-Namen des Clouddiensts in der Roundrobinliste zurück. Der DNS-Server des Internetclients löst den Namen in eine IP-Adresse auf und sendet diese an den Internetclient.
 4.	Der Internetclient stellt eine Verbindung mit dem ausgewählten Clouddienst her.
 
-Weitere Informationen finden Sie unter [Traffic Manager](http://msdn.microsoft.com/library/azure/hh745750.aspx).
-
 ## Azure-Lastenausgleich für virtuelle Computer ##
 
 Virtuelle Computer im selben Clouddienst oder virtuellen Netzwerk können über ihre privaten IP-Adressen direkt miteinander kommunizieren. Computer und Dienste außerhalb des Clouddiensts oder virtuellen Netzwerks können nur mit virtuellen Computern in einem Clouddienst oder virtuellen Netzwerk mit einem konfigurierten Endpunkt kommunizieren. Ein Endpunkt ist eine Zuordnung einer öffentlichen IP-Adresse und eines Ports zu der privaten IP-Adresse und dem Port eines virtuellen Computers oder einer Webrolle innerhalb eines Azure-Clouddiensts.
@@ -43,7 +40,7 @@ Die folgende Abbildung zeigt einen Endpunkt für Standard-Datenverkehr (unversch
 
 ![loadbalancing](./media/load-balancing-vms/LoadBalancing.png)
 
-Weitere Informationen finden Sie unter [Azure-Lastenausgleichsmodul](http://msdn.microsoft.com/library/azure/dn655058.aspx). Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich](http://msdn.microsoft.com/library/azure/dn655055.aspx).
+Weitere Informationen finden Sie unter [Azure-Lastenausgleichsmodul](../articles/load-balancer/load-balancer-overview.md). Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich](../load-balancer/load-balancer-overview.md).
 
 Azure ist auch in der Lage, Lasten innerhalb eines Clouddiensts oder virtuellen Netzwerks auszugleichen. Diese Methode wird als interner Lastenausgleich bezeichnet und kann wie folgt verwendet werden:
 
@@ -57,8 +54,8 @@ Die folgende Abbildung zeigt ein Beispiel eines internen Endpunkts mit Lastenaus
 
 ![loadbalancing](./media/load-balancing-vms/LOBServers.png)
 
-Weitere Informationen finden Sie unter [Interner Lastenausgleich](http://msdn.microsoft.com/library/azure/dn690121.aspx). Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer internen Gruppe mit Lastenausgleich](http://msdn.microsoft.com/library/azure/dn690125.aspx).
+Weitere Informationen finden Sie unter [Interner Lastenausgleich](../load-balancer/load-balancer-internal-overview.md). Die Schritte zum Erstellen einer Gruppe mit Lastenausgleich finden Sie unter [Konfigurieren einer internen Gruppe mit Lastenausgleich](../load-balancer/load-balancer-internal-getstarted.md).
 
 <!-- LINKS -->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

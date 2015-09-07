@@ -5,8 +5,7 @@
 	documentationCenter="mobile"
 	authors="MehrdadMzfr"
 	manager="dwrede"
-	editor="" />
-
+	editor=""/>
 
 <tags
 	ms.service="mobile-engagement"
@@ -15,8 +14,7 @@
 	ms.devlang="objective-c"
 	ms.topic="article"
 	ms.date="08/05/2015"
-	ms.author="MehrdadMzfr" />
-
+	ms.author="MehrdadMzfr"/>
 
 #Integrieren von Mobile Engagement unter iOS
 
@@ -28,13 +26,13 @@
 
 In diesem Verfahren wird die einfachste Art der Aktivierung der Analyse- und Überwachungsfunktionen von Mobile Engagement in Ihrer iOS-Anwendung beschrieben.
 
-> [AZURE.IMPORTANT]Das Engagement SDK erfordert iOS5+: Das Bereitstellungsziel Ihre Anwendung muss mindestens über iOS 5 verfügen.
+> [AZURE.IMPORTANT]Das Engagement SDK erfordert iOS6+: Das Bereitstellungsziel Ihre Anwendung muss mindestens über iOS 6 verfügen.
 
 Die folgenden Schritte sind ausreichend, um den Bericht von Protokollen zu aktivieren, die zur Berechnung aller Statistiken zu Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Informationen notwendig sind. Der Bericht von Protokollen, die zur Berechnung anderer Statistiken wie Ereignisse, Fehler und Aufträge erforderlich ist, muss manuell mithilfe der Engagement-API erfolgen (siehe [So verwenden Sie die erweiterte Mobile Engagement API für Tags in Ihrer iOS-App](mobile-engagement-ios-use-engagement-api.md)), da diese Statistiken von der Anwendung abhängig sind.
 
 ##Einbetten des Engagement-SDKs in Ihr iOS-Projekt
 
-Fügen Sie das Engagement-SDK zum iOS-Projekt hinzu. Klicken Sie in Xcode 4 mit der rechten Maustaste auf das Projekt, und wählen Sie **„Add files to ...“** und anschließend den Ordner `EngagementSDK` aus.
+Fügen Sie das Engagement-SDK zum iOS-Projekt hinzu. Klicken Sie in Xcode mit der rechten Maustaste auf das Projekt, und wählen Sie **„Add files to ...“** und anschließend den Ordner `EngagementSDK` aus.
 
 Engagement erfordert, dass zusätzliche Frameworks funktionieren: Öffnen Sie im Projektexplorer Ihren Projektbereich, und wählen Sie das richtige Ziel aus. Öffnen Sie dann die Registerkarte **„Build phases“**. Fügen Sie anschließend im Menü **„Link Binary With Libraries“** die folgenden Frameworks hinzu:
 
@@ -45,7 +43,7 @@ Engagement erfordert, dass zusätzliche Frameworks funktionieren: Öffnen Sie im
 > -   `CoreLocation.framework`
 > -   `libxml2.dylib`
 
-> [AZURE.NOTE]Das AdSupport-Framework kann entfernt werden. Dieses Framework ist für Engagement zum Erfassen der IDFA erforderlich. Die IDFA-Erfassung kann jedoch mit \<ios-sdk-engagement-idfa\> deaktiviert werden, um der neuen Apple-Richtlinie zu dieser ID zu entsprechen.
+> [AZURE.NOTE]Das AdSupport-Framework kann entfernt werden. Dieses Framework ist für Engagement zum Erfassen der IDFA erforderlich. Die IDFA-Erfassung kann jedoch mit <ios-sdk-engagement-idfa> deaktiviert werden, um der neuen Apple-Richtlinie zu dieser ID zu entsprechen.
 
 ##Initialisieren des Engagement-SDK
 
@@ -69,7 +67,7 @@ Sie müssen Ihre Anwendungsstellvertretung ändern:
 
 ### Empfohlene Methode: Überladen der `UIViewController`-Klassen
 
-Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `UIViewController`-Unterklassen von den entsprechenden `EngagementViewController`-Klassen abgeleitet werden (gleiche Regel für `UITableViewController` -\\> `EngagementTableViewController`).
+Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berechnen von Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Statistiken erforderlich sind, müssen Sie einfach dafür sorgen, dass all Ihre `UIViewController`-Unterklassen von den entsprechenden `EngagementViewController`-Klassen abgeleitet werden (gleiche Regel für `UITableViewController` -\> `EngagementTableViewController`).
 
 **Ohne Engagement:**
 
@@ -190,7 +188,6 @@ Das folgende Beispiel von `Settings.bundle` veranschaulicht die Implementierung:
 	        <dict>
 	            <key>DefaultValue</key>
 	            <true/>
-
 	            <key>Key</key>
 	            <string>engagement_agent_enabled</string>
 	            <key>Title</key>
@@ -210,4 +207,4 @@ Das folgende Beispiel von `Settings.bundle` veranschaulicht die Implementierung:
 [startMonitoringSignificantLocationChanges]: http://developer.apple.com/library/IOs/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html#//apple_ref/occ/instm/CLLocationManager/startMonitoringSignificantLocationChanges
 [IDFA]: https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/ASIdentifierManager.html#//apple_ref/occ/instp/ASIdentifierManager/advertisingIdentifier
 
-<!----HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

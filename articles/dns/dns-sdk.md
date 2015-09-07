@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Automatisieren von DNS- und Datensatzgruppenvorgängen mit dem .NET SDK | Microsoft Azure" 
-   description="Automatisieren aller DNS-Vorgänge für Azure DNS mithilfe des .NET SDK." 
-   services="dns" 
-   documentationCenter="na" 
-   authors="joaoma" 
-   manager="adinah" 
-   editor=""/>
+   pageTitle="Automatisieren von DNS- und Datensatzgruppenvorgängen mit dem .NET SDK | Microsoft Azure"
+	description="Automatisieren aller DNS-Vorgänge für Azure DNS mithilfe des .NET SDK."
+	services="dns"
+	documentationCenter="na"
+	authors="joaoma"
+	manager="adinah"
+	editor=""/>
 
 <tags
    ms.service="dns"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
-   ms.date="05/20/2015"
-   ms.author="joaoma"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/20/2015"
+	ms.author="joaoma"/>
 # Erstellen von DNS-Zonen und -Datensatzgruppen mithilfe des .NET SDK
 Sie können die Vorgänge zum Erstellen, Löschen oder Aktualisieren von DNS-Zonen, Datensatzgruppen und Einträgen mithilfe des DNS SDK mit .NET DNS Management-Bibliothek automatisieren. Ein vollständiges Visual Studio-Projekt steht Ihnen [hier](http://download.microsoft.com/download/2/A/C/2AC64449-1747-49E9-B875-C71827890126/AzureDnsSDKExample_2015_05_05.zip) zur Verfügung.
 
@@ -54,7 +54,7 @@ Erstellen einer DNS-Zone:
 	dnsClient.Zones.CreateOrUpdate("myresgroup", "myzone.com", zoneParams);
 
 
-Azure DNS unterstützt eine optimistischen Parallelität namens [Etags](../dns-getstarted-create-dnszone#Etags-and-tags). "Etag" ist eine Eigenschaft der Zone, und "IfNoneMatch" ist eine Eigenschaft in ZoneCreateOrUpdateParameters.
+Azure DNS unterstützt eine optimistischen Parallelität namens [Etags](dns-getstarted-create-dnszone.md#Etags-and-tags). "Etag" ist eine Eigenschaft der Zone, und "IfNoneMatch" ist eine Eigenschaft in ZoneCreateOrUpdateParameters.
 
 ## Erstellen oder Aktualisieren von DNS-Einträgen
 DNS-Einträge werden als Datensatzgruppe verwaltet. Eine Datensatzgruppe ist eine Gruppe von Einträgen mit demselben Namen und Eintragstyp in einer Zone. Zum Erstellen oder Aktualisieren einer Datensatzgruppe wird ein RecordSet-Objekt erstellt und an dnsClient.RecordSets.CreateOrUpdate übergeben. Beachten Sie, dass der Name der Datensatzgruppe relativ zum Zonennamen ist, und nicht der vollqualifizierte DNS-Namen. Wieder wird der Standort auf "global" festgelegt.
@@ -74,7 +74,7 @@ Erstellen von Datensatzgruppen
 	"myzone.com", "www", RecordType.A, recordParams);
 	
     
-Azure DNS unterstützt die optimistische Parallelität [Etags](../dns-getstarted-create-dnszone#Etags-and-tags). "Etag" ist eine Eigenschaft von RecordSet, und "IfNoneMatch" ist eine Eigenschaft in RecordSetCreateOrUpdateParameters.
+Azure DNS unterstützt die optimistische Parallelität [Etags](dns-getstarted-create-dnszone.md#Etags-and-tags). "Etag" ist eine Eigenschaft von RecordSet, und "IfNoneMatch" ist eine Eigenschaft in RecordSetCreateOrUpdateParameters.
 
 ## Abrufen von Zonen und Datensatzgruppen
 Die Zones- und RecordSets-Auflistungen ermöglichen das Abrufen von Zonen bzw. Datensatzgruppen. Datensatzgruppen werden anhand von Typ, Name und der Zone (und Ressourcengruppe), in der sie sich befinden, identifiziert. Zonen werden anhand von Name und der Ressourcengruppe, in der sie sich befinden, identifiziert.
@@ -100,11 +100,12 @@ Das folgende Beispiel zeigt, wie Sie eine Liste der DNS-Zonen und Datensatzgrupp
 
     // do something like write out each record set
 	}
-## Siehe auch 
-[Traffic Manager – Übersicht](../traffic-manager-overview)
+## Nächste Schritte
 
-[Azure DNS – Übersicht](../dns-overview)
+[Was ist Traffic Manager?](traffic-manager-overview.md)
+
+[Was ist Azure DNS?](dns-overview.md)
 
 [Visual Studio SDK-Beispielprojekt](http://download.microsoft.com/download/2/A/C/2AC64449-1747-49E9-B875-C71827890126/AzureDnsSDKExample_2015_05_05.zip)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

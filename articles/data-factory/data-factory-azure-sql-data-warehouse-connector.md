@@ -1,24 +1,22 @@
 <properties 
-	pageTitle="Azure SQL Data Warehouse-Connector: Verschieben von Daten in und aus Azure SQL Data Warehouse" 
-	description="Informationen zum Azure SQL Data Warehouse-Connector für den Data Factory-Dienst, mit dem Sie Daten in eine Azure SQL Data Warehouse-Datenbank bzw. aus ihr heraus verschieben können." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Verschieben von Daten in und aus Azure SQL Data Warehouse | Azure Data Factory"
+	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in und aus Azure SQL Data Warehouse verschoben werden."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/29/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2015"
 	ms.author="spelluru"/>
 
-
-# Azure SQL Data Warehouse-Connector: Verschieben von Daten in und aus Azure SQL Data Warehouse 
+# Verschieben von Daten in und aus Azure SQL Data Warehouse mithilfe von Azure Data Factory
 
 Dieser Artikel beschreibt die Verwendung der Kopieraktivität der Data Factory, um Daten aus einem anderen Datenspeicher in Azure SQL Data Warehouse und aus Azure SQL in einen anderen Datenspeicher zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
 
@@ -26,11 +24,11 @@ Dieser Artikel beschreibt die Verwendung der Kopieraktivität der Data Factory, 
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1. Einen verknüpften Dienst des Typs "AzureSqlDW"
-2. Einen verknüpften Dienst des Typs "AzureStorage" 
-3. Ein Eingabedataset des Typs "AzureSqlDWTable" 
-4. Ein Ausgabedataset des Typs "AzureBlob"
-4. Eine Pipeline mit Kopieraktivität, die "SqlDWSource" und "BlobSink" verwendet
+1. Einen verknüpften Dienst des Typs [AzureSqlDW](#azure-sql-data-warehouse-linked-service-properties)
+2. Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties) 
+3. Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [AzureSqlDWTable](#azure-sql-data-warehouse-dataset-type-properties) 
+4. Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+4. Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [SqlDWSource](#azure-sql-data-warehouse-copy-activity-type-properties) und [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) verwendet
 
 Im Beispiel werden Daten, die zu einer Zeitreihe gehören, stündlich aus einer Tabelle in einer Azure SQL Data Warehouse-Datenbank in ein Blob kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -174,7 +172,7 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	        "typeProperties": {
 	          "source": {
 	            "type": "SqlDWSource",
-	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \\'{0:yyyy-MM-dd HH:mm}\\' AND timestampcolumn < \\'{1:yyyy-MM-dd HH:mm}\\'', WindowStart, WindowEnd)"
+	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \'{0:yyyy-MM-dd HH:mm}\' AND timestampcolumn < \'{1:yyyy-MM-dd HH:mm}\'', WindowStart, WindowEnd)"
 	          },
 	          "sink": {
 	            "type": "BlobSink"
@@ -199,11 +197,12 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1.	Einen verknüpften Dienst des Typs "AzureSqlDWDatabase"
-2.	Einen verknüpften Dienst des Typs "AzureStorage"
-3.	Ein Eingabedataset des Typs "AzureBlob"
-4.	Ein Ausgabedataset des Typs "AzureSqlDWTable"
-4.	Eine Pipeline mit Kopieraktivität, die "BlobSource" und "SqlDWSink" verwendet
+1.	Einen verknüpften Dienst des Typs [AzureSqlDW](#azure-sql-data-warehouse-linked-service-properties)
+2.	Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
+3.	Ein [Dataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+4.	Ein [Dataset](data-factory-create-datasets.md) des Typs [AzureSqlDWTable](#azure-sql-data-warehouse-dataset-type-properties)
+4.	Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [BlobSource](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) und [SqlDWSink](#azure-sql-data-warehouse-copy-activity-type-properties) verwendet
+
 
 Im Beispiel werden Daten, die zu einer Zeitreihe aus einem Azure-Blob gehören, stündlich in eine Tabelle in einer Azure SQL Data Warehouse-Datenbank kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -391,7 +390,7 @@ Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und 
 
 Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Aktivitäten finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md). Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar.
 
-**Hinweis:** Die Kopieraktivität verwendet nur eine Eingabe und erzeugt nur eine Ausgabe.
+**Hinweis**: Die Kopieraktivität verwendet nur eine Eingabe und erzeugt nur eine Ausgabe.
 
 Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren hingegen bei jedem Aktivitätstyp. Bei der Kopieraktivität variieren sie je nach Typ der Quellen und Senken.
 
@@ -399,7 +398,7 @@ Wenn bei der Kopieraktivität "source" den Typ **SqlDWSource** hat, sind im Absc
 
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------------- | -------- |
-| sqlReaderQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: select \* from MyTable. Falls nicht angegeben, wird folgende SQL-Anweisung ausgeführt: "select from MyTable". | Nein |
+| sqlReaderQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: select * from MyTable. Falls nicht angegeben, wird folgende SQL-Anweisung ausgeführt: "select from MyTable". | Nein |
 
 **SqlDWSink** unterstützt die folgenden Eigenschaften:
 
@@ -452,7 +451,7 @@ Die Zuordnung ist mit der [SQL Server-Datentypzuordnung für ADO.NET](https://ms
 | smalldatetime | DateTime |
 | smallint | Int16 |
 | smallmoney | Decimal | 
-| sql\_variant | Object \* |
+| sql\_variant | Object * |
 | Text | String, Char |
 | in | TimeSpan |
 | timestamp | Byte |
@@ -468,4 +467,4 @@ Die Zuordnung ist mit der [SQL Server-Datentypzuordnung für ADO.NET](https://ms
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

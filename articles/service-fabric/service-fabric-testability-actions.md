@@ -1,20 +1,20 @@
 <properties
    pageTitle="Testability-Aktion"
-   description="Dieser Artikel befasst sich mit den Testability-Aktionen von Microsoft Azure Service Fabric."
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="heeldin"
-   manager="timlt"
-   editor=""/>
+	description="Dieser Artikel befasst sich mit den Testability-Aktionen von Microsoft Azure Service Fabric."
+	services="service-fabric"
+	documentationCenter=".net"
+	authors="heeldin"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="03/17/2015"
-   ms.author="heeldin;motanv"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="03/17/2015"
+	ms.author="heeldin;motanv"/>
 
 # Testability-Aktionen
 Um eine unzuverlässige Infrastruktur simulieren zu können, bietet Service Fabric Entwicklern die Möglichkeit, verschiedene Ausfälle und Statusübergänge aus der Praxis zu simulieren. Dies wird in Form von Testability-Aktionen (Aktionen zur Prüfbarkeit) verfügbar gemacht. Diese Aktionen sind die Low-Level-APIs, die eine bestimmte Fault Injection, einen Statusübergang oder eine Überprüfung bewirken. Wenn ein Dienstentwickler diese Aktionen kombiniert, kann er umfassende Testszenarien für Ihre Dienste schreiben.
@@ -211,6 +211,7 @@ Erstellen Sie zum Verwenden ein ReplicaSelector-Objekt, und legen Sie fest, wie 
 
 Guid partitionIdGuid = new Guid("8fb7ebcc-56ee-4862-9cc0-7c6421e68829"); PartitionSelector partitionSelector = PartitionSelector.PartitionIdOf(serviceName, partitionIdGuid); long replicaId = 130559876481875498;
 
+
 ```csharp
 // Select Random replica
 ReplicaSelector randomReplicaSelector = ReplicaSelector.RandomOf(partitionSelector);
@@ -233,4 +234,4 @@ ReplicaSelector secondaryReplicaSelector = ReplicaSelector.RandomSecondaryOf(par
    - [Ausfälle bei der Kommunikation von Dienst zu Dienst](service-fabric-testability-scenarios-service-communication.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -5,7 +5,7 @@
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" />
+	editor="monicar"/>
 <tags 
 	ms.service="virtual-machines"
 	ms.devlang="na"
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="08/19/2015"
-	ms.author="jroth" />
+	ms.author="jroth"/>
 
 # SQL Server Data Warehousing und transaktionale Arbeitslasten auf virtuellen Azure-Computern
 
-Für die Verwendung von SQL Server für Data Warehousing oder Transaktionsarbeitslasten auf virtuellen Azure-Computern wird die Nutzung eines der vorkonfigurierten virtuellen Computerimages im Azure-Katalog für virtuelle Computer empfohlen. Diese Images wurden auf der Grundlage der Empfehlungen in [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](https://msdn.microsoft.com/library/azure/dn133149.aspx) optimiert.
+Für die Verwendung von SQL Server für Data Warehousing oder Transaktionsarbeitslasten auf virtuellen Azure-Computern wird die Nutzung eines der vorkonfigurierten virtuellen Computerimages im Azure-Katalog für virtuelle Computer empfohlen. Diese Images wurden auf der Grundlage der Empfehlungen in [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md) optimiert.
 
 Dieser Artikel konzentriert sich auf das Ausführen dieser Arbeitslasten auf virtuellen Azure-Computer (dies wird auch als „Infrastructure-as-a-Service“ oder „IaaS“ bezeichnet). Sie können Data Warehouse- und transaktionale Arbeitslasten auch als Dienst in Azure ausführen. Weitere Informationen finden Sie unter [Azure SQL Data Warehouse-Vorschau](http://azure.microsoft.com/documentation/services/sql-data-warehouse/) und [Azure SQL-Datenbank](http://azure.microsoft.com/documentation/services/sql-database/).
 
@@ -75,27 +75,30 @@ Weitere Informationen zum Erstellen von Images mit PowerShell finden Sie unter [
 
 ## Bestimmte in den Images für transaktionale/DW-Arbeitslasten enthaltene Konfigurationen
 
-Die in den Images enthaltenen Optimierungen basieren auf [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](https://msdn.microsoft.com/library/azure/dn133149.aspx). Insbesondere umfassen die Konfigurationen dieser Images die folgenden Optimierungen.
+Die in den Images enthaltenen Optimierungen basieren auf [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md). Insbesondere umfassen die Konfigurationen dieser Images die folgenden Optimierungen.
 
 >[AZURE.NOTE]Wenn Sie eine eigene Lizenz einbringen und einen virtuellen Computer für Data Warehousing oder transaktionale Arbeitslasten von Grund auf neu erstellen, können Sie Ihre Optimierungen auf dem Leistungsartikel und dem Beispiel für Optimierungen in den nachfolgend genannten vorkonfigurierten Images aufbauen.
 
 ### Datenträgerkonfigurationen
 
-
+|Konfiguration|Einstellung|
 |---|---|
 |Anzahl der angefügten Datenträger|15|
 |Speicherplätze|Zwei Speicherpools:<br/>– 1 Datenpool mit 12-Datenträgern; feste Größe 12 TB; Spalte = 12<br/>– 1 Protokollpool mit 3 Datenträgern; feste Größe 3 TB; Spalte = 3<br/><br/>Ein Datenträger verbleibt für die Anfügung durch den Benutzer mit frei bestimmbarer Nutzung.<br/><br/>**DW**: Stripegröße = 256 KB<br/>**Transaktional**: Stripegröße = 64 KB|
-|Datenträgergrößen, Caching, Zuordnungsgröße|Je 1 TB, HostCache=Ohne, Größe der NTFS-Zuordnungseinheiten = 64 KB|
+|Datenträgergrößen|1 TB jeder|
+|Zwischenspeichern|HostCache=None|
+|Zuordnungsgröße|Größe der NTFS-Zuordnungseinheit = 64 KB|
 
 ### SQL Server-Konfigurationen
 
+|Konfiguration|Einstellung|
 |---|---|
-|Startparameter|-T1117, um die Größe der Datendateien gleich zu halten, für den Fall dass Autogrow für die Datenbank erforderlich ist<br/><br/>-T1118, um die Skalierbarkeit von „tempdb“ zu unterstützen (Weitere Informationen finden Sie unter [SQL Server (2005 und 2008) Trace Flag 1118 (-T1118) Usage](http://blogs.msdn.com/b/psssql/archive/2008/12/17/sql-server-2005-and-2008-trace-flag-1118-t1118-usage.aspx?WT.mc_id=Blog_SQL_Announce_Announce).)|
+|Startparameter|-T1117, um die Größe der Datendateien gleich zu halten, für den Fall dass Autogrow für die Datenbank erforderlich ist<br/><br/>-T1118, um die Skalierbarkeit von „tempdb“ zu unterstützen (weitere Informationen finden Sie unter [SQL Server (2005 und 2008) Trace Flag 1118 (-T1118) Usage](http://blogs.msdn.com/b/psssql/archive/2008/12/17/sql-server-2005-and-2008-trace-flag-1118-t1118-usage.aspx?WT.mc_id=Blog_SQL_Announce_Announce).)|
 |Wiederherstellungsmodell|**DW**: Auf SIMPLE für die Modelldatenbank festgelegt mit ALTER DATABASE<br/>**Transaktional**: Keine Änderung|
 |Setup-Standardspeicherorte|Verschieben der Verzeichnisse für das SQL Server-Fehlerprotokoll und die Ablaufverfolgungsdateien auf die Daten-Datenträger|
-|Standardspeicherorte für Datenbanken|Systemdatenbanken auf die Daten-Datenträger verschoben.<br/><br/>Der Speicherort für das Erstellen von Benutzerdatenbanken wurde in Daten-Datenträger geändert.|
+|Standardspeicherorte für Datenbanken|Systemdatenbanken auf die Datenträger verschoben.<br/><br/>Der Speicherort für das Erstellen von Benutzerdatenbanken wurde in Datenträger geändert.|
 |Sofortige Dateiinitialisierung|Aktiviert|
-|Sperren von Seiten im Speicher|Aktiviert (Weitere Informationen finden Sie unter [Aktivieren der Option zum Sperren von Seiten im Speicher (Windows)](https://msdn.microsoft.com/library/ms190730.aspx)).|
+|Sperren von Seiten im Speicher|Aktiviert (weitere Informationen finden Sie unter [Aktivieren der Option zum Sperren von Seiten im Speicher (Windows)](https://msdn.microsoft.com/library/ms190730.aspx)).|
 
 ## Häufig gestellte Fragen
 
@@ -130,6 +133,6 @@ Nach der Installation jedes virtuellen Computers mit SQL Server möchten Sie wah
 - [Migrieren Ihrer Daten](virtual-machines-migrate-onpremises-database.md)
 - [Einrichten der Konnektivität](virtual-machines-sql-server-connectivity.md)
 
-Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
+Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

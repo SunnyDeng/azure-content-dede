@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen" 
-	description="Erfahren Sie in diesem Lernprogramm, wie Sie ein virtuelles Azure-Netzwerk mit standortübergreifender Konnektivität erstellen." 
-	services="virtual-network" 
-	documentationCenter="" 
-	authors="cherylmc" 
-	manager="adinah" 
+	pageTitle="Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen"
+	description="Erfahren Sie in diesem Lernprogramm, wie Sie ein virtuelles Azure-Netzwerk mit standortübergreifender Konnektivität erstellen."
+	services="virtual-network"
+	documentationCenter=""
+	authors="cherylmc"
+	manager="adinah"
 	editor="tysonn"/>
 
 <tags 
-	ms.service="virtual-network" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/28/2015" 
+	ms.service="virtual-network"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/17/2015"
 	ms.author="cherylmc"/>
 
 
@@ -24,7 +24,7 @@ Das Lernprogramm führt Sie durch die Schritte zum Erstellen eines virtuellen Ne
 
 Wenn Sie ein virtuelles Nur-Cloud-Netzwerk erstellen möchten, finden Sie unter [Lernprogramm: Erstellen eines virtuellen Nur-Cloud-Netzwerks in Azure](../virtual-machines/create-virtual-network.md) weitere Informationen. Wenn Sie mit Zertifikaten und einem VPN-Client ein Punkt-zu-Standort-VPN erstellen möchten, finden Sie weitere Informationen unter [Konfigurieren eines Punkt-zu-Standort-VPNs mit dem Assistenten im Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkId=296653).
 
-Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Es wurde entwickelt, um Ihnen die erforderlichen Schritte zum Erstellen eines standortübergreifenden virtuellen Beispielnetzwerks nahezubringen. Wenn Sie nach Entwurfsszenarien und erweiterten Informationen zu Virtual Network suchen, finden Sie weitere Informationen unter [Überblick über virtuelle Azure-Netzwerke](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx).
+Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Es wurde entwickelt, um Ihnen die erforderlichen Schritte zum Erstellen eines standortübergreifenden virtuellen Beispielnetzwerks nahezubringen. Wenn Sie nach Entwurfsszenarien und erweiterten Informationen zu Virtual Network suchen, finden Sie weitere Informationen unter [Überblick über virtuelle Azure-Netzwerke](../virtual-network/virtual-networks-overview.md).
 
 Nach Abschluss dieses Lernprogramms verfügen Sie über ein standortübergreifendes virtuelles Beispielnetzwerk. In der folgenden Abbildung sehen Sie die Details basierend auf den Einstellungen in diesem Lernprogramm.
 
@@ -99,7 +99,7 @@ So erstellen Sie ein virtuelles Netzwerk, das mit einem Unternehmensnetzwerk ver
 	
 4.	Geben Sie auf der Seite **DNS-Server und VPN-Konnektivität** die folgenden Informationen ein, und klicken Sie dann auf den Vorwärtspfeil unten rechts.
 
-> [AZURE.NOTE] Sie können auf dieser Seite sowohl die **Punkt-zu-Standort**- als auch die **Standort-zu-Standort**-Konfiguration gleichzeitig auswählen. Im Rahmen dieses Themas beschränken wir uns auf die Konfiguration von **Standort-zu-Standort**. Weitere Informationen zu den Einstellungen auf dieser Seite finden Sie unter **DNS-Server und VPN-Konnektivität** in [Konfigurieren eines virtuellen Netzwerks mit dem Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=248092).
+> [AZURE.NOTE]Sie können auf dieser Seite sowohl die **Punkt-zu-Standort**- als auch die **Standort-zu-Standort**-Konfiguration gleichzeitig auswählen. Im Rahmen dieses Themas beschränken wir uns auf die Konfiguration von **Standort-zu-Standort**. Weitere Informationen zu den Einstellungen auf dieser Seite finden Sie unter **DNS-Server und VPN-Konnektivität** in [Konfigurieren eines virtuellen Netzwerks mit dem Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=248092).
 
 	-  **DNS SERVERS:** Enter the DNS server name and IP address that you want to use for name resolution. Typically this would be a DNS server that you use for on-premises name resolution. This setting does not create a DNS server. For the example in this tutorial, type **YourDNS** for the name and **10.1.0.4** for the IP address.
 	-  **Configure Point-To-Site VPN:** Leave this field blank. 
@@ -216,30 +216,30 @@ Bei diesem Verfahren werden folgende Punkte vorausgesetzt:
 3.	Testen Sie die Verbindung, indem Sie einen der folgenden Befehle ausführen:
 
 	<table border="1">
-	<tr>
-	<th>-</th>
-	<th>Cisco ASA</th>
-	<th>Cisco ISR/ASR</th>
-	<th>Juniper SSG/ISG</th>
-	<th>Juniper SRX/J</th>
-	</tr>
-	
-	<tr>
-	<td><b>SAs im Hauptmodus prüfen</b></td>
-	<td><FONT FACE="courier" SIZE="-1">show crypto isakmp sa</FONT></td>
-	<td><FONT FACE="courier" SIZE="-1">show crypto isakmp sa</FONT></td>
-	<td><FONT FACE="courier" SIZE="-1">get ike cookie</FONT></td>
-	<td><FONT FACE="courier" SIZE="-1">show security ike security-association</FONT></td>
-	</tr>
+<tr>
+<th>-</th>
+<th>Cisco ASA</th>
+<th>Cisco ISR/ASR</th>
+<th>Juniper SSG/ISG</th>
+<th>Juniper SRX/J</th>
+</tr>
 
-	<tr>
-	<td><b>SAs im schnellen Modus prüfen</b></td>
-	<td><FONT FACE="courier" SIZE="-1">show crypto ipsec sa</FONT></td>
-	<td><FONT FACE="courier" SIZE="-1">show crypto ipsec sa</FONT></td>
-	<td><FONT FACE="courier" SIZE="-1">get sa</FONT></td>
-	<td><FONT FACE="courier" SIZE="-1">show security ipsec security-association</FONT></td>
-	</tr>
-	</table>
+<tr>
+<td><b>SAs im Hauptmodus prüfen</b></td>
+<td><FONT FACE="courier" SIZE="-1">show crypto isakmp sa</FONT></td>
+<td><FONT FACE="courier" SIZE="-1">show crypto isakmp sa</FONT></td>
+<td><FONT FACE="courier" SIZE="-1">get ike cookie</FONT></td>
+<td><FONT FACE="courier" SIZE="-1">show security ike security-association</FONT></td>
+</tr>
+
+<tr>
+<td><b>SAs im schnellen Modus prüfen</b></td>
+<td><FONT FACE="courier" SIZE="-1">show crypto ipsec sa</FONT></td>
+<td><FONT FACE="courier" SIZE="-1">show crypto ipsec sa</FONT></td>
+<td><FONT FACE="courier" SIZE="-1">get sa</FONT></td>
+<td><FONT FACE="courier" SIZE="-1">show security ipsec security-association</FONT></td>
+</tr>
+</table>
 
 
 ##  Nächste Schritte
@@ -253,9 +253,9 @@ Wenn Sie die Einstellungen des virtuellen Netzwerks in eine Netzwerkkonfiguratio
 
 ## Weitere Informationen
 
--  [Technische Übersicht über Azure Virtual Network](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx)
+-  [Technische Übersicht über Azure Virtual Network](../virtual-network/virtual-networks-overview.md)
 
--  [Häufig gestellte Fragen zu virtuellen Netzwerken](http://msdn.microsoft.com/library/windowsazure/dn133803.aspx)
+-  [Häufig gestellte Fragen zu virtuellen Netzwerken](virtual-networks-faq.md)
 
 -  [Konfigurieren eines virtuellen Netzwerks mit Netzwerkkonfigurationsdateien](virtual-networks-using-network-configuration-file.md)
 
@@ -272,4 +272,4 @@ Wenn Sie die Einstellungen des virtuellen Netzwerks in eine Netzwerkkonfiguratio
 
  
 
-<!--------HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

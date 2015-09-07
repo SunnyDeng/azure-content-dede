@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure AD Connect – SSL-Zertifikatanforderungen" 
-	description="Azure AD Connect – SSL-Zertifikatanforderungen für die Verwendung mit AD FS." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Azure AD Connect – SSL-Zertifikatanforderungen"
+	description="Azure AD Connect – SSL-Zertifikatanforderungen für die Verwendung mit AD FS."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/28/2015" 
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Azure AD Connect – SSL-Zertifikatanforderungen
@@ -32,4 +32,4 @@
 Platzhalterzertifikate werden unterstützt.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

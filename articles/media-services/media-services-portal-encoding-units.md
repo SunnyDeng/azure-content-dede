@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Skalieren von für die Codierung reservierten Einheiten" 
-	description="Erfahren Sie, wie Sie Media Services durch Angabe der Anzahl von On-Demand Streaming Reserved Units und Encoding Reserved Units für Ihr Konto skalieren können." 
-	services="media-services" 
-	documentationCenter="" 
-	authors="juliako" 
-	manager="dwrede" 
+	pageTitle="Skalieren von für die Codierung reservierten Einheiten"
+	description="Erfahren Sie, wie Sie Media Services durch Angabe der Anzahl von On-Demand Streaming Reserved Units und Encoding Reserved Units für Ihr Konto skalieren können."
+	services="media-services"
+	documentationCenter=""
+	authors="juliako"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015"  
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/11/2015"
 	ms.author="juliako"/>
 
 
@@ -23,6 +23,7 @@
 - [.NET](media-services-dotnet-encoding-units.md)
 - [Portal](media-services-portal-encoding-units.md)
 - [REST](https://msdn.microsoft.com/library/azure/dn859236.aspx)
+- [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 
 ##Übersicht
 
@@ -61,4 +62,4 @@ Informationen zu Kontingenten und Einschränkungen sowie zum Öffnen von Support
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

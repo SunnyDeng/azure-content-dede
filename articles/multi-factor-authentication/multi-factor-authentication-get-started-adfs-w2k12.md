@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Sichern von Cloud- und lokalen Ressourcen mithilfe von Azure MFA-Server mit Windows Server 2012 R2 AD FS" 
-	description="Auf dieser Seite zur Azure Multi-Factor Authentication werden die ersten Schritte mit Azure MFA und AD FS unter Windows Server 2012 R2 beschrieben." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	pageTitle="Sichern von Cloud- und lokalen Ressourcen mithilfe von Azure MFA-Server mit Windows Server 2012 R2 AD FS"
+	description="Auf dieser Seite zur Azure Multi-Factor Authentication werden die ersten Schritte mit Azure MFA und AD FS unter Windows Server 2012 R2 beschrieben."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
+	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/02/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 
@@ -229,4 +229,4 @@ Führen Sie nun das Skript „\\Programme\\Multi-Factor Authentication Server\\R
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

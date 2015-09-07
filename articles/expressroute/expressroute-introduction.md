@@ -1,21 +1,19 @@
 <properties 
    pageTitle="Einführung in ExpressRoute | Microsoft Azure"
-   description="Diese Seite enthält eine Übersicht über den ExpressRoute-Dienst, einschließlich der Funktionsweise einer ExpressRoute-Verbindung, der mit Exchange-Anbietern und Anbietern von Netzwerkdiensten arbeitet, sowie mit öffentlichem, privatem und Microsoft-ExpressRoute-Peering."
-   documentationCenter="na"
-   services="expressroute"
-   authors="cherylmc"
-   manager="adinah"
-   editor="tysonn"/>
-
+	description="Diese Seite enthält eine Übersicht über den ExpressRoute-Dienst, einschließlich der Funktionsweise einer ExpressRoute-Verbindung, der mit Exchange-Anbietern und Anbietern von Netzwerkdiensten arbeitet, sowie mit öffentlichem, privatem und Microsoft-ExpressRoute-Peering."
+	documentationCenter="na"
+	services="expressroute"
+	authors="cherylmc"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
-   ms.date="06/15/2015"
-   ms.author="cherylmc"/>
-
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/25/2015"
+	ms.author="cherylmc"/>
 
 # ExpressRoute - Technische Übersicht
 
@@ -106,4 +104,4 @@ Wenn Sie sich für alle drei Peeringsitzungen entscheiden, müssen Sie über dre
 - Einen Dienstanbieter finden. Siehe [ExpressRoute-Dienstanbieter und -Standorte](expressroute-locations.md)
 - Konfigurieren Sie Ihre ExpressRoute-Verbindung. Eine Anleitung finden Sie unter [ExpressRoute-Verbindung über einen Netzwerkdienstanbieter konfigurieren](expressroute-configuring-nsps.md) oder [Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter](expressroute-configuring-exps.md). 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,22 +1,22 @@
 <properties 
-	pageTitle="DocumentDB-Connector: Verschieben von Daten in und aus DocumentDB" 
-	description="Informationen zum Azure DocumentDB-Connector für den Data Factory-Dienst, mit dem Sie Daten in eine bzw. aus einer Azure DocumentDB-Sammlung verschieben können." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Verschieben von Daten in und aus DocumentDB | Azure Data Factory"
+	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in und aus Azure DocumentDB verschoben werden."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/29/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2015"
 	ms.author="spelluru"/>
 
-# DocumentDB-Connector: Verschieben von Daten in und aus DocumentDB
+# Verschieben von Daten in und aus DocumentDB mithilfe von Azure Data Factory
 
 Dieser Artikel beschreibt die Verwendung der Kopieraktivität in einer Azure Data Factory, um Daten aus einem anderen Datenspeicher in Azure DocumentDB und aus Azure DocumentDB in einen anderen Datenspeicher zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
 
@@ -24,11 +24,11 @@ Dieser Artikel beschreibt die Verwendung der Kopieraktivität in einer Azure Dat
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1. Einen verknüpften Dienst des Typs "DocumentDb"
-2. Einen verknüpften Dienst des Typs "AzureStorage" 
-3. Ein Eingabedataset des Typs "DocumentDbCollection" 
-4. Ein Ausgabedataset des Typs "AzureBlob"
-4. Eine Pipeline mit Kopieraktivität, die "DocumentDbCollectionSource" und "BlobSink" verwendet
+1. Einen verknüpften Dienst des Typs [DocumentDb](#azure-documentdb-linked-service-properties)
+2. Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties) 
+3. Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [DocumentDbCollection](#azure-documentdb-dataset-type-properties) 
+4. Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+4. Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [DocumentDbCollectionSource](#azure-documentdb-copy-activity-type-properties) und [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) verwendet
 
 Im Beispiel werden die Daten aus Azure DocumentDB in ein Azure-Blob kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -58,7 +58,7 @@ Im Beispiel werden die Daten aus Azure DocumentDB in ein Azure-Blob kopiert. Die
 
 **Azure DocumentDB-Eingabedataset:**
 
-Im Beispiel wird vorausgesetzt, dass eine Sammlung namens **Person** in einer Azure DocumentDB-Datenbank vorhanden ist.
+Im Beispiel wird vorausgesetzt, dass eine Sammlung mit dem Namen **Person** in einer Azure DocumentDB-Datenbank vorhanden ist.
  
 Durch Festlegen von "external" auf "true" und Angeben der Richtlinie "externalData" wird dem Azure Data Factory-Dienst angegeben, dass dies eine Tabelle ist, die für die Data Factory extern ist und nicht durch eine Aktivität in der Data Factory erzeugt wird.
 
@@ -164,11 +164,12 @@ Die folgende Pipeline kopiert Daten aus der Sammlung "Person" in der DocumentDB-
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1. Einen verknüpften Dienst des Typs "DocumentDb"
-2. Einen verknüpften Dienst des Typs "AzureStorage"
-3. Ein Eingabedataset des Typs "AzureBlob"
-4. Ein Ausgabedataset des Typs "DocumentDbCollection" 
-4. Eine Pipeline mit Kopieraktivität, die "BlobSource" und "DocumentDbCollectionSink" verwendet.
+1. Einen verknüpften Dienst des Typs [DocumentDb](#azure-documentdb-linked-service-properties)
+2. Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
+3. Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+4. Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [DocumentDbCollection](#azure-documentdb-dataset-type-properties) 
+4. Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [BlobSource](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) und [DocumentDbCollectionSink](#azure-documentdb-copy-activity-type-properties) verwendet
+
 
 Im Beispiel werden Daten aus dem Azure-Blob in Azure DocumentDB kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -379,11 +380,11 @@ Beispiel:
 
 Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Aktivitäten finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md). Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar.
  
-**Hinweis:** Die Kopieraktivität verwendet nur eine Eingabe und erzeugt nur eine Ausgabe.
+**Hinweis**: Die Kopieraktivität verwendet nur eine Eingabe und erzeugt nur eine Ausgabe.
 
 Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren hingegen bei jedem Aktivitätstyp. Bei der Kopieraktivität variieren sie je nach Typ der Quellen und Senken.
 
-Wenn bei der Kopieraktivität die Quelle vom Typ **DocumentDbCollectionSource** ist, sind im Abschnitt **typeProperties** die folgenden Eigenschaften verfügbar:
+Wenn bei der Kopieraktivität "source" den Typ **DocumentDbCollectionSource** hat, sind im Abschnitt **typeProperties** die folgenden Eigenschaften verfügbar:
 
 | **Eigenschaft** | **Beschreibung** | **Zulässige Werte** | **Erforderlich** |
 | ------------ | --------------- | ------------------ | ------------ |
@@ -395,9 +396,9 @@ Wenn bei der Kopieraktivität die Quelle vom Typ **DocumentDbCollectionSource** 
 | **Eigenschaft** | **Beschreibung** | **Zulässige Werte** | **Erforderlich** |
 | -------- | ----------- | -------------- | -------- |
 | nestingSeparator | Ein Sonderzeichen im Quellspaltennamen, um anzuzeigen, dass das geschachtelte Dokument erforderlich ist. <p>Zum Beispiel oben: "Name.First" in der Ausgabetabelle erzeugt die folgende JSON-Struktur im DocumentDB-Dokument:</p><p>"Name": {<br/> "First": "John"<br/>},</p> | Zeichen, das zur Trennung der Schachtelungsebenen verwendet wird.<p>Standardwert ist "." (Punkt).</p> | Zeichen, das zur Trennung der Schachtelungsebenen verwendet wird. <p>Standardwert ist "." (Punkt).</p> | Nein | 
-| writeBatchSize | Anzahl der parallelen Anforderungen an den DocumentDB-Dienst zum Erstellen von Dokumenten.<p>Sie können die Leistung beim Kopieren von Daten in/aus DocumentDB mithilfe dieser Eigenschaft feinabstimmen. Sie können eine bessere Leistung erwarten, wenn Sie "writeBatchSize" heraufsetzen, da mehr parallele Anforderungen an DocumentDB gesendet werden. Sie müssen jedoch eine Drosselung vermeiden, die zur Ausgabe einer Fehlermeldung führen kann: "Anforderungsrate ist hoch".</p><p>Die Drosselung hängt von einer Reihe von Faktoren ab, einschließlich Größe der Dokumente, Anzahl von Begriffen in Dokumenten, Indizierung der Richtlinie der Zielsammlung usw. Für Kopiervorgänge können Sie eine bessere Sammlung (z. B. S3) verwenden, um den höchsten verfügbaren Durchsatz zu erhalten (2.500 Anforderungseinheiten/Sekunde).</p> | Ganzzahlwert | Nein |
+| writeBatchSize | Anzahl der parallelen Anforderungen an den DocumentDB-Dienst zum Erstellen von Dokumenten.<p>Sie können die Leistung beim Kopieren von Daten in/aus DocumentDB mithilfe dieser Eigenschaft optimieren. Sie können eine bessere Leistung erwarten, wenn Sie "writeBatchSize" heraufsetzen, da mehr parallele Anforderungen an DocumentDB gesendet werden. Sie müssen jedoch eine Drosselung vermeiden, die zur Ausgabe einer Fehlermeldung führen kann: "Anforderungsrate ist hoch".</p><p>Die Drosselung hängt von einer Reihe von Faktoren ab, einschließlich Größe der Dokumente, Anzahl von Begriffen in Dokumenten, Indizierung der Richtlinie der Zielsammlung usw. Für Kopiervorgänge können Sie eine bessere Sammlung (z. B. S3) verwenden, um den höchsten verfügbaren Durchsatz zu erhalten (2.500 Anforderungseinheiten/Sekunde).</p> | Ganzzahlwert | Nein |
 | writeBatchTimeout | Die Wartezeit für den Abschluss des Vorgangs. | (Einheit = Zeitspanne) Beispiel: "00:30:00" (30 Minuten). | Nein |
  
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

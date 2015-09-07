@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwalten einer Web-App in Azure App Service" 
-	description="Links zu Ressourcen für die Verwaltung einer Web-App in Azure App Service." 
-	services="app-service\web" 
-	documentationCenter="" 
-	authors="erikre" 
-	manager="wpickett" 
+	pageTitle="Verwalten einer Web-App in Azure App Service"
+	description="Links zu Ressourcen für die Verwaltung einer Web-App in Azure App Service."
+	services="app-service\web"
+	documentationCenter=""
+	authors="erikre"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/31/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/31/2015"
 	ms.author="erikre"/>
 
 # Verwalten einer Web-App in Azure App Service
@@ -22,7 +22,7 @@ Dieses Thema enthält Links zu Ressourcen für die Verwaltung einer Web-App in [
 
 Im Laufe der Lebensdauer einer Web-App führen Sie verschiedene Verwaltungsaufgaben aus, von der ersten Bereitstellung zum Normalbetrieb, einschließlich Wartung und Aktualisierungen.
 
-Viele Aufgaben der Web-App-Verwaltung können im Azure-Portal ausgeführt werden. Weitere Informationen finden Sie unter [Verwalten von Web-Apps mithilfe des Azure-Portals](web-sites-manage.md).
+Viele Aufgaben der Web-App-Verwaltung können im Azure-Portal ausgeführt werden.
 
 ## Bevor Sie Ihre Web-App für die Produktion bereitstellen
 
@@ -103,4 +103,4 @@ Wenn Sie Visual Studio One verwenden, können Sie die fortlaufende Bereitstellun
 
   
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

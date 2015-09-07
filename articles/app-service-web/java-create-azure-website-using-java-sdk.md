@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Erstellen einer Web-App in Azure App Service mithilfe des Azure SDK für Java" 
-	description="Erfahren Sie, wie Sie mithilfe des Azure SDK für Java programmgesteuert eine Web-App in Azure App Service erstellen." 
+	pageTitle="Erstellen einer Web-App in Azure App Service mithilfe des Azure SDK für Java"
+	description="Erfahren Sie, wie Sie mithilfe des Azure SDK für Java programmgesteuert eine Web-App in Azure App Service erstellen."
 	tags="azure-classic-portal"
-	services="app-service\web" 
-	documentationCenter="Java" 
-	authors="donntrenton" 
-	manager="wpickett" 
+	services="app-service\web"
+	documentationCenter="Java"
+	authors="donntrenton"
+	manager="wpickett"
 	editor="jimbe"/>
 
 <tags 
-	ms.service="multiple" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="04/24/2015" 
+	ms.service="multiple"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="04/24/2015"
 	ms.author="v-donntr"/>
 
 
@@ -438,7 +438,6 @@ Wählen Sie einen Drittanbieter-FTP-Client zum Veröffentlichen der Anwendung au
 
 Weitere Informationen über die Bereitstellung in einer App Service-Web-App mithilfe von FTP finden Sie in den folgenden Themen:
 
-- [Verwalten von Web-Apps mithilfe des Azure-Portals: Verwaltung](web-sites-manage.md/#deployment)
 - [Bereitstellen über ein FTP-Dienstprogramm](web-sites-deploy.md)
 
 
@@ -590,4 +589,4 @@ In dieser Vorgehensweise wird eine App Service-Web-App erstellt. Die Ressource w
   [10]: ./media/java-create-azure-website-using-java-sdk/kudu-console-jsphello-war-2.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

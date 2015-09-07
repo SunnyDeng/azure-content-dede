@@ -50,7 +50,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 ##Das Szenario
 
-Ein HDInsight-Cluster wird mit einigen Beispieldaten geliefert. Sie verwenden eine Hive-Tabelle namens **hivesampletable**, die auf die Datendatei unter \*\***wasb:///hive/warehouse/hivesampletable** verweist. Die Tabelle enthält einige Mobilgerätedaten. Die Hive-Tabelle hat folgendes Schema:
+Ein HDInsight-Cluster wird mit einigen Beispieldaten geliefert. Sie verwenden eine Hive-Tabelle namens **hivesampletable**, die auf die Datendatei unter ****wasb:///hive/warehouse/hivesampletable** verweist. Die Tabelle enthält einige Mobilgerätedaten. Die Hive-Tabelle hat folgendes Schema:
 
 | Feld | Datentyp |
 | ----- | --------- |
@@ -66,7 +66,7 @@ Ein HDInsight-Cluster wird mit einigen Beispieldaten geliefert. Sie verwenden ei
 | sessionid | bigint |
 | sessionpagevieworder | bigint |
 
-Zunächst exportieren Sie **hivesampletable** in die Azure SQL-Datenbank oder in SQL-Server in eine Tabelle mit dem Namen **mobiledata** und importieren diese Tabelle dann wieder in HDInsight unter \*\***wasb:///tutorials/usesqoop/importeddata**.
+Zunächst exportieren Sie **hivesampletable** in die Azure SQL-Datenbank oder in SQL-Server in eine Tabelle mit dem Namen **mobiledata** und importieren diese Tabelle dann wieder in HDInsight unter ****wasb:///tutorials/usesqoop/importeddata**.
 
 ##Erstellen einer Datenbank
 
@@ -171,7 +171,7 @@ Zunächst exportieren Sie **hivesampletable** in die Azure SQL-Datenbank oder in
 
         sqoop export --connect 'jdbc:sqlserver://<serverName>.database.windows.net:1433;database=sqooptest' --username <adminLogin> --password <adminPassword> --table 'mobiledata' --export-dir 'wasb:///hive/warehouse/hivesampletable' --fields-terminated-by '\t' -m 1
 
-    Dies weist Sqoop an, sich mit SQL-Datenbank bzw. der Datenbank **sqooptest** zu verbinden und Daten aus \*\***wasb:///hive/warehouse/hivesampletable** (physische Dateien der *hivesampletable*) in die Tabelle **mobiledata** zu exportieren.
+    Dies weist Sqoop an, sich mit SQL-Datenbank bzw. der Datenbank **sqooptest** zu verbinden und Daten aus ****wasb:///hive/warehouse/hivesampletable** (physische Dateien der *hivesampletable*) in die Tabelle **mobiledata** zu exportieren.
 
 5. Nach Abschluss des Befehls stellen Sie wie folgt über TSQL eine Verbindung mit der Datenbank her:
 
@@ -186,7 +186,7 @@ Zunächst exportieren Sie **hivesampletable** in die Azure SQL-Datenbank oder in
 
 ##Sqoop-Import
 
-1. Importieren Sie wie folgt Daten aus der Tabelle **mobiledata** in der SQL-Datenbank in das Verzeichnis \*\***wasb:///tutorials/usesqoop/importeddata** auf HDInsight:
+1. Importieren Sie wie folgt Daten aus der Tabelle **mobiledata** in der SQL-Datenbank in das Verzeichnis ****wasb:///tutorials/usesqoop/importeddata** auf HDInsight:
 
         sqoop import --connect 'jdbc:sqlserver://<serverName>.database.windows.net:1433;database=sqooptest' --username <adminLogin> --password <adminPassword> --table 'mobiledata' --target-dir 'wasb:///tutorials/usesqoop/importeddata' --fields-terminated-by '\t' --lines-terminated-by '\n' -m 1
 
@@ -208,7 +208,7 @@ Sie können auch Sqoop zum Importieren und Exportieren von Daten aus SQL-Server 
 
     > [AZURE.NOTE]Für virtuelle Netzwerke im **Punkt-zu-Standort-Modus** muss die Anwendung zum Konfigurieren des VPN-Clients auf dem SQL Server ausgeführt werden. Diese Anwendung ist im **Dashboard** der Konfiguration Ihres virtuellen Azure-Netzwerks verfügbar.
 
-    Informationen zur Erstellung und Konfiguration von virtuellen Netzwerken finden Sie unter [Aufgaben bei der Konfiguration virtueller Netzwerke](http://msdn.microsoft.com/library/azure/jj156206.aspx).
+    Informationen zur Erstellung und Konfiguration von virtuellen Netzwerken finden Sie unter [Aufgaben bei der Konfiguration virtueller Netzwerke](../services/virtual-machines/).
 
 * SQL Server muss so konfiguriert sein, dass SQL-Authentifizierung erlaubt ist. Weitere Informationen finden Sie unter [Auswählen eines Authentifizierungsmodus](https://msdn.microsoft.com/ms144284.aspx).
 
@@ -263,4 +263,4 @@ Nun wissen Sie, wie Sqoop verwendet haben. Weitere Informationen finden Sie unte
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="HDInsight-Artikelindex für das Azure-Portal | Microsoft Azure"
-   description="Eine Indexseite mit Links zu Artikeln über HDInsight im Azure-Portal. Microsoft empfiehlt für neue Hadoop-Cluster in HDInsight die Verwendung des Azure-Vorschauportals."
-   services="hdinsight"
-   documentationCenter="na"
-   authors="cjgronlund"
-   manager="pablissima"
-   editor=""/>
+	description="Eine Indexseite mit Links zu Artikeln über HDInsight im Azure-Portal. Microsoft empfiehlt für neue Hadoop-Cluster in HDInsight die Verwendung des Azure-Vorschauportals."
+	services="hdinsight"
+	documentationCenter="na"
+	authors="cjgronlund"
+	manager="pablissima"
+	editor=""/>
 
 <tags
    ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="index-page"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="08/17/2015"
-   ms.author="cjgronlund"/>
+	ms.devlang="na"
+	ms.topic="index-page"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="08/17/2015"
+	ms.author="cjgronlund"/>
 
 # HDInsight-Artikelindex für das Azure-Portal
 
@@ -60,20 +60,20 @@ Eine vollständige Liste von Artikeln zur Verwendung von Linux und Linux-Cluster
 * [Verwenden von Python mit Hive und Pig](hdinsight-python.md)
 * [Optimieren von Hive-Abfragen für Hadoop](hdinsight-hadoop-optimize-hive-query–v1.md)
 * [Ausführen von Pig-Aufträgen mithilfe des .NET SDK für Hadoop](hdinsight-hadoop-use-pig-dotnet-sdk-v1.md)
-* [Verwenden benutzerdefinierter C\#-Funktionen mit Hive- und Pig-Streaming](hdinsight-hadoop-hive-pig-udf-dotnet-csharp.md)
-* [Entwickeln von C\#-Hadoop-Streamingprogrammen](hdinsight-hadoop-develop-deploy-streaming-jobs.md)
+* [Verwenden benutzerdefinierter C#-Funktionen mit Hive- und Pig-Streaming](hdinsight-hadoop-hive-pig-udf-dotnet-csharp.md)
+* [Entwickeln von C#-Hadoop-Streamingprogrammen](hdinsight-hadoop-develop-deploy-streaming-jobs.md)
 
-## HBase: NoSQL-Analysen
+## HBase: NoSQL-Datenbank
 
 * [Konfigurieren von HBase-Georeplikation](hdinsight-hbase-geo-replication.md)
 * [Verwenden von Maven zur Entwicklung von Java-Anwendungen, die HBase nutzen](hdinsight-hbase-build-java-maven.md)
-* [Analyse der Twitter-Stimmungen in Echtzeit mit HBase](hdinsight-hbase-analyze-twitter-sentiment.md)
+* [Analyse der Twitter-Stimmungen in Echtzeit auf HBase](hdinsight-hbase-analyze-twitter-sentiment.md)
 
 ## Apache Storm: Streamabfrage
 
 * [Erste Schritte mit den Storm-Starter-Beispielen](hdinsight-apache-storm-tutorial-get-started-v1.md)
 * [Bereitstellen und Verwalten von Apache Storm-Topologien](hdinsight-storm-deploy-monitor-topology.md)
-* [Entwickeln von C\#-Topologien für Apache Storm mithilfe von Hadoop-Tools für Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology.md)
+* [Entwickeln von C#-Topologien für Apache Storm mithilfe von Hadoop-Tools für Visual Studio](hdinsight-storm-develop-csharp-visual-studio-topology.md)
 * [Entwickeln von Java-basierten Topologien für eine einfache Anwendung zum Zählen von Wörtern mit Apache Storm und Maven](hdinsight-storm-develop-java-topology.md)
 * [Verarbeitung von Ereignissen von Azure-Event Hubs mit Storm](hdinsight-storm-develop-csharp-event-hub-topology.md)
 * [Verwenden von Power BI zur Visualisierung von Daten aus einer Apache Storm-Topologie ](hdinsight-storm-power-bi-topology.md)
@@ -132,4 +132,4 @@ Artikel zur Verwendung von systemeigenen Apache Spark-Clustern im Azure-Vorschau
 * [Interpretieren von Fehlermeldungen](hdinsight-debug-jobs.md)
 * [Hilfe im Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hdinsight)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

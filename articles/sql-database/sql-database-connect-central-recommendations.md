@@ -1,61 +1,51 @@
 <properties 
-	pageTitle="Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen" 
-	description="Ein Themeneinstieg, der Links und Empfehlungen für Client-Programme für das Aufbauen von Verbindungen mit Azure SQL-Datenbank mit Technologien wie ADO.NET und PHP zusammenfasst." 
-	services="sql-database" 
-	documentationCenter="" 
-	authors="MightyPen" 
-	manager="jeffreyg" 
+	pageTitle="Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen"
+	description="Ein Themeneinstieg, der Links und Empfehlungen für Client-Programme für das Aufbauen von Verbindungen mit Azure SQL-Datenbank mit Technologien wie ADO.NET und PHP zusammenfasst."
+	services="sql-database"
+	documentationCenter=""
+	authors="MightyPen"
+	manager="jeffreyg"
 	editor=""/>
 
 
 <tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/05/2015" 
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/05/2015"
 	ms.author="genemi"/>
 
 
 # Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen
 
 
-Dieses Thema ist ein guter Einstieg in die Client-Konnektivität für Azure SQL-Datenbank. Es enthält Links zu Codebeispielen für verschiedene Technologien, die Sie zum Herstellen einer Verbindung und zum Interagieren mit SQL-Datenbank verwenden können. Zu diesen Technologien gehören Enterprise Library, JDBC, PHP und weitere. Die Empfehlungen gelten allgemein und unabhängig von der spezifischen Verbindungstechnologie oder Programmiersprache.
+Dieses Thema ist ein guter Einstieg in die Client-Konnektivität für Azure SQL-Datenbank. Es enthält Links zu Codebeispielen für verschiedene Technologien, die Sie zum Herstellen einer Verbindung und zum Interagieren mit SQL-Datenbank verwenden können. Zu diesen Technologien gehören Enterprise Library, JDBC, PHP und weitere. Die bereitgestellten Informationen gelten unabhängig von der spezifischen Technologie, die Sie zum Herstellen der Verbindung mit der SQL-Datenbank verwenden.
 
 
 ## Technologieunabhängige Empfehlungen
 
 
-Die Informationen in diesem Abschnitt gelten unabhängig von der spezifischen Technologie, die Sie zum Herstellen der Verbindung mit der SQL-Datenbank verwenden.
-
-
-- [Richtlinien zum programmgesteuerten Herstellen einer Verbindung mit Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/ee336282.aspx) – folgende Aspekte werden erörtert:
- - Ports
- - Firewalls
+- [Richtlinien zum programmgesteuerten Herstellen einer Verbindung mit einer Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/ee336282.aspx) – folgende Aspekte werden erörtert:
+ - [Ports und Firewalls](https://azure.microsoft.com/de-DE/documentation/articles/sql-database-configure-firewall-settings/)
  - Verbindungszeichenfolgen
-- [Ressourcenverwaltung für Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/dn338083.aspx) – folgende Aspekte werden erörtert:
+- [Ressourcenverwaltung für die Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/dn338083.aspx) – folgende Aspekte werden erörtert:
  - Ressourcenkontrolle
  - Durchsetzung von Grenzwerten
  - Drosselung
 
 
-Unabhängig davon, welche Verbindungstechnologie Sie verwenden, sind bestimmte Firewalleinstellungen für SQL-Datenbankserver und selbst einzelne Datenbanken von Bedeutung:
-
-
-- [Firewall für die Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee621782.aspx)
 
 
 ## Empfehlungen für die Authentifizierung
 
 
-- Verwenden Sie anstatt der Windows-Authentifizierung die SQL-Datenbank-Authentifizierung.
+- Verwenden Sie die Azure SQL-Datenbankauthentifizierung und nicht die Windows-Authentifizierung. Letztere ist in der Azure SQL-Datenbank nicht verfügbar.
 - Geben Sie eine bestimmte Datenbank an, anstatt automatisch die *master*-Datenbank zu verwenden.
-- In manchen Fällen muss der Benutzername mit dem Suffix *@ihrservername* angegeben werden, in anderen Fällen dagegen muss das Suffix weggelassen werden. Dies hängt davon ab, wie Ihr Tool oder Ihre API programmiert wurde.
- - Überprüfen Sie dazu die genauen Angaben zu den einzelnen Technologien.
 - Stellen Sie eine Verbindung her, indem Sie einen Benutzer in einer [eigenständigen Datenbank](http://msdn.microsoft.com/library/ff929071.aspx) angeben.
  - Dies bietet eine optimierte Leistung und Skalierbarkeit, da dadurch die Anmeldung nicht in der Masterdatenbank erfolgen muss.
- - Sie können die **USE myDatabaseName;**-Transact-SQL-Anweisung in SQL-Datenbank nicht verwenden.
+ - Sie können die Transact-SQL-Anweisung **USE myDatabaseName;** in SQL-Datenbanken nicht verwenden.
 
 
 ## Empfehlungen für die Verbindung
@@ -63,7 +53,7 @@ Unabhängig davon, welche Verbindungstechnologie Sie verwenden, sind bestimmte F
 
 - Ändern Sie in der Clientverbindungslogik das Standardtimeout in 30 Sekunden.
  - Der Standardwert von 15 Sekunden ist zu kurz für Verbindungen, die über das Internet hergestellt werden.
-- Stellen Sie sicher, dass die [Firewall für Azure SQL-Datenbank](http://msdn.microsoft.com/library/ee621782.aspx) die ausgehende TCP-Kommunikation über den Port 1433 zulässt.
+- Stellen Sie sicher, dass die [Firewall für die Azure SQL-Datenbank](http://msdn.microsoft.com/library/ee621782.aspx) die ausgehende TCP-Kommunikation über den Port 1433 zulässt.
  - Sie können die Einstellungen für die [Firewall](http://msdn.microsoft.com/library/azure/ee621782.aspx) auf einem SQL-Datenbankserver oder für eine einzelne Datenbank konfigurieren.
 - Wenn Sie einen [Verbindungspool](http://msdn.microsoft.com/library/8xx3tyca.aspx) verwenden, trennen Sie die Verbindung, sobald Ihre Anwendung sie nicht aktiv verwendet und nicht gerade auf die erneute Verwendung der Verbindung vorbereitet wird.
  - Sofern Ihre Anwendung die Verbindung nicht unmittelbar und ohne Pause für einen anderen Vorgang wiederverwendet, wird die folgende Vorgehensweise empfohlen: <br/><br/>Stellen Sie eine Verbindung her. <br/>Führen Sie über die Verbindung einen Vorgang aus. <br/>Trennen Sie die Verbindung.<br/><br/>
@@ -76,7 +66,7 @@ Unabhängig davon, welche Verbindungstechnologie Sie verwenden, sind bestimmte F
 ### Andere Ports als 1433 in V12.
 
 
-Bei Clientverbindungen mit Azure SQL-Datenbank V12 wird der Proxy manchmal umgangen und direkt mit der Datenbank interagiert. Andere Ports als 1433 werden wichtig. Details finden Sie in:<br/> [Andere Ports als 1433 für ADO.NET 4.5, ODBC 11 und SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md)
+Bei Clientverbindungen mit Azure SQL-Datenbank V12 wird der Proxy manchmal umgangen und direkt mit der Datenbank interagiert. Andere Ports als 1433 werden wichtig. Ausführliche Informationen finden Sie unter<br/> [Andere Ports als 1433 für ADO.NET 4.5, ODBC 11 und SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md).
 
 
 Im nächsten Abschnitt erfahren Sie mehr über die Wiederholungslogik und die Behandlung vorübergehender Fehler.
@@ -91,15 +81,15 @@ Clouddienste wie Azure und der zugehörige SQL-Datenbankdienst sind stets mit La
 Während dieses Vorgangs ist die Datenbank möglicherweise vorübergehend nicht verfügbar. Dadurch werden möglicherweise neue Verbindungen blockiert, oder Ihr Clientprogramm verliert die Verbindung. Die Ressourcenverschiebung ist jedoch vorübergehend, und das Symptom verschwindet möglicherweise nach einigen Minuten oder Sekunden von selbst. Nach Abschluss der Verschiebung kann das Clientprogramm die Verbindung erneut herstellen und seine Arbeit fortsetzen. Die Verarbeitungspause ist besser als ein vermeidbarer Fehlerzustand in Ihrem Client-Programm.
 
 
-Wenn in SQL-Datenbank ein Fehler auftritt, wird eine [SqlException](https://msdn.microsoft.com/library/system.data.sqlclient.sqlexception.aspx) ausgelöst. Die `SqlException` enthält einen numerischen Fehlercode in der **Number**-Eigenschaft. Wenn der Fehlercode einen vorübergehenden Fehler bezeichnet, sollte die Anwendung den Aufruf wiederholen.
+Wenn in der SQL-Datenbank ein Fehler auftritt, wird eine [SqlException](https://msdn.microsoft.com/library/system.data.sqlclient.sqlexception.aspx)-Ausnahme ausgelöst. `SqlException` enthält einen numerischen Fehlercode in der **Number**-Eigenschaft. Wenn der Fehlercode einen vorübergehenden Fehler bezeichnet, sollte die Anwendung den Aufruf wiederholen.
 
 
 - [Fehlermeldungen für Clientprogramme der SQL-Datenbank](sql-database-develop-error-messages.md)
  - Der Abschnitt **Vorübergehende Fehler, Fehler bei Verbindungsabbruch** enthält eine Liste der vorübergehenden Fehler, bei denen sich automatische Wiederholungsversuche empfehlen.
- - Führen Sie beispielsweise eine Wiederholung durch, wenn Fehler Nummer 40613 auftritt, der in etwa besagt: <br/>* Datenbank "mydatabase" auf Server "Server" ist derzeit nicht verfügbar.*
+ - Wiederholen Sie den Vorgang beispielsweise, wenn Fehler Nummer 40613 auftritt, der in etwa Folgendes besagt: <br/>*Datenbank „mydatabase“ auf Server „Server“ ist derzeit nicht verfügbar.*
 
 
-*Vorübergehende Fehler* werden mitunter auch englisch als *Transient Faults* bezeichnet. In diesem Thema werden die beiden Begriffe als Synonyme angesehen.
+*Vorübergehende Fehler* werden mitunter auch als *Übergangsfehler* bezeichnet. In diesem Thema werden die beiden Begriffe als Synonyme angesehen.
 
 
 Weitere Unterstützung bei vorübergehenden oder anderweitigen Verbindungsfehlern finden Sie unter:
@@ -126,7 +116,7 @@ Der Middleware-Proxy, der zwischen V11 und dem ADO.NET 4.5-Client vermittelt, ve
 Der V12-Proxy behandelt eine kleinere Teilmenge vorübergehender Fehler. In anderen Fällen wird der V12-Proxy umgangen, um eine schnellere Verbindung mit der SQL-Datenbank direkt herzustellen. Für ein ADO.NET 4.5-Clientprogramm lassen diese Änderungen die Azure SQL-Datenbank V12 eher wie Microsoft SQL Server erscheinen.
 
 
-Codebeispiele für die Wiederholungslogik finden Sie unter:<br/> [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md).
+Codebeispiele für die Wiederholungslogik finden Sie unter <br/>[Clientcodebeispiele für die ersten Schritte mit der SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md).
 
 
 > [AZURE.TIP]In einer Produktionsumgebung wird empfohlen, dass Clients, die eine Verbindung mit Azure SQL-Datenbank V11 oder V12 herstellen, eine Wiederholungslogik in ihrem Code implementieren. Dabei kann es sich um benutzerdefinierten Code handeln oder um Code, der eine API wie Enterprise Library nutzt.
@@ -141,7 +131,7 @@ Die folgenden Themen enthalten Links zu Codebeispielen für mehrere Sprachen und
 Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unterschiedliche Codebeispiele angegeben.
 
 
-**Allgemeine Beispiele:** Es gibt Codebeispiele für eine Vielzahl von Programmiersprachen, einschließlich PHP, Python, Node.js und .NET C#. Darüber hinaus gibt es Beispiele für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden.
+**Allgemeine Beispiele:** Es gibt Codebeispiele für eine Vielzahl von Programmiersprachen, einschließlich PHP, Python, Node.js und .NET CSharp. Darüber hinaus gibt es Beispiele für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden.
 
 
 - [Codebeispiele für die Cliententwicklung und erste Schritte mit SQL-Datenbanken](sql-database-develop-quick-start-client-code-samples.md)
@@ -168,4 +158,4 @@ Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unt
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

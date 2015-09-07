@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure Multi-Factor Authentication – Häufig gestellte Fragen" 
-	description="Azure Multi-Factor Authentication ist eine Methode zum Überprüfen der Identität, für die mehr als nur ein Benutzername und ein Kennwort erforderlich ist. Sie bietet eine zusätzliche Sicherheitsebene für Benutzeranmeldungen und -transaktionen." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadwha" 
+	pageTitle="Azure Multi-Factor Authentication – Häufig gestellte Fragen"
+	description="Azure Multi-Factor Authentication ist eine Methode zum Überprüfen der Identität, für die mehr als nur ein Benutzername und ein Kennwort erforderlich ist. Sie bietet eine zusätzliche Sicherheitsebene für Benutzeranmeldungen und -transaktionen."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/02/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Azure Multi-Factor Authentication – Häufig gestellte Fragen
@@ -145,4 +145,4 @@ Derzeit kann die zusätzliche Sicherheitsüberprüfung nur für Anwendungen und 
 
 Als Problemumgehung können Sie zusätzlich zu Ihrem normalen Konto ein separates Benutzerkonto für Administratoraufgaben erstellen. Anschließend können Sie die Postfächer beider Konten miteinander verknüpfen, sodass Sie für die Anmeldung bei Outlook lediglich ihr normales Konto benötigen. Weitere Informationen hierzu finden Sie unter [Einem Administrator das Öffnen und Anzeigen des Inhalts des Postfachs eines Benutzers ermöglichen](http://help.outlook.com/141/gg709759(d=loband).aspx?sl=1).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

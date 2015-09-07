@@ -1,19 +1,19 @@
-<properties 
-    pageTitle="Application Insights für Android-Apps" 
-    description="Analysieren Sie die Nutzung und Leistung Ihrer Android-App mit Application Insights." 
-    services="application-insights" 
-    documentationCenter="android"
-    authors="alancameronwills" 
-    manager="ronmart"/>
+<properties
+    pageTitle="Application Insights für Android-Apps | Microsoft Azure"
+	description="Analysieren Sie die Nutzung und Leistung Ihrer Android-App mit Application Insights."
+	services="application-insights"
+	documentationCenter="android"
+	authors="alancameronwills"
+	manager="ronmart"/>
 
-<tags 
-    ms.service="application-insights" 
-    ms.workload="mobile" 
-    ms.tgt_pltfrm="mobile-android" 
-    ms.devlang="na" 
-    ms.topic="get-started-article" 
-	ms.date="04/28/2015" 
-    ms.author="awills"/>
+<tags
+    ms.service="application-insights"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="04/28/2015"
+	ms.author="awills"/>
 
 # Application Insights für Android-Apps
 
@@ -50,10 +50,10 @@ Auf dem nun geöffneten Blatt werden die Leistungs- und Nutzungsdaten über Ihre
 ## <a name="sdk"></a>Installieren des SDK in Ihrer Anwendung
 
 
-1.  Wählen Sie "Extras" -> "Application Insights integrieren".
+1.  Wählen Sie **Extras** > **Integrate Application Insights SDK** aus.
 
     ![Integrieren von Application Insights](./media/app-insights-android/04-tools-integrate.png)
-    
+
 3.  Erstellen Sie eine Komponente in Ihrem Abonnement.
 
     ![Erstellen einer Komponente](./media/app-insights-android/07-create-component.png)
@@ -63,10 +63,10 @@ Auf dem nun geöffneten Blatt werden die Leistungs- und Nutzungsdaten über Ihre
 4.  Synchronisieren Sie Gradle, um das SDK herunterladen und in das Projekt zu integrieren.
 
     ![Synchronisieren von Gradle-Dateien zum Herunterladen des SDK](./media/app-insights-android/08-successful-integration.png)
-    
+
     (Weitere Informationen finden Sie auf der [Nutzungsseite](http://go.microsoft.com/fwlink/?LinkID=533220).)
-    
-An dieser Stelle wurde den Modulen "build.gradle" der folgende Verweis hinzugefügt. Berechtigungen für `INTERNET` und `ACCESS_NETWORK_STATE` sowie ein Metadaten-Tag mit dem Instrumentationsschlüssel der Komponente wurden der Datei `AndroidManifest.xml` des Moduls hinzugefügt.
+
+An dieser Stelle wurde der Datei "build.gradle" des Moduls der folgende Verweis hinzugefügt. Berechtigungen für `INTERNET` und `ACCESS_NETWORK_STATE` sowie ein Metadaten-Tag mit dem Instrumentationsschlüssel der Komponente wurden der Datei `AndroidManifest.xml` des Moduls hinzugefügt.
 
 ```java
 
@@ -80,7 +80,7 @@ An dieser Stelle wurde den Modulen "build.gradle" der folgende Verweis hinzugef�
     <manifest>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    
+
     <application>
         <meta-data
             android:name="com.microsoft.applicationinsights.instrumentationKey"
@@ -119,18 +119,18 @@ Fügen Sie dem `onCreate`-Rückruf der Aktivität Folgendes hinzu:
     ApplicationInsights.start();
 ```
 
-Sobald `ApplicationInsights.start()` aufgerufen wird, beginnt das SDK mit dem Nachverfolgen von Android-Lebenszyklusaktivität und unbehandelten Ausnahmen.
+Wenn `ApplicationInsights.start()` aufgerufen wird, beginnt das SDK mit dem Nachverfolgen von Android-Lebenszyklusaktivität und unbehandelten Ausnahmen.
 
-> [AZURE.NOTE]Lebenszyklusereignisse der Anwendung werden nur im Android-SDK, Version 15 und höher (Ice Cream Sandwich+), erfasst.
+> [AZURE.NOTE]Lebenszyklusereignisse der Anwendung werden nur im Android SDK Version 15 und höher (Ice Cream Sandwich+), erfasst.
 
 Darüber hinaus können benutzerdefinierte Ereignisse, Ablaufverfolgungen, Metriken und behandelte Ausnahmen erfasst werden. Verwenden Sie eine der [Application Insights-APIs][api], um Telemetriedaten zu senden.
 
 * "TrackEvent(eventName)" für andere Benutzeraktionen
 * "TrackTrace(logEvent)" für die [Diagnoseprotokollierung][diagnostic]
 * "TrackHandledException(exception)" in Catch-Klauseln
-* "TrackMetric(Name, Wert)" bei einer Hintergrundaufgabe, um Berichte zu Metriken, die nicht bestimmten Ereignissen zugeordnet sind, regelmäßig zu senden.
+* "TrackMetric(name, value)" in einer Hintergrundaufgabe, um reguläre Berichte von Metriken zu senden, die nicht an bestimmte Ereignisse angefügt sind
 
-Ein Beispiel für die Initialisierung und manuelle Telemetrieerfassung folgt.
+Der folgende Code ist ein Beispiel für die Initialisierung und manuelle Telemetrieerfassung:
 
 ```java
 
@@ -138,11 +138,11 @@ Ein Beispiel für die Initialisierung und manuelle Telemetrieerfassung folgt.
 
       @Override
       protected void onCreate(Bundle savedInstanceState) {
-        
+
         ApplicationInsights.setup(this);
         //... other initialization code ...//
         ApplicationInsights.start();
-        
+
         // track telemetry data
         TelemetryClient client = TelemetryClient.getInstance();
         HashMap<String, String> properties = new HashMap<String, String>();
@@ -163,7 +163,7 @@ Führen Sie Ihre Anwendung aus (UMSCHALT+F10 in Windows, STRG+R in OS X), um Tel
 
 Kehren Sie zu http://portal.azure.com zurück, und navigieren Sie zur Application Insights-Ressource.
 
-Klicken Sie auf "Suchen", um [Diagnosesuche][diagnostic] zu öffnen. Dort werden die ersten Ereignisse angezeigt. Wenn nichts angezeigt wird, warten Sie eine oder zwei Minuten, und klicken Sie auf "Aktualisieren".
+Klicken Sie auf **Suchen**, um [Diagnosesuche][diagnostic] zu öffnen. Dort werden die ersten Ereignisse angezeigt. Wenn keine Ereignisse angezeigt werden, warten Sie eine oder zwei Minuten, und klicken Sie dann auf **Aktualisieren**.
 
 ![Klicken Sie auf "Diagnosesuche".](./media/app-insights-android/21-search.png)
 
@@ -195,8 +195,6 @@ Klicken Sie auf ein beliebiges Diagramm, um weitere Details zu erhalten. Zum Bei
 [metrics]: app-insights-metrics-explorer.md
 [portal]: http://portal.azure.com/
 [qna]: app-insights-troubleshoot-faq.md
-[track]: app-insights-custom-events-metrics-api.md
+[track]: app-insights-api-custom-events-metrics.md
 
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

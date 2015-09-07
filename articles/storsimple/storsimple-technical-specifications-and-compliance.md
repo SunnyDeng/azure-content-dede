@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="Technische Spezifikationen und Kompatibilität des StorSimple-Geräts | Microsoft Azure"
-   description="Beschreibt die technischen Spezifikationen und die gesetzlichen Richtlinien für das StorSimple-Gerät."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="adinah"
-   editor="" />
+   pageTitle="Technische Spezifikationen von StorSimple | Microsoft Azure"
+	description="Beschreibt die technischen Spezifikationen und die einzuhaltenden gesetzlichen Richtlinien für die StorSimple-Hardwarekomponenten."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
  <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/12/2015"
-   ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/26/2015"
+	ms.author="alkohli"/>
 
 # Technische Spezifikationen und Kompatibilität des StorSimple-Geräts
 
@@ -172,4 +172,4 @@ Für die 10-GbE-Netzwerkschnittstellen, DATA 2 und DATA 3, finden Sie Informat
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

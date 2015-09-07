@@ -1,36 +1,25 @@
 <properties 
-	pageTitle="Verwenden des E-Mail-Diensts SendGrid (PHP) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure senden. Die Codebeispiele wurden in PHP geschrieben." 
-	documentationCenter="php" 
-	services="" 
-	manager="sendgrid" 
-	editor="mollybos" 
+	pageTitle="Verwenden des E-Mail-Diensts SendGrid (PHP) | Microsoft Azure"
+	description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure senden. Die Codebeispiele wurden in PHP geschrieben."
+	documentationCenter="php"
+	services=""
+	manager="sendgrid"
+	editor="mollybos"
 	authors="thinkingserious"/>
 
 <tags 
-	ms.service="multiple" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="PHP" 
-	ms.topic="article" 
-	ms.date="10/30/2014" 
+	ms.service="multiple"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="PHP"
+	ms.topic="article"
+	ms.date="10/30/2014"
 	ms.author="elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork; matt.bernier@sendgrid.com"/>
-
 # Verwenden des E-Mail-Diensts SendGrid aus PHP
 
-Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufgaben mit dem E-Mail-Dienst SendGrid in Azure. Die Beispiele sind in PHP geschrieben. Beschrieben werden die Szenarien **Erstellen einer E-Mail**, **Senden einer E-Mail** und **Hinzufügen von Anlagen**. Weitere Informationen zu SendGrid und zum Senden von E-Mails erhalten Sie im Abschnitt [Nächste Schritte][].
+Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufgaben mit dem E-Mail-Dienst SendGrid in Azure. Die Beispiele sind in PHP geschrieben. Beschrieben werden die Szenarien **Erstellen einer E-Mail**, **Senden einer E-Mail** und **Hinzufügen von Anlagen**. Weitere Informationen zu SendGrid und zum Senden von E-Mails erhalten Sie im Abschnitt [Nächste Schritte](#next-steps).
 
-## Inhaltsverzeichnis
-
--   [Was ist der SendGrid-E-Mail-Dienst?][]
--   [Erstellen von SendGrid-Konten][]
--   [Verwenden von SendGrid aus der PHP-Anwendung][]
--   [Senden von E-Mails][]
--   [Hinzufügen von Anlagen][]
--   [Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen][]
--   [Nächste Schritte][]
-
-## <a name="bkmk_WhatIsSendGrid"> </a>Was ist der SendGrid-E-Mail-Dienst?
+## Was ist der SendGrid-E-Mail-Dienst?
 
 SendGrid ist ein [cloudbasierter E-Mail-Dienst], der zuverlässige [transaktionale E-Mail-Übermittlung], Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs bietet, die die benutzerdefinierte Integration erleichtern. Häufige Verwendungsszenarien für SendGrid:
 
@@ -43,15 +32,15 @@ SendGrid ist ein [cloudbasierter E-Mail-Dienst], der zuverlässige [transaktiona
 
 Weitere Informationen finden Sie unter [https://sendgrid.com][].
 
-## <a name="bkmk_CreateSendGrid"> </a>Erstellen von SendGrid-Konten
+## Erstellen eines SendGrid-Kontos
 
 [AZURE.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
 
-## <a name="bkmk_UsingSendGridfromPHP"> </a>Verwenden von SendGrid aus der PHP-Anwendung
+## Verwenden von SendGrid aus der PHP-Anwendung
 
 Die Verwendung von SendGrid in Azure-PHP-Anwendungen erfordert keine besondere Konfiguration oder Programmierung. Da es sich bei SendGrid um einen Dienst handelt, kann auf ihn von einer Cloudanwendung auf dieselbe Weise zugegriffen werden wie von einer lokalen Anwendung.
 
-## <a name="bkmk_HowToSendEmail"> </a>Senden von E-Mails
+## Senden von E-Mails
 
 E-Mails können Sie entweder über SMTP oder über die von SendGrid bereitgestellte Web-API senden.
 
@@ -163,7 +152,7 @@ Um E-Mails über die SendGrid-Web-API zu versenden, verwenden Sie die [Curl -Fun
 
 Die Web-API von SendGrid ist einer REST-API sehr ähnlich, obwohl es sich nicht wirklich um eine RESTful-API handelt, da in den meisten Aufrufen die Verben GET und POST austauschbar sind.
 
-## <a name="bkmk_HowToAddAttachment"> </a>Hinzufügen von Anlagen
+## Hinzufügen von Anlagen
 
 ### SMTP-API
 
@@ -290,7 +279,7 @@ Beispiel:
      // print everything out
      print_r($response);
 
-## <a name="bkmk_HowToUseFilters"> </a>Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen
+## Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen
 
 SendGrid bietet zusätzliche E-Mail-Funktionen durch die Verwendung von "Filtern". Hierbei handelt es sich um Einstellungen, die zu einer E-Mail-Nachricht hinzugefügt werden können, um spezifische Funktionen wie etwa Aktivierung von Klickprotokollierung, Google Analytics, Abonnement-Tracking usw. zu ermöglichen.
 
@@ -393,7 +382,7 @@ Beispiel:
 
      print_r($response);
 
-## <a name="bkmk_NextSteps"> </a>Nächste Schritte
+## Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, finden Sie unter diesen Links weitere Informationen.
 
@@ -401,14 +390,6 @@ Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, f
 -   SendGrid-PHP-Bibliothek: <https://github.com/sendgrid/sendgrid-php>
 -   Spezielles SendGrid-Angebot für Azure-Kunden: <https://sendgrid.com/windowsazure.html>
 
-  [Nächste Schritte]: #bkmk_NextSteps
-  [Was ist der SendGrid-E-Mail-Dienst?]: #bkmk_WhatIsSendGrid
-  [Erstellen von SendGrid-Konten]: #bkmk_CreateSendGrid
-  [Verwenden von SendGrid aus der PHP-Anwendung]: #bkmk_UsingSendGridfromPHP
-  [Senden von E-Mails]: #bkmk_HowToSendEmail
-  [Hinzufügen von Anlagen]: #bkmk_HowToAddAttachment
-  [Verwenden von Filtern zur Aktivierung von Fußzeilen sowie für Nachverfolgungen und Analysen]: #bkmk_HowToUseFilters
-  [How to: Use Additional SendGrid Services]: #bkmk_HowToUseAdditionalSvcs
   [https://sendgrid.com]: https://sendgrid.com
   [https://sendgrid.com/transactional-email/pricing]: https://sendgrid.com/transactional-email/pricing
   [special offer]: https://www.sendgrid.com/windowsazure.html
@@ -420,4 +401,4 @@ Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, f
   [sendgrid-php-Bibliothek]: https://github.com/sendgrid/sendgrid-php/tree/v2.1.1
   [Composer]: https://getcomposer.org/download/
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

@@ -1,13 +1,13 @@
 <properties
    pageTitle="Azure Backup in 10 Minuten | Microsoft Azure"
-   description="Erste Schritte mit Azure Backup in 10 Minuten"
-   services="backup"
-   documentationCenter=""
-   authors="Jim-Parker"
-   manager="shreeshd"
-   editor=""/>
+	description="Erste Schritte mit Azure Backup in 10 Minuten"
+	services="backup"
+	documentationCenter=""
+	authors="Jim-Parker"
+	manager="shreeshd"
+	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="get-started-article" ms.date="07/06/2015" ms.author="aashishr"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="get-started-article" ms.date="08/20/2015" ms.author="aashishr"; "jimpark"/>
 
 # Azure Backup in 10 Minuten
 Die Einrichtung von Azure Backup ist überaus einfach. Die folgenden Videos mit Anleitungen sollen Ihnen den Einsteig erleichtern.
@@ -42,7 +42,8 @@ Sehen Sie sich die Schritte im Video [Erste Schritte mit Azure Backup 3 von 3 �
 > [AZURE.VIDEO getting-started-with-azure-backup-3-of-3-start-backing-up-your-production-server]
 
 ## Nächste Schritte
-- Weitere Informationen zur Azure-Sicherung finden Sie unter [Übersicht über die Windows Azure-Sicherung](backup-introduction-to-azure-backup.md).
-- Besuchen Sie das [Azure Sicherungs-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
+- Weitere Informationen zu Azure Backup finden Sie unter [Azure Backup – Übersicht](backup-introduction-to-azure-backup.md).
+- [Sichern von Windows-Servern](backup-azure-backup-windows-server.md)
+- Besuchen Sie das [Azure Backup-Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

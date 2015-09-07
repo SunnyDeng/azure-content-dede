@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Konfigurieren einer VPN-Verbindung zwischen zwei virtuellen Netzwerken | Microsoft Azure" 
-   description="Erfahren Sie, wie Sie VPN-Verbindungen und die Domänennamenauflösung zwischen zwei virtuellen Azure-Netzwerken sowie die HBase-Georeplikation konfigurieren." 
-   services="hdinsight,virtual-network" 
-   documentationCenter="" 
-   authors="mumian" 
-   manager="paulettm" 
-   editor="cgronlun"/>
+   pageTitle="Konfigurieren einer VPN-Verbindung zwischen zwei virtuellen Netzwerken | Microsoft Azure"
+	description="Erfahren Sie, wie Sie VPN-Verbindungen und die Domänennamenauflösung zwischen zwei virtuellen Azure-Netzwerken sowie die HBase-Georeplikation konfigurieren."
+	services="hdinsight,virtual-network"
+	documentationCenter=""
+	authors="mumian"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags
    ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data" 
-   ms.date="07/08/2015"
-   ms.author="jgao"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="07/08/2015"
+	ms.author="jgao"/>
 
 # Konfigurieren einer VPN-Verbindung zwischen zwei virtuellen Netzwerken in Azure  
 
@@ -29,7 +29,7 @@ Die virtuelle Azure-Netzwerk Standort-zu-Standort-Konnektivität verwendet ein V
 - Regionale Anwendungen mit mehreren Ebenen mit starker Isolierungsgrenze 
 - Abonnementübergreifende Kommunikation zwischen Organisationen in Azure
 
-Weitere Informationen finden Sie unter [Konfiguration einer VNet-zu-VNet-Verbindung](https://msdn.microsoft.com/library/azure/dn690122.aspx).
+Weitere Informationen finden Sie unter [Konfiguration einer VNet-zu-VNet-Verbindung](../virtual-network/virtual-networks-configure-vnet-to-vnet-connection.md).
 
 Video anzeigen:
 
@@ -83,7 +83,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 	- **DNS-SERVER**: (Lassen Sie diese Angabe leer) 
 	
-		Für die Namensauflösung innerhalb virtueller Netzwerke benötigen Sie einen eigenen DNS-Server. Wann die Verwendung der von Azure bereitgestellten Namensauflösung bzw. die Verwendung eines eigenen DNS-Servers angebracht ist, erfahren Sie unter [Namensauflösung (DNS)](https://msdn.microsoft.com/library/azure/jj156088.aspx). Anweisungen zur Konfiguration der Namensauflösung zwischen VNets finden Sie unter [Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-dns].
+		Für die Namensauflösung innerhalb virtueller Netzwerke benötigen Sie einen eigenen DNS-Server. Wann die Verwendung der von Azure bereitgestellten Namensauflösung bzw. die Verwendung eines eigenen DNS-Servers angebracht ist, erfahren Sie unter [Namensauflösung (DNS)](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md). Anweisungen zur Konfiguration der Namensauflösung zwischen VNets finden Sie unter [Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-dns].
   
 	- **Punkt-zu-Standort-VPN konfigurieren**: (nicht aktiviert)
 
@@ -270,4 +270,4 @@ In diesem Lernprogramm haben Sie gelernt, eine VPN-Verbindung zwischen zwei virt
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

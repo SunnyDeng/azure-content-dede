@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Sicheres Verbinden mit Back-End-Ressourcen von einer App Service-Umgebung aus" 
-	description="Erfahren Sie, wie Sie von einer App Service-Umgebung aus eine sichere Verbindung mit Back-End-Ressourcen herstellen." 
-	services="app-service\web" 
-	documentationCenter="" 
-	authors="ccompy" 
-	manager="wpickett" 
+	pageTitle="Sicheres Verbinden mit Back-End-Ressourcen von einer App Service-Umgebung aus"
+	description="Erfahren Sie, wie Sie von einer App Service-Umgebung aus eine sichere Verbindung mit Back-End-Ressourcen herstellen."
+	services="app-service\web"
+	documentationCenter=""
+	authors="ccompy"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/30/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/30/2015"
 	ms.author="stefsh"/>
 
 # Sicheres Verbinden mit Back-End-Ressourcen von einer App Service-Umgebung aus #
@@ -95,12 +95,12 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
  
 
 <!-- LINKS -->
-[virtualnetwork]: https://msdn.microsoft.com/library/azure/dn133803.aspx
+[virtualnetwork]: https://azure.microsoft.com/documentation/articles/virtual-networks-faq/
 [ControlInboundTraffic]: http://azure.microsoft.com/documentation/articles/app-service-app-service-environment-control-inbound-traffic/
 [SiteToSite]: https://azure.microsoft.com/documentation/articles/vpn-gateway-site-to-site-create/
 [ExpressRoute]: http://azure.microsoft.com/services/expressroute/
-[NetworkAccessControlLists]: https://msdn.microsoft.com/library/azure/dn376541.aspx
-[NetworkSecurityGroups]: https://msdn.microsoft.com/library/azure/dn848316.aspx
+[NetworkAccessControlLists]: https://azure.microsoft.com/documentation/articles/virtual-networks-acl/
+[NetworkSecurityGroups]: https://azure.microsoft.com/documentation/articles/virtual-networks-nsg/
 [IntroToAppServiceEnvironment]: http://azure.microsoft.com/documentation/articles/app-service-app-service-environment-intro/
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
 [ControlInboundASE]: http://azure.microsoft.com/documentation/articles/app-service-app-service-environment-control-inbound-traffic/
@@ -110,4 +110,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [NetworkAccessControlListExample]: ./media/app-service-app-service-environment-securely-connecting-to-backend-resources/NetworkAcl01.png
 [DefaultNetworkSecurityRules]: ./media/app-service-app-service-environment-securely-connecting-to-backend-resources/DefaultNetworkSecurityRules01.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

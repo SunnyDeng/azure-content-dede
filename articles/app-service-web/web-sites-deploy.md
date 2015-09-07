@@ -127,7 +127,6 @@ Weitere Informationen zur Bereitstellung von Visual Studio in Web-Apps finden Si
 
 Weitere Informationen zur Bereitstellung von WebMatrix in Web-Apps finden Sie in den folgenden Ressourcen:
 
-* [Entwickeln und Bereitstellen von Web-Apps mit Microsoft WebMatrix](web-sites-dotnet-using-webmatrix.md). In dieser Ressource wird das Erstellen einer einfachen ASP.NET-Web-App unter Verwendung einer WebMatrix-Vorlage und das Bereitstellen in einer Web-App mithilfe von WebMatrix und Web Deploy erläutert.
 * [Erstellen einer Node.js-Website und Bereitstellen für Azure mit WebMatrix](web-sites-nodejs-use-webmatrix.md)
 * [Erstellen und Bereitstellen einer PHP-MySQL-Web-App mithilfe von WebMatrix](web-sites-php-mysql-use-webmatrix.md).
 * [WebMatrix 3: Integrated Git and Deployment to Azure (Integriertes Git und Bereitstellung für Azure, in englischer Sprache)](http://www.codeproject.com/Articles/577581/Webmatrixplus3-3aplusIntegratedplusGitplusandplusD). In diesem Artikel wird das Verwenden von WebMatrix zum Bereitstellen über ein Git-Repository für die Quellcodeverwaltung beschrieben.
@@ -228,4 +227,4 @@ Informationen zu weiteren Bereitstellungsthemen finden Sie in den entsprechenden
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

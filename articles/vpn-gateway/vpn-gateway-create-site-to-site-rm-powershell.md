@@ -1,21 +1,21 @@
 <properties
    pageTitle="Erstellen eines virtuellen Netzwerks mit einer Site-to-Site-VPN-Verbindung mit dem Azure-Ressourcen-Manager und PowerShell | Microsoft Azure"
-   description="Erstellen einer Site-to-Site-VPN-Verbindung von Ihrem virtuellen Netzwerk auf Ihren lokalen Standort mit dem Azure-Ressourcen-Manager und PowerShell"
-   services="vpn-gateway"
-   documentationCenter="na"
-   authors="cherylmc"
-   manager="carolz"
-   editor=""
-   tags="azure-resource-manager"/>
+	description="Erstellen einer Site-to-Site-VPN-Verbindung von Ihrem virtuellen Netzwerk auf Ihren lokalen Standort mit dem Azure-Ressourcen-Manager und PowerShell"
+	services="vpn-gateway"
+	documentationCenter="na"
+	authors="cherylmc"
+	manager="carolz"
+	editor=""
+	tags="azure-resource-manager"/>
 
 <tags
    ms.service="vpn-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/28/2015"
-   ms.author="cherylmc"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/21/2015"
+	ms.author="cherylmc"/>
 
 # Erstellen eines virtuellen Netzwerks mit einer Site-to-Site-VPN-Verbindung mit dem Azure-Ressourcen-Manager und PowerShell
 
@@ -96,9 +96,26 @@ Sie geben auch das Adressraumpräfix für den lokalen Standort an. Azure verwend
 - *GatewayIPAddress* ist die IP-Adresse des lokalen VPN-Geräts. Das VPN-Gerät darf sich nicht hinter einer NAT befinden. 
 - *AddressPrefix* ist Ihr lokaler Adressraum.
 
-Verwenden Sie folgendes Beispiel, um einen lokalen Standort hinzuzufügen:
+Verwenden Sie dieses Beispiel, um einen lokalen Standort mit einem einzigen Adresspräfix hinzufügen.
 
 		New-AzureLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg -Location 'West US' -GatewayIpAddress '23.99.221.164' -AddressPrefix '10.5.51.0/24'
+
+Wenn Sie einen lokalen Standort mit mehreren Adresspräfixen hinzufügen möchten, verwenden Sie dieses Beispiel.
+
+		New-AzureLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg -Location 'West US' -GatewayIpAddress '23.99.221.164' -AddressPrefix @('10.0.0.0/24','20.0.0.0/24')
+
+
+Um zusätzliche Adresspräfixe zu einem bereits erstellten lokalen Standort hinzuzufügen, verwenden Sie dieses Beispiel.
+
+		$local = Get-AzureLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
+		Set-AzureLocalNetworkGateway -LocalNetworkGateway $local -AddressPrefix @('10.0.0.0/24','20.0.0.0/24','30.0.0.0/24')
+
+
+Um ein Adresspräfix aus einem lokalen Standort zu entfernen, verwenden Sie dieses Beispiel. Lassen Sie die Präfixe weg, die Sie nicht mehr benötigen. In diesem Beispiel wird das Präfix 20.0.0.0/24 (aus dem vorherigen Beispiel) nicht mehr benötigt, daher wird der lokale Standort aktualisiert und das Präfix ausgeschlossen.
+
+		local = Get-AzureLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
+		Set-AzureLocalNetworkGateway -LocalNetworkGateway $local -AddressPrefix @('10.0.0.0/24','30.0.0.0/24')
+
 
 ## Anfordern einer öffentlichen IP-Adresse für das VNet-Gateway
 
@@ -123,7 +140,7 @@ Die Gatewaykonfiguration definiert das zu verwendende Subnetz und die zu verwend
 In diesem Schritt erstellen Sie das Gateway des virtuellen Netzwerks. Verwenden Sie die folgenden Werte:
 
 - Der Gatewaytyp ist *Vpn*.
-- Der „VpnType“ kann routenbasiert* (in einigen Dokumentationen als ein dynamisches Gateway bezeichnet) oder *richtlinienbasiert* sein (in einigen Dokumentationen als statisches Gateway bezeichnet). Weitere Informationen zu VPN-Gatewaytypen finden Sie unter [Informationen zu VPN-Gateways](vpn-gateway-about-vpngateways.md). 	
+- Der "VpnType" kann routenbasiert* (in einigen Dokumentationen als ein dynamisches Gateway bezeichnet) oder *richtlinienbasiert* sein (in einigen Dokumentationen als statisches Gateway bezeichnet). Weitere Informationen zu VPN-Gatewaytypen finden Sie unter [Informationen zu VPN-Gateways](vpn-gateway-about-vpngateways.md). 	
 
 		New-AzureVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg -Location 'West US' -IpConfigurations $gwipconfig -GatewayType Vpn -VpnType RouteBased
 
@@ -152,4 +169,4 @@ Nach einigen Minuten sollte die Verbindung hergestellt sein. Zu diesem Zeitpunkt
 
 Fügen Sie einen virtuellen Computer zu Ihrem virtuellen Netzwerk hinzu. [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

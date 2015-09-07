@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Benutzerdefiniertes Bereitstellen von Hadoop-Clustern in HDInsight | Microsoft Azure" 
-   description="Erfahren Sie, wie Sie Cluster für Azure HDInsight mithilfe von Azure-Portal, Azure PowerShell, über die Befehlszeile oder ein .NET SDK benutzerdefiniert bereitstellen." 
-   services="hdinsight" 
-   documentationCenter="" 
-   authors="mumian" 
-   manager="paulettm" 
-   editor="cgronlun"/>
+   pageTitle="Benutzerdefiniertes Bereitstellen von Hadoop-Clustern in HDInsight | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Cluster für Azure HDInsight mithilfe von Azure-Portal, Azure PowerShell, über die Befehlszeile oder ein .NET SDK benutzerdefiniert bereitstellen."
+	services="hdinsight"
+	documentationCenter=""
+	authors="mumian"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags
    ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data" 
-   ms.date="08/07/2015"
-   ms.author="jgao"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="08/07/2015"
+	ms.author="jgao"/>
 
 #Bereitstellen von Hadoop-Clustern in HDInsight
 
@@ -220,9 +220,9 @@ Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration 
 
 	![Diagramm der Punkt-zu-Standort-Konfiguration](./media/hdinsight-provision-clusters-v1/hdinsight-vnet-point-to-site.png)
 
-Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](http://msdn.microsoft.com/library/azure/jj156007.aspx).
+Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](../virtual-network/virtual-networks-overview.md).
 
-> [AZURE.NOTE]Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen HDInsight-Cluster bereitstellen. Weitere Informationen finden Sie unter [Konfigurationsaufgaben für virtuelle Netzwerke](http://msdn.microsoft.com/library/azure/jj156206.aspx).
+> [AZURE.NOTE]Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen HDInsight-Cluster bereitstellen. Weitere Informationen finden Sie unter [Konfigurationsaufgaben für virtuelle Netzwerke](../services/virtual-machines/).
 >
 >[AZURE.NOTE]Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden. Verwenden Sie das Azure PowerShell-Cmdlet "Get-AzureVNetConfig", um zu prüfen, ob ein vorhandenes virtuelles Netzwerk in Azure standortbasiert ist. Wenn das virtuelle Netzwerk nicht standortbasiert ist, haben Sie die folgenden Optionen:
 >
@@ -296,7 +296,7 @@ Erläuterung der Felder finden Sie in den [grundlegenden Konfigurationsoptionen]
 ### Verwenden von Azure PowerShell
 Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereitstellung und Verwaltung Ihrer Arbeitsauslastungen in Azure steuern und automatisieren können. Dieser Abschnitt enthält Anweisungen für die Bereitstellung eines HDInsight-Clusters mit Azure PowerShell. Weitere Informationen zum Konfigurieren einer Arbeitsstation für die Ausführung von HDInsight PowerShell-Cmdlets finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Weitere Informationen zum Verwenden von Azure PowerShell mit HDInsight finden Sie unter [Verwalten von HDInsight mit PowerShell](hdinsight-administer-use-powershell.md). Eine Liste der HDInsight Windows PowerShell-Cmdlets finden Sie unter [HDInsight-Cmdlet-Referenz](https://msdn.microsoft.com/library/azure/dn858087.aspx).
 
-> [AZURE.NOTE]Die Skripts in diesem Abschnitt dienen zum Konfigurieren eines HDInsight-Clusters in einem virtuellen Azure-Netzwerk, jedoch nicht zur Erstellung des virtuellen Azure-Netzwerks. Informationen zur Erstellung von virtuellen Azure-Netzwerken finden Sie unter [Aufgaben bei der Konfiguration virtueller Netzwerke](http://msdn.microsoft.com/library/azure/jj156206.aspx).
+> [AZURE.NOTE]Die Skripts in diesem Abschnitt dienen zum Konfigurieren eines HDInsight-Clusters in einem virtuellen Azure-Netzwerk, jedoch nicht zur Erstellung des virtuellen Azure-Netzwerks. Informationen zur Erstellung von virtuellen Azure-Netzwerken finden Sie unter [Aufgaben bei der Konfiguration virtueller Netzwerke](../services/virtual-machines/).
 
 Die folgenden Prozeduren müssen für die Bereitstellung eines HDInsight-Clusters mithilfe von Azure PowerShell ausgeführt werden:
 
@@ -786,4 +786,4 @@ In diesem Artikel haben Sie mehrere Möglichkeiten zu Bereitstellung von HDInsig
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/library/dn479185.aspx
 [azure-management-portal]: https://manage.windowsazure.com
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,22 +1,20 @@
 <properties 
-	pageTitle=".NET Web-App in Azure App Service mit Verwaltung der Anwendungsleistung mit New Relic" 
-	description="Erfahren Sie, wie Sie die Leistungsüberwachung von New Relic für ASP.NET-Anwendungen in Azure App Service verwenden." 
-	services="app-service\web" 
-	documentationCenter=".net" 
-	authors="cephalin" 
-	manager="wpickett" 
+	pageTitle=".NET Web-App in Azure App Service mit Verwaltung der Anwendungsleistung mit New Relic"
+	description="Erfahren Sie, wie Sie die Leistungsüberwachung von New Relic für ASP.NET-Anwendungen in Azure App Service verwenden."
+	services="app-service\web"
+	documentationCenter=".net"
+	authors="cephalin"
+	manager="wpickett"
 	editor=""/>
 
-
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="07/30/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="07/30/2015"
 	ms.author="stepsic"/>
-
 
 
 
@@ -36,7 +34,7 @@ New Relic Standard steht Azure-Benutzern kostenlos zur Verfügung. New Relic Pro
 
 Preisinformationen finden Sie auf der [New Relic-Seite im Azure Marketplace](/marketplace/partners/newrelic/newrelic).
 
-> [AZURE.NOTE]Es werden nur Preise für bis zu zehn Serverinstanzen aufgeführt. Volumenpreise für mehr als zehn Instanzen erfragen Sie bitte bei New Relic (sales@newrelic.com).
+> [AZURE.NOTE]Es werden nur Preise für bis zu zehn Compute-Instanzen aufgeführt. Volumenpreise für mehr als zehn Instanzen erfragen Sie bitte bei New Relic (sales@newrelic.com).
 
 Azure-Kunden erhalten bei Bereitstellung des New Relic-Agenten ein zweiwöchiges Testabonnement von New Relic Pro.
 
@@ -52,7 +50,7 @@ Um sich direkt im Azure Marketplace bei New Relic anzumelden, führen Sie diese 
 3. Klicken Sie auf **Entwicklerdienste** > **New Relic-APM**.
 4. Konfigurieren Sie Ihr New Relic-Konto mit den folgenden Angaben, und klicken Sie dann auf **Erstellen**.
 	- **Name**
-	- **Preisstufe**
+	- **Tarif**
 	- **Ressourcengruppe**
 	- **Abonnement**
 	- **Standort**
@@ -60,7 +58,7 @@ Um sich direkt im Azure Marketplace bei New Relic anzumelden, führen Sie diese 
 
 11. Nachdem Sie auf **Erstellen** geklickt haben, wird mit der Erstellung Ihres neuen New Relic-Kontos begonnen. Sie können den Status überwachen, indem Sie auf die Schaltfläche **Benachrichtigungen** klicken. Nach dem Erstellen wird das Blatt des New Relic-Kontos angezeigt.
 
-12. Um Ihren New Relic-Lizenzschlüssel abzurufen, zeigen Sie oben im Fenster den Bereich **Essentials** an. Die Web-App-Instanz registriert diesen Lizenzschlüssel automatisch in den App-Einstellungen, wenn Sie die Web-App in Ihr New Relic-Konto integrieren.
+12. Um Ihren New Relic-Lizenzschlüssel abzurufen, zeigen Sie oben im Blatt den Bereich **Essentials** an. Die Web-App-Instanz registriert diesen Lizenzschlüssel automatisch in den App-Einstellungen, wenn Sie die Web-App in Ihr New Relic-Konto integrieren.
 
 ## Schritt 2: Konfigurieren der New Relic-Integration für die Web-App
 
@@ -79,7 +77,7 @@ Um sich direkt im Azure Marketplace bei New Relic anzumelden, führen Sie diese 
 
 ## Schritt 3: Veröffentlichen der ASP.NET-Web-App
 
-Veröffentlichen Sie Ihre Web-App mit Visual Studio oder WebMatrix. Wenn Sie Ihre Web-App bereits veröffentlicht haben, veröffentlichen Sie diese erneut, damit die Web-App-Instanz das erforderliche New Relic NuGet-Paket zur Aktivierung der New Relic-Überwachung hinzufügt.
+Veröffentlichen Sie Ihre Web-App mit Visual Studio. Wenn Sie Ihre Web-App bereits veröffentlicht haben, veröffentlichen Sie diese erneut, damit die Web-App-Instanz das erforderliche New Relic NuGet-Paket zur Aktivierung der New Relic-Überwachung hinzufügt.
 
 ## Schritt 4: Überprüfen der Anwendungsleistung in New Relic.
 
@@ -123,8 +121,7 @@ Neben der <a href="https://newrelic.com/docs/site/the-new-relic-ui#functions">st
     </tr>
     <tr>
        <td>Anzeigen weltweiter Apdex-Details</td>
-       <td>Zeigen Sie in der <b>Browser</b>-Ansicht der Übersicht auf eine beliebige Stelle der globalen Apdex-Karte.<br />
-<b>Tipp:</b> Wenn Sie direkt zum Dashboard <a href="https://newrelic.com/docs/site/geography" target="_blank">Geography</a> der ausgewählten App wechseln möchten, klicken Sie auf den Titel <b>Global Apdex</b>, oder klicken Sie auf eine beliebige Stelle der globalen Apdex-Karte.</td>
+       <td>Zeigen Sie in der <b>Browser</b>-Ansicht der Übersicht auf eine beliebige Stelle der globalen Apdex-Karte.<br /><b>Tipp:</b> Wenn Sie direkt zum Dashboard <a href="https://newrelic.com/docs/site/geography" target="_blank">Geography</a> der ausgewählten App wechseln möchten, klicken Sie auf den Titel <b>Global Apdex</b>, oder klicken Sie auf eine beliebige Stelle der globalen Apdex-Karte.</td>
     </tr>
     <tr>
        <td>Anzeigen des Dashboards <a href="https://docs.newrelic.com/docs/applications-menu/transactions-dashboard" target="_blank">Web Transactions</a></td>
@@ -132,8 +129,7 @@ Neben der <a href="https://newrelic.com/docs/site/the-new-relic-ui#functions">st
     </tr>
     <tr>
        <td>Anzeigen des Dashboards <a href="https://newrelic.com/docs/site/errors" target="_blank">Errors</a></td>
-       <td>Klicken Sie im Dashboard "Overview" der Anwendung auf den Titel des Fehlerratendiagramms.<br />
-<b>Tipp:</b> Sie können das Dashboard "Errors" auch über <b>Applications > (Ihre App) > Events > Errors</b> anzeigen.</td>
+       <td>Klicken Sie im Dashboard "Overview" der Anwendung auf den Titel des Fehlerratendiagramms.<br /><b>Tipp:</b> Sie können das Dashboard "Errors" auch über <b>Applications > (Ihre App) > Events > Errors</b> anzeigen.</td>
     </tr>
     <tr>
        <td>Anzeigen von Details zum App-Server</td>
@@ -171,7 +167,6 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
 * Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 
-[webmatrixwebsite]: web-sites-dotnet-using-webmatrix.md
 [vswebsite]: web-sites-dotnet-get-started.md
 
 [wmnugetbutton]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetbutton.png
@@ -183,4 +178,4 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
 [custom]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrcustom.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

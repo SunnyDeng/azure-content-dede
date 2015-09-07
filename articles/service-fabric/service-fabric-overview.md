@@ -1,25 +1,25 @@
 <properties 
-   pageTitle="Übersicht über Service Fabric" 
-   description="Eine Übersicht über Service Fabric und das Konzept der Anwendungen, die sich aus Microservices zusammensetzen. Service Fabric ist eine Plattform für verteilte Systeme zum Erstellen skalierbarer, zuverlässiger und einfach zu verwaltender Anwendungen für die Cloud." 
-   services="service-fabric" 
-   documentationCenter=".net" 
-   authors="msfussell" 
-   manager="timlt" 
-   editor="masnider"/>
+   pageTitle="Übersicht über Service Fabric | Microsoft Azure"
+	description="Eine Übersicht über Service Fabric und das Konzept der Anwendungen, die sich aus Microservices zusammensetzen. Service Fabric ist eine Plattform für verteilte Systeme zum Erstellen skalierbarer, zuverlässiger und einfach zu verwaltender Anwendungen für die Cloud."
+	services="service-fabric"
+	documentationCenter=".net"
+	authors="msfussell"
+	manager="timlt"
+	editor="masnider"/>
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA" 
-   ms.date="04/14/2015"
-   ms.author="mfussell"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/25/2015"
+	ms.author="mfussell"/>
 
 # Übersicht über Service Fabric
 Service Fabric ist eine Plattform für verteilte Systeme zum Erstellen skalierbarer, zuverlässiger und einfach zu verwaltender Anwendungen für die Cloud. Service Fabric bietet einfache Lösungen für die komplexen Herausforderungen bei der Entwicklung und Verwaltung von Cloudanwendungen. Mit Service Fabric gehören komplexe Infrastrukturprobleme der Vergangenheit an. Stattdessen können sich Entwickler und Administratoren auf das Implementieren geschäftskritischer, anspruchsvoller Workloads konzentrieren, die skalierbar, zuverlässig und einfach zu verwalten sind. Service Fabric ist die Middlewareplattform der nächsten Generation für das Erstellen und Verwalten leistungsstarker Tier-1-Dienste mit Cloudskalierung.
 
-## Aus Microservices bestehende Anwendungen ##
+## Aus Microservices bestehende Anwendungen
 Service Fabric ermöglicht das Erstellen und Verwalten skalierbarer und zuverlässiger Anwendungen, die sich aus Microservices zusammensetzen, die in einem gemeinsam genutzten Computerpool (auch als Service Fabric-Cluster bezeichnet) mit sehr hoher Dichte ausgeführt werden. Die Plattform bietet eine ausgereifte Laufzeit für das Erstellen verteilter, skalierbarer zustandsloser und zustandsbehafteter Microservices sowie umfassende Verwaltungsfunktionen zum Organisieren, Bereitstellen, Überwachen, Aktualisieren/Patchen und Löschen bereitgestellter Anwendungen.
 
 Service Fabric unterstützt bereits jetzt zahlreiche Microsoft-Dienste, darunter Azure SQL-Datenbank, Azure DocumentDB, Cortana, Power BI, Microsoft Intune, Azure Event Hubs, zentrale Azure Services, Skype for Business und viele mehr.
@@ -42,7 +42,7 @@ Warum sind zustandsbehaftete Microservices wichtig? Warum können nicht ausschli
 
 2) Vereinfachung des Anwendungsentwurfs, da zustandsbehaftete Microservices zusätzliche Warteschlangen und Caches überflüssig machen, die bislang erforderlich waren, um Verfügbarkeits- und Latenzanforderungen einer rein zustandslosen Anwendung zu erfüllen. Da zustandsbehaftete Dienste an sich bereits hochverfügbar sind und eine niedrige Latenz bieten, fällt der Aufwand für die Verwaltung verschiebbarer Elemente in Ihrer Anwendung insgesamt geringer aus.
 
-Weitere Informationen zu Anwendungsmustern und -entwürfen in Service Fabric finden Sie unter [Anwendungsszenarien](../service-fabric-application-scenarios).
+Weitere Informationen zu Anwendungsmustern und -entwürfen in Service Fabric finden Sie unter [Anwendungsszenarien](service-fabric-application-scenarios.md).
 
 ## Anwendungslebenszyklusverwaltung
 Service Fabric bietet erstklassige Unterstützung für die gesamte Anwendungslebenszyklusverwaltung (Application Lifecycle Management, ALM) für Cloudanwendungen: von der Entwicklung über die Bereitstellung, die tägliche Verwaltung und die Wartung bis zur endgültigen Außerbetriebnahme.
@@ -51,7 +51,7 @@ Dank der ALM-Funktionen von Service Fabric profitieren Anwendungsadministratoren
 
 Die meisten Anwendungen bestehen aus einer Kombination aus zustandslosen und zustandsbehafteten Microservices und anderen ausführbaren Dateien/Laufzeiten, die gemeinsam bereitgestellt werden. Dank der leistungsstarken Typen für die Anwendungen und die gepackten Microservices in Service Fabric ist die Bereitstellung mehrerer Anwendungsinstanzen möglich, die unabhängig voneinander verwaltet und aktualisiert werden können. Maßgeblich dabei ist, dass Service Fabric *jede beliebige* ausführbare Datei oder Laufzeit zuverlässig bereitstellen kann. So können Sie beispielsweise ASP.NET 5, node.js, Skripts und alle anderen beliebigen Komponenten bereitstellen, aus denen sich Ihre Anwendung zusammensetzt.
   
-Weitere Informationen zur Verwaltung des Anwendungslebenszyklus finden Sie unter [Anwendungslebenszyklus](../service-fabric-application-lifecycle).
+Weitere Informationen zur Verwaltung des Anwendungslebenszyklus finden Sie unter [Anwendungslebenszyklus](service-fabric-application-lifecycle.md).
 
 ## Wichtige Funktionen
 Mit Service Fabric können Sie Folgendes tun:
@@ -89,10 +89,13 @@ Mit Service Fabric können Sie Folgendes tun:
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
 
-Weitere Informationen finden Sie unter [Technische Übersicht](../service-fabric-technical-overview).
+* Weitere Informationen finden Sie unter [Technische Übersicht](service-fabric-technical-overview.md).
+* Einrichten der Service Fabric-[Entwicklungsumgebung](service-fabric-get-started.md)  
+* Auswählen eines [Frameworks](service-fabric-choose-framework.md) für den Dienst
+
 
 [Image1]: media/service-fabric-overview/Service-Fabric-Overview.png
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,29 +1,24 @@
 <properties 
-	pageTitle="Verwalten von Azure AD Connect" 
-	description="Erfahren Sie, wie die Standardkonfiguration und Betriebsaufgaben für Azure AD Connect erweitert werden." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Verwalten von Azure AD Connect"
+	description="Erfahren Sie, wie die Standardkonfiguration und Betriebsaufgaben für Azure AD Connect erweitert werden."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/28/2015" 
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Verwalten von Azure AD Connect 
 
-> [AZURE.SELECTOR]
-- [What is It](../active-directory-aadconnect/)
-- [How it Works](../active-directory-aadconnect-how-it-works/)
-- [Getting Started](../active-directory-aadconnect-get-started/)
-- [What's Next](../active-directory-aadconnect-whats-next/) 
-- [Learn More](../active-directory-aadconnect-learn-more/)
+
 
 Anhand der Anweisungen in den folgenden weiterführenden Themen können Sie Azure Active Directory Connect entsprechend den Bedürfnissen und Anforderungen Ihrer Organisation anpassen.
 
@@ -93,9 +88,9 @@ Zusätzliche Dokumentation zur Verwendung von Azure AD Connect:
 - [Using the Azure AD Connect Synchronization Rules Editor](active-directory-aadconnect-whats-next-synch-rules-editor.md) (in englischer Sprache)
 - [Using declarative provisioning](active-directory-aadconnect-whats-next-declarative-prov.md) (in englischer Sprache)
 
-Ein Teil der Dokumentation für Azure AD Sync ist noch immer relevant und gilt für Azure AD Connect. Obwohl jede Anstrengung unternommen wird, diese Dokumentation an Azure.com zu übermitteln, befindet sich ein Teil noch immer in der MSDN-Bibliothek. Zusätzliche Dokumentation finden Sie unter [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx) und [Azure AD Sync auf MSDN](https://msdn.microsoft.com/library/azure/dn790204.aspx).
+Ein Teil der Dokumentation für Azure AD Sync ist noch immer relevant und gilt für Azure AD Connect. Obwohl jede Anstrengung unternommen wird, diese Dokumentation an Azure.com zu übermitteln, befindet sich ein Teil noch immer in der MSDN-Bibliothek. Zusätzliche Dokumentation finden Sie unter [Azure AD Connect auf MSDN](active-directory-aadconnect.md) und [Azure AD Sync auf MSDN](https://msdn.microsoft.com/library/azure/dn790204.aspx).
 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

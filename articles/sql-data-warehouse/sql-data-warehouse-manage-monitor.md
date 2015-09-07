@@ -1,20 +1,20 @@
 <properties
    pageTitle="Überwachen Ihres Workloads mit dynamischen Verwaltungssichten | Microsoft Azure"
-   description="Informationen zum Überwachen Ihres Workloads mit dynamischen Verwaltungssichten."
-   services="sql-data-warehouse"
-   documentationCenter="NA"
-   authors="sahaj08"
-   manager="barbkess"
-   editor=""/>
+	description="Informationen zum Überwachen Ihres Workloads mit dynamischen Verwaltungssichten."
+	services="sql-data-warehouse"
+	documentationCenter="NA"
+	authors="sahaj08"
+	manager="barbkess"
+	editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="08/06/2015"
-   ms.author="sahajs"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-services"
+	ms.date="08/06/2015"
+	ms.author="sahajs"/>
 
 # Überwachen Ihres Workloads mit dynamischen Verwaltungssichten
 
@@ -135,7 +135,11 @@ ORDER BY step_index;
 
 Speichern Sie den Schrittindex des lang dauernden Schritts.
 
-Überprüfen Sie die Spalte *pperation\_type* des Schritts mit der lang dauernden Abfrage: – Fahren Sie mit Schritt 4a für **SQL-Vorgänge** fort: OnOperation, RemoteOperation, ReturnOperation – Fahren Sie mit Schritt 4 b für **Datenübertragungsvorgänge** fort: ShuffleMoveOperation, BroadcastMoveOperation, TrimMoveOperation, PartitionMoveOperation, MoveOperation, CopyOperation
+Überprüfen Sie die Spalte *operation\_type* des Schritts für die Abfrage mit langer Laufzeit:
+
+- Fahren Sie mit Schritt 4a für **SQL-Vorgänge** fort: OnOperation, RemoteOperation, ReturnOperation.
+- Fahren Sie mit Schritt 4b für **Datenübertragungsvorgänge** fort: ShuffleMoveOperation, BroadcastMoveOperation, TrimMoveOperation, PartitionMoveOperation, MoveOperation, CopyOperation.
+
 
 
 
@@ -182,7 +186,7 @@ WHERE request_id = 'QID33209' AND step_index = 2;
 ```
 
 - Überprüfen Sie die Spalte *total\_elapsed\_time*, um festzustellen, ob eine bestimmte Verteilung für das Verschieben von Daten erheblich länger als andere dauert. 
-- Überprüfen Sie für die lang dauernde Verteilung die Spalte *rows\_processed*, um festzustellen, ob die Anzahl der Zeilen, die von dieser Verteilung verschoben wird, beträchtlich größer als bei den anderen ist. Dies zeigt, dass Ihre Abfrage eine Datenschiefe aufweist.
+- Überprüfen Sie für die Verteilung mit langer Laufzeit die Spalte *rows\_processed*, um festzustellen, ob die Anzahl der Zeilen, die von dieser Verteilung verschoben werden, beträchtlich größer als bei den anderen ist. Dies zeigt, dass Ihre Abfrage eine Datenschiefe aufweist.
 
 
 
@@ -213,4 +217,4 @@ Weitere Tipps zur Verwaltung von SQL Data Warehouse finden Sie unter [Verwaltung
 
 <!--MSDN references-->
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

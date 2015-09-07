@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure Multi-Factor Authentication – Nächste Schritte" 
-	description="Dies ist die Seite &quot;Azure Multi-Factor Authentication&quot;, auf der beschrieben wird, was die nächsten Schritte mit Multi-Factor Authentication sind. Dazu gehören Berichte, Betrugswarnung, Einmalumgehung, benutzerdefinierte Sprachnachrichten, Zwischenspeicherung, vertrauenswürdige IP-Adressen und App-Kennwörter." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Azure Multi-Factor Authentication – Nächste Schritte"
+	description="Dies ist die Seite Azure Multi-Factor Authentication, auf der beschrieben wird, was die nächsten Schritte mit Multi-Factor Authentication sind. Dazu gehören Berichte, Betrugswarnung, Einmalumgehung, benutzerdefinierte Sprachnachrichten, Zwischenspeicherung, vertrauenswürdige IP-Adressen und App-Kennwörter."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/02/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Konfigurieren von Azure Multi-Factor Authentication
@@ -228,6 +228,8 @@ In einigen Anwendungen wie Office 2010 oder älter und Apple Mail können Sie ke
 >
 > Office 2013-Clients (einschließlich Outlook) unterstützen jetzt neue Authentifizierungsprotokolle und bieten die Möglichkeit zum Aktivieren von Multi-Factor Authentication. Damit sind nach der Aktivierung keine App-Kennwörter mehr für Office 2013-Clients erforderlich. Weitere Informationen finden Sie unter [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) ("Öffentliche Preview für moderne Authentifizierung in Office 2013", in englischer Sprache).
 
+
+
 ### Wichtige Informationen zu App-Kennwörtern
 
 Es folgt eine Liste mit wichtigen Informationen, die Sie über App-Kennwörter wissen sollten.
@@ -240,6 +242,11 @@ Authentifizierungsvorgang|Bei Browser-Apps|Bei Nicht-Browser-Apps
 - Anwendungen, die Kennwörter zwischenspeichern und in lokalen Szenarios nutzen, könnten fehlschlagen, weil das App-Kennwort außerhalb der Organisations-ID möglicherweise nicht bekannt ist. Ein Beispiel sind Exchange-E-Mails, die lokal vorhanden sind, bei denen sich die archivierten Nachrichten jedoch in der Cloud befinden. Das gleiche Kennwort funktioniert nicht.
 - Das eigentliche Kennwort wird automatisch erzeugt und nicht vom Benutzer festgelegt. Ein Grund hierfür ist, dass automatisch generierte Kennwörter sicherer und für einen Angreifer schwerer zu erraten sind.
 - Derzeit können pro Benutzer maximal 40 Kennwörter festgelegt werden. Sie werden dazu aufgefordert, eines der vorhandenen App-Kennwörter zu löschen, damit das neue Kennwort erstellt werden kann.
+- Nach der Aktivierung der mehrstufigen Authentifizierung in einem Benutzerkonto können App-Kennwörter mit den meisten Nicht-Browserclients wie Outlook und Lync verwendet werden, wobei administrative Aufgaben auch dann nicht mithilfe von App-Kennwörtern über Nicht-Browseranwendungen wie Windows Power Shell durchgeführt werden können, wenn der Benutzer über ein Administratorkonto verfügt. Stellen Sie sicher, dass Sie zum Ausführen von PowerShell-Skripts ein Dienstkonto mit einem sicheren Kennwort erstellen und für dieses Konto die mehrstufige Authentifizierung nicht aktivieren.
+
+>[AZURE.WARNING]App-Kennwörter funktioniert nicht in Hybridumgebungen, in denen Clients sowohl mit lokalen AutoErmittlung-Endpunkten als auch mit solchen in der Cloud kommunizieren.
+>
+>Bitte beachten Sie, dass App-Kennwörter nicht in Hybridumgebungen funktionieren, in denen Clients sowohl mit lokalen AutoErmittlung-Endpunkten als auch mit solchen in der Cloud kommunizieren, da für solche Umgebungen lokal Domänenkennwörter und in der Cloud App-Kennwörter zur Authentifizierung erforderlich sind.
 
 
 ### Benennungsrichtlinien für App-Kennwörter
@@ -358,4 +365,4 @@ Um sicherzustellen, dass die Benutzerkonten geschützt sind, sollten Sie die Mul
 <li>Auf der Seite "Einstellungen" unter "Geräteeinstellungen von Benutzern verwalten", **Aktivieren/Deaktivieren Sie mehrstufige Authentifizierung anhalten, indem ein Gerät gespeichert wird**.</li>
 ![Aussetzen von Geräten](./media/multi-factor-authentication-manage-users-and-devices/suspend.png) <li>Legen Sie die Anzahl der Tage fest, an denen Sie die Aussetzung zulassen möchten. Der Standardwert ist 14 Tage.</li> <li>Klicken Sie auf "Speichern".</li> <li>Klicken Sie auf "Schließen".</li>
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

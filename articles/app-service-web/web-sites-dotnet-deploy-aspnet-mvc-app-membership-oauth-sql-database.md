@@ -1,27 +1,26 @@
 <properties 
-	pageTitle="Erstellen einer ASP.NET MVC-App mit Authentifizierung, SQL-Datenbank und Bereitstellung in Azure App Service" 
-	description="Erfahren Sie, wie Sie eine ASP.NET-MVC 5-App mit einem SQL-Datenbank-Back-End und Authentifizierung sowie Autorisierung entwickeln und in Azure bereitstellen." 
-	services="app-service\web" 
-	documentationCenter=".net" 
-	authors="Rick-Anderson" 
-	writer="Rick-Anderson" 
-	manager="wpickett" 
+	pageTitle="Erstellen einer ASP.NET MVC-App mit Authentifizierung, SQL-Datenbank und Bereitstellung in Azure App Service"
+	description="Erfahren Sie, wie Sie eine ASP.NET-MVC 5-App mit einem SQL-Datenbank-Back-End und Authentifizierung sowie Autorisierung entwickeln und in Azure bereitstellen."
+	services="app-service\web"
+	documentationCenter=".net"
+	authors="Rick-Anderson"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="08/07/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/07/2015"
 	ms.author="riande"/>
 
 
 
 # Erstellen einer ASP.NET MVC-App mit Authentifizierung, SQL-Datenbank und Bereitstellung in Azure App Service
 
-In diesem Lernprogramm wird die Erstellung einer sicheren ASP.NET MVC 5-Webanwendung erläutert, mit der Benutzer sich mithilfe der Anmeldeinformationen von Facebook oder Google anmelden können. Darüber hinaus wird die Anwendung in [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) bereitgestellt.
+In diesem Lernprogramm wird die Erstellung einer sicheren ASP.NET MVC 5-Web-App erläutert, mit der Benutzer sich mithilfe der Anmeldeinformationen von Facebook oder Google anmelden können. Darüber hinaus wird die Anwendung in [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) bereitgestellt.
 
 Sie können ein kostenloses Azure-Konto erstellen. Wenn Sie noch nicht über Visual Studio 2013 verfügen, wird Visual Studio 2013 for Web Express automatisch durch das SDK installiert. Sie können kostenlos mit der Entwicklung für Azure beginnen.
 
@@ -33,11 +32,13 @@ Sie lernen Folgendes:
 * Verwenden von [OAuth](http://oauth.net/ "http://oauth.net/") und der ASP.NET-Mitgliedschaftsdatenbank zum Sichern der Anwendung
 * Verwenden einer SQL-Datenbank zum Speichern von Daten in Azure
 
-Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 beruht und für den Datenbankzugriff ADO.NET Entity Framework verwendet. In der folgenden Abbildung wird die Anmeldeseite der fertiggestellten Anwendung dargestellt:
+Sie erstellen eine einfache Kontaktlisten-Web-App, die auf ASP.NET MVC 5 beruht und für den Datenbankzugriff ADO.NET Entity Framework verwendet. In der folgenden Abbildung wird die Anmeldeseite der fertiggestellten Anwendung dargestellt:
 
 ![Anmeldeseite][rxb]
 
->[AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](../de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](../de-de/pricing/free-trial/?WT.mc_id=A261C142F).
+>[AZURE.NOTE]Um die attraktiven Social Media-Anmeldeschaltflächen aus dem Screenshot oben zu erstellen, lesen Sie den Blogbeitrag [Pretty social login buttons for ASP.NET MVC 5](http://www.jerriepelser.com/blog/pretty-social-login-buttons-for-asp-net-mvc-5) (in englischer Sprache).
+
+>[AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](../de-DE/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](../de-DE/pricing/free-trial/?WT.mc_id=A261C142F).
 
 >Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -51,7 +52,7 @@ Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Updat
 
 	!["Neues Projekt" im Menü "Datei"](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/gs13newproj.png)
 
-1. Erweitern Sie im Dialogfeld **Neues Projekt** den Eintrag **C#**, und wählen Sie unter **Installierte Vorlagen** die Option **Web** aus. Wählen Sie dann **ASP.NET-Webanwendung** aus.
+1. Erweitern Sie im Dialogfeld **Neues Projekt** den Eintrag **C#**, und wählen Sie unter **Installierte Vorlagen** die Option **Web** aus. Wählen Sie dann **ASP.NET-Web-App** aus.
 
 1. Nennen Sie die Anwendung **ContactManager**, und klicken Sie auf **OK**.
 
@@ -63,7 +64,7 @@ Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Updat
 
 	![Dialogfeld "Neues ASP.NET-Projekt"](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newproject.png)
 
-1. Der Konfigurationsassistent schlägt basierend auf *ContactManager* einen eindeutigen Namen vor. Sie müssen sich entscheiden, ob Sie einen neuen App Service-Plan und eine neue Ressourcengruppe erstellen. Entscheidungshilfen hierzu finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md). Für dieses Lernprogramm empfiehlt es sich, mindestens eine neue Ressourcengruppe zu erstellen. Wählen Sie eine Region in Ihrer Nähe. Über [azurespeed.com](http://www.azurespeed.com/ "AzureSpeed.com") können Sie das Rechenzentrum mit der niedrigsten Latenz suchen. Die Datenbank richten Sie erst im nächsten Schritt ein, klicken Sie also noch nicht auf **OK**.
+1. Der Konfigurationsassistent schlägt basierend auf *ContactManager* einen eindeutigen Namen vor. Sie müssen sich entscheiden, ob Sie einen neuen App Service-Plan und eine neue Ressourcengruppe erstellen. Entscheidungshilfen dazu, ob Sie einen neuen Plan oder eine neue Ressourcengruppe erstellen, finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md). Für dieses Lernprogramm empfiehlt es sich, mindestens eine neue Ressourcengruppe zu erstellen. Wählen Sie eine Region in Ihrer Nähe. Über [azurespeed.com](http://www.azurespeed.com/ "AzureSpeed.com") können Sie das Rechenzentrum mit der niedrigsten Latenz suchen. Die Datenbank richten Sie erst im nächsten Schritt ein, klicken Sie also noch nicht auf **OK**.
 
 	![Neue Plan- und Ressourcengruppe](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newplanandgroup.png)
  
@@ -78,9 +79,9 @@ Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Updat
 ### Einrichten der Seitenkopf- und -fußzeile
 
 
-1. Öffnen Sie im **Projektmappen-Explorer** die Datei *Layout.cshtml* im Ordner *Views\Shared*.
+1. Öffnen Sie im **Projektmappen-Explorer** die Datei *Layout.cshtml* im Ordner *Views\\Shared*.
 
-	![_Layout.cshtml in Solution Explorer][newapp004]
+	![\_Layout.cshtml in Solution Explorer][newapp004]
 
 1. Ersetzen Sie das Markup in der Datei *Layout.cshtml* durch den folgenden Code. Die Änderungen sind unten hervorgehoben.
 
@@ -95,7 +96,7 @@ Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Updat
 		
 		</head>
 		<body>
-		    <div class="navbar navbar-inverse navbar-fixed-top">
+		    <div class="navbar navbar-inverase navbar-fixed-top">
 		        <div class="container">
 		            <div class="navbar-header">
 		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -141,7 +142,7 @@ Darüber hinaus müssen Sie keine weiteren Aktionen ausführen, um die Anwendung
 
 ## Aktivieren von SSL für das Projekt ##
 
-1. Aktivieren Sie SSL. Klicken Sie im Projektmappen-Explorer auf das Projekt **ContactManager** und drücken Sie dann F4, um das Eigenschaftsdialogfeld aufzurufen. Ändern Sie **SSL-aktiviert** in true. Kopieren Sie die **SSL-URL**. Die SSL-URL lautet https://localhost:44300/, sofern Sie zuvor noch keine SSL-Websites erstellt haben.
+1. Aktivieren Sie SSL. Klicken Sie im Projektmappen-Explorer auf das Projekt **ContactManager** und drücken Sie dann F4, um das Eigenschaftsdialogfeld aufzurufen. Ändern Sie **SSL-aktiviert** in true. Kopieren Sie die **SSL-URL.** Die SSL-URL lautet https://localhost:44300/, sofern Sie zuvor noch keine SSL-Web-Apps erstellt haben.
 
 	![SSL aktivieren][rxSSL]
  
@@ -273,7 +274,7 @@ Die nächste Aufgabe besteht darin, das Feature [Code First-Migrationen](http://
 
 
 	Mit dem Befehl **add-migration Initial** wird eine Datei namens **&lt;Zeitstempel&gt;Initial** im Ordner *Migrations* generiert, mit der die Datenbank erstellt wird. Der erste Parameter (**Initial**) ist willkürlich und wird zum Erstellen des Dateinamens verwendet. Sie können die neue Klasse im **Projektmappen-Explorer** anzeigen. In der **Initial**-Klasse wird mit der **Up**-Methode die Tabelle **Contacts** erstellt und mit der Down-Methode (wird verwendet, wenn Sie zum vorherigen Status zurückkehren möchten) wieder verworfen.
-3. Öffnen Sie die Datei *Migrations\Configuration.cs*. 
+3. Öffnen Sie die Datei *Migrations\\Configuration.cs*. 
 4. Fügen Sie den folgenden Namespace hinzu. 
 
     	 using ContactManager.Models;
@@ -363,7 +364,7 @@ Folgen Sie den Anweisungen im Lernprogramm [MVC 5 App with Facebook, Twitter, Li
 ## Verwenden der Mitgliedschafts-API
 In diesem Abschnitt fügen Sie der Mitgliedschaftsdatenbank einen lokalen Benutzer und die Rolle *canEdit* hinzu. Nur Benutzer mit der Rolle *canEdit* können Daten bearbeiten. Eine Best Practice besteht darin, Rollen nach den Aktionen zu benennen, die damit ausgeführt werden können. Entsprechend ist *canEdit* einer Rolle mit dem Namen *admin* vorzuziehen. Mit fortschreitender Fertigstellung der Anwendung können Sie neue Rollen wie *canDeleteMembers* anstelle von weniger aussagekräftigen Rollen wie *superAdmin* hinzufügen.
 
-1. Öffnen Sie die Datei *migrations\configuration.cs*, und fügen Sie die folgenden `using`-Anweisungen hinzu:
+1. Öffnen Sie die Datei *migrations\\configuration.cs*, und fügen Sie die folgenden `using`-Anweisungen hinzu:
 
         using Microsoft.AspNet.Identity;
         using Microsoft.AspNet.Identity.EntityFramework;
@@ -402,12 +403,12 @@ In diesem Abschnitt fügen Sie der Mitgliedschaftsdatenbank einen lokalen Benutz
 
 	![Codebild](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss24.PNG)
 
-	Dieser Code erstellt eine neue Rolle namens *canEdit* sowie den neuen lokalen Benutzer *user1@contoso.com* und fügt *user1@contoso.com* zur Rolle *canEdit* hinzu. Weitere Informationen finden Sie in den [ASP.NET Identity-Tutorials](http://www.asp.net/identity/overview/features-api).
+	Dieser Code erstellt die neue Rolle *canEdit* sowie den neuen lokalen Benutzer **user1@contoso.com* und fügt **user1@contoso.com* der Rolle *canEdit* hinzu. Weitere Informationen finden Sie in den [ASP.NET Identity-Lernprogrammen](http://www.asp.net/identity/overview/features-api).
 
 ## Verwenden von temporärem Code zum Hinzufügen neuer Benutzer mit Anmeldung zu sozialen Netzwerken zur Rolle "canEdit"  ##
 In diesem Abschnitt ändern Sie die Methode **ExternalLoginConfirmation** im Kontocontroller vorübergehend, um neue Benutzer hinzuzufügen, die sich mit einem OAuth-Anbieter bei der Rolle *canEdit* registrieren. Die **ExternalLoginConfirmation**-Methode wird automatisch geändert, um einer Administratorrolle neue Benutzer hinzuzufügen. Bis ein Tool zum Hinzufügen und Verwalten von Rollen bereitgestellt wird, verwenden wir den unten dargestellten Code zur temporären automatischen Registrierung. Es ist geplant, in Zukunft ein [WSAT](http://msdn.microsoft.com/library/ms228053.aspx) vergleichbares Tool bereitzustellen, mit dem Benutzerkonten und -rollen erstellt und bearbeitet werden können.
 
-1. Öffnen Sie die Datei **Controllers\AccountController.cs**, und navigieren Sie zur **ExternalLoginConfirmation**-Methode.
+1. Öffnen Sie die Datei **Controllers\\AccountController.cs**, und navigieren Sie zur **ExternalLoginConfirmation**-Methode.
 1. Fügen Sie **AddToRoleAsync** unmittelbar vor dem Aufruf **SignInAsync** den folgenden Aufruf hinzu.
 
 		await UserManager.AddToRoleAsync(user.Id, "canEdit");
@@ -452,11 +453,11 @@ In diesem Abschnitt ändern Sie die Methode **ExternalLoginConfirmation** im Kon
 
 An späterer Stelle in diesem Lernprogramm stellen Sie die Anwendung für Azure bereit. Die Anmeldung erfolgt dann über Google oder einen anderen Authentifizierungsdrittanbieter. Dadurch wird Ihr neu registriertes Konto der Rolle *canEdit* hinzugefügt. Jede Person, die die URL Ihrer Web-App findet und über eine Google-ID verfügt, kann sich dann registrieren und die Datenbank aktualisieren. Sie können die Website beenden, um dies zu verhindern. Durch eine Untersuchung der Datenbank können Sie überprüfen, wer der Rolle *canEdit* angehört.
 
-Drücken Sie in der **Paket-Manager-Konsole** die NACH-OBEN-TASTE, um den folgenden Befehl aufzurufen:
+Drücken Sie in der Paket-Manager-Konsole die NACH-OBEN-TASTE, um den folgenden Befehl aufzurufen:
 
 		Update-Database
 
-Führen Sie den Befehl **Update-Database** aus, mit dem die **Seed**-Methode ausgeführt wird. Daraufhin wird die gerade hinzugefügte **AddUserAndRole**-Methode hinzugefügt. **AddUserAndRole** erstellt die Benutzerin *user1@contoso.com* und fügt sie der Rolle *canEdit* hinzu.
+Führen Sie den Befehl **Update-Database** aus, mit dem die **Seed**-Methode ausgeführt wird. Daraufhin wird die gerade hinzugefügte **AddUserAndRole**-Methode hinzugefügt. **AddUserAndRole** erstellt den Benutzer **user1@contoso.com* und fügt ihn der Rolle *canEdit* hinzu.
 
 ## Schützen der Anwendung durch SSL und das Attribut "Authorize" ##
 
@@ -472,7 +473,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 		    filters.Add(new RequireHttpsAttribute());
 		}
 		
-	Der im obigen Code angewendete Filter [Authorize](http://msdn.microsoft.com/library/system.web.mvc.authorizeattribute.aspx) verhindert, dass anonyme Benutzer auf Methoden in der Anwendung zugreifen. Sie verwenden das [AllowAnonymous](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)-Attribut, um die Autorisierungsanforderung in einigen Methoden zu deaktivieren, sodass anonyme Benutzer sich anmelden und die Startseite anzeigen können. [RequireHttps](http://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx) erfordert, dass der gesamte Zugriff auf die Webanwendung durch HTTPS erfolgen muss.
+	Der im obigen Code angewendete Filter [Authorize](http://msdn.microsoft.com/library/system.web.mvc.authorizeattribute.aspx) verhindert, dass anonyme Benutzer auf Methoden in der Anwendung zugreifen. Sie verwenden das [AllowAnonymous](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)-Attribut, um die Autorisierungsanforderung in einigen Methoden zu deaktivieren, sodass anonyme Benutzer sich anmelden und die Startseite anzeigen können. [RequireHttps](http://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx) erfordert, dass der gesamte Zugriff auf die Web-App durch HTTPS erfolgen muss.
 
 1. Fügen Sie der **Index**-Methode des Controllers "Home" das [AllowAnonymous](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)-Attribut hinzu. Mit dem [AllowAnonymous](http://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)-Attribut lassen Sie die Methoden zu, die von der Autorisierung ausgenommen werden sollen.
 
@@ -496,8 +497,8 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 		   Zip = "59405"});
 		}
 		// POST: Cm/Create
-		// Zum Schutz vor Overposting-Angriffen aktivieren Sie die jeweiligen Bind-Eigenschaften. 
-		// Weitere Informationen finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598. 
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		 [Authorize(Roles = "canEdit")]
@@ -541,7 +542,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 ## Bereitstellen der Anwendung in Azure
 
-1. Klicken Sie im **Projektmappen-Explorer** von Visual Studio mit der rechten Maustaste auf das Projekt, und wählen Sie im Kontextmenü **Veröffentlichen** aus.
+1. Klicken Sie im Projektmappen-Explorer von Visual Studio mit der rechten Maustaste auf das Projekt, und wählen Sie im Kontextmenü **Veröffentlichen** aus.
 
 	!["Veröffentlichen" im Kontextmenü des Projekts][firsdeploy003]
 
@@ -577,7 +578,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 1. Kommentieren Sie den folgenden Code aus der Methode **ExternalLoginConfirmation** im Kontocontroller aus, oder entfernen Sie ihn: `await UserManager.AddToRoleAsync(user.Id, "canEdit");`
 1. Erstellen Sie das Projekt (die Dateiänderungen werden dabei gespeichert und es wird sichergestellt, dass keine Kompilierungsfehler vorhanden sind).
-5. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt, und wählen Sie **Veröffentlichen** aus.
+5. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie **Veröffentlichen** aus.
 
 	   !["Veröffentlichen" im Kontextmenü des Projekts](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/GS13publish.png)
 	
@@ -609,7 +610,7 @@ Falls Sie Ihren Vornamen und Nachnamen im Google-Konto nicht ausgefüllt haben, 
 
 ## Überprüfen der SQL Azure-DB ##
 
-1. Navigieren Sie im **Server-Explorer** zu **ContactDB**.
+1. Navigieren Sie im Server-Explorer zu **ContactDB**.
 2. Klicken Sie mit der rechten Maustaste auf **ContactDB**, und wählen Sie **Open in SQL Server Object Explorer** aus.
  
 	![In SSOX öffnen](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/rrr12.png)
@@ -628,7 +629,7 @@ Falls Sie Ihren Vornamen und Nachnamen im Google-Konto nicht ausgefüllt haben, 
 
 	![CM-Seite](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/s2.png)
  
-2. Klicken Sie im **SQL Server-Objekt-Explorer** mit der rechten Maustaste auf **AspNetUserRoles**, und wählen Sie **Daten anzeigen** aus.
+2. Klicken Sie im SQL Server-Objekt-Explorer mit der rechten Maustaste auf **AspNetUserRoles**, und wählen Sie **Daten anzeigen** aus.
 
 	![CM-Seite](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/rs1.png)
  
@@ -716,4 +717,4 @@ Dieses Lernprogramm und die Beispielanwendung wurden von [Rick Anderson](http://
 [ImportPublishSettings]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/ImportPublishSettings.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

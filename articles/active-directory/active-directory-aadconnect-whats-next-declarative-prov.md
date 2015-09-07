@@ -1,21 +1,21 @@
 
 
 <properties 
-	pageTitle="Verwenden der deklarativen Bereitstellung von Azure AD Connect" 
-	description="Erfahren Sie, wie Sie die deklarative Bereitstellung von Azure AD Connect verwenden." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Verwenden der deklarativen Bereitstellung von Azure AD Connect"
+	description="Erfahren Sie, wie Sie die deklarative Bereitstellung von Azure AD Connect verwenden."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/28/2015" 
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Deklarative Bereitstellung von Azure AD Connect
@@ -28,4 +28,4 @@ Ein wesentlicher Bestandteil der deklarativen Bereitstellung ist die in den Attr
 
 Weitere Informationen zur Ausdruckssprache finden Sie unter [Grundlagen zu den Ausdrücken für eine deklarative Bereitstellung](https://msdn.microsoft.com/library/azure/dn801048.aspx)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

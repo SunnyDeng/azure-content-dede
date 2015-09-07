@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Lernprogramm: Erstellen eines virtuellen Netzwerks ausschließlich für die Cloud" 
-	description="Erfahren Sie in diesem Lernprogramm, wie Sie ein beispielhaftes, komplett auf der Cloud basierendes virtuelles Azure-Netzwerk erstellen." 
-	services="virtual-machines, virtual-network" 
-	documentationCenter="" 
-	authors="cherylmc" 
-	manager="adinah" 
+	pageTitle="Lernprogramm: Erstellen eines virtuellen Netzwerks ausschließlich für die Cloud"
+	description="Erfahren Sie in diesem Lernprogramm, wie Sie ein beispielhaftes, komplett auf der Cloud basierendes virtuelles Azure-Netzwerk erstellen."
+	services="virtual-machines, virtual-network"
+	documentationCenter=""
+	authors="cherylmc"
+	manager="adinah"
 	editor=""/>
 
 <tags 
-	ms.service="virtual-network" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/18/2015" 
+	ms.service="virtual-network"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/17/2015"
 	ms.author="cherylmc"/>
 
 # Lernprogramm: Erstellen eines virtuellen Netzwerks nur für die Cloud in Azure
@@ -24,7 +24,7 @@ Dieses Lernprogramm führt Sie durch die Schritte im Azure-Verwaltungsportal zum
 
 Das FrontEndSubnetz könnte beispielsweise für Webserver und das BackEndSubnetz für SQL Server oder Domänencontroller verwendet werden.
 
-Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Ziel ist es, Sie mit den Schritten zum Erstellen eines eigenen virtuellen Netzwerks vertraut zu machen, indem Sie durch eine Beispielkonfiguration geführt werden. Wenn Sie ein virtuelles Nur-Cloud-Netzwerk erstellen möchten, das für Ihre spezielle Konfiguration geeignet ist, konsultieren Sie den Artikel [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](http://msdn.microsoft.com/library/azure/dn631643.aspx). Designszenarios und weiterführende Informationen zu Virtual Network finden Sie unter [Überblick über Azure Virtual Network](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx).
+Bei diesem Lernprogramm wird davon ausgegangen, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Ziel ist es, Sie mit den Schritten zum Erstellen eines eigenen virtuellen Netzwerks vertraut zu machen, indem Sie durch eine Beispielkonfiguration geführt werden. Wenn Sie ein virtuelles Nur-Cloud-Netzwerk erstellen möchten, das für Ihre spezielle Konfiguration geeignet ist, konsultieren Sie den Artikel [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](../virtual-network/virtual-networks-create-vnet.md). Designszenarios und weiterführende Informationen zu Virtual Network finden Sie unter [Überblick über Azure Virtual Network](../virtual-network/virtual-networks-overview.md).
 
 
 > [AZURE.NOTE]Dieses Lernprogramm zeigt Ihnen nicht den Erstellungsprozess für eine standortübergreifende Konfiguration, in der das virtuelle Netzwerk mit Ihrem Unternehmensnetzwerk verbunden ist. Ein Lernprogramm für das Erstellen einer virtuellen Netzwerks mit standortübergreifender Konnektivität und einer VPN-Verbindung zwischen Standorten (z. B. Verbindung mit Active Directory oder SharePoint in Ihrem Unternehmen) finden Sie unter [Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen](../virtual-network/virtual-networks-create-site-to-site-cross-premises-connectivity.md).
@@ -90,9 +90,9 @@ Weitere Informationen zu Azure-Infrastrukturdiensten finden Sie in folgenden The
 
 Um dieses virtuelle Netzwerk zu entfernen, wählen Sie es aus, klicken auf **Löschen** und dann auf **Ja**.
 
-Wenn Sie bereit sind, ein virtuelles Nur-Cloud-Netzwerk zu erstellen, das für Ihre spezielle Konfiguration geeignet ist, konsultieren Sie den Artikel [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](http://msdn.microsoft.com/library/azure/dn631643.aspx).
+Wenn Sie bereit sind, ein virtuelles Nur-Cloud-Netzwerk zu erstellen, das für Ihre spezielle Konfiguration geeignet ist, konsultieren Sie den Artikel [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](../virtual-network/virtual-networks-create-vnet.md).
 
-Designszenarios und weiterführende Informationen zu Virtual Network finden Sie unter [Überblick über Azure Virtual Network](http://msdn.microsoft.com/library/windowsazure/jj156007.aspx).
+Designszenarios und weiterführende Informationen zu Virtual Network finden Sie unter [Überblick über Azure Virtual Network](../virtual-network/virtual-networks-overview.md).
 
 Weitere Virtual Network-Konfigurationsverfahren und -einstellungen finden Sie unter [Azure Virtual Network-Konfigurationsaufgaben](http://go.microsoft.com/fwlink/p/?linkid=296652&clcid=0x409).
 
@@ -118,4 +118,4 @@ Weitere Virtual Network-Konfigurationsverfahren und -einstellungen finden Sie un
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

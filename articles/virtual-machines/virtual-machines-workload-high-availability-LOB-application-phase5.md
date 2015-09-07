@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Branchenanwendungs-Workload, Phase 5: Erstellen der Verfügbarkeitsgruppe und Hinzufügen der Anwendungsdatenbanken" 
-	description="In dieser letzten Phase der Bereitstellung einer hochverfügbaren Branchenanwendung erstellen Sie eine Verfügbarkeitsgruppe und fügen dieser Ihre Anwendungsdaten hinzu." 
+	pageTitle="Branchenanwendung, Phase 5 | Microsoft Azure"
+	description="In Phase 5 der Branchenanwendung erstellen Sie in Azure eine Verfügbarkeitsgruppe, und fügen Sie dieser Ihre Anwendungsdatenbanken hinzu."
 	documentationCenter=""
-	services="virtual-machines" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	services="virtual-machines"
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/11/2015"
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 5: Erstellen der Verfügbarkeitsgruppe und Hinzufügen der Anwendungsdatenbanken
@@ -56,7 +56,7 @@ Führen Sie zum Sichern einer Datenbank die folgenden Schritte aus.
 3.	Erweitern Sie im linken Bereich den Knoten **Datenbanken**.
 4.	Klicken Sie mit der rechten Maustaste auf eine Datenbank, die Sie sichern möchten, zeigen Sie auf **Aufgaben**, und klicken Sie dann auf **Sichern**.
 5.	Klicken Sie im Abschnitt **Ziel** auf **Entfernen**, um den Standarddateipfad der Sicherungsdatei zu entfernen.
-6.	Klicken Sie auf **Hinzufügen**. Geben Sie unter **Dateiname** **\\[Computername]\\backup[Datenbankname].bak** ein, wobei **Computername** für den Namen des primären SQL-**Servercomputers** und **Datenbankname** für den Namen der Datenbank steht. Klicken Sie auf **OK** und nach der Meldung über die erfolgreiche Sicherung nochmals auf **OK**.
+6.	Klicken Sie auf **Hinzufügen**. Geben Sie unter **Dateiname** **\[Computername]\\backup[Datenbankname].bak** ein, wobei **Computername** für den Namen des primären SQL-**Servercomputers** und **Datenbankname** für den Namen der Datenbank steht. Klicken Sie auf **OK** und nach der Meldung über die erfolgreiche Sicherung nochmals auf **OK**.
 7.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **[Datenbankname]**, zeigen Sie auf **Aufgaben**, und klicken Sie dann auf **Sichern**.
 8.	Wählen Sie unter **Sicherungstyp** die Option **Transaktionsprotokoll** aus, und klicken Sie dann zweimal hintereinander auf **OK**.
 9.	Lassen Sie diese Remotedesktopsitzung geöffnet.
@@ -69,7 +69,7 @@ Führen Sie zum Wiederherstellen einer Datenbank die folgenden Schritte aus.
 4.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **Datenbanken**, und klicken Sie dann auf **Datenbank wiederherstellen**.
 5.	Wählen Sie im Abschnitt **Quelle** die Option **Gerät** aus, und klicken Sie dann auf die Schaltfläche mit den Auslassungspunkten (...).
 6.	Klicken Sie unter **Sicherungsmedien auswählen** auf **Hinzufügen**.
-7.	Geben Sie unter **Speicherort der Sicherungsdatei** **\\[Computername]\\backup** ein, drücken Sie die **Eingabetaste**, wählen Sie **[Datenbankname].bak** aus, und klicken Sie dann zweimal auf **OK**. Nun sollten im Abschnitt **Wiederherzustellende Sicherungssätze** die vollständige Sicherung und die Protokollsicherung angezeigt werden.
+7.	Geben Sie unter **Speicherort der Sicherungsdatei** **\[Computername]\\backup** ein, drücken Sie die **Eingabetaste**, wählen Sie **[Datenbankname].bak** aus, und klicken Sie dann zweimal auf **OK**. Nun sollten im Abschnitt **Wiederherzustellende Sicherungssätze** die vollständige Sicherung und die Protokollsicherung angezeigt werden.
 8.	Klicken Sie unter **Seite auswählen** auf **Optionen**. Wählen Sie im Abschnitt **Wiederherstellungsoptionen** unter **Wiederherstellungsstatus** die Option **OHNE RECOVERY WIEDERHERSTELLEN** aus, und klicken Sie dann auf **OK**. 
 9.	Klicken Sie auf Aufforderung auf **OK**.
 
@@ -125,4 +125,4 @@ Nach der Erstellung des Listeners müssen Sie alle virtuellen Webservercomputer 
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Integration des Azure Mobile Engagement Android SDKs" 
+	pageTitle="Integration des Azure Mobile Engagement Android SDKs"
 	description="Neueste Updates und Verfahren für das Android SDK für Azure Mobile Engagement"
-	services="mobile-engagement" 
-	documentationCenter="mobile" 
-	authors="piyushjo" 
-	manager="dwrede" 
-	editor="" />
+	services="mobile-engagement"
+	documentationCenter="mobile"
+	authors="piyushjo"
+	manager="dwrede"
+	editor=""/>
 
 <tags 
-	ms.service="mobile-engagement" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="08/10/2015" 
-	ms.author="piyushjo" />
+	ms.service="mobile-engagement"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="08/10/2015"
+	ms.author="piyushjo"/>
 
 #Integrieren von Engagement Reach unter Android
 
@@ -93,6 +93,8 @@ Bearbeiten Sie Ihre `AndroidManifest.xml`-Datei:
 
 			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 			<uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+
+  -   Auf Android M und für Anwendungen, die auf eine Android-API mit Level 23 oder höher abzielen, erfordert die ``WRITE_EXTERNAL_STORAGE``-Berechtigung die Genehmigung des Benutzers. Lesen Sie bitte [diesen Abschnitt](mobile-engagement-android-integrate-engagement.md#android-m-permissions).
 
 -   Für Systembenachrichtigungen können Sie in der Reach-Kampagne auch angeben, ob das Gerät klingeln und/oder vibrieren soll. Damit es funktioniert, müssen Sie sicherstellen, dass Sie die folgende Berechtigung (hinter dem `</application>`-Tag) deklariert haben:
 
@@ -247,7 +249,7 @@ Wenn Sie die bereitgestellten Layouts ändern, verändern Sie das Aussehen Ihrer
 
 Sie müssen beim Initialisieren der Anwendung einen Aufruf hinzufügen, um einen Kategoriehandler für Ihre Benachrichtigungen zu registrieren.
 
-> [AZURE.IMPORTANT] Bevor Sie fortfahren, finden Sie Informationen zur Warnung zum „android:process“-Attribut „\<android-sdk-engagement-process\> “ unter „Integrieren von Engagement unter Android“.
+> [AZURE.IMPORTANT] Bevor Sie fortfahren, finden Sie Informationen zur Warnung zum „android:process“-Attribut „<android-sdk-engagement-process> “ unter „Integrieren von Engagement unter Android“.
 
 Im folgenden Beispiel wird angenommen, dass Sie die vorherige Warnung bestätigt haben und eine Unterklasse von `EngagementApplication` verwenden:
 
@@ -647,4 +649,4 @@ Wenn Sie aufgerufen `actionContent(this)` und dann die Aktivität beendet haben,
 [Amazon Device Messaging]: https://developer.amazon.com/sdk/adm.html
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

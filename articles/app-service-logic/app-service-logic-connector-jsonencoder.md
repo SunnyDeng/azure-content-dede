@@ -1,23 +1,25 @@
 <properties
-   pageTitle="BizTalk JSON Encoder"
-   description="BizTalk JSON Encoder"
-   services="app-service\logic"
-   documentationCenter=".net,nodejs,java"
-   authors="rajeshramabathiran"
-   manager="dwrede"
-   editor=""/>
+   pageTitle="Verwendung des BizTalk JSON Encoder-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des BizTalk JSON Encoder-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="rajeshramabathiran"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration"
-   ms.date="08/19/2015"
-   ms.author="rajram"/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="08/23/2015"
+	ms.author="rajram"/>
 
-# BizTalk JSON Encoder
+# Erste Schritte mit dem BizTalk JSON Encoder und das Hinzufügen zur Logik-App 
 Der BizTalk JSON Encode Decode-Connector unterstützt Ihre App in Bezug auf die Interoperabilität von JSON- und XML-Daten. Sie können damit eine angegebene JSON-Instanz in XML konvertieren und umgekehrt.
+
+Sie können den BizTalk JSON Encoder dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
 ## Verwenden des BizTalk JSON Encoder
 Um den BizTalk JSON Encoder zu verwenden, müssen Sie zunächst eine Instanz der BizTalk JSON Encoder-API-App erstellen. Dies kann entweder inline beim Erstellen einer Logik-App oder durch Auswählen der BizTalk JSON-Encoder-API-App aus dem Azure Marketplace erfolgen.
@@ -42,14 +44,14 @@ Führen Sie die Schritte zum [Erstellen einer Logik-App] aus. Der BizTalk JSON E
 Parameter|Typ|Beschreibung des Parameters
 ---|---|---
 Eingabe-XML|Objekt|Eingabe-XML-Inhalt
-Äußeren Umschlag entfernen|Zeichenfolge|Flag ist auf das Entfernen des Root-Knotens aus dem XML-Inhalt festgelegt
+Äußeren Umschlag entfernen|string|Flag ist auf das Entfernen des Root-Knotens aus dem XML-Inhalt festgelegt
 
 Die Aktion gibt eine JSON-Darstellung des eingegebenen Inhalts zurück.
 
 ## Optimale Nutzung Ihres Connectors
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Sie finden die Swagger-REST-API-Referenz unter [Connectors and API Apps Reference](http://go.microsoft.com/fwlink/p/?LinkId=529766) (in englischer Sprache).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
 
@@ -64,4 +66,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Erstellen einer Logik-App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

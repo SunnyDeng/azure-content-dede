@@ -1,22 +1,20 @@
 <properties 
-   authors="danielceckert" 
-   documentationCenter="dev-center-name" 
-   editor=""
-   manager="jefco" 
-   pageTitle="Verwalten: Leerlauftimeout für Lastenausgleich" 
-   description="Verwaltungsfunktionen für das Leerlauftimeout für den Azure-Lastenausgleich" 
-   services="virtual-network" 
-   />
+   authors="danielceckert"
+	documentationCenter="dev-center-name"
+	editor=""
+	manager="jefco"
+	pageTitle="Verwalten: Leerlauftimeout für Lastenausgleich"
+	description="Verwaltungsfunktionen für das Leerlauftimeout für den Azure-Lastenausgleich"
+	services="virtual-network"/>
 
 <tags
    ms.author="danecke"
-   ms.date="05/27/2015"
-   ms.devlang="na"
-   ms.service="virtual-network"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   />
+	ms.date="05/27/2015"
+	ms.devlang="na"
+	ms.service="virtual-network"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"/>
    
 # Verwalten virtueller Netzwerke: TCP-Leerlauftimeout für Lastenausgleich
 
@@ -34,8 +32,8 @@ Zur Unterstützung von Szenarien mit Mobilgeräten unterstützt der Azure-Lasten
 
 Ein TCP-Leerlauftimeout kann für Folgendes konfiguriert werden:
 
-* [Öffentliche IP auf Instanzebene](http://msdn.microsoft.com/library/azure/dn690118.aspx)
-* [Endpunktsätze mit Lastenausgleich](http://msdn.microsoft.com/library/azure/dn655055.aspx)
+* [Öffentliche IP auf Instanzebene](virtual-networks-instance-level-public-ip.md)
+* [Endpunktsätze mit Lastenausgleich](../load-balancer/load-balancer-overview.md)
 * [VM-Endpunkte](../virtual-machines/virtual-machines-set-up-endpoints.md)
 * [Webrollen](http://msdn.microsoft.com/library/windowsazure/ee758711.aspx)
 * [Workerrollen](http://msdn.microsoft.com/library/windowsazure/ee758711.aspx)
@@ -152,4 +150,4 @@ Der Wert von "LoadBalancerDistribution" kann "sourceIP" (2-Tupel-Affinität) ode
     </LoadBalancedEndpointList>
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

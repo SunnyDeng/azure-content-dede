@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory" 
-	description="In diesem fortgeschrittenen Lernprogramm wird ein sehr praxisnahes Szenario beschrieben und mithilfe des Azure Data Factory-Diensts und des Data Factory-Editors implementiert." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory"
+	description="In diesem fortgeschrittenen Lernprogramm wird ein sehr praxisnahes Szenario beschrieben und mithilfe des Azure Data Factory-Diensts und des Data Factory-Editors implementiert."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/25/2015"
 	ms.author="spelluru"/>
-
 
 # Lernprogramm: Messen der Wirksamkeit von Marketingkampagnen  
 Contoso ist ein Spielehersteller, der Spiele für mehrere Plattformen entwickelt. Hierzu zählen Spielekonsolen, mobile Geräte und PCs. Diese Spiele generieren zahlreiche Protokolle. Contoso möchte diese Protokolle sammeln und analysieren, um Einblicke in die Kundenvorlieben, die Altersverteilung, das Nutzungsverhalten usw. zu gewinnen. Der Zweck ist, Up- und Cross-Selling-Möglichkeiten zu finden, neue spannende Features zu entwickeln sowie das Wachstum des Unternehmens und die Zufriedenheit der Kunden zu steigern.
@@ -229,7 +227,7 @@ In diesem Schritt erstellen Sie die folgenden verknüpften Dienste:
 
 ### Erstellen von „AzureSqlLinkedService“
 1. Klicken Sie im Data Factory-Editor auf der Symbolleiste auf die Schaltfläche **Neuer Datenspeicher**, und wählen Sie im Dropdownmenü **Azure SQL-Datenbank** aus. Die JSON-Vorlage zum Erstellen eines mit der Azure SQL-Datenbank verknüpften Diensts sollte im rechten Bereich angezeigt werden.
-2. Ersetzen Sie **servername**, \*\***username@servername** und **password** durch Namen von Azure SQL-Server, -Benutzerkonto und -Kennwort.
+2. Ersetzen Sie **servername**, ****username@servername** und **password** durch Namen von Azure SQL-Server, -Benutzerkonto und -Kennwort.
 3. Ersetzen Sie **databasename** durch **MarketingCampaigns**. Dies ist die Azure SQL-Datenbank, die mithilfe der Skripts erstellt wurde, die Sie in Schritt 1 ausgeführt haben. Vergewissern Sie sich im Falle eines Fehlers, dass die Datenbank tatsächlich erstellt wurde. 
 3. Klicken Sie auf der Symbolleiste auf **Bereitstellen**, um den verknüpften Dienst „AzureSqlLinkedService“ zu erstellen und bereitzustellen.
 
@@ -330,7 +328,7 @@ In diesem Schritt erstellen Sie die folgenden Pipelines:
 4. Wiederholen Sie die Schritte 1 bis 3 mit dem Inhalt der folgenden Dateien: 
 	1. EnrichGameLogsPipeline.json
 	2. AnalyzeMarketingCampaignPipeline.json
-4. Schließen Sie die Data Factory-Blätter durch Klicken auf **X** (rechts oben), um die Startseite (das Blatt \*\*DATA FACTORY\*\*) Ihrer Data Factory anzuzeigen.
+4. Schließen Sie die Data Factory-Blätter durch Klicken auf **X** (rechts oben), um die Startseite (das Blatt **DATA FACTORY**) Ihrer Data Factory anzuzeigen.
 
 ### Diagrammansicht
 
@@ -396,7 +394,7 @@ In diesem Schritt erstellen Sie die folgenden Pipelines:
 
 	![Blatt des Datenslices „RawGameEventsTable“][image-data-factory-monitoring-raw-game-events-table-dataslice-blade]
 
-	Im Falle eines Fehlers wird hier der Status \*\*Fehler\*\* angezeigt. Möglicherweise werden auch beide Slices mit dem Status **Bereit** oder beide Slices mit dem Status **Ausstehende Überprüfung** angezeigt – je nachdem, wie schnell die Slices verarbeitet werden.
+	Im Falle eines Fehlers wird hier der Status **Fehler** angezeigt. Möglicherweise werden auch beide Slices mit dem Status **Bereit** oder beide Slices mit dem Status **Ausstehende Überprüfung** angezeigt – je nachdem, wie schnell die Slices verarbeitet werden.
 
 	Wenn der Slice nicht den Status **Bereit** hat, sehen Sie die vorgelagerten Slices, die nicht bereit sind und das Ausführen des aktuellen Slices blockieren, in der Liste **Vorgelagerte Slices, die nicht bereit sind**.
  
@@ -431,8 +429,7 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 [adfgetstarted]: data-factory-get-started.md
 [adftutorial-using-powershell]: data-factory-tutorial-using-powershell.md
 [adfintroduction]: data-factory-introduction.md
-[useonpremisesdatasources]: data-factory-use-onpremises-datasources.md
-[usepigandhive]: data-factory-pig-hive-activities.md
+[usepigandhive]: data-factory-data-transformation-activities.md
 [tutorial-onpremises]: data-factory-tutorial-extend-onpremises.md
 [download-azure-powershell]: ../powershell-install-configure.md
 
@@ -529,4 +526,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial/DataFactoryCreateButton.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure Multi-Factor Authentication-Berichte" 
-	description="Hier wird das Ändern von Benutzereinstellungen beschrieben, z. B. wie Benutzer dazu gebracht werden, den Nachweis-Prozess noch einmal durchzuführen." 
-	documentationCenter="" 
-	services="multi-factor-authentication" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Azure Multi-Factor Authentication-Berichte"
+	description="Hier wird das Ändern von Benutzereinstellungen beschrieben, z. B. wie Benutzer dazu gebracht werden, den Nachweis-Prozess noch einmal durchzuführen."
+	documentationCenter=""
+	services="multi-factor-authentication"
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/02/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Verwalten von Benutzereinstellungen mit Azure Multi-Factor Authentication (MFA) in der Cloud
@@ -80,4 +80,4 @@ Administratoren haben die Möglichkeit, die Multi-Factor Authentication auf ihre
 <li>Klicken Sie oben auf "Benutzer".</li>
 <li>Klicken Sie unten auf der Seite auf "Verwalten der Multi-Factor Authentication". Die Seite für die mehrstufige Authentifizierung wird geöffnet. <li>Suchen Sie den Benutzer, den Sie verwalten möchten, und aktivieren Sie das Kontrollkästchen neben seinem Namen. Sie müssen möglicherweise oben die Ansicht ändern.</li> <li>Hierdurch erscheint rechts der Link **Benutzereinstellungen verwalten**. Klicken Sie auf diese Schaltfläche.</li> <li>Aktivieren Sie das Kontrollkästchen bei "Multi-Factor Authentication-Wiederherstellung auf allen ausgesetzten Geräten".</li> ![App-Kennwörter löschen](./media/multi-factor-authentication-manage-users-and-devices/rememberdevices.png) <li>Klicken Sie auf "Speichern".</li> <li>Klicken Sie auf "Schließen".</li>
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

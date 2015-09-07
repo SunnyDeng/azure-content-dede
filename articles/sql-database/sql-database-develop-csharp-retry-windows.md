@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Codebeispiel: Wiederholungslogik in C# für das Herstellen einer Verbindung mit einer SQL-Datenbank | Microsoft Azure" 
-	description="Das C#-Beispiel enthält die robuste Wiederholungslogik für die Interaktion mit Azure SQL-Datenbank." 
-	services="sql-database" 
-	documentationCenter="" 
-	authors="MightyPen" 
-	manager="jeffreyg" 
+	pageTitle="Codebeispiel: Wiederholungslogik in C# für das Herstellen einer Verbindung mit einer SQL-Datenbank | Microsoft Azure"
+	description="Das C#-Beispiel enthält die robuste Wiederholungslogik für die Interaktion mit Azure SQL-Datenbank."
+	services="sql-database"
+	documentationCenter=""
+	authors="MightyPen"
+	manager="jeffreyg"
 	editor=""/>
 
 
 <tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2015"
 	ms.author="genemi"/>
 
 
@@ -174,7 +174,7 @@ Die `Main`-Methode ist in `Program.cs` enthalten. Die Aufrufliste wird wie folgt
 	        {
 	            int connectionTimeoutSeconds = 30;  // Default of 15 seconds is too short over the Internet, sometimes.
 	            int maxCountTriesConnectAndQuery = 3;  // You can adjust the various retry count values.
-	            int secondsBetweenRetries = 4;  // Simple retry strategy.
+	            int secondsBetweenRetries = 6;  // Simple retry strategy.
 	
 	            // [A.1] Prepare the connection string to Azure SQL Database.
 	            this.scsBuilder = new C.SqlConnectionStringBuilder();
@@ -496,4 +496,4 @@ In der Kurzversion sind die ADO.NET-Aufrufe leichter zu sehen, und es ist bekann
 
 - [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

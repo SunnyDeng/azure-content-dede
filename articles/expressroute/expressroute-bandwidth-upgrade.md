@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Dynamisches Aktualisieren der ExpressRoute-Bandbreite | Microsoft Azure"
-   description="Dynamisches Erhöhen der Bandbreite einer ExpressRoute-Verbindung ohne Ausfallzeiten."
-   services="expressroute"
-   documentationCenter="na"
-   authors="cherylmc"
-   manager="jdial"
-   editor="tysonn" />
+	description="Dynamisches Erhöhen der Bandbreite einer ExpressRoute-Verbindung ohne Ausfallzeiten."
+	services="expressroute"
+	documentationCenter="na"
+	authors="cherylmc"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="06/03/2015"
-   ms.author="cherylmc" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/25/2015"
+	ms.author="cherylmc"/>
 
 # Dynamisches Aktualisieren der ExpressRoute-Verbindungsbandbreite ohne Ausfallzeiten
 
@@ -85,4 +85,4 @@ Windows PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bere
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

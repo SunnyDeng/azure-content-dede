@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Verwalten von DNS-Servern, die von einem virtuellen Netzwerk (VNet) verwendet werden"
-   description="Hier erfahren Sie, wie Sie DNS-Server in einem virtuellen Netzwerk (VNet) hinzufügen und entfernen."
-   services="virtual-network"
-   documentationCenter="na"
-   authors="telmosampaio"
-   manager="carolz"
-   editor="tysonn" />
+	description="Hier erfahren Sie, wie Sie DNS-Server in einem virtuellen Netzwerk (VNet) hinzufügen und entfernen."
+	services="virtual-network"
+	documentationCenter="na"
+	authors="telmosampaio"
+	manager="carolz"
+	editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="06/08/2015"
-   ms.author="telmos" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="06/08/2015"
+	ms.author="telmos"/>
 
 # Verwalten von DNS-Servern, die von einem virtuellen Netzwerk (VNet) verwendet werden
 
@@ -49,11 +49,11 @@ Sie können die Liste der in einem VNet verwendeten DNS-Server im Verwaltungspor
 
 Um eine DNS-Serverliste mithilfe einer Netzwerkkonfigurationsdatei zu bearbeiten, müssen Sie zuerst Ihre Konfigurationseinstellungen aus dem Verwaltungsportal exportieren. Anschließend bearbeiten Sie die Netzwerkkonfigurationsdatei und importieren sie wieder in das Verwaltungsportal. Im Folgenden sind die allgemeinen Schritte zum Ausführen dieses Vorgangs aufgeführt.
 
-1. Exportieren Sie die Einstellungen Ihres virtuellen Netzwerks in eine Netzwerkkonfigurationsdatei. Weitere Informationen und Anweisungen zum Exportieren der Netzwerkkonfigurationseinstellungen finden Sie unter [Exportieren der Einstellungen eines virtuellen Netzwerks in eine Netzwerkkonfigurationsdatei](https://msdn.microsoft.com/library/azure/dn133804.aspx).
+1. Exportieren Sie die Einstellungen Ihres virtuellen Netzwerks in eine Netzwerkkonfigurationsdatei. Weitere Informationen und Anweisungen zum Exportieren der Netzwerkkonfigurationseinstellungen finden Sie unter [Exportieren der Einstellungen eines virtuellen Netzwerks in eine Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md).
 
-1. Geben Sie die DNS-Serverinformationen für Ihr virtuelles Netzwerk an. Weitere Informationen zum Angeben eines DNS-Servers finden Sie unter [Angeben eines DNS-Servers in der Konfigurationsdatei eines virtuellen Netzwerks](https://msdn.microsoft.com/library/windowsazure/jj156098.aspx). Weitere Informationen zu Netzwerkkonfigurationsdateien finden Sie unter [Konfigurationsschema für Azure Virtual Network](https://msdn.microsoft.com/library/azure/jj157100.aspx) und [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](https://msdn.microsoft.com/library/azure/jj156097.aspx).
+1. Geben Sie die DNS-Serverinformationen für Ihr virtuelles Netzwerk an. Weitere Informationen zum Angeben eines DNS-Servers finden Sie unter [Angeben eines DNS-Servers in der Konfigurationsdatei eines virtuellen Netzwerks](virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file.md). Weitere Informationen zu Netzwerkkonfigurationsdateien finden Sie unter [Konfigurationsschema für Azure Virtual Network](https://msdn.microsoft.com/library/azure/jj157100.aspx) und [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md).
 
-1. Importieren Sie die Netzwerkkonfigurationsdatei. Weitere Informationen und Anweisungen zum Importieren der Netzwerkkonfigurationsdatei finden Sie unter [Importieren einer Netzwerkkonfigurationsdatei](https://msdn.microsoft.com/library/azure/jj156213.aspx).
+1. Importieren Sie die Netzwerkkonfigurationsdatei. Weitere Informationen und Anweisungen zum Importieren der Netzwerkkonfigurationsdatei finden Sie unter [Importieren einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md).
 
 1. Starten Sie die virtuellen Computer im virtuellen Netzwerk neu, damit sie die neuen DNS-Einstellungen abrufen.
 
@@ -65,4 +65,4 @@ Um eine DNS-Serverliste mithilfe einer Netzwerkkonfigurationsdatei zu bearbeiten
 
 [Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

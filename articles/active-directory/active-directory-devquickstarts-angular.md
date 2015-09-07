@@ -32,9 +32,9 @@ Für JavaScript-Anwendungen, die in einem Browser ausgeführt werden, stellt Azu
 - Sicheres Aufrufen der Aufgabenlisten-API einer App mit Bearertoken aus AAD
 - Abmelden von Benutzern von der App
 
-Zum Erstellen der vollständigen funktionierenden Anwendung ist Folgendes erforderlich:
+Zur Entwicklung der vollständigen Arbeitsanwendung müssen Sie folgende Schritte ausführen:
 
-2. Registrieren Sie Ihre Anwendung mit Azure AD.
+2. Registrieren Ihrer Anwendung bei Azure AD
 3. Installieren Sie die ADAL, und konfigurieren Sie die einseitige Anwendung (SPA).
 5. Verwenden Sie die ADAL, um Seiten in der einseitigen Anwendung zu schützen.
 
@@ -151,4 +151,4 @@ Als Referenz stellen wir [hier](https://github.com/AzureADQuickStarts/SinglePage
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

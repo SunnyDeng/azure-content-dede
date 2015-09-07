@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.topic="article"
 	ms.devlang="javascript"
-	ms.date="05/20/2015"
+	ms.date="08/25/2015"
 	ms.author="krisragh"/>
 
 # Dienstseitige Autorisierung von Benutzern in Mobile Services
@@ -70,4 +70,4 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

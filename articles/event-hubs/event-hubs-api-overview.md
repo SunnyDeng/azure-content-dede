@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Übersicht über die Event Hubs-API"
-   description="Eine Zusammenfassung einiger wichtiger .NET-Client-APIs für Event Hubs."
-   services="event-hubs"
-   documentationCenter="na"
-   authors="sethmanheim"
-   manager="timlt"
-   editor="" />
+	description="Eine Zusammenfassung einiger wichtiger .NET-Client-APIs für Event Hubs."
+	services="event-hubs"
+	documentationCenter="na"
+	authors="sethmanheim"
+	manager="timlt"
+	editor=""/>
 <tags 
    ms.service="event-hubs"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="07/10/2015"
-   ms.author="sethm" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="tbd"
+	ms.date="07/10/2015"
+	ms.author="sethm"/>
 
 # Übersicht über die Event Hubs-API
 
@@ -186,6 +186,5 @@ Die .NET-API-Referenzen sind hier verfügbar:
 
 - [Referenz zu Service Bus und .NET-API für Event Hubs](https://msdn.microsoft.com/library/jj933424.aspx)
 - [Referenz zur Ereignisprozessorhost-API](https://msdn.microsoft.com/library/microsoft.servicebus.messaging.eventprocessorhost.aspx)
-- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

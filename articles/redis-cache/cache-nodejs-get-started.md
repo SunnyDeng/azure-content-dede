@@ -13,7 +13,7 @@
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
-	ms.date="08/17/2015"
+	ms.date="08/25/2015"
 	ms.author="sdanie"/>
 
 # Verwenden von Azure Redis Cache mit Node.js
@@ -33,7 +33,7 @@ In diesem Lernprogramm wird [node\_redis](https://github.com/mranney/node_redis)
 
 ## Erstellen eines Redis-Caches in Azure
 
-Klicken Sie im [Azure-Verwaltungsportal (Vorschau)](http://go.microsoft.com/fwlink/?LinkId=398536) auf **Neu** und **Daten und Speicher**, und wählen Sie **Redis-Cache** aus.
+Klicken Sie im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=398536) auf **Neu** und **Daten und Speicher**, und wählen Sie **Redis-Cache** aus.
 
   ![][1]
 
@@ -42,7 +42,7 @@ Geben Sie einen DNS-Hostnamen ein. Das Format hierfür ist `<name>.redis.cache.w
   ![][2]
 
 
-Sobald Sie den Cache erstellt haben, klicken Sie im Azure-Portal darauf, um die Cache-Einstellungen anzuzeigen. Klicken Sie auf den Link unter **Schlüssel**, und kopieren Sie den Primärschlüssel. Sie benötigen ihn zum Authentifizieren von Anforderungen.
+Sobald Sie den Cache erstellt haben, klicken Sie im Vorschauportal darauf, um die Cache-Einstellungen anzuzeigen. Klicken Sie auf den Link unter **Schlüssel**, und kopieren Sie den Primärschlüssel. Sie benötigen ihn zum Authentifizieren von Anforderungen.
 
   ![][4]
 
@@ -91,4 +91,4 @@ Ausgabe:
 
 [Erstellen einer Node.js-Chatanwendung mit Socket.IO auf einer Azure-Website]: ../app-service-web/web-sites-nodejs-chat-app-socketio.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

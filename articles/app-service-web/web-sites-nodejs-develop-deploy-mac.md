@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen einer Node.js-Web-App in Azure App Service"
+	pageTitle="Erstellen einer Node.js-Web-App in Azure App Service | Microsoft Azure"
 	description="Erfahren Sie, wie Sie eine Node.js-Web-App in Azure erstellen und bereitstellen."
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="hero-article"
-	ms.date="03/24/2015"
+	ms.date="08/18/2015"
 	ms.author="mwasson"/>
 
 # Erstellen und Bereitstellen einer Node.js-Web-App in Azure App Service
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine [Node][nodejs.org]-Anwendung erstellen und mit [Git] in [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) bereitstellen. Die Anweisungen in diesem Lernprogramm gelten für alle Betriebssysteme, unter denen Node ausgeführt werden kann.
+In diesem Lernprogramm erfahren Sie, wie Sie eine [Node][nodejs.org]-Anwendung erstellen und mit [Git] im [Web-Apps-Feature von Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) bereitstellen. Die Anweisungen in diesem Lernprogramm gelten für alle Betriebssysteme, unter denen Node ausgeführt werden kann.
 
 Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
@@ -28,14 +28,13 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 Führen Sie diese Schritte aus, um eine Web-App zu erstellen und die Git-Veröffentlichung zu aktivieren.
 
-> [AZURE.NOTE]
-> Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/de-de/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/de-de/pricing/free-trial/?WT.mc_id=A261C142F).
+> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](/de-DE/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/de-DE/pricing/free-trial/?WT.mc_id=A261C142F).
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 2. Klicken Sie oben links im Portal auf das Symbol **+ NEU**.
 
-3. Klicken Sie auf **Web + Mobile** und dann auf **Web-App**.
+3. Klicken Sie auf **Web und mobil** und dann auf **Web-App**.
 
     ![][portal-quick-create]
 
@@ -47,7 +46,7 @@ Führen Sie diese Schritte aus, um eine Web-App zu erstellen und die Git-Veröff
 
 6. Klicken Sie auf **Erstellen**.
 
-7. Sobald der Status zu **Wird ausgeführt** wechselt, wird im Portal automatisch das Blatt für Ihre Web-App geöffnet. Sie können das Blatt auch finden, indem Sie auf **Durchsuchen** klicken.
+7. Sobald der Status zu **Wird ausgeführt** wechselt, wird im Portal automatisch das Blatt für die Web-App geöffnet. Sie können das Blatt auch finden, indem Sie auf **Durchsuchen** klicken.
 
 	![][go-to-dashboard]
 
@@ -55,7 +54,7 @@ Führen Sie diese Schritte aus, um eine Web-App zu erstellen und die Git-Veröff
 
 	![][deployment-part]
 
-9. Klicken Sie auf **Quelle auswählen**, dann auf **Lokales Git-Repository**. Klicken Sie auf **OK**.
+9. Klicken Sie auf **Quelle auswählen**, dann auf **Lokales Git-Repository** und schließlich auf **OK**.
 
 	![][setup-git-publishing]
 
@@ -65,15 +64,15 @@ Führen Sie diese Schritte aus, um eine Web-App zu erstellen und die Git-Veröff
 	![][deployment-credentials]
 
 
-11. Für die Veröffentlichung führen Sie ein Push zu einem Git-Remote-Repository aus. Suchen Sie die URL für das Repository, klicken Sie auf ** Alle Einstellungen** und dann auf **Eigenschaften**. Die URL wird unter "GIT URL" aufgeführt.
+11. Für die Veröffentlichung führen Sie ein Push zu einem Git-Remote-Repository aus. Suchen Sie die URL für das Repository, klicken Sie auf ** Alle Einstellungen** und dann auf **Eigenschaften**. Die URL wird unter **GIT URL** aufgeführt.
 
 	![][git-url]
 
 ##Lokales Erstellen und Testen der Anwendung
 
-In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello World“-Beispiel von [nodejs.org] enthält. Das ursprüngliche Beispiel wurde geändert, indem process.env.PORT als Port, an dem beim Ausführen in einer Azure-Web-App gelauscht werden soll, hinzugefügt wurde.
+In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das "Hello World"-Beispiel von [nodejs.org] enthält. Das ursprüngliche Beispiel wurde geändert, indem process.env.PORT als Port, an dem beim Ausführen in einer Azure-Web-App gelauscht werden soll, hinzugefügt wurde.
 
-1. Erstellen Sie mithilfe eines Texteditors im Verzeichnis **helloworld** eine neue Datei namens **server.js**. Wenn das Verzeichnis **helloworld** nicht vorhanden ist, erstellen Sie es.
+1. Erstellen Sie mithilfe eines Text-Editors im Verzeichnis **helloworld** eine neue Datei namens **server.js**. Wenn das Verzeichnis **helloworld** nicht vorhanden ist, erstellen Sie es.
 
 2. Fügen Sie den folgenden Code als Inhalt der Datei **server.js** hinzu, und speichern Sie sie:
 
@@ -88,18 +87,17 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello Wor
 
         node server.js
 
-4. Öffnen Sie Ihren Browser, und navigieren Sie zu http://localhost:1337. Eine Website mit "Hello World" wird wie im folgenden Screenshot angezeigt:
+4. Öffnen Sie Ihren Browser, und navigieren Sie zu http://localhost:1337. Eine Website mit "Hello World" wird geöffnet, wie im folgenden Screenshot angezeigt:
 
     ![Ein Browser, in dem die Nachricht "Hello World" angezeigt wird.][helloworld-localhost]
 
 ##Veröffentlichen der Anwendung
 
-1. Wechseln Sie über die Befehlszeile zum Verzeichnis **helloworld**, und geben Sie die folgenden Befehle ein, um ein lokales Git-Repository zu initialisieren.
+1. Wechseln Sie über die Befehlszeile zum Verzeichnis **helloworld**, und geben Sie den folgenden Befehl ein, um ein lokales Git-Repository zu initialisieren.
 
 		git init
 
-	> [AZURE.NOTE]**Git-Befehl nicht verfügbar?** 
-	> [Git](http://git-scm.com/%20target="_blank) ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure-Website bereitstellen können. Installationsanweisungen für Ihre Plattform finden Sie auf der [Download-Seite für Git](http://git-scm.com/download%20target="_blank").
+	> [AZURE.NOTE]Git-Befehl nicht verfügbar? [Git](http://git-scm.com/%20target="_blank) ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure-Website bereitstellen können. Installationsanweisungen für Ihre Plattform finden Sie auf der [Download-Seite für Git](http://git-scm.com/download%20target="_blank").
 
 2. Verwenden Sie die folgenden Befehle, um dem Repository Dateien hinzuzufügen:
 
@@ -111,7 +109,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello Wor
 		git remote add azure [URL for remote repository]
 
 
-4. Übertragen Sie Ihre Änderungen per Push an Azure mit dem folgenden Befehl:
+4. Übertragen Sie Ihre Änderungen mit dem folgenden Befehl per Push an Azure:
 
 		git push azure master
 
@@ -132,11 +130,11 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello Wor
 		 * [new branch]      master -> master
 
 
-5. Um Ihre App anzuzeigen, klicken Sie im Bereich **Web-App** des Verwaltungsportals auf die Schaltfläche **Durchsuchen**.
+5. Um Ihre App anzuzeigen, klicken Sie im Bereich **Web-App** des Azure-Portals auf die Schaltfläche **Durchsuchen**.
 
 ##Veröffentlichen von Änderungen an der Anwendung
 
-1. Öffnen Sie die Datei **server.js** in einem Texteditor, und ändern Sie "Hello World\n" in "Hello Azure\n". Speichern Sie die Datei.
+1. Öffnen Sie die Datei **server.js** in einem Texteditor, und ändern Sie "Hello World\\n" in "Hello Azure\\n". Speichern Sie die Datei.
 2. Wechseln Sie über die Befehlszeile ins Verzeichnis **helloworld**, und führen Sie die folgenden Befehle aus:
 
 		git add .
@@ -145,13 +143,13 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die das „Hello Wor
 
 	Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben.
 
-3. Wählen Sie über die Schaltfläche **Durchsuchen** Ihre App aus, und beachten Sie, dass die Aktualisierungen angewendet wurden.
+3. Wählen Sie die App über die Schaltfläche **Durchsuchen** aus, und beachten Sie, dass die Updates angewendet wurden.
 
 	![Eine Webseite, die "Hello Azure" anzeigt][helloworld-completed]
 
 4. Sie können die vorherige Bereitstellung wiederherstellen, indem Sie sie unter **Bereitstellungen** auswählen.
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
 ##Nächste Schritte
 
@@ -161,7 +159,7 @@ Node.js bietet ein vielseitiges Portfolio an Modulen, die von Ihren Anwendungen 
 
 Weitere Informationen über die Versionen von Node.js, die im Lieferumfang von Azure enthalten sind, und über die Angabe der Version, die mit Ihrer Anwendung verwendet werden soll, finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung](../nodejs-specify-node-version-azure-apps.md).
 
-Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalten Sie unter [Debuggen einer Node.js-Anwendung in Azure-Websites](web-sites-nodejs-debug.md) Informationen zur Problemdiagnose.
+Wenn nach der Bereitstellung in Azure Probleme mit der Anwendung auftreten, finden Sie unter [Debuggen einer Node.js-Anwendung in Azure App Service](web-sites-nodejs-debug.md) Informationen zur Problemdiagnose.
 
 
 ##Zusätzliche Ressourcen
@@ -170,8 +168,8 @@ Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalt
 * [Azure-Befehlszeilenschnittstelle](../xplat-cli.md)
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
 
 [nodejs.org]: http://nodejs.org
@@ -196,6 +194,5 @@ Wenn nach der Bereitstellung für Azure Probleme mit Anwendung auftreten, erhalt
 
 
 [git-url]: ./media/web-sites-nodejs-develop-deploy-mac/git-url.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

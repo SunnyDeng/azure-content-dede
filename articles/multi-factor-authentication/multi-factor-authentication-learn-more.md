@@ -1,23 +1,22 @@
 <properties 
-	pageTitle="Azure Multi-Factor Authentication- Weitere Informationen" 
-	description="Dies ist die Seite zur Azure Multi-Factor Authentication, unter der Sie Links mit zusätzlichen Inhalten für Azure Multi-Factor Authentication finden. Hier erhalten Sie Informationen zu weiteren Themen zur Multi-Factor Authentication." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	pageTitle="Azure Multi-Factor Authentication- Weitere Informationen"
+	description="Dies ist die Seite zur Azure Multi-Factor Authentication, unter der Sie Links mit zusätzlichen Inhalten für Azure Multi-Factor Authentication finden. Hier erhalten Sie Informationen zu weiteren Themen zur Multi-Factor Authentication."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
+	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/02/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Erfahren Sie mehr über die Multi-Factor Authentication
-[Was ist das](multi-factor-authentication.md)<br> [Funktionsweise](multi-factor-authentication-how-it-works.md)<br> [Erste Schritte](multi-factor-authentication-get-started.md)<br> [Nächste Schritte](multi-factor-authentication-whats-next.md)<br> [Weitere Informationen](multi-factor-authentication-learn-more.md)
 
 
 Folgendes ist eine Sammlung von zusätzlichen Ressourcen, mit denen Sie alle Funktionen in Multi-Factor Authentication nutzen
@@ -39,4 +38,4 @@ Folgendes ist eine Sammlung von zusätzlichen Ressourcen, mit denen Sie alle Fun
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

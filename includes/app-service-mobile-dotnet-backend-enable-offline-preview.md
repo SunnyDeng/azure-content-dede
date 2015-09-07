@@ -1,9 +1,4 @@
-Für das über das Portal heruntergeladene Serverprojekt sind bereits Datenfunktionen aktiviert.
 
-In Ihrem ASP.NET-Projekt sollte Folgendes angezeigt werden:
+>[AZURE.TIP]Die Datenerweiterungspakete sind im Schnellstart-Erweiterungspaket enthalten. Für das Serverprojekt, das Sie über das Portal heruntergeladen haben, ist der Datenzugriff über Entity Framework bereits aktiviert. Informationen dazu, wie Sie Entity Framework für den Datenzugriff installieren und initialisieren, wenn Sie die Schnellstarterweiterung nicht verwenden, finden Sie unter [Definieren eines Tabellencontrollers](../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#how-to-define-a-table-controller).
 
-* Die NuGet Pakete `Microsoft.Azure.Mobile.Server.Tables` und `Microsoft.Azure.Mobile.Server.Entity` sind installiert.
-
-* In der Datei "WebApiConfig.cs" wird die`UseDefaultConfiguration()`-Methode für das MobileAppConfiguration-Objekt aufgerufen. Dieses wiederum ruft die `AddTablesWithEntityFramework()`-Erweiterungsmethode, auf, die von dem oben genannten NuGet-Paket bereitgestellt wird.
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

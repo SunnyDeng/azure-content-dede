@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Verwenden des Warteschlangenspeichers mit Python | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie mit dem Azure-Warteschlangendienst mit Python Warteschlangen erstellen und löschen sowie Nachrichten einfügen, abrufen und löschen können." 
-	services="storage" 
-	documentationCenter="python" 
-	authors="huguesv" 
-	manager="wpickett" 
+	pageTitle="Verwenden des Warteschlangenspeichers mit Python | Microsoft Azure"
+	description="Erfahren Sie, wie Sie mit dem Azure-Warteschlangendienst mit Python Warteschlangen erstellen und löschen sowie Nachrichten einfügen, abrufen und löschen können."
+	services="storage"
+	documentationCenter="python"
+	authors="emgerner-msft"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="03/11/2015" 
-	ms.author="huvalo"/>
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="08/25/2015"
+	ms.author="emgerner"/>
 
 # Verwenden des Warteschlangenspeichers mit Python
 
@@ -22,7 +22,7 @@
 
 ## Übersicht
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangenspeicherdienst demonstriert. Die Beispiele sind in Python geschrieben und verwenden das [Python Azure-Paket][]. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][].
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangenspeicherdienst demonstriert. Die Beispiele sind in Python geschrieben und verwenden das [Python Azure Storage-Paket][]. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**. Weitere Informationen zu Warteschlangen finden Sie im Abschnitt [Nächste Schritte][].
 
 [AZURE.INCLUDE [storage-queue-concepts-include](../../includes/storage-queue-concepts-include.md)]
 
@@ -35,7 +35,7 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-War
 
 Das Objekt **QueueService** ermöglicht es Ihnen, mit Warteschlangen zu arbeiten. Der folgende Code erstellt ein **QueueService**-Objekt. Fügen Sie am Anfang jeder Python-Datei, in der Sie programmgesteuert auf Azure-Speicher zugreifen möchten, den folgenden Code hinzu:
 
-	from azure.storage import QueueService
+	from azure.storage.queue import QueueService
 
 Der folgende Code erstellt ein **QueueService**-Objekt unter Verwendung des Speicherkontonamens und Kontoschlüssels. Ersetzen Sie 'myaccount' und 'mykey' durch das tatsächliche Konto und den tatsächlichen Schlüssel.
 
@@ -109,8 +109,8 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 
 [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
-[Python Azure-Paket]: https://pypi.python.org/pypi/azure
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
+[Python Azure Storage-Paket]: https://pypi.python.org/pypi/azure-storage
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

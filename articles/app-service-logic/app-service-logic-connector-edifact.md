@@ -1,23 +1,25 @@
 <properties 
-   pageTitle="BizTalk Edifact-Connector" 
-   description="BizTalk Edifact-Connector" 
-   services="app-service\logic" 
-   documentationCenter=".net,nodejs,java" 
-   authors="rajeshramabathiran" 
-   manager="dwrede" 
-   editor=""/>
+   pageTitle="Verwendung des BizTalk Edifact-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des BizTalk Edifact-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="rajeshramabathiran"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="08/19/2015"
-   ms.author="rajram"/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="08/23/2015"
+	ms.author="rajram"/>
 
-# BizTalk Edifact-Connector
-Der Microsoft Azure-Edifact-Dienst kann in der Business-to-Business-Kommunikation Nachrichten über das Edifact-Protokoll empfangen und senden. Edifact wird häufig auch als „ASC Edifact“ oder „Accredited Standards Committee Edifact“ bezeichnet. Der Dienst ist branchenweit verbreitet.
+# Erste Schritte mit dem BizTalk Edifact-Connector und das Hinzufügen zur Logik-App  
+Sie können mit dem Edifact-Dienst bei der Business-to-Business-Kommunikation Nachrichten über das Edifact-Protokoll empfangen und senden. Edifact wird häufig auch als ASC Edifact (Accredited Standards Committee Edifact) bezeichnet und ist branchenweit verbreitet.
+
+Sie können den BizTalk Edifact-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
 ## Voraussetzungen
 - TPM-API-App: Bevor Sie einen Edifact-Connector erstellen, müssen Sie einen [BizTalk-Handelspartnerverwaltungs-Connector][1] erstellen.
@@ -30,7 +32,7 @@ Zur Verwendung des Edifact-Connectors müssen Sie zunächst eine Instanz der AS2
 ## Konfigurieren des Edifact-Connectors
 Handelspartner sind die Entitäten, die an einer B2B-Kommunikation (Business-to-Business) beteiligt sind. Wenn zwei Partner eine Beziehung eingehen, wird dies als "Vereinbarung" bezeichnet. Diese Vereinbarung basiert auf der Kommunikation, die beide Partner wünschen, und ist protokoll- oder transportspezifisch.
 
-Die Schritte zum Erstellen einer Handelspartnervereinbarung sind dokumentiert.[hier][2].
+Die Schritte zum Erstellen einer Handelspartnervereinbarung sind [hier][2] dokumentiert.
 
 ## Verwenden des Edifact-Connectors auf der Designeroberfläche von Logik-Apps
 Der Edifact-Connector kann als Trigger oder als Aktion verwendet werden.
@@ -76,7 +78,7 @@ Die Aktion gibt bei erfolgreichem Abschluss ein Objekt mit der EDIFACT-Nutzlast 
 ## Optimale Nutzung Ihres Connectors
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Sie finden die Swagger-REST-API-Referenz unter [Connectors and API Apps Reference](http://go.microsoft.com/fwlink/p/?LinkId=529766) (in englischer Sprache).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [API-Apps und Connector verwalten und überwachen](../app-service-api/app-service-api-manage-in-portal.md).
 
@@ -93,4 +95,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-edifact/EncodeInput.PNG
 [10]: ./media/app-service-logic-connector-edifact/EncodeConfigured.PNG
 
-<!----HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

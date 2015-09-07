@@ -18,7 +18,7 @@
 	ms.author="jgao"/>
 
 
-#Verwenden des HDFS-kompatiblen Azure-Blobspeichers mit Hadoop in HDInsight
+# Verwenden des HDFS-kompatiblen Azure-Blobspeichers mit Hadoop in HDInsight
 
 In diesem Lernprogramm erfahren Sie, wie Sie kostengünstigen Azure-Blobspeicher mit HDInsight verwenden, Azure-Speicherkonten und Blobspeichercontainer erstellen und diese dann mit Daten füllen.
 
@@ -35,7 +35,7 @@ Die Speicherung von Daten im Blobspeicher sorgt dafür, dass die HDInsight-Clust
 Informationen zur Bereitstellung eines HDInsight-Clusters finden Sie unter [Erste Schritte mit HDInsight][hdinsight-get-started] oder [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
 
 
-##<a id="architecture"></a>HDInsight-Speicherarchitektur
+## <a id="architecture"></a>HDInsight-Speicherarchitektur
 Das folgende Diagramm bietet einen zusammenfassenden Überblick über die HDInsight-Speicherarchitektur.
 
 ![Hadoop-Cluster verwenden die HDFS-API, um auf strukturierte und unstrukturierte Daten im Blobspeicher zuzugreifen und diese zu speichern.](./media/hdinsight-hadoop-use-blob-storage/HDI.WASB.Arch.png "HDInsight-Speicherarchitektur")
@@ -83,7 +83,7 @@ Bestimmte MapReduce-Jobs und -Pakete können zu Zwischenergebnissen führen, die
 
 
 
-##<a id="preparingblobstorage"></a>Erstellen eines Blobcontainers
+## <a id="preparingblobstorage"></a>Erstellen eines Blobcontainers
 
 Um Blobs zu verwenden, erstellen Sie zuerst ein [Azure-Speicherkonto][azure-storage-create]. Dabei geben Sie ein Azure-Datencenter an, in dem die mithilfe dieses Kontos erstellten Objekte gespeichert werden. Der Cluster und das Speicherkonto müssen sich im gleichen Datencenter befinden. Die Hive-Metastore-SQL Server-Datenbank und Oozie-Metastore-SQL Server-Datenbank müssen sich ebenfalls im gleichen Datencenter befinden.
 
@@ -92,7 +92,7 @@ Ein Blob gehört unabhängig davon, wo es sich befindet, stets zu einem Containe
 Geben Sie einen Standardspeichercontainer nicht für mehrere HDInsight-Cluster frei. Wenn Sie einen freigegebenen Container benötigen, um Zugriff auf Daten für mehrere HDInsight-Cluster bereitzustellen, sollten Sie ihn der Clusterkonfiguration als zusätzliches Speicherkonto hinzufügen. Weitere Informationen finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision]. Einen Standardspeichercontainer können Sie jedoch auch wiederverwenden, wenn der ursprüngliche HDInsight-Cluster gelöscht wurde. Bei HBase-Clustern können Sie das HBase-Tabellenschema sowie die darin enthaltenen Daten sogar beibehalten, indem Sie einen neuen HBase-Cluster mit dem Standard-Blobspeichercontainer bereitstellen, der von einem gelöschten HBase-Cluster verwendet wurde.
 
 
-###Mit dem Azure-Vorschauportal
+### Mit dem Azure-Vorschauportal
 
 Bei der Bereitstellung eines HDInsight-Clusters im Vorschauportal können Sie ein vorhandenes Speicherkonto verwenden oder ein neues Speicherkonto erstellen:
 
@@ -116,7 +116,7 @@ Zum Erstellen eines Containers verwenden Sie den folgenden Befehl:
 
 	azure storage container create <containername> --account-name <storageaccountname> --account-key <storageaccountkey>
 
-###Verwenden von Azure PowerShell
+### Verwenden von Azure PowerShell
 
 Nach der [Installation und Konfiguration von Azure PowerShell][powershell-install] können Sie Speicherkonto und Container wie folgt an der Azure PowerShell-Eingabeaufforderung erstellen:
 
@@ -136,7 +136,7 @@ Nach der [Installation und Konfiguration von Azure PowerShell][powershell-instal
 	New-AzureStorageContainer -Name $containerName -Context $destContext
 
 
-##<a id="addressing"></a>Adressdateien im Blobspeicher
+## <a id="addressing"></a>Adressdateien im Blobspeicher
 
 Das URI-Schema für den Zugriff auf Dateien im Blobspeicher aus HDInsight ist:
 
@@ -166,7 +166,7 @@ Wenn weder &lt;BlobStorageContainerName&gt; noch &lt;StorageAccountName&gt; ange
 
 > [AZURE.NOTE]Wenn Blobs außerhalb von HDInsight verwendet werden, wird das WASB-Format von den meisten Dienstprogrammen nicht erkannt. Diese erwartet vielmehr ein grundlegendes Pfadformat wie `example/jars/hadoop-mapreduce-examples.jar`.
 
-##<a id="azurecli"></a>Zugriff auf Blobs über die Azure-CLI
+## <a id="azurecli"></a>Zugriff auf Blobs über die Azure-CLI
 
 Verwenden Sie den folgenden Befehl, um die Blob-bezogenen Befehle aufzulisten:
 
@@ -188,7 +188,7 @@ Verwenden Sie den folgenden Befehl, um die Blob-bezogenen Befehle aufzulisten:
 
 	azure storage blob list <containername> <blobname|prefix> --account-name <storageaccountname> --account-key <storageaccountkey>
 
-##<a id="powershell"></a>Zugriff auf Blobs über Azure PowerShell
+## <a id="powershell"></a>Zugriff auf Blobs über Azure PowerShell
 
 > [AZURE.NOTE]In diesem Abschnitt wird anhand eines einfachen Beispiels gezeigt, wie Sie mit PowerShell-Befehlen auf in Blobs gespeicherte Daten zugreifen. Ein komplexeres, speziell auf HDInsight zugeschnittenes Beispiel, das mehr Funktionen verwendet, finden Sie unter [HDInsight-Tools](https://github.com/Blackmist/hdinsight-tools).
 
@@ -290,11 +290,11 @@ Dieses Beispiel zeigt, wie der Inhalt eines Ordners eines Speicherkontos aufgeli
 
 	Invoke-Hive -Defines $defines -Query "dfs -ls wasb://$undefinedContainer@$undefinedStorageAccount.blob.core.windows.net/;"
 
-##<a id="nextsteps"></a>Nächste Schritte
+## <a id="nextsteps"></a>Nächste Schritte
 
 In diesem Artikel haben Sie gelernt, wie Sie HDFS-kompatiblen Azure-Blobspeicher in HDInsight verwenden und dass Azure-Blobspeicher ein fundamentaler Bestandteil von HDInsight ist. Dadurch können Sie skalierbare Datenerfassungslösungen mit langfristiger Archivierung im Azure-Blobspeicher aufbauen und HDInsight verwenden, um die Informationen innerhalb der gespeicherten strukturierten und unstrukturierten Daten zu entsperren.
 
-Weitere Informationen finden Sie in den folgenden Artikeln:
+Weitere Informationen finden Sie unter:
 
 * [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
 * [Hochladen von Daten in HDInsight][hdinsight-upload-data]
@@ -315,4 +315,4 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-hadoop-use-blob-storage/HDI.CustomCreateStorageAccount.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

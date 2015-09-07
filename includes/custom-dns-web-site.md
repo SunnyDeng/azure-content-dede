@@ -28,7 +28,7 @@ Ein CNAME-Datensatz weist eine *spezifische* Domäne, beispielsweise **contoso.c
 
 ###A-Eintrag
 
-Ein A-Eintrag weist eine Domäne wie **contoso.com**, **www.contoso.com** *oder eine Domäne mit Platzhalter* wie **\*.contoso.com** einer IP-Adresse zu. Im Falle einer Azure-Website entweder die virtuelle IP-Adresse des Dienstes oder eine spezifische, für die Website erworbene IP-Adresse. Der Vorteil eines A-Datensatzes gegenüber einem CNAME-Datensatz ist, dass Sie einen Eintrag mit einem Platzhalter verwenden können, beispielsweise ***\*.contoso.com**, der Anfragen für mehrere Unterdomänen verarbeiten kann, beispielsweise **mail.contoso.com**, **login.contoso.com** oder **www.contso.com**.
+Ein A-Eintrag weist eine Domäne wie **contoso.com**, **www.contoso.com** *oder eine Domäne mit Platzhalter* wie ***.contoso.com** einer IP-Adresse zu. Im Falle einer Azure-Website entweder die virtuelle IP-Adresse des Dienstes oder eine spezifische, für die Website erworbene IP-Adresse. Der Vorteil eines A-Datensatzes gegenüber einem CNAME-Datensatz ist, dass Sie einen Eintrag mit einem Platzhalter verwenden können, beispielsweise ****.contoso.com**, der Anfragen für mehrere Unterdomänen verarbeiten kann, beispielsweise **mail.contoso.com**, **login.contoso.com** oder **www.contso.com**.
 
 > [AZURE.NOTE]Da ein A-Datensatz einer statischen IP-Adresse zugewiesen ist, kann er nicht automatisch Änderungen an die IP-Adresse Ihrer Website übertragen. Eine IP-Adresse zur Verwendung mit A-Einträgen erhalten Sie, wenn Sie benutzerdefinierte Domänennameneinstellungen für Ihre Website konfigurieren.Dieser Wert kann sich jedoch ändern, wenn Sie Ihre Website löschen und neu erstellen oder den Websitemodus auf "Kostenlos" zurücksetzen.
 
@@ -57,8 +57,7 @@ Ein benutzerdefinierter Domänenname für eine Website kann nur in den Azure-Web
 5. Klicken Sie auf **Speichern**.
 6. Wenn Ihnen eine Eingabeaufforderung wegen höhere Kosten für den Freigabemodus (oder den Standardmodus, falls Sie Standard gewählt haben) angezeigt wird, klicken Sie auf **Ja**, wenn Sie zustimmen.
 
-	<!--![][standardmode4]-->**Hinweis**<br />
-: Wenn Sie eine Fehlermeldung erhalten, dass das Konfigurieren der Größenordnung für die Website mit dem angegebenen Namen fehlgeschlagen ist, können Sie über die Detailschaltfläche weitere Informationen anzeigen.
+	<!--![][standardmode4]-->**Hinweis**<br />: Wenn Sie eine Fehlermeldung erhalten, dass das Konfigurieren der Größenordnung für die Website mit dem angegebenen Namen fehlgeschlagen ist, können Sie über die Detailschaltfläche weitere Informationen anzeigen.
 
 <a name="trafficmanager"></a><h2>(Optional) Hinzufügen Ihrer Websites zu Traffic Manager</h2>
 
@@ -136,7 +135,7 @@ Der folgende CNAME-Datensatz leitet zum Beispiel den gesamten Datenverkehr von *
 
 Einem Besucher von **www.contoso.com** wird niemals der wirkliche Host (contoso.azurewebsite.net) angezeigt. Die Weiterleitung ist also für den Endbenutzer nicht sichtbar.
 
-> [AZURE.NOTE]Das oben genannte Beispiel gilt nur für Verkehr an der Unterdomäne __www__. Da Sie keine Platzhalter mit CNAME-Datensätzen verwenden können, müssen Sie einen CNAME für jede Domäne/Unterdomäne erstellen. Wenn Sie den Verkehr von Unterdomänen wie \*.contoso.com an Ihre azurewebsite.net-Adresse weiterleiten möchten, können Sie in Ihren DNS-Einstellungen einen Eintrag für __URL-Umleitung__ oder __URL-Weiterleitung__ erstellen. Alternativ können Sie einen A-Datensatz erstellen.
+> [AZURE.NOTE]Das oben genannte Beispiel gilt nur für Verkehr an der Unterdomäne __www__. Da Sie keine Platzhalter mit CNAME-Datensätzen verwenden können, müssen Sie einen CNAME für jede Domäne/Unterdomäne erstellen. Wenn Sie den Verkehr von Unterdomänen wie *.contoso.com an Ihre azurewebsite.net-Adresse weiterleiten möchten, können Sie in Ihren DNS-Einstellungen einen Eintrag für __URL-Umleitung__ oder __URL-Weiterleitung__ erstellen. Alternativ können Sie einen A-Datensatz erstellen.
 
 > [AZURE.NOTE]Es kann einige Zeit dauern, bis Ihr CNAME über das DNS-System weitergegeben wurde. Der CNAME für die Website kann erst nach abgeschlossener CNAME-Verteilung eingestellt werden. Mithilfe eines Services wie <a href="http://www.digwebinterface.com/">http://www.digwebinterface.com/</a> (in englischer Sprache) können Sie überprüfen, ob der CNAME verfügbar ist.
 
@@ -196,7 +195,7 @@ Sie müssen zunächst die IP-Adresse Ihrer Website ermitteln, um einen A-Datensa
 
 7. Führen Sie die folgenden Schritte aus, um einen A-Datensatz zu erstellen:
 
-	1. Wählen Sie die Domäne oder Unterdomäne aus, die den A-Datensatz verwenden wird, oder geben Sie diese ein. Wählen Sie beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Platzhaltereintrag für alle Unterdomänen erstellen möchten, geben Sie "\_\_\*\_\_" ein. Dieser Eintrag deckt alle Unterdomänen ab wie **mail.customdomain.com**, **login.customdomain.com** und **www.customdomain.com**.
+	1. Wählen Sie die Domäne oder Unterdomäne aus, die den A-Datensatz verwenden wird, oder geben Sie diese ein. Wählen Sie beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Platzhaltereintrag für alle Unterdomänen erstellen möchten, geben Sie "\_\_*\_\_" ein. Dieser Eintrag deckt alle Unterdomänen ab wie **mail.customdomain.com**, **login.customdomain.com** und **www.customdomain.com**.
 
 		Wenn Sie einen A-Datensatz für die Stammdomäne erstellen möchten, wird dieser möglicherweise als "**@**"-Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
 
@@ -213,7 +212,7 @@ Sie müssen zunächst die IP-Adresse Ihrer Website ermitteln, um einen A-Datensa
 <td>@</td>
 <td>137.135.70.239</td>
 </tr>
-</table>Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. Wenn Sie einen Platzhaltereintrag erstellen möchten, der alle Unterdomänen abdeckt, würden Sie "\_\_\*\_\_" als Unterdomäne eingeben.
+</table>Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. Wenn Sie einen Platzhaltereintrag erstellen möchten, der alle Unterdomänen abdeckt, würden Sie "\_\_*\_\_" als Unterdomäne eingeben.
 
 7. Erstellen Sie dann einen CNAME-Datensatz, der einen Alias von **awverify** besitzt und eine kanonische Domäne von **awverify.mysite.azurewebsites.net**, die Sie zuvor erhalten haben.
 
@@ -293,9 +292,9 @@ Nach Abschluss der Konfiguration wird der benutzerdefinierte Domänenname im Abs
 [portal]: http://manage.windowsazure.com
 [digweb]: http://www.digwebinterface.com/
 [cloudservicedns]: ../articles/custom-dns.md
-[trafficmanager]: ../article/app-service-web/web-sites-traffic-manager.md
-[addendpoint]: http://msdn.microsoft.com/library/windowsazure/hh744839.aspx
-[createprofile]: http://msdn.microsoft.com/library/windowsazure/dn339012.aspx
+[trafficmanager]: ../articles/app-service-web/web-sites-traffic-manager.md
+[addendpoint]: ../articles/traffic-manager/traffic-manager-endpoints.md
+[createprofile]: ../articles/traffic-manager/traffic-manager-manage-profiles.md
 
 <!-- images -->
 
@@ -312,4 +311,4 @@ Nach Abschluss der Konfiguration wird der benutzerdefinierte Domänenname im Abs
 [setcname2]: ./media/custom-dns-web-site/dncmntask-cname-6.png
 [setcname3]: ./media/custom-dns-web-site/dncmntask-cname-7.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

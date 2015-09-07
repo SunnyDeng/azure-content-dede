@@ -1,22 +1,20 @@
 <properties
    pageTitle="Übersicht über das Reliable Services-Programmiermodell von Service Fabric"
-   description="Erfahren Sie mehr über das Reliable Services-Programmmodell von Service Fabric, und schreiben Sie eigene Dienste."
-   services="Service-Fabric"
-   documentationCenter=".net"
-   authors="masnider"
-   manager="timlt"
-   editor="jessebenson; mani-ramaswamy"/>
-
+	description="Erfahren Sie mehr über das Reliable Services-Programmmodell von Service Fabric, und schreiben Sie eigene Dienste."
+	services="Service-Fabric"
+	documentationCenter=".net"
+	authors="masnider"
+	manager="timlt"
+	editor="jessebenson; mani-ramaswamy"/>
 
 <tags
    ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="07/17/2015"
-   ms.author="masnider;jesseb"/>
-
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/26/2015"
+	ms.author="masnider;jesseb"/>
 
 # Übersicht über Reliable Services
 Service Fabric vereinfacht das Schreiben und Verwalten zuverlässiger zustandsloser und zustandsbehafteter Dienste (Reliable Services). In diesem Dokument wird Folgendes behandelt:
@@ -25,11 +23,11 @@ Service Fabric vereinfacht das Schreiben und Verwalten zuverlässiger zustandslo
 2. Die unterschiedlichen Optionen, die beim Schreiben eines Reliable Service zur Auswahl stehen
 3. Szenarien und Beispiele für die Verwendung von Reliable Services und wie sie geschrieben werden
 
-Reliable Services zählen zu den in Service Fabric verfügbaren Programmiermodellen. Weitere Informationen zum Reliable Actors-Programmiermodell finden Sie in der [Einführung](../service-fabric/service-fabric-reliable-actors-introduction.md).
+Reliable Services zählen zu den in Service Fabric verfügbaren Programmiermodellen. Weitere Informationen zum Reliable Actors-Programmiermodell finden Sie in der [Einführung](service-fabric-reliable-actors-introduction.md).
 
 Dienste in Service Fabric setzen sich aus der Konfiguration, dem Anwendungscode und optional einem Zustand zusammen.
 
-Service Fabric verwaltet die Lebensdauer von Diensten von der Bereitstellung und Implementierung bis hin zur Aktualisierung und zum Löschen über die [Anwendungsverwaltung von Service Fabric](../service-fabric/service-fabric-deploy-remove-applications.md).
+Service Fabric verwaltet die Lebensdauer von Diensten von der Bereitstellung und Implementierung bis hin zur Aktualisierung und zum Löschen über die [Anwendungsverwaltung von Service Fabric](service-fabric-deploy-remove-applications.md).
 
 ## Was sind Reliable Services?
 Reliable Services bieten ein einfaches, leistungsfähiges und erstklassiges Programmiermodell, mit dem Sie alle wichtigen Funktionen in Ihrer Anwendung programmieren können. Das Reliable Services-Programmiermodell bietet Folgendes:
@@ -38,7 +36,7 @@ Reliable Services bieten ein einfaches, leistungsfähiges und erstklassiges Prog
 
 2. Ein einfaches Modell für die Ausführung von eigenem Code, das Ihren gewohnten Programmiermodellen ähnelt: Der Code enthält einen klar definierten Einstiegspunkt und einen leicht zu verwaltenden Lebenszyklus.
 
-3. Ein austauschbares Kommunikationsmodell – wählen Sie den gewünschten Übertragungskanal, z. B. HTTP mit [Web-API](../service-fabric/service-fabric-reliable-services-communication-webapi.md), WebSockets, benutzerdefinierte TCP-Protokolle usw. Reliable Services bieten einige nützliche vorkonfigurierte Optionen. Sie können aber auch eigene Optionen verwenden.
+3. Ein austauschbares Kommunikationsmodell – wählen Sie den gewünschten Übertragungskanal, z. B. HTTP mit [Web-API](service-fabric-reliable-services-communication-webapi.md), WebSockets, benutzerdefinierte TCP-Protokolle usw. Reliable Services bieten einige nützliche vorkonfigurierte Optionen. Sie können aber auch eigene Optionen verwenden.
 
 ## Was unterscheidet Reliable Services von anderen Diensten?
 Reliable Services sind nicht wie andere Dienste, die Sie möglicherweise bereits geschrieben haben. Service Fabric bietet Zuverlässigkeit, Verfügbarkeit, Konsistenz und Skalierbarkeit.
@@ -54,7 +52,7 @@ Reliable Services sind nicht wie andere Dienste, die Sie möglicherweise bereits
 ## Dienstlebenszyklus
 Ungeachtet dessen, ob der Dienst zustandsbehaftet oder zustandslos ist, bieten Reliable Services einen einfachen Lebenszyklus, mit dem Sie den Code schnell als Plug-in bereitstellen und beginnen können. Sie brauchen zum Ausführen des Diensts tatsächlich nur eine oder zwei Methoden zu implementieren.
 
-+ CreateCommunicationListener: Hiermit definiert der Dienst den zu verwendenden Kommunikationsstapel. Der Kommunikationsstapel (z. B. [Web-API](../service-fabric/service-fabric-reliable-services-communication-webapi.md)) definiert die überwachenden Endpunkte des Diensts (wie er von Clients erreicht wird) sowie die Interaktion der angezeigten Nachrichten mit dem übrigen Dienstcode.
++ CreateCommunicationListener: Hiermit definiert der Dienst den zu verwendenden Kommunikationsstapel. Der Kommunikationsstapel (z. B. [Web-API](service-fabric-reliable-services-communication-webapi.md)) definiert die überwachenden Endpunkte des Diensts (wie er von Clients erreicht wird) sowie die Interaktion der angezeigten Nachrichten mit dem übrigen Dienstcode.
 
 + RunAsync – Hiermit führt der Dienst seine gesamte Geschäftslogik aus. Das bereitgestellte Abbruchtoken dient als Signal, wenn die Arbeit beendet werden soll. Wenn Sie beispielsweise einen Dienst haben, der permanent Nachrichten aus einer ReliableQueue abrufen und verarbeiten muss, wird dieser Vorgang hiermit ausgeführt.
 
@@ -66,12 +64,12 @@ Dies sind die wichtigsten Ereignisse im Lebenszyklus eines Reliable Service:
   + Dies ist optional, obwohl die meisten Dienste einige Endpunkte direkt verfügbar machen.
 
 3. Nach dem Erstellen des Kommunikationslisteners wird der Dienst geöffnet.
-  + Kommunikationslistener verfügen über eine Methode namens Open(), die zu diesem Zeitpunkt aufgerufen wird und die Überwachungsadresse für den Dienst zurückgibt. Wenn Ihr Reliable Service einen der integrierten ICommunicationListener verwendet, erfolgt dies automatisch.
+  + Kommunikationslistener verfügen über eine Methode namens „Open()“, die zu diesem Zeitpunkt aufgerufen wird und die Überwachungsadresse für den Dienst zurückgibt. Wenn Ihr Reliable Service einen der integrierten ICommunicationListener verwendet, erfolgt dies automatisch.
 
 4. Sobald der Kommunikationslistener den Status "Open()" hat, wird der Aufruf "RunAsync()" für den Hauptdienst ausgelöst.
   + RunAsync ist optional. Wenn der Dienst alle Vorgänge nur direkt infolge von Benutzeraufrufen ausführt, muss "RunAsync()" nicht implementiert werden.
 
-Wenn der Dienst heruntergefahren wird (weil er gelöscht oder einfach von einem bestimmten Speicherort verschoben wurde), bleibt die Aufrufreihenfolge gleich: Zunächst wird im CommunicationListener "Close()" aufgerufen und dann das an "RunAsync()" übergebene Abbruchtoken abgebrochen.
+Wenn der Dienst heruntergefahren wird (weil er gelöscht oder einfach von einem bestimmten Speicherort verschoben wurde), bleibt die Aufrufreihenfolge gleich: Zunächst wird im Kommunikationslistener „Close()“ aufgerufen und dann das an „RunAsync()“ übergebene Abbruchtoken abgebrochen.
 
 ## Dienstbeispiele
 Nachdem Sie diese Programmiermodell nun kennen, werfen wir einen Blick auf zwei Dienste, um zu sehen, wie diese Elemente zusammenspielen.
@@ -81,7 +79,7 @@ Ein zustandsloser Dienst hat buchstäblich keinen Zustand, oder der vorhandene Z
 
 Denken Sie beispielsweise an einen Rechner, der keinen Speicher hat und alle Zahlen und durchzuführenden Operationen gleichzeitig erhält.
 
-In diesem Fall kann der Dienst "RunAsync()" leer sein, da er keine Aufgaben im Hintergrund auszuführen hat. Wenn der Rechnerdienst erstellt wird, gibt er einen CommunicationListener (z. B. [Web-API](../service-fabric/service-fabric-reliable-services-communication-webapi.md)) zurück, der auf einem Port einen Überwachungsendpunkt öffnet. Dieser Überwachungsendpunkt wird mit den verschiedenen Methoden verknüpft (z. B. "Add (n1, n2)"), die die öffentliche API des Rechners definieren.
+In diesem Fall kann der Dienst "RunAsync()" leer sein, da er keine Aufgaben im Hintergrund auszuführen hat. Wenn der Rechnerdienst erstellt wird, gibt er einen CommunicationListener (z. B. [Web-API](service-fabric-reliable-services-communication-webapi.md)) zurück, der auf einem Port einen Überwachungsendpunkt öffnet. Dieser Überwachungsendpunkt wird mit den verschiedenen Methoden verknüpft (z. B. "Add (n1, n2)"), die die öffentliche API des Rechners definieren.
 
 Erfolgt ein Aufruf durch einen Client, wird die entsprechende Methode ausgelöst. Der Rechnerdienst führt an den bereitgestellten Daten die erforderlichen Operationen durch und gibt das Ergebnis zurück. Es wird kein Zustand gespeichert.
 
@@ -117,19 +115,19 @@ Wenn einer der folgenden Punkte auf Ihre Anwendungsdienstanforderungen zutrifft,
 
 - Ihre Anwendung muss zuverlässige Wörterbücher oder Warteschlangen zur Laufzeit dynamisch erstellen oder zerstören.
 
-- Sie müssen von Service Fabric bereitgestellte Sicherungs- und Wiederherstellungsfunktionen für den Zustand Ihres Diensts programmgesteuert ausführen.\*
+- Sie müssen von Service Fabric bereitgestellte Sicherungs- und Wiederherstellungsfunktionen für den Zustand Ihres Diensts programmgesteuert ausführen.*
 
-- Ihre Anwendung muss den Änderungsverlauf ihrer Zustandseinheiten protokollieren.\*
+- Ihre Anwendung muss den Änderungsverlauf ihrer Zustandseinheiten protokollieren.*
 
-- Sie möchten benutzerdefinierte Zustandsanbieter selbst entwickeln oder von Dritten nutzen\*
+- Sie möchten benutzerdefinierte Zustandsanbieter selbst entwickeln oder von Dritten nutzen*
 
-> [AZURE.NOTE]\*Diese Funktionen stehen mit der allgemeinen Verfügbarkeit des SDK zur Verfügung
+> [AZURE.NOTE]*Diese Funktionen stehen mit der allgemeinen Verfügbarkeit des SDK zur Verfügung
 
 
 ## Nächste Schritte
-+ [Reliable Services – Schnellstart](../service-fabric/service-fabric-reliable-services-quick-start.md)
++ [Reliable Services – Schnellstart](service-fabric-reliable-services-quick-start.md)
 + [Lesen Sie mehr über die erweiterte Verwendung von Reliable Services](service-fabric-reliable-services-advanced-usage.md)
-+ [Erfahren Sie mehr über das Reliable Actors-Programmiermodell](../service-fabric/service-fabric-reliable-actors-introduction.md)
++ [Erfahren Sie mehr über das Reliable Actors-Programmiermodell](service-fabric-reliable-actors-introduction.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

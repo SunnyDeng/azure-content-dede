@@ -1,19 +1,19 @@
 <properties
 	pageTitle="Verwalten von Risiken mit bedingtem Zugriff"
-	description="In diesem Thema erfahren Sie, wie Sie den Zugriff von überall auf bestimmte Ressourcen mit bekannten Geräten ermöglichen, die die erforderlichen Richtlinien erfüllen, und den Zugriff für verlorene, gestohlene und nicht geeignete Geräte verhindern."
+	description="Ermöglichen Sie von überall innerhalb des Unternehmensnetzwerks den Zugriff auf bestimmte Ressourcen mit bekannten Geräten, die die erforderlichen Richtlinien erfüllen, und verhindern Sie den Zugriff für verlorene, gestohlene und nicht geeignete Geräte."
 	services="active-directory, virtual-network"
 	documentationCenter=""
 	authors="femila"
-	manager="stevepo"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
 	ms.service="active-directory"
 	ms.devlang="na"
 	ms.topic="article"
-  ms.tgt_pltfrm="na"
-  ms.workload="identity" 
-	ms.date="07/31/2015"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
+	ms.date="08/19/2015"
 	ms.author="femila"/>
 
 
@@ -35,13 +35,13 @@ Mit den vielen Funktionen für den bedingten Zugriff, die mit Azure Active Direc
 
 In den folgenden Themen werden die unterschiedlichen Mechanismen beschrieben, die zum Festlegen von Richtlinien für den bedingten Zugriff in Ihrer Organisation verfügbar sind.
 
-- [Azure Active Directory-Geräteregistrierung – Übersicht](https://msdn.microsoft.com/library/azure/dn903763.aspx)
-- [Einrichten des lokalen bedingten Zugriffs mithilfe der Azure Active Directory-Geräteregistrierung](https://msdn.microsoft.com/library/azure/dn788908.aspx)
-- [Geräterichtlinien für den bedingten Zugriff für Office 365-Dienste](https://msdn.microsoft.com/library/azure/dn903766.aspx)
-- [Bedingter Zugriff unter Azure – Vorschau für SaaS-Apps](https://msdn.microsoft.com/library/azure/dn906877.aspx)
+- [Azure Active Directory-Geräteregistrierung – Übersicht](active-directory-conditional-access-device-registration-overview.md)
+- [Einrichten des lokalen bedingten Zugriffs mithilfe der Azure Active Directory-Geräteregistrierung](active-directory-conditional-access-on-premises-setup.md)
+- [Geräterichtlinien für den bedingten Zugriff für Office 365-Dienste](active-directory-conditional-access-device-policies.md)
+- [Bedingter Zugriff unter Azure – Vorschau für SaaS-Apps](active-directory-conditional-access-azuread-connected-apps.md)
 
 
 <!--Image references-->
 [1]: ./media/active-directory-conditional-access/condaccoverviewvsdx1.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

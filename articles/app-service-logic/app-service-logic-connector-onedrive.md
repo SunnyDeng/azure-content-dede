@@ -1,6 +1,6 @@
 <properties
-	pageTitle="OneDrive-Connector"
-	description="Erste Schritte mit dem OneDrive-Connector"
+	pageTitle="Verwendung des OneDrive-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des OneDrive-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
 	authors="anuragdalmia"
 	manager="dwrede"
 	editor=""
@@ -13,14 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/19/2015"
+	ms.date="08/23/2015"
 	ms.author="andalmia"/>
 
-# Verwenden des OneDrive-Connectors in Logik-Apps #
-
-Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten.
-
-Mit dem OneDrive-Connector können Sie Dateien in ein OneDrive-Konto hochladen bzw. aus diesem herunterladen oder löschen.
+# Erste Schritte mit dem OneDrive-Connector und das Hinzufügen zur Logik-App
+Stellen Sie eine Verbindung mit dem OneDrive her, um Dateien hochzuladen, herunterzuladen und zu löschen. Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Sie können den OneDrive-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
 ## Erstellen eines OneDrive-Connectors für Ihre Logik-App ##
 Zur Verwendung des OneDrive-Connectors müssen Sie zunächst eine Instanz der OneDrive-Connector-API-App erstellen. Dies kann entweder direkt im Logik-App-Designer oder außerhalb davon erfolgen. Außerhalb des Designers erfolgt das Erstellen einer Instanz wie folgt:
@@ -81,7 +78,7 @@ Sobald Ihre API-App erstellt wurde, können Sie den OneDrive-Connector als Aktio
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Sie finden die Swagger-REST-API-Referenz unter [Connectors and API Apps Reference](http://go.microsoft.com/fwlink/p/?LinkId=529766) (in englischer Sprache).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -96,6 +93,6 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 
 <!-- Links -->
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
-[OneDrive Connector (in englischer Sprache)]: https://msdn.microsoft.com/de-de/library/dn974227.aspx
+[OneDrive Connector (in englischer Sprache)]: https://msdn.microsoft.com/library/dn974227.aspx
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

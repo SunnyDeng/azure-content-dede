@@ -1,20 +1,20 @@
 
 <properties 
-	pageTitle="Anmelden bei der mobilen App mithilfe einer Benachrichtigung mit Azure Multi-Factor Authentication" 
-	description="Auf dieser Seite wird beschrieben, wie ein Benutzer sich über eine Benachrichtigung in der mobilen App mit Azure MFA anmelden kann." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	pageTitle="Anmelden bei der mobilen App mithilfe einer Benachrichtigung mit Azure Multi-Factor Authentication"
+	description="Auf dieser Seite wird beschrieben, wie ein Benutzer sich über eine Benachrichtigung in der mobilen App mit Azure MFA anmelden kann."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
+	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/02/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Anmelden bei der mobilen App mithilfe einer Benachrichtigung mit Azure Multi-Factor Authentication
@@ -38,4 +38,4 @@ Die folgenden Informationen beschreiben die Verwendung von Multi-Factor Authenti
 
 <li>Sie sollten jetzt angemeldet sein.</li>
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

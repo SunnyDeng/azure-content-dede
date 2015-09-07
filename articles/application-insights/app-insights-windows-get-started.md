@@ -1,18 +1,18 @@
-<properties 
-	pageTitle="Application Insights für Windows Phone- und Windows Store-Apps" 
-	description="Analysieren Sie die Nutzung und Leistung von Windows-Geräteanwendungen mit Application Insights." 
-	services="application-insights" 
-    documentationCenter="windows"
-	authors="alancameronwills" 
+<properties
+	pageTitle="Application Insights für Windows Phone- und Windows Store-Apps | Microsoft Azure"
+	description="Analysieren Sie die Nutzung und Leistung von Windows-Geräteanwendungen mit Application Insights."
+	services="application-insights"
+	documentationCenter="windows"
+	authors="alancameronwills"
 	manager="douge"/>
 
-<tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="06/16/2015" 
+<tags
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="06/16/2015"
 	ms.author="awills"/>
 
 # Application Insights für Windows Phone- und Windows Store-Apps
@@ -23,8 +23,8 @@
 
 Mit Visual Studio Application Insights können Sie Ihre veröffentlichte Anwendung auf Folgendes überwachen:
 
-* [**Nutzung**][windowsUsage] – Erfahren Sie, wie viele Benutzer Ihre App hat und was sie mit Ihrer App machen.
-* [**Abstürze**][windowsCrash] – Rufen Sie Diagnoseberichte zu Abstürzen ab, und machen Sie sich mit den Auswirkungen auf die Benutzer vertraut.
+* [**Nutzung**][windowsUsage] &#150; Erfahren Sie, wie viele Benutzer Ihre App hat, und was sie mit Ihrer App machen.
+* [**Abstürze**][windowsCrash] &#150; Rufen Sie Diagnoseberichte zu Abstürzen ab, und machen Sie sich mit den Auswirkungen auf die Benutzer vertraut.
 
 ![](./media/app-insights-windows-get-started/appinsights-d018-oview.png)
 
@@ -35,7 +35,7 @@ Sie benötigen Folgendes:
 * Ein Abonnement für [Microsoft Azure][azure]
 * Visual Studio 2013 oder höher
 
-## 1\. Erstellen einer Application Insights-Ressource 
+## 1\. Erstellen einer Application Insights-Ressource
 
 Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource.
 
@@ -45,7 +45,7 @@ Eine [Ressource][roles] in Azure ist eine Instanz eines Diensts. In dieser Resso
 
 #### Kopieren des Instrumentationsschlüssels
 
-Mit diesem Schlüssel wird die Ressource identifiziert. Sie benötigen ihn in Kürze, um das SDK für das Senden der Daten an die Ressource zu konfigurieren.
+Mit diesem Schlüssel wird die Ressource identifiziert. Sie benötigen ihn, um das SDK für das Senden der Daten an die Ressource zu konfigurieren.
 
 ![Öffnen Sie die Dropdownliste "Essentials", und wählen Sie den Instrumentationsschlüssel aus](./media/app-insights-windows-get-started/02-props.png)
 
@@ -64,7 +64,7 @@ Wenn es sich um eine universelle Windows App handelt, wiederholen Sie die Schrit
 
     ![](./media/app-insights-windows-get-started/04-ai-nuget.png)
 
-3. Wählen Sie **Application Insights für Windows-Anwendungen**.
+3. Wählen Sie **Application Insights für Windows-Anwendungen** aus.
 
 4. Fügen Sie die Datei "ApplicationInsights.config" im Stammverzeichnis des Projekts hinzu, und fügen Sie den im Portal kopierten Instrumentationsschlüssel ein. Nachfolgend sehen Sie einen XML-Beispielcode für diese Config-Datei.
 
@@ -76,7 +76,7 @@ Wenn es sich um eine universelle Windows App handelt, wiederholen Sie die Schrit
 	```
 
     Legen Sie die Eigenschaften der Datei "ApplicationInsights.config" fest: **Buildvorgang** = **Inhalt** und **In Ausgabeverzeichnis kopieren** = **Immer kopieren**.
-	
+
 	![](./media/app-insights-windows-get-started/AIConfigFileSettings.png)
 
 5. Fügen Sie den folgenden Initialisierungscode hinzu. Es ist am besten, diesen Code dem `App()`-Konstruktor hinzuzufügen. Wenn Sie ihn an anderer Stelle hinzufügen, könnten Sie die automatische Erfassung der ersten Seitenansichten verpassen.
@@ -84,9 +84,9 @@ Wenn es sich um eine universelle Windows App handelt, wiederholen Sie die Schrit
 ```C#
 	public App()
 	{
-	   // Add this initilization line. 
+	   // Add this initilization line.
 	   WindowsAppInitializer.InitializeAsync();
-	
+
 	   this.InitializeComponent();
 	   this.Suspending += OnSuspending;
 	}  
@@ -120,7 +120,7 @@ Zuerst sehen Sie lediglich einen oder zwei Punkte. Zum Beispiel:
 
 ![Klicken Sie, um weitere Daten anzuzeigen](./media/app-insights-windows-get-started/appinsights-26-devices-01.png)
 
-Klicken Sie nach einigen Sekunden auf "Aktualisieren", wenn Sie mehr Daten erwarten.
+Klicken Sie nach einigen Sekunden auf **Aktualisieren**, wenn Sie weitere Daten erwarten.
 
 Klicken Sie auf ein beliebiges Diagramm, um weitere Details anzuzeigen.
 
@@ -138,7 +138,7 @@ Das Application Insights SDK umfasst mehrere Sammler, die automatisch unterschie
     WindowsAppInitializer.InitializeAsync( "00000000-0000-0000-0000-000000000000",
        WindowsCollectors.Metadata
        | WindowsCollectors.PageView
-       | WindowsCollectors.Session 
+       | WindowsCollectors.Session
        | WindowsCollectors.UnhandledException);
 
 #### Senden eigener Telemetriedaten
@@ -178,25 +178,25 @@ Weitere Informationen finden Sie unter [Benutzerdefinierte Ereignisse und Metrik
 
 Wenn Sie die Einrichtungsschritte lieber in Visual Studio ausführen möchten, ist dies bei Windows Phone-, Windows Store- und vielen andere Arten von Apps möglich.
 
-###<a name="new"></a> Wenn Sie ein neues Windows-Anwendungsprojekt erstellen...
+### <a name="new"></a>Wenn Sie ein neues Windows-Anwendungsprojekt erstellen ...
 
-Wählen Sie Application Insights im Dialogfeld "Neues Projekt" aus.
+Wählen Sie **Application Insights** im Dialogfeld **Neues Projekt** aus.
 
 Wenn Sie aufgefordert werden, sich anzumelden, verwenden Sie die Anmeldeinformationen Ihres Azure-Kontos (das vom Visual Studio Online-Konto getrennt ist).
 
 ![](./media/app-insights-windows-get-started/appinsights-d21-new.png)
 
 
-###<a name="existing"></a>Oder falls es sich um ein vorhandenes Projekt handelt ...
+### <a name="existing"></a>… oder falls es sich um ein vorhandenes Projekt handelt
 
 Fügen Sie Application Insights im Projektmappen-Explorer hinzu.
 
 
 ![](./media/app-insights-windows-get-started/appinsights-d22-add.png)
 
-## So aktualisieren Sie auf eine neue SDK-Version
+## Upgraden auf eine neue SDK-Version
 
-Gehen Sie bei [Veröffentlichung einer neuen SDK-Version](app-insights-release-notes-windows.md) folgendermaßen vor: Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie "NuGet-Pakete verwalten". Wählen Sie die installierten Application Insights-Pakete und dann die Aktion "Upgrade" aus.
+Gehen Sie bei [Veröffentlichung einer neuen SDK-Version](app-insights-release-notes-windows.md) folgendermaßen vor: Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie "NuGet-Pakete verwalten". Wählen Sie die installierten Application Insights-Pakete und dann die Aktion **Upgrade** aus.
 
 
 ## <a name="usage"></a>Nächste Schritte
@@ -227,6 +227,4 @@ Gehen Sie bei [Veröffentlichung einer neuen SDK-Version](app-insights-release-n
 [windowsCrash]: app-insights-windows-crashes.md
 [windowsUsage]: app-insights-windows-usage.md
 
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

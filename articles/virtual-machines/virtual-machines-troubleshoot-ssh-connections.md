@@ -85,10 +85,10 @@ In allen diesen Fällen sollten Sie zur Ermittlung der Ursache die Software vor�
 
 Vergewissern Sie sich bei Verwendung der Zertifikatauthentifizierung, dass Sie für den SSH-Ordner in Ihrem Basisverzeichnis über folgende Berechtigungen verfügen:
 
-- Chmod 700 \~/.ssh
-- Chmod 644 \~/.ssh/*.pub
-- Chmod 600 \~/.ssh/id\_rsa (bzw. beliebige andere Dateien, in denen Ihre privaten Schlüssel gespeichert sind)
-- Chmod 644 \~/.ssh/known\_hosts (enthält Hosts, mit denen Sie eine SSH-Verbindung hergestellt haben)
+- Chmod 700 ~/.ssh
+- Chmod 644 ~/.ssh/*.pub
+- Chmod 600 ~/.ssh/id\_rsa (bzw. beliebige andere Dateien, in denen Ihre privaten Schlüssel gespeichert sind)
+- Chmod 644 ~/.ssh/known\_hosts (enthält Hosts, mit denen Sie eine SSH-Verbindung hergestellt haben)
 
 ### Quelle 2: Edgegerät der Organisation
 
@@ -119,7 +119,7 @@ Ist kein anderer virtueller Computer im gleichen virtuellen Netzwerk vorhanden, 
 Wenn Sie eine SSH-Verbindung mit einem virtuellen Computer im gleichen virtuellen Netzwerk herstellen können, überprüfen Sie Folgendes:
 
 - Die Endpunktkonfiguration für den SSH-Datenverkehr auf dem virtuellen Zielcomputer. Der private TCP-Port des Endpunkts muss dem TCP-Port entsprechen, an dem der SSH-Dienst auf dem virtuellen Computer lauscht. In der Standardeinstellung ist dies Port 22. Überprüfen Sie bei virtuellen Computern, die im Azure-Ressourcen-Manager mithilfe von Vorlagen erstellt wurden, die SSH-TCP-Portnummer im Azure-Vorschauportal unter **Durchsuchen** > **Virtuelle Computer (v2)** > *VM-Name* > **Einstellungen** > **Endpunkte**.
-- Die ACL für den SSH-Datenverkehrsendpunkt auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACLs können dazu führen, dass eingehender SSH-Datenverkehr den Endpunkt nicht erreicht. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Netzwerk-Zugriffssteuerungslisten (ACLs)](https://msdn.microsoft.com/library/azure/dn376541.aspx).
+- Die ACL für den SSH-Datenverkehrsendpunkt auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACLs können dazu führen, dass eingehender SSH-Datenverkehr den Endpunkt nicht erreicht. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?](../virtual-network/virtual-networks-acl.md).
 
 Entfernen Sie den aktuellen Endpunkt, und erstellen Sie einen neuen Endpunkt mit dem SSH-Namen und dem TCP-Port 22 als öffentliche und private Portnummer, um den Endpunkt als Problemquelle auszuschließen. Weitere Informationen finden Sie unter [Festlegen von Endpunkten auf einem virtuellen Computer in Azure](virtual-machines-set-up-endpoints.md).
 
@@ -165,4 +165,4 @@ Informationen zur Nutzung von Azure-Support finden Sie unter der [Microsoft Azur
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

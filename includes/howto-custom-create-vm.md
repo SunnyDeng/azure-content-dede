@@ -1,4 +1,3 @@
-
 #Erstellen eines benutzerdefinierten virtuellen Computers
 
 Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den Sie mit der Option **Aus Katalog** erstellen, da Sie Ihnen durch diese Option mehr Konfigurationsoptionen zur Verfügung stehen als durch die Methode **Schnellerfassung**. Die Optionen umfassen:
@@ -37,7 +36,7 @@ Ein *benutzerdefinierter* virtueller Computer ist ein virtueller Computer, den S
 
 	**Hinweis**: Weitere Informationen über die Platzierung virtueller Computer im selben Clouddienst finden Sie unter [Verbinden virtueller Computer in einem Clouddienst](http://www.windowsazure.com/manage/windows/how-to-guides/connect-to-a-cloud-service/).
 
-12. Wählen Sie unter **Region/Affinitätsgruppe/Virtuelles Netzwerk** die Region, die Affinitätsgruppe oder das virtuelle Netzwerk aus, in der bzw. dem sich der virtuelle Computer befinden soll. Weitere Informationen zu Affinitätsgruppen finden Sie unter [Informationen zu Affinitätsgruppen für virtuelle Netzwerke](http://msdn.microsoft.com/library/azure/jj156085.aspx).
+12. Wählen Sie unter **Region/Affinitätsgruppe/Virtuelles Netzwerk** die Region, die Affinitätsgruppe oder das virtuelle Netzwerk aus, in der bzw. dem sich der virtuelle Computer befinden soll. Weitere Informationen zu Affinitätsgruppen finden Sie unter [Informationen zu Affinitätsgruppen für virtuelle Netzwerke](../virtual-network/virtual-networks-migrate-to-regional-vnet.md).
 
 13. Wählen Sie unter **Speicherkonto** ein vorhandenes Speicherkonto für die VHD-Datei, oder verwenden Sie ein automatisch erzeugtes Speicherkonto. Es wird nur ein Speicherkonto pro Region automatisch erstellt. Alle weiteren virtuellen Computer, die Sie mit dieser Einstellung erstellen, befinden sich in diesem Speicherkonto. Es sind maximal 20 Speicherkonten möglich.
 
@@ -60,4 +59,4 @@ Nachdem der virtuelle Computer erstellt wurde, wird er automatisch gestartet. We
 - [Anmelden bei einem mit Linux betriebenen virtuellen Computer](../articles/virtual-machines/virtual-machines-linux-how-to-log-on.md)
 - [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](../articles/virtual-machines/virtual-machines-log-on-windows-server.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

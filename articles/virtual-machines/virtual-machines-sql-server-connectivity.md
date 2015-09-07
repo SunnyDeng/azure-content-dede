@@ -1,22 +1,22 @@
 <properties 
    pageTitle="Verbinden mit SQL Server-Instanzen auf virtuellen Azure-Computern"
-   description="Dieses Thema beschreibt, wie eine Verbindung zu einer SQL Server-Instanz hergestellt wird, die auf einem virtuellen Computer in Azure ausgeführt wird. Die Szenarien unterscheiden sich abhängig von der Netzwerkkonfiguration und dem Clientstandort."
-   services="virtual-machines"
-   documentationCenter="na"
-   authors="rothja"
-   manager="jeffreyg"
-   editor="monicar" />
+	description="Dieses Thema beschreibt, wie eine Verbindung zu einer SQL Server-Instanz hergestellt wird, die auf einem virtuellen Computer in Azure ausgeführt wird. Die Szenarien unterscheiden sich abhängig von der Netzwerkkonfiguration und dem Clientstandort."
+	services="virtual-machines"
+	documentationCenter="na"
+	authors="rothja"
+	manager="jeffreyg"
+	editor="monicar"/>
 <tags 
    ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-windows-sql-server"
-   ms.workload="infrastructure-services"
-   ms.date="08/18/2015"
-   ms.author="jroth" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="08/18/2015"
+	ms.author="jroth"/>
 
 # Verbinden mit SQL Server-Instanzen auf virtuellen Azure-Computern
-
+ 
 ## Übersicht
 
 Das Konfigurieren von Verbindungen mit SQL Server bei der Ausführung auf einem virtuellen Azure-Computer unterscheidet sich nicht dramatisch von den erforderlichen Schritten für eine lokale SQL Server-Instanz. Sie müssen nach wie die Konfigurationsschritte für Firewall, Authentifizierung und Datenbankanmeldungen abarbeiten.
@@ -79,8 +79,8 @@ Anweisungen zur Bereitstellung für diese Konnektivitätsschritte finden Sie unt
 
 Wenn Sie außerdem AlwaysOn-Verfügbarkeitsgruppen zum Erzielen von hoher Verfügbarkeit und Notfallwiederherstellung einsetzen möchten, sollten Sie die Implementierung eines Listeners in Erwägung ziehen. Datenbankclients stellen dann Verbindungen mit dem Listener anstelle direkter Verbindungen mit den SQL Server-Instanzen her. Der Listener leitet Clients auf das primäre Replikat in der Verfügbarkeitsgruppe um. Weitere Informationen finden Sie unter [Konfigurieren eines ILB-Listeners für AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener.md).
 
-Es ist wichtig, alle bewährten Sicherheitsmethoden für SQL Server bei der Ausführung auf virtuellen Azure-Computern durchzuarbeiten. Weitere Informationen finden Sie unter [Sicherheitsüberlegungen für SQL Server auf virtuellen Azure-Computern](https://msdn.microsoft.com/library/azure/dn133147.aspx).
+Es ist wichtig, alle bewährten Sicherheitsmethoden für SQL Server bei der Ausführung auf virtuellen Azure-Computern durchzuarbeiten. Weitere Informationen finden Sie unter [Sicherheitsüberlegungen für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-security-considerations.md).
 
 Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites" 
-	description="Richten Sie Webtests in Application Insights ein. Erhalten Sie Benachrichtigungen, wenn eine Website nicht mehr zur Verfügung steht oder langsam reagiert." 
-	services="application-insights" 
-    documentationCenter=""
-	authors="alancameronwills" 
+<properties
+	pageTitle="Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites | Microsoft Azure"
+	description="Richten Sie Webtests in Application Insights ein. Erhalten Sie Benachrichtigungen, wenn eine Website nicht mehr zur Verfügung steht oder langsam reagiert."
+	services="application-insights"
+	documentationCenter=""
+	authors="alancameronwills"
 	manager="douge"/>
 
-<tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="07/08/2015" 
+<tags
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="07/08/2015"
 	ms.author="awills"/>
- 
+
 # Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites
 
 [AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
@@ -42,7 +42,7 @@ Melden Sie sich bei [Microsoft Azure](http://azure.com) an, wechseln Sie zum [Az
 
 ![Neu > Application Insights](./media/app-insights-monitor-web-app-availability/11-new-app.png)
 
-Das Blatt "Übersicht" für die neue Ressource wird geöffnet. Um dieses zu einem beliebigen Zeitpunkt im [Azure-Portal](https://portal.azure.com) zu finden, klicken Sie auf "Durchsuchen".
+Das Blatt "Übersicht" für die neue Ressource wird geöffnet. Dieses Blatt können Sie im [Azure-Portal](https://portal.azure.com) jederzeit suchen, indem Sie auf **Durchsuchen** klicken.
 
 ### <a name="setup"></a>2. Erstellen eines Webtests
 
@@ -50,7 +50,7 @@ Suchen Sie in der Application Insights-Ressource nach der Kachel "Verfügbarkeit
 
 ![Mindestens die URL der Website eintragen](./media/app-insights-monitor-web-app-availability/13-availability.png)
 
-- **Die URL** muss vom öffentlichen Internet aus sichtbar sein. Sie kann auch eine Abfragezeichenfolge enthalten – Sie können beispielsweise Ihre Datenbank ein wenig abfragen. Wenn die URL in eine Umleitung aufgelöst wird, folgen wir ihr bis zu 10 Umleitungen.
+- **Die URL** muss vom öffentlichen Internet aus sichtbar sein. Sie kann auch eine Abfragezeichenfolge enthalten, sodass Sie beispielsweise Ihre Datenbank abfragen können. Wenn die URL in eine Umleitung aufgelöst wird, folgen wir ihr bis zu 10 Umleitungen.
 
 - Wenn **Wiederholungen aktivieren** ausgewählt ist, wird der Test bei einem Fehler nach kurzer Zeit wiederholt. Nur wenn drei aufeinander folgende Versuche scheitern, wird ein Fehler gemeldet. Nachfolgende Tests werden dann im üblichen Intervall ausgeführt. Die Wiederholung wird bis zum nächsten Erfolg vorübergehend eingestellt. Diese Regel wird an jedem Teststandort unabhängig angewendet.
 
@@ -67,14 +67,14 @@ Suchen Sie in der Application Insights-Ressource nach der Kachel "Verfügbarkeit
 
 #### Testen weiterer URLs
 
-Fügen Sie weitere Tests hinzu. Neben dem Testen der Startseite können Sie sich auch vergewissern, dass die Datenbank läuft, indem Sie eine Such-URL testen.
+Fügen Sie weitere Tests hinzu. Neben dem Testen der Startseite können Sie auch sicherstellen, dass die Datenbank ausgeführt wird, indem Sie eine Such-URL testen.
 
 
 ### <a name="monitor"></a>3. Anzeigen von Verfügbarkeitsberichten
 
-Klicken Sie nach 1 bis 2 Minuten auf dem Blatt "Verfügbarkeit/Webtests" auf "Aktualisieren". (Die Aktualisierung erfolgt nicht automatisch.)
+Klicken Sie nach 1 bis 2 Minuten auf dem Blatt "Verfügbarkeit/Webtests" auf **Aktualisieren**. (Die Aktualisierung erfolgt nicht automatisch.)
 
-![Ergebnisübersicht im Startfenster](./media/app-insights-monitor-web-app-availability/14-availSummary.png)
+![Ergebnisübersicht im Startblatt](./media/app-insights-monitor-web-app-availability/14-availSummary.png)
 
 Klicken Sie auf einen beliebigen Balken im Übersichtsdiagramm oben, um eine detailliertere Ansicht des Zeitraums zu erhalten.
 
@@ -102,7 +102,7 @@ Die Ergebnisse für diesen Test werden angezeigt.
 
 ![Auf bestimmten Webtest klicken](./media/app-insights-monitor-web-app-availability/16-1test.png)
 
-Der Test wird von verschiedenen Standorten aus ausgeführt. Wählen Sie einen davon aus, bei dem die Ergebnisse bei weniger als 100 % liegen.
+Der Test wird von verschiedenen Standorten aus ausgeführt. Wählen Sie einen davon aus, bei dem die Ergebnisse bei unter 100 % liegen.
 
 ![Auf bestimmten Webtest klicken](./media/app-insights-monitor-web-app-availability/17-availViewDetails.png)
 
@@ -127,6 +127,8 @@ Sie können ein Szenario überwachen, das eine Sequenz mit mehreren URLs umfasst
 
 Um einen mehrstufigen Ttest zu erstellen, zeichnen das Szenario mit Visual Studio auf. Laden Sie dann die Aufzeichnung in Application Insights hoch. Application Insights wiederholt das Szenario in bestimmten Abständen und überprüft die Antworten.
 
+Beachten Sie, dass Sie keine codierten Funktionen in den Tests verwenden können: Die Szenarioschritte müssen als Skript in der Webtest-Datei enthalten sein.
+
 #### 1\. Aufzeichnen eines Szenarios
 
 Verwenden Sie Visual Studio Ultimate, um eine Websitzung aufzuzeichnen.
@@ -150,9 +152,9 @@ Verwenden Sie Visual Studio Ultimate, um eine Websitzung aufzuzeichnen.
     Das Webtest-Ausführungsprogramm öffnet einen Webbrowser und wiederholt die aufgezeichneten Aktionen. Stellen Sie sicher, dass der Test wie erwartet funktioniert.
 
     ![Öffnen Sie in Visual Studio die WEBTEST-Datei, und klicken Sie auf "Ausführen".](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-run.png)
- 
 
-(Fügen Sie keinen Schleifen in den Webtestcode ein.)
+
+(Fügen Sie keine Schleifen in den Webtest ein.)
 
 #### 2\. Hochladen des Webtests in Application Insights
 
@@ -169,6 +171,8 @@ Zeigen Sie die Testergebnisse und alle Fehler auf die gleiche Weise wie für die
 Eine häufige Ursache für Fehler ist, dass der Test zu lange ausgeführt wird. Er darf nicht länger als zwei Minuten ausgeführt werden.
 
 Denken Sie daran, dass alle Ressourcen einer Seite richtig geladen werden müssen, damit der Test erfolgreich ist. Dazu gehören auch Skripts, Stylesheets, Bilder usw.
+
+Beachten Sie, dass der Webtest vollständig in der Webtest-Datei enthalten sein muss: Sie können keine codierten Funktionen im Test verwenden.
 
 
 ### Einfügen von Zeiten und Zufallszahlen in einen mehrstufigen Test
@@ -195,7 +199,7 @@ Webtest-Plug-Ins bieten dazu die entsprechende Möglichkeit.
 
     ![Verwenden Sie im Testparameter "{{Plug-In-Name}}".](./media/app-insights-monitor-web-app-availability/appinsights-72webtest-plugin-name.png)
 
-Laden Sie jetzt den Tests in das Portal hoch. Bei jeder Ausführung des Tests werden die dynamischen Werte verwendet.
+Laden Sie nun den Test in das Portal hoch. Bei jeder Ausführung des Tests werden die dynamischen Werte verwendet.
 
 ## <a name="edit"></a> Bearbeiten oder Deaktivieren eines Tests
 
@@ -207,13 +211,14 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
 ## Fragen? Probleme?
 
-* Ich erhalte eine Fehlermeldung "ungültige Zeichen", wenn ich 
 
-* **Gibt es einen Unterschied zwischen "Webtests" und "Verfügbarkeit"?
+* *Gibt es einen Unterschied zwischen "Webtests" und "Verfügbarkeit"?*
 
     Wir verwenden die beiden Begriffe synonym.
 
+* *Kann ich Code aus meinem Webtest aufrufen?*
 
+    Nein. Die Schritte des Tests müssen in der Webtest-Datei enthalten sein.
 
 ## <a name="video"></a>Video
 
@@ -235,6 +240,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 [qna]: app-insights-troubleshoot-faq.md
 [start]: app-insights-get-started.md
 
- 
-
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

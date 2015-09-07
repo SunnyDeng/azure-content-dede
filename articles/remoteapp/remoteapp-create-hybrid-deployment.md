@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Erstellen einer Hybridsammlung für Azure RemoteApp" 
-	description="Erfahren Sie, wie Sie eine Bereitstellung von RemoteApp erstellen, die eine Verbindung mit Ihrem internen Netzwerk herstellt." 
-	services="remoteapp" 
-	documentationCenter="" 
-	authors="lizap" 
-	manager="mbaldwin" 
+	pageTitle="Erstellen einer Hybridsammlung für Azure RemoteApp"
+	description="Erfahren Sie, wie Sie eine Bereitstellung von RemoteApp erstellen, die eine Verbindung mit Ihrem internen Netzwerk herstellt."
+	services="remoteapp"
+	documentationCenter=""
+	authors="lizap"
+	manager="mbaldwin"
 	editor=""/>
 
 <tags 
-	ms.service="remoteapp" 
-	ms.workload="compute" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/12/2015" 
+	ms.service="remoteapp"
+	ms.workload="compute"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/12/2015"
 	ms.author="elizapo"/>
 
 # Erstellen einer Hybridsammlung für Azure RemoteApp
@@ -53,9 +53,9 @@ Sie können eine RemoteApp-Hybridsammlung für ein vorhandenes virtuelles Azure-
 
 ### Erstellen eines Azure-VNET und Verknüpfen mit der Active Directory-Bereitstellung
 
-Erstellen Sie zunächst ein [virtuelles Netzwerk](https://msdn.microsoft.com/library/azure/dn631643.aspx). Dies erfolgt auf der Registerkarte **Netzwerk** im Azure-Verwaltungsportal. Sie müssen Ihr virtuelles Netzwerk mit der Active Directory-Bereitstellung verbinden, die mit Ihrem Azure Active Directory-Mandanten synchronisiert ist.
+Erstellen Sie zunächst ein [virtuelles Netzwerk](../virtual-network/virtual-networks-create-vnet.md). Dies erfolgt auf der Registerkarte **Netzwerk** im Azure-Verwaltungsportal. Sie müssen Ihr virtuelles Netzwerk mit der Active Directory-Bereitstellung verbinden, die mit Ihrem Azure Active Directory-Mandanten synchronisiert ist.
 
-Weitere Informationen finden Sie unter [Informationen zu virtuellen Netzwerkeinstellungen im Verwaltungsportal](https://msdn.microsoft.com/library/azure/jj156074.aspx).
+Weitere Informationen finden Sie unter [Informationen zu virtuellen Netzwerkeinstellungen im Verwaltungsportal](../virtual-network/virtual-networks-settings.md).
 
 ### Sicherstellen, dass das virtuelle Netzwerk für RemoteApp bereit ist
 Bevor Sie Ihre RemoteApp-Sammlung erstellen, müssen Sie sicherstellen, dass Ihr neues virtuelles Netzwerk bereit ist. Sie können dies wie folgt überprüfen:
@@ -136,4 +136,4 @@ Das war alles: Sie haben die RemoteApp-Hybridsammlung nun erfolgreich erstellt u
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

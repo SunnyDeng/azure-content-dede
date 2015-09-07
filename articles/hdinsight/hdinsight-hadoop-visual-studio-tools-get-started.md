@@ -97,7 +97,7 @@ Es ist zeitaufwändig, das Hive-Skript mit einem HDInsight-Cluster zu testen. Es
 
 Mithilfe der HDInsight-Tools für Visual Studio können Benutzer auch anzeigen, was sich innerhalb des Hive-Auftrags befindet, indem sie die YARN-Protokolle bestimmter Hive-Aufträge sammeln und anzeigen.
 
-###Anzeigen von **hivesampletable**
+### Anzeigen von **hivesampletable**
 HDInsight-Cluster enthalten eine Hive-Beispieltabelle mit dem Namen *hivesampletable*. Mithilfe dieser Tabelle zeigen wir Ihnen, wie Hive-Tabellen aufgelistet, die Tabellenschemas angezeigt und die Zeilen in der Hive-Tabelle aufgelistet werden.
 
 
@@ -113,7 +113,7 @@ HDInsight-Cluster enthalten eine Hive-Beispieltabelle mit dem Namen *hivesamplet
 
 	![Hadoop-Tools: HDinsight Hive Visual Studio-Schemaabfrage][6]
 
-###Erstellen von Hive-Tabellen
+### Erstellen von Hive-Tabellen
 
 Zum Erstellen einer Hive-Tabelle können Sie die Benutzeroberfläche oder Hive-Abfragen nutzen. Informationen zum Verwenden von Hive-Abfragen finden Sie unter [Ausführen von Hive-Abfragen](#run.queries).
 
@@ -125,7 +125,7 @@ Zum Erstellen einer Hive-Tabelle können Sie die Benutzeroberfläche oder Hive-A
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio-Tools – Hive-Tabelle erstellen][7]
 
-###<a name="run.queries"></a>Überprüfen und Ausführen von Hive-Abfragen
+### <a name="run.queries"></a>Überprüfen und Ausführen von Hive-Abfragen
 Es gibt zwei Möglichkeiten zum Erstellen und Ausführen von Hive-Abfragen:
 
 - Erstellen von Ad-hoc-Abfragen
@@ -168,7 +168,7 @@ Es gibt zwei Möglichkeiten zum Erstellen und Ausführen von Hive-Abfragen:
 4. Um das Hive-Skript zu überprüfen, können Sie entweder auf die Schaltfläche **Skript überprüfen** klicken oder im Hive-Editor mit der rechten Maustaste auf das Skript klicken und anschließend im Kontextmenü die Option **Skript überprüfen** auswählen.
 
 
-###Anzeigen von Hive-Aufträgen
+### Anzeigen von Hive-Aufträgen
 Sie können Auftragsabfragen, die Auftragsausgabe, Auftragsprotokolle und YARN-Protokolle für Hive-Aufträge anzeigen. Weitere Informationen finden Sie im vorherigen Screenshot.
 
 Die neueste Version des Tools ermöglicht es Ihnen zu sehen, was sich innerhalb der Hive-Aufträge befindet, indem Sie die YARN-Protokolle sammeln und anzeigen. Ein YARN-Protokoll kann Ihnen bei der Untersuchung von Leistungsproblemen helfen. Weitere Informationen zur Vorgehensweise von HDInsight beim Sammeln von YARN-Protokollen finden Sie unter [Programmgesteuerter Zugriff auf HDInsight-Anwendungsprotokolle][hdinsight.access.application.logs].
@@ -183,7 +183,7 @@ Die neueste Version des Tools ermöglicht es Ihnen zu sehen, was sich innerhalb 
 
 ### Leistungsdiagramm für Tez Hive-Auftrag
 
-In den HDInsight-Tools für Visual Studio wird das Anzeigen von Leistungsdiagrammen für die Hive-Aufträge unterstützt, die vom Tez-Ausführungsmodul ausgeführt werden. Informationen zum Aktivieren von Tez finden Sie unter [Verwenden von Hive in HDInsight][hdinsight.hive]. Nachdem Sie in Visual Studio einen Hive-Job gesendet haben, wird das Diagramm in Visual Studio angezeigt, wenn der Auftrag abgeschlossen ist. Sie müssen unter Umständen auf die Aktualisierungsschaltfläche klicken, um den aktuellen Auftragsstatus zu erhalten.
+In den HDInsight-Tools für Visual Studio wird das Anzeigen von Leistungsdiagrammen für die Hive-Aufträge unterstützt, die vom Tez-Ausführungsmodul ausgeführt werden. Informationen zum Aktivieren von Tez finden Sie unter [Verwenden von Hive in HDInsight][hdinsight.hive]. Nachdem Sie in Visual Studio einen Hive-Job gesendet haben, wird das Diagramm in Visual Studio angezeigt, wenn der Auftrag abgeschlossen ist. Sie müssen unter Umständen auf die Schaltfläche **Aktualisieren** klicken, um den aktuellen Auftragsstatus zu erhalten.
 
 > [AZURE.NOTE]Dieses Feature ist nur für höhere HDInsight-Clusterversionen als 3.2.4.593 verfügbar und funktioniert nur für abgeschlossene Aufträge. Dies funktioniert sowohl für Windows-basierte als auch für Linux-basierte Cluster.
 
@@ -236,4 +236,4 @@ In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio mithilfe des Hado
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

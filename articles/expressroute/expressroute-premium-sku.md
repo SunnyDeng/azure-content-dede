@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Aktivieren oder Deaktivieren des ExpressRoute Premium-Add-Ons | Microsoft Azure"
-   description="Aktivieren oder Deaktivieren des ExpressRoute Premium-Add-Ons für eine ExpressRoute-Verbindung Mit ExpressRoute Premium können Sie Ihrer ExpressRoute-Verbindung bis zu 10.000 Routen für öffentliches und privates Peering und bis zu 10 virtuelle Netzwerke hinzufügen. Sie können auch ein virtuelles Netzwerk einer Region mit einer ExpressRoute-Verbindung einer anderen Region verknüpfen."
-   services="expressroute"
-   documentationCenter="na"
-   authors="cherylmc"
-   manager="jdial"
-   editor="tysonn" />
+	description="Aktivieren oder Deaktivieren des ExpressRoute Premium-Add-Ons für eine ExpressRoute-Verbindung Mit ExpressRoute Premium können Sie Ihrer ExpressRoute-Verbindung bis zu 10.000 Routen für öffentliches und privates Peering und bis zu 10 virtuelle Netzwerke hinzufügen. Sie können auch ein virtuelles Netzwerk einer Region mit einer ExpressRoute-Verbindung einer anderen Region verknüpfen."
+	services="expressroute"
+	documentationCenter="na"
+	authors="cherylmc"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="06/02/2015"
-   ms.author="cherylmc" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/25/2015"
+	ms.author="cherylmc"/>
 
 # Konfigurieren des ExpressRoute Premium-Add-Ons für Ihre ExpressRoute-Verbindung
 
@@ -172,9 +172,9 @@ Für eine ExpressRoute-Verbindung mit aktiviertem Premium-Add-On kann das Add-On
 		Sku                              : Premium
 		Status                           : Standard
 
-	Das ExpressRoute Premium-Add-On ist nun für Ihre Verbindung deaktiviert.
+	Die Premium-Add-On ist jetzt für Ihre Verbindung deaktiviert.
 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

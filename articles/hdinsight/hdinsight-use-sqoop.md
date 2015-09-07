@@ -67,7 +67,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 	> [AZURE.NOTE]HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden.
 
-	* Weitere Informationen zur Erstellung und Konfiguration von virtuellen Netzwerken finden Sie unter [Konfigurationsaufgaben für virtuelle Netzwerke](http://msdn.microsoft.com/library/azure/jj156206.aspx).
+	* Weitere Informationen zur Erstellung und Konfiguration von virtuellen Netzwerken finden Sie unter [Konfigurationsaufgaben für virtuelle Netzwerke](../services/virtual-machines/).
 
 		* Wenn Sie SQL Server in Ihrem Rechenzentrum verwenden, müssen Sie das virtuelle Netzwerk entweder als *Standort-zu-Standort* oder als *Punkt-zu-Standort* konfigurieren.
 
@@ -131,9 +131,9 @@ Informationen zum Hinzufügen zusätzlicher Speicherkonten finden Sie unter [Ber
 
 	wasb[s]://<ContainerName>@<StorageAccountName>.blob.core.windows.net/<path>/<filename>
 
-> [AZURE.NOTE]In der HDInsight-Clusterversion 3.0 wird nur die \**wasb://*-Syntax unterstützt. Die ältere \**asv://*-Syntax wird in HDInsight 2.1- und 1.6-Clustern unterstützt, nicht aber in HDInsight 3.0-Clustern.
+> [AZURE.NOTE]In der HDInsight-Clusterversion 3.0 wird nur die **wasb://*-Syntax unterstützt. Die ältere **asv://*-Syntax wird in HDInsight 2.1- und 1.6-Clustern unterstützt, nicht aber in HDInsight 3.0-Clustern.
 
-> [AZURE.NOTE]Der \**wasb://*-Pfad ist ein virtueller Pfad. Weitere Informationen finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight][hdinsight-storage].
+> [AZURE.NOTE]Der **wasb://*-Pfad ist ein virtueller Pfad. Weitere Informationen finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight][hdinsight-storage].
 
 Auf eine im Standarddateisystem-Blob gespeicherte Datei kann in HDInsight über jeden der folgenden URIs zugegriffen werden (in diesem Beispiel mit der Datei sample.log):
 
@@ -224,7 +224,7 @@ Sie werden zwei Tabellen in der Azure SQL-Datenbank bzw. im SQL Server erstellen
 		Write-Host "Done" -ForegroundColor Green
 
 5. Klicken Sie auf **Skript ausführen**, oder drücken Sie **F5**, um das Skript auszuführen.
-6. Untersuchen Sie die Tabellen und die gruppierten Indizes mithilfe des [Azure-Portals][azure-management-portal].
+6. Untersuchen Sie die Tabellen und die gruppierten Indizes mithilfe des [Vorschauportals][azure-management-portal].
 
 **Für SQL Server**
 
@@ -347,7 +347,7 @@ Dies ist kein Problem für andere Beispiele, die diese Daten verwenden. Wir müs
 		$destBlob.UploadFromStream($memStream)
 
 5. Klicken Sie auf **Skript ausführen**, oder drücken Sie **F5**, um das Skript auszuführen.
-6. Zur Untersuchung der geänderten Datendatei können Sie das Azure-Portal, ein Azure-Speicher-Explorer-Tool oder Azure Powershell verwenden. In [Erste Schritte mit HDInsight][hdinsight-get-started] finden Sie einen Beispielcode für die Verwendung von Azure PowerShell zum Herunterladen einer Datei und zum Anzeigen von deren Inhalt.
+6. Zur Untersuchung der geänderten Datendatei können Sie das Vorschauportal, ein Azure-Speicher-Explorer-Tool oder Azure Powershell verwenden. In [Erste Schritte mit HDInsight][hdinsight-get-started] finden Sie einen Beispielcode für die Verwendung von Azure PowerShell zum Herunterladen einer Datei und zum Anzeigen von deren Inhalt.
 
 
 ##Verwenden von PowerShell zur Ausführung von Sqoop-Exporten
@@ -412,7 +412,7 @@ In diesem Abschnitt verwenden Sie Azure PowerShell zur Ausführung des Sqoop-Exp
 	Bitte beachten Sie, dass das Trennzeichen **\\0x20** (Leerzeichen) ist. Das Trennzeichen ist im Azure PowerShell-Skript in der Datei sample.log definiert. Weitere Informationen über **-m 1** finden Sie in der [Sqoop-Benutzeranleitung][sqoop-user-guide-1.4.4].
 
 5. Klicken Sie auf **Skript ausführen**, oder drücken Sie **F5**, um das Skript auszuführen.
-6. Untersuchen Sie die exportierten Daten im [Azure-Portal][azure-management-portal].
+6. Untersuchen Sie die exportierten Daten mit dem [Vorschauportal][azure-management-portal].
 
 **Exportieren der Hive-Tabelle hivesampletable**
 
@@ -463,7 +463,7 @@ In diesem Abschnitt verwenden Sie Azure PowerShell zur Ausführung des Sqoop-Exp
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $sqoopJob.JobId -StandardOutput
 
 5. Klicken Sie auf **Skript ausführen**, oder drücken Sie **F5**, um das Skript auszuführen.
-6. Untersuchen Sie die exportierten Daten im [Azure-Portal][azure-management-portal].
+6. Untersuchen Sie die exportierten Daten mit dem [Vorschauportal][azure-management-portal].
 
 
 
@@ -615,7 +615,7 @@ In diesem Abschnitt importieren Sie die log4j-Protokolle (die Sie in die Azure S
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $sqoopJob.JobId -StandardOutput
 
 5. Klicken Sie auf **Skript ausführen**, oder drücken Sie **F5**, um das Skript auszuführen.
-6. Zur Untersuchung der geänderten Datendatei können Sie das Azure-Portal, ein Azure-Speicher-Explorer-Tool oder Azure Powershell verwenden. In [Erste Schritte mit HDInsight][hdinsight-get-started] finden Sie einen Beispielcode für die Verwendung von Azure PowerShell zum Herunterladen einer Datei und zum Anzeigen von deren Inhalt.
+6. Zur Untersuchung der geänderten Datendatei können Sie das Vorschauportal, ein Azure-Speicher-Explorer-Tool oder Azure Powershell verwenden. In [Erste Schritte mit HDInsight][hdinsight-get-started] finden Sie einen Beispielcode für die Verwendung von Azure PowerShell zum Herunterladen einer Datei und zum Anzeigen von deren Inhalt.
 
 ##Nächste Schritte
 
@@ -648,4 +648,4 @@ Nun wissen Sie, wie Sqoop verwendet haben. Weitere Informationen finden Sie unte
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

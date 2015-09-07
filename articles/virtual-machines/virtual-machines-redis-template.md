@@ -487,7 +487,7 @@ Wenn Sie die Größe der Redis-Clusterbereitstellung anpassen möchten, können 
 
 Hinweis: Die Eigenschaften `totalMemberCountExcludingLast` und `totalMemberCount` sind erforderlich, da die Vorlagensprache derzeit keine Math-Vorgänge umfasst.
 
-Weitere Informationen zur Vorlagensprache finden Sie im MSDN unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
+Weitere Informationen zur Vorlagensprache finden Sie im MSDN unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
 ### Abschnitt "Ressourcen"
 
@@ -664,6 +664,6 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 - Erstellen Sie für identische Mitglieder einer Ressourcengruppe (Knoten in einem Cluster usw.) spezielle Vorlagen, die die Ressourcenschleife nutzen, um für mehrere Instanzen eindeutige Eigenschaften bereitzustellen.
 - Für alle Nachbereitstellungsaufgaben (Produktinstallation, Konfigurationen usw.) nutzen Sie die Bereitstellung von Skripterweiterungen, und erstellen Sie Skripts, die für die einzelnen Technologien spezifisch sind.
 
-Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
+Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

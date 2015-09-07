@@ -1,19 +1,19 @@
 <properties
- pageTitle="Konzepte, Terminologie und Entitätshierarchie für Scheduler"
- description=""
- services="scheduler"
- documentationCenter=".NET"
- authors="krisragh"
- manager="dwrede"
- editor=""/>
+ pageTitle="Konzepte, Terminologie und Entitäten für Scheduler | Microsoft Azure"
+	description="Konzepte, Terminologie und Entitätshierarchie für Azure Scheduler, einschließlich Aufträgen und Auftragssammlungen. Zeigt ein umfangreiches Beispiel für einen geplanten Auftrag."
+	services="scheduler"
+	documentationCenter=".NET"
+	authors="krisragh"
+	manager="dwrede"
+	editor=""/>
 <tags
  ms.service="scheduler"
- ms.workload="infrastructure-services"
- ms.tgt_pltfrm="na"
- ms.devlang="dotnet"
- ms.topic="get-started-article" 
- ms.date="08/04/2015"
- ms.author="krisragh"/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="get-started-article"
+	ms.date="08/04/2015"
+	ms.author="krisragh"/>
 
 # Konzepte, Terminologie und Entitätshierarchie für Scheduler
 
@@ -24,7 +24,7 @@ Die folgende Tabelle beschreibt die wichtigsten Ressourcen, die von der Schedule
 |Ressource | Beschreibung |
 |---|---|
 |**Clouddienst**|Ein Clouddienst stellt im Prinzip eine Anwendung dar. Ein Abonnement kann mehrere Clouddienste enthalten.|
-|**Auftragssammlung**|Eine Auftragssammlung enthält eine Gruppe von Aufträgen und dient zum Verwalten von Einstellungen, Kontingenten und Drosselungen für die Aufträge in der Sammlung. Eine Auftragssammlung wird von einem Abonnementbesitzer erstellt und fasst Aufträge auf der Grundlage von Verwendungs- oder Anwendungsgrenzen zusammen. Sie ist auf eine einzelne Region beschränkt. Außerdem ermöglicht sie die Erzwingung von Kontingenten (wie etwa „MaxJobs“ und „MaxRecurrence“), um die Verwendung aller Aufträge in der Sammlung zu beschränken.|
+|**Auftragssammlung**|Eine Auftragssammlung enthält eine Gruppe von Aufträgen und dient zum Verwalten von Einstellungen, Kontingenten und Drosselungen für die Aufträge in der Sammlung. Eine Auftragssammlung wird von einem Abonnementbesitzer erstellt und fasst Aufträge auf der Grundlage von Verwendungs- oder Anwendungsgrenzen zusammen. Sie ist auf eine einzelne Region beschränkt. Außerdem ermöglicht sie die Erzwingung von Kontingenten, um die Verwendung aller Aufträge in der Sammlung zu beschränken. Dazu gehören „MaxJobs“ und „MaxRecurrence“.|
 |**Auftrag**|Ein Auftrag definiert eine einzelne wiederkehrende Aktion mit einfachen oder komplexen Ausführungsstrategien. Zu diesen Aktionen zählen beispielsweise HTTP-Anforderungen oder Anforderungen für die Speicherwarteschlange.|
 |**Auftragsverlauf**|Ein Auftragsverlauf liefert Details zur Ausführung eines Auftrags. Er gibt Aufschluss darüber, ob die Ausführung erfolgreich war, und enthält Details zur Antwort.|
 
@@ -47,17 +47,17 @@ Es gibt zwei Arten von Aufträgen: HTTP-Aufträge (einschließlich HTTPS-Aufträ
 
 Ein geplanter Auftrag setzt sich grundsätzlich aus mehreren Komponenten zusammen:
 
-1.  Die Aktion, die ausgeführt werden soll, wenn der Zeitgeber die Aktion auslöst.  
+- Die Aktion, die ausgeführt werden soll, wenn der Zeitgeber die Aktion auslöst.  
 
-2.  (Optional) Die Zeit, zu der der Auftrag ausgeführt werden soll.
+- (Optional) Die Zeit, zu der der Auftrag ausgeführt werden soll.
 
-3.  (Optional) Die Angabe, wann und wie oft den Auftrag wiederholt werden soll.
+- (Optional) Die Angabe, wann und wie oft den Auftrag wiederholt werden soll.
 
-4.  (Optional) Eine Aktion, die ausgelöst werden soll, wenn bei der primären Aktion ein Fehler auftritt.
+- (Optional) Eine Aktion, die ausgelöst werden soll, wenn bei der primären Aktion ein Fehler auftritt.
 
 Intern enthält ein geplanter Auftrag auch vom System bereitgestellte Daten wie etwa die Zeit für die nächste geplante Ausführung.
 
-Im Anschluss sehen Sie ein umfassendes Beispiel für einen Scheduler-Auftrag. Ausführliche Informationen finden Sie in den folgenden Abschnitten.
+Der folgende Code bietet ein umfangreiches Beispiel für einen geplanten Auftrag. Ausführliche Informationen finden Sie in den folgenden Abschnitten.
 
 	{
 		"startTime": "2012-08-04T00:00Z",               // optional
@@ -109,29 +109,29 @@ Im Anschluss sehen Sie ein umfassendes Beispiel für einen Scheduler-Auftrag. Au
 		},
 	}
 
-Wie im obigen Scheduler-Beispielauftrag zu sehen, besteht eine Auftragsdefinition aus mehreren Komponenten:
+Wie im obigen geplanten Beispielauftrag zu sehen, besteht eine Auftragsdefinition aus mehreren Komponenten:
 
-1.  Startzeit („startTime“)  
+- Startzeit („startTime“)  
 
-2.  Aktion („action“), einschließlich Fehleraktion („errorAction“)
+- Aktion („action“), einschließlich Fehleraktion („errorAction“)
 
-3.  Wiederholung („recurrence“)
+- Wiederholung („recurrence“)
 
-4.  Zustand („State“)
+- Zustand („State“)
 
-5.  Status („status“)
+- Status („status“)
 
-6.  Wiederholungsrichtlinie („retryPolicy“)
+- Wiederholungsrichtlinie („retryPolicy“)
 
 Sehen wir uns die einzelnen Elemente im Detail an:
 
 ## startTime
 
-"startTime" ist die Startzeit und ermöglicht dem Aufrufer die Angabe eines Zeitzonenoffsets bei der Übertragung im [ISO-8601-Format](http://en.wikipedia.org/wiki/ISO_8601).
+"StartTime" ist die Startzeit und ermöglicht dem Aufrufer die Angabe eines Zeitzonenoffsets bei der Übertragung im [ISO-8601-Format](http://en.wikipedia.org/wiki/ISO_8601).
 
 ## action und errorAction
 
-„action“ ist die Aktion, die bei jedem Vorkommen aufgerufen wird, und beschreibt eine Art von Dienstaufruf. Die Aktion wird gemäß dem angegebenen Zeitplan ausgeführt. Derzeit werden von Scheduler HTTP-Aktionen und Speicherwarteschlangenaktionen unterstützt.
+„action“ ist die Aktion, die bei jedem Vorkommen aufgerufen wird, und beschreibt eine Art von Dienstaufruf. Die Aktion wird gemäß dem angegebenen Zeitplan ausgeführt. Scheduler unterstützt HTTP-Aktionen und Speicherwarteschlangenaktionen.
 
 Die Aktion im obigen Beispiel ist eine HTTP-Aktion. Im folgenden Beispiel wird eine Speicherwarteschlangenaktion verwendet:
 
@@ -153,15 +153,15 @@ Die Aktion im obigen Beispiel ist eine HTTP-Aktion. Im folgenden Beispiel wird e
 
 Die Wiederholung besteht aus mehreren Teilen:
 
-1.  Häufigkeit: in Minuten, Stunden, Tagen, Wochen, Monaten oder Jahren  
+- Häufigkeit: in Minuten, Stunden, Tagen, Wochen, Monaten oder Jahren  
 
-2.  Intervall: Intervall mit der angegebenen Häufigkeit für die Wiederholung
+- Intervall: Intervall mit der angegebenen Häufigkeit für die Wiederholung
 
-3.  Vorgegebener Zeitplan: Angabe in Minuten, Stunden, Wochentagen, Monaten und Monatstagen für die Wiederholung
+- Vorgegebener Zeitplan: Angabe in Minuten, Stunden, Wochentagen, Monaten und Monatstagen für die Wiederholung
 
-4.  Anzahl: Anzahl der Vorkommen
+- Anzahl: Anzahl der Vorkommen
 
-5.  Endzeit: Zeitangabe, nach der keine Aufträge mehr ausgeführt werden
+- Endzeit: Zeitangabe, nach der keine Aufträge mehr ausgeführt werden
 
 Ein Auftrag wird wiederholt, wenn in der JSON-Definition ein Wiederholungsobjekt angegeben ist. Bei gleichzeitiger Angabe einer Anzahl und einer Endzeit gilt die zuerst auftretende Abschlussregel.
 
@@ -187,25 +187,24 @@ Für eine Wiederholungsrichtlinie können zwei zusätzliche Einstellungen angege
 
 Das Wiederholungsintervall, das durch das Objekt **retryInterval** angegeben wird, ist das Intervall zwischen den Wiederholungen. Es ist standardmäßig auf den Mindestwert von einer Minute festgelegt. Der maximal zulässige Wert beträgt 18 Monate. Es wird im ISO-8601-Format definiert. Gleichermaßen wird der Wert für die Anzahl von Wiederholungen mit dem Objekt **retryCount** angegeben; es bestimmt, wie oft versucht wird, einen Vorgang zu wiederholen. Der Standardwert ist 5, der maximal zulässige Wert ist 20. Die Angabe von **retryInterval** und **retryCount** ist jeweils optional. Wenn **retryType** auf **fixed** festgelegt ist und keine expliziten Werte angegeben werden, werden die Standardwerte verwendet.
 
-## Siehe auch
+## Weitere Informationen
 
  [Was ist Azure Scheduler?](scheduler-intro.md)
 
- [Get Started Using Scheduler in the Management Portal](scheduler-get-started-portal.md) (in englischer Sprache)
+ [Erste Schritte mit Azure Scheduler im Azure-Portal](scheduler-get-started-portal.md)
 
- [Plans and Billing in Azure Scheduler](scheduler-plans-billing.md) (in englischer Sprache)
+ [Pläne und Abrechnung in Azure Scheduler](scheduler-plans-billing.md)
 
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](scheduler-advanced-complexity.md) (in englischer Sprache)
+ [Erstellen komplexer Zeitpläne und erweiterter Serien mit Azure Scheduler](scheduler-advanced-complexity.md)
 
- [Zeitplanungsmodul-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+ [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
 
- [Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
+ [Azure Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
 
- [Scheduler High-Availability and Reliability](scheduler-high-availability-reliability.md) (in englischer Sprache)
+ [Hochverfügbarkeit und Zuverlässigkeit von Azure Scheduler](scheduler-high-availability-reliability.md)
 
- [Scheduler Limits, Defaults, and Error Codes](scheduler-limits-defaults-errors.md) (in englischer Sprache)
+ [Einschränkungen, Standardwerte und Fehlercodes für Azure Scheduler](scheduler-limits-defaults-errors.md)
 
- [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
- 
+ [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Versionshinweise zu Media Services" 
-	description="Versionshinweise zu Media Services" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
+	pageTitle="Versionshinweise zu Media Services"
+	description="Versionshinweise zu Media Services"
+	services="media-services"
+	documentationCenter=""
+	authors="Juliako"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="media" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="08/11/2015"  
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="media"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/25/2015"
 	ms.author="juliako"/>
 
 
@@ -25,6 +25,7 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 
 - [Aktuell bekannte Probleme](#issues)
 - [REST-API-Versionsverlauf](#rest_version_history)
+- [Version August 2015](#august_changes_15)
 - [Version Juli 2015](#july_changes_15)
 - [Version Juni 2015](#june_changes_15)
 - [Version Mai 2015](#may_changes_15)
@@ -72,12 +73,21 @@ Media Services-Medienobjekte im SDK können nicht serialisiert werden und funkti
 
 Informationen zum Versionsverlauf der Media Services-REST-API finden Sie unter [Azure Media Services – REST-API-Referenz].
 
+##<a id="august_changes_15"></a>Version August 2015
+
+- Azure Media Services-SDK für Java Version 0.8.0 und neue Beispiele sind jetzt verfügbar. Weitere Informationen finden Sie unter:
+
+	- [Blogbeitrag](http://southworks.com/blog/2015/08/25/microsoft-azure-media-services-sdk-for-java-v0-8-0-released-and-new-samples-available/)
+	- [Repository für Java-Beispiele](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
+- Azure Media Player-Update mit Multistream-Audiounterstützung. Weitere Informationen finden Sie unter:
+	- [Blogbeitrag](https://azure.microsoft.com/blog/2015/08/13/azure-media-player-update-with-multi-audio-stream-support/)
+
 ##<a id="july_changes_15"></a>Version Juli 2015
 
-Ankündigung der allgemeinen Verfügbarkeit von Media Encoder Standard. Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/).
+- Ankündigung der allgemeinen Verfügbarkeit von Media Encoder Standard. Weitere Informationen finden Sie in [diesem Blogbeitrag](http://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/).
 
-Media Encoder Standard verwendet die in [diesem](http://go.microsoft.com/fwlink/?LinkId=618336) Abschnitt beschriebenen Voreinstellungen. Beachten Sie, dass Sie beim Verwenden einer Voreinstellung für 4k-Codierungen den reservierten Einheitstyp **Premium** erhalten sollten. Weitere Informationen finden Sie unter [Skalieren der Codierung](media-services-portal-encoding-units).
-
+	Media Encoder Standard verwendet die in [diesem](http://go.microsoft.com/fwlink/?LinkId=618336) Abschnitt beschriebenen Voreinstellungen. Beachten Sie, dass Sie beim Verwenden einer Voreinstellung für 4k-Codierungen den reservierten Einheitstyp **Premium** erhalten sollten. Weitere Informationen finden Sie unter [Skalieren der Codierung](media-services-portal-encoding-units).
+- Liveuntertitel in Echtzeit mit Azure Media Services und Player. Weitere Informationen finden Sie in [diesem Blogbeitrag](https://azure.microsoft.com/blog/2015/07/08/live-real-time-captions-with-azure-media-services-and-player/).
 
 ###Media Services .NET SDK-Updates
 
@@ -563,4 +573,4 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

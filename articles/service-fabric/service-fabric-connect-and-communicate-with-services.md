@@ -1,20 +1,20 @@
 <properties
    pageTitle="Microsoft Azure Service Fabric – Kommunizieren mit Diensten"
-   description="Dieser Artikel beschreibt, wie Sie eine Verbindung mit Diensten in Service Fabric-Anwendungen herstellen und die Kommunikation mit den Diensten einrichten."
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="kunaldsingh"
-   manager="timlt"
-   editor=""/>
+	description="Dieser Artikel beschreibt, wie Sie eine Verbindung mit Diensten in Service Fabric-Anwendungen herstellen und die Kommunikation mit den Diensten einrichten."
+	services="service-fabric"
+	documentationCenter=".net"
+	authors="kunaldsingh"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="04/29/2015"
-   ms.author="kunalds"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/21/2015"
+	ms.author="kunalds"/>
 
 
 # Kommunizieren mit Diensten
@@ -56,6 +56,5 @@ Alle Service Fabric-Kommunikations-APIs sind derzeit nur in C# verfügbar. Wenn 
 * [Reliable Services-Kommunikationsmodell](service-fabric-reliable-services-communication.md)
 * [Erste Schritte mit Web-API-Diensten von Microsoft Azure Service Fabric mit selbstgehostetem OWIN-Server](service-fabric-reliable-services-communication-webapi.md)
 * [WCF-basierter Kommunikationsstapel für Reliable Services](service-fabric-reliable-services-communication-wcf.md)
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

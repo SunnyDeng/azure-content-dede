@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Auswerten und Testen von Azure Search-REST-APIs mithilfe von Fiddler"
+	pageTitle="Auswerten und Testen von Azure Search-REST-APIs mithilfe von Fiddler | Microsoft Azure"
 	description="Verwenden Sie Fiddler zur codefreien Überprüfung der Verfügbarkeit von Azure Search sowie zum Testen der REST-APIs."
 	services="search"
 	documentationCenter=""
@@ -26,20 +26,20 @@ Für diese Schritte benötigen Sie einen Azure Search-Dienst und `api-key`. Anw
 
 ## Erstellen eines Index
 
-1. Starten Sie Fiddler. Deaktivieren Sie die Option **Capture Traffic** im Menü "File", um zusätzliche HTTP-Aktivität auszublenden, die nicht zur aktuellen Aufgabe gehört.
+1. Starten Sie Fiddler. Deaktivieren Sie die Option **Capture Traffic** im Menü **File**, um zusätzliche HTTP-Aktivität auszublenden, die nicht zur aktuellen Aufgabe gehört.
 
-3. Erstellen Sie die folgende Anforderung in der Registerkarte Composer:
+3. Erstellen Sie die in der Registerkarte **Composer** eine Anforderung, die wie im folgenden Screenshot aussieht.
 
   	![][1]
 
 2. Wählen Sie **PUT** aus.
 
 3. Geben Sie eine URL ein, die sich aus der Dienst-URL, Anforderungsattributen und der API-Version zusammensetzt. Beachten Sie dabei Folgendes:
-   + Verwenden Sie das Präfix HTTPS
+   + Verwenden Sie das Präfix HTTPS.
    + Das Anfrageattribut ist "/indexes/hotels". Damit weisen Sie Search an, einen Index mit dem Namen "hotels" zu erstellen.
    + Die API-Version ist in Kleinbuchstaben als „?api-version=2015-02-28“ angegeben. API-Versionen sind wichtig, da regelmäßig Updates für Azure Search bereitgestellt werden. In seltenen Fällen kann es passieren, dass ein Teil der API durch ein Update nicht mehr wie gewohnt funktioniert. Mit API-Versionen können Sie weiterhin Ihre bestehende Version verwenden und selbst bestimmen, wann Sie zur neueren Version wechseln möchten.
 
-    Die komplette URL sollte in etwa wie folgt aussehen:
+    Die komplette URL sollte in etwa wie folgt aussehen.
 
          https://my-app.search.windows.net/indexes/hotels?api-version=2015-02-28
 
@@ -77,13 +77,13 @@ Falls Sie eine "HTTP 504"-Antwort erhalten, prüfen Sie, ob die URL mit HTTPS be
 
 ## Laden von Dokumenten
 
-Ihre Anforderung für Dokumente in der Registerkarte "Composer" sieht in etwa wie folgt aus. Der Text der Anforderung enthält die Suchdaten für 4 Hotels.
+Ihre Anforderung für Dokumente in der Registerkarte **Composer** sieht in etwa wie folgt aus. Der Text der Anforderung enthält die Suchdaten für 4 Hotels.
 
    ![][2]
 
 1. Wählen Sie **POST** aus.
 
-2.	Geben Sie eine URL ein, die sich aus „HTTPS“, Ihrer Dienst-URL und „/indexes/<'indexname'>/docs/index?api-version=2015-02-28“ zusammensetzt. Die komplette URL sollte in etwa wie folgt aussehen:
+2.	Geben Sie eine URL ein, die sich aus „HTTPS“, Ihrer Dienst-URL und „/indexes/<'indexname'>/docs/index?api-version=2015-02-28“ zusammensetzt. Die komplette URL sollte in etwa wie folgt aussehen.
 
         https://my-app.search.windows.net/indexes/hotels/docs/index?api-version=2015-02-28
 
@@ -163,7 +163,7 @@ Innerhalb weniger Sekunden sollten Sie eine "HTTP 200"-Antwort in der Sitzungsli
 
 ## Indexabfragen
 
-Sie haben nun einen Index erstellt und Dokumente hochgeladen und können beginnen, Abfragen auszuführen. Erstellen Sie einen GET-Befehl in der Registerkarte Composer mit dem folgenden Text:
+Sie haben nun einen Index erstellt und Dokumente hochgeladen und können beginnen, Abfragen auszuführen. Erstellen Sie zur Abfrage des Dienstes einen **GET**-Befehl in der Registerkarte **Composer**, der ähnlich wie im folgenden Screenshot aussieht.
 
    ![][3]
 
@@ -182,11 +182,11 @@ Sie haben nun einen Index erstellt und Dokumente hochgeladen und können beginne
         content-type: application/json
         api-key: 1111222233334444
 
-Der Antwortcode sollte 200 sein, und die Antwortausgabe sollte in etwa der folgenden Abbildung entsprechen.
+Der Antwortcode sollte 200 sein, und die Antwortausgabe sollte in etwa dem folgenden Screenshot entsprechen.
 
    ![][4]
 
-Die folgende Beispielabfrage stammt aus dem Artikel [Suchindex-Operationen (Azure Search-API)](http://msdn.microsoft.com/library/dn798927.aspx) auf MSDN. Viele der Beispielabfragen in diesem Thema enthalten Leerzeichen, die von Fiddler nicht unterstützt werden. Ersetzen Sie alle Leerzeichen vor dem Einfügen durch ein +-Zeichen, bevor Sie die Abfrage in Fiddler ausführen:
+Die folgende Beispielabfrage stammt aus dem Artikel [Suchindex-Operationen (Azure Search-API)](http://msdn.microsoft.com/library/dn798927.aspx) auf MSDN. Viele der Beispielabfragen in diesem Thema enthalten Leerzeichen, die von Fiddler nicht unterstützt werden. Ersetzen Sie alle Leerzeichen vor dem Einfügen durch ein +-Zeichen, bevor Sie die Abfrage in Fiddler ausführen.
 
 **Vor dem Ersetzen der Leerzeichen:**
 
@@ -198,7 +198,7 @@ Die folgende Beispielabfrage stammt aus dem Artikel [Suchindex-Operationen (Azur
 
 ## Systemabfragen
 
-Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch zu erhalten. Erstellen Sie eine Anforderung in der Registerkarte Composer mit dem folgenden Text. Die Antwort enthält die Anzahl der Dokumente und den verbrauchten Speicherplatz.
+Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch zu erhalten. Erstellen Sie eine Anforderung in der Registerkarte **Composer** mit dem folgenden Text. Die Antwort enthält die Anzahl der Dokumente und den verbrauchten Speicherplatz.
 
  ![][5]
 
@@ -219,7 +219,7 @@ Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch
 
 5.	Klicken Sie auf **Ausführen**. Sie sollten eine "HTTP 200"-Antwort in der Sitzungsliste sehen. Wählen Sie den Eintrag zu Ihrem Befehl aus.
 
-6.	Klicken Sie auf die Registerkarte **Inspectors** > **Headers**, und wählen Sie das JSON-Format aus. Sie sollten nun die Dokumentenanzahl und die Speichergröße (in KB) sehen.
+6.	Klicken Sie auf die Registerkarte **Inspectors**, klicken Sie dann auf die Registerkarte **Headers**, und wählen Sie das JSON-Format aus. Sie sollten nun die Dokumentenanzahl und die Speichergröße (in KB) sehen.
 
 ## Nächste Schritte
 
@@ -234,6 +234,5 @@ Unter den folgenden Links finden Sie weitere Informationen zur codefreien Verwal
 [3]: ./media/search-fiddler/AzureSearch_Fiddler3_Query.png
 [4]: ./media/search-fiddler/AzureSearch_Fiddler4_QueryResults.png
 [5]: ./media/search-fiddler/AzureSearch_Fiddler5_QueryStats.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Branchenanwendungs-Workload, Phase 4: Konfigurieren der Webserver" 
-	description="In dieser vierten Phase der Bereitstellung einer hochverfügbaren Branchenanwendung in den Azure-Infrastrukturdiensten erstellen Sie die Webserver und laden Ihre Branchenanwendung auf die Server." 
+	pageTitle="Branchenanwendung, Phase 4 | Microsoft Azure"
+	description="Phase 4 der Branchenanwendung in Azure erstellen Sie die Webserver, und laden Sie Ihre Branchenanwendung auf diese Server."
 	documentationCenter=""
-	services="virtual-machines" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	services="virtual-machines"
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/11/2015"
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 4: Konfigurieren der Webserver
@@ -168,4 +168,4 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 5: Erste
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

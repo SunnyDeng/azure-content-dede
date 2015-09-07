@@ -1,20 +1,20 @@
 <properties
    pageTitle="Bereitstellung von Apache Spark-Clustern in HDInsight | Microsoft Azure"
-   description="Hier erfahren Sie, wie Sie Spark-Cluster für Azure HDInsight mit dem Azure-Portal, Azure PowerShell, einer Befehlszeile oder dem HDInsight .NET-SDK bereitstellen."
-   services="hdinsight"
-   documentationCenter=""
-   authors="nitinme"
-   manager="paulettm"
-   editor="cgronlun"
-   tags="azure-portal"/>
+	description="Hier erfahren Sie, wie Sie Spark-Cluster für Azure HDInsight mit dem Azure-Portal, Azure PowerShell, einer Befehlszeile oder dem HDInsight .NET-SDK bereitstellen."
+	services="hdinsight"
+	documentationCenter=""
+	authors="nitinme"
+	manager="paulettm"
+	editor="cgronlun"
+	tags="azure-portal"/>
 <tags
     ms.service="hdinsight"
-    ms.devlang="na"
-    ms.topic="article"
-    ms.tgt_pltfrm="na"
-    ms.workload="big-data"
-    ms.date="08/17/2015"
-    ms.author="nitinme"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="08/17/2015"
+	ms.author="nitinme"/>
 
 # Benutzerdefinierte Bereitstellung eines Apache Spark-Clusters in HDInsight
 
@@ -66,7 +66,7 @@ Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration 
 
 	![Diagramm der Punkt-zu-Standort-Konfiguration](./media/hdinsight-apache-spark-provision-clusters/hdinsight-vnet-point-to-site.png)
 
-Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](http://msdn.microsoft.com/library/azure/jj156007.aspx).
+Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](../virtual-network/virtual-networks-overview.md).
 
 > [AZURE.NOTE]Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen Cluster bereitstellen. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Netzwerks](virtual-networks-create-vnet.md).
 >
@@ -268,19 +268,19 @@ Das HDInsight .NET SDK enthält .NET-Clientbibliotheken zur Vereinfachung der Ar
 3. Unter **Neues Projekt** können Sie die folgenden Werte eingeben bzw. auswählen:
 
 	<table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
-	<tr>
-	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Eigenschaft</th>
-	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Wert</th></tr>
-	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Kategorie</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">Vorlagen/Visual C#/Windows</td></tr>
-	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Vorlage</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Konsolenanwendung</td></tr>
-	<tr>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
-	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">CreateHDICluster</td></tr>
-	</table>
+<tr>
+<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Eigenschaft</th>
+<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Wert</th></tr>
+<tr>
+<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Kategorie</td>
+<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">Vorlagen/Visual C#/Windows</td></tr>
+<tr>
+<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Vorlage</td>
+<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Konsolenanwendung</td></tr>
+<tr>
+<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
+<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">CreateHDICluster</td></tr>
+</table>
 
 4. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
@@ -437,4 +437,4 @@ Das HDInsight .NET SDK enthält .NET-Clientbibliotheken zur Vereinfachung der Ar
 
 [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwalten von API-Apps" 
-	description="Erfahren Sie, wie Sie Azure App Service-API-Apps mithilfe des Azure-Portals und dem Server-Explorer von Visual Studio verwalten." 
-	services="app-service\api" 
-	documentationCenter="" 
-	authors="tdykstra" 
-	manager="wpickett" 
+	pageTitle="Verwalten von API-Apps"
+	description="Erfahren Sie, wie Sie Azure App Service-API-Apps mithilfe des Azure-Portals und dem Server-Explorer von Visual Studio verwalten."
+	services="app-service\api"
+	documentationCenter=""
+	authors="tdykstra"
+	manager="wpickett"
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-api" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
+	ms.service="app-service-api"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article" 
-	ms.date="06/17/2015" 
+	ms.topic="article"
+	ms.date="06/17/2015"
 	ms.author="tdykstra"/>
 
 # Verwalten von API-Apps in Azure App Service
@@ -65,7 +65,7 @@ Die einzigen Funktionen auf dem Blatt **API-App**, bei denen es sich nicht um Du
 
 ### Aufgaben, die nur auf dem Blatt "API-App-Host" ausgeführt werden können
 
-Sie verwenden das Blatt **API-App-Host** für alle Aufgaben, die Sie für eine beliebige Web-App ausführen würden. Weitere Informationen finden Sie unter [Verwalten von Web-Apps im Portal](../app-service-web/web-sites-manage.md).
+Sie verwenden das Blatt **API-App-Host** für alle Aufgaben, die Sie für eine beliebige Web-App ausführen würden.
 
 ### Aufgaben, die nur auf dem Blatt "Gateway" ausgeführt werden können
 
@@ -80,7 +80,7 @@ Die Blätter "Gateway" und "Gateway-Host" nutzen die Benutzeroberfläche in glei
 
 ### Aufgaben, die nur auf dem Blatt "Gateway-Host" ausgeführt werden können
 
-Sie verwenden das Blatt **Gatewayhost** für alle Aufgaben, die Sie für eine beliebige Web-App ausführen würden. Weitere Informationen finden Sie unter [Verwalten von Web-Apps im Portal](web-sites-manage.md).
+Sie verwenden das Blatt **Gatewayhost** für alle Aufgaben, die Sie für eine beliebige Web-App ausführen würden.
 
 ## <a id="navigate"></a>Navigation zu den Blättern „API-App“ und „Gateway“ 
 
@@ -92,7 +92,7 @@ Eine Möglichkeit, zum Blatt **API-App** zu wechseln besteht darin, die Suchfunk
 
 ### Navigieren zum Blatt "API-App"
 
-Wenn Sie auf eine Zeile der Liste **API-App** klicken, zeigt das Portal das Blatt **API-App** an.
+Wenn Sie auf eine Zeile der Liste **API-Apps** klicken, zeigt das Portal das Blatt **API-App** an.
 
 ![](./media/app-service-api-manage-in-portal/apiappblade.png)
 
@@ -134,4 +134,4 @@ Dieser Artikel hat gezeigt, wie Sie das Azure-Portal zum Ausführen verschiedene
 
 Informationen zum Verwalten von API-Apps über die Befehlszeile finden Sie in den Artikeln im Abschnitt **Automatisieren**, die links neben dem Artikel (bei breiten Browserfenstern) oder oben über dem Artikel (bei schmalen Browserfenstern) angezeigt werden.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

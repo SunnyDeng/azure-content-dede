@@ -1,24 +1,22 @@
 <properties 
-	pageTitle="Sybase-Connector: Verschieben von Daten aus Sybase" 
-	description="Informationen zum Sybase-Connector für den Data Factory-Dienst, mit dem Sie Daten aus einer Sybase-Datenbank verschieben können" 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Verschieben von Daten aus Sybase | Azure Data Factory"
+	description="Erfahren Sie, wie Sie Daten aus der Sybase-Datenbank mithilfe von Azure Data Factory verschieben."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/27/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2015"
 	ms.author="spelluru"/>
 
-
-# Sybase-Connector: Verschieben von Daten aus Sybase 
+# Verschieben von Daten aus Sybase mithilfe von Azure Data Factory 
 
 Dieser Artikel beschreibt, wie Sie die Kopieraktivität in einer Azure Data Factory verwenden können, um Daten aus Sybase in einen anderen Datenspeicher zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
 
@@ -36,11 +34,11 @@ Damit sich das Datenverwaltungsgateway mit der Sybase-Datenbank verbindet, müss
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1.	Einen verknüpften Dienst des Typs "OnPremisesSybase"
-2.	Einen verknüpften Dienst des Typs "AzureStorage"
-3.	Ein Eingabedataset des Typs "RelationalTable"
-4.	Ein Ausgabedataset des Typs "AzureBlob"
-4.	Die Pipeline mit Kopieraktivität, die "RelationalSource" und "BlobSink" verwendet
+1.	Einen verknüpften Dienst des Typs [OnPremisesSybase](data-factory-onprem-sybase-connector.md#sybase-linked-service-properties)
+2.	Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
+3.	Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [RelationalTable](data-factory-onprem-sybase-connector.md#sybase-dataset-type-properties)
+4.	Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+4.	Die [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [RelationalSource](data-factory-onprem-sybase-connector.md#sybase-copy-activity-type-properties) und [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) verwendet
 
 Das Beispiel kopiert Daten stündlich aus einem Abfrageergebnis in einer Sybase-Datenbank in ein Blob. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -224,8 +222,10 @@ database | Name der Sybase-Datenbank. | Ja
 schema | Name des Schemas in der Datenbank. | Nein
 authenticationType | Typ der Authentifizierung für die Verbindung mit der Sybase-Datenbank. Mögliche Werte: Anonymous, Basic und Windows. | Ja
 username | Geben Sie den Benutzernamen an, wenn Sie die Standard- oder Windows-Authentifizierung verwenden. | Nein
-passwort | Geben Sie das Kennwort für das Benutzerkonto an, das Sie für den Benutzernamen angegeben haben. | Nein
+password | Geben Sie das Kennwort für das Benutzerkonto an, das Sie für den Benutzernamen angegeben haben. | Nein
 gatewayName | Name des Gateways, das der Data Factory-Dienst zum Herstellen einer Verbindung mit der lokalen Sybase-Datenbank verwenden soll. | Ja 
+
+Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine lokale Sybase-Datenquelle finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
 
 ## Eigenschaften des Dataset-Typs "Sybase"
 
@@ -247,7 +247,7 @@ Wenn bei der Kopieraktivität "source" den Typ **RelationalSource** hat (zu dem 
 
 Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich
 -------- | ----------- | -------------- | --------
-query | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: select \* from MyTable. | Nein
+query | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: select * from MyTable. | Nein
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
@@ -264,4 +264,4 @@ Sybase unterstützt SQL- und T-SQL-Typen. Eine Tabelle mit der Zuordnung von SQL
 
 [AZURE.INCLUDE [data-factory-type-repeatability-for-relational-sources](../../includes/data-factory-type-repeatability-for-relational-sources.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

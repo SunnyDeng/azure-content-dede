@@ -1,36 +1,38 @@
-## How to create a VNet in the Azure preview portal
+## Erstellen eines VNet im Azure-Vorschauportal.
 
-To create a VNet based on the scenario above by using the Azure preview portal, follow the steps below.
+Gehen Sie folgendermaßen vor, um mit dem Azure-Vorschauportal ein VNet basierend auf dem oben beschriebenen Szenario zu erstellen.
 
-1. From a browser, navigate to http://portal.azure.com and, if necessary, sign in with your Azure account.
-2. Click **NEW** > **Networking** > **Virtual network**, then click **Resource Manager** from the **Select a deployment model** list, and then click **Create**, as seen in the figure below.
+1. Navigieren Sie in einem Browser zu http://portal.azure.com, und melden Sie sich, falls erforderlich, mit Ihrem Azure-Konto an.
+2. Klicken Sie auf **NEU** > **Netzwerk** > **Virtuelles Netzwerk**, wählen Sie in der Liste **Bereitstellungsmodell auswählen** die Option **Ressourcen-Manager** aus, und klicken Sie anschließend auf **Erstellen**, wie in der folgenden Abbildung dargestellt.
 
-	![Create VNet in preview portal](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure1.gif)
+	![Erstellen von VNet im Vorschauportal](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure1.gif)
 
-3. On the **Create virtual network** blade, configure the VNet settings as shown in the figure below.
+3. Konfigurieren Sie auf dem Blatt **Virtuelles Netzwerk erstellen** die VNet-Einstellungen, wie in der folgenden Abbildung dargestellt.
 
-	![Create virtual network blade](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure2.png)
+	![Blatt "Erstellen eines virtuellen Netzwerks"](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure2.png)
 
-4. Click **Resource group** and select a resource group to add the VNet to, or click **Create new** to add the VNet to a new resource group. The figure below shows the resource group settings for a new resource group called **TestRG**. For more information about resource groups, visit [Azure Resource Manager Overview](resource-group-overview.md/#resource-groups).
+4. Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine Ressourcengruppe aus, zu der Sie das VNet hinzufügen möchten, oder klicken Sie auf **Neu erstellen**, um das VNet zu einer neuen Ressourcengruppe hinzuzufügen. Die folgende Abbildung zeigt die Ressourcengruppeneinstellungen für eine neue Ressourcengruppe mit dem Namen **TestRG**. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md/#resource-groups).
 
-	![Resource group](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure3.png)
+	![Ressourcengruppe](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure3.png)
 
-5. If necessary, change the **Subscription** and **Location** settings for your VNet. 
+5. Ändern Sie ggf. die **Abonnement**- und **Speicherort**-Einstellungen für das VNet.
 
-6. If you do not want to see the VNet as a tile in the **Startboard**, disable **Pin to Startboard**. 
+6. Wenn das VNet nicht als Kachel im **Startmenü** angezeigt werden soll, deaktivieren Sie **An Startmenü anheften**.
 
-7. Click **Create** and notice the tile named **Creating Virtual network** as shown in the figure below.
+7. Klicken Sie auf **Erstellen** und achten Sie auf die Kachel namens **Virtuelles Netzwerk erstellen**, wie in der folgenden Abbildung dargestellt.
 
-	![Creating virtual network tile](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure4.png)
+	![Kachel "Erstellen eines virtuellen Netzwerks"](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure4.png)
 
-8. Wait for the VNet to be created, then in the **Virtual network** blade, click **All settings** > **Subnets** > **Add** as seen below.
+8. Warten Sie, bis das VNet erstellt wurde, und klicken Sie dann auf dem Blatt **Virtuelles Netzwerk** auf **Alle Einstellungen** > **Subnetze** > **Hinzufügen**, wie nachfolgend dargestellt.
 
-	![Adding subnet in the preview portal](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure5.gif)
+	![Hinzufügen eines Subnetzes im Vorschauportal](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure5.gif)
 
-9. Specify the subnet settings for the *BackEnd* subnet, as shown below, and then click **OK**. 
+9. Geben Sie die Subnetzeinstellungen für das Subnetz *BackEnd* ein, wie unten dargestellt, und klicken Sie dann auf **OK**.
 
-	![Subnet settings](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure6.png)
+	![Subnetzeinstellungen](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure6.png)
 
-10. Notice the list of subnets, as shown in the figure below.
+10. Eine Liste der Subnetze wird angezeigt, wie in der folgenden Abbildung dargestellt.
 
-	![List of subnets in VNet](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure7.png)
+	![Liste der Subnetze im VNet](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure7.png)
+
+<!---HONumber=August15_HO9-->

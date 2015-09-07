@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Integrieren Sie Ihre lokalen Identitäten in Azure Active Directory." 
-	description="Nachfolgend finden Sie einen Überblick über Azure AD Connect sowie eine Beschreibung des Einsatzes dieser Technologie." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+	pageTitle="Integrieren Sie Ihre lokalen Identitäten in Azure Active Directory."
+	description="Nachfolgend finden Sie einen Überblick über Azure AD Connect sowie eine Beschreibung des Einsatzes dieser Technologie."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
-
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/21/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
-
 
 # Erstellen von Multi-Factor Authentication in benutzerdefinierten Apps (SDK)
 
@@ -116,22 +114,15 @@ Es folgt Webclientcode für eine Demoseite.
 	
 	<div style="width:auto; float:left">
 	Username:&nbsp;<br />
-
 	Password:&nbsp;<br />
-
 	</div>
 	
 	<div">
-	<asp:TextBox id="username" runat="server" width="100px"/>
-<br />
-
-	<asp:Textbox id="password" runat="server" width="100px" TextMode="password" />
-<br />
-
+	<asp:TextBox id="username" runat="server" width="100px"/><br />
+	<asp:Textbox id="password" runat="server" width="100px" TextMode="password" /><br />
 	</div>
 	
 	<asp:Button id="btnSubmit" runat="server" Text="Log in" onClick="btnSubmit_Click"/>
-
 	
 	<p><asp:Label ID="lblResult" runat="server"></asp:Label></p>
 	
@@ -200,4 +191,4 @@ Im folgenden serverseitigen Code wird Multi-Factor Authentication in Schritt 2 k
 	    }
 	}
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

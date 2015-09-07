@@ -1,21 +1,21 @@
 
 <properties
    pageTitle="Authentifizierungsszenarien für Azure AD"
-   description="Eine Übersicht über die fünf am häufigsten verwendeten Authentifizierungsszenarien für Azure Active Directory (AAD)"
-   services="active-directory"
-   documentationCenter="dev-center-name"
-   authors="msmbaldwin"
-   manager="mbaldwin"
-   editor=""/>
+	description="Eine Übersicht über die fünf am häufigsten verwendeten Authentifizierungsszenarien für Azure Active Directory (AAD)"
+	services="active-directory"
+	documentationCenter="dev-center-name"
+	authors="msmbaldwin"
+	manager="mbaldwin"
+	editor=""/>
 
 <tags
    ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="06/01/2015"
-   ms.author="mbaldwin"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
+	ms.date="06/01/2015"
+	ms.author="mbaldwin"/>
 
 # Authentifizierungsszenarien für Azure AD
 
@@ -60,7 +60,7 @@ Im Anschluss folgen einige wichtige Informationen zu den Komponenten des obigen 
 - Mit den Open Source-Authentifizierungsbibliotheken von Azure AD können sich die Entwickler um die Protokolldetails kümmern und die Authentifizierung für Sie vereinfachen. Weitere Informationen finden Sie unter [Azure Active Directory-Authentifizierungsbibliotheken](https://msdn.microsoft.com/library/azure/dn151135.aspx).
 
 
-• Nach der Authentifizierung eines Benutzers muss die Anwendung das Sicherheitstoken des Benutzers überprüfen, um sicherzustellen, dass die Authentifizierung der betreffenden Parteien erfolgreich war. Mithilfe der bereitgestellten Authentifizierungsbibliotheken können Entwickler die Validierung beliebiger Token von Azure AD behandeln – einschließlich JSON-Webtoken (JWT) und SAML 2.0. Informationen zum Durchführen einer manuellen Überprüfung finden Sie in der Dokumentation zum [JWT-Tokenhandler](https://msdn.microsoft.com/library/dn205065(v=vs.110).aspx).
+• Nach der Authentifizierung eines Benutzers muss die Anwendung das Sicherheitstoken des Benutzers überprüfen, um sicherzustellen, dass die Authentifizierung der betreffenden Parteien erfolgreich war. Mithilfe der bereitgestellten Authentifizierungsbibliotheken können Entwickler die Validierung beliebiger Token von Azure AD behandeln – einschließlich JSON-Webtoken (JWT) und SAML 2.0. Informationen zum Durchführen einer manuellen Überprüfung finden Sie in der Dokumentation zum [JWT-Tokenhandler](<https://msdn.microsoft.com/library/dn205065(v=vs.110).aspx>).
 
 
 > [AZURE.IMPORTANT]Azure AD verwendet die Verschlüsselung mit öffentlichem Schlüssel, um Token zu signieren und deren Gültigkeit zu überprüfen. Weitere Informationen zur Logik, die in Ihrer Anwendung enthalten sein muss, damit diese immer mit den neuesten Schlüsseln aktualisiert wird, finden Sie unter [Wichtige Informationen zum Signaturschlüsselrollover in Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx).
@@ -338,7 +338,7 @@ Die Anwendungsidentität und die delegierte Benutzeridentität werden im folgend
 
 ##### Anwendungsidentität mit OAuth 2.0-Clientanmeldeinformationen
 
-1. Ein Benutzer ist in der Webanwendung bei Azure AD angemeldet (siehe Abschnitt „Webbrowser zu Webanwendung“ weiter oben).
+1. Ein Benutzer ist in der Webanwendung bei Azure AD angemeldet (siehe Abschnitt [Webbrowser zu Webanwendung](#web-browser-to-web-application) weiter oben).
 
 
 2. Die Webanwendung muss ein Zugriffstoken abrufen, damit sie sich gegenüber der Web-API authentifizieren und die gewünschte Ressource abrufen kann. Sie sendet eine Anfrage an den Token-Endpunkt von Azure AD. Diese Anfrage enthält die Anmeldeinformationen, die Client-ID und den Anwendungs-ID-URI der Web-API.
@@ -466,4 +466,4 @@ Wenn die erste Anwendung mithilfe ihres Autorisierungscodes ein JWT-Zugriffstoke
 [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/library/azure/dn645545.aspx)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

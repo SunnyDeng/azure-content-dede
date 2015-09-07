@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Ausführen von Cassandra mit Linux in Azure" 
-	description="Ausführen eines Cassandra-Clusters unter Linux auf virtuellen Azure-Computern aus einer Node.js-Anwendung." 
-	services="virtual-machines" 
-	documentationCenter="nodejs" 
-	authors="MikeWasson" 
-	manager="wpickett" 
+	pageTitle="Ausführen von Cassandra mit Linux in Azure"
+	description="Ausführen eines Cassandra-Clusters unter Linux auf virtuellen Azure-Computern aus einer Node.js-Anwendung."
+	services="virtual-machines"
+	documentationCenter="nodejs"
+	authors="MikeWasson"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/30/2015" 
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/30/2015"
 	ms.author="MikeWasson"/>
 
 
@@ -53,7 +53,7 @@ Abbildung 1: Bereitstellung in einer Region
 
 Beachten Sie, dass Azure zum Zeitpunkt der Erstellung dieses Dokuments die explizite Zuordnung einer Gruppe von virtuellen Computern zu einer bestimmten Fehlerdomäne nicht zulässt. Daher ist es selbst mit dem Bereitstellungsmodell, das in Abbildung 1 dargestellt wird, statistisch möglich, dass alle virtuellen Computer ggf. zwei Fehlerdomänen anstelle von vier Fehlerdomänen zugeordnet werden.
 
-**Lastenausgleich von Thrift-Datenverkehr:** Thrift-Clientbibliotheken innerhalb des Webservers stellen eine Verbindung mit dem Cluster über ein internes Lastenausgleichsmodul her. Dies erfordert, dass dem Subnetz "data" ein internes Lastenausgleichsmodul (siehe Abbildung 1) in Verbindung mit dem Clouddienst hinzugefügt wird, der den Cassandra-Cluster hostet. Nachdem das interne Lastenausgleichsmodul definiert wurde, muss jedem Knoten der Endpunkt mit Lastenausgleich mit den Anmerkungen einer Gruppe mit Lastenausgleich mit dem zuvor definierten Namen des Lastenausgleichsmoduls hinzugefügt werden. Weitere Details finden Sie unter [Interner Azure-Lastenausgleich](http://msdn.microsoft.com/library/azure/dn690121.aspx).
+**Lastenausgleich von Thrift-Datenverkehr:** Thrift-Clientbibliotheken innerhalb des Webservers stellen eine Verbindung mit dem Cluster über ein internes Lastenausgleichsmodul her. Dies erfordert, dass dem Subnetz "data" ein internes Lastenausgleichsmodul (siehe Abbildung 1) in Verbindung mit dem Clouddienst hinzugefügt wird, der den Cassandra-Cluster hostet. Nachdem das interne Lastenausgleichsmodul definiert wurde, muss jedem Knoten der Endpunkt mit Lastenausgleich mit den Anmerkungen einer Gruppe mit Lastenausgleich mit dem zuvor definierten Namen des Lastenausgleichsmoduls hinzugefügt werden. Weitere Details finden Sie unter [Interner Azure-Lastenausgleich](../load-balancer/load-balancer-internal-overview.md).
 
 **Cluster-Seeds:** Es ist wichtig, dass die Knoten mit der höchsten Verfügbarkeit für Seeds ausgewählt werden, weil die neuen Knoten mit Seed-Knoten zum Ermitteln der Topologie des Clusters kommunizieren. Ein Knoten aus jeder Verfügbarkeitsgruppe wird als Seedknoten definiert, um eine einzelne Fehlerquelle zu vermeiden
 
@@ -124,7 +124,7 @@ Die folgenden Softwareversionen werden während der Bereitstellung verwendet:
 
 Da für das Herunterladen von JRE eine manuelle Zustimmung zur Oracle-Lizenz erforderlich ist, sollten Sie zur Vereinfachung der Bereitstellung die gesamte erforderliche Software auf den Desktop herunterladen, um sie später in das Ubuntu-Vorlagenimage hochzuladen, das als Vorstufe der Clusterbereitstellung erstellt wird.
 
-Laden Sie die oben aufgeführte Software in ein bekanntes Downloadverzeichnis (z. B. "%TEMP%/downloads" unter Windows oder "\~/downloads" unter Linux oder Mac) auf den lokalen Desktop herunter.
+Laden Sie die oben aufgeführte Software in ein bekanntes Downloadverzeichnis (z. B. "%TEMP%/downloads" unter Windows oder "~/downloads" unter Linux oder Mac) auf den lokalen Desktop herunter.
 
 ### ERSTELLEN DES VIRTUELLEN UBUNTU-COMPUTERS
 In diesem Schritt des Vorgangs wird das Ubuntu-Image mit der erforderlichen Software erstellt, damit das Image für die Bereitstellung von mehreren Cassandra-Knoten wiederverwendet werden kann.
@@ -165,7 +165,7 @@ Klicken Sie auf den Pfeil nach rechts, behalten Sie die Standardwerte auf dem Bi
 
 ###INSTALLIEREN DER ERFORDERLICHEN SOFTWARE
 ####Schritt 1: Hochladen von Tarballs 
-Kopieren Sie die zuvor heruntergeladene Software mit scp oder pscp mithilfe des folgenden Befehlsformats in das Verzeichnis "\~/downloads":
+Kopieren Sie die zuvor heruntergeladene Software mit scp oder pscp mithilfe des folgenden Befehlsformats in das Verzeichnis "~/downloads":
 
 #####pscp server-jre-8u5-linux-x64.tar.gz localadmin@hk-cas-template.cloudapp.net:/home/localadmin/downloads/server-jre-8u5-linux-x64.tar.gz
 
@@ -301,7 +301,7 @@ Stellen Sie sicher, dass der virtuelle Computer markiert ist, und klicken Sie da
 Nach einigen Sekunden sollte das Image im Abschnitt "EIGENE IMAGES" des Image-Katalogs verfügbar sein. Der virtuelle Quellcomputer wird automatisch gelöscht, nachdem das Image erfolgreich erfasst wurde.
 
 ##Bereitstellungsvorgang in einer Region
-**Schritt 1: Erstellen des virtuellen Netzwerks** Melden Sie sich am Verwaltungsportal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](http://msdn.microsoft.com/library/azure/dn631643.aspx).
+**Schritt 1: Erstellen des virtuellen Netzwerks** Melden Sie sich am Verwaltungsportal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](../virtual-network/virtual-networks-create-vnet.md).
 
 <table>
 <tr><th>Attributname des virtuellen Computers</th><th>Wert</th><th>Anmerkungen</th></tr>
@@ -467,7 +467,7 @@ Bitte beachten Sie, dass der in Schritt 4 erstellte Keyspace SimpleStrategy mit 
 Bei diesem Verfahren wird die abgeschlossene Bereitstellung in einer Region genutzt und der gleiche Vorgang für die Installation in der zweiten Region wiederholt. Der Hauptunterschied zwischen einer Bereitstellung in einer Region und in mehreren Regionen besteht in der Einrichtung des VPN-Tunnels für die Kommunikation zwischen den Regionen. Wir beginnen mit der Netzwerkinstallation, stellen die virtuellen Computer bereit und konfigurieren dann Cassandra.
 
 ###Schritt 1: Erstellen des virtuellen Netzwerks in der zweiten Region
-Melden Sie sich am Verwaltungsportal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](http://msdn.microsoft.com/library/azure/dn631643.aspx).
+Melden Sie sich am Verwaltungsportal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](../virtual-network/virtual-networks-create-vnet.md).
 
 <table>
 <tr><th>Attributname    </th><th>Wert	</th><th>Anmerkungen</th></tr>
@@ -700,4 +700,4 @@ Microsoft Azure ist eine flexible Plattform, die das Ausführen von Microsoft- s
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

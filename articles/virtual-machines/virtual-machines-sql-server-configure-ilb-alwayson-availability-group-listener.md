@@ -5,7 +5,7 @@
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" />
+	editor="monicar"/>
 <tags 
 	ms.service="virtual-machines"
 	ms.devlang="na"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="08/11/2015"
-	ms.author="jroth" />
+	ms.author="jroth"/>
 
 # Konfigurieren eines ILB-Listeners für AlwaysOn-Verfügbarkeitsgruppen in Azure
 
@@ -23,9 +23,9 @@
 
 ## Übersicht
 
-In diesem Thema erfahren Sie, wie Sie mit dem **internen Load Balancer \(ILB\)** einen Listener für eine AlwaysOn-Verfügbarkeitsgruppe konfigurieren.
+In diesem Thema erfahren Sie, wie Sie mit dem **internen Load Balancer (ILB)** einen Listener für eine AlwaysOn-Verfügbarkeitsgruppe konfigurieren.
 
-Ihre Verfügbarkeitsgruppe kann Replikate enthalten, die ausschließlich lokal, ausschließlich in Azure oder sowohl lokal als auch in Azure verfügbar sind \(Hybridkonfigurationen\). Azure-Replikate können sich innerhalb derselben Region oder in mehreren Regionen befinden, wobei mehrere virtuelle Netzwerke \(VNETs\) verwendet werden. Bei den nachfolgenden Schritten wird davon ausgegangen, dass bereits eine [Verfügbarkeitsgruppe konfiguriert wurde](https://msdn.microsoft.com/library/azure/dn249504.aspx), Sie jedoch noch keinen Listener konfiguriert haben.
+Ihre Verfügbarkeitsgruppe kann Replikate enthalten, die ausschließlich lokal, ausschließlich in Azure oder sowohl lokal als auch in Azure verfügbar sind (Hybridkonfigurationen). Azure-Replikate können sich innerhalb derselben Region oder in mehreren Regionen befinden, wobei mehrere virtuelle Netzwerke (VNets) verwendet werden. Bei den nachfolgenden Schritten wird davon ausgegangen, dass bereits eine [Verfügbarkeitsgruppe konfiguriert wurde](https://msdn.microsoft.com/library/azure/dn249504.aspx), Sie jedoch noch keinen Listener konfiguriert haben.
 
 Beachten Sie die folgenden Einschränkungen, die für Verfügbarkeitsgruppenlistener in Azure bei Verwendung des internen Lastenausgleichs gelten:
 
@@ -37,7 +37,7 @@ Beachten Sie die folgenden Einschränkungen, die für Verfügbarkeitsgruppenlist
 
 >[AZURE.NOTE]Der Schwerpunkt dieses Tutorials liegt auf der Verwendung von PowerShell zum Erstellen eines Listeners für eine Verfügbarkeitsgruppe, die Azure-Replikate umfasst. Weitere Informationen zum Konfigurieren von Listenern mithilfe von SSMS oder Transact-SQL finden Sie unter [Erstellen oder Konfigurieren eines Verfügbarkeitsgruppenlisteners](https://msdn.microsoft.com/library/hh213080.aspx).
 
-## Festlegen des Zugriff auf den Listener
+## Festlegen des Zugriffs auf den Listener
 
 [AZURE.INCLUDE [ag-listener-accessibility](../../includes/virtual-machines-ag-listener-determine-accessibility.md)]
 
@@ -61,7 +61,7 @@ Sie müssen für ILB zunächst den internen Load Balancer einrichten. Verwenden 
 
 1. Wählen Sie eine der verfügbaren Adressen, und verwenden Sie diese im folgenden Skript als Parameter **$ILBStaticIP**.
 
-3. Kopieren Sie das unten stehende PowerShell-Skript in einen Text-Editor, und legen Sie die Variablenwerte gemäß Ihrer Umgebung fest \(beachten Sie, dass für einige Parameter die Standardwerte angegeben wurden\). Hinweis: Bei vorhandenen Bereitstellungen, die Affinitätsgruppen verwenden, kann kein interner Lastenausgleich hinzugefügt werden. Weitere Informationen zu den Voraussetzungen für den internen Lastenausgleich finden Sie unter [Interner Load Balancer](../load-balancer/load-balancer-internal-overview.md). Wenn Ihre Verfügbarkeitsgruppe sich über mehrere Azure-Regionen erstreckt, müssen Sie das Skript zudem in jedem Datencenter für den Clouddienst und die Knoten ausführen, die sich in diesem Datencenter befinden.
+3. Kopieren Sie das unten stehende PowerShell-Skript in einen Text-Editor, und legen Sie die Variablenwerte gemäß Ihrer Umgebung fest (beachten Sie, dass für einige Parameter die Standardwerte angegeben wurden). Hinweis: Bei vorhandenen Bereitstellungen, die Affinitätsgruppen verwenden, kann kein interner Lastenausgleich hinzugefügt werden. Weitere Informationen zu den Voraussetzungen für den internen Lastenausgleich finden Sie unter [Interner Load Balancer](../load-balancer/load-balancer-internal-overview.md). Wenn Ihre Verfügbarkeitsgruppe sich über mehrere Azure-Regionen erstreckt, müssen Sie das Skript zudem in jedem Datencenter für den Clouddienst und die Knoten ausführen, die sich in diesem Datencenter befinden.
 
 		# Define variables
 		$ServiceName = "<MyCloudService>" # the name of the cloud service that contains the availability group nodes
@@ -76,10 +76,10 @@ Sie müssen für ILB zunächst den internen Load Balancer einrichten. Verwenden 
 		# Configure a load balanced endpoint for each node in $AGNodes using ILB
 		ForEach ($node in $AGNodes)
 		{
-			Get-AzureVM -ServiceName $ServiceName -Name $node | Add-AzureEndpoint -Name "ListenerEndpoint" -LBSetName "ListenerEndpointLB" -Protocol tcp -LocalPort $EndpointPort -PublicPort $EndpointPort -ProbePort 59999 -ProbeProtocol tcp -ProbeIntervalInSeconds 10 -InternalLoadBalancerName $ILBName -DirectServerReturn $true | Update-AzureVM 
+			Get-AzureVM -ServiceName $ServiceName -Name $node | Add-AzureEndpoint -Name "ListenerEndpoint" -LBSetName "ListenerEndpointLB" -Protocol tcp -LocalPort 1433 -PublicPort 1433 -ProbePort 59999 -ProbeProtocol tcp -ProbeIntervalInSeconds 10 -InternalLoadBalancerName $ILBName -DirectServerReturn $true | Update-AzureVM 
 		}
 
-1. Nachdem Sie die Variablen festgelegt haben, kopieren Sie das Skript zur Ausführung aus dem Text-Editor in Ihre Azure PowerShell-Sitzung. Wenn die Aufforderung weiterhin \>\> anzeigt, geben Sie erneut ENTER ein, um die Skriptausführung zu starten. Hinweis:
+1. Nachdem Sie die Variablen festgelegt haben, kopieren Sie das Skript zur Ausführung aus dem Text-Editor in Ihre Azure PowerShell-Sitzung. Wenn die Aufforderung weiterhin >> anzeigt, geben Sie erneut ENTER ein, um die Skriptausführung zu starten. Hinweis:
 
 >[AZURE.NOTE]Das Azure-Verwaltungsportal bietet gegenwärtig keine Unterstützung für den internen Load Balancer. Folglich werden im Portal weder der interne Load Balancer noch die Endpunkte angezeigt. Wenn der Load Balancer auf einem Endpunkt ausgeführt wird, gibt **Get-AzureEndpoint** jedoch eine interne IP-Adresse zurück. Andernfalls wird null zurückgegeben.
 
@@ -87,11 +87,11 @@ Sie müssen für ILB zunächst den internen Load Balancer einrichten. Verwenden 
 
 [AZURE.INCLUDE [kb2854082](../../includes/virtual-machines-ag-listener-kb2854082.md)]
 
-## Öffnen Sie die Firewallports in Verfügbarkeitsgruppenknoten
+## Öffnen der Firewallports in Verfügbarkeitsgruppenknoten
 
 [AZURE.INCLUDE [Firewall](../../includes/virtual-machines-ag-listener-open-firewall.md)]
 
-## Erstellen Sie den Verfügbarkeitsgruppenlistener
+## Erstellen des Verfügbarkeitsgruppenlisteners
 
 [AZURE.INCLUDE [Firewall](../../includes/virtual-machines-ag-listener-create-listener.md)]
 
@@ -115,11 +115,11 @@ Sie müssen für ILB zunächst den internen Load Balancer einrichten. Verwenden 
 		# Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"="59999";"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"OverrideAddressMatch"=1;"EnableDhcp"=0}
 		# cluster res $IPResourceName /priv enabledhcp=0 overrideaddressmatch=1 address=$ILBIP probeport=59999  subnetmask=255.255.255.255
 
-1. Nachdem Sie die Variablen festgelegt haben, öffnen Sie ein Windows PowerShell-Fenster mit erhöhten Rechten, und kopieren Sie das Skript aus dem Text-Editor zur Ausführung in Ihre Azure PowerShell-Sitzung. Wenn die Aufforderung weiterhin \>\> anzeigt, geben Sie erneut ENTER ein, um die Skriptausführung zu starten.
+1. Nachdem Sie die Variablen festgelegt haben, öffnen Sie ein Windows PowerShell-Fenster mit erhöhten Rechten, und kopieren Sie das Skript aus dem Text-Editor zur Ausführung in Ihre Azure PowerShell-Sitzung. Wenn die Aufforderung weiterhin >> anzeigt, geben Sie erneut ENTER ein, um die Skriptausführung zu starten.
 
 2. Wiederholen Sie diesen Schritt für jeden virtuellen Computer. Mit diesem Skript wird die IP-Adressressource mit der IP-Adresse des Clouddienst konfiguriert. Außerdem werden weitere Parameter wie z. B. der Testport festgelegt. Wenn die IP-Adressressource online geschaltet wird, kann sie auf Abrufvorgänge am Testport reagieren, die vom Endpunkt mit Lastenausgleich ausgehen, der zuvor in diesem Tutorial erstellt wurde.
 
-## Schalten Sie den Listener online
+## Onlineschalten des Listeners
 
 [AZURE.INCLUDE [Bring-Listener-Online](../../includes/virtual-machines-ag-listener-bring-online.md)]
 
@@ -127,7 +127,7 @@ Sie müssen für ILB zunächst den internen Load Balancer einrichten. Verwenden 
 
 [AZURE.INCLUDE [Follow-up](../../includes/virtual-machines-ag-listener-follow-up.md)]
 
-## Testen Sie den Verfügbarkeitsgruppenlistener \(innerhalb desselben VNETs\)
+## Testen des Verfügbarkeitsgruppenlisteners (innerhalb desselben VNets)
 
 [AZURE.INCLUDE [Test-Listener-Within-VNET](../../includes/virtual-machines-ag-listener-test.md)]
 
@@ -135,4 +135,4 @@ Sie müssen für ILB zunächst den internen Load Balancer einrichten. Verwenden 
 
 [AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

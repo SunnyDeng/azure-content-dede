@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Einrichten einer Hybrid Cloud-Umgebung zu Testzwecken" 
-	description="Erfahren Sie, wie Sie eine Hybrid Cloud-Umgebung für IT-Experten oder Entwicklungstests erstellen." 
-	services="virtual-network" 
-	documentationCenter="" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	pageTitle="Hybrid Cloud-Testumgebung | Microsoft Azure"
+	description="Erfahren Sie, wie Sie eine Hybrid Cloud-Umgebung für IT-Experten oder Entwicklungstests erstellen; vollständig mit einem vereinfachten lokalen Netzwerk."
+	services="virtual-network"
+	documentationCenter=""
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
 
 <tags 
-	ms.service="virtual-network" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.service="virtual-network"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/08/2015"
 	ms.author="josephd"/>
 
 # Einrichten einer Hybrid Cloud-Umgebung zu Testzwecken
@@ -239,7 +239,7 @@ Melden Sie sich anschließend bei dem neuen virtuellen Computer für DC2 an.
 3.	Wenn Sie zum Öffnen von DC2.rdp aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
-	- Name: **DC2\**[Name des lokalen Administratorkontos]
+	- Name: **DC2**[Name des lokalen Administratorkontos]
 	- Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
@@ -326,4 +326,4 @@ Melden Sie sich als Nächstes bei RRAS1 als lokaler Administrator an, und führe
 Wechseln Sie zum Azure-Verwaltungsportal auf dem lokalen Computer, und warten Sie, bis das virtuelle Netzwerk TestVNET den Status „Verbunden“ aufweist.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

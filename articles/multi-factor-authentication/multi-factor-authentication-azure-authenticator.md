@@ -1,26 +1,26 @@
 <properties 
-	pageTitle="Azure Authenticator-App für Mobiltelefone" 
-	description="Erfahren Sie, wie Sie Azure Authenticator auf die neueste Version aktualisieren können." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
-	editor="curtand"/>
+	pageTitle="Azure Authenticator-App für Mobiltelefone"
+	description="Erfahren Sie, wie Sie Azure Authenticator auf die neueste Version aktualisieren können."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
+	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/30/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 
 
 # Wechseln zur neuen Azure Authenticator-App
 
-Die alte Multi-Factor Authentication wird durch die Veröffentlichung der Azure Authenticator App für [Windows Phone](http://www.windowsphone.com/de-de/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458) abgelöst. Die Multi-Factor Authentication-App kann weiterhin verwendet werden. Sollten Sie sich jedoch entscheiden, zur neuen Azure Authenticator-App zu wechseln, finden Sie in diesem Artikel hilfreiche Informationen.
+Die alte Multi-Factor Authentication wird durch die Veröffentlichung der Azure Authenticator App für [Windows Phone](http://www.windowsphone.com/de-DE/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458) abgelöst. Die Multi-Factor Authentication-App kann weiterhin verwendet werden. Sollten Sie sich jedoch entscheiden, zur neuen Azure Authenticator-App zu wechseln, finden Sie in diesem Artikel hilfreiche Informationen.
 
 
 ## Wechseln zur neuen Azure Authenticator-App 
@@ -33,9 +33,9 @@ Die alte Multi-Factor Authentication wird durch die Veröffentlichung der Azure 
 
 Stellen Sie zunächst sicher, dass Sie für das hinzuzufügende Konto den QR-Code der den Code und die URL für die manuelle Eingabe zur Hand haben.
 
-> [AZURE.NOTE]Sie wissen nicht, wie Sie den QR-Code abrufen können? Wenden Sie sich an Ihren Administrator, um Unterstützung zu erhalten.
+> [AZURE.NOTE]Sie wissen nicht, wie Sie den QR-Code abrufen können? Für Hilfe wenden Sie sich an den Helpdesk.
 > 
-> Das Aktivieren Ihres Kontos in der neuen App funktioniert nicht? Wenden Sie sich an Ihren Administrator.
+> Das Aktivieren Ihres Kontos in der neuen App funktioniert nicht? Wenden Sie sich an den Helpdesk.
 >
 
 
@@ -64,6 +64,6 @@ Sie möchten lediglich einzelne Konten aus der alten App entfernen? Tippen Sie a
 **Weitere Ressourcen**
 
 * [Azure Multi-Factor Authentication bei MSDN](https://msdn.microsoft.com/library/azure/dn249471.aspx) 
-* Azure Authenticator-App für [Windows Phone](http://www.windowsphone.com/de-de/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458).
+* Azure Authenticator-App für [Windows Phone](http://www.windowsphone.com/de-DE/store/app/azure-authenticator/03a5b2bf-6066-418f-b569-e8aecbc06e50), [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) und [iOS](https://itunes.apple.com/us/app/azure-authenticator/id983156458).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

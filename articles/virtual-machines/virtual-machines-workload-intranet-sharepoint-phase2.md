@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SharePoint-Intranetfarm-Arbeitsauslastung Phase 2: Konfigurieren von Domänencontrollern"
-	description="In dieser zweiten Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen und konfigurieren Sie die beiden Active Directory-Domänencontroller."
+	pageTitle="SharePoint Server 2013-Farm, Phase 2 | Microsoft Azure"
+	description="In Phase 2 der SharePoint Server 2013-Farm erstellen und konfigurieren Sie in Azure die zwei Active Directory-Replikatdomänencontroller."
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -27,7 +27,7 @@ Diese Phase muss vor Beginn von [Phase 3](virtual-machines-workload-intranet-sha
 
 Zunächst müssen Sie in Tabelle M die Spalte **Name des virtuellen Computers** ausfüllen und die Größen der virtuellen Computer nach Bedarf in Spalte **Mindestgröße** ändern.
 
-Element | Name des virtuellen Computers | Gallery-Image | Mindestgröße
+Element | Name des virtuellen Computers | Katalogimage | Mindestgröße
 --- | --- | --- | ---
 1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (erster Domänencontroller, Beispiel: DC1) | Windows Server 2012 R2 Datacenter | A2 (Mittel)
 2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_ (zweiter Domänencontroller, Beispiel: DC2) | Windows Server 2012 R2 Datacenter | A2 (Mittel)
@@ -113,7 +113,7 @@ Melden Sie sich bei dem ersten Domänencontroller mit den Anmeldeinformationen d
 5.	Sie werden nun im Browserdialogfeld gefragt, ob "ComputerName.rdp" von "manage.windowsazure.com" geöffnet oder gespeichert werden soll. Klicken Sie auf **Öffnen**.
 6.	Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Verbinden**.
 7.	Klicken Sie im Dialogfeld **Windows-Sicherheit** auf **Anderes Konto verwenden**.
-8.	Geben Sie im Feld **Benutzername** den Namen des virtuellen Computers sowie den Benutzernamen des lokalen Administratorkontos ein, das mit dem virtuellen Computer erstellt wurde (ein lokales Computerkonto). Verwenden Sie Folgendes Format: *ComputerName*\*LokalesAdministratorkontoName*
+8.	Geben Sie im Feld **Benutzername** den Namen des virtuellen Computers sowie den Benutzernamen des lokalen Administratorkontos ein, das mit dem virtuellen Computer erstellt wurde (ein lokales Computerkonto). Verwenden Sie Folgendes Format: *ComputerName**LokalesAdministratorkontoName*
 9.	Geben Sie im Feld **Kennwort** das Kennwort für das lokale Administratorkonto ein.
 10.	Klicken Sie auf **OK**.
 11.	Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Ja**. Der Desktop des neuen Computers wird in einem Remotedesktop-Sitzungsfenster angezeigt.
@@ -246,4 +246,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 3: Konfigur
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

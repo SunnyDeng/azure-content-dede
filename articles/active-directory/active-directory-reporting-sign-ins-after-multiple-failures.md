@@ -17,11 +17,9 @@
 	ms.author="saah;kenhoff"/>
 
 # Anmeldungen nach mehreren Fehlern
+Dieser Bericht weist die Benutzer aus, die sich nach mehreren aufeinander folgenden misslungenen Anmeldeversuchen erfolgreich angemeldet haben. Mögliche Ursachen: <ul><li>Benutzer hat sein Kennwort vergessen</li><li>Benutzer ist Opfer eines erfolgreichen Brute-Force-Angriffs zum Erraten des Kennworts</li></ul><p>Die Ergebnisse dieses Berichts enthalten die Anzahl aufeinander folgender misslungener Anmeldeversuche vor der erfolgreichen Anmeldung und den Zeitstempel der ersten erfolgreichen Anmeldung</p><p><b>Berichtseinstellungen</b>: Sie können die minimale Anzahl aufeinander folgender misslungener Anmeldeversuche konfigurieren, die auftreten muss, bevor sie im Bericht ausgewiesen wird. Beim Vornehmen von Änderungen an dieser Einstellung ist zu beachten, dass diese Änderungen nicht für vorhandene misslungene Anmeldungen gelten, die derzeit im vorhandenen Bericht enthalten sind. Sie gelten jedoch für alle künftigen Anmeldungen. Änderungen an diesem Bericht können nur von lizenzierten Administratoren vorgenommen werden.
 
-| Beschreibung | Speicherort des Berichts |
-| :-------------     | :-------        |
-| Dieser Bericht weist die Benutzer aus, die sich nach mehreren aufeinander folgenden misslungenen Anmeldeversuchen erfolgreich angemeldet haben. Mögliche Ursachen: <ul><li>Benutzer hat sein Kennwort vergessen</li><li>Benutzer ist Opfer eines erfolgreichen Brute-Force-Angriffs zum Erraten des Kennworts</li></ul><p>Die Ergebnisse dieses Berichts enthalten die Anzahl aufeinander folgender misslungener Anmeldeversuche vor der erfolgreichen Anmeldung und den Zeitstempel der ersten erfolgreichen Anmeldung</p><p><b>Berichtseinstellungen</b>: Sie können die minimale Anzahl aufeinander folgender misslungener Anmeldeversuche konfigurieren, die auftreten muss, bevor sie im Bericht ausgewiesen wird. Beim Vornehmen von Änderungen an dieser Einstellung ist zu beachten, dass diese Änderungen nicht für vorhandene misslungene Anmeldungen gelten, die derzeit im vorhandenen Bericht enthalten sind. Sie gelten jedoch für alle künftigen Anmeldungen. Änderungen an diesem Bericht können nur von lizenzierten Administratoren vorgenommen werden. | Verzeichnis > Registerkarte "Berichte" |
 
 ![Anmeldungen nach mehreren Fehlern](./media/active-directory-reporting-sign-ins-after-multiple-failures/signInsAfterMultipleFailures.PNG)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

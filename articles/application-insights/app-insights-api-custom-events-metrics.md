@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Application Insights-API für benutzerdefinierte Ereignisse und Metriken" 
-	description="Fügen Sie einige Codezeilen in Ihrer Geräte- oder Desktop-App, Webseite oder dem Webdienst ein, um Nutzungs- und Diagnoseprobleme nachzuverfolgen." 
+	pageTitle="Application Insights-API für benutzerdefinierte Ereignisse und Metriken"
+	description="Fügen Sie einige Codezeilen in Ihrer Geräte- oder Desktop-App, Webseite oder dem Webdienst ein, um Nutzungs- und Diagnoseprobleme nachzuverfolgen."
 	services="application-insights"
-    documentationCenter="" 
-	authors="alancameronwills" 
+	documentationCenter=""
+	authors="alancameronwills"
 	manager="douge"/>
  
 <tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="08/18/2015" 
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="08/26/2015"
 	ms.author="awills"/>
 
 # Application Insights-API für benutzerdefinierte Ereignisse und Metriken 
@@ -411,6 +411,36 @@ Beachten Sie, dass die Server-SDKs ein [Abhängigkeitsmodul](app-insights-depend
 
 Um das Standardmodul zum Nachverfolgen von Abhängigkeiten zu deaktivieren, bearbeiten Sie [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md), und löschen Sie den Verweis auf `DependencyCollector.DependencyTrackingTelemetryModule`.
 
+
+## Authentifizierte Benutzer
+
+In einer Web-App werden Benutzer standardmäßig durch Cookies identifiziert. Benutzer werden möglicherweise mehr als einmal gezählt, wenn sie über verschiedene Computer oder Browser auf Ihre App zugreifen oder Cookies löschen.
+
+Wenn sich Benutzer bei Ihrer App anmelden, erhalten Sie einen genaueren Zählwert durch Festlegen der ID des authentifizierten Benutzers im Browsercode:
+
+*JavaScript*
+
+```JS
+    // Called when my app has identified the user.
+    function Authenticated(signInId) {
+      var validatedId = signInId.replace(/[,;=| ]+/g, "_");
+      appInsights.setAuthenticatedUserContext(validatedId);
+      ...
+    }
+```
+
+Es ist nicht notwendig, den tatsächlichen Anmeldenamen des Benutzers zu verwenden. Es muss sich lediglich um eine ID handeln, die für diesen Benutzer eindeutig ist. Die ID darf keine Leerzeichen und keines der Zeichen `,;=|` enthalten.
+
+Die Benutzer-ID wird zudem in einem Sitzungscookie festgelegt und an den Server gesendet. Wenn das Server-SDK installiert ist, wird die ID des authentifizierten Benutzers als Teil der Kontexteigenschaften der Client- und Servertelemetrie gesendet, sodass Sie sie filtern und durchsuchen können.
+
+Wenn bei Ihrer App Benutzer in Konten gruppiert werden, können Sie auch einen Bezeichner für das Konto (mit den gleichen Zeicheneinschränkungen) übergeben.
+
+
+      appInsights.setAuthenticatedUserContext(validatedId, accountId);
+
+Im [Metrik-Explorer](app-insights-metrics-explorer.md) können Sie ein Diagramm der **authentifizierten Benutzer** und **Konten** erstellen.
+
+
 ## <a name="defaults"></a>Festlegen von Standardeinstellungen für ausgewählte benutzerdefinierte Telemetriedaten
 
 Wenn Sie nur die Standardeigenschaftswerte für einige von Ihnen benutzerdefinierte Ereignisse festlegen möchten, können Sie diese in einem TelemetryClient einstellen. Sie werden jedem Telemetrieelement zugeordnet, das von diesem Client gesendet wird..
@@ -443,10 +473,12 @@ Wenn Sie nur die Standardeigenschaftswerte für einige von Ihnen benutzerdefinie
     context.getProperties().put("Game", currentGame.Name);
     
     gameTelemetry.TrackEvent("WinGame");
+
+
     
 Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwörterbüchern überschreiben.
 
-
+**Verwenden Sie für JavaScript-Webclients** [JavaScript-Telemetrieinitialisierer](#js-initializer).
 
 
 ## <a name="ikey"></a> Festlegen des Instrumentationsschlüssels für ausgewählte benutzerdefinierte Telemetriedaten
@@ -540,7 +572,10 @@ In "ApplicationInsights.config":
     TelemetryConfiguration.getActive().getContextInitializers().add(new MyContextInitializer());
 ```
 
-Im JavaScript-Webclient können derzeit keine Standardeigenschaften festgelegt werden.
+
+### JavaScript-Webclient
+
+Verwenden Sie für JavaScript-Webclients [Telemetrieinitialisierer zum Festlegen von Standardwerten](#js-initializer).
 
 ## Telemetrieinitialisierer
 
@@ -617,6 +652,55 @@ In "ApplicationInsights.config":
 
 
 [Weitere Informationen zu diesem Beispiel anzeigen.](https://github.com/Microsoft/ApplicationInsights-Home/tree/master/Samples/AzureEmailService/MvcWebRole)
+
+<a name="js-initializer"></a>
+### JavaScript-Telemetrieinitialisierer
+
+*JavaScript*
+
+Fügen Sie einen Telemetrieinitialisierer unmittelbar nach dem Initialisierungscode ein, den Sie vom Portal abgerufen haben:
+
+```JS
+
+    <script type="text/javascript">
+        // ... initialization code
+        ...({
+            instrumentationKey: "your instrumentation key"
+        });
+        window.appInsights = appInsights;
+
+
+        // Adding telemetry initializer.
+        // This is called whenever a new telemetry item
+        // is created.
+
+        appInsights.queue.push(function () {
+            appInsights.context.addTelemetryInitializer(function (envelope) {
+                var telemetryItem = envelope.data.baseData;
+
+                // To check the telemetry item’s type - for example PageView:
+                if (envelope.name == Microsoft.ApplicationInsights.Telemetry.PageView.envelopeType) {
+                    // this statement removes url from all page view documents
+                    telemetryItem.url = "URL CENSORED";
+                }
+
+                // To set custom properties:
+                telemetryItem.properties = telemetryItem.properties || {};
+                telemetryItem.properties["globalProperty"] = "boo";
+
+                // To set custom metrics:
+                telemetryItem.measurements = telemetryItem.measurements || {};
+                telemetryItem.measurements["globalMetric"] = 100;
+            });
+        });
+
+        // End of inserted code.
+
+        appInsights.trackPageView();
+    </script>
+```
+
+Eine Übersicht der verfügbaren nicht benutzerdefinierten Eigenschaften für "telemetryItem" finden Sie im [Datenmodell](app-insights-export-data-model.md/#lttelemetrytypegt).
 
 ## <a name="dynamic-ikey"></a>Dynamischer Instrumentationsschlüssel
 
@@ -704,7 +788,7 @@ Wenn Sie diese Werte selbst festlegen, empfiehlt es sich, die entsprechende Zeil
  * **SyntheticSource**: Wenn sie nicht null oder leer ist, gibt diese Zeichenfolge an, dass die Quelle der Anforderung als Roboter oder Webtest identifiziert wurde. Standardmäßig wird sie von Berechnungen im Metrik-Explorer ausgeschlossen.
 * **Properties** Eigenschaften, die mit allen Telemetriedaten gesendet werden. Kann in einzelnen Track*-Aufrufen außer Kraft gesetzt werden.
 * **Session** Identifiziert die Sitzung des Benutzers. Die ID wird auf einen generierten Wert festgelegt, der geändert wird, wenn der Benutzer für eine Weile nicht aktiv ist.
-* **User** Ermöglicht das Zählen von Benutzern. Wenn in einer Web-App ein Cookie vorhanden ist, wird die Benutzer-ID daraus entnommen. Andernfalls wird eine neue generiert. Wenn Ihre Benutzer sich bei Ihrer App anmelden müssen, können Sie die ID anhand ihrer authentifizierten ID festlegen, um eine zuverlässigere Zählung bereitzustellen, die auch dann richtig ist, wenn der Benutzer sich von einem anderen Computer aus anmeldet. 
+* **User** Benutzerinformationen. 
 
 
 
@@ -781,4 +865,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

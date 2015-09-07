@@ -1,20 +1,20 @@
 <properties
    pageTitle="Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage"
-   services="azure-resource-manager"
-   description="Verwenden Sie den Azure-Ressourcen-Manager, um eine Anwendung in Azure bereitzustellen. Eine Vorlage ist eine JSON-Datei und kann über das Portal, PowerShell, die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows oder REST verwendet werden."
-   documentationCenter="na"
-   authors="tfitzmac"
-   manager="wpickett"
-   editor=""/>
+	services="azure-resource-manager"
+	description="Verwenden Sie den Azure-Ressourcen-Manager, um eine Anwendung in Azure bereitzustellen. Eine Vorlage ist eine JSON-Datei und kann über das Portal, PowerShell, die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows oder REST verwendet werden."
+	documentationCenter="na"
+	authors="tfitzmac"
+	manager="wpickett"
+	editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="07/24/2015"
-   ms.author="tomfitz"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="08/20/2015"
+	ms.author="tomfitz"/>
 
 # Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage
 
@@ -71,7 +71,7 @@ Wenn Sie Azure PowerShell noch nicht mit dem Ressourcen-Manager verwendet haben,
 
         PS C:\> Select-AzureSubscription -SubscriptionID <YourSubscriptionId>
 
-3. Wechseln Sie zum AzureResourceManager-Modul.
+3. Wechseln Sie zum Azure-Ressourcen-Manager-Modul.
 
         PS C:\> Switch-AzureMode AzureResourceManager
 
@@ -256,6 +256,8 @@ Bei der Verwendung einer Parameterdatei zum Übergeben von Parameterwerten an Ih
        }
     }
 
+Die Parameterdatei darf nicht größer als 64 KB sein.
+
 ## Nächste Schritte
 - Ein Beispiel für die Bereitstellung von Ressourcen über die .NET-Clientbibliothek finden Sie unter [Bereitstellen von Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage](../arm-template-deployment.md).
 - Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](../app-service-web/app-service-deploy-complex-application-predictably.md).
@@ -264,4 +266,4 @@ Bei der Verwendung einer Parameterdatei zum Übergeben von Parameterwerten an Ih
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

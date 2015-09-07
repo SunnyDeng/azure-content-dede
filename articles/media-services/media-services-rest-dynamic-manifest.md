@@ -1,23 +1,27 @@
-
 <properties 
-	pageTitle="Erstellen von Filtern mit Media Services-REST-API" 
-	description="In diesem Thema wird erläutert, wie Sie Filter erstellen, mit denen Ihre Kunden bestimmte Abschnitte eines Streams streamen können. Media Services erstellt dynamische Manifeste, um dieses selektive Streaming zu archivieren." 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
+	pageTitle="Erstellen von Filtern mit Media Services-REST-API"
+	description="In diesem Thema wird erläutert, wie Sie Filter erstellen, mit denen Ihre Kunden bestimmte Abschnitte eines Streams streamen können. Media Services erstellt dynamische Manifeste, um dieses selektive Streaming zu archivieren."
+	services="media-services"
+	documentationCenter=""
+	authors="Juliako"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="ne"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="juliako"/>
 
 #Erstellen von Filtern mit Media Services-REST-API
+
+> [AZURE.SELECTOR]
+- [.NET](media-services-dotnet-dynamic-manifest.md)
+- [REST](media-services-rest-dynamic-manifest.md)
+
 
 Ab Version 2.11 können Sie mit Media Services Filter für Ihre Medienobjekte definieren. Diese Filter sind serverseitige Regeln, mit denen Ihre Kunden verschiedene Aktionen ausführen können, z. B. Wiedergabe bestimmter Videoabschnitte (anstelle des gesamten Videos). Sie können zudem nur eine Teilmenge von Audio- und Videowiedergaben (anstelle von allen mit dem Medienobjekt verknüpften Wiedergaben) angeben, die für das Gerät eines Kunden geeignet sind. Diese Filterung der Medienobjekte erfolgt über **dynamische Manifeste**, die auf Anfrage des Kunden zum Streamen von Videos basierend auf bestimmten Filtern erstellt werden.
 
@@ -29,10 +33,10 @@ In diesem Thema wird die Verwendung von REST-APIs zum Erstellen, Aktualisieren u
 
 Die folgenden Typen werden beim Erstellen von Filtern verwendet:
 
-- [Filter](https://msdn.microsoft.com/library/azure/hh973617.aspx)
-- [AssetFilter](https://msdn.microsoft.com/library/azure/hh973617.aspx)
-- [PresentationTimeRange](https://msdn.microsoft.com/library/azure/hh973617.aspx)
-- [FilterTrackSelect und FilterTrackPropertyCondition](https://msdn.microsoft.com/library/azure/hh973617.aspx)
+- [Filter](http://msdn.microsoft.com/library/azure/mt149056.aspx)
+- [AssetFilter](http://msdn.microsoft.com/library/azure/mt149053.aspx)
+- [PresentationTimeRange](http://msdn.microsoft.com/library/azure/mt149052.aspx)
+- [FilterTrackSelect und FilterTrackPropertyCondition](http://msdn.microsoft.com/library/azure/mt149055.aspx)
 
 
 
@@ -41,7 +45,6 @@ Die folgenden Typen werden beim Erstellen von Filtern verwendet:
 >Wenn Sie in Media Services auf Entitäten zugreifen, müssen Sie bestimmte Headerfelder und Werte in Ihren HTTP-Anforderungen festlegen. Weitere Informationen finden Sie unter [Installation für die Entwicklung mit der Media Services-REST-API](media-services-rest-how-to-use.md).
 
 >Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Entsprechend der Beschreibung unter [Herstellen einer Verbindung mit einem Media Services-Konto über die Media Services-REST-API](media-services-rest-connect_programmatically.md) müssen Sie nachfolgende Aufrufe an den neuen URI senden.
-
 
 
 ##Erstellen von Filtern
@@ -250,7 +253,7 @@ Anforderungstext:
 	   ] 
 	} 
 
-###Hochladen von lokalen AssetFilters
+###Aktualisieren von lokalen AssetFilters
 
 Verwenden Sie zum Aktualisieren eines lokalen Filters die folgenden HTTP-Anforderungen:
 
@@ -363,4 +366,4 @@ In den folgenden Beispielen sehen Sie, wie Sie Ihren Streaming-URLs Filter hinzu
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="FTP-Connector"
-	description="Erste Schritte mit FTP-Connector"
+	pageTitle="Verwendung des FTP-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des FTP-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
 	authors="rajram"
 	manager="dwrede"
 	editor=""
@@ -13,13 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/19/2015"
+	ms.date="08/23/2015"
 	ms.author="rajram"/>
 
-# FTP-Connector
-
-## Übersicht
-Mit dem FTP-Connector können Sie Daten von einem und auf einen FTP-Server verschieben. Der FTP-Connector besitzt folgende Hauptfunktionen:
+# Erste Schritte mit dem FTP-Connector und das Hinzufügen zur Logik-App
+Sie stellen eine Verbindung mit einem FTP-Server her, um Daten oder Dateien zu verschieben. Wichtige Funktionen des FTP-Connectors:
 
 - Abrufen von Dateien vom FTP-Server nach Bedarf
 - Ausführen von Umfragen basierend auf einem konfigurierbaren Zeitplan
@@ -27,6 +25,8 @@ Mit dem FTP-Connector können Sie Daten von einem und auf einen FTP-Server versc
 - Angeben des FTP-Server als IP-Adresse, Port, Kennwort und Hostnamen
 - Möglichkeit zum Ausführen von Sendevorgängen nach Bedarf
 - Möglichkeit zum Löschen von Dateien auf dem FTP-Server nach Bedarf
+
+Sie können den FTP-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
 ## Erstellen eines neuen FTP-Connectors
 Um einen neuen FTP-Connector zu erstellen, befolgen Sie die unten aufgeführten Schritte. – Starten Sie das Azure-Portal. – Öffnen Sie den Azure Marketplace über "+Neu" (unten auf der Seite) -> "Web + Mobil" -> "Azure Marketplace": ![Starten von Azure Marketplace][1]
@@ -41,7 +41,7 @@ Um einen neuen FTP-Connector zu erstellen, befolgen Sie die unten aufgeführten 
 - **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
 - **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
 - **Webhostingplan** – Wählen oder erstellen Sie einen Webhostingplan.
-- **Preisstufe** – Wählen Sie eine Preisstufe für den Connector.
+- **Tarif** – Wählen Sie einen Tarif für den Connector.
 - **Name** – Geben Sie einen Namen für den FTP-Connector ein.
 - **Paketeinstellungen**
 	- **Serveradresse** – Geben Sie den FTP-Servernamen oder die IP-Adresse an.
@@ -158,4 +158,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [13]: ./media/app-service-logic-connector-ftp/ConfiguredUploadFile.PNG
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

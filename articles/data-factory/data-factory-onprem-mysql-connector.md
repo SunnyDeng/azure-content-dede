@@ -1,24 +1,22 @@
 <properties 
-	pageTitle="MySQL-Connector: Verschieben von Daten aus MySQL" 
-	description="Informationen zum MySQL-Connector für den Data Factory-Dienst, mit dem Sie Daten aus einer MySQL-Datenbank verschieben können" 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Verschieben von Daten aus MySQL | Azure Data Factory"
+	description="Erfahren Sie, wie Sie Daten aus der MySQL-Datenbank mithilfe von Azure Data Factory verschieben."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/29/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2015"
 	ms.author="spelluru"/>
 
-
-# MySQL-Connector: Verschieben von Daten aus MySQL
+# Verschieben von Daten aus MySQL mithilfe von Azure Data Factory
 
 Dieser Artikel beschreibt, wie Sie die Kopieraktivität in einer Azure Data Factory verwenden können, um Daten aus MySQL in einen anderen Datenspeicher zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
 
@@ -35,11 +33,11 @@ Damit sich das Datenverwaltungsgateway mit der MySQL-Datenbank verbindet, müsse
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1.	Einen verknüpften Dienst des Typs "OnPremisesMySql"
-2.	Einen verknüpften Dienst des Typs "AzureStorage"
-3.	Ein Eingabedataset des Typs "RelationalTable"
-4.	Ein Ausgabedataset des Typs "AzureBlob"
-4.	Eine Pipeline mit Kopieraktivität, die "RelationalSource" und "BlobSink" verwendet
+1.	Einen verknüpften Dienst des Typs [OnPremisesMySql](data-factory-onprem-mysql-connector.md#mysql-linked-service-properties)
+2.	Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
+3.	Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [RelationalTable](data-factory-onprem-mysql-connector.md#mysql-dataset-type-properties)
+4.	Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+4.	Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [RelationalSource](data-factory-onprem-mysql-connector.md#mysql-copy-activity-type-properties) und [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) verwendet
 
 Das Beispiel kopiert Daten stündlich aus einem Abfrageergebnis in einer MySQL-Datenbank in ein Blob. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -179,7 +177,7 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	                "typeProperties": {
 	                    "source": {
 	                        "type": "RelationalSource",
-	                        "query": "$$Text.Format('select * from MyTable where timestamp >= \\'{0:yyyy-MM-ddTHH:mm:ss}\\' AND timestamp < \\'{1:yyyy-MM-ddTHH:mm:ss}\\'', WindowStart, WindowEnd)"
+	                        "query": "$$Text.Format('select * from MyTable where timestamp >= \'{0:yyyy-MM-ddTHH:mm:ss}\' AND timestamp < \'{1:yyyy-MM-ddTHH:mm:ss}\'', WindowStart, WindowEnd)"
 	                    },
 	                    "sink": {
 	                        "type": "BlobSink",
@@ -230,6 +228,8 @@ Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den 
 | password | Geben Sie das Kennwort für das Benutzerkonto an, das Sie für den Benutzernamen angegeben haben. | Nein | 
 | gatewayName | Name des Gateways, das der Data Factory-Dienst zum Herstellen einer Verbindung mit der lokalen MySQL-Datenbank verwenden soll. | Ja |
 
+Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine lokale MySQL-Datenquelle finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
+
 ## Eigenschaften des Dataset-Typs "MySQL"
 
 Eine vollständige Liste der Abschnitte und Eigenschaften, die zum Definieren von Datasets zur Verfügung stehen, finden Sie im Artikel [Erstellen von Datasets](data-factory-create-datasets.md). Abschnitte wie "structure", "availability" und "policy" des JSON-Codes eines Datasets sind bei allen Typen von Datasets (Azure SQL, Azure-Blob, Azure-Tabelle usw.) ähnlich.
@@ -250,7 +250,7 @@ Wenn bei der Kopieraktivität "source" den Typ **RelationalSource** hat (zu dem 
 
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------------- | -------- |
-| query | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: select \* from MyTable. | Ja | 
+| query | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: select * from MyTable. | Ja | 
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
@@ -310,4 +310,4 @@ Beim Verschieben von Daten in MySQL werden die folgenden Zuordnungen zwischen My
 
 [AZURE.INCLUDE [data-factory-type-repeatability-for-relational-sources](../../includes/data-factory-type-repeatability-for-relational-sources.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

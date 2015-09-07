@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Problembehandlung bei Azure Data Factory" 
-	description="Erfahren Sie, wie Sie Probleme mithilfe von Azure Data Factory beheben." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Problembehandlung bei Azure Data Factory"
+	description="Erfahren Sie, wie Sie Probleme mithilfe von Azure Data Factory beheben."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/25/2015"
 	ms.author="spelluru"/>
-
 
 # Problembehandlung bei Data Factory
 Sie können Azure Data Factory-Probleme mithilfe vom Azure-Portal (oder) Azure PowerShell-Cmdlets beheben. Dieses Thema enthält exemplarische Vorgehensweisen, die Ihnen zeigen, wie Sie das Azure-Portal verwenden, um schnell Fehler zu beheben, die bei Data Factory auftreten.
@@ -56,7 +54,7 @@ Stellen Sie sicher, dass SQL Server von dem Computer, auf dem das Gateway instal
 
 Slices können den Status **PendingExecution** oder **PendingValidation** aus unterschiedlichen Gründen aufweisen. Zu den häufigsten Gründen zählt, dass die Eigenschaft **external** nicht auf **true** festgelegt ist. Ein Dataset, das außerhalb des Gültigkeitsbereichs von Azure Data Factory erstellt wird, sollte mit der Eigenschaft **external** gekennzeichnet sein. Dies bedeutet, dass es sich um externe Daten handelt, die nicht von Pipelines innerhalb der Data Factory unterstützt werden. Die Datenslices werden als **Ready** gekennzeichnet, sobald die Daten im entsprechenden Speicher verfügbar sind.
 
-Das folgende Beispiel zeigt die Verwendung der Eigenschaft **external**. Sie können optional **externalData**\* angeben, wenn Sie "external" auf "true" festlegen.
+Das folgende Beispiel zeigt die Verwendung der Eigenschaft **external**. Sie können optional **externalData*** angeben, wenn Sie "external" auf "true" festlegen.
 
 Im Thema "Tabellen" in der [Referenz zur JSON-Skripterstellung][json-scripting-reference] finden Sie weitere Informationen zu dieser Eigenschaft.
 	
@@ -353,8 +351,6 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 
 
 [adfgetstarted]: data-factory-get-started.md
-[use-onpremises-datasources]: data-factory-use-onpremises-datasources.md
-[use-pig-and-hive-with-data-factory]: data-factory-pig-hive-activities.md
 [adf-tutorial]: data-factory-tutorial.md
 [use-custom-activities]: data-factory-use-custom-activities.md
 [monitor-manage-using-powershell]: data-factory-monitor-manage-using-powershell.md
@@ -386,4 +382,4 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 [image-data-factory-troubleshoot-activity-run-details]: ./media/data-factory-troubleshoot/Walkthrough2ActivityRunDetails.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

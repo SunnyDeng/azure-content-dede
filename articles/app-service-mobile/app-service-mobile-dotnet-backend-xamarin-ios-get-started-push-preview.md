@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Hinzufügen von Pushbenachrichtigungen zu Ihrer Xamarin iOS-App mit Azure App Service" 
-	description="Erfahren Sie, wie Azure App Service zum Senden von Pushbenachrichtigungen an Ihre Xamarin iOS-App verwendet wird." 
-	services="app-service\mobile" 
-	documentationCenter="xamarin" 
+	pageTitle="Hinzufügen von Pushbenachrichtigungen zu Ihrer Xamarin iOS-App mit Azure App Service"
+	description="Erfahren Sie, wie Azure App Service zum Senden von Pushbenachrichtigungen an Ihre Xamarin iOS-App verwendet wird."
+	services="app-service\mobile"
+	documentationCenter="xamarin"
 	authors="normesta"
-	manager="dwrede" 
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="app-service-mobile" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-xamarin-ios" 
-	ms.devlang="dotnet" 
+	ms.service="app-service-mobile"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-xamarin-ios"
+	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="07/29/2015" 
+	ms.date="08/22/2015"
 	ms.author="yuaxu"/>
 
 # Hinzufügen von Pushbenachrichtigungen zu Ihrer Xamarin iOS-App
@@ -22,39 +22,31 @@
 
 ##Übersicht
 
-In diesem Lernprogramm fügen Sie Pushbenachrichtigungen zum [Xamarin iOS-Schnellstartprojekt] hinzu, damit jedes Mal, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung gesendet wird. Dieses Lernprogramm baut auf dem [Xamarin iOS-Schnellstartlernprogramm] auf, das Sie zuerst abschließen müssen. Die [iOS-Simulator unterstützt keine Pushbenachrichtigungen](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html), daher müssen Sie ein physisches iSO-Gerät verwenden. Sie müssen sich außerdem für eine [Apple-Entwicklerprogramm-Mitgliedschaft](https://developer.apple.com/programs/ios/) anmelden.
+In diesem Lernprogramm fügen Sie Pushbenachrichtigungen zum [Xamarin iOS-Schnellstartprojekt] hinzu, damit jedes Mal, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung gesendet wird. Dieses Lernprogramm baut auf dem [Xamarin iOS-Schnellstartlernprogramm] auf, das Sie zuerst abschließen müssen. Wenn Sie das heruntergeladene Schnellstart-Serverprojekt nicht verwenden, müssen Sie Ihrem Projekt das Pushbenachrichtigungs-Erweiterungspaket hinzufügen. Weitere Informationen zu Servererweiterungspaketen finden Sie unter [Work with the .NET backend server SDK for Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) (in englischer Sprache).
+
+Die [iOS-Simulator unterstützt keine Pushbenachrichtigungen](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html), daher müssen Sie ein physisches iSO-Gerät verwenden. Sie müssen sich außerdem für eine [Apple-Entwicklerprogramm-Mitgliedschaft](https://developer.apple.com/programs/ios/) anmelden.
 
 ##Voraussetzungen
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto.
+* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps. Diese können Sie auch nach Ablauf der Testversion weiter nutzen. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
 
-    Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps. Diese können Sie auch nach Ablauf der Testversion weiter nutzen. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
+* Einen Mac, auf dem [Xamarin Studio] und [Xcode] ab Version 4.4 installiert sind. Beachten Sie, dass es einfacher ist, Ihre Xamarin.iOS-App auf einem Mac unter Verwendung von Xamarin Studio auszuführen. Sie können die Xamarin iOS-App auf Wunsch mithilfe von Visual Studio auf Ihrem Windows-Computer ausführen. Allerdings ist dies etwas kompliziert, da Sie eine Verbindung zu einem vernetzten Mac benötigen. Wenn Sie daran interessiert sind, finden Sie Informationen dazu unter [Installation von Xamarin.iOS auf Windows].
 
-    >[AZURE.NOTE]Wenn Sie mobile Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751&appServiceName=mobile). Dort können Sie sofort kostenlos eine kurzlebige Starter-Web-App erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+* Ein physisches iOS-Gerät.
 
-* Ein Mac, auf dem [Xamarin Studio] und [Xcode] Version 4.4 oder höher installiert ist.
-
-    >[AZURE.NOTE]Es ist einfacher, Ihre Xamarin.iOS-App auf einem Mac mithilfe von Xamarin Studio auszuführen. Sie können die Xamarin iOS-App auf Wunsch mithilfe von Visual Studio auf Ihrem Windows-Computer ausführen. Allerdings ist dies etwas kompliziert, da Sie eine Verbindung zu einem vernetzten Mac benötigen. Wenn Sie daran interessiert sind, finden Sie Informationen dazu unter [Installation von Xamarin.iOS auf Windows].
-
-* Ein physisches iOS-Gerät
-
-* Schließen Sie das [Schnellstart-Lernprogramm](../app-service-mobile-dotnet-backend-xamarin-ios-get-started-preview.md) ab
+* Schließen Sie das [Schnellstart-Lernprogramm](../app-service-mobile-dotnet-backend-xamarin-ios-get-started-preview.md) ab.
 
 ## <a id="register"></a>Registrieren der App für Pushbenachrichtigungen
 
 [AZURE.INCLUDE [Aktivieren von Apple-Pushbenachrichtigungen](../../includes/enable-apple-push-notifications.md)]
 
-##<a name="review"></a>Überprüfen der Konfiguration des Serverprojekts (optional)
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-enable-push-preview](../../includes/app-service-mobile-dotnet-backend-enable-push-preview.md)]
-
 ## Konfigurieren von Azure zum Senden von Pushbenachrichtigungen
 
 [AZURE.INCLUDE [app-service-mobile-apns-configure-push-preview](../../includes/app-service-mobile-apns-configure-push-preview.md)]
 
-##<a id="update-server"></a> Aktualisieren des Serverprojekts zum Senden von Pushbenachrichtigungen
+##<a id="update-server"></a>Aktualisieren des Serverprojekts zum Senden von Pushbenachrichtigungen
 
 [AZURE.INCLUDE [app-service-mobile-apns-configure-push-preview](../../includes/app-service-mobile-dotnet-backend-configure-push-apns.md)]
 
@@ -81,7 +73,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
             }
         }
 
-1. Fügen Sie am Anfang der **AppDelegate.cs**-Datei die folgende `using`-Anweisung hinzu.
+1. Fügen Sie am Anfang der Datei **AppDelegate.cs** die folgende `using`-Anweisung hinzu.
 
         using Microsoft.WindowsAzure.MobileServices;
 
@@ -201,12 +193,12 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
-[Get started with Mobile Services]: /de-de/develop/mobile/tutorials/get-started-xamarin-ios
-[Get started with data]: /de-de/develop/mobile/tutorials/get-started-with-data-xamarin-ios
-[Get started with authentication]: /de-de/develop/mobile/tutorials/get-started-with-users-xamarin-ios
-[Get started with push notifications]: /de-de/develop/mobile/tutorials/get-started-with-push-xamarin-ios
-[Push notifications to app users]: /de-de/develop/mobile/tutorials/push-notifications-to-users-ios
-[Authorize users with scripts]: /de-de/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios
+[Get started with Mobile Services]: /de-DE/develop/mobile/tutorials/get-started-xamarin-ios
+[Get started with data]: /de-DE/develop/mobile/tutorials/get-started-with-data-xamarin-ios
+[Get started with authentication]: /de-DE/develop/mobile/tutorials/get-started-with-users-xamarin-ios
+[Get started with push notifications]: /de-DE/develop/mobile/tutorials/get-started-with-push-xamarin-ios
+[Push notifications to app users]: /de-DE/develop/mobile/tutorials/push-notifications-to-users-ios
+[Authorize users with scripts]: /de-DE/develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios
 [Xamarin Device Provisioning]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 [Installation von Xamarin.iOS auf Windows]: http://developer.xamarin.com/guides/ios/getting_started/installation/windows/
 
@@ -218,4 +210,4 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

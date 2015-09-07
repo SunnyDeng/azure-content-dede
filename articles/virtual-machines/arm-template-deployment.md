@@ -1,12 +1,20 @@
-<properties pageTitle="Bereitstellen von Azure-Ressourcen mithilfe einer Vorlage" description="Erfahren Sie, wie Sie einige der verfügbaren Clients in der Azure-Ressourcenverwaltungsbibliothek verwenden, um einen virtuellen Computer, ein virtuelles Netzwerk und ein Speicherkontos bereitzustellen" services="virtual-machines,virtual-networks,storagSpeichere" documentationCenter="" authors="davidmu1" manager="timlt" editor="tysonn" tags="azure-resource-manager/>
+<properties 
+	pageTitle="Bereitstellen von Azure-Ressourcen mithilfe einer Vorlage" 
+	description="Erfahren Sie, wie Sie einige der verfügbaren Clients in der Azure-Ressourcenverwaltungsbibliothek verwenden, um einen virtuellen Computer, ein virtuelles Netzwerk und ein Speicherkontos bereitzustellen" 
+	services="virtual-machines,virtual-networks,storagSpeichere" 
+	documentationCenter="" 
+	authors="davidmu1" 
+	manager="timlt" 
+	editor="tysonn" 
+	tags="azure-resource-manager"/>
 
 <tags
-	ms.service="multiple"
+	ms.service="azure-resource-manager"
 	ms.workload="multiple"
 	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na" 
+	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/15/2015"
+	ms.date="08/25/2015"
 	ms.author="davidmu"/>
 
 # Bereitstellen von Azure-Ressourcen mithilfe von .NET-Bibliotheken und einer Vorlage
@@ -75,7 +83,7 @@ Mithilfe der Azure-Ressourcen-Manager-Vorlage können Sie die Azure-Ressourcen g
             "contentVersion": "1.0.0.0",
         }
 
-6. [Parameter](https://msdn.microsoft.com/library/azure/dn835138.aspx#parameters) sind nicht immer erforderlich, aber sie erleichtern die Vorlagenverwaltung. Sie beschreiben den Typ des Werts, ggf. den Standardwert und möglicherweise die zulässigen Werte des Parameters. Für dieses Lernprogramm werden die Parameter, mit denen ein virtueller Computer, ein Speicherkonto und ein virtuelles Netzwerk erstellt werden, der Vorlage hinzugefügt.
+6. [Parameter](../resource-group-authoring-templates.md#parameters) sind nicht immer erforderlich, aber sie erleichtern die Vorlagenverwaltung. Sie beschreiben den Typ des Werts, ggf. den Standardwert und möglicherweise die zulässigen Werte des Parameters. Für dieses Lernprogramm werden die Parameter, mit denen ein virtueller Computer, ein Speicherkonto und ein virtuelles Netzwerk erstellt werden, der Vorlage hinzugefügt.
 
     Fügen Sie das Parameterelement und seine untergeordneten Elemente nach dem ContentVersion-Element hinzu:
 
@@ -106,7 +114,7 @@ Mithilfe der Azure-Ressourcen-Manager-Vorlage können Sie die Azure-Ressourcen g
           },
         }
 
-7.	[Variablen](https://msdn.microsoft.com/library/azure/dn835138.aspx#variables) können in einer Vorlage verwendet werden, um die Werte festzulegen, die sich häufig ändern, oder um die Werte festzulegen, die aus einer Kombination von Parameterwerten erstellt werden müssen.
+7.	[Variablen](../resource-group-authoring-templates.md#variables) können in einer Vorlage verwendet werden, um die Werte festzulegen, die sich häufig ändern, oder um die Werte festzulegen, die aus einer Kombination von Parameterwerten erstellt werden müssen.
 
     Fügen Sie das Variablenelement nach dem Parameterabschnitt hinzu:
 
@@ -142,7 +150,7 @@ Mithilfe der Azure-Ressourcen-Manager-Vorlage können Sie die Azure-Ressourcen g
           },
         }
 
-8.	[Ressourcen](https://msdn.microsoft.com/library/azure/dn835138.aspx#resources) wie der virtuelle Computer, das virtuelle Netzwerk und das Speicherkonto werden als Nächstes in der Vorlage definiert.
+8.	[Ressourcen](../resource-group-authoring-templates.md#resources) wie der virtuelle Computer, das virtuelle Netzwerk und das Speicherkonto werden als Nächstes in der Vorlage definiert.
 
     Fügen Sie nach dem Variablenabschnitt den Ressourcenabschnitt hinzu:
 
@@ -443,4 +451,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/arm-template-deployment/crpportal.png)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

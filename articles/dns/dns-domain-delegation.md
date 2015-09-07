@@ -1,25 +1,25 @@
 <properties
    pageTitle="Delegieren einer Domäne an Azure DNS | Microsoft Azure"
-   description="Grundlegendes zum Ändern der Domänendelegierung und zum Verwenden von DNS-Namenserver zum Hosten von Domänen"
-   services="dns"
-   documentationCenter="na"
-   authors="joaoma"
-   manager="Adinah"
-   editor=""/>
+	description="Grundlegendes zum Ändern der Domänendelegierung und zum Verwenden von DNS-Namenserver zum Hosten von Domänen."
+	services="dns"
+	documentationCenter="na"
+	authors="joaoma"
+	manager="Adinah"
+	editor=""/>
 
 <tags
    ms.service="dns"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="04/28/2015"
-   ms.author="joaoma"/>
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/12/2015"
+	ms.author="joaoma"/>
 
 
 # Delegieren von Domänen an Azure DNS
 
-Azure DNS ist ein Hostingdienst für DNS-Domänen. Damit DNS-Abfragen für eine Domäne Azure DNS erreichen, muss die Domäne aus der übergeordneten Domäne an Azure DNS delegiert werden. Auf dieser Seite wird die Funktionsweise der Domänendelegierung und die Domänendelegierung an Azure DNS beschrieben.
+Azure DNS ist ein Hostingdienst für DNS-Domänen. Damit DNS-Abfragen für eine Domäne Azure DNS erreichen, muss die Domäne aus der übergeordneten Domäne an Azure DNS delegiert werden. In diesem Artikel wird die Funktionsweise der Domänendelegierung und die Domänendelegierung an Azure DNS beschrieben.
 
 
 ## Funktionsweise der DNS-Delegierung
@@ -53,11 +53,10 @@ Dieser Vorgang wird als "Auflösung von DNS-Namen" bezeichnet. (Streng genommen 
 
 Wie verweist eine übergeordnete Zone auf die Namenserver für eine untergeordnete Zone? Dafür wird eine besondere Art von DNS-Eintrag verwendet, ein sogenannter NS-Eintrag (NS steht für Namenserver). Die Stammzone enthält beispielsweise NS-Einträge für „com“, die die Namenserver für die Zone „com“ anzeigen. Die com-Zone hingegen enthält NS-Einträge für "contoso.com", die die Namenserver für die Zone "contoso.com" anzeigen. Das Einrichten der NS-Einträge für eine untergeordnete Zone in einer übergeordneten Zone wird Delegieren der Domäne genannt.
 
-Die folgende Abbildung veranschaulicht dieses Konzept.
 
 ![Dns-nameserver](./media/dns-domain-delegation/image1.png)
 
-Jede Delegierung umfasst in Wirklichkeit zwei Kopien der NS-Einträge – eine in der übergeordneten Zone, die auf die untergeordnete Zone verweist, und eine in der untergeordneten Zone selbst. Die Zone "contoso.com" enthält z. B. die NS-Einträge für "contoso.com" (neben den NS-Einträgen in "com"). Diese werden als autoritative NS-Einträge bezeichnet, und sie befinden sich der Spitze der untergeordneten Zone.
+Jede Delegierung umfasst in Wirklichkeit zwei Kopien der NS-Einträge – eine in der übergeordneten Zone, die auf die untergeordnete Zone verweist, und eine in der untergeordneten Zone selbst. Die Zone "contoso.com" enthält die NS-Einträge für "contoso.com" (neben den NS-Einträgen in "com"). Diese werden als autoritative NS-Einträge bezeichnet, und sie befinden sich der Spitze der untergeordneten Zone.
 
 
 ## Delegieren einer Domänen an Azure DNS
@@ -66,11 +65,11 @@ Nachdem Sie Ihre DNS-Zone in Azure DNS erstellt haben, müssen Sie NS-Einträge 
 
 >[AZURE.NOTE]Sie müssen keine Domäne besitzen, um eine DNS-Zone mit diesem Domänennamen in Azure DNS zu erstellen. Sie müssen jedoch Besitzer der Domäne sein, um die Delegierung an Azure DNS bei der Registrierungsstelle einzurichten.
 
-Nehmen wir beispielsweise an, Sie erwerben die Domäne "contoso.com" und erstellen eine Zone mit dem Namen 'contoso.com' in Azure DNS. Als Besitzer der Domäne bietet Ihre Registrierungsstelle Ihnen die Option, die Namenserveradressen (d. h. NS-Einträge) für Ihre Domäne zu konfigurieren. Die Registrierungsstelle wird diese NS-Einträge in der übergeordneten Domäne speichern, in diesem Fall ".com". Clients auf der ganzen Welt werden beim Auflösen von DNS-Einträgen nach "contoso.com" dann an Ihre Domäne in der Azure DNS-Zone geleitet.
+Nehmen wir beispielsweise an, Sie erwerben die Domäne "contoso.com" und erstellen eine Zone mit dem Namen 'contoso.com' in Azure DNS. Als Besitzer der Domäne bietet Ihre Registrierungsstelle Ihnen die Option, die Namenserveradressen (d. h. die NS-Einträge) für Ihre Domäne zu konfigurieren. Die Registrierungsstelle wird diese NS-Einträge in der übergeordneten Domäne speichern, in diesem Fall ".com". Clients auf der ganzen Welt werden beim Auflösen von DNS-Einträgen nach "contoso.com" dann an Ihre Domäne in der Azure DNS-Zone geleitet.
 
 Zum Einrichten der Delegierung müssen Sie den Namenserver für die Zone kennen. Azure DNS weist jedes Mal Namenserver aus einem Pool zu, wenn Sie eine Zone erstellen, und speichert diese in den autoritativen NS-Einträgen, die automatisch in der Zone erstellt werden. Um die Namen der Namenserver anzuzeigen, müssen Sie daher lediglich diese Einträge abrufen.
 
-Mithilfe von Azure PowerShell können die autoritativen NS-Einträge folgendermaßen abgerufen werden. (Der Eintragsname "@" wird verwendet, um auf Einträge an der Spitze der Zone zu verweisen.):
+Mithilfe von Azure PowerShell können die autoritativen NS-Einträge folgendermaßen abgerufen werden. (Der Eintragsname "@" wird verwendet, um auf Einträge an der Spitze der Zone zu verweisen.).
 
 	PS C:\> $zone = Get-AzureDnsZone –Name contoso.com –ResourceGroupName MyAzureResourceGroup
 	PS C:\> Get-AzureDnsRecordSet –Name “@” –RecordType NS –Zone $zone
@@ -117,28 +116,28 @@ Angenommen, Sie möchten nach dem Einrichten und Delegieren von "contoso.com" in
 
 Der einzige Unterschied besteht darin, dass in Schritt 3 die NS-Datensätze in der übergeordneten Zone "contoso.com" in Azure DNS erstellt werden müssen und nicht über eine Domänenregistrierungsstelle eingerichtet werden.
 
-Das folgende PowerShell-Beispiel dient als Veranschaulichung. Wir erstellen zuerst die übergeordnete und die untergeordnete Zone, die sich in der gleichen Ressourcengruppe oder in unterschiedlichen Ressourcengruppen befinden können:
+Das folgende PowerShell-Beispiel dient als Veranschaulichung. Wir erstellen zuerst die übergeordnete und die untergeordnete Zone, die sich in der gleichen Ressourcengruppe oder in unterschiedlichen Ressourcengruppen befinden können.
 
 	PS C:\> $parent = New-AzureDnsZone -Name contoso.com -ResourceGroupName RG1
 	PS C:\> $child = New-AzureDnsZone -Name partners.contoso.com -ResourceGroupName RG1
 
-Dann rufen wir die autoritativen NS-Datensätze aus der untergeordneten Zone ab:
+Dann rufen wir wie im folgenden Beispiel dargestellt die autoritativen NS-Datensätze aus der untergeordneten Zone ab.
 
 	PS C:\> $child_ns_recordset = Get-AzureDnsRecordSet -Zone $child -Name "@" -RecordType NS
 
-Schließlich erstellen wir den entsprechenden NS-Datensatz in der übergeordneten Zone, um die Delegierung abzuschließen (Beachten Sie, dass der Name des Datensatzes in der übergeordneten Zone mit dem Namen in der untergeordneten Zone übereinstimmt, in diesem Fall "partners"):
+Schließlich erstellen wir den entsprechenden NS-Datensatz in der übergeordneten Zone, um die Delegierung abzuschließen (Beachten Sie, dass der Name des Datensatzes in der übergeordneten Zone mit dem Namen in der untergeordneten Zone übereinstimmt, in diesem Fall "partners").
 
 	PS C:\> $parent_ns_recordset = New-AzureDnsRecordSet -Zone $parent -Name "partners" -RecordType NS -Ttl 3600
 	PS C:\> $parent_ns_recordset.Records = $child_ns_recordset.Records
-	PS C:\> Set-AzureDnsRecordSet -RecordSet $parent_ns_recordset 
+	PS C:\> Set-AzureDnsRecordSet -RecordSet $parent_ns_recordset
 
-Wie beim Delegieren mithilfe einer Registrierungsstelle können wir überprüfen, ob alles ordnungsgemäß eingerichtet ist, indem wir den SOA-Datensatz der untergeordneten Zone suchen:
+Wie beim Delegieren mithilfe einer Registrierungsstelle können wir überprüfen, ob alles ordnungsgemäß eingerichtet ist, indem wir den SOA-Datensatz der untergeordneten Zone suchen.
 
 	PS C:\> nslookup –type=SOA partners.contoso.com
-	
+
 	Server: ns1-08.azure-dns.com
 	Address: 208.76.47.8
-	
+
 	partners.contoso.com
 		primary name server = ns1-08.azure-dns.com
 		responsible mail addr = msnhst.microsoft.com
@@ -159,6 +158,5 @@ Wie beim Delegieren mithilfe einer Registrierungsstelle können wir überprüfen
 [Automatisieren von Azure-Vorgängen mit dem .NET SDK](../dns-sdk)
 
 [REST-API-Referenz für Azure DNS](https://msdn.microsoft.com/library/azure/mt163862.aspx)
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

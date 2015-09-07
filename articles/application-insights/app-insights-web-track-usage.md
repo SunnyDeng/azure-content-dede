@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Verwendungsanalyse für Webanwendungen mit Application Insights" 
-	description="Übersicht über die Verwendungsanalyse mit Application Insights" 
-	services="application-insights" 
-    documentationCenter=""
-	authors="alancameronwills" 
+	pageTitle="Verwendungsanalyse für Webanwendungen mit Application Insights"
+	description="Übersicht über die Verwendungsanalyse mit Application Insights"
+	services="application-insights"
+	documentationCenter=""
+	authors="alancameronwills"
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/19/2015" 
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="awills"/>
  
 # Verwendungsanalyse für Webanwendungen mit Application Insights
@@ -109,13 +109,33 @@ Wenn Sie jedoch kürzere Zeiträume untersuchen – beispielsweise auf Stundenba
 
 ## Benutzer und Benutzeranzahlen
 
+
 Jeder Benutzersitzung ist eine eindeutige Benutzer-ID zugeordnet.
 
-Standardmäßig werden Benutzer durch Platzieren eines Cookies identifiziert. In diesem Fall wird ein Benutzer, der mehrere Browser oder Geräte verwendet, mehr als einmal gezählt.
+Standardmäßig werden Benutzer durch Platzieren eines Cookies identifiziert. Ein Benutzer, der mehrere Browser oder Geräte verwendet, wird mehr als einmal gezählt. (Siehe auch [Authentifizierte Benutzer](#authenticated-users).)
+
 
 Die Metrik **Benutzeranzahl** innerhalb eines bestimmten Intervalls ist als Anzahl eindeutiger Benutzer mit aufgezeichneter Aktivität während dieses Intervalls definiert. Aus diesem Grund werden Benutzer mit langen Sitzungen möglicherweise mehrfach gezählt, wenn Sie einen Zeitraum von weniger als einer Stunde untersuchen.
 
-**Neue Benutzer** zählt die Benutzer, deren erste Sitzungen mit der App während dieses Intervalls aufgezeichnet wurden. Wenn die Standardmethode der Benutzerzählung anhand von Cookies verwendet wird, werden hierbei auch Benutzer gezählt, die ihre Cookies gelöscht haben oder ein neues Gerät oder einen neuen Browser verwenden und damit zum ersten Mal auf Ihre App zugreifen. ![Klicken Sie auf dem Blatt „Verwendung“ auf das Diagramm „Benutzer“, um „Neue Benutzer“ zu überprüfen.](./media/app-insights-web-track-usage/031-dual.png)
+**Neue Benutzer** zählt die Benutzer, deren erste Sitzungen mit der App während dieses Intervalls aufgezeichnet wurden. Wenn die Standardmethode der Benutzerzählung anhand von Cookies verwendet wird, werden hierbei auch Benutzer gezählt, die ihre Cookies gelöscht haben oder ein neues Gerät oder einen neuen Browser verwenden und damit zum ersten Mal auf die App zugreifen. ![Klicken Sie auf dem Blatt „Verwendung“ auf das Diagramm „Benutzer“, um „Neue Benutzer“ zu überprüfen.](./media/app-insights-web-track-usage/031-dual.png)
+
+### Authentifizierte Benutzer
+
+Wenn sich Benutzer bei Ihrer Web-App anmelden können, erhalten Sie einen genaueren Zählwert, indem in Application Insights eine eindeutige Benutzer-ID verfügbar ist. Dabei muss es sich nicht um den Namen der Benutzer oder um die gleiche ID handeln, die in Ihrer App verwendet wird. Nachdem ein Benutzer in Ihrer App identifiziert wurde, verwenden Sie den folgenden Code:
+
+
+*JavaScript auf Client*
+
+      appInsights.setAuthenticatedUserContext(userId);
+
+Wenn bei Ihrer App Benutzer in Konten gruppiert werden, können Sie auch einen Bezeichner für das Konto übergeben.
+
+      appInsights.setAuthenticatedUserContext(userId, accountId);
+
+Die Benutzer- und Konto-IDs dürfen keine Leerzeichen und keines der Zeichen `,;=|` enthalten.
+
+
+Im [Metrik-Explorer](app-insights-metrics-explorer.md) können Sie ein Diagramm der **authentifizierten Benutzer** und **Konten** erstellen.
 
 ## Synthetischer Datenverkehr
 
@@ -144,7 +164,7 @@ Lassen Sie uns einmal Folgendes annehmen. Anstatt jedes Spiel in einer eigenen W
 
 Aber dennoch soll Application Insights weiter protokollieren, wie oft jedes Spiel geöffnet wird, und zwar auf dieselbe Weise wie bei den getrennten Webseiten. Das ist ganz einfach: Fügen Sie einfach in Ihr JavaScript einen Aufruf des Telemetriemoduls an der Stelle ein, an der aufgezeichnet werden soll, dass eine neue Seite geöffnet wurde:
 
-	telemetryClient.trackPageView(game.Name);
+	appInsights.trackPageView(game.Name);
 
 ## Benutzerdefinierte Ereignisse
 
@@ -152,7 +172,7 @@ Verwenden Sie auch benutzerdefinierte Ereignisse. Sie können diese von Geräte-
 
 *JavaScript*
 
-    telemetryClient.trackEvent("GameEnd");
+    appInsights.trackEvent("GameEnd");
 
 *C#*
 
@@ -371,4 +391,4 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

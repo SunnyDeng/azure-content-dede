@@ -488,6 +488,6 @@ Dieser Ansatz empfiehlt folgende Schritte:
 -	Erstellen Sie für identische Mitglieder einer Ressourcengruppe (z. B. Knoten in einem Cluster) spezielle Vorlagen, die die Ressourcenschleife nutzen, um für mehrere Instanzen eindeutige Eigenschaften bereitzustellen.
 -	Für alle Nachbereitstellungsaufgaben (z. B. Produktinstallation und Konfigurationen) nutzen Sie die Bereitstellung von Skripterweiterungen, und erstellen Sie Skripts, die für die einzelnen Technologien spezifisch sind.
 
-Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
+Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Gewusst wie: Konfigurieren von Azure Redis Cache"
-   description="Grundlagen der Redis-Standardkonfiguration für Azure Redis Cache und Informationen zur Konfiguration Ihrer Azure Redis Cache-Instanzen"
-   services="redis-cache"
-   documentationCenter="na"
-   authors="steved0x"
-   manager="dwrede"
-   editor="tysonn" />
+	description="Grundlagen der Redis-Standardkonfiguration für Azure Redis Cache und Informationen zur Konfiguration Ihrer Azure Redis Cache-Instanzen"
+	services="redis-cache"
+	documentationCenter="na"
+	authors="steved0x"
+	manager="dwrede"
+	editor="tysonn"/>
 <tags 
    ms.service="cache"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="cache-redis"
-   ms.workload="tbd"
-   ms.date="07/24/2015"
-   ms.author="sdanie" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
+	ms.date="08/25/2015"
+	ms.author="sdanie"/>
 
 # Gewusst wie: Konfigurieren von Azure Redis Cache
 
@@ -21,7 +21,7 @@ In diesem Thema wird beschrieben, wie Sie die Konfiguration für Ihre Azure Redi
 
 ## Konfigurieren von Redis Cache-Einstellungen
 
-Sie können auf Caches im [Microsoft Azure-Vorschauportal](https://portal.azure.com) über das Blatt **Durchsuchen** zugreifen.
+Sie können auf Caches im [Azure-Vorschauportal](https://portal.azure.com) über das Blatt **Durchsuchen** zugreifen.
 
 ![Azure Redis Cache: Blatt „Durchsuchen“](./media/cache-configure/IC796920.png)
 
@@ -98,7 +98,7 @@ Weitere Informationen finden Sie unter [Redis-Keyspacebenachrichtigungen](http:/
 
 ![Redis Cache: Benutzer und Tags](./media/cache-configure/IC808320.png)
 
-Der Abschnitt **Benutzer** bietet Unterstützung für die rollenbasierte Zugriffssteuerung (RBAC) über das Portal, damit Organisationen ihre Zugriffsverwaltungsanforderungen einfach und präzise erfüllen können. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung im Microsoft Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=512803).
+Der Abschnitt **Benutzer** bietet Unterstützung für die rollenbasierte Zugriffssteuerung (RBAC) über das Vorschauportal, damit Organisationen ihre Zugriffsverwaltungsanforderungen einfach und präzise erfüllen können. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=512803).
 
 Im Abschnitt **Tags** können Sie Ihre Ressourcen organisieren. Weitere Informationen finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](../resource-group-using-tags.md).
 
@@ -110,13 +110,13 @@ Neue Azure Redis Cache-Instanzen werden mit den folgenden standardmäßigen Redi
 >
 >`StackExchange.Redis.RedisServerException: ERR unknown command 'CONFIG'`
 >  
->Alle Werte, die konfigurierbar sind, z. B. **max-memory-policy**, können über das Portal konfiguriert werden.
+>Alle Werte, die konfigurierbar sind, z. B. **max-memory-policy**, können über das Vorschauportal konfiguriert werden.
 
 |Einstellung|Standardwert|Beschreibung|
 |---|---|---|
 |Datenbanken|16|Die Standarddatenbank ist DB 0. Sie können für jede Verbindung eine andere Datenbank auswählen, indem Sie „connection.GetDataBase(dbid)“ verwenden. Hierbei steht „dbid“ für eine Zahl zwischen 0 und 15.|
 |maxclients|10\.000|Dies ist die maximale Anzahl von verbundenen Clients, die gleichzeitig zulässig sind. Sobald der Grenzwert erreicht ist, schließt Redis alle neuen Verbindungen und sendet den Fehler „max number of clients reached“ (Maximale Anzahl von Clients erreicht).|
-|maxmemory-policy|volatile-lru|Mit der Einstellung „maxmemory-policy“ wählt Redis aus, was entfernt werden soll, wenn der Wert für „maxmemory“ (Größe des Cacheangebots, die Sie beim Erstellen des Caches ausgewählt haben) erreicht ist. Bei Azure Redis Cache lautet die Standardeinstellung „volatile-lru“. Hierbei werden die Schlüssel anhand eines Ablaufverfahrens mit LRU-Algorithmus entfernt. Diese Einstellung kann im Portal konfiguriert werden. Weitere Informationen finden Sie unter [maxmemory-policy und maxmemory-reserved](#maxmemory-policy-and-maxmemory-reserved).|
+|maxmemory-policy|volatile-lru|Mit der Einstellung „maxmemory-policy“ wählt Redis aus, was entfernt werden soll, wenn der Wert für „maxmemory“ (Größe des Cacheangebots, die Sie beim Erstellen des Caches ausgewählt haben) erreicht ist. Bei Azure Redis Cache lautet die Standardeinstellung „volatile-lru“. Hierbei werden die Schlüssel anhand eines Ablaufverfahrens mit LRU-Algorithmus entfernt. Diese Einstellung kann im Vorschauportal konfiguriert werden. Weitere Informationen finden Sie unter [maxmemory-policy und maxmemory-reserved](#maxmemory-policy-and-maxmemory-reserved).|
 |maxmemory-samples|3|LRU- und minimale TTL-Algorithmen sind keine präzisen Algorithmen, sondern angenäherte Algorithmen (um Arbeitsspeicher zu sparen). Sie können also auch die Größe der zu prüfenden Stichproben auswählen. Standardmäßig werden von Redis beispielsweise drei Schlüssel geprüft, und es wird der Schlüssel ausgewählt, der vor längerer Zeit verwendet wurde.|
 |lua-time-limit|5\.000|Maximale Ausführungszeit eines Lua-Skripts in Millisekunden. Wenn die maximale Ausführungszeit erreicht wird, wird von Redis protokolliert, dass ein Skript nach der maximal zulässigen Ausführungszeit weiterhin ausgeführt wird. Es wird dann damit begonnen, auf Abfragen mit einem Fehler zu antworten.|
 |lua-event-limit|500|Dies ist die maximale Größe der Skriptereigniswarteschlange.|
@@ -124,7 +124,7 @@ Neue Azure Redis Cache-Instanzen werden mit den folgenden standardmäßigen Redi
 
 ## Redis-Befehle, die in Azure Redis Cache nicht unterstützt werden.
 
->[AZURE.IMPORTANT]Da die Konfiguration und Verwaltung von Azure Redis Cache-Instanzen mit dem Azure-Portal durchgeführt wird, sind die folgenden Befehle deaktiviert. Wenn Sie versuchen, sie aufzurufen, erhalten Sie eine Fehlermeldung der folgenden Art: `"(error) ERR unknown command"`.
+>[AZURE.IMPORTANT]Da die Konfiguration und Verwaltung von Azure Redis Cache-Instanzen mit dem Vorschauportal durchgeführt wird, sind die folgenden Befehle deaktiviert. Wenn Sie versuchen, sie aufzurufen, erhalten Sie eine Fehlermeldung der folgenden Art: `"(error) ERR unknown command"`.
 >
 >-	BGREWRITEAOF
 >-	BGSAVE
@@ -154,4 +154,4 @@ Eine Liste der Redis-Befehle, die für Azure Redis Cache deaktiviert sind, finde
 ## Nächste Schritte
 -	Weitere Informationen zum Verwenden von Redis-Befehlen finden Sie unter [Wie führe ich Redis-Befehle aus?](cache-faq.md#how-can-i-run-redis-commands).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

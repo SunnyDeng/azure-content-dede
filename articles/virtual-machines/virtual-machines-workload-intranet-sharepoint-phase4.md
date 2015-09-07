@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SharePoint-Intranetfarm-Arbeitsauslastung Phase 4: Konfigurieren der SharePoint-Server"
-	description="In dieser vierten Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm erstellen Sie die virtuellen Computer für die SharePoint-Server sowie eine neue SharePoint-Farm."
+	pageTitle="SharePoint Server 2013-Farm, Phase 4 | Microsoft Azure"
+	description="In Phase 4 der SharePoint Server 2013-Farm erstellen Sie in Azure die virtuellen Computer für den SharePoint-Server und eine neue SharePoint-Farm."
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -193,4 +193,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 5: Erstelle
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

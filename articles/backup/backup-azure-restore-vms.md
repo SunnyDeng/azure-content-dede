@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="Azure Backup – Wiederherstellen eines virtuellen Computers | Microsoft Azure"
 	description="Erfahren Sie, wie ein virtueller Azure-Computer wiederhergestellt wird."
@@ -50,7 +49,7 @@ Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus 
 
         Der ausgewählte Name des Clouddienstes sollte global eindeutig sein. Typischerweise ist dieser Name mit einer öffentlichen URL nach dem Muster [clouddienst].cloudapp.net verknüpft. Azure gestattet es Ihnen nicht, einen neuen Clouddienst zu erstellen, wenn der Name bereits verwendet wird. Wenn Sie einen neuen Clouddienst erstellen möchten, erhält dieser den gleichen Namen wie der virtuelle Computer. In diesem Fall sollte der Name des virtuellen Computers eindeutig genug sein, um auf den neuen Clouddienst angewendet zu werden.
 
-        Wir zeigen ausschließlich Clouddienste und virtuelle Netzwerke an, die nicht mit Affinitätsgruppen in den Details der Wiederherstellungsinstanzen verbunden sind. [Erfahren Sie mehr] (https://msdn.microsoft.com/en-us/library/azure/jj156085.aspx).
+        Wir zeigen ausschließlich Clouddienste und virtuelle Netzwerke an, die nicht mit Affinitätsgruppen in den Details der Wiederherstellungsinstanzen verbunden sind. [Erfahren Sie mehr] (https://msdn.microsoft.com/de-de/library/azure/jj156085.aspx).
 
 2. Wählen Sie ein Speicherkonto für den virtuellen Computer aus: Dies ist für das Erstellen des virtuellen Computers erforderlich. Sie können aus vorhandenen Speicherkonten in der gleichen Region auswählen, in der sich auch der Azure Backup-Tresor befindet. Wir unterstützen keine Speicherkonten, die zonenredundant sind oder dem Premium-Speichertyp entsprechen.
 
@@ -95,4 +94,4 @@ Bei den meisten Fehlern können Sie die empfohlene Aktion befolgen, die unter "F
 ## Nächste Schritte
 - [Verwalten virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

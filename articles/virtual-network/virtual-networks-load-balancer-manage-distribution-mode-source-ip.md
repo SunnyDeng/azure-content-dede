@@ -1,22 +1,20 @@
 <properties 
    pageTitle="Verwalten: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)"
-   description="Verwaltungsfunktionen für den Azure-Lastenausgleichs-Verteilungsmodus" 
-   services="virtual-network" 
-   documentationCenter="" 
-   authors="telmosampaio" 
-   manager="carolz" 
-   editor=""
-   />
+	description="Verwaltungsfunktionen für den Azure-Lastenausgleichs-Verteilungsmodus"
+	services="virtual-network"
+	documentationCenter=""
+	authors="telmosampaio"
+	manager="carolz"
+	editor=""/>
 
 <tags
    ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="05/27/2015"
-   ms.author="telmos"
-   />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/21/2015"
+	ms.author="telmos"/>
    
 # Verwalten des virtuellen Netzwerks: Lastenausgleichs-Verteilungsmodus (Quell-IP-Affinität)
 **Quell-IP-Affinität** (auch als **Sitzungsaffinität** oder **Client-IP-Affinität **bezeichnet), ein Azure-Lastenausgleichs-Verteilungsmodus, erzeugt eine Bindung zwischen einem einzelnen Client und einem über Azure gehosteten Server, statt die Clientverbindungen dynamisch auf unterschiedliche über Azure gehostete Server zu verteilen (dies ist das Standardverhalten für den Lastenausgleich).
@@ -32,7 +30,7 @@ Mit der Quell-IP-Affinität wird das vorherige Problem der [Inkompatibilität zw
 Die Quell-IP-Affinität kann für folgende Komponenten konfiguriert werden:
 
 * [VM-Endpunkte](../virtual-machines/virtual-machines-set-up-endpoints.md)
-* [Endpunktsätze mit Lastenausgleich](http://msdn.microsoft.com/library/azure/dn655055.aspx)
+* [Endpunktsätze mit Lastenausgleich](../load-balancer/load-balancer-overview.md)
 * [Webrollen](http://msdn.microsoft.com/library/windowsazure/ee758711.aspx)
 * [Workerrollen](http://msdn.microsoft.com/library/windowsazure/ee758711.aspx)
 
@@ -161,4 +159,4 @@ Der Wert von "LoadBalancerDistribution" kann "sourceIP" (2-Tupel-Affinität) ode
     Date: Thu, 16 Oct 2014 22:49:21 GMT
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

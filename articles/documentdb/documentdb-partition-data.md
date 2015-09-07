@@ -1,20 +1,19 @@
 <properties      
-    pageTitle="Partitionieren von Daten in DocumentDB | Microsoft Azure"      
-    description="Erfahren Sie, wie Sie Daten in DocumentDB partitionieren können und wann Sie eine Hash-, Bereichs- und Suchpartitionierung verwenden sollten."          
-    services="documentdb"      
-    authors="arramac"      
-    manager="jhubbard"      
-    editor="monicar"      
-    documentationCenter=""/>
- <tags      
-    ms.service="documentdb"      
-    ms.workload="data-services"      
-    ms.tgt_pltfrm="na"      
-    ms.devlang="na"      
-    ms.topic="article"      
-    ms.date="05/28/2015"      
-    ms.author="arramac"/>
-
+    pageTitle="Partitionieren von Daten in DocumentDB | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Daten in DocumentDB partitionieren können und wann Sie eine Hash-, Bereichs- und Suchpartitionierung verwenden sollten."
+	services="documentdb"
+	authors="arramac"
+	manager="jhubbard"
+	editor="monicar"
+	documentationCenter=""/>
+<tags       
+    ms.service="documentdb"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="05/28/2015"
+	ms.author="arramac"/>
 
 # Partitionieren von Daten in DocumentDB
 
@@ -115,4 +114,4 @@ In diesem Artikel haben wir einige gängige Verfahren der Datenpartitionierung m
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

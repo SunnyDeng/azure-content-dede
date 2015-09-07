@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Branchenanwendungs-Workload, Phase 2: Konfigurieren der Domänencontroller" 
-	description="In dieser zweiten Phase erstellen und konfigurieren Sie die zwei Active Directory-Domänencontroller." 
+	pageTitle="Branchenanwendung, Phase 2 | Microsoft Azure"
+	description="In Phase 2 der Branchenanwendung erstellen und konfigurieren Sie in Azure die zwei Active Directory-Replikatdomänencontroller."
 	documentationCenter=""
-	services="virtual-machines" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	services="virtual-machines"
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/11/2015"
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 2: Konfigurieren der Domänencontroller
@@ -206,4 +206,4 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 3: Konfi
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="SQL Server-Aktivität ";Gespeicherte Prozedur";" 
-	description="Informationen, wie Sie die SQL Server-Aktivität ";Gespeicherte Prozedur"; in einer Data Factory-Pipeline zum Aufrufen einer gespeicherten Prozedur in einer Azure SQL-Datenbank verwenden können." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="SQL Server-Aktivität Gespeicherte Prozedur"
+	description="Informationen, wie Sie die SQL Server-Aktivität Gespeicherte Prozedur in einer Data Factory-Pipeline zum Aufrufen einer gespeicherten Prozedur in einer Azure SQL-Datenbank verwenden können."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2015"
 	ms.author="spelluru"/>
 
 # SQL Server-Aktivität "Gespeicherte Prozedur"
@@ -45,13 +45,10 @@ Eigenschaft | Beschreibung | Erforderlich
 Name | Der Name der Aktivität | Ja
 description | Ein Text, der beschreibt, wofür die Aktivität verwendet wird. | Nein
 Typ | SqlServerStoredProcedure | Ja
-inputs | Eingaben müssen \(im Status "Bereit"\) verfügbar sein, damit die Aktivität "Gespeicherte Prozedur" ausgeführt wird. | Nein
-outputs | Von der Aktivität "Gespeicherte Prozedur" generierte Ausgaben. Stellen Sie sicher, dass die Ausgabetabelle einen verknüpften Dienst verwendet, der eine Azure SQL-Datenbank mit der Data Factory verknüpft. | Ja
+inputs | Eingabedatasets müssen (im Status "Bereit") verfügbar sein, damit die Aktivität "Gespeicherte Prozedur" ausgeführt wird. Die Eingaben in die Aktivität "Gespeicherte Prozedur" dienen nur zur Verwaltung von Abhängigkeiten bei deren Verkettung. Die Eingabedatasets können nicht als Parameter in der gespeicherten Prozedur genutzt werden. | Nein
+outputs | Von der Aktivität "Gespeicherte Prozedur" generierte Ausgabedatasets. Stellen Sie sicher, dass die Ausgabetabelle einen verknüpften Dienst verwendet, der eine Azure SQL-Datenbank mit der Data Factory verknüpft. Die Ausgaben in der Aktivität "Gespeicherte Prozedur" dienen als Möglichkeit, das Ergebnis dieser Aktivität für die nachfolgende Verarbeitung zu übergeben und/oder Abhängigkeiten bei deren Verkettung zu verwalten. | Ja
 storedProcedureName | Geben Sie den Namen der gespeicherten Prozedur in der Azure SQL-Datenbank an, die vom verknüpften Dienst dargestellt wird, den die Ausgabetabelle verwendet. | Ja
 storedProcedureParameters | Geben Sie Werte für Parameter der gespeicherten Prozedur an. | Nein
-
-> [AZURE.NOTE]Die Eingaben in die Aktivität "Gespeicherte Prozedur" dienen nur zur Verwaltung von Abhängigkeiten und deren Verkettung. Die Eingaben können nicht als Parameter in der gespeicherten Prozedur genutzt werden.
- 
 
 ## Beispiel
 
@@ -72,7 +69,7 @@ Datetime | Datum und Uhrzeit der Erstellung der betreffenden ID
 	    VALUES (newid(), @DateTime)
 	END
 
-> [AZURE.NOTE]**Name** und **Groß-und Kleinschreibung** des Parameters \("DateTime" bei diesem Beispiel\) müssen mit dem Parameter übereinstimmen, der in der nachstehenden JSON der Aktivität angegeben ist. Stellen Sie bei der Definition der gespeicherten Prozedur sicher, dass **@** als Präfix für den Parameter verwendet wird.
+> [AZURE.NOTE]**Name** und **Groß-und Kleinschreibung** des Parameters ("DateTime" bei diesem Beispiel) müssen mit dem Parameter übereinstimmen, der in der nachstehenden JSON der Aktivität angegeben ist. Stellen Sie bei der Definition der gespeicherten Prozedur sicher, dass **@** als Präfix für den Parameter verwendet wird.
 
 Um diese gespeicherte Prozedur in einer Data Factory-Pipeline auszuführen, müssen Sie folgende Schritte ausführen:
 
@@ -106,7 +103,7 @@ Um diese gespeicherte Prozedur in einer Data Factory-Pipeline auszuführen, müs
 5.	Stellen Sie die [Pipeline](data-factory-create-pipelines.md) bereit.
 6.	[Überwachen Sie die Pipeline](data-factory-monitor-manage-pipelines.md) mithilfe der Überwachungs- und Verwaltungsansichten von Data Factory.
 
-> [AZURE.NOTE]Im obigen Beispiel weist "SprocActivitySample" keine Eingaben auf. Wenn Sie dies mit einer vorgelagerten Aktivität verketten möchten, können die Ausgaben der vorgelagerten Aktivität als Eingaben in diese Aktivität verwendet werden. In diesem Fall wird diese Aktivität erst ausgeführt, nachdem die vorgelagerte Aktivität abgeschlossen und die Ausgaben \(mit dem Status "Bereit"\) verfügbar sind. Die Eingaben können nicht direkt als Parameter für die Aktivität "Gespeicherte Prozedur" verwendet werden.
+> [AZURE.NOTE]Im obigen Beispiel weist "SprocActivitySample" keine Eingaben auf. Wenn Sie dies mit einer vorgelagerten Aktivität verketten möchten (d. h. vor der Verarbeitung), können die Ausgaben der vorgelagerten Aktivität als Eingaben in diese Aktivität verwendet werden. In diesem Fall wird diese Aktivität erst ausgeführt, nachdem die vorgelagerte Aktivität abgeschlossen und deren Ausgaben (mit dem Status "Bereit") verfügbar sind. Die Eingaben können nicht direkt als Parameter für die Aktivität "Gespeicherte Prozedur" verwendet werden.
 > 
 > Namen und Groß-/Kleinschreibung der Parameter der gespeicherten Prozedur in der JSON-Datei müssen mit den Namen der Parameter der gespeicherten Prozedur in der Zieldatenbank übereinstimmen.
 
@@ -135,4 +132,4 @@ Um dies zu erreichen, übergeben Sie den Parameter "Scenario" und den Wert aus d
 		}
 	}
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

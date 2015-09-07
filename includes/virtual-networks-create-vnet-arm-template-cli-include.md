@@ -1,15 +1,15 @@
-## Deploy the ARM template by using the Azure CLI
+## Bereitstellen der ARM-Vorlage mithilfe der Azure-Befehlszeilenschnittstelle
 
-To deploy the ARM template you downloaded by using PowerShell, follow the steps below.
+Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-Vorlage die folgenden Schritte aus.
 
-1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](xplat-cli.md) and follow the instructions up to the point where you select your Azure account and subscription.
-2. Run the **azure config mode** command to switch to Resource Manager mode, as shown below.
+1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
+2. Führen Sie den Befehl **azure config mode** aus, um in den Ressourcen-Manager-Modus zu wechseln, wie unten dargestellt.
 
 		azure config mode arm
 
 		info:    New mode is arm
 
-3. If necessary, run the **azure group create** to create a new resource group, as shown below. Notice the output of the command. The list shown after the output explains the parameters used. For more information about resource groups, visit [Azure Resource Manager Overview](resource-group-overview.md/#resource-groups).
+3. Führen Sie bei Bedarf **azure group create** aus, um eine neue Ressourcengruppe zu erstellen, wie unten dargestellt. Beachten Sie die Ausgabe des Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md/#resource-groups).
 
 		azure group create -n TestRG -l centralus
 		info:    Executing command group create
@@ -24,10 +24,10 @@ To deploy the ARM template you downloaded by using PowerShell, follow the steps 
 		data:
 		info:    group create command OK
 
-	- **-n (or --name)**. Name for the new resource group. For our scenario, *TestRG*.
-	- **-l (or --location)**. Azure region where the new resource group will be created. For our scenario, *centralus*.
+	- **-n (oder --name)**. Name für die neue Ressourcengruppe. In diesem Szenario *TestRG*.
+	- **-l (oder --location)**. Azure-Region, in der die neue Ressourcengruppe erstellt wird. In diesem Szenario *centralus*.
 
-4. Run the **azure group deployment create** cmdlet to deploy the new VNet by using the template and parameter files you downloaded and modified above. The list shown after the output explains the parameters used.
+4. Führen Sie das Cmdlet **azure group deployment create** aus, um das neue VNet mithilfe der oben heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
 
 		azure group deployment create -g TestRG -n TestVNetDeployment -f C:\ARM\azuredeploy.json -e C:\ARM\azuredeploy-parameters.json
 
@@ -54,11 +54,11 @@ To deploy the ARM template you downloaded by using PowerShell, follow the steps 
 		data:    subnet2Name    String  BackEnd
 		info:    group deployment create command OK
 
-	- **-g (or --resource-group)**. Name of the resource group the new VNet will be created in.
-	- **-f (or --template-file)**. Path to your ARM template file.
-	- **-e (or --parameters-file)**. Path to your ARM parameters file.
+	- **-g (oder --resource-group)**. Name der Ressourcengruppe, in der das neue VNet erstellt wird.
+	- **-f (oder --template-file)**. Pfad zu Ihrer ARM-Vorlagendatei.
+	- **-e (oder --parameters-file)**. Pfad zu Ihrer ARM-Parameterdatei.
 
-5. Run the **azure network vnet show** command to view the properties of the new vnet, as shown below.
+5. Führen Sie den Befehl **azure network vnet show** aus, um die Eigenschaften des neuen VNet anzuzeigen, wie unten dargestellt.
 
 		azure network vnet show -g TestRG -n TestVNet
 
@@ -79,3 +79,5 @@ To deploy the ARM template you downloaded by using PowerShell, follow the steps 
 		data:      Address prefix                : 192.168.2.0/24
 		data:
 		info:    network vnet show command OK
+
+<!---HONumber=August15_HO9-->

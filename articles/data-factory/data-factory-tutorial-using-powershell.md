@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory" 
-	description="In diesem fortgeschrittenen Lernprogramm wird ein nahezu reales Szenario beschrieben und mithilfe des Azure Data Factory-Diensts implementiert." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory"
+	description="In diesem fortgeschrittenen Lernprogramm wird ein nahezu reales Szenario beschrieben und mithilfe des Azure Data Factory-Diensts implementiert."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/25/2015"
 	ms.author="spelluru"/>
-
 
 # Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory [PowerShell]
 Dieser Artikel bietet eine umfassende exemplarische Vorgehensweise eines kanonischen Szenarios der Protokollverarbeitung mithilfe von Azure Data Factory zum Transformieren von Daten aus Protokolldateien in Einblicke.
@@ -298,7 +296,7 @@ Das Erstellen von Datasets/Tabellen wird vom Azure-Verwaltungsportal noch nicht 
 
 ### So erstellen Sie die Tabellen
 
-1.	Navigieren Sie in Azure PowerShell an dem Speicherort, an dem Sie die Beispiele extrahiert haben, zum Ordner **Tables** (\*\*C:\\ADFWalkthrough\\Tables\\\*\*).
+1.	Navigieren Sie in Azure PowerShell an dem Speicherort, an dem Sie die Beispiele extrahiert haben, zum Ordner **Tables** (**C:\\ADFWalkthrough\\Tables\**).
 2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryTable**, um die Tabellen für **RawGameEventsTable.json** wie folgt zu erstellen.	
 
 
@@ -436,7 +434,7 @@ Um den aktiven Zeitraum für die Pipeline anzugeben, können Sie das Cmdlet „S
 
 	![Blatt des Datenslices „RawGameEventsTable“][image-data-factory-monitoring-raw-game-events-table-dataslice-blade]
 
-	Im Falle eines Fehlers wird hier der Status \*\*Fehler\*\* angezeigt. Möglicherweise werden auch beide Slices mit dem Status **Bereit** oder beide Slices mit dem Status **Ausstehende Überprüfung** angezeigt – je nachdem, wie schnell die Slices verarbeitet werden.
+	Im Falle eines Fehlers wird hier der Status **Fehler** angezeigt. Möglicherweise werden auch beide Slices mit dem Status **Bereit** oder beide Slices mit dem Status **Ausstehende Überprüfung** angezeigt – je nachdem, wie schnell die Slices verarbeitet werden.
  
 	Die [Azure Data Factory-Entwicklerreferenz][developer-reference] enthält Informationen zu allen möglichen Slicestatusoptionen.
 
@@ -468,8 +466,7 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [adfgetstarted]: data-factory-get-started.md
 [adfintroduction]: data-factory-introduction.md
-[useonpremisesdatasources]: data-factory-use-onpremises-datasources.md
-[usepigandhive]: data-factory-pig-hive-activities.md
+[usepigandhive]: data-factory-data-transformation-activities.md
 [tutorial-onpremises-using-powershell]: data-factory-tutorial-extend-onpremises-using-powershell.md
 [download-azure-powershell]: ../powershell-install-configure.md
 
@@ -561,4 +558,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial-using-powershell/DataFactoryCreateButton.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

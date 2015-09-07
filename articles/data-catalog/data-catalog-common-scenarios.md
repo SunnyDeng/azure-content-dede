@@ -1,22 +1,21 @@
 <properties
    pageTitle="Häufige Szenarios mit Azure Data Catalog"
-   description="Häufige Szenarios mit Azure Data Catalog: Registrieren, Erweitern, Untersuchen, Verstehen und Nutzen von Datenquellen und Entfernen der Metadaten von Datenquellen."
-   services="data-catalog"
-   documentationCenter=""
-   authors="steelanddata"
-   manager="NA"
-   editor=""
-   tags=""/>
+	description="Eine Übersicht über allgemeine Szenarios für Azure Data Catalog, einschließlich der Registrierung und Ermittlung von Datenquellen mit vielen Werten, der Aktivierung von Self-Service-Business Intelligence und der Erfassung von Stammeswissen über Datenquellen und Prozesse."
+	services="data-catalog"
+	documentationCenter=""
+	authors="steelanddata"
+	manager="NA"
+	editor=""
+	tags=""/>
 
 <tags
    ms.service="data-catalog"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-catalog"
-   ms.date="07/31/2015"
-   ms.author="maroche"/>
-
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-catalog"
+	ms.date="07/31/2015"
+	ms.author="maroche"/>
 
 
 # Häufige Szenarios mit Azure Data Catalog
@@ -46,7 +45,7 @@ In Self-Service-BI-Szenarios kommt es häufig vor, dass Benutzer Daten aus mehre
 
 Dieser Ermittlungsprozess wird häufig noch manuell durchgeführt: Analysten nutzen Peer-Netzwerkverbindungen, um andere Personen zu identifizieren, die mit den gewünschten Daten arbeiten. Sobald eine Datenquelle gefunden wurde, kann sie verwendet werden. Aber der Prozess wiederholt sich dann für jeden weiteren Self-Service-BI-Vorgang, und mehrere Benutzer führen den gleichen redundanten manuellen Ermittlungsprozess durch.
 
-Mit Azure Data Catalog können Benutzer diesen redundanten Kreislauf durchbrechen. Nachdem eine Datenquelle auf herkömmliche Weise ermittelt wurde, kann ein Analyst die Datenquelle registrieren, damit sie in Zukunft leichter gefunden werden kann. Der Benutzer kann den Nutzen weiter erhöhen, indem er die registrierten Datenressourcen mit Anmerkungen versieht. Dies muss aber nicht zum Zeitpunkt der Registrierung passieren. Benutzer können je nach Arbeitsaufwand im Laufe der Zeit ihren Beitrag leisten und den Nutzen der im Katalog registrierten Datenquellen nach und nach weiter steigern.
+Mit Azure Data Catalog können Benutzer diesen redundanten Kreislauf durchbrechen. Nachdem eine Datenquelle auf herkömmliche Weise ermittelt wurde, kann ein Analyst die Datenquelle registrieren, damit sie in Zukunft leichter gefunden werden kann. Der Benutzer kann den Nutzen weiter erhöhen, indem er die registrierten Datenassets mit Anmerkungen versieht. Dies muss aber nicht zum Zeitpunkt der Registrierung passieren. Benutzer können je nach Arbeitsaufwand im Laufe der Zeit ihren Beitrag leisten und den Nutzen der im Katalog registrierten Datenquellen nach und nach weiter steigern.
 
 Dieses Anwachsen des Kataloginhalts stellt die natürliche Erweiterung nach der anfänglichen Registrierung der zentralen Datenquellen dar. Das Vorabauffüllen des Katalogs mit Daten, die von vielen Benutzern benötigt werden, kann im Hinblick auf die erste Nutzung und Ermittlungstätigkeit motivierend wirken. Wenn Benutzer weitere Quellen registrieren und mit Anmerkungen versehen können, werden sie und ihre Kollegen bei der Stange gehalten.
 
@@ -66,6 +65,6 @@ Diese ständige Weitergabe des „Stammeswissens“ ist Teil des Datenquellen-Er
 
 Es kommt vor, dass diese Datenexperten ihr Wissen dokumentieren und per E-Mail oder in Word-Dokumenten auf einer SharePoint-Website des Teams bereitstellen. Dies ist zwar hilfreich, aber damit werden gleichzeitig neue Ermittlungsprobleme geschaffen: Woher wissen die Mitarbeiter, welche Dokumentation vorhanden ist und wo sie sich befindet?
 
-Azure Data Catalog ist ein Speicherort zum Bereitstellen dieses Stammeswissens, an dem es leicht auffindbar ist. Datenexperten können die Datenressourcen direkt mit Anmerkungen versehen und Links zur vorhandenen Dokumentation einfügen. Hierdurch wird nicht nur das Wissen selbst erfasst, sondern es wird auch in derselben Umgebung angeordnet, die für die Ermittlung von Datenquellen verwendet wird. Wenn der Katalog zum Ermitteln einer Datenquelle verwendet wird, finden Benutzer nicht nur die eigentliche Quelle, sondern auch das Expertenwissen, dass sich vorher nur im Kopf des Experten befunden hat.
+Azure Data Catalog ist ein Speicherort zum Bereitstellen dieses Stammeswissens, an dem es leicht auffindbar ist. Datenexperten können die Datenassets direkt mit Anmerkungen versehen und Links zur vorhandenen Dokumentation einfügen. Hierdurch wird nicht nur das Wissen selbst erfasst, sondern es wird auch in derselben Umgebung angeordnet, die für die Ermittlung von Datenquellen verwendet wird. Wenn der Katalog zum Ermitteln einer Datenquelle verwendet wird, finden Benutzer nicht nur die eigentliche Quelle, sondern auch das Expertenwissen, dass sich vorher nur im Kopf des Experten befunden hat.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

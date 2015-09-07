@@ -1,20 +1,20 @@
 <properties
    pageTitle="Leistungsüberlegungen zu Azure Traffic Manager | Microsoft Azure"
-   description="Grundlegendes zur Leistung von Traffic Manager und Testen der Leistung auf Websites bei Verwendung von Traffic Manager"
-   services="traffic-manager"
-   documentationCenter=""
-   authors="kwill-MSFT"
-   manager="adinah"
-   editor="joaoma" />
+	description="Grundlegendes zur Leistung von Traffic Manager und Testen der Leistung auf Websites bei Verwendung von Traffic Manager"
+	services="traffic-manager"
+	documentationCenter=""
+	authors="kwill-MSFT"
+	manager="adinah"
+	editor="joaoma"/>
 
 <tags 
    ms.service="traffic-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
-   ms.author="joaoma" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/19/2015"
+	ms.author="joaoma"/>
 
 
 # Leistungsüberlegungen zu Traffic Manager
@@ -28,7 +28,7 @@ Auf dieser Seite werden die direkten Leistungsbeeinträchtigungen erörtert, die
 
 ## Wichtiger Hinweis zur Funktionsweise von Traffic Manager
 
-http://msdn.microsoft.com/library/windowsazure/hh744833.aspx ist eine hervorragende Ressource, um Informationen zur Funktionsweise von Traffic Manager zu erhalten. Die Informationen auf dieser Seite sind jedoch sehr umfangreich, und die Suche nach den Schlüsselinformationen im Hinblick auf die Leistung kann sich als schwierig erweisen. Die wichtigen Punkte in der MSDN-Dokumentation sind Schritt 5 und Schritt 6 zu Abbildung 3, die ich hier ausführlicher erläutern werde:
+[Traffic Manager – Übersicht](traffic-manager-overview.md) ist eine hervorragende Ressource, um Informationen zur Funktionsweise von Traffic Manager zu erhalten. Die Informationen auf dieser Seite sind jedoch sehr umfangreich, und die Suche nach den Schlüsselinformationen im Hinblick auf die Leistung kann sich als schwierig erweisen. Die wichtigen Punkte in der MSDN-Dokumentation sind Schritt 5 und Schritt 6 zu Abbildung 3, die ich hier ausführlicher erläutern werde:
 
 - Traffic Manager dient im Wesentlichen nur einem Zweck – der DNS-Auflösung. Dies bedeutet, dass sich die einzige Leistungsbeeinträchtigung, die Traffic Manager für Websites haben kann, bei der ersten DNS-Suche ergibt.
 - Klarstellung zur DNS-Suche durch Traffic Manager. Traffic Manager füllt und aktualisiert regelmäßig die regulären Microsoft DNS-Stammserver auf Grundlage Ihrer Richtlinie und der Testergebnisse. So erfolgt auch die erste DNS-Suche ohne Beteiligung von Traffic Manager, da die DNS-Anforderung von den regulären Microsoft DNS-Stammservern verarbeitet wird. Wenn Traffic Manager "ausfällt" (d. h. ein Fehler in den virtuellen Computern auftritt, die die Richtlinientests und die DNS-Aktualisierung durchführen), hat dies keine Auswirkungen auf den Traffic Manager-DNS-Namen, da die Einträge in den Microsoft DNS-Servern weiterhin beibehalten werden. Als einzige Auswirkungen werden die Tests und Aktualisierungen auf Grundlage der Richtlinie nicht durchgeführt (d. h., wenn der primäre Standort ausfällt, kann Traffic Manager das DNS nicht so aktualisieren, dass es auf den Failoverstandort verweist).
@@ -98,4 +98,4 @@ Aus den oben stehenden Informationen wissen wir, dass sich die einzige Leistungs
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

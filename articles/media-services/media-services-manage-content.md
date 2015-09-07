@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwalten von Inhalten mit Media Services auf dem Azure-Verwaltungsportal" 
-	description="Erfahren Sie, wie Sie Ihre Medieninhalte in Azure Media Services verwalten können. Hierzu zählt das Hochladen, Indizieren, Codieren, Verschlüsseln und Veröffentlichen." 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
+	pageTitle="Verwalten von Inhalten mit Media Services auf dem Azure-Verwaltungsportal"
+	description="Erfahren Sie, wie Sie Ihre Medieninhalte in Azure Media Services verwalten können. Hierzu zählt das Hochladen, Indizieren, Codieren, Verschlüsseln und Veröffentlichen."
+	services="media-services"
+	documentationCenter=""
+	authors="Juliako"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015"
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/23/2015"
 	ms.author="juliako"/>
 
 
@@ -99,7 +99,7 @@ Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zus
 Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre Inhalte mit Azure Media Encoder im Verwaltungsportal zu codieren.
 
 1.  Wählen Sie die Datei aus, die Sie codieren möchten. Wenn die Codierung für diesen Dateityp unterstützt wird, wird die Schaltfläche "Prozess" unten auf der Inhaltsseite aktiviert.
-4. Wählen Sie im Dialogfeld **Prozess** den** Azure Media Encoder-Prozessor aus.
+4. Wählen Sie im Dialogfeld **Prozess** den **Azure Media Encoder**-Prozessor aus.
 5. Wählen Sie eine der **Codierungskonfigurationen** aus.
 
 	![Prozess2][process2]
@@ -129,6 +129,7 @@ Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre In
 
 ##<a id="encrypt"></a>Verschlüsseln von Inhalten
 
+
 Wenn Sie Medienobjekte für Media Services dynamisch mit einem AES-Schlüssel oder PlayReady-DRM verschlüsseln möchten, gehen Sie wie folgt vor:
 
 - Codieren Sie Ihre Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten im Abschnitt [Codieren](#encode) gezeigt).
@@ -141,6 +142,11 @@ Wenn Sie Medienobjekte für Media Services dynamisch mit einem AES-Schlüssel od
 	![Verschlüsseln][encrypt]
 
 	Wenn ein Player einen Stream anfordert, nachdem die Verschlüsselung aktiviert wurde, verwendet Media Services den angegebenen Schlüssel, um Ihren Inhalt mittels AES- oder PlayReady-Verschlüsselung dynamisch zu verschlüsseln. Um den Stream zu entschlüsseln, fordert der Player den Schlüssel vom Schlüsselübermittlungsdienst an. Um zu entscheiden, ob der Benutzer berechtigt ist, den Schlüssel zu erhalten, wertet der Dienst die Autorisierungsrichtlinien aus, die Sie für den Schlüssel angegeben haben.
+
+Siehe auch:
+
+- [Schützen mit PlayReady-DRM](media-services-rest-deliver-streaming-content.md)
+- [Schützen mit AES-128-Schlüssel](media-services-protect-with-aes128.md)
 
 ##<a id="publish"></a>Veröffentlichen von Inhalten
 
@@ -215,4 +221,4 @@ Folgende Überlegungen sollten berücksichtigt werden:
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-manage-content/media-services-portal-player.png
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

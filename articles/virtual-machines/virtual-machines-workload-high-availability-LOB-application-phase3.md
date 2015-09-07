@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Branchenanwendungs-Workload, Phase 3: Konfigurieren der SQL Server-Infrastruktur" 
-	description="In dieser dritten Phase der Bereitstellung einer hochverfügbaren Branchenanwendung in den Azure-Infrastrukturdiensten erstellen Sie die SQL Server-Clustercomputer sowie den Cluster selbst." 
+	pageTitle="Branchenanwendung, Phase 3 | Microsoft Azure"
+	description="In Phase 3 der Branchenanwendung erstellen Sie in Azure die Computer und den SQL Server-Cluster, und aktivieren Sie Verfügbarkeitsgruppen."
 	documentationCenter=""
-	services="virtual-machines" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	services="virtual-machines"
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/11/2015"
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 3: Konfigurieren der SQL Server-Infrastruktur
@@ -177,7 +177,7 @@ Für den SQL Server-Dienst ist ein Port erforderlich, über den die Clients auf 
 
 Melden Sie sich bei beiden virtuellen SQL Server-Computern als lokaler Administrator ab.
 
-Informationen zum Optimieren der SQL Server-Leistung in Azure finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](https://msdn.microsoft.com/library/azure/dn133149.aspx). Zur Optimierung der IOPs können Sie auch den georedundanten Speicher (GRS) für das Speicherkonto der Branchenanwendung deaktivieren und stattdessen Speicherplatz verwenden.
+Informationen zum Optimieren der SQL Server-Leistung in Azure finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md). Zur Optimierung der IOPs können Sie auch den georedundanten Speicher (GRS) für das Speicherkonto der Branchenanwendung deaktivieren und stattdessen Speicherplatz verwenden.
 
 ## Konfigurieren des Hauptknotenservers des Clusters
 
@@ -268,4 +268,4 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 4: Konfi
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

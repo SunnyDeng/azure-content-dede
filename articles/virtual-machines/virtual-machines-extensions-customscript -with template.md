@@ -1,22 +1,20 @@
 <properties
    pageTitle="Verwenden der CustomScript-Erweiterung mit Azure-Ressourcen-Manager-Vorlagen"
-   description="Automatisieren von Konfigurationsaufgaben für einen virtuellen Azure-Computer mithilfe der CustomScript-Erweiterung mit ARM-Vorlagen"
-   services="virtual-machines"
-   documentationCenter=""
-   authors="kundanap"
-   manager="madhana"
-   editor=""/>
-
+	description="Automatisieren von Konfigurationsaufgaben für einen virtuellen Azure-Computer mithilfe der CustomScript-Erweiterung mit ARM-Vorlagen"
+	services="virtual-machines"
+	documentationCenter=""
+	authors="kundanap"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/01/2015"
-   ms.author="kundanap"/>
-
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="07/01/2015"
+	ms.author="kundanap"/>
 
 # Verwenden der CustomScript-Erweiterung mit Azure-Ressourcen-Manager-Vorlagen
 
@@ -30,9 +28,7 @@ Seit der Einführung der CustomScript-Erweiterung wird diese häufig verwendet, 
 
 Eine Azure-Ressourcen-Manager-Vorlage ermöglicht es Ihnen, deklarativ die Azure IaaS-Infrastruktur in der Json-Sprache anzugeben, indem Sie die Abhängigkeiten zwischen Ressourcen definieren. Eine ausführliche Übersicht über Azure-Ressourcen-Manager-Vorlagen finden Sie in den folgenden Artikeln:
 
-<a href="https://azure.microsoft.com/de-de/documentation/articles/resource-group-overview/" target="_blank">Übersicht über Azure Resource Manager</a> <br/>
- <a href="https://azure.microsoft.com/de-de/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/" target="_blank">Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI</a> <br/>
- <a href="https://azure.microsoft.com/de-de/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/" target="_blank">Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und PowerShell</a>
+<a href="https://azure.microsoft.com/de-de/documentation/articles/resource-group-overview/" target="_blank">Übersicht über Azure Resource Manager</a> <br/> <a href="https://azure.microsoft.com/de-de/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/" target="_blank">Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI</a> <br/> <a href="https://azure.microsoft.com/de-de/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/" target="_blank">Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und PowerShell</a>
 
 ### Voraussetzungen für das Ausführen der CustomScript-Erweiterung
 
@@ -44,7 +40,7 @@ Eine Azure-Ressourcen-Manager-Vorlage ermöglicht es Ihnen, deklarativ die Azure
 
 ## Übersicht über ein Verwenden der CustomScript-Erweiterung mit Vorlagen
 
-Zum Bereitstellen mit Vorlagen wird genau die Version der CustomScript-Erweiterung verwendet, die für Azure-Service-Verwaltungs-APIs verfügbar ist. Die Erweiterung unterstützt dieselben Parameter und Szenarios, etwa Hochladen von Dateien in ein Azure Storage-Konto oder in einen Github-Speicherort. Der wesentliche Unterschied bei einer Verwendung von Vorlagen besteht darin, dass die genaue Version der Erweiterung angegeben werden muss im Gegensatz zur Angabe der Version im Format Hauptversion.\*.
+Zum Bereitstellen mit Vorlagen wird genau die Version der CustomScript-Erweiterung verwendet, die für Azure-Service-Verwaltungs-APIs verfügbar ist. Die Erweiterung unterstützt dieselben Parameter und Szenarios, etwa Hochladen von Dateien in ein Azure Storage-Konto oder in einen Github-Speicherort. Der wesentliche Unterschied bei einer Verwendung von Vorlagen besteht darin, dass die genaue Version der Erweiterung angegeben werden muss im Gegensatz zur Angabe der Version im Format Hauptversion.*.
 
  Vorlagenausschnitt für die CustomScript-Erweiterung auf einem virtuellen Linux-Computer
 
@@ -101,4 +97,4 @@ In den nachstehenden Beispielen finden Sie vollständige Beispiele zum Konfiguri
 
 <a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/" target="_blank">CustomScript-Erweiterung auf einem virtuellen Linux-Computer</a>. </br> <a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/" target="_blank">CustomScript-Erweiterung auf einem virtuellen Windows-Computer</a>.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

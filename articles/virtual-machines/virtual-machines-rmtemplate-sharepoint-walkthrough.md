@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Ressourcen-Manager-Vorlage für die SharePoint-Farm mit drei Servern"
-	description="Untersuchen Sie schrittweise die Struktur der Vorlagendatei ";azuredeploy.json"; für die SharePoint-Farm mit drei Servern."
+	description="Untersuchen Sie schrittweise die Struktur der Vorlagendatei azuredeploy.json für die SharePoint-Farm mit drei Servern."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -364,7 +364,7 @@ Bei Ihren eigenen JSON-Vorlagen zum Erstellen einer Infrastruktur mit mehreren E
 1.	Erstellen Sie die allgemeinen Elemente (Speicherkonto, virtuelles Netzwerk), spezifische Elemente für die Ebene (Verfügbarkeitsgruppen) und spezifische Elemente für die virtuellen Computer (öffentliche IP-Adressen, Verfügbarkeitsgruppen, Netzwerkschnittstellen und Lastenausgleichsinstanzen) der Azure-Infrastruktur, die für die Bereitstellung erforderlich sind.
 2.	Erstellen Sie für jede Ebene in der Anwendung (z. B. Authentifizierung , Datenbank, Web) die Server in dieser Ebene mithilfe der allgemeinen Elemente (Speicherkonto, virtuelles Netzwerk), der spezifischen Elemente für die Ebene (Verfügbarkeitsgruppe) und der spezifischen Elemente für die virtuellen Computer (öffentliche IP-Adressen, Netzwerkschnittstellen, Lastenausgleichsinstanzen), und konfigurieren Sie sie.
 
-Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
+Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
 ## Zusätzliche Ressourcen
 
@@ -374,4 +374,4 @@ Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Man
 
 [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

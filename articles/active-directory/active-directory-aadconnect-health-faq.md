@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure AD Connect Health – FAQ" 
-	description="Dieses FAQ-Dokument beantwortet Fragen zu Azure AD Connect Health. Dazu gehören Fragen zur Verwendung des Diensts, einschließlich Abrechnungsmodell, Funktionen, Einschränkungen und Unterstützung." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Azure AD Connect Health – FAQ"
+	description="Dieses FAQ-Dokument beantwortet Fragen zu Azure AD Connect Health. Dazu gehören Fragen zur Verwendung des Diensts, einschließlich Abrechnungsmodell, Funktionen, Einschränkungen und Unterstützung."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/12/2015"
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/14/2015"
 	ms.author="billmath"/>
 
 
@@ -43,7 +43,7 @@ Die folgenden Zahlen stellen Näherungswerte dar.
 - CPU-Auslastung: ~ 1 % Zunahme
 - Arbeitsspeichernutzung: bis zu 10 % des insgesamt verfügbaren Systemarbeitsspeichers
 - Nutzung der Netzwerkbandbreite: ~ 1 MB pro 1000 AD FS-Anforderungen
->[AZURE.NOTE]Falls der Agent nicht mit Azure kommunizieren kann, speichert der Agent die Daten lokal bis zu einem Höchstwert von 10 % des gesamten Systemspeichers. Sobald der Agent 10 % des gesamten physischen Speichers erreicht hat und keine Daten in den Dienst mehr hochladen kann, überschreiben die neuen AD FS-Transaktionen etwaige zwischengespeicherte Transaktionen, wobei bei den am seltensten verwendeten Transaktionen begonnen wird.
+>[AZURE.NOTE]Falls der Agent nicht mit Azure kommunizieren kann, speichert der Agent die Daten lokal bis zu einem Höchstwert von 10 % des gesamten Systemarbeitsspeichers. Sobald der Agent 10 % des gesamten physischen Speichers erreicht hat und keine Daten in den Dienst mehr hochladen kann, überschreiben die neuen AD FS-Transaktionen etwaige zwischengespeicherte Transaktionen, wobei bei den am seltensten verwendeten Transaktionen begonnen wird.
 
 - Lokaler Pufferspeicher für AD Connect Health-Agent: ca. 20 MB
 - Datenspeicher für Überwachungskanal erforderlich
@@ -71,7 +71,6 @@ Führen Sie diesen Schritt vor Ausführung von Register-AdHealthAgent aus (letzt
 Suchen Sie nach der Datei "machine.config". Diese Datei befindet sich hier: %windir%\\Microsoft.NET\\Framework64[version]\\config\\machine.config</li>
 
 Fügen Sie der Datei "machine.config" folgenden Eintrag unter dem <configuration></configuration> Element hinzu.
- 
 		
 	<system.net>  
 			<defaultProxy useDefaultCredentials="true">
@@ -84,7 +83,7 @@ Fügen Sie der Datei "machine.config" folgenden Eintrag unter dem <configuration
 
  
 
-Zusätzliche <defaultProxy> Informationen finden Sie [hier](https://msdn.microsoft.com/library/kd3cf2ex(v=vs.110).aspx).
+Zusätzliche <defaultProxy> Informationen finden Sie [hier] (https://msdn.microsoft.com/library/kd3cf2ex(v=vs.110))).
 
 Mit diesen Einstellungen konfigurieren Sie .NET-Anwendungen systemweit so, dass bei .NET-Anforderungen über HTTP Ihr explizit definierter Proxy verwendet wird. Es wird nicht empfohlen, die einzelnen "app.config"-Dateien zu ändern, da diese Änderungen während einer automatischen Aktualisierung rückgängig gemacht werden. Wenn Sie die Datei "machine.config" bearbeiten, müssen Sie nur eine Datei ändern, und die Änderungen bleiben auch bei Aktualisierungen erhalten.
 
@@ -128,4 +127,11 @@ Azure AD Connect Health-Warnungen werden basierend auf einer Erfolgsbedingung a
 
 Sie müssen die TCP/UDP-Ports 80 und 443 öffnen, damit der Azure AD Connect Health-Agent mit den Azure AD Connect Health-Dienstendpunkten kommunizieren kann.
 
-<!---HONumber=August15_HO6-->
+## Verwandte Links
+
+* [Azure AD Connect Health](active-directory-aadconnect-health.md)
+* [Azure AD Connect Health Agent-Installation für AD FS](active-directory-aadconnect-health-agent-install-adfs.md)
+* [Verwenden von Azure AD Connect Health mit AD FS](active-directory-aadconnect-health-adfs.md)
+* [Azure AD Connect Health-Vorgänge](active-directory-aadconnect-health-operations.md)
+
+<!---HONumber=August15_HO9-->

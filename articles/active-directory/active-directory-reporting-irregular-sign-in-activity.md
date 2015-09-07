@@ -18,8 +18,6 @@
 
 # Irreguläre Anmeldeaktivitäten
 
-| Beschreibung | Speicherort des Berichts |
-| :-------------     | :-------        |
-| <p>Dieser Bericht enthält Anmeldungen, die von unseren Algorithmen für maschinelles Lernen als "anomal" identifiziert wurden. Gründe, warum ein Anmeldeversuch als irregulär gekennzeichnet wird, sind unerwartete Anmeldeorte, die Tageszeit und Orte oder eine Kombination dieser Faktoren. Dies kann ein Hinweis sein, dass ein Hacker versucht hat, sich mit diesem Konto anzumelden. Der Algorithmus für maschinelles Lernen klassifiziert Ereignisse als "anomal" oder "verdächtig", wobei "verdächtig" für eine höhere Wahrscheinlichkeit einer Sicherheitsverletzung steht.</p><p>Die Ergebnisse dieses Berichts enthalten diese Anmeldungen samt Klassifizierung, Ort und Zeitstempel jeder Anmeldung.</p><p>Eine E-Mail-Benachrichtigung wird an die globalen Administratoren gesendet, wenn wir in einem Zeitraum von maximal 30 Tagen mindestens 10 anomale Anmeldeereignisse verzeichnen. Fügen Sie aad-alerts-noreply@mail.windowsazure.com unbedingt der Liste sicherer Absender hinzu.</p> | Verzeichnis > Registerkarte "Berichte" |
+Irreguläre Anmeldungen sind Anmeldungen, die von Machine Learning-Algorithmen auf der Grundlage einer Bedingung für eine "unmögliche Strecke" in Kombination mit einem anomalen Standort und Gerät für die Anmeldung identifiziert wurden. Dies kann ein Hinweis darauf sein, dass sich ein Hacker erfolgreich mit diesem Konto angemeldet hat. Wir senden eine E-Mail-Benachrichtigung an die globalen Administratoren, wenn wir 10 oder mehr anomale Anmeldeereignisse innerhalb eines Zeitraums von 30 Tagen oder weniger feststellen. Fügen Sie aad-alerts-noreply@mail.windowsazure.com unbedingt der Liste sicherer Absender hinzu.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

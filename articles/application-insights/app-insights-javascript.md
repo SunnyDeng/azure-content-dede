@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Application Insights für JavaScript-Web-Apps" 
-	description="Erhalten Sie die Anzahl der Seitenaufrufe und Sitzungen, rufen Sie Webclientdaten ab, und verfolgen Sie Verwendungsmuster. Erkennen Sie Ausnahmen und Leistungsprobleme in JavaScript-Web-Apps." 
-	services="application-insights" 
-    documentationCenter=""
-	authors="alancameronwills" 
+<properties
+	pageTitle="Application Insights für JavaScript-Web-Apps | Microsoft Azure"
+	description="Erhalten Sie die Anzahl der Seitenaufrufe und Sitzungen, rufen Sie Webclientdaten ab, und verfolgen Sie Verwendungsmuster. Erkennen Sie Ausnahmen und Leistungsprobleme in JavaScript-Web-Apps."
+	services="application-insights"
+	documentationCenter=""
+	authors="alancameronwills"
 	manager="douge"/>
 
-<tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="07/10/2015" 
+<tags
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="07/10/2015"
 	ms.author="awills"/>
- 
+
 # Application Insights für JavaScript-Web-Apps
 
 [AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
@@ -48,19 +48,19 @@ Rufen Sie im Schnellstart das Skript für Webseiten ab:
 
 Fügen Sie das Skript direkt vor dem &lt;/head&gt;-Tag jeder Seite ein, die Sie nachverfolgen möchten. Wenn Ihre Website über eine Masterseite verfügt, können Sie das Skript dort ablegen. Beispiel:
 
-* In einem ASP.NET MVC-Projekt würden Sie es unter "View\\Shared\\\_Layout.cshtml" ablegen.
+* In einem ASP.NET MVC-Projekt würden Sie es unter "View\\Shared\\_Layout.cshtml" ablegen.
 * Öffnen Sie in einer SharePoint-Website in der Systemsteuerung [Websiteeinstellungen / Masterseite](app-insights-sharepoint.md).
 
 Das Skript enthält den Instrumentationsschlüssel, der die Daten an Ihre Application Insights-Ressource leitet.
 
 *(Wenn Sie ein bekanntes Webseitenframework verwenden, suchen Sie nach Application Insights-Adaptern. Beispielsweise gibt es [ein AngularJS-Modul](http://ngmodules.org/modules/angular-appinsights).)*
 
- 
+
 ## <a name="run"></a>Ausführen Ihrer App
 
-Führen Sie die Web-App aus, verwenden Sie sie eine Weile, um Telemetrie zu generieren, und warten Sie einige Sekunden. Sie können sie entweder durch Drücken von F5 auf dem Entwicklungscomputer ausführen, oder Sie können sie veröffentlichen und von Benutzern ausprobieren lassen.
+Führen Sie die Web-App aus, verwenden Sie sie eine Weile, um Telemetrie zu generieren, und warten Sie einige Sekunden. Sie können sie entweder durch Drücken von **F5** auf dem Entwicklungscomputer ausführen, oder Sie können sie veröffentlichen und von Benutzern testen lassen.
 
-Wenn Sie die Telemetrie, die von einer Web-App an Application Insights gesendet wird, prüfen möchten, verwenden Sie dazu die Debugtools Ihres Browsers (F12 auf vielen Browsern). Daten werden an "dc.services.visualstudio.com" gesendet.
+Wenn Sie die Telemetrie, die von einer Web-App an Application Insights gesendet wird, prüfen möchten, verwenden Sie dazu die Debugtools Ihres Browsers (**F12** bei vielen Browsern). Daten werden an "dc.services.visualstudio.com" gesendet.
 
 ## Untersuchen Ihrer Daten
 
@@ -96,7 +96,7 @@ Wenn Sie die Leistung der Seiten im Zeitverlauf anzeigen möchten, doppelklicken
 
 ## Übersicht über die Clientnutzung
 
-Klicken Sie auf dem Blatt "Übersicht" auf "Nutzung":
+Klicken Sie auf dem Blatt "Übersicht" auf **Nutzung**:
 
 ![](./media/app-insights-javascript/14-usage.png)
 
@@ -135,7 +135,7 @@ Der Seitenname kann die gleichen Zeichen wie eine URL enthalten, allerdings wird
 
 Normalerweise wird die Seitenaufruf-Telemetrie von Application Insights analysiert, und Sie erhalten nur kumulative Berichte, gemittelt über alle Benutzer. Sie können jedoch zu Debugging-Zwecken auch einzelne Seitenaufrufereignisse anzeigen.
 
-Legen Sie im Fenster "Diagnosesuche" als Filter die Einstellung "Seitenansicht" fest.
+Legen Sie im Blatt "Diagnosesuche" als Filter die Einstellung "Seitenansicht" fest.
 
 ![](./media/app-insights-javascript/12-search-pages.png)
 
@@ -147,7 +147,7 @@ Wählen Sie ein Ereignis, um weitere Details anzuzeigen. Klicken Sie auf der Det
 
 ### Eigenschaften von Seitenansichten
 
-* **Dauer der Seitenansicht**: Die Zeit, die das Laden der Seite und das Starten der Ausführung von Skripts in Anspruch nimmt. Insbesondere das Intervall vom Beginn des Ladens der Seite bis zur Ausführung von trackPageView. Wenn Sie nach der Initialisierung des Skripts trackPageView von seiner üblichen Position verschoben haben, wird ein anderer Wert wiedergegeben. 
+* **Dauer der Seitenansicht**: Die Zeit, die das Laden der Seite und das Starten der Ausführung von Skripts in Anspruch nimmt. Insbesondere das Intervall vom Beginn des Ladens der Seite bis zur Ausführung von trackPageView. Wenn Sie nach der Initialisierung des Skripts trackPageView von seiner üblichen Position verschoben haben, wird ein anderer Wert wiedergegeben.
 
 ## Benutzerdefinierte Nutzungsverfolgung
 
@@ -184,6 +184,4 @@ Falls Sie dies noch nicht durchgeführt haben, können Sie Einblicke von Ihrem S
 [qna]: app-insights-troubleshoot-faq.md
 [track]: app-insights-api-custom-events-metrics.md
 
- 
-
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

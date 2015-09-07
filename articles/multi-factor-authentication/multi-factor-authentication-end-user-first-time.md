@@ -1,21 +1,20 @@
 <properties 
-	pageTitle="Erstmaliges Anmelden mit Azure Multi-Factor Authentication" 
-	description="Auf dieser Seite werden die bei der erstmaligen Anmeldung erforderlichen Schritte beschrieben." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	pageTitle="Erstmaliges Anmelden mit Azure Multi-Factor Authentication"
+	description="Auf dieser Seite werden die bei der erstmaligen Anmeldung erforderlichen Schritte beschrieben."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenp"
+	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/30/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
-
 # Einrichten von Azure Multi-Factor Authentication
 
  Es werden Einstellungen für die zusätzliche Sicherheitsüberprüfung verwendet, wenn ein Administrator Ihr Konto so konfiguriert hat, dass Ihr Kennwort und eine Antwort von Ihrem Telefon erforderlich sind, um Ihre Identität zu überprüfen. Wenn ein Administrator Ihr Konto für die zusätzliche Sicherheitsüberprüfung konfiguriert hat, **ist eine Anmeldung erst möglich, wenn Sie den automatischen Registrierungsprozess abgeschlossen haben**.
@@ -37,4 +36,4 @@ Methode|Beschreibung
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

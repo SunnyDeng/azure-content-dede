@@ -1,24 +1,22 @@
 <properties 
-	pageTitle="Azure SQL-Connector: Verschieben von Daten in und aus Azure SQL" 
-	description="Informationen zum Azure SQL-Connector für den Data Factory-Dienst, mit dem Sie Daten in eine Azure SQL-Datenbank bzw. aus ihr heraus verschieben können." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Verschieben von Daten in und aus Azure SQL | Azure Data Factory"
+	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in und aus Azure SQL-Datenbank verschoben werden."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2015"
 	ms.author="spelluru"/>
 
-
-# Azure SQL-Connector: Verschieben von Daten in und aus Azure SQL
+# Verschieben von Daten in und aus Azure SQL mithilfe von Azure Data Factory
 
 Dieser Artikel beschreibt die Verwendung der Kopieraktivität in einer Azure Data Factory, um Daten aus einem anderen Datenspeicher in Azure SQL und aus Azure SQL in einen anderen Datenspeicher zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
 
@@ -26,11 +24,11 @@ Dieser Artikel beschreibt die Verwendung der Kopieraktivität in einer Azure Dat
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1. Einen verknüpften Dienst des Typs "AzureSqlDatabase"
-2. Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md/#LinkedService) 
-3. Ein Eingabedataset des Typs "AzureSqlTable" 
-4. Ein Ausgabedataset des Typs [AzureBlob](data-factory-azure-blob-connector.md/#Dataset)
-4. Eine Pipeline mit Kopieraktivität, die "SqlSource" und [BlobSink](data-factory-azure-blob-connector.md/#CopyActivity) verwendet
+1. Einen verknüpften Dienst des Typs [AzureSqlDatabase](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties)
+2. Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties) 
+3. Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [AzureSqlTable](data-factory-azure-sql-connector.md#azure-sql-dataset-type-properties) 
+4. Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+4. Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [SqlSource](data-factory-azure-sql-connector.md#azure-sql-copy-activity-type-properties) und [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) verwendet
 
 Im Beispiel werden Daten, die zu einer Zeitreihe gehören, stündlich aus einer Tabelle in einer Azure SQL-Datenbank in ein Blob kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -173,7 +171,7 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	        "typeProperties": {
 	          "source": {
 	            "type": "SqlSource",
-	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \\'{0:yyyy-MM-dd HH:mm}\\' AND timestampcolumn < \\'{1:yyyy-MM-dd HH:mm}\\'', WindowStart, WindowEnd)"
+	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \'{0:yyyy-MM-dd HH:mm}\' AND timestampcolumn < \'{1:yyyy-MM-dd HH:mm}\'', WindowStart, WindowEnd)"
 	          },
 	          "sink": {
 	            "type": "BlobSink"
@@ -198,11 +196,11 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1.	Einen verknüpften Dienst des Typs "AzureSqlDatabase"
-2.	Einen verknüpften Dienst des Typs "AzureStorage"
-3.	Ein Eingabedataset des Typs "AzureBlob"
-4.	Ein Ausgabedataset des Typs "AzureSqlTable"
-4.	Eine Pipeline mit Kopieraktivität, die "BlobSource" und "SqlSink" verwendet
+1.	Einen verknüpften Dienst des Typs [AzureSqlDatabase](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties)
+2.	Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
+3.	Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+4.	Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureSqlTable](data-factory-azure-sql-connector.md#azure-sql-dataset-type-properties)
+4.	Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [BlobSource](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) und [SqlSink](data-factory-azure-sql-connector.md#azure-sql-copy-activity-type-properties) verwendet
 
 Im Beispiel werden Daten, die zu einer Zeitreihe aus einem Azure-Blob gehören, stündlich in eine Tabelle in einer Azure SQL-Datenbank kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -375,7 +373,7 @@ Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den 
 | Typ | Die type-Eigenschaft muss auf "AzureSqlDatabase" festgelegt sein. | Ja |
 | connectionString | Geben Sie Informationen, die zur Verbindung mit der Azure SQL-Datenbankinstanz erforderlich sind, für die Eigenschaft "connectionString" ein. | Ja |
 
-**Hinweis:** Sie müssen die [Azure SQL-Datenbank-Firewall](https://msdn.microsoft.com/library/azure/ee621782.aspx#ConnectingFromAzure) konfigurieren. Sie müssen den Datenbankserver konfigurieren, um [Azure-Diensten den Zugriff auf den Server zu erlauben](https://msdn.microsoft.com/library/azure/ee621782.aspx#ConnectingFromAzure). Wenn Sie nicht aus Azure stammende Daten in Azure SQL kopieren, inklusive Daten aus lokalen Datenquellen mit Data Factory-Gateway, müssen Sie außerdem den entsprechenden IP-Adressbereich für den Computer konfigurieren, der Daten an SQL Azure sendet.
+**Hinweis**: Sie müssen die [Azure SQL-Datenbank-Firewall](https://msdn.microsoft.com/library/azure/ee621782.aspx#ConnectingFromAzure) konfigurieren. Sie müssen den Datenbankserver konfigurieren, um [Azure-Diensten den Zugriff auf den Server zu erlauben](https://msdn.microsoft.com/library/azure/ee621782.aspx#ConnectingFromAzure). Wenn Sie nicht aus Azure stammende Daten in Azure SQL kopieren, inklusive Daten aus lokalen Datenquellen mit Data Factory-Gateway, müssen Sie außerdem den entsprechenden IP-Adressbereich für den Computer konfigurieren, der Daten an SQL Azure sendet.
 
 ## Eigenschaften des Dataset-Typs "Azure SQL"
 
@@ -399,7 +397,7 @@ Wenn bei der Kopieraktivität "source" den Typ **SqlSource** hat, sind im Abschn
 
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------------- | -------- |
-| sqlReaderQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: "select \* from MyTable". Falls nicht angegeben, wird folgende SQL-Anweisung ausgeführt: "select from MyTable". | Nein |
+| sqlReaderQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: "select * from MyTable". Falls nicht angegeben, wird folgende SQL-Anweisung ausgeführt: "select from MyTable". | Nein |
 
 **SqlSink** unterstützt die folgenden Eigenschaften:
 
@@ -454,7 +452,7 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 | smalldatetime | DateTime |
 | smallint | Int16 |
 | smallmoney | Decimal | 
-| sql\_variant | Object \* |
+| sql\_variant | Object * |
 | Text | String, Char |
 | in | TimeSpan |
 | timestamp | Byte |
@@ -473,4 +471,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 	 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

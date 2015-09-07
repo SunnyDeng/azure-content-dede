@@ -1,22 +1,22 @@
-## How to create a VNet using a network config file in the Azure portal
+## Erstellen eines VNet mithilfe einer Netzwerkkonfigurationsdatei im Azure-Portal
 
-Azure uses an xml file to define all VNets available to a subscription. You can download this file, and edit it to modify or delete existing VNets, and create new ones. In this document, you will learn how to download this file, referred to as network configuration (or netcgf) file, and edit it to create a new VNet. Check the [Azure virtual network configuration schema](https://msdn.microsoft.com/library/azure/jj157100.aspx) to learn more about the network configuration file.
+Azure verwendet eine XML-Datei, um alle für ein Abonnement verfügbaren VNets zu definieren. Sie können diese Datei herunterladen und bearbeiten, um vorhandene VNets zu ändern oder zu löschen und neue zu erstellen. In diesem Dokument erfahren Sie, wie Sie die Datei, die auch als Netzwerkkonfigurationsdatei oder netcgf-Datei bezeichnet wird, herunterladen und bearbeiten können, um ein neues VNet zu erstellen. Unter [Konfigurationsschema für virtuelle Azure-Netzwerke](https://msdn.microsoft.com/library/azure/jj157100.aspx) finden Sie weitere Informationen zur Netzwerkkonfigurationsdatei.
 
-To create a VNet using a netcfg file through the Azure portal, follow the steps below.
+Führen Sie zum Erstellen eines VNet unter Verwendung einer netcfg-Datei im Azure-Portal die folgenden Schritte aus.
 
-1. From a browser, navigate to http://manage.windowsazure.com and, if necessary, sign in with your Azure account.
-2. Scroll down on the list of services, and click on **NETWORKS** as seen below.
+1. Navigieren Sie in einem Browser zu http://manage.windowsazure.com, und melden Sie sich, falls erforderlich, mit Ihrem Azure-Konto an.
+2. Blättern Sie in der Liste der Dienste nach unten, und klicken Sie auf **Netzwerke**, wie nachfolgend dargestellt.
 
-	![Azure virtual networks](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure1.gif)
+	![Virtuelle Azure-Netzwerke](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure1.gif)
 
-3. On the bottom of the page, click the **EXPORT** button, as shown below.
+3. Klicken Sie unten auf der Seite auf die Schaltfläche **EXPORTIEREN**, wie unten dargestellt.
 
-	![Export button](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure2.png)
+	![Schaltfläche "Exportieren"](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure2.png)
 
-4. On the **Export network configuration** page, select the subscription you want to export the virtual network configuration from, and then click the check mark button on the bottom left hand corner of the page.
-5. Follow your browser instructions to save the **NetworkConfig.xml** file. Make sure you note where you are saving the file.
-6. Open the file you saved in step 5 above using any XML or text editor application, and look for the **<VirtualNetworkSites>** element. If you have any networks already created, each network will be displayed as its own **<VirtualNetworkSite>** element.
-7. To create the virtual network described in this scenario, add the following XML just under the **<VirtualNetworkSites>** element:
+4. Wählen Sie auf der Seite **Netzwerkkonfiguration exportieren** das Abonnement aus, aus dem Sie die Konfiguration des virtuellen Netzwerks exportieren möchten, und klicken Sie dann auf das Häkchen in der unteren linken Ecke der Seite.
+5. Folgen Sie den Anweisungen des Browsers zum Speichern der Datei **NetworkConfig.xml**. Notieren Sie sich den Speicherort der Datei.
+6. Öffnen Sie die in Schritt 5 oben gespeicherte Datei mit einem beliebigen XML- oder Text-Editor, und suchen Sie nach dem **<VirtualNetworkSites>**-Element. Wenn Sie bereits Netzwerke erstellt haben, wird für jedes Netzwerk ein eigenes **<VirtualNetworkSite>**-Element angezeigt.
+7. Um das in diesem Szenario beschriebene virtuelle Netzwerk zu erstellen, fügen Sie den folgenden XML-Code direkt unter dem **<VirtualNetworkSites>**-Element hinzu:
 
 		<VirtualNetworkSite name="TestVNet" Location="Central US">
 		  <AddressSpace>
@@ -32,19 +32,21 @@ To create a VNet using a netcfg file through the Azure portal, follow the steps 
 		  </Subnets>
 		</VirtualNetworkSite>
 
-8.  Save the network configuration file.
-9.  In the Azure portal, on the bottom left hand corner of the page, click **NEW**, then click **NETWORK SERVICES**, then click **VIRTUAL NETWORK**, and then click **IMPORT CONFIGURATION** as shown in the figure below.
+8.  Speichern Sie die Netzwerkkonfigurationsdatei.
+9.  Klicken Sie im Azure-Portal in der unteren linken Ecke der Seite auf **NEU**, klicken Sie dann auf **NETZWEKDIENSTE**, dann auf **VIRTUELLES NETZWERK**, und klicken Sie dann auf **KONFIGURATION IMPORTIEREN**, wie in der folgenden Abbildung dargestellt.
 
-	![Import configuration](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure3.gif)
+	![Konfiguration importieren](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure3.gif)
 
-10.  On the **Import the network configuration file** page, click **BROWSE FOR FILE...**, then navigate to the folder you saved your file in step 8 above, select the file, and then click **Open**. The web page should look similar to the figure below. On the bottom right hand corner of the page, click on the arrow button to move to the next step.
+10.  Klicken Sie auf der Seite **Netzwerkkonfigurationsdatei importieren** auf **DATEI SUCHEN**. Navigieren Sie zu dem Ordner, in dem Sie die Datei in Schritt 8 oben gespeichert haben, wählen Sie die Datei aus, und klicken Sie dann auf **Öffnen**. Das Webseite sollte ähnlich wie die folgende Abbildung aussehen. Klicken Sie in der unteren rechten Ecke der Seite auf den Pfeil, um mit dem nächsten Schritt fortzufahren.
 
-	![Import network configuration file page](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure4.png)
+	![Seite "Netzwerkkonfiguration importieren"](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure4.png)
 
-11.   On the **Building your network** page, notice the entry for your new VNet, as shown in the figure below.
+11.   Beachten Sie auf der Seite **Netzwerk erstellen** den Eintrag für das neue VNet, wie in der folgenden Abbildung dargestellt.
 
-	![Building your network page](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure5.png)
+	![Seite "Netzwerk erstellen"](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure5.png)
 
-12.   Click on the check mark button on the bottom right hand corner of the page to create the VNet. After a few seconds your VNet will be shown in the list of available VNets, as shown in the figure below.
+12.   Klicken Sie auf das Häkchen in der unteren rechten Ecke der Seite, um das VNet zu erstellen. Nach einigen Sekunden wird das VNet in der Liste der verfügbaren VNets angezeigt, wie in der folgenden Abbildung dargestellt.
 
-	![New virtual network](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure6.png)
+	![Neues virtuelles Netzwerk](./media/virtual-networks-create-vnet-classic-portal-xml-include/vnet-create-portal-netcfg-figure6.png)
+
+<!---HONumber=August15_HO9-->

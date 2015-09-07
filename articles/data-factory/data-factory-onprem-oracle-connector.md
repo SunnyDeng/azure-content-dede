@@ -1,24 +1,22 @@
 <properties 
-	pageTitle="Oracle-Connector: Verschieben von Daten in und aus lokaler Oracle-Datenbank" 
-	description="Informationen zum Oracle-Connector für den Data Factory-Dienst, mit dem Sie Daten in eine bzw. aus einer lokalen Oracle-Datenbank verschieben können." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Verschieben von Daten in und aus Oracle | Azure Data Factory"
+	description="Informationen zum Verschieben von Daten in und aus einer Oracle-Datenbank, die lokal oder mithilfe von Azure Data Factory gehostet wird."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/29/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2015"
 	ms.author="spelluru"/>
 
-
-# Oracle-Connector: Verschieben von Daten in lokale Oracle-Datenbank 
+# Verschieben von Daten in Oracle mithilfe von Azure Data Factory 
 
 Dieser Artikel beschreibt, wie Sie die Data Factory-Kopieraktivität zum Verschieben von Daten aus Oracle in einen anderen Datenspeicher verwenden können. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
 
@@ -26,11 +24,11 @@ Dieser Artikel beschreibt, wie Sie die Data Factory-Kopieraktivität zum Verschi
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1.	Einen verknüpften Dienst des Typs "OnPremisesOracle"
-2.	Einen verknüpften Dienst des Typs "AzureStorage"
-3.	Ein Eingabedataset des Typs "OracleTable" 
-4.	Ein Ausgabedataset des Typs "AzureBlob"
-5.	Eine Pipeline mit Kopieraktivität, die "OracleSource" als Quelle und "BlobSink" als Senke verwendet
+1.	Einen verknüpften Dienst des Typs [OnPremisesOracle](data-factory-onprem-oracle-connector.md#oracle-linked-service-properties)
+2.	Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
+3.	Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [OracleTable](data-factory-onprem-oracle-connector.md#oracle-dataset-type-properties) 
+4.	Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+5.	Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [OracleSource](data-factory-onprem-oracle-connector.md#oracle-copy-activity-type-properties) als Quelle und [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) als Senke verwendet
 
 Das Beispiel kopiert Daten stündlich aus einer Tabelle in einer lokalen Oracle-Datenbank in ein Blob. Weitere Informationen zu den verschiedenen Eigenschaften, die im folgenden Beispiel verwendet werden, werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -179,7 +177,7 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	        "typeProperties": {
 	          "source": {
 	            "type": "OracleSource",
-	            "oracleReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \\'{0:yyyy-MM-dd HH:mm}\\' AND timestampcolumn < \\'{1:yyyy-MM-dd HH:mm}\\'', WindowStart, WindowEnd)"
+	            "oracleReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \'{0:yyyy-MM-dd HH:mm}\' AND timestampcolumn < \'{1:yyyy-MM-dd HH:mm}\'', WindowStart, WindowEnd)"
 	          },
 	          "sink": {
 	            "type": "BlobSink"
@@ -210,6 +208,7 @@ Typ | Die "type"-Eigenschaft muss auf **OnPremisesOracle** festgelegt sein. | Ja
 connectionString | Geben Sie Informationen, die zur Verbindung mit der Oracle Databaseinstanz erforderlich sind, für die Eigenschaft "connectionString" an. | Ja 
 gatewayName | Name des Gateways, das zum Herstellen einer Verbindung mit dem lokalen Oracle-Server verwendet wird | Ja
 
+Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine lokale Oracle-Datenquelle finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
 ## Eigenschaften des Dataset-Typs "Oracle"
 
 Eine vollständige Liste der Abschnitte und Eigenschaften, die zum Definieren von Datasets zur Verfügung stehen, finden Sie im Artikel [Erstellen von Datasets](data-factory-create-datasets.md). Abschnitte wie Struktur, Verfügbarkeit und Richtlinie einer Dataset-JSON sind bei allen Dataset-Typen (Oracle, Azure-Blob, Azure-Tabelle usw.) ähnlich.
@@ -233,7 +232,7 @@ Wenn bei der Kopieraktivität "source" den Typ "SqlSource" hat, sind im Abschnit
 Eigenschaft | Beschreibung |Zulässige Werte | Erforderlich
 -------- | ----------- | ------------- | --------
 oracleReaderQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. 
-Beispiel: select \* from MyTable <p>Falls nicht angegeben, die SQL-Anweisung, die ausgeführt wird: select \* from MyTable</p> | Nein
+Beispiel: select * from MyTable <p>Falls nicht angegeben, die SQL-Anweisung, die ausgeführt wird: select * from MyTable</p> | Nein
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
@@ -275,4 +274,4 @@ XML | String
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

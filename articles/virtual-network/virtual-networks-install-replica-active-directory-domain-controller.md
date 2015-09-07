@@ -51,12 +51,12 @@ Es bietet sich an, einen Standort in Active Directory zu erstellen, der die Netz
     Seite des Assistenten… | Einzugebende Werte
 	------------- | -------------
 	**Details zum virtuellen Netzwerk** | <p>Name: Geben Sie einen Namen für das virtuelle Netzwerk ein, z. B. WestUSVNet.</p><p>Region: Wählen Sie die nächstgelegene Region aus.</p>
-	**DNS-Server und VPN-Konnektivität** | <p>DNS-Server: Geben Sie den Namen und die IP-Adresse für mindestens einen lokalen DNS-Server an.</p><p>Konnektivität: Wählen Sie **Ein Site-to-Site-VPN konfigurieren** aus.</p><p>Lokales Netzwerk: Geben Sie ein neues lokales Netzwerk an.</p><p>Bei Verwendung von ExpressRoute anstelle eines VPN finden Sie weitere Informationen unter [Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter](https://msdn.microsoft.com/library/azure/dn606306.aspx).</p>
+	**DNS-Server und VPN-Konnektivität** | <p>DNS-Server: Geben Sie den Namen und die IP-Adresse für mindestens einen lokalen DNS-Server an.</p><p>Konnektivität: Wählen Sie **Ein Site-to-Site-VPN konfigurieren** aus.</p><p>Lokales Netzwerk: Geben Sie ein neues lokales Netzwerk an.</p><p>Bei Verwendung von ExpressRoute anstelle eines VPN finden Sie weitere Informationen unter [Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter](../expressroute/expressroute-configuring-exps.md).</p>
 	**Site-to-Site-Konnektivität** | <p>Name: Geben Sie einen Namen für das lokale Netzwerk an.</p><p>IP-Adresse des VPN-Geräts: Geben Sie die öffentliche IP-Adresse des Geräts an, von dem aus eine Verbindung mit dem virtuellen Netzwerk hergestellt wird. Das VPN-Gerät darf sich nicht hinter einer NAT befinden. </p><p>Adresse: Geben Sie die Adressbereiche für das lokale Netzwerk an (z. B. 192.168.0.0/16 im Szenariodiagramm).</p>
 	**Adressräume des virtuellen Netzwerks** | <p>Adressraum: Geben Sie den IP-Adressbereich für virtuelle Computer an, die im virtuellen Azure-Netzwerk ausgeführt werden sollen (z. B. 10.1.0.0/16 im Szenariodiagramm). Dieser Adressbereich darf sich nicht mit den Adressbereichen des lokalen Netzwerks überlappen.</p><p>Subnetze: Geben Sie einen Namen und eine Adresse für ein Subnetz für die Anwendungsserver (z. B. Front-End, 10.1.1.0/24) und für die Domänencontroller an (z. B. Back-End, 10.1.2.0/24).</p><p>Klicken Sie auf **Gatewaysubnetz hinzufügen**.</p>
 
-2. Als Nächstes konfigurieren Sie das Gateway des virtuellen Netzwerks, um eine sichere Site-to-Site-VPN-Verbindung zu erstellen. Anweisungen hierzu finden Sie unter [Konfigurieren des Gateways für das virtuelle Netzwerk](https://msdn.microsoft.com/library/azure/jj156210.aspx).
-3. Erstellen Sie die Site-to-Site-VPN-Verbindung zwischen dem neuen virtuellen Netzwerk und einem lokalen VPN-Gerät. Anweisungen hierzu finden Sie unter [Konfigurieren des Gateways für das virtuelle Netzwerk](https://msdn.microsoft.com/library/azure/jj156210.aspx).
+2. Als Nächstes konfigurieren Sie das Gateway des virtuellen Netzwerks, um eine sichere Site-to-Site-VPN-Verbindung zu erstellen. Anweisungen hierzu finden Sie unter [Konfigurieren des Gateways für das virtuelle Netzwerk](../vpn-gateway/vpn-gateway-configure-vpn-gateway-mp.md).
+3. Erstellen Sie die Site-to-Site-VPN-Verbindung zwischen dem neuen virtuellen Netzwerk und einem lokalen VPN-Gerät. Anweisungen hierzu finden Sie unter [Konfigurieren des Gateways für das virtuelle Netzwerk](../vpn-gateway/vpn-gateway-configure-vpn-gateway-mp.md).
 
 
 
@@ -86,7 +86,7 @@ Melden Sie sich bei einem virtuellen Computer an, und stellen Sie sicher, dass S
 
 ## Erneutes Konfigurieren des DNS-Servers für das virtuelle Netzwerk
 
-1. Klicken Sie klassischen Azure-Portal auf den Namen des virtuellen Netzwerks und dann auf die Registerkarte **Konfigurieren**, um [die IP-Adressen der DNS-Server für das virtuelle Netzwerk neu zu konfigurieren](https://msdn.microsoft.com/library/azure/dn275925.aspx), sodass die den Replikatdomänencontrollern zugewiesenen statischen IP-Adressen anstelle der IP-Adressen eines lokalen DNS-Servers verwendet werden.
+1. Klicken Sie klassischen Azure-Portal auf den Namen des virtuellen Netzwerks und dann auf die Registerkarte **Konfigurieren**, um [die IP-Adressen der DNS-Server für das virtuelle Netzwerk neu zu konfigurieren](virtual-networks-manage-dns-in-vnet.md), sodass die den Replikatdomänencontrollern zugewiesenen statischen IP-Adressen anstelle der IP-Adressen eines lokalen DNS-Servers verwendet werden.
 
 2. Um sicherzustellen, dass alle virtuellen Computer des Replikatdomänencontroller im virtuellen Netzwerk für die Verwendung der DNS-Server im virtuellen Netzwerk konfiguriert sind, klicken Sie auf **Virtuelle Computer**, auf die Statusspalte für die einzelnen virtuellen Computer und dann auf **Neustart**. Warten Sie, bis der virtuelle Computer den Status **Wird ausgeführt** anzeigt, bevor Sie versuchen, sich anzumelden.
 
@@ -113,7 +113,7 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 -  [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Azure-Computern](https://msdn.microsoft.com/library/azure/jj156090.aspx)
 -  [Hochladen vorhandener lokaler Hyper-V-Domänencontroller in Azure mithilfe von Azure PowerShell](http://support.microsoft.com/kb/2904015)
 -  [Installieren einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk](../active-directory-new-forest-virtual-machine.md)
--  [Azure Virtual Network](https://msdn.microsoft.com/library/azure/jj156007.aspx)
+-  [Azure Virtual Network](../virtual-network/virtual-networks-overview.md)
 -  [Microsoft Azure IT Pro IaaS: (01) Grundlagen zu virtuellen Computern](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
 -  [Microsoft Azure IT Pro IaaS: (05) Erstellen virtueller Netzwerke und Herstellen standortübergreifender Verbindungen](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
 -  [Azure PowerShell](https://msdn.microsoft.com/library/azure/jj156055.aspx)
@@ -122,4 +122,4 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 <!--Image references-->
 [1]: ./media/virtual-networks-install-replica-active-directory-domain-controller/ReplicaDCsOnAzureVNet.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

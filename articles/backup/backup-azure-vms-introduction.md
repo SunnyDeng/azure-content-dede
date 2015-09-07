@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/26/2015"
+	ms.date="08/24/2015"
 	ms.author="aashishr"/>
 
 # Sichern von virtuellen Azure-Computern – Einführung
@@ -52,7 +52,7 @@ Vorteile der Verwendung von Azure Backup für die Sicherung virtueller Computer:
 - Automatische Bereinigung und Garbage Collection der älteren Wiederherstellungspunkte.
 
 ## Wie funktioniert die Sicherung der virtuellen Azure-Computer?
-Um einen virtuellen Computer zu sichern, wird zuerst eine Zeitpunkt-Momentaufnahme der Daten benötigt. Der Azure Backup-Dienst initiiert den Sicherungsauftrag zur geplanten Zeit und löst die Sicherungserweiterung zum Erstellen einer Momentaufnahme aus. Die Sicherungserweiterung wird zum Zweck der Konsistenz mit dem VSS-Gastdienst abgestimmt und ruft die Blob-Momentaufnahme-API des Azure-Speicherdiensts auf, wenn Konsistenz erzielt wurde. Dadurch kann eine konsistente Momentaufnahme der Datenträger des virtuellen Computers erstellt werden, ohne dass dieser heruntergefahren werden muss.
+Um einen virtuellen Computer zu sichern, wird zuerst eine Zeitpunkt-Momentaufnahme der Daten benötigt. Der Azure Backup-Dienst initiiert den Sicherungsauftrag zur geplanten Zeit und löst die Sicherungserweiterung zum Erstellen einer Momentaufnahme aus. Die Sicherungserweiterung wird zum Zweck der Konsistenz mit dem VSS-Gastdienst abgestimmt und ruft die Blob-Momentaufnahme-API des Azure Storage-Diensts auf, wenn Konsistenz erzielt wurde. Dadurch kann eine konsistente Momentaufnahme der Datenträger des virtuellen Computers erstellt werden, ohne dass dieser heruntergefahren werden muss.
 
 Nachdem die Momentaufnahme erstellt wurde, werden die Daten vom Azure Backup-Dienst in den Sicherungstresor übertragen. Der Dienst identifiziert und überträgt nur die Datenblöcke, die sich seit der letzten Sicherung geändert haben, sodass die Sicherungen effizient gespeichert werden. Wenn die Datenübertragung abgeschlossen ist, wird die Momentaufnahme entfernt und ein Wiederherstellungspunkt erstellt. Dieser Wiederherstellungspunkt kann im Azure-Verwaltungsportal angezeigt werden.
 
@@ -111,8 +111,8 @@ Erfahren Sie mehr über den [VM-Agent](https://go.microsoft.com/fwLink/?LinkID=3
 
 ## Einschränkungen während der Vorschau
 
-- Die Sicherung von virtuellen Computern mit mehr als fünf Datenträgern wird nicht unterstützt.
-- Die Sicherung von virtuellen Computern mithilfe von Premium-Speicher wird nicht unterstützt.
+- Die Sicherung von virtuellen Computern mit mehr als 16 Datenträgern wird nicht unterstützt.
+- Die Sicherung von virtuellen Computern mithilfe von Storage-Premium wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mit mehreren NICs oder in einer Konfiguration mit Lastenausgleich wird nicht unterstützt.
 - Das Ersetzen eines vorhandenen virtuellen Computers während der Wiederherstellung wird nicht unterstützt. Löschen Sie zuerst den vorhandenen virtuellen Computer und alle zugeordneten Datenträger, und stellen Sie dann die Daten aus der Sicherung wieder her.
 - Die Sicherung von virtuellen Computern, die mithilfe von Azure Site Recovery wiederhergestellt wurden, wird nicht unterstützt.
@@ -136,4 +136,4 @@ Informationen für Ihre ersten Schritte mit der Sicherung von virtuellen Compute
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Was ist Azure Multi-Factor Authentication?" 
-	description="Auf dieser Seite zur Azure Multi-Factor Authentication finden Ihre Endbenutzer Informationen zu den ersten Schritten mit Azure Multi-Factor Authentication." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	pageTitle="Was ist Azure Multi-Factor Authentication?"
+	description="Auf dieser Seite zur Azure Multi-Factor Authentication finden Ihre Endbenutzer Informationen zu den ersten Schritten mit Azure Multi-Factor Authentication."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
+	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/30/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 
@@ -49,4 +49,4 @@ Thema|Beschreibung
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

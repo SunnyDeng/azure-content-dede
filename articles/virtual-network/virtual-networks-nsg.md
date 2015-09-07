@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Was ist eine Netzwerksicherheitsgruppe (NSG)?"
-   description="Informationen zu Netzwerksicherheitsgruppen (NSGs)"
-   services="virtual-network"
-   documentationCenter="na"
-   authors="telmosampaio"
-   manager="carolz"
-   editor="tysonn" />
+	description="Informationen zu Netzwerksicherheitsgruppen (NSGs)"
+	services="virtual-network"
+	documentationCenter="na"
+	authors="telmosampaio"
+	manager="carolz"
+	editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/13/2015"
-   ms.author="telmos" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/13/2015"
+	ms.author="telmos"/>
 
 # Was ist eine Netzwerksicherheitsgruppe (NSG)?
 
@@ -23,7 +23,7 @@ Mit einer NSG können Sie eingehenden Datenverkehr für Instanzen virtueller Com
 
 Sie können eine NSG einem virtuellen Computer oder einem Subnetz innerhalb eines VNets zuordnen. Bei der Zuordnung zu einem virtuellen Computer gilt die NSG für den gesamten ein- und ausgehenden Datenverkehr der VM-Instanz. Bei der Zuordnung zu einem Subnetz im VNet gilt sie für den gesamten ein- und ausgehenden Datenverkehr aller VM-Instanzen im Subnetz. Ein virtueller Computer bzw. ein Subnetz kann jeweils nur einer einzelnen NSG zugeordnet werden, und jede NSG kann bis zu 200 Regeln enthalten. Pro Abonnement können 100 NSGs verwendet werden.
 
->[AZURE.NOTE]Endpunktbasierte ACLs und Netzwerksicherheitsgruppen können nicht für die gleiche VM-Instanz verwendet werden. Wenn Sie eine NSG verwenden möchten und bereits eine Endpunkt-ACL eingerichtet ist, entfernen Sie zuerst die Endpunkt-ACL. Informationen zur Vorgehensweise finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell](https://msdn.microsoft.com/library/azure/dn376543.aspx).
+>[AZURE.NOTE]Endpunktbasierte ACLs und Netzwerksicherheitsgruppen können nicht für die gleiche VM-Instanz verwendet werden. Wenn Sie eine NSG verwenden möchten und bereits eine Endpunkt-ACL eingerichtet ist, entfernen Sie zuerst die Endpunkt-ACL. Informationen zur Vorgehensweise finden Sie unter [Verwalten von Zugriffssteuerungslisten (ACLs) für Endpunkte mithilfe von PowerShell](virtual-networks-acl-powershell.md).
 
 ## Funktionsweise einer Netzwerksicherheitsgruppe (NSG)
 
@@ -249,4 +249,4 @@ Derzeit können NSGs ausschließlich über PowerShell-Cmdlets und REST-APIs konf
 
 	Get-Command *azurenetworksecuritygroup*
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,31 +1,31 @@
 <properties 
-	pageTitle="Verwalten von Streamingendpunkten in einem Media Services-Konto" 
-	description="Diese Thema zeigt, wie Sie Streamingendpunkte im Azure-Verwaltungsportal verwalten." 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	writer="juliako" 
-	manager="dwrede" 
+	pageTitle="Verwalten von Streamingendpunkten in einem Media Services-Konto"
+	description="Diese Thema zeigt, wie Sie Streamingendpunkte im Azure-Verwaltungsportal verwalten."
+	services="media-services"
+	documentationCenter=""
+	authors="Juliako"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015"
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/20/2015"
 	ms.author="juliako"/>
 
 
 #<a id="managemediaservicesorigins"></a>Verwalten von Streamingendpunkten in einem Media Services-Konto
 
-Dieser Artikel gehört zur Reihe [Media Services: Video-on-Demand-Workflow](media-services-video-on-demand-workflow.md) und [Media Services: Livestreaming-Workflow](media-services-live-streaming-workflow.md).
-
+> [AZURE.SELECTOR]
+- [Portal](media-services-manage-origins.md)
+- [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 
 In Microsoft Azure Media Services stellt ein **Streamingendpunkt** einen Streamingdienst dar, der Inhalte zur weiteren Verteilung direkt in einer Client-Player-Anwendung oder einem Content Delivery Network (CDN) bereitstellen kann. Media Services bietet auch eine nahtlose Integration von Azure CDN. Der ausgehende Stream des StreamingEndpoint-Diensts kann ein Livestream oder ein Video on Demand-Medienobjekt in Ihrem Media Services-Konto sein.
 
-Darüber hinaus können Sie die Kapazität des Streamingendpunkt-Diensts für die Verarbeitung wachsender Bandbreitenanforderungen steuern, indem Sie Skalierungseinheiten (auch bekannt als Streamingeinheiten)anpassen. Es wird empfohlen, für Anwendungen in der Produktionsumgebung eine oder mehrere Skalierungseinheiten zu reservieren. Skalierungseinheiten stellen dedizierte Ausgangskapazitäten bereit, die in Schritten zu jeweils 200 Mbit/s erworben werden können, sowie zusätzliche Funktionen, die Folgendes umfassen: [dynamische Paketerstellung](https://msdn.microsoft.com/library/azure/jj889436.aspx), CDN-Integration und erweiterte Konfiguration.
+Darüber hinaus können Sie die Kapazität des Streamingendpunkt-Diensts für die Verarbeitung wachsender Bandbreitenanforderungen steuern, indem Sie Skalierungseinheiten (auch bekannt als Streamingeinheiten)anpassen. Es wird empfohlen, für Anwendungen in der Produktionsumgebung eine oder mehrere Skalierungseinheiten zu reservieren. Skalierungseinheiten stellen dedizierte Ausgangskapazitäten bereit, die in Schritten zu jeweils 200 Mbit/s erworben werden können, sowie zusätzliche Funktionen, die Folgendes umfassen: [dynamische Paketerstellung](media-services-dynamic-packaging-overview.md), CDN-Integration und erweiterte Konfiguration.
 
 Beachten Sie, dass Ihnen nur Kosten entstehen, wenn Ihr StreamingEndpoint sich im Ausführungsmodus befindet.
 
@@ -39,7 +39,7 @@ Sie können Streamingendpunkte mit dem .NET SDK, der REST-API oder dem Azure-Ver
 Führen Sie folgende Schritte aus, um Streamingendpunkte hinzuzufügen oder zu löschen:
 
 1. Klicken Sie im [Management Portal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
-2. Wählen Sie die Seite **STREAMINGENDPUNKTE** aus. 
+2. Wählen Sie die Seite **STREAMING-ENDPUNKTE** aus. 
 3. Klicken Sie unten auf der Seite auf HINZUFÜGEN oder LÖSCHEN. Der Standard-Streaming-Endpunkt kann nicht gelöscht werden. 
 4. Klicken Sie auf die Schaltfläche START, um den Streaming-Endpunkt zu starten. 
 5. Klicken Sie auf den Namen des Streamingendpunkts, um diesen zu konfigurieren.   
@@ -47,11 +47,11 @@ Führen Sie folgende Schritte aus, um Streamingendpunkte hinzuzufügen oder zu l
 	![Streamingendpunkt-Seite][streaming-endpoint]
 
 
-In der Standardeinstellung können Sie bis zu zwei Streamingendpunkte festlegen. Wenn Sie weitere anfordern möchten, finden Sie entsprechende Informationen unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations/).
+In der Standardeinstellung können Sie bis zu zwei Streamingendpunkte festlegen. Wenn Sie weitere anfordern möchten, finden Sie entsprechende Informationen unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md).
 
 ##<a id="scale_streaming_endpoints"></a>Skalieren des Streamingendpunkts
 
-Streamingeinheiten stellen Ihnen dedizierte Ausgangskapazitäten bereit, die zu jeweils 200 Mbit/s erworben werden können, und zusätzliche Funktionen, die aktuell [dynamische Paketfunktionen](http://go.microsoft.com/fwlink/?LinkId=276874) umfassen. Standardmäßig wird das Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen (z. B. Rechen- und Ausgangskapazität usw.) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Streamingdurchsatz zu erhöhen, sollten Sie Streamingeinheiten kaufen.
+Streamingeinheiten stellen Ihnen dedizierte Ausgangskapazitäten bereit, die zu jeweils 200 Mbit/s erworben werden können, und zusätzliche Funktionen, die aktuell [dynamische Paketfunktionen](media-services-dynamic-packaging-overview.md) umfassen. Standardmäßig wird das Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen (z. B. Rechen- und Ausgangskapazität usw.) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Streamingdurchsatz zu erhöhen, sollten Sie Streamingeinheiten kaufen.
 
 Die Skalierung können Sie mit dem .NET SDK, der REST-API oder dem Azure-Verwaltungsportal durchführen.
 
@@ -119,7 +119,7 @@ Die Aktivierung der Azure CDN-Integration kann bis zu 90 Minuten dauern. Es dau
 
 Die CDN-Integration ist in allen Azure-Rechenzentren aktiviert: USA, Westen; USA, Osten; Nordeuropa; Westeuropa; Japan West; Japan Ost; Südostasien und Ostasien.
 
-Nach der Aktivierung werden die folgenden Konfigurationseinstellungen deaktiviert: **Benutzerdefinierte Hostnamen** und **Access Control**
+Nach der Aktivierung werden die folgenden Konfigurationseinstellungen deaktiviert: **Benutzerdefinierte Hostnamen** und **Access Control**.
 
 ![Streamingendpunkt – CDN-Aktivierung][streaming-endpoint-enable-cdn]
 
@@ -140,4 +140,4 @@ Weitere Informationen finden Sie unter [Ankündigung der Azure Media Services-In
 [configure-origin-configure-custom-host-names]: ./media/media-services-manage-origins/media-services-configure-custom-host-names.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

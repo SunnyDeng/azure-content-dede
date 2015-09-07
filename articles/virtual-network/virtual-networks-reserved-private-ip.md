@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Festlegen einer statischen internen privaten IP-Adresse"
-   description="Grundlegendes zu statischen internen IP-Adressen (DIPs) und zu deren Verwaltung"
-   services="virtual-network"
-   documentationCenter="na"
-   authors="telmosampaio"
-   manager="adinah"
-   editor="tysonn" />
+	description="Grundlegendes zu statischen internen IP-Adressen (DIPs) und zu deren Verwaltung"
+	services="virtual-network"
+	documentationCenter="na"
+	authors="telmosampaio"
+	manager="adinah"
+	editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="04/22/2015"
-   ms.author="telmos" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/17/2015"
+	ms.author="telmos"/>
 
 # Festlegen einer statischen internen privaten IP-Adresse
 In den meisten Fällen muss für Ihren virtuellen Computer keine statische interne IP-Adresse angegeben werden. Virtuelle Computer in einem virtuellen Netzwerk erhalten automatisch eine interne IP-Adresse aus einem von Ihnen angegebenen Bereich. In bestimmten Fällen ist die Angabe einer statischen IP-Adresse für einen bestimmten virtuellen Computer allerdings sinnvoll – beispielsweise, wenn auf Ihrem virtuellen Computer DNS ausgeführt werden oder der virtuelle Computer als Domänencontroller fungieren soll.
@@ -31,7 +31,7 @@ Wenn Sie beispielsweise überprüfen möchten, ob die IP-Adresse *10.0.0.7* in e
 	OperationId          : fd3097e1-5f4b-9cac-8afa-bba1e3492609
 	OperationStatus      : Succeeded
 
->[AZURE.NOTE]Wenn Sie den obigen Befehl in einer sicheren Umgebung testen möchten, erstellen Sie unter Berücksichtigung der Richtlinien in [Erstellen eines virtuellen Netzwerks](https://msdn.microsoft.com/library/azure/dn631643.aspx) ein VNet namens *TestVnet*, und stellen Sie dabei sicher, dass es den Adressraum *10.0.0.0/8* verwendet.
+>[AZURE.NOTE]Wenn Sie den obigen Befehl in einer sicheren Umgebung testen möchten, erstellen Sie unter Berücksichtigung der Richtlinien in [Erstellen eines virtuellen Netzwerks](../virtual-network/virtual-networks-create-vnet.md) ein VNet namens *TestVnet*, und stellen Sie dabei sicher, dass es den Adressraum *10.0.0.0/8* verwendet.
 
 ## Angeben einer statischen internen IP-Adresse beim Erstellen eines virtuellen Computers
 Das folgende PowerShell-Skript erstellt einen neuen Clouddienst namens *TestService*, ruft ein Image aus Azure ab, erstellt auf dessen Grundlage in dem neuen Clouddienst einen virtuellen Computer namens *TestVM*, platziert den virtuellen Computer in einem Subnetz namens *Subnet-1* und legt *10.0.0.7* als statische interne IP-Adresse für den virtuellen Computer fest:
@@ -99,4 +99,4 @@ Führen Sie den folgenden Befehl aus, um dem virtuellen Computer, der mit dem ob
 [Reservierte IP-REST-APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

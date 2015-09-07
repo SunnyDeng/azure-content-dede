@@ -1,6 +1,6 @@
 <properties pageTitle="Azure Search-Dienst-REST-API: Version 2014-07-31-Preview" description="Azure Search-Dienst-REST-API: Version 2014-07-31-Preview" services="search" documentationCenter="" authors="HeidiSteen" manager="mblythe" editor=""/>
 
-<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="07/22/2015" ms.author="heidist" />
+<tags ms.service="search" ms.devlang="rest-api" ms.workload="search" ms.topic="article"  ms.tgt_pltfrm="na" ms.date="08/26/2015" ms.author="heidist"/>
 
 # Azure Search-Dienst-REST-API: Version 2014-07-31-Preview
 
@@ -125,8 +125,7 @@ Das folgende Beispiel veranschaulicht ein Schema für die Suche von Hotelinforma
     "fields": [
       {"name": "hotelId", "type": "Edm.String", "key": true, "searchable": false},
       {"name": "baseRate", "type": "Edm.Double"},
-      {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "suggestions": true},
-	  {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "suggestions": true, analyzer="fr.lucene"},
+      {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "suggestions": true}
       {"name": "hotelName", "type": "Edm.String", "suggestions": true},
       {"name": "category", "type": "Edm.String"},
       {"name": "tags", "type": "Collection(Edm.String)"},
@@ -164,7 +163,7 @@ HTTPS ist für alle Dienstanforderungen erforderlich. Die Anforderung **Index er
 
 Der Indexname muss in Kleinbuchstaben angegeben werden und mit einem Buchstaben oder einer Zahl beginnen. Er darf keine Schrägstriche oder Punkte enthalten und muss weniger als 128 Zeichen lang sein. Der Rest des Indexnamens (nach dem Buchstaben bzw. der Zahl zu Beginn des Namens) kann beliebige Buchstaben, Zahlen und Bindestriche enthalten, solange die Bindestriche nicht aufeinanderfolgen.
 
-`api-version` ist erforderlich. Gültige Werte sind `2014-07-31-Preview` oder `2014-10-20-Preview`. Sie können angeben, welche Version für die einzelnen Anforderungen verwendet wird, um ein versionsspezifisches Verhalten zu nutzen. Im Allgemeinen empfiehlt es sich aber, im gesamten Code die gleiche Version zu verwenden. Die empfohlene Version für den allgemeinen Einsatz ist `2014-07-31-Preview`. Alternativ können Sie `2014-10-20-Preview` verwenden, um experimentelle Funktionen zu beurteilen, wie etwa die Unterstützung für Sprachanalyse, die sich im Analyse-Indexattribut ausdrückt. Ausführliche Informationen zu den API-Versionen finden Sie unter [Versionsverwaltung für den Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx). Unter [Sprachunterstützung](#LanguageSupport) finden Sie ausführliche Informationen zu den Sprachanalysemodulen.
+`api-version` ist erforderlich. Gültige Werte sind `2014-07-31-Preview` oder `2014-10-20-Preview`. Sie können angeben, welche Version für die einzelnen Anforderungen verwendet wird, um ein versionsspezifisches Verhalten zu nutzen. Im Allgemeinen empfiehlt es sich aber, im gesamten Code die gleiche Version zu verwenden. Die empfohlene Version für den allgemeinen Einsatz ist `2014-07-31-Preview`. Alternativ können Sie `2014-10-20-Preview` verwenden, um experimentelle Funktionen zu beurteilen, wie etwa die Unterstützung für Sprachanalyse, die sich im Analyse-Indexattribut ausdrückt.
 
 **Anforderungsheader**
 
@@ -274,321 +273,6 @@ Beim Erstellen eines Indexes können die folgenden Attribute festgelegt werden. 
 
 `scoringProfiles`: Definiert benutzerdefinierte Bewertungsverhalten, mit denen Sie beeinflussen können, welche Elemente weiter oben in den Suchergebnissen angezeigt werden. Bewertungsprofile bestehen aus gewichteten Feldern und Funktionen. Weitere Informationen zu den in einem Bewertungsprofil verwendeten Attributen finden Sie unter [Hinzufügen von Bewertungsprofilen zu einem Suchindex](http://msdn.microsoft.com/library/azure/dn798928.aspx).
 
-`analyzer`: Legt den Namen der für das Feld zu verwendenden Textanalyse fest. Die zulässigen Werte finden Sie unter [Sprachunterstützung](#LanguageSupport). Diese Option kann nur mit Feldern vom Typ `searchable` verwendet werden. Eine einmal für ein Feld gewählte Analysemethode kann nicht mehr geändert werden.
-
-
-<a name="LanguageSupport"></a> **Sprachunterstützung**
-
-Durchsuchbare Felder werden einer Analyse unterzogen, die häufig Wörtertrennungen, Textnormalisierungen und das Herausfiltern von Begriffen beinhalten. Standardmäßig werden durchsuchbare Felder in Azure Search mit dem [Standardanalyseprogramm von Apache Lucene](http://lucene.apache.org/core/4_9_0/analyzers-common/index.html) analysiert. Dieses unterteilt Text gemäß den Regeln der [Unicode-Textsegmentierung](http://unicode.org/reports/tr29/) in einzelne Elemente. Darüber hinaus konvertiert das Standardanalyseprogramm alle Zeichen in Kleinbuchstaben. Während der Indizierung und der Abfrageverarbeitung durchlaufen sowohl indizierte Dokumente als auch Suchbegriffe die Analyse.
-
-Azure Search ermöglicht die Indizierung von Feldern in einer Vielzahl von Sprachen. Für jede dieser Sprachen ist ein nicht standardmäßiges Textanalysemodul erforderlich, das den Charakteristika einer bestimmten Sprache Rechnung trägt. Beispielsweise verwendet das Analysemodul für Französisch eine [einfache französische Wortstammerkennung](http://lucene.apache.org/core/4_9_0/analyzers-common/org/apache/lucene/analysis/fr/FrenchLightStemmer.html), um Wörter auf ihre [Wortstämme](http://en.wikipedia.org/wiki/Stemming) zurückführen zu können Außerdem werden [Auslassungen](http://en.wikipedia.org/wiki/Elision) und französische Stoppwörter aus dem analysierten Text entfernt. Das Analysemodul für Englisch erweitert das Standardanalysemodul. Es entfernt Possessivformen (nachgestelltes 's) von Wörtern, wendet die Rückführung auf den Stamm nach dem [Porter Stemming-Algorithmus](http://tartarus.org/~martin/PorterStemmer/) an und entfernt englische [Stoppwörter](http://en.wikipedia.org/wiki/Stop_words).
-
-Das Analysemodul kann für jedes Feld in der Indexdefinition durch Festlegen der `analyzer`-Eigenschaft unabhängig konfiguriert werden. Beispiel: Sie können im selben Index separate Felder für englische, französische und spanische Hotelbeschreibungen verwenden. Die Abfrage gibt an, welches sprachspezifische Feld in Ihren Suchabfragen zurückgegeben werden soll.
-
-Nachfolgend sind die unterstützten Analyseprogramme mit einer kurzen Beschreibung ihrer Funktionen aufgelistet:
-
-<table style="font-size:12">
-    <tr>
-		<th>Sprache</th>
-		<th>Name des Analyseprogramms</th>
-		<th>Beschreibung</th>
-	</tr>
-    <tr>
-		<td>Arabisch</td>
-		<td>ar.lucene</td>
-		<td>
-		<ul>
-			<li>Normalisiert die arabische Orthografie</li>
-			<li>Wendet eine einfache algorithmische Wortstammerkennung an</li>
-			<li>Filtert arabische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Brasilianisch</td>
-		<td>pt-Br.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert brasilianische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Chinesisch (vereinfacht)</td>
-		<td>zh-Hans.lucene</td>
-		<td>
-		<ul>
-			<li>Ermittelt die optimale Wortsegmentierung anhand von probabilistischen Wissensmodellen</li>
-			<li>Filtert chinesische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Chinesisch (traditionell)</td>
-		<td>zh-Hant.lucene</td>
-		<td>
-		<ul>
-			<li>Indiziert Bigramme (überlappenden Gruppen von zwei angrenzenden chinesischen Zeichen)</li>
-			<li>Normalisiert unterschiedliche Zeichenbreiten</li>
-		</ul>
-		</td>
-	<tr>
-    <tr>
-		<td>Tschechisch</td>
-		<td>cs.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert tschechische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Dänisch</td>
-		<td>da.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert dänische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Niederländisch</td>
-		<td>nl.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert niederländische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Deutsch</td>
-		<td>de.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert deutsche Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Griechisch</td>
-		<td>el.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert griechische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Deutsch</td>
-		<td>en.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert englische Stoppwörter heraus</li>
-			<li>Entfernt Possessivformen</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Finnisch</td>
-		<td>fi.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert finnische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Französisch</td>
-		<td>fr.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert französische Stoppwörter heraus</li>
-			<li>Entfernt Auslassungen (Elisionen)</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Hindi</td>
-		<td>hi.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert indische Stoppwörter heraus</li>
-			<li>Entfernt diverse unterschiedliche Schreibweisen</li>
-			<li>Normalisiert die Unicode-Darstellung von Text in indischen Sprachen</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Ungarisch</td>
-		<td>hu.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert ungarische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Indonesisch (Bahasa)</td>
-		<td>id.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert indonesische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Italienisch</td>
-		<td>it.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert italienische Stoppwörter heraus</li>
-			<li>Entfernt Auslassungen (Elisionen)</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Japanisch</td>
-		<td>ja.lucene</td>
-		<td>
-		<ul>
-			<li>Verwendet eine morphologische Analyse</li>
-			<li>Normalisiert allgemeine Katakana-Schreibweisen</li>
-			<li>Entfernt einfache Stoppwörter/Stopptags</li>
-			<li>Normalisiert die Zeichenbreite</li>
-			<li>Lemmatisierung - reduziert gebeugte Adjektive und Verben auf ihre Grundform</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Koreanisch</td>
-		<td>ko.lucene</td>
-		<td>
-		<ul>
-			<li>Indiziert Bigramme (überlappenden Gruppen von zwei angrenzenden chinesischen Zeichen)</li>
-			<li>Normalisiert unterschiedliche Zeichenbreiten</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Lettisch</td>
-		<td>lv.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert lettische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-
-    <tr>
-		<td>Norwegisch</td>
-		<td>no.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert norwegische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Polnisch</td>
-		<td>pl.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine algorithmische Wortstammerkennung an (Stempel)</li>
-			<li>Filtert polnische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Portugiesisch</td>
-		<td>pt-Pt.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert portugiesische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-
-    <tr>
-		<td>Rumänisch</td>
-		<td>ro.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert rumänische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Russisch</td>
-		<td>ru.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert russische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Spanisch</td>
-		<td>es.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert spanische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Schwedisch</td>
-		<td>sv.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert schwedische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Türkisch</td>
-		<td>tr.lucene</td>
-		<td>
-		<ul>
-			<li>Entfernt alle Zeichen nach dem Apostroph (einschließlich des Apostrophs)</li>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert türkische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Thailändisch</td>
-		<td>th.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert thailändische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-</table>
-
-Alle Analyseprogramme mit <i>lucene</i> im Namen werden von den [Sprachanalyseprogrammen von Apache Lucene](http://lucene.apache.org/core/4_9_0/analyzers-common/overview-summary.html) unterstützt.
-
 **CORS-Optionen**
 
 Clientseitiger JavaScript-Code kann standardmäßig keine APIs aufrufen, da der Browser jegliche ursprungsübergreifenden Anforderungen verhindert. Aktivieren Sie CORS (Cross-Origin Resource Sharing), indem Sie mit dem Attribut `corsOptions` festlegen, dass ursprungsübergreifende Abfragen für den Index zulässig sind. Beachten Sie, dass CORS aus Sicherheitsgründen nur von Abfrage-APIs unterstützt wird. Die folgenden Optionen können für CORS festgelegt werden:
@@ -605,7 +289,6 @@ Clientseitiger JavaScript-Code kann standardmäßig keine APIs aufrufen, da der 
         {"name": "hotelId", "type": "Edm.String", "key": true, "searchable": false},
         {"name": "baseRate", "type": "Edm.Double"},
         {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "suggestions": true},
-	    {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "suggestions": true, analyzer="fr.lucene"},
         {"name": "hotelName", "type": "Edm.String", "suggestions": true},
         {"name": "category", "type": "Edm.String"},
         {"name": "tags", "type": "Collection(Edm.String)"},
@@ -632,7 +315,7 @@ Sie können einen vorhandenen Index in Azure Search mit einer HTTP PUT-Anforder
     Content-Type: application/json
     api-key: [admin key]
 
-**Wichtig:** Die öffentliche Vorschauversion von Azure Search bietet nur eine eingeschränkte Unterstützung für Aktualisierungen des Indexschemas. Nicht unterstützt werden Schema-Aktualisierungen, die eine erneute Indizierung nach sich ziehen (z. B. Änderungen der Feldtypen). Während sich bestehende Felder nicht ändern oder löschen lassen, können Sie jederzeit neue Felder hinzufügen.
+**Wichtig:** In der öffentlichen Vorschauversion von Azure Search wird das Aktualisieren von Schemas, die eine erneute Indizierung einschließlich dem Ändern von Feldtypen erforderlich machen, nicht unterstützt. Während sich bestehende Felder nicht ändern oder löschen lassen, können Sie jederzeit neue Felder hinzufügen.
 
 Wenn Sie einem Index ein neues Feld hinzufügen, wird allen im Index enthaltenen Dokumenten für dieses Feld automatisch ein Nullwert zugewiesen. Zusätzlicher Speicherplatz wird erst belegt, wenn Sie dem Index neue Dokumente hinzufügen.
 
@@ -999,7 +682,6 @@ Der Statuscode "429" gibt an, dass Sie Ihr Kontingent hinsichtlich der Anzahl de
           "hotelId": "1",
           "baseRate": 199.0,
           "description": "Best hotel in town",
-		  "description_fr": "Meilleur hôtel en ville",
           "hotelName": "Fancy Stay",
 		  "category": "Luxury",
           "tags": ["pool", "view", "wifi", "concierge"],
@@ -1014,7 +696,6 @@ Der Statuscode "429" gibt an, dass Sie Ihr Kontingent hinsichtlich der Anzahl de
           "hotelId": "2",
           "baseRate": 79.99,
           "description": "Cheapest hotel in town",
-	      "description_fr": "Hôtel le moins cher en ville",
           "hotelName": "Roach Motel",
 		  "category": "Budget",
           "tags": ["motel", "budget"],
@@ -1381,4 +1062,4 @@ Rufen Sie 5 Vorschläge mit der Teilsuche nach "lux" ab.
 
     GET /indexes/hotels/docs/suggest?search=lux&$top=5&api-version=2014-07-31-Preview
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

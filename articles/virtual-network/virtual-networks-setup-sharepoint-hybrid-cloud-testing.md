@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken" 
-	description="Hier erhalten Sie Informationen zum Erstellen einer SharePoint-Intranetfarm in einer Hybrid Cloud-Umgebung für Entwicklungs- oder IT Pro-Tests." 
-	services="virtual-network" 
-	documentationCenter="" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	pageTitle="Testumgebung für SharePoint 2013-Farm | Microsoft Azure"
+	description="Erfahren Sie, wie Sie eine zweistufige SharePoint Server 2013-Intranetfarm in einer Hybrid Cloud-Umgebung für IT-Experten oder Entwicklungstests erstellen."
+	services="virtual-network"
+	documentationCenter=""
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
 
 <tags 
-	ms.service="virtual-network" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.service="virtual-network"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/08/2015"
 	ms.author="josephd"/>
 
 
@@ -88,7 +88,7 @@ Stellen Sie dann mit dem *lokalen Administratorkonto* eine Verbindung zum virtue
 3.	Wenn Sie zum Öffnen von "SQL1.rdp" aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
-	- Name: **SQL1\**[Name des lokalen Administratorkontos]
+	- Name: **SQL1**[Name des lokalen Administratorkontos]
 	- Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
@@ -212,4 +212,4 @@ Ihre SharePoint-Intranetfarm kann jetzt in einer Hybrid Cloud-Umgebung getestet 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-infrastructure-services-implementation-guidelines.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

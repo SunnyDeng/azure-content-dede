@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Branchenanwendungs-Workload, Phase 1: Konfigurieren von Azure" 
-	description="In dieser ersten Phase der Bereitstellung einer hochverfügbaren Branchenanwendung in den Azure-Infrastrukturdiensten erstellen Sie das virtuelle Azure-Netzwerk und andere Elemente der Azure-Infrastruktur." 
+	pageTitle="Branchenanwendung, Phase 1 | Microsoft Azure"
+	description="In Phase 1 der Branchenanwendung erstellen Sie in Azure das virtuelle Netzwerk und weitere Elemente der Azure-Infrastruktur."
 	documentationCenter=""
-	services="virtual-machines" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	services="virtual-machines"
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/11/2015"
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 1: Konfigurieren von Azure
@@ -60,7 +60,7 @@ Item | Subnetzname | Subnetzadressraum | Zweck
 
 **Tabelle S: Subnetze im virtuellen Netzwerk**
 
-> [AZURE.NOTE]Diese vordefinierte Architektur verwendet aus Gründen der Einfachheit nur ein Subnetz. Wenn Sie zur Emulierung einer Subnetzisolierung verschiedene Datenverkehrsfilter überlagern möchten, können Sie Azure-[Netzwerksicherheitsgruppen](https://msdn.microsoft.com/library/azure/dn848316.aspx) verwenden.
+> [AZURE.NOTE]Diese vordefinierte Architektur verwendet aus Gründen der Einfachheit nur ein Subnetz. Wenn Sie zur Emulierung einer Subnetzisolierung verschiedene Datenverkehrsfilter überlagern möchten, können Sie Azure-[Netzwerksicherheitsgruppen](virtual-networks-nsg.md) verwenden.
 
 Füllen Sie für die zwei lokalen DNS-Server, die Sie bei der anfänglichen Einrichtung der Domänencontroller in Ihrem virtuellen Netzwerk verwenden möchten, Tabelle D aus. Geben Sie jedem DNS-Server einen Anzeigenamen und eine einzelne IP-Adresse. Der Anzeigename muss nicht mit dem Hostnamen oder dem Computernamen des DNS-Servers übereinstimmen. Auch wenn hierfür nur zwei Einträge vorgesehen sind, können Sie noch weitere hinzufügen. Erarbeiten Sie diese Liste gemeinsam mit Ihrer IT-Abteilung.
 
@@ -248,4 +248,4 @@ Zum Fortsetzen der Konfiguration für diesen Workload wechseln Sie zu [Phase 2:
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Tabellenpartitionen in SQL Data Warehouse | Microsoft Azure"
-   description="Tipps für die Verwendung von Tabellenpartitionen in Azure SQL Data Warehouse zum Entwickeln von Lösungen."
-   services="sql-data-warehouse"
-   documentationCenter="NA"
-   authors="jrowlandjones"
-   manager="barbkess"
-   editor=""/>
+	description="Tipps für die Verwendung von Tabellenpartitionen in Azure SQL Data Warehouse zum Entwickeln von Lösungen."
+	services="sql-data-warehouse"
+	documentationCenter="NA"
+	authors="jrowlandjones"
+	manager="barbkess"
+	editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="06/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-services"
+	ms.date="06/22/2015"
+	ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Tabellenpartitionen in SQL Data Warehouse
 
@@ -24,9 +24,16 @@ So migrieren Sie SQL Server-Partitionsdefinitionen nach SQL Data Warehouse
 - Definieren Sie die Partitionen beim Erstellen der Tabelle. Legen Sie einfach die Partitionsgrenzpunkte fest, und geben Sie an, ob der Grenzpunkt für `RANGE RIGHT` oder `RANGE LEFT` gelten soll.
 
 ### Festlegen der Partitionsgröße
-Die Partitionsgröße ist ein wichtiger Aspekt für SQL Data Warehouse. In der Regel sind Verwaltungsvorgänge und Datenladeroutinen auf einzelne Partitionen ausgerichtet, sodass nicht die gesamte Tabelle gleichzeitig bearbeitet wird. Dies ist besonders wichtig für gruppierte Columnstores (CCI). CCIs können große Mengen Speicher belegen. Wir möchten zwar die Granularität des Partitionierungsplans überarbeiten, sollten jedoch die Partitionen nicht auf eine solche Größe skalieren, dass wir Probleme mit dem Arbeitsspeicher erhalten, wenn wir versuchen, Verwaltungsaufgaben auszuführen.
+Bei SQL DW können DBAs zwischen verschiedenen Tabellentypen wählen: Heap, gruppierter Index (Clustered Index, CI) oder gruppierter ColumnStore-Index (Clustered ColumnStore Index, CCI). Bei jedem dieser Tabellentypen kann der DBA die Tabelle partitionieren (also zur Verbesserung der Leistung in mehrere Abschnitte unterteilen). In Tabellen mit zu vielen Partitionen kann es jedoch unter Umständen zu Leistungseinbußen oder Abfragefehlern kommen. Dies gilt insbesondere bei CCI-Tabellen. Der DBA muss wissen, wann sich der Einsatz der Partitionierung anbietet und wie viele Partitionen erstellt werden sollten, damit die Partitionierung hilfreich ist. Auf der Grundlage der vorliegenden Richtlinien können DBAs optimale Entscheidungen für ihre Szenarien treffen.
 
-Bei der Entscheidung der Granularität der Partitionen ist es wichtig, zu beachten, dass SQL Data Warehouse die Daten automatisch in Verteilungen unterteilt. Daher sind Daten, die normalerweise in einer Tabelle in einer SQL Data Warehouse-Datenbank auf einer Partition vorliegen würden, jetzt in einer einzigen Partition in vielen verschiedenen Tabellen in einer SQL Data Warehouse-Datenbank enthalten. Um eine sinnvolle Anzahl von Zeilen in jeder Partition zu verwalten, wird in der Regel die Größe der Partitionsgrenze geändert. Wenn Sie beispielsweise eine Partitionierung auf Tagesebene für das Data Warehouse verwendet haben, empfiehlt es sich, etwas weniger präzise zu unterteilen, wie z. B. nach Monat oder Quartal.
+Tabellenpartitionen sind in der Regel doppelt hilfreich:
+
+1. Bei Verwendung von Partitionswechseln zum schnellen Abtrennen eines Tabellenbereichs. Für eine Faktentabelle wird häufig ein Design verwendet, das nur Zeilen für einen bestimmten, begrenzten Zeitraum enthält. So kann beispielsweise eine Umsatzfaktentabelle erstellt werden, die nur Daten für die letzten 36 Monate enthält. Am Monatsende wird jeweils der älteste Verkaufsdatenmonat aus der Tabelle gelöscht. Dies kann zwar durch einfaches Löschen aller Zeilen für den ältesten Monat erreicht werden, das zeilenweise Löschen umfangreicher Datenmengen kann jedoch sehr zeitaufwendig sein. Zur Optimierung dieses Szenarios unterstützt SQL DW Partitionswechsel. Dadurch kann ein gesamter Zeilensatz einer Partition in einem schnellen Einzelvorgang gelöscht werden.   
+
+2. Durch die Partitionierung kann bei Abfragen problemlos ein großer Zeilensatz (also eine Partition) von der Verarbeitung ausgenommen werden, wenn die Abfrage ein Prädikat auf die Partitionsspalte anwendet. Ein Beispiel: Wenn eine Umsatzfaktentabelle auf der Grundlage des Verkaufsdatumsfelds in 36 Monate partitioniert wird, kann bei Abfragen, die das Verkaufsdatum als Filter verwenden, die Verarbeitung von Partitionen übersprungen werden, die nicht dem Filter entsprechen. Bei einer auf diese Weise genutzten Partitionierung handelt es sich um einen undifferenzierten Index.
+
+Wenn DBAs gruppierte ColumnStore-Indizes in SQL DW erstellen, müssen sie einen weiteren Faktor berücksichtigen: die Zeilenanzahl. Mit CCI-Tabellen lassen sich eine höhere Komprimierung sowie eine bessere SQL DW-Abfrageleistung erzielen. Aufgrund der internen Funktionsweise der Komprimierung in SQL DW muss jede Partition in einer CCI-Tabelle eine relativ hohe Anzahl von Zeilen besitzen, damit die Daten komprimiert werden. Darüber hinaus werden die Daten von SQL DW breit gestreut, und jede Verteilung wird wiederum durch Partitionen unterteilt. Für eine optimale Komprimierung und Leistung sind pro Verteilung und Partition mindestens 100.000 Zeilen erforderlich. Für das obige Beispiel bedeutet das: Wenn die Umsatzfaktentabelle 36 Monatspartitionen enthält und SQL DW 60 Verteilungen umfasst, muss die Umsatzfaktentabelle mindestens sechs Millionen Zeilen pro Monat umfassen (oder 216 Millionen Zeilen, wenn alle Monate aufgefüllt sind). Enthält eine Tabelle deutlich weniger Zeilen als mindestens empfohlen, sollte der Datenbankadministrator die Tabelle ggf. mit weniger Partitionen erstellen, um die Zeilenanzahl pro Verteilung zu erhöhen.
+
 
 Verwenden Sie eine Abfrage wie unten, um die Größe der aktuellen Datenbank auf Partitionsebene zu ändern:
 
@@ -319,4 +326,4 @@ Nachdem Sie Ihr Datenbankschema erfolgreich in SQL Data Warehouse migriert haben
 
 <!-- Other web references -->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

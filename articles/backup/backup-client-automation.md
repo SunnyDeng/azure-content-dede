@@ -10,13 +10,13 @@
 <tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/18/2015" ms.author="aashishr"; "jimpark"/>
 
 
-# Bereitstellen und Verwalten der Sicherung auf Azure für Windows-Server/Windows-Clients mit Azure PowerShell
-In diesem Artikel erfahren Sie, wie Sie Azure PowerShell zum Einrichten von Azure Backup auf einem Windows-Server oder Windows-Client sowie zum Verwalten von Sicherungen und Wiederherstellungen verwenden.
+# Bereitstellen und Verwalten der Sicherung in Azure für Windows Server-/Windows-Clientcomputer mit PowerShell
+In diesem Artikel erfahren Sie, wie Sie PowerShell zum Einrichten von Azure Backup auf einem Windows-Server oder Windows-Client sowie zum Verwalten von Sicherungen und Wiederherstellungen verwenden.
 
 [AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
 
 ## Einrichtung und Registrierung
-Die folgenden Installations- und Registrierungsaufgaben können mit Azure PowerShell automatisiert werden:
+Die folgenden Installations- und Registrierungsaufgaben können mit PowerShell automatisiert werden:
 
 - Erstellen eines Sicherungstresors
 - Installieren des Azure Backup-Agents
@@ -38,7 +38,7 @@ Mit dem Cmdlet **Get-AzureBackupVault** können Sie eine Liste aller Sicherungst
 ### Installieren des Azure Backup-Agents
 Bevor Sie den Azure Backup-Agent installieren, müssen Sie das Installationsprogramm herunterladen, damit es auf dem Windows-Server verfügbar ist. Die neueste Version des Installationsprogramms erhalten Sie im [Microsoft Download Center](http://aka.ms/azurebackup_agent) oder im Dashboard des Sicherungstresors. Speichern Sie das Installationsprogramm an einem leicht zugänglichen Speicherort wie *C:\\Downloads*.
 
-Um den Agent zu installieren, führen Sie den folgenden Befehl in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
+Um den Agent zu installieren, führen Sie den folgenden Befehl in einer PowerShell-Konsole mit erhöhten Rechten aus:
 
 ```
 PS C:\> MARSAgentInstaller.exe /q
@@ -75,7 +75,7 @@ Die verfügbaren Optionen umfassen:
 
 
 ### Registrieren beim Azure Backup-Dienst
-Vor der Registrierung beim Azure Backup-Dienst müssen Sie sicherstellen, dass die [Voraussetzungen](backup-try-azure-backup-in-10-mins.md) erfüllt sind. Die Voraussetzungen lauten wie folgt:
+Vor der Registrierung beim Azure Backup-Dienst müssen Sie sicherstellen, dass die [Voraussetzungen](backup-configure-vault.md) erfüllt sind. Die Voraussetzungen lauten wie folgt:
 
 - Gültiges Azure-Abonnement
 - Ein Sicherungstresor
@@ -103,7 +103,7 @@ Region              : West US
 Machine registration succeeded.
 ```
 
-> [AZURE.IMPORTANT] Verwenden Sie keine relativen Pfade, um die Tresoranmeldedatendatei anzugeben. Sie müssen einen absoluten Pfad als Eingabe für das Cmdlet angeben.
+> [AZURE.IMPORTANT]Verwenden Sie keine relativen Pfade, um die Tresoranmeldedatendatei anzugeben. Sie müssen einen absoluten Pfad als Eingabe für das Cmdlet angeben.
 
 ### Netzwerkeinstellungen
 Wenn die Konnektivität des Windows-Computers mit dem Internet über einen Proxyserver hergestellt wird, können die Proxyeinstellungen auch dem Agent bereitgestellt werden. Da es in diesem Beispiel keinen Proxyserver gibt, löschen wir explizit alle Proxy-bezogenen Informationen.
@@ -128,7 +128,7 @@ PS C:\> ConvertTo-SecureString -String "Complex!123_STRING" -AsPlainText -Force 
 Server properties updated successfully
 ```
 
-> [AZURE.IMPORTANT] Sichern Sie die Passphraseninformationen, nachdem Sie sie festgelegt haben. Es ist nicht möglich, Daten aus Azure ohne diese Passphrase wiederherzustellen.
+> [AZURE.IMPORTANT]Sichern Sie die Passphraseninformationen, nachdem Sie sie festgelegt haben. Es ist nicht möglich, Daten aus Azure ohne diese Passphrase wiederherzustellen.
 
 ## Sichern von Dateien und Ordnern
 All Ihre Sicherungen von Windows-Servern und -Clients in Azure Backup werden durch eine Richtlinie gesteuert. Die Richtlinie besteht aus drei Teilen:
@@ -170,7 +170,7 @@ Die Aufbewahrungsrichtlinie definiert, wie lange durch Sicherungsaufträge erste
 PS C:\> $retentionpolicy = New-OBRetentionPolicy -RetentionDays 7
 ```
 
-> [AZURE.NOTE] Das Festlegen von langfristigen Aufbewahrungsrichtlinien wird zurzeit nicht von PowerShell-Cmdlets unterstützt. Verwenden Sie die Azure Backup-Benutzeroberflächenkonsole, um langfristige Aufbewahrungsrichtlinien festzulegen.
+> [AZURE.NOTE]Das Festlegen von langfristigen Aufbewahrungsrichtlinien wird zurzeit nicht von PowerShell-Cmdlets unterstützt. Verwenden Sie die Azure Backup-Benutzeroberflächenkonsole, um langfristige Aufbewahrungsrichtlinien festzulegen.
 
 Die Aufbewahrungsrichtlinie muss der Hauptrichtlinie mithilfe des [Set-OBRetentionPolicy](https://technet.microsoft.com/library/hh770405)-Cmdlets zugeordnet werden:
 
@@ -578,6 +578,9 @@ PS C:\> Invoke-Command -Session $s -Script { param($d, $a) Start-Process -FilePa
 ```
 
 ## Nächste Schritte
-Weitere Informationen zu Azure Backup für Windows-Server und -Clients finden Sie unter [Einführung in Azure Backup](backup-introduction-to-azure-backup.md)
+Weitere Informationen zu Azure Backup für Windows-Server und -Clients finden Sie unter
 
-<!---HONumber=August15_HO8-->
+- [Einführung in Azure Backup](backup-introduction-to-azure-backup.md)
+- [Sichern von Windows-Servern](backup-azure-backup-windows-server.md)
+
+<!---HONumber=August15_HO9-->

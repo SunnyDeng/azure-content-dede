@@ -1,23 +1,23 @@
-<properties 
-   pageTitle="Service Bus-REST-Lernprogramm"
-   description="Erstellen einer einfachen Service Bus-Hostanwendung, die eine REST-basierte Schnittstelle bereitstellt."
-   services="service-bus"
-   documentationCenter="na"
-   authors="sethmanheim"
-   manager="timlt"
-   editor="" />
-<tags 
+<properties
+   pageTitle="Lernprogramm zu Service Bus-REST | Microsoft Azure"
+	description="Erstellen einer einfachen Service Bus-Hostanwendung, die eine REST-basierte Schnittstelle bereitstellt."
+	services="service-bus"
+	documentationCenter="na"
+	authors="sethmanheim"
+	manager="timlt"
+	editor=""/>
+<tags
    ms.service="service-bus"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="07/07/2015"
-   ms.author="sethm" />
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="na"
+	ms.workload="tbd"
+	ms.date="07/07/2015"
+	ms.author="sethm"/>
 
 # Service Bus-REST-Lernprogramm
 
-Dieses Thema beschreibt, wie Sie eine einfache Service Bus-Hostanwendung erstellen, die eine REST-basierte Schnittstelle verfügbar macht. REST ermöglicht einem Webclient, z. B. einem Webbrowser, den Zugriff auf die Service Bus-API über HTTP-Anforderungen.
+Dieses Lernprogramm beschreibt, wie Sie eine einfache Service Bus-Hostanwendung erstellen, die eine REST-basierte Schnittstelle verfügbar macht. REST ermöglicht einem Webclient, z. B. einem Webbrowser, den Zugriff auf die Service Bus-API über HTTP-Anforderungen.
 
 Dieses Lernprogramm verwendet das WCF-REST-Programmiermodell (Windows Communication Foundation) zum Erstellen eines REST-Diensts für Service Bus. Weitere Informationen finden Sie unter [WCF-REST-Programmiermodell](https://msdn.microsoft.com/library/bb412169.aspx) und [Entwerfen und Implementieren von Diensten](https://msdn.microsoft.com/library/ms729746.aspx) in der WCF-Dokumentation.
 
@@ -27,9 +27,9 @@ Der erste Schritt umfasst die Einrichtung des Dienstnamespace und das Abrufen ei
 
 ### So erstellen Sie einen Dienstnamespace und rufen einen SAS-Schlüssel an
 
-1. Um einen Namespace im Azure-Verwaltungsportal zu erstellen, führen Sie die Schritte unter [Gewusst wie: Erstellen oder Ändern eines Service Bus-Dienstnamespace](https://msdn.microsoft.com/library/hh690931.aspx) aus.
+1. Um einen Namespace im Azure-Portal zu erstellen, führen Sie die Schritte unter [Gewusst wie: Erstellen oder Ändern eines Service Bus-Dienstnamespace](https://msdn.microsoft.com/library/hh690931.aspx) aus.
 
-2. Klicken Sie im Hauptfenster der Azure-Verwaltungsportals auf den Namen des Dienstnamespace, den Sie im vorherigen Schritt erstellt haben.
+2. Klicken Sie im Hauptfenster des Azure-Portals auf den Namen des Dienstnamespace, den Sie im vorherigen Schritt erstellt haben.
 
 3. Klicken Sie auf **Konfigurieren**, um die gemeinsam genutzten Zugriffsrichtlinien für Ihren Namespace anzuzeigen.
 
@@ -43,15 +43,17 @@ Der Hauptunterschied zwischen einem grundlegenden Service Bus-Vertrag und einem 
 
 ### So erstellen Sie einen Service Bus-Vertrag mit einer Schnittstelle
 
-1. Öffnen Sie Visual Studio als Administrator: Klicken Sie mit der rechten Maustaste im Startmenü auf das Programm, und klicken Sie dann auf **Als Administrator ausführen**.
+1. Öffnen Sie Visual Studio als Administrator: Klicken Sie mit der rechten Maustaste im **Startmenü** auf das Programm, und klicken Sie dann auf Als **Administrator ausführen**.
 
-2. Erstellen Sie ein neues Konsolenanwendungsprojekt. Klicken Sie auf das Menü **Datei**, und wählen Sie **Neu** und dann **Projekt** aus. Klicken Sie im Dialogfeld **Neues Projekt** auf **Visual C#** (wenn **Visual C#** nicht angezeigt wird, suchen Sie unter **Andere Sprachen**), wählen Sie die Vorlage **Konsolenanwendung** aus, und nennen Sie sie **ImageListener**. Verwenden Sie den standardmäßigen **Speicherort**. Klicken Sie auf **OK**, um das Projekt zu erstellen.
+2. Erstellen Sie ein neues Konsolenanwendungsprojekt. Klicken Sie auf das Menü **Datei**, wählen Sie **Neu** und dann **Projekt**. Klicken Sie im Dialogfeld **Neues Projekt** auf **Visual C#** (wenn **Visual C#** nicht angezeigt wird, suchen Sie unter **Andere Sprachen**), wählen Sie die Vorlage **Konsolenanwendung** aus, und nennen Sie sie **ImageListener**. Verwenden Sie den standardmäßigen **Speicherort**. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
 3. Für ein C#-Projekt erstellt Visual Studio erstellt eine `Program.cs`-Datei. Diese Klasse enthält eine leere `Main()`-Methode, die erforderlich ist, damit ein Konsolenanwendungsprojekt ordnungsgemäß erstellt wird.
 
 4. Hinzufügen eines Verweises auf **System.ServiceModel.dll** zum Projekt:
-	1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste unter dem Projektordner auf den Ordner **Verweise**, und klicken Sie dann auf **Verweis hinzufügen**. 
-	2. Klicken Sie auf die Registerkarte **.NET** im Dialogfeld **Verweis hinzufügen**, und führen Sie einen Bildlauf nach unten bis zu **System.ServiceModel** durch. Wählen Sie diese Option aus, und klicken Sie auf **OK**.
+
+	a. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste unter dem Projektordner auf den Ordner **Verweise**, und klicken Sie dann auf **Verweis hinzufügen**.
+
+	b. Klicken Sie im Dialogfeld **Verweis hinzufügen** auf die Registerkarte **.NET**, und führen Sie einen Bildlauf nach unten bis zu **System.ServiceModel** durch. Wählen Sie diese Option aus, und klicken Sie auf **OK**.
 
 5. Wiederholen Sie den vorherigen Schritt zum Hinzufügen eines Verweises auf die **System.ServiceModel.Web.dll**-Assembly.
 
@@ -64,7 +66,7 @@ Der Hauptunterschied zwischen einem grundlegenden Service Bus-Vertrag und einem 
   	using System.IO;
 	```
 
-	[System.ServiceModel](https://msdn.microsoft.com/library/system.servicemodel.aspx) ist der Namespace, der den programmgesteuerten Zugriff auf die grundlegenden Funktionen von WCF ermöglicht. Service Bus verwendet viele Objekte und Attribute von WCF, um Dienstverträge zu definieren. Sie verwenden diesen Namespace in den meisten Ihrer Service Bus Relay-Anwendungen. Auf ähnliche Weise trägt [System.ServiceModel.Channels](https://msdn.microsoft.com/de-de/library/system.servicemodel.channels.aspx) zur Definition des Kanals bei, der das Objekt darstellt, über das Sie mit Service Bus und dem Clientwebbrowser kommunizieren. Schließlich enthält [System.ServiceModel.Web](https://msdn.microsoft.com/library/system.servicemodel.web.aspx) die Typen, mit denen Sie webbasierte Anwendungen erstellen können.
+	[System.ServiceModel](https://msdn.microsoft.com/library/system.servicemodel.aspx) ist der Namespace, der den programmgesteuerten Zugriff auf die grundlegenden Funktionen von WCF ermöglicht. Service Bus verwendet viele Objekte und Attribute von WCF, um Dienstverträge zu definieren. Sie verwenden diesen Namespace in den meisten Ihrer Service Bus Relay-Anwendungen. Auf ähnliche Weise trägt [System.ServiceModel.Channels](https://msdn.microsoft.com/de-DE/library/system.servicemodel.channels.aspx) zur Definition des Kanals bei, der das Objekt darstellt, über das Sie mit Service Bus und dem Clientwebbrowser kommunizieren. Schließlich enthält [System.ServiceModel.Web](https://msdn.microsoft.com/library/system.servicemodel.web.aspx) die Typen, mit denen Sie webbasierte Anwendungen erstellen können.
 
 7. Benennen Sie den Namespace für das Programm vom Visual Studio-Standard in **Microsoft.ServiceBus.Samples** um.
 
@@ -103,10 +105,10 @@ Der Hauptunterschied zwischen einem grundlegenden Service Bus-Vertrag und einem 
 	}
 	```
 
-	Auf diese Weise kann Service Bus Route HTTP GET-Anforderungen an **GetImage** weiterleiten und die Rückgabewerte von **GetImage** in eine HTTP GETRESPONSE-Antwort übersetzen. Später in diesem Lernprogramm verwenden Sie einen Webbrowser für den Zugriff auf diese Methode und zum Anzeigen des Bilds im Browser.
+	Auf diese Weise kann Service Bus HTTP GET-Anforderungen an **GetImage** weiterleiten und die Rückgabewerte von **GetImage** in eine HTTP GETRESPONSE-Antwort übersetzen. Später in diesem Lernprogramm verwenden Sie einen Webbrowser für den Zugriff auf diese Methode und zum Anzeigen des Bilds im Browser.
 
-11. Direkt nach der `IImageContract`-Definition deklarieren Sie einen Kanal, der von den beiden `IImageContract`- und `IClientChannel`-Schnittstellen erbt:
-		
+11. Direkt nach der `IImageContract`-Definition deklarieren Sie einen Kanal, der von den beiden `IImageContract`- und `IClientChannel`-Schnittstellen erbt.
+
 	```c
 	[ServiceContract(Name = "IImageContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
 	public interface IImageContract
@@ -114,11 +116,11 @@ Der Hauptunterschied zwischen einem grundlegenden Service Bus-Vertrag und einem 
 		[OperationContract, WebGet]
 		Stream GetImage();
 	}
-  
+
 	public interface IImageChannel : IImageContract, IClientChannel { }
 	```
 
-	Ein Kanal ist das WCF-Objekt, über das der Dienst und der Client gegenseitig Informationen übergeben. Später erstellen Sie den Kanal in Ihrer Hostanwendung. Service Bus verwendet dann diesen Kanal, um die HTTP GET-Anforderungen vom Browser an Ihre **GetImage**-Implementierung zu übergeben. Service Bus verwendet den Kanal auch, um den **GetImage**-Rückgabewert in eine HTTP GETRESPONSE für den Clientbrowser zu übersetzen.
+	Ein Kanal ist das WCF-Objekt, über das der Dienst und der Client gegenseitig Informationen übergeben. Später erstellen Sie den Kanal in Ihrer Hostanwendung. Service Bus verwendet dann diesen Kanal, um die HTTP GET-Anforderungen vom Browser an Ihre **GetImage**-Implementierung zu übergeben. Service Bus verwendet den Kanal auch, um den **GetImage**-Rückgabewert in eine HTTP GETRESPONSE für den Clientbrowser zu übersetzen.
 
 12. Klicken Sie im Menü **Build** auf **Projektmappe erstellen**, um die Richtigkeit Ihrer bisherigen Arbeit zu überprüfen.
 
@@ -135,19 +137,19 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Web;
 using System.IO;
-	
+
 namespace Microsoft.ServiceBus.Samples
 {
-	
+
     [ServiceContract(Name = "IImageContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IImageContract
     {
         [OperationContract, WebGet]
         Stream GetImage();
     }
-	
+
     public interface IImageChannel : IImageContract, IClientChannel { }
-	
+
     class Program
     {
         static void Main(string[] args)
@@ -165,7 +167,7 @@ Wie bei den vorherigen Schritten gibt es nur wenige Unterschiede zwischen der Im
 
 ### So implementieren Sie einen Service Bus-Vertrag im REST-Stil
 
-1. Erstellen Sie eine neue Klasse namens **ImageService** direkt nach der Definition der **IImageContract**-Schnittstelle. Die **ImageService**-Klasse implementiert die **IImageContract**-Schnittstelle. 
+1. Erstellen Sie direkt nach der Definition der **IImageContract**-Schnittstelle eine neue Klasse namens **ImageService**. Die **ImageService**-Klasse implementiert die **IImageContract**-Schnittstelle.
 
 	```c
 	class ImageService : IImageContract
@@ -174,7 +176,7 @@ Wie bei den vorherigen Schritten gibt es nur wenige Unterschiede zwischen der Im
 	```
 	Ähnlich wie bei anderen Schnittstellenimplementierungen können Sie die Definition in einer anderen Datei implementieren. In diesem Lernprogramm findet die Implementierung allerdings in derselben Datei wie die Schnittstellendefinition und die `Main()`-Methode statt.
 
-2. Wenden Sie das [ServiceBehaviorAttribute](https://msdn.microsoft.com/library/system.servicemodel.servicebehaviorattribute.aspx)-Attribut auf die **IImageService**-Klasse an, um anzugeben, dass die Klasse eine Implementierung eines WCF-Vertrags ist:
+2. Wenden Sie das [ServiceBehaviorAttribute](https://msdn.microsoft.com/library/system.servicemodel.servicebehaviorattribute.aspx)-Attribut auf die **IImageService**-Klasse an, um anzugeben, dass die Klasse eine Implementierung eines WCF-Vertrags ist.
 
 	```c
 	[ServiceBehavior(Name = "ImageService", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
@@ -188,12 +190,12 @@ Wie bei den vorherigen Schritten gibt es nur wenige Unterschiede zwischen der Im
 3. Fügen Sie dem Projekt ein JPG-Bild hinzu.
 
 	Dies ist ein Bild, das der Dienst im empfangenden Browser anzeigt. Klicken Sie mit der rechten Maustaste auf das Projekt, und klicken Sie dann auf **Hinzufügen**. Klicken Sie anschließend auf **Vorhandenes Element**. Verwenden Sie das Dialogfeld **Vorhandenes Element hinzufügen**, um zu einer geeigneten JPG-Datei zu navigieren, und klicken Sie auf **Hinzufügen**.
-    
-	Stellen Sie beim Hinzufügen der Datei sicher, dass **Alle Dateien** in der Dropdownliste neben dem Feld **Dateiname** ausgewählt ist. Im Rest dieses Lernprogramms wird davon ausgegangen, dass der Name des Bilds "image.jpg" lautet. Wenn Sie eine andere Datei haben, müssen Sie das Bild umbenennen oder den Code entsprechend ändern.
 
-4. Um sicherzustellen, dass der ausgeführte Dienst die Bilddatei finden kann, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die Bilddatei. Legen Sie im Bereich **Eigenschaften** den Wert für **In Ausgabeverzeichnis kopieren** auf **Kopieren, wenn neuer** fest.
+	Stellen Sie beim Hinzufügen der Datei sicher, dass in der Dropdownliste neben dem Feld **Dateiname** die Option **Alle Dateien** ausgewählt ist. Im Rest dieses Lernprogramms wird davon ausgegangen, dass der Name des Bilds "image.jpg" lautet. Wenn Sie eine andere Datei haben, müssen Sie das Bild umbenennen oder den Code entsprechend ändern.
 
-5. Fügen Sie dem Projekt Verweise zu den Assemblys **System.Drawing.dll**, **System.Runtime.Serialization.dll** und **Microsoft.ServiceBus.dll** hinzu, und fügen Sie auch die folgenden zugeordneten `using`-Anweisungen hinzu:
+4. Um sicherzustellen, dass der ausgeführte Dienst die Bilddatei finden kann, klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf die Bilddatei. Legen Sie im Bereich **Eigenschaften** den Wert für **In Ausgabeverzeichnis kopieren** auf **Kopieren, wenn neuer** fest.
+
+5. Fügen Sie dem Projekt Verweise zu den Assemblys **System.Drawing.dll**, **System.Runtime.Serialization.dll** und **Microsoft.ServiceBus.dll** hinzu, und fügen Sie auch die folgenden zugeordneten `using`-Anweisungen hinzu.
 
 	```c
 	using System.Drawing;
@@ -202,15 +204,15 @@ Wie bei den vorherigen Schritten gibt es nur wenige Unterschiede zwischen der Im
 	using Microsoft.ServiceBus.Web;
 	```
 
-6. Fügen Sie in der **ImageService**-Klasse den folgenden Konstruktor hinzu, der die Bitmap lädt und das Senden an den Clientbrowser vorbereitet:
+6. Fügen Sie in der **ImageService**-Klasse den folgenden Konstruktor hinzu, der die Bitmap lädt und das Senden an den Clientbrowser vorbereitet.
 
 	```c
 	class ImageService : IImageContract
 	{
 		const string imageFileName = "image.jpg";
-  
+
 		Image bitmap;
-  
+
 		public ImageService()
 		{
 			this.bitmap = Image.FromFile(imageFileName);
@@ -218,21 +220,21 @@ Wie bei den vorherigen Schritten gibt es nur wenige Unterschiede zwischen der Im
 	}
 	```
 
-7. Fügen Sie direkt nach dem vorherigen Code die folgenden **GetImage**-Methode in der **ImageService**-Klasse hinzu, um eine HTTP-Nachricht mit dem Bild zurückzugeben:
+7. Fügen Sie direkt nach dem vorherigen Code die folgenden **GetImage**-Methode in der **ImageService**-Klasse hinzu, um eine HTTP-Nachricht mit dem Bild zurückzugeben.
 
 	```c
 	public Stream GetImage()
 	{
 		MemoryStream stream = new MemoryStream();
 		this.bitmap.Save(stream, ImageFormat.Jpeg);
-  
+
 		stream.Position = 0;
 		WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";
-  
+
 		return stream;
 	}
 	```
-  
+
 	Diese Implementierung verwendet **MemoryStream** zum Abrufen des Bilds sowie zum Vorbereiten des Streamings an den Browser. Sie startet die Streamposition bei null, deklariert den Streaminhalt als JPEG und streamt dann die Informationen.
 
 8. Klicken Sie im Menü **Build** auf **Projektmappe erstellen**.
@@ -241,31 +243,31 @@ Wie bei den vorherigen Schritten gibt es nur wenige Unterschiede zwischen der Im
 
 1. Klicken Sie mit der rechten Maustaste auf das **ImageListener**-Projekt. Klicken Sie dann auf **Hinzufügen** und auf **Neues Element**.
 
-2. Doppelklicken Sie im Projektmappen-Explorer auf die Datei **App.config**, die derzeit die folgenden XML-Elemente enthält:
+2. Doppelklicken Sie im **Projektmappen-Explorer** auf die Datei **App.config**, die derzeit die folgenden XML-Elemente enthält:
 
 	```xml
 	<?xml version="1.0" encoding="utf-8" ?>
 	<configuration>
 	</configuration>
 	```
-  
+
 	Die Konfigurationsdatei entspricht einer WCF-Konfigurationsdatei und enthält den Dienstnamen, den Endpunkt (der Speicherort, den Service Bus für Clients und Hosts für die Kommunikation bereitstellt) und die Bindung (den Typ des Protokolls, das für die Kommunikation verwendet wird). Der Hauptunterschied besteht hier darin, dass der konfigurierte Dienstendpunkt auf eine [WebHttpRelayBinding](https://msdn.microsoft.com/library/microsoft.servicebus.webhttprelaybinding.aspx)-Bindung verweist, die nicht Teil von .NET Framework ist. Weitere Informationen zum Konfigurieren einer Service Bus-Anwendung finden Sie unter [Konfigurieren eines WCF-Diensts für die Registrierung mit Service Bus](https://msdn.microsoft.com/library/ee173579.aspx).
-  
+
 
 3. Fügen Sie der Datei "App.config" ein `<system.serviceModel>`-XML-Element hinzu. Dies ist ein WCF-Element, das einen oder mehrere Dienste definiert. Hier wird es verwendet, um den Dienstnamen und den Endpunkt zu definieren.
-  
+
 	```xml
 	<?xml version="1.0" encoding="utf-8" ?>
 	<configuration>
 		<system.serviceModel>
-      
+
 		</system.serviceModel>
-    
+
 	</configuration>
 	```
 
 4. Fügen Sie innerhalb des `system.serviceModel`-Elements ein `<bindings>`-Element hinzu, das den folgenden Inhalt aufweist. Dies definiert die in der Anwendung verwendeten Bindungen. Sie können mehrere Bindungen definieren, aber in diesem Lernprogramm definieren Sie nur eine.
-  
+
 	```xml
 	<bindings>
 		<!-- Application Binding -->
@@ -276,11 +278,11 @@ Wie bei den vorherigen Schritten gibt es nur wenige Unterschiede zwischen der Im
 		</webHttpRelayBinding>
 	</bindings>
 	```
-  
+
 	Dieser Schritt definiert eine Service Bus-[WebHttpRelayBinding](https://msdn.microsoft.com/library/microsoft.servicebus.webhttprelaybinding.aspx)-Bindung mit **relayClientAuthenticationType**, festgelegt auf **Keine**. Diese Einstellung gibt an, dass ein Endpunkt mit dieser Bindung keine Clientanmeldeinformationen erfordert.
 
 5. Fügen Sie nach dem `<bindings>`-Element ein `<services>`-Element hinzu. Ähnlich wie Bindungen können Sie mehrere Dienste in einer einzigen Konfigurationsdatei definieren. Für dieses Lernprogramm definieren Sie aber nur einen.
-  
+
 	```xml
 	<services>
 		<!-- Application Service -->
@@ -295,11 +297,11 @@ Wie bei den vorherigen Schritten gibt es nur wenige Unterschiede zwischen der Im
 		</service>
 	</services>
 	```
-  
+
 	Dieser Schritt konfiguriert einen Dienst, der die zuvor definierte standardmäßige **WebHttpRelayBinding**-Bindung verwendet. Darüber hinaus verwendet er den standardmäßigen **SbTokenProvider**-Anbieter, die im nächsten Schritt definiert wird.
 
-6. Erstellen Sie nach dem `<services>`-Element ein `<behaviors>`-Element mit dem folgenden Inhalt, der "SAS\_KEY" gegen den *Shared Access Signature*-Schlüssel (SAS) ersetzt, den Sie in Schritt 1 aus dem Azure-Verwaltungsportal abgerufen haben.
-  
+6. Erstellen Sie nach dem `<services>`-Element ein `<behaviors>`-Element mit dem folgenden Inhalt, der "SAS\_KEY" gegen den *Shared Access Signature*-Schlüssel (SAS) ersetzt, den Sie in Schritt 1 aus dem Azure-Portal abgerufen haben.
+
 	```xml
 	<behaviors>
 		<endpointBehaviors>
@@ -318,7 +320,7 @@ Wie bei den vorherigen Schritten gibt es nur wenige Unterschiede zwischen der Im
 			</serviceBehaviors>
 	</behaviors>
 	```
-  
+
 7. Klicken Sie im Menü **Build** auf **Projektmappe erstellen**, um die gesamte Projektmappe zu erstellen.
 
 ### Beispiel
@@ -341,7 +343,7 @@ using Microsoft.ServiceBus.Web;
 
 namespace Microsoft.ServiceBus.Samples
 {
-    
+
 
     [ServiceContract(Name = "ImageContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IImageContract
@@ -373,7 +375,7 @@ namespace Microsoft.ServiceBus.Samples
             WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";
 
             return stream;
-        }    
+        }
     }
 
     class Program
@@ -456,7 +458,7 @@ Dieser Schritt beschreibt, wie ein Webdienst mithilfe einer Konsolenanwendung au
 
 ### So erstellen und konfigurieren Sie den Webdiensthost
 
-1. Erstellen Sie den Webdiensthost mithilfe der URI-Adresse, die Sie weiter oben in diesem Abschnitt erstellt haben.
+- Erstellen Sie den Webdiensthost mithilfe der URI-Adresse, die Sie weiter oben in diesem Abschnitt erstellt haben.
 
 	```c
 	WebServiceHost host = new WebServiceHost(typeof(ImageService), address);
@@ -490,7 +492,7 @@ Dieser Schritt beschreibt, wie ein Webdienst mithilfe einer Konsolenanwendung au
 
 ## Beispiel
 
-Das folgende Beispiel schließt den Dienstvertrag und die Implementierung aus früheren Schritten des Lernprogramms ein und hostet den Dienst in einer Konsolenanwendung. Kompilieren Sie den folgenden Code in eine ausführbare Datei namens **ImageListener.exe**:
+Das folgende Beispiel schließt den Dienstvertrag und die Implementierung aus früheren Schritten des Lernprogramms ein und hostet den Dienst in einer Konsolenanwendung. Kompilieren Sie den folgenden Code in eine ausführbare Datei namens „ImageListener.exe“.
 
 ```c
 using System;
@@ -508,7 +510,7 @@ using Microsoft.ServiceBus.Web;
 
 namespace Microsoft.ServiceBus.Samples
 {
-    
+
     [ServiceContract(Name = "ImageContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/")]
     public interface IImageContract
     {
@@ -539,7 +541,7 @@ namespace Microsoft.ServiceBus.Samples
             WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";
 
             return stream;
-        }    
+        }
     }
 
     class Program
@@ -574,10 +576,10 @@ Führen Sie nach dem Erstellen der Projektmappe Folgendes aus, um die Anwendung 
 
 ## Nächste Schritte
 
-Da Sie jetzt eine Anwendung erstellt haben, die den Service Bus Relay-Dienst verwendet, finden Sie unter den folgenden Themen weitere Informationen zum Relaymessaging:
+Da Sie jetzt eine Anwendung erstellt haben, die den Service Bus Relay-Dienst verwendet, finden Sie in den folgenden Artikeln weitere Informationen zum Relaymessaging:
 
 - [Übersicht über die Architektur von Azure Service Bus](fundamentals-service-bus-hybrid-solutions.md#relays)
 
 - [Verwenden des Service Bus Relay-Diensts](service-bus-dotnet-how-to-use-relay.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

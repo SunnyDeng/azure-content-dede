@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Installieren und Konfigurieren von PostgreSQL auf einem virtuellen Microsoft Azure-Computer mit Linux"
-	description="Erfahren Sie, wie Sie PostgreSQL auf einem virtuellen Linux-Computer (VM) in Azure installieren und konfigurieren."
+	pageTitle="Installieren und Konfigurieren von PostgreSQL auf einem virtuellen Microsoft Azure-Computer mit Linux | Microsoft Azure"
+	description="Erfahren Sie, wie Sie PostgreSQL auf einem virtuellen Linux-Computer in Azure installieren und konfigurieren."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="SuperScottz"
 	manager="timlt"
 	editor=""
-  tags=""/>
+	tags=""/>
 
 <tags
 	ms.service="virtual-machines"
@@ -18,21 +18,21 @@
 	ms.author="mingzhan"/>
 
 
-#Installieren und Konfigurieren von PostgreSQL in Microsoft Azure
+#Installieren und Konfigurieren von PostgreSQL in Azure
 
-PostgreSQL ist eine erweiterte Open-Source-Datenbank, die Oracle und DB2 ähnlich ist. Sie umfasst Unternehmensfunktionen wie vollständige ACID-Kompatibilität, zuverlässige Transaktionsverarbeitung und Parallelitätssteuerung mit mehreren Versionen. Darüber hinaus unterstützt sie Standards wie ANSI SQL und SQL/MED (einschließlich Fremddatenwrappern für Oracle, MySQL, MongoDB und viele andere). Sie ist stark erweiterbar mit Unterstützung für mehr als 12 prozedurale Sprachen, GIN- und GIST-Indizes, Unterstützung für räumliche Daten und mehrere NoSQL-ähnliche Funktionen für JSON- oder Anwendungen auf Schlüssel-Wert-Basis.
+PostgreSQL ist eine erweiterte Open-Source-Datenbank, die Oracle und DB2 ähnlich ist. Sie umfasst Unternehmensfunktionen wie vollständige ACID-Kompatibilität, zuverlässige Transaktionsverarbeitung und Parallelitätssteuerung mit mehreren Versionen. Darüber hinaus unterstützt sie Standards wie ANSI SQL und SQL/MED (einschließlich Fremddatenwrappern für Oracle, MySQL, MongoDB und viele andere). Sie ist in hohem Maße erweiterbar und bietet Unterstützung für mehr als 12 prozedurale Sprachen, GIN- und GIST-Indizes, Unterstützung für räumliche Daten und mehrere NoSQL-ähnliche Funktionen für JSON-Anwendungen oder Anwendungen auf Schlüssel-Wert-Basis.
 
 In diesem Artikel erfahren Sie, wie Sie PostgreSQL auf einem virtuellen Azure-Computer, auf dem Linux ausgeführt wird, installieren und konfigurieren.
 
-> [AZURE.NOTE]Sie benötigen einen virtuellen Microsoft Azure-Computer mit Linux, um dieses Lernprogramm auszuführen. Bevor Sie fortfahren, sollten Sie die Informationen zum Erstellen und Einrichten eines virtuellen Linux-Computers unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md) lesen.
+> [AZURE.NOTE]Sie benötigen einen virtuellen Azure-Computer mit Linux, um dieses Tutorial auszuführen. Bevor Sie fortfahren, sollten Sie die Informationen zum Erstellen und Einrichten eines virtuellen Linux-Computers im [Tutorial zu virtuellen Linux-Computern](virtual-machines-linux-tutorial.md) lesen.
 
-[Verwenden Sie in diesem Fall Port 1999 als PostgreSQL-Port.]
+Verwenden Sie in diesem Fall Port 1999 als PostgreSQL-Port.
 
 ## Installieren von PostgreSQL
 
-Stellen Sie über PuTTY eine Verbindung mit dem virtuellen Linux-Computer her. Wenn Sie den virtuellen Linux-Computer in Azure zum ersten Mal verwenden, finden Sie [hier](virtual-machines-linux-use-ssh-key.md) Informationen zum Herstellen einer Verbindung mit einer Linux-VM mit PuTTY.
+Stellen Sie über PuTTY eine Verbindung mit dem virtuellen Linux-Computer her. Falls Sie zum ersten Mal einen virtuellen Linux-Computer in Azure verwenden, lesen Sie die Informationen zum Herstellen einer Verbindung mit einem virtuellen Linux-Computer mithilfe von PuTTY. Diese Informationen finden Sie unter [Verwenden von SSH mit Linux in Azure](virtual-machines-linux-use-ssh-key.md).
 
-1. Führen Sie den folgenden Befehl aus, um Root-Rechte (admin) zu erhalten:
+1. Führen Sie den folgenden Befehl aus, um in den Stammordner (Administrator) zu wechseln:
 
 		# sudo su -
 
@@ -56,7 +56,7 @@ Stellen Sie über PuTTY eine Verbindung mit dem virtuellen Linux-Computer her. W
 
 		# tar jxvf  postgresql-9.3.5.tar.bz2
 
-	Oben ist ein Beispiel aufgeführt. Sie finden [hier](https://ftp.postgresql.org/pub/source/) ein umfassenderes Downloadverzeichnis.
+	Oben ist ein Beispiel aufgeführt. Das ausführliche Downloadverzeichnis finden Sie im [Index von „/pub/source/“](https://ftp.postgresql.org/pub/source/).
 
 4. Um den Build zu starten, führen Sie folgende Befehle aus:
 
@@ -82,7 +82,7 @@ Stellen Sie über PuTTY eine Verbindung mit dem virtuellen Linux-Computer her. W
 
 		# mkdir -p /opt/pgsql_data
 
-3. Erstellen Sie einen Benutzer ohne Root-Rechte, und ändern Sie das Profil des Benutzers. Wechseln Sie zu dem neuen Benutzer (in diesem Beispiel *Postgres*):
+3. Erstellen Sie einen Benutzer ohne Root-Rechte, und ändern Sie das Profil des Benutzers. Wechseln Sie zu dem neuen Benutzer (in diesem Beispiel *postgres*):
 
 		# useradd postgres
 
@@ -93,7 +93,7 @@ Stellen Sie über PuTTY eine Verbindung mit dem virtuellen Linux-Computer her. W
    >[AZURE.NOTE]Aus Gründen der Sicherheit verwendet PostgreSQL einen Benutzer ohne Root-Rechte zum Initialisieren, Starten oder Herunterfahren der Datenbank.
 
 
-4. Bearbeiten Sie das *bash\_profile*, indem Sie die folgenden Befehle eingeben. Diese Zeilen werden am Ende der Datei für das *bash\_profile* hinzugefügt:
+4. Bearbeiten Sie die Datei *bash\_profile*, indem Sie die folgenden Befehle eingeben. Diese Zeilen werden am Ende der Datei für das *bash\_profile* hinzugefügt:
 
 		cat >> ~/.bash_profile <<EOF
 		export PGPORT=1999
@@ -168,7 +168,7 @@ Die folgende Ausgabe wird angezeigt.
 
 ## Herstellen einer Verbindung mit der Postgres-Datenbank
 
-Wechseln Sie erneut zum Postgres-Benutzer:
+Wechseln Sie erneut zum Benutzer „postgres“:
 
 	# su - postgres
 
@@ -182,18 +182,18 @@ Stellen Sie eine Verbindung mit der soeben erstellten Ereignisdatenbank her:
 
 ## Erstellen und Löschen einer Postgres-Tabelle
 
-Da jetzt eine Verbindung mit der Datenbank besteht, können wir Tabellen in ihr erstellen.
+Da jetzt eine Verbindung mit der Datenbank besteht, können Sie Tabellen in ihr erstellen.
 
-Erstellen Sie mit dem folgenden Befehl eine neue Postgres-Beispieltabelle:
+Erstellen Sie mit dem folgenden Befehl beispielsweise eine neue Postgres-Beispieltabelle:
 
 	CREATE TABLE potluck (name VARCHAR(20),	food VARCHAR(30),	confirmed CHAR(1), signup_date DATE);
 
-Wir haben nun eine Tabelle mit vier Spalten mit den folgenden Spaltennamen und Einschränkungen eingerichtet:
+Sie haben nun eine Tabelle mit vier Spalten mit den folgenden Spaltennamen und Einschränkungen eingerichtet:
 
 1. Die Spalte "Name" wurde mit dem VARCHAR-Befehl auf unter 20 Zeichen beschränkt.
 2. Die Spalte "Food" gibt die Speisen an, die die einzelnen Personen mitbringen. VARCHAR beschränkt diesen Text auf unter 30 Zeichen.
 3. Die Spalte "confirmed" zeichnet auf, ob die Person zugestimmt hat, einen Beitrag zum Buffet zu leisten. Die zulässigen Werte lauten "Y" und "N".
-4. Die Spalte "date" wird angezeigt, wenn eine Person sich für das Ereignis angemeldet hat. Postgres erfordert, dass Datumsangaben im Format jjjj-mm-tt geschrieben werden
+4. Die Spalte „date“ wird angezeigt, wenn sich eine Person für das Ereignis angemeldet hat. Postgres erfordert, dass Datumsangaben im Format jjjj-mm-tt geschrieben werden
 
 Wenn die Tabelle erfolgreich erstellt wurde, sollte folgende Ausgabe angezeigt werden:
 
@@ -237,18 +237,18 @@ Mit dem folgenden Befehl können Sie Daten in einer Tabelle löschen:
 
 	delete from potluck where name=’John’;
 
-Dadurch werden alle erforderlichen Informationen in der Zeile "John" gelöscht. Die Ausgabe ist:
+Dadurch werden alle Informationen in der Zeile „John“ gelöscht. Die Ausgabe ist:
 
 ![image](./media/virtual-machines-linux-postgresql/no8.png)
 
 ### Aktualisieren von Daten in einer Tabelle
 
-Mit dem folgenden Befehl können Sie Daten in einer Tabelle aktualisieren: In diesem Beispiel hat Sandy bestätigt, dass sie teilnimmt, sodass wir ihren Wert für "confirmed" von "N" in "Y" ändern können:
+Mit dem folgenden Befehl können Sie Daten in einer Tabelle aktualisieren: In diesem Beispiel hat Sandy bestätigt, dass sie teilnimmt, sodass wir ihren Wert für „confirmed“ von „N“ in „Y“ ändern können:
 
  	UPDATE potluck set confirmed = 'Y' WHERE name = 'Sandy';
 
 
-##Weitere Informationen über PostgreSQL
-Sie schließen jetzt die Installation von PostgreSQL auf dem virtuellen Linux-Computer in Microsoft Azure ab und beginnen mit der Verwendung in Microsoft Azure. Weitere Informationen über PostgreSQL finden Sie [hier](http://www.postgresql.org/)
+##Abrufen weiterer Informationen zu PostgreSQL
+Sie haben die Installation von PostgreSQL auf einem virtuellen Linux-Computer in Azure abgeschlossen und können die Datenbank nun in Azure nutzen. Weitere Informationen zu PostgreSQL finden Sie auf der [PostgreSQL-Website](http://www.postgresql.org/).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

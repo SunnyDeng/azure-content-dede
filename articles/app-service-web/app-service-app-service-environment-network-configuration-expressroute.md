@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Details zur Netzwerkkonfiguration für das Arbeiten mit Express Route" 
-	description="Details zur Netzwerkkonfiguration zum Ausführen von App Service-Umgebungen in einem an eine ExpressRoute-Verbindung angeschlossenen virtuellen Netzwerk" 
-	services="app-service\web" 
-	documentationCenter="" 
-	authors="stefsch" 
-	manager="nirma" 
+	pageTitle="Details zur Netzwerkkonfiguration für das Arbeiten mit Express Route"
+	description="Details zur Netzwerkkonfiguration zum Ausführen von App Service-Umgebungen in einem an eine ExpressRoute-Verbindung angeschlossenen virtuellen Netzwerk"
+	services="app-service\web"
+	documentationCenter=""
+	authors="stefsch"
+	manager="nirma"
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/30/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/30/2015"
 	ms.author="stefsch"/>
 
 # Details zur Netzwerkkonfiguration für App Service-Umgebungen mit ExpressRoute 
@@ -27,7 +27,7 @@ Es gibt Netzwerkverbindungsanforderungen für App Service-Umgebungen, die urspr�
 App Service-Umgebungen erfordern für einen ordnungsgemäßen Betrieb Folgendes:
 
 
--  Ausgehende Netzwerkverbindungen mit Azure-Speicher- und SQL-Datenbankressourcen, die sich in der gleichen Region wie die App Service-Umgebung befinden. Dieser Netzwerkpfad kann nicht durch interne Unternehmensproxys laufen, da sich dabei wahrscheinlich die tatsächliche NAT-Adresse des ausgehenden Netzwerkdatenverkehrs ändert. Durch Ändern der NAT-Adresse des ausgehendem Netzwerkdatenverkehrs einer App Service-Umgebung zu Azure-Speicher- und SQL-Datenbankendpunkten werden Verbindungsfehler verursacht.
+-  Ausgehende Netzwerkverbindungen mit Azure-Speicher- und SQL-Datenbankressourcen, die sich in der gleichen Region wie die App Service-Umgebung befinden. Dieser Netzwerkpfad kann nicht durch interne Unternehmensproxys laufen, da sich dabei wahrscheinlich die tatsächliche NAT-Adresse des ausgehenden Netzwerkdatenverkehrs ändert. Durch Ändern der NAT-Adresse des ausgehendem Netzwerkdatenverkehrs einer App Service-Umgebung zu Azure Storage- und SQL-Datenbankendpunkten werden Verbindungsfehler verursacht.
 -  Die DNS-Konfiguration für das virtuelle Netzwerk muss Endpunkte in den folgenden von Azure gesteuerten Domänen auflösen können: **. file.core.windows.net*, **. blob.core.windows.net*, **. database.windows.net*.
 -  Die DNS-Konfiguration für das virtuelle Netzwerk muss stabil bleiben, wenn App Service-Umgebungen erstellt werden. Das gilt auch für Neukonfigurationen und Skalierungsänderungen an App Service-Umgebungen.   
 -  Eingehender Netzwerkzugriff auf die erforderlichen Ports für App Service-Umgebungen muss entsprechend diesem [Artikel][requiredports] zugelassen werden.
@@ -113,12 +113,12 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [UDRHowTo]: http://azure.microsoft.com/documentation/articles/virtual-networks-udr-how-to/
 [HowToCreateAnAppServiceEnvironment]: http://azure.microsoft.com/documentation/articles/app-service-web-how-to-create-an-app-service-environment/
 [AzureDownloads]: http://azure.microsoft.com/downloads/
-[DownloadCenterAddressRanges]: http://www.microsoft.com/de-de/download/details.aspx?id=41653
-[NetworkSecurityGroups]: https://msdn.microsoft.com/library/azure/dn848316.aspx
+[DownloadCenterAddressRanges]: http://www.microsoft.com/download/details.aspx?id=41653
+[NetworkSecurityGroups]: https://azure.microsoft.com/documentation/articles/virtual-networks-nsg/
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
 [IntroToAppServiceEnvironment]: http://azure.microsoft.com/documentation/articles/app-service-app-service-environment-intro/
  
 
 <!-- IMAGES -->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,4 +1,3 @@
-
 Virtuelle Computer, die in der Dienstverwaltung erstellt werden, sind immer mit einem Clouddienst verbunden. Der Clouddienst fungiert als Container und stellt einen eindeutigen öffentlichen DNS-Namen, eine öffentliche IP-Adresse und einen Satz von Endpunkten bereit, damit auf den virtuellen Computer über das Internet zugegriffen werden kann. Der Clouddienst kann optional auch in einem virtuellen Netzwerk sein.
 
 Befindet sich ein Clouddienst nicht in einem virtuellen Netzwerk, handelt es sich um einen *eigenständigen* Clouddienst. Die virtuellen Computer in einem eigenständigen Clouddienst können mit anderen virtuellen Computern nur über deren öffentliche DNS-Namen kommunizieren. Dieser Datenverkehr läuft über das Internet. Wenn ein Clouddienst mit einem virtuellen Netzwerk verbunden ist, können die virtuellen Computer in diesem Clouddienst mit allen anderen virtuellen Computern in dem virtuellen Netzwerk kommunizieren, ohne dass Daten über das Internet gesendet werden.
@@ -17,7 +16,7 @@ Virtuelle Netzwerke sind das empfohlene Verfahren zum Verbinden virtueller Compu
 
 So verbinden Sie virtuelle Computer in einem virtuellen Netzwerk:
 
-1.	Erstellen Sie das virtuelle Netzwerk im [Azure-Portal](http://manage.windowsazure.com). Weitere Informationen finden Sie unter [Aufgaben bei der Konfiguration virtueller Netzwerke](https://msdn.microsoft.com/library/azure/jj156206.aspx).
+1.	Erstellen Sie das virtuelle Netzwerk im [Azure-Portal](http://manage.windowsazure.com). Weitere Informationen finden Sie unter [Aufgaben bei der Konfiguration virtueller Netzwerke](../documentation/services/virtual-machines/).
 2.	Erstellen Sie die Gruppe von Clouddiensten für Ihre Bereitstellung entsprechend Ihrem Entwurf für Verfügbarkeitsgruppen und Lastenausgleich. Klicken Sie im Portal für jeden Clouddienst auf **Neu > Compute > Clouddienst > Benutzerdefiniert erstellen**.
 3.	Klicken Sie zum Erstellen der einzelnen neuen virtuellen Computer auf **Neu > Compute > Virtueller Computer > Aus Katalog**. Wählen Sie den richtigen Clouddienst und das richtige virtuelle Netzwerk für den virtuellen Computer aus. Wurde der Clouddienst bereits mit einem virtuellen Netzwerk verbunden, ist der Name dieses Diensts bereits für Sie ausgewählt.
 
@@ -35,7 +34,7 @@ So verbinden Sie virtuelle Computer in einem eigenständigen Clouddienst:
 
 [Verwalten der Verfügbarkeit virtueller Computer](../articles/manage-availability-virtual-machines.md)
 
-[Konfigurationsaufgaben für virtuelle Netzwerke](https://msdn.microsoft.com/library/azure/jj156206.aspx)
+[Konfigurationsaufgaben für virtuelle Netzwerke](../documentation/services/virtual-machines/)
 
 Nachdem Sie einen virtuellen Computer erstellt haben, empfiehlt es sich, einen Datenträger hinzuzufügen, damit ein Speicherort für die Daten der Dienste und Arbeitsauslastungen verfügbar ist. Weitere Informationen finden Sie unter einer der folgenden Optionen:
 
@@ -43,4 +42,4 @@ Nachdem Sie einen virtuellen Computer erstellt haben, empfiehlt es sich, einen D
 
 [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](../articles/virtual-machines/storage-windows-attach-disk.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

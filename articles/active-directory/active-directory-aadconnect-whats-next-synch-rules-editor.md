@@ -1,20 +1,20 @@
 
 <properties 
-	pageTitle="Verwenden des Synchronisierungsregel-Editors von Azure AD Connect" 
-	description="Erfahren Sie, wie Sie den Synchronisierungsregel-Editor von Azure AD Connect verwenden." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Verwenden des Synchronisierungsregel-Editors von Azure AD Connect"
+	description="Erfahren Sie, wie Sie den Synchronisierungsregel-Editor von Azure AD Connect verwenden."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/28/2015" 
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Synchronisierungsregel-Editor von Azure AD Connect
@@ -74,4 +74,4 @@ Zur Orientierung: In einer Kontoressourcen-Gesamtstrukturbereitstellung erwarten
 Das Thema der Transformation ist umfangreich und bietet einen großen Teil der benutzerdefinierten Konfiguration, die mit Azure AD Connect möglich ist. Die benutzerdefinierte Konfiguration wird in dieser Übersicht nicht behandelt, aber wir betrachten später in diesem Dokument einige weitere Attribute.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

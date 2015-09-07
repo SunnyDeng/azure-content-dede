@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure Data Factory – Häufig gestellte Fragen" 
-	description="Häufig gestellte Fragen zu Azure Data Factory" 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Azure Data Factory – Häufig gestellte Fragen"
+	description="Häufig gestellte Fragen zu Azure Data Factory"
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/16/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="spelluru"/>
 
 # Azure Data Factory – Häufig gestellte Fragen
@@ -24,7 +24,7 @@
 
 Data Factory ist ein cloud-basierter Daten-Integrationsdienst, der das Verschieben und Transformieren von Daten organisiert und automatisiert. Genau wie ein Fertigungsbetrieb, in dem Anlagen Rohmaterialien verarbeiten und in Endprodukte umwandeln, organisiert Data Factory vorhandene Dienste so, dass Rohdaten gesammelt und in nutzbare Informationen transformiert werden.
 
-Data Factory arbeitet mit lokalen und Clouddatenquellen und SaaS, um Daten zu erfassen, vorzubereiten, umzuwandeln, zu analysieren und zu veröffentlichen. Nutzen Sie Data Factory, um Dienste in verwalteten Datenflusspipelines zusammenzusetzen und Ihre Daten mithilfe von Diensten wie [Azure HDInsight \(Hadoop\)](http://azure.microsoft.com/documentation/services/hdinsight/) und [Azure Batch](http://azure.microsoft.com/documentation/services/batch/) für Ihre Big Data-Anforderungen und [Azure Machine Learning](http://azure.microsoft.com/documentation/services/machine-learning/) zu transforimieren, um Ihre Analyselösungen in Betrieb zu nehmen. Lassen Sie bloße tabellarische Überwachungsansichten hinter sich, und nutzen Sie die umfassenden Visualisierungen von Data Factory, um schnell die Herkunft und Abhängigkeiten zwischen Ihren Datenpipelines anzuzeigen. Überwachen Sie alle Ihre Datenflusspipelines über eine zentrale einheitliche Ansicht, um Probleme einfach auszumachen und Überwachungswarnungen einzurichten.
+Data Factory arbeitet mit lokalen und Clouddatenquellen und SaaS, um Daten zu erfassen, vorzubereiten, umzuwandeln, zu analysieren und zu veröffentlichen. Nutzen Sie Data Factory, um Dienste in verwalteten Datenflusspipelines zusammenzusetzen und Ihre Daten mithilfe von Diensten wie [Azure HDInsight (Hadoop)](http://azure.microsoft.com/documentation/services/hdinsight/) und [Azure Batch](http://azure.microsoft.com/documentation/services/batch/) für Ihre Big Data-Anforderungen und [Azure Machine Learning](http://azure.microsoft.com/documentation/services/machine-learning/) zu transforimieren, um Ihre Analyselösungen in Betrieb zu nehmen. Lassen Sie bloße tabellarische Überwachungsansichten hinter sich, und nutzen Sie die umfassenden Visualisierungen von Data Factory, um schnell die Herkunft und Abhängigkeiten zwischen Ihren Datenpipelines anzuzeigen. Überwachen Sie alle Ihre Datenflusspipelines über eine zentrale einheitliche Ansicht, um Probleme einfach auszumachen und Überwachungswarnungen einzurichten.
 
 Unter [Übersicht und Schlüsselkonzepte](data-factory-introduction.md) finden Sie weitere Informationen.
  
@@ -87,20 +87,9 @@ Nein. Wie bei anderen Azure-Ressourcen auch kann der Name einer Azure Data Facto
 Unter den Artikeln [Aktivitäten für die Verschiebung von Daten](data-factory-data-movement-activities.md) und [Daten-Transformationsaktivitäten](data-factory-data-transformation-activities.md) finden Sie Informationen zu den unterstützten Datenquellen und Aktivitäten.
 
 ### Wann wird eine Aktivität ausgeführt?
-Die Konfigurationseinstellung **availability** in der Ausgabedatentabelle bestimmt, wann die Aktivität erfolgt. Die Aktivität prüft, ob alle Eingabedatenabhängigkeiten erfüllt sind \(den Status **ready** haben\), bevor die Ausführung beginnt.
+Die Konfigurationseinstellung **availability** in der Ausgabedatentabelle bestimmt, wann die Aktivität erfolgt. Die Aktivität prüft, ob alle Eingabedatenabhängigkeiten erfüllt sind (den Status **ready** haben), bevor die Ausführung beginnt.
 
 ## Kopieraktivität – Häufig gestellte Fragen
-### Welche Regionen werden von der Kopieraktivität unterstützt?
-
-Die Kopieraktivität zum Kopieren von Daten wird in den folgenden Regionen unterstützt: USA \(Ost\), USA \(Ost\) 2, USA \(West\), USA \(Mitte\), USA \(Mitte/Süden\), Nordeuropa, Westeuropa, Südostasien, Japan \(Ost\), Brasilien \(Süd\)
-
-Das Kopieren von Daten in andere Regionen wird ebenfalls unterstützt, wenn eine der oben genannten fünf Regionen zur Weiterleitung der Daten genutzt wird. Der Kopiervorgang wird auf Basis der Region gemessen, über die die Daten weitergeleitet werden.
-
-Region des Kopierziels | Für die Weiterleitung genutzte Region
--------------------------- | -----------------------
-Ostasien | Südostasien
-Japan \(Westen\) | Japan Ost
- 
 ### Ist es besser, eine Pipeline mit mehreren Aktivitäten oder eine separate Pipeline für jede Aktivität einzurichten? 
 Pipelines dienen zum Bündeln verwandter Aktivitäten. Natürlich können Sie die Aktivitäten in einer Pipeline halten, wenn die Tabellen, die diese verbinden, nicht von anderen Aktivitäten außerhalb der Pipeline genutzt werden. Auf diese Weise müssen Sie Pipelineaktivitäten nicht verknüpfen, damit diese sich aneinander ausrichten. Darüber hinaus kann die Datenintegrität in den Tabellen, die für die Pipeline intern sind, beim Aktualisieren der Pipeline besser beibehalten werden. Bei einer Pipelineaktualisierung werden alle Aktivitäten in der Pipeline beendet, entfernt und neu erstellt. Aus Erstellungssicht kann es auch einfacher sein, den Datenfluss innerhalb der zugehörigen Aktivitäten in einer JSON-Datei für die Pipeline nachzuverfolgen.
 
@@ -116,7 +105,7 @@ Der bedarfsgesteuerte HDInsight-Cluster wird in derselben Region erstellt, in de
 
 ### Wie können weitere Speicherkonten mit Ihrem HDInsight-Cluster verknüpft werden?
 
-Wenn Sie Ihren eigenen HDInsight-Cluster \(BYOC - Bring Your Own Cluster\) verwenden, lesen Sie die folgenden Themen:
+Wenn Sie Ihren eigenen HDInsight-Cluster (BYOC - Bring Your Own Cluster) verwenden, lesen Sie die folgenden Themen:
 
 - [Verwenden eines HDInsight-Clusters mit alternativen Speicherkonten und Metastores][hdinsight-alternate-storage]
 - [Verwenden zusätzlicher Speicherkonten mit HDInsight Hive][hdinsight-alternate-storage-2]
@@ -192,4 +181,4 @@ Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige M�
 [hdinsight-alternate-storage-2]: http://blogs.msdn.com/b/cindygross/archive/2014/05/05/use-additional-storage-accounts-with-hdinsight-hive.aspx
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

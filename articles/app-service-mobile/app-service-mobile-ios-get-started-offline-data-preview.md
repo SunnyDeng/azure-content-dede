@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Aktivieren der Offlinesynchronisierung für Ihre mobile Azure App (iOS)"
+	pageTitle="Aktivieren der Offlinesynchronisierung für Ihre mobile Azure-App (iOS)"
 	description="Erfahren Sie, wie Sie mobile App Service-Apps verwenden, um Offlinedaten in Ihrer iOS-Anwendung zwischenzuspeichern und zu synchronisieren."
 	documentationCenter="ios"
 	authors="krisragh"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.date="08/22/2015"
 	ms.author="krisragh"/>
 
 # Aktivieren der Offlinesynchronisierung für Ihre mobile iOS-App
@@ -22,19 +22,15 @@
 
 ## Übersicht
 
-In diesem Lernprogramm wird die Offlinesynchronisierungsfunktion von Azure Mobile Apps für iOS behandelt. Offlinesynchronisierung ermöglicht Endbenutzern die Interaktion mit einer mobilen App – Anzeigen, Hinzufügen und Ändern von Daten –, auch wenn keine Netzwerkverbindung vorhanden ist. Änderungen werden in einer lokalen Datenbank gespeichert. Sobald das Gerät wieder online ist, werden diese Änderungen mit dem Remote-Back-End synchronisiert.
+In diesem Lernprogramm wird die Offlinesynchronisierungsfunktion von Azure Mobile Apps für iOS behandelt. Die Offlinesynchronisierung ermöglicht Endbenutzern die Interaktion mit einer mobilen App (Anzeigen, Hinzufügen und Ändern von Daten), auch wenn keine Netzwerkverbindung vorhanden ist. Änderungen werden in einer lokalen Datenbank gespeichert. Sobald das Gerät wieder online ist, werden diese Änderungen mit dem Remote-Back-End synchronisiert.
 
-Falls Sie noch keine Erfahrung mit Azure Mobile Apps haben, sollten Sie zunächst das Lernprogramm [Erstellen einer iOS-App] abschließen.
+Falls Sie noch keine Erfahrung mit Azure Mobile Apps haben, sollten Sie zunächst das Lernprogramm [Erstellen einer iOS-App] abschließen. Wenn Sie das heruntergeladene Schnellstart-Serverprojekt nicht verwenden, müssen Sie Ihrem Projekt die Datenzugriffs-Erweiterungspakete hinzufügen. Weitere Informationen zu Servererweiterungspaketen finden Sie unter [Work with the .NET backend server SDK for Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) (in englischer Sprache).
 
-Weitere Informationen über die Funktion der Offlineynchronisierung finden Sie im Thema [Offlinedatensynchronisierung in Azure Mobile Apps].
-
-##<a name="review"></a>Überprüfen der Konfiguration des Serverprojekts (optional)
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-enable-offline-preview](../../includes/app-service-mobile-dotnet-backend-enable-offline-preview.md)]
+Weitere Informationen zur Offlinesynchronisierungsfunktion finden Sie im Thema [Offlinedatensynchronisierung in Azure Mobile Apps].
 
 ## <a name="review-sync"></a>Überprüfen des Clientcodes für die Synchronisierung 
 
-Das Clientprojekt, das Sie für das Lernprogramm [Erstellen einer iOS-App] heruntergeladen haben, enthält bereits Code zur Unterstützung der Offlinesynchronisierung mithilfe einer lokalen auf Core-Daten basierenden Datenbank. Dieser Abschnitt ist eine Zusammenfassung, was bereits im Code des Lernprogramms enthalten ist. Eine grundlegende Übersicht über die Funktion finden Sie unter [Offlinedatensynchronisierung in mobilen Azure-Apps].
+Das Clientprojekt, das Sie für das Lernprogramm [Erstellen einer iOS-App] heruntergeladen haben, enthält bereits Code zur Unterstützung der Offlinesynchronisierung mithilfe einer lokalen auf Kerndaten basierenden Datenbank. Dieser Abschnitt ist eine Zusammenfassung, was bereits im Code des Lernprogramms enthalten ist. Eine grundlegende Übersicht über die Funktion finden Sie unter [Offlinedatensynchronisierung in Azure Mobile Apps].
 
 Mit der Funktion zur Offlinesynchronisierung von Azure Mobile Apps können Endbenutzer mit einer lokalen Datenbank interagieren, wenn das Netzwerk nicht verfügbar ist. Um diese Funktionen in Ihrer App zu verwenden, initialisieren Sie den Synchronisierungskontext von `MSClient`, und verweisen Sie auf einen lokalen Datenspeicher. Erstellen Sie dann über die `MSSyncTable`-Schnittstelle einen Verweis für die Tabelle.
 
@@ -99,9 +95,9 @@ Mit der Funktion zur Offlinesynchronisierung von Azure Mobile Apps können Endbe
 
     Da bei jeder Änderung von Daten `syncData` aufgerufen wird, setzt diese App voraus, dass der Benutzer beim Bearbeiten von Daten stets online ist. In einem anderen Abschnitt werden wir die App modifizieren, sodass Benutzer auch im Offlinemodus Daten bearbeiten können.
 
-## <a name="review-core-data"></a>Überprüfen des Core-Datenmodells
+## <a name="review-core-data"></a>Überprüfen des Kerndatenmodells
 
-Bei Verwendung des Core-Offlinedatenspeichers müssen Sie bestimmte Tabellen und Felder in Ihrem Datenmodell definieren. Die Beispiel-App enthält bereits ein Datenmodell mit dem richtigen Format. In diesem Abschnitt durchlaufen wir diese Tabellen und ihre Verwendung.
+Bei Verwendung des Offlinespeichers für die Kerndaten müssen Sie bestimmte Tabellen und Felder in Ihrem Datenmodell definieren. Die Beispiel-App enthält bereits ein Datenmodell mit dem richtigen Format. In diesem Abschnitt durchlaufen wir diese Tabellen und ihre Verwendung.
 
 - Öffnen Sie **QSDataModel.xcdatamodeld**. Es sind vier Tabellen definiert – drei, die durch das SDK verwendet werden, und eine Tabelle für die Todo-Elemente selbst:
       * MS\_TableOperations: Zum Nachverfolgen der Elemente, die mit dem Server synchronisiert werden müssen
@@ -188,7 +184,7 @@ In diesem Abschnitt ändern Sie die Anwendung, sodass beim Starten der App oder 
 ## <a name="test-app"></a>Testen der App
 
 
-In diesem Abschnitt werden Sie im Simulator Wi-Fi deaktivieren, um ein Offlineszenario zu erzeugen. Wenn Sie Datenelemente hinzufügen, werden diese im lokalen Core-Datenspeicher vorgehalten, jedoch nicht mit dem mobilen Back-End synchronisiert.
+In diesem Abschnitt werden Sie im Simulator Wi-Fi deaktivieren, um ein Offlineszenario zu erzeugen. Wenn Sie Datenelemente hinzufügen, werden diese im lokalen Kerndatenspeicher vorgehalten, jedoch nicht mit dem mobilen Back-End synchronisiert.
 
 1. Deaktivieren Sie Wi-Fi im iOS-Simulator.
 
@@ -206,9 +202,9 @@ In diesem Abschnitt werden Sie im Simulator Wi-Fi deaktivieren, um ein Offlinesz
 
 ## Zusammenfassung
 
-Um die Offlinesynchronisierungsfunktion zu unterstützen, wurde die Schnittstelle `MSSyncTable` verwendet und `MSClient.syncContext` mit einem lokalen Speicher initialisiert. In diesem Fall war der lokale Speicher eine auf Core-Daten basierende Datenbank.
+Um die Offlinesynchronisierungsfunktion zu unterstützen, wurde die Schnittstelle `MSSyncTable` verwendet und `MSClient.syncContext` mit einem lokalen Speicher initialisiert. In diesem Fall war der lokale Speicher eine auf Kerndaten basierende Datenbank.
 
-Wenn Sie einen lokalen Core-Datenspeicher verwenden, müssen Sie mehrere Tabellen mit [korrekten Systemeigenschaften](#review-core-data) definieren.
+Wenn Sie einen lokalen Kerndatenspeicher verwenden, müssen Sie mehrere Tabellen mit [korrekten Systemeigenschaften](#review-core-data) definieren.
 
 Die normalen CRUD-Operationen für Azure Mobile Apps funktionieren so, als ob die App immer noch verbunden wäre. Alle Operationen werden jedoch nur im lokalen Speicher ausgeführt.
 
@@ -235,7 +231,7 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
 * [Offlinedatensynchronisierung in Azure Mobile Apps]
 
-* [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services] (Hinweis: im Video geht es zwar um Mobile Services, aber die Offlinesynchronisierung in Azure Mobile Apps funktioniert auf ähnliche Weise)
+* [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services] (Hinweis: Im Video geht es zwar um Mobile Services, aber die Offlinesynchronisierung in Azure Mobile Apps funktioniert auf ähnliche Weise.)
 
 <!-- URLs. -->
 
@@ -253,4 +249,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
  
 
-<!----HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

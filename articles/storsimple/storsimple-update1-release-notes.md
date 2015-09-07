@@ -1,19 +1,19 @@
 <properties 
     pageTitle="Versionsanmerkungen zu Update 1 der StorSimple 8000-Serie | Microsoft Azure"
-    description="Beschreibt die neuen Features sowie Probleme und Problemumgehungen für Update 1 der StorSimple 8000 Serie."
-    services="storsimple"
-    documentationCenter="NA"
-    authors="alkohli"
-    manager="carolz"
-    editor="" />
+	description="Beschreibt die neuen Features sowie Probleme und Problemumgehungen für Update 1 der StorSimple 8000 Serie."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
  <tags 
     ms.service="storsimple"
-    ms.devlang="NA"
-    ms.topic="article"
-    ms.tgt_pltfrm="NA"
-    ms.workload="TBD"
-    ms.date="08/19/2015"
-    ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/21/2015"
+	ms.author="alkohli"/>
 
 # Versionsanmerkungen zu Update 1 der StorSimple 8000-Serie  
 
@@ -28,7 +28,7 @@ Lesen Sie vor der Bereitstellung der Updates in Ihrer StorSimple-Lösung die Inf
 >[AZURE.IMPORTANT]
 > 
 - Ein wichtiger Patch, Update 1.1, wurde am 23. Juni veröffentlicht. Dieser Patch behebt ein Problem in dem Sicherungsmodul. Wenn Sie Update 1 vor dem 23. Juni angewendet haben und zurzeit Softwareversion **6.3.9600.17491** verwenden, stellen Sie sicher, dass Sie dieses wichtige Update anwenden, um Probleme mit Sicherungen zu vermeiden. Nach der Installation des Updates ändert sich die Softwareversion zu **6.3.9600.17521**.
-- Wenn Sie zwischen dem 27. Mai und dem 10. Juli ein virtuelles Gerät erstellt haben, das in der Softwareversion 6.3.9600.17481 vorliegt, erstellen Sie ein neues virtuelles Gerät, und übernehmen Sie alle Volumes per Failover vom alten virtuellen Gerät auf das neue. (Dies ist erforderlich, weil das ältere virtuelle Gerät nicht aktualisiert werden kann.) Wenn Sie kein neues virtuelles Gerät erstellen, stellen Sie möglicherweise fest, dass Sicherungen scheitern. Vorgehensweisen für Failover und Notfallwiederherstellung finden Sie unter [Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md).
+- Wenn Sie zwischen dem 27. Mai und dem 10. Juli ein virtuelles Gerät mit der Softwareversion **6.3.9600.17481** erstellt haben, erstellen Sie ein neues virtuelles Gerät, und übernehmen Sie vom alten virtuellen Gerät alle Volumes per Failover auf das neue Gerät. (Dies ist erforderlich, weil das ältere virtuelle Gerät nicht aktualisiert werden kann.) Wenn Sie kein neues virtuelles Gerät erstellen, stellen Sie möglicherweise fest, dass Sicherungen scheitern. Vorgehensweisen für Failover und Notfallwiederherstellung finden Sie unter [Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md).
 - Verwenden Sie den StorSimple-Manager-Dienst und nicht Windows PowerShell für StorSimple, um Update 1 zu installieren.
 - Diese Version enthält außerdem Festplatten-Firmware-Updates, die nur angewendet werden können, wenn sich das Gerät im Wartungsmodus befindet. Hierbei handelt es sich um störende Updates, die zu Ausfallzeiten des Geräts führen. Sie können diese Updates während der geplanten Wartung anwenden.
 - Die Installation dieses Updates (einschließlich der Windows-Updates) dauert ungefähr 5 bis 10 Stunden. 
@@ -85,7 +85,7 @@ Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in die
 | 6 | Webproxy | Wenn Ihre Webproxykonfiguration das Protokoll "HTTPS" verwendet, ist die Kommunikation zwischen dem Gerät und dem Dienst beeinträchtigt, und das Gerät wird offline geschaltet. Supportpakete werden bei diesem Vorgang ebenfalls generiert. Sie beanspruchen auf Ihrem Gerät erhebliche Ressourcen. | Stellen Sie sicher, dass "HTTP" als Protokoll für die Webproxy-URL angegeben ist. Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](storsimple-configure-web-proxy.md). | Ja | Nein |
 | 7 | Webproxy | Wenn Sie den Webproxy für ein registriertes Gerät konfigurieren und aktivieren, müssen Sie den aktiven Controller auf Ihrem Gerät neu starten. | | Ja | Nein |
 | 8 | Hohe Cloud-Latenzen und hohe E/A-Arbeitsauslastung | Wenn Ihr StorSimple-Gerät mit einer Kombination aus sehr hohen Cloud-Latenzen (mehrere Sekunden) und hoher E/A-Arbeitsauslastung konfrontiert wird, verschlechtert sich die Leistung der Gerätevolumes, und es tritt ggf. der E/A-Fehler "Gerät nicht bereit" auf. | Sie müssen die Gerätecontroller manuell neu starten oder ein Gerätefailover ausführen, um dieses Problem zu beheben. | Ja | Nein |
-| 9 | Azure PowerShell | Bei Verwendung des StorSimple-Cmdlets **Get-AzureStorSimpleStorageAccountCredential &#124; Select-Object -First 1 -Wait**, um das erste Objekt zu markieren, damit ein neues **Volumecontainer** -Objekt erstellt werden kann, gibt das Cmdlet alle Objekte zurück. | Schließen Sie das Cmdlet wie folgt in Klammern ein:**(Get-Azure-StorSimpleStorageAccountCredential) &#124; Select-Object -First 1 -Wait** | Ja | Ja |
+| 9 | Azure PowerShell | Bei Verwendung des StorSimple-Cmdlets **Get-AzureStorSimpleStorageAccountCredential | Select-Object -First 1 -Wait**, um das erste Objekt zu markieren, damit ein neues **Volumecontainer** -Objekt erstellt werden kann, gibt das Cmdlet alle Objekte zurück. | Schließen Sie das Cmdlet wie folgt in Klammern ein:**(Get-Azure-StorSimpleStorageAccountCredential) | Select-Object -First 1 -Wait** | Ja | Ja |
 | 10| Migration | Wenn mehrere Volumecontainer für die Migration übergeben werden, ist der ETA für die neueste Sicherung nur für den ersten Volumecontainer korrekt. Außerdem tritt nach erfolgter Migration der ersten 4 Sicherungen im ersten Volumecontainer Parallelmigration auf. | Es wird empfohlen, immer nur einen Volumecontainer gleichzeitig zu migrieren. | Ja | Nein |
 | 11| Migration | Nach der Wiederherstellung werden Volumes nicht der Sicherungsrichtlinie oder dem virtuellen Datenträger hinzugefügt. | Zum Erstellen von Sicherungen müssen diese Volumes einer Sicherungsrichtlinie hinzugefügt werden. | Ja | Ja |
 | 12| Migration | Nach Abschluss die Migration darf das Gerät der 5000/7000 Serie nicht auf die migrierten Datencontainer zugreifen. | Es wird empfohlen, die migrierten Datencontainer zu löschen, nachdem die Migration vollständig abgeschlossen ist. | Ja | Nein |
@@ -94,9 +94,9 @@ Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in die
 
 ## Updates von physischen Geräten in Update 1
 
-Wenn diese Updates auf ein physisches Gerät angewendet wird, ändert sich die Softwareversion in 6.3.9600.17521.
+Wenn Patch-Update 1.2 auf ein physisches Gerät (mit einer älteren Version als Update 1) angewendet wird, wird die Softwareversion in 6.3.9600.17521 geändert.
 
-## Updates des SAS-Controllers (Serial Attached SCSI) und der Firmware in Update 1
+## Updates des Controllers und der Firmware in Update 1
 
 Diese Version aktualisiert die Treiber und die Firmware für den SAS-Controller Ihres physischen Geräts. Außerdem wird die Festplatten-Firmware auf dem Gerät aktualisiert.
  
@@ -112,7 +112,7 @@ Dieses Update kann nicht auf das virtuelle Gerät angewendet werden. Allerdings 
 
 ## Nächste Schritte
 
-- [Installieren von Update 1 auf dem Gerät](storsimple-install-update-1.md).
+- [Installieren Sie Update 1 auf dem Gerät](storsimple-install-update-1.md).
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure-Infrastrukturdienste-Workload: SharePoint-Intranetfarm"
-	description="Hier erhalten Sie Informationen zum Nutzen einer in Azure bereitgestellten SharePoint-Intranetfarm, zum Einrichten einer Entwicklungs- oder Testumgebung und zum Bereitstellen einer Produktionskonfiguration mit hoher Verfügbarkeit."
+	pageTitle="SharePoint Server 2013-Farm in Azure | Microsoft Azure"
+	description="Entdecken Sie den Wert einer SharePoint Server 2013-Farm in Azure, richten Sie eine Testumgebung ein, und stellen Sie eine hochverfügbare Konfiguration bereit."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -124,4 +124,4 @@ Nach Abschluss der Konfiguration können Sie diese SharePoint-Farm gemäß den I
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

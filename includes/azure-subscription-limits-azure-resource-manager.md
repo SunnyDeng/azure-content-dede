@@ -8,7 +8,7 @@ Ressourcen-Manager-API-Lesevorgänge|32\.000 pro Stunde|32\.000 pro Stunde
 Ressourcen-Manager-API-Schreibvorgänge|1\.200 pro Stunde|1\.200 pro Stunde
 Ressourcen-Manager-API-Anforderungsgröße|4\.194.304 Bytes|4\.194.304 Bytes
 [Clouddienste](cloud-services-what-is.md) pro Abonnement|Veraltet<sup>3</sup>|Veraltet<sup>3</sup>
-[Affinitätsgruppen](http://msdn.microsoft.com/library/azure/jj156085.aspx) pro Abonnement|Veraltet<sup>3</sup>|Veraltet<sup>3</sup>
+[Affinitätsgruppen](../virtual-network/virtual-networks-migrate-to-regional-vnet.md) pro Abonnement|Veraltet<sup>3</sup>|Veraltet<sup>3</sup>
 
 <sup>1</sup> Standardlimits variieren nach Kategorietyp, z. B. kostenlose Testversion, nutzungsbasierte Bezahlung usw.
 
@@ -16,4 +16,4 @@ Ressourcen-Manager-API-Anforderungsgröße|4\.194.304 Bytes|4\.194.304 Bytes
 
 <sup>3</sup> Diese Features sind für Azure-Ressourcengruppen und den Azure-Ressourcen-Manager nicht mehr erforderlich.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

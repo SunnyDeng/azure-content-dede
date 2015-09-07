@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="NoSQL-Technologien in Azure | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie mit NoSQL-Technologien in HDInsight Daten verwalten können, die nicht für relationale Datenbanken geeignet sind, z. B. große Datensätze und JSON-Dokumente oder Graphen." 
-	editor="cgronlun" 
-	manager="jhubbard" 
-	services="documentdb, storage, hdinsight" 
-	documentationCenter="" 
+	pageTitle="NoSQL-Technologien in Azure | Microsoft Azure"
+	description="Erfahren Sie, wie Sie mit NoSQL-Technologien in HDInsight Daten verwalten können, die nicht für relationale Datenbanken geeignet sind, z. B. große Datensätze und JSON-Dokumente oder Graphen."
+	editor="cgronlun"
+	manager="jhubbard"
+	services="documentdb, storage, hdinsight"
+	documentationCenter=""
 	authors="mimig1"/>
 
 <tags 
-	ms.service="multiple" 
-	ms.workload="multiple" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/13/2015" 
+	ms.service="multiple"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/21/2015"
 	ms.author="mimig"/>
 
 # NoSQL auf Microsoft Azure
@@ -22,7 +22,7 @@ Möchten Sie mehr über die in Azure verfügbaren NoSQL-Technologien wissen, sin
 
 In diesem Whitepaper werden die folgenden Themen behandelt:
 
- - Unterscheidung zwischen operativen Daten, die von Anwendungen gelesen und geschrieben werden, und analytischen Daten, die zur Bereitstellung von Business Intelligence \(BI\) dienen, damit Sie die richtige Technologie für Ihre Anforderungen bestimmen können.
+ - Unterscheidung zwischen operativen Daten, die von Anwendungen gelesen und geschrieben werden, und analytischen Daten, die zur Bereitstellung von Business Intelligence (BI) dienen, damit Sie die richtige Technologie für Ihre Anforderungen bestimmen können.
  - Eine kurze Übersicht über relationale Technologien.
  - Eine Einführung in die einzelnen NoSQL-Technologien von Azure: DocumentDB, Tabellenspeicher, HBase und HDInsight.
  - Ein Vergleich zwischen den NoSQL-Technologien und Azure SQL-Datenbank. 
@@ -31,4 +31,4 @@ In diesem Whitepaper werden die folgenden Themen behandelt:
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

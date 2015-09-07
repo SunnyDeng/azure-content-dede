@@ -46,7 +46,7 @@ Im Folgenden finden Sie eine Liste von Artikeln, die Ihnen die Arbeit mit virtue
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-[Brauche ich ein virtuelles Netzwerk?](https://msdn.microsoft.com/library/azure/jj156007.aspx)
+[Brauche ich ein virtuelles Netzwerk?](../virtual-network/virtual-networks-overview.md)
 
 ## Erstellen
 
@@ -150,4 +150,4 @@ Im Folgenden finden Sie eine Liste von Artikeln, die Ihnen die Arbeit mit virtue
 
 [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung](virtual-machines-command-line-tools.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

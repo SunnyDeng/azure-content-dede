@@ -1,27 +1,27 @@
 <properties
-   pageTitle="POP3-Connector-API-App"
-   description="Verwenden des POP3-Connectors"
-   services="app-service\logic"
-   documentationCenter=".net,nodejs,java"
-   authors="anuragdalmia"
-   manager="dwrede"
-   editor=""/>
+   pageTitle="Verwendung des POP3-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des POP3-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="anuragdalmia"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration"
-   ms.date="08/19/2015"
-   ms.author="sameerch"/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="08/23/2015"
+	ms.author="sameerch"/>
 
 
-# Verwenden des POP3-Connectors in Logik-Apps #
+# Erste Schritte mit dem POP3-Connector und das Hinzufügen zur Logik-App
+Stellt eine Verbindung mit einem POP3-Server her, um E-Mails mit und ohne Anlagen abzurufen.
 
-Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten.
+Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Sie können den POP3-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
-Mit dem POP3-Connector können Sie eine Verbindung mit einem POP3-Server herstellen und einen Trigger zum Abrufen von E-Mails mit Anlagen ausführen.
 
 ## Erstellen eines POP3-Connectors für Ihre Logik-App ##
 Zur Verwendung des POP3-Connectors müssen Sie zunächst eine Instanz der POP3-Connector-API-App erstellen. Dies kann entweder direkt im Logik-App-Designer oder außerhalb davon erfolgen. Außerhalb des Designers erfolgt das Erstellen einer Instanz wie folgt:
@@ -81,4 +81,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [5]: ./media/app-service-logic-connector-pop3/img5.PNG
 [6]: ./media/app-service-logic-connector-pop3/img6.PNG
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

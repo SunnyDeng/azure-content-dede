@@ -1,27 +1,27 @@
 
 <properties 
     pageTitle="App-Anforderungen für Azure RemoteApp"
-    description="Erfahren Sie, welche Anforderungen für Apps gelten, die Sie in Azure RemoteApp verwenden möchten." 
-    services="remoteapp" 
-    documentationCenter="" 
-    authors="lizap" 
-    manager="mbaldwin" />
+	description="Erfahren Sie, welche Anforderungen für Apps gelten, die Sie in Azure RemoteApp verwenden möchten."
+	services="remoteapp"
+	documentationCenter=""
+	authors="lizap"
+	manager="mbaldwin"/>
 
 <tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
-    ms.author="elizapo" />
+    ms.service="remoteapp"
+	ms.workload="compute"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/12/2015"
+	ms.author="elizapo"/>
 
 
 
 # App-Anforderungen
 Azure RemoteApp unterstützt das Streaming von 32-Bit- oder 64-Bit-Windows-basierten Anwendungen von einem Windows Server 2012 R2-Image. Die meisten vorhandenen Anwendungen für 32-Bit- oder 64-Bit-Windows können in Azure RemoteApp-Umgebungen (Remote Desktop Services, früher als Terminal Services bezeichnet) ohne Änderungen ausgeführt werden. Es gibt jedoch einen Unterschied zwischen "ausführen" und "gut ausführen" – einige Anwendungen funktionieren ordnungsgemäß und bieten eine gute Leistungen, während dies bei anderen nicht gilt. Die folgenden Informationen dienen als Hilfestellung bei der Entwicklung von Anwendungen in einer Remote Desktop Services-Umgebung und beim Testen zum Sicherstellen der Kompatibilität.
 
-Tipp: Wir arbeiten daran, einige praktische Beispiele für Apps für Sie zu erstellen. In Kürze werden neue Themen angeboten, in denen die Verwendung von Microsoft Access, QuickBooks und App-V in RemoteApp besprochen wird.
+Tipp: Wir arbeiten daran, einige funktionierende Beispiel-Apps für Sie zu erstellen. Es werden neue Themen angeboten, in denen die Verwendung von Microsoft Access, QuickBooks und App-V in RemoteApp besprochen wird.
 
 ## Anforderungen
 Die folgenden drei Anforderungen tragen dazu bei, dass Ihre Anwendung in RemoteApp gut ausgeführt werden kann:
@@ -56,4 +56,4 @@ Gehen Sie nach den folgenden Richtlinien vor, um Anwendungen für RemoteApp zu e
 - Um die Leistung zu optimieren, empfiehlt es sich, der Anwendung eine [Erkennung](https://msdn.microsoft.com/library/aa380798.aspx) hinzuzufügen, ob sie in einer Clientsitzung ausgeführt wird. 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

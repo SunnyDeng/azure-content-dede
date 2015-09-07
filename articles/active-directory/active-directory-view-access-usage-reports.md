@@ -100,36 +100,8 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 
 
 ## Berichte zu anomalen Aktivitäten
+Die Berichte zu anomalen Aktivitäten enthalten verdächtige Anmeldeaktivitäten im Azure-Verwaltungsportal, im Azure AD-Zugriffsbereich, in Office 365, in SharePoint Online, in Dynamics CRM Online und in anderen Microsoft-Onlinediensten, unabhängig vom Verbundanbieter. <p>Die folgenden Berichte sind verfügbar: </p><ul> <li>[Anmeldungen aus unbekannten Quellen](active-directory-reporting-sign-ins-from-unknown-sources.md).</li> <li>[Anmeldungen nach mehreren Fehlern](active-directory-reporting-sign-ins-after-multiple-failures.md).</li> <li>[Anmeldungen aus mehreren geografischen Regionen](active-directory-reporting-sign-ins-from-multiple-geographies.md).</li> <li>[Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten](active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity.md).</li> <li>[Irreguläre Anmeldeaktivitäten](active-directory-reporting-irregular-sign-in-activity.md).</li> <li>[Anmeldungen von möglicherweise infizierten Geräten](active-directory-reporting-sign-ins-from-possibly-infected-devices.md).</li> <li>[Benutzer mit anomalen Anmeldeaktivitäten](active-directory-reporting-users-with-anomalous-sign-in-activity.md).</li> <li>Benutzer mit kompromittierten Anmeldeinformationen</li></ul>
 
-### Anmeldungen aus unbekannten Quellen
-
-Weitere Informationen zu diesem Bericht finden Sie unter [Anmeldungen aus unbekannten Quellen](active-directory-reporting-sign-ins-from-unknown-sources.md).
-
-### Anmeldungen nach mehreren Fehlern
-
-Weitere Informationen zu diesem Bericht finden Sie unter [Anmeldungen nach mehreren Fehlern](active-directory-reporting-sign-ins-after-multiple-failures.md).
-
-### Anmeldungen aus mehreren geografischen Regionen
-
-Weitere Informationen zu diesem Bericht finden Sie unter [Anmeldungen aus mehreren geografischen Regionen](active-directory-reporting-sign-ins-from-multiple-geographies.md).
-
-### Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten
-
-Weitere Informationen zu diesem Bericht finden Sie unter [Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten](active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity.md).
-
-### Irreguläre Anmeldeaktivitäten
-
-Weitere Informationen zu diesem Bericht finden Sie unter [Irreguläre Anmeldeaktivitäten](active-directory-reporting-irregular-sign-in-activity.md).
-
-### Anmeldungen von möglicherweise infizierten Geräten
-
-Weitere Informationen zu diesem Bericht finden Sie unter [Anmeldungen von möglicherweise infizierten Geräten](active-directory-reporting-sign-ins-from-possibly-infected-devices.md).
-
-### Benutzer mit anomalen Anmeldeaktivitäten
-
-Weitere Informationen zu diesem Bericht finden Sie unter [Benutzer mit anomalen Anmeldeaktivitäten](active-directory-reporting-users-with-anomalous-sign-in-activity.md).
-
-<!-- Users with leaked credentials goes here -->
 
 
 
@@ -254,7 +226,7 @@ Nur bestimmte Arten von Anmeldeereignissen werden im Bericht "Benutzeraktivität
 | Anmeldungen bei einer benutzerdefinierten Geschäfts-App, die dem Verzeichnis hinzugefügt wurde | Nein (in Kürze verfügbar) |
 | Anmeldungen bei einer Azure AD-Anwendungsproxy-App, die dem Verzeichnis hinzugefügt wurde | Nein (in Kürze verfügbar) |
 
-> Hinweis: Um diese Bericht übersichtlich zu halten, werden Anmeldungen bei der systemeigenen App [Lync/Skype for Business](http://products.office.com/de-de/skype-for-business/online-meetings) und durch den [Microsoft Online Services-Anmelde-Assistenten](http://community.office365.com/de-de/w/sso/534.aspx) nicht gezeigt.
+> Hinweis: Um diese Bericht übersichtlich zu halten, werden Anmeldungen bei der systemeigenen App [Lync/Skype for Business](http://products.office.com/de-DE/skype-for-business/online-meetings) und durch den [Microsoft Online Services-Anmelde-Assistenten](http://community.office365.com/de-DE/w/sso/534.aspx) nicht gezeigt.
 
 
 
@@ -295,11 +267,11 @@ Wenn Sie Anomalieberichte prüfen, stellen Sie möglicherweise fest, dass Sie ve
 
 ## Automatische E-Mail-Benachrichtigungen
 
-Weitere Informationen zu den Benachrichtigungsfunktionen für Berichte in Azure AD finden Sie unter [Azure Active Directory-Benachrichtigungsfunktionen für Berichte](active-directory-reporting-notifications.md).
+Weitere Informationen zu den Benachrichtigungen für Berichte in Azure AD finden Sie unter [Benachrichtigungen zu Azure Active Directory-Berichten](active-directory-reporting-notifications.md).
 
 ## Nächste Schritte
 
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

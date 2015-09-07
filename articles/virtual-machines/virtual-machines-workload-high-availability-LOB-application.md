@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit" 
-	description="Hier erhalten Sie Informationen zum Nutzen einer in Azure bereitgestellten webbasierten Branchenanwendung, zum Einrichten einer Entwicklungs- und Testumgebung und zum Bereitstellen einer Produktionskonfiguration mit hoher Verfügbarkeit." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	pageTitle="Branchenanwendung in Azure | Microsoft Azure"
+	description="Entdecken Sie den Wert einer Branchenanwendung in Azure, richten Sie eine Testumgebung ein, und stellen Sie eine hochverfügbare Konfiguration bereit."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/11/2015"
 	ms.author="josephd"/>
 
 # Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit
@@ -103,4 +103,4 @@ Nach der Konfiguration können Sie diese Branchenanwendung problemlos erweitern,
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

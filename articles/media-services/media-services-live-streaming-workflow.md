@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Bereitstellen von Livestreaming mit Azure Media Services" 
-	description="Dieses Thema bietet einen Überblick über die beim Livestreaming beteiligten Hauptkomponenten." 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
+	pageTitle="Bereitstellen von Livestreaming mit Azure Media Services"
+	description="Dieses Thema bietet einen Überblick über die beim Livestreaming beteiligten Hauptkomponenten."
+	services="media-services"
+	documentationCenter=""
+	authors="Juliako"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015"  
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/20/2015"
 	ms.author="juliako"/>
 
 
@@ -85,4 +85,4 @@ Weitere Informationen finden Sie unter [Arbeiten mit Kanälen, die Livedatenstr�
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

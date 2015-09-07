@@ -1,22 +1,20 @@
 <properties
    pageTitle="Analysieren von Sensordaten mit Apache Storm und HBase | Microsoft Azure"
-   description="Erfahren Sie, wie Sie mit einem virtuellen Netzwerk eine Verbindung mit Apache Storm herstellen. Verwenden Sie Storm mit HBase, um Sensordaten von einem Event Hub zu verarbeiten und mit D3.js darzustellen."
-   services="hdinsight"
-   documentationCenter=""
-   authors="Blackmist"
-   manager="paulettm"
-   editor="cgronlun"/>
-
+	description="Erfahren Sie, wie Sie mit einem virtuellen Netzwerk eine Verbindung mit Apache Storm herstellen. Verwenden Sie Storm mit HBase, um Sensordaten von einem Event Hub zu verarbeiten und mit D3.js darzustellen."
+	services="hdinsight"
+	documentationCenter=""
+	authors="Blackmist"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags
    ms.service="hdinsight"
-   ms.devlang="java"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="07/06/2015"
-   ms.author="larryfr"/>
-
+	ms.devlang="java"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="07/06/2015"
+	ms.author="larryfr"/>
 
 # Analysieren von Sensordaten mit Apache Storm, Event Hub und HBase in HDInsight (Hadoop)
 
@@ -194,7 +192,7 @@ Vor dem Testen müssen Sie das Dashboard zur Anzeige der Ausgabe der Topologie u
 
 		Server listening at port 3000
 
-2. Öffnen Sie einen Webbrowser, und geben Sie \*\***http://localhost:3000/** als Adresse ein. Eine Seite ähnlich der folgenden wird angezeigt:
+2. Öffnen Sie einen Webbrowser, und geben Sie ****http://localhost:3000/** als Adresse ein. Eine Seite ähnlich der folgenden wird angezeigt:
 
 	![Webdashboard](./media/hdinsight-storm-sensor-data-analysis/emptydashboard.png)
 
@@ -302,7 +300,7 @@ Wenn Sie HBase mit diesem Beispiel verwenden möchten, müssen Sie ein virtuelle
 
 	- **Speicherort**: Der Speicherort muss derselbe sein wie der des zu erstellenden HBase-Clusters.
 
-	- **DNS-Server**:In diesem Artikel werden interne DNS-Server verwendet, die von Azure bereitgestellt werden. Daher können Sie **Kein** auswählen. Erweiterte Netzwerkkonfigurationen mit benutzerdefinierten DNS-Servern werden ebenfalls unterstützt. Detaillierte Anleitungen finden Sie unter [Namensauflösung (DNS)](http://msdn.microsoft.com/library/azure/jj156088.aspx).
+	- **DNS-Server**:In diesem Artikel werden interne DNS-Server verwendet, die von Azure bereitgestellt werden. Daher können Sie **Kein** auswählen. Erweiterte Netzwerkkonfigurationen mit benutzerdefinierten DNS-Servern werden ebenfalls unterstützt. Detaillierte Anleitungen finden Sie unter [Namensauflösung (DNS)](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
 4. Klicken Sie auf **Virtuelles Netzwerk erstellen**. Der Name des neuen virtuellen Netzwerks wird in der Liste angezeigt. Warten Sie, bis in der Statusspalte **Created** angezeigt wird.
 
@@ -370,7 +368,7 @@ Der Teil des Domänennamens, der mit dem Clusternamen beginnt, ist das DNS-Suffi
 
 	Dies wird vom HBase-Bolt für die Kommunikation mit dem HBase-Cluster verwendet.
 
-1. Öffnen Sie \*\*hdinsight-eventhub-example\\TemperatureMonitor\\src\\main\\java\\com\\microsoft\\examples\\bolts\*\* in einem Text-Editor, und heben Sie die Kommentierung der folgenden Zeilen auf, indem Sie die Zeichen `//` am Anfang entfernen. Speichern Sie die Datei, nachdem Sie diese Änderungen vorgenommen haben.
+1. Öffnen Sie **hdinsight-eventhub-example\\TemperatureMonitor\\src\\main\\java\\com\\microsoft\\examples\\bolts** in einem Text-Editor, und heben Sie die Kommentierung der folgenden Zeilen auf, indem Sie die Zeichen `//` am Anfang entfernen. Speichern Sie die Datei, nachdem Sie diese Änderungen vorgenommen haben.
 
 		topologyBuilder.setBolt("HBase", new HBaseBolt("SensorData", mapper).withConfigKey("hbase.conf"), spoutConfig.getPartitionCount())
     	  .fieldsGrouping("Parser", "hbasestream", new Fields("deviceid")).setNumTasks(spoutConfig.getPartitionCount());
@@ -422,4 +420,4 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Event Hub lesen un
 
 [azure-portal]: https://manage.windowsazure.com/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,25 +1,24 @@
 <properties
-   pageTitle="Verwenden des Azure Service Bus-Connectors in Azure App Service"
-   description="Verwenden des Azure Service Bus-Connectors"
-   services="app-service\logic"
-   documentationCenter=".net,nodejs,java"
-   authors="anuragdalmia"
-   manager="dwrede"
-   editor=""/>
+   pageTitle="Verwenden des Azure Service Bus-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des Azure Service Bus-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="anuragdalmia"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration"
-   ms.date="08/19/2015"
-   ms.author="andalmia"/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="08/23/2015"
+	ms.author="andalmia"/>
 
 
-# Azure Service Bus-Connector
-
-Mit dem Azure Service Bus-Connector können Sie Nachrichten aus Service Bus-Entitäten wie Warteschlangen und Themen senden und Nachrichten von Service Bus-Entitäten wie Warteschlangen und Abonnements empfangen.
+# Erste Schritte mit dem Azure Service Bus-Connector und das Hinzufügen zur Logik-App 
+Stellen Sie Verbindungen mit Azure Service Bus her, um Nachrichten an Warteschlangen und Themen zu senden und um Nachrichten aus Warteschlangen und Abonnements zu empfangen. Connectors werden als Teil eines "Workflows" in Logik-Apps verwendet.
 
 ## Trigger und Aktionen
 Trigger sind Ereignisse, die stattfinden. Z. B. wenn ein Auftrag aktualisiert oder ein neuer Kunde hinzugefügt wird. Eine Aktion ist das Ergebnis des Triggers. Senden Sie z. B. eine Warnung oder eine Nachricht, wenn ein Auftrag oder eine neue Nachricht in eine Warteschlange gestellt wird.
@@ -33,11 +32,11 @@ Trigger | Aktionen
 Nachricht verfügbar | Nachricht senden
 
 ## Den Azure Service Bus-Connector erstellen
-Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
+Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketplace erstellt werden. So erstellen Sie einen Connector aus dem Marketplace:
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
-2. Wählen Sie **API-Apps** aus, und suchen Sie nach "Azure Service Bus-Connector".
-3. Geben Sie den Namen, App Service-Plan und andere Eigenschaften ein:
+2. Suchen Sie nach "Azure Service Bus-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
+3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein: 
 <br/>
 ![][1]
 
@@ -98,4 +97,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [7]: ./media/app-service-logic-connector-azureservicebus/img7.PNG
 [8]: ./media/app-service-logic-connector-azureservicebus/img8.PNG
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

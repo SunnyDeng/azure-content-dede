@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie den Azure-Blob-Speicher mit Python nutzen können, um Blobs hoch- und herunterzuladen, aufzulisten und zu löschen."
 	services="storage"
 	documentationCenter="python"
-	authors="huguesv"
+	authors="emgerner-msft"
 	manager="wpickett"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="article"
-	ms.date="05/11/2015"
-	ms.author="huvalo"/>
+	ms.date="08/25/2015"
+	ms.author="emgerner"/>
 
 # Verwenden des Azure-Blob-Speichers mit Python
 
@@ -22,7 +22,7 @@
 
 ## Übersicht
 
-In diesem Artikel wird die Durchführung gängiger Szenarien mit dem Blob-Speicher demonstriert. Die Beispiele sind in Python geschrieben und verwenden das [Python Azure-Paket][]. Die behandelten Szenarien umfassen das Hochladen, Auflisten, Herunterladen und Löschen von Blobs.
+In diesem Artikel wird die Durchführung gängiger Szenarien mit dem Blob-Speicher demonstriert. Die Beispiele sind in Python geschrieben und verwenden das [Python Azure Storage-Paket][]. Die behandelten Szenarien umfassen das Hochladen, Auflisten, Herunterladen und Löschen von Blobs.
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
@@ -34,7 +34,7 @@ In diesem Artikel wird die Durchführung gängiger Szenarien mit dem Blob-Speich
 
 Mit dem **BlobService**-Objekt können Sie auf Container und Blobs zugreifen. Der folgende Code erstellt ein **BlobService**-Objekt. Fügen Sie am Anfang jeder Python-Datei, in der Sie programmgesteuert auf Azure-Speicher zugreifen möchten, den folgenden Code hinzu:
 
-	from azure.storage import BlobService
+	from azure.storage.blob import BlobService
 
 Mit dem folgenden Code wird unter Verwendung des Speicherkontonamens und Kontoschlüssels ein **BlobService**-Objekt erstellt: Ersetzen Sie 'myaccount' und 'mykey' durch das tatsächliche Konto und den tatsächlichen Schlüssel.
 
@@ -111,7 +111,7 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
 
 [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
-[Python Azure-Paket]: https://pypi.python.org/pypi/azure
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
+[Python Azure Storage-Paket]: https://pypi.python.org/pypi/azure-storage
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

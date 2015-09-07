@@ -1,26 +1,26 @@
 <properties
-   pageTitle="ExpressRoute-Standorte"
-   description="Diese Seite enthält eine ausführliche Übersicht über die Standorte, an denen Dienste angeboten werden, sowie Informationen darüber, wie Sie eine Verbindung mit den Azure-Regionen herstellen können."
-   services="expressroute"
-   documentationCenter="na"
-   authors="cherylmc"
-   manager="carolz"
-   editor="tysonn" />
-<tags 
+   pageTitle="ExpressRoute-Standorte | Microsoft Azure"
+	description="Dieser Artikel enthält eine ausführliche Übersicht über die Standorte, an denen Dienste angeboten werden, sowie Informationen darüber, wie Sie eine Verbindung mit den Azure-Regionen herstellen können."
+	services="expressroute"
+	documentationCenter="na"
+	authors="cherylmc"
+	manager="carolz"
+	editor="tysonn"/>
+<tags
    ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/06/2015"
-   ms.author="cherylmc" />
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/06/2015"
+	ms.author="cherylmc"/>
 
-# ExpressRoute-Partner und Peeringstandorte
-In den Tabellen auf dieser Seite finden Sie Informationen zu ExpressRoute-Konnektivitätsanbietern (EXPs und NSPs), zum geografischen Geltungsbereich von ExpressRoute, zu Microsoft-Clouddiensten, die über ExpressRoute unterstützt werden, zu ExpressRoute-Systemintegratoren (SIs).
+# Azure ExpressRoute-Partner und Peeringstandorte
+In den Tabellen in diesem Artikel finden Sie Informationen zu ExpressRoute-Konnektivitätsanbietern (EXPs und NSPs), zum geografischen Geltungsbereich von ExpressRoute, zu Microsoft-Clouddiensten, die über ExpressRoute unterstützt werden, zu ExpressRoute-Systemintegratoren (SIs).
 
 ## ExpressRoute-Konnektivitätsanbieter
 ExpressRoute wird in allen Azure-Regionen und an allen Standorten unterstützt. Die folgende Karte zeigt die Azure-Regionen und ExpressRoute-Standorte. ExpressRoute-Standorte beziehen sich auf jene Orte, an denen Microsoft eine Peeringkooperation mit mehreren Dienstanbietern bietet.
- 
+
 ![](./media/expressroute-locations/expressroute-locations-map.png)
 
 Wenn Sie mit mindestens einem ExpressRoute-Standort innerhalb der geopolitischen Region eine Verbindung hergestellt haben, haben Sie Zugriff auf die Azure-Dienste in allen Regionen dieser geopolitischen Region. Die folgende Tabelle bietet eine Übersicht über die Azure-Regionen mit ExpressRoute-Standorten in einer geopolitischen Region.
@@ -71,7 +71,7 @@ Unter [Konfigurieren einer ExpressRoute-Verbindung](expressroute-configuring-exp
 | **[Colt IPVPN](http://www.colt.net/uk/en/news/colt-announces-dedicated-cloud-access-for-microsoft-azure-services-en.htm)** | Unterstützt | Nicht unterstützt | Amsterdam, London |
 | **[Internet Initiative Japan Inc. - IIJ](http://www.iij.ad.jp/en/news/pressrelease/2013/pdf/Azure_E.pdf)** | Unterstützt | Nicht unterstützt | Tokio |
 | **[Level 3 Communications – IPVPN](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** | Unterstützt | Nicht unterstützt | Chicago, Dallas, London, Seattle, Silicon Valley, Washington, D.C. |
-| **NTT Communications** | In Kürze verfügbar | Nicht unterstützt | Tokio+ | 
+| **NTT Communications** | In Kürze verfügbar | Nicht unterstützt | Tokio+ |
 | **[Orange](http://www.orange-business.com/)** | Unterstützt | Nicht unterstützt | Amsterdam, London, Silicon Valley, Washington, D.C. |
 | **PCCW Global Limited** | Unterstützt | Nicht unterstützt | Hongkong |
 | **[SingTel](http://info.singtel.com/about-us/news-releases/singtel-provide-secure-private-access-microsoft-azure-public-cloud)** | Unterstützt | Nicht unterstützt | Singapur |
@@ -83,20 +83,20 @@ Unter [Konfigurieren einer ExpressRoute-Verbindung](expressroute-configuring-exp
 
 Unter [Konfigurieren einer NSP-Verbindung](expressroute-configuring-nsps.md) finden Sie Schritte zum Einrichten der Verbindung.
 
-## Konnektivität über nicht aufgeführte Dienstanbieter 
+## Konnektivität über nicht aufgeführte Dienstanbieter
 
-Wenn Ihr Konnektivitätsanbieter nicht in den oben stehenden Listen enthalten ist, können Sie dennoch eine Verbindung erstellen.
+Wenn Ihr Konnektivitätsanbieter nicht in den vorherigen Abschnitten enthalten ist, können Sie dennoch eine Verbindung erstellen.
 
-- Fragen Sie Ihren Konnektivitätsanbieter, ob er mit einem der Exchange-Anbieter an den aufgeführten EXP-Standorten verbunden ist. Sie können auch die Links unten überprüfen, um weitere Informationen zu den von den Exchange-Anbietern angebotenen Diensten zu erhalten. Mehrere Konnektitivätsanbieter sind bereits mit den Ethernet-Exchanges des EXP verbunden.
-	- [Equinix Cloud Exchange](http://www.equinix.com/services/interconnection-connectivity/cloud-exchange/) 
+- Fragen Sie Ihren Konnektivitätsanbieter, ob er mit einem der Exchange-Anbieter an den aufgeführten EXP-Standorten verbunden ist. Sie können auch die folgenden Links überprüfen, um weitere Informationen über die von den Exchange-Anbietern angebotenen Diensten zu erhalten. Mehrere Konnektitivätsanbieter sind bereits mit den Ethernet-Exchanges des EXP verbunden.
+	- [Equinix Cloud Exchange](http://www.equinix.com/services/interconnection-connectivity/cloud-exchange/)
 	- [TeleCity CloudIX](http://www.telecitygroup.com/colocation-services/cloud-ix.htm)
 - Fordern Sie Ihren Konnektivitätsanbieter auf, Ihr Netzwerk auf den Exchange-Standort Ihrer Wahl zu erweitern.
 	- Stellen Sie sicher, dass Ihr Konnektivitätsanbieter Ihre Konnektivität mit hoher Verfügbarkeit erweitert, sodass es keine einzelnen Fehlerquellen mehr gibt.
-	- Konnektivitätsanbieter (insbesondere Ethernetanbieter) fordern Sie u. U. auf, ein Verbindungspaar für die Ethernet-Exchanges zu erwerben, um hohe Verfügbarkeit sicherzustellen. 
+	- Konnektivitätsanbieter (insbesondere Ethernetanbieter) fordern Sie u. U. auf, ein Verbindungspaar für die Ethernet-Exchanges zu erwerben, um hohe Verfügbarkeit sicherzustellen.
 - Fordern Sie dann eine ExpressRoute-Verbindung über den Exchange-Anbieter an, um eine Verbindung mit Azure herzustellen.
 	- Führen Sie die Schritte unter [Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter](expressroute-configuring-exps.md) aus, um die Verbindung einzurichten.
 
-|**Konnektivitätsanbieter**|**Exchange-Anbieter**|**Peeringstandort**|
+|**Konnektivitätsanbieter**|**Exchange-Anbieter**|**Peeringstandorte**|
 |---|---|---|
 |**[XO Communications](http://www.xo.com/)**|Equinix|Silicon Valley|
 
@@ -114,6 +114,5 @@ Je nach Ihrer Netzwerkgröße kann das Aktivieren privater Verbindungen für Ihr
 - Weitere Informationen finden Sie in den [FAQs](expressroute-faqs.md).
 - Wenn Sie eine ExpressRoute-Verbindung konfigurieren möchten, lesen Sie [Konfigurieren der EXP-Verbindung](expressroute-configuring-exps.md) oder [Konfigurieren der NSP-Verbindung](expressroute-configuring-nsps.md).
 - Wenn Sie sowohl eine VPN-Verbindung zwischen Standorten und ExpressRoute für dasselbe virtuelle Netzwerk konfigurieren möchten, lesen Sie [Koexistenz von ExpressRoute und VPN-Verbindungen zwischen Standorten konfigurieren](expressroute-coexist.md).
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Azure Redis Cache – häufig gestellte Fragen" 
-	description="In diesem Artikel erhalten Sie Antworten auf häufig gestellte Fragen sowie Informationen zu Mustern und Best Practices für Azure Redis Cache." 
-	services="redis-cache" 
-	documentationCenter="" 
-	authors="steved0x" 
-	manager="dwrede" 
+	pageTitle="Azure Redis Cache – häufig gestellte Fragen"
+	description="In diesem Artikel erhalten Sie Antworten auf häufig gestellte Fragen sowie Informationen zu Mustern und Best Practices für Azure Redis Cache."
+	services="redis-cache"
+	documentationCenter=""
+	authors="steved0x"
+	manager="dwrede"
 	editor=""/>
 
-
 <tags 
-	ms.service="cache" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="cache-redis" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/24/2015" 
+	ms.service="cache"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="cache-redis"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/25/2015"
 	ms.author="sdanie"/>
-
 
 # Azure Redis Cache – häufig gestellte Fragen
 
@@ -143,7 +141,7 @@ Anweisungen zum Herunterladen der Redis-Tools finden Sie im Abschnitt [Wie führ
 <a name="cache-benchmarking"></a>
 ## Wie kann ich die Leistung meines Caches messen und testen?
 
--	[Aktivieren Sie die Cachediagnose](https://msdn.microsoft.com/library/azure/dn763945.aspx#EnableDiagnostics), damit Sie die Integrität Ihres Caches [überwachen](https://msdn.microsoft.com/library/azure/dn763945.aspx) können. Sie können die Metriken im Portal anzeigen und sie anschließend mit einem Tool Ihrer Wahl [herunterladen und prüfen](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring).
+-	[Aktivieren Sie die Cachediagnose](https://msdn.microsoft.com/library/azure/dn763945.aspx#EnableDiagnostics), damit Sie die Integrität Ihres Caches [überwachen](https://msdn.microsoft.com/library/azure/dn763945.aspx) können. Sie können die Metriken im Vorschauportal anzeigen und sie anschließend mit einem Tool Ihrer Wahl [herunterladen und prüfen](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring).
 -	Mit "redis-benchmark.exe" können Sie Auslastungstests für Ihren Redis-Server durchführen.
 	-	Stellen Sie sicher, dass sich Client und Redis Cache für die Auslastungstests in derselben Region befinden.
 -	Verwenden Sie "redis-cli.exe", und überwachen Sie den Cache unter Verwendung des INFO-Befehls.
@@ -155,7 +153,7 @@ Anweisungen zum Herunterladen der Redis-Tools finden Sie im Abschnitt [Wie führ
 
 Sie können allen aufgelisteten [Redis-Befehle](http://redis.io/commands#) mit Ausnahme der Befehle verwenden, die unter [Redis-Befehle, die in Azure Redis Cache nicht unterstützt werden](cache-configure.md#redis-commands-not-supported-in-azure-redis-cache) aufgelistet sind. Für die Ausführung von Redis-Befehlen haben Sie mehrere Optionen.
 
--	Wenn Sie einen Standard-Cache verfügen, können Sie Redis-Befehle über die [Redis-Konsole](cache-configure.md#redis-console) ausführen. Dies ist eine sichere Methode zum Ausführen von Redis-Befehlen im Azure-Portal.
+-	Wenn Sie einen Standard-Cache verfügen, können Sie Redis-Befehle über die [Redis-Konsole](cache-configure.md#redis-console) ausführen. Dies ist eine sichere Methode zum Ausführen von Redis-Befehlen im Vorschauportal.
 -	Sie können auch die Redis-Befehlszeilentools verwenden. Führen Sie hierzu die folgenden Schritte aus:
 	-	Laden Sie die [Redis-Befehlszeilentools](https://github.com/MSOpenTech/redis/releases/download/win-2.8.19.1/redis-2.8.19.zip) herunter.
 	-	Stellen Sie über `redis-cli.exe` eine Verbindung mit dem Cache her. Übergeben Sie den Cacheendpunkt mithilfe des Schalters "-h" und dem Schlüssel mit Verwendung von "-a", wie im folgenden Beispiel gezeigt.
@@ -177,4 +175,4 @@ Microsoft Azure Redis Cache basiert auf dem populären quelloffenen Redis Cache 
 
 Da jeder Client anders ist, gibt es nicht nur einen zentralen Klassenverweis in MSDN. Stattdessen verwaltet jeder Client seine eigene Verweisdokumentation. Zusätzlich zur Verweisdokumentation gibt es mehrere Lernprogramme auf "Azure.com". Diese stehen auf der Seite [Redis Cache-Dokumentation](http://azure.microsoft.com/documentatgion/services/redis-cache/) zur Verfügung und erleichtern Ihnen den Einstieg in die Verwendung von Azure Redis Cache mit verschiedenen Sprachen und Cacheclients.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

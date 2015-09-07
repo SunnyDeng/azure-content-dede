@@ -1,20 +1,20 @@
 <properties
    pageTitle="Ressourcen des Service Fabric-Dienstmanifests"
-   description="Beschreiben von Ressourcen in einem Dienstmanifest"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="sumukhs"
-   manager="timlt"
-   editor=""/>
+	description="Beschreiben von Ressourcen in einem Dienstmanifest"
+	services="service-fabric"
+	documentationCenter=".net"
+	authors="sumukhs"
+	manager="anuragg"
+	editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="04/23/2015"
-   ms.author="sumukhs"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/26/2015"
+	ms.author="sumukhs"/>
 
 # Dienstmanifestressourcen
 
@@ -69,4 +69,4 @@ HTTP-Endpunkte werden von Service Fabric automatisch mit einer Zugriffssteuerung
 ```
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

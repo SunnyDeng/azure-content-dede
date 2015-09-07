@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Office 365-Verzeichnissynchronisierung (DirSync) in einer hybridcloud zu Testzwecken einrichten" 
-	description="Erfahren Sie, wie für ein Office 365-Verzeichnissynchronisierung (DirSync)-Serverkonfiguration in einer hybridcloud für IT Pro oder Entwicklung zu testen." 
-	services="virtual-network" 
-	documentationCenter="" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	pageTitle="Testumgebung für Office 365 DirSync | Microsoft Azure"
+	description="Erfahren Sie, wie für ein Office 365-Verzeichnissynchronisierung (DirSync)-Serverkonfiguration in einer hybridcloud für IT Pro oder Entwicklung zu testen."
+	services="virtual-network"
+	documentationCenter=""
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
 
 <tags 
-	ms.service="virtual-network" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.service="virtual-network"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/08/2015"
 	ms.author="josephd"/>
 
 # Office 365-Verzeichnissynchronisierung (DirSync) in einer hybridcloud zu Testzwecken einrichten
@@ -197,4 +197,4 @@ Diese Umgebung ist nun bereit für Sie zum Testen des Office 365-Anwendungen, di
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

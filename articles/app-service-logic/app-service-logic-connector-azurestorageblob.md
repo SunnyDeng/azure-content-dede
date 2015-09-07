@@ -1,23 +1,23 @@
 <properties 
-   pageTitle="Azure Storage-Blobconnector" 
-   description="Erste Schritte mit Azure Storage-Blobconnector" 
-   services="app-service\logic" 
-   documentationCenter=".net,nodejs,java" 
-   authors="anuragdalmia" 
-   manager="dwrede" 
-   editor=""/>
+   pageTitle="Verwenden des Azure Storage-Blob-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des Azure Storage-Blob-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="anuragdalmia"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="08/19/2015"
-   ms.author="rajram"/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="08/23/2015"
+	ms.author="rajram"/>
    
-# Azure Storage-Blobconnector
-Verbinden Sie sich mit Ihrem Azure Storage-Blobconnector, um Blobs in den Blobcontainer hochzuladen, diese daraus herunterladen und zu löschen. Connectors können als Teil eines "Workflows" in Logik-Apps verwendet werden.
+# Erste Schritte mit dem Azure Storage-Blob-Connector und das Hinzufügen zur Logik-App 
+Verbinden Sie sich mit Ihrem Azure Storage-Blobconnector, um Blobs in den Blobcontainer hochzuladen, diese daraus herunterladen und zu löschen. Connectors werden als Teil eines "Workflows" in Logik-Apps verwendet.
 
 ## Trigger und Aktionen
 *Trigger* sind Ereignisse, die stattfinden. Z. B. wenn ein Auftrag aktualisiert oder ein neuer Kunde hinzugefügt wird. Eine *Aktion* ist das Ergebnis des Triggers. Z. B. bei Aktualisierung eines Auftrags eine Warnung an den Verkäufer senden. Oder bei Hinzufügen eines neuen Kunden eine E-Mail zur Begrüßung an den neuen Kunden senden.
@@ -33,7 +33,7 @@ Keine | <ul><li>Blob abrufen: Abrufen eines bestimmten Blobs aus dem Container</
 
 ## Erstellen des Azure Storage-Blobconnectors
 
-Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
+Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketplace erstellt werden. So erstellen Sie einen Connector aus dem Marketplace:
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
 2. Suchen Sie nach "Blob": ![Wählen des Azure Storage-Blobconnectors][2]
@@ -102,4 +102,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-azurestorageblob/BasicInputsUploadBlob.PNG
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

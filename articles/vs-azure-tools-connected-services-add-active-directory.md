@@ -1,12 +1,13 @@
 <properties 
-   pageTitle="Hinzufügen von Azure Active Directory mithilfe von verbundenen Diensten in Visual Studio"
-   description="Fügen Sie Azure Active Directory mithilfe des Dialogfelds ";Verbundene Dienste hinzufügen"; in Visual Studio hinzu"
-   services="visual-studio-online"
-   documentationCenter="n/a"
-   authors="patshea123"
-   manager="douge"
-   editor="tlee" />
-<tags  ms.service="visual-studio-online"" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="na" ms.date="08/12/2015" ms.author="patshea" />
+   pageTitle="Hinzufügen von Azure Active Directory mithilfe von verbundenen Diensten in Visual Studio | Microsoft Azure"
+	description="Fügen Sie Azure Active Directory mithilfe des Dialogfelds Verbundene Dienste hinzufügen in Visual Studio hinzu"
+	services="visual-studio-online"
+	documentationCenter="na"
+	authors="patshea123"
+	manager="douge"
+	editor="tlee"/>
+
+<tags  ms.service="visual-studio-online"" ms.devlang="multiple" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="visual-studio-online" ms.date="08/12/2015" ms.author="patshea"/>
 
 # Hinzufügen von Azure Active Directory mithilfe von verbundenen Diensten in Visual Studio 
 
@@ -48,9 +49,7 @@ Mit dem Dialogfeld "Verbundene Dienste" können Sie in den folgenden Projekttype
 
 1. Klicken Sie auf die Schaltfläche **Fertig stellen**. Das Dialogfeld fügt den erforderlichen Konfigurationscode und Verweise hinzu, um das Projekt für die Azure AD-Authentifizierung zu aktivieren. Die AD-Domäne wird im Azure-Portal angezeigt.
 
-    ![Suchen Sie die Domäne im Azure-Verwaltungsportal](./media/vs-azure-tools-connected-services-add-active-directory/IC765882.png)
-
-1. Überprüfen Sie die Seite "Erste Schritte", die in Ihrem Browser angezeigt wird, um Tipps zu den nächsten Schritten zu finden. Auf der Seite "Was ist passiert" sehen Sie, wie das Projekt geändert wurde. Wenn Sie überprüfen möchten, ob alles funktioniert hat, öffnen Sie eine der geänderten Konfigurationsdateien, und stellen Sie sicher, dass die unter "Was ist passiert" aufgeführten Einstellungen vorhanden sind. Beispiel: Der wichtigsten web.config-Datei in einem ASP.NET MVC-Projekt werden die folgenden Einstellungen hinzugefügt:
+1. Überprüfen Sie die Seite "Erste Schritte", die in Ihrem Browser angezeigt wird, um mögliche nächste Schritte zu ermitteln, und die Seite "Was ist passiert", um zu sehen, wie Ihr Projekt geändert wurde. Wenn Sie überprüfen möchten, ob alles funktioniert hat, öffnen Sie die geänderten Konfigurationsdateien, und stellen Sie sicher, dass die Einstellungen, die unter "Was ist passiert" genannt werden, vorhanden sind. Beispiel: Der wichtigsten web.config-Datei in einem ASP.NET MVC-Projekt werden die folgenden Einstellungen hinzugefügt:
 
         <appSettings> 
             <add key="ida:ClientId" value="ClientId from the new Azure AD App" />
@@ -74,4 +73,4 @@ Stellen Sie Fragen, und holen Sie sich Hilfe.
 
  - [Blogbeitrag: Intro to Azure AD](http://blogs.msdn.com/b/brunoterkaly/archive/2014/03/03/introduction-to-windows-azure-active-directory.aspx) (in englischer Sprache)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden einer mobilen App als Kontaktmethode mit Azure MFA" 
-	description="Auf dieser Seite erfahren Benutzer, wie sie die mobile App als primäre Kontaktmethode für Azure MFA verwenden." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	pageTitle="Verwenden einer mobilen App als Kontaktmethode mit Azure MFA"
+	description="Auf dieser Seite erfahren Benutzer, wie sie die mobile App als primäre Kontaktmethode für Azure MFA verwenden."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenp"
+	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/21/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Verwenden einer mobilen App als Kontaktmethode mit Azure Multi-Factor Authentication
@@ -73,4 +73,4 @@ Wenn Sie ein Drittanbieterkonto mit der mobilen App verwenden, geben Sie den Kon
 >[AZURE.NOTE]Wenn Sie zum Hinzufügen eines Geschäftskontos aufgefordert werden, gilt dies für die Einbindung in den Arbeitsplatz und nicht für die mehrstufige Authentifizierung. Sie können dies ignorieren.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

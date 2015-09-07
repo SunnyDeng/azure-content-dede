@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure"
-	description="In Azure können Sie SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in fünf Phasen bereitstellen."
+	pageTitle="Bereitstellen einer SharePoint Server 2013-Farm | Microsoft Azure"
+	description="Sie stellen in fünf Phasen eine hochverfügbare SharePoint Server 2013-Farm mithilfe von SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure bereit."
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -49,7 +49,7 @@ Berücksichtigen Sie Folgendes:
 
 - Als erfahrener SharePoint-Implementierer können Sie die Anweisungen in den Phasen 3 bis 5 gerne abwandeln und die für Ihre Ansprüche optimale Farm erstellen.
 - Wenn Sie bereits über eine Azure Hybrid Cloud-Implementierung verfügen, können Sie die Anweisungen in Phase 1 und 2 anpassen oder auch überspringen, um die neue SharePoint-Farm im entsprechenden Subnetz bereitzustellen.
-- Alle Server befinden sich im gleichen Subnetz des virtuellen Azure-Netzwerks. Wenn Sie zusätzliche Sicherheit ähnlich der Subnetzisolierung bereitstellen möchten, verwenden Sie [Netzwerksicherheitsgruppen](https://msdn.microsoft.com/library/azure/dn848316.aspx).
+- Alle Server befinden sich im gleichen Subnetz des virtuellen Azure-Netzwerks. Wenn Sie zusätzliche Sicherheit ähnlich der Subnetzisolierung bereitstellen möchten, verwenden Sie [Netzwerksicherheitsgruppen](virtual-networks-nsg.md).
 
 Zum Erstellen einer Test- bzw. Entwicklungsumgebung zum Beispiel für Machbarkeitsstudien dieser Konfiguration lesen Sie [Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-sharepoint-hybrid-cloud-testing.md).
 
@@ -72,4 +72,4 @@ Zum Starten der Konfiguration für diese Arbeitsauslastung gehen Sie zu [Phase 1
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Architektur des Azure-Ressourcen-Managers"
-   description="Lernen Sie die Architektur des Ressourcen-Managers und die Beziehungen zwischen den Anbietern für Compute-, Netzwerk- und Speicherressourcen kennen."
-   services="virtual-machines"
-   documentationCenter=""
-   authors="davidmu1"
-   manager="timlt"
-   editor=""
-   tags="azure-resource-manager"/>
+	description="Lernen Sie die Architektur des Ressourcen-Managers und die Beziehungen zwischen den Anbietern für Compute-, Netzwerk- und Speicherressourcen kennen."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="davidmu1"
+	manager="timlt"
+	editor=""
+	tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines"
+	ms.service="azure-resource-manager"
 	ms.workload="infrastructure-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/07/2015"
+	ms.date="08/25/2015"
 	ms.author="davidmu"/>
 
 # Architektur des Azure-Ressourcen-Managers
@@ -79,4 +79,4 @@ Sie können die Komponentisierung sowie die Abhängigkeitsbeziehungen zwischen R
 
 [Azure Resource Manager Overview](resource-group-overview.md) (Übersicht über den Azure-Ressourcen-Manager)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

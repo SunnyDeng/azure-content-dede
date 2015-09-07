@@ -44,13 +44,13 @@ Die Syntax für die Ausdrücke für Attributzuordnungen ist den Funktionen von V
    3. Andere Funktionen Beispiel: FunktionEins(<<argument1>>, FunktionZwei(<<argument2>>))
 
 
-- Bei Zeichenfolgenkonstanten, in denen ein umgekehrter Schrägstrich ( \\ ) oder ein Anführungszeichen ( " ) benötigt wird, muss dieser bzw. dieses mit einem umgekehrten Schrägstrichsymbol ( \\ ) versehen werden. Beispiel: "Firmenname: \"Contoso\""
+- Bei Zeichenfolgenkonstanten, in denen ein umgekehrter Schrägstrich ( \\ ) oder ein Anführungszeichen ( " ) benötigt wird, muss dieser bzw. dieses mit einem umgekehrten Schrägstrichsymbol ( \\ ) versehen werden. Beispiel: "Firmenname: "Contoso""
 
 
 
 ## Liste der Funktionen
 
-[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [Coalesce](#coalesce) &nbsp;&nbsp;&nbsp;&nbsp; [FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [MatchRegex](#matchregex) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [ObsoleteReplace](#obsoletereplace) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [ReplaceRegex](#replaceregex) &nbsp;&nbsp;&nbsp;&nbsp; [StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)
+[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)
 
 
 
@@ -61,7 +61,7 @@ Die Syntax für die Ausdrücke für Attributzuordnungen ist den Funktionen von V
 
 **Funktion:**<br> Append(Quelle, Suffix)
 
-**Beschreibung:**<br>Fügt das Suffix am Ende eines angegebenen Quellzeichenfolgenwerts an.
+**Beschreibung:**<br> Fügt das Suffix am Ende eines angegebenen Quellzeichenfolgenwerts an.
  
 **Parameter:**<br>
 
@@ -69,21 +69,6 @@ Die Syntax für die Ausdrücke für Attributzuordnungen ist den Funktionen von V
 |--- | ---                 | ---  | ---   |
 | **Quelle** | Erforderlich | String | Normalerweise der Name des Attributs aus dem Quellobjekt |
 | **Suffix** | Erforderlich | String | Die Zeichenfolge, die Sie am Ende des Quellwerts anfügen möchten |
-
-
-----------
-### Coalesce
-
-**Funktion:**<br> Coalesce(Quelle1, Quelle2, …)
-
-**Beschreibung:**<br>Gibt den ersten nicht leeren Wert aus der Liste der Quellparameter zurück.
- 
-**Parameter:**<br>
-
-|Name| Erforderlich/wiederholt | Typ | Hinweise |
-|--- | ---                 | ---  | ---   |
-| ****Quelle1 .. QuelleN ** | Erforderlich, unterschiedlich oft | String | **Quellwerte** zur Auswahl |
-
 
 
 ----------
@@ -108,7 +93,7 @@ Die Syntax für die Ausdrücke für Attributzuordnungen ist den Funktionen von V
 
 **Funktion:**<br> Join(Trennzeichen, Quelle1, Quelle2, …)
 
-**Beschreibung:**<br> Join() ist Append() ähnlich mit der Ausnahme, dass es mehrere **Quellzeichenfolgenwerte** in einer einzelnen Zeichenfolge kombinieren kann und die Werte jeweils durch eine **Trennzeichenfolge** getrennt werden.
+**Beschreibung:**<br> Join() ist Append() ähnlich, jedoch kann die Funktion mehrere **Quellzeichenfolgenwerte** in einer einzelnen Zeichenfolge kombinieren, wobei die Werte jeweils durch eine **Trennzeichenfolge** getrennt werden.
 
 Wenn einer der Quellwerte ein mehrwertiges Attribut ist, werden die einzelnen Werte in diesem Attribut miteinander verknüpft und dabei durch den Trennzeichenwert getrennt.
 
@@ -119,26 +104,6 @@ Wenn einer der Quellwerte ein mehrwertiges Attribut ist, werden die einzelnen We
 |--- | ---                 | ---  | ---   |
 | **Trennzeichen** | Erforderlich | String | Zeichenfolge, die zur Trennung von Quellwerten verwendet wird, wenn diese zu einer einzelnen Zeichenfolge zusammengesetzt werden. Kann "" sein, wenn kein Trennzeichen erforderlich ist. |
 | ****Quelle1 … QuelleN ** | Erforderlich, unterschiedlich oft | String | Zeichenfolgenwerte, die zusammengesetzt werden sollen. |
-
-
-
-
-
-----------
-### MatchRegex
-
-**Funktion:**<br> MatchRegex(Quelle, Suchen, Gruppe)
-
-**Beschreibung:**<br> Gibt die Teilzeichenfolge aus dem Quellwert zurück, die dem Muster des regulären Ausdrucks entspricht, der im Suchparameter angegeben ist. Wenn eine Gruppe angegeben wird, wird nur der Wert dieser RegEx-Gruppe zurückgegeben.
-
-
-**Parameter:**<br>
-
-|Name| Erforderlich/wiederholt | Typ | Hinweise |
-|--- | ---                 | ---  | ---   |
-| **Quelle** | Erforderlich | String | **Quellwert**, in dem gesucht werden soll. |
-| **Suchen** | Erforderlich | String | Der reguläre Ausdruck, der mit dem **Quellwert** abgeglichen werden soll. |
-| **Gruppe** | Optional | String | Der Name der Gruppe im Abgleich des regulären Ausdrucks, dessen Wert verwendet werden soll. |
 
 
 
@@ -178,14 +143,11 @@ Wenn einer der Quellwerte ein mehrwertiges Attribut ist, werden die einzelnen We
 
 
 ----------
-### ObsoleteReplace
+### Replace
 
 **Funktion:**<br> ObsoleteReplace(Quelle, AlterWert, RegexMuster, RegexGruppenname, Ersatzwert, Ersatzattributname, Vorlage)
 
-**Beschreibung:**<br>
-> [AZURE.NOTE]Diese Funktion wird in naher Zukunft nicht mehr verwendet und durch einfachere Versionen ersetzt.
-
-Ersetzt Werte in einer Zeichenfolge. Sie funktioniert unterschiedlich, je nachdem, welche Parameter angegeben werden:
+**Beschreibung:**<br>Ersetzt Werte in einer Zeichenfolge. Sie funktioniert unterschiedlich, je nachdem, welche Parameter angegeben werden:
 
 - Wenn **AlterWert** und **Ersatzwert** angegeben werden:
 
@@ -201,9 +163,9 @@ Ersetzt Werte in einer Zeichenfolge. Sie funktioniert unterschiedlich, je nachde
 
 - Wenn **AlterWertRegexMuster**, **AlterWertRegexGruppenname** und **Ersatzeigenschaftsname** angegeben werden:
 
-   - Wenn **Quelle** einen Wert besitzt, wird **Quelle**zurückgegeben.
+   - Wenn **Quelle** einen Wert besitzt, wird **Quelle** zurückgegeben.
 
-- Wenn**Quelle** über keinen Wert verfügt, verwendet die Funktion **AlterWertRegexMuster** und **AlterWertRegexGruppenname** zum Extrahieren des Ersatzwerts aus der Eigenschaft mit **Ersatzeigenschaftsname**. Der Ersatzwert wird als Ergebnis zurückgegeben.
+   - Wenn **Quelle** über keinen Wert verfügt, verwendet die Funktion **AlterWertRegexMuster** und **AlterWertRegexGruppenname** zum Extrahieren des Ersatzwerts aus der Eigenschaft mit **Ersatzeigenschaftsname**. Der Ersatzwert wird als Ergebnis zurückgegeben.
 
 
 **Parameter:**<br>
@@ -217,42 +179,6 @@ Ersetzt Werte in einer Zeichenfolge. Sie funktioniert unterschiedlich, je nachde
 | **Ersatzwert** | Optional | String | Neuer Wert, durch den der alte Wert ersetzt wird. |
 | **Ersatzattributname** | Optional | String | Name des Attributs, das für den Ersatzwert verwendet werden soll, wenn die Quelle keinen Wert besitzt. |
 | **Vorlage** | Optional | String | Wenn der Wert **Vorlage** angegeben wird, wird **AlterWert** in der Vorlage gesucht und durch den Quellwert ersetzt. |
-
-
-
-----------
-### Replace
-
-**Funktion:**<br> Replace(Quelle, Suchen, Ersetzen)
-
-**Beschreibung**<br>: Ersetzt alle Vorkommen des **Suchen**-Werts in der **Quellenzeichenfolge** durch den Wert des **Ersetzen**-Parameters.
-
-**Parameter:**<br>
-
-|Name| Erforderlich/wiederholt | Typ | Hinweise |
-|--- | ---                 | ---  | ---   |
-| **Quelle** | Erforderlich | String | **Quellwert**, in dem gesucht werden soll. |
-| **Suchen** | Erforderlich | String | Wert, nach dem gesucht werden soll. |
-| **replace** | Erforderlich | String | Wert, durch den ersetzt werden soll. |
-
-
-
-----------
-### ReplaceRegex
-
-**Funktion:**<br> ReplaceRegex(Quelle, Suchen, Ersetzen, Gruppe)
-
-**Beschreibung:**<br> Ersetzt in der **Quellzeichenfolge** alle Teilzeichenfolgen, die dem regulären Ausdruck in **Suchen** entsprechen, durch den **Ersetzen**-Wert. Wenn eine **Gruppe** angegeben ist, wird nur der Wert dieser RegEx-Gruppe ersetzt.
-
-**Parameter:**<br>
-
-|Name| Erforderlich/wiederholt | Typ | Hinweise |
-|--- | ---                 | ---  | ---   |
-| **Quelle** | Erforderlich | String | **Quellwert**, in dem gesucht werden soll. |
-| **Suchen** | Erforderlich | String | Der reguläre Ausdruck, der mit dem **Quellwert** abgeglichen werden soll. |
-| **replace** | Erforderlich | String | Wert, durch den ersetzt werden soll. |
-| **Gruppe** | Optional | String | Der Name der Gruppe im Abgleich des regulären Ausdrucks, dessen Wert verwendet werden soll. |
-
 
 
 
@@ -276,7 +202,7 @@ Ersetzt Werte in einer Zeichenfolge. Sie funktioniert unterschiedlich, je nachde
 
 **Funktion:**<br> Switch(Quelle, Standardwert, Schlüssel1, Wert1, Schlüssel2, Wert2, …)
 
-**Beschreibung:**<br> Wenn der **Quellwert** mit einem **Schlüssel** übereinstimmt, gibt die Funktion den **Wert** für diesen **Schlüssel**. Wenn der **Quellwert** mit keinem Schlüssel übereinstimmt, wird der **Standardwert** zurückgegeben. Die **Schlüssel**- und **Wertparameter** müssen immer paarweise angegeben werden, d.h. die Funktion erwartet immer eine gerade Anzahl von Parametern.
+**Beschreibung:**<br> Wenn der **Quellwert** mit einem **Schlüssel** übereinstimmt, gibt die Funktion den **Wert** für diesen **Schlüssel** zurück. Wenn der **Quellwert** mit keinem Schlüssel übereinstimmt, wird der **Standardwert** zurückgegeben. Die **Schlüssel**- und **Wertparameter** müssen immer paarweise angegeben werden, d.h. die Funktion erwartet immer eine gerade Anzahl von Parametern.
 
 **Parameter:**<br>
 
@@ -296,14 +222,13 @@ Ersetzt Werte in einer Zeichenfolge. Sie funktioniert unterschiedlich, je nachde
 Sie müssen einen bekannten Domänennamen aus der E-Mail-Adresse eines Benutzers entfernen, um einen Benutzernamen zu erhalten. <br> Wenn die Domäne beispielsweise "contoso.com" lautet, können Sie den folgenden Ausdruck verwenden:
 
 
-**Ausdruck:** <br> `Replace([mail], "@contoso.com", "")`
+**Ausdruck:** <br> `Replace([mail], "@contoso.com", , ,"", ,)`
 
 **Beispieleingabe/-ausgabe:** <br>
 
-- **EINGABE** (E-Mail): "john.doe@contoso.com"
+- **EINGABE** (mail): "john.doe@contoso.com"
 
 - **AUSGABE**: "john.doe"
-
 
 
 ### Anfügen eines konstanten Suffixes an einen Benutzernamen
@@ -382,4 +307,4 @@ Sie müssen die Zeitzone des Benutzers anhand des Bundesstaatscodes festlegen, d
 
 [AZURE.INCLUDE [SaaS – Inhaltsverzeichnis](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,24 +1,22 @@
 <properties 
-	pageTitle="SQL Server-Connector: Verschieben von Daten in und aus SQL Server" 
-	description="Informationen zum SQL Server-Connector für den Data Factory-Dienst, mit dem Sie Daten in eine bzw. aus einer SQL Server-Datenbank verschieben können, die lokal oder in einer Azure-VM gehostet ist." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Verschieben von Daten in und aus SQL Server | Azure Data Factory"
+	description="Informationen zum Verschieben von Daten in und aus einer SQL Server-Datenbank, die lokal oder mithilfe von Azure Data Factory in einer Azure-VM gehostet wird."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2015"
 	ms.author="spelluru"/>
 
-
-# SQL Server-Connector: Verschieben von Daten in und aus SQL Server in einer lokalen oder IaaS-Umgebung (Azure-VM)
+# Verschieben von Daten in und aus SQL Server in einer lokalen oder IaaS-Umgebung (Azure-VM) mithilfe von Azure Data Factory
 
 Dieser Artikel beschreibt die Verwendung der Kopieraktivität in einer Azure Data Factory, um Daten aus einem anderen Datenspeicher in SQL Server und aus SQL Server in einen anderen Datenspeicher zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
 
@@ -34,11 +32,11 @@ Wenngleich Sie das Gateway auf demselben lokalen Computer bzw. in derselben Clou
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1.	Einen verknüpften Dienst des Typs "OnPremisesSqlServer"
-2.	Einen verknüpften Dienst des Typs "AzureStorage"
-3.	Ein Eingabedataset des Typs "SqlServerTable" 
-4.	Ein Ausgabedataset des Typs "AzureBlob"
-4.	Eine Pipeline mit Kopieraktivität, die "SqlSource" und "BlobSink" verwendet
+1.	Einen verknüpften Dienst des Typs [OnPremisesSqlServer](data-factory-sqlserver-connector.md#sql-server-linked-service-properties)
+2.	Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
+3.	Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [SqlServerTable](data-factory-sqlserver-connector.md#sql-server-dataset-type-properties) 
+4.	Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+4.	Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [SqlSource](data-factory-sqlserver-connector.md#sql-server-copy-activity-type-properties) und [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) verwendet
 
 Im Beispiel werden Daten, die zu einer Zeitreihe gehören, stündlich aus einer Tabelle in einer SQL Server-Datenbank in ein Blob kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -185,7 +183,7 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	        "typeProperties": {
 	          "source": {
 	            "type": "SqlSource",
-	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \\'{0:yyyy-MM-dd HH:mm}\\' AND timestampcolumn < \\'{1:yyyy-MM-dd HH:mm}\\'', WindowStart, WindowEnd)"
+	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \'{0:yyyy-MM-dd HH:mm}\' AND timestampcolumn < \'{1:yyyy-MM-dd HH:mm}\'', WindowStart, WindowEnd)"
 	          },
 	          "sink": {
 	            "type": "BlobSink"
@@ -210,11 +208,11 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1.	Den verknüpften Dienst des Typs "OnPremisesSqlServer"
-2.	Den verknüpften Dienst des Typs "AzureStorage"
-3.	Ein Eingabedataset des Typs "AzureBlob"
-4.	Ein Ausgabedataset des Typs "SqlServerTable"
-4.	Eine Pipeline mit einer Kopieraktivität, die "BlobSource" und "SqlSink" verwendet
+1.	Den verknüpften Dienst des Typs [OnPremisesSqlServer](data-factory-sqlserver-connector.md#sql-server-linked-service-properties)
+2.	Den verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
+3.	Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+4.	Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [SqlServerTable](data-factory-sqlserver-connector.md#sql-server-dataset-type-properties)
+4.	Eine [Pipeline](data-factory-create-pipelines.md) mit einer Kopieraktivität, die [BlobSource](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) und [SqlSink](data-factory-sqlserver-connector.md#sql-server-copy-activity-type-properties) verwendet
 
 Im Beispiel werden Daten, die zu einer Zeitreihe aus einem Azure-Blob gehören, stündlich in eine Tabelle in einer SQL Server-Datenbank kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -390,6 +388,10 @@ Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den 
 | username | Geben Sie den Benutzernamen an, wenn Sie die Windows-Authentifizierung verwenden. | Nein |
 | password | Geben Sie das Kennwort für das Benutzerkonto an, das Sie für den Benutzernamen angegeben haben. | Nein |
 
+Sie können Anmeldeinformationen mithilfe des **New-AzureDataFactoryEncryptValue**-Cmdlets verschlüsseln und wie im folgenden Beispiel gezeigt in der Verbindungszeichenfolge verwenden (**EncryptedCredential**-Eigenschaft):
+
+	"connectionString": "Data Source=<servername>;Initial Catalog=<databasename>;Integrated Security=True;EncryptedCredential=<encrypted credential>",
+
 ### Beispiele
 
 **JSON für die SQL Server-Authentifizierung**
@@ -420,6 +422,8 @@ Wenn Benutzername und Kennwort angegeben werden, werden diese Informationen vom 
 	     } 
 	}
 
+Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine SQL Server-Datenquelle finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
+
 ## Eigenschaften des Dataset-Typs "SQL Server"
 
 Eine vollständige Liste der Abschnitte und Eigenschaften, die zum Definieren von Datasets zur Verfügung stehen, finden Sie im Artikel [Erstellen von Datasets](data-factory-create-datasets.md). Abschnitte wie "structure", "availability" und "policy" des JSON-Codes eines Datasets sind bei allen Typen von Datasets (SQL Server, Azure-Blob, Azure-Tabelle usw.) ähnlich.
@@ -440,7 +444,7 @@ Wenn bei der Kopieraktivität "source" den Typ **SqlSource** hat, sind im Abschn
 
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------------- | -------- |
-| sqlReaderQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: "select \* from MyTable". Falls nicht angegeben, wird folgende SQL-Anweisung ausgeführt: "select from MyTable". | Nein |
+| sqlReaderQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: "select * from MyTable". Falls nicht angegeben, wird folgende SQL-Anweisung ausgeführt: "select from MyTable". | Nein |
 
 **SqlSink** unterstützt die folgenden Eigenschaften:
 
@@ -485,7 +489,7 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 | Datetimeoffset | DateTimeOffset |
 | Decimal | Decimal |
 | FILESTREAM-Attribut (varbinary(max)) | Byte |
-| Float | Double |
+| Float | Doppelt |
 | image | Byte | 
 | int | Int32 | 
 | money | Decimal |
@@ -498,7 +502,7 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 | smalldatetime | DateTime |
 | smallint | Int16 |
 | smallmoney | Decimal | 
-| sql\_variant | Object \* |
+| sql\_variant | Object * |
 | Text | String, Char |
 | in | TimeSpan |
 | timestamp | Byte |
@@ -514,4 +518,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

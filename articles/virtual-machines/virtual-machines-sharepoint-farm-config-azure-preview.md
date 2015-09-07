@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SharePoint-Serverfarm-Konfigurationsdetails"
-	description="Dieser Artikel beschreibt die Standardkonfiguration von SharePoint-Farmen, wenn Sie das SharePoint-Serverfarm-Feature des Azure-Vorschauportals nutzen."
+	pageTitle="SharePoint-Serverfarmkonfiguration | Microsoft Azure"
+	description="Hier wird die Standardkonfiguration von SharePoint-Farmen beschrieben, wenn Sie das Feature für SharePoint-Serverfarmen des Azure-Vorschauportals nutzen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -139,4 +139,4 @@ Die SharePoint-Serverfarm-Funktion des Azure-Vorschauportals erstellt virtuelle 
 
 [Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

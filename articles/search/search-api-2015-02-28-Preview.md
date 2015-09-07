@@ -1,20 +1,20 @@
 <properties
    pageTitle="Azure-Suchdienst-REST-API Version 2015-02-28-Preview | Microsoft Azure"
-   description="Azure-Suchdienst-REST-API Version 2015-02-28-Preview beinhaltet experimentelle Features wie Natural Language-Analyseprogramme und moreLikeThis-Suchvorgänge."
-   services="search"
-   documentationCenter="na"
-   authors="HeidiSteen"
-   manager="mblythe"
-   editor=""/>
+	description="Azure-Suchdienst-REST-API Version 2015-02-28-Preview beinhaltet experimentelle Features wie Natural Language-Analyseprogramme und moreLikeThis-Suchvorgänge."
+	services="search"
+	documentationCenter="na"
+	authors="HeidiSteen"
+	manager="mblythe"
+	editor=""/>
 
 <tags
    ms.service="search"
-   ms.devlang="rest-api"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="search"
-   ms.date="07/22/2015"
-   ms.author="heidist"/>
+	ms.devlang="rest-api"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="search"
+	ms.date="08/25/2015"
+	ms.author="heidist"/>
 
 # Azure-Suchdienst-REST-API: Version 2015-02-28-Preview
 
@@ -95,7 +95,7 @@ Das folgende Beispiel veranschaulicht ein Schema für die Suche von Hotelinforma
       {"name": "hotelId", "type": "Edm.String", "key": true, "searchable": false},
       {"name": "baseRate", "type": "Edm.Double"},
       {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false},
-	  {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, analyzer: "fr.lucene"},
+	  {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "analyzer": "fr.lucene"},
       {"name": "hotelName", "type": "Edm.String"},
       {"name": "category", "type": "Edm.String"},
       {"name": "tags", "type": "Collection(Edm.String)"},
@@ -262,7 +262,7 @@ Beim Erstellen eines Indexes können die folgenden Attribute festgelegt werden. 
 
   - **Hinweis**: Wenn keines der oben genannten Attribute für ein Feld auf `true` (`searchable`, `filterable`, `sortable` oder `facetable`) gesetzt ist, wird das Feld effektiv aus dem invertierten Index ausgeschlossen. Diese Option ist für Felder nützlich, die nicht in Abfragen verwendet werden, aber in den Suchergebnissen erforderlich sind. Durch das Ausschließen dieser Felder aus dem Index verbessern Sie die Suchleistung.
 
-  - `suggestions`: Vorgängerversionen der API beinhalten die Eigenschaft `suggestions`. Diese boolesche Eigenschaft ist mittlerweile veraltet und weder in `2015-02-28` noch in `2015-02-28-Preview` verfügbar. Verwenden Sie stattdessen die [Vorschlags-API](#Suggesters). In der Version `2014-07-31` wurde mit der Eigenschaft `suggestions` festgelegt, ob das Feld für Felder vom Typ `Edm.String` oder `Collection(Edm.String)` für die automatische Vervollständigung bzw. Eingabevorschläge verwendet werden kann. Die Eigenschaft `suggestions` war standardmäßig auf `false` festgelegt, da sie zusätzlichen Platz im Index erforderte. Wenn Sie die Eigenschaft jedoch aktiviert haben, finden Sie unter [Umstellung von der Vorschauversion auf die allgemein verfügbare Version in Azure Search](search-transition-from-preview.md) eine Anleitung zur Umstellung auf die neue API.
+`suggestions`: Vorgängerversionen der API beinhalten die Eigenschaft `suggestions`. Diese boolesche Eigenschaft ist mittlerweile veraltet und weder in `2015-02-28` noch in `2015-02-28-Preview` verfügbar. Verwenden Sie stattdessen die [Vorschlags-API](#Suggesters). In der Version `2014-07-31` wurde mit der Eigenschaft `suggestions` festgelegt, ob das Feld für Felder vom Typ `Edm.String` oder `Collection(Edm.String)` für die automatische Vervollständigung bzw. Eingabevorschläge verwendet werden kann. Die Eigenschaft `suggestions` war standardmäßig auf `false` festgelegt, da sie zusätzlichen Platz im Index erforderte. Wenn Sie die Eigenschaft jedoch aktiviert haben, finden Sie unter [Umstellung von der Vorschauversion auf die allgemein verfügbare Version in Azure Search](search-transition-from-preview.md) eine Anleitung zur Umstellung auf die neue API.
 
 `key`: Gibt an, dass das Feld eindeutige Bezeichner für Dokumente innerhalb des Index enthält. Es kann genau nur ein Feld als `key`-Feld gewählt werden und es muss vom Typ `Edm.String` sein. Mit Schlüsselfeldern können Dokumente direkt über die [Lookup-API](#LookupAPI) gesucht werden.
 
@@ -270,7 +270,7 @@ Beim Erstellen eines Indexes können die folgenden Attribute festgelegt werden. 
 
 `analyzer`: Legt den Namen der für das Feld zu verwendenden Textanalyse fest. Die zulässigen Werte finden Sie unter [Sprachunterstützung](#LanguageSupport). Diese Option kann nur mit Feldern vom Typ `searchable` verwendet werden. Eine einmal für ein Feld gewählte Analysemethode kann nicht mehr geändert werden.
 
-`sugggesters`: Legt den Suchmodus und die Felder fest, die als Quelle für den Inhalt von Vorschlägen dienen. Details finden Sie unter [Vorschläge](#Suggesters).
+`suggesters`: Legt den Suchmodus und die Felder fest, die als Quelle für den Inhalt von Vorschlägen dienen. Details finden Sie unter [Vorschläge](#Suggesters).
 
 `scoringProfiles`: Definiert benutzerdefinierte Bewertungsverhalten, mit denen Sie beeinflussen können, welche Elemente weiter oben in den Suchergebnissen angezeigt werden. Bewertungsprofile bestehen aus Feldgewichtungen und Funktionen. Weitere Informationen zu den in einem Bewertungsprofil verwendeten Attributen finden Sie unter [Hinzufügen von Bewertungsprofilen zu einem Suchindex](https://msdn.microsoft.com/library/azure/dn798928.aspx).
 
@@ -279,894 +279,316 @@ Beim Erstellen eines Indexes können die folgenden Attribute festgelegt werden. 
 
 Durchsuchbare Felder werden einer Analyse unterzogen, die häufig Wörtertrennungen, Textnormalisierungen und das Herausfiltern von Begriffen beinhalten. Standardmäßig werden durchsuchbare Felder in Azure Search mit dem [Standardanalyseprogramm von Apache Lucene](http://lucene.apache.org/core/4_9_0/analyzers-common/index.html) analysiert. Dieses unterteilt Text gemäß den Regeln der [Unicode-Textsegmentierung](http://unicode.org/reports/tr29/) in einzelne Elemente. Darüber hinaus konvertiert das Standardanalyseprogramm alle Zeichen in Kleinbuchstaben. Während der Indizierung und der Abfrageverarbeitung durchlaufen sowohl indizierte Dokumente als auch Suchbegriffe die Analyse.
 
-Azure Search unterstützt Indizierungsfelder und unterschiedlichen Sprachen. Für jede Sprache ist eine nicht standardmäßige Textanalyse erforderlich, welche die Eigenschaften einer gegebenen Sprache berücksichtigt. Azure Search bietet zwei Typen von Analysen:
+Azure Search unterstützt eine Vielzahl von Sprachen. Für jede Sprache ist eine nicht standardmäßige Textanalyse erforderlich, welche die Eigenschaften einer gegebenen Sprache berücksichtigt. Azure Search bietet zwei Typen von Analysen:
 
-- 28 Analysen, die von Lucene unterstützt werden
+- 35 Analysen, die von Lucene unterstützt werden
 - 50 Analysen, die von Natural Language-Verarbeitungstechnologien von Microsoft unterstützt werden, die in Office und Bing zum Einsatz kommen
 
-Einige Entwickler bevorzugen möglicherweise die vertrautere, einfachere Open Source-Lösung von Lucene. Lucene ist schneller, während die Microsoft-Analysen erweiterte Funktionen wie die Reduzierung auf die Grundform (Lemmatisierung) bieten. Vergleichen Sie nach Möglichkeit die Analyseprogramme von Microsoft und Lucene, um die für Ihre Anforderungen passendere Lösung zu ermitteln.
+Einige Entwickler bevorzugen möglicherweise die vertrautere, einfachere Open Source-Lösung von Lucene. Lucene-Analysen sind schneller, während Microsoft-Analysen erweiterte Funktionen bieten, wie z. B. Lemmatisierung, Wortzerlegung (in Sprachen wie Deutsch, Dänisch, Niederländisch, Schwedisch, Norwegisch, Estnisch, Finnisch, Ungarisch und Slowakisch) und Entitätserkennung (URLs, E-Mails, Datumsangaben und Zahlen). Vergleichen Sie nach Möglichkeit die Analyseprogramme von Microsoft und Lucene, um die für Ihre Anforderungen passendere Lösung zu ermitteln.
 
 ***Der Vergleich***
 
-Das Analyseprogramm von Lucene für Englisch ist beispielsweise eine Erweiterung des Standardanalyseprogramms. Es entfernt Possessivformen (nachgestelltes -s) bei Wörtern, wendet gemäß dem [Wortstammerkennungsalgorithmus von Porter](http://tartarus.org/~martin/PorterStemmer/) die Wortstammerkennung an und entfernt englische [Stoppwörter](http://en.wikipedia.org/wiki/Stop_words). Die Abfrage und Indizierung mit dem Analyseprogramm von Lucene erfolgen sehr schnell.
+Das Analyseprogramm von Lucene für Englisch ist beispielsweise eine Erweiterung des Standardanalyseprogramms. Es entfernt Possessivformen (nachgestelltes -s) bei Wörtern, wendet gemäß dem [Wortstammerkennungsalgorithmus von Porter](http://tartarus.org/~martin/PorterStemmer/) die Wortstammerkennung an und entfernt englische [Stoppwörter](http://en.wikipedia.org/wiki/Stop_words).
 
-Im Gegensatz dazu implementiert das Analyseprogramm von Microsoft eine umfangreiche Wortstammerkennung, die während der Abfrage alle möglichen Wortformen jedes Suchbegriffs generiert. Dies führt zu genaueren Ergebnissen, verzögert jedoch auch deren Ausgabe. Dass die Abfrageleistung bei umfangreichen Wortstammerkennungen abnimmt, ist normal. Die Indizierung mit Analyseprogrammen von Microsoft dauert durchschnittlich drei Mal länger als mit entsprechenden Analyseprogrammen von Lucene.
+Im Gegensatz dazu führt das Analyseprogramm von Microsoft die Lemmatsierung anstelle der Wortstammerkennung durch. Dadurch können gebeugte und unregelmäßige Wortformen viel besser verarbeitet werden, was zu relevanteren Suchergebnissen führt (weitere Einzelheiten dazu finden Sie in Modul 7 der [Azure Search-MVA-Präsentation](http://www.microsoftvirtualacademy.com/training-courses/adding-microsoft-azure-search-to-your-websites-and-apps)).
+
+Die Indizierung mit Analyseprogrammen von Microsoft dauert je nach Sprache durchschnittlich zwei bis drei Mal länger als mit entsprechenden Analyseprogrammen von Lucene. Die Suchleistung sollte bei durchschnittlich großen Abfragen nicht wesentlich eingeschränkt sein.
 
 ***Konfiguration***
 
-Sie können für die Eigenschaft `analyzer` jedes Feldes in der Indexdefinition den Namen eines Analyseprogramms angeben, das die zu verwendende Sprache und den Anbieter festlegt. Beispiel: Sie können im selben Index separate Felder für englische, französische und spanische Hotelbeschreibungen verwenden. Die Abfrage gibt an, welches sprachspezifische Feld in Ihren Suchabfragen zurückgegeben werden soll. Beispiele von Abfragen mit der Eigenschaft `analyzer` finden Sie unter [Dokumente durchsuchen](#SearchDocs).
+Sie können für die Eigenschaft `analyzer` jedes Feldes in der Indexdefinition den Namen eines Analyseprogramms angeben, das die zu verwendende Sprache und den Anbieter festlegt. Bei der Indizierung dieses Felds und der Suche danach wird das gleiche Analyseprogramm verwendet. Beispiel: Sie können im selben Index separate Felder für englische, französische und spanische Hotelbeschreibungen verwenden. Verwenden Sie den ["SearchFields"-Abfrageparameter](#SearchQueryParameters), um anzugeben, welches sprachspezifische Feld in den Abfragen gesucht werden soll. Beispiele von Abfragen mit der Eigenschaft `analyzer` finden Sie unter [Dokumente durchsuchen](#SearchDocs).
 
 ***Liste der Analyseprogramme***
 
-Nachfolgend sind die unterstützten Analyseprogramme mit einer kurzen Beschreibung ihrer Funktionen aufgelistet:
+Es folgt die Liste der unterstützten Sprachen sowie die Namen der Lucene- und Microsoft-Analyseprogramme.
 
 <table style="font-size:12">
     <tr>
 		<th>Sprache</th>
-		<th>Name des Analyseprogramms</th>
-		<th>Beschreibung</th>
-	</tr>
-    <tr>
-		<td>Arabisch</td>
-		<td>ar.lucene</td>
-		<td>
-		<ul>
-			<li>Normalisiert die arabische Orthografie</li>
-			<li>Wendet eine einfache algorithmische Wortstammerkennung an</li>
-			<li>Filtert arabische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<th>Name des Microsoft-Analyseprogramms</th>
+		<th>Name des Lucene-Analyseprogramms</th>
 	</tr>
     <tr>
 		<td>Arabisch</td>
 		<td>ar.microsoft</td>
-		<td>
-		<ul>
-			<li>Reduktive Wortstammerkennung</li>
-			<li>Filtert arabische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>ar.lucene</td>		
 	</tr>
     <tr>
     	<td>Armenisch</td>
+		<td></td>
     	<td>hy.lucene</td>
-    	<td>
-    	<ul>
-      		<li>Wendet eine einfache algorithmische Wortstammerkennung an</li>
-    		<li>Filtert armenische Stoppwörter heraus</li>
-	    </ul>
-    	</td>
   	</tr>
     <tr>
 		<td>Bengalisch</td>
-		<td>bg.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
+		<td>bn.microsoft</td>
+		<td></td>
 	</tr>
   	<tr>
     	<td>Baskisch</td>
+		<td></td>
     	<td>eu.lucene</td>
-    	<td>
-    	<ul>
-      		<li>Wendet eine einfache algorithmische Wortstammerkennung an</li>
-    		<li>Filtert baskische Stoppwörter heraus</li>
-	    </ul>
-    	</td>
     </tr>
   	<tr>
- 	   <td>Bulgarisch</td>
+ 		<td>Bulgarisch</td>
+		<td>bg.microsoft</td>
     	<td>bg.lucene</td>
-    	<td>
-    	<ul>
-      		<li>Wendet eine einfache algorithmische Wortstammerkennung an</li>
-    		<li>Filtert bulgarische Stoppwörter heraus</li>
-	    </ul>
-    	</td>
   	</tr>
-    <tr>
-		<td>Bulgarisch</td>
-		<td>bn.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
-	</tr>
   	<tr>
     	<td>Katalanisch</td>
-    	<td>ca.lucene</td>
-    	<td>
-    	<ul>
-      		<li>Wendet eine einfache algorithmische Wortstammerkennung an</li>
-      		<li>Filtert katalanische Stoppwörter heraus</li>
-      		<li>Entfernt Auslassungen (Elisionen)</li>
-   		</ul>
-    	</td>
+    	<td>ca.microsoft</td>
+		<td>ca.lucene</td>  		
   	</tr>
-    <tr>
-		<td>Katalanisch</td>
-		<td>ca.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Entfernt diakritische Zeichen</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Chinesisch (vereinfacht)</td>
-		<td>zh-Hans.lucene</td>
-		<td>
-		<ul>
-			<li>Ermittelt die optimale Wortsegmentierung anhand von probabilistischen Wissensmodellen</li>
-			<li>Filtert chinesische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
     <tr>
 		<td>Chinesisch (vereinfacht)</td>
 		<td>zh-Hans.microsoft</td>
-		<td>
-		<ul>
-			<li>Ermittelt die optimale Wortsegmentierung anhand von probabilistischen Wissensmodellen</li>
-		</ul>
-		</td>
+		<td>zh-Hans.lucene</td>		
 	</tr>
     <tr>
 		<td>Chinesisch (traditionell)</td>
-		<td>zh-Hant.lucene</td>
-		<td>
-		<ul>
-			<li>Indiziert Bigramme (überlappenden Gruppen von zwei angrenzenden chinesischen Zeichen)</li>
-			<li>Normalisiert unterschiedliche Zeichenbreiten</li>
-		</ul>
-		</td>
-	<tr>
-    <tr>
-		<td>Chinesisch (traditionell)</td>
 		<td>zh-Hant.microsoft</td>
-		<td>
-		<ul>
-			<li>Ermittelt die optimale Wortsegmentierung anhand von probabilistischen Wissensmodellen</li>
-		</ul>
-		</td>
+		<td>zh-Hant.lucene</td>		
 	<tr>
     <tr>
 		<td>Kroatisch</td>
 		<td>hr.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Tschechisch</td>
-		<td>cs.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert tschechische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td/></td>
 	</tr>
     <tr>
 		<td>Tschechisch</td>
 		<td>cs.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert tschechische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Dänisch</td>
-		<td>da.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert dänische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
+		<td>cs.lucene</td>		
+	</tr>    
     <tr>
 		<td>Dänisch</td>
 		<td>da.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert dänische Stoppwörter heraus</li>
-			<li>Zerlegung</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Niederländisch</td>
-		<td>nl.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert niederländische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
+		<td>da.lucene</td>		
+	</tr>    
     <tr>
 		<td>Niederländisch</td>
 		<td>nl.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert niederländische Stoppwörter heraus</li>
-			<li>Zerlegung</li>
-			<li>Entfernt diakritische Zeichen</li>
-		</ul>
-		</td>
-	</tr>
+		<td>nl.lucene</td>	
+	</tr>    
     <tr>
-		<td>Englisch</td>
-		<td>en.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert englische Stoppwörter heraus</li>
-			<li>Entfernt Possessivformen</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Englisch</td>
+		<td>Englisch</td>		
 		<td>en.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert englische Stoppwörter heraus</li>
-			<li>Entfernt Possessivformen und diakritische Zeichen</li>
-		</ul>
-		</td>
+		<td>en.lucene</td>		
 	</tr>
     <tr>
 		<td>Estnisch</td>
 		<td>et.microsoft</td>
-		<td>
-		<ul>
-			<li>Reduktive Wortstammerkennung</li>
-			<li>Zerlegung</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Finnisch</td>
-		<td>fi.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert finnische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Finnisch</td>
 		<td>fi.microsoft</td>
-		<td>
-		<ul>
-			<li>Reduktive Wortstammerkennung</li>
-			<li>Filtert finnische Stoppwörter heraus</li>
-			<li>Zerlegung</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Französisch</td>
-		<td>fr.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert französische Stoppwörter heraus</li>
-			<li>Entfernt Auslassungen (Elisionen)</li>
-		</ul>
-		</td>
-	</tr>
+		<td>fi.lucene</td>		
+	</tr>    
     <tr>
 		<td>Französisch</td>
 		<td>fr.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert französische Stoppwörter heraus</li>
-			<li>Entfernt diakritische Zeichen</li>
-		</ul>
-		</td>
+		<td>fr.lucene</td>		
 	</tr>
     <tr>
     	<td>Galizisch</td>
-	    <td>gl.lucene</td>
-    	<td>
-    	<ul>
-    		<li>Wendet eine einfache Wortstammerkennung an</li>
-      		<li>Filtert galizische Stoppwörter heraus</li>
-    	</ul>
-    	</td>
+	    <td></td>
+		<td>gl.lucene</td>    	
   	</tr>
     <tr>
 		<td>Deutsch</td>
-		<td>de.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert deutsche Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Deutsch</td>
 		<td>de.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert deutsche Stoppwörter heraus</li>
-			<li>Zerlegung</li>
-			<li>Entfernt diakritische Zeichen</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Griechisch</td>
-		<td>el.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert griechische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>de.lucene</td>		
 	</tr>
     <tr>
 		<td>Griechisch</td>
 		<td>el.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert griechische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>el.lucene</td>		
 	</tr>
     <tr>
 		<td>Gujarati</td>
 		<td>gu.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Hebräisch</td>
 		<td>he.microsoft</td>
-		<td>
-		<ul>
-			<li>Reduktive Wortstammerkennung</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Hindi</td>
-		<td>hi.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert indische Stoppwörter heraus</li>
-			<li>Entfernt diverse unterschiedliche Schreibweisen</li>
-			<li>Normalisiert die Unicode-Darstellung von Text in indischen Sprachen</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Hindi</td>
 		<td>hi.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert indische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>hi.lucene</td>		
 	</tr>
     <tr>
-		<td>Ungarisch</td>
-		<td>hu.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert ungarische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Ungarisch</td>
+		<td>Ungarisch</td>		
 		<td>hu.microsoft</td>
-		<td>
-		<ul>
-			<li>Reduktive Wortstammerkennung</li>
-			<li>Filtert ungarische Stoppwörter heraus</li>
-			<li>Zerlegung</li>
-		</ul>
-		</td>
+		<td>hu.lucene</td>
 	</tr>
     <tr>
 		<td>Isländisch</td>
 		<td>is.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Indonesisch (Bahasa)</td>
-		<td>id.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert indonesische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Indonesisch (Bahasa)</td>
 		<td>id.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert indonesische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>id.lucene</td>		
 	</tr>
     <tr>
     	<td>Irisch</td>
+		<td></td>
       	<td>ga.lucene</td>
-      	<td>
-      	<ul>
-        	<li>Wendet eine einfache Wortstammerkennung an</li>
-        	<li>Filtert irische Stoppwörter heraus</li>
-      	</ul>
-      	</td>
     </tr>
     <tr>
 		<td>Italienisch</td>
-		<td>it.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert italienische Stoppwörter heraus</li>
-			<li>Entfernt Auslassungen (Elisionen)</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Italienisch</td>
 		<td>it.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert italienische Stoppwörter heraus</li>
-			<li>Entfernt diakritische Zeichen</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Japanisch</td>
-		<td>ja.lucene</td>
-		<td>
-		<ul>
-			<li>Verwendet eine morphologische Analyse</li>
-			<li>Normalisiert allgemeine Katakana-Schreibweisen</li>
-			<li>Entfernt einfache Stoppwörter/Stopptags</li>
-			<li>Normalisiert die Zeichenbreite</li>
-			<li>Lemmatisierung - reduziert gebeugte Adjektive und Verben auf ihre Grundform</li>
-		</ul>
-		</td>
+		<td>it.lucene</td>		
 	</tr>
     <tr>
 		<td>Japanisch</td>
 		<td>ja.microsoft</td>
-		<td>
-		<ul>
-			<li>Verwendet eine morphologische Analyse</li>
-		</ul>
-		</td>
+		<td>ja.lucene</td>
+		
 	</tr>
     <tr>
 		<td>Kannada</td>
 		<td>ka.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Koreanisch</td>
+		<td></td>
 		<td>ko.lucene</td>
-		<td>
-		<ul>
-			<li>Indiziert Bigramme (überlappenden Gruppen von zwei angrenzenden hangulische Zeichen)</li>
-			<li>Normalisiert unterschiedliche Zeichenbreiten</li>
-		</ul>
-		</td>
-	</tr>
-  	<tr>
-		<td>Koreanisch</td>
-		<td>ko.microsoft</td>
-		<td>
-		<ul>
-			<li>Reduktive Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
 	</tr>
     <tr>
-		<td>Lettisch</td>
-		<td>lv.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert lettische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Lettisch</td>
+		<td>Lettisch</td>		
 		<td>lv.microsoft</td>
-		<td>
-		<ul>
-			<li>Reduktive Wortstammerkennung</li>
-			<li>Filtert lettische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>lv.lucene</td>	
 	</tr>
     <tr>
 		<td>Litauisch</td>
 		<td>lt.microsoft</td>
-		<td>
-		<ul>
-			<li>Reduktive Wortstammerkennung</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Malayalam</td>
 		<td>ml.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Malaiisch (Lateinisch)</td>
 		<td>ms.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Marathi</td>
 		<td>mr.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Norwegisch</td>
-		<td>no.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert norwegische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Norwegisch</td>
-		<td>no.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert norwegische Stoppwörter heraus</li>
-			<li>Zerlegung</li>
-		</ul>
-		</td>
+		<td>nb.microsoft</td>
+		<td>no.lucene</td>		
 	</tr>
   	<tr>
     	<td>Persisch</td>
-		<td>fa.lucene</td>
-    	<td>
-    	<ul>
-      		<li>Wendet eine algorithmische Wortstammerkennung an</li>
-      		<li>Filtert persische Stoppwörter heraus</li>
-      		<li>Normalisiert die arabische und persische Orthografie</li>
-    	</ul>
-    	</td>
+		<td></td>
+		<td>fa.lucene</td>    	
   	</tr>
     <tr>
 		<td>Polnisch</td>
-		<td>pl.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine algorithmische Wortstammerkennung an (Stempel)</li>
-			<li>Filtert polnische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Polnisch</td>
 		<td>pl.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert polnische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Portugiesisch (Brasilien)</td>
-		<td>pt-Br.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert brasilianische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>pl.lucene</td>		
 	</tr>
     <tr>
 		<td>Portugiesisch (Brasilien)</td>
 		<td>pt-Br.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert brasilianische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>pt-Br.lucene</td>		
 	</tr>
     <tr>
 		<td>Portugiesisch (Portugal)</td>
+		<td>pt-Pt.microsoft</td>		
 		<td>pt-Pt.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert portugiesische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Portugiesisch (Portugal)</td>
-		<td>pt-Pt.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert portugiesische Stoppwörter heraus</li>
-			<li>Entfernt diakritische Zeichen</li>
-		</ul>
-		</td>
 	</tr>
     <tr>
 		<td>Pandschabi</td>
 		<td>pa.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Rumänisch</td>
-		<td>ro.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert rumänische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Rumänisch</td>
 		<td>ro.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert rumänische Stoppwörter heraus</li>
-			<li>Entfernt diakritische Zeichen</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Russisch</td>
-		<td>ru.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert russische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>ro.lucene</td>
 	</tr>
     <tr>
 		<td>Russisch</td>
 		<td>ru.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert russische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>ru.lucene</td>	
 	</tr>
     <tr>
 		<td>Serbisch (Kyrillisch)</td>
 		<td>sr-cyrillic.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Serbisch (Lateinisch)</td>
 		<td>sr-latin.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Slowakisch</td>
 		<td>sk.microsoft</td>
-		<td>
-		<ul>
-			<li>Reduktive Wortstammerkennung</li>
-			<li>Zerlegung</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Slowenisch</td>
-		<td>sk.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Spanisch</td>
-		<td>es.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert spanische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>sl.microsoft</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Spanisch</td>
 		<td>es.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert spanische Stoppwörter heraus</li>
-			<li>Entfernt diakritische Zeichen</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Schwedisch</td>
-		<td>sv.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert schwedische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>es.lucene</td>
 	</tr>
     <tr>
 		<td>Schwedisch</td>
 		<td>sv.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-			<li>Filtert schwedische Stoppwörter heraus</li>
-			<li>Zerlegung</li>
-		</ul>
-		</td>
+		<td>sv.lucene</td>
 	</tr>
+
     <tr>
 		<td>Tamilisch</td>
 		<td>ta.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Telugu</td>
 		<td>te.microsoft</td>
-		<td>
-		<ul>
-			<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Thailändisch</td>
-		<td>th.lucene</td>
-		<td>
-		<ul>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert thailändische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Thailändisch</td>
 		<td>th.microsoft</td>
-		<td>
-		<ul>
-			<li>Filtert thailändische Stoppwörter heraus</li>
-		</ul>
-		</td>
-	</tr>
-    <tr>
-		<td>Türkisch</td>
-		<td>tr.lucene</td>
-		<td>
-		<ul>
-			<li>Entfernt alle Zeichen nach dem Apostroph (einschließlich des Apostrophs)</li>
-			<li>Wendet eine einfache Wortstammerkennung an</li>
-			<li>Filtert türkische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>th.lucene</td>
 	</tr>
     <tr>
 		<td>Türkisch</td>
 		<td>tr.microsoft</td>
-		<td>
-		<ul>
-			<li>Reduktive Wortstammerkennung</li>
-			<li>Filtert türkische Stoppwörter heraus</li>
-		</ul>
-		</td>
+		<td>tr.lucene</td>		
 	</tr>
     <tr>
 		<td>Ukrainisch</td>
 		<td>uk.microsoft</td>
-		<td>
-		<ul>
-		<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Urdu</td>
 		<td>ur.microsoft</td>
-		<td>
-		<ul>
-		<li>Umfassende Wortstammerkennung (Lemmatisierung)</li>
-		</ul>
-		</td>
+		<td></td>
 	</tr>
     <tr>
 		<td>Vietnamesisch</td>
 		<td>vi.microsoft</td>
-		<td>
-		<ul>
-
-		</ul>
-		</td>
+		<td></td>
 	</tr>
 	<td colspan="3">Mit zusätzlichen sprachunabhängigen Analysekonfigurationen von Azure Search</td>
     <tr>
@@ -1211,7 +633,7 @@ Clientseitiger JavaScript-Code kann standardmäßig keine APIs aufrufen, da der 
         {"name": "hotelId", "type": "Edm.String", "key": true, "searchable": false},
         {"name": "baseRate", "type": "Edm.Double"},
         {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false},
-	    {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, analyzer="fr.lucene"},
+	    {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "analyzer"="fr.lucene"},
         {"name": "hotelName", "type": "Edm.String"},
         {"name": "category", "type": "Edm.String"},
         {"name": "tags", "type": "Collection(Edm.String)"},
@@ -1565,7 +987,7 @@ Der Antworttext hat folgendes Format:
 
 ________________________________________
 <a name="DocOps"></a>
-## Dokumentvorgänge #
+## Dokumentvorgänge
 
 In Azure Search wird ein Index in der Cloud gespeichert und mit JSON-Dokumenten gefüllt, die Sie in den Dienst hochladen. Die gesamten hochgeladenen Dokumente stellen den Korpus Ihrer Suchdaten dar. Dokumente enthalten Felder, von denen einige beim Hochladen als Suchbegriffe mit Token versehen werden. Das URL-Segment `/docs` in der Azure Search-API stellt die Sammlung von Dokumenten in einem Index dar. Alle an der Sammlung durchgeführten Vorgänge wie das Hochladen, Zusammenführen, Löschen oder Abfragen von Dokumenten findet im Kontext eines einzigen Index statt. Die URLs für diese Vorgänge beginnen daher für einen gegebenen Indexnamen immer mit `/indexes/[index name]/docs`.
 
@@ -1741,7 +1163,7 @@ Die URL-Codierung wird nur bei den oben angegebenen Abfrageparametern empfohlen.
 
 Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API direkt mittels „GET“ aufrufen. Wenn Sie **Search** mithilfe von „POST“ aufrufen oder die URL-Codierung über die [.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) abwickeln, ist keine URL-Codierung erforderlich.
 
-**Abfrageparameter**
+<a name="SearchQueryParameters"></a> **Abfrageparameter**
 
 **Search** akzeptiert mehrere Parameter zum Angeben von Abfragekriterien und Suchverhalten. Diese Parameter werden in der URL-Abfragezeichenfolge (beim Aufrufen von **Search** mittels „GET“) bzw. als JSON-Eigenschaften im Anforderungstext (beim Aufrufen von**Search** mittels „POST“) angegeben. Bei manchen Parametern wird für „GET“ eine etwas andere Syntax verwendet als für „POST“. Diese Abweichungen werden im Anschluss erläutert:
 
@@ -2209,7 +1631,7 @@ Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API di
 
 `suggesterName=[string]`: Der Name des Vorschlags, der in der Sammlung `suggesters` angegeben wurde, die Teil der Indexdefinition ist. Ein `suggester` bestimmt, welche Felder für vorgeschlagene Abfragebegriffe gescannt werden. Details finden Sie unter [Vorschläge](#Suggesters).
 
-`fuzzy=[boolean]` (optional, Standardwert = false): Wenn dieser Wert auf "true" gesetzt ist, findet diese API Vorschläge auch dann, wenn im Suchtext ein Zeichen ersetzt wurde oder fehlt. Dies führt in einigen Szenarien zwar zu besseren Ergebnissen, geht jedoch zulasten der Leistung, da Fuzzysuchen von Vorschlägen langsamer sind und mehr Ressourcen belegen.
+`fuzzy=[boolean]` (optional, Standadwert = false): Wenn dieser Wert auf "true" gesetzt ist, findet diese API Vorschläge auch dann, wenn im Suchtext ein Zeichen ersetzt wurde oder fehlt. Dies führt in einigen Szenarien zwar zu besseren Ergebnissen, geht jedoch zulasten der Leistung, da Fuzzysuchen von Vorschlägen langsamer sind und mehr Ressourcen belegen.
 
 `searchFields=[string]` (optional): Die Liste der kommagetrennten Feldnamen, die für den angegebenen Suchtext durchsucht werden. Zielfelder müssen für Vorschläge aktiviert sein.
 
@@ -2307,4 +1729,4 @@ Rufen Sie 5 Vorschläge mit der Teilsuche nach "lux" ab.
       "suggesterName": "sg"
     }
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

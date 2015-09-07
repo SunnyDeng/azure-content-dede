@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Service Fabric-Testability-Szenarien: Dienstkommunikation" 
-   description="Die Kommunikation von Dienst zu Dienst ist ein wichtiger Integrationspunkt einer Service Fabric-Anwendung. In diesem Artikel werden Entwurfsaspekte und Testverfahren beschrieben." 
-   services="service-fabric" 
-   documentationCenter=".net" 
-   authors="vturecek" 
-   manager="timlt" 
-   editor=""/>
+   pageTitle="Service Fabric-Testability-Szenarien: Dienstkommunikation"
+	description="Die Kommunikation von Dienst zu Dienst ist ein wichtiger Integrationspunkt einer Service Fabric-Anwendung. In diesem Artikel werden Entwurfsaspekte und Testverfahren beschrieben."
+	services="service-fabric"
+	documentationCenter=".net"
+	authors="vturecek"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA" 
-   ms.date="04/17/2015"
-   ms.author="vturecek"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/25/2015"
+	ms.author="vturecek"/>
 
 # Service Fabric-Testability-Szenarien: Dienstkommunikation
 
@@ -101,4 +101,4 @@ In diesem Beispiel wird `QuorumLossMode` auf `PartialQuorumLoss` festgelegt. So 
 
 [Weitere Informationen zu Testability-Szenarien](service-fabric-testability-scenarios.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

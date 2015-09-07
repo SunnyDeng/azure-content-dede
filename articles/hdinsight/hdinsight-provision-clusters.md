@@ -1,21 +1,21 @@
 <properties
    pageTitle="Benutzerdefiniertes Bereitstellen von Hadoop-Clustern in HDInsight | Microsoft Azure"
-   	description="Hier erfahren Sie, wie Sie Cluster für Azure HDInsight im Azure-Vorschauportal, mit Azure PowerShell, über die Befehlszeile oder mit einem .NET-SDK benutzerdefiniert bereitstellen."
-   services="hdinsight"
-   documentationCenter=""
-   tags="azure-portal"
-   authors="mumian"
-   manager="paulettm"
-   editor="cgronlun"/>
+	description="Hier erfahren Sie, wie Sie Cluster für Azure HDInsight im Azure-Vorschauportal, mit Azure PowerShell, über die Befehlszeile oder mit einem .NET-SDK benutzerdefiniert bereitstellen."
+	services="hdinsight"
+	documentationCenter=""
+	tags="azure-portal"
+	authors="mumian"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags
    ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="08/11/2015"
-   ms.author="jgao"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="08/21/2015"
+	ms.author="jgao"/>
 
 # Bereitstellen von Hadoop-Clustern in HDInsight
 
@@ -224,7 +224,7 @@ Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration 
 
 	![Diagramm der Punkt-zu-Standort-Konfiguration](./media/hdinsight-provision-clusters/hdinsight-vnet-point-to-site.png)
 
-Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](http://msdn.microsoft.com/library/azure/jj156007.aspx).
+Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](../virtual-network/virtual-networks-overview.md).
 
 > [AZURE.NOTE]Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen HDInsight-Cluster bereitstellen. Weitere Informationen finden Sie unter [Bereitstellen eines Hadoop-Clusters in einem virtuellen Netzwerk](hdinsight-hbase-provision-vnet.md#provision-an-hbase-cluster-into-a-virtual-network).
 >
@@ -543,6 +543,19 @@ Das HDInsight .NET SDK enthält .NET-Clientbibliotheken zur Vereinfachung der Ar
 7. Drücken Sie **F5**, um die Anwendung auszuführen. In einem Konsolenfenster wird der Status der Anwendung angezeigt. Sie werden auch zur Eingabe Ihrer Azure-Anmeldeinformationen aufgefordert. Die Erstellung eines HDInsight-Clusters kann mehrere Minuten in Anspruch nehmen.
 
 
+## Erstellen eines Azure HDInsight-Clusters mithilfe lokaler SQL Server Integration Services
+
+Sie können mit den SQL Server Integration Services (SSIS) einen HDInsight-Cluster auch erstellen oder löschen. Das Azure Feature Pack für SSIS bietet die folgenden Komponenten, die mit HDInsight-Clustern funktionieren.
+
+
+- [Erstellen einer Clusteraufgabe in Azure HDInsight][ssisclustercreate]
+- [Löschen einer Clusteraufgabe in Azure HDInsight][ssisclusterdelete]
+- [Verbindungs-Manager für Azure-Abonnements][connectionmanager]
+
+Erfahren Sie [hier][ssispack] mehr über das Azure Feature Pack für SSIS.
+
+
+
 ##<a id="nextsteps"></a> Nächste Schritte
 In diesem Artikel haben Sie mehrere Möglichkeiten zu Bereitstellung von HDInsight-Clustern kennen gelernt. Weitere Informationen finden Sie in den folgenden Artikeln:
 
@@ -555,5 +568,9 @@ In diesem Artikel haben Sie mehrere Möglichkeiten zu Bereitstellung von HDInsig
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/library/dn479185.aspx
 [azure-preview-portal]: https://manage.windowsazure.com
+[connectionmanager]: http://msdn.microsoft.com/de-DE/library/mt146773(v=sql.120).aspx
+[ssispack]: http://msdn.microsoft.com/de-DE/library/mt146770(v=sql.120).aspx
+[ssisclustercreate]: http://msdn.microsoft.com/de-DE/library/mt146774(v=sql.120).aspx
+[ssisclusterdelete]: http://msdn.microsoft.com/de-DE/library/mt146778(v=sql.120).aspx
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

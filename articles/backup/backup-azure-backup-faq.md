@@ -1,13 +1,13 @@
 <properties
    pageTitle="Häufig gestellte Fragen zu Azure Backup | Microsoft Azure"
-   description="Häufig gestellte Fragen zum Azure Backup-Dienst"
-   services="backup"
-   documentationCenter=""
-   authors="Jim-Parker"
-   manager="shreeshd"
-   editor=""/>
+	description="Häufig gestellte Fragen zum Azure Backup-Dienst"
+	services="backup"
+	documentationCenter=""
+	authors="Jim-Parker"
+	manager="shreeshd"
+	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/07/2015" ms.author="arunak"; "jimpark"; "aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/26/2015" ms.author="giridham"; "arunak"; "jimpark"; "aashishr"/>
 
 # Azure Backup – Häufig gestellte Fragen
 Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. Weitere Fragen zu Azure Backup können im [Diskussionsforum](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup) gestellt werden. Ein Mitglied der Community hilft Ihnen dabei, Ihre Antworten zu erhalten. Wenn eine Frage häufiger gestellt wird, fügen wir sie diesem Artikel hinzu, damit sie schnell und einfach gefunden werden kann.
@@ -21,6 +21,7 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 | Windows 8 und die neuesten SPs | 64-Bit | Enterprise, Pro |
 | Windows 7 und die neuesten SPs | 64-Bit | Ultimate, Enterprise, Professional, Home Premium, Home Basic, Starter |
 | Windows 8.1 und die neuesten SPs | 64-Bit | Enterprise, Pro |
+| Windows 10 | 64-Bit | Enterprise, Pro, Home |
 |Windows Server 2012 R2 und die neuesten SPs|	64-Bit|	Standard, Datacenter, Foundation|
 |Windows Server 2012 und die neuesten SPs|	64-Bit|	Datacenter, Foundation, Standard|
 |Windows Storage Server 2012 R2 und die neuesten SPs |64-Bit|	Standard, Workgroup|
@@ -83,7 +84,7 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 
 **F19. Warum wird eine Warnung mit dem Hinweis angezeigt, dass für diesen Server keine Azure-Sicherungen konfiguriert wurden, obwohl ich zuvor regelmäßige Sicherungen geplant habe?** <br/> A19: Dieses Problem kann auftreten, wenn die auf dem lokalen Server gespeicherten Sicherungszeitplaneinstellungen nicht den Einstellungen im Sicherungstresor entsprechen. Wenn für den Server oder die Einstellungen ein als funktionierend bekannter Zustand wiederhergestellt wurde, ist unter Umständen die Synchronisierung der Sicherungszeitpläne verloren gegangen. Konfigurieren Sie in diesem Fall die Sicherungsrichtlinie neu, und verwenden Sie dann **Sicherung jetzt ausführen**, um den lokalen Server wieder mit Azure zu synchronisieren.
 
-**F20. Welche Firewallregeln müssen für die Sicherung von Azure Backup konfiguriert werden?** <br/>A20. Stellen Sie sicher, dass Firewallregeln die Kommunikation mit den folgenden URLs ermöglichen, um eine nahtlose Sicherung der lokalen Daten in Azure und Workloadschutz auf Azure zu gewährleisten:
+**F20. Welche Firewallregeln müssen für die Sicherung von Azure Backup konfiguriert werden?** <br/> A20. Stellen Sie sicher, dass Firewallregeln die Kommunikation mit den folgenden URLs ermöglichen, um eine nahtlose Sicherung der lokalen Daten in Azure und Workloadschutz auf Azure zu gewährleisten:
 
 - www.msftncsi.com
 - *.Microsoft.com
@@ -93,13 +94,25 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 
 
 ## Sicherung und Aufbewahrung
-**F1. Gibt es eine Größenbeschränkung für die einzelnen Datenquellen, die gesichert werden?** <br/> A1. Jede Datenquelle darf höchstens 1,7 TB groß sein (Stand: Juli 2015). Zu den Datenquellen zählen:
+**F1. Gibt es eine Größenbeschränkung für die einzelnen Datenquellen, die gesichert werden?** <br/> A1. Ab August 2015 gelten folgende Größenbeschränkung für die einzelnen Datenquellen für die verschiedenen Betriebssysteme:
 
-- Datei-/Ordnervolume
-- SQL-Datenbank
-- SharePoint-Farm
-- Exchange-Server
-- Hyper-V-VM
+|Nr. |	Betriebssystem |	Maximale Größe der Datenquelle |
+| :-------------: |:-------------| :-----|
+|1| Windows Server 2012 oder höher| 54\.400 GB|
+|2| Windows Server 8 oder höher| 54\.400 GB|
+|3| Windows Server 2008, Windows Server 2008 R2 | 1\.700 GB|
+|4| Windows 7 | 1\.700 GB|
+ 
+Die Größe der Datenquelle wird wie folgt gemessen.
+
+|	Datenquelle |	Details |
+| :-------------: |:-------------|
+|Volume |Die Datenmenge, die von einem Volume eines Computers gesichert wird. Dies gilt für die Volumes, die auf Server- sowie auf Clientcomputern geschützt werden.|
+|Virtueller Hyper-V-Computer|Summe der Daten aller virtuellen Festplatten des zu sichernden virtuellen Computers|
+|Microsoft SQL Server-Datenbank|Größe einer einzelnen zu sichernden SQL-Datenbank |
+|Microsoft SharePoint|Summe der Inhalts- und Konfigurationsdatenbanken in einer zu sichernden SharePoint-Farm|
+|Microsoft Exchange|Summe aller Exchange-Datenbanken eines zu sichernden Exchange-Servers|
+|BMR/Systemstatus|Jede einzelne Kopie der BMR oder des Systemstatus des zu sichernden Computers|
 
 **F2. Gibt es einen Grenzwert für die Häufigkeit der geplanten Sicherungen pro Tag?**<br/> A2. Ja. Azure Backup ermöglicht drei Sicherungskopien pro Tag über Windows Server/Client und zwei Sicherungskopien pro Tag über SCDPM.
 
@@ -166,4 +179,4 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 
 Sobald die Sicherungen erfolgreich mit dem neuen Cachespeicherort ausgeführt werden, können Sie den ursprünglichen Cacheordner entfernen.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

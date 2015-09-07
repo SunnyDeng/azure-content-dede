@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="LDAP-Authentifizierung und Azure Multi-Factor Authentication-Server" 
-	description="Dies ist die Azure Multi-Factor Authentication-Seite, die bei der Bereitstellung der LDAP-Authentifizierung und des Azure Multi-Factor Authentication-Servers Unterstützung bietet." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="LDAP-Authentifizierung und Azure Multi-Factor Authentication-Server"
+	description="Dies ist die Azure Multi-Factor Authentication-Seite, die bei der Bereitstellung der LDAP-Authentifizierung und des Azure Multi-Factor Authentication-Servers Unterstützung bietet."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/14/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # LDAP-Authentifizierung und Azure Multi-Factor Authentication-Server 
@@ -63,4 +63,4 @@ Verwenden Sie die folgenden Richtlinien, um den LDAP-Client zu konfigurieren:
 - Konfigurieren Sie das LDAP-Timeout auf 30 bis 60 Sekunden, sodass genug Zeit ist, die Anmeldeinformationen des Benutzers mit dem LDAP-Verzeichnis zu überprüfen, die zweistufige Authentifizierung durchzuführen, deren Antwort zu empfangen und dann auf die LDAP-Zugriffsanforderung zu reagieren. 
 - Bei Verwendung von LDAPs muss die Appliance oder der Server, die das LDAP abfragen, dem auf dem Azure Multi-Factor Authentication-Server installierten SSL-Zertifikat vertrauen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

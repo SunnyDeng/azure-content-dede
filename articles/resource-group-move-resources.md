@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verschieben von Ressourcen in eine neue Ressourcengruppe" 
-	description="Verwenden Sie Azure PowerShell oder die REST-API, um Ressourcen in eine neue Ressourcengruppe für den Azure-Ressourcen-Manager zu verschieben." 
-	services="azure-resource-manager" 
-	documentationCenter="" 
-	authors="tfitzmac" 
-	manager="wpickett" 
+	pageTitle="Verschieben von Ressourcen in eine neue Ressourcengruppe"
+	description="Verwenden Sie Azure PowerShell oder die REST-API, um Ressourcen in eine neue Ressourcengruppe für den Azure-Ressourcen-Manager zu verschieben."
+	services="azure-resource-manager"
+	documentationCenter=""
+	authors="tfitzmac"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="azure-resource-manager" 
-	ms.workload="multiple" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/14/2015" 
+	ms.service="azure-resource-manager"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/20/2015"
 	ms.author="tomfitz"/>
 
 # Verschieben von Ressourcen in eine neue Ressourcengruppe oder ein neues Abonnement
@@ -55,6 +55,11 @@ Die folgenden Dienste unterstützen derzeit nicht das Verschieben einer Ressourc
 
 - Virtuelle Netzwerke
 
+Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan verschieben. Zum Verschieben von Web-Apps stehen folgende Optionen bereit:
+
+- Verschieben Sie alle Ressourcen aus einer Ressourcengruppe in eine andere Ressourcengruppe, wenn die Zielressourcengruppe noch keine Microsoft.Web-Ressourcen enthält.
+- Verschieben Sie Web-Apps in eine andere Ressourcengruppe, behalten Sie jedoch den App Services-Plan in der ursprünglichen Ressourcengruppe bei.
+
 ## Verschieben von Ressourcen mithilfe von PowerShell
 
 Verwenden Sie zum Verschieben vorhandener Ressourcen in eine andere Ressourcengruppe oder ein anderes Abonnement den Befehl **Move-AzureResource**.
@@ -77,7 +82,7 @@ Führen Sie zum Verschieben vorhandener Ressourcen in eine andere Ressourcengrup
 
     POST https://management.azure.com/subscriptions/{source-subscription-id}/resourcegroups/{source-resource-group-name}/moveResources?api-version={api-version} 
 
-Ersetzen Sie **{source-subscription-Id}** und **{source-resource-group-name}** mit dem Abonnement und der Ressourcengruppe, in der derzeit die Ressourcen enthalten sind, die Sie verschieben möchten. Verwenden Sie für {api-version} **2015-01-01**.
+Ersetzen Sie **{source-subscription-Id}** und **{source-resource-group-name}** durch das Abonnement und die Ressourcengruppe, in der derzeit die Ressourcen enthalten sind, die Sie verschieben möchten. Verwenden Sie für {api-version} **2015-01-01**.
 
 Schließen Sie in die Anforderung ein JSON-Objekt ein, das die Zielressourcengruppe und die Ressourcen definiert, die Sie verschieben möchten.
 
@@ -96,4 +101,4 @@ Schließen Sie in die Anforderung ein JSON-Objekt ein, das die Zielressourcengru
 - [Verwenden des Azure-Portals zum Verwalten von Ressourcen](azure-portal/resource-group-portal.md)
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

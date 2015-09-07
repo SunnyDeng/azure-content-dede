@@ -1,19 +1,21 @@
 <properties 
-   pageTitle="Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace und Visual Studio"
-   description="Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace und Visual Studio"
-   services="visual-studio-online"
-   documentationCenter="n/a"
-   authors="patshea123"
-   manager="douge"
-   editor="tlee" />
+   pageTitle="Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace und Visual Studio | Microsoft Azure"
+	description="Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace und Visual Studio"
+	services="visual-studio-online"
+	documentationCenter="n/a"
+	authors="patshea123"
+	manager="douge"
+	editor="tlee"/>
 <tags 
    ms.service="visual-studio-online"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.workload="na"
-   ms.tgt_pltfrm="na"
-   ms.date="08/12/2015"
-   ms.author="patshea" />
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="multiple"
+	ms.workload="na"
+	ms.date="08/14/2015"
+	ms.author="patshea"/>
+
+
 
 # Debuggen eines veröffentlichten Clouddiensts mit IntelliTrace und Visual Studio
 
@@ -31,7 +33,9 @@ Wenn Sie IntelliTrace für eine Azure-Anwendung aktivieren möchten, müssen Sie
 
 1. Wenn Sie bereit sind, die Azure-Anwendung bereitzustellen, überprüfen Sie, ob die Projektbuildziele auf **Debuggen** festgelegt sind.
 
-1. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Azure-Projekt, und wählen Sie anschließend **Veröffentlichen** aus. Der Assistent zur Veröffentlichung einer Azure-Anwendung wird geöffnet.
+1. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Azure-Projekt, und wählen Sie anschließend **Veröffentlichen** aus.
+ 
+    Der Assistent zur Veröffentlichung einer Azure-Anwendung wird geöffnet.
 
 1. Aktivieren Sie zum Erfassen von IntelliTrace-Protokollen für Ihre Anwendung bei der Veröffentlichung in der Cloud das Kontrollkästchen **IntelliTrace aktivieren**.
 
@@ -51,7 +55,7 @@ Nachdem die Azure-Anwendung in Azure veröffentlicht wurde, können Sie über de
 
 ## Herunterladen von IntelliTrace-Protokollen für eine Rolleninstanz
 
-Sie können IntelliTrace-Protokolle für eine Rolleninstanz im **Server-Explorer** aus dem Knoten **Clouddienste** herunterladen. Erweitern Sie den Knoten **Clouddienste**, bis Sie die gewünschte Instanz finden, öffnen Sie das Kontextmenü für diese Instanz, und wählen Sie dann **IntelliTrace-Protokolle anzeigen** aus. Die IntelliTrace-Protokolle werden in eine Datei in einem Verzeichnis auf dem lokalen Computer heruntergeladen. Bei jeder Anforderung der IntelliTrace-Protokolle wird eine neue Momentaufnahme erstellt.
+Sie können IntelliTrace-Protokolle für eine Rolleninstanz im **Server-Explorer** aus dem Knoten **Cloud Services** herunterladen. Erweitern Sie den Knoten **Cloud Services**, bis Sie die gewünschte Instanz finden, öffnen Sie das Kontextmenü für diese Instanz, und wählen Sie dann **IntelliTrace-Protokolle anzeigen** aus. Die IntelliTrace-Protokolle werden in eine Datei in einem Verzeichnis auf dem lokalen Computer heruntergeladen. Bei jeder Anforderung der IntelliTrace-Protokolle wird eine neue Momentaufnahme erstellt.
 
 Wenn die Protokolle heruntergeladen werden, zeigt Visual Studio den Status des Vorgangs im Fenster "Azure-Aktivitätsprotokoll" an. Wie in der folgenden Abbildung gezeigt, können Sie die Zeile des Vorgangs erweitern, um weitere Details anzuzeigen.
 
@@ -61,8 +65,8 @@ Sie können weiterhin in Visual Studio arbeiten, während die IntelliTrace-Proto
 
 >[AZURE.NOTE]Die IntelliTrace-Protokolle enthalten möglicherweise vom Framework generierte und anschließend verarbeitete Ausnahmen. Der interne Frameworkcode generiert diese Ausnahmen ganz normal im Rahmen des Starts einer Rolle, sodass sie gefahrlos ignoriert werden können.
 
-## Nächste Schritte
+## Siehe auch
 
-[Debuggen von Cloud-Diensten.](http://go.microsoft.com/fwlink/p/?LinkID=62304)
+[Debuggen von Cloud-Diensten.](https://msdn.microsoft.com/library/ee405479.aspx)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

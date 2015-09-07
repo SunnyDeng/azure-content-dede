@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SharePoint-Intranetfarm-Arbeitsauslastung Phase 3: Konfigurieren der SQL Server-Infrastruktur"
-	description="In dieser dritten Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen Sie die SQL Server-Clustercomputer sowie den Cluster."
+	pageTitle="SharePoint Server 2013-Farm, Phase 3 | Microsoft Azure"
+	description="In Phase 3 der SharePoint Server 2013-Farm erstellen Sie in Azure die Computer und den SQL Server-Cluster, und aktivieren Sie Verfügbarkeitsgruppen."
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"
@@ -44,7 +44,7 @@ Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierende
 	$vmSize="<Table M – Item 3 - Minimum size column, specify one: Small, Medium, Large, ExtraLarge, A5, A6, A7, A8, A9>"
 	$availSet="<Table A – Item 2 – Availability set name column>"
 
-	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "SQL Server 2014 RTM Standard on Windows Server 2012 R2" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
+	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "SQL Server 2014 RTM Enterprise on Windows Server 2012 R2" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name $vmName -InstanceSize $vmSize -ImageName $image -AvailabilitySetName $availSet
 
 	$cred1=Get-Credential –Message "Type the name and password of the local administrator account for the first SQL Server computer."
@@ -143,7 +143,7 @@ Für SQL Server ist ein Port erforderlich, über den die Clients auf den Datenba
 
 Melden Sie sich bei beiden virtuellen SQL Server-Computern als lokaler Administrator ab.
 
-Informationen zum Optimieren der SQL Server-Leistung in Azure finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](https://msdn.microsoft.com/library/azure/dn133149.aspx). Zur Optimierung der IOPs können Sie auch den georedundanten Speicher (GRS) für das Speicherkonto der SharePoint-Farm deaktivieren und stattdessen Speicherplatz verwenden.
+Informationen zum Optimieren der SQL Server-Leistung in Azure finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md). Zur Optimierung der IOPs können Sie auch den georedundanten Speicher (GRS) für das Speicherkonto der SharePoint-Farm deaktivieren und stattdessen Speicherplatz verwenden.
 
 ## Konfigurieren des Mehrheitsknotenservers des Clusters
 
@@ -228,4 +228,4 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 4:
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

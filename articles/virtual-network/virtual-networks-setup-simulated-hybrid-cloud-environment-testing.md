@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken" 
-	description="Hier erhalten Sie Informationen zum Erstellen einer simulierten Hybrid Cloud-Umgebung für Tests durch IT-Spezialisten oder zu Entwicklungszwecken, die aus zwei virtuellen Azure-Netzwerken und einer VNet-zu-VNet-Verbindung besteht." 
-	services="virtual-network" 
-	documentationCenter="" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	pageTitle="Simulierte Hybrid Cloud-Testumgebung | Microsoft Azure"
+	description="Erstellen Sie eine simulierte Hybrid Cloud-Umgebung für Tests durch IT-Spezialisten oder für Entwicklungstests, indem Sie zwei virtuelle Azure-Netzwerke und eine VNet-zu-VNet-Verbindung verwenden."
+	services="virtual-network"
+	documentationCenter=""
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
 
 <tags 
-	ms.service="virtual-network" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.service="virtual-network"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/08/2015"
 	ms.author="josephd"/>
 
 # Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken
@@ -171,7 +171,7 @@ Melden Sie sich anschließend bei dem neuen virtuellen Computer für DC2 an.
 3.	Wenn Sie zum Öffnen von DC2.rdp aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
-- Name: **DC2\**[Name des lokalen Administratorkontos]
+- Name: **DC2**[Name des lokalen Administratorkontos]
 - Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
@@ -273,4 +273,4 @@ Setzen Sie anschließend den vorinstallierten Schlüssel für beide Gateways auf
 Klicken Sie anschließend auf der Seite "Netzwerk" im Azure-Verwaltungsportal auf das virtuelle Netzwerk **TestLab** und anschließend in der Taskleiste auf **Verbinden**. Warten Sie, bis angezeigt wird, dass das virtuelle Netzwerk TestLab mit dem lokalen Netzwerk TestVNET verbunden ist.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

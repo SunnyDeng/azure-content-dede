@@ -1,25 +1,25 @@
 <properties
-	pageTitle="Erstellen eines Azure Search-Index im Portal"
-	description="Fügen Sie dem Azure Search-Dienst durch Angabe von Felddefinitionen im Verwaltungsportal einen Index hinzu."
+	pageTitle="Erstellen eines Azure Search-Index im Portal | Microsoft Azure"
+	description="Fügen Sie dem Azure Search-Dienst durch Angabe von Felddefinitionen im Azure-Portal einen Index hinzu."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
 	manager="mblythe"
 	editor=""
-    tags="azure-portal"/>
+	tags="azure-portal"/>
 
 <tags
 	ms.service="search"
 	ms.devlang="rest-api"
 	ms.workload="search"
-	ms.topic="get-started-article" 
+	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.date="07/08/2015"
 	ms.author="heidist"/>
 
-# Erstellen eines Azure Search-Index im Portal
+# Erstellen eines Azure Search-Index im Azure-Portal
 
-Sie können in Azure Search schnell einen Indexprototypen verwenden, indem Sie einen Index im Azure-Verwaltungsportal erstellen. Das Portal eignet sich hervorragend für Machbarkeitsstudien, kann aber auch zum Anzeigen von Schemadefinitionen und Ressourcennutzung für einen beliebigen Index verwendet werden, der für Ihren Dienst bereitgestellt ist.
+Sie können in Azure Search schnell einen Indexprototypen verwenden, indem Sie einen Index im Azure-Portal erstellen. Das Portal eignet sich hervorragend für Machbarkeitsstudien, kann aber auch zum Anzeigen von Schemadefinitionen und Ressourcennutzung für einen beliebigen Index verwendet werden, der für Ihren Dienst bereitgestellt ist.
 
 Vergewissern Sie sich für diese Aufgabe, dass Sie über einen einsatzbereiten Azure Search-Dienst verfügen. Hilfe bei der Einrichtung finden Sie bei Bedarf unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 
@@ -43,7 +43,7 @@ Vergewissern Sie sich für diese Aufgabe, dass Sie über einen einsatzbereiten A
 
 	Die Indexerstellung kann einen Moment dauern. Sobald der Index verwendungsbereit ist, wird er in der Indexliste angezeigt.
 
-6. Klicken Sie auf *hotels*, um das Blatt mit der Indexdefinition zu öffnen.
+6. Klicken Sie auf **hotels**, um das Blatt mit der Indexdefinition zu öffnen.
 
 	Wenn Sie einen Index im Portal erstellen, wird automatisch ein erforderliches Feld (id) erstellt. Hierbei handelt es sich um das Schlüsselfeld, mit dem die einzelnen Dokumente eindeutig identifiziert werden. Es gibt jeweils nur ein Feld pro Schlüssel (keine zusammengesetzten Schlüssel), und es ist immer eine Zeichenfolge.
 
@@ -53,11 +53,11 @@ Vergewissern Sie sich für diese Aufgabe, dass Sie über einen einsatzbereiten A
 
 7. Klicken Sie zum Bearbeiten des Feldnamens in der Feldliste auf den Pfeil nach rechts.
 
-8. Ersetzen Sie *id* durch *hotelId*.
+8. Ersetzen Sie **id** durch **hotelId**.
 
 9. Klicken Sie auf jedem Blatt („Felder“ und „Index“) auf **OK**, um den Index zu erstellen.
 
-##Hinzufügen von Feldern
+## Hinzufügen von Feldern
 
 In Azure Search sind Indexattribute wie „searchable“, „facetable“ und „filterable“ standardmäßig aktiviert. Diese Attribute werden in der Regel verwendet, um nicht sinnvolle Suchverhaltensweisen zu deaktivieren (beispielsweise die Sortierung oder Facettenerstellung auf der Grundlage einer Beschreibung).
 
@@ -87,9 +87,9 @@ Das Portal unterscheidet sich hier. Im Portal sind Suchverhaltensweisen standard
 4. Klicken Sie auf **OK**, um den soeben definierten Index zu speichern, und klicken Sie auf der Seite „Index hinzufügen“ erneut auf **OK**, um den Index zu erstellen.
 
 
-##Nächste Schritte
+## Nächste Schritte
 
-Der Index ist nun zwar definiert, er kann aber erst nach dem Laden von Dokumenten verwendet werden. Falls Sie den zu Testzwecken verwendeten Hotelindex neu erstellen, können Sie in [Fiddler](search-fiddler.md) problemlos die geringe Anzahl von Dokumenten für diesen Index laden. Die entsprechenden Anweisungen finden Sie unter [Verwenden von Fiddler mit Azure Search](search-fiddler.md) im Abschnitt **Laden von Dokumenten**. Anschließend können Sie anhand der restlichen Schritte in diesem Artikel einige Abfragen ausführen.
+Der Index ist nun zwar definiert, er kann aber erst nach dem Laden von Dokumenten verwendet werden. Falls Sie den zu Testzwecken verwendeten Hotelindex neu erstellen, können Sie in [Fiddler](search-fiddler.md) problemlos die geringe Anzahl von Dokumenten für diesen Index laden. Die entsprechenden Anweisungen finden Sie unter [Verwenden von Fiddler mit Azure Search](search-fiddler.md) im Abschnitt „Laden von Dokumenten“. Anschließend können Sie anhand der restlichen Schritte in diesem Artikel einige Abfragen ausführen.
 
 Nachdem Sie sich mit dem einfachen Index vertraut gemacht haben, können Sie ggf. eine Sprachanalyse oder Vorschläge hinzufügen, um mehrere Sprachen oder Vorschläge mit automatischer Vervollständigung zu unterstützen. Beide Features werden im Indexschema angegeben. Weitere Informationen finden Sie unter [Sprachunterstützung](https://msdn.microsoft.com/elibrary/azure/dn879793.aspx) bzw. unter [Index erstellen](https://msdn.microsoft.com/library/azure/dn798941.aspx).
 
@@ -100,4 +100,4 @@ Nachdem Sie sich mit dem einfachen Index vertraut gemacht haben, können Sie ggf
 [4]: ./media/search-create-index-portal/AzureSearch-PortalIndex-4.PNG
 [5]: ./media/search-create-index-portal/AzureSearch-PortalIndex-5.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

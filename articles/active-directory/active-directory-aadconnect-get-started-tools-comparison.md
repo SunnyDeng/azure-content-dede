@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Vergleich von Tools für die Verzeichnisintegration" 
-	description="Diese Seite enthält umfassende Tabellen zum Vergleich der verschiedenen Tools für die Verzeichnisintegration." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Vergleich von Tools für die Verzeichnisintegration"
+	description="Diese Seite enthält umfassende Tabellen zum Vergleich der verschiedenen Tools für die Verzeichnisintegration."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/24/2015" 
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Vergleich von Tools für die Verzeichnisintegration
@@ -88,4 +88,4 @@ Zulassen der Anwendung verschiedener Dienstvorlagen auf Attributflüsse |● | �
 Zulassen der Entfernung von Attributen aus dem Attributfluss von AD nach Azure AD | ● | ● | |  
 Zulassen einer erweiterten Anpassung des Attributflusses | ● | ● | | ●  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

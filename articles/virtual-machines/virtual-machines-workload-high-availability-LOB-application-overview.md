@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Bereitstellen einer hochverfügbaren Branchenanwendung in Azure" 
-	description="Sie können eine webbasierte, hochverfügbare Branchenanwendung mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in fünf Phasen in Azure bereitstellen." 
+	pageTitle="Bereitstellen einer Branchenanwendung | Microsoft Azure"
+	description="Sie stellen eine webbasierte, hochverfügbare Branchenanwendung mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in fünf Phasen in Azure bereit."
 	documentationCenter=""
-	services="virtual-machines" 
-	authors="JoeDavies-MSFT" 
-	manager="timlt" 
+	services="virtual-machines"
+	authors="JoeDavies-MSFT"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/11/2015"
 	ms.author="josephd"/>
 
 # Bereitstellen einer hochverfügbaren Branchenanwendung in Azure
@@ -66,4 +66,4 @@ Zum Starten der Konfiguration für diesen Workload wechseln Sie zu [Phase 1: Kon
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

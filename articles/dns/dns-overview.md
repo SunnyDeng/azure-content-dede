@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Übersicht über Azure DNS | Microsoft Azure" 
-   description="Übersicht über die Azure DNS-Hostingdienste in Microsoft Azure und Hosten der Domäne in Microsoft Azure" 
-   services="dns" 
-   documentationCenter="na" 
-   authors="joaoma" 
-   manager="adinah" 
-   editor=""/>
+   pageTitle="Übersicht über Azure DNS | Microsoft Azure"
+	description="Übersicht über die Azure DNS-Hostingdienste in Microsoft Azure und Hosten der Domäne in Microsoft Azure"
+	services="dns"
+	documentationCenter="na"
+	authors="joaoma"
+	manager="adinah"
+	editor=""/>
 
 <tags
    ms.service="dns"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
-   ms.date="05/01/2015"
-   ms.author="joaoma"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="08/12/2015"
+	ms.author="joaoma"/>
 
 # Azure DNS – Übersicht
 
@@ -31,7 +31,7 @@ Der Dienst basiert auf dem Azure-Ressourcen-Manager (ARM). Die Domänen und Eint
 
 [Erste Schritte beim Erstellen von DNS-Zonen](dns-getstarted-create-dnszone.md)
 
-[Automatisieren von Azure-Vorgängen mit dem .NET SDK](../dns-sdk)
+[Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)
 
 [REST-API-Referenz für Azure DNS](https://msdn.microsoft.com/library/azure/mt163862.aspx)
 
@@ -40,4 +40,4 @@ Der Dienst basiert auf dem Azure-Ressourcen-Manager (ARM). Die Domänen und Eint
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

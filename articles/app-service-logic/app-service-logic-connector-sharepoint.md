@@ -1,30 +1,31 @@
 <properties
-   pageTitle="Erstellen eines SharePoint-Connectors zur Verwendung in der Logik-App"
-   description="Erstellen eines SharePoint-Connectors; Verwenden des SharePoint-Connectors in der Logik-App"
-   services="app-service\logic"
-   documentationCenter=".net,nodejs,java"
-   authors="anuragdalmia"
-   manager="dwrede"
-   editor=""/>
+   pageTitle="Verwendung des SharePoint-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des SharePoint-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="anuragdalmia"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration"
-   ms.date="08/19/2015"
-   ms.author="sameerch"/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="08/23/2015"
+	ms.author="sameerch"/>
 
-# Verwenden des SharePoint-Connectors in Logik-Apps
-
-Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Mit dem Microsoft SharePoint-Connector können Sie eine Verbindung mit dem Microsoft SharePoint-Server oder SharePoint Online herstellen und Dokumente und Listenelemente verwalten. Sie können verschiedene Aktionen ausführen, beispielsweise das Erstellen, Aktualisieren, Abrufen und Löschen für Dokumente und Listenelemente. Bei Verwendung eines lokalen SharePoint-Servers geben Sie Service Bus-Verbindungszeichenfolgen als Teil der Connectorkonfiguration ein installieren den lokalen Listener-Agent für die Verbindung mit dem Server.
+# Erste Schritte mit dem SharePoint-Connector und das Hinzufügen zur Logik-App
+Stellen Sie eine Verbindung mit dem SharePoint-Server oder mit SharePoint Online her, um Dokumente und Listenelemente zu verwalten. Sie können verschiedene Aktionen ausführen, beispielsweise das Erstellen, Aktualisieren, Abrufen und Löschen für Dokumente und Listenelemente. Bei Verwendung eines lokalen SharePoint-Servers geben Sie Service Bus-Verbindungszeichenfolgen als Teil der Connectorkonfiguration ein installieren den lokalen Listener-Agent für die Verbindung mit dem Server.
 
 Die Katalog-App für den SharePoint Online-Connector und den SharePoint Server-Connector bietet Trigger und Aktionen als Mechanismen für die Interaktion mit SharePoint.
 
+Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Sie können den SharePoint-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
+
 ## Erstellen Sie einen SharePoint Online-Connector
 
-Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
+Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketplace erstellt werden. So erstellen Sie einen Connector aus dem Marketplace:
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
 2. Wählen Sie **API-Apps** aus und suchen Sie nach "SharePoint Online-Connector".
@@ -89,11 +90,11 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SharePoint-Connector a
 <br/>
 ![][5]
 
-7. Wenn der SharePoint-Connector als Trigger konfiguriert ist, werden die Trigger angezeigt. Andernfalls wird die Liste der Aktionen angezeigt, und Sie können die entsprechenden Vorgänge auswählen, die Sie ausführen möchten: ![][6]
+7. Wenn der SharePoint-Connector als Trigger konfiguriert ist, werden die Trigger angezeigt. Andernfalls wird die Liste der Aktionen angezeigt, und Sie können die entsprechenden Vorgänge auswählen, die Sie ausführen möchten:  
 <br/>
 ![][6]
 <br/>
-**Für Dokumentbibliothek konfigurierte relative URL**![][7]
+**Für Dokumentbibliothek konfigurierte relative URL**
 <br/>
 ![][7]
 <br/>
@@ -137,7 +138,7 @@ Dieser Trigger wird ausgelöst, wenn der Liste "Aufgaben" ein neues Element hinz
 
 Name | Erforderlich | Beschreibung
 --- | --- | ---
-Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern von Elementen in der Liste ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle neuen Elemente zu verarbeiten.
+Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern von Elementen in der Liste ein. Geben Sie z. B. "Genehmigte Aufträge" ein. Lassen Sie dieses Feld leer, um alle neuen Elemente zu verarbeiten. 
 Archivspeicherort | Nein | Geben Sie eine gültige Ordner-URL relativ zur SharePoint-Website ein, in der die verarbeiteten Listenelemente archiviert werden.
 CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filtern von Dokumenten ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
 
@@ -177,7 +178,7 @@ Dieser Trigger wird ausgelöst, wenn der Liste "Aufgaben" ein neues Element hinz
 
 Name | Erforderlich | Beschreibung
 --- | --- | ---
-Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern von Elementen in der Liste ein. Beispiel: "Genehmigte Aufträge". Lassen Sie dieses Feld leer, um alle neuen Elemente zu verarbeiten.
+Ansichtsname | Nein | Geben Sie eine gültige Ansicht zum Filtern von Elementen in der Liste ein. Beispiel: "Genehmigte Aufträge". Lassen Sie dieses Feld leer, um alle neuen Elemente zu verarbeiten. 
 Archivspeicherort | Nein | Geben Sie eine gültige Ordner-URL relativ zur SharePoint-Website ein, in der die verarbeiteten Listenelemente archiviert werden.
 CAML-Abfrage | Nein, erweitert | Geben Sie eine gültige CAML-Abfrage zum Filtern der Listenelemente ein. Geben Sie z. B. Folgendes ein: `<Where><Geq><FieldRef Name='ID'/><Value Type='Number'>10</Value></Geq></Where>`
 
@@ -242,7 +243,7 @@ Param2* | Dies ist einer der Parameter eines Dokuments in der Dokumentbibliothek
 
 **Hinweis:** Alle Parameter der Dokumentbibliothek werden dynamisch aufgefüllt. Sie befinden sich im erweiterten Abschnitt.
 
- 
+ 
 
 ### 3. Löschen aus freigegebenen Dokumenten
 
@@ -486,4 +487,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [6]: ./media/app-service-logic-connector-sharepoint/image_5.png
 [7]: ./media/app-service-logic-connector-sharepoint/image_6.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

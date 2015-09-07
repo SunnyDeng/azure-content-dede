@@ -1,20 +1,20 @@
 <properties
    pageTitle="Konfigurieren zustandsbehafteter Reliable Services"
-   description="Erfahren Sie mehr über das Konfigurieren zustandsbehafteter Reliable Services in Service Fabric."
-   services="Service-Fabric"
-   documentationCenter=".net"
-   authors="sumukhs"
-   manager="vipulm"
-   editor=""/>
+	description="Erfahren Sie mehr über das Konfigurieren zustandsbehafteter Reliable Services in Service Fabric."
+	services="Service-Fabric"
+	documentationCenter=".net"
+	authors="sumukhs"
+	manager="anuragg"
+	editor=""/>
 
 <tags
    ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="04/24/2015"
-   ms.author="sumukhs"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/26/2015"
+	ms.author="sumukhs"/>
 
 # Konfigurieren zustandsbehafteter Reliable Services
 Die Standardkonfiguration für zustandsbehaftete Reliable Services kann geändert werden. Bearbeiten Sie zu diesem Zweck für jeden Dienst in der Anwendung die Datei "settings.xml", die im Stammverzeichnis des Visual Studio-Pakets im Ordner "Config" generiert wurde.
@@ -91,4 +91,4 @@ Die Einstellung "MaxRecordSizeInKB" definiert die maximale Größe eines Datensa
 Die Einstellungen "SharedLogId" und "SharedLogPath" werden immer zusammen verwendet. Sie ermöglichen einem Dienst, ein separates freigegebenes Protokoll aus dem freigegebenen Standardprotokoll für den Knoten zu verwenden. Zur Optimierung der Effizienz sollten so viele Dienste wie möglich dasselbe freigegebene Protokoll angeben. Freigegebene Protokolldateien sollten auf Datenträgern gespeichert werden, die ausschließlich für die freigegebene Protokolldatei verwendet werden. Dies reduziert Konflikte durch die Bewegungen des Lesekopfs. Eine Änderung sollte nur in seltenen Fällen erforderlich sein.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

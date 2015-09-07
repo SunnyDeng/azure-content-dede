@@ -6,13 +6,13 @@
 	authors="HeidiSteen"
 	manager="mblythe"
 	editor=""
-    tags="azure-portal"/>
+	tags="azure-portal"/>
 
 <tags
 	ms.service="search"
 	ms.devlang="NA"
 	ms.workload="search"
-	ms.topic="article" 
+	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.date="08/19/2015"
 	ms.author="heidist"/>
@@ -50,34 +50,35 @@ Link|Beschreibung
 Exemplarische Vorgehensweise|Beschreibung
 -----------|-----------
 [How to use Azure Search with D3.js to Build Interactive Data Visualizations](https://azure.microsoft.com/blog/2015/07/14/how-to-use-azure-search-with-d3-js-to-build-interactive-data-visualizations/)|Blogbeitrag und Beispielcode, der veranschaulicht, wie visuelle Suchfunktionen zu Ihrer benutzerdefinierten Anwendung hinzugefügt werden.
-[Erste Schritte mit Azure Search in .NET](search-get-started-dotnet.md)|Lernprogramm zum Arbeiten mit Azure Search in verwaltetem Code.
-[Erste Schritte mit Azure Search in NodeJS](search-get-started-nodejs.md)|Lernprogramm zum Arbeiten mit Azure Search in NodeJS.
+[Erste Schritte mit Azure Search in .NET](search-get-started-dotnet.md)|Erfahren Sie, wie Sie mit Azure Search in verwaltetem Code arbeiten.
+[Erste Schritte mit Azure Search in NodeJS](search-get-started-nodejs.md)|Erfahren Sie, wie Sie mit Azure Search in NodeJS arbeiten.
 [Erste Schritte mit Azure Search in Java](search-get-started-java.md)|Lernprogramm für Java-Programmierer, die mit Eclipse und Apache Tomcat-Server eine Beispielanwendung erstellen und ausführen, die Azure Search verwendet.
 [Azure Search Scenarios and Capabilities](http://azure.microsoft.com/blog/2014/08/28/azure-search-scenarios-and-capabilities/)|Blogbeitrag zu den wichtigsten, durch die aktuellen Funktionen ermöglichten Szenarien.
-[Verwenden von Azure Search aus einer .NET-Anwendung](search-howto-dotnet-sdk.md)|Konfigurieren und Ausführen einer Beispielwebanwendung für Visual Studio, die in Azure Search integriert ist.
+[Verwenden von Azure Search aus einer .NET-Anwendung](search-howto-dotnet-sdk.md)|Konfigurieren Sie eine Beispielwebanwendung für Visual Studio, die in Azure Search integriert ist, und führen Sie diese aus.
 [How to Add Suggestions to your Search Applications](http://azure.microsoft.com/blog/2015/01/20/azure-search-how-to-add-suggestions-auto-complete-to-your-search-applications/)|Hier erfahren Sie, wie Sie Vorschläge implementieren. Dies wird häufig auch als automatisches Vervollständigen bezeichnet. Diese Demo führt Sie durch eine Reihe von Themen, z. B. das Erstellen einer MVC4-Anwendung, die Azure Search-Vorschläge nutzt, das Verwenden einer "typeahead.js"-Bibliothek für Twitter zum Erstellen einer effektiven JavaScript-Komponente für automatische Vorschläge sowie das Verwenden von Fuzzyvorschlägen, mit deren Hilfe auch dann Vorschläge angezeigt werden, wenn der Benutzer das Wort falsch geschrieben hat.
 [TechNet Virtual Lab: Building a Microsoft Azure Search Application](http://go.microsoft.com/?linkid=9874663)|Virtuelle Übungseinheit, die eine Entwicklungsumgebung, Tools, Dokumentation und Daten bereitstellt. Zur Durchführung der Übung benötigen Sie ein Azure-Konto, entweder ein Testabonnement oder Ihr persönliches Azure-Abonnement.
 [Erstellen einer geografischen Suchanwendung mit Azure Search](search-create-geospatial.md)|Verwenden von Bing-Karten und Koordinaten zur Unterstützung geografischer Suchvorgänge.
 [Synchronize SQL Server Data with Azure Search](http://azure.microsoft.com/blog/2014/11/10/how-to-sync-sql-server-data-with-azure-search/)|Blogbeitrag mit Erläuterungen zum Laden von Daten aus relationalen SQL Server-Datenbanken in einen Azure Search-Index.
 [Lernprogramm zu Bewertungsprofilen](search-get-started-scoring-profiles.md)|Testen von Bewertungsprofilen mit einer Konsolenanwendung.
-[Lernprogramm zur Azure Search Management-REST-API](search-get-started-management-api.md)|Verwenden der Management-REST-API zum Bereitstellen und Konfigurieren des Diensts.
+[Lernprogramm zur Azure Search Management-REST-API](search-get-started-management-api.md)|So verwenden Sie die Management-REST-API, um den Dienst bereitzustellen und Administrator- oder Abfrage-API-Schlüssel zu verwalten.
 
 ##Codebeispiele
 
 [****https://github.com/AzureSearch**](https://github.com/AzureSearch) ist ein GitHub-Repository für Azure Search, das Codebeispiele enthält, die vom Azure Search-Entwicklungsteam erstellt wurden. Sie können das Repository durchsuchen, um den Inhalt zu sehen, oder auf die folgenden Links klicken, um direkt zu spezifischen Beispielen zu wechseln.
 
-- [**JavaIndexerDemo**](https://github.com/AzureSearch/AzureSearchJavaIndexerDemo) auf GitHub.
-- [**NodeJSIndexerDemo**](https://github.com/AzureSearch/AzureSearchNodeJSIndexerDemo) auf GitHub.
-- [**.NET-2015-02-28-Sample**](https://github.com/AzureSearch/.NET-2015-02-28-Sample) auf GitHub.
-- [**AzureSearch-Microsoft Virtual Academy Training Materials**](https://github.com/MicrosoftLearning/AzureSearch-MVA) auf GitHub.
+- [**JavaIndexerDemo**](https://github.com/AzureSearch/AzureSearchJavaIndexerDemo)
+- [**NodeJSIndexerDemo**](https://github.com/AzureSearch/AzureSearchNodeJSIndexerDemo)
+- [**. NET-2015-02-28-Sample**](https://github.com/AzureSearch/.NET-2015-02-28-Sample) ist eine ASP.NET MVC 5-Anwendung, die die .NET-Clientbibliothek für Suchvorgänge verwendet.
+
+Ein separates GitHub-Repository wird für [**AzureSearch-Microsoft Virtual Academy Training Materials**](https://github.com/MicrosoftLearning/AzureSearch-MVA) verwendet. Es enthält einige Beispiele, die im siebenteiligen Kurs verwendet werden.
 
 Auf CodePlex finden Sie mehrere Beispiele, die während der öffentlichen Vorschauphase veröffentlicht wurden und auch in der aktuellen Version noch relevant sind.
 
-- [**Management REST API Demo**](https://azuresearchmgmtapi.codeplex.com/) auf CodePlex.
-- [**AdventureWorks Demo**](https://azuresearchadventureworksdemo.codeplex.com/) auf CodePlex.
-- [**Suggestions Demo**](https://azsearchsuggestions.codeplex.com/SourceControl/latest) auf CodePlex.
-- [**GeoSearch Sample**](https://azuresearchgeospatial.codeplex.com/) auf CodePlex.
-- [**SQL Server to Azure Search Sync Sample**](http://sqlserver2azuresearch.codeplex.com/) auf CodePlex.
-- [**Scoring Profiles Demo**](https://azuresearchscoringprofiles.codeplex.com/) auf CodePlex.
+- [**Management REST-API Demo**](https://azuresearchmgmtapi.codeplex.com/) ist eine Windows-Konsolenanwendung, die die Verwaltungs-REST-API verwendet.
+- [**AdventureWorks Demo**](https://azuresearchadventureworksdemo.codeplex.com/) ist eine ASP.NET MVC 4-Anwendung.
+- [**Suggestions Demo**](https://azsearchsuggestions.codeplex.com/SourceControl/latest) ist eine ASP.NET MVC 4-Anwendung.
+- [**GeoSearch Sample**](https://azuresearchgeospatial.codeplex.com/) ist eine ASP.NET MVC 4-Anwendung.
+- [**SQL Server to Azure Search Sync Sample**](http://sqlserver2azuresearch.codeplex.com/) ist eine Windows-Konsolenanwendung, die ein SQL Server-Rowset aus einer lokalen eingebetteten Datenbank lädt.
+- [**Scoring Profiles Demo**](https://azuresearchscoringprofiles.codeplex.com/) ist eine Windows-Konsolenanwendung, die Bewertungsprofile für die Optimierung der Suchergebnisse definiert, ausführt und aktualisiert.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

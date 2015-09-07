@@ -114,6 +114,8 @@ Nun können Sie per **SSH** auf Ihren virtuellen Azure-Computer zugreifen und mi
 	ops@ubuntuvm:~$
 
 
+> [AZURE.NOTE]Sie können auch einen vollqualifizierten Domänennamen (FQDN) für den virtuellen Computer im Portal konfigurieren. Weitere Informationen zu FQDN finden Sie [hier](virtual-machines-create-fqdn-on-portal.md).
+
 ## Nächste Schritte
 
 Weitere Informationen zu Linux auf Azure erhalten Sie unter:
@@ -126,4 +128,4 @@ Weitere Informationen zu Linux auf Azure erhalten Sie unter:
 
 - [Die Docker-Erweiterung für virtuelle Linux-Computer auf Azure](virtual-machines-docker-vm-extension.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,23 +1,23 @@
 <properties 
-	pageTitle="Verwenden des Hybrid Connection Managers für Azure App Service." 
-	description="Installieren und konfigurieren Sie den Hybrid Connection Manager in Azure App Service; Microservices-Architektur" 
-	services="app-service\logic" 
+	pageTitle="Verwenden des Hybrid Connection Managers | Microsoft Azure App Service"
+	description="Installieren und Konfigurieren des Hybrid Connection Managers und Herstellen von Verbindungen mit lokalen Connectors in Azure App Service"
+	services="app-service\logic"
 	documentationCenter=".net,nodejs,java"
-	authors="MandiOhlinger" 
-	manager="dwrede" 
+	authors="MandiOhlinger"
+	manager="dwrede"
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="app-service-logic" 
-	ms.workload="integration" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.service="app-service-logic"
+	ms.workload="integration"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/23/2015"
 	ms.author="mandia"/>
 
-# Verwenden des Hybrid Connection Managers in Azure App Service.
-Einige Connectors können mit einem lokalen System eine Verbindung herstellen, wie SharePoint, SQL Server, SAP usw.. Für die Verwendung eines lokalen Systems, greift Azure App Service auf den Hybrid Connection Manager zurück.
+# Verbinden eines lokalen Connectors in Azure App Service mithilfe des Hybrid Connection Managers
+Für die Verwendung eines lokalen Systems, greift Azure App Service auf den Hybrid Connection Manager zurück. Einige Connectors können mit einem lokalen System eine Verbindung herstellen, wie SharePoint, SQL Server, SAP usw..
 
 Der Hybrid Connection Manager (HCM) ist ein ClickOnce-Installationsprogramm, das auf einem IIS-Server in Ihrem Netzwerk hinter der Firewall installiert ist. Mithilfe eines Azure Service Bus Relays authentifiziert der HCM das lokale System mit dem Connector in Azure.
 
@@ -133,4 +133,4 @@ Wenn Ihre benutzerdefinierte API einen TCP- oder HTTP-Port verwendet, können Si
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

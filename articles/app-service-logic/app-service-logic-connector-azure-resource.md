@@ -1,23 +1,23 @@
 <properties
-   pageTitle="Azure-Ressourcen-Connector"
-   description="Azure-Ressourcen-Connector"
-   services="app-service\logic"
-   documentationCenter=".net,nodejs,java"
-   authors="stepsic-microsoft-com"
-   manager="dwrede"
-   editor=""/>
+   pageTitle="Verwendung des Azure-Ressourcen-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des Azure-Ressourcen-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="stepsic-microsoft-com"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration"
-   ms.date="08/19/2015"
-   ms.author="stepsic"/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="08/23/2015"
+	ms.author="stepsic"/>
 
-# Azure-Ressourcen-Connector
-Der Azure-Ressourcen-Connector bietet Ihnen eine einfache Möglichkeit zum Verwalten von Azure-Ressourcen in Ihrer Logik-App.
+# Erste Schritte mit dem Azure-Ressourcen-Connector und das Hinzufügen zur Logik-App 
+Der Azure-Ressourcen-Connector bietet eine einfache Möglichkeit zum Verwalten von Azure-Ressourcen in Ihrer Logik-App.
 
 ## Erstellen des Azure-Ressourcen-Connectors
 Um die API-App für den Azure-Ressourcen-Connector verwenden zu können, müssen Sie zuerst eine Instanz der App erstellen. Dies kann entweder inline beim Erstellen einer Logik-App oder durch Auswählen der API-App für den Azure-Ressourcen-Manager-Connector aus dem Azure Marketplace erfolgen.
@@ -96,4 +96,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Creating a Logic App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

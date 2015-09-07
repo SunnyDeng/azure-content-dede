@@ -72,7 +72,7 @@ Mögliche Lösungen für dieses Problem:
 
 Ursache: Der virtuelle Computer, mit dem Sie eine Verbindung herstellen möchten, kann die Sicherheitsautorität nicht finden, die im Benutzernamensteil Ihrer Anmeldeinformationen angegeben ist.
 
-Wenn Ihr Benutzername das Format *SecurityAuthority*\*UserName* (Beispiel: "CORP\\User1") aufweist, ist *SecurityAuthority* entweder der Computername des virtuellen Computers (für die lokale Sicherheitsautorität) oder ein Active Directory-Domänenname.
+Wenn Ihr Benutzername das Format *SecurityAuthority**UserName* (Beispiel: "CORP\\User1") aufweist, ist *SecurityAuthority* entweder der Computername des virtuellen Computers (für die lokale Sicherheitsautorität) oder ein Active Directory-Domänenname.
 
 Mögliche Lösungen für dieses Problem:
 
@@ -86,8 +86,8 @@ Ursache: Der Kontoname und das Kennwort, die Sie übermittelt haben, können von
 
 Ein Windows-basierter Computer kann die Anmeldeinformationen eines lokalen Kontos oder eines domänenbasierten Kontos überprüfen.
 
-- Verwenden Sie für lokale Konten die Syntax *Computername*\*Benutzername* (Beispiel: "SQL1\\Admin4798").
-- Verwenden Sie für Domänenkonten die Syntax *Domänenname*\*Benutzername* (Beispiel: "CONTOSO\\johndoe").
+- Verwenden Sie für lokale Konten die Syntax *Computername**Benutzername* (Beispiel: "SQL1\\Admin4798").
+- Verwenden Sie für Domänenkonten die Syntax *Domänenname**Benutzername* (Beispiel: "CONTOSO\\johndoe").
 
 Bei Computern, die Sie in einer neuen Active Directory-Gesamtstruktur zu Domänencontrollern heraufstufen, wird das lokale Administratorkonto, mit dem Sie beim Heraufstufen angemeldet sind, in der neuen Gesamtstruktur und Domäne in ein entsprechendes Konto mit demselben Kennwort konvertiert. Das vorherige lokale Administratorkonto wird gelöscht. Wenn Sie sich beispielsweise mit dem lokalen Administratorkonto DC1\\DCAdmin angemeldet und den virtuellen Computer als Domänencontroller in einer neuen Gesamtstruktur für die Domäne "corp.contoso.com" heraufgestuft haben, dann wird das lokale Konto DC1\\DCAdmin gelöscht und ein neues Domänenkonto (CORP\\DCAdmin) mit demselben Kennwort erstellt.
 
@@ -182,7 +182,7 @@ Ist kein anderer virtueller Computer in demselben Clouddienst oder virtuellen Ne
 Wenn Sie mit einem virtuellen Computer in demselben Clouddienst oder virtuellen Netzwerk eine Remotedesktopverbindung herstellen können, überprüfen Sie Folgendes:
 
 - Die Endpunktkonfiguration für den Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. Der private TCP-Port des Endpunkts muss mit dem TCP-Port übereinstimmen, der vom Dienst der Remotedesktopdienste auf dem virtuellen Computer überwacht wird. In der Standardeinstellung ist dies Port 3389.
-- Die ACL für den Endpunkt des Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACSs können verhindern, dass die Remotedesktop-Datenverkehr zum Endpunkt gelangt. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (ACL)?](https://msdn.microsoft.com/library/azure/dn376541.aspx).
+- Die ACL für den Endpunkt des Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACSs können verhindern, dass die Remotedesktop-Datenverkehr zum Endpunkt gelangt. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (ACL)?](../virtual-network/virtual-networks-acl.md).
 
 Um den Endpunkt als Problemquelle auszuschließen, entfernen Sie den aktuellen Endpunkt, und erstellen Sie einen neuen Endpunkt. Wählen Sie einen zufälligen Port im Bereich von 49152 bis 65535 für die externe Portnummer aus. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
 
@@ -287,4 +287,4 @@ Informationen zur Nutzung von Azure-Support finden Sie unter der [Microsoft Azur
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -1,23 +1,21 @@
 <properties
    pageTitle="API-Implementierungsleitfaden | Microsoft Azure"
-   description="Anleitung zur Implementierung einer API"
-   services=""
-   documentationCenter="na"
-   authors="dragon119"
-   manager="masimms"
-   editor=""
-   tags=""/>
-
+	description="Anleitung zur Implementierung einer API"
+	services=""
+	documentationCenter="na"
+	authors="dragon119"
+	manager="masimms"
+	editor=""
+	tags=""/>
 
 <tags
    ms.service="best-practice"
-   ms.devlang="rest-api"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="05/13/2015"
-   ms.author="masashin"/>
-
+	ms.devlang="rest-api"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="05/13/2015"
+	ms.author="masashin"/>
 
 # API-Implementierungsleitfaden
 
@@ -1063,7 +1061,7 @@ Azure stellt den [API Management-Dienst](http://azure.microsoft.com/documentatio
 
 Ausführliche Informationen dazu, wie Sie diese Aufgaben durchführen, finden Sie auf der Microsoft-Website unter [API Management](http://azure.microsoft.com/services/api-management/). Der Azure API Management-Dienst stellt auch seine eigene REST-Schnittstelle bereit. Hiermit können Sie eine benutzerdefinierte Schnittstelle zum Vereinfachen des Prozesses erstellen, der zum Konfigurieren einer Web-API verwendet wird. Weitere Informationen finden Sie auf der Microsoft-Website unter [Azure API-Verwaltung für REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn776326.aspx).
 
-> [AZURE.TIP]Azure stellt den Azure Traffic Manager bereit, mit dem Sie das Failover und den Lastenausgleich implementieren und die Latenz über mehrere Instanzen einer Website hinweg, die an unterschiedlichen geografischen Orten gehostet wird, reduzieren können. Sie können den Azure Traffic Manager zusammen mit dem API Management-Dienst verwenden. Der API Management-Dienst kann Anforderungen über den Azure Traffic Manager an die Instanzen einer Website weiterleiten. Weitere Informationen finden Sie auf der Microsoft-Website unter [Traffic Manager-Lastenausgleichsmethoden](https://msdn.microsoft.com/library/azure/dn339010.aspx).
+> [AZURE.TIP]Azure stellt den Azure Traffic Manager bereit, mit dem Sie das Failover und den Lastenausgleich implementieren und die Latenz über mehrere Instanzen einer Website hinweg, die an unterschiedlichen geografischen Orten gehostet wird, reduzieren können. Sie können den Azure Traffic Manager zusammen mit dem API Management-Dienst verwenden. Der API Management-Dienst kann Anforderungen über den Azure Traffic Manager an die Instanzen einer Website weiterleiten. Weitere Informationen finden Sie auf der Microsoft-Website unter [Traffic Manager-Lastenausgleichsmethoden](../traffic-manager/traffic-manager-load-balancing-methods.md).
 
 > Wenn Sie benutzerdefinierte DNS-Namen für Ihre Websites verwenden, sollten Sie in dieser Struktur den richtigen CNAME-Eintrag für jede Website konfigurieren, damit jeweils auf den DNS-Namen der Azure Traffic Manager-Website verwiesen wird.
 
@@ -1149,9 +1147,9 @@ Anhand dieser Informationen können Sie bestimmen, ob eine bestimmte Web-API ode
 - Auf der Seite [Azure Notification Hubs – Benachrichtigen von Benutzern](notification-hubs-aspnet-backend-windows-dotnet-notify-users/) der Microsoft-Website wird beschrieben, wie Sie ein Azure Notification Hub zum Übertragen von asynchronen Antworten per Pushvorgang auf Clientanwendungen verwenden können.
 - Auf der Seite [API Management](http://azure.microsoft.com/services/api-management/) der Microsoft-Website wird beschrieben, wie Sie ein Produkt veröffentlichen, das kontrollierten und sicheren Zugriff auf eine Web-API ermöglicht.
 - Auf der Seite [Azure API-Verwaltung für REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn776326.aspx) der Microsoft-Website wird beschrieben, wie Sie die API Management-REST-API zum Erstellen von benutzerdefinierten Verwaltungsanwendungen verwenden.
-- Auf der Seite [Traffic Manager-Lastenausgleichsmethoden](https://msdn.microsoft.com/library/azure/dn339010.aspx) der Microsoft-Website wird zusammengefasst, wie Azure Traffic Manager verwendet werden kann, um für mehrere Instanzen einer Website, auf der eine Web-API gehostet wird, den Lastenausgleich für Anforderungen durchzuführen.
+- Auf der Seite [Traffic Manager-Lastenausgleichsmethoden](../traffic-manager/traffic-manager-load-balancing-methods.md) der Microsoft-Website wird zusammengefasst, wie Azure Traffic Manager verwendet werden kann, um für mehrere Instanzen einer Website, auf der eine Web-API gehostet wird, den Lastenausgleich für Anforderungen durchzuführen.
 - Auf der Seite [Application Insights – Beginnen Sie damit, Integrität und Nutzung Ihrer Anwendung zu überwachen](app-insights-start-monitoring-app-health-usage.md) auf der Microsoft-Website werden ausführliche Informationen zum Installieren und Konfigurieren von Application Insights in einem ASP.NET-Web-API-Projekt bereitgestellt.
 - Auf der Seite [Überprüfen von Code mithilfe von Komponententests](https://msdn.microsoft.com/library/dd264975.aspx) der Microsoft-Website werden ausführliche Informationen zum Erstellen und Verwalten von Komponententests mit Visual Studio bereitgestellt.
 - Auf der Seite [Ausführen von Leistungstests für Ihre App](https://msdn.microsoft.com/library/dn250793.aspx) der Microsoft-Website wird beschrieben, wie Sie Visual Studio Ultimate zum Erstellen eines Projekts zum Testen der Webleistung und Auslastung verwenden.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

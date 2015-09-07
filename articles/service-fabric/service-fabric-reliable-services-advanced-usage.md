@@ -1,28 +1,28 @@
 <properties
-   pageTitle="Erweiterte Verwendung des Reliable Service-Programmiermodells von Service Fabric"
-   description="Erfahren Sie mehr über die erweiterte Verwendung des Reliable Service-Programmiermodells von Service Fabric, das mehr Flexibilität für Ihre Dienste bietet."
-   services="Service-Fabric"
-   documentationCenter=".net"
-   authors="jessebenson"
-   manager="timlt"
-   editor="masnider"/>
+   pageTitle="Erweiterte Verwendung des Reliable Services-Programmiermodells"
+	description="Erfahren Sie mehr über die erweiterte Verwendung des Reliable Service-Programmiermodells von Service Fabric, das mehr Flexibilität für Ihre Dienste bietet."
+	services="Service-Fabric"
+	documentationCenter=".net"
+	authors="jessebenson"
+	manager="timlt"
+	editor="masnider"/>
 
 <tags
    ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="06/09/2015"
-   ms.author="jesseb"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/26/2015"
+	ms.author="jesseb"/>
 
 # Erweiterte Verwendung des Reliable Services-Programmiermodells
 Service Fabric vereinfacht das Schreiben und Verwalten zuverlässiger zustandsloser und zustandsbehafteter Dienste (Reliable Services). In diesem Handbuch wird die erweiterte Verwendung des Reliable Services-Programmiermodells erläutert, mit dem Sie mehr Kontrolle und Flexibilität für Ihre Dienste erlangen. Machen Sie sich vor dem Lesen dieses Handbuchs mit dem [Reliable Services-Programmiermodell](service-fabric-reliable-services-introduction.md) vertraut.
 
 ## Basisklassen für zustandslose Dienste
-Die Basisklasse StatelessService bietet "CreateCommunicationListener()" und "RunAsync()". Dies ist für die meisten zustandslosen Dienste ausreichend. Die Klasse StatelessServiceBase unterliegt StatelessService und stellt zusätzliche Lebenszyklusereignisse für Diensten bereit. Weitere Informationen finden Sie in der Referenzdokumentation für Entwickler zu [StatelessService](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statelessservice.aspx) und [StatelessServiceBase](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statelessservicebase.aspx).
+Die Basisklasse StatelessService bietet "CreateCommunicationListener()" und "RunAsync()". Dies ist für die meisten zustandslosen Dienste ausreichend. Die Klasse StatelessServiceBase unterliegt StatelessService und stellt zusätzliche Lebenszyklusereignisse für Diensten bereit. Verwenden Sie eine Ableitung von „StatelessServiceBase“, falls zusätzliche Kontrolle oder Flexibilität erforderlich ist. Weitere Informationen finden Sie in der Referenzdokumentation für Entwickler zu [StatelessService](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statelessservice.aspx) und [StatelessServiceBase](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statelessservicebase.aspx).
 
-- `void OnInitialize(StatelessServiceInitializiationParameters)` "OnInitialize" ist die erste Methode, die von Service Fabric aufgerufen wird. Es werden Dienstinitialisierungsinformationen wie der Dienstnamen, die Partitions-ID, die Instanz-ID sowie Informationen zum Codepaket bereitgestellt. Hier sollte keine komplexe Verarbeitung erfolgen. Längere Initialisierungen sollten in "OnOpenAsync" erfolgen.
+- `void OnInitialize(StatelessServiceInitializiationParameters)` "OnInitialize" ist die erste Methode, die von Service Fabric aufgerufen wird. Es werden Dienstinitialisierungsinformationen wie der Dienstname, die Partitions-ID, die Instanz-ID sowie Informationen zum Codepaket bereitgestellt. Hier sollte keine komplexe Verarbeitung erfolgen. Längere Initialisierungen sollten in "OnOpenAsync" erfolgen.
 
 - `Task OnOpenAsync(IStatelessServicePartition, CancellationToken)` "OnOpenAsync" wird zur Verwendung der zustandslosen Dienstinstanz aufgerufen. Erweiterte Serviceinitialisierungsaufgaben können zu diesem Zeitpunkt gestartet werden.
 
@@ -31,7 +31,7 @@ Die Basisklasse StatelessService bietet "CreateCommunicationListener()" und "Run
 - `void OnAbort()` "OnAbort" wird aufgerufen, wenn das Herunterfahren der zustandslosen Dienstinstanz erzwungen wird. Diese Methode wird im Allgemeinen verwendet, wenn auf dem Knoten ein dauerhafter Fehler erkannt wird oder Service Fabric den Lebenszyklus der Dienstinstanz aufgrund von internen Fehlern nicht zuverlässig verwalten kann.
 
 ## Basisklassen für zustandsbehaftete Dienste
-Die Basisklasse StatefulService sollte für die meisten zustandsbehafteten Dienste ausreichen. Wie bei zustandslosen Diensten unterliegt die Klasse StatefulServiceBase der Klasse StatefulService und stellt zusätzliche Lebenszyklusereignisse für Dienste bereit. Darüber hinaus können Sie damit einen zuverlässigen benutzerdefinierten Zustandsanbieter bereitstellen und optional Kommunikationslistener auf sekundären Replikaten unterstützen. Weitere Informationen finden Sie in der Referenzdokumentation für Entwickler zu [StatefulService](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statefulservice.aspx) und [StatefulServiceBase](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statefulservicebase.aspx).
+Die Basisklasse StatefulService sollte für die meisten zustandsbehafteten Dienste ausreichen. Wie bei zustandslosen Diensten unterliegt die Klasse StatefulServiceBase der Klasse StatefulService und stellt zusätzliche Lebenszyklusereignisse für Dienste bereit. Darüber hinaus können Sie damit einen zuverlässigen benutzerdefinierten Zustandsanbieter bereitstellen und optional Kommunikationslistener auf sekundären Replikaten unterstützen. Verwenden Sie eine Ableitung von „StatefulServiceBase“, falls zusätzliche Kontrolle oder Flexibilität erforderlich ist. Weitere Informationen finden Sie in der Referenzdokumentation für Entwickler zu [StatefulService](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statefulservice.aspx) und [StatefulServiceBase](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.services.statefulservicebase.aspx).
 
 - `Task OnChangeRoleAsync(ReplicaRole, CancellationToken)` "OnChangeRoleAsync" wird immer dann aufgerufen, wenn der zustandsbehaftete Dienst die Rolle wechselt und z. B. zu einem primären oder sekundären Replikat wird. Primäre Replikate erhalten Schreibstatus (mit Erlaubnis zum Erstellen und Schreiben in den zuverlässigen Auflistungen) und sekundäre Replikate Lesestatus (können nur aus vorhandenen zuverlässigen Auflistungen lesen). Sie können die Hintergrundaufgaben infolge von Rollenänderungen starten oder aktualisieren, z. B. wenn schreibgeschützte Überprüfungen durchgeführt oder Berichte generiert werden oder auf einem sekundären Replikat Data Mining durchgeführt wird.
 
@@ -43,8 +43,8 @@ Die Basisklasse StatefulService sollte für die meisten zustandsbehafteten Diens
 
 StatefulServiceBase bietet außerdem die gleichen vier Lebenszyklusereignisse wie StatelessServiceBase, mit derselben Semantik und identischen Anwendungsfälle:
 
-- `void OnInitialize(StatelessServiceInitializiationParameters)`
-- `Task OnOpenAsync(IStatelessServicePartition, CancellationToken)`
+- `void OnInitialize(StatefulServiceInitializiationParameters)`
+- `Task OnOpenAsync(IStatefulServicePartition, CancellationToken)`
 - `Task OnCloseAsync(CancellationToken)`
 - `void OnAbort()`
 
@@ -53,13 +53,13 @@ Erweiterte Themen im Zusammenhang mit Service Fabric finden Sie in den folgenden
 
 - [Konfigurieren zustandsbehafteter Reliable Services](service-fabric-reliable-services-configuration.md)
 
-- [Einführung in Service Fabric-Integrität](../service-fabric/service-fabric-health-introduction.md)
+- [Einführung in Service Fabric-Integrität](service-fabric-health-introduction.md)
 
-- [Verwenden von Systemintegritätsberichten für die Problembehandlung](../service-fabric/service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
+- [Verwenden von Systemintegritätsberichten für die Problembehandlung](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
 
-- [Platzierungseinschränkungen – Übersicht](../service-fabric/service-fabric-placement-constraint.md)
+- [Platzierungseinschränkungen – Übersicht](service-fabric-placement-constraint.md)
 
-- [Sicherer Replikationsdatenverkehr zustandsbehafteter Dienste in Azure Service Fabric](../service-fabric/service-fabric-replication-security.md)
+- [Sicherer Replikationsdatenverkehr zustandsbehafteter Dienste in Azure Service Fabric](service-fabric-replication-security.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

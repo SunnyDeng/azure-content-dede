@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Problembehandlung und Fragen zu Application Insights" 
-	description="Ist Ihnen irgendetwas in Visual Studio Application Insights unklar oder funktioniert nicht wie erwartet? Versuchen Sie es hier." 
-	services="application-insights" 
-    documentationCenter=".net"
-	authors="alancameronwills" 
+	pageTitle="Problembehandlung und Fragen zu Application Insights"
+	description="Ist Ihnen irgendetwas in Visual Studio Application Insights unklar oder funktioniert nicht wie erwartet? Versuchen Sie es hier."
+	services="application-insights"
+	documentationCenter=".net"
+	authors="alancameronwills"
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/22/2015" 
+	ms.service="application-insights"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="awills"/>
  
 # Problembehandlung und Fragen zu Application Insights für ASP.NET
@@ -97,7 +97,7 @@ Die Details hängen von der Art des Projekts ab. Für eine Webanwendung:
 
  - packages.config
 
-+ \(Nur neue Projekte – wenn Sie [Application Insights zu einem vorhandenen Webprojekt hinzufügen][start], müssen Sie dies manuell ausführen.\) Fügen Sie Codeausschnitte in den Client- und Servercode ein, um diese mit der Application Insights-Ressourcen-ID zu initialisieren. Beispielsweise wird in einer MVC-App Code auf der Masterseite "Views/Shared/\_Layout.cshtml" eingefügt.
++ (Nur neue Projekte – wenn Sie [Application Insights zu einem vorhandenen Webprojekt hinzufügen][start], müssen Sie dies manuell ausführen.) Fügen Sie Codeausschnitte in den Client- und Servercode ein, um diese mit der Application Insights-Ressourcen-ID zu initialisieren. Beispielsweise wird in einer MVC-App Code auf der Masterseite "Views/Shared/\_Layout.cshtml" eingefügt.
 
 ####<a name="NuGetBuild"></a> Ich erhalte eine Fehlermeldung, dass auf meinem Buildserver NuGet-Pakete fehlen, obwohl die Erstellung auf meinen Entwicklungscomputern fehlerfrei funktioniert.
 
@@ -111,7 +111,7 @@ Gehen Sie dazu folgendermaßen vor:
 
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie "Projekt entladen" aus.
 2. Klicken Sie erneut mit der rechten Maustaste auf das Projekt, und wählen Sie *yourProject.csproj* zur Bearbeitung aus. 
-3. Entfernen Sie am Ende der Projektdatei die BCL-Ziele, die wie folgt aussehen: \`\`\` <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+3. Entfernen Sie am Ende der Projektdatei die BCL-Ziele, die wie folgt aussehen: ``` <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
 	  
 	  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
 	  
@@ -119,7 +119,7 @@ Gehen Sie dazu folgendermaßen vor:
 	    
 	    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
 	    
-	</Target> \`\`\`
+	</Target> ```
 4. Speichern Sie die Datei .
 5. Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie *yourProject.csproj* zum erneuten Laden aus.
 
@@ -144,7 +144,7 @@ Informationen hierzu finden Sie in den [Versionshinweisen](app-insights-release-
 
 + Die Daten kommen aus Skripts auf den Webseiten. Wenn Sie Application Insights zu einem vorhandenen Webprojekt hinzugefügt haben, müssen Sie die [Skripts manuell hinzufügen][start].
 + Stellen Sie sicher, dass Internet Explorer Ihre Website nicht im Kompatibilitätsmodus anzeigt.
-+ Verwenden Sie die Debugfunktion Ihres Browsers \(bei einigen Browsern drücken Sie F12 und wählen anschließend "Netzwerk" aus\), um sicherzustellen, dass Daten an dc.services.visualstudio.com gesendet werden.
++ Verwenden Sie die Debugfunktion Ihres Browsers (bei einigen Browsern drücken Sie F12 und wählen anschließend "Netzwerk" aus), um sicherzustellen, dass Daten an dc.services.visualstudio.com gesendet werden.
 
 #### <a name="q08"></a>Kann ich Application Insights verwenden, um einen Intranetwebserver zu überwachen?
 
@@ -181,7 +181,7 @@ Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf `Application
 
 #### <a name="q06"></a>Zeigt die Übersicht auf dem Startbildschirm der Microsoft Azure-Vorschau den Status meiner Anwendung?
 
-Nein! Sie zeigt den Status des Azure-Diensts an. Um die Ergebnisse des Webtests anzuzeigen, wählen Sie "Durchsuchen \> Application Insights \> \(Ihre Anwendung\)" aus. Sehen Sie sich dann die Webtest-Ergebnisse an.
+Nein! Sie zeigt den Status des Azure-Diensts an. Um die Ergebnisse des Webtests anzuzeigen, wählen Sie "Durchsuchen > Application Insights > (Ihre Anwendung)" aus. Sehen Sie sich dann die Webtest-Ergebnisse an.
 
 
 #### <a name="q07"></a>Wenn ich Application Insights zu meiner Anwendung hinzufüge und das Application Insights-Portal öffne, sehe ich eine ganz andere Ansicht als in den Screenshots.
@@ -217,9 +217,9 @@ Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
 <tr><td>Telemetriedaten zu Abhängigkeiten</td><td><a href="../app-insights-monitor-performance-live-website-now/">Installieren des AI-Statusmonitors auf dem Server</a></td><td>Diagnostizieren von Problemen mit Datenbanken oder anderen externen Komponenten</td></tr>
 <tr><td>Abrufen von Stapelüberwachungen aus Ausnahmen</td><td><a href="../app-insights-search-diagnostic-logs/#exceptions">Einfügen von TrackException-Aufrufen in Ihren Code</a> (einige werden jedoch automatisch gemeldet)</td><td>Erkennen und Diagnostizieren von Ausnahmen</td></tr>
 <tr><td>Durchsuchen von Ablaufprotokollen</td><td><a href="../app-insights-search-diagnostic-logs/">Hinzufügen eines Protokollierungsadapters</a></td><td>Diagnostizieren von Ausnahmen und Leistungsproblemen</td></tr>
-<tr><td>Grundlegende Clientnutzung: Seitenansichten, Sitzungen, ...</td><td><a href="../app-insights-start-monitoring-app-health-usage/#webclient">JavaScript-Initialisierer in Webseiten</a></td><td>Nutzungsanalyse</td></tr>
-<tr><td>Benutzerdefinierte Metriken auf Clients</td><td><a href="../app-insights-web-track-usage-custom-events-metrics/">Nachverfolgen von Aufrufen in Webseiten</a></td><td>Verbessern der Benutzerfreundlichkeit</td></tr>
-<tr><td>Benutzerdefinierte Metriken auf Servern</td><td><a href="../app-insights-web-track-usage-custom-events-metrics/">Nachverfolgen von Aufrufe im Servercode</a></td><td>Business Intelligence</td></tr>
+<tr><td>Grundlegende Clientnutzung: Seitenansichten, Sitzungen, ...</td><td><a href="../app-insights-javascript/">JavaScript-Initialisierer in Webseiten</a></td><td>Nutzungsanalyse</td></tr>
+<tr><td>Benutzerdefinierte Metriken auf Clients</td><td><a href="../app-insights-api-custom-events-metrics/">Nachverfolgen von Aufrufen in Webseiten</a></td><td>Verbessern der Benutzerfreundlichkeit</td></tr>
+<tr><td>Benutzerdefinierte Metriken auf Servern</td><td><a href="../app-insights-api-custom-events-metrics/">Nachverfolgen von Aufrufe im Servercode</a></td><td>Business Intelligence</td></tr>
 </table>
 
 Wenn Ihr Webdienst auf einem virtuellen Azure-Computer ausgeführt wird, erhalten Sie dort auch eine [Diagnose][azurediagnostic].
@@ -239,4 +239,4 @@ Sie können ein [PowerShell-Skript schreiben](app-insights-powershell-script-cre
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden von Diagnosen (.NET) | Microsoft Azure" 
-	description="Hier erfahren Sie, wie Sie Diagnosedaten in Azure für Debugging, Leistungsmessungen, Überwachung, Datenverkehrsanalysen und mehr einsetzen." 
-	services="cloud-services" 
-	documentationCenter=".net" 
-	authors="rboucher" 
-	manager="jwhit" 
+	pageTitle="Verwenden von Diagnosen (.NET) | Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie Diagnosedaten in Azure für Debugging, Leistungsmessungen, Überwachung, Datenverkehrsanalysen und mehr einsetzen."
+	services="cloud-services"
+	documentationCenter=".net"
+	authors="rboucher"
+	manager="jwhit"
 	editor=""/>
 
 <tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="04/27/2015" 
+	ms.service="cloud-services"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/25/2015"
 	ms.author="robb"/>
 
 
@@ -62,7 +62,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie über ein Azure-Abonnement ve
 2.	Erstellen Sie ein neues **Azure Cloud Service**-Projekt mithilfe der **Cloudvorlage** für .NET Framework 4.5. Geben Sie dem Projekt den Namen "WadExample", und klicken Sie auf "OK".
 3.	Wählen Sie **Workerrolle** aus, und klicken Sie auf "OK". Das Projekt wird erstellt. 
 4.	Doppelklicken Sie im Projektmappen-Explorer auf die Eigenschaftendatei **WorkerRole1**.
-5.	Deaktivieren Sie auf der Registerkarte **Konfiguration** die Option **Diagnose aktivieren**, um Diagnose 1.0 \(Azure SDK 2.4 und niedriger\) zu deaktivieren.
+5.	Deaktivieren Sie auf der Registerkarte **Konfiguration** die Option **Diagnose aktivieren**, um Diagnose 1.0 (Azure SDK 2.4 und niedriger) zu deaktivieren.
 6.	Erstellen Sie die Projektmappe, um zu überprüfen, ob Fehler vorliegen.
 
 ### Schritt 2: Instrumentieren des Codes
@@ -151,7 +151,7 @@ Ersetzen Sie den Inhalt von "WorkerRole.cs" durch den folgenden Code. Die von de
 1.	Stellen Sie Ihre Workerrolle von Visual Studio aus in Azure bereit. Wählen Sie dazu das Projekt **WadExample** aus, und klicken Sie anschließend im Menü **Build** auf **Veröffentlichen**.
 2.	Wählen Sie Ihr Abonnement aus.
 3.	Wählen Sie im Dialogfeld **Microsoft Azure-Veröffentlichungseinstellungen** die Option **Neu erstellen...** aus.
-4.	Geben Sie im Dialogfeld **Clouddienst und Speicherkonto erstellen** im Feld **Name** einen Namen ein \(z. B. "WadExample"\), und wählen Sie eine Region oder Affinitätsgruppe aus.
+4.	Geben Sie im Dialogfeld **Clouddienst und Speicherkonto erstellen** im Feld **Name** einen Namen ein (z. B. "WadExample"), und wählen Sie eine Region oder Affinitätsgruppe aus.
 5.	Legen Sie **Umgebung** auf **Staging** fest.
 6.	Ändern Sie unter **Einstellungen** weitere Einstellungen nach Bedarf, und klicken Sie dann auf **Veröffentlichen**.
 7.	Überprüfen Sie nach Abschluss der Bereitstellung im Azure-Portal, ob sich Ihr Cloud-Dienst im Status **Wird ausgeführt** befindet.
@@ -161,7 +161,7 @@ Ersetzen Sie den Inhalt von "WorkerRole.cs" durch den folgenden Code. Die von de
 2.	
 		(Get-AzureServiceAvailableExtension -ExtensionName 'PaaSDiagnostics' -ProviderNamespace 'Microsoft.Azure.Diagnostics').PublicConfigurationSchema | Out-File -Encoding utf8 -FilePath 'WadConfig.xsd' 
 
-2.	Fügen Sie Ihrem Projekt **WorkerRole1** eine XML-Datei hinzu. Klicken Sie dazu mit der rechten Maustaste auf das Projekt **WorkerRole1**, und wählen Sie **Hinzufügen** -\> **Neues Element…** -\> **Visual C\#-Elemente** -\> **Daten** -\> **XML-Datei** aus. Nennen Sie die Datei "WadExample.xml".
+2.	Fügen Sie Ihrem Projekt **WorkerRole1** eine XML-Datei hinzu. Klicken Sie dazu mit der rechten Maustaste auf das Projekt **WorkerRole1**, und wählen Sie **Hinzufügen** -> **Neues Element…** -> **Visual C#-Elemente** -> **Daten** -> **XML-Datei** aus. Nennen Sie die Datei "WadExample.xml".
 
 	![CloudServices\_diag\_add\_xml](./media/cloud-services-dotnet-diagnostics/AddXmlFile.png)
 
@@ -174,7 +174,7 @@ Ersetzen Sie den Inhalt von "WorkerRole.cs" durch den folgenden Code. Die von de
   			<WadCfg>
     			<DiagnosticMonitorConfiguration overallQuotaInMB="25000">
       			<PerformanceCounters scheduledTransferPeriod="PT1M">
-        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Processor Time" sampleRate="PT1M" unit="percent" />
+        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)% Processor Time" sampleRate="PT1M" unit="percent" />
         			<PerformanceCounterConfiguration counterSpecifier="\Memory\Committed Bytes" sampleRate="PT1M" unit="bytes"/>
       				</PerformanceCounters>
       				<EtwProviders>
@@ -195,11 +195,11 @@ Ersetzen Sie den Inhalt von "WorkerRole.cs" durch den folgenden Code. Die von de
 Für die Verwaltung von Diagnose in einer Web- oder Workerrolle werden folgende PowerShell-Cmdlets verwendet: Set-AzureServiceDiagnosticsExtension, Get-AzureServiceDiagnosticsExtension und Remove-AzureServiceDiagnosticsExtension.
 
 1.	Öffnen Sie Azure PowerShell.
-2.	Führen Sie das Skript zum Installieren der Diagnose in Ihrer Workerrolle aus \(ersetzen Sie *StorageAccountKey* durch den Speicherkontoschlüssel für Ihr Speicherkonto "wadexample"\):
+2.	Führen Sie das Skript zum Installieren der Diagnose in Ihrer Workerrolle aus (ersetzen Sie *StorageAccountKey* durch den Speicherkontoschlüssel für Ihr Speicherkonto "wadexample"):
 
 		$storage_name = "wadexample"
 		$key = "<StorageAccountKey>"
-		$config_path="c:\users\<user>\documents\visual studio 2013\Projects\WadExample\WorkerRole1\WadExample.xml"
+		$config_path="c:\users<user>\documents\visual studio 2013\Projects\WadExample\WorkerRole1\WadExample.xml"
 		$service_name="wadexample"
 		$storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key 
 		Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name -Slot Staging -Role WorkerRole1
@@ -226,7 +226,7 @@ In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement 
 
 ### Schritt 2: Erstellen der Anwendung
 1.	Starten Sie auf dem Entwicklungscomputer Visual Studio 2013.
-2.	Erstellen Sie eine neue Visual C\#-Konsolenanwendung für .NET Framework 4.5. Geben Sie dem Projekt den Namen "WadExampleVM". ![CloudServices\_diag\_new\_project](./media/cloud-services-dotnet-diagnostics/NewProject.png)
+2.	Erstellen Sie eine neue Visual C#-Konsolenanwendung für .NET Framework 4.5. Geben Sie dem Projekt den Namen "WadExampleVM". ![CloudServices\_diag\_new\_project](./media/cloud-services-dotnet-diagnostics/NewProject.png)
 3.	Ersetzen Sie den Inhalt von "Program.cs" durch den folgenden Code. Die **SampleEventSourceWriter**-Klasse implementiert vier Protokollierungsmethoden: **SendEnums**, **MessageMethod**, **SetOther** und **HighFreq**. Der erste Parameter für die WriteEvent-Methode definiert die ID für das betreffende Ereignis. Die Run-Methode implementiert eine Endlosschleife, die jede der in der **SampleEventSourceWriter**-Klasse implementierten Protokollierungsmethoden alle 10 Sekunden aufruft.
 
 		using System;
@@ -300,7 +300,7 @@ In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement 
 
 ### Schritt 3. Bereitstellen der Anwendung
 1.	Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **WadExampleVM**, und wählen Sie **Ordner in Datei-Explorer öffnen** aus.
-2.	Navigieren Sie zum Ordner *bin\\Debug*, und kopieren Sie alle Dateien \(WadExampleVM.*\).
+2.	Navigieren Sie zum Ordner *bin\\Debug*, und kopieren Sie alle Dateien (WadExampleVM.*).
 3.	Klicken Sie im Server-Explorer mit der rechten Maustaste auf den virtuellen Computer, und wählen Sie **Per Remotedesktop verbinden** aus.
 4.	Sobald die Verbindung mit dem virtuellen Computer hergestellt ist, erstellen Sie einen Ordner mit dem Namen "WadExampleVM", und fügen Sie Ihre Anwendungsdateien in diesen Ordner ein.
 5.	Starten Sie die Anwendung WadExampleVM.exe. Es sollte ein leeres Konsolenfenster angezeigt werden.
@@ -310,7 +310,7 @@ In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement 
 
 		(Get-AzureServiceAvailableExtension -ExtensionName 'PaaSDiagnostics' -ProviderNamespace 'Microsoft.Azure.Diagnostics').PublicConfigurationSchema | Out-File -Encoding utf8 -FilePath 'WadConfig.xsd' 
 
-2.	Öffnen Sie eine neue XML-Datei in Visual Studio. Diese kann sich entweder in einem bereits geöffneten Projekt oder in einer Visual Studio-Instanz ohne geöffnete Projekte befinden. Wählen Sie in Visual Studio **Hinzufügen** -\> **Neues Element…** -\> **Visual C\#-Elemente** -\> **Daten** -\> **XML-Datei** aus. Nennen Sie die Datei "WadExample.xml".
+2.	Öffnen Sie eine neue XML-Datei in Visual Studio. Diese kann sich entweder in einem bereits geöffneten Projekt oder in einer Visual Studio-Instanz ohne geöffnete Projekte befinden. Wählen Sie in Visual Studio **Hinzufügen** -> **Neues Element…** -> **Visual C#-Elemente** -> **Daten** -> **XML-Datei** aus. Nennen Sie die Datei "WadExample.xml".
 3.	Ordnen Sie die Datei "WadConfig.xsd" der Konfigurationsdatei zu. Stellen Sie sicher, dass das Editorfenster mit "WadExample.xml" das aktive Fenster ist. Drücken Sie die Taste **F4**, um das Fenster **Eigenschaften** zu öffnen. Klicken Sie im Fenster **Eigenschaften** auf die Eigenschaft **Schemas**. Klicken Sie in der Eigenschaft **Schemas** auf **…**. Klicken Sie auf die Schaltfläche **Hinzufügen…**, navigieren Sie zum Speicherort der XSD-Datei, und wählen Sie die Datei "WadConfig.xsd" aus. Klicken Sie auf **OK**.
 4.	Ersetzen Sie den Inhalt der Konfigurationsdatei "WadExample.xml" durch den folgenden XML-Code, und speichern Sie die Datei. Diese Konfigurationsdatei definiert ein Paar zu erfassender Leistungsindikatoren: einen für die CPU-Auslastung und einen für die Speicherauslastung. Außerdem werden in der Konfiguration vier Ereignisse definiert, die den Methoden in der SampleEventSourceWriter-Klasse entsprechen.
 
@@ -320,7 +320,7 @@ In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement 
   			<WadCfg>
     			<DiagnosticMonitorConfiguration overallQuotaInMB="25000">
       			<PerformanceCounters scheduledTransferPeriod="PT1M">
-        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Processor Time" sampleRate="PT1M" unit="percent" />
+        			<PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)% Processor Time" sampleRate="PT1M" unit="percent" />
         			<PerformanceCounterConfiguration counterSpecifier="\Memory\Committed Bytes" sampleRate="PT1M" unit="bytes"/>
       				</PerformanceCounters>
       				<EtwProviders>
@@ -341,11 +341,11 @@ In dieser Anleitung wird davon ausgegangen, dass Sie über ein Azure-Abonnement 
 Für die Verwaltung von Diagnose auf einem virtuellen Computer werden folgende PowerShell-Cmdlets verwendet: Set-AzureVMDiagnosticsExtension, Get-AzureVMDiagnosticsExtension und Remove-AzureVMDiagnosticsExtension.
 
 1.	Öffnen Sie auf dem Entwicklungscomputer Azure PowerShell.
-2.	Führen Sie das Skript für die Remoteinstallation der Diagnose auf Ihrem virtuellen Computer aus \(ersetzen Sie *StorageAccountKey* durch den Speicherkontoschlüssel für Ihr Speicherkonto "wadexamplevm"\):
+2.	Führen Sie das Skript für die Remoteinstallation der Diagnose auf Ihrem virtuellen Computer aus (ersetzen Sie *StorageAccountKey* durch den Speicherkontoschlüssel für Ihr Speicherkonto "wadexamplevm"):
 
 		$storage_name = "wadexamplevm"
 		$key = "<StorageAccountKey>"
-		$config_path="c:\users\<user>\documents\visual studio 2013\Projects\WadExampleVM\WadExampleVM\WadExample.xml"
+		$config_path="c:\users<user>\documents\visual studio 2013\Projects\WadExampleVM\WadExampleVM\WadExample.xml"
 		$service_name="wadexamplevm"
 		$vm_name="WadExample"
 		$storageContext = New-AzureStorageContext -StorageAccountName $storage_name -StorageAccountKey $key 
@@ -366,31 +366,31 @@ Die Diagnosekonfigurationsdatei definiert Werte, die verwendet werden, um beim S
 ### Die Azure-Diagnose wird nicht gestartet.
 Diagnose besteht aus zwei Komponenten: einem Gast-Agent-Plug-in und Monitoring Agent. Die Protokolldateien für das Gast-Agent-Plug-In befinden sich in folgender Datei:
 
-*%Systemlaufwerk%\\WindowsAzure\\Logs\\Plugins\\Microsoft.Azure.Diagnostics.PaaSDiagnostics\*\\CommandExecution.log
+*%Systemlaufwerk%\\WindowsAzure\\Logs\\Plugins\\Microsoft.Azure.Diagnostics.PaaSDiagnostics*\\CommandExecution.log
 
 Die folgenden Fehlercodes werden von dem Plug-In zurückgegeben:
 
 Exitcode|Beschreibung
 ---|---
 0|Erfolgreich.
-\-1|Allgemeiner Fehler.
-\-2|Die RCF-Datei konnte nicht geladen werden.<p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Startprogramm für das Gast-Agent-Plug-In auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.
-\-3|Die Diagnosekonfigurationsdatei kann nicht geladen werden.<p><p>Lösung: Der Grund hierfür ist, dass eine Konfigurationsdatei die Schemaüberprüfung nicht bestanden hat. Gelöst werden kann der Fehler durch Bereitstellung einer Konfigurationsdatei, die dem Schema entspricht.
-\-4|Es wird bereits eine andere Instanz des Überwachungs-Agents der Diagnose unter Verwendung des lokalen Ressourcenverzeichnisses ausgeführt.<p><p>Lösung: Geben Sie für **LocalResourceDirectory** einen anderen Wert an.
-\-6|Das Startprogramm für das Gast-Agent-Plug-In hat versucht, die Diagnose mit einer ungültigen Befehlszeile zu starten.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Startprogramm für das Gast-Agent-Plug-In auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.
-\-10|Das Diagnose-Plug-In wurde mit einem Ausnahmefehler beendet.
-\-11|Der Gast-Agent konnte den für den Start und die Überwachung des Überwachungs-Agents zuständigen Prozess nicht erstellen.<p><p>Lösung: Überprüfen Sie, ob genügend Systemressourcen zum Starten neuer Prozesse verfügbar sind.<p>
-\-101|Ungültige Argumente beim Aufrufen des Diagnose-Plug-Ins.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Startprogramm für das Gast-Agent-Plug-In auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.
-\-102|Der Plug-In-Prozess kann sich nicht selbst initialisieren.<p><p>Lösung: Überprüfen Sie, ob genügend Systemressourcen zum Starten neuer Prozesse verfügbar sind.
-\-103|Der Plug-In-Prozess kann sich nicht selbst initialisieren. Insbesondere kann das Protokollierungsobjekt nicht erstellt werden.<p><p>Lösung: Überprüfen Sie, ob genügend Systemressourcen zum Starten neuer Prozesse verfügbar sind.
-\-104|Die vom Gast-Agent bereitgestellte RCF-Datei konnte nicht geladen werden.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Startprogramm für das Gast-Agent-Plug-In auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.
-\-105|Das Diagnose-Plug-In kann die Diagnosekonfigurationsdatei nicht öffnen.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Diagnose-Plug-In auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.
-\-106|Die Diagnosekonfigurationsdatei kann nicht gelesen werden.<p><p>Lösung: Der Grund hierfür ist, dass eine Konfigurationsdatei die Schemaüberprüfung nicht bestanden hat. Gelöst werden kann der Fehler daher durch Bereitstellung einer Konfigurationsdatei, die dem Schema entspricht. Die XML-Datei, die an die Diagnose-Erweiterung übergeben wird, finden Sie im Ordner *%SystemDrive%\\WindowsAzure\\Config* auf dem virtuellen Computer. Öffnen Sie die betreffende XML-Datei, und suchen Sie nach **Microsoft.Azure.Diagnostics** und dann nach dem Feld **xmlCfg**. Die Daten sind base64-codiert und müssen daher zunächst [decodiert](http://www.bing.com/search?q=base64+decoder) werden, um die von der Diagnose geladenen XML-Daten anzuzeigen.<p>
-\-107|Das an den Überwachungs-Agent übergebene Ressourcenverzeichnis ist ungültig.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn der Überwachungs-Agent auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.</p>
-\-108 |Die Diagnosekonfigurationsdatei kann nicht in die Konfigurationsdatei des Überwachungs-Agents konvertiert werden.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Diagnose-Plug-In manuell mit einer ungültigen Konfigurationsdatei aufgerufen wird.
-\-110|Allgemeiner Fehler in der Diagnosekonfiguration.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Diagnose-Plug-In manuell mit einer ungültigen Konfigurationsdatei aufgerufen wird.
-\-111|Der Überwachungs-Agent kann nicht gestartet werden.<p><p>Lösung: Überprüfen Sie, ob genügend Systemressourcen verfügbar sind.
-\-112|Allgemeiner Fehler
+-1|Allgemeiner Fehler.
+-2|Die RCF-Datei konnte nicht geladen werden.<p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Startprogramm für das Gast-Agent-Plug-In auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.
+-3|Die Diagnosekonfigurationsdatei kann nicht geladen werden.<p><p>Lösung: Der Grund hierfür ist, dass eine Konfigurationsdatei die Schemaüberprüfung nicht bestanden hat. Gelöst werden kann der Fehler durch Bereitstellung einer Konfigurationsdatei, die dem Schema entspricht.
+-4|Es wird bereits eine andere Instanz des Überwachungs-Agents der Diagnose unter Verwendung des lokalen Ressourcenverzeichnisses ausgeführt.<p><p>Lösung: Geben Sie für **LocalResourceDirectory** einen anderen Wert an.
+-6|Das Startprogramm für das Gast-Agent-Plug-In hat versucht, die Diagnose mit einer ungültigen Befehlszeile zu starten.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Startprogramm für das Gast-Agent-Plug-In auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.
+-10|Das Diagnose-Plug-In wurde mit einem Ausnahmefehler beendet.
+-11|Der Gast-Agent konnte den für den Start und die Überwachung des Überwachungs-Agents zuständigen Prozess nicht erstellen.<p><p>Lösung: Überprüfen Sie, ob genügend Systemressourcen zum Starten neuer Prozesse verfügbar sind.<p>
+-101|Ungültige Argumente beim Aufrufen des Diagnose-Plug-Ins.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Startprogramm für das Gast-Agent-Plug-In auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.
+-102|Der Plug-In-Prozess kann sich nicht selbst initialisieren.<p><p>Lösung: Überprüfen Sie, ob genügend Systemressourcen zum Starten neuer Prozesse verfügbar sind.
+-103|Der Plug-In-Prozess kann sich nicht selbst initialisieren. Insbesondere kann das Protokollierungsobjekt nicht erstellt werden.<p><p>Lösung: Überprüfen Sie, ob genügend Systemressourcen zum Starten neuer Prozesse verfügbar sind.
+-104|Die vom Gast-Agent bereitgestellte RCF-Datei konnte nicht geladen werden.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Startprogramm für das Gast-Agent-Plug-In auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.
+-105|Das Diagnose-Plug-In kann die Diagnosekonfigurationsdatei nicht öffnen.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Diagnose-Plug-In auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.
+-106|Die Diagnosekonfigurationsdatei kann nicht gelesen werden.<p><p>Lösung: Der Grund hierfür ist, dass eine Konfigurationsdatei die Schemaüberprüfung nicht bestanden hat. Gelöst werden kann der Fehler daher durch Bereitstellung einer Konfigurationsdatei, die dem Schema entspricht. Die XML-Datei, die an die Diagnose-Erweiterung übergeben wird, finden Sie im Ordner *%SystemDrive%\\WindowsAzure\\Config* auf dem virtuellen Computer. Öffnen Sie die betreffende XML-Datei, und suchen Sie nach **Microsoft.Azure.Diagnostics** und dann nach dem Feld **xmlCfg**. Die Daten sind base64-codiert und müssen daher zunächst [decodiert](http://www.bing.com/search?q=base64+decoder) werden, um die von der Diagnose geladenen XML-Daten anzuzeigen.<p>
+-107|Das an den Überwachungs-Agent übergebene Ressourcenverzeichnis ist ungültig.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn der Überwachungs-Agent auf dem virtuellen Computer auf falsche Weise manuell aufgerufen wird.</p>
+-108 |Die Diagnosekonfigurationsdatei kann nicht in die Konfigurationsdatei des Überwachungs-Agents konvertiert werden.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Diagnose-Plug-In manuell mit einer ungültigen Konfigurationsdatei aufgerufen wird.
+-110|Allgemeiner Fehler in der Diagnosekonfiguration.<p><p>Dies ist ein interner Fehler, der nur auftreten sollte, wenn das Diagnose-Plug-In manuell mit einer ungültigen Konfigurationsdatei aufgerufen wird.
+-111|Der Überwachungs-Agent kann nicht gestartet werden.<p><p>Lösung: Überprüfen Sie, ob genügend Systemressourcen verfügbar sind.
+-112|Allgemeiner Fehler
 
 
 ### Diagnosedaten werden nicht im Speicher protokolliert
@@ -412,7 +412,7 @@ Im Folgenden finden Sie einige häufig gestellte Fragen und die Antworten darauf
 
 **F.** Wie führe ich ein Upgrade meiner Visual Studio-Projektmappe von der Azure-Diagnose 1.0 auf die Azure-Diagnose 1.1 durch?
 
-**A.** Das Upgrade der Visual Studio-Projektmappe von Diagnose 1.0 auf Diagnose 1.1 \(oder höher\) muss manuell durchgeführt werden: - Deaktivieren Sie Diagnose in Ihrer Visual Studio-Projektmappe, um zu verhindern, dass Diagnose 1.0 mit Ihrer Rolle bereitgestellt wird. - Wenn in Ihrem Code der Ablaufverfolgungslistener verwendet wird, müssen Sie den Code so ändern, dass .NET EventSource verwendet wird. In Diagnose 1.1 und höher wird der Ablaufverfolgungslistener nicht unterstützt. - Ändern Sie den Bereitstellungsprozess, um die Erweiterung "Diagnose 1.1" zu installieren.
+**A.** Das Upgrade der Visual Studio-Projektmappe von Diagnose 1.0 auf Diagnose 1.1 (oder höher) muss manuell durchgeführt werden: - Deaktivieren Sie Diagnose in Ihrer Visual Studio-Projektmappe, um zu verhindern, dass Diagnose 1.0 mit Ihrer Rolle bereitgestellt wird. - Wenn in Ihrem Code der Ablaufverfolgungslistener verwendet wird, müssen Sie den Code so ändern, dass .NET EventSource verwendet wird. In Diagnose 1.1 und höher wird der Ablaufverfolgungslistener nicht unterstützt. - Ändern Sie den Bereitstellungsprozess, um die Erweiterung "Diagnose 1.1" zu installieren.
 
 **F.** Wenn ich die Erweiterung "Diagnose 1.1" bereits in meiner Rolle oder auf meinem virtuellen Computer installiert habe, wie führe ich dann das Upgrade auf Diagnose 1.2 oder 1.3 durch?
 
@@ -446,9 +446,9 @@ Damit werden vier Tabellen generiert:
 
 Ereignis|Tabellenname
 ---|---
-provider=”prov1” &lt;Event id=”1” /&gt;|WADEvent+MD5\(“prov1”\)+”1”
+provider=”prov1” &lt;Event id=”1” /&gt;|WADEvent+MD5(“prov1”)+”1”
 provider=”prov1” &lt;Event id=”2” eventDestination=”dest1” /&gt;|WADdest1
-provider=”prov1” &lt;DefaultEvents /&gt;|WADDefault+MD5\(“prov1”\)
+provider=”prov1” &lt;DefaultEvents /&gt;|WADDefault+MD5(“prov1”)
 provider=”prov2” &lt;DefaultEvents eventDestination=”dest2” /&gt;|WADdest2
 
 ## Vergleich von Azure-Diagnose-Versionen
@@ -468,7 +468,7 @@ PowerShell-Skripts – Skripts zum Verwalten der Installation und Konfiguration
 
 Datenquelle|Standardsammlung|Format|Beschreibung|Diagnose 1.0|Diagnose 1.1/1.2|Diagnose 1.3
 ---|---|---|---|---|---|---
-Protokolle von System.Diagnostics.Trace|Ja|Tabelle|Protokollieren Ablaufverfolgungsmeldungen, die vom Code an den Ablaufverfolgungslistener gesendet werden \(ein Ablaufverfolgungslistener muss der Datei "web.config" oder "app.config" hinzugefügt werden\). Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in die WADLogsTable-Speichertabelle übertragen.|Ja|Nein \(EventSource verwenden\)|Ja
+Protokolle von System.Diagnostics.Trace|Ja|Tabelle|Protokollieren Ablaufverfolgungsmeldungen, die vom Code an den Ablaufverfolgungslistener gesendet werden (ein Ablaufverfolgungslistener muss der Datei "web.config" oder "app.config" hinzugefügt werden). Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in die WADLogsTable-Speichertabelle übertragen.|Ja|Nein (EventSource verwenden)|Ja
 IIS-Protokolle|Ja|Blob|Protokollieren Informationen zu IIS-Websites. Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in den von Ihnen angegebenen Container übertragen.|Ja|Ja|Ja
 Infrastrukturprotokolle der Azure-Diagnose|Ja|Tabelle|Protokolliert Informationen zur Diagnoseinfrastruktur und zu den Modulen RemoteAccess und RemoteForwarder. Protokolldaten werden in dem mit "scheduledTransferPeriodtransfer" angegebenen Intervall in die WADDiagnosticInfrastructureLogsTable-Speichertabelle übertragen.|Ja|Ja|Ja
 Protokolle zu IIS-Anforderungsfehlern|Nein|Blob|Protokollieren Informationen zu fehlgeschlagenen IIS-Website- oder IIS-Anwendungsanforderungen. Zur Aktivierung müssen Sie auch die Nachverfolgungsoptionen unter "system.WebServer" in "Web.config" festlegen. Protokolldaten werden in dem mit "scheduledTransferPeriod" angegebenen Übertragungsintervall in den von Ihnen angegebenen Container übertragen.|Ja|Ja|Ja
@@ -512,4 +512,4 @@ Manifestbasiertes ETW|Nein|Tabelle|Von einem beliebigen Prozess generierte ETW-E
 [Remove-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/library/dn495168.aspx
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

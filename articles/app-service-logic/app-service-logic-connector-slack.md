@@ -1,10 +1,10 @@
 <properties 
-	pageTitle="Verwenden des Slack-Connectors in Azure App Service"
-	description="Erste Schritte mit dem Slack-Connector"
-	authors="anuragdalmia" 
-	manager="dwrede" 
-	editor="" 
-	services="app-service\logic" 
+	pageTitle="Verwendung des Slack-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des Slack-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	authors="anuragdalmia"
+	manager="dwrede"
+	editor=""
+	services="app-service\logic"
 	documentationCenter=""/>
 
 <tags
@@ -13,11 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/19/2015"
+	ms.date="08/23/2015"
 	ms.author="andalmia"/>
 
-# Slack-Connector
-
+# Erste Schritte mit dem Slack-Connector und das Hinzufügen zur Logik-App
 Sie können eine Verbindung mit Slack-Kanälen herstellen und Nachrichten an Ihr Team senden. Connectors können in Logik-Apps als Teil eines "Workflows" zum Erledigen verschiedener Aufgaben verwendet werden. Wenn Sie den Slack-Connector im Workflow verwenden, können Sie eine Vielzahl von Szenarien mithilfe anderer Connectors umsetzen. Beispielsweise können Sie den [Facebook-Connector](app-service-logic-connector-facebook.md) in Ihrem Workflow zum Übermitteln einer Nachricht an Ihren Slack-Kanal verwenden.
 
 ## Trigger und Aktionen
@@ -32,7 +31,7 @@ Trigger | Aktionen
 Keine | Nachricht veröffentlichen
 
 ## Erstellen des Slack-Connectors
-Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
+Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketplace erstellt werden. So erstellen Sie einen Connector aus dem Marketplace:
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
 2. Wählen Sie **API-Apps** aus, und suchen Sie nach "Slack-Connector".
@@ -47,7 +46,7 @@ Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem
 
 Nachdem der Slack-Connector erstellt wurde, können Sie ihn als Aktion Ihrer Logik-App hinzufügen:
 
-1.	Öffnen Sie in Ihrer Logik-App **Trigger und Aktionen**. [Erstellen einer neuen Logik-App](app-service-logic-create-a-logic-app.md)
+1.	Öffnen Sie in der Logik-App **Trigger und Aktionen**. [Erstellen einer neuen Logik-App](app-service-logic-create-a-logic-app.md)
 
 2.	Der Slack-Connector wird im Katalog auf der rechten Seite aufgeführt:
 <br/>
@@ -76,18 +75,17 @@ Eigenschaft | Beschreibung
 --- | ---
 Text | Geben Sie den Text der zu veröffentlichenden Nachricht ein.
 Kanalname | Geben Sie den Slack-Kanal ein, über den diese Nachricht veröffentlicht wird. Wenn der Kanal nicht eingegeben wird, wird die Nachricht für "#general" veröffentlicht.
-Erweiterte Eigenschaften | **Bot-Benutzername**: Name des Bots, der für diese Nachricht verwendet wird. Die Nachricht wird als "Bot" veröffentlicht, wenn diese Angabe nicht erfolgt.<p><p>**Symbol-URL** – URL zu einem Bild, das als Symbol für diese Nachricht verwendet werden soll. <p><p>**Emoticon** – Emoticon, das als Symbol für diese Nachricht verwendet werden soll. Diese Eigenschaft überschreibt die "Symbol-URL"-Eigenschaft.
+Erweiterte Eigenschaften | **Bot-Benutzername**: Name des Bots, der für diese Nachricht verwendet wird. Die Nachricht wird als "Bot" veröffentlicht, wenn diese Angabe nicht erfolgt.<p><p>**Symbol-URL** – URL zu einem Bild, das als Symbol für diese Nachricht verwendet werden soll.<p><p>**Emoticon** – Emoticon, das als Symbol für diese Nachricht verwendet werden soll. Diese Eigenschaft überschreibt die "Symbol-URL"-Eigenschaft.
 
 
-Für den Slack-Connector stehen REST-APIs zur Verfügung, sodass Sie den Connector außerhalb einer Logik-App verwenden können. Öffnen Sie den Slack-Connector, und wählen Sie **-API-Definition** aus:
-
+Für den Slack-Connector stehen REST-APIs zur Verfügung, sodass Sie den Connector außerhalb einer Logik-App verwenden können. Öffnen Sie den Slack-Connector, und wählen Sie **API-Definition** aus: 
 ![][9]
 
 
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Sie finden die Swagger-REST-API-Referenz unter [Connectors and API Apps Reference](http://go.microsoft.com/fwlink/p/?LinkId=529766) (in englischer Sprache).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -103,4 +101,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [8]: ./media/app-service-logic-connector-slack/img8.PNG
 [9]: ./media/app-service-logic-connector-slack/img9.PNG
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

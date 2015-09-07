@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Erste Schritte mit Azure PowerShell-Batch-Cmdlets"
-   description="Einführung in die Azure PowerShell-Cmdlets zum Verwalten des Azure Batch-Diensts"
-   services="batch"
-   documentationCenter=""
-   authors="dlepow"
-   manager="timlt"
-   editor=""/>
+   pageTitle="Erste Schritte mit Azure PowerShell-Batch-Cmdlets | Microsoft Azure"
+	description="Einführung in die Azure PowerShell-Cmdlets zum Verwalten des Azure Batch-Diensts"
+	services="batch"
+	documentationCenter=""
+	authors="dlepow"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="batch"
-   ms.devlang="NA"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="powershell"
-   ms.workload="big-compute"
-   ms.date="08/07/2015"
-   ms.author="danlep"/>
+	ms.devlang="NA"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="powershell"
+	ms.workload="big-compute"
+	ms.date="08/07/2015"
+	ms.author="danlep"/>
 
 # Erste Schritte mit Azure Batch für PowerShell-Cmdlets
 Dieser Artikel dient als kurze Einführung in die Azure PowerShell-Cmdlets, mit denen Sie Ihre Batch-Konten verwalten und Informationen über Ihre Batch-Aufträge und -Aufgaben sowie weitere Details abrufen können.
@@ -39,6 +39,12 @@ Starten Sie Azure PowerShell entsprechend dem Standardverfahren, und [stellen Si
 
     ```
     Switch-AzureMode -Name AzureResourceManager
+    ```
+
+* **Registrieren beim Batch-Anbieternamespace (einmalig)** – Bevor Sie Batch-Konten verwalten können, müssen Sie sich beim Batch-Anbieternamespace registrieren. Dieser Vorgang muss nur einmal pro Abonnement ausgeführt werden.
+
+    ```
+    Register-AzureProvider -ProviderNamespace Microsoft.Batch
     ```
 
 ## Verwalten von Batch-Konten und Schlüsseln
@@ -123,7 +129,7 @@ Diese Methode ist nicht so flexibel wie die Verwendung von "Where-Object" in ein
 
 ### Verwenden des Id-Parameters
 
-Eine Alternative zu einem OData-Filter ist die Verwendung des **Id**-Parameters. So führen Sie eine Abfrage für einen bestimmten Pool mit der ID "myPool" aus:
+Eine Alternative zu einem OData-Filter stellt die Verwendung des **Id**-Parameters dar. So führen Sie eine Abfrage für einen bestimmten Pool mit der ID "myPool" aus:
 
 ```
 Get-AzureBatchPool -Id "myPool" -BatchContext $context
@@ -156,4 +162,4 @@ Setzen Sie den **MaxCount**-Parameter auf 0 oder eine negative Zahl, um die Ober
 * [Referenz zu Azure-Batch-Cmdlets](https://msdn.microsoft.com/library/azure/mt125957.aspx)
 * [Effiziente Listenabfragen](batch-efficient-list-queries.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

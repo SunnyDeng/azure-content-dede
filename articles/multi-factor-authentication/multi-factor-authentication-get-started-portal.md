@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Bereitstellen des Benutzerportals für den Azure Multi-Factor Authentication-Server" 
-	description="Dies ist die Seite für Azure Multi-Factor Authentication, auf der die ersten Schritte mit Azure MFA und dem Benutzerportal beschrieben werden." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Bereitstellen des Benutzerportals für den Azure Multi-Factor Authentication-Server"
+	description="Dies ist die Seite für Azure Multi-Factor Authentication, auf der die ersten Schritte mit Azure MFA und dem Benutzerportal beschrieben werden."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/14/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Bereitstellen des Benutzerportals für den Azure Multi-Factor Authentication-Server
@@ -189,4 +189,4 @@ Die Selbstregistrierung des Benutzers ist jetzt abgeschlossen, und der Benutzer 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

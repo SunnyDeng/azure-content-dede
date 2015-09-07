@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Einführung in die App Service-Umgebung" 
-	description="Lernen Sie die App Service-Umgebung kennen, die sichere, mit dem VNet verknüpfte, dedizierte Skalierungseinheiten für die Ausführung all Ihrer Apps bietet." 
-	services="app-service\web" 
-	documentationCenter="" 
-	authors="ccompy" 
-	manager="wpickett" 
+	pageTitle="Einführung in die App Service-Umgebung"
+	description="Lernen Sie die App Service-Umgebung kennen, die sichere, mit dem VNet verknüpfte, dedizierte Skalierungseinheiten für die Ausführung all Ihrer Apps bietet."
+	services="app-service\web"
+	documentationCenter=""
+	authors="ccompy"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/31/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/31/2015"
 	ms.author="stefsh"/>
 
 # Einführung in die App Service-Umgebung
@@ -60,7 +60,7 @@ Informationen zur Verwendung einer App Service-Umgebung mit ExpressRoute finden 
 
 <!-- LINKS -->
 [PremiumTier]: http://azure.microsoft.com/pricing/details/app-service/
-[MoreInfoOnVirtualNetworks]: https://msdn.microsoft.com/library/azure/dn133803.aspx
+[MoreInfoOnVirtualNetworks]: https://azure.microsoft.com/documentation/articles/virtual-networks-faq/
 [AppServicePlan]: http://azure.microsoft.com/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
 [Azure preview portal]: http://portal.azure.com
 [HowToCreateAnAppServiceEnvironment]: http://azure.microsoft.com/documentation/articles/app-service-web-how-to-create-an-app-service-environment/
@@ -69,7 +69,7 @@ Informationen zur Verwendung einer App Service-Umgebung mit ExpressRoute finden 
 [MobileApps]: http://azure.microsoft.com/documentation/articles/app-service-mobile-value-prop-preview/
 [APIApps]: http://azure.microsoft.com/documentation/articles/app-service-api-apps-why-best-platform/
 [LogicApps]: http://azure.microsoft.com/documentation/articles/app-service-logic-what-are-logic-apps/
-[NetworkSecurityGroups]: https://msdn.microsoft.com/library/azure/dn848316.aspx
+[NetworkSecurityGroups]: https://azure.microsoft.com/documentation/articles/virtual-networks-nsg/
 [SiteToSite]: https://azure.microsoft.com/documentation/articles/vpn-gateway-site-to-site-create/
 [ExpressRoute]: http://azure.microsoft.com/services/expressroute/
 [HowToConfigureanAppServiceEnvironment]: http://azure.microsoft.com/documentation/articles/app-service-web-configure-an-app-service-environment/
@@ -79,4 +79,4 @@ Informationen zur Verwendung einer App Service-Umgebung mit ExpressRoute finden 
 
 <!-- IMAGES -->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

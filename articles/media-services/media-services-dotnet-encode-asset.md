@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Codieren eines Medienobjekts mit Azure Media Encoder" 
-	description="Erfahren Sie, wie Sie Medieninhalte in Media Services mithilfe des Azure Media Encoder codieren können. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET." 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
+	pageTitle="Codieren eines Medienobjekts mit Azure Media Encoder"
+	description="Erfahren Sie, wie Sie Medieninhalte in Media Services mithilfe des Azure Media Encoder codieren können. Die Codebeispiele sind in C# geschrieben und verwenden das Media Services SDK für .NET."
+	services="media-services"
+	documentationCenter=""
+	authors="Juliako"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="juliako"/>
 
 
@@ -31,7 +31,7 @@ Um digitale Videos über das Internet zu übermitteln, müssen Sie die Medien ko
 
 Die Codierung ist einer der häufigsten Verarbeitungsvorgänge in Media Services. Sie erstellen Codierungsaufträge, um Mediendateien von einer Codierung in eine andere zu konvertieren. Zum Codieren können Sie den in Media Services integrierten Media Encoder verwenden. Außerdem können Sie Codierer von Media Services-Partnern verwenden. Externe Codierer finden Sie im Azure Marketplace. Sie können Details zu Codierungsaufgaben angeben, indem Sie für Ihren Encoder vordefinierte Zeichenfolgen oder vordefinierte Konfigurationsdateien verwenden. Welche Arten von Voreinstellungen verfügbar sind, erfahren Sie unter [Aufgabenvoreinstellungen für Azure Media Services](https://msdn.microsoft.com/library/azure/dn619392.aspx). Wenn Sie einen Encoder eines Drittanbieters verwendet haben, sollten Sie Ihre [Dateien überprüfen](https://msdn.microsoft.com/library/azure/dn750842.aspx).
 
-Es wird empfohlen, Zwischendateien immer in einen MP4-Satz mit adaptiver Bitrate zu codieren und anschließend mithilfe der [dynamischen Paketerstellung](https://msdn.microsoft.com/library/azure/jj889436.aspx) in das gewünschte Format zu konvertieren. Um dynamische Paketerstellung nutzen zu können, ist mindestens eine bedarfsgesteuerte Streamingeinheit für den Streamingendpunkt erforderlich, aus dem die Inhalte bereitgestellt werden sollen. Weitere Informationen finden Sie unter [Skalieren von Media Services](media-services-manage-origins.md#scale_streaming_endpoints).
+Es wird empfohlen, Zwischendateien immer in einen MP4-Satz mit adaptiver Bitrate zu codieren und anschließend mithilfe der [dynamischen Paketerstellung](media-services-dynamic-packaging-overview.md) in das gewünschte Format zu konvertieren. Um dynamische Paketerstellung nutzen zu können, ist mindestens eine bedarfsgesteuerte Streamingeinheit für den Streamingendpunkt erforderlich, aus dem die Inhalte bereitgestellt werden sollen. Weitere Informationen finden Sie unter [Skalieren von Media Services](media-services-manage-origins.md#scale_streaming_endpoints).
 
 Wenn Ihr Ausgabemedienobjekt speicherverschlüsselt ist, müssen Sie die Übermittlungsrichtlinien für Medienobjekte konfigurieren. Weitere Informationen finden Sie unter [Konfigurieren von Übermittlungsrichtlinien für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md).
 
@@ -211,15 +211,10 @@ Durch die folgende **CreateChainedTaskEncodingJob**-Methode wird ein Auftrag mit
     }
 
 
-##Nächste Schritte
+##Siehe auch 
 
-[Azure Marketplace]: https://datamarket.azure.com/
-[Encoder Preset]: http://msdn.microsoft.com/library/dn619392.aspx
-[How to: Get a Media Processor Instance]: http://go.microsoft.com/fwlink/?LinkId=301732
-[How to: Upload an Encrypted Asset]: http://go.microsoft.com/fwlink/?LinkId=301733
-[How to: Deliver an Asset by Download]: http://go.microsoft.com/fwlink/?LinkId=301734
-[How to Check Job Progress]: http://go.microsoft.com/fwlink/?LinkId=301737
-[Task Preset for Azure Media Packager]: http://msdn.microsoft.com/library/windowsazure/hh973635.aspx
+[Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
+
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

@@ -1,23 +1,25 @@
 <properties 
-   pageTitle="Verwenden des AS2-Connectors in Microsoft Azure App Service" 
-   description="Verwenden des AS2-Connectors" 
-   services="app-service\logic" 
-   documentationCenter=".net,nodejs,java" 
-   authors="rajeshramabathiran" 
-   manager="dwrede" 
-   editor=""/>
+   pageTitle="Verwendung des AS2-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des AS2-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="rajeshramabathiran"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="08/19/2015"
-   ms.author="rajram"/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="08/23/2015"
+	ms.author="rajram"/>
 
-# Microsoft AS2-Connector
-Der Microsoft Azure AS2-Connector kann bei der Business-to-Business-Kommunikation Nachrichten über das AS2-Transportprotokoll (Applicability Statement 2) empfangen und senden. Daten werden sicher und zuverlässig über das Internet übertragen. Die Sicherheit wird mithilfe von digitalen Zertifikaten und Verschlüsselung gewährleistet.
+# Erste Schritte mit dem AS2-Connector und das Hinzufügen zur Logik-App
+Mit dem AS2-Connector können Sie bei der Business-to-Business-Kommunikation Nachrichten über das AS2-Transportprotokoll (Applicability Statement 2) empfangen und senden. Daten werden sicher und zuverlässig über das Internet übertragen. Die Sicherheit wird mithilfe von digitalen Zertifikaten und Verschlüsselung gewährleistet.
+
+Sie können den AS2-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Business-to-Business-Workflows in einer Logik-App verarbeiten.
 
 ## Trigger und Aktionen
 Ein Trigger startet eine neue Instanz basierend auf einem bestimmten Ereignis wie dem Eingang einer AS2-Nachricht von einem Partner. Eine Aktion ist das Ergebnis. Nach dem Empfang einer AS2-Nachricht wird die Nachricht beispielsweise mit AS2 gesendet.
@@ -35,7 +37,7 @@ Voraussetzung | Beschreibung
 --- | ---
 TPM-API-App | Bevor Sie einen AS2-Connector erstellen, müssen Sie einen [BizTalk-Handelspartnerverwaltungs-Connector][1] erstellen.<br/><br/>**Hinweis** Sie müssen den Namen Ihrer TPM-API-App kennen. 
 Azure SQL-Datenbank | Speichert B2B-Elemente, einschließlich Partner, Schemas, Zertifikate und Vereinbarungen. Jede der B2B-API-Apps erfordert eine eigene Azure-SQL-Datenbank. <br/><br/>**Hinweis** Kopieren Sie die Verbindungszeichenfolge in diese Datenbank.<br/><br/>[Erstellen einer Azure SQL-Datenbank](../sql-database-get-started.md)
-Azure-Blobspeichercontainer | Speichert Nachrichteneigenschaften, wenn die AS2-Archivierung aktiviert ist. Wenn Sie die AS2-Nachrichtenarchivierung nicht benötigen, ist kein Speichercontainer erforderlich. <br/><br/>**Hinweis** Wenn Sie die Archivierung aktivieren, kopieren Sie die Verbindungszeichenfolge in diesen Blobspeicher.<br/><br/>[Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md).
+Azure-Blobspeichercontainer | Speichert Nachrichteneigenschaften, wenn die AS2-Archivierung aktiviert ist. Wenn Sie die AS2-Nachrichtenarchivierung nicht benötigen, ist kein Speichercontainer erforderlich. <br/><br/>**Hinweis** Wenn Sie die Archivierung aktivieren, kopieren Sie die Verbindungszeichenfolge in diesen Blob-Speicher.<br/><br/>[Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md).
 
 ## Erstellen des AS2-Connectors
 
@@ -97,7 +99,7 @@ Die Aktion gibt bei erfolgreichem Abschluss einen HTTP 200-Antwortcode zurück.
 ## Mehr mit Ihrem Connector machen
 Mehr zu Logik-Apps erfahren Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Sie finden die Swagger-REST-API-Referenz unter [Connectors and API Apps Reference](http://go.microsoft.com/fwlink/p/?LinkId=529766) (in englischer Sprache).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -113,4 +115,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-as2/EncodeAndSendInput.PNG
 [10]: ./media/app-service-logic-connector-as2/EncodeAndSendConfigured.PNG
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

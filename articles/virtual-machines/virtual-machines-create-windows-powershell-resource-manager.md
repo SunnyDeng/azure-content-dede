@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/02/2015"
+	ms.date="08/25/2015"
 	ms.author="davidmu"/>
 
 # Erstellen eines virtuellen Windows-Computers mit dem Azure Resource Manager und PowerShell
@@ -70,7 +70,7 @@ Kopieren Sie nun den folgenden PowerShell-Befehlssatz in einen Texteditor wie No
 	$storageAcc=New-AzureStorageAccount -ResourceGroupName $rgName -Name $stName -Type "Standard_GRS" -Location $locName
 	$singleSubnet=New-AzureVirtualNetworkSubnetConfig -Name singleSubnet -AddressPrefix 10.0.0.0/24
 	$vnet=New-AzurevirtualNetwork -Name TestNet -ResourceGroupName $rgName -Location $locName -AddressPrefix 10.0.0.0/16 -Subnet $singleSubnet
-	$pip = New-AzurePublicIpAddress -Name TestNIC -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
+	$pip = New-AzurePublicIpAddress -Name TestPIP -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
 	$nic = New-AzureNetworkInterface -Name TestNIC -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id
 	$cred = Get-Credential -Message "Type the name and password of the local administrator account."
 	$vm = New-AzureVMConfig -VMName WindowsVM -VMSize "Standard_A1"
@@ -142,4 +142,4 @@ Es erscheint beispielsweise Folgendes:
 
 [Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

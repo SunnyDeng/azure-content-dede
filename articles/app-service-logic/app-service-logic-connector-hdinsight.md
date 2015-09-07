@@ -1,25 +1,26 @@
 <properties
-   pageTitle="HDInsight-Connector"
-   description="Verwenden des HDInsight-Connectors in Azure App Service"
-   services="app-service\logic"
-   documentationCenter=".net,nodejs,java"
-   authors="anuragdalmia"
-   manager="dwrede"
-   editor=""/>
+   pageTitle="Verwendung des HDInsight-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des HDInsight-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="anuragdalmia"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration"
-   ms.date="08/19/2015"
-   ms.author="sameerch"/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="08/23/2015"
+	ms.author="sameerch"/>
 
 
-# Microsoft HDInsight-Connector #
+# Erste Schritte mit dem HDInsight-Connector und das Hinzufügen zur Logik-App
+Mithilfe des HDInsight-Connectors können Sie einen Hadoop-Cluster auf Azure erstellen und verschiedene Hadoop-Aufträge übermitteln, z. B. Hive, Pig, MapReduce und Streaming MapReduce. Der Azure HDInsight-Dienst verwendet Apache Hadoop-Cluster in der Cloud und stellt ein Software-Framework zur Verwaltung, Analyse und Berichterstellung für Big Data bereit. Der Hadoop-Kernspeicher bietet eine zuverlässige Datenspeicherung über das Hadoop Distributed File System (HDFS) und ein einfaches MapReduce-Programmiermodell zur parallelen Verarbeitung und Analyse der Daten, die in diesem verteilten System gespeichert sind. Mit dem HDInsight-Connector können Sie einen Cluster erstellen oder löschen, einen Auftrag übermitteln und warten, bis der Auftrag abgeschlossen ist.
 
-Connectors können in Logik-Apps verwendet werden, um Daten im Rahmen eines Datenflusses abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. Mithilfe des HDInsight-Connectors können Sie einen Hadoop-Cluster auf Azure erstellen und verschiedene Hadoop-Aufträge übermitteln, z. B. Hive, Pig, MapReduce und Streaming MapReduce. Der Azure HDInsight-Dienst verwendet Apache Hadoop-Cluster in der Cloud und stellt ein Software-Framework zur Verwaltung, Analyse und Berichterstellung für große Datenmengen bereit. Hadoop bietet eine zuverlässige Datenspeicherung über das Hadoop Distributed File System (HDFS) und ein einfaches MapReduce-Programmiermodell zur parallelen Verarbeitung und Analyse der Daten, die in diesem verteilten System gespeichert sind. Mit dem HDInsight-Connector können Sie einen Cluster erstellen oder löschen, einen Auftrag übermitteln und warten, bis der Auftrag abgeschlossen ist.
+Connectors können in Logik-Apps verwendet werden, um Daten im Rahmen eines Datenflusses abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. Sie können den HDInsight-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
 ### Grundlegende Aktionen
 
@@ -34,26 +35,26 @@ Connectors können in Logik-Apps verwendet werden, um Daten im Rahmen eines Date
 
 ## Erstellen der HDInsight-Connector-API-App ##
 
-Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem Azure Marketplace. So erstellen Sie einen Connector aus dem Marketplace:
+Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketplace erstellt werden. So erstellen Sie einen Connector aus dem Marketplace:
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
 2. Suchen Sie nach "HDInsight-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
 3. Geben Sie den Namen, die App Service-Plan und andere Eigenschaften ein.
-4. Geben Sie in den Paket-Einstellungen den HDInsight-Cluster-Benutzernamen und das Kennwort ein. Wählen Sie **OK**.
+4. Geben Sie in den Paket-Einstellungen den HDInsight-Cluster-Benutzernamen und das Kennwort ein. Wählen Sie **OK** aus.
 5. Klicken Sie auf **Erstellen**: ![][1]  
 
 ## Zertifikatkonfiguration (optional) ##
 
 > [AZURE.NOTE]Dieser Schritt ist nur erforderlich, wenn Sie Verwaltungsvorgänge in der Logik-App ausführen möchten (Erstellen und Löschen von Clustern).
 
-Suchen Sie nach der gerade erstellten HDInsight-Connector-API-App, und Sie sehen, dass die Komponente "Sicherheit" 0 anzeigt. Dies bedeutet, dass kein Verwaltungszertifikat hochgeladen ist: ![][2]
+Suchen Sie nach der gerade erstellten HDInsight-Connector-API-App, und Sie sehen, dass die Komponente "Sicherheit" den Wert "0" anzeigt. Dies bedeutet, dass kein Verwaltungszertifikat hochgeladen wurde: ![][2]
 
 Führen Sie folgende Schritte aus, um das Verwaltungszertifikat in Ihre API-App hochzuladen:
 
 1. Wählen Sie die Komponente "Sicherheit".
-2. Wählen Sie im Blatt "Sicherheit" **ZERTIFIKAT HOCHLADEN**.
+2. Wählen Sie im Blatt "Sicherheit" **ZERTIFIKAT HOCHLADEN** aus.
 3. Suchen und wählen Sie die Zertifikatdatei im nächsten Blatt aus.
-4. Wählen Sie nach der Auswahl des Zertifikats **OK**.
+4. Wählen Sie nach der Auswahl des Zertifikats **OK** aus.
 
 Sobald das Zertifikat erfolgreich hochgeladen wurde, werden die Zertifikatdetails angezeigt: ![][3]
 
@@ -81,12 +82,12 @@ Der HDInsight-Connector kann in der Logik-App nur als eine Aktion verwendet werd
 
 9. Speichern Sie die Logik-App mithilfe des "Speichern"-Befehls am oberen Rand des Designers.
 
-Wählen Sie **Jetzt ausführen**, um die Logik-App manuell zu starten und das Szenario zu testen.
+Wählen Sie **Jetzt ausführen** aus, um die Logik-App manuell zu starten und das Szenario zu testen.
 
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Sie finden die Swagger-REST-API-Referenz unter [Connectors and API Apps Reference](http://go.microsoft.com/fwlink/p/?LinkId=529766) (in englischer Sprache).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -103,4 +104,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [10]: ./media/app-service-logic-connector-hdinsight/LogicApp6.jpg
 [11]: ./media/app-service-logic-connector-hdinsight/LogicApp7.jpg
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

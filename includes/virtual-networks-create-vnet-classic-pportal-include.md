@@ -1,36 +1,38 @@
-## How to create a classic VNet in the Azure preview portal
+## Erstellen eines klassischen VNet im Azure-Vorschauportal.
 
-To create a classic VNet based on the scenario above, follow the steps below.
+Führen Sie zum Erstellen eines klassischen VNet basierend auf dem oben beschriebenen Szenario die folgenden Schritte aus.
 
-1. From a browser, navigate to http://portal.azure.com and, if necessary, sign in with your Azure account.
-2. Click **NEW** > **Networking** > **Virtual network**, notice that the **Select a deployment model** list already shows **Classic**, and then click **Create**, as seen in the figure below.
+1. Navigieren Sie in einem Browser zu http://portal.azure.com, und melden Sie sich, falls erforderlich, mit Ihrem Azure-Konto an.
+2. Klicken Sie auf **NEU** > **Netzwerk** > **Virtuelles Netzwerk**. Beachten Sie, dass in der Liste **Bereitstellungsmodell auswählen** bereits **Klassisch** angezeigt wird. Klicken Sie anschließend auf **Erstellen**, wie in der folgenden Abbildung dargestellt.
 
-	![Create VNet in preview portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure1.gif)
+	![Erstellen von VNet im Vorschauportal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure1.gif)
 
-3. On the **Virtual network** blade, type the **Name** of the VNet, and then click **Address space**. Configure your address space settings for the VNet and its first subnet, then click **OK**. The figure below shows the CIDR block settings for our scenario.
+3. Geben Sie auf dem Blatt **Virtuelles Netzwerk** den **Namen** des VNet ein, und klicken Sie dann auf **Adressraum**. Konfigurieren Sie Ihre Adressraumeinstellungen für das VNet und sein erstes Subnetz, und klicken Sie dann auf **OK**. Die folgende Abbildung zeigt die Einstellungen des CIDR-Blocks für das aktuelle Szenario.
 
-	![Address space blade](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure2.png)
+	![Blatt "Adressraum"](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure2.png)
 
-4. Click **Resource Group** and select a resource group to add the VNet to, or click **Create new resource group** to add the VNet to a new resource group. The figure below shows the resource group settings for a new resource group called **TestRG**. For more information about resource groups, visit [Azure Resource Manager Overview](resource-group-overview.md/#resource-groups).
+4. Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine Ressourcengruppe aus, zu der Sie das VNet hinzufügen möchten, oder klicken Sie auf **Neue Ressourcengruppe erstellen**, um das VNet zu einer neuen Ressourcengruppe hinzuzufügen. Die folgende Abbildung zeigt die Ressourcengruppeneinstellungen für eine neue Ressourcengruppe mit dem Namen **TestRG**. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md/#resource-groups).
 
-	![Create resource group blade](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure3.png)
+	![Blatt "Ressourcengruppe erstellen"](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure3.png)
 
-5. If necessary, change the **Subscription** and **Location** settings for your VNet. 
+5. Ändern Sie ggf. die **Abonnement**- und **Speicherort**-Einstellungen für das VNet.
 
-6. If you do not want to see the VNet as a tile in the **Startboard**, disable **Pin to Startboard**. 
+6. Wenn das VNet nicht als Kachel im **Startmenü** angezeigt werden soll, deaktivieren Sie **An Startmenü anheften**.
 
-7. Click **Create** and notice the tile named **Creating Virtual network** as shown in the figure below.
+7. Klicken Sie auf **Erstellen** und achten Sie auf die Kachel namens **Virtuelles Netzwerk erstellen**, wie in der folgenden Abbildung dargestellt.
 
-	![Create VNet in portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure4.png)
+	![Erstellen eines VNet im Portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure4.png)
 
-8. Wait for the VNet to be created, and when you see the tile below, click it to add more subnets.
+8. Warten Sie, bis das VNet erstellt wurde. Wenn die Kachel unten angezeigt wird, klicken Sie darauf, um weitere Subnetze hinzuzufügen.
 
-	![Create VNet in portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure5.png)
+	![Erstellen eines VNet im Portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure5.png)
 
-9. You should see the **Configuration** for your VNet as shown below. 
+9. Daraufhin sollte die **Konfiguration** für das VNet angezeigt werden, wie unten dargestellt.
 
-	![Create VNet in portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure6.png)
+	![Erstellen eines VNet im Portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure6.png)
 
-10. Click **Subnets** > **Add**, then type a **Name** and specify an **Address range (CIDR block)** for your subnet, and then click **OK**. The figure below shows the settings for our current scenario.
+10. Klicken Sie auf **Subnetze** > **Hinzufügen**, geben Sie einen **Namen** ein, legen Sie einen **Adressbereich (CIDR-Block)** für Ihr Subnetz fest, und klicken Sie dann auf **OK**. Die folgende Abbildung zeigt die Einstellungen für das aktuelle Szenario.
 
-	![Create VNet in preview portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure7.gif)
+	![Erstellen von VNet im Vorschauportal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure7.gif)
+
+<!---HONumber=August15_HO9-->

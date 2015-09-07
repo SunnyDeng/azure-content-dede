@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Hochverfügbarkeit und Notfallwiederherstellung für SQL Server in Azure Virtual Machines"
-   description="Beschreibt die verschiedenen HADR-Strategien für SQL Server in Azure Virtual Machines."
-   services="virtual-machines"
-   documentationCenter="na"
-   authors="rothja"
-   manager="jeffreyg"
-   editor="monicar" />
+	description="Beschreibt die verschiedenen HADR-Strategien für SQL Server in Azure Virtual Machines."
+	services="virtual-machines"
+	documentationCenter="na"
+	authors="rothja"
+	manager="jeffreyg"
+	editor="monicar"/>
 <tags 
    ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-windows-sql-server"
-   ms.workload="infrastructure-services"
-   ms.date="08/17/2015"
-   ms.author="jroth" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="08/17/2015"
+	ms.author="jroth"/>
 
 # Hochverfügbarkeit und Notfallwiederherstellung für SQL Server in Azure Virtual Machines
 
@@ -134,7 +134,7 @@ Die Georeplikation von Azure-Datenträgern unterstützt nicht das Speichern von 
 
 Wenn Sie einen virtuellen Azure-Computer mit SQL Server erstellen möchten, lesen Sie unter [Bereitstellen eines virtuellen Computers mit SQL Server auf Azure](virtual-machines-provision-sql-server.md) nach.
 
-Anleitungen für das Sicherstellen einer optimalen Leistung von SQL Server auf einem virtuellen Azure-Computer finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](https://msdn.microsoft.com/library/azure/dn133149.aspx).
+Anleitungen für das Sicherstellen einer optimalen Leistung von SQL Server auf einem virtuellen Azure-Computer finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md).
 
 Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
 
@@ -143,4 +143,4 @@ Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Comput
 - [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](../active-directory/active-directory-new-forest-virtual-machine.md)
 - [Create WSFC Cluster for AlwaysOn Availability Groups in Windows Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) (in englischer Sprache)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

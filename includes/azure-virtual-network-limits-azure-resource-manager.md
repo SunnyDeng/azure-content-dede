@@ -4,7 +4,7 @@
    <th align="left" valign="middle">Standardlimit</th>
 </tr>
 <tr>
-   <td valign="middle"><p><a href="http://msdn.microsoft.com/library/azure/jj156007.aspx">Virtuelle Netzwerke</a><sup>1</sup> pro Abonnement</p></td>
+   <td valign="middle"><p><a href="../virtual-network/virtual-networks-overview.md">Virtuelle Netzwerke</a><sup>1</sup> pro Abonnement</p></td>
    <td valign="middle"><p>50 pro Region<sup>1</sup></p></td>
 </tr>
 <tr>
@@ -51,4 +51,4 @@
 
 <sup>1</sup> Sie können das Limit erhöhen lassen, indem Sie sich an den Support wenden.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

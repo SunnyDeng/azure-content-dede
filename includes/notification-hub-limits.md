@@ -1,9 +1,11 @@
 
-| TIER: | FREE | BASIC | STANDARD |
+| EBENE: | FREI | BASIC | STANDARD |
 |----|----|----|----|
-| Included Pushes | 1 Million | 10 Million | 10 Million |
-| Active Devices | 500 | Unlimited | Unlimited |
-| Broadcast Tag Size | 10K | 10K | Unlimited |
-| # of tags (broadcast groups) | 3K | 3K unless broadcasted to less than 5 devices | Unlimited |
+| Pushvorgänge enthalten | 1 Mio. | 10 Mio. | 10 Mio. |
+| Aktive Geräte | 500 | Unbegrenzt | Unbegrenzt |
+| Größe der Broadcastingtags | 10K | 10K | Unbegrenzt |
+| Anzahl der Tags (Broadcastinggruppen) | 3 KB | 3 KB, sofern nicht an weniger als 5 Geräte übertragen | Unbegrenzt |
 
-For additional details on these limits and for information on pricing, see [Notification Hubs Pricing](http://azure.microsoft.com/pricing/details/notification-hubs/). 
+Weitere Informationen zu diesen Einschränkungen und zu Preisen finden Sie unter [Notification Hubs Preise](http://azure.microsoft.com/pricing/details/notification-hubs/).
+
+<!---HONumber=August15_HO9-->

@@ -1,25 +1,24 @@
 <properties
-   pageTitle="QuickBooks-Connector"
-   description="Verwenden des QuickBooks-Connectors"
-   services="app-service\logic"
-   documentationCenter=".net,nodejs,java"
-   authors="anuragdalmia"
-   manager="dwrede"
-   editor=""/>
+   pageTitle="Verwendung des QuickBooks-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des QuickBooks-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="anuragdalmia"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration"
-   ms.date="08/19/2015"
-   ms.author="sameerch"/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="08/23/2015"
+	ms.author="sameerch"/>
 
 
-#Verwenden des QuickBooks-Connectors in Logik-Apps#
-
-Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Mit dem QuickBooks-Connector können Sie unterschiedliche QuickBooks-Entitäten erstellen und bearbeiten. Im Folgenden finden Sie eine Liste der QuickBooks-Entitäten, die vom QuickBooks-Connector unterstützt werden.
+# Erste Schritte mit dem QuickBooks-Connector und das Hinzufügen zur Logik-App
+Mit dem QuickBooks-Connector können Sie unterschiedliche QuickBooks-Entitäten erstellen und bearbeiten. Die folgende Tabelle enthält die unterstützten Entitäten.
 
 Entitäten|Beschreibung
 ---|---
@@ -31,7 +30,7 @@ Rechnung|Eine Rechnung stellt ein Verkaufsformular dar, mit dem der Kunde für e
 Item|Ein Artikel ist etwas, das Ihr Unternehmen kauft, verkauft oder weiterverkauft, wie z. B. Produkte, Versand- und Bearbeitungsgebühren, Rabatte und Mehrwertsteuer (falls zutreffend). Ein Artikel wird als Position in einer Rechnung oder einem Verkaufsformular angezeigt.
 SalesReceipt|Diese Entität repräsentiert die Verkaufsbestätigung, die einem Kunden zugewiesen wird.
 
-
+Logik-Apps können basierend auf einer Vielzahl von Datenquellen ausgelöst werden und Connectors anbieten, um Daten als Teil des Datenflusses abzurufen und zu verarbeiten. Sie können den QuickBooks-Connector dem geschäftlichen Workflow hinzufügen und Daten im Rahmen dieses Workflows in einer Logik-App verarbeiten.
 
 ##QuickBooks-Aktionen ##
 Im Folgenden werden die verschiedenen im QuickBooks-Connector verfügbaren Aktionen aufgeführt.
@@ -122,7 +121,7 @@ Wir erstellen eine einfache Logik-App, die ein Konto in QuickBooks erstellt, und
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
+Sie finden die Swagger-REST-API-Referenz unter [Connectors and API Apps Reference](http://go.microsoft.com/fwlink/p/?LinkId=529766) (in englischer Sprache).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -141,4 +140,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [12]: ./media/app-service-logic-connector-quickbooks/12_Update_Account_Address.png
 [13]: ./media/app-service-logic-connector-quickbooks/13_Create_new_quickbooks_connector.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

@@ -185,7 +185,10 @@ Verwenden Sie den Befehl `azure keyvault set-policy`, um die Anwendung zum Zugre
 Wenn Ihr Tresorname beispielsweise "ContosoKeyVault" lautet, die Anwendung, die Sie autorisieren möchten, über die Client-ID 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed verfügt, und Sie die Anwendung zum Entschlüsseln und Anmelden mit Schlüsseln in Ihrem Tresor autorisieren möchten, führen Sie Folgendes aus:
 
     azure keyvault set-policy --vault-name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --perm-to-keys '[“decrypt”,”sign”]'
+    
+Wenn Sie dieselbe Anwendung so autorisieren möchten, dass sie geheime Schlüssel im Tresor liest, führen Sie Folgendes aus:
 
+	azure keyvault set-policy --vault-name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --perm-to-secrets '["Get"]'
 
 ## Verwenden eins Hardwaresicherheitsmodul (HSM) ##
 
@@ -252,4 +255,4 @@ Hier ist ein Beispiel, wie ein bestimmten geheimer Schlüssel entfernt werden ka
 
 Eine Referenz zur Programmierung finden Sie unter [Azure-Schlüsseltresor – REST-API-Referenz](https://msdn.microsoft.com/library/azure/dn903609.aspx) und [Azure-Schlüsseltresor – C# Client-API-Referenz](https://msdn.microsoft.com/library/azure/dn903628.aspx).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

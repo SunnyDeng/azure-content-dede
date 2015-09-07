@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Weitere Informationen zu den Anmeldeinformationen und Berechtigungen von Azure AD Connect" 
-	description="Beschreibung der benutzerdefinierten Einstellungen von Azure AD Connect-Anmeldeinformationen und -Berechtigungen." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Weitere Informationen zu den Anmeldeinformationen und Berechtigungen von Azure AD Connect"
+	description="Beschreibung der benutzerdefinierten Einstellungen von Azure AD Connect-Anmeldeinformationen und -Berechtigungen."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
-
 <tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/02/2015" 
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
-
 
 
 
@@ -90,7 +88,7 @@ AD FS: GMSA-Konto (aadcsvc$)|Domänenbenutzer|Anmeldekonto für den AD FS-Dienst
 * [Berechtigungen für Exchange-Hybrid](https://msdn.microsoft.com/library/azure/dn757602.aspx#exchange)
 * [Berechtigungen für das Kennwortrückschreiben](https://msdn.microsoft.com/library/azure/dn757602.aspx#pwriteback)
 * [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
-* [Azure AD Connect auf MSDN](https://msdn.microsoft.com/library/azure/dn832695.aspx)
+* [Azure AD Connect auf MSDN](active-directory-aadconnect.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

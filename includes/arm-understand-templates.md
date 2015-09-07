@@ -1,6 +1,6 @@
 ## Grundlegendes zu Azure-Ressourcenvorlagen und -Ressourcengruppen
 
-Die meisten Anwendungen, die in Microsoft Azure bereitgestellt und ausgeführt werden, sind aus einer Kombination aus verschiedenen Cloud-Ressourcentypen (z. B. als eine oder mehrere VMs und Speicherkonten, SQL-Datenbank, virtuelles Netzwerk, ein CDN usw.) erstellt. Mithilfe von [Azure Resource Manager-Vorlagen](https://msdn.microsoft.com/library/azure/dn835138.aspx) können Sie die unterschiedlichen Ressourcen gemeinsam bereitstellen und verwalten. Sie verwenden hierfür eine JSON-Beschreibung der Ressourcen sowie der zugeordneten Konfigurations- und Bereitstellungsparameter.
+Die meisten Anwendungen, die in Microsoft Azure bereitgestellt und ausgeführt werden, sind aus einer Kombination aus verschiedenen Cloud-Ressourcentypen (z. B. als eine oder mehrere VMs und Speicherkonten, SQL-Datenbank, virtuelles Netzwerk, ein CDN usw.) erstellt. Mithilfe von [Azure Resource Manager-Vorlagen](../resource-group-authoring-templates.md) können Sie die unterschiedlichen Ressourcen gemeinsam bereitstellen und verwalten. Sie verwenden hierfür eine JSON-Beschreibung der Ressourcen sowie der zugeordneten Konfigurations- und Bereitstellungsparameter.
 
 Sobald Sie eine JSON-basierte Ressourcenvorlage definiert haben, können Sie sie ausführen und die darin definierten Ressourcen in Azure mithilfe eines PowerShell-Befehls bereitstellen. Sie können diesen Befehl entweder eigenständig in der PowerShell-Befehlsshell oder in einem PowerShell-Skript ausführen, das eine zusätzliche Automatisierungslogik enthält.
 
@@ -8,4 +8,4 @@ Die Ressourcen, die Sie mithilfe von Azure Resource Manager-Vorlagen erstellen, 
 
 Die folgenden Automatisierungsbeispiele veranschaulichen die Anwendung von Azure Resource Manager-Vorlagen sowie die Bereitstellung von Ressourcengruppen via PowerShell oder CLI.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,9 +1,9 @@
 <properties
 	pageTitle="Hinzufügen von Authentifizierung zu Ihrer universellen Windows 8.1-Runtime-App | Azure Mobile Apps"
-	description="Erfahren Sie, wie Sie Azure App Service Mobile Apps zum Authentifizieren der Benutzer Ihrer Windows-App über eine Vielzahl von Identitätsanbietern nutzen können, z. B. AAD, Google, Facebook, Twitter und Microsoft."
+	description="Erfahren Sie, wie Sie Azure Mobile App Service-Apps zum Authentifizieren der Benutzer Ihrer Windows-App über eine Vielzahl von Identitätsanbietern nutzen können, z. B. AAD, Google, Facebook, Twitter und Microsoft."
 	services="app-service\mobile"
 	documentationCenter="windows"
-	authors="mattchenderson" 
+	authors="mattchenderson"
 	manager="dwrede"
 	editor=""/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/14/2015"
+	ms.date="08/22/2015"
 	ms.author="glenga"/>
 
 # Hinzufügen der Authentifizierung zu Ihrer Windows-App
@@ -22,11 +22,7 @@
 
 In diesem Thema wird die Authentifizierung von Benutzern einer mobilen App Service-App über Ihre Clientanwendung veranschaulicht. In diesem Lernprogramm fügen Sie dem Schnellstartprojekt durch Verwenden eines von App Service unterstützten Identitätsanbieters eine Authentifizierungsfunktion hinzu. Nach der erfolgreichen Authentifizierung und Autorisierung durch Ihre mobile App wird die Benutzer-ID angezeigt.
 
-Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Ihrer mobilen App] abschließen.
-
-##<a name="review"></a>Überprüfen der Konfiguration des Serverprojekts (optional)
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-enable-auth-preview](../../includes/app-service-mobile-dotnet-backend-enable-auth-preview.md)]
+Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen zunächst das Lernprogramm [Erste Schritte mit Ihrer mobilen App] abschließen. http://acom-sandbox.azurewebsites.net/documentation/articles/app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-push-preview/?rnd=1
 
 ##<a name="create-gateway"></a>Erstellen eines App Service-Gateways
 
@@ -40,11 +36,11 @@ Dieses Lernprogramm baut auf dem Mobile App-Schnellstart auf. Sie müssen zunäc
 
 [AZURE.INCLUDE [app-service-mobile-restrict-permissions-dotnet-backend](../../includes/app-service-mobile-restrict-permissions-dotnet-backend.md)]
 
-&nbsp;&nbsp;4. Öffnen Sie in Visual Studio die freigegebene Projektdatei "App.Xaml.cs" und stellen Sie sicher, dass die **MobileServiceClient**-Instanz so konfiguriert ist, dass sowohl die URL des Mobile App-Back-End als auch die des Gateway verwendet werden kann.
+&nbsp;&nbsp;4. Öffnen Sie in Visual Studio die freigegebene Projektdatei "App.Xaml.cs", und stellen Sie sicher, dass die **MobileServiceClient**-Instanz so konfiguriert ist, dass sowohl die URL des Mobile App-Back-Ends als auch die des Gateways verwendet werden kann.
 
 &nbsp;&nbsp;5. Drücken Sie mit einem der Windows-App-Projekte als Startprojekt zum Ausführen der App F5. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.
 
-&nbsp;&nbsp;Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf den Code Ihrer mobilen App zuzugreifen, die *TodoItem*-Tabelle jetzt jedoch Authentifizierung erfordert.
+&nbsp;&nbsp;Dies liegt daran, dass die App versucht, als nicht authentifizierter Benutzer auf den Code der mobilen App zuzugreifen, die *TodoItem*-Tabelle jetzt jedoch Authentifizierung erfordert.
 
 Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor diese Ressourcen von App Service anfordern.
 
@@ -64,4 +60,4 @@ Als Nächstes aktualisieren Sie die App, um Benutzer zu authentifizieren, bevor 
 [Erste Schritte mit Ihrer mobilen App]: app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

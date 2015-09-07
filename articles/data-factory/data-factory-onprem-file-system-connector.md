@@ -1,24 +1,22 @@
 <properties 
-	pageTitle="Dateisystem-Connector: Verschieben von Daten in das und aus dem Dateisystem" 
-	description="Informationen zum Dateisystem-Connector für den Data Factory-Dienst, mit dem Sie Daten in das bzw. aus dem lokalen Dateisystem verschieben können." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Verschieben von Daten in und aus dem Dateisystem | Azure Data Factory"
+	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in das und aus dem lokalen Dateisystem verschoben werden."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/27/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2015"
 	ms.author="spelluru"/>
 
-
-# Dateisystem-Connector: Verschieben von Daten in das und aus dem lokalen Dateisystem
+# Verschieben von Daten in das und aus dem lokalen Dateisystem mithilfe von Azure Data Factory
 
 Dieser Artikel beschreibt, wie Sie die Data Factory-Kopieraktivität zum Verschieben von Daten in das und aus dem lokalen Dateisystem verwenden können. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
 
@@ -37,15 +35,15 @@ Führen Sie die folgenden beiden Schritte aus, um eine Linux-Dateifreigabe mit d
 
 Das nachstehende Beispiel zeigt Folgendes:
 
-1.	Einen verknüpften Dienst des Typ "OnPremisesFileServer"
-2.	Einen verknüpften Dienst des Typs "AzureStorage"
-3.	Ein Eingabedataset des Typs "FileShare"
-4.	Ein Ausgabedataset des Typs "AzureBlob"
-4.	Eine Pipeline mit Kopieraktivität, die "FileSystemSource" und "BlobSink" verwendet 
+1.	Einen verknüpften Dienst des Typs [OnPremisesFileServer](data-factory-onprem-file-system-connector.md#onpremisesfileserver-linked-service-properties)
+2.	Einen verknüpften Dienst des Typs [AzureStorage](data-factory-azure-blob-connector.md#azure-storage-linked-service-properties)
+3.	Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [FileShare](data-factory-onprem-file-system-connector.md#on-premises-file-system-dataset-type-properties)
+4.	Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](data-factory-azure-blob-connector.md#azure-blob-dataset-type-properties)
+4.	Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [FileSystemSource](data-factory-onprem-file-system-connector.md#file-share-copy-activity-type-properties) und [BlobSink](data-factory-azure-blob-connector.md#azure-blob-copy-activity-type-properties) verwendet 
 
 Im folgenden Beispiel werden Daten, die zu einer Zeitreihe gehören, aus dem lokalen Dateisystem stündlich in ein Azure-Blob kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
-Als ersten Schritt richten Sie das Datenverwaltungsgateway gemäß den Anweisungen im Artikel [Verschieben von Daten zwischen lokalen Standorten und Cloud](data-factory-move-data-between-onprem-and-cloud.md) ein.
+Als ersten Schritt richten Sie das Datenverwaltungsgateway gemäß den Anweisungen im Artikel [Verschieben von Daten zwischen lokalen Quellen und der Cloud](data-factory-move-data-between-onprem-and-cloud.md) ein.
 
 **Mit lokalem Dateiserver verknüpfter Dienst:**
 
@@ -54,7 +52,7 @@ Als ersten Schritt richten Sie das Datenverwaltungsgateway gemäß den Anweisung
 	  "properties": {
 	    "type": "OnPremisesFileServer",
 	    "typeProperties": {
-	      "host": "\\\\Contosogame-Asia",
+	      "host": "\\\Contosogame-Asia",
 	      "userid": "Admin",
 	      "password": "123456",
 	      "gatewayName": "mygateway"
@@ -275,7 +273,7 @@ Im Beispiel werden Daten, die zu einer Zeitreihe gehören, stündlich aus einer 
 	  "properties": {
 	    "type": "OnPremisesFileServer",
 	    "typeProperties": {
-	      "host": "\\\\Contosogame-Asia",
+	      "host": "\\\Contosogame-Asia",
 	      "userid": "Admin",
 	      "password": "123456",
 	      "gatewayName": "mygateway"
@@ -374,7 +372,7 @@ Daten werden stündlich in eine neue Datei kopiert, wobei der Pfad des Blobs jew
 	  }
 	}
 
-**Pipeline mit Kopieraktivität:** Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben genannten Ein- und Ausgabedatasets und für eine stündliche Ausführung konfiguriert ist. In der JSON-Definition der Pipeline ist der Typ **source** auf **SqlSource** und der Typ **sink** auf **FileSystemSink** festgelegt. Die für die **SqlReaderQuery**-Eigenschaft angegebene SQL-Abfrage wählt die Daten der letzten Stunde zum Kopieren aus.
+**Pipeline mit Kopieraktivität**: Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben genannten Ein- und Ausgabedatasets und für eine stündliche Ausführung konfiguriert ist. In der JSON-Definition der Pipeline ist der Typ **source** auf **SqlSource** und der Typ **sink** auf **FileSystemSink** festgelegt. Die für die **SqlReaderQuery**-Eigenschaft angegebene SQL-Abfrage wählt die Daten der letzten Stunde zum Kopieren aus.
 
 	
 	{  
@@ -401,7 +399,7 @@ Daten werden stündlich in eine neue Datei kopiert, wobei der Pfad des Blobs jew
 	        "typeProperties": {
 	          "source": {
 	            "type": "SqlSource",
-	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \\'{0:yyyy-MM-dd}\\' AND timestampcolumn < \\'{1:yyyy-MM-dd}\\'', WindowStart, WindowEnd)"
+	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \'{0:yyyy-MM-dd}\' AND timestampcolumn < \'{1:yyyy-MM-dd}\'', WindowStart, WindowEnd)"
 	          },
 	          "sink": {
 	            "type": "FileSystemSink"
@@ -429,11 +427,13 @@ Sie können ein lokales Dateisystem mithilfe eines verknüpften Dienst des Typs 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
 Typ | Die "type"-Eigenschaft muss auf **OnPremisesFileServer** festgelegt sein. | Ja 
-host | Hostname des Servers. Verwenden Sie "\" als Escapezeichen (siehe das folgende Beispiel):Wenn Ihre Freigabe "\\servername" heißt, geben Sie "\\\\servername" an.<p>Wenn das Dateisystem für den Gatewaycomputer lokal ist, verwenden Sie "Local" oder "localhost". Wenn sich das Dateisystem auf einem anderen Server als dem Gatewaycomputer befindet, verwenden Sie "\\\\servername".</p> | Ja
-userid | Geben Sie die ID des Benutzers an, der auf dem Server zugreifen darf. | Nein (wenn Sie "encryptedcredential" auswählen)
-password | Geben Sie das Kennwort für das Benutzerkonto (userid) an. | Nein (wenn Sie "encryptedcredential" auswählen) 
-Encryptedcredential | Geben Sie die verschlüsselten Anmeldeinformationen an, die Sie durch Ausführen des Cmdlets "New-AzureDataFactoryEncryptValue" erhalten.<p>\*\*Hinweis:\*\* Sie müssen mindestens die Azure PowerShell-Version 0.8.14 verwenden, um mit Cmdlets wie "New-AzureDataFactoryEncryptValue" zu arbeiten, bei denen der "type"-Parameter auf "OnPremisesFileSystemLinkedService" festgelegt ist.</p> | Nein (wenn Sie "userid" und "password" unverschlüsselt angeben)
-Gatewayname | Der Name des Gateways, das der Data Factory-Dienst zum Verbinden mit dem lokalen Dateiserver verwenden soll. | Ja
+host | Hostname des Servers. Verwenden Sie "" als Escapezeichen (siehe das folgende Beispiel): Wenn Ihre Freigabe "\\servername" heißt, geben Sie "\\\servername" an.<p>Wenn das Dateisystem für den Gatewaycomputer lokal ist, verwenden Sie "Local" oder "localhost". Wenn sich das Dateisystem auf einem anderen Server als dem Gatewaycomputer befindet, verwenden Sie "\\\servername".</p> | Ja
+userid | Geben Sie die ID des Benutzers an, der auf dem Server zugreifen darf. | Nein (wenn Sie "encryptedCredential" auswählen)
+password | Geben Sie das Kennwort für das Benutzerkonto (userid) an. | Nein (wenn Sie "encryptedCredential" auswählen) 
+encryptedCredential | Geben Sie die verschlüsselten Anmeldeinformationen an, die Sie durch Ausführen des Cmdlets "New-AzureDataFactoryEncryptValue" erhalten.<p>**Hinweis**: Sie müssen mindestens die Azure PowerShell-Version 0.8.14 verwenden, um mit Cmdlets wie "New-AzureDataFactoryEncryptValue" zu arbeiten, bei denen der type-Parameter auf "OnPremisesFileSystemLinkedService" festgelegt ist.</p> | Nein (wenn Sie "userid" und "password" unverschlüsselt angeben)
+gatewayName | Der Name des Gateways, das der Data Factory-Dienst zum Verbinden mit dem lokalen Dateiserver verwenden soll. | Ja
+
+Ausführliche Informationen zum Festlegen von Anmeldeinformationen für eine Datenquelle des lokalen Dateisystems finden Sie unter [Festlegen von Anmeldeinformationen und Sicherheit](data-factory-move-data-between-onprem-and-cloud.md#setting-credentials-and-security).
 
 **Beispiel: Mit "username" und "password" im Nur-Text-Format**
 	
@@ -442,7 +442,7 @@ Gatewayname | Der Name des Gateways, das der Data Factory-Dienst zum Verbinden m
 	  "properties": {
 	    "type": "OnPremisesFileServer",
 	    "typeProperties": {
-	      "host": "\\\\Contosogame-Asia",
+	      "host": "\\\Contosogame-Asia",
 	      "userid": "Admin",
 	      "password": "123456",
 	      "gatewayName": "mygateway"
@@ -458,7 +458,7 @@ Gatewayname | Der Name des Gateways, das der Data Factory-Dienst zum Verbinden m
 	    "type": "OnPremisesFileServer",
 	    "typeProperties": {
 	      "host": "localhost",
-	      "encryptedcredential": "WFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5xxxxxxxxxxxxxxxxx",
+	      "encryptedCredential": "WFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5xxxxxxxxxxxxxxxxx",
 	      "gatewayName": "mygateway"
 	    }
 	  }
@@ -472,11 +472,11 @@ Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und 
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-folderPath | Pfad zum Ordner. Beispiel: myfolder<p>Verwenden Sie für Sonderzeichen in der Zeichenfolge das Escapezeichen "\". Geben Sie für "folder\\subfolder" z. B. "folder\\subfolder" für "d:\\samplefolder" z. B. "d:\\samplefolder" an.</p><p>Sie können dies mit **partitionBy** kombinieren, um Ordnerpfade auf den Anfangs- und Endwerten einer Datum-/Uhrzeitangabe für Slices basieren zu lassen.</p> | Ja
-fileName | Geben Sie den Namen der Datei in **folderPath** an, wenn die Tabelle auf eine bestimmte Datei im Ordner verweisen soll. Wenn Sie keine Werte für diese Eigenschaft angeben, zeigt die Tabelle auf alle Dateien im Ordner.<p>Wenn "fileName" für ein Ausgabedataset nicht angegeben wird, hat der Name der generierten Datei das folgende Format: </p><p>Data.<Guid>.txt (Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt</p> | Nein
+folderPath | Pfad zum Ordner. Beispiel: myfolder<p>Verwenden Sie für Sonderzeichen in der Zeichenfolge das Escapezeichen "". Geben Sie für "folder\\subfolder" z. B. "folder\\subfolder" und für "d:\\samplefolder" z. B. "d:\\samplefolder" an.</p><p>Sie können dies mit **partitionBy** kombinieren, um Ordnerpfade auf den Anfangs- und Endwerten einer Datum-/Uhrzeitangabe für Slices basieren zu lassen.</p> | Ja
+fileName | Geben Sie den Namen der Datei in **folderPath** an, wenn die Tabelle auf eine bestimmte Datei im Ordner verweisen soll. Wenn Sie keine Werte für diese Eigenschaft angeben, verweist die Tabelle auf alle Dateien im Ordner.<p>Wenn "fileName" für ein Ausgabedataset nicht angegeben wird, hat der Name der generierten Datei das folgende Format: </p><p>Data.<Guid>.txt (Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt)</p> | Nein
 partitionedBy | "partitionedBy" kann genutzt werden, um einen dynamischen Wert für "folderPath" oder "filename" für Zeitreihendaten anzugeben. Beispiel: "folderPath" als Parameter für jedes Stunde mit Daten. | Nein
 Format | Zwei Typen von Formaten werden unterstützt: **TextFormat** und **AvroFormat**. Sie müssen die "type"-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn die "type"-Eigenschaft auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Formatabschnitt unten finden Sie weitere Einzelheiten. | Nein
-fileFilter | Geben Sie einen Filter zur Auswahl einer Teilmenge der Dateien in "folderPath" statt alle Dateien an. <p>Zulässige Werte sind: \* (mehrere Zeichen) und? (einzelnes Zeichen).</p><p>Beispiel 1: "fileFilter": "*. log"</p>Beispiel 2: "fileFilter": 2014-1-?.txt"</p><p>*\* Hinweis \*\*: "fileFilter" eignet sich für ein Eingabedataset des Typs "FileShare".</p> | Nein
+fileFilter | Geben Sie einen Filter zur Auswahl einer Teilmenge der Dateien in "folderPath" statt alle Dateien an. <p>Zulässige Werte sind: * (mehrere Zeichen) und ? (einzelnes Zeichen).</p><p>Beispiel 1: "fileFilter": "*.log"</p>Beispiel 2: "fileFilter": 2014-1-?.txt"</p><p>** Hinweis**: "fileFilter" eignet sich für ein Eingabedataset des Typs "FileShare".</p> | Nein
 
 > [AZURE.NOTE]"filename" und "fileFilter" können nicht gleichzeitig verwendet werden.
 
@@ -518,8 +518,8 @@ Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
 columnDelimiter | Die Zeichen, die als Spaltentrennzeichen in einer Datei verwendet werden. Der Standardwert ist das Komma (,). | Nein
 rowDelimiter | Die Zeichen, die als Zeilentrennzeichen in einer Datei verwendet werden. Der Standardwert ist einer der Folgenden: ["\\r\\n", "\\r", "\\n"]. | Nein
-escapeChar | Das Sonderzeichen, das als Escapezeichen für das Spaltentrennzeichen im Inhalt dient. Kein Standardwert. Sie müssen nicht mehr als ein Zeichen für diese Eigenschaft angeben.<p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: "Hello, world") verwenden möchten, können Sie "$" als Escapezeichen definieren und die Zeichenfolge "Hello$, world" in der Quelle verwenden.</p><p>Beachten Sie, dass Sie nicht sowohl "escapeChar" als auch "quoteChar" für eine Tabelle angeben können.</p> | Nein
-quoteChar | Das Sonderzeichen, das als Anführungszeichen für einen Zeichenfolgenwert dient. Die Spalten- und Zeilentrennzeichen innerhalb der Anführungszeichen werden als Teil des Zeichenfolgenwerts behandelt. Kein Standardwert. Sie müssen nicht mehr als ein Zeichen für diese Eigenschaft angeben.<p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: <Hello  world>) verwenden möchten, können Sie '"' als Anführungszeichen definieren und die Zeichenfolge <"Hello, world"> in der Quelle verwenden. Diese Eigenschaft gilt für Eingabe- und Ausgabetabellen.</p><p>Beachten Sie, dass Sie nicht sowohl "escapeChar" als auch "quoteChar" für eine Tabelle angeben können.</p> | Nein
+escapeChar | Das Sonderzeichen, das als Escapezeichen für das Spaltentrennzeichen im Inhalt dient. Kein Standardwert. Sie dürfen nicht mehr als ein Zeichen für diese Eigenschaft angeben.<p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: "Hello, world") verwenden möchten, können Sie "$" als Escapezeichen definieren und die Zeichenfolge "Hello$, world" in der Quelle verwenden.</p><p>Beachten Sie, dass Sie nicht sowohl "escapeChar" als auch "quoteChar" für eine Tabelle angeben können.</p> | Nein
+quoteChar | Das Sonderzeichen, das als Anführungszeichen für einen Zeichenfolgenwert dient. Die Spalten- und Zeilentrennzeichen innerhalb der Anführungszeichen werden als Teil des Zeichenfolgenwerts behandelt. Kein Standardwert. Sie dürfen nicht mehr als ein Zeichen für diese Eigenschaft angeben.<p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: <Hello  world>) verwenden möchten, können Sie '"' als Anführungszeichen definieren und die Zeichenfolge <"Hello, world"> in der Quelle verwenden. Diese Eigenschaft gilt für Eingabe- und Ausgabetabellen.</p><p>Beachten Sie, dass Sie nicht sowohl "escapeChar" als auch "quoteChar" für eine Tabelle angeben können.</p> | Nein
 nullValue | Die Zeichen, die zur Darstellung von NULL-Werten im Blobdateiinhalt dienen. Der Standardwert ist "\\N".> | Nein
 encodingName | Geben Sie den Codierungsnamen an. Eine Liste der gültigen Codierungsnamen finden Sie unter "Encoding.EncodingName-Eigenschaft". <p>Beispiel: "windows-1250" oder "shift\_jis". Der Standardwert lautet "UTF-8".</p> | Nein
 
@@ -554,7 +554,7 @@ Wenn das Format auf **AvroFormat** festgelegt ist, müssen Sie im Abschnitt "For
 	    "type": "AvroFormat",
 	}
 	
-Um das Avro-Format in einer nachfolgenden Hive-Tabelle zu verwenden, sehen Sie sich zuvor das [Apache Hive-Tutorial](https://cwiki.apache.org/confluence/display/Hive/AvroSerDe) an.
+Um das Avro-Format in einer nachfolgenden Hive-Tabelle zu verwenden, sehen Sie sich zuvor das [Apache Hive-Lernprogramm](https://cwiki.apache.org/confluence/display/Hive/AvroSerDe) an.
 
 ## Eigenschaften von Kopieraktivitätstyp "Dateifreigabe"
 
@@ -573,4 +573,4 @@ Um das Avro-Format in einer nachfolgenden Hive-Tabelle zu verwenden, sehen Sie s
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

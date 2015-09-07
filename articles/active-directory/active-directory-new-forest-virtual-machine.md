@@ -1,26 +1,26 @@
 <properties 
-	pageTitle="Installieren einer Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk" 
-	description="Ein Lernprogramm, in dem erläutert wird, wie Sie eine neue Active Directory-Gesamtstruktur auf einer virtuellen Maschine (VM) in einem virtuellen Azure-Netzwerk erstellen" 
-	services="active-directory, virtual-network" 
-	documentationCenter="" 
-	authors="markusvi" 
-	manager="TerryLan" 
+	pageTitle="Installieren einer Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk"
+	description="Ein Lernprogramm, in dem erläutert wird, wie Sie eine neue Active Directory-Gesamtstruktur auf einer virtuellen Maschine (VM) in einem virtuellen Azure-Netzwerk erstellen"
+	services="active-directory, virtual-network"
+	documentationCenter=""
+	authors="markusvi"
+	manager="TerryLan"
 	editor="LisaToft"
 	tags="azure-classic-portal"/>
 
 <tags 
-	ms.service="active-directory" 
-	ms.devlang="na" 
-	ms.topic="article" 
-    ms.tgt_pltfrm="na" 
-    ms.workload="identity" 
-	ms.date="07/23/2015" 
+	ms.service="active-directory"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
+	ms.date="07/23/2015"
 	ms.author="markusvi"/>
 
 
 # Installieren einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Azure-Netzwerk
 
-In diesem Thema wird das Erstellen einer neuen Windows Server Active Directory-Umgebung in einem virtuellen Azure-Netzwerk erläutert, das auf einem virtuellen Computer (Virtual Machine, VM) mit [Azure Virtual Network](https://msdn.microsoft.com/library/azure/jj156007.aspx) läuft. In diesem Fall ist das virtuelle Azure-Netzwerk nicht mit einem lokalen Netzwerk verbunden.
+In diesem Thema wird das Erstellen einer neuen Windows Server Active Directory-Umgebung in einem virtuellen Azure-Netzwerk erläutert, das auf einem virtuellen Computer (Virtual Machine, VM) mit [Azure Virtual Network](../virtual-network/virtual-networks-overview.md) läuft. In diesem Fall ist das virtuelle Azure-Netzwerk nicht mit einem lokalen Netzwerk verbunden.
 
 Folgende Themen könnten für Sie ebenfalls von Interesse sein:
 
@@ -32,8 +32,7 @@ Folgende Themen könnten für Sie ebenfalls von Interesse sein:
 
 In diesem Szenario müssen externe Benutzer auf Anwendungen zugreifen, die auf in die Domäne eingebundenen Servern ausgeführt werden. Die virtuellen Computer, auf denen die Anwendungsserver ausgeführt werden, und die virtuellen Computer, auf denen Domänencontroller ausgeführt werden, werden in einem virtuellen Azure-Netzwerk in einem eigenen Clouddienst ausgeführt. Sie sind auch zur Verbesserung der Fehlertoleranz in einer Verfügbarkeitsgruppe enthalten.
 
-![][1]
-
+![][1] 7
 ## Unterschiede zwischen der virtuellen und der lokalen Umgebung
 
 Die Installation eines Domänencontrollers in Azure unterscheidet sich nicht wesentlich von der lokalen Installation. Die Hauptunterschiede sind in der folgenden Tabelle aufgeführt.
@@ -71,7 +70,7 @@ Um die virtuellen Computer mithilfe von Windows PowerShell anstelle der Benutzer
 	------------- | -------------
 	**Image auswählen** | Windows Server 2012 R2 Datacenter
 	**Konfiguration des virtuellen Computers** | <p>Name des virtuellen Computers: Geben Sie einen Namen mit einer einzelnen Bezeichnung ein (z. B. AzureDC1).</p><p>Neuer Benutzername: Geben Sie den Namen eines Benutzers ein. Dieser Benutzer wird Mitglied der lokalen Administratorgruppe auf dem virtuellen Computer. Sie benötigen diesen Namen, um sich zum ersten Mal bei dem virtuellen Computer anzumelden. Das integrierte Konto mit dem Namen "Administrator" funktioniert nicht.</p><p>Neues Kennwort/Bestätigen: Geben Sie ein Kennwort ein.</p>
-	**Konfiguration des virtuellen Computers** | <p>Clouddienst: Wählen Sie <b>Einen neuen Cloud-Dienst erstellen</b> für den ersten virtuellen Computer aus, und wählen Sie denselben Clouddienstnamen aus, wenn Sie weitere virtuelle Computer erstellen, die die DC-Rolle hosten.</p><p>DNS-Name des Clouddiensts: Geben Sie einen global eindeutigen Namen an.</p><p>Region/Affinitätsgruppe/Virtuelles Netzwerk: Geben Sie den Namen des virtuellen Netzwerks an (z. B. WestUSVNet).</p><p>Speicherkonto: Wählen Sie <b>Ein automatisch generiertes Speicherkonto verwenden</b> für den ersten virtuellen Computer aus, und wählen Sie dann denselben Speicherkontonamen aus, wenn Sie weitere virtuelle Computer erstellen, die die DC-Rolle hosten.</p><p>Verfügbarkeitsgruppe: Wählen Sie <b>Verfügbarkeitsgruppe erstellen</b> aus.</p><p>Verfügbarkeitsgruppenname: Geben Sie einen Namen für die Verfügbarkeitsgruppe ein, wenn Sie den ersten virtuellen Computer erstellen, und wählen Sie dann denselben Namen aus, wenn Sie weitere virtuelle Computer erstellen.</p>
+	**Konfiguration des virtuellen Computers** | <p>Clouddienst: Wählen Sie <b>Einen neuen Clouddienst erstellen</b> für den ersten virtuellen Computer aus, und wählen Sie denselben Clouddienstnamen aus, wenn Sie weitere virtuelle Computer erstellen, die die DC-Rolle hosten.</p><p>DNS-Name des Clouddiensts: Geben Sie einen global eindeutigen Namen an.</p><p>Region/Affinitätsgruppe/Virtuelles Netzwerk: Geben Sie den Namen des virtuellen Netzwerks an (z. B. WestUSVNet).</p><p>Speicherkonto: Wählen Sie <b>Ein automatisch generiertes Speicherkonto verwenden</b> für den ersten virtuellen Computer aus, und wählen Sie dann denselben Speicherkontonamen aus, wenn Sie weitere virtuelle Computer erstellen, die die DC-Rolle hosten.</p><p>Verfügbarkeitsgruppe: Wählen Sie <b>Verfügbarkeitsgruppe erstellen</b> aus.</p><p>Verfügbarkeitsgruppenname: Geben Sie einen Namen für die Verfügbarkeitsgruppe ein, wenn Sie den ersten virtuellen Computer erstellen, und wählen Sie dann denselben Namen aus, wenn Sie weitere virtuelle Computer erstellen.</p>
 	**Konfiguration des virtuellen Computers** | <p>Wählen Sie <b>VM-Agent installieren</b> und alle anderen erforderlichen Erweiterungen aus.</p>
 2. Fügen Sie an jeden virtuellen Computer, der die DC-Serverrolle ausführt, einen Datenträger an. Der zusätzliche Speicherplatz ist erforderlich, um die AD-Datenbank, Protokolle und SYSVOL zu speichern. Geben Sie eine Größe für den Datenträger (z. B. 10 GB) an, und belassen Sie für **Hostcacheeinstellungen** die Einstellung **Keine**. Weitere Informationen finden Sie unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](../storage-windows-attach-disk.md).
 3. Nachdem Sie sich erstmals auf dem virtuellen Computer angemeldet haben, öffnen Sie **Server-Manager** > **Datei- und Speicherdienste**, um auf diesem Datenträger ein Volume mit NTFS zu erstellen.
@@ -107,7 +106,7 @@ Wenn die DC-Installation beendet ist, schließen Sie den virtuellen Computer wie
 	------------- | -------------
 	**Image auswählen** | Windows Server 2012 R2 Datacenter
 	**Konfiguration des virtuellen Computers** | <p>Name des virtuellen Computers: Geben Sie einen Namen mit einer einzelnen Bezeichnung ein (z. B. AppServer1).</p><p>Neuer Benutzername: Geben Sie den Namen eines Benutzers ein. Dieser Benutzer wird Mitglied der lokalen Administratorgruppe auf dem virtuellen Computer. Sie benötigen diesen Namen, um sich zum ersten Mal bei dem virtuellen Computer anzumelden. Das integrierte Konto mit dem Namen "Administrator" funktioniert nicht.</p><p>Neues Kennwort/Bestätigen: Geben Sie ein Kennwort ein.</p>
-	**Konfiguration des virtuellen Computers** | <p>Clouddienst: Wählen Sie **Einen neuen Cloud-Dienst erstellen** für den ersten virtuellen Computer aus, und wählen Sie denselben Clouddienstnamen aus, wenn Sie weitere virtuelle Computer erstellen, die die Anwendung hosten.</p><p>DNS-Name des Clouddiensts: Geben Sie einen global eindeutigen Namen an.</p><p>Region/Affinitätsgruppe/Virtuelles Netzwerk: Geben Sie den Namen des virtuellen Netzwerks an (z. B. WestUSVNet).</p><p>Speicherkonto: Wählen Sie **Ein automatisch generiertes Speicherkonto verwenden** für den ersten virtuellen Computer aus, und wählen Sie dann denselben Speicherkontonamen aus, wenn Sie weitere virtuelle Computer erstellen, die die Anwendung hosten.</p><p>Verfügbarkeitsgruppe: Wählen Sie **Verfügbarkeitsgruppe erstellen** aus.</p><p>Verfügbarkeitsgruppenname: Geben Sie einen Namen für die Verfügbarkeitsgruppe ein, wenn Sie den ersten virtuellen Computer erstellen, und wählen Sie dann denselben Namen aus, wenn Sie weitere virtuelle Computer erstellen.</p>
+	**Konfiguration des virtuellen Computers** | <p>Clouddienst: Wählen Sie **Einen neuen Clouddienst erstellen** für den ersten virtuellen Computer aus, und wählen Sie denselben Clouddienstnamen aus, wenn Sie weitere virtuelle Computer erstellen, die die Anwendung hosten.</p><p>DNS-Name des Clouddiensts: Geben Sie einen global eindeutigen Namen an.</p><p>Region/Affinitätsgruppe/Virtuelles Netzwerk: Geben Sie den Namen des virtuellen Netzwerks an (z. B. WestUSVNet).</p><p>Speicherkonto: Wählen Sie **Ein automatisch generiertes Speicherkonto verwenden** für den ersten virtuellen Computer aus, und wählen Sie dann denselben Speicherkontonamen aus, wenn Sie weitere virtuelle Computer erstellen, die die Anwendung hosten.</p><p>Verfügbarkeitsgruppe: Wählen Sie **Verfügbarkeitsgruppe erstellen** aus.</p><p>Verfügbarkeitsgruppenname: Geben Sie einen Namen für die Verfügbarkeitsgruppe ein, wenn Sie den ersten virtuellen Computer erstellen, und wählen Sie dann denselben Namen aus, wenn Sie weitere virtuelle Computer erstellen.</p>
 	**Konfiguration des virtuellen Computers** | <p>Wählen Sie <b>VM-Agent installieren</b> und alle anderen erforderlichen Erweiterungen aus.</p>
 2. Nachdem alle virtuellen Computer bereitgestellt wurden, melden Sie sich an, und stellen eine Verbindung zur Domäne her. Klicken Sie im **Server-Manager** auf **Lokaler Server** > **ARBEITSGRUPPE** > **Ändern…**, wählen Sie dann **Domäne** aus, und geben Sie anschließend den Namen Ihrer lokalen Domäne ein. Geben Sie die Anmeldeinformationen eines Domänenbenutzers ein, und starten Sie den virtuellen Computer neu, um das Beitreten zu der Domäne abzuschließen.
 
@@ -120,12 +119,12 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 
 -  [Installieren einer neuen Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk](http://channel9.msdn.com/Series/Microsoft-Azure-Tutorials/How-to-install-a-new-Active-Directory-forest-on-an-Azure-virtual-network)
 -  [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Azure-Computern](https://msdn.microsoft.com/library/azure/jj156090.aspx)
--  [Erstellen eines virtuellen Netzwerks komplett in der Cloud](https://msdn.microsoft.com/library/dn631643.aspx)
+-  [Erstellen eines virtuellen Netzwerks komplett in der Cloud](../virtual-network/virtual-networks-create-vnet.md)
 -  [Konfigurieren eines Standort-zu-Standort-VPN](../vpn-gateway/vpn-gateway-site-to-site-create.md)
 -  [Installieren eines Active Directory-Replikatdomänencontrollers in einem virtuellen Azure-Netzwerk](../virtual-networks-install-replica-active-directory-domain-controller.md)
 -  [Microsoft Azure IT Pro IaaS: (01) Grundlagen zu virtuellen Computern](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
 -  [Microsoft Azure IT Pro IaaS: (05) Erstellen virtueller Netzwerke und Herstellen standortübergreifender Verbindungen](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
--  [Virtuelle Netzwerke im Überblick](https://msdn.microsoft.com/library/azure/jj156007.aspx)
+-  [Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md)
 -  [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md)
 -  [Azure PowerShell](https://msdn.microsoft.com/library/azure/jj156055.aspx)
 -  [Azure-Cmdlet-Referenz](https://msdn.microsoft.com/library/azure/jj554330.aspx)
@@ -139,4 +138,4 @@ Weitere Informationen zum Verwenden von Windows PowerShell finden Sie unter [Ers
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,25 +1,25 @@
 <properties 
-	pageTitle="Dashboard, Überwachen, Skalieren, Konfigurieren und Hybridverbindungen in BizTalk Services | Microsoft Azure" 
-	description="Erfahren Sie mehr über die Steuerelemente und Leistungsüberwachung auf den Registerkarten des Verwaltungsportals für BizTalk Services: ";Dashboard";, ";Überwachen";, ";Skalieren";, ";Konfigurieren"; und ";Hybridverbindungen";. MABS, WABS" 
-	services="biztalk-services" 
-	documentationCenter="" 
-	authors="MandiOhlinger" 
-	manager="dwrede" 
+	pageTitle="Dashboard, Überwachen, Skalieren, Konfigurieren und Hybridverbindungen in BizTalk Services | Microsoft Azure"
+	description="Erfahren Sie mehr über die Steuerelemente und Leistungsüberwachung auf den Registerkarten des Verwaltungsportals für BizTalk Services: Dashboard, Überwachen, Skalieren, Konfigurieren und Hybridverbindungen. MABS, WABS"
+	services="biztalk-services"
+	documentationCenter=""
+	authors="MandiOhlinger"
+	manager="dwrede"
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="biztalk-services" 
-	ms.workload="integration" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/07/2015" 
+	ms.service="biztalk-services"
+	ms.workload="integration"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2015"
 	ms.author="mandia"/>
 
 
 
 
-# BizTalk Services: Registerkarten "Dashboard", "Überwachen", "Skalieren", "Konfigurieren" und "Hybridverbindungen"
+# Registerkarten "Dashboard", "Überwachen", "Skalieren", "Konfigurieren" und "Hybridverbindungen"
 
 Nachdem Sie Ihren BizTalk Service erstellt und Ihre Anwendung bereitgestellt haben, können Sie einige der BizTalk Service-Einstellungen ändern und die Anwendungsleistung überwachen.
 
@@ -178,7 +178,7 @@ Unter <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302280">Erläuterung der
 </tr>
 </table>
 
-[BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280) enthält die Schritte zur Erstellung eines BizTalk Service.
+[Konfigurieren von BizTalk Services im Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=302280) enthält die Schritte zur Erstellung eines BizTalk Service.
 
 
 ##### "Verwalten", "Verbindungsinformationen", "Synchronisierungsschlüssel" und "Löschen" in der Taskleiste:
@@ -241,13 +241,13 @@ Sie können auch die **relativen** oder **absoluten** Werte sowie ein **Zeitinte
 !["Metriken hinzufügen" auswählen][AddMetrics]
 3. Prüfen Sie die Leistungsmetriken, die Sie anzeigen möchten.
 4. Wählen Sie das Häkchen aus, um zur Registerkarte **Überwachen** zurückzukehren.
-5. Wählen Sie den Kreis neben der Metrik aus, um den Wert dieser Metrik im Diagramm anzuzeigen.
+5. Wählen Sie den Kreis neben der Metrik aus, um den Wert dieser Metrik im Diagramm anzuzeigen.  
 <br/>
-Die Metrik **CPU-Auslastung** ist beispielsweise grau unterlegt, ihr Ergebnis wird im Diagramm nicht angezeigt:
+	Die Metrik **CPU-Auslastung** ist grau unterlegt. Das heißt, ihr Wert wird im Diagramm nicht angezeigt:
 <br/>
 ![Metrik "CPU-.Auslastung" ist deaktiviert][GrayedMetric]
 <br/>
-Wählen Sie den grau unterlegten Kreis, um die Metrik **CPU-Auslastung** zu aktivieren und ihr Ergebnis im Diagramm anzuzeigen:
+	Wählen Sie den ausgegrauten Kreis, sodass die Metrik **CPU-Auslastung** ihre Ausgabe im Diagramm anzeigt:
 <br/>
 ![Metrik "CPU-.Auslastung" ist aktiviert][EnabledMetric]
 
@@ -322,11 +322,11 @@ In einem Abfrage-Antwort-Szenario wird die Metrik erhöht, wenn das Routenziel e
 ## Skalieren
 Auf der Registerkarte "Skalieren" können Sie die Anzahl der von Ihrem BizTalk Service verwendeten Einheiten addieren oder subtrahieren. Standardmäßig ist eine Einheit konfiguriert. Zur Skalierung Ihres BizTalk Service können zusätzliche Einheiten hinzugefügt werden. Wenn Sie die Skalierung erhöhen, wird auch der Durchsatz erhöht. Auch die Menge der Ressourcen, also der bereitgestellten Brücken, Verträge und lokalen Branchenverbindungen, sowie die Verarbeitungsleistung werden erhöht. Beispiel: Sie erhöhen die Skalierung von 1 auf 2 Einheiten. In dieser Lage können Sie nun die doppelte Anzahl von Brücken bereitstellen sowie die Verträge, die lokalen Branchenverbindungen und die Verarbeitungsleistung verdoppeln.
 
-Einige BizTalk-Editionen bieten keine Skalierungsoption. In diesen Fällen ist nur eine Einheit erlaubt. Informationen darüber, auf wie viele Einheiten Ihre Edition skaliert werden kann, finden Sie unter [BizTalk Services: Editionsübersicht](http://go.microsoft.com/fwlink/p/?LinkID=302279).
+Einige BizTalk-Editionen bieten keine Skalierungsoption. In diesen Fällen ist nur eine Einheit erlaubt. Informationen darüber, auf wie viele Einheiten Ihre Edition skaliert werden kann, finden Sie unter [BizTalk Services: Editionsübersicht](biztalk-editions-feature-chart.md).
 
 Eine Erhöhung der Anzahl der Einheiten kann sich auf den Preis auswirken. Wenn Sie die Anzahl der Einheiten erhöhen, erhalten Sie nach Auswahl von **Speichern** die Meldung, dass dies Einfluss auf Ihre Rechnung hat. Sie können dann wählen, ob Sie fortfahren möchten. Wenn Sie die Anzahl der Einheiten erhöhen, ändert sich der Status des BizTalk Service von "Active" auf "Updating". Im Status "Updating" läuft Ihr BizTalk Service weiter.
 
-[BizTalk Services: Editionsübersicht](http://go.microsoft.com/fwlink/p/?LinkID=302279) definiert eine "Einheit".
+[BizTalk Services: Editionsübersicht](biztalk-editions-feature-chart.md) definiert eine "Einheit".
 
 
 ## Konfigurieren
@@ -334,7 +334,7 @@ Gilt nicht für Hybridverbindungen.
 
 Stellt den Sicherungsstatus auf "Keine" oder "Automatisch" ein. Bei Einstellung auf "Keine" werden keine Sicherungen automatisch erstellt. Bei Einstellung auf "Automatisch" konfigurieren Sie den Speicherort für die Sicherung, die Häufigkeit der Sicherung und die Aufbewahrungszeit für die Sicherungsdateien.
 
-[BizTalk Services: Sichern und Wiederherstellen](http://go.microsoft.com/fwlink/p/?LinkID=329873) enthält Einzelheiten dazu.
+[BizTalk Services: Sichern und Wiederherstellen](biztalk-backup-restore.md) enthält Einzelheiten dazu.
 
 
 ## <a name="HybridConnections"></a>Hybridverbindungen
@@ -344,22 +344,22 @@ Informationen zum Erstellen von Hybridverbindungen in Azure-Websites finden Sie 
 
 Informationen zur Verwendung von Hybridverbindungen in Azure Mobile Services finden Sie unter [Azure Mobile Services und Hybridverbindungen](../mobile-services-dotnet-backend-hybrid-connections-get-started.md).
 
-Informationen zum Erstellen oder Verwalten von Hybridverbindungen in Azure BizTalk Services finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).
+Informationen zum Erstellen oder Verwalten von Hybridverbindungen in Azure BizTalk Services finden Sie unter [Hybridverbindungen](integration-hybrid-connection-overview.md).
 
 
 
 ## Weiter
 Nun, da Sie mit den verschiedenen Registerkarten vertraut sind, können Sie mehr über die Funktionen von Azure BizTalk Services erfahren:
 
-- [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
-- [BizTalk Services: Name und Schlüssel des Ausstellers](http://go.microsoft.com/fwlink/p/?LinkID=303941)
-- [BizTalk Services: Sichern und Wiederherstellen](http://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
+- [BizTalk Services: Drosselung](biztalk-throttling-thresholds.md)  
+- [BizTalk Services: Name und Schlüssel des Ausstellers](biztalk-issuer-name-issuer-key.md)  
+- [BizTalk Services: Sichern und Wiederherstellen](biztalk-backup-restore.md)
 
 ## Weitere Informationen
-- [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274)
-- [BizTalk Services: Editionsübersicht](http://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
-- [BizTalk Services: Erstellen eines BizTalk Service im Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
-- [BizTalk Services: Dienststatusübersicht](http://go.microsoft.com/fwlink/p/?LinkID=329870)<br/>
+- [Hybridverbindungen](integration-hybrid-connection-overview.md)  
+- [BizTalk Services: Editionsübersicht](biztalk-editions-feature-chart.md)  
+- [BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal](biztalk-provision-services.md)  
+- [BizTalk Services: BizTalk-Dienststatusübersicht](biztalk-service-state-chart.md)  
 - [Wie verwende ich das Azure BizTalk Services SDK?](http://go.microsoft.com/fwlink/p/?LinkID=302335)
 
 [QuickStart]: ./media/biztalk-dashboard-monitor-scale-tabs/QuickStartIcon.png
@@ -368,6 +368,4 @@ Nun, da Sie mit den verschiedenen Registerkarten vertraut sind, können Sie mehr
 [EnabledMetric]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_EnabledMetric.png
  
 
-<!----HONumber=August15_HO7-->
-
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

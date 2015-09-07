@@ -1,6 +1,6 @@
 <properties
-	pageTitle="SharePoint-Serverfarm"
-	description="Sie können mithilfe der SharePoint-Serverfarm ganz schnell eine neue SharePoint Server 2013-Farm im Azure-Vorschauportal erstellen."
+	pageTitle="SharePoint-Serverfarm | Microsoft Azure"
+	description="Mithilfe der SharePoint-Serverfarm erstellen Sie im Azure-Vorschauportal ganz schnell eine neue grundlegende oder hochverfügbare SharePoint Server 2013-Farm."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -95,4 +95,4 @@ Die SharePoint-Serverfarm-Funktion des Azure-Vorschauportals erstellt virtuelle 
 
 [In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

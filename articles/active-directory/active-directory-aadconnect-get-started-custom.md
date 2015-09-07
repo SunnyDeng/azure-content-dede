@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Benutzerdefinierte Installation von Azure AD Connect" 
-	description="In diesem Dokument werden die Optionen für die benutzerdefinierte Installation für Azure AD Connect aufgeführt." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Benutzerdefinierte Installation von Azure AD Connect"
+	description="In diesem Dokument werden die Optionen für die benutzerdefinierte Installation für Azure AD Connect aufgeführt."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory"  
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/28/2015" 
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Benutzerdefinierte Installation von Azure AD Connect
@@ -83,7 +83,7 @@ Ihr eigenes Attribut|Mit dieser Option können Sie Ihr eigenes Attribut auswähl
 
 - **Quellanker** – Das Attribut "sourceAnchor" ist ein Attribut, das während der Lebensdauer eines Benutzerobjekts unveränderlich ist. Das Attribut ist der Primärschlüssel, der den lokalen Benutzer mit dem Benutzer in Azure AD verknüpft. Da das Attribut nicht geändert werden kann, müssen Sie sorgfältig planen, welches Attribut Sie verwenden möchten. Hier empfiehlt sich "objectGUID". Dieses Attribut wird nicht geändert, es sei denn, das Benutzerkonto wird zwischen Gesamtstrukturen/Domänen verschoben. In einer Umgebung mit mehreren Gesamtstrukturen, in der Sie Konten zwischen Gesamtstrukturen verschieben, muss ein anderes Attribut verwendet werden, z. B. ein Attribut mit der Mitarbeiter-ID. Sie sollten Attribute vermeiden, die sich ändern, wenn eine Person heiratet oder den Aufgabenbereich wechselt. Sie können keine Attribute mit einem @-Zeichen verwenden, daher sind E-Mail-Adressen und Benutzerprinzipalnamen ungeeignet. Bei dem Attribut wird die Groß-/Kleinschreibung beachtet. Wenn Sie also ein Objekts zwischen Gesamtstrukturen verschieben, müssen Sie darauf achten, die Groß-/Kleinschreibung beizubehalten. Bei binären Attributen ist der Wert base64-codiert. Für andere Attributtypen bleibt der Wert uncodiert. In Verbundszenarien und bei einigen Azure AD-Schnittstellen ist dieses Attribut auch als "immutableID" bekannt.
 
-- **UserPrincipalName** – Das Attribut "userPrincipalName" ist das Attribut, das Benutzer verwenden, wenn sie sich bei Azure AD und Office 365 anmelden. Die verwendeten Domänen, auch als UPN-Suffix bezeichnet, sollte in Azure AD überprüft werden, bevor die Benutzer synchronisiert werden. Es wird dringend empfohlen, das Standardattribut "userPrincipalName" beizubehalten. Wenn dieses Attribut nicht routingfähig ist und nicht überprüft werden kann, können Sie ein anderes Attribut als das Attribut mit der Anmelde-ID auswählen, beispielsweise "email".
+- **UserPrincipalName** – Das Attribut "userPrincipalName" ist das Attribut, das Benutzer verwenden, wenn sie sich bei Azure AD und Office 365 anmelden. Die verwendeten Domänen, auch als UPN-Suffix bezeichnet, sollte in Azure AD überprüft werden, bevor die Benutzer synchronisiert werden. Es wird dringend empfohlen, das Standardattribut "userPrincipalName" beizubehalten. Wenn dieses Attribut nicht routingfähig ist und nicht überprüft werden kann, können Sie ein anderes Attribut als das Attribut mit der Anmelde-ID auswählen, beispielsweise "email". Dies wird als **alternative ID** bezeichnet. Der Attributwert der alternativen ID muss dem RFC822-Standard entsprechen. Eine alternative ID kann mit Kennwort- und Verbund-SSO als Anmeldungslösung verwendet werden.
 
 >[AZURE.WARNING]Eine alternative ID ist nicht mit allen Office 365-Workloads kompatibel. Weitere Informationen finden Sie unter [Konfigurieren der alternativen Anmelde-ID](https://technet.microsoft.com/library/dn659436.aspx.).
 
@@ -103,7 +103,7 @@ Mithilfe des Features zur Filterung anhand von Gruppen können Sie ein kleines P
 
 Über diesen Bildschirm können Sie die optionalen Features für Ihre spezifischen Szenarios auswählen. Die einzelnen Features werden im Folgenden erläutert.
 
-<center>![Express-Installation](./media/active-directory-aadconnect-get-started/of.png)</center>
+<center>![Express-Installation](./media/active-directory-aadconnect-get-started-custom/optional.png)</center>
 
 
 Optionale Features | Beschreibung
@@ -111,7 +111,6 @@ Optionale Features | Beschreibung
 Exchange-Hybridbereitstellung |Die Exchange-Hybridbereitstellungsfunktion ermöglicht die Koexistenz von Exchange-Postfächern sowohl lokal und als auch in Azure durch die Synchronisierung eines bestimmten Attributsatzes von Azure AD zurück in Ihr lokales Verzeichnis.
 Azure AD-App- und Attributfilterung|Durch Aktivieren von Azure AD-App- und Attributfilterung kann die Sammlung der synchronisierten Attribute auf einer nachfolgenden Seite des Assistenten auf eine bestimmte Menge festgelegt werden. Zwei zusätzliche Konfigurationsseiten werden daraufhin im Assistenten geöffnet.  
 Rückschreiben von Kennwörtern|Durch Aktivieren des Rückschreibens von Kennwörtern werden Kennwortänderungen aus Azure AD in Ihr lokales Verzeichnis zurückgeschrieben.
-Rückschreiben von Benutzern|Durch Aktivieren des Rückschreibens von Benutzern werden in Azure AD erstellte Benutzer in Ihr lokales Verzeichnis zurückgeschrieben. Dadurch wird eine zusätzliche Konfigurationsseite im Assistenten geöffnet.  
 Verzeichniserweiterungen-Attributsynchronisierung|Durch Aktivieren der Verzeichniserweiterungen-Attributsynchronisierung werden angegebene Attribute mit Azure AD synchronisiert. Dadurch wird eine zusätzliche Konfigurationsseite im Assistenten geöffnet.  
 
 Zusätzliche Konfigurationsoptionen, z. B. das Ändern der Standardkonfiguration, die Verwendung des Synchronisierungsregel-Editors und die deklarative Bereitstellung, finden Sie unter [Verwalten von Azure AD Connect](active-directory-aadconnect-whats-next.md)
@@ -137,17 +136,7 @@ Diese Attribute sind jetzt über Graph verfügbar:
 ![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/extension4.png)
 
 
-## Benutzerrückschreiben (Vorschau)
 
-> [AZURE.WARNING]Wenn derzeit DirSync oder Azure AD Sync aktiv sind, aktivieren Sie keine der Features zum Rückschreiben in Azure AD Connect.
-
-Benutzerrückschreiben ermöglicht es Ihnen, einen Benutzer in Azure AD auszuwählen (über das Portal, Graph, PowerShell oder eine beliebige andere Methode) und den Benutzer wieder in den lokalen AD DS zurückzuschreiben. Um das Feature zu aktivieren, wählen Sie auf der Seite "Optionale Features" die Option "Benutzerrückschreiben" aus. Daraufhin wird Ihnen der Speicherort angezeigt, an dem diese Benutzer erstellt werden sollen. Bei der Standardkonfiguration werden alle Benutzern am selben Speicherort in AD DS erstellt.
-
-![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/writeback2.png)
-
-Die Benutzer werden mit einem zufälligen Kennwort erstellt. Daher müssen Sie das Kennwort in AD DS zurücksetzen, damit sich die Benutzer anmelden können.
-
->[AZURE.NOTE]Die Kennwortsynchronisierung und das Rückschreiben von Kennwörtern sind nicht kompatibel mit diesem Vorschaufeature.
 
 ## Gruppenrückschreiben (Vorschau)
 
@@ -290,4 +279,4 @@ Sie können die Abbildung und das Logo für Ihre AD FS-Anmeldeseiten anpassen, i
 	
 	Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"} –Illustration @{path=”c:\Contoso\illustration.png”}
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

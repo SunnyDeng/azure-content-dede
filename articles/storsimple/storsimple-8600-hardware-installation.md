@@ -1,21 +1,21 @@
 <properties 
    pageTitle="Installieren des StorSimple 8600-Geräts | Microsoft Azure"
-   description="Beschreibt, wie Sie das StorSimple 8600-Gerät auspacken, in ein Rack einbauen und verkabeln."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+	description="Beschreibt, wie Sie das StorSimple 8600-Gerät auspacken, in ein Rack einbauen und verkabeln., bevor Sie die Software bereitstellen und konfigurieren."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/06/2015"
-   ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/06/2015"
+	ms.author="alkohli"/>
 
-# Installieren des StorSimple 8600-Geräts
+# Auspacken, Einbauen und Verkabeln des StorSimple 8600-Geräts
 
 ## Übersicht
 Das Microsoft Azure StorSimple 8600-Gerät umfasst zwei Gehäuse: ein primäres Gehäuse und ein EBOD-Gehäuse. In diesem Lernprogramm wird erläutert, wie die StorSimple 8600-Gerätehardware vor dem Konfigurieren der StorSimple-Software ausgepackt, in ein Rack eingebaut und verkabelt wird.
@@ -289,4 +289,4 @@ Das Gerät ist nun für Stromversorgung, Netzwerkzugriff und serielle Verbindung
 Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

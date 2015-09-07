@@ -1,24 +1,23 @@
 <properties
-   pageTitle="Verwendung des Oracle-Connectors in Microsoft Azure App Service"
-   description="Verwenden des Oracle-Connectors"
-   services="app-service\logic"
-   documentationCenter=".net,nodejs,java"
-   authors="anuragdalmia"
-   manager="dwrede"
-   editor=""/>
+   pageTitle="Verwendung des Oracle-Datenbank-Connectors in Logik-Apps | Microsoft Azure App Service"
+	description="Erstellen und Konfigurieren des Oracle-Datenbank-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="anuragdalmia"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration"
-   ms.date="08/19/2015"
-   ms.author="sameerch"/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="08/23/2015"
+	ms.author="sameerch"/>
 
 
-# Oracle-Datenbankconnector
-
+# Erste Schritte mit dem Oracle-Datenbank-Connector und das Hinzufügen zur Logik-App
 Stellen Sie eine Verbindung mit einem lokalen Oracle-Datenbankserver her, um Informationen oder Daten zu erstellen oder zu ändern. Connectors können in Logik-Apps als Teil eines "Workflows" verwendet werden, um Daten abzurufen, zu verarbeiten oder per Pushvorgang zu übermitteln. Wenn Sie den Oracle-Connector im Workflow verwenden, können Sie eine Vielzahl von Szenarios umsetzen. Dazu zählen z. B.:
 
 - Machen Sie einen Teil der Daten in der Oracle-Datenbank mithilfe einer Web- oder mobilen Anwendung verfügbar.
@@ -117,4 +116,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-oracle/LogicApp7.png
 [12]: ./media/app-service-logic-connector-oracle/LogicApp8.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

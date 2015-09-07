@@ -17,11 +17,9 @@
 	ms.author="saah;kenhoff"/>
 
 # Anmeldungen aus mehreren geografischen Regionen
+<p>Dieser Bericht enthält erfolgreiche Anmeldungen eines Benutzers, wobei zwei Anmeldungen aus verschiedenen Regionen zu stammen scheinen und die Zeit zwischen den Anmeldungen so kurz ist, dass der Benutzer die Entfernung zwischen diesen Regionen nicht zurückgelegt haben kann. Mögliche Ursachen:</p><ul><li>Der Benutzer nutzt das Kennwort gemeinsam mit anderen Benutzern</li><li>Der Benutzer verwendet einen Remotedesktop, um einen Webbrowser für die Anmeldung zu starten</li><li>Ein Hacker hat sich aus einem anderen Land mit dem Konto eines Benutzers angemeldet</li><li>Der Benutzer verwendet ein VPN oder einen Proxy</li><li>Der Benutzer hat sich gleichzeitig über mehrere Geräte wie einen Desktop und ein Mobiltelefon angemeldet, und die IP-Adresse des Mobiltelefons ist ungewöhnlich.</li></ul><p>Die Ergebnisse in diesem Bericht enthalten die erfolgreichen Anmeldeereignisse sowie die Zeit zwischen den Anmeldungen, die Regionen, aus denen die Anmeldungen zu stammen scheinen, und die geschätzte Reisezeit zwischen diesen Regionen.</p><p>Die gezeigte Reisezeit ist lediglich eine Schätzung und kann von der tatsächlichen Reisezeit zwischen den Standorten abweichen.</p>
 
-| Beschreibung | Speicherort des Berichts |
-| :-------------     | :-------        |
-| <p>Dieser Bericht enthält erfolgreiche Anmeldeaktivitäten eines Benutzers, wobei zwei Anmeldungen aus verschiedenen Regionen zu stammen scheinen und die Zeit zwischen den Anmeldungen es dem Benutzer unmöglich macht, die Entfernung zwischen diesen Regionen reisend zurückgelegt zu haben. Mögliche Ursachen:</p><ul><li>Benutzer nutzt das Kennwort gemeinsam</li><li>Benutzer verwendet einen Remotedesktop, um einen Webbrowser für die Anmeldung zu starten</li><li>Ein Hacker hat sich aus einem anderen Land am Konto eines Benutzers angemeldet</li></ul><p>Die Ergebnisse in diesem Bericht enthalten die erfolgreichen Anmeldungsereignisse sowie die Zeit zwischen den Anmeldungen, die Regionen, aus denen die Anmeldungen stammen, und die geschätzte Reisezeit zwischen diesen Regionen.</p><p>Die gezeigte Reisezeit ist lediglich eine Schätzung und kann von der tatsächlichen Reisedauer zwischen den Standorten abweichen. Darüber hinaus werden keine Ereignisse für Anmeldungen zwischen benachbarten Regionen generiert.</p> | Verzeichnis > Registerkarte "Berichte" |
 
 ![Anmeldungen aus mehreren geografischen Regionen](./media/active-directory-reporting-sign-ins-from-multiple-geographies/signInsFromMultipleGeographies.PNG)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

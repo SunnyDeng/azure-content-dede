@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden" 
-	description="In diesem Thema wird beschrieben, wie ein Kanal eingerichtet wird, von dem ein Single-Bitrate-Livedatenstrom aus einem lokalen Encoder empfangen und eine Livecodierung zu einem Datenstrom mit adaptiver Bitrate mit Media Services ausgeführt wird. Der Stream kann über einen oder mehrere Streamingendpunkte an Wiedergabe-Clientanwendungen übermittelt werden. Dazu dienen die folgenden adaptiven Streamingprotokolle: HLS, Smooth Stream, MPEG DASH, HDS." 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
+	pageTitle="Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden"
+	description="In diesem Thema wird beschrieben, wie ein Kanal eingerichtet wird, von dem ein Single-Bitrate-Livedatenstrom aus einem lokalen Encoder empfangen und eine Livecodierung zu einem Datenstrom mit adaptiver Bitrate mit Media Services ausgeführt wird. Der Stream kann über einen oder mehrere Streamingendpunkte an Wiedergabe-Clientanwendungen übermittelt werden. Dazu dienen die folgenden adaptiven Streamingprotokolle: HLS, Smooth Stream, MPEG DASH, HDS."
+	services="media-services"
+	documentationCenter=""
+	authors="Juliako"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
-	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="ne"
+	ms.topic="article"
+	ms.date="08/20/2015"
 	ms.author="juliako"/>
 
 #Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden (Vorschau)
@@ -410,29 +410,6 @@ Beendet|Beendet|Nein
 - Die RTP-Unterstützung zielt auf professionelle Sendeanstalten ab. Bitte lesen Sie die Hinweise zu RTP in [diesem](http://azure.microsoft.com/blog/2015/04/13/an-introduction-to-live-encoding-with-azure-media-services/) Blog.
 - Die Slate-Bilder sollten den [hier](media-services-manage-live-encoder-enabled-channels.md#default_slate) beschriebenen Einschränkungen entsprechen. Wenn Sie versuchen, einen Kanal mit einem Standard-Slate-Bild zu erstellen, das größer ist als 1920 x 1080, tritt bei der Anforderung ein Fehler auf.
 
-
-##<a id="tasks"></a>Aufgaben im Zusammenhang mit Livestreaming
-
-###Erstellen eines Media Services-Kontos
-
-[Erstellen Sie ein Azure Media Services-Konto](media-services-create-account.md).
-
-###Konfigurieren von Streamingendpunkten
-
-Eine Übersicht über Streamingendpunkte sowie Informationen zu deren Verwaltung finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md).
-
-###Einrichten der Entwicklungsumgebung  
-
-Wählen Sie **.NET** oder **REST API** für Ihre Entwicklungsumgebung.
-
-[AZURE.INCLUDE [media-services-selector-setup](../../includes/media-services-selector-setup.md)]
-
-###Programmgesteuerte Verbindung  
-
-Wählen Sie **.NET** oder **REST API**, um eine programmgesteuerte Verbindung mit Azure Media Services herzustellen.
-
-[AZURE.INCLUDE [media-services-selector-connect](../../includes/media-services-selector-connect.md)]
-
 ###Erstellen von Kanälen, von denen eine Livecodierung eines Single-Bitrate-Datenstroms in einen Datenstrom mit adaptiver Bitrate ausgeführt wird 
 
 Wählen Sie **Portal**, **.NET** oder **REST API**, um auf Informationen zum Erstellen und Verwalten von Kanälen und Programmen zuzugreifen.
@@ -441,58 +418,6 @@ Wählen Sie **Portal**, **.NET** oder **REST API**, um auf Informationen zum Ers
 - [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
 - [.NET SDK](media-services-dotnet-creating-live-encoder-enabled-channel.md)
 - [REST API](https://msdn.microsoft.com/library/azure/dn783458.aspx)
-
-###Schutz der Medienobjekte
-
-**Übersicht**:
-
-[Inhaltsschutz – Übersicht](media-services-content-protection-overview.md)
-
-Wenn Sie Medienobjekt, das mit einem Programm verknüpft ist, mit AES (Advanced Encryption Standard, mit 128-Bit-Verschlüsselungsschlüsseln) oder PlayReady-DRM verschlüsseln möchten, müssen Sie einen Inhaltsschlüssel erstellen.
-
-Verwenden Sie **.NET** oder **REST API**, um Schlüssel zu erstellen.
-
-[AZURE.INCLUDE [media-services-selector-create-contentkey](../../includes/media-services-selector-create-contentkey.md)]
-
-Nach dem Erstellen des Inhaltsschlüssels können Sie die Autorisierungsrichtlinie für Schlüssel mithilfe von **.NET** oder **REST API** konfigurieren.
-
-[AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
-
-####Integrieren in Partneranwendungen
-
-[Übermitteln von DRM-Lizenzen an Azure Media Services mithilfe von castLabs](media-services-castlabs-integration.md)
-
-
-###Veröffentlichen und Bereitstellen von Medienobjekten
-
-**Übersicht**:
-
-- [Dynamische Paketerstellung – Übersicht](../media-services-dynamic-overview.md)
-
-
-Konfigurieren Sie Übermittlungsrichtlinien für Medienobjekte mithilfe von **.NET** oder **REST-API**.
-
-[AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
-
-Veröffentlichen von Medienobjekten (durch Locator-Erstellung) mithilfe des **Azure-Verwaltungsportals** oder mithilfe von **.NET**.
-
-[AZURE.INCLUDE [media-services-selector-publish](../../includes/media-services-selector-publish.md)]
-
-
-Bereitstellen von Inhalten
-
-> [AZURE.SELECTOR]
-- [Overview](media-services-deliver-content-overview.md)
-
-###Aktivieren von Azure CDN
-
-Von Media Services wird die Integration mit Azure CDN unterstützt. Informationen zum Aktivieren von Azure CDN finden Sie unter [Verwalten von Streamingendpunkten in Media Services-Konten](media-services-manage-origins.md#enable_cdn).
-
-###Skalieren eines Media Services-Kontos
-
-Sie können **Media Services** skalieren, indem Sie die Anzahl der **reservierten Einheiten für das Streaming** angeben, die für Ihr Konto bereitgestellt werden sollen.
-
-Informationen zum Skalieren von Streamingeinheiten finden Sie unter [Skalieren von Streamingeinheiten](media-services-manage-origins.md#scale_streaming_endpoints.md).
 
 ##Verwandte Themen
 
@@ -505,4 +430,4 @@ Informationen zum Skalieren von Streamingeinheiten finden Sie unter [Skalieren v
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

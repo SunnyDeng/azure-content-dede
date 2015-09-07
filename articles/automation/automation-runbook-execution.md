@@ -1,19 +1,19 @@
 <properties
    pageTitle="Ausführen von Runbooks in Azure Automation"
-   description="Beschreibt ausführlich, wie ein Runbook in Azure Automation verarbeitet wird."
-   services="automation"
-   documentationCenter=""
-   authors="bwren"
-   manager="stevenka"
-   editor="tysonn" />
+	description="Beschreibt ausführlich, wie ein Runbook in Azure Automation verarbeitet wird."
+	services="automation"
+	documentationCenter=""
+	authors="bwren"
+	manager="stevenka"
+	editor="tysonn"/>
 <tags
    ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/22/2015"
-   ms.author="bwren" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="07/22/2015"
+	ms.author="bwren"/>
 
 # Ausführen von Runbooks in Azure Automation
 
@@ -89,7 +89,7 @@ Die folgenden Beispielbefehle rufen den letzten Auftrag für ein Beispielrunbook
 
 ## Gleichmäßige Verteilung
 
-Damit Ressourcen von allen Runbooks in der Cloud verwendet werden können, entlädt Azure Automation jeden Auftrag vorübergehend, nachdem er 3 Stunden lang ausgeführt wurde, und startet ihn dann vom letzten [Prüfpunkt](http://aka.ms/runbookauthor/checkpoints) aus neu. Während dieser Zeit weist der Auftrag den Status "Wird ausgeführt, auf Ressourcen wird gewartet" auf. Wenn das Runbook keine Prüfpunkte enthält oder der Auftrag den ersten Prüfpunkt vor dem Entladen nicht erreicht hat, wird der Auftrag vom Anfang neu gestartet.
+Damit Ressourcen von allen Runbooks in der Cloud verwendet werden können, entlädt Azure Automation jeden Auftrag vorübergehend, nachdem er 3 Stunden lang ausgeführt wurde, und startet ihn dann vom letzten [Prüfpunkt](http://technet.microsoft.com/library/dn469257.aspx#bk_Checkpoints) aus neu. Während dieser Zeit weist der Auftrag den Status "Wird ausgeführt, auf Ressourcen wird gewartet" auf. Wenn das Runbook keine Prüfpunkte enthält oder der Auftrag den ersten Prüfpunkt vor dem Entladen nicht erreicht hat, wird der Auftrag vom Anfang neu gestartet.
 
 Wenn das Runbook vom gleichen Prüfpunkt aus oder vom Anfang des Runbooks drei aufeinander folgende Male neu gestartet wurde, wird es mit dem Status "Fehler, auf Ressourcen wird gewartet" beendet. Dieses Verhalten schützt davor, dass Runbooks unbegrenzt ausgeführt werden, da der nächste Prüfpunkt nicht ohne Entladen erreicht werden kann. In diesem Fall wird ein Ausnahmefehler mit der folgenden Meldung angezeigt.
 
@@ -101,8 +101,6 @@ Sorgen Sie beim Erstellen eines Runbooks dafür, dass die Zeit zum Ausführen vo
 
 ## Verwandte Artikel
 
-- [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook)
-- [Anzeigen des Status eines Runbookauftrags in Azure Automation](automation-viewing-the-status-of-a-runbook-job)
- 
+- [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,21 +1,21 @@
 <properties
    pageTitle="Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager"
-   description="Konzeptuelle Übersicht über die Rechen-, Netzwerk- und Speicherressourcenanbieter CRP, NRP, SRP)"
-   services="virtual-machines"
-   documentationCenter="dev-center-name"
-   authors="mahthi"
-   manager="coreysa"
-   editor=""
+	description="Konzeptuelle Übersicht über die Rechen-, Netzwerk- und Speicherressourcenanbieter CRP, NRP, SRP)"
+	services="virtual-machines"
+	documentationCenter="dev-center-name"
+	authors="mahthi"
+	manager="timlt"
+	editor=""
 	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
    ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="04/29/2015"
-   ms.author="mahthi"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="04/29/2015"
+	ms.author="mahthi"/>
 
 # Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager
 
@@ -110,4 +110,4 @@ Die Automatisierungen und Skripts, die Sie erstellt haben, bleiben für die vorh
 Dies wird zurzeit nicht unterstützt. Die mit den neuen Azure-Ressourcen-Manager-APIs erstellten virtuellen Netzwerke können nicht mit Express Route-Schaltkreisen verbunden werden Dies wird zukünftig unterstützt.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,26 +1,23 @@
 <properties 
-	pageTitle="Erste Schritte mit Azure AD Connect" 
-	description="Informationen zum Herunterladen, Installieren und Ausführen des Setup-Assistenten für Azure AD Connect." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Erste Schritte mit Azure AD Connect"
+	description="Informationen zum Herunterladen, Installieren und Ausführen des Setup-Assistenten für Azure AD Connect."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/28/2015" 
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 # Erste Schritte mit Azure AD Connect
 
-<div class="dev-center-tutorial-selector sublanding">
-<a href="../active-directory-aadconnect/" title="Worum handelt es sich?">Worum handelt es sich?</a> <a href="../active-directory-aadconnect-how-it-works/" title="Funktionsweise">Funktionsweise</a> <a href="../active-directory-aadconnect-get-started/" title="Erste Schritte" class="current">Erste Schritte</a> <a href="../active-directory-aadconnect-whats-next/" title="Nächste Schritte">Nächste Schritte</a> <a href="../active-directory-aadconnect-learn-more/" title="Weitere Informationen">Weitere Informationen</a>
-</div>
 
 
 Die folgende Dokumentation hilft Ihnen beim Einstieg mit Azure Active Directory Connect. In dieser Dokumentation wird die Verwendung der Expressinstallation für Azure AD Connect behandelt. Informationen zur benutzerdefinierten Installation finden Sie unter [Custom installation of Azure AD Connect](active-directory-aadconnect-get-started-custom.md) (in englischer Sprache). Informationen zum Aktualisieren von DirSync auf Azure AD Connect finden Sie unter [Upgrading DirSync to Azure Active Directory Connect](active-directory-aadconnect-dirsync-upgrade-get-started.md) (in englischer Sprache).
@@ -114,4 +111,4 @@ Nachdem Sie nun Azure AD Connect installiert haben, können Sie auf diesen Link
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

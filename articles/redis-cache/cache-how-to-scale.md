@@ -1,26 +1,26 @@
 <properties 
-	pageTitle="Skalieren von Azure Redis Cache" 
-	description="Erfahren Sie, wie Sie Azure Redis Cache-Instanzen skalieren" 
-	services="redis-cache" 
-	documentationCenter="" 
-	authors="steved0x" 
-	manager="dwrede" 
+	pageTitle="Skalieren von Azure Redis Cache"
+	description="Erfahren Sie, wie Sie Azure Redis Cache-Instanzen skalieren"
+	services="redis-cache"
+	documentationCenter=""
+	authors="steved0x"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="cache" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="cache-redis" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/18/2015" 
+	ms.service="cache"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="cache-redis"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/25/2015"
 	ms.author="sdanie"/>
 
 # Skalieren von Azure Redis Cache
 
 >[AZURE.NOTE]Die Skalierungsfunktion von Azure Redis Cache befindet sich derzeit in der Vorschau.
 
-Für Azure Redis Cache stehen verschiedene Cacheangebote bereit, die Flexibilität bei der Auswahl von Cachegröße und -funktionen bieten. Wenn sich die Anforderungen Ihrer Anwendung ändern, nachdem der Cache erstellt wurde, können Sie die Größe des Caches auf dem Blatt **Ändern des Tarifs** im [Azure-Portal](https://portal.azure.com) skalieren.
+Für Azure Redis Cache stehen verschiedene Cacheangebote bereit, die Flexibilität bei der Auswahl von Cachegröße und -funktionen bieten. Wenn sich die Anforderungen Ihrer Anwendung ändern, nachdem der Cache erstellt wurde, können Sie die Größe des Caches auf dem Blatt **Ändern des Tarifs** im [Azure-Vorschauportal](https://portal.azure.com) skalieren.
 
 >[AZURE.NOTE]Wenn Sie einen Azure Redis Cache skalieren, können Sie die Größe ändern, Sie können jedoch nicht zwischen den Stufen Standard und Basic wechseln.
 
@@ -38,7 +38,7 @@ Sie können die Integrität und Leistung Ihrer Cacheanwendungen mithilfe der [Ü
 Wenn Sie feststellen, dass Ihr Cache die Anforderungen Ihrer Anwendung nicht mehr erfüllt, können Sie in einen anderen Tarif wechseln, der zu Ihrer Anwendung passt. Weitere Informationen dazu, wie Sie ermitteln, welcher Cachetarif geeignet ist, finden Sie unter [Welches Angebot und welche Größe eignet sich für meinen Redis Cache](cache-faq.md#what-redis-cache-offering-and-size-should-i-use)?
 
 ## Skalieren eines Caches
-Um Ihren Cache zu skalieren, navigieren Sie per [Durchsuchen](https://msdn.microsoft.com/library/azure/dn793612.aspx#RedisCacheConfiguration) im [Azure-Portal](https://portal.azure.com) zu Ihrem Cache, und klicken Sie auf das Detail **Tarif "Standard"** oder **Tarif "Basic"** auf dem Blatt **Redis Cache**.
+Um Ihren Cache zu skalieren, navigieren Sie per [Durchsuchen](cache-configure.md#configure-redis-cache-settings) im [Vorschauportal](https://portal.azure.com) zu Ihrem Cache, und klicken Sie auf das Detail **Tarif "Standard"** oder **Tarif "Basic"** auf dem Blatt **Redis Cache**.
 
 ![Tarif][redis-cache-pricing-tier-part]
 
@@ -58,12 +58,12 @@ Wenn die Skalierung abgeschlossen ist, ändert sich der Status von **Wird skalie
 
 ## Automatisieren eines Skalierungsvorgangs
 
-Sie können Ihre Azure Redis Cache-Instanz nicht nur über das Azure-Portal skalieren, sondern auch mithilfe der [Microsoft Azure-Verwaltungsbibliotheken](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/). Um Ihren Cache zu skalieren, rufen Sie die `IRedisOperations.CreateOrUpdate`-Methode auf, und übergeben Sie die neue Größe für `RedisProperties.SKU.Capacity`.
+Sie können Ihre Azure Redis Cache-Instanz nicht nur über das Vorschauportal skalieren, sondern auch mithilfe der [Microsoft Azure-Verwaltungsbibliotheken](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/). Um Ihren Cache zu skalieren, rufen Sie die `IRedisOperations.CreateOrUpdate`-Methode auf, und übergeben Sie die neue Größe für `RedisProperties.SKU.Capacity`.
 
     static void Main(string[] args)
     {
         // For instructions on getting the access token, see
-        // https://msdn.microsoft.com/de-de/library/azure/dn790557.aspx#bk_portal
+        // https://azure.microsoft.com/documentation/articles/cache-configure/#access-keys
         string token = GetAuthorizationHeader();
 
         TokenCloudCredentials creds = new TokenCloudCredentials(subscriptionId,token);
@@ -120,7 +120,7 @@ Die Skalierung dauert ca. 20 Minuten, je nachdem, wie viele Daten sich im Cache
 
 ## Woher weiß ich, dass die Skalierung abgeschlossen ist?
 
-Im Portal können Sie den Fortschritt der Skalierung anzeigen. Wenn die Skalierung abgeschlossen ist, ändert sich der Status des Caches zu **Wird ausgeführt**.
+Im Vorschauportal können Sie den Fortschritt der Skalierung anzeigen. Wenn die Skalierung abgeschlossen ist, ändert sich der Status des Caches zu **Wird ausgeführt**.
 
 ## Warum befindet sich diese Funktion in der Vorschau?
 
@@ -138,4 +138,4 @@ Wir haben die Funktion veröffentlicht, um Feedback zu erhalten. Basierend auf d
 
 [redis-cache-scaling]: ./media/cache-how-to-scale/redis-cache-scaling.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

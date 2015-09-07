@@ -1,20 +1,20 @@
 <properties
    pageTitle="Flexible Leistung und Skalierbarkeit mit SQL Data Warehouse | Microsoft Azure"
-   description="Grundlegende Informationen zur SQL Data Warehouse-Flexibilität mithilfe von Data Warehouse-Einheiten für die Aufwärts- und Abwärtsskalierung von Compute-Ressourcen. Codebeispiele werden bereitgestellt."
-   services="sql-data-warehouse"
-   documentationCenter="NA"
-   authors="TwoUnder"
-   manager="barbkess"
-   editor=""/>
+	description="Grundlegende Informationen zur SQL Data Warehouse-Flexibilität mithilfe von Data Warehouse-Einheiten für die Aufwärts- und Abwärtsskalierung von Compute-Ressourcen. Codebeispiele werden bereitgestellt."
+	services="sql-data-warehouse"
+	documentationCenter="NA"
+	authors="TwoUnder"
+	manager="barbkess"
+	editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="06/25/2015"
-   ms.author="nicw;JRJ@BigBangData.co.uk;mausher"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-services"
+	ms.date="06/25/2015"
+	ms.author="nicw;JRJ@BigBangData.co.uk;mausher"/>
 
 # Flexible Leistung und Skalierbarkeit mit SQL Data Warehouse
 Um die Rechenleistung flexibel zu erhöhen oder zu verringern, müssen Sie nur die Anzahl der Data Warehouse-Einheiten (Data Warehouse Unit, DWU) anpassen, die Ihrem SQL Data Warehouse zugeordnet sind. Data Warehouse-Einheiten sind ein neues Konzept des SQL Data Warehouse, damit Sie einfach und effektiv verwalten können. Dieses Thema dient als Einführung in Data Warehouse-Einheiten. Es erläutert, wie Sie damit Ihre Rechenleistung flexibel skalieren können. Der Artikel enthält auch eine erste Anleitung zum Festlegen eines sinnvollen DWU-Werts für Ihre Umgebung.
@@ -39,15 +39,16 @@ Wenn Sie eine Anwendung mit wechselndem Workload haben, können Sie die Leistung
 ## Aufwärts- und Abwärtsskalieren von Compute-Ressourcen
 Unabhängig vom Cloudspeicher ermöglicht Ihnen die Flexibilität von SQL Data Warehouse das Vergrößern, Verkleinern oder Anhalten der Rechenleistung mithilfe eines Schiebereglers für Data Warehouse-Einheiten (DWUs). Dies bietet Ihnen die Flexibilität, die Rechenleistung auf einen Idealwert für Ihr Unternehmen zu optimieren.
 
-Das Erhöhen der Rechenleistung erfolgt über das [Azure-Portal][] mithilfe von T-SQL, über REST-APIs oder über Powershell. Durch Aufwärts- und Abwärtsskalieren werden alle laufenden oder sich in einer Warteschlange befindenden Aktivitäten abgebrochen, aber in wenigen Sekunden abgeschlossen, sodass Sie mit mehr oder weniger Rechenleistung fortfahren können.
+Um die Rechenleistung zu erhöhen, können Sie mithilfe des Schiebereglers für die Skalierung im Azure-Portal weitere DWUs hinzufügen. Sie können auch mithilfe von T-SQL, REST-APIs oder Powershell-Cmdlets DWUs hinzufügen. Durch Aufwärts- und Abwärtsskalieren werden alle laufenden oder sich in einer Warteschlange befindenden Aktivitäten abgebrochen, aber in wenigen Sekunden abgeschlossen, sodass Sie mit mehr oder weniger Rechenleistung fortfahren können.
 
-Der folgende T-SQL-Code zeigt, wie Sie die DWU-Zuordnung für Ihr SQL Data Warehouse anpassen:
+Im [Azure-Portal][] können Sie oben auf der SQL Data Warehouse-Seite auf das Symbol zum Skalieren klicken und anschließend mithilfe des Schiebereglers die Anzahl der DWUs, die auf Data Warehouse angewendet werden, erhöhen oder verringern. Klicken Sie anschließend auf „Speichern“. Wenn Sie die Skalierung lieber programmgesteuert ändern, zeigt der folgende T-SQL-Code, wie Sie die DWU-Zuordnung für Ihr SQL Data Warehouse anpassen:
 
 ```
 ALTER DATABASE MySQLDW 
 MODIFY (SERVICE_OBJECTIVE = 'DW1000')
 ;
 ```
+Dieser T-SQL-Code sollte für den logischen Server und nicht für die SQL Data Warehouse-Instanz selbst ausgeführt werden.
 
 Sie können dasselbe Ergebnis mithilfe von Powershell und dem folgenden Code erreichen:
 
@@ -95,4 +96,4 @@ Die Leistungsübersicht finden Sie unter [Leistungsübersicht][].
 
 [Azure-Portal]: http://portal.azure.com/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

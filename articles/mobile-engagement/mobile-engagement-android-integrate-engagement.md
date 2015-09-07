@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Integration des Azure Mobile Engagement Android SDKs" 
+	pageTitle="Integration des Azure Mobile Engagement Android SDKs"
 	description="Neueste Updates und Verfahren für das Android SDK für Azure Mobile Engagement"
-	services="mobile-engagement" 
-	documentationCenter="mobile" 
-	authors="piyushjo" 
-	manager="dwrede" 
-	editor="" />
+	services="mobile-engagement"
+	documentationCenter="mobile"
+	authors="piyushjo"
+	manager="dwrede"
+	editor=""/>
 
 <tags 
-	ms.service="mobile-engagement" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="08/10/2015" 
-	ms.author="piyushjo" />
+	ms.service="mobile-engagement"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="08/10/2015"
+	ms.author="piyushjo"/>
 
 #Integrieren von Mobile Engagement unter Android
 
@@ -54,10 +54,6 @@ Die Verbindungszeichenfolge für die Anwendung wird im Azure-Portal angezeigt.
 
 			<uses-permission android:name="android.permission.INTERNET"/>
 			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
--   Für einige Gerätemodelle kann der Engagement-Gerätebezeichner nicht aus der „ANDROID\_ID“ generiert werden (sie ist möglicherweise fehlerhaft oder nicht verfügbar). In diesem Fall generiert das SDK einen zufälligen Gerätebezeichner und versucht dann, ihn im externen Speicher des Geräts zu speichern, damit derselbe Gerätebezeichner von anderen Engagement-Anwendungen gemeinsam genutzt werden kann (er wird auch als gemeinsam genutzte Voreinstellung gespeichert, um sicherzustellen, dass die Anwendung unabhängig vom externen Speicher immer denselben Gerätebezeichner verwendet). Damit dieser Mechanismus ordnungsgemäß funktioniert, müssen Sie die folgende Berechtigung hinzufügen, wenn diese fehlt (vor dem `<application>`-Tag):
-
-			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
 -   Fügen Sie den folgenden Abschnitt (zwischen den Tags `<application>` und `</application>` hinzu):
 
@@ -177,15 +173,20 @@ Wenn Sie die Speicherorte melden möchten, müssen Sie einige Zeilen zur Konfigu
 
 Die verzögerte Berichterstellung für Bereichsspeicherorte ermöglicht es Ihnen, das Land, die Region und den Ort zu melden, die Geräten zugeordnet sind. Diese Art der Berichterstellung für Speicherorte verwendet ausschließlich Netzwerkspeicherorte (auf Basis von Zell-ID oder WLAN). Der Gerätebereich wird höchstens einmal pro Sitzung gemeldet. Das GPS wird niemals verwendet, daher hat diese Art von Standortbericht sehr geringe (oder fast keine) Auswirkungen auf den Akku.
 
-Die gemeldeten Bereiche werden dazu verwendet, um geografische Statistiken zu Benutzern, Sitzungen, Ereignissen und Fehlern zu berechnen. Sie können auch als Kriterium für Reach-Kampagnen verwendet werden. Der für ein Gerät zuletzt gemeldete bekannte Bereich kann mithilfe der [Geräte-API] abgerufen werden.
+Die gemeldeten Bereiche werden dazu verwendet, um geografische Statistiken zu Benutzern, Sitzungen, Ereignissen und Fehlern zu berechnen. Sie können auch als Kriterium für Reach-Kampagnen verwendet werden.
 
-Fügen Sie Folgendes hinzu, um die verzögerte Berichterstellung für Bereichsspeicherorte zu aktivieren:
+Verzögerte Bereichsspeicherortberichte aktivieren Sie mithilfe der zuvor in diesem Verfahren erwähnten Konfiguration:
 
-			<meta-data android:name="engagement:locationReport:lazyArea" android:value="true"/>
+    EngagementConfiguration engagementConfiguration = new EngagementConfiguration();
+    engagementConfiguration.setConnectionString("Endpoint={appCollection}.{domain};AppId={appId};SdkKey={sdkKey}");
+    engagementConfiguration.setLazyAreaLocationReport(true);
+    EngagementAgent.getInstance(this).init(engagementConfiguration);
 
 Sie müssen auch die folgende Berechtigung hinzufügen, sofern diese noch nicht vorhanden ist:
 
 			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+Sie können auch weiterhin ``ACCESS_FINE_LOCATION`` verwenden, wenn dies bereits Teil Ihrer Anwendung ist.
 
 ### Echtzeit-Berichterstellung für Speicherorte
 
@@ -193,19 +194,28 @@ Mithilfe der Echtzeit-Berichterstellung für Speicherorte können der Längen- u
 
 Echtzeit-Speicherorte werden *NICHT* zum Berechnen von Statistiken verwendet. Ihr einziger Zweck ist es, die Verwendung des Echtzeit-Geofencing <Reach-Audience-geofencing >Kriteriums in Reach-Kampagnen zu ermöglichen.
 
-Fügen Sie Folgendes hinzu, um die Echtzeit-Berichterstellung für Speicherorte zu aktivieren:
+Die Echtzeit-Berichterstellung für Speicherorte aktivieren Sie mithilfe der zuvor in diesem Verfahren erwähnten Konfiguration:
 
-			<meta-data android:name="engagement:locationReport:realTime" android:value="true" />
+    EngagementConfiguration engagementConfiguration = new EngagementConfiguration();
+    engagementConfiguration.setConnectionString("Endpoint={appCollection}.{domain};AppId={appId};SdkKey={sdkKey}");
+    engagementConfiguration.setRealtimeLocationReport(true);
+    EngagementAgent.getInstance(this).init(engagementConfiguration);
 
 Sie müssen auch die folgende Berechtigung hinzufügen, sofern diese noch nicht vorhanden ist:
 
 			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
+Sie können auch weiterhin ``ACCESS_FINE_LOCATION`` verwenden, wenn dies bereits Teil Ihrer Anwendung ist.
+
 #### GPS-basierte Berichterstellung
 
-Die Echtzeit-Berichterstellung für Speicherorte verwendet standardmäßig nur netzwerkbasierte Speicherorte. Fügen Sie Folgendes hinzu, um die Verwendung von GPS-basierten Speicherorten (die viel genauer sind) zu aktivieren:
+Die Echtzeit-Berichterstellung für Speicherorte verwendet standardmäßig nur netzwerkbasierte Speicherorte. Verwenden Sie das Konfigurationsobjekt, um die Verwendung von GPS-basierten Speicherorten (die viel genauer sind) zu aktivieren:
 
-			<meta-data android:name="engagement:locationReport:realTime:fine" android:value="true" />
+    EngagementConfiguration engagementConfiguration = new EngagementConfiguration();
+    engagementConfiguration.setConnectionString("Endpoint={appCollection}.{domain};AppId={appId};SdkKey={sdkKey}");
+    engagementConfiguration.setRealtimeLocationReport(true);
+    engagementConfiguration.setFineRealtimeLocationReport(true);
+    EngagementAgent.getInstance(this).init(engagementConfiguration);
 
 Sie müssen auch die folgende Berechtigung hinzufügen, sofern diese noch nicht vorhanden ist:
 
@@ -213,9 +223,13 @@ Sie müssen auch die folgende Berechtigung hinzufügen, sofern diese noch nicht 
 
 #### Berichterstellung im Hintergrund
 
-Die Echtzeit-Berichterstellung für Speicherorte ist standardmäßig nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung). Fügen Sie Folgendes hinzu, um die Berichterstellung auch im Hintergrund zu aktivieren:
+Die Echtzeit-Berichterstellung für Speicherorte ist standardmäßig nur aktiv, wenn die Anwendung im Vordergrund ausgeführt wird (d. h. während einer Sitzung). Verwenden Sie das Konfigurationsobjekt, um die Berichterstellung auch im Hintergrund zu aktivieren:
 
-			<meta-data android:name="engagement:locationReport:realTime:background" android:value="true" />
+    EngagementConfiguration engagementConfiguration = new EngagementConfiguration();
+    engagementConfiguration.setConnectionString("Endpoint={appCollection}.{domain};AppId={appId};SdkKey={sdkKey}");
+    engagementConfiguration.setRealtimeLocationReport(true);
+    engagementConfiguration.setBackgroundRealtimeLocationReport(true);
+    EngagementAgent.getInstance(this).init(engagementConfiguration);
 
 > [AZURE.NOTE]Wenn die Anwendung im Hintergrund ausgeführt wird, werden nur netzwerkbasierte Speicherorte gemeldet, auch wenn Sie das GPS aktiviert haben.
 
@@ -231,6 +245,63 @@ Der Hintergrundbericht für Speicherorte wird beendet, wenn der Benutzer sein Ge
 Sie müssen auch die folgende Berechtigung hinzufügen, sofern diese noch nicht vorhanden ist:
 
 			<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+### Android M-Berechtigungen
+
+Ab Android M werden bestimmte Berechtigungen zur Laufzeit verwaltet und erfordern die Genehmigung des Benutzers.
+
+Die Laufzeitberechtigungen werden für neue App-Installationen standardmäßig deaktiviert, wenn Sie auf die Android-API-Ebene 23 abzielen. Andernfalls sind sie standardmäßig aktiviert.
+
+Der Benutzer kann diese Berechtigungen im Einstellungsmenü des Geräts aktivieren oder deaktivieren. Das Deaktivieren der Berechtigungen im Systemmenü beendet alle Hintergrundprozesse der Anwendung, was ein Systemverhalten ist und keine Auswirkungen auf die Fähigkeit hat, Pushbenachrichtigungen im Hintergrund zu empfangen.
+
+Im Kontext von Mobile Engagement sind die Berechtigungen, die eine Genehmigung zur Laufzeit erfordern, folgende:
+
+- `ACCESS_COARSE_LOCATION`
+- `ACCESS_FINE_LOCATION`
+- `WRITE_EXTERNAL_STORAGE` (nur bei Android-API-Ebene 23 als Ziel)
+
+Der externe Speicher wird nur für die Überblicksfunktion von Reach verwendet. Wenn Sie feststellen, dass es störend ist, die Benutzer nach dieser Berechtigung aufzufordern, können Sie sie entfernen, wenn sie nur für Mobile Engagement verwendet wird. Beachten Sie, dass dadurch jedoch die Überblicksfunktion deaktiviert wird.
+
+Für die Speicherortfunktionen sollten Sie Berechtigungen für Benutzer über ein Standarddialogfeld anfordern. Wenn der Benutzer zustimmt, müssen Sie ``EngagementAgent`` mitteilen, dass diese Änderung in Echtzeit vorgenommen wird (andernfalls wird die Änderung verarbeitet, sobald der Benutzer die Anwendung das nächste Mal startet).
+
+Hier ist ein Codebeispiel, dass Sie in einer Aktivität Ihrer Anwendung verwenden können, um Berechtigungen anzufordern und das Ergebnis (wenn positiv) weiterzuleiten an ``EngagementAgent``:
+
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+      /* Other code... */
+    
+      /* Request permissions */
+      requestPermissions();
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    private void requestPermissions()
+    {
+      /* Avoid crashing if not on Android M */
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+      {
+        /*
+         * Request location permission, but this won't explain why it is needed to the user.
+         * The standard Android documentation explains with more details how to display a rationale activity to explain the user why the permission is needed in your application.
+         * Putting COARSE vs FINE has no impact here, they are part of the same group for runtime permission management.
+         */
+        if (checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+          requestPermissions(new String[] { android.Manifest.permission.ACCESS_FINE_LOCATION }, 0);
+    
+        /* Only if you want to keep features using external storage */
+        if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+          requestPermissions(new String[] { android.Manifest.permission.WRITE_EXTERNAL_STORAGE }, 1);
+      }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
+    {
+      /* Only a positive location permission update requires engagement agent refresh, hence the request code matching from above function */
+      if (requestCode == 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+        getEngagementAgent().refreshPermissions();
+    }
 
 ##Erweiterte Berichterstellung
 
@@ -308,7 +379,7 @@ Dann können Sie `CheckBoxPreference` wie folgt im Einstellungslayout hinzufüge
 			  android:summaryOff="Engagement is disabled." />
 
 <!-- URLs. -->
-[Geräte-API]: http://go.microsoft.com/?linkid=9876094
+[Device API]: http://go.microsoft.com/?linkid=9876094
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

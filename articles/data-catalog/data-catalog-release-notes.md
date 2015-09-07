@@ -1,20 +1,20 @@
 <properties
    pageTitle="Versionshinweise für Azure Data Catalog"
-   description="Versionshinweise für die Azure Data Catalog-Version vom 13. Juli 2015"
-   services="data-catalog"
-   documentationCenter=""
-   authors="dvana"
-   manager="mblythe"
-   editor=""
-   tags=""/>
+	description="Versionshinweise für die öffentliche Vorschauversion von Azure Data Catalog vom 13. Juli 2015"
+	services="data-catalog"
+	documentationCenter=""
+	authors="dvana"
+	manager="mblythe"
+	editor=""
+	tags=""/>
 <tags
    ms.service="data-catalog"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-catalog"
-   ms.date="07/13/2015"
-   ms.author="derrickv"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-catalog"
+	ms.date="07/13/2015"
+	ms.author="derrickv"/>
 
 # Hinweise für die Azure Data Catalog-Version vom 13. Juli 2015
 
@@ -31,15 +31,15 @@ Beim Herstellen einer Verbindung mit Oracle Database-Datenquellen müssen Benutz
 
 Die Unterstützung von SQL Server Reporting Services (SSRS)-Datenquellen ist in der ersten Vorschauversion von Azure Data Catalog auf Server im systemeigenen Modus beschränkt. Die Unterstützung für SSRS im SharePoint-Modus wird in einer späteren Version implementiert.
 
-## Öffnen von Datenressourcen in Excel
+## Öffnen von Datenassets in Excel
 
-Beim Öffnen von Datenressourcen in Microsoft Excel aus dem Azure Data Catalog-Portal wird Benutzern möglicherweise ein Dialogfeld mit einem **Sicherheitshinweis für Microsoft Excel** angezeigt. Hierbei handelt es sich um einen Standardvorgang. Benutzer können **Aktivieren** auswählen, um den Vorgang fortzusetzen.
+Beim Öffnen von Datenassets in Microsoft Excel aus dem Azure Data Catalog-Portal wird Benutzern möglicherweise ein Dialogfeld mit einem **Sicherheitshinweis für Microsoft Excel** angezeigt. Hierbei handelt es sich um einen Standardvorgang. Benutzer können **Aktivieren** auswählen, um den Vorgang fortzusetzen.
 
-Weitere Informationen finden Sie unter [Aktivieren oder Deaktivieren von Sicherheitswarnungen zu Verknüpfungen und Dateien von verdächtigen Websites](https://support.office.com/de-de/article/Enable-or-disable-security-alerts-about-links-and-files-from-suspicious-websites-A1AC6AE9-5C4A-4EB3-B3F8-143336039BBE).
+Weitere Informationen finden Sie unter [Aktivieren oder Deaktivieren von Sicherheitswarnungen zu Verknüpfungen und Dateien von verdächtigen Websites](https://support.office.com/de-DE/article/Enable-or-disable-security-alerts-about-links-and-files-from-suspicious-websites-A1AC6AE9-5C4A-4EB3-B3F8-143336039BBE).
 
 ## Fehlende Blob- und UDT-Spalten in der Vorschau
 
-Wenn Sie Tabellen und Sichten registrieren, die Spalten für Blob- (Binary Large Object) und benutzerdefinierte Datentypen (user-defined data type, UDT) enthalten, und Sie die Vorschau für die Datenressourcen hinzufügen möchten, werden diese Spalten in der Vorschau nicht berücksichtigt.
+Wenn Sie Tabellen und Sichten registrieren, die Spalten für Blob- (Binary Large Object) und benutzerdefinierte Datentypen (user-defined data type, UDT) enthalten, und Sie die Vorschau für die Datenassets hinzufügen möchten, werden diese Spalten in der Vorschau nicht berücksichtigt.
 
 ## Proxy- und Richtlinienkonfiguration und Datenquellenregistrierung
 
@@ -67,4 +67,4 @@ Weitere Informationen finden Sie unter [Configuring intranet forms-based authent
 
 Starten Sie das Registrierungstool, um die Datei "RegistrationTool.exe.config" zu suchen, und öffnen Sie den Windows Task-Manager. Klicken Sie im Task-Manager auf der Registerkarte "Details" mit der rechten Maustaste auf "RegistrationTool.exe", und wählen Sie im Popupmenü "Dateispeicherort öffnen" aus.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

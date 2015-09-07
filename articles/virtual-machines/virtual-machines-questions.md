@@ -59,7 +59,7 @@ In vielerlei Hinsicht ähneln sie Hyper-V-Computer der "ersten Generation", sie 
 
 ## Können diese virtuellen Computer meine vorhandene lokale Netzwerkinfrastruktur verwenden?
 
-Für in der Dienstverwaltung erstellte virtuelle Computer können Sie Azure Virtual Network verwenden, um Ihre vorhandene Infrastruktur zu erweitern. Dieser Ansatz entspricht dem Einrichten einer Filiale. Sie können in Azure virtuelle private Netzwerke (VPN) bereitstellen und verwalten und diese sicher mit Ihrer IT-Infrastruktur vor Ort verbinden. Weitere Informationen finden Sie unter [Virtuelle Netzwerke im Überblick](https://msdn.microsoft.com/library/jj156007.aspx).
+Für in der Dienstverwaltung erstellte virtuelle Computer können Sie Azure Virtual Network verwenden, um Ihre vorhandene Infrastruktur zu erweitern. Dieser Ansatz entspricht dem Einrichten einer Filiale. Sie können in Azure virtuelle private Netzwerke (VPN) bereitstellen und verwalten und diese sicher mit Ihrer IT-Infrastruktur vor Ort verbinden. Weitere Informationen finden Sie unter [Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md).
 
 Sie müssen beim Erstellen des virtuellen Computers das Netzwerk angeben, zu dem der virtuelle Computer gehören soll. Dies bedeutet beispielsweise, dass Sie einen vorhandenen virtuellen Computer nicht einem virtuellen Netzwerk hinzufügen können. Allerdings können Sie dieses Problem umgehen, indem Sie die virtuelle Festplatte (VHD) vom vorhandenen virtuellen Computer trennen und dann hiermit einen neuen virtuellen Computer mit der gewünschten Netzwerkkonfiguration erstellen.
 
@@ -148,4 +148,4 @@ Um Redundanz bereitzustellen, platzieren Sie zwei oder mehr ähnlich konfigurier
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

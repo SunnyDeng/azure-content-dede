@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Anleitungen für die Zertifikaterneuerung für Office 365- und Azure AD-Benutzer." 
-	description="In diesem Artikel wird für Office 365-Benutzer erläutert, wie Probleme mit E-Mails behoben werden, die sie zum Erneuern eines Zertifikats auffordern." 
-	services="active-directory" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="swadhwa" 
+	pageTitle="Anleitungen für die Zertifikaterneuerung für Office 365- und Azure AD-Benutzer."
+	description="In diesem Artikel wird für Office 365-Benutzer erläutert, wie Probleme mit E-Mails behoben werden, die sie zum Erneuern eines Zertifikats auffordern."
+	services="active-directory"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/10/2015" 
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 
@@ -85,4 +85,4 @@ Nun sollten zwei Zertifikate aufgeführt werden, bei denen eines ein NotAfter-Da
 
 >[AZURE.NOTE]Wenn Sie mehrere Domänen der obersten Ebene unterstützen müssen, z. B. "contoso.com" und "fabrikam.com", müssen Sie den SupportMultipleDomain-Switch mit den Cmdlets verwenden. Weitere Informationen finden Sie unter "Unterstützen mehrerer Domänen auf oberster Ebene". Stellen Sie abschließend sicher, dass alle Webanwendungsproxy-Server mit dem [Windows Server Mai 2014](http://support.microsoft.com/kb/2955164)-Rollup aktualisiert wurden. Andernfalls können sich die Proxys möglicherweise nicht mit dem neuen Zertifikat aktualisieren, was zu einem Ausfall führt.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

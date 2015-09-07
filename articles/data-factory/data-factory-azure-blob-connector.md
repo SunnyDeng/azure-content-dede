@@ -1,34 +1,32 @@
 <properties 
-	pageTitle="Azure-Blobconnector: Verschieben von Daten in ein und aus einem Azure-Blob" 
-	description="Informationen zum Azure-Blobconnector für den Data Factory-Dienst, mit dem Sie Daten in den bzw. aus dem Azure-Blobspeicher verschieben können." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Verschieben von Daten in einen und aus einem Azure-Blob | Azure Data Factory"
+	description="Erfahren Sie, wie Daten mithilfe von Azure Data Factory in einen und aus einem Azure-Blob-Speicher verschoben werden."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/29/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2015"
 	ms.author="spelluru"/>
 
-
-# Azure-Blobconnector: Verschieben von Daten in ein und aus einem Azure-Blob
+# Verschieben von Daten in einen und aus einem Azure-Blob mithilfe von Azure Data Factory
 Dieser Artikel beschreibt die Verwendung der Kopieraktivität in einer Azure Data Factory, um Daten aus einem anderen Datenspeicher in ein Azure-Blob und aus einem Azure-Blob in einen anderen Datenspeicher zu verschieben. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit der Kopieraktivität und den unterstützten Datenspeicherkombinationen bietet.
 
 ## Beispiel: Kopieren von Daten aus einem Azure-Blob in Azure SQL
 Das nachstehende Beispiel zeigt Folgendes:
 
-1.	Einen verknüpften Dienst des Typs [AzureSqlDatabase](data-factory-azure-sql-connector.md)
-2.	Einen verknüpften Dienst des Typs [AzureStorage](#LinkedService)
-3.	Ein Eingabedataset des Typs [AzureBlob](#Dataset)
-4.	Ein Ausgabedataset des Typs [AzureSqlTable](data-factory-azure-sql-connector.md)
-4.	Eine Pipeline mit Kopieraktivität, die [BlobSource](#CopyActivity) und [SqlSink](data-factory-azure-sql-connector.md) verwendet
+1.	Einen verknüpften Dienst des Typs [AzureSqlDatabase](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties)
+2.	Einen verknüpften Dienst des Typs [AzureStorage](#azure-storage-linked-service-properties)
+3.	Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](#azure-blob-dataset-type-properties)
+4.	Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureSqlTable](data-factory-azure-sql-connector.md#azure-sql-dataset-type-properties)
+4.	Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [BlobSource](#azure-blob-copy-activity-type-properties) und [SqlSink](data-factory-azure-sql-connector.md#azure-sql-copy-activity-type-properties) verwendet
 
 Im Beispiel werden Daten, die zu einer Zeitreihe aus einem Azure-Blob gehören, stündlich in eine Tabelle in einer Azure SQL-Datenbank kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -194,11 +192,12 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 ## Beispiel: Kopieren von Daten aus Azure SQL in ein Azure-Blob
 Das nachstehende Beispiel zeigt Folgendes:
 
-1.	Einen verknüpften Dienst des Typs "AzureSqlDatabase"
-2.	Einen verknüpften Dienst des Typs "AzureStorage"
-3.	Ein Eingabedataset des Typs "AzureSqlTable"
-4.	Ein Ausgabedataset des Typs "AzureBlob"
-4.	Eine Pipeline mit Kopieraktivität, die "SqlSource" und "BlobSink" verwendet
+1.	Einen verknüpften Dienst des Typs [AzureSqlDatabase](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties)
+2.	Einen verknüpften Dienst des Typs [AzureStorage](#azure-storage-linked-service-properties)
+3.	Ein [Eingabedataset](data-factory-create-datasets.md) des Typs [AzureSqlTable](data-factory-azure-sql-connector.md#azure-sql-dataset-type-properties)
+4.	Ein [Ausgabedataset](data-factory-create-datasets.md) des Typs [AzureBlob](#azure-blob-dataset-type-properties)
+4.	Eine [Pipeline](data-factory-create-pipelines.md) mit Kopieraktivität, die [SqlSource](data-factory-azure-sql-connector.md#azure-sql-copy-activity-type-properties) und [BlobSink](#azure-blob-copy-activity-type-properties) verwendet
+
 
 Im Beispiel werden Daten, die zu einer Zeitreihe gehören, stündlich aus einer Tabelle in einer Azure SQL-Datenbank in ein Blob kopiert. Die bei diesen Beispielen verwendeten JSON-Eigenschaften werden in den Abschnitten beschrieben, die auf die Beispiele folgen.
 
@@ -342,7 +341,7 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 		    	    "typeProperties": {
 		    	    	"source": {
 		            		"type": "SqlSource",
-			            	"SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \\'{0:yyyy-MM-dd HH:mm}\\' AND timestampcolumn < \\'{1:yyyy-MM-dd HH:mm}\\'', WindowStart, WindowEnd)"
+			            	"SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \'{0:yyyy-MM-dd HH:mm}\' AND timestampcolumn < \'{1:yyyy-MM-dd HH:mm}\'', WindowStart, WindowEnd)"
 		          		},
 		          		"sink": {
 		            		"type": "BlobSink"
@@ -363,7 +362,7 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 		}
 	}
 
-## <a name="LinkedService"></a> Eigenschaften des mit Azure Storage verknüpften Diensts
+## Eigenschaften des mit Azure Storage verknüpften Diensts
 
 Sie können einen mit Azure Storage verknüpften Dienst verwenden, um ein Azure-Speicherkonto mit einer Azure Data Factory zu verknüpfen. Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den mit Azure Storage verknüpften Dienst spezifisch sind.
 
@@ -372,7 +371,7 @@ Sie können einen mit Azure Storage verknüpften Dienst verwenden, um ein Azure-
 | Typ | Die type-Eigenschaft muss auf **AzureStorage** festgelegt sein. | Ja |
 | connectionString | Geben Sie Informationen, die zur Verbindung mit dem Azure-Speicher erforderlich sind, für die connectionString-Eigenschaft ein. Sie können die connectionString-Eigenschaft für den Azure-Speicher aus dem Azure-Portal abrufen. | Ja |
 
-## <a name="Dataset"></a> Typeigenschaften von Azure-Blobdatasets
+## Eigenschaften des Dataset-Typs "Azure-Blob"
 
 Eine vollständige Liste der JSON-Abschnitte und -Eigenschaften, die zum Definieren von Datasets zur Verfügung stehen, finden Sie im Artikel [Erstellen von Datasets](data-factory-create-datasets.md). Abschnitte wie "structure", "availability" und "policy" des JSON-Codes eines Datasets sind bei allen Typen von Datasets (Azure SQL, Azure-Blob, Azure-Tabelle usw.) ähnlich.
 
@@ -381,12 +380,12 @@ Der Abschnitt **typeProperties** unterscheidet sich bei jedem Typ von Dataset un
 | Eigenschaft | Beschreibung | Erforderlich |
 | -------- | ----------- | -------- | 
 | folderPath | Der Pfad zum Container und Ordner im Blobspeicher. Beispiel: myblobcontainer\\myblobfolder\\ | Ja |
-| fileName | <p>Der Name des Blobs. "fileName" ist optional. </p><p>Wenn Sie einen Dateinamen angeben, funktioniert die Aktivität (einschließlich Kopieren) für das bestimmte Blob.</p><p>Wenn "fileName" nicht angegeben ist, umfasst das Kopieren alle Blobs in "folderPath" für das Eingabedataset.</p><p>Wenn "fileName" für ein Ausgabedataset nicht angegeben ist, hat der Name der generierten Datei folgendes Format: Data.<Guid>.txt (z. B.: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt</p> | Nein |
+| fileName | <p>Der Name des Blobs. "fileName" ist optional. </p><p>Wenn Sie einen Dateinamen angeben, funktioniert die Aktivität (einschließlich Kopieren) für das jeweilige Blob.</p><p>Wenn "fileName" nicht angegeben ist, umfasst das Kopieren alle Blobs in "folderPath" für das Eingabedataset.</p><p>Wenn "fileName" für ein Ausgabedataset nicht angegeben ist, hat der Name der generierten Datei folgendes Format: Data.<Guid>.txt (z. B.: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt</p> | Nein |
 | partitionedBy | "partitionedBy" ist eine optionale Eigenschaft. "partitionedBy" kann genutzt werden, um einen dynamischen Wert für "folderPath" oder "fileName" für Zeitreihendaten anzugeben. Beispiel: "folderPath" kann für jedes stündliche Datenaufkommen parametrisiert werden. Im Abschnitt "Nutzen der Eigenschaft "partitionedBy"" unten finden Sie Details und Beispiele. | Nein
 | Format | Zwei Typen von Formaten werden unterstützt: **TextFormat** und **AvroFormat**. Sie müssen die type-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn das Format auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Abschnitt [Angeben von "TextFormat"](#specifying-textformat) unten finden Sie weitere Details. | Nein
 
 ### Nutzen der Eigenschaft "partitionedBy"
-Wie bereits erwähnt, können Sie die dynamischen Werte "folderPath" und "fileName" für Zeitreihendaten mit dem Abschnitt **partitionedBy**, mit Data Factory-Makros und mit den Systemvariablen "SliceStart" und "SliceEnd" angeben, welche Start- und Endzeiten für einen bestimmten Slice festlegen.
+Wie bereits erwähnt, können Sie die dynamischen Werte "folderPath" und "fileName" für Zeitreihendaten mit dem Abschnitt **partitionedBy**, mit Data Factory-Makros und mit den Systemvariablen "SliceStart" und "SliceEnd" angeben, die die Start- und Endzeit für einen bestimmten Slice festlegen.
 
 In den Artikeln [Erstellen von Datasets](data-factory-create-datasets.md) und [Planung und Ausführung](data-factory-scheduling-and-execution.md) finden Sie weitere Details zu Zeitreihen-Datasets, Planung und Slices.
 
@@ -422,9 +421,9 @@ Wenn das Format auf **TextFormat** festgelegt ist, können Sie die folgenden **o
 | -------- | ----------- | -------- |
 | columnDelimiter | Die Zeichen, die als Spaltentrennzeichen in einer Datei verwendet werden. Dieses Tag ist optional. Der Standardwert ist das Komma (,). | Nein |
 | rowDelimiter | Die Zeichen, die als Zeilentrennzeichen in einer Datei verwendet werden. Dieses Tag ist optional. Der Standardwert ist einer der Folgenden: ["\\r\\n", "\\r", "\\n"]. | Nein |
-| escapeChar | <p>Das Sonderzeichen, das als Escapezeichen für das Spaltentrennzeichen im Inhalt dient. Dieses Tag ist optional. Kein Standardwert. Sie müssen nicht mehr als ein Zeichen für diese Eigenschaft angeben.</p><p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: "Hello, world") verwenden möchten, können Sie "$" als Escapezeichen definieren und die Zeichenfolge "Hello$, world" in der Quelle verwenden.</p><p>Beachten Sie, dass Sie nicht sowohl "escapeChar" als auch "quoteChar" für eine Tabelle angeben können.</p> | Nein | 
-| quoteChar | <p>Das Sonderzeichen, das als Anführungszeichen für einen Zeichenfolgenwert dient. Die Spalten- und Zeilentrennzeichen innerhalb der Anführungszeichen werden als Teil des Zeichenfolgenwerts behandelt. Dieses Tag ist optional. Kein Standardwert. Sie müssen nicht mehr als ein Zeichen für diese Eigenschaft angeben.</p><p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: <Hello  world>) verwenden möchten, können Sie '"' als Anführungszeichen definieren und die Zeichenfolge <"Hello, world"> in der Quelle verwenden. Diese Eigenschaft gilt für Eingabe- und Ausgabetabellen.</p><p>Beachten Sie, dass Sie nicht sowohl "escapeChar" als auch "quoteChar" für eine Tabelle angeben können.</p> | Nein |
-| nullValue | <p>Die Zeichen, die zur Darstellung von NULL-Werten im Blobdateiinhalt dienen. Dieses Tag ist optional. Der Standardwert ist "\\N".</p><p>Beispielsweise wird gemäß oben genanntem Beispiel "NaN" im Blob beim Kopieren, z. B. in SQL Server, als NULL-Wert übersetzt.</p> | Nein |
+| escapeChar | <p>Das Sonderzeichen, das als Escapezeichen für das Spaltentrennzeichen im Inhalt dient. Dieses Tag ist optional. Kein Standardwert. Sie dürfen nicht mehr als ein Zeichen für diese Eigenschaft angeben.</p><p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: "Hello, world") verwenden möchten, können Sie "$" als Escapezeichen definieren und die Zeichenfolge "Hello$, world" in der Quelle verwenden.</p><p>Beachten Sie, dass Sie nicht sowohl "escapeChar" als auch "quoteChar" für eine Tabelle angeben können.</p> | Nein | 
+| quoteChar | <p>Das Sonderzeichen, das als Anführungszeichen für einen Zeichenfolgenwert dient. Die Spalten- und Zeilentrennzeichen innerhalb der Anführungszeichen werden als Teil des Zeichenfolgenwerts behandelt. Dieses Tag ist optional. Kein Standardwert. Sie dürfen nicht mehr als ein Zeichen für diese Eigenschaft angeben.</p><p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: <Hello  world>) verwenden möchten, können Sie '"' als Anführungszeichen definieren und die Zeichenfolge <"Hello, world"> in der Quelle verwenden. Diese Eigenschaft gilt für Eingabe- und Ausgabetabellen.</p><p>Beachten Sie, dass Sie nicht sowohl "escapeChar" als auch "quoteChar" für eine Tabelle angeben können.</p> | Nein |
+| nullValue | <p>Die Zeichen, die zur Darstellung von NULL-Werten im Blob-Dateiinhalt dienen. Dieses Tag ist optional. Der Standardwert ist "\\N".</p><p>Beispielsweise wird gemäß oben genanntem Beispiel "NaN" im Blob beim Kopieren, z. B. in SQL Server, als NULL-Wert übersetzt.</p> | Nein |
 | encodingName | Geben Sie den Codierungsnamen an. Eine Liste der gültigen Codierungsnamen finden Sie unter [Encoding.EncodingName-Eigenschaft](https://msdn.microsoft.com/library/system.text.encoding.aspx). Beispiel: Windows-1250 oder Shift-JIS. Der Standardwert lautet "UTF-8". | Nein | 
 
 #### Beispiele
@@ -456,9 +455,9 @@ Wenn das Format auf "AvroFormat" festgelegt ist, müssen Sie im Abschnitt "Forma
 	    "type": "AvroFormat",
 	}
 
-Um das Avro-Format in einer Hive-Tabelle zu verwenden, sehen Sie sich zuvor das [Apache Hive-Tutorial](https://cwiki.apache.org/confluence/display/Hive/AvroSerDe) an.
+Um das Avro-Format in einer Hive-Tabelle zu verwenden, sehen Sie sich zuvor das [Apache Hive-Lernprogramm](https://cwiki.apache.org/confluence/display/Hive/AvroSerDe) an.
 
-## <a name="CopyActivity"></a> Typeigenschaften der Azure-Blob-Kopieraktivität  
+## Eigenschaften des Azure-Blob-Kopieraktivitätstyps  
 Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Aktivitäten finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md). Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar.
 
 Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren hingegen bei jedem Aktivitätstyp. Bei der Kopieraktivität variieren sie je nach Typ der Quellen und Senken.
@@ -467,17 +466,15 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------------- | -------- | 
-| treatEmptyAsNull | Gibt an, ob Null oder eine leere Zeichenfolge als NULL-Wert behandelt wird. | TRUE<br/>
-FALSE | Nein |
-| skipHeaderLineCount | Gibt an, wie viele Zeilen übersprungen werden müssen. Nur anwendbar, wenn Eingabedataset **TextFormat** verwendet. | Ganzzahl zwischen "0" und "Max". | Nein | 
+| treatEmptyAsNull | Gibt an, ob Null oder eine leere Zeichenfolge als NULL-Wert behandelt wird. | TRUE<br/>FALSE | Nein |
+| skipHeaderLineCount | Gibt an, wie viele Zeilen übersprungen werden müssen. Nur anwendbar, wenn das Eingabedataset **TextFormat** verwendet. | Ganzzahl zwischen "0" und "Max". | Nein | 
 
 
 **BlobSink** unterstützt die folgenden Eigenschaften im Abschnitt **typeProperties**:
 
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------------- | -------- |
-| blobWriterAddHeader | Gibt an, ob der Header der Spaltendefinitionen hinzugefügt werden soll. | TRUE<br/>
-FALSE (Standard) | Nein |
+| blobWriterAddHeader | Gibt an, ob der Header der Spaltendefinitionen hinzugefügt werden soll. | TRUE<br/>FALSE (Standard) | Nein |
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
@@ -485,4 +482,4 @@ FALSE (Standard) | Nein |
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

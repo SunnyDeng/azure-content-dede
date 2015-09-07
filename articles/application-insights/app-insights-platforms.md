@@ -1,21 +1,21 @@
-<properties 
-	pageTitle="Application Insights: Plattformen" 
-	description="Kann ich Application Insights mit ... verwenden?" 
-	services="application-insights" 
-    documentationCenter=""
-	authors="alancameronwills" 
+<properties
+	pageTitle="Application Insights: Sprachen und Plattformen | Microsoft Azure"
+	description="Verfügbare Sprachen und Plattformen für Application Insights"
+	services="application-insights"
+	documentationCenter=""
+	authors="alancameronwills"
 	manager="douge"/>
 
-<tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="08/05/2015" 
+<tags
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="08/05/2015"
 	ms.author="awills"/>
- 
-# Application Insights: Plattformen
+
+# Application Insights: Sprachen und Plattformen
 
 [AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
 
@@ -30,7 +30,7 @@
 + [Objective-C](app-insights-ios.md)
 + [PHP](https://github.com/Microsoft/ApplicationInsights-PHP)
 + [Python](https://pypi.python.org/pypi/applicationinsights/0.1.0)
-+ [Ruby](https://rubygems.org/gems/application_insights) 
++ [Ruby](https://rubygems.org/gems/application_insights)
 + [Alles andere](#projects)
 
 ## Plattformen
@@ -41,7 +41,7 @@
 + [ASP.NET 5](app-insights-asp-net-five.md)
 + [Android](https://github.com/Microsoft/ApplicationInsights-Android)
 + [Azure-Web-Apps und VMs](../insights-perf-analytics.md)
-+ [Azure Cloud Services](app-insights-cloudservices.md), einschließlich Web- und Workerrollen
++ [Azure Cloud Services](app-insights-cloudservices.md) &#150; einschließlich Web- und Workerrollen
 + [iOS](https://github.com/Microsoft/ApplicationInsights-iOS)
 + [J2EE](app-insights-java-get-started.md)
 + [J2EE – bereits live](app-insights-java-live.md)
@@ -61,7 +61,7 @@
 
 +	[Log4Net, NLog oder System.Diagnostics.Trace](app-insights-diagnostic-search.md)
 +	[Java, Log4J oder Logback](app-insights-java-trace-logs.md)
-+   [Semantic Logging](https://github.com/fidmor89/SLAB_AppInsights) – in [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx) integriert
++   [Semantic Logging](https://github.com/fidmor89/SLAB_AppInsights) &#150; in [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx) integriert
 +   [Cloudbasierte Auslastungstests](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/30/getting-application-insights-counters-with-cloud-based-load-testing.aspx)
 
 ## <a name="projects"></a> Erstellen eines eigenen SDK
@@ -77,4 +77,4 @@ Wenn für Ihre Sprache oder Plattform noch kein SDK vorhanden ist, können Sie e
 
 <!--Link references-->
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

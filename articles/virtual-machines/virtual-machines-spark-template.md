@@ -490,7 +490,7 @@ Die Variable **vmStorageAccountContainerName** ist ein Beispiel für eine einfac
 
 Wenn Sie die Größe der Spark-Clusterbereitstellung anpassen möchten, können Sie die Eigenschaften der Variablen **tshirtSizeS**, **tshirtSizeM** und **tshirtSizeL** in der Vorlage "azuredeploy.json" ändern.
 
-Weitere Informationen zur Vorlagensprache finden Sie im MSDN unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
+Weitere Informationen zur Vorlagensprache finden Sie im MSDN unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
 
 ### Abschnitt "Ressourcen"
@@ -833,7 +833,7 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 -	Erstellen Sie für identische Mitglieder einer Ressourcengruppe (Knoten in einem Cluster usw.) spezielle Vorlagen, die die Ressourcenschleife nutzen, um für mehrere Instanzen eindeutige Eigenschaften bereitzustellen.
 -	Für alle Nachbereitstellungsaufgaben (Produktinstallation, Konfigurationen usw.) nutzen Sie die Bereitstellung von Skripterweiterungen, und erstellen Sie Skripts, die für die einzelnen Technologien spezifisch sind.
 
-Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
+Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
 ## Nächste Schritte
 
@@ -843,4 +843,4 @@ Entdecken Sie weitere [Anwendungsframeworks](virtual-machines-app-frameworks.md)
 
 [Problembehandlung bei Vorlagenbereitstellungen](resource-group-deploy-debug.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure Multi-Factor Authentication – Erste Schritte" 
-	description="Entscheiden Sie sich für die am besten geeignete Multi-Factor Authentication-Sicherheitslösung, indem Sie sich fragen, was Sie sichern möchten und wo sich Ihre Benutzer befinden. Wählen Sie dann zwischen Cloud, MFA-Server und AD FS aus." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="terrylan" 
-	editor="bryanla"/>
+	pageTitle="Azure Multi-Factor Authentication – Erste Schritte"
+	description="Entscheiden Sie sich für die am besten geeignete Multi-Factor Authentication-Sicherheitslösung, indem Sie sich fragen, was Sie sichern möchten und wo sich Ihre Benutzer befinden. Wählen Sie dann zwischen Cloud, MFA-Server und AD FS aus."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="billmath"
+	manager="stevenpo"
+	editor="curtland"/>
 
 <tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="06/02/2015" 
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="08/24/2015"
 	ms.author="billmath"/>
 
 #Auswählen der richtigen mehrstufigen Sicherheitslösung
@@ -87,4 +87,4 @@ Sie haben nun ermittelt, ob Sie Multi-Factor Authentication in der Cloud oder de
 * [Für Benutzer](multi-factor-authentication-end-user.md)
 * [Azure Multi-Factor Authentication bei MSDN](https://msdn.microsoft.com/library/azure/dn249471.aspx) 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

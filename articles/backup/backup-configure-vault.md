@@ -1,20 +1,13 @@
 <properties
 	pageTitle="Konfigurieren von Azure Backup-Diensten zur Vorbereitung auf die Sicherung von Windows-Servern | Microsoft Azure"
-	description="In diesem Lernprogramm erfahren Sie, wie der Sicherungsdienst in der Microsoft Azure Cloud verwendet wird, um Windows Server in der Cloud zu sichern."
+	description="In diesem Lernprogramm erfahren Sie, wie der Backup-Dienst in der Microsoft Azure Cloud verwendet wird, um Windows Server in der Cloud zu sichern."
 	services="backup"
 	documentationCenter=""
 	authors="Jim-Parker"
 	manager="jwhit"
 	editor=""/>
 
-<tags
-	ms.service="backup"
-	ms.workload="storage-backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/12/2015"
-	ms.author="jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/21/2015" ms.author="jimpark"; "aashishr"/>
 
 # Konfigurieren von Azure Backup zur Vorbereitung auf die Sicherung von Windows-Servern
 
@@ -28,7 +21,7 @@ Um Dateien und Daten von Ihrem Windows-Server auf Azure zu sichern, müssen Sie 
 - **Herunterladen von Tresoranmeldedaten** – Laden Sie in Azure Backup das Verwaltungszertifikat hoch, das Sie für den Tresor erstellt haben.
 - **Installieren des Azure Backup-Agents und Registrieren des Servers**: Installieren Sie von Azure Backup aus den Agent, und registrieren Sie den Server im Sicherungstresor.
 
-[AZURE.INCLUDE [backup-create-vault](../../includes/backup-create-vault.md)]
+[AZURE.INCLUDE [backup-create-vault-wgif](../../includes/backup-create-vault-wgif.md)]
 
 [AZURE.INCLUDE [backup-download-credentials](../../includes/backup-download-credentials.md)]
 
@@ -41,4 +34,4 @@ Um Dateien und Daten von Ihrem Windows-Server auf Azure zu sichern, müssen Sie 
 - [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
 - [Azure Backup – Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=August15_HO9-->

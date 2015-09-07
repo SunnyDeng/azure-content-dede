@@ -291,7 +291,7 @@ Erfahren Sie, wie Sie [agile Methoden umsetzen und Ihre aus Microservices besteh
 <a name="resources"></a>
 ## Weitere Ressourcen ##
 
--	[Azure Resource Manager-Vorlagensprache](http://msdn.microsoft.com/library/azure/dn835138.aspx)
+-	[Azure Resource Manager-Vorlagensprache](../resource-group-authoring-templates.md)
 -	[Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md)
 -	[Vorlagenfunktionen im Azure-Ressourcen-Manager](../resource-group-template-functions.md)
 -	[Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](../resource-group-template-deploy.md)
@@ -303,4 +303,4 @@ Erfahren Sie, wie Sie [agile Methoden umsetzen und Ihre aus Microservices besteh
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

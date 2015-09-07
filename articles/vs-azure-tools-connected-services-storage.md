@@ -1,25 +1,26 @@
 <properties 
-   pageTitle="Fügen Sie Azure Storage mithilfe von verbundenen Diensten in Visual Studio hinzu"
-   description="Fügen Sie Ihrer App mithilfe des Dialogfelds ";Verbundene Dienste hinzufügen"; in Visual Studio Azure Storage hinzu"
-   services="visual-studio-online"
-   documentationCenter="na"
-   authors="patshea123"
-   manager="douge"
-   editor="tlee" />
+   pageTitle="Hinzufügen von Azure Storage mithilfe von verbundenen Diensten in Visual Studio | Microsoft Azure"
+	description="Fügen Sie Ihrer App mithilfe des Dialogfelds Verbundene Dienste hinzufügen in Visual Studio Azure Storage hinzu"
+	services="visual-studio-online"
+	documentationCenter="na"
+	authors="patshea123"
+	manager="douge"
+	editor="tlee"/>
+
 <tags 
    ms.service="visual-studio-online"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="mobile"
-   ms.date="08/12/2015"
-   ms.author="patshea" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="mobile"
+	ms.date="08/12/2015"
+	ms.author="patshea"/>
 
 # Hinzufügen von Azure-Speicher mithilfe von verbundenen Visual Studio-Diensten
 
 ## Übersicht
 
-Mit Visual Studio 2015 können Sie beliebige C\#-Clouddienste, mobile .NET-Back-End-Dienste, ASP.NET-Websites oder -Dienste, ASP.NET 5-Dienste oder Azure WebJob-Dienste über das Dialogfeld **Verbundene Dienste hinzufügen** mit Azure Storage verbinden. Mit der Funktion für verbundene Dienste werden die benötigten Verweise und der Verbindungscode hinzugefügt und Ihre Konfigurationsdateien entsprechend geändert. Das Dialogfeld leitet Sie auch zur Dokumentation weiter, in der Sie erfahren, was die nächsten Schritte sind, um mit der Verwendung von Blobspeichern, Warteschlangen und Tabellen zu beginnen.
+Mit Visual Studio 2015 können Sie beliebige C#-Clouddienste, mobile .NET-Back-End-Dienste, ASP.NET-Websites oder -Dienste, ASP.NET 5-Dienste oder Azure WebJob-Dienste über das Dialogfeld **Verbundene Dienste hinzufügen** mit Azure Storage verbinden. Mit der Funktion für verbundene Dienste werden die benötigten Verweise und der Verbindungscode hinzugefügt und Ihre Konfigurationsdateien entsprechend geändert. Das Dialogfeld leitet Sie auch zur Dokumentation weiter, in der Sie erfahren, was die nächsten Schritte sind, um mit der Verwendung von Blobspeichern, Warteschlangen und Tabellen zu beginnen.
 
 ## Unterstützte Projekttypen
 
@@ -38,7 +39,7 @@ Mit dem Dialogfeld "Verbundene Dienste" können Sie in den folgenden Projekttype
 
 ## Herstellen einer Verbindung mit Azure Storage mithilfe des Dialogfelds "Verbundene Dienste"
 
-1. Stellen Sie sicher, dass Sie über ein Azure-Konto verfügen. Wenn Sie nicht über ein Azure-Konto verfügen, können Sie sich für eine [kostenlose Testversion](http://go.microsoft.com/fwlink/?LinkId=518146) registrieren. Sobald Sie ein Azure-Konto haben, können Sie Speicherkonten und mobile Dienste erstellen und Azure Active Directory konfigurieren.
+1. Stellen Sie sicher, dass Sie über ein Azure-Konto verfügen. Wenn Sie nicht über ein Azure-Konto verfügen, können Sie sich für eine [kostenlose Testversion](http://go.microsoft.com/fwlink/?LinkId=518146) registrieren. Sobald Sie ein Azure-Konto haben, können Sie Speicherkonten und Mobile Services erstellen und Azure Active Directory konfigurieren.
 
 1. Öffnen Sie das Projekt in Visual Studio, öffnen Sie das Kontextmenü für den Knoten **Verweise** im Projektmappen-Explorer, und wählen Sie dann **Verbundenen Dienst hinzufügen** aus.
 
@@ -79,7 +80,7 @@ Wenn Sie die Bearbeitung des Dialogfelds abschließen, fügt Visual Studio Verwe
  - Weitere Informationen zu ASP.NET-Projekten finden Sie unter [Was ist passiert – ASP.NET-Projekte](http://go.microsoft.com/fwlink/p/?LinkId=513126). 
  - Weitere Informationen zu ASP.NET 5-Projekten finden Sie unter [Was ist passiert – ASP.NET 5-Projekte](http://go.microsoft.com/fwlink/p/?LinkId=513124). 
  - Weitere Informationen zu Clouddienstprojekten (Web- und Workerrollen) finden Sie unter [Was ist passiert – Clouddienstprojekte](http://go.microsoft.com/fwlink/p/?LinkId=516965). 
- - Informationen zu WebJob-Projekten finden Sie unter [Was ist passiert – WebJob-Projekte](storage/vs-storage-webjobs-what-happened/).
+ - Informationen zu WebJob-Projekten finden Sie unter [Was ist passiert – WebJob-Projekte](vs-storage-webjobs-what-happened/).
 
 ## Nächste Schritte
 
@@ -94,4 +95,4 @@ Wenn Sie die Bearbeitung des Dialogfelds abschließen, fügt Visual Studio Verwe
 
      - [Speicherdokumentation auf "azure.microsoft.com"](http://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->

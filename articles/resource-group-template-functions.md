@@ -1,24 +1,36 @@
 <properties
    pageTitle="Funktionen von Azure Resource Manager-Vorlagen"
-   description="Es werden die Funktionen beschrieben, die in einer Azure-Ressourcen-Manager-Vorlage zum Abrufen von Werten, Formatieren von Zeichenfolgen und Abrufen von Bereitstellungsinformationen verwendet werden."
-   services="azure-resource-manager"
-   documentationCenter="na"
-   authors="tfitzmac"
-   manager="wpickett"
-   editor=""/>
+	description="Es werden die Funktionen beschrieben, die in einer Azure-Ressourcen-Manager-Vorlage zum Abrufen von Werten, Formatieren von Zeichenfolgen und Abrufen von Bereitstellungsinformationen verwendet werden."
+	services="azure-resource-manager"
+	documentationCenter="na"
+	authors="tfitzmac"
+	manager="wpickett"
+	editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="07/27/2015"
-   ms.author="tomfitz"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="08/21/2015"
+	ms.author="tomfitz"/>
 
 # Funktionen von Azure Resource Manager-Vorlagen
 
 Dieses Thema beschreibt alle Funktionen, die Sie in einer Azure Resource Manager-Vorlage verwenden können.
+
+## Hinzufügen
+
+**add(operand1, operand2)**
+
+Gibt die Summe der beiden angegebenen ganzen Zahlen zurück.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| operand1 | Ja | Erster zu verwendender Operand.
+| operand2 | Ja | Zweiter zu verwendender Operand.
+
 
 ## base64
 
@@ -85,6 +97,23 @@ Im folgenden Beispiel wird veranschaulicht, wie Bereitstellungsinformationen im 
       }
     }
 
+## div
+
+**div(operand1, operand2)**
+
+Gibt die Ganzzahldivision der beiden angegebenen ganzen Zahlen zurück.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| operand1 | Ja | Die zu teilende Zahl.
+| operand2 | Ja | Die Zahl, durch die geteilt wird. Muss ungleich 0 sein.
+
+## Länge
+
+**length(array)**
+
+Gibt die Anzahl der Elemente in einem Array zurück. Wird normalerweise verwendet, um bei der Erstellung von Ressourcen die Anzahl der Iterationen anzugeben. Ein Beispiel zur Verwendung dieser Funktion finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
+
 ## listKeys
 
 **listKeys (resourceName oder resourceIdentifier, [apiVersion])**
@@ -104,6 +133,30 @@ Das folgende Beispiel zeigt, wie die Schlüssel von einem Speicherkonto in die A
         "type" : "object" 
       } 
     } 
+
+## mod
+
+**mod(operand1, operand2)**
+
+Gibt den Rest der Ganzzahldivision mit den beiden angegebenen ganzen Zahlen zurück.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| operand1 | Ja | Die zu teilende Zahl.
+| operand2 | Ja | Die Zahl, durch die geteilt wird. Muss ungleich 0 sein.
+
+
+## mul
+
+**mul(operand1, operand2)**
+
+Gibt die Multiplikation der beiden angegebenen ganzen Zahlen zurück.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| operand1 | Ja | Erster zu verwendender Operand.
+| operand2 | Ja | Zweiter zu verwendender Operand.
+
 
 ## padLeft
 
@@ -268,7 +321,7 @@ Das folgende Beispiel zeigt, wie die Ressourcen-IDs für eine Website und eine D
     [resourceId('myWebsitesGroup', 'Microsoft.Web/sites', parameters('siteName'))]
     [resourceId('Microsoft.SQL/servers/databases', parameters('serverName'),parameters('databaseName'))]
     
-Sie müssen diese Funktion oft nutzen, wenn Sie ein Speicherkonto oder einen virtuellen Computer in einer alternativen Ressourcengruppe verwenden. Das Speicherkonto oder der virtuelle Computer können über mehrere Ressourcengruppen hinweg genutzt werden. Daher sollten Sie diese beim Löschvorgang für eine einzelne Ressourcengruppe nicht löschen. Das folgende Beispiel zeigt, wie eine Ressource von einer externen Ressourcengruppe leicht verwendet werden kann:
+Sie müssen diese Funktion oft nutzen, wenn Sie ein Speicherkonto oder einen virtuellen Computer in einer alternativen Ressourcengruppe verwenden. Das Speicherkonto oder der virtuelle Computer können über mehrere Ressourcengruppen hinweg genutzt werden. Daher sollten Sie diese beim Löschvorgang für eine einzelne Ressourcengruppe nicht löschen. Das folgende Beispiel zeigt, wie eine Ressource einer externen Ressourcengruppe leicht genutzt werden kann:
 
     {
       "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -310,6 +363,37 @@ Sie müssen diese Funktion oft nutzen, wenn Sie ein Speicherkonto oder einen vir
            }
       }]
     }
+
+## split
+
+**split(inputString, Trennzeichen)** **split(inputString, [Trennzeichen])**
+
+Gibt ein Array von Zeichenfolgen zurück, das die Teilzeichenfolgen der Eingabezeichenfolge enthält, die durch die gesendeten Trennzeichen getrennt sind.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| inputString | Ja | Die zu teilende Zeichenfolge.
+| Trennzeichen | Ja | Das verwendete Trennzeichen. Kann eine einzelne Zeichenfolge oder ein Array von Zeichenfolgen sein.
+
+Im folgenden Beispiel wird die Eingabezeichenfolge durch ein Komma unterteilt.
+
+    "parameters": {
+        "inputString": { "type": "string" }
+    },
+    "variables": { 
+        "stringPieces": "[split(parameters('inputString'), ',')]"
+    }
+
+## sub
+
+**sub(operand1, operand2)**
+
+Gibt die Differenz der beiden angegebenen ganzen Zahlen zurück.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| operand1 | Ja | Zahl, von der subtrahiert werden soll.
+| operand2 | Ja | Zahl, die subtrahiert werden soll.
 
 
 ## Abonnement
@@ -385,7 +469,7 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 ## Nächste Schritte
 - Eine Beschreibung der Abschnitte in einer Azure-Ressourcen-Manager-Vorlage finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Informationen zum Zusammenführen mehrerer Vorlagen finden Sie unter [Verwenden von verknüpften Vorlagen mit Azure-Ressourcen-Manager](resource-group-linked-templates.md).
-- Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmten Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
+- Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 - Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

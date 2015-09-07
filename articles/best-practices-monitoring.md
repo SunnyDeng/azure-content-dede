@@ -1,21 +1,21 @@
 <properties
    pageTitle="Anleitung zur Überwachung und Diagnose | Microsoft Azure"
-   description="Bewährte Methoden für die Überwachung verteilter Anwendungen in der Cloud."
-   services=""
-   documentationCenter="na"
-   authors="dragon119"
-   manager="masimms"
-   editor=""
-   tags=""/>
+	description="Bewährte Methoden für die Überwachung verteilter Anwendungen in der Cloud."
+	services=""
+	documentationCenter="na"
+	authors="dragon119"
+	manager="masimms"
+	editor=""
+	tags=""/>
 
 <tags
    ms.service="best-practice"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="04/28/2015"
-   ms.author="masashin"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="04/28/2015"
+	ms.author="masashin"/>
 
 # Anleitung zur Überwachung und Diagnose
 
@@ -608,8 +608,8 @@ In vielen Fällen können Berichte in Batchprozessen nach einem bestimmten Zeitp
 - Die Seite [Konfigurieren von Diagnose für Azure Cloud Services und Virtual Machines](https://msdn.microsoft.com/library/azure/dn186185.aspx) auf der Microsoft-Website.
 - Die Seiten [Azure Redis Cache](http://azure.microsoft.com/services/cache/), [Azure DocumentDB](http://azure.microsoft.com/services/documentdb/), und [HDInsight](http://azure.microsoft.com/services/hdinsight/) auf der Microsoft-Website.
 - Die Seite [Verwenden von Service Bus-Warteschlangen](http://azure.microsoft.com/) auf der Microsoft-Website.
-- Der Artikel [SQL Server Business Intelligence auf virtuellen Azure-Computern](https://msdn.microsoft.com/library/azure/jj992719.aspx) auf der Microsoft-Website.
+- Der Artikel [SQL Server Business Intelligence auf virtuellen Azure-Computern](./virtual-machines/virtual-machines-sql-server-business-intelligence.md) auf der Microsoft-Website.
 - Die Seite [Grundlegendes zur Überwachung von Warnungen und Benachrichtigungen in Azure](https://msdn.microsoft.com/library/azure/dn306639.aspx) auf der Microsoft-Website.
 - Die Seite [Application Insights](app-insights-get-started/) auf der Microsoft-Website.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=August15_HO9-->

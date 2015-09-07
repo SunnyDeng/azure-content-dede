@@ -18,7 +18,7 @@ Der Verbindungspfad wird von folgendem Diagramm zusammengefasst:
 
 Für den Zugriff auf SQL Server über das Internet benötigt der virtuelle Computer einen Endpunkt, um nach eingehender TCP-Kommunikation zu lauschen. Dieser Azure-Konfigurationsschritt leitet den eingehenden Datenverkehr des TCP-Ports zu einem TCP-Port, auf den der virtuelle Computer zugreifen kann.
 
->[AZURE.NOTE]Wenn die Verbindung innerhalb desselben Clouddiensts oder innerhalb desselben virtuellen Netzwerks erfolgt, müssen Sie keinen Endpunkt mit öffentlichem Zugriff erstellen. In diesem Fall können Sie mit dem nächsten Schritt fortfahren. Weitere Informationen finden Sie unter [Konnektivitätsüberlegungen für SQL Server auf virtuellen Azure-Computern](https://msdn.microsoft.com/library/azure/dn133152.aspx).
+>[AZURE.NOTE]Wenn die Verbindung innerhalb desselben Clouddiensts oder innerhalb desselben virtuellen Netzwerks erfolgt, müssen Sie keinen Endpunkt mit öffentlichem Zugriff erstellen. In diesem Fall können Sie mit dem nächsten Schritt fortfahren. Weitere Informationen finden Sie unter [Verbindungsszenarien](../articles/virtual-machines/virtual-machines-sql-server-connectivity.md#connection-scenarios).
 
 1. Klicken Sie im Azure-Verwaltungsportal auf **VIRTUELLE COMPUTER**.
 	
@@ -183,4 +183,4 @@ Um sich von einem anderen Computer aus mit dem SQL Server-Datenbankmodul zu verb
 
 	![Verbinden mit SSMS](./media/virtual-machines-sql-server-connection-steps/33Connect-SSMS.png)
 
-<!----HONumber=August15_HO8-->
+<!---HONumber=August15_HO9-->
