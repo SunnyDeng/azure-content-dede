@@ -18,7 +18,9 @@
 
 # Aktivieren der Offlinesynchronisierung für Ihre mobile Xamarin.Android-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-offline-preview](../../includes/app-service-mobile-selector-offline-preview.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-offline-preview](../../includes/app-service-mobile-selector-offline-preview.md)]
+&nbsp;  
+[AZURE.INCLUDE [app-service-mobile-note-mobile-services-preview](../../includes/app-service-mobile-note-mobile-services-preview.md)]
 
 ## Übersicht
 
@@ -40,7 +42,8 @@ Das Xamarin-Clientprojekt, das Sie heruntergeladen haben, nachdem Sie das Lernpr
 
 * Bevor Tabellenvorgänge durchgeführt werden können, muss der lokale Speicher initialisiert werden. Die lokale Datenbank wird initialisiert, wenn `ToDoActivity.InitLocalStoreAsync()` von `ToDoActivity.OnCreate()` ausgeführt wird. Dadurch wird eine neue lokale SQLite-Datenbank mit der `MobileServiceSQLiteStore`-Klasse erstellt, die vom Azure Mobile Apps-Client-SDK bereitgestellt wird. 
  
-	Die `DefineTable`-Methode erstellt eine Tabelle im lokalen Speicher, die mit den Feldern im bereitgestellten Typ übereinstimmt (in diesem Fall `ToDoItem`). Der Typ muss nicht alle Spalten der Remotedatenbank enthalten. Es ist möglich, nur eine Teilmenge der Spalten zu speichern. // ToDoActivity.cs
+	Die `DefineTable`-Methode erstellt eine Tabelle im lokalen Speicher, die mit den Feldern im bereitgestellten Typ übereinstimmt (in diesem Fall `ToDoItem`). Der Typ muss nicht alle Spalten der Remotedatenbank enthalten. Es ist möglich, nur eine Teilmenge der Spalten zu speichern.  
+		// ToDoActivity.cs
 
         private async Task InitLocalStoreAsync()
         {
@@ -70,7 +73,10 @@ Das Xamarin-Clientprojekt, das Sie heruntergeladen haben, nachdem Sie das Lernpr
     Im bereitgestellten Code werden alle Datensätze in der `TodoItem`-Remotetabelle abgefragt, es ist aber auch möglich, Datensätze durch Übergeben einer Abfrage-ID und Abfrage an `PushAsync` zu filtern. Weitere Informationen finden Sie im Abschnitt *Inkrementelle Synchronisierung* in [Offlinedatensynchronisierung in Azure Mobile Apps].
 
 	<!-- Need updated conflict handling info : `InitializeAsync` uses the default conflict handler, which fails whenever there is a conflict. To provide a custom conflict handler, see the tutorial [Handling conflicts with offline support for Mobile Services].
--->	// ToDoActivity.cs
+ 	-->
+
+
+		// ToDoActivity.cs
 
         private async Task SyncAsync()
         {
@@ -172,4 +178,4 @@ In diesem Abschnitt stellen Sie erneut eine Verbindung zwischen der App und dem 
 
 [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 
-<!---HONumber=August15_HO9-->
+<!----HONumber=August15_HO9-->

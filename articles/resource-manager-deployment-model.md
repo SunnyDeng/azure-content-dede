@@ -46,7 +46,7 @@ Ressourcen, die über den Ressourcen-Manager erstellt wurden, weisen folgende Me
 
         ![preview portal](./media/resource-manager-deployment-model/preview-portal.png)
 
-        For Compute, Storage, and Networking resources, you have the option of using either Resourece Manager or Classic deployment. Select **Resource Manager**.
+        Für Compute-, Storage- und Netzwerkressourcen haben Sie die Möglichkeit, entweder den Ressourcen-Manager oder die klassische Bereitstellung zu nutzen. Wählen Sie **Ressourcen-Manager**
 
         ![Resource Manager deployment](./media/resource-manager-deployment-model/select-resource-manager.png)
 
@@ -158,4 +158,4 @@ Informationen zum Verbinden virtueller Netzwerke aus verschiedenen Bereitstellun
 - Informationen zum Erstellen deklarativer Bereitstellungsvorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Die Befehle zum Bereitstellen einer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=August15_HO9-->
+<!-----HONumber=August15_HO9-->
