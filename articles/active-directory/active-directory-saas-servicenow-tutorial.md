@@ -93,9 +93,9 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
 
      6\.5. Geben Sie im Textfeld **The protocol binding for the Identity Provider’s SingleLogoutRequest service** die Information **urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect** ein.
 
-     6\.6. Wählen Sie unter **Sign LogoutRequest** die Option **Yes** aus.
+     6.6. Wählen Sie unter **Sign LogoutRequest** die Option **Yes** aus.
 
-     6\.7. Geben Sie im Textfeld **When SAML 2.0 single sign-on fails because the session is not authenticated, or this is the first login, redirect to this URL** die Information **https://login.windows.net/<GUID Ihres Mandanten>/saml2** ein.
+     6.7. Geben Sie **https://login.windows.net/<GUID Ihres Mandanten>/saml2** in das Textfeld **Wenn beim einmaligen Anmelden in SAML 2.0 ein Fehler auftritt, weil die Sitzung nicht authentifiziert ist oder dies die Erstanmeldung ist, zu folgender URL umleiten** ein.
 
   
 
@@ -114,7 +114,7 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
 
      7\.6. Lassen Sie **Create an AuthnContextClass request in the AuthnRequest statement** deaktiviert.
 
-     7\.7. Geben Sie im Textfeld **The AuthnContextClassRef method that will be included in our SAML 2.0 AuthnRequest to the Identity Provider** Folgendes ein: ****http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password**.
+     7.7. Geben Sie im Textfeld **The AuthnContextClassRef method that will be included in our SAML 2.0 AuthnRequest to the Identity Provider** Folgendes ein: **http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password**.
 
 
 
@@ -139,7 +139,7 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
 
      11\.4. Wählen Sie unter **Format** das Format **PEM** aus.
 
-     11\.5. Erstellen Sie eine Base64-codierte Datei aus dem heruntergeladenen Zertifikat.  > [AZURE.NOTE]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
+     11.5. Erstellen Sie eine Base64-codierte Datei aus dem heruntergeladenen Zertifikat.  > [AZURE.NOTE]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
      11\.6. Öffnen Sie die Base64-codierte Datei in **Editor**, und kopieren Sie dann den Inhalt dieser Datei in die Zwischenablage.
 
@@ -214,4 +214,4 @@ Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich.
 * [Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory](active-directory-saas-tutorial-list.md)
 * [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md)
 
-<!------HONumber=August15_HO8-->
+<!-------HONumber=August15_HO8-->

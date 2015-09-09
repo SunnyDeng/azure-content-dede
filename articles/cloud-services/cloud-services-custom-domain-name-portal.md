@@ -24,7 +24,7 @@
 - [Azure Portal](cloud-services-custom-domain-name.md)
 - [Azure Preview Portal](cloud-services-custom-domain-name-portal.md)
 
-Wenn Sie einen Clouddienst erstellen, weist Azure diesen einer Unterdomäne von **cloudapp.net** zu. Wenn der Clouddienst beispielsweise den Namen „contoso“ hat, können Ihre Benutzer auf die Anwendung über eine URL wie etwa http://*contoso*.cloudapp.net zugreifen. Darüber hinaus weist Azure eine virtuelle IP-Adresse zu.
+Wenn Sie einen Clouddienst erstellen, weist Azure diesen einer Unterdomäne von **cloudapp.net** zu. Wenn der Clouddienst beispielsweise den Namen "contoso" hat, können Ihre Benutzer auf die Anwendung über eine URL wie etwa http://*contoso*.cloudapp.net zugreifen. Darüber hinaus weist Azure eine virtuelle IP-Adresse zu.
 
 Sie können Ihre Anwendung jedoch auch unter Ihrem eigenen Domänennamen zur Verfügung stellen, beispielsweise **contoso.com**. In diesem Artikel erfahren Sie, wie Sie einen benutzerdefinierten Domänennamen für Clouddienst-Webrollen reservieren oder konfigurieren.
 
@@ -130,7 +130,7 @@ Sie müssen zunächst die virtuelle IP-Adresse Ihres Clouddiensts ermitteln, um 
 
 4. Geben Sie die IP-Adresse Ihres Clouddiensts in das angegebene Feld ein. So wird der im A-Datensatz verwendete Domäneneintrag der IP-Adresse Ihrer Clouddienstbereitstellung zugewiesen.
 
-Der folgende A-Datensatz leitet zum Beispiel den gesamten Verkehr von **www.contoso.com** an **137.135.70.239** weiter. Das ist die IP-Adresse Ihrer bereitgestellten Anwendung:
+Der folgende A-Datensatz leitet zum Beispiel den gesamten Verkehr von **contoso.com** an **137.135.70.239** weiter. Das ist die IP-Adresse Ihrer bereitgestellten Anwendung:
 
 | Hostname/Unterdomäne | IP-Adresse |
 | ------------------- | -------------- |
@@ -157,4 +157,4 @@ Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. W
 [csurl]: ./media/cloud-services-custom-domain-name-portal/csurl.png
  
 
-<!------HONumber=August15_HO6-->
+<!-------HONumber=August15_HO6-->

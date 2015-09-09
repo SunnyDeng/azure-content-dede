@@ -21,7 +21,8 @@
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 
->[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Kostenlose Azure-Testversion</a>.
+>[AZURE.NOTE]
+> Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Kostenlose Azure-Testversion</a>.
 
 Dieser Schnellstart führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mit Azure Media Services (AMS)-REST-APIs.
 
@@ -81,7 +82,8 @@ Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der 
 1. Abrufen eines Zugriffstokens 
 2. Herstellen einer Verbindung mit dem Media Services-URI 
 	
-	>[AZURE.NOTE]Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden.
+	>[AZURE.NOTE]
+	Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden.
 	> 
 	> Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
 3. Senden nachfolgender API-Aufrufe an die neue URL. 
@@ -145,7 +147,8 @@ Das folgende Beispiel zeigt die HTTP-Antwort, die das Zugriffstoken im Antwortte
 	}
 	
 
->[AZURE.NOTE]Es wird empfohlen, den access\_token-Wert und den expires\_in-Wert in einem externen Speicher zwischenzuspeichern. Die Tokendaten können später aus dem Speicher abgerufen und in den Media Services-REST-API-Aufrufen wiederverwendet werden. Dies ist besonders in Szenarien sinnvoll, in denen das Token auf sichere Weise von mehreren Prozessen oder Computern gemeinsam verwendet werden kann.
+>[AZURE.NOTE]
+>Es wird empfohlen, den access\_token-Wert und den expires\_in-Wert in einem externen Speicher zwischenzuspeichern. Die Tokendaten können später aus dem Speicher abgerufen und in den Media Services-REST-API-Aufrufen wiederverwendet werden. Dies ist besonders in Szenarien sinnvoll, in denen das Token auf sichere Weise von mehreren Prozessen oder Computern gemeinsam verwendet werden kann.
 
 Überwachen Sie den expires\_in-Wert des Zugriffstokens, und aktualisieren Sie Ihre REST-API-Aufrufe nach Bedarf anhand neuer Token.
 
@@ -211,7 +214,7 @@ Das folgende Beispiel veranschaulicht die HTTP-Anforderung an den Stamm-URI für
 	 
 
 
->[AZURE.NOTE]Ab jetzt wird der neue URI in diesem Lernprogramm verwendet.
+>[AZURE.NOTE] Ab jetzt wird der neue URI in diesem Lernprogramm verwendet.
 
 ## <a id="upload"></a>Erstellen eines neuen Medienobjekts und Hochladen einer Videodatei mit der REST-API
 
@@ -466,7 +469,7 @@ Im Erfolgsfall wird die folgende Antwort zurückgegeben:
 	
 Nachdem Sie AccessPolicy und Locator konfiguriert haben, können Sie die eigentliche Datei mithilfe der Azure Storage-REST-APIs in einen Azure-Blobspeichercontainer hochladen. Sie können Dateien entweder in Seiten- oder Blockblobs hochladen.
 
->[AZURE.NOTE]Sie müssen den Dateinamen der Uploaddatei in den **Path**-Wert des Locators einfügen, den Sie im vorherigen Abschnitt empfangen haben. Beispiel: https://storagetestaccount001.blob.core.windows.net/asset-e7b02da4-5a69-40e7-a8db-e8f4f697aac0/BigBuckBunny.mp4? . . .
+>[AZURE.NOTE] Sie müssen den Dateinamen der Uploaddatei in den **Path**-Wert des Locators einfügen, den Sie im vorherigen Abschnitt empfangen haben. Beispiel: https://storagetestaccount001.blob.core.windows.net/asset-e7b02da4-5a69-40e7-a8db-e8f4f697aac0/BigBuckBunny.mp4? . . .
 
 Weitere Informationen zum Arbeiten mit Azure Storage-Blobs finden Sie unter [REST-API für den Blobdienst](http://msdn.microsoft.com/library/azure/dd135733.aspx).
 
@@ -496,7 +499,8 @@ Nachdem Sie Ihre Datei nun hochgeladen haben, sollten Sie die FileAsset-Größe 
 
 **HTTP-Antwort**
 
-Im Erfolgsfall wird Folgendes zurückgegeben: HTTP/1.1 204 Kein Inhalt
+Im Erfolgsfall wird Folgendes zurückgegeben:
+	HTTP/1.1 204 Kein Inhalt
 
 ## Löschen von AccessPolicy und Locator 
 
@@ -553,7 +557,7 @@ Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schrit
 Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
 
 
->[AZURE.NOTE]Informationen zu den Preisen finden Sie unter [Media Services Pricing Details](http://go.microsoft.com/fwlink/?LinkId=275107).
+>[AZURE.NOTE] Informationen zu den Preisen finden Sie unter [Media Services Pricing Details](http://go.microsoft.com/fwlink/?LinkId=275107).
 
 Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Sie folgendermaßen vor:
 	
@@ -827,7 +831,7 @@ Bei jeder Auftragsanforderung sind einige wichtige Punkte zu beachten:
 - Aufgaben dürfen keine Schleife bilden.
 - Der Value-Parameter, den Sie an JobInputAsset oder JobOutputAsset übergeben, stellt den Indexwert für ein Medienobjekt dar. Die tatsächlichen Medienobjekte werden in den Navigationseigenschaften InputMediaAssets und OutputMediaAssets für die Auftragsentitätsdefinition definiert. 
 
->[AZURE.NOTE]Da Media Services als Grundlage OData v3 verwendet, wird auf die einzelnen Medienobjekte in den Navigationseigenschaftenauflistungen InputMediaAssets und OutputMediaAssets durch das Name-Wert-Paar „\_\_metadata: uri“ verwiesen.
+>[AZURE.NOTE] Da Media Services als Grundlage OData v3 verwendet, wird auf die einzelnen Medienobjekte in den Navigationseigenschaftenauflistungen InputMediaAssets und OutputMediaAssets durch das Name-Wert-Paar „\_\_metadata: uri“ verwiesen.
 
 - InputMediaAssets ist mindestens einem Medienobjekt zugeordnet, das Sie in Media Services erstellt haben. OutputMediaAssets werden vom System erstellt. Sie verweisen nicht auf ein vorhandenes Medienobjekt.
 - OutputMediaAssets können mithilfe des assetName-Attributs benannt werden. Wenn dieses Attribut nicht vorhanden ist, wird als Name von OutputMediaAsset der interne Textwert des <outputAsset>-Elements mit dem Wert des Auftragsnamens oder der Auftrags-ID (falls die Name-Eigenschaft nicht definiert ist) als Suffix verwendet. Wenn Sie für assetName z. B. den Wert „Sample“ festlegen, wird die Name-Eigenschaft von OutputMediaAsset auf „Sample“ festgelegt. Wenn Sie jedoch keinen Wert für assetName festgelegt haben, der Auftragsname jedoch auf NewJob festgelegt wurde, wird OutputMediaAsset der Name JobOutputAsset(Wert)\_NewJob zugewiesen.
@@ -902,7 +906,7 @@ Das folgende Beispiel zeigt, wie Sie CancelJob aufrufen.
 
 Bei Erfolg wird ein Antwortcode 204 ohne Meldungstext zurückgegeben.
 
->[AZURE.NOTE]Sie müssen die Auftrags-ID URL-codieren (normalerweise nb:jid:UUID:Wert), wenn Sie sie als Parameter an CancelJob übergeben.
+>[AZURE.NOTE] Sie müssen die Auftrags-ID URL-codieren (normalerweise nb:jid:UUID:Wert), wenn Sie sie als Parameter an CancelJob übergeben.
 
 
 ### Abrufen des Ausgabemedienobjekts 
@@ -1087,7 +1091,8 @@ Das folgende Beispiel zeigt, wie die AccessPolicy für Leseberechtigungen eines 
 
 Im Erfolgsfall wird ein 201 Erfolgscode zurückgegeben, der die erstellte AccessPolicy-Entität beschreibt. Anschließend verwenden Sie die AccessPolicy-ID zusammen mit der ID des Medienobjekts, das die zu übermittelnde Datei (z. B. ein Ausgabemedienobjekt) enthält, um die Locator-Entität zu erstellen.
 
->[AZURE.NOTE]Dieser grundlegende Workflow entspricht dem Hochladen einer Datei bei der Sammelerfassung eines Medienobjekts (wie oben in diesem Thema beschrieben). Wie beim Hochladen von Dateien gilt Folgendes: Wenn Sie (oder die Clients) sofortigen Zugriff auf Ihre Dateien benötigen, legen Sie den StartTime-Wert auf fünf Minuten vor der aktuellen Zeit fest. Dies ist erforderlich, weil ggf. eine Uhrzeitabweichung zwischen dem Clientcomputer und Media Services vorliegen kann. Zudem muss der StartTime-Wert das folgende DateTime-Format haben: JJJJ-MM-TTTHH:mm:ssZ (z. B. "2014-05-23T17:53:50Z").
+>[AZURE.NOTE] 
+>Dieser grundlegende Workflow entspricht dem Hochladen einer Datei bei der Sammelerfassung eines Medienobjekts (wie oben in diesem Thema beschrieben). Wie beim Hochladen von Dateien gilt Folgendes: Wenn Sie (oder die Clients) sofortigen Zugriff auf Ihre Dateien benötigen, legen Sie den StartTime-Wert auf fünf Minuten vor der aktuellen Zeit fest. Dies ist erforderlich, weil ggf. eine Uhrzeitabweichung zwischen dem Clientcomputer und Media Services vorliegen kann. Zudem muss der StartTime-Wert das folgende DateTime-Format haben: JJJJ-MM-TTTHH:mm:ssZ (z. B. "2014-05-23T17:53:50Z").
 
 
 ###Erstellen eines SAS-URLs zum Herunterladen von Inhalten 
@@ -1153,13 +1158,14 @@ Im Erfolgsfall wird die folgende Antwort zurückgegeben:
 
 Die zurückgegebene **Path**-Eigenschaft enthält die SAS-URL.
 
->[AZURE.NOTE]Wenn Sie speicherverschlüsselten Inhalt herunterladen, müssen Sie ihn vor dem Rendern manuell entschlüsseln. Alternativ können Sie den MediaProcessor für die Speicherverschlüsselung in einer Verarbeitungsaufgabe verwenden, um verarbeitete Dateien unverschlüsselt an ein OutputAsset auszugeben und dann von diesem Medienobjekt herunterzuladen. Weitere Informationen zur Verarbeitung finden Sie unter „Erstellen und Verschlüsseln von Aufträgen mit der Media Services-REST-API“. Nachdem die SAS URL-Locators erstellt wurden, können sie nicht mehr aktualisiert werden. Beispielsweise kann derselbe Locator nicht mit einem aktualisierten StartTime-Wert wiederverwendet werden. Dies liegt an der Art, wie SAS-URLs erstellt werden. Wenn ein Locator abgelaufen ist und Sie auf ein Medienobjekt zugreifen möchten, um es herunterzuladen, müssen Sie einen neuen Locator mit einem neuen StartTime-Wert erstellen.
+>[AZURE.NOTE]
+>Wenn Sie speicherverschlüsselten Inhalt herunterladen, müssen Sie ihn vor dem Rendern manuell entschlüsseln. Alternativ können Sie den MediaProcessor für die Speicherverschlüsselung in einer Verarbeitungsaufgabe verwenden, um verarbeitete Dateien unverschlüsselt an ein OutputAsset auszugeben und dann von diesem Medienobjekt herunterzuladen. Weitere Informationen zur Verarbeitung finden Sie unter „Erstellen und Verschlüsseln von Aufträgen mit der Media Services-REST-API“. Nachdem die SAS URL-Locators erstellt wurden, können sie nicht mehr aktualisiert werden. Beispielsweise kann derselbe Locator nicht mit einem aktualisierten StartTime-Wert wiederverwendet werden. Dies liegt an der Art, wie SAS-URLs erstellt werden. Wenn ein Locator abgelaufen ist und Sie auf ein Medienobjekt zugreifen möchten, um es herunterzuladen, müssen Sie einen neuen Locator mit einem neuen StartTime-Wert erstellen.
 
 ###Herunterladen von Dateien
 
 Nachdem Sie AccessPolicy und Locator konfiguriert haben, können Sie Dateien mithilfe der Azure Storage-REST-APIs herunterladen.
 
->[AZURE.NOTE]Sie müssen den Dateinamen der Downloaddatei in den **Path**-Wert des Locators einfügen, den Sie im vorherigen Abschnitt empfangen haben. Beispiel: https://storagetestaccount001.blob.core.windows.net/asset-e7b02da4-5a69-40e7-a8db-e8f4f697aac0/BigBuckBunny.mp4? . . .
+>[AZURE.NOTE] Sie müssen den Dateinamen der Downloaddatei in den **Path**-Wert des Locators einfügen, den Sie im vorherigen Abschnitt empfangen haben. Beispiel: https://storagetestaccount001.blob.core.windows.net/asset-e7b02da4-5a69-40e7-a8db-e8f4f697aac0/BigBuckBunny.mp4? . . .
 
 Weitere Informationen zum Arbeiten mit Azure Storage-BLOBs finden Sie unter [REST-API des Blob-Diensts](http://msdn.microsoft.com/library/azure/dd135733.aspx).
 
@@ -1276,4 +1282,4 @@ Fügen Sie zum Testen des progressiven Downloads eine URL in einen Browser ein (
 
  
 
-<!---HONumber=August15_HO8-->
+<!----HONumber=August15_HO8-->
