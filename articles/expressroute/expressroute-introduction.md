@@ -92,7 +92,13 @@ Auf der [FAQ-Seite](expressroute-faqs.md) finden Sie weitere Informationen zu un
 
 In der folgenden Tabelle werden die drei Routingdomänen verglichen.
 
-||**Privates Peering**|**Öffentliches Peering**|**Microsoft-Peering**| |---|---|---|---| |**Max. unterstützte Anzahl Präfixe pro Peering**|Standardmäßig 4000, bei ExpressRoute Premium 10.000|Standardmäßig 4000, bei ExpressRoute Premium 10.000|200| |**Unterstützte IP-Adressbereiche**|Jede gültige IPv4-Adresse innerhalb des WAN|Öffentliche IPv4-Adressen in Ihrem Besitz oder dem des Konnektivitätsanbieters|Öffentliche IPv4-Adressen in Ihrem Besitz oder dem des Konnektivitätsanbieters| |**Anforderungen AS-Nummer**|Private und öffentliche AS-Nummern. Kunde muss öffentliche AS-Nummer besitzen. | Private und öffentliche AS-Nummern. Kunde muss öffentliche AS-Nummer besitzen. | Nur öffentliche AS-Nummern. AS-Nummer muss anhand von Routingregistrierungen überprüft werden, um den Besitz zu prüfen.| |**IP-Adressen der Routingschnittstelle**|RFC1918 und öffentliche IP-Adressen|In Routingregistrierungen beim Kunden/NSP registrierte öffentliche IP-Adressen.|In Routingregistrierungen beim Kunden/NSP registrierte öffentliche IP-Adressen.| |**MD5-Hash-Unterstützung**| Ja|Ja|Ja|
+||**Privates Peering**|**Öffentliches Peering**|**Microsoft-Peering**| 
+|---|---|---|---| 
+|**Max. unterstützte Anzahl Präfixe pro Peering**|Standardmäßig 4000, bei ExpressRoute Premium 10.000|Standardmäßig 4000, bei ExpressRoute Premium 10.000|200| 
+|**Unterstützte IP-Adressbereiche**|Jede gültige IPv4-Adresse innerhalb des WAN|Öffentliche IPv4-Adressen in Ihrem Besitz oder dem des Konnektivitätsanbieters|Öffentliche IPv4-Adressen in Ihrem Besitz oder dem des Konnektivitätsanbieters| 
+|**Anforderungen AS-Nummer**|Private und öffentliche AS-Nummern. Kunde muss öffentliche AS-Nummer besitzen. | Private und öffentliche AS-Nummern. Kunde muss öffentliche AS-Nummer besitzen. | Nur öffentliche AS-Nummern. AS-Nummer muss anhand von Routingregistrierungen überprüft werden, um den Besitz zu prüfen.| 
+|**IP-Adressen der Routingschnittstelle**|RFC1918 und öffentliche IP-Adressen|In Routingregistrierungen beim Kunden/NSP registrierte öffentliche IP-Adressen.|In Routingregistrierungen beim Kunden/NSP registrierte öffentliche IP-Adressen.| 
+|**MD5-Hash-Unterstützung**| Ja|Ja|Ja|
 
 Sie können eine oder mehrere der Routingdomänen als Teil der dedizierten Verbindung aktivieren. Sie können alle Routingdomänen durch das gleiche VPN (im Fall eines NSP) leiten, wenn sie diese zu einer einzelnen Routingdomäne zusammenführen möchten. Sie können sie auch getrennt halten, ähnlich dem oben gezeigten Diagramm. Die empfohlene Konfiguration sieht folgendermaßen aus: Das private Peering ist direkt mit dem Kernnetzwerk verbunden und die öffentlichen und Microsoft-Peeringlinks sind mit Ihrem Extranet verbunden.
  
@@ -104,4 +110,4 @@ Wenn Sie sich für alle drei Peeringsitzungen entscheiden, müssen Sie über dre
 - Einen Dienstanbieter finden. Siehe [ExpressRoute-Dienstanbieter und -Standorte](expressroute-locations.md)
 - Konfigurieren Sie Ihre ExpressRoute-Verbindung. Eine Anleitung finden Sie unter [ExpressRoute-Verbindung über einen Netzwerkdienstanbieter konfigurieren](expressroute-configuring-nsps.md) oder [Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter](expressroute-configuring-exps.md). 
 
-<!---HONumber=August15_HO9-->
+<!----HONumber=August15_HO9-->

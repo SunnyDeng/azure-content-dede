@@ -71,7 +71,9 @@ Service Bus-Ausstellername und -schlüssel werden von BizTalk-Adapterdiensten ve
 2. Klicken Sie im linken Navigationsbereich auf **Service Bus**.
 3. Wählen Sie Ihren Namespace aus. Klicken Sie in der Taskleiste auf **Verbindungsinformationen**: Daraufhin werden **Standardaussteller** (Ausstellername) und **Standardschlüssel** (Ausstellerschlüssel) angezeigt. Diese Werte können kopiert werden.  
 
-Zusammenfassung: Ausstellername = Standardaussteller Ausstellerschlüssel = Standardschlüssel
+Zusammenfassung: 
+Ausstellername = Standardaussteller 
+Ausstellerschlüssel = Standardschlüssel
 
 ## Weiter
 Zusätzliche Azure BizTalk Services-Themen:
@@ -92,4 +94,4 @@ Zusätzliche Azure BizTalk Services-Themen:
 - [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
  
 
-<!---HONumber=August15_HO9-->
+<!----HONumber=August15_HO9-->
