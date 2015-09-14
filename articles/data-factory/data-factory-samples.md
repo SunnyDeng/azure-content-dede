@@ -1,19 +1,19 @@
 <properties 	
-	pageTitle="Azure Data Factory Editor – Beispiele" 
-	description="Bietet Informationen zu Beispielen, die zum Funktionsumfang des Azure Data Factory-Diensts gehören." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Azure Data Factory Editor – Beispiele"
+	description="Bietet Informationen zu Beispielen, die zum Funktionsumfang des Azure Data Factory-Diensts gehören."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/21/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/21/2015"
 	ms.author="spelluru"/>
 
 # Azure Data Factory Editor – Beispiele
@@ -54,6 +54,9 @@ Erstellen der Profile von Kunden eines Spieleherstellers | Contoso ist ein Spiel
 ## Beispiele für GitHub
 Das [Azure-DataFactory-Repository auf GitHub](https://github.com/azure/azure-datafactory) enthält mehrere Beispiele, mit deren Hilfe Sie den Azure Data Factory-Dienst rasch in Betrieb nehmen können. Sie können die Skripts auch ändern, um sie in eigenen Anwendungen zu verwenden. Der Ordner "Samples\\JSON" enthält JSON-Codeausschnitte für gängige Szenarien.
 
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-samples.md).
+
 [data-factory-get-started]: data-factory-get-started.md#CreateDataFactory
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

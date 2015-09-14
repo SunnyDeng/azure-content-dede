@@ -1,20 +1,20 @@
 <properties
    pageTitle="Data Warehouse-Workload"
-   description="Die Flexibilität von SQL Data Warehouse ermöglicht Ihnen das Vergrößern, Verkleinern oder Anhalten der Rechenleistung mithilfe eines Schiebereglers für Data Warehouse-Einheiten (DWUs). Dieser Artikel beschreibt die Data Warehouse-Metriken und deren Beziehung zu DWUs."
-   services="sql-data-warehouse"
-   documentationCenter="NA"
-   authors="barbkess"
-   manager="jhubbard"
-   editor=""/>
+	description="Die Flexibilität von SQL Data Warehouse ermöglicht Ihnen das Vergrößern, Verkleinern oder Anhalten der Rechenleistung mithilfe eines Schiebereglers für Data Warehouse-Einheiten (DWUs). Dieser Artikel beschreibt die Data Warehouse-Metriken und deren Beziehung zu DWUs."
+	services="sql-data-warehouse"
+	documentationCenter="NA"
+	authors="barbkess"
+	manager="jhubbard"
+	editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="05/23/2015"
-   ms.author="barbkess;JRJ@BigBangData.co.uk"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-services"
+	ms.date="05/23/2015"
+	ms.author="barbkess;JRJ@BigBangData.co.uk"/>
 
 # Data Warehouse-Workload
 Ein Data Warehouse-Workload bezieht sich auf alle Vorgänge, die für ein Data Warehouse ablaufen müssen. Der Data Warehouse-Workload umfasst den gesamten Prozess des Ladens von Daten in das Warehouse, das Durchführen der Analyse und die Berichterstellung für das Data Warehouse, das Verwalten von Daten im Data Warehouse und das Exportieren von Daten aus dem Data Warehouse. Die Tiefe und Breite dieser Komponenten entsprechen häufig dem Reifegrad des Data Warehouse.
@@ -60,6 +60,9 @@ Eine Möglichkeit, Daten für Berichte und Analysen verfügbar zu machen, ist da
 ## Nächste Schritte
 Informationen zu den ersten Schritten zum Entwickeln Ihres Data Warehouse finden Sie unter [Entwicklungsübersicht][].
 
+## Bücher
+[Big Data Warehousing](https://www.manning.com/books/big-data-warehousing) von Karthik Ramachandran, Istvan Szededi und Richard L. Saltzer (Manning Publications). [Kapitel 1](https://manning-content.s3.amazonaws.com/download/e/3d94acd-9512-46c8-b0b0-8c9c3c6a303b/BDW_MEAP_ch1.pdf)
+
 <!--Image references-->
 
 <!--Article references-->
@@ -69,4 +72,4 @@ Informationen zu den ersten Schritten zum Entwickeln Ihres Data Warehouse finden
 
 <!--Other web references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

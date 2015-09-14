@@ -399,7 +399,7 @@ Daten werden stündlich in eine neue Datei kopiert, wobei der Pfad des Blobs jew
 	        "typeProperties": {
 	          "source": {
 	            "type": "SqlSource",
-	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \'{0:yyyy-MM-dd}\' AND timestampcolumn < \'{1:yyyy-MM-dd}\'', WindowStart, WindowEnd)"
+	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \\'{0:yyyy-MM-dd}\\' AND timestampcolumn < \\'{1:yyyy-MM-dd}\\'', WindowStart, WindowEnd)"
 	          },
 	          "sink": {
 	            "type": "FileSystemSink"
@@ -427,7 +427,7 @@ Sie können ein lokales Dateisystem mithilfe eines verknüpften Dienst des Typs 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
 Typ | Die "type"-Eigenschaft muss auf **OnPremisesFileServer** festgelegt sein. | Ja 
-host | Hostname des Servers. Verwenden Sie "" als Escapezeichen (siehe das folgende Beispiel): Wenn Ihre Freigabe "\\servername" heißt, geben Sie "\\\servername" an.<p>Wenn das Dateisystem für den Gatewaycomputer lokal ist, verwenden Sie "Local" oder "localhost". Wenn sich das Dateisystem auf einem anderen Server als dem Gatewaycomputer befindet, verwenden Sie "\\\servername".</p> | Ja
+host | Hostname des Servers. Verwenden Sie "\" als Escapezeichen (siehe das folgende Beispiel): Wenn Ihre Freigabe "\\servername" heißt, geben Sie "\\\servername" an.<p>Wenn das Dateisystem für den Gatewaycomputer lokal ist, verwenden Sie "Local" oder "localhost". Wenn sich das Dateisystem auf einem anderen Server als dem Gatewaycomputer befindet, verwenden Sie "\\\servername".</p> | Ja
 userid | Geben Sie die ID des Benutzers an, der auf dem Server zugreifen darf. | Nein (wenn Sie "encryptedCredential" auswählen)
 password | Geben Sie das Kennwort für das Benutzerkonto (userid) an. | Nein (wenn Sie "encryptedCredential" auswählen) 
 encryptedCredential | Geben Sie die verschlüsselten Anmeldeinformationen an, die Sie durch Ausführen des Cmdlets "New-AzureDataFactoryEncryptValue" erhalten.<p>**Hinweis**: Sie müssen mindestens die Azure PowerShell-Version 0.8.14 verwenden, um mit Cmdlets wie "New-AzureDataFactoryEncryptValue" zu arbeiten, bei denen der type-Parameter auf "OnPremisesFileSystemLinkedService" festgelegt ist.</p> | Nein (wenn Sie "userid" und "password" unverschlüsselt angeben)
@@ -472,11 +472,12 @@ Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und 
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-folderPath | Pfad zum Ordner. Beispiel: myfolder<p>Verwenden Sie für Sonderzeichen in der Zeichenfolge das Escapezeichen "". Geben Sie für "folder\\subfolder" z. B. "folder\\subfolder" und für "d:\\samplefolder" z. B. "d:\\samplefolder" an.</p><p>Sie können dies mit **partitionBy** kombinieren, um Ordnerpfade auf den Anfangs- und Endwerten einer Datum-/Uhrzeitangabe für Slices basieren zu lassen.</p> | Ja
+folderPath | Pfad zum Ordner. Beispiel: myfolder<p>Verwenden Sie für Sonderzeichen in der Zeichenfolge das Escapezeichen "\". Geben Sie für "folder\\subfolder" z. B. "folder\\subfolder" und für "d:\\samplefolder" z. B. "d:\\samplefolder" an.</p><p>Sie können dies mit **partitionBy** kombinieren, um Ordnerpfade auf den Anfangs- und Endwerten einer Datum-/Uhrzeitangabe für Slices basieren zu lassen.</p> | Ja
 fileName | Geben Sie den Namen der Datei in **folderPath** an, wenn die Tabelle auf eine bestimmte Datei im Ordner verweisen soll. Wenn Sie keine Werte für diese Eigenschaft angeben, verweist die Tabelle auf alle Dateien im Ordner.<p>Wenn "fileName" für ein Ausgabedataset nicht angegeben wird, hat der Name der generierten Datei das folgende Format: </p><p>Data.<Guid>.txt (Beispiel: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt)</p> | Nein
 partitionedBy | "partitionedBy" kann genutzt werden, um einen dynamischen Wert für "folderPath" oder "filename" für Zeitreihendaten anzugeben. Beispiel: "folderPath" als Parameter für jedes Stunde mit Daten. | Nein
 Format | Zwei Typen von Formaten werden unterstützt: **TextFormat** und **AvroFormat**. Sie müssen die "type"-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn die "type"-Eigenschaft auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Formatabschnitt unten finden Sie weitere Einzelheiten. | Nein
 fileFilter | Geben Sie einen Filter zur Auswahl einer Teilmenge der Dateien in "folderPath" statt alle Dateien an. <p>Zulässige Werte sind: * (mehrere Zeichen) und ? (einzelnes Zeichen).</p><p>Beispiel 1: "fileFilter": "*.log"</p>Beispiel 2: "fileFilter": 2014-1-?.txt"</p><p>** Hinweis**: "fileFilter" eignet sich für ein Eingabedataset des Typs "FileShare".</p> | Nein
+| Komprimierung | Geben Sie den Typ und den Grad der Komprimierung für die Daten an. Folgende Typen werden unterstützt: "GZip", "Deflate" und "BZip2". Folgende Komprimierungsgrade werden unterstützt: "Optimal" und "Schnellste". Weitere Einzelheiten finden Sie im Abschnitt [Komprimierungsunterstützung](#compression-support). | Nein |
 
 > [AZURE.NOTE]"filename" und "fileFilter" können nicht gleichzeitig verwendet werden.
 
@@ -484,7 +485,7 @@ fileFilter | Geben Sie einen Filter zur Auswahl einer Teilmenge der Dateien in "
 
 Wie zuvor erwähnt, kann "partitionedBy" genutzt werden, um einen dynamischen Wert für "folderPath" oder "filename" für Zeitreihendaten anzugeben. Sie können dazu die Data Factory-Makros und Systemvariablen "SliceStart" und "SliceEnd" verwenden, die den logischen Zeitraum für einen bestimmten Datenslice angeben.
 
-In den Artikeln [Erstellen von Datasets](data-factory-create-datasets.md), [Planung und Ausführung](data-factory-scheduling-and-execution.md) und [Erstellen von Pipelines](data-factory-create-pipelines.md) finden Sie weitere Details zu Zeitreihen-Datasets, Planung und Slices.
+In den Artikeln [Erstellen von Datasets](data-factory-create-datasets.md), [Planung und Ausführung](data-factory-scheduling-and-execution.md) und [Erstellen von Pipelines](data-factory-create-pipelines.md) finden Sie weitere Details zu Zeitreihendatasets, Planung und Slices.
 
 #### Beispiel 1:
 
@@ -554,7 +555,9 @@ Wenn das Format auf **AvroFormat** festgelegt ist, müssen Sie im Abschnitt "For
 	    "type": "AvroFormat",
 	}
 	
-Um das Avro-Format in einer nachfolgenden Hive-Tabelle zu verwenden, sehen Sie sich zuvor das [Apache Hive-Lernprogramm](https://cwiki.apache.org/confluence/display/Hive/AvroSerDe) an.
+Um das Avro-Format in einer nachfolgenden Hive-Tabelle zu verwenden, sehen Sie sich zuvor das [Apache Hive-Tutorial](https://cwiki.apache.org/confluence/display/Hive/AvroSerDe) an.
+
+[AZURE.INCLUDE [data-factory-compression](../../includes/data-factory-compression.md)]
 
 ## Eigenschaften von Kopieraktivitätstyp "Dateifreigabe"
 
@@ -573,4 +576,4 @@ Um das Avro-Format in einer nachfolgenden Hive-Tabelle zu verwenden, sehen Sie s
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

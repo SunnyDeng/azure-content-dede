@@ -1,24 +1,20 @@
 <properties 
-	pageTitle="Verschieben von Daten von einem lokalen SQL Server zu SQL Azure mithilfe von Azure Data Factory | Azure" 
-	description="Einrichten eine ADF-Pipeline, die aus zwei Datenmigrationsaktivitäten besteht, die zusammen täglich Daten zwischen lokalen Datenbanken und in die Cloud verschieben." 
-	metaKeywords="" 
-	services="machine-learning" 
-	solutions="" 
-	documentationCenter="" 
-	authors="fashah" 
-	manager="jacob.spoelstra" 
-	editor="" 
-	videoId="" 
-	scriptId="" />
+	pageTitle="Verschieben von Daten von einem lokalen SQL Server zu SQL Azure mithilfe von Azure Data Factory | Azure"
+	description="Einrichten eine ADF-Pipeline, die aus zwei Datenmigrationsaktivitäten besteht, die zusammen täglich Daten zwischen lokalen Datenbanken und in die Cloud verschieben."
+	services="machine-learning"
+	documentationCenter=""
+	authors="fashah"
+	manager="jacob.spoelstra"
+	editor=""/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/10/2015" 
-	ms.author="fashah;bradsev" />
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/10/2015"
+	ms.author="fashah;bradsev"/>
 
 
 # Verschieben von Daten von einem lokalen SQL Server zu SQL Azure mithilfe von Azure Data Factory
@@ -40,14 +36,14 @@ Wir richten eine ADF-Pipeline ein, die aus zwei Datenmigrationsaktivitäten best
 * Kopieren von Daten aus einer lokalen SQL Server-Datenbank in ein Azure Blob-Speicherkonto 
 * Kopieren von Daten aus dem Azure Blob-Speicherkonto in eine Azure SQL-Datenbank
 
-**Referenz**: Die hier gezeigten Schritte wurden dem detaillierteren Lernprogramm [Aktivieren von Pipelines zum Arbeiten mit lokalen Daten](data-factory-use-onpremises-datasources.md) entnommen und angepasst, das vom ADF-Team bereitgestellt wird. Verweise auf die entsprechenden Abschnitte dieses Themas werden an geeigneten Stellen bereitgestellt .
+**Referenz**: Die hier gezeigten Schritte wurden dem detaillierteren Tutorial [Aktivieren von Pipelines zum Arbeiten mit lokalen Daten](data-factory-use-onpremises-datasources.md) entnommen und angepasst, das vom ADF-Team bereitgestellt wird. Verweise auf die entsprechenden Abschnitte dieses Themas werden an geeigneten Stellen bereitgestellt .
 
 
 ## <a name="prereqs"></a>Voraussetzungen
-In diesem Lernprogramm wird Folgendes vorausgesetzt:
+In diesem Tutorial wird Folgendes vorausgesetzt:
 
 * Ein **Azure-Abonnement**. Wenn Sie nicht über ein Abonnement verfügen, können Sie sich für ein [kostenloses Testabonnement](https://azure.microsoft.com/pricing/free-trial/) registrieren.
-* Ein **Azure-Speicherkonto**. Sie benötigen ein Azure-Speicherkonto zum Speichern der Daten in diesem Lernprogramm. Falls Sie noch kein Azure-Speicherkonto haben, lesen Sie den Artikel [Erstellen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account). Nachdem Sie das Speicherkonto erstellt haben, müssen Sie den Kontoschlüssel für den Zugriff auf den Speicher abrufen. Siehe [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+* Ein **Azure-Speicherkonto**. Sie benötigen ein Azure-Speicherkonto zum Speichern der Daten in diesem Tutorial. Falls Sie noch kein Azure-Speicherkonto haben, lesen Sie den Artikel [Erstellen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account). Nachdem Sie das Speicherkonto erstellt haben, müssen Sie den Kontoschlüssel für den Zugriff auf den Speicher abrufen. Siehe [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
 * Zugriff auf eine **Azure SQL-Datenbank**. Wenn Sie eine Azure SQL-Datenbank einrichten müssen, finden Sie in [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md) Informationen dazu, wie Sie eine neue Instanz einer Azure SQL-Datenbank bereitstellen.
 * Lokal installierte und konfigurierte **Azure PowerShell**. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
@@ -211,9 +207,9 @@ Kopieren Sie die JSON-Definition der Tabelle in eine Datei namens *AzureSqlTable
 Geben Sie die Aktivitäten an, die zu der Pipeline gehören, und erstellen Sie die Pipeline mit den folgenden skriptbasierten Verfahren. Zum Definieren der Pipeline-Eigenschaften wird eine JSON-Datei verwendet.
 
 * Das Skript setzt voraus, dass der **Pipelinename** *AMLDSProcessPipeline* lautet.
-* Beachten Sie außerdem, dass wir die Periodizität der Pipeline auf tägliche Ausführung festgelegt haben und die Standardausführungszeit des Auftrags verwenden (00: 00 Uhr UTC).
+* Beachten Sie außerdem, dass wir die Häufigkeit auf eine tägliche Ausführung festgelegt haben und die Standardausführungszeit des Auftrags verwenden (12 Uhr UTC).
 
-> [AZURE.NOTE]Die folgenden Verfahren verwenden die Azure PowerShell zum Definieren und Erstellen der ADF-Pipeline. Aber diese Aufgabe können Sie auch über das Azure-Vorschauportal ausführen. Details finden Sie unter [Erstellen und Ausführen einer Pipeline](data-factory-use-onpremises-datasources.md#step-4-create-and-run-a-pipeline).
+> [AZURE.NOTE]Die folgenden Verfahren verwenden Azure PowerShell zum Definieren und Erstellen der ADF-Pipeline. Aber diese Aufgabe können Sie auch über das Azure-Vorschauportal ausführen. Details finden Sie unter [Erstellen und Ausführen einer Pipeline](data-factory-use-onpremises-datasources.md#step-4-create-and-run-a-pipeline).
 
 Unter Verwendung der oben angegebenen Tabellendefinitionen wird die Pipeline-Definition für die ADF wie folgt angegeben:
     
@@ -303,4 +299,4 @@ Sobald die Pipeline ausgeführt wird, sollten Sie die Daten sehen können, die i
 
 Beachten Sie, dass wir nicht die Funktionalität von ADF zum inkrementellen Übertragen von Daten per Pipe genutzt haben. Weitere Detailinformationen, wie Sie hierzu vorgehen, sowie zu weiteren von ADF bereitgestellten Funktionen finden Sie in der [ADF-Dokumentation](http://azure.microsoft.com/services/data-factory/).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

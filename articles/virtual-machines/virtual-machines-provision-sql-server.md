@@ -51,7 +51,7 @@ Aktuelle Informationen zu den unterstützten SQL Server-Images in Azure finden S
 > - Sie können auch eine vorhandene Instanz von SQL Server Evaluation Edition gemäß der Vereinbarung [Lizenzmobilität durch Software Assurance für Azure](http://azure.microsoft.com/pricing/license-mobility/) auf eine andere SQL Server-Edition aktualisieren, indem Sie die Schritte unter [Aktualisieren auf eine andere Edition von SQL Server](https://msdn.microsoft.com/library/cc707783.aspx) ausführen. Informationen zum Erwerb der lizenzierten Kopie von SQL Server finden Sie unter [So kaufen Sie SQL Server](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx).
 
 4. Geben Sie zunächst auf der Seite **Konfiguration des virtuellen Computers** die folgenden Informationen ein:
-	- EIN **VERÖFFENTLICHUNGSDATUM DER VERSION** Wenn mehrere Images verfügbar sind, wählen Sie das neueste aus.
+	- EIN **VERÖFFENTLICHUNGSDATUM DER VERSION**. Wenn mehrere Images verfügbar sind, wählen Sie das neueste aus.
 	- Ein eindeutiger **NAME FÜR DEN VIRTUELLEN COMPUTER**
 	- Geben Sie im Feld **NEUER BENUTZERNAME** einen eindeutigen Benutzernamen für das lokale Administratorkonto des Computers ein.
 	- Geben Sie in das Feld **NEUES KENNWORT** ein sicheres Kennwort ein. 
@@ -149,11 +149,9 @@ Die folgende Liste enthält zusätzliche Ressourcen für SQL Server auf virtuell
 ### SQL Server-Workloads in Azure:
 - [SQL Server-Business Intelligence auf virtuellen Azure-Computern](virtual-machines-sql-server-business-intelligence.md)
 
-- [SQL Server Data Warehousing und transaktionale Arbeitslasten auf virtuellen Azure-Computern](virtual-machines-sql-server-dw-and-oltp-workloads.md)
-
 ### Whitepaper:
 - [Grundlegendes zur Azure SQL-Datenbank und SQL Server in Azure Virtual Machines](sql-database/data-management-azure-sql-database-and-sql-server-iaas.md)
 
 - [Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines](virtual-machines-sql-server-application-patterns-and-development-strategies.md)
 
-<!----HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

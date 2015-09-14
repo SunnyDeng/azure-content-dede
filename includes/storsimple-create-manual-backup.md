@@ -1,13 +1,3 @@
-<properties pageTitle="Erstellen einer manuellen Sicherung" description="Erläutert das Starten einer manuellen Sicherung nach Bedarf." services="storsimple" documentationCenter="NA" authors="SharS" manager="carolz" edito**r="" />
-<tags  
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/13/2015"
-   ms.author="v-sharos" />
-
 #### So erstellen Sie eine manuelle Sicherung
 
 1. Navigieren Sie auf der Seite **Geräte** zu der Registerkarte **Sicherungsrichtlinien**. Auf dieser Registerkarte werden alle Sicherungsrichtlinien in einem Tabellenformat aufgelistet, darunter auch die Richtlinie für das Volume, das Sie sichern möchten.
@@ -16,13 +6,13 @@
 
 3. Wenn Sie eine dieser Optionen auswählen, werden Sie zur Bestätigung aufgefordert. Klicken Sie auf **Ja**.
 
-    ![Erstellen einer manuellen Sicherung 1](./media/storsimple-create-manual-backup/HCS_CreateManualBackup1-include.png)
+    ![Erstellen einer manuellen Sicherung](./media/storsimple-create-manual-backup/HCS_CreateManualBackup1-include.png)
  
     Es wird ein Auftrag zum Erstellen einer Momentaufnahme gestartet. Am unteren Rand der Seite wird eine Benachrichtigung angezeigt, nachdem der Auftrag erfolgreich erstellt wurde.
 
 4. Klicken Sie im Benachrichtigungsbereich (unten auf der Seite) auf **Auftrag anzeigen**, um den Auftrag zu überwachen.
 
-    ![Erstellen einer manuellen Sicherung 2](./media/storsimple-create-manual-backup/HCS_CreateManualBackup2-include.png)
+    ![Überwachen der manuellen Sicherung](./media/storsimple-create-manual-backup/HCS_CreateManualBackup2-include.png)
 
 5. Nachdem der Sicherungsauftrag abgeschlossen wurde, navigieren Sie zur Registerkarte **Sicherungskatalog**.
 
@@ -30,4 +20,4 @@
 
   Die Sicherung sollte in der Liste der Sicherungssätze enthalten sein, die im Katalog angezeigt wird.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

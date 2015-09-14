@@ -1,27 +1,25 @@
 <properties 
-	pageTitle="Bottle und Azure Table Storage in Azure mit Python Tools 2.1 für Visual Studio" 
-	description="Erfahren Sie, wie Sie mithilfe der Python-Tools für Visual Studio eine Bottle-Anwendung erstellen, die Daten im Azure-Tabellenspeicher speichert, und die Web-App für Azure App Service-Web-Apps bereitstellen." 
-	services="app-service\web" 
-	documentationCenter="python" 
-	authors="huguesv" 
-	manager="wpickett" 
+	pageTitle="Bottle und Azure-Tabellenspeicher in Azure mit Python Tools 2.2 für Visual Studio"
+	description="Erfahren Sie, wie Sie mithilfe der Python-Tools für Visual Studio eine Bottle-Anwendung erstellen, die Daten im Azure-Tabellenspeicher speichert, und die Web-App für Azure App Service-Web-Apps bereitstellen."
+	services="app-service\web"
+	documentationCenter="python"
+	authors="huguesv"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="04/16/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="08/30/2015"
 	ms.author="huguesv"/>
 
 
+# Bottle und Azure-Tabellenspeicher in Azure mit Python Tools 2.2 für Visual Studio 
 
-
-# Bottle und Azure Table Storage in Azure mit Python Tools 2.1 für Visual Studio 
-
-In diesem Lernprogramm erstellen wir mit [Python-Tools für Visual Studio] eine einfache Web-App für Umfragen mithilfe einer der PTVS-Beispielvorlagen. Dieses Lernprogramm steht auch als [Video](https://www.youtube.com/watch?v=GJXDGaEPy94) zur Verfügung.
+In diesem Tutorial erstellen wir mit [Python-Tools für Visual Studio] eine einfache Web-App für Umfragen mithilfe einer der PTVS-Beispielvorlagen. Dieses Tutorial steht auch als [Video](https://www.youtube.com/watch?v=GJXDGaEPy94) zur Verfügung.
 
 Die Umfrage-Web-App definiert für ihr Repository eine Abstraktion. Sie können also einfach zwischen unterschiedlichen Repository-Typen wechseln (In-Memory, Azure-Tabellenspeicher, MongoDB).
 
@@ -31,10 +29,10 @@ Weitere Artikel finden Sie im [Python Developer Center], wo die Entwicklung von 
 
 ## Voraussetzungen
 
- - Visual Studio 2012 oder 2013
- - [Python Tools 2.1 für Visual Studio]
- - [Python Tools 2.1 für Visual Studio, Beispiel-VSIX]
- - [Azure-SDK-Tools für VS 2013] oder [Azure-SDK-Tools für VS 2012]
+ - Visual Studio 2013 oder 2015
+ - [Python Tools 2.2 für Visual Studio]
+ - [Python Tools 2.2 für Visual Studio, Beispiel-VSIX]
+ - [Azure SDK-Tools für VS 2013] oder [Azure SDK-Tools für VS 2015]
  - [Python 2.7 32-Bit] oder [Python 3.4 32-Bit]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
@@ -73,9 +71,7 @@ Für Speichervorgänge benötigen Sie ein Azure-Speicherkonto. Mit den folgenden
 
 2. Klicken Sie unten links im Portal auf das Symbol **Neu** und dann auf **Daten + Speicher** > **Speicher**. Geben Sie dem Speicherkonto einen eindeutigen Namen, und erstellen Sie eine neue [Ressourcengruppe](../resource-group-overview.md) dafür.
 
-  	<!-- ![New Button](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzurePlusNew.png) -->
-
-	Wenn das Speicherkonto erstellt wurde, leuchtet auf der Schaltfläche **Benachrichtigungen** grün **ERFOLG**. Das Blatt des Speicherkontos wird geöffnet, und darauf wird angezeigt, dass es zu der neu erstellten Ressourcengruppe gehört.
+  	<!-- ![New Button](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzurePlusNew.png) -->Wenn das Speicherkonto erstellt wurde, leuchtet auf der Schaltfläche **Benachrichtigungen** grün **ERFOLG**. Das Blatt des Speicherkontos wird geöffnet, und darauf wird angezeigt, dass es zu der neu erstellten Ressourcengruppe gehört.
 
   	<!-- ![Quick Create](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzureStorageCreate.png) -->
 
@@ -160,7 +156,7 @@ In diesem Abschnitt konfigurieren wir die Umgebungsvariablen für die Web-Apps-I
 
   	<!-- ![Top Menu](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonWebSiteTopMenu.png) -->
 
-1.  Navigieren Sie nach unten zum Abschnitt **App-Einstellungen**, und legen Sie die Werte für **REPOSITORY_NAME**, **STORAGE_NAME** und **STORAGE_KEY** gemäß der Beschreibung im Abschnitt **Konfigurieren des Projekts** fest.
+1.  Navigieren Sie nach unten zum Abschnitt **App-Einstellungen**, und legen Sie die Werte für **REPOSITORY\_NAME**, **STORAGE\_NAME** und **STORAGE\_KEY** gemäß der Beschreibung im Abschnitt **Konfigurieren des Projekts** fest.
 
   	<!-- ![App Settings](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonWebSiteConfigureSettingsTableStorage.png) -->
 
@@ -202,19 +198,19 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Bo
 [Azure-Portal]: https://portal.azure.com
 [Azure SDK für .NET]: http://azure.microsoft.com/downloads/
 [Python-Tools für Visual Studio]: http://aka.ms/ptvs
-[Python Tools 2.1 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
-[Python Tools 2.1 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkId=517189
-[Azure-SDK-Tools für VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
-[Azure-SDK-Tools für VS 2012]: http://go.microsoft.com/fwlink/?LinkId=323511
+[Python Tools 2.2 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=624025
+[Python Tools 2.2 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkId=624025
+[Azure SDK-Tools für VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
+[Azure SDK-Tools für VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517190
 [Python 3.4 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517191
-[Python Tools für Visual Studio – Dokumentation]: http://pytools.codeplex.com/documentation
+[Python Tools für Visual Studio – Dokumentation]: http://aka.ms/ptvsdocs
 [Dokumentation zu Bottle]: http://bottlepy.org/docs/dev/index.html
-[Remotedebugging in Microsoft Azure]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
-[Webprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
-[Cloud Service-Projekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
+[Remotedebugging in Microsoft Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
+[Webprojekte]: http://go.microsoft.com/fwlink/?LinkId=624027
+[Cloud Service-Projekte]: http://go.microsoft.com/fwlink/?LinkId=624028
 [Azure Storage]: http://azure.microsoft.com/documentation/services/storage/
 [Azure-SDK für Python]: https://github.com/Azure/azure-sdk-for-python
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

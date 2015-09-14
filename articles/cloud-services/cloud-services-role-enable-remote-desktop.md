@@ -1,37 +1,104 @@
 <properties 
-pageTitle="Einrichten einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services" 
-description="Konfigurieren einer Azure-Clouddienstanwendung für Remotedesktopverbindungen." 
-services="cloud-services" 
-documentationCenter="" 
-authors="Thraka" 
-manager="timlt" 
-editor=""/>
+pageTitle="Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services"
+	description="Konfigurieren einer Azure-Clouddienstanwendung für Remotedesktopverbindungen."
+	services="cloud-services"
+	documentationCenter=""
+	authors="sbtron"
+	manager="timlt"
+	editor=""/>
 <tags 
-ms.service="cloud-services" 
-ms.workload="tbd" 
-ms.tgt_pltfrm="na" 
-ms.devlang="na" 
-ms.topic="article" 
-ms.date="07/06/2015" 
-ms.author="adegeo"/>
+ms.service="cloud-services"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/06/2015"
+	ms.author="saurabh"/>
 
-# Einrichten einer Remotedesktopverbindung für eine Rolle in Azure
-Nachdem Sie einen Clouddienst zur Ausführung Ihrer Anwendung erstellt haben, können Sie per Remotezugriff auf eine Rolleninstanz in dieser Anwendung zugreifen, um Einstellungen zu konfigurieren oder die Problembehandlung durchzuführen. Der Clouddienst muss für Remotedesktop konfiguriert worden sein.
+# Aktivieren einer Remotedesktopverbindung für eine Rolle in Azure Cloud Services
 
-* Benötigen Sie ein Zertifikat zum Aktivieren der Remotedesktopauthentifizierung? [Erstellen](cloud-services-certs-create.md) Sie ein Zertifikat, und konfigurieren Sie es entsprechend den folgenden Schritten.
-* Haben Sie Remotedesktop für Ihren Clouddienst bereits eingerichtet? [Stellen Sie eine Verbindung](#remote-into-role-instances) mit dem Clouddienst her.
+>[AZURE.SELECTOR]
+- [Azure Portal](cloud-services-role-enable-remote-desktop.md)
+- [PowerShell](cloud-services-role-enable-remote-desktop-powershell.md)
+- [Visual Studio](https://msdn.microsoft.com/library/gg443832.aspx)
 
-## Einrichten einer Remotedesktopverbindung für Webrollen oder Workerrollen
-Um eine Remotedesktopverbindung für eine Webrolle oder Workerrolle zu aktivieren, können Sie die Verbindung im Dienstmodell für die Anwendung einrichten, oder Sie können die Verbindung im Azure-Verwaltungsportal einrichten, nachdem die Instanzen bereits ausgeführt werden.
 
-### Einrichten der Verbindung im Dienstmodell
-Der Dienstdefinitionsdatei, die das **RemoteAccess**-Modul und das **RemoteForwarder**-Modul in das Dienstmodell importiert, muss das **Imports**-Element hinzugefügt werden. Beim Erstellen eines Azure-Projekts mithilfe von Visual Studio werden die Dateien für das Dienstmodell automatisch erstellt.
+Mit Remotedesktop können Sie auf den Desktop einer Rolle zugreifen, die in Azure ausgeführt wird. Mithilfe einer Remotedesktopverbindung können Sie Probleme mit Ihrer Anwendung diagnostizieren und beheben, während diese ausgeführt wird.
 
-Das Dienstmodell besteht aus der Datei [ServiceDefinition.csdef](cloud-services-model-and-package.md#csdef) und der Datei [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#cscfg). Die Definitionsdatei wird mit den Rollenbinärdateien gepackt, wenn die Bereitstellung der Anwendung für den Clouddienst vorbereitet wird. Die Datei "ServiceConfiguration.cscfg" wird mit dem Anwendungspaket bereitgestellt und in Azure verwendet, um festzulegen, wie die Anwendung ausgeführt wird.
+Sie können eine Remotedesktopverbindung in Ihrer Rolle während der Entwicklung aktivieren, indem Sie die Remotedesktopmodule in ihre Dienstdefinition aufnehmen, oder Sie können Remotedesktop über die Remotedesktoperweiterung aktivieren. Der bevorzugte Ansatz ist die Verwendung der Remotedesktoperweiterung, da sie Remotedesktop damit auch nach der Bereitstellung der Anwendung aktivieren können, ohne die Anwendung erneut bereitzustellen.
 
-Nachdem Sie Ihr Projekt erstellt haben, können Sie mithilfe von Visual Studio [eine Remotedesktopverbindung aktivieren](https://msdn.microsoft.com/library/gg443832.aspx).
 
-Nach der Konfiguration der Verbindung sollte die Dienstdefinitionsdatei dem folgenden Beispiel mit hinzugefügtem `<Imports>`-Element ähneln.
+## Konfigurieren von Remotedesktop über das Portal
+Das Portal ermöglicht die Remotedesktoperweiterung, sodass Sie Remotedesktop auch nach der Bereitstellung der Anwendung aktivieren können. Auf der Seite **Konfigurieren** des Clouddiensts können Sie Remotedesktop aktivieren, das lokale Administratorkonto, das zum Herstellen einer Verbindung mit den virtuellen Computern verwendet wird, das bei der Authentifizierung verwendete Zertifikat oder das Ablaufdatum ändern bzw. festlegen.
+
+
+1. Klicken Sie auf **Cloud Services** und dann auf den Namen des Clouddiensts, und klicken Sie dann auf **Konfigurieren**.
+
+2. Klicken Sie auf **Remote**.
+    
+    ![Clouddienste remote](./media/cloud-services-role-enable-remote-desktop/CloudServices_Remote.png)
+    
+    > [AZURE.WARNING]Alle Rolleninstanzen werden neu gestartet, wenn Sie Remotedesktop erstmals aktivieren und auf OK (Häkchen) klicken. Um einen Neustart zu verhindern, muss in der Rolle das Zertifikat installiert sein, mit dem das Kennwort verschlüsselt wird. Zum Verhindern eines Neustarts [laden Sie ein Zertifikat für den Clouddienst hoch](cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service) und kehren dann zu diesem Dialogfeld zurück.
+    
+
+3. Wählen Sie unter **Rollen** die Rolle aus, die aktualisiert werden soll, oder wählen Sie **Alle** für alle Rollen.
+
+4. Nehmen Sie die folgenden Änderungen vor:
+    
+    - Um Remotedesktop zu aktivieren, aktivieren Sie das Kontrollkästchen **Remotedesktop aktivieren**. Um Remotedesktop zu deaktivieren, deaktivieren Sie das Kontrollkästchen.
+    
+    - Erstellen Sie ein Konto, das für Remotedesktopverbindungen mit den Rolleninstanzen verwendet wird.
+    
+    - Aktualisieren Sie das Kennwort für das bestehende Konto.
+    
+    - Wählen Sie ein hochgeladenes Zertifikat für die Authentifizierung aus (laden Sie das Zertifikat mit **Hochladen** auf der Seite **Zertifikate** hoch), oder erstellen Sie ein neues Zertifikat.
+    
+    - Ändern Sie das Ablaufdatum für die Remotedesktopkonfiguration.
+
+5. Wenn Sie die Konfigurationsupdates beendet haben, klicken Sie auf **OK** (Häkchen).
+
+
+## Remotezugriff auf Rolleninstanzen
+Nach der Aktivierung von Remotedesktop in den Rollen können Sie mit verschiedenen Tools remote auf eine Rolleninstanz zugreifen.
+
+So verbinden Sie eine Rolleninstanz über das Portal:
+    
+  1.   Klicken Sie auf **Instanzen**, um die Seite **Instanzen** zu öffnen.
+  2.   Wählen Sie eine Rolleninstanz aus, in der Remotedesktop konfiguriert ist.
+  3.   Klicken Sie auf **Verbinden**, und folgen Sie den Anweisungen, um den Desktop zu öffnen. 
+  4.   Klicken Sie auf **Öffnen** und dann auf **Verbinden**, um die Remotedesktopverbindung zu starten. 
+
+
+### Remotezugriff auf eine Rolleninstanz mithilfe von Visual Studio
+
+In Server-Explorer von Visual Studio:
+
+1. Erweitern Sie den Knoten **Azure\\Clouddienste\\[Name des Clouddienstes]**.
+2. Erweitern Sie entweder **Staging** oder **Produktion**.
+3. Erweitern Sie die jeweilige Rolle.
+4. Klicken Sie mit der rechten Maustaste auf eine der Rolleninstanzen, klicken Sie auf **Mithilfe von Remotedesktop verbinden...**, und geben Sie dann den Benutzernamen und das Kennwort ein. 
+
+![Server-Explorer von Remotedesktop](./media/cloud-services-role-enable-remote-desktop/ServerExplorer_RemoteDesktop.png)
+
+
+### Abrufen der RDP-Datei mithilfe von PowerShell
+Sie können die RDP-Datei mit dem Cmdlet [Get-AzureRemoteDesktopFile](https://msdn.microsoft.com/library/azure/dn495261.aspx) abrufen. Sie können dann die RDP-Datei mit der Remotedesktopverbindung verwenden, um auf den Clouddienst zuzugreifen.
+
+### Programmgesteuertes Herunterladen der RDP-Datei über die Dienstverwaltungs-REST-API
+Sie können den REST-Vorgang [Download RDP File](https://msdn.microsoft.com/library/jj157183.aspx) verwenden, um die RDP-Datei herunterzuladen.
+
+
+
+## Konfigurieren von Remotedesktop in der Dienstdefinitionsdatei
+
+Diese Methode ermöglicht das Aktivieren von Remotedesktop für die Anwendung während der Entwicklung. Dieser Ansatz erfordert die Speicherung verschlüsselter Kennwörter in Ihrer Dienstkonfigurationsdatei, und alle Aktualisierungen der Remotedesktopkonfiguration würden eine erneute Bereitstellung der Anwendung erfordern. Wenn Sie diese Nachteile umgehen möchten, sollten Sie den oben beschriebenen Ansatz mit der Remotedesktoperweiterung verwenden.
+
+Sie können Visual Studio verwenden, um mithilfe Ansatzes mit der Dienstdefinitionsdatei eine [Remotedesktopverbindung zu aktivieren](https://msdn.microsoft.com/library/gg443832.aspx). Die folgenden Schritte beschreiben die erforderlichen Änderungen an den Dienstmodelldateien, um Remotedesktop zu aktivieren. Visual Studio nimmt diese Änderungen bei der Veröffentlichung automatisch vor.
+
+### Einrichten der Verbindung im Dienstmodell 
+Verwenden Sie das **Imports**-Element zum Importieren der **RemoteAccess**-und **RemoteForwarder**-Module in die Datei [ServiceDefinition.csdef](cloud-services-model-and-package.md#csdef).
+
+Die Dienstdefinitionsdatei sollte dem folgenden Beispiel mit hinzugefügtem `<Imports>`-Element ähneln.
 
 ```xml
 <ServiceDefinition name="<name-of-cloud-service>" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-03.2.0">
@@ -54,8 +121,7 @@ Nach der Konfiguration der Verbindung sollte die Dienstdefinitionsdatei dem folg
     </WebRole>
 </ServiceDefinition>
 ```
-
-Die Dienstkonfigurationsdatei sollte dem folgenden Beispiel ähneln und die Werte enthalten, die Sie beim Einrichten der Verbindung angegeben haben. Beachten Sie die Elemente `<ConfigurationSettings>` und `<Certificates>`:
+Die Datei [ServiceConfiguration.cscfg](cloud-services-model-and-package.md#cscfg) sollte dem folgenden Beispiel mit ähneln; beachten Sie die hinzugefügtem Elemente `<ConfigurationSettings>` und `<Certificates>`. Das angegebene Zertifikat muss [zum Clouddienst hochgeladen werden](cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -76,41 +142,9 @@ Die Dienstkonfigurationsdatei sollte dem folgenden Beispiel ähneln und die Wert
 </ServiceConfiguration>
 ```
 
-Beim [Packen](cloud-services-model-and-package.md#cspkg) und [Veröffentlichen](cloud-services-how-to-create-deploy-portal.md) der Anwendung müssen Sie sicherstellen, dass das Kontrollkästchen **Remotedesktop für alle Rollen aktivieren** aktiviert ist. [Dieser](https://msdn.microsoft.com/library/ff683672.aspx) Artikel enthält eine Aufstellung der häufig ausgeführten Aufgaben bei der Verwendung von Visual Studio und Clouddiensten.
 
-### Einrichten der Verbindung auf ausgeführten Instanzen
-Auf der Seite "Konfigurieren" des Clouddiensts können Sie Einstellungen für Remotedesktopverbindungen aktivieren oder ändern. Weitere Informationen finden Sie unter [Konfigurieren des Remotezugriffs auf Rolleninstanzen](cloud-services-how-to-configure.md).
+## Zusätzliche Ressourcen
 
+[Konfigurieren von Clouddiensten](cloud-services-how-to-configure.md)
 
-
-
-## Remotezugriff auf Rolleninstanzen
-Für den Zugriff auf Instanzen von Webrollen oder Workerrollen müssen Sie eine Remotedesktopprotokoll (RDP)-Datei verwenden. Sie können die Datei über das Verwaltungsportal herunterladen oder programmgesteuert abrufen.
-
-### Herunterladen der RDP-Datei über das Verwaltungsportal
-
-Mit den folgenden Schritten können Sie die RDP-Datei vom Verwaltungsportal abrufen und dann über die Remotedesktopverbindung mithilfe dieser Datei eine Verbindung mit der Instanz herstellen:
-
-1.  Wählen Sie auf der Seite "Instanzen" die Instanz aus, und klicken Sie dann auf der Befehlsleiste auf **Verbinden**.
-2.  Klicken Sie auf **Speichern**, um die RDP-Datei auf dem lokalen Computer zu speichern.
-3.  Öffnen Sie **Remotedesktopverbindung**, und klicken Sie dann auf **Optionen anzeigen** und auf **Öffnen**.
-4.  Navigieren Sie zu dem Speicherort, an dem Sie die RDP-Datei gespeichert haben, wählen Sie die Datei aus, und klicken Sie dann auf **Öffnen** und auf **Verbinden**. Befolgen Sie die Anweisungen, um die Verbindung herzustellen.
-
-### Abrufen der RDP-Datei mithilfe von PowerShell
-Sie können die RDP-Datei mit dem Cmdlet [Get-AzureRemoteDesktopFile](https://msdn.microsoft.com/library/azure/dn495261.aspx) abrufen.
-
-### Herunterladen der Datei mithilfe von Visual Studio
-In Visual Studio können Sie mit dem Server-Explorer eine Remotedesktopverbindung erstellen.
-
-1.  Erweitern Sie in Server-Explorer den Knoten **Azure\\Clouddienste\\[Name des Clouddiensts]**.
-2.  Erweitern Sie entweder den Knoten **Staging** oder **Produktion**.
-3.  Erweitern Sie die jeweilige Rolle.
-4.  Klicken Sie mit der rechten Maustaste auf eine der Rolleninstanzen, klicken Sie auf **Mithilfe von Remotedesktop verbinden**, und geben Sie dann den Benutzernamen und das Kennwort ein.
-
-### Programmgesteuertes Herunterladen der RDP-Datei über die Dienstverwaltungs-REST-API
-Sie können den REST-Vorgang [Download RDP File](https://msdn.microsoft.com/library/jj157183.aspx) verwenden, um die RDP-Datei herunterzuladen. Sie können dann die RDP-Datei mit der Remotedesktopverbindung verwenden, um auf den Clouddienst zuzugreifen.
-
-## Nächste Schritte
-Möglicherweise müssen Sie die Anwendung [packen ](cloud-services-model-and-package.md) oder [hochladen (bereitstellen)](cloud-services-how-to-create-deploy-portal.md).
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

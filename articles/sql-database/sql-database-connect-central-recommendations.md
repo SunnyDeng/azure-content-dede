@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/05/2015"
+	ms.date="09/02/2015"
 	ms.author="genemi"/>
 
 
@@ -28,7 +28,7 @@ Dieses Thema ist ein guter Einstieg in die Client-Konnektivität für Azure SQL-
 
 
 - [Richtlinien zum programmgesteuerten Herstellen einer Verbindung mit einer Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/ee336282.aspx) – folgende Aspekte werden erörtert:
- - [Ports und Firewalls](https://azure.microsoft.com/de-DE/documentation/articles/sql-database-configure-firewall-settings/)
+ - [Ports und Firewalls](sql-database-configure-firewall-settings.md/)
  - Verbindungszeichenfolgen
 - [Ressourcenverwaltung für die Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/dn338083.aspx) – folgende Aspekte werden erörtert:
  - Ressourcenkontrolle
@@ -36,16 +36,34 @@ Dieses Thema ist ein guter Einstieg in die Client-Konnektivität für Azure SQL-
  - Drosselung
 
 
-
-
 ## Empfehlungen für die Authentifizierung
 
 
 - Verwenden Sie die Azure SQL-Datenbankauthentifizierung und nicht die Windows-Authentifizierung. Letztere ist in der Azure SQL-Datenbank nicht verfügbar.
 - Geben Sie eine bestimmte Datenbank an, anstatt automatisch die *master*-Datenbank zu verwenden.
-- Stellen Sie eine Verbindung her, indem Sie einen Benutzer in einer [eigenständigen Datenbank](http://msdn.microsoft.com/library/ff929071.aspx) angeben.
- - Dies bietet eine optimierte Leistung und Skalierbarkeit, da dadurch die Anmeldung nicht in der Masterdatenbank erfolgen muss.
- - Sie können die Transact-SQL-Anweisung **USE myDatabaseName;** in SQL-Datenbanken nicht verwenden.
+ - Sie können die Transact-SQL-Anweisung **USE myDatabaseName;** in SQL-Datenbanken nicht verwenden, um zu einer anderen Datenbank zu wechseln.
+
+
+### Enthaltene Benutzer
+
+
+Beim Hinzufügen einer Person als Benutzer Ihrer SQL-Datenbank stehen Ihnen Auswahlmöglichkeiten zur Verfügung:
+
+- Hinzufügen einer *Anmeldung* mit einem Kennwort zur **Masterdatenbank** und anschließendes Hinzufügen eines entsprechenden *Benutzers* zu einer oder mehreren anderen Datenbanken auf demselben Server.
+
+- Hinzufügen eines *enthaltenen Benutzers* mit einem Kennwort zu einer oder mehreren Datenbanken, und keine Verbindung mit einer *Anmeldung* in der **Masterdatenbank**.
+
+
+Der Ansatz mit den enthaltenen Benutzer hat Vor- und Nachteile:
+
+- Ein Vorteil ist, dass eine Datenbank problemlos von einem Azure SQL-Datenbankserver auf einen anderen verschoben werden kann, wenn alle Benutzer in der Datenbank enthaltene Benutzer sind.
+
+- Ein Nachteil ist die schwierigere routinemäßige Verwaltung. Beispiel:
+ - Es ist schwieriger, mehrere enthaltene Benutzer anstatt einer Anmeldung zu löschen.
+ - Eine Person, die ein enthaltener Benutzer in mehreren Datenbanken ist, muss möglicherweise mehr Kennwörter behalten oder aktualisieren.
+
+
+Weitere Informationen finden Sie unter [enthaltenen Datenbanken](http://msdn.microsoft.com/library/ff929071.aspx).
 
 
 ## Empfehlungen für die Verbindung
@@ -53,73 +71,75 @@ Dieses Thema ist ein guter Einstieg in die Client-Konnektivität für Azure SQL-
 
 - Ändern Sie in der Clientverbindungslogik das Standardtimeout in 30 Sekunden.
  - Der Standardwert von 15 Sekunden ist zu kurz für Verbindungen, die über das Internet hergestellt werden.
-- Stellen Sie sicher, dass die [Firewall für die Azure SQL-Datenbank](http://msdn.microsoft.com/library/ee621782.aspx) die ausgehende TCP-Kommunikation über den Port 1433 zulässt.
- - Sie können die Einstellungen für die [Firewall](http://msdn.microsoft.com/library/azure/ee621782.aspx) auf einem SQL-Datenbankserver oder für eine einzelne Datenbank konfigurieren.
-- Wenn Sie einen [Verbindungspool](http://msdn.microsoft.com/library/8xx3tyca.aspx) verwenden, trennen Sie die Verbindung, sobald Ihre Anwendung sie nicht aktiv verwendet und nicht gerade auf die erneute Verwendung der Verbindung vorbereitet wird.
- - Sofern Ihre Anwendung die Verbindung nicht unmittelbar und ohne Pause für einen anderen Vorgang wiederverwendet, wird die folgende Vorgehensweise empfohlen: <br/><br/>Stellen Sie eine Verbindung her. <br/>Führen Sie über die Verbindung einen Vorgang aus. <br/>Trennen Sie die Verbindung.<br/><br/>
-- Verwenden Sie Wiederholungslogik mit der Verbindungslogik, jedoch nur für vorübergehende Fehler. Wenn Sie eine SQL-Datenbank verwenden, können Ihre Versuche zum Herstellen einer Verbindung oder zum Ausführen einer Abfrage aus verschiedenen Gründen fehlschlagen.
- - Ein dauerhafter Grund für den Fehler ist beispielsweise, dass die Verbindungszeichenfolge falsch formatiert ist.
- - Ein vorübergehender Grund für den Fehler ist möglicherweise darauf zurückzuführen, dass die Gesamtarbeitslast in der Azure SQL-Datenbank ausgeglichen werden muss. Der vorübergehende Grund klärt sich von allein. Das bedeutet, dass die Anwendung den Vorgang der Verbindungsherstellung wiederholen soll.
- - Trennen Sie bei der Wiederholung einer Abfrage zunächst die Verbindung, und stellen Sie dann eine andere Verbindung her.
+
+
+- Stellen Sie sicher, dass die [Firewall für die Azure SQL-Datenbank](sql-database-firewall-configure.md) die ausgehende TCP-Kommunikation über den Port 1433 zulässt.
+ - Sie können die Einstellungen für die Firewall auf einem SQL-Datenbankserver oder für eine einzelne Datenbank konfigurieren.
+
+
+- Zum Behandeln *vorübergehender Fehler* fügen Sie Ihren Clientprogrammen, die mit der Azure SQL-Datenbank interagieren, [Logik für *Wiederholungsversuche*](#TransientFaultsAndRetryLogicGm) hinzu.
+
+
+### Verbindungspool
+
+
+Wenn Sie einen [Verbindungspool](http://msdn.microsoft.com/library/8xx3tyca.aspx) verwenden, trennen Sie die Verbindung, sobald Ihre Anwendung sie nicht aktiv verwendet und nicht gerade auf die erneute Verwendung der Verbindung vorbereitet wird.
+
+Sofern Ihre Anwendung die Verbindung nicht unmittelbar und ohne Pause für einen anderen Vorgang wiederverwendet,wird die folgende Vorgehensweise empfohlen:
+
+- Stellen Sie eine Verbindung her.
+- Führen Sie über die Verbindung einen Vorgang aus.
+- Trennen Sie die Verbindung.
+
+
+#### Auslösung einer Ausnahme bei Verwendung eines Pools
+
+
+Wenn Verbindungspooling aktiviert ist und ein Timeoutfehler oder ein anderer Fehler bei der Anmeldung auftritt, wird eine Ausnahme ausgelöst. Weitere Verbindungsversuche in den nächsten 5 Sekunden schlagen fehl; dies wird als *Sperrzeitraum* bezeichnet.
+
+Wenn die Anwendung versucht, innerhalb dieses Zeitraums versucht, eine Verbindung herzustellen, wird die erste Ausnahme erneut ausgelöst. Nach Ablauf des Sperrzeitraums führen weitere Fehler zu einem erneuten Sperrzeitraum, der doppelt so lange wie der vorherige dauert.
+
+Die maximale Dauer eines Sperrzeitraums beträgt 60 Sekunden.
 
 
 ### Andere Ports als 1433 in V12.
 
 
-Bei Clientverbindungen mit Azure SQL-Datenbank V12 wird der Proxy manchmal umgangen und direkt mit der Datenbank interagiert. Andere Ports als 1433 werden wichtig. Ausführliche Informationen finden Sie unter<br/> [Andere Ports als 1433 für ADO.NET 4.5, ODBC 11 und SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md).
+Bei Clientverbindungen mit Azure SQL-Datenbank V12 wird der Proxy manchmal umgangen und direkt mit der Datenbank interagiert. Andere Ports als 1433 werden wichtig. Ausführliche Informationen finden Sie unter <br/> [Andere Ports als 1433 für ADO.NET 4.5 und SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md).
 
 
 Im nächsten Abschnitt erfahren Sie mehr über die Wiederholungslogik und die Behandlung vorübergehender Fehler.
 
 
+
+<a name="TransientFaultsAndRetryLogicGm" id="TransientFaultsAndRetryLogicGm"></a>
+
+&nbsp;
+
 ## Vorübergehende Fehler und Wiederholungslogik
 
 
-Clouddienste wie Azure und der zugehörige SQL-Datenbankdienst sind stets mit Lastenausgleich und dem Verwalten von Ressourcen beschäftigt. Wenn zwei Datenbanken, die vom selben Computer Daten erhalten, zeitgleich außergewöhnlich hohe Verarbeitungslasten übernehmen, kann das Verwaltungssystem die Notwendigkeit erkennen, die Workload einer der Datenbanken einer anderen Ressource mit Kapazitätsreserven zu übertragen.
+Das Azure-System verfügt über die Möglichkeit, Server dynamisch neu zu konfigurieren, wenn hohe Arbeitslasten im der SQL-Datenbankdienst auftreten.
+
+Eine Neukonfiguration führt jedoch u. U. dazu, dass die Verbindung zwischen Ihrem Clientprogramm und der SQL-Datenbank getrennt wird. Dieser Fehler wird als *Übergangsfehler* bezeichnet.
+
+Das Clientprogramm kann versuchen, die Verbindung nach einer Wartezeit von etwa 6 bis 60 Sekunden zwischen Wiederholungsversuchen wiederherzustellen. Sie müssen die Wiederholungslogik in Ihrem Client bereitstellen.
+
+Codebeispiele für die Wiederholungslogik finden Sie unter [Clientcodebeispiele für die ersten Schritte mit der SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md).
 
 
-Während dieses Vorgangs ist die Datenbank möglicherweise vorübergehend nicht verfügbar. Dadurch werden möglicherweise neue Verbindungen blockiert, oder Ihr Clientprogramm verliert die Verbindung. Die Ressourcenverschiebung ist jedoch vorübergehend, und das Symptom verschwindet möglicherweise nach einigen Minuten oder Sekunden von selbst. Nach Abschluss der Verschiebung kann das Clientprogramm die Verbindung erneut herstellen und seine Arbeit fortsetzen. Die Verarbeitungspause ist besser als ein vermeidbarer Fehlerzustand in Ihrem Client-Programm.
+### Fehlernummern für vorübergehende Fehler
 
 
-Wenn in der SQL-Datenbank ein Fehler auftritt, wird eine [SqlException](https://msdn.microsoft.com/library/system.data.sqlclient.sqlexception.aspx)-Ausnahme ausgelöst. `SqlException` enthält einen numerischen Fehlercode in der **Number**-Eigenschaft. Wenn der Fehlercode einen vorübergehenden Fehler bezeichnet, sollte die Anwendung den Aufruf wiederholen.
+Wenn in der SQL-Datenbank ein Fehler auftritt, wird eine [SqlException](http://msdn.microsoft.com/library/system.data.sqlclient.sqlexception.aspx)-Ausnahme ausgelöst. Die **SqlException** enthält einen numerischen Fehlercode in der **Number**-Eigenschaft. Wenn der Fehlercode einen vorübergehenden Fehler bezeichnet, sollte die Anwendung den Aufruf wiederholen.
 
 
-- [Fehlermeldungen für Clientprogramme der SQL-Datenbank](sql-database-develop-error-messages.md)
+- [Fehlermeldungen für Clientprogramme der SQL-Datenbank](sql-database-develop-error-messages.md#bkmk_connection_errors)
  - Der Abschnitt **Vorübergehende Fehler, Fehler bei Verbindungsabbruch** enthält eine Liste der vorübergehenden Fehler, bei denen sich automatische Wiederholungsversuche empfehlen.
  - Wiederholen Sie den Vorgang beispielsweise, wenn Fehler Nummer 40613 auftritt, der in etwa Folgendes besagt: <br/>*Datenbank „mydatabase“ auf Server „Server“ ist derzeit nicht verfügbar.*
 
 
-*Vorübergehende Fehler* werden mitunter auch als *Übergangsfehler* bezeichnet. In diesem Thema werden die beiden Begriffe als Synonyme angesehen.
-
-
-Weitere Unterstützung bei vorübergehenden oder anderweitigen Verbindungsfehlern finden Sie unter:
-
-
-- [Problembehandlung bei Verbindungsproblemen in Azure SQL-Datenbank](http://support.microsoft.com/kb/2980233/)
-
-
-Links zu Themen mit Codebeispielen, welche die Wiederholungslogik veranschaulichen, finden Sie unter:
-
-
-- [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md)
-
-
-<a id="gatewaynoretry" name="gatewaynoretry">&nbsp;</a>
-
-
-## Middleware-Proxy und Wiederholungslogik
-
-
-Der Middleware-Proxy, der zwischen V11 und dem ADO.NET 4.5-Client vermittelt, verarbeitet eine kleine Teilmenge vorübergehender Fehler ordnungsgemäß mit Wiederholungslogik. In Fällen, in denen der Proxy beim zweiten Versuch erfolgreich eine Verbindung herstellt, hat das Clientprogramm überhaupt nicht bemerkt, dass der erste Versuch fehlgeschlagen ist.
-
-
-Der V12-Proxy behandelt eine kleinere Teilmenge vorübergehender Fehler. In anderen Fällen wird der V12-Proxy umgangen, um eine schnellere Verbindung mit der SQL-Datenbank direkt herzustellen. Für ein ADO.NET 4.5-Clientprogramm lassen diese Änderungen die Azure SQL-Datenbank V12 eher wie Microsoft SQL Server erscheinen.
-
-
-Codebeispiele für die Wiederholungslogik finden Sie unter <br/>[Clientcodebeispiele für die ersten Schritte mit der SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md).
-
-
-> [AZURE.TIP]In einer Produktionsumgebung wird empfohlen, dass Clients, die eine Verbindung mit Azure SQL-Datenbank V11 oder V12 herstellen, eine Wiederholungslogik in ihrem Code implementieren. Dabei kann es sich um benutzerdefinierten Code handeln oder um Code, der eine API wie Enterprise Library nutzt.
+Weitere Informationen finden Sie unter [Azure SQL-Datenbankentwicklung: Themen zur Vorgehensweise](http://msdn.microsoft.com/library/azure/ee621787.aspx) – [Behandeln von Verbindungsproblemen mit Azure SQL-Datenbank](http://support.microsoft.com/kb/2980233/).
 
 
 ## Technologien
@@ -131,15 +151,10 @@ Die folgenden Themen enthalten Links zu Codebeispielen für mehrere Sprachen und
 Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unterschiedliche Codebeispiele angegeben.
 
 
-**Allgemeine Beispiele:** Es gibt Codebeispiele für eine Vielzahl von Programmiersprachen, einschließlich PHP, Python, Node.js und .NET CSharp. Darüber hinaus gibt es Beispiele für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden.
-
-
-- [Codebeispiele für die Cliententwicklung und erste Schritte mit SQL-Datenbanken](sql-database-develop-quick-start-client-code-samples.md)
-- [Azure SQL-Datenbankentwicklung: Themen zur Vorgehensweise](http://msdn.microsoft.com/library/azure/ee621787.aspx)
+**Allgemeine Beispiele:** Es gibt [Codebeispiele](sql-database-develop-quick-start-client-code-samples.md) für eine Vielzahl von Programmiersprachen, einschließlich PHP, Python, Node.js und .NET CSharp. Darüber hinaus gibt es Beispiele für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden.
 
 
 **Elastische Skalierung:** Informationen zur Konnektivität für Datenbanken mit elastischer Skalierung finden Sie unter:
-
 
 - [Erste Schritte mit der Vorschauversion von Elastic Scale für Azure SQL-Datenbank](sql-database-elastic-scale-get-started.md)
 - [Datenabhängiges Routing](sql-database-elastic-scale-data-dependent-routing.md)
@@ -147,15 +162,6 @@ Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unt
 
 **Treiberbibliotheken:** Informationen zu Verbindungstreiberbibliotheken, einschließlich empfohlener Versionen, finden Sie unter:
 
-
 - [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)
 
-
-## Siehe auch
-
-
-- [Create your first Azure SQL Database](sql-database-get-started.md) (Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache)
-
- 
-
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

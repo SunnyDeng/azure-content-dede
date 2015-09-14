@@ -3,7 +3,7 @@
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Mobile Apps für die Xamarin.iOS-Entwicklung."
 	services="app-service\mobile"
 	documentationCenter="xamarin"
-	authors="normesta"
+	authors="wesmc7777"
 	manager="dwrede"
 	editor=""/>
 
@@ -124,4 +124,4 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 [Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
 [Installation von Xamarin.iOS auf Windows]: http://developer.xamarin.com/guides/ios/getting_started/installation/windows/
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

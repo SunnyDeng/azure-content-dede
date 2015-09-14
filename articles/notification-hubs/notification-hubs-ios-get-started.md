@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Notification Hubs"
-	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Pushbenachrichtigungen."
+	pageTitle="Erste Schritte mit Azure Notification Hubs | Microsoft Azure"
+	description="In diesem Tutorial erfahren Sie, wie Sie mithilfe von Azure Notification Hubs Pushbenachrichtigungen an iOS-Anwendungen senden."
 	services="notification-hubs"
 	documentationCenter="ios"
 	authors="wesmc7777"
@@ -12,8 +12,8 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
-	ms.topic="hero-article" 
-	ms.date="05/27/2015"
+	ms.topic="hero-article"
+	ms.date="09/02/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs
@@ -22,7 +22,7 @@
 
 ##Übersicht
 
-In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Notification Hubs Pushbenachrichtigungen an eine iOS-App senden. In diesem Lernprogramm erstellen Sie eine leere iOS-App, die Pushbenachrichtigungen mithilfe des Apple-Pushbenachrichtigungsdiensts (APNs) empfängt. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Notification Hub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
+In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs Pushbenachrichtigungen an eine iOS-App senden. Sie erstellen eine leere iOS-App, die Pushbenachrichtigungen mithilfe des Apple-Pushbenachrichtigungsdiensts (Apple Push Notification Service, APNs) empfängt. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Notification Hub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
 
 Das Lernprogramm zeigt ein einfaches Übertragungsszenario mithilfe von Notification Hubs.
 
@@ -35,7 +35,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + Ein Gerät, das auf iOS 8 (oder einer neueren Version) laufen kann
 + iOS-Entwicklerprogramm-Mitgliedschaft
 
-   >[AZURE.NOTE]Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt im Simulator bereitgestellt und getestet werden.
+   >[AZURE.NOTE]Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt auf dem iOS-Simulator bereitgestellt und getestet werden.
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Notification Hub-Lernprogramme für iOS-Apps.
 
@@ -45,10 +45,10 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 
 ##Konfigurieren Ihres Notification Hub
 
-Dieser Abschnitt führt Sie durch das Erstellen und Konfigurieren eines neuen Notification Hub mit dem Pushzertifikat, das Sie erstellt haben. Wenn Sie einen bereits erstellten Notification Hub verwenden möchten, können Sie die Schritte 2 bis 5 überspringen.
+Dieser Abschnitt führt Sie durch das Erstellen und Konfigurieren eines neuen Notification Hub mithilfe des Pushzertifikats, das Sie erstellt haben. Wenn Sie einen bereits erstellten Notification Hub verwenden möchten, können Sie die Schritte 2 bis 5 überspringen.
 
 
-1. Klicken Sie in der Kategorie **Zertifikate** in der Schlüsselbundverwaltung mit der rechten Maustaste auf das neu erstellte Pushzertifikat. Klicken Sie auf **Exportieren**, benennen Sie die Datei, wählen Sie das Format **.p12** aus, und klicken Sie dann auf **Sichern**.
+1. Klicken Sie in der Kategorie **Zertifikate** in der Schlüsselbundverwaltung mit der rechten Maustaste auf das neu erstellte Pushzertifikat. Klicken Sie auf **Exportieren**, benennen Sie die Datei, wählen Sie das Format **.p12** aus, und klicken Sie dann auf **Speichern**.
 
     ![][1]
 
@@ -56,9 +56,9 @@ Dieser Abschnitt führt Sie durch das Erstellen und Konfigurieren eines neuen No
 
 	>[AZURE.NOTE]In diesem Lernprogramm wird eine QuickStart.p12-Datei erstellt. Name und Ort Ihrer Datei können verschieden sein.
 
-2. Melden Sie sich am [Azure-Verwaltungsportal] an, und klicken Sie unten auf dem Bildschirm auf **+NEU**.
+2. Melden Sie sich beim [Azure-Portal] an, und klicken Sie im unteren Teil des Bildschirms auf **+NEU**.
 
-3. Klicken Sie auf **App-Dienste**, **Service Bus**, **Notification Hub** und zuletzt auf **Schnellerfassung**.
+3. Klicken Sie auf **App Services**, auf **Service Bus**, auf **Notification Hub**, und anschließend auf **Schnellerfassung**.
 
    	![][2]
 
@@ -94,9 +94,9 @@ Der Notification Hub ist nun konfiguriert, um mit APNS arbeiten zu können. Auß
 
 	![][11]
 
-3. Klicken Sie unter **Targets** auf den Projektnamen, dann auf die Registerkarte **Build Settings** und erweitern Sie **Code Signing Identity**. Legen Sie anschließend unter **Debug** Ihre **Identität für die Codesignierung** fest. Stellen Sie **Levels** von **Basic** auf **All** um und legen Sie **Provisioning Profile** auf das zuvor erstellte Bereitstellungsprofil fest.
+3. Klicken Sie unter **Targets** auf den Projektnamen, auf die Registerkarte **Build Settings**, und erweitern Sie **Code Signing Identity**. Legen Sie anschließend unter **Debug** Ihre Identität für die Codesignierung fest. Stellen Sie **Levels** von **Basic** auf **All** um und legen Sie **Provisioning Profile** auf das zuvor erstellte Bereitstellungsprofil fest.
 
-	Wenn Sie das neue, in XCode erstellte Bereitstellungsprofil nicht sehen, aktualisieren Sie die Profile für Ihre Signaturidentität durch Klicken auf **XCode** in der Menüleiste, dann auf **Preferences**, die Registerkarte **Account**, die Schaltfläche **View Details**, und anschließend auf Ihre Signaturidentität. Klicken Sie zum Schluss in der unteren rechten Ecke auf die Schaltfläche "Aktualisieren".
+	Wenn das neue in Xcode erstellte Bereitstellungsprofil nicht angezeigt wird, versuchen Sie, die Profile für Ihre Signaturidentität zu aktualisieren. Klicken Sie in der Menüleiste auf **Xcode**, dann auf **Voreinstellungen**, auf die Registerkarte **Konto**, auf die Schaltfläche **Details anzeigen**, auf die Signatur-Identität, und anschließend auf die Schaltfläche "Aktualisieren" in der unteren rechten Ecke.
 
    	![][9]
 
@@ -155,7 +155,7 @@ Der Notification Hub ist nun konfiguriert, um mit APNS arbeiten zu können. Auß
 		    [self MessageBox:@"Notification" message:[[userInfo objectForKey:@"aps"] valueForKey:@"alert"]];
 		}
 
-8. Erstellen Sie die Anwendung auf Ihrem Gerät und führen Sie diese dort aus, um Fehler auszuschließen.
+8. Erstellen Sie die App auf Ihrem Gerät und führen Sie diese dort aus, um Fehler auszuschließen.
 
 ## Senden von Benachrichtigungen
 
@@ -443,11 +443,11 @@ Sie finden alle möglichen Benachrichtigungs-Nutzlasten im [Apple Local and Push
 
 
 
-##Testen der App
+##Testen Ihrer App
 
-Zum Testen von Pushbenachrichtigungen auf iOS müssen Sie die Anwendung auf einem Gerät bereitstellen. Sie können keine Apple-Pushbenachrichtigungen mit dem iOS-Simulator senden.
+Zum Testen von Pushbenachrichtigungen auf iOS müssen Sie die App auf einem Gerät bereitstellen. Sie können keine Apple-Pushbenachrichtigungen mit dem iOS-Simulator senden.
 
-1. Führen Sie die Anwendung aus und überprüfen Sie, ob die Registrierung erfolgreich ist. Drücken Sie dann **OK**.
+1. Führen Sie die App aus und überprüfen Sie, ob die Registrierung erfolgreich ist. Drücken Sie dann **OK**.
 
 	![][33]
 
@@ -464,7 +464,7 @@ Wenn Sie Probleme haben oder Vorschläge zur Verbesserung dieses Lernprogramms f
 
 ##Nächste Schritte
 
-In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Geräte übertragen. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Benachrichtigen von Benutzern mit Notification Hubs]. Wenn Sie Benutzer nach Interessengruppen segmentieren möchten, können Sie [Verwenden von Notification Hubs zum Übermitteln von Nachrichten] lesen. Weitere Informationen zur Verwendung von Benachrichtigungshubs finden Sie in der [Benachrichtigungshubs-Anleitung].
+In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Geräte übertragen. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Benachrichtigen von Benutzern mit Benachrichtigungshubs]. Wenn Sie Ihre Benutzer in Interessengruppen einteilen möchten, finden Sie unter [Verwenden von Benachrichtigungshubs zum Übermitteln von Nachrichten] weitere Informationen. Weitere Informationen zur Verwendung von Benachrichtigungshubs finden Sie in der [Benachrichtigungshubs-Anleitung].
 
 
 
@@ -510,6 +510,5 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Gerä
 [Verwenden von Notification Hubs zum Übermitteln von Nachrichten]: notification-hubs-ios-send-breaking-news.md
 
 [Apple Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
- 
 
-<!----HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

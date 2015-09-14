@@ -12,13 +12,13 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
-	ms.topic="get-started-article" 
+	ms.topic="get-started-article"
 	ms.date="06/19/2015"
 	ms.author="mahender"/>
 
 # Verbinden Ihrer mobilen App mit SaaS-APIs
 
-In diesem Lernprogramm verbinden Sie Ihre mobile App mit einer SaaS-Unternehmenslösung \(Software-as-a-Service\). Sie aktualisieren die App mithilfe der Informationen unter [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden], um immer dann ein Word-Dokument in SharePoint Online zu erstellen, wenn ein neues "TodoItem" hinzugefügt wird.
+In diesem Lernprogramm verbinden Sie Ihre mobile App mit einer SaaS-Unternehmenslösung (Software-as-a-Service). Sie aktualisieren die App mithilfe der Informationen unter [Authentifizieren Ihrer App mit der Azure Active Directory-Bibliothek für einmaliges Anmelden], um immer dann ein Microsoft Word-Dokument in SharePoint Online zu erstellen, wenn ein neues "TodoItem" hinzugefügt wird.
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
@@ -35,7 +35,7 @@ Standardmäßig hat der Token, den Sie von AAD erhalten, eingeschränkte Berecht
 
     ![][1]
 
-Sie haben jetzt AAD so konfiguriert, dass für App Service ein SharePoint-Zugriffstoken ausgestellt wird.
+Sie haben jetzt Azure AD so konfiguriert, dass für App Service ein SharePoint-Zugriffstoken ausgestellt wird.
 
 ## <a name="store-credentials"></a>Hinzufügen von SharePoint-Informationen zu Ihrer mobilen App
 
@@ -43,7 +43,7 @@ Um einen Aufruf an SharePoint zu richten, müssen Sie die Endpunkte festlegen, m
 
 1. Wechseln Sie zurück zur Registerkarte "AAD-Anwendungen" für Ihren Mandanten, und wählen Sie die Webanwendung für App Service aus.
 
-2. Scrollen Sie unter "Konfigurieren" zu "Schlüssel". Sie erhalten einen geheimen Clientschlüssel, indem Sie einen neuen Schlüssel generieren. Nachdem Sie einen Schlüssel erzeugt und die Seite verlassen haben, gibt es keine Möglichkeit mehr, ihn aus dem Portal zu bekommen. Sie müssen eine Kopie dieses Werts an einem sicheren Ort speichern. Wählen Sie eine Dauer für den Schlüssel und klicken Sie dann auf "Speichern", und kopieren Sie den resultierenden Wert.
+2. Scrollen Sie unter „Konfigurieren“ zu „Schlüssel“. Sie erhalten einen geheimen Clientschlüssel, indem Sie einen neuen Schlüssel generieren. Nachdem Sie einen Schlüssel erzeugt und die Seite verlassen haben, gibt es keine Möglichkeit mehr, ihn aus dem Portal zu bekommen. Sie müssen eine Kopie dieses Werts an einem sicheren Ort speichern. Wählen Sie eine Dauer für den Schlüssel und klicken Sie dann auf "Speichern", und kopieren Sie den resultierenden Wert.
 
 3. Navigieren Sie im Verwaltungsportal im Abschnitt für den Code der mobilen App zur Registerkarte "Konfiguration", und führen Sie einen Bildlauf zu den App-Einstellungen durch. Hier können Sie ein Schlüsselwertepaar bereitstellen, mit dem Sie auf die nötigen Anmeldeinformationen verweisen.
 
@@ -57,7 +57,7 @@ Sie können diese Werte mithilfe von "ApiServices.Settings" in Ihrem Code abrufe
 
 ## <a name="obtain-token"></a>Abrufen eines Zugriffstokens und Aufrufen der SharePoint-API
 
-Um auf SharePoint zugreifen zu können, benötigen Sie einen speziellen Zugriffstoken mit SharePoint als Zielgruppe. Um dieses Token zu erhalten, müssen Sie erneut einen Aufruf in AAD ausführen und dabei die App Service-Identität und das Token verwenden, das für den Benutzer ausgestellt wurde.
+Um auf SharePoint zugreifen zu können, benötigen Sie einen speziellen Zugriffstoken mit SharePoint als Zielgruppe. Um dieses Token zu erhalten, müssen Sie erneut einen Aufruf in Azure AD ausführen und dabei die App Service-Identität und das Token verwenden, das für den Benutzer ausgestellt wurde.
 
 1. Öffnen Sie das Codeprojekt für die mobile App in Visual Studio.
 
@@ -182,9 +182,8 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 
 [Preview Azure Management Portal]: https://portal.azure.com/
 [Azure-Verwaltungsportals]: https://manage.windowsazure.com/
-[SharePoint Online]: http://office.microsoft.com/de-de/sharepoint/
+[SharePoint Online]: http://office.microsoft.com/de-DE/sharepoint/
 [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden]: app-service-mobile-dotnet-backend-ios-aad-sso-preview.md
 [Mobile Apps .NET Backend App Service Extension]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.AppService/
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

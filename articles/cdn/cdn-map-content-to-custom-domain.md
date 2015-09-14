@@ -1,19 +1,19 @@
 <properties 
-	 pageTitle="Zuordnen von CDN-Inhalten (Content Delivery Network) zu einer benutzerdefinierten Domäne" 
-	 description="In diesem Thema wird veranschaulicht, wie Sie CDN-Inhalte einer benutzerdefinierten Domäne zuordnen." 
-	 services="cdn" 
-	 documentationCenter="" 
-	 authors="zhangmanling" 
-	 manager="dwrede" 
-	 editor=""/>
+	 pageTitle="Zuordnen von CDN-Inhalten (Content Delivery Network) zu einer benutzerdefinierten Domäne"
+	description="In diesem Thema wird veranschaulicht, wie Sie CDN-Inhalte einer benutzerdefinierten Domäne zuordnen."
+	services="cdn"
+	documentationCenter=""
+	authors="zhangmanling"
+	manager="dwrede"
+	editor=""/>
 <tags 
-	 ms.service="cdn" 
-	 ms.workload="media" 
-	 ms.tgt_pltfrm="na" 
-	 ms.devlang="na" 
-	 ms.topic="article" 
-	 ms.date="07/07/2015" 
-	 ms.author="mazha"/>
+	 ms.service="cdn"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="mazha"/>
 
 #Zuordnen einer benutzerdefinierten Domäne zu einem CDN-Endpunkt (Content Delivery Network, Netzwerk für die Inhaltsübermittlung)
 
@@ -90,4 +90,4 @@ In den Verfahren in diesem Thema werden die folgenden Schritte erläutert:
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

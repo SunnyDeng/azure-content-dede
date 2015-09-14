@@ -1,22 +1,22 @@
-<properties 
-	pageTitle="Verwenden mehrerer Clients mit einem einzelnen mobilen Dienst-Back-End | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie ein einzelnes mobiles Dienst-Back-End von mehreren Client-Apps verwenden, die auf verschiedene mobile Plattformen, einschließlich Windows Store und Windows Phone, abzielen." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Verwenden mehrerer Clients mit einem einzelnen mobilen Dienst-Back-End | Microsoft Azure"
+	description="Erfahren Sie, wie Sie ein einzelnes mobiles Dienst-Back-End von mehreren Client-Apps verwenden, die auf verschiedene mobile Plattformen, einschließlich Windows Store und Windows Phone, abzielen."
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor="mollybos"/>
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-multiple"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="glenga"/>
 
 # Unterstützen mehrerer Geräteplattformen durch einen einzelnen mobilen Dienst
- 
+
 Einer der Hauptvorteile von Azure Mobile Services bei der Entwicklung mobiler Apps ist die Möglichkeit, mit einem einzigen Back-End-Dienst eine App auf verschiedenen Clientplattformen zu unterstützen. Mobile Services bieten systemeigene Clientbibliotheken für alle großen Geräteplattformen. Dies ermöglicht die einfache App-Entwicklung mit nur einem Back-End-Dienst und plattformübergreifenden Entwicklertools. In diesem Thema werden Aspekte erörtert, wie Sie mithilfe eines einzelnen mobilen Dienst-Back-Ends Ihre App auf mehreren Clientplattformen ausführen können.
 
 ##<a id="push"></a>Plattformübergreifende Pushbenachrichtigungen
@@ -25,7 +25,7 @@ Mobile Services nutzen Azure Notification Hubs zum Senden von Pushbenachrichtigu
 
 + Apple Push Notification Service (APNS) für iOS-Apps
 + Google Cloud Messaging (GCM) für Android-Apps.
-+ Windows-Benachrichtigungsdienst (WNS) für Windows Store, Windows Phone 8.1 Store und universelle Windows-Apps 
++ Windows-Benachrichtigungsdienst (WNS) für Windows Store, Windows Phone 8.1 Store und universelle Windows-Apps
 + Microsoft-Pushbenachrichtigungsdienst (MPNS) für Windows Phone Silverlight-Apps
 
 >[AZURE.NOTE]Die Verwendung von WNS zum Senden von Pushbenachrichtigungen an Windows Phone Silverlight 8.1-Apps wird von Notification Hubs derzeit nicht unterstützt. Zum Senden von Benachrichtigungen an Silverlight- und Windows Phone 8.0- und 7.0-Apps muss MPNS verwendet werden.
@@ -34,8 +34,8 @@ Weitere Informationen finden Sie unter [Azure Notification Hubs].
 
 Clientregistrierungen werden mithilfe der Registrierungsfunktion in der plattformspezifischen Mobile Services-Clientbibliothek oder mit REST-APIs von Mobile Services erstellt. Notification Hubs unterstützen zwei Arten von Geräteregistrierungen:
 
-+ **Systemregistrierung**<br/>Systemregistrierungen sind speziell auf den plattformspezifischen Pushbenachrichtigungsdienst zugeschnitten. Beim Versand von Benachrichtigungen an Geräte, die mit einer Systemregistrierung registriert wurden, müssen Sie plattformspezifische APIs in Ihrem mobilen Dienst aufrufen. Zum Senden einer Benachrichtigung an Geräte auf verschiedenen Plattformen sind mehrere plattformspezifische Aufrufe erforderlich.   
-  
++ **Systemregistrierung**<br/>Systemregistrierungen sind speziell auf den plattformspezifischen Pushbenachrichtigungsdienst zugeschnitten. Beim Versand von Benachrichtigungen an Geräte, die mit einer Systemregistrierung registriert wurden, müssen Sie plattformspezifische APIs in Ihrem mobilen Dienst aufrufen. Zum Senden einer Benachrichtigung an Geräte auf verschiedenen Plattformen sind mehrere plattformspezifische Aufrufe erforderlich.
+
 + **Vorlagenregistrierung**<br/>Notification Hubs unterstützen auch plattformspezifische Vorlagenregistrierungen. Bei Verwendung von Vorlagenregistrierungen können Sie mit einem einzigen API-Aufruf eine Benachrichtigung an Ihre App auf einer beliebigen registrierten Plattform senden. Weitere Informationen finden Sie unter [Senden plattformübergreifender Benachrichtigungen an Benutzer].
 
 >[AZURE.NOTE]Der Versuch, eine Nachricht an eine systemeigene Geräteplattform zu senden, für die keine Geräteregistrierung vorhanden ist, verursacht einen Fehler. Beim Versand von Vorlagenbenachrichtigungen tritt dieser Fehler nicht auf.
@@ -53,7 +53,7 @@ In einem mobilen .NET-Back-End-Dienst senden Sie Pushbenachrichtigungen, indem S
 Mit dem folgenden Code wird eine Pushbenachrichtigung von einem .NET-Back-End-Dienst an alle iOS- und Windows Store-Geräteregistrierungen gesendet:
 
 	// Define a push notification for APNS.
-	ApplePushMessage apnsMessage = new ApplePushMessage(item.Text, TimeSpan.FromHours(1));    
+	ApplePushMessage apnsMessage = new ApplePushMessage(item.Text, TimeSpan.FromHours(1));
 
 	// Define a push notification for WNS.
 	WindowsPushMessage wnsMessage = new WindowsPushMessage();
@@ -61,8 +61,8 @@ Mit dem folgenden Code wird eine Pushbenachrichtigung von einem .NET-Back-End-Di
                          @"<toast><visual><binding template=""ToastText01"">" +
                          @"<text id=""1"">" + item.Text + @"</text>" +
                          @"</binding></visual></toast>";
-    
-	// Send push notifications to all registered iOS and Windows Store devices. 
+
+	// Send push notifications to all registered iOS and Windows Store devices.
     await Services.Push.SendAsync(apnsMessage);
 	await Services.Push.SendAsync(wnsMessage);
 
@@ -70,13 +70,13 @@ Um Beispiele zum Senden von Pushbenachrichtigungen an die anderen systemeigenen 
 
 Wenn Sie anstelle von Systemclientregistrierungen Vorlagenclientregistrierungen verwenden, können Sie mit einem einzigen Aufruf von [SendAsync] dieselbe Benachrichtigung senden, indem Sie ein [TemplatePushMessage]-Objekt angeben. Siehe folgendes Beispiel:
 
-	// Create a new template message and add the 'message' parameter.    
+	// Create a new template message and add the 'message' parameter.
 	var templatePayload = new TemplatePushMessage();
     templatePayload.Add("message", item.Text);
 
 	// Send a push notification to all template registrations.
-    await Services.Push.SendAsync(templatePayload); 
- 
+    await Services.Push.SendAsync(templatePayload);
+
 ###JavaScript-Back-End
 
 In einem mobilen JavaScript-Back-End-Dienst senden Sie Benachrichtigungen, indem Sie die **send**-Methode für das aus dem globalen [push-Objekt] abgerufene plattformspezifische Objekt aufrufen, wie aus der folgenden Tabelle ersichtlich:
@@ -88,20 +88,20 @@ In einem mobilen JavaScript-Back-End-Dienst senden Sie Benachrichtigungen, indem
 Mit dem folgenden Code wird eine Pushbenachrichtigung an alle Android- und Windows Phone-Registrierungen gesendet:
 
 	// Define a push notification for GCM.
-	var gcmPayload = 
+	var gcmPayload =
     '{"data":{"message" : item.text }}';
 
 	// Define the payload for a Windows Phone toast notification.
 	var mpnsPayload = '<?xml version="1.0" encoding="utf-8"?>' +
     '<wp:Notification xmlns:wp="WPNotification"><wp:Toast>' +
-    '<wp:Text1>New Item</wp:Text1><wp:Text2>' + item.text + 
+    '<wp:Text1>New Item</wp:Text1><wp:Text2>' + item.text +
     '</wp:Text2></wp:Toast></wp:Notification>';
 
-	// Send push notifications to all registered Android and Windows Phone 8.0 devices. 
+	// Send push notifications to all registered Android and Windows Phone 8.0 devices.
 	push.mpns.send(null, mpnsPayload, 'toast', 22, {
             success: function(pushResponse) {
                 // Push succeeds.
-                },              
+                },
                 error: function (pushResponse) {
                     // Push fails.
                     }
@@ -109,7 +109,7 @@ Mit dem folgenden Code wird eine Pushbenachrichtigung an alle Android- und Windo
     push.gcm.send(null, gcmPayload, {
             success: function(pushResponse) {
                 // Push succeeds.
-                },              
+                },
                 error: function (pushResponse) {
                     // Push fails.
                     }
@@ -119,18 +119,18 @@ Um Beispiele zum Senden von Pushbenachrichtigungen an die anderen systemeigenen 
 
 Wenn Sie anstelle von Systemclientregistrierungen Vorlagenclientregistrierungen verwenden, können Sie mit einem einzigen Aufruf der **send**-Funktion für das globale [push-Objekt] dieselbe Benachrichtigung senden, indem Sie eine Vorlagennachricht-Nutzlast angeben, wie im Folgenden veranschaulicht:
 
-	// Create a new template message with the 'message' parameter.    
+	// Create a new template message with the 'message' parameter.
 	var templatePayload = { "message": item.text };
 
 	// Send a push notification to all template registrations.
     push.send(null, templatePayload, {
             success: function(pushResponse) {
                 // Push succeeds.
-                },              
+                },
                 error: function (pushResponse) {
                     // Push fails.
                     }
-                }); 
+                });
 
 ##<a id="xplat-app-dev"></a>Plattformübergreifende App-Entwicklung
 Zur Entwicklung systemeigener mobiler Geräte-Apps für alle großen mobilen Geräteplattformen benötigen Sie (bzw. Ihr Unternehmen) mindestens Kenntnisse in den Programmiersprachen Objective-C, Java und C# oder JavaScript. Da die übergreifende Entwicklung für diese verschiedenartigen Plattformen aufwändig ist, wählen einige Entwickler einen vollständig webbrowserbasierten Ansatz für ihre Apps. Diese webbasierten Lösungen haben jedoch nur eingeschränkten Zugriff auf systemeigene Ressourcen und bieten nicht die Funktionsvielfalt, die Nutzer heute auf ihren mobilen Endgeräten erwarten.
@@ -138,9 +138,9 @@ Zur Entwicklung systemeigener mobiler Geräte-Apps für alle großen mobilen Ger
 Einige plattformübergreifende Tools gewährleisten eine funktionsreichere systemeigene Benutzeroberfläche auf mobilen Geräten, nutzen jedoch noch eine gemeinsame Codebasis – typischerweise JavaScript. Mobile Services erleichtern die Erstellung und Verwaltung eines Back-End-Diensts für die plattformübergreifende App-Entwicklung durch Schnellstart-Lernprogramme für die folgenden Entwicklungsplattformen:
 
 + [**Appcelerator**](http://go.microsoft.com/fwlink/p/?LinkId=509987)<br/>Mit Appcelerator können Sie unter Verwendung von JavaScript eine einzelne App entwickeln, die für die Ausführung als systemeigene App auf allen mobilen Geräteplattformen kompiliert ist. Das Ergebnis sind eine attraktive Benutzeroberfläche, Zugriff auf alle systemeigenen Geräteressourcen und eine systemeigene App-Leistung. Weitere Informationen finden Sie im [Appcelerator-Lernprogramm][Appcelerator].
- 
+
 + [**PhoneGap**](https://go.microsoft.com/fwLink/p/?LinkID=390707)**/**[**Cordova**](http://cordova.apache.org/)<br/>PhoneGap (eine Distribution des Apache Cordova-Projekts) ist ein kostenloses Open Source-Framework, mit dem Sie unter Verwendung von standardisierten Web-APIs, HTML und JavaScript eine einzelne, auf Android-, iOS- und Windows-Geräten ausführbare App entwickeln können. PhoneGap bietet eine auf Webansichten basierende Benutzeroberfläche. Die Lösung optimiert die Nutzererfahrung durch den Zugriff auf systemeigene Geräteressourcen wie Pushbenachrichtigungen, Beschleunigungsmesser, Kamera, Speicher, Geolocation und In-App-Browser. Weitere Informationen finden Sie im [PhoneGap-Schnellstart-Lernprogramm][PhoneGap].
-	
+
 	Visual Studio unterstützt jetzt auch die Erstellung plattformübergreifender Cordova-Apps mithilfe der Erweiterung für hybride Multi-Device-Apps für Visual Studio. Diese Software steht als Vorabversion zur Verfügung. Weitere Informationen finden Sie unter [Erste Schritte mit hybriden Multi-Device-Apps unter Verwendung von HTML und JavaScript](http://msdn.microsoft.com/library/dn771545.aspx).
 
 + [**Sencha Touch**](http://go.microsoft.com/fwlink/p/?LinkId=509988)<br/>Sencha Touch umfasst mehrere für Touchscreens optimierte Steuerelemente, die eine mit systemeigenen Lösungen vergleichbare Nutzererfahrung bieten und zahlreiche mobile Geräte auf Grundlage einer einzelnen HTML- und JavaScript-Codebasis unterstützen. Sencha Touch kann zusammen mit PhoneGap- oder Cordova-Bibliotheken verwendet werden, um Benutzern den Zugriff auf systemeigene Geräteressourcen zu ermöglichen. Weitere Informationen finden Sie im [Sencha Touch-Schnellstart-Lernprogramm][Sencha].
@@ -206,6 +206,5 @@ Die .NET-Clientbibliothek von Mobile Services unterstützt sowohl Windows Phone 
 [Nächste Schritte für Windows Phone 8-Entwickler]: http://msdn.microsoft.com/library/windows/apps/dn655121(v=vs.105).aspx
 [Erstellen universeller Windows-Apps für alle Windows-Geräte]: http://go.microsoft.com/fwlink/p/?LinkId=509905
 [Projekt für eine universelle Windows-App für Azure Mobile Services unter Verwendung von MVVM]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de
- 
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

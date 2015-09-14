@@ -2,8 +2,8 @@
 	pageTitle="Hinzufügen von Pushbenachrichtigungen zu Mobile Services-Apps (Xamarin.Forms) – Mobile Services"
 	description="Erfahren Sie mehr über die Verwendung von Pushbenachrichtigungen in Xamarin.Forms-Apps mit Azure Mobile Services."
 	documentationCenter="xamarin"
-	authors="normesta"
-	manager="stevenpo"
+	authors="wesmc7777"
+	manager="dwrede"
 	services="mobile-services"
 	editor=""/>
 
@@ -293,7 +293,7 @@ Ihr mobiler Dienst ist nun für APNS konfiguriert.
             const string template = "{"aps":{"alert":"$(message)"}}";
 
             var expiryDate = DateTime.Now.AddDays(90).ToString
-                (System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
+                (System.Globalization.CultureInfo.CreateSpecificCulture("de-DE"));
 
             var push = client.GetPush();
 
@@ -846,4 +846,4 @@ Schließlich müssen Sie das Skript, das für den Einfügevorgang in der Tabelle
 [Vollständiges Beispiel zu Xamarin.Forms Azure-Pushbenachrichtigungen]: https://github.com/Azure/mobile-services-samples/tree/master/GettingStartedWithPushXamarinForms
  
 
-<!-----HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

@@ -1,27 +1,27 @@
 <properties 
    pageTitle="Verwalten von Zugriffssteuerungsdatensätzen in StorSimple | Microsoft Azure"
-   description="Beschreibt, wie Sie mit Zugriffssteuerungsdatensätzen (Access Control Record, ACR) angeben, welche Hosts Verbindungen mit einem Volume auf dem StorSimple-Gerät herstellen können."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="tysonn" />
+	description="Beschreibt, wie Sie mit Zugriffssteuerungsdatensätzen (Access Control Record, ACR) angeben, welche Hosts Verbindungen mit einem Volume auf dem StorSimple-Gerät herstellen können."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/13/2015"
-   ms.author="alkohli" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="09/01/2015"
+	ms.author="alkohli"/>
 
-# Verwalten von Zugriffssteuerungsdatensätzen in StorSimple
+# Verwalten von Zugriffssteuerungsdatensätzen mithilfe des StorSimple Manager-Diensts
 
 ## Übersicht
 
 Mit Zugriffssteuerungsdatensätzen (Access Control Record, ACR) können Sie angeben, welche Hosts Verbindungen mit einem Volume auf dem StorSimple-Gerät herstellen können. ACRs sind auf ein bestimmtes Volume festgelegt. Sie enthalten die qualifizierten iSCSI-Namen (IQN) der Hosts. Wenn ein Host versucht, eine Verbindung mit einem Volume herzustellen, überprüft das Gerät den ACR zu diesem Volume anhand des IQN-Namens. Bei einer Übereinstimmung wird eine Verbindung hergestellt. Im Abschnitt mit den Zugriffssteuerungsdatensätzen auf der Seite **Konfigurieren** werden alle Zugriffssteuerungsdatensätze zu den IQNs der Hosts angezeigt.
 
-In diesem Lernprogramm werden die folgenden häufig durchgeführten ACR-bezogenen Aufgaben erläutert:
+In diesem Tutorial werden die folgenden häufig durchgeführten ACR-bezogenen Aufgaben erläutert:
 
 - Hinzufügen von Zugriffssteuerungsdatensätzen 
 - Bearbeiten von Zugriffssteuerungsdatensätzen 
@@ -34,7 +34,7 @@ In diesem Lernprogramm werden die folgenden häufig durchgeführten ACR-bezogene
 
 ## Hinzufügen von Zugriffssteuerungsdatensätzen
 
-Navigieren Sie im Verwaltungsportal zur Seite **Konfigurieren**, um ACRs hinzuzufügen. In der Regel ordnen Sie einem Volume einen ACR zu.
+ACRs werden auf der Seite **Konfigurieren** des StorSimple Manager-Diensts hinzugefügt. In der Regel ordnen Sie einem Volume einen ACR zu.
 
 Führen Sie die folgenden Schritte aus, um einen ACR hinzuzufügen:
 
@@ -94,4 +94,4 @@ Erfahren Sie mehr über das [Verwalten von StorSimple-Volumes](storsimple-manage
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

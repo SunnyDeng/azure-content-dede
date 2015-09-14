@@ -1,27 +1,27 @@
 <properties 
-   pageTitle="Bereitstellen lokaler StorSimple-Geräte"
-	description="Schritte und bewährte Methoden für die Bereitstellung von Update 1 für StorSimple-Gerät und -Dienst."
+   pageTitle="Bereitstellen von StorSimple-Geräten (Update 1) | Microsoft Azure"
+	description="Beschreibt die Schritte und bewährten Methoden für die Bereitstellung des StorSimple Update 1-Geräts und -Diensts."
 	services="storsimple"
 	documentationCenter="NA"
 	authors="alkohli"
-	manager="adinah"
-	editor="tysonn"/>
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
 	ms.devlang="NA"
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"
 	ms.workload="TBD"
-	ms.date="08/21/2015"
+	ms.date="09/02/2015"
 	ms.author="alkohli"/>
 
-# Bereitstellen lokaler StorSimple-Geräte
+# Bereitstellen lokaler StorSimple-Geräte (Update 1)
 
 [AZURE.INCLUDE [storsimple-version-selector](../../includes/storsimple-version-selector.md)]
 
 ## Übersicht
 
-Willkommen bei der exemplarischen Vorgehensweise für die Bereitstellung von Microsoft Azure StorSimple-Geräten. Diese Bereitstellungslernprogramme beziehen sich auf Update 1.0 der StorSimple 8000 Serie. Diese Reihe von Tutorials beschreibt die Konfiguration Ihrer StorSimple-Geräte. Sie enthält darüber hinaus eine Konfigurationsprüfliste, Konfigurationsvoraussetzungen und detaillierte Konfigurationsschritte.
+Willkommen bei der exemplarischen Vorgehensweise für die Bereitstellung von Microsoft Azure StorSimple-Geräten. Diese Bereitstellungstutorials beziehen sich auf Update 1.0 der StorSimple 8000 Serie. Diese Reihe von Tutorials beschreibt die Konfiguration Ihrer StorSimple-Geräte. Sie enthält darüber hinaus eine Konfigurationsprüfliste, Konfigurationsvoraussetzungen und detaillierte Konfigurationsschritte.
 
 Bei den Informationen in diesen Tutorials wird davon ausgegangen, dass Sie die Sicherheitsvorkehrungen geprüft und Ihr StorSimple-Gerät ausgepackt, installiert und verkabelt haben. Wenn Sie diese Aufgaben noch ausführen müssen, beginnen Sie mit der Prüfung der [Sicherheitsvorkehrungen](storsimple-safety.md). Je nach Modell können Sie anschließend das Gerät auspacken, im Rack einbauen und verkabeln, indem Sie folgende Anweisungen befolgen:
 
@@ -70,7 +70,7 @@ Die folgende Konfigurationsprüfliste für die Bereitstellung enthält die Infor
 | | | | |
 | **Konfigurieren und Registrieren des Geräts** | DATA 0-Netzwerkeinstellungen | DATA 0-IP-Adresse:</br>Subnetzmaske:</br>Gateway:</br>Primärer DNS-Server:</br>Primärer NTP-Server:</br>Webproxyserver-IP/FQDN (optional):</br>Webproxyport:| |
 | | Geräteadministratorkennwort | Das Kennwort muss zwischen 8 und 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen. | |
-| | StorSimple-Momentaufnahmen-Manager-Kennwort | Das Kennwort muss 14 oder 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen.| |
+| | StorSimple Snapshot Manager-Kennwort | Das Kennwort muss 14 oder 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen.| |
 | | Dienstregistrierungsschlüssel | Dieser Schlüssel wird im Azure-Portal generiert. | |
 | | Verschlüsselungsschlüssel für Dienstdaten | Dieser Schlüssel wird erstellt, wenn das Gerät über die Windows PowerShell für StorSimple beim Verwaltungsdienst registriert wird. Kopieren Sie diesen Schlüssel, und bewahren Sie ihn an einem sicheren Ort auf.| |
 | | | | |
@@ -130,7 +130,7 @@ Stellen Sie vor der Konfiguration des Geräts Folgendes sicher:
 
 Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
-- Die Ports in der Datencenter-Firewall werden geöffnet, um iSCSI- und Cloud-Datenverkehr zu ermöglichen, wie in [Netzwerkanforderungen für das StorSimple-Gerät](storsimple-system-requirements.md#networking-requirements-for-your-storsimple-device) beschrieben.
+- Die Ports in der Datencenter-Firewall werden geöffnet, um iSCSI- und Clouddatenverkehr zu ermöglichen, wie in [Netzwerkanforderungen für das StorSimple-Gerät](storsimple-system-requirements.md#networking-requirements-for-your-storsimple-device) beschrieben.
 
 
 ## Schrittweise Bereitstellung
@@ -210,7 +210,7 @@ Wenn Sie MPIO nicht konfigurieren, führen Sie die folgenden Schritte aus, um Ih
 
 ## Schritt 8: Erstellen einer Sicherung
 
-Sicherungen stellen Zeitpunktschutz für Volumes zur Verfügung und verbessern die Wiederherstellbarkeit bei gleichzeitiger Minimierung der Wiederherstellungszeiten. Für Ihr StorSimple-Gerät können zwei Arten von Sicherungen angefertigt werden: lokale Momentaufnahmen und Cloud-Momentaufnahmen. Jeder dieser Sicherungstypen kann **geplant** sein oder **manuell** erfolgen.
+Sicherungen stellen Zeitpunktschutz für Volumes zur Verfügung und verbessern die Wiederherstellbarkeit bei gleichzeitiger Minimierung der Wiederherstellungszeiten. Für Ihr StorSimple-Gerät können zwei Arten von Sicherungen angefertigt werden: lokale Momentaufnahmen und Cloudmomentaufnahmen. Jeder dieser Sicherungstypen kann **geplant** sein oder **manuell** erfolgen.
 
 Führen Sie die folgenden Schritte im Verwaltungsportal aus, um eine geplante Sicherung zu erstellen.
 
@@ -287,4 +287,4 @@ Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
 Verwenden des [StorSimple-Manager-Diensts](storsimple-manager-service-administration.md) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!----HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

@@ -1,29 +1,27 @@
 <properties 
-	pageTitle="Erste Schritte mit der clientseitigen Verschlüsselung für Microsoft Azure Storage | Microsoft Azure" 
-	description="Die Azure Storage-Clientbibliothek für .NET bietet Unterstützung für die clientseitige Verschlüsselung und die Integration in Azure Key Vault. Die clientseitige Verschlüsselung bietet maximale Sicherheit für Ihre Azure Storage-Anwendungen, da Ihre Zugriffsschlüssel im Dienst niemals verfügbar sind. Die clientseitige Verschlüsselung ist für Blobs, Warteschlangen und Tabellen verfügbar." 
-	services="storage" 
-	documentationCenter=".net" 
-	authors="tamram" 
-	manager="carolz" 
+	pageTitle="Clientseitige Verschlüsselung für Microsoft Azure Storage | Microsoft Azure"
+	description="Die Azure Storage-Clientbibliothek für .NET bietet Unterstützung für die clientseitige Verschlüsselung und die Integration in Azure Key Vault. Dies bietet eine maximale Sicherheit für Ihre Azure Storage-Anwendungen."
+	services="storage"
+	documentationCenter=".net"
+	authors="tamram"
+	manager="carolz"
 	editor=""/>
 
-
 <tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/21/2015"
 	ms.author="tamram"/>
 
 
-
-# Erste Schritte der clientseitigen Verschlüsselung für Microsoft Azure Storage
+# Clientseitige Verschlüsselung und Azure Key Vault für Microsoft Azure Storage
 
 ## Übersicht
 
-Die [Azure Storage-Clientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage) enthält Funktionen, mit denen Entwickler Daten in Clientanwendungen vor dem Hochladen in Azure Storage verschlüsseln und beim Herunterladen entschlüsseln können. Die Bibliothek unterstützt außerdem die Integration in Azure [Schlüsseltresor](http://azure.microsoft.com/services/key-vault/) (Key Vault) für die Schlüsselverwaltung von Speicherkonten.
+Die [Azure Storage-Clientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage) unterstützt die Verschlüsselung von Daten innerhalb von Clientanwendungen, bevor die Daten nach Azure Storage hochgeladen werden. Gleichermaßen wird die Entschlüsselung von Daten während des Herunterladens auf den Client unterstützt. Um eine Schlüsselverwaltung für Speicherkonten zu ermöglichen, unterstützt die Bibliothek zudem die Integration in [Azure Key Vault](http://azure.microsoft.com/services/key-vault/).
 
 ## Verschlüsselung und Entschlüsselung über das Umschlagverfahren
 
@@ -56,13 +54,13 @@ Die Speicherclientbibliothek verwendet [AES](http://en.wikipedia.org/wiki/Advanc
 
 ### Blobs
 
-Die Clientbibliothek unterstützt momentan nur die Verschlüsselung vollständiger Blobs. Insbesondere wird die Verschlüsselung unterstützt, wenn Benutzer die **UploadFrom**\*-Methoden oder die **OpenWrite**-Methode verwenden. Es werden sowohl vollständige Downloads als auch Downloads von Bereichen unterstützt.
+Die Clientbibliothek unterstützt momentan nur die Verschlüsselung vollständiger Blobs. Insbesondere wird die Verschlüsselung unterstützt, wenn Benutzer die **UploadFrom***-Methoden oder die **OpenWrite**-Methode verwenden. Es werden sowohl vollständige Downloads als auch Downloads von Bereichen unterstützt.
 
 Bei der Verschlüsselung generiert die Clientbibliothek einen zufälligen Initialisierungsvektor (IV) mit einer Größe von 16 Byte zusammen mit einem zufälligen Inhaltsverschlüsselungsschlüssel (CEK) mit einer Größe von 32 Byte. Mithilfe dieser Informationen wird die Umschlagverschlüsselung der Blobdaten ausgeführt. Der umschlossene CEK und einige zusätzliche Verschlüsselungsmetadaten werden dann als Blobmetadaten zusammen mit dem verschlüsselten Blob für den Dienst gespeichert.
 
 > [AZURE.WARNING]Wenn Sie eigene Metadaten für den Blob bearbeiten oder hochladen, müssen Sie sicherstellen, dass diese Metadaten beibehalten werden. Wenn Sie neue Metadaten ohne diese Metadaten hochladen, gehen der umschlossene CEK, der IV und andere Metadaten verloren und der Blobinhalt wird nie wieder abrufbar sein.
 
-Beim Herunterladen eines verschlüsselten Blobs wird der Inhalt des gesamten Blobs mit den **DownloadTo**\*/\*\*BlobReadStream\*\*-Hilfsmethoden abgerufen. Der umschlossene CEK wird entpackt und zusammen mit dem IV (in diesem Fall als Blobmetadaten gespeichert) verwendet, um die entschlüsselten Daten an die Benutzer zurückzugeben.
+Beim Herunterladen eines verschlüsselten Blobs wird der Inhalt des gesamten Blobs mit den **DownloadTo***/**BlobReadStream**-Hilfsmethoden abgerufen. Der umschlossene CEK wird entpackt und zusammen mit dem IV (in diesem Fall als Blobmetadaten gespeichert) verwendet, um die entschlüsselten Daten an die Benutzer zurückzugeben.
 
 Beim Herunterladen eines beliebigen Bereichs (**DownloadRange**-Methoden) im verschlüsselten Blob wird der von den Benutzern angegebene Bereich angepasst, um eine kleine Menge zusätzlicher Daten abzurufen, die verwendet werden können, um den angeforderten Bereich erfolgreich zu entschlüsseln.
 
@@ -244,4 +242,4 @@ Beachten Sie, dass ein Verschlüsseln Ihrer Storage-Daten einen zusätzlichen Le
 
 [Azure-Speicherclientbibliothek für .NET – NuGet-Paket](http://www.nuget.org/packages/WindowsAzure.Storage/5.0.0) herunterladen [Azure-Speicherclientbibliothek für .NET-Quellcode von GitHub](https://github.com/Azure/azure-storage-net) herunterladen NuGet-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) für den Azure-Schlüsseltresor herunterladen Lesen Sie die [Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

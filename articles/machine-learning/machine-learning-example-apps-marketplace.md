@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Machine Learning-Beispiel-Apps im Azure Marketplace | Microsoft Azure" 
-	description="Azure Machine Learning-App-Beispiele im Marketplace zeigen Ihnen, wie Sie Ihre Machine Learning-Dienste im Azure Marketplace veröffentlichen, damit zahlende Abonnenten diese in ihren Apps verwenden können." 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="LuisCabrer" 
-	manager="paulettm" 
+	pageTitle="Machine Learning-Beispiel-Apps im Azure Marketplace | Microsoft Azure"
+	description="Azure Machine Learning-App-Beispiele im Marketplace zeigen Ihnen, wie Sie Ihre Machine Learning-Dienste im Azure Marketplace veröffentlichen, damit zahlende Abonnenten diese in ihren Apps verwenden können."
+	services="machine-learning"
+	documentationCenter=""
+	authors="LuisCabrer"
+	manager="paulettm"
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/05/2015" 
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="luisca"/>
 
 # Machine Learning-Apps im Azure Marketplace
@@ -57,6 +57,10 @@ Mit dieser API kann unstrukturierter Text für Aufgaben wie Stimmungsanalyse und
 [Dokumentation](machine-learning-apps-text-analytics.md)
 
  
- 
+ ##Customer Churn Prediction## Customer Churn Prediction ist ein in Azure Machine Learning integrierter Dienst zur Analyse der Kundenabwanderung. Dieser Dienst ist dazu entworfen vorherzusagen, wann ein Kunde (Spieler, Abonnent, Benutzer usw.) die Inanspruchnahme von Leistungen eines Unternehmens oder eines Diensts wahrscheinlich beendet. Die Möglichkeit vorherzusagen, für welche Kunden ein hohes Abwanderungsrisiko besteht, bietet Unternehmen die Gelegenheit, durch entsprechende Maßnahmen die Wahrscheinlichkeit einer Abwanderung zu verringern.
 
-<!---HONumber=August15_HO6-->
+[Link zum Marketplace](https://datamarket.azure.com/dataset/amla/customer-churn-prediction)
+
+[Dokumentation](https://churn.cloudapp.net/documentation)
+
+<!---HONumber=September15_HO1-->

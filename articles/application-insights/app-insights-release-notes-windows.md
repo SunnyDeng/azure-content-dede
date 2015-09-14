@@ -1,17 +1,17 @@
 <properties 
-	pageTitle="Versionshinweise für Application Insights" 
-	description="Die neuesten Updates." 
-	services="application-insights" 
-    documentationCenter=""
-	authors="alancameronwills" 
+	pageTitle="Versionshinweise für Application Insights für Windows"
+	description="Die neuesten Updates."
+	services="application-insights"
+	documentationCenter=""
+	authors="alancameronwills"
 	manager="douge"/>
 <tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/18/2015" 
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/18/2015"
 	ms.author="sergkanz"/>
  
 # Versionshinweise für das Application Insights-SDK für Windows Phone und Store
@@ -77,4 +77,4 @@ Vorschau vom 28.04.2015
 
 Für ältere Versionen sind keine Versionshinweise verfügbar.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

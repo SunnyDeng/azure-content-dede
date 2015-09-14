@@ -6,13 +6,13 @@
 
 	![Navigieren Sie auf der Befehlsleiste zu „Aus Katalog“.](./media/virtual-machines-create-WindowsVM/fromgallery.png)
 
-4. Im ersten Bildschirm können Sie für Ihren virtuellen Computer ein **Image** aus einer Liste im Image-Katalog auswählen. \(Die verfügbaren Images können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.\)
+4. Im ersten Bildschirm können Sie für Ihren virtuellen Computer ein **Image** aus einer Liste im Image-Katalog auswählen. (Die verfügbaren Images können sich je nach dem von Ihnen verwendeten Abonnement unterscheiden.)
 
 5. Im zweiten Bildschirm wählen Sie einen Computernamen, Größe sowie Benutzername und Passwort des Administrators aus. Andernfalls wählen Sie die benötigte Schicht und die Größe, um Ihre Anwendung oder Ihren Leistungsumfang auszuführen. Hier einige Tipps:
 
 	- **Neuer Benutzername** bezieht sich auf das Administratorkonto, dass Sie zur Verwaltung des Servers verwenden. Geben Sie für dieses Konto ein individuelles Passwort an und stellen Sie sicher, dass Sie es nicht vergessen. **Sie brauchen den Benutzernamen und das Passwort, um sich am virtuellen Computer anzumelden**.
 
-	- Die Größe eines virtuellen Computers wirkt sich auf seine Betriebskosten sowie auf die Konfigurationsoptionen, wie die Anzahl der Datenträger, die Sie anschließen können, aus. Ausführliche Informationen finden Sie unter [Größen für virtuelle Computer](../articles/virtual-machines-size-specs.md).
+	- Die Größe eines virtuellen Computers wirkt sich auf seine Betriebskosten sowie auf die Konfigurationsoptionen aus (z. B. die Anzahl von Datenträgern, die Sie anschließen können). Ausführliche Informationen finden Sie unter [Größen für virtuelle Computer](../articles/virtual-machines-size-specs.md).
 
 6. Auf dem dritten Bildschirm können Sie die Ressourcen für Netzwerk, Speicher und Verfügbarkeit konfigurieren. Hier einige Tipps:
 
@@ -32,4 +32,4 @@
 
 	![Konfigurieren Sie den VM-Agent und die Endpunkte des virtuellen Computers.](./media/virtual-machines-create-WindowsVM/vmcreated.png)
 
-<!----HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

@@ -1,33 +1,30 @@
 <properties 
-	pageTitle="Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server | Microsoft Azure" 
-	description="Advanced Analytics Process and Technology in Aktion"  
-	services="machine-learning" 
-	solutions="" 
-	documentationCenter="" 
-	authors="msolhab" 
-	manager="paulettm" 
-	editor="cgronlun" />
-
+	pageTitle="Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server | Microsoft Azure"
+	description="Advanced Analytics Process and Technology in Aktion"
+	services="machine-learning"
+	documentationCenter=""
+	authors="msolhab"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/29/2015" 
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="mohabib;fashah;bradsev"/>
-
 
                 
 # Advanced Analytics Process and Technology in Aktion: Verwenden von SQL Server
 
-In diesem Lernprogramm bearbeiten Sie den Azure Advanced Analytics Process and Technology (ADAPT) vom Anfang bis zum Ende, um dabei ein Modell mithilfe eines öffentlich zugänglichen DataSets – dem [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/)-DataSet zu erstellen und bereitzustellen.
+In diesem Tutorial werden Sie durch die Erstellung und Bereitstellung eines Modells geleitet. Hierbei wird das öffentlich verfügbare DataSets [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/) verwendet. Das Verfahren folgt dem Leitfaden "Advanced Analytics Process and Technology (ADAPT)".
 
 
 ## <a name="dataset"></a>Beschreibung des NYC Taxi Trips-DataSets
 
-Die NYC Taxi Trips-Daten umfassen ca. 20 GB komprimierter CSV-Dateien (\~48 GB unkomprimiert) mit mehr als 173 Millionen einzelnen Fahrten mit den zugehörigen Preisen. Jedes Fahrten-DataSets enthält den Start- und Zielort mit der Uhrzeit, die anonymisierte Lizenznummer des Fahrers (Hack) und die eindeutige ID des Taxis (Medallion). Die Daten umfassen alle Fahrten im Jahr 2013. Sie werden für jeden Monat in den folgenden beiden DataSets bereitgestellt:
+Die NYC Taxi Trips-Daten umfassen ca. 20 GB komprimierter CSV-Dateien (~48 GB unkomprimiert) mit mehr als 173 Millionen einzelnen Fahrten mit den zugehörigen Preisen. Jedes Fahrten-DataSets enthält den Start- und Zielort mit der Uhrzeit, die anonymisierte Lizenznummer des Fahrers (Hack) und die eindeutige ID des Taxis (Medallion). Die Daten umfassen alle Fahrten im Jahr 2013. Sie werden für jeden Monat in den folgenden beiden DataSets bereitgestellt:
 
 1. Die CSV-Datei "trip\_data" enthält Fahrtendetails wie die Anzahl der Fahrgäste, Start- und Zielort, Fahrtdauer und Fahrtlänge. Es folgen einige Beispieleinträge:
 
@@ -73,7 +70,7 @@ Wie Sie unter [Planen Ihrer Umgebung](machine-learning-data-science-plan-your-en
 - Verarbeiten der Daten in Azure-Blobs und anschließendes Modellieren in Azure Machine Learning
 - Laden der Daten in eine SQL Server-Datenbank und anschließendes Modellieren in Azure Machine Learning
 
-In diesem Lernprogramm wird der parallele Massenimport von Daten in SQL Server gezeigt sowie das Durchsuchen von Daten, die Verarbeitung von Funktion und das Downsampling mithilfe von SQL Server Management Studio und IPython Notebook. Die [Beispielskripts](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts) und [IPython Notebooks](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/iPythonNotebooks) werden in GitHub freigegeben. Ein Beispiel-IPython Notebook zum Arbeiten mit den Daten in Azure-Blobs ist am gleichen Speicherort verfügbar.
+In diesem Tutorial wird der parallele Massenimport von Daten in SQL Server gezeigt sowie das Durchsuchen von Daten, die Verarbeitung von Funktion und das Downsampling mithilfe von SQL Server Management Studio und IPython Notebook. Die [Beispielskripts](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts) und [IPython Notebooks](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/iPythonNotebooks) werden in GitHub freigegeben. Ein Beispiel-IPython Notebook zum Arbeiten mit den Daten in Azure-Blobs ist am gleichen Speicherort verfügbar.
 
 So richten Sie Ihre Azure Data Science-Umgebung ein:
 
@@ -420,7 +417,7 @@ Auf ähnliche Weise können wir die Beziehung zwischen **rate\_code** und **trip
 
 ### Generieren von Stichproben aus den Daten in SQL
 
-Bei der Vorbereitung von Daten für die Modellerstellung in [Azure Machine Learning Studio](https://studio.azureml.net) entscheiden Sie sich entweder für eine **direkte Verwendung von SQL-Abfragen im Reader-Modul** oder für das Beibehalten der bearbeiteten und erfassten Daten in einer neuen Tabelle, die Sie im [Reader][reader]-Modul mit einer einfachen **SELECT-Abfrage wie SELECT \* FROM <Ihr\_neuer\_Tabellenname>** verwenden können.
+Bei der Vorbereitung von Daten für die Modellerstellung in [Azure Machine Learning Studio](https://studio.azureml.net) entscheiden Sie sich entweder für eine **direkte Verwendung von SQL-Abfragen im Reader-Modul** oder für das Beibehalten der bearbeiteten und erfassten Daten in einer neuen Tabelle, die Sie im [Reader][reader]-Modul mit einer einfachen **SELECT-Abfrage wie SELECT * FROM <Ihr\_neuer\_Tabellenname>** verwenden können.
 
 In diesem Abschnitt erstellen Sie eine neue Tabelle zum Speichern der erfassten und verarbeiteten Daten. Ein Beispiel für eine direkte SQL-Abfrage für die Modellerstellung finden Sie im Abschnitt [Durchsuchen von Daten und Verarbeiten von Funktionen in SQL Server](#dbexplore).
 
@@ -615,7 +612,7 @@ Melden Sie sich zum Starten der Modellierungsübung im Azure Machine Learning-Ar
 
 2. Melden Sie sich in [Azure Machine Learning Studio](https://studio.azureml.net) an.
 
-3. Die Startseite von Studio enthält eine Vielzahl an Informationen, Videos, Lernprogrammen, Links zu Modulreferenzen und andere Ressourcen. Weitere Informationen zu Azure Machine Learning finden Sie im [Azure Machine Learning Center](http://azure.microsoft.com/documentation/services/machine-learning/).
+3. Die Startseite von Studio enthält eine Vielzahl an Informationen, Videos, Tutorials, Links zu Modulreferenzen und andere Ressourcen. Weitere Informationen zu Azure Machine Learning finden Sie im [Azure Machine Learning Center](http://azure.microsoft.com/documentation/services/machine-learning/).
 
 Ein typisches Trainingsexperiment umfasst Folgendes:
 
@@ -642,7 +639,7 @@ Sie haben in dieser Übung bereits die Daten in SQL Server untersucht und bearbe
 
 4. Geben Sie den **Datenbanknamen** in das entsprechende Feld ein.
 
-5. Geben Sie den **SQL-Benutzernamen** in \*\*Server user account name und das Kennwort in **Server user account password** ein.
+5. Geben Sie den **SQL-Benutzernamen** in **Server user account name und das Kennwort in **Server user account password** ein.
 
 6. Aktivieren Sie die Option **Accept any server certificate**.
 
@@ -681,7 +678,7 @@ In der folgenden Abbildung finden Sie ein Beispiel für ein Bewertungsexperiment
 
 ![Azure ML-Veröffentlichung][11]
 
-Zusammenfassend haben Sie in diesem Lernprogramm eine Azure Data Science-Umgebung erstellt und mit einem großen öffentlichen DataSet gearbeitet und dabei alle Schritte von der Datenerfassung bis zum Modelltraining und zur Veröffentlichung eines Azure Machine Learning-Webdienstes durchlaufen.
+Zusammenfassend haben Sie in diesem Tutorial eine Azure Data Science-Umgebung erstellt und mit einem großen öffentlichen DataSet gearbeitet und dabei alle Schritte von der Datenerfassung bis zum Modelltraining und zur Veröffentlichung eines Azure Machine Learning-Webdienstes durchlaufen.
 
 ### Lizenzinformationen
 
@@ -718,4 +715,4 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts und IPython Note
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

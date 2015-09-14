@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte mit Azure Notification Hubs | Microsoft Azure"
-	description="In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs Pushbenachrichtigungen an Android-Geräte senden."
+	description="In diesem Tutorial erfahren Sie, wie Sie mithilfe von Azure Notification Hubs Pushbenachrichtigungen an Android-Geräte senden."
 	services="notification-hubs"
 	documentationCenter="android"
 	authors="wesmc7777"
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="hero-article"
-	ms.date="05/27/2015"
+	ms.date="09/01/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs
@@ -21,20 +21,20 @@
 
 ##Übersicht
 
-In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an eine Android-App senden. Sie erstellen eine leere Android-App, die Pushbenachrichtigungen mithilfe von Google Cloud Messaging (GCM) empfängt. Sobald Sie dieses Lernprogramm abgeschlossen haben, können Sie über Ihren Notification Hub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
+In diesem Tutorial erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an eine Android-App senden. Sie erstellen eine leere Android-App, die Pushbenachrichtigungen mithilfe von Google Cloud Messaging (GCM) empfängt. Sobald Sie dieses Tutorial abgeschlossen haben, können Sie über Ihren Notification Hub Pushbenachrichtigungen an alle Geräte senden, die Ihre App ausführen.
 
-Das Lernprogramm zeigt ein einfaches Übertragungsszenario mithilfe von Notification Hubs. Bearbeiten Sie auch das nachfolgende Lernprogramm, um mehr über die Verwendung von Notification Hubs zur Adressierung von speziellen Benutzern und Gerätegruppen zu erfahren.
+Das Tutorial zeigt ein einfaches Übertragungsszenario mithilfe von Notification Hubs. Bearbeiten Sie auch das nachfolgende Tutorial, um mehr über die Verwendung von Notification Hubs zur Adressierung von speziellen Benutzern und Gerätegruppen zu erfahren.
 
 
 ##Voraussetzungen
 
-Für dieses Lernprogramm ist Folgendes erforderlich:
+Für dieses Tutorial ist Folgendes erforderlich:
 
 + Android Studio, das Sie auf <a href="http://go.microsoft.com/fwlink/?LinkId=389797">der Android-Seite</a> herunterladen können.
 + Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fnotification-hubs-android-get-started%2F).
 
 
-Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Notification Hubs-Lernprogramme für Android-Apps.
+Das Abschließen dieses Tutorial ist eine Voraussetzung für alle anderen Notification Hubs-Tutorials für Android-Apps.
 
 
 ##Erstellen eines Projekts, das Google Cloud Messaging unterstützt
@@ -104,6 +104,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 		private NotificationHub hub;
     	private String HubName = "<Enter Your Hub Name>";
 		private String HubListenConnectionString = "<Your default listen connection string>";
+	    private static Boolean isVisible = false;
 
 
 	Aktualisieren Sie die drei Platzhalter: * **SENDER\_ID**: Setzen Sie `SENDER_ID` auf die Projektnummer, die Sie zuvor von dem in der [Google Cloud Console](http://cloud.google.com/console) erstellten Projekt abgerufen haben. * **HubListenConnectionString**: Legen Sie für `HubListenConnectionString` die Verbindungszeichenfolge **DefaultListenAccessSignature** für den Hub fest. Sie können diese Verbindungszeichenfolge kopieren, indem Sie im [Azure-Portal] auf der Registerkarte **Dashboard** Ihres Hubs auf **Verbindungszeichenfolge anzeigen** klicken. * **HubName**: Verwenden Sie den Namen Ihres Notification Hubs, der oben auf der Seite in Azure angezeigt wird (**nicht** die vollständige URL). Verwenden Sie z. B. `"myhub"`.
@@ -139,6 +140,21 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
     	}
 
 
+7. Fügen Sie der Aktivität die Methode **DialogNotify** hinzu, um die Benachrichtigung anzuzeigen, wenn die App ausgeführt wird und sichtbar ist. Setzen Sie außerdem **onStart** und **onStop** außer Kraft, um zu ermitteln, ob die Aktivität sichtbar ist und das Dialogfeld anzeigen kann.
+
+	    @Override
+	    protected void onStart() {
+	        super.onStart();
+	        isVisible = true;
+	    }
+	
+	    @Override
+	    protected void onStop() {
+	        super.onStop();
+	        isVisible = false;
+	    }
+
+
 		/**
 		  * A modal AlertDialog for displaying a message on the UI thread
 		  * when there's an exception or message to report.
@@ -148,6 +164,9 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 		  */
     	public void DialogNotify(final String title,final String message)
     	{
+	        if (isVisible == false)
+	            return;
+
         	final AlertDialog.Builder dlg;
         	dlg = new AlertDialog.Builder(this);
 
@@ -170,7 +189,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
         	});
     	}
 
-7. Da Android keine Benachrichtigungen anzeigt, müssen Sie einen eigenen Empfänger schreiben. Fügen Sie in **AndroidManifest.xml** das folgende Element im `<application>`-Element ein.
+8. Da Android keine Benachrichtigungen anzeigt, müssen Sie einen eigenen Empfänger schreiben. Fügen Sie in **AndroidManifest.xml** das folgende Element im `<application>`-Element ein.
 
 	> [AZURE.NOTE]Ersetzen Sie den Platzhalter mit dem Namen Ihres Pakets.
 
@@ -183,14 +202,14 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
         </receiver>
 
 
-8. Erweitern Sie in der Projektansicht die Knoten **app** > **src** > **main** > **java**. Klicken Sie mit der rechten Maustaste auf Ihren Paketordner unter **java**, klicken Sie auf **Neu** und dann auf **Java Class**.
+9. Erweitern Sie in der Projektansicht die Knoten **app** > **src** > **main** > **java**. Klicken Sie mit der rechten Maustaste auf Ihren Paketordner unter **java**, klicken Sie auf **Neu** und dann auf **Java Class**.
 
 	![][6]
 
-9. Geben Sie im Feld **Name** für den neuen Klassentyp den Namen **MyHandler** ein, und klicken Sie dann auf **OK**.
+10. Geben Sie im Feld **Name** für die neue Klasse **MyHandler** ein, und klicken Sie dann auf **OK**.
 
 
-10. Fügen Sie die folgenden Importanweisungen am Anfang der Datei **MyHandler.java** ein:
+11. Fügen Sie die folgenden Importanweisungen am Anfang der Datei **MyHandler.java** ein:
 
 		import android.app.NotificationManager;
 		import android.app.PendingIntent;
@@ -201,12 +220,12 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 		import com.microsoft.windowsazure.notifications.NotificationsHandler;
 
 
-11. Aktualisieren Sie die Klassendeklaration wie folgt, um `MyHandler` wie unten dargestellt als Unterklasse von `com.microsoft.windowsazure.notifications.NotificationsHandler` festzulegen.
+12. Aktualisieren Sie die Klassendeklaration wie folgt, um `MyHandler` wie unten dargestellt als Unterklasse von `com.microsoft.windowsazure.notifications.NotificationsHandler` festzulegen.
 
 		public class MyHandler extends NotificationsHandler {
 
 
-12. Fügen Sie den folgenden Code für die `MyHandler`-Klasse hinzu.
+13. Fügen Sie den folgenden Code für die `MyHandler`-Klasse hinzu.
 
 	Mit diesem Code wird die `OnReceive`-Methode überschrieben, sodass der Handler ein `AlertDialog` einblendet, in dem empfangene Benachrichtigungen angezeigt werden. Der Handler sendet die Benachrichtigung mit der `sendNotification()`-Methode auch an den Android-Benachrichtigungs-Manager.
 
@@ -245,7 +264,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 			mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
 		}
 
-13. Klicken Sie in Android Studio auf der Menüleiste auf **Build** -> **Rebuild Project**, um sicherzustellen, dass keine Fehler gefunden werden.
+14. Klicken Sie in Android Studio auf der Menüleiste auf **Build** -> **Rebuild Project**, um sicherzustellen, dass keine Fehler gefunden werden.
 
 ##Senden von Benachrichtigungen
 
@@ -279,7 +298,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
         android:layout_marginBottom="42dp"
         android:hint="@string/notification_message_hint" />
 
-2. Erweitern Sie in der Projektansicht von Android Studio **App** > **src** > **main** > **res** > **values**. Öffnen Sie die Datei **strings.xml**, und fügen Sie die Zeichenfolgenwerte hinzu, auf die von dem neuen `Button`- und `EditText`-Steuerelement verwiesen wird. Fügen Sie sie am Ende der Datei unmittelbar vor `</resources>` ein.
+2. Erweitern Sie in der Projektansicht von Android Studio **App** > **src** > **main** > **res** > **values**. Öffnen Sie die Datei **strings.xml**, und fügen Sie die Zeichenfolgenwerte hinzu, auf die von dem neuen `Button`- und `EditText`-Steuerelement verwiesen wird. Fügen Sie die Werte am Ende der Datei unmittelbar vor `</resources>` ein.
 
         <string name="send_button">Send Notification</string>
         <string name="notification_message_hint">Enter notification message text</string>
@@ -304,7 +323,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
 
 3. Fügen Sie in der Datei **MainActivity.java** die folgenden Member oben in der `MainActivity`-Klasse hinzu.
 
-	Geben Sie für `HubName` den Namen des Hubs und nicht den Namespace ein. Geben Sie z. B. "myhub" ein. Geben Sie außerdem die Verbindungszeichenfolge **DefaultFullSharedAccessSignature** ein. Diese Verbindungszeichenfolge kann im [Azure-Portal] kopiert werden. Klicken Sie dazu auf **Verbindungzeichenfolge anzeigen** auf der Registerkarte **Dashboard** für Ihren Notification Hub.
+	Geben Sie für `HubName` den Namen des Hubs und nicht den Namespace ein. Geben Sie z. B. "myhub" ein. Geben Sie außerdem die Verbindungszeichenfolge **DefaultFullSharedAccessSignature** ein. Diese Verbindungszeichenfolge kann aus dem [Azure-Portal] kopiert werden. Klicken Sie dazu auf der Registerkarte **Dashboard** für Ihren Notification Hub auf **Verbindungzeichenfolge anzeigen**.
 
 	    private String HubEndpoint = null;
 	    private String HubSasKeyName = null;
@@ -469,7 +488,7 @@ Stellen Sie außerdem sicher, dass Ihr Google-Konto dem ausgeführten Emulator u
 
 ##Nächste Schritte
 
-In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Geräte versendet. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Lernprogramm [Benachrichtigen von Benutzern mit Benachrichtigungshubs]. Wenn Sie Ihre Benutzer in Interessengruppen einteilen möchten, finden Sie unter [Verwenden von Benachrichtigungshubs zum Übermitteln von Nachrichten] weitere Informationen. Weitere Informationen zur Verwendung von Benachrichtigungshubs finden Sie in der [Benachrichtigungshubs-Anleitung].
+In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Geräte versendet. Informationen zum Adressieren bestimmter Benutzer finden Sie in dem Tutorial [Benachrichtigen von Benutzern mit Benachrichtigungshubs]. Wenn Sie Ihre Benutzer in Interessengruppen einteilen möchten, finden Sie unter [Verwenden von Benachrichtigungshubs zum Übermitteln von Nachrichten] weitere Informationen. Weitere Informationen zur Verwendung von Benachrichtigungshubs finden Sie in der [Benachrichtigungshubs-Anleitung].
 
 
 <!-- Images. -->
@@ -511,4 +530,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [Benachrichtigen von Benutzern mit Benachrichtigungshubs]: notification-hubs-aspnet-backend-android-notify-users.md
 [Verwenden von Benachrichtigungshubs zum Übermitteln von Nachrichten]: notification-hubs-aspnet-backend-android-breaking-news.md
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

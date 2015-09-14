@@ -12,7 +12,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
-	ms.date="08/25/2015"
+	ms.date="09/03/2015"
 	ms.author="sdanie"/>
 
 # Gewusst wie: Konfigurieren von Azure Redis Cache
@@ -54,6 +54,12 @@ Klicken Sie auf **Zugriffsschlüssel**, um die Zugriffsschlüssel für Ihren Cac
 Der Zugriff ohne SSL ist für neue Caches standardmäßig deaktiviert. Klicken Sie zum Aktivieren des Nicht-SSL-Ports auf das Blatt **Zugriffsports** und dann auf **Nein**.
 
 ![Redis Cache: Zugriffsports](./media/cache-configure/IC808316.png)
+
+## Tarif
+
+Klicken Sie auf **Tarif**, um den Tarif für Ihren Cache anzuzeigen oder zu ändern. Weitere Informationen zur Skalierung finden Sie unter [Skalieren von Azure Redis Cache](cache-how-to-scale.md).
+
+![Redis-Cache: Tarif](./media/cache-configure/pricing-tier.png)
 
 ## Diagnose
 
@@ -115,16 +121,26 @@ Neue Azure Redis Cache-Instanzen werden mit den folgenden standardmäßigen Redi
 |Einstellung|Standardwert|Beschreibung|
 |---|---|---|
 |Datenbanken|16|Die Standarddatenbank ist DB 0. Sie können für jede Verbindung eine andere Datenbank auswählen, indem Sie „connection.GetDataBase(dbid)“ verwenden. Hierbei steht „dbid“ für eine Zahl zwischen 0 und 15.|
-|maxclients|10\.000|Dies ist die maximale Anzahl von verbundenen Clients, die gleichzeitig zulässig sind. Sobald der Grenzwert erreicht ist, schließt Redis alle neuen Verbindungen und sendet den Fehler „max number of clients reached“ (Maximale Anzahl von Clients erreicht).|
+|maxclients|Abhängig vom Tarif<sup>1</sup>|Dies ist die maximale Anzahl von verbundenen Clients, die gleichzeitig zulässig sind. Sobald der Grenzwert erreicht ist, schließt Redis alle neuen Verbindungen und sendet den Fehler „max number of clients reached“ (Maximale Anzahl von Clients erreicht).|
 |maxmemory-policy|volatile-lru|Mit der Einstellung „maxmemory-policy“ wählt Redis aus, was entfernt werden soll, wenn der Wert für „maxmemory“ (Größe des Cacheangebots, die Sie beim Erstellen des Caches ausgewählt haben) erreicht ist. Bei Azure Redis Cache lautet die Standardeinstellung „volatile-lru“. Hierbei werden die Schlüssel anhand eines Ablaufverfahrens mit LRU-Algorithmus entfernt. Diese Einstellung kann im Vorschauportal konfiguriert werden. Weitere Informationen finden Sie unter [maxmemory-policy und maxmemory-reserved](#maxmemory-policy-and-maxmemory-reserved).|
 |maxmemory-samples|3|LRU- und minimale TTL-Algorithmen sind keine präzisen Algorithmen, sondern angenäherte Algorithmen (um Arbeitsspeicher zu sparen). Sie können also auch die Größe der zu prüfenden Stichproben auswählen. Standardmäßig werden von Redis beispielsweise drei Schlüssel geprüft, und es wird der Schlüssel ausgewählt, der vor längerer Zeit verwendet wurde.|
 |lua-time-limit|5\.000|Maximale Ausführungszeit eines Lua-Skripts in Millisekunden. Wenn die maximale Ausführungszeit erreicht wird, wird von Redis protokolliert, dass ein Skript nach der maximal zulässigen Ausführungszeit weiterhin ausgeführt wird. Es wird dann damit begonnen, auf Abfragen mit einem Fehler zu antworten.|
 |lua-event-limit|500|Dies ist die maximale Größe der Skriptereigniswarteschlange.|
 |client-output-buffer-limit normalclient-output-buffer-limit pubsub|0 0 032mb 8mb 60|Die Clientausgabepuffer-Grenzwerte können verwendet werden, um die Verbindungstrennung für Clients zu erzwingen, die aus einem bestimmten Grund Daten nicht schnell genug vom Server lesen. (Ein häufiger Grund ist, dass ein Pub/Sub-Client Nachrichten nicht so schnell verarbeiten kann, wie sie von der veröffentlichenden Stelle produziert werden.) Weitere Informationen finden Sie unter [http://redis.io/topics/clients](http://redis.io/topics/clients).|
 
+<sup>1</sup>`maxclients` unterscheidet sich für jeden Azure Redis Cache-Tarif.
+
+-	Cache C0 (250 MB) – bis zu 256 Verbindungen
+-	Cache C1 (1 GB) – bis zu 1.000 Verbindungen
+-	Cache C2 (2,5 GB) – bis zu 2.000 Verbindungen
+-	Cache C3 (6 GB) – bis zu 5.000 Verbindungen
+-	Cache C4 (13 GB) – bis zu 10.000 Verbindungen
+-	Cache C5 (26 GB) – bis zu 15.000 Verbindungen
+-	Cache C6 (53 GB) – bis zu 20.000 Verbindungen
+
 ## Redis-Befehle, die in Azure Redis Cache nicht unterstützt werden.
 
->[AZURE.IMPORTANT]Da die Konfiguration und Verwaltung von Azure Redis Cache-Instanzen mit dem Vorschauportal durchgeführt wird, sind die folgenden Befehle deaktiviert. Wenn Sie versuchen, sie aufzurufen, erhalten Sie eine Fehlermeldung der folgenden Art: `"(error) ERR unknown command"`.
+>[AZURE.IMPORTANT]Da die Konfiguration und Verwaltung von Azure Redis Cache-Instanzen mit dem Vorschauportal durchgeführt wird, sind die folgenden Befehle deaktiviert. Wenn Sie versuchen, sie aufzurufen, erhalten Sie etwa folgende Fehlermeldung: `"(error) ERR unknown command"`.
 >
 >-	BGREWRITEAOF
 >-	BGSAVE
@@ -139,7 +155,7 @@ Weitere Informationen zu Redis-Befehlen finden Sie unter [http://redis.io/comman
 
 ## Redis-Konsole
 
-Über die **Redis-Konsole**, die für Caches vom Typ "Standard" zur Verfügung steht, können Sie Befehle sicher auf Ihre Azure Redis Cache-Instanzen anwenden. Um auf die Redis-Konsole zuzugreifen, klicken Sie auf dem Blatt **Redis-Cache** auf **Konsole**.
+Über die **Redis-Konsole**, die für Standardcaches zur Verfügung steht, können Sie Befehle sicher auf Ihre Azure Redis Cache-Instanzen anwenden. Um auf die Redis-Konsole zuzugreifen, klicken Sie auf dem Blatt **Redis-Cache** auf **Konsole**.
 
 ![Redis-Konsole](./media/cache-configure/redis-console-menu.png)
 
@@ -154,4 +170,4 @@ Eine Liste der Redis-Befehle, die für Azure Redis Cache deaktiviert sind, finde
 ## Nächste Schritte
 -	Weitere Informationen zum Verwenden von Redis-Befehlen finden Sie unter [Wie führe ich Redis-Befehle aus?](cache-faq.md#how-can-i-run-redis-commands).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

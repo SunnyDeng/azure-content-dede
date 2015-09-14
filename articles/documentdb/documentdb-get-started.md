@@ -7,16 +7,14 @@
 	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags
 	ms.service="documentdb"
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
-	ms.topic="hero-article" 
-	ms.date="05/19/2015"
+	ms.topic="hero-article"
+	ms.date="09/03/2015"
 	ms.author="anhoh"/>
-
 
 #Erste Schritte mit dem DocumentDB .NET SDK  
 
@@ -35,6 +33,8 @@ In diesem Artikel werden die folgenden Szenarien behandelt:
 - Löschen von Datenbanken
 
 Sie haben keine Zeit, um das Lernprogramm abzuschließen, und möchten nur die Arbeitslösung abrufen? Kein Problem. Die vollständige Lösung ist auf [GitHub](https://github.com/Azure/azure-documentdb-net/tree/master/tutorials/get-started) verfügbar. In [Abrufen der vollständigen Lösung](#GetSolution) finden Sie eine Kurzanleitung.
+
+Sobald Sie das Tutorial abgeschlossen haben, verwenden Sie bitte die Abstimmungsschaltflächen am Anfang oder Ende des Themas, um uns Ihre Meinung mitzuteilen. Dieses Thema wird aktiv aktualisiert, daher benötigen wir Ihr Feedback, um es stetig zu verbessern. Wenn wir mit Ihnen Kontakt aufnehmen sollen, können Sie Ihre E-Mail-Adresse im Kommentar hinterlassen.
 
 ## Voraussetzungen
 
@@ -133,7 +133,7 @@ Eine [Sammlung](documentdb-resources.md#collections) kann mithilfe der [CreateDo
   		    });
 
 ##<a id="CreateDoc"></a>Schritt 6: Erstellen von Dokumenten
-Ein [Dokument](documentdb-resources.md#documents) kann mithilfe der [CreateDocumentAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentasync.aspx)-Methode der **DocumentClient**-Klasse erstellt werden. Dokumente sind benutzerdefinierter (beliebiger) JSON-Inhalt. Die im vorherigen Schritt erstellte Sammlung besitzt eine Reihe von Eigenschaften, darunter die [DocumentsLink](https://msdn.microsoft.com/library/microsoft.azure.documents.documentcollection.documentslink.aspx)-Eigenschaft. Mit dieser Information können wir jetzt eines oder mehrere Dokumente einfügen. Wenn Sie bereits über Daten verfügen, die Sie in der Datenbank speichern möchten, können Sie das DocumentDB-[Datenmigrationstools](documentdb-import-data.md) verwenden.
+Ein [Dokument](documentdb-resources.md#documents) kann mithilfe der [CreateDocumentAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentasync.aspx)-Methode der **DocumentClient**-Klasse erstellt werden. Dokumente sind benutzerdefinierter (beliebiger) JSON-Inhalt. Die im vorherigen Schritt erstellte Sammlung besitzt eine Reihe von Eigenschaften, darunter die [DocumentsLink](https://msdn.microsoft.com/library/microsoft.azure.documents.documentcollection.documentslink.aspx)-Eigenschaft. Mit dieser Information können wir jetzt eines oder mehrere Dokumente einfügen. Wenn Sie bereits über Daten verfügen, die Sie in der Datenbank speichern möchten, können Sie das [Datenmigrationstool](documentdb-import-data.md) von DocumentDB verwenden.
 
 Zunächst müssen wir eine **übergeordnete**, **untergeordnete**, **Pet-**, **Adress-** und **Familien-**Klasse erstellen. Erstellen Sie diese Klassen, indem Sie die folgenden internen Unterklassen hinzufügen.
 
@@ -456,6 +456,8 @@ Die Ausgabe der GetStarted-Anwendung sollte jetzt angezeigt werden. Die Ausgabe 
 
 > [AZURE.NOTE]Wenn Sie die Anwendung mehrmals ausführen, ohne die Datenbank zu entfernen, kommt es möglicherweise zu dem Problem, dass eine neue Datenbank mit einer ID erstellt wird, die bereits in Gebrauch ist. Um dies zu vermeiden, können Sie überprüfen, ob eine Datenbank, eine Sammlung oder ein Dokument mit der gleichen ID bereits vorhanden ist. Um zu sehen, wie dies erreicht werden kann, besuchen Sie unsere [GitHub-Seite](https://github.com/Azure/azure-documentdb-net/tree/master/tutorials/get-started).
 
+Herzlichen Glückwunsch! Sie haben Ihre erste DocumentDB-App erstellt!
+
 ##<a id="GetSolution"></a> Abrufen der vollständigen Lösung
 Um die "GetStarted"-Lösung zu erstellen, die alle Beispiele dieses Artikels enthält, ist Folgendes erforderlich:
 
@@ -465,6 +467,7 @@ Um die "GetStarted"-Lösung zu erstellen, die alle Beispiele dieses Artikels ent
 Um die Verweise auf das DocumentDB .NET SDK in Visual Studio 2013 wiederherzustellen, klicken Sie mit der rechten Maustaste im Projektmappen-Explorer auf die **GetStarted**-Lösung, und klicken Sie dann auf die Option **Aktivieren der NuGet-Paketwiederherstellung**. Aktualisieren Sie dann in der Datei "App.config" die Werte "EndpointUrl" und "AuthorizationKey" wie unter [Herstellen einer Verbindung mit einem DocumentDB-Konto](#Connect) beschrieben.
 
 ## Nächste Schritte
+
 -   Wollen Sie ein komplexeres ASP.NET MVC-Beispiel? Siehe: [Erstellen einer Webanwendung mit ASP.NET MVC unter Verwendung von DocumentDB](documentdb-dotnet-application.md).
 -	Sie erfahren, wie Sie ein [DocumentDB-Konto überwachen](documentdb-monitor-accounts.md).
 -	Fragen Sie unser Beispieldataset im [Query Playground](https://www.documentdb.com/sql/demo) ab.
@@ -477,4 +480,4 @@ Um die Verweise auf das DocumentDB .NET SDK in Visual Studio 2013 wiederherzust
 [keys]: media/documentdb-get-started/keys.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

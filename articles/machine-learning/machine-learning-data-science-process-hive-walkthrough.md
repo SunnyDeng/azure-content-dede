@@ -1,23 +1,20 @@
 <properties 
-	pageTitle="Advanced Analytics Process and Technology (ADAPT) in Aktion: Verwenden von Hadoop-Clustern | Microsoft Azure" 
-	description="Verwenden von ADAPT (Advanced Analytics Process and Technology) für ein End-to-End-Szenario mit einem HDInsight Hadoop-Cluster zum Entwickeln und Bereitstellen eines Modells unter Verwendung eines öffentlich zugänglichen Datasets."  
-	services="machine-learning,hdinsight" 
-	solutions="" 
-	documentationCenter="" 
-	authors="bradsev" 
-	manager="paulettm" 
-	editor="cgronlun" />
-
+	pageTitle="Advanced Analytics Process and Technology (ADAPT) in Aktion: Verwenden von Hadoop-Clustern | Microsoft Azure"
+	description="Verwenden von ADAPT (Advanced Analytics Process and Technology) für ein End-to-End-Szenario mit einem HDInsight Hadoop-Cluster zum Entwickeln und Bereitstellen eines Modells unter Verwendung eines öffentlich zugänglichen Datasets."
+	services="machine-learning,hdinsight"
+	documentationCenter=""
+	authors="bradsev"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/29/2015" 
-	ms.author="hangzh;bradsev" />
-
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="hangzh;bradsev"/>
 
                 
 # Advanced Analytics Process and Technology (ADAPT) in Aktion – Verwenden von HDInsight-Hadoop-Clustern
@@ -31,7 +28,7 @@ Es ist auch möglich, die in der exemplarischen Vorgehensweise mit 1-TB-Dataset 
 
 ## <a name="dataset"></a>Beschreibung des NYC Taxi Trips-Datasets
 
-Die NYC Taxi Trips-Daten umfassen ca. 20 GB komprimierter CSV-Dateien (\~48 GB unkomprimiert) mit mehr als 173 Millionen einzelnen Fahrten mit den zugehörigen Preisen. Jeder Fahrtendatensatz enthält den Start- und Zielort mit der Uhrzeit, die anonymisierte Lizenznummer des Fahrers (Hack) und die eindeutige ID des Taxis (Medallion). Die Daten umfassen alle Fahrten im Jahr 2013. Sie werden für jeden Monat in den folgenden beiden Datasets bereitgestellt:
+Die NYC Taxi Trips-Daten umfassen ca. 20 GB komprimierter CSV-Dateien (~48 GB unkomprimiert) mit mehr als 173 Millionen einzelnen Fahrten mit den zugehörigen Preisen. Jeder Fahrtendatensatz enthält den Start- und Zielort mit der Uhrzeit, die anonymisierte Lizenznummer des Fahrers (Hack) und die eindeutige ID des Taxis (Medallion). Die Daten umfassen alle Fahrten im Jahr 2013. Sie werden für jeden Monat in den folgenden beiden Datasets bereitgestellt:
 
 1. Die CSV-Dateien "trip\_data" enthalten Fahrtendetails, z. B. die Anzahl der Fahrgäste, Start- und Zielort, Fahrtdauer und Fahrtlänge. Es folgen einige Beispieleinträge:
 
@@ -724,7 +721,7 @@ Nachfolgend sehen Sie einen Screenshot von Hive-Abfrage und [Reader][reader]-Mod
 
 ![](http://i.imgur.com/1eTYf52.png)
 
-Beachten Sie Folgendes: Da die komprimierten Daten im Standardcontainer vorliegen, ist die Hive-Abfrage aus Azure Machine Learning sehr einfach und besteht lediglich aus einem "SELECT \* FROM nyctaxidb.nyctaxi\_downsampled\_data".
+Beachten Sie Folgendes: Da die komprimierten Daten im Standardcontainer vorliegen, ist die Hive-Abfrage aus Azure Machine Learning sehr einfach und besteht lediglich aus einem "SELECT * FROM nyctaxidb.nyctaxi\_downsampled\_data".
 
 Das Dataset kann jetzt als Startpunkt für die Entwicklung von Machine Learning-Modellen verwendet werden.
 
@@ -812,4 +809,4 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts werden von Micro
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

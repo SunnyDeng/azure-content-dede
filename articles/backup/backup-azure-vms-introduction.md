@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.date="09/01/2015"
 	ms.author="aashishr"/>
 
 # Sichern von virtuellen Azure-Computern – Einführung
@@ -92,48 +92,41 @@ In der folgenden Abbildung sind die Beziehungen zwischen den verschiedenen Azure
 
 4. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Beachten Sie, dass die Region des Tresors mit der Region der zu schützenden virtuellen Computer übereinstimmen muss. Wenn Sie über virtuelle Computer in verschiedenen Regionen verfügen, müssen Sie einen Tresor in jeder dieser Regionen erstellen. Es müssen keine Speicherkonten zum Speichern der Sicherungsdaten angegeben werden. Dies erfolgt automatisch über den Sicherungstresor und den Azure Backup-Dienst. ![Erstellen des Sicherungstresors](./media/backup-azure-vms-introduction/backup_vaultcreate.png)
 
-    >[AZURE.NOTE]Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird nur in bestimmten Regionen unterstützt. Überprüfen Sie die Liste der [unterstützten Regionen](http://azure.microsoft.com/regions/#services). Wenn die gewünschte Region derzeit nicht unterstützt wird, wird sie bei der Erstellung des Tresors in der Dropdownliste nicht angezeigt.
-
 5. Klicken Sie auf **Tresor erstellen**. Es kann eine Weile dauern, bis der Sicherungstresor fertiggestellt wird. Unten im Portal können Sie anhand der Benachrichtigungen den Status prüfen. ![Popupbenachrichtigung zur Erstellung des Tresors](./media/backup-azure-vms-introduction/creating-vault.png)
 
-6. In einer Meldung wird bestätigt, dass der Tresor erfolgreich erstellt wurde. Er wird dann auf der Seite "Recovery Services" als aktiv aufgeführt. ![Liste der Sicherungstresore](./media/backup-azure-vms-introduction/backup_vaultslist.png)
+6. In einer Meldung wird bestätigt, dass der Tresor erfolgreich erstellt wurde. Er wird dann auf der Seite "Recovery Services" als aktiv aufgeführt. Vergewissern Sie sich nach der Erstellung des Tresors, dass die entsprechende Speicherredundanzoption ausgewählt ist. Weitere Informationen finden Sie unter [Festlegen der Speicherredundanzoption im Sicherungstresor](../backup-azure-backup-create-vault.md#storage-redundancy-options). ![Liste der Sicherungstresore](./media/backup-azure-vms-introduction/backup_vaultslist.png)
 
 7. Durch Klicken auf den Sicherungstresor wird die Seite **Schnellstart** geöffnet, auf der die Anweisungen für die Sicherung von virtuellen Azure-Computern angezeigt werden. ![Anweisungen zur Sicherung von virtuellen Computern auf der Dashboard-Seite](./media/backup-azure-vms-introduction/vmbackup-instructions.png)
 
-    >[AZURE.NOTE]Vergewissern Sie sich nach der Erstellung des Tresors, dass die entsprechende Speicherredundanzoption ausgewählt ist. Weitere Informationen finden Sie unter [Festlegen der Speicherredundanzoption im Sicherungstresor][Speicherredundanz für Tresor].
 
 ### 2\. VM-Agent
 Bevor Sie einen virtuellen Azure-Computer sichern können, müssen Sie zunächst sicherstellen, dass der Azure VM-Agent auf dem virtuellen Computer ordnungsgemäß installiert ist. Um den virtuellen Computer zu sichern, wird mit dem Azure Backup-Dienst eine Erweiterung für den VM-Agent installiert. Da es sich beim VM-Agent beim Erstellen des virtuellen Computers um eine optional zu installierende Komponente handelt, müssen Sie sicherstellen, dass das Kontrollkästchen für den VM-Agent aktiviert ist, bevor der virtuelle Computer bereitgestellt wird.
 
 Erfahren Sie mehr über den [VM-Agent](https://go.microsoft.com/fwLink/?LinkID=390493&clcid=0x409) und [seine Installation](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/) (in englischer Sprache).
 
->[AZURE.NOTE]Wenn Sie den virtuellen Computer aus Ihrem lokalen Rechenzentrum in Azure migrieren möchten, stellen Sie sicher, dass Sie die MSI-Datei für den VM-Agent herunterladen und vor dem Starten des Migrationsprozesses installieren. Dies gilt auch für virtuelle Computer, die mit Azure Site Recovery in Azure gesichert werden.
+## Einschränkungen
 
-## Einschränkungen während der Vorschau
-
+- Die Sicherung virtueller IaaS-Computer (V2) wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mit mehr als 16 Datenträgern wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mithilfe von Storage-Premium wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mit mehreren NICs oder in einer Konfiguration mit Lastenausgleich wird nicht unterstützt.
 - Das Ersetzen eines vorhandenen virtuellen Computers während der Wiederherstellung wird nicht unterstützt. Löschen Sie zuerst den vorhandenen virtuellen Computer und alle zugeordneten Datenträger, und stellen Sie dann die Daten aus der Sicherung wieder her.
-- Die Sicherung von virtuellen Computern, die mithilfe von Azure Site Recovery wiederhergestellt wurden, wird nicht unterstützt.
 - Regionsübergreifende Sicherungs- und Wiederherstellungsvorgänge werden nicht unterstützt.
 - Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird nur in bestimmten Regionen unterstützt. Überprüfen Sie die Liste der [unterstützten Regionen](http://azure.microsoft.com/regions/#services). Wenn die gewünschte Region derzeit nicht unterstützt wird, wird sie bei der Erstellung des Tresors in der Dropdownliste nicht angezeigt.
 - Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird nur für bestimmte Betriebssystemversionen unterstützt:
   - **Linux**: Die Liste der von Azure unterstützten Verteilungen finden Sie [hier](../virtual-machines-linux-endorsed-distributions.md). Andere Bring-Your-Own-Linux-Verteilungen sollten ebenfalls funktionieren, sofern der VM-Agent auf dem virtuellen Computer verfügbar ist.
   - **Windows Server**: Versionen, die älter als Windows Server 2008 R2 sind, werden nicht unterstützt.
+- Das Wiederherstellen einer Domänencontroller-VM, die Teil einer Konfiguration mit mehreren Domänencontrollern ist, wird nur über PowerShell unterstützt. Informationen hierzu finden Sie unter [Wiederherstellen eines Multi-DC-Domänencontrollers](backup-azure-restore-vms.md#multiple-dcs).
 
 Wenn Sie Anregungen zu gewünschten Funktionen haben, [senden Sie uns Ihr Feedback](http://aka.ms/azurebackup_feedback).
 
 ## Nächste Schritte
 Informationen für Ihre ersten Schritte mit der Sicherung von virtuellen Computern:
 
-- [Ermitteln, Registrieren und Sichern virtueller Computer](backup-azure-vms.md)
+- [Sichern virtueller Computer](backup-azure-vms.md)
 
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 
-+ Überwachen der Sicherungsaufträge
+- [Verwalten der Sicherung virtueller Computer](backup-azure-manage-vms.md)
 
-
- 
-
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

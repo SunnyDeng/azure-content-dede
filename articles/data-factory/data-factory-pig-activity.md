@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Pig-Aktivität" 
-	description="Erfahren Sie, wie Sie die Pig-Aktivität in Azure Data Factory verwenden können, um Pig-Abfragen in einem bedarfsgesteuerten/eigenen HDInsight-Cluster auszuführen." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Pig-Aktivität"
+	description="Erfahren Sie, wie Sie die Pig-Aktivität in Azure Data Factory verwenden können, um Pig-Abfragen in einem bedarfsgesteuerten/eigenen HDInsight-Cluster auszuführen."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/26/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/26/2015"
 	ms.author="spelluru"/>
-
 
 # Pig-Aktivität
 
@@ -100,7 +98,7 @@ Um dieses Hive-Skript in einer Data Factory-Pipeline auszuführen, müssen Sie f
 1. Erstellen Sie einen verknüpften Dienst, um [Ihren eigenen HDInsight-Compute-Cluster](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) zu registrieren oder einen [bedarfsgesteuerten HDInsight-Compute-Cluster](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) zu konfigurieren. Wir nennen diesen verknüpften Dienst "HDInsightLinkedService".
 2.	Erstellen Sie einen [verknüpften Dienst](data-factory-azure-storage-connector.md), um die Verbindung mit dem Azure-Blobspeicher zu konfigurieren, in dem die Daten gehostet werden. Wir nennen diesen verknüpften Dienst "StorageLinkedService".
 3.	Erstellen Sie [Datasets](data-factory-create-datasets.md), die auf die Eingabe- und die Ausgabedaten verweisen. Wir nennen das Eingabe-Dataset "PigSampleIn" und das Ausgabe-Dataset "PigSampleOut".
-4.	Kopieren Sie die Pig-Abfrage als Datei in den Azure-Blobspeicher, den Sie im obigen Schritt 2 konfiguriert haben. Wenn sich der verknüpfte Dienst zum Hosten der Daten vom Dienst zum Hosten dieser Abfragedatei unterscheidet, erstellen Sie einen separaten verknüpften Azure Storage-Dienst, und verweisen Sie in der Aktivitätskonfiguration darauf. Geben Sie mit \*\*skriptPath\*\* den Pfad der Pig-Abfragedatei und mit **scriptLinkedService** den Azure-Speicher mit der Skriptdatei an.
+4.	Kopieren Sie die Pig-Abfrage als Datei in den Azure-Blobspeicher, den Sie im obigen Schritt 2 konfiguriert haben. Wenn sich der verknüpfte Dienst zum Hosten der Daten vom Dienst zum Hosten dieser Abfragedatei unterscheidet, erstellen Sie einen separaten verknüpften Azure Storage-Dienst, und verweisen Sie in der Aktivitätskonfiguration darauf. Geben Sie mit **skriptPath** den Pfad der Pig-Abfragedatei und mit **scriptLinkedService** den Azure-Speicher mit der Skriptdatei an.
 	
 	> [AZURE.NOTE]Sie können das Pig-Skript auch inline in der Aktivitätsdefinition mit der **script**-Eigenschaft bereitstellen, aber dies wird nicht empfohlen, da alle Sonderzeichen im Skript innerhalb des JSON-Dokuments mit Escapezeichen versehen werden müssen, was möglicherweise zu Problemen beim Debuggen führen kann. Die bewährte Methode ist, Schritt 4 auszuführen.
 5. Erstellen Sie die unten aufgeführte Pipeline mit der HDInsightHive-Aktivität, um die Daten zu verarbeiten.
@@ -136,7 +134,7 @@ Um dieses Hive-Skript in einer Data Factory-Pipeline auszuführen, müssen Sie f
 		  }
 		} 
 6. Stellen Sie die Pipeline bereit. Weitere Informationen finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md). 
-7. Überwachen Sie die Pipeline mit den Überwachungs- und Verwaltungsansichten von Data Factory. Weitere Informationen finden Sie im Artikel [Überwachen und Verwalten von Data Factory-Pipelines](data-factory-monitor-manage-pipelines.md).
+7. Überwachen Sie die Pipeline mithilfe der Überwachungs- und Verwaltungsansichten von Data Factory. Weitere Informationen finden Sie im Artikel [Überwachen und Verwalten von Data Factory-Pipelines](data-factory-monitor-manage-pipelines.md).
 
 ## Angeben von Parametern für ein Pig-Skript mit dem defines-Element
 
@@ -168,8 +166,8 @@ Gehen Sie folgendermaßen vor, um das Pig-Skript zu parametrisieren
 		          		"scriptPath": "adfwalkthrough\\scripts\\samplepig.hql",
 		          		"scriptLinkedService": "StorageLinkedService",
 		          		"defines": {
-		            		"Input": "$Text.Format('wasb: //adfwalkthrough@<storageaccountname>.blob.core.windows.net/samplein/yearno={0: yyyy}/monthno={0: %M}/dayno={0: %d}/',SliceStart)",
-				            "Output": "Text.Format('wasb://adfwalkthrough@<storageaccountname>.blob.core.windows.net/sampleout/yearno={0:yyyy}/monthno={0:%M}/dayno={0:%d}/', SliceStart)"
+		            		"Input": "$$Text.Format('wasb: //adfwalkthrough@<storageaccountname>.blob.core.windows.net/samplein/yearno={0: yyyy}/monthno={0: %M}/dayno={0: %d}/',SliceStart)",
+				            "Output": "$$Text.Format('wasb://adfwalkthrough@<storageaccountname>.blob.core.windows.net/sampleout/yearno={0:yyyy}/monthno={0:%M}/dayno={0:%d}/', SliceStart)"
 		          		}
 		        	},
        				"scheduler": {
@@ -190,5 +188,7 @@ Gehen Sie folgendermaßen vor, um das Pig-Skript zu parametrisieren
 
 
  
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-pig-activity.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

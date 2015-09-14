@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe einer Web-API | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie eine Pushbenachrichtigungsregistrierung in einer iOS-App mit Azure Notification Hubs anfordern, wenn die Registrierung von der ASP.NET-Web-API durchgeführt wird." 
-	services="notification-hubs" 
-	documentationCenter="ios" 
-	authors="wesmc7777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mithilfe einer Web-API | Microsoft Azure"
+	description="Erfahren Sie, wie Sie eine Pushbenachrichtigungsregistrierung in einer iOS-App mit Azure Notification Hubs anfordern, wenn die Registrierung von der ASP.NET-Web-API durchgeführt wird."
+	services="notification-hubs"
+	documentationCenter="ios"
+	authors="wesmc7777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="ios" 
-	ms.devlang="objective-c" 
-	ms.topic="article" 
-	ms.date="06/02/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="ios"
+	ms.devlang="objective-c"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="wesmc"/>
 # Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mit ASP.NET
 
@@ -43,7 +43,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 
    	![][0]
 
-2. Erstellen Sie im Assistant Editor Outlets für alle Switches, benennen Sie die Outlets, verbinden Sie die Textfelder mit dem View Controller \(delegate\) und erstellen Sie eine **Action** für die **login**-Schaltfläche.
+2. Erstellen Sie im Assistant Editor Outlets für alle Switches, benennen Sie die Outlets, verbinden Sie die Textfelder mit dem View Controller (delegate) und erstellen Sie eine **Action** für die **login**-Schaltfläche.
 
    	![][1]
 
@@ -193,7 +193,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 			DeviceInfo* deviceInfo = [(PushToUserAppDelegate*)[[UIApplication sharedApplication]delegate] deviceInfo];
 
 		    // build JSON
-		    NSString* json = [NSString stringWithFormat:@"{\"platform\":\"ios\", \"instId\":\"%@\", \"deviceToken\":\"%@\"}", deviceInfo.installationId, [deviceInfo getDeviceTokenInHex]];
+		    NSString* json = [NSString stringWithFormat:@"{"platform":"ios", "instId":"%@", "deviceToken":"%@"}", deviceInfo.installationId, [deviceInfo getDeviceTokenInHex]];
 
 		    // build auth string
 		    NSString* authString = [NSString stringWithFormat:@"%@:%@", self.User.text, self.Password.text];
@@ -236,6 +236,5 @@ Nun haben Sie die Client-App aktualisiert und können zum Thema [Benachrichtigen
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Erste Schritte mit Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

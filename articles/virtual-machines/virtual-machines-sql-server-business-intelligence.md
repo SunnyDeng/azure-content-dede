@@ -98,7 +98,7 @@ In der folgenden Tabelle sind die Business Intelligence-Features zusammengefasst
 	
 	- Das Laufwerk **D:** ist ein temporäres Laufwerk, das hauptsächlich für die Auslagerungsdatei verwendet wird. Das Laufwerk **D:** wird nicht beibehalten und nicht im Blob-Speicher gespeichert. Bei Verwaltungsaufgaben, z. B. einer Änderung der Größe des virtuellen Computers, wird das Laufwerk **D:** zurückgesetzt. Es wird empfohlen, das Laufwerk **D:** **NICHT** für Datenbankdateien zu verwenden, einschließlich „tempdb“.
 
-	Weitere Informationen zum Erstellen und Anfügen von Datenträgern finden Sie unter [Anfügen eines Datenträgers an einen virtuellen Computer](http://www.windowsazure.com/manage/windows/how-to-guides/attach-a-disk/).
+	Weitere Informationen zum Erstellen und Anfügen von Datenträgern finden Sie unter [Anfügen eines Datenträgers an einen virtuellen Computer](storage-windows-attach-disk.md).
 
 - Beenden oder deinstallieren Sie Dienste, die Sie nicht verwenden möchten. Beenden oder deinstallieren Sie beispielsweise Analysis Services und SQL Server Integration Services, falls der virtuelle Computer nur für Reporting Services verwendet wird. Die folgende Abbildung enthält ein Beispiel für die Dienste, die standardmäßig gestartet werden.
 
@@ -320,7 +320,7 @@ Die Schritte in diesem Abschnitt sind eine **Zusammenfassung** der Installation 
 
 - [Installieren von Analysis Services im Tabellenmodus](https://msdn.microsoft.com/library/hh231722.aspx)
 
-- [Tabellenmodellierung (Adventure Works-Lernprogramm)](https://technet.microsoft.com/library/140d0b43-9455-4907-9827-16564a904268)
+- [Tabellenmodellierung (Adventure Works-Tutorial)](https://technet.microsoft.com/library/140d0b43-9455-4907-9827-16564a904268)
 
 **So installieren Sie Analysis Services im tabellarischen Modus**
 
@@ -415,7 +415,7 @@ Im folgenden Diagramm sind die Ports dargestellt, die in der Firewall des virtue
 
 - [Bestimmen des Servermodus einer Analysis Services-Instanz](https://msdn.microsoft.com/library/gg471594.aspx)
 
-- [Mehrdimensionale Modellierung (Adventure Works-Lernprogramm)](https://technet.microsoft.com/library/ms170208.aspx)
+- [Mehrdimensionale Modellierung (Adventure Works-Tutorial)](https://technet.microsoft.com/library/ms170208.aspx)
 
 - [Azure-Dokumentationscenter](http://azure.microsoft.com/documentation/)
 
@@ -427,4 +427,4 @@ Im folgenden Diagramm sind die Ports dargestellt, die in der Firewall des virtue
 
 - [Verwalten von Azure SQL-Datenbank mit PowerShell](http://blogs.msdn.com/b/windowsazure/archive/2013/02/07/windows-azure-sql-database-management-with-powershell.aspx)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

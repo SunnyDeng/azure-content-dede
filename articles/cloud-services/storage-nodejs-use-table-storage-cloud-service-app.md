@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Webanwendung mit Tabellenspeicher (Node.js) | Microsoft Azure" 
-	description="Ein Lernprogramm, das auf der Web-App mit dem Express-Lernprogramm basiert, und Azure-Speicherdienste sowie das Azure-Modul hinzufügt." 
-	services="cloud-services, storage" 
-	documentationCenter="nodejs" 
-	authors="MikeWasson" 
-	manager="wpickett" 
+	pageTitle="Webanwendung mit Tabellenspeicher (Node.js) | Microsoft Azure"
+	description="Ein Tutorial, das auf der Web-App mit dem Express-Tutorial basiert, und Azure-Speicherdienste sowie das Azure-Modul hinzufügt."
+	services="cloud-services, storage"
+	documentationCenter="nodejs"
+	authors="TomArcher"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="02/25/2015" 
-	ms.author="mwasson"/>
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="tarcher"/>
 
 
 
@@ -25,11 +25,11 @@
 
 ## Übersicht
 
-In diesem Lernprogramm erweitern Sie die Anwendung aus dem Lernprogramm [Node.js-Webanwendung mit Express], indem Sie die Azure-Clientbibliotheken für Node.js für die Arbeit mit Datenverwaltungsdiensten verwenden. Sie werden Ihre Anwendung erweitern und eine webbasierte Anwendung mit Aufgabenlisten erstellen, die Sie in Azure bereitstellen können. Mit Aufgabenlisten können Benutzer Aufgaben abrufen, neue Aufgaben erstellen und Aufgaben als abgeschlossen markieren.
+In diesem Tutorial erweitern Sie die Anwendung aus dem Tutorial [Node.js-Webanwendung mit Express], indem Sie die Microsoft Azure-Clientbibliotheken für Node.js für die Arbeit mit Datenverwaltungsdiensten verwenden. Sie werden Ihre Anwendung erweitern und eine webbasierte Anwendung mit Aufgabenlisten erstellen, die Sie in Azure bereitstellen können. Mit Aufgabenlisten können Benutzer Aufgaben abrufen, neue Aufgaben erstellen und Aufgaben als abgeschlossen markieren.
 
 Die Aufgaben werden im Azure-Speicher gespeichert. Der Azure-Speicher bietet einen unstrukturierten Datenspeicher, der gleichzeitig fehlertolerant und hochverfügbar ist. Der Azure-Speicher enthält verschiedene Datenstrukturen für die Speicherung und den Zugriff von Daten, und Sie können die Speicherdienste aus den APIs im Azure SDK für Node.js oder aus den REST-APIs nutzen. Weitere Informationen finden Sie unter [Speichern und Zugreifen auf Daten in Azure].
 
-Dieses Lernprogramm setzt voraus, dass Sie die Lernprogramme [Node.js-Webanwendung] und [Node.js mit Express][Node.js Web Application using Express] abgeschlossen haben.
+Dieses Tutorial setzt voraus, dass Sie die Tutorials [Node.js-Webanwendung] und [Node.js mit Express][Node.js Web Application using Express] abgeschlossen haben.
 
 Sie erhalten Informationen zu folgenden Themen:
 
@@ -58,7 +58,7 @@ Führen Sie die folgenden Schritte aus, um die Anmeldeinformationen des Speicher
 
 	Dieser Befehl ruft eine Liste der Speicherkonten und Kontoschlüssel Ihres gehosteten Dienstes ab.
 
-	> [AZURE.NOTE]Da das Azure SDK beim Bereitstellen eines Dienstes ein Speicherkonto erstellt, sollten Sie bereits von den Bereitstellungen Ihrer Anwendung aus den vorherigen Lernprogrammen ein Speicherkonto besitzen.
+	> [AZURE.NOTE]Da das Azure SDK beim Bereitstellen eines Dienstes ein Speicherkonto erstellt, sollten Sie bereits von den Bereitstellungen Ihrer Anwendung aus den vorherigen Tutorials ein Speicherkonto besitzen.
 
 4.  Öffnen Sie die Datei **ServiceDefinition.csdef** mit den Umgebungseinstellungen, die bei der Bereitstellung der Anwendung in Azure verwendet werden:
 
@@ -408,4 +408,4 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
  
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

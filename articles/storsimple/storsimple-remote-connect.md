@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Herstellen einer Remoteverbindung mit dem StorSimple-Gerät | Microsoft Azure"
-   description="Erläutert, wie Windows PowerShell-Remoting und HTTP oder HTTPS verwendet werden, um eine Remoteverbindung mit dem StorSimple-Gerät herzustellen."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+	description="Erläutert, wie das Gerät für die Remoteverwaltung konfiguriert und über HTTP oder HTTPS eine Verbindung mit Windows PowerShell für StorSimple hergestellt wird."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/14/2015"
-   ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/28/2015"
+	ms.author="alkohli"/>
 
 # Herstellen einer Remoteverbindung mit dem StorSimple-Gerät
 
@@ -81,7 +81,7 @@ Führen Sie die folgenden Schritte auf der seriellen Gerätekonsole aus, um die 
 
 5. Überprüfen Sie, ob im Feld **RemoteManagementMode** der Wert **HttpsAndHttpEnabled** angezeigt wird. Die folgende Abbildung veranschaulicht diese Einstellungen in PuTTY.
 
-     ![Https und Http in der seriellen Konsole aktiviert](./media/storsimple-remote-connect/HCS_SerialHttpsAndHttpEnabled.png)
+     ![HTTPS und HTTP (seriell) aktiviert](./media/storsimple-remote-connect/HCS_SerialHttpsAndHttpEnabled.png)
 
 ### Vorbereiten des Clients für eine Remoteverbindung
 
@@ -116,7 +116,7 @@ Führen Sie die folgenden Schritte auf dem Client aus, um die Remoteverwaltung z
 
      Jetzt sollten Sie über eine aktive Windows PowerShell-Remotesitzung auf dem Gerät verfügen.
 
-    ![PS-Remoting mithilfe von HTTP](./media/storsimple-remote-connect/HCS_PSRemotingUsingHTTP.png)
+    ![PowerShell-Remoting über HTTP](./media/storsimple-remote-connect/HCS_PSRemotingUsingHTTP.png)
 
 ## Verbinden über HTTPS
 
@@ -172,7 +172,7 @@ Führen Sie die folgenden Schritte auf der seriellen Gerätekonsole aus, um die 
 
     Stellen Sie sicher, dass im Feld **RemoteManagementMode** der Wert **HttpsEnabled** angezeigt wird. Die folgende Abbildung veranschaulicht diese Einstellungen in PuTTY.
 
-     ![Https in der seriellen Konsole aktiviert](./media/storsimple-remote-connect/HCS_SerialHttpsEnabled.png)
+     ![HTTPS (seriell) aktiviert](./media/storsimple-remote-connect/HCS_SerialHttpsEnabled.png)
 
 4. Kopieren Sie aus der Ausgabe von `Get-HcsSystem` die Seriennummer des Geräts, und speichern Sie sie zur späteren Verwendung.
 
@@ -264,10 +264,10 @@ Führen Sie die folgenden Schritte auf dem Computer aus, über den Sie die Windo
 
 6. Sie müssen einige Minuten warten, und dann wird über HTTPS über SSL eine Verbindung mit Ihrem Gerät hergestellt. Sie sehen eine Meldung, die angibt, dass Sie mit dem Gerät verbunden sind.
 
-    ![PS-Remoting mithilfe von HTTPS und SSL](./media/storsimple-remote-connect/HCS_PSRemotingUsingHTTPSAndSSL.png)
+    ![PowerShell-Remoting über HTTP und SSL](./media/storsimple-remote-connect/HCS_PSRemotingUsingHTTPSAndSSL.png)
 
 ## Nächste Schritte
 
 [Weitere Informationen zur Verwendung von Windows PowerShell zum Verwalten Ihres StorSimple-Geräts](storsimple-windows-powershell-administration.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

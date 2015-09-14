@@ -1,20 +1,20 @@
 <properties
    pageTitle="Integration in Azure Active Directory"
-   description="Eine Übersicht für die Vorteile und Ressourcen für die Integration in Azure Active Directory."
-   services="active-directory"
-   documentationCenter="dev-center-name"
-   authors="msmbaldwin"
-   manager="mbaldwin"
-   editor=""/>
+	description="Eine Übersicht für die Vorteile und Ressourcen für die Integration in Azure Active Directory."
+	services="active-directory"
+	documentationCenter="dev-center-name"
+	authors="msmbaldwin"
+	manager="mbaldwin"
+	editor=""/>
 
 <tags
    ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="07/30/2015"
-   ms.author="mbaldwin"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
+	ms.date="08/25/2015"
+	ms.author="mbaldwin"/>
 
 # Integration in Azure Active Directory
 
@@ -50,7 +50,7 @@ Es gibt mehrere Möglichkeiten, Ihre Anwendung in Azure AD zu integrieren. Nutze
 
 **Werben Sie für Ihre Anwendung bei Millionen von Organisationen, die Azure AD bereits verwenden.** Benutzer, die diese Marketplaces durchsuchen bzw durchstöbern, nutzen bereits einen oder mehrere Clouddienste, sodass sie als potenzielle Kunden von Cloudlösungen in Frage kommen. Erfahren Sie mehr über das Werben für Ihre Anwendung in [Azure Marketplace](http://azure.microsoft.com/marketplace/partner-program/).
 
-**Wenn sich Benutzer für Ihre Anwendung registrieren, wird sie in ihrem Azure AD-Zugriffsbereich und Office 365-App-Startfeld angezeigt.** Benutzer können später schnell und einfach zu Ihrer Anwendung zurückkehren, was die Benutzerbindung verbessert. Erfahren Sie mehr über den [Azure AD-Zugriffsbereich](https://msdn.microsoft.com/library/azure/dn308586.aspx).
+**Wenn sich Benutzer für Ihre Anwendung registrieren, wird sie in ihrem Azure AD-Zugriffsbereich und Office 365-App-Startfeld angezeigt.** Benutzer können später schnell und einfach zu Ihrer Anwendung zurückkehren, was die Benutzerbindung verbessert. Erfahren Sie mehr über den [Azure AD-Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
 ### Sichere Kommunikation von Gerät zu Dienst und von Dienst zu Dienst
 
@@ -78,7 +78,7 @@ Die Integration in Azure AD bietet den Vorteil, dass Sie keinen zusätzlichen Co
 
 **Protokolle gemäß Branchenstandard.** Microsoft ist bestrebt, Branchenstandards zu unterstützen. Azure AD unterstützt die Authentifizierungsprotokolle SAML 2.0, OpenID Connect 1.0, OAuth 2.0 und WS-Federation 1.2. Der Graph-API ist OData-4.0-kompatibel. Wenn die Anwendung bereits das SAML 2.0- oder OpenID Connect 1.0-Protokoll für die Verbundanmeldung unterstützt, kann das Hinzufügen dieser Unterstützung für Azure AD einfach erfolgen. Erfahren Sie mehr über [von Azure AD unterstützte Authentifizierungsprotokolle](../authentication-protocols.md).
 
-**Open-Source-Bibliotheken.** Microsoft bietet zur Beschleunigung der Entwicklung für gängige Sprachen und Plattformen vollständig unterstützte Open-Source-Bibliotheken. Der Quellcode wird unter Apache 2.0 lizenziert, und Sie sind eingeladen, sich an den Projekten zu beteiligen. Erfahren Sie mehr über [Open-Source-Bibliotheken für Azure AD](https://msdn.microsoft.com/library/azure/dn151135.aspx).
+**Open-Source-Bibliotheken.** Microsoft bietet zur Beschleunigung der Entwicklung für gängige Sprachen und Plattformen vollständig unterstützte Open-Source-Bibliotheken. Der Quellcode wird unter Apache 2.0 lizenziert, und Sie sind eingeladen, sich an den Projekten zu beteiligen. Erfahren Sie mehr über [Azure AD-Authentifizierungsbibliotheken](active-directory-authentication-libraries.md).
 
 ### Weltweite Präsenz und hohe Verfügbarkeit
 
@@ -90,4 +90,4 @@ Die Integration in Azure AD bietet den Vorteil, dass Sie keinen zusätzlichen Co
 
 [Anmelden von Benutzern über Azure AD](active-directory-authentication-scenarios.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Übersicht über Azure-Lastenausgleich | Microsoft Azure"
-   description="Übersicht über Funktionen, Architektur und Implementierung des Azure-Lastenausgleichsmoduls. Dieser Artikel dient dem Verständnis der Arbeitsweise und der Nutzung des Lastenausgleichs in der Cloud."
-   services="load-balancer"
-   documentationCenter="na"
-   authors="joaoma"
-   manager="adinah"
-   editor="tysonn" />
+	description="Übersicht über Funktionen, Architektur und Implementierung des Azure-Lastenausgleichsmoduls. Dieser Artikel dient dem Verständnis der Arbeitsweise und der Nutzung des Lastenausgleichs in der Cloud."
+	services="load-balancer"
+	documentationCenter="na"
+	authors="joaoma"
+	manager="adinah"
+	editor="tysonn"/>
 <tags 
    ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/10/2015"
-   ms.author="joaoma" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="07/10/2015"
+	ms.author="joaoma"/>
 
 
 # Übersicht über den Lastenausgleich 
@@ -21,7 +21,7 @@ Der Azure-Lastenausgleich bietet hohe Verfügbarkeit und Netzwerkleistung für I
  
 Es gibt folgende Konfigurationsmöglichkeiten:
 
-- Lastenausgleich des eingehenden Internetdatenverkehrs für virtuelle Computer. Wir bezeichnen dies als [Lastenausgleich für Internetzugriff](load-balancer-overview.md).
+- Lastenausgleich des eingehenden Internetdatenverkehrs für virtuelle Computer. Wir bezeichnen dies als [Lastenausgleich für Internetzugriff](load-balancer-internet-overview.md).
 - Lastenausgleich für Datenverkehr zwischen virtuellen Computern in einem virtuellen Netzwerk, zwischen virtuellen Computern in Clouddiensten oder zwischen lokalen und virtuellen Computern in einem standortübergreifenden virtuellen Netzwerk. Wir bezeichnen dies als [Internen Lastenausgleich (ILB)](load-balancer-internal-overview.md).
 - 	Weiterleiten von externem Datenverkehr an eine bestimmte Instanz eines virtuellen Computers
 
@@ -99,4 +99,4 @@ Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-
 [Erste Schritte – Lastenausgleich für Internetzugriff](load-balancer-internet-getstarted.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

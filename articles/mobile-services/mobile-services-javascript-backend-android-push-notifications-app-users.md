@@ -1,20 +1,20 @@
 
-<properties 
-	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer" 
-	description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte" 
-	services="mobile-services, notification-hubs" 
-	documentationCenter="android" 
-	authors="wesmc7777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer"
+	description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte"
+	services="mobile-services, notification-hubs"
+	documentationCenter="android"
+	authors="wesmc7777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="06/03/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="java"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="wesmc"/>
 
 
@@ -28,7 +28,7 @@ In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen an authentifizierte
 
 Dieses Lernprogramm unterstützt Apps für Android.
 
-##Voraussetzungen 
+##Voraussetzungen
 
 Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die folgenden Mobile Services-Lernprogramme abgeschlossen haben:
 
@@ -46,21 +46,21 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 <pre><code>function insert(item, user, request) {
 
     // Definieren Sie eine Nutzlast für die Google Cloud Messaging-Toastbenachrichtigung.
-    var payload = 
+    var payload =
         '{"data":{"message" : "Hello from Mobile Services! An Item was inserted"}}';
 
     // Rufen Sie die ID des angemeldeten Benutzers ab.
-    var userId = user.userId;		
+    var userId = user.userId;
 
     request.execute({
         success: function() {
-            // Wenn der Einfügevorgang erfolgreich war, senden Sie eine Benachrichtigung an alle Geräte, 
+            // Wenn der Einfügevorgang erfolgreich war, senden Sie eine Benachrichtigung an alle Geräte,
             // die für den angemeldeten Benutzer als Tag registriert sind.
             push.gcm.send(userId, payload, {
                 success: function(pushResponse) {
                     console.log("Sent push with " + userId + " tag:", pushResponse, payload);
 	    			request.respond();
-                    },              
+                    },
                     error: function (pushResponse) {
                             console.log("Error Sending push:", pushResponse);
 	    				request.respond(500, { error: pushResponse });
@@ -96,6 +96,5 @@ In the next tutorial, [Service-side authorization of Mobile Services users](mobi
 
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

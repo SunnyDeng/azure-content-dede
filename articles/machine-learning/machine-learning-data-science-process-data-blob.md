@@ -1,24 +1,27 @@
 <properties 
-	pageTitle="Verarbeiten von Azure-Blobdaten mit erweiterter Analyse | Microsoft Azure" 
-	description="Verarbeiten von Daten im Azure-Blobspeicher" 
-	services="machine-learning,storage" 
-	documentationCenter="" 
-	authors="msolhab" 
-	manager="paulettm" 
-	editor="cgronlun" />
+	pageTitle="Verarbeiten von Azure-Blobdaten mit erweiterter Analyse | Microsoft Azure"
+	description="Verarbeiten von Daten im Azure-Blobspeicher"
+	services="machine-learning,storage"
+	documentationCenter=""
+	authors="msolhab"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/29/2015" 
-	ms.author="sunliangms;fashah;msolhab;garye;bradsev" />
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="sunliangms;fashah;msolhab;garye;bradsev"/>
 
 #<a name="heading"></a>Verarbeiten von Azure-Blobdaten mit erweiterter Analyse
 
-In diesem Dokument werden das Durchsuchen von Daten und Generieren von Funktionen aus Daten in einem Azure-Blobspeicher beschrieben. Zu diesem Zweck müssen Daten aus der Blobquelle in eine lokale Datei heruntergeladen werden, die dann zum Durchsuchen und Bearbeiten in ein Pandas-DataFrame geladen werden kann. Befolgen Sie dazu die folgenden Schritte:
+In diesem Dokument werden das Durchsuchen von Daten und Generieren von Funktionen aus Daten in einem Azure-Blobspeicher beschrieben.
+
+## Laden der Daten in ein Pandas-DataFrame
+Um ein DataSet zu untersuchen und zu bearbeiten, muss es aus der Blobquelle in eine lokale Datei heruntergeladen werden, die anschließend in ein Pandas-DataFrame geladen werden kann. Nachfolgend sehen Sie für dieses Verfahren erforderlichen Schritte:
 
 1. Laden Sie die Daten mithilfe des Blobdiensts und folgenden Python-Beispielcodes aus dem Azure-Blob herunter. Ersetzen Sie die Variablen im Code durch die für Ihre Umgebung geltenden Werte: 
 
@@ -185,4 +188,4 @@ Nachdem Sie die Daten untersucht und die erforderlichen Funktionen erstellt habe
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

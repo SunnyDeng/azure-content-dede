@@ -1,21 +1,20 @@
 <properties
- pageTitle="Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster | Microsoft Azure"
- description="Erfahren Sie mehr über die Bereitstellung eines HPC Pack-Clusters in Azure, die einen Head-Knoten unter Windows Server mit Linux Compute-Knoten enthält."
- services="virtual-machines"
- documentationCenter=""
- authors="dlepow"
- manager="timlt"
- editor=""/>
-
+ pageTitle="Verwenden von virtuellen Linux-Computern in einem HPC Pack-Cluster | Microsoft Azure"
+	description="Erfahren Sie mehr über die Bereitstellung eines HPC Pack-Clusters in Azure, die einen Head-Knoten unter Windows Server mit Linux Compute-Knoten enthält."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="dlepow"
+	manager="timlt"
+	editor=""
+	tags="azure-service-management"/>
 <tags
-ms.service="virtual-machines"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-multiple"
- ms.workload="big-compute"
- ms.date="07/27/2015"
- ms.author="danlep"/>
-
+ ms.service="virtual-machines"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-multiple"
+	ms.workload="big-compute"
+	ms.date="09/01/2015"
+	ms.author="danlep"/>
 
 # Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure
 
@@ -27,7 +26,7 @@ Das folgende Diagramm gibt einen allgemeinen Überblick über den zu erstellende
 
 ## Bereitstellen eines HPC Pack-Clusters mit Linux Compute-Knoten
 
-Verwenden Sie das Bereitstellungsskript Microsoft HPC Pack-IaaS (**New-HpcIaaSCluster.ps1**) zum Automatisieren der Clusterbereitstellung in Azure-Infrastrukturdiensten (IaaS). Dieses Azure PowerShell-Skript verwendet ein HPC Pack-VM-Image in Azure Marketplace für die schnelle Bereitstellung, und bietet eine umfassende Reihe von Konfigurationsparametern, um die Bereitstellung einfach und flexibel zu gestalten. Sie können das Skript zum Bereitstellen von virtuellen Azure-Netzwerken, Speicherkonten, Clouddiensten, Domänencontrollern, optional getrennten SQL Server-Datenbankservern, Cluster-Hauptknoten, Compute-Knoten, Broker-Knoten, Azure-PaaS („Burst“)-Knoten und Linux-Compute-Knoten verwenden (Linux-Unterstützung wurde in [HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/library/mt269417.aspx) eingeführt).
+Verwenden Sie das Bereitstellungsskript Microsoft HPC Pack-IaaS (**New-HpcIaaSCluster.ps1**) zum Automatisieren der Clusterbereitstellung in Azure-Infrastrukturdiensten (IaaS). Dieses Azure PowerShell-Skript verwendet ein HPC Pack-VM-Image in Azure Marketplace für die schnelle Bereitstellung, und bietet eine umfassende Reihe von Konfigurationsparametern, um die Bereitstellung einfach und flexibel zu gestalten. Das Skript stellt das virtuelle Azure-Netzwerk, Speicherkonten, Clouddienste, Domänencontroller, optional getrennte SQL Server-Datenbankserver, Clusterhauptknoten, Computeknoten, Broker-Knoten, Azure-PaaS („Burst“)-Knoten und Linux-Computeknoten bereit (Linux-Unterstützung wurde in [HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/library/mt269417.aspx) eingeführt).
 
 Eine Übersicht über die Optionen für die Bereitstellung von HPC Pack-Clustern finden Sie im [Handbuch mit den ersten Schritten für HPC Pack 2012 R2 und HPC Pack 2012](https://technet.microsoft.com/library/jj884144.aspx).
 
@@ -68,11 +67,9 @@ Das HPC Pack-IaaS-Bereitstellungsskript verwendet als Eingabe eine XML-Konfigur
   <HeadNode>
     <VMName>CentOS7RDMA-HN</VMName>
     <ServiceName>centos7rdma-je</ServiceName>
-<VMSize>A4</VMSize>
-<EnableRESTAPI />
-
-    <EnableWebPortal />
-
+  <VMSize>A4</VMSize>
+  <EnableRESTAPI />
+  <EnableWebPortal />
   </HeadNode>
   <LinuxComputeNodes>
     <VMNamePattern>CentOS7RDMA-LN%1%</VMNamePattern>
@@ -102,7 +99,7 @@ Hier finden Sie kurze Beschreibungen der Elemente in der Konfigurationsdatei.
 
 * **VNet**: Einstellungen des virtuellen Netzwerks und des Subnetzes, in dem der HPC-Cluster erstellt wird. Sie können das virtuelle Netzwerk und das Subnetz selbst erstellen, bevor Sie dieses Skript ausführen, oder das Skript erstellt ein virtuelles Netzwerk mit dem Adressraum 192.168.0.0/20 und das Subnetz mit dem Adressraum 192.168.0.0/23. In diesem Beispiel erstellt das Skript das virtuelle Netzwerk „centos7rdmavnetje“ und das Subnetz „CentOS7RDMACluster“.
 
-* **Domäne**: Einstellungen der Active Directory-Domäne für den HPC Pack-Cluster. Alle Windows-VMs, die vom Skript erstellt wurden, treten der Domäne bei. Das Skript unterstützt derzeit drei Domänenoptionen: ExistingDC, NewDC und HeadNodeAsDC. In diesem Beispiel wird der Head-Knoten als Domänencontroller konfiguriert. Der vollqualifizierte Domänenname ist „hpc.local“.
+* **Domäne**: Einstellungen der Active Directory-Domäne für den HPC Pack-Cluster. Alle Windows-VMs, die vom Skript erstellt wurden, treten der Domäne bei. Das Skript unterstützt derzeit drei Domänenoptionen: ExistingDC, NewDC und HeadNodeAsDC. In diesem Beispiel wird der Hauptknoten als Domänencontroller mit dem vollqualifizierten Domänennamen „hpc.local“ konfiguriert.
 
 * **Datenbank**: Datenbankeinstellungen für den HPC Pack-Cluster. Das Skript unterstützt derzeit drei Datenbankoptionen: ExistingDB, NewRemoteDB und LocalDB. In diesem Beispiel wird eine lokale Datenbank auf dem Head-Knoten erstellt.
 
@@ -120,8 +117,7 @@ Hier finden Sie kurze Beschreibungen der Elemente in der Konfigurationsdatei.
 
     Suchen Sie das benötigte Image, und ersetzen Sie den Wert **ImageName** in der Konfigurationsdatei.
 
-* Linux-Images, die RDMA-Verbindungen für VMs der Größe A8 und A9 unterstützen, sind verfügbar. Wenn Sie ein Image mit installierten und aktivierten Linux RDMA-Treibern angeben, wird das HPC Pack-IaaS-Bereitstellungsskript diese bereitstellen. Sie können beispielsweise den Imagenamen `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708` für den aktuellen SUSE Linux Enterprise Server 12 angeben – optimiert für Hochleistungs-Compute-Images im Marketplace.
-
+* Linux-Images, die RDMA-Verbindungen für VMs der Größe A8 und A9 unterstützen, sind verfügbar. Wenn Sie ein Image mit installierten und aktivierten Linux RDMA-Treibern angeben, wird das HPC Pack-IaaS-Bereitstellungsskript diese bereitstellen. Geben Sie beispielsweise den Imagenamen `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708` für den aktuellen SUSE Linux Enterprise Server 12 angeben – optimiert für Hochleistungs-Compute-Images im Marketplace.
 
 * Zum Aktivieren von Linux-RDMA auf dem virtuellen Linux-Computer, der aus unterstützten Images zur Erstellung von MPI-Aufträgen ausgeführt wird, installieren und konfigurieren Sie eine bestimmte MPI-Bibliothek auf den Linux-Knoten nach Clusterbereitstellung gemäß den Anforderungen Ihrer Anwendung. Weitere Informationen zur Verwendung von RDMA in Linux-Knoten in Azure finden Sie unter [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](virtual-machines-linux-cluster-rdma.md).
 
@@ -135,14 +131,14 @@ Hier finden Sie kurze Beschreibungen der Elemente in der Konfigurationsdatei.
 2. Navigieren Sie zum Skriptordner (in diesem Beispiel „E:\\IaaSClusterScript“).
 
     ```
-cd E:\IaaSClusterScript
-```
+    cd E:\IaaSClusterScript
+    ```
 
 3. Führen Sie den folgenden Befehl aus, um den HPC Pack-Cluster bereitzustellen. In diesem Beispiel wird davon ausgegangen, dass sich die Konfigurationsdatei unter „E:\\HPCDemoConfig.xml“ befindet.
 
     ```
     .\New-HpcIaaSCluster.ps1 –ConfigFile E:\HPCDemoConfig.xml –AdminUserName MyAdminName
-```
+    ```
 
     Das Skript generiert automatisch eine Protokolldatei, da der **-LogFile**-Parameter nicht angegeben ist. Die Protokolle werden nicht in Echtzeit geschrieben, sondern am Ende der Prüfung und der Bereitstellung gesammelt, sodass beim Beenden eines PowerShell-Prozesses bei gleichzeitiger Ausführung des Skripts einige Protokolle verloren gehen.
 
@@ -156,7 +152,7 @@ cd E:\IaaSClusterScript
 
     ![Ressourcen][resources]
 
-    d. Das Skript beginnt dann mit der Bereitstellung des HPC Pack-Clusters und schließt die Konfiguration ohne weitere manuelle Schritte ab. Dies kann einige Minuten dauern.
+    d. Das Skript beginnt mit der Bereitstellung des HPC Pack-Clusters und schließt die Konfiguration ohne weitere manuelle Schritte ab. Dies kann einige Minuten dauern.
 
     ![Bereitstellen][deploy]
 
@@ -205,7 +201,7 @@ PS > clusrun /nodegroup:LinuxNodes mount -t cifs //allvhdsje.file.core.windows.n
 
 Der erste Befehl erstellt einen Ordner namens „/rdma“ auf allen Knoten in der „LinuxNodes“-Gruppe. Der zweite Befehl lädt die Azure-Dateifreigabe „allvhdsjw.file.core.windows.net/rdma“ auf den Ordner „/rdma“ mit Dir- und Datei-Modus-Bits auf 777 gesetzt. Im zweiten Befehl ist „Allvhdsje“ der Name Ihres Speicherkontos und „Storageaccountkey“ ist der Speicherkontoschlüssel.
 
->[AZURE.NOTE]Das „`“-Symbol im zweiten Befehl ist ein Escapesymbol für PowerShell. “`,” bedeutet, das „,“ (Komma) ist ein Teil des Befehls.
+>[AZURE.NOTE]Das Symbol „`“ im zweiten Befehl ist ein Escapesymbol für PowerShell. “`,” bedeutet, dass „,“ (Komma) Teil des Befehls ist.
 
 ### Head-Knoten-Freigabe
 
@@ -222,12 +218,12 @@ Alternativ können Sie einen freigegebenen Ordner des Head-Knotens auf Linux-Kno
 ```
 PS > clusrun /nodegroup:LinuxNodes mkdir -p /openfoam
 
-PS > clusrun /nodegroup:LinuxNodes mount -t cifs //CentOS7RDMA-HN/OpenFOAM /openfoam -o vers=2.1`,username=<username>,password='<password>’,dir_mode=0777`,file_mode=0777
+PS > clusrun /nodegroup:LinuxNodes mount -t cifs //CentOS7RDMA-HN/OpenFOAM /openfoam -o vers=2.1`,username=<username>`,password='<password>'`,dir_mode=0777`,file_mode=0777
 ```
 
-Der erste Befehl erstellt einen Ordner namens „/openfoam“ auf allen Knoten in der „LinuxNodes“-Gruppe. Der zweite Befehl lädt den freigegebenen Ordner „//CentOS7RDMA-HN/OpenFOAM“ in den Ordner, mit Dir- und Datei-Modus-Bits auf 777 festgelegt. Der Benutzername und das Kennwort im Befehl sollten gleich dem Benutzernamen und dem Kennwort eines Benutzers auf dem Head-Knoten sein.
+Der erste Befehl erstellt einen Ordner namens „/openfoam“ auf allen Knoten in der „LinuxNodes“-Gruppe. Der zweite Befehl lädt den freigegebenen Ordner „//CentOS7RDMA-HN/OpenFOAM“ in den Ordner, mit Dir- und Datei-Modus-Bits auf 777 festgelegt. Der Benutzername und das Kennwort im Befehl sollten dem Benutzernamen und dem Kennwort eines Clusterbenutzers auf dem Hauptknoten entsprechen.
 
->[AZURE.NOTE]Das „`“-Symbol im zweiten Befehl ist ein Escapesymbol für PowerShell. “`,” bedeutet, das „,“ (Komma) ist ein Teil des Befehls.
+>[AZURE.NOTE]Das Symbol „`“ im zweiten Befehl ist ein Escapesymbol für PowerShell. “`,” bedeutet, dass „,“ (Komma) Teil des Befehls ist.
 
 
 ### NFS-Server
@@ -275,31 +271,30 @@ Das HPC Pack-Tool **clusrun** kann zum Ausführen von Befehlen auf Linux-Knoten 
 * Anzeigen aktueller Benutzernamen aller Knoten im Cluster
 
     ```
-> clusrun whoami
-```
+    > clusrun whoami
+    ```
 
-* Installieren Sie das **gdb**-Debugger-Tool mit **yum** auf allen Knoten in der Linux-Knotengruppe, und starten Sie sie nach 10 Minuten erneut.
+* Installieren Sie das **gdb**-Debugger-Tool mit **yum** auf allen Knoten in der Linux-Knotengruppe, und starten Sie sie nach 10 Minuten neu.
 
     ```
-> clusrun /nodegroup:linuxnodes yum install gdb –y; shutdown –r 10
-```
+    > clusrun /nodegroup:linuxnodes yum install gdb –y; shutdown –r 10
+    ```
 
-* Erstellen Sie ein Shellskript, das 1 bis 10 pro Sekunde auf Knoten im Cluster anzeigt, führen Sie es aus, und zeigen Sie die Ausgaben von jedem Knoten sofort an.
+* Erstellen Sie ein Shellskript, das jede Zahl von 1 bis 10 für eine Sekunde auf den einzelnen Knoten im Cluster anzeigt. Führen Sie das Skript dann aus, und zeigen Sie direkt die Ausgabe für die Knoten an.
 
     ```
-> clusrun /interleaved echo "for i in {1..10}; do echo \\"\$i\\"; sleep 1; done" ^> script.sh; chmod +x script.sh; ./script.sh```
+    > clusrun /interleaved echo "for i in {1..10}; do echo \\"\$i\\"; sleep 1; done" ^> script.sh; chmod +x script.sh; ./script.sh
+    ```
 
->[AZURE.NOTE]Sie müssen möglicherweise bestimmte Escapezeichen in „Clusrun“-Befehlen verwenden. Geben Sie „^“ in einem Befehlsfenster und „'“ in PowerShell ein, um Sonderzeichen zu transformieren. Beispielsweise müssen in PowerShell die Kommas und Semikolons durch „'“ bzw. „'“ transformiert werden. Diese Zeichen erfordern keine Transformation in einem Befehlsfenster.
-
-
-
+>[AZURE.NOTE]Sie müssen möglicherweise bestimmte Escapezeichen in **clusrun**-Befehlen verwenden. Verwenden Sie wie im folgenden Bespiel „^“ in einem Befehlsfenster als Escapezeichen für „>“.
 
 ## Nächste Schritte
 
-* Verwenden Sie **clusrun** zum Installieren der Linux-Anwendung auf dem Linux-Compute-Knoten und zum Übermitteln eines Auftrags an den HPC Pack-Cluster.
+* Führen Sie eine Linux-Workload auf dem Cluster aus. Ein Beispiel finden Sie unter [Ausführen von NAMD mit dem Microsoft HPC Pack auf Linux-Computeknoten in Azure](virtual-machines-linux-cluster-hpcpack-namd.md).
 
-* Versuchen Sie, den Cluster auf eine größere Anzahl von Knoten zu skalieren, oder stellen Sie Compute-Knoten der Größe [A8 oder A9](virtual-machines-a8-a9-a10-a11-specs.md) zum Ausführen von MPI-Workloads bereit.
+* Versuchen Sie, den Cluster auf eine größere Anzahl von Knoten zu skalieren, oder stellen Sie Computeknoten der Größe [A8 oder A9](virtual-machines-a8-a9-a10-a11-specs.md) zum Ausführen von MPI-Workloads bereit.
 
+* Verwenden Sie eine [Azure-Schnellstartvorlage](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/) mit Azure-Ressourcen-Manager, um Bereitstellungen von HPC Pack mit einer größeren Anzahl von Linux-Computeknoten zu beschleunigen.
 
 <!--Image references-->
 [scenario]: ./media/virtual-machines-linux-cluster-hpcpack/scenario.png
@@ -315,4 +310,4 @@ Das HPC Pack-Tool **clusrun** kann zum Ausführen von Befehlen auf Linux-Knoten 
 [nfsperm]: ./media/virtual-machines-linux-cluster-hpcpack/nfsperm.png
 [nfsmanage]: ./media/virtual-machines-linux-cluster-hpcpack/nfsmanage.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

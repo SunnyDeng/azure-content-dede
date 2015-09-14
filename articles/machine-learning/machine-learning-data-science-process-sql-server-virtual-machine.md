@@ -1,44 +1,40 @@
 <properties 
-	pageTitle="Verarbeiten von Daten aus SQL Azure | Microsoft Azure" 
-	description="Verarbeiten von Daten aus SQL Azure" 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="fashah" 
-	manager="paulettm" 
-	editor="" />
+	pageTitle="Verarbeiten von Daten aus SQL Azure | Microsoft Azure"
+	description="Verarbeiten von Daten aus SQL Azure"
+	services="machine-learning"
+	documentationCenter=""
+	authors="fashah"
+	manager="paulettm"
+	editor=""/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/29/2015" 
-	ms.author="fashah;garye" />
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="fashah;garye"/>
 
 #<a name="heading"></a>Verarbeiten von Daten auf einer SQL Server-VM in Azure
 
-In diesem Dokument werden das Durchsuchen von Daten und das Generieren von Funktionen aus Daten auf einer SQL Server-VM in Azure beschrieben. Dies kann auf folgende Weise erfolgen:
-
-1. [Mit SQL](#sql)
-2. [Mit einer Programmiersprache wie Python](#python) 
+In diesem Dokument werden das Durchsuchen von Daten und das Generieren von Funktionen aus Daten auf einer SQL Server-VM in Azure beschrieben. Dies kann über eine Datenanalyse mithilfe von SQL oder über die Verwendung einer Programmiersprache wie Python erreicht werden.
 
 
-**Hinweis**
->Bei den SQL-Beispielanweisungen in diesem Dokument wird davon ausgegangen, dass die Daten auf einem SQL Server gespeichert sind. Wenn dies nicht der Fall ist, finden Sie im Cloud Data Science-Ablauf Anweisungen zum Verschieben der Daten auf einen SQL-Server.
+> [AZURE.NOTE]Bei den SQL-Beispielanweisungen in diesem Dokument wird davon ausgegangen, dass die Daten auf einem SQL Server gespeichert sind. Wenn dies nicht der Fall ist, finden Sie im Cloud Data Science-Ablauf Anweisungen zum Verschieben der Daten auf einen SQL-Server.
 
-###<a name="SQL"></a>Mit SQL
+##<a name="SQL"></a>Mit SQL
 
 Im folgenden Abschnitt werden Möglichkeiten der Datenanalyse mit SQL beschrieben:
 
 1. [Durchsuchen von Daten](#sql-dataexploration)
 2. [Generieren von Funktionen](#sql-featuregen)
 
-####<a name="sql-dataexploration"></a>Durchsuchen von Daten
+###<a name="sql-dataexploration"></a>Durchsuchen von Daten
 Hier finden Sie einige SQL-Beispielskripts, die zum Durchsuchen von Daten auf einem SQL Server verwendet werden können.
 
-**Hinweis**
-> Für ein praktisches Beispiel können Sie das [NYC Taxi-DataSet](http://www.andresmh.com/nyctaxitrips/) verwenden. Eine vollständige Beschreibung finden Sie im IPython Notebook-Beispiel unter [NYC Data wrangling using IPython Notebook and SQL Server](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-sql-walkthrough.ipynb).
+
+> [AZURE.NOTE]Für ein praktisches Beispiel können Sie das [NYC Taxi-DataSet](http://www.andresmh.com/nyctaxitrips/) verwenden. Eine vollständige Beschreibung finden Sie im IPython Notebook-Beispiel unter [NYC Data wrangling using IPython Notebook and SQL Server](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-sql-walkthrough.ipynb).
 
 1. Abrufen der Anzahl der Vorkommen pro Tag:
 
@@ -57,7 +53,7 @@ Hier finden Sie einige SQL-Beispielskripts, die zum Durchsuchen von Daten auf ei
 	`select <column_name>, count(*) from <tablename> group by <column_name>`
 
 
-####<a name="sql-featuregen"></a>Generieren von Funktionen
+###<a name="sql-featuregen"></a>Generieren von Funktionen
 
 In diesem Abschnitt werden Methoden zum Generieren von Funktionen mithilfe von SQL beschrieben.
 
@@ -65,10 +61,10 @@ In diesem Abschnitt werden Methoden zum Generieren von Funktionen mithilfe von S
 2. [Gruppenbasierte Funktionsgenerierung](#sql-binningfeature)
 3. [Einführen von Funktionen aus einer einzelnen Spalte](#sql-featurerollout)
 
-**Hinweis**
->Wenn Sie zusätzliche Funktionen generieren, können Sie diese als Spalten in der vorhandenen Tabelle hinzufügen oder eine neue Tabelle mit den zusätzlichen Funktionen und einem Primärschlüssel erstellen, die dann mit der ursprünglichen Tabelle zusammengeführt werden kann.
 
-####<a name="sql-countfeature"></a>Anzahlbasierte Funktionsgenerierung
+> [AZURE.NOTE]Wenn Sie zusätzliche Funktionen generieren, können Sie diese als Spalten in der vorhandenen Tabelle hinzufügen oder eine neue Tabelle mit den zusätzlichen Funktionen und einem Primärschlüssel erstellen, die dann mit der ursprünglichen Tabelle zusammengeführt werden kann.
+
+###<a name="sql-countfeature"></a>Anzahlbasierte Funktionsgenerierung
 
 In diesem Abschnitt werden zwei Methoden zur Generierung von Anzahlfunktionen demonstriert. Die erste Methode verwendet eine bedingte Summe und die zweite die "where"-Klausel. Diese können dann mit der ursprünglichen Tabelle (über Primärschlüsselspalten) zusammengeführt werden, um die Anzahlfunktionen zusammen mit den ursprünglichen Daten verwenden zu können.
 
@@ -77,14 +73,14 @@ In diesem Abschnitt werden zwei Methoden zur Generierung von Anzahlfunktionen de
 	select <column_name1>,<column_name2> , sum(1) as Count_Features from <tablename> 
 	where <column_name3> = '<some_value>' group by <column_name1>,<column_name2> 
 
-####<a name="sql-binningfeature"></a>Gruppenbasierte Funktionsgenerierung
+###<a name="sql-binningfeature"></a>Gruppenbasierte Funktionsgenerierung
 
 Das folgende Beispiel zeigt, wie Sie klassifizierte Funktionen erstellen, indem Sie eine numerische Spalte, die stattdessen als Funktion verwendet wird, klassifizieren (mit 5 Klassifizierungen):
 
 	`SELECT <column_name>, NTILE(5) OVER (ORDER BY <column_name>) AS BinNumber from <tablename>`
 
 
-####<a name="sql-featurerollout"></a>Einführen von Funktionen aus einer einzelnen Spalte
+###<a name="sql-featurerollout"></a>Einführen von Funktionen aus einer einzelnen Spalte
 
 In diesem Abschnitt wird gezeigt, wie Sie eine einzelne Spalte in eine Tabelle einführen, um zusätzliche Funktionen zu generieren. Im Beispiel wird davon ausgegangen, dass die Tabelle, aus der Sie Funktionen generieren, die Spalten "latitude" und "longitude" enthält.
 
@@ -117,18 +113,18 @@ Die Positionsinformationen können wie folgt in Funktionen umgewandelt werden, w
 Die oben beschriebenen positionsbasierten Funktionen können dann wie oben beschrieben zum Generieren weiterer Anzahlfunktionen verwendet werden.
 
 
-**TIPP**
+> [AZURE.TIP]Sie können die Datensätze programmgesteuert mithilfe Ihrer bevorzugten Sprache einfügen. Möglicherweise müssen Sie die Daten in Blöcken einfügen, um die Effizienz des Schreibvorgangs zu verbessern. [Ein pyodbc-Beispiel dazu finden Sie hier](https://code.google.com/p/pypyodbc/wiki/A_HelloWorld_sample_to_access_mssql_with_python).
+ 
 
-> 1. Sie können die Datensätze programmgesteuert mithilfe Ihrer bevorzugten Sprache einfügen. Möglicherweise müssen Sie die Daten in Blöcken einfügen, um die Effizienz des Schreibvorgangs zu verbessern. [Ein pyodbc-Beispiel dazu finden Sie hier](https://code.google.com/p/pypyodbc/wiki/A_HelloWorld_sample_to_access_mssql_with_python). 
-> 2. Eine weitere Möglichkeit zum Einfügen von Daten in die Datenbank bietet das [Hilfsprogramm BCP](https://msdn.microsoft.com/library/ms162802.aspx).
+> [AZURE.TIP]Eine weitere Möglichkeit zum Einfügen von Daten in die Datenbank bietet das [Hilfsprogramm BCP](https://msdn.microsoft.com/library/ms162802.aspx).
 
-####<a name="sql-aml"></a>Herstellen einer Verbindung mit Azure Machine Learning
+###<a name="sql-aml"></a>Herstellen einer Verbindung mit Azure Machine Learning
 
 Die neu generierte Funktion kann als Spalte einer vorhandenen Tabelle hinzugefügt oder in einer neuen Tabelle gespeichert und für Machine Learning mit der ursprünglichen Tabelle zusammengeführt werden. Sie können wie unten dargestellt mit dem [Reader][reader]-Modul in Azure ML Funktionen generieren oder, falls sie bereits vorhanden sind, darauf zugreifen:
 
 ![azureml-Reader][1]
 
-###<a name="python"></a>Mit einer Programmiersprache wie Python
+##<a name="python"></a>Mit einer Programmiersprache wie Python
 
 Die Verwendung von Python zum Durchsuchen von Daten und zum Generieren von Funktionen mit Daten in SQL Server ähnelt der Datenverarbeitung in Azure-Blobs mit Python, die [hier](machine-learning-data-science-process-data-blob.md) beschrieben ist. Die Daten müssen aus der Datenbank in ein Pandas-DataFrame geladen werden, um dann weiter verarbeitet werden zu können. In diesem Abschnitt werden das Herstellen einer Verbindung mit der Datenbank und das Laden der Daten in den DataFrame beschrieben.
 
@@ -145,7 +141,7 @@ Die [Pandas-Bibliothek](http://pandas.pydata.org/) in Python bietet eine Vielzah
 
 Sie können nun mit dem Pandas-DataFrame arbeiten. Die Vorgehensweise wird in den Themen unter [Verarbeiten von Azure-Blobdaten in Ihrer Datenwissenschaftsumgebung](machine-learning-data-science-process-data-blob.md) beschrieben.
 
-### Beispiel für Azure Data Science in Aktion
+## Beispiel für Azure Data Science in Aktion
 
 Ein umfassendes Beispiel für den Azure Data Science Process anhand eines öffentlichen Datasets finden Sie unter [Azure Data Science Process in Aktion](machine-learning-data-science-process-sql-walkthrough.md).
 
@@ -156,4 +152,4 @@ Ein umfassendes Beispiel für den Azure Data Science Process anhand eines öffen
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

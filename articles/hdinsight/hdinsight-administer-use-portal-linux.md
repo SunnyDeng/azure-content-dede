@@ -93,7 +93,7 @@ HDInsight-Cluster können wie folgt im Azure-Portal bereitgestellt werden:
 		
 	- __Auswählen__: Hiermit speichern Sie die Datenquellenkonfiguration.
 	
-7. Wählen Sie __Knotenpreistarife__ aus, um Informationen zu den Knoten anzuzeigen, die für diesen Cluster erstellt werden. Die Anzahl von Workerknoten ist standardmäßig auf __4__ festgelegt. Legen Sie diese Einstellung auf __1__ fest. Für dieses Tutorial ist ein Workerknoten ausreichend, und zudem werden so die Kosten für den Cluster reduziert. Sie können die Anzahl von Knoten in einem Cluster auch nach der Bereitstellung ändern.
+7. Wählen Sie __Knotenpreistarife__ aus, um Informationen zu den Knoten anzuzeigen, die für diesen Cluster erstellt werden. Die Anzahl von Workerknoten ist standardmäßig auf __4__ festgelegt.
 
 	Die vorkalkulierten Kosten für den Cluster werden unten auf dem Blatt angezeigt.
 
@@ -104,7 +104,7 @@ HDInsight-Cluster können wie folgt im Azure-Portal bereitgestellt werden:
 8. Wählen Sie __Optionale Konfiguration__ aus. Auf diesem Blatt können Sie die folgenden Elemente konfigurieren:
 
 	* __HDInsight-Version__: Die für den Cluster verwendete HDInsight-Version. Weitere Informationen zu HDInsight finden Sie unter [HDInsight-Komponentenversionen](hdinsight-component-versioning.md).
-	* __Externen Metastores__: Hier können Sie eine SQL-Datenbank auswählen, die zum Speichern der Konfigurationsinformationen für Oozie und Hive verwendet wird. Dadurch können Sie die Konfiguration beim Löschen und Neuerstellen eines Clusters wieder verwenden, anstatt die Hive- und Oozie-Konfiguration jedes Mal neu erstellen zu müssen. **__Azure-Speicherschlüssel__: Hier können Sie dem HDInsight-Server zusätzlichen Speicherkonten zuordnen.
+	* __Externe Metastores__: Hier können Sie eine SQL-Datenbank auswählen, die zum Speichern der Konfigurationsinformationen für Oozie und Hive verwendet wird. Dadurch können Sie die Konfiguration beim Löschen und Neuerstellen eines Clusters wieder verwenden, anstatt die Hive- und Oozie-Konfiguration jedes Mal neu erstellen zu müssen. **__Azure-Speicherschlüssel__: Hier können Sie dem HDInsight-Server zusätzliche Speicherkonten zuordnen.
 
 		> [AZURE.NOTE]HDInsight kann nur auf Azure-Speicherkonten zugreifen, die als Standarddatenspeicher verwendet werden, in diesem Konfigurationsabschnitt hinzugefügt wurden oder öffentlich zugänglich sind.
 
@@ -134,7 +134,7 @@ Im Folgenden werden die Symbole oben auf diesem Blatt und in den Abschnitten __Z
 
 * __Cluster skalieren__: Dient zum Ändern der Anzahl von Workerknoten für den Cluster.
 
-* __Löscht__: Löscht den HDInsight-Cluster.
+* __Löschen__: Löscht den HDInsight-Cluster.
 
 * __Schnellstart (![Cloud- und Blitzsymbol = Schnellstart](./media/hdinsight-administer-use-portal-linux/quickstart.png))__: Zeigt hilfreiche Informationen für die ersten Schritte mit HDInsight an.
 
@@ -154,7 +154,7 @@ Der Abschnitt __Nutzung__ des Blatts für den HDInsight-Cluster enthält Informa
 
 ![Informationen zur Nutzung](./media/hdinsight-administer-use-portal-linux/usage.png)
 
-> [AZURE.IMPORTANT]Um die vom HDInsight-Cluster bereitgestellten Dienste zu überwachen, müssen Sie Ambari Web oder die Ambari-REST-API verwenden. Weitere Informationen zur Verwendung von Ambari finden Sie unter [Verwalten von HDInsight-Clustern mit Ambari](hdinsight-hadoop-manage-ambari.md)
+> [AZURE.IMPORTANT]Um die vom HDInsight-Cluster bereitgestellten Dienste zu überwachen, müssen Sie Ambari Web oder die Ambari-REST-API verwenden. Weitere Informationen zur Verwendung von Ambari finden Sie unter [Verwalten von HDInsight-Clustern mit Ambari](hdinsight-hadoop-manage-ambari.md).
 
 ##Nächste Schritte
 In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Azure-Portal erstellt und wie das Hadoop-Befehlszeilentool geöffnet wird. Weitere Informationen finden Sie in den folgenden Artikeln:
@@ -168,4 +168,4 @@ In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Azure-Po
 
 [preview-portal]: https://portal.azure.com
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

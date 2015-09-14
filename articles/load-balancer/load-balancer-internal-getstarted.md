@@ -1,19 +1,19 @@
 <properties
    pageTitle="Erste Schritte mit dem internen Lastenausgleich | Microsoft Azure"
-   description="Konfigurieren von internem Lastenausgleich und dessen Implementierung für virtuelle Computer und Cloudbereitstellungen"
-   services="load-balancer"
-   documentationCenter="na"
-   authors="joaoma"
-   manager="adinah"
-   editor="tysonn" />
+	description="Konfigurieren von internem Lastenausgleich und dessen Implementierung für virtuelle Computer und Cloudbereitstellungen"
+	services="load-balancer"
+	documentationCenter="na"
+	authors="joaoma"
+	manager="adinah"
+	editor="tysonn"/>
 <tags
    ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/22/2015"
-   ms.author="joaoma" />
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="09/01/2015"
+	ms.author="joaoma"/>
 
 # Erste Schritte zum Konfigurieren des internen Lastenausgleichs
 
@@ -21,7 +21,7 @@
 - [Azure Classic steps](load-balancer-internal-getstarted.md)
 - [Resource Manager Powershell steps](load-balancer-internal-arm-powershell.md)
 
-Der interne Azure-Lastenausgleich (ILB) ermöglicht Lastenausgleich zwischen virtuellen Computern in einem Clouddienst oder virtuellen Netzwerk mit regionalem Umfang. Informationen zur Verwendung und Konfiguration virtueller Netzwerke mit regionalem Umfang finden Sie unter [Regionale virtuelle Netzwerke](../regional-virtual-networks.md) im Azure-Blog. Vorhandene virtuelle Netzwerke, die für eine Affinitätsgruppe konfiguriert wurden, können kein ILB verwenden.
+Der interne Azure-Lastenausgleich (ILB) ermöglicht Lastenausgleich zwischen virtuellen Computern in einem Clouddienst oder virtuellen Netzwerk mit regionalem Umfang. Informationen zur Verwendung und Konfiguration virtueller Netzwerke mit regionalem Umfang finden Sie unter [Regionale virtuelle Netzwerke](virtual-networks-migrate-to-regional-vnet.md) im Azure-Blog. Vorhandene virtuelle Netzwerke, die für eine Affinitätsgruppe konfiguriert wurden, können kein ILB verwenden.
 
 
 
@@ -335,4 +335,4 @@ Um weitere Informationen zu ILB-Cmdlets zu erhalten, führen Sie die folgenden B
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

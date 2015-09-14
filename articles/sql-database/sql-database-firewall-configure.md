@@ -1,23 +1,21 @@
 <properties
    pageTitle="Firewall für die Azure SQL-Datenbank | Microsoft Azure"
-   description="Informationen zum Konfigurieren der Firewall für die Microsoft Azure SQL-Datenbank."
-   services="sql-database"
-   documentationCenter=""
-   authors="BYHAM"
-   manager="jeffreyg"
-   editor=""
-   tags=""/>
-
+	description="Informationen zum Konfigurieren der Firewall für die Microsoft Azure SQL-Datenbank."
+	services="sql-database"
+	documentationCenter=""
+	authors="BYHAM"
+	manager="jeffreyg"
+	editor=""
+	tags=""/>
 
 <tags
    ms.service="sql-database"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="data-management"
-   ms.date="08/04/2015"
-   ms.author="rickbyh"/>
-
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-management"
+	ms.date="08/04/2015"
+	ms.author="rickbyh"/>
 
 # Firewall für die Azure SQL-Datenbank
 
@@ -69,11 +67,11 @@ Im [Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=161793) können 
 
 ## Erstellen der ersten Firewallregel auf Serverebene
 
-Die erste Firewalleinstellung auf Serverebene kann mit dem [Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=161793) oder programmgesteuert mithilfe der REST-API oder Azure PowerShell erstellt werden. Nachfolgende Firewallregeln auf Serverebene können anhand dieser Methoden sowie über Transact-SQL erstellt und verwaltet werden. Weitere Informationen zur Firewallregeln auf Serverebene finden Sie unter [Konfigurieren der Firewall-Einstellungen (Azure SQL-Datenbank)](article:sql-database-configure-firewall-settings).
+Die erste Firewalleinstellung auf Serverebene kann mit dem [Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=161793) oder programmgesteuert mithilfe der REST-API oder Azure PowerShell erstellt werden. Nachfolgende Firewallregeln auf Serverebene können anhand dieser Methoden sowie über Transact-SQL erstellt und verwaltet werden. Weitere Informationen zur Firewallregeln auf Serverebene finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
 
 ## Erstellen von Firewallregeln auf Datenbankebene
 
-Nachdem Sie die erste Firewall auf Serverebene konfiguriert haben, können Sie den Zugriff auf bestimmte Datenbanken einschränken. Wenn Sie in der Firewallregel auf Datenbankebene einen IP-Adressbereich angeben, der außerhalb des Bereichs liegt, der in der Firewallregel auf Serverebene angegeben ist, können nur die Clients auf die Datenbank zugreifen, die IP-Adressen in dem auf Datenbankebene angegebenen Bereich aufweisen. Es können maximal 128 Firewallregeln auf Datenbankebene für eine Datenbank verwendet werden. Firewallregeln auf Datenbankebene für Master- und Benutzerdatenbanken können über Transact-SQL erstellt und verwaltet werden. Weitere Informationen finden Sie unter [Konfigurieren der Firewalleinstellungen (Azure SQL-Datenbank)](article:sql-database-configure-firewall-settings).
+Nachdem Sie die erste Firewall auf Serverebene konfiguriert haben, können Sie den Zugriff auf bestimmte Datenbanken einschränken. Wenn Sie in der Firewallregel auf Datenbankebene einen IP-Adressbereich angeben, der außerhalb des Bereichs liegt, der in der Firewallregel auf Serverebene angegeben ist, können nur die Clients auf die Datenbank zugreifen, die IP-Adressen in dem auf Datenbankebene angegebenen Bereich aufweisen. Es können maximal 128 Firewallregeln auf Datenbankebene für eine Datenbank verwendet werden. Firewallregeln auf Datenbankebene für Master- und Benutzerdatenbanken können über Transact-SQL erstellt und verwaltet werden. Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
 
 ## Programmgesteuertes Verwalten von Firewallregeln
 
@@ -84,7 +82,12 @@ Außer im Azure-Verwaltungsportal können Firewallregeln mithilfe von Transact-S
 
 | Katalogsicht oder gespeicherte Prozedur | Ebene | Beschreibung |
 |--------------------------------------------------------------------------------------------|-----------|------------------------------------------------------|
-| [sys.firewall\\\_rules](https://msdn.microsoft.com/library/dn269980.aspx) | Server | Zeigt die aktuellen Firewallregeln auf Serverebene an. | | [sp\\\_set\\\_firewall\\\_rule](https://msdn.microsoft.com/library/dn270017.aspx) | Server | Erstellt oder aktualisiert Firewallregeln auf Serverebene. | | [sp\\\_delete\\\_firewall\\\_rule](https://msdn.microsoft.com/library/dn270024.aspx) | Server | Entfernt Firewallregeln auf Serverebene. | | [sys.database\\\_firewall\\\_rules](https://msdn.microsoft.com/library/dn269982.aspx) | Datenbank | Zeigt die aktuellen Firewallregeln auf Datenbankebene an. | | [sp\_set\\\_database\\\_firewall\\\_rule](https://msdn.microsoft.com/library/dn270010.aspx) | Datenbank | Erstellt oder aktualisiert Firewallregeln auf Datenbankebene. | | [sp\\\_delete\\\_database\\\_firewall\_rule](https://msdn.microsoft.com/library/dn270030.aspx) | Datenbank | Entfernt Firewallregeln auf Datenbankebene. |
+| [sys.firewall\_rules](https://msdn.microsoft.com/library/dn269980.aspx) | Server | Zeigt die aktuellen Firewallregeln auf Serverebene an. |
+| [sp\_set\_firewall\_rule](https://msdn.microsoft.com/library/dn270017.aspx) | Server | Erstellt oder aktualisiert Firewallregeln auf Serverebene. |
+| [sp\_delete\_firewall\_rule](https://msdn.microsoft.com/library/dn270024.aspx) | Server | Entfernt Firewallregeln auf Serverebene. |
+| [sys.database\_firewall\_rules](https://msdn.microsoft.com/library/dn269982.aspx) | Datenbank | Zeigt die aktuellen Firewallregeln auf Datenbankebene an. |
+| [sp\_set\_database\_firewall\_rule](https://msdn.microsoft.com/library/dn270010.aspx) | Datenbank | Erstellt oder aktualisiert Firewallregeln auf Datenbankebene. |
+| [sp\_delete\_database\_firewall\_rule](https://msdn.microsoft.com/library/dn270030.aspx) | Datenbanken | Entfernt Firewallregeln auf Datenbankebene. |
 
 ### REST-API
 
@@ -111,13 +114,13 @@ Außer im Azure-Verwaltungsportal können Firewallregeln mithilfe von Transact-S
 
 Wenn der Zugriff auf den Microsoft Azure SQL-Datenbankdienst nicht das erwartete Verhalten aufweist, sind folgende Punkte zu beachten:
 
-- **Lokale Firewallkonfiguration:** Bevor Ihr Computer auf die Azure SQL-Datenbank zugreifen kann, müssen Sie möglicherweise eine Firewallausnahme auf Ihrem Computer für TCP-Port 1433 erstellen. 
+- **Lokale Firewallkonfiguration:** Bevor Ihr Computer auf Azure SQL-Datenbank zugreifen kann, müssen Sie möglicherweise eine Firewallausnahme auf Ihrem Computer für TCP-Port 1433 erstellen. 
 
-- **Netzwerkadressübersetzung (NAT):** Aufgrund von NAT kann die IP-Adresse, die vom Computer zum Herstellen einer Verbindung mit der Azure SQL-Datenbank verwendet wird, von der IP-Adresse abweichen, die in den IP-Konfigurationseinstellungen des Computers angezeigt wird. Zum Anzeigen der IP-Adresse, die vom Computer zum Herstellen einer Verbindung mit Azure verwendet wird, melden Sie sich am Verwaltungsportal an, und navigieren Sie zur Registerkarte **Konfigurieren** auf dem Server, auf dem die Datenbank gehostet ist. Im Abschnitt **Zulässige IP-Adressen** wird die **Aktuelle Client-IP-Adresse** angezeigt. Klicken Sie auf **Hinzufügen** für \*\*Zulässige IP-Adressen\*\*, um diesem Computer den Zugriff auf den Server zu gestatten.
+- **Netzwerkadressübersetzung (NAT):** Aufgrund von NAT kann die IP-Adresse, die vom Computer zum Herstellen einer Verbindung mit Azure SQL-Datenbank verwendet wird, von der IP-Adresse abweichen, die in den IP-Konfigurationseinstellungen des Computers angezeigt wird. Zum Anzeigen der IP-Adresse, die vom Computer zum Herstellen einer Verbindung mit Azure verwendet wird, melden Sie sich beim Verwaltungsportal an, und navigieren Sie zur Registerkarte **Konfigurieren** auf dem Server, auf dem die Datenbank gehostet ist. Im Abschnitt **Zulässige IP-Adressen** wird die aktuelle Client-IP-Adresse angezeigt. Klicken Sie auf **Hinzufügen** für **Zulässige IP-Adressen**, um diesem Computer den Zugriff auf den Server zu gestatten.
 
-- **Änderungen an der Zulassungsliste sind noch nicht wirksam:** Es kann zu einer Verzögerung von bis zu fünf Minuten kommen, bevor Änderungen an der Firewallkonfiguration für die Azure SQL-Datenbank wirksam werden.
+- **Änderungen an der Zulassungsliste sind noch nicht wirksam:** Es kann zu einer Verzögerung von bis zu fünf Minuten kommen, bevor Änderungen an der Firewallkonfiguration für Azure SQL-Datenbank wirksam werden.
 
-- **Die Anmeldung ist nicht autorisiert oder ein falsches Kennwort wurde verwendet:** Wenn eine Anmeldung über keine Berechtigungen für den Azure SQL-Datenbankserver verfügt oder das verwendete Kennwort falsch ist, wird die Verbindung mit dem Azure SQL-Datenbankserver verweigert. Durch das Erstellen einer Firewalleinstellung wird Clients lediglich die Möglichkeit gegeben, eine Verbindung mit dem Server herzustellen. Jeder Client muss die erforderlichen Sicherheitsanmeldeinformationen bereitstellen. Weitere Informationen zum Vorbereiten von Anmeldungen finden Sie unter "Verwalten von Datenbanken, Anmeldungen und Benutzern in der Azure SQL-Datenbank.
+- **Die Anmeldung ist nicht autorisiert, oder ein falsches Kennwort wurde verwendet:** Wenn eine Anmeldung über keine Berechtigungen für den Azure SQL-Datenbankserver verfügt oder das verwendete Kennwort falsch ist, wird die Verbindung mit dem Azure SQL-Datenbankserver verweigert. Durch das Erstellen einer Firewalleinstellung wird Clients lediglich die Möglichkeit gegeben, eine Verbindung mit dem Server herzustellen. Jeder Client muss die erforderlichen Sicherheitsanmeldeinformationen bereitstellen. Weitere Informationen zum Vorbereiten von Anmeldungen finden Sie unter "Verwalten von Datenbanken, Anmeldungen und Benutzern in der Azure SQL-Datenbank.
 
 - **Dynamische IP-Adresse:** Wenn Sie über eine Internetverbindung mit dynamischer IP-Adressierung verfügen und Probleme beim Passieren der Firewall auftreten, können Sie eine der folgenden Lösungen ausprobieren:
 
@@ -127,9 +130,9 @@ Wenn der Zugriff auf den Microsoft Azure SQL-Datenbankdienst nicht das erwartete
 
 ## Weitere Informationen
 
-[Konfigurieren der Firewalleinstellungen (Azure SQL-Datenbank)](article:sql-database-configure-firewall-settings)
+[Konfigurieren der Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md)
 
 <!--Image references-->
 [1]: ./media/sql-database-firewall-configure/sqldb-firewall-1.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="command-line-interface"
 	ms.workload="infrastructure"
-	ms.date="05/29/2015"
+	ms.date="08/25/2015"
 	ms.author="rasquill"/>
 
 # Navigieren zwischen und Aussuchen von Images virtueller Azure-Computer mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle
@@ -240,4 +240,4 @@ Dieses Video zeigt die oben genannten Schritte mithilfe von PowerShell.
 [yah]: http://search.yahoo.com/
 [msn]: http://search.msn.com/
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

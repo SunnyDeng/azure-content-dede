@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Beispiele für Azure-Speicher | Microsoft Azure"
-   description="Sie können Beispiele für Azure-Speicher anzeigen, herunterladen und testen. Entdecken Sie Schnellstart-Beispiele für Blobs, Warteschlangen, Tabellen und Dateien, indem Sie die Speicherclientbibliotheken für .NET, Java, Node.js und C++ verwenden."
-   services="storage"
-   documentationCenter="na"
-   authors="tamram"
-   manager="na"
-   editor="na" />
+	description="Sie können Beispiele für Azure-Speicher anzeigen, herunterladen und testen. Entdecken Sie Schnellstart-Beispiele für Blobs, Warteschlangen, Tabellen und Dateien, indem Sie die Speicherclientbibliotheken für .NET, Java, Node.js und C++ verwenden."
+	services="storage"
+	documentationCenter="na"
+	authors="tamram"
+	manager="na"
+	editor="na"/>
 <tags 
    ms.service="storage"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="storage"
-   ms.date="05/27/2015"
-   ms.author="tamram" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage"
+	ms.date="09/01/2015"
+	ms.author="tamram"/>
 
 # Beispiele für Azure-Speicher
 
@@ -81,4 +81,4 @@ Um die Beispiele für C++ zu untersuchen, laden Sie die [Speicherclientbibliothe
 - [Quellcode für die Speicherclientbibliothek für C++](https://github.com/Azure/azure-storage-cpp)
 - [Referenz zur C++-Clientbibliothek](http://azure.github.io/azure-storage-cpp/) 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

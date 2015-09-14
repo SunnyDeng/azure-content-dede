@@ -222,6 +222,8 @@ Die Netzwerkschnittstellenkarte (Network Interface Card, NIC) stellt eine Netzwe
 Zu den Schlüsseleigenschaften einer NIC-Ressource zählen:
 
 - IP-Einstellungen
+- Interner DNS-Name
+- DNS-Server
 
 Eine NIC kann auch den folgenden Netzwerkressourcen zugeordnet werden:
 
@@ -240,6 +242,7 @@ Zu den Schlüsseleigenschaften einer VNET-Ressource zählen:
 - IP-Adressenraum (CIDR-Block) 
 - VNET-Name
 - Subnetze
+- DNS-Server
 
 Ein VNET kann auch den folgenden Netzwerkressourcen zugeordnet werden:
 
@@ -276,8 +279,8 @@ Application Gateways enthalten die folgenden untergeordneten Ressourcen:
 - **Back-End-Serverpool**: Die Liste der IP-Adressen der Back-End-Server. Die aufgelisteten IP-Adressen sollten entweder dem Subnetz des virtuellen Netzwerks angehören oder eine öffentliche IP-Adresse/VIP sein. 
 - **Einstellungen für den Back-End-Serverpool**: Jeder Pool weist Einstellungen wie Port, Protokoll und cookiebasierte Affinität auf. Diese Einstellungen sind an einen Pool gebunden und gelten für alle Server innerhalb des Pools.
 - **Front-End-Port**: Dieser Port ist der öffentliche Port, der im Application Gateway geöffnet ist. Datenverkehr erreicht diesen Port und wird dann an einen der Back-End-Server umgeleitet.
-- **Listener**: Der Listener hat einen Front-End-Port, ein Protokoll (Http oder Https, bei beiden muss die Groß-/Kleinschreibung beachtet werden) und den Namen des SSL-Zertifikats (falls SSL-Auslagerung konfiguriert wird). 
-- **Regel**: Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und mit ihr wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden sollen, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel „basic“ unterstützt. Die Regel „basic“ ist eine Round-Robin-Lastverteilung.
+- **Listener**: Der Listener umfasst einen Front-End-Port, ein Protokoll (Http oder Https, bei beiden muss die Groß-/Kleinschreibung beachtet werden) und den Namen des SSL-Zertifikats (falls SSL-Auslagerung konfiguriert wird). 
+- **Regel**: Mit der Regel werden der Listener und der Back-End-Serverpool gebunden, und es wird definiert, an welchen Back-End-Serverpool der Datenverkehr gesendet werden sollen, wenn er einen bestimmten Listener erreicht. Derzeit wird nur die Regel "basic" unterstützt. Die Regel "basic" ist eine Round-Robin-Lastverteilung.
 
 
 ## Öffentliche IP
@@ -389,4 +392,4 @@ Sie können Dienste in Azure über eine Vorlage bereitstellen, indem Sie PowerSh
 
 [Bereitstellungen von Vorlagen](https://msdn.microsoft.com/library/azure/dn790549.aspx)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

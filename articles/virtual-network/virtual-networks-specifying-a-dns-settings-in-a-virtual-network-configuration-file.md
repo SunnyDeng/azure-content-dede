@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Angeben von DNS-Einstellungen in der Konfigurationsdatei für ein virtuelles Netzwerk"
-	description="Beschreibung"
+   pageTitle="Angeben von DNS-Einstellungen in der Konfigurationsdatei für ein virtuelles Netzwerk | Microsoft Azure"
+	description="Ändern der DNS-Servereinstellungen in einem virtuellen Netzwerk über die Konfigurationsdatei des virtuellen Netzwerks"
 	services="virtual-network"
 	documentationCenter="na"
 	authors="joaoma"
@@ -53,4 +53,4 @@ Die Netzwerkkonfigurationsdatei kann die folgenden Elemente enthalten. Der Titel
 
 [Azure-Dienstkonfigurationsschema (.cscfg-Datei)](https://msdn.microsoft.com/library/windowsazure/ee758710)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

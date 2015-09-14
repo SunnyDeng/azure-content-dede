@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.date="08/30/2015"
 	ms.author="juliako"/>
 
 #Azure Media Encoder-Formate und -Codecs
@@ -141,4 +141,4 @@ Daten im YUV 211-Format|Ein gepacktes YUV-Format. Ein Y-Sample bei jedem zweiten
 Cirrus Logic Jr YUV 411-Format|Das Cirrus Logic Jr YUV 411-Format mit weniger als 8 Bit pro Y-, U- und V-Sample. Ein Y-Sample bei jedem Pixel, ein U- und V-Sample bei jedem vierten Pixel horizontal in jeder Zeile. Jede vertikale Zeile enthält Sample-Werte.
 Von Indeo generiertes YVU9-Format|Das von Indeo generierte YVU9-Format mit zusätzlichen Informationen über die Unterschiede zum letzten Frame. 9,5 Bit pro Pixel, wird jedoch als 9 angezeigt.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

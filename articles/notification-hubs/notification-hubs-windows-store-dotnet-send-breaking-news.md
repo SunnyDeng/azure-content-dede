@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten (Windows Universal)" 
-	description="Verwenden Sie Azure Notification Hubs mit Tags in der Registrierung, um aktuelle Nachrichten an eine universelle Windows-App zu senden." 
-	services="notification-hubs" 
-	documentationCenter="windows" 
-	authors="wesmc7777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten (Windows Universal)"
+	description="Verwenden Sie Azure Notification Hubs mit Tags in der Registrierung, um aktuelle Nachrichten an eine universelle Windows-App zu senden."
+	services="notification-hubs"
+	documentationCenter="windows"
+	authors="wesmc7777"
+	manager="dwrede"
 	editor=""/>
 
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="05/27/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="wesmc"/>
 
 # Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten
@@ -38,7 +38,7 @@ Dieses Thema baut auf die App auf, die Sie in [Erste Schritte mit Notification H
 Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen Hauptseite hinzuzufügen, welche dem Benutzer die Auswahl der Kategorien für die Registrierung ermöglichen. Die durch den Benutzer ausgewählten Kategorien werden auf dem Gerät gespeichert. Wenn die App gestartet wird, wird eine Geräteregistrierung in Ihrem Notification Hub mit den ausgewählten Kategorien als Tags erstellt.
 
 1. Öffnen Sie die Projektdatei "MainPage.xaml", und kopieren Sie folgenden Code in das Element **Grid**:
-			
+
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -137,7 +137,7 @@ Der erste Schritt besteht daraus, Benutzeroberflächenelemente zur vorhandenen H
             dialog.Commands.Add(new UICommand("OK"));
             await dialog.ShowAsync();
         }
-	
+
 	Diese Methode erstellt eine Liste von Kategorien und verwendet die **Notifications**-Klasse zum Speichern der Liste im lokalen Speicher sowie zum Registrieren der entsprechenden Tags bei Ihrem Notification Hub. Wenn Kategorien geändert werden, wird die Registrierung mit neuen Kategorien neu erstellt.
 
 Die App kann jetzt verschiedene Kategorien in einem lokalen Speicher auf dem Gerät speichern und beim Notification Hub registrieren, wenn der Benutzer die Auswahl der Kategorien ändert.
@@ -241,10 +241,4 @@ In diesem Lernprogramm haben Sie erfahren, wie aktuelle Nachrichten nach Kategor
 [Azure Management Portal]: https://manage.windowsazure.com/
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 
-
-
-
-
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

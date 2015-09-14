@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung | Microsoft Azure"
-   description="Enthält Links zu weiteren Informationen über Verwaltungsaufgaben und -workflows in der StorSimple Snapshot Manager-Lösung."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="carolz"
-   editor="" />
+   pageTitle="StorSimple Snapshot Manager-Verwaltung | Microsoft Azure"
+	description="Bietet eine Übersicht und Links zu weiteren Informationen zu Verwaltungsaufgaben und -workflows in der StorSimple Snapshot Manager-Lösung."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="SharS"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="07/13/2015"
-   ms.author="v-sharos" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/28/2015"
+	ms.author="v-sharos"/>
 
 # Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung
 
@@ -31,7 +31,7 @@ Mit der zentralen Verwaltungskonsole von StorSimple Snapshot Manager können Sie
 
 - Erstellen unabhängiger Kopien von Daten, die in der Cloud gespeichert und für die Notfallwiederherstellung verwendet werden können.
 
-Dieser Artikel enthält Links zu Lernprogrammen, in denen der StorSimple Snapshot Manager sowie dessen Verwendung zum Durchführen von Aufgaben der Systemverwaltung und Workflows beschrieben wird.
+Dieser Artikel enthält Links zu Tutorials, in denen der StorSimple Snapshot Manager sowie dessen Verwendung zum Durchführen von Aufgaben der Systemverwaltung und Workflows beschrieben wird.
 
 - Weitere Informationen zu StorSimple Snapshot Manager-Komponenten und zur Architektur finden Sie unter [Was ist der StorSimple Snapshot Manager?](storsimple-what-is-snapshot-manager.md) 
 
@@ -43,7 +43,7 @@ Dieser Artikel enthält Links zu Lernprogrammen, in denen der StorSimple Snapsho
 
 Sie können StorSimple Snapshot Manager zum Überwachen und Verwalten bevorstehender, aktueller und abgeschlossener Sicherungsaufträge verwenden. Darüber hinaus stellt StorSimple Snapshot Manager einen Katalog von bis zu 64 abgeschlossenen Sicherungen bereit. Sie können in diesem Katalog nach Volumes oder einzelnen Dateien suchen und diese wiederherstellen.
 
-| WENN SIE DIES TUN MÖCHTEN... | VERWENDEN SIE DIESES LERNPROGRAMM... |
+| WENN SIE DIES TUN MÖCHTEN... | VERWENDEN SIE DIESES TUTORIAL... |
 |:---------------------------|:----------------------|
 |Erfahren Sie mehr über StorSimple Snapshot Manager | [Was ist der StorSimple Snapshot Manager?](storsimple-what-is-snapshot-manager.md)|
 | Installieren des StorSimple Snapshot Managers<br>Neuinstallation des StorSimple Snapshot Managers<br>Entfernen des StorSimple Snapshot Managers| [Bereitstellung von StorSimple Snapshot Manager](storsimple-snapshot-manager-deployment.md) |
@@ -60,4 +60,4 @@ Sie können StorSimple Snapshot Manager zum Überwachen und Verwalten bevorstehe
 
 [StorSimple Snapshot Manager herunterladen](https://www.microsoft.com/download/details.aspx?id=44220).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

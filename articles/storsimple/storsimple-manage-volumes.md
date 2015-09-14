@@ -1,6 +1,6 @@
 <properties
    pageTitle="Verwalten von StorSimple-Volumes | Microsoft Azure"
-	description="Erklärt, wie Sie StorSimple-Volumes hinzufügen, ändern und überwachen sowie ggf. offlineschalten können."
+	description="Erläutert, wie Sie StorSimple-Volumes hinzufügen, ändern, überwachen und löschen sowie ggf. offline schalten können."
 	services="storsimple"
 	documentationCenter="NA"
 	authors="SharS"
@@ -12,20 +12,20 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"
 	ms.workload="TBD"
-	ms.date="08/21/2015"
+	ms.date="08/27/2015"
 	ms.author="v-sharos"/>
 
-# Verwalten von StorSimple-Volumes
+# Verwalten von Volumes mithilfe des StorSimple Manager-Diensts
 
 ## Übersicht
 
-In diesem Lernprogramm wird erläutert, wie Sie den StorSimple-Manager-Dienst zum Erstellen und Verwalten von Volumes auf dem StorSimple-Gerät und dem virtuellen StorSimple-Gerät verwenden können.
+In diesem Tutorial wird erläutert, wie Sie den StorSimple-Manager-Dienst zum Erstellen und Verwalten von Volumes auf dem StorSimple-Gerät und dem virtuellen StorSimple-Gerät verwenden können.
 
 Der StorSimple-Manager-Dienst ist eine Erweiterung des Azure-Portals, mit dem Sie Ihre StorSimple-Lösung über eine einzelne Webschnittstelle verwalten können. Zusätzlich zum Verwalten von Datenträgern können Sie mit dem StorSimple-Manager-Dienst StorSimple-Dienste erstellen und verwalten, Geräte anzeigen und verwalten, Warnungen anzeigen sowie Sicherungsrichtlinien und den Sicherungskatalog verwalten.
 
 > [AZURE.NOTE]Mit Azure StorSimple können nur nach Bedarf bereitgestellte Volumes erstellt werden. In einem Azure StorSimple-System können keine vollständig oder teilweise bereitgestellten Volumes erstellt werden.
 >
-> Die Bereitstellung nach Bedarf ist eine Virtualisierungstechnologie, bei der der verfügbare Speicher scheinbar die physischen Ressourcen überschreitet. Anstatt vorab ausreichend Speicherplatz zu reservieren, ordnet Azure StorSimple bei der Bereitstellung nach Bedarf nur den für die aktuellen Anforderungen erforderlichen Speicherplatz zu. Die Flexibilität der Cloud-Speicherung ermöglicht diesen Ansatz, da Azure StorSimple diesen Cloud-Speicher erhöhen oder verringern kann, um die veränderten Anforderungen zu erfüllen.
+> Die Bereitstellung nach Bedarf ist eine Virtualisierungstechnologie, bei der der verfügbare Speicher scheinbar die physischen Ressourcen überschreitet. Anstatt vorab ausreichend Speicherplatz zu reservieren, ordnet Azure StorSimple bei der Bereitstellung nach Bedarf nur den für die aktuellen Anforderungen erforderlichen Speicherplatz zu. Die Flexibilität der Cloudspeicherung ermöglicht diesen Ansatz, da Azure StorSimple diesen Cloudspeicher erhöhen oder verringern kann, um die veränderten Anforderungen zu erfüllen.
 
 ## Die Seite "Volumes"
 
@@ -65,7 +65,7 @@ Sie haben beim Bereitstellen der StorSimple-Lösung [ein Volume erstellt](storsi
 
 3. Klicken Sie unten auf der Seite auf **Add**. Der Assistent "Volume hinzufügen" wird gestartet.
 
-     ![Volume hinzufügen](./media/storsimple-manage-volumes/HCS_AddVolume1M.png)
+     ![Assistent zum Hinzufügen von Volumes – Grundeinstellungen](./media/storsimple-manage-volumes/HCS_AddVolume1M.png)
 
 4. Gehen Sie im Assistenten "Volume hinzufügen" unter **Grundlegende Einstellungen** folgendermaßen vor:
 
@@ -74,7 +74,7 @@ Sie haben beim Bereitstellen der StorSimple-Lösung [ein Volume erstellt](storsi
   3. Wählen Sie aus der Dropdownliste den **Verwendungstyp** für das Volume aus. Wählen Sie bei der Arbeit mit weniger häufig abgerufenen Archivierungsdaten **Archivierungsvolume** aus. Wählen Sie für alle anderen Verwendungstypen **Mehrstufiges Volume** aus. (Mehrstufige Volumes wurden früher primäre Volumes genannt).
   5. Klicken Sie auf das Pfeilsymbol ![Pfeilsymbol](./media/storsimple-manage-volumes/HCS_ArrowIcon.png), um zur Seite **Weitere Einstellungen** zu wechseln.
 
-     ![Volume hinzufügen](./media/storsimple-manage-volumes/HCs_AddVolume2M.png)
+     ![Assistent zum Hinzufügen von Volumes – Zusätzliche Einstellungen](./media/storsimple-manage-volumes/HCs_AddVolume2M.png)
    
 5. Fügen Sie unter **Weitere Einstellungen** einen neuen Zugriffssteuerungsdatensatz (Access Control Record, ACR) hinzu:
   
@@ -172,7 +172,7 @@ Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu a
 
 5. Klicken Sie im Assistenten "Ändern von Volume" unter **Grundlegende Einstellungen** in der Dropdownliste **Überwachen** auf **Aktivieren** oder **Deaktivieren**.
 
-    ![Überwachen von Volumes](./media/storsimple-manage-volumes/HCS_MonitorVolumeM.png)
+    ![Ändern der Grundeinstellungen eines Volumes](./media/storsimple-manage-volumes/HCS_MonitorVolumeM.png)
 
 ## Nächste Schritte
 
@@ -181,4 +181,4 @@ Erfahren Sie, wie Sie ein [StorSimple-Volume klonen](storsimple-clone-volume.md)
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory"
-	description="In diesem fortgeschrittenen Lernprogramm wird ein sehr praxisnahes Szenario beschrieben und mithilfe des Azure Data Factory-Diensts und des Data Factory-Editors implementiert."
+	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory (Azure-Portal)"
+	description="In diesem fortgeschrittenen Tutorial wird ein sehr praxisnahes Szenario beschrieben und mithilfe des Azure Data Factory-Diensts und des Data Factory-Editors im Azure-Portal implementiert."
 	services="data-factory"
 	documentationCenter=""
 	authors="spelluru"
@@ -418,6 +418,8 @@ Um die Daten zur Wirksamkeit der Marketingkampagne aus dem Azure-Blob in eine lo
 
 In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-onpremises] erfahren Sie, wie Sie eine Pipeline erstellen, die die Daten zur Wirksamkeit einer Marketingkampagne in eine lokale SQL Server-Datenbank kopiert.
 
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-tutorial.md).
 
 [monitor-manage-using-powershell]: data-factory-monitor-manage-using-powershell.md
 [use-custom-activities]: data-factory-use-custom-activities.md
@@ -526,4 +528,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial/DataFactoryCreateButton.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

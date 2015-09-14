@@ -261,15 +261,35 @@ Es umfasst ein gehostetes Quellcodeverwaltungssystem namens Team Foundation Serv
 
 Visual Studio Online verfügt über einen Auslastungstestdienst. Sie können Auslastungstests ausführen, die in Visual Studio auf virtuellen Computern in der Cloud erstellt wurden. Sie müssen die Gesamtzahl der Benutzer angeben, mit der Sie den Auslastungstest ausführen möchten. Visual Studio Online ermittelt dann automatisch, wie viele Agenten benötigt werden, fährt die erforderlichen virtuellen Computer hoch und führt die Auslastungstest durch. Als MSDN-Abonnent erhalten Sie jeden Monat Tausende kostenloser Benutzerminuten für Auslastungstests.
 
-Visual Studio Online bietet auch einen Dienst namens Application Insights, mit dem Sie Ihre gesamte Anwendung analysieren können. Er bietet statistische Daten zur Leistung und zur Verwendung der Anwendung. Wenn Sie bereits System Center Operations Manager verwenden, kann der Dienst auch eine Verbindung mit dieser Anwendung herstellen und bei Problemen Warnungen auslösen. Außerdem wird von Visual Studio Online die agile Entwicklung mit Funktionen wie fortlaufenden Integrationsbuilds, Kanban-Karten und virtuellen Teamräumen unterstützt.
-	
-Außerdem wird die agile Entwicklung mit Funktionen wie fortlaufenden Integrationsbuilds, Kanban-Karten und virtuellen Teamräumen unterstützt.
+Visual Studio Online bietet auch Unterstützung für die agile Entwicklung mit Funktionen wie fortlaufenden Integrationsbuilds, Kanban-Karten und virtuellen Teamräumen.
 
 **Visual Studio Online-Szenarien**
 
 Visual Studio Online ist eine gute Option für Unternehmen, die weltweit zusammenarbeiten müssen und noch nicht über die dafür notwendige Infrastruktur verfügen. Die Einrichtung ist in wenigen Minuten abgeschlossen. Sie wählen ein Quellcodeverwaltungssystem und beginnen noch am gleichen Tag mit dem Schreiben von Code und dem Erstellen eines Builds. Die Teamtools stellen Möglichkeiten zur Koordination und Zusammenarbeit bereit, während die zusätzlichen Tools die Analyse ermöglichen, die zum raschen Testen und Optimieren Ihrer Anwendung erforderlich ist.
 
 Organisationen hingegen, die bereits über ein lokales System verfügen, können neue Projekte in Visual Studio Online testen, um festzustellen, ob dies effizienter ist.
+
+### Application Insights
+
+![Application Insights](./media/fundamentals-introduction-to-azure/ApplicationInsights.png)
+
+*Abbildung: Application Insights überwacht die Leistung und die Nutzung Ihrer Live-Web- oder Geräte-App.*
+
+Wenn Sie Ihre App – entweder für Mobilgeräte, Desktops oder Webbrowser – veröffentlicht haben, informiert Application Insights Sie über die Leistung der App und wie Benutzer sie verwenden. Der Dienst erfasst die Anzahl der Abstürze sowie lange Antwortzeiten, gibt Warnungen aus, wenn die Zahlen nicht akzeptable Schwellenwerte überschreiten, und hilft Ihnen bei der Diagnose von Probleme.
+
+Beim Entwickeln einer neuen Funktion planen Sie das Messen deren Erfolgs bei Benutzern. Durch die Analyse von Verwendungsmustern erfahren Sie, was für Ihre Kunden am besten geeignet ist und können Ihre App in jedem Entwicklungszyklus optimieren.
+
+Obwohl Application Insights in Azure gehostet wird, kann der Dienst für eine große und wachsende Bandbreite von Apps sowohl in Azure als auch außerhalb genutzt werden. J2EE- und ASP.NET-Web-Apps können ebenso analysiert werden wie iOS-, Android-, OSX- und Windows-Anwendungen. Die Telemetrie wird aus einem mit der App erstellten SDK gesendet und anschließend im Application Insights-Dienst in Azure analysiert und angezeigt.
+
+Wenn Sie spezielle Analysen durchführen möchten, exportieren Sie den Telemetriestream in eine Datenbank, Power BI oder beliebige andere Tools.
+
+**Application Insights-Szenarien**
+
+Sie entwickeln eine App. Dabei kann es sich um eine Web-App, eine Geräte-App oder eine Geräte-App mit einem Web-Back-End handeln.
+
+* Optimieren Sie die Leistung Ihrer App nach der Veröffentlichung während des Auslastungstests. Application Insights aggregiert die Telemetrie aller installierten Instanzen und stellt Ihnen Diagramme zu Antwortzeiten, der Anzahl von Anforderungen und Ausnahmen, Abhängigkeitsantwortzeiten und anderen Leistungsindikatoren bereit. Mit diesen können Sie die Leistung Ihrer App optimieren. Sie können Code einfügen, um bei Bedarf Berichte mit genaueren Daten zu erstellen.
+* Erkennen und Diagnostizieren von Problemen in Ihrer Live-App. Sie können E-Mail-Warnungen erhalten, wenn Leistungsindikatoren zulässige Schwellenwerte überschreiten. Sie können bestimmte Benutzersitzungen untersuchen, z. B. um die Anforderung zu ermitteln, die eine Ausnahme verursacht hat. 
+* Nachverfolgen der Nutzung zur Bewertung der einzelnen neuen Funktionen. Beim Entwerfen einer neuen User Story planen Sie eine Messung der Verwendung und ob Benutzer die erwarteten Ziele erreichen. Mit Application Insights erhalten Sie grundlegende Verwendungsdaten wie z. B. Webseitenaufrufe, und Sie können Code einfügen, um die Benutzerfunktionalität noch genauer nachzuverfolgen.
 
 ### Automation
 Niemand verschwendet gerne Zeit mit der Wiederholung der immer gleichen manuellen Prozesse. Azure Automation gibt Ihnen die Möglichkeit, Ressourcen in Ihrer Azure-Umgebung zu erstellen, zu überwachen und bereitzustellen.
@@ -592,4 +612,4 @@ Nachdem Sie nun einen Überblick erhalten haben, besteht der nächste Schritt da
 
 [Azure Media Services Poster]: http://azure.microsoft.com/documentation/infographics/media-services/
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

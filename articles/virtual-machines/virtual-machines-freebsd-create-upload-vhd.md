@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Erstellen und Hochladen einer FreeBSD-VHD in Azure" 
-   description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die das FreeBSD-Betriebssystem enthält." 
-   services="virtual-machines" 
-   documentationCenter="" 
-   authors="KylieLiang" 
-   manager="timlt" 
-   editor=""/>
+   pageTitle="Erstellen und Hochladen einer FreeBSD-VHD in Azure"
+	description="Erfahren Sie, wie Sie eine virtuelle Azure-Festplatte (Virtual Hard Disk, VHD) erstellen und hochladen, die das FreeBSD-Betriebssystem enthält."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="KylieLiang"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-linux"
-   ms.workload="infrastructure-services" 
-   ms.date="05/19/2015"
-   ms.author="kyliel"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure-services"
+	ms.date="05/19/2015"
+	ms.author="kyliel"/>
 
 # Erstellen und Hochladen einer FreeBSD-VHD in Azure 
 
@@ -23,9 +23,9 @@ Dieser Artikel erläutert, wie Sie eine virtuelle Festplatte (Virtual Hard Disk,
 ##Voraussetzungen##
 In diesem Artikel wird davon ausgegangen, dass Sie über die folgenden Elemente verfügen:
 
-- **Azure-Abonnement**: Wenn Sie keines haben, können Sie in wenigen Minuten ein kostenloses Testkonto einrichten. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)](../php-create-account.md). 
+- **Azure-Abonnement**: Wenn Sie noch nicht über ein Abonnement verfügen, können Sie in wenigen Minuten ein kostenloses Testkonto einrichten. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie die Informationen zum [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Anderenfalls finden Sie unter [Erstellen eines kostenlosen Testkontos](http://azure.microsoft.com/pricing/free-trial/) weitere Informationen.  
 
-- **Azure PowerShell-Tools** – Sie haben das Microsoft Azure PowerShell-Modul installiert und für die Verwendung Ihres Abonnements konfiguriert. Informationen zum Herunterladen dieses Moduls finden Sie unter [Azure-Downloads](http://azure.microsoft.com/downloads/). Ein Lernprogramm zum Installieren und Konfigurieren des Moduls ist hier verfügbar. Sie verwenden das Cmdlet [Azure-Downloads](http://azure.microsoft.com/downloads/) zum Hochladen der VHD.
+- **Azure PowerShell-Tools** – Sie haben das Microsoft Azure PowerShell-Modul installiert und für die Verwendung Ihres Abonnements konfiguriert. Informationen zum Herunterladen dieses Moduls finden Sie unter [Azure-Downloads](http://azure.microsoft.com/downloads/). Ein Tutorial zum Installieren und Konfigurieren des Moduls ist hier verfügbar. Sie verwenden das Cmdlet [Azure-Downloads](http://azure.microsoft.com/downloads/) zum Hochladen der VHD.
 
 - **FreeBSD-Betriebssystem in einer VHD-Datei installiert** - Sie haben ein unterstütztes FreeBSD-Betriebssystem auf einer virtuellen Festplatte installiert. Es gibt verschiedene Tools zum Erstellen von VHD-Dateien. Beispielsweise können Sie eine Virtualisierungslösung wie Hyper-V zum Erstellen der VHD-Datei und zum Installieren des Betriebssystems verwenden. Anweisungen hierzu finden Sie unter [Installieren der Hyper-V-Rolle und Konfigurieren eines virtuellen Computers](http://technet.microsoft.com/library/hh846766.aspx).
 
@@ -35,7 +35,7 @@ Diese Aufgabe umfasst die folgenden fünf Schritte.
 
 ## Schritt 1: Vorbereiten des hochzuladenden Images ##
 
-Wie für die FreeBSD-Installation auf Hyper-V steht [hier](http://blogs.msdn.com/b/kylie/archive/2014/12/25/running-freebsd-on-hyper-v.aspx) ein Lernprogramm zur Verfügung.
+Wie für die FreeBSD-Installation auf Hyper-V steht [hier](http://blogs.msdn.com/b/kylie/archive/2014/12/25/running-freebsd-on-hyper-v.aspx) ein Tutorial zur Verfügung.
 
 Führen Sie auf dem virtuellen Computer, auf dem das FreeBSD-Betriebssystem installiert wurde, die folgenden Prozeduren aus:
 
@@ -114,7 +114,7 @@ Sie benötigen ein Speicherkonto in Azure, um eine VHD-Datei hochzuladen, damit 
 	
 	- Geben Sie unter **URL** einen Unterdomänennamen ein, der im URL für das Speicherkonto verwendet werden soll. Der Eintrag kann drei bis 24 Kleinbuchstaben und Zahlen enthalten. Dieser Name wird der Hostname im URL, der zum Adressieren von Blob-, Warteschlangen- oder Tabellenspeicherressourcen für das Abonnement verwendet wird.
 			
-	- Wählen Sie den **Standort oder die Affinitätsgruppe** für das Speicherkonto aus. Mit einer Affinitätsgruppe können Sie Ihre Cloud-Dienste und Speicher im selben Rechenzentrum platzieren.
+	- Wählen Sie den **Standort oder die Affinitätsgruppe** für das Speicherkonto aus. Mit einer Affinitätsgruppe können Sie Ihre Clouddienste und Speicher im selben Rechenzentrum platzieren.
 		 
 	- Sie können wählen, ob Sie **Georeplikation** für das Speicherkonto verwenden möchten. Georeplikation ist als Standard voreingestellt. Mit dieser Option werden Ihre Daten kostenfrei an einem sekundären Speicherort repliziert. So wird die Speicherung auf jenen Speicherort umgeschaltet, wenn am primären Speicherort ein größerer Ausfall auftritt. Der sekundäre Speicherort wird automatisch zugewiesen und kann nicht verändert werden. Wenn Sie aufgrund gesetzlicher Vorschriften oder Unternehmensrichtlinien mehr Kontrolle über den Speicherort des cloudbasierten Speichers benötigen, können Sie die Georeplikation deaktivieren. Beachten Sie jedoch, dass bei einem späteren Aktivieren der Georeplikation eine einmalige Datenübertragungsgebühr fällig wird, um Ihre vorhandenen Daten in dem sekundären Speicherort zu replizieren. Die Speicherdienste ohne Georeplikation werden mit einem Rabatt angeboten. Ausführliche Informationen zur Verwaltung der Georeplikation für Speicherkonten finden Sie unter: [Erstellen, Verwalten oder Löschen eines Speicherkontos](../storage-create-storage-account/#replication-options).
 
@@ -143,7 +143,7 @@ Sie benötigen ein Speicherkonto in Azure, um eine VHD-Datei hochzuladen, damit 
 
 Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung zwischen dem Computer und Ihrem Abonnement in Azure herstellen. Zu diesem Zweck können Sie die Microsoft Azure Active Directory-Methode oder die Zertifikatmethode verwenden.
 
-<h3>Verwenden der Microsoft Azure AD-Methode</h3>
+###Verwenden der Microsoft Azure AD-Methode
 
 1. Öffnen Sie die Azure PowerShell-Konsole.
 
@@ -155,7 +155,7 @@ Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung
 
 3. Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.
 
-<h3>Verwenden eines Zertifikats</h3>
+###Verwenden eines Zertifikats
 
 1. Öffnen Sie die Azure PowerShell-Konsole. 
 
@@ -206,4 +206,4 @@ Nach dem Hochladen fügen Sie die VHD-Datei als Image zu der Ihrem Abonnement zu
 	![FreeBSD-Images in Azure](./media/virtual-machines-freebsd-create-upload-vhd/freebsdimageinazure.png)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

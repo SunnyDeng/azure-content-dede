@@ -17,7 +17,7 @@
 	ms.author="juliako"/>
 
 
-#Übersicht
+#Codieren eines Assets mit Media Encoder Standard
 
 Die Codierung ist einer der häufigsten Verarbeitungsvorgänge in Media Services. Sie erstellen Codierungsaufträge, um Mediendateien von einer Codierung in eine andere zu konvertieren. Zum Codieren können Sie den in Media Services integrierten Media Encoder verwenden. Außerdem können Sie Codierer von Media Services-Partnern verwenden. Externe Codierer finden Sie im Azure Marketplace.
 
@@ -120,4 +120,4 @@ Im folgenden Codebeispiel wird das Media Services-.NET-SDK verwendet, um die fol
 
 [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

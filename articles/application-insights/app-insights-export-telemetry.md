@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Fortlaufender Export von Telemetriedaten aus Application Insights" 
-	description="Exportieren Sie Diagnose- und Nutzungsdaten in Microsoft Azure-Speicher, die Sie anschließendes daraus herunterladen." 
-	services="application-insights" 
-    documentationCenter=""
-	authors="alancameronwills" 
+	pageTitle="Fortlaufender Export von Telemetriedaten aus Application Insights"
+	description="Exportieren Sie Diagnose- und Nutzungsdaten in Microsoft Azure-Speicher, die Sie anschließendes daraus herunterladen."
+	services="application-insights"
+	documentationCenter=""
+	authors="alancameronwills"
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/13/2015" 
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/31/2015"
 	ms.author="awills"/>
  
 # Exportieren von Telemetriedaten aus Application Insights
@@ -40,6 +40,7 @@ Wählen Sie die Ereignistypen, die Sie exportieren möchten:
 
 Nachdem Sie Ihren Exportvorgang erstellt haben, geht es gleich los. (Sie erhalten nur Daten, die nach Erstellung des Exportvorgangs eingehen.)
 
+Es kann etwa eine Stunde dauern, bis Daten im Blob angezeigt werden.
 
 Wenn Sie die Ereignistypen später ändern möchten, bearbeiten Sie einfach den Export:
 
@@ -59,20 +60,23 @@ Bei den exportierten Daten handelt es sich um die Telemetrierohdaten, die wir vo
 
 Andere berechnete Metriken sind nicht enthalten. Wir exportieren z. B. nicht die durchschnittliche CPU-Auslastung, doch wir exportieren die rohen Telemetriedaten, anhand derer der Durchschnitt berechnet wird.
 
+Die Daten umfassen außerdem die Ergebnisse von [Verfügbarkeitswebtests](app-insights-monitor-web-app-availability.md), die Sie eventuell eingerichtet haben.
+
 ## <a name="get"></a>Untersuchen der Daten
 
-Beim Öffnen Ihres Blobspeichers mit einem Tool wie z. B. [Server-Explorer](http://msdn.microsoft.com/library/azure/ff683677.aspx) sehen Sie einen Container mit einer Gruppe von Blobdateien. Der URI der einzelnen Dateien lautet "Anwendungs-ID/Telemetrietyp/Datum/Uhrzeit".
+Um den Azure-Speicher in Visual Studio zu überprüfen, öffnen Sie **Anzeigen** und dann **Cloud Explorer**. (Wenn dieser Menübefehl nicht verfügbar ist, müssen Sie das Azure SDK installieren: Öffnen Sie das Dialogfeld **Neues Projekt**, erweitern Sie "Visual C#/Cloud", und wählen Sie **Microsoft Azure SDK für .NET abrufen**.)
+
+Beim Öffnen Ihres Blobspeichers sehen Sie einen Container mit einer Gruppe von Blobdateien. Der URI der einzelnen Dateien wird vom Application Insights-Ressourcennamen, dem zugehörigen Instrumentierungsschlüssel sowie von Typ, Datum und Uhrzeit der Telemetriedaten abgeleitet. (Der Ressourcenname enthält nur Kleinbuchstaben, und beim Instrumentierungsschlüssel werden Bindestriche entfernt.)
 
 ![Überprüfen Sie den Blobspeicher mit einem geeigneten Tool](./media/app-insights-export-telemetry/04-data.png)
 
 Datum und Uhrzeit werden in UTC angegeben und entsprechen dem Zeitpunkt, an dem die Telemetriedaten im Speicher abgelegt wurden, nicht dem Zeitpunkt ihrer Erzeugung. Wenn Sie also Code zum Herunterladen der Daten schreiben, kann sich dieser linear durch die Daten bewegen.
 
 
-
 ## <a name="format"></a> Datenformat
 
 * Jedes Blob ist eine Textdatei, die mehrere durch '\\n' getrennte Zeilen enthält.
-* Jede Zeile ist ein unformatiertes JSON-Dokument. Wenn Sie sich die Daten anschauen möchten, probieren Sie einen Viewer wie z. B. Notepad ++ mit dem JSON-Plug-In:
+* Jede Zeile ist ein unformatiertes JSON-Dokument. Wenn Sie den Vorgang verfolgen möchten, öffnen Sie es in Visual Studio, und wählen Sie "Bearbeiten", "Erweitert", "Formatdatei":
 
 ![Zeigen Sie die Telemetriedaten mit einem geeigneten Tool an](./media/app-insights-export-telemetry/06-json.png)
 
@@ -124,7 +128,7 @@ Der fortlaufende Export wird neu gestartet.
 
 ## Exportieren nach Power BI
 
-[Microsoft Power BI](https://powerbi.microsoft.com/) stellt die Daten mit umfangreichen, unterschiedlichen Grafiken dar und bietet die Möglichkeit, Informationen aus mehreren Quellen zu kombinieren. Sie können die Telemetriedaten über die Leistung und Nutzung Ihrer Apps von Application Insights zu Power BI streamen.
+[Microsoft Power BI](https://powerbi.microsoft.com/) stellt die Daten mit umfangreichen und unterschiedlichen Grafiken dar und bietet die Möglichkeit, Informationen aus mehreren Quellen zu kombinieren. Sie können die Telemetriedaten über die Leistung und Nutzung Ihrer Apps von Application Insights zu Power BI streamen.
 
 [Streamen von Application Insights zu Power BI](app-insights-export-power-bi.md)
 
@@ -198,4 +202,4 @@ Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/se
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

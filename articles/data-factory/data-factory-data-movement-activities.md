@@ -1,26 +1,26 @@
 <properties 
-	pageTitle="Datenverschiebungsaktivitäten" 
-	description="Erfahren Sie mehr über Data Factory-Entitäten, die Sie in einer Data Factory-Pipeline zum Verschieben von Daten verwenden können." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Datenverschiebungsaktivitäten"
+	description="Erfahren Sie mehr über Data Factory-Entitäten, die Sie in einer Data Factory-Pipeline zum Verschieben von Daten verwenden können."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/29/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/29/2015"
 	ms.author="spelluru"/>
 
 # Datenverschiebungsaktivitäten
 Data Factory weist einen [global verfügbaren Dienst](#global) auf, um Datenverschiebungen mit der [Kopieraktivität](#copyactivity) für eine Vielzahl der unten aufgeführten Datenspeicher zu unterstützen. Data Factory verfügt auch über integrierte Unterstützung für [das sichere Verschieben von Daten zwischen lokalen Speicherorten und der Cloud](#moveonpremtocloud) über ein Datenverwaltungsgateway.
 
 ## Unterstützte Datenspeicher für die Kopieraktivität
-Die Kopieraktivität kopiert die Daten von einem **Quelldatenspeicher** in einen Zieldatenspeicher \(**Senke**\). Data Factory unterstützt die folgenden Datenspeicher und Kombinationen aus Quelle und Senke. Klicken Sie auf einen Datenspeicher, um zu erfahren, wie Daten in den/aus dem Speicher kopiert werden.
+Die Kopieraktivität kopiert die Daten von einem **Quelldatenspeicher** in einen Zieldatenspeicher (**Senke**). Data Factory unterstützt die folgenden Datenspeicher und Kombinationen aus Quelle und Senke. Klicken Sie auf einen Datenspeicher, um zu erfahren, wie Daten in den/aus dem Speicher kopiert werden.
 
 | **Quelle** | **Senke** |
 | ------ | ---- |
@@ -39,7 +39,7 @@ Die Kopieraktivität kopiert die Daten von einem **Quelldatenspeicher** in einen
 | [Lokale PostgreSQL-Datenbank](data-factory-onprem-postgresql-connector.md) | Azure-Blob, Azure-Tabelle, Azure SQL-Datenbank, lokaler SQL Server, SQL Server unter IaaS |
 
 ## <a name="copyactivity"></a>Kopieraktivität
-Die Kopieraktivität verwendet ein Eingabedataset \(**Quelle**\) und kopiert Daten gemäß Aktivitätskonfiguration in ein Ausgabedataset \(**Senke**\). Das Kopieren der Daten erfolgt als Batch entsprechend dem für die Aktivität angegebenen Zeitplan.
+Die Kopieraktivität verwendet ein Eingabedataset (**Quelle**) und kopiert Daten gemäß Aktivitätskonfiguration in ein Ausgabedataset (**Senke**). Das Kopieren der Daten erfolgt als Batch entsprechend dem für die Aktivität angegebenen Zeitplan.
 
 > [AZURE.NOTE]Weitere Informationen zum Definieren von Aktivitäten im Allgemeinen, wie z. B. verschiedene JSON-Abschnitte und -Eigenschaften, die für alle Aktivitäten verfügbar sind, finden Sie im Artikel [Grundlegendes zu Pipelines und Aktivitäten](data-factory-create-pipelines.md).
 
@@ -50,12 +50,12 @@ Der Dienst für Datenverschiebungen, der die Kopieraktivität unterstützt, ist 
 
 | Region | Gebiet |
 | ------ | --------- | 
-| USA \(Mitte\) | US |
-| USA \(Ost\) | US |
-| USA \(Ost 2\) | US |
-| USA \(Mitte/Norden\) | US |
-| USA \(Mitte/Süden\) | US |
-| USA \(West\) | US |
+| USA (Mitte) | US |
+| USA (Ost) | US |
+| USA (Ost 2) | US |
+| USA (Mitte/Norden) | US |
+| USA (Mitte/Süden) | US |
+| USA (West) | US |
 | Brasilien Süd | LATAM |
 | Nordeuropa | EMEA |
 | Westeuropa | EMEA |
@@ -93,4 +93,8 @@ Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene
 
 Bei der Kopieraktivität hängt der Abschnitt **TypeProperties** von den Typen der Quellen und Senken ab. Auf jeder der oben genannten Seiten für Datenspeicher sind diese Eigenschaften für den jeweiligen Datenspeichertyp dokumentiert.
 
-<!---HONumber=August15_HO7-->
+
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-data-movement-activities.md).
+
+<!---HONumber=September15_HO1-->

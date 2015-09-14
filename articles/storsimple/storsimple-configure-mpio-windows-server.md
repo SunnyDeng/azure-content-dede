@@ -1,21 +1,21 @@
 <properties 
    pageTitle="Konfigurieren von MPIO für Ihr StorSimple-Gerät | Microsoft Azure"
-   description="Konfigurieren von MPIO für Ihr StorSimple-Gerät, das mit einem Host unter Windows Server 2012 R2 verbunden ist"
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+	description="Beschreibt, wie Sie Multipfad-E/A für Ihr StorSimple-Gerät konfigurieren, das mit einem Host unter Windows Server 2012 R2 verbunden ist."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/11/2015"
-   ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/31/2015"
+	ms.author="alkohli"/>
 
-# Konfigurieren von MPIO für Ihr StorSimple-Gerät
+# Konfigurieren von Multipfad-E/A für Ihr StorSimple-Gerät
 
 Microsoft hat Unterstützung für die Multipfad-E/A-Funktion (Multipath I/O, MPIO) in Windows Server integriert, um Ihnen beim Erstellen hoch verfügbarer, fehlertoleranter SAN-Konfigurationen zu helfen. MPIO verwendet redundante physische Pfadkomponenten (Adapter, Kabel und Switches), um logische Pfade zwischen dem Server und dem Speichergerät zu erstellen. Wenn bei einer Komponente ein Fehler auftritt, durch den ein logischer Pfad fehlschlägt, verwendet die Multipfad-Logik einen anderen Pfad für E/A, sodass Anwendungen weiterhin auf ihre Daten zugreifen können. Darüber hinaus kann MPIO abhängig von Ihrer Konfiguration auch die Leistung durch ein Umverteilen der Lasten auf alle Pfade verbessern. Weitere Informationen finden Sie unter [Multipfad-E/A (Übersicht)](https://technet.microsoft.com/library/cc725907.aspx "MPIO – Übersicht und Features").
 
@@ -173,4 +173,4 @@ Das folgende Verfahren beschreibt, wie Sitzungen hinzugefügt werden, wenn ein S
 Erfahren Sie mehr zum Thema [Verwenden des StorSimple Manager-Diensts, um eine StorSimple-Gerätekonfiguration zu ändern](storsimple-modify-device-config.md).
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

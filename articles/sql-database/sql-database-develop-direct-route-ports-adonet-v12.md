@@ -1,24 +1,24 @@
 <properties 
-	pageTitle="Andere Ports als 1433 für ADO.NET 4.5, ODBC 11 und SQL-Datenbank V12 | Microsoft Azure"
+	pageTitle="Andere Ports als 1433 für ADO.NET 4.5 und SQL-Datenbank V12 | Microsoft Azure"
 	description="Bei Clientverbindungen mit Azure SQL-Datenbank V12 wird der Proxy manchmal umgangen und direkt mit der Datenbank interagiert. Andere Ports als 1433 werden wichtig."
 	services="sql-database"
 	documentationCenter=""
 	authors="MightyPen"
 	manager="jeffreyg"
-	editor="" />
+	editor=""/>
 
 
 <tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/06/2015" 
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="genemi"/>
 
 
-# Andere Ports als 1433 für ADO.NET 4.5, ODBC 11 und SQL-Datenbank V12
+# Andere Ports als 1433 für ADO.NET 4.5 und SQL-Datenbank V12
 
 
 Dieses Thema beschreibt die Änderungen, die Azure SQL-Datenbank V12 im Hinblick auf das Verbindungsverhalten von Clients mit ADO.NET 4.5 oder einer höheren Version aufweist.
@@ -61,7 +61,7 @@ Wenn der Client innerhalb der Azure-Cloudgrenzen ausgeführt wird, verwendet er 
 Der Ablauf ist wie folgt:
 
 
-1. ADO.NET 4.5 \(oder höher\) initiiert eine kurze Interaktion mit der Azure-Cloud und empfängt eine dynamisch ermittelte Portnummer.
+1. ADO.NET 4.5 (oder höher) initiiert eine kurze Interaktion mit der Azure-Cloud und empfängt eine dynamisch ermittelte Portnummer.
  - Die dynamisch ermittelte Portnummer liegt im Bereich von 11000 bis 11999.
 
 2. ADO.NET stellt dann eine direkte Verbindung mit dem SQL-Datenbankserver ohne Einbindung von Middleware her.
@@ -122,13 +122,17 @@ In diesem Thema werden die Unterschiede bei der Clientverbindung zwischen SQL-Da
 
 - [Neuerungen in SQL-Datenbank V12](sql-database-v12-whats-new.md)
 
-- Überlegungen zur Wiederholungslogik: [Abschnitt "In V12 stellt der Gateway keine Wiederholungslogik mehr bereit" des Themas "Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen"](sql-database-connect-central-recommendations.md#gatewaynoretry)
+
+- [Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen](sql-database-connect-central-recommendations.md)
+
 
 - ADO.NET 4.6 wurde am 20. Juli 2015 veröffentlicht. Eine Ankündigung im Blog des .NET-Teams finden Sie [hier](http://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx).
+
 
 - ADO.NET 4.5 wurde am 15. August 2012 veröffentlicht. Eine Ankündigung im Blog des .NET-Teams finden Sie [hier](http://blogs.msdn.com/b/dotnet/archive/2012/08/15/announcing-the-release-of-net-framework-4-5-rtm-product-and-source-code.aspx).
  - Ein Blogbeitrag zu ADO.NET 4.5.1 steht [hier](http://blogs.msdn.com/b/dotnet/archive/2013/06/26/announcing-the-net-framework-4-5-1-preview.aspx) bereit.
 
+
 - [Liste der TDS-Protokollversionen](http://www.freetds.org/userguide/tdshistory.htm)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

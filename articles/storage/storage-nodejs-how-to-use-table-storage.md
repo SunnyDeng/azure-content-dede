@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Verwenden des Tabellenspeichers mit Node.js | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Tabellenspeicherdienst in Azure verwenden. Die Codebeispiele verwenden die Node.js-API." 
-	services="storage" 
-	documentationCenter="nodejs" 
-	authors="MikeWasson" 
-	manager="wpickett" 
+	pageTitle="Verwenden des Tabellenspeichers mit Node.js | Microsoft Azure"
+	description="Erfahren Sie, wie Sie den Tabellenspeicherdienst in Azure verwenden. Die Codebeispiele verwenden die Node.js-API."
+	services="storage"
+	documentationCenter="nodejs"
+	authors="MikeWasson"
+	manager="wpickett"
 	editor=""/>
 
-
 <tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="03/11/2015" 
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="mwasson"/>
-
 
 
 # Verwenden des Tabellenspeichers mit Node.js
@@ -48,17 +46,18 @@ Um Azure-Speicher verwenden zu können, müssen Sie das Azure Storage-SDK für N
 
 1.  Verwenden Sie eine Befehlszeilenschnittstelle, z. B. **PowerShell** (Windows,) **Terminal** (Mac) oder **Bash** (Unix), und navigieren Sie zu dem Ordner, in dem Sie die Beispielanwendung erstellt haben.
 
-2.  Geben Sie **npm install azure-storage** in das Befehlsfenster ein. Die Ausgabe des Befehls sollte wie folgt aussehen:
+2.  Geben Sie **npm install azure-storage** in das Befehlsfenster ein. Die Ausgabe des Befehls ähnelt dem folgenden Beispiel.
 
-        azure-storage@0.1.0 node_modules\azure-storage
-		├── extend@1.2.1
-		├── xmlbuilder@0.4.3
-		├── mime@1.2.11
-		├── underscore@1.4.4
-		├── validator@3.1.0
-		├── node-uuid@1.4.1
-		├── xml2js@0.2.7 (sax@0.5.2)
-		└── request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
+		azure-storage@0.5.0 node_modules\azure-storage
+		+-- extend@1.2.1
+		+-- xmlbuilder@0.4.3
+		+-- mime@1.2.11
+		+-- node-uuid@1.4.3
+		+-- validator@3.22.2
+		+-- underscore@1.4.4
+		+-- readable-stream@1.0.33 (string_decoder@0.10.31, isarray@0.0.1, inherits@2.0.1, core-util-is@1.0.1)
+		+-- xml2js@0.2.7 (sax@0.5.2)
+		+-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
 
 3.  Sie können den Befehl **ls** manuell aufrufen, um sich davon zu überzeugen, dass der Ordner **node\_modules** erstellt wurde. In diesem Ordner finden Sie das Paket **azure-storage** mit den Bibliotheken, die Sie benötigen, um auf den Speicher zuzugreifen.
 
@@ -192,7 +191,7 @@ Für erfolgreiche Aktualisierungsvorgänge enthält das `result` das **ETag** de
 
 ## Arbeiten mit Gruppen von Entitäten
 
-Gelegentlich ist es sinnvoll, mehrere Vorgänge zusammen in einem Stapel zu senden, um die atomische Verarbeitung durch den Server sicherzustellen. Dazu erstellen Sie mit der **TableBatch**-Klasse einen Batch und führen dann mit der **executeBatch**-Methode von **TableService** die Batch-Vorgänge aus.
+Gelegentlich ist es sinnvoll, mehrere Vorgänge zusammen in einem Stapel zu senden, um die atomische Verarbeitung durch den Server sicherzustellen. Dazu erstellen Sie mit der **TableBatch**-Klasse einen Batch und führen dann mit der **executeBatch**-Methode von **TableService** die Batchvorgänge aus.
 
  Im folgenden Beispiel wird gezeigt, wie zwei Entitäten in einem Batch übermittelt werden:
 
@@ -220,9 +219,9 @@ Gelegentlich ist es sinnvoll, mehrere Vorgänge zusammen in einem Stapel zu send
 	  }
 	});
 
-Bei erfolgreichen Batch-Vorgängen enthält `result` Informationen für jeden Vorgang im Batch.
+Bei erfolgreichen Batchvorgängen enthält `result` Informationen für jeden Vorgang im Batch.
 
-### Arbeiten mit Batch-Vorgängen
+### Arbeiten mit Batchvorgängen
 
 Vorgänge, die zu einem Batch hinzugefügt wurden, können durch Anzeigen der Eigenschaft `operations` überprüft werden. Sie können auch die folgenden Methoden verwenden, um mit Vorgängen zu arbeiten.
 
@@ -277,9 +276,9 @@ Da **select** nicht verwendet wird, werden alle Felder zurückgegeben. Verwenden
 	  }
 	});
 
-Nach erfolgreicher Ausführung enthält `result.entries` ein Array von Entitäten, die die Abfrage erfüllen. Wenn nicht alle Entitäten von der Abfrage zurückgegeben werden konnten, ist `result.continuationToken` ungleich *Null* und kann als dritter Parameter von **queryEntities** verwendet werden, um weitere Ergebnisse abzurufen. In der ersten Abfrage sollte der zweite Parameter *null* sein.
+Nach erfolgreicher Ausführung enthält `result.entries` ein Array von Entitäten, die die Abfrage erfüllen. Wenn nicht alle Entitäten von der Abfrage zurückgegeben werden konnten, ist `result.continuationToken` ungleich *Null* und kann als dritter Parameter von **queryEntities** verwendet werden, um weitere Ergebnisse abzurufen. Verwenden Sie in der ersten Abfrage *null* als dritten Parameter.
 
-### Abfragen einer Teilmenge von Entitätseigenschaften
+### Abfragen einer Teilmenge von Entitäteneigenschaften
 
 Mit einer Abfrage einer Tabelle können nur einige wenige Felder einer Entität aufgerufen werden. Somit wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Verwenden Sie die **select**-Klausel, und übergeben Sie die Namen der zurückzugebenden Felder. Die folgende Abfrage gibt beispielsweise nur die Felder **description** und **dueDate** zurück.
 
@@ -288,7 +287,7 @@ Mit einer Abfrage einer Tabelle können nur einige wenige Felder einer Entität 
 	  .top(5)
 	  .where('PartitionKey eq ?', 'hometasks');
 
-## Zum Löschen einer Entität
+## Löschen einer Entität
 
 Sie können eine Entität unter Verwendung ihres Partitions- und Zeilenschlüssels löschen. In diesem Beispiel enthält das Objekt **task1** die **RowKey**- und **PartitionKey**-Werte der zu löschenden Entität. Dann wird das Objekt der **deleteEntity**-Methode übergeben.
 
@@ -303,7 +302,7 @@ Sie können eine Entität unter Verwendung ihres Partitions- und Zeilenschlüsse
 	  }
 	});
 
-> [AZURE.NOTE]Es ist ratsam, beim Löschen von Elementen Etags zu verwenden, um sicherzustellen, dass das Element nicht von einem anderen Prozess geändert wurde. Weitere Informationen zum Verwenden von ETags finden Sie unter [Aktualisieren einer Entität][].
+> [AZURE.NOTE]Es ist ratsam, beim Löschen von Elementen ETags zu verwenden, um sicherzustellen, dass das Element nicht von einem anderen Prozess geändert wurde. Informationen zum Verwenden von ETags finden Sie unter [Aktualisieren einer Entität](#update-an-entity).
 
 ## Löschen einer Tabelle
 
@@ -451,4 +450,4 @@ Nachdem Sie sich nun mit den Grundlagen der Tabellenspeicherung vertraut gemacht
   [Create and deploy a Node.js application to an Azure Web Site]: ../web-sites-nodejs-develop-deploy-mac.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

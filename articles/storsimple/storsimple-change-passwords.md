@@ -1,30 +1,30 @@
 <properties 
-   pageTitle="Verwenden des StorSimple Manager-Diensts, um StorSimple-Kennwörter zu ändern | Microsoft Azure" 
-   description="Beschreibt, wie Sie den StorSimple Manager-Dienst verwenden, um Ihr StorSimple Snapshot Manager- und Ihr Geräteadministratorkennwort zu ändern." 
-   services="storsimple" 
-   documentationCenter="NA" 
-   authors="SharS" 
-   manager="carolz" 
-   editor=""/>
+   pageTitle="Ändern Ihres StorSimple-Kennworts | Microsoft Azure"
+	description="Beschreibt, wie Sie den StorSimple Manager-Dienst verwenden, um Ihr StorSimple Snapshot Manager- und Ihr Geräteadministratorkennwort zu ändern."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="SharS"
+	manager="carolz"
+	editor=""/>
 
 <tags
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD" 
-   ms.date="08/11/2015"
-   ms.author="v-sharos@microsoft.com"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/31/2015"
+	ms.author="v-sharos@microsoft.com"/>
 
 # Verwenden des StorSimple Manager-Diensts, um StorSimple-Kennwörter zu ändern
 
 ## Übersicht 
 
-Die Verwaltungsportalseite **Konfigurieren** enthält alle Geräteparameter, die Sie für ein StorSimple-Gerät neu konfigurieren können, das über einen StorSimple Manager-Dienst verwaltet wird. In diesem Lernprogramm wird erläutert, wie Sie die Seite **Konfigurieren** verwenden können, um Ihr StorSimple Snapshot Manager- oder Ihr Geräteadministratorkennwort zu ändern.
+Die Verwaltungsportalseite **Konfigurieren** enthält alle Geräteparameter, die Sie für ein StorSimple-Gerät neu konfigurieren können, das über einen StorSimple Manager-Dienst verwaltet wird. In diesem Tutorial wird erläutert, wie Sie die Seite **Konfigurieren** verwenden können, um Ihr StorSimple Snapshot Manager- oder Ihr Geräteadministratorkennwort zu ändern.
 
 ## Ändern des StorSimple Snapshot Manager-Kennworts
 
-Der StorSimple-Momentaufnahme-Manager befindet sich auf dem Windows-Host und ermöglicht Administratoren die Verwaltung der Sicherungen Ihres StorSimple-Geräts in Form von lokalen und Cloud-Momentaufnahmen.
+Der StorSimple-Momentaufnahme-Manager befindet sich auf dem Windows-Host und ermöglicht Administratoren die Verwaltung der Sicherungen Ihres StorSimple-Geräts in Form von lokalen und Cloudmomentaufnahmen.
 
 Beim Konfigurieren eines Geräts im StorSimple Snapshot Manager werden Sie aufgefordert, zur Authentifizierung des Speichergeräts die IP-Adresse und das Kennwort des Geräts anzugeben. Dieses Kennwort wird zunächst über die Windows PowerShell-Benutzeroberfläche konfiguriert. Weitere Informationen finden Sie unter [Schritt 3: Konfigurieren und Registrieren des Geräts über Windows PowerShell für StorSimple](storsimple-deployment-walkthrough.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md).
 
@@ -66,4 +66,4 @@ Das Geräteadministratorkennwort wurde jetzt aktualisiert. Sie können dieses ge
 
 [Erfahren Sie mehr über das Ändern Ihrer Gerätekonfiguration](storsimple-modify-device-config.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

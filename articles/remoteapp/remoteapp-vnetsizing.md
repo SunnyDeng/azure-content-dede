@@ -1,20 +1,20 @@
 
 <properties 
     pageTitle="Größeninformationen für ein VNET in Azure RemoteApp"
-    description="Erfahren Sie mehr über die Anforderungen für IP-Adressen für ein VNET mit Azure RemoteApp." 
-    services="remoteapp" 
-    documentationCenter="" 
-    authors="lizap" 
-    manager="mbaldwin" />
+	description="Erfahren Sie mehr über die Anforderungen für IP-Adressen für ein VNET mit Azure RemoteApp."
+	services="remoteapp"
+	documentationCenter=""
+	authors="lizap"
+	manager="mbaldwin"/>
 
 <tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/10/2015" 
-    ms.author="elizapo" />
+    ms.service="remoteapp"
+	ms.workload="compute"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2015"
+	ms.author="elizapo"/>
 
 
 
@@ -31,4 +31,4 @@ Sehen Sie sich die folgenden Informationen an, um sicherzustellen, dass Ihr VNET
   
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

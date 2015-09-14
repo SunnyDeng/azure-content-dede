@@ -1,31 +1,29 @@
 <properties 
    pageTitle="Verwalten von StorSimple-Sicherungskatalog | Microsoft Azure"
-   description="Erläutert, wie Sie den StorSimple Manager-Dienst zum Verwalten der Sicherungssätze für ein Volume verwenden."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="carolz"
-   editor="" />
+	description="Erläutert, wie Sie die Seite ";Sicherungskatalog"; des StorSimple Manager-Diensts nutzen können, um Sicherungssätze für ein Volume aufzulisten, auszuwählen und zu löschen."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="SharS"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/13/2015"
-   ms.author="v-sharos" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="09/01/2015"
+	ms.author="v-sharos"/>
 
-# Verwalten von StorSimple-Sicherungskatalog
+# Verwalten des Sicherungskatalogs mithilfe des StorSimple Manager-Diensts
 
 ## Übersicht
 
-Auf der Seite **Sicherungskatalog** werden alle Sicherungssätze angezeigt, die mithilfe manueller oder automatisierter Sicherungen erstellt wurden. Sie können auf dieser Seite alle Sicherungen für eine Sicherungsrichtlinie oder ein Volume auflisten, Sicherungen auswählen oder löschen oder eine Sicherung zum Wiederherstellen oder Klonen eines Volumes verwenden.
+Auf der Seite **Sicherungskatalog** des StorSimple Manager-Diensts werden alle Sicherungssätze angezeigt, die mithilfe manueller oder automatisierter Sicherungen erstellt wurden. Sie können auf dieser Seite alle Sicherungen für eine Sicherungsrichtlinie oder ein Volume auflisten, Sicherungen auswählen oder löschen oder eine Sicherung zum Wiederherstellen oder Klonen eines Volumes verwenden.
 
-In diesem Lernprogramm wird erläutert, wie ein Sicherungssatz aufgeführt, ausgewählt und gelöscht wird. Um zu erfahren, wie Sie Ihr Gerät aus einer Sicherung wiederherstellen, gehen Sie zu [Wiederherstellen Ihres Geräts aus einem Sicherungssatz](storsimple-restore-from-backup-set.md). Um zu erfahren, wie Sie ein Volume klonen, gehen Sie zu [Klonen von StorSimple-Volumes](storsimple-clone-volume.md).
+In diesem Tutorial wird erläutert, wie ein Sicherungssatz aufgeführt, ausgewählt und gelöscht wird. Um zu erfahren, wie Sie Ihr Gerät aus einer Sicherung wiederherstellen, gehen Sie zu [Wiederherstellen Ihres Geräts aus einem Sicherungssatz](storsimple-restore-from-backup-set.md). Um zu erfahren, wie Sie ein Volume klonen, gehen Sie zu [Klonen von StorSimple-Volumes](storsimple-clone-volume.md).
 
 ![Sicherungskatalog](./media/storsimple-manage-backup-catalog/HCS_BackupCatalog.png)
-
-**Abbildung 1: Sicherungskatalog**
 
 Die Seite **Sicherungskatalog** bietet eine Abfrage, mit der Sie die Auswahl der Sicherungssätze einschränken können. Sie können die abgerufenen Sicherungssätze anhand der folgenden Parameter filtern:
 
@@ -43,7 +41,7 @@ Die gefilterten Sicherungssätze werden dann basierend auf den folgenden Attribu
 
 - **Erstellt am** – Das Datum und die Uhrzeit der Erstellung der Sicherungen.
 
-- **Typ** – Sicherungssätze können lokale Momentaufnahmen oder Cloud-Momentaufnahmen sein. Eine lokale Momentaufnahme ist eine Sicherung aller Volumedaten, die auf dem lokalen Gerät gespeichert ist, während die Sicherung von Volumedaten in der Cloud als Cloud-Momentaufnahme bezeichnet wird. Lokale Momentaufnahmen bieten schnelleren Zugriff, während Cloud-Momentaufnahmen für Datenstabilität ausgewählt werden.
+- **Typ** – Sicherungssätze können lokale Momentaufnahmen oder Cloudmomentaufnahmen sein. Eine lokale Momentaufnahme ist eine Sicherung aller Volumedaten, die auf dem lokalen Gerät gespeichert ist, während die Sicherung von Volumedaten in der Cloud als Cloudmomentaufnahme bezeichnet wird. Lokale Momentaufnahmen bieten schnelleren Zugriff, während Cloudmomentaufnahmen für Datenstabilität ausgewählt werden.
 
 - **Initiiert von** – Die Sicherungen können automatisch nach einem Zeitplan oder manuell durch einen Benutzer initiiert werden. Sie können eine Sicherungsrichtlinie verwenden, um Sicherungen zu planen. Es ist aber auch möglich, mithilfe der Option **Sicherung erstellen** eine interaktive Sicherung durchzuführen.
 
@@ -95,7 +93,7 @@ Löschen Sie eine Sicherung, wenn Sie die zugeordneten Daten nicht mehr beibehal
 
 #### Löschen eines Sicherungssatzes
 
-1. Klicken Sie auf der Seite des StorSimple-Manager-Diensts auf die **Registerkarte Sicherungskatalog**.
+1. Klicken Sie auf der Seite des StorSimple Manager-Diensts auf die Registerkarte **Sicherungskatalog**.
 
 2. Filtern Sie die Auswahl wie folgt:
 
@@ -117,4 +115,4 @@ Löschen Sie eine Sicherung, wenn Sie die zugeordneten Daten nicht mehr beibehal
 
 Erfahren sie mehr über die Verwendung des Sicherungskatalogs zum [Wiederherstellen Ihres Geräts aus einem Sicherungssatz](storsimple-restore-from-backup-set.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

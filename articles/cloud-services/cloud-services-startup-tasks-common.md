@@ -21,7 +21,7 @@ Dieser Artikel enthält einige Beispiele für häufiger ausgeführte Startaufgab
 
 In [diesem Artikel](cloud-services-startup-tasks.md) erfahren Sie etwas über die Funktionsweise von Startaufgaben und insbesondere darüber, wie die Einträge zum Definieren einer Startaufgabe erstellt werden.
 
- 
+Viele der hier verwendeten Aufgaben verwenden die
 
 >[AZURE.NOTE]Startaufgaben gelten nicht für virtuelle Computer, sondern nur für Web- und Workerrollen von Clouddiensten.
 
@@ -503,4 +503,4 @@ Führen Sie das [Erstellen und Bereitstellen](cloud-services-how-to-create-deplo
 [LocalResources]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalResources
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL" 
-	description="In diesem Lernprogramm erfahren Sie, wie Sie eine Beispieldatenpipeline erstellen, die Daten von einem Blob an eine Azure SQL-Datenbankinstanz kopiert." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Tutorial: Erstellen einer Pipeline mit Kopieraktivität mithilfe von Visual Studio"
+	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Pipeline mit Kopieraktivität mithilfe von Visual Studio."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/27/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/27/2015"
 	ms.author="spelluru"/>
-
 
 # Lernprogramm: Erstellen und Überwachen einer Data Factory mit Visual Studio
 > [AZURE.SELECTOR]
@@ -103,7 +101,7 @@ In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **AzureStorageLinkedSe
 
 5. Klicken Sie mit der rechten Maustaste erneut auf den Knoten **Verknüpfte Dienste** im **Projektmappen-Explorer**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**. 
 6. Wählen Sie dieses Mal **Azure SQL Linked Service** aus, und klicken Sie dann auf **Hinzufügen**. 
-7. Ersetzen Sie in der Datei **AzureSqlLinkedService1.json** die Werte **servername**, **databasename**, \*\***username@servername** und **password** durch die betreffenden Angaben für Azure SQL-Server, -Datenbank, -Benutzerkonto und -Kennwort.
+7. Ersetzen Sie in der Datei **AzureSqlLinkedService1.json** die Werte **servername**, **databasename**, ****username@servername** und **password** durch die betreffenden Angaben für Azure SQL-Server, -Datenbank, -Benutzerkonto und -Kennwort.
 8.  Speichern Sie die Datei **AzureSqlLinkedService1.json**. 
 
 
@@ -252,4 +250,8 @@ Um die Azure Data Factory-Tools für Visual Studio zu aktualisieren, führen Sie
 
 Unter [Überwachen von Datasets und Pipelines](data-factory-get-started-using-editor.md/#MonitorDataSetsAndPipeline) finden Sie eine Anleitung zum Überwachen der in dieser Anleitung erstellten Pipeline und Datasets über das Azure-Vorschauportal.
 
-<!---HONumber=August15_HO6-->
+
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-get-started-using-vs.md).
+
+<!---HONumber=September15_HO1-->

@@ -1,24 +1,24 @@
 <properties 
-	pageTitle="Hinzufügen einer Java-Anwendung in Azure App Service-Web-Apps" 
-	description="In diesem Lernprogramm erfahren Sie, wie Sie eine Seite oder Anwendung zu Ihrer Instanz von Azure-App Service Web-Apps hinzufügen, die bereits für die Verwendung von Java konfiguriert ist." 
-	services="app-service\web" 
-	documentationCenter="java" 
-	authors="rmcmurray" 
-	manager="wpickett" 
+	pageTitle="Hinzufügen einer Java-Anwendung in Azure App Service-Web-Apps"
+	description="In diesem Lernprogramm erfahren Sie, wie Sie eine Seite oder Anwendung zu Ihrer Instanz von Azure-App Service Web-Apps hinzufügen, die bereits für die Verwendung von Java konfiguriert ist."
+	services="app-service\web"
+	documentationCenter="java"
+	authors="rmcmurray"
+	manager="wpickett"
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="06/03/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="08/31/2015"
 	ms.author="robmcm"/>
 
 # Hinzufügen einer Java-Anwendung in Azure App Service-Web-Apps
 
-Nachdem Sie Ihre Java Web-App in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) wie unter [Erstellen einer Java Web-App in Azure App Service](web-sites-java-get-started.md) beschrieben, initialisiert haben, können Sie die Anwendung hochladen, indem Sie Ihre WAR-Datei im Ordner **webapps** ablegen.
+Nachdem Sie Ihre Java Web-App in [Azure App Service][] wie unter [Erstellen einer Java Web-App in Azure App Service](web-sites-java-get-started.md) beschrieben, initialisiert haben, können Sie die Anwendung hochladen, indem Sie Ihre WAR-Datei im Ordner **webapps** ablegen.
 
 iiDer Navigationspfad zum Ordner **webapps** hängt davon ab, wie Sie Ihre Web-Apps-Instanz einrichten.
 
@@ -32,7 +32,8 @@ Hinweis für Tomcat-Web-Apps: Nachdem Sie Ihre WAR-Datei in den Ordner **webapps
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
- 
- 
 
-<!---HONumber=August15_HO6-->
+<!-- External Links -->
+[Azure App Service]: http://go.microsoft.com/fwlink/?LinkId=529714
+
+<!---HONumber=September15_HO1-->

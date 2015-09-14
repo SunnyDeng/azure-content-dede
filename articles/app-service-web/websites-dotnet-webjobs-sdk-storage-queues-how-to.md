@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK" 
-	description="Erfahren Sie, wie Sie Azure-Warteschlangenspeicher mit dem WebJobs-SDK nutzen. Sie können Warteschlangen erstellen und löschen, Warteschlangennachrichten einfügen, einsehen, abrufen und löschen und vieles mehr." 
-	services="app-service\web, storage" 
-	documentationCenter=".net" 
-	authors="tdykstra" 
-	manager="wpickett" 
+	pageTitle="Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK"
+	description="Erfahren Sie, wie Sie Azure-Warteschlangenspeicher mit dem WebJobs-SDK nutzen. Sie können Warteschlangen erstellen und löschen, Warteschlangennachrichten einfügen, einsehen, abrufen und löschen und vieles mehr."
+	services="app-service\web, storage"
+	documentationCenter=".net"
+	authors="tdykstra"
+	manager="wpickett"
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="06/29/2015"
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK
@@ -538,7 +538,12 @@ Zum [Schreiben von Ablaufverfolgungsprotokollen](web-sites-dotnet-troubleshoot-v
 
 Die Konsolenausgabe wird nur im Dashboard angezeigt, wenn das Programm in einem Azure-Webauftrag ausgeführt wird, und nicht, wenn die Anwendung lokal oder in einer anderen Umgebung ausgeführt wird.
 
-Sie können die Protokollierung deaktivieren, indem Sie die [Dashboard-Verbindungszeichenfolge auf NULL festlegen](#config).
+Deaktivieren Sie die Dashboardprotokollierung für Szenarien mit hohem Durchsatz. Standardmäßig schreibt das SDK Protokolle in den Speicher, und diese Aktivität kann sich negativ auf die Leistung auswirken, wenn Sie viele Nachrichten verarbeiten. Legen Sie zum Deaktivieren der Protokollierung die Dashboardverbindungszeichenfolge auf NULL fest, wie im folgenden Beispiel gezeigt.
+
+		JobHostConfiguration config = new JobHostConfiguration();       
+		config.DashboardConnectionString = “”;        
+		JobHost host = new JobHost(config);
+		host.RunAndBlock();
 
 Im folgenden Beispiel sind mehrere Möglichkeiten zum Schreiben von Protokollen dargestellt:
 
@@ -581,4 +586,4 @@ In einer Azure-Tabelle sehen die Protokolle `Console.Out` und `Console.Error` wi
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

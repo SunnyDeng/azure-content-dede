@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
-	ms.date="08/21/2015"
+	ms.date="08/27/2015"
 	ms.author="tomfitz"/>
 
 # Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager
@@ -112,9 +112,11 @@ Verwenden Sie die folgende Vorlage:
       } 
     ]
 
+Natürlich legen Sie die copy-Anzahl auf einen anderen Wert fest als die Länge des Arrays. Sie können beispielsweise ein Array mit vielen Werten erstellen und dann einen Parameterwert übergeben, der festlegt, wie viele der Arrayelemente bereitgestellt werden sollen. In diesem Fall legen Sie die copy-Anzahl wie im ersten Beispiel gezeigt fest.
+
 ## Nächste Schritte
 - Informationen zu den Abschnitten einer Vorlage finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-authoring-templates.md).
 - Unter [Funktionen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-template-functions.md) finden Sie alle Funktionen, die Sie in einer Vorlage verwenden können.
 - Informationen zum Bereitstellen Ihrer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

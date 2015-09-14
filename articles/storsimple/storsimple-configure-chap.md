@@ -1,25 +1,23 @@
 <properties 
    pageTitle="Konfigurieren von CHAP für Ihr StorSimple-Gerät | Microsoft Azure"
-   description="Beschreibt die Vorgehensweise zum Konfigurieren des Challenge Handshake Authentication-Protokolls auf einem StorSimple-Gerät."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+	description="Beschreibt die Vorgehensweise zum Konfigurieren des Challenge Handshake Authentication-Protokolls (CHAP) auf einem StorSimple-Gerät."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="TBD"
-   ms.date="08/11/2015"
-   ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="TBD"
+	ms.date="09/01/2015"
+	ms.author="alkohli"/>
 
 # Konfigurieren von CHAP für Ihr StorSimple-Gerät
 
-In diesem Tutorial erfahren Sie, wie Sie CHAP für Ihr StorSimple-Gerät konfigurieren.
-
-CHAP steht für Challenge Handshake Authentication-Protokoll. Dabei handelt es sich um ein Authentifizierungsschema, das von Servern zum Überprüfen der Identität von Remoteclients verwendet wird. Die Überprüfung basiert auf einem freigegebenen Kennwort oder geheimen Schlüssel.
+In diesem Tutorial erfahren Sie, wie Sie CHAP für Ihr StorSimple-Gerät konfigurieren. CHAP steht für Challenge Handshake Authentication-Protokoll. Dabei handelt es sich um ein Authentifizierungsschema, das von Servern zum Überprüfen der Identität von Remoteclients verwendet wird. Die Überprüfung basiert auf einem freigegebenen Kennwort oder geheimen Schlüssel.
 
 CHAP kann unidirektional oder bidirektional verwendet werden. Bei unidirektionalem CHAP authentifiziert das Ziel einen Initiator. Bei bidirektionalem (oder umgekehrtem) CHAP muss dagegen das Ziel den Initiator und der Initiator wiederum das Ziel authentifizieren. Die Initiatorauthentifizierung kann ohne Zielauthentifizierung implementiert werden. Die Zielauthentifizierung kann dagegen nur implementiert werden, wenn auch die Initiatorauthentifizierung implementiert ist.
 
@@ -190,6 +188,6 @@ Mit den folgenden Schritten können Sie überprüfen, ob CHAP verwendet wird.
 
 ## Nächste Schritte
 
-Informieren Sie sich ausführlicher über [StorSimple-Sicherheit](storsimple-security.md).
+Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

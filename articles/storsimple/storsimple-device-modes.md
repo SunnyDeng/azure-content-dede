@@ -1,29 +1,29 @@
 <properties 
-   pageTitle="Ändern des Gerätemodus auf Ihrem StorSimple-Gerät | Microsoft Azure"
-   description="Hier erhalten Sie Informationen zu den verschiedenen StorSimple-Gerätemodi und erfahren, wie Sie den Gerätemodus ändern."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+   pageTitle="Ändern des StorSimple-Gerätemodus | Microsoft Azure"
+	description="Beschreibt die StorSimple-Gerätemodi und erläutert, wie Sie den Gerätemodus mithilfe von Windows PowerShell für StorSimple ändern."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/12/2015"
-   ms.author="alkohli" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="09/01/2015"
+	ms.author="alkohli"/>
 
-# StorSimple-Gerätemodi
+# Ändern des Gerätemodus auf Ihrem StorSimple-Gerät
 
 Dieser Artikel enthält eine kurze Beschreibung der verschiedenen Modi, in denen StorSimple-Geräte ausgeführt werden können. Auf Ihrem StorSimple-Gerät stehen drei Modi zur Verfügung: der normale Modus, der Verwaltungsmodus und der Wiederherstellungsmodus.
 
 Dieser Artikel enthält Folgendes:
 
-- Informationen zu StorSimple-Gerätemodi
+- Informationen zu den StorSimple-Gerätemodi
 - Informationen zur Ermittlung des derzeit aktiven Modus des StorSimple-Geräts
-- Informationen zum Ändern des normalen Modus zum Wartungsmodus und *umgekehrt*
+- Informationen zum Ändern des normalen Modus in den Wartungsmodus und *umgekehrt*
 
 
 Die oben aufgeführten Verwaltungsaufgaben können nur über die Windows PowerShell-Schnittstelle Ihres StorSimple-Geräts ausgeführt werden.
@@ -54,7 +54,7 @@ Wenn Ihr System in den Wiederherstellungsmodus wechselt, sollten Sie sich mit de
 
 ## Ermitteln des StorSimple-Gerätemodus
 
-Um den Gerätemodus zu ermitteln, führen Sie die folgenden Schritte aus:
+#### So ermitteln Sie den aktuellen Gerätemodus
 
 1. Melden Sie sich bei der seriellen Gerätekonsole an, indem Sie die Schritte unter [Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole](storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-device-serial-console) ausführen.
 2. Sehen Sie sich die Bannermeldung im Menü der seriellen Konsole des Geräts an. Diese Meldung gibt explizit an, ob sich das Gerät im Wartungsmodus oder im Wiederherstellungsmodus befindet. Wenn die Meldung keine bestimmten Informationen zum Systemmodus enthält, befindet sich das Gerät im normalen Modus.
@@ -97,4 +97,4 @@ Sie können das StorSimple-Gerät (vom normalen Modus) in den Wartungsmodus vers
 
 Hier erfahren Sie, wie Sie auf Ihrem StorSimple-Gerät [Updates im normalen Modus und im Wartungsmodus installieren](storsimple-update-device.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

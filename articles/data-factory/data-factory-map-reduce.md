@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Aufrufen eines MapReduce-Programms über Azure Data Factory" 
-	description="Erfahren Sie, wie Sie Daten verarbeiten, indem Sie MapReduce-Programme mithilfe einer Azure Data Factory auf einen Azure HDInsight-Cluster anwenden." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Aufrufen eines MapReduce-Programms über Azure Data Factory"
+	description="Erfahren Sie, wie Sie Daten verarbeiten, indem Sie MapReduce-Programme mithilfe einer Azure Data Factory auf einen Azure HDInsight-Cluster anwenden."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/31/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/31/2015"
 	ms.author="spelluru"/>
-
 
 # Aufrufen von MapReduce-Programmen über Data Factory
 In diesem Artikel wird beschrieben, wie ein **MapReduce**-Programm mithilfe der **HDInsight MapReduce-Aktivität** aus einer Azure Data Factory-Pipeline aufgerufen wird.
@@ -66,9 +64,9 @@ Gehen Sie für die JSON-Definition der HDInsight-Aktivität so vor:
 		            "-s",
 		            "SIMILARITY_LOGLIKELIHOOD",
 		            "--input",
-		            "wasb://<container>@<accountname>.blob.core.windows.net/Mahout/input",
+		            "$$Text.Format('wasb://<container>@<accountname>.blob.core.windows.net/Mahout/Input/yearno={0:yyyy}/monthno={0:%M}/dayno={0:%d}/', SliceStart)",
 		            "--output",
-		            "wasb://<container>@<accountname>.blob.core.windows.net/Mahout/output/",
+		            "$$Text.Format('wasb://<container>@<accountname>.blob.core.windows.net/Mahout/Output/yearno={0:yyyy}/monthno={0:%M}/dayno={0:%d}/', SliceStart)",
 		            "--maxSimilaritiesPerItem",
 		            "500",
 		            "--tempDir",
@@ -104,4 +102,4 @@ Sie können ein Beispiel zur Verwendung der HDInsight-Aktivität mit MapReduce-T
 [Azure Portal]: http://portal.azure.com
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

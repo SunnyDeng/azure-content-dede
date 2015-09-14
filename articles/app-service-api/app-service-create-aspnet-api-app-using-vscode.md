@@ -13,14 +13,13 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/04/2015" 
+	ms.date="09/01/2015"
 	ms.author="erikre"/>
 
 # Erstellen einer ASP.NET 5-API-App mit Visual Studio-Code
 
 > [AZURE.SELECTOR]
-- [Visual Studio 2013](app-service-dotnet-create-api-app.md)
-- [Visual Studio 2015 RC](app-service-dotnet-create-api-app-vs2015.md)
+- [Visual Studio 2015 or 2013](app-service-dotnet-create-api-app.md)
 - [Visual Studio Code](app-service-create-aspnet-api-app-using-vscode.md)
 
 ## Übersicht
@@ -184,7 +183,7 @@ Nun ändern Sie die **ContactsList**-App, indem Sie eine **Contact**- und eine *
 
 5. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
-	****http://localhost:5001/api/Contacts**
+	**http://localhost:5001/api/Contacts**
 
 	Anschließend können Sie die Inhalte von *Contacts.json* anzeigen. In dieser Datei wird folgender Inhalt angezeigt:
 
@@ -466,4 +465,4 @@ Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App-Host** für Ihre API-Ap
 In diesem Lernprogramm haben Sie erfahren, wie Sie eine API-App in Visual Studio Code erstellen. Weitere Informationen zu Visual Studio Code finden Sie unter [Visual Studio Code](https://code.visualstudio.com/Docs/). Weitere Informationen zu API-Apps finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

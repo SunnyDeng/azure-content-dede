@@ -24,6 +24,8 @@ Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Portal zum Start
 
 ## Anmelden
 
+[AZURE.VIDEO logging-on-to-vm-running-windows-server-on-azure]
+
 [AZURE.INCLUDE [virtual-machines-log-on-win-server](../../includes/virtual-machines-log-on-win-server.md)]
 
 ## Tipps zur Problembehandlung
@@ -36,4 +38,4 @@ Wenn Sie Probleme mit Ihrem Kennwort haben, setzen Sie es über das Portal zurü
 
 Wenn diese Tipps nicht helfen, müssen Sie eine ausführlichere Problembehandlung durchführen. Anweisungen finden Sie unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

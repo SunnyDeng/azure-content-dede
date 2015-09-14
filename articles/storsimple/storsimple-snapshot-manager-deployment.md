@@ -1,27 +1,27 @@
 <properties 
    pageTitle="Bereitstellen des StorSimple Snapshot Managers | Microsoft Azure"
-   description="Beschreibt, wie der StorSimple Snapshot Manager heruntergeladen und installiert wird."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="carolz"
-   editor="" />
+	description="Erfahren Sie, wie Sie StorSimple Snapshot Manager herunterladen und installieren. Mit diesem MMC-Snap-In lassen sich die StorSimple-Features für Datensicherheit und Sicherungen verwalten."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="SharS"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/17/2015"
-   ms.author="v-sharos" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/27/2015"
+	ms.author="v-sharos"/>
 
-# Bereitstellung von StorSimple Snapshot Manager
+# Bereitstellen des StorSimple Snapshot Manager-MMC-Snap-Ins
 
 ## Übersicht
 
 Der StorSimple Snapshot Manager ist ein MMC-Snap-In (Microsoft Management Console), das den Datenschutz und die Sicherungsverwaltung in einer Microsoft Azure StorSimple-Umgebung vereinfacht. Mit dem StorSimple Snapshot Manager können Sie lokalen und cloudbasierten Microsoft Azure StorSimple-Speicher so verwalten, als handele es sich um ein vollständig integriertes Speichersystem, wodurch die Sicherungs- und Wiederherstellungsprozesse vereinfacht und die Kosten reduziert werden.
 
-Dieses Lernprogramm beschreibt die Konfigurationsanforderungen sowie Verfahren zum Installieren, Entfernen und Aktualisieren des StorSimple Snapshot Managers.
+Dieses Tutorial beschreibt die Konfigurationsanforderungen sowie Verfahren zum Installieren, Entfernen und Aktualisieren des StorSimple Snapshot Managers.
 
 ## StorSimple Snapshot Manager-Installation
 
@@ -35,7 +35,9 @@ Stellen Sie vor der Installation oder Aktualisierung des StorSimple Snapshot Man
 
 Die folgenden Schritte bieten einen allgemeinen Überblick über die Konfigurationsaufgaben, die Sie ausführen müssen, bevor Sie den StorSimple Snapshot Manager installieren. Vollständige Microsoft Azure StorSimple-Konfigurations- und Setupinformationen, einschließlich Systemanforderungen und detaillierten Anweisungen, finden Sie unter [Bereitstellen des lokalen StorSimple-Geräts](storsimple-deployment-walkthrough.md).
 
->[AZURE.IMPORTANT]Bevor Sie loslegen, gehen Sie die [Konfigurationsprüfliste für die Bereitstellung](storsimple-deployment-walkthrough.md#deployment-configuration-checklist) und die [Bereitstellungsvoraussetzungen](storsimple-deployment-walkthrough.md#deployment-prerequisites) in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md) durch. <br>
+>[AZURE.IMPORTANT]Bevor Sie loslegen, gehen Sie die [Vorinstallationsliste](storsimple-deployment-walkthrough.md#pre-installation-checklist) 
+> und die [Bereitstellungsvoraussetzungen](storsimple-deployment-walkthrough.md#deployment-prerequisites) in [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md) durch.
+<br>
  
 ### Vor der Installation des StorSimple Snapshot Managers
 
@@ -201,7 +203,7 @@ Führen Sie die folgenden Schritte aus, um eine Kopie der StorSimple Snapshot Ma
 
         ![Stop the StorSimple Manager service](./media/storsimple-snapshot-manager-deployment/HCS_SSM_stop_service.png)
 
-2. Navigieren Sie zu „C:\ProgramData\Microsoft\StorSimple\BACatalog“.
+2. Navigieren Sie zu „C:\\ProgramData\\Microsoft\\StorSimple\\BACatalog“.
 
     >[AZURE.NOTE]„ProgramData“ ist ein versteckter Ordner.
 
@@ -253,4 +255,4 @@ Weitere Informationen zum StorSimple Snapshot Manager finden Sie unter [Was ist 
 
 Weitere Informationen zur StorSimple Snapshot Manager-Benutzeroberfläche finden Sie unter [Benutzeroberfläche des StorSimple Snapshot Managers](storsimple-use-snapshot-manager.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

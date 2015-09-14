@@ -23,7 +23,7 @@
 
 In diesem Thema erfahren Sie, wie Sie einen Listener für eine AlwaysOn-Verfügbarkeitsgruppe konfigurieren, die extern über das Internet zugänglich ist. Dies wird durch das Zuordnen der **öffentlichen virtuellen IP-Adresse (VIP)** des Clouddiensts zum Listener ermöglicht.
 
-Ihre Verfügbarkeitsgruppe kann Replikate enthalten, die ausschließlich lokal, ausschließlich in Azure oder sowohl lokal als auch in Azure verfügbar sind (Hybridkonfigurationen). Azure-Replikate können sich innerhalb derselben Region oder in mehreren Regionen befinden, wobei mehrere virtuelle Netzwerke (VNets) verwendet werden. Bei den nachfolgenden Schritten wird davon ausgegangen, dass bereits eine [Verfügbarkeitsgruppe konfiguriert wurde](https://msdn.microsoft.com/library/azure/dn249504.aspx), Sie jedoch noch keinen Listener konfiguriert haben.
+Ihre Verfügbarkeitsgruppe kann Replikate enthalten, die ausschließlich lokal, ausschließlich in Azure oder sowohl lokal als auch in Azure verfügbar sind (Hybridkonfigurationen). Azure-Replikate können sich innerhalb derselben Region oder in mehreren Regionen befinden, wobei mehrere virtuelle Netzwerke (VNets) verwendet werden. Bei den nachfolgenden Schritten wird davon ausgegangen, dass bereits eine [Verfügbarkeitsgruppe konfiguriert wurde](virtual-machines-sql-server-alwayson-availability-groups-gui.md), Sie jedoch noch keinen Listener konfiguriert haben.
 
 Beachten Sie die folgenden Einschränkungen für den Verfügbarkeitsgruppenlistener in Azure, wenn Sie die Bereitstellung mit der öffentlichen VIP-Adresse des Clouddiensts vornehmen:
 
@@ -124,4 +124,4 @@ Wenn sich die AlwaysOn-Replikate in unterschiedlichen Subnetzen befinden, müsse
 
 [AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

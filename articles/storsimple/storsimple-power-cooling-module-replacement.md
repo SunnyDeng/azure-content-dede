@@ -1,29 +1,25 @@
 <properties 
-   pageTitle="Austauschen eines Moduls für Stromversorgung und Kühlung eines StorSimple-Geräts | Microsoft Azure"
-   description="In diesem Thema wird erläutert, wie Sie ein oder beide Module für Stromversorgung und Kühlung (PCM) in einem StorSimple-Gerät austauschen oder ausbauen."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
-
+   pageTitle="Austauschen eines PCM im StorSimple-Gerät | Microsoft Azure"
+	description="In diesem Thema wird erläutert, wie Sie ein oder beide Module für Stromversorgung und Kühlung (PCM) in einem StorSimple-Gerät austauschen oder ausbauen."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/05/2015"
-   ms.author="alkohli" />
-
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/31/2015"
+	ms.author="alkohli"/>
 
 # Austauschen eines Moduls für Stromversorgung und Kühlung eines StorSimple-Geräts
 
 ## Übersicht
 
-Ein Modul für Stromversorgung und Kühlung (Power and Cooling Module, PCM) in einem Microsoft Azure StorSimple-Gerät umfasst eine Stromversorgung sowie Lüfter, die über das primäre und das EBOD-Gehäuse gesteuert werden.
-
-Es gibt nur ein PCM-Modell, das für das jeweilige Gehäuse zertifiziert ist. Das primäre Gehäuse ist für ein PCM mit 764 W und das EBOD-Gehäuse für ein PCM mit 580 W zertifiziert. Obwohl die PCMs für das primäre Gerät und das EBOD-Gerät unterschiedlich sind, ist die Vorgehensweise zum Austauschen gleich.
+Ein Modul für Stromversorgung und Kühlung (Power and Cooling Module, PCM) in einem Microsoft Azure StorSimple-Gerät umfasst eine Stromversorgung sowie Lüfter, die über das primäre und das EBOD-Gehäuse gesteuert werden. Es gibt nur ein PCM-Modell, das für das jeweilige Gehäuse zertifiziert ist. Das primäre Gehäuse ist für ein PCM mit 764 W und das EBOD-Gehäuse für ein PCM mit 580 W zertifiziert. Obwohl die PCMs für das primäre Gerät und das EBOD-Gerät unterschiedlich sind, ist die Vorgehensweise zum Austauschen gleich.
 
 In diesem Tutorial werden folgende Punkte erläutert:
 
@@ -54,9 +50,9 @@ Gehen Sie entsprechend der folgenden Anleitung vor, wenn Sie ein Modul für Stro
 
 1. Klicken Sie im Verwaltungsportal auf **Geräte** > **Wartung** > **Hardwarestatus**. Prüfen Sie den Status der PCM-Komponenten unter **Freigegebene Komponenten**, um zu ermitteln, welches PCM ausgefallen ist:
 
-     - Ist eine Stromversorgung in PCM 0 ausgefallen, leuchtet die **Status-LED Stromversorgung in PCM 0** rot.
+     - Ist eine Stromversorgung in PCM 0 ausgefallen, leuchtet die Status-LED für **Stromversorgung in PCM 0** rot.
 
-     - Ist eine Stromversorgung in PCM 1 ausgefallen, leuchtet die **Status-LED Stromversorgung in PCM 1** rot.
+     - Ist eine Stromversorgung in PCM 1 ausgefallen, leuchtet die Status-LED für **Stromversorgung in PCM 1** rot.
 
      - Ist ein Lüfter in PCM 1 ausgefallen, leuchtet die Status-LED von **Kühlung 0 für PCM 0** oder **Kühlung 1 für PCM 0** rot.
 
@@ -64,7 +60,7 @@ Gehen Sie entsprechend der folgenden Anleitung vor, wenn Sie ein Modul für Stro
 
     ![Gerätekennung auf dem Bedienfeld auf der Vorderseite](./media/storsimple-power-cooling-module-replacement/IC740991.png)
 
-     **Abbildung 1** Vorderes Bedienfeld des Geräts
+     **Abbildung 1** Vorderseite des Geräts
 
     |Bezeichnung|Beschreibung|
     |:---|:-----------|
@@ -74,11 +70,11 @@ Gehen Sie entsprechend der folgenden Anleitung vor, wenn Sie ein Modul für Stro
     |4|Logischer Fehler|
     |5|Anzeige der Gerätekennung|
 
-3. Das ausgefallene PCM kann auch über die Überwachungs-LEDs auf der Rückseite des primären Gehäuses ermittelt werden. Sehen Sie sich die folgende Abbildung und Tabelle an, um zu verstehen, wie Sie anhand der LEDs das ausgefallene PCM finden. Wenn beispielsweise die LED leuchtet, die einem **Lüfterausfall** entspricht, ist der Lüfter ausgefallen. Leuchtet dagegen die LED, die einem **Stromausfall** entspricht, ist die Stromversorgung ausgefallen.
+3. Das ausgefallene PCM kann auch über die Überwachungs-LEDs auf der Rückseite des primären Gehäuses ermittelt werden. Sehen Sie sich die folgende Abbildung und Tabelle an, um zu verstehen, wie Sie anhand der LEDs das ausgefallene PCM finden. Beispiel: Wenn die LED für einen **Lüfterausfall** leuchtet, ist der Lüfter ausgefallen. Leuchtet die LED, die einen **Stromausfall** anzeigt, ist die Stromversorgung ausgefallen.
 
     ![Rückwand des Geräts – PCM-Überwachungs-LEDs](./media/storsimple-power-cooling-module-replacement/IC740992.png)
 
-     **Abbildung 2** Rückseite eines PCM mit Überwachungs-LEDs
+     **Abbildung 2** Rückseite eines PCM mit Indikator-LEDs
 
     |Bezeichnung|Beschreibung|
     |:---|:-----------|
@@ -148,12 +144,12 @@ Folgen Sie diesen Anweisungen, um ein PCM in Ihrem StorSimple-Gerät einzubauen.
 
 7. Schalten Sie das PCM ein.
 
-8. Vergewissern Sie sich, dass der Austausch erfolgreich war: Navigieren Sie im Verwaltungsportal Ihres StorSimple-Manager-Diensts zu **Geräte** > **Wartung** > **Hardwarestatus**. Unter **Freigegebene Komponenten** muss die Status-LED des PCM grün leuchten.
+8. Vergewissern Sie sich, dass der Austausch erfolgreich war: Navigieren Sie im Verwaltungsportal Ihres StorSimple Manager-Diensts zu **Geräte** > **Wartung** > **Hardwarestatus**. Unter **Freigegebene Komponenten** muss die Status-LED des PCM grün leuchten.
 										
     >[AZURE.NOTE]Es kann einige Minuten dauern, bis das Austausch-PCM vollständig initialisiert ist.
 
 ## Nächste Schritte
 
-Erfahren Sie mehr zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
+Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

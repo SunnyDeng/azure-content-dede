@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Integrieren eines Clouddiensts in Azure CDN" 
-	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie einen Clouddienst bereitstellen, der Inhalte von einem integrierten Azure CDN-Endpunkt zur Verfügung stellt." 
-	services="cdn, cloud-services" 
-	documentationCenter=".net" 
-	authors="cephalin" 
-	manager="wpickett" 
+	pageTitle="Integrieren eines Clouddiensts in Azure CDN"
+	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie einen Clouddienst bereitstellen, der Inhalte von einem integrierten Azure CDN-Endpunkt zur Verfügung stellt."
+	services="cdn, cloud-services"
+	documentationCenter=".net"
+	authors="cephalin"
+	manager="wpickett"
 	editor="tysonn"/>
 
 <tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="08/06/2015" 
+	ms.service="cdn"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="cephalin"/>
 
 
@@ -133,7 +133,7 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 	![](media/cdn-cloud-service-with-cdn/cdn-cs-4-publish-a.png)
 
-1. Wenn der Veröffentlichungsstatus **Abgeschlossen** lautet, öffnen Sie ein Browserfenster, und navigieren Sie zu **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css**. In meinem Setup lautet diese URL:
+1. Wenn der Veröffentlichungsstatus **Abgeschlossen** lautet, öffnen Sie ein Browserfenster, und navigieren Sie zu **http://*&lt;cdnName>\*.vo.msecnd.net/Content/bootstrap.css**. In meinem Setup lautet diese URL:
 
 		http://az632148.vo.msecnd.net/Content/bootstrap.css
 
@@ -145,18 +145,18 @@ In diesem Abschnitt stellen Sie die standardmäßige ASP.NET-MVC-Anwendungsvorla
 
 		http://cephalinservice.cloudapp.net/Content/bootstrap.css
 
-	Wenn Sie zu **http://*&lt;cdnName>*.vo.msecnd.net/Content/bootstrap.css** navigieren, werden Sie zum Herunterladen der Datei "bootstrap.css" aufgefordert, die von der veröffentlichten Web-App bereitgestellt wurde.
+	Wenn Sie zu **http://*&lt;cdnName>\*.vo.msecnd.net/Content/bootstrap.css** navigieren, werden Sie zum Herunterladen der Datei "bootstrap.css" aufgefordert, die von der veröffentlichten Web-App bereitgestellt wurde.
 
 	![](media/cdn-cloud-service-with-cdn/cdn-1-browser-access.PNG)
 
-Auf die gleiche Weise können Sie direkt von Ihrem CDN-Endpunkt aus auf jede öffentlich zugängliche URL unter **http://*&lt;serviceName>*.cloudapp.net/** zugreifen. Beispiel:
+Auf die gleiche Weise können Sie direkt von Ihrem CDN-Endpunkt aus auf jede öffentlich zugängliche URL unter **http://*&lt;serviceName>\*.cloudapp.net/** zugreifen. Beispiel:
 
 -	Eine JS-Datei im Pfad "/Script"
 -	Jede Inhaltsdatei im Pfad "/Content"
 -	Jede Controlleraktion 
 -	Sofern die Abfragezeichenfolge für den CDN-Endpunkt aktiviert ist, jede URL mit Abfragezeichenfolgen
 
-Tatsächlich können Sie mit der vorstehenden Konfiguration den gesamten Clouddienst von **http://*&lt;cdnName>*.vo.msecnd.net/** aus hosten. Wenn man zu ****http://az632148.vo.msecnd.net/** navigiert, erhält man das Aktionsergebnis von "Startseite/Index".
+Tatsächlich können Sie mit der vorstehenden Konfiguration den gesamten Clouddienst von **http://*&lt;cdnName>*.vo.msecnd.net/** aus hosten. Wenn man zu **http://az632148.vo.msecnd.net/** navigiert, erhält man das Aktionsergebnis von "Startseite/Index".
 
 ![](media/cdn-cloud-service-with-cdn/cdn-2-home-page.PNG)
 
@@ -339,7 +339,7 @@ Führen Sie die vorstehenden Schritte aus, um diese Controlleraktion einzurichte
 
 Wenn Sie die Formularwerte an `/MemeGenerator/Index` übermitteln, gibt die `Index_Post`-Aktionsmethode eine Link zur `Show`-Aktionsmethode mit der betreffenden Eingabe-ID zurück. Wenn Sie auf den Link klicken, erhalten Sie den folgenden Code:
 
-	[OutputCache(VaryByParam = &quot;*&quot;, Duration = 1, Location = OutputCacheLocation.Downstream)]
+	[OutputCache(VaryByParam = ";*";, Duration = 1, Location = OutputCacheLocation.Downstream)]
 	public ActionResult Show(string id)
 	{
 	    Tuple&lt;string, string&gt; data = null;
@@ -350,11 +350,11 @@ Wenn Sie die Formularwerte an `/MemeGenerator/Index` übermitteln, gibt die `Ind
 	
 	    if (Debugger.IsAttached) // Preserve the debug experience
 	    {
-	        return Redirect(string.Format(&quot;/MemeGenerator/Generate?top={0}&bottom={1}&quot;, data.Item1, data.Item2));
+	        return Redirect(string.Format(";/MemeGenerator/Generate?top={0}&bottom={1}";, data.Item1, data.Item2));
 	    }
 	    else // Get content from Azure CDN
 	    {
-	        return Redirect(string.Format(&quot;http://<mark>&lt;cdnName&gt;</mark>.vo.msecnd.net/MemeGenerator/Generate?top={0}&amp;bottom={1}&quot;, data.Item1, data.Item2));
+	        return Redirect(string.Format(";http://<mark>&lt;cdnName&gt;</mark>.vo.msecnd.net/MemeGenerator/Generate?top={0}&amp;bottom={1}";, data.Item1, data.Item2));
 	    }
 	}
 	
@@ -457,7 +457,7 @@ Führen Sie die folgenden Schritte aus, um ASP.NET-Bündelung und -Minimierung i
 	
 	-	Der Ursprung dieser CDN-URL ist `http://<yourCloudService>.cloudapp.net/bundles/jquery?v=<W.X.Y.Z>`. Hierbei handelt es sich um das virtuelle Verzeichnis des Skriptbundles in Ihrem Clouddienst.
 	-	Da Sie einen CDN-Konstruktor verwenden, enthält das CDN-Skripttag für das Bündel nicht länger die automatisch generierte Versionszeichenfolge in der gerenderten URL. Sie müssen bei jeder Änderung des Skriptbundles manuell eine eindeutige Versionszeichenfolge generieren, um einen Cachefehler im Azure CDN zu erzwingen. Gleichzeitig muss diese eindeutige Versionszeichenfolge während der gesamten Lebensdauer der Bereitstellung konstant bleiben, um Cachetreffer im Azure CDN zu minimieren, nachdem das Bündel bereitgestellt wurde.
-	-	Die Abfragezeichenfolge v=<W.X.Y.Z> überträgt mithilfe von Pull aus *Properties\\AssemblyInfo.cs* in Ihrem Webrollenprojekt. Sie können den Bereitstellungsworkflow so konfigurieren, dass die Assemblyversion bei jeder Veröffentlichung in Azure schrittweise erhöht wird. Alternativ können Sie einfach *Properties\\AssemblyInfo.cs* in Ihrem Projekt so ändern, dass die Versionszeichenfolge bei jeder Erstellung automatisch schrittweise erhöht wird, indem Sie das Platzhalterzeichen "*" verwenden. Beispiel:
+	-	Die Abfragezeichenfolge v=<W.X.Y.Z> überträgt mithilfe von Pull aus *Properties\\AssemblyInfo.cs* in Ihrem Webrollenprojekt. Sie können den Bereitstellungsworkflow so konfigurieren, dass die Assemblyversion bei jeder Veröffentlichung in Azure schrittweise erhöht wird. Alternativ können Sie einfach *Properties\\AssemblyInfo.cs* in Ihrem Projekt so ändern, dass die Versionszeichenfolge bei jeder Erstellung automatisch schrittweise erhöht wird, indem Sie das Platzhalterzeichen "\*" verwenden. Beispiel:
 
 			[assembly: AssemblyVersion("1.0.0.*")]
 	
@@ -514,32 +514,32 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 		{
 		    var version = System.Reflection.Assembly.GetAssembly(typeof(BundleConfig))
 		        .GetName().Version.ToString();
-		    var cdnUrl = &quot;http://cdnurl.vo.msecnd.net/.../{0}?&quot; + version;
+		    var cdnUrl = ";http://cdnurl.vo.msecnd.net/.../{0}?"; + version;
 		    bundles.UseCdn = true;
 		
-		    bundles.Add(new ScriptBundle(&quot;~/bundles/jquery&quot;, string.Format(cdnUrl, &quot;bundles/jquery&quot;)) 
-						<mark>{ CdnFallbackExpression = &quot;window.jquery&quot; }</mark>
-		                .Include(&quot;~/Scripts/jquery-{version}.js&quot;));
+		    bundles.Add(new ScriptBundle(";~/bundles/jquery";, string.Format(cdnUrl, ";bundles/jquery";)) 
+						<mark>{ CdnFallbackExpression = ";window.jquery"; }</mark>
+		                .Include(";~/Scripts/jquery-{version}.js";));
 		
-		    bundles.Add(new ScriptBundle(&quot;~/bundles/jqueryval&quot;, string.Format(cdnUrl, &quot;bundles/jqueryval&quot;)) 
-						<mark>{ CdnFallbackExpression = &quot;$.validator&quot; }</mark>
-		            	.Include(&quot;~/Scripts/jquery.validate*&quot;));
+		    bundles.Add(new ScriptBundle(";~/bundles/jqueryval";, string.Format(cdnUrl, ";bundles/jqueryval";)) 
+						<mark>{ CdnFallbackExpression = ";$.validator"; }</mark>
+		            	.Include(";~/Scripts/jquery.validate*";));
 		
 		    // Use the development version of Modernizr to develop with and learn from. Then, when you're
 		    // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-		    bundles.Add(new ScriptBundle(&quot;~/bundles/modernizr&quot;, string.Format(cdnUrl, &quot;bundles/modernizer&quot;)) 
-						<mark>{ CdnFallbackExpression = &quot;window.Modernizr&quot; }</mark>
-						.Include(&quot;~/Scripts/modernizr-*&quot;));
+		    bundles.Add(new ScriptBundle(";~/bundles/modernizr";, string.Format(cdnUrl, ";bundles/modernizer";)) 
+						<mark>{ CdnFallbackExpression = ";window.Modernizr"; }</mark>
+						.Include(";~/Scripts/modernizr-*";));
 		
-		    bundles.Add(new ScriptBundle(&quot;~/bundles/bootstrap&quot;, string.Format(cdnUrl, &quot;bundles/bootstrap&quot;)) 	
-						<mark>{ CdnFallbackExpression = &quot;$.fn.modal&quot; }</mark>
+		    bundles.Add(new ScriptBundle(";~/bundles/bootstrap";, string.Format(cdnUrl, ";bundles/bootstrap";)) 	
+						<mark>{ CdnFallbackExpression = ";$.fn.modal"; }</mark>
 		        		.Include(
-			              		&quot;~/Scripts/bootstrap.js&quot;,
-			              		&quot;~/Scripts/respond.js&quot;));
+			              		";~/Scripts/bootstrap.js";,
+			              		";~/Scripts/respond.js";));
 		
-		    bundles.Add(new StyleBundle(&quot;~/Content/css&quot;, string.Format(cdnUrl, &quot;Content/css&quot;)).Include(
-		                &quot;~/Content/bootstrap.css&quot;,
-		                &quot;~/Content/site.css&quot;));
+		    bundles.Add(new StyleBundle(";~/Content/css";, string.Format(cdnUrl, ";Content/css";)).Include(
+		                ";~/Content/bootstrap.css";,
+		                ";~/Content/site.css";));
 		}
 
 	Wenn `CdnFallbackExpression` nicht null ist, wird ein Skript in den HTML-Code eingefügt, um zu testen, ob das Bundle erfolgreich geladen wurde, und bei Bedarf direkt vom ursprünglichen Webserver aus auf das Bundle zuzugreifen. Diese Eigenschaft muss auf einen JavaScript-Ausdruck festgelegt werden, der testet, ob das entsprechende CDN-Bundle ordnungsgemäß geladen wurde. Welcher Ausdruck zum Testen der einzelnen Bundle erforderlich ist, hängt von deren Inhalt ab. Für die vorstehenden Standardbundles gilt:
@@ -620,4 +620,4 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 - [ASP.NET-Bündelung und -Minimierung](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
 - [Verwenden von CDN für Azure](cdn-how-to-use.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

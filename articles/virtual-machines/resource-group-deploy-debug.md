@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="command-line-interface"
 	ms.workload="infrastructure"
-	ms.date="04/25/2015"
+	ms.date="08/26/2015"
 	ms.author="rasquill"/>
 
 # Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure
@@ -231,7 +231,7 @@ Wenn Sie versuchen, eine Vorlage bereitzustellen, die mehr als vier Kerne in der
 
 In diesen Fällen sollten Sie zum Portal navigieren und ein Supportproblem einreichen, um Ihr Kontingent für die Region, in der Sie diese bereitstellen möchten, zu erhöhen.
 
-> [AZURE.NOTE]Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region „USA (West)“ bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für „USA (West)“ anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern. <!-- --> Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, für die Sie die entsprechende Kontingentmenge anfordern möchten, indem Sie den folgenden Befehl verwenden, der zur JSON-Analyse an **jq** weitergereicht wird: <!-- --> azure provider show Microsoft.Compute --json | jq '.resourceTypes | select(.name == "virtualMachines") | { name,apiVersions, locations}' { "name": "virtualMachines", "apiVersions": [ "2015-05-01-preview", "2014-12-01-preview" ], "locations": [ "East US", "West US", "West Europe", "East Asia", "Southeast Asia" ] }
+> [AZURE.NOTE]Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region "USA, Westen" bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für "USA, Westen" anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern. <!-- --> Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, für die Sie die entsprechende Kontingentmenge anfordern möchten, indem Sie den folgenden Befehl verwenden, der zur JSON-Analyse an **jq** weitergereicht wird: <!-- --> azure provider show Microsoft.Compute --json | jq '.resourceTypes | select(.name == "virtualMachines") | { name,apiVersions, locations}' { "name": "virtualMachines", "apiVersions": [ "2015-05-01-preview", "2014-12-01-preview" ], "locations": [ "East US", "West US", "West Europe", "East Asia", "Southeast Asia" ] }
 
 
 ## Probleme mit der Azure-Befehlszeilenschnittstelle und PowerShell-Modus
@@ -373,17 +373,10 @@ Manchmal möchten Sie vielleicht eine Ressource von außerhalb der aktuellen Res
 
 ## Nächste Schritte
 
-Informationen zur Vorlagenerstellung finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md) sowie im [AzureRMTemplates-Repository](https://github.com/azurermtemplates/azurermtemplates) mit bereitstellbaren Beispielen. Ein Beispiel der Eigenschaft **dependsOn** ist die [Lastenausgleich-Vorlage mit eingehender NAT-Regel](https://github.com/azurermtemplates/azurermtemplates/blob/master/101-create-internal-loadbalancer/azuredeploy.json).
+Informationen zur Vorlagenerstellung finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md) sowie im [Repository mit Azure-Schnellstartvorlagen](https://github.com/Azure/azure-quickstart-templates), das Beispiele für die Bereitstellung enthält. Ein Beispiel für die **dependsOn**-Eigenschaft finden Sie unter [Erstellen eines virtuellen Computers mit mehreren Netzwerkschnittstellenkarten und RDP-Zugriff](https://github.com/Azure/azure-quickstart-templates/tree/master/201-1-vm-loadbalancer-2-nics).
 
 <!--Image references-->
-[5]: ./media/markdown-template-for-new-articles/octocats.png
-[6]: ./media/markdown-template-for-new-articles/pretty49.png
-[7]: ./media/markdown-template-for-new-articles/channel-9.png
-[8]: ./media/markdown-template-for-new-articles/copytemplate.png
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
-[gog]: http://google.com/
-[yah]: http://search.yahoo.com/
-[msn]: http://search.msn.com/
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

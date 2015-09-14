@@ -7,16 +7,14 @@
 	manager="wpickett"
 	editor="jimbe"/>
 
-
 <tags
 	ms.service="storage"
 	ms.workload="storage"
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="06/03/2015"
+	ms.date="08/31/2015"
 	ms.author="robmcm"/>
-
 
 # Lokale Anwendungen mit Blob-Speicher
 
@@ -28,8 +26,8 @@ Das folgende Beispiel zeigt, wie Sie den Azure-Speicher zur Speicherung von Bild
 
 - Java Developer Kit (JDK), Version 1.6 oder höher ist installiert.
 - Das Azure SDK ist installiert.
-- Die JAR-Datei der Azure-Bibliotheken für Java und alle sonstigen JAR-Abhängigkeiten sind installiert und im Buildpfad Ihres Java-Compilers eingebunden. Weitere Informationen zur Installation der Azure-Bibliotheken für Java finden Sie auf der [Downloadseite des Azure-SDK für Java].
-- Ein Azure-Speicherkonto wurde eingerichtet. Der Code in diesem Artikel verwendet Kontonamen und Kontoschlüssel des Speicherkontos. Unter [Erstellen eines Speicherkontos] finden Sie Informationen zum Einrichten von Speicherkonten, und unter [Verwalten von Speicherkonten] erfahren Sie, wie Sie Ihren Kontoschlüssel ermitteln können.
+- Die JAR-Datei der Azure-Bibliotheken für Java und alle sonstigen JAR-Abhängigkeiten sind installiert und im Buildpfad Ihres Java-Compilers eingebunden. Weitere Informationen zur Installation der Azure-Bibliotheken für Java finden Sie auf der [Downloadseite des Azure SDK für Java][].
+- Ein Azure-Speicherkonto wurde eingerichtet. Der Code in diesem Artikel verwendet Kontonamen und Kontoschlüssel des Speicherkontos. Unter [Erstellen eines Speicherkontos] finden Sie Informationen zum Einrichten von Speicherkonten, und unter [Verwalten von Speicherkonten][] erfahren Sie, wie Sie Ihren Kontoschlüssel ermitteln können.
 - Sie haben eine lokale Bilddatei unter dem Pfad c:\\myimages\\image1.jpg erstellt. Alternativ können Sie den **FileInputStream**-Konstruktor im Beispiel verändern, um einen anderen Pfad bzw. Dateinamen zu verwenden.
 
 [AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
@@ -174,8 +172,7 @@ Erstellen Sie eine lokale Datei mit dem Namen **index.html**.
 Schreiben Sie in die lokale Datei, und fügen Sie dabei die Elemente **&lt;html&gt;**, **&lt;header&gt;** und **&lt;body&gt;** hinzu.
 
     stream.println("<html>");
-    stream.println("<header/>
-");
+    stream.println("<header/>");
     stream.println("<body>");
 
 Durchlaufen Sie die Liste der hochgeladenen Blobs. Erstellen Sie für jedes Blob ein **&lt;img&gt;**-Element auf der HTML-Seite, dessen **src**-Attribut an den URI des Blobs gesendet wird, der in Ihrem Azure-Speicherkonto liegt. In diesem Beispiel haben Sie zwar nur ein Bild hinzugefügt, aber dieser Code würde alle weiteren hochgeladenen Bilder ebenfalls durchlaufen.
@@ -185,9 +182,7 @@ Zur Vereinfachung geht dieses Beispiel davon aus, dass es sich bei allen hochgel
     // Enumerate the uploaded blobs.
     for (ListBlobItem blobItem : container.listBlobs()) {
     // List each blob as an <img> element in the HTML body.
-    stream.println("<img src='" + blobItem.getUri() + "'/>
-<br/>
-");
+    stream.println("<img src='" + blobItem.getUri() + "'/><br/>");
     }
 
 Schließen Sie das Element **&lt;body&gt;** und das Element **&lt;html&gt;**.
@@ -280,16 +275,13 @@ Es folgt der vollständige Code für dieses Beispiel. Vergessen Sie nicht, die P
 
             // Create the opening <html>, <header>, and <body> elements.
             stream.println("<html>");
-            stream.println("<header/>
-");
+            stream.println("<header/>");
             stream.println("<body>");
 
             // Enumerate the uploaded blobs.
             for (ListBlobItem blobItem : container.listBlobs()) {
                 // List each blob as an <img> element in the HTML body.
-                stream.println("<img src='" + blobItem.getUri() + "'/>
-<br/>
-");
+                stream.println("<img src='" + blobItem.getUri() + "'/><br/>");
             }
 
             stream.println("</body>");
@@ -361,12 +353,12 @@ Eine Übersicht über andere Blobspeicher-Klassen und Methoden finden Sie unter 
 
 Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Speicheraufgaben:
 
-- [Azure Storage-SDK für Java]
-- [Referenz für Azure Storage-Client-SDKs]
-- [Azure Storage-REST-API]
-- [Azure Storage-Teamblog]
+- [Azure Storage-SDK für Java][]
+- [Referenz für Azure Storage-Client-SDKs][]
+- [Azure Storage-REST-API][]
+- [Azure Storage-Teamblog][]
 
-  [Download the Azure SDK for Java]: http://azure.microsoft.com/develop/java/
+  [Download the Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
   [Erstellen eines Speicherkontos]: storage-create-storage-account.md#create-a-storage-account
   [Verwalten von Speicherkonten]: storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys
   [Verwenden des Blob-Speicherdiensts in Python]: storage-java-how-to-use-blob-storage.md
@@ -375,4 +367,4 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
   [Azure Storage-REST-API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
   [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

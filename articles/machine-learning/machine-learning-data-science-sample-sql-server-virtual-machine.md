@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Erstellen von Datenstichproben aus SQL Server in Azure | Microsoft Azure" 
-	description="Erstellen von Datenstichproben aus SQL Server in Azure" 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="fashah" 
-	manager="paulettm" 
-	editor="cgronlun" />
+	pageTitle="Erstellen von Datenstichproben aus SQL Server in Azure | Microsoft Azure"
+	description="Erstellen von Datenstichproben aus SQL Server in Azure"
+	services="machine-learning"
+	documentationCenter=""
+	authors="fashah"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/29/2015" 
-	ms.author="fashah;garye;bradsev" />
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="fashah;garye;bradsev"/>
 
 #<a name="heading"></a>Erstellen von Datenstichproben aus SQL Server in Azure
 
@@ -44,8 +44,7 @@ Sie können auch mit TABLESAMPLE eine Stichprobe erstellen, wie unten veranschau
 	FROM <table_name> 
 	TABLESAMPLE (10 PERCENT)
 
-**Hinweis**
-> Sie können Funktionen aus diesen Stichprobendaten durchsuchen und generieren, indem Sie sie in einer neuen Tabelle speichern.
+>[AZURE.NOTE]Sie können Funktionen aus diesen Stichprobendaten durchsuchen und generieren, indem Sie sie in einer neuen Tabelle speichern.
 
 
 ###<a name="sql-aml"></a>Herstellen einer Verbindung mit Azure Machine Learning
@@ -114,4 +113,4 @@ Eine umfassende exemplarische Vorgehensweise zur Verwendung der Advanced Analyti
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

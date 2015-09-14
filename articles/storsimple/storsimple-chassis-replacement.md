@@ -1,27 +1,25 @@
 <properties 
-   pageTitle="Ersetzen des Gehäuses des StorSimple-Geräts | Microsoft Azure"
-   description="Beschreibt das Entfernen und Ersetzen des Gehäuses in Ihrem primären StorSimple-Gerät oder EBOD-Gehäuse."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
-
+   pageTitle="Ersetzen des Gehäuses eines StorSimple-Geräts | Microsoft Azure"
+	description="Beschreibt das Entfernen und Ersetzen des Gehäuses in Ihrem primären StorSimple-Gerät oder EBOD-Gehäuse."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/05/2015"
-   ms.author="alkohli" />
-
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/31/2015"
+	ms.author="alkohli"/>
 
 # Ersetzen des Gehäuses des StorSimple-Geräts
 
 ## Übersicht
 
-In diesem Lernprogramm wird erläutert, wie Sie das Gehäuse eines StorSimple-Geräts austauschen oder entfernen. Das Modell 8100 ist ein Gerät mit einem einzelnen Gehäuse, das Modell 8600 ein Gerät mit zwei Gehäusen. Beim Modell 8600 können potenziell zwei Gehäuse im Gerät ausfallen: das primäre Gehäuse oder das EBOD-Gehäuse.
+In diesem Tutorial wird erläutert, wie Sie das Gehäuse eines StorSimple-Geräts austauschen oder entfernen. Das StorSimple-Modell 8100 ist ein Gerät mit einem einzelnen Gehäuse, das Modell 8600 ein Gerät mit zwei Gehäusen. Beim Modell 8600 können potenziell zwei Gehäuse im Gerät ausfallen: das primäre Gehäuse oder das EBOD-Gehäuse.
 
 In beiden Fällen wird ein leeres Ersatzgehäuse von Microsoft ausgeliefert. Die Gehäuse enthalten keine Stromversorgungs- und Kühleinheiten (PCMs), Controllermodule, SSDs (Solid-State-Festplatten), HDDs (Festplattenlaufwerke) oder EBOD-Module.
 
@@ -65,4 +63,4 @@ Führen Sie die folgenden Schritte aus, um das Gehäuse in einem Microsoft Azure
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie E-Mails mit dem SendGrid-E-Mail-Dienst in Azure senden. Die Codebeispiele wurden mithilfe der Node.js-API geschrieben."
 	services=""
 	documentationCenter="nodejs"
-	authors="MikeWasson"
+	authors="erikre"
 	manager="wpickett"
 	editor=""/>
 
@@ -13,22 +13,15 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="10/30/2014"
-	ms.author="mwasson"/>
+	ms.date="08/31/2015"
+	ms.author="erikre"/>
 # Senden von E-Mails mit SendGrid aus Node.js
 
-Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufgaben mit dem E-Mail-Dienst
-SendGrid in Azure. Die Beispiele sind in C# geschrieben und verwenden die Node.js-API. Die behandelten
-Szenarien umfassen das **Erstellen einer E-Mail**,
-**Senden einer E-Mail**, **Hinzufügen von Anhängen**, **Verwenden von Filtern** und **Aktualisieren von Eigenschaften**. Weitere Informationen zu SendGrid und zum Senden von E-Mails erhalten Sie im Abschnitt [Nächste Schritte](#next-steps).
+Dieser Leitfaden veranschaulicht die Ausführung allgemeiner Programmierungsaufgaben mit dem E-Mail-Dienst SendGrid in Azure. Die Beispiele sind in C# geschrieben und verwenden die Node.js-API. Die behandelten Szenarien umfassen das **Erstellen einer E-Mail**, **Senden einer E-Mail**, **Hinzufügen von Anhängen**, **Verwenden von Filtern** und **Aktualisieren von Eigenschaften**. Weitere Informationen zu SendGrid und zum Senden von E-Mails erhalten Sie im Abschnitt [Nächste Schritte](#next-steps).
 
 ## Was ist der SendGrid-E-Mail-Dienst?
 
-SendGrid ist ein [cloudbasierter E-Mail-Dienst], der zuverlässige
-[transaktionale E-Mail-Übermittlung], Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs
-bietet, die die benutzerdefinierte Integration erleichtern. 
-Häufige Verwendungsszenarien für
-SendGrid:
+SendGrid ist ein [cloudbasierter E-Mail-Dienst](https://sendgrid.com/email-solutions), der zuverlässige [transaktionale E-Mail-Übermittlung](https://sendgrid.com/transactional-email), Skalierbarkeit und Echtzeitanalysen mit flexiblen APIs bietet, die die benutzerdefinierte Integration erleichtern. Häufige Verwendungsszenarien für SendGrid:
 
 -   Automatisches Versenden von Empfangsbestätigungen an Kunden
 -   Verwalten von Verteilungslisten zum Senden von monatlichen e-Flyern und speziellen Angeboten an Kunden
@@ -49,14 +42,11 @@ Das SendGrid-Modul für Node.js kann über den Node Package Manager (NPM) instal
 
     npm install sendgrid
 
-Nach der Installation können Sie das Modul mithilfe des
-folgenden Codes in Ihrer Anwendung anfordern:
+Nach der Installation können Sie das Modul mithilfe des folgenden Codes in Ihrer Anwendung anfordern:
 
     var sendgrid = require('sendgrid')(sendgrid_username, sendgrid_password);
 
-Das SendGrid-Modul exportiert die Funktionen **SendGrid** und **Email**.
-**SendGrid** sendet E-Mails über die Web-API, 
-**Email** dient zur Kapselung von E-Mails.
+Das SendGrid-Modul exportiert die Funktionen **SendGrid** und **Email**. **SendGrid** sendet E-Mails über die Web-API, **Email** dient zur Kapselung von E-Mails.
 
 ## Erstellen einer E-Mail
 
@@ -75,7 +65,7 @@ Sie können auch eine HTML-Nachricht für Clients festlegen, bei denen dies durc
 
 Wenn die Text- und die HTML-Option ausgewählt sind, wird die Nachricht auf Clients, die keine HTML-Nachrichten unterstützen, im Textformat angezeigt.
 
-Weitere Informationen zu allen von der Funktion "Email" unterstützten Eigenschaften finden Sie unter [sendgrid-nodejs][].
+Weitere Informationen zu allen von der Funktion "Email" unterstützten Eigenschaften finden Sie unter [sendgrid-nodejs](https://github.com/sendgrid/sendgrid-nodejs).
 
 ## Senden von E-Mails
 
@@ -178,26 +168,27 @@ einen Filter verwenden oder festlegen.
     email.addFilter('footer', 'enable', 1);
     email.addFilter('footer', 'text/html', '<strong>boo</strong>');
 
-Weitere Informationen finden Sie unter [sendgrid-nodejs][].
+Weitere Informationen finden Sie unter [sendgrid-nodejs](https://github.com/sendgrid/sendgrid-nodejs).
 
 ## Verwenden zusätzlicher SendGrid-Dienste
 
-SendGrid bietet webbasierte APIs, die Sie zur Nutzung zusätzlicher SendGrid-Funktionen aus Ihrer Azure-Anwendung einsetzen können. Ausführliche Informationen finden Sie in der [SendGrid-API-Dokumentation][].
+SendGrid bietet webbasierte APIs, die Sie zur Nutzung zusätzlicher SendGrid-Funktionen aus Ihrer Azure-Anwendung einsetzen können. Ausführliche Informationen finden Sie in der [SendGrid-API-Dokumentation](https://sendgrid.com/docs).
 
 ## Nächste Schritte
 
 Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, finden Sie unter diesen Links weitere Informationen.
 
--   Repository für das SendGrid Node.js-Modul: [sendgrid-nodejs][]
+-   Repository für das SendGrid Node.js-Modul:
+    <https://sendgrid-nodejs>
 -   SendGrid API-Dokumentation:
     <https://sendgrid.com/docs>
 -   Spezielles SendGrid-Angebot für Azure-Kunden:
-    [http://sendgrid.com/azure.html](https://sendgrid.com/windowsazure.html)
+    [http://sendgrid.com/azure.html](https://sendgrid.com/windowsazure.html) 
   [Sonderangebot]: https://sendgrid.com/windowsazure.html
   [sendgrid-nodejs]: https://github.com/sendgrid/sendgrid-nodejs
   [Filtereinstellungen]: https://sendgrid.com/docs/API_Reference/SMTP_API/apps.html
   [SendGrid-API-Dokumentation]: https://sendgrid.com/docs
-  [Cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
+  [cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
   [Transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
 
-<!----HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

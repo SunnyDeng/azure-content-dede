@@ -58,7 +58,7 @@ Um einen Clouddienst in Azure zu veröffentlichen, müssen Sie zunächst einen C
 
 1. Wählen Sie **Schnellerfassung**, um den Clouddienst später mit Visual Studio zu veröffentlichen.
 
-1. Geben Sie einen Namen für den Clouddienst an.Die vollständige URL wird neben dem Namen angezeigt.
+1. Geben Sie einen Namen für Ihren Clouddienst an. Die vollständige URL wird neben dem Namen angezeigt.
 
 1. Wählen Sie in der Liste die Region, in der sich die meisten Ihrer Benutzer befinden.
 
@@ -80,7 +80,7 @@ Ein Speicherkonto bietet Zugriff auf die Blob-, Warteschlangen- und Tabellendien
     - Die Region oder Affinitätsgruppe (z. B. USA, Westen oder Ostasien)
     - Den Typ der Replikation, den Sie für das Speicherkonto wünschen, z. B. "Georedundant".
 
-1. Wenn Sie fertig sind, wählen Sie **Erstellen** aus.Das neue Speicherkonto wird im Server-Explorer in der Liste **Speicher** angezeigt.
+1. Wenn Sie fertig sind, wählen Sie **Erstellen** aus. Das neue Speicherkonto wird im Server-Explorer in der Liste **Speicher** angezeigt.
 
 ### So erstellen Sie ein Speicherkonto im Azure-Verwaltungsportal
 
@@ -153,4 +153,4 @@ Sie müssen alle Rollen, die auf Speicherdienste zugreifen, für das Verwenden d
 
 [Veröffentlichen eines Clouddiensts mit Azure Tools](https://msdn.microsoft.com/library/azure/ee460772.aspx)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

@@ -1,22 +1,22 @@
 <properties 
-   pageTitle="Erstellen und Verwalten eines Unterstützungspakets | Microsoft Azure"
-   description="Hier erfahren Sie, wie Sie ein Unterstützungspaket für Ihr StorSimple-Gerät erstellen, entschlüsseln und bearbeiten."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+   pageTitle="Erstellen eines StorSimple-Unterstützungspakets | Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie ein Unterstützungspaket für Ihr StorSimple-Gerät erstellen, entschlüsseln und bearbeiten."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/12/2015"
-   ms.author="alkohli" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="08/31/2015"
+	ms.author="alkohli"/>
 
 
-# Erstellen und Verwalten eines Unterstützungspakets
+# Erstellen und Verwalten eines StorSimple-Unterstützungspakets
 
 ## Übersicht
 
@@ -198,4 +198,4 @@ Das folgende Beispiel veranschaulicht das Entschlüsseln, Bearbeiten und erneute
 
 Informieren Sie sich darüber, wie Sie [mithilfe von Unterstützungspaketen und Geräteprotokollen Probleme bei der Gerätebereitstellung behandeln](storsimple-troubleshoot-deployment.md#support-packages-and-device-logs-available-for-troubleshooting).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

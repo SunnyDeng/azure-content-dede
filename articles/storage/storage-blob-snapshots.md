@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Erstellen einer Momentaufnahme eines Blobs" 
-	description="Anleitung zum Erstellen von Momentaufnahmen von Azure Storage-Blobs" 
-	services="storage" 
-	documentationCenter="" 
-	authors="tamram" 
-	manager="adinah" 
+	pageTitle="Erstellen einer Momentaufnahme eines Blobs"
+	description="Anleitung zum Erstellen von Momentaufnahmen von Azure Storage-Blobs"
+	services="storage"
+	documentationCenter=""
+	authors="tamram"
+	manager="adinah"
 	editor=""/>
 
 <tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/27/2015" 
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="tamram"/>
 
 # Erstellen einer Momentaufnahme eines Blobs
@@ -125,4 +125,4 @@ In Szenario 4 wurde das Basis-BLOB vollständig aktualisiert und enthält keinen
 
 ![Azure-Speicherressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

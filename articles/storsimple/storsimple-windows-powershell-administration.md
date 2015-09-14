@@ -1,35 +1,35 @@
 <properties 
-   pageTitle="Verwenden von Windows PowerShell für StorSimple zum Verwalten des StorSimple-Geräts | Microsoft Azure"
-   description="Hier erfahren Sie, wie Sie Ihr StorSimple-Gerät mit Windows PowerShell für StorSimple verwalten."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+   pageTitle="Geräteverwaltung mit PowerShell für StorSimple | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Windows PowerShell für StorSimple zum Verwalten von StorSimple-Geräten verwenden."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/19/2015"
-   ms.author="alkohli@microsoft.com" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/28/2015"
+	ms.author="alkohli@microsoft.com"/>
 
 # Verwenden von Windows PowerShell für StorSimple zum Verwalten eines StorSimple-Geräts
 
 ## Übersicht
+
 Windows PowerShell für StorSimple stellt eine Befehlszeilenschnittstelle zur Verfügung, die Sie zum Verwalten Ihres Microsoft Azure StorSimple-Geräts verwenden können. Wie der Name schon sagt, handelt es um eine auf Windows PowerShell basierende Befehlszeilenschnittstelle in einem eingeschränkten Runspace. Aus Sicht des Benutzers an der Befehlszeile wird ein eingeschränkter Runspace als eingeschränkte Version von Windows PowerShell angezeigt. Obwohl einige grundlegende Funktionen von Windows PowerShell erhalten bleiben, verfügt diese Schnittstelle über weitere dedizierte Cmdlets, die auf die Verwaltung des Microsoft Azure StorSimple-Geräts ausgelegt sind.
 
-In diesem Artikel werden die Featues in Windows PowerShell für StorSimple beschrieben, so z. B. wie Sie eine Verbindung mit dieser Schnittstelle herstellen können. Ferner finden Sie Links zu schrittweisen Verfahren von Workflows, die über diese Schnittstelle ausgeführt werden können. Die Workflows ermöglichen u. a. Folgendes: das Registrieren Ihres Geräts, das Konfigurieren der Netzwerkschnittstelle auf Ihrem Gerät, das Installieren Typen von Updates, für die es erforderlich ist, dass sich das Gerät im Wartungsmodus befindet, das Ändern des Gerätestatus und das Beheben etwaiger auftretender Probleme.
+In diesem Artikel werden die Featues von Windows PowerShell für StorSimple beschrieben. Sie erfahren z. B., wie Sie eine Verbindung mit dieser Schnittstelle herstellen können. Ferner finden Sie Links zu schrittweisen Verfahren oder Workflows, die über diese Schnittstelle ausgeführt werden können. Die Workflows ermöglichen u. a. Folgendes: das Registrieren Ihres Geräts, das Konfigurieren der Netzwerkschnittstelle auf Ihrem Gerät, das Installieren Typen von Updates, für die es erforderlich ist, dass sich das Gerät im Wartungsmodus befindet, das Ändern des Gerätestatus und das Beheben etwaiger auftretender Probleme.
 
 In diesem Artikel lernen Sie Folgendes:
 
+- Herstellen einer Verbindung mit Ihrem StorSimple-Gerät über Windows PowerShell für StorSimple.
 
-- Herstellen einer Verbindung mit Ihrem StorSimple-Gerät über Windows PowerShell für StorSimple
+- Verwalten Ihres StorSimple-Geräts über Windows PowerShell für StorSimple.
 
-- Verwalten Ihres StorSimple-Geräts über Windows PowerShell für StorSimple
-
-- Abrufen von Hilfe in Windows PowerShell für StorSimple
+- Abrufen von Hilfe in Windows PowerShell für StorSimple.
 
 >[AZURE.NOTE]
 
@@ -95,7 +95,7 @@ Stellen Sie sicher, dass die folgenden PuTTY-Einstellungen zum Herstellen einer 
  	|---|---|
  	|RÜCKTASTE|Strg+? (127)|
 	|POS1- und Ende-Tasten|Standard|
-	|Funktionstasten und Zehnertastatur|ESC[n\~|
+	|Funktionstasten und Zehnertastatur|ESC[n~|
 	|Ursprünglicher Status der Pfeiltasten|Normal|
 	|Ursprünglicher Status der Zehnertastatur|Normal|
 	|Zusätzliche Tastaturfunktionen aktivieren|Strg+Alt unterscheidet sich von AltGr|
@@ -149,7 +149,7 @@ Die folgende Tabelle zeigt eine Zusammenfassung aller allgemeinen Verwaltungsauf
 
 #### Windows PowerShell für StorSimple-Workflows
 
-|Gewünschte Aktion...|Verfahren.|
+|Gewünschte Aktion|Verfahren|
 |---|---|
 |Registrieren Ihres Geräts|[Konfigurieren und Registrieren des Geräts über Windows PowerShell für StorSimple](storsimple-deployment-walkthrough.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) |
 |Konfigurieren des Webproxys</br>Anzeigen von Webproxyeinstellungen|[Konfigurieren des Webproxys für Ihr StorSimple-Gerät](storsimple-configure-web-proxy.md)|
@@ -197,4 +197,4 @@ Sie können die Hilfe in der Windows PowerShell-Schnittstelle problemlos aktuali
 ## Nächste Schritte
 Wenn Probleme auf Ihrem StorSimple-Gerät bei einem der zuvor genannten Workflows auftreten, konsultieren Sie die [Tools zur Problembehandlung für StorSimple-Bereitstellungen](storsimple-troubleshoot-deployment.md#tools-for-troubleshooting-storsimple-deployments).
 
-<!----HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

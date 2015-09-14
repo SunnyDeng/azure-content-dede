@@ -1,23 +1,20 @@
 <properties 
-	pageTitle="Anpassen von Hadoop-Clustern für erweiterte Analyseprozesse und -technologien | Microsoft Azure" 
+	pageTitle="Anpassen von Hadoop-Clustern für erweiterte Analyseprozesse und -technologien | Microsoft Azure"
 	description="Beliebte Python-Module, die in benutzerdefinierten Azure HDInsight Hadoop-Clustern zur Verfügung gestellt werden."
-	services="machine-learning" 
-	solutions="" 
-	documentationCenter="" 
-	authors="hangzh-msft" 
-	manager="paulettm" 
-	editor="cgronlun"  />
-
+	services="machine-learning"
+	documentationCenter=""
+	authors="hangzh-msft"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/29/2015" 
-	ms.author="hangzh;bradsev" />
-
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="hangzh;bradsev"/>
 
 # Anpassen von Azure Hdinsight Hadoop-Clustern für erweiterte Analyseprozesse und -technologien
 
@@ -54,7 +51,7 @@ Klicken Sie auf der letzten Konfigurationsseite zu **Script Actions** auf die Sc
  
 * **NAME** - eine beliebige Zeichenfolge als Name für diese Skriptaktion. 
 * **NODE TYPE** - wählen Sie **All nodes** aus. 
-* **SKRIPT-URI** - \**http://getgoing.blob.core.windows.net/publicscripts/Azure_HDI_Setup_Windows.ps1*
+* **SKRIPT-URI** - **http://getgoing.blob.core.windows.net/publicscripts/Azure_HDI_Setup_Windows.ps1*
 	* *publicscripts* ist ein öffentlicher Container im Speicherkonto. 
 	* *getgoing* wird für die Freigabe der PowerShell-Skriptdateien verwendet, um den Benutzern die Arbeit in Azure zu vereinfachen. 
 * **PARAMETERS** - (leer lassen)
@@ -101,4 +98,4 @@ Unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster](machine-learn
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

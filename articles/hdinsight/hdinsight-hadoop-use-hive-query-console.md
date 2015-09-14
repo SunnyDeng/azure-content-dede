@@ -1,21 +1,21 @@
 <properties
    pageTitle="Verwenden von Hadoop Hive auf der Abfrage-Konsole in HDInsight | Microsoft Azure"
-   description="In diesem Artikel erfahren Sie, wie Sie mit der HDInsight-Abfragekonsole Hive-Abfragen auf einem Hadoop-Cluster in HDInsight in Ihrem Browser ausführen."
-   services="hdinsight"
-   documentationCenter=""
-   authors="Blackmist"
-   manager="paulettm"
-   editor="cgronlun"
+	description="In diesem Artikel erfahren Sie, wie Sie mit der HDInsight-Abfragekonsole Hive-Abfragen auf einem Hadoop-Cluster in HDInsight in Ihrem Browser ausführen."
+	services="hdinsight"
+	documentationCenter=""
+	authors="Blackmist"
+	manager="paulettm"
+	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="07/23/2015"
-   ms.author="larryfr"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="08/28/2015"
+	ms.author="larryfr"/>
 
 # Ausführen von Hive-Abfragen mithilfe der Abfragekonsole
 
@@ -49,7 +49,7 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
         CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
         ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
         STORED AS TEXTFILE LOCATION 'wasb:///example/data/';
-        SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;
+        SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' AND INPUT__FILE__NAME LIKE '%.log' GROUP BY t4;
 
     Diese Anweisungen führen die folgenden Aktionen aus:
 
@@ -63,6 +63,7 @@ Damit Sie die in dieser Artikel aufgeführten Schritte ausführen können, benö
     * **ZEILENFORMAT**: Teilt Hive mit, wie die Daten formatiert werden. In diesem Fall werden die Felder in den einzelnen Protokollen durch Leerzeichen getrennt.
     * **SPEICHERORT DER TEXTDATEI**: Teilt Hive den Speicherort der Daten (das Verzeichnis "Beispiel/Daten") und die Information mit, dass die Speicherung als Text erfolgt.
     * **AUSWÄHLEN**: Wählt die Anzahl aller Zeilen aus, bei denen die Spalte **t4** den Wert **[ERROR]** enthält. Dadurch sollte der Wert **3** zurückgegeben werden, da dieser Wert in drei Zeilen enthalten ist.
+    * **INPUT\_\_FILE\_\_NAME LIKE '%.log'**: Teilt Hive mit, dass nur Daten aus Dateien mit der Erweiterung ".log" zurückgeben werden sollen. Dies schränkt die Suche auf die Datei "sample.log" ein, die die Daten enthält, und verhindert, dass Daten aus anderen Beispieldatendateien zurückgegeben werden, die nicht dem von uns definierten Schema entsprechen.
 
 2. Klicken Sie auf **Senden**. Die **Auftragssitzung** am unteren Seitenrand sollte Details für den Auftrag anzeigen.
 
@@ -121,4 +122,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

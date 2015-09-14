@@ -1,23 +1,23 @@
 <properties 
    pageTitle="Migrieren von Affinitätsgruppen zu einem regionalen virtuellen Netzwerk (VNet)"
-   description="Erfahren Sie, wie Sie von Affinitätsgruppen zu regionalen VNets migrieren."
-   services="virtual-network"
-   documentationCenter="na"
-   authors="telmosampaio"
-   manager="carolz"
-   editor="tysonn" />
+	description="Erfahren Sie, wie Sie von Affinitätsgruppen zu regionalen VNets migrieren."
+	services="virtual-network"
+	documentationCenter="na"
+	authors="telmosampaio"
+	manager="carolz"
+	editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="05/29/2015"
-   ms.author="telmos" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="09/02/2015"
+	ms.author="telmos"/>
 
 # Migrieren von Affinitätsgruppen zu einem regionalen virtuellen Netzwerk (VNet)
 
-Mit einer Affinitätsgruppe können Sie sicherstellen, dass Ressourcen, die innerhalb der gleichen Affinitätsgruppe erstellt werden, physisch von Servern gehostet werden, die sich in geringem Abstand zueinander befinden, sodass die Ressourcen schneller miteinander kommunizieren können. In der Vergangenheit waren Affinitätsgruppen eine Voraussetzung für die Erstellung virtueller Netzwerke (VNets). Damals konnte der Netzwerk-Manager-Dienst, der die VNets verwaltete, nur innerhalb einer Gruppe physischer Servern oder innerhalb einer Skalierungseinheit verwendet werden. Dank der neuesten Verbesserungen bei der Architektur konnte der Rahmen der Netzwerkverwaltung inzwischen jedoch auf eine Region ausgeweitet werden.
+Mit einer Affinitätsgruppe können Sie sicherstellen, dass Ressourcen, die innerhalb der gleichen Affinitätsgruppe erstellt werden, physisch von Servern gehostet werden, die sich in geringem Abstand zueinander befinden. Auf diese Weise können die Ressourcen schneller miteinander kommunizieren. In der Vergangenheit waren Affinitätsgruppen eine Voraussetzung für die Erstellung virtueller Netzwerke (VNets). Damals konnte der Netzwerk-Manager-Dienst, der die VNets verwaltete, nur innerhalb einer Gruppe physischer Server oder innerhalb einer Skalierungseinheit verwendet werden. Aufgrund von Verbesserungen bei der Architektur konnte die Netzwerkverwaltung inzwischen jedoch auf eine Region ausgeweitet werden.
 
 Deshalb ist die Verwendung von Affinitätsgruppen nicht mehr empfehlenswert und für virtuelle Netzwerke auch nicht mehr erforderlich. Die Verwendung von Affinitätsgruppen für VNets wird durch Regionen ersetzt. VNets mit regionaler Zuordnung werden als regionale VNets bezeichnet.
 
@@ -41,11 +41,13 @@ Für VNets mit bestehender Affinitätsgruppenzuordnung ist die Migration zu regi
 	
 	Bearbeiten Sie die folgenden Zeilen Ihrer Netzwerkkonfigurationsdatei, und ersetzen Sie dabei die Werte durch Ihre eigenen Werte:
 
-	**Alter Wert:** \<VirtualNetworkSitename="VNetUSWest" AffinityGroup="VNetDemoAG">
+	**Alter Wert:** <VirtualNetworkSitename="VNetUSWest" AffinityGroup="VNetDemoAG">
 
-	**Neuer Wert:** \<VirtualNetworkSitename="VNetUSWest" Location="West US">
+	**Neuer Wert:** <VirtualNetworkSitename="VNetUSWest" Location="West US">
 
-1. Speichern Sie die Änderungen, und [importieren](../virtual-networks-using-network-configuration-file/) Sie die Netzwerkkonfiguration in Azure.
+1. Speichern Sie die Änderungen, und importieren[](../virtual-networks-using-network-configuration-file/) Sie die Netzwerkkonfiguration in Azure.
+
+>[AZURE.INFO]Bei dieser Migration kommt es zu keinerlei Ausfallzeiten für Ihre Dienste.
 
 ## Affinitätsgruppen und virtuelle Computer
 
@@ -64,4 +66,4 @@ Virtuelle Computer, die sich derzeit in einer Affinitätsgruppe befinden, müsse
 Die Bereitstellung eines virtuellen Computers erfolgt in einer einzelnen Skalierungseinheit. Affinitätsgruppen können zwar den Satz verfügbarer VM-Größen für eine neue VM-Bereitstellung einschränken, alle vorhandenen und bereits bereitgestellten virtuellen Computer sind jedoch bereits auf den Satz von VM-Größen beschränkt, der in der entsprechenden Skalierungseinheit verfügbar ist. Daher hat das Entfernen eines virtuellen Computers aus der Affinitätsgruppe keinerlei Auswirkungen.
  
 
-<!------HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

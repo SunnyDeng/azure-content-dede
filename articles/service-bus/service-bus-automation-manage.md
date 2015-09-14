@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/13/2015"
+	ms.date="08/28/2015"
 	ms.author="csand"/>
 
 
 
-#Verwalten von Azure Service Bus mithilfe von Azure Automation
+# Verwalten von Azure Service Bus mithilfe von Azure Automation
 
 Dieser Leitfaden bietet eine Einführung in den Azure Automation-Dienst und zeigt, wie Azure Automation zur Vereinfachung der Verwaltung von Azure Service Bus genutzt werden kann.
 
@@ -30,18 +30,16 @@ Azure Automation bietet ein äußerst zuverlässiges, hoch verfügbares Workflow
 
 Indem Sie die Aufgaben im Zusammenhang mit der Cloudverwaltung mit Azure Automation automatisieren, verringern Sie den Verwaltungsaufwand und ermöglichen es Ihren IT- und DevOps-Mitarbeitern, sich Aufgaben zu widmen, die einen Mehrwert für Ihr Unternehmen liefern.
 
-
 ## Wie kann Azure Automation Sie beim Verwalten von Azure Service Bus unterstützen?
 
-Service Bus kann in Azure Automation mithilfe der [Service Bus-REST-API](https://msdn.microsoft.com/library/azure/hh780717.aspx) verwaltet werden. Innerhalb von Azure Automation können Sie PowerShell-Workflowskripts schreiben, um viele Ihrer Service Bus-Aufgaben mithilfe der REST-API durchzuführen. Sie können diese REST-API-Aufrufe in Azure Automation auch mit den Cmdlets für andere Azure-Dienste koppeln, um komplexe Aufgaben in Azure-Diensten und Systemen anderer Hersteller zu automatisieren.
-
+Sie können Service Bus mit Azure Automation verwalten, indem Sie zu diesem Zweck die [Service Bus-REST-API](https://msdn.microsoft.com/library/azure/hh780717.aspx) einsetzen. Innerhalb von Azure Automation können Sie PowerShell-Workflowskripts schreiben, um viele Ihrer Service Bus-Aufgaben mithilfe der REST-API durchzuführen. Sie können diese REST-API-Aufrufe in Azure Automation auch mit den Cmdlets für andere Azure-Dienste koppeln, um komplexe Aufgaben in Azure-Diensten und Systemen anderer Hersteller zu automatisieren.
 
 ## Nächste Schritte
 
 Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Verwendung zum Verwalten von Azure Service Bus vertraut gemacht haben, folgen Sie diesen Links, um weitere Informationen zu Azure Automation zu erhalten.
 
-* Lernprogramm [Erste Schritte](../automation-create-runbook-from-samples.md) zu Azure Automation
+* Tutorial [Erste Schritte](../automation-create-runbook-from-samples.md) zu Azure Automation
 * Artikel [Verwalten von Service Bus mit PowerShell](service-bus-powershell-how-to-provision.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

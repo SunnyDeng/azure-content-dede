@@ -12,8 +12,8 @@
 	ms.workload="core"
 	ms.tgt_pltfrm="c"
 	ms.devlang="java"
-	ms.topic="article" 
-	ms.date="07/21/2015"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="sethm"/>
 
 # Erste Schritte mit Event Hubs
@@ -22,7 +22,7 @@
 
 ## Einführung
 
-Event Hubs sind ein hochgradig skalierbares Aufnahmesystem, das Millionen von Ereignissen pro Sekunde aufnehmen kann, wodurch eine Anwendung die Möglichkeit erhält, die von Ihren verbundenen Geräten und Anwendungen erzeugten immensen Datenmengen zu verarbeiten und zu analysieren. Nach der Erfassung in Event Hubs können Sie Daten über einen beliebigen Echtzeit-Analyseanbieter oder ein Speichercluster transformieren und speichern.
+Event Hubs sind ein hochgradig skalierbares Aufnahmesystem, das Millionen von Ereignissen pro Sekunde aufnehmen kann, wodurch eine Anwendung die Möglichkeit erhält, die von Ihren verbundenen Geräten und Anwendungen erzeugten immensen Datenmengen zu verarbeiten und zu analysieren. Nach der Erfassung in Event Hubs können Sie Daten über einen beliebigen Echtzeitanalyseanbieter oder ein Speichercluster transformieren und speichern.
 
 Weitere Informationen finden Sie unter [Übersicht über Event Hubs].
 
@@ -38,7 +38,7 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 ## Erstellen eines Ereignis-Hubs
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, und klicken Sie unten auf dem Bildschirm auf **NEU**.
+1. Melden Sie sich beim [Azure-Portal] an, und klicken Sie im unteren Teil des Bildschirms auf **NEW**.
 
 2. Klicken Sie auf **App Services** und anschließend nacheinander auf **Service Bus**, **Event Hub** und **Schnellerfassung**.
 
@@ -101,7 +101,7 @@ Die folgenden Ressourcen sind für die Entwicklung von Anwendungen verfügbar, d
 [23]: ./media/event-hubs-c-storm-getstarted/receive-storm3.png
 
 <!-- Links -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Azure-Portal]: https://manage.windowsazure.com/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [Übersicht über Event Hubs]: event-hubs-overview.md
 
@@ -111,4 +111,4 @@ Die folgenden Ressourcen sind für die Entwicklung von Anwendungen verfügbar, d
 [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm und HDInsight]: ../hdinsight/hdinsight-storm-develop-csharp-visual-studio-topology.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

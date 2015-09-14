@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory (Windows Store) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Zugriff basierend auf Azure Active Directory-Rollen in Ihrer Windows Store-Anwendung steuern." 
-	documentationCenter="windows" 
-	authors="wesmc7777" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory (Windows Store) | Microsoft Azure"
+	description="Erfahren Sie, wie Sie den Zugriff basierend auf Azure Active Directory-Rollen in Ihrer Windows Store-Anwendung steuern."
+	documentationCenter="windows"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="06/09/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-multiple"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="wesmc"/>
 
 # Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory
@@ -36,7 +36,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 * Visual Studio 2013 für Windows 8.1
 * Abschluss des Lernprogramms [Hinzufügen von Authentifizierung zur App] unter Verwendung des Azure Active Directory-Authentifizierungsanbieters.
 
- 
+
 
 
 ##Erzeugen eines Schlüssels für die integrierte Anwendung
@@ -56,7 +56,7 @@ Wenn Sie das Lernprogramm [Zugriff auf Azure Active Directory Graph-Informatione
 
 
 
-##Erstellen eines benutzerdefinierten Autorisierungsattributs im mobilen Dienst 
+##Erstellen eines benutzerdefinierten Autorisierungsattributs im mobilen Dienst
 
 In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsattribut, das verwendet werden kann, um Zugriffsprüfungen für Vorgänge im mobilen Dienst durchzuführen. Das Attribut überprüft eine Active Directory-Gruppe basierend auf dem übergebenen Rollennamen. Anschließend führt es Zugriffsprüfungen basierend auf der Gruppenmitgliedschaft durch.
 
@@ -101,18 +101,18 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
             private bool isInitialized;
             private bool isHosted;
 	        private ApiServices services = null;
-	
+
 	        // Constants used with ADAL and the Graph REST API for AAD
 	        private const string AadInstance = "https://login.windows.net/{0}";
 	        private const string GraphResourceId = "https://graph.windows.net/";
 	        private const string APIVersion = "?api-version=2013-04-05";
-	
+
 	        // App settings pulled from the Mobile Service
 	        private string tenantdomain;
 	        private string clientid;
 	        private string clientkey;
 	        private Dictionary<int, string> groupIds = new Dictionary<int, string>();
-	
+
 	        private string token = null;
 
             public AuthorizeAadRole(AadRoles role)
@@ -128,13 +128,13 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 
             public AadRoles Role { get; private set; }
 
-            // Generate a local dictionary for the role group ids configured as 
+            // Generate a local dictionary for the role group ids configured as
             // Mobile Service app settings
             private void InitGroupIds()
             {
             }
 
-            // Use ADAL and the authentication app settings from the Mobile Service to 
+            // Use ADAL and the authentication app settings from the Mobile Service to
             // get an AAD access token
             private string GetAADToken()
             {
@@ -253,7 +253,7 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 
             services = new ApiServices(actionContext.ControllerContext.Configuration);
 
-            // Check whether we are running in a mode where local host access is allowed 
+            // Check whether we are running in a mode where local host access is allowed
             // through without authentication.
             if (!this.isInitialized)
             {
@@ -393,4 +393,4 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 [Zugriff auf Azure Active Directory Graph-Informationen]: mobile-services-dotnet-backend-windows-store-dotnet-aad-graph-info.md
 [ADAL für .NET]: https://msdn.microsoft.com/library/azure/jj573266.aspx
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

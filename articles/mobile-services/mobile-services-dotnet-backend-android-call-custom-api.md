@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Aufrufen einer benutzerdefinierten API von einem Android-Client | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer Android-App aufrufen, die Microsoft Azure Mobile Services verwendet." 
-	services="mobile-services" 
-	documentationCenter="android" 
-	authors="RickSaling" 
-	manager="dwrede" 
+<properties
+	pageTitle="Aufrufen einer benutzerdefinierten API von einem Android-Client | Microsoft Azure"
+	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer Android-App aufrufen, die Microsoft Azure Mobile Services verwendet."
+	services="mobile-services"
+	documentationCenter="android"
+	authors="RickSaling"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="06/03/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="java"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="ricksal"/>
 
 # Aufrufen einer benutzerdefinierten API aus dem Client
@@ -60,6 +60,5 @@ Da Sie nun eine benutzerdefinierte API erstellt und diese über Ihre Android-App
 [Get started with push notifications]: mobile-services-dotnet-backend-android-get-started-push.md
 
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
- 
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

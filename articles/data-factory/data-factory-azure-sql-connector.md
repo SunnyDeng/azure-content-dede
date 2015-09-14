@@ -171,7 +171,7 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	        "typeProperties": {
 	          "source": {
 	            "type": "SqlSource",
-	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \'{0:yyyy-MM-dd HH:mm}\' AND timestampcolumn < \'{1:yyyy-MM-dd HH:mm}\'', WindowStart, WindowEnd)"
+	            "SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \\'{0:yyyy-MM-dd HH:mm}\\' AND timestampcolumn < \\'{1:yyyy-MM-dd HH:mm}\\'', WindowStart, WindowEnd)"
 	          },
 	          "sink": {
 	            "type": "BlobSink"
@@ -467,8 +467,11 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-azure-sql-connector.md).
+
 
 
 	 
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

@@ -21,7 +21,7 @@
 
 ## Übersicht
 
-Willkommen bei Microsoft Azure StorSimple, einer integrierten Speicherlösung, die Speicheraufgaben zwischen lokalen Geräten und Microsoft Azure-Cloud-Speicher verwaltet. StorSimple ist darauf ausgelegt, Speicherkosten zu senken, die Speicherverwaltung zu vereinfachen, die Fähigkeiten zur Notfallwiederherstellung und deren Effizienz zu verbessern und Datenmobilität zu ermöglichen.
+Willkommen bei Microsoft Azure StorSimple, einer integrierten Speicherlösung, die Speicheraufgaben zwischen lokalen Geräten und Microsoft Azure-Cloudspeicher verwaltet. StorSimple ist darauf ausgelegt, Speicherkosten zu senken, die Speicherverwaltung zu vereinfachen, die Fähigkeiten zur Notfallwiederherstellung und deren Effizienz zu verbessern und Datenmobilität zu ermöglichen.
 
 In den folgenden Abschnitten werden die Microsoft Azure StorSimple-Komponenten beschrieben. Es wird erläutert, wie die Lösung Daten anordnet, Speicher zuweist sowie die Speicherverwaltung und den Datenschutz vereinfacht. Der letzte Abschnitt enthält Definitionen für einige wichtige Begriffe im Zusammenhang mit den StorSimple-Komponenten und deren Verwaltung.
 
@@ -29,7 +29,7 @@ In den folgenden Abschnitten werden die Microsoft Azure StorSimple-Komponenten b
 
 ## StorSimple-Gerät
 
-Das Microsoft Azure StorSimple-Gerät ist ein lokales Hybridspeicherarray, das primären Speicher und iSCSI den Zugriff auf die darauf gespeicherten Daten ermöglicht. Es verwaltet die Kommunikation mit Cloud-Speicher und gewährleistet die Sicherheit und Vertraulichkeit aller Daten, die in der Microsoft Azure StorSimple-Lösung gespeichert sind.
+Das Microsoft Azure StorSimple-Gerät ist ein lokales Hybridspeicherarray, das primären Speicher und iSCSI den Zugriff auf die darauf gespeicherten Daten ermöglicht. Es verwaltet die Kommunikation mit Cloudspeicher und gewährleistet die Sicherheit und Vertraulichkeit aller Daten, die in der Microsoft Azure StorSimple-Lösung gespeichert sind.
 
 Zum StorSimple-Gerät gehören Solid-State-Laufwerke (SSDs) und Festplattenlaufwerken (HDDs) sowie Unterstützung für Clustering und automatisches Failover. Das Gerät enthält einen gemeinsam genutzten Prozessor, gemeinsam genutzten Speicher sowie zwei gespiegelte Controller. Jeder Controller stellt Folgendes bereit:
 
@@ -70,11 +70,9 @@ Zusätzlich zum dedizierten StorSimple-Gerät und virtuellen Gerät verwendet Mi
 
 ### Automatische Speicherstaffelung
 
-Microsoft Azure StorSimple ordnet Daten automatisch in logischen Ebenen basierend auf aktueller Nutzung, Alter und Beziehung zu anderen Daten an. Daten, die am aktivsten sind, werden lokal gespeichert, während weniger aktive und inaktive Daten automatisch in die Cloud migriert werden. Abbildung 1 veranschaulicht dieses Speicherkonzept.
+Microsoft Azure StorSimple ordnet Daten automatisch in logischen Ebenen basierend auf aktueller Nutzung, Alter und Beziehung zu anderen Daten an. Daten, die am aktivsten sind, werden lokal gespeichert, während weniger aktive und inaktive Daten automatisch in die Cloud migriert werden. Die folgende Abbildung zeigt dieses Speicherkonzept.
  
 ![StorSimple-Speicherebenen](./media/storsimple-components/hcs-data-services-storsimple-components-tiers.png)
-
-**Abbildung 1: StorSimple-Speicher**
 
 Damit ein schneller Zugriff ermöglicht wird, speichert Azure StorSimple sehr aktive Daten auf SSDs im StorSimple-Gerät. Daten, die gelegentlich verwendet werden, werden auf HDDs im Gerät oder auf Servern im Datencenter gespeichert. Inaktive Daten, Sicherungsdaten und Daten, die für Archivierungs- oder Kompatibilitätszwecke verwaltet werden, werden in der Cloud gespeichert.
 
@@ -92,7 +90,7 @@ Die Speicherstaffelung erfolgt folgendermaßen:
 
 ### Schlanke Speicherzuweisung
 
-Schlanke Speicherzuweisung ist eine Virtualisierungstechnologie, bei der der verfügbare Speicher die physischen Ressourcen zu überschreiten scheint. Anstatt ausreichend Speicher im Voraus zu reservieren, verwendet StorSimple die schlanke Bereitstellung, um nur eben genug Speicher zum Erfüllen der aktuellen Anforderungen zuzuweisen. Die Elastizität von Cloud-Speicher ermöglicht diesen Ansatz, weil StorSimple den Cloud-Speicher vergrößern oder verkleinern kann, um sich ändernde Anforderungen zu erfüllen.
+Schlanke Speicherzuweisung ist eine Virtualisierungstechnologie, bei der der verfügbare Speicher die physischen Ressourcen zu überschreiten scheint. Anstatt ausreichend Speicher im Voraus zu reservieren, verwendet StorSimple die schlanke Bereitstellung, um nur eben genug Speicher zum Erfüllen der aktuellen Anforderungen zuzuweisen. Die Elastizität von Cloudspeicher ermöglicht diesen Ansatz, weil StorSimple den Cloudspeicher vergrößern oder verkleinern kann, um sich ändernde Anforderungen zu erfüllen.
 
 ### Deduplizierung und Komprimierung
 
@@ -120,11 +118,11 @@ Die Azure PowerShell-Cmdlets für StorSimple sind eine Sammlung von Windows Powe
 
 ## StorSimple Manager-Dienst
 
-Microsoft Azure StorSimple stellt eine webbasierte Benutzeroberfläche (den StorSimple-Manager-Dienst) zur Verfügung, die die zentrale Verwaltung des Datencenters und Cloud-Speichers ermöglicht. Mithilfe des StorSimple-Manager-Diensts können Sie die folgenden Aufgaben ausführen:
+Microsoft Azure StorSimple stellt eine webbasierte Benutzeroberfläche (den StorSimple-Manager-Dienst) zur Verfügung, die die zentrale Verwaltung des Datencenters und Cloudspeichers ermöglicht. Mithilfe des StorSimple-Manager-Diensts können Sie die folgenden Aufgaben ausführen:
 
 - Konfigurieren von Systemeinstellungen für StorSimple-Geräte
 - Konfigurieren und Verwalten von Sicherheitseinstellungen für StorSimple-Geräte
-- Konfigurieren von Cloud-Anmeldeinformationen und -Eigenschaften
+- Konfigurieren von Cloudanmeldeinformationen und -Eigenschaften
 - Konfigurieren und Verwalten von Volumes auf einem Server
 - Konfigurieren von Volumegruppen
 - Sichern und Wiederherstellen von Daten
@@ -135,20 +133,20 @@ Sie können den StorSimple-Manager-Dienst zum Ausführen aller Verwaltungsaufgab
 
 Weitere Informationen finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-## StorSimple-Momentaufnahmen-Manager
+## StorSimple Snapshot Manager
 
-StorSimple-Momentaufnahmen-Manager ist ein MMC-Snap-In (Microsoft Management Console), das Sie zum Erstellen konsistenter zeitpunktbezogener Sicherungskopien von lokalen und Cloud-Daten verwenden können. Das Snap-In wird auf einem auf Windows Server basierenden Host ausgeführt. Sie können den StorSimple-Momentaufnahmen-Manager für die folgenden Aufgaben verwenden:
+StorSimple Snapshot Manager ist ein MMC-Snap-In (Microsoft Management Console), das Sie zum Erstellen konsistenter zeitpunktbezogener Sicherungskopien von lokalen und Clouddaten verwenden können. Das Snap-In wird auf einem auf Windows Server basierenden Host ausgeführt. Sie können StorSimple Snapshot Manager für die folgenden Aufgaben verwenden:
 
 - Konfigurieren, Sichern und Löschen von Volumes
 - Konfigurieren von Volumegruppen, um sicherzustellen, dass gesicherte Daten anwendungskonsistent sind
 - Verwalten von Sicherungsrichtlinien, damit Daten gemäß einem vordefinierten Zeitplan gesichert und an einem festgelegten Speicherort (lokal oder in der Cloud) gespeichert werden
 - Wiederherstellen von Volumes und einzelnen Dateien
 
-Sicherungen werden als Momentaufnahmen erfasst, die nur die Änderungen seit der letzen Erstellung einer Momentaufnahme aufzeichnen und weit weniger Speicherplatz als vollständige Sicherungen erfordern. Sie können Sicherungspläne erstellen oder bei Bedarf sofortige Sicherungen vornehmen. Außerdem können Sie den StorSimple-Momentaufnahmen-Manager zum Einrichten von Aufbewahrungsrichtlinien verwenden, die steuern, wie viele Momentaufnahmen gespeichert werden. Wenn Sie anschließend Daten aus einer Sicherung wiederherstellen müssen, ermöglicht der StorSimple-Momentaufnahmen-Manager Ihnen die Auswahl aus in einem Katalog mit lokalen oder Cloud-Momentaufnahmen.
+Sicherungen werden als Momentaufnahmen erfasst, die nur die Änderungen seit der letzen Erstellung einer Momentaufnahme aufzeichnen und weit weniger Speicherplatz als vollständige Sicherungen erfordern. Sie können Sicherungspläne erstellen oder bei Bedarf sofortige Sicherungen vornehmen. Außerdem können Sie StorSimple Snapshot Manager zum Einrichten von Aufbewahrungsrichtlinien verwenden, die steuern, wie viele Momentaufnahmen gespeichert werden. Wenn Sie anschließend Daten aus einer Sicherung wiederherstellen müssen, ermöglicht StorSimple Snapshot Manager Ihnen die Auswahl aus in einem Katalog mit lokalen oder Cloudmomentaufnahmen.
 
-Wenn ein Notfall eintritt oder Daten aus anderen Gründen wiederhergestellt werden müssen, stellt der StorSimple-Momentaufnahmen-Manager diese nach Bedarf inkrementell wieder her. Für die Datenwiederherstellung ist es nicht erforderlich, das gesamte System herunterzufahren, während eine Datei wiederhergestellt, Hardware ausgetauscht oder der Betrieb an einen anderen Standort verlagert wird.
+Wenn ein Notfall eintritt oder Daten aus anderen Gründen wiederhergestellt werden müssen, stellt StorSimple Snapshot Manager diese nach Bedarf inkrementell wieder her. Für die Datenwiederherstellung ist es nicht erforderlich, das gesamte System herunterzufahren, während eine Datei wiederhergestellt, Hardware ausgetauscht oder der Betrieb an einen anderen Standort verlagert wird.
 
-Weitere Informationen finden Sie unter [Was ist der StorSimple Snapshot Manager?](storsimple-what-is-snapshot-manager.md)
+Weitere Informationen finden Sie unter [Was ist StorSimple Snapshot Manager?](storsimple-what-is-snapshot-manager.md)
 
 ## StorSimple-Adapter für SharePoint
 
@@ -170,7 +168,7 @@ Vor dem Bereitstellen Ihrer Microsoft Azure StorSimple-Projektmappe, empfehlen w
 | Zugriffssteuerungsdatensätze (Access Control Record, ACR) | Ein Datensatz, der einem Volume auf dem Microsoft Azure StorSimple-Gerät zugeordnet ist, durch den festgelegt wird, welche Hosts eine Verbindung mit diesem herstellen können. Die Feststellung basiert auf den qualifizierten iSCSI-Namen (IQN) der Hosts (im ACR enthalten), die eine Verbindung mit dem StorSimple-Gerät herstellen.|
 | AES-256 | Ein erweiterter 256-Bit-Verschlüsselungsalgorithmus (Advanced Encryption Standard, AES) zum Verschlüsseln von Daten, die aus der und in die Cloud verschoben werden. |
 | Größe der Zuordnungseinheiten (Allocation Unit Size, AUS) | Die kleinste Menge an Speicherplatz, die zum Speichern einer Datei in Windows-Dateisystemen zugeordnet werden kann. Ist eine Dateigröße kein entsprechendes Vielfaches der Clustergröße, muss zusätzlicher Speicherplatz zum Speichern der Datei verwendet werden (bis zum nächsten Vielfachen der Clustergröße). Dies führt zu verlorenem Speicherplatz und zur Fragmentierung der Festplatte. <br>Die empfohlene AUS für Azure StorSimple-Volumes beträgt 64 KB, da diese Größe gut mit den Deduplizierungsalgorithmen funktioniert.|
-| Automatische Speicherstaffelung | Automatisches Verschieben von weniger aktiven Daten auf eine Ebene in der Cloud mit anschließender Verwaltung des gesamten Speichers über eine zentrale Benutzeroberfläche.|
+| Automatische Speicherstaffelung | Automatisches Verschieben von weniger aktiven Daten von SSDs auf HDDs und anschließend auf eine Ebene in der Cloud, um den gesamten Speicher über eine zentrale Benutzeroberfläche verwalten zu können.|
 | Sicherungskatalog | Eine Auflistung von Backups, in der Regel verknüpft durch den Anwendungstyp, der verwendet wurde. Diese Auflistung wird auf der Seite "Sicherungskatalog" der Benutzeroberfläche des StorSimple Manager-Diensts angezeigt.|
 | Sicherungskatalogdatei | Eine Datei mit einer Liste von verfügbaren Momentaufnahmen, die derzeit in der Sicherungsdatenbank von StorSimple Snapshot Manager gespeichert sind. |
 | Sicherungsrichtlinie | Eine Auswahl von Volumes, Sicherungstypen und Zeitplänen, mit der Sie Sicherungen nach einem vordefinierten Zeitplan erstellen können.|
@@ -179,7 +177,7 @@ Vor dem Bereitstellen Ihrer Microsoft Azure StorSimple-Projektmappe, empfehlen w
 | Klon | Ein Duplikat eines Volumes. |
 |Cloud als Ebene (CaaT, Cloud as a Tier) | Cloudspeicherung, die als Ebene innerhalb der Speicherarchitektur integriert ist, sodass alle Speicher als Teil eines Unternehmensspeichernetzwerks angezeigt werden.|
 | Clouddienstanbieter (Cloud Service Provider, CSP) | Ein Anbieter von Cloudcomputingdiensten.|
-| Cloud-Momentaufnahme | Eine Kopie von in der Cloud gespeicherten Volumedaten zu einem bestimmten Zeitpunkt. Eine Cloudmomentaufnahme entspricht einer Momentaufnahme, die auf einem anderen, externen Speichersystem repliziert wird. Cloudmomentaufnahmen sind besonders nützlich für Notfallwiederherstellungszenarios.|
+| Cloudmomentaufnahme | Eine Kopie von in der Cloud gespeicherten Volumedaten zu einem bestimmten Zeitpunkt. Eine Cloudmomentaufnahme entspricht einer Momentaufnahme, die auf einem anderen, externen Speichersystem repliziert wird. Cloudmomentaufnahmen sind besonders nützlich für Notfallwiederherstellungszenarios.|
 | Verschlüsselungsschlüssel für Cloudspeicher | Ein Kennwort oder ein Schlüssel, der von Ihrem StorSimple-Gerät verwendet wird, um auf die verschlüsselten Daten zuzugreifen, die vom Gerät in die Cloud gesendet werden.|
 | Clusterfähiges Aktualisieren | Verwaltung von Softwareupdates auf Servern in einem Failovercluster, damit die Updates nur minimale oder keine Auswirkungen auf die Dienstverfügbarkeit haben.|
 | DataPath | Eine Auflistung funktionaler Einheiten, die miteinander verbundene Datenverarbeitungsvorgänge ausführen.|
@@ -209,12 +207,12 @@ Vor dem Bereitstellen Ihrer Microsoft Azure StorSimple-Projektmappe, empfehlen w
 | erstellen | Ein Satz von Anmeldeinformationen, die mit Ihrem Speicherkonto bei einem Clouddienstanbieter verknüpft sind.| 
 | StorSimple-Adapter für SharePoint| Eine Microsoft Azure StorSimple-Komponente, die die Speicher- und Datenschutzfunktionen von StorSimple transparent auf SharePoint-Serverfarmen erweitert.|
 | StorSimple Manager-Dienst | Eine Erweiterung des Azure-Verwaltungsportals, das die Verwaltung von lokalen und virtuellen Azure StorSimple-Geräten ermöglicht.|
-| StorSimple-Momentaufnahmen-Manager | Ein Microsoft Management Console (MMC)-Snap-In zum Verwalten von Sicherung und Wiederherstellung in Microsoft Azure StorSimple.|
+| StorSimple Snapshot Manager | Ein Microsoft Management Console (MMC)-Snap-In zum Verwalten von Sicherung und Wiederherstellung in Microsoft Azure StorSimple.|
 | Sicherung anlegen | Ein Feature, das dem Benutzer ermöglicht, ein interaktives Backup eines Volumes zu erstellen. Dies ist eine alternative Möglichkeit zum Erstellen eines manuellen Backups eines Volumes gegenüber einem automatisierten Backup mit einer definierten Richtlinie.|
 | Schlanke Speicherzuweisung | Eine Methode zur Optimierung der Effizienz, mit der der verfügbare Speicherplatz in Speichersystemen genutzt wird. Bei der schlanken Speicherzuweisung wird der Speicher für mehrere Benutzer basierend auf den minimalen Speicherplatzanforderungen jedes Benutzers zu einem beliebigen Zeitpunkt zugeteilt. Siehe auch *Normale Speicherzuweisung*.|
 | Volume | Logische Speicherbereiche, die in Form von Laufwerken dargestellt werden. StorSimple-Volumes entsprechen den vom Host bereitgestellten Volumes, einschließlich jener Volumes, die durch iSCSI und StorSimple-Geräte erkannt werden.|
  | Volumecontainer | Eine Gruppierung von Volumes und den Einstellungen, die für diese gelten. Alle Volumes auf Ihrem StorSimple-Gerät sind in Volumecontainer unterteilt. Die Einstellungen für Volumecontainer umfassen Speicherkonten, Einstellungen für die Verschlüsselung von Daten, die mit zugeordneten Verschlüsselungsschlüsseln in die Cloud gesendet werden, und die für Cloudvorgänge verbrauchte Bandbreite.|
-| Volumegruppe | Im StorSimple-Momentaufnahmen-Manager ist eine Volumegruppe eine Sammlung von Volumes, die für die Backupverarbeitung konfiguriert sind.|
+| Volumegruppe | In StorSimple Snapshot Manager ist eine Volumegruppe eine Sammlung von Volumes, die für die Backupverarbeitung konfiguriert sind.|
 | Volumeschattenkopie-Dienst (VSS)| Ein Dienst des Windows Server-Betriebssystems, der Anwendungskonsistenz über die Kommunikation mit VSS-fähigen Anwendungen zur Koordination der Erstellung inkrementeller Momentaufnahmen gewährleistet. VSS stellt sicher, dass die Anwendungen vorübergehend inaktiv sind, wenn die Momentaufnahmen erstellt werden.|
 | Windows PowerShell für StorSimple | Eine Windows PowerShell-basierte Befehlszeilenschnittstelle zur Verwendung und Verwaltung Ihres StorSimple-Geräts. Diese Schnittstelle verfügt unter Beibehaltung einiger grundlegender Funktionen von Windows PowerShell über zusätzliche dedizierte Cmdlets, die auf die Verwaltung von StorSimple-Geräten zugeschnitten sind.|
 
@@ -228,4 +226,4 @@ Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

@@ -1,26 +1,26 @@
 <properties 
-   pageTitle="Verwenden des StorSimple Manager-Diensts, um eine StorSimple-Gerätekonfiguration zu ändern | Microsoft Azure" 
-   description="Beschreibt, wie der StorSimple Manager-Dienst dazu verwendet werden kann, ein StorSimple-Gerät neu zu konfigurieren, das bereits bereitgestellt wurde." 
-   services="storsimple" 
-   documentationCenter="NA" 
-   authors="SharS" 
-   manager="carolz" 
-   editor=""/>
+   pageTitle="Ändern der StorSimple-Gerätekonfiguration | Microsoft Azure"
+	description="Beschreibt, wie der StorSimple Manager-Dienst dazu verwendet werden kann, ein StorSimple-Gerät neu zu konfigurieren, das bereits bereitgestellt wurde."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="SharS"
+	manager="carolz"
+	editor=""/>
 
 <tags
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD" 
-   ms.date="07/30/2015"
-   ms.author="v-sharos@microsoft.com"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/14/2015"
+	ms.author="v-sharos@microsoft.com"/>
 
 # Verwenden des StorSimple Manager-Diensts, um eine StorSimple-Gerätekonfiguration zu ändern
 
 ## Übersicht 
 
-Die Verwaltungsportalseite **Konfigurieren** enthält alle Geräteparameter, die Sie für ein StorSimple-Gerät neu konfigurieren können, das über einen StorSimple Manager-Dienst verwaltet wird. In diesem Lernprogramm wird erklärt, wie Sie über die Seite **Konfigurieren** die folgenden gerätebezogenen Aufgaben ausführen:
+Die Verwaltungsportalseite **Konfigurieren** enthält alle Geräteparameter, die Sie für ein StorSimple-Gerät neu konfigurieren können, das über einen StorSimple Manager-Dienst verwaltet wird. In diesem Tutorial wird erklärt, wie Sie über die Seite **Konfigurieren** die folgenden gerätebezogenen Aufgaben ausführen:
 
 - Ändern von Geräteeinstellungen 
 - Ändern von Zeiteinstellungen 
@@ -75,7 +75,7 @@ Wenn Sie eine der Netzwerkschnittstellen konfigurieren, müssen Sie eine virtuel
 
 DATA 0 ist standardmäßig cloudfähig. Wenn Sie DATA 0 konfigurieren, müssen Sie auch zwei feste IP-Adressen konfigurieren, eine für jeden Controller. Diese festen IP-Adressen können verwendet werden, um direkt auf die Gerätecontroller zuzugreifen, und sind nützlich, wenn Sie Updates auf dem Gerät installieren oder zur Problembehandlung auf die Controller zugreifen möchten.
 
-In StorSimple 8000 Series Update 1 ist die Routingmetrik von DATA 0 auf den niedrigsten Wert festgelegt. Daher wird, wenn Ihr Gerät unter StorSimple 8000 Series Update 1 ausgeführt wird, der gesamte Cloud-Datenverkehr über DATA 0 weitergeleitet. Merken Sie sich dies, wenn Ihr StorSimple-Gerät mehrere cloudfähige Netzwerkschnittstellen hat.
+In StorSimple 8000 Series Update 1 ist die Routingmetrik von DATA 0 auf den niedrigsten Wert festgelegt. Daher wird, wenn Ihr Gerät unter StorSimple 8000 Series Update 1 ausgeführt wird, der gesamte Clouddatenverkehr über DATA 0 weitergeleitet. Merken Sie sich dies, wenn Ihr StorSimple-Gerät mehrere cloudfähige Netzwerkschnittstellen hat.
 
 >[AZURE.NOTE]Die festen IP-Adressen für den Controller werden dazu verwendet, die Updates für das Gerät vorzunehmen. Aus diesem Grund müssen die festen IP-Adressen routingfähig sein und eine Verbindung mit dem Internet herstellen können.
 
@@ -90,7 +90,7 @@ Für jede Netzwerkschnittstelle werden die folgenden Parameter angezeigt:
  
 - **Schnittstellenstatus** – Eine Schnittstelle kann aktiviert oder deaktiviert sein. Wenn sie aktiviert ist, versucht das Gerät, die Schnittstelle zu verwenden. Es wird empfohlen, dass nur die Schnittstellen aktiviert werden, die mit dem Netzwerk verbunden sind und verwendet werden. Deaktivieren Sie alle Schnittstellen, die Sie nicht verwenden.
 
-- **Schnittstellentyp** – Über diesen Parameter können Sie iSCSI-Datenverkehr und Cloud-Speicherdatenverkehr voneinander trennen. Der Parameter kann eine der folgenden Einstellungen haben:
+- **Schnittstellentyp** – Über diesen Parameter können Sie iSCSI-Datenverkehr und Cloudspeicher-Datenverkehr voneinander trennen. Der Parameter kann eine der folgenden Einstellungen haben:
 
     - **Cloud aktiviert** – Ist diese Einstellung aktiviert, verwendet das Gerät diese Schnittstelle, um mit der Cloud zu kommunizieren.
     - **iSCSI-aktiviert** – Ist diese Einstellung aktiviert, verwendet das Gerät diese Schnittstelle, um mit dem iSCSI-Host zu kommunizieren.
@@ -127,8 +127,8 @@ Führen Sie die folgenden Schritte aus, wenn Sie die VIPs für eine der Netzwerk
 
 ## Nächste Schritte
 
-[Konfigurieren von MPIO für Ihr StorSimple-Gerät](storsimple-configure-mpio-windows-server.md).
+[Konfigurieren von MPIO für Ihr StorSimple-Gerät](storsimple-configure-mpio-windows-server.md)
  
      
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

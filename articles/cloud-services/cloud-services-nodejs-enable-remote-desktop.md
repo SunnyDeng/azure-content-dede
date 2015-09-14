@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Aktivieren von Remotedesktop für Clouddienste (Node.js)" 
-	description="Hier erfahren Sie, wie Sie Remotedesktopzugriff für virtuelle Computer aktivieren, die auf Ihrer Azure-Node.js-Anwendung gehostet werden." 
-	services="cloud-services" 
-	documentationCenter="nodejs" 
-	authors="MikeWasson" 
-	manager="wpickett" 
+	pageTitle="Aktivieren von Remotedesktop für Clouddienste (Node.js)"
+	description="Hier erfahren Sie, wie Sie Remotedesktopzugriff für virtuelle Computer aktivieren, die auf Ihrer Azure-Node.js-Anwendung gehostet werden."
+	services="cloud-services"
+	documentationCenter="nodejs"
+	authors="MikeWasson"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="05/29/2015" 
+	ms.service="cloud-services"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="mwasson"/>
 
 
@@ -116,4 +116,4 @@ Wenn Sie die Remotedesktopverbindungen zu den Rolleninstanzen in der Cloud nicht
   [Verwenden von Remotedesktop mit Azure-Rollen]: http://msdn.microsoft.com/library/windowsazure/gg443832.aspx
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

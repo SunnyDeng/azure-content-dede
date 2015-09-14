@@ -1,23 +1,20 @@
 <properties 
-	pageTitle="Power BI-Dashboard auf Stream Analytics | Microsoft Azure" 
-	description="Verwenden Sie ein Power BI-Dashboard für Echtzeit-Streaming, um Business Intelligence zu erfassen und hohe Volumen von Daten aus einem Stream Analytics-Auftrag zu analysieren." 
-	keywords="business intelligence tools,power bi,streaming data,power bi dashboard"	
-	services="stream-analytics" 
-	documentationCenter="" 
-	authors="jeffstokes72" 
-	manager="paulettm" 
+	pageTitle="Power BI-Dashboard auf Stream Analytics | Microsoft Azure"
+	description="Verwenden Sie ein Power BI-Dashboard für Echtzeit-Streaming, um Business Intelligence zu erfassen und hohe Volumen von Daten aus einem Stream Analytics-Auftrag zu analysieren."
+	services="stream-analytics"
+	documentationCenter=""
+	authors="jeffstokes72"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-
 <tags 
-	ms.service="stream-analytics" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="data-services" 
-	ms.date="08/03/2015" 
+	ms.service="stream-analytics"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-services"
+	ms.date="08/27/2015"
 	ms.author="jeffstok"/>
-
 	
 # Azure Stream Analytics & Power BI: Live-Dashboard für die Echtzeit-Analyse von Streamingdaten
 
@@ -53,7 +50,7 @@ Klicken Sie im linken Bereich auf **Stream Analytics**, um die Stream Analytics-
 
 ## Festlegen der Auftragseingabe ##
 
-In diesem Lernprogramm wird davon ausgegangen, dass Sie Event Hub als Eingabe mit JSON-Serialisierung und UTF-8-Codierung verwenden.
+In diesem Tutorial wird davon ausgegangen, dass Sie Event Hub als Eingabe mit JSON-Serialisierung und UTF-8-Codierung verwenden.
 
 * Klicken Sie auf den Auftragsnamen.
 * Klicken Sie am oberen Seitenrand auf **Eingaben** und dann auf **Eingabe hinzufügen**. Das aufgerufene Dialogfeld führt Sie durch eine Reihe von Schritten, um Ihre Eingabe einzurichten.
@@ -161,7 +158,7 @@ Jetzt erhalten Sie ein Liniendiagramm der Durchschnittstemperatur im Laufe des Z
 
 Jetzt sehen Sie beim Anzeigen des Dashboards mit diesem angehefteten Bericht, wie dieser in Echtzeit aktualisiert wird. Ändern Sie versuchsweise die Daten der Ereignisse – wählen Sie z. B. „Temperaturspitzen“ o. ä. – und sehen Sie sich an, wie dies in Echtzeit im Dashboard wiedergegeben wird.
 
-Beachten Sie, dass in diesem Lernprogramm nur die Erstellung einer Art von Diagramm für ein Dataset gezeigt wurde. Mithilfe von Power BI können Sie weitere kundenspezifische Business Intelligence Tools für Ihr Unternehmen erstellen. Ein weiteres Beispiel für ein Power BI-Dashboard sehen Sie im Video [Erste Schritte mit Power BI](https://youtu.be/L-Z_6P56aas?t=1m58s).
+Beachten Sie, dass in diesem Tutorial nur die Erstellung einer Art von Diagramm für ein Dataset gezeigt wurde. Mithilfe von Power BI können Sie weitere kundenspezifische Business Intelligence Tools für Ihr Unternehmen erstellen. Ein weiteres Beispiel für ein Power BI-Dashboard sehen Sie im Video [Erste Schritte mit Power BI](https://youtu.be/L-Z_6P56aas?t=1m58s).
 
 Eine weitere nützliche Ressource, um mehr über das Erstellen von Dashboards mit Power BI zu erfahren, sind die [Dashboards in der Power BI-Vorschau](http://support.powerbi.com/knowledgebase/articles/424868-dashboards-in-power-bi-preview).
 
@@ -187,10 +184,18 @@ Das bedeutet, dass die ursprüngliche Abfrage wie folgt geändert wird:
     	TUMBLINGWINDOW(ss,4),
     	dspl
 
+## Erneuern der Autorisierung
 
+Aufgrund einer vorübergehenden Einschränkung muss das Authentifizierungstoken alle 90 Tage manuell für sämtliche Aufträge mit Power BI-Ausgabe aktualisiert werden. Darüber hinaus muss Ihr Power BI-Konto erneut authentifiziert werden, wenn das Kennwort seit der Erstellung oder letzten Authentifizierung Ihres Auftrags geändert wurde. Dieses Problem zeigt sich, indem keine Auftragsausgabe erfolgt und in den Vorgangsprotokollen ein Benutzerauthentifizierungsfehler angezeigt wird.
+
+![Grafik12][graphic12]
+
+Um dieses Problem zu beheben, halten Sie den laufenden Auftrag an, und wechseln Sie zur Power BI-Ausgabe. Klicken Sie auf den Link "Autorisierung erneuern", und starten Sie den Auftrag ab dem letzten Anhaltepunkt neu, um Datenverlust zu vermeiden.
+
+![Grafik13][graphic13]
 
 ## Hier erhalten Sie Hilfe ##
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte ##
 
@@ -212,5 +217,7 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic9]: ./media/stream-analytics-power-bi-dashboard/9-stream-analytics-power-bi-dashboard.png
 [graphic10]: ./media/stream-analytics-power-bi-dashboard/10-stream-analytics-power-bi-dashboard.png
 [graphic11]: ./media/stream-analytics-power-bi-dashboard/11-stream-analytics-power-bi-dashboard.png
+[graphic12]: ./media/stream-analytics-power-bi-dashboard/12-stream-analytics-power-bi-dashboard.png
+[graphic13]: ./media/stream-analytics-power-bi-dashboard/13-stream-analytics-power-bi-dashboard.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

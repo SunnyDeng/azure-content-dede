@@ -1,25 +1,25 @@
 <properties 
-   pageTitle="Verwenden des Dashboards des StorSimple Manager-Diensts | Microsoft Azure"
-   description="Beschreibt das Dashboard des Diensts und erklärt, wie Sie es zur Überwachung des Zustands Ihrer StorSimple-Lösung verwenden."
-   services="storsimple"
-   documentationCenter=""
-   authors="SharS"
-   manager="carolz"
-   editor="" />
+   pageTitle="Dashboard des StorSimple Manager-Diensts | Microsoft Azure"
+	description="Beschreibt das Dashboard des StorSimple Manager-Diensts und erläutert, wie Sie den Zustand Ihrer StorSimple-Lösung über dieses Dashboard verwalten."
+	services="storsimple"
+	documentationCenter=""
+	authors="SharS"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/17/2015"
-   ms.author="v-sharos" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="09/02/2015"
+	ms.author="v-sharos"/>
 
 # Verwenden des Dashboards des StorSimple Manager-Diensts
 
 ## Übersicht
 
-Auf der Dashboard-Seite des StorSimple Manager-Diensts erhalten Sie einen Überblick über alle Geräte, die mit dem StorSimple Manager-Dienst verbunden sind. Dienste, die die Aufmerksamkeit des Systemadministrators erfordern, sind dabei markiert. Dieses Lernprogramm bietet eine Einführung zur Dashboardseite, erläutert die Dashboardinhalte und -funktion und beschreibt die Aufgaben, die Sie auf dieser Seite ausführen können.
+Auf der Dashboard-Seite des StorSimple Manager-Diensts erhalten Sie einen Überblick über alle Geräte, die mit dem StorSimple Manager-Dienst verbunden sind. Dienste, die die Aufmerksamkeit des Systemadministrators erfordern, sind dabei markiert. Dieses Tutorial bietet eine Einführung zur Dashboardseite, erläutert die Dashboardinhalte und -funktion und beschreibt die Aufgaben, die Sie auf dieser Seite ausführen können.
 
 ![Dienstdashboard](./media/storsimple-service-dashboard/HCS_ServiceDashboard.png)
 
@@ -76,4 +76,4 @@ Sie können die Vorgangsprotokolle anzeigen, indem Sie auf den entsprechenden Li
 
 [Behandeln von Problemen bei StorSimple-Geräten](storsimple-troubleshoot-operational-device.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

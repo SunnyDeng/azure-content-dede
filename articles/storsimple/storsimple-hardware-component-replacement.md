@@ -1,33 +1,31 @@
 <properties 
    pageTitle="Austauschen von StorSimple-Hardwarekomponenten | Microsoft Azure"
-   description="Beschreibt, wie PCMs, Batterien, Controllermodule, EBOD-Controller, Laufwerke und Gehäuse eines StorSimple-Gerät sicher ausgetauscht werden."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
-
+	description="Beschreibt, wie PCMs, Batterien, Controllermodule, EBOD-Controller, Laufwerke und Gehäuse eines StorSimple-Gerät sicher ausgetauscht werden."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/05/2015"
-   ms.author="alkohli" />
-
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/31/2015"
+	ms.author="alkohli"/>
 
 # Austauschen von StorSimple-Hardwarekomponenten
 
 ## Übersicht
 
-In den Tutorials zum Austauschen von Hardwarekomponenten werden die Hardwarekomponenten Ihres Microsoft Azure StorSimple-Gerät-Speichergeräts sowie die erforderlichen Schritte zum Ausbauen und Austauschen dieser Komponenten erläutert. In diesen Tutorials erfahren Sie, welche Komponenten austauschbar sind und wie Sie diese austauschen.
+In den Tutorials zum Austauschen von Hardwarekomponenten werden die Hardwarekomponenten Ihres Microsoft Azure StorSimple-Gerät sowie die erforderlichen Schritte zum Ausbauen und Austauschen dieser Komponenten erläutert. Dieser Artikel beschreibt die Sicherheitssymbole und enthält Verweise auf die ausführlichen Tutorials. Darüber hinaus sind die austauschbaren Komponenten aufgeführt.
 
-Machen Sie sich, bevor Sie versuchen, StorSimple-Komponenten auszubauen oder auszutauschen, mit dem [Konventionen für Sicherheitssymbole](#safety-icon-conventions) und anderen [Sicherheitsvorkehrungen](storsimple-safety.md) vertraut.
+>[AZURE.IMPORTANT]Bevor Sie versuchen, StorSimple-Komponenten auszubauen oder auszutauschen, sollten Sie sich mit den [Konventionen für Sicherheitssymbole](#safety-icon-conventions) und anderen [Sicherheitsvorkehrungen](storsimple-safety.md) vertraut machen.
  
 ### Konventionen für Sicherheitssymbole
 
-In der folgenden Tabelle werden die in dieser Anleitung verwendeten Sicherheitssymbole beschrieben. Achten Sie bei den Schritten zum Ausbauen und Austauschen von Gerätekomponenten auf diese Sicherheitssymbole.
+In der folgenden Tabelle sind die in diesen Tutorials verwendeten Sicherheitssymbole beschrieben. Achten Sie bei den Schritten zum Ausbauen und Austauschen von Gerätekomponenten auf diese Sicherheitssymbole.
 
 | Symbol | Text | Zusätzliche Informationen |
 |:---- |:---- |:-----------|
@@ -43,25 +41,25 @@ In der folgenden Tabelle werden die in dieser Anleitung verwendeten Sicherheitss
 
 ### Voraussetzungen
 
-Machen Sie sich mit den sicherheitsrelevanten Informationen zu Ihrem Gerät und den in diesem Tutorial verwendeten Sicherheitssymbolen vertraut. Unter [Sicherheit Ihres Geräts](storsimple-safety.md) finden Sie ausführliche Informationen. Überprüfen Sie die [Sicherheitsvorkehrungen](storsimple-safety.md#handling-precautions), bevor Sie mit Ihrem StorSimple-Gerät hantieren.
+Machen Sie sich mit den sicherheitsrelevanten Informationen zu Ihrem Gerät und den in diesem Tutorial verwendeten Sicherheitssymbolen vertraut. Umfassende Informationen finden Sie unter [Sichere Installation und Verwendung des StorSimple-Geräts](storsimple-safety.md). Überprüfen Sie die [Sicherheitsvorkehrungen](storsimple-safety.md#handling-precautions), bevor Sie Ihr StorSimple-Gerät verwenden.
 
 Bevor Sie versuchen, eine Komponente auszutauschen, beachten Sie die folgenden Informationen.
 
-![Symbol "Warnung"](./media/storsimple-hardware-component-replacement/Warning.png)![Symbol "Stromschlag"](./media/storsimple-hardware-component-replacement/Electric.png)**WARNUNG!**
+![Symbol "Warnung"](./media/storsimple-hardware-component-replacement/Warning.png) ![Symbol "Stromschlag"](./media/storsimple-hardware-component-replacement/Electric.png) **WARNUNG!**
 
 - Erden Sie sich ordnungsgemäß mithilfe elektrostatischer Entladung oder einer Antistatikmatte, bevor Sie mit Modulen und Komponenten Ihres StorSimple-Gerät-Geräts hantieren.
 
 - Berühren Sie keine elektrischen Schaltungen. Verwenden Sie die bereitgestellten Griffe und Führungen, wenn Sie mit Komponenten hantieren, die ggf. elektrische Schaltungen haben.
 
-![Symbol "Warnung"](./media/storsimple-hardware-component-replacement/Warning.png)![Symbol "Hinweis"](./media/storsimple-hardware-component-replacement/NoticeIcon.png)**HINWEIS:**
+![Symbol "Warnung"](./media/storsimple-hardware-component-replacement/Warning.png) ![Symbol "Hinweis"](./media/storsimple-hardware-component-replacement/NoticeIcon.png) **HINWEIS:**
 
 Wenn Sie ein Modul austauschen, lassen Sie **NIEMALS ein Fach auf der Rückseite des Gehäuses leer**. Besorgen Sie ein Austausch- oder leeres Modul, bevor Sie das fehlerhafte Teil ausbauen.
 
-## Hardwarekomponenten Ihres Geräts
+## Vorgehensweisen zum Austausch von Hardwarekomponenten
 
 Ihr Microsoft Azure StorSimple-Gerät besteht aus mehreren Steckmodulen im primären und/oder EBOD-Gehäuse. Das Modell 8100 hat ein einziges primäres Gehäuse, während das Modell 8600 ein Gerät mit zwei Gehäusen (einem primären Gehäuse und einem EBOD-Gehäuse) ist.
 
-Die wesentlichen Hardwarekomponenten des Geräts sind in der folgenden Tabelle zusammengefasst. Klicken Sie in der Spalte "Austauschverfahren" auf den Link, um zum dazugehörigen Tutorial zu gelangen.
+Die wesentlichen Hardwarekomponenten des Geräts sind in der folgenden Tabelle zusammengefasst. Klicken Sie in der Spalte **Austauschverfahren** auf den Link, um zum dazugehörigen Tutorial zu gelangen.
 
 |Komponenten|Anzahl|Steckmodul|Austauschverfahren
 |:---------|:--------|:--------------|:---------------------|
@@ -71,7 +69,7 @@ Die wesentlichen Hardwarekomponenten des Geräts sind in der folgenden Tabelle z
 |Pufferbatterie|2|Ja| [Austauschen des Pufferbatteriemoduls eines StorSimple-Geräts](storsimple-battery-replacement.md) |
 |Festplattenlaufwerke|12|Ja| [Austauschen eines Festplattenlaufwerks im StorSimple-Gerät](storsimple-disk-drive-replacement.md) |
 
-**Tabelle 1** Hardwarekomponenten im primären Gehäuse
+**Tabelle 1** Hardwarekomponenten im primären Gehäuse
 
 Das primäre Gehäuse und das EBOD-Gehäuse unterscheiden sich bei den E/A-Modulen. Außerdem haben die PCMs unterschiedliche Wattzahlen. Die PCMs im primären Gehäuse haben 764 W, wogegen die PCMs im EBOD-Gehäuse 580 W haben. Zusätzlich enthalten die PCMs im primären Gehäuse ein Pufferbatteriemodul.
 
@@ -82,13 +80,13 @@ Das primäre Gehäuse und das EBOD-Gehäuse unterscheiden sich bei den E/A-Modul
 |Module für Stromversorgung und Kühlung (PCMs) mit 580 W|2|Ja| [Austauschen eines Moduls für Stromversorgung und Kühlung eines StorSimple-Geräts](storsimple-power-cooling-module-replacement.md) |
 |Festplattenlaufwerke|12|Ja| [Austauschen eines Festplattenlaufwerks im StorSimple-Gerät](storsimple-disk-drive-replacement.md) |
 
-**Tabelle 2** Hardwarekomponenten im EBOD-Gehäuse
+**Tabelle 2** Hardwarekomponenten im EBOD-Gehäuse
 
 Die Steckmodule im Gerät sind in den folgenden Abbildungen der Vorder- und Rückansicht markiert. Anhand dieser Abbildungen können Sie die Einbaupositionen der verschiedenen Steckmodule ermitteln, wenn ein Austausch erforderlich ist. In der Vorderansicht sind die Laufwerke zu sehen. In der Rückansicht des EBOD-Gehäuses und des primären Gehäuses sind die Steckmodule zu sehen.
 
 ![Vorderseite des Geräts mit Festplattenlaufwerken](./media/storsimple-hardware-component-replacement/IC741028.png)
 
-**Abbildung 1** Vorderseite des Geräts
+**Abbildung 1** Vorderseite des Geräts
 
 |Bezeichnung|Beschreibung|
 |:----|:----------|
@@ -109,7 +107,7 @@ Sowohl das primäre Gehäuse als auch das EBOD-Gehäuse haben Laufwerksträgermo
 
 ![Rückwand des Geräts – Steckmodule für EBOD-Gehäuse](./media/storsimple-hardware-component-replacement/IC769599.png)
 
-**Abbildung 3** Rückseite des EBOD-Gehäuses
+**Abbildung 3** Rückseite des EBOD-Gehäuses
 
 |Bezeichnung|Beschreibung|
 |:----|:----------|
@@ -142,6 +140,6 @@ Die folgenden FRUs (Field Replaceable Units) sind für Ihr StorSimple-Gerät ver
 
 ## Nächste Schritte
 
-Überprüfen Sie alle [sicherheitsrelevanten Informationen](storsimple-safety.md), bevor Sie versuchen, eine StorSimple-Hardwarekomponente auszutauschen.
+Lesen Sie die [Sicherheitsinformationen](storsimple-safety.md) vollständig, bevor Sie versuchen, eine StorSimple-Hardwarekomponente auszutauschen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

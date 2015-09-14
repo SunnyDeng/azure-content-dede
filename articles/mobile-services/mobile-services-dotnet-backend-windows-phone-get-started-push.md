@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Verwenden Sie Azure Mobile Services und Notification Hubs, um Pushbenachrichtigungen an Ihre Windows Phone-App zu senden." 
-	description="Erfahren Sie, wie Sie Notification Hubs mit Azure Mobile Services verwenden, um Pushbenachrichtigungen an Ihre Windows Phone-App zu senden." 
-	services="mobile-services,notification-hubs" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Verwenden Sie Azure Mobile Services und Notification Hubs, um Pushbenachrichtigungen an Ihre Windows Phone-App zu senden."
+	description="Erfahren Sie, wie Sie Notification Hubs mit Azure Mobile Services verwenden, um Pushbenachrichtigungen an Ihre Windows Phone-App zu senden."
+	services="mobile-services,notification-hubs"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows-phone"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="wesmc"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
@@ -38,8 +38,8 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
 
 2. Fügen Sie der `AcquirePushChannel`-Klasse die folgende `App`-Methode hinzu:
 
-        public static HttpNotificationChannel CurrentChannel { get; private set; }	
-        
+        public static HttpNotificationChannel CurrentChannel { get; private set; }
+
         private void AcquirePushChannel()
         {
             CurrentChannel = HttpNotificationChannel.Find("MyPushChannel");
@@ -68,13 +68,13 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
                     {
                         Deployment.Current.Dispatcher.BeginInvoke(() =>
                         {
-                            MessageBox.Show(exception.Message, 
+                            MessageBox.Show(exception.Message,
                                             "Registering for Push Notifications",
                                             MessageBoxButton.OK);
                         });
                     }
             });
-            CurrentChannel.ShellToastNotificationReceived += 
+            CurrentChannel.ShellToastNotificationReceived +=
                 new EventHandler<NotificationEventArgs>((o, args) =>
                 {
                     string message = "";
@@ -90,7 +90,7 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
         }
 
     Dieser Code ruft den Kanal-URI für die App ab, falls vorhanden. Andernfalls wird er erstellt. Der Kanal-URI wird dann für Popupbenachrichtigungen geöffnet und gebunden. Sobald der Kanal-URI vollständig geöffnet ist, wird der Handler für die `ChannelUriUpdated`-Methode aufgerufen, und der Kanal wird registriert, um Pushbenachrichtigungen zu empfangen. Falls bei der Registrierung Fehler auftreten, wird der Kanal geschlossen, sodass nachfolgende Ausführungen der App die Registrierung erneut versuchen können. Der `ShellToastNotificationReceived`-Handler wird so eingerichtet, dass die App während der Ausführung Pushbenachrichtigungen empfangen und verarbeiten kann.
-    
+
 4. Fügen Sie im `Application_Launching`-Ereignishandler in "App.xaml.cs" der neuen `AcquirePushChannel`-Methode folgenden Aufruf hinzu:
 
         AcquirePushChannel();
@@ -98,7 +98,7 @@ Bevor die App Pushbenachrichtigungen empfangen kann, müssen Sie einen Benachric
 	Auf diese Weise wird sichergestellt, dass die Registrierung bei jedem Laden der App angefordert wird. Sie können diese Registrierung in Ihrer App auch nur von Zeit zu Zeit durchführen, um sicherzustellen, dass die Registrierung aktuell ist.
 
 5. Drücken Sie **F5**, um die App auszuführen. Ein Dialogfenster wird mit dem Registrierungsschlüssel angezeigt.
-  
+
 6. Öffnen Sie in Visual Studio die Datei "Package.appxmanifest" und vergewissern Sie sich, dass **Toast Capable** in der Registerkarte **Application UI** auf **Yes** gesetzt ist.
 
    	![][1]
@@ -202,6 +202,5 @@ Weitere Informationen zu Mobile Services und Notification Hubs:
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: mobile-services-html-how-to-use-client-library.md
 [Windows Phone Silverlight 8.1-Apps]: http://msdn.microsoft.com/library/windowsphone/develop/dn642082(v=vs.105).aspx
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

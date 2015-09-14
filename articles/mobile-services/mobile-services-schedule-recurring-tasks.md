@@ -1,27 +1,27 @@
-<properties 
-	pageTitle="Planen von Back-End-Aufgaben mit Scheduler | Microsoft Azure" 
-	description="Verwenden Sie den Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Planen von Back-End-Aufgaben mit Scheduler | Microsoft Azure"
+	description="Verwenden Sie den Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung."
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-multiple"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="glenga"/>
 
-# Planen von periodischen Aufträgen in Mobile Services 
+# Planen von periodischen Aufträgen in Mobile Services
 
 > [AZURE.SELECTOR-LIST (Platform | Backend)]
 - [(Any | .NET)](mobile-services-dotnet-backend-schedule-recurring-tasks.md)
 - [(Any | Javascript)](mobile-services-schedule-recurring-tasks.md)
- 
+
 In diesem Thema erfahren Sie, wie Sie die Auftragsplanerfunktion im Verwaltungsportal verwenden, um Serverskript-Code zu definieren, der auf der Grundlage eines von Ihnen festgelegten Plans ausgeführt wird. Im vorliegenden Fall führt das Skript einen periodischen Abgleich mit einem Remote-Dienst, hier Twitter, aus und speichert die Ergebnisse in einer neuen Tabelle. Im Folgenden sind einige weitere periodische Aufgaben aufgeführt, die geplant werden können:
 
 + Archivieren von veralteten oder doppelten Datensätzen.
@@ -46,7 +46,7 @@ Als Nächstes müssen Sie eine neue Tabelle erstellen, in der Tweets gespeichert
 
 Sie können nun den geplanten Auftrag erstellen, der auf Twitter zugreift und Tweet-Daten in der neuen Aktualisierungstabelle speichert.
 
-2. Klicken Sie auf der Registerkarte **Scheduler** auf **+Create**. 
+2. Klicken Sie auf der Registerkarte **Scheduler** auf **+Create**.
 
     >[AZURE.NOTE]Wenn Sie Ihren mobilen Dienst auf der Ebene <em>Free</em> ausführen, können Sie zu einem gegebenen Zeitpunkt jeweils nur einen geplanten Auftrag ausführen. Bei bezahlten Ebenen können Sie bis zu zehn geplante Aufträge zur Zeit ausführen.
 
@@ -62,23 +62,23 @@ Sie können nun den geplanten Auftrag erstellen, der auf Twitter zugreift und Tw
 
 		// Get the service configuration module.
 		var config = require('mobileservice-config');
-		
-		// Get the stored Twitter consumer key and secret. 
+
+		// Get the stored Twitter consumer key and secret.
 		var consumerKey = config.twitterConsumerKey,
 		    consumerSecret = config.twitterConsumerSecret
-		// Get the Twitter access token from app settings.    
+		// Get the Twitter access token from app settings.
 		var accessToken= config.appSettings.TWITTER_ACCESS_TOKEN,
 		    accessTokenSecret = config.appSettings.TWITTER_ACCESS_TOKEN_SECRET;
-		
-		function getUpdates() {   
+
+		function getUpdates() {
 		    // Check what is the last tweet we stored when the job last ran
 		    // and ask Twitter to only give us more recent tweets
 		    appendLastTweetId(
-		        twitterUrl, 
-		        function twitterUrlReady(url){            
+		        twitterUrl,
+		        function twitterUrlReady(url){
 		            // Create a new request with OAuth credentials.
 		            request.get({
-		                url: url,                
+		                url: url,
 		                oauth: {
 		                    consumer_key: consumerKey,
 		                    consumer_secret: consumerSecret,
@@ -89,7 +89,7 @@ Sie können nun den geplanten Auftrag erstellen, der auf Twitter zugreift und Tw
 		                if (!error && response.statusCode == 200) {
 		                    var results = JSON.parse(body).statuses;
 		                    if(results){
-		                        console.log('Fetched ' + results.length + ' new results from Twitter');                       
+		                        console.log('Fetched ' + results.length + ' new results from Twitter');
 		                        results.forEach(function (tweet){
 		                            if(!filterOutTweet(tweet)){
 		                                var update = {
@@ -101,12 +101,12 @@ Sie können nun den geplanten Auftrag erstellen, der auf Twitter zugreift und Tw
 		                                updatesTable.insert(update);
 		                            }
 		                        });
-		                    }            
-		                } else { 
+		                    }
+		                } else {
 		                    console.error('Could not contact Twitter');
 		                }
 		            });
-		
+
 		        });
 		 }
 		// Find the largest (most recent) tweet ID we have already stored
@@ -117,13 +117,13 @@ Sie können nun den geplanten Auftrag erstellen, der auf Twitter zugreift und Tw
 		    .orderByDescending('twitterId')
 		    .read({success: function readUpdates(updates){
 		        if(updates.length){
-		            callback(url + '&since_id=' + (updates[0].twitterId + 1));           
+		            callback(url + '&since_id=' + (updates[0].twitterId + 1));
 		        } else {
 		            callback(url);
 		        }
 		    }});
 		}
-		
+
 		function filterOutTweet(tweet){
 		    // Remove retweets and replies
 		    return (tweet.text.indexOf('RT') === 0 || tweet.to_user_id);
@@ -165,6 +165,5 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
 [Register your apps for Twitter login with Mobile Services]: /develop/mobile/how-to-guides/register-for-twitter-authentication
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
- 
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

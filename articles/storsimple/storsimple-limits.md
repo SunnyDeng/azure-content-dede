@@ -1,19 +1,19 @@
 <properties 
    pageTitle="StorSimple-Systembegrenzungen | Microsoft Azure"
-   description="Beschreibt Systembegrenzungen und empfohlene Größen für StorSimple-Komponenten und Verbindungen."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="adinah"
-   editor="" />
+	description="Beschreibt Systembegrenzungen und empfohlene Größen für StorSimple-Komponenten und Verbindungen."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="alkohli"
+	manager="adinah"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="06/25/2015"
-   ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="09/01/2015"
+	ms.author="alkohli"/>
 
 # StorSimple-Systemeinschränkungen
 
@@ -27,4 +27,4 @@ StorSimple bietet skalierbaren und flexiblen Speicher für Ihr Rechenzentrum. Es
 
 Überprüfen Sie die [StorSimple-Systemanforderungen](storsimple-system-requirements.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

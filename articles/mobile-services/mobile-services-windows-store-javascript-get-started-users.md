@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Erste Schritte bei der Authentifizierung (JavaScript) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Windows Store-JavaScript-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
-	services="mobile-services" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Erste Schritte bei der Authentifizierung (JavaScript) | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Windows Store-JavaScript-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren."
+	services="mobile-services"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-store" 
-	ms.devlang="javascript" 
-	ms.topic="article" 
-	ms.date="06/03/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows-store"
+	ms.devlang="javascript"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="glenga"/>
 
 # Hinzufügen von Authentifizierung zur Mobile Services-App
@@ -40,7 +40,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 <ol start="5">
 <li><p>(Optional) Führen Sie die unter <a href="/documentation/articles/mobile-services-how-to-register-store-app-package-microsoft-authentication/">Registrieren Ihres Windows Store-App-Pakets für die Microsoft Authentifizierung</a> beschriebenen Schritte durch.</p>
 
-    
+
 	<p>Beachten Sie, dass dieser Schritt optional ist, da er nur für den Anmeldeanbieter für Microsoft-Konten relevant ist. Wenn Sie Ihre Windows Store-App-Paketinformationen bei Mobile Services registrieren, kann der Client die Anmeldeinformationen für Microsoft Account für eine einmalige Anmeldung verwenden. Wenn Sie dies nicht tun, werden Ihre Benutzer mit Microsoft Account-Login jedes Mal zur Anmeldung aufgefordert, wenn diese Anmeldemethode aufgerufen wird. Schließen Sie diesen Schritt ab, wenn Sie einen Identitätsanbieter für Microsoft Account verwenden möchten.</p>
 </li>
 </ol>
@@ -51,9 +51,9 @@ Sowohl Ihr mobiler Dienst als auch Ihre App sind nun konfiguriert und funktionie
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
 <ol start="3">
-<li><p>Öffnen Sie im Visual Studio 2012 Express für Windows 8 das Projekt, das Sie beim Abschluss des Lernprogramms <a href="/develop/mobile/tutorials/get-started/">Erste Schritte mit Mobile Services</a> erstellt haben.</p></li> 
+<li><p>Öffnen Sie im Visual Studio 2012 Express für Windows 8 das Projekt, das Sie beim Abschluss des Lernprogramms <a href="/develop/mobile/tutorials/get-started/">Erste Schritte mit Mobile Services</a> erstellt haben.</p></li>
 <li><p>Drücken Sie F5, um diese Schnellstart-basierte App auszuführen. Stellen Sie sicher, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde.</p>
-   
+
    	<p>Dies liegt daran, dass die App als nicht authentifizierter Benutzer auf Mobile Services zugreift und die <em>TodoItem</em>-Tabelle nun eine Authentifizierung verlangt.</p></li>
 </ol>
 
@@ -92,6 +92,5 @@ Im nächsten Lernprogramm [Dienstweite Autorisierung von Mobile Services-Benutze
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Register your Windows Store app package for Microsoft authentication]: /develop/mobile/how-to-guides/register-windows-store-app-package
- 
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

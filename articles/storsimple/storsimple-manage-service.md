@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Bereitstellen des StorSimple Manager-Diensts | Microsoft Azure"
-   description="Erläutert das Erstellen und Löschen des StorSimple Manager-Diensts im Verwaltungsportal und beschreibt die Verwaltung des Dienstregistrierungsschlüssels."
-   services="storsimple"
-   documentationCenter=""
-   authors="SharS"
-   manager="carolz"
-   editor="" />
+	description="Erläutert das Erstellen und Löschen des StorSimple Manager-Diensts im Verwaltungsportal und beschreibt die Verwaltung des Dienstregistrierungsschlüssels."
+	services="storsimple"
+	documentationCenter=""
+	authors="SharS"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/18/2015"
-   ms.author="v-sharos" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="09/02/2015"
+	ms.author="v-sharos"/>
 
 # Bereitstellen des StorSimple Manager-Diensts
 
@@ -113,4 +113,4 @@ Führen Sie die folgenden Schritte durch, um den Dienstregistrierungsschlüssel 
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

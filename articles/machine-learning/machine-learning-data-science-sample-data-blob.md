@@ -1,25 +1,26 @@
 <properties 
-	pageTitle="Erstellen von Datenstichproben im Azure-Blobspeicher | Microsoft Azure" 
-	description="Erstellen von Datenstichproben im Azure-Blobspeicher" 
-	services="machine-learning,storage" 
-	documentationCenter="" 
-	authors="msolhab" 
-	manager="paulettm" 
-	editor="cgronlun" />
+	pageTitle="Erstellen von Datenstichproben im Azure-Blobspeicher | Microsoft Azure"
+	description="Erstellen von Datenstichproben im Azure-Blobspeicher"
+	services="machine-learning,storage"
+	documentationCenter=""
+	authors="msolhab"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/29/2015" 
-	ms.author="sunliangms;fashah;msolhab;garye;bradsev" />
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="sunliangms;fashah;msolhab;garye;bradsev"/>
 
 #<a name="heading"></a>Datensampling im Azure-Blobspeicher
 
 Dieses Dokument behandelt das Erstellen von Stichproben aus Daten im Azure Blobspeicher durch programmgesteuertes Herunterladen, um dann mit Python-Code Stichproben zu erstellen. Befolgen Sie dazu die folgenden Schritte:
 
+## Download und Downsampling von Daten
 1. Laden Sie die Daten aus dem Azure-Blobspeicher mithilfe des Blobdiensts aus dem folgenden Python-Beispielcode herunter: 
 
 	    from azure.storage import BlobService
@@ -55,7 +56,7 @@ Dieses Dokument behandelt das Erstellen von Stichproben aus Daten im Azure Blobs
 
 	Sie können nun mit dem DataFrame von oben mit der 1-%-Stichprobe weitere Datensuchvorgänge durchführen und Funktionen verarbeiten.
 
-##<a name="heading"></a>Herstellen einer Verbindung mit Azure Machine Learning
+##<a name="heading"></a>Hochladen von Daten und Einlesen in Azure Machine Learning
 
 Mit dem folgenden Beispielcode können Sie ein Downsampling der Daten durchführen und diese direkt in Azure ML verwenden:
 
@@ -96,4 +97,4 @@ Mit dem folgenden Beispielcode können Sie ein Downsampling der Daten durchführ
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

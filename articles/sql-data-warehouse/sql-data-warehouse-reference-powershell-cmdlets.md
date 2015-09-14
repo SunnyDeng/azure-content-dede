@@ -13,8 +13,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"
 	ms.workload="data-services"
-	ms.date="06/29/2015"
-	ms.author="sidneyh;barbkess"/>
+	ms.date="08/28/2015"
+	ms.author="twounder;sidneyh;barbkess"/>
 
 # Erste Schritte mit Azure Data Warehouse-Cmdlets und REST-APIs
 
@@ -27,8 +27,8 @@ Analog dazu können die REST-APIs für **SQL Azure-Datenbank** auch für Instanz
 ## Abrufen und Ausführen der Azure PowerShell-Cmdlets
 
 1. Führen Sie zum Herunterladen des Azure PowerShell-Moduls den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) aus. 
-2. 2. Geben Sie zum Ausführen des Moduls auf der Startseite **Microsoft Azure PowerShell** ein.
-3. Falls Sie Ihr Konto noch nicht dem Computer hinzugefügt haben, führen Sie das folgende Cmdlet aus. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure/):
+2. Geben Sie zum Ausführen des Moduls auf der Startseite **Microsoft Azure PowerShell** ein.
+3. Falls Sie Ihr Konto noch nicht dem Computer hinzugefügt haben, führen Sie das folgende Cmdlet aus. (Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell]():
 
 		Add-AzureAccount
 3. Verwenden Sie zum Wechseln des Modus das folgende Cmdlet:
@@ -101,6 +101,7 @@ Weitere Referenzinformationen finden Sie unter [SQL Data Warehouse-Referenz – 
 
 <!--Article references-->
 [SQL Data Warehouse-Referenz – Übersicht]: sql-data-warehouse-overview-reference.md
+[How to install and configure Azure PowerShell]: powershell-install-configure.md
 
 <!--MSDN references-->
 
@@ -110,4 +111,4 @@ Weitere Referenzinformationen finden Sie unter [SQL Data Warehouse-Referenz – 
 [yah]: http://search.yahoo.com/
 [msn]: http://search.msn.com/
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

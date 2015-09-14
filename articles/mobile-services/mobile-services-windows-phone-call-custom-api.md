@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Aufrufen einer benutzerdefinierten API von einem Windows Phone-Client - Mobile Services" 
-	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer Windows Phone-App aufrufen, die Azure Mobile Services verwendet." 
-	services="mobile-services" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Aufrufen einer benutzerdefinierten API von einem Windows Phone-Client - Mobile Services"
+	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer Windows Phone-App aufrufen, die Azure Mobile Services verwendet."
+	services="mobile-services"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="06/03/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows-phone"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="glenga"/>
 
 # Aufrufen einer benutzerdefinierten API aus dem Client
@@ -59,6 +59,5 @@ Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 [Get started with push notifications]: ../mobile-services-windows-phone-get-started-push.md
 
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

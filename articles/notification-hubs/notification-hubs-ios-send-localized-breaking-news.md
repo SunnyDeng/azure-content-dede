@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Lernprogramm zu lokalisierten aktuellen Nachrichten in Notification Hubs für iOS" 
-	description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu lokalisierten aktuellen Nachrichten (iOS)." 
-	services="notification-hubs" 
-	documentationCenter="ios" 
-	authors="wesmc7777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Lernprogramm zu lokalisierten aktuellen Nachrichten in Notification Hubs für iOS"
+	description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu lokalisierten aktuellen Nachrichten (iOS)."
+	services="notification-hubs"
+	documentationCenter="ios"
+	authors="wesmc7777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="ios" 
-	ms.devlang="objective-c" 
-	ms.topic="article" 
-	ms.date="06/02/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="ios"
+	ms.devlang="objective-c"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="wesmc"/>
 # Verwenden von Notification Hubs zum Senden von lokalisierten Nachrichten an iOS-Geräte
 
@@ -219,6 +219,5 @@ Sie finden eine Referenz für die Vorlagen-Ausdruckssprache unter [Notification 
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
 [Notification Hub-Informationen für iOS]: http://msdn.microsoft.com/library/jj927168.aspx
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

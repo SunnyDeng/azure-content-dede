@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Speichern von Projektcode in der Quellcodeverwaltung | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Ihr .NET-Back-End-Projekt in einem lokalen Git-Repository auf Ihrem Computer speichern und von dort veröffentlichen." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Speichern von Projektcode in der Quellcodeverwaltung | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Ihr .NET-Back-End-Projekt in einem lokalen Git-Repository auf Ihrem Computer speichern und von dort veröffentlichen."
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="05/20/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="glenga"/>
 
 # Speichern von Projektcode in der Quellcodeverwaltung
@@ -67,11 +67,11 @@ Nachdem Sie nun Ihr lokales Repository erstellt haben, können Sie Ihr .NET-Back
 2. Entfernen Sie alle NuGet-Paketordner, sodass nur noch die Datei "packages.config" vorhanden ist.
 
 	Mobile Services stellt automatisch Ihre NuGet-Pakete auf Grundlage der Datei "packages.config" wieder her. Sie können auch eine Datei ".gitignore" definieren, um zu verhindern, dass die Paketverzeichnisse hinzugefügte werden.
- 
+
 3. Geben Sie den folgenden Befehl in der Git-Eingabeaufforderung ein, um die neue Skriptdatei zur Quellcodeverwaltung hinzuzufügen:
 
 		$ git add .
-	
+
 4. Geben Sie den folgenden Befehl ein, um die Änderungen nach Git zu übernehmen:
 
 		$ git commit -m "adding the .NET backend service project"
@@ -79,7 +79,7 @@ Nachdem Sie nun Ihr lokales Repository erstellt haben, können Sie Ihr .NET-Back
 5. Geben Sie den folgenden Befehl ein, um die Änderungen in das Remoterepository zu übertragen, und geben Sie Ihre Anmeldeinformationen an:
 
 		$ git push origin master
-	
+
 	Es sollte eine Reihe von Befehlen angezeigt werden, die anzeigt, dass das Projekt in den Mobile Services bereitgestellt wird, Pakete hinzugefügt werden und der Dienst neu gestartet wird.
 
 6. Wechseln Sie zu der URL Ihres mobilen .NET-Back-End-Diensts, woraufhin Folgendes angezeigt werden sollte:
@@ -102,6 +102,5 @@ Ihr mobiles Dienstprojekt wird jetzt in der Quellcodeverwaltung verwaltet, und S
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Call a custom API from the client]: mobile-services-dotnet-backend-ios-call-custom-api.md
 [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts]: mobile-services-dotnet-backend-how-to-use-code-first-migrations.md
- 
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

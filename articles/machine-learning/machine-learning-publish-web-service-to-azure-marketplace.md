@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Veröffentlichen von Machine Learning-Webdiensten im Azure Marketplace | Microsoft Azure" 
-	description="Veröffentlichen Ihres Azure Machine Learning-Webdiensts im Azure Marketplace" 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="LuisCabrer" 
-	manager="paulettm" 
+	pageTitle="Veröffentlichen von Machine Learning-Webdiensten im Azure Marketplace | Microsoft Azure"
+	description="Veröffentlichen Ihres Azure Machine Learning-Webdiensts im Azure Marketplace"
+	services="machine-learning"
+	documentationCenter=""
+	authors="LuisCabrer"
+	manager="paulettm"
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/12/2015" 
-	ms.author="luisca"/>
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="bharaths"/>
 
 # Veröffentlichen Ihres Azure Machine Learning-Webdiensts im Azure Marketplace 
 
@@ -109,4 +109,4 @@ Stellen Sie den Dienst in der Produktionsumgebung bereit.
 [odata]: ./media/machine-learning-publish-web-service-to-azure-marketplace/odata.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Brandingrichtlinien für Anwendungen"
-   description="Eine umfassende Anleitung zu entwicklerorientierten Ressourcen für Azure Active Directory"
-   services="active-directory"
-   documentationCenter="dev-center-name"
-   authors="msmbaldwin"
-   manager="mbaldwin"
-   editor=""/>
+	description="Eine umfassende Anleitung zu entwicklerorientierten Ressourcen für Azure Active Directory"
+	services="active-directory"
+	documentationCenter="dev-center-name"
+	authors="msmbaldwin"
+	manager="mbaldwin"
+	editor=""/>
 
 <tags
    ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="07/30/2015"
-   ms.author="mbaldwin"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
+	ms.date="08/25/2015"
+	ms.author="mbaldwin"/>
 
 
 # Brandingrichtlinien für Anwendungen
@@ -53,12 +53,12 @@ Ihre Anwendung verwendet möglicherweise separate Vorgehensweisen für Registrie
 
 ## Darstellungsleitfaden für den App-Erwerb
 
-Über den Link zum Abrufen der App muss der Benutzer auf die Zugriffsgewährungs- bzw. Autorisierungsseite von Azure AD weitergeleitet werden, damit ein Organisationsadministrator Ihrer App den Zugriff auf die von Microsoft gehosteten Organisationsdaten gewähren kann. Ausführliche Informationen zum Anfordern des Zugriffs finden Sie unter [Hinzufügen, Aktualisieren und Entfernen einer Anwendung](https://msdn.microsoft.com/library/azure/dn132599.aspx).
+Über den Link zum Abrufen der App muss der Benutzer auf die Zugriffsgewährungs- bzw. Autorisierungsseite von Azure AD weitergeleitet werden, damit ein Organisationsadministrator Ihrer App den Zugriff auf die von Microsoft gehosteten Organisationsdaten gewähren kann. Ausführliche Informationen zum Anfordern von Zugriff finden Sie im Artikel [Integrieren von Anwendungen in Azure Active Directory](active-directory-integrating-applications.md).
 
 Nach der Zustimmung des Administrators kann dieser entscheiden, ob Ihre App dem App-Startfeld von Office 365 hinzugefügt werden soll, sodass die Benutzer über das Startfeld oder über [https://portal.office.com/myapps](https://portal.office.com/myapps) darauf zugreifen können. Wenn Sie auf diese Funktion hinweisen möchten, können Sie beispielsweise eine Formulierung wie „App zur Organisation hinzufügen“ und die folgende Schaltfläche verwenden:
 
 ![Anwendungstypen und -szenarien](./media/active-directory-branding-guidelines/add-to-my-org.png)
-  
+
 Es empfiehlt sich jedoch, eine Erläuterung in Textform zu verwenden, anstatt nur auf Schaltflächen zu setzen. Beispiel:
 > *Wenn Sie bereits Office 365 oder andere Unternehmensdienste von Microsoft verwenden, können Sie <your_app_name> einfach Zugriff auf die Daten Ihrer Organisation gewähren. Dadurch können Benutzer mit ihren bereits vorhandenen Geschäftskonten auf <your_app_name> zugreifen.*
 
@@ -66,9 +66,9 @@ Es empfiehlt sich jedoch, eine Erläuterung in Textform zu verwenden, anstatt nu
 ## Darstellungsleitfaden für die Anmeldung
 Ihre App sollte eine Anmeldeschaltfläche besitzen, über die der Benutzer an den Anmelde-Endpunkt mit dem Protokoll weitergeleitet wird, das Sie für die Azure AD-Integration verwenden. Im folgenden Abschnitt erfahren Sie, wie diese Schaltfläche auszusehen hat.
 
-### Piktogramm und „Geschäfts- oder Schulkonto“ 
+### Piktogramm und „Geschäfts- oder Schulkonto“
 Durch die Kombination aus Microsoft-Logo und generischer Terminologie (Geschäfts- oder Schulkonto) hebt sich Azure AD von den anderen Identitätsanbietern ab, die Ihre App möglicherweise unterstützt. Sollte für „Geschäfts- oder Schulkonto“ nicht genügen Platz zur Verfügung stehen, können Sie den Begriff zu „Geschäftskonto“ verkürzen.
- 
+
 ![Anwendungstypen und -szenarien](./media/active-directory-branding-guidelines/work-or-school-account.png)
 
 ![Anwendungstypen und -szenarien](./media/active-directory-branding-guidelines/work-account.png)
@@ -76,7 +76,7 @@ Durch die Kombination aus Microsoft-Logo und generischer Terminologie (Geschäft
 Darüber hinaus können Sie zusätzlichen Text bereitstellen, damit Endbenutzer sofort wissen, ob sie diese Schaltfläche verwenden können:
 
 ![Anwendungstypen und -szenarien](./media/active-directory-branding-guidelines/work-account-with-explaination.png)
- 
+
 ## Brandingempfehlungen
 Verwenden Sie „Geschäfts- oder Schulkonto“ in Kombination mit dem Microsoft-Logo, um auf Anmeldungen mit Azure AD hinzuweisen. Bei begrenztem Platzangebot kann „Geschäftskonto“ verwendet werden. Verwenden Sie aber **keine anderen Begriffe** wie „Unternehmenskonto“, „Business-Konto“ oder „Firmenkonto“.
 
@@ -94,6 +94,4 @@ Stellen Sie den Benutzern eine Funktion zur Verfügung, über die sie sich abmel
 
 Wenn Ihre App sowohl Azure AD- als auch Microsoft-Konten unterstützt, müssen Sie in Ihrer App zwei separate Schaltflächen bereitstellen. Wir arbeiten derzeit an einem Update, durch das Sie nach einmaliger Integration sowohl persönliche Konten als auch Geschäftskonten von Microsoft unterstützen können. Nach dem Update können Sie in Ihrer App eine einzelne Microsoft-Anmeldeschaltfläche verwenden.
 
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

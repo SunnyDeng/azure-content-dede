@@ -1,19 +1,19 @@
 <properties
-	pageTitle="Leitfaden zur Überwachung und Problembehandlung für den Schutz von VMM- und Hyper-V-Standorten" 
-	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer auf lokalen Servern zu Azure oder einem sekundären Rechenzentrum. Verwenden Sie diesen Artikel zur Überwachung und Problembehandlung für den Schutz von VMM- und Hyper-V-Standorten." 
-	services="site-recovery" 
-	documentationCenter="" 
-	authors="anbacker" 
-	manager="mkjain" 
+	pageTitle="Leitfaden zur Überwachung und Problembehandlung für den Schutz von VMM- und Hyper-V-Standorten"
+	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer auf lokalen Servern zu Azure oder einem sekundären Rechenzentrum. Verwenden Sie diesen Artikel zur Überwachung und Problembehandlung für den Schutz von VMM- und Hyper-V-Standorten."
+	services="site-recovery"
+	documentationCenter=""
+	authors="anbacker"
+	manager="mkjain"
 	editor=""/>
 
 <tags 
-	ms.service="site-recovery" 
+	ms.service="site-recovery"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery" 
-	ms.date="08/13/2015" 
+	ms.workload="storage-backup-recovery"
+	ms.date="09/01/2015"
 	ms.author="anbacker"/>
 	
 # Überwachung und Problembehandlung für den Schutz von VMware, VMM, Hyper-V und physischen Standorten
@@ -35,13 +35,13 @@ Als Bestandteil der Einrichtung der Notfallwiederherstellung zwischen zwei lokal
 
 ### Bereitstellung des VMM-Standorts für die Replikation zwischen lokalen Standorten und Azure.
 
-Als Bestandteil der Einrichtung der Notfallwiederherstellung zwischen lokalen Standorten und Azure muss Azure Site Recovery Provider heruntergeladen und auf dem VMM-Server installiert werden. Zudem muss der Azure Recovery Services-Agent auf jedem Hyper-V-Host installiert werden.
+Als Bestandteil der Einrichtung der Notfallwiederherstellung zwischen lokalen Standorten und Azure muss Azure Site Recovery Provider heruntergeladen und auf dem VMM-Server installiert werden. Zudem muss der Azure Recovery Services-Agent auf jedem Hyper-V-Host installiert werden. Weitere Informationen finden Sie unter [Grundlegendes zum Schutz von Standorten in Azure](./site-recovery-understanding-site-to-azure-protection.md).
 
 ![Bereitstellung des VMM-Standorts für die Replikation zwischen lokalen Standorten und Azure.](media/site-recovery-monitoring-and-troubleshooting/image2.png)
 
 ### Bereitstellung des Hyper-V-Standorts für die Replikation zwischen lokalen Standorten und Azure.
 
-Dies entspricht der Bereitstellung des VMM-Standorts mit der einzigen Ausnahme, dass der Provider und der Agent auf dem Hyper-V-Host installiert werden.
+Dies entspricht der Bereitstellung des VMM-Standorts mit der einzigen Ausnahme, dass der Anbieter und die Agents auf dem Hyper-V-Host selbst installiert werden. Weitere Informationen finden Sie unter [Grundlegendes zum Schutz von Standorten in Azure](./site-recovery-understanding-site-to-azure-protection.md).
 
 ## Überwachen von Konfigurations-, Schutz- und Wiederherstellungsvorgängen
 
@@ -75,7 +75,7 @@ Wählen Sie dann die geschützte Entität in der entsprechenden Cloud oder Schut
 
 ![Überwachen der Replikationsintegrität für virtuelle Computer](media/site-recovery-monitoring-and-troubleshooting/image9.png)
 
-Im Beispiel oben ist die Integrität des virtuellen Computers gefährdet. Sie können auf die Schaltfläche "Fehlerdetails" im unteren Bereich klicken, um den Fehler anzuzeigen. Beheben Sie das Problem basierend auf den Angaben unter "Mögliche Ursachen" und "Empfehlung". In diesem Fall muss der virtuelle Computer neu synchronisiert werden. Klicken Sie dazu im Portal auf die Schaltfläche "Resynchronisieren".
+Im Beispiel oben ist die Integrität des virtuellen Computers gefährdet. Sie können auf die Schaltfläche "Fehlerdetails" im unteren Bereich klicken, um den Fehler anzuzeigen. Beheben Sie das Problem basierend auf den erwähnten möglichen Ursachen und Empfehlungen.
 
 ![Überwachen der Replikationsintegrität für virtuelle Computer](media/site-recovery-monitoring-and-troubleshooting/image10.png)
 
@@ -83,11 +83,11 @@ Im Beispiel oben ist die Integrität des virtuellen Computers gefährdet. Sie k�
 
 Hinweis: Wenn aktive Vorgänge ausgeführt werden oder fehlgeschlagen sind, navigieren Sie entsprechend der Beschreibung weiter oben zur Ansicht "Aufträge", um den Fehler für den spezifischen Auftrag anzuzeigen.
 
-## Ereignisanzeige
+## Ereignisprotokoll
 
 | Szenarios | Ereignisquellen |
 |-------------------------	|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| Schutz des VMM-Standorts | VMM-Server <ul><li> **Applications and Service Logs/Microsoft/VirtualMachineManager/Server/Admin** </li></ul> Hyper-V-Host <ul><li> **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** \(für Azure als Ziel\)</li><li> **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin** </li></ul> |
+| Schutz des VMM-Standorts | VMM-Server <ul><li> **Applications and Service Logs/Microsoft/VirtualMachineManager/Server/Admin** </li></ul> Hyper-V-Host <ul><li> **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** (für Azure als Ziel)</li><li> **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin** </li></ul> |
 | Schutz des Hyper-V-Standorts | <ul><li> **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** </li><li> **Applications and Service Logs/Microsoft/Azure Site Recovery/Provider/Operational** </li><li> **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin** </li><ul>|
 
 
@@ -100,6 +100,10 @@ Stellen Sie eine Verbindung mit der lokalen Hyper-V-Manager-Konsole her, wählen
 In diesem Fall wird die *Replikationsintegrität* als "Kritisch" angegeben. Klicken Sie auf *Replikationsstatus anzeigen*, um Details anzuzeigen.
 
 ![Behandlung von lokalen Hyper-V-Problemen](media/site-recovery-monitoring-and-troubleshooting/image13.png)
+
+Falls die Replikation für den virtuellen Computer angehalten wird, klicken Sie mit der rechten Maustaste auf *Replikation*->*Replikation fortsetzen*. ![Behandlung von lokalen Hyper-V-Problemen](media/site-recovery-monitoring-and-troubleshooting/image19.png)
+
+Falls der virtuelle Computer einen neuen Hyper-V-Host (im Cluster oder auf einem eigenständigen Computer) migriert, der über ASR konfiguriert wurde, ist die Replikation des virtuellen Computers nicht betroffen. Stellen Sie sicher, dass der neue Hyper-V-Host alle Voraussetzungen erfüllt und mit ASR konfiguriert wird.
 
 ### Protokollierungsoptionen für die Hyper-V-Replikation
 
@@ -117,23 +121,19 @@ Klicken Sie im Bereich **Aktionen** auf **Protokoll aktivieren**. Nach der Aktiv
 
 Beenden Sie zum Anzeigen der gesammelten Informationen zunächst die Ablaufverfolgungssitzung, indem Sie das Protokoll deaktivieren. Speichern Sie dann das Protokoll, und öffnen Sie es in der Ereignisanzeige, oder konvertieren Sie es mithilfe anderer Tools in das gewünschte Format.
 
-
-## Grundlegendes zum Schutz- und Wiederherstellungslebenszyklus für virtuelle Hyper-V-Computer
-
-![Grundlegendes zum Schutz- und Wiederherstellungslebenszyklus für virtuelle Hyper-V-Computer](media/site-recovery-monitoring-and-troubleshooting/image17.png)
-
-
 ## Microsoft-Support
 
 ### Protokollsammlung
 
-Im Hinblick auf den Schutz von VMM-Standorten finden Sie Informationen zum Sammeln der erforderlichen Protokolle unter [ASR Log Collection using Support Diagnostics Platform \(SDP\) Tool](http://social.technet.microsoft.com/wiki/contents/articles/28198.asr-data-collection-and-analysis-using-the-vmm-support-diagnostics-platform-sdp-tool.aspx) \(in englischer Sprache\).
+Im Hinblick auf den Schutz von VMM-Standorten finden Sie Informationen zum Sammeln der erforderlichen Protokolle unter [ASR Log Collection using Support Diagnostics Platform (SDP) Tool](http://social.technet.microsoft.com/wiki/contents/articles/28198.asr-data-collection-and-analysis-using-the-vmm-support-diagnostics-platform-sdp-tool.aspx) (in englischer Sprache).
 
-Laden Sie für den Schutz von Hyper-V-Zweigstellen und SMB-Standorten dieses [Tool](https://dcupload.microsoft.com/tools/win7files/DIAG_ASRHyperV_global.DiagCab) herunter, und führen Sie es auf dem Hyper-V-Host aus, um die Protokolle zu sammeln.
+Laden Sie für den Schutz von Hyper-V-Standorten dieses [Tool](https://dcupload.microsoft.com/tools/win7files/DIAG_ASRHyperV_global.DiagCab) herunter, und führen Sie es auf dem Hyper-V-Host aus, um die Protokolle zu sammeln.
 
-Informationen zum Sammeln der erforderlichen Protokolle für physische oder VMware-Szenarios finden Sie unter [Azure Site Recovery Log Collection for VMware and Physical site protection](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx) \(in englischer Sprache\).
+Informationen zum Sammeln der erforderlichen Protokolle für physische oder VMware-Szenarios finden Sie unter [Azure Site Recovery Log Collection for VMware and Physical site protection](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx) (in englischer Sprache).
 
-Das SDP-Tool sammelt die Protokolldatei lokal. Diese finden Sie auch in einem zufällig benannten Unterordner unter **%LocalAppData%\\ElevatedDiagnostics**.
+Das Tool sammelt die Protokolle lokal in einem zufällig benannten Unterordner unter **%LocalAppData%\\ElevatedDiagnostics**.
+
+![Beispielschritte aus dem Hyper-V-Standortschutz](media/site-recovery-monitoring-and-troubleshooting/animate01.gif)
 
 ### Öffnen eines Supporttickets
 
@@ -141,86 +141,51 @@ Um ein Supportticket für ASR zu öffnen, wenden Sie sich an den Azure-Support u
 
 ## KB-Artikel
 
--   [How to preserve the drive letter for protected virtual machines (in englischer Sprache)
-    > that are failed over or migrated to Azure](http://support.microsoft.com/kb/3031135)
+-   [Beibehalten des Laufwerkbuchstabens für geschützte virtuelle Computer, für die ein Failover ausgeführt oder die zu Azure migriert werden](http://support.microsoft.com/kb/3031135)
+-   [Verwalten der Netzwerkbandbreitennutzung für den Schutz lokaler Elemente in Azure](https://support.microsoft.com/kb/3056159)
+-   [ASR: Der Fehler „Die Clusterressource wurde nicht gefunden.“ wird angezeigt, wenn Sie den Schutz für einen virtuellen Computer aktivieren möchten.](http://support.microsoft.com/kb/3010979)
+-   [Handbuch mit Grundlagen und Informationen zur Problembehandlung für Hyper-V-Replikate](http://www.microsoft.com/en-in/download/details.aspx?id=29016) 
 
--   [How to troubleshoot Azure Recovery
-    > Services (in englischer Sprache)](http://support.microsoft.com/kb/3005185)
-
--   [How to Enable Debug Logging for the Azure Site Recovery in Hyper-V
-    > Site Protection (in englischer Sprache)](http://support.microsoft.com/kb/3033922)
-
--   [ASR: "The cluster resource could not be found" error when you try
-    > to enable protection for a virtual machine (in englischer Sprache)](http://support.microsoft.com/kb/3010979)
-    
--   [Understand & Troubleshoot Hyper-V Replica
-    > Guide (in englischer Sprache)] (http://www.microsoft.com/en-in/download/details.aspx?id=29016)
-	
-	
-	
 ## Häufige Fehler bei der automatischen Systemwiederherstellung und deren Lösungen
 
 Im Folgenden werden häufige Fehler aufgeführt, die passieren können, sowie deren Lösungen. Jeder Fehler wird auf einer separaten Wikiseite dokumentiert.
 
 ### Einrichtung
-
 -   [Der VMM-Server kann aufgrund eines internen Fehlers nicht registriert werden. In der Auftragsansicht im Site Recovery-Portal finden Sie weitere Details zu diesem Fehler. Führen Sie den Setup erneut aus, um den Server zu registrieren.](http://social.technet.microsoft.com/wiki/contents/articles/25570.the-vmm-server-cannot-be-registered-due-to-an-internal-error-please-refer-to-the-jobs-view-in-the-site-recovery-portal-for-more-details-on-the-error-run-setup-again-to-register-the-server.aspx)
-
 -   [Mit dem Hyper-V-Wiederherstellungs-Manager-Tresor kann keine Verbindung hergestellt werden. Überprüfen Sie die Proxyeinstellungen oder versuchen Sie es später erneut.](http://social.technet.microsoft.com/wiki/contents/articles/25571.a-connection-cant-be-established-to-the-hyper-v-recovery-manager-vault-verify-the-proxy-settings-or-try-again-later.aspx)
 
 ### Konfiguration
 -   [Die Schutzgruppe konnte nicht erstellt werden: Fehler beim Abrufen der Serverliste.](http://blogs.technet.com/b/somaning/archive/2015/08/12/unable-to-create-the-protection-group-in-azure-site-recovery-portal.aspx)
-
 -   [Der Hyper-V-Hostcluster enthält mindestens einen statischen Netzwerkadapter, oder keine verbundenen Adapter sind für die Verwendung von DHCP konfiguriert.](http://social.technet.microsoft.com/wiki/contents/articles/25498.hyper-v-host-cluster-contains-at-least-one-static-network-adapter-or-no-connected-adapters-are-configured-to-use-dhcp.aspx)
-
 -   [VMM besitzt keine Berechtigungen zum Ausführen einer Aktion.](http://social.technet.microsoft.com/wiki/contents/articles/31110.vmm-does-not-have-permissions-to-complete-an-action.aspx)
+-   [Das Speicherkonto im Abonnement kann beim Konfigurieren des Schutzes nicht ausgewählt werden.](http://social.technet.microsoft.com/wiki/contents/articles/32027.can-t-select-the-storage-account-within-the-subscription-while-configuring-protection.aspx)
 
 ### Schutz
-
--   [Aktivieren des Schutzes fehlgeschlagen, da der Agent nicht auf dem Hostcomputer installiert ist.](http://social.technet.microsoft.com/wiki/contents/articles/31105.enable-protection-failed-since-agent-not-installed-on-host-machine.aspx)
-
--   [Ein geeigneter Host für den replizierten virtuellen Computer wurde nicht gefunden. Grund: geringe Compute-Ressourcen.](http://social.technet.microsoft.com/wiki/contents/articles/25501.a-suitable-host-for-the-replica-virtual-machine-can-t-be-found-due-to-low-compute-resources.aspx)
-
--   [Ein geeigneter Host für den replizierten virtuellen Computer wurde nicht gefunden. Grund: Es ist kein logisches Netzwerk angeschlossen.](http://social.technet.microsoft.com/wiki/contents/articles/25502.a-suitable-host-for-the-replica-virtual-machine-can-t-be-found-due-to-no-logical-network-attached.aspx)
-
--   [Keine Verbindung mit dem replizierten Host-Computer – Verbindung konnte nicht hergestellt werden.](http://social.technet.microsoft.com/wiki/contents/articles/31106.cannot-connect-to-the-replica-host-machine-connection-could-not-be-established.aspx)
+- [Aktivieren des Schutzes fehlgeschlagen, da der Agent nicht auf dem Hostcomputer installiert ist.](http://social.technet.microsoft.com/wiki/contents/articles/31105.enable-protection-failed-since-agent-not-installed-on-host-machine.aspx)
+- [Ein geeigneter Host für den replizierten virtuellen Computer wurde nicht gefunden. Grund: geringe Compute-Ressourcen.](http://social.technet.microsoft.com/wiki/contents/articles/25501.a-suitable-host-for-the-replica-virtual-machine-can-t-be-found-due-to-low-compute-resources.aspx)
+- [Ein geeigneter Host für den replizierten virtuellen Computer wurde nicht gefunden. Grund: Es ist kein logisches Netzwerk angeschlossen.](http://social.technet.microsoft.com/wiki/contents/articles/25502.a-suitable-host-for-the-replica-virtual-machine-can-t-be-found-due-to-no-logical-network-attached.aspx)
+- [Keine Verbindung mit dem replizierten Host-Computer – Verbindung konnte nicht hergestellt werden.](http://social.technet.microsoft.com/wiki/contents/articles/31106.cannot-connect-to-the-replica-host-machine-connection-could-not-be-established.aspx)
+- [Livemigrationsfehler 23848: Der virtuelle Computer wird mithilfe von Typ „Live“ verschoben. Dadurch kann der Wiederherstellungsschutzstatus des virtuellen Computers unterbrochen werden.](http://social.technet.microsoft.com/wiki/contents/articles/32021.live-migration-error-23848-the-virtual-machine-is-going-to-be-moved-using-type-live-this-could-break-the-recovery-protection-status-of-the-virtual-machine.aspx)
 
 ### Wiederherstellen
-
--   VMM kann den Host-Vorgang nicht abschließen –
-
+- VMM kann den Host-Vorgang nicht abschließen –
     -   [Ein Failover auf den ausgewählten Wiederherstellungspunkt für den virtuellen Computer: Allgemeiner Zugriffsfehler.](http://social.technet.microsoft.com/wiki/contents/articles/25504.fail-over-to-the-selected-recovery-point-for-virtual-machine-general-access-denied-error.aspx)
-
-    -   [Hyper-V konnte kein Failover auf den ausgewählten Wiederherstellungspunkt für virtuelle Computer ausgeben: Der Vorgang wurde abgebrochen. Versuchen Sie es mit einem neueren Wiederherstellungspunkt. \(0x80004004\)](http://social.technet.microsoft.com/wiki/contents/articles/25503.hyper-v-failed-to-fail-over-to-the-selected-recovery-point-for-virtual-machine-operation-aborted-try-a-more-recent-recovery-point-0x80004004.aspx)
-
-    -   Eine Verbindung mit dem Server konnte nicht hergestellt werden \(0x00002EFD\).
-
+    -   [Hyper-V konnte kein Failover zum ausgewählten Wiederherstellungspunkt für virtuelle Computer ausführen: Der Vorgang wurde abgebrochen. Versuchen Sie es mit einem neueren Wiederherstellungspunkt. (0x80004004)](http://social.technet.microsoft.com/wiki/contents/articles/25503.hyper-v-failed-to-fail-over-to-the-selected-recovery-point-for-virtual-machine-operation-aborted-try-a-more-recent-recovery-point-0x80004004.aspx)
+    -   Eine Verbindung mit dem Server konnte nicht hergestellt werden (0x00002EFD).
         -   [Fehler von Hyper-V beim Aktivieren der umgekehrten Replikation für den virtuellen Computer](http://social.technet.microsoft.com/wiki/contents/articles/25505.a-connection-with-the-server-could-not-be-established-0x00002efd-hyper-v-failed-to-enable-reverse-replication-for-virtual-machine.aspx)
-
         -   [Fehler von Hyper-V beim Aktivieren der Replikation für den virtuellen Computer](http://social.technet.microsoft.com/wiki/contents/articles/25506.a-connection-with-the-server-could-not-be-established-0x00002efd-hyper-v-failed-to-enable-replication-for-virtual-machine-virtual-machine.aspx)
-
     -   [Failover für virtuellen Computer konnte nicht übergeben werden.](http://social.technet.microsoft.com/wiki/contents/articles/25508.could-not-commit-failover-for-virtual-machine.aspx)
-
 -   [Der Wiederherstellungsplan enthält virtuelle Computer, die für ein geplantes Failover nicht bereit sind.](http://social.technet.microsoft.com/wiki/contents/articles/25509.the-recovery-plan-contains-virtual-machines-which-are-not-ready-for-planned-failover.aspx)
-
 -   [Der virtuelle Computer ist nicht bereit für ein geplantes Failover.](http://social.technet.microsoft.com/wiki/contents/articles/25507.the-virtual-machine-isn-t-ready-for-planned-failover.aspx)
-
 -   [Der virtuelle Computer wird nicht ausgeführt und ist nicht ausgeschaltet.](http://social.technet.microsoft.com/wiki/contents/articles/25510.virtual-machine-is-not-running-and-is-not-powered-off.aspx)
-
--   [Out-of-Band-Vorgang auf einem virtuellen Computer und ](http://social.technet.microsoft.com/wiki/contents/articles/25507.the-virtual-machine-isn-t-ready-for-planned-failover.aspx)Fehler bei Übergabe des Failovers
-
+-   [Out-of-Band-Vorgang auf einem virtuellen Computer und Fehler bei Übergabe des Failovers](http://social.technet.microsoft.com/wiki/contents/articles/25507.the-virtual-machine-isn-t-ready-for-planned-failover.aspx)
 -   Test-Failover
-
     -   [Failover konnte nicht initiiert werden, da das Testfailover ausgeführt wird.](http://social.technet.microsoft.com/wiki/contents/articles/31111.failover-could-not-be-initiated-since-test-failover-is-in-progress.aspx)
 
-
 ### Konfigurationsserver, Prozessserver, Masterziel
-
-Konfigurationsserver \(Configuration Server, CS\), Prozessserver \(Process Server, PS\), Masterziel \(Master Target, MT\)
-
--   [Der ESXi-Host, auf dem der PS/CS als virtueller Computer gehostet wird, schlägt mit einem violetten Bildschirm fehl.](http://social.technet.microsoft.com/wiki/contents/articles/31107.vmware-esxi-host-experiences-a-purple-screen-of-death.aspx)
+Konfigurationsserver (Configuration Server, CS), Prozessserver (Process Server, PS), Masterziel (Master Target, MT): [Der ESXi-Host, auf dem der PS/CS als virtueller Computer gehostet wird, schlägt mit einem violetten Bildschirm fehl.](http://social.technet.microsoft.com/wiki/contents/articles/31107.vmware-esxi-host-experiences-a-purple-screen-of-death.aspx)
 
 ### Remotedesktop-Problembehandlung nach einem Failover
-Viele Kunden haben Probleme beim Herstellen einer Verbindung mit dem virtuellen Computer in Azure festgestellt, für den ein Failover ausgeführt wurde. Stellen Sie anhand des Dokuments für die Problembehandlung eine RDP-Verbindung mit dem virtuellen Computer her. [Link zum Dokument](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)
+-   Viele Kunden haben Probleme beim Herstellen einer Verbindung mit dem virtuellen Computer in Azure festgestellt, für den ein Failover ausgeführt wurde. [Stellen Sie anhand des Dokuments für die Problembehandlung eine RDP-Verbindung mit dem virtuellen Computer her.](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)
 
-<!----HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

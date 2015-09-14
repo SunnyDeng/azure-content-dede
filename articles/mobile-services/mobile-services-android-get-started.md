@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte mit Azure Mobile Services für Android-Apps"
-	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Android-Entwicklung."
+	description="Befolgen Sie dieses Tutorial für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Android-Entwicklung."
 	services="mobile-services"
 	documentationCenter="android"
 	authors="RickSaling"
@@ -12,25 +12,19 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
-	ms.topic="article" 
-	ms.date="06/03/2015"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="ricksal"/>
 
 # Erste Schritte mit Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
+In diesem Tutorial erfahren Sie, wie Sie einen cloudbasierten Back-End-Dienst mithilfe von Azure Mobile Services zu einer Android-App hinzufügen. In diesem Tutorial erstellen Sie einen neuen mobilen Dienst und eine einfache **To-Do-Listen**-App, die App-Daten im neuen mobilen Dienst speichert.
 
+> [AZURE.VIDEO android-support-in-windows-azure-mobile-services]
 
-<p>In diesem Lernprogramm erfahren Sie, wie Sie einen Cloud-basierten Backend-Service mithilfe von Azure Mobile Services zu einer Android-App hinzufügen. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache <em>To-Do-Listen</em>-App, die App-Daten im neuen mobilen Dienst speichert.</p>
-<p>Unten sehen Sie einen Screenshot aus der fertigen App:</p>
-</div>
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="label">Lernprogramm ansehen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-get-started-android-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Support-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a><span class="time">07:26:00</span></div>
-</div>
-
-![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
+Unten sehen Sie einen Screenshot aus der fertigen App: ![](./media/mobile-services-android-get-started/mobile-quickstart-completed-android.png)
 
 ## Voraussetzungen
 
@@ -38,7 +32,7 @@ Sie benötigen die [Android Developer Tools][Android Studio], die die integriert
 
 Das heruntergeladene Schnellstartprojekt enthält das Azure Mobile Services SDK für Android.
 
-> [AZURE.IMPORTANT]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie hier [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28).
+> [AZURE.IMPORTANT]Um dieses Tutorial abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie hier [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28).
 
 
 ## Erstellen eines neuen mobilen Diensts
@@ -81,7 +75,7 @@ In diesem Abschnitt erstellen Sie eine neue Android-App, die mit Ihrem Mobile Se
 Den Quellcode der fertig gestellten App finden Sie [hier](https://github.com/RickSaling/mobile-services-samples/tree/androidStudio/GettingStarted/AndroidStudio).
 
 
-Die Eclipse-Version dieses Lernprogramms finden Sie unter [Erste Schritte (Eclipse)](mobile-services-android-get-started-EC.md).
+Die Eclipse-Version dieses Tutorials finden Sie unter [Erste Schritte (Eclipse)](mobile-services-android-get-started-ec.md).
 
 ## <a name="next-steps"> </a>Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
@@ -113,7 +107,7 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [15]: ./media/mobile-services-android-get-started/mobile-services-import-android-project.png
 
 <!-- URLs. -->
-[Get started (Eclipse)]: mobile-services-android-get-started-EC.md
+[Get started (Eclipse)]: mobile-services-android-get-started-ec.md
 [Erste Schritte mit Daten]: mobile-services-android-get-started-data.md
 [Erste Schritte mit der Authentifizierung]: mobile-services-android-get-started-users.md
 [Erste Schritte mit Pushbenachrichtigungen]: mobile-services-javascript-backend-android-get-started-push.md
@@ -122,6 +116,5 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
 [Management Portal]: https://manage.windowsazure.com/
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

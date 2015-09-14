@@ -1,25 +1,25 @@
 <properties 
-   pageTitle="Ersetzen des Controllermoduls auf dem StorSimple-Gerät | Microsoft Azure"
-   description="In diesem Thema wird erläutert, wie Sie ein oder beide Controllermodule in einem StorSimple-Gerät austauschen oder entfernen."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+   pageTitle="Austauschen von StorSimple-Gerätecontrollern | Microsoft Azure"
+	description="In diesem Thema wird erläutert, wie Sie ein oder beide Controllermodule in einem StorSimple-Gerät austauschen oder entfernen."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/12/2015"
-   ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/31/2015"
+	ms.author="alkohli"/>
 
 # Ersetzen des Controllermoduls auf dem StorSimple-Gerät
 
 ## Übersicht
 
-In diesem Lernprogramm wird erläutert, wie Sie ein oder beide Controllermodule in einem StorSimple-Gerät austauschen oder entfernen. Darüber hinaus wird die zugrunde liegende Logik für die Austauschszenarios bei Einzel- oder Dualcontrollern erläutert.
+In diesem Tutorial wird erläutert, wie Sie ein oder beide Controllermodule in einem StorSimple-Gerät austauschen oder entfernen. Darüber hinaus wird die zugrunde liegende Logik für die Austauschszenarios bei Einzel- oder Dualcontrollern erläutert.
 
 >[AZURE.NOTE]Vor der Durchführung des Controlleraustauschs empfehlen wir, die Controllerfirmware auf die neueste Version zu aktualisieren.
 >
@@ -266,4 +266,4 @@ Wenn diese LED blinkt, ist der Controller aktiv, und der andere Controller befin
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

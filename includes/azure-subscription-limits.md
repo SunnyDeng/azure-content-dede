@@ -6,7 +6,6 @@ Prozessorkerne pro [Abonnement](http://msdn.microsoft.com/library/azure/hh531793
 [Clouddienste](cloud-services-what-is.md) pro Abonnement|20|200
 [Lokale Netzwerke](http://msdn.microsoft.com/library/jj157100.aspx) pro Abonnement|10|500
 SQL-Datenbankserver pro Abonnement|6|150
-SQL-Datenbanken pro Server|150|500
 DNS-Server pro Abonnement|9|100
 Reservierte IPs pro Abonnement|20|100
 Dedizierte ExpressRoute-Schaltkreise pro Abonnement|10|25
@@ -17,4 +16,4 @@ Warnungsregeln pro Abonnement|250|250
 
 <sup>1</sup> Zusätzliche kleine Instanzen zählen als ganzer Prozessorkern im Sinn des Limits, obwohl nur ein Teil eines Kerns verwendet wird.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

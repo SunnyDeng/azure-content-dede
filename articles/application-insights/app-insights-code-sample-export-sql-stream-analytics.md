@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Exemplarische Vorgehensweise: Exportieren von Telemetriedaten in SQL-Datenbank mit Application Insights" 
-	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export." 
-	services="application-insights" 
-    documentationCenter=""
-	authors="noamben" 
+	pageTitle="Exemplarische Vorgehensweise: Exportieren von Telemetriedaten in SQL-Datenbank mit Application Insights"
+	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export."
+	services="application-insights"
+	documentationCenter=""
+	authors="noamben"
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/13/2015" 
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/31/2015"
 	ms.author="awills"/>
  
 # Exemplarische Vorgehensweise: Exportieren aus Application Insights in SQL mit Stream Analytics
@@ -92,12 +92,16 @@ Durch fortlaufende Exportaktivitäten werden Daten an ein Azure-Speicherkonto ü
 
     ![Wählen Sie Ereignistypen aus.](./media/app-insights-code-sample-export-sql-stream-analytics/085-types.png)
 
-Jetzt lehnen Sie sich zurück, und lassen Sie Ihre Benutzer die Anwendung eine Weile lang verwenden. Telemetriedaten gehen ein, und Sie sehen statistische Diagramme im [Metrik-Explorer][metrics] sowie einzelne Ereignisse in der [Diagnosesuche][diagnostic].
 
-Außerdem werden die Daten in den Speicher exportiert, in dem Sie den Inhalt überprüfen können. Beispielsweise gibt es einen Speicher-Browser in Visual Studio:
+3. Warten Sie, bis sich einige Daten angesammelt haben. Lehnen Sie sich zurück, und lassen Sie Ihre Benutzer die Anwendung eine Weile lang verwenden. Telemetriedaten gehen ein, und Sie sehen statistische Diagramme im [Metrik-Explorer](app-insights-metrics-explorer.md) sowie einzelne Ereignisse in der [Diagnosesuche](app-insights-diagnostic-search.md).
 
+    Darüber hinaus werden die Daten in Ihren Speicher exportiert.
 
-![Öffnen Sie in Visual Studio den "Server-Browser", "Azure" und "Storage".](./media/app-insights-code-sample-export-sql-stream-analytics/087-explorer.png)
+4. Überprüfen Sie die exportierten Daten. Wählen Sie in Visual Studio **Anzeigen / Cloud Explorer**, und öffnen Sie "Azure / Storage". (Wenn diese Menüoption nicht verfügbar ist, müssen Sie das Azure SDK installieren: Öffnen Sie das Dialogfeld "Neues Projekt" und anschließend "Visual C# / Cloud / Microsoft Azure SDK für .NET abrufen".)
+
+    ![Öffnen Sie in Visual Studio den "Server-Browser", "Azure" und "Storage".](./media/app-insights-code-sample-export-sql-stream-analytics/087-explorer.png)
+
+    Notieren Sie sich den gemeinsamen Teil des Pfadnamens, der sich vom Anwendungsnamen und vom Instrumentierungsschlüssel ableitet.
 
 Die Ereignisse werden in Blobdateien im JSON-Format geschrieben. Jede Datei kann ein oder mehrere Ereignisse enthalten. Daher möchten wir die Ereignisdaten lesen und die gewünschten Felder herausfiltern. Es gibt viele verschiedene Möglichkeiten zur Nutzung der Daten, aber unser Plan besteht darin, Stream Analytics zu verwenden, um die Daten in eine SQL-Datenbank zu verschieben. Auf diese Weise können wir ganz einfach viele interessante Abfragen ausführen.
 
@@ -194,14 +198,14 @@ Jetzt benötigen Sie den primären Zugriffsschlüssel aus Ihrem Speicherkonto, d
 
 Achten Sie darauf, dass das Datum das Format "JJJJ-MM-TT" (mit Bindestrichen) aufweist.
 
-Das Präfixmuster des Pfads gibt an, wie Stream Analytics die Eingabedateien im Speicher ermittelt. Sie müssen es so einrichten, dass es der Speicherung der Daten durch den fortlaufenden Export entspricht. Legen Sie ihn wie folgt fest:
+Das Präfixmuster des Pfads gibt an, wie Stream Analytics die Eingabedateien im Speicher ermittelt. Sie müssen es so einstellen, dass es der Speicherung der Daten durch den fortlaufenden Export entspricht. Legen Sie ihn wie folgt fest:
 
-    webapplication27_100000000-0000-0000-0000-000000000000/PageViews/{date}/{time}
+    webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}
 
 In diesem Beispiel:
 
-* `webapplication27` ist der Name der Application Insights-Ressource. 
-* `1000...` Ist der Instrumentationsschlüssel der Application Insights-Ressource. 
+* `webapplication27` ist der Name der Application Insights-Ressource in **Kleinbuchstaben**. 
+* `1234...` ist der Instrumentierungsschlüssel der Application Insights-Ressource **ohne Bindestriche**. 
 * `PageViews` ist die Art der zu analysierenden Daten. Die verfügbaren Typen sind abhängig von dem Filter, den Sie im fortlaufenden Export festlegen. Untersuchen Sie die exportierten Daten, um die anderen verfügbaren Typen anzuzeigen, und sehen Sie sich das [Exportdatenmodell](app-insights-export-data-model.md) an.
 * `/{date}/{time}` ist ein als Literal geschriebenes Muster.
 
@@ -259,7 +263,7 @@ Ersetzen Sie die Standardabfrage durch folgende:
 
 ```
 
-Beachten Sie, dass die ersten Eigenschaften sich speziell auf die Seitenzugriffsdaten beziehen. Exporte anderer Telemetrietypen verfügen über andere Eigenschaften.
+Beachten Sie, dass die ersten Eigenschaften sich speziell auf die Seitenzugriffsdaten beziehen. Exporte anderer Telemetrietypen verfügen über andere Eigenschaften. Weitere Informationen finden Sie in der [detaillierten Datenmodellreferenz für die Eigenschaftstypen und -werte.](app-insights-export-data-model.md)
 
 ## Einrichten der Ausgabe an die Datenbank
 
@@ -294,6 +298,7 @@ Nach einigen Minuten wechseln Sie zurück zu den SQL Server-Verwaltungstools, un
 ## Verwandte Artikel
 
 * [Exportieren in SQL über eine Workerrolle](app-insights-code-sample-export-telemetry-sql-database.md)
+* [Detaillierte Datenmodellreferenz für die Eigenschaftstypen und -werte.](app-insights-export-data-model.md)
 * [Fortlaufender Export in Application Insights](app-insights-export-telemetry.md)
 * [Application Insights](https://azure.microsoft.com/services/application-insights/)
 
@@ -307,4 +312,4 @@ Nach einigen Minuten wechseln Sie zurück zu den SQL Server-Verwaltungstools, un
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

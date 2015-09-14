@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Erstellen eines REST-Diensts mithilfe der ASP.NET Web API und einer SQL-Datenbank in Azure App Service" 
-	description="In diesem Lernprogramm erfahren Sie, wie Sie eine App bereitstellen, die die ASP.NET-Web-API mithilfe von Visual Studio für eine Azure-Web-App verwendet." 
-	services="app-service\web" 
-	documentationCenter=".net" 
-	authors="Rick-Anderson" 
-	manager="wpickett" 
+	pageTitle="Erstellen eines REST-Diensts mithilfe der ASP.NET Web API und einer SQL-Datenbank in Azure App Service"
+	description="In diesem Lernprogramm erfahren Sie, wie Sie eine App bereitstellen, die die ASP.NET-Web-API mithilfe von Visual Studio für eine Azure-Web-App verwendet."
+	services="app-service\web"
+	documentationCenter=".net"
+	authors="Rick-Anderson"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="06/16/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/31/2015"
 	ms.author="riande"/>
 
 # Erstellen eines REST-Diensts mithilfe der ASP.NET Web API und einer SQL-Datenbank in Azure App Service
@@ -810,4 +810,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

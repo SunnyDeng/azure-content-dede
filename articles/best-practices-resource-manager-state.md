@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/15/2015"
+	ms.date="09/02/2015"
 	ms.author="mmercuri"/>
 
 # Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen
 
-In diesem Thema wird beschrieben, wie Sie den Status innerhalb einer Azure-Ressourcen-Manager-Vorlage und über verknüpfte Vorlagen hinweg verwalten und freigeben.
+In diesem Thema werden die bewährten Methoden zum Verwalten und Freigeben des Status innerhalb einer Azure-Ressourcen-Manager-Vorlage und über verknüpfte Vorlagen hinweg aufgeführt. Die in diesem Thema erläuterten Parameter und Variablen sind Beispiele für die Art von Objekten, die Sie definieren können, um Ihre Bereitstellungsanforderungen bequem zu organisieren. Anhand dieser Beispiele können Sie Ihre eigenen Objekte mit Eigenschaftswerten implementieren, die für Ihre Umgebung sinnvoll sind.
 
 ## Verwenden komplexer Objekte zum Freigeben des Status
 
@@ -366,7 +366,7 @@ Das folgende Beispiel zeigt, wie die private IP-Adresse übergeben wird, die in 
 
     "outputs": {
         "masterip": {
-            "value": "[reference(concat(variables('nicName'),0)).ipConfigurations[0].properties.privateIPAddress]",
+            "value": "[reference(concat(variables('nicName'),0)).ipConfigurations[0].privateIPAddress]",
             "type": "string"
          }
     }
@@ -381,4 +381,4 @@ Innerhalb der Hauptvorlage können Sie diese Daten mit folgender Syntax verwende
 - [Authoring Azure Resource Manager Templates](resource-group-authoring-templates.md) (in englischer Sprache)
 - [Funktionen von Azure-Ressourcen- Manager-Vorlagen](resource-group-template-functions.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

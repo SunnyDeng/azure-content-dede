@@ -5,7 +5,7 @@
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar" />
+	editor="monicar"/>
 <tags 
 	ms.service="virtual-machines"
 	ms.devlang="na"
@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="08/14/2015"
-	ms.author="jroth" />
+	ms.author="jroth"/>
 
 # Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in Azure (PowerShell)
 
->[AZURE.NOTE]Informationen zum GUI-basierten Lernprogramm des gleichen Szenarios finden Sie unter [Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in Azure (GUI)](virtual-machines-sql-server-alwayson-availability-groups-gui.md).
+>[AZURE.NOTE]Informationen zum GUI-basierten Tutorial des gleichen Szenarios finden Sie unter [Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in Azure (GUI)](virtual-machines-sql-server-alwayson-availability-groups-gui.md).
 
-Virtuelle Azure-Computer (VMs) können Datenbankadministratoren helfen, die Kosten für die Implementierung von hoch verfügbaren SQL Server-Systemen zu senken. In diesem Lernprogramm erfahren Sie, wie Sie eine Verfügbarkeitsgruppe mithilfe von SQL Server AlwaysOn End-to-End in einer Azure-Umgebung implementieren können. Am Ende des Lernprogramms besteht Ihre SQL Server AlwaysOn-Lösung in Azure aus folgenden Elementen:
+Virtuelle Azure-Computer (VMs) können Datenbankadministratoren helfen, die Kosten für die Implementierung von hoch verfügbaren SQL Server-Systemen zu senken. In diesem Tutorial erfahren Sie, wie Sie eine Verfügbarkeitsgruppe mithilfe von SQL Server AlwaysOn End-to-End in einer Azure-Umgebung implementieren können. Am Ende des Tutorials besteht Ihre SQL Server AlwaysOn-Lösung in Azure aus folgenden Elementen:
 
 - Einem virtuellen Netzwerk, das mehrere Subnetze enthält, einschließlich einem Front-End- und Back-End-Subnetz
 
@@ -33,7 +33,7 @@ Virtuelle Azure-Computer (VMs) können Datenbankadministratoren helfen, die Kost
 
 Dieses Szenario wurde aufgrund seiner Einfachheit in Azure gewählt, nicht wegen seiner Kosteneffizienz oder anderer Faktoren. Beispielsweise können Sie die Anzahl der virtuellen Computer für eine Verfügbarkeitsgruppe aus zwei Replikaten verringern, um Rechenzeit in Azure zu sparen, indem Sie den Domänencontroller als Quorum-Dateifreigabezeugen in einem WSFC-Cluster mit 2 Knoten verwenden. Diese Methode verringert die Anzahl der virtuellen Computer in der oben dargestellten Konfiguration um einen Computer.
 
-Dieses Lernprogramm soll Ihnen die erforderlichen Schritte für das Einrichten der oben beschriebenen Lösung vermitteln, ohne die Details der einzelnen Schritte auszuführen. Daher werden Skripts in PowerShell verwendet, um Sie schnell durch die einzelnen Schritte zu führen, statt die einzelnen Konfigurationsschritte im GUI zu erläutern. Folgende Annahmen werden vorausgesetzt:
+Dieses Tutorial soll Ihnen die erforderlichen Schritte für das Einrichten der oben beschriebenen Lösung vermitteln, ohne die Details der einzelnen Schritte auszuführen. Daher werden Skripts in PowerShell verwendet, um Sie schnell durch die einzelnen Schritte zu führen, statt die einzelnen Konfigurationsschritte im GUI zu erläutern. Folgende Annahmen werden vorausgesetzt:
 
 - Sie verfügen bereits über ein Azure-Konto mit dem Abonnement für den virtuellen Computer.
 
@@ -83,7 +83,7 @@ Dieses Lernprogramm soll Ihnen die erforderlichen Schritte für das Einrichten d
 	
 	- **$sqlImageName** gibt den aktualisierten Namen des VM-Images an, das SQL Server 2012 Service Pack 1 Enterprise Edition enthält.
 	
-	- Der Einfachheit halber wird im gesamten Lernprogramm das Kennwort **Contoso!000** verwendet.
+	- Der Einfachheit halber wird im gesamten Tutorial das Kennwort **Contoso!000** verwendet.
 
 1. Erstellen Sie eine Affinitätsgruppe.
 
@@ -528,7 +528,7 @@ Sie sind jetzt bereit, die Verfügbarkeitsgruppe zu konfigurieren. Sie verwenden
 		$svc2.Start(); 
 		$svc2.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Running,$timeout)
 
-1. Laden Sie **CreateAzureFailoverCluster.ps1** von [Erstellen eines WSFC-Clusters für AlwaysOn-Verfügbarkeitsgruppen in Azure-VMs](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) in das lokale Arbeitsverzeichnis herunter. Dieses Skript unterstützt Sie beim Erstellen eines funktionsfähigen WSFC-Clusters. Wichtige Informationen zum Zusammenwirken von WSFC mit dem Azure-Netzwerk finden Sie unter [Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern](https://msdn.microsoft.com/de-de/library/azure/jj870962.aspx).
+1. Laden Sie **CreateAzureFailoverCluster.ps1** von [Erstellen eines WSFC-Clusters für AlwaysOn-Verfügbarkeitsgruppen in Azure-VMs](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) in das lokale Arbeitsverzeichnis herunter. Dieses Skript unterstützt Sie beim Erstellen eines funktionsfähigen WSFC-Clusters. Wichtige Informationen zum Zusammenwirken von WSFC mit dem Azure-Netzwerk finden Sie unter [Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions.md).
 
 1. Wechseln Sie in das Arbeitsverzeichnis, und erstellen Sie mithilfe des heruntergeladenen Skripts den WSFC-Cluster.
 
@@ -623,4 +623,4 @@ Sie haben nun erfolgreich SQL Server AlwaysOn implementiert, indem Sie eine Verf
 
 Weitere Informationen zur Verwendung von SQL Server in Azure finden Sie unter [SQL Server auf virtuellen Azure-Computern](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

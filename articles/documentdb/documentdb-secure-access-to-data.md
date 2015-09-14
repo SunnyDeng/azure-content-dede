@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Informationen zum sicheren Zugriff auf Daten in DocumentDB | Microsoft Azure" 
-	description="Informationen zu Zugriffssteuerungskonzepten in DocumentDB, darunter Hauptschlüssel, Schlüssel mit Leseberechtigung, Benutzer und Berechtigungen." 
-	services="documentdb" 
-	authors="stephbaron" 
-	manager="jhubbard" 
-	editor="monicar" 
+	pageTitle="Informationen zum sicheren Zugriff auf Daten in DocumentDB | Microsoft Azure"
+	description="Informationen zu Zugriffssteuerungskonzepten in DocumentDB, darunter Hauptschlüssel, Schlüssel mit Leseberechtigung, Benutzer und Berechtigungen."
+	services="documentdb"
+	authors="stephbaron"
+	manager="jhubbard"
+	editor="monicar"
 	documentationCenter=""/>
 
-
 <tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/22/2015" 
+	ms.service="documentdb"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="stbaro"/>
-
 
 # Sicherer Zugriff auf Daten in DocumentDB #
 
@@ -165,4 +163,4 @@ Um alle einem bestimmten Benutzer zugeordneten Berechtigungsressourcen abzurufen
 - Informationen zum Erstellen von DocumentDB-Autorisierungstoken finden klicken Sie [hier](https://msdn.microsoft.com/library/azure/dn783368.aspx)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

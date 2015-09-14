@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Azure App Service zum Senden von Pushbenachrichtigungen an Ihre Xamarin iOS-App verwendet wird."
 	services="app-service\mobile"
 	documentationCenter="xamarin"
-	authors="normesta"
+	authors="wesmc7777"
 	manager="dwrede"
 	editor=""/>
 
@@ -210,4 +210,4 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

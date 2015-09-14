@@ -341,7 +341,7 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 		    	    "typeProperties": {
 		    	    	"source": {
 		            		"type": "SqlSource",
-			            	"SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \'{0:yyyy-MM-dd HH:mm}\' AND timestampcolumn < \'{1:yyyy-MM-dd HH:mm}\'', WindowStart, WindowEnd)"
+			            	"SqlReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= \\'{0:yyyy-MM-dd HH:mm}\\' AND timestampcolumn < \\'{1:yyyy-MM-dd HH:mm}\\'', WindowStart, WindowEnd)"
 		          		},
 		          		"sink": {
 		            		"type": "BlobSink"
@@ -383,6 +383,7 @@ Der Abschnitt **typeProperties** unterscheidet sich bei jedem Typ von Dataset un
 | fileName | <p>Der Name des Blobs. "fileName" ist optional. </p><p>Wenn Sie einen Dateinamen angeben, funktioniert die Aktivität (einschließlich Kopieren) für das jeweilige Blob.</p><p>Wenn "fileName" nicht angegeben ist, umfasst das Kopieren alle Blobs in "folderPath" für das Eingabedataset.</p><p>Wenn "fileName" für ein Ausgabedataset nicht angegeben ist, hat der Name der generierten Datei folgendes Format: Data.<Guid>.txt (z. B.: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt</p> | Nein |
 | partitionedBy | "partitionedBy" ist eine optionale Eigenschaft. "partitionedBy" kann genutzt werden, um einen dynamischen Wert für "folderPath" oder "fileName" für Zeitreihendaten anzugeben. Beispiel: "folderPath" kann für jedes stündliche Datenaufkommen parametrisiert werden. Im Abschnitt "Nutzen der Eigenschaft "partitionedBy"" unten finden Sie Details und Beispiele. | Nein
 | Format | Zwei Typen von Formaten werden unterstützt: **TextFormat** und **AvroFormat**. Sie müssen die type-Eigenschaft unter "format" auf einen dieser Werte festlegen. Wenn das Format auf "TextFormat" festgelegt ist, können Sie zusätzliche optionale Eigenschaften für das Format angeben. Im Abschnitt [Angeben von "TextFormat"](#specifying-textformat) unten finden Sie weitere Details. | Nein
+| Komprimierung | Geben Sie den Typ und den Grad der Komprimierung für die Daten an. Folgende Typen werden unterstützt: "GZip", "Deflate" und "BZip2". Folgende Komprimierungsgrade werden unterstützt: "Optimal" und "Schnellste". Weitere Einzelheiten finden Sie im Abschnitt [Komprimierungsunterstützung](#compression-support). | Nein |
 
 ### Nutzen der Eigenschaft "partitionedBy"
 Wie bereits erwähnt, können Sie die dynamischen Werte "folderPath" und "fileName" für Zeitreihendaten mit dem Abschnitt **partitionedBy**, mit Data Factory-Makros und mit den Systemvariablen "SliceStart" und "SliceEnd" angeben, die die Start- und Endzeit für einen bestimmten Slice festlegen.
@@ -423,7 +424,7 @@ Wenn das Format auf **TextFormat** festgelegt ist, können Sie die folgenden **o
 | rowDelimiter | Die Zeichen, die als Zeilentrennzeichen in einer Datei verwendet werden. Dieses Tag ist optional. Der Standardwert ist einer der Folgenden: ["\\r\\n", "\\r", "\\n"]. | Nein |
 | escapeChar | <p>Das Sonderzeichen, das als Escapezeichen für das Spaltentrennzeichen im Inhalt dient. Dieses Tag ist optional. Kein Standardwert. Sie dürfen nicht mehr als ein Zeichen für diese Eigenschaft angeben.</p><p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: "Hello, world") verwenden möchten, können Sie "$" als Escapezeichen definieren und die Zeichenfolge "Hello$, world" in der Quelle verwenden.</p><p>Beachten Sie, dass Sie nicht sowohl "escapeChar" als auch "quoteChar" für eine Tabelle angeben können.</p> | Nein | 
 | quoteChar | <p>Das Sonderzeichen, das als Anführungszeichen für einen Zeichenfolgenwert dient. Die Spalten- und Zeilentrennzeichen innerhalb der Anführungszeichen werden als Teil des Zeichenfolgenwerts behandelt. Dieses Tag ist optional. Kein Standardwert. Sie dürfen nicht mehr als ein Zeichen für diese Eigenschaft angeben.</p><p>Beispiel: Wenn Sie das Komma (,) als Spaltentrennzeichen gewählt haben, das Kommazeichen jedoch im Text (Beispiel: <Hello  world>) verwenden möchten, können Sie '"' als Anführungszeichen definieren und die Zeichenfolge <"Hello, world"> in der Quelle verwenden. Diese Eigenschaft gilt für Eingabe- und Ausgabetabellen.</p><p>Beachten Sie, dass Sie nicht sowohl "escapeChar" als auch "quoteChar" für eine Tabelle angeben können.</p> | Nein |
-| nullValue | <p>Die Zeichen, die zur Darstellung von NULL-Werten im Blob-Dateiinhalt dienen. Dieses Tag ist optional. Der Standardwert ist "\\N".</p><p>Beispielsweise wird gemäß oben genanntem Beispiel "NaN" im Blob beim Kopieren, z. B. in SQL Server, als NULL-Wert übersetzt.</p> | Nein |
+| nullValue | <p>Die Zeichen, die zur Darstellung von NULL-Werten im Blobdateiinhalt dienen. Dieses Tag ist optional. Der Standardwert ist "\\N".</p><p>Beispielsweise wird gemäß oben genanntem Beispiel "NaN" im Blob beim Kopieren, z. B. in SQL Server, als NULL-Wert übersetzt.</p> | Nein |
 | encodingName | Geben Sie den Codierungsnamen an. Eine Liste der gültigen Codierungsnamen finden Sie unter [Encoding.EncodingName-Eigenschaft](https://msdn.microsoft.com/library/system.text.encoding.aspx). Beispiel: Windows-1250 oder Shift-JIS. Der Standardwert lautet "UTF-8". | Nein | 
 
 #### Beispiele
@@ -455,7 +456,10 @@ Wenn das Format auf "AvroFormat" festgelegt ist, müssen Sie im Abschnitt "Forma
 	    "type": "AvroFormat",
 	}
 
-Um das Avro-Format in einer Hive-Tabelle zu verwenden, sehen Sie sich zuvor das [Apache Hive-Lernprogramm](https://cwiki.apache.org/confluence/display/Hive/AvroSerDe) an.
+Um das Avro-Format in einer Hive-Tabelle zu verwenden, sehen Sie sich zuvor das [Apache Hive-Tutorial](https://cwiki.apache.org/confluence/display/Hive/AvroSerDe) an.
+
+[AZURE.INCLUDE [data-factory-compression](../../includes/data-factory-compression.md)]
+
 
 ## Eigenschaften des Azure-Blob-Kopieraktivitätstyps  
 Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Aktivitäten finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md). Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar.
@@ -476,10 +480,16 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 | -------- | ----------- | -------------- | -------- |
 | blobWriterAddHeader | Gibt an, ob der Header der Spaltendefinitionen hinzugefügt werden soll. | TRUE<br/>FALSE (Standard) | Nein |
 
+
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
 [AZURE.INCLUDE [data-factory-type-conversion-sample](../../includes/data-factory-type-conversion-sample.md)]
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=August15_HO9-->
+
+
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-azure-blob-connector.md).
+
+<!---HONumber=September15_HO1-->

@@ -1,21 +1,20 @@
 <properties 
-	pageTitle="Verschieben von Daten zu SQL Server auf einem virtuellen Azure-Computer | Azure" 
-	description="Verschieben von Daten aus Flatfiles oder von einem lokalen SQL Server zu SQL Server auf einem virtuellen Azure-Computer" 
-	services="machine-learning" 
-	solutions="" 
-	documentationCenter="" 
-	authors="msolhab" 
-	manager="paulettm" 
-	editor="cgronlun" />
+	pageTitle="Verschieben von Daten zu SQL Server auf einem virtuellen Azure-Computer | Azure"
+	description="Verschieben von Daten aus Flatfiles oder von einer lokalen SQL Server-Instanz nach SQL Server auf einem virtuellen Azure-Computer"
+	services="machine-learning"
+	documentationCenter=""
+	authors="msolhab"
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/10/2015" 
-	ms.author="fashah;mohabib;bradsev" />
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="fashah;mohabib;bradsev"/>
 
 # Verschieben von Daten zu SQL Server auf einem virtuellen Azure-Computer
 
@@ -41,23 +40,24 @@ In der folgende Tabelle sind die Optionen zum Verschieben von Daten zu SQL Serve
 <tr>
   <td><b>Lokaler SQL Server</b></td>
   <td>
-    1. <a href="#export-flat-file">Exportieren in eine Flatfile</a><br>
-    2. <a href="#sql-migration">SQL-Datenbankmigrations-Assistent</a> <br>    
-    3. <a href="#sql-backup">Datenbanksicherung und -wiederherstellung</a> <br>
+    1. <a href="#deploy-a-sql-server-database-to-a-microsoft-azure-vm-wizard">Assistent zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer</a><br>
+    2. <a href="#export-flat-file">Exportieren in eine Flatfile</a><br>
+    3. <a href="#sql-migration">SQL-Datenbankmigrations-Assistent</a> <br>    
+    4. <a href="#sql-backup">Datenbanksicherung und -wiederherstellung</a> <br>
   </td>
 </tr>
 </table>
 
 Beachten Sie, dass in diesem Dokument davon ausgegangen wird, dass die SQL-Befehle in SQL Server Management Studio oder im Datenbank-Explorer von Visual Studio ausgeführt werden.
 
-> [AZURE.TIP]Alternativ dazu können Sie [Azure Data Factory](https://azure.microsoft.com/de-de/services/data-factory/) verwenden, um eine Pipeline zu erstellen und zu planen, die Daten in eine SQL Server-VM auf Azure verschiebt. Weitere Informationen hierzu finden Sie unter [Kopieren von Daten mit Azure Data Factory (Kopieraktivität)](../data-factory/data-factory-copy-activity.md).
+> [AZURE.TIP]Alternativ dazu können Sie [Azure Data Factory](https://azure.microsoft.com/de-DE/services/data-factory/) verwenden, um eine Pipeline zu erstellen und zu planen, die Daten in eine SQL Server-VM auf Azure verschiebt. Weitere Informationen hierzu finden Sie unter [Kopieren von Daten mit Azure Data Factory (Kopieraktivität)](../data-factory/data-factory-copy-activity.md).
 
 
 ## <a name="prereqs"></a>Voraussetzungen
-In diesem Lernprogramm wird Folgendes vorausgesetzt:
+In diesem Tutorial wird Folgendes vorausgesetzt:
 
 * Ein **Azure-Abonnement**. Wenn Sie nicht über ein Abonnement verfügen, können Sie sich für ein [kostenloses Testabonnement](https://azure.microsoft.com/pricing/free-trial/) registrieren.
-* Ein **Azure-Speicherkonto**. Sie benötigen ein Azure-Speicherkonto zum Speichern der Daten in diesem Lernprogramm. Falls Sie noch kein Azure-Speicherkonto haben, lesen Sie den Artikel [Erstellen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account). Nachdem Sie das Speicherkonto erstellt haben, müssen Sie den Kontoschlüssel für den Zugriff auf den Speicher abrufen. Siehe [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+* Ein **Azure-Speicherkonto**. Sie benötigen ein Azure-Speicherkonto zum Speichern der Daten in diesem Tutorial. Falls Sie noch kein Azure-Speicherkonto haben, lesen Sie den Artikel [Erstellen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account). Nachdem Sie das Speicherkonto erstellt haben, müssen Sie den Kontoschlüssel für den Zugriff auf den Speicher abrufen. Siehe [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
 * Bereitgestellter **SQL Server auf einem virtuellen Azure-Computer**. Anleitungen finden Sie unter [Einrichten eines virtuellen Azure SQL Server-Computers als IPython Notebook-Server für die erweiterte Analyse](machine-learning-data-science-setup-sql-server-virtual-machine.md).
 * Lokal installierte und konfigurierte **Azure PowerShell**. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
@@ -172,19 +172,24 @@ Sie können die SQL Server Integration Services (SSIS) zum Importieren von Daten
 - Einzelheiten zu den SQL Server Data Tools finden Sie unter [Microsoft SQL Server Data Tools](https://msdn.microsoft.com/data/tools.aspx).  
 - Ausführliche Informationen zum Import/Export-Assistenten finden Sie unter [SQL Server-Import/Export-Assistent](https://msdn.microsoft.com/library/ms141209.aspx).
 
-## <a name="sqlonprem_to_sqlonazurevm"></a> Verschieben von Daten von einem lokalen SQL Server zu SQL Server auf einem virtuellen Azure-Computer
+## <a name="sqlonprem_to_sqlonazurevm"></a> Verschieben von Daten von einer lokalen SQL Server-Instanz nach SQL Server auf einem virtuellen Azure-Computer
 
-Daten können folgendermaßen von einem lokalen SQL Server verschoben werden:
+Sie können auch die folgenden Migrationsstrategien verwenden:
 
-1. [Exportieren in eine Flatfile](#export-flat-file) 
-2. [SQL-Datenbankmigrations-Assistent](#sql-migration)
-3. [Datenbanksicherung und -wiederherstellung](#sql-backup)
+1. [Assistent zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer](#deploy-a-sql-server-database-to-a-microsoft-azure-vm-wizard)
+2. [Exportieren in eine Flatfile](#export-flat-file) 
+3. [SQL-Datenbankmigrations-Assistent](#sql-migration)
+4. [Datenbanksicherung und -wiederherstellung](#sql-backup)
 
 Diese Verfahren werden im Folgenden beschrieben:
 
+### Assistent zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer
+
+Der **Assistent zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer** ist eine einfache und empfohlene Möglichkeit zum Verschieben von Daten von einer lokalen SQL Server-Instanz nach SQL Server auf einem virtuellen Azure-Computer. Ausführliche Schritte sowie eine Erläuterung weitere Alternativen finden Sie unter [Migrieren einer Datenbank zu SQL Server auf einer Azure-VM](../virtual-machines/virtual-machines-migrate-onpremises-database.md).
+
 ### <a name="export-flat-file"></a>Exportieren in eine Flatfile
 
-Für das Massenexportieren von Daten von einem lokalen SQL Server stehen verschiedene Vorgehensweisen zur Verfügung, die [hier](https://msdn.microsoft.com/library/ms175937.aspx) beschrieben werden. In diesem Dokument wird als Beispiel BPC (Bulk Copy Program) beschrieben. Nachdem die Daten in eine Flatfile exportiert wurden, können sie mit einem Massenimport auf einen anderen SQL Server importiert werden.
+Für das Massenexportieren von Daten von einer lokalen SQL Server-Instanz stehen verschiedene Vorgehensweisen zur Verfügung, die [hier](https://msdn.microsoft.com/library/ms175937.aspx) beschrieben werden. In diesem Dokument wird als Beispiel BPC (Bulk Copy Program) beschrieben. Nachdem die Daten in eine Flatfile exportiert wurden, können sie mit einem Massenimport auf einen anderen SQL Server importiert werden.
 
 1. Exportieren Sie die Daten vom lokalen SQL Server folgendermaßen mit dem Dienstprogramm BPC in eine Datei:
 
@@ -222,10 +227,13 @@ Einen Screenshot der Optionen für das Sichern/Wiederherstellen von Datenbanken 
 
 ![SQL Server-Importtool][1]
 
+## Ressourcen
+
+[Migrieren einer Datenbank zu SQL Server auf einem virtuellen Azure-Computer](../virtual-machines/virtual-machines-migrate-onpremises-database.md)
+
+[Übersicht zu SQL Server auf virtuellen Azure-Computern](../virtual-machines/virtual-machines-sql-server-infrastructure-services.md)
 
 [1]: ./media/machine-learning-data-science-move-sql-server-virtual-machine/sqlserver_builtin_utilities.png
 [2]: ./media/machine-learning-data-science-move-sql-server-virtual-machine/database_migration_wizard.png
 
- 
-
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Computehostingoptionen in Azure" 
-	description="Erfahren Sie mehr über Computehostingoptionen in Azure und ihre Funktionsweise: Virtual Machines, Websites, Cloud Services und weitere Optionen." 
+	pageTitle="Computehostingoptionen in Azure"
+	description="Erfahren Sie mehr über Computehostingoptionen in Azure und ihre Funktionsweise: Virtual Machines, Websites, Cloud Services und weitere Optionen."
 	services="cloud-services,virtual-machines"
-	authors="Thraka" 
+	authors="Thraka"
 	documentationCenter=""
 	manager="timlt"/>
 
 <tags 
-	ms.service="multiple" 
-	ms.workload="multiple" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/16/2015" 
+	ms.service="multiple"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="adegeo;cephalin;kathydav"/>
 
 
@@ -50,7 +50,7 @@ App Service stellt für die meisten Web-Apps die beste Wahl dar. Die Bereitstell
 
 Wenn Sie mehr Kontrolle über die Webserverumgebung benötigen, wie etwa die Fähigkeit eines Fernzugriffs auf den Server oder der Konfiguration von Serverstartaufgaben, sind Azure Cloud Services üblicherweise die beste Option.
 
-Wenn Sie über eine vorhandene Anwendung verfügen, die für die Ausführung unter Azure-Websites oder Azure Cloud Services erhebliche Änderungen erforderlich macht, können Sie Azure Virtual Machines wählen, um die Migration in die Cloud zu vereinfachen. Eine korrekte Konfiguration, Sicherung und Wartung von VMs erfordert im Vergleich zu Azure Websites oder Cloud Services jedoch weitaus mehr Zeit und IT-Kenntnisse. Wenn Sie die Nutzung von Azure Virtual Machines in Erwägung ziehen, müssen Sie den fortlaufenden Wartungsaufwand berücksichtigen, der für das Anpassen, Aktualisieren oder Verwalten der VM-Umgebung erforderlich ist. Falls Sie über eine Anwendung verfügen, die wesentlich geändert werden müsste, um sie in App Service oder Azure Cloud Services auszuführen, können Sie die Migration zur Cloud mithilfe von Azure Virtual Machines vereinfachen. Eine korrekte Konfiguration, Sicherung und Wartung von VMs erfordert im Vergleich zu App Service und Cloud Services jedoch weitaus mehr Zeit und IT-Kenntnisse. Wenn Sie die Nutzung von Azure Virtual Machines in Erwägung ziehen, müssen Sie den fortlaufenden Wartungsaufwand berücksichtigen, der für das Anpassen, Aktualisieren oder Verwalten der VM-Umgebung erforderlich ist.
+Wenn Sie über eine vorhandene Anwendung verfügen, die für die Ausführung unter Azure-Websites oder Azure Cloud Services erhebliche Änderungen erforderlich macht, können Sie Azure Virtual Machines wählen, um die Migration in die Cloud zu vereinfachen. Eine korrekte Konfiguration, Sicherung und Wartung von VMs erfordert im Vergleich zu Azure Websites oder Cloud Services jedoch weitaus mehr Zeit und IT-Kenntnisse. Wenn Sie die Nutzung von Azure Virtual Machines in Erwägung ziehen, müssen Sie den fortlaufenden Wartungsaufwand berücksichtigen, der für das Patchen, Aktualisieren oder Verwalten der VM-Umgebung erforderlich ist.
 
 Unter Umständen reicht eine Option jedoch nicht aus. In diesen Fällen können Sie eine Kombination der unterschiedlichen Optionen verwenden. Dies bietet sich beispielsweise an, wenn Sie eine Anwendung erstellen und dabei die Vorteile der Verwaltungsoptionen von Cloud Services-Webrollen nutzen möchten, aber aus Kompatibilitäts- oder Leistungsgründen eine auf einer VM gehostete Standardversion von SQL Server verwenden müssen.
 
@@ -67,9 +67,7 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 
 [App Service]: #tellmeas
 [Virtual Machines]: #tellmevm
-[Virtuelle Computer]: #tellmevm
 [Cloud Services]: #tellmecs
-[Cloud-Dienste]: #tellmecs
 
 ## Nächste Schritte
 
@@ -78,4 +76,4 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 * Weitere Informationen zu [Cloud Services](services/cloud-services/)
 * Weitere Informationen zu [Virtual Machines](https://msdn.microsoft.com/library/azure/jj156143.aspx) 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

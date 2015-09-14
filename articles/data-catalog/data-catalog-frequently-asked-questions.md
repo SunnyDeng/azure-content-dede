@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"
 	ms.workload="data-catalog"
-	ms.date="08/21/2015"
+	ms.date="08/25/2015"
 	ms.author="maroche"/>
 
 # Häufig gestellte Fragen zu Azure Data Catalog
@@ -39,7 +39,7 @@ Azure Data Catalog enthält Funktionen für technisch versierte und andere Benut
 
 ## F: In welchen Regionen ist Azure Data Catalog verfügbar?
 
-Während der Preview-Phase sind Azure Data Catalog-Dienste nur in den folgenden Rechenzentren verfügbar:
+Während der Vorschauphase sind Azure Data Catalog-Dienste nur in den folgenden Rechenzentren verfügbar:
 
 - USA, Westen
 - USA, Osten
@@ -54,9 +54,9 @@ Die Standard Edition von Azure Data Catalog unterstützt bis zu 100.000 registr
 
 ## F: Welche Datenquellen und Assettypen werden unterstützt?
 
-Während der Preview-Phase unterstützt Azure Data Catalog derzeit relationale SQL Server-Datenbanken (z. B. Azure SQL DB) und SQL Server Analysis Services-Datenbanken (mehrdimensional und tabellarisch) sowie SQL Server Reporting Services (nur systemeigener Modus) und Oracle Database.
+Während der Vorschauphase unterstützt Azure Data Catalog derzeit relationale SQL Server-Datenbanken (z. B. Azure SQL DB) und SQL Server Analysis Services-Datenbanken (mehrdimensional und tabellarisch) sowie SQL Server Reporting Services (nur systemeigener Modus) und Oracle Database.
 
-Während der Preview-Phase unterstützt Azure Data Catalog die folgenden Assettypen:
+Während der Vorschauphase unterstützt Azure Data Catalog die folgenden Assettypen:
 
 - SQL Server-Tabelle
 - SQL Server-Ansicht
@@ -69,6 +69,8 @@ Während der Preview-Phase unterstützt Azure Data Catalog die folgenden Assetty
 - Oracle Database-Ansicht
 - Azure Storage-Blob
 - Azure-Speicherverzeichnis
+- HDFS-Datei
+- HDFS-Verzeichnis
 
 ## F: Wie fordere ich die Unterstützung für eine andere Datenquelle an?
 
@@ -76,7 +78,7 @@ Für Anfragen zu Features und anderes Feedback können Sie das [Azure Data Catal
 
 ## F: Wie beginne ich mit der Nutzung von Azure Data Catalog?
 
-Befolgen Sie am besten die Anleitung unter „Erste Schritte mit Data Catalog“. Dieser Artikel enthält eine umfassende Vorstellung der Funktionen, die in der öffentlichen Preview-Version enthalten sind.
+Befolgen Sie am besten die Anleitung unter „Erste Schritte mit Data Catalog“. Dieser Artikel enthält eine umfassende Vorstellung der Funktionen, die in der öffentlichen Vorschau enthalten sind.
 
 ## F: Wie registriere ich meine Daten?
 
@@ -105,7 +107,7 @@ Nach dem Registrieren von Assets mit **Azure Data Catalog** kann es 5 bis 10 S
 
 ## F: Wie kann ich die Metadaten für meine registrierten Datenassets mit Anmerkungen versehen und erweitern?
 
-Die einfachste Möglichkeit zum Angeben von Metadaten für registrierte Assets ist das Auswählen der Ressource im **Azure Data Catalog**-Portal und das anschließende Eingeben der Metadatenwerte im Eigenschaften- oder Schemabereich für das ausgewählte Objekt.
+Die einfachste Möglichkeit zum Angeben von Metadaten für registrierte Assets ist das Auswählen des Assets im **Azure Data Catalog**-Portal und das anschließende Eingeben der Metadatenwerte im Eigenschaften- oder Schemabereich für das ausgewählte Objekt.
 
 Sie können auch während des Registrierungsvorgangs einige Metadaten angeben, z. B. Experten und Tags. Die im **Azure Data Catalog**-Veröffentlichungsdienst angegebenen Werte gelten für alle Assets, die zum jeweiligen Zeitpunkt registriert werden. Um die zuletzt registrierten Objekte im Portal zum Hinzufügen zusätzlicher Anmerkungen anzuzeigen, wählen Sie auf dem letzten Bildschirm der **Azure Data Catalog**-Veröffentlichungsanwendung die Schaltfläche **Portal anzeigen**.
 
@@ -117,9 +119,9 @@ Sie können ein Objekt aus **Azure Data Catalog** löschen, indem Sie das Objekt
 
 Ein Experte ist eine Person, die über fundiertes Wissen zu einem Datenobjekt verfügt. Ein Objekt kann mehrere Experten haben. Ein Experte muss nicht unbedingt der Besitzer eines Objekts sein. Es handelt sich lediglich um eine Person, die weiß, wie die Daten verwendet werden können und sollten.
 
-## F: Wie lautet die Vereinbarung zum Servicelevel (SLA) für die Preview-Version?
+## F: Wie lautet die Vereinbarung zum Servicelevel (SLA) für die Vorschau?
 
-Während der Preview-Phase für **Azure Data Catalog** gilt keine besondere Vereinbarung zum Servicelevel.
+Während der Vorschauphase für **Azure Data Catalog** gilt keine besondere Vereinbarung zum Servicelevel.
 
 ## F: Wie stelle ich Informationen für das Azure Data Catalog-Team bereit, wenn Probleme auftreten?
 
@@ -138,7 +140,7 @@ Der Benutzer, der das **Azure Data Catalog**-Registrierungstool ausführt, benö
 
 ## F: Wird Azure Data Catalog auch für die lokale Bereitstellung verfügbar gemacht?
 
-**Azure Data Catalog** ist ein Clouddienst, der sowohl Clouddatenquellen als auch lokale Datenquellen verarbeiten kann. Es handelt sich also um eine Hybridlösung zur Ermittlung von Datenquellen. Es ist derzeit keine Version des **Azure Data Catalog**-Diensts geplant, der lokal ausgeführt wird.
+**Azure Data Catalog** ist ein Clouddienst, der sowohl Clouddatenquellen als auch lokale Datenquellen verarbeiten kann. Es handelt sich also um eine Hybridlösung zur Ermittlung von Datenquellen. Es ist derzeit keine Version des **Azure Data Catalog**-Diensts geplant, die lokal ausgeführt wird.
 
 ##F: Können aus den registrierten Datenquellen auch mehr oder umfangreichere Metadaten extrahiert werden?
 
@@ -154,10 +156,10 @@ Zum Aktualisieren der Metadaten für Datenassets, die im Katalog bereits registr
 
 ## F: Wie stelle ich bei der Arbeit mit Azure Data Catalog Fragen oder nehme die Hilfe in Anspruch?
 
-Wenn Probleme auftreten oder falls Sie Hilfe mit der Preview-Version von Azure Data Catalog benötigen, können Sie einen Beitrag im [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409) erstellen.
+Wenn Probleme auftreten oder falls Sie Hilfe mit der Vorschauversion von Azure Data Catalog benötigen, können Sie einen Beitrag im [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409) erstellen.
 
 ## F: Meine Frage wird hier nicht beantwortet. Was kann ich tun?
 
 Wechseln Sie in das [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409). Fragen, die dort gestellt werden, werden in diesen Artikel aufgenommen.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

@@ -1,28 +1,28 @@
 <properties 
-	pageTitle="Django und SQL-Datenbank in Azure mit Python Tools 2.1 für Visual Studio" 
-	description="Erfahren Sie, wie Sie mithilfe der Python-Tools für Visual Studio eine Django-Web-App erstellen, die Daten in einer SQL-Datenbankinstanz speichert, und die Web-App für Azure App Service-Web-Apps bereitstellen." 
-	services="app-service\web" 
+	pageTitle="Django und SQL-Datenbank in Azure mit Python Tools 2.2 für Visual Studio"
+	description="Erfahren Sie, wie Sie mithilfe der Python-Tools für Visual Studio eine Django-Web-App erstellen, die Daten in einer SQL-Datenbankinstanz speichert, und die Web-App für Azure App Service-Web-Apps bereitstellen."
+	services="app-service\web"
 	tags="python"
-	documentationCenter="python" 
-	authors="huguesv" 
-	manager="wpickett" 
+	documentationCenter="python"
+	authors="huguesv"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="04/16/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="08/30/2015"
 	ms.author="huguesv"/>
 
 
 
 
-# Django und SQL-Datenbank in Azure mit Python Tools 2.1 für Visual Studio 
+# Django und SQL-Datenbank in Azure mit Python Tools 2.2 für Visual Studio 
 
-In diesem Lernprogramm erstellen wir mit [Python-Tools für Visual Studio] eine einfache Web-App für Umfragen mithilfe einer der PTVS-Beispielvorlagen. Dieses Lernprogramm steht auch als [Video](https://www.youtube.com/watch?v=ZwcoGcIeHF4) zur Verfügung.
+In diesem Tutorial erstellen wir mit [Python-Tools für Visual Studio] eine einfache Web-App für Umfragen mithilfe einer der PTVS-Beispielvorlagen. Dieses Tutorial steht auch als [Video](https://www.youtube.com/watch?v=ZwcoGcIeHF4) zur Verfügung.
 
 Sie erfahren, wie Sie eine in Azure gehostete SQL-Datenbank verwenden, wie Sie die Web-App für die Nutzung einer SQL-Datenbank konfigurieren und wie Sie sie für [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) veröffentlichen.
 
@@ -30,10 +30,10 @@ Weitere Artikel finden Sie im [Python Developer Center], wo die Entwicklung von 
 
 ## Voraussetzungen
 
- - Visual Studio 2012 oder 2013
- - [Python Tools 2.1 für Visual Studio]
- - [Python Tools 2.1 für Visual Studio, Beispiel-VSIX]
- - [Azure-SDK-Tools für VS 2013] oder [Azure-SDK-Tools für VS 2012]
+ - Visual Studio 2013 oder 2015
+ - [Python Tools 2.2 für Visual Studio]
+ - [Python Tools 2.2 für Visual Studio, Beispiel-VSIX]
+ - [Azure SDK-Tools für VS 2013] oder [Azure SDK-Tools für VS 2015]
  - [Python 2.7 (32 Bit)]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
@@ -208,17 +208,16 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 <!--External Link references-->
 [Azure-Portal]: https://portal.azure.com
 [Python-Tools für Visual Studio]: http://aka.ms/ptvs
-[Python Tools 2.1 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
-[Python Tools 2.1 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkId=517189
-[Azure-SDK-Tools für VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
-[Azure-SDK-Tools für VS 2012]: http://go.microsoft.com/fwlink/?LinkId=323511
+[Python Tools 2.2 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
+[Python Tools 2.2 für Visual Studio, Beispiel-VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
+[Azure SDK-Tools für VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
+[Azure SDK-Tools für VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7 (32 Bit)]: http://go.microsoft.com/fwlink/?LinkId=517190
-[Python Tools für Visual Studio – Dokumentation]: http://pytools.codeplex.com/documentation
-[Remotedebugging in Microsoft Azure]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
-[Webprojekte]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
-[Cloud Service-Projekte]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
+[Python Tools für Visual Studio – Dokumentation]: http://aka.ms/ptvsdocs
+[Remotedebugging in Microsoft Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
+[Webprojekte]: http://go.microsoft.com/fwlink/?LinkId=624027
+[Cloud Service-Projekte]: http://go.microsoft.com/fwlink/?LinkId=624028
 [Dokumentation zu Django]: https://www.djangoproject.com/
 [SQL-Datenbank]: /documentation/services/sql-database/
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

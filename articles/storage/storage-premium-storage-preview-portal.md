@@ -25,7 +25,7 @@ Willkommen bei den **Azure Premium-Datenträgern** für schnellere virtuelle Azu
 
 Mit der Einführung des Premium-Speichers bietet Microsoft Azure jetzt zwei Arten von permanentem Speicher: **Premium-Speicher** und **Standardspeicher**. Der Premium-Speicher speichert Daten auf SSDs (Solid State Drives) der neuesten Technologie, während der Standardspeicher Daten auf HDDs (Hard Disk Drives) speichert.
 
-Der Premium-Speicher bietet Datenträgerunterstützung für hohe Leistung mit geringe Latenz für E/A-intensive Arbeitsauslastungen, die unter Azure Virtual Machines ausgeführt werden. Sie können mehrere Datenträger des Premium-Speichers an einen virtuellen Computer (VM) anfügen. Mit dem Premium-Speicher können Ihre Anwendungen bis zu 32 TB Speicher pro virtuellem Computer nutzen und 64.000 IOPS (Input/Output Operations Per Second, E/A-Vorgänge pro Sekunde) pro virtuellem Computer mit äußerst niedriger Latenz für Lesevorgänge erzielen.
+Der Premium-Speicher bietet Datenträgerunterstützung für hohe Leistung mit geringe Latenz für E/A-intensive Arbeitsauslastungen, die unter Azure Virtual Machines ausgeführt werden. Sie können mehrere Datenträger des Premium-Speichers an einen virtuellen Computer (VM) anfügen. Mit dem Premium-Speicher können Ihre Anwendungen bis zu 64 TB Speicher pro virtuellem Computer nutzen sowie 80.000 IOPS (Input/Output Operations Per Second, E/A-Vorgänge pro Sekunde) pro virtuellem Computer und 2.000 MB Datenträgerdurchsatz pro Sekunde und virtuellem Computer mit äußerst niedriger Latenz für Lesevorgänge erzielen.
 
 Informationen zu den ersten Schritten mit Azure Premium-Speicher finden Sie auf der Seite [Starten Sie kostenlos](http://azure.microsoft.com/pricing/free-trial/).
 
@@ -43,11 +43,11 @@ Die folgende Liste führt wichtige Informationen auf, die vor oder bei der Verwe
 
 - Der Premium-Speicher unterstützt nur Azure-Seitenblobs, die verwendet werden, um persistente Datenträger für Azure Virtual Machines (VMs) zu speichern. Weitere Informationen zu Azure-Seitenblobs finden Sie unter [Grundlegendes zu Block-Blobs und Seitenblobs](http://msdn.microsoft.com/library/azure/ee691964.aspx). Der Premium-Speicher unterstützt keine Azure-Block-BLOBs, Azure-Dateien, Azure-Tabellen oder Azure-Warteschlangen.
 
-- Ein Premium-Speicherkonto ist lokal redundant (LRS) und verwaltet drei Kopien der Daten innerhalb einer einzelnen Region. Überlegungen zur Georeplikation bei der Verwendung von Premium-Speicher finden Sie in diesem Artikel im Abschnitt [Momentaufnahmen und Kopieren von Blob bei der Verwendung des Premium-Speichers](#snapshots-and-copy-blob-whde-deing-premium-storage).
+- Ein Premium-Speicherkonto ist lokal redundant (LRS) und verwaltet drei Kopien der Daten innerhalb einer einzelnen Region. Überlegungen zur Georeplikation bei der Verwendung von Premium-Speicher finden Sie in diesem Artikel im Abschnitt [Momentaufnahmen und Kopieren von Blob bei der Verwendung des Premium-Speichers](#snapshots-and-copy-blob-whde-DEing-premium-storage).
 
-- Wenn Sie ein Premium-Speicherkonto für Ihre VM-Datenträger verwenden möchten, müssen Sie die DS-Serie der virtuellen Computer verwenden. Mit der DS-Serie der virtuellen Computer können Sie Datenträger des Standard- und Premium-Speichers verwenden. Sie können jedoch keine Datenträger des Premium-Speichers mit virtuellen Computern verwenden, die nicht zur DS-Serie gehören. Weitere Informationen zu den verfügbaren Typen und Größen von Azure-VM-Datenträgern finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx).
+- Wenn Sie ein Premium-Speicherkonto für Ihre Datenträger für virtuelle Computer verwenden möchten, müssen Sie die DS- oder GS-Serie der virtuellen Computer verwenden. Mit der DS- oder GS-Serie der virtuellen Computer können Sie Datenträger des Standard- und Premium-Speichers verwenden. Sie können jedoch keine Datenträger des Premium-Speichers mit virtuellen Computern verwenden, die nicht zur DS- oder GS-Serie gehören. Weitere Informationen zu den verfügbaren Typen und Größen von Azure-VM-Datenträgern finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx).
 
-- Der Vorgang zum Einrichten von Datenträgern des Premium-Speichers für einen virtuellen Computer ist vergleichbar mit dem Vorgang für Standarddatenträger. Sie müssen die am besten geeignete Option für Premium-Speicher für Ihre Azure-Datenträger und virtuellen Azure-Computer auswählen. Die Größe des virtuellen Computers sollte für Ihre Arbeitsauslastung basierend auf den Leistungsmerkmalen der Premium-Angebote geeignet sein. Weitere Informationen finden Sie unter [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](#scalability-and-performance-targets-whde-deing-premium-storage).
+- Der Vorgang zum Einrichten von Datenträgern des Premium-Speichers für einen virtuellen Computer ist vergleichbar mit dem Vorgang für Standarddatenträger. Sie müssen die am besten geeignete Option für Premium-Speicher für Ihre Azure-Datenträger und virtuellen Azure-Computer auswählen. Die Größe des virtuellen Computers sollte für Ihre Arbeitsauslastung basierend auf den Leistungsmerkmalen der Premium-Angebote geeignet sein. Weitere Informationen finden Sie unter [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](#scalability-and-performance-targets-whde-DEing-premium-storage).
 
 - Ein Premium-Speicherkonto kann keinem benutzerdefinierten Domänennamen zugeordnet werden.
 
@@ -57,86 +57,27 @@ Die folgende Liste führt wichtige Informationen auf, die vor oder bei der Verwe
 Sie können den Premium-Speicher für Datenträger auf zwei Arten verwenden:
 
 - Erstellen Sie zunächst ein neues Premium-Speicherkonto, und verwenden Sie es dann beim Erstellen des virtuellen Computers.
-- Erstellen Sie einen neuen virtuellen Computer der DS-Serie. Sie können beim Erstellen des virtuellen Computers ein zuvor erstelltes Premium-Speicherkonto auswählen, ein neues Konto erstellen oder das Azure-Portal ein Premium-Standardkonto erstellen lassen.
+- Erstellen Sie einen neuen virtuellen Computer der DS- oder GS-Serie. Sie können beim Erstellen des virtuellen Computers ein zuvor erstelltes Premium-Speicherkonto auswählen, ein neues Konto erstellen oder das Azure-Portal ein Premium-Standardkonto erstellen lassen.
 
-Azure verwendet das Speicherkonto als Container für Ihr Betriebssystem und die Datenträger. Wenn Sie einen virtuellen Azure-Computer der DS-Serie erstellen und ein Azure Premium--Speicherkonto auswählen, werden also Ihr Betriebssystem und die Datenträger in diesem Speicherkonto gespeichert.
+Azure verwendet das Speicherkonto als Container für Ihr Betriebssystem und die Datenträger. Wenn Sie einen virtuellen Azure-Computer der DS- oder GS-Serie erstellen und ein Azure Premium-Speicherkonto auswählen, werden also Ihr Betriebssystem und die Datenträger in diesem Speicherkonto gespeichert.
 
 Damit Sie die Vorteile des Premium-Speichers nutzen können, erstellen Sie zuerst ein Premium-Speicherkonto vom Typ *Premium\_LRS*. Zu diesem Zweck können Sie das [Microsoft Azure-Vorschauportal](https://portal.azure.com/), [Azure PowerShell](../install-configure-powershell.md) oder die [Dienstverwaltungs-REST-API](http://msdn.microsoft.com/library/azure/ee460799.aspx) verwenden. Ausführliche Anleitungen finden Sie unter [Erstellen und Verwenden des Premium-Speicherkontos für Datenträger](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
 ### Wichtige Hinweise:
 
-- Ausführliche Informationen zu den Kapazitäts- und Bandbreitenlimits für Premium-Speicherkonten finden Sie im Abschnitt [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](#scalability-and-performance-targets-whde-deing-premium-storage). Wenn die Anforderungen Ihrer Anwendung die Skalierbarkeitsziele eines einzelnen Speicherkontos überschreiten, erstellen Sie die Anwendung so, dass mehrere Speicherkonten verwendet werden, und partitionieren Sie Ihre Daten in diesen Speicherkonten. Wenn Sie z. B. Datenträger mit einer Kapazität von 51 Terabyte (TB) an mehrere virtuelle Computer anfügen möchten, verteilen Sie diese auf zwei Speicherkonten, da 35 TB der Grenzwert für ein einzelnes Premium-Speicherkonto ist. Stellen Sie sicher, dass ein Premium-Speicherkonto stets Datenträger mit einer Größe von maximal 35 TB enthält.
+- Ausführliche Informationen zu den Kapazitäts- und Bandbreitenlimits für Premium-Speicherkonten finden Sie im Abschnitt [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](#scalability-and-performance-targets-whde-DEing-premium-storage). Wenn die Anforderungen Ihrer Anwendung die Skalierbarkeitsziele eines einzelnen Speicherkontos überschreiten, erstellen Sie die Anwendung so, dass mehrere Speicherkonten verwendet werden, und partitionieren Sie Ihre Daten in diesen Speicherkonten. Wenn Sie z. B. Datenträger mit einer Kapazität von 51 Terabyte (TB) an mehrere virtuelle Computer anfügen möchten, verteilen Sie diese auf zwei Speicherkonten, da 35 TB der Grenzwert für ein einzelnes Premium-Speicherkonto ist. Stellen Sie sicher, dass ein Premium-Speicherkonto stets Datenträger mit einer Größe von maximal 35 TB enthält.
 - Standardmäßig ist die Richtlinie für das Zwischenspeichern für alle Premium-Datenträger "Schreibgeschützt" und für die Premium-Betriebssystem-Datenträger, die an den virtuellen Computer angeschlossen sind, "Lesen/Schreiben". Diese Konfigurationseinstellung wird empfohlen, um die optimale Leistung für die E/A Ihrer Anwendung zu erreichen. Für Datenträger mit hohem oder ausschließlichem Schreibzugriff (z. B. SQL Server-Protokolldateien) deaktivieren Sie das Zwischenspeichern, sodass Sie eine bessere Anwendungsleistung erzielen können.
-- Stellen Sie sicher, dass auf Ihrem virtuellen Computer ausreichend Bandbreite zum Steuern des Datenverkehrs des Datenträgers verfügbar ist. Bei einem virtuellen Computer vom Typ „STANDARD\_DS1“ steht für Premium-Speicherdatenträgerverkehr beispielsweise eine dedizierte Bandbreite von 32 MB pro Sekunde zur Verfügung. Das bedeutet, dass mit einem an diesen virtuellen Computer angefügten Premium-Speicherdatenträger vom Typ „P10“ maximal 32 MB pro Sekunde möglich sind (nicht bis zu 100 MB pro Sekunde, die der P10-Datenträger bereitstellen kann). Mit einem virtuellen Computer vom Typ „STANDARD\_DS13“ sind maximal 256 MB pro Sekunde auf allen Datenträgern möglich. Derzeit ist der größte virtuelle Computer der DS-Serie der STANDARD\_DS14. Er kann bis zu 512 MB pro Sekunde auf allen Datenträgern bereitstellen.
+- Stellen Sie sicher, dass auf Ihrem virtuellen Computer ausreichend Bandbreite zum Steuern des Datenverkehrs des Datenträgers verfügbar ist. Bei einem virtuellen Computer vom Typ „STANDARD\_DS1“ steht für Premium-Speicherdatenträgerverkehr beispielsweise eine dedizierte Bandbreite von 32 MB pro Sekunde zur Verfügung. Das bedeutet, dass mit einem an diesen virtuellen Computer angefügten Premium-Speicherdatenträger vom Typ „P10“ maximal 32 MB pro Sekunde möglich sind (nicht bis zu 100 MB pro Sekunde, die der P10-Datenträger bereitstellen kann). Mit einem virtuellen Computer vom Typ „STANDARD\_DS13“ sind maximal 256 MB pro Sekunde auf allen Datenträgern möglich. Derzeit ist der größte virtuelle Computer der DS-Serie der STANDARD\_DS14. Er kann bis zu 512 MB pro Sekunde auf allen Datenträgern bereitstellen. Der größte virtuelle Computer der GS-Serie ist der STANDARD\_GS5. Er kann bis zu 2.000 MB pro Sekunde auf allen Datenträgern bereitstellen.
 
-	Beachten Sie, dass diese Limits nur für den Datenträgerverkehr und nicht für Cachetreffer- und Netzwerkverkehr gelten. Für den Netzwerkdatenverkehr virtueller Computer steht eine separate Bandbreite zur Verfügung. Diese unterscheidet sich von der dedizierten Bandbreite für Premium-Speicherdatenträger. Die folgende Tabelle enthält die aktuellen maximalen IOPS- und Durchsatzwerte (d. h. Bandbreitenwerte) pro virtuellem Computer der DS-Serie auf allen an den virtuellen Computer angefügten Datenträgern:
-
-	<table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;">
-<tbody>
-<tr>
-	<td><strong>Größe des virtuellen Computers</strong></td>
-	<td><strong>CPU-Kerne</strong></td>
-	<td><strong>Max. IOPS</strong></td>
-	<td><strong>Max. Bandbreite des Datenträgers</strong></td>
-</tr>
-<tr>
-	<td><strong>STANDARD_DS1</strong></td>
-	<td>1</td>
-	<td>3.200</td>
-	<td>32 MB pro Sekunde</td>
-</tr>
-<tr>
-	<td><strong>STANDARD_DS2</strong></td>
-	<td>2</td>
-	<td>6.400</td>
-	<td>64 MB pro Sekunde</td>
-</tr>
-<tr>
-	<td><strong>STANDARD_DS3</strong></td>
-	<td>4</td>
-	<td>12.800</td>
-	<td>128 MB pro Sekunde</td>
-</tr>
-<tr>
-	<td><strong>STANDARD_DS4</strong></td>
-	<td>8</td>
-	<td>25.600</td>
-	<td>256 MB pro Sekunde</td>
-</tr>
-<tr>
-	<td><strong>STANDARD_DS11</strong></td>
-	<td>2</td>
-	<td>6.400</td>
-	<td>64 MB pro Sekunde</td>
-</tr>
-<tr>
-	<td><strong>STANDARD_DS12</strong></td>
-	<td>4</td>
-	<td>12.800</td>
-	<td>128 MB pro Sekunde</td>
-</tr>
-<tr>
-	<td><strong>STANDARD_DS13</strong></td>
-	<td>8</td>
-	<td>25.600</td>
-	<td>256 MB pro Sekunde</td>
-</tr>
-<tr>
-	<td><strong>STANDARD_DS14</strong></td>
-	<td>16</td>
-	<td>50.000</td>
-	<td>512 MB pro Sekunde</td>
-</tr>
-</tbody>
-</table>
-
+	Beachten Sie, dass diese Limits nur für den Datenträgerverkehr und nicht für Cachetreffer- und Netzwerkverkehr gelten. Für den Netzwerkdatenverkehr virtueller Computer steht eine separate Bandbreite zur Verfügung. Diese unterscheidet sich von der dedizierten Bandbreite für Premium-Speicherdatenträger.
+	
 	Aktuelle Informationen finden Sie unter [Virtual Machine and Cloud Service Sizes for Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Informationen zu Premium Storage-Datenträgern und deren IOPs und Durchsatzlimits finden Sie in diesem Artikel im Abschnitt  [Scalability and Performance Targets when using Premium Storage](#scalability-and-performance-targets-when-using-premium-storage) in der Tabelle.
 
-> [AZURE.NOTE]Cachetreffer werden durch die zugeordneten IOPS-/Durchsatzwerte des Datenträgers nicht eingeschränkt. Das heißt, bei Verwendung eines Datenträgers mit der Cacheeinstellung „ReadOnly“ für einen virtuellen Computer der DS-Serie unterliegen Lesevorgänge, die vom Cache verarbeitet werden, nicht den Einschränkungen für Premium-Speicherdatenträger. Daher können Sie einen sehr hohen Durchsatz mit einem Datenträger erzielen, wenn die Arbeitsauslastung vorwiegend aus Lesevorgängen besteht. Beachten Sie, dass für den Cache separate IOPS-/Durchsatzlimits auf Ebene des virtuellen Computers basierend auf der Größe des virtuellen Computers gelten. Virtuelle Computer der DS-Serie bieten etwa 4.000 IOPS und 33 MB pro Sekunde und Kern für E/A von Caches und lokalen SSDs.
+> [AZURE.NOTE]Cachetreffer werden durch die zugeordneten IOPS-/Durchsatzwerte des Datenträgers nicht eingeschränkt. Das heißt, bei Verwendung eines Datenträgers mit der Cacheeinstellung „ReadOnly“ für einen virtuellen Computer der DS- oder GS-Serie unterliegen Lesevorgänge, die vom Cache verarbeitet werden, nicht den Einschränkungen für Premium-Speicherdatenträger. Daher können Sie einen sehr hohen Durchsatz mit einem Datenträger erzielen, wenn die Arbeitsauslastung vorwiegend aus Lesevorgängen besteht. Beachten Sie, dass für den Cache separate IOPS-/Durchsatzlimits auf Ebene des virtuellen Computers basierend auf der Größe des virtuellen Computers gelten. Virtuelle Computer der DS-Serie bieten etwa 4.000 IOPS und 33 MB pro Sekunde und Kern für E/A von Caches und lokalen SSDs.
 
-- Mit der gleichen DS-Serie der virtuellen Computer können Sie Datenträger des Premium- und Standardspeichers verwenden.
+- Auf dem gleichen virtuellen Computer der DS-Serie bzw. dem gleichen virtuellen Computer der GS-Serie können Sie sowohl Premium- als auch Standard-Speicherdatenträger verwenden.
 - Mit dem Premium-Speicher können Sie einen virtuellen Computer der DS-Serie bereitstellen und mehrere permanente Datenträger an einen virtuellen Computer anschließen. Bei Bedarf können Sie Daten über die Datenträger verteilen, um die Kapazität und die Leistung des Volumens zu erhöhen. Wenn Sie Daten über Premium-Speicher-Datenträger mithilfe von [Speicherplätzen](http://technet.microsoft.com/library/hh831739.aspx) verteilen, sollten Sie sie für jeden verwendeten Datenträger eine Spalte konfigurieren. Andernfalls kann die Gesamtleistung des Stripesetvolume aufgrund ungleicher Verteilung des Datenverkehrs auf die Datenträger niedriger sein als erwartet. Standardmäßig können Sie auf der Server-Manager-Benutzeroberfläche Spalten für bis zu 8 Datenträger einrichten. Wenn Sie jedoch mehr als 8 Datenträger besitzen, müssen Sie PowerShell verwenden, um das Volumen zu erstellen. Außerdem müssen Sie die Anzahl der Spalten manuell angeben. Andernfalls verwendet die Server-Manager-Benutzeroberfläche weiterhin 8 Spalten, auch wenn Sie mehr Datenträger besitzen. Wenn Sie beispielsweise 32 Datenträger in einem einzelnen Stripeset besitzen, sollten Sie 32 Spalten angeben. Sie können mit dem *NumberOfColumns*-Parameter des PowerShell-Cmdlets [New-VirtualDisk](http://technet.microsoft.com/library/hh848643.aspx) die Anzahl der vom virtuellen Datenträger verwendeten Spalten angeben. Weitere Informationen finden Sie unter [Übersicht über Speicherplätze](http://technet.microsoft.com/library/jj822938.aspx) und [Häufig gestellte Fragen zu Speicherplätzen](http://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx).
-- Vermeiden Sie das Hinzufügen virtueller Computer der DS-Serie zu einem vorhandenen Clouddienst, der virtuelle Computer enthält, die nicht aus der DS-Serie stammen. Eine mögliche Problemumgehung besteht darin, vorhandene virtuelle Festplatten zu einem neuen Clouddienst zu migrieren, in dem nur virtuelle Computer der DS-Serie ausgeführt werden. Wenn Sie für den neuen Clouddienst dieselbe virtuelle IP-Adresse (VIP) beibehalten möchten, unter der die virtuellen Computer der DS-Serie gehostet werden, verwenden Sie das Feature [Reservierte IP-Adressen](virtual-networks-configure-vnet-to-vnet-connection.md).
+- Vermeiden Sie das Hinzufügen virtueller Computer der DS-Serie zu einem vorhandenen Clouddienst, der virtuelle Computer enthält, die nicht aus der DS-Serie stammen. Eine mögliche Problemumgehung besteht darin, vorhandene virtuelle Festplatten zu einem neuen Clouddienst zu migrieren, in dem nur virtuelle Computer der DS-Serie ausgeführt werden. Wenn Sie für den neuen Clouddienst dieselbe virtuelle IP-Adresse (VIP) beibehalten möchten, unter der die virtuellen Computer der DS-Serie gehostet werden, verwenden Sie das Feature [Reservierte IP-Adressen](virtual-networks-configure-vnet-to-vnet-connection.md). Virtuelle Computer der GS-Serie können einem vorhandenen Clouddienst hinzugefügt werden, in dem ausschließlich virtuelle Computer der G-Serie ausgeführt werden.
 - Die DS-Serie der virtuellen Azure-Computer kann so konfiguriert werden, dass sie einen Betriebssystemdatenträger verwendet, der entweder in einem Standardspeicherkonto oder einem Premium-Speicherkonto gehostet wird. Wenn Sie den Betriebssystemdatenträger nur zum Starten verwenden, sollten Sie die Verwendung eines auf dem Standardspeicher basierenden Betriebssystemdatenträgers in Erwägung ziehen. Dadurch ergeben sich Kostenvorteile und ähnliche Leistungsergebnisse nach dem Hochfahren wie beim Premium-Speicher. Wenn Sie auf dem Betriebssystemdatenträger neben dem Starten weitere Aufgaben ausführen, verwenden Sie Premium-Speicher, da er bessere Leistungsergebnisse bietet. Wenn Ihre Anwendung vom Betriebssystemdatenträger liest und auf diesen Datenträger schreibt, bietet ein auf Premium-Speicher basierender Betriebssystemdatenträger eine bessere Leistung für Ihren virtuellen Computer.
 - Sie können die [Azure-Befehlszeilenschnittstelle (Azure CLI)](../xplat-cli.md) mit Premium-Speicher verwenden. Um die Cacherichtlinie auf einem Ihrer Datenträger mit der Azure-Befehlszeilenschnittstelle zu ändern, führen Sie den folgenden Befehl aus:
 
@@ -261,8 +202,7 @@ Nachfolgend finden Sie wichtige Anweisungen zum Konfigurieren virtueller Linux-C
 
 - Bei Premium-Speicherdatenträgern mit der Cacheeinstellung „ReadWrite“ müssen Sperren aktiviert werden, um die Beständigkeit von Schreibvorgängen zu gewährleisten.
 
-Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher überprüft wurden. Es wird empfohlen, dass Sie Ihre virtuellen Computer auf mindestens eine dieser Versionen (oder eine höhere Version) aktualisieren, um eine bessere Leistung und Stabilität mit Premium-Speicher zu erzielen. Außerdem erfordern einige Versionen die neuesten LIS (Linux-Integrationsdienste v4.0 für Microsoft Azure). Der Download und die Installation sind über folgenden Link möglich: Wir fügen der Liste mehr Images hinzu, wenn weitere Überprüfungen ausgeführt wurden. Beachten Sie, dass unsere Überprüfungen ergaben, dass die Leistung für diese Images variiert. Sie hängt auch von den Arbeitsauslastungsmerkmalen und -einstellungen der Images ab. Verschiedene Images werden für verschiedene Arten von Arbeitsauslastung optimiert. <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;"> <tbody> <tr> <td><strong>Distribution</strong></td> <td><strong>Version</strong></td> <td><strong>Unterstützter Kernel</strong></td> <td><strong>Unterstütztes Image</strong></td> </tr> <tr> <td rowspan="4"><strong>Ubuntu</strong></td> <td>12.04</td> <td>3.2.0-75.110</td> <td>Ubuntu-12\_04\_5-LTS-amd64-server-20150119-de-de-30GB</td> </tr> <tr> <td>14.04</td> <td>3.13.0-44.73</td> <td>Ubuntu-14\_04\_1-LTS-amd64-server-20150123-de-de-30GB</td> </tr> <tr> <td>14.10</td> <td>3.16.0-29.39</td> <td>Ubuntu-14\_10-amd64-server-20150202-de-de-30GB</td> </tr> <tr> <td>15.04</td> <td>3.19.0-15</td> <td>Ubuntu-15\_04-amd64-server-20150422-de-de-30GB</td> </tr> <tr> <td><strong>SUSE</strong></td> <td>SLES 12</td> <td>3.12.36-38.1</td> <td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td> </tr> <tr> <td><strong>CoreOS</strong></td> <td>584.0.0</td> <td>3.18.4</td> <td>CoreOS 584.0.0</td> </tr> <tr> <td rowspan="2"><strong>CentOS</strong></td> <td>6.5, 6.6, 7.0</td> <td></td> <td> <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 erforderlich </a> </br> *Siehe Hinweis unten</td> </tr> <tr> <td>7.1</td> <td>3.10.0-229.1.2.el7</td> <td> <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 empfohlen </a> <br/> 
- \*Siehe Hinweis unten </td> </tr>
+Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher überprüft wurden. Es wird empfohlen, dass Sie Ihre virtuellen Computer auf mindestens eine dieser Versionen (oder eine höhere Version) aktualisieren, um eine bessere Leistung und Stabilität mit Premium-Speicher zu erzielen. Außerdem erfordern einige Versionen die neuesten LIS (Linux-Integrationsdienste v4.0 für Microsoft Azure). Der Download und die Installation sind über folgenden Link möglich: Wir fügen der Liste mehr Images hinzu, wenn weitere Überprüfungen ausgeführt wurden. Beachten Sie, dass unsere Überprüfungen ergaben, dass die Leistung für diese Images variiert. Sie hängt auch von den Arbeitsauslastungsmerkmalen und -einstellungen der Images ab. Verschiedene Images werden für verschiedene Arten von Arbeitsauslastung optimiert. <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;"> <tbody> <tr> <td><strong>Distribution</strong></td> <td><strong>Version</strong></td> <td><strong>Unterstützter Kernel</strong></td> <td><strong>Unterstütztes Image</strong></td> </tr> <tr> <td rowspan="4"><strong>Ubuntu</strong></td> <td>12.04</td> <td>3.2.0-75.110</td> <td>Ubuntu-12\_04\_5-LTS-amd64-server-20150119-de-DE-30GB</td> </tr> <tr> <td>14.04</td> <td>3.13.0-44.73</td> <td>Ubuntu-14\_04\_1-LTS-amd64-server-20150123-de-DE-30GB</td> </tr> <tr> <td>14.10</td> <td>3.16.0-29.39</td> <td>Ubuntu-14\_10-amd64-server-20150202-de-DE-30GB</td> </tr> <tr> <td>15.04</td> <td>3.19.0-15</td> <td>Ubuntu-15\_04-amd64-server-20150422-de-DE-30GB</td> </tr> <tr> <td><strong>SUSE</strong></td> <td>SLES 12</td> <td>3.12.36-38.1</td> <td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td> </tr> <tr> <td><strong>CoreOS</strong></td> <td>584.0.0</td> <td>3.18.4</td> <td>CoreOS 584.0.0</td> </tr> <tr> <td rowspan="2"><strong>CentOS</strong></td> <td>6.5, 6.6, 7.0</td> <td></td> <td> <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 erforderlich </a> </br> *Siehe Hinweis unten</td> </tr> <tr> <td>7.1</td> <td>3.10.0-229.1.2.el7</td> <td> <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 empfohlen </a> <br/> *Siehe Hinweis unten </td> </tr>
 
 <tr>
 	<td rowspan="2"><strong>Oracle</strong></td>
@@ -291,11 +231,11 @@ Anschließend ist ein Neustart erforderlich, um die neuen Treiber zu aktivieren.
 ## Preisgestaltung und Abrechnung bei der Verwendung des Premium-Speichers
 Bei der Verwendung des Premium-Speichers gelten die folgenden Abrechnungserwägungen:
 
-- Die Abrechnung für einen Datenträger des Premium-Speichers hängt von der bereitgestellten Größe des Datenträgers ab. Azure ordnet die (aufgerundete) Datenträgergröße der nächsten Option für den Premium-Speicherdatenträger zu (siehe Tabelle im Abschnitt [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](#scalability-and-performance-targets-whde-deing-premium-storage)). Die Abrechnung für bereitgestellte Datenträger erfolgt anteilig auf Stundenbasis unter Verwendung des monatlichen Preises für das Premium-Speicherangebot. Wenn Sie z. B. einen Datenträger des Typs P10 bereitgestellt und diesen nach 20 Stunden gelöscht haben, erfolgt die Abrechnung für das P10-Angebot anteilig für 20 Stunden. Dies ist unabhängig von der tatsächlichen Menge von Daten, die auf den Datenträger geschrieben wurden, oder dem verwendeten IOPS/Durchsatz.
+- Die Abrechnung für einen Datenträger des Premium-Speichers hängt von der bereitgestellten Größe des Datenträgers ab. Azure ordnet die (aufgerundete) Datenträgergröße der nächsten Option für den Premium-Speicherdatenträger zu (siehe Tabelle im Abschnitt [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](#scalability-and-performance-targets-whde-DEing-premium-storage)). Die Abrechnung für bereitgestellte Datenträger erfolgt anteilig auf Stundenbasis unter Verwendung des monatlichen Preises für das Premium-Speicherangebot. Wenn Sie z. B. einen Datenträger des Typs P10 bereitgestellt und diesen nach 20 Stunden gelöscht haben, erfolgt die Abrechnung für das P10-Angebot anteilig für 20 Stunden. Dies ist unabhängig von der tatsächlichen Menge von Daten, die auf den Datenträger geschrieben wurden, oder dem verwendeten IOPS/Durchsatz.
 - Für Momentaufnahmen für den Premium-Speicher wird die zusätzliche Kapazität in Rechnung gestellt, die von den Momentaufnahmen verwendet wird. Informationen zu Momentaufnahmen finden Sie unter [Erstellen einer Momentaufnahme eines Blobs](http://msdn.microsoft.com/library/azure/hh488361.aspx).
 - [Ausgehende Datenübertragungen](http://azure.microsoft.com/pricing/details/data-transfers/) (Daten, die von den Azure-Datencentern ausgehen) verursachen Kosten bei der Bandbreitenverwendung.
 
-Ausführliche Informationen zu den Preisen für den Premium-Speicher und für virtuelle Computern der DS-Serie finden Sie unter:
+Ausführliche Informationen zu den Preisen für den Premium-Speicher und für virtuelle Computern der DS- und der GS-Serie finden Sie unter:
 
 - [Preise für Azure Storage](http://azure.microsoft.com/pricing/details/storage/)
 - [Preisgestaltung für virtuelle Computer](http://azure.microsoft.com/pricing/details/virtual-machines/)
@@ -335,7 +275,7 @@ Dieses PowerShell-Beispiel zeigt, wie Sie ein neues Premium-Speicherkonto erstel
 
 		New-AzureStorageAccount -StorageAccountName "yourpremiumaccount" -Location "West US" -Type "Premium_LRS"
 
-3. Erstellen Sie im nächsten Schritt einen neuen virtuellen Computer der DS-Serie, und geben Sie an, dass Sie Premium-Speicher wünschen, indem Sie die folgenden PowerShell-Cmdlets im Konsolenfenster ausführen:
+3. Erstellen Sie im nächsten Schritt einen neuen virtuellen Computer der DS-Serie, und geben Sie an, dass Sie Premium-Speicher wünschen, indem Sie die folgenden PowerShell-Cmdlets im Konsolenfenster ausführen: Mithilfe der gleichen Schritte können Sie auch einen virtuellen Computer der GS-Serie erstellen. Geben Sie die entsprechende Größe des virtuellen Computers in den Befehlen an. Beispiel: Standard\_GS2:
 
     	$storageAccount = "yourpremiumaccount"
     	$adminName = "youradmin"
@@ -349,7 +289,7 @@ Dieses PowerShell-Beispiel zeigt, wie Sie ein neues Premium-Speicherkonto erstel
     	Add-AzureProvisioningConfig -Windows -VM $vm -AdminUsername $adminName -Password $adminPassword
     	New-AzureVM -ServiceName $vmName -VMs $VM -Location $location
 
-4. Wenn Sie mehr Speicherplatz für Ihren virtuellen Computer benötigen, fügen Sie einen neuen Datenträger an einen vorhandenen virtuellen Computer der DS-Serie an, nachdem dieser erstellt wurde, indem Sie die folgenden PowerShell-Cmdlets im Konsolenfenster ausführen:
+4. Wenn Sie mehr Speicherplatz für Ihren virtuellen Computer benötigen, fügen Sie einen neuen Datenträger an einen vorhandenen virtuellen Computer der DS- oder GS-Serie an, nachdem dieser erstellt wurde, indem Sie die folgenden PowerShell-Cmdlets im Konsolenfenster ausführen:
 
     	$storageAccount = "yourpremiumaccount"
     	$vmName ="yourVM"
@@ -372,7 +312,7 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 #### Erstellen eines virtuellen Computers der DS-Serie
 
 	azure vm create -z "Standard_DS2" -l "west us" -e 22 "premium-test-vm"
-		"b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-de-de-30GB" -u "myusername" -p "passwd@123"
+		"b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-de-DE-30GB" -u "myusername" -p "passwd@123"
 
 #### Anzeigen von Informationen zum virtuellen Computer
 
@@ -401,4 +341,4 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
  
 
-<!----HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

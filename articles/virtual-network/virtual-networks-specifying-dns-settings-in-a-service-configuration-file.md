@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="Angeben von DNS-Einstellungen in einer Dienstkonfigurationsdatei"
-   description="Beschreibung"
-   services="virtual-network"
-   documentationCenter="na"
-   authors="joaoma"
-   manager="jdial"
-   editor="tysonn" />
+   pageTitle="Angeben von DNS-Einstellungen in einer Dienstkonfigurationsdatei | Microsoft Azure"
+	description="Angeben benutzerdefinierter DNS-Einstellungen über die Dienstkonfigurationsdatei für ein virtuelles Netzwerk"
+	services="virtual-network"
+	documentationCenter="na"
+	authors="joaoma"
+	manager="jdial"
+	editor="tysonn"/>
 <tags 
    ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="05/28/2015"
-   ms.author="joaoma" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="09/01/2015"
+	ms.author="joaoma"/>
 
 # Angeben von DNS-Einstellungen in einer Dienstkonfigurationsdatei
 
@@ -41,4 +41,4 @@ Eine Dienstkonfigurationsdatei kann ein DnsServers-Element mit einer Liste von I
 
 [Einstellungen für virtuelle Netzwerke im Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkId=248092)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

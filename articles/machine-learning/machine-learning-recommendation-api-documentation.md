@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Machine Learning-Empfehlungs-APIs – Dokumentation | Microsoft Azure" 
-	description="Azure Machine Learning-Empfehlungs-APIs – Dokumentation für ein Empfehlungsmodul, das im Microsoft Azure Marketplace verfügbar ist." 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="AharonGumnik" 
-	manager="paulettm" 
+	pageTitle="Machine Learning-Empfehlungs-APIs – Dokumentation | Microsoft Azure"
+	description="Azure Machine Learning-Empfehlungs-APIs – Dokumentation für ein Empfehlungsmodul, das im Microsoft Azure Marketplace verfügbar ist."
+	services="machine-learning"
+	documentationCenter=""
+	authors="AharonGumnik"
+	manager="paulettm"
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/10/2015" 
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="LuisCa"/>
 
 #Azure Machine Learning-Empfehlungs-APIs – Dokumentation
@@ -24,26 +24,26 @@ In diesem Dokument werden die Microsoft Azure Machine Learning-APIs für Empfehl
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
 ##1\. Allgemeine Übersicht
-Dieses Dokument ist eine API-Referenz. Beginnen Sie mit dem Dokument „Azure Machine Learning Recommendation – Quick Start“ \(Empfehlungen zu Azure Machine Learning – Schnellstart\).
+Dieses Dokument ist eine API-Referenz. Beginnen Sie mit dem Dokument „Azure Machine Learning Recommendation – Quick Start“ (Empfehlungen zu Azure Machine Learning – Schnellstart).
 
 Die Azure Machine Learning-Empfehlungs-APIs können in 10 logische Gruppen unterteilt werden:
 
-1.	<ins>Einfaches Modell</ins>: Dies sind APIs, mit denen Sie grundlegende Vorgänge für ein Modell ausführen können \(z. B. Erstellen, Aktualisieren und Löschen eines Modells\).
+1.	<ins>Einfaches Modell</ins>: Dies sind APIs, mit denen Sie grundlegende Vorgänge für ein Modell ausführen können (z. B. Erstellen, Aktualisieren und Löschen eines Modells).
 2.	<ins>Komplexes Modell</ins>: Dies sind APIs, mit denen Sie komplexere Einblicke in die Daten des Modells erhalten können.
 3.	<ins>Modellgeschäftsregeln</ins>: Dies sind APIs, mit denen Sie Geschäftsregeln für die Empfehlungsergebnisse des Modells verwalten können.
 4.	<ins>Katalog</ins>: Dies sind APIs, mit denen Sie grundlegende Vorgänge bei einem Modellkatalog ausführen können. Kataloge enthalten Metadateninformationen zu den Elementen der Nutzungsdaten.
 5.	<ins>Feature</ins>: Dies sind APIs, mit denen Sie Details zu Katalogelementen einfügen und erfahren, wie Sie diese Informationen nutzen, um bessere Empfehlungen entwickeln zu können.
-6.	<ins>Nutzungsdaten</ins>: Dies sind APIs, mit denen Sie grundlegende Vorgänge an den Modellnutzungsdaten ausführen können. Nutzungsdaten bestehen in der Grundform aus Zeilen mit Paaren von &\#60;userId&\#62;,&\#60;itemId&\#62;.
+6.	<ins>Nutzungsdaten</ins>: Dies sind APIs, mit denen Sie grundlegende Vorgänge an den Modellnutzungsdaten ausführen können. Nutzungsdaten bestehen in der Grundform aus Zeilen mit Paaren von &#60;userId&#62;,&#60;itemId&#62;.
 7.	<ins>Build</ins>: Dies sind APIs, mit denen Sie das Erstellen eines Modellbuilds auslösen und im Zusammenhang mit diesem Build grundlegende Vorgänge ausführen können. Sobald Sie sinnvolle Nutzungsdaten haben, können Sie die Erstellung eines Modells auslösen.
 8.	<ins>Empfehlung</ins>: Dies sind APIs, mit denen Sie nach der Erstellung eines Modells Empfehlungen nutzen können.
 9.	<ins>Benutzerdaten</ins>: Dies sind APIs, mit denen Sie Informationen zu den Nutzungsdaten der Benutzer abrufen können.
-10.	<ins>Benachrichtigungen</ins>: Dies sind APIs, mit denen Sie Benachrichtigungen bei Problemen im Zusammenhang mit Ihren API-Vorgängen empfangen können. \(Beispiel: Sie berichten Nutzungsdaten über die Datengewinnung, und bei der Verarbeitung von Ereignissen treten Fehler auf. Es wird eine Fehlerbenachrichtigung ausgegeben.\)
+10.	<ins>Benachrichtigungen</ins>: Dies sind APIs, mit denen Sie Benachrichtigungen bei Problemen im Zusammenhang mit Ihren API-Vorgängen empfangen können. (Beispiel: Sie berichten Nutzungsdaten über die Datengewinnung, und bei der Verarbeitung von Ereignissen treten Fehler auf. Es wird eine Fehlerbenachrichtigung ausgegeben.)
 
 ##2\. Erweiterte Themen
 
 ###2\.1. Qualität der Empfehlungen
 
-Das Erstellen eines Empfehlungsmodells ist in der Regel ausreichend, damit Empfehlungen vom System bereitgestellt werden können. Allerdings hängt die Qualität der Empfehlungen von der verarbeiteten Nutzung und der Abdeckung des Katalogs ab. Wenn beispielsweise viele „kalte“ Elemente \(Elemente ohne nennenswerte Nutzung\) vorhanden sind, ist es schwierig für das System, Empfehlungen für solche Elemente bereitzustellen oder sie als empfohlene Elemente zu verwenden. Um das Problem mit „kalten“ Elementen zu beheben, können die Metadaten der Elemente verwendet werden, um die Empfehlungen zu verbessern. Diese Metadaten werden als Funktionen bezeichnet. Typische Funktionen sind beispielsweise Buchautoren oder Filmschauspieler. Diese Funktionen werden im Katalog in Form von Schlüssel/Wert-Zeichenfolgen bereitgestellt. Die vollständige Format der Katalogdatei finden Sie im Abschnitt [Importieren von Katalogen](#81-import-catalog-data). Im folgenden Abschnitt wird die Verwendung von Features zur Verbesserung des Empfehlungsmodells erläutert.
+Das Erstellen eines Empfehlungsmodells ist in der Regel ausreichend, damit Empfehlungen vom System bereitgestellt werden können. Allerdings hängt die Qualität der Empfehlungen von der verarbeiteten Nutzung und der Abdeckung des Katalogs ab. Wenn beispielsweise viele „kalte“ Elemente (Elemente ohne nennenswerte Nutzung) vorhanden sind, ist es schwierig für das System, Empfehlungen für solche Elemente bereitzustellen oder sie als empfohlene Elemente zu verwenden. Um das Problem mit „kalten“ Elementen zu beheben, können die Metadaten der Elemente verwendet werden, um die Empfehlungen zu verbessern. Diese Metadaten werden als Funktionen bezeichnet. Typische Funktionen sind beispielsweise Buchautoren oder Filmschauspieler. Diese Funktionen werden im Katalog in Form von Schlüssel/Wert-Zeichenfolgen bereitgestellt. Die vollständige Format der Katalogdatei finden Sie im Abschnitt [Importieren von Katalogen](#81-import-catalog-data). Im folgenden Abschnitt wird die Verwendung von Features zur Verbesserung des Empfehlungsmodells erläutert.
 
 ###2\.2. Rangfolgebuild
 
@@ -51,14 +51,14 @@ Features können das Empfehlungsmodell verbessern, doch dazu ist die Verwendung 
 
 ###2\.3. Empfehlungsargumentation
 
-Die Empfehlungsargumentation ist ein weiterer Nutzungsaspekt der Features. Das Empfehlungsmodul von Azure Machine Learning kann Features verwenden, um Erläuterungen \(„Argumentation“\) zu den Empfehlungen bereitzustellen, um das Zutrauen desjenigen, der die Empfehlung verwendet, in das empfohlene Element zu erhöhen. Zum Aktivieren der Argumentation müssen die Parameter `AllowFeatureCorrelation` und `ReasoningFeatureList` eingerichtet werden, bevor ein Empfehlungsbuild angefordert wird.
+Die Empfehlungsargumentation ist ein weiterer Nutzungsaspekt der Features. Das Empfehlungsmodul von Azure Machine Learning kann Features verwenden, um Erläuterungen („Argumentation“) zu den Empfehlungen bereitzustellen, um das Zutrauen desjenigen, der die Empfehlung verwendet, in das empfohlene Element zu erhöhen. Zum Aktivieren der Argumentation müssen die Parameter `AllowFeatureCorrelation` und `ReasoningFeatureList` eingerichtet werden, bevor ein Empfehlungsbuild angefordert wird.
 
 ##3\. Einschränkungen
 
 - Die Maximale Anzahl von Modellen pro Abonnement beträgt 10.
 - Die maximale Anzahl von Elementen, die ein Katalog aufnehmen kann, beträgt 100.000.
 - Die maximale Menge der Nutzungspunkte, die aufbewahrt werden, beträgt etwa 5.000.000. Die ältesten werden gelöscht, wenn neue hochgeladen oder gemeldet werden.
-- Die maximale Größe der Daten, die in POST gesendet werden können \(z. B. Importieren von Katalog- oder Nutzungsdaten\), beträgt 200 MB.
+- Die maximale Größe der Daten, die in POST gesendet werden können (z. B. Importieren von Katalog- oder Nutzungsdaten), beträgt 200 MB.
 - Die Anzahl der Transaktionen pro Sekunde bei Empfehlungsmodellbuilds, die nicht aktiv sind, beträgt etwa 2 T/s. Bei aktiven Empfehlungsmodellbuilds sind bis zu 20 T/s möglich.
 
 ##4\. APIs – allgemeine Informationen
@@ -88,7 +88,7 @@ Es wird eine Anforderung „Modell erstellen“ erstellt.
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
-|	modelName |	Es sind nur Buchstaben \(A-Z, a-z\), Zahlen \(0-9\), Bindestriche \(-\) und Unterstriche \(\_\) zulässig.<br>Max. Länge: 20 \| \| apiVersion \| 1.0 \| \|\|\| \| Anforderungstext \| NONE \|
+|	modelName |	Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (\_) zulässig.<br>Max. Länge: 20 | | apiVersion | 1.0 | ||| | Anforderungstext | NONE |
 
 
 **Antwort**:
@@ -136,9 +136,9 @@ Hiermit wird eine Anforderung „Modell abrufen“ erstellt.
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
-|	id |	Dies ist der eindeutige Bezeichner des Modells \(Groß-/Kleinschreibung muss beachtet werden\). |
+|	id |	Dies ist der eindeutige Bezeichner des Modells (Groß-/Kleinschreibung muss beachtet werden). |
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -154,7 +154,7 @@ Die Modelldaten finden Sie bei den folgenden Elementen:
 	- ReadyForBuild: Das Modell wird mit Katalog und Nutzung erstellt.
 - `feed/entry/content/properties/HasActiveBuild`: Hier wird angegeben, ob das Modell erfolgreich erstellt wurde.
 - `feed/entry/content/properties/BuildId`: Dies ist die ID des aktiven Modellbuilds.
-- `feed/entry/content/properties/Mpr`: Dies ist die mittlere Prozentrangwertung \(MPR – weitere Informationen finden Sie unter ModelInsight\) des Modells.
+- `feed/entry/content/properties/Mpr`: Dies ist die mittlere Prozentrangwertung (MPR – weitere Informationen finden Sie unter ModelInsight) des Modells.
 - `feed/entry/content/properties/UserName`: Dies ist der interne Benutzername des Modells.
 
 OData-XML
@@ -200,7 +200,7 @@ Hierdurch werden alle Modelle des aktuellen Benutzers abgerufen.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -214,7 +214,7 @@ HTTP-Statuscode: 200
   - ReadyForBuild: Das Modell wird mit Katalog und Nutzung erstellt.
 - `feed/entry/content/properties/HasActiveBuild`: Hier wird angegeben, ob das Modell erfolgreich erstellt wurde.
 - `feed/entry/content/properties/BuildId`: Dies ist die ID des aktiven Modellbuilds.
-- `feed/entry/content/properties/Mpr`: Dies ist die MPR des Modells \(weitere Informationen finden Sie unter ModelInsight\).
+- `feed/entry/content/properties/Mpr`: Dies ist die MPR des Modells (weitere Informationen finden Sie unter ModelInsight).
 - `feed/entry/content/properties/UserName`: Dies ist der interne Benutzername des Modells.
 - `feed/entry/content/properties/UsageFileNames`: Dies ist eine kommagetrennte Liste von Modellnutzungsdateien.
 - `feed/entry/content/properties/CatalogId`: Dies ist die ID des Modellkatalogs.
@@ -266,9 +266,9 @@ Sie können die Modellbeschreibung oder die aktive Build-ID aktualisieren.<br> <
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
-|	id | Dies ist der eindeutige Bezeichner des Modells \(Groß-/Kleinschreibung muss beachtet werden\). |
+|	id | Dies ist der eindeutige Bezeichner des Modells (Groß-/Kleinschreibung muss beachtet werden). |
 |	apiVersion | 1\.0 |
-\|\|\| \| Request Body \| `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`<Description>New Description</Description>`<br>`<ActiveBuildId>-1</ActiveBuildId>`<br>` </ModelUpdateParams>`<br><br>Beachten Sie, dass die Beschreibung der XML-Tags sowie die ActiveBuildId optional sind. Wenn Sie keine Beschreibung oder keine ActiveBuildId festlegen möchten, entfernen Sie das gesamte Tag.\|
+||| | Request Body | `<ModelUpdateParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">`<br>`<Description>New Description</Description>`<br>`<ActiveBuildId>-1</ActiveBuildId>`<br>` </ModelUpdateParams>`<br><br>Beachten Sie, dass die Beschreibung der XML-Tags sowie die ActiveBuildId optional sind. Wenn Sie keine Beschreibung oder keine ActiveBuildId festlegen möchten, entfernen Sie das gesamte Tag.|
 
 **Antwort**:
 
@@ -283,9 +283,9 @@ Löscht ein vorhandenes Modell nach ID.
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
-|	id |	Dies ist der eindeutige Bezeichner des Modells \(Groß-/Kleinschreibung muss beachtet werden\). |
+|	id |	Dies ist der eindeutige Bezeichner des Modells (Groß-/Kleinschreibung muss beachtet werden). |
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -328,7 +328,7 @@ Nur für den Empfehlungsbuild verfügbar.
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -564,7 +564,7 @@ Nur für den Empfehlungsbuild verfügbar.
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	buildId |	Optional. Mit dieser Nummer wird ein erfolgreicher Build identifiziert. |
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -643,7 +643,7 @@ Hierdurch wird eine Probe des Empfehlungsmodells abgerufen.
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -783,7 +783,7 @@ d5358189-d70f-4e35-8add-34b83b4942b3, Pigs in Heaven
 </pre>
 
 ##7\. Modellgeschäftsregeln
-Es gibt 4 Typen von Regeln: <strong>BlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen. <strong>Upsale</strong>: Hiermit können Sie das Zurückgeben von Elementen in den Empfehlungsergebnissen erzwingen. <strong>WhiteList</strong>: Mit dieser Funktion können Sie eine Positivliste mit den einzigen Elementen erstellen, die in den Empfehlungsergebnissen zurückgegeben werden sollen \(Gegenfunktion zur Sperrliste\). <strong>PerSeedBlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste pro Startwert erstellen, um für jedes Element eine Liste von Elementen festzulegen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
+Es gibt 4 Typen von Regeln: <strong>BlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen. <strong>Upsale</strong>: Hiermit können Sie das Zurückgeben von Elementen in den Empfehlungsergebnissen erzwingen. <strong>WhiteList</strong>: Mit dieser Funktion können Sie eine Positivliste mit den einzigen Elementen erstellen, die in den Empfehlungsergebnissen zurückgegeben werden sollen (Gegenfunktion zur Sperrliste). <strong>PerSeedBlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste pro Startwert erstellen, um für jedes Element eine Liste von Elementen festzulegen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
 
 
 ###7\.1. Modellregeln abrufen
@@ -796,7 +796,7 @@ Es gibt 4 Typen von Regeln: <strong>BlockList</strong>: Mit dieser Funktion kön
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -852,7 +852,7 @@ OData-XML
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	apiVersion | 1\.0 |
-\|\|\| \| Request Body \| <ins>Zum Hinzufügen der BlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der Upsale-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der WhiteList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der PerSeedBlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`\|
+||| | Request Body | <ins>Zum Hinzufügen der BlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der Upsale-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der WhiteList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der PerSeedBlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
 
 **Antwort**:
 
@@ -861,7 +861,7 @@ HTTP-Statuscode: 200
 Von der API wird die neu erstellte Regel mit Details zurückgegeben. Die Eigenschaft „Rules“ kann aus den folgenden Pfaden abgerufen werden:
 
 - `feed/entry/content/properties/Id`: Dies ist der eindeutige Bezeichner dieser Regel.
-- `feed/entry/content/properties/Type`: Dies ist der Typ der Regel \(„BlockList“ oder „Upsale“\).
+- `feed/entry/content/properties/Type`: Dies ist der Typ der Regel („BlockList“ oder „Upsale“).
 - `feed/entry/content/properties/Parameter`: Dies ist der Parameter der Regel.
 
 OData-XML
@@ -899,7 +899,7 @@ OData-XML
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	filterId |	Dies ist der eindeutige Bezeichner des Filters. |
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -915,7 +915,7 @@ HTTP-Statuscode: 200
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -939,7 +939,7 @@ Hinweis: Die maximale Dateigröße beträgt 200 MB.
 
 | Name | Erforderlich | Typ | Beschreibung |
 |:---|:---|:---|:---|
-| Element-ID |Ja | \[A-z\], \[a-z\], \[0-9\], \[\_\] &\#40;Unterstrich&\#41;, \[-\] &\#40;Bindestrich&\#41;<br> Max. Länge: 50 \| Eindeutiger Bezeichner eines Elements. \| \| Elementname \| Ja \| Alle alphanumerischen Zeichen<br> Max. Länge: 255 \| Elementname. \| \| Elementkategorie \| Ja \| Alle alphanumerischen Zeichen <br> Max. Länge: 255 \| Kategorie, zu der dieses Element gehört \(z. B. Kochbücher, Drama…\). Darf leer sein. \| \| Beschreibung \| Nein, es sei denn, es sind Features vorhanden \(darf jedoch leer sein\) \| Alle alphanumerischen Zeichen <br> Max. Länge: 4000 \| Dies ist die Beschreibung des Elements. \| \| Featureliste \| Nein \| Alle alphanumerischen Zeichen <br> Max. Länge: 4000 \| Dies ist eine kommagetrennte Liste im Format „Featurename=Featurewert“ zum Verbessern der Modellempfehlung; siehe Abschnitt [Erweiterte Themen](#2-advanced-topics). \|
+| Element-ID |Ja | [A-z], [a-z], [0-9], [\_] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 50 | Eindeutiger Bezeichner eines Elements. | | Elementname | Ja | Alle alphanumerischen Zeichen<br> Max. Länge: 255 | Elementname. | | Elementkategorie | Ja | Alle alphanumerischen Zeichen <br> Max. Länge: 255 | Kategorie, zu der dieses Element gehört (z. B. Kochbücher, Drama…). Darf leer sein. | | Beschreibung | Nein, es sei denn, es sind Features vorhanden (darf jedoch leer sein) | Alle alphanumerischen Zeichen <br> Max. Länge: 4000 | Dies ist die Beschreibung des Elements. | | Featureliste | Nein | Alle alphanumerischen Zeichen <br> Max. Länge: 4000 | Dies ist eine kommagetrennte Liste im Format „Featurename=Featurewert“ zum Verbessern der Modellempfehlung; siehe Abschnitt [Erweiterte Themen](#2-advanced-topics). |
 
 
 | HTTP-Methode | URI |
@@ -949,7 +949,7 @@ Hinweis: Die maximale Dateigröße beträgt 200 MB.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
-| filename | Textbezeichner des Katalogs.<br>Es sind nur Buchstaben \(A-Z, a-z\), Zahlen \(0-9\), Bindestriche \(-\) und Unterstrich \(\_\) zulässig.<br>Max. Länge: 50 \| \| apiVersion \| 1.0 \| \|\|\| \| Anforderungstext \| Beispiel \(mit Features\):<br/>2406e770-769c-4189-89de-1c9283f93a96,Clara Callan,Book,the book description,author=Richard Wright,publisher=Harper Flamingo Canada,year=2001<br>21bf8088-b6c0-4509-870c-e1c7ac78304a,The Forgetting Room: A Fiction \(Byzantium Book\),Book,,author=Nick Bantock,publisher=Harpercollins,year=1997<br>3bb5cb44-d143-4bdd-a55c-443964bf4b23,Spadework,Book,,author=Timothy Findley, publisher=HarperFlamingo Canada, year=2001<br>552a1940-21e4-4399-82bb-594b46d7ed54,Restraint of Beasts,Book,the book description,author=Magnus Mills, publisher=Arcade Publishing, year=1998</pre> \|
+| filename | Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstrich (\_) zulässig.<br>Max. Länge: 50 | | apiVersion | 1.0 | ||| | Anforderungstext | Beispiel (mit Features):<br/>2406e770-769c-4189-89de-1c9283f93a96,Clara Callan,Book,the book description,author=Richard Wright,publisher=Harper Flamingo Canada,year=2001<br>21bf8088-b6c0-4509-870c-e1c7ac78304a,The Forgetting Room: A Fiction (Byzantium Book),Book,,author=Nick Bantock,publisher=Harpercollins,year=1997<br>3bb5cb44-d143-4bdd-a55c-443964bf4b23,Spadework,Book,,author=Timothy Findley, publisher=HarperFlamingo Canada, year=2001<br>552a1940-21e4-4399-82bb-594b46d7ed54,Restraint of Beasts,Book,the book description,author=Magnus Mills, publisher=Arcade Publishing, year=1998</pre> |
 
 
 **Antwort**:
@@ -992,7 +992,7 @@ Hierdurch werden alle Katalogelemente abgerufen.
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1094,7 +1094,7 @@ OData-XML
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	token |	Dies ist das Token des Katalogelementnamens. Muss mindestens 3 Zeichen enthalten. |
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1148,7 +1148,7 @@ In diesem Abschnitt wird gezeigt, wie Nutzungsdaten mithilfe einer Datei hochgel
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
-| filename | Textbezeichner des Katalogs.<br>Es sind nur Buchstaben \(A-Z, a-z\), Zahlen \(0-9\), Bindestriche \(-\) und Unterstriche \(_\) zulässig.<br>Max. Länge: 50 \| \| apiVersion \| 1.0 \| \|\|\| \| Anforderungstext \| Nutzungsdaten. Format:<br>`<User Id>,<Item Id>[,<Time>,<Event>]`<br><br><table><tr><th>Name</th><th>Obligatorisch</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>Benutzer-ID</td><td>Ja</td><td>\[A-z\], \[a-z\], \[0-9\], \[_\] &\#40;Unterstrich&\#41;, \[-\] &\#40;Bindestrich&\#41;<br> Max. Länge: 255 </td><td>Eindeutiger Bezeichner eines Benutzers.</td></tr><tr><td>Element-ID</td><td>Ja</td><td>\[A-z\], \[a-z\], \[0-9\], \[&\#95;\] &\#40;Unterstrich&\#41;, \[-\] &\#40;Bindestrich&\#41;<br> Max. Länge: 50</td><td>Eindeutiger Bezeichner eines Elements.</td></tr><tr><td>Zeit</td><td>Nein</td><td>Datum im Format: JJJJ/MM/TTTHH:MM:SS \(z. B. 2013/06/20T10:00:00\)</td><td>Zeitstempel der Daten.</td></tr><tr><td>Ereignis</td><td>Nein; wenn bereitgestellt, muss auch ein Datum angegeben werden</td><td>Eins der Folgenden:<br>• Click<br>• RecommendationClick<br>• AddShopCart<br>• RemoveShopCart<br>• Purchase</td><td></td></tr></table><br>Max. Dateigröße: 200MB<br><br>Beispiel:<br><pre>149452,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>6360,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>50321,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>71285,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>224450,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>236645,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>107951,1b3d95e2-84e4-414c-bb38-be9cf461c347</pre> |
+| filename | Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) zulässig.<br>Max. Länge: 50 | | apiVersion | 1.0 | ||| | Anforderungstext | Nutzungsdaten. Format:<br>`<User Id>,<Item Id>[,<Time>,<Event>]`<br><br><table><tr><th>Name</th><th>Obligatorisch</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>Benutzer-ID</td><td>Ja</td><td>[A-z], [a-z], [0-9], [_] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 255 </td><td>Eindeutiger Bezeichner eines Benutzers.</td></tr><tr><td>Element-ID</td><td>Ja</td><td>[A-z], [a-z], [0-9], [&#95;] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 50</td><td>Eindeutiger Bezeichner eines Elements.</td></tr><tr><td>Zeit</td><td>Nein</td><td>Datum im Format: JJJJ/MM/TTTHH:MM:SS (z. B. 2013/06/20T10:00:00)</td><td>Zeitstempel der Daten.</td></tr><tr><td>Ereignis</td><td>Nein; wenn bereitgestellt, muss auch ein Datum angegeben werden</td><td>Eins der Folgenden:<br>• Click<br>• RecommendationClick<br>• AddShopCart<br>• RemoveShopCart<br>• Purchase</td><td></td></tr></table><br>Max. Dateigröße: 200MB<br><br>Beispiel:<br><pre>149452,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>6360,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>50321,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>71285,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>224450,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>236645,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>107951,1b3d95e2-84e4-414c-bb38-be9cf461c347</pre> |
 
 **Antwort**:
 
@@ -1184,7 +1184,7 @@ OData-XML
 
 
 ####9\.1.2. Verwenden der Datenerfassung
-In diesem Abschnitt wird gezeigt, wie Ereignisse in Echtzeit an Azure Machine Learning-Empfehlungen gesendet werden \(in der Regel von Ihrer Website\).
+In diesem Abschnitt wird gezeigt, wie Ereignisse in Echtzeit an Azure Machine Learning-Empfehlungen gesendet werden (in der Regel von Ihrer Website).
 
 | HTTP-Methode | URI |
 |:--------|:--------|
@@ -1193,7 +1193,7 @@ In diesem Abschnitt wird gezeigt, wie Ereignisse in Echtzeit an Azure Machine Le
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 |	apiVersion | 1,0 |
-|Anforderungstext| Ereignisdateneintrag für jedes Ereignis, das Sie senden möchten. Senden Sie für die gleiche Benutzer- oder Browsersitzung die gleiche ID im Feld „SessionId“. \(Siehe Beispielereignistext unten.\)|
+|Anforderungstext| Ereignisdateneintrag für jedes Ereignis, das Sie senden möchten. Senden Sie für die gleiche Benutzer- oder Browsersitzung die gleiche ID im Feld „SessionId“. (Siehe Beispielereignistext unten.)|
 
 
 - Beispiel für das Ereignis „Click“:
@@ -1248,9 +1248,9 @@ In diesem Abschnitt wird gezeigt, wie Ereignisse in Echtzeit an Azure Machine Le
   		</EventData>
 		</Event>
 
-- Beispiel für das Ereignis „Purchase“: \<Event xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\> <ModelId>2779c063-48fb-46c1-bae3-74acddc8c1d1</ModelId> <SessionId>11112222</SessionId> <EventData> <EventData> <Name>Purchase</Name> <PurchaseItems> <PurchaseItems> <ItemId>21BF8088-B6C0-4509-870C-E1C7AC78304A</ItemId> <Count>3</Count> </PurchaseItems> </PurchaseItems> </EventData> </EventData> </Event>
+- Beispiel für das Ereignis „Purchase“: <Event xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> <ModelId>2779c063-48fb-46c1-bae3-74acddc8c1d1</ModelId> <SessionId>11112222</SessionId> <EventData> <EventData> <Name>Purchase</Name> <PurchaseItems> <PurchaseItems> <ItemId>21BF8088-B6C0-4509-870C-E1C7AC78304A</ItemId> <Count>3</Count> </PurchaseItems> </PurchaseItems> </EventData> </EventData> </Event>
 
-- Beispiel für das Senden von 2 Ereignissen \(„Click“ und „AddShopCart“\):
+- Beispiel für das Senden von 2 Ereignissen („Click“ und „AddShopCart“):
 
 		<Event xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   		<ModelId>2779c063-48fb-46c1-bae3-74acddc8c1d1</ModelId>
@@ -1283,7 +1283,7 @@ Hierdurch werden von allen Modellnutzungsdateien Metadaten abgerufen.
 |:--------			|:--------								|
 |	forModelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |	apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1349,7 +1349,7 @@ Hierdurch werden Nutzungsstatistiken abgerufen.
 | endDate |	Dies ist das Enddatum. Format: yyyy/MM/ddTHH:mm:ss |
 | eventTypes |	Dies ist eine kommagetrennte Zeichenfolge aus Ereignistypen oder null, um alle Ereignisse abzurufen. |
 | apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1357,7 +1357,7 @@ HTTP-Statuscode: 200
 
 Dies ist eine Sammlung von Schlüssel/Wert-Elementen. Jede Sammlung enthält die Ereignissumme für einen bestimmten Ereignistyp nach Stunden gruppiert.
 
-- `feed\entry[i]\content\properties\Key`: Enthält die Zeit \(gruppiert nach Stunden\) und den Ereignistyp.
+- `feed\entry[i]\content\properties\Key`: Enthält die Zeit (gruppiert nach Stunden) und den Ereignistyp.
 - `feed\entry[i]\content\properties\Value`: Dies ist die Gesamtzahl der Ereignisse.
 
 OData-XML
@@ -1431,7 +1431,7 @@ Hierdurch werden die ersten 2 KB des Nutzungsdateiinhalts abgerufen.
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | fileId |	Dies ist der eindeutige Bezeichner der Modellnutzungsdatei. |
 | apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1453,7 +1453,7 @@ Hierdurch wird der vollständige Inhalt der Nutzungsdatei abgerufen.
 | fid |	Dies ist der eindeutige Bezeichner der Modellnutzungsdatei. |
 | Download | 1 |
 | apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1473,7 +1473,7 @@ Hierdurch wird die angegebene Modellnutzungsdatei gelöscht.
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | fileId | Dies ist der eindeutige Bezeichner der zu löschenden Datei. |
 | apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -1491,16 +1491,16 @@ Hierdurch werden alle Modellnutzungsdateien gelöscht.
 |:--------			|:--------								|
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
 HTTP-Statuscode: 200
 
 ##10\. Merkmale
-In diesem Abschnitt wird gezeigt, wie Featureinformationen abgerufen werden, z. B. die importierten Features, ihre Werte und ihr Rang, und wann dieser Rang zugeordnet wurde. Features werden als Teil der Katalogdaten importiert, und wenn ein Rangfolgebuild abgeschlossen ist, wird ihnen ein Rang zugeordnet. Der Rang der Features kann sich je nach Nutzungsdatenmuster und Elementtyp ändern. Bei konsistenter Nutzung und konsistenten Elementen dürfte der Rang jedoch nur geringfügigen Schwankungen unterliegen. Der Rang eines Features ist eine nicht-negative Zahl. Die Zahl 0 bedeutet, dass das Feature noch nicht eingestuft wurde \(dies ist der Fall, wenn diese API vor dem Abschluss des ersten Rangfolgebuilds aufgerufen wurde\). Das Datum, an dem der Rang zugeordnet wurde, wird als Aktualität der Bewertung bezeichnet.
+In diesem Abschnitt wird gezeigt, wie Featureinformationen abgerufen werden, z. B. die importierten Features, ihre Werte und ihr Rang, und wann dieser Rang zugeordnet wurde. Features werden als Teil der Katalogdaten importiert, und wenn ein Rangfolgebuild abgeschlossen ist, wird ihnen ein Rang zugeordnet. Der Rang der Features kann sich je nach Nutzungsdatenmuster und Elementtyp ändern. Bei konsistenter Nutzung und konsistenten Elementen dürfte der Rang jedoch nur geringfügigen Schwankungen unterliegen. Der Rang eines Features ist eine nicht-negative Zahl. Die Zahl 0 bedeutet, dass das Feature noch nicht eingestuft wurde (dies ist der Fall, wenn diese API vor dem Abschluss des ersten Rangfolgebuilds aufgerufen wurde). Das Datum, an dem der Rang zugeordnet wurde, wird als Aktualität der Bewertung bezeichnet.
 
-###10\.1. Featureinformationen abrufen \(für den letzten Rangfolgebuild\)
+###10\.1. Featureinformationen abrufen (für den letzten Rangfolgebuild)
 Hierdurch werden Featureinformationen einschließlich Rang für den letzten erfolgreichen Rangfolgebuild abgerufen.
 
 | HTTP-Methode | URI |
@@ -1512,7 +1512,7 @@ Hierdurch werden Featureinformationen einschließlich Rang für den letzten erfo
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 |samplingSize| Dies ist die Anzahl der Werte, die für jedes Feature anhand der Daten im Katalog eingeschlossen werden sollen. <br/>Mögliche Werte sind:<br> -1: Alle Proben <br>0: Keine Proben <br>N - N Proben für jeden Featurenamen zurückgeben|
 | apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 
 **Antwort**:
@@ -1522,8 +1522,8 @@ HTTP-Statuscode: 200
 Die Antwort enthält eine Liste der Informationseinträge der Features. Jeder Eintrag enthält folgende Elemente:
 
 - `feed/entry/content/m:properties/d:Name`: Name des Features.
-- `feed/entry/content/m:properties/d:RankUpdateDate`: Datum, an dem der Rang dem Feature zugeordnet wurde \(Aktualität der Bewertung\). Ein historisches Datum \(„0001-01-01T00:00:00“\) bedeutet, dass kein Rangfolgebuild ausgeführt wurde.
-- `feed/entry/content/m:properties/d:Rank`: Rang des Features \(Gleitkommazahl\). Bei einem Rang ab 2.0 gilt das Feature als gut.
+- `feed/entry/content/m:properties/d:RankUpdateDate`: Datum, an dem der Rang dem Feature zugeordnet wurde (Aktualität der Bewertung). Ein historisches Datum („0001-01-01T00:00:00“) bedeutet, dass kein Rangfolgebuild ausgeführt wurde.
+- `feed/entry/content/m:properties/d:Rank`: Rang des Features (Gleitkommazahl). Bei einem Rang ab 2.0 gilt das Feature als gut.
 - `feed/entry/content/m:properties/d:SampleValues`: Kommagetrennte Liste von Werten bis zur angeforderten Probengröße.
 
 OData-XML
@@ -1580,13 +1580,13 @@ OData-XML
 </feed>
 
 
-###10\.2. Featureinformationen abrufen \(für einen bestimmten Rangfolgebuild\)
+###10\.2. Featureinformationen abrufen (für einen bestimmten Rangfolgebuild)
 
 Hierdurch werden Featureinformationen einschließlich Rang für einen bestimmten Rangfolgebuild abgerufen.
 
 | HTTP-Methode | URI |
 |:--------|:--------|
-|GET |`<rootURI>/GetModelFeatures?modelId=%27<modelId>%27&samplingSize=%27<samplingSize>%27&rankBuildId=%27<rankBuildId>%27&apiVersion=%271.0%27`<br><br>Beispiel<br>`<rootURI>/GetModelFeatures?modelId=%271c1110f8-7d9f-4c64-a807-4c9c5329993a%27&samplingSize=10%27&rankBuildId=%271000551%27&apiVersion=%271.0%27`:
+|GET |`<rootURI>/GetModelFeatures?modelId=%27<modelId>%27&samplingSize=%27<samplingSize>%27&rankBuildId=<rankBuildId>&apiVersion=%271.0%27`<br><br>Beispiel<br>`<rootURI>/GetModelFeatures?modelId=%271c1110f8-7d9f-4c64-a807-4c9c5329993a%27&samplingSize=10%27&rankBuildId=1000551&apiVersion=%271.0%27`:
 
 | Parametername |	Gültige Werte |
 |:--------			|:--------			|
@@ -1594,7 +1594,7 @@ Hierdurch werden Featureinformationen einschließlich Rang für einen bestimmten
 |samplingSize| Dies ist die Anzahl der Werte, die für jedes Feature anhand der Daten im Katalog eingeschlossen werden sollen.<br/> Mögliche Werte sind:<br> -1: Alle Proben <br>0: Keine Proben <br>N - N Proben für jeden Featurenamen zurückgeben|
 |rankBuildId| Dies ist der eindeutige Bezeichner des Rangfolgebuilds oder -1 für den letzten Rangfolgebuild.|
 | apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 
 **Antwort**:
@@ -1604,8 +1604,8 @@ HTTP-Statuscode: 200
 Die Antwort enthält eine Liste der Informationseinträge der Features. Jeder Eintrag enthält folgende Elemente:
 
 - `feed/entry/content/m:properties/d:Name`: Name des Features.
-- `feed/entry/content/m:properties/d:RankUpdateDate`: Datum, an dem der Rang dem Feature zugeordnet wurde \(Aktualität der Bewertung\). Ein historisches Datum \(„0001-01-01T00:00:00“\) bedeutet, dass kein Rangfolgebuild ausgeführt wurde.
-- `feed/entry/content/m:properties/d:Rank`: Rang des Features \(Gleitkommazahl\). Bei einem Rang ab 2.0 gilt das Feature als gut.
+- `feed/entry/content/m:properties/d:RankUpdateDate`: Datum, an dem der Rang dem Feature zugeordnet wurde (Aktualität der Bewertung). Ein historisches Datum („0001-01-01T00:00:00“) bedeutet, dass kein Rangfolgebuild ausgeführt wurde.
+- `feed/entry/content/m:properties/d:Rank`: Rang des Features (Gleitkommazahl). Bei einem Rang ab 2.0 gilt das Feature als gut.
 - `feed/entry/content/m:properties/d:SampleValues`: Kommagetrennte Liste von Werten bis zur angeforderten Probengröße.
 
 OData
@@ -1664,24 +1664,24 @@ OData
 
 ##11\. Entwickeln
 
-  In diesem Abschnitt werden die verschiedenen APIs im Zusammenhang mit Builds erläutert. Es gibt 3 Arten von Builds: Empfehlungsbuilds, Rangfolgebuilds und FBT-Builds \(Frequently Bought Together, häufig zusammen gekauft\).
+  In diesem Abschnitt werden die verschiedenen APIs im Zusammenhang mit Builds erläutert. Es gibt 3 Arten von Builds: Empfehlungsbuilds, Rangfolgebuilds und FBT-Builds (Frequently Bought Together, häufig zusammen gekauft).
 
-Empfehlungsbuilds dienen dazu, Empfehlungsmodelle für Vorhersagen zu erstellen. Für Vorhersagen \(für diese Art Build\) gibt es zwei Varianten: * I2I – auch bekannt als "Item to Item"-Empfehlungen – diese Option sagt anhand eines Elements oder einer Elementliste andere Elemente voraus, die wahrscheinlich von hohem Interesse sind. * U2I – auch bekannt als "User to Item"-Empfehlungen – diese Option sagt anhand einer Benutzer-ID \(und optional einer Liste von Elementen\) andere Elemente voraus, die wahrscheinlich für den Benutzer \(sowie ggf. seine sonstige Elementauswahl\) von hohem Interesse sind. U2I-Empfehlungen basieren auf dem Verlauf derjenigen Elemente, für die der Benutzer sich bis zu dem Zeitpunkt interessiert hat, zu dem das Modell entwickelt wurde.
+Empfehlungsbuilds dienen dazu, Empfehlungsmodelle für Vorhersagen zu erstellen. Für Vorhersagen (für diese Art Build) gibt es zwei Varianten: * I2I – auch bekannt als "Item to Item"-Empfehlungen – diese Option sagt anhand eines Elements oder einer Elementliste andere Elemente voraus, die wahrscheinlich von hohem Interesse sind. * U2I – auch bekannt als "User to Item"-Empfehlungen – diese Option sagt anhand einer Benutzer-ID (und optional einer Liste von Elementen) andere Elemente voraus, die wahrscheinlich für den Benutzer (sowie ggf. seine sonstige Elementauswahl) von hohem Interesse sind. U2I-Empfehlungen basieren auf dem Verlauf derjenigen Elemente, für die der Benutzer sich bis zu dem Zeitpunkt interessiert hat, zu dem das Modell entwickelt wurde.
 
-Rangfolgebuilds sind technische Builds, welche die Nützlichkeit Ihrer Features vermitteln können. Um bei Empfehlungsmodellen mit Features die besten Ergebnisse zu erzielen, sollten Sie die folgenden Schritte ausführen: - Lösen Sie einen Rangfolgebuild aus \(sofern die Bewertung Ihrer Features nicht stabil ist\), und warten Sie, bis Sie die Featurebewertung erhalten. - Rufen Sie den Rang Ihrer Features durch einen Aufruf an die API [Get Features Info](#101-get-features-info-for-last-rank-build) ab. - Konfigurieren Sie einen Empfehlungsbuild mit den folgenden Parametern: - `useFeatureInModel`: Auf „True“ festlegen. - `ModelingFeatureList`: Auf eine kommagetrennte Liste mit einer Bewertung von mindestens 2.0 festlegen \(je nach den im vorigen Schritt abgerufenen Rängen\). - `AllowColdItemPlacement`: Auf „True“ festlegen. - Optional können Sie `EnableFeatureCorrelation` auf „True“ und `ReasoningFeatureList` auf die Liste der Features festlegen, die Sie bei Erläuterungen verwenden möchten \(meist ist das die Featureliste, die beim Modellieren verwendet wird, oder eine Unterliste\). - Lösen Sie den Empfehlungsbuild mit den konfigurierten Parametern aus.
+Rangfolgebuilds sind technische Builds, welche die Nützlichkeit Ihrer Features vermitteln können. Um bei Empfehlungsmodellen mit Features die besten Ergebnisse zu erzielen, sollten Sie die folgenden Schritte ausführen: - Lösen Sie einen Rangfolgebuild aus (sofern die Bewertung Ihrer Features nicht stabil ist), und warten Sie, bis Sie die Featurebewertung erhalten. - Rufen Sie den Rang Ihrer Features durch einen Aufruf an die API [Get Features Info](#101-get-features-info-for-last-rank-build) ab. - Konfigurieren Sie einen Empfehlungsbuild mit den folgenden Parametern: - `useFeatureInModel`: Auf „True“ festlegen. - `ModelingFeatureList`: Auf eine kommagetrennte Liste mit einer Bewertung von mindestens 2.0 festlegen (je nach den im vorigen Schritt abgerufenen Rängen). - `AllowColdItemPlacement`: Auf „True“ festlegen. - Optional können Sie `EnableFeatureCorrelation` auf „True“ und `ReasoningFeatureList` auf die Liste der Features festlegen, die Sie bei Erläuterungen verwenden möchten (meist ist das die Featureliste, die beim Modellieren verwendet wird, oder eine Unterliste). - Lösen Sie den Empfehlungsbuild mit den konfigurierten Parametern aus.
 
-Hinweis: Wenn Sie keine Parameter konfigurieren \(z. B. den Empfehlungsbuild ohne Parameter aufrufen\) oder die Featureverwendung nicht ausdrücklich deaktivieren \(indem Sie z. B. `UseFeatureInModel` auf „False“ festlegen\), werden die featurebezogenen Parameter mit den oben beschrieben Werten eingerichtet, sofern ein Rangfolgebuild vorhanden ist.
+Hinweis: Wenn Sie keine Parameter konfigurieren (z. B. den Empfehlungsbuild ohne Parameter aufrufen) oder die Featureverwendung nicht ausdrücklich deaktivieren (indem Sie z. B. `UseFeatureInModel` auf „False“ festlegen), werden die featurebezogenen Parameter mit den oben beschrieben Werten eingerichtet, sofern ein Rangfolgebuild vorhanden ist.
 
 Rangfolgebuilds und Empfehlungsbuilds können ohne Einschränkungen zeitgleich für das gleiche Modell ausgeführt werden. Zwei Builds des gleichen Typs können jedoch nicht zeitgleich für das gleiche Modell ausgeführt werden.
 
-FBT-Builds \(„Frequently bought together“, häufig zusammen gekauft\) ist ein weiterer Empfehlungsalgorithmus, der manchmal auch als „konservativ“ bezeichnet wird. Er ist für nicht homogene Kataloge geeignet \(homogen: Bücher, Filme, einige Lebensmittel, Mode; nicht homogen: Computer und Geräte, domänenübergreifend, sehr heterogen\).
+FBT-Builds („Frequently bought together“, häufig zusammen gekauft) ist ein weiterer Empfehlungsalgorithmus, der manchmal auch als „konservativ“ bezeichnet wird. Er ist für nicht homogene Kataloge geeignet (homogen: Bücher, Filme, einige Lebensmittel, Mode; nicht homogen: Computer und Geräte, domänenübergreifend, sehr heterogen).
 
 Hinweis: Wenn die von Ihnen hochgeladenen Nutzungsdateien das optionale Feld "Event Type" enthalten, werden zur FBT-Modellierung nur Purchase-Ereignisse verwendet. Wenn keine Ereignistyp angegeben ist, werden alle Ereignisse als "Purchase" betrachtet.
 
 
 ####11\.1 Buildparameter
 
-Jeder Buildtyp kann über einen Satz von Parametern \(s. unten\) konfiguriert werden. Wenn Sie keine Parameter konfigurieren, werden den Parametern automatisch Werte zugewiesen. Hierzu werden die Informationen verwendet, die zum Zeitpunkt der Buildauslösung vorhanden waren.
+Jeder Buildtyp kann über einen Satz von Parametern (s. unten) konfiguriert werden. Wenn Sie keine Parameter konfigurieren, werden den Parametern automatisch Werte zugewiesen. Hierzu werden die Informationen verwendet, die zum Zeitpunkt der Buildauslösung vorhanden waren.
 
 #####11\.1.1. Nutzungskondensator
 Benutzer oder Elemente mit wenigen Nutzungspunkten enthalten möglicherweise mehr Noise als Informationen. Es wird versucht, die Mindestzahl von Nutzungspunkten pro Benutzer/Element vorherzusagen, die in einem Modell verwendet werden sollten. Diese Anzahl liegt innerhalb des Bereichs, der von den Parametern „ItemCutoffLowerBound“ bei Elementen bzw. „ItemCutoffUpperBound“ „UserCutOffLowerBound“ und „UserCutoffUpperBound“ bei Benutzern festgelegt wird. Der Kondensatoreffekt auf Elemente oder Benutzer kann minimiert werden, indem mindestens eine der entsprechenden Grenzen auf null festgelegt wird.
@@ -1694,10 +1694,10 @@ In der folgenden Tabelle sind die Parameter für Rangfolgebuilds aufgeführt.
 |:-----|:----|:----|:---|
 |NumberOfModelIterations | Die Anzahl der Iterationen, die vom Modell ausgeführt werden, beeinflusst die Gesamtrechenzeit sowie die Modellgenauigkeit. Je höher die Anzahl, desto höher die Genauigkeit, aber auch die Rechenzeit.| Ganze Zahl | 10-50 |
 | NumberOfModelDimensions | Die Anzahl der Dimensionen bezieht sich auf die Anzahl der „Features“, die vom Modell in Ihren Daten gesucht werden. Wenn Sie die Anzahl der Dimensionen erhöhen, können Sie die Ergebnisse in kleineren Clustern feiner abstimmen. Durch zu viele Dimensionen wird jedoch verhindert, dass Korrelationen zwischen den Elementen gefunden werden. | Ganze Zahl | 10-40 |
-|ItemCutOffLowerBound| Hierdurch wird die Elementuntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
-|ItemCutOffUpperBound| Hierdurch wird die Elementobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
-|UserCutOffLowerBound| Hierdurch wird die Benutzeruntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
-|UserCutOffUpperBound| Hierdurch wird die Benutzerobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
+|ItemCutOffLowerBound| Hierdurch wird die Elementuntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
+|ItemCutOffUpperBound| Hierdurch wird die Elementobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
+|UserCutOffLowerBound| Hierdurch wird die Benutzeruntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
+|UserCutOffUpperBound| Hierdurch wird die Benutzerobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
 
 #####11\.1.3. Parameter für Empfehlungsbuilds
 In der folgenden Tabelle sind die Parameter für Empfehlungsbuilds aufgeführt.
@@ -1706,31 +1706,31 @@ In der folgenden Tabelle sind die Parameter für Empfehlungsbuilds aufgeführt.
 |:-----|:----|:----|:---|
 |NumberOfModelIterations | Die Anzahl der Iterationen, die vom Modell ausgeführt werden, beeinflusst die Gesamtrechenzeit sowie die Modellgenauigkeit. Je höher die Anzahl, desto höher die Genauigkeit, aber auch die Rechenzeit.| Ganze Zahl | 10-50 |
 | NumberOfModelDimensions | Die Anzahl der Dimensionen bezieht sich auf die Anzahl der „Features“, die vom Modell in Ihren Daten gesucht werden. Wenn Sie die Anzahl der Dimensionen erhöhen, können Sie die Ergebnisse in kleineren Clustern feiner abstimmen. Durch zu viele Dimensionen wird jedoch verhindert, dass Korrelationen zwischen den Elementen gefunden werden. | Ganze Zahl | 10-40 |
-|ItemCutOffLowerBound| Hierdurch wird die Elementuntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
-|ItemCutOffUpperBound| Hierdurch wird die Elementobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
-|UserCutOffLowerBound| Hierdurch wird die Benutzeruntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
-|UserCutOffUpperBound| Hierdurch wird die Benutzerobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
+|ItemCutOffLowerBound| Hierdurch wird die Elementuntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
+|ItemCutOffUpperBound| Hierdurch wird die Elementobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
+|UserCutOffLowerBound| Hierdurch wird die Benutzeruntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
+|UserCutOffUpperBound| Hierdurch wird die Benutzerobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
 | Beschreibung | Dies ist eine Beschreibung des Builds. | String | Beliebiger Text, maximal 512 Zeichen |
 | EnableModelingInsights | Hiermit können Sie Metriken zum Empfehlungsmodell verarbeiten. | Boolean | True/False |
 | UseFeaturesInModel | Hier wird angegeben, ob Features verwendet werden können, um das Empfehlungsmodell zu verbessern. | Boolean | True/False |
 | ModelingFeatureList | Dies ist die kommagetrennte Liste von Komponentennamen, die im Empfehlungsbuild verwendet werden soll, um die Empfehlung zu verbessern. | String | Featurenamen, bis zu 512 Zeichen |
 | AllowColdItemPlacement | Hier wird angegeben, ob durch die Empfehlung ein „Push“ kalter Elemente anhand der Ähnlichkeit der Features erfolgen soll. | Boolean | True/False |
 | EnableFeatureCorrelation | Hier wird angegeben, ob Features bei der Argumentation verwendet werden können. | Boolean | True/False |
-| ReasoningFeatureList | Dies ist eine kommagetrennte Liste von Featurenamen, die für Argumentationssätze \(z. B. Erklärungen von Empfehlungen\) verwendet werden. | String | Featurenamen, bis zu 512 Zeichen |
-| EnableU2I | Ermöglicht personalisierte Empfehlungen, auch bekannt als U2I \("User to Item"-Empfehlungen\). | Boolean | True/False \(Standardwert: true\) |
+| ReasoningFeatureList | Dies ist eine kommagetrennte Liste von Featurenamen, die für Argumentationssätze (z. B. Erklärungen von Empfehlungen) verwendet werden. | String | Featurenamen, bis zu 512 Zeichen |
+| EnableU2I | Ermöglicht personalisierte Empfehlungen, auch bekannt als U2I ("User to Item"-Empfehlungen). | Boolean | True/False (Standardwert: true) |
 
 #####11\.1.4. Parameter für FBT-Builds
 In der folgenden Tabelle sind die Parameter für Empfehlungsbuilds aufgeführt.
 
-|Schlüssel|Beschreibung|Typ|Gültiger Wert \(Standard\)|
+|Schlüssel|Beschreibung|Typ|Gültiger Wert (Standard)|
 |:-----|:----|:----|:---|
-|FbtSupportThreshold | Dies ist ein Maß dafür, wie konservativ das Modell ist. Dies ein Maß für die Grauwerte von Elementen, die bei der Modellierung berücksichtigt werden.| Ganze Zahl | 3-50 \(6\) |
-|FbtMaxItemSetSize | Begrenzt die Anzahl der Elemente in einem häufigen Satz.| Ganze Zahl | 2-3 \(2\) |
-|FbtMinimalScore | Dies ist die Mindestbewertung, die ein häufiger Satz haben muss, um in die zurückgegebenen Ergebnisse eingeschlossen zu werden. Höhere Bewertungen sind besser als niedrigere.| Doppelt | 0 und höher \(0\) |
+|FbtSupportThreshold | Dies ist ein Maß dafür, wie konservativ das Modell ist. Dies ein Maß für die Grauwerte von Elementen, die bei der Modellierung berücksichtigt werden.| Ganze Zahl | 3-50 (6) |
+|FbtMaxItemSetSize | Begrenzt die Anzahl der Elemente in einem häufigen Satz.| Ganze Zahl | 2-3 (2) |
+|FbtMinimalScore | Dies ist die Mindestbewertung, die ein häufiger Satz haben muss, um in die zurückgegebenen Ergebnisse eingeschlossen zu werden. Höhere Bewertungen sind besser als niedrigere.| Doppelt | 0 und höher (0) |
 
 ###11\.2. Auslösen eines Empfehlungsbuilds
 
-  Standardmäßig wird durch diese API ein Empfehlungsmodellbuild ausgelöst. Zum Auslösen eines Rangfolgebuilds \(zum Bewerten von Features\) muss die Build-API-Variante mit dem Parameter „Build Type“ verwendet werden.
+  Standardmäßig wird durch diese API ein Empfehlungsmodellbuild ausgelöst. Zum Auslösen eines Rangfolgebuilds (zum Bewerten von Features) muss die Build-API-Variante mit dem Parameter „Build Type“ verwendet werden.
 
 
 | HTTP-Methode | URI |
@@ -1742,13 +1742,13 @@ In der folgenden Tabelle sind die Parameter für Empfehlungsbuilds aufgeführt.
 | modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | userDescription | Dies ist der Textbezeichner des Katalogs. Beachten Sie, dass Sie bei Verwendung von Leerzeichen diese stattdessen mit "%20" codieren müssen. Siehe Beispiel oben. <br>Max. Länge: 50 |
 | apiVersion | 1\.0 |
-\|\|\| \| Request Body \| Wird das Feld leer gelassen, so wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie die Parameter festlegen möchten, senden Sie sie wie im folgenden Beispiel als XML in den Textkörper. \(Eine Erläuterung der Parameter finden Sie im Abschnitt „Buildparameter“.\)`<NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance><EnableModelingInsights>true</EnableModelingInsights><UseFeaturesInModel>false</UseFeaturesInModel><ModelingFeatureList>feature_name_1,feature_name_2,...</ModelingFeatureList><AllowColdItemPlacement>false</AllowColdItemPlacement><EnableFeatureCorrelation>false</EnableFeatureCorrelation><ReasoningFeatureList>feature_name_a,feature_name_b,...</ReasoningFeatureList></BuildParametersList>` \|
+||| | Request Body | Wird das Feld leer gelassen, so wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie die Parameter festlegen möchten, senden Sie sie wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung der Parameter finden Sie im Abschnitt „Buildparameter“.)`<NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance><EnableModelingInsights>true</EnableModelingInsights><UseFeaturesInModel>false</UseFeaturesInModel><ModelingFeatureList>feature_name_1,feature_name_2,...</ModelingFeatureList><AllowColdItemPlacement>false</AllowColdItemPlacement><EnableFeatureCorrelation>false</EnableFeatureCorrelation><ReasoningFeatureList>feature_name_a,feature_name_b,...</ReasoningFeatureList></BuildParametersList>` |
 
 **Antwort**:
 
 HTTP-Statuscode: 200
 
-Dies ist eine asynchrone API. Sie erhalten eine Build-ID als Antwort. Um zu erfahren, wenn der Build beendet wurde, rufen Sie die API „Get Builds Status of a Model“ \(Buildstatus eines Modells abrufen\) auf und suchen in der Antwort nach dieser Build-ID. Beachten Sie, dass das Erstellen eines Builds je nach Größe der Daten Minuten bis Stunden dauern kann.
+Dies ist eine asynchrone API. Sie erhalten eine Build-ID als Antwort. Um zu erfahren, wenn der Build beendet wurde, rufen Sie die API „Get Builds Status of a Model“ (Buildstatus eines Modells abrufen) auf und suchen in der Antwort nach dieser Build-ID. Beachten Sie, dass das Erstellen eines Builds je nach Größe der Daten Minuten bis Stunden dauern kann.
 
 Bis der Build erstellt ist, können Sie keine Empfehlungen nutzen.
 
@@ -1757,9 +1757,9 @@ Gültige Buildstatus:
 - Create: Buildanforderung wurde erstellt.
 - Queued: Buildanforderung wurde gesendet und in die Warteschlange eingereiht.
 - Building: Builderstellung wird durchgeführt.
-- Success \(Erfolg\): Der Build wurde erfolgreich abgeschlossen.
-- Error \(Fehler\): Der Build wurde mit einem Fehler beendet.
-- Cancelled \(Abgebrochen\): Der Vorgang wurde abgebrochen.
+- Success (Erfolg): Der Build wurde erfolgreich abgeschlossen.
+- Error (Fehler): Der Build wurde mit einem Fehler beendet.
+- Cancelled (Abgebrochen): Der Vorgang wurde abgebrochen.
 - Cancelling: Für den Build wurde eine Abbruchanforderung gesendet.
 
 
@@ -1804,7 +1804,7 @@ OData-XML
   	</entry>
 	</feed>
 
-###11\.3. Auslösen eines Builds \(Empfehlung, Rang oder FBT\)
+###11\.3. Auslösen eines Builds (Empfehlung, Rang oder FBT)
 
 | HTTP-Methode | URI |
 |:--------|:--------|
@@ -1816,25 +1816,25 @@ OData-XML
 | userDescription | Dies ist der Textbezeichner des Katalogs. Beachten Sie, dass Sie bei Verwendung von Leerzeichen diese stattdessen mit "%20" codieren müssen. Siehe Beispiel oben. <br>Max. Länge: 50 |
 | buildType | Typ des aufzurufenden Builds: <br/>: „Recommendation“ für Empfehlungsbuild <br>: „Ranking“ für Rangplatzbuild <br/>: „Fbt“ für FBT-Build
 | apiVersion | 1\.0 |
-\|\|\| \| Anforderungstext \| Wird das Feld leer gelassen, wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie Buildparameter festlegen möchten, senden Sie diese wie im folgenden Beispiel als XML in den Textkörper. \(Eine Erläuterung und eine vollständige Liste der Parameter finden Sie im Abschnitt „Buildparameter“\).`<BuildParametersList><NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance></BuildParametersList>` \|
+||| | Anforderungstext | Wird das Feld leer gelassen, wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie Buildparameter festlegen möchten, senden Sie diese wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung und eine vollständige Liste der Parameter finden Sie im Abschnitt „Buildparameter“).`<BuildParametersList><NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance></BuildParametersList>` |
 
 **Antwort**:
 
 HTTP-Statuscode: 200
 
-Dies ist eine asynchrone API. Sie erhalten eine Build-ID als Antwort. Um zu erfahren, wenn der Build beendet wurde, rufen Sie die API „Get Builds Status of a Model“ \(Buildstatus eines Modells abrufen\) auf und suchen in der Antwort nach dieser Build-ID. Beachten Sie, dass das Erstellen eines Builds je nach Größe der Daten Minuten bis Stunden dauern kann.
+Dies ist eine asynchrone API. Sie erhalten eine Build-ID als Antwort. Um zu erfahren, wenn der Build beendet wurde, rufen Sie die API „Get Builds Status of a Model“ (Buildstatus eines Modells abrufen) auf und suchen in der Antwort nach dieser Build-ID. Beachten Sie, dass das Erstellen eines Builds je nach Größe der Daten Minuten bis Stunden dauern kann.
 
 Bis der Build erstellt ist, können Sie keine Empfehlungen nutzen.
 
 Gültige Buildstatus:
 
-- Create \(Erstellen\): Das Modell wurde erstellt.
-- Queued \(In Warteschlange\): Die Modellerstellung wurde ausgelöst und in die Warteschlange eingereiht.
-- Building \(Erstellen\): Das Modell wird erstellt.
-- Success \(Erfolg\): Der Build wurde erfolgreich abgeschlossen.
-- Error \(Fehler\): Der Build wurde mit einem Fehler beendet.
-- Cancelled \(Abgebrochen\): Der Vorgang wurde abgebrochen.
-- Cancelling \(Abbrechen\): Der Vorgang wird abgebrochen.
+- Create (Erstellen): Das Modell wurde erstellt.
+- Queued (In Warteschlange): Die Modellerstellung wurde ausgelöst und in die Warteschlange eingereiht.
+- Building (Erstellen): Das Modell wird erstellt.
+- Success (Erfolg): Der Build wurde erfolgreich abgeschlossen.
+- Error (Fehler): Der Build wurde mit einem Fehler beendet.
+- Cancelled (Abgebrochen): Der Vorgang wurde abgebrochen.
+- Cancelling (Abbrechen): Der Vorgang wird abgebrochen.
 
 Hinweis: Sie finden die Build-ID unter folgendem Pfad: `Feed\entry\content\properties\Id`
 
@@ -1904,18 +1904,18 @@ Die Antwort enthält einen Eintrag pro Build. Jeder Eintrag enthält die folgend
 - `feed/entry/content/properties/UserName`: Name des Benutzers
 - `feed/entry/content/properties/ModelName`: Name des Modells
 - `feed/entry/content/properties/ModelId`: Eindeutiger Bezeichner des Modells
-- `feed/entry/content/properties/IsDeployed`: Bereitstellungszustand des Builds \(aktiver Build\)
+- `feed/entry/content/properties/IsDeployed`: Bereitstellungszustand des Builds (aktiver Build)
 - `feed/entry/content/properties/BuildId`: Eindeutiger Bezeichner des Builds
 - `feed/entry/content/properties/BuildType`: Typ des Builds
-- `feed/entry/content/properties/Status`: Status des Builds. Es gibt folgende Status: Error \(Fehler\), Building \(Erstellen\), Queued \(In Warteschlange\), Cancelling \(Abbrechen\), Cancelled \(Abgebrochen\), Success \(Erfolg\)
-- `feed/entry/content/properties/StatusMessage`: Detaillierte Statusmeldung \(gilt nur für bestimmte Status\)
-- `feed/entry/content/properties/Progress`: Fortschritt des Builds \(%\)
+- `feed/entry/content/properties/Status`: Status des Builds. Es gibt folgende Status: Error (Fehler), Building (Erstellen), Queued (In Warteschlange), Cancelling (Abbrechen), Cancelled (Abgebrochen), Success (Erfolg)
+- `feed/entry/content/properties/StatusMessage`: Detaillierte Statusmeldung (gilt nur für bestimmte Status)
+- `feed/entry/content/properties/Progress`: Fortschritt des Builds (%)
 - `feed/entry/content/properties/StartTime`: Startzeit des Builds
 - `feed/entry/content/properties/EndTime`: Endzeit des Builds
 - `feed/entry/content/properties/ExecutionTime`: Dauer des Builds
 - `feed/entry/content/properties/ProgressStep`: Details zur aktuellen Phase eines Buildfortschritts.
 
-Gültige Buildstatus: - Created \(Erstellt\): Die Builderstellungsanforderung wurde erstellt. - Queued \(In Warteschlange\): Die Buildanforderung wurde ausgelöst und in die Warteschlange eingereiht. - Building \(Erstellen\): Der Build wird bearbeitet. - Success \(Erfolg\): Der Build wurde erfolgreich erstellt. - Error \(Fehler\): Der Build wurde mit einem Fehler beendet. - Cancelled \(Abgebrochen\): Der Build wurde abgebrochen. - Cancelling \(Abbrechen\): Der Build wird abgebrochen.
+Gültige Buildstatus: - Created (Erstellt): Die Builderstellungsanforderung wurde erstellt. - Queued (In Warteschlange): Die Buildanforderung wurde ausgelöst und in die Warteschlange eingereiht. - Building (Erstellen): Der Build wird bearbeitet. - Success (Erfolg): Der Build wurde erfolgreich erstellt. - Error (Fehler): Der Build wurde mit einem Fehler beendet. - Cancelled (Abgebrochen): Der Build wurde abgebrochen. - Cancelling (Abbrechen): Der Build wird abgebrochen.
 
 Gültige Werte für den Buildtyp: - Rank: Rangfolgebuild - Recommendation: Empfehlungsbuild
 
@@ -1982,15 +1982,15 @@ Die Antwort enthält einen Eintrag pro Build. Jeder Eintrag enthält die folgend
 - `feed/entry/content/properties/IsDeployed`: Bereitstellungszustand des Builds
 - `feed/entry/content/properties/BuildId`: Eindeutiger Bezeichner des Builds
 - `feed/entry/content/properties/BuildType`: Typ des Builds
-- `feed/entry/content/properties/Status`: Status des Builds. Es gibt folgende Status: Error \(Fehler\), Building \(Erstellen\), Queued \(In Warteschlange\), Cancelled \(Abgebrochen\), Cancelling \(Abbrechen\), Success \(Erfolg\)
-- `feed/entry/content/properties/StatusMessage`: Detaillierte Statusmeldung \(gilt nur für bestimmte Status\)
-- `feed/entry/content/properties/Progress`: Fortschritt des Builds \(%\)
+- `feed/entry/content/properties/Status`: Status des Builds. Es gibt folgende Status: Error (Fehler), Building (Erstellen), Queued (In Warteschlange), Cancelled (Abgebrochen), Cancelling (Abbrechen), Success (Erfolg)
+- `feed/entry/content/properties/StatusMessage`: Detaillierte Statusmeldung (gilt nur für bestimmte Status)
+- `feed/entry/content/properties/Progress`: Fortschritt des Builds (%)
 - `feed/entry/content/properties/StartTime`: Startzeit des Builds
 - `feed/entry/content/properties/EndTime`: Endzeit des Builds
 - `feed/entry/content/properties/ExecutionTime`: Dauer des Builds
 - `feed/entry/content/properties/ProgressStep`: Details zur aktuellen Phase eines Buildfortschritts.
 
-Gültige Buildstatus: - Created \(Erstellt\): Die Builderstellungsanforderung wurde erstellt. - Queued \(In Warteschlange\): Die Buildanforderung wurde ausgelöst und in die Warteschlange eingereiht. - Building \(Erstellen\): Der Build wird bearbeitet. - Success \(Erfolg\): Der Build wurde erfolgreich erstellt. - Error \(Fehler\): Der Build wurde mit einem Fehler beendet. - Cancelled \(Abgebrochen\): Der Build wurde abgebrochen. - Cancelling \(Abbrechen\): Der Build wird abgebrochen.
+Gültige Buildstatus: - Created (Erstellt): Die Builderstellungsanforderung wurde erstellt. - Queued (In Warteschlange): Die Buildanforderung wurde ausgelöst und in die Warteschlange eingereiht. - Building (Erstellen): Der Build wird bearbeitet. - Success (Erfolg): Der Build wurde erfolgreich erstellt. - Error (Fehler): Der Build wurde mit einem Fehler beendet. - Cancelled (Abgebrochen): Der Build wurde abgebrochen. - Cancelling (Abbrechen): Der Build wird abgebrochen.
 
 
 Gültige Werte für den Buildtyp: - Rank: Rangfolgebuild - Recommendation: Empfehlungsbuild
@@ -2035,7 +2035,7 @@ OData-XML
 ###11\.6. Build löschen
 Löscht einen Build.
 
-HINWEIS: <br>Aktive Builds können nicht gelöscht werden. Das Modell muss auf einen anderen aktiven Build aktualisiert werden, bevor Sie es löschen.<br>In Bearbeitung befindliche Builds können nicht gelöscht werden. Brechen Sie den Build zunächst durch den Aufruf <strong>Cancel Build</strong> \(Build abbrechen\) ab.
+HINWEIS: <br>Aktive Builds können nicht gelöscht werden. Das Modell muss auf einen anderen aktiven Build aktualisiert werden, bevor Sie es löschen.<br>In Bearbeitung befindliche Builds können nicht gelöscht werden. Brechen Sie den Build zunächst durch den Aufruf <strong>Cancel Build</strong> (Build abbrechen) ab.
 
 | HTTP-Methode | URI |
 |:--------|:--------|
@@ -2051,7 +2051,7 @@ HINWEIS: <br>Aktive Builds können nicht gelöscht werden. Das Modell muss auf e
 HTTP-Statuscode: 200
 
 ###11\.7. Build abbrechen
-Hierdurch wird ein Build mit dem Status „Building“ \(Erstellen\) abgebrochen.
+Hierdurch wird ein Build mit dem Status „Building“ (Erstellen) abgebrochen.
 
 | HTTP-Methode | URI |
 |:--------|:--------|
@@ -2090,17 +2090,17 @@ In der folgenden Tabelle werden die Werte dargestellt, die von den Schlüsseln r
 |:-----|:----|:----|:---|
 |NumberOfModelIterations | Die Anzahl der Iterationen, die vom Modell ausgeführt werden, beeinflusst die Gesamtrechenzeit sowie die Modellgenauigkeit. Je höher die Anzahl, desto höher die Genauigkeit, aber auch die Rechenzeit.| Ganze Zahl | 10-50 |
 | NumberOfModelDimensions | Die Anzahl der Dimensionen bezieht sich auf die Anzahl der „Features“, die vom Modell in Ihren Daten gesucht werden. Wenn Sie die Anzahl der Dimensionen erhöhen, können Sie die Ergebnisse in kleineren Clustern feiner abstimmen. Durch zu viele Dimensionen wird jedoch verhindert, dass Korrelationen zwischen den Elementen gefunden werden. | Ganze Zahl | 10-40 |
-|ItemCutOffLowerBound| Hierdurch wird die Elementuntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
-|ItemCutOffUpperBound| Hierdurch wird die Elementobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
-|UserCutOffLowerBound| Hierdurch wird die Benutzeruntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
-|UserCutOffUpperBound| Hierdurch wird die Benutzerobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 \(durch 0 wird der Kondensator deaktiviert\) |
+|ItemCutOffLowerBound| Hierdurch wird die Elementuntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
+|ItemCutOffUpperBound| Hierdurch wird die Elementobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
+|UserCutOffLowerBound| Hierdurch wird die Benutzeruntergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
+|UserCutOffUpperBound| Hierdurch wird die Benutzerobergrenze des Kondensators definiert. Siehe Abschnitt „Nutzungskondensator“ oben. | Ganze Zahl | Mindestens 2 (durch 0 wird der Kondensator deaktiviert) |
 | Beschreibung | Dies ist eine Beschreibung des Builds. | String | Beliebiger Text, maximal 512 Zeichen |
 | EnableModelingInsights | Hiermit können Sie Metriken zum Empfehlungsmodell verarbeiten. | Boolean | True/False |
 | UseFeaturesInModel | Hier wird angegeben, ob Features verwendet werden können, um das Empfehlungsmodell zu verbessern. | Boolean | True/False |
 | ModelingFeatureList | Dies ist die kommagetrennte Liste von Komponentennamen, die im Empfehlungsbuild verwendet werden soll, um die Empfehlung zu verbessern. | String | Featurenamen, bis zu 512 Zeichen |
 | AllowColdItemPlacement | Hier wird angegeben, ob durch die Empfehlung ein „Push“ kalter Elemente anhand der Ähnlichkeit der Features erfolgen soll. | Boolean | True/False |
 | EnableFeatureCorrelation | Hier wird angegeben, ob Features bei der Argumentation verwendet werden können. | Boolean | True/False |
-| ReasoningFeatureList | Dies ist eine kommagetrennte Liste von Featurenamen, die für Argumentationssätze \(z. B. Erklärungen von Empfehlungen\) verwendet werden. | String | Featurenamen, bis zu 512 Zeichen |
+| ReasoningFeatureList | Dies ist eine kommagetrennte Liste von Featurenamen, die für Argumentationssätze (z. B. Erklärungen von Empfehlungen) verwendet werden. | String | Featurenamen, bis zu 512 Zeichen |
 
 
 OData-XML
@@ -2271,9 +2271,9 @@ OData-XML
 	</feed>
 
 ##12\. Empfehlungen
-###12\.1. Abrufen von Elementempfehlungen \(für aktiven Build\)
+###12\.1. Abrufen von Elementempfehlungen (für aktiven Build)
 
-Hierdurch werden Empfehlungen des aktiven Builds vom Typ "Recommendation" \(Empfehlung\) oder "FBT" \(Frequently Bought Together, häufig zusammen gekauft\) basierend auf einer Liste von Seedelementen \(Eingabeelementen\) abgerufen.
+Hierdurch werden Empfehlungen des aktiven Builds vom Typ "Recommendation" (Empfehlung) oder "FBT" (Frequently Bought Together, häufig zusammen gekauft) basierend auf einer Liste von Seedelementen (Eingabeelementen) abgerufen.
 
 | HTTP-Methode | URI |
 |:--------|:--------|
@@ -2292,7 +2292,7 @@ Hierdurch werden Empfehlungen des aktiven Builds vom Typ "Recommendation" \(Empf
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung \(höhere Werte bedeuten höheres Zutrauen\). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation \(z. B. Erklärungen für die Empfehlung\).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Die folgende Beispielantwort enthält 10 empfohlene Elemente.
 
@@ -2447,9 +2447,9 @@ OData-XML
  	 </entry>
 	</feed>
 
-###12\.2. Abrufen von Elementempfehlungen \(eines bestimmten Builds\)
+###12\.2. Abrufen von Elementempfehlungen (eines bestimmten Builds)
 
-Hierdurch werden Empfehlungen eines bestimmten Builds vom Typ „Recommendation“ \(Empfehlung\) oder „Fbt“ abgerufen.
+Hierdurch werden Empfehlungen eines bestimmten Builds vom Typ „Recommendation“ (Empfehlung) oder „Fbt“ abgerufen.
 
 | HTTP-Methode | URI |
 |:--------|:--------|
@@ -2469,13 +2469,13 @@ Hierdurch werden Empfehlungen eines bestimmten Builds vom Typ „Recommendation�
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung \(höhere Werte bedeuten höheres Zutrauen\). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation \(z. B. Erklärungen für die Empfehlung\).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Eine Beispielantwort finden Sie unter 12.1.
 
-###12\.3. Abrufen von FBT-Empfehlungen \(für aktiven Build\)
+###12\.3. Abrufen von FBT-Empfehlungen (für aktiven Build)
 
-Hierdurch werden Empfehlungen des aktiven Builds vom Typ "FBT" basierend auf einer Liste von Seedelementen \(Eingabeelementen\) abgerufen.
+Hierdurch werden Empfehlungen des aktiven Builds vom Typ "FBT" basierend auf einer Liste von Seedelementen (Eingabeelementen) abgerufen.
 
 | HTTP-Methode | URI |
 |:--------|:--------|
@@ -2495,7 +2495,7 @@ Hierdurch werden Empfehlungen des aktiven Builds vom Typ "FBT" basierend auf ein
 HTTP-Statuscode: 200
 
 
-Die Antwort umfasst einen Eintrag pro empfohlenem Elementsatz \(ein Satz Elemente, die üblicherweise zusammen mit dem Seed- bzw. Eingabeelement gekauft werden\). Jeder Eintrag enthält folgende Daten: – `Feed\entry\content\properties\Id1`: ID des empfohlenen Elements – `Feed\entry\content\properties\Name1`: Name des Elements – `Feed\entry\content\properties\Id2`: ID des zweiten empfohlenen Elements \(optional\) – `Feed\entry\content\properties\Name2`: Name des zweiten Elements \(optional\) – `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung \(höhere Werte bedeuten höhere Zuverlässigkeit\) – `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation \(z. B. Erklärungen für die Empfehlung\)
+Die Antwort umfasst einen Eintrag pro empfohlenem Elementsatz (ein Satz Elemente, die üblicherweise zusammen mit dem Seed- bzw. Eingabeelement gekauft werden). Jeder Eintrag enthält folgende Daten: – `Feed\entry\content\properties\Id1`: ID des empfohlenen Elements – `Feed\entry\content\properties\Name1`: Name des Elements – `Feed\entry\content\properties\Id2`: ID des zweiten empfohlenen Elements (optional) – `Feed\entry\content\properties\Name2`: Name des zweiten Elements (optional) – `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höhere Zuverlässigkeit) – `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung)
 
 Die folgende Beispielantwort enthält 3 empfohlene Elementsätze.
 
@@ -2558,7 +2558,7 @@ OData-XML
  	 </entry>
 	</feed>
 
-###12\.4. Abrufen von FBT-Empfehlungen \(eines bestimmten Builds\)
+###12\.4. Abrufen von FBT-Empfehlungen (eines bestimmten Builds)
 
 Hierdurch werden Empfehlungen eines bestimmten Builds vom Typ "FBT" abgerufen.
 
@@ -2581,11 +2581,11 @@ Hierdurch werden Empfehlungen eines bestimmten Builds vom Typ "FBT" abgerufen.
 HTTP-Statuscode: 200
 
 
-Die Antwort umfasst einen Eintrag pro empfohlenem Elementsatz \(ein Satz Elemente, die üblicherweise zusammen mit dem Seed- bzw. Eingabeelement gekauft werden\). Jeder Eintrag enthält folgende Daten: – `Feed\entry\content\properties\Id1`: ID des empfohlenen Elements – `Feed\entry\content\properties\Name1`: Name des Elements – `Feed\entry\content\properties\Id2`: ID des zweiten empfohlenen Elements \(optional\) – `Feed\entry\content\properties\Name2`: Name des zweiten Elements \(optional\) – `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung \(höhere Werte bedeuten höhere Zuverlässigkeit\) – `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation \(z. B. Erklärungen für die Empfehlung\)
+Die Antwort umfasst einen Eintrag pro empfohlenem Elementsatz (ein Satz Elemente, die üblicherweise zusammen mit dem Seed- bzw. Eingabeelement gekauft werden). Jeder Eintrag enthält folgende Daten: – `Feed\entry\content\properties\Id1`: ID des empfohlenen Elements – `Feed\entry\content\properties\Name1`: Name des Elements – `Feed\entry\content\properties\Id2`: ID des zweiten empfohlenen Elements (optional) – `Feed\entry\content\properties\Name2`: Name des zweiten Elements (optional) – `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höhere Zuverlässigkeit) – `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung)
 
 Eine Beispielantwort finden Sie unter 12.3.
 
-###12\.5. Abrufen von Benutzerempfehlungen \(für aktiven Build\)
+###12\.5. Abrufen von Benutzerempfehlungen (für aktiven Build)
 
 Hierdurch werden Benutzerempfehlungen eines Builds vom Typ "Recommendation" abgerufen, der als aktiver Build gekennzeichnet ist.
 
@@ -2610,11 +2610,11 @@ Hinweise: 1. Für einen FBT-Build gibt es keine Benutzerempfehlungen. 2. Wenn d
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung \(höhere Werte bedeuten höheres Zutrauen\). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation \(z. B. Erklärungen für die Empfehlung\).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Eine Beispielantwort finden Sie unter 12.1.
 
-###12\.6. Abrufen von Benutzerempfehlungen mit Elementliste \(für aktiven Build\)
+###12\.6. Abrufen von Benutzerempfehlungen mit Elementliste (für aktiven Build)
 
 Hierdurch werden Benutzerempfehlungen eines als aktiver Build gekennzeichneten Builds vom Typ "Recommendation" sowie zusätzlich eine Liste von Elementen abgerufen.
 
@@ -2641,15 +2641,15 @@ Hinweise: 1. Für einen FBT-Build gibt es keine Benutzerempfehlungen. 2. Wenn d
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung \(höhere Werte bedeuten höheres Zutrauen\). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation \(z. B. Erklärungen für die Empfehlung\).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Eine Beispielantwort finden Sie unter 12.1.
 
-###12\.7. Abrufen von Benutzerempfehlungen \(eines bestimmten Builds\)
+###12\.7. Abrufen von Benutzerempfehlungen (eines bestimmten Builds)
 
 Hierdurch werden Benutzerempfehlungen eines bestimmten Builds vom Typ "Recommendation" abgerufen.
 
-Die API gibt basierend auf dem Nutzungsverlauf des Benutzers \(Nutzung in diesem bestimmten Build\) eine Liste der vorhergesagten Elemente zurück.
+Die API gibt basierend auf dem Nutzungsverlauf des Benutzers (Nutzung in diesem bestimmten Build) eine Liste der vorhergesagten Elemente zurück.
 
 Hinweis: Für einen FBT-Build gibt es keine Benutzerempfehlungen.
 
@@ -2672,12 +2672,12 @@ Hinweis: Für einen FBT-Build gibt es keine Benutzerempfehlungen.
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung \(höhere Werte bedeuten höheres Zutrauen\). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation \(z. B. Erklärungen für die Empfehlung\).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Eine Beispielantwort finden Sie unter 12.1.
 
 
-###12\.8. Abrufen von Benutzerempfehlungen mit Elementliste \(für einen bestimmten Build\)
+###12\.8. Abrufen von Benutzerempfehlungen mit Elementliste (für einen bestimmten Build)
 
 Hierdurch werden Benutzerempfehlungen eines bestimmten Builds vom Typ "Recommendation" sowie die Liste zusätzlicher Elemente abgerufen.
 
@@ -2706,12 +2706,12 @@ Hinweis: Für einen FBT-Build gibt es keine Benutzerempfehlungen.
 HTTP-Statuscode: 200
 
 
-Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung \(höhere Werte bedeuten höheres Zutrauen\). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation \(z. B. Erklärungen für die Empfehlung\).
+Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthält folgende Daten: - `Feed\entry\content\properties\Id`: ID des empfohlenen Elements. - `Feed\entry\content\properties\Name`: Name des Elements. - `Feed\entry\content\properties\Rating`: Bewertung der Empfehlung (höhere Werte bedeuten höheres Zutrauen). - `Feed\entry\content\properties\Reasoning`: Empfehlungsargumentation (z. B. Erklärungen für die Empfehlung).
 
 Eine Beispielantwort finden Sie unter 12.1.
 
 ##13\. Nutzungsverlauf eines Benutzers
-Nachdem ein Empfehlungsmodell entwickelt wurde, ermöglicht es das System, den Verlauf eines Benutzers \(also die mit einem bestimmten Benutzer verknüpften Elemente\) abzurufen, der für den Build verwendet wurde. Mit dieser API kann der Nutzungsverlauf abgerufen werden.
+Nachdem ein Empfehlungsmodell entwickelt wurde, ermöglicht es das System, den Verlauf eines Benutzers (also die mit einem bestimmten Benutzer verknüpften Elemente) abzurufen, der für den Build verwendet wurde. Mit dieser API kann der Nutzungsverlauf abgerufen werden.
 
 Hinweis: Der Nutzungsverlauf ist zurzeit nur für Empfehlungsbuilds verfügbar.
 
@@ -2780,7 +2780,7 @@ Hierdurch werden alle Benachrichtigungen für alle Modelle oder für ein einzeln
 |:--------			|:--------								|
 | modelId | Dieser Parameter ist optional. Wenn er nicht angegeben wird, erhalten Sie alle Benachrichtigungen für alle Modelle. <br>Gültiger Wert: Eindeutiger Bezeichner des Modells.|
 | apiVersion | 1,0 |
-\|\|\| \| Request Body \| KEINE \|
+||| | Request Body | KEINE |
 
 **Antwort:**
 
@@ -2831,7 +2831,7 @@ Hierdurch werden alle gelesenen Benachrichtigungen für ein Modell gelöscht.
 |:--------			|:--------								|
 | modelId | Dies ist der eindeutige Bezeichner des Modells. |
 | apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -2848,7 +2848,7 @@ Hierdurch werden alle Benachrichtigungen für alle Modelle gelöscht.
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
 | apiVersion | 1,0 |
-\|\|\| \| \|\|\| \| Request Body \| KEINER \|
+||| | ||| | Request Body | KEINER |
 
 **Antwort**:
 
@@ -2861,4 +2861,4 @@ HTTP-Statuscode: 200
 Dieses Dokument wird so bereitgestellt, wie es ist. Informationen und Stellungnahmen in diesem Dokument einschließlich URLs und anderer Verweise auf Websites können ohne Ankündigung geändert werden.<br><br> Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Ähnlichkeiten oder Verbindungen sind rein zufällig und nicht beabsichtigt.<br><br> Dieses Dokument gibt Ihnen keinerlei geistige Eigentums- oder anderweitige Rechte an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden.<br><br> © 2015 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

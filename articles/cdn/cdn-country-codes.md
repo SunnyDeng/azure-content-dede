@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="CDN: Landeskennzahlen" 
-	description="Das Feature &quot;Länderfilter&quot; verwendet Landeskennzahlen, um die Länder zu definieren, von denen aus eine Anforderung für ein sicheres Verzeichnis zugelassen oder blockiert wird." 
-	services="cdn" 
-	documentationCenter=".NET" 
-	authors="juliako" 
-	manager="dwrede" 
+	pageTitle="CDN: Landeskennzahlen"
+	description="Das Feature Länderfilter verwendet Landeskennzahlen, um die Länder zu definieren, von denen aus eine Anforderung für ein sicheres Verzeichnis zugelassen oder blockiert wird."
+	services="cdn"
+	documentationCenter=".NET"
+	authors="juliako"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/08/2015" 
+	ms.service="cdn"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="juliako"/>
 
 #Landeskennzahlen
@@ -63,7 +63,7 @@ Das Feature **Länderfilter** verwendet Landeskennzahlen, um die Länder zu defi
 | KH | Kambodscha | |
 | CM | Kamerun | |
 | CA | Kanada | |
-| CV | Kap Verde | |
+| CV | Cabo Verde | |
 | KY | Kaimaninseln | |
 | CF | Zentralafrikanische Republik | |
 | TD | Tschad | |
@@ -94,7 +94,7 @@ Das Feature **Länderfilter** verwendet Landeskennzahlen, um die Länder zu defi
 | EE | Estland | |
 | ET | Äthiopien | |
 | EU | Europa | Dieser Ländercode identifiziert eine Gruppe von IP-Adressen, die über Europa verteilt sind. Das Ursprungsland für diesen Satz von IP-Adressen ist unbekannt. Darüber hinaus deckt dieser Ländercode nicht alle IP-Adressen in Europa ab. [Weitere Informationen](https://my.edgecast.com/uploads/ubers/1/docs/webhelp/w/CDNHelpCenter/Content/Knowledge_Base/Geolocation_EU_AP.htm). |        
-| FK | Falklandinseln (Malwinen) | |
+| FK | Falklandinseln | |
 | FO | Färöer | |
 | FJ | Fidschi | |
 | FI | Finnland | |
@@ -207,7 +207,7 @@ Das Feature **Länderfilter** verwendet Landeskennzahlen, um die Länder zu defi
 | RO | Rumänien | |
 | RU | Russische Föderation | |
 | RW | Ruanda | |
-| SH | St. Helena | |
+| SH | St. Helena, Ascension und Tristan da Cunha | |
 | KN | St. Kitts und Nevis | |
 | LC | St. Lucia | |
 | PM | St. Pierre und Miquelon | |
@@ -268,4 +268,4 @@ Das Feature **Länderfilter** verwendet Landeskennzahlen, um die Länder zu defi
 | ZM | Sambia | |
 | ZW | Simbabwe | |
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

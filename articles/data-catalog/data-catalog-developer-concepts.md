@@ -115,13 +115,40 @@ Anmerkungstypen stellen Typen von Metadaten dar, die anderen Typen innerhalb des
 <tr><td></td><td>mimeType</td><td>string</td><td>Der MIME-Typ des Inhalts.</td></tr>
 <tr><td></td><td>Inhalt</td><td>string</td><td>Die Anweisungen für den Zugriff auf dieses Datenasset. Dies kann eine URL, eine E-Mail-Adresse oder einen Satz von Anweisungen sein.</td></tr>
 
+<tr><td>TableDataProfile</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>numberOfRows</td></td><td>int</td><td>Die Anzahl der Zeilen im Dataset</td></tr>
+<tr><td></td><td>size</td><td>lang</td><td>Die Größe des Datasets in Bytes.  </td></tr>
+<tr><td></td><td>schemaModifiedTime</td><td>string</td><td>Der Zeitpunkt der letzten Schemaänderung</td></tr>
+<tr><td></td><td>dataModifiedTime</td><td>string</td><td>Der Zeitpunkt der letzten Datasetänderung (Daten wurden hinzugefügt, geändert oder gelöscht)</td></tr>
+
+<tr><td>ColumnsDataProfile</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>columns</td></td><td>ColumnDataProfile[]</td><td>Die Anzahl der Zeilen im Dataset</td></tr>
+
+
 </table>
 
 ### Allgemeine Typen
 
 Allgemeine Typen können als Typen für Eigenschaften verwendet werden, sind aber keine Elemente.
 
-<table><tr><td><b>Allgemeiner Typ</b></td><td><b>Eigenschaften</b></td><td><b>Datentyp</b></td><td><b>Kommentare</b></td></tr><tr><td>DataSourceInfo</td><td></td><td></td><td></td></tr><tr><td></td><td>sourceType</td><td>string</td><td>Beschreibt den Typ der Datenquelle (SQL&#160;Server, Oracle Database...).  </td></tr><tr><td></td><td>objectType</td><td>string</td><td>Beschreibt den Typ des Objekts in der Datenquelle (beispielsweise Tabelle oder Sicht für SQL Server).</td></tr><tr><td></td><td>formatType</td><td>string</td><td>Beschreibt die Struktur der Daten. Mögliche Werte sind „structured“ und „unstructured“.</td></tr><tr><td>SecurityPrincipal</td><td></td><td></td><td></td></tr><tr><td></td><td>upn</td><td>string</td><td>Eindeutige E-Mail-Adresse des Benutzers.</td></tr><tr><td></td><td>firstName</td><td>string</td><td>Der Vorname des Benutzers (für die Anzeige).</td></tr><tr><td></td><td>lastName</td><td>string</td><td>Der Nachname des Benutzers (für die Anzeige).</td></tr><tr><td>Column</td><td></td><td></td><td></td></tr><tr><td></td><td>name</td><td>string</td><td>Der Name der Spalte oder des Attributs.</td></tr><tr><td></td><td>type</td><td>string</td><td>Der Datentyp der Spalte oder des Attributs. Die zulässigen Typen hängen vom Datenquellentyp des Assets ab. Nur eine Teilmenge von Typen wird unterstützt.</td></tr><tr><td></td><td>maxLength</td><td>int</td><td>Die maximal zulässige Länge für die Spalte oder das Attribut. Abgeleitet von der Datenquelle. Gilt nur für einige Datenquellentypen.</td></tr><tr><td></td><td>Precision</td><td>byte</td><td>Die Genauigkeit für die Spalte oder das Attribut. Abgeleitet von der Datenquelle. Gilt nur für einige Datenquellentypen.</td></tr><tr><td></td><td>isNullable</td><td>Boolean</td><td>Gibt an, ob die Spalte einen Nullwert enthalten kann. Abgeleitet von der Datenquelle. Gilt nur für einige Datenquellentypen.</td></tr><tr><td></td><td>expression</td><td>string</td><td>Wenn es sich bei dem Wert um eine berechnete Spalte handelt, enthält dieses Feld den Ausdruck, der den Wert angibt. Abgeleitet von der Datenquelle. Gilt nur für einige Datenquellentypen.</td></tr><tr><td></td><td>defaultValue</td><td>Objekt</td><td>Der Standardwert, der eingefügt wird, wenn in der insert-Anweisung für das Objekt kein Wert angegeben wird. Abgeleitet von der Datenquelle. Gilt nur für einige Datenquellentypen.</td></tr><tr><td>ColumnDescription</td><td></td><td></td><td></td></tr><tr><td></td><td>tags</td><td>string[]</td><td>Ein Array mit Tags zum Beschreiben der Spalte.</td></tr><tr><td></td><td>description</td><td>string</td><td>Eine Beschreibung der Spalte.</td></tr><tr><td></td><td>columnName</td><td>string</td><td>Der Name der Spalte, auf die sich die Informationen beziehen.</td></tr>
+<table><tr><td><b>Allgemeiner Typ</b></td><td><b>Eigenschaften</b></td><td><b>Datentyp</b></td><td><b>Kommentare</b></td></tr><tr><td>DataSourceInfo</td><td></td><td></td><td></td></tr><tr><td></td><td>sourceType</td><td>string</td><td>Beschreibt den Typ der Datenquelle (SQL&#160;Server, Oracle Database...).  </td></tr><tr><td></td><td>objectType</td><td>string</td><td>Beschreibt den Typ des Objekts in der Datenquelle (beispielsweise Tabelle oder Sicht für SQL Server).</td></tr><tr><td></td><td>formatType</td><td>string</td><td>Beschreibt die Struktur der Daten. Mögliche Werte sind „structured“ und „unstructured“.</td></tr><tr><td>SecurityPrincipal</td><td></td><td></td><td></td></tr><tr><td></td><td>upn</td><td>string</td><td>Eindeutige E-Mail-Adresse des Benutzers.</td></tr><tr><td></td><td>firstName</td><td>string</td><td>Der Vorname des Benutzers (für die Anzeige).</td></tr><tr><td></td><td>lastName</td><td>string</td><td>Der Nachname des Benutzers (für die Anzeige).</td></tr><tr><td>Column</td><td></td><td></td><td></td></tr><tr><td></td><td>name</td><td>string</td><td>Der Name der Spalte oder des Attributs.</td></tr><tr><td></td><td>type</td><td>string</td><td>Der Datentyp der Spalte oder des Attributs. Die zulässigen Typen hängen vom Datenquellentyp des Assets ab. Nur eine Teilmenge von Typen wird unterstützt.</td></tr><tr><td></td><td>maxLength</td><td>int</td><td>Die maximal zulässige Länge für die Spalte oder das Attribut. Abgeleitet von der Datenquelle. Gilt nur für einige Datenquellentypen.</td></tr><tr><td></td><td>Precision</td><td>byte</td><td>Die Genauigkeit für die Spalte oder das Attribut. Abgeleitet von der Datenquelle. Gilt nur für einige Datenquellentypen.</td></tr><tr><td></td><td>isNullable</td><td>Boolean</td><td>Gibt an, ob die Spalte einen Nullwert enthalten kann. Abgeleitet von der Datenquelle. Gilt nur für einige Datenquellentypen.</td></tr><tr><td></td><td>expression</td><td>string</td><td>Wenn es sich bei dem Wert um eine berechnete Spalte handelt, enthält dieses Feld den Ausdruck, der den Wert angibt. Abgeleitet von der Datenquelle. Gilt nur für einige Datenquellentypen.</td></tr><tr><td></td><td>defaultValue</td><td>Objekt</td><td>Der Standardwert, der eingefügt wird, wenn in der insert-Anweisung für das Objekt kein Wert angegeben wird. Abgeleitet von der Datenquelle. Gilt nur für einige Datenquellentypen.</td>
+
+</tr><tr><td>ColumnDescription</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>tags</td><td>string[]</td><td>Ein Array mit Tags zum Beschreiben der Spalte.</td></tr>
+<tr><td></td><td>description</td><td>string</td><td>Eine Beschreibung der Spalte.</td></tr><tr><td></td><td>columnName</td><td>string</td><td>Der Name der Spalte, auf die sich die Informationen beziehen.</td></tr>
+
+</tr><tr><td>ColumnDataProfile</td><td></td><td></td><td></td></tr>
+<tr><td></td><td>columnName </td><td>string</td><td>Der Name der Spalte</td></tr>
+<tr><td></td><td>Typ </td><td>string</td><td>Der Typ der Spalte</td></tr>
+<tr><td></td><td>min </td><td>string</td><td>Der Mindestwert im Dataset</td></tr>
+<tr><td></td><td>max </td><td>string</td><td>Der Höchstwert im Dataset</td></tr>
+<tr><td></td><td>avg </td><td>double</td><td>Der durchschnittliche Wert im Dataset</td></tr>
+<tr><td></td><td>stdev </td><td>double</td><td>Die Standardabweichung für das Dataset</td></tr>
+<tr><td></td><td>nullCount </td><td>int</td><td>Die Anzahl der Nullwerte im Dataset</td></tr>
+<tr><td></td><td>distinctCount  </td><td>int</td><td>Die Anzahl der unterschiedlichen Werte im Dataset</td></tr>
+
+
+
 </table>
 
 ## Rollen und Autorisierung
@@ -229,6 +256,6 @@ Mit den Ansichtselementanforderungen **PUT** und **POST** können Sie Rollen und
 > [AZURE.NOTE]Bei „PUT“ muss im Text keine Elementnutzlast angegeben werden: „PUT“ kann zur reinen Aktualisierung von Rollen und/oder Berechtigungen verwendet werden.
 
 <!--Image references-->
-[1]: ./media/data-catalog-developer-concepts/concept.png
+[1]: ./media/data-catalog-developer-concepts/concept2.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

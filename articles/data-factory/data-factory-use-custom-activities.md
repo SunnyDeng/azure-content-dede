@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/25/2015"
+	ms.date="08/28/2015"
 	ms.author="spelluru"/>
 
 # Verwenden von benutzerdefinierten Aktivitäten in einer Azure Data Factory-Pipeline
@@ -213,7 +213,9 @@ Diese exemplarische Vorgehensweise bietet Schritt-für-Schritt-Anleitungen zum E
 10. Kompilieren Sie das Projekt. Klicken Sie im Menü auf **Erstellen** und dann auf **Projektmappe erstellen**.
 11. Starten Sie **Windows-Explorer**, und navigieren Sie je nach Buildtyp zum Ordner **bin\\debug** oder **bin\\release**.
 12. Erstellen Sie die ZIP-Datei **MyDotNetActivity.zip**, die alle Binärdateien im Ordner "<project folder>\\bin\\Debug" enthält. Sie möchten ggf. die Datei "MyDotNetActivity.pdb" einbeziehen, damit Sie zusätzliche Details wie z. B. die Zeilennummer im Quellcode erhalten, der das Problem bei einem Fehler verursacht hat. 
-13. Laden Sie **MyDotNetActivity.zip** als Blob in den Blobcontainer **customactivitycontainer** im Azure-Blobspeicher hoch, den der verknüpfte Dienst **StorageLinkedService** in der **ADFTutorialDataFactory** verwendet. Erstellen Sie den Blobcontainer **customactivitycontainer**, sofern er noch nicht vorhanden ist. 
+13. Laden Sie **MyDotNetActivity.zip** als Blob in den Blobcontainer **customactivitycontainer** im Azure-Blobspeicher hoch, den der verknüpfte Dienst **StorageLinkedService** in der **ADFTutorialDataFactory** verwendet. Erstellen Sie den Blobcontainer **customactivitycontainer**, sofern er noch nicht vorhanden ist.
+
+> [AZURE.NOTE]Wenn Sie dieses .NET-Aktivitätsprojekt einer Projektmappe in Visual Studio hinzufügen, die ein Data Factory-Projekt enthält, müssen Sie die letzten beiden Schritte zum Erstellen der ZIP-Datei und zum manuellen Hochladen in den Azure-Blobspeicher nicht durchführen. Beim Veröffentlichen von Data Factory-Entitäten mit Visual Studio werden diese Schritte automatisch durch den Veröffentlichungsprozess ausgeführt. In den Artikeln [Erstellen der ersten Pipeline mit Visual Studio](data-factory-build-your-first-pipeline-using-vs.md) und [Kopieren von Daten aus einem Azure-Blob in Azure SQL](data-factory-get-started-using-vs.md) erfahren Sie mehr über das Erstellen und Veröffentlichen von Data Factory-Entitäten mit Visual Studio.
 
 
 ## Schritt 2: Verwenden der benutzerdefinierten Aktivität in einer Pipeline
@@ -465,4 +467,4 @@ Es folgen die allgemeinen Schritte zur Verwendung des mit Azure Batch verknüpft
 [image-data-factory-azure-batch-tasks]: ./media/data-factory-use-custom-activities/AzureBatchTasks.png
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

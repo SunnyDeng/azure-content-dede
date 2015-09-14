@@ -7,7 +7,7 @@
 	manager="jwhit"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/21/2015" ms.author="jimpark"; "aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="hero-article" ms.date="08/21/2015" ms.author="jimpark"; "aashishr"/>
 
 # Konfigurieren von Azure Backup zur Vorbereitung auf die Sicherung von Windows-Servern
 
@@ -34,4 +34,4 @@ Um Dateien und Daten von Ihrem Windows-Server auf Azure zu sichern, müssen Sie 
 - [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
 - [Azure Backup – Forum](http://go.microsoft.com/fwlink/p/?LinkId=290933)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

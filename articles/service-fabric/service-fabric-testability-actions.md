@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Testability-Aktion"
-	description="Dieser Artikel befasst sich mit den Testability-Aktionen von Microsoft Azure Service Fabric."
+   pageTitle="Prüfbarkeitsaktion | Microsoft Azure"
+	description="Dieser Artikel befasst sich mit den Prüfbarkeitsaktionen von Microsoft Azure Service Fabric."
 	services="service-fabric"
 	documentationCenter=".net"
 	authors="heeldin"
@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"
 	ms.workload="NA"
-	ms.date="03/17/2015"
+	ms.date="08/31/2015"
 	ms.author="heeldin;motanv"/>
 
 # Testability-Aktionen
@@ -53,9 +53,9 @@ Führen Sie zur besseren Überprüfung der Qualität die Dienst- und Unternehmen
 
 ## Ausführen einer Testability-Aktion mit PowerShell
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine Testability-Aktion mit PowerShell ausführen. Es wird beschrieben, wie Sie eine Testability-Aktion für einen lokalen Cluster (One-Box) oder einen Azure-Cluster ausführen. „Microsoft.Fabric.Testability.Powershell.dll“ (das PowerShell-Modul „Testability“) wird automatisch installiert, wenn Sie den MSI für Microsoft Service Fabric installieren. Das Modul wird automatisch geladen, wenn Sie eine PowerShell-Eingabeaufforderung öffnen.
+In diesem Tutorial erfahren Sie, wie Sie eine Testability-Aktion mit PowerShell ausführen. Es wird beschrieben, wie Sie eine Testability-Aktion für einen lokalen Cluster (One-Box) oder einen Azure-Cluster ausführen. „Microsoft.Fabric.Testability.Powershell.dll“ (das PowerShell-Modul „Testability“) wird automatisch installiert, wenn Sie den MSI für Microsoft Service Fabric installieren. Das Modul wird automatisch geladen, wenn Sie eine PowerShell-Eingabeaufforderung öffnen.
 
-Abschnitte des Lernprogramms:
+Abschnitte des Tutorials:
 
 - [Ausführen einer Aktion für einen One-Box-Cluster](#run-an-action-against-a-one-box-cluster)
 - [Ausführen einer Aktion für einen Azure-Cluster](#run-an-action-against-an-azure-cluster)
@@ -234,4 +234,4 @@ ReplicaSelector secondaryReplicaSelector = ReplicaSelector.RandomSecondaryOf(par
    - [Ausfälle bei der Kommunikation von Dienst zu Dienst](service-fabric-testability-scenarios-service-communication.md)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

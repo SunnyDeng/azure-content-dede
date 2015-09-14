@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen einer App mit einem mobilen und einem Webclient in Azure App Service"
+	pageTitle="Erstellen einer App mit einem mobilen und einem Webclient in Azure App Service | Microsoft Azure"
 	description="Erstellen Sie eine Multichannel-App mit einem Website- und einem mobilen Client in Azure App Service."
 	services="app-service\web"
 	documentationCenter=".net"
@@ -20,4 +20,4 @@
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-web-and-mobile](../../includes/app-service-mobile-dotnet-backend-web-and-mobile.md)]
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

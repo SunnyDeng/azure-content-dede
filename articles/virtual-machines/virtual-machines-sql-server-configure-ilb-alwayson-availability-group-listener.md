@@ -25,7 +25,7 @@
 
 In diesem Thema erfahren Sie, wie Sie mit dem **internen Load Balancer (ILB)** einen Listener für eine AlwaysOn-Verfügbarkeitsgruppe konfigurieren.
 
-Ihre Verfügbarkeitsgruppe kann Replikate enthalten, die ausschließlich lokal, ausschließlich in Azure oder sowohl lokal als auch in Azure verfügbar sind (Hybridkonfigurationen). Azure-Replikate können sich innerhalb derselben Region oder in mehreren Regionen befinden, wobei mehrere virtuelle Netzwerke (VNets) verwendet werden. Bei den nachfolgenden Schritten wird davon ausgegangen, dass bereits eine [Verfügbarkeitsgruppe konfiguriert wurde](https://msdn.microsoft.com/library/azure/dn249504.aspx), Sie jedoch noch keinen Listener konfiguriert haben.
+Ihre Verfügbarkeitsgruppe kann Replikate enthalten, die ausschließlich lokal, ausschließlich in Azure oder sowohl lokal als auch in Azure verfügbar sind (Hybridkonfigurationen). Azure-Replikate können sich innerhalb derselben Region oder in mehreren Regionen befinden, wobei mehrere virtuelle Netzwerke (VNets) verwendet werden. Bei den nachfolgenden Schritten wird davon ausgegangen, dass bereits eine [Verfügbarkeitsgruppe konfiguriert wurde](virtual-machines-sql-server-alwayson-availability-groups-gui.md), Sie jedoch noch keinen Listener konfiguriert haben.
 
 Beachten Sie die folgenden Einschränkungen, die für Verfügbarkeitsgruppenlistener in Azure bei Verwendung des internen Lastenausgleichs gelten:
 
@@ -135,4 +135,4 @@ Sie müssen für ILB zunächst den internen Load Balancer einrichten. Verwenden 
 
 [AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

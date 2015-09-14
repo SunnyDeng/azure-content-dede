@@ -1,11 +1,11 @@
 <properties
-	pageTitle="Erstellen und Bereitstellen einer Node.js-API-App in Azure App Service"
+	pageTitle="Erstellen und Bereitstellen einer Node.js-API-App in Azure App Service | Microsoft Azure"
 	description="Lernen Sie, wie Sie ein Node.js-API-App-Paket erstellen und in Azure App Service bereitstellen."
 	services="app-service\api"
 	documentationCenter="nodejs"
 	authors="pkefal"
-  manager="" 
-  editor=""/>
+	manager=""
+	editor=""/>
 
 <tags
 	ms.service="app-service-api"
@@ -20,7 +20,7 @@
 
 In diesem Lernprogramm erfahren Sie, wie Sie eine [Node.js](http://nodejs.org)-Anwendung erstellen und mit [Git](http://git-scm.com) als Azure App Service-API-App bereitstellen. Die Anweisungen in diesem Lernprogramm gelten für alle Betriebssysteme, unter denen Node ausgeführt werden kann.
 
-Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
+Der folgende Screenshot zeigt die fertige Anwendung:
 
 ![][sample-api-app-page]
 
@@ -34,7 +34,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 2. Klicken Sie links unten im Portal auf **NEU**.
 
-3. Klicken Sie auf **Web + Mobil > API-App**.
+3. Klicken Sie auf **Web + Mobil** > **API-App**.
 
 	![][portal-quick-create]
 
@@ -50,7 +50,7 @@ Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
 
 	Wenn Sie das Kontrollkästchen **Zum Startboard hinzufügen** aktiviert lassen, öffnet das Portal nach dem Erstellen der API-App automatisch das zugehörige Blatt. Wenn Sie das Kontrollkästchen deaktiviert haben, klicken Sie auf der Startseite des Portals auf **Benachrichtigungen**, um den Status der API-App-Erstellung anzuzeigen. Klicken Sie anschließend auf die Benachrichtigung, um zum Blatt für die neue API-App zu wechseln.
 
-7. Klicken Sie auf **Einstellungen > Anwendungseinstellungen**.
+7. Klicken Sie auf **Einstellungen** > **Anwendungseinstellungen**.
 
 9. Legen Sie die Zugriffsebene auf **Öffentlich (anonym)** fest.
 
@@ -172,7 +172,6 @@ In diesem Abschnitt erstellen Sie ein lokales Git-Repository und führen einen P
 
 		git init
 
-
 2. Verwenden Sie die folgenden Befehle, um dem Repository Dateien hinzuzufügen:
 
 		git add .
@@ -244,6 +243,5 @@ Sie haben eine Node.js-Web-App bereitgestellt, die ein API-App-Back-End zu Azure
 [server-js]: ./media/app-service-api-nodejs-api-app/server-js.png
 [sample-api-app-page]: ./media/app-service-api-nodejs-api-app/sample-api-app-page.png
 [browse-api-app-page]: ./media/app-service-api-nodejs-api-app/browse-api-app-page.png
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

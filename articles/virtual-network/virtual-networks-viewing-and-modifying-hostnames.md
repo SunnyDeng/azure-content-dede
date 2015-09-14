@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Anzeigen und Ändern von Hostnamen"
-	description="Beschreibung"
+   pageTitle="Anzeigen und Ändern von Hostnamen | Microsoft Azure"
+	description="Anzeigen und Ändern von Hostnamen für virtuelle Computer sowie Web- und Workerrollen in Azure für die Namensauflösung"
 	services="virtual-network"
 	documentationCenter="na"
 	authors="joaoma"
@@ -51,7 +51,7 @@ Gehen Sie auf einem REST-Client wie folgt vor:
 
 1. Legen Sie einen Headereintrag mit dem Namen "x-ms-version" mit einem Wert von "2013-11-01" fest.
 
-1. Senden Sie eine Anforderung im folgenden Format: https://management.core.windows.net/<Abonnements-ID>/services/hostedservices/<Dienstname>?embed-detail=true
+1. Senden Sie eine Anforderung im folgenden Format: https://management.core.windows.net/\<Abonnements-ID>/services/hostedservices/<Dienstname>?embed-detail=true
 
 1. Suchen Sie das **HostName**-Element für jedes **RoleInstance**-Element.
 
@@ -71,4 +71,4 @@ Sie können den Hostnamen für einen virtuellen Computer oder eine Rolleninstanz
 
 [Angeben von DNS-Einstellungen mit Netzwerkkonfigurationsdateien](virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

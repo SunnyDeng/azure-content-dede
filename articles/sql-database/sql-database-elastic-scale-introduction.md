@@ -1,20 +1,20 @@
 <properties
     pageTitle="Tools für elastische Datenbanken in Azure SQL-Datenbank"
-    description="Skalieren Sie auf einfache Weise Datenbankressourcen in der Cloud mithilfe der Tools für elastische Datenbanken."
-    services="sql-database"
-    documentationCenter=""
-    manager="jeffreyg"
-    authors="sidneyh"
-    editor=""/>
+	description="SaaS-Entwickler (Software-as-a-Service) können mit diesen Tools problemlos elastische und skalierbare Datenbanken in der Cloud erstellen."
+	services="sql-database"
+	documentationCenter=""
+	manager="jeffreyg"
+	authors="ddove"
+	editor=""/>
 
 <tags
     ms.service="sql-database"
-    ms.workload="sql-database"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="article"
-    ms.date="08/03/2015"
-    ms.author="sidneyh"/>
+	ms.workload="sql-database"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/27/2015"
+	ms.author="sidneyh"/>
 
 # Übersicht über Features für elastische Datenbanken
 
@@ -28,6 +28,8 @@ Mit den Features für **elastische Datenbanken** können Sie nahezu unbegrenzt v
 Die folgende Grafik zeigt eine Architektur mit den **Features für elastische Datenbanken** im Kontext einer Sammlung von Datenbanken.
 
 ![Tools für elastische Datenbanken][1]
+
+Eine Druckversion dieser Grafik finden Sie in der [Übersicht zu elastischen Datenbanken](http://aka.ms/axmybc).
 
 Die Datenbankfarbe symbolisiert Schemas. Datenbanken mit der gleichen Farbe verwenden die gleichen Schemas.
 
@@ -55,7 +57,7 @@ Die folgende Abbildung zeigt die horizontalen und vertikalen Skalierungsdimensio
 
 Horizontales Skalieren meint das Hinzufügen oder Entfernen von Datenbanken zur Anpassung der Kapazität oder der allgemeinen Leistung. Dies wird auch als „Ausskalieren“ bezeichnet. Sharding ist eine gängige Methode für die horizontale Skalierung, bei der Daten in einer Sammlung von identisch strukturierten Datenbanken partitioniert werden.
 
-Vertikales Skalieren bezeichnet das Erhöhen oder Verringern der Leistungsstufe einer einzelnen Datenbank. Dies wird auch als „Hochskalieren“ bezeichnet.
+Vertikales Skalieren bezeichnet das Erhöhen oder Verringern der Leistungsstufe einer einzelnen Datenbank. Dies wird auch als "zentrales Hochskalieren" bezeichnet.
 
 Die meisten Datenbankanwendungen für Clouds verwenden eine Kombination aus diesen beiden Ansätzen. Eine SaaS (Software as a Service)-Anwendung kann z. B. das horizontale Skalieren für Bereitstellungen an neue Endkunden nutzen und das vertikale Skalieren, damit die Ressourcen für die Datenbanken der einzelnen Endkunden bei entsprechendem Workload vergrößert oder verkleinert werden können.
 
@@ -80,7 +82,7 @@ Einige Anwendungen verwenden den einfachsten Ansatz und erstellen für jeden Man
 
 ![Einzelinstanzen und Mehrinstanzen][4]
 
-In anderen Szenarien werden mehrere Mandanten in Datenbanken zusammengefasst, statt sie in getrennten Datenbanken zu isolieren. Dabei handelt es sich um ein typisches **Shardingszenario mit mehreren Mandanten**, dem die Tatsache zugrunde liegen kann, dass eine Anwendung eine große Anzahl von sehr kleinen Mandanten verwalten muss. Beim Sharding mit mehreren Mandanten sollen die Zeilen in den Datenbanktabellen einen Schlüssel enthalten, der die Mandanten-ID oder den Sharding-Schlüssel eindeutig identifiziert. Auch hier ist es Aufgabe der Anwendungsschicht, die Anforderung eines Mandanten an die entsprechende Datenbank weiterzuleiten. Dieser Vorgang kann durch die Clientbibliothek für elastische Datenbanken unterstützt werden. Darüber hinaus kann die zeilenbasierte Sicherheit zum Filtern der Zeilen verwendet werden, auf die jeder Mandant Zugriff hat. Weitere Informationen hierzu finden Sie unter [Mehrinstanzenfähige Anwendungen mit Tools für elastische Datenbanken und zeilenbasierter Sicherheit](sql-database-elastic-tools-multi-tenant-row-level-security.md). Beim Sharding mit mehreren Mandanten ist möglicherweise eine Neuverteilung der Daten zwischen den Datenbanken erforderlich, die mit dem Split-Merge-Tool für elastische Datenbanken durchgeführt wird.
+In anderen Szenarien werden mehrere Mandanten in Datenbanken zusammengefasst, statt sie in getrennten Datenbanken zu isolieren. Dabei handelt es sich um ein typisches **Shardingszenario mit mehreren Mandanten**, dem die Tatsache zugrunde liegen kann, dass eine Anwendung eine große Anzahl von sehr kleinen Mandanten verwalten muss. Beim Sharding mit mehreren Mandanten sollen die Zeilen in den Datenbanktabellen einen Schlüssel enthalten, der die Mandanten-ID oder den Sharding-Schlüssel eindeutig identifiziert. Auch hier ist es Aufgabe der Anwendungsschicht, die Anforderung eines Mandanten an die entsprechende Datenbank weiterzuleiten. Dieser Vorgang kann durch die Clientbibliothek für elastische Datenbanken unterstützt werden. Darüber hinaus kann die Sicherheit auf Zeilenebene zum Filtern der Zeilen verwendet werden, auf die jeder Mandant Zugriff hat. Weitere Informationen hierzu finden Sie unter [Mehrinstanzenfähige Anwendungen mit Tools für elastische Datenbanken und zeilenbasierter Sicherheit](sql-database-elastic-tools-multi-tenant-row-level-security.md). Beim Sharding mit mehreren Mandanten ist möglicherweise eine Neuverteilung der Daten zwischen den Datenbanken erforderlich, die mit dem Split-Merge-Tool für elastische Datenbanken durchgeführt wird.
 
 ### Verschieben von Daten aus Datenbanken mit mehreren Mandanten in Datenbanken mit Einzelmandant
 Wenn Sie eine SaaS-Anwendung erstellen, wird Interessenten üblicherweise eine Testversion der Software bereitgestellt. In diesem Fall ist es aus Kostengründen sinnvoll, für die Daten eine Datenbank mit mehreren Mandanten zu verwenden. Wenn aus dem Interessenten allerdings ein Kunde wird, ist eine Datenbank mit nur einem Mandanten die bessere Wahl, da diese eine bessere Leistung bietet. Falls der Kunde während des Testzeitraums Daten erstellt hat, können Sie diese mithilfe des [Split-Merge-Tools](sql-database-elastic-scale-overview-split-and-merge) aus der Datenbank mit mehreren Mandanten in die neue Einzelmandantendatenbank verschieben.
@@ -102,4 +104,4 @@ Einzelheiten zum Pool für elastische Datenbanken finden Sie unter [Überlegunge
 [3]: ./media/sql-database-elastic-scale-introduction/overview.png
 [4]: ./media/sql-database-elastic-scale-introduction/single_v_multi_tenant.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

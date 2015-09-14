@@ -2,11 +2,10 @@
 	pageTitle="Einrichten eines virtuellen SQL Server-Computers als IPython Notebook-Server | Microsoft Azure"
 	description="Einrichten eines virtuellen Data Science-Computers mit SQL-Server und IPython-Server."
 	services="machine-learning"
-	solutions="" documentationCenter=""
-	authors="msolhab" 
+	documentationCenter=""
+	authors="msolhab"
 	manager="paulettm"
-	editor="cgronlun" />
-
+	editor="cgronlun"/>
 
 <tags
 	ms.service="machine-learning"
@@ -14,9 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/29/2015"
-	ms.author="mohabib;xibingao;bradsev" />
-
+	ms.date="09/01/2015"
+	ms.author="mohabib;xibingao;bradsev"/>
 
 # Einrichten eines virtuellen Azure SQL Server-Computers als IPython Notebook-Server für die erweiterte Analyse
 
@@ -227,7 +225,7 @@ Um sich von einem anderen Computer aus mit dem SQL Server-Datenbankmodul zu verb
 
 1.  Wählen Sie im Azure-Verwaltungsportal (oder aus dem vorherigen Schritt) **VIRTUELLE COMPUTER**.
 
-2.  Kopieren Sie auf der Seite **INSTANZEN VIRTUELLER COMPUTER** in der Spalte **DNS-NAME** den DNS-Namen für den virtuellen Computer, der auf \*\***http://** folgt. (In der Benutzeroberfläche wird möglicherweise nicht der gesamte Name angezeigt, aber Sie können mit der rechten Maustaste darauf klicken und diese kopieren.)
+2.  Kopieren Sie auf der Seite **INSTANZEN VIRTUELLER COMPUTER** in der Spalte **DNS-NAME** den DNS-Namen für den virtuellen Computer, der auf ****http://** folgt. (In der Benutzeroberfläche wird möglicherweise nicht der gesamte Name angezeigt, aber Sie können mit der rechten Maustaste darauf klicken und diese kopieren.)
 
 ##<a name="cde"></a>Verbinden mit dem Datenbankmodul von einem anderen Computer aus
 
@@ -300,4 +298,4 @@ Die nächsten Schritte des Datenanalyseprozesses sind unter [Leitfaden: Erweiter
 [15]: ./media/machine-learning-data-science-setup-sql-server-virtual-machine/vmshutdown.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

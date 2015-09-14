@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Web-App mit Express (Node.js) | Microsoft Azure" 
-	description="Dieses Lernprogramm baut auf dem Lernprogramm für Clouddienste auf und zeigt, wie das Express-Modul verwendet wird." 
-	services="cloud-services" 
-	documentationCenter="nodejs" 
-	authors="MikeWasson" 
-	manager="wpickett" 
+	pageTitle="Web-App mit Express (Node.js) | Microsoft Azure"
+	description="Dieses Lernprogramm baut auf dem Lernprogramm für Clouddienste auf und zeigt, wie das Express-Modul verwendet wird."
+	services="cloud-services"
+	documentationCenter="nodejs"
+	authors="MikeWasson"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="02/25/2015" 
+	ms.service="cloud-services"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="mwasson"/>
 
 
@@ -43,9 +43,9 @@ Führen Sie die folgenden Schritte aus, um ein neues Cloud-Dienst-Projekt namens
 
 		PS C:\node> New-AzureServiceProject expressapp
 		PS C:\Node\expressapp> Add-AzureNodeWebRole
-		PS C:\Node\expressapp> Set-AzureServiceProjectRole WebRole1 node 0.10.21
+		PS C:\Node\expressapp> Set-AzureServiceProjectRole WebRole1 Node 0.10.21
 
-	> [AZURE.NOTE]Standardmäßig verwendet **Add-AzureNodeWebRole** eine ältere Version von "Node.js". Die oben stehende Anweisung **Set-AzureServiceProjectRole** weist Azure an, Node 0.10.21 zu verwenden.
+	> [AZURE.NOTE]Standardmäßig verwendet **Add-AzureNodeWebRole** eine ältere Version von "Node.js". Die oben stehende Anweisung **Set-AzureServiceProjectRole** weist Azure an, Node 0.10.21 zu verwenden. Beachten Sie, dass bei Parametern die Groß-/Kleinschreibung relevant ist. Sie können überprüfen, ob die richtige Version von "Node.js" ausgewählt wurde, indem Sie die **engines**-Eigenschaft in **WebRole1\\package.json** prüfen.
 
 ##Installieren von Express
 
@@ -86,7 +86,7 @@ Führen Sie die folgenden Schritte aus, um ein neues Cloud-Dienst-Projekt namens
 
 		var app = require('./app');
 
-	Diese Änderung ist erforderlich, da die Datei \(ehemals **bin/www**,\) in dasselbe Verzeichnis wie die benötigte App-Datei verschoben wurde. Speichern Sie die Datei **server.js** anschließend.
+	Diese Änderung ist erforderlich, da die Datei (ehemals **bin/www**,) in dasselbe Verzeichnis wie die benötigte App-Datei verschoben wurde. Speichern Sie die Datei **server.js** anschließend.
 
 8.  Verwenden Sie den folgenden Befehl, um die Anwendung im Azure-Emulator auszuführen:
 
@@ -108,7 +108,7 @@ Führen Sie die folgenden Schritte aus, um ein neues Cloud-Dienst-Projekt namens
 
 2.  Ändern Sie die letzte Textzeile, indem Sie **in Azure** anhängen.
 
-	![Die letzte Zeile in der Datei "index.jade" lautet: p Welcome to \#{Title} in Azure](./media/cloud-services-nodejs-develop-deploy-express-app/node31.png)
+	![Die letzte Zeile in der Datei "index.jade" lautet: p Welcome to #{Title} in Azure](./media/cloud-services-nodejs-develop-deploy-express-app/node31.png)
 
 3.  Speichern Sie die Datei, und beenden Sie den Editor.
 
@@ -135,4 +135,4 @@ Sobald die Bereitstellung abgeschlossen ist, wird der Browser geöffnet und die 
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

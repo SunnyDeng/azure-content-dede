@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Kopieren der Ausgabedaten aus dem Lernprogramm in eine lokale SQL Server-Datenbank"
-	description="Die exemplarische Vorgehensweise in diesem Lernprogramm baut auf dem Data Factory-Lernprogramm auf und beschreibt das Kopieren von Effektivitätsdaten für Marketingkampagnen in eine lokale SQL Server-Datenbank."
+	pageTitle="Kopieren von Ausgabedaten in eine lokale SQL Server-Datenbank (Azure-Portal)"
+	description="Diese exemplarische Vorgehensweise baut auf dem Tutorial mit dem Data Factory-Editor im Azure-Portal auf, indem die Pipeline Ausgabedaten in eine SQL Server-Datenbank kopiert."
 	services="data-factory"
 	documentationCenter=""
 	authors="spelluru"
@@ -169,4 +169,4 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

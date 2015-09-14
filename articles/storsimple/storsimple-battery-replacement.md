@@ -1,21 +1,19 @@
 <properties 
-   pageTitle="Ersetzen des Notfallakkus auf dem StorSimple-Gerät | Microsoft Azure"
-   description="Beschreibt das Entfernen, Ersetzen und Warten des Notfallakkus auf dem StorSimple-Gerät."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
-
+   pageTitle="Austauschen von Akkus bei StorSimple-Geräten | Microsoft Azure"
+	description="Beschreibt das Entfernen, Ersetzen und Warten des Notfallakkus auf dem StorSimple-Gerät."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/05/2015"
-   ms.author="alkohli" />
-
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/31/2015"
+	ms.author="alkohli"/>
 
 # Ersetzen des Notfallakkus auf dem StorSimple-Gerät
 
@@ -23,13 +21,13 @@
 
 Die Stromversorgungs- und Kühleinheit (PCM) im primären Gehäuse des Microsoft Azure StorSimple-Geräts verfügt über einen zusätzlichen Akku. Dieser Akku stellt die Stromversorgung bereit, damit das StorSimple-Gerät Daten speichern kann, wenn ein Stromausfall im primären Gehäuse auftritt. Dieser Akku wird als *Notfallakku* bezeichnet. Der Notfallakku ist nur für das primäre Gehäuse Ihres StorSimple-Geräts vorhanden (das EBOD-Gehäuse enthält keinen Notfallakku).
 
-In diesem Lernprogramm werden folgende Punkte erläutert:
+In diesem Tutorial werden folgende Punkte erläutert:
 
 - Entfernen des Notfallakkus 
 - Installieren eines neuen Notfallakkus
 - Warten des Notfallakkus
 
->[AZURE.IMPORTANT]Vor dem Entfernen und Austauschen eines Notfallakkus überprüfen Sie die Sicherheitsinformationen unter [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
+>[AZURE.IMPORTANT]Vor dem Entfernen und Austauschen eines Notfallakkus überprüfen Sie die Sicherheitsinformationen in der [Einführung in den Austausch von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
 ## Entfernen des Notfallakkus
 
@@ -60,9 +58,9 @@ Der Notfallakku für Ihr Microsoft Azure StorSimple-Gerät ist eine vor Ort aust
 
     |Bezeichnung|Beschreibung|
     |:---|:-----------|
-    |1|Stromausfall|
-    |2|Lüfterfehler|
-    |3|Akkufehler|
+    |1|Stromausfall (Wechselstrom)|
+    |2|Lüfterausfall|
+    |3|Batterieausfall|
     |4|PCM OK|
     |5|Stromausfall (Gleichstrom)|
     |6|Akku fehlerfrei|
@@ -117,4 +115,4 @@ Wenn der Status **HERUNTERGESTUFT** angezeigt wird, empfehlen wir die folgende V
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

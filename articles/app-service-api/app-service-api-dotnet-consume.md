@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Nutzen einer API-App in Azure App Service aus einem .NET-Client" 
-	description="Finden Sie heraus, wie Sie mithilfe des App Service-SDK eine API-App aus einem .NET-Client nutzen." 
-	services="app-service\api" 
-	documentationCenter=".net" 
-	authors="tdykstra" 
-	manager="wpickett" 
+	pageTitle="Nutzen einer API-App in Azure App Service aus einem .NET-Client"
+	description="Finden Sie heraus, wie Sie mithilfe des App Service-SDK eine API-App aus einem .NET-Client nutzen."
+	services="app-service\api"
+	documentationCenter=".net"
+	authors="tdykstra"
+	manager="wpickett"
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-api" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="dotnet" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/30/2015" 
+	ms.service="app-service-api"
+	ms.workload="web"
+	ms.tgt_pltfrm="dotnet"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/30/2015"
 	ms.author="tdykstra"/>
 
 # Nutzen einer API-App in Azure App Service aus einem .NET-Client 
@@ -37,7 +37,7 @@ Die Projekt- und Codebeispiele in diesem Artikel basieren auf dem API-App-Projek
 
 - [Erstellen einer API-App](app-service-dotnet-create-api-app.md)
 - [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md)
-- [Schützen einer API-App](../app-service-dotnet-add-authentication.md)
+- [Schützen einer API-App](../app-service-api-dotnet-add-authentication.md)
 
 [AZURE.INCLUDE [install-sdk-2013-only](../../includes/install-sdk-2013-only.md)]
 
@@ -205,4 +205,4 @@ Um weitere Codebeispiele für den Aufruf einer API-App aus einem .NET-Client zu 
 Informationen zur Authentifizierung in API-Apps finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

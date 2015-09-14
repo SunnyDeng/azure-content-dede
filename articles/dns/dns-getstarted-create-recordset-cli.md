@@ -13,7 +13,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
-	ms.date="07/29/2015"
+	ms.date="09/02/2015"
 	ms.author="joaoma"/>
 
 
@@ -61,9 +61,9 @@ Das folgende Beispiel zeigt, wie Sie eine Datensatzgruppe und Einträge erstelle
 
 Erstellen Sie eine Datensatzgruppe über die Befehlszeilenschnittstelle:
 
-	Usage: network dns-record-set create <resource-group> <dns-zone-name> <name> <type> <ttl>
+	Usage: network dns record-set create <resource-group> <dns-zone-name> <name> <type> <ttl>
 
-	azure network dns-record-set create myresourcegroup  contoso.com  www A  60
+	azure network dns record-set create myresourcegroup  contoso.com  www A  60
 
 Die Datensatzgruppe hat den relativen Namen "www" in der DNS-Zone "contoso.com", somit lautet der vollqualifizierte Name der Einträge "www.contoso.com". Der Eintragstyp ist "A", und die Gültigkeitsdauer beträgt 60 Sekunden.
 
@@ -75,15 +75,15 @@ Die Datensatzgruppe ist leer, und wir müssen Einträge hinzufügen, um die neu 
 
 Fügen Sie der Datensatzgruppe "www" IPv4-A-Einträge mithilfe des folgenden Befehls hinzu:
 
-	Usage: network dns-record-set add-record <resource-group> <dns-zone-name> <record-set-name> <type>
+	Usage: network dns record-set add-record <resource-group> <dns-zone-name> <record-set-name> <type>
 
-	azure network dns-record-set add-record myresourcegroup contoso.com  www A  -a 134.170.185.46
+	azure network dns record-set add-record myresourcegroup contoso.com  www A  -a 134.170.185.46
 	
 
 Damit sind die Änderungen abgeschlossen. Sie können die Datensatzgruppe mit dem Befehl "azure network dns-record-set show" aus Azure DNS abrufen:
 
 
-	azure network dns-record-set show myresourcegroup "contoso.com" www A
+	azure network dns record-set show myresourcegroup "contoso.com" www A
 	
 	info:    Executing command network dns-record-set show
 	+ Looking up the DNS record set "www"
@@ -95,7 +95,7 @@ Damit sind die Änderungen abgeschlossen. Sie können die Datensatzgruppe mit de
 	data:    A records:
 	data:        IPv4 address                : 134.170.185.46
 	data:
-	info:    network dns-record-set show command OK
+	info:    network dns record-set show command OK
 
 
 Sie können auch nslookup oder andere DNS-Tools verwenden, um die neue Datensatzgruppe abzufragen.
@@ -122,4 +122,4 @@ Sie können auch nslookup oder andere DNS-Tools verwenden, um die neue Datensatz
 [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

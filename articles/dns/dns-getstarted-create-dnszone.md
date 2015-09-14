@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
-	ms.date="08/20/2015"
+	ms.date="09/02/2015"
 	ms.author="joaoma"/>
 
 # Erste Schritte mit Azure DNS
@@ -125,7 +125,7 @@ Verwenden Sie Get-AzureDnsRecordSet, um diese Einträge anzuzeigen:
 >[AZURE.NOTE]Datensatzgruppen am Stamm (oder der "Spitze") einer DNS-Zone verwenden "@" als Datensatzgruppennamen.
 
 
-Nach der Erstellung Ihrer ersten DNS-Zone können Sie sie mit DNS-Tools wie nslookup, dig oder mit dem [Resolve-DnsName PowerShell-Cmdlet](https://technet.microsoft.com/de-de/library/jj590781.aspx) testen.<BR>
+Nach der Erstellung Ihrer ersten DNS-Zone können Sie sie mit DNS-Tools wie nslookup, dig oder mit dem [Resolve-DnsName PowerShell-Cmdlet](https://technet.microsoft.com/de-DE/library/jj590781.aspx) testen.<BR>
 
 Wenn Sie Ihre Domäne noch nicht delegiert haben, um die neue Zone in Azure DNS zu verwenden, müssen Sie die DNS-Abfrage direkt auf einen der Namenserver für die Zone leiten. Die Namenserver für die Zone werden in den NS-Einträgen angegeben, wie von Get-AzureDnsRecordSet oben aufgeführt. Achten Sie darauf, die korrekten Werte für die Zone im folgenden Befehl zu ersetzen.<BR>
 
@@ -153,4 +153,4 @@ Wenn Sie Ihre Domäne noch nicht delegiert haben, um die neue Zone in Azure DNS 
 [Erste Schritte beim Erstellen von Datensatzgruppen und Einträgen](dns-getstarted-create-recordset.md)<BR> [Verwalten von DNS-Zonen](dns-operations-dnszones.md)<BR> [Verwalten von DNS-Einträgen](dns-operations-recordsets.md)<BR> [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)<BR> [Referenz zur Azure DNS-REST-API](https://msdn.microsoft.com/library/azure/mt163862.aspx)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

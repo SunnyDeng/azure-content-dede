@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Ist Cloud Services in Azure die passende Computeoption für mich?" 
-	description="Erfahren Sie mehr über die Computehostingoptionen in Azure und ihre Funktionsweise: App Service, Cloud Services und Virtual Machines" 
+	pageTitle="Ist Cloud Services in Azure die passende Computeoption für mich?"
+	description="Erfahren Sie mehr über die Computehostingoptionen in Azure und ihre Funktionsweise: App Service, Cloud Services und Virtual Machines"
 	services="cloud-services"
-    documentationCenter=""
-	authors="Thraka" 
+	documentationCenter=""
+	authors="Thraka"
 	manager="timlt"/>
 
 <tags 
-	ms.service="multiple" 
-	ms.workload="multiple" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+	ms.service="multiple"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="adegeo"/>
 
 # Sollte ich mich für Cloud Services entscheiden?
@@ -36,4 +36,4 @@ Azure bietet verschiedene Hostingmodelle für die Ausführung von Anwendungen. J
 [Virtual Machines]: ../virtual-machines-choose-me.md
 [Cloud Services]: #tellmecs
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

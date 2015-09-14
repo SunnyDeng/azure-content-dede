@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen der ersten Pipeline mit Azure Data Factory"
-	description="Dieses Tutorial zeigt, wie Sie eine Beispieldatenpipeline erstellen, die Daten mithilfe von Azure HDInsight und des Data Factory-Editors transformiert."
+	pageTitle="Erstellen der ersten Azure Data Factory-Pipeline mit dem Data Factory-Editor"
+	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Beispielpipeline mit dem Data Factory-Editor im Azure-Portal."
 	services="data-factory"
 	documentationCenter=""
 	authors="spelluru"
@@ -12,11 +12,11 @@
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article" 
+	ms.topic="article"
 	ms.date="07/27/2015"
 	ms.author="spelluru"/>
 
-# Erstellen der ersten Pipeline mit Azure Data Factory
+# Erstellen der ersten Azure Data Factory-Pipeline mit dem Data Factory-Editor (Azure-Portal)
 > [AZURE.SELECTOR]
 - [Tutorial Overview](data-factory-build-your-first-pipeline.md)
 - [Using Data Factory Editor](data-factory-build-your-first-pipeline-using-editor.md)
@@ -45,7 +45,7 @@ Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory
 
 	![Blatt "Neue Data Factory"](./media/data-factory-build-your-first-pipeline-using-editor/new-data-factory-blade.png)
 
-	> [AZURE.IMPORTANT] Azure Data Factory-Namen sind global eindeutig. Sie müssen dem Namen der Data Factory Ihren Namen voranstellen, um die erfolgreiche Erstellung der Factory zu aktivieren.
+	> [AZURE.IMPORTANT]Azure Data Factory-Namen sind global eindeutig. Sie müssen dem Namen der Data Factory Ihren Namen voranstellen, um die erfolgreiche Erstellung der Factory zu aktivieren. 
 3.	Wenn Sie noch keine Ressourcengruppe erstellt haben, müssen Sie eine Ressourcengruppe erstellen. Gehen Sie dazu folgendermaßen vor:
 	1.	Klicken Sie auf **RESSOURCENGRUPPENNAME**.
 	2.	Wählen Sie auf dem Blatt **Ressourcengruppe** die Option **Neue Ressourcengruppe erstellen** aus.
@@ -65,7 +65,7 @@ Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory
 In den folgenden Schritten erfahren Sie, wie Sie die verknüpften Dienste, Datasets und Pipeline erstellen, die Sie in diesem Tutorial verwenden.
 
 ## Schritt 2: Erstellen von verknüpften Diensten und Datasets
-In diesem Schritt verknüpfen Sie Ihr Azure Storage-Konto und einen bedarfsgesteuerten Azure HDInsight-Cluster mit Ihrer Data Factory und erstellen dann ein Dataset, das die Ausgabedaten der Hive-Verarbeitung darstellt.
+In diesem Schritt verknüpfen Sie Ihr Azure-Speicherkonto und einen bedarfsgesteuerten Azure HDInsight-Cluster mit Ihrer Data Factory und erstellen dann ein Dataset, das die Ausgabedaten der Hive-Verarbeitung darstellt.
 
 ### Erstellen des mit Azure Storage verknüpften Diensts
 1.	Klicken Sie auf dem Blatt **DATA FACTORY** für **DataFactoryFirstPipeline** auf **Erstellen und bereitstellen**. Der Data Factory-Editor wird gestartet. 
@@ -152,7 +152,7 @@ Jetzt erstellen Sie das Ausgabedataset, das die im Azure- Blobspeicher gespeiche
 ## Schritt 3: Erstellen Ihrer ersten Pipeline
 In diesem Schritt erstellen Sie Ihre erste Pipeline.
 
-1. Klicken Sie im **Data Factory-Editor** auf **(...)** und dann auf **Neue Pipeline**.
+1. Klicken Sie im **Data Factory-Editor** auf **\(...\)** und dann auf **Neue Pipeline**.
 	
 	![Schaltfläche "Neue Pipeline"](./media/data-factory-build-your-first-pipeline-using-editor/new-pipeline-button.png)
 2. Kopieren Sie den Codeausschnitt, und fügen Sie ihn in das Fenster "Draft-1" ein.
@@ -230,4 +230,7 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline.
 In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL](./data-factory-get-started.md).
   
 
-<!---HONumber=August15_HO7-->
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-build-your-first-pipeline-using-editor.md).
+
+<!---HONumber=September15_HO1-->

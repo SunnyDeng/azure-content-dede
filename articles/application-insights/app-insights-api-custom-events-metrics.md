@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="08/26/2015"
+	ms.date="08/28/2015"
 	ms.author="awills"/>
 
 # Application Insights-API für benutzerdefinierte Ereignisse und Metriken 
@@ -124,7 +124,7 @@ Klicken Sie auf ein beliebiges Vorkommen, um weitere Details anzuzeigen.
 
 ## <a name="properties"></a>Filtern, Suchen und Segmentieren der Daten mit Eigenschaften
 
-Sie können Ihren Ereignissen (und auch Metriken, Seitenaufrufen und anderen Telemetriedaten) Eigenschaften und Messungen anfügen.
+Sie können Ihren Ereignissen (und auch Metriken, Seitenaufrufen, Ausnahmen und anderen Telemetriedaten) Eigenschaften und Messungen anfügen.
 
 **Eigenschaften** sind die Zeichenfolgenwerte, die Sie zum Filtern der Telemetriedaten in den Nutzungsberichten verwenden können. Wenn zum Beispiel die Anwendung mehrere Spiele bereitstellt, sollten Sie den Namen des Spiels an jedes Ereignis anfügen, damit Sie sehen können, welche Spiele immer populärer werden.
 
@@ -140,13 +140,22 @@ Es gibt einige [Beschränkungen hinsichtlich der Anzahl von Eigenschaften, Eigen
 
 *JavaScript*
 
-    appInsights.trackEvent // or trackPageView, trackMetric, ...
+    appInsights.trackEvent
       ("WinGame",
          // String properties:
          {Game: currentGame.name, Difficulty: currentGame.difficulty},
          // Numeric metrics:
          {Score: currentGame.score, Opponents: currentGame.opponentCount}
          );
+
+    appInsights.trackPageView
+        ("page name", "http://fabrikam.com/pageurl.html",
+          // String properties:
+         {Game: currentGame.name, Difficulty: currentGame.difficulty},
+         // Numeric metrics:
+         {Score: currentGame.score, Opponents: currentGame.opponentCount}
+         );
+          
 
 *C#*
 
@@ -341,9 +350,10 @@ Sie können diese Methode auch selbst aufrufen, wenn Sie Anforderungen in einem 
 
     // At start of processing this request:
 
-    // Operation Id is attached to all telemetry and helps you identify
+    // Operation Id and Name are attached to all telemetry and help you identify
     // telemetry associated with one request:
     telemetry.Context.Operation.Id = Guid.NewGuid().ToString();
+    telemetry.Context.Operation.Name = requestName;
     
     var stopwatch = System.Diagnostics.Stopwatch.StartNew();
 
@@ -353,6 +363,8 @@ Sie können diese Methode auch selbst aufrufen, wenn Sie Anforderungen in einem 
     telemetryClient.TrackRequest(requestName, DateTime.Now,
        stopwatch.Elapsed, 
        "200", true);  // Response code, success
+
+
 
 ## TrackException
 
@@ -369,7 +381,30 @@ Senden Sie Ausnahmen an Application Insights, um sie als Hinweis auf die Häufig
        telemetry.TrackException(ex);
     }
 
-In mobilen Windows-Apps fängt das SDK nicht behandelte Ausnahmen ab, sodass Sie sie nicht protokollieren müssen. In ASP.NET können Sie [Code schreiben, um Ausnahmen automatisch abzufangen][exceptions].
+*JavaScript*
+
+    try
+    {
+       ...
+    }
+    catch (ex)
+    {
+       appInsights.trackException(ex);
+    }
+
+Die SDKs viele Ausnahmen automatisch abfangen, müssen Sie TrackException nicht immer explizit aufrufen.
+
+* ASP.NET: [Schreiben Sie Code zum Abfangen von Ausnahmen](app-insights-asp-net-exceptions.md)
+* J2EE: [Ausnahmen werden automatisch abgefangen](app-insights-java-get-started.md#exceptions-and-request-failures)
+* Windows-Apps: [Abstürze werden automatisch abgefangen](app-insights-windows-crashes.md)
+* JavaScript: Wird automatisch abgefangen. Wenn Sie die automatische Erfassung deaktivieren möchten, fügen Sie eine Zeile dem Codeausschnitt hinzu, den Sie in Ihren Webseiten einfügen:
+
+    ```
+    ({
+      instrumentationKey: "your key"
+      , disableExceptionTracking: true
+    })
+    ```
 
 
 ## TrackTrace 
@@ -429,7 +464,7 @@ Wenn sich Benutzer bei Ihrer App anmelden, erhalten Sie einen genaueren Zählwer
     }
 ```
 
-Es ist nicht notwendig, den tatsächlichen Anmeldenamen des Benutzers zu verwenden. Es muss sich lediglich um eine ID handeln, die für diesen Benutzer eindeutig ist. Die ID darf keine Leerzeichen und keines der Zeichen `,;=|` enthalten.
+Es ist nicht notwendig, den tatsächlichen Anmeldenamen des Benutzers zu verwenden. Es muss sich lediglich um eine ID handeln, die für diesen Benutzer eindeutig ist. Sie darf keine Leerzeichen und keines der folgenden Zeichen enthalten: `,;=|`.
 
 Die Benutzer-ID wird zudem in einem Sitzungscookie festgelegt und an den Server gesendet. Wenn das Server-SDK installiert ist, wird die ID des authentifizierten Benutzers als Teil der Kontexteigenschaften der Client- und Servertelemetrie gesendet, sodass Sie sie filtern und durchsuchen können.
 
@@ -478,7 +513,7 @@ Wenn Sie nur die Standardeigenschaftswerte für einige von Ihnen benutzerdefinie
     
 Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwörterbüchern überschreiben.
 
-**Verwenden Sie für JavaScript-Webclients** [JavaScript-Telemetrieinitialisierer](#js-initializer).
+**Für JavaScript-Webclients** verwenden Sie [JavaScript-Telemetrieinitialisierer](#js-initializer).
 
 
 ## <a name="ikey"></a> Festlegen des Instrumentationsschlüssels für ausgewählte benutzerdefinierte Telemetriedaten
@@ -490,96 +525,10 @@ Einzelne Telemetrieaufrufe können die Standardwerte in ihren Eigenschaftenwört
     // ...
 
 
-## <a name="default-properties"></a>Kontextinitialisierer – Festlegen von Standardeigenschaften für alle Telemetriedaten
-
-Sie können einen universellen Initialisierer einrichten, damit alle neuen "TelemetryClient"-Elemente automatisch Ihren Kontext verwenden. Dies schließt die standardmäßigen Telemetriedaten ein, die von plattformspezifischen Telemetriemodulen gesendet werden, wie z. B. die Nachverfolgung von Webserveranforderungen.
-
-Eine typische Verwendung besteht in der Identifikation von Telemetriedaten aus verschiedenen Versionen oder Komponenten Ihrer App. Im Portal können Sie Ergebnisse nach der Eigenschaft "Application Version" filtern oder gruppieren.
-
-**Definieren des Initialisierers**
-
-
-*C#*
-
-```C#
-
-    using System;
-    using Microsoft.ApplicationInsights.Channel;
-    using Microsoft.ApplicationInsights.DataContracts;
-    using Microsoft.ApplicationInsights.Extensibility;
-
-    namespace MyNamespace
-    {
-      // Context initializer class
-      public class MyContextInitializer : IContextInitializer
-      {
-        public void Initialize (TelemetryContext context)
-        {
-            if (context == null) return;
-
-            context.Component.Version = "v2.1";
-        }
-      }
-    }
-```
-
-*Java*
-
-```Java
-
-    import com.microsoft.applicationinsights.extensibility.ContextInitializer;
-    import com.microsoft.applicationinsights.telemetry.TelemetryContext;
-
-    public class MyContextInitializer implements ContextInitializer {
-      @Override
-      public void initialize(TelemetryContext context) {
-        context.Component.Version = "2.1";
-      }
-    }
-```
-
-**Laden des Initialisierers**
-
-In "ApplicationInsights.config":
-
-    <ApplicationInsights>
-      <ContextInitializers>
-        <!-- Fully qualified type name, assembly name: -->
-        <Add Type="MyNamespace.MyContextInitializer, MyAssemblyName"/> 
-        ...
-      </ContextInitializers>
-    </ApplicationInsights>
-
-*Alternativ* können Sie den Initialisierer im Code instanziieren:
-
-*C#*
-
-```C#
-
-    protected void Application_Start()
-    {
-        // ...
-        TelemetryConfiguration.Active.ContextInitializers
-        .Add(new MyContextInitializer());
-    }
-```
-
-*Java*
-
-```Java
-
-    // load the context initializer
-    TelemetryConfiguration.getActive().getContextInitializers().add(new MyContextInitializer());
-```
-
-
-### JavaScript-Webclient
-
-Verwenden Sie für JavaScript-Webclients [Telemetrieinitialisierer zum Festlegen von Standardwerten](#js-initializer).
 
 ## Telemetrieinitialisierer
 
-Verwenden Sie Telemetrieinitialisierer zum Überschreiben ausgewählter Verhalten der Standardtelemetriemodule.
+Mithilfe von Telemetrieinitialisierern definieren Sie globale Eigenschaften, die mit allen Telemetriedaten gesendet werden, und setzen das ausgewählte Verhalten der Standardtelemetriemodule außer Kraft.
 
 Das Application Insights for Web-Paket erfasst beispielsweise Telemetriedaten über HTTP-Anforderungen. Standardmäßig kennzeichnet es jede Anforderung mit einem Antwortcode >= 400 als fehlerhaft. Wenn 400 jedoch als erfolgreich behandelt werden soll, können Sie einen Telemetrieinitialisierer angeben, der die Success-Eigenschaft festlegt.
 
@@ -700,7 +649,9 @@ Fügen Sie einen Telemetrieinitialisierer unmittelbar nach dem Initialisierungsc
     </script>
 ```
 
-Eine Übersicht der verfügbaren nicht benutzerdefinierten Eigenschaften für "telemetryItem" finden Sie im [Datenmodell](app-insights-export-data-model.md/#lttelemetrytypegt).
+Eine Übersicht der für "telemetryItem" verfügbaren nicht benutzerdefinierten Eigenschaften finden Sie im [Datenmodell](app-insights-export-data-model.md/#lttelemetrytypegt).
+
+Sie können beliebig viele Initialisierer hinzufügen.
 
 ## <a name="dynamic-ikey"></a>Dynamischer Instrumentationsschlüssel
 
@@ -774,7 +725,9 @@ Während des Debuggens ist es sinnvoll, die Telemetriedaten beschleunigt über d
 
 ## TelemetryContext
 
-TelemetryClient besitzt eine Eigenschaft "Context", die eine Reihe von Werten enthält, die zusammen mit allen Telemetriedaten gesendet werden. Sie werden normalerweise von den Standardtelemetriemodulen festgelegt, aber Sie können sie auch selbst einstellen.
+TelemetryClient besitzt eine Eigenschaft "Context", die eine Reihe von Werten enthält, die zusammen mit allen Telemetriedaten gesendet werden. Sie werden normalerweise von den Standardtelemetriemodulen festgelegt, aber Sie können sie auch selbst einstellen. Beispiel:
+
+    telemetryClient.Context.Operation.Name = “MyOperationName”;
 
 Wenn Sie diese Werte selbst festlegen, empfiehlt es sich, die entsprechende Zeile aus [ApplicationInsights.config][config] zu entfernen, damit kein Konflikt zwischen Ihren Werten und den Standardwerten entsteht.
 
@@ -784,11 +737,96 @@ Wenn Sie diese Werte selbst festlegen, empfiehlt es sich, die entsprechende Zeil
 * **Location** Identifiziert den geografischen Standort des Geräts.
 * **Operation** In Web-Apps die aktuelle HTTP-Anforderung. In anderen App-Typen können Sie dies zur Gruppierung von Ereignissen festlegen.
  * **Id**: Ein generierter Wert, der verschiedene Ereignisse korreliert, sodass Sie beim Untersuchen eines Ereignisses in der Diagnosesuche "Verwandte Elemente" finden können.
- * **Name**: Die URL der HTTP-Anforderung.
+ * **Name**: Ein Bezeichner, in der Regel die URL der HTTP-Anforderung. 
  * **SyntheticSource**: Wenn sie nicht null oder leer ist, gibt diese Zeichenfolge an, dass die Quelle der Anforderung als Roboter oder Webtest identifiziert wurde. Standardmäßig wird sie von Berechnungen im Metrik-Explorer ausgeschlossen.
 * **Properties** Eigenschaften, die mit allen Telemetriedaten gesendet werden. Kann in einzelnen Track*-Aufrufen außer Kraft gesetzt werden.
 * **Session** Identifiziert die Sitzung des Benutzers. Die ID wird auf einen generierten Wert festgelegt, der geändert wird, wenn der Benutzer für eine Weile nicht aktiv ist.
 * **User** Benutzerinformationen. 
+
+
+## <a name="default-properties"></a>Kontextinitialisierer – Festlegen von Standardeigenschaften für alle Telemetriedaten
+
+Sie können einen universellen Initialisierer einrichten, damit alle neuen "TelemetryClient"-Elemente automatisch Ihren Kontext verwenden. Dies schließt die standardmäßigen Telemetriedaten ein, die von plattformspezifischen Telemetriemodulen gesendet werden, wie z. B. die Nachverfolgung von Webserveranforderungen.
+
+Eine typische Verwendung besteht in der Identifikation von Telemetriedaten aus verschiedenen Versionen oder Komponenten Ihrer App. Im Portal können Sie Ergebnisse nach der Eigenschaft "Application Version" filtern oder gruppieren.
+
+Im allgemeinen [empfehlen wir die Verwendung von Telemetrieinitialisierern statt von Kontextinitialisierern](http://apmtips.com/blog/2015/06/09/do-not-use-context-initializers/).
+
+#### Definieren eines Kontextinitialisierers
+
+
+*C#*
+
+```C#
+
+    using System;
+    using Microsoft.ApplicationInsights.Channel;
+    using Microsoft.ApplicationInsights.DataContracts;
+    using Microsoft.ApplicationInsights.Extensibility;
+
+    namespace MyNamespace
+    {
+      // Context initializer class
+      public class MyContextInitializer : IContextInitializer
+      {
+        public void Initialize (TelemetryContext context)
+        {
+            if (context == null) return;
+
+            context.Component.Version = "v2.1";
+        }
+      }
+    }
+```
+
+*Java*
+
+```Java
+
+    import com.microsoft.applicationinsights.extensibility.ContextInitializer;
+    import com.microsoft.applicationinsights.telemetry.TelemetryContext;
+
+    public class MyContextInitializer implements ContextInitializer {
+      @Override
+      public void initialize(TelemetryContext context) {
+        context.Component.Version = "2.1";
+      }
+    }
+```
+
+#### Laden eines Kontextinitialisierers
+
+In "ApplicationInsights.config":
+
+    <ApplicationInsights>
+      <ContextInitializers>
+        <!-- Fully qualified type name, assembly name: -->
+        <Add Type="MyNamespace.MyContextInitializer, MyAssemblyName"/> 
+        ...
+      </ContextInitializers>
+    </ApplicationInsights>
+
+*Alternativ* können Sie den Initialisierer im Code instanziieren:
+
+*C#*
+
+```C#
+
+    protected void Application_Start()
+    {
+        // ...
+        TelemetryConfiguration.Active.ContextInitializers
+        .Add(new MyContextInitializer());
+    }
+```
+
+*Java*
+
+```Java
+
+    // load the context initializer
+    TelemetryConfiguration.getActive().getContextInitializers().add(new MyContextInitializer());
+```
 
 
 
@@ -865,4 +903,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

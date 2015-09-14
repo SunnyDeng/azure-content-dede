@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte mit dem Azure-Schlüsseltresor | Microsoft Azure"
-	description="Verwenden Sie dieses Lernprogramm für den Einstieg in den Azure-Schlüsseltresor, um einen geschützten Container in Azure zu erstellen, in dem Sie kryptografischen Schlüssel und geheime Schlüssel in Azure speichern und verwalten."
+	description="Verwenden Sie dieses Tutorials für den Einstieg in den Azure-Schlüsseltresor, um einen geschützten Container in Azure zu erstellen, in dem Sie kryptografischen Schlüssel und geheime Schlüssel in Azure speichern und verwalten."
 	services="key-vault"
 	documentationCenter=""
 	authors="cabailey"
@@ -20,11 +20,11 @@
 Azure-Tresorschlüssel ist in den meisten Regionen verfügbar. Weitere Informationen finden Sie auf der Seite [Preisdetails für Schlüsseltresor](../../../../pricing/details/key-vault/).
 
 ## Einführung  
-Verwenden Sie dieses Lernprogramm für den Einstieg in Azure-Schlüsseltresor, um einen geschützten Container (einen Tresor) in Azure zu erstellen, in dem Sie kryptografische und geheime Schlüssel in Azure speichern und verwalten. Sie werden durch den Vorgang der Verwendung von Windows PowerShell zum Erstellen eines Tresors geleitet, der einen Schlüssel oder ein Kennwort enthält, den/das Sie anschließend mit einer Azure-Anwendung verwenden können. Anschließend wird gezeigt, wie eine Anwendung diesen Schlüssel bzw. das Kennwort verwenden kann.
+Verwenden Sie dieses Tutorial für den Einstieg in Azure-Schlüsseltresor, um einen geschützten Container (einen Tresor) in Azure zu erstellen, in dem Sie kryptografische und geheime Schlüssel in Azure speichern und verwalten. Sie werden durch den Vorgang der Verwendung von Windows PowerShell zum Erstellen eines Tresors geleitet, der einen Schlüssel oder ein Kennwort enthält, den/das Sie anschließend mit einer Azure-Anwendung verwenden können. Anschließend wird gezeigt, wie eine Anwendung diesen Schlüssel bzw. das Kennwort verwenden kann.
 
 *Geschätzter Zeitaufwand*:* 20 Minuten.
 
->[AZURE.NOTE]Dieses Lernprogramm enthält keine Anweisungen zum Schreiben der in einem der Schritte verwendeten Azure-Anwendung, die dazu dient, eine Anwendung zum Verwenden eines Schlüssels oder geheimen Schlüssels im Schlüsseltresor zu autorisieren.
+>[AZURE.NOTE]Dieses Tutorial enthält keine Anweisungen zum Schreiben der in einem der Schritte verwendeten Azure-Anwendung, die dazu dient, eine Anwendung zum Verwenden eines Schlüssels oder geheimen Schlüssels im Schlüsseltresor zu autorisieren.
 >
 >Derzeit können Sie den Azure-Schlüsseltresor nicht im Azure-Portal konfigurieren. Sie müssen stattdessen die Anweisungen für Azure PowerShell verwenden. Anleitungen für die plattformübergreifende Befehlszeilenschnittstelle finden Sie in [diesem entsprechenden Tutorial](key-vault-manage-with-cli.md).
 
@@ -32,16 +32,16 @@ Eine Übersicht über den Azure-Schlüsseltresor finden Sie unter [Was ist der A
 
 ## Voraussetzungen
 
-Für dieses Lernprogramm benötigen Sie Folgendes:
+Für dieses Tutorial benötigen Sie Folgendes:
 
 - Ein Abonnement für Microsoft Azure. Wenn Sie kein Abonnement haben, können Sie sich für eine [kostenlose Testversion](../../../../pricing/free-trial) registrieren.
 - Azure PowerShell, Version 0.9.1 oder höher. Um die neueste Version zu installieren und sie Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
-- Eine Anwendung, die zur Verwendung des Schlüssels oder Kennworts konfiguriert wird, den bzw. das Sie in diesem Lernprogramm erstellen. Eine Beispielanwendung erhalten Sie im [Microsoft Download Center](http://www.microsoft.com/de-de/download/details.aspx?id=45343). Anweisungen finden Sie in der zugehörigen Readme-Datei.
+- Eine Anwendung, die zur Verwendung des Schlüssels oder Kennworts konfiguriert wird, den bzw. das Sie in diesem Tutorial erstellen. Eine Beispielanwendung erhalten Sie im [Microsoft Download Center](http://www.microsoft.com/de-DE/download/details.aspx?id=45343). Anweisungen finden Sie in der zugehörigen Readme-Datei.
 
 
-Dieses Lernprogramm richtet sich an Windows PowerShell-Anfänger. Es wird aber vorausgesetzt, dass Sie die grundlegenden Konzepte, wie zum Beispiel Module, Cmdlets und Sitzungen, verstehen. Weitere Informationen zu Windows PowerShell finden Sie unter [Erste Schritte mit Windows PowerShell](https://technet.microsoft.com/library/hh857337.aspx).
+Dieses Tutorial richtet sich an Windows PowerShell-Anfänger. Es wird aber vorausgesetzt, dass Sie die grundlegenden Konzepte, wie zum Beispiel Module, Cmdlets und Sitzungen, verstehen. Weitere Informationen zu Windows PowerShell finden Sie unter [Erste Schritte mit Windows PowerShell](https://technet.microsoft.com/library/hh857337.aspx).
 
-Um detaillierte Hilfe zu einem Cmdlet aus dem Lernprogramm zu erhalten, verwenden Sie das **Get-Help**-Cmdlet.
+Um detaillierte Hilfe zu einem Cmdlet aus dem Tutorial zu erhalten, verwenden Sie das **Get-Help**-Cmdlet.
 
 	Get-Help <cmdlet-name> -Detailed
 
@@ -49,7 +49,7 @@ Geben Sie beispielsweise Folgendes ein, um Hilfe zum **Add-AzureAccount**-Cmdlet
 
 	Get-Help Add-AzureAccount -Detailed
 
-Lesen Sie bitte auch die folgenden Lernprogramme, um sich mit dem Azure-Ressourcen-Manager in Windows PowerShell vertraut zu machen:
+Lesen Sie bitte auch die folgenden Tutorial, um sich mit dem Azure-Ressourcen-Manager in Windows PowerShell vertraut zu machen:
 
 - [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md)
 - [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](../powershell-azure-resource-manager.md)
@@ -81,7 +81,7 @@ Die Schlüsseltresor-Cmdlets erfordern den Azure-Ressourcen-Manager, geben Sie d
 
 ## <a id="resource"></a>Erstellen einer neuen Ressourcengruppe ##
 
-Wenn Sie den Azure-Ressourcen-Manager verwenden, werden alle zugehörigen Ressourcen in einer Ressourcengruppe erstellt. Im Rahmen dieses Lernprogramms erstellen wir eine neue Ressourcengruppe mit dem Namen **ContosoResourceGroup**:
+Wenn Sie den Azure-Ressourcen-Manager verwenden, werden alle zugehörigen Ressourcen in einer Ressourcengruppe erstellt. Im Rahmen dieses Tutorials erstellen wir eine neue Ressourcengruppe mit dem Namen **ContosoResourceGroup**:
 
 	New-AzureResourceGroup –Name 'ContosoResourceGroup' –Location 'East Asia'
 
@@ -150,7 +150,7 @@ Jetzt sind Schlüsseltresor und Schlüssel oder geheimer Schlüssel bereit für 
 Dieser Schritt wird üblicherweise durch einen Entwickler auf einem separaten Computer durchgeführt. Dieser Schritt ist nicht spezifisch für den Azure-Schlüsseltresor, wird der Vollständigkeit halber jedoch hier aufgeführt.
 
 
->[AZURE.IMPORTANT]Zum Abschließen dieses Lernprogramms müssen sich Ihr Konto, der Schlüsseltresor und die in diesem Schritt registrierte Anwendung im selben Azure-Verzeichnis befinden.
+>[AZURE.IMPORTANT]Zum Abschließen dieses Tutorials müssen sich Ihr Konto, der Schlüsseltresor und die in diesem Schritt registrierte Anwendung im selben Azure-Verzeichnis befinden.
 
 Anwendungen, die einen Schlüsseltresor verwenden, müssen sich mithilfe eines Azure Active Directory-Tokens authentifizieren. Hierzu muss der Besitzer der Anwendung die Anwendung zunächst in Azure Active Directory registrieren. Zum Abschluss der Registrierung erhält der Anwendungsbesitzer die folgenden Werte:
 
@@ -179,6 +179,11 @@ Wenn Ihr Tresorname beispielsweise **ContosoKeyVault** lautet, die Anwendung, di
 
 
 	Set-AzureKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed -PermissionsToKeys decrypt,sign
+	
+Wenn Sie dieselbe Anwendung so autorisieren möchten, dass sie geheime Schlüssel im Tresor liest, führen Sie Folgendes aus:
+
+
+	Set-AzureKeyVaultAccessPolicy -VaultName 'ContosoKeyVault' -ServicePrincipalName 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed -PermissionsToSecrets Get
 
 ## <a id="HSM"></a>Verwenden eines Hardwaresicherheitsmoduls (HSM) ##
 
@@ -187,7 +192,7 @@ Zur Steigerung der Sicherheit können Sie Schlüssel in HSMs importieren oder in
 Um diese HSM-geschützten Schlüssel zu erstellen, müssen Sie über ein [Tresorabonnement mit Unterstützung von HSM-geschützten Schlüsseln](../../../pricing/free-trial) verfügen.
 
 
-Wenn Sie den Tresor erstellen, fügen Sie den Parameter **SKU** hinzu.
+Wenn Sie den Tresor erstellen, fügen Sie den **-SKU**-Parameter hinzu.
 
 
 	New-AzureKeyVault -VaultName 'ContosoKeyVaultHSM' -ResourceGroupName 'ContosoResourceGroup' -Location 'East Asia' -SKU 'Premium'
@@ -233,10 +238,10 @@ Die folgenden weiteren Befehle sind möglicherweise ebenfalls für das Verwalten
 
 ## <a id="next"></a>Nächste Schritte ##
 
-Ein weiterführendes Lernprogramm zur Verwendung des Azure-Schlüsseltresors in einer Webanwendung finden Sie unter [Verwenden des Azure-Schlüsseltresors aus einer Webanwendung](key-vault-use-from-web-application.md).
+Ein weiterführendes Tutorial zur Verwendung des Azure-Schlüsseltresors in einer Webanwendung finden Sie unter [Verwenden des Azure-Schlüsseltresors aus einer Webanwendung](key-vault-use-from-web-application.md).
 
 Eine Liste der Windows PowerShell-Cmdlets für den Azure-Schlüsseltresor finden Sie unter [Cmdlets für den Azure-Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn868052.aspx).
 
 Programmierungsreferenzen finden Sie unter [Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn903625.aspx) in der Dokumentationsbibliothek für Microsoft Azure auf MSDN.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

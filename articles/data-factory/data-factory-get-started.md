@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL"
-	description="In diesem Lernprogramm erfahren Sie, wie Sie eine Beispieldatenpipeline erstellen, die Daten von einem Blob an eine Azure SQL-Datenbankinstanz kopiert."
+	pageTitle="Tutorial: Verwenden der Kopieraktivität in einer Azure Data Factory-Pipeline"
+	description="Dieses Tutorial veranschaulicht das Verwenden der Kopieraktivität in einer Azure Data Factory-Pipeline, um Daten aus einem Azure-Blob in eine Azure SQL-Datenbank zu kopieren."
 	services="data-factory"
 	documentationCenter=""
 	authors="spelluru"
@@ -12,7 +12,7 @@
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article" 
+	ms.topic="article"
 	ms.date="07/27/2015"
 	ms.author="spelluru"/>
 
@@ -100,6 +100,9 @@ Gehen Sie wie folgt vor:
 - Klicken Sie oben auf den Link [Mit Visual Studio](data-factory-get-started-using-vs.md), um das Lernprogramm mit Visual Studio 2013 auszuführen.
  
 
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-get-started.md).
+
 <!--Link references-->
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 [azure-preview-portal]: https://portal.azure.com/
@@ -110,4 +113,4 @@ Gehen Sie wie folgt vor:
 [data-factory-create-storage]: http://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account
 [data-factory-create-sql-database]: ../sql-database-get-started.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

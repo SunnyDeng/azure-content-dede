@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden von CDN | Microsoft Azure" 
-	description="Erfahren Sie, wie das Azure Content Delivery Network (CDN) für die Übermittlung breitbandiger Inhalte eingesetzt wird, indem Blobs und statische Inhalte zwischengespeichert werden." 
-	services="cdn" 
-	documentationCenter=".net" 
-	authors="zhangmanling" 
-	manager="dwrede" 
+	pageTitle="Verwenden von CDN | Microsoft Azure"
+	description="Erfahren Sie, wie das Azure Content Delivery Network (CDN) für die Übermittlung breitbandiger Inhalte eingesetzt wird, indem Blobs und statische Inhalte zwischengespeichert werden."
+	services="cdn"
+	documentationCenter=".net"
+	authors="zhangmanling"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/18/2015" 
+	ms.service="cdn"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="mazha"/>
 
 
@@ -112,7 +112,7 @@ Die Möglichkeit zum sofortigen Löschen von Inhalten wird im Azure-Verwaltungsp
 [How to Register a Custom Subdomain Name for Accessing Blobs in Azure]: ../storage-custom-domain-name.md
 [Erstellen einer Affinitätsgruppe in Azure]: http://msdn.microsoft.com/library/azure/ee460798.aspx
 [Overview of the Azure CDN]: cdn-overview.md
-[Vorgehensweise: Verwalten von Speicherkonten für ein Azure-Abonnement]: https://msdn.microsoft.com/de-de/library/azure/hh531793.aspx
+[Vorgehensweise: Verwalten von Speicherkonten für ein Azure-Abonnement]: https://msdn.microsoft.com/de-DE/library/azure/hh531793.aspx
 [Zuordnen von CDN-Inhalt (Content Delivery Network) zu einer benutzerdefinierten Domäne]: cdn-map-content-to-custom-domain.md
 
 
@@ -120,4 +120,4 @@ Die Möglichkeit zum sofortigen Löschen von Inhalten wird im Azure-Verwaltungsp
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

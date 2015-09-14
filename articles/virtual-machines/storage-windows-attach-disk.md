@@ -23,6 +23,12 @@ Sie können leere Datenträger und Datenträger mit Daten anfügen. In beiden F�
 
 > [AZURE.NOTE]Es empfiehlt sich, einen oder mehrere separate Datenträger zu verwenden, um die Daten eines virtuellen Computers zu speichern. Wenn Sie einen virtuellen Azure-Computer erstellen, hat dieser einen Datenträger für das Betriebssystem, der Laufwerk C zugeordnet ist, und einen temporären Datenträger, der Laufwerk D zugeordnet ist. **Verwenden Sie zum Speichern von Daten nicht Laufwerk D.** Wie der Name schon sagt, bietet Laufwerk D nur eine temporäre Speicherung. Es ermöglicht keine Redundanz oder Sicherung, da es sich nicht im Azure-Speicher befindet.
 
+## Video zur exemplarischen Vorgehensweise
+
+Hier finden Sie eine exemplarische Vorgehensweise für die Schritte dieses Tutorials.
+
+[AZURE.VIDEO attaching-a-data-disk-to-a-windows-vm]
+
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-windows-linux.md)]
 
 ## <a id="initializeinWS"></a>Gewusst wie: Initialisieren eines neues Datenträgers unter Windows Server
@@ -33,11 +39,11 @@ Sie können leere Datenträger und Datenträger mit Daten anfügen. In beiden F�
 
 	![Server-Manager öffnen](./media/storage-windows-attach-disk/fileandstorageservices.png)
 
-3. Erweitern Sie das Menü und wählen Sie **Datenträger**.
+3. Erweitern Sie das Menü, und wählen Sie **Datenträger**.
 
-4. Der Abschnitt **Datenträger** listet Datenträger 0, Datenträger 1 und Datenträger 2 auf. Datenträger 0 ist der Betriebssystem-Datenträger. Bei Datenträger 1 handelt es sich um einen temporären Datenträger (der nicht für die Datenspeicherung verwendet werden sollte), und Datenträger 2 ist der Datenträger, den Sie an den virtuellen Computer angefügt haben. Der Datenträger hat eine Kapazität von 5 GB, je nachdem, was Sie beim Anfügen des Datenträgers angegeben haben. Klicken Sie mit der rechten Maustaste auf Datenträger 2, und wählen Sie **Initialisieren** aus.
+4. Der Abschnitt **Datenträger** listet Datenträger 0, Datenträger 1 und Datenträger 2 auf. Datenträger 0 ist der Betriebssystem-Datenträger. Bei Datenträger 1 handelt es sich um einen temporären Datenträger (der nicht für die Datenspeicherung verwendet werden sollte), und Datenträger 2 ist der Datenträger, den Sie an den virtuellen Computer angefügt haben. Der Datenträger hat eine Kapazität von 5 GB, je nachdem, was Sie beim Anfügen des Datenträgers angegeben haben. Klicken Sie mit der rechten Maustaste auf Datenträger 2, und wählen Sie **Initialisieren** aus.
 
-5.	Sie werden darüber informiert, dass alle Daten gelöscht werden, wenn der Datenträger initialisiert wird. Klicken Sie auf **Ja**, um die Warnung zu bestätigen und den Datenträger zu initialisieren. Klicken Sie dann mit der rechten Maustaste auf Disk 2, und wählen Sie **Neues Volume** aus.
+5.	Sie werden darüber informiert, dass alle Daten gelöscht werden, wenn der Datenträger initialisiert wird. Klicken Sie auf **Ja**, um die Warnung zu bestätigen und den Datenträger zu initialisieren. Klicken Sie dann mit der rechten Maustaste auf Datenträger 2, und wählen Sie **Neues Volume** aus.
 
 6.	Schließen Sie den Assistenten unter Verwendung der angegebenen Standardwerte ab. Sobald der Assistent fertig ist, wird ein neues Volume im Bereich **Volumes** aufgelistet. Der Datenträger ist jetzt online und zum Speichern von Daten bereit.
 
@@ -53,4 +59,4 @@ Sie können leere Datenträger und Datenträger mit Daten anfügen. In beiden F�
 
 [logon]: virtual-machines-log-on-windows-server.md
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

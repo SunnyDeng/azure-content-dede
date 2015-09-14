@@ -119,4 +119,4 @@ Sie können eine reservierte IP einem Clouddienst auch zuordnen, indem Sie eine 
 
 - Überprüfen Sie die [reservierten IP-REST-APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

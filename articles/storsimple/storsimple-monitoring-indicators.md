@@ -1,21 +1,21 @@
 <properties 
-    pageTitle="StorSimple-Überwachungsindikatoren | Microsoft Azure" 
-    description="Beschreibt die LEDs und Alarme zum Überwachen des Status des StorSimple-Geräts."
-    services="storsimple"
-    documentationCenter="NA"
-    authors="SharS"
-    manager="adinah"
-    editor="" />
+    pageTitle="StorSimple-Überwachungsindikatoren | Microsoft Azure"
+	description="Beschreibt die LEDs und akustischen Alarme, die zum Überwachen des Status Ihres StorSimple-Geräts verwendet werden."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="SharS"
+	manager="carolz"
+	editor=""/>
  <tags 
     ms.service="storsimple"
-    ms.devlang="NA"
-    ms.topic="article"
-    ms.tgt_pltfrm="NA"
-    ms.workload="TBD"
-    ms.date="08/14/2015"
-    ms.author="v-sharos" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/31/2015"
+	ms.author="v-sharos"/>
 
-# StorSimple-Überwachungsindikatoren   
+# Verwalten von Geräten mithilfe von StorSimple-Überwachungsindikatoren   
 
 ## Übersicht
 
@@ -33,9 +33,7 @@ In den folgenden Abschnitten finden Sie Informationen zu den verschiedenen Über
 
 Das vordere *Bedienfeld* oder *OPS-Bedienfeld* zeigt sämtliche Statusangaben zu allen Modulen im System an. Das vordere Bedienfeld ist bei StorSimple-Gerät und EBOD-Gehäuse identisch, wie nachfolgend dargestellt.
 
-   ![][1]
-
-**Abbildung 1: Vorderes Bedienfeld des Geräts**
+   ![Vorderseite des Geräts][1]
  
 Das vordere Bedienfeld enthält die folgenden Indikatoren:
 
@@ -72,10 +70,8 @@ Die Indikator-LEDs der Stromversorgungs- und Kühleinheit (PCM) befinden sich au
 
 Das StorSimple-Gerät verfügt über ein 764-W-PCM-Modul mit zusätzlichem Akku. In der folgenden Abbildung wird das LED-Bedienfeld für das Gerät dargestellt.
 
-   ![][2]
+   ![LEDs der Stromversorgungs- und Kühleinheit (PCM) am primären Gehäuse][2]
 
-**Abbildung 2: LEDs der Stromversorgungs- und Kühleinheit (PCM) am primären Gehäuse**
- 
 LED-Legende:
 
 1. Stromausfall
@@ -114,9 +110,7 @@ Der Status der Stromversorgungs- und Kühleinheit (PCM) wird auf dem LED-Bedienf
 
 Das EBOD-Gehäuse verfügt über eine 580-W-PCM ohne zusätzlichen Akku. Das PCM-Bedienfeld für das EBOD-Gehäuse besitzt nur für die Stromversorgung und den Lüfter Indikator-LEDs. Diese LEDs werden in der folgenden Abbildung dargestellt.
 
-   ![][3]
-
-**Abbildung 3: LEDs der Stromversorgungs- und Kühleinheit (PCM) am EBOD-Gehäuse**
+   ![LEDs der Stromversorgungs- und Kühleinheit (PCM) am EBOD-Gehäuse][3]
  
 Sie können den Status der PCM anhand der folgenden Tabelle ermitteln.
 
@@ -138,10 +132,8 @@ Das StorSimple-Gerät besitzt LEDs für den primären Controller und die EBOD-Co
 ### Indikator-LEDs für den primären Controller
 Die folgende Abbildung unterstützt Sie bei der Identifizierung der LEDs für den primären Controller. (Zur einfacheren Orientierung werden alle Komponenten aufgelistet.)
 
-   ![][4]
+   ![Indikator-LEDs – primärer Controller][4]
  
-**Abbildung 4: Indikator-LEDs – primärer Controller**
-
 Anhand der folgenden Tabelle können Sie ermitteln, ob das Controllermodul ordnungsgemäß funktioniert.
 
 ### Indikator-LEDs des Controllers  
@@ -162,10 +154,8 @@ Anhand der folgenden Tabelle können Sie ermitteln, ob das Controllermodul ordnu
 
 Jeder der sechs GBit/s-SAS-EBOD-Controller verfügt über LEDs, die den Status wie in der folgenden Abbildung dargestellt anzeigen.
 
-  ![][5]
+  ![Indikator-LEDs – EBOD-Gehäuse][5]
 
-**Abbildung 5: Indikator-LEDs – EBOD-Gehäuse**
- 
 Anhand der folgenden Tabelle können Sie ermitteln, ob das EBOD-Controllermodul ordnungsgemäß funktioniert.
 
 ### Indikator-LEDs des EBOD-Controllermoduls  
@@ -180,9 +170,7 @@ Das StorSimple-Gerät verfügt über Datenträgerlaufwerke am primären Gehäuse
 
 Für die Datenträgerlaufwerke wird der Laufwerkstatus durch eine grüne LED und eine rot-bernsteinfarbene LED angezeigt, die an der Vorderseite jedes Laufwerkträgermoduls angebracht ist. Diese LEDs werden in der folgenden Abbildung dargestellt.
 
-  ![][6]
-
-**Abbildung 6: LEDs des Datenträgerlaufwerks**
+  ![LEDs des Datenträgerlaufwerks][6]
  
 Anhand der folgenden Tabelle können Sie den Status der einzelnen Datenträgerlaufwerke bestimmen, der sich wiederum auf den LED-Status der gesamten Vorderseite auswirkt.
 
@@ -268,4 +256,4 @@ Weitere Informationen zu [StorSimple-Hardwarekomponenten und ihrem Status](stors
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

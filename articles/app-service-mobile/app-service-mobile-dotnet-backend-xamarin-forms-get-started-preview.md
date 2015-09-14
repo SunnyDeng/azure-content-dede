@@ -3,7 +3,7 @@
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Apps für die Xamarin.Forms-Entwicklung."
 	services="app-service\mobile"
 	documentationCenter="xamarin"
-	authors="normesta"
+	authors="wesmc7777"
 	manager="dwrede"
 	editor=""/>
 
@@ -100,7 +100,7 @@ Geben Sie in der App sinnvollen Text ein, z. B. _Xamarin kennenlernen_, und klic
 
 Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden vom mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
 
-> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C\#-Datei "ToDoActivity.cs" des portablen Klassenbibliotheksprojekts Ihrer Lösung.
+> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C#-Datei "ToDoActivity.cs" des portablen Klassenbibliotheksprojekts Ihrer Lösung.
 
 ###Ausführen des Android-Projekts
 
@@ -121,7 +121,7 @@ Geben Sie in der App sinnvollen Text ein, z. B. _Xamarin kennenlernen_, und klic
 
 Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden vom mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
 
-> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C\#-Datei "ToDoActivity.cs" des portablen Klassenbibliotheksprojekts Ihrer Lösung.
+> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C#-Datei "ToDoActivity.cs" des portablen Klassenbibliotheksprojekts Ihrer Lösung.
 
 
 ###Ausführen des Windows-Projekts
@@ -138,7 +138,7 @@ Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Bac
 
 ![][12]
 	
-> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C\#-Datei "ToDoActivity.cs" des portablen Klassenbibliotheksprojekts Ihrer Lösung.
+> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C#-Datei "ToDoActivity.cs" des portablen Klassenbibliotheksprojekts Ihrer Lösung.
 
 <!-- Anchors. -->
 [Getting started with mobile app backends]: #getting-started
@@ -174,4 +174,4 @@ Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Bac
 [Installation von Xamarin.iOS auf Windows]: http://developer.xamarin.com/guides/ios/getting_started/installation/windows/
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

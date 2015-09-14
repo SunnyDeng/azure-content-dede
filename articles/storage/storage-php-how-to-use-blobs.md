@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="article"
-	ms.date="05/11/2015"
+	ms.date="09/01/2015"
 	ms.author="tomfitz"/>
 
 # Verwenden des Blob-Speichers mit PHP
@@ -22,7 +22,7 @@
 
 ## Übersicht
 
-Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des Azure-Blob-Diensts. Die Beispiele wurden in PHP geschrieben und verwenden das [Azure-SDK für PHP][download]. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#NextSteps).
+Dieses Handbuch demonstriert Ihnen allgemeine Szenarien unter Verwendung des Azure-Blob-Diensts. Die Beispiele wurden in PHP geschrieben und verwenden das [Azure-SDK für PHP][download]. Die hier beschriebenen Szenarien umfassen das **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs. Weitere Informationen zu Blobs finden Sie im Abschnitt [Nächste Schritte](#next-steps).
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
@@ -304,4 +304,4 @@ Nachdem Sie sich nun mit den Grundlagen des Azure-Blob-Diensts vertraut gemacht 
 [fopen]: http://www.php.net/fopen
 [stream-get-contents]: http://www.php.net/stream_get_contents
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

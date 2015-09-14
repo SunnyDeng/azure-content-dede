@@ -23,7 +23,7 @@
 
 ## Übersicht
 
-In diesem Leitfaden wird gezeigt, wie häufige Szenarien mit dem Azure-Tabellenspeicherdienst ausgeführt werden. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die behandelten Szenarien umfassen das **Erstellen und Löschen einer Tabelle** sowie das **Arbeiten mit Tabellenentitäten**.
+In diesem Artikel wird die Umsetzung gängiger Szenarien mit dem Azure-Tabellenspeicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die behandelten Szenarien umfassen das Erstellen und Löschen einer Tabelle sowie das Arbeiten mit Tabellenentitäten.
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -38,7 +38,7 @@ In diesem Leitfaden wird gezeigt, wie häufige Szenarien mit dem Azure-Tabellens
 [AZURE.INCLUDE [storage-dotnet-obtain-assembly](../../includes/storage-dotnet-obtain-assembly.md)]
 
 ### Namespace-Deklarationen
-Fügen Sie die folgenden Namespace-Deklarationen zum Anfang aller C#-Dateien hinzu, in denen Sie programmgesteuert auf den Azure-Speicher zugreifen möchten:
+Fügen Sie die folgenden Codenamespace-Deklarationen am Anfang aller C#-Dateien hinzu, mit denen Sie programmgesteuert auf Azure Storage zugreifen möchten.
 
     using Microsoft.WindowsAzure.Storage;
 	using Microsoft.WindowsAzure.Storage.Auth;
@@ -50,7 +50,7 @@ Stellen Sie sicher, dass auf die `Microsoft.WindowsAzure.Storage.dll`-Assembly v
 
 ## Erstellen einer Tabelle
 
-Mit einem **CloudTableClient**-Objekt können Sie Referenzobjekte für Tabellen und Entitäten abrufen. Durch den folgenden Code wird ein **CloudTableClient**-Objekt erstellt und verwendet, um eine neue Tabelle zu erstellen. Bei allem Code in diesem Leitfaden wird davon ausgegangen, dass es sich bei der erstellten Anwendung um ein Azure Cloud Services-Projekt handelt und eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge verwendet wird.
+Mit einem **CloudTableClient**-Objekt können Sie Referenzobjekte für Tabellen und Entitäten abrufen. Durch den folgenden Code wird ein **CloudTableClient**-Objekt erstellt und verwendet, um eine neue Tabelle zu erstellen. Beim gesamten Code in diesem Artikel wird davon ausgegangen, dass es sich bei der erstellten Anwendung um ein Azure Cloud Services-Projekt handelt und eine in der Dienstkonfiguration der Azure-Anwendung gespeicherte Speicherverbindungszeichenfolge verwendet wird.
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -82,7 +82,7 @@ Entitäten werden C#-Objekten zugeordnet, indem eine benutzerdefinierte Klasse v
         public string PhoneNumber { get; set; }
     }
 
-Tabellenvorgänge, die Entitäten umfassen, werden über das **CloudTable**-Objekt ausgeführt, das Sie unter "Erstellen einer Tabelle" erstellt haben. Der durchzuführende Vorgang wird durch ein **TableOperation**-Objekt dargestellt. Im folgenden Codebeispiel wird die Erstellung des **CloudTable**-Objekts und danach eines **CustomerEntity**-Objekts gezeigt. Um den Vorgang vorzubereiten, wird ein **TableOperation**-Objekt erstellt, um die Kundenentität in die Tabelle einzufügen. Schließlich wird der Vorgang durch den Aufruf von **CloudTable.Execute** ausgeführt.
+Tabellenvorgänge, die Entitäten umfassen, werden über das **CloudTable**-Objekt ausgeführt, das Sie im Abschnitt "Erstellen einer Tabelle" erstellt haben. Der durchzuführende Vorgang wird durch ein **TableOperation**-Objekt dargestellt. Im folgenden Codebeispiel wird die Erstellung des **CloudTable**-Objekts und danach eines **CustomerEntity**-Objekts gezeigt. Um den Vorgang vorzubereiten, wird ein **TableOperation**-Objekt erstellt, um die Kundenentität in die Tabelle einzufügen. Schließlich wird der Vorgang durch den Aufruf von **CloudTable.Execute** ausgeführt.
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -182,7 +182,7 @@ Wenn Sie nicht alle Entitäten in einer Partition abrufen möchten, können Sie 
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    //Create the CloudTable object that represents the "people" table.
+    // Create the CloudTable object that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
 	// Create the table query.
@@ -201,7 +201,7 @@ Wenn Sie nicht alle Entitäten in einer Partition abrufen möchten, können Sie 
 
 ## Abrufen einer einzelnen Entität
 
-Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Im folgenden Code wird **TableOperation** verwendet, um den Kunde "Ben Smith" anzugeben. Diese Methode gibt nur eine Entität anstelle einer Sammlung zurück, und bei dem zurückgegebenen Wert in **TableResult.Result** handelt es sich um ein **CustomerEntity**-Objekt. Die Angabe beider Schlüssel, Partition und Zeile, in einer Abfrage ist die schnellste Möglichkeit, um eine einzelne Entität aus dem Tabellendienst abzurufen.
+Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Im folgenden Code wird **TableOperation** verwendet, um den Kunden "Ben Smith" anzugeben. Diese Methode gibt anstelle einer Sammlung nur eine Entität zurück, und bei dem zurückgegebenen Wert in **TableResult.Result** handelt es sich um ein **CustomerEntity**-Objekt. Die Angabe beider Schlüssel, Partition und Zeile, in einer Abfrage ist die schnellste Möglichkeit, um eine einzelne Entität aus dem Tabellendienst abzurufen.
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -267,7 +267,7 @@ Um eine Entität zu aktualisieren, rufen Sie sie aus dem Tabellendienst ab, änd
 
 ## Einfügen oder Ersetzen einer Entität
 
-**Ersetzungsvorgänge** sind nicht erfolgreich, wenn die Entität seit dem letzten Abruf vom Server geändert wurde. Darüber hinaus müssen Sie zuerst die Entität vom Server abrufen, damit der **Ersetzungsvorgang** erfolgreich ist. Manchmal ist jedoch nicht bekannt, ob die Entität auf dem Server vorhanden ist, und die darin aktuell gespeicherten Werte sind nicht relevant. In diesem Fall sollten letztere durch die Aktualisierung vollständig überschrieben werden. Dazu würden Sie einen **InsertOrReplace**-Vorgang verwenden. Bei diesem Vorgang wird die Entität eingefügt, falls sie nicht vorhanden ist, oder ersetzt, falls sie vorhanden ist, unabhängig davon, wann die letzte Aktualisierung stattgefunden hat. Im folgenden Codebeispiel wird die Kundenentität für Ben Smith abgerufen, sie wird danach jedoch über **InsertOrReplace** wieder auf dem Server gespeichert. Alle Änderungen, die zwischen dem Abruf- und dem Aktualisierungsvorgang an der Entität vorgenommen wurden, werden überschrieben.
+**Ersetzungsvorgänge** sind nicht erfolgreich, wenn die Entität seit dem letzten Abruf vom Server geändert wurde. Darüber hinaus müssen Sie zuerst die Entität vom Server abrufen, damit der **Ersetzungsvorgang** erfolgreich ist. Manchmal ist jedoch nicht bekannt, ob die Entität auf dem Server vorhanden ist, und die darin aktuell gespeicherten Werte sind nicht relevant. In diesem Fall sollten letztere durch die Aktualisierung vollständig überschrieben werden. Dazu würden Sie einen **InsertOrReplace**-Vorgang verwenden. Bei diesem Vorgang wird die Entität eingefügt, falls sie nicht vorhanden ist, oder ersetzt, falls sie vorhanden ist, unabhängig davon, wann die letzte Aktualisierung stattgefunden hat. Im folgenden Codebeispiel wird die Kundenentität für Ben Smith abgerufen, anschließend jedoch über **InsertOrReplace** erneut auf dem Server gespeichert. Alle Änderungen, die zwischen dem Abruf- und dem Aktualisierungsvorgang an der Entität vorgenommen wurden, werden überschrieben.
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -307,7 +307,7 @@ Um eine Entität zu aktualisieren, rufen Sie sie aus dem Tabellendienst ab, änd
 
 ## Abfragen einer Teilmenge von Entitätseigenschaften
 
-Mit einer Tabellenabfrage können nicht nur alle, sondern auch nur einige Eigenschaften aus einer Entität abgerufen werden. Bei dieser Methode, der sogenannten Projektion, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Mit der Abfrage im folgenden Code werden nur die E-Mail-Adressen von Entitäten in der Tabelle zurückgegeben. Dies geschieht durch die Verwendung einer Abfrage von **DynamicTableEntity** und **EntityResolver**. Weitere Informationen über Projektion finden Sie im Blogbeitrag [Windows Azure Tables: Introducing Upsert and Query Projection][]. Beachten Sie, dass Projektion nicht auf dem lokalen Speicheremulator unterstützt wird, weshalb dieser Code nur ausgeführt wird, wenn Sie ein Konto für den Tabellendienst verwenden.
+Mit einer Tabellenabfrage können nicht nur alle, sondern auch nur einige Eigenschaften aus einer Entität abgerufen werden. Bei dieser Methode, der sogenannten Projektion, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Mit der Abfrage im folgenden Code werden nur die E-Mail-Adressen von Entitäten in der Tabelle zurückgegeben. Dies geschieht durch die Verwendung einer Abfrage von **DynamicTableEntity** und **EntityResolver**. Weitere Informationen zur Projektion finden Sie im Blogbeitrag [Windows Azure Tables: Introducing Upsert and Query Projection][]. Beachten Sie, dass Projektion nicht auf dem lokalen Speicheremulator unterstützt wird, weshalb dieser Code nur ausgeführt wird, wenn Sie ein Konto für den Tabellendienst verwenden.
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -316,7 +316,7 @@ Mit einer Tabellenabfrage können nicht nur alle, sondern auch nur einige Eigens
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    //Create the CloudTable that represents the "people" table.
+    // Create the CloudTable that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
     // Define the query, and select only the Email property.
@@ -341,7 +341,7 @@ Sie können eine Entität problemlos nach dem Abrufen löschen. Verwenden Sie da
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    //Create the CloudTable that represents the "people" table.
+    // Create the CloudTable that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
     // Create a retrieve operation that expects a customer entity.
@@ -378,7 +378,7 @@ Schließlich wird mit dem folgenden Codebeispiel eine Tabelle aus einem Speicher
     // Create the table client.
     CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-    //Create the CloudTable that represents the "people" table.
+    // Create the CloudTable that represents the "people" table.
     CloudTable table = tableClient.GetTableReference("people");
 
     // Delete the table it if exists.
@@ -452,4 +452,4 @@ Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht h
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
   [How to: Programmatically access Table storage]: #tablestorage
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

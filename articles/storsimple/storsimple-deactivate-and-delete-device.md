@@ -1,23 +1,23 @@
 <properties 
    pageTitle="Deaktivieren und Löschen eines StorSimple-Geräts | Microsoft Azure"
-   description="Beschreibt, wie ein StorSimple-Gerät aus dem Dienst entfernt wird, indem es deaktiviert und anschließend gelöscht wird."
-   services="storsimple"
-   documentationCenter=""
-   authors="SharS"
-   manager="carolz"
-   editor="" />
+	description="Beschreibt, wie ein StorSimple-Gerät aus dem Dienst entfernt wird, indem es zunächst deaktiviert und anschließend gelöscht wird."
+	services="storsimple"
+	documentationCenter=""
+	authors="SharS"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/12/2015"
-   ms.author="v-sharos" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="09/01/2015"
+	ms.author="v-sharos"/>
 
 # Deaktivieren und Löschen eines StorSimple-Geräts
 
-In diesem Lernprogramm wird erläutert, wie ein StorSimple-Gerät aus dem Dienst entfernt wird, indem es deaktiviert und anschließend gelöscht wird.
+In diesem Tutorial wird erläutert, wie ein StorSimple-Gerät aus dem Dienst entfernt wird, indem es deaktiviert und anschließend gelöscht wird.
 
 >[AZURE.NOTE]Sie müssen ein Gerät deaktivieren, bevor Sie es löschen können.
 
@@ -69,7 +69,7 @@ Verwenden Sie das folgende Verfahren, um ein Gerät zur Vorbereitung auf das Lö
 
       - Der bei der Bereitstellung erstellte gehostete Dienst und das Virtual Network werden beibehalten. Wenn diese Entitäten nicht verwendet werden, sollten sie manuell gelöscht werden.
 
-      - Vom virtuellen StorSimple-Gerät erstellte Cloud-Momentaufnahmen werden beibehalten.
+      - Vom virtuellen StorSimple-Gerät erstellte Cloudmomentaufnahmen werden beibehalten.
 
 <!--After the device is deactivated, you will need to perform a failover before you can delete it completely. For failover instructions, go to [Failover and disaster recovery for your StorSimple device](storsimple-device-failover-disaster-recovery.md).-->
 ## Löschen eines Geräts
@@ -91,4 +91,4 @@ Um das deaktivierte Gerät mit den Werkseinstellungen wiederherzustellen, wechse
 
 Um technische Unterstützung zu erhalten, [kontaktieren Sie den Microsoft-Support](storsimple-contact-microsoft-support.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

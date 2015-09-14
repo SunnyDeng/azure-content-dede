@@ -1,12 +1,19 @@
-<properties pageTitle="Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz" | Microsoft Azure description="Erläutert, wie Sie den Sicherungskatalog zum Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz verwenden." services="storsimple" documentationCenter="NA" authors="SharS" manager="Carolz" editor ="" />
-<tags
+<properties 
+   pageTitle="Wiederherstellen eines StorSimple-Volumes aus einer Sicherung | Microsoft Azure"
+	description="Erläutert, wie Sie die Seite ";Sicherungskatalog"; des StorSimple Manager-Diensts zum Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz verwenden."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="SharS"
+	manager="carolz"
+	editor=""/>
+<tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="06/25/2015"
-   ms.author="v-sharos" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/28/2015"
+	ms.author="v-sharos"/>
 
 # Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz
 
@@ -16,7 +23,7 @@ Auf der Seite **Sicherungskatalog** werden alle Sicherungssätze angezeigt, die 
 
  ![Seite "Sicherungskatalog"](./media/storsimple-restore-from-backup-set/HCS_BackupCatalog.png)
 
-In diesem Lernprogramm erfahren Sie, wie Sie Ihr Gerät mithilfe der Seite **Sicherungskatalog** aus einem Sicherungssatz wiederherstellen.
+In diesem Tutorial erfahren Sie, wie Sie Ihr Gerät mithilfe der Seite **Sicherungskatalog** aus einem Sicherungssatz wiederherstellen.
 
 ## So verwenden Sie den Sicherungskatalog 
 
@@ -31,12 +38,12 @@ Die gefilterten Sicherungssätze werden dann basierend auf den folgenden Attribu
 - **Name** – der Name der Sicherungsrichtlinie oder des Volumes, der oder dem dieser Sicherungssatz zugeordnet ist.
 - **Größe** – die tatsächliche Größe des Sicherungssatzes.
 - **Erstellt am** – das Datum und die Uhrzeit der Erstellung der Sicherungen. 
-- **Typ** – Sicherungssätze können lokale Momentaufnahmen oder Cloud-Momentaufnahmen sein. Eine lokale Momentaufnahme ist eine Sicherung aller Volumedaten, die auf dem lokalen Gerät gespeichert ist, während die Sicherung von Volumedaten in der Cloud als Cloud-Momentaufnahme bezeichnet wird. Lokale Momentaufnahmen bieten schnelleren Zugriff, während Cloud-Momentaufnahmen für Datenstabilität ausgewählt werden.
+- **Typ** – Sicherungssätze können lokale Momentaufnahmen oder Cloudmomentaufnahmen sein. Eine lokale Momentaufnahme ist eine Sicherung aller Volumedaten, die auf dem lokalen Gerät gespeichert ist, während die Sicherung von Volumedaten in der Cloud als Cloudmomentaufnahme bezeichnet wird. Lokale Momentaufnahmen bieten schnelleren Zugriff, während Cloudmomentaufnahmen für Datenstabilität ausgewählt werden.
 - **Initiiert von** – die Sicherungen können automatisch nach einem Zeitplan oder manuell durch einen Benutzer initiiert werden. (Sie können eine Sicherungsrichtlinie verwenden, um Sicherungen zu planen. Es ist aber auch möglich, mithilfe der Option **Sicherung erstellen** eine interaktive Sicherung durchzuführen.)
 
 ## So stellen Sie Ihr StorSimple-Volume aus einer Sicherung wieder her
 
-Sie können Ihr StorSimple-Volume mithilfe der Seite **Sicherungskatalog** aus einer bestimmten Sicherung wiederherstellen. Beachten Sie dabei, dass das Volume durch die Wiederherstellung auf den Zustand zum Zeitpunkt der Sicherung zurückgesetzt wird. Alle Daten, die nach dem Sicherungsvorgang hinzugefügt wurden, gehen verloren.
+Sie können Ihr StorSimple-Volume auf der Seite **Sicherungskatalog** aus einer bestimmten Sicherung wiederherstellen. Beachten Sie dabei, dass das Volume durch die Wiederherstellung auf den Zustand zum Zeitpunkt der Sicherung zurückgesetzt wird. Alle Daten, die nach dem Sicherungsvorgang hinzugefügt wurden, gehen verloren.
 
 > [AZURE.WARNING]Beim Wiederherstellen aus einer Sicherung werden die vorhandenen Volumes durch die Sicherung ersetzt. Dadurch können Daten verloren gehen, die nach dem Erstellen der Sicherung geschrieben wurden.
 
@@ -75,4 +82,4 @@ Sie können Ihr StorSimple-Volume mithilfe der Seite **Sicherungskatalog** aus e
 
 Erfahren Sie, wie Sie [StorSimple-Volumes verwalten](storsimple-manage-volumes.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

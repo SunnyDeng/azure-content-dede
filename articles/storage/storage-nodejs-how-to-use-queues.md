@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden des Warteschlangenspeichers mit Node.js | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Abrufen und Löschen von Nachrichten verwenden. Die Beispiele sind in Node.js geschrieben." 
-	services="storage" 
-	documentationCenter="nodejs" 
-	authors="MikeWasson" 
-	manager="wpickett" 
+	pageTitle="Verwenden des Warteschlangenspeichers mit Node.js | Microsoft Azure"
+	description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Abrufen und Löschen von Nachrichten verwenden. Die Beispiele sind in Node.js geschrieben."
+	services="storage"
+	documentationCenter="nodejs"
+	authors="MikeWasson"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="03/11/2015" 
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="mwasson"/>
 
 
@@ -41,17 +41,18 @@ Um Azure-Speicher verwenden zu können, müssen Sie das Azure Storage-SDK für N
 
 1.  Verwenden Sie eine Befehlszeilenschnittstelle, z. B. **PowerShell** (Windows,) **Terminal** (Mac) oder **Bash** (Unix), und navigieren Sie zu dem Ordner, in dem Sie die Beispielanwendung erstellt haben.
 
-2.  Geben Sie **npm install azure-storage** in das Befehlsfenster ein. Die Ausgabe des Befehls sollte wie folgt aussehen:
+2.  Geben Sie **npm install azure-storage** in das Befehlsfenster ein. Die Ausgabe des Befehls ähnelt dem folgenden Beispiel.
 
-        azure-storage@0.1.0 node_modules\azure-storage
-		├── extend@1.2.1
-		├── xmlbuilder@0.4.3
-		├── mime@1.2.11
-		├── underscore@1.4.4
-		├── validator@3.1.0
-		├── node-uuid@1.4.1
-		├── xml2js@0.2.7 (sax@0.5.2)
-		└── request@2.27.0 (json-stringify-safe@5.0.0, tunnel-agent@0.3.0, aws-sign@0.3.0, forever-agent@0.5.2, qs@0.6.6, oauth-sign@0.3.0, cookie-jar@0.3.0, hawk@1.0.0, form-data@0.1.3, http-signature@0.10.0)
+		azure-storage@0.5.0 node_modules\azure-storage
+		+-- extend@1.2.1
+		+-- xmlbuilder@0.4.3
+		+-- mime@1.2.11
+		+-- node-uuid@1.4.3
+		+-- validator@3.22.2
+		+-- underscore@1.4.4
+		+-- readable-stream@1.0.33 (string_decoder@0.10.31, isarray@0.0.1, inherits@2.0.1, core-util-is@1.0.1)
+		+-- xml2js@0.2.7 (sax@0.5.2)
+		+-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
 
 3.  Sie können den Befehl **ls** manuell ausführen, um zu überprüfen, ob der Ordner **node\_modules** erstellt wurde. In diesem Ordner finden Sie das Paket **azure-storage** mit den Bibliotheken, die Sie benötigen, um auf den Speicher zuzugreifen.
 
@@ -116,7 +117,7 @@ Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, 
 
 	queueSvc.peekMessages('myqueue', function(error, result, response){
 	  if(!error){
-		// Messages peeked
+		// Message text is in messages[0].messagetext
 	  }
 	});
 
@@ -132,11 +133,11 @@ Das Verarbeiten einer Nachricht besteht aus zwei Stufen:
 
 2. Löschen der Nachricht.
 
-Verwenden Sie **getMessage**, um eine Nachricht aus der Warteschlange zu entfernen. Dadurch wird die Nachricht in der Warteschlange unsichtbar, sodass sie nicht durch andere Clients verarbeitet werden kann. Sobald Ihre Anwendung die Nachricht verarbeitet hat, rufen Sie **deleteMessage** auf, um sie aus der Warteschlange zu löschen. Im folgenden Beispiel wird eine Nachricht abgerufen und anschließend gelöscht:
+Verwenden Sie **getMessages**, um eine Nachricht aus der Warteschlange zu entfernen. Durch diesen Vorgang werden die Nachrichten in der Warteschlange unsichtbar, sodass sie nicht durch andere Clients verarbeitet werden können. Sobald Ihre Anwendung eine Nachricht verarbeitet hat, rufen Sie **deleteMessage** auf, um sie aus der Warteschlange zu löschen. Im folgenden Beispiel wird eine Nachricht abgerufen und anschließend gelöscht:
 
 	queueSvc.getMessages('myqueue', function(error, result, response){
       if(!error){
-	    // message dequed
+	    // Message text is in messages[0].messagetext
         var message = result[0];
         queueSvc.deleteMessage('myqueue', message.messageid, message.popreceipt, function(error, response){
 	      if(!error){
@@ -148,7 +149,7 @@ Verwenden Sie **getMessage**, um eine Nachricht aus der Warteschlange zu entfern
 
 > [AZURE.NOTE]Standardmäßig wird eine Nachricht nur für 30 Sekunden ausgeblendet, danach ist sie für andere Client sichtbar. Sie können einen anderen Wert angeben, indem Sie `options.visibilityTimeout` mit **getMessages** verwenden.
 
-> [AZURE.NOTE]Wenn Sie <b>getMessages</b> verwenden und keine Nachrichten in der Warteschlange vorhanden sind, werden weder Fehler noch Nachrichten zurückgegeben.
+> [AZURE.NOTE]Wenn Sie **getMessages** verwenden und keine Nachrichten in der Warteschlange vorhanden sind, werden weder Fehler noch Nachrichten zurückgegeben.
 
 ## Ändern des Inhalts von Nachrichten in der Warteschlange
 
@@ -173,7 +174,7 @@ Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Wartesc
 * `options.numOfMessages`: Abrufen eines Stapels an Nachrichten (bis zu 32).
 * `options.visibilityTimeout`: Festlegen eines längeren oder kürzeren Unsichtbarkeits-Zeitlimits.
 
-Im folgenden Beispiel wird die Methode **getMessages** verwendet, um 15 Nachrichten mit einem Aufruf abzurufen. Anschließend wird jede Nachricht mithilfe einer for Schleife verarbeitet. Zudem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten für alle Nachrichten festgelegt, die durch diese Methode zurückgegeben werden.
+Im folgenden Beispiel wird die Methode **getMessages** verwendet, um mit einem Aufruf 15 Nachrichten abzurufen. Anschließend wird jede Nachricht mithilfe einer for Schleife verarbeitet. Zudem wird das Unsichtbarkeits-Zeitlimit auf fünf Minuten für alle Nachrichten festgelegt, die durch diese Methode zurückgegeben werden.
 
     queueSvc.getMessages('myqueue', {numOfMessages: 15, visibilityTimeout: 5 * 60}, function(error, result, response){
 	  if(!error){
@@ -308,7 +309,7 @@ Nachdem die ACL festgelegt wurde, können Sie basierend auf der ID für eine Ric
 
 Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][].
+-   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern von und Zugreifen auf Daten in Azure][].
 -   Besuchen Sie den [Blog des Azure-Speicherteams][].
 -   Besuchen Sie das [Azure Storage SDK für Node][]-Repository auf GitHub.
 
@@ -327,9 +328,9 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   
   
   [Node.js Cloud Service]: ../cloud-services-nodejs-develop-deploy-app.md
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+  [Speichern von und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
  [Website mit WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Upgrade von Web- oder Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen" 
-	description="Führen Sie ein Upgrade der Web- oder Business-Datenbanken von Azure SQL-Datenbank auf die neuen Dienstebenen und Leistungsstufen &quot;Basic&quot;, &quot;Standard&quot; und &quot;Premium&quot; von Azure SQL-Datenbank durch." 
-	services="sql-database" 
-	documentationCenter="" 
-	authors="stevestein" 
-	manager="jeffreyg" 
+	pageTitle="Upgrade von Web- oder Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen"
+	description="Führen Sie ein Upgrade der Web- oder Business-Datenbanken von Azure SQL-Datenbank auf die neuen Dienstebenen und Leistungsstufen ";Basic";, ";Standard"; und ";Premium"; von Azure SQL-Datenbank durch."
+	services="sql-database"
+	documentationCenter=""
+	authors="stevestein"
+	manager="jeffreyg"
 	editor=""/>
 
 <tags 
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="06/18/2015" 
-	ms.author="sstein" 
-	ms.workload="data-management" 
-	ms.topic="article" 
+	ms.date="06/18/2015"
+	ms.author="sstein"
+	ms.workload="data-management"
+	ms.topic="article"
 	ms.tgt_pltfrm="NA"/>
 
 
@@ -57,7 +57,7 @@ Das Upgrade einer Web- oder Business-Datenbank auf eine neue Dienstebene umfasst
 
 
 
-## 1. Ermitteln der Dienstebene basierend auf dem Funktionsumfang
+## 1\. Ermitteln der Dienstebene basierend auf dem Funktionsumfang
 
 Die Dienstebenen Basic, Standard und Premium bieten einen unterschiedlichen Funktionsumfang. Der erste Schritt bei der Auswahl der geeigneten Ebene besteht also darin, die Dienstebene mit dem Mindestfunktionsumfang zu ermitteln, der für Ihre Anwendung und das Unternehmen erforderlich ist.
 
@@ -67,8 +67,7 @@ Die Ebene „Basic“ wird in erster Linie für sehr kleine Datenbanken mit geri
 
 Die Funktionen und Leistungsstufen der neuen Dienstebene werden in der folgenden Tabelle zusammengefasst und verglichen:
 
-![Feature-Vergleich von Dienstebenen][1]
-
+[AZURE.INCLUDE [Tarife für SQL-Datenbank](../../includes/sql-database-service-tiers-table.md)]
 
 **Zusätzliche Ressourcen für den Vergleich von Dienstebenen und Leistungsstufen:**
 
@@ -86,7 +85,7 @@ Nach Auswahl einer geeigneten Dienstebene, die die Anforderungen der Datenbank e
 
 
 
-## 2. Ermitteln einer angemessenen Leistungsstufe basierend auf der bisherigen Ressourcennutzung
+## 2\. Ermitteln einer angemessenen Leistungsstufe basierend auf der bisherigen Ressourcennutzung
 
 Der Azure SQL-Datenbankdienst zeigt Informationen im Verwaltungsportal und in den Systemsichten an, um Ihnen eine neue Dienstebene und Leistungsstufe für Ihre vorhandene Web- oder Business-Datenbank vorzuschlagen.
 
@@ -135,9 +134,9 @@ Die Daten im vorangehenden Beispiel zeigen die durchschnittliche Auslastung von 
 ### Systemsichten
 
 
-Die Ressourcenverbrauchsdaten von Web- und Business-Datenbanken können über die Sicht [sys.resource_stats](http://msdn.microsoft.com/library/azure/dn269979.aspx) in der Masterdatenbank des logischen Servers eingesehen werden, auf dem die aktuelle Datenbank gespeichert ist. Die Ressourcenverbrauchsdaten werden in Prozentsätzen des Grenzwerts der Leistungsstufe angezeigt. Diese Sicht stellt Daten der letzten maximal 14 Tage in Intervallen von 5 Minuten zur Verfügung.
+Die Ressourcenverbrauchsdaten von Web- und Business-Datenbanken können über die Sicht [sys.resource\_stats](http://msdn.microsoft.com/library/azure/dn269979.aspx) in der Masterdatenbank des logischen Servers eingesehen werden, auf dem die aktuelle Datenbank gespeichert ist. Die Ressourcenverbrauchsdaten werden in Prozentsätzen des Grenzwerts der Leistungsstufe angezeigt. Diese Sicht stellt Daten der letzten maximal 14 Tage in Intervallen von 5 Minuten zur Verfügung.
 
-> [AZURE.NOTE]Sie können nun die Sicht [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx) in Web und Business-Datenbanken verwenden, um eine Sicht mit höherer Genauigkeit (alle 15 Sekunden) der Ressourcenverbrauchsdaten zu erhalten. Da "sys.dm_db_resource_stats" historische Daten nur eine Stunde lang speichert, können Sie diese DMV stündlich abfragen und die Daten zur weiteren Analyse speichern.
+> [AZURE.NOTE]Sie können nun die Sicht [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx) in Web und Business-Datenbanken verwenden, um eine Sicht mit höherer Genauigkeit (alle 15 Sekunden) der Ressourcenverbrauchsdaten zu erhalten. Da "sys.dm\_db\_resource\_stats" historische Daten nur eine Stunde lang speichert, können Sie diese DMV stündlich abfragen und die Daten zur weiteren Analyse speichern.
 
 Führen Sie die folgende Abfrage für die Masterdatenbank aus, um den durchschnittlichen DTU-Verbrauch für eine Datenbank abzurufen:
 
@@ -153,9 +152,9 @@ Führen Sie die folgende Abfrage für die Masterdatenbank aus, um den durchschni
     WHERE database_name = '<your db name>'
     ORDER BY end_time DESC;
 
-Die Daten, die von [resource_stats](https://msdn.microsoft.com/library/dn269979.aspx) und [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx) für Web- und Business-Ebenen zurückgegeben werden, geben die Prozentsätze in Bezug auf die Standard S2-Leistungsebene an. Wenn zum Beispiel beim Ausführen mit einer Webdatenbank der Wert 70 % zurückgegeben wird, weist dies auf 70 % des S2-Ebenenhöchstwerts hin. Darüber hinaus kann für Web- und Businessebenen der Prozentsatz eine Zahl über 100 % zurückgeben, was ebenfalls auf dem S2-Ebenenhöchstwert basiert.
+Die Daten, die von [resource\_stats](https://msdn.microsoft.com/library/dn269979.aspx) und [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx) für Web- und Business-Ebenen zurückgegeben werden, geben die Prozentsätze in Bezug auf die Standard S2-Leistungsebene an. Wenn zum Beispiel beim Ausführen mit einer Webdatenbank der Wert 70 % zurückgegeben wird, weist dies auf 70 % des S2-Ebenenhöchstwerts hin. Darüber hinaus kann für Web- und Businessebenen der Prozentsatz eine Zahl über 100 % zurückgeben, was ebenfalls auf dem S2-Ebenenhöchstwert basiert.
 
-Die DTU-Verbrauchsinformationen für eine S2-Datenbankstufe ermöglichen Ihnen das Normalisieren des aktuellen Verbrauchs Ihrer Web- und Business-Datenbanken im Hinblick auf Datenbanken der neuen Ebene sowie eine Beurteilung der besseren Eignung. Wenn Ihr durchschnittlicher prozentualer DTU-Verbrauch z. B. einen Wert von 80 % anzeigt, besagt dies, dass die Datenbank DTU mit einer Rate von 80 % des Grenzwerts einer Datenbank auf der S2-Leistungsstufe verbraucht. Wenn in der Sicht **sys.resource_stats** Werte angezeigt werden, die größer als 100 % sind, bedeutet dies, dass Sie eine Leistungsstufe benötigen, die größer als S2 ist. Nehmen Sie z. B. an, dass ein Spitzenwert für den DTU-Prozentsatz von 300 % angezeigt wird. Dies bedeutet, dass Sie drei Mal mehr Ressourcen verwenden als in der S2-Stufe verfügbar wären. Zum Bestimmen einer angemessenen Anfangsgröße vergleichen Sie die in einer S2-Stufe verfügbaren DTUs (50 DTUs) mit den nächsthöheren Stufen (S3/P1 = 100 DTUs oder 200 % von S2, P2 = 200 DTUs oder 400 % von S2). Da Sie bei 300 % der S2-Stufe liegen, können Sie in diesem Fall mit einer P2-Stufe beginnen und dann erneut einen Test durchführen.
+Die DTU-Verbrauchsinformationen für eine S2-Datenbankstufe ermöglichen Ihnen das Normalisieren des aktuellen Verbrauchs Ihrer Web- und Business-Datenbanken im Hinblick auf Datenbanken der neuen Ebene sowie eine Beurteilung der besseren Eignung. Wenn Ihr durchschnittlicher prozentualer DTU-Verbrauch z. B. einen Wert von 80 % anzeigt, besagt dies, dass die Datenbank DTU mit einer Rate von 80 % des Grenzwerts einer Datenbank auf der S2-Leistungsstufe verbraucht. Wenn in der Sicht **sys.resource\_stats** Werte angezeigt werden, die größer als 100 % sind, bedeutet dies, dass Sie eine Leistungsstufe benötigen, die größer als S2 ist. Nehmen Sie z. B. an, dass ein Spitzenwert für den DTU-Prozentsatz von 300 % angezeigt wird. Dies bedeutet, dass Sie drei Mal mehr Ressourcen verwenden als in der S2-Stufe verfügbar wären. Zum Bestimmen einer angemessenen Anfangsgröße vergleichen Sie die in einer S2-Stufe verfügbaren DTUs (50 DTUs) mit den nächsthöheren Stufen (S3/P1 = 100 DTUs oder 200 % von S2, P2 = 200 DTUs oder 400 % von S2). Da Sie bei 300 % der S2-Stufe liegen, können Sie in diesem Fall mit einer P2-Stufe beginnen und dann erneut einen Test durchführen.
 
 Basierend auf dem prozentualen DTU-Verbrauch und der größten Edition, die für Ihre Arbeitsauslastung benötigt wird, können Sie ermitteln, welche Dienstebene und Leistungsstufe für die Arbeitsauslastung Ihrer Datenbank am besten geeignet ist (wie durch den prozentualen DTU-Wert und die relativen DTU-Potenzen verschiedener [Leistungsstufen](http://msdn.microsoft.com/library/azure/dn741336.aspx) angegeben). Die folgende Tabelle zeigt eine Zuordnung des prozentualen Web-/Business-Ressourcenverbrauchs zu den entsprechenden Leistungsstufen der neuen Ebene:
 
@@ -200,11 +199,11 @@ In der grafischen Darstellung erkennen Sie den Trend des durchschnittlichen proz
 
 ![DTU-Verbrauch](media/sql-database-upgrade-new-service-tiers/DTU_usage.png)
 
-**Arbeitsspeicherauswirkungen auf die Leistung:** Arbeitsspeicher ist zwar eine der Ressourcendimensionen, die zur DTU-Bewertung beitragen - die SQL-Datenbank ist jedoch so konzipiert, dass der gesamte verfügbare Arbeitsspeicher für Datenbankvorgänge verwendet wird. Aus diesem Grund ist der Speicherverbrauch nicht im durchschnittlichen DTU-Verbrauch in der Abfrage oben enthalten. Andererseits wird der verfügbare Arbeitsspeicher für die Datenbank verringert, wenn Sie auf eine niedrigere Leistungsstufe wechseln. Dies kann zu einem höherer E/A-Verbrauch führen und sich auf die verbrauchten DTUs auswirken. Wenn Sie also auf eine niedrigere Leistungsstufe umsteigen, stellen Sie sicher, dass genügend Spielraum für den E/A-Prozentsatz verbleibt. Verwenden Sie die oben beschriebene dynamische Verwaltungssicht [sys.dm_ db_ resource_stats](http://msdn.microsoft.com/library/azure/dn800981.aspx), um diese Werte zu überwachen.
+**Arbeitsspeicherauswirkungen auf die Leistung:** Arbeitsspeicher ist zwar eine der Ressourcendimensionen, die zur DTU-Bewertung beitragen - die SQL-Datenbank ist jedoch so konzipiert, dass der gesamte verfügbare Arbeitsspeicher für Datenbankvorgänge verwendet wird. Aus diesem Grund ist der Speicherverbrauch nicht im durchschnittlichen DTU-Verbrauch in der Abfrage oben enthalten. Andererseits wird der verfügbare Arbeitsspeicher für die Datenbank verringert, wenn Sie auf eine niedrigere Leistungsstufe wechseln. Dies kann zu einem höherer E/A-Verbrauch führen und sich auf die verbrauchten DTUs auswirken. Wenn Sie also auf eine niedrigere Leistungsstufe umsteigen, stellen Sie sicher, dass genügend Spielraum für den E/A-Prozentsatz verbleibt. Verwenden Sie die oben beschriebene dynamische Verwaltungssicht [sys.dm\_ db\_ resource\_stats](http://msdn.microsoft.com/library/azure/dn800981.aspx), um diese Werte zu überwachen.
 
 
 
-## 3. Warum entspricht die aktuelle Leistung meiner Web- oder Business-Datenbank höheren Premium-Stufen?
+## 3\. Warum entspricht die aktuelle Leistung meiner Web- oder Business-Datenbank höheren Premium-Stufen?
 
 Web- und Business-Datenbanken verfügen über keine reservierte Ressourcenkapazität für einzelne Datenbanken. Außerdem steht den Kunden kein Instrument zur Verfügung, um die Leistung einer Web- oder Business-Datenbank nach oben oder unten zu skalieren. Dies führt dazu, dass sich die Leistung einer Web- oder Business-Datenbank irgendwo zwischen extrem langsam und Premium-Level bewegen kann. Diese Leistungsschwankungen hängen *ungerechterweise* vom jeweiligen Gesamtressourcenverbrauch durch andere Datenbanken innerhalb einer mehrinstanzenfähigen Umgebung mit gemeinsamer Ressourcennutzung ab.
 
@@ -217,7 +216,7 @@ Die folgende Abbildung hilft Ihnen dabei, die Unterschiede zwischen Web-/Busines
 Wenn der prozentuale DTU-Gesamtwert sehr hoch ist, sollten Sie die Metriken der DTUs genauer analysieren. Insbesondere detaillierte Informationen zu Protokoll-E/A und Arbeitsspeichernutzung der Datenbank können aufschlussreich sein. So können Sie ggf. Problembereiche aufdecken, für die sich der DTU-Verbrauch verringern und optimieren lässt.
 
 
-## 4. Optimieren der Datenbankauslastung in Anpassung an eine niedrigere Leistungsstufe
+## 4\. Optimieren der Datenbankauslastung in Anpassung an eine niedrigere Leistungsstufe
 Wenn die Analyse des historischen Ressourcenverbrauchs einer Datenbank ein Upgrade auf eine Leistungsstufe nahe legt, die Ihr Budget übersteigt, können Sie sich auch erst über weitere Möglichkeiten der Leistungsoptimierung informieren.
 
 Wenn Ihnen der Ressourcenverbrauch Ihrer Anwendung gemessen an Ihren Erfahrungswerten sehr hoch erscheint und weit über der typischen Arbeitsauslastung liegt, können Sie u. U. einige weitere Möglichkeiten der Leistungsoptimierung für die Anwendung ausschöpfen.
@@ -236,7 +235,7 @@ Zusätzlich zu typischen Optimierungsschritten wie Indexanalyse, Ausführungspl�
 
 
 
-## 5. Upgrade auf die neue Dienstebene/Leistungsstufe
+## 5\. Upgrade auf die neue Dienstebene/Leistungsstufe
 Nachdem Sie die geeignete Dienstebene/Leistungsstufe für die Web-/Business-Datenbank ermittelt haben, bieten sich mehrere Möglichkeiten für ein Upgrade der Datenbank auf die neue Ebene:
 
 | Verwaltungstool | So ändern Sie die Dienstebene und Leistungsstufe einer Datenbank|
@@ -249,8 +248,8 @@ Nachdem Sie die geeignete Dienstebene/Leistungsstufe für die Web-/Business-Date
 Ausführliche Informationen finden Sie unter [Ändern von Datenbank-Dienstebenen und -Leistungsstufen](http://msdn.microsoft.com/library/dn369872.aspx)
 
 
-## 6. Überwachen des Upgrades auf die neue Dienstebene/Leistungsstufe
-Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht "sys.dm_operation_status" in der Masterdatenbank des logischen Servers, auf dem die aktuelle Datenbank gespeichert ist, Statusinformationen zu Verwaltungsvorgängen (z. B. "CREATE", "ALTER", "DROP") zur Verfügung, die für eine Datenbank ausgeführt werden [siehe Dokumentation zum Status des _Vorgangs_ "sys.dm_operation_status"].(http://msdn.microsoft.com/library/azure/dn270022.aspx) Verwenden Sie die dynamische Verwaltungssicht zum Vorgangsstatus, um den Status des Upgradevorgangs für eine Datenbank zu ermitteln. Die folgende Beispielabfrage zeigt alle Verwaltungsvorgänge, die für eine Datenbank ausgeführt werden:
+## 6\. Überwachen des Upgrades auf die neue Dienstebene/Leistungsstufe
+Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht "sys.dm\_operation\_status" in der Masterdatenbank des logischen Servers, auf dem die aktuelle Datenbank gespeichert ist, Statusinformationen zu Verwaltungsvorgängen (z. B. "CREATE", "ALTER", "DROP") zur Verfügung, die für eine Datenbank ausgeführt werden [siehe Dokumentation zum Status des Vorgangs "sys.dm\_operation\_status"].(http://msdn.microsoft.com/library/azure/dn270022.aspx) Verwenden Sie die dynamische Verwaltungssicht zum Vorgangsstatus, um den Status des Upgradevorgangs für eine Datenbank zu ermitteln. Die folgende Beispielabfrage zeigt alle Verwaltungsvorgänge, die für eine Datenbank ausgeführt werden:
 
     SELECT o.operation, o.state_desc, o.percent_complete
     , o.error_code, o.error_desc, o.error_severity, o.error_state
@@ -266,11 +265,11 @@ Wenn Sie das Verwaltungsportal für das Upgrade verwendet haben, ist auch eine B
 Leistungsstufen werden kalibriert und gesteuert, um die erforderlichen Ressourcen zum Ausführen der Arbeitsauslastung Ihrer Datenbank bis zu den maximalen Grenzwerten bereitzustellen, die für die ausgewählte Dienstebene/Leistungsstufe zulässig sind (d. h. der Ressourcenverbrauch liegt bei 100 %). Wenn die Arbeitsauslastung die Grenzwerte für CPU/Daten-E/A/Protokoll-E/A erreicht, erhalten Sie die Ressourcen auch weiterhin auf der maximal zulässigen Ebene. Es treten jedoch wahrscheinlich erhöhte Wartezeiten für Ihre Abfragen auf. Das Erreichen einer dieser Höchstgrenzen führt nicht zu Fehlern, sondern nur zu einer Verlangsamung Ihrer Arbeitsauslastung. Wenn die Verlangsamung jedoch zu schwerwiegend ist, tritt ein Timeout von Abfragen auf. Wenn Sie den Grenzwert für die maximal zulässigen gleichzeitigen Benutzersitzungen/-anforderungen (Arbeitsthreads) erreichen, erhalten Sie den [Fehler 10928 oder 10929](http://msdn.microsoft.com/library/azure/dn338078.aspx).
 
 
-## 7. Überwachen der Datenbank nach dem Upgrade
+## 7\. Überwachen der Datenbank nach dem Upgrade
 Nach dem Upgrade der Web-/Business-Datenbank auf die neue Ebene wird empfohlen, die Datenbank aktiv zu überwachen, um sicherzustellen, dass Anwendungen mit der gewünschten Leistung ausgeführt werden. Außerdem sollte die Nutzung optimiert werden. Die folgenden zusätzlichen Schritte werden zum Überwachen der Datenbank empfohlen.
 
 
-**Ressourcenverbrauchsdaten:** Für Basic-, Standard- und Premium-Datenbanken sind präzisere Ressourcenverbrauchsdaten über eine neue dynamische Verwaltungssicht [sys.dm_ db_ resource_stats](http://msdn.microsoft.com/library/azure/dn800981.aspx) in der Benutzerdatenbank verfügbar. Diese dynamische Verwaltungssicht stellt beinahe in Echtzeit Informationen zum Ressourcenverbrauch mit einer Genauigkeit von 15 Sekunden für die vorhergehende Stunde des Betriebs zur Verfügung. Der prozentuale DTU-Verbrauch für ein Intervall wird als maximaler prozentualer Verbrauch von CPU-, E/A- und Protokollressourcen berechnet. Die folgende Abfrage berechnet den durchschnittlichen prozentualen DTU-Verbrauch während der letzten Stunde:
+**Ressourcenverbrauchsdaten:** Für Basic-, Standard- und Premium-Datenbanken sind präzisere Ressourcenverbrauchsdaten über eine neue dynamische Verwaltungssicht [sys.dm\_ db\_ resource\_stats](http://msdn.microsoft.com/library/azure/dn800981.aspx) in der Benutzerdatenbank verfügbar. Diese dynamische Verwaltungssicht stellt beinahe in Echtzeit Informationen zum Ressourcenverbrauch mit einer Genauigkeit von 15 Sekunden für die vorhergehende Stunde des Betriebs zur Verfügung. Der prozentuale DTU-Verbrauch für ein Intervall wird als maximaler prozentualer Verbrauch von CPU-, E/A- und Protokollressourcen berechnet. Die folgende Abfrage berechnet den durchschnittlichen prozentualen DTU-Verbrauch während der letzten Stunde:
 
     SELECT end_time
     	 , (SELECT Max(v)
@@ -303,11 +302,10 @@ Der Azure SQL-Datenbankdienst stellt Telemetriedaten und Tools zum Auswerten der
 
 
 <!--Image references-->
-[1]: ./media/sql-database-upgrade-new-service-tiers/service-tier-features.png
 [2]: ./media/sql-database-upgrade-new-service-tiers/portal-dtus.JPG
 [3]: ./media/sql-database-upgrade-new-service-tiers/web-business-noisy-neighbor.png
 [4]: ./media/sql-database-upgrade-new-service-tiers/resource_consumption.png
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

@@ -4,8 +4,8 @@
 	services="machine-learning"
 	documentationCenter=""
 	authors="hangzh-msft"
-	manager="paulettm" 
-	editor="cgronlun"  />
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags
 	ms.service="machine-learning"
@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/29/2015"
-	ms.author="hangzh;bradsev" />
+	ms.date="09/01/2015"
+	ms.author="hangzh;bradsev"/>
 
 #<a name="heading"></a> Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im erweiterten Analyseprozess 
 
 In diesem Dokument werden die verschiedenen Möglichkeiten zum Übermitteln von Hive-Abfragen an Hadoop-Cluster beschrieben, die durch einen HDInsight-Dienst in Azure verwaltet werden. Diese Aufgabe gehört zur Advanced Analytics Process and Technology (ADAPT), die von Azure Machine Learning bereitgestellt wird. Es werden mehrere Aufgaben zum Analysieren von Daten erläutert: das Durchsuchen von Daten und das Generieren von Funktionen. Generische Hive-Abfragen zeigen, wie Sie mit Hive in Azure HDInsight Hadoop-Clustern Daten durchsuchen oder Funktionen generieren. Diese Hive-Abfragen verwenden eingebettete Hive-UDFs (User Defined Function, benutzerdefinierte Funktion), die bereitgestellt werden.
 
-Beispiele für Abfragen speziell für Szenarien mit den <a href="http://chriswhong.com/open-data/foil_nyc_taxi/" target="_blank">NYC Taxi Trip-Daten</a> stehen auch im <a href="https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts" target="_blank">GitHub-Repository</a> bereit. Für diese Abfragen ist bereits ein Datenschema angegeben, sodass sie bereit für die Übermittlung zur Ausführung sind.
+Beispiele für Abfragen speziell für Szenarios mit den [NYC Taxi Trip-Daten](http://chriswhong.com/open-data/foil_nyc_taxi/) stehen auch im [GitHub-Repository](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts) bereit. Für diese Abfragen ist bereits ein Datenschema angegeben, sodass sie bereit für die Übermittlung zur Ausführung sind.
 
 Im letzten Abschnitt werden Parameter beschrieben, mit denen Sie die Leistung der Hive-Abfragen optimieren können.
 
@@ -319,4 +319,4 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 [15]: ./media/machine-learning-data-science-process-hive-tables/run-hive-queries-3.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

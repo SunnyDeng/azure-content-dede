@@ -105,6 +105,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
         );
 
 8. Fügen Sie den folgenden Code, der einen **verknüpften Dienst** erstellt, zur Methode **Main** hinzu.
+
 	> [AZURE.NOTE]Verwenden Sie **Kontoname** und **Kontoschlüssel** Ihres Azure-Speicherkontos für **ConnectionString**.
 
         // create a linked service
@@ -117,7 +118,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
                     Name = "LinkedService-AzureStorage",
                     Properties = new LinkedServiceProperties
                     (
-                        new AzureStorageLinkedService("DefaultEndpointsProtocol=https;AccountName=spestore;AccountKey=4VwviDOId32nYKABQy9NHsMG0vC/CXx9iuR02HJdGL+0kieqHqbT3ap+bM/c+aGnGoA7SqkwNFq90hqV1bmV0w==")
+                        new AzureStorageLinkedService("DefaultEndpointsProtocol=https;AccountName=<account name>;AccountKey=<account key>")
                     )
                 }
             }
@@ -335,6 +336,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
         Console.WriteLine("Getting run details of a data slice");
 
 		// give it a few minutes for the output slice to be ready
+        Console.WriteLine("\nGive it a few minutes for the output slice to be ready and press any key.");
         Console.ReadKey();
 
         var datasliceRunListResponse = client.DataSliceRuns.List(
@@ -392,4 +394,4 @@ Artikel | Beschreibung
 [azure-developer-center]: http://azure.microsoft.com/downloads/
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

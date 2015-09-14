@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Codebeispiel: Exportieren aus Application Insights in SQL über eine Workerrolle" 
-	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export." 
-	services="application-insights" 
-    documentationCenter=""
-	authors="mazharmicrosoft" 
+	pageTitle="Codebeispiel: Exportieren aus Application Insights in SQL über eine Workerrolle"
+	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export."
+	services="application-insights"
+	documentationCenter=""
+	authors="mazharmicrosoft"
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2015"
 	ms.author="awills"/>
  
 # Codebeispiel: Exportieren aus Application Insights in SQL über eine Workerrolle
@@ -79,14 +79,17 @@ Erste Schritte:
 
     ![Wählen Sie Ereignistypen aus.](./media/app-insights-code-sample-export-telemetry-sql-database/085-types.png)
 
-Jetzt lehnen Sie sich zurück, und lassen Sie Ihre Benutzer die Anwendung eine Weile lang verwenden. Telemetriedaten gehen ein, und Sie sehen statistische Diagramme im [Metrik-Explorer][metrics] sowie einzelne Ereignisse in der [Diagnosesuche][diagnostic].
+3. Warten Sie, bis sich einige Daten angesammelt haben. Lehnen Sie sich zurück, und lassen Sie Ihre Benutzer die Anwendung eine Weile lang verwenden. Telemetriedaten gehen ein, und Sie sehen statistische Diagramme im [Metrik-Explorer](app-insights-metrics-explorer.md) sowie einzelne Ereignisse in der [Diagnosesuche](app-insights-diagnostic-search.md).
 
-Außerdem werden die Daten in den Speicher exportiert, in dem Sie den Inhalt überprüfen können. Beispielsweise gibt es einen Speicher-Browser in Visual Studio:
+    Darüber hinaus werden die Daten in Ihren Speicher exportiert.
 
+4. Überprüfen Sie die exportierten Daten. Wählen Sie in Visual Studio **Anzeigen / Cloud Explorer**, und öffnen Sie "Azure / Storage". (Wenn diese Menüoption nicht verfügbar ist, müssen Sie das Azure SDK installieren: Öffnen Sie das Dialogfeld "Neues Projekt" und anschließend "Visual C# / Cloud / Microsoft Azure SDK für .NET abrufen".)
 
-![Öffnen Sie in Visual Studio den "Server-Browser", "Azure" und "Storage".](./media/app-insights-code-sample-export-telemetry-sql-database/087-explorer.png)
+    ![Öffnen Sie in Visual Studio den "Server-Browser", "Azure" und "Storage".](./media/app-insights-code-sample-export-telemetry-sql-database/087-explorer.png)
 
-Die Ereignisse werden in Blobdateien im JSON-Format geschrieben. Jede Datei kann ein oder mehrere Ereignisse enthalten. Daher schreiben wir Code zum Lesen der Ereignisdaten und zum Herausfiltern der gewünschten Felder. Es gibt viele verschiedene Möglichkeiten zur Nutzung der Daten, aber unser Plan besteht darin, Code zum Verschieben der Daten in eine SQL-Datenbank zu verfassen. Auf diese Weise können wir ganz einfach viele interessante Abfragen ausführen.
+    Notieren Sie sich den gemeinsamen Teil des Pfadnamens, der sich vom Anwendungsnamen und vom Instrumentierungsschlüssel ableitet.
+
+Die Ereignisse werden in Blobdateien im JSON-Format geschrieben. Jede Datei kann ein oder mehrere Ereignisse enthalten. Daher möchten wir die Ereignisdaten lesen und die gewünschten Felder herausfiltern. Es gibt viele verschiedene Möglichkeiten zur Nutzung der Daten, aber unser Plan besteht darin, Code zum Verschieben der Daten in eine SQL-Datenbank zu verfassen. Auf diese Weise können wir ganz einfach viele interessante Abfragen ausführen.
 
 ## Erstellen einer Azure-SQL-Datenbank
 
@@ -536,4 +539,4 @@ Um dieses Beispiel in Aktion zu sehen, [laden Sie den vollständigen Arbeitscode
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="Identity"
-	ms.date="08/27/2015"
+	ms.date="09/03/2015"
 	ms.author="andkjell"/>
 
 # Entwurfskonzepte für Azure AD Connect
@@ -36,9 +36,13 @@ In diesem Thema wird nur sourceAnchor behandelt, da es sich auf Benutzer bezieht
 Der Attributwert muss den folgenden Regeln entsprechen:
 
 - Weniger als 60 Zeichen lang
-- Keine Sonderzeichen enthalten: &#92; ! # $ % & * + / = ? ^ &#96; { } | ~ < > ( ) ' ; : , [ ] " @
+- Keine Sonderzeichen enthalten: &#92; ! # $ % & * + / = ? ^ &#96; { } | ~ < > ( ) ' ; : , [ ] " @ \_
 - Global eindeutig
 - Zeichenfolge, Ganzzahl oder Binärzahl
+- Sollte nicht auf einem Benutzernamen beruhen, da dieser geändert werden kann
+- Groß-/Kleinschreibung sollte nicht relevant sein und Werte, die sich nach Groß-/Kleinschreibung unterscheiden, sollten vermieden werden
+- Sollte bei Erstellung des Objekts zugewiesen werden
+
 
 Ist das ausgewählte Attribut sourceAnchor nicht vom Typ Zeichenfolge, unterzieht Azure AD Connect den Wert des Attributs einem Base64Encode-Prozess, um sicherzustellen, dass keine Sonderzeichen angezeigt werden. Wenn Sie einen andere Verbundserver als ADFS verwenden, stellen Sie sicher, dass Ihr Server auch in der Lage ist, das Attribut einem Base64Encode-Prozess zu unterziehen.
 
@@ -48,9 +52,10 @@ Wenn Sie eine einzige lokale Gesamtstruktur haben, sollten Sie das Attribut **ob
 
 Wenn Sie mehrere Gesamtstrukturen besitzen und keine Benutzer zwischen Gesamtstrukturen sowie zwischen Domänen in der gleichen Gesamtstruktur verschieben, dann ist **objectGUID** ebenfalls ein ideales Attribut.
 
-Wenn Sie Benutzer zwischen Gesamtstrukturen und Domänen verschieben, müssen Sie ein Attribut finden, das nicht geändert wird. Zu den häufig verwendeten Attributen zählt **employeeID**. Wenn Sie ein Attribut in Betracht ziehen, das Buchstaben enthält, wie z. B. **sAMAccountName**, stellen Sie sicher, dass keine Möglichkeit besteht, dass sich die Groß-/Kleinschreibung für den Wert des Attributs ändern kann. Zu schlechten Attributen, die nicht verwendet werden sollten, gehören solche mit dem Namen des Benutzers. Durch Hochzeit oder Scheidung könnte sich der Name ändern, und dies ist für dieses Attribut nicht zulässig. Dies ist auch ein Grund, warum Attribute wie **userPrincipalName**, **mail** und **targetAddress** im Installations-Assistenten von Azure AD Connect nicht einmal ausgewählt werden können. Diese Attribute enthalten außerdem das @-Zeichen, das in sourceAnchor nicht zulässig ist.
+Wenn Sie Benutzer zwischen Gesamtstrukturen und Domänen verschieben, müssen Sie ein Attribut finden, das nicht geändert wird oder während des Verschiebevorgangs zusammen mit den Benutzern verschoben werden kann. Ein empfohlenes Verfahren ist die Einführung eines synthetischen Attributs. Ein Attribut, das etwas Ähnliches wie eine GUID enthält, wäre geeignet. Beim Erstellen des Objekts wird eine neue GUID erstellt und dem Benutzer zugewiesen. Im Synchronisierungsmodulserver kann eine benutzerdefinierte Regel erstellt werden, um diesen Wert basierend auf der **objectGUID** zu erstellen und das ausgewählte Attribut in ADDS aktualisieren. Wenn Sie das Objekt verschieben, stellen Sie sicher, dass Sie auch den Inhalt dieses Werts kopieren.
 
-Wenn absolut kein geeignetes Attribut verwendet werden kann, muss ein synthetischer Wert eingeführt werden. Beispielsweise wäre ein Attribut geeignet, das etwas Ähnliches wie eine GUID enthält. Beim Erstellen des Objekts wird eine neue GUID erstellt und dem Benutzer zugewiesen. Wenn Sie das Objekt verschieben, stellen Sie sicher, dass Sie auch den Inhalt dieses Werts kopieren.
+Eine andere Lösung ist, ein vorhandenes Attribut zu wählen, von dem Sie wissen, dass es nicht geändert wird. Zu den häufig verwendeten Attributen zählt **employeeID**. Wenn Sie ein Attribut in Betracht ziehen, das Buchstaben enthält, stellen Sie sicher, dass keine Möglichkeit besteht, dass sich die Groß-/Kleinschreibung für den Wert des Attributs ändern kann. Zu schlechten Attributen, die nicht verwendet werden sollten, gehören solche mit dem Namen des Benutzers. Durch Hochzeit oder Scheidung könnte sich der Name ändern, und dies ist für dieses Attribut nicht zulässig. Dies ist auch ein Grund, warum Attribute wie **userPrincipalName**, **mail** und **targetAddress** im Installations-Assistenten von Azure AD Connect nicht einmal ausgewählt werden können. Diese Attribute enthalten außerdem das @-Zeichen, das in sourceAnchor nicht zulässig ist.
+
 
 ### Ändern des Attributs sourceAnchor
 Der Wert des Attributs sourceAnchor kann nicht geändert werden, nachdem das Objekt in Azure AD erstellt und die Identität synchronisiert wurde.
@@ -61,4 +66,4 @@ Aus diesem Grund gelten die folgenden Einschränkungen für Azure AD Connect:
 - Wenn Sie einen anderen Azure AD Connect-Server installieren, müssen Sie das gleiche Attribut sourceAnchor wie zuvor auswählen. Wenn Sie zuvor bereits DirSync verwendet haben und zu Azure AD wechseln, müssen Sie **objectGUID** verwenden, da dieses Attribut von DirSync verwendet wird.
 - Wenn der Wert für sourceAnchor geändert wird, nachdem das Objekt nach Azure AD exportiert wurde, meldet die Azure AD Connect-Synchronisierung einen Fehler, und lässt keine weiteren Änderungen am Objekt zu, bevor das Problem behoben und die Änderung von sourceAnchor im Quellverzeichnis wieder rückgängig gemacht worden ist.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

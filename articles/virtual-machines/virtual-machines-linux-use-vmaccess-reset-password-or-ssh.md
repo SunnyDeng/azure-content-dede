@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="KBDAzure"
 	manager="timlt"
-	editor=""/>
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -13,12 +14,12 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/07/2015"
+	ms.date="08/28/2015"
 	ms.author="kathydav"/>
 
 # Gewusst wie: Zurücksetzen eines Kennworts oder einer SSH für virtuelle Linux-Computer #
 
-Wenn Sie aufgrund eines vergessenen Kennworts, eines falschen SSH (Secure Shell)-Schlüssels oder eines Problems bei der SSH-Konfiguration keine Verbindung zu einem virtuellen Linux-Computer herstellen können, haben Sie die Möglichkeit, das Kennwort oder den SSH-Schlüssel zurückzusetzen oder die SSH-Konfiguration zu beheben (mithilfe der VMAccessforLinux-Erweiterung).
+Wenn Sie aufgrund eines vergessenen Kennworts, eines falschen SSH (Secure Shell)-Schlüssels oder eines Problems bei der SSH-Konfiguration keine Verbindung zu einem virtuellen Linux-Computer herstellen können, haben Sie die Möglichkeit, das Kennwort oder den SSH-Schlüssel zurückzusetzen oder die SSH-Konfiguration zu beheben (mithilfe der VMAccessforLinux-Erweiterung). Beachten Sie, dass sich dieser Artikel auf virtuelle Computer bezieht, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
 
 ## Azure-Vorschauportal
 
@@ -148,9 +149,9 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 
 ## Verwenden von Azure PowerShell
 
-Verwenden Sie das Cmdlet **Set-AzureVMExtension**, um die Änderungen vorzunehmen, die Sie mit VMAccess durchführen können. Beginnen Sie in allen Fällen mit der Verwendung des Cloud-Dienstnamens und des Namens des virtuellen Computers, um das virtuelle Computerobjekt abzurufen und es in einer Variablen zu speichern.
+Verwenden Sie das Cmdlet **Set-AzureVMExtension**, um die Änderungen vorzunehmen, die Sie mit VMAccess durchführen können. Beginnen Sie in allen Fällen mit der Verwendung des Clouddienstnamens und des Namens des virtuellen Computers, um das virtuelle Computerobjekt abzurufen und es in einer Variablen zu speichern.
 
-Geben Sie die Namen des Cloud-Diensts und des virtuellen Computers ein, und führen Sie die folgenden Befehle in einer Azure PowerShell-Eingabeaufforderung auf Administratorebene aus. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
+Geben Sie die Namen des Clouddiensts und des virtuellen Computers ein, und führen Sie die folgenden Befehle in einer Azure PowerShell-Eingabeaufforderung auf Administratorebene aus. Ersetzen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
 	$CSName = "<cloud service name>"
 	$VMName = "<virtual machine name>"
@@ -261,6 +262,5 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 [Installieren und Konfigurieren von Azure PowerShell]: ../install-configure-powershell.md
 [Azure-VM-Erweiterungen und Features]: http://msdn.microsoft.com/library/azure/dn606311.aspx
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH]: http://msdn.microsoft.com/library/azure/dn535788.aspx
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

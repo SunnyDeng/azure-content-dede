@@ -1,21 +1,21 @@
 <properties
  pageTitle="Korrelieren von Ereignissen im Zeitverlauf mithilfe von Storm und HBase in HDInsight"
- description="Erfahren Sie, wie Ereignisse, die zu unterschiedlichen Zeitpunkten eingehen, mithilfe von Storm und HBase in HDInsight korreliert werden."
- services="hdinsight"
- documentationCenter=""
- authors="Blackmist"
- manager="paulettm"
- editor="cgronlun"
+	description="Erfahren Sie, wie Ereignisse, die zu unterschiedlichen Zeitpunkten eingehen, mithilfe von Storm und HBase in HDInsight korreliert werden."
+	services="hdinsight"
+	documentationCenter=""
+	authors="Blackmist"
+	manager="paulettm"
+	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
  ms.service="hdinsight"
- ms.devlang="dotnet"
- ms.topic="article"
- ms.tgt_pltfrm="na"
- ms.workload="big-data"
- ms.date="06/05/2015"
- ms.author="larryfr"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="09/02/2015"
+	ms.author="larryfr"/>
 
 # Korrelieren von Ereignissen im Zeitverlauf mithilfe von Storm und HBase in HDInsight
 
@@ -198,4 +198,4 @@ Wenn Sie die Topologie beenden möchten, kehren Sie zum Projekt **CorrelationTop
 Weitere Storm-Beispiele finden Sie unter [Beispieltopologien für Storm in HDInsight](hdinsight-storm-example-topology.md).
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

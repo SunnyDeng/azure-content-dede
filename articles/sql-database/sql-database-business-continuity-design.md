@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="SQL-Datenbank-Entwurf für Geschäftskontinuität" 
-   description="In diesem Abschnitt finden Sie Anleitungen für die Auswahl der Features für die Notfallwiederherstellung mit Geschäftskontinuität (BCDR). Dazu gehören Beschreibungen der Funktionen, die Sie automatisch durch Verwendung einer SQL-Datenbank erhalten."
-   services="sql-database" 
-   documentationCenter="" 
-   authors="elfisher" 
-   manager="jeffreyg" 
-   editor="monicar"/>
+   pageTitle="SQL-Datenbank-Entwurf für Geschäftskontinuität"
+	description="In diesem Abschnitt finden Sie Anleitungen für die Auswahl der Features für die Notfallwiederherstellung mit Geschäftskontinuität (BCDR). Dazu gehören Beschreibungen der Funktionen, die Sie automatisch durch Verwendung einer SQL-Datenbank erhalten."
+	services="sql-database"
+	documentationCenter=""
+	authors="elfisher"
+	manager="jeffreyg"
+	editor="monicar"/>
 
 <tags
    ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-management" 
-   ms.date="07/14/2015"
-   ms.author="elfish"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-management"
+	ms.date="07/14/2015"
+	ms.author="elfish"/>
 
 #Entwerfen für Geschäftskontinuität
 
@@ -59,16 +59,19 @@ Sie können die Georeplikation im Azure-Portal oder durch Aufrufen des entsprech
 
 ###Azure-Portal
 
+[AZURE.VIDEO sql-database-enable-geo-replication-in-azure-portal]
+
 1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
 2. Wählen Sie auf der linken Bildschirmseite **DURCHSUCHEN** und dann **SQL-Datenbanken** aus.
 3. Navigieren Sie zu Ihrem Datenbank-Blatt, wählen Sie die **Geo Replication map**, und klicken Sie auf **Configure Geo-Replication**.
 4. Navigieren Sie zum Blatt "Georeplikation". Wählen Sie die Zielregion aus. 
 5. Navigieren Sie zum Blatt "Create Secondary". Wählen Sie einen vorhandenen Server in der Zielregion aus, oder erstellen Sie einen neuen.
-6. Wählen Sie den Typ für das sekundäre Replikat aus (*lesbar* oder *nicht lesbar*).
+6. Wählen Sie den sekundären Typ (*Lesbar* oder *Nicht lesbar*)
 7. Klicken Sie auf **Erstellen**, um die Konfiguration abzuschließen.
 
-> [AZURE.NOTE]Die gekoppelte Region für die Notfallwiederherstellung wird auf dem Blatt "Georeplikation" als *empfohlen* gekennzeichnet. Wenn Sie eine Datenbank der Premium-Ebene verwenden, können Sie eine andere Region auswählen. Bei Verwendung einer Standard-Datenbank können Sie diese nicht ändern. Bei einer Premium-Datenbank kann der Typ des sekundären Replikats (*lesbar* oder *nicht lesbar*) ausgewählt werden. Bei Standard-Datenbanken kann nur ein *nicht lesbares*, sekundäres Replikat ausgewählt werden.
- 
+> [AZURE.NOTE]Die gekoppelte Region für die Notfallwiederherstellung wird auf dem Blatt "Georeplikation" als *empfohlen* gekennzeichnet. Wenn Sie eine Datenbank der Premium-Ebene verwenden, können Sie eine andere Region auswählen. Bei Verwendung einer Standard-Datenbank können Sie diese nicht ändern. Bei Premium-Datenbanken kann der sekundäre Typ ausgewählt werden (*Lesbar* oder *Nicht lesbar*). Bei Standard-Datenbanken kann nur ein *nicht lesbares*, sekundäres Replikat ausgewählt werden.
+
+
 ###PowerShell
 
 Verwenden Sie das PowerShell-Cmdlet [Start-AzureSqlDatabaseCopy](https://msdn.microsoft.com/library/dn720220.aspx) zum Automatisieren der Konfiguration der Georeplikation.
@@ -94,9 +97,9 @@ Diese API ist asynchron. Verwenden Sie nach der Rückgabe die [Get Database Copy
 
 ##Auswählen der Failover-Konfiguration 
 
-Sie sollten beim Entwerfen der Anwendung für die Geschäftskontinuität verschiedene Konfigurationsoptionen berücksichtigen. Die Auswahl hängt von der Bereitstellungstopologie für die Anwendung ab und davon, welche Teile der Anwendungen am anfälligsten für einen Ausfall sind. Anleitungen finden Sie unter [Entwerfen von Cloud-Lösungen für die Notfallwiederherstellung mithilfe der aktiven Georeplikation](https://msdn.microsoft.com/library/azure/dn741328.aspx).
+Sie sollten beim Entwerfen der Anwendung für die Geschäftskontinuität verschiedene Konfigurationsoptionen berücksichtigen. Die Auswahl hängt von der Bereitstellungstopologie für die Anwendung ab und davon, welche Teile der Anwendungen am anfälligsten für einen Ausfall sind. Anleitungen finden Sie unter [Entwerfen von Cloudlösungen für die Notfallwiederherstellung mithilfe der aktiven Georeplikation](https://msdn.microsoft.com/library/azure/dn741328.aspx).
 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

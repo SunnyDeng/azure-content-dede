@@ -1,34 +1,36 @@
 <properties 
-	pageTitle="Erstellen einer Cloudsammlung von Azure RemoteApp" 
-	description="Erfahren Sie, wie Sie eine Azure RemoteApp-Bereitstellung erstellen, mit der Daten in der Azure-Cloud gespeichert werden." 
-	services="remoteapp" 
-	documentationCenter="" 
-	authors="lizap" 
-	manager="mbaldwin" 
+	pageTitle="Erstellen einer Cloudsammlung von Azure RemoteApp"
+	description="Erfahren Sie, wie Sie eine Azure RemoteApp-Bereitstellung erstellen, mit der Daten in der Azure-Cloud gespeichert werden."
+	services="remoteapp"
+	documentationCenter=""
+	authors="lizap"
+	manager="mbaldwin"
 	editor=""/>
 
 <tags 
-	ms.service="remoteapp" 
-	ms.workload="compute" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/12/2015" 
+	ms.service="remoteapp"
+	ms.workload="compute"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2015"
 	ms.author="elizapo"/>
 
 # Erstellen einer Cloudsammlung von Azure RemoteApp
 
 Es gibt zwei Arten von Azure RemoteApp-Sammlungen:
 
-- Cloud: befindet sich vollständig in Azure und wird mithilfe der Option **Schnellerfassung** im Azure-Verwaltungsportal erstellt.  
-- Hybrid: enthält ein virtuelles Netzwerk für den lokalen Zugriff und wird mithilfe der Option **Create with VNET** im Verwaltungsportal erstellt.
+- Cloud: vollständige Speicherung in Azure. Sie können alle Daten in der Cloud speichern (also eine reine Cloudsammlung), oder Sie verbinden Ihre Sammlung mit einem VNET und speichern die Daten dort.   
+- Hybrid: Umfasst ein virtuelles Netzwerk für den lokalen Zugriff – dies erfordert die Verwendung von Azure AD und einer lokalen Active Directory-Umgebung.
 
 Dieses Lernprogramm beschreibt die Schritte zur Erstellung einer Cloudsammlung. Es sind vier Schritte notwendig:
 
 1.	Erstellen einer RemoteApp-Sammlung.
-2.	Optionale Konfiguration der Verzeichnissynchronisierung. RemoteApp benötigt diese für die Synchronisierung von Benutzern, Kontakten und Kennwörtern zwischen lokalem Active Directory und Azure Active Directory-Mandant.
+2.	Optionale Konfiguration der Verzeichnissynchronisierung. Wenn Sie Azure AD und Active Directory verwenden, müssen Sie Benutzer, Kontakte und Kennwörter zwischen Ihrem lokalen Active Directory und dem Azure AD-Mandanten synchronisieren.
 5.	Veröffentlichen von RemoteApp-Apps.
 6.	Konfigurieren des Benutzerzugriffs.
+
+**Hinweis** *Dieses Thema wird zurzeit überarbeitet. Ich habe die Schritte der neuen Benutzeroberfläche entsprechend aktualisiert, kann jedoch das gesamte Thema noch nicht erneut veröffentlichen. Es wird an verschiedenen neuen Artikeln gearbeitet, um Sie bei der Auswahl der für Sie geeigneten Authentifizierungs- und Sammlungsoptionen zu unterstützen. Wenn Sie also unsicher sind: Bald stehen bessere und ausführlichere Informationen für Sie bereit. Vielen Dank*
 
 **Voraussetzungen**
 
@@ -37,11 +39,15 @@ Bevor Sie mit der Erstellung der Sammlung beginnen, benötigen Sie Folgendes:
 - [Registrieren](http://azure.microsoft.com/services/remoteapp/) Sie sich für Azure RemoteApp. 
 - Sammeln Sie Informationen zu den Benutzern, denen Sie Zugriff gewähren möchten. Dies können Informationen zu Microsoft-Konten oder Active Directory-Geschäftskonten für Benutzer sein.
 - Voraussetzung ist, dass Sie entweder eins der im Rahmen Ihres Abonnements bereitgestellten Vorlagenimages verwenden oder das gewünschte Vorlagenimage bereits hochgeladen haben. Falls Sie eine andere Abbildvorlage hochladen möchten, können Sie dies auf der Seite für Abbildvorlagen tun. Klicken Sie auf **Abbildvorlage hochladen** und folgen Sie den Schritten im Assistenten. 
-- Möchten Sie benutzerdefinierte Apps oder LOB-Programme bereitstellen? Erstellen Sie ein neues [Image](remoteapp-imageoptions.md), und verwenden Sie es in Ihrer Cloudsammlung.
+- Möchten Sie das Office 365 ProPlus-Image verwenden? Informationen dazu finden Sie [hier](remoteapp-officesubscription.md).
+- Möchten Sie benutzerdefinierte Apps oder LOB-Programme bereitstellen? Erstellen Sie ein neues [Image](remoteapp-imageoptions.md), und verwenden Sie es in Ihrer Cloud-Sammlung.
+- Ermitteln Sie, ob Sie eine Verbindung mit einem VNET herstellen müssen. Wenn Sie eine Verbindung mit einem VNET herstellen möchten, stellen Sie sicher, dass die Richtlinien zum Festlegen der Größe eingehalten werden und dass eine Verbindung mit RemoteApp hergestellt werden kann.
+- Wenn Sie ein VNET verwenden, können Sie entscheiden Sie, ob es Ihrer lokalen Active Directory-Domäne beitreten soll.
 
-## Schritt 1: Erstellen einer Sammlung ##
+## Schritt 1: Erstellen einer Cloudsammlung Cloud – mit oder ohne VNET##
 
 
+Führen Sie die folgenden Schritte aus, um **eine reine Cloudsammlung zu erstellen**:
 
 1. Navigieren Sie im Verwaltungsportal zur Seite "RemoteApp".
 2. Klicken Sie auf **Neu > Schnellerfassung**.
@@ -49,19 +55,29 @@ Bevor Sie mit der Erstellung der Sammlung beginnen, benötigen Sie Folgendes:
 4. Wählen Sie den Plan aus, den Sie verwenden möchten: "Standard" oder "Einfach".
 5. Wählen Sie die Vorlage für diese Sammlung aus. 
 
-	**Tipp:** Ihr RemoteApp-Abonnement enthält bereits [Vorlagenimages](remoteapp-images.md) mit Office 365- oder Office 2013-Programmen (zu Testzwecken), von denen einige bereits veröffentlicht (z. B. Word) und andere bereit für die Veröffentlichung sind. Sie können auch ein neues [Image](remoteapp-imageoptions.md) erstellen und es in der Cloudsammlung verwenden.
+	**Tipp:** Ihr RemoteApp-Abonnement enthält bereits [Vorlagenimages](remoteapp-images.md) mit Office 365- oder Office 2013-Programmen (zu Testzwecken), von denen einige bereits veröffentlicht (z. B. Word) und andere bereit für die Veröffentlichung sind. Sie können auch ein neues [Image](remoteapp-imageoptions.md) erstellen und es in der Cloud-Sammlung verwenden.
 
 
-1. Klicken Sie auf **RemoteApp-Sammlung erstellen**.
+1. Klicken Sie auf **Create RemoteApp collection**.
 	
 	**Wichtig:** Die Bereitstellung Ihrer Sammlung kann bis zu 30 Minuten in Anspruch nehmen.
 
 Nachdem Ihre RemoteApp-Sammlung erstellt wurde, doppelklicken Sie auf den Namen der Sammlung. Daraufhin wird die Seite **Schnellstart** geöffnet – hier können Sie die Konfiguration der Sammlung abschließen.
 
+Führen Sie die folgenden Schritte aus, um **eine Cloud- und VNET-Sammlung zu erstellen**:
+
+1. Navigieren Sie im Verwaltungsportal zur Seite "RemoteApp".
+2. Klicken Sie auf **Neu** > **Mit VNET erstellen**.
+3. Geben Sie einen Namen für die Sammlung ein.
+4. Wählen Sie den Plan aus, den Sie verwenden möchten: "Standard" oder "Einfach".
+5. Wählen Sie das bereits erstellte VNET aus. Sie wissen nicht, wie das geht? Momentan finden Sie die entsprechenden Schritte im Thema [Hybrid](remoteapp-create-hybrid-deployment.md).
+6. Entscheiden Sie, ob Ihre Sammlung Ihrer Domäne beitreten soll. Wenn dies der Fall ist, müssen Sie AD Connect verwenden, um Azure AD in Ihrer Active Directory-Umgebung zu integrieren. Informationen dazu finden Sie im unten in **Schritt 2**.
+6. Klicken Sie auf **Create RemoteApp collection**.
+
 
 ## Schritt 2: Konfigurieren der Active Directory-Verzeichnissynchronisierung (optional) ##
 
-Falls Sie Active Directory verwenden möchten, benötigt RemoteApp eine Verzeichnissynchronisierung zwischen Azure Active Directory und Ihrem lokalen Active Directory, um Benutzer, Kontakte und Kennwörter mit Ihrem Active Directory-Mandanten in Azure zu synchronisieren. Informationen zur Planung finden Sie unter [Konfigurieren von Active Directory für Azure RemoteApp](remoteapp-ad.md).
+Falls Sie Active Directory verwenden möchten, benötigt RemoteApp eine Verzeichnissynchronisierung zwischen Azure Active Directory und Ihrem lokalen Active Directory, um Benutzer, Kontakte und Kennwörter mit Ihrem Active Directory-Mandanten in Azure zu synchronisieren. Informationen zur Planung finden Sie unter [Konfigurieren von Active Directory für Azure RemoteApp](remoteapp-ad.md). Informationen finden Sie auch direkt unter [AD Connect](http://blogs.technet.com/b/ad/archive/2014/08/04/connecting-ad-and-azure-ad-only-4-clicks-with-azure-ad-connect.aspx).
 
 ## Schritt 3: Veröffentlichen von RemoteApp-Programmen ##
 
@@ -93,4 +109,4 @@ Geschafft - Sie haben Ihre Cloudsammlung in RemoteApp erfolgreich erstellt und b
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

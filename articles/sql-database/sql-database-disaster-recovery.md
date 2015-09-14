@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Notfallwiederherstellung bei SQL-Datenbank" 
-   description="Hier erhalten Sie Informationen zum Wiederherstellen einer Datenbank nach Störungen in einem regionalen Rechenzentrum oder dessen Ausfall mit der Funktionen zur Georeplikation und geografischen Wiederherstellung von Azure SQL-Datenbank." 
-   services="sql-database" 
-   documentationCenter="" 
-   authors="elfisher" 
-   manager="jeffreyg" 
-   editor="monicar"/>
+   pageTitle="Notfallwiederherstellung bei SQL-Datenbank"
+	description="Hier erhalten Sie Informationen zum Wiederherstellen einer Datenbank nach Störungen in einem regionalen Rechenzentrum oder dessen Ausfall mit der Funktionen zur Georeplikation und geografischen Wiederherstellung von Azure SQL-Datenbank."
+	services="sql-database"
+	documentationCenter=""
+	authors="elfisher"
+	manager="jeffreyg"
+	editor="monicar"/>
 
 <tags
    ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-management" 
-   ms.date="07/14/2015"
-   ms.author="elfish"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-management"
+	ms.date="07/14/2015"
+	ms.author="elfish"/>
 
 # Wiederherstellen einer Azure SQL-Datenbank nach einem Ausfall
 
@@ -68,6 +68,8 @@ Verwenden Sie REST für eine programmgesteuerte Durchführung der Datenbankwiede
 
 Bei einem Ausfall einer Datenbank können Sie diese aus der aktuellen geografisch redundanten Sicherung mit der geografischen Wiederherstellung wiederherstellen.
 
+> [AZURE.NOTE]Beim Wiederherstellen einer Datenbank wird eine neue Datenbank erstellt. Es muss sichergestellt werden, dass der Server, auf dem die Wiederherstellung erfolgt, über ausreichend DTU-Kapazität für die neue Datenbank verfügt. [Wenden Sie sich an den Support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
+
 ###Azure-Portal
 1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
 2. Wählen Sie auf der linken Bildschirmseite **NEU**, dann **Daten und Speicher** und dann **SQL-Datenbank** aus.
@@ -101,4 +103,4 @@ Verwenden Sie REST für eine programmgesteuerte Durchführung der Datenbankwiede
 Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestellte Datenbank für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Abschließen einer wiederhergestellten Datenbank](sql-database-recovered-finalize.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

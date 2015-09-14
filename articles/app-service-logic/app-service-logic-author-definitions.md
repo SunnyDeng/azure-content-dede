@@ -1,10 +1,10 @@
 <properties 
-	pageTitle="Erstellen von Logik-App-Definitionen" 
-	description="Erfahren Sie, wie die JSON-Definition für Logik-Apps geschrieben wird." 
-	authors="stepsic-microsoft-com" 
-	manager="dwrede" 
-	editor="" 
-	services="app-service\logic" 
+	pageTitle="Erstellen von Logik-App-Definitionen"
+	description="Erfahren Sie, wie die JSON-Definition für Logik-Apps geschrieben wird."
+	authors="stepsic-microsoft-com"
+	manager="dwrede"
+	editor=""
+	services="app-service\logic"
 	documentationCenter=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/23/2015"
+	ms.date="06/16/2015"
 	ms.author="stepsic"/>
 	
 #Erstellen von Logik-App-Definitionen
@@ -99,7 +99,7 @@ Nehmen wir als Nächstes an, dass abhängig vom Wert einer Eigenschaft völlig u
         "destinationMap": {
             "defaultValue": {
                 "science": "http://www.nasa.gov",
-                "microsoft": "https://www.microsoft.com/de-de/default.aspx",
+                "microsoft": "https://www.microsoft.com/de-DE/default.aspx",
                 "google": "https://www.google.com",
                 "robots": "https://en.wikipedia.org/wiki/Robot",
                 "NSA": "https://www.nsa.gov/"
@@ -234,7 +234,7 @@ In der untergeordneten Logik-App verwenden Sie dann die [`triggerBody()`](https:
 }
 ```
 
-Weitere Informationen zur [Aktion des Typs "Logik-App" finden Sie im MSDN](https://msdn.microsoft.com/en-US/library/azure/dn948511.aspx).
+Weitere Informationen zur [Aktion des Typs "Logik-App" finden Sie im MSDN](https://msdn.microsoft.com/de-DE/library/azure/dn948511.aspx).
 
 >[AZURE.NOTE]Der Logik-Apps-Designer unterstützt keine Aktionen des Typs "Logik-App", daher müssen Sie die Definition manuell bearbeiten.
 
@@ -250,7 +250,7 @@ Weitere Informationen zur [Aktion des Typs "Logik-App" finden Sie im MSDN](https
     "parameters": {
         "dataFeeds": {
             "defaultValue": [
-                "https://www.microsoft.com/de-de/default.aspx",
+                "https://www.microsoft.com/de-DE/default.aspx",
                 "https://gibberish.gibberish/"
             ],
             "type": "Array"
@@ -306,7 +306,7 @@ Um mehrere Aktionen Ausführung parallel und nicht nacheinander auszuführen, m�
     "parameters": {
         "dataFeeds": {
             "defaultValue": [
-                "https://www.microsoft.com/de-de/default.aspx",
+                "https://www.microsoft.com/de-DE/default.aspx",
                 "https://office.live.com/start/default.aspx"
             ],
             "type": "Array"
@@ -688,4 +688,4 @@ In der tatsächlichen `PUT`-Anforderung für die Logik-App können Sie dann den 
 
 In den einzelnen Umgebungen können Sie dann einen anderen Wert für den `connection`-Parameter angeben. In der [REST-API-Dokumentation](https://msdn.microsoft.com/library/azure/dn948513.aspx) finden Sie Informationen dazu, welche Möglichkeiten Sie zum Erstellen und Verwalten von Logik-Apps haben.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

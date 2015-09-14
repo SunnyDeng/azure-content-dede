@@ -162,4 +162,4 @@ Setzen Sie den **MaxCount**-Parameter auf 0 oder eine negative Zahl, um die Ober
 * [Referenz zu Azure-Batch-Cmdlets](https://msdn.microsoft.com/library/azure/mt125957.aspx)
 * [Effiziente Listenabfragen](batch-efficient-list-queries.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

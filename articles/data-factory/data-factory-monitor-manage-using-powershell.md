@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL" 
-	description="Erfahren Sie, wie Sie von Ihnen erstellte Azure Data Factorys mithilfe von Azure PowerShell überwachen und verwalten." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Tutorial: Erstellen einer Pipeline mit Kopieraktivität mithilfe der Azure PowerShell"
+	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Pipeline mit Kopieraktivität mithilfe der Azure PowerShell."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/27/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/27/2015"
 	ms.author="spelluru"/>
 
 # Lernprogramm: Erstellen und Überwachen einer Data Factory mit Azure PowerShell
@@ -409,6 +409,9 @@ In diesem Schritt verwenden Sie Azure PowerShell zur Überwachung der Aktivität
 
 In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets.
 
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-monitor-manage-using-powershell.md).
+
 
 [adf-tutorial]: data-factory-tutorial.md
 [use-custom-activities]: data-factory-use-custom-activities.md
@@ -429,4 +432,4 @@ In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassen
 [sql-management-studio]: ../sql-database-manage-azure-ssms.md#Step2
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

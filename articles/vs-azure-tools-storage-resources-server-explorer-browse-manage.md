@@ -281,7 +281,7 @@ Es gibt zwei Möglichkeiten, Speicherkonten mithilfe des Server-Explorers hinzuz
 
     - Den Namen, den Sie für das neue Speicherkonto verwenden möchten
 
-    - Die Region oder Affinitätsgruppe (z. B. "USA, Westen" oder "Ostasien")
+    - Die Region oder Affinitätsgruppe (z. B. USA, Westen oder Ostasien)
 
     - Den Typ der Replikation, den Sie für das Speicherkonto verwenden möchten, zum Beispiel "Georedundant"
 
@@ -319,4 +319,4 @@ Es gibt zwei Möglichkeiten, Speicherkonten mithilfe des Server-Explorers hinzuz
 
 [Zugreifen auf Azure Storage Services](https://msdn.microsoft.com/library/azure/ee405490.aspx)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

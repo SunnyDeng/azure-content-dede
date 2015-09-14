@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="04/24/2015"
+	ms.date="08/31/2015"
 	ms.author="v-donntr"/>
 
 
@@ -24,7 +24,7 @@
 
 ## Übersicht
 
-In dieser exemplarischen Vorgehensweise wird gezeigt, wie Sie eine Azure SDK für Java-Anwendung erstellen, mit der eine Web-App in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) erstellt wird. Anschließend stellen Sie eine Anwendung in der Web-App bereit. Die Vorgehensweise besteht aus zwei Teilen:
+In dieser exemplarischen Vorgehensweise wird gezeigt, wie Sie eine Azure SDK für Java-Anwendung erstellen, mit der eine Web-App in [Azure App Service][] erstellt wird. Anschließend stellen Sie eine Anwendung in der Web-App bereit. Die Vorgehensweise besteht aus zwei Teilen:
 
 - Teil 1 veranschaulicht, wie Sie eine Java-Anwendung zur Web-App-Erstellung erstellen.
 - Teil 2 zeigt, wie Sie eine einfache "Hello World"-JSP-Anwendung schreiben und anschließend mit einem FTP-Client Code in App Service bereitstellen.
@@ -34,7 +34,7 @@ In dieser exemplarischen Vorgehensweise wird gezeigt, wie Sie eine Azure SDK fü
 
 ### Softwareinstallationen
 
-Der Anwendungscode für "AzureWebDemo" in diesem Artikel wurde mit dem Azure Java SDK 0.7.0 geschrieben, das Sie über den [Web Platform Installer (WebPI)](http://go.microsoft.com/fwlink/?LinkID=252838) installieren können. Stellen Sie außerdem sicher, dass Sie die aktuelle Version des [Azure-Toolkits für Eclipse](https://msdn.microsoft.com/library/azure/hh690946.aspx) verwenden. Nachdem Sie das SDK installiert haben, aktualisieren Sie die Abhängigkeiten in Ihrem Eclipse-Projekt, indem Sie in **Maven-Repositorys** die Option **Index aktualisieren** ausführen, anschließend im Fenster **Abhängigkeiten** die neueste Version von jedem Paket hinzufügen. Sie können die Version Ihrer installierten Software in Eclipse prüfen, indem Sie auf **Hilfe > Installationsdetails** klicken. Sie sollten mindestens über die folgenden Versionen verfügen:
+Der Anwendungscode für "AzureWebDemo" in diesem Artikel wurde mit dem Azure Java SDK 0.7.0 geschrieben, das Sie über den [Web Platform Installer][] (WebPI) installieren können. Stellen Sie außerdem sicher, dass Sie die aktuelle Version des [Azure-Toolkits für Eclipse][] verwenden. Nachdem Sie das SDK installiert haben, aktualisieren Sie die Abhängigkeiten in Ihrem Eclipse-Projekt, indem Sie in **Maven-Repositorys** die Option **Index aktualisieren** ausführen, anschließend im Fenster **Abhängigkeiten** die neueste Version von jedem Paket hinzufügen. Sie können die Version Ihrer installierten Software in Eclipse prüfen, indem Sie auf **Hilfe > Installationsdetails** klicken. Sie sollten mindestens über die folgenden Versionen verfügen:
 
 - Paket für Microsoft Azure-Bibliotheken für Java 0.7.0.20150309
 - Eclipse IDE für Java EE-Entwickler 4.4.2.20150219
@@ -47,7 +47,7 @@ Zur Durchführung dieser Anleitung müssen Sie über ein aktives Azure-Abonnemen
 
 ### Erstellen eines Active Directory-Verzeichnisses in Azure
 
-Wenn Sie noch kein Active Directory-Verzeichnis in Ihrem Azure-Abonnement eingerichtet haben, melden Sie sich mit Ihrem Microsoft-Konto beim [klassischen Azure-Portal](https://manage.windowsazure.com) an. Wenn Sie mehrere Abonnements besitzen, klicken Sie auf **Abonnements**, und wählen Sie das Standardverzeichnis für das Abonnement, das Sie für dieses Projekt verwenden möchten. Klicken Sie dann auf **Anwenden**, um dieses Abonnement anzuzeigen.
+Wenn Sie noch kein Active Directory-Verzeichnis in Ihrem Azure-Abonnement eingerichtet haben, melden Sie sich mit Ihrem Microsoft-Konto beim [klassischen Azure-Portal][] an. Wenn Sie mehrere Abonnements besitzen, klicken Sie auf **Abonnements**, und wählen Sie das Standardverzeichnis für das Abonnement, das Sie für dieses Projekt verwenden möchten. Klicken Sie dann auf **Anwenden**, um dieses Abonnement anzuzeigen.
 
 1. Wählen Sie im Menü links **Active Directory** aus. Klicken Sie auf **Neu > Verzeichnis > Benutzerdefiniert erstellen**.
 
@@ -59,14 +59,14 @@ Wenn Sie noch kein Active Directory-Verzeichnis in Ihrem Azure-Abonnement einger
 
 5. Wählen Sie in **Land oder Region** Ihr Gebietsschema aus.
 
-Weitere Informationen zu Active Directory (AD) finden Sie unter [Was ist ein Azure AD-Verzeichnis?](http://technet.microsoft.com/library/jj573650.aspx).
+Weitere Informationen zu Active Directory (AD) finden Sie unter [Was ist ein Azure AD-Verzeichnis?][].
 
 
 ### Erstellen eines Verwaltungszertifikats für Azure
 
 Das Azure SDK für Java verwendet Verwaltungszertifikate für die Authentifizierung von Azure-Abonnements. Es handelt sich hierbei um X.509 v3-Zertifikate, die Sie zum Authentifizieren einer Clientanwendung nutzen, die die Dienstverwaltungs-API zur Verwaltung von Abonnementressourcen im Namen des Abonnementbesitzers verwendet.
 
-Der Code in dieser Vorgehensweise verwendet ein selbstsigniertes Zertifikat zur Authentifizierung bei Azure. Für diese Vorgehensweise müssen Sie ein Zertifikat erstellen und dieses vorab in das [klassische Azure-Portal](https://manage.windowsazure.com) hochladen. Dieser Vorgang umfasst die folgenden Schritte:
+Der Code in dieser Vorgehensweise verwendet ein selbstsigniertes Zertifikat zur Authentifizierung bei Azure. Für diese Vorgehensweise müssen Sie ein Zertifikat erstellen und dieses vorab in das [klassische Azure-Portal][] hochladen. Dieser Vorgang umfasst die folgenden Schritte:
 
 - Generieren Sie eine PFX-Datei, das Ihr Clientzertifikat repräsentiert, und speichern Sie die Datei lokal.
 - Generieren Sie ein Verwaltungszertifikat (CER-Datei) aus der PFX-Datei.
@@ -74,14 +74,14 @@ Der Code in dieser Vorgehensweise verwendet ein selbstsigniertes Zertifikat zur 
 - Konvertieren Sie die PFX-Datei in eine JKS-Datei, da Java dieses Format für die Zertifikatauthentifizierung verwendet.
 - Schreiben Sie den Anwendungscode, der auf die lokale JKS-Datei verweist.
 
-Wenn Sie diese Schritte ausgeführt haben, liegt das CER-Zertifikat in Ihrem Azure-Abonnement vor, und das JKS-Zertifikat befindet sich auf Ihrem lokalen Laufwerk. Weitere Informationen über Verwaltungszertifikate finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure](http://msdn.microsoft.com/library/azure/gg551722.aspx).
+Wenn Sie diese Schritte ausgeführt haben, liegt das CER-Zertifikat in Ihrem Azure-Abonnement vor, und das JKS-Zertifikat befindet sich auf Ihrem lokalen Laufwerk. Weitere Informationen über Verwaltungszertifikate finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure][].
 
 
 #### Erstellen eines Zertifikats
 
 Um ein eigenes selbstsigniertes Zertifikat zu erstellen, öffnen Sie eine Befehlszeile auf Ihrem Betriebssystem, und führen Sie die folgenden Befehle aus.
 
-> **Hinweis:** Auf dem Computer, auf dem Sie die Befehle ausführen, muss das JDK installiert sein. Darüber hinaus richtet sich der keytool-Pfad danach, wo Sie das JDK installiert haben. Weitere Informationen finden Sie unter[Schlüssel- und Zertifikatverwaltungstool (keytool)](http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html) in der Java-Onlinedokumentation.
+> **Hinweis:** Auf dem Computer, auf dem Sie die Befehle ausführen, muss das JDK installiert sein. Darüber hinaus richtet sich der keytool-Pfad danach, wo Sie das JDK installiert haben. Weitere Informationen finden Sie unter[Schlüssel- und Zertifikatverwaltungstool (keytool)][] in der Java-Onlinedokumentation.
 
 Erstellen der PFX-Datei:
 
@@ -105,7 +105,7 @@ Hierbei gilt:
 - `<password>` ist das Kennwort zum Schutz des Zertifikats. Das gewählte Kennwort muss mindestens 6 Zeichen umfassen. Sie können auch kein Kennwort verwenden, dies wird jedoch nicht empfohlen.
 - `<dname>` ist der X.500 Distinguished Name, der mit Aliasen verwendet wird. Dieser wird in die Felder für Aussteller und Antragsteller im selbstsignierten Zertifikat eingetragen.
 
-Weitere Informationen finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure](http://msdn.microsoft.com/library/azure/gg551722.aspx).
+Weitere Informationen finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure][].
 
 
 #### Hochladen des Zertifikats
@@ -237,7 +237,7 @@ Hierbei gilt:
 - `<certificate-password>` ist das Kennwort, das Sie beim Erstellen Ihres JKS-Zertifikats angegeben haben.
 - `webAppName` kann ein beliebiger Name sein; in dieser Vorgehensweise wird `WebDemoWebApp` verwendet. Der Domänenname setzt sich aus `webAppName` und dem Suffix `domainName` zusammen, sodass der vollständige Domänenname `webdemowebapp.azurewebsites.net` lautet.
 - `domainName` sollte wie oben gezeigt angegeben werden.
-- `webSpaceName` sollte einer der Werte sein, die in der Klasse [WebSpaceNames](http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html) definiert werden.
+- `webSpaceName` sollte einer der Werte sein, die in der Klasse [WebSpaceNames][] definiert werden.
 - `appServicePlanName` sollte wie oben gezeigt angegeben werden.
 
 > **Hinweis:** Bei jeder Ausführung dieser Anwendung müssen Sie den Wert von `webAppName` und `appServicePlanName` ändern (oder die Web-App im Azure-Portal löschen), bevor Sie die Anwendung erneut ausführen können. Andernfalls tritt ein Fehler bei der Ausführung auf, da dieselbe Ressource bereits in Azure vorhanden ist.
@@ -245,7 +245,7 @@ Hierbei gilt:
 
 #### Definieren der Methode für die Web-App-Erstellung
 
-Als Nächstes definieren Sie eine Methode zum Erstellen der Web-App. Diese Methode, `createWebApp`, gibt die Parameter für Web-App und Webspace an. Es wird außerdem der Verwaltungsclient für die App Service-Web-Apps erstellt und konfiguriert, der durch das Objekt [WebSiteManagementClient](http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html) definiert wird. Der Verwaltungsclient ist entscheidend für das Erstellen von Web-Apps. Er stellt RESTful-Webdienste bereit, die Anwendungen das Verwalten von Web-Apps ermöglichen (Ausführen von Vorgängen wie Erstellung, Aktualisierung und Löschung), indem die Dienstverwaltungs-API aufgerufen wird.
+Als Nächstes definieren Sie eine Methode zum Erstellen der Web-App. Diese Methode, `createWebApp`, gibt die Parameter für Web-App und Webspace an. Es wird außerdem der Verwaltungsclient für die App Service-Web-Apps erstellt und konfiguriert, der durch das Objekt [WebSiteManagementClient][] definiert wird. Der Verwaltungsclient ist entscheidend für das Erstellen von Web-Apps. Er stellt RESTful-Webdienste bereit, die Anwendungen das Verwalten von Web-Apps ermöglichen (Ausführen von Vorgängen wie Erstellung, Aktualisierung und Löschung), indem die Dienstverwaltungs-API aufgerufen wird.
 
     private static void createWebApp() throws Exception {
 
@@ -456,7 +456,7 @@ Stellen Sie sicher, dass Sie die Anwendung **AzureWebDemo** zum Erstellen einer 
 
 Um FTP für die Bereitstellung von Anwendungsdateien in der neu erstellen Web-App zu verwenden, müssen Sie die Verbindungsinformationen abrufen. Es gibt zwei Möglichkeiten für den Abruf der Verbindungsinformationen. Eine Möglichkeit besteht darin, die Seite **Dashboard** für die Web-App anzuzeigen, die andere besteht darin, das Veröffentlichungsprofil der Web-App herunterzuladen. Das Veröffentlichungsprofil ist eine XML-Datei, die Informationen wie FTP-Hostname und Anmeldeinformationen für Ihre Web-Apps in Azure App Service bereitstellt. Sie können diesen Benutzernamen und das Kennwort zum Bereitstellen einer beliebigen Web-App in allen Abonnements verwenden, die dem Azure-Konto zugeordnet sind – nicht lediglich in diesem Abonnement.
 
-So rufen Sie FTP-Verbindungsinformationen aus dem Web-App-Blatt im [Azure-Portal](https://portal.azure.com) ab:
+So rufen Sie FTP-Verbindungsinformationen aus dem Web-App-Blatt im [Azure-Portal][] ab:
 
 1. Suchen Sie unter **Grundlegende Informationen** nach **FTP-Hostname**, und kopieren Sie diesen Wert. Es handelt sich um einen URI ähnlich wie `ftp://waws-prod-bay-NNN.ftp.azurewebsites.windows.net`.
 
@@ -589,4 +589,16 @@ In dieser Vorgehensweise wird eine App Service-Web-App erstellt. Die Ressource w
   [10]: ./media/java-create-azure-website-using-java-sdk/kudu-console-jsphello-war-2.png
  
 
-<!---HONumber=August15_HO9-->
+[Azure App Service]: http://go.microsoft.com/fwlink/?LinkId=529714
+[Web Platform Installer]: http://go.microsoft.com/fwlink/?LinkID=252838
+[Azure-Toolkits für Eclipse]: https://msdn.microsoft.com/library/azure/hh690946.aspx
+[klassische Azure-Portal]: https://manage.windowsazure.com
+[klassischen Azure-Portal]: https://manage.windowsazure.com
+[Was ist ein Azure AD-Verzeichnis?]: http://technet.microsoft.com/library/jj573650.aspx
+[Erstellen und Hochladen eines Verwaltungszertifikats für Azure]: http://msdn.microsoft.com/library/azure/gg551722.aspx
+[Schlüssel- und Zertifikatverwaltungstool (keytool)]: http://docs.oracle.com/javase/6/docs/technotes/tools/windows/keytool.html
+[WebSiteManagementClient]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/WebSiteManagementClient.html
+[WebSpaceNames]: http://dl.windowsazure.com/javadoc/com/microsoft/windowsazure/management/websites/models/WebSpaceNames.html
+[Azure-Portal]: https://portal.azure.com
+
+<!---HONumber=September15_HO1-->

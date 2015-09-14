@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Schnellstartanleitung: Machine Learning-Empfehlungs-API | Microsoft Azure" 
-	description="Azure Machine Learning-Empfehlungen – Erste Schritte" 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="jaymathe" 
-	manager="paulettm" 
+	pageTitle="Schnellstartanleitung: Machine Learning-Empfehlungs-API | Microsoft Azure"
+	description="Azure Machine Learning-Empfehlungen – Erste Schritte"
+	services="machine-learning"
+	documentationCenter=""
+	authors="jaymathe"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/12/2015" 
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="luisca"/>
-
 
 # Kurzanleitung für die Machine Learning Empfehlungen-API
 
@@ -103,20 +101,16 @@ OData-XML
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/CreateModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
 	  <title type="text" />
-
 	  <subtitle type="text">Create A New Model</subtitle>
 	  <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/CreateModel?modelName='MyFirstModel'&amp;apiVersion='1.0'</id>
 	  <rights type="text" />
-
 	  <updated>2014-10-05T06:35:21Z</updated>
  	 <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/CreateModel?modelName='MyFirstModel'&amp;apiVersion='1.0'" />
-
 	  <entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/CreateModel?modelName='MyFirstModel'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">CreateANewModelEntity2</title>
     <updated>2014-10-05T06:35:21Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/CreateModel?modelName='MyFirstModel'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">a658c626-2baa-43a7-ac98-f6ee26120a12</d:Id>
@@ -159,20 +153,16 @@ OData-XML
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ImportCatalogFile" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
 	  <title type="text" />
-
   		<subtitle type="text">Import catalog file</subtitle>
   		<id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ImportCatalogFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='catalog10_small.txt'&amp;apiVersion='1.0'</id>
   	<rights type="text" />
-
   	<updated>2014-10-05T06:58:04Z</updated>
   	<link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ImportCatalogFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='catalog10_small.txt'&amp;apiVersion='1.0'" />
-
   	<entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ImportCatalogFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='catalog10_small.txt'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">ImportCatalogFileEntity2</title>
     <updated>2014-10-05T06:58:04Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ImportCatalogFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='catalog10_small.txt'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:LineCount m:type="Edm.String">4</d:LineCount>
@@ -210,20 +200,16 @@ OData-XML
 
     <feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ImportUsageFile" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
   	<title type="text" />
-
   	<subtitle type="text">Add bulk usage data (usage file)</subtitle>
   	<id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ImportUsageFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='ImplicitMatrix10_Guid_small.txt'&amp;apiVersion='1.0'</id>
   	<rights type="text" />
-
   	<updated>2014-10-05T07:21:44Z</updated>
   	<link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ImportUsageFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='ImplicitMatrix10_Guid_small.txt'&amp;apiVersion='1.0'" />
-
   	<entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ImportUsageFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='ImplicitMatrix10_Guid_small.txt'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">AddBulkUsageDataUsageFileEntity2</title>
     <updated>2014-10-05T07:21:44Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ImportUsageFile?modelId='a658c626-2baa-43a7-ac98-f6ee26120a12'&amp;filename='ImplicitMatrix10_Guid_small.txt'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:LineCount m:type="Edm.String">33</d:LineCount>
@@ -362,20 +348,16 @@ OData-XML
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/BuildModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
   	<title type="text" />
-
   	<subtitle type="text">Build a Model with RequestBody</subtitle>
   	<id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/BuildModel?modelId='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;userDescription='First build'&amp;apiVersion='1.0'</id>
   	<rights type="text" />
-
   	<updated>2014-10-05T08:56:34Z</updated>
   	<link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/BuildModel?modelId='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;userDescription='First%20build'&amp;apiVersion='1.0'" />
-
   	<entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/BuildModel?modelId='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;userDescription='First build'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">BuildAModelEntity2</title>
     <updated>2014-10-05T08:56:34Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/BuildModel?modelId='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;userDescription='First%20build'&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">1000272</d:Id>
@@ -444,20 +426,16 @@ OData-XML
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/GetModelBuildsStatus" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
 	<title type="text" />
-
 	<subtitle type="text">Get builds status of a model</subtitle>
 	<id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/GetModelBuildsStatus?modelId='1d20c34f-dca1-4eac-8e5d-f299e4e4ad66'&amp;onlyLastBuild=False&amp;apiVersion='1.0'</id>
 	<rights type="text" />
-
 	<updated>2014-11-05T17:51:10Z</updated>
 	<link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/GetModelBuildsStatus?modelId='1d20c34f-dca1-4eac-8e5d-f299e4e4ad66'&amp;onlyLastBuild=False&amp;apiVersion='1.0'" />
-
 	<entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/GetModelBuildsStatus?modelId='1d20c34f-dca1-4eac-8e5d-f299e4e4ad66'&amp;onlyLastBuild=False&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">GetBuildsStatusEntity</title>
     <updated>2014-11-05T17:51:10Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/GetModelBuildsStatus?modelId='1d20c34f-dca1-4eac-8e5d-f299e4e4ad66'&amp;onlyLastBuild=False&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:UserName m:type="Edm.String">b-434e-b2c9-84935664ff20@dm.com</d:UserName>
@@ -513,20 +491,16 @@ Die folgende Beispielantwort enthält 10 empfohlene Elemente:
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
   	<title type="text" />
-
  	 <subtitle type="text">Get Recommendation</subtitle>
  	 <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'</id>
   	<rights type="text" />
-
   	<updated>2014-10-05T12:28:48Z</updated>
   	<link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'" />
-
   	<entry>
     <id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1</id>
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=0&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">159</d:Id>
@@ -541,7 +515,6 @@ Die folgende Beispielantwort enthält 10 empfohlene Elemente:
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=1&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">52</d:Id>
@@ -556,7 +529,6 @@ Die folgende Beispielantwort enthält 10 empfohlene Elemente:
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=2&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">35</d:Id>
@@ -571,7 +543,6 @@ Die folgende Beispielantwort enthält 10 empfohlene Elemente:
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=3&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">124</d:Id>
@@ -586,7 +557,6 @@ Die folgende Beispielantwort enthält 10 empfohlene Elemente:
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=4&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">120</d:Id>
@@ -601,7 +571,6 @@ Die folgende Beispielantwort enthält 10 empfohlene Elemente:
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=5&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">96</d:Id>
@@ -616,7 +585,6 @@ Die folgende Beispielantwort enthält 10 empfohlene Elemente:
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=6&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">69</d:Id>
@@ -631,7 +599,6 @@ Die folgende Beispielantwort enthält 10 empfohlene Elemente:
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=7&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">172</d:Id>
@@ -646,7 +613,6 @@ Die folgende Beispielantwort enthält 10 empfohlene Elemente:
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=8&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">155</d:Id>
@@ -661,7 +627,6 @@ Die folgende Beispielantwort enthält 10 empfohlene Elemente:
     <title type="text">GetRecommendationEntity</title>
     <updated>2014-10-05T12:28:48Z</updated>
     <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/ItemRecommend?modelId='2779c063-48fb-46c1-bae3-74acddc8c1d1'&amp;itemIds='1003'&amp;numberOfResults=10&amp;includeMetadata=false&amp;apiVersion='1.0'&amp;$skip=9&amp;$top=1" />
-
     <content type="application/xml">
       <m:properties>
         <d:Id m:type="Edm.String">32</d:Id>
@@ -697,18 +662,15 @@ OData-XML
 
 	<feed xmlns:base="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/UpdateModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://www.w3.org/2005/Atom">
   	<title type="text" />
-
   	<subtitle type="text">Update an Existing Model</subtitle>
   	<id>https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/UpdateModel?id='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;apiVersion='1.0'</id>
   	<rights type="text" />
-
  	 <updated>2014-10-05T10:27:17Z</updated>
  	 <link rel="self" href="https://api.datamarket.azure.com/Data.ashx/amla/recommendations/v2/UpdateModel?id='9559872f-7a53-4076-a3c7-19d9385c1265'&amp;apiVersion='1.0'" />
-
 	</feed>
 
 ##Rechtliche Hinweise
 Dieses Dokument wird bereitgestellt "wie-es- ist". Informationen und Stellungnahmen in diesem Dokument, einschließlich URLs und anderer Verweise auf Internetwebsites, können ohne vorherige Ankündigung geändert werden. Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Keine Ähnlichkeit oder Verbindung ist beabsichtigt und ist rein zufällig. Dieses Dokument gibt keine Rechte an geistigem Eigentum an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden. © 2014 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

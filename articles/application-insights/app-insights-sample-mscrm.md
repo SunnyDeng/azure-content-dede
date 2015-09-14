@@ -1,25 +1,25 @@
 <properties 
-	pageTitle="Exemplarische Vorgehensweise: Überwachen von Microsoft Dynamics CRM mit Application Insights" 
-	description="Abrufen von Telemetriedaten aus Microsoft Dynamics CRM Online mithilfe von Application Insights Exemplarische Vorgehensweise für das Einrichten, Abrufen von Daten, Visualisieren und Exportieren." 
-	services="application-insights" 
-    documentationCenter=""
-	authors="mazharmicrosoft" 
+	pageTitle="Exemplarische Vorgehensweise: Überwachen von Microsoft Dynamics CRM mit Application Insights"
+	description="Abrufen von Telemetriedaten aus Microsoft Dynamics CRM Online mithilfe von Application Insights Exemplarische Vorgehensweise für das Einrichten, Abrufen von Daten, Visualisieren und Exportieren."
+	services="application-insights"
+	documentationCenter=""
+	authors="mazharmicrosoft"
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2015"
 	ms.author="awills"/>
  
 # Exemplarische Vorgehensweise: Aktivieren von Telemetriedaten für Microsoft Dynamics CRM Online mithilfe von Application Insights
 
 Dieser Artikel beschreibt, wie Sie Telemetriedaten aus [Microsoft Dynamics CRM Online](https://www.dynamics.com/) mit [Visual Studio Application Insights](https://azure.microsoft.com/services/application-insights/) abrufen können. Der vollständige Vorgang des Hinzufügens eines Application Insights-Skripts zu Ihrer Anwendung, das Erfassen von Daten und die Visualisierung von Daten werden erläutert.
 
->[AZURE.NOTE] [Browse the sample solution]\(https://dynamicsandappinsights.codeplex.com/).
+>[AZURE.NOTE] [Browse the sample solution](https://dynamicsandappinsights.codeplex.com/).
 
 ## Hinzufügen von Application Insights zu einer neuen oder vorhandenen CRM Online-Instanz 
 
@@ -56,7 +56,7 @@ Zum Überwachen Ihrer Anwendung fügen Sie Ihrer Anwendung ein Application Insig
 
     ![](./media/app-insights-sample-mscrm/07.png)
 
-    Geben Sie ihr einen Namen, wählen Sie **Skript \(JScript\)**, und öffnen Sie den Text-Editor.
+    Geben Sie ihr einen Namen, wählen Sie **Skript (JScript)**, und öffnen Sie den Text-Editor.
 
     ![](./media/app-insights-sample-mscrm/08.png)
     
@@ -151,7 +151,7 @@ Sie können sogar eine tiefer gehende Analyse durchführen, wenn Sie [die Daten 
 
 ## Dynamics CRM-Beispiellösung
 
-[Hier ist die in Dynamics CRM implementierte Beispiellösung](https://dynamicsandappinsights.codeplex.com/)
+[Hier ist die in Dynamics CRM implementierte Beispiellösung](https://dynamicsandappinsights.codeplex.com/).
 
 ## Weitere Informationen
 
@@ -161,4 +161,4 @@ Sie können sogar eine tiefer gehende Analyse durchführen, wenn Sie [die Daten 
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

@@ -1,21 +1,21 @@
 <properties
    pageTitle="Verwenden von Hadoop Hive mit Curl in HDInsight | Microsoft Azure"
-   description="Erfahren Sie, wie Sie Pig-Aufträge mithilfe von Curl remote an HDInsight übermitteln."
-   services="hdinsight"
-   documentationCenter=""
-   authors="Blackmist"
-   manager="paulettm"
-   editor="cgronlun"
+	description="Erfahren Sie, wie Sie Pig-Aufträge mithilfe von Curl remote an HDInsight übermitteln."
+	services="hdinsight"
+	documentationCenter=""
+	authors="Blackmist"
+	manager="paulettm"
+	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
    ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="07/06/2015"
-   ms.author="larryfr"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="08/28/2015"
+	ms.author="larryfr"/>
 
 #Ausführen von Hive-Abfragen mit Hadoop in HDInsight mit Curl
 
@@ -68,7 +68,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
 2. Verwenden Sie Folgendes, um eine neue Tabelle namens **log4jLogs** zu erstellen:
 
-        curl -u USERNAME:PASSWORD -d user.name=USERNAME -d execute="DROP+TABLE+log4jLogs;CREATE+EXTERNAL+TABLE+log4jLogs(t1+string,t2+string,t3+string,t4+string,t5+string,t6+string,t7+string)+ROW+FORMAT+DELIMITED+FIELDS+TERMINATED+BY+' '+STORED+AS+TEXTFILE+LOCATION+'wasb:///example/data/';SELECT+t4+AS+sev,COUNT(*)+AS+count+FROM+log4jLogs+WHERE+t4+=+'[ERROR]'+GROUP+BY+t4;" -d statusdir="wasb:///example/curl" https://CLUSTERNAME.azurehdinsight.net/templeton/v1/hive
+        curl -u USERNAME:PASSWORD -d user.name=USERNAME -d execute="DROP+TABLE+log4jLogs;CREATE+EXTERNAL+TABLE+log4jLogs(t1+string,t2+string,t3+string,t4+string,t5+string,t6+string,t7+string)+ROW+FORMAT+DELIMITED+FIELDS+TERMINATED+BY+' '+STORED+AS+TEXTFILE+LOCATION+'wasb:///example/data/';SELECT+t4+AS+sev,COUNT(*)+AS+count+FROM+log4jLogs+WHERE+t4+=+'[ERROR]'+AND+INPUT__FILE__NAME+LIKE+'%25.log'+GROUP+BY+t4;" -d statusdir="wasb:///example/curl" https://CLUSTERNAME.azurehdinsight.net/templeton/v1/hive
 
     Folgende Parameter werden in diesem Befehl verwendet:
 
@@ -98,6 +98,10 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
     > [AZURE.NOTE]Beachten Sie, dass die Leerzeichen zwischen HiveQL-Anweisungen bei Curl durch das Zeichen `+` ersetzt werden. Werte in Anführungszeichen, die ein Leerzeichen enthalten, z. B. das Trennzeichen, dürfen nicht durch `+` ersetzt werden.
 
+    * **INPUT\_\_FILE\_\_NAME LIKE '%25.log'**: Begrenzt die Suche auf Dateien mit der Erweiterung ".log". Wenn dies nicht angegeben wird, versucht Hive alle Dateien in diesem Verzeichnis und den zugehörigen Unterverzeichnissen zu durchsuchen, einschließlich der Dateien, die nicht dem für diese Tabelle definierten Spaltenschema entsprechen.
+
+    > [AZURE.NOTE]Beachten Sie, dass "%25" der URL-codierten Form von "%" entspricht. Daher lautet die tatsächliche Bedingung `like '%.log'`. "%" muss URL-codiert werden, da dieses Zeichen in URLs als Sonderzeichen behandelt wird.
+
     Dieser Befehl sollte eine Auftrags-ID zurückgeben, mit der der Status des Auftrags überprüft werden kann.
 
         {"id":"job_1415651640909_0026"}
@@ -110,7 +114,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
     > [AZURE.NOTE]Diese Curl-Anforderung gibt ein JSON-Dokument (JavaScript Object Notation) mit Informationen zum Auftrag zurück. Mithilfe von "jq" wird nur der Statuswert abgerufen.
 
-4. Sobald der Status des Auftrags zu **ERFOLGREICH** wechselt, können Sie die Ergebnisse des Auftrags aus dem Azure Blob-Speicher abrufen. Der mit der Abfrage übergebene Parameter `statusdir` enthält den Speicherort der Ausgabedatei. In diesem Fall ****wasb:///example/curl**. Diese Adresse speichert die Ausgabe des Auftrags im Verzeichnis **Beispiel/Cur** des Standardspeichercontainers, der von Ihrem HDInsight-Cluster verwendet wird.
+4. Sobald der Status des Auftrags zu **ERFOLGREICH** wechselt, können Sie die Ergebnisse des Auftrags aus dem Azure Blob-Speicher abrufen. Der mit der Abfrage übergebene Parameter `statusdir` enthält den Speicherort der Ausgabedatei, in diesem Fall ****wasb:///example/curl**. Diese Adresse speichert die Ausgabe des Auftrags im Verzeichnis **example/curl** des Standardspeichercontainers, der von Ihrem HDInsight-Cluster verwendet wird.
 
     Sie können diese Dateien mithilfe von [CLI Mac, Linux und Windows Azure](xplat-cli.md) auflisten und herunterladen. Wenn Sie z. B. Dateien im Verzeichnis **Beispiel/Curl** auflisten möchten, verwenden Sie den folgenden Befehl:
 
@@ -120,11 +124,11 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
 		azure storage blob download <container-name> <blob-name> <destination-file>
 
-	> [AZURE.NOTE]Sie müssen entweder den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE\\\_STORAGE\\\_ACCOUNT** und **AZURE\\\_STORAGE\\\_ACCESS\\\_KEY** festlegen. Weitere Informationen finden Sie unter<a href="hdinsight-upload-data.md" target="\_blank".
+	> [AZURE.NOTE]Sie müssen entweder den Namen des Speicherkontos, das den Blob enthält, mithilfe der Parameter `-a` und `-k` angeben oder die Umgebungsvariablen **AZURE\\_STORAGE\\_ACCOUNT** und **AZURE\\_STORAGE\\_ACCESS\\_KEY** festlegen. Weitere Informationen finden Sie unter<a href="hdinsight-upload-data.md" target="\_blank".
 
 6. Verwenden Sie die folgenden Anweisungen zum Erstellen einer neuen "internen" Tabelle namens **errorLogs**.
 
-        curl -u USERNAME:PASSWORD -d user.name=USERNAME -d execute="CREATE+TABLE+IF+NOT+EXISTS+errorLogs(t1+string,t2+string,t3+string,t4+string,t5+string,t6+string,t7+string)+STORED+AS+ORC;INSERT+OVERWRITE+TABLE+errorLogs+SELECT+t1,t2,t3,t4,t5,t6,t7+FROM+log4jLogs+WHERE+t4+=+'[ERROR]';SELECT+*+from+errorLogs;" -d statusdir="wasb:///example/curl" https://CLUSTERNAME.azurehdinsight.net/templeton/v1/hive
+        curl -u USERNAME:PASSWORD -d user.name=USERNAME -d execute="CREATE+TABLE+IF+NOT+EXISTS+errorLogs(t1+string,t2+string,t3+string,t4+string,t5+string,t6+string,t7+string)+STORED+AS+ORC;INSERT+OVERWRITE+TABLE+errorLogs+SELECT+t1,t2,t3,t4,t5,t6,t7+FROM+log4jLogs+WHERE+t4+=+'[ERROR]'+AND+INPUT__FILE__NAME+LIKE+'%25.log';SELECT+*+from+errorLogs;" -d statusdir="wasb:///example/curl" https://CLUSTERNAME.azurehdinsight.net/templeton/v1/hive
 
     Diese Anweisungen führen die folgenden Aktionen aus:
 
@@ -133,10 +137,10 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 		> [AZURE.NOTE]Im Gegensatz zu externen Tabellen werden beim Ablegen von internen Tabellen auch die zugrunde liegenden Daten gelöscht.
 
     * **ALS ORC GESPEICHERT** – Speichert die Daten im ORC-Format (Optimized Row Columnar) Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
-    * **ÜBERSCHREIBEN EINFÜGEN ... AUSWÄHLEN**: Wählt die Zeilen aus der Tabelle **log4jLogs** aus, die **[ERROR]** enthalten. Dann werden die Daten in die Tabelle **errorLogs** eingefügt.
+    * **ÜBERSCHREIBEN EINFÜGEN ... SELECT**: Wählt die Zeilen aus der Tabelle **log4jLogs** aus, die **[ERROR]** enthalten. Dann werden die Daten in die Tabelle **errorLogs** eingefügt.
     * **AUSWÄHLEN** – Wählt alle Zeilen aus der neuen Tabelle **errorLogs** aus.
 
-7. Verwenden Sie die zurückgegebene Auftrags-ID, um den Status des Auftrags zu überprüfen. Nach der erfolgreichen Ausführung verwenden Sie CLI für Mac, Linux und Windows wie zuvor beschrieben, um die Ergebnisse herunterzuladen und anzuzeigen. Die Ausgabe sollte drei Zeilen mit dem Inhalt **[FEHLER]** enthalten.
+7. Verwenden Sie die zurückgegebene Auftrags-ID, um den Status des Auftrags zu überprüfen. Nach der erfolgreichen Ausführung verwenden Sie CLI für Mac, Linux und Windows wie zuvor beschrieben, um die Ergebnisse herunterzuladen und anzuzeigen. Die Ausgabe sollte drei Zeilen mit dem Inhalt **[ERROR]** enthalten.
 
 
 ##<a id="summary"></a>Zusammenfassung
@@ -190,4 +194,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

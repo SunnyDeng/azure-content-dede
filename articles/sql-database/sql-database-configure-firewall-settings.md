@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Konfigurieren der Firewalleinstellungen (Azure SQL-Datenbank)"
-	description="Konfigurieren der Firewall für Azure SQL-Datenbanken"
+	pageTitle="Konfigurieren von Firewalleinstellungen | Microsoft Azure"
+	description="Konfigurieren der Firewall für IP-Adressen mit Zugriff auf Azure SQL-Datenbanken."
 	services="sql-database"
 	documentationCenter=""
 	authors="BYHAM"
@@ -13,16 +13,16 @@
 	ms.workload="data-management"
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
-	ms.topic="article" 
-	ms.date="06/22/2015"
+	ms.topic="article"
+	ms.date="09/02/2015"
 	ms.author="rickbyh"/>
 
 
-# Konfigurieren der Firewalleinstellungen (Azure SQL-Datenbank)
+# Konfigurieren der Firewalleinstellungen für Azure SQL-Datenbank
 
  Microsoft Azure SQL-Datenbank verwendet Firewallregeln, um Verbindungen mit Ihren Servern und Datenbanken zu erlauben. Sie können auf Ihrem Azure SQL-Datenbank-Server auf Serverebene und Datenbankebene Firewalleinstellungen für die Masterdatenbank oder eine Benutzerdatenbank definieren, um den selektiven Zugriff auf die Datenbank zu ermöglichen.
 
-**Wichtig:** Um Anwendungen von Azure die Verbindung mit dem Datenbankserver zu ermöglichen, müssen Azure-Verbindungen aktiviert sein. Weitere Informationen zu Firewallregeln und dem Aktivieren von Verbindungen aus Azure finden Sie unter [Firewall für die Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee621782.aspx).
+**Wichtig:** Um Anwendungen von Azure die Verbindung mit dem Datenbankserver zu ermöglichen, müssen Azure-Verbindungen aktiviert sein. Weitere Informationen zu Firewallregeln und dem Aktivieren von Verbindungen aus Azure finden Sie unter [Firewall für Azure SQL-Datenbank](sql-database-firewall-configure.md).
 
 
 ## Firewallregeln auf Serverebene
@@ -48,27 +48,33 @@ Firewallregeln auf Serverebene können über das Microsoft Azure-Verwaltungsport
 ## Verwalten von Firewallregeln auf Serverebene über das Verwaltungsportal 
 
 1. Klicken Sie im Verwaltungsportal auf **SQL-Datenbanken**. Alle Datenbanken und ihre entsprechenden Server werden hier aufgelistet.
-1. Klicken Sie oben auf der Seite auf **Servers**.
-2. Klicken Sie auf den Pfeil neben dem Server, für den Sie die Firewallregeln verwalten möchten.
-3. Klicken Sie oben auf der Seite auf **Konfigurieren**.
+2. Klicken Sie oben auf der Seite auf **Servers**.
+3. Klicken Sie auf den Pfeil neben dem Server, für den Sie die Firewallregeln verwalten möchten.
+4. Klicken Sie oben auf der Seite auf **Konfigurieren**.
 
 	*  Um den aktuellen Computer hinzuzufügen, klicken Sie auf "Zu den zulässigen IP-Adressen hinzufügen".
 	*  Um zusätzliche IP-Adressen hinzuzufügen, geben Sie den Regelnamen, die Start-IP-Adresse und die End-IP-Adresse ein.
 	*  Um eine vorhandene Regel zu ändern, klicken Sie auf eines der Felder in der Regel, und ändern Sie den betreffenden Wert.
 	*  Um eine vorhandene Regel zu löschen, zeigen Sie mit Maus auf die Regel, bis ein Kreuz am Ende der Zeile angezeigt wird. Klicken Sie auf das Kreuz, um die Regel zu entfernen.
-8. Klicken Sie unten auf der Seite auf **Speichern**, um die Änderungen zu speichern.
+5. Klicken Sie unten auf der Seite auf **Speichern**, um die Änderungen zu speichern.
 
 ## Verwalten von Firewallregeln auf Serverebene über Transact-SQL
+
 1. Starten Sie ein Abfragefenster über das Verwaltungsportal oder über SQL Server Management Studio.
 2. Stellen Sie sicher, dass Sie mit der master-Datenbank verbunden sind.
-3. Firewallregeln auf Serverebene können innerhalb des Abfragefensters erstellt, aktualisiert oder gelöscht werden.
-4. Führen Sie zum Erstellen oder Aktualisieren von Firewallregeln auf Serverebene die gespeicherte Prozedur "sp\_set\_firewall\_rule" aus. Im folgenden Beispiel wird ein Bereich von IP-Adressen auf dem Server Contoso aktiviert.
+3. Firewallregeln auf Serverebene können innerhalb des Abfragefensters ausgewählt, erstellt, aktualisiert oder gelöscht werden.
+4. Führen Sie zum Erstellen oder Aktualisieren von Firewallregeln auf Serverebene die gespeicherte Prozedur "sp\_set\_firewall\_rule" aus. Im folgenden Beispiel wird ein Bereich von IP-Adressen auf dem Server Contoso aktiviert.<br/>Zeigen Sie zunächst die vorhandenen Regeln an.
 
-		EXEC sp_set_firewall_rule @name = N'ContosoFirewallRule', @start_ip_address = '192.168.1.1', @end_ip_address = '192.168.1.10'
+		SELECT * FROM sys.database_firewall_rules ORDER BY name;
+
+	Fügen Sie anschließend eine Firewallregel hinzu.
+
+		EXECUTE sp_set_firewall_rule @name = N'ContosoFirewallRule',
+			@start_ip_address = '192.168.1.1', @end_ip_address = '192.168.1.10'
 
 	Um eine Firewallregel auf Serverebene zu löschen, führen Sie die gespeicherte Prozedur "sp\_delete\_firewall\_rule" aus. Im folgenden Beispiel wird die Regel mit dem Namen "ContosoFirewallRule" gelöscht.
  
-		EXEC sp_delete_firewall_rule @name = N'ContosoFirewallRule'
+		EXECUTE sp_delete_firewall_rule @name = N'ContosoFirewallRule'
  
 ## Verwalten von Firewallregeln auf Serverebene über Azure PowerShell
 1. Starten Sie Azure PowerShell.
@@ -137,11 +143,11 @@ Firewallregeln auf Serverebene können über das Microsoft Azure-Verwaltungsport
  
 ## Nächste Schritte
 
-Ein Lernprogramm zum Erstellen einer Datenbank finden Sie unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md). Hilfe beim Herstellen einer Verbindung mit einer Azure SQL-Datenbank von Open-Source-Anwendungen oder Anwendungen von Drittanbietern finden Sie unter [Richtlinien zum programmgesteuerten Herstellen einer Verbindung mit Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee336282.aspx). Informationen zum Navigieren zu Datenbanken finden Sie unter [Verwalten von Datenbanken, Anmeldungen und Benutzern in der Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee336235.aspx).
+Ein Tutorial zum Erstellen einer Datenbank finden Sie unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md). Hilfe beim Herstellen einer Verbindung mit Azure SQL-Datenbank von Open-Source-Anwendungen oder Anwendungen von Drittanbietern finden Sie unter [Richtlinien zum programmgesteuerten Herstellen einer Verbindung mit Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee336282.aspx). Informationen zum Navigieren zu Datenbanken finden Sie unter [Verwalten von Datenbanken, Anmeldungen und Benutzern in Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee336235.aspx).
 
 <!--Image references-->
 [1]: ./media/sql-database-configure-firewall-settings/AzurePortalBrowseForFirewall.png
 [2]: ./media/sql-database-configure-firewall-settings/AzurePortalFirewallSettings.png
 <!--anchors-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

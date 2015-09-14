@@ -1,20 +1,20 @@
 <properties
    pageTitle="Entwicklerhandbuch zu Azure Active Directory | Microsoft Azure"
-   description="Dieser Artikel enthält eine umfassende Übersicht über die für Entwickler wichtigen Ressourcen zu Azure Active Directory."
-   services="active-directory"
-   documentationCenter="dev-center-name"
-   authors="msmbaldwin"
-   manager="mbaldwin"
-   editor=""/>
+	description="Dieser Artikel enthält eine umfassende Übersicht über die für Entwickler wichtigen Ressourcen zu Azure Active Directory."
+	services="active-directory"
+	documentationCenter="dev-center-name"
+	authors="msmbaldwin"
+	manager="mbaldwin"
+	editor=""/>
 
 <tags
    ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="08/12/2015"
-   ms.author="mbaldwin"/>
+	ms.devlang="na"
+	ms.topic="hero-article"
+	ms.tgt_pltfrm="na"
+	ms.workload="identity"
+	ms.date="08/12/2015"
+	ms.author="mbaldwin"/>
 
 
 # Entwicklerhandbuch zu Azure Active Directory
@@ -40,19 +40,24 @@ Azure Active Directory-Übersichten von der Konferenz Build 2015 finden Sie unt
 
 Diese Tutorials sind auf verschiedene Plattformen ausgelegt und ermöglichen Ihnen einen schnellen Einstieg in die Entwicklung mit Azure Active Directory. Voraussetzung ist, dass Sie über einen [Azure Active Directory-Mandanten](active-directory-howto-tenant.md) verfügen.
 
-### Mobile Anwendung oder PC-Anwendung – Schnellstartanleitungen
+### Mobile Anwendung und PC-Anwendung – Schnellstartanleitungen
 
 |[![iOS](./media/active-directory-developers-guide/ios.png)](active-directory-devquickstarts-ios.md)|[![Android](./media/active-directory-developers-guide/android.png)](active-directory-devquickstarts-android.md)|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-dotnet.md)| [![Windows Phone](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsphone.md)|[![Windows Store](./media/active-directory-developers-guide/windows.png)](active-directory-devquickstarts-windowsstore.md)|[![Xamarin](./media/active-directory-developers-guide/xamarin.png)](active-directory-devquickstarts-xamarin.md)|[![Cordova](./media/active-directory-developers-guide/cordova.png)](active-directory-devquickstarts-cordova.md)
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:
 |[iOS](active-directory-devquickstarts-ios.md)|[Android](active-directory-devquickstarts-android.md)|[.NET](active-directory-devquickstarts-dotnet.md)|[Windows Phone](active-directory-devquickstarts-windowsphone.md)|[Windows Store](active-directory-devquickstarts-windowsstore.md)|[Xamarin](active-directory-devquickstarts-xamarin.md)|[Cordova](active-directory-devquickstarts-cordova.md)
 
 
-### Webanwendung oder Web-API – Schnellstartanleitungen
+### Webanwendung und Web-API – Schnellstartanleitungen
 
 |[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-webapp-dotnet.md)|[![.NET](./media/active-directory-developers-guide/net.png)](active-directory-devquickstarts-webapi-dotnet.md)|[![JavaScript](./media/active-directory-developers-guide/javascript.png)](active-directory-devquickstarts-angular.md)|[![Node.js](./media/active-directory-developers-guide/nodejs.png)](active-directory-devquickstarts-webapi-nodejs.md)
 |:--:|:--:|:--:|:--:
 |[.NET Web-App](active-directory-devquickstarts-webapp-dotnet.md)|[.NET Web-API](active-directory-devquickstarts-webapi-dotnet.md)|[JavaScript](active-directory-devquickstarts-angular.md)|[Node.js](active-directory-devquickstarts-webapi-nodejs.md)
 
+### Abfragen des Verzeichnisses – Schnellstartanleitung
+
+| [![.NET](./media/active-directory-developers-guide/graph.png)](active-directory-graph-api-quickstart.md)|
+|:--:|
+|[Graph-API](active-directory-graph-api-quickstart.md)|
 
 ## Vorgehensweisen
 
@@ -97,9 +102,9 @@ Diese Artikel enthalten grundlegende Referenzen zu REST- und Authentifizierungsb
 - [OpenID Connect 1.0-Protokoll – Referenz](https://msdn.microsoft.com/library/azure/dn645541.aspx): Mit dem OpenID Connect 1.0-Protokoll wird OAuth 2.0 um die Verwendung als Authentifizierungsprotokoll erweitert.
 
 
-- [WS-Federation 1.2-Protokoll – Referenz](https://msdn.microsoft.com/library/azure/dn903702.aspx): Hier ist das WS-Federation 1.2-Protokoll so beschrieben, wie es in der Spezifikation Web Services Federation Version 1.2 angegeben ist.
+- [WS-Federation 1.2-Protokoll – Referenz](https://msdn.microsoft.com/library/azure/dn903702.aspx): Das WS-Federation 1.2-Protokoll ist in der Web Services Federation-Spezifikation, Version 1.2, festgelegt.
 
-- [Unterstützte Token und Anspruchstypen](active-directory-token-and-claims.md): Verwenden Sie dieses Handbuch, um die Ansprüche in SAML 2.0- und JSON-Webtoken zu verstehen und auszuwerten.
+- [Unterstützte Token und Anspruchstypen](active-directory-token-and-claims.md): Verwenden Sie dieses Handbuch, um die Ansprüche in SAML 2.0- und JSON-Webtoken (JWT) zu verstehen und auszuwerten.
 
 ## Videos
 
@@ -128,4 +133,4 @@ In diesen Übersichtspräsentationen zur Entwicklung von Apps mithilfe von Azure
 
 - [Azure Active Directory auf Twitter](https://twitter.com/azuread): Azure Active Directory-Ankündigungen in 140 Zeichen oder kürzer.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

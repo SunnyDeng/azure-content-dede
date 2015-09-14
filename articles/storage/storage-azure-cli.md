@@ -1,19 +1,19 @@
 <properties
     pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher | Microsoft Azure"
-    description="Erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle (Azure-CLI) mit Azure Storage verwenden, um Speicherkonten zu erstellen und zu verwalten sowie mit Azure-Blobs und -Dateien zu arbeiten."
-    services="storage"
-    documentationCenter="na"
-    authors="tamram"
-    manager="jdial"/>
+	description="Erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle (Azure-CLI) mit Azure Storage verwenden, um Speicherkonten zu erstellen und zu verwalten sowie mit Azure-Blobs und -Dateien zu arbeiten."
+	services="storage"
+	documentationCenter="na"
+	authors="tamram"
+	manager="jdial"/>
 
 <tags
     ms.service="storage"
-    ms.workload="storage"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="article" 
-    ms.date="05/27/2015"
-    ms.author="chungli;jiyang;yaxia;tamram"/>
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="chungli;jiyang;yaxia;tamram"/>
 
 # Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher
 
@@ -80,9 +80,9 @@ Weitere Informationen zu Azure-Abonnements finden Sie unter [Verwalten von Konte
 
     - **<container_name>** Verwenden Sie den im Skript angegebenen Namen, oder geben Sie einen neuen Namen für Ihren Container ein.
 
-    - **<image_to_upload>** Geben Sie einen Pfad zu einem Bild auf dem lokalen Computer ein. Zum Beispiel: "\~/images/HelloWorld.png".
+    - **<image_to_upload>** Geben Sie einen Pfad zu einem Bild auf dem lokalen Computer ein. Zum Beispiel: "~/images/HelloWorld.png".
 
-    - **<destination_folder>** Geben Sie einen Pfad zu einem lokalen Verzeichnis zum Speichern von Dateien ein, die aus dem Azure-Speicher heruntergeladen werden. Zum Beispiel: " \~/downloadImages".
+    - **<destination_folder>** Geben Sie einen Pfad zu einem lokalen Verzeichnis zum Speichern von Dateien ein, die aus dem Azure-Speicher heruntergeladen werden. Zum Beispiel: " ~/downloadImages".
 
 7. Nachdem Sie die erforderlichen Variablen in Vim aktualisiert haben, drücken Sie die Tastenkombinationen "Esc, : , wq!", um das Skript zu speichern.
 
@@ -169,7 +169,7 @@ Verwenden Sie den nachfolgenden Befehl, um ein Blob zu löschen.
 
 ## Erstellen und Verwalten von Dateifreigaben
 
-Der Azure-Dateispeicher bietet einen gemeinsam genutzten Speicher für Anwendungen und verwendet dabei das SMB 2.1-Protokoll. Microsoft Azure Virtual Machines und Cloud-Dienste können Dateidaten mithilfe bereitgestellter Freigaben über Anwendungskomponenten hinweg gemeinsam nutzen. Dateifreigaben und Dateidaten können über die Azure-Befehlszeilenschnittstelle verwaltet werden. Weitere Informationen zum Azure-Dateispeicher finden Sie unter [Verwenden des Azure-Dateispeichers mit PowerShell und .NET](storage-dotnet-how-to-use-files).
+Der Azure-Dateispeicher bietet einen gemeinsam genutzten Speicher für Anwendungen und verwendet dabei das SMB 2.1-Protokoll. Microsoft Azure Virtual Machines und Clouddienste können Dateidaten mithilfe bereitgestellter Freigaben über Anwendungskomponenten hinweg gemeinsam nutzen. Dateifreigaben und Dateidaten können über die Azure-Befehlszeilenschnittstelle verwaltet werden. Weitere Informationen zum Azure-Dateispeicher finden Sie unter [Verwenden des Azure-Dateispeichers mit PowerShell und .NET](storage-dotnet-how-to-use-files).
 
 > [AZURE.NOTE]Der Azure-Dateispeicher befindet sich derzeit noch in der Vorschau. Navigieren Sie zur Anforderung des Zugriffs auf die Vorschau zur [Microsoft Azure-Vorschauseite](/services/preview/), und fordern Sie den Zugriff auf **Azure-Dateien** an. Nachdem Ihre Anforderung genehmigt wurde, werden Sie benachrichtigt, dass Sie auf die Dateispeichervorschau zugreifen können. Anschließend können Sie ein Speicherkonto für den Zugriff auf den Dateispeicher erstellen.
 
@@ -189,7 +189,7 @@ Beachten Sie, dass dieser Verzeichnispfad mehrere Ebenen enthalten kann, *z.B.*,
 
 ### Hochladen einer lokalen Datei in das Verzeichnis
 
-Im folgenden Beispiel wird eine Datei aus **\~/temp/samplefile.txt** in das Verzeichnis **myDir** hochgeladen. Bearbeiten Sie den Dateipfad so, dass er auf eine gültige Datei auf Ihrem lokalen Computer verweist:
+Im folgenden Beispiel wird eine Datei aus **~/temp/samplefile.txt** in das Verzeichnis **myDir** hochgeladen. Bearbeiten Sie den Dateipfad so, dass er auf eine gültige Datei auf Ihrem lokalen Computer verweist:
 
         azure storage file upload '~/temp/samplefile.txt' myshare myDir
 
@@ -203,6 +203,16 @@ Sie können Sie die Dateien und Unterverzeichnisse in einem Freigabestamm oder e
 
 Beachten Sie, dass der Name des Verzeichnisses für den Auflistungsvorgang optional ist. Wenn kein Namen angegeben wird, listet der Befehl den Inhalt des Stammverzeichnisses der Freigabe auf.
 
+### Kopieren von Dateien
+
+Ab Version 0.9.8 der Azure-CLI können Sie eine Datei in eine andere Datei, eine Datei in ein Blob oder ein Blob in eine Datei kopieren. Im Folgenden wird demonstriert, wie diese Kopiervorgänge mithilfe von CLI-Befehlen ausgeführt werden können. So kopieren Sie eine Datei in das neue Verzeichnis:
+
+	azure storage file copy start --source-share srcshare --source-path srcdir/hello.txt --dest-share destshare --dest-path destdir/hellocopy.txt --connection-string $srcConnectionString --dest-connection-string $destConnectionString
+	
+So kopieren Sie ein Blob in ein Dateiverzeichnis:
+
+	azure storage file copy start --source-container srcctn --source-blob hello2.txt --dest-share hello --dest-path hellodir/hello2copy.txt --connection-string $srcConnectionString --dest-connection-string $destConnectionString
+
 ## Nächste Schritte
 
 In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen zum Azure-Speicher.
@@ -214,4 +224,4 @@ In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen zum Az
 [Image1]: ./media/storage-azure-cli/azure_command.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

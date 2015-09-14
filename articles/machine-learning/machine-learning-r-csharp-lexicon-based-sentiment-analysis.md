@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Lexikonbasierte Stimmungsanalyse | Microsoft Azure" 
-	description="Lexikonbasierte Stimmungsanalyse" 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="jaymathe" 
-	manager="paulettm" 
+	pageTitle="Lexikonbasierte Stimmungsanalyse | Microsoft Azure"
+	description="Lexikonbasierte Stimmungsanalyse"
+	services="machine-learning"
+	documentationCenter=""
+	authors="jaymathe"
+	manager="paulettm"
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/24/2015" 
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2015"
 	ms.author="jaymathe"/>
 
 
@@ -153,4 +153,4 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

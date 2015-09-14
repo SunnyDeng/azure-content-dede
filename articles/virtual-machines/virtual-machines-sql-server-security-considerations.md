@@ -56,6 +56,6 @@ Im Folgenden finden Sie eine Liste mit Sicherheitsempfehlungen für das Konfigur
 
 Weitere Informationen zu bewährten Methoden in Bezug auf Leistung finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md).
 
-Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
+Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie in der [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

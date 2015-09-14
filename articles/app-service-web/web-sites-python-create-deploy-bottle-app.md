@@ -1,30 +1,28 @@
 <properties 
-	pageTitle="Python-Web-Apps mit Bottle in Azure" 
-	description="In diesem Lernprogramm werden Sie in die Ausführung einer Python-App-Web in Azure App Service-Web-Apps eingeführt." 
-	services="app-service\web" 
-	documentationCenter="python" 
+	pageTitle="Python-Web-Apps mit Bottle in Azure"
+	description="In diesem Tutorial werden Sie in die Ausführung einer Python-App-Web in Azure App Service-Web-Apps eingeführt."
+	services="app-service\web"
+	documentationCenter="python"
 	tags="python"
-	authors="huguesv" 
-	manager="wpickett" 
+	authors="huguesv"
+	manager="wpickett"
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="04/15/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="08/30/2015"
 	ms.author="huguesv"/>
-
-
 
 
 # Erstellen von Web-Apps mit Bottle in Azure
 
-In diesem Lernprogramm werden die ersten Schritte für die Verwendung von Python in Azure App Service-Web-Apps beschrieben. Web-Apps bietet uneingeschränktes kostenloses Hosting und schnelle Bereitstellung, und Sie können Python verwenden! Wenn die Anwendung größer wird, können Sie zu kostenpflichtigem Hosting wechseln und außerdem alle anderen Azure-Dienste integrieren.
+In diesem Tutorial werden die ersten Schritte für die Verwendung von Python in Azure App Service-Web-Apps beschrieben. Web-Apps bietet uneingeschränktes kostenloses Hosting und schnelle Bereitstellung, und Sie können Python verwenden! Wenn die Anwendung größer wird, können Sie zu kostenpflichtigem Hosting wechseln und außerdem alle anderen Azure-Dienste integrieren.
 
-Sie erstellen eine Web-App mithilfe des Webframeworks Bottle. (Alternativ sind auch Versionen für [Django](web-sites-python-create-deploy-django-app.md) und [Flask](web-sites-python-create-deploy-flask-app.md) verfügbar.) Sie erstellen die Web-App aus dem Azure Marketplace, richten die Git-Bereitstellung ein und klonen das Repository lokal. Dann führen Sie die Web-App lokal aus, nehmen Änderungen vor, führen ein Commit aus und übertragen die Änderungen an [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Das Lernprogramm zeigt, wie dies unter Windows oder Mac/Linux erfolgt.
+Sie erstellen eine Web-App mithilfe des Webframeworks Bottle. (Alternativ sind auch Versionen für [Django](web-sites-python-create-deploy-django-app.md) und [Flask](web-sites-python-create-deploy-flask-app.md) verfügbar.) Sie erstellen die Web-App aus dem Azure Marketplace, richten die Git-Bereitstellung ein und klonen das Repository lokal. Dann führen Sie die Web-App lokal aus, nehmen Änderungen vor, führen ein Commit aus und übertragen die Änderungen an [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Das Tutorial zeigt, wie dies unter Windows oder Mac/Linux erfolgt.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
@@ -36,7 +34,7 @@ Sie erstellen eine Web-App mithilfe des Webframeworks Bottle. (Alternativ sind a
 - Python 2.7 oder 3.4
 - setuptools, pip, virtualenv (nur Python 2.7)
 - Git
-- [Python Tools 2.1 für Visual Studio](optional)
+- [Python Tools 2.2 für Visual Studio][] (PTVS) – Hinweis: diese sind optional
 
 **Hinweis**: TFS-Veröffentlichung wird derzeit für Python-Projekte nicht unterstützt.
 
@@ -46,7 +44,7 @@ Falls Python 2.7 oder 3.4 (32 Bit) noch nicht installiert ist, empfehlen wir die
 
 Für Git empfehlen wir [Git für Windows] oder [GitHub für Windows]. Wenn Sie Visual Studio verwenden, können Sie die integrierte Unterstützung für Git nutzen.
 
-Wir empfehlen auch die Installation von [Python Tools 2.1 für Visual Studio]. Dies ist optional, aber wenn Sie über [Visual Studio] einschließlich des kostenlosen Visual Studio Community 2013 oder Visual Studio Express 2013 für Web verfügen, erhalten Sie eine leistungsfähige Python-IDE.
+Wir empfehlen auch die Installation von [Python Tools 2.2 für Visual Studio]. Dies ist optional, aber wenn Sie über [Visual Studio] einschließlich des kostenlosen Visual Studio Community 2013 oder Visual Studio Express 2013 für Web verfügen, erhalten Sie eine leistungsfähige Python-IDE.
 
 ### Mac/Linux
 
@@ -160,7 +158,7 @@ Drücken Sie F5, um mit dem Debuggen beginnen. Ihr Webbrowser wird automatisch a
 
 ![](./media/web-sites-python-create-deploy-bottle-app/windows-browser-bottle.png)
 
-Sie können Haltepunkte im Quellcode setzen, die Überwachungsfenster verwenden, usw. In der [PTVS-Dokumentation][] finden Sie weitere Informationen zu den verschiedenen Features.
+Sie können Haltepunkte im Quellcode setzen, die Überwachungsfenster verwenden, usw. In der [Dokumentation zu Python Tools für Visual Studio] finden Sie weitere Informationen zu den verschiedenen Features.
 
 ### Vornehmen von Änderungen
 
@@ -374,8 +372,8 @@ Folgen Sie diesen Links, um weitere Informationen zu Bottle- und Python Tools f�
 
 Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 
-- [Bottle und MongoDB in Azure mit Python Tools 2.1 für Visual Studio]
-- [Bottle und Azure Table Storage in Azure mit Python Tools 2.1 für Visual Studio]
+- [Bottle und MongoDB in Azure mit Python Tools für Visual Studio]
+- [Bottle und Azure-Tabellenspeicher in Azure mit Python Tools für Visual Studio]
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -383,8 +381,8 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 
 
 <!--Link references-->
-[Bottle und MongoDB in Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-bottle-table-storage.md
-[Bottle und Azure Table Storage in Azure mit Python Tools 2.1 für Visual Studio]: web-sites-python-ptvs-bottle-mongodb.md
+[Bottle und MongoDB in Azure mit Python Tools für Visual Studio]: web-sites-python-ptvs-bottle-table-storage.md
+[Bottle und Azure-Tabellenspeicher in Azure mit Python Tools für Visual Studio]: web-sites-python-ptvs-bottle-table-storage.md
 
 <!--External Link references-->
 [Azure SDK für Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281
@@ -393,11 +391,12 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 [Git für Windows]: http://msysgit.github.io/
 [GitHub für Windows]: https://windows.github.com/
 [Python Tools für Visual Studio]: http://aka.ms/ptvs
-[Python Tools 2.1 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=517189
+[Python Tools 2.2 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
+[Python Tools 2.2 für Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Visual Studio]: http://www.visualstudio.com/
-[PTVS-Dokumentation]: http://pytools.codeplex.com/documentation
-[Python Tools für Visual Studio – Dokumentation]: http://pytools.codeplex.com/documentation
+[Dokumentation zu Python Tools für Visual Studio]: http://aka.ms/ptvsdocs
+[Python Tools für Visual Studio – Dokumentation]: http://aka.ms/ptvsdocs
 [Dokumentation zu Bottle]: http://bottlepy.org/docs/dev/index.html
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

@@ -1,24 +1,26 @@
 
 <properties 
-    pageTitle="Verwenden von Office mit Azure RemoteApp" 
-    description="Erfahren Sie, wie und Azure RemoteApp zusammenarbeiten." 
-    services="remoteapp" 
-    documentationCenter="" 
-    authors="lizap" 
-    manager="mbaldwin" />
+    pageTitle="Verwenden von Office mit Azure RemoteApp"
+	description="Erfahren Sie, wie und Azure RemoteApp zusammenarbeiten."
+	services="remoteapp"
+	documentationCenter=""
+	authors="lizap"
+	manager="mbaldwin"/>
 
 <tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
-    ms.author="elizapo" />
+    ms.service="remoteapp"
+	ms.workload="compute"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2015"
+	ms.author="elizapo"/>
 
 # Verwenden von Office mit Azure RemoteApp
 
 Sie haben zwei Möglichkeiten für das Hosten von Office-Anwendungen in Azure RemoteApp: Office 365 ProPlus oder die Testversion von Office 2013 Professional Plus.
+
+**Wussten Sie, dass dieser Artikel schon bald durch eine neue, überarbeitete Version ersetzt wird? Lesen Sie [Verwenden Ihres Office 365-Abonnements mit Azure RemoteApp](remoteapp-officesubscription.md). Hier erfahren Sie alles Wissenswerte zur Verwendung von Office 365 + Azure RemoteApp.**
 
 ## Office 365 ProPlus 
 Sie können eine RemoteApp-Sammlung mit dem Office 365 ProPlus-Vorlagenimage erstellen. Diese Option ermöglicht die Erweiterung Ihres Office 365-Diensts um RemoteApp. Dazu benötigen Sie einen vorhandenen Abonnementplan, und Ihre Benutzer müssen entweder eigenständig oder über Office 365-Servicepläne für den Office 365 ProPlus-Dienst lizenziert sein.
@@ -48,4 +50,4 @@ Wenn Sie Ihr Konto aktivieren, wirkt sich dies auf alle RemoteApp-Sammlungen in 
 Wenn Sie nach Ablauf des Testzeitraums nicht zum Produktionsmodus wechseln, werden die RemoteApp-Sammlungen deaktiviert. Keine Sorge - Ihre Einstellungen und Benutzerdaten bleiben für weitere 90 Tage gespeichert, sodass Sie Ihren Dienst noch aktivieren und ohne Datenverlust in den Produktionsmodus wechseln können.
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

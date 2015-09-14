@@ -1,25 +1,25 @@
 <properties 
- pageTitle="Verwalten von Erweiterungen für virtuelle Computer | Microsoft Azure" 
- description="Beschreibt das Hinzufügen, Suchen, Aktualisieren und Entfernen von Erweiterungen." 
- services="virtual-machines" 
- documentationCenter="" 
- authors="squillace" 
- manager="timlt" 
- editor=""/>
+ pageTitle="Verwalten von Erweiterungen für virtuelle Computer | Microsoft Azure"
+	description="Beschreibt das Hinzufügen, Suchen, Aktualisieren und Entfernen von Erweiterungen."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="squillace"
+	manager="timlt"
+	editor=""/>
 <tags 
- ms.service="virtual-machines" 
- ms.devlang="na" 
- ms.topic="article" 
- ms.tgt_pltfrm="vm-multiple" 
- ms.workload="infrastructure-services"
- ms.date="03/10/2015" 
- ms.author="rasquill"/>
+ ms.service="virtual-machines"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-multiple"
+	ms.workload="infrastructure-services"
+	ms.date="08/25/2015"
+	ms.author="rasquill"/>
 #Verwalten von Erweiterungen für virtuelle Computer
 Beschreibt, wie VM-Erweiterungen mit virtuellen Windows- oder Linux-Computern in Azure gesucht, hinzugefügt, geändert oder entfernt werden.
 
 ##Verwenden von VM-Erweiterungen
 
-Azure-VM-Erweiterungen implementieren Verhaltensweisen oder Features, mit denen andere Programme auf Azure-VMs verwendet werden können \(z. B. ermöglicht die Erweiterung **WebDeployForVSDevTest** Visual Studio für Web Deploy-Lösungen auf Ihrer Azure-VM\). Sie bieten aber auch die Möglichkeit zur Interaktion mit dem virtuellen Computer, um ein anderes Verhalten zu unterstützen \(z. B. können Sie mit den VM-Zugriffserweiterungen von PowerShell, der plattformübergreifenden Befehlszeilenschnittstelle und der REST-Clients Remotezugriffswerte auf Ihrer Azure-VM zurücksetzen oder ändern\).
+Azure-VM-Erweiterungen implementieren Verhaltensweisen oder Features, mit denen andere Programme in Azure-VMs verwendet werden können (die Erweiterung **WebDeployForVSDevTest** ermöglicht Visual Studio z. B. die Webbereitstellung von Lösungen auf Ihrer Azure-VM). Sie bieten aber auch die Möglichkeit zur Interaktion mit dem virtuellen Computer, um ein anderes Verhalten zu unterstützen (Sie können die VM-Zugriffserweiterungen von PowerShell, der plattformübergreifenden Azure-Schnittstelle und der REST-Clients z. B. nutzen, um die Remotezugriffswerte auf Ihrer Azure-VM zurückzusetzen oder zu ändern).
 
 >[AZURE.IMPORTANT]Eine vollständige Liste der Erweiterungen nach unterstützten Features finden Sie unter [Azure-VM-Erweiterungen und Features](https://msdn.microsoft.com/library/dn606311.aspx). Da jede VM-Erweiterung ein bestimmtes Feature unterstützt, hängt es von der Erweiterung ab, was Sie mit der Erweiterung genau machen können. Bevor Sie Ihren virtuellen Computer ändern, sollten Sie daher die Dokumentation für die VM-Erweiterung lesen, die Sie verwenden möchten. Das Entfernen einiger VM-Erweiterungen wird nicht unterstützt. Andere weisen Eigenschaften auf, die festgelegt werden können und das VM-Verhalten grundlegend ändern.
 
@@ -38,7 +38,7 @@ Die häufigsten Aufgaben sind:
 Azure-VM-Erweiterungen: Eine vollständige Liste der Erweiterungen nach unterstützten Features finden Sie unter [Azure-VM-Erweiterungen und Features](https://msdn.microsoft.com/library/dn606311.aspx). Sie können die Erweiterung und die erweiterten Informationen wie folgt finden:
 
 -   PowerShell
--   Plattformübergreifende Azure-Schnittstelle \(xplat-cli\)
+-   Plattformübergreifende Azure-Schnittstelle (Cross-Platform Interface, CLI)
 -   Dienstverwaltungs-REST-API
 
 Verwenden Sie [Azure PowerShell](https://msdn.microsoft.com/library/azure/dn495240.aspx)-Cmdlets oder die [REST-APIs der Dienstverwaltung](https://msdn.microsoft.com/library/ee460799.aspx), um Informationen zu verfügbaren Erweiterungen zu finden.
@@ -78,13 +78,13 @@ Sie können die folgenden Cmdlets zum Abrufen von Informationen zu den verfügba
         CompanyName                 :
 
 
-###Azure-Befehlszeilenschnittstelle \(xplat-cli\)
+###Azure-Befehlszeilenschnittstelle (Command Line Interface, CLI)
 
-Einige Erweiterungen weisen Befehle der plattformübergreifenden Befehlszeilenschnittstelle \(xplat-cli\) auf, die spezifisch für sie sind \(die Docker-VM-Erweiterung ist ein Beispiel dafür\) und die möglicherweise die Konfiguration vereinfachen. Die folgenden Befehle funktionieren jedoch für alle VM-Erweiterungen.
+Einige Erweiterungen weisen Azure-CLI-Befehle auf, die spezifisch für die jeweilige Erweiterung sind und möglicherweise die Konfiguration vereinfachen. Ein Beispiel für eine solche Erweiterung ist die Docker-VM-Erweiterung. Die folgenden Befehle funktionieren jedoch für alle VM-Erweiterungen.
 
 Sie können den Befehl **azure vm extension list** zum Abrufen von Informationen zu verfügbaren Erweiterungen verwenden und mit der **–-json**-Option alle verfügbaren Informationen über eine oder mehrere Erweiterungen anzeigen. Wenn Sie keinen Erweiterungsnamen verwenden, gibt der Befehl eine JSON-Beschreibung aller verfügbaren Erweiterungen zurück.
 
-Beispiel: Das folgende Codebeispiel veranschaulicht das Auflisten der Informationen für die Erweiterung **IaaSDiagnostics** mit dem Befehl der plattformübergreifenden Befehlszeilenschnittstelle **azure vm extension list** und verwendet die **–-json**-Option, um vollständige Informationen zurückzugeben.
+Beispiel: Das folgende Codebeispiel veranschaulicht das Auflisten der Informationen für die Erweiterung **IaaSDiagnostics** mit dem Azure-CLI-Befehl **azure vm extension list** und verwendet die Option **–-json**, um vollständige Informationen zurückzugeben.
 
 
     $ azure vm extension list -n IaaSDiagnostics --json
@@ -137,4 +137,4 @@ Sie können die folgenden REST-APIs verwenden, um herauszufinden, ob für eine E
 
 >[AZURE.NOTE]Erweiterungen können auch Konfigurationen verwenden, die mit JSON definiert sind. Wenn diese Typen von Erweiterungen verwendet werden, wird nur das Element **SampleConfig** verwendet.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

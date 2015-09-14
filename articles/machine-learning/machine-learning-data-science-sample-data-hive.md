@@ -4,8 +4,8 @@
 	services="machine-learning,hdinsight"
 	documentationCenter=""
 	authors="hangzh-msft"
-	manager="paulettm" 
-	editor="cgronlun"  />
+	manager="paulettm"
+	editor="cgronlun"/>
 
 <tags
 	ms.service="machine-learning"
@@ -13,14 +13,18 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/29/2015"
-	ms.author="hangzh;bradsev" />
+	ms.date="09/01/2015"
+	ms.author="hangzh;bradsev"/>
 
 # Extrahieren von Stichproben aus Daten in Azure HDInsight Hive-Tabellen
 
 Wenn das Dataset, das Sie analysieren möchten, groß ist, sollten Sie i. d. R. eine Komprimierung der Daten durchführen, um eine geringere aber immer noch repräsentative Größe zu erhalten. Dies erleichtert das Verständnis der Daten, das Durchsuchen und die Funktionsverarbeitung. Auf diese Weise wird über Advanced Analytics Process and Technology (ADAPT) in Azure Machine Learning eine schnelle Entwicklung von Prototypen aus den Datenverarbeitungsfunktionen und Machine Learning-Modellen ermöglicht.
 
-In diesem Artikel wird das Komprimieren von Daten in Azure HDInsight Hive-Tabellen mithilfe von Hive-Abfragen beschrieben. Es werden drei gängige Methoden zum Extrahieren von Stichproben erläutert: Einheitliche Stichproben, Stichproben nach Gruppen und geschichtete Stichproben.
+In diesem Artikel wird das Komprimieren von Daten in Azure HDInsight Hive-Tabellen mithilfe von Hive-Abfragen beschrieben. Dabei werden drei häufig verwendete Samplingmethoden behandelt:
+
+* Einheitliche Stichproben 
+* Zufällige Stichproben nach Gruppen 
+* Geschichtete Stichproben
 
 Sie sollten die Hive-Abfragen über die Hadoop-Befehlszeile auf dem Hauptknoten des Hadoop-Clusters übermitteln. Dazu melden Sie sich auf dem Hauptknoten des Hadoop-Clusters an, öffnen die Hadoop-Befehlszeile und übermitteln die Hive-Abfragen von dort aus. Informationen zum Übermitteln von Hive-Abfragen an der Hadoop-Befehlszeile finden Sie unter [Übermitteln von Hive-Abfragen](machine-learning-data-science-process-hive-tables.md#submit).
 
@@ -72,7 +76,7 @@ Dies ist eine Beispielabfrage für das Erstellen einer Stichprobe nach Gruppe:
 		)c
 	on b.catfield=c.catfield
 
-## <a name="stratified"></a> Geschichtete Stichproben
+## <a name="stratified"></a>Geschichtete Stichproben
 
 Stichproben sind in Bezug auf eine kategorische Variable geschichtet, wenn die abgerufenen Beispieldaten Werte dieser Kategorie enthalten, und zwar im gleichen Verhältnis wie in der übergeordneten Datenmenge, aus der die Stichproben abgerufen wurden. Bei dem oben genannten Beispiel besitzen Ihre Daten Teilmengen nach Bundesstaat, "NJ" hat z. B. 100 Vorkommen, "NY" 60 und "WA" hat 300. Wenn Sie die Rate für die geschichtete Stichprobe auf 0,5 festlegen, sollte die abgerufene Stichprobe ungefähr 50, 30 und 150 Vorkommen für "NJ", "NY" und "WA" aufweisen.
 
@@ -95,4 +99,4 @@ Dies ist eine Beispielabfrage:
 Informationen zu komplexeren Methoden für das Extrahieren von Stichproben, die in Hive verfügbar sind, finden Sie unter [LanguageManual Sampling](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Sampling) (in englischer Sprache).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

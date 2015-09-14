@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="StorSimple – Virtuelles Gerät | Microsoft Azure"
-	description="Erfahren Sie, wie Sie virtuellen StorSimple-Geräte mit Update 1.0 erstellen, konfigurieren, bereitstellen und verwalten."
+   pageTitle="Virtuelles StorSimple-Gerät – Update 1 | Microsoft Azure"
+	description="Erfahren Sie, wie Sie ein virtuelles StorSimple-Gerät in einem virtuellen Microsoft Azure-Netzwerk erstellen, bereitstellen und verwalten. (Gilt für StorSimple Update 1)."
 	services="storsimple"
 	documentationCenter=""
 	authors="alkohli"
@@ -12,10 +12,10 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"
 	ms.workload="NA"
-	ms.date="08/21/2015"
+	ms.date="09/02/2015"
 	ms.author="alkohli"/>
 
-# StorSimple – virtuelles Gerät
+# Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure
 
 [AZURE.INCLUDE [storsimple-version-selector-sva](../../includes/storsimple-version-selector-sva.md)]
 
@@ -36,11 +36,11 @@ Das virtuelle StorSimple-Gerät ist eine zusätzliche, in der Microsoft Azure St
 
 - Herunterfahren oder Löschen virtueller Geräte
 
-Dieses Lernprogramm gilt für alle virtuellen StorSimple-Geräte mit Update 1.
+Dieses Tutorial gilt für alle virtuellen StorSimple-Geräte mit Update 1.
 
 ## Unterschiede zwischen virtuellem und physischem Gerät
 
-Das virtuelle StorSimple-Gerät ist eine reine Softwareversion von StorSimple, die auf einem einzelnen Knoten eines virtuellen Microsoft Azure-Computers ausgeführt wird. Das virtuelle Gerät unterstützt Notfallwiederherstellungsszenarios, in denen das physische Gerät nicht verfügbar ist. Zudem eignet es sich für Cloud-Entwicklungs- und Testszenarios.
+Das virtuelle StorSimple-Gerät ist eine reine Softwareversion von StorSimple, die auf einem einzelnen Knoten eines virtuellen Microsoft Azure-Computers ausgeführt wird. Das virtuelle Gerät unterstützt Notfallwiederherstellungsszenarios, in denen das physische Gerät nicht verfügbar ist. Zudem eignet es sich für Entwicklungs- und Testszenarien in der Cloud.
 
 ### Unterschiede im Vergleich zum physischen Gerät
 
@@ -74,14 +74,14 @@ Bevor Sie das virtuelle Gerät bereitstellen, müssen Sie in Ihrer Umgebung die 
 - Es empfiehlt sich, die von Azure bereitgestellten DNS-Standardserver zu verwenden, anstatt einen eigenen DNS-Servernamen anzugeben. Wenn Ihre DNS-Servername nicht gültig ist, schlägt die Erstellung des virtuellen Geräts fehl.
 - Punkt-zu-Standort und Standort-zu-Standort sind optional, aber nicht erforderlich. Sie können diese Optionen gegebenenfalls für erweiterte Szenarios konfigurieren. 
 
->[AZURE.IMPORTANT]**Stellen Sie sicher, dass sich das virtuelle Netzwerk in der gleichen Region befindet, wie die mit dem Gerät zu verwendenden Cloud-Speicherkonten.**
+>[AZURE.IMPORTANT]**Stellen Sie sicher, dass sich das virtuelle Netzwerk in der gleichen Region befindet, wie die mit dem Gerät zu verwendenden Cloudspeicherkonten.**
 
 - Sie können [virtuelle Azure-Computer](../virtual-machines/virtual-machines-about.md) (Hostserver) im virtuellen Netzwerk erstellen, die die vom virtuellen Gerät verfügbar gemachten Volumes verwenden können. Diese Server müssen die folgenden Anforderungen erfüllen: 							
 	- Es muss sich um virtuelle Windows- oder Linux-Computer mit iSCSI-Initiatorsoftware handeln.
 	- Sie müssen im gleichen virtuellen Netzwerk wie das virtuelle Gerät ausgeführt werden.
 	- Das iSCSI-Ziel des virtuellen Geräts muss über die interne IP-Adresse des virtuellen Geräts eine Verbindung herstellen können.
 
-- Stellen Sie sicher, dass die iSCSI-Unterstützung und der Cloud-Datenverkehr im gleichen virtuellen Netzwerk konfiguriert wurden.
+- Stellen Sie sicher, dass die iSCSI-Unterstützung und der Clouddatenverkehr im gleichen virtuellen Netzwerk konfiguriert wurden.
 
 ### StorSimple-Anforderungen
 
@@ -175,7 +175,7 @@ Dieser Parameter enthält die Anmeldeinformationen, die Ihr virtuelles Gerät ve
 
 #### Konfigurieren des StorSimple Snapshot Managers
 
-Der StorSimple-Momentaufnahme-Manager befindet sich auf dem Windows-Host und ermöglicht Administratoren die Verwaltung der Sicherungen Ihres StorSimple-Geräts in Form von lokalen und Cloud-Momentaufnahmen.
+Der StorSimple-Momentaufnahme-Manager befindet sich auf dem Windows-Host und ermöglicht Administratoren die Verwaltung der Sicherungen Ihres StorSimple-Geräts in Form von lokalen und Cloudmomentaufnahmen.
 
 >[AZURE.NOTE]Für das virtuelle Gerät handelt es sich beim Windows-Host um einen virtuellen Azure-Computer.
 
@@ -267,7 +267,7 @@ Das Deaktivieren eines virtuellen Geräts führt zu den folgenden Aktionen:
 
 - Der bei der Bereitstellung erstellte gehostete Dienst und das virtuelle Netzwerk werden beibehalten. Wenn diese nicht verwendet werden, sollten sie manuell gelöscht werden.
 
-- Für das virtuelle Gerät erstellte Cloud-Momentaufnahmen werden beibehalten.
+- Für das virtuelle Gerät erstellte Cloudmomentaufnahmen werden beibehalten.
 
 Sobald das Gerät auf der Seite des StorSimple-Manager-Diensts als deaktiviert angezeigt wird, können Sie das virtuelle Gerät aus der Geräteliste des StorSimple-Manager-Diensts löschen.
 
@@ -331,13 +331,13 @@ Wenn Sie Ihr virtuelles Gerät neu einrichten möchten, deaktivieren und lösche
 
 ## Ausführen eines Failovers auf das virtuelle Gerät
 
-Die Notfallwiederherstellung ist eines der wichtigsten Szenarios, für die das virtuelle StorSimple-Gerät entwickelt wurde. In diesem Szenario sind das physische StorSimple-Gerät oder das gesamte Datencenter möglicherweise nicht verfügbar. Glücklicherweise können Sie mit einem virtuellen Gerät den Betrieb an einem anderen Speicherort wiederherstellen. Bei der Notfallwiederherstellung wechseln die Volumecontainer vom Quellgerät den Eigentümer und werden auf das virtuelle Gerät übertragen. Als Voraussetzung für die Notfallwiederherstellung müssen ein virtuelles Gerät erstellt und konfiguriert, alle Volumes innerhalb der Volumecontainer offline geschaltet und dem Volumecontainer eine Cloud-Momentaufnahme zugeordnet sein.
+Die Notfallwiederherstellung ist eines der wichtigsten Szenarios, für die das virtuelle StorSimple-Gerät entwickelt wurde. In diesem Szenario sind das physische StorSimple-Gerät oder das gesamte Datencenter möglicherweise nicht verfügbar. Glücklicherweise können Sie mit einem virtuellen Gerät den Betrieb an einem anderen Speicherort wiederherstellen. Bei der Notfallwiederherstellung wechseln die Volumecontainer vom Quellgerät den Eigentümer und werden auf das virtuelle Gerät übertragen. Als Voraussetzung für die Notfallwiederherstellung müssen ein virtuelles Gerät erstellt und konfiguriert, alle Volumes innerhalb der Volumecontainer offline geschaltet und dem Volumecontainer eine Cloudmomentaufnahme zugeordnet sein.
 
 >[AZURE.NOTE]Ein Failover oder Klonen eines Geräts mit Update 1 auf ein Gerät mit Software vor Update 1 ist nicht möglich. Wenn Sie ein Zielgerät mit Software vor Update 1 auswählen, werden Sie benachrichtigt, dass Sie das Zielgerät vor der Durchführung des Failovers aktualisieren müssen.
 
 ### So stellen Sie Ihr physisches Gerät auf dem virtuellen StorSimple-Gerät wieder her
 
-1. Stellen Sie sicher, dass der Volumecontainer für das Failover über zugeordnete Cloud-Momentaufnahmen verfügt.
+1. Stellen Sie sicher, dass der Volumecontainer für das Failover über zugeordnete Cloudmomentaufnahmen verfügt.
 
 2. Öffnen Sie die Seite **Geräte**, und klicken Sie dann auf die Registerkarte **Volumecontainer**.
 
@@ -347,7 +347,7 @@ Die Notfallwiederherstellung ist eines der wichtigsten Szenarios, für die das v
 
 5. Wählen Sie auf der Seite **Geräte** das Gerät aus, für das ein Failover durchgeführt werden soll, und klicken Sie anschließend auf **Failover**, um den Assistenten **Gerätefailover** zu öffnen.
 
-6. Wählen Sie unter **Volumecontainer für Failover auswählen** die Volumecontainer aus, für die ein Failover durchgeführt werden soll. In dieser Liste werden nur offline geschaltete Volumecontainer angezeigt, die eine Cloud-Momentaufnahme beinhalten. Wenn ein erwarteter Volumecontainer nicht angezeigt wird, brechen Sie den Assistenten ab, und stellen Sie sicher, dass dieser offline ist.
+6. Wählen Sie unter **Volumecontainer für Failover auswählen** die Volumecontainer aus, für die ein Failover durchgeführt werden soll. In dieser Liste werden nur offline geschaltete Volumecontainer angezeigt, die eine Cloudmomentaufnahme beinhalten. Wenn ein erwarteter Volumecontainer nicht angezeigt wird, brechen Sie den Assistenten ab, und stellen Sie sicher, dass dieser offline ist.
 
 7. Wählen Sie auf der nächsten Seite unter **Choose a target device for the volumes in the selected containers** das virtuelle Gerät aus der Dropdownliste der verfügbaren Geräte aus. Nur die Geräte, die über die verfügbare Kapazität verfügen, werden in der Liste angezeigt.
 
@@ -383,4 +383,4 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 Erfahren Sie, wie Sie [StorSimple-Volumes aus einem Sicherungssatz wiederherstellen](storsimple-restore-from-backup-set.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden von Hudson mit dem Azure-Blobdienst | Microsoft Azure" 
-	description="Beschreibt die Verwendung von Hudson mit dem Azure Blob-Speicher als Repository für Buildartefakte." 
-	services="storage" 
-	documentationCenter="java" 
-	authors="rmcmurray" 
-	manager="wpickett" 
+	pageTitle="Verwenden von Hudson mit dem Azure-Blobdienst | Microsoft Azure"
+	description="Beschreibt die Verwendung von Hudson mit dem Azure Blob-Speicher als Repository für Buildartefakte."
+	services="storage"
+	documentationCenter="java"
+	authors="rmcmurray"
+	manager="wpickett"
 	editor="jimbe"/>
 
 <tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="06/03/2015" 
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="robmcm"/>
 
 #Verwenden von Azure-Speicher mit einer Hudson-Lösung für die fortlaufende Integration
@@ -168,4 +168,4 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

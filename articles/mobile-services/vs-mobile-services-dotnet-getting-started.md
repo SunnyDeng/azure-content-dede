@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="" 
-	description="Beschreibt die ersten Schritte mit Azure Mobile Services in einem .NET-Projekt in Visual Studio." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="patshea123" 
-	manager="douge" 
+<properties
+	pageTitle=""
+	description="Beschreibt die ersten Schritte mit Azure Mobile Services in einem .NET-Projekt in Visual Studio."
+	services="mobile-services"
+	documentationCenter=""
+	authors="patshea123"
+	manager="douge"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="05/22/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="vs-getting-started"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="patshea123"/>
 
 # Erste Schritte mit Mobile Services (.NET-Projekte)
@@ -47,22 +47,22 @@ Mit dem folgenden Code wird ein Verweis auf eine Tabelle (`todoTable`) erstellt,
 
 Dieser Code funktioniert, wenn die Berechtigungen für Ihre Tabelle auf **Jeder mit dem Anwendungsschlüssel** festgelegt wurden. Wenn Sie die Berechtigungen ändern, um Ihren mobilen Dienst zu sichern, müssen Sie Unterstützung für Benutzerauthentifizierung hinzufügen. Weitere Informationen finden Sie unter [Erste Schritte mit Authentifizierung](mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users.md).
 
-#####Hinzufügen eines Tabellenelements 
+#####Hinzufügen eines Tabellenelements
 
 Fügen Sie ein neues Element in eine Datentabelle ein.
 
 	TodoItem todoItem = new TodoItem() { Text = "My first to do item", Complete = false };
 	await todoTable.InsertAsync(todoItem);
 
-#####Lesen oder Abfragen einer Tabelle 
+#####Lesen oder Abfragen einer Tabelle
 
 Mit dem folgenden Code werden alle Elemente einer Tabelle abgefragt. Beachten Sie, dass nur die erste Seite der Daten zurückgegeben wird. Standardmäßig sind dies 50 Elemente. Sie können die gewünschte Seitengröße übergeben, da es sich um einen optionalen Parameter handelt.
 
     List<TodoItem> items;
     try
     {
-        // Query that returns all items.   
-        items = await todoTable.ToListAsync();             
+        // Query that returns all items.
+        items = await todoTable.ToListAsync();
     }
     catch (MobileServiceInvalidOperationException e)
     {
@@ -85,4 +85,4 @@ Löschen Sie eine Zeile in der Datenbank. Das Parameterelement ist das TodoItem-
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

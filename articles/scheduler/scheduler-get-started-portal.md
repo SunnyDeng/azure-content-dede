@@ -1,47 +1,47 @@
 <properties
- pageTitle="Erste Schritte mit Scheduler im Verwaltungsportal"
- description=""
- services="scheduler"
- documentationCenter=".NET"
- authors="krisragh"
- manager="dwrede"
- editor=""/>
+ pageTitle="Erste Schritte mit Azure Scheduler im Azure-Portal | Microsoft Azure"
+	description=""
+	services="scheduler"
+	documentationCenter=".NET"
+	authors="krisragh"
+	manager="dwrede"
+	editor=""/>
 <tags
  ms.service="scheduler"
- ms.workload="infrastructure-services"
- ms.tgt_pltfrm="na"
- ms.devlang="dotnet"
- ms.topic="hero-article" 
- ms.date="08/04/2015"
- ms.author="krisragh"/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="hero-article"
+	ms.date="08/18/2015"
+	ms.author="krisragh"/>
 
-# Erste Schritte mit Scheduler im Verwaltungsportal
+# Erste Schritte mit Azure Scheduler im Azure-Portal
 
-## Konfigurieren von Azure Scheduler mithilfe des Azure-Verwaltungsportals zur schnellen und einfachen Auftragserstellung
+## Konfigurieren von Scheduler mit dem Azure-Portal zur schnellen und einfachen Auftragserstellung
 
-Für dieses Lernprogramm benötigen Sie ein Azure-Konto mit aktiviertem Azure Scheduler-Feature. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Informationen hierzu finden Sie unter [Kostenlose Azure-Testversion](https://msdn.microsoft.com/library/).
+Für dieses Lernprogramm benötigen Sie ein Azure-Konto mit aktiviertem Azure Scheduler-Feature. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Informationen hierzu finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
 
 ## Erste Schritte
 
-Über das Azure-Verwaltungsportal können Sie ganz einfach Aufträge und Auftragssammlungen für Azure Scheduler erstellen. Dieses Lernprogramm erläutert das Erstellen der Auftragssammlung zum Speichern von Aufträgen sowie das Erstellen eines Auftrags in einer Auftragssammlung und bietet eine Übersicht über die Aufgaben für die Auftragsüberwachung und -verwaltung, die im Verwaltungsportal zur Verfügung stehen. In diesem Lernprogramm werden keine Azure-Vorkenntnisse vorausgesetzt.
+Über das Azure-Portal können Sie ganz einfach Aufträge und Auftragssammlungen für Azure Scheduler erstellen. Dieses Tutorial erläutert das Erstellen der Auftragssammlung zum Speichern von Aufträgen sowie das Erstellen eines Auftrags in einer Auftragssammlung und bietet eine Übersicht über die Aufgaben für die Auftragsüberwachung und -verwaltung, die im Portal zur Verfügung stehen. In diesem Lernprogramm werden keine Azure-Vorkenntnisse vorausgesetzt.
 
-Wenn Sie das Azure-Verwaltungsportal zum ersten Mal öffnen, ist automatisch die Registerkarte **ALL ITEMS** geöffnet. Die Spalten auf der Registerkarte **ALL ITEMS** können sortiert werden. Klicken Sie zum Anzeigen Ihrer Scheduler-Aufträge und -Auftragssammlungen auf die Registerkarte **SCHEDULER**.
+Wenn Sie das Azure-Portal zum ersten Mal öffnen, ist automatisch die Registerkarte **ALLE ELEMENTE** geöffnet. Die Spalten auf der Registerkarte **ALL ITEMS** können sortiert werden. Klicken Sie zum Anzeigen Ihrer Scheduler-Aufträge und -Auftragssammlungen auf die Registerkarte **SCHEDULER**.
 
 ![][1]
 
 ## Erstellen einer Auftragssammlung und eines Auftrags
 
-1.  Melden Sie sich im [Verwaltungsportal](https://manage.windowsazure.com/) an.  
+1.  Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) an.  
 
-2.  Klicken Sie auf **App Services**, klicken Sie auf **Neu erstellen**, zeigen Sie auf **Scheduler**, und klicken Sie anschließend auf **Benutzerdefiniert erstellen**. <br /><br /> ![][2]
+2.  Klicken Sie auf **App Services** > **Neu erstellen** > **Scheduler** und dann auf **Benutzerdefiniert erstellen**. <br /><br /> ![][2]
 
-3.  Wählen Sie unter **Auftragssammlung** eine vorhandene Auftragssammlung aus, sofern Sie bereits eine Auftragssammlung erstellt haben und den Auftrag zu dieser Auftragssammlung hinzufügen möchten. Wählen Sie hierzu im Dropdownfeld **Auftragssammlung** den Namen der vorhandenen Auftragssammlung aus. Wenn noch keine Auftragssammlung vorhanden ist, der Sie den Auftrag hinzufügen möchten, wählen Sie **Neu erstellen**, und geben Sie einen Namen für Ihre neue Auftragssammlung ein.<br /><br /> ![][3]
+3.  Wählen Sie unter **Auftragssammlung** den Namen der vorhandenen Auftragssammlung in der Dropdownliste **Auftragssammlung** aus. Wenn noch keine Auftragssammlung vorhanden ist, der Sie den Auftrag hinzufügen möchten, wählen Sie **Neu erstellen**, und geben Sie einen Namen für Ihre neue Auftragssammlung ein.<br /><br /> ![][3]
 
 4.  Wählen Sie unter **Region** die geografische Region für die Auftragssammlung aus.
 
 5.  Klicken Sie auf den Pfeil, um die Auftragssammlung zu erstellen und mit der Auftragserstellung zu beginnen.
 
-6.  In diesem Beispiel erstellen wir einen einfachen Auftrag mit einer GET-Anforderung für „http://www.microsoft.com/“. Definieren Sie im Bildschirm „Auftragsaktion“ die folgenden Werte für die angeforderten Formularfelder:
+6.  In diesem Beispiel erstellen wir einen einfachen Auftrag mit einer GET-Anforderung für „http://www.microsoft.com/“. Legen Sie auf dem Bildschirm **Auftragsaktion** die folgenden Werte für die angeforderten Formularfelder fest:
 
     1.  **Name:** ` getmicrosoft`  
 
@@ -53,23 +53,21 @@ Wenn Sie das Azure-Verwaltungsportal zum ersten Mal öffnen, ist automatisch die
 
    	![][4]
 
-7.  Definieren Sie im nächsten Schritt einen Zeitplan. Der Auftrag kann natürlich auch als einmaliger Auftrag definiert werden, in diesem Beispiel verwenden wir aber einen Wiederholungszeitplan. Auf einigen Screenshots in diesem Lernprogramm ist zwar zur Veranschaulichung eine Wiederholung von einer Minute angegeben, wir verwenden aber eine Wiederholung von 12 Stunden.
+7.  Legen Sie nach dem Erstellen eines Auftrags einen Zeitplan fest. Der Auftrag kann natürlich auch als einmaliger Auftrag definiert werden, in diesem Beispiel verwenden wir aber einen Wiederholungszeitplan. Auf einigen Screenshots in diesem Lernprogramm ist zwar zur Veranschaulichung eine Wiederholung von einer Minute angegeben, wir verwenden aber eine Wiederholung von 12 Stunden.
 
     1.  **Wiederholen alle:** ` 12 Hours`  
 
-    2.  **Start:** ` Now`
+    2.  **Wird gestartet:** ` Now`
 
     3.  **Endet am:** ` Select date 2 days after current day and any time`
 
    	![][5]
 
-8.  Klicken Sie abschließend auf „OK“.
-
-9.  Die Erstellung der Auftragssammlung und des Auftrags kann etwas dauern. Sie können die Benachrichtigungen unten im Portal überwachen, um den Status zu überprüfen.
+8.  Klicken Sie auf **OK**. Die Erstellung des Auftrags und der Auftragssammlung kann eine Weile dauern. Sie können die Benachrichtigungen unten im Portal überwachen, um den Status zu überprüfen.
 
    	![][6]
 
-   	Nach der Erstellung des Auftrags und der Auftragssammlung erhalten Sie jeweils eine entsprechende Benachrichtigung. Der Auftrag wird im Scheduler-Abschnitt unter „Aufträge“ aufgeführt. Die Auftragssammlung wird im Abschnitt „Auftragssammlungen“ aufgeführt. Informationen zum Konfigurieren zusätzlicher erweiterter Einstellungen für den Auftrag finden Sie weiter unten im Abschnitt „Konfigurieren eines Auftrags“.
+   	Nach der Erstellung des Auftrags und der Auftragssammlung erhalten Sie jeweils eine Benachrichtigung, dass der Auftrag bzw. die Auftragssammlung erstellt wurde. Der Auftrag wird im Scheduler-Abschnitt unter „Aufträge“ aufgeführt. Die Auftragssammlung wird im Abschnitt „Auftragssammlungen“ aufgeführt. Informationen zum Konfigurieren zusätzlicher erweiterter Einstellungen für den Auftrag finden Sie weiter unten im Abschnitt „Konfigurieren eines Auftrags“.
 
    	![][7]
 
@@ -79,7 +77,7 @@ Erstellte Auftragssammlungen werden im Hauptverwaltungsbildschirm von Scheduler 
 
 ![][8]
 
-Wenn Sie auf eine Auftragssammlung klicken, erscheint ein neues Fenster mit folgenden Optionen:
+Wenn Sie auf eine Auftragssammlung klicken, wird ein neues Fenster mit folgenden Optionen angezeigt:
 
 1.  Dashboard  
 
@@ -93,7 +91,7 @@ Diese Registerkarten werden im Anschluss ausführlicher beschrieben:
 
 ### Dashboard
 
-Wenn Sie auf den Namen Ihrer Auftragssammlung klicken, erscheint die Registerkarte „Dashboard“. Auf dem Dashboard werden die folgenden Informationen angezeigt:
+Wenn Sie auf den Namen Ihrer Auftragssammlung klicken, wird die Registerkarte **Dashboard** angezeigt. Auf dem Dashboard werden die folgenden Informationen angezeigt:
 
 ![][9]
 
@@ -129,7 +127,7 @@ Eine Tabelle mit einer festen Liste mit Status- und Einstellungsmetriken. Diese 
 
 ### Skalieren
 
-Auf der Registerkarte „Skalieren“ können Sie die Einstellungen und die Dienstebene für Scheduler ändern.
+Auf der Registerkarte **Skalieren** können Sie die Einstellungen und die Dienstebene für Scheduler ändern.
 
 ![][10]
 
@@ -149,7 +147,7 @@ Azure Scheduler implementiert Kontingente auf der Grundlage mehrerer Bedingungen
 
 ### Verlauf
 
-Die Registerkarte „Verlauf“ enthält folgende Informationen für den ausgewählten Auftrag:
+Die Registerkarte **Verlauf** enthält folgende Informationen für den ausgewählten Auftrag:
 
 ![][11]
 
@@ -213,7 +211,7 @@ Folgende Leistungsindikatoren und Metriken stehen zur Verfügung:
 
 ### Konfigurieren eines Auftrags
 
-Wenn Sie im Auftragsbildschirm auf einen Auftrag klicken, können Sie diesen konfigurieren. So können Sie zusätzliche erweiterte Einstellungen konfigurieren, die im Schnellerstellungs-Assistenten nicht zur Verfügung stehen. Klicken Sie zum Konfigurieren eines Auftrags im Auftragsbildschirm neben dem Namen des Auftrags auf den Pfeil nach rechts.
+Wenn Sie auf dem Bildschirm **Aufträge** auf einen Auftrag klicken, können Sie diesen konfigurieren. So können Sie zusätzliche erweiterte Einstellungen konfigurieren, die im Schnellerstellungs-Assistenten nicht zur Verfügung stehen. Klicken Sie zum Konfigurieren eines Auftrags auf dem Bildschirm **Aufträge** neben dem Namen des Auftrags auf den Pfeil nach rechts.
 
 Auf der Auftragskonfigurationsseite können Sie die Einstellungen für den Auftrag aktualisieren. Im Anschluss sehen Sie die Auftragskonfigurationsseite für HTTP- und HTTPS-Aufträge. Bei HTTP- und HTTPS Auftragsaktionstypen können Sie für die Methode ein beliebiges zulässiges HTTP-Verb festlegen. Darüber hinaus können Sie die Header sowie grundlegende Authentifizierungsinformationen hinzufügen, löschen oder ändern.
 
@@ -223,27 +221,27 @@ Im Anschluss sehen Sie die Auftragskonfigurationsseite für Speicherwarteschlang
 
 ![][15]
 
-Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert werden. Sie können die Startzeit (Datum und Uhrzeit), den Wiederholungszeitplan und die Endzeit (Datum und Uhrzeit) ändern (sofern es sich um einen wiederkehrenden Auftrag handelt). Klicken Sie anschließend auf „Speichern“, um die vorgenommenen Änderungen zu speichern, oder auf „Verwerfen“, um die Änderungen zu verwerfen.
+Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert werden. Sie können die Startzeit (Datum und Uhrzeit), den Wiederholungszeitplan und die Endzeit (Datum und Uhrzeit) ändern (sofern es sich um einen wiederkehrenden Auftrag handelt). Klicken Sie anschließend auf **Speichern**, um die vorgenommenen Änderungen zu speichern, oder auf **Verwerfen**, um die Änderungen zu verwerfen.
 
-## Siehe auch
+## Weitere Informationen
 
  [Was ist Azure Scheduler?](scheduler-intro.md)
 
- [Scheduler Concepts, Terminology, and Entity Hierarchy](scheduler-concepts-terms.md) (in englischer Sprache)
+ [Scheduler-Konzepte, -Terminologie und -Entitätshierarchie](scheduler-concepts-terms.md)
 
- [Plans and Billing in Azure Scheduler](scheduler-plans-billing.md) (in englischer Sprache)
+ [Pläne und Abrechnung in Azure Scheduler](scheduler-plans-billing.md)
 
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](scheduler-advanced-complexity.md) (in englischer Sprache)
+ [Erstellen komplexer Zeitpläne und erweiterter Serien mit Azure Scheduler](scheduler-advanced-complexity.md)
 
- [Zeitplanungsmodul-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+ [Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
 
  [Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
 
- [Scheduler High-Availability and Reliability](scheduler-high-availability-reliability.md) (in englischer Sprache)
+ [Scheduler – hohe Verfügbarkeit und Zuverlässigkeit](scheduler-high-availability-reliability.md)
 
- [Scheduler Limits, Defaults, and Error Codes](scheduler-limits-defaults-errors.md) (in englischer Sprache)
+ [Einschränkungen, Standardwerte und Fehlercodes für Scheduler](scheduler-limits-defaults-errors.md)
 
- [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
+ [Ausgehende Authentifizierung von Scheduler](scheduler-outbound-authentication.md)
 
 
 
@@ -262,6 +260,5 @@ Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert wer
 [13]: ./media/scheduler-get-started-portal/scheduler-get-started-portal013.png
 [14]: ./media/scheduler-get-started-portal/scheduler-get-started-portal014.png
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

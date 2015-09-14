@@ -1,22 +1,20 @@
 <properties
    pageTitle="Installieren von .NET in einer Clouddienstrolle"
-   description="Dieser Artikel beschreibt die manuelle Installation eines .NET Frameworks in Clouddienstweb- und Workerrollen."
-   services="cloud-services"
-   documentationCenter=".net"
-   authors="sbtron"
-   manager="timlt"
-   editor=""/>
-
+	description="Dieser Artikel beschreibt die manuelle Installation eines .NET Frameworks in Clouddienstweb- und Workerrollen."
+	services="cloud-services"
+	documentationCenter=".net"
+	authors="sbtron"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="cloud-services"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/03/2015"
-   ms.author="saurabh"/>
-
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="08/03/2015"
+	ms.author="saurabh"/>
 
 # Installieren von .NET in einer Clouddienstrolle 
 
@@ -46,14 +44,12 @@ Mit Startaufgaben können Sie Vorgänge ausführen, bevor eine Rolle gestartet w
 	```xml
 	 <LocalResources>
 	    <LocalStorage name="InstallLogs" sizeInMB="5" cleanOnRoleRecycle="false" />
-
 	 </LocalResources>
 	 <Startup>
 	    <Task commandLine="install.cmd" executionContext="elevated" taskType="simple">
 	        <Environment>
 	        <Variable name="PathToInstallLogs">
 	        <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='InstallLogs']/@path" />
-
 	        </Variable>
 	        </Environment>
 	    </Task>
@@ -90,7 +86,7 @@ Mit Startaufgaben können Sie Vorgänge ausführen, bevor eine Rolle gestartet w
 	set timehour=%time:~0,2%
 	set timestamp=%date:~-4,4%%date:~-10,2%%date:~-7,2%-%timehour: =0%%time:~3,2%
 	set startuptasklog=%PathToInstallLogs%startuptasklog-%timestamp%.txt
-	set netfxinstallerlog = %PathToInstallLogs%NetFXInstallerLog-%timestamp%
+	set netfxinstallerlog=%PathToInstallLogs%NetFXInstallerLog-%timestamp%
 	echo Logfile generated at: %startuptasklog% >> %startuptasklog%
 	
 	REM ***** Check if .NET is installed *****
@@ -120,7 +116,6 @@ Optional können Sie die Azure-Diagnose so konfigurieren, dass alle Protokolldat
 <DataSources>
     <DirectoryConfiguration containerName="netfx-install">
     <LocalResource name="InstallLogs" relativePath="."/>
-
     </DirectoryConfiguration>
 </DataSources>
 ```
@@ -147,4 +142,4 @@ Wenn Sie Ihren Dienst bereitstellen, wird die Startaufgabe ausgeführt und das .
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

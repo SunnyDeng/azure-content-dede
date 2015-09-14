@@ -1,19 +1,19 @@
 <properties 
- pageTitle="Verwalten des Ablaufs von Clouddienstinhalten in Azure CDN (Content Delivery Network)" 
- description="" 
- services="cdn" 
- documentationCenter=".NET" 
- authors="zhangmanling" 
- manager="dwrede" 
- editor=""/>
+ pageTitle="Verwalten des Ablaufs von Clouddienstinhalten in Azure CDN (Content Delivery Network)"
+	description=""
+	services="cdn"
+	documentationCenter=".NET"
+	authors="zhangmanling"
+	manager="dwrede"
+	editor=""/>
 <tags 
- ms.service="cdn" 
- ms.workload="media" 
- ms.tgt_pltfrm="na" 
- ms.devlang="dotnet" 
- ms.topic="article" 
- ms.date="04/25/2015" 
- ms.author="mazha"/>
+ ms.service="cdn"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="mazha"/>
 
 #Verwalten des Ablaufs von Clouddienstinhalten in Azure CDN (Content Delivery Network)
 
@@ -50,4 +50,4 @@ Fügen Sie beispielsweise folgenden Code hinzu, um Inhalt eine Stunde lang zwisc
 
 [Verwalten des Ablaufs von Blobinhalten in Azure CDN (Content Delivery Network)](./cdn-manage-expiration-of-blob-content.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

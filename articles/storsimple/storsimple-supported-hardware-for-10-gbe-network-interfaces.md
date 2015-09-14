@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät"
-   description="Hier werden die unterstützten Transceiver, Kabel und Switches für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät beschrieben."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+   pageTitle="Hardware für StorSimple-10-GbE-Schnittstellen | Microsoft Azure"
+	description="Beschreibt die unterstützten SFP-Transceiver, Kabel und Switches für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/17/2015"
-   ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/27/2015"
+	ms.author="alkohli"/>
 
 # Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät
 
@@ -112,4 +112,4 @@ Die folgende Tabelle enthält die Switches, die von Mellanox unterstützt werden
 
 Weitere Informationen zu [StorSimple-Hardwarekomponenten und ihrem Status](storsimple-monitor-hardware-status.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="article"
-	ms.date="03/20/2015"
+	ms.date="08/31/2015"
 	ms.author="tomfitz"/>
 
 #Herunterladen des Azure SDK für PHP
@@ -22,7 +22,7 @@
 
 Das Azure SDK für PHP enthält Komponenten, mit deren Hilfe Sie PHP-Anwendungen für Azure entwickeln, bereitstellen und verwalten können. insbesondere enthält das Azure SDK für PHP Folgendes:
 
-* **Die PHP-Clientbibliotheken für Azure**. Diese Basisklassenbibliotheken bieten eine Schnittstelle für den Zugriff auf Azure-Funktionen wie Datenverwaltungs- und Cloud-Dienste.  
+* **Die PHP-Clientbibliotheken für Azure**. Diese Basisklassenbibliotheken bieten eine Schnittstelle für den Zugriff auf Azure-Funktionen wie Datenverwaltungs- und Clouddienste.  
 * **Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows (Azure CLI)** Dies ist eine Gruppe von Befehlen zum Bereitstellen und Verwalten von Azure-Diensten wie Azure-Websites und virtuellen Azure-Computern. Die Azure-Befehlszeilenschnittstelle funktioniert auf allen Plattformen, z. B. Mac, Linux und Windows.
 * **Azure PowerShell (nur Windows)**. Dies ist eine Gruppe von PowerShell-Cmdlets zum Bereitstellen und Verwalten von Azure-Diensten wie Clouddiensten und virtuellen Computern.
 * **Die Azure-Emulatoren (nur Windows)**. Die Rechen- und Speicheremulatoren sind lokale Emulatoren von Datenverwaltungs- und Clouddiensten, mit denen Sie eine Anwendung lokal testen können. Die Azure-Emulatoren laufen nur unter Windows.
@@ -103,18 +103,10 @@ Informationen zur Verwendung von Azure finden Sie unter [Verwenden von Azure Pow
 
 ##Azure-Befehlszeilenschnittstelle
 
-Die Azure-Befehlszeilenschnittstelle ist eine Gruppe von Befehlen zum Bereitstellen und Verwalten von Azure-Diensten wie Azure-Websites und virtuellen Azure-Computern. In der folgenden Liste wird beschrieben, wie Sie die Azure-Befehlszeilenschnittstelle abhängig von Ihrem Betriebssystem installieren:
-
-* **Mac**: Laden Sie den Azure SDK Installer hier herunter: [http://go.microsoft.com/fwlink/?LinkId=252249][mac-installer]. Öffnen Sie die heruntergeladene PKG-Datei, und führen Sie die Installationsschritte durch, zu denen Sie aufgefordert werden.
-
-* **Linux**: Installieren Sie die neueste Version von [Node.js][nodejs-org] (siehe [Install Node.js via Package Manager][install-node-linux] (Installieren von Node.js mithilfe des Paket-Managers, in englischer Sprache)), und führen Sie dann den folgenden Befehl aus:
-
-		npm install azure-cli -g
-
-	> [AZURE.NOTE]Unter Umständen müssen Sie diesen Befehl mit erhöhten Rechten ausführen: `sudo npm install azure-cli -g`
+Die Azure-Befehlszeilenschnittstelle ist eine Gruppe von Befehlen zum Bereitstellen und Verwalten von Azure-Diensten wie Azure-Websites und virtuellen Azure-Computern. Informationen zum Installieren der Azure-Befehlszeilenschnittstelle finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
 
 
-Informationen zur Verwendung der Azure-Befehlszeilenschnittstelle finden Sie unter [Installieren und Konfigurieren der plattformübergreifenden Azure-Befehlszeilenschnittstelle][azure cli].
+
 
 [install-php]: http://www.php.net/manual/en/install.php
 [composer-github]: https://github.com/composer/composer
@@ -136,4 +128,4 @@ Informationen zur Verwendung der Azure-Befehlszeilenschnittstelle finden Sie unt
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

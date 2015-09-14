@@ -1,26 +1,30 @@
 <properties 
-	pageTitle="Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management" 
-	description="Erfahren Sie, wie Sie den Ablauf von Aufrufen mit dem API-Inspektor in Azure API Management verfolgen können." 
-	services="api-management" 
-	documentationCenter="" 
-	authors="steved0x" 
-	manager="dwrede" 
+	pageTitle="Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management"
+	description="Erfahren Sie, wie Sie den Ablauf von Aufrufen mit dem API-Inspektor in Azure API Management verfolgen können."
+	services="api-management"
+	documentationCenter=""
+	authors="steved0x"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="api-management" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/24/2015" 
+	ms.service="api-management"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/31/2015"
 	ms.author="sdanie"/>
 
 # Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management
 
-API Management stellt einen API-Inspektor bereit, der Sie bei Debugging und Problembehandlung Ihrer APIs unterstützt. Der API-Inspektor kann programmgesteuert in Ihren Anwendungen eingesetzt oder direkt aus dem Entwicklerportal aufgerufen werden. Hier finden Sie eine schrittweise Anleitung für die Nutzung des API-Inspektors.
+API Management stellt einen API-Inspektor bereit, der Sie bei Debugging und Problembehandlung Ihrer APIs unterstützt. Der API-Inspektor kann programmgesteuert eingesetzt oder direkt aus dem Entwicklerportal aufgerufen werden.
 
->[AZURE.NOTE]Zusätzlich zur Ablaufverfolgung von Vorgängen verfolgt der API-Inspektor auch Auswertungen von [Richtlinienausdrücken](https://msdn.microsoft.com/library/azure/dn910913.aspx). Eine Demo finden Sie in der [Cloud Cover-Episode 177 zu weiteren API Management-Features mit Vlad Vinogradsky](https://azure.microsoft.com/documentation/videos/episode-177-more-api-management-features-with-vlad-vinogradsky/) (führen Sie einen schnellen Vorlauf bis 21:00 durch).
+Zusätzlich zur Ablaufverfolgung von Vorgängen verfolgt der API-Inspektor auch Auswertungen von [Richtlinienausdrücken](https://msdn.microsoft.com/library/azure/dn910913.aspx). Eine Demonstration finden Sie in der [Cloud Cover-Episode 177 zu weiteren API Management-Features](https://azure.microsoft.com/documentation/videos/episode-177-more-api-management-features-with-vlad-vinogradsky/) (führen Sie einen schnellen Vorlauf bis 21:00 durch).
+
+Hier finden Sie eine schrittweise Anleitung für die Nutzung des API-Inspektors.
+
+>[AZURE.NOTE]API-Inspektor-Ablaufverfolgungen stehen nur den [Administratoren](api-management-howto-create-groups.md) Ihrer API Management-Dienstinstanz zur Verfügung. API-Inspektor-Ablaufverfolgungen werden nur zurückgegeben, wenn Aufrufe an ein [geschütztes Produkt](api-management-howto-add-products.md) erfolgen, für das ein Abonnementschlüssel erforderlich ist.
 
 ## <a name="trace-call"> </a> Verwenden des API-Inspektors zum Verfolgen von Aufrufen
 
@@ -226,7 +230,7 @@ Laden Sie die Ablaufverfolgungsdatei über die **ocp-apim-trace-location**-URL h
 ## <a name="next-steps"> </a>Nächste Schritte
 
 -	Lesen Sie die anderen Themen im Lernprogramm [Erste Schritte bei der erweiterten API-Konfiguration][].
--	Eine Demo zu Richtlinienausdrücken für die Ablaufverfolgung finden Sie in der [Cloud Cover-Episode 177 zu weiteren API Management-Features mit Vlad Vinogradsky](https://azure.microsoft.com/documentation/videos/episode-177-more-api-management-features-with-vlad-vinogradsky/). Führen Sie einen schnellen Vorlauf bis 21:00 durch, um die Demo anzuzeigen.
+-	Eine Demonstration zu Richtlinienausdrücken für die Ablaufverfolgung finden Sie in der [Cloud Cover-Episode 177 zu weiteren API Management-Features](https://azure.microsoft.com/documentation/videos/episode-177-more-api-management-features-with-vlad-vinogradsky/). Führen Sie einen schnellen Vorlauf bis 21:00 durch, um die Demo anzuzeigen.
 
 >[AZURE.VIDEO episode-177-more-api-management-features-with-vlad-vinogradsky]
 
@@ -257,4 +261,4 @@ Laden Sie die Ablaufverfolgungsdatei über die **ocp-apim-trace-location**-URL h
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

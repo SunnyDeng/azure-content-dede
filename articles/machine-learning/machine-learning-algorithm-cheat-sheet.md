@@ -1,7 +1,6 @@
 <properties
 	pageTitle="Machine Learning Cheat Sheet für Algorithmen | Microsoft Azure"
 	description="Eine druckbare Version des Machine Learning Cheat Sheet für Algorithmen, mit dem Sie den richtigen Algorithmus für Ihr Vorhersagemodell in Azure Machine Learning Studio auswählen können."
-	keywords="algorithm cheat sheet,cheat sheet,machine learning algorithm"
 	services="machine-learning"
 	documentationCenter=""
 	authors="brohrer"
@@ -15,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/10/2015"
-	ms.author="brohrer;garye" />
+	ms.author="brohrer;garye"/>
 
 
 # Machine Learning – Cheat Sheet für Algorithmen für Microsoft Azure Machine Learning Studio
@@ -34,7 +33,7 @@ Laden Sie das Cheat Sheet für Algorithmen für maschinelles Lernen herunter, mi
 
 ![Machine Learning Cheat Sheet für Algorithmen: Wie wähle ich einen Algorithmus für maschinelles Lernen aus?][cheat-sheet]
 
-[cheat-sheet]: ./media/machine-learning-algorithm-cheat-sheet/cheat-sheet-small_v_0_6-01.png
+[cheat-sheet]: ./media/machine-learning-algorithm-cheat-sheet/machine-learning-algorithm-cheat-sheet-small_v_0_6-01.png
 
 
 ## Weitere Hilfe zu Algorithmen
@@ -85,4 +84,4 @@ Laden Sie das Cheat Sheet für Algorithmen für maschinelles Lernen herunter, mi
 [k-means-clustering]: https://msdn.microsoft.com/library/azure/5049a09b-bd90-4c4e-9b46-7c87e3a36810/
 [one-vs-all-multiclass]: https://msdn.microsoft.com/library/azure/7191efae-b4b1-4d03-a6f8-7205f87be664/
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Aufrufen einer benutzerdefinierten API von einem Windows Store-Client - Mobile Services" 
-	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer Windows Store-App aufrufen, die Azure Mobile Services verwendet." 
-	services="mobile-services" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Aufrufen einer benutzerdefinierten API von einem Windows Store-Client - Mobile Services"
+	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer Windows Store-App aufrufen, die Azure Mobile Services verwendet."
+	services="mobile-services"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-store" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows-store"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="glenga"/>
 
 # Aufrufen einer benutzerdefinierten API aus dem Client
@@ -55,6 +55,5 @@ Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-javascript-backend-windows-universal-dotnet-get-started-data.md
 [Define a custom API that supports periodic notifications]: mobile-services-windows-store-dotnet-create-pull-notifications.md
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

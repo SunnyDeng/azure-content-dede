@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Azure Notification Hubs – Sichere Pushbenachrichtigungen" 
-	description="Erfahren Sie mehr über das Senden von sicheren Pushbenachrichtigungen in Azure. Die Codebeispiele wurden in C# mithilfe der .NET-API geschrieben." 
-	documentationCenter="windows" 
-	authors="wesmc7777" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="Azure Notification Hubs – Sichere Pushbenachrichtigungen"
+	description="Erfahren Sie mehr über das Senden von sicheren Pushbenachrichtigungen in Azure. Die Codebeispiele wurden in C# mithilfe der .NET-API geschrieben."
+	documentationCenter="windows"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""
 	services="notification-hubs"/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="windows" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="06/02/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="windows"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="wesmc"/>
 
 #Azure Notification Hubs – Sichere Pushbenachrichtigungen
@@ -75,7 +75,7 @@ Dieses Lernprogramm zu sicheren Pushbenachrichtigungen veranschaulicht das siche
 		using Windows.ApplicationModel.Background;
 
 4. Klicken Sie im Menü **Datei** in Visual Studio auf **Save All**.
-		
+
 ## Erstellen der Push-Hintergrundkomponente
 
 Im nächsten Schritt erstellen Sie die Push-Hintergrundkomponente.
@@ -96,11 +96,11 @@ Im nächsten Schritt erstellen Sie die Push-Hintergrundkomponente.
         		public string Payload { get; set; }
         		public bool Read { get; set; }
     		}
-    
+
 		    public sealed class PushBackgroundTask : IBackgroundTask
     		{
         		private string GET_URL = "{back-end endpoint}/api/notifications/";
-		
+
         		async void IBackgroundTask.Run(IBackgroundTaskInstance taskInstance)
 		        {
         		    // Store the content received from the notification so it can be retrieved from the UI.
@@ -161,7 +161,7 @@ Im nächsten Schritt erstellen Sie die Push-Hintergrundkomponente.
 	![][3]
 
 13. Klicken Sie in **Package.appxmanifest** auf das Menü **Deklarationen** im oberen Bereich. Klicken Sie im Dropdownmenü **Verfügbare Deklarationen** auf **Hintergrundaufgaben**, und klicken Sie dann auch **Hinzufügen**.
- 
+
 14. Aktivieren Sie in **Package.appxmanifest** unter **Eigenschaften** die Option **Pushbenachrichtigung**.
 
 15. Geben Sie in **Package.appxmanifest** unter **App-Einstellungen** **PushBackgroundComponent.PushBackgroundTask** in das Feld **Einstiegspunkt** ein.
@@ -185,6 +185,5 @@ Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
 [3]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push3.png
 [12]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push12.png
 [13]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push13.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

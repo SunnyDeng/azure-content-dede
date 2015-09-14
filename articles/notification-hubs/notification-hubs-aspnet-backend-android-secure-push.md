@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Azure Notification Hubs – Sichere Pushbenachrichtigungen" 
-	description="Erfahren Sie mehr über das Senden sicherer Pushbenachrichtigungen an eine Android-App von Azure. Die Codebeispiele wurden in Java und C# geschrieben." 
-	documentationCenter="android" 
-	authors="wesmc7777" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="Azure Notification Hubs – Sichere Pushbenachrichtigungen"
+	description="Erfahren Sie mehr über das Senden sicherer Pushbenachrichtigungen an eine Android-App von Azure. Die Codebeispiele wurden in Java und C# geschrieben."
+	documentationCenter="android"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""
 	services="notification-hubs"/>
 
-<tags 
-	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="android" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="06/02/2015" 
+<tags
+	ms.service="notification-hubs"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="android"
+	ms.devlang="java"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="wesmc"/>
 
 #Azure Notification Hubs – Sichere Pushbenachrichtigungen
@@ -22,7 +22,7 @@
 - [Windows Universal](notification-hubs-aspnet-backend-windows-dotnet-secure-push.md)
 - [iOS](notification-hubs-aspnet-backend-ios-secure-push.md)
 - [Android](notification-hubs-aspnet-backend-android-secure-push.md)
-    
+
 ##Übersicht
 
 Durch die Unterstützung von Pushbenachrichtigungen in Microsoft Azure haben Sie Zugriff auf eine benutzerfreundliche, plattformübergreifende und horizontal skalierte Pushinfrastruktur, die die Implementierung von Pushbenachrichtigungen sowohl für Endbenutzer- als auch für Unternehmensanwendungen für mobile Plattformen erheblich vereinfacht.
@@ -64,10 +64,10 @@ Wir ändern nun den Ablauf der *Anmeldung*, um den Wert des Authentifizierungshe
     		EditText password = (EditText) findViewById(R.id.passwordText);
     		String basicAuthHeader = username.getText().toString()+":"+password.getText().toString();
     		basicAuthHeader = Base64.encodeToString(basicAuthHeader.getBytes("UTF-8"), Base64.NO_WRAP);
-    	
+
     		SharedPreferences sp = getSharedPreferences(NOTIFY_USERS_PROPERTIES, Context.MODE_PRIVATE);
     		sp.edit().putString(AUTHORIZATION_HEADER_PROPERTY, basicAuthHeader).commit();
-    	
+
     		return basicAuthHeader;
 		}
 
@@ -80,7 +80,7 @@ Nun ändern wir den Handler, der beim Empfang der Benachrichtigung aufgerufen wi
 4. Ändern Sie in der **MyHandler**-Klasse die `OnReceive()`-Methode so, dass sie folgenden Code enthält:
 
 		public void onReceive(Context context, Bundle bundle) {
-	    	ctx = context;   
+	    	ctx = context;
 	    	String secureMessageId = bundle.getString("secureId");
 	    	retrieveNotification(secureMessageId);
 		}
@@ -90,7 +90,7 @@ Nun ändern wir den Handler, der beim Empfang der Benachrichtigung aufgerufen wi
 		private void retrieveNotification(final String secureMessageId) {
 			SharedPreferences sp = ctx.getSharedPreferences(MainActivity.NOTIFY_USERS_PROPERTIES, Context.MODE_PRIVATE);
     		final String authorizationHeader = sp.getString(MainActivity.AUTHORIZATION_HEADER_PROPERTY, null);
-		
+
 			new AsyncTask<Object, Object, Object>() {
 				@Override
 				protected Object doInBackground(Object... params) {
@@ -113,7 +113,7 @@ Nun ändern wir den Handler, der beim Empfang der Benachrichtigung aufgerufen wi
 				}
 			}.execute(null, null, null);
 		}
-		
+
 
 Diese Methode ruft Ihr Back-End auf, um den Benachrichtigungsinhalt unter Verwendung der in den freigegebenen Einstellungen gespeicherten Anmeldeinformationen abzurufen, und zeigt ihn als normale Benachrichtigung an. Die Benachrichtigung sieht für den App-Benutzer genauso aus wie jede andere Pushbenachrichtigung.
 
@@ -130,6 +130,5 @@ Gehen Sie zum Ausführen der Anwendung folgendermaßen vor:
 3. Geben Sie in der Android-App-UI einen Benutzernamen und das Kennwort ein. Dies kann eine beliebige Zeichenfolge sein, beide müssen jedoch denselben Wert haben.
 
 4. Klicken Sie in der Android-App-UI auf **Log in**. Klicken Sie anschließend auf **Send push**.
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

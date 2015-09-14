@@ -7,7 +7,7 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="hero-article" ms.date="07/30/2015" ms.author="aashishr"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="hero-article" ms.date="09/01/2015" ms.author="aashishr"; "jimpark"/>
 
 
 # Sichern von virtuellen Azure-Computern
@@ -17,10 +17,10 @@ Zur Sicherung virtueller Azure-Computer gehören drei Hauptschritte:
 
 ![Drei Schritte zum Sichern eines virtuellen Azure-Computers](./media/backup-azure-vms/3-steps-for-backup.png)
 
-## 1\. Ermitteln von virtuellen Azure-Computern
-Beim Ermittlungsvorgang wird Azure nach der Liste virtueller Computer im Abonnement abgefragt. Außerdem werden zusätzliche Informationen wie der Clouddienstname und die Region erfasst.
+>[AZURE.NOTE]Die Sicherung virtueller Computer erfolgt lokal. Der Sicherungstresor einer angegebenen Azure-Region kann nicht zur Sicherung virtueller Computer aus einer anderen Azure-Region verwendet werden. Daher muss in jeder Azure-Region mit virtuellen Computern, die eine Sicherung erfordern, mindestens ein Sicherungstresor erstellt werden.
 
-> [AZURE.NOTE]Der Ermittlungsvorgang sollte immer als erster Schritt ausgeführt werden. Dadurch wird sichergestellt, dass alle neuen virtuellen Computer, die dem Abonnement hinzugefügt wurden, identifiziert werden.
+## 1\. Ermitteln von virtuellen Azure-Computern
+Beim Ermittlungsvorgang wird Azure nach der Liste virtueller Computer im Abonnement abgefragt. Außerdem werden zusätzliche Informationen wie der Clouddienstname und die Region erfasst. Der Ermittlungsvorgang sollte immer als erster Schritt ausgeführt werden. Dadurch wird sichergestellt, dass alle neuen virtuellen Computer, die dem Abonnement hinzugefügt wurden, identifiziert werden.
 
 ### So lösen Sie den Ermittlungsprozess aus
 
@@ -41,13 +41,9 @@ Beim Ermittlungsvorgang wird Azure nach der Liste virtueller Computer im Abonnem
     ![Ermitteln abgeschlossen](./media/backup-azure-vms/discovery-complete.png)
 
 ##  2\. Registrieren von virtuellen Azure-Computern
-Bevor ein virtueller Computer geschützt werden kann, muss er beim Azure Backup-Dienst registriert werden. Der Registrierungsvorgang hat zwei Hauptziele:
+Bevor ein virtueller Computer geschützt werden kann, muss er beim Azure Backup-Dienst registriert werden. Das Hauptziel des Registrierungsprozesses besteht darin, den virtuellen Computer dem Azure Backup-Dienst zuzuordnen. Die Registrierung ist in der Regel eine einmalige Angelegenheit.
 
-1. Aktivieren der Sicherungserweiterung im VM-Agent auf dem virtuellen Computer
-
-2. Zuordnen des virtuellen Computers zum Azure Backup-Dienst
-
-Die Registrierung ist in der Regel eine einmalige Angelegenheit. Der Azure Backup-Dienst verarbeitet nahtlos das Upgrade und Patching der Sicherungserweiterung, ohne dass ein Benutzereingriff erforderlich wäre. Dies erspart dem Benutzer den Agent-Verwaltungsaufwand, der in der Regel mit Backup-Produkten verbunden ist.
+>[AZURE.NOTE]Der Sicherungserweiterung wird im Rahmen der Registrierung nicht installiert. Die Installation und Aktualisierung des Backup-Agents ist nun Teil des geplanten Sicherungsauftrags.
 
 ### So registrieren Sie virtuelle Computer
 
@@ -63,7 +59,6 @@ Die Registrierung ist in der Regel eine einmalige Angelegenheit. Der Azure Backu
 
     Der Vorgang **Registrieren** kann skaliert werden. Das bedeutet, dass mehrere virtuelle Computer gleichzeitig für die Registrierung ausgewählt werden können. Dadurch wird der einmalige Aufwand zur Vorbereitung des virtuellen Computers für die Sicherung erheblich reduziert.
 
-    >[AZURE.NOTE]Es werden nur die virtuellen Computer angezeigt, die nicht registriert sind und sich in derselben Region befinden wie der Sicherungstresor.
 
 5. Für jeden virtuellen Computer, der registriert werden soll, wird ein Auftrag erstellt. Die Popupbenachrichtigung zeigt den Status dieser Aktivität an. Klicken Sie auf **Auftrag anzeigen**, um zur Seite **Aufträge** zu wechseln.
 
@@ -78,9 +73,8 @@ Die Registrierung ist in der Regel eine einmalige Angelegenheit. Der Azure Backu
     ![Registrierungsstatus 2](./media/backup-azure-vms/register-status02.png)
 
 ## 3\. Schützen: Sichern von virtuellen Azure-Computern
-Dieser Schritt umfasst das Einrichten einer Sicherungs- und Beibehaltungsrichtlinie für den virtuellen Computer. Führen Sie die folgenden Schritte aus, um einen virtuellen Computer zu schützen.
+Dieser Schritt umfasst das Einrichten einer Sicherungs- und Beibehaltungsrichtlinie für den virtuellen Computer. Um einen virtuellen Computer zu schützen, führen Sie die folgenden Schritte aus:
 
-### So sichern Sie virtuelle Azure-Computer
 1. Navigieren Sie zum Sicherungstresor, der sich im Azure-Portal unter **Recovery Services** befindet, und klicken Sie dann auf die Registerkarte **Registrierte Elemente**.
 2. Wählen Sie im Dropdownmenü als Workloadtyp **Azure Virtual Machine** aus, und klicken Sie dann auf die Schaltfläche **Auswählen**.
 
@@ -92,11 +86,7 @@ Dieser Schritt umfasst das Einrichten einer Sicherungs- und Beibehaltungsrichtli
 
     Der Vorgang **Schützen** kann skaliert werden. Das bedeutet, dass mehrere virtuelle Computer gleichzeitig für die Registrierung ausgewählt werden können. Dadurch wird der Aufwand zum Schützen des virtuellen Computers erheblich reduziert.
 
-    >[AZURE.NOTE]Hier werden nur die virtuellen Computer angezeigt, die ordnungsgemäß beim Azure Backup-Dienst registriert sind und sich in derselben Region befinden wie der Sicherungstresor.
-
 5. Im zweiten Bildschirm des Assistenten **Elemente schützen** wählen Sie eine Sicherungs- und Beibehaltungsrichtlinie für die Sicherung der ausgewählten virtuellen Computer aus. Wählen Sie aus einem vorhandenen Satz von Richtlinien, oder definieren Sie eine neue.
-
-    >[AZURE.NOTE]Für die Vorschau werden bis zu 30 Tage Beibehaltung und maximal eine Sicherung pro Tag unterstützt.
 
     Jeder Sicherungstresor kann mehrere Sicherungsrichtlinien aufweisen. Die Richtlinien geben die Details zur zeitlichen Planung und Aufbewahrung der Sicherung an. Beispielsweise kann eine Sicherungsrichtlinie eine tägliche Sicherung um 10:00 Uhr festlegen, während eine andere Sicherungsrichtlinie eine wöchentliche Sicherung um 18:00 Uhr vorsieht. Mehrere Sicherungsrichtlinien ermöglichen Flexibilität beim Planen von Sicherungen für Ihre virtuelle Infrastruktur.
 
@@ -106,75 +96,32 @@ Dieser Schritt umfasst das Einrichten einer Sicherungs- und Beibehaltungsrichtli
 
     ![Schutzauftrag konfigurieren](./media/backup-azure-vms/protect-configureprotection.png)
 
-7. Wenn die Konfiguration abgeschlossen ist, sind die virtuellen Computer durch eine Richtlinie geschützt. Die erste Sicherung wird zum geplanten Sicherungszeitpunkt durchgeführt. Der virtuelle Computer wird nun auf der Registerkarte **Geschützte Elemente** angezeigt und weist den Schutzstatus *Geschützt * (Anfangssicherung ausstehend) auf.
-    >[AZURE.NOTE]Derzeit ist das Starten der Anfangssicherung gleich nach dem Konfigurieren des Schutzes nicht als Option verfügbar.
 
-8. Zum geplanten Zeitpunkt erstellt der Azure Backup-Dienst einen Sicherungsauftrag für jeden virtuellen Computer, der gesichert werden muss. Klicken Sie auf die Registerkarte **Aufträge**, um die Liste der **Sicherungsaufträge** anzuzeigen. Als Teil des Backup-Vorgangs gibt der Azure Backup-Dienst einen Befehl an die Backup-Erweiterung auf jedem virtuellen Computer aus, damit alle Schreibvorgänge geleert werden und eine konsistente Momentaufnahme erstellt wird.
+## Nachfolgende Aktivitäten
 
-    ![Sicherung wird ausgeführt](./media/backup-azure-vms/protect-inprogress.png)
+### Installieren der Sicherungserweiterung
 
-9. Zum Abschluss des Vorgangs wird der Schutzstatus des virtuellen Computers auf der Registerkarte **Geschützte Elemente** als *Geschützt* angezeigt.
+Der Azure Backup-Dienst verarbeitet nahtlos das Upgrade und Patching der Sicherungserweiterung, ohne dass ein Benutzereingriff erforderlich wäre. Dies erspart dem Benutzer den Agent-Verwaltungsaufwand, der i. d. R. mit Sicherungsprodukten verbunden ist.
 
-    ![Virtueller Computer wird mit Wiederherstellungspunkt gesichert](./media/backup-azure-vms/protect-backedupvm.png)
+#### Offline-VMs
+Die Sicherungserweiterung wird installiert, wenn der virtuelle Computer (Virtual Machine, VM) ausgeführt wird. Bei einem ausgeführten virtuellen Computer besteht zudem die größte Chance auf einen anwendungskonsistenten Wiederherstellungspunkt. Der Azure Backup-Dienst setzt die Sicherung des virtuellen Computers jedoch auch dann fort, wenn der virtuelle Computer ausgeschaltet wurde und die Erweiterung nicht installiert werden konnte (auch als "Offline-VM" bezeichnet). Die Auswirkungen zeigen sich im Bereich der Konsistenz: In diesem Fall ist der Wiederherstellungspunkt *dateisystemkonsistent*.
 
-## Anzeigen von Status und Details der Sicherung
-Sobald der Schutz eingerichtet ist, steigt die Anzahl der virtuellen Computer auch auf der **Dashboard**-Zusammenfassungsseite. Darüber hinaus wird auf der Seite **Dashboard** die Anzahl der Aufträge der letzten 24 Stunden angezeigt, die erfolgreich waren, Fehler hervorgerufen haben oder noch ausgeführt werden. Durch Klicken auf eine beliebige Kategorie wird auf der Seite **Aufträge** ein Drilldown in diese Kategorie durchgeführt.
+### Erste Sicherung
+Sobald der virtuelle Computer durch eine Richtlinie geschützt ist, wird er auf der Registerkarte **Geschützte Elemente** angezeigt und weist den Schutzstatus *Geschützt* (Anfangssicherung ausstehend) auf. Standardmäßig ist die erste geplante Sicherung die Anfangssicherung. Um die erste Sicherung sofort nach dem Konfigurieren des Schutzes auszulösen, klicken Sie am unteren Rand der Seite "Geschützte Elemente" auf die Schaltfläche **Jetzt sichern**.
+
+Der Azure Backup-Dienst erstellt einen Sicherungsauftrag für die erste Sicherung. Klicken Sie auf die Registerkarte **Aufträge**, um die Liste der Aufträge anzuzeigen. Als Teil des Backup-Vorgangs gibt der Azure Backup-Dienst einen Befehl an die Backup-Erweiterung auf jedem virtuellen Computer aus, damit alle Schreibvorgänge geleert werden und eine konsistente Momentaufnahme erstellt wird.
+
+![Sicherung wird ausgeführt](./media/backup-azure-vms/protect-inprogress.png)
+
+Sobald die erste Sicherung abgeschlossen ist, wird der Schutzstatus des virtuellen Computers auf der Registerkarte **Geschützte Elemente** als *Geschützt* angezeigt.
+
+![Virtueller Computer wird mit Wiederherstellungspunkt gesichert](./media/backup-azure-vms/protect-backedupvm.png)
+
+
+### Anzeigen von Status und Details der Sicherung
+Sobald der Schutz eingerichtet ist, steigt die Anzahl der virtuellen Computer auch auf der **Dashboard**-Zusammenfassungsseite. Darüber hinaus wird auf der Seite **Dashboard** die Anzahl der Aufträge der letzten 24 Stunden angezeigt, die erfolgreich waren, fehlgeschlagen sind oder noch ausgeführt werden. Durch Klicken auf eine beliebige Kategorie wird auf der Seite **Aufträge** ein Drilldown in diese Kategorie durchgeführt.
 
 ![Status der Sicherung auf der Dashboard-Seite](./media/backup-azure-vms/dashboard-protectedvms.png)
-
-## Problembehandlung
-Sie können die Problembehandlung für Fehler, die beim Verwenden von Azure Backup auftreten, anhand der Informationen in der folgenden Tabelle durchführen.
-
-| Sicherungsvorgang | Fehlerdetails | Problemumgehung |
-| -------- | -------- | -------|
-| Ermittlung | Fehler beim Entdecken neuer Elemente – Microsoft Azure Backup hat einen internen Fehler festgestellt. Warten Sie einige Minuten, und versuchen Sie es dann erneut. | Wiederholen Sie den Ermittlungsvorgang nach 15 Minuten.
-| Ermittlung | Fehler beim Entdecken neuer Elemente – Ein anderer Ermittlungsvorgang wird bereits ausgeführt. Warten Sie, bis der aktuelle Ermittlungsvorgang abgeschlossen ist. | Keine. |
-| Registrieren | Die Azure VM-Rolle befindet sich nicht im Zustand zum Installieren der Erweiterung – Prüfen Sie, ob der virtuelle Computer den Zustand "Wird ausgeführt" aufweist. Für die Azure Recovery Services-Erweiterung muss der virtuelle Computer ausgeführt werden. | Starten Sie den virtuellen Computer, und wiederholen Sie den Registrierungsvorgang, wenn der Computer den Zustand "Wird ausgeführt" aufweist.|
-| Registrieren | Für die Anzahl von Datenträgern für Daten, die dem virtuellen Computer zugeordnet sind, wurde die unterstützte Obergrenze überschritten. Trennen Sie einige Datenträger für Daten von diesem virtuellen Computer, und wiederholen Sie den Vorgang. Azure Backup unterstützt bis zu fünf Datenträger für Daten, die für die Sicherung an einen virtuellen Azure-Computer angeschlossen sind. | Keine. |
-| Registrieren | Für Microsoft Azure Backup ist ein interner Fehler aufgetreten. Warten Sie einige Minuten, und wiederholen Sie anschließend den Vorgang. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dieser Fehler kann aufgrund einer der folgenden nicht unterstützten Konfigurationen auftreten: <ol><li>Premium LRS. <li>Multi-NIC. <li>Load Balancer. </ol> |
-| Registrieren | Zertifikat für VM-Gast-Agent wurde nicht gefunden. | Befolgen Sie diese Anweisungen, um den Fehler zu beheben: <ol><li>Laden Sie [hier](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409) die aktuelle Version des VM-Agents herunter. Stellen Sie sicher, dass es sich bei dem heruntergeladenen Agent um Version 2.6.1198.718 oder eine spätere Version handelt. <li>Installieren Sie den VM-Agent auf dem virtuellen Computer.</ol> [Erfahren Sie mehr](#validating-vm-agent-installation) darüber, wie Sie die Version des VM-Agents überprüfen. |
-| Registrieren | Fehler bei der Registrierung aufgrund einer Zeitüberschreitung beim Installieren des Agents. | Überprüfen Sie, ob die Betriebssystemversion des virtuellen Computers unterstützt wird. |
-| Registrieren | Fehler beim Ausführen des Befehls – Für dieses Element wird ein anderer Vorgang ausgeführt. Warten Sie, bis der aktuelle Vorgang abgeschlossen ist. | Keine. |
-| Sicherung | Zeitüberschreitung beim Kopieren von VHDs aus dem Sicherungstresor – Versuchen Sie, den Vorgang nach einigen Minuten zu wiederholen. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dies passiert, wenn zu viele zu kopierende Daten vorhanden sind. Vergewissern Sie sich, dass Sie weniger als sechs Datenträger verwenden. |
-| Sicherung | Zeitüberschreitung bei Momentaufnahme für VM-Unteraufgabe – Versuchen Sie, den Vorgang nach einigen Minuten zu wiederholen. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dieser Fehler wird ausgelöst, wenn ein Problem mit dem VM-Agent besteht oder der Netzwerkzugriff auf die Azure-Infrastruktur blockiert ist. <ul><li>Weitere Informationen zum [Debuggen von Problemen mit dem VM-Agent](#Troubleshooting-vm-agent-related-issues). <li>Weitere Informationen zum [Debuggen von Netzwerkproblemen](#troubleshooting-networking-issues). </ul> |
-| Sicherung | Interner Fehler bei der Sicherung – Versuchen Sie, den Vorgang nach einigen Minuten zu wiederholen. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dieser Fehler kann aus zwei Gründen auftreten: <ol><li> Es sind zu viele zu kopierende Daten vorhanden. Vergewissern Sie sich, dass Sie weniger als sechs Datenträger verwenden. <li>Der ursprüngliche virtuelle Computer wurde gelöscht, sodass keine Sicherung erstellt werden kann. Um die Sicherungsdaten für einen gelöschten virtuellen Computer beizubehalten und gleichzeitig die Sicherungsfehler zu vermeiden, heben Sie den Schutz für den virtuellen Computer auf und wählen die Option zum Beibehalten der Daten aus. So werden der Sicherungszeitplan und die wiederkehrenden Fehlermeldungen vermieden. |
-| Sicherung | Fehler beim Installieren der Azure Recovery Services-Erweiterung auf dem ausgewählten Element – Der VM-Agent ist eine Voraussetzung für die Azure Recovery Services-Erweiterung. Installieren Sie den Azure-VM-Agent, und starten Sie den Registrierungsvorgang erneut. | <ol> <li>Überprüfen Sie, ob der VM-Agent richtig installiert wurde. <li>Stellen Sie sicher, dass das Flag für die VM-Konfiguration richtig festgelegt wurde.</ol> [Erfahren Sie mehr](#validating-vm-agent-installation) über die VM-Agent-Installation und die dazugehörige Überprüfung. |
-| Sicherung | Fehler bei der Ausführung des Befehls – Für dieses Element wird ein anderer Vorgang ausgeführt. Warten Sie, bis der aktuelle Vorgang abgeschlossen ist, und wiederholen Sie anschließend den Vorgang. | Ein vorhandener Sicherungs- oder Wiederherstellungsauftrag wird für den virtuellen Computer ausgeführt. Ein neuer Auftrag kann erst gestartet werden, wenn die Ausführung des aktuellen Auftrags abgeschlossen ist. <br><br>Falls Sie sich eine Option zum Abbrechen eines laufenden Auftrags wünschen, können Sie Ihre Stimme für diese Option im [Azure-Feedbackforum](http://feedback.azure.com/forums/258995-azure-backup-and-scdpm/suggestions/7941501-add-feature-to-allow-cancellation-of-backup-restor) abgeben. |
-
-### Problembehandlung bei VM-Agent-Problemen
-
-#### Einrichten des VM-Agents
-Normalerweise ist der VM-Agent auf virtuellen Computern, die über den Azure-Katalog erstellt werden, bereits vorhanden. Auf virtuellen Computern, die aus lokalen Rechenzentren migriert werden, ist der VM-Agent aber nicht installiert. Für diese virtuellen Computer muss der VM-Agent explizit installiert werden. Erfahren Sie mehr über das [Installieren des VM-Agents auf einem vorhandenen virtuellen Computer](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx).
-
-Für virtuelle Windows-Computer:
-
-- Laden Sie den [Agent-MSI](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409) herunter, und installieren Sie ihn. Zum Durchführen der Installation benötigen Sie Administratorberechtigungen.
-- [Aktualisieren Sie die VM-Eigenschaft](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx), um anzugeben, dass der Agent installiert wurde.
-
-
-#### Aktualisieren des VM-Agents
-Das Aktualisieren des VM-Agents ist so einfach wie das Neuinstallieren der [Binärdateien für den VM-Agent](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Allerdings müssen Sie sicherstellen, dass kein Sicherungsvorgang ausgeführt wird, während der VM-Agent aktualisiert wird.
-
-
-#### Überprüfen der VM-Agent-Installation
-So überprüfen Sie die Version des VM-Agents auf virtuellen Windows-Computern
-
-1. Melden Sie sich am virtuellen Azure-Computer an, und navigieren Sie zum Ordner *C:\\WindowsAzure\\Packages*. Im Ordner "Packages" finden Sie die Datei "WaAppAgent.exe".
-2. Klicken Sie mit der rechten Maustaste auf die Datei, wechseln Sie zu **Eigenschaften**, und wählen Sie dann die Registerkarte **Details** aus. Im Feld mit der Produktversion sollte 2.6.1198.718 oder eine spätere Version angegeben sein.
-
-### Problembehandlung bei Netzwerkproblemen
-Wie bei allen Erweiterungen ist für die Backup-Erweiterung der Zugriff auf das öffentliche Internet erforderlich, damit sie funktioniert. Wenn kein Zugriff auf das öffentliche Internet besteht, kann dies zu unterschiedlichen Ergebnissen führen:
-
-- Beim Installieren der Erweiterung kann ein Fehler auftreten.
-- Bei den Sicherungsvorgängen (z. B. Datenträger-Momentaufnahme) kann ein Fehler auftreten.
-- Beim Anzeigen des Status für den Sicherungsvorgang kann ein Fehler auftreten.
-
-Die Notwendigkeit der Auflösung von öffentlichen Internetadressen wird [hier](http://blogs.msdn.com/b/mast/archive/2014/06/18/azure-vm-provisioning-stuck-on-quot-installing-extensions-on-virtual-machine-quot.aspx) beschrieben. Sie müssen die DNS-Konfigurationen für das VNET überprüfen und sicherstellen, dass die Azure-URIs aufgelöst werden können.
-
-Nachdem die Namensauflösung richtig eingerichtet wurde, muss auch der Zugriff auf die Azure-IP-Adressen bereitgestellt werden. Führen Sie die folgenden Schritte aus, um die Blockierung des Zugriffs auf die Azure-Infrastruktur aufzuheben:
-
-1. Rufen Sie die Liste mit den [IP-Adressen des Azure-Rechenzentrums](https://msdn.microsoft.com/library/azure/dn175718.aspx) ab, die als sichere IPs gelten.
-2. Heben Sie Blockierung für die IP-Adressen mit dem [New-NetRoute](https://technet.microsoft.com/library/hh826148.aspx)-Cmdlet auf. Führen Sie dieses Cmdlet auf dem virtuellen Azure-Computer in einem PowerShell-Fenster mit erhöhten Rechten aus (Als Administrator ausführen).
 
 
 ## Konsistenz der Wiederherstellungspunkte
@@ -189,14 +136,52 @@ In der folgenden Tabelle werden die Arten der Konsistenz aufgeführt, die bei de
 
 | Konsistenz | VSS-basiert | Erklärung und Details |
 |-------------|-----------|---------|
-| Anwendungskonsistenz | Ja | Dies ist der ideale Ort für Microsoft-Workloads, da Folgendes gewährleistet wird:<ol><li> Der virtuelle Computer *wird hochgefahren*. <li>Es gibt *keine Datenbeschädigung*. <li>Es gibt *keinen Datenverlust*.<li> Die Daten sind mit der Anwendung konsistent, in der die Daten verwendet werden, da die Anwendung zum Zeitpunkt der Sicherung einbezogen wird – mithilfe von VSS.</ol> Durch den Volumemomentaufnahmedienst (Volume Snapshot Service, VSS) wird sichergestellt, dass die Daten ordnungsgemäß in den Speicher geschrieben werden. Die meisten Microsoft-Workloads verfügen über VSS Writer, die Workload-spezifische Aktionen im Zusammenhang mit der Datenkonsistenz ausführen. Beispielsweise umfasst Microsoft SQL Server einen VSS Writer, der die ordnungsgemäße Durchführung der Schreibvorgänge in die Transaktionsprotokolldatei und die Datenbank gewährleistet.<br><br> Für die Azure-VM-Sicherung bedeutet das Erhalten eines anwendungskonsistenten Wiederherstellungspunkts, dass die Sicherungserweiterung den VSS-Workflow aufrufen und *ordnungsgemäß* abschließen konnte, bevor die Momentaufnahme des virtuellen Computers erstellt wurde. Dies heißt natürlich, dass die VSS Writer aller Anwendungen auf dem virtuellen Azure-Computer ebenfalls aufgerufen wurden.<br><br>Erlernen Sie die [Grundlagen von VSS](http://blogs.technet.com/b/josebda/archive/2007/10/10/the-basics-of-the-volume-shadow-copy-service-vss.aspx), und erlangen Sie detaillierte Kenntnisse zur [Funktionsweise](https://technet.microsoft.com/library/cc785914%28v=ws.10%29.aspx). |
-| Dateisystemkonsistenz | Ja, für Windows-Computer | Es gibt zwei Szenarios, in denen der Wiederherstellungspunkt dateisystemkonsistent sein kann:<ul><li>Sicherung virtueller Linux-Computer in Azure, da Linux über keine entsprechende Plattform wie VSS verfügt.<li>VSS-Fehler bei der Sicherung für virtuelle Windows-Computer in Azure.</li></ul> In beiden Fällen ist es das beste, Folgendes sicherzustellen: <ol><li> Der virtuelle Computer *wird hochgefahren*. <li>Es gibt *keine Datenbeschädigung*.<li>Es gibt *keinen Datenverlust*.</ol> Anwendungen müssen einen eigenen Reparaturmechanismus für die wiederhergestellten Daten implementieren.|
+| Anwendungskonsistenz | Ja | Dies ist der ideale Ort für Microsoft-Workloads, da Folgendes gewährleistet wird:<ol><li> Der virtuelle Computer wird *hochgefahren*. <li>Es gibt *keine Datenbeschädigung*. <li>Es gibt *keinen Datenverlust*.<li> Die Daten sind mit der Anwendung konsistent, in der die Daten verwendet werden, da die Anwendung zum Zeitpunkt der Sicherung einbezogen wird – mithilfe von VSS.</ol> Durch den Volumemomentaufnahmedienst (Volume Snapshot Service, VSS) wird sichergestellt, dass die Daten ordnungsgemäß in den Speicher geschrieben werden. Die meisten Microsoft-Workloads verfügen über VSS Writer, die Workload-spezifische Aktionen im Zusammenhang mit der Datenkonsistenz ausführen. Beispielsweise umfasst Microsoft SQL Server einen VSS Writer, der die ordnungsgemäße Durchführung der Schreibvorgänge in die Transaktionsprotokolldatei und die Datenbank gewährleistet.<br><br> Für die Azure-VM-Sicherung bedeutet das Erhalten eines anwendungskonsistenten Wiederherstellungspunkts, dass die Sicherungserweiterung den VSS-Workflow aufrufen und *ordnungsgemäß* abschließen konnte, bevor die Momentaufnahme des virtuellen Computers erstellt wurde. Dies heißt natürlich, dass die VSS Writer aller Anwendungen auf dem virtuellen Azure-Computer ebenfalls aufgerufen wurden.<br><br>Erlernen Sie die [Grundlagen von VSS](http://blogs.technet.com/b/josebda/archive/2007/10/10/the-basics-of-the-volume-shadow-copy-service-vss.aspx), und erlangen Sie detaillierte Kenntnisse zur [Funktionsweise](https://technet.microsoft.com/library/cc785914%28v=ws.10%29.aspx). |
+| Dateisystemkonsistenz | Ja, für Windows-Computer | Es gibt zwei Szenarios, in denen der Wiederherstellungspunkt dateisystemkonsistent sein kann:<ul><li>Sicherung virtueller Linux-Computer in Azure, da Linux über keine entsprechende Plattform wie VSS verfügt.<li>VSS-Fehler bei der Sicherung für virtuelle Windows-Computer in Azure.</li></ul> In beiden Fällen ist es das beste, Folgendes sicherzustellen: <ol><li> Der virtuelle Computer wird *hochgefahren*. <li>Es gibt *keine Datenbeschädigung*.<li>Es gibt *keinen Datenverlust*.</ol> Anwendungen müssen einen eigenen Reparaturmechanismus für die wiederhergestellten Daten implementieren.|
 | Absturzkonsistenz | Nein | Diese Situation entspricht dem Absturz eines Computers (durch eine Teil- oder Vollrückstellung). Dies geschieht normalerweise, wenn zum Zeitpunkt der Sicherung der virtuelle Azure-Computer heruntergefahren wird. Für die Sicherung virtueller Azure-Computer bedeutet das Erhalten eines ausfallsicheren Wiederherstellungspunkts, dass Azure Backup keine Garantie für die Konsistenz der Daten auf dem Speichermedium gewährt – weder im Hinblick auf das Betriebssystem noch im Hinblick auf die Anwendung. Nur Daten, die zum Zeitpunkt der Sicherung bereits auf dem Datenträger vorhanden sind, werden erfasst und gesichert. <br/> <br/> Auch wenn es keine Garantie gibt, wird das Betriebssystem in den meisten Fällen gestartet. In der Regel folgt eine Prozedur zur Datenträgerüberprüfung wie „chkdsk“, um eine mögliche Datenbeschädigung zu reparieren. Alle Daten im Arbeitsspeicher oder Schreibvorgänge, die nicht vollständig auf den Datenträger übertragen wurden, gehen verloren. Die Anwendung folgt normalerweise mit einem eigenen Überprüfungsmechanismus, falls ein Datenrollback durchgeführt werden muss. Für die Sicherung virtueller Azure-Computer bedeutet das Erhalten eines ausfallsicheren Wiederherstellungspunkts, dass Azure Backup keine Garantie für die Konsistenz der Daten im Speicher gewährt – weder im Hinblick auf das Betriebssystem noch im Hinblick auf die Anwendung. Dies geschieht i. d. R., wenn der virtuelle Azure-Computer zum Zeitpunkt der Sicherung heruntergefahren wird.<br><br>Wenn das Transaktionsprotokoll beispielsweise Einträge enthält, die nicht in der Datenbank vorhanden sind, führt die Datenbanksoftware einen Rollback durch, bis die Daten konsistent sind. Beim Umgang mit Daten, die über mehrere virtuelle Laufwerke verteilt sind (z. B. übergreifende Volumes), bietet ein absturzkonsistenter Wiederherstellungspunkt keine Garantie für die Richtigkeit der Daten.|
 
+
+## Leistung und Ressourcenverwendung
+Wie bei lokal bereitgestellter Sicherungssoftware muss die Sicherung von virtuellen Computern in Azure auch im Hinblick auf Kapazität und Ressourcenverwendung geplant werden. Die [Azure-Speicherbegrenzungen](azure-subscription-service-limits.md#storage-limits) definieren, wie die VM-Bereitstellungen strukturiert werden, um maximale Leistung bei minimaler Beeinträchtigung der ausgeführten Workloads zu erzielen. Die beiden wichtigsten Azure-Speicherbegrenzungen, die sich auf die Sicherungsleistung auswirken, sind:
+
++ Max. Ausgang pro Speicherkonto
++ Gesamtanforderungsrate pro Speicherkonto
+
+Wenn Sicherungsdaten aus dem Kundenspeicherkonto kopiert werden, werden diese auf die Metriken des Speicherkontos für IOPS und Ausgang (Speicherdurchsatz) angerechnet. Zur gleichen Zeit werden die virtuellen Computer ausgeführt und verbrauchen ebenfalls IOPS und Durchsatz. Das Ziel ist, dafür zu sorgen, dass die Gesamtheit des Datenverkehrs – d. h. Sicherung und virtuelle Computer – die Speicherkontobegrenzungen nicht überschreitet.
+
+Sicherungen sind "gierig" und versuchen stets, alle verfügbaren Ressourcen zu nutzen, da die Sicherung möglichst schnell zum Abschluss gebracht werden soll. Sämtliche E/A-Vorgänge sind jedoch begrenzt durch den *Zieldurchsatz pro Einzel-Blob*, der auf *60 MB pro Sekunde* beschränkt ist. Zur Beschleunigung der Sicherung wird versucht, die einzelnen Datenträger des virtuellen Computers *parallel* zu sichern. Azure Backup versucht also bei einem virtuellen Computer mit vier Datenträgern, alle vier Datenträger parallel zu sichern. Der wichtigste Faktor, der den ausgehenden Sicherungsdatenverkehr für ein Kundenspeicherkonto bestimmt, ist daher die **Anzahl der Datenträger**, die über das Speicherkonto gesichert werden.
+
+Ein weiterer Faktor, der die Leistung beeinträchtigt, ist der **Sicherungszeitplan**. Wenn Sie alle virtuellen Computer für eine gleichzeitige Sicherung konfigurieren, erhöht sich die Anzahl der *parallel* gesicherten Datenträger, da Azure Backup versucht, so viele Datenträger wie möglich zu sichern. Eine Möglichkeit zur Reduzierung des Sicherungsdatenverkehrs für ein Speicherkonto ist daher, die einzelnen virtuellen Computer zu unterschiedlichen Tageszeiten zu sichern und Überlappungen zu vermeiden.
+
+### Kapazitätsplanung
+Zusammenfassend folgt aus diesen Faktoren, dass die Speicherkontoverwendung einer gründlichen Planung bedarf. Laden Sie das [Excel-Arbeitsblatt zur Kapazitätsplanung für VM-Sicherungen](https://gallery.technet.microsoft.com/Azure-Backup-Storage-a46d7e33) (in englischer Sprache) herunter, um die Auswirkungen Ihrer Datenträger- und Sicherungszeitplan-Auswahl zu überprüfen.
+
+### Sicherungsdurchsatz
+Für jeden zu sichernden Datenträger liest Azure Backup die Blöcke auf dem Datenträger und speichert nur die geänderten Daten (inkrementelle Sicherung). Die folgende Tabelle zeigt durchschnittliche Durchsatzwerte, die bei einer Sicherung mit Azure Backup zu erwarten sind:
+
+| Sicherungsvorgang | Optimaler Durchsatz |
+| ---------------- | ---------- |
+| Erste Sicherung | 160 MBit/s |
+| Inkrementelle Sicherung (DR) | 640 MBit/s <br><br> Dieser Durchsatz kann erheblich sinken, wenn auf dem Datenträger viele verstreute Daten gesichert werden müssen. |
+
+Anhand dieser Informationen können Sie die Zeitdauer schätzen, die zur Sicherung eines Datenträgers mit einer bestimmten Größe benötigt wird.
+
+### Gesamtdauer der VM-Sicherung
+Obgleich ein Großteil der Zeit für das Lesen und Kopieren von Daten aufgewendet wird, gibt es noch andere Vorgänge, die sich auf die Gesamtdauer einer VM-Sicherung auswirken:
+
+1. Die Zeit, die zum [Installieren oder Aktualisieren der Sicherungserweiterung](backup-azure-vms.md#offline-vms) benötigt wird.
+2. Die Wartezeit in der Warteschlange: Da der Dienst Sicherungen von mehreren Kunden verarbeitet, kann Ihr Sicherungsvorgang möglicherweise nicht sofort gestartet werden. Die durchschnittliche Wartezeit für einen virtuellen Computer beträgt 15 bis 30 Minuten.
+
+
+## Problembehandlung
+Hier finden Sie eine vollständige Liste von Problemumgehungen für Fehler, die bei der Sicherung eines virtuellen Computers auftreten können: [Problembehandlung bei der Sicherung virtueller Computer](backup-azure-vms-troubleshoot.md)
+
+
 ## Nächste Schritte
+
 Weitere Informationen zum Einstieg in Azure Backup finden Sie unter:
 
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Verwalten virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

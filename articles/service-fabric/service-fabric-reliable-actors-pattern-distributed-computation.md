@@ -1,22 +1,20 @@
 <properties
    pageTitle="Reliable Actors: Muster für verteilte Berechnung"
-   description="Service Fabric Reliable Actors ist sehr gut geeignet für parallele asynchrone Nachrichten, leicht zu verwaltenden verteilten Status sowie Parallelberechnung."
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="jessebenson"
-   manager="timlt"
-   editor=""/>
-
+	description="Service Fabric Reliable Actors ist sehr gut geeignet für parallele asynchrone Nachrichten, leicht zu verwaltenden verteilten Status sowie Parallelberechnung."
+	services="service-fabric"
+	documentationCenter=".net"
+	authors="jessebenson"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/05/2015"
-   ms.author="claudioc"/>
-
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="NA"
+	ms.date="08/05/2015"
+	ms.author="claudioc"/>
 
 # Reliable Actors-Entwurfsmuster: Verteilte Berechnung
 Dieses Beispiel verdanken wir zum Teil dem Umstand, dass wir einen realen Kunden dabei beobachten konnten, wie er eine Finanzberechnung in Service Fabric Reliable Actors innerhalb verblüffend kurzer Zeit durchführte – eine Monte-Carlo-Simulation für die Risikoberechnung, um genau zu sein.
@@ -84,7 +82,7 @@ public class PooledTask : Actor, IPooledTask
                 pi.InCircle++;
         }
 
-        var agg = ActorProxy.Create<IAggregator>(0);
+        var agg = ActorProxy.Create<IAggregator>(ActorId.NewId());
         return agg.AggregateAsync(pi);
     }
 }
@@ -205,4 +203,4 @@ Es soll hier keineswegs behauptet werden, Azure Service Fabric sei ein Drop-in R
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-pattern-distributed-computation/distributed-computation-1.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

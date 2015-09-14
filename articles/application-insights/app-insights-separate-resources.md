@@ -1,21 +1,21 @@
 <properties 
-	pageTitle="Erstellen einer neuen Application Insights-Ressource" 
-	description="Richten Sie eine neue Anwendung ein, und erhalten Sie einen neuen Instrumentationsschlüssel. Application Insights überwacht die Leistung und Verwendung von Live-Anwendungen." 
-	services="application-insights" 
-    documentationCenter=""
-	authors="alancameronwills" 
+	pageTitle="Trennen von Application Insights-Ressourcen für Entwicklung, Test und Produktion"
+	description="Überwachen der Leistung und Nutzung Ihrer Anwendung in verschiedenen Entwicklungsphasen"
+	services="application-insights"
+	documentationCenter=""
+	authors="alancameronwills"
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/14/2015" 
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2015"
 	ms.author="awills"/>
 
-# Erstellen einer neuen Application Insights-Ressource
+# Trennen von Application Insights-Ressourcen für Entwicklung, Test und Produktion
 
 
 Um das Vermischen von Telemetriedaten aus Debug-, Test- und Produktionsversionen Ihrer App zu vermeiden, erstellen Sie separate [Application Insights][start]-Ressourcen, die die Daten der verschiedenen Versionen erhalten.
@@ -98,4 +98,4 @@ Der iKey wird auch in Webseiten Ihrer App in dem [Skript verwendet, das Sie auf 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

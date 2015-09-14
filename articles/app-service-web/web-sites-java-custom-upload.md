@@ -1,26 +1,26 @@
 <properties 
-	pageTitle="Hochladen einer benutzerdefinierten Java Web-App in Azure" 
-	description="In diesem Lernprogramm erfahren Sie, wie Sie eine benutzerdefinierte Java Web-App in Azure App Service-Web-Apps hochladen." 
-	services="app-service\web" 
-	documentationCenter="java" 
-	authors="rmcmurray" 
-	manager="wpickett" 
+	pageTitle="Hochladen einer benutzerdefinierten Java Web-App in Azure"
+	description="In diesem Tutorial erfahren Sie, wie Sie eine benutzerdefinierte Java Web-App in Azure App Service-Web-Apps hochladen."
+	services="app-service\web"
+	documentationCenter="java"
+	authors="rmcmurray"
+	manager="wpickett"
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="06/03/2015" 
+	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="08/31/2015"
 	ms.author="robmcm"/>
 
 # Hochladen einer benutzerdefinierten Java Web-App in Azure
 
-In diesem Thema wird erläutert, wie Sie eine benutzerdefinierte Java Web-App in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) Web-Apps hochladen. Es enthält Informationen, die für alle Java-Websites oder Web-Apps gelten, und einige Beispiele für spezifische Anwendungen.
+In diesem Thema wird erläutert, wie Sie eine benutzerdefinierte Java Web-App in [Azure App Service] Web-Apps hochladen. Es enthält Informationen, die für alle Java-Websites oder Web-Apps gelten, und einige Beispiele für spezifische Anwendungen.
 
-Beachten Sie, dass Azure die Möglichkeit bietet, Java Web-Apps mithilfe der Konfigurationsbenutzeroberfläche des Azure-Vorschauportals und des Azure- Marketplace zu erstellen. Informationen hierzu finden Sie unter [Erstellen einer Java Web-App in Azure App Service](web-sites-java-get-started.md). Dieses Lernprogramm eignet sich für Szenarien, in denen Sie nicht die Portal-Konfigurationsbenutzeroberfläche oder Azure Marketplace verwenden möchten.
+Beachten Sie, dass Azure die Möglichkeit bietet, Java Web-Apps mithilfe der Konfigurationsbenutzeroberfläche des Azure-Vorschauportals und des Azure- Marketplace zu erstellen. Informationen hierzu finden Sie unter [Erstellen einer Java Web-App in Azure App Service](web-sites-java-get-started.md). Dieses Tutorial eignet sich für Szenarien, in denen Sie nicht die Portal-Konfigurationsbenutzeroberfläche oder Azure Marketplace verwenden möchten.
 
 ## Konfigurationsrichtlinien
 
@@ -46,11 +46,10 @@ Beispiele (mit **processPath**):
     arguments="start"
     
     processPath="%JAVA_HOME\bin\java.exe"
-    arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP\_PLATFORM\_PORT% -Djetty.base=&quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115&quot; -jar &quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar&quot;"
+    arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP\_PLATFORM\_PORT% -Djetty.base=";%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115"; -jar ";%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar";"
 
 
 **processPath** - Pfad zum ausführbaren Programm oder Skript, das einen Prozess startet, der HTTP-Anfragen abhört.
-
 
 Beispiele:
 
@@ -84,7 +83,7 @@ Java-basierte Web-Apps können problemlos auf die gleiche Art und Weise bereitge
 Für die folgenden Anwendungen werden eine web.config-Datei und die Anwendungskonfiguration als Beispiele herangezogen, um zu zeigen, wie Sie Ihre Java-Anwendung in App Service-Web-Apps aktivieren.
 
 ### Tomcat
-Es gibt zwei Variationen von Tomcat, die mit App Service-Web-Apps bereitgestellt werden. Es können jedoch auch weiterhin benutzerspezifische Instanzen hochgeladen werden. Im Folgenden finden Sie ein Beispiel einer Installation von Tomcat mit einer anderen JVM.
+Es gibt zwei Variationen von Tomcat, die mit App Service-Web-Apps bereitgestellt werden. Es können jedoch auch weiterhin benutzerspezifische Instanzen hochgeladen werden. Im Folgenden finden Sie ein Beispiel einer Tomcat-Installation mit einer anderen Java Virtual Machine (JVM).
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<configuration>
@@ -125,7 +124,7 @@ Wie bei Tomcat, können Kunden auch für Jetty ihre eigenen Instanzen hochladen.
 	      <add name="httppPlatformHandler" path="*" verb="*" modules="httpPlatformHandler" resourceType="Unspecified" />
 	    </handlers>
 	    <httpPlatform processPath="%JAVA_HOME%\bin\java.exe" 
-	         arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP_PLATFORM_PORT% -Djetty.base=&quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115&quot; -jar &quot;%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar&quot;"
+	         arguments="-Djava.net.preferIPv4Stack=true -Djetty.port=%HTTP_PLATFORM_PORT% -Djetty.base=";%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115"; -jar ";%HOME%\site\wwwroot\bin\jetty-distribution-9.1.0.v20131115\start.jar";"
 	        startupTimeLimit="20"
 		  startupRetryCount="10"
 		  stdoutLogEnabled="true">
@@ -235,5 +234,7 @@ Weitere Informationen über Liferay finden Sie unter [http://www.liferay.com](ht
 [AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
  
  
+<!-- External Links -->
+[Azure App Service]: http://go.microsoft.com/fwlink/?LinkId=529714
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

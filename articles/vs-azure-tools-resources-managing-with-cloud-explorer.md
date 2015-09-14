@@ -30,7 +30,7 @@ Der Cloud-Explorer wird als Teil der Visual Studio-Tools für Azure SDK 2.7 inst
 - Visual Studio 2015 RTM.
 
 - Die Visual Studio-Tools für das Azure SDK.
-- Sie benötigen ein Azure-Konto und müssen bei diesem angemeldet sein, um Azure-Ressourcen im Cloud-Explorer anzuzeigen. Weitere Informationen finden Sie unter [Erstellen eines Azure-Kontos und Aktivieren von Vorschaufeatures](../php-create-account/).
+- Sie benötigen ein Azure-Konto und müssen bei diesem angemeldet sein, um Azure-Ressourcen im Cloud-Explorer anzuzeigen. Wenn Sie noch kein Konto besitzen, können Sie in wenigen Minuten ein Konto einrichten. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Andernfalls finden Sie unter [Erstellen eines kostenlosen Testkontos](http://azure.microsoft.com/pricing/free-trial/) weitere Informationen.
 
 - Wenn der Cloud-Explorer nicht angezeigt wird, können Sie ihn einblenden, indem Sie auf der Menüleiste **Ansicht**, **Weitere Fenster**, **Cloud-Explorer** wählen.
 
@@ -58,7 +58,7 @@ Wenn Sie Azure noch nicht verwendet oder Visual Studio nicht die erforderlichen 
 
 1. Wählen Sie auf der Menüleiste **Datei**, **Kontoeinstellungen**.
 
-1. Wählen Sie im Dialogfeld **Konteneinstellungen** im Abschnitt **Alle Konten** den Befehl **Entfernen** neben dem Konto aus, das Sie entfernen möchten. Beachten Sie, dass dieser Befehl das Konto nur aus Visual Studio entfernt, ohne dass das Azure-Konto selbst entfernt wird.
+1. Wählen Sie im Dialogfeld **Kontoeinstellungen** im Abschnitt **Alle Konten** den Befehl **Entfernen** neben dem Konto aus, das Sie entfernen möchten. Beachten Sie, dass dieser Befehl das Konto nur aus Visual Studio entfernt, ohne dass das Azure-Konto selbst entfernt wird.
 
 ## Anzeigen von Ressourcentypen oder -gruppen
 
@@ -85,7 +85,7 @@ Um zu einer Azure-Ressource zu navigieren und dazugehörige Informationen im Clo
 
 Für jede Ressource gibt es die Aktion **Im Portal öffnen**. Wenn Sie diese Aktion auswählen, zeigt der Cloud-Explorer die ausgewählte Ressource im Azure-Portal. Diese Funktion ist besonders nützlich für die Navigation zu tief geschachtelten Ressourcen.
 
-Zusätzliche Aktionen und Eigenschaftswerte können auch basierend auf der Azure-Ressource angezeigt werden. Für Web- und Logik-Apps gibt es zusätzlich zu **Im Portal öffnen** die Aktionen **Im Browser öffnen** und **Debugger anfügen**. Aktionen zum Öffnen von Editoren werden angezeigt, wenn Sie ein Blob, eine Warteschlange oder Tabelle eines Speicherkontos auswählen. Für Azure-Apps gibt es die Eigenschaften **URL** und **Status**, während Speicherressourcen Schlüssel und Verbindungszeichenfolgen-Eigenschaften aufweisen.
+Zusätzliche Aktionen und Eigenschaftswerte können auch basierend auf der Azure-Ressource angezeigt werden. Für Web- und Logik-Apps gibt es zusätzlich zu **Im Portal öffnen** die Aktionen **Im Browser öffnen** und **Debugger anfügen**. Aktionen zum Öffnen von Editoren werden angezeigt, wenn Sie ein Blob, eine Warteschlange oder Tabelle eines Speicherkontos auswählen. Für Azure-Apps stehen die Eigenschaften **URL** und **Status** zur Verfügung, während Speicherressourcen Schlüssel und Verbindungszeichenfolgen-Eigenschaften aufweisen.
 
 ## Durchsuchen von Ressourcen
 
@@ -95,4 +95,4 @@ Um in Ihren Azure-Kontoabonnements Ressourcen mit einem bestimmten Namen zu such
 
 Bei der Eingabe von Zeichen in das Feld "Suchen" werden nur die Ressourcen in der Ressourcenstruktur angezeigt, die diesen Zeichen entsprechen.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

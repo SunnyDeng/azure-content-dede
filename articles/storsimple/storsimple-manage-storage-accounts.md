@@ -1,21 +1,21 @@
 <properties 
-   pageTitle="Verwalten des StorSimple-Speicherkontos | Microsoft Azure"
-   description="Beschreibt, wie Sie die Seite ";Konfigurieren"; zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten verwenden oder wie Sie die Sicherheitsschlüssel für ein Speicherkonto rotieren."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="carolz"
-   editor="" />
+   pageTitle="Verwalten Ihres StorSimple-Speicherkontos | Microsoft Azure"
+	description="Beschreibt, wie Sie die Seite ";Konfigurieren"; des StorSimple Manager-Diensts zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten verwenden oder wie Sie die Sicherheitsschlüssel für ein Speicherkonto rotieren."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="SharS"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/14/2015"
-   ms.author="v-sharos" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/27/2015"
+	ms.author="v-sharos"/>
 
-# Verwalten von StorSimple-Speicherkonten
+# Verwalten von Speicherkonten mithilfe des StorSimple Manager-Diensts
 
 ## Übersicht
 
@@ -25,13 +25,11 @@ Auf der Seite **Konfigurieren** werden globale Dienstparameter angezeigt, die im
 - Bandbreitenvorlagen 
 - Zugriffssteuerungsdatensätze 
 
-In diesem Lernprogramm wird erläutert, wie Sie die Seite **Konfigurieren** zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten verwenden oder wie Sie die Sicherheitsschlüssel für ein Speicherkonto rotieren.
+In diesem Tutorial wird erläutert, wie Sie die Seite **Konfigurieren** zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten verwenden oder wie Sie die Sicherheitsschlüssel für ein Speicherkonto rotieren.
 
  ![Konfigurieren, Seite](./media/storsimple-manage-storage-accounts/HCS_ConfigureService.png)
 
-**Abbildung 1: Konfigurationsseite des StorSimple Manager-Diensts**
-
-Speicherkonten enthalten die Anmeldeinformationen, die das Gerät für den Zugriff auf das Speicherkonto mit dem Cloud-Dienstanbieter nutzt. Für Microsoft Azure-Speicherkonten sind dies die Anmeldeinformationen, wie z. B. Kontoname und primärer Zugriffsschlüssel.
+Speicherkonten enthalten die Anmeldeinformationen, die das Gerät für den Zugriff auf das Speicherkonto mit dem Clouddienstanbieter nutzt. Für Microsoft Azure-Speicherkonten sind dies die Anmeldeinformationen, wie z. B. Kontoname und primärer Zugriffsschlüssel.
 
 Auf der Seite **Konfigurieren** werden alle Speicherkonten, die für das Abrechnungsabonnement erstellt werden, in einem Tabellenformat mit den folgenden Informationen angezeigt:
 
@@ -50,17 +48,17 @@ Im Folgenden werden die häufigsten auf der Seite **Konfigurieren** ausgeführte
 
 Es gibt drei Typen von Speicherkonten, die mit dem StorSimple-Gerät verwendet werden können.
 
-- **Auto-generated storage accounts** – diese Art von Speicherkonto wird bei der ersten Erstellung des Dienstes automatisch generiert. Weitere Informationen über die Erstellung dieses Speicherkontos finden Sie unter [Schritt 1: Erstellen eines neuen Diensts](storsimple-deployment-walkthrough-u1.md#step-1-create-a-new-service) in [Bereitstellen des lokalen StorSimple-Geräts](storsimple-deployment-walkthrough.md). 
+- **Auto-generated storage accounts** – diese Art von Speicherkonto wird bei der ersten Erstellung des Dienstes automatisch generiert. Weitere Informationen zum Erstellen dieses Speicherkontos finden Sie unter [Schritt 1: Erstellen eines neuen Diensts](storsimple-deployment-walkthrough-u1.md#step-1-create-a-new-service) in [Bereitstellen des lokalen StorSimple-Geräts](storsimple-deployment-walkthrough.md). 
 - **Storage accounts in the service subscription** – Azure-Speicherkonten, die demselben Abonnement zugeordnet sind wie der Dienst . Weitere Informationen zur Erstellung dieser Speicherkonten finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md). 
 - **Storage accounts outside of the service subscription** – Azure-Speicherkonten, die nicht mit dem Dienst verknüpft sind und wahrscheinlich schon vorhanden waren, bevor der Dienst erstellt wurde.
 
 ## Hinzufügen von Speicherkonten
 
-Sie können ein Speicherkonto hinzufügen, indem Sie einen eindeutigen Anzeigenamen und Anmeldeinformationen für den Zugriff angeben, die mit dem Speicherkonto (mit dem angegebenen Cloud-Dienstanbieter) verknüpft sind. Sie haben außerdem die Möglichkeit, den SSL-Modus (Secure Sockets Layer) zu aktivieren, um einen sicheren Kanal für die Netzwerkkommunikation zwischen dem Gerät und der Cloud zu erstellen.
+Sie können ein Speicherkonto hinzufügen, indem Sie einen eindeutigen Anzeigenamen und Anmeldeinformationen für den Zugriff angeben, die mit dem Speicherkonto (mit dem angegebenen Clouddienstanbieter) verknüpft sind. Sie haben außerdem die Möglichkeit, den SSL-Modus (Secure Sockets Layer) zu aktivieren, um einen sicheren Kanal für die Netzwerkkommunikation zwischen dem Gerät und der Cloud zu erstellen.
 
-Sie können mehrere Konten für einen Cloud-Dienstanbieter erstellen. Bedenken Sie jedoch, dass der Cloud-Dienstanbieter nach der Erstellung eines Speicherkontos nicht mehr geändert werden kann.
+Sie können mehrere Konten für einen Clouddienstanbieter erstellen. Bedenken Sie jedoch, dass der Clouddienstanbieter nach der Erstellung eines Speicherkontos nicht mehr geändert werden kann.
 
-Während das Speicherkonto gespeichert wird, versucht der Dienst mit dem Cloud-Dienstanbieter zu kommunizieren. Die Anmelde- und Zugriffsinformationen, die Sie bereitgestellt haben, werden zu diesem Zeitpunkt authentifiziert. Ein Speicherkonto wird nur erstellt, wenn die Authentifizierung erfolgreich war. Wenn die Authentifizierung fehlschlägt, wird eine entsprechende Fehlermeldung angezeigt.
+Während das Speicherkonto gespeichert wird, versucht der Dienst mit dem Clouddienstanbieter zu kommunizieren. Die Anmelde- und Zugriffsinformationen, die Sie bereitgestellt haben, werden zu diesem Zeitpunkt authentifiziert. Ein Speicherkonto wird nur erstellt, wenn die Authentifizierung erfolgreich war. Wenn die Authentifizierung fehlschlägt, wird eine entsprechende Fehlermeldung angezeigt.
 
 > [AZURE.NOTE]Das Verfahren zum Hinzufügen eines Speicherkontos unterscheidet sich je nach Version der verwendeten StorSimple-Software. Achten Sie darauf, dass Sie dem für Ihre StorSimple-Version richtige Verfahren folgen.
 
@@ -109,7 +107,7 @@ Aus Sicherheitsgründen wird in Rechenzentren oft Schlüsselrotation erfordert.
  
 Jedes Microsoft Azure-Abonnement kann ein oder mehrere zugeordnete Speicherkonten haben. Der Zugriff auf diese Konten wird durch die Abonnement- und Zugriffsschlüssel für jedes Speicherkonto gesteuert.
 
-Wenn Sie ein Speicherkonto erstellen, generiert Microsoft Azure zwei 512-Bit-Speicherzugriffsschlüssel, die für die Authentifizierung verwendet werden, wenn der Zugriff auf das Speicherkonto erfolgt. Durch das Bereitstellen von zwei Speicherzugriffsschlüsseln ermöglicht Microsoft Azure Ihnen das erneute Generieren der Schlüssel ohne Unterbrechung des Speicherdiensts oder Zugriff auf diesen Dienst. Der derzeit verwendete Schlüssel wird *primärer* Schlüssel genannt, und der Backupschlüssel wird *sekundärer* Schlüssel genannt. Einer dieser beiden Schlüssel muss angegeben werden, wenn Ihr Microsoft Azure StorSimple-Gerät auf den Cloud-Speicherdienstanbieter zugreift.
+Wenn Sie ein Speicherkonto erstellen, generiert Microsoft Azure zwei 512-Bit-Speicherzugriffsschlüssel, die für die Authentifizierung verwendet werden, wenn der Zugriff auf das Speicherkonto erfolgt. Durch das Bereitstellen von zwei Speicherzugriffsschlüsseln ermöglicht Microsoft Azure Ihnen das erneute Generieren der Schlüssel ohne Unterbrechung des Speicherdiensts oder Zugriff auf diesen Dienst. Der derzeit verwendete Schlüssel wird *primärer* Schlüssel genannt, und der Backupschlüssel wird *sekundärer* Schlüssel genannt. Einer dieser beiden Schlüssel muss angegeben werden, wenn Ihr Microsoft Azure StorSimple-Gerät auf den Cloudspeicher-Dienstanbieter zugreift.
 
 ## Was ist Schlüsselrotation?
 
@@ -145,11 +143,11 @@ Um den StorSimple-Manager-Dienst über die Änderung zu informieren, müssen Sie
 3. Führen Sie im Dialogfeld folgende Schritte aus:
 
   1. Wählen Sie das Speicherkonto mit dem Zugriffsschlüssel, den Sie aktualisieren möchten, aus.
-  2. Sie müssen den Speicherzugriffsschlüssel im StorSimple-Manager-Dienst aktualisieren. In diesem Fall wird der Speicherzugriffsschlüssel angezeigt. Geben Sie den neuen Schlüssel im Feld **Speicherkonto-Zugriffsschlüssel** ein. 
+  2. Sie müssen den Speicherzugriffsschlüssel im StorSimple-Manager-Dienst aktualisieren. In diesem Fall wird der Speicherzugriffsschlüssel angezeigt. Geben Sie den neuen Schlüssel im Feld **Storage Account Access Key** ein. 
   3. Speichern Sie die Änderungen. Der Speicherkonten-Zugriffsschlüssel sollte jetzt aktualisiert sein.
 
 ## Nächste Schritte
 
-Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md)
+Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

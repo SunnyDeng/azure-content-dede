@@ -1,22 +1,20 @@
 <properties 
-	pageTitle="Hive-Aktivität" 
-	description="Erfahren Sie, wie Sie die Hive-Aktivität in Azure Data Factory verwenden können, um Hive-Abfragen in einem bedarfsgesteuerten/eigenen HDInsight-Cluster auszuführen." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Hive-Aktivität"
+	description="Erfahren Sie, wie Sie die Hive-Aktivität in Azure Data Factory verwenden können, um Hive-Abfragen in einem bedarfsgesteuerten/eigenen HDInsight-Cluster auszuführen."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
-
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/26/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/26/2015"
 	ms.author="spelluru"/>
-
 
 # Hive-Aktivität
 
@@ -108,7 +106,7 @@ Um dieses Hive-Skript in einer Data Factory-Pipeline auszuführen, müssen Sie f
 1. Erstellen Sie einen verknüpften Dienst, um [Ihren eigenen HDInsight-Computecluster](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) zu registrieren oder einen [bedarfsgesteuerten HDInsight-Computecluster](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) zu konfigurieren. Wir nennen diesen verknüpften Dienst "HDInsightLinkedService".
 2. Erstellen Sie einen [verknüpften Dienst](data-factory-azure-storage-connector.md), um die Verbindung mit dem Azure-Blobspeicher zu konfigurieren, in dem die Daten gehostet werden. Wir nennen diesen verknüpften Dienst "StorageLinkedService".
 3. Erstellen Sie [Datasets](data-factory-create-datasets.md), die auf die Eingabe- und die Ausgabedaten verweisen. Wir nennen das Eingabedataset "HiveSampleIn" und das Ausgabedataset "HiveSampleOut".
-4. Kopieren Sie die Hive-Abfrage als Datei in den Azure-Blobspeicher, den Sie im obigen Schritt 2 konfiguriert haben. Wenn sich der verknüpfte Dienst zum Hosten der Daten von dem zum Hosten dieser Abfragedatei unterscheidet, erstellen Sie einen separaten verknüpften Azure Storage-Dienst, und verweisen Sie in der Aktivitätskonfiguration darauf. Geben Sie mit \*\*skriptPath\*\* den Pfad der Hive-Abfragedatei und mit **ScriptLinkedService** den Azure-Speicher mit der Skriptdatei an.
+4. Kopieren Sie die Hive-Abfrage als Datei in den Azure-Blobspeicher, den Sie im obigen Schritt 2 konfiguriert haben. Wenn sich der verknüpfte Dienst zum Hosten der Daten von dem zum Hosten dieser Abfragedatei unterscheidet, erstellen Sie einen separaten verknüpften Azure Storage-Dienst, und verweisen Sie in der Aktivitätskonfiguration darauf. Geben Sie mit **skriptPath** den Pfad der Hive-Abfragedatei und mit **ScriptLinkedService** den Azure-Speicher mit der Skriptdatei an.
 
 	> [AZURE.NOTE]Sie können das Hive-Skript auch inline in der Aktivitätsdefinition mit der **script**-Eigenschaft bereitstellen, aber dies wird nicht empfohlen, da alle Sonderzeichen im Skript innerhalb des JSON-Dokuments mit Escapezeichen versehen werden müssen, was möglicherweise zu Problemen beim Debuggen führen kann. Die bewährte Methode ist, Schritt 4 auszuführen.
 5.	Erstellen Sie die unten aufgeführte Pipeline mit der HDInsightHive-Aktivität, um die Daten zu verarbeiten.
@@ -178,8 +176,8 @@ Gehen Sie folgendermaßen vor, um das Hive-Skript zu parametrisieren
 		          		"scriptPath": "adfwalkthrough\\scripts\\samplehive.hql",
 		          		"scriptLinkedService": "StorageLinkedService",
 		          		"defines": {
-		            		"Input": "$Text.Format('wasb://adfwalkthrough@<storageaccountname>.blob.core.windows.net/samplein/yearno={0:yyyy}/monthno={0:%M}/dayno={0:%d}/', SliceStart)",
-		            		"Output": "$Text.Format('wasb://adfwalkthrough@<storageaccountname>.blob.core.windows.net/sampleout/yearno={0:yyyy}/monthno={0:%M}/dayno={0:%d}/', SliceStart)"
+		            		"Input": "$$Text.Format('wasb://adfwalkthrough@<storageaccountname>.blob.core.windows.net/samplein/yearno={0:yyyy}/monthno={0:%M}/dayno={0:%d}/', SliceStart)",
+		            		"Output": "$$Text.Format('wasb://adfwalkthrough@<storageaccountname>.blob.core.windows.net/sampleout/yearno={0:yyyy}/monthno={0:%M}/dayno={0:%d}/', SliceStart)"
 		          		},
        					"scheduler": {
           					"frequency": "Hour",
@@ -216,4 +214,9 @@ Gehen Sie folgendermaßen vor, um das Hive-Skript zu parametrisieren
 			SUM(Duration)
 		FROM HiveSampleIn Group by ProfileID
 
-<!---HONumber=August15_HO6-->
+
+
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-hive-activity.md).
+
+<!---HONumber=September15_HO1-->

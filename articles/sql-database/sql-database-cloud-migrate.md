@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"
 	ms.workload="data-management"
-	ms.date="08/26/2015"
+	ms.date="09/02/2015"
 	ms.author="carlrab"/>
 
 # Migrieren von Datenbanken zur Azure SQL-Datenbank
@@ -29,18 +29,18 @@ Um zu ermitteln, ob Ihre lokale SQL Server-Datenbank mit Azure SQL-Datenbank 
 Eine kompatible lokale SQL Server-Datenbank lässt sich auf verschiedene Arten zu Azure SQL-Datenbank V12 migrieren.
 
 - Bei kleineren bis mittelgroßen Datenbanken muss zum Migrieren kompatibler Datenbanken ab SQL Server 2005 lediglich in SQL Server Management Studio der Assistent zum Bereitstellen der Datenbank für die Microsoft Azure-Datenbank ausgeführt werden – vorausgesetzt, es liegen keine Verbindungsprobleme (keine Verbindung, geringe Bandbreite oder Timeoutprobleme) vor.
-- Bei mittelgroßen bis großen Datenbanken oder bei Verbindungsproblemen können Sie die Daten und das Schema in SQL Server Management Studio in eine BACPAC-Datei (lokal oder in einem Azure-Blob) exportieren und die BACPAC-Datei anschließend in Ihre Azure SQL-Instanz importieren. Wenn Sie die BACPAC-Datei in einem Azure-Blob speichern, können Sie sie auch über das Azure-Portal importieren.  
+- Bei mittelgroßen bis großen Datenbanken oder bei Verbindungsproblemen können Sie die Daten und das Schema in SQL Server Management Studio in eine BACPAC-Datei (lokal oder in einem Azure-Blob) exportieren und die BACPAC-Datei anschließend in Ihre Azure SQL-Instanz importieren. Wenn Sie die BACPAC-Datei in einem Azure-Blob speichern, können Sie sie auch über das Azure-Portal importieren. Weitere Informationen zu einer BACPAC-Datei finden Sie unter [Datenebenenanwendungen](https://msdn.microsoft.com/library/ee210546.aspx).
 - Bei größeren Datenbanken empfiehlt es sich, Schema und Daten separat zu migrieren. Sie können das Schema mit SQL Server Management Studio oder Visual Studio in ein Datenbankprojekt extrahieren und das Schema dann bereitstellen, um die Azure SQL-Datenbank zu erstellen. Anschließend können Sie die Daten per BCP extrahieren und sie unter Verwendung paralleler Streams in die Azure SQL-Datenbank importieren. Die Migration einer umfangreichen, komplexen Datenbank dauert mehrere Stunden – unabhängig von der gewählten Methode.
 
 ### Option 1:
 ******Migrieren kompatibler Datenbanken mit SQL Server Management Studio***
 
-SQL Server Management Studio bietet zwei Methoden für die Migration einer kompatiblen lokalen SQL Server-Datenbank zu einer Azure SQL-Datenbank: Sie können entweder den Assistenten zum Bereitstellen der Datenbank für die Microsoft Azure SQL-Datenbank verwenden oder die Datenbank in eine BACPAC-Datei exportieren und diese anschließend importieren, um eine neue Azure SQL-Datenbank zu erstellen. Der Assistent überprüft die Kompatibilität mit Azure SQL-Datenbank V12, extrahiert das Schema und die Daten in eine BACPAC-Datei und importiert sie anschließend in die angegebene Azure SQL-Datenbankinstanz.
+SQL Server Management Studio bietet zwei Methoden für die Migration einer kompatiblen lokalen SQL Server-Datenbank zu einer Azure SQL-Datenbank: Sie können entweder den Assistenten zum Bereitstellen der Datenbank für die Microsoft Azure SQL-Datenbank verwenden oder die Datenbank in eine BACPAC-Datei exportieren und diese anschließend importieren, um eine neue Azure SQL-Datenbank zu erstellen. Der Assistent überprüft die Kompatibilität mit Azure SQL-Datenbank V12, extrahiert das Schema und die Daten in eine BACPAC-Datei und importiert sie anschließend in die angegebene Azure SQL-Datenbankinstanz. Informationen zum Verwenden dieser Option finden Sie unter [Verwenden von SSMS](sql-database-migrate-ssms.md).
 
 ### Option 2:
-***Aktualisieren von Datenbankschemas mit Visual Studio (offline) und Bereitstellen mit SQL Server Management Studio***
+***Aktualisieren von Datenbankschemata mit Visual Studio (offline) und Bereitstellen mit SQL Server Management Studio***
 
-Wenn Ihre lokale SQL Server-Datenbank nicht kompatibel ist oder Sie ermitteln möchten, ob sie kompatibel ist, können Sie das Datenbankschema zur Analyse in ein Visual Studio-Datenbankprojekt importieren. Für die Analyse muss SQL-Datenbank V12 als Zielplattform angegeben und das Projekt erstellt werden. Wenn der Erstellungsvorgang erfolgreich ist, ist die Datenbank kompatibel. Ist der Erstellungsvorgang nicht erfolgreich, können Sie die Fehler in SQL Server Data Tools für Visual Studio (SSDT) beheben. Wenn sich das Projekt erfolgreich erstellen lässt, können Sie es als Kopie der Quelldatenbank veröffentlichen und die Daten anschließend unter Verwendung des Datenvergleichsfeatures von SSDT aus der Quelldatenbank in die Azure SQL V12-kompatible Datenbank kopieren. Diese aktualisierte Datenbank wird dann mithilfe von Option 1 in Azure SQL-Datenbank bereitgestellt. Wenn nur das Schema migriert werden muss, kann das Schema direkt in Visual Studio für die Azure SQL-Datenbank veröffentlicht werden. Diese Methode kann verwendet werden, wenn das Datenbankschema mehr Änderungen erfordert, als der Migrations-Assistent allein verarbeiten kann.
+Wenn Ihre lokale SQL Server-Datenbank nicht kompatibel ist oder Sie ermitteln möchten, ob sie kompatibel ist, können Sie das Datenbankschema zur Analyse in ein Visual Studio-Datenbankprojekt importieren. Für die Analyse muss SQL-Datenbank V12 als Zielplattform angegeben und das Projekt erstellt werden. Wenn der Erstellungsvorgang erfolgreich ist, ist die Datenbank kompatibel. Ist der Erstellungsvorgang nicht erfolgreich, können Sie die Fehler in SQL Server Data Tools für Visual Studio (SSDT) beheben. Wenn sich das Projekt erfolgreich erstellen lässt, können Sie es als Kopie der Quelldatenbank veröffentlichen und die Daten anschließend unter Verwendung des Datenvergleichsfeatures von SSDT aus der Quelldatenbank in die Azure SQL V12-kompatible Datenbank kopieren. Diese aktualisierte Datenbank wird dann mithilfe von Option 1 in Azure SQL-Datenbank bereitgestellt. Wenn nur das Schema migriert werden muss, kann das Schema direkt in Visual Studio für die Azure SQL-Datenbank veröffentlicht werden. Diese Methode kann verwendet werden, wenn das Datenbankschema mehr Änderungen erfordert, als der Migrations-Assistent allein verarbeiten kann. Informationen zum Verwenden dieser Option finden Sie unter [Verwenden von Visual Studio](sql-database-migrate-visualstudio-ssdt.md).
 
 ## Entscheidungsoptionen
 - Wenn Sie davon ausgehen, dass eine Datenbank ohne Änderungen migriert werden kann, sollten Sie Option 1 verwenden, die schnell und einfach ist. Wenn Sie unsicher sind, beginnen Sie damit, eine Nur-Schema-BACPAC-Datei aus der Datenbank zu exportieren, wie unter Option 1 beschrieben. Wenn der Export ohne Fehler durchgeführt wird, können Sie zum Migrieren der Datenbank mit den Daten Option 1 verwenden.  
@@ -72,4 +72,4 @@ Verwenden Sie die [aktuelle SSDT-Version (SQL Server Data Tools) für Visual Stu
 | Keine Möglichkeit zum Ändern der Ausgabe, wenn Fehler vorhanden sind; das Quellschema muss kompatibel sein. | Sämtliche Features von SSDT für Visual Studio verfügbar. Schema wird offline geändert. | Anwendungsvalidierung erfolgt in Azure. Meist minimal, da das Schema ohne Änderungen migriert wird. | Anwendungsvalidierung kann in SQL Server erfolgen, bevor die Datenbank in Azure bereitgestellt wird. |
 | Einfach zu konfigurierender Prozess mit ein oder zwei Schritten. | Komplexerer Prozess mit mehreren Schritten (einfacher, wenn nur ein Schema bereitgestellt wird). |
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

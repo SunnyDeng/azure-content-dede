@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Analysieren von CDN-Verwendungsmustern" 
-	description="Mithilfe der folgenden Berichte können Sie Verwendungsmuster für Ihr CDN anzeigen: Bandbreite, Übertragene Daten, Treffer, Cachestatus, Cachetrefferquote, Übertragene IPV4/IPV6-Daten." 
-	services="cdn" 
-	documentationCenter=".NET" 
-	authors="juliako" 
-	manager="dwrede" 
+	pageTitle="Analysieren von CDN-Verwendungsmustern"
+	description="Mithilfe der folgenden Berichte können Sie Verwendungsmuster für Ihr CDN anzeigen: Bandbreite, Übertragene Daten, Treffer, Cachestatus, Cachetrefferquote, Übertragene IPV4/IPV6-Daten."
+	services="cdn"
+	documentationCenter=".NET"
+	authors="juliako"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="cdn" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/08/2015" 
+	ms.service="cdn"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="juliako"/>
 
 #Analysieren von CDN-Verwendungsmustern 
@@ -139,4 +139,4 @@ Dieser Bericht zeigt die Verteilung des Datenverkehrs in IPV4 und IPV6.
 
 Berichte können nur über die letzten 18 Monate generiert werden.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

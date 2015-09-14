@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen einer ASP.NET-Web-App in Azure App Service"
-	description="In diesem Lernprogramm erfahren Sie, wie Sie ein ASP.NET-Webprojekt in Visual Studio 2013 erstellen und in einer Web-App in Azure App Service bereitstellen. In weniger als 15 Minuten ist eine App betriebsbereit und wird in der Cloud ausgeführt."
+	pageTitle="Erstellen einer ASP.NET-Web-App in Azure App Service | Microsoft Azure"
+	description="In diesem Lernprogramm erfahren Sie, wie Sie ein ASP.NET-Webprojekt in Visual Studio 2013 erstellen und in einer Web-App in Azure App Service bereitstellen."
 	services="app-service\web"
 	documentationCenter=".net"
 	authors="tdykstra"
@@ -12,7 +12,7 @@
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
-	ms.topic="hero-article" 
+	ms.topic="hero-article"
 	ms.date="08/10/2015"
 	ms.author="tdykstra"/>
 
@@ -20,7 +20,7 @@
 
 ## Übersicht
 
-In diesem Tutorial wird die Erstellung einer ASP.NET-Webanwendung und deren Bereitstellung in [App Service-Web-Apps](app-service-web-overview.md) mit Visual Studio 2015 oder Visual Studio 2013 gezeigt. Das Lernprogramm geht davon aus, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss des Lernprogramms verfügen Sie über eine einfache Webanwendung, die in der Cloud ausgeführt wird.
+In diesem Lernprogramm wird die Erstellung einer ASP.NET-Webanwendung und deren Bereitstellung in einer [Web-App in Azure App Service](app-service-web-overview.md) mit Visual Studio 2015 oder Visual Studio 2013 gezeigt. Das Lernprogramm geht davon aus, dass Sie noch keine Erfahrung mit der Verwendung von Azure haben. Nach Abschluss des Lernprogramms verfügen Sie über eine einfache Webanwendung, die in der Cloud ausgeführt wird.
 
 In der folgenden Abbildung wird die fertige Anwendung dargestellt:
 
@@ -31,16 +31,16 @@ Sie lernen Folgendes:
 * Ermöglichen der Azure-Entwicklung auf Ihrem Computer durch Installieren des Azure SDK
 * Erstellen eines Visual Studio ASP.NET-Webprojekts und Bereitstellen für eine Azure-Web-App
 * Vornehmen von Änderungen am Webprojekt und erneute Bereitstellung der Anwendung
-* Verwenden des [Azure-Vorschauportals](/overview/preview-portal/) zum Überwachen und Verwalten der Web-App
+* Verwenden des [Azure-Portals](/overview/preview-portal/) zum Überwachen und Verwalten der Web-App
 
 ##<a name="video"></a>Anmelden bei Microsoft Azure
 
-Sie benötigen ein Windows Azure-Konto, um dieses Lernprogramm durchführen zu können:
+Sie benötigen ein Windows Azure-Konto, um dieses Lernprogramm durchführen zu können. Sie können Folgendes ausführen:
 
-* Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/?WT.mc_id=A261C142F). Sie erhalten ein Guthaben, das Sie zum Ausprobieren der zahlungspflichtigen Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlosen Azure-Dienste (z. B. App Service-Web-Apps) nutzen, wenn das Guthaben aufgebraucht ist.
-* Sie können Ihre [Vorteile für MSDN-Abonnenten aktivieren](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Ihr MSDN-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste verwenden können.
+* [Kostenloses Anlegen eines Azure-Kontos](/pricing/free-trial/?WT.mc_id=A261C142F) Sie erhalten ein Guthaben, mit dem Sie andere kostenpflichtige Azure-Dienste ausprobieren können. Selbst, nachdem Sie dieses Guthaben aufgebraucht haben, können Sie das Konto behalten und kostenlose Azure-Dienste und -Features nutzen, z. B. das Web-Apps-Feature in Azure App Service.
+* [Aktivieren der Vorteile für MSDN-Abonnenten](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). Ihr MSDN-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste verwenden können.
 
-> [AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+> [AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
 In diesem Video zeigt Scott Hanselman, wie einfach Sie sich für eine kostenlose Testversion von Microsoft Azure anmelden können. (Dauer: 1:58)
 
@@ -56,17 +56,17 @@ Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung
 
 ![Erstellen und Bereitstellen](./media/web-sites-dotnet-get-started/Create_App.png)
 
-1. Öffnen Sie Visual Studio 2015 oder Visual Studio 2013. 
+1. Öffnen Sie Visual Studio 2015 oder Visual Studio 2013.
 
 	Wenn Sie Visual Studio 2013 verwenden, weichen die Bildschirme geringfügig von den Screenshots ab, die Verfahren sind jedoch im Wesentlichen identisch.
 
 2. Klicken Sie im Menü **Datei** auf **Neu > Projekt**.
 
-3. Klicken Sie im Dialogfeld **Neues Projekt** auf **C#** > **Web** > **ASP.NET-Webanwendung**. Bei Bedarf können Sie auch **Visual Basic** verwenden.
+3. Klicken Sie im Dialogfeld **Neues Projekt** auf **C# > Web > ASP.NET-Webanwendung**. Bei Bedarf können Sie auch **Visual Basic** verwenden.
 
 3. Stellen Sie sicher, dass als Zielframework **.NET Framework 4.5.2** ausgewählt ist.
 
-4.  [Application Insights](app-insights-overview.md) überwacht Ihre Web-App auf Verfügbarkeit, Leistung und Nutzung. Deaktivieren Sie das Kontrollkästchen **Application Insights zum Projekt hinzufügen**, wenn Sie die Funktion nicht ausprobieren möchten.
+4.  [Azure Application Insights](app-insights-overview.md) überwacht Ihre Web-App auf Verfügbarkeit, Leistung und Nutzung. Deaktivieren Sie das Kontrollkästchen **Application Insights zum Projekt hinzufügen**, wenn Sie die Funktion nicht ausprobieren möchten.
 
 4. Nennen Sie die Anwendung **MyExample**.
 
@@ -108,19 +108,19 @@ Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung
 
 4. Wählen Sie in der Dropdownliste **App Service plan** die Option **Create new App Service plan** aus.
 
-	Der Abschnitt [Nächste Schritte](#next-steps) am Ende dieses Lernprogramms enthält Links zu weiteren Informationen über App Service-Pläne.
+	Der Abschnitt [Nächste Schritte](#next-steps) enthält Links zu Informationen über App Service-Pläne.
 
-5. Geben Sie *MyExamplePlan* oder einen Namen Ihrer Wahl für den Plan ein.
+5. Geben Sie **MyExamplePlan** oder einen Namen Ihrer Wahl für den Plan ein.
 
 6. Wählen Sie in der Dropdownliste **Ressourcengruppe** die Option **Neue Ressourcengruppe erstellen** aus.
 
 	Der Abschnitt [Nächste Schritte](#next-steps) enthält Links zu Informationen über Ressourcengruppen.
 
-5. Geben Sie *MyExampleGroup* oder einen anderen Namen für die Ressourcengruppe ein.
+5. Geben Sie **MyExampleGroup** oder einen anderen Namen für die Ressourcengruppe ein.
 
 5. Wählen Sie in der Dropdownliste **Region** den am nächsten befindlichen Ort aus.
 
-	Mit dieser Einstellung wird das Azure-Datencenter angegeben, in dem Ihre Web-App ausgeführt wird. In diesem Lernprogramm können Sie ohne spürbaren Unterschied eine beliebige Region auswählen, aber für eine Produktions-Web-App sollte sich der Webserver so nah wie möglich an den Browsern befinden, die auf die Website zugreifen, um die [Latenzzeiten](http://www.bing.com/search?q=web%20latency%20introduction&qs=n&form=QBRE&pq=web%20latency%20introduction&sc=1-24&sp=-1&sk=&cvid=eefff99dfc864d25a75a83740f1e0090) zu minimieren.
+	Mit dieser Einstellung wird das Azure-Datencenter angegeben, in dem Ihre Web-App ausgeführt wird. In diesem Lernprogramm können Sie ohne spürbaren Unterschied eine beliebige Region auswählen. Aber für eine Produktions-Web-App sollte sich der Webserver so nah wie möglich an den Browsern befinden, die auf die Website zugreifen, um die [Latenzzeiten](http://www.bing.com/search?q=web%20latency%20introduction&qs=n&form=QBRE&pq=web%20latency%20introduction&sc=1-24&sp=-1&sk=&cvid=eefff99dfc864d25a75a83740f1e0090) zu minimieren.
 
 5. Verändern Sie das Datenbankfeld nicht.
 
@@ -164,7 +164,7 @@ Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung
 
 	Sie können die Standardwerte für **Konfiguration** und **File Publish Options** übernehmen.
 
-	Mithilfe der Dropdownliste **Konfiguration** können Sie einen Debugbuild für das Remotedebuggen bereitstellen. Im Abschnitt [Nächste Schritte](#next-steps) Sie eine Verknüpfung zu einem Lernprogramm, in dem demonstriert wird, wie Visual Studio remote im Debugmodus ausgeführt wird.
+	Mithilfe der Dropdownliste **Konfiguration** können Sie einen Debugbuild für das Remotedebuggen bereitstellen. Im Abschnitt [Nächste Schritte](#next-steps) erhalten Sie eine Verknüpfung zu einem Lernprogramm, in dem demonstriert wird, wie Visual Studio remote im Debugmodus ausgeführt wird.
 
 	![Registerkarte "Einstellungen"](./media/web-sites-dotnet-get-started/GS13SettingsTab.png)
 
@@ -190,7 +190,7 @@ Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung
 
 Dieser Abschnitt des Tutorials ist optional. In diesem Abschnitt ändern Sie die Überschrift **h1** der Startseite, führen das Projekt lokal auf dem Entwicklungscomputer aus, um die Änderung zu prüfen, und stellen diese dann auf Azure bereit.
 
-2. Öffnen Sie die Datei *Views/Home/Index.cshtml* oder *.vbhtml* im **Projektmappen-Explorer**, ändern Sie die Überschrift **h1** von "ASP.NET" in "ASP.NET and Azure", und speichern Sie die Datei.
+2. Öffnen Sie die Datei **Views/Home/Index.cshtml** oder **.vbhtml** im **Projektmappen-Explorer**, ändern Sie die Überschrift **h1** von "ASP.NET" in "ASP.NET and Azure", und speichern Sie die Datei.
 
 	![MVC index.cshtml](./media/web-sites-dotnet-get-started/index.png)
 
@@ -206,9 +206,9 @@ Dieser Abschnitt des Tutorials ist optional. In diesem Abschnitt ändern Sie die
 
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie **Veröffentlichen** aus.
 
-	!["Veröffentlichen" auswählen](./media/web-sites-dotnet-get-started/choosepublish.png)
+	![Wählen Sie "Veröffentlichen"](./media/web-sites-dotnet-get-started/choosepublish.png)
 
-	Die Registerkarte **Vorschau** im Assistenten **Web veröffentlichen** wird angezeigt. Wenn Sie Veröffentlichungseinstellungen ändern mussten, können Sie eine andere Registerkarte auswählen, nun ist es jedoch völlig ausreichend, die erneute Bereitstellung mit denselben Einstellungen auszuführen.
+	Die Registerkarte **Vorschau** im Assistenten **Web veröffentlichen** wird angezeigt. Wenn Sie Veröffentlichungseinstellungen ändern mussten, können Sie eine andere Registerkarte auswählen. Nun ist es jedoch völlig ausreichend, die erneute Bereitstellung mit denselben Einstellungen auszuführen.
 
 2. Klicken Sie im Assistenten **Web veröffentlichen** auf **Veröffentlichen**.
 
@@ -218,15 +218,15 @@ Dieser Abschnitt des Tutorials ist optional. In diesem Abschnitt ändern Sie die
 
 	![Geänderte Web-App bereitgestellt](./media/web-sites-dotnet-get-started/deployedandazure.png)
 
-**Tipp:** Für eine noch schnellere Bereitstellung können Sie die Symbolleiste **Webveröffentlichung mit einem Klick** aktivieren. Klicken Sie auf **Ansicht > Symbolleisten**, und wählen Sie dann **Webveröffentlichung mit einem Klick** aus. Über diese Symbolleiste können Sie ein Profil auswählen, auf eine Schaltfläche klicken, um zu veröffentlichen, oder auf eine Schaltfläche klicken, um den Assistenten **Web veröffentlichen** zu öffnen.
+**Tipp:** Für eine noch schnellere Bereitstellung können Sie die Symbolleiste **Webveröffentlichung mit einem Klick** aktivieren. Klicken Sie auf **Ansicht > Symbolleisten**, und wählen Sie dann **Webveröffentlichung mit einem Klick** aus. Sie können die Symbolleiste zum Auswählen eines Profils verwenden, auf eine Schaltfläche klicken, um zu veröffentlichen, oder auf eine Schaltfläche klicken, um den Assistenten **Web veröffentlichen** zu öffnen.
 
 ![Symbolleiste "Webveröffentlichung mit einem Klick"](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
 
-## Überwachen und Verwalten der Web-App im Azure-Verwaltungsportal
+## Überwachen und Verwalten der Web-App im Azure-Portal
 
-Das [Azure-Vorschauportal](/services/management-portal/) ist eine Weboberfläche, die das Verwalten und Überwachen Ihrer Azure-Dienste ermöglicht, z. B. der soeben erstellten Web-App. In diesem Abschnitt des Lernprogramms erfahren Sie, was Sie im Portal durchführen können.
+Das [Azure-Portal](/services/management-portal/) ist eine Weboberfläche, die das Verwalten und Überwachen Ihrer Azure-Dienste ermöglicht, z. B. der soeben erstellten Web-App. In diesem Abschnitt des Lernprogramms erfahren Sie, was Sie im Portal durchführen können.
 
-1. Rufen Sie in Ihrem Browser [https://portal.azure.com]() auf, und melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
+1. Rufen Sie in Ihrem Browser [https://portal.azure.com](https://portal.azure.com) auf, und melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
 
 2. Klicken Sie auf **Alle durchsuchen > Web-Apps** und dann auf den Namen der Web-App.
 
@@ -244,11 +244,11 @@ Das [Azure-Vorschauportal](/services/management-portal/) ist eine Weboberfläche
 
 4. Klicken Sie auf **Anwendungseinstellungen**, um ein Beispiel für die verschiedenen Einstellungen anzuzeigen, die Sie im Portal konfigurieren können.
 
-	Sie können beispielsweise die für die Web-App verwendete .NET-Version festlegen, Funktionen wie [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) aktivieren, die [Werte für Verbindungszeichenfolgen](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/) festlegen und vieles mehr.
+	Sie können beispielsweise die für die Web-App verwendete .NET-Version festlegen, Funktionen wie [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/) aktivieren, und die [Werte für Verbindungszeichenfolgen](/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/) festlegen.
 
 	![Registerkarte "Konfigurieren" der Web-App im Portal](./media/web-sites-dotnet-get-started/portalconfigure2.png)
 
-Dies sind nur einige Funktionen des Verwaltungsportals. Sie können neue Web-Apps erstellen, vorhandene Web-Apps löschen, Web-Apps anhalten und neu starten und andere Azure-Dienste verwalten, z. B. Datenbanken und virtuelle Computer.
+Dies sind nur einige Funktionen des Portals. Sie können neue Web-Apps erstellen, vorhandene Web-Apps löschen, Web-Apps anhalten und neu starten und andere Azure-Dienste verwalten, z. B. Datenbanken und virtuelle Computer.
 
 ## Nächste Schritte
 
@@ -276,18 +276,18 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 
 	Informationen zur Verwendung von SSL und einer eigenen Domäne (z. B. www.contoso.com statt contoso.azurewebsites.net) finden Sie in den folgenden Ressourcen:
 
-	* [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website](web-sites-custom-domain-name.md)
+	* [Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](web-sites-custom-domain-name.md)
 	* [Aktivieren von HTTPS für Azure-Web-Apps](web-sites-configure-ssl-certificate.md)
 
 * Vermeiden von Wartezeiten nach Leerlaufzeiten
 
-	Standardmäßig werden Web-Apps entladen, wenn sie einige Zeit im Leerlauf waren. Bei der ersten Anforderung nach dem Entladen einer Web-App muss gewartet werden, bis die Web-App neu geladen wurde. Zur Vermeidung von Wartezeiten können Sie die AlwaysOn-Funktion aktivieren. Weitere Informationen dazu finden Sie unter den Konfigurationsoptionen in [Konfigurieren von Web-Apps](web-sites-configure.md).
+	Standardmäßig werden Web-Apps entladen, wenn sie einige Zeit im Leerlauf waren. Bei der ersten Anforderung nach dem Entladen einer Web-App muss gewartet werden, bis die Web-App neu geladen wurde. Zur Vermeidung von Wartezeiten können Sie das Feature "Always On" aktivieren. Weitere Informationen dazu finden Sie unter den Konfigurationsoptionen in [Konfigurieren von Web-Apps](web-sites-configure.md).
 
 * Hinzufügen von Echtzeitfunktionen wie Chat
 
 	Wenn Ihre Web-App Echtzeitfunktionen (Chat-Dienste, Spiele, Börsenticker usw.) enthalten soll, erhalten Sie die beste Performance durch die Verwendung von [ASP.NET SignalR](http://www.asp.net/signalr) mit der Transportmethode [WebSockets](/blog/2013/11/14/introduction-to-websockets-on-windows-azure-web-sites/). Weitere Informationen finden Sie unter [Using SignalR with Web Apps in Azure App Service](http://www.asp.net/signalr/overview/signalr-20/getting-started-with-signalr-20/using-signalr-with-windows-azure-web-sites) (in englischer Sprache).
 
-* Auswählen zwischen App Service, Cloud Services und VMs für Webanwendungen
+* Auswählen zwischen App Service, Azure Cloud Services und Azure Virtual Machines für Webanwendungen
 
 	In Azure können Sie Webanwendungen in App Service-Web-Apps (wie in diesem Lernprogramm gezeigt), in Cloud Services oder in Virtual Machines ausführen. Weitere Informationen finden Sie unter [Azure App Service, Cloud Services und Virtual Machines im Vergleich](/manage/services/web-sites/choose-web-app-service/).
 
@@ -296,9 +296,7 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 * [Auswählen oder Erstellen einer Ressourcengruppe](../azure-preview-portal-using-resource-groups.md)
 
 ## Änderungen
+* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
- 
-
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

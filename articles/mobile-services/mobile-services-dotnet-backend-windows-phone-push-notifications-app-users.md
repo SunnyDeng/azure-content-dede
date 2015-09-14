@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer" 
-	description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte" 
-	services="mobile-services,notification-hubs" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer"
+	description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte"
+	services="mobile-services,notification-hubs"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-phone" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows-phone"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="glenga"/>
 
 # Senden von Pushbenachrichtigungen an authentifizierte Benutzer
@@ -24,7 +24,7 @@ In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen an authentifizierte
 
 Dieses Lernprogramm unterstützt Apps für Windows Phone 8.0 und Windows Phone 8.1 Silverlight. Informationen für Windows Phone 8.1 Store-Apps finden Sie in der [Windows Store-Version dieses Themas](mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users.md).
 
-##Voraussetzungen 
+##Voraussetzungen
 
 Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die folgenden Mobile Services-Lernprogramme abgeschlossen haben:
 
@@ -59,6 +59,5 @@ Nachdem Sie diese beiden Lernprogramme abgeschlossen haben, können Sie verhinde
 [Hinzufügen von Pushbenachrichtigungen zur App]: mobile-services-dotnet-backend-windows-phone-get-started-push.md
 
 [Azure Management Portal]: https://manage.windowsazure.com/
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Wiederherstellung der SQL-Datenbank nach Benutzerfehler" 
-   description="Erfahren Sie, wie Sie die Datenbankwiederherstellung nach einem Benutzerfehler, unbeabsichtigter Datenbeschädigungen oder bei einer gelöschten Datenbank mithilfe der Zeitpunktwiederherstellungsfunktion (PITR) von Azure SQL-Datenbank durchführen." 
-   services="sql-database" 
-   documentationCenter="" 
-   authors="elfisher" 
-   manager="jeffreyg" 
-   editor="monicar"/>
+   pageTitle="Wiederherstellung der SQL-Datenbank nach Benutzerfehler"
+	description="Erfahren Sie, wie Sie die Datenbankwiederherstellung nach einem Benutzerfehler, unbeabsichtigter Datenbeschädigungen oder bei einer gelöschten Datenbank mithilfe der Zeitpunktwiederherstellungsfunktion (PITR) von Azure SQL-Datenbank durchführen."
+	services="sql-database"
+	documentationCenter=""
+	authors="elfisher"
+	manager="jeffreyg"
+	editor="monicar"/>
 
 <tags
    ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-management" 
-   ms.date="07/23/2015"
-   ms.author="elfish"/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="data-management"
+	ms.date="07/23/2015"
+	ms.author="elfish"/>
 
 # Wiederherstellen einer Azure-SQL-Datenbank nach einem Benutzerfehler
 
@@ -30,6 +30,8 @@ Eine Azure-SQL-Datenbank wird immer in eine neue Datenbank wiederhergestellt. Di
 Bei einem Benutzerfehler oder unbeabsichtigter Datenänderung kann die Zeitpunktwiederherstellung verwendet werden, um die Datenbank bis zu einem beliebigen Zeitpunkt innerhalb der Datenbankaufbewahrungsdauer wiederherzustellen.
 
 Basic-Datenbanken haben eine Aufbewahrungsdauer von 7 Tagen, Standard-Datenbanken eine Aufbewahrungsdauer von 14 Tagen, und Premium-Datenbanken eine Aufbewahrungsdauer von 35 Tagen. Weitere Informationen zur Datenbankaufbewahrungsdauer finden Sie unter [Geschäftskontinuität – Überblick](sql-database-business-continuity.md).
+
+> [AZURE.NOTE]Beim Wiederherstellen einer Datenbank wird eine neue Datenbank erstellt. Es muss sichergestellt werden, dass der Server, auf dem die Wiederherstellung erfolgt, über ausreichend DTU-Kapazität für die neue Datenbank verfügt. [Wenden Sie sich an den Support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
 
 ###Azure-Portal
 1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
@@ -66,6 +68,8 @@ Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestel
 Falls eine Datenbank gelöscht wird, bietet Ihnen die Azure-SQL-Datenbank die Möglichkeit, die gelöschte Datenbank zum Zeitpunkt des Löschens wiederherzustellen. Die Azure-SQL-Datenbank speichert die gelöschte Datenbanksicherung während der Aufbewahrungsdauer der Datenbank.
 
 Die Aufbewahrungsdauer einer gelöschten Datenbank wird anhand der Dienstebene der Datenbank bestimmt, während sie vorhanden war, oder der Anzahl der Tage, während denen die Datenbank vorhanden ist, je nachdem, welcher Wert kleiner ist. Weitere Informationen zur Datenbankaufbewahrungsdauer finden Sie unter [Geschäftskontinuität – Überblick](sql-database-business-continuity.md).
+
+> [AZURE.NOTE]Beim Wiederherstellen einer Datenbank wird eine neue Datenbank erstellt. Es muss sichergestellt werden, dass der Server, auf dem die Wiederherstellung erfolgt, über ausreichend DTU-Kapazität für die neue Datenbank verfügt. [Wenden Sie sich an den Support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
 
 ###Azure-Portal
 1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
@@ -109,4 +113,4 @@ Verwenden Sie REST für eine programmatische Durchführung der Datenbankwiederhe
 Nachdem die Wiederherstellung abgeschlossen ist, können Sie die wiederhergestellte Datenbank für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Abschließen einer wiederhergestellten Datenbank](sql-database-recovered-finalize.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

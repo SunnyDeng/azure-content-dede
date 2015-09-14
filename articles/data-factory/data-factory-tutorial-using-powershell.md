@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory"
-	description="In diesem fortgeschrittenen Lernprogramm wird ein nahezu reales Szenario beschrieben und mithilfe des Azure Data Factory-Diensts implementiert."
+	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory (Azure PowerShell)"
+	description="In diesem fortgeschrittenen Tutorial wird ein sehr praxisnahes Szenario beschrieben und mithilfe des Azure Data Factory-Diensts und Azure PowerShell implementiert."
 	services="data-factory"
 	documentationCenter=""
 	authors="spelluru"
@@ -296,7 +296,7 @@ Das Erstellen von Datasets/Tabellen wird vom Azure-Verwaltungsportal noch nicht 
 
 ### So erstellen Sie die Tabellen
 
-1.	Navigieren Sie in Azure PowerShell an dem Speicherort, an dem Sie die Beispiele extrahiert haben, zum Ordner **Tables** (**C:\\ADFWalkthrough\\Tables\**).
+1.	Navigieren Sie in Azure PowerShell an dem Speicherort, an dem Sie die Beispiele extrahiert haben, zum Ordner **Tables** (**C:\\ADFWalkthrough\\Tables\\**).
 2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryTable**, um die Tabellen für **RawGameEventsTable.json** wie folgt zu erstellen.	
 
 
@@ -558,4 +558,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial-using-powershell/DataFactoryCreateButton.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

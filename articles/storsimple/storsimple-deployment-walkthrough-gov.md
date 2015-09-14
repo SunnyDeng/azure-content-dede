@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Bereitstellen lokaler StorSimple-Geräte im Portal für Behörden | Microsoft Azure"
-	description="Schritte und bewährte Methoden für die Bereitstellung von Update 1 für StorSimple-Gerät und -Dienst im Azure-Portal für Behörden."
+   pageTitle="Bereitstellen von StorSimple-Geräten im Government-Portal | Microsoft Azure"
+	description="Beschreibt die Schritte und bewährten Methoden für die Bereitstellung des StorSimple Update 1-Geräts und -Diensts im Azure Government-Portal."
 	services="storsimple"
 	documentationCenter="NA"
 	authors="SharS"
@@ -12,14 +12,14 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"
 	ms.workload="TBD"
-	ms.date="08/21/2015"
+	ms.date="09/02/2015"
 	ms.author="v-sharos"/>
 
 # Bereitstellen lokaler StorSimple-Geräte im Government-Portal
 
 ## Übersicht
 
-Willkommen bei der exemplarischen Vorgehensweise für die Bereitstellung von Microsoft Azure StorSimple-Geräten. Diese Bereitstellungslernprogramme betreffen die StorSimple 8000-Serie mit Update 1 im Azure Governmment-Portal. Diese Reihe von Tutorials beschreibt die Konfiguration Ihrer StorSimple-Geräte. Sie enthält darüber hinaus eine Konfigurationsprüfliste, Konfigurationsvoraussetzungen und detaillierte Konfigurationsschritte.
+Willkommen bei der exemplarischen Vorgehensweise für die Bereitstellung von Microsoft Azure StorSimple-Geräten. Diese Bereitstellungstutorials betreffen die StorSimple 8000-Serie mit Update 1 im Azure Governmment-Portal. Diese Reihe von Tutorials beschreibt die Konfiguration Ihrer StorSimple-Geräte. Sie enthält darüber hinaus eine Konfigurationsprüfliste, Konfigurationsvoraussetzungen und detaillierte Konfigurationsschritte.
 
 Bei den Informationen in diesen Tutorials wird davon ausgegangen, dass Sie die Sicherheitsvorkehrungen geprüft und Ihr StorSimple-Gerät ausgepackt, installiert und verkabelt haben. Wenn Sie diese Aufgaben noch ausführen müssen, beginnen Sie mit der Überprüfung der [Sicherheitsvorkehrungen](storsimple-safety.md). Je nach Modell können Sie anschließend das Gerät auspacken, im Rack einbauen und verkabeln, indem Sie folgende Anweisungen befolgen:
 
@@ -70,7 +70,7 @@ Die folgende Konfigurationsprüfliste für die Bereitstellung enthält die Infor
 | | | | |
 | **Konfigurieren und Registrieren des Geräts** | DATA 0-Netzwerkeinstellungen | DATA 0-IP-Adresse:</br>Subnetzmaske:</br>Gateway:</br>Primärer DNS-Server:</br>Primärer NTP-Server:</br>Webproxyserver-IP/FQDN (optional):</br>Webproxyport:| |
 | | Geräteadministratorkennwort | Das Kennwort muss zwischen 8 und 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen. | |
-| | StorSimple-Momentaufnahmen-Manager-Kennwort | Das Kennwort muss 14 oder 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen.| |
+| | StorSimple Snapshot Manager-Kennwort | Das Kennwort muss 14 oder 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen.| |
 | | Dienstregistrierungsschlüssel | Dieser Schlüssel wird im Azure-Portal generiert. | |
 | | Verschlüsselungsschlüssel für Dienstdaten | Dieser Schlüssel wird erstellt, wenn das Gerät über die Windows PowerShell für StorSimple beim Verwaltungsdienst registriert wird. Kopieren Sie diesen Schlüssel, und bewahren Sie ihn an einem sicheren Ort auf.| |
 | | | | |
@@ -131,7 +131,7 @@ Stellen Sie vor der Konfiguration des Geräts Folgendes sicher:
 
 Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
-- Die Ports in der Datencenter-Firewall werden geöffnet, um iSCSI- und Cloud-Datenverkehr zu ermöglichen, wie in [Netzwerkanforderungen für das StorSimple-Gerät](storsimple-system-requirements.md#networking-requirements-for-your-storsimple-device) beschrieben.
+- Die Ports in der Datencenter-Firewall werden geöffnet, um iSCSI- und Clouddatenverkehr zu ermöglichen, wie in [Netzwerkanforderungen für das StorSimple-Gerät](storsimple-system-requirements.md#networking-requirements-for-your-storsimple-device) beschrieben.
 
 ## Schrittweise Bereitstellung
 
@@ -152,7 +152,7 @@ Ein StorSimple-Manager-Dienst kann mehrere StorSimple-Geräte verwalten. Führen
 
 Nachdem der StorSimple-Manager-Dienst eingerichtet wurde und ausgeführt wird, müssen Sie den Dienstregistrierungsschlüssel abrufen. Dieser Schlüssel wird zum Registrieren Ihres StorSimple-Geräts sowie zum Herstellen einer Verbindung mit dem Dienst verwendet.
 
-Führen Sie im Behörden-Portal die folgenden Schritte aus.
+Führen Sie im Government-Portal die folgenden Schritte aus.
 
 [AZURE.INCLUDE [storsimple-get-service-registration-key-gov](../../includes/storsimple-get-service-registration-key-gov.md)]
 
@@ -171,7 +171,7 @@ Sie müssen für die Gerätemindestkonfiguration des StorSimple-Geräts die folg
 - Aktivieren von iSCSI an mindestens einer Netzwerkschnittstelle
 - Zuweisen fester IP-Adressen an beide Controller
 
-Führen Sie im Behörden-Portal die folgenden Schritte aus, um das mindestens erforderliche Setup für das Gerät auszuführen:
+Führen Sie im Government-Portal die folgenden Schritte aus, um das mindestens erforderliche Setup für das Gerät auszuführen:
 
 [AZURE.INCLUDE [storsimple-complete-minimum-device-setup](../../includes/storsimple-complete-minimum-device-setup-u1.md)]
 
@@ -179,13 +179,13 @@ Führen Sie im Behörden-Portal die folgenden Schritte aus, um das mindestens er
 
 Ein Volumecontainer verfügt über Einstellungen für das Speicherkonto, die Bandbreite und die Verschlüsselung für alle darin enthaltenen Volumes. Sie müssen einen Volumecontainer erstellen, bevor Sie mit der Bereitstellung von Volumes auf Ihrem StorSimple-Gerät beginnen können.
 
-Führen Sie im Behörden-Portal die folgenden Schritte aus, um einen Volumecontainer zu erstellen.
+Führen Sie im Government-Portal die folgenden Schritte aus, um einen Volumecontainer zu erstellen.
 
 [AZURE.INCLUDE [storsimple-create-volume-container](../../includes/storsimple-create-volume-container.md)]
 
 ## Schritt 6: Erstellen eines Volumes
 
-Nach dem Erstellen eines Volumecontainers können Sie ein Speichervolume auf dem StorSimple-Gerät für Ihre Server bereitstellen. Führen Sie im Behörden-Portal die folgenden Schritte aus, um ein Volume zu erstellen.
+Nach dem Erstellen eines Volumecontainers können Sie ein Speichervolume auf dem StorSimple-Gerät für Ihre Server bereitstellen. Führen Sie im Government-Portal die folgenden Schritte aus, um ein Volume zu erstellen.
 
 > [AZURE.IMPORTANT]Mit Azure StorSimple können nur nach Bedarf bereitgestellte Volumes erstellt werden. In einem Azure StorSimple-System können keine vollständig oder teilweise bereitgestellten Volumes erstellt werden.
 
@@ -209,9 +209,9 @@ Wenn Sie MPIO nicht konfigurieren, führen Sie die folgenden Schritte aus, um Ih
 
 ## Schritt 8: Erstellen einer Sicherung
 
-Sicherungen stellen Zeitpunktschutz für Volumes zur Verfügung und verbessern die Wiederherstellbarkeit bei gleichzeitiger Minimierung der Wiederherstellungszeiten. Für Ihr StorSimple-Gerät können zwei Arten von Sicherungen angefertigt werden: lokale Momentaufnahmen und Cloud-Momentaufnahmen. Jeder dieser Sicherungstypen kann **geplant** sein oder **manuell** erfolgen.
+Sicherungen stellen Zeitpunktschutz für Volumes zur Verfügung und verbessern die Wiederherstellbarkeit bei gleichzeitiger Minimierung der Wiederherstellungszeiten. Für Ihr StorSimple-Gerät können zwei Arten von Sicherungen angefertigt werden: lokale Momentaufnahmen und Cloudmomentaufnahmen. Jeder dieser Sicherungstypen kann **geplant** sein oder **manuell** erfolgen.
 
-Führen Sie im Behörden-Portal die folgenden Schritte aus, um eine geplante Sicherung zu erstellen.
+Führen Sie im Government-Portal die folgenden Schritte aus, um eine geplante Sicherung zu erstellen.
 
 [AZURE.INCLUDE [storsimple-take-backup](../../includes/storsimple-take-backup.md)]
 
@@ -223,7 +223,7 @@ Dies ist ein optionaler Schritt, den Sie nur dann ausführen müssen, wenn Sie n
 
 Wenn Sie ein Azure-Speicherkonto in einer anderen Region erstellen müssen, finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md) schrittweise Anweisungen.
 
-Führen Sie im Behörden-Portal auf der Seite für den **StorSimple-Manager-Dienst** die folgenden Schritte aus.
+Führen Sie im Government-Portal auf der Seite für den **StorSimple-Manager-Dienst** die folgenden Schritte aus.
 
 [AZURE.INCLUDE [storsimple-configure-new-storage-account-u1](../../includes/storsimple-configure-new-storage-account-u1.md)]
 
@@ -258,7 +258,7 @@ Führen Sie die folgenden Schritte aus, um den IQN (iSCSI Qualified Name) eines 
 
 ## Erstellen einer manuellen Sicherung
 
-Führen Sie im Behörden-Portal die folgenden Schritte aus, um ein manuelles On-Demand-Backup für ein einzelnes Volume auf dem StorSimple-Gerät zu erstellen.
+Führen Sie im Government-Portal die folgenden Schritte aus, um ein manuelles On-Demand-Backup für ein einzelnes Volume auf dem StorSimple-Gerät zu erstellen.
 
 [AZURE.INCLUDE [Erstellen einer manuellen Sicherung](../../includes/storsimple-create-manual-backup-gov.md)]
 
@@ -277,4 +277,4 @@ Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
 Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

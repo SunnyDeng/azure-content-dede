@@ -12,8 +12,8 @@
 	ms.workload="core"
 	ms.tgt_pltfrm="csharp"
 	ms.devlang="csharp"
-	ms.topic="article" 
-	ms.date="07/21/2015"
+	ms.topic="article"
+	ms.date="09/01/2015"
 	ms.author="sethm"/>
 
 # Erste Schritte mit Event Hubs
@@ -34,11 +34,11 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 + Eine Java-Entwicklungsumgebung, die zum Ausführen von [Maven](http://maven.apache.org/) konfiguriert ist. In diesem Lernprogramm wird von [Eclipse](https://www.eclipse.org/) ausgegangen.
 
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
++ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
 
-## Erstellen eines Event Hubs
+## Erstellen eines Ereignis-Hubs
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, und klicken Sie unten auf dem Bildschirm auf **NEU**.
+1. Melden Sie sich beim [Azure-Portal] an, und klicken Sie im unteren Teil des Bildschirms auf **NEW**.
 
 2. Klicken Sie auf **App Services**, **Service Bus**,** Event Hub** und auf **Schnellerfassung**.
 
@@ -105,7 +105,7 @@ Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hu
 [22]: ./media/event-hubs-csharp-storm-getstarted/receive-storm1.png
 
 <!-- Links -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Azure-Portal]: https://manage.windowsazure.com/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [Übersicht über Event Hubs]: event-hubs-overview.md
 [Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
@@ -113,4 +113,4 @@ Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hu
 [Messaginglösung mit Warteschlange]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

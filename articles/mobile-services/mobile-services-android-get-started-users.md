@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Erste Schritte mit der Authentifizierung (Android) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Android-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren." 
-	services="mobile-services" 
-	documentationCenter="android" 
-	authors="RickSaling" 
-	manager="dwrede" 
+<properties
+	pageTitle="Erste Schritte mit der Authentifizierung (Android) | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer Android-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren."
+	services="mobile-services"
+	documentationCenter="android"
+	authors="RickSaling"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="06/01/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="java"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="ricksal"/>
 
 # Hinzufügen von Authentifizierung zu Ihrer Mobile Services-Android-App
@@ -22,17 +22,9 @@
 
 ## Zusammenfassung
 
-<div class="dev-onpage-video-clear clearfix">
-<div class="dev-onpage-left-content">
+In diesem Thema erfahren Sie, wie Sie Benutzer in Azure Mobile Services über Ihre App authentifizieren.. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.
 
-
-
-<p>In diesem Thema erfahren Sie, wie Sie Benutzer in Azure Mobile Services über Ihre App authentifizieren.. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.</p>
-
-</div>
-
-<div class="dev-onpage-video-wrapper"><a href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-with-Authentication-in-Windows-Azure-Mobile-Services" target="_blank" class="label">Lernprogramm ansehen</a> <a style="background-image: url('/media/devcenter/mobile/videos/mobile-android-get-started-authentication-180x120.png') !important;" href="http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Android-Getting-Started-with-Authentication-in-Windows-Azure-Mobile-Services" target="_blank" class="dev-onpage-video"><span class="icon">Video abspielen</span></a><span class="time">10:42</span></div>
-</div>
+> [AZURE.VIDEO android-getting-started-with-authentication-in-windows-azure-mobile-services]
 
 In diesem Lernprogramm werden die grundlegenden Schritte zur Aktivierung der Authentifizierung in einer App erläutert.
 
@@ -49,7 +41,7 @@ In diesem Lernprogramm werden die grundlegenden Schritte zur Aktivierung der Aut
 
 [AZURE.INCLUDE [mobile-services-restrict-permissions-javascript-backend](../../includes/mobile-services-restrict-permissions-javascript-backend.md)]
 
-1. Öffnen Sie in Android Studio das Projekt, das Sie während der Bearbeitung des Lernprogramms [Erste Schritte mit Mobile Services] erstellt haben. 
+1. Öffnen Sie in Android Studio das Projekt, das Sie während der Bearbeitung des Lernprogramms [Erste Schritte mit Mobile Services] erstellt haben.
 
 2. Klicken Sie im Menü **Ausführen** auf **App ausführen**. Vergewissern Sie sich, dass nach dem Start der App ein Ausnahmefehler mit dem Statuscode 401 (nicht autorisiert) ausgelöst wird.
 
@@ -115,6 +107,5 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Autorisieren von Benutzern mit Skripts]: /develop/mobile/tutorials/authorize-users-in-scripts-android
 
 [Azure Management Portal]: https://manage.windowsazure.com/
- 
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

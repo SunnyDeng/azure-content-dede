@@ -3,9 +3,9 @@
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Apps für die Xamarin Android-Entwicklung."
 	services="app-service\mobile"
 	documentationCenter="xamarin"
-	authors="normesta"
+	authors="wesmc7777"
 	manager="dwrede"
-	editor="" />
+	editor=""/>
 
 <tags
 	ms.service="app-service-mobile"
@@ -14,7 +14,7 @@
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
 	ms.date="08/12/2015"
-	ms.author="normesta" />
+	ms.author="normesta"/>
 
 #Erstellen einer Xamarin.Android-App
 
@@ -79,7 +79,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 	Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
 
-	> [AZURE.NOTE]Sie können den Code überprüfen, der zum Abfragen und Einfügen von Daten auf das mobile App-Back-End zugreift. Der Code befindet sich in der C\#-Datei "ToDoActivity.cs".
+	> [AZURE.NOTE]Sie können den Code überprüfen, der zum Abfragen und Einfügen von Daten auf das mobile App-Back-End zugreift. Der Code befindet sich in der C#-Datei "ToDoActivity.cs".
 
 ##Nächste Schritte
 
@@ -101,4 +101,4 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
  
 [Visual Studio Community 2013]: https://go.microsoft.com/fwLink/p/?LinkID=534203
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

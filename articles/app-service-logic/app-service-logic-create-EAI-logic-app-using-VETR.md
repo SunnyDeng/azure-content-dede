@@ -1,48 +1,51 @@
-<properties 
-   pageTitle="Erstellen einer EAI-Logik-App mithilfe von VETR" 
-   description="In diesem Thema werden die Überprüfungs-, Codier- und Transformationsfeatures der BizTalk XML Services behandelt." 
-   services="app-service\logic" 
-   documentationCenter=".net,nodejs,java" 
-   authors="rajeshramabathiran" 
-   manager="dwrede" 
-   editor=""/>
+<properties
+   pageTitle="Erstellen einer EAI-Logik-App mithilfe von VETR | Microsoft Azure"
+	description="In diesem Thema werden die Überprüfungs-, Codier- und Transformationsfeatures der BizTalk XML Services behandelt."
+	services="app-service\logic"
+	documentationCenter=".net,nodejs,java"
+	authors="rajeshramabathiran"
+	manager="dwrede"
+	editor=""/>
 
 <tags
    ms.service="app-service-logic"
-   ms.devlang="multiple"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="06/24/2015"
-   ms.author="rajram"/>
+	ms.devlang="multiple"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="na"
+	ms.workload="integration"
+	ms.date="06/24/2015"
+	ms.author="rajram"/>
 
 
 # Erstellen einer EAI-Logik-App mithilfe von VETR
 
 In den meisten Szenarien für Enterprise Application Integration (EAI, Unternehmensanwendungsintegration) werden Daten zwischen einer Quelle und einem Ziel vermittelt. Solche Szenarien weisen häufig einen gemeinsamen Satz von Anforderungen auf:
 
-- Sicherstellen, dass Daten aus anderen Systemen ein ordnungsgemäßes Format haben
+- Sicherstellen, dass Daten aus anderen Systemen ein ordnungsgemäß formatiert sind
 - Anwenden von Nachschlagevorgängen auf eingehende Daten, um Entscheidungen zu treffen
 - Konvertieren von Daten aus einem Format in ein anderes (z. B. vom Datenformat eines CRM-Systems in ein Datenformat eines ERP-Systems)
 - Weiterleiten von Daten an die gewünschten Anwendungen oder Systeme
 
-In diesem Artikel untersuchen wir ein gängiges Integrationsmuster: "unidirektionale Nachrichtenvermittlung" bzw. VETR (Validate, Enrich, Transformation, Route [Überprüfen, Verfeinern, Transformieren, Weiterleiten]). Das VETR-Muster vermittelt Daten zwischen einer Quellentität und einer Zielentität. In der Regel sind die Quelle und das Ziel Datenquellen.
+In diesem Artikel wird ein gängiges Muster für die Integration dargestellt: die "unidirektionale Nachrichtenvermittlung" oder VETR (Validate, Enrich, Transform, Route [Überprüfen, Anreichern, Transformieren, Weiterleiten]). Das VETR-Muster vermittelt Daten zwischen einer Quellentität und einer Zielentität. In der Regel sind die Quelle und das Ziel Datenquellen.
 
 Nehmen wir eine Website, die Bestellungen annimmt. Benutzer senden über HTTP Bestellungen an das System. Hinter den Kulissen überprüft das System die eingehenden Daten auf Richtigkeit, normalisiert sie und stellt sie zur weiteren Verarbeitung in eine Service Bus-Warteschlange. Das System entnimmt der Warteschlange Bestellungen, die in einem bestimmten Format erwartet werden. Der Datenfluss von A bis Z sieht folglich so aus:
 
-HTTP -> Überprüfen -> Transformieren -> Service Bus
+**HTTP** > **Überprüfen** > **Transformieren** > **Service Bus**
 
 ![Grundlegender VETR-Datenfluss][1]
 
 Die folgenden BizTalk-API-Apps unterstützen die Erstellung dieses Musters:
 
-*HTTP-Trigger* – Quelle zum Auslösen von Nachrichtenereignis *Überprüfen* – Überprüft die Richtigkeit der eingehenden Daten *Transformieren* – Transformiert Daten vom eingehenden Format in das vom nachfolgenden System benötigte Format *Service Bus-Connector* – Zielentität, an die die Daten gesendet werden.
+* **HTTP-Trigger**: Quelle für das Auslösen des Nachrichtenereignisses
+* **Überprüfen**: Überprüft die Richtigkeit der eingehenden Daten
+* **Transformieren**: Transformiert Daten aus dem Eingangsformat in das vom nachgelagerten System geforderte Format
+* **Service Bus-Connector**: Zielentität, an die Daten gesendet werden
 
 
 ## Erstellen eines einfachen VETR-Musters
 ### Grundlagen
 
-Klicken Sie im Azure-Verwaltungsportal im linken unteren Bereich des Bildschirms auf die Schaltfläche **+Neu**, und klicken Sie auf "Logik-App". Wählen Sie einen Namen, ein Abonnement, eine Ressourcengruppe und einen Standort, der funktioniert. Ressourcengruppen dienen als Container für Ihre Anwendungen, und alle Ressourcen für Ihre Anwendung befinden sich in der gleichen Ressourcengruppe.
+Klicken Sie im Azure-Verwaltungsportal im linken unteren Bereich des Bildschirms auf die Schaltfläche **+Neu**, und klicken Sie auf **Logik-App**. Wählen Sie einen Namen, ein Abonnement, eine Ressourcengruppe und einen Standort, der funktioniert. Ressourcengruppen dienen als Container für Ihre Anwendungen, und alle Ressourcen für Ihre Anwendung befinden sich in der gleichen Ressourcengruppe.
 
 Als Nächstes fügen wir Trigger und Aktionen hinzu.
 
@@ -70,9 +73,9 @@ Die Überprüfungsaktion ist nun die erste Aktion hinter dem HTTP-Listener. Auf 
 ## Hinzufügen der Transformationsaktion
 Nun wollen wir Transformationen zum Normalisieren der eingehenden Daten konfigurieren.
 
-1. Fügen Sie **Transformation** aus dem Katalog hinzu. 
+1. Fügen Sie **Transformation** aus dem Katalog hinzu.
 2. Um eine Transformation zum Transformieren der eingehenden XML-Nachrichten zu konfigurieren, wählen Sie die Aktion **Transformation** als die Aktion aus, die ausgeführt wird, wenn diese API aufgerufen wird. Wählen Sie ```triggers(‘httplistener’).outputs.Content``` als Wert für _inputXml_ aus. "Map" ist ein optionaler Parameter, da die eingehenden Daten mit allen konfigurierten Transformationen abgeglichen werden. Nur diejenigen, die mit dem Schema übereinstimmen, werden angewendet.
-3. Schließlich erfolgt die Transformation nur nach erfolgreicher Überprüfung. Um diese Bedingung zu konfigurieren, klicken Sie rechts oben das Zahnradsymbol neben _Eine zu erfüllende Bedingung hinzufügen_. Legen Sie die Bedingung auf ```equals(actions('xmlvalidator').status,'Succeeded')``` fest.
+3. Schließlich erfolgt die Transformation nur nach erfolgreicher Überprüfung. Um diese Bedingung zu konfigurieren, klicken Sie rechts oben auf das Zahnradsymbol, und wählen Sie _Eine zu erfüllende Bedingung hinzufügen_. Legen Sie die Bedingung auf ```equals(actions('xmlvalidator').status,'Succeeded')``` fest.
 
 
 ![BizTalk-Transformationen][4]
@@ -81,23 +84,23 @@ Nun wollen wir Transformationen zum Normalisieren der eingehenden Daten konfigur
 ## Hinzufügen des Service Bus-Connectors
 Als Nächstes fügen wir eine Service Bus-Warteschlange als das Ziel hinzu, in das Daten geschrieben werden.
 
-1. Fügen Sie einen **Service Bus-Connector** aus dem Katalog hinzu. Legen Sie _Name_ auf _Servicebus1_, _Verbindungszeichenfolge_ auf die Verbindungszeichenfolge für Ihre Service Bus-Instanz und _Entitätsname_ auf _Warteschlange_ fest. Überspringen Sie _Abonnementname_. 
-2. Wählen Sie die Aktion **Nachricht senden**, und legen das Feld _Nachricht_ für die Aktion auf _actions('transformservice').outputs.OutputXml_ fest.
+1. Fügen Sie einen **Service Bus-Connector** aus dem Katalog hinzu. Legen Sie **Name** auf _Servicebus1_, **Verbindungszeichenfolge** auf die Verbindungszeichenfolge für Ihre Service Bus-Instanz und **Entitätsname** auf _Warteschlange_ fest. Überspringen Sie **Abonnementname**.
+2. Wählen Sie die Aktion **Nachricht senden**, und legen das Feld **Nachricht** für die Aktion auf _actions('transformservice').outputs.OutputXml_ fest.
 
 ![Service Bus][5]
 
 
 ## Senden einer HTTP-Antwort
-Nach Abschluss der Pipelineverarbeitung senden wir eine HTTP-Antwort für "Erfolg" und "Fehler" mit den folgenden Schritten zurück:
+Nach Abschluss der Pipelineverarbeitung senden Sie eine HTTP-Antwort für "Erfolg" und "Fehler" mit den folgenden Schritten zurück:
 
 1. Fügen Sie einen **HTTP-Listener** aus dem Katalog hinzu, und wählen Sie die Aktion **HTTP-Antwort senden**.
-2. Legen Sie _Antwortinhalt_ auf "Pipelineverarbeitung abgeschlossen", _Antwortstatuscode_ auf "200", um "HTTP 200 OK" anzugeben, und die Bedingung auf den Ausdruck ```@equals(actions('servicebusconnector').status,'Succeeded')``` fest.
-	
-Wiederholen Sie die oben genannten Schritte, um eine HTTP-Antwort auch bei einem Fehler zu senden. Legen Sie die Bedingung auf ```@not(equals(actions('servicebusconnector').status,'Succeeded')).``` fest.
+2. Legen Sie **Antwortinhalt** auf *Pipelineverarbeitung abgeschlossen* und **Antwortstatuscode** auf *200* fest, um "HTTP 200 OK" anzugeben, und legen Sie die **Bedingung** auf den Ausdruck ```@equals(actions('servicebusconnector').status,'Succeeded')``` fest.
+
+Wiederholen Sie die oben genannten Schritte, um eine HTTP-Antwort auch bei einem Fehler zu senden. Legen Sie die **Bedingung** auf ```@not(equals(actions('servicebusconnector').status,'Succeeded')).``` fest.
 
 
 ## Abschluss
-Jedes Mal, wenn jemand eine Nachricht an den HTTP-Endpunkt sendet, wird die App ausgelöst, und es erfolgen die Aktionen, die wir gerade festgelegt haben. Zum Verwalten solcher Logik-Apps, die Sie erstellen, klicken Sie im Azure-Verwaltungsportal auf **Durchsuchen** und dann auf **Logik-Apps**. Klicken Sie auf Ihre App, um weitere Informationen anzuzeigen.
+Jedes Mal, wenn jemand eine Nachricht an den HTTP-Endpunkt sendet, wird die App ausgelöst und die gerade erstellten Aktionen werden ausgeführt. Zum Verwalten solcher Logik-Apps, die Sie erstellen, klicken Sie im Azure-Verwaltungsportal auf **Durchsuchen** und dann auf **Logik-Apps**. Klicken Sie auf Ihre App, um weitere Informationen anzuzeigen.
 
 
 <!--image references -->
@@ -107,6 +110,4 @@ Jedes Mal, wenn jemand eine Nachricht an den HTTP-Endpunkt sendet, wird die App 
 [4]: ./media/app-service-logic-create-EAI-logic-app-using-VETR/BizTalkTransforms.PNG
 [5]: ./media/app-service-logic-create-EAI-logic-app-using-VETR/AzureServiceBus.PNG
 
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

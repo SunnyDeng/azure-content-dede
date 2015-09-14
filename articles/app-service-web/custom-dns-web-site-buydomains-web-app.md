@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/21/2015"
+	ms.date="08/31/2015"
 	ms.author="mwasson"/>
 
 # Kaufen und Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service
@@ -98,4 +98,4 @@ Gehen Sie folgendermaßen vor, um Domänennamen zu erwerben und Ihrer Web-App zu
 Zu diesem Zeitpunkt sollten Sie den benutzerdefinierten Domänennamen in Ihren Browser eingeben können und sehen, dass er Sie erfolgreich zu Ihrer Web-App bringt.
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

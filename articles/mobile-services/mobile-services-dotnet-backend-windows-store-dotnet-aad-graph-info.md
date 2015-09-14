@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Zugreifen auf Informationen in Azure Active Directory Graph (Windows Store) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie über die Graph-API in Ihrer Windows Store-Anwendung auf Azure Active Directory-Informationen zugreifen." 
-	documentationCenter="windows" 
-	authors="wesmc7777" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="Zugreifen auf Informationen in Azure Active Directory Graph (Windows Store) | Microsoft Azure"
+	description="Erfahren Sie, wie Sie über die Graph-API in Ihrer Windows Store-Anwendung auf Azure Active Directory-Informationen zugreifen."
+	documentationCenter="windows"
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="06/09/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-multiple"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="wesmc"/>
 
 # Zugriff auf Azure Active Directory Graph-Informationen
@@ -34,7 +34,7 @@ Weitere Informationen zur Azure AD Graph-API finden Sie im [Azure Active Directo
 
 
 
-##Voraussetzungen 
+##Voraussetzungen
 
 Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die folgenden Mobile Services-Lernprogramme abgeschlossen haben:
 
@@ -84,7 +84,7 @@ Falls Sie noch nie benutzerdefinierte APIs mit Mobile Services verwendet haben, 
 	        public String postalCode { get; set; }
 	        public String mail { get; set; }
 	        public String[] otherMails { get; set; }
-	
+
 	        public override string ToString()
 	        {
 	            return "displayName : " + displayName + "\n" +
@@ -206,7 +206,7 @@ Falls Sie noch nie benutzerdefinierte APIs mit Mobile Services verwendet haben, 
         }
 
 9. Speichern Sie die Änderungen, und erstellen Sie den Dienst, um ihn auf Syntaxfehler zu überprüfen.
-10. Veröffentlichen Sie das mobile Dienstprojekt in Ihrem Azure-Konto. 
+10. Veröffentlichen Sie das mobile Dienstprojekt in Ihrem Azure-Konto.
 
 
 ## <a name="update-app"></a>Aktualisieren der App zur Verwendung von GetUserInfo
@@ -214,7 +214,7 @@ Falls Sie noch nie benutzerdefinierte APIs mit Mobile Services verwendet haben, 
 In diesem Abschnitt aktualisieren Sie die `AuthenticateAsync`-Methode, die Sie im Lernprogramm [Hinzufügen von Authentifizierung zur App] implementiert haben, um die benutzerdefinierte API aufzurufen und zusätzliche Informationen über den Benutzer aus AAD zurückzugeben.
 
 [AZURE.INCLUDE [mobile-services-aad-graph-info-update-app](../../includes/mobile-services-aad-graph-info-update-app.md)]
-  
+
 
 
 ## <a name="test-app"></a>Testen der App
@@ -252,6 +252,5 @@ Im nächsten Lernprogramm, [Rollenbasierte Zugriffssteuerung mit AAD in Mobile S
 [Azure Active Directory Graph-Teamblog]: http://go.microsoft.com/fwlink/?LinkId=510536
 [Get User]: http://msdn.microsoft.com/library/azure/dn151678.aspx
 [Rollenbasierte Zugriffssteuerung mit AAD in Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-aad-rbac.md
- 
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

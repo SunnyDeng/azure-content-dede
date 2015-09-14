@@ -1,25 +1,25 @@
 <properties 
    pageTitle="StorSimple-Hardwarekomponenten und Status | Microsoft Azure"
-   description="Hier erfahren Sie, wie Sie mithilfe des StorSimple Manager-Diensts die Hardwarekomponenten Ihres StorSimple-Geräts überwachen."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+	description="Hier erfahren Sie, wie Sie mithilfe des StorSimple Manager-Diensts die Hardwarekomponenten Ihres StorSimple-Geräts überwachen."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/14/2015"
-   ms.author="alkohli" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="09/02/2015"
+	ms.author="alkohli"/>
 
-# StorSimple-Hardwarekomponenten und Status
+# Überwachen von Hardwarekomponenten und Status mithilfe des StorSimple Manager-Diensts
 
 ## Übersicht
 
-Dieser Artikel beschreibt die verschiedenen physischen und logischen Komponenten Ihres lokalen StorSimple-Geräts. Außerdem wird erläutert, wie Sie den Status der Gerätekomponenten auf der Seite **Wartung** des StorSimple Manager-Diensts überwachen.
+Dieser Artikel beschreibt die verschiedenen physischen und logischen Komponenten Ihres lokalen StorSimple-Geräts. Darüber hinaus wird erläutert, wie Sie den Status der Gerätekomponenten auf der Seite **Wartung** des StorSimple Manager-Diensts überwachen.
 
 Die Seite **Wartung** zeigt den Hardwarestatus aller StorSimple-Gerätekomponenten. Unter der Liste mit den Komponenten für 8100 befinden sich drei Abschnitte, die Folgendes beschreiben:
 
@@ -166,4 +166,4 @@ Informationen zum Austauschen fehlerhafter Hardwarekomponenten finden Sie unter 
 
 Sollten weiterhin Geräteprobleme auftreten, [wenden Sie sich an den Microsoft-Support](storsimple-contact-microsoft-support.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

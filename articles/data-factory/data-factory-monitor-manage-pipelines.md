@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Überwachen und Verwalten von Azure Data Factory-Pipelines" 
-	description="Erfahren Sie, wie Sie von Ihnen erstellte Azure Data Factorys und Pipelines mithilfe des Azure-Verwaltungsportals und Azure PowerShell überwachen und verwalten." 
-	services="data-factory" 
-	documentationCenter="" 
-	authors="spelluru" 
-	manager="jhubbard" 
+	pageTitle="Überwachen und Verwalten von Azure Data Factory-Pipelines"
+	description="Erfahren Sie, wie Sie von Ihnen erstellte Azure Data Factorys und Pipelines mithilfe des Azure-Verwaltungsportals und Azure PowerShell überwachen und verwalten."
+	services="data-factory"
+	documentationCenter=""
+	authors="spelluru"
+	manager="jhubbard"
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/27/2015" 
+	ms.service="data-factory"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/27/2015"
 	ms.author="spelluru"/>
 
 # Überwachen und Verwalten von Azure Data Factory-Pipelines
@@ -467,4 +467,8 @@ Folgende Meldung sollte nach erfolgreicher Bereitstellung angezeigt werden:
 	Parameters        :
 	Outputs           
 
-<!---HONumber=August15_HO6-->
+
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-monitor-manage-pipelines.md).
+
+<!---HONumber=September15_HO1-->

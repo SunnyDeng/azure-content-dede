@@ -1,23 +1,24 @@
 <properties 
    pageTitle="Verwalten von StorSimple-Gerätecontrollern | Microsoft Azure"
-   description="Sie erfahren, wie Sie StorSimple-Gerätecontroller beenden, neu starten, herunterfahren oder zurücksetzen."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+	description="Erfahren Sie, wie Sie StorSimple-Gerätecontroller beenden, neu starten, herunterfahren oder zurücksetzen."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/13/2015"
-   ms.author="alkohli" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="09/01/2015"
+	ms.author="alkohli"/>
 
 # Verwalten von StorSimple-Gerätecontrollern
 
 ## Übersicht
+
 In diesem Tutorial werden die verschiedenen Vorgänge beschrieben, die auf den Gerätecontrollern von StorSimple durchgeführt werden können. Die Controller in Ihrem StorSimple-Gerät sind redundante Controller (Peer-Controller) in einer Aktiv/Passiv-Konfiguration. Es ist jeweils nur ein Controller aktiv, der alle Datenträger- und Netzwerkvorgänge verarbeitet. Der andere Controller befindet sich im passiven Modus. Wenn der aktive Controller ausfällt, wird automatisch der passive Controller aktiviert.
 
 Dieses Tutorial enthält eine Schritt-für-Schritt-Anleitung zum Verwalten der Gerätecontroller mit folgenden Verfahren:
@@ -221,4 +222,4 @@ In diesem Abschnitt haben wir einige der häufig gestellten Fragen zur Verwaltun
 
 [Wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md), falls ein Problem mit Ihren StorSimple-Gerätecontrollern auftritt, das Sie mit den Verfahren in diesem Tutorial nicht beheben können.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

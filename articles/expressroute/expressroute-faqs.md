@@ -1,19 +1,19 @@
 <properties
    pageTitle="ExpressRoute – FAQ"
-   description="Die FAQs zu ExpressRoute enthalten Informationen zu unterstützten Azure-Diensten, Kosten, Daten und Verbindungen, SLAs, Anbietern und Standorten, Bandbreite sowie zusätzliche technische Details."
-   documentationCenter="na"
-   services="expressroute"
-   authors="cherylmc"
-   manager="adinah"
-   editor="tysonn"/>
+	description="Die FAQs zu ExpressRoute enthalten Informationen zu unterstützten Azure-Diensten, Kosten, Daten und Verbindungen, SLAs, Anbietern und Standorten, Bandbreite sowie zusätzliche technische Details."
+	documentationCenter="na"
+	services="expressroute"
+	authors="cherylmc"
+	manager="carolz"
+	editor=""/>
 <tags
    ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article" 
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/28/2015"
-   ms.author="cherylmc"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="09/02/2015"
+	ms.author="cherylmc"/>
 
 # ExpressRoute – FAQ
 
@@ -48,20 +48,18 @@ Ja. Sobald eine ExpressRoute-Verbindung eingerichtet ist, können Sie gleichzeit
 ### Bietet ExpressRoute eine Service Level Agreement (SLA)?
 Auf der Seite [Vereinbarungen zum Servicelevel (SLAs) für ExpressRoute](http://azure.microsoft.com/support/legal/sla/) finden Sie dazu weitere Informationen.
 
-## Unterstützte Azure-Dienste
+## Unterstützte Dienste
 ExpressRoute unterstützt die meisten Azure-Dienste.
 
-Verbindungen mit virtuellen Computern und Clouddiensten, die in virtuellen Netzwerken bereitgestellt werden, werden über den privaten Peeringpfad unterstützt.
+- Verbindungen mit virtuellen Computern und Clouddiensten, die in virtuellen Netzwerken bereitgestellt werden, werden über den privaten Peeringpfad unterstützt.
+- Azure Websites werden über den öffentlichen Peeringpfad unterstützt.
+- Alle anderen Dienste sind über den öffentlichen Peeringpfad zugänglich. Es gibt folgende Ausnahmen.
 
-Azure Websites werden über den öffentlichen Peeringpfad unterstützt.
+	**Die folgenden Dienste werden nicht unterstützt:**
 
-Alle anderen Dienste sind über den öffentlichen Peeringpfad zugänglich. Ausnahmen sind wie folgt:
-
-**Folgendes wird nicht unterstützt:**
-
-- CDN
-- Auslastungstests für Visual Studio Online
-- Multi-Factor Authentication
+	- CDN
+	- Auslastungstests für Visual Studio Online
+	- Multi-Factor Authentication
 
 ## Daten und Verbindungen
 
@@ -91,7 +89,7 @@ Ja. Jede ExpressRoute-Verbindung verfügt über ein redundantes Paar von Querver
 Wenn eine der Querverbindungen ausfällt, bleibt die Konnektivität bestehen. Es steht eine redundante Verbindung zur Verfügung, um die Auslastung des Netzwerks zu unterstützen. Sie können zudem mehrere Verbindungen an einem anderen Peeringstandort erstellen, um die Ausfallsicherheit bei einem Fehler sicherzustellen.
 
 ### Muss ich beide Links konfigurieren, um den Dienst nutzen zu können?
-Wenn Sie eine Verbindung über einen Netzwerkdienstanbieter herstellen, konfiguriert der Netzwerkdienstanbieter redundante Links für Sie. Wenn Sie eine Verbindung über einen EXP herstellen, müssen Sie beide Links konfigurieren. Unsere SLA wird ungültig, wenn die Verbindungskonfiguration nicht auf Redundanz ausgelegt ist.
+Wenn Sie eine Verbindung über einen Netzwerkdienstanbieter herstellen, konfiguriert der Netzwerkdienstanbieter redundante Links für Sie. Wenn Sie bereits einen EXP nutzen, müssen Sie zwei LAN-Verbindungen mit der EXP-Plattform für die Cloudkommunikation konfigurieren. Wenn Sie sich vom privaten Datencenter aus über eine einzelne WAN-Verbindung mit einem EXP verbinden, müssen Sie die WAN-Verbindung auf Ihrem eigenen Router beim EXP beenden und dann zwei LAN-Verbindungen zur EXP-Plattform für die Cloudkommunikation konfigurieren.
 
 ### Kann ich eines meiner VLANs mithilfe von ExpressRoute auf Azure erweitern?
 Nein. Wir unterstützen keine Layer 2-Konnektivitätserweiterungen in Azure.
@@ -124,13 +122,13 @@ Ja. Sie können bis zu 10 virtuelle Netzwerke mit einer ExpressRoute-Verbindung 
 ### Ich habe mehrere Azure-Abonnements, die Virtual Networks enthalten. Kann ich Virtual Networks, die sich in unterschiedlichen Abonnements befinden, mit einer ExpressRoute-Verbindung verbinden?
 Ja. Sie können bis zu 10 andere Azure-Abonnements autorisieren, eine einzige ExpressRoute-Verbindung zu verwenden. Dieses Limit kann durch das Aktivieren des ExpressRoute Premium-Features erhöht werden.
 
-Weitere Informationen finden Sie unter [Gemeinsames Verwenden einer ExpressRoute-Verbindung für mehrere Abonnements](expressroute-share-circuit.md).
+Weitere Informationen finden Sie unter [Freigeben einer ExpressRoute-Verbindung für mehrere Abonnements](expressroute-share-circuit.md).
 
 ### Sind virtuelle Netzwerke, die mit der gleichen Verbindung verbunden sind, voneinander isoliert?
 Nein. Alle virtuellen Netzwerke, die mit der gleichen ExpressRoute-Verbindung verknüpft sind, sind Teil der gleichen Routingdomäne und aus Routingsicht nicht voneinander isoliert. Wenn Sie eine Isolierung der Routen benötigen, müssen Sie zuerst eine separate ExpressRoute-Verbindung erstellen.
 
 ### Kann mehr als ein virtuelles Netzwerk mit mehr als einer ExpressRoute-Verbindung verbunden sein?
-Ja. Sie können ein einzelnes virtuelles Netzwerk mit bis zu 4 ExpressRoute-Verbindungen verknüpfen. Alle ExpressRoute-Verbindungen müssen sich auf demselben Kontinent befinden. Sie können bei verschiedenen Dienstanbietern angefordert werden und sich an verschiedenen Standorten befinden.
+Ja. Sie können ein einzelnes virtuelles Netzwerk mit bis zu 4 ExpressRoute-Verbindungen verknüpfen. Sie müssen über vier unterschiedliche Standorte angefordert werden.
 
 ### Kann ich von meinen virtuellen Netzwerken aus, die mit ExpressRoute-Verbindungen verbunden sind, ins Internet gehen?
 Ja. Wenn Sie über die BGP-Sitzung keine Standardrouten (0.0.0.0/0) oder Internet-Routepräfixe angekündigt haben, können Sie von einem virtuellen Netzwerk aus, das mit einer ExpressRoute-Verbindung verknüpft ist, eine Verbindung zum Internet herstellen.
@@ -160,6 +158,9 @@ Wir filtern private Präfixe (RFC1918) in der öffentlichen BGP-Peeringsitzung h
 
 ### Was geschieht, wenn ich die BGP-Limits überschreite?
 BGP-Sitzungen werden abgebrochen. Sie werden zurückgesetzt, sobald die Präfixanzahl unter das Limit fällt.
+
+### Wie lang ist die BGP-Haltezeit für ExpressRoute? Kann sie angepasst werden?
+Die Haltezeit ist 180. Die Keep-Alive-Nachrichten werden alle 60 Sekunden gesendet. Diese Einstellungen werden auf Microsoft-Seite festgelegt und können nicht geändert werden.
 
 ### Nachdem ich die Standardroute (0.0.0.0/0) für meine Virtual Networks angekündigt habe, kann ich Windows, das auf meinen Azure-VMs ausgeführt wird, nicht mehr aktivieren. Wie kann ich dieses Problem beheben?
 Die folgenden Schritte helfen Azure dabei, die Aktivierungsanforderung zu erkennen:
@@ -286,4 +287,4 @@ Die Verbindung mit Office 365-Diensten kann sowohl über NSPs als auch EXPs herg
 Ja. Office 365-Dienstendpunkte sind über das Internet erreichbar, selbst wenn ExpressRoute für Ihr Netzwerk konfiguriert wurde. Wenn Sie sich an einem Ort befinden, an dem die Verbindung mit Office 365-Diensten über ExpressRoute konfiguriert wurde, wird die Verbindung über ExpressRoute hergestellt.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

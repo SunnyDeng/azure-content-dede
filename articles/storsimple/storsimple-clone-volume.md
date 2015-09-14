@@ -1,35 +1,33 @@
 <properties
    pageTitle="Klonen von StorSimple-Volumes | Microsoft Azure"
-   description="Beschreibt die verschiedenen Klontypen und ihre Verwendung und wie Sie mit einem Sicherungssatz ein einzelnes Volume klonen."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="adinah"
-   editor="tysonn" />
+	description="Beschreibt die verschiedenen Klontypen und ihre Verwendung und wie Sie mit einem Sicherungssatz ein einzelnes Volume klonen."
+	services="storsimple"
+	documentationCenter="NA"
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/11/2015"
-   ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="08/27/2015"
+	ms.author="alkohli"/>
 
-# Klonen von StorSimple-Volumes
+# Klonen eines Volumes mithilfe des StorSimple Manager-Diensts
 
 ## Übersicht
 
-Auf der Seite **Sicherungskatalog** werden alle Sicherungssätze angezeigt, die mithilfe manueller oder automatisierter Sicherungen erstellt wurden. Sie können auf dieser Seite alle Sicherungen für eine Sicherungsrichtlinie oder ein Volume auflisten, Sicherungen auswählen oder löschen oder eine Sicherung zum Wiederherstellen oder Klonen eines Volumes verwenden.
+Auf der Seite **Sicherungskatalog** des StorSimple Manager-Diensts werden alle Sicherungssätze angezeigt, die mithilfe manueller oder automatisierter Sicherungen erstellt wurden. Sie können auf dieser Seite alle Sicherungen für eine Sicherungsrichtlinie oder ein Volume auflisten, Sicherungen auswählen oder löschen oder eine Sicherung zum Wiederherstellen oder Klonen eines Volumes verwenden.
 
-  ![Sicherungskatalog](./media/storsimple-clone-volume/HCS_BackupCatalog.png)
+  ![Seite "Sicherungskatalog"](./media/storsimple-clone-volume/HCS_BackupCatalog.png)
 
-**Abbildung 1: Sicherungskatalog**
-
-In diesem Lernprogramm wird beschrieben, wie Sie einen Sicherungssatz zum Klonen eines einzelnen Volumes verwenden können. Außerdem wird der Unterschied zwischen *vorübergehenden* und *dauerhaften* Klonen beschrieben.
+In diesem Tutorial wird beschrieben, wie Sie einen Sicherungssatz zum Klonen eines einzelnen Volumes verwenden können. Außerdem wird der Unterschied zwischen *vorübergehenden* und *dauerhaften* Klonen beschrieben.
 
 ## Erstellen von Klonen von einem Volume
 
-Sie können einen Klon anhand einer lokalen oder einer Cloud-Momentaufnahme auf dem gleichen Gerät, auf einem anderen Gerät oder sogar auf einem virtuellen Computer erstellen.
+Sie können einen Klon anhand einer lokalen oder einer Cloudmomentaufnahme auf dem gleichen Gerät, auf einem anderen Gerät oder sogar auf einem virtuellen Computer erstellen.
 
 ## So klonen Sie ein Volume
 
@@ -37,7 +35,7 @@ Sie können einen Klon anhand einer lokalen oder einer Cloud-Momentaufnahme auf 
 
 2. Erweitern Sie einen Sicherungssatz, um die zugehörigen Volumes anzuzeigen. Klicken Sie auf ein Volume im Sicherungssatz, um dieses auszuwählen.
 
-     ![Klonen](./media/storsimple-clone-volume/HCS_Clone.png)
+     ![Volume klonen](./media/storsimple-clone-volume/HCS_Clone.png)
 
 3. Klicken Sie auf **Klonen**, um mit dem Klonen des ausgewählten Volumes zu beginnen.
 
@@ -71,7 +69,7 @@ Dieser Klon ist jetzt ein reguläres Volume, und jeder mit einem Volume möglich
 
 Sie können ein bestimmtes Volume aus einem Sicherungssatz klonen. Ein auf diese Weise erstellter Klon ist ein *vorübergehender* Klon. Der vorübergehende Klon enthält Verweise auf das ursprüngliche Volume, und er verwendet dieses für das Lesen während des lokalen Schreibens. Dies kann zu einer Leistungsverminderung führen. Dies gilt insbesondere dann, wenn das geklonte Volume groß ist.
 
-Nachdem Sie eine Cloud-Momentaufnahme eines vorübergehenden Klons erstellt haben, wird der daraus resultierende Klon ein *dauerhafter* Klon. Der dauerhafte Klon ist unabhängig und verfügt nicht über Verweise auf das ursprüngliche Volume, aus dem er geklont wurde. Für eine höhere Leistung wird das Erstellen dauerhafter Klone empfohlen.
+Nachdem Sie eine Cloudmomentaufnahme eines vorübergehenden Klons erstellt haben, wird der daraus resultierende Klon ein *dauerhafter* Klon. Der dauerhafte Klon ist unabhängig und verfügt nicht über Verweise auf das ursprüngliche Volume, aus dem er geklont wurde. Für eine höhere Leistung wird das Erstellen dauerhafter Klone empfohlen.
 
 ## Szenarios für vorübergehende und dauerhafte Klone
 
@@ -83,7 +81,7 @@ Sie müssen eine ein Jahr alte Datei mit einer Microsoft PowerPoint-Präsentatio
  
 ### Testen in der Produktionsumgebung mit einem dauerhaften Klon
 
-Sie müssen einen Testfehler in der Produktionsumgebung überprüfen. Sie erstellen einen Klon des Volumes in der Produktionsumgebung. Zur Leistungsoptimierung müssen Sie eine Cloud-Momentaufnahme dieses Klons erstellen. Das geklonte Volume ist jetzt unabhängig, wodurch eine höhere Leistung erzielt wird. In diesem Szenario wird ein dauerhafter Klon verwendet.
+Sie müssen einen Testfehler in der Produktionsumgebung überprüfen. Sie erstellen einen Klon des Volumes in der Produktionsumgebung. Zur Leistungsoptimierung müssen Sie eine Cloudmomentaufnahme dieses Klons erstellen. Das geklonte Volume ist jetzt unabhängig, wodurch eine höhere Leistung erzielt wird. In diesem Szenario wird ein dauerhafter Klon verwendet.
 
 ## Nächste Schritte
 Erfahren Sie, wie Sie [StorSimple-Volumes aus einem Sicherungssatz wiederherstellen](storsimple-restore-from-backup-set.md).
@@ -91,4 +89,4 @@ Erfahren Sie, wie Sie [StorSimple-Volumes aus einem Sicherungssatz wiederherstel
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

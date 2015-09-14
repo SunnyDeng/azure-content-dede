@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Tutorial: Kopieren von Daten aus einem Azure-Blob in Azure SQL"
-	description="In diesem Lernprogramm erfahren Sie, wie Sie eine Beispieldatenpipeline erstellen, die Daten von einem Blob an eine Azure SQL-Datenbankinstanz kopiert."
+	pageTitle="Tutorial: Erstellen einer Pipeline mit Kopieraktivität mithilfe des Data Factory-Editors"
+	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Pipeline mit Kopieraktivität mithilfe des Data Factory-Editors im Azure-Portal."
 	services="data-factory"
 	documentationCenter=""
 	authors="spelluru"
@@ -16,7 +16,7 @@
 	ms.date="08/25/2015"
 	ms.author="spelluru"/>
 
-# Lernprogramm: Erstellen und Überwachen einer Data Factory mit dem Data Factory-Editor
+# Tutorial: Erstellen einer Pipeline mit Kopieraktivität mithilfe des Data Factory-Editors
 > [AZURE.SELECTOR]
 - [Tutorial Overview](data-factory-get-started.md)
 - [Using Data Factory Editor](data-factory-get-started-using-editor.md)
@@ -381,6 +381,9 @@ Eine Liste unterstützten Aktivitäten finden Sie im Thema [Pipelines und Aktivi
  
 Informationen zum Ausführen dieses Lernprogramms mit Azure PowerShell finden Sie unter [Erstellen und Überwachen einer Data Factory mit Azure PowerShell][monitor-manage-using-powershell].
 
+## Feedback senden
+Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-get-started-using-editor.md).
+
 <!--Link references-->
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
@@ -498,4 +501,4 @@ Informationen zum Ausführen dieses Lernprogramms mit Azure PowerShell finden Si
 [image-data-factory-name-not-available]: ./media/data-factory-get-started-using-editor/getstarted-data-factory-not-available.png
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

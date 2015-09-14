@@ -1,3 +1,4 @@
+
 <properties
 	pageTitle="Azure Backup – Wiederherstellen eines virtuellen Computers | Microsoft Azure"
 	description="Erfahren Sie, wie ein virtueller Azure-Computer wiederhergestellt wird."
@@ -12,7 +13,8 @@
 # Wiederherstellen eines virtuellen Computers
 Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus den Sicherungen im Azure-Sicherungstresor in einem neuen virtuellen Computer wiederherstellen.
 
-## Auswählen eines wiederherzustellenden Elements
+## Wiederherstellen von Workflows
+### 1\. Auswählen eines wiederherzustellenden Elements
 
 1. Navigieren Sie zur Registerkarte **Geschützte Elemente**, und wählen Sie den virtuellen Computer aus, den Sie in einem neuen virtuellen Computer wiederherstellen möchten.
 
@@ -24,13 +26,13 @@ Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus 
 
     ![Wiederherstellen eines Elements](./media/backup-azure-restore-vms/restore-item.png)
 
-## Auswählen eines Wiederherstellungspunkts
+### 2\. Auswählen eines Wiederherstellungspunkts
 
 1. Auf dem Bildschirm **Wählen Sie einen Wiederherstellungspunkt** können Sie eine Wiederherstellung vom neuesten Wiederherstellungspunkt oder von einem früheren Zeitpunkt durchführen. Die ausgewählte Standardoption beim Öffnen des Assistenten ist *Neuester Wiederherstellungspunkt*.
 
     ![Auswählen eines Wiederherstellungspunkts](./media/backup-azure-restore-vms/select-recovery-point.png)
 
-2. Um einen früheren Zeitpunkt auszuwählen, wählen Sie in der Dropdownliste die Option **Datum auswählen** und dann ein Datum im Kalendersteuerelement durch Klicken auf das **Kalendersymbol** aus. Im Steuerelement enthalten alle Datumsangaben mit Wiederherstellungspunkten eine hellgraue Schattierung und können vom Benutzer ausgewählt werden.
+2. Um einen früheren Zeitpunkt auszuwählen, wählen Sie in der Dropdownliste die Option **Datum auswählen**. Wählen Sie dann durch Klicken auf das **Kalendersymbol** ein Datum im Kalendersteuerelement aus. Im Steuerelement enthalten alle Datumsangaben mit Wiederherstellungspunkten eine hellgraue Schattierung und können vom Benutzer ausgewählt werden.
 
     ![Auswählen eines Datums](./media/backup-azure-restore-vms/select-date.png)
 
@@ -38,18 +40,18 @@ Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus 
 
     ![Wiederherstellungspunkte](./media/backup-azure-restore-vms/recovery-points.png)
 
-3. Wählen Sie den Wiederherstellungspunkt in der Tabelle **Wiederherstellungspunkte** aus, und klicken Sie auf den Pfeil "Weiter", um zum nächsten Bildschirm zu gelangen.
+3. Wählen Sie den Wiederherstellungspunkt in der Tabelle **Wiederherstellungspunkte** aus, und klicken Sie auf den Pfeil „Weiter“, um zum nächsten Bildschirm zu gelangen.
 
-## Angeben eines Zielspeicherorts
+### 3\. Angeben eines Zielspeicherorts
 
 1. Geben Sie im Bildschirm **Wiederherstellungsinstanz auswählen** Details an, wo der virtuelle Computer wiederhergestellt werden soll.
 
   - Geben Sie den Namen des virtuellen Computers an: In einem bestimmten Clouddienst sollte der Name des virtuellen Computers eindeutig sein. Wenn Sie beabsichtigen, einen vorhandenen virtuellen Computer durch denselben Namen zu ersetzen, löschen Sie zuerst den vorhandenen virtuellen Computer und die Datenträger, und stellen Sie dann die Daten aus Azure Backup wieder her.
   - Wählen Sie einen Clouddienst für den virtuellen Computer aus: Dies ist für das Erstellen eines virtuellen Computers erforderlich. Sie können entweder einen vorhandenen Clouddienst verwenden oder einen neuen Clouddienst erstellen.
 
-        Der ausgewählte Name des Clouddienstes sollte global eindeutig sein. Typischerweise ist dieser Name mit einer öffentlichen URL nach dem Muster [clouddienst].cloudapp.net verknüpft. Azure gestattet es Ihnen nicht, einen neuen Clouddienst zu erstellen, wenn der Name bereits verwendet wird. Wenn Sie einen neuen Clouddienst erstellen möchten, erhält dieser den gleichen Namen wie der virtuelle Computer. In diesem Fall sollte der Name des virtuellen Computers eindeutig genug sein, um auf den neuen Clouddienst angewendet zu werden.
+        Es kann ein beliebiger Name für den Clouddienst gewählt werden, dieser muss jedoch eindeutig sein. Typischerweise wird der Clouddienstname einer öffentlich zugänglichen URL der Form "[Clouddienst].cloudapp.net" zugeordnet. Azure lässt die Erstellung eines neuen Clouddiensts nicht zu, wenn der Name bereits verwendet wird. Wenn Sie einen neuen Clouddienst erstellen, erhält dieser denselben Namen wie der virtuelle Computer – deshalb sollte der gewählte VM-Name eindeutig sein, um auf den zugeordneten Clouddienst angewendet werden zu können.
 
-        Wir zeigen ausschließlich Clouddienste und virtuelle Netzwerke an, die nicht mit Affinitätsgruppen in den Details der Wiederherstellungsinstanzen verbunden sind. [Erfahren Sie mehr] (https://msdn.microsoft.com/de-de/library/azure/jj156085.aspx).
+        Es werden nur Clouddienste und virtuelle Netzwerke angezeigt, die keiner Affinitätsgruppe in den Details zur Instanzenwiederherstellung zugeordnet sind. [Weitere Informationen](https://msdn.microsoft.com/de-de/library/azure/jj156085.aspx).
 
 2. Wählen Sie ein Speicherkonto für den virtuellen Computer aus: Dies ist für das Erstellen des virtuellen Computers erforderlich. Sie können aus vorhandenen Speicherkonten in der gleichen Region auswählen, in der sich auch der Azure Backup-Tresor befindet. Wir unterstützen keine Speicherkonten, die zonenredundant sind oder dem Premium-Speichertyp entsprechen.
 
@@ -63,7 +65,7 @@ Mithilfe der Wiederherstellungsaktion können Sie einen virtuellen Computer aus 
 
     ![Auswählen eines virtuellen Netzwerks](./media/backup-azure-restore-vms/restore-cs-vnet.png)
 
-4. Wählen Sie ein Subnetz: Für den Fall, dass das VNET über Subnetze verfügt, wird standardmäßig das erste Subnetz ausgewählt. Wählen Sie in den Dropdownoptionen das Subnetz Ihrer Wahl aus. Details zu Subnetzen finden Sie in der Erweiterung "Netzwerke" der [Portal-Startseite](https://manage.windowsazure.com/). Wechseln Sie zu **Virtuelle Netzwerke**, wählen Sie das virtuelle Netzwerk aus, und führen Sie einen Drilldown in "Konfigurieren" aus, um Detailinformationen zu Subnetzen anzuzeigen.
+4. Wählen Sie ein Subnetz: Für den Fall, dass das VNET über Subnetze verfügt, wird standardmäßig das erste Subnetz ausgewählt. Wählen Sie in den Dropdownoptionen das Subnetz Ihrer Wahl aus. Rufen Sie Details zu Subnetzen auf, indem Sie auf der [Portal-Startseite](https://manage.windowsazure.com/) unter „Netzwerkerweiterungen“ die Option **Virtual Networks** und anschließend das virtuelle Netzwerk auswählen und einen Drilldown für „Konfigurieren“ ausführen.
 
     ![Auswählen eines Subnetzes](./media/backup-azure-restore-vms/select-subnet.png)
 
@@ -84,14 +86,23 @@ Nach dem Abschluss des Wiederherstellungsvorgangs wird dieser auf der Registerka
 
 Nach dem Wiederherstellen des virtuellen Computers müssen Sie möglicherweise die auf dem ursprünglichen virtuellen Computer vorhandenen Erweiterungen neu installieren und für den virtuellen Computer im Azure-Portal [die Endpunkte ändern](virtual-machines-set-up-endpoints).
 
-## Problembehandlung
-Bei den meisten Fehlern können Sie die empfohlene Aktion befolgen, die unter "Fehlerdetails" vorgeschlagen wird. Hier sind einige weitere Punkte, die Sie bei der Problembehandlung unterstützen:
+## Wiederherstellen von virtuellen Computern des Domänencontrollers
+Die Sicherung von virtuellen Computern des Domänencontrollers wird in Azure Backup unterstützt. Der Wiederherstellungsvorgang erfordert jedoch besondere Sorgfalt. Der Wiederherstellungsvorgang für virtuelle Computer eines Domänencontrollers in einer Konfiguration mit einem einzelnen Domänencontroller unterscheidet sich stark von der Wiederherstellung von virtuellen Computern in einer Konfiguration mit mehreren Domänencontrollern.
 
-| Sicherungsvorgang | Fehlerdetails | Problemumgehung |
-| -------- | -------- | -------|
-| Wiederherstellen | Cloudinterner Fehler bei der Wiederherstellung | <ol><li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit DNS-Einstellungen konfiguriert. Prüfen Sie <br>$deployment = Get-AzureDeployment -ServiceName "ServiceName" -Slot "Production" Get-AzureDns -DnsSettings $deployment.DnsSettings<br>Wenn "Address" konfiguriert ist, bedeutet dies, dass DNS-Einstellungen konfiguriert wurden.<br> <li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit ReservedIP konfiguriert, und vorhandene virtuelle Computer im Clouddienst befinden sich im Zustand "Beendet".<br>Mit den folgenden Powershell-Cmdlets können Sie prüfen, ob ein Clouddienst über eine reservierte IP-Adresse verfügt:<br>$deployment = Get-AzureDeployment -ServiceName "servicename" -Slot "Production" $dep.ReservedIPName</ol> |
+### Einzelner Domänencontroller
+Der virtuelle Computer kann (wie alle anderen virtuellen Computer) über das Azure-Portal oder mithilfe von PowerShell wiederhergestellt werden.
+
+### Mehrere Domänencontroller
+In einer Umgebung mit mehreren Domänencontrollern synchronisieren die Domänencontroller Daten mit einer eigenen Methode. Wenn ein älterer Sicherungspunkt *ohne entsprechende Vorsichtsmaßnahmen* wiederhergestellt wird, kann das USN-Rollback eine Umgebung mit mehreren Domänencontrollern durcheinanderbringen. Die richtige Methode zum Wiederherstellen eines solchen virtuellen Computers besteht im Starten im DSRM-Modus.
+
+Das Problem tritt auf, weil der DSRM-Modus in Azure nicht vorhanden ist. Zum Wiederherstellen eines virtuellen Computers können Sie also nicht das Azure-Portal verwenden. Der einzige unterstützte Wiederherstellungsmechanismus ist die datenträgerbasierte Wiederherstellung mithilfe von PowerShell.
+
+>[AZURE.WARNING]Verwenden Sie für virtuelle Computer des Domänencontrollers in einer Umgebung mit mehreren Domänencontrollern nicht das Azure-Portal für die Wiederherstellung. Nur die PowerShell-basierte Wiederherstellung wird unterstützt.
+
+Hier finden Sie weitere Informationen zum [USN-Rollback-Problem](https://technet.microsoft.com/library/dd363553) und den vorgeschlagenen Strategien zum Beheben des Problems.
 
 ## Nächste Schritte
+- [Problembehandlung](backup-azure-vms-troubleshoot.md#restore)
 - [Verwalten virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

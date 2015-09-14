@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="c"
 	ms.devlang="csharp"
 	ms.topic="article"
-	ms.date="07/21/2015"
+	ms.date="09/01/2015"
 	ms.author="sethm"/>
 
 # Erste Schritte mit Event Hubs
@@ -34,11 +34,11 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 + Microsoft Visual Studio Express 2013 für Windows
 
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
++ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
 
-## Erstellen eines Event Hubs
+## Erstellen eines Ereignis-Hubs
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, und klicken Sie unten auf dem Bildschirm auf **NEU**.
+1. Melden Sie sich beim [Azure-Portal] an, und klicken Sie im unteren Teil des Bildschirms auf **NEW**.
 
 2. Klicken Sie auf **App-Dienste**, **Service Bus**, **Event Hub** und dann auf **Schnellerfassung**.
 
@@ -94,6 +94,7 @@ Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hu
 - Eine vollständige [Beispielanwendung mit Verwendung von Ereignis-Hubs].
 - Das Beispiel [Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]
 - Eine [Messaginglösung mit Warteschlange] unter Verwendung von Service Bus-Warteschlangen.
+- [Übersicht über Event Hubs]
 
 <!-- Images. -->
 [1]: ./media/event-hubs-c-ephcs-getstarted/create-event-hub1.png
@@ -109,11 +110,12 @@ Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hu
 [24]: ./media/event-hubs-c-ephcs-getstarted/receive-eph-c.png
 
 <!-- Links -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Azure-Portal]: https://manage.windowsazure.com/
 [Ereignisprozessorhost-Bibliothek]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[Übersicht über Event Hubs]: http://msdn.microsoft.com/library/azure/dn836025.aspx
+[Übersicht über Event Hubs]: event-hubs-overview.md
+[Übersicht über Event Hubs]: event-hubs-overview.md
 [Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [Messaginglösung mit Warteschlange]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

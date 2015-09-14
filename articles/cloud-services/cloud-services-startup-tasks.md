@@ -29,7 +29,7 @@ Startaufgaben sind Aktionen, die ausgeführt werden, bevor die Rollen beginnen. 
 
 Startaufgaben erhalten ihre Informationen aus Umgebungsvariablen, und mit lokalem Speicher können Informationen aus einer Startaufgabe heraus übergeben werden. Eine Umgebungsvariable kann beispielsweise den Pfad zu einem Programm festlegen, das Sie installieren möchten, und Dateien können in den lokalen Speicher geschrieben werden, aus dem sie später von den Rollen gelesen werden können.
 
-Die Startaufgabe kann Informationen und Fehler im angegebenen Verzeichnis protokollieren, das in der **TEMP**-Umgebungsvariable festgelegt ist. Während der Startaufgabe entspricht die **TEMP**-Umgebungsvariable dem Verzeichnis "*C:\\Resources\\temp\[guid].[Rollenname]\\RoleTemp*", wenn die Ausführung in der Cloud erfolgt.
+Die Startaufgabe kann Informationen und Fehler im angegebenen Verzeichnis protokollieren, das in der **TEMP**-Umgebungsvariable festgelegt ist. Während der Startaufgabe entspricht die **TEMP**-Umgebungsvariable dem Verzeichnis "*C:\\Resources\\temp\\[guid].[Rollenname]\\RoleTemp*", wenn die Ausführung in der Cloud erfolgt.
 
 Startaufgaben können auch mehrmals zwischen Neustarts ausgeführt werden. Beispielsweise wird die Startaufgabe bei jeder zyklischen Ausführung der Rolle ausgeführt, und die zyklische Rollenausführung ist nicht immer mit einem Neustart verbunden. Startaufgaben sollten so geschrieben werden, die sie ohne Probleme mehrmals ausgeführt werden können.
 
@@ -68,9 +68,9 @@ In diesem Beispiel wird die Umgebungsvariable **MyVersionNumber** für die Start
 ```xml
 <Startup>
     <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple" >
-    <Environment>
-        <Variable name="MyVersionNumber" value="1.0.0.0" />
-    </Environment>
+        <Environment>
+            <Variable name="MyVersionNumber" value="1.0.0.0" />
+        </Environment>
     </Task>
 </Startup>
 ```
@@ -132,24 +132,24 @@ Um beispielsweise eine Umgebungsvariable zu erstellen, die den Wert "**true**" h
 ```xml
 <Startup>
     <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple">
-    <Environment>
-
-        <!-- Create the environment variable that informs the startup task whether it is running
-            in the Compute Emulator or in the cloud. "%ComputeEmulatorRunning%"=="true" when
-            running in the Compute Emulator, "%ComputeEmulatorRunning%"=="false" when running
-            in the cloud. -->
-
-        <Variable name="ComputeEmulatorRunning">
-            <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
-        </Variable>
-
-    </Environment>
+        <Environment>
+    
+            <!-- Create the environment variable that informs the startup task whether it is running
+                in the Compute Emulator or in the cloud. "%ComputeEmulatorRunning%"=="true" when
+                running in the Compute Emulator, "%ComputeEmulatorRunning%"=="false" when running
+                in the cloud. -->
+    
+            <Variable name="ComputeEmulatorRunning">
+                <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+            </Variable>
+    
+        </Environment>
     </Task>
 </Startup>
 ```
 
 ## Nächste Schritte
-Erfahren Sie, wie Sie einige [allgemeine Startaufgaben](cloud-services-common-startup-tasks.md) mit dem Clouddienst ausführen können.
+Erfahren Sie, wie Sie einige [allgemeine Startaufgaben](cloud-services-startup-tasks-common.md) mit dem Clouddienst ausführen können.
 
 [Paket](cloud-services-model-and-package.md) des Clouddiensts erstellen.
 
@@ -163,4 +163,4 @@ Erfahren Sie, wie Sie einige [allgemeine Startaufgaben](cloud-services-common-st
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

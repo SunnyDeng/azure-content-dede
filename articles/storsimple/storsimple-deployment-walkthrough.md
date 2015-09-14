@@ -1,19 +1,19 @@
 <properties
    pageTitle="Bereitstellen lokaler StorSimple-Geräte | Microsoft Azure"
-   description="Schritte und bewährte Methoden für die Bereitstellung von StorSimple-Geräten und -Diensten."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="adinah"
-   editor="tysonn" />
+	description="Beschreibt die Schritte und bewährten Methoden für die Bereitstellung des StorSimple-Geräts und -Diensts. (Gilt für Microsoft Azure StorSimple Version 0.3 und frühere Versionen.)"
+	services="storsimple"
+	documentationCenter="NA"
+	authors="alkohli"
+	manager="adinah"
+	editor=""/>
 <tags
    ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/14/2015"
-   ms.author="alkohli" />
+	ms.devlang="NA"
+	ms.topic="hero-article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="TBD"
+	ms.date="09/02/2015"
+	ms.author="alkohli"/>
 
 # Bereitstellen lokaler StorSimple-Geräte
 
@@ -21,7 +21,7 @@
 
 ## Übersicht
 
-Willkommen bei der exemplarischen Vorgehensweise für die Bereitstellung von Microsoft Azure StorSimple-Geräten. Diese Bereitstellungslernprogramme beziehen sich auf die Freigabeversion der StorSimple 8000-Serie, StorSimple 8000-Serie Update 0.1, StorSimple 8000-Serie Update 0.2 und StorSimple 8000-Serie Update 0.3. Diese Reihe von Tutorials beschreibt die Konfiguration Ihrer StorSimple-Geräte. Sie enthält darüber hinaus eine Konfigurationsprüfliste, Konfigurationsvoraussetzungen und detaillierte Konfigurationsschritte.
+Willkommen bei der exemplarischen Vorgehensweise für die Bereitstellung von Microsoft Azure StorSimple-Geräten. Diese Bereitstellungstutorials beziehen sich auf die Freigabeversion der StorSimple 8000-Serie, StorSimple 8000-Serie Update 0.1, StorSimple 8000-Serie Update 0.2 und StorSimple 8000-Serie Update 0.3. Diese Reihe von Tutorials beschreibt die Konfiguration Ihrer StorSimple-Geräte. Sie enthält darüber hinaus eine Konfigurationsprüfliste, Konfigurationsvoraussetzungen und detaillierte Konfigurationsschritte.
 
 
 Bei den Informationen in diesen Tutorials wird davon ausgegangen, dass Sie die Sicherheitsvorkehrungen geprüft und Ihr StorSimple-Gerät ausgepackt, installiert und verkabelt haben. Wenn Sie diese Aufgaben noch ausführen müssen, beginnen Sie mit der Prüfung der [Sicherheitsvorkehrungen](storsimple-safety.md). Je nach Modell können Sie anschließend das Gerät auspacken, im Rack einbauen und verkabeln, indem Sie folgende Anweisungen befolgen:
@@ -71,7 +71,7 @@ Die folgende Konfigurationsprüfliste für die Bereitstellung enthält die Infor
 | | | | |
 | **Konfigurieren und Registrieren des Geräts** | DATA 0-Netzwerkeinstellungen | DATA 0-IP-Adresse:</br>Subnetzmaske:</br>Gateway:</br>Primärer DNS-Server:</br>Primärer NTP-Server:</br>Webproxyserver-IP/FQDN (optional):</br>Webproxyport:| |
 | | Geräteadministratorkennwort | Das Kennwort muss zwischen 8 und 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen. | |
-| | StorSimple-Momentaufnahmen-Manager-Kennwort | Das Kennwort muss 14 oder 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen.| |
+| | StorSimple Snapshot Manager-Kennwort | Das Kennwort muss 14 oder 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen.| |
 | | Dienstregistrierungsschlüssel | Dieser Schlüssel wird im Azure-Portal generiert. | |
 | | Verschlüsselungsschlüssel für Dienstdaten | Dieser Schlüssel wird erstellt, wenn das Gerät über die Windows PowerShell für StorSimple beim Verwaltungsdienst registriert wird. Kopieren Sie diesen Schlüssel, und bewahren Sie ihn an einem sicheren Ort auf.| |
 | | | | |
@@ -131,7 +131,7 @@ Stellen Sie vor der Konfiguration des Geräts Folgendes sicher:
 
 Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
-- Die Ports in der Datencenter-Firewall werden geöffnet, um iSCSI- und Cloud-Datenverkehr zu ermöglichen, wie in [Netzwerkanforderungen für das StorSimple-Gerät](storsimple-system-requirements.md#networking-requirements-for-your-storsimple-device) beschrieben.
+- Die Ports in der Datencenter-Firewall werden geöffnet, um iSCSI- und Clouddatenverkehr zu ermöglichen, wie in [Netzwerkanforderungen für das StorSimple-Gerät](storsimple-system-requirements.md#networking-requirements-for-your-storsimple-device) beschrieben.
 - Das Gerät in Ihrem Datencenter kann eine Verbindung zum externen Netzwerk herstellen. Führen Sie folgende [Windows PowerShell 4.0](http://www.microsoft.com/download/details.aspx?id=40855)-Cmdlets (siehe unten stehende Tabelle) aus, um die Verbindung zum externen Netzwerk zu überprüfen. Führen Sie diese Überprüfung auf einem Computer (im Datencenternetzwerk) mit Verbindung zu Azure und an dem Standort durch, an dem Sie das StorSimple-Gerät bereitstellen.  
 
 | Parameter | Gültigkeitsprüfung | Ausführung dieser Befehle/Cmdlets |
@@ -143,7 +143,7 @@ Stellen Sie Folgendes sicher, bevor Sie beginnen:
 | | | |
 | **NTP** | Wir lösen eine Zeitsynchronisierung aus, sobald der NTP-Server eingegeben wird. Prüfen Sie, ob UDP-Port 123 offen ist, wenn Sie `time.windows.com` oder öffentliche Zeitserver eingeben. | [Laden Sie dieses Skript herunter, und verwenden Sie es](https://gallery.technet.microsoft.com/scriptcenter/Get-Network-NTP-Time-with-07b216ca). |
 | | | |
-| **Proxy (optional)** | Ist dies ein gültiger Proxy-URI und -Port? </br> Ist der Authentifizierungsmodus korrekt? | <code>wget http://bing.com &#124; % {$\_.StatusCode}</code></br>Dieser Befehl sollte unmittelbar nach der Konfiguration des Webproxys ausgeführt werden. Wenn der Statuscode "200" zurückgegeben wird, weist dies darauf hin, dass die Verbindung erfolgreich hergestellt wurde. |
+| **Proxy (optional)** | Ist dies ein gültiger Proxy-URI und -Port? </br> Ist der Authentifizierungsmodus korrekt? | <code>wget http://bing.com | % {$\_.StatusCode}</code></br>Dieser Befehl sollte unmittelbar nach der Konfiguration des Webproxys ausgeführt werden. Wenn der Statuscode "200" zurückgegeben wird, weist dies darauf hin, dass die Verbindung erfolgreich hergestellt wurde. |
 | | Kann der Datenverkehr durch den Proxy geroutet werden? | Führen Sie die DNS-, NTP- oder HTTP-Überprüfung einmal nach der Konfiguration der Proxyeinstellungen auf Ihrem Gerät aus. So erhalten Sie genaue Informationen darüber, ob Datenverkehr im Proxy oder an anderer Stelle blockiert wird. |
 | | | |
 | **Registrierung** | Prüfen Sie, ob die ausgehenden TCP-Ports 443, 80 und 9354 offen sind. | `Test-NetConnection -Port   443 -InformationLevel Detailed`</br>[Weitere Informationen zum Cmdlet "Test-NetConnection"](https://technet.microsoft.com/library/dn372891.aspx) |
@@ -228,7 +228,7 @@ Wenn Sie sich dafür entscheiden, MPIO nicht zu konfigurieren, führen Sie die f
 
 ## Schritt 8: Erstellen einer Sicherung
 
-Sicherungen stellen Zeitpunktschutz für Volumes zur Verfügung und verbessern die Wiederherstellbarkeit bei gleichzeitiger Minimierung der Wiederherstellungszeiten. Für Ihr StorSimple-Gerät können zwei Arten von Sicherungen angefertigt werden: lokale Momentaufnahmen und Cloud-Momentaufnahmen. Jeder dieser Sicherungstypen kann **geplant** sein oder **manuell** erfolgen.
+Sicherungen stellen Zeitpunktschutz für Volumes zur Verfügung und verbessern die Wiederherstellbarkeit bei gleichzeitiger Minimierung der Wiederherstellungszeiten. Für Ihr StorSimple-Gerät können zwei Arten von Sicherungen angefertigt werden: lokale Momentaufnahmen und Cloudmomentaufnahmen. Jeder dieser Sicherungstypen kann **geplant** sein oder **manuell** erfolgen.
 
 Führen Sie die folgenden Schritte im Azure-Portal aus, um eine geplante Sicherung zu erstellen.
 
@@ -290,4 +290,4 @@ Führen Sie die folgenden Schritte im Azure-Portal aus, um bei Bedarf eine manue
 
 - Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

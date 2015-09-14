@@ -24,7 +24,7 @@ Dieser Leitfaden bietet eine Einführung in den Azure Automation-Dienst und zeig
 
 ## Was ist Azure Automation?
 
-[Azure Automation](http://azure.microsoft.com/services/automation/) ist ein Azure-Dienst für die Vereinfachung der Cloudverwaltung durch eine Prozessautomatisierung. Mithilfe von Azure Automation können manuelle, häufig wiederholte, lang andauernde und fehleranfällige Aufgaben automatisiert werden, um die Zuverlässigkeit und Effizienz für Ihre Organisation zu erhöhen und die Amortisierungszeit zu verkürzen.
+[Azure Automation](http://azure.microsoft.com/services/automation/) ist ein Azure-Dienst für die Vereinfachung der Cloudverwaltung durch eine Prozessautomatisierung. Mit Azure Automation können manuelle, häufig ausgeführte, langwierige und fehleranfällige Aufgaben automatisiert werden, um Zuverlässigkeit und Effizienz zu steigern und eine schnellere Amortisierung für Ihre Organisation zu erzielen.
 
 Azure Automation bietet ein äußerst zuverlässiges, hoch verfügbares Workflow-Ausführungsmodul, das sich durch Skalierung an Ihre Anforderungen anpasst. In Azure Automation können Prozesse manuell, von Systemen von Drittanbietern oder in geplanten Intervallen gestartet werden, damit Aufgaben genau im Bedarfsfall ausgeführt werden.
 
@@ -40,7 +40,7 @@ Web-Apps können in Azure Automation durch die Verwendung von PowerShell-Cmdlets
 
 Nachdem Sie sich nun mit den Grundlagen von Azure Automation vertraut gemacht haben, folgen Sie diesen Links, um weitere Informationen zu Azure Automation zu erhalten.
 
-* Lernprogramm [Erste Schritte](../automation-create-runbook-from-samples.md) zu Azure Automation
+* Lernprogramm [Erste Schritte](../automation-intro.md) zu Azure Automation
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

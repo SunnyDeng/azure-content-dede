@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Aufrufen einer benutzerdefinierten API aus einem HTML-Client - Mobile Services" 
-	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer HTML-App aufrufen, die Azure Mobile Services verwendet." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="bureado"  
-	manager="dwrede" 
+<properties
+	pageTitle="Aufrufen einer benutzerdefinierten API aus einem HTML-Client - Mobile Services"
+	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer HTML-App aufrufen, die Azure Mobile Services verwendet."
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-html" 
-	ms.devlang="javascript" 
-	ms.topic="article" 
-	ms.date="06/04/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-html"
+	ms.devlang="javascript"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="glenga"/>
 
 # Aufrufen einer benutzerdefinierten API aus einer HTML-Anwendung
@@ -32,9 +32,9 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 ##<a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
-1. Öffnen Sie die Datei index.html in Ihrem Text-Editor, suchen Sie das **button**-Element mit dem Namen `buttonRefresh`, und fügen Sie das folgende neue Element direkt im Anschluss ein: 
+1. Öffnen Sie die Datei index.html in Ihrem Text-Editor, suchen Sie das **button**-Element mit dem Namen `buttonRefresh`, und fügen Sie das folgende neue Element direkt im Anschluss ein:
 
-		<button id="buttonCompleteAll">Complete All</button> 
+		<button id="buttonCompleteAll">Complete All</button>
 
 	Auf diese Weise wird eine neue Schaltfläche zur Seite hinzugefügt.
 
@@ -92,4 +92,4 @@ Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-html-get-started-data.md
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

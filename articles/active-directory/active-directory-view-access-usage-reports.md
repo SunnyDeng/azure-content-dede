@@ -39,8 +39,8 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 |	------												|	-----																						|
 |	**Berichte zu anomalen Aktivitäten**
 |	[Anmeldungen aus unbekannten Quellen](active-directory-reporting-sign-ins-from-unknown-sources.md) |	Zeigt möglicherweise einen Versuch einer Anmeldung ohne Ablaufverfolgung an. |
-|	[Anmeldungen nach mehreren Fehlern](active-directory-sign-ins-after-multiple-failures.md) |	Zeigt möglicherweise einen erfolgreichen Brute-Force-Angriff an. |
-|	[Anmeldungen aus mehreren geografischen Regionen](active-directory-sign-ins-from-multiple-geographies.md) |	Zeigt möglicherweise an, dass sich mehrere Benutzer mit dem gleichen Konto anmelden. |
+|	[Anmeldungen nach mehreren Fehlern](active-directory-reporting-sign-ins-after-multiple-failures.md) |	Zeigt möglicherweise einen erfolgreichen Brute-Force-Angriff an. |
+|	[Anmeldungen aus mehreren geografischen Regionen](active-directory-reporting-sign-ins-from-multiple-geographies.md) |	Zeigt möglicherweise an, dass sich mehrere Benutzer mit dem gleichen Konto anmelden. |
 |	[Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten](active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity.md) |	Zeigt möglicherweise eine erfolgreiche Anmeldung nach einem langfristigen Einbruchsversuch an. |
 |	[Anmeldungen von möglicherweise infizierten Geräten](active-directory-reporting-sign-ins-from-possibly-infected-devices.md) |	Gibt einen Versuch an, sich über möglicherweise infizierte Geräte anzumelden. |
 |	[Irreguläre Anmeldeaktivitäten](active-directory-reporting-irregular-sign-in-activity.md) |	Zeigt möglicherweise anomale Ereignisse bei Anmeldemustern von Benutzern an. |
@@ -76,7 +76,7 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 |	Benutzer mit anomalen Anmeldeaktivitäten | | |	✓ |
 |	Benutzer mit kompromittierten Anmeldeinformationen | | |	✓ |
 |	**Aktivitätsprotokolle**
-|	Überwachungsbericht | | |	✓ |
+|	Überwachungsbericht |	✓ | | |
 |	Kennwortzurücksetzungsaktivität | | |	✓ |
 |	Aktivität "Registrierung für Zurücksetzen des Kennworts" | | |	✓ |
 |	Self-Service-Gruppenaktivität | | |	✓ |
@@ -100,7 +100,9 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 
 
 ## Berichte zu anomalen Aktivitäten
-Die Berichte zu anomalen Aktivitäten enthalten verdächtige Anmeldeaktivitäten im Azure-Verwaltungsportal, im Azure AD-Zugriffsbereich, in Office 365, in SharePoint Online, in Dynamics CRM Online und in anderen Microsoft-Onlinediensten, unabhängig vom Verbundanbieter. <p>Die folgenden Berichte sind verfügbar: </p><ul> <li>[Anmeldungen aus unbekannten Quellen](active-directory-reporting-sign-ins-from-unknown-sources.md).</li> <li>[Anmeldungen nach mehreren Fehlern](active-directory-reporting-sign-ins-after-multiple-failures.md).</li> <li>[Anmeldungen aus mehreren geografischen Regionen](active-directory-reporting-sign-ins-from-multiple-geographies.md).</li> <li>[Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten](active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity.md).</li> <li>[Irreguläre Anmeldeaktivitäten](active-directory-reporting-irregular-sign-in-activity.md).</li> <li>[Anmeldungen von möglicherweise infizierten Geräten](active-directory-reporting-sign-ins-from-possibly-infected-devices.md).</li> <li>[Benutzer mit anomalen Anmeldeaktivitäten](active-directory-reporting-users-with-anomalous-sign-in-activity.md).</li> <li>Benutzer mit kompromittierten Anmeldeinformationen</li></ul>
+<p>Die Berichte zu anomalen Aktivitäten markieren verdächtige Anmeldeaktivitäten in Office365, im Azure-Verwaltungsportal, im Azure AD-Zugriffsbereich, in SharePoint Online, in Dynamics CRM Online und in anderen Microsoft-Onlinediensten.</p>
+<p>All diese Berichte, mit Ausnahme des Berichts "Anmeldungen nach mehreren Fehlern", markieren außerdem verdächtige <i>Verbundanmeldungen</i> bei den oben genannten Diensten, unabhängig vom Verbundanbieter. </p>
+<p>Die folgenden Berichte sind verfügbar: </p><ul> <li>[Anmeldungen aus unbekannten Quellen](active-directory-reporting-sign-ins-from-unknown-sources.md).</li> <li>[Anmeldungen nach mehreren Fehlern](active-directory-reporting-sign-ins-after-multiple-failures.md).</li> <li>[Anmeldungen aus mehreren geografischen Regionen](active-directory-reporting-sign-ins-from-multiple-geographies.md).</li> <li>[Anmeldungen von IP-Adressen mit verdächtigen Aktivitäten](active-directory-reporting-sign-ins-from-ip-addresses-with-suspicious-activity.md).</li> <li>[Irreguläre Anmeldeaktivitäten](active-directory-reporting-irregular-sign-in-activity.md).</li> <li>[Anmeldungen von möglicherweise infizierten Geräten](active-directory-reporting-sign-ins-from-possibly-infected-devices.md).</li> <li>[Benutzer mit anomalen Anmeldeaktivitäten](active-directory-reporting-users-with-anomalous-sign-in-activity.md).</li> <li>Benutzer mit kompromittierten Anmeldeinformationen</li>.</ul>
 
 
 
@@ -274,4 +276,4 @@ Weitere Informationen zu den Benachrichtigungen für Berichte in Azure AD finde
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

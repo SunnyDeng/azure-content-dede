@@ -85,7 +85,7 @@ Azure-Ressourcengruppenprojekte werden in Azure-Ressourcengruppen bereitgestellt
 
     ![Dialogfeld "In Ressourcengruppe bereitstellen"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/IC796673.png)
 
-1. Wählen Sie im Dropdownfeld **Ressourcengruppe** eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue.Öffnen Sie zum Erstellen einer Ressourcengruppe das Dropdownfeld **Ressourcengruppe**, und wählen Sie dann **<Create New...>** aus.
+1. Wählen Sie im Dropdownfeld **Ressourcengruppe** eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue. Öffnen Sie zum Erstellen einer Ressourcengruppe das Dropdownfeld **Ressourcengruppe**, und wählen Sie dann **<Create New...>** aus.
 
     Das Dialogfeld **Ressourcengruppe erstellen** wird angezeigt.
 
@@ -129,13 +129,13 @@ Azure-Ressourcengruppenprojekte werden in Azure-Ressourcengruppen bereitgestellt
 
 ## Verwenden von Azure SDK 2.5-Cloudbereitstellungsprojekten mit Azure SDK 2.6
 
-Wenn Sie Cloud-Bereitstellungsprojekte verwenden, die mit Azure SDK 2.5 erstellt wurden, ist ein Upgrade auf Azure SDK 2.6 sinnvoll, damit Sie die neuen Features für das Bearbeiten und Bereitstellen von Azure-Ressourcenvorlagen verwenden können. Die einfachste Möglichkeit, die in Azure SDK 2.5 erstellten Vorlagen wiederzuverwenden, besteht darin, Azure SDK 2.6-Versionen des Projekts zu erstellen, Ihre Vorlagen in das neue Projekt zu verschieben und einige Anpassungen vorzunehmen.
+Wenn Sie Cloudbereitstellungsprojekte verwenden, die mit Azure SDK 2.5 erstellt wurden, ist ein Upgrade auf Azure SDK 2.6 sinnvoll, damit Sie die neuen Features für das Bearbeiten und Bereitstellen von Azure-Ressourcenvorlagen verwenden können. Die einfachste Möglichkeit, die in Azure SDK 2.5 erstellten Vorlagen wiederzuverwenden, besteht darin, Azure SDK 2.6-Versionen des Projekts zu erstellen, Ihre Vorlagen in das neue Projekt zu verschieben und einige Anpassungen vorzunehmen.
 
 ### So verwenden Sie Azure SDK 2.5-Cloudbereitstellungsprojekte mit Azure SDK 2.6
 
 1. Fügen Sie Ihrer Projektmappe ein neues Azure SDK 2.6-Azure-Ressourcengruppenprojekt hinzu.
 
-    1. Öffnen Sie die Bereitstellung, die Ihr Azure SDK 2.5-Cloud-Bereitstellungsprojekt enthält.
+    1. Öffnen Sie die Bereitstellung, die Ihr Azure SDK 2.5-Cloudbereitstellungsprojekt enthält.
 
     1. Wählen Sie im Menü **Datei** die Befehle **Neu** und **Projekt** aus.
 
@@ -195,4 +195,4 @@ Anpassungen wurden auch an einigen Variablennamen und Buildaufgaben vorgenommen,
 
 Informationen zum Hinzufügen von Ressourcen zu Ihrer Azure-Ressourcengruppe in Visual Studio finden Sie unter [Hinzufügen von Ressourcen zu einer Azure-Ressourcengruppe](https://msdn.microsoft.com/library/azure/mt125415.aspx).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->

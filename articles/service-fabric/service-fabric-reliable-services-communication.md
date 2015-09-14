@@ -1,20 +1,20 @@
 <properties
    pageTitle="Übersicht über das Dienstkommunikationsmodell"
-   description="Dieser Artikel beschreibt die Grundlagen des von der Reliable Services-API unterstützten Kommunikationsmodells."
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="BharatNarasimman"
-   manager="vipulm"
-   editor=""/>
+	description="Dieser Artikel beschreibt die Grundlagen des von der Reliable Services-API unterstützten Kommunikationsmodells."
+	services="service-fabric"
+	documentationCenter=".net"
+	authors="BharatNarasimman"
+	manager="vipulm"
+	editor=""/>
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
-   ms.date="04/13/2015"
-   ms.author="bharatn@microsoft.com"/>
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="required"
+	ms.date="08/27/2015"
+	ms.author="bharatn@microsoft.com"/>
 
 # Dienstkommunikationsmodell
 
@@ -70,7 +70,7 @@ var port = codePackageActivationContext.GetEndpoint("ServiceEndpoint").Port;
 
 ```
 
-> [AZURE.NOTE]Die Endpunktressourcen gelten für das ganze Dienstpaket und werden vom Service Fabric zugeordnet, wenn das Dienstpaket aktiviert wird. (Weitere Informationen finden Sie im Artikel über das [Service Fabric-Dienstmodell](../service-fabric-service-model.md)). Somit verwenden alle Replikate, die im gleichen ServiceHost gehostet sind, den gleichen Port. Dies bedeutet, dass der Kommunikationslistener die Portfreigabe unterstützen sollte. Zu diesem Zweck wird empfohlen, dass der Kommunikationslistener zum Generieren der Überwachungsadresse die Partitions-ID und die Replikat-/Instanz-ID verwendet.
+> [AZURE.NOTE]Das gesamte Dienstpaket verwendet einheitliche Endpunktressourcen, die von Service Fabric beim Aktivieren des Dienstpakets zugewiesen werden. Somit verwenden alle Replikate, die im gleichen ServiceHost gehostet sind, den gleichen Port. Dies bedeutet, dass der Kommunikationslistener die Portfreigabe unterstützen sollte. Zu diesem Zweck wird empfohlen, dass der Kommunikationslistener zum Generieren der Überwachungsadresse die Partitions-ID und die Replikat-/Instanz-ID verwendet.
 
 ```csharp
 
@@ -230,4 +230,4 @@ var myServicePartitionClient = new ServicePartitionClient<MyCommunicationClient>
 * [Schreiben von Diensten mit der Reliable Services-API und dem WebAPI-Kommunikationsstapel](service-fabric-reliable-services-communication-webapi.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

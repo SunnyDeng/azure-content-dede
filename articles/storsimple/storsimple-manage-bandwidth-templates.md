@@ -1,21 +1,21 @@
 <properties 
    pageTitle="Verwalten von StorSimple-Bandbreitenvorlagen | Microsoft Azure"
-   description="Beschreibt die Verwaltung von StorSimple-Bandbreitenvorlagen, mit denen Sie die Auslastung der Netzwerkbandbreite steuern."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
+	description="Beschreibt die Verwaltung von StorSimple-Bandbreitenvorlagen, mit denen Sie die Auslastung der Netzwerkbandbreite steuern."
+	services="storsimple"
+	documentationCenter=""
+	authors="alkohli"
+	manager="carolz"
+	editor=""/>
 <tags 
    ms.service="storsimple"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/13/2015"
-   ms.author="alkohli" />
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
+	ms.date="09/01/2015"
+	ms.author="alkohli"/>
 
-# Verwalten von StorSimple-Bandbreitenvorlagen
+# Verwalten von StorSimple-Bandbreitenvorlagen mithilfe des StorSimple Manager-Diensts
 
 ## Übersicht
 
@@ -54,7 +54,7 @@ Führen Sie die folgenden Schritte aus, um eine Bandbreitenvorlage zu erstellen.
 
 #### So fügen Sie eine Bandbreitenvorlage hinzu
 
-1. Klicken Sie auf **Bandbreitenvorlage hinzufügen/bearbeiten**.
+1. Klicken Sie auf der Seite **Konfigurieren** des StorSimple Manager-Diensts auf **Bandbreitenvorlage hinzufügen/bearbeiten**.
 
 2. Im Dialogfeld **Bandbreitenvorlage hinzufügen/bearbeiten** führen Sie die folgenden Schritte aus:
 
@@ -102,7 +102,7 @@ Führen Sie die folgenden Schritte aus, um eine Bandbreitenvorlage zu löschen.
 
 #### So löschen Sie eine Bandbreitenvorlage
 
-1. Wählen Sie die Vorlage, die Sie löschen möchten, in der Tabellenliste der Bandbreitenvorlagen für Ihren Dienst aus. Ein Löschsymbol (**x**) wird rechts neben der ausgewählten Vorlage angezeigt. Klicken Sie auf das Symbol **x**, um die Vorlage zu löschen.
+1. Wählen Sie die Vorlage, die Sie löschen möchten, in der Tabellenliste der Bandbreitenvorlagen für Ihren Dienst aus. Rechts neben der ausgewählten Vorlage wird ein Löschsymbol (**x**) angezeigt. Klicken Sie auf das Symbol **x**, um die Vorlage zu löschen.
 
 2. Sie werden aufgefordert, diesen Schritt zu bestätigen. Klicken Sie zum Fortfahren auf **OK**.
 
@@ -176,4 +176,4 @@ Folgen Sie diesen Empfehlungen für Ihr StorSimple-Gerät:
 
 Erfahren Sie mehr über [StorSimple-Komponenten](storsimple-components.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=September15_HO1-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Erstellen von Arbeits- oder Schulidentitäten in Azure Active Directory"
-   description="Beschreibt, wie Sie mithilfe Ihrer persönlichen Identität eine Arbeits- oder Schulidentität erstellen, die mit Ressourcengruppenvorlagen oder rollenbasiertem Zugriff und anderen Funktionen verwendet werden kann."
-   services="virtual-machines"
-   documentationCenter=""
-   authors="squillace"
-   manager="timlt"
-   editor=""/>
+	description="Beschreibt, wie Sie mithilfe Ihrer persönlichen Identität eine Arbeits- oder Schulidentität erstellen, die mit Ressourcengruppenvorlagen oder rollenbasiertem Zugriff und anderen Funktionen verwendet werden kann."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="squillace"
+	manager="timlt"
+	editor=""/>
 
 <tags
    ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure"
-   ms.date="05/05/2015"
-   ms.author="rasquill"/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure"
+	ms.date="09/01/2015"
+	ms.author="rasquill"/>
 
 # Erstellen von Arbeits- oder Schulidentitäten in Azure Active Directory
 
@@ -140,4 +140,4 @@ Beispielsweise können Sie nun mit Ihrer neuen Azure Active Directory-Identität
     data:
     info:    group create command OK
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

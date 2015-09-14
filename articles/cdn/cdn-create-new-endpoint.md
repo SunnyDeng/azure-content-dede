@@ -1,19 +1,19 @@
 <properties 
-	 pageTitle="Aktivieren des CDN (Content Delivery Network) für Azure" 
-	 description="Dieses Thema zeigt, wie Sie das Content Delivery Network (CDN) für Azure aktivieren." 
-	 services="cdn" 
-	 documentationCenter="" 
-	 authors="zhangmanling" 
-	 manager="dwrede" 
-	 editor=""/>
+	 pageTitle="Aktivieren des CDN (Content Delivery Network) für Azure"
+	description="Dieses Thema zeigt, wie Sie das Content Delivery Network (CDN) für Azure aktivieren."
+	services="cdn"
+	documentationCenter=""
+	authors="zhangmanling"
+	manager="dwrede"
+	editor=""/>
 <tags 
-	 ms.service="cdn" 
-	 ms.workload="media" 
-	 ms.tgt_pltfrm="na" 
-	 ms.devlang="na" 
-	 ms.topic="article" 
-	 ms.date="06/03/2015" 
-	 ms.author="mazha"/>
+	 ms.service="cdn"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2015"
+	ms.author="mazha"/>
 
 
 
@@ -54,4 +54,4 @@ Beachten Sie, dass Sie auch einen benutzerdefinierten Ursprung erstellen können
 [customorigin]: ./media/cdn-create-new-endpoint/cdn-custom-origin.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

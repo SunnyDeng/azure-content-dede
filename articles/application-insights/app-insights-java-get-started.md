@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Erste Schritte mit Application Insights in einem Java-Webprojekt" 
-	description="Überwachen der Leistung und Nutzung Ihrer Java-Website mit Application Insights" 
-	services="application-insights" 
-    documentationCenter="java"
-	authors="alancameronwills" 
+<properties
+	pageTitle="Erste Schritte mit Application Insights in einem Java-Webprojekt | Microsoft Azure"
+	description="Überwachen der Leistung und Nutzung Ihrer Java-Website mit Application Insights"
+	services="application-insights"
+	documentationCenter="java"
+	authors="alancameronwills"
 	manager="douge"/>
 
-<tags 
-	ms.service="application-insights" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="ibiza" 
-	ms.devlang="na" 
-	ms.topic="get-started-article" 
-	ms.date="06/30/2015" 
+<tags
+	ms.service="application-insights"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="ibiza"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="06/30/2015"
 	ms.author="awills"/>
- 
+
 # Erste Schritte mit Application Insights in einem Java-Webprojekt
 
 *Application Insights befindet sich in der Vorschau.*
@@ -37,8 +37,8 @@ Sie benötigen Folgendes:
 
 ## 1\. Abrufen eines Application Insights-Instrumentationsschlüssels
 
-1. Melden Sie sich am [Microsoft Azure-Portal](https://portal.azure.com) an.
-2. Erstellen einer neuen Application Insights-Ressource
+1. Melden Sie sich beim [Microsoft Azure-Portal](https://portal.azure.com) an.
+2. Erstellen Sie eine neue Application Insights-Ressource.
 
     ![Klicken Sie auf +, und wählen Sie "Application Insights"](./media/app-insights-java-get-started/01-create.png)
 3. Legen Sie den Anwendungstyp auf "Java-Webanwendung" fest.
@@ -58,7 +58,7 @@ Verwenden Sie das [Application Insights SDK für Java-Plug-In][eclipse].
 
 #### Wenn Sie Maven verwenden...
 
-Wenn Ihr Projekt bereits für die Verwendung von Maven für den Buildprozess eingerichtet ist, fügen Sie den folgenden Codeabschnitt Ihrer Datei "pom.xml" hinzu:
+Wenn Ihr Projekt bereits für die Verwendung von Maven für den Buildprozess eingerichtet ist, fügen Sie Ihrer Datei „pom.xml“ den folgenden Code hinzu:
 
 Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien heruntergeladen werden.
 
@@ -80,13 +80,12 @@ Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien herun
     </dependencies>
 
 
-* *Build- oder Prüfsummenvalidierungsfehler? Versuchen Sie es mit einer bestimmten Version, z. B.: * `<version>1.0.n</version>`. Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md) oder in unseren [Maven-Artefakten](http://search.maven.org/#search%7Cga%7C1%7Capplicationinsights).
-* *So aktualisieren Sie auf ein neues SDK*
- * Aktualisieren Sie die Abhängigkeiten des Projekts.
+* *Build- oder Prüfsummenvalidierungsfehler?* Versuchen Sie es mit einer bestimmten Version, z. B. `<version>1.0.n</version>`. Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md) oder in unseren [Maven-Artefakten](http://search.maven.org/#search%7Cga%7C1%7Capplicationinsights).
+* *Sie müssen auf ein neues SDK aktualisieren?* Aktualisieren Sie die Abhängigkeiten des Projekts.
 
 #### Wenn Sie Gradle verwenden...
 
-Wenn Ihr Projekt bereits für die Verwendung von Gradle für den Buildprozess eingerichtet ist, fügen Sie den folgenden Codeabschnitt Ihrer Datei "build.gradle" hinzu:
+Wenn Ihr Projekt bereits für die Verwendung von Gradle für den Buildprozess eingerichtet ist, fügen Sie Ihrer Datei „build.gradle“ den folgenden Code hinzu:
 
 Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien heruntergeladen werden.
 
@@ -99,7 +98,7 @@ Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien herun
       // or applicationinsights-core for bare API
     }
 
-* *Build- oder Prüfsummenvalidierungsfehler? Versuchen Sie es mit einer bestimmten Version, z. B.: * `version:'1.0.n'`. *Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md).* 
+* *Build- oder Prüfsummenvalidierungsfehler? Versuchen Sie es mit einer bestimmten Version, z. B.: * `version:'1.0.n'`. *Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md).*
 * *So aktualisieren Sie auf ein neues SDK*
  * Aktualisieren Sie die Abhängigkeiten des Projekts.
 
@@ -112,20 +111,20 @@ Fügen Sie das SDK manuell hinzu:
 
 ### Fragen...
 
-* *Was ist die Beziehung zwischen den Komponenten `-core` und `-web` in der ZIP-Datei?*
+* *Wie ist die Beziehung zwischen den Komponenten `-core` und `-web` in der ZIP-Datei?*
 
  * Mit `applicationinsights-core` erhalten Sie die bloße API. Sie ist immer erforderlich.
- * Mit `applicationinsights-web` erhalten Sie Metriken zum Verfolgen der Anzahl der HTTP-Anforderungen und der Antwortzeiten. Sie können sie weglassen, wenn diese Telemetriedaten nicht automatisch gesammelt werden sollen, wenn Sie den Code z. B. selbst schreiben möchten.
+ * Mit `applicationinsights-web` erhalten Sie Metriken zum Verfolgen der Anzahl der HTTP-Anforderungen und der Antwortzeiten. Sie können sie weglassen, wenn diese Telemetriedaten nicht automatisch gesammelt werden sollen, beispielsweise, wenn Sie den Code selbst schreiben möchten.
 
 * *So aktualisieren Sie das SDK, wenn wir Änderungen veröffentlichen*
- * Laden Sie das aktuelle [Application Insights-SDK für Java](http://dl.windowsazure.com/lib/applicationinsights/javabin/sdk.zip) herunter, und ersetzen Sie die alten.
+ * Laden Sie das aktuelle [Application Insights-SDK für Java](http://dl.windowsazure.com/lib/applicationinsights/javabin/sdk.zip) herunter, und ersetzen Sie die alte Version.
  * Änderungen werden in den [SDK-Versionshinweisen](app-insights-release-notes-java.md) beschrieben.
 
 
 
-## 3\. Hinzufügen der Datei "ApplicationInsights.XML"
+## 3\. Hinzufügen der Datei „ApplicationInsights.xml“
 
-Fügen Sie dem Ressourcenordner in Ihrem Projekt die Datei "ApplicationInsights.xml" hinzu, oder stellen Sie sicher, dass sie dem Bereitstellungsklassenpfad Ihres Projekts hinzugefügt wird. Kopieren Sie sie in den folgenden XML-Code.
+Fügen Sie dem Ressourcenordner in Ihrem Projekt die Datei „ApplicationInsights.xml“ hinzu, oder stellen Sie sicher, dass sie dem Bereitstellungsklassenpfad Ihres Projekts hinzugefügt wird. Kopieren Sie den folgenden XML-Code in die Datei.
 
 Fügen Sie den Instrumentationsschlüssel ein, den Sie aus dem Azure-Portal abgerufen haben.
 
@@ -168,7 +167,7 @@ Fügen Sie den Instrumentationsschlüssel ein, den Sie aus dem Azure-Portal abge
 
 Der letzte Konfigurationsschritt ermöglicht der HTTP-Anforderungskomponente das Protokollieren jeder Webanforderung. (Nicht erforderlich, wenn nur die bloße API wünschen.)
 
-Suchen und öffnen Sie die Datei "web.xml" in Ihrem Projekt, und führen Sie den folgenden Codeausschnitt unter dem Knoten "web-app" zusammen, in dem Ihre Anwendungsfilter konfiguriert sind.
+Suchen und öffnen Sie die Datei „web.xml“ in Ihrem Projekt, und führen Sie den folgenden Code unter dem Web-App-Knoten zusammen, in dem Ihre Anwendungsfilter konfiguriert sind.
 
 Um möglichst genaue Ergebnisse zu erhalten, muss der Filter vor allen anderen Filtern zugeordnet werden.
 
@@ -226,16 +225,16 @@ Kehren Sie zur Application Insights-Ressource im [Microsoft Azure-Portal](https:
 HTTP-Anforderungsdaten werden auf dem Blatt "Übersicht" angezeigt. (Wenn sie nicht vorhanden sind, warten Sie einige Sekunden, und klicken Sie dann auf "Aktualisieren".)
 
 ![Beispieldaten](./media/app-insights-java-get-started/5-results.png)
- 
+
 
 Klicken Sie sich durch ein beliebiges Diagramm, um ausführlichere Metriken anzuzeigen.
 
 ![](./media/app-insights-java-get-started/6-barchart.png)
 
- 
+
 
 Beim Anzeigen der Eigenschaften einer Anforderung können Sie die damit verbundenen Telemetrieereignisse erkennen, wie z. B. Anforderungen und Ausnahmen.
- 
+
 ![](./media/app-insights-java-get-started/7-instance.png)
 
 
@@ -270,14 +269,14 @@ Um Daten zu anderen Ausnahmen zu erfassen, haben Sie zwei Möglichkeiten:
 
 ## Leistungsindikatoren
 
-Klicken Sie auf die Kachel "Server", auf der Sie einen Bereich mit Leistungsindikatoren sehen.
+Klicken Sie auf die Kachel **Server**. Ein Bereich mit Leistungsindikatoren wird angezeigt.
 
 
 ![](./media/app-insights-java-get-started/11-perf-counters.png)
 
 ### Anpassen der Erfassung von Leistungsindikatoren
 
-Um die Erfassung der Standardgruppe von Leistungsindikatoren zu deaktivieren, fügen Sie unter dem Stammknoten der Datei "ApplicationInsights.xml" den folgenden Codeausschnitt hinzu:
+Um die Erfassung der Standardgruppe von Leistungsindikatoren zu deaktivieren, fügen Sie unter dem Stammknoten der Datei „ApplicationInsights.xml“ den folgenden Code hinzu:
 
     <PerformanceCounters>
        <UseBuiltIn>False</UseBuiltIn>
@@ -306,7 +305,7 @@ Sie können weitere Leistungsindikatoren angeben, die erfasst werden sollen.
 
 
 
-#### Windows-Leistungsindikatoren 
+#### Windows-Leistungsindikatoren
 
 Jeder [Windows-Leistungsindikator](https://msdn.microsoft.com/library/windows/desktop/aa373083.aspx) gehört zu einer Kategorie (genauso wie ein Feld zu einer Klasse gehört). Kategorien können entweder global sein oder nummerierte oder benannte Instanzen haben.
 
@@ -317,9 +316,9 @@ Jeder [Windows-Leistungsindikator](https://msdn.microsoft.com/library/windows/de
       </Windows>
     </PerformanceCounters>
 
-*	displayName – Der im Application Insights-Portal angezeigte Name.
-*	categoryName – Die Leistungsindikatorkategorie (Leistungsobjekt), der dieser Leistungsindikator zugeordnet ist.
-*	counterName – Der Name des Leistungsindikators.
+*	displayName – Der im Application Insights-Portal angezeigte Name
+*	categoryName – Die Leistungsindikatorkategorie (Leistungsobjekt), der dieser Leistungsindikator zugeordnet ist
+*	counterName – Der Name des Leistungsindikators
 *	instanceName – Der Name der Instanz der Leistungsindikatorkategorie oder eine leere Zeichenfolge (""), wenn die Kategorie eine einzelne Instanz enthält. Wenn "categoryName" auf "Process" festgelegt ist und der Leistungsindikator, den Sie erfassen möchten, aus dem aktuellen JVM-Prozess stammt, in dem Ihre Anwendung ausgeführt wird, geben Sie `"__SELF__"` an.
 
 Ihre Leistungsindikatoren werden im [Metrik-Explorer][metrics] als benutzerdefinierte Metriken angezeigt.
@@ -371,6 +370,4 @@ Nachdem Sie das SDK installiert haben, können Sie die API verwenden, um eigene 
 [metrics]: app-insights-metrics-explorer.md
 [usage]: app-insights-web-track-usage.md
 
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

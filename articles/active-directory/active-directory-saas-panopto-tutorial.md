@@ -1,16 +1,18 @@
 <properties pageTitle="Tutorial: Azure Active Directory-Integration mit Panopto | Microsoft Azure" description="Erfahren Sie, wie Sie Panopto mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
+
+<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi"/>
+
 #Tutorial: Azure Active Directory-Integration mit Panopto
 >[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=524766), um Feedback abzugeben.
   
-In diesem Tutorial wird die Integration von Azure und Panopto erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
+In diesem Tutorial wird die Integration von Azure und Panopto erläutert. Das in diesem Tutorial verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Einen Panopto-Mandanten
   
-Nach Abschluss dieses Tutorials können sich die Panopto zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Panopto-Unternehmenswebsite bei der Anwendung anmelden \(durch den Dienstanbieter initiierte Anmeldung\). Alternativ können Sie den Zugriffsbereich nutzen \(siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)\).
+Nach Abschluss dieses Tutorials können sich die Panopto zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Panopto-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586)).
   
-Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
+Das in diesem Tutorial beschriebene Szenario besteht aus den folgenden Bausteinen:
 
 1.  Aktivieren der Anwendungsintegration für Panopto
 2.  Konfigurieren der einmaligen Anmeldung
@@ -51,7 +53,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Pan
     ![Panopto](./media/active-directory-saas-panopto-tutorial/IC782936.png "Panopto")
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Panopto zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Panopto zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###Führen Sie zum Konfigurieren des einmaligen Anmeldens die folgenden Schritte aus:
 
@@ -63,7 +65,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-panopto-tutorial/IC777668.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Panopto-Anmelde-URL** die URL im Format „*https://\\<Mandantenname\>. Panopto.com*“ ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Panopto-Anmelde-URL** die URL im Format "*https://\<Mandantenname>. Panopto.com*" ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-panopto-tutorial/IC777528.png "App-URL konfigurieren")
 
@@ -124,4 +126,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=September15_HO1-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Was sind Connectors und BizTalk-API-Apps?" 
-	description="Erfahren Sie mehr über API-Apps, Connectors und BizTalk-API-Apps" 
-	services="app-service\logic" 
-	documentationCenter="" 
-	authors="MandiOhlinger" 
-	manager="dwrede" 
+	pageTitle="Was sind Connectors und BizTalk-API-Apps?"
+	description="Erfahren Sie mehr über API-Apps, Connectors und BizTalk-API-Apps"
+	services="app-service\logic"
+	documentationCenter=""
+	authors="MandiOhlinger"
+	manager="dwrede"
 	editor=""/>
 
 <tags 
-	ms.service="app-service-logic" 
-	ms.workload="integration" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/08/2015" 
+	ms.service="app-service-logic"
+	ms.workload="integration"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/16/2015"
 	ms.author="mandia"/>
 
 # Was sind Connectors und BizTalk-API-Apps?
@@ -48,4 +48,4 @@ Geschäftsregeln umfassen die Richtlinien und Entscheidungen, welche Geschäftsp
 Eine vollständige Liste der Connectors und API-Apps, die in den einzelnen Kategorien wie den Standardconnectors, BizTalk-EAI, Premiumconnectors usw. enthalten sind, finden Sie unter [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=September15_HO1-->

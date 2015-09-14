@@ -14,74 +14,23 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/21/2015"
+	ms.date="09/03/2015"
 	ms.author="jgao"/>
 
 # Entwickeln von Script Action-Skripts für HDInsight
 
+Entwickeln von Skriptaktionsskripts für HDInsight Weitere Informationen zu Skriptaktionsskripts finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md). Der gleiche Artikel, der für den HDInsight-Cluster unter einem Linux-Betriebssystem verfasst wurde, befindet sich unter [Entwickeln von Skriptaktionsskripts für HDInsight](hdinsight-hadoop-script-actions-linux.md).
+
 Mit Skriptaktionen (Script Action) kann zusätzliche Software in einem Hadoop-Cluster installiert oder die Konfiguration von in einem Cluster installierten Anwendungen geändert werden. Skriptaktionen sind Skripts, die auf Clusterknoten ausgeführt werden, wenn HDInsight-Cluster bereitgestellt sind. Sie werden dann ausgeführt, sobald die HDInsight-Konfiguration auf Knoten im Cluster abgeschlossen ist. Eine Skriptaktion wird mit Berechtigungen des Systemadministratorkontos ausgeführt und bietet umfassende Zugriffsrechte auf die Clusterknoten. Jeder Cluster kann mit einer Liste von Skriptaktionen bereitgestellt werden, die in der angegebenen Reihenfolge ausgeführt werden.
 
-## Hilfsmethoden für benutzerdefinierte Skripts
+> [AZURE.NOTE]Möglicherweise erhalten Sie die folgende Fehlermeldung:
+> 
+>     System.Management.Automation.CommandNotFoundException; ExceptionMessage : The term 'Save-HDIFile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+> Die Ursache dafür ist, dass Sie die Hilfsmethoden nicht mit aufgenommen haben. Informationen finden Sie unter [Hilfsmethoden für benutzerdefinierte Skripts](hdinsight-hadoop-script-actions.md#helper-methods-for-custom-scripts).
 
-Script Action-Hilfsmethoden sind Hilfsprogramme, die Sie zum Schreiben von benutzerdefinierten Skripts verwenden können. Diese werden in der Datei [https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1](https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1) definiert und können wie folgt in Ihre Skripts eingefügt werden:
+## Beispielskripts
 
-    # Download config action module from a well-known directory.
-	$CONFIGACTIONURI = "https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1";
-	$CONFIGACTIONMODULE = "C:\apps\dist\HDInsightUtilities.psm1";
-	$webclient = New-Object System.Net.WebClient;
-	$webclient.DownloadFile($CONFIGACTIONURI, $CONFIGACTIONMODULE);
-	
-	# (TIP) Import config action helper method module to make writing config action easy.
-	if (Test-Path ($CONFIGACTIONMODULE))
-	{ 
-		Import-Module $CONFIGACTIONMODULE;
-	} 
-	else
-	{
-		Write-Output "Failed to load HDInsightUtilities module, exiting ...";
-		exit;
-	}
-
-Hier sind die Hilfsmethoden, die von diesem Skript bereitgestellt werden:
-
-Hilfsmethode | Beschreibung
--------------- | -----------
-**Save-HDIFile** | Herunterladen einer Datei vom angegebenen URI (Uniform Resource Identifier) an einen Speicherort auf dem lokalen Datenträger, der dem im Cluster zugewiesenen Azure VM-Knoten zugeordnet ist.
-**Expand-HDIZippedFile** | Entpacken einer ZIP-Datei.
-**Invoke-HDICmdScript** | Ausführen eines Skripts über "cmd.exe".
-**Write-HDILog** | Schreiben der Ausgabe des benutzerdefinierten Skripts, das für die Skriptaktion verwendet wird.
-**Get-Services** | Abrufen einer Liste von Diensten auf dem Rechner, auf dem das Skript ausgeführt wird.
-**Get-Service** | Mit dem bestimmten Dienstnamen als Eingabe werden detaillierte Informationen für einen bestimmten Dienst (Dienstname, Prozess-ID, Status usw.) auf dem Computer zurückgegeben, auf dem das Skript ausgeführt wird.
-**Get-HDIServices** | Abrufen einer Liste der HDInsight-Dienste auf dem Computer, auf dem das Skript ausgeführt wird.
-**Get-HDIService** | Mit dem bestimmten HDInsight-Dienstnamen als Eingabe werden detaillierte Informationen für einen bestimmten Dienst (Dienstname, Prozess-ID, Status usw.) auf dem Computer zurückgegeben, auf dem das Skript ausgeführt wird.
-**Get-ServicesRunning** | Abrufen einer Liste von Diensten auf dem Computer, auf dem das Skript ausgeführt wird.
-**Get-ServiceRunning** | Überprüfen, ob ein bestimmter Dienst (namentlich) auf dem Computer ausgeführt wird, auf dem das Skript ausgeführt wird.
-**Get-HDIServicesRunning** | Abrufen einer Liste der HDInsight-Dienste auf dem Computer, auf dem das Skript ausgeführt wird.
-**Get-HDIServiceRunning** | Überprüfen, ob ein bestimmter HDInsight-Dienst (namentlich) auf dem Computer ausgeführt wird, auf dem das Skript ausgeführt wird.
-**Get-HDIHadoopVersion** | Abrufen der Hadoop-Version, die auf dem Computer installiert ist, auf dem das Skript ausgeführt wird.
-**Test-IsHDIHeadNode** | Überprüfen, ob der Computer, auf dem das Skript ausgeführt wird, ein Hauptknoten ist.
-**Test-IsActiveHDIHeadNode** | Überprüfen, ob der Computer, auf dem das Skript ausgeführt wird, ein aktiver Hauptknoten ist.
-**Test-IsHDIDataNode** | Überprüfen, ob der Computer, auf dem das Skript ausgeführt wird, ein Datenknoten ist.
-**Edit-HDIConfigFile** | Bearbeiten der Konfigurationsdateien "hive-site.xml", "core-site.xml", "hdfs-site.xml", "mapred-site.xml" oder "yarn-site.xml".
-
-## Aufrufen von Skriptaktionen
-
-HDInsight verfügt über mehrere Skripts zum Installieren zusätzlicher Komponenten auf HDInsight-Clustern:
-
-Name | Skript
------ | -----
-**Installieren von Spark** | https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1. Siehe [Installieren und Verwenden von Spark in HDInsight-Clustern][hdinsight-install-spark].
-**Installieren von R** | https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1. Siehe [Installieren und Verwenden von R in HDInsight-Clustern][hdinsight-r-scripts].
-**Installieren von Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1. Siehe [Installieren und Verwenden von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md).
-**Installieren von Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1. Siehe [Installieren und Verwenden von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md).
-
-Die Skriptaktion kann über das Azure-Vorschauportal, Azure PowerShell oder das HDInsight .NET SDK bereitgestellt werden. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize].
-
-> [AZURE.NOTE]Die Beispielskripts funktionieren nur mit HDInsight-Clustern der Version 3.1 oder höher. Weitere Informationen zu HDInsight-Clusterversionen finden Sie unter [HDInsight-Clusterversionen](../hdinsight-component-versioning/).
-
-## Beispielskript
-
-Unten ist ein Beispielskript zum Konfigurieren der Website-Konfigurationsdateien angegeben:
+Für die Bereitstellung von HDInsight-Clustern unter einem Windows-Betriebssystem wird als Skriptaktion ein Azure PowerShell-Skript verwendet. Nachfolgend sehen Sie ein Beispielskript für das Konfigurieren der Websitekonfigurationsdateien:
 
 	param (
 	    [parameter(Mandatory)][string] $ConfigFileName,
@@ -126,11 +75,74 @@ Unten ist ein Beispielskript zum Konfigurieren der Website-Konfigurationsdateien
 
 	Write-HDILog "$configFileName has been configured."
 
-Eine Kopie der Skriptdatei finden Sie unter [https://hditutorialdata.blob.core.windows.net/customizecluster/editSiteConfig.ps1](https://hditutorialdata.blob.core.windows.net/customizecluster/editSiteConfig.ps1). Wenn Sie das Skript aus dem Vorschauportal aufrufen, können Sie die folgenden Parameter verwenden:
+Das Skript akzeptiert vier Parameter: den Namen der Konfigurationsdatei, die Eigenschaft, die Sie ändern möchten, den Wert, den Sie festlegen möchten, und eine Beschreibung. Beispiel:
 
-	hive-site.xml hive.metastore.client.socket.timeout 90
+	hive-site.xml hive.metastore.client.socket.timeout 90 
 
 Mit diesen Parametern wird der Wert „hive.metastore.client.socket.timeout“ in der Datei „hive-site.xml“ auf 90 festgelegt. Der Standardwert beträgt 60 Sekunden.
+
+Ein Beispielskript finden Sie auch unter [https://hditutorialdata.blob.core.windows.net/customizecluster/editSiteConfig.ps1](https://hditutorialdata.blob.core.windows.net/customizecluster/editSiteConfig.ps1).
+
+HDInsight verfügt über mehrere Skripts zum Installieren zusätzlicher Komponenten auf HDInsight-Clustern:
+
+Name | Skript
+----- | -----
+**Installieren von Spark** | https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1. Siehe [Installieren und Verwenden von Spark in HDInsight-Clustern][hdinsight-install-spark].
+**Installieren von R** | https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1. Siehe [Installieren und Verwenden von R in HDInsight-Clustern][hdinsight-r-scripts].
+**Installieren von Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1. Siehe [Installieren und Verwenden von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md).
+- **Installieren von Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1. Siehe [Installieren und Verwenden von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md).
+
+Die Skriptaktion kann über das Azure-Vorschauportal, Azure PowerShell oder das HDInsight .NET SDK bereitgestellt werden. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize].
+
+> [AZURE.NOTE]Die Beispielskripts funktionieren nur mit HDInsight-Clustern der Version 3.1 oder höher. Weitere Informationen zu HDInsight-Clusterversionen finden Sie unter [HDInsight-Clusterversionen](../hdinsight-component-versioning/).
+
+
+
+
+
+## Hilfsmethoden für benutzerdefinierte Skripts
+
+Script Action-Hilfsmethoden sind Hilfsprogramme, die Sie zum Schreiben von benutzerdefinierten Skripts verwenden können. Diese werden in der Datei [https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1](https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1) definiert und können wie folgt in Ihre Skripts eingefügt werden:
+
+    # Download config action module from a well-known directory.
+	$CONFIGACTIONURI = "https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1";
+	$CONFIGACTIONMODULE = "C:\apps\dist\HDInsightUtilities.psm1";
+	$webclient = New-Object System.Net.WebClient;
+	$webclient.DownloadFile($CONFIGACTIONURI, $CONFIGACTIONMODULE);
+	
+	# (TIP) Import config action helper method module to make writing config action easy.
+	if (Test-Path ($CONFIGACTIONMODULE))
+	{ 
+		Import-Module $CONFIGACTIONMODULE;
+	} 
+	else
+	{
+		Write-Output "Failed to load HDInsightUtilities module, exiting ...";
+		exit;
+	}
+
+Hier sind die Hilfsmethoden, die von diesem Skript bereitgestellt werden:
+
+Hilfsmethode | Beschreibung
+-------------- | -----------
+**Save-HDIFile** | Herunterladen einer Datei vom angegebenen URI (Uniform Resource Identifier) an einen Speicherort auf dem lokalen Datenträger, der dem im Cluster zugewiesenen Azure VM-Knoten zugeordnet ist.
+**Expand-HDIZippedFile** | Entpacken einer ZIP-Datei.
+**Invoke-HDICmdScript** | Ausführen eines Skripts über "cmd.exe".
+**Write-HDILog** | Schreiben der Ausgabe des benutzerdefinierten Skripts, das für die Skriptaktion verwendet wird.
+**Get-Services** | Abrufen einer Liste von Diensten auf dem Rechner, auf dem das Skript ausgeführt wird.
+**Get-Service** | Mit dem bestimmten Dienstnamen als Eingabe werden detaillierte Informationen für einen bestimmten Dienst (Dienstname, Prozess-ID, Status usw.) auf dem Computer zurückgegeben, auf dem das Skript ausgeführt wird.
+**Get-HDIServices** | Abrufen einer Liste der HDInsight-Dienste auf dem Computer, auf dem das Skript ausgeführt wird.
+**Get-HDIService** | Mit dem bestimmten HDInsight-Dienstnamen als Eingabe werden detaillierte Informationen für einen bestimmten Dienst (Dienstname, Prozess-ID, Status usw.) auf dem Computer zurückgegeben, auf dem das Skript ausgeführt wird.
+**Get-ServicesRunning** | Abrufen einer Liste von Diensten auf dem Computer, auf dem das Skript ausgeführt wird.
+**Get-ServiceRunning** | Überprüfen, ob ein bestimmter Dienst (namentlich) auf dem Computer ausgeführt wird, auf dem das Skript ausgeführt wird.
+**Get-HDIServicesRunning** | Abrufen einer Liste der HDInsight-Dienste auf dem Computer, auf dem das Skript ausgeführt wird.
+**Get-HDIServiceRunning** | Überprüfen, ob ein bestimmter HDInsight-Dienst (namentlich) auf dem Computer ausgeführt wird, auf dem das Skript ausgeführt wird.
+**Get-HDIHadoopVersion** | Abrufen der Hadoop-Version, die auf dem Computer installiert ist, auf dem das Skript ausgeführt wird.
+**Test-IsHDIHeadNode** | Überprüfen, ob der Computer, auf dem das Skript ausgeführt wird, ein Hauptknoten ist.
+**Test-IsActiveHDIHeadNode** | Überprüfen, ob der Computer, auf dem das Skript ausgeführt wird, ein aktiver Hauptknoten ist.
+**Test-IsHDIDataNode** | Überprüfen, ob der Computer, auf dem das Skript ausgeführt wird, ein Datenknoten ist.
+**Edit-HDIConfigFile** | Bearbeiten der Konfigurationsdateien "hive-site.xml", "core-site.xml", "hdfs-site.xml", "mapred-site.xml" oder "yarn-site.xml".
+
 
 ## Empfohlene Methoden für die Skriptentwicklung
 
@@ -188,6 +200,17 @@ Skripts zur Anpassung eines Clusters müssen entweder im Standardspeicherkonto d
 
 In diesem Beispiel müssen Sie sicherstellen, dass der Container "somecontainer" im Speicherkonto "somestorageaccount" öffentlich zugänglich ist. Andernfalls löst das Skript die Ausnahme "Nicht gefunden" aus und schlägt fehl.
 
+### Übergeben von Parametern an das Cmdlet „Add-AzureHDInsightScriptAction“
+
+Um mehrere Parameter an das Cmdlet „Add-AzureHDInsightScriptAction“ zu übergeben, müssen Sie den Zeichenfolgenwert so formatieren, dass er alle Parameter für das Skript enthält. Beispiel:
+
+	"-CertifcateUri wasb:///abc.pfx -CertificatePassword 123456 -InstallFolderName MyFolder"
+ 
+or
+
+	$parameters = '-Parameters "{0};{1};{2}"' -f $CertificateName,$certUriWithSasToken,$CertificatePassword
+
+
 ### Auslösen einer Ausnahme bei nicht erfolgreicher Clusterbereitstellung
 
 Wenn Sie präzise darüber benachrichtigt werden möchten, dass die Clusteranpassung nicht wie erwartet erfolgt ist, ist es wichtig, eine Ausnahme auszulösen und die Clusterbereitstellung abzubrechen. Sie möchten z. B. eine Datei verarbeiten, wenn sie vorhanden ist, und den Fehlerfall behandeln, wenn die Datei nicht vorhanden ist. Dadurch wird sichergestellt, dass das Skript ordnungsgemäß beendet wird und der Status des Clusters ordnungsgemäß bekannt ist. Der folgende Codeausschnitt zeigt ein Beispiel hierzu:
@@ -218,7 +241,7 @@ Es folgen unsere Schritte bei der Vorbereitung der Bereitstellung dieser Skripts
 2. Fügen Sie Skripts Überprüfungen hinzu, um sicherzustellen, dass sie idempotent ausgeführt werden, damit das Skript mehrmals auf demselben Knoten ausgeführt werden kann.
 3. Verwenden Sie das PowerShell-Cmdlet **Write-Output**, um für eine Ausgabe in STDOUT und STDERR zu sorgen. Verwenden Sie nicht **Write-Host**.
 4. Verwenden Sie einen temporären Dateiordner wie "$env:TEMP", um die heruntergeladene von den Skripts verwendete Dateien aufzubewahren, und leeren Sie den Ordner nach der Ausführung der Skripts.
-5. Installieren Sie benutzerdefinierte Software nur auf "D:" oder in "C:\\apps". Andere Speicherorte auf Laufwerk C:\\ dürfen nicht verwendet werden, da sie reserviert sind. Beachten Sie, dass das Installieren von Dateien auf Laufwerk C:\\ außerhalb des Ordners "C:/apps" beim Erstellen neuer Abbilder des Knotens zu Einrichtungsfehlern führen kann.
+5. Installieren Sie benutzerdefinierte Software nur auf "D:\" oder in "C:\\apps". Andere Speicherorte auf Laufwerk C:\\ dürfen nicht verwendet werden, da sie reserviert sind. Beachten Sie, dass das Installieren von Dateien auf Laufwerk C:\\ außerhalb des Ordners "C:/apps" beim Erstellen neuer Abbilder des Knotens zu Einrichtungsfehlern führen kann.
 6. Wenn sich Einstellungen auf Betriebssystemebene oder Hadoop-Dienstkonfigurationsdateien geändert haben, können Sie bei Bedarf die HDInsight-Dienste neu starten. Diese können dann Einstellungen auf Betriebssystemebene übernehmen, z. B. die in den Skripts festgelegten Umgebungsvariablen.
 
 
@@ -256,7 +279,15 @@ Mitunter kann ein benutzerdefiniertes Skript tatsächlich von HDInsight-Komponen
 
 ## Debuggen von benutzerdefinierten Skripts
 
-Die Skriptfehlerprotokolle werden mit anderen Ausgaben im Standardspeicherkonto gespeichert, das Sie für den Cluster bei seiner Erstellung angegeben haben. Die Protokolle befinden sich in einer Tabelle mit dem Namen *u<\\cluster-name-fragment><\\time-stamp>setuplog*. Dabei handelt es sich um zusammengeführte Protokolle mit Aufzeichnungen aller Knoten (Haupt- und Workerknoten), auf denen das Skript im Cluster ausgeführt wurde.
+Die Skriptfehlerprotokolle werden mit anderen Ausgaben im Standardspeicherkonto gespeichert, das Sie für den Cluster bei seiner Erstellung angegeben haben. Die Protokolle befinden sich in einer Tabelle mit dem Namen *u<\\cluster-name-fragment><\\time-stamp>setuplog*. Dabei handelt es sich um zusammengeführte Protokolle mit Aufzeichnungen aller Knoten (Haupt- und Workerknoten), auf denen das Skript im Cluster ausgeführt wurde. Die Protokolle können ganz einfach mit den HDInsight-Tools für Visual Studio überprüft werden. Informationen zum Installieren der Tools finden Sie unter [Erste Schritte bei der Verwendung von Hadoop-Tools für Visual Studio für HDInsight](hdinsight-hadoop-visual-studio-tools-get-started.md#install-hdinsight-tools-for-visual-studio).
+
+**So überprüfen Sie das Protokoll mit Visual Studio**
+
+1. Öffnen Sie Visual Studio.
+2. Klicken Sie auf **Ansicht** und anschließend auf **Server-Explorer**.
+3. Klicken Sie mit der rechten Maustaste auf „Azure“, klicken Sie auf **Mit Microsoft Azure-Abonnements verbinden**, und geben Sie dann Ihre Anmeldeinformationen ein.
+4. Erweitern Sie **Speicher**, das als Standarddateisystem verwendete Azure-Speicherkonto und **Tabellen**, und doppelklicken Sie dann auf den Tabellennamen.
+
 
 Sie können auch remote auf die Clusterknoten zugreifen, um STDOUT und STDERR für benutzerdefinierte Skripts anzuzeigen. Die Protokolle auf jedem Knoten beziehen sich nur auf diesen Knoten und befinden sich unter **C:\\HDInsightLogs\\DeploymentAgent.log**. In diesen Protokolldateien werden alle Ausgaben aus dem benutzerdefinierten Skript aufgezeichnet. Ein Beispielprotokollauszug einer Spark-Skriptaktion sieht so aus:
 
@@ -320,4 +351,4 @@ Bei Auftreten eines Ausführungsfehlers enthält die Protokolldatei auch die bes
 <!--Reference links in article-->
 [1]: https://msdn.microsoft.com/library/96xafkes(v=vs.110).aspx
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=September15_HO1-->
