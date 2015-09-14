@@ -110,4 +110,4 @@ Wenn Sie sich für alle drei Peeringsitzungen entscheiden, müssen Sie über dre
 - Einen Dienstanbieter finden. Siehe [ExpressRoute-Dienstanbieter und -Standorte](expressroute-locations.md)
 - Konfigurieren Sie Ihre ExpressRoute-Verbindung. Eine Anleitung finden Sie unter [ExpressRoute-Verbindung über einen Netzwerkdienstanbieter konfigurieren](expressroute-configuring-nsps.md) oder [Konfigurieren einer ExpressRoute-Verbindung über einen Exchange-Anbieter](expressroute-configuring-exps.md). 
 
-<!----HONumber=August15_HO9-->
+<!-----HONumber=August15_HO9-->

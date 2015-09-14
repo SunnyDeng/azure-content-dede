@@ -38,8 +38,7 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
 2. Suchen Sie nach Chatter-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
-3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein: 
-
+3. Geben Sie den Namen, den App Service-Plan und andere Eigenschaften ein:  
 	![][1]  
 	- **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten.
 	- **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
@@ -56,26 +55,21 @@ Sobald Ihre API-App erstellt wurde, können Sie den Chatter-Connector als Trigge
 
 1. Öffnen Sie In Ihrer Logik-Apps **Trigger und Aktionen**, um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren.
 
-2. Der Chatter-Connector wird im Katalog aufgeführt: 
+2. Der Chatter-Connector wird im Katalog aufgeführt:  
 	![][4]
-3. Wählen Sie den Chatter-Connector aus, um ihn automatisch im Designer hinzuzufügen. Klicken Sie auf **Autorisieren**, geben Sie Ihre Anmeldeinformationen ein, und klicken Sie auf **Zulassen**:
-	 ![][5]
-	 ![][6]
-	 ![][7]
+3. Wählen Sie den Chatter-Connector aus, um ihn automatisch im Designer hinzuzufügen. Klicken Sie auf **Autorisieren**, geben Sie Ihre Anmeldeinformationen ein, und klicken Sie auf **Zulassen**:  
+	![][5]
+	![][6]
+	![][7]
 
 Sie können nun den Chatter-Connector im Datenfluss verwenden. Sie können die aus dem Chatter-Trigger („Neue Nachricht“) abgerufene neue Nachricht für andere Aktionen im Datenfluss verwenden. Konfigurieren Sie die Eingabeeigenschaften für den Chatter-Trigger wie folgt:
 
-**Gruppen-ID** – Geben Sie die ID der Gruppe ein, aus der die neue Nachricht abgerufen werden soll. Wenn die Gruppen-ID nicht angegeben wird, werden neue Nachrichten aus dem Feed des Benutzers abgerufen:
+**Gruppen-ID** - Geben Sie die ID der Gruppe ein, aus der die neue Nachricht abgerufen werden soll. Wenn die Gruppen-ID nicht angegeben wird, werden neue Nachrichten aus dem Feed des Benutzers abgerufen:  
 	![][8]
 	![][9]
 
 
-Auf ähnliche Weise können Sie die Chatter-Aktion im Datenfluss verwenden, um eine Nachricht bereitzustellen, indem Sie die Aktion „Nachricht bereitstellen“ auswählen. Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Nachricht bereitstellen" wie folgt: – **Nachrichtentext** – Textinhalt der bereitzustellenden Nachricht – **Gruppen-ID** – Geben Sie die ID der Gruppe an, in der die Nachricht bereitgestellt werden soll. Wenn die Gruppen-ID nicht angegeben wird, wird die Nachricht im Feed des Benutzers bereitgestellt. – **Dateiname** – Name der Datei, die dieser Nachricht angefügt werden soll – **Inhaltsdaten** – Inhaltsdaten der Anlage – **Inhaltstyp** – Inhaltstyp der Anlage – **Content Transfer Encoding** – Codierung für die Inhaltsübertragung der Nachricht ("none"|"base64") - **Erwähnungen** – Bereich von Benutzernamen, die in der Nachricht markiert werden sollen – **Hashtags** – Bereich von Hashtags, die mit der Nachricht bereitgestellt werden
-
-![][10] 
-![][11]
-
-6. Auf ähnliche Weise können Sie die Chatter-Aktion im Datenfluss verwenden, um eine Nachricht bereitzustellen, indem Sie die Aktion „Nachricht bereitstellen“ auswählen. Konfigurieren Sie die Eingabeeigenschaften für die Aktion „Nachricht bereitstellen“ wie folgt:
+Auf ähnliche Weise können Sie die Chatter-Aktion im Datenfluss verwenden, um eine Nachricht bereitzustellen, indem Sie die Aktion „Nachricht bereitstellen“ auswählen. Konfigurieren Sie die Eingabeeigenschaften für die Aktion "Nachricht bereitstellen" wie folgt:  
 	- **Nachrichtentext** - Textinhalt der bereitzustellenden Nachricht.
 	- **Gruppen-ID** – Gibt die ID der Gruppe an, in der die neue Nachricht bereitgestellt werden soll. Wenn die Gruppen-ID nicht angegeben wird, wird die Nachricht im Feed des Benutzers bereitgestellt.
 	- 	**Dateiname** – Name der Datei, die dieser Nachricht angefügt werden soll
@@ -84,6 +78,16 @@ Auf ähnliche Weise können Sie die Chatter-Aktion im Datenfluss verwenden, um e
 	- 	**Codierung für die Inhaltsübertragung** – Codierung für die Inhaltsübertragung der Anlage („none“|„base64“)
 	- 	**Erwähnungen** – Bereich von Benutzernamen, die in der Nachricht markiert werden sollen
 	- 	**Hashtags** – Bereich von Hashtags, die mit der Nachricht bereitgestellt werden
+
+![][10]
+![][11]
+
+## Mehr mit Ihrem Connector machen
+Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
+
+Sie finden die Swagger-REST-API-Referenz unter [Connectors and API Apps Reference](http://go.microsoft.com/fwlink/p/?LinkId=529766) (in englischer Sprache).
+
+Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
 
 <!--Image references-->
@@ -99,4 +103,4 @@ Auf ähnliche Weise können Sie die Chatter-Aktion im Datenfluss verwenden, um e
 [10]: ./media/app-service-logic-connector-chatter/img10.PNG
 [11]: ./media/app-service-logic-connector-chatter/img11.PNG
 
-<!---HONumber=August15_HO9-->
+<!-----HONumber=August15_HO9-->
