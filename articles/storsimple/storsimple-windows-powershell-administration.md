@@ -149,7 +149,7 @@ Die folgende Tabelle zeigt eine Zusammenfassung aller allgemeinen Verwaltungsauf
 
 #### Windows PowerShell für StorSimple-Workflows
 
-|Gewünschte Aktion|Verfahren|
+|Gewünschte Aktion ...|Verfahren .|
 |---|---|
 |Registrieren Ihres Geräts|[Konfigurieren und Registrieren des Geräts über Windows PowerShell für StorSimple](storsimple-deployment-walkthrough.md#step-3-configure-and-register-the-device-through-windows-powershell-for-storsimple) |
 |Konfigurieren des Webproxys</br>Anzeigen von Webproxyeinstellungen|[Konfigurieren des Webproxys für Ihr StorSimple-Gerät](storsimple-configure-web-proxy.md)|
@@ -197,4 +197,4 @@ Sie können die Hilfe in der Windows PowerShell-Schnittstelle problemlos aktuali
 ## Nächste Schritte
 Wenn Probleme auf Ihrem StorSimple-Gerät bei einem der zuvor genannten Workflows auftreten, konsultieren Sie die [Tools zur Problembehandlung für StorSimple-Bereitstellungen](storsimple-troubleshoot-deployment.md#tools-for-troubleshooting-storsimple-deployments).
 
-<!---HONumber=September15_HO1-->
+<!----HONumber=September15_HO1-->
