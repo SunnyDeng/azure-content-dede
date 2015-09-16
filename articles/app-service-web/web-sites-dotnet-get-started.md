@@ -232,7 +232,7 @@ Das [Azure-Portal](/services/management-portal/) ist eine Weboberfläche, die da
 
 	Das Blatt **Web-App** zeigt eine Übersicht über die Einstellungen und Nutzungsstatistiken für Ihre Web-App an.
 
-	![Blatt der Web-App](./media/web-sites-dotnet-get-started/portaldashboard.png)
+	![Blatt der Web-Appp](./media/web-sites-dotnet-get-started/portaldashboard.png)
 
 	Bisher gab es in Ihrer Web-App kaum Datenverkehr, daher wird in der Übersicht möglicherweise nichts angezeigt. Wenn Sie Ihre Anwendung aufrufen, aktualisieren Sie die Seite mehrmals, und aktualisieren Sie anschließend die Portalseite. Nun sollte eine Statistik angezeigt werden.
 
