@@ -43,16 +43,16 @@ Der Code für dieses Tutorial wird [auf GitHub](https://github.com/AzureADQuickS
 
 The completed application is provided at the end of this tutorial as well.
 
-## 1. Register an App
-Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](active-directory-v2-app-registration.md).  Make sure to:
+## 1. Registrieren einer App
+Erstellen Sie eine neue App auf [apps.dev.microsoft.com](https://apps.dev.microsoft.com) oder führen Sie die folgenden [detailed steps](active-directory-v2-app-registration.md).  Stellen Sie sicher, dass Sie:
 
 - Copy down the **Application Id** assigned to your app, you'll need it soon.
 - Add the **Web** platform for your app.
 - Enter the correct **Redirect URI**. The redirect URI indicates to Azure AD where authentication responses should be directed - the default for this tutorial is `http://localhost:3000/auth/openid/return`.
 
-## 2. Add pre-requisities to your directory
+## 2. Erforderliche Komponenten zu Ihrem Verzeichnis hinzufügen
 
-From the command-line, change directories to your root folder if not already there and run the following commands:
+Wechseln Sie über die Befehlszeile vom Verzeichnis auf Ihren Stammordner, wenn dies noch nicht der Fall ist, und führen Sie die folgenden Befehle aus:
 
 - `npm install express`
 - `npm install ejs`
@@ -417,4 +417,4 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 Weitere Ressourcen: - [Die App-Modell v2.0-Vorschauversion >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-"azure-active-directory"-Tag >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=September15_HO1-->
+<!----HONumber=September15_HO1-->

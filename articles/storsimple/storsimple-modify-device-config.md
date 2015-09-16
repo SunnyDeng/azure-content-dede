@@ -83,10 +83,7 @@ Für jede Netzwerkschnittstelle werden die folgenden Parameter angezeigt:
 
 - **Geschwindigkeit** – Dieser Parameter ist nicht benutzerkonfigurierbar. DATA 0, DATA 1, DATA 4 und DATA 5 sind immer 1-GbE-Schnittstellen, und DATA 2 und DATA 3 sind 10-GbE-Schnittstellen.
 
-     >[AZURE.NOTE]
-     >
-     >- Geschwindigkeit und Duplexmodus werden immer automatisch ausgehandelt.
-     >-Großrahmen (Jumbo-Frames) werden nicht unterstützt.
+     >[AZURE.NOTE] Geschwindigkeit und Duplexmodus werden immer automatisch ausgehandelt. Großrahmen (Jumbo-Frames) werden nicht unterstützt.
  
 - **Schnittstellenstatus** – Eine Schnittstelle kann aktiviert oder deaktiviert sein. Wenn sie aktiviert ist, versucht das Gerät, die Schnittstelle zu verwenden. Es wird empfohlen, dass nur die Schnittstellen aktiviert werden, die mit dem Netzwerk verbunden sind und verwendet werden. Deaktivieren Sie alle Schnittstellen, die Sie nicht verwenden.
 
@@ -131,4 +128,4 @@ Führen Sie die folgenden Schritte aus, wenn Sie die VIPs für eine der Netzwerk
  
      
 
-<!---HONumber=September15_HO1-->
+<!----HONumber=September15_HO1-->
