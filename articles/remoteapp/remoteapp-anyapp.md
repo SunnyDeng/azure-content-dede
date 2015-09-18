@@ -116,4 +116,4 @@ Nun, da Sie eine Sammlung erstellen können, versuchen Sie das Erstellen einer [
 
 <!--Image references-->
 
-<!----HONumber=September15_HO1-->
+<!-----HONumber=September15_HO1-->

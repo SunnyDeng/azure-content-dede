@@ -78,7 +78,10 @@
 
      `Get-HcsSystem`
 
-    Es sollte eine der folgenden Versionen angezeigt werden: - HcsSoftwareVersion: 6.3.9600.17491 - CisAgentVersion: 1.0.9037.0 - MdsAgentVersion: 26.0.4696.1433
+    Es sollte eine der folgenden Versionen angezeigt werden:
+    - HcsSoftwareVersion: 6.3.9600.17491
+    - CisAgentVersion: 1.0.9037.0
+    - MdsAgentVersion: 26.0.4696.1433
  
 9. Führen Sie das folgende Cmdlet aus, um zu überprüfen, ob das Firmwareupdate ordnungsgemäß angewendet wurde:
 
@@ -133,4 +136,4 @@
      
         
 
-<!----HONumber=August15_HO6-->
+<!-----HONumber=August15_HO6-->

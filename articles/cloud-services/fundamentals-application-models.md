@@ -54,7 +54,7 @@ Wenn Sie über eine vorhandene Anwendung verfügen, die für die Ausführung unt
 
 Unter Umständen reicht eine Option jedoch nicht aus. In diesen Fällen können Sie eine Kombination der unterschiedlichen Optionen verwenden. Dies bietet sich beispielsweise an, wenn Sie eine Anwendung erstellen und dabei die Vorteile der Verwaltungsoptionen von Cloud Services-Webrollen nutzen möchten, aber aus Kompatibilitäts- oder Leistungsgründen eine auf einer VM gehostete Standardversion von SQL Server verwenden müssen.
 
-<!-- In this case, the best option is to combine compute hosting options, as the figure below shows.--
+<!-- In this case, the best option is to combine compute hosting options, as the figure below shows. 
 
 <a name="fig4"></a>
 ![07_CombineTechnologies][07_CombineTechnologies] 
@@ -76,4 +76,4 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 * Weitere Informationen zu [Cloud Services](services/cloud-services/)
 * Weitere Informationen zu [Virtual Machines](https://msdn.microsoft.com/library/azure/jj156143.aspx) 
 
-<!---HONumber=September15_HO1-->
+<!----HONumber=September15_HO1-->

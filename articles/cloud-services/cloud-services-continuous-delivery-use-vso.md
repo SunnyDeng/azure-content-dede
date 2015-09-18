@@ -18,7 +18,7 @@
 
 # Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online
 
-  Sie können Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch in Azure-Web-Apps oder -Clouddiensten erstellt und bereitgestellt werden. (Informationen zur Einrichtung eines Systems für kontinuierliche Erstellung und Bereitstellung mithilfe eines *lokalen* Team Foundation Servers finden Sie unter [Kontinuierliche Zustellung für Cloud Services in Azure](cloud-services-dotnet-continuous-delivery.md).)
+Sie können Ihre Teamprojekte in Visual Studio Online so konfigurieren, dass sie automatisch in Azure-Web-Apps oder -Clouddiensten erstellt und bereitgestellt werden. (Informationen zur Einrichtung eines Systems für kontinuierliche Erstellung und Bereitstellung mithilfe eines *lokalen* Team Foundation Servers finden Sie unter [Kontinuierliche Zustellung für Cloud Services in Azure](cloud-services-dotnet-continuous-delivery.md).)
 
 Bei diesem Lernprogramm wird davon ausgegangen, dass auf Ihrem Rechner Visual Studio 2013 und das Azure-SDK installiert sind. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite **www.visualstudio.com** auf den Link [Starten Sie kostenlos](http://www.visualstudio.com) klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540) aus.
 
@@ -39,117 +39,144 @@ Wenn Sie eine neue Anwendung erstellen möchten, erstellen Sie ein neues Azure-C
 Stellen Sie sicher, dass das Projekt auf .NET Framework 4 oder 4.5 abzielt. Wenn Sie ein Clouddienstprojekt erstellen, fügen Sie eine ASP.NET MVC-Webrolle hinzu, und wählen Sie für die Webrolle "Internetanwendung" aus. Wenn Sie dazu aufgefordert werden, wählen Sie **Internetanwendung** aus. 
 Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage "ASP.NET Web Application" und anschließend "MVC" aus. Siehe [Erstellen einer ASP.NET-Web-App in Azure App Service](../web-sites-dotnet-get-started.md).
 
-> [AZURE.NOTE]Visual Studio Online unterstützt derzeit nur CI-Bereitstellungen von Visual Studio-Webanwendungen. Websiteprojekte werden nicht unterstützt.
-
+	> [AZURE.NOTE]Visual Studio Online unterstützt derzeit nur CI-Bereitstellungen von Visual Studio-Webanwendungen. Websiteprojekte werden nicht unterstützt.
 
 2. Öffnen Sie das Kontextmenü der Projektmappe, und wählen Sie **Projektmappe zur Quellcodeverwaltung hinzufügen**.<br/>
- ![][5]
 
-3. Übernehmen oder ändern Sie die Standardeinstellungen, und klicken Sie auf die Schaltfläche **OK**. Wenn der Prozess abgeschlossen ist, werden im Projektmappen-Explorer die Symbole für die Quellcodeverwaltung angezeigt.<br/>
- ![][6]
+	![][5]
+
+3. Übernehmen oder ändern Sie die Standardeinstellungen, und klicken Sie auf die Schaltfläche **OK**. Wenn der Prozess abgeschlossen ist, werden im Projektmappen-Explorer die Symbole für die Quellcodeverwaltung angezeigt.
+
+	![][6]
 
 4. Öffnen Sie das Kontextmenü der Projektmappe, und klicken Sie auf **Einchecken**.<br/>
- ![][7]
+
+	![][7]
 
 5. Geben Sie in Team Explorer im Bereich "Ausstehende Änderungen" einen Kommentar zum Eincheckvorgang ein, und klicken Sie auf die Schaltfläche **Einchecken**.<br/>
- ![][8]
 
-<br/>
- Beachten Sie die Optionen zum Ein- oder Ausschließen bestimmter Änderungen beim Einchecken. Wenn die gewünschten Änderungen ausgeschlossen wurden, wählen Sie den Link **Alles einschließen**.<br/>
- ![][9]
+	![][8]
+
+	Beachten Sie die Optionen zum Ein- oder Ausschließen bestimmter Änderungen beim Einchecken. Wenn die gewünschten Änderungen ausgeschlossen wurden, wählen Sie den Link **Alles einschließen**.
+
+	![][9]
 
 ## Schritt 3: Verbinden des Projekts mit Azure
 
 1. Nun, da Sie ein VSO-Teamprojekt mit Quellcode erstellt haben, sind Sie bereit, Ihr Teamprojekt mit Azure zu verbinden. Wählen Sie im [Azure-Portal](http://manage.windowsazure.com) Ihren Clouddienst oder Ihre Web-App aus, oder erstellen Sie einen neuen Clouddienst oder eine neue Web-App, indem Sie auf das +-Symbol links unten sowie auf **Clouddienst** oder **Web-App** und anschließend auf **Schnellerstellung** klicken. Klicken Sie auf den Link **Veröffentlichung über Visual Studio Online einrichten**.<br/>
- ![][10]
+	
+	![][10]
 
-2. Geben Sie in das Textfeld des Assistenten den Namen Ihres Visual Studio Online-Kontos ein, und klicken Sie auf den Link **Authorize Now (Jetzt autorisieren)**. Eventuell werden Sie aufgefordert, sich anzumelden.<br/>
- ![][11]
+2. Geben Sie in das Textfeld des Assistenten den Namen Ihres Visual Studio Online-Kontos ein, und klicken Sie auf den Link **Authorize Now (Jetzt autorisieren)**. Eventuell werden Sie aufgefordert, sich anzumelden.
+
+	![][11]
 
 3. Klicken Sie im Popupdialogfeld **Verbindungsanforderung** auf **Annehmen**, um Azure für eine Konfiguration Ihres Teamprojekts in VSO zu autorisieren.
- ![][12]
+
+	![][12]
 
 4. Wenn die Autorisierung erfolgreich verläuft, wird eine Dropdown-Liste Ihrer Visual Studio Online-Teamprojekte angezeigt. Wählen Sie den Namen des Teamprojekts aus, das Sie in den vorherigen Schritten erstellt haben, und klicken Sie auf das Häkchen für den Assistenten.<br/>
-![][13]
+
+	![][13]
 
 5. Wenn Ihr Projekt verknüpft wurde, erhalten Sie einige Anweisungen zum Einchecken von Änderungen in Ihrem Visual Studio Online-Teamprojekt. Bei Ihrer nächsten Anmeldung erstellt Visual Studio Online Ihr Projekt in Azure und stellt es dort bereit. Jetzt sind Sie an der Reihe: Klicken Sie auf den Link **Aus Visual Studio einchecken** und dann auf den Link **Visual Studio starten** (oder auf die entsprechende **Visual Studio**-Schaltfläche am unteren Rand des Portalbildschirms).
- ![][14]
+
+	![][14]
 
 ## Schritt 4: Auslösen einer erneuten Erstellung und Bereitstellung Ihres Projekts
 
-1. Klicken Sie in Visual Studio Team Explorer auf den Link **Quellcodeverwaltungs-Explorer**.<br/>
- ![][15]
+1. Klicken Sie in Visual Studio Team Explorer auf den Link **Quellcodeverwaltungs-Explorer**.
 
-2. Navigieren Sie zu Ihrer Projektmappendatei, und öffnen Sie sie.<br/>
- ![][16]
+	![][15]
+
+2. Navigieren Sie zu Ihrer Projektmappendatei, und öffnen Sie sie.
+
+	![][16]
 
 3. Öffnen Sie im **Projektmappen-Explorer** eine Datei, und ändern Sie sie. Ändern Sie z. B. die Datei `_Layout.cshtml` im Ordner „Views\\Shared“ in eine MVC-Webrolle.
-![][17]
 
-4. Bearbeiten Sie das Logo für die Website, und drücken Sie Strg+S, um die Datei zu speichern.<br/>
-![][18]
+	![][17]
 
-5. Klicken Sie im Teamexplorer auf den Link **Ausstehende Änderungen**.<br/>
-![][19]
+4. Bearbeiten Sie das Logo für die Website, und drücken Sie Strg+S, um die Datei zu speichern.
 
-6. Geben Sie einen Kommentar ein, und klicken Sie auf die Schaltfläche **Einchecken**.<br/>
-![][20]
+	![][18]
 
-7. Klicken Sie auf die Schaltfläche "Startseite", um zur Startseite von Team Explorer zurückzukehren.<br/>
-![][21]
+5. Klicken Sie im Teamexplorer auf den Link **Ausstehende Änderungen**.
 
-8. Klicken Sie auf den Link **Builds**, um die derzeit ausgeführten Builds anzuzeigen.<br/>
-![][22]
-<br/>
+	![][19]
+
+6. Geben Sie einen Kommentar ein, und klicken Sie auf die Schaltfläche **Einchecken**.
+
+	![][20]
+
+7. Klicken Sie auf die Schaltfläche "Startseite", um zur Startseite von Team Explorer zurückzukehren.
+
+	![][21]
+
+8. Klicken Sie auf den Link **Builds**, um die derzeit ausgeführten Builds anzuzeigen.
+
+	![][22]
+
 	In **Team Explorer** wird angezeigt, dass für Ihren Eincheckvorgang ein Build ausgelöst wurde.
-![][23]
+
+	![][23]
 
 9. Doppelklicken Sie auf den Namen des Builds, der gerade erstellt wird, um ein detailliertes Protokoll des Build-Verlaufs anzuzeigen.
-![][24]
 
-10. Betrachten Sie während des Buildverlaufs die Builddefinition, die erstellt wurde, als Sie TFS mithilfe des Assistenten mit Azure verknüpft haben. Öffnen sie das Kontextmenü für die Builddefinition, und klicken Sie auf **Builddefinition bearbeiten**.<br/>
-![][25]
-<br/>
- Auf der Registerkarte **Trigger** sehen Sie, dass die Builddefinition standardmäßig so festgelegt ist, dass bei jedem Einchecken ein Buildvorgang ausgeführt wird.<br/>
-![][26]
-<br/>
-Auf der Registerkarte **Prozess** ist zu sehen, dass die Bereitstellungsumgebung auf den Namen Ihres Clouddiensts oder Ihrer Web-App eingestellt ist. Wenn Sie mit Web-Apps arbeiten, unterscheiden sich die angezeigten Eigenschaften von den hier aufgeführten Eigenschaften.
-![][27]
-<br/>
-Geben Sie Werte für die Eigenschaften ein, wenn Sie andere Werte als die Standardwerte verwenden möchten. Die Eigenschaften für die Azure-Veröffentlichung befinden sich im Abschnitt **Bereitstellung**.
-Die folgende Tabelle zeigt die im Abschnitt **Bereitstellung** verfügbaren Eigenschaften:
-	<table>
-<tr><td><b>Eigenschaft</b></td><td><b>Standardwert</b></td></tr>
-><tr><td>Nicht vertrauenswürdige Zertifikate zulassen</td><td>Wenn dies "false" ist, müssen SSL-Zertifikate von einer Stammzertifizierungsstelle signiert sein.</td></tr>
-<tr><td>Upgrade zulassen</td><td>Ermöglicht einer Bereitstellung, eine vorhandene Bereitstellung zu aktualisieren, anstatt eine neue zu erstellen. Behält die IP-Adresse bei.</td></tr>
-<tr><td>Nicht löschen</td><td>Wenn dies "true" ist, wird keine vorhandene, nicht verbundene Bereitstellung überschrieben (Upgrade ist zulässig).</td></tr>
-><tr><td>Pfad zu Bereitstellungseinstellungen</td><td>Der Pfad zu Ihrer PUBXML-Datei für eine Web-App, entsprechend dem Stammordner des Repositorys. Wird für Clouddienste ignoriert.</td></tr>
-<tr><td>Sharepoint-Bereitstellungsumgebung</td><td>Entspricht dem Dienstnamen</td></tr>
-<tr><td>Azure-Bereitstellungsumgebung</td><td>Der Name der Web-App oder des Clouddiensts</td></tr>
-</table>
-<br/>
+	![][24]
 
-Wenn Sie mehrere Dienstkonfigurationen verwenden (.cscfg-Dateien), können Sie die gewünschte Dienstkonfiguration in der Einstellung **Build, Erweitert, MSBuild-Argumente** festlegen. Um beispielsweise „ServiceConfiguration.Test.cscfg“ zu verwenden, legen Sie die Zeilenoption `/p:TargetProfile=Test` der MSBuild-Argumente fest.
- ![][38]
+10. Betrachten Sie während des Buildverlaufs die Builddefinition, die erstellt wurde, als Sie TFS mithilfe des Assistenten mit Azure verknüpft haben. Öffnen sie das Kontextmenü für die Builddefinition, und klicken Sie auf **Builddefinition bearbeiten**.
 
-11. An diesem Punkt sollte Ihr Build erfolgreich abgeschlossen sein.<br/>
- ![][28]
+	![][25]
+
+	Auf der Registerkarte **Trigger** sehen Sie, dass die Builddefinition standardmäßig so festgelegt ist, dass bei jedem Einchecken ein Buildvorgang ausgeführt wird.<br/>
+
+	![][26]
+
+	Auf der Registerkarte **Prozess** ist zu sehen, dass die Bereitstellungsumgebung auf den Namen Ihres Clouddiensts oder Ihrer Web-App eingestellt ist. Wenn Sie mit Web-Apps arbeiten, unterscheiden sich die angezeigten Eigenschaften von den hier aufgeführten Eigenschaften.
+
+	![][27]
+
+1. Geben Sie Werte für die Eigenschaften ein, wenn Sie andere Werte als die Standardwerte verwenden möchten. Die Eigenschaften für die Azure-Veröffentlichung befinden sich im Abschnitt **Bereitstellung**.
+
+	Die folgende Tabelle zeigt die im Abschnitt **Bereitstellung** verfügbaren Eigenschaften:
+
+	|Eigenschaft|Standardwert|
+	|---|---|
+	|icht vertrauenswürdige Zertifikate zulassen|Wenn dies "false" ist, müssen SSL-Zertifikate von einer Stammzertifizierungsstelle signiert sein.|
+	|Upgrade zulassen|Ermöglicht einer Bereitstellung, eine vorhandene Bereitstellung zu aktualisieren, anstatt eine neue zu erstellen. Behält die IP-Adresse bei.|
+	|Nicht löschen|Wenn dies "true" ist, wird keine vorhandene, nicht verbundene Bereitstellung überschrieben (Upgrade ist zulässig).|
+	|Pfad zu Bereitstellungseinstellungen|Pfad zu Ihrer PUBXML-Datei für eine Web-App, entsprechend dem Stammordner des Repositorys. Wird für Clouddienste ignoriert.|
+	|Sharepoint-Bereitstellungsumgebung|Entspricht dem Dienstnamen|
+	|Azure-Bereitstellungsumgebung|Der Name der Web-App oder des Clouddiensts|
+
+1. Wenn Sie mehrere Dienstkonfigurationen verwenden (.cscfg-Dateien), können Sie die gewünschte Dienstkonfiguration in der Einstellung **Build, Erweitert, MSBuild-Argumente** festlegen. Um beispielsweise „ServiceConfiguration.Test.cscfg“ zu verwenden, legen Sie die Zeilenoption `/p:TargetProfile=Test` der MSBuild-Argumente fest.
+
+	![][38]
+
+	An diesem Punkt sollte Ihr Build erfolgreich abgeschlossen sein.<br/>
+
+	![][28]
 
 12. Wenn Sie auf den Buildnamen doppelklicken, zeigt Visual Studio eine **Buildzusammenfassung** mit allen Testergebnissen aus den zugeordneten Komponententestprojekten an.<br/>
- ![][29]
+
+	![][29]
 
 13. Im [Azure-Portal](http://manage.windowsazure.com) können Sie die entsprechende Bereitstellung auf der Registerkarte "Bereitstellungen" anzeigen, wenn die Stagingumgebung ausgewählt ist.<br/>
- ![][30]
+
+	![][30]
 
 14.	Wechseln Sie zur URL Ihrer Site. Wenn es sich um eine Web-App handelt, klicken Sie einfach auf der Befehlsleiste auf die Schaltfläche **Durchsuchen**. Wenn es sich um einen Clouddienst handelt, wählen Sie die URL im Abschnitt **Auf einen Blick** der Seite **Dashboard**, auf der die Stagingumgebung für einen Clouddienst angezeigt wird. Bereitstellungen aus einer fortlaufenden Integration für Clouddienste werden standardmäßig in der Stagingumgebung veröffentlicht. Sie können dies ändern, indem Sie für die Eigenschaft **Alternative Umgebung für den Clouddienst** die Option **Produktion** festlegen. Dieser Screenshot zeigt, wo sich die Website-URL auf der Dashboard-Seite des Clouddiensts befindet:
- ![][31]
-<br/>
+
+	![][31]
+
 Eine neue Browser-Registerkarte wird geöffnet, die Ihre laufende Site anzeigt.
- ![][32]
 
-	Wenn es sich dabei um einen Clouddienst handelt und Sie weitere Änderungen an Ihrem Projekt vornehmen, lösen Sie weitere Builds aus und sammeln mehrere Bereitstellungen. Die letzte davon wird als "Aktiv" markiert.
+![][32]
 
-	![][33]
+Wenn es sich dabei um einen Clouddienst handelt und Sie weitere Änderungen an Ihrem Projekt vornehmen, lösen Sie weitere Builds aus und sammeln mehrere Bereitstellungen. Die letzte davon wird als "Aktiv" markiert.
+
+![][33]
 
 ## Schritt 5: Erneutes Bereitstellen eines früheren Builds
 
@@ -283,4 +310,4 @@ Weitere Informationen zu Komponententests in Visual Studio Online finden Sie unt
 [49]: ./media/cloud-services-continuous-delivery-use-vso/TestsFailed.PNG
 [50]: ./media/cloud-services-continuous-delivery-use-vso/TestsResultsFailed.PNG
 
-<!---HONumber=September15_HO1-->
+<!----HONumber=September15_HO1-->

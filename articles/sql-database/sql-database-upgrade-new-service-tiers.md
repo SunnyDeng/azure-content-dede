@@ -19,7 +19,7 @@
 
 # Upgrade von Web- oder Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen
 
-Die Azure SQL-Web- und Business-Datenbanken werden[ im September 2015 eingestellt](http://msdn.microsoft.com/library/azure/dn741330.aspx). Beginnen Sie daher schon jetzt, das Upgrade Ihrer vorhandenen Web- oder Business-Datenbanken auf die Dienstebene Basic, Standard oder Premium zu planen.
+Die Azure SQL-Web- und Business-Datenbanken werden [im September 2015 eingestellt](http://msdn.microsoft.com/library/azure/dn741330.aspx). Beginnen Sie daher schon jetzt, das Upgrade Ihrer vorhandenen Web- oder Business-Datenbanken auf die Dienstebene Basic, Standard oder Premium zu planen.
 
 Laden Sie das [Cookbook mit Anleitungen für die Migration von Web- und Business-Datenbanken](http://download.microsoft.com/download/3/C/9/3C9FF3D8-E702-4F5D-A38C-5EFA1DBA73E6/Azure_SQL_Database_Migration_Cookbook.pdf) herunter.
 
@@ -249,7 +249,7 @@ Ausführliche Informationen finden Sie unter [Ändern von Datenbank-Dienstebenen
 
 
 ## 6\. Überwachen des Upgrades auf die neue Dienstebene/Leistungsstufe
-Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht "sys.dm\_operation\_status" in der Masterdatenbank des logischen Servers, auf dem die aktuelle Datenbank gespeichert ist, Statusinformationen zu Verwaltungsvorgängen (z. B. "CREATE", "ALTER", "DROP") zur Verfügung, die für eine Datenbank ausgeführt werden [siehe Dokumentation zum Status des Vorgangs "sys.dm\_operation\_status"].(http://msdn.microsoft.com/library/azure/dn270022.aspx) Verwenden Sie die dynamische Verwaltungssicht zum Vorgangsstatus, um den Status des Upgradevorgangs für eine Datenbank zu ermitteln. Die folgende Beispielabfrage zeigt alle Verwaltungsvorgänge, die für eine Datenbank ausgeführt werden:
+Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht "sys.dm\_operation\_status" in der Masterdatenbank des logischen Servers, auf dem die aktuelle Datenbank gespeichert ist, Statusinformationen zu Verwaltungsvorgängen (z. B. "CREATE", "ALTER", "DROP") zur Verfügung, die für eine Datenbank ausgeführt werden [siehe Dokumentation zum Status des Vorgangs "sys.dm\_operation\_status"](http://msdn.microsoft.com/library/azure/dn270022.aspx) Verwenden Sie die dynamische Verwaltungssicht zum Vorgangsstatus, um den Status des Upgradevorgangs für eine Datenbank zu ermitteln. Die folgende Beispielabfrage zeigt alle Verwaltungsvorgänge, die für eine Datenbank ausgeführt werden:
 
     SELECT o.operation, o.state_desc, o.percent_complete
     , o.error_code, o.error_desc, o.error_severity, o.error_state
@@ -308,4 +308,4 @@ Der Azure SQL-Datenbankdienst stellt Telemetriedaten und Tools zum Auswerten der
 
  
 
-<!---HONumber=September15_HO1-->
+<!----HONumber=September15_HO1-->
