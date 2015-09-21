@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Durchführen von Live Encoding mit lokalen Encodern"
-	description="In diesem Thema wird veranschaulicht, wie mit .NET Live Encoding mit lokalen Encodern durchgeführt wird."
-	services="media-services"
-	documentationCenter=""
-	authors="juliako"
-	manager="dwrede"
+	pageTitle="Durchführen von Live Encoding mit lokalen Encodern" 
+	description="In diesem Thema wird veranschaulicht, wie mit .NET Live Encoding mit lokalen Encodern durchgeführt wird." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="juliako" 
+	manager="dwrede" 
 	editor=""/>
 
 <tags 
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/07/2015"  
 	ms.author="juliako"/>
 
 #Durchführen von Live Encoding mit lokalen Encodern
@@ -375,4 +375,12 @@ Informationen zum Konfigurieren eines Liveencoders finden Sie unter [Azure Media
 		    }
 		}
 
-<!---HONumber=August15_HO9-->
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+<!---HONumber=Sept15_HO2-->

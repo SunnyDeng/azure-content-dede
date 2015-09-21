@@ -24,9 +24,9 @@ Zieldurchsatz bei Einzelwarteschlange (Meldungen mit 1 KB)|Bis zu 2000 Meldunge
 Zieldurchsatz bei einzelner Tabellenpartition (Entitäten mit 1 KB)|Bis zu 2000 Entitäten pro Sekunde
 Zieldurchsatz für eine einzelne Dateifreigabe (Vorschau)|Bis 60 MB pro Sekunde
 Max. Eingang<sup>3</sup> pro Speicherkonto (US-Regionen)|10 GBit/s mit aktiviertem GRS/ZRS<sup>4</sup>, 20 GBit/s bei LRS
-Max. Ausgang<sup>3</sup> pro Speicherkonto (US-Regionen)|20 GBit/s mit aktiviertem GRS/ZRS<sup>4</sup>, 30 GBit/s bei LRS
+Max. Ausgang<sup>3</sup> pro Speicherkonto (US-Regionen)|20 GBit/s mit aktiviertem RA-GRS/GRS/ZRS<sup>4</sup>, 30 GBit/s bei LRS
 Max. Eingang<sup>3</sup> pro Speicherkonto (Regionen Europa und Asien)|5 GBit/s mit aktiviertem GRS/ZRS<sup>4</sup>, 10 GBit/s bei LRS
-Max. Ausgang<sup>3</sup> pro Speicherkonto (Regionen Europa und Asien)|10 GBit/s mit aktiviertem GRS/ZRS<sup>4</sup>, 15 GBit/s bei LRS
+Max. Ausgang<sup>3</sup> pro Speicherkonto (Regionen Europa und Asien)|10 GBit/s mit aktiviertem RA-GRS/GRS/ZRS<sup>4</sup>, 15 GBit/s bei LRS
 
 <sup>1</sup>Wenn Sie mehr als 100 Speicherkonten benötigen, wenden Sie sich an den [Azure-Support](http://azure.microsoft.com/support/faq/).
 
@@ -36,6 +36,11 @@ Basierend auf der Begrenzung für Transaktionen können Sie die Anzahl der Daten
 
 <sup>3</sup>*Eingang* bezieht sich auf alle Daten (Anforderungen), die an ein Speicherkonto gesendet werden. *Ausgang* bezieht sich auf alle Daten (Antworten), die von einem Speicherkonto empfangen werden.
 
-<sup>4</sup>GRS bedeutet "Georedundanter Speicher". ZRS bedeutet "Zonenredundanter Speicher", der nur für Blockblobs zur Verfügung steht. LRS bedeutet "Lokal redundanter Speicher".
+<sup>4</sup>Folgende Replikationsoptionen sind für Azure Storage verfügbar:
 
-<!---HONumber=September15_HO1-->
+- **RA-GRS**: Georedundanter Speicher mit Lesezugriff (RA-GRS) Wenn RA-GRS aktiviert ist, sind die Ausgangsziele für den sekundären Standort mit denen für den primären Standort identisch.
+- **GRS**: Georedundanter Speicher 
+- **ZRS**: Zonenredundanter Speicher Derzeit nur für Blockblobs verfügbar. 
+- **LRS**: Lokal redundanter Speicher 
+
+<!---HONumber=Sept15_HO2-->

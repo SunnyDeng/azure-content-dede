@@ -3,7 +3,7 @@
    description="Tipps für die Migration des SQL-Codes in Azure SQL Data Warehouse zum Entwickeln von Lösungen."
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="jrowlandjones"
+   authors="lodipalm"
    manager="barbkess"
    editor=""/>
 
@@ -13,16 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/25/2015"
+   ms.date="09/09/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Migrieren von SQL-Code nach SQL Data Warehouse
 
-Um sicherzustellen, dass der Code mit SQL Data Warehouse kompatibel ist, müssen Sie sehr wahrscheinlich Änderungen an der Codebasis vornehmen. Mit einigen SQL Data Warehouse-Funktionen kann zudem die Leistung erheblich verbessert werden, da sie speziell für die direkte verteilte Ausführung entwickelt wurden. Um jedoch eine gleichbleibende Leistung und Skalierung zu gewährleisten, sind einige Funktionen auch nicht verfügbar.
+Um sicherzustellen, dass der Code mit SQL Data Warehouse kompatibel ist, müssen Sie wahrscheinlich Änderungen an der Codebasis vornehmen. Mit einigen SQL Data Warehouse-Funktionen kann die Leistung erheblich verbessert werden, da sie speziell für die direkte verteilte Ausführung entwickelt wurden. Um jedoch eine gleichbleibende Leistung und Skalierung zu gewährleisten, sind einige Funktionen auch nicht verfügbar.
 
 ## Transact-SQL-Codeänderungen
 
-Die folgende Aufstellung enthält die wichtigsten Funktionen, die in Azure SQL Data Warehouse nicht unterstützt werden. Über die bereitgestellten Links gelangen Sie zu Problemumgehungen für die nicht unterstützten Funktionen:
+Die folgende Aufstellung enthält die wichtigsten Funktionen, die in Azure SQL Data Warehouse nicht unterstützt werden. Über die Links gelangen Sie zu Problemumgehungen für die nicht unterstützten Funktionen:
 
 - [ANSI-Joins bei Aktualisierungen][]
 - [ANSI-Joins bei Löschvorgängen][]
@@ -34,7 +34,7 @@ Die folgende Aufstellung enthält die wichtigsten Funktionen, die in Azure SQL D
 - OUTPUT-Klausel
 - Benutzerdefinierte Inlinefunktionen
 - Funktionen mit mehreren Anweisungen
-- [Rekursive allgemeine Tabellenausdrücke (CTE)] (\#Recursive-common-table-expressions-(CTE)
+- [Rekursive allgemeine Tabellenausdrücke (CTE)] (#Recursive-common-table-expressions-(CTE)
 - [Aktualisierungen über allgemeine Tabellenausdrücke](#Updates-through-CTEs)
 - CLR-Funktionen und -Prozeduren
 - $partition-Funktion
@@ -113,4 +113,4 @@ Hinweise zur Entwicklung des Codes finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

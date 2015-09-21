@@ -1,42 +1,48 @@
 <properties 
-    pageTitle="Versionsanmerkungen zu Update 1 der StorSimple 8000-Serie | Microsoft Azure"
-	description="Beschreibt die neuen Features sowie Probleme und Problemumgehungen für Update 1 der StorSimple 8000 Serie."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+    pageTitle="Versionsanmerkungen zu Update 1.2 der StorSimple 8000-Serie | Microsoft Azure"
+    description="Beschreibt die neuen Features sowie Probleme und Problemumgehungen für Update 1.2 der StorSimple 8000-Serie."
+    services="storsimple"
+    documentationCenter="NA"
+    authors="alkohli"
+    manager="carolz"
+    editor="" />
  <tags 
     ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/21/2015"
-	ms.author="alkohli"/>
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="TBD"
+    ms.date="09/09/2015"
+    ms.author="alkohli" />
 
-# Versionsanmerkungen zu Update 1 der StorSimple 8000-Serie  
+# Versionsanmerkungen zu Update 1.2 der StorSimple 8000-Serie  
 
 ## Übersicht
 
-Die folgenden Versionsanmerkungen beschreiben die neuen Features und weisen auf wichtige offene Punkte bei Update 1 der StorSimple 8000-Serie hin. Es enthält auch eine Liste der StorSimple-Software- und -Firmware-Updates, die in dieser Version enthalten sind. Dies ist die erste Hauptversion, nachdem die Freigabeversion der StorSimple 8000 Serie im Juli 2014 allgemein verfügbar gemacht wurde.
+Die folgenden Versionsanmerkungen beschreiben die neuen Features und weisen auf wichtige offene Punkte bei Update 1.2 der StorSimple 8000-Serie hin. Es enthält auch eine Liste der Updates für StorSimple-Software, -Treiber und -Datenträgerfirmware, die in dieser Version enthalten sind.
 
-Dieses Update ändert die Gerätesoftware in StorSimple 8000 Serie Update 1. Lesen Sie vor der Bereitstellung des Updates in Ihrer StorSimple-Lösung die Informationen in den Versionsanmerkungen sorgfältig durch. Weitere Informationen finden Sie unter [Installieren von Update 1 auf dem StorSimple-Gerät](storsimple-install-update-1.md).
+Update 1.2 kann auf alle StorSimple-Geräte angewendet werden, auf denen Software vom Typ Release (GA), Update 0.1, Update 0.2 oder Update 0.3 ausgeführt wird. Update 1.2 ist nicht verfügbar, wenn auf Ihrem Gerät Update 1 oder Update 1.1 ausgeführt wird. Wenden Sie sich an den [Microsoft Support](storsimple-contact-microsoft-support.md), wenn auf dem Gerät Release (GA) ausgeführt wird, um Hilfe bei der Installation dieses Updates zu erhalten.
 
-Lesen Sie vor der Bereitstellung der Updates in Ihrer StorSimple-Lösung die Informationen in den Versionsanmerkungen sorgfältig durch.
+Die folgende Tabelle enthält die Gerätesoftwareversionen, die den Updates 1, 1.1 und 1.2 entsprechen.
+
+| Ausgeführtes Update | Passende Gerätesoftwareversion |
+|---------------------|---------------------------------------|
+| Update 1.2 | 6\.3.9600.17584 |
+| Update 1.1 | 6\.3.9600.17521 |
+| Update 1.0 | 6\.3.9600.17491 |
+
+Lesen Sie vor der Bereitstellung des Updates in Ihrer StorSimple-Lösung die Informationen in den Versionsanmerkungen sorgfältig durch. Weitere Informationen finden Sie unter [Installieren von Update 1.2 auf dem StorSimple-Gerät](storsimple-install-update-1.md).
 
 >[AZURE.IMPORTANT]
 > 
-- Ein wichtiger Patch, Update 1.1, wurde am 23. Juni veröffentlicht. Dieser Patch behebt ein Problem in dem Sicherungsmodul. Wenn Sie Update 1 vor dem 23. Juni angewendet haben und zurzeit Softwareversion **6.3.9600.17491** verwenden, stellen Sie sicher, dass Sie dieses wichtige Update anwenden, um Probleme mit Sicherungen zu vermeiden. Nach der Installation des Updates ändert sich die Softwareversion zu **6.3.9600.17521**.
-- Wenn Sie zwischen dem 27. Mai und dem 10. Juli ein virtuelles Gerät mit der Softwareversion **6.3.9600.17481** erstellt haben, erstellen Sie ein neues virtuelles Gerät, und übernehmen Sie vom alten virtuellen Gerät alle Volumes per Failover auf das neue Gerät. (Dies ist erforderlich, weil das ältere virtuelle Gerät nicht aktualisiert werden kann.) Wenn Sie kein neues virtuelles Gerät erstellen, stellen Sie möglicherweise fest, dass Sicherungen scheitern. Vorgehensweisen für Failover und Notfallwiederherstellung finden Sie unter [Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät](storsimple-device-failover-disaster-recovery.md).
-- Verwenden Sie den StorSimple-Manager-Dienst und nicht Windows PowerShell für StorSimple, um Update 1 zu installieren.
-- Diese Version enthält außerdem Festplatten-Firmware-Updates, die nur angewendet werden können, wenn sich das Gerät im Wartungsmodus befindet. Hierbei handelt es sich um störende Updates, die zu Ausfallzeiten des Geräts führen. Sie können diese Updates während der geplanten Wartung anwenden.
 - Die Installation dieses Updates (einschließlich der Windows-Updates) dauert ungefähr 5 bis 10 Stunden. 
+- Update 1.2 verfügt über Updates für Software, LSI-Treiber und Datenträgerfirmware. Führen Sie zum Installieren die Anleitung unter [Installieren von Update 1.2 auf Ihrem StorSimple-Gerät aus](storsimple-install-update-1.md).
 - Bei neuen Versionen werden Updates möglicherweise nicht sofort angezeigt, da diese in mehreren Phasen bereitgestellt werden. Suchen Sie in einigen Tagen erneut nach Updates, da diese bald verfügbar sind.
 
-## Neuerungen in Update 1
 
-Dieses Update enthält die folgenden neuen Features und Verbesserungen:
+## Neuerungen in Update 1.2
+
+Diese Features wurden zuerst mit Update 1 veröffentlicht, das für eine begrenzte Gruppe von Benutzern bereitgestellt wurde. Nach der Veröffentlichung von Update 1.2 kommen die meisten StorSimple-Benutzer in den Genuss der folgenden neuen Features und Verbesserungen:
 
 - **Migration von Geräten der 5000-7000 Serie auf Geräte der 8000 Serie** – Die vorliegende Version enthält eine neue Migrationsfunktion, die dem Benutzer von Geräten der StorSimple 5000-7000 Serie die Migration seiner Daten auf ein physisches Gerät der StorSimple 8000 Serie oder ein virtuelles Gerät vom Typ 1100 ermöglicht. Das Migrationsfeature bietet zwei wichtige Nutzenversprechen:                                                                  
 
@@ -49,29 +55,34 @@ Dieses Update enthält die folgenden neuen Features und Verbesserungen:
 
 - **Unterstützung weiterer Cloud-Dienstanbieter** – Die weiteren unterstützten Cloud-Dienstanbieter sind Amazon S3, Amazon S3 mit RRS, HP und OpenStack (Beta).
 
-- **Update auf die neuesten Speicher-APIs** – Mit dieser Version wurde StorSimple auf die neuesten Azure-Speicherdienst-APIs aktualisiert. Geräte der StorSimple 8000 Serie, auf denen GA ausgeführt wird, verwenden Versionen der Azure-Speicherdienst-APIs, die vor dem 12. Februar 2012 liegen. Wie in der [Ankündigung zum Ablösen von Speicherdienstversionen](http://azure.microsoft.com/blog/2014/08/04/microsoft-azure-storage-service-version-removal/) bekannt gegeben, werden diese APIs bis zum 10. Dezember 2015 als veraltet markiert. Es ist zwingend erforderlich, Update 1 für die StorSimple 8000-Serie vor dem 9. Dezember 2015 anzuwenden. Andernfalls funktionieren StorSimple-Geräte nicht mehr ordnungsgemäß.
+- **Update auf die neuesten Speicher-APIs** – Mit dieser Version wurde StorSimple auf die neuesten Azure-Speicherdienst-APIs aktualisiert. Geräte der StorSimple 8000-Serie, auf denen ältere Softwareversionen als Update 1 ausgeführt werden (Release, 0.1, 0.2 und 0.3), verwenden Versionen der Azure-Speicherdienst-APIs, die vor dem 12. Februar 2012 liegen. Wie in der [Ankündigung zum Ablösen von Speicherdienstversionen](http://azure.microsoft.com/blog/2014/08/04/microsoft-azure-storage-service-version-removal/) bekannt gegeben, werden diese APIs bis zum 10. Dezember 2015 als veraltet markiert. Es ist zwingend erforderlich, Update 1 für die StorSimple 8000-Serie vor dem 9. Dezember 2015 anzuwenden. Andernfalls funktionieren StorSimple-Geräte nicht mehr ordnungsgemäß.
 
 - **Unterstützung von zonenredundantem Speicher (ZRS)** – Durch das Upgrade auf die neueste Version der Speicher-APIs unterstützt die StorSimple 8000 Serie außer lokal redundantem Speicher (LRS) und georedundantem Speicher (GRS) auch zonenredundanten Speicher (ZRS). Ausführliche Informationen über zonenredundanten Speicher (ZRS) finden Sie in diesem [Artikel über Redundanzoptionen von Azure Storage](../storage/storage-redundancy.md).
 
 - **Verbesserte Bereitstellungs-und Update-Erfahrung** – In dieser Version wurden die Installations- und Update-Prozesse verbessert. Die Installation durch den Setup-Assistenten wurde verbessert, um dem Benutzer Feedback bereitzustellen, wenn Netzwerkkonfiguration und Firewall-Einstellungen nicht korrekt sind. Es wurden zusätzliche Diagnose-Cmdlets bereitgestellt, um Sie bei der Problembehandlung bei der Vernetzung des Geräts zu unterstützen. Weitere Informationen zu den neuen Diagnose-Cmdlets für die Problembehandlung finden Sie im [Artikel über die Problembehandlung bei der Bereitstellung](storsimple-troubleshoot-deployment.md) verwendet.
 
-## Behobene Probleme in Update 1
+## Behobene Probleme in Update 1.2
 
-Die folgende Tabelle enthält eine Zusammenfassung der Probleme, die in diesem Update behoben wurden.
+Die folgende Tabelle enthält eine Zusammenfassung der Probleme, die in den Updates 1.2, 1.1 und 1 behoben wurden.
 
-| Nr. | Funktion | Problem | Gilt für das physische Gerät | Gilt für das virtuelle Gerät |
-|-----|---------|-------|---------------------------------|--------------------------------|
-| 1 | Windows PowerShell für StorSimple | Beim Remotezugriff eines Benutzers auf das StorSimple-Gerät mit Windows PowerShell für StorSimple und anschließendem Starten des Setup-Assistenten kam es zu einem Absturz, wenn die IP-Adresse von Data 0 eingegeben wurde. Dieses Problem wurde in Update 1 behoben. | Ja | Ja |
-| 2 | Zurücksetzen auf Werkseinstellungen | Unter bestimmten Umständen kann sich das StorSimple-Gerät beim Zurücksetzen auf die Werkseinstellungen aufhängen und zeigt dann die folgende Nachricht an: **Zurücksetzung auf Werkseinstellungen wird ausgeführt (Phase 8)**. Dies kann vorkommen, wenn Sie STRG+C drücken, während das Cmdlet ausgeführt wird. Dieses Problem wurde jetzt behoben.| Ja | Nein |
-| 3 | Zurücksetzen auf Werkseinstellungen | Nach der fehlgeschlagenen Zurücksetzung einer Dual-Controller-Factory auf die Werkseinstellungen konnte die Geräteregistrierung fortgesetzt werden. Dies führte zu einer nicht unterstützten Systemkonfiguration. In Update 1 wird eine Fehlermeldung angezeigt, und auf einem Gerät, das eine fehlgeschlagene Factory-Zurücksetzung aufweist, wird die Registrierung blockiert. | Ja | Nein |
-| 4 | Zurücksetzen auf Werkseinstellungen | In einigen Fällen wurden falsch positive Warnungen aufgrund fehlender Übereinstimmung ausgelöst. Falsche Warnungen aufgrund fehlender Übereinstimmung werden auf Geräten mit Update 1 nicht mehr generiert. | Ja | Nein |
-| 5 | Zurücksetzen auf Werkseinstellungen | Wenn die Zurücksetzung auf Werkseinstellungen vor der vollständigen Ausführung unterbrochen wurde, wechselte das Gerät in den Wiederherstellungsmodus und der Zugriff auf Windows PowerShell für StorSimple war nicht mehr möglich. Dieses Problem wurde jetzt behoben. | Ja | Nein |
-| 6 | Notfallwiederherstellung | Ein Fehler der Notfallwiederherstellung wurde behoben, der ein Fehlschlagen der Notfallwiederherstellung beim Wiederherstellen von Sicherungen auf dem Zielgerät verursacht hat. | Ja | Ja |
-| 7 | Überwachungs-LEDs | In einigen Fällen zeigten Überwachungs-LEDs auf der Geräterückseite nicht den korrekten Status an. Die blaue LED wurde ausgeschaltet. DATA 0- und DATA 1-LEDs blinkten, selbst wenn diese Schnittstellen nicht konfiguriert waren. Das Problem wurde behoben, und die Überwachungs-LEDs zeigen jetzt den korrekten Status an. | Ja | Nein |
-| 8 | Netzwerkschnittstellen | In früheren Versionen konnte ein StorSimple-Gerät, das mit einem nicht routbaren Gateway konfiguriert war, offline geschaltet werden. In dieser Version wurde für DATA 0 die niedrigste Routingmetrik festgelegt. Daher wird selbst bei Cloud-Aktivierung anderer Schnittstellen der gesamte Cloud-Datenverkehr vom Gerät über DATA 0 geleitet. | Ja | Ja | 
-| 9 | Backups | Ein Fehler im Update 1 (Softwareversion 6.3.9600.17491), wodurch Sicherungen nach 24 Tagen fehlschlugen, wurde im Patch Update 1.1 (Softwareversion 6.3.9600.17521) behoben. | Ja | Ja |
 
-## Bekannte Probleme in Update 1
+| Nein. | Funktion | Problem | Im Update behoben | Gilt für das physische Gerät | Gilt für das virtuelle Gerät |
+|-----|---------|-------|-----------------|---------------------------------|--------------------------------|
+| 1 | Windows PowerShell für StorSimple | Beim Remotezugriff eines Benutzers auf das StorSimple-Gerät mit Windows PowerShell für StorSimple und anschließendem Starten des Setup-Assistenten kam es zu einem Absturz, wenn die IP-Adresse von Data 0 eingegeben wurde. Dieses Problem wurde in Update 1 behoben. | Update 1 | Ja | Ja |
+| 2 | Zurücksetzen auf Werkseinstellungen | Unter bestimmten Umständen kann sich das StorSimple-Gerät beim Zurücksetzen auf die Werkseinstellungen aufhängen und zeigt dann die folgende Nachricht an: **Zurücksetzung auf Werkseinstellungen wird ausgeführt (Phase 8)**. Dies kann vorkommen, wenn Sie STRG+C drücken, während das Cmdlet ausgeführt wird. Dieses Problem wurde jetzt behoben.| Update 1 | Ja | Nein |
+| 3 | Zurücksetzen auf Werkseinstellungen | Nach der fehlgeschlagenen Zurücksetzung einer Dual-Controller-Factory auf die Werkseinstellungen konnte die Geräteregistrierung fortgesetzt werden. Dies führte zu einer nicht unterstützten Systemkonfiguration. In Update 1 wird eine Fehlermeldung angezeigt, und auf einem Gerät, das eine fehlgeschlagene Factory-Zurücksetzung aufweist, wird die Registrierung blockiert. | Update 1 | Ja | Nein |
+| 4 | Zurücksetzen auf Werkseinstellungen | In einigen Fällen wurden falsch positive Warnungen aufgrund fehlender Übereinstimmung ausgelöst. Falsche Warnungen aufgrund fehlender Übereinstimmung werden auf Geräten mit Update 1 nicht mehr generiert. | Update 1 | Ja | Nein |
+| 5 | Zurücksetzen auf Werkseinstellungen | Wenn die Zurücksetzung auf Werkseinstellungen vor der vollständigen Ausführung unterbrochen wurde, wechselte das Gerät in den Wiederherstellungsmodus und der Zugriff auf Windows PowerShell für StorSimple war nicht mehr möglich. Dieses Problem wurde jetzt behoben. | Update 1 | Ja | Nein |
+| 6 | Notfallwiederherstellung | Ein Fehler der Notfallwiederherstellung wurde behoben, der ein Fehlschlagen der Notfallwiederherstellung beim Wiederherstellen von Sicherungen auf dem Zielgerät verursacht hat. | Update 1 | Ja | Ja |
+| 7 | Überwachungs-LEDs | In einigen Fällen zeigten Überwachungs-LEDs auf der Geräterückseite nicht den korrekten Status an. Die blaue LED wurde ausgeschaltet. DATA 0- und DATA 1-LEDs blinkten, selbst wenn diese Schnittstellen nicht konfiguriert waren. Das Problem wurde behoben, und die Überwachungs-LEDs zeigen jetzt den korrekten Status an. | Update 1 | Ja | Nein |
+| 8 | Überwachungs-LEDs | In bestimmten Fällen wurde das blaue Licht am aktiven Controller nach dem Anwenden von Update 1 ausgeschaltet, wodurch die Identifizierung des aktiven Controllers erschwert wurde. Dieses Problem wurde in dieser Patchversion behoben.| Update 1.2 | Ja | Nein |
+| 9 | Netzwerkschnittstellen | In früheren Versionen konnte ein StorSimple-Gerät, das mit einem nicht routbaren Gateway konfiguriert war, offline geschaltet werden. In dieser Version wurde für DATA 0 die niedrigste Routingmetrik festgelegt. Daher wird selbst bei Cloud-Aktivierung anderer Schnittstellen der gesamte Cloud-Datenverkehr vom Gerät über DATA 0 geleitet. | Update 1 | Ja | Ja | 
+| 10 | Backups | Ein Fehler in Update 1, der zum Fehlschlagen von Sicherungen nach 24 Tagen führte, wurde in der Patchversion Update 1.1 behoben. | Update 1.1 | Ja | Ja |
+| 11 | Backups | Ein Fehler in vorherigen Versionen führte zu einer schlechten Leistung für Cloudmomentaufnahmen mit niedrigen Änderungsraten. Dieser Fehler wurde in dieser Patchversion behoben.| Update 1.2 | Ja | Ja |
+| 12 | Backups | Ein Fehler in Update 1, bei dem ein Upgradefehler gemeldet wurde und dazu führte, dass die Controller in den Wiederherstellungsmodus wechselten, wurde in dieser Patchversion behoben.| Update 1.2 | Ja | Ja |
+
+
+## Bekannte Probleme in Update 1.2
 
 Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in dieser Version.
 
@@ -92,27 +103,25 @@ Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in die
 | 13| Klonen und Notfallwiederherstellung | Ein StorSimple-Gerät mit Update 1 kann für ein Gerät, auf dem ältere Software als Update 1 ausgeführt wird, keinen Klonvorgang bzw. keine Notfallwiederherstellung durchführen. | Das Zielgerät muss auf Update 1 aktualisiert werden, damit diese Operationen ausgeführt werden können. | Ja | Ja |
 | 14 | Migration | Die Konfigurationssicherung für die Migration kann auf einem Gerät der Serie 5000-7000 fehlschlagen, wenn Volumegruppen ohne zugehörige Volumes vorhanden sind. | Löschen Sie die leeren Volumegruppen ohne zugehörige Volumes, und wiederholen Sie dann die Konfigurationssicherung.| Ja | Nein |
 
-## Updates von physischen Geräten in Update 1
+## Updates von physischen Geräten in Update 1.2
 
-Wenn Patch-Update 1.2 auf ein physisches Gerät (mit einer älteren Version als Update 1) angewendet wird, wird die Softwareversion in 6.3.9600.17521 geändert.
+Wenn Patch-Update 1.2 auf ein physisches Gerät (mit einer älteren Version als Update 1) angewendet wird, wird die Softwareversion in 6.3.9600.17584 geändert.
 
-## Updates des Controllers und der Firmware in Update 1
+## Updates des Controllers und der Firmware in Update 1.2
 
-Diese Version aktualisiert die Treiber und die Firmware für den SAS-Controller Ihres physischen Geräts. Außerdem wird die Festplatten-Firmware auf dem Gerät aktualisiert.
+Mit dieser Version werden der Treiber und die Datenträgerfirmware auf Ihrem Gerät aktualisiert.
  
 - Weitere Informationen zum SAS-Controller-Update finden Sie unter [Update 1 für LSI-SAS-Controller im Microsoft Azure StorSimple-Gerät](https://support.microsoft.com/kb/3043005). 
 
-- Weitere Informationen zum Firmware-Update finden Sie unter [Firmware-Update 1 für das Microsoft Azure StorSimple-Gerät](https://support.microsoft.com/kb/3063414).
-
 - Weitere Informationen zum Datenträger-Firmware-Update finden Sie unter [Datenträger-Firmware-Update 1 für das Microsoft Azure StorSimple-Gerät](https://support.microsoft.com/kb/3063416).
  
-## Updates von virtuellen Geräten in Update 1
+## Updates von virtuellen Geräten in Update 1.2
 
-Dieses Update kann nicht auf das virtuelle Gerät angewendet werden. Allerdings liegen alle virtuellen Geräte, die nach dem 10. Juli erstellt wurden, automatisch in dieser Version vor.
+Dieses Update kann nicht auf das virtuelle Gerät angewendet werden. Es müssen neue virtuelle Geräte erstellt werden.
 
 ## Nächste Schritte
 
-- [Installieren Sie Update 1 auf dem Gerät](storsimple-install-update-1.md).
+- [Installieren Sie Update 1.2 auf dem Gerät](storsimple-install-update-1.md).
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

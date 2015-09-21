@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="08/11/2015"  
+	ms.date="09/07/2015"   
 	ms.author="juliako"/>
 
 
@@ -336,6 +336,15 @@ Kein Audiostream in den Eingabemedien</td></tr>
 
 Derzeit werden die Sprachen Englisch und Spanisch unterstützt. Weitere Informationen finden Sie unter [Azure Media Indexer Spanisch](http://azure.microsoft.com/blog/2015/04/13/azure-media-indexer-spanish-v1-2/) (in englischer Sprache).
 
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+
 ##Verwandte Links
 
 [Verwenden von AIB-Dateien mit Azure Media Indexer und SQL Server](http://azure.microsoft.com/blog/2014/11/03/using-aib-files-with-azure-media-indexer-and-sql-server/)
@@ -346,4 +355,4 @@ Derzeit werden die Sprachen Englisch und Spanisch unterstützt. Weitere Informat
 
 <!-- URLs. -->
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO2-->

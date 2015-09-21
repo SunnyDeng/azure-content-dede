@@ -1,6 +1,6 @@
 
 <properties
-    pageTitle="Zugreifen auf Apps"
+    pageTitle="Zugreifen auf Apps von einem beliebigen Gerät aus | Microsoft Azure"
     description="Sie erfahren, welche Clients für Azure RemoteApp unterstützt werden und wie Sie auf Ihre Apps zugreifen."
     services="remoteapp"
 	documentationCenter=""
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="08/12/2015"
+    ms.date="09/09/2015"
     ms.author="elizapo" />
 
 
@@ -41,10 +41,11 @@ Sie können mit einem der folgenden Schritte auf RemoteApp zugreifen, wenn auf d
 
  Werden Thin Clients unterstützt? Die folgenden Windows Embedded-Thin Clients werden unterstützt:
 
- - Windows Embedded Standard 7 mit Servicepack 1
- - Windows Embedded POSReady7
- - Windows Embedded Thin PC
- - Windows Embedded 8.1 Industry
+- Windows Embedded Standard 7
+- Windows Embedded 8 Standard
+- Windows Embedded 8.1 Industry Pro
+- Windows 10 IoT Enterprise
+
 
 ## Herunterladen des Clients
 
@@ -207,4 +208,4 @@ Nachdem Sie die Microsoft Remotedesktop-App aus dem Windows Phone 8.1 Store ins
 	![Demofeed für Azure RemoteApp](./media/remoteapp-clients/WinPhone8.png)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO2-->

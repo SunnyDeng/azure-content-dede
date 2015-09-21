@@ -1,20 +1,20 @@
 <properties
    pageTitle="Verwendung des SalesForce-Connectors in Logik-Apps | Microsoft Azure App Service"
-	description="Erstellen und Konfigurieren des SalesForce-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
-	services="app-service\logic"
-	documentationCenter=".net,nodejs,java"
-	authors="anuragdalmia"
-	manager="dwrede"
-	editor=""/>
+   description="Erstellen und Konfigurieren des SalesForce-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+   services="app-service\logic"
+   documentationCenter=".net,nodejs,java"
+   authors="anuragdalmia"
+   manager="dwrede"
+   editor=""/>
 
 <tags
    ms.service="app-service-logic"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="integration"
-	ms.date="08/23/2015"
-	ms.author="sameerch"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="integration"
+   ms.date="08/23/2015"
+   ms.author="sameerch"/>
 
 
 # Erste Schritte mit dem SalesForce-Connector und das Hinzufügen zur Logik-App
@@ -104,4 +104,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [14]: ./media/app-service-logic-connector-salesforce/14_Update_Account_Address.png
 [15]: ./media/app-service-logic-connector-salesforce/15_Create_new_salesforce_connector.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

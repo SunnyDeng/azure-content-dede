@@ -13,10 +13,18 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="08/20/2015" 
+	ms.date="09/08/2015" 
 	ms.author="jeffstok"/>
 
 #Microsoft Stream Analytic – Hinweise zu dieser Version
+
+## Hinweise zur Version von Stream Analytics vom 10.09.2015 ##
+
+Diese Version enthält die folgenden Updates.
+
+Titel|Beschreibung
+---|---
+Unterstützung für Power BI-Gruppen|Zum Aktivieren der Freigabe von Daten mit anderen Power BI-Benutzern, können Stream Analytics-Aufträge jetzt in Gruppen innerhalb Ihres Power BI-Kontos schreiben.
 
 ## Hinweise zur Stream Analytics-Version vom 20.08.2015 ##
 
@@ -35,7 +43,7 @@ Diese Version enthält die folgenden Updates.
 Titel|Beschreibung
 ---|---
 Die Power BI-Organisations-ID wurde von der Azure-ID entkoppelt.|Dieses Feature ermöglicht die [Power BI-Ausgabe](stream-analytics-power-bi-dashboard.md) für ASA-Aufträge unter einem beliebigen Azure-Kontotyp (Live-ID oder Organisations-ID). Darüber hinaus können Sie eine Organisations-ID für Ihre Azure-Konto einrichten und eine andere ID für die Autorisierung der Power BI-Ausgabe verwenden.
-Unterstützung für die Ausgabe von Service Bus-Warteschlangen|Ausgaben von [Service Bus-Warteschlangen](stream-analytics-connect-data-event-outputs.md#service-bus-queues) stehen nun in Stream Analytics-Aufträgen zur Verfügung.
+Unterstützung für die Ausgabe von Service Bus-Warteschlangen|Ausgaben von [Service Bus-Warteschlangen](stream-analytics-connect-data-event-outputs.md#service-bus-queues) stehen nun in Stream Analytics-Aufträgen zur Verfügung.
 Unterstützung für die Ausgabe von Service Bus-Themen|Ausgaben von [Service Bus-Themen](stream-analytics-connect-data-event-outputs.md#service-bus-topics) stehen nun in Stream Analytics-Aufträgen zur Verfügung.
 
 ## Hinweise zur Version von Stream Analytics vom 09.07.2015 ##
@@ -73,7 +81,7 @@ Einschränkungen im Hinblick auf die SQL-Datenbank-Ereignismenge|Wenn Sie SQL-Da
 PowerBI-Datasets können nur eine Tabelle enthalten.|PowerBI unterstützt nicht mehr als eine Tabelle in einem bestimmten Dataset.
 
 ## Hier erhalten Sie Hilfe
-Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-de/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
 
 ## Nächste Schritte
 
@@ -84,4 +92,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

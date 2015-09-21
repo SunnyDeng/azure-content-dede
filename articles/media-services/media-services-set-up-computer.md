@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/11/2015"
+	ms.date="09/07/2015"  
 	ms.author="juliako"/>
 
 # Einrichten der Umgebung
@@ -44,9 +44,12 @@ Wählen Sie .NET oder REST API, um eine programmgesteuerte Verbindung mit Azure 
 
 [AZURE.INCLUDE [media-services-selector-connect](../../includes/media-services-selector-connect.md)]
 
-## Nächste Schritte
 
-- [Erste Schritte zum Bereitstellen von Video-on-Demand-Inhalt (VoD) mit dem .NET SDK](media-services-dotnet-get-started.md)
-- [Verwenden von .NET SDK, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird (Vorschau)](media-services-dotnet-creating-live-encoder-enabled-channel.md)
+##Nächste Schritte: AMS-Lernpfade
 
-<!---HONumber=September15_HO1-->
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+<!---HONumber=Sept15_HO2-->

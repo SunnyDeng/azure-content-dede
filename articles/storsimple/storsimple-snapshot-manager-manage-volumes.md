@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Verwenden des StorSimple Snapshot Managers zum Anzeigen und Verwalten von Volumes | Microsoft Azure"
+   pageTitle="StorSimple Snapshot Manager und Volumes | Microsoft Azure"
    description="Beschreibt, wie das MMC-Snap-In StorSimple Snapshot Manager zum Anzeigen und Verwalten von Volumes verwendet wird."
    services="storsimple"
    documentationCenter="NA"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/17/2015"
+   ms.date="09/04/2015"
    ms.author="v-sharos" />
 
 # Verwenden des StorSimple Snapshot Managers zum Anzeigen und Verwalten von Volumes
@@ -270,4 +270,4 @@ Verwenden Sie das folgende Verfahren zum Konfigurieren eines dynamisch gespiegel
 <!--Reference links-->
 [1]: https://msdn.microsoft.com/library/ee338480(v=ws.10).aspx
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

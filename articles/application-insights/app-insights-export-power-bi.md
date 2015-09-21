@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Anzeigen von Application Insights-Daten in Power BI"
-	description="Verwenden Sie Power BI zum Überwachen der Leistung und der Nutzung Ihrer Anwendung."
-	services="application-insights"
-	documentationCenter=""
-	authors="noamben"
+	pageTitle="Anzeigen von Application Insights-Daten in Power BI" 
+	description="Verwenden Sie Power BI zum Überwachen der Leistung und der Nutzung Ihrer Anwendung." 
+	services="application-insights" 
+    documentationCenter=""
+	authors="noamben" 
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="ibiza"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/08/2015" 
 	ms.author="awills"/>
  
 # Power BI-Ansichten von Application Insights-Daten
@@ -24,6 +24,9 @@
 In diesem Artikel zeigen wir, wie Daten von Application Insights exportiert werden und wie Stream Analytics zum Verschieben der Daten nach Power BI verwendet wird. [Stream Analytics](http://azure.microsoft.com/services/stream-analytics/) ist ein Azure-Dienst, der als Adapter verwendet wird.
 
 ![Beispiel für eine Power BI-Ansicht der Application Insights-Nutzungsdaten](./media/app-insights-export-power-bi/020.png)
+
+
+> [AZURE.NOTE]Sie benötigen ein Geschäfts- oder Schulkonto (MSDN-Organisationskonto) zum Senden von Daten aus Stream Analytics an Power BI.
 
 ## Video
 
@@ -78,7 +81,7 @@ Mit dem [fortlaufenden Export](app-insights-export-telemetry.md) werden Daten au
 
     Darüber hinaus werden die Daten in Ihren Speicher exportiert.
 
-4. Überprüfen Sie die exportierten Daten. Wählen Sie in Visual Studio **Anzeigen / Cloud Explorer**, und öffnen Sie "Azure / Storage". (Wenn diese Menüoption nicht verfügbar ist, müssen Sie das Azure SDK installieren: Öffnen Sie das Dialogfeld "Neues Projekt" und anschließend "Visual C# / Cloud / Microsoft Azure SDK für .NET abrufen".)
+4. Überprüfen Sie die exportierten Daten. Wählen Sie in Visual Studio **Anzeigen/Cloud Explorer**, und öffnen Sie „Azure/Storage“. (Wenn diese Menüoption nicht verfügbar ist, müssen Sie das Azure SDK installieren: Öffnen Sie das Dialogfeld "Neues Projekt" und anschließend "Visual C# / Cloud / Microsoft Azure SDK für .NET abrufen".)
 
     ![](./media/app-insights-export-power-bi/04-data.png)
 
@@ -127,7 +130,7 @@ In diesem Beispiel:
 
 * `webapplication27` ist der Name der Application Insights-Ressource in **Kleinbuchstaben**.
 * `1234...` ist der Instrumentierungsschlüssel der Application Insights-Ressource **ohne Bindestriche**. 
-* `PageViews` ist die Art der zu analysierenden Daten. Die verfügbaren Typen sind abhängig von dem Filter, den Sie im fortlaufenden Export festlegen. Untersuchen Sie die exportierten Daten, um die anderen verfügbaren Typen anzuzeigen, und sehen Sie sich das [Exportdatenmodell](app-insights-export-data-model.md) an.
+* `PageViews` ist der zu analysierende Datentyp. Die verfügbaren Typen sind abhängig von dem Filter, den Sie im fortlaufenden Export festlegen. Untersuchen Sie die exportierten Daten, um die anderen verfügbaren Typen anzuzeigen, und sehen Sie sich das [Exportdatenmodell](app-insights-export-data-model.md) an.
 * `/{date}/{time}` ist ein als Literal geschriebenes Muster.
 
 > [AZURE.NOTE]Überprüfen Sie den Speicher, um sicherzustellen, dass der Pfad stimmt.
@@ -140,13 +143,15 @@ Bestätigen Sie das Serialisierungsformat:
 
 Schließen Sie den Assistenten, und warten Sie, bis das Setup abgeschlossen ist.
 
+> [AZURE.TIP]Verwenden Sie den Beispielbefehl, um einige Daten herunterzuladen. Behalten Sie ihn als Testbeispiel, um Ihre Abfrage zu debuggen.
+
 ## Festlegen der Ausgabe
 
 Nun wählen Sie Ihren Auftrag aus und legen die Ausgabe fest.
 
 ![Wählen Sie den neuen Kanal aus, klicken Sie auf "Ausgaben", "Hinzufügen", "Power BI".](./media/app-insights-export-power-bi/160.png)
 
-Autorisieren Sie Stream Analytics für den Zugriff auf Ihre Power BI-Ressource, und erstellen Sie dann einen Namen für die Ausgabe, für das Power BI-Zieldataset und für die Tabelle.
+Geben Sie Ihr **Geschäfts- oder Schulkonto** an, um Stream Analytics für den Zugriff auf Ihre Power BI-Ressource zu autorisieren. Geben Sie anschließend Namen für die Ausgabe sowie für den Power BI-Zieldatensatz und die Zieltabelle an.
 
 ![Erfinden Sie drei Namen.](./media/app-insights-export-power-bi/170.png)
 
@@ -155,6 +160,11 @@ Autorisieren Sie Stream Analytics für den Zugriff auf Ihre Power BI-Ressource, 
 Die Abfrage bestimmt die Übersetzung von der Eingabe zur Ausgabe.
 
 ![Wählen Sie den Auftrag aus, und klicken Sie auf "Abfrage". Fügen Sie das folgenden Beispiel ein.](./media/app-insights-export-power-bi/180.png)
+
+
+Überprüfen Sie mithilfe der Testfunktion, ob Sie die richtige Ausgabe erhalten. Geben Sie die Beispieldaten an, die Sie der Eingabeseite entnommen haben.
+
+#### Abfrage zum Anzeigen der Anzahl von Ereignissen
 
 Fügen Sie diese Abfrage ein:
 
@@ -173,7 +183,29 @@ Fügen Sie diese Abfrage ein:
 
 * "export-input" ist der Alias, den wir der Datenstromeingabe gegeben haben.
 * "pbi-outout" ist der definierte Ausgabealias.
-* Wir verwenden GetElements, da sich der Ereignisname in einem geschachtelten JSON-Arrray befindet. Die SELECT-Anweisung wählt dann den Ereignisnamen zusammen mit der Anzahl der Instanzen mit diesem Namen im angegebenen Zeitraum aus. Die Group By-Klausel gruppiert die Elemente in Zeiträume von 1 Minute.
+* Wir verwenden [OUTER APPLY GetElements](https://msdn.microsoft.com/library/azure/dn706229.aspx), da sich der Ereignisname in einem geschachtelten JSON-Arrray befindet. Die SELECT-Anweisung wählt dann den Ereignisnamen zusammen mit der Anzahl der Instanzen mit diesem Namen im angegebenen Zeitraum aus. Die [Group By](https://msdn.microsoft.com/library/azure/dn835023.aspx)-Klausel gruppiert die Elemente in Zeiträume von einer Minute.
+
+
+#### Abfrage zum Anzeigen metrischer Werte
+
+
+```SQL
+
+    SELECT
+      A.context.data.eventtime,
+      avg(CASE WHEN flat.arrayvalue.myMetric.value IS NULL THEN 0 ELSE  flat.arrayvalue.myMetric.value END) as myValue
+    INTO
+      [pbi-output]
+    FROM
+      [export-input] A
+    OUTER APPLY GetElements(A.context.custom.metrics) as flat
+    GROUP BY TumblingWindow(minute, 1), A.context.data.eventtime
+
+``` 
+
+* Diese Abfrage führt einen Drilldown in die Telemetrie der Metriken durch, um die Uhrzeit und den metrischen Wert des Ereignisses abzurufen. Die metrischen Werte befinden sich in einem Array, daher verwenden wir das Muster „OUTER APPLY GetElements“ zum Extrahieren der Zeilen. In diesem Fall lautet der Name der Metrik „myMetric“. 
+
+
 
 ## Ausführen des Auftrags
 
@@ -185,7 +217,7 @@ Warten Sie, bis der Auftrag ausgeführt wird.
 
 ## Anzeigen der Ergebnisse in Power BI
 
-Öffnen Sie Power BI, und wählen Sie das Dataset und die Tabelle aus, die Sie als Ausgabe des Stream Analytics-Auftrags definiert haben.
+Öffnen Sie Power BI mit Ihrem Geschäfts- oder Schulkonto, und wählen Sie das Dataset und die Tabelle aus, die Sie als Ausgabe des Stream Analytics-Auftrags definiert haben.
 
 ![Wählen Sie in Power BI Ihr Dataset und Felder aus.](./media/app-insights-export-power-bi/200.png)
 
@@ -207,4 +239,4 @@ Noam Ben Zeev zeigt, wie nach Power BI exportiert wird.
 * [Application Insights](app-insights-overview.md)
 * [Weitere Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

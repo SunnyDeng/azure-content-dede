@@ -1,25 +1,25 @@
 <properties 
    pageTitle="Erstellen und Bereitstellen von Bereitstellungsprojekten für Azure-Ressourcengruppen"
-	description="Erstellen und Bereitstellen von Bereitstellungsprojekten für Azure-Ressourcengruppen"
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="kempb"
-	manager="douge"
-	editor="tlee"/>
+   description="Erstellen und Bereitstellen von Bereitstellungsprojekten für Azure-Ressourcengruppen"
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="kempb"
+   manager="douge"
+   editor="tlee" />
 <tags 
    ms.service="azure-resource-manager"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/24/2015"
-	ms.author="kempb"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/24/2015"
+   ms.author="kempb" />
 
 # Erstellen und Bereitstellen von Bereitstellungsprojekten für Azure-Ressourcengruppen
 
 Die Bereitstellungsprojektvorlage **Azure-Ressourcengruppe** ist in Visual Studio verfügbar, wenn Azure SDK 2.6 installiert ist. In Azure-Ressourcengruppenprojekten können mehrere zusammengehörige Azure-Ressourcen in einem einzelnen Bereitstellungsvorgang zusammengefasst und veröffentlicht werden. Azure-Ressourcengruppenprojekte nutzen eine Technologie namens **Azure-Ressourcen-Manager**. Der **Azure-Ressourcen-Manager** ist ein REST-API-Dienst, der das Definieren von Azure-Ressourcengruppen unterstützt, die mehrere Azure-Ressourcen enthalten, die in der Regel zusammen verwendet werden und einen ähnlichen Lebenszyklus aufweisen. Mithilfe von Ressourcengruppen können Sie für alle Ressourcen in einer Gruppe einen einzigen Funktionsaufruf verwenden, anstatt viele verschiedene Funktionen einzeln für jede Ressource aufzurufen. Weitere Informationen zu Azure-Ressourcengruppen finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](./azure-portal/azure-preview-portal-using-resource-groups/).
 
-Azure-Ressourcengruppenprojekte enthalten JSON-Vorlagen des Azure-Ressourcen-Managers, in denen die Elemente definiert sind, die in einer Ressourcengruppe bereitgestellt werden. Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn835138.aspx).
+Azure-Ressourcengruppenprojekte enthalten JSON-Vorlagen des Azure-Ressourcen-Managers, in denen die Elemente definiert sind, die in einer Ressourcengruppe bereitgestellt werden. Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](resource-group-authoring-templates.md).
 
 Der Azure-Ressourcen-Manager verfügt über viele verschiedene Ressourcenanbieter, die zum Bereitstellen von Ressourcen, wie z. B. Ubuntu Server und Windows Server 2012 R2, verwendet werden können. In diesem Thema wird eine **Web-Apps**-Ressource verwendet, die eine einfache leere Website in Azure bereitgestellt.
 
@@ -195,4 +195,4 @@ Anpassungen wurden auch an einigen Variablennamen und Buildaufgaben vorgenommen,
 
 Informationen zum Hinzufügen von Ressourcen zu Ihrer Azure-Ressourcengruppe in Visual Studio finden Sie unter [Hinzufügen von Ressourcen zu einer Azure-Ressourcengruppe](https://msdn.microsoft.com/library/azure/mt125415.aspx).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

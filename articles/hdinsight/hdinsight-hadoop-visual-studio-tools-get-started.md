@@ -1,6 +1,7 @@
 <properties
 	pageTitle="Informationen zur Verwendung von Hadoop-Tools für Visual Studio für HDInsight | Microsoft Azure"
 	description="Erfahren Sie, wie Hadoop-Tools für Visual Studio für HDInsight verwendet werden, um eine Verbindung mit einem Hadoop-Cluster herzustellen und eine Hive-Abfrage auszuführen."
+	keywords="hadoop tools,hive query,visual studio"
 	services="HDInsight"
 	documentationCenter=""
 	tags="azure-portal"
@@ -14,17 +15,14 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="07/28/2015"
+	ms.date="09/03/2015"
 	ms.author="jgao"/>
 
 # Erste Schritte bei der Verwendung von Hadoop-Tools für Visual Studio für HDInsight zum Ausführen einer Hive-Abfrage
 
 Erfahren Sie, wie Sie HDInsight Tools für Visual Studio nutzen, um eine Verbindung mit HDInsight-Clustern herzustellen und Hive-Abfragen zu übermitteln. Weitere Informationen zur Verwendung von HDInsight finden Sie unter [Einführung in HDInsight][hdinsight.introduction] und [Erste Schritte mit HDInsight][hdinsight.get.started]. Weitere Informationen zum Herstellen einer Verbindung mit einem Storm-Cluster finden Sie unter [Entwickeln von C#-Topologien für Apache Storm in HDInsight mit Visual Studio][hdinsight.storm.visual.studio.tools].
 
->[AZURE.NOTE]Die neueste Version verfügt über einige neue Features, z. B. die Unterstützung des Hive-Editors, die lokale Hive-Skriptprüfung und den Zugriff auf YARN-Protokolle.
-
-
-## Voraussetzungen
+**Voraussetzungen**
 
 Um dieses Tutorial durchzuführen und die Hadoop-Tools in Visual Studio zu verwenden, benötigen Sie Folgendes:
 
@@ -58,7 +56,7 @@ Mithilfe der HDInsight-Tools für Visual Studio können Sie eine Verbindung mit 
 
 >[AZURE.NOTE]Informationen zum Herstellen einer Verbindung mit dem HDInsight-Emulator finden Sie unter [Erste Schritte mit dem HDInsight-Emulator](../hdinsight-get-started-emulator.md/#vstools).
 
->[AZURE.NOTE]Informationen zum Herstellen einer Verbindung mit einem generischen Hadoop-Cluster (Vorschau) finden Sie unter [Write and submit Hive queries using Visual Studio](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx) (in englischer Sprache).
+>[AZURE.NOTE]Informationen zum Herstellen einer Verbindung mit einem generischen Hadoop-Cluster (Vorschau) finden Sie unter [Schreiben und Übermitteln von Hive-Abfragen mithilfe von Visual Studio](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx).
 
 
 **Verbinden mit Ihrem Azure-Abonnement**
@@ -72,7 +70,7 @@ Mithilfe der HDInsight-Tools für Visual Studio können Sie eine Verbindung mit 
 5.	Im Server-Explorer wird eine Liste vorhandener HDInsight-Cluster angezeigt. Wenn Sie noch keine Cluster haben, können Sie einen über das Azure-Vorschauportal, Azure PowerShell oder das HDInsight SDK bereitstellen. Weitere Informationen finden Sie unter [Bereitstellen von HDInsight-Clustern][hdinsight-provision].
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – Clusterliste in Server-Explorer][5]
-6.	Erweitern Sie einen HDInsight-Cluster. Es werden **Hive-Datenbanken**, das Standardspeicherkonto, verknüpfte Speicherkonten und das **Hadoop-Dienstprotokoll** angezeigt. Sie können die einzelnen Elemente weiter erweitern.
+6.	Erweitern Sie einen HDInsight-Cluster. **Hive-Datenbanken**, das Standardspeicherkonto, verknüpfte Speicherkonten und das **Hadoop-Dienstprotokoll** werden angezeigt. Sie können die einzelnen Elemente weiter erweitern.
 
 Nach dem Verbinden mit Ihrem Azure-Abonnement können Sie die folgenden Aufgaben ausführen:
 
@@ -146,7 +144,7 @@ Es gibt zwei Möglichkeiten zum Erstellen und Ausführen von Hive-Abfragen:
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – lokale Überprüfung][10]
 
-4. Klicken Sie auf **Übermitteln** oder **Übermitteln (Erweitert)**. Mit der Option "Übermitteln (Erweitert)" konfigurieren Sie **Auftragsname**, **Argumente**, **Zusätzliche Konfigurationen** und **Statusverzeichnis** für das Skript:
+4. Klicken Sie auf **Übermitteln** oder **Übermitteln (Erweitert)**. Mit der Option „Übermitteln (Erweitert)“ konfigurieren Sie **Auftragsname**, **Argumente**, **Zusätzliche Konfigurationen** und **Statusverzeichnis** für das Skript:
 
 	![HDInsight Hadoop Hive-Abfrage][9]
 
@@ -176,7 +174,7 @@ Die neueste Version des Tools ermöglicht es Ihnen zu sehen, was sich innerhalb 
 **So zeigen Sie Hive-Aufträge an**
 
 1. Erweitern Sie in **Server-Explorer** erst **Azure** und dann **HDInsight**.
-2. Klicken Sie mit der rechten Maustaste auf einen HDInsight-Cluster, und klicken Sie dann auf **Hive-Aufträge anzeigen**. Daraufhin wird eine Liste der Hive-Aufträge angezeigt, die im Cluster ausgeführt wurden.
+2. Klicken Sie mit der rechten Maustaste auf einen HDInsight-Cluster, und klicken Sie dann auf **Aufträge anzeigen**. Daraufhin wird eine Liste der Hive-Aufträge angezeigt, die im Cluster ausgeführt wurden.
 3. Klicken Sie in der Auftragsliste auf einen Auftrag, um ihn auszuwählen, und öffnen Sie dann im Fenster **Hive-Aufträge – Zusammenfassung** entweder **Auftragsabfrage**, **Auftragsausgabe**, **Auftragsprotokoll** oder **YARN-Protokoll**.
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – Hive-Aufträge anzeigen][12]
@@ -188,6 +186,8 @@ In den HDInsight-Tools für Visual Studio wird das Anzeigen von Leistungsdiagram
 > [AZURE.NOTE]Dieses Feature ist nur für höhere HDInsight-Clusterversionen als 3.2.4.593 verfügbar und funktioniert nur für abgeschlossene Aufträge. Dies funktioniert sowohl für Windows-basierte als auch für Linux-basierte Cluster.
 
 ![Leistungsdiagramm für Hadoop Hive Tez](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.hive.tez.performance.graph.png)
+
+Um Ihnen das Verständnis der Hive-Abfragen zu erleichtern, wurde dem Tool in dieser Version die Ansicht für Hive-Auftragsoperatoren als neues Feature hinzugefügt. Sie müssen nur auf die die Scheitelpunkte des Auftragsdiagramms doppelklicken, um alle Operatoren im Scheitelpunkt anzuzeigen. Sie können auch auf einen bestimmten Operator zeigen, um weitere Details dazu anzuzeigen.
 
 ## Ausführen von Pig-Skripts
 
@@ -236,4 +236,4 @@ In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio mithilfe des Hado
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

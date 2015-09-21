@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="07/14/2015"
+   ms.date="09/08/2015"
    ms.author="liviodlc"/>
 
 #Automatisieren der Bereitstellung und Bereitstellungsaufhebung von Benutzern für SaaS-Anwendungen mit Azure Active Directory
@@ -25,7 +25,7 @@ Azure Active Directory (Azure AD) ermöglicht Ihnen das automatisierte Erstellen
 **Nachstehend finden Sie einige Beispiele für Aufgaben, die Sie mit diesem Feature ausführen können:**
 
 - Automatisches Erstellen neuer Konten in den richtigen SaaS-Apps für neue Benutzer, wenn diese Ihr Team verstärken.
-- Automatisches Entfernen von Konten aus SaaS-Apps, wenn Benutzer das Team verlassen.
+- Automatisches Deaktivieren von Konten aus SaaS-Apps, wenn Benutzer das Team verlassen.
 - Sicherstellen, dass die Identitäten in Ihren SaaS-Apps basierend auf Änderungen im Verzeichnis auf dem aktuellen Stand gehalten werden.
 - Bereitstellen von Nicht-Benutzerobjekten, z. B. Gruppen, für SaaS-Apps, die diese unterstützen.
 
@@ -108,4 +108,4 @@ Wenn Sie das Azure AD-Entwicklungsteam kontaktieren möchten, um Bereitstellungs
 
 [AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/14/2015" 
+	ms.date="09/09/2015" 
 	ms.author="awills"/>
 
 
@@ -154,17 +154,19 @@ Bei größeren Anwendungen ist es ratsam, Telemetriedaten vom Debuggen, Testen u
 
 
 
-## Hinzufügen der Nachverfolgung von Abhängigkeiten
+## Hinzufügen der Nachverfolgung von Abhängigkeiten und von Systemleistungsindikatoren
 
 [Abhängigkeitsmetriken](app-insights-dependencies.md) können sehr nützlich sein, um Leistungsprobleme zu diagnostizieren. Sie messen Aufrufe von Ihrer App an Datenbanken, REST-APIs und andere externe Komponenten.
 
 ![](./media/app-insights-asp-net/04-dependencies.png)
 
+Dieser Schritt ermöglicht außerdem [Berichte zu Leistungsindikatoren](app-insights-web-monitor-performance.md#system-performance-counters) wie z. B. CPU, Arbeitsspeicher, Netzwerkauslastung.
+
 #### Wenn Ihre App in IIS-Server ausgeführt wird
 
-Melden Sie sich auf Ihrem Server mit Administratorrechten an, und installieren Sie den [Application Insights-Statusmonitor](http://go.microsoft.com/fwlink/?LinkId=506648).
+Melden Sie sich auf dem Server mit Administratorrechten an, und installieren Sie den [Application Insights-Statusmonitor](http://go.microsoft.com/fwlink/?LinkId=506648).
 
-(Sie können den Statusmonitor auch zum [Instrumentieren einer Anwendung verwenden, die bereits ausgeführt wird](app-insights-monitor-performance-live-website-now.md), selbst wenn sie nicht mit dem SDK erstellt wurde.)
+(Sie können den Statusmonitor auch zum [Instrumentieren einer bereits ausgeführten App](app-insights-monitor-performance-live-website-now.md) verwenden, auch wenn diese nicht mit dem SDK erstellt wurde.)
 
 #### Wenn Ihre App eine Azure-Web-App ist
 
@@ -172,11 +174,15 @@ Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-
 
 ![In der Web-App: Einstellungen, Erweiterungen, Hinzufügen, Application Insights](./media/app-insights-asp-net/05-extend.png)
 
-(Die Erweiterung unterstützt nur Apps, die mit dem SDK erstellt wurden. Im Gegensatz zum Statusmonitor kann sie eine vorhandene App nicht instrumentieren.)
+(Die Erweiterung unterstützt nur Apps, die mit dem SDK erstellt wurden. Im Gegensatz zum Statusmonitor kann sie keine vorhandene App instrumentieren.)
+
+#### So überwachen Sie Azure Cloud Services-Rollen
+
+Es gibt auch ein [manuelles Verfahren zum Hinzufügen des Statusmonitors](app-insights-cloudservices.md).
 
 ## Verfügbarkeitswebtests
 
-[Richten Sie Webtests ein,][availability] um von außen zu testen, ob Ihre Anwendung aktiv ist und reagiert.
+[Richten Sie Webtests ein][availability], um von außen zu testen, ob Ihre Anwendung aktiv ist und reagiert.
 
 
 ![](./media/app-insights-asp-net/appinsights-10webtestresult.png)
@@ -220,4 +226,4 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

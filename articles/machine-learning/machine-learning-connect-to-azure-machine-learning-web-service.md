@@ -1,44 +1,44 @@
-<properties 
-	pageTitle="Verbindung mit einem Machine Learning-Webdienst | Microsoft Azure" 
-	description="Stellen Sie mit C# oder Python mithilfe eines Autorisierungsschlüssels eine Verbindung mit einem Azure Machine Learning-Webdienst her." 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="garyericson" 
-	manager="paulettm" 
+<properties
+	pageTitle="Verbindung mit einem Machine Learning-Webdienst | Microsoft Azure"
+	description="Stellen Sie mit C# oder Python mithilfe eines Autorisierungsschlüssels eine Verbindung mit einem Azure Machine Learning-Webdienst her."
+	services="machine-learning"
+	documentationCenter=""
+	authors="garyericson"
+	manager="paulettm"
 	editor="cgronlun" />
 
-<tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/17/2015" 
+<tags
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/09/2015" 
 	ms.author="derrickv" />
 
 
-# Herstellen einer Verbindung mit einem Azure Machine Learning-Webdienst 
-Die Azure Machine Learning-Entwicklungsumgebung ist eine Webdienst-API zum Erstellen von Vorhersagen aus Eingabedaten in Echtzeit oder im Stapelmodus. Sie verwenden Azure Machine Learning Studio zum Erstellen von Vorhersagen und zum Veröffentlichen eines Azure Machine Learning-Webdienstes.
+# Herstellen einer Verbindung mit einem Azure Machine Learning-Webdienst
+Die Azure Machine Learning-Entwicklungsumgebung ist eine Webdienst-API zum Erstellen von Vorhersagen aus Eingabedaten in Echtzeit oder im Stapelmodus. Sie verwenden Azure Machine Learning Studio zum Erstellen von Vorhersagen und zum Bereitstellen eines Azure Machine Learning-Webdiensts.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
-Informationen zum Erstellen und Veröffentlichen eines Azure Machine Learning-Webdiensts mit Studio finden Sie unter:
+Informationen zum Erstellen und Bereitstellen eines Azure Machine Learning-Webdiensts mit Studio finden Sie unter:
 
-- [Veröffentlichen eines Machine Learning-Webdiensts](machine-learning-publish-a-machine-learning-web-service.md)
+- [Bereitstellen eines Machine Learning-Webdiensts](machine-learning-publish-a-machine-learning-web-service.md)
 - [Erste Schritte mit ML Studio](http://azure.microsoft.com/documentation/videos/getting-started-with-ml-studio/)
 - [Azure-Machine Learning-Vorschau](https://studio.azureml.net/)
 - [Machine Learning Dokumentationscenter](http://azure.microsoft.com/documentation/services/machine-learning/)
 
 ## Azure Machine Learning-Webdienst ##
 
-Mit dem Azure Machine Learning (ML)-Webdienst kommunizieren externe Anwendungen in Echtzeit mit einem ML-Workflow-Bewertungsmodell. Ein ML-Webdienstaufruf gibt Ergebnisse an eine externe Anwendung zurück. Um einen ML Webdienstaufruf durchzuführen, übergeben Sie einen API-Schlüssel, der erstellt wird, wenn Sie eine Vorhersage veröffentlichen. Der ML-Webdienst basiert auf REST, einer verbreiteten Architektur für Webprogrammierungsprojekte.
+Mit dem Azure Machine Learning (ML)-Webdienst kommunizieren externe Anwendungen in Echtzeit mit einem ML-Workflow-Bewertungsmodell. Ein ML-Webdienstaufruf gibt Ergebnisse an eine externe Anwendung zurück. Zur Durchführung eines ML Webdienstaufrufs übergeben Sie einen API-Schlüssel, der beim Bereitstellen einer Vorhersage erstellt wird. Der ML-Webdienst basiert auf REST, einer verbreiteten Architektur für Webprogrammierungsprojekte.
 
 Azure Machine Learning verfügt über zwei Arten von Diensten:
 
-- Request-Response Service (RRS) - ein hochskalierbarer Webdienst mit niedriger Latenz, der eine Schnittstelle für zustandslose Modelle bereitstellt, die in ML Studio erstellt und veröffentlicht wurden.
+- Antwort-/Anfrage-Dienst (Request-Response Service, RRS): ein hochskalierbarer Webdienst mit niedriger Latenz, der eine Schnittstelle für zustandslose Modelle bereitstellt, die in ML Studio erstellt und bereitgestellt wurden.
 - Batch Execution Service (BES) – ein asynchroner Dienst für die Bewertung eines Stapels für Datensätze.
 
-Weitere Informationen zu Azure Machine Learning-Webdiensten finden Sie unter [Veröffentlichen von Azure Machine Learning-Webdiensten](machine-learning-publish-a-machine-learning-web-service.md).
+Weitere Informationen zu Azure Machine Learning-Webdiensten finden Sie unter [Bereitstellen von Azure Machine Learning-Webdiensten](machine-learning-publish-a-machine-learning-web-service.md).
 
 ## Abrufen eines Autorisierungsschlüssels für Azure Machine Learning ##
 Sie erhalten einen Webdienst-API-Schlüssel von einem ML-Webdienst. Sie können ihn über Microsoft Azure Machine Learning Studio oder über das Azure-Verwaltungsportal abrufen.
@@ -59,7 +59,7 @@ Sie erhalten einen Webdienst-API-Schlüssel von einem ML-Webdienst. Sie können 
 Sie können mit jeder Programmiersprache, die HTTP-Anforderungen und -Antworten unterstützt, eine Verbindung zu einem Azure Machine Learning-Webdienst herstellen. Sie können Beispiele in C#, Python und R auf einer für den Azure ML-Webdienst-Hilfeseite anzeigen.
 
 ### So zeigen Sie Azure ML Webdienst-API-Hilfeseiten an ###
-Wenn Sie einen Webdienst veröffentlichen, wird eine Azure ML-API-Hilfeseite erstellt. Weitere Informationen finden Sie unter [Azure Machine Learning - exemplarische Vorgehensweise - Veröffentlichen eines Webdiensts](machine-learning-walkthrough-5-publish-web-service.md).
+Wenn Sie einen Webdienst bereitstellen, wird eine Azure ML-API-Hilfeseite erstellt. Weitere Informationen finden Sie unter [Azure Machine Learning – exemplarische Vorgehensweise – Veröffentlichen eines Webdiensts](machine-learning-walkthrough-5-publish-web-service.md).
 
 
 **Anzeigen einer Azure ML-API-Hilfeseite** in Microsoft Azure Machine Learning Studio:
@@ -89,7 +89,7 @@ Für die Verbindung zu einem ML-Webdienst muss das NuGet-Paket **Microsoft.AspNe
 
 1. Veröffentlichen Sie das Experiment „Sample 1: Download dataset from UCI: Adult 2 class dataset“, Teil der Azure ML-Beispielauflistung.
 2. Weisen Sie "apiKey" den Schlüssel von einem Webdienst zu. Weitere Informationen finden Sie unter "Abrufen eines Autorisierungsschlüssels für Azure ML".
-3. Weisen Sie "serviceUri" die Anforderungs-URI zu. 
+3. Weisen Sie "serviceUri" die Anforderungs-URI zu.
 
 
 ### Python-Beispiel ###
@@ -103,7 +103,4 @@ Verwenden Sie zum Verbinden mit einem Azure ML-Webdienst die **urllib2**-Bibliot
 2. Weisen Sie "apiKey" den Schlüssel von einem Webdienst zu. Weitere Informationen finden Sie unter "Abrufen eines Autorisierungsschlüssels für Azure ML".
 3. Weisen Sie "serviceUri" die Anforderungs-URI zu. Weitere Informationen finden Sie unter "Abrufen einer Anforderungs-URI".
 
-	
- 
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

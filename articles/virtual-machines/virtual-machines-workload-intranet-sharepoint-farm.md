@@ -33,6 +33,8 @@ Das Hosten einer SharePoint-Intranetfarm in Azure-Infrastrukturdiensten ist ein 
 
 Im nächste Schritt richten Sie eine SharePoint-Intranetfarm für die Entwicklung bzw. zum Testen ein, die unter Azure gehostet wird.
 
+> [AZURE.NOTE]Microsoft hat die SharePoint Server 2016 IT Preview veröffentlicht. Damit Sie diese Vorschau einfach installieren und testen können, verwenden Sie ein Azure Virtual Machine-Katalogimage, auf dem SharePoint Server 2016 IT Preview und alle erforderlichen Komponenten vorinstalliert sind. Weitere Informationen finden Sie unter [Test the SharePoint Server 2016 IT Preview in Azure](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/) (in englischer Sprache).
+
 ## Erstellen einer unter Azure gehosteten SharePoint-Intranetfarm für die Entwicklung bzw. zum Testen
 
 Sie haben zwei Möglichkeiten, wie Sie eine Entwicklungs- bzw. Testumgebung für eine SharePoint-Farm unter Azure erstellen können:
@@ -124,4 +126,4 @@ Nach Abschluss der Konfiguration können Sie diese SharePoint-Farm gemäß den I
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

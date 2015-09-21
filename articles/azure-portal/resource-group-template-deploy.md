@@ -1,63 +1,33 @@
 <properties
-   pageTitle="Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage"
-	services="azure-resource-manager"
-	description="Verwenden Sie den Azure-Ressourcen-Manager, um eine Anwendung in Azure bereitzustellen. Eine Vorlage ist eine JSON-Datei und kann über das Portal, PowerShell, die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows oder REST verwendet werden."
-	documentationCenter="na"
-	authors="tfitzmac"
-	manager="wpickett"
-	editor=""/>
+   pageTitle="Bereitstellen von Ressourcen mit Ressourcen-Manager-Vorlagen | Microsoft Azure"
+   services="azure-resource-manager"
+   description="Verwenden Sie den Azure-Ressourcen-Manager, um Ressourcen in Azure bereitzustellen. Eine Vorlage ist eine JSON-Datei und kann über das Portal, PowerShell, die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows oder REST verwendet werden."
+   documentationCenter="na"
+   authors="tfitzmac"
+   manager="wpickett"
+   editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/20/2015"
-	ms.author="tomfitz"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/09/2015"
+   ms.author="tomfitz"/>
 
 # Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage
 
 In diesem Thema wird erläutert, wie Azure-Ressourcen-Manager-Vorlagen verwendet werden, um Ihre Anwendung in Azure bereitzustellen. Es wird gezeigt, wie Sie Ihre Anwendung mithilfe von Azure PowerShell, der Azure-Befehlszeilenschnittstelle, der REST-API oder dem Microsoft Azure-Vorschauportal bereitstellen können.
 
-Mit Azure-Ressourcen-Manager-Vorlagen können Sie schnell und einfach Ihre Anwendungen über eine deklarative JSON-Datei in Azure bereitstellen. In einer JSON-Vorlage können Sie mehrere Dienste bereitstellen, darunter beispielsweise Virtual Machines, Virtual Network, Storage, App Services und Datenbanken. Sie verwenden die gleiche Vorlage, um Ihre Anwendung während jeder Phase des Anwendungslebenszyklus wiederholt und konsistent bereitzustellen.
-
-Zur Vereinfachung der Verwaltung Ihrer Anwendung können Sie alle Ressourcen, die einen gemeinsamen Lebenszyklus aufweisen, in einer einzelnen Ressourcengruppe organisieren. Ressourcengruppen erleichtern Ihnen das gleichzeitige Bereitstellen, Aktualisieren und Löschen aller verwandten Ressourcen. In den meisten Fällen ist eine Ressourcengruppe einer einzelnen Anwendung oder einer Anwendungsebene (bei großen Anwendungen) zugeordnet. Die Ressource, die über eine Vorlage bereitgestellt wird, befindet sich in einer einzelnen Ressourcengruppe, sie kann aber Abhängigkeiten in anderen Ressourcengruppen enthalten.
-
-Sie können innerhalb einer Ressourcengruppe die Ausführung einer Bereitstellung verfolgen und den Status der Bereitstellung und Ausgaben der Vorlagenausführung anzeigen.
+Eine Einführung in den Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md). Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
 Wenn Sie eine Anwendung mit einer Vorlage bereitstellen, können Sie Parameterwerte angeben, um anzupassen, wie die Ressourcen erstellt werden. Sie geben Werte für diese Parameter entweder inline oder in einer Parameterdatei an.
-
-## Konzepte
-
-- Ressourcengruppe - Auflistung von Entitäten mit einem gemeinsam Lebenszyklus
-- Ressourcen-Manager-Vorlage - deklarative JSON-Datei, die den Zielstatus einer Bereitstellung definiert
-- Bereitstellung - Vorgang, bei dem Ausführung einer Ressourcen-Manager-Vorlage verfolgt wird
-- Parameter - Werte, die vom Benutzer angegeben werden, der die Bereitstellung ausführt, um bereitgestellte Ressourcen anzupassen
-- Parameterdatei - JSON-Datei, in der Parameternamen und -werte speichert sind 
-
-## Szenarios
-
-Mit Ressourcen-Manager-Vorlagen können Sie folgende Aktionen ausführen:
-
-- Bereitstellen komplexer Anwendungen mit mehreren Ebenen, wie z. B. Microsoft SharePoint
-- Konsistentes und wiederholtes Bereitstellen Ihrer Anwendungen
-- Unterstützen von Entwicklungs-, Test- und Produktionsumgebungen
-- Anzeigen des Status von Bereitstellungen
-- Behandeln von Bereitstellungsfehlern mithilfe von Überwachungsprotokollen der Bereitstellung
-
-## Bereitstellen mit dem Vorschauportal
-
-Wissen Sie was? Jede Anwendung, die Sie über das [Vorschauportal](https://portal.azure.com/) erstellt haben, wird in einer Azure-Ressourcen-Manager-Vorlage gesichert. Erstellen Sie einfach einen virtuellen Computer, ein virtuelles Netzwerk, ein Speicherkonto, einen App Service der eine Datenbank über das Portal, und Sie können die Vorteile des Azure-Ressourcen-Managers ohne zusätzlichen Aufwand nutzen. Klicken Sie einfach auf das Symbol **Neu**, und Sie können direkt mit der Bereitstellung einer Anwendung über den Azure-Ressourcen-Manager beginnen.
-
-![Neu](./media/resource-group-template-deploy/new.png)
-
-Weitere Informationen zum Verwenden des Portals mit dem Azure-Ressourcen-Manager finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](resource-group-portal.md).
 
 
 ## Bereitstellen mit PowerShell
 
-Wenn Sie Azure PowerShell noch nicht mit dem Ressourcen-Manager verwendet haben, finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md) weitere Informationen.
+Sie können die Azure PowerShell-Module herunterladen und installieren, indem Sie den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) ausführen.
 
 1. Melden Sie sich bei Ihrem Azure-Konto an. Nach der Eingabe Ihrer Anmeldeinformationen gibt der Befehl die Informationen zu Ihrem Konto zurück.
 
@@ -171,13 +141,13 @@ Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht mit dem Ressourcen-Mana
    
      Sie haben die folgenden Möglichkeiten zum Angeben der Parameterwerte:
 
-     - Verwenden Sie Inlineparameter und eine lokale Vorlage.
+     - Verwenden Sie Inlineparameter und eine lokale Vorlage. Jeder Parameter weist das Format `"ParameterName": { "value": "ParameterValue" }` auf. Das folgende Beispiel zeigt die Parameter mit Escapezeichen.
 
-             azure group deployment create -f <PathToTemplate> {"ParameterName":"ParameterValue"} -g ExampleResourceGroup -n ExampleDeployment
+             azure group deployment create -f <PathToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup -n ExampleDeployment
 
      - Verwenden Sie Inlineparameter und einen Link zu einer Vorlage.
 
-             azure group deployment create --template-uri <LinkToTemplate> {"ParameterName":"ParameterValue"} -g ExampleResourceGroup -n ExampleDeployment
+             azure group deployment create --template-uri <LinkToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup -n ExampleDeployment
 
      - Verwenden Sie eine Parameterdatei. Informationen über die Vorlagendatei finden Sie unter [Parameterdatei](./#parameter-file).
     
@@ -236,6 +206,15 @@ Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht mit dem Ressourcen-Mana
          GET https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
            <common headers>
 
+## Bereitstellen mit dem Vorschauportal
+
+Wissen Sie was? Jede Anwendung, die Sie über das [Vorschauportal](https://portal.azure.com/) erstellt haben, wird in einer Azure-Ressourcen-Manager-Vorlage gesichert. Erstellen Sie einfach einen virtuellen Computer, ein virtuelles Netzwerk, ein Speicherkonto, einen App Service der eine Datenbank über das Portal, und Sie können die Vorteile des Azure-Ressourcen-Managers ohne zusätzlichen Aufwand nutzen. Klicken Sie einfach auf das Symbol **Neu**, und Sie können direkt mit der Bereitstellung einer Anwendung über den Azure-Ressourcen-Manager beginnen.
+
+![Neu](./media/resource-group-template-deploy/new.png)
+
+Weitere Informationen zum Verwenden des Portals mit dem Azure-Ressourcen-Manager finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](resource-group-portal.md).
+
+
 ## Parameterdatei
 
 Bei der Verwendung einer Parameterdatei zum Übergeben von Parameterwerten an Ihre Vorlage während der Bereitstellung müssen Sie eine JSON-Datei in einem Format wie im folgenden Beispiel erstellen.
@@ -266,4 +245,4 @@ Die Parameterdatei darf nicht größer als 64 KB sein.
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

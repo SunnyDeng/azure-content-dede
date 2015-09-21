@@ -12,7 +12,7 @@
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
-	ms.topic="hero-article"
+	ms.topic="hero-article" 
 	ms.date="09/03/2015"
 	ms.author="anhoh"/>
 
@@ -34,7 +34,7 @@ In diesem Artikel werden die folgenden Szenarien behandelt:
 
 Sie haben keine Zeit, um das Lernprogramm abzuschließen, und möchten nur die Arbeitslösung abrufen? Kein Problem. Die vollständige Lösung ist auf [GitHub](https://github.com/Azure/azure-documentdb-net/tree/master/tutorials/get-started) verfügbar. In [Abrufen der vollständigen Lösung](#GetSolution) finden Sie eine Kurzanleitung.
 
-Sobald Sie das Tutorial abgeschlossen haben, verwenden Sie bitte die Abstimmungsschaltflächen am Anfang oder Ende des Themas, um uns Ihre Meinung mitzuteilen. Dieses Thema wird aktiv aktualisiert, daher benötigen wir Ihr Feedback, um es stetig zu verbessern. Wenn wir mit Ihnen Kontakt aufnehmen sollen, können Sie Ihre E-Mail-Adresse im Kommentar hinterlassen.
+Wir aktualisieren und verbessern dieses Thema häufig basierend auf Ihrem Feedback. Verwenden Sie bitte nach Abschluss des Lernprogramms die Abstimmungsschaltflächen oben und unten auf dieser Seite, und geben Sie auch Feedback zu gewünschten Verbesserungen an. Wenn wir mit Ihnen Kontakt aufnehmen sollen, können Sie Ihre E-Mail-Adresse im Kommentar hinterlassen.
 
 ## Voraussetzungen
 
@@ -480,4 +480,4 @@ Um die Verweise auf das DocumentDB .NET SDK in Visual Studio 2013 wiederherzust
 [keys]: media/documentdb-get-started/keys.png
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

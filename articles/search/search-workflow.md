@@ -62,7 +62,7 @@ Daten, die Sie in einen Index hochladen, müssen dem im vorherigen Schritt defin
 
 Es gibt verschiedene Möglichkeiten zum Laden von Dokumenten, zurzeit ist jedoch für alle Methoden eine API erforderlich. Für die meisten Prototypen ist dieser Schritt in Bezug auf den Codierungsaufwand möglicherweise der zeitraubendste. Optionen werden weiter unten in diesem Artikel beschrieben.
 
-> [AZURE.NOTE]Denken Sie daran, dass im Shared-Tarif eine Begrenzung von 10.000 Dokumente pro Index gilt. Verringern Sie Ihr Dataset so, dass die Grenzwerte nicht erreicht werden. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](https://msdn.microsoft.com/library/dn798934.aspx).
+> [AZURE.NOTE]Denken Sie daran, dass im Shared-Tarif eine Begrenzung von 10.000 Dokumente pro Index gilt. Verringern Sie Ihr Dataset so, dass die Grenzwerte nicht erreicht werden. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen](search-limits-quotas-capacity.md).
 
 #### Laden von Daten in einen Index
 
@@ -190,4 +190,4 @@ Denken Sie daran, dass nur im Standard-Tarif eine Skalierung durchgeführt werde
 <!--Image references-->
 [1]: ./media/search-workflow/AzSearch-Workflow.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

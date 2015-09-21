@@ -2,7 +2,7 @@
 	pageTitle="Hinzufügen des Application Insights SDK zur Überwachung der ASP.NET-App | Microsoft Azure"
 	description="Analysieren Sie die Auslastung, Verfügbarkeit und Leistung Ihrer lokalen oder Microsoft Azure-Webanwendung mit Application Insights."
 	services="application-insights"
-	documentationCenter=".net"
+    documentationCenter=".net"
 	authors="alancameronwills"
 	manager="douge"/>
 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/05/2015"
+	ms.date="09/09/2015"
 	ms.author="awills"/>
 
 
@@ -106,41 +106,49 @@ Suchen Sie nach Daten in der Übersichtsdiagrammen. Zuerst sehen Sie lediglich e
 
 ![Klicken Sie, um weitere Daten anzuzeigen](./media/app-insights-start-monitoring-app-health-usage/12-first-perf.png)
 
-Klicken Sie sich durch ein beliebiges Diagramm, um ausführlichere Metriken anzuzeigen. [Hier finden Sie weitere Informationen zu Metriken.][perf]
-
-Stellen Sie jetzt Ihre Anwendung bereit, und sehen Sie zu, wie Daten gesammelt werden.
-
-
-Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass Ihnen innerhalb von wenigen Sekunden Daten angezeigt werden. Sobald Sie Ihre Anwendung bereitstellen, sammeln sich die Daten langsamer an.
+Klicken Sie sich durch ein beliebiges Diagramm, um ausführlichere Metriken anzuzeigen. [Weitere Informationen zu Metriken.][perf]
 
 #### Sie sehen keine Daten?
 
 * Öffnen Sie die Kachel [Suche][diagnostic], um einzelne Ereignisse anzuzeigen.
 * Verwenden Sie die Anwendung, und öffnen Sie verschiedene Seiten, damit einige Telemetriedaten generiert werden.
-* Warten Sie einige Sekunden, und klicken Sie dann auf **Aktualisieren**. Diagramme aktualisieren sich in regelmäßigen Abständen selbst, doch Sie können sie auch manuell aktualisieren, wenn Sie auf anzuzeigende Daten warten.
+* Warten Sie einige Sekunden, und klicken Sie auf **Aktualisieren**. Diagramme aktualisieren sich in regelmäßigen Abständen selbst, doch Sie können sie auch manuell aktualisieren, wenn Sie auf anzuzeigende Daten warten.
 * Informationen hierzu finden Sie unter [Problembehandlung][qna].
+
+## Veröffentlichen der App
+
+Stellen Sie jetzt Ihre Anwendung für IIS bereit, und beobachten Sie, wie die Daten gesammelt werden.
+
+Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass Ihnen innerhalb von wenigen Sekunden Daten angezeigt werden. Sobald Sie Ihre Anwendung bereitstellen, sammeln sich die Daten langsamer an.
+
 
 #### Probleme auf dem Buildserver?
 
 Weitere Informationen finden Sie in [diesem Artikel zur Problembehandlung](app-insights-troubleshoot-faq.md#NuGetBuild).
 
-## 5\. Hinzufügen der Nachverfolgung von Abhängigkeiten
+## 5\. Hinzufügen der Nachverfolgung von Abhängigkeiten und von Leistungsindikatoren
 
 Das SDK benötigt beim Zugriff auf bestimmte Daten etwas Hilfe. Dieser zusätzliche Schritt ist insbesondere erforderlich, um eine automatische Messung der von Ihrer App ausgeführten Aufrufe von Datenbanken, REST-APIs und anderen externen Komponenten zu ermöglichen. Diese Abhängigkeitsmetriken können sehr nützlich sein, um Leistungsprobleme zu diagnostizieren.
 
+Dieser Schritt ermöglicht außerdem [Berichte zu Leistungsindikatoren](app-insights-web-monitor-performance.md#system-performance-counters) wie z. B. CPU, Arbeitsspeicher, Netzwerkauslastung.
+
 #### Wenn Ihre App in IIS-Server ausgeführt wird
 
-Melden Sie sich auf Ihrem Server mit Administratorrechten an, und installieren Sie den [Application Insights-Statusmonitor](http://go.microsoft.com/fwlink/?LinkId=506648).
+Melden Sie sich auf dem Server mit Administratorrechten an, und installieren Sie den [Application Insights-Statusmonitor](http://go.microsoft.com/fwlink/?LinkId=506648).
 
-(Sie können den Statusmonitor auch zum [Instrumentieren einer bereits ausgeführten Anwendung](app-insights-monitor-performance-live-website-now.md) verwenden, auch wenn diese nicht mit dem SDK erstellt wurde.)
+(Sie können den Statusmonitor auch zum [Instrumentieren einer bereits ausgeführten App](app-insights-monitor-performance-live-website-now.md) verwenden, auch wenn diese nicht mit dem SDK erstellt wurde.)
 
 #### Wenn Ihre App eine Azure-Web-App ist
 
 Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-Erweiterung hinzu.
 
-![Klicken Sie in der Web-App auf "Extras", "Leistungsüberwachung", "Hinzufügen" und "Application Insights".](./media/app-insights-start-monitoring-app-health-usage/05-extend.png)
+![In der Web-App: „Einstellungen“ > „Erweiterungen“ > „Hinzufügen“ > „Application Insights“](./media/app-insights-start-monitoring-app-health-usage/05-extend.png)
 
-(Die Erweiterung unterstützt nur Apps, die mit dem SDK erstellt wurden. Im Gegensatz zum Statusmonitor kann sie keine vorhandene App instrumentieren.)
+(Die Erweiterung unterstützt nur Apps, die mit dem SDK erstellt und in Azure veröffentlicht wurden. Im Gegensatz zum Statusmonitor kann sie keine vorhandene App instrumentieren.)
+
+#### Wenn es sich um ein Azure-Clouddienstprojekt handelt
+
+[Hinzufügen von Skripts zu Web- und Workerrollen](app-insights-cloudservices.md)
 
 ## 6\. Hinzufügen der clientseitigen Überwachung
 
@@ -152,7 +160,7 @@ Sie können zudem eigenen Code schreiben, um nachzuverfolgen, wie Ihre Benutzer 
 
 Wenn in Ihrer App Webseiten angezeigt werden, fügen Sie jeder Seite einen JavaScript-Codeausschnitt hinzu. Verwenden Sie den Code aus Ihrer Application Insights-Ressource:
 
-![Öffnen Sie in Ihrer Web-App "Schnellstart", und klicken Sie auf die Option zum Abrufen von Code für die Überwachung von Webseiten](./media/app-insights-start-monitoring-app-health-usage/02-monitor-web-page.png)
+![Öffnen Sie in Ihrer Web-App „Schnellstart“, und klicken Sie auf die Option zum Abrufen des Codes für die Überwachung von Webseiten.](./media/app-insights-start-monitoring-app-health-usage/02-monitor-web-page.png)
 
 Beachten Sie, dass der Code den Instrumentationsschlüssel enthält, der Ihre Anwendungsressource identifiziert.
 
@@ -160,7 +168,7 @@ Beachten Sie, dass der Code den Instrumentationsschlüssel enthält, der Ihre An
 
 #### Wenn Ihre Clients Geräte-Apps sind
 
-Wenn Ihre Anwendung für Clients wie Smartphones oder andere Geräte verwendet wird, fügen Sie Ihrer Geräte-App das [entsprechende SDK](app-insights-platforms.md) hinzu.
+Wenn Ihre Anwendung für Clients wie Smartphones oder andere Geräte verwendet wird, fügen Sie der Geräte-App das [entsprechende SDK](app-insights-platforms.md) hinzu.
 
 Wenn Sie das Client-SDK mit dem gleichen Instrumentationsschlüssel konfigurieren wie das Server-SDK, werden die beiden Datenströme integriert, damit Sie sie zusammen anzeigen können.
 
@@ -240,4 +248,4 @@ Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithi
 [roles]: app-insights-resources-roles-access-control.md
 [start]: app-insights-get-started.md
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

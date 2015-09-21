@@ -451,7 +451,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Das Gebietsschema der App auf dem Client. Falls nicht explizit im Telemetrieelement enthalten, wird sie durch die Verarbeitung des Benutzer-Agent-Felds bestimmt. 
 
-    *Beispiele*<br/> ru<br/>de-de<br/>de-DE<br/>unbekannt
+    *Beispiele*<br/> ru<br/>de-DE<br/>de-DE<br/>unbekannt
 
 **machineName**
 
@@ -680,6 +680,18 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Ein eindeutiger Bezeichner, der ein Konto innerhalb der App definiert. Wird vom Entwickler angegeben. 
 
+### Benutzerdefinierte Metriken
+
+    context.custom.metrics.<metric-name>
+
+      double value
+      double count
+      double min
+      double max
+      double stdDev
+      double sampledValue
+      double sum
+
 
 ## remotedependency
 
@@ -707,7 +719,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Der Name der Remoteabhängigkeit. 
 
-    *Ableitung:* Standardisierung zu „&lt;telemetryType.name&gt;“
+    *Ableitung*: Standardisierung zu "&lt;telemetryType.name&gt;"
 
 **remoteDependencyType**
 
@@ -754,7 +766,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Ein Indikator, ob die Anforderung erfolgreich ist. Ein Antwortcode in den 200-ern wird als Erfolg gewertet. 
 
-    *Standard:* Bei NULL auf „true“ festgelegt.
+    *Standard*: Bei NULL auf "true" festgelegt.
 
 
 ## sessionmetric
@@ -813,7 +825,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Das erste Ereignis der Sitzung. Dieses wird aus "event.name" erstellt und ist für die Segmentierung/Aggregation für "sessionMetric"-Metriken verfügbar. 
 
-    *Ableitung:* Erstellt aus „event.name“.
+    *Ableitung*: Erstellt aus "event.name".
 
 **entryUrl**
 
@@ -821,7 +833,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Die erste URL der Sitzung. Diese wird aus "urlData.base" erstellt und ist als Segmentierung/Aggregation für "sessionMetric"-Metriken verfügbar. 
 
-    *Ableitung:* Erstellt aus „&lt;telemetryType&gt;.Url“.
+    *Ableitung*: Erstellt aus "&lt;telemetryType&gt;.Url"
 
 **eventCount**
 
@@ -841,7 +853,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Das letzte Ereignis der Sitzung. Dieses wird aus "event.name" erstellt und ist für die Segmentierung/Aggregation für "sessionMetric"-Metriken verfügbar. 
 
-    *Ableitung:* Erstellt aus „event.name“.
+    *Ableitung*: Erstellt aus "event.name".
 
 **exitUrl**
 
@@ -849,7 +861,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Das letzte URL der Sitzung. Diese wird aus "urlData.base" erstellt und ist als Segmentierung/Aggregation für "sessionMetric"-Metriken verfügbar. 
 
-    *Ableitung:* Erstellt aus „&lt;telemetryType&gt;.Url“.
+    *Ableitung*: Erstellt aus "&lt;telemetryType&gt;.Url"
 
 **pageBounceCount**
 
@@ -857,7 +869,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Die Anzahl der Bounce-Sitzungen, die dieses "sessionMetric"-Telemetrieelement darstellt. Eine Bounce-Sitzung ist eine Sitzung, die basierend auf einem Telemetrieelement mit einzelner Ansicht erstellt wird. 
 
-    *Ableitung:* Wenn „sessionMetric.viewCount + sessionMetric.requestCount = 1“, dann 1, andernfalls 0.
+    *Ableitung*: Wenn "sessionMetric.viewCount + sessionMetric.requestCount = 1", dann 1, andernfalls 0.
 
 **pageCount**
 
@@ -1009,7 +1021,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Ein Teil der Verweis-URL ohne Host- und Abfrageparameter. Dies ist der Stamm-URI. Dieser Wert kann für Segmentierung/Aggregation verwendet werden. 
 
-    *Ableitung:* Siehe Anhang zur URL-Transformation
+    *Ableitung*: Siehe Anhang zur URL-Transformation
 
 **referrerData.hashTag**
 
@@ -1017,7 +1029,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Der Text des Hashtags der Verweis-URL. 
 
-    *Ableitung:* Siehe Anhang zur URL-Transformation
+    *Ableitung*: Siehe Anhang zur URL-Transformation
 
 **referrerData.host**
 
@@ -1025,7 +1037,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Der Host der Verweis-URL. Wenn die URL ein lokaler URI ist, wird dieser leer dargestellt. 
 
-    *Ableitung:* Siehe Anhang zur URL-Transformation
+    *Ableitung*: Siehe Anhang zur URL-Transformation
 
 **referrerData.port**
 
@@ -1033,7 +1045,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Der Port der Verweis-URL, wenn die vollständige URL angezeigt wird. Andernfalls ist er leer. 
 
-    *Ableitung:* Siehe Anhang zur URL-Transformation
+    *Ableitung*: Siehe Anhang zur URL-Transformation
 
 **referrerData.protocol**
 
@@ -1041,7 +1053,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Das Protokoll (HTTP, FTP usw.) der Verweis-URL. 
 
-    *Ableitung:* Siehe Anhang zur URL-Transformation
+    *Ableitung*: Siehe Anhang zur URL-Transformation
 
     *Beispiele*<br/> http<br/>https
 
@@ -1051,7 +1063,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Ein Array von Abfrageparameternamen der Verweis-URL. 
 
-    *Ableitung:* Siehe Anhang zur URL-Transformation
+    *Ableitung*: Siehe Anhang zur URL-Transformation
 
 **referrerData.queryParameters.value**
 
@@ -1059,7 +1071,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Ein Array von Abfrageparameterwerten als Ergebnis der Analyse der Verweis-URL. 
 
-    *Ableitung:* Siehe Anhang zur URL-Transformation
+    *Ableitung*: Siehe Anhang zur URL-Transformation
 
 
 
@@ -1069,4 +1081,4 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * [Fortlaufender Export](app-insights-export-telemetry.md)
 * [Codebeispiele](app-insights-export-telemetry.md#code-samples)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

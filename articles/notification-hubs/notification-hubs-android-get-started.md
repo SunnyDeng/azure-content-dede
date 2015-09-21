@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Notification Hubs | Microsoft Azure"
-	description="In diesem Tutorial erfahren Sie, wie Sie mithilfe von Azure Notification Hubs Pushbenachrichtigungen an Android-Geräte senden."
+	pageTitle="Erste Schritte mit Azure Notification Hubs für Android-Apps | Microsoft Azure"
+	description="In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs Pushbenachrichtigungen an Android-Geräte senden."
 	services="notification-hubs"
 	documentationCenter="android"
 	authors="wesmc7777"
@@ -12,10 +12,10 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="hero-article"
-	ms.date="09/01/2015"
+	ms.date="09/03/2015"
 	ms.author="wesmc"/>
 
-# Erste Schritte mit Notification Hubs
+# Erste Schritte mit Notification Hubs für Android-Apps
 
 [AZURE.INCLUDE [Notification-Hubs-Auswahl-Erste-Schritte](../../includes/notification-hubs-selector-get-started.md)]
 
@@ -530,4 +530,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [Benachrichtigen von Benutzern mit Benachrichtigungshubs]: notification-hubs-aspnet-backend-android-notify-users.md
 [Verwenden von Benachrichtigungshubs zum Übermitteln von Nachrichten]: notification-hubs-aspnet-backend-android-breaking-news.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

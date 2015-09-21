@@ -2,7 +2,7 @@
 	pageTitle="Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites | Microsoft Azure"
 	description="Richten Sie Webtests in Application Insights ein. Erhalten Sie Benachrichtigungen, wenn eine Website nicht mehr zur Verfügung steht oder langsam reagiert."
 	services="application-insights"
-	documentationCenter=""
+    documentationCenter=""
 	authors="alancameronwills"
 	manager="douge"/>
 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="07/08/2015"
+	ms.date="09/08/2015"
 	ms.author="awills"/>
 
 # Überwachen der Verfügbarkeit und Reaktionsfähigkeit von Websites
@@ -218,7 +218,7 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
 * *Kann ich Code aus meinem Webtest aufrufen?*
 
-    Nein. Die Schritte des Tests müssen in der Webtest-Datei enthalten sein.
+    Nein. Die Schritte des Tests müssen in der Webtest-Datei enthalten sein. Es gibt eine Reihe von hilfreichen Plug-Ins.
 
 ## <a name="video"></a>Video
 
@@ -240,4 +240,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 [qna]: app-insights-troubleshoot-faq.md
 [start]: app-insights-get-started.md
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

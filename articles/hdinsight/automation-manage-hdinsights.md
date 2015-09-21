@@ -7,16 +7,14 @@
 	manager="eamono"
 	editor=""/>
 
-
 <tags
 	ms.service="HDInsight"
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/13/2015"
+	ms.date="08/25/2015"
 	ms.author="elcooper"/>
-
 
 
 
@@ -24,7 +22,7 @@
 Dieses Handbuch bietet eine Einführung zum Azure Automation-Dienst und wie dieser verwendet werden kann, um die Verwaltung von Clustern zu vereinfachen und allgemeine Aufgaben in Azure HDInsight zu automatisieren.
 
 ## Was ist Azure Automation?
-[Azure Automation](http://azure.microsoft.com/services/automation/) ist ein Azure-Dienst für die Vereinfachung der Cloudverwaltung durch eine Prozessautomatisierung. Mithilfe von Azure Automation können manuelle, häufig wiederholte, lang andauernde und fehleranfällige Aufgaben automatisiert werden, um die Zuverlässigkeit und Effizienz für Ihre Organisation zu erhöhen und die Amortisierungszeit zu verkürzen.
+[Azure Automation](http://azure.microsoft.com/services/automation/) ist ein Azure-Dienst für die Vereinfachung der Cloud- und Rechenzentrumsverwaltung durch eine Prozessautomatisierung. Mithilfe von Azure Automation können manuelle, häufig wiederholte, lang andauernde und fehleranfällige Aufgaben automatisiert werden, um die Zuverlässigkeit und Effizienz für Ihre Organisation zu erhöhen und die Amortisierungszeit zu verkürzen.
 
 Azure Automation bietet ein äußerst zuverlässiges, hoch verfügbares Workflow-Ausführungsmodul, das sich durch Skalierung an Ihre Anforderungen anpasst. In Azure Automation können Prozesse manuell, von Systemen von Drittanbietern oder in geplanten Intervallen gestartet werden, damit Aufgaben genau im Bedarfsfall ausgeführt werden.
 
@@ -46,4 +44,4 @@ Nun, da Sie die Grundlagen von Azure Automation kennen und wissen, wie es zum Ve
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

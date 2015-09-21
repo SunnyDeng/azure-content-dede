@@ -35,6 +35,8 @@ Sie können diese Farmkonfiguration verwenden, um höhere Clientlasten, Hochverf
 
 Konfigurationsdetails zu diesen beiden Farmen finden Sie unter [Konfigurationsdetails zur SharePoint-Serverfarm](virtual-machines-sharepoint-farm-config-azure-preview.md).
 
+> [AZURE.NOTE]Microsoft hat die SharePoint Server 2016 IT Preview veröffentlicht. Damit Sie diese Vorschau einfach installieren und testen können, verwenden Sie ein Azure Virtual Machine-Katalogimage, auf dem SharePoint Server 2016 IT Preview und alle erforderlichen Komponenten vorinstalliert sind. Weitere Informationen finden Sie unter [Test the SharePoint Server 2016 IT Preview in Azure](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/) (in englischer Sprache).
+
 ## Schrittweise Anleitung zur Konfiguration
 
 Gehen Sie wie folgt vor, um eine SharePoint-Farm mit der Vorlage "SharePoint-Serverfarm" zu erstellen:
@@ -83,7 +85,7 @@ Hinweise:
 
 ## Azure Resource Manager
 
-Die SharePoint-Serverfarm-Funktion des Azure-Vorschauportals erstellt virtuelle Computer in der Dienstverwaltung. Weitere Informationen zum Erstellen von SharePoint Server 2013-Farmen im Ressourcen-Manager finden Sie unter [Bereitstellen von SharePoint-Farmen mit Azure-Ressourcen-Manager-Vorlagen](virtual-machines-workload-template-sharepoint.md).
+Die SharePoint-Serverfarm-Funktion des Azure-Vorschauportals erstellt virtuelle Computer mit dem klassischen Bereitstellungsmodell. Weitere Informationen zum Erstellen von SharePoint Server 2013-Farmen mit dem Ressourcen-Manager finden Sie unter [Bereitstellen von SharePoint-Farmen mit Azure-Ressourcen-Manager-Vorlagen](virtual-machines-workload-template-sharepoint.md).
 
 ## Zusätzliche Ressourcen
 
@@ -95,4 +97,4 @@ Die SharePoint-Serverfarm-Funktion des Azure-Vorschauportals erstellt virtuelle 
 
 [In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

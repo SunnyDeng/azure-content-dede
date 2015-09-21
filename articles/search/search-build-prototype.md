@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="07/08/2015" 
+	ms.date="09/08/2015" 
 	ms.author="heidist"/>
 
 # Erstellen einer Prototypenanwendung für Azure Search
@@ -80,7 +80,7 @@ Die entsprechenden Dateien befinden sich standardmäßig im Projektmappenordner:
 
 Wenn Sie Ihre Daten in JSON-Dateien speichern können, können Sie die vorhandenen Dateien mit Ihren Daten überschreiben und anschließend die Anwendung ausführen, um einen Index zu erstellen und zu laden. Durch die Aufteilung der Daten auf mehrere Dateien lässt sich ein Batch-Uploadvorgang veranschaulichen.
 
-Daten können unter anderem auch mit einem Indexer geladen werden. Hierzu wird entweder eine Azure DocumentDB-Datenquelle oder eine Azure SQL-Datenbank-Datenquelle benötigt. Beispielcode für weitere Methoden zum Laden von Daten finden Sie bei MSDN in der [Liste mit Videos und Lernprogrammen für Azure Search](https://msdn.microsoft.com/library/azure/dn818681.aspx).
+Daten können unter anderem auch mit einem Indexer geladen werden. Hierzu wird entweder eine Azure DocumentDB-Datenquelle oder eine Azure SQL-Datenbank-Datenquelle benötigt. Beispielcode für weitere Methoden zum Laden von Daten finden Sie bei MSDN in der [Liste mit Videos und Lernprogrammen für Azure Search](search-video-demo-tutorial-list.md).
 
 ### Bearbeiten der Abfrage
 
@@ -133,4 +133,4 @@ Weitere Informationen finden Sie unter folgenden Links:
 [1]: ./media/search-build-prototype/azsearch-datafiles.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

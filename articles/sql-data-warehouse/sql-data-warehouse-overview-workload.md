@@ -1,20 +1,20 @@
 <properties
    pageTitle="Data Warehouse-Workload"
-	description="Die Flexibilität von SQL Data Warehouse ermöglicht Ihnen das Vergrößern, Verkleinern oder Anhalten der Rechenleistung mithilfe eines Schiebereglers für Data Warehouse-Einheiten (DWUs). Dieser Artikel beschreibt die Data Warehouse-Metriken und deren Beziehung zu DWUs."
-	services="sql-data-warehouse"
-	documentationCenter="NA"
-	authors="barbkess"
-	manager="jhubbard"
-	editor=""/>
+   description="Die Flexibilität von SQL Data Warehouse ermöglicht Ihnen das Vergrößern, Verkleinern oder Anhalten der Rechenleistung mithilfe eines Schiebereglers für Data Warehouse-Einheiten (DWUs). Dieser Artikel beschreibt die Data Warehouse-Metriken und deren Beziehung zu DWUs."
+   services="sql-data-warehouse"
+   documentationCenter="NA"
+   authors="barbkess"
+   manager="jhubbard"
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-services"
-	ms.date="05/23/2015"
-	ms.author="barbkess;JRJ@BigBangData.co.uk"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/04/2015"
+   ms.author="barbkess;twounder;JRJ@BigBangData.co.uk"/>
 
 # Data Warehouse-Workload
 Ein Data Warehouse-Workload bezieht sich auf alle Vorgänge, die für ein Data Warehouse ablaufen müssen. Der Data Warehouse-Workload umfasst den gesamten Prozess des Ladens von Daten in das Warehouse, das Durchführen der Analyse und die Berichterstellung für das Data Warehouse, das Verwalten von Daten im Data Warehouse und das Exportieren von Daten aus dem Data Warehouse. Die Tiefe und Breite dieser Komponenten entsprechen häufig dem Reifegrad des Data Warehouse.
@@ -37,7 +37,7 @@ Das Laden von Daten ist ein großer Teil des Data Warehouse-Workloads. Unternehm
 
 - Normalerweise wird er Prozess des Ladens als ETL bezeichnet: Extrahieren, Transformieren und Laden. Daten müssen in der Regel umgewandelt (transformiert) werden, damit sie mit anderen Daten im Data Warehouse konsistent sind. Früher haben Unternehmen dedizierte ETL-Server für Transformationen verwendet. Jetzt – mit der schnellen umfangreichen parallelen Verarbeitung – können Sie Daten zuerst in SQL Data Warehouse laden und dann die Transformationen ausführen. Dieser Prozess wird als Extrahieren, Laden und Transformieren (ELT) bezeichnet und wird ein neuer Standard für die Data Warehouse-Workloads.
 
-> [AZURE-HINWEIS] Mit SQL Server CTP2 können Sie jetzt Analysen in Echtzeit für eine OLTP-Tabelle ausführen. Dies ist kein Ersatz für ein Data Warehouse zum Speichern und Analysieren von Daten, stellt aber eine Möglichkeit für die Analyse in Echtzeit bereit.
+> [AZURE.NOTE]Mit SQL Server CTP2 können Sie jetzt Analysen in Echtzeit für eine OLTP-Tabelle ausführen. Dies ist kein Ersatz für ein Data Warehouse zum Speichern und Analysieren von Daten, stellt aber eine Möglichkeit für die Analyse in Echtzeit bereit.
  
 ### Berichterstellung und Analyseabfragen
 Berichterstellung und Analyseabfragen werden häufig in die Kategorien klein, mittel und groß unterteilt – basierend auf einer Reihe von Kriterien, aber in der Regel zeitbasiert. In den meisten Data Warehouse gibt es gemischte Workloads mit kurzen und lang andauernden Abfragen. In jedem Fall ist es wichtig, bestimmen diese Mischung und ihre Häufigkeit (stündlich, täglich, am Monatsende, am Quartalsende usw.) zu bestimmen. Es ist wichtig zu verstehen, dass gemischte Abfrageworkloads in Verbindung mit der Parallelität zu einer ordnungsgemäßen Kapazitätsplanung für ein Data Warehouse führt.
@@ -66,10 +66,10 @@ Informationen zu den ersten Schritten zum Entwickeln Ihres Data Warehouse finden
 <!--Image references-->
 
 <!--Article references-->
-[Entwicklungsübersicht]: sql-data-warehouse-overview-development.md
+[Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
 
 <!--MSDN references-->
 
 <!--Other web references-->
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

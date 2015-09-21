@@ -1,7 +1,5 @@
 <properties pageTitle="Tutorial: Azure Active Directory-Integration mit Central Desktop | Microsoft Azure" description="Erfahren Sie, wie Sie Central Desktop mit Azure Active Directory verwenden können, um einmaliges Anmelden, die automatisierte Bereitstellung u. v. m. zu aktivieren." services="active-directory" authors="MarkusVi"  documentationCenter="na" manager="stevenpo"/>
-
-<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi"/>
-
+<tags ms.service="active-directory" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="identity" ms.date="08/01/2015" ms.author="markvi" />
 #Tutorial: Azure Active Directory-Integration mit Central Desktop
 >[AZURE.TIP]Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=522411), um Feedback abzugeben.
 
@@ -53,7 +51,9 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cen
 
 In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Central Desktop zu authentifizieren.  
 Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei in Ihren Central Desktop-Mandanten hochladen.  
-Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\) weitere Informationen.
+Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache\) weitere Informationen.
+
+
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -67,10 +67,10 @@ Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to con
 
 3.  Führen Sie auf der Seite **App-URL konfigurieren** die folgenden Schritte aus, und klicken Sie dann auf **Weiter**.
 
-    -   Geben Sie im Textfeld **Central Desktop-Anmelde-URL** die URL Ihres Central Desktop-Mandanten ein (z. B. *http://contoso.centraldesktop.com*).
-    -   Geben Sie im Textfeld "Central Desktop-Antwort-URL" Ihre Central Desktop AssertionConsumerService-URL ein (z. B. https://contoso.centraldesktop.com/saml2-assertion.php).
+    -   Geben Sie im Textfeld **Central Desktop-Anmelde-URL** die URL Ihres Central Desktop-Mandanten ein (z. B. **http://contoso.centraldesktop.com*).
+-   Geben Sie im Textfeld "Central Desktop-Antwort-URL" Ihre Central Desktop AssertionConsumerService-URL ein (z. B. https://contoso.centraldesktop.com/saml2-assertion.php).
 
-    >[AZURE.NOTE]Sie finden den Wert in den Central Desktop-Metadaten (z. B. *http://contoso.centraldesktop.com*).
+    >[AZURE.NOTE]Sie finden den Wert in den Central Desktop-Metadaten (z. B. **http://contoso.centraldesktop.com*).
 
     ![App-URL konfigurieren](./media/active-directory-saas-central-desktop-tutorial/IC769561.png "App-URL konfigurieren")
 
@@ -154,4 +154,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

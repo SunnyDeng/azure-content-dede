@@ -1,7 +1,7 @@
 <properties 
-	pageTitle="Azure Site Recovery: häufig gestellte Fragen"
-	description="Dieser Artikel enthält häufig gestellte Fragen zur Verwendung von Azure Site Recovery."
-	services="site-recovery"
+	pageTitle="Azure Site Recovery: häufig gestellte Fragen" 
+	description="Dieser Artikel enthält häufig gestellte Fragen zur Verwendung von Azure Site Recovery." 
+	services="site-recovery" 
 	documentationCenter=""
 	authors="csilauraa"
 	manager="jwhit"
@@ -11,9 +11,9 @@
 	ms.service="site-recovery"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="na" 
 	ms.workload="storage-backup-recovery"
-	ms.date="08/26/2015"
+	ms.date="08/26/2015" 
 	ms.author="lauraa"/>
 
 
@@ -63,6 +63,17 @@ Dies wird nicht unterstützt. Senden Sie uns Ihr Feedback über das [Azure Site 
 
 ### Kann für die ersten Datenträger mithilfe des Offlinemechanismus Seeding zu Azure ausgeführt werden?
 Dies wird nicht unterstützt. Senden Sie uns Ihr Feedback über das [Azure Site Recovery-Feedbackforum – Support für die Offlinereplikation](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6227386-support-for-offline-replication-data-transfer-from).
+
+### Kann ich die für den Replikationsdatenverkehr zugewiesene Bandbreite einschränken, wenn Hyper-V als Quelle verwendet wird?
+- Bei lokalen Replikation zwischen zwei lokalen Standorten können Sie Windows-QoS dafür verwenden. Im Folgenden finden Sie ein Beispielskript: 
+
+    	New-NetQosPolicy -Name ASRReplication -IPDstPortMatchCondition 8084 -ThrottleRate (2048*1024)
+    	gpupdate.exe /force
+
+- Wenn Sie die Replikation nach Azure durchführen, können Sie es mithilfe des folgenden PowerShell-Beispiel-Cmdlets konfigurieren:
+
+    	Set-OBMachineSetting -WorkDay $mon, $tue -StartWorkHour "9:00:00" -EndWorkHour "18:00:00" -WorkHourBandwidth (512*1024) -NonWorkHourBandwidth (2048*1024)
+
 
 ## Versionsunterstützung
 
@@ -236,4 +247,4 @@ So stellen Sie ASR bereit:
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

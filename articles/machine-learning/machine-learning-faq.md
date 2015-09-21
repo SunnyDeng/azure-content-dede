@@ -1,34 +1,35 @@
-<properties 
-	pageTitle="Azure Machine Learning – häufig gestellte Fragen (FAQ) | Microsoft Azure" 
-	description="Einführung in Azure Machine Learning: häufig gestellte Fragen (FAQ) zu Abrechnung, Funktionen und Einschränkungen von Clouddiensten für die optimierte Vorhersagemodellierung." 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="pablissima" 
-	manager="paulettm" 
+<properties
+	pageTitle="Azure Machine Learning – häufig gestellte Fragen (FAQ) | Microsoft Azure"
+	description="Einführung in Azure Machine Learning: häufig gestellte Fragen (FAQ) zu Abrechnung, Funktionen und Einschränkungen von Clouddiensten für die optimierte Vorhersagemodellierung."
+	keywords="machine learning introduction,predictive modeling,what is machine learning"
+	services="machine-learning"
+	documentationCenter=""
+	authors="pablissima"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/18/2015" 
+<tags
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/09/2015"
 	ms.author="paulettm"/>
 
 #Häufig gestellte Fragen zu Azure Machine Learning (FAQ): Abrechnung, Funktionen, Einschränkungen und Support
 
 In diesem Dokument werden häufig gestellte Fragen zu Azure Machine Learning beantwortet, einem Clouddienst für Lösungen zur Vorhersagemodellierung und Operationalisierung über Webdienste. Dazu gehören Fragen zur Verwendung des Diensts, einschließlich Abrechnungsmodell, Funktionen, Einschränkungen und Unterstützung.
- 
+
 ##Allgemeine Fragen
 
 **Was ist Azure Machine Learning?**
- 
+
 Azure Machine Learning ist ein vollständig verwalteter Dienst, mit dem Sie Lösungen zu Vorhersageanalyse in der Cloud erstellen, testen, betreiben und verwalten können. Mit einem Browser können Sie sich anmelden, Daten hochladen und sofort mit Experimenten im Bereich Machine Learning beginnen. Dank der Vorhersagemodellierung per Drag & Drop, einer umfangreichen Modulpalette und einer Bibliothek mit Ausgangsvorlagen können Sie gängige Aufgaben im Bereich Machine Learning schnell und einfach ausführen. Weitere Informationen finden Sie auf der Übersichtsseite zu [Azure Machine Learning](/services/machine-learning/). Eine Einführung in Machine Learning mit wichtigen Begriffen und Konzepten finden Sie unter [Einführung in Azure Machine Learning](machine-learning-what-is-machine-learning.md).
 
 
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
- 
+
 **Was ist Machine Learning Studio?**
 
 Machine Learning Studio ist eine Workbench-Umgebung, auf die Sie über einen Webbrowser zugreifen. Machine Learning Studio enthält eine Palette von Modulen mit einer visuellen Kompositionsoberfläche, in der Sie durchgängige Datenworkflows in Form von Experimenten erstellen können.
@@ -54,7 +55,7 @@ Abrechnungs- und Preisinformationen finden Sie unter [Machine Learning Preise](h
 
 ## Fragen zu Machine Learning Studio
 
-###Erstellen von Experimenten	
+###Erstellen von Experimenten
 **Gibt es Versionskontrolle oder eine Git-Integration für Experimentdiagramme?**
 
 Nein. Bei jedem Ausführen eines Experiments wird die entsprechende Version des Diagramms jedoch beibehalten und kann nicht von anderen Benutzern geändert werden.
@@ -92,16 +93,15 @@ Laden Sie für DataSets größer als einige GB die Daten in Azure Storage oder A
 
 **Können Daten von Amazon S3 gelesen werden?**
 
-Wenn Ihre Daten nicht sehr umfangreich sind und Sie diese über eine HTTP-URL verfügbar machen möchten, können Sie das [Reader][reader]-Modul verwenden. Größere Datenmengen sollten Sie zunächst in Azure Storage übertragen und anschließend mit dem [Reader][reader]-Modul in das Experiment übernehmen. 
-<!--
-SEE CLOUD DS PROCESS>
+Wenn Ihre Daten nicht sehr umfangreich sind und Sie diese über eine HTTP-URL verfügbar machen möchten, können Sie das [Reader][reader]-Modul verwenden. Größere Datenmengen sollten Sie zunächst in Azure Storage übertragen und anschließend mit dem [Reader][reader]-Modul in das Experiment übernehmen. <!--
+<SEE CLOUD DS PROCESS>
 -->
 
 **Gibt es eine integrierte Imageeingabefunktion?**
 
 Informationen über die Imageeingabefunktion finden Sie in der Referenz zu [Image Reader][image-reader].
 
-###Module 
+###Module
 
 **Mein Algorithmus, mein Datenformat oder meine Datentransformation ist nicht in Azure ML Studio enthalten. Welche Optionen habe ich?**
 
@@ -110,14 +110,14 @@ Sie können das [Forum für Benutzer-Feedback](http://go.microsoft.com/fwlink/?L
 
 **Kann ich meinen vorhandenen Code in ML Studio verwenden?**
 
-Ja, Sie können Ihren vorhandenen R-Code in ML Studio importieren, zusammen im gleichen Experiment mit den Lernmodulen in Machine Learning Studio verwenden und das Ergebnis als Webdienst über Azure Machine Learning veröffentlichen. Weitere Informationen finden Sie unter [Erweitern Ihres Experiments mit R](machine-learning-extend-your-experiment-with-r.md).
+Ja, Sie können Ihren vorhandenen R-Code in ML Studio importieren, zusammen im gleichen Experiment mit den Lernmodulen in Machine Learning Studio ausführen und das Ergebnis als Webdienst über Azure Machine Learning bereitstellen. Weitere Informationen finden Sie unter [Erweitern Ihres Experiments mit R](machine-learning-extend-your-experiment-with-r.md).
 
 **Ist es möglich, z. B. mit [PMML](http://en.wikipedia.org/wiki/Predictive_Model_Markup_Language) ein Modell zu definieren?**
 
 Nein, dies wird nicht unterstützt. Benutzerdefinierter R- und Python-Code kann jedoch zum Definieren eines Moduls verwendet werden.
 
 
-###Datenverarbeitung 
+###Datenverarbeitung
 **Gibt es eine Möglichkeit zum interaktiven Anzeigen von Daten (neben R-Visualisierungen) im Experiment?**
 
 Durch Klicken auf die Ausgabe eines Moduls können Sie die Daten visualisieren und Statistiken abrufen.
@@ -157,7 +157,7 @@ Nr.
 
 Derzeit können neue benutzerdefinierte Module nur in R erstellt werden.
 
-###R-Modul 
+###R-Modul
 **Welche R-Pakete sind in Machine Learning Studio verfügbar?**
 
 Machine Learning Studio unterstützt bereits über 400 R-Pakete, und diese Liste wird ständig erweitert. Anweisungen zum Abrufen einer Liste der unterstützten R-Pakete finden Sie unter [Erweitern des Experiments mit R](machine-learning-extend-your-experiment-with-r.md). Falls das gewünschte Paket nicht in der Liste enthalten ist, können Sie den Namen des Pakets im [Forum für Benutzer-Feedback](http://go.microsoft.com/fwlink/?LinkId=404231) hinterlassen.
@@ -170,7 +170,7 @@ Ja. Weitere Informationen finden Sie unter [Erstellen von benutzerdefinierten R-
 
 Nein, es gibt keine REPL-Umgebung für R in Machine Learning Studio.
 
-###Python-Modul 
+###Python-Modul
 
 **Ist es möglich, benutzerdefinierte Python-Module zu erstellen?**
 
@@ -197,11 +197,11 @@ Informationen hierzu finden Sie unter [Einschränkungen für Azure-Abonnements](
 ###Verwenden Sie
 **Wann sollte ich mein Vorhersagemodell als Stapelausführungsdienst oder als Anfrage-Antwort-Dienst ausführen?**
 
-Der Anfrage-Antwort-Dienst (Request Response Service, RRS) ist ein hoch skalierbarer Webdienst mit niedriger Latenz, der eine Schnittstelle für zustandslose Modelle bereitstellt, die in der Experimentumgebung erstellt und veröffentlicht wurden. Der Stapelausführungsdienst (Batch Execution Service, BES) dient zur asynchronen Bewertung eines Stapels von Datensätzen. Die Eingaben für RRS und BES sind einander sehr ähnlich. BES liest im Gegensatz zu RRS einen Block von Einträgen aus einer Vielzahl von Quellen wie z. B. dem Blobdienst und dem Tabellenspeicherdienst in Azure, Azure SQL-Datenbank, HDInsight (Hive-Abfrage) und HTTP-Quellen. Weitere Informationen finden Sie unter [Verwenden von Machine Learning-Webdiensten](machine-learning-consume-web-services.md).
+Der Anfrage-Antwort-Dienst (Request Response Service, RRS) ist ein hoch skalierbarer Webdienst mit niedriger Latenz, der eine Schnittstelle für zustandslose Modelle bereitstellt, die in der Experimentumgebung erstellt und bereitgestellt wurden. Der Stapelausführungsdienst (Batch Execution Service, BES) dient zur asynchronen Bewertung eines Stapels von Datensätzen. Die Eingaben für RRS und BES sind einander sehr ähnlich. BES liest im Gegensatz zu RRS einen Block von Einträgen aus einer Vielzahl von Quellen wie z. B. dem Blobdienst und dem Tabellenspeicherdienst in Azure, Azure SQL-Datenbank, HDInsight (Hive-Abfrage) und HTTP-Quellen. Weitere Informationen finden Sie unter [Verwenden von Machine Learning-Webdiensten](machine-learning-consume-web-services.md).
 
 **Wie aktualisiere ich das Modell für den bereitgestellten Webdienst?**
 
-Sie können das Vorhersagemodell für einen bereitgestellten Dienst einfach ändern, indem Sie das Experiment bearbeiten und erneut ausführen, das Sie beim Erstellen und Speichern des trainierten Modells verwendet haben. Sobald die neue Version des trainierten Modells verfügbar ist, werden sie von ML Studio gefragt, ob Sie Ihren Staging-Webdienst aktualisieren möchten. Nach dem Update des Stagingwebdiensts ist dasselbe Update auch für die Übernahme in den Produktionswebdienst verfügbar. Ausführliche Informationen zum Aktualisieren eines bereitgestellten Webdiensts finden Sie unter [Veröffentlichen von Machine Learning-Webdiensten](machine-learning-publish-a-machine-learning-web-service.md).
+Sie können das Vorhersagemodell für einen bereitgestellten Dienst einfach ändern, indem Sie das Experiment bearbeiten und erneut ausführen, das Sie beim Erstellen und Speichern des trainierten Modells verwendet haben. Sobald die neue Version des trainierten Modells verfügbar ist, werden sie von ML Studio gefragt, ob Sie Ihren Staging-Webdienst aktualisieren möchten. Nach dem Update des Stagingwebdiensts ist dasselbe Update auch für die Übernahme in den Produktionswebdienst verfügbar. Ausführliche Informationen zum Aktualisieren eines bereitgestellten Webdiensts finden Sie unter [Bereitstellen von Machine Learning-Webdiensten](machine-learning-publish-a-machine-learning-web-service.md).
 
 Sie können auch die APIs zum erneuten Trainieren verwenden. Der Beispielcode steht [hier](https://azuremlretrain.codeplex.com/) zur Verfügung.
 
@@ -213,11 +213,11 @@ Sobald ein Vorhersagemodell in die Produktionsumgebung übernommen wurde, könne
 **Kann ich die Ausgabe meines RRS/BES an einer Stelle einsehen?**
 
 Für RRS wird das Ergebnis normalerweise in der Antwort des Webdiensts ausgegeben. Sie können es aber auch in ein Blob schreiben. Bei BES wird die Ausgabe standardmäßig in ein Blob geschrieben. Sie können die Ausgabe aber auch mithilfe des Schreibmoduls in eine Datenbank oder Tabelle schreiben.
- 
- ****Können Webdienste nur aus Modellen erstellt werden, die im Studio erstellt wurden? Nein. Webdienste können auch direkt aus Jupyter Notebooks und RStudio erstellt werden.
- 
 
-##Skalierbarkeit 
+ ****Können Webdienste nur aus Modellen erstellt werden, die im Studio erstellt wurden? Nein. Webdienste können auch direkt aus Jupyter Notebooks und RStudio erstellt werden.
+
+
+##Skalierbarkeit
 
 **Wie skalierbar ist der Webdienst?**
 
@@ -259,30 +259,30 @@ Zeilen und Spalten sind jeweils auf die .NET-Einschränkung für Ganzzahlen besc
 
 Nr.
 
-##Sicherheit und Verfügbarkeit 
+##Sicherheit und Verfügbarkeit
 
 **Wer hat standardmäßig Zugriff auf den HTTP-Endpunkt für den Webdienst in der Produktionsumgebung? Wie kann ich den Zugriff auf den Endpunkt einschränken?**
 
-Nach der Veröffentlichung eines Webdiensts wird ein Standardendpunkt für den Dienst erstellt. Dieser Standardendpunkt wird für die Produktion bereitgestellt und kann mithilfe seines API-Schlüssels aufgerufen werden. Zusätzliche Endpunkte können im Azure-Portal oder programmgesteuert mithilfe der APIs der Webdienstverwaltung unter Verwendung ihrer eigenen Schlüssel hinzugefügt werden. Die Zugriffsschlüssel werden für Aufrufe an die Webdienste in den Produktions- und Stagingumgebungen benötigt. Weitere Informationen finden Sie unter [Verbinden mit einem Machine Learning-Webdienst](machine-learning-connect-to-azure-machine-learning-web-service.md).
+Nach der Bereitstellung eines Webdiensts wird ein Standardendpunkt für den Dienst erstellt. Dieser Standardendpunkt wird für die Produktion bereitgestellt und kann mithilfe seines API-Schlüssels aufgerufen werden. Zusätzliche Endpunkte können im Azure-Portal oder programmgesteuert mithilfe der APIs der Webdienstverwaltung unter Verwendung ihrer eigenen Schlüssel hinzugefügt werden. Die Zugriffsschlüssel werden für Aufrufe an die Webdienste in den Produktions- und Stagingumgebungen benötigt. Weitere Informationen finden Sie unter [Verbinden mit einem Machine Learning-Webdienst](machine-learning-connect-to-azure-machine-learning-web-service.md).
 
 
 **Was geschieht, wenn mein Speicherkonto nicht gefunden werden kann?**
 
 In Machine Learning Studio ist ein vom Benutzer bereitgestelltes Azure-Speicherkonto zum Speichern von temporären Daten beim Ausführen des Workflows erforderlich. Dieses Speicherkonto wird Machine Learning Studio beim Erstellen des Arbeitsbereichs zur Verfügung gestellt. Wenn das Speicherkonto nach dem Erstellen des Arbeitsbereichs gelöscht wird, funktioniert dieser Arbeitsbereich nicht mehr, und alle dort ausgeführten Experimente schlagen fehl.
- 
+
 Wenn Sie das Speicherkonto versehentlich löschen, ist die einzige Möglichkeit der Wiederherstellung ein erneutes Erstellen des Speicherkontos mit identischem Namen und in der identischen Region wie das gelöschte. Anschließend muss der Zugriffsschlüssel wieder synchronisiert werden.
- 
+
 
 **Was geschieht, wenn mein Speicherkonto-Zugriffsschlüssel nicht mehr synchronisiert ist?** In Machine Learning Studio ist ein vom Benutzer bereitgestelltes Azure-Speicherkonto zum Speichern von temporären Daten beim Ausführen des Workflows erforderlich. Dieses Speicherkonto wird Machine Learning Studio beim Erstellen des Arbeitsbereichs zur Verfügung gestellt, und der Zugriffsschlüssel wird diesem Arbeitsbereich zugewiesen. Wenn Zugriffsschlüssel nach dem Erstellen des Arbeitsbereichs geändert werden, kann dieser Arbeitsbereich nicht mehr auf das Speicherkonto zugreifen, und alle in diesem Arbeitsbereich ausgeführten Experimente schlagen fehl.
 
 Wenn Sie Zugriffsschlüssel für Speicherkonten geändert haben, synchronisieren Sie die Zugriffsschlüssel in der Arbeitsbereichseinstellung im Azure-Portal unbedingt neu.
 
 
-##Azure Marketplace 
+##Azure Marketplace
 
 Weitere Informationen finden Sie unter [FAQ zum Veröffentlichen und Verwenden von Apps im Machine Learning Marketplace](machine-learning-marketplace-faq.md).
 
-##Support und Lernmaterial 
+##Support und Lernmaterial
 
 **Wo finde ich Lernmaterial für Azure ML?**
 
@@ -306,6 +306,5 @@ Für Azure Machine Learning gibt es außerdem ein Community-Forum auf MSDN, in d
 [partition-and-sample]: https://msdn.microsoft.com/library/azure/a8726e34-1b3e-4515-b59a-3e4a475654b8/
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
- 
 
-<!----HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

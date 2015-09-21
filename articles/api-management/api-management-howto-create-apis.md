@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/16/2015" 
+	ms.date="09/10/2015" 
 	ms.author="sdanie"/>
 
 # Erstellen von APIs in Azure API Management
@@ -97,4 +97,4 @@ Nachdem Sie die API erstellt und die Einstellungen konfiguriert haben, können S
 [Schützen der Back-End-Dienste mithilfe der gegenseitigen Zertifikatauthentifizierung in Azure API Management]: api-management-howto-mutual-certificates.md
 [Autorisieren von Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management]: api-management-howto-oauth2.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

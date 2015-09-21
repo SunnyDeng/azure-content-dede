@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Beheben von Problemen mit der Bereitstellung von StorSimple-Geräten| Microsoft Azure"
+   pageTitle="Beheben von StorSimple-Bereitstellungsproblemen | Microsoft Azure"
    description="Beschreibt die Diagnose und Problembehandlung von Fehlern, die beim Bereitstellen von StorSimple auftreten."
    services="storsimple"
    documentationCenter="NA"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/18/2015"
+   ms.date="09/04/2015"
    ms.author="alkohli" />
 
 # Beheben von Problemen mit der Bereitstellung von StorSimple-Geräten
@@ -575,4 +575,4 @@ Informationen zur [Problembehandlung bei einem betriebsbereiten Gerät](storsimp
 [1]: https://technet.microsoft.com/library/dd379547(v=ws.10).aspx
 [2]: https://technet.microsoft.com/library/dd392266(v=ws.10).aspx
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

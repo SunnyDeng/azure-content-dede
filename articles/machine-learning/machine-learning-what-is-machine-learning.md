@@ -1,20 +1,21 @@
 <properties
     pageTitle="Was ist Machine Learning in Azure ? | Microsoft Azure"
-	description="Dieser Artikel erläutert die grundlegenden Konzepte des vollständig verwalteten Machine Learning-Diensts, eine Cloudtechnologie, mit der Sie Lösungen erstellen, operationalisieren und vermarkten können."
+    description="Dieser Artikel erläutert die grundlegenden Konzepte des vollständig verwalteten Machine Learning-Diensts, eine Cloudtechnologie, mit der Sie Lösungen erstellen, operationalisieren und vermarkten können."
+	keywords="what is machine learning,cloud technology,predictive,what is predictive analytics,operationalize"
 	services="machine-learning"
-	documentationCenter=""
-	authors="cjgronlund"
-	manager="neerajkh"
-	editor="cgronlun"/>
+    documentationCenter=""
+    authors="cjgronlund"
+    manager="neerajkh"
+    editor="cgronlun"/>
 
 <tags
     ms.service="machine-learning"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/02/2015"
-	ms.author="cgronlun;tedway;olgali"/>
+    ms.workload="data-services"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="09/09/2015"
+    ms.author="cgronlun;tedway;olgali"/>
 
 
 # Einführung in das maschinelle Lernen in Microsoft Azure
@@ -29,7 +30,7 @@ Dank solcher Vorhersagen oder Prognosen aus maschinellen Lernprozessen können A
 
 Azure Machine Learning ist ein leistungsfähiger cloudbasierter Predictive Analytics-Dienst, der die schnelle Erstellung und Bereitstellung von Vorhersagemodellen als Analyselösungen ermöglicht.
 
-Azure Machine Learning bietet nicht nur Tools zur Modellierung von Predictive Analytics-Lösungen, sondern auch einen vollständig verwalteten Dienst, über den Sie Ihre Vorhersagemodelle als sofort nutzbare Webdienste veröffentlichen können. Azure Machine Learning bietet Tools zum Erstellen vollständiger Predictive Analytics-Lösungen in der Cloud: Erstellen, testen, operationalisieren und verwalten Sie Vorhersagemodelle schnell und mühelos. Sie müssen weder Hardware kaufen noch virtuelle Computer manuell verwalten.
+Azure Machine Learning bietet nicht nur Tools zur Modellierung von Predictive Analytics-Lösungen, sondern auch einen vollständig verwalteten Dienst, über den Sie Ihre Vorhersagemodelle als sofort nutzbare Webdienste bereitstellen können. Azure Machine Learning bietet Tools zum Erstellen vollständiger Predictive Analytics-Lösungen in der Cloud: Erstellen, testen, operationalisieren und verwalten Sie Vorhersagemodelle schnell und mühelos. Sie müssen weder Hardware kaufen noch virtuelle Computer manuell verwalten.
 
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
@@ -59,7 +60,7 @@ Erstellen Sie Vorhersagemodelle in [Machine Learning Studio](machine-learning-wh
 * Erwerben Sie im [Microsoft Azure Marketplace](https://datamarket.azure.com/browse?query=machine+learning) sofort nutzbare Webdienste z. B. für Empfehlungen, Textanalysen und Anomalieerkennung.
 
 * Operationalisieren Sie Ihre Predictive Analytics-Modelle:
-    * [Veröffentlichen von Webdiensten](machine-learning-publish-a-machine-learning-web-service.md)
+    * [Bereitstellen von Webdiensten](machine-learning-publish-a-machine-learning-web-service.md)
     * [Trainieren und erneutes Trainieren von Modellen über APIs](machine-learning-retrain-models-programmatically.md)
     * [Verwalten von Webdienstendpunkten](machine-learning-create-endpoint.md)
     * [Skalieren von Webdiensten](machine-learning-scaling-endpoints.md)
@@ -115,4 +116,4 @@ Die Grundlagen der Vorhersageanalyse und des maschinellen Lernens werden anhand 
 <!-- Module References -->
 [learning-with-counts]: https://msdn.microsoft.com/library/azure/81c457af-f5c0-4b2d-922c-fdef2274413c/
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

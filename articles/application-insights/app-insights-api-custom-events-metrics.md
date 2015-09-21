@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Application Insights-API für benutzerdefinierte Ereignisse und Metriken"
-	description="Fügen Sie einige Codezeilen in Ihrer Geräte- oder Desktop-App, Webseite oder dem Webdienst ein, um Nutzungs- und Diagnoseprobleme nachzuverfolgen."
+	pageTitle="Application Insights-API für benutzerdefinierte Ereignisse und Metriken" 
+	description="Fügen Sie einige Codezeilen in Ihrer Geräte- oder Desktop-App, Webseite oder dem Webdienst ein, um Nutzungs- und Diagnoseprobleme nachzuverfolgen." 
 	services="application-insights"
-	documentationCenter=""
-	authors="alancameronwills"
+    documentationCenter="" 
+	authors="alancameronwills" 
 	manager="douge"/>
  
 <tags 
-	ms.service="application-insights"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="ibiza"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.date="08/28/2015"
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="08/28/2015" 
 	ms.author="awills"/>
 
 # Application Insights-API für benutzerdefinierte Ereignisse und Metriken 
@@ -82,9 +82,9 @@ TelemetryClient ist threadsicher.
 
 ## Nachverfolgen von Ereignissen
 
-Ereignisse können im [Metrik-Explorer][metrics] als aggregierte Anzahl angezeigt werden, und Sie können auch einzelne Vorkommen in der [Diagnosesuche][diagnostic] anzeigen.
+In Application Insights handelt es sich bei einem *benutzerdefinierten Ereignis* um einen Datenpunkt, den Sie als aggregierte Anzahl im [Metrik-Explorer][metrics] und als einzelne Vorkommen in der [Diagnosesuche][diagnostic] anzeigen können. (Er gehört nicht zu MVC oder anderen Ereignissen des Frameworks.)
 
-Fügen Sie Ereignisse in Ihren Code ein, um zu zählen, wie oft sie ein bestimmtes Feature nutzen, wie oft sie bestimmte Ziele erreichen oder bestimmte Auswahlen treffen.
+Fügen Sie TrackEvent-Aufrufe in Ihren Code ein, um zu zählen, wie oft Benutzer ein bestimmtes Feature auswählen, bestimmte Ziele erreichen oder vielleicht bestimmte Arten von Fehlern machen.
 
 Senden Sie z. B. in einer Spiele-App ein Ereignis, sobald ein Benutzer das Spiel gewinnt:
 
@@ -105,14 +105,12 @@ Senden Sie z. B. in einer Spiele-App ein Ereignis, sobald ein Benutzer das Spiel
 
     telemetry.trackEvent("WinGame");
 
-
-Klicken Sie auf die Kachel "Benutzerdefinierte Ereignisse" auf dem Blatt "Übersicht":
+„WinGame“ ist hier der Name, der im Application Insights-Portal angezeigt wird. Klicken Sie auf die Kachel "Benutzerdefinierte Ereignisse" auf dem Blatt "Übersicht":
 
 ![Navigieren Sie zu Ihrer Anwendungsressource in portal.azure.com.](./media/app-insights-api-custom-events-metrics/01-custom.png)
 
-Klicken Sie weiter, um ein Übersichtsdiagramm und eine vollständige Liste anzuzeigen.
 
-Wählen Sie das Diagramm aus, und gruppieren Sie es nach Ereignisnamen, um die relativen Beiträge der wichtigsten Ereignisse anzuzeigen.
+Das Diagramm ist nach Ereignisnamen gruppiert, um die relativen Beiträge der wichtigsten Ereignisse anzuzeigen. Markieren Sie zum Steuern dieser Einstellung das Diagramm, und verwenden Sie das Steuerelement für die Gruppierung.
 
 ![Wählen Sie das Diagramm aus, und legen Sie die Gruppierung fest.](./media/app-insights-api-custom-events-metrics/02-segment.png)
 
@@ -203,7 +201,7 @@ Es gibt einige [Beschränkungen hinsichtlich der Anzahl von Eigenschaften, Eigen
 
 ![Öffnen Sie den Metrik-Explorer, wählen Sie das Diagramm aus, und wählen Sie die Metrik aus.](./media/app-insights-api-custom-events-metrics/03-track-custom.png)
 
-*Wenn die Metrik nicht angezeigt wird, schließen Sie das Blatt "Auswahl", warten Sie einen Moment, und klicken Sie auf "Aktualisieren".*
+*Wenn die Metrik nicht angezeigt wird oder die benutzerdefinierte Überschrift nicht vorhanden ist, schließen Sie das Blatt „Auswahl“, und versuchen Sie es später erneut. Manchmal dauert das Aggregieren der Metriken über die Pipeline eine Stunde.*
 
 **Wenn Sie Eigenschaften und Metriken verwendet haben**, unterteilen Sie die Metrik nach der Eigenschaft:
 
@@ -903,4 +901,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

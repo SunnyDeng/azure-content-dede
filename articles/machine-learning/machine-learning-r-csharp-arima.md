@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Prognose – ARIMA (Autoregressive Integrated Moving Average, autoregressiver integrierter gleitender Mittelwert) | Microsoft Azure"
-	description="Prognose – ARIMA (Autoregressive Integrated Moving Average, autoregressiver integrierter gleitender Mittelwert)"
-	services="machine-learning"
-	documentationCenter=""
-	authors="jaymathe"
-	manager="paulettm"
+	pageTitle="Prognose – ARIMA (Autoregressive Integrated Moving Average, autoregressiver integrierter gleitender Mittelwert) | Microsoft Azure" 
+	description="Prognose – ARIMA (Autoregressive Integrated Moving Average, autoregressiver integrierter gleitender Mittelwert)" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="yijichen" 
+	manager="paulettm" 
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/02/2015"
-	ms.author="jaymathe"/>
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/02/2015" 
+	ms.author="yijichen"/>
 
  
 #Prognose – ARIMA (Autoregressive Integrated Moving Average, autoregressiver integrierter gleitender Mittelwert)
@@ -138,4 +138,4 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im 
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

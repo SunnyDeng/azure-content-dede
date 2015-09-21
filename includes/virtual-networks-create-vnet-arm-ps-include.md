@@ -7,6 +7,8 @@ Führen Sie zum Erstellen von VNets mithilfe von PowerShell die folgenden Schrit
 
 		Switch-AzureMode AzureResourceManager
 	
+	Hier ist die erwartete Ausgabe des obigen Befehls:
+
 		WARNING: The Switch-AzureMode cmdlet is deprecated and will be removed in a future release.
 
 	>[AZURE.WARNING]Das Cmdlet "Switch-AzureMode" ist demnächst veraltet. In diesem Fall werden alle Ressourcen-Manager-Cmdlets umbenannt.
@@ -14,6 +16,8 @@ Führen Sie zum Erstellen von VNets mithilfe von PowerShell die folgenden Schrit
 3. Führen Sie bei Bedarf das Cmdlet **New-AzureResourceGroup** aus, um eine neue Ressourcengruppe zu erstellen, wie unten dargestellt. In diesem Szenario erstellen Sie eine Ressourcengruppe mit dem Namen *TestRG*. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md/#resource-groups).
 
 		New-AzureResourceGroup -Name TestRG -Location centralus
+
+	Hier ist die erwartete Ausgabe des obigen Befehls:
 	
 		ResourceGroupName : TestRG
 		Location          : centralus
@@ -31,6 +35,8 @@ Führen Sie zum Erstellen von VNets mithilfe von PowerShell die folgenden Schrit
 		New-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet `
 			-AddressPrefix 192.168.0.0/16 -Location centralus	
 		
+	Hier ist die erwartete Ausgabe des obigen Befehls:
+
 		Name              : TestVNet
 		ResourceGroupName : TestRG
 		Location          : centralus
@@ -60,6 +66,8 @@ Führen Sie zum Erstellen von VNets mithilfe von PowerShell die folgenden Schrit
 		Add-AzureVirtualNetworkSubnetConfig -Name FrontEnd `
 			-VirtualNetwork $vnet -AddressPrefix 192.168.1.0/24
 		
+	Hier ist die erwartete Ausgabe des obigen Befehls:
+
 		Name              : TestVNet
 		ResourceGroupName : TestRG
 		Location          : centralus
@@ -98,6 +106,8 @@ Führen Sie zum Erstellen von VNets mithilfe von PowerShell die folgenden Schrit
 
 		Set-AzureVirtualNetwork -VirtualNetwork $vnet	
 		
+	Hier ist die erwartete Ausgabe des obigen Befehls:
+
 		Name              : TestVNet
 		ResourceGroupName : TestRG
 		Location          : centralus
@@ -137,4 +147,4 @@ Führen Sie zum Erstellen von VNets mithilfe von PowerShell die folgenden Schrit
 		                      }
 		                    ]
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

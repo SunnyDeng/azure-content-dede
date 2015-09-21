@@ -140,7 +140,7 @@ Bei Verwendung des Offlinespeichers für die Kerndaten müssen Sie bestimmte Tab
 
     | Attribut | Typ |
     |----------- |   ------    |
-    | id | Integer 64 |
+    | id | String |
     | key | String |
     | keyType | Integer 64 |
     | Tabelle | String |
@@ -238,7 +238,6 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
 [Erstellen einer iOS-App]: ../app-service-mobile-dotnet-backend-ios-get-started-preview.md
 [Offlinedatensynchronisierung in Azure Mobile Apps]: ../app-service-mobile-offline-data-sync-preview.md
-[Offlinedatensynchronisierung in mobilen Azure-Apps]: ../app-service-mobile-offline-data-sync-preview.md
 
 [defining-core-data-tableoperationerrors-entity]: ./media/app-service-mobile-ios-get-started-offline-data-preview/defining-core-data-tableoperationerrors-entity.png
 [defining-core-data-tableoperations-entity]: ./media/app-service-mobile-ios-get-started-offline-data-preview/defining-core-data-tableoperations-entity.png
@@ -249,4 +248,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

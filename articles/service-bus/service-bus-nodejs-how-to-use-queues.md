@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden von Service Bus-Warteschlangen (Node.js) | Microsoft Azure"
-	description="Erfahren Sie mehr über die Verwendung von Service Bus-Warteschlangen in Azure aus einer Node.js-App."
-	services="service-bus"
-	documentationCenter="nodejs"
-	authors="MikeWasson"
-	manager="wpickett"
+	pageTitle="Verwenden von Service Bus-Warteschlangen (Node.js) | Microsoft Azure" 
+	description="Erfahren Sie mehr über die Verwendung von Service Bus-Warteschlangen in Azure aus einer Node.js-App." 
+	services="service-bus" 
+	documentationCenter="nodejs" 
+	authors="MikeWasson" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="service-bus"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="nodejs"
-	ms.topic="article"
-	ms.date="07/06/2015"
+	ms.service="service-bus" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="07/06/2015" 
 	ms.author="mwasson"/>
 
 # Verwenden von Service Bus-Warteschlangen
@@ -165,8 +165,8 @@ Falls die Anwendung nach der Verarbeitung der Nachricht, aber vor Abrufen der **
 
 Nachdem Sie nun mit den Grundlagen der Servicebus-Warteschlangen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements.][]
--   Besuchen Sie das [Azure SDK für Node]-Repository auf GitHub.
+-   Siehe [Warteschlangen, Themen und Abonnements][].
+-   Besuchen Sie das [Azure SDK für Node][]-Repository auf GitHub.
 
   [Azure SDK für Node]: https://github.com/Azure/azure-sdk-for-node
   [Nächste Schritte]: #next-steps
@@ -183,10 +183,10 @@ Nachdem Sie nun mit den Grundlagen der Servicebus-Warteschlangen vertraut sind, 
   [Azure Management Portal]: http://manage.windowsazure.com
   
   [Node.js Cloud Service]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
-  [Warteschlangen, Themen und Abonnements.]: http://msdn.microsoft.com/library/azure/hh367516.aspx
+  [Warteschlangen, Themen und Abonnements]: service-bus-queues-topics-subscriptions.md
   [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: ../app-service-web/web-sites-nodejs-develop-deploy-mac.md
   [Node.js-Clouddienst mit Speicher]: ../cloud-services/storage-nodejs-use-table-storage-cloud-service-app.md
   [Node.js-Webanwendung mit Speicher]: ../storage/storage-nodejs-how-to-use-table-storage.md
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

@@ -6,16 +6,14 @@ documentationCenter=".net"
 authors="Thraka" 
 manager="timlt" 
 editor=""/>
-
 <tags 
 ms.service="cloud-services" 
 ms.workload="tbd" 
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="06/11/2015" 
+ms.date="09/08/2015" 
 ms.author="adegeo"/>
-
 
 # Anpassen des Lebenszyklus einer Web- oder Workerrolle in .NET
 
@@ -82,4 +80,4 @@ Sie können die ASP.NET-Lebenszyklusmethoden zusätzlich zu den Methoden der **R
 ## Nächste Schritte
 Hier erfahren Sie, wie Sie ein [Clouddienstpaket erstellen](cloud-services-model-and-package.md).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

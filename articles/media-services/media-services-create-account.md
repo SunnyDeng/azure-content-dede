@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/11/2015"
+	ms.date="09/07/2015"  
 	ms.author="juliako"/>
 
 
@@ -67,6 +67,13 @@ Für den Zugriff auf Media Services sind zwei zugeordnete Konten erforderlich:
 
 	Außerdem können Sie Code anzeigen, der mithilfe des Azure Media Services-SDK die folgenden Aufgaben ausführt: Videos hochladen, verschlüsseln und veröffentlichen. Sie können auf einen der Links unter dem Abschnitt **ETWAS CODE SCHREIBEN** klicken, den Code kopieren und in Ihrer Anwendung verwenden.
 
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
 ## Nächste Schritte
 
 - [Erste Schritte zum Bereitstellen von Video-on-Demand-Inhalt (VoD) mit dem .NET SDK](media-services-dotnet-get-started.md)
@@ -85,4 +92,4 @@ Für den Zugriff auf Media Services sind zwei zugeordnete Konten erforderlich:
 
   [Azure-Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

@@ -7,16 +7,14 @@
    manager="timlt"
    editor=""/>
 
-
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/16/2015"
+   ms.date="09/03/2015"
    ms.author="oanapl"/>
-
 
 # Einführung in die Service Fabric-Integritätsüberwachung
 Service Fabric führt ein Integritätsmodell ein, das eine umfassende, flexible und erweiterbare Integritätsevaluierung und -berichterstellung bietet. Dies umfasst das Überwachen des Clusterzustands und der darin ausgeführten Dienste in nahezu Echtzeit. Integritätsdaten können auf einfache Weise abgerufen werden, um Maßnahmen zum Korrigieren potenzieller Probleme zu ergreifen, bevor sich diese ausbreiten und massive Ausfälle verursachen. In einem typischen Modell senden die Dienste Berichte basierend auf ihrer lokalen Informationen. Anhand dieser Informationen wird ein Gesamtüberblick auf Clusterebene erstellt.
@@ -100,11 +98,8 @@ Hier sehen Sie einen Auszug aus einem Clustermanifest:
 <FabricSettings>
   <Section Name="HealthManager/ClusterHealthPolicy">
     <Parameter Name="ConsiderWarningAsError" Value="False" />
-
     <Parameter Name="MaxPercentUnhealthyApplications" Value="0" />
-
     <Parameter Name="MaxPercentUnhealthyNodes" Value="20" />
-
   </Section>
 </FabricSettings>
 ```
@@ -138,12 +133,10 @@ Hier sehen Sie einen Auszug aus einem Anwendungsmanifest:
                    MaxPercentUnhealthyServices="0"
                    MaxPercentUnhealthyPartitionsPerService="10"
                    MaxPercentUnhealthyReplicasPerPartition="0"/>
-
             <ServiceTypeHealthPolicy ServiceTypeName="FrontEndServiceType"
                    MaxPercentUnhealthyServices="0"
                    MaxPercentUnhealthyPartitionsPerService="20"
                    MaxPercentUnhealthyReplicasPerPartition="0"/>
-
             <ServiceTypeHealthPolicy ServiceTypeName="BackEndServiceType"
                    MaxPercentUnhealthyServices="20"
                    MaxPercentUnhealthyPartitionsPerService="0"
@@ -343,4 +336,4 @@ Das Integritätsmodell wird hauptsächlich für Überwachung und Diagnose, Evalu
 [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

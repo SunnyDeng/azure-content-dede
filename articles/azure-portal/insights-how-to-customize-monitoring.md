@@ -13,7 +13,7 @@ documentationCenter=""/>
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/28/2015" 
+	ms.date="09/08/2015" 
 	ms.author="stepsic"/>
 
 # Überwachen von Dienstmetriken
@@ -74,4 +74,4 @@ Wie bei den Metriken können Sie mithilfe von [REST-API](https://msdn.microsoft.
 * [Überwachen der Verfügbarkeit und Reaktionsfähigkeit einer beliebigen Webseite](../app-insights-monitor-web-app-availability.md) mit Application Insights, um zu ermitteln, ob eine Seite offline ist.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

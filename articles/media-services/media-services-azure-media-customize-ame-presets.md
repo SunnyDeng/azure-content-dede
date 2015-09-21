@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015"
+	ms.date="09/07/2015" 
 	ms.author="juliako"/>
 
 #Ändern von Codierungsaufgaben durch Anpassen von Aufgabenvoreinstellungen 
@@ -505,8 +505,16 @@ Um eine Verstärkung der Hintergrundgeräusche zu verhindern, führen Sie folgen
 		// Launch the job. 
 		job.Submit();
 
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+
 ##Weitere Informationen
 
 [Azure Media Encoder XML-Schema](https://msdn.microsoft.com/library/azure/dn584702.aspx)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO2-->

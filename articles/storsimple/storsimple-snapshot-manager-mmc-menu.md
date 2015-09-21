@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Verwenden der MMC-Menüaktionen im StorSimple Snapshot Manager | Microsoft Azure"
-   description="Beschreibt die Verwendung der Menüaktionen der Microsoft Management Console (MMC) im StorSimple Snapshot Manager."
+   pageTitle="StorSimple Snapshot Manager-MMC-Menüaktionen | Microsoft Azure"
+   description="Beschreibt die Verwendung der Standardmenüaktionen der Microsoft Management Console (MMC) im StorSimple Snapshot Manager."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/17/2015"
+   ms.date="09/04/2015"
    ms.author="v-sharos" />
 
 # Verwenden der MMC-Menüaktionen im StorSimple Snapshot Manager
@@ -127,4 +127,4 @@ Mit der Aktion **Liste exportieren** können Sie eine Liste in einer Datei mit k
 
 [Weitere Informationen über die Benutzeroberfläche des StorSimple Snapshot Managers](storsimple-use-snapshot-manager.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

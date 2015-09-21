@@ -114,4 +114,4 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
 [Python Azure Storage-Paket]: https://pypi.python.org/pypi/azure-storage
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

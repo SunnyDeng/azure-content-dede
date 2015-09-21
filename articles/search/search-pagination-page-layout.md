@@ -13,7 +13,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="07/08/2015" 
+	ms.date="09/08/2015" 
 	ms.author="heidist"/>
 
 #Anordnen von Suchergebnissen auf Seiten in Azure Search#
@@ -103,7 +103,7 @@ Weitere Informationen zu `$filter`-Ausdrücken finden Sie unter [Dokumente durch
 - [REST-API für Azure Suchdienst](http://msdn.microsoft.com/library/azure/dn798935.aspx)
 - [Indexvorgänge](http://msdn.microsoft.com/library/azure/dn798918.aspx)
 - [Dokumentvorgänge](http://msdn.microsoft.com/library/azure/dn800962.aspx)
-- [Videos und Lernprogramme zu Azure Search](http://msdn.microsoft.com/library/azure/dn818681.aspx)
+- [Videos und Lernprogramme zu Azure Search](search-video-demo-tutorial-list.md)
 - [Facettennavigation in Azure Search](search-faceted-navigation.md)
 
 
@@ -114,4 +114,4 @@ Weitere Informationen zu `$filter`-Ausdrücken finden Sie unter [Dokumente durch
 [4]: ./media/search-pagination-page-layout/Pages-4-SortbyRelevance.png
 [5]: ./media/search-pagination-page-layout/Pages-5-BuildSort.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

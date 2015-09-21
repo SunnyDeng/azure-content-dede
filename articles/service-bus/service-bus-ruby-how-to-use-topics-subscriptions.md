@@ -213,9 +213,9 @@ Durch das Löschen eines Themas werden auch alle Abonnements gelöscht, die mit 
 
 Nachdem Sie nun mit den Grundlagen der Servicebus-Themen vertraut sind, finden Sie unter den folgenden Links weitere Informationen.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Warteschlangen, Themen und Abonnements](http://msdn.microsoft.com/library/windowsazure/hh367516.aspx).
--   API-Referenz für [SqlFilter](http://msdn.microsoft.com/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx)
--	Besuchen Sie das [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
+-   Siehe [Warteschlangen, Themen und Abonnements](service-bus-queues-topics-subscriptions.md).
+-   API-Referenz für [SqlFilter](http://msdn.microsoft.com/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx).
+-	Besuchen Sie das Repository zum [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) auf GitHub
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

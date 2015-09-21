@@ -12,11 +12,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/08/2015"
+   ms.date="09/02/2015"
    ms.author="telmos" />
 
 # Gewusst wie: Verwalten der Eigenschaften eines Virtual Network (VNet)
-Sie können VNet-Einstellungen anzeigen und ändern, indem Sie das Verwaltungsportal verwenden.
+Sie können VNet-Einstellungen im Azure-Portal anzeigen und ändern.
 
 ## Anzeigen von VNet-Einstellungen
 
@@ -100,4 +100,4 @@ Nach der Bereitstellung des virtuellen Netzwerks können nur bestimmte Einstellu
 
 [Gewusst wie: Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

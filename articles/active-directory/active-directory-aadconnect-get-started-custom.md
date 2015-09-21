@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Benutzerdefinierte Installation von Azure AD Connect"
-	description="In diesem Dokument werden die Optionen für die benutzerdefinierte Installation für Azure AD Connect aufgeführt."
-	services="active-directory"
-	documentationCenter=""
-	authors="billmath"
-	manager="stevenpo"
+	pageTitle="Benutzerdefinierte Installation von Azure AD Connect" 
+	description="In diesem Dokument werden die Optionen für die benutzerdefinierte Installation für Azure AD Connect aufgeführt." 
+	services="active-directory" 
+	documentationCenter="" 
+	authors="billmath" 
+	manager="stevenpo" 
 	editor="curtand"/>
 
 <tags 
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.service="active-directory"  
+	ms.workload="identity" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2015" 
 	ms.author="billmath"/>
 
 # Benutzerdefinierte Installation von Azure AD Connect
@@ -184,17 +184,6 @@ Mit dem Stagingmodus ist es möglich, einen neuen Synchronisierungsservers paral
 
 Im Stagingmodus können Sie die erforderlichen Änderungen am Synchronisierungsmodul vornehmen und überprüfen, was exportiert werden soll. Wenn die Konfiguration Ihren Vorstellungen entspricht, führen Sie erneut den Installations-Assistenten aus, und deaktivieren Sie den Stagingmodus. Die Daten können dann nach Azure AD exportiert werden. Stellen Sie sicher, das der andere Server währenddessen deaktiviert ist, sodass nur ein Server aktiv exportieren kann.
 
-### Schutz vor unbeabsichtigtem Löschen
-Bei der Installation von Azure AD Connect wird das Feature zum Schutz vor unbeabsichtigtem Löschen standardmäßig aktiviert und so konfiguriert, das Exporte mit mehr als 500 Löschungen unterbunden werden. Die Angabe "500" ist ein Standardwert und kann geändert werden. Wenn dieses Feature aktiviert ist und zu viele Löschungen erfolgen sollen, wird der Export nicht fortgesetzt, und Sie erhalten Sie die folgende E-Mail-Nachricht:
-
-![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/email.png)
-
-
-Wenn Sie diese Nachricht unerwartet erhalten haben, untersuchen Sie die Grunde dafür, und ergreifen Sie die nötigen Maßnahmen, um das Problem zu beheben.
-
-Um den Schutz vorübergehend zu deaktivieren und diese Löschvorgänge zuzulassen, führen Sie Folgendes aus: "Disable-ADSyncExportDeletionThreshold".
-
-Um den Schutz wieder zu aktivieren oder die Einstellung für den standardmäßigen Schwellenwert zu ändern, führen Sie Folgendes aus: "Enable-ADSyncExportDeletionThreshold".
 
 
 ## Konfigurieren des Verbunds mit AD FS
@@ -279,4 +268,4 @@ Sie können die Abbildung und das Logo für Ihre AD FS-Anmeldeseiten anpassen, i
 	
 	Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"} –Illustration @{path=”c:\Contoso\illustration.png”}
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

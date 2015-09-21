@@ -31,14 +31,13 @@ Der Azure-Ressourcen-Manager kann über eine [Library für .NET](https://msdn.mi
 
 ### Verwendung von ARMClient
 
-1. Installieren Sie [Chocolatey](https://chocolatey.org/), ein Open Source Computer-Paket-Manager für Windows.
-2. Öffnen Sie ein PowerShell-Fenster als Administrator, und führen Sie den folgenden Befehl aus:
+1. Installieren Sie [Chocolatey](https://chocolatey.org/), ein Open Source Computer-Paket-Manager für Windows. Öffnen Sie eine Eingabeaufforderung als Administrator, und führen Sie den folgenden Befehl aus:
 
     ```
     @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
     ```
 
-3. Installieren Sie ARMClient durch Öffnen einer neuen Eingabeaufforderung und Ausführen des folgenden Befehls:
+2. Installieren Sie ARMClient, indem Sie den folgenden Befehl ausführen:
 
     ```
     choco install armclient
@@ -66,7 +65,7 @@ Der Azure-Ressourcen-Manager kann über eine [Library für .NET](https://msdn.mi
 2. Operations Management Suite-Arbeitsbereiche aufrufen. Beispiel:
 
     ```
-    armclient get /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces?api-version=2014-10-10
+    armclient get /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces?api-version=2015-03-20
     ```
 
     Ein erfolgreicher Get-Aufruf gibt alle Arbeitsbereiche aus, die mit dem Abonnement verknüpft sind. Beispiel:
@@ -90,12 +89,12 @@ Der Azure-Ressourcen-Manager kann über eine [Library für .NET](https://msdn.mi
 3. Erstellen Sie Ihre Search-Variable. Beispiel:
 
     ```
-    $mySearch = "{ 'top':150, 'query':'Error'}”;
+    $mySearch = "{ 'top':150, 'query':'Error'}";
     ```
 4. Führen Sie mit der neuen Search-Variable eine Suche durch. Beispiel:
 
     ```
-    armclient post /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{WORKSPACE NAME}/search?api-version=2014-10-10 $mySearch
+    armclient post /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{WORKSPACE NAME}/search?api-version=2015-03-20 $mySearch
     ```
 
 ## Referenzbeispiele für die Search-API
@@ -106,7 +105,7 @@ Die folgenden Beispiele zeigen Ihnen, wie Sie die Search-API verwenden können.
 **Beispiel-URL:**
 
 ```
-	/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/search?api-version=2014-10-10
+	/subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/search?api-version=2015-03-20
 ```
 
 **Anforderung:**
@@ -123,7 +122,7 @@ Die folgenden Beispiele zeigen Ihnen, wie Sie die Search-API verwenden können.
 	  "start":"2015-02-04T21:03:29.231Z",
 	  "end":"2015-02-11T21:03:29.231Z"
 	}
-	armclient post /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace ID}/search?api-version=2014-10-10 $searchParametersJson
+	armclient post /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace ID}/search?api-version=2015-03-20 $searchParametersJson
 ```
 Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 
@@ -194,18 +193,18 @@ Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 **Fordern Sie den Inhalt einer gespeicherten Suche an:**
 
 ```
-	armclient post /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/search/{SearchId}?api-version=2014-10-10
+	armclient post /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/search/{SearchId}?api-version=2015-03-20
 ```
 
->[AZURE.NOTE] Wenn die Suche den Status "Ausstehend" zurückgibt, können die aktualisierten Ergebnisse über diese API aufgerufen werden. Nach 6 Minuten wird das Ergebnis der Suche aus dem Cache gelöscht, und es wird "Http Fehlend" zurückgegeben. Wenn die anfängliche Suchanforderung sofort den Status "Erfolgreich" zurückgibt, wird sie nicht zum Cache hinzugefügt. Dadurch gibt diese API bei einer Abfrage "Http Fehlend" zurück. Der Inhalt eines "Http 200"-Ergebnisses wird im gleichen Format wie die ursprüngliche Suchanforderung erstellt, nur mit aktualisierten Werten.
+>[AZURE.NOTE]Wenn die Suche den Status "Ausstehend" zurückgibt, können die aktualisierten Ergebnisse über diese API aufgerufen werden. Nach 6 Minuten wird das Ergebnis der Suche aus dem Cache gelöscht, und es wird "Http Fehlend" zurückgegeben. Wenn die anfängliche Suchanforderung sofort den Status "Erfolgreich" zurückgibt, wird sie nicht zum Cache hinzugefügt. Dadurch gibt diese API bei einer Abfrage "Http Fehlend" zurück. Der Inhalt eines "Http 200"-Ergebnisses wird im gleichen Format wie die ursprüngliche Suchanforderung erstellt, nur mit aktualisierten Werten.
 
 ### Gespeicherte Suchvorgänge - nur REST
 
 **Fordern Sie die Liste der gespeicherten Suchvorgänge an:**
 
 ```
-	armclient get /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/savedSearches?api-version=2014-10-10
-  ```
+	armclient get /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/savedSearches?api-version=2015-03-20
+```
 
 Unterstützte Methoden: GET PUT DELETE
 
@@ -216,19 +215,19 @@ Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 |Eigenschaft|Beschreibung|
 |---|---|
 |ID|Der eindeutige Bezeichner.|
-|ETag|**Erforderlich für Patch**. Wird bei jedem Schreibvorgang vom Server aktualisiert. Zum Aktualisieren muss der Wert mit dem aktuellen gespeicherten Wert übereinstimmen oder "\*" lauten. 409 für alte/ungültige Werte zurückgegeben.|
+|ETag|**Erforderlich für Patch**. Wird bei jedem Schreibvorgang vom Server aktualisiert. Zum Aktualisieren muss der Wert mit dem aktuellen gespeicherten Wert übereinstimmen oder "*" lauten. 409 für alte/ungültige Werte zurückgegeben.|
 |properties.query|**Erforderlich**. Die Suchabfrage|
 |properties.displayName|**Erforderlich**. Der benutzerdefinierte Anzeigename der Abfrage. Bei Modellierung als Azure-Ressource wäre dies ein Tag.|
 |properties.category|**Erforderlich**. Die benutzerdefinierte Kategorie der Abfrage. Bei Modellierung als Azure-Ressource wäre dies ein Tag.|
 
->[AZURE.NOTE] Beim Abrufen gespeicherter Suchvorgänge in einem Arbeitsbereich gibt die Operational Insights Search-API zurzeit vom Benutzer erstellte gespeicherte Suchvorgänge zurück. Momentan gibt die API keine von Lösungen bereitgestellten gespeicherten Suchvorgänge zurück. Diese Funktionalität wird zu einem späteren Zeitpunkt hinzugefügt.
+>[AZURE.NOTE]Beim Abrufen gespeicherter Suchvorgänge in einem Arbeitsbereich gibt die Operational Insights Search-API zurzeit vom Benutzer erstellte gespeicherte Suchvorgänge zurück. Momentan gibt die API keine von Lösungen bereitgestellten gespeicherten Suchvorgänge zurück. Diese Funktionalität wird zu einem späteren Zeitpunkt hinzugefügt.
 
 ### Löschen gespeicherter Suchvorgänge
 
 **Anforderung:**
 
 ```
-	armclient delete /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace ID}/savedSearches/thisIsMyId?api-version=2014-10-10
+	armclient delete /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace ID}/savedSearches/thisIsMyId?api-version=2015-03-20
 ```
 
 ### Aktualisieren gespeicherter Suchvorgänge
@@ -237,7 +236,7 @@ Die folgende Tabelle beschreibt die verfügbaren Eigenschaften.
 
 ```
 	$savedSearchParametersJson = "{'etag': 'W/`"datetime\'2015-04-16T23%3A35%3A35.3182423Z\'`"', 'properties': { 'Category': 'myCategory', 'DisplayName':'myDisplayName', 'Query':'* | measure Count() by Source', 'Version':'1'  }"
-	armclient put /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace ID}/savedSearches/thisIsMyId?api-version=2014-10-10 $savedSearchParametersJson
+	armclient put /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace ID}/savedSearches/thisIsMyId?api-version=2015-03-20 $savedSearchParametersJson
 ```
 
 ### Metadaten: nur JSON
@@ -247,7 +246,7 @@ Dies ist eine Möglichkeit, die Felder für alle Protokolltypen für die Daten a
 **Felder anfordern:**
 
 ```
-	armclient get /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/schema?api-version=2014-10-10
+	armclient get /subscriptions/{SubId}/resourceGroups/{ResourceGroupId}/providers/Microsoft.OperationalInsights/workspaces/{WorkspaceName}/schema?api-version=2015-03-20
 ```
 
 **Antwort:**
@@ -300,8 +299,7 @@ Im Folgenden werden die verfügbaren optionalen Parameter beschrieben.
 
 Der Parameter "Highlight" ist ein optionaler Parameter, den Sie verwenden können, damit das Suchsubsystem einen Satz von Markern in die Antwort einbezieht.
 
-Diese Marker stehen für den Beginn und das Ende von hervorgehobenem Text, der den in Ihrer Suchabfrage angegebenen Begriffen entspricht.
-Sie können die Start- und Endmarker angeben, die bei der Suche zum Einschließen des markierten Begriffs verwendet werden.
+Diese Marker stehen für den Beginn und das Ende von hervorgehobenem Text, der den in Ihrer Suchabfrage angegebenen Begriffen entspricht. Sie können die Start- und Endmarker angeben, die bei der Suche zum Einschließen des markierten Begriffs verwendet werden.
 
 **Beispiel für eine Suchabfrage**
 
@@ -317,7 +315,7 @@ Sie können die Start- und Endmarker angeben, die bei der Suche zum Einschließe
 	  "start":"2015-02-04T21:03:29.231Z",
 	  "end":"2015-02-11T21:03:29.231Z"
 	}
-	armclient post /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace ID}/search?api-version=2014-10-10 $searchParametersJson
+	armclient post /subscriptions/{Subscription ID}/resourceGroups/OI-Default-East-US/providers/Microsoft.OperationalInsights/workspaces/{Workspace ID}/search?api-version=2015-03-20 $searchParametersJson
 ```
 
 **Beispielergebnis:**
@@ -346,4 +344,4 @@ Sie können die Start- und Endmarker angeben, die bei der Suche zum Einschließe
 
 Beachten Sie, dass das oben genannte Ergebnis eine Fehlermeldung enthält, die mit dem Präfix versehen und angefügt wurde.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

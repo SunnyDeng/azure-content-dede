@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="03/17/2015"
+   ms.date="09/03/2015"
    ms.author="abhic"/>
 
 # Platzierungseinschränkungen – Übersicht
@@ -39,4 +39,4 @@ NodeProperty – Eine benutzer- oder systemdefinierte Zuordnung einer Zeichenfol
 Weitere Informationen: [Anwendungsszenarien](../service-fabric-application-scenarios).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

@@ -1,10 +1,10 @@
 <properties 
-	pageTitle="Erstellen von Logik-App-Definitionen"
-	description="Erfahren Sie, wie die JSON-Definition für Logik-Apps geschrieben wird."
-	authors="stepsic-microsoft-com"
-	manager="dwrede"
-	editor=""
-	services="app-service\logic"
+	pageTitle="Erstellen von Logik-App-Definitionen" 
+	description="Erfahren Sie, wie die JSON-Definition für Logik-Apps geschrieben wird." 
+	authors="stepsic-microsoft-com" 
+	manager="dwrede" 
+	editor="" 
+	services="app-service\logic" 
 	documentationCenter=""/>
 
 <tags
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/08/2015"
 	ms.author="stepsic"/>
 	
 #Erstellen von Logik-App-Definitionen
-In diesem Thema wird die Verwendung von Definitionen für [App Service-Logik-Apps](app-service-logic-what-are-logic-apps.md) erläutert. Diese sind in einer einfachen, deklarativen JSON-Sprache verfasst. Machen Sie sich zunächst [mit dem Erstellen neuer Logik-Apps](../app-service-create-a-logic-app.md) vertraut, falls Sie dies noch nicht getan haben. Sie können auch [das umfassende MSDN-Referenzmaterial zur Definitionssprache](https://msdn.microsoft.com/library/azure/dn948512.aspx) lesen.
+In diesem Thema wird die Verwendung von Definitionen für [App Services-Logik-Apps](app-service-logic-what-are-logic-apps.md) erläutert. Diese sind in einer einfachen, deklarativen JSON-Sprache verfasst. Machen Sie sich zunächst [mit dem Erstellen neuer Logik-Apps](../app-service-create-a-logic-app.md) vertraut, falls Sie dies noch nicht getan haben. Sie können auch [das umfassende MSDN-Referenzmaterial zur Definitionssprache](https://msdn.microsoft.com/library/azure/dn948512.aspx) lesen.
 
 ## Wiederholt ausgeführte Schritte in einer Liste
 
@@ -686,6 +686,41 @@ In der tatsächlichen `PUT`-Anforderung für die Logik-App können Sie dann den 
 }
 ``` 
 
-In den einzelnen Umgebungen können Sie dann einen anderen Wert für den `connection`-Parameter angeben. In der [REST-API-Dokumentation](https://msdn.microsoft.com/library/azure/dn948513.aspx) finden Sie Informationen dazu, welche Möglichkeiten Sie zum Erstellen und Verwalten von Logik-Apps haben.
+In den einzelnen Umgebungen können Sie dann einen anderen Wert für den `connection`-Parameter angeben.
 
-<!---HONumber=September15_HO1-->
+## Ausführen eines Schritts, bis eine Bedingung erfüllt ist
+
+Sie verfügen möglicherweise über eine API, die Sie aufrufen, und Sie möchten mit dem Fortfahren warten, bis Sie eine bestimmte Antwort erhalten. Angenommen, Sie möchten z. B. warten, bis eine andere Person eine Datei in ein Verzeichnis hochgeladen hat, bevor diese Datei verarbeitet wird. Sie erreichen dies mit *do-until*:
+
+```
+{
+    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2014-12-01-preview/workflowdefinition.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {},
+    "triggers": {},
+    "actions": {
+        "http0": {
+            "type": "Http",
+            "inputs": {
+                "method": "GET",
+                "uri": "http://mydomain/listfiles"
+            },
+            "until": {
+                "limit": {
+                    "timeout": "PT10M"
+                },
+                "conditions": [
+                    {
+                        "expression": "@greater(length(action().outputs.body),0)"
+                    }
+                ]
+            }
+        }
+    },
+    "outputs": {}
+}
+```
+
+In der [REST-API-Dokumentation](https://msdn.microsoft.com/library/azure/dn948513.aspx) finden Sie Informationen dazu, welche Möglichkeiten Sie zum Erstellen und Verwalten von Logik-Apps haben.
+
+<!---HONumber=Sept15_HO2-->

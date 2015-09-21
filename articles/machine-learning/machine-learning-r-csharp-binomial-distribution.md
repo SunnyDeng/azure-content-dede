@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Binomial Distribution Suite | Microsoft Azure"
-	description="Binomial Distribution Suite"
-	services="machine-learning"
-	documentationCenter=""
-	authors="jaymathe"
-	manager="paulettm"
+	pageTitle="Binomial Distribution Suite | Microsoft Azure" 
+	description="Binomial Distribution Suite" 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="ireiter" 
+	manager="paulettm" 
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/02/2015"
-	ms.author="jaymathe"/>
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/02/2015" 
+	ms.author="ireiter"/>
 
 
 #Binomial Distribution Suite
@@ -290,4 +290,4 @@ Häufig gestellte Fragen zur Nutzung des Webdiensts und zum Veröffentlichen im 
 [6]: ./media/machine-learning-r-csharp-binomial-distribution/binomial_6.png
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

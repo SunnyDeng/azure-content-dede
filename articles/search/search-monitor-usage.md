@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="required" 
-   ms.date="07/08/2015"
+   ms.date="09/08/2015"
    ms.author="heidist"/>
 
 # Überwachen der Nutzung und Statistiken eines Azure-Suchdiensts
@@ -45,7 +45,7 @@ Sowohl die REST-API von Azure Search als auch das .NET SDK bieten programmgesteu
 
 ## Nächste Schritte
 
-Überprüfen Sie [Grenzen und Kapazität](https://msdn.microsoft.com/library/azure/dn798934.aspx), um die Kombination von Partitionen und Replikaten zu bestimmen, die erforderlich sind, wenn die vorhandene Kapazität nicht ausreicht.
+Überprüfen Sie [Grenzen und Kapazität](search-limits-quotas-capacity.md), um die Kombination von Partitionen und Replikaten zu bestimmen, die erforderlich sind, wenn die vorhandene Kapazität nicht ausreicht.
 
 Weitere Informationen zur Dienstverwaltung finden Sie unter [Verwalten Ihres Suchdiensts in Microsoft Azure](search-manage.md).
 
@@ -57,4 +57,4 @@ Weitere Informationen zur Dienstverwaltung finden Sie unter [Verwalten Ihres Suc
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

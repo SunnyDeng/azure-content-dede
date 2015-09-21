@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Auflösung für virtuelle Computer und Rolleninstanzen"
-	description="Szenarien für die Namensauflösung für Azure IaaS, Hybridlösungen, zwischen verschiedenen Clouddiensten, Active Directory und Verwenden von eigenen DNS-Servern"
-	services="virtual-network"
-	documentationCenter="na"
-	authors="joaoma"
-	manager="jdial"
-	editor="tysonn"/>
+   description="Szenarien für die Namensauflösung für Azure IaaS, Hybridlösungen, zwischen verschiedenen Clouddiensten, Active Directory und Verwenden von eigenen DNS-Servern"
+   services="virtual-network"
+   documentationCenter="na"
+   authors="GarethBradshawMSFT"
+   manager="jdial"
+   editor="tysonn" />
 <tags 
    ms.service="virtual-network"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/10/2015"
-	ms.author="joaoma"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/02/2015"
+   ms.author="joaoma" />
 
 # Namensauflösung für virtuelle Computer und Rolleninstanzen
 
@@ -52,19 +52,17 @@ Zusammen mit der Auflösung des öffentlichen DNS-Namens bietet Azure die Auflö
 
 - Benutzerfreundlichkeit: Es ist keine Konfiguration erforderlich, um die von Azure bereitgestellte Namensauflösung zu verwenden.
 
+- Der von Azure bereitgestellte Dienst zur Namensauflösung ist hoch verfügbar und erspart Ihnen das Erstellen und Verwalten von Clustern Ihrer eigenen DNS-Server.
+
 - Die Namensauflösung wird zwischen Rolleninstanzen oder virtuellen Computern im gleichen Clouddienst bereitgestellt, ohne dass ein FQDN erforderlich ist.
 
-- Die Namensauflösung wird zwischen virtuellen Computern in ARM-basierten virtuellen Netzwerken ohne Notwendigkeit des FQDN bereitgestellt. In klassischen Netzwerken ist der FQDN beim Auflösen von Namen in unterschiedlichen Clouddiensten erforderlich.
+- Die Namensauflösung wird zwischen virtuellen Computern in ARM-basierten virtuellen Netzwerken ohne Notwendigkeit des FQDN bereitgestellt. In klassischen virtuellen Netzwerken ist der FQDN beim Auflösen von Namen in unterschiedlichen Clouddiensten erforderlich.
 
 - Sie können die Hostnamen erstellen, die Ihre Bereitstellungen am besten beschreiben, und müssen nicht mit automatisch generierten Namen arbeiten.
 
 **Überlegungen:**
 
-- Die Namensauflösung zwischen virtuellen Netzwerken ist nicht verfügbar.
-
-- Sie können nur Hostnamen für virtuelle Computer und Rolleninstanzen registrieren, die sich unter den ersten 180 Clouddiensten befinden, die einem virtuellen Azure-Netzwerk hinzugefügt wurden. Wenn Sie über mehr als 180 Clouddienste verfügen, müssen Sie unabhängig von der Anzahl von virtuellen Computern und Rolleninstanzen in jedem Dienst eigene DNS-Server für die Namensauflösung bereitstellen.
-
-- Die standortübergreifende Namensauflösung ist nicht verfügbar.
+- Die Namensauflösung zwischen virtuellen Netzwerken sowie zwischen Azure und lokalen Computern ist nicht verfügbar.
 
 - Das von Azure erstellte DNS-Suffix kann nicht geändert werden.
 
@@ -74,7 +72,57 @@ Zusammen mit der Auflösung des öffentlichen DNS-Namens bietet Azure die Auflö
 
 - Hostnamen müssen DNS-kompatibel sein. (Es dürfen nur 0-9, a-Z und "-" verwendet werden, und sie dürfen nicht mit "-" beginnen. Siehe RFC 3696 Abschnitt 2).
 
-- Der DNS-Anfragedatenverkehr wird pro virtuellem Computer gedrosselt. Wenn Ihre Anwendung häufige DNS-Abfragen für mehrere Zielnamen ausführt, kann es bei einigen Abfragen zu Zeitüberschreitungen kommen. Um dies zu vermeiden, wird die Aktivierung der clientseitigen Zwischenspeicherung empfohlen. Auf Windows ist diese standardmäßig aktiviert, bei einigen Linux-Distributionen ist dies möglicherweise nicht der Fall.
+- Der DNS-Anfragedatenverkehr wird pro virtuellem Computer gedrosselt. Dies sollte auf die meisten Anwendungen keine Auswirkungen haben. Wenn eine Drosselung der Anforderungen festgestellt wird, stellen Sie sicher, dass clientseitiges Zwischenspeichern aktiviert ist. Weitere Informationen finden Sie unter [Getting the most from Azure-provided name resolution](#Getting-the-most-from-Azure-provided-name-resolution) (auf Englisch).
+
+- Nur virtuelle Computer in den ersten 180 Clouddiensten werden für jedes klassische virtuelle Netzwerk registriert. Dies gilt nicht für ARM-basierte virtuelle Netzwerke.
+
+
+### Die optimale Nutzung der von Azure bereitgestellten Namensauflösung
+**Clientseitiges Caching:**
+
+Nicht alle DNS-Abfragen müssen über das Netzwerk gesendet werden. Clientseitiges Zwischenspeichern kann die Latenz verringern und die Flexibilität bei Netzwerkproblemen verbessern, indem sich wiederholende DNS-Abfragen aus einem lokalen Cache aufgelöst werden. DNS-Einträge enthalten ein Time-To-Live (TTL), damit der Cache den Datensatz so lange wie möglich speichern kann, ohne die Aktualität der Datensätze zu beeinträchtigen, damit das clientseitige Zwischenspeichern für die meisten Situationen geeignet ist.
+
+Der standardmäßige DNS-Client von Windows verfügt über einen integrierten DNS-Cache. Einige Linux-Distributionen enthalten standardmäßig kein Zwischenspeichern, sodass empfohlen wird, diese Funktion zu jedem virtuellen Linux-Computer hinzuzufügen. Es gibt eine Reihe verschiedener DNS-Cachingpakete, z. B. dnsmasq. Es folgen die Schritte zur Installation von dnsmasq auf den am häufigsten verwendeten Distributionen:
+
+- **Ubuntu (verwendet resolvconf)**:
+	- Installieren Sie einfach das dnsmasq-Paket ("sudo apt-get install dnsmasq").
+- **SUSE (verwendet netconf)**:
+	- Installieren Sie das dnsmasq-Paket ("sudo zypper install dnsmasq"). 
+	- Aktivieren Sie den dnsmasq-Dienst ("systemctl enable dnsmasq.service"). 
+	- Starten Sie den dnsmasq-Dienst ("systemctl start dnsmasq.service"). 
+	- Bearbeiten Sie "/etc/sysconfig/network/config", und ändern Sie NETCONFIG\_DNS\_FORWARDER="" auf "dnsmasq".
+	- Aktualisieren Sie resolv.conf ("netconfig update"), um den Cache als lokalen DNS-Auflöser festzulegen.
+- **OpenLogic (verwendet NetworkManager)**:
+	- Installieren Sie das dnsmasq-Paket ("sudo yum install dnsmasq").
+	- Aktivieren Sie den dnsmasq-Dienst ("systemctl enable dnsmasq.service").
+	- Starten Sie den dnsmasq-Dienst ("systemctl start dnsmasq.service").
+	- Fügen Sie "prepend domain-name-servers 127.0.0.1;" zu "/etc/dhclient-eth0.conf" hinzu.
+	- Starten Sie den Netzwerkdienst neu ("service network restart"), um den Cache als lokalen DNS-Auflöser festzulegen.
+
+[AZURE.NOTE]\: Das dnsmasq-Paket ist nur einer der vielen DNS-Caches, die für Linux verfügbar sind. Bevor Sie es nutzen, überprüfen Sie dessen Eignung für Ihre besonderen Bedürfnisse und außerdem, ob keine anderer Cache installiert ist.
+
+**Clientseitige Wiederholungsversuche:**
+
+DNS ist in erster Linie ein UDP-Protokoll. Da das UDP-Protokoll keine Nachrichtenübermittlung garantiert, wird die Wiederholungslogik im DNS-Protokoll selbst behandelt. Jeder DNS-Client (Betriebssystem) kann eine unterschiedliche Wiederholungslogik je nach Vorliebe des Erstellers aufweisen:
+
+ - Windows-Betriebssysteme starten nach 1 Sekunde einen Wiederholungsversuch und dann erneut nach weiteren 2, 4 und weiteren 4 Sekunden. 
+ - Das standardmäßige Linux-Setup führt nach 5 Sekunden einen Wiederholungsversuch aus. Es wird empfohlen, dies so zu ändern, dass 5 Mal im Abstand von 1 Sekunde ein Wiederholungsversuch gestartet wird.  
+
+Geben Sie zum Überprüfen der aktuellen Einstellungen auf einem virtuellen Linux-Computer "cat /etc/resolv.conf" ein, und betrachten Sie die Zeile "Optionen", z. B.:
+
+	options timeout:1 attempts:5
+
+Die Datei "resolv.conf" wird normalerweise automatisch generiert und sollte nicht bearbeitet werden. Die entsprechenden Schritte zum Hinzufügen der Zeile "Optionen" variieren je nach Distribution:
+
+- **Ubuntu** (verwendet resolvconf):
+	- Fügen Sie die Optionszeile zu "/etc/resolveconf/resolv.conf.d/head" hinzu. 
+	- Führen Sie "resolvconf -u" zum Aktualisieren aus.
+- **SUSE** (verwendet netconf):
+	- Fügen Sie "timeout:1 attempts:5' zum Parameter NETCONFIG\_DNS\_RESOLVER\_OPTIONS="" in "/etc/sysconfig/network/config" hinzu. 
+	- Führen Sie "netconfig update" zum Aktualisieren aus.
+- **OpenLogic** (verwendet NetworkManager):
+	- Fügen Sie 'echo "options timeout:1 attempts:5"' zu "/etc/NetworkManager/dispatcher.d/11-dhclient" hinzu. 
+	- Führen Sie "service network restart" zum Aktualisieren aus.
 
 ## Namensauflösung mithilfe eines eigenen DNS-Servers
 
@@ -112,12 +160,11 @@ Beim Erstellen eines virtuellen Netzwerks im Verwaltungsportal können Sie die I
 
 Bei klassischen virtuellen Netzwerken können Sie DNS-Einstellungen mithilfe von zwei verschiedenen Konfigurationsdateien angeben: mit der *Netzwerkkonfigurationsdatei* und der *Dienstkonfigurationsdatei*.
 
-> [AZURE.NOTE]DNS-Server in der Dienstkonfigurationsdatei überschreiben die Einstellungen in der Netzwerkkonfigurationsdatei.
- 
 Die Netzwerk-Konfigurationsdatei beschreibt die virtuellen Netzwerke in Ihrem Abonnement. Wenn Sie einem Clouddienst in einem virtuellen Netzwerk Rolleninstanzen oder virtuelle Computer hinzufügen, werden die DNS-Einstellungen aus der Netzwerkkonfigurationsdatei auf jede Rolleninstanz oder jeden virtuellen Computer angewendet, sofern keine Clouddienst-spezifischen DNS-Server angegeben wurden.
 
 Die Dienstkonfigurationsdatei wird für jeden Clouddienst erstellt, den Sie in Azure hinzufügen. Wenn Sie dem Clouddienst Rolleninstanzen oder virtuelle Computer hinzufügen, werden die DNS-Einstellungen aus der Dienstkonfigurationsdatei auf jede Rolleninstanz oder virtuellen Computer angewendet.
 
+> [AZURE.NOTE]DNS-Server in der Dienstkonfigurationsdatei überschreiben die Einstellungen in der Netzwerkkonfigurationsdatei.
 
 
 ## Nächste Schritte
@@ -130,4 +177,4 @@ Die Dienstkonfigurationsdatei wird für jeden Clouddienst erstellt, den Sie in A
 
 [Konfigurieren eines virtuellen Netzwerks mithilfe einer Netzwerkkonfigurationsdatei](virtual-networks-using-network-configuration-file.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

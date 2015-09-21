@@ -1,31 +1,31 @@
-<properties 
-   pageTitle="Beispiele für Azure-Speicher | Microsoft Azure"
-	description="Sie können Beispiele für Azure-Speicher anzeigen, herunterladen und testen. Entdecken Sie Schnellstart-Beispiele für Blobs, Warteschlangen, Tabellen und Dateien, indem Sie die Speicherclientbibliotheken für .NET, Java, Node.js und C++ verwenden."
-	services="storage"
-	documentationCenter="na"
-	authors="tamram"
-	manager="na"
-	editor="na"/>
-<tags 
+<properties
+   pageTitle="Beispiele für Azure Storage | Microsoft Azure"
+   description="Sie können Beispiele für Azure-Speicher anzeigen, herunterladen und testen. Entdecken Sie Schnellstart-Beispiele für Blobs, Warteschlangen, Tabellen und Dateien, indem Sie die Speicherclientbibliotheken für .NET, Java, Node.js und C++ verwenden."
+   services="storage"
+   documentationCenter="na"
+   authors="tamram"
+   manager="na"
+   editor="na" />
+<tags
    ms.service="storage"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage"
-	ms.date="09/01/2015"
-	ms.author="tamram"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="storage"
+   ms.date="09/01/2015"
+   ms.author="tamram" />
 
-# Beispiele für Azure-Speicher
+# Beispiele für Azure Storage
 
 ## Übersicht
 Verwenden Sie die unten aufgeführten Links, um Arbeitsbeispiele für Azure-Speicher anzuzeigen und herunterzuladen.
 
 ## Beispiele für .NET
 
-Um die Beispiele für .NET zu untersuchen, laden Sie die [Speicherclientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) aus NuGet herunter. Die Speicherclientbibliothek für .NET ist auch im [Azure SDK für .NET](http://azure.microsoft.com/downloads/) verfügbar.
+Um die Beispiele für .NET zu untersuchen, laden Sie die [Speicherclientbibliothek für .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) aus NuGet herunter. Die .NET-Speicherclientbibliothek ist auch im [Azure SDK für .NET](http://azure.microsoft.com/downloads/) verfügbar.
 
-* [Erste Schritte mit Azure-Blobs, -Tabellen und -Warteschlangen in 5 Minuten](storage-getting-started-guide.md)
-* [Verwalten von Nebenläufigkeit mit Azure Storage - Beispielanwendung](https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)
+* [Erste Schritte mit Azure-Blobs, -Tabellen und -Warteschlangen in 5 Minuten](storage-getting-started-guide.md)
+* [Managing Concurrency using Azure Storage – Sample Application (in englischer Sprache)](https://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)
 * [Erste Schritte mit Blobs](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataBlobStorage)
 * [Erste Schritte mit Tabellen](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataTableStorage)
 * [Erste Schritte mit Warteschlangen](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/VisualStudioQuickStarts/DataStorageQueue)
@@ -59,7 +59,7 @@ Um die Beispiele für C++ zu untersuchen, laden Sie die [Speicherclientbibliothe
 * [Erste Schritte mit Tabellen](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage/samples/TablesGettingStarted)
 * [Erste Schritte mit Warteschlangen](https://github.com/Azure/azure-storage-cpp/tree/master/Microsoft.WindowsAzure.Storage/samples/QueuesGettingStarted)
 
-## Siehe auch
+## Weitere Informationen
 
 ### .NET-Ressourcen
 
@@ -79,6 +79,6 @@ Um die Beispiele für C++ zu untersuchen, laden Sie die [Speicherclientbibliothe
 ### C++-Ressourcen
 
 - [Quellcode für die Speicherclientbibliothek für C++](https://github.com/Azure/azure-storage-cpp)
-- [Referenz zur C++-Clientbibliothek](http://azure.github.io/azure-storage-cpp/) 
+- [Referenz zur C++-Clientbibliothek](http://azure.github.io/azure-storage-cpp/)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

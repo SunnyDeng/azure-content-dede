@@ -1,6 +1,8 @@
 <properties
+	title="Elastic database Split-Merge tool tutorial"
 	pageTitle="Lernprogramm zum Split-Merge-Tool für elastische Datenbanken | Microsoft Azure"
 	description="Aufteilen und Zusammenführen mit Tools für elastische Datenbanken"
+	metaKeywords="elastic database tools, split and merge, Azure SQL Database sharding, elastic scale, splitting and merging elastic databases"
 	services="sql-database" documentationCenter=""  
 	manager="jeffreyg"
 	authors="sidneyh"/>
@@ -100,12 +102,12 @@ Führen Sie den folgenden Befehl im gleichen Fenster aus, in dem „makecert“ 
 
 ### Aktualisieren der Dienstkonfigurationsdatei
 
-Fügen Sie den oben kopierten Zertifikatfingerabdruck in das thumbprint-Attribut bzw. value-Attribut der folgenden Einstellungen ein. Für die Webrolle:
+Fügen Sie den oben kopierten Zertifikatfingerabdruck in das thumbprint-Attribut bzw. value-Attribut der folgenden Einstellungen ein. Für die Workerrolle:
 
     <Setting name="DataEncryptionPrimaryCertificateThumbprint" value="" />
     <Certificate name="DataEncryptionPrimary" thumbprint="" thumbprintAlgorithm="sha1" />
 
-Für die Workerrolle:
+Für die Webrolle:
 
     <Setting name="AdditionalTrustedRootCertificationAuthorities" value="" />
     <Setting name="AllowedClientCertificateThumbprints" value="" />
@@ -332,4 +334,4 @@ Wenn Sie keine Anforderungen übermitteln können, wird möglicherweise Folgende
 [5]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/storage.png
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

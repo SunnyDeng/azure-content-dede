@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Schritt 1: Erstellen eines Machine Learning-Arbeitsbereichs | Microsoft Azure" 
-	description="Exemplarische Vorgehensweise zum Entwickeln einer Vorhersagelösung – Schritt 1: Erfahren Sie, wie Sie einen neuen Azure Machine Learning Studio-Arbeitsbereich einrichten." 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="garyericson" 
-	manager="paulettm" 
+<properties
+	pageTitle="Schritt 1: Erstellen eines Machine Learning-Arbeitsbereichs | Microsoft Azure"
+	description="Exemplarische Vorgehensweise zum Entwickeln einer Vorhersagelösung – Schritt 1: Erfahren Sie, wie Sie einen neuen Azure Machine Learning Studio-Arbeitsbereich einrichten."
+	services="machine-learning"
+	documentationCenter=""
+	authors="garyericson"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="machine-learning" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/10/2015" 
+<tags
+	ms.service="machine-learning"
+	ms.workload="data-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/08/2015"
 	ms.author="garye"/>
 
 
@@ -25,8 +25,8 @@ Dies ist der erste Schritt der exemplarischen Vorgehensweise zum [Entwickeln ein
 1.	**Erstellen eines Machine Learning-Arbeitsbereichs**
 2.	[Hochladen vorhandener Daten](machine-learning-walkthrough-2-upload-data.md)
 3.	[Erstellen eines neuen Experiments](machine-learning-walkthrough-3-create-new-experiment.md)
-4.	[Trainieren und Auswerten der Modelle](machine-learning-walkthrough-4-train-and-evaluate-models.md)
-5.	[Veröffentlichen des Webdiensts](machine-learning-walkthrough-5-publish-web-service.md)
+4.	[Trainieren und Bewerten der Modelle](machine-learning-walkthrough-4-train-and-evaluate-models.md)
+5.	[Bereitstellen des Webdiensts](machine-learning-walkthrough-5-publish-web-service.md)
 6.	[Zugreifen auf den Webdienst](machine-learning-walkthrough-6-access-web-service.md)
 
 ----------
@@ -54,6 +54,5 @@ Weitere Informationen finden Sie unter [Verwalten eines Azure Machine Learning-A
 **Nächster Schritt: [Hochladen vorhandener Daten](machine-learning-walkthrough-2-upload-data.md)**
 
 [1]: ./media/machine-learning-walkthrough-1-create-ml-workspace/create1.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

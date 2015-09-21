@@ -109,18 +109,18 @@ In diesem Abschnitt erstellen Sie eine neue Meldungshandlerklasse mit dem Namen 
 
 ## Registrieren für Benachrichtigungen unter Verwendung des WebAPI-Back-Ends
 
-In diesem Abschnitt wird dem WebAPI-Back-End ein neuer Controller hinzugefügt, um Anforderungen zum Registrieren eines Benutzers und eines Geräts für Benachrichtigungen mit der Clientbibliothek für Notification Hubs, d. h. der Azure Service Bus-Clientbibliothek, zu registrieren. Der Controller fügt eine Benutzermarkierung für den Benutzer hinzu, der mit `AuthenticationTestHandler` authentifiziert und an den HttpContext angefügt wurde. Die Markierung hat das Zeichenfolgenformat `"username:<actual username>"`.
+In diesem Abschnitt wird dem WebAPI-Back-End ein neuer Controller hinzugefügt, um Anforderungen zum Registrieren eines Benutzers und eines Geräts für Benachrichtigungen mit der Clientbibliothek für Notification Hubs zu registrieren. Der Controller fügt eine Benutzermarkierung für den Benutzer hinzu, der mit `AuthenticationTestHandler` authentifiziert und an den HttpContext angefügt wurde. Die Markierung hat das Zeichenfolgenformat `"username:<actual username>"`.
 
 
  
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt **AppBackend**, und klicken Sie dann auf NuGet-Pakete verwalten.
 
-2. Klicken Sie auf der linken Seite auf **Online**, und suchen Sie im **Suchfeld** nach **servicebus**.
+2. Klicken Sie auf der linken Seite auf **Online**, und suchen Sie im **Suchfeld** nach **Microsoft.Azure.NotificationHubs**.
 
-3. Klicken Sie in der Ergebnisliste auf **Windows Azure Service Bus** und dann auf **Installieren**. Schließen Sie die Installation ab, und schließen Sie dann das Fenster des NuGet-Paket-Managers.
+3. Klicken Sie in der Ergebnisliste auf **Microsoft Azure Notification Hubs Service Management Library**, und klicken Sie dann auf **Installieren**. Schließen Sie die Installation ab, und schließen Sie dann das Fenster des NuGet-Paket-Managers.
 
-	![][B14]
+	Dies fügt mithilfe des <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">Microsoft.Azure.NotificationHubs-NuGet-Pakets</a> einen Verweis auf das Azure Notification Hubs-SDK hinzu.
 
 4. Wir erstellen nun eine neue Klassendatei, in der die unterschiedlichen sicheren Benachrichtigungen angegeben sind, die gesendet werden. In einer vollständigen Implementierung werden die Benachrichtigungen in einer Datenbank gespeichert. Der Einfachheit halber wird sie in diesem Lernprogramm im Arbeitsspeicher gespeichert. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Ordner **Modelle**, und klicken Sie dann auf **Hinzufügen** und anschließend auf **Klasse**. Geben Sie der neuen Klasse den Namen **Notifications.cs**, und klicken Sie dann auf **Hinzufügen**, um die Klasse zu generieren.
 
@@ -128,7 +128,7 @@ In diesem Abschnitt wird dem WebAPI-Back-End ein neuer Controller hinzugefügt, 
 
 5. Fügen Sie die folgende `using`-Anweisung am Anfang der Datei "Notifications.cs" hinzu:
 
-        using Microsoft.ServiceBus.Notifications;
+        using Microsoft.Azure.NotificationHubs;
 
 6. Ersetzen Sie dann die Definition der `Notifications`-Klasse durch den folgenden Code sowie die beiden Platzhalter durch die Verbindungszeichenfolge (mit Vollzugriff) für Ihren Notification Hub und durch den Namen des Hubs (der im [Azure-Verwaltungsportal](http://manage.windowsazure.com) verfügbar ist):
 
@@ -269,7 +269,7 @@ In diesem Abschnitt wird dem WebAPI-Back-End ein neuer Controller hinzugefügt, 
 
 ## Senden von Benachrichtigungen über das WebAPI-Back-End
 
-In diesem Abschnitt fügen Sie einen neuen Controller hinzu, über den Clientgeräte basierend auf dem Benutzernamentag unter Verwendung der Azure Service Bus-Clientbibliothek des ASP.NET WebAPI-Back-Ends eine Benachrichtigung senden können.
+In diesem Abschnitt fügen Sie einen neuen Controller hinzu, über den Clientgeräte anhand des Benutzernamentags unter Verwendung der Azure Notification Hubs Service Management-Bibliothek des ASP.NET WebAPI-Back-Ends eine Benachrichtigung senden können.
 
 
 1. Erstellen Sie einen weiteren neuen Controller mit dem Namen **NotificationsController**. Erstellen Sie ihn auf die gleiche Weise, wie Sie den Controller **RegisterController** im vorherigen Abschnitt erstellt haben.
@@ -359,4 +359,4 @@ In diesem Abschnitt fügen Sie einen neuen Controller hinzu, über den Clientger
 [B16]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users16.PNG
 [B18]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users18.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

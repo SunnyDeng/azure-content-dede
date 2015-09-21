@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Erste Schritte mit Daten (Android) | Microsoft Azure" 
-	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Ihrer Android-App." 
+	pageTitle="Erste Schritte mit Daten auf Android (JavaScript-Back-End) | Microsoft Azure" 
+	description="Erfahren Sie mehr über die ersten Schritte bei der Verwendung von Mobile Services zur Nutzung von Daten in Android-Apps (JavaScript-Back-End)." 
 	services="mobile-services" 
 	documentationCenter="android" 
 	authors="RickSaling" 
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="08/18/2015" 
+	ms.date="09/04/2015" 
 	ms.author="ricksal"/>
 
-# Hinzufügen von Mobile Services zu einer vorhandenen Android-App
+# Hinzufügen von Mobile Services zu einer vorhandenen Android-App (JavaScript-Back-End)
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-data](../../includes/mobile-services-selector-get-started-data.md)]
 
@@ -35,7 +35,7 @@
 </div>
 
 
-<p>In diesem Lernprogramm wird ausführlich darauf eingegangen, wie Azure Mobile Services zum Speichern und Abrufen von Daten aus einer Android-App verwendet wird. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart für Mobile Services abgenommen werden. Falls Sie noch keine Erfahrung mit mobilen Diensten haben, sollten Sie eventuell zuerst das Lernprogramm <a href="/de-de/develop/mobile/tutorials/get-started-android">Erste Schritte mit mobilen Diensten</a> abschließen.</p>
+<p>In diesem Lernprogramm wird ausführlich darauf eingegangen, wie Azure Mobile Services zum Speichern und Abrufen von Daten aus einer Android-App verwendet wird. Dieses Thema behandelt viele der Schritte, die Ihnen im Schnellstart für Mobile Services abgenommen werden. Falls Sie noch keine Erfahrung mit mobilen Diensten haben, sollten Sie eventuell zuerst das Lernprogramm <a href="/de-DE/develop/mobile/tutorials/get-started-android">Erste Schritte mit mobilen Diensten</a> abschließen.</p>
 
 ## Voraussetzungen
 
@@ -156,4 +156,4 @@ Nach Abschluss der Daten-Lernprogramme können Sie diese anderen Android-Lernpro
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

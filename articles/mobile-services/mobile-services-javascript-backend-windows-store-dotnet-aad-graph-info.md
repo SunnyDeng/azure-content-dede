@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Zugreifen auf Informationen in Azure Active Directory Graph (Windows Store) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie über die Graph-API in Ihrer Windows Store-Anwendung auf Azure Active Directory-Informationen zugreifen." 
+	pageTitle="Zugreifen auf Azure Active Directory Graph-Informationen mit Mobile Service und einem JavaScript-Back-End (Windows Store) | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie über die Graph-API auf Azure Active Directory-Informationen von Mobile Service auf Ihrem JavaScript-Back-End zugreifen." 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
 	manager="dwrede" 
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="multiple" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/18/2015" 
+	ms.date="09/03/2015" 
 	ms.author="wesmc"/>
 
-# Zugriff auf Azure Active Directory Graph-Informationen
+# Zugreifen auf Azure Active Directory Graph-Informationen mit Mobile Service und einem JavaScript-Back-End
 
 
 [AZURE.INCLUDE [mobile-services-selector-aad-graph](../../includes/mobile-services-selector-aad-graph.md)]
@@ -181,4 +181,4 @@ Im nächsten Lernprogramm, [Rollenbasierte Zugriffssteuerung mit AAD in Mobile S
 [Rollenbasierte Zugriffssteuerung mit AAD in Mobile Services]: mobile-services-javascript-backend-windows-store-dotnet-aad-rbac.md
 [Azure Active Directory Graph-Teamblog]: http://go.microsoft.com/fwlink/?LinkId=510536
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

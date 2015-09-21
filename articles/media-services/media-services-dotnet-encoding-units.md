@@ -13,10 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="09/07/2015"
 	ms.author="juliako"/>
-
-
 
 
 #Skalieren der Codierung mit .NET SDK
@@ -72,6 +70,14 @@ Um ein Supportticket zu öffnen, gehen Sie folgendermaßen vor:
 1. Klicken Sie auf "Senden", um das Ticket zu öffnen.
  
 
+
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO2-->

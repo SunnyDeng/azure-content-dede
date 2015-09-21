@@ -1,19 +1,19 @@
 <properties
    pageTitle="Verwalten von StorSimple-Volumes | Microsoft Azure"
-	description="Erläutert, wie Sie StorSimple-Volumes hinzufügen, ändern, überwachen und löschen sowie ggf. offline schalten können."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   description="Erläutert, wie Sie StorSimple-Volumes hinzufügen, ändern, überwachen und löschen sowie ggf. offline schalten können."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/27/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/09/2015"
+   ms.author="v-sharos" />
 
 # Verwalten von Volumes mithilfe des StorSimple Manager-Diensts
 
@@ -88,8 +88,7 @@ Das neue Volume kann nun verwendet werden.
 
 Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, die auf das Volume zugreifen.
 
-> [AZURE.IMPORTANT]Wenn Sie die Größe des Volumes auf dem Gerät ändern, muss auch die Größe des Volumes auf dem Host geändert werden. Beachten Sie beim Ändern des Volumes auf dem Host die Anweisungen zu Ihrem Hostbetriebssystem.
-
+> [AZURE.IMPORTANT]Wenn Sie die Größe des Volumes auf dem Gerät ändern, muss auch die Größe des Volumes auf dem Host geändert werden. Die hier beschriebenen hostseitigen Schritte gelten für Windows Server 2012 (2012R2). Vorgehensweisen für Linux oder andere Hostbetriebssysteme können davon abweichen. Beachten Sie beim Ändern des Volumes auf einem Host mit einem anderen Betriebssystem die Anweisungen zu Ihrem Hostbetriebssystem.
 
 ### So ändern Sie ein Volume
 
@@ -113,7 +112,14 @@ Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, d
  
     > [AZURE.NOTE]Die Option **Standardsicherung für dieses Volume?** kann für das Volume nicht geändert werden.
 
-6. Speichern Sie die Änderungen, indem Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-manage-volumes/HCS_CheckIcon.png) klicken.
+6. Speichern Sie die Änderungen, indem Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-manage-volumes/HCS_CheckIcon.png) klicken. Das Portal zeigt eine Meldung zur Aktualisierung des Volumes an. Eine Erfolgsmeldung wird angezeigt, wenn das Volume aktualisiert wurde.
+
+7. Wenn Sie ein Volume erweitern, führen Sie folgende Schritte auf dem Windows-Hostcomputer aus:
+
+   1. Wechseln Sie zu **Verwaltung** -> **Datenträgerverwaltung**.
+   2. Klicken Sie mit der rechten Maustaste auf **Datenträgerverwaltung**, und wählen Sie **Datenträger neu einlesen** aus.
+   3. Wählen Sie in der Liste der Datenträger die aktualisierten Volumes aus und dann **Volume erweitern**. Der Assistent zum Erweitern von Volumes wird gestartet. Klicken Sie auf **Weiter**.
+   4. Schließen Sie den Assistenten unter Verwendung der angegebenen Standardwerte ab. Nach Abschluss des Assistenten sollte für das Volume die höhere Speichergröße angezeigt werden.
 
 ## Offlineschalten von Volumes
 
@@ -176,9 +182,11 @@ Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu a
 
 ## Nächste Schritte
 
+Sehen Sie sich ein Video zum [Erweitern von StorSimple-Volumes](http://azure.microsoft.com/documentation/videos/expand-a-storsimple-volume) an (in englischer Sprache).
+
 Erfahren Sie, wie Sie ein [StorSimple-Volume klonen](storsimple-clone-volume.md).
 
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="08/31/2015"
+	ms.date="08/31/2015" 
 	ms.author="robmcm"/>
 
 # Verwenden des Blob-Speichers mit Java
@@ -161,7 +161,7 @@ Um die Blobs in einem Container aufzulisten, müssen Sie zuerst einen Containerv
         e.printStackTrace();
     }
 
-Beim Blob-Dienst wird ebenfalls das Konzept von Verzeichnissen in Containern angewendet. Auf diese Weise können Sie die Blobs in einer ordnerähnlicheren Struktur organisieren.
+Beachten Sie, dass Sie bei der Benennung von BLOBs Pfadinformationen im Namen verwenden können. Dadurch entsteht eine virtuelle Verzeichnisstruktur, die Sie wie ein herkömmliches Dateisystem organisieren und durchlaufen können. Beachten Sie, dass nur die Verzeichnisstruktur virtuell ist – die einzigen Ressourcen, die im Blob-Speicher verfügbar sind, sind Container und Blobs. Die Clientbibliothek bietet jedoch ein **CloudBlobDirectory**-Objekt, das auf ein virtuelles Verzeichnis verweist und das Arbeiten mit BLOBs vereinfacht, die auf diese Weise organisiert sind.
 
 Beispiel: Sie verfügen über einen Container mit der Bezeichnung "photos", in den Sie Blobs mit der Bezeichnung "rootphoto1", "2010/photo1", "2010/photo2" und "2011/photo1" hochladen. Hierdurch werden die virtuellen Verzeichnisse "2010" und "2011" im Container "photos" erstellt. Wenn Sie **listBlobs** für den Container "photos" aufrufen, enthält die zurückgegebene Sammlung **CloudBlobDirectory**- und **CloudBlob**-Objekte, die die Verzeichnisse und Blobs auf der obersten Ebene darstellen. In diesem Fall werden die Verzeichnisse "2010" und "2011" sowie das Foto "rootphoto1" zurückgegeben. Mit dem **instanceof**-Operator können Sie diese Objekte unterscheiden.
 
@@ -227,7 +227,7 @@ Zum Löschen eines Blobs rufen Sie einen Blobverweis ab und rufen dann **deleteI
 
 ## Löschen eines Blob-Containers
 
-Zum Löschen eines Blob-Containers rufen Sie einen Blob-Containerverweis ab und dann **deleteIfExists** auf.
+Zum Löschen eines BLOB-Containers rufen Sie einen BLOB-Containerverweis ab und dann **deleteIfExists** auf.
 
     try
     {
@@ -266,4 +266,4 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
 [Azure Storage-REST-API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

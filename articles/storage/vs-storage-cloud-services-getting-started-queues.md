@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Erste Schritte mit Azure-Warteschlangenspeicher und verbundenen Visual Studio-Diensten (Clouddienstprojekte)" 
-	description="Erste Schritte mit Azure-Warteschlangenspeicher in einem Cloud-Dienstprojekt in Visual Studio" 
+    pageTitle="Erste Schritte mit Warteschlangenspeicher und verbundenen Visual Studio-Diensten (Cloud Services) | Microsoft Azure"
+	description="Erfahren Sie etwas über die ersten Schritte mit Azure-Warteschlangenspeicher in einem Clouddienstprojekt in Visual Studio, nachdem Sie mithilfe von verbundenen Visual Studio-Diensten eine Verbindung mit einem Speicherkonto hergestellt haben."
 	services="storage" 
 	documentationCenter="" 
 	authors="patshea123" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="09/03/2015" 
 	ms.author="patshea123"/>
 
 # Erste Schritte mit Azure-Warteschlangenspeicher und verbundenen Visual Studio-Diensten (Clouddienstprojekte)
@@ -27,11 +27,11 @@
 > - [Queues](vs-storage-cloud-services-getting-started-queues.md)
 > - [Tables](vs-storage-cloud-services-getting-started-tables.md)
 
-##Übersicht
+## Übersicht
 
 Dieser Artikel beschreibt, wie die ersten Schritte des Verwendens von Azure-Warteschlangenspeicher in Visual Studio aussehen, nachdem Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** in einem Clouddienst-Projekt ein Azure-Speicherkonto erstellt oder auf ein solches Konto verwiesen haben.
 
-Wir zeigen Ihnen, wie Sie eine Warteschlange in Code erstellen. Außerdem wird gezeigt, wie Sie grundlegende Warteschlangenvorgänge, etwa Hinzufügen, Ändern, Lesen und Entfernen von Warteschlangennachrichten ausführen. Die Beispiele sind in C#  geschrieben und greifen auf die [Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx) zurück.
+Wir zeigen Ihnen, wie Sie eine Warteschlange in Code erstellen. Außerdem wird gezeigt, wie Sie grundlegende Warteschlangenvorgänge, etwa Hinzufügen, Ändern, Lesen und Entfernen von Warteschlangennachrichten ausführen. Die Beispiele sind in C# geschrieben und greifen auf die [Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx) zurück.
 
 Beim Vorgang **Verbundene Dienste hinzufügen** werden die entsprechenden NuGet-Pakete installiert, um auf Azure-Speicher in Ihrem Projekt zuzugreifen, und Ihren Projektkonfigurationsdateien die Verbindungszeichenfolge für das Speicherkonto hinzugefügt.
 
@@ -44,11 +44,11 @@ Beim Vorgang **Verbundene Dienste hinzufügen** werden die entsprechenden NuGet-
 Die Warteschlangenspeicherung in Azure ist ein Dienst zur Speicherung großer Anzahlen von Nachrichten, auf die von überall auf der Welt mit authentifizierten Anrufen über HTTP oder HTTPS zugegriffen werden kann. Eine einzelne Warteschlangennachricht kann bis zu 64 KB groß sein, und eine Warteschlange kann Millionen von Nachrichten enthalten. Deren Anzahl ist nur durch die Kapazität des Speicherkontos begrenzt.
 
 
-##Zugriff auf Warteschlangen in Code
+## Zugriff auf Warteschlangen in Code
 
-Um auf Warteschlangen in Projekten der Visual Studio-Clouddienste zuzugreifen, müssen Sie die folgenden Elemente zu jeder C\#-Quelldatei hinzufügen, in der auf Azure-Warteschlangenspeicher zugegriffen wird.
+Um auf Warteschlangen in Projekten der Visual Studio-Clouddienste zuzugreifen, müssen Sie die folgenden Elemente zu jeder C#-Quelldatei hinzufügen, in der auf Azure-Warteschlangenspeicher zugegriffen wird.
 
-1. Vergewissern Sie sich, dass die Namespace-Deklarationen am Anfang der C\#-Datei diese **using**-Anweisungen enthalten.
+1. Vergewissern Sie sich, dass die Namespace-Deklarationen am Anfang der C#-Datei diese **using**-Anweisungen enthalten.
 
 		using Microsoft.Framework.Configuration;
 		using Microsoft.WindowsAzure.Storage;
@@ -72,7 +72,7 @@ Um auf Warteschlangen in Projekten der Visual Studio-Clouddienste zuzugreifen, m
 
 **HINWEIS:** Verwenden Sie den gesamten obigen Code vor dem Code in den folgenden Beispielen.
 
-##Erstellen einer Warteschlange in Code
+## Erstellen einer Warteschlange in Code
 
 Fügen Sie zum Erstellen einer Warteschlange in Code einfach einen Aufruf von **CreateIfNotExists** hinzu.
 
@@ -82,7 +82,7 @@ Fügen Sie zum Erstellen einer Warteschlange in Code einfach einen Aufruf von **
 	// Create the CloudQueue if it does not exist
 	messageQueue.CreateIfNotExists();
 
-##Hinzufügen von Nachrichten zu einer Warteschlange
+## Hinzufügen von Nachrichten zu einer Warteschlange
 
 Wenn Sie eine Nachricht in eine vorhandene Warteschlange einfügen möchten, erstellen Sie zuerst ein neues **CloudQueueMessage**-Objekt, und rufen Sie dann die **AddMessage**-Methode auf.
 
@@ -97,7 +97,7 @@ Hier ist ein Beispiel, dass die Nachricht "Hello, World" eingefügt.
 	CloudQueueMessage message = new CloudQueueMessage("Hello, World");
 	messageQueue.AddMessage(message);
 
-##Lesen von Nachrichten in einer Warteschlange
+## Lesen von Nachrichten in einer Warteschlange
 
 Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die Methode **PeekMessage** aufrufen.
 
@@ -107,7 +107,7 @@ Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, 
 	// Peek at the next message
     CloudQueueMessage peekedMessage = messageQueue.PeekMessage();
 
-##Lesen und Entfernen von Nachrichten in einer Warteschlange
+## Lesen und Entfernen von Nachrichten in einer Warteschlange
 
 Ihr Code kann eine Nachricht in zwei Schritten aus der Warteschlange entfernen.
 
@@ -128,7 +128,7 @@ Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass ein
 	await messageQueue.DeleteMessage(retrievedMessage);
 
 
-## Nutzen Sie zusätzliche Optionen für die Verarbeitung und das Entfernen von Nachrichten in Warteschlangen
+## Verwenden zusätzlicher Optionen zum Verarbeiten und Entfernen von Nachrichten in Warteschlangen
 
 Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Warteschlange anpassen können.
 
@@ -167,7 +167,7 @@ Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. 
 
 ## Verwenden des Async-Await-Musters mit allgemeinen Azure-Warteschlangen-APIs
 
-In diesem Beispiel wird veranschaulicht, wie das Async-Await-Muster mit allgemeinen Azure-Warteschlangen-APIs verwendet wird. Im Beispiel werden jeweils die asynchronen Versionen der angegebenen Methoden aufgerufen, was am Postfix **Async** der einzelnen Methoden erkennbar ist. Wenn eine asynchrone Methode verwendet wird, hält das Async-Await-Muster die lokale Ausführung an, bis der Aufruf abgeschlossen ist. Durch dieses Verhalten kann der aktuelle Thread eine andere Aktion ausführen, wodurch Leistungsengpässe vermieden werden und die allgemeine Reaktionsfähigkeit der Anwendung verbessert wird. Weitere Informationen zur Verwendung des Async-Await-Musters in .NET finden Sie unter [Async und Await (C#  und Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx)
+In diesem Beispiel wird veranschaulicht, wie das Async-Await-Muster mit allgemeinen Azure-Warteschlangen-APIs verwendet wird. Im Beispiel werden jeweils die asynchronen Versionen der angegebenen Methoden aufgerufen, was am Postfix **Async** der einzelnen Methoden erkennbar ist. Wenn eine asynchrone Methode verwendet wird, hält das Async-Await-Muster die lokale Ausführung an, bis der Aufruf abgeschlossen ist. Durch dieses Verhalten kann der aktuelle Thread eine andere Aktion ausführen, wodurch Leistungsengpässe vermieden werden und die allgemeine Reaktionsfähigkeit der Anwendung verbessert wird. Weitere Informationen zur Verwendung des Async-Await-Musters in .NET finden Sie unter [Async und Await (C# und Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx)
 
     // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
     // as described in the "Access queues in code" section.
@@ -197,9 +197,9 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
     // Delete the queue.
     messageQueue.Delete();
 
-##Nächste Schritte
+## Nächste Schritte
 
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]
 			
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

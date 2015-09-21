@@ -4,6 +4,7 @@
 	services="azure-portal"
 	documentationCenter="na" 
 	authors="stepsic-microsoft-com" 
+	writer="" 
 	manager="terrylan" 
 	editor=""/>
 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/25/2015" 
+	ms.date="09/08/2015" 
 	ms.author="stepsic"/>
 
 # Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung
@@ -22,7 +23,7 @@
 
 Die [rollenbasierte Zugriffssteuerung](../role-based-access-control-configure.md) ist eine leistungsstarke Funktion, mit der Sie Zugriffsberechtigungen für Azure-Ressourcen differenziert steuern können. Gewähren Sie einem bestimmten Benutzer einfach und sicher Zugriff auf genau die Ressourcen, die er benötigt. In einigen Fällen kann das Ressourcen-Modell für Azure-Ressourcen jedoch kompliziert sein, und es ist nicht immer leicht ersichtlich, wofür Sie Berechtigungen vergeben.
 
-In diesem Dokument erhalten Sie ausführliche Informationen über die Nutzung einiger der neuen Rollen im Azure-Portal. Diese Version umfasst drei integrierte Rollen: Besitzer, Mitwirkender und Leser
+In diesem Dokument erhalten Sie ausführliche Informationen über die Nutzung einiger der Rollen im Azure-Portal. Es sind drei allgemeine Rollen enthalten, die alle Ressourcentypen abdecken: * Owner * Contributor * Reader
 
 Besitzer und Mitwirkende haben Vollzugriff auf alle Verwaltungsfunktionen, mit dem Unterschied, dass Mitwirkende anderen Benutzern oder Gruppen keinen Zugriff gewähren können. Die Leserolle werden wir aufgrund ihrer umfassenden Eigenschaften ausführlicher beschreiben. [In diesem Artikel](../role-based-access-control-configure.md) finden Sie genaue Informationen zum Gewähren von Zugriffen.
 
@@ -82,4 +83,4 @@ Für virtuelle Computer gibt es diese verwandten Ressourcen: Domänennamen, virt
     
 Wenn Sie auf keine dieser Kacheln zugreifen können, fragen Sie den Administrator nach Zugriff als Mitwirkender auf diese Ressourcengruppe.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

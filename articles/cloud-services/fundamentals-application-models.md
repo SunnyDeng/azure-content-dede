@@ -1,18 +1,20 @@
 <properties 
-	pageTitle="Computehostingoptionen in Azure"
-	description="Erfahren Sie mehr über Computehostingoptionen in Azure und ihre Funktionsweise: Virtual Machines, Websites, Cloud Services und weitere Optionen."
+	pageTitle="Computehostingoptionen in Azure" 
+	description="Erfahren Sie mehr über Computehostingoptionen in Azure und ihre Funktionsweise: Virtual Machines, Websites, Cloud Services und weitere Optionen." 
+	headerExpose="" 
+	footerExpose="" 
 	services="cloud-services,virtual-machines"
-	authors="Thraka"
+	authors="Thraka" 
 	documentationCenter=""
 	manager="timlt"/>
 
 <tags 
-	ms.service="multiple"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/08/2015" 
 	ms.author="adegeo;cephalin;kathydav"/>
 
 
@@ -54,7 +56,7 @@ Wenn Sie über eine vorhandene Anwendung verfügen, die für die Ausführung unt
 
 Unter Umständen reicht eine Option jedoch nicht aus. In diesen Fällen können Sie eine Kombination der unterschiedlichen Optionen verwenden. Dies bietet sich beispielsweise an, wenn Sie eine Anwendung erstellen und dabei die Vorteile der Verwaltungsoptionen von Cloud Services-Webrollen nutzen möchten, aber aus Kompatibilitäts- oder Leistungsgründen eine auf einer VM gehostete Standardversion von SQL Server verwenden müssen.
 
-<!-- In this case, the best option is to combine compute hosting options, as the figure below shows. 
+<!-- In this case, the best option is to combine compute hosting options, as the figure below shows.--
 
 <a name="fig4"></a>
 ![07_CombineTechnologies][07_CombineTechnologies] 
@@ -67,7 +69,9 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 
 [App Service]: #tellmeas
 [Virtual Machines]: #tellmevm
+[Virtuelle Computer]: #tellmevm
 [Cloud Services]: #tellmecs
+[Cloud-Dienste]: #tellmecs
 
 ## Nächste Schritte
 
@@ -76,4 +80,4 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 * Weitere Informationen zu [Cloud Services](services/cloud-services/)
 * Weitere Informationen zu [Virtual Machines](https://msdn.microsoft.com/library/azure/jj156143.aspx) 
 
-<!----HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

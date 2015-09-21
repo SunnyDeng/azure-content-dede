@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="05/27/2015" 
+	ms.date="09/07/2015" 
 	ms.author="robmcm"/>
 
 #Verwenden von Media Services mit Java
@@ -350,6 +350,16 @@ Der folgende Code zeigt, wie Sie einen laufenden Auftrag über dessen ID abbrech
 
     mediaService.action(Job.cancel(jobId));
 
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+
+
 ##Zusätzliche Ressourcen
 
 Media Services-Javadoc-Dokumentation finden Sie in den [Azure-Bibliotheken für Java-Dokumentation][].
@@ -362,4 +372,4 @@ Media Services-Javadoc-Dokumentation finden Sie in den [Azure-Bibliotheken für 
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

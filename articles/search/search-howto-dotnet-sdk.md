@@ -396,7 +396,7 @@ Mit diesem Schritt ist das Lernprogramm abgeschlossen. Gerne können Sie sich ab
 
 ## Nächste Schritte ##
 
-- Vertiefen Sie Ihre Kenntnisse mithilfe von [Videos und anderen Beispielen und Lernprogrammen](https://msdn.microsoft.com/library/azure/dn818681.aspx).
+- Vertiefen Sie Ihre Kenntnisse mithilfe von [Videos und anderen Beispielen und Lernprogrammen](search-video-demo-tutorial-list.md).
 - Erfahren Sie mehr über die Features und Funktionen in dieser Version des Azure Search-SDK: [Überblick über Azure Search](https://msdn.microsoft.com/library/azure/dn798933.aspx).
 - Lesen Sie den Abschnitt [Namenskonventionen](https://msdn.microsoft.com/library/azure/dn857353.aspx), um sich mit den Namensregeln für Objekte vertraut zu machen.
 - Lesen Sie den Abschnitt zu den in Azure Search [unterstützten Datentypen](https://msdn.microsoft.com/library/azure/dn798938.aspx).
@@ -625,4 +625,4 @@ Hotel.cs:
     }
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

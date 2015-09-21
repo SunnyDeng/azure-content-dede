@@ -1,20 +1,20 @@
 <properties
    pageTitle="Topologien für Azure AD Connect | Microsoft Azure"
-	description="In diesem Thema werden unterstützte und nicht unterstützte Topologien für Azure AD Connect behandelt."
-	services="active-directory"
-	documentationCenter=""
-	authors="AndKjell"
-	manager="stevenpo"
-	editor=""/>
+   description="In diesem Thema werden unterstützte und nicht unterstützte Topologien für Azure AD Connect behandelt."
+   services="active-directory"
+   documentationCenter=""
+   authors="AndKjell"
+   manager="stevenpo"
+   editor=""/>
 
 <tags
    ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
-	ms.date="08/24/2015"
-	ms.author="andkjell"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="09/08/2015"
+   ms.author="andkjell"/>
 
 # Topologien für Azure AD Connect
 
@@ -40,9 +40,10 @@ Legende für Bilder im Dokument:
 
 Die häufigste Topologie ist eine einzelne lokale Gesamtstruktur mit einer oder mehreren Domänen und einem einzelnen Azure AD-Verzeichnis (auch bekannt als Mandant). Azure AD-Authentifizierung erfolgt mit Kennwortsynchronisierung. Diese Topologie wird durch die Expressinstallation von Azure AD Connect unterstützt.
 
+### Einzelne Gesamtstruktur, mehrere Synchronisierungsserver zu einem Azure AD-Verzeichnis
 ![SingleForestFilteredUnsupported](./media/active-directory-aadconnect-topologies/SingleForestFilteredUnsupported.png)
 
-Die Verbindung mehrerer Azure AD Connect-Synchronisierungsserver mit dem gleichen Azure AD-Verzeichnis wird auch dann nicht unterstützt, wenn sie dazu konfiguriert sind, wechselseitig exklusive Gruppen von Objekten zu synchronisieren (mit Ausnahme eines [Stagingservers](#staging-server)). Dies könnte versucht werden, weil eine Domäne in einer Gesamtstruktur von einem gemeinsamen Speicherort im Netzwerk aus nicht erreichbar ist, oder bei einem Versuch, die Synchronisierungslast auf mehrere Server zu verteilen.
+Die Verbindung mehrerer Azure AD Connect-Synchronisierungsserver mit dem gleichen Azure AD-Verzeichnis wird auch dann nicht unterstützt, wenn sie dazu konfiguriert sind, wechselseitig exklusive Gruppen von Objekten zu synchronisieren (mit Ausnahme eines [Stagingservers](#staging-server)). Dies könnte versucht werden, weil eine Domäne in einer Gesamtstruktur von einem gemeinsamen Speicherort im Netzwerk aus nicht erreichbar ist, oder bei einem Versuch, die Synchronisierungslast auf mehrere Server zu verteilen.
 
 ## Mehrere Gesamtstrukturen, einzelnes Azure AD-Verzeichnis
 ![MultiForestSingleDirectory](./media/active-directory-aadconnect-topologies/MultiForestSingleDirectory.png)
@@ -59,9 +60,10 @@ Die Standardkonfiguration der Azure AD Connect-Synchronisierung basiert auf fol
 
 Wenn Ihre Umgebung mit diesen Annahmen nicht übereinstimmt, geschieht Folgendes: – Wenn Sie mehrere aktive Konten oder mehrere Postfächer haben, wählt das Synchronisierungsmodul eines aus und ignoriert die anderen. – Wenn Sie verknüpfte Postfächer, jedoch kein anderes Konto haben, werden diese Konten nicht in Azure AD exportiert, und der Benutzer wird nicht Mitglied einer Gruppe. In DirSync würde ein verknüpftes Postfach als normales Postfach dargestellt, darum ist dies absichtlich ein anderes Verhalten, um Szenarien mit mehreren Gesamtstrukturen besser zu unterstützen.
 
+### Mehrere Gesamtstrukturen, mehrere Synchronisierungsserver zu einem Azure AD-Verzeichnis
 ![MultiForestMultiSyncUnsupported](./media/active-directory-aadconnect-topologies/MultiForestMultiSyncUnsupported.png)
 
-Es wird nicht unterstützt, mehrere Azure AD Connect-Synchronisierungsserver mit einem einzelnen Azure AD-Verzeichnis zu verbinden (mit Ausnahme eines [Stagingservers](#staging-server)).
+Das Verbinden mehrerer Azure AD Connect-Synchronisierungsserver mit einem einzelnen Azure AD-Verzeichnis wird nicht unterstützt (mit Ausnahme eines [Stagingservers](#staging-server)).
 
 ### Mehrere Gesamtstrukturen – separate Topologien
 "Benutzer werden nur einmal für alle Verzeichnisse dargestellt."
@@ -107,7 +109,7 @@ Für einige Office 365-Workloads gelten bestimmte Einschränkungen für unterst
 | Workload | |
 | --------- | --------- |
 | Exchange Online |	Wenn mehrere Exchange-Organisationen lokal vorhanden sind (d. h. Exchange für mehrere Gesamtstrukturen bereitgestellt wurde), müssen Sie Exchange 2013 SP1 oder höher verwenden. Weitere Informationen finden Sie hier: [Hybrid-Bereitstellungen mit mehreren Active Directory-Gesamtstrukturen](https://technet.microsoft.com/de-DE/library/jj873754.aspx) |
-| Skype for Business | Bei Verwendung mehrerer lokaler Gesamtstrukturen wird nur die Kontoressourcengesamtstruktur-Topologie unterstützt. Weitere Informationen zu unterstützten Topologien finden Sie hier: [Anforderungen an die Umgebung für Skype for Business Server 2015](https://technet.microsoft.com/de-DE/library/dn933910.aspx) |
+| Skype for Business | Bei Verwendung mehrerer lokaler Gesamtstrukturen wird nur die Kontoressourcengesamtstruktur-Topologie unterstützt. Weitere Informationen zu unterstützten Topologien finden Sie hier: [Anforderungen an die Umgebung für Skype for Business Server 2015](https://technet.microsoft.com/de-DE/library/dn933910.aspx) |
 
 ## Stagingserver
 ![StagingServer](./media/active-directory-aadconnect-topologies/MultiForestStaging.png)
@@ -131,9 +133,10 @@ Microsoft empfiehlt, für eine Organisation über ein einzelnes Verzeichnis in A
 
 Es besteht eine 1:1-Beziehung zwischen einem Azure AD Connect-Synchronisierungsserver und einem Azure AD-Verzeichnis. Für jedes Azure AD-Verzeichnis benötigen Sie eine Azure AD Connect-Synchronisierungsserverinstallation. Azure AD-Verzeichnisinstanzen sind als isoliert konzipiert, und Benutzer in einer Instanz können Benutzer im anderen Verzeichnis nicht sehen. Wenn dies beabsichtigt ist, handelt es sich um eine unterstützte Konfiguration, aber andernfalls sollten Sie die oben beschriebenen Azure AD-Einzelverzeichnismodelle verwenden.
 
+### Jedes Objekt nur einmal in einem Azure AD-Verzeichnis
 ![SingleForestFiltered](./media/active-directory-aadconnect-topologies/SingleForestFiltered.png)
 
-In dieser Topologie ist ein AAD Connect-Synchronisierungsserver mit jedem Azure AD-Verzeichnis verbunden. Die Azure AD Connect-Synchronisierungsserver müssen für das Filtern konfiguriert werden, sodass sie wechselseitig an exklusiven Gruppen von Objekten aktiv sind, z. B. durch Beschränkung jedes Servers auf eine bestimmte Domäne. Eine DNS-Domäne kann nur in einem einzelnen Azure AD-Verzeichnis registriert werden, sodass die UPNs der Benutzer im lokalen AD auch separate Namespaces verwenden müssen. Im obigen Bild sind z. B. drei separate UPN-Suffixe im lokalen AD registriert: contoso.com, fabrikam.com und wingtiptoys.com. Die Benutzer in jeder lokalen AD-Domäne verwenden einen anderen Namespace.
+In dieser Topologie ist ein AAD Connect-Synchronisierungsserver mit jedem Azure AD-Verzeichnis verbunden. Die Azure AD Connect-Synchronisierungsserver müssen für das Filtern konfiguriert werden, sodass sie wechselseitig an exklusiven Gruppen von Objekten aktiv sind, z. B. durch Beschränkung jedes Servers auf eine bestimmte Domäne oder Organisationseinheit. Eine DNS-Domäne kann nur in einem einzelnen Azure AD-Verzeichnis registriert werden, sodass die UPNs der Benutzer im lokalen AD auch separate Namespaces verwenden müssen. Im obigen Bild sind z. B. drei separate UPN-Suffixe im lokalen AD registriert: contoso.com, fabrikam.com und wingtiptoys.com. Die Benutzer in jeder lokalen AD-Domäne verwenden einen anderen Namespace.
 
 In dieser Topologie gibt es keine "GALsync" zwischen den Azure AD-Verzeichnisinstanzen, sodass das Adressbuch in Exchange Online und Skype for Business nur Benutzer im gleichen Verzeichnis anzeigt.
 
@@ -141,19 +144,22 @@ Mit dieser Topologie kann nur eines der Azure AD-Verzeichnisse den Exchange-Hybr
 
 Die Anforderung für wechselseitig exklusive Gruppen von Objekten gilt auch für das Zurückschreiben. Damit werden einige Zurückschreibfeatures mit dieser Topologie nicht unterstützt, da sie eine lokale Einzelkonfiguration voraussetzen. Dazu gehören: - Gruppenzurückschreiben mit Standardkonfiguration – Gerätezurückschreiben
 
+### Jedes Objekt mehrmals in einem Azure AD-Verzeichnis
 ![SingleForestMultiDirectoryUnsupported](./media/active-directory-aadconnect-topologies/SingleForestMultiDirectoryUnsupported.png) ![SingleForestMultiConnectorsUnsupported](./media/active-directory-aadconnect-topologies/SingleForestMultiConnectorsUnsupported.png)
 
 Die Synchronisierung des gleichen Benutzers mit mehreren Azure AD-Verzeichnissen wird nicht unterstützt. Es wird auch nicht unterstützt, die Konfiguration so zu ändern, dass Benutzer in einem Azure AD in einem anderen Azure AD-Verzeichnis als Kontakte angezeigt werden. Es wird auch nicht unterstützt, die Azure AD Connect-Synchronisierung so zu ändern, dass Verbindungen zu mehreren Azure AD-Verzeichnissen möglich sind.
 
+### GALsync mithilfe von Rückschreiben
 ![MultiForestMultiDirectoryGALSync1Unsupported](./media/active-directory-aadconnect-topologies/MultiForestMultiDirectoryGALSync1Unsupported.png) ![MultiForestMultiDirectoryGALSync2Unsupported](./media/active-directory-aadconnect-topologies/MultiForestMultiDirectoryGALSync2Unsupported.png)
 
 Azure AD-Verzeichnisse sind als isoliert konzipiert. Es wird nicht unterstützt, die Konfiguration der Azure AD Connect-Synchronisierung so zu ändern, dass in einem Versuch, eine gemeinsame und einheitliche GAL zwischen den Verzeichnissen zu erstellen, Daten aus einem anderen Azure AD-Verzeichnis gelesen werden. Es wird auch nicht unterstützt, mithilfe der Azure AD Connect-Synchronisierung Benutzer als Kontakte nach einem anderen lokalen AD zu exportieren.
 
+### GALsync mit lokalem Server
 ![MultiForestMultiDirectoryGALSync](./media/active-directory-aadconnect-topologies/MultiForestMultiDirectoryGALSync.png)
 
 Es wird unterstützt, FIM2010/MIM2016 lokal für GALsync zum Synchronisieren von Benutzern zwischen zwei Exchange-Organisationen zu verwenden. Die Benutzer in der einen Organisation werden in der anderen Organisation als fremde Benutzer/Kontakte angezeigt. Diese anderen lokalen ADs können dann mit ihren eigenen Azure AD-Verzeichnissen synchronisiert werden.
 
 ## Nächste Schritte
-Wie Sie Azure AD-Connect für diese Szenarien installieren, erfahren Sie unter [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md). Weitere Informationen über die Konfiguration für die Azure AD Connect-Synchronisierung finden Sie unter [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md).
+Weitere Informationen zum Installieren von Azure AD-Connect für diese Szenarios finden Sie unter [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md). Weitere Informationen über die Konfiguration für die Azure AD Connect-Synchronisierung finden Sie unter [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

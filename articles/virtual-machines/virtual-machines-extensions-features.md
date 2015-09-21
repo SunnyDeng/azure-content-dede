@@ -1,19 +1,19 @@
-<properties 
+<properties
  pageTitle="Informationen zu Erweiterungen und Features für virtuelle Computer | Microsoft Azure"
-	description="Beschreibt viele Erweiterungen für virtuelle Computer, gruppiert nach der bereitgestellten oder verbesserten Funktion, wie z. B. Konnektivität und grundlegende Verwaltung."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="squillace"
-	manager="timlt"
-	editor=""/>
-<tags 
+ description="Beschreibt viele Erweiterungen für virtuelle Computer, gruppiert nach der bereitgestellten oder verbesserten Funktion, wie z. B. Konnektivität und grundlegende Verwaltung."
+ services="virtual-machines"
+ documentationCenter=""
+ authors="squillace"
+ manager="timlt"
+ editor=""/>
+<tags
  ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-multiple"
-	ms.workload="infrastructure-services"
-	ms.date="08/25/2015"
-	ms.author="rasquill"/>
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-multiple"
+ ms.workload="infrastructure-services"
+ ms.date="09/03/2015"
+ ms.author="rasquill"/>
 #Informationen zu Erweiterungen und Features für virtuelle Computer
 Microsoft Azure bietet VM-Erweiterungen, die von Microsoft und von vertrauenswürdigen Drittanbieter erstellt werden, um Sicherheit, Laufzeit, Debuggen, Verwaltung und andere Features zu ermöglichen, die Sie nutzen können, um Ihre Produktivität mit virtuellen Azure-Computern zu erhöhen. In diesem Thema werden die verschiedenen Features beschrieben, die Azure-VM-Erweiterungen für virtuelle Windows- und Linux-Computer bieten, und es wird auf die jeweilige Dokumentation verwiesen.
 
@@ -94,6 +94,6 @@ Diese Erweiterungen bieten Unterstützung für andere Features von virtuellen Co
 |Name der VM-Erweiterung|Featurebeschreibung|Weitere Informationen|
 |---|---|---|
 |**BGInfo**|Stellt eine konsolidierte Ansicht nützlicher Serverinformationen auf dem Desktop dar, wenn RDP verwendet wird.|[Erweiterung "BGInfo"](https://msdn.microsoft.com/library/dn606289.aspx)|
-|**HpcVmDrivers**|Installiert, konfiguriert und verwaltet die folgenden Netzwerk-Gerätetreiber auf virtuellen Computern der Größe A8 oder A9, damit der virtuelle Computer direkt auf das RDMA-Netzwerk (Remote Direct Memory Access) von Azure zugreifen kann.|[HpcVmDrivers-Erweiterung](https://msdn.microsoft.com/library/dn690126.aspx)
+|**HpcVmDrivers**|Installiert, konfiguriert und verwaltet die Netzwerk-Gerätetreiber für das RDMA-Netzwerk (Remote Direct Memory Access) auf virtuellen Computern der Größe A8 oder A9, auf denen Windows Server 2012 R2 oder Windows Server 2012 ausgeführt wird. Ermöglicht virtuellen A8- oder A9-Computern in einem Cluster die Verwendung des RDMA-Netzwerks bei der Ausführung paralleler MPI-Anwendung.|[Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](virtual-machines-a8-a9-a10-a11-specs.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

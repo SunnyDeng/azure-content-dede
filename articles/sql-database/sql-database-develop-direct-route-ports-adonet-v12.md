@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Andere Ports als 1433 für ADO.NET 4.5 und SQL-Datenbank V12 | Microsoft Azure"
-	description="Bei Clientverbindungen mit Azure SQL-Datenbank V12 wird der Proxy manchmal umgangen und direkt mit der Datenbank interagiert. Andere Ports als 1433 werden wichtig."
+	pageTitle="Ports über 1433 hinaus für SQL-Datenbank | Microsoft Azure"
+	description="Bei Clientverbindungen von ADO.NET mit Azure SQL-Datenbank V12 wird der Proxy manchmal umgangen und direkt mit der Datenbank interagiert. Andere Ports als 1433 werden wichtig."
 	services="sql-database"
 	documentationCenter=""
 	authors="MightyPen"
 	manager="jeffreyg"
-	editor=""/>
+	editor="" />
 
 
 <tags 
-	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="sql-database" 
+	ms.workload="data-management" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/04/2015" 
 	ms.author="genemi"/>
 
 
@@ -62,37 +62,17 @@ Der Ablauf ist wie folgt:
 
 
 1. ADO.NET 4.5 (oder höher) initiiert eine kurze Interaktion mit der Azure-Cloud und empfängt eine dynamisch ermittelte Portnummer.
- - Die dynamisch ermittelte Portnummer liegt im Bereich von 11000 bis 11999.
+ - Die dynamisch ermittelte Portnummer liegt im Bereich von 11000 bis 11999 oder 14000 bis 14999.
 
 2. ADO.NET stellt dann eine direkte Verbindung mit dem SQL-Datenbankserver ohne Einbindung von Middleware her.
 
 3. Abfragen werden direkt an die Datenbank gesendet, und Ergebnisse werden direkt an den Client zurückgegeben.
 
 
-Stellen Sie sicher, dass der Portbereich von 11000 bis 11999 auf Ihrem Azure-Clientcomputer für ADO.NET 4.5-Clientinteraktionen mit SQL-Datenbank V12 verfügbar ist.
+Stellen Sie sicher, dass der Portbereich von 11000 bis 11999 und 14000 bis 14999 auf Ihrem Azure-Clientcomputer für ADO.NET 4.5-Clientinteraktionen mit SQL-Datenbank V12 verfügbar ist.
 
 - Insbesondere dürfen Ports in diesem Bereich keine anderen ausgehenden Blockierungen aufweisen.
 - Die Windows-Firewall auf Ihrer Azure-VM steuert die Porteinstellungen.
-
-
-## Implizite Wiederholungslogik, die in der Proxyroute enthalten ist
-
-
-In einer Produktionsumgebung wird empfohlen, dass Clients, die eine Verbindung mit Azure SQL-Datenbank V11 oder V12 herstellen, eine Wiederholungslogik in ihrem Code implementieren. Dabei kann es sich um benutzerdefinierten Code handeln oder um Code, der eine API wie Enterprise Library nutzt.
-
-
-Die Proxyroute, die zuvor in diesem Thema behandelt wurde, ist für die Frage der Wiederholungslogik relevant:
-
-
-- In V11 stellte das Middlewaremodul, das als Proxy fungierte, auch einen gewissen Grad an Wiederholungslogik bereit, mit der vorübergehende Fehler behandelt wurden.
-
-- In V12 bietet der Proxy keine Wiederholungslogik.
-
-
-In beiden Szenarien wird empfohlen, dass Clients eine Wiederholungslogik im eigenen Code implementieren. Die Notwendigkeit einer Wiederholungslogik im Client ist bei der neuesten Proxyroute höher, da diese keine Wiederholungslogik bereitstellt.
-
-
-Codebeispiele für die Wiederholungslogik finden Sie unter: [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md).
 
 
 ## Erläuterungen zu Versionen
@@ -114,16 +94,10 @@ In diesem Abschnitt werden die Moniker erläutert, die auf Produktversionen verw
 In diesem Thema werden die Unterschiede bei der Clientverbindung zwischen SQL-Datenbank V11 und V12 hervorgehoben.
 
 
-*Hinweis:* Die Transact-SQL-Anweisung `SELECT @@version;` gibt einen Wert zurück, der mit einer Zahl wie "11." oder "12." beginnt, und diese Zahlen stimmen mit den Versionsnamen V11 und V12 für die SQL-Datenbank überein.
+*Hinweis:* Die Transact-SQL-Anweisung `SELECT @@version;` gibt einen Wert zurück, der mit einer Zahl wie "11." oder "12." beginnt. Diese Zahlen stimmen mit den Versionsnamen V11 und V12 für die SQL-Datenbank überein.
 
 
 ## Verwandte Links
-
-
-- [Neuerungen in SQL-Datenbank V12](sql-database-v12-whats-new.md)
-
-
-- [Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen](sql-database-connect-central-recommendations.md)
 
 
 - ADO.NET 4.6 wurde am 20. Juli 2015 veröffentlicht. Eine Ankündigung im Blog des .NET-Teams finden Sie [hier](http://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx).
@@ -135,4 +109,7 @@ In diesem Thema werden die Unterschiede bei der Clientverbindung zwischen SQL-Da
 
 - [Liste der TDS-Protokollversionen](http://www.freetds.org/userguide/tdshistory.htm)
 
-<!---HONumber=September15_HO1-->
+
+- [Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen](sql-database-connect-central-recommendations.md)
+
+<!---HONumber=Sept15_HO2-->

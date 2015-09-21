@@ -1,20 +1,20 @@
 <properties
    pageTitle="Erstellen von Vorlagen mit Azure-VM-Erweiterungen | Microsoft Azure"
-	description="Weitere Informationen zum Erstellen von Vorlagen mit Erweiterungen"
-	services="virtual-machines"
-	documentationCenter=""
-	authors="kundanap"
-	manager="timlt"
-	editor=""/>
+   description="Weitere Informationen zum Erstellen von Vorlagen mit Erweiterungen"
+   services="virtual-machines"
+   documentationCenter=""
+   authors="kundanap"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="09/01/2015"
-	ms.author="kundanap"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/01/2015"
+   ms.author="kundanap"/>
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen mit VM-Erweiterungen
 
@@ -22,10 +22,10 @@
 
 Eine Azure-Ressourcen-Manager-Vorlage ermöglicht es Ihnen, die Azure IaaS-Infrastruktur deklarativ in der Json-Sprache anzugeben, indem Sie die Abhängigkeiten zwischen Ressourcen definieren. Eine ausführliche Übersicht über Azure-Ressourcen-Manager-Vorlagen finden Sie in den folgenden Artikeln:
 
-<a href="https://azure.microsoft.com/de-DE/documentation/articles/resource-group-overview/" target="_blank">Übersicht über Ressourcengruppen</a> <br/> <a href="https://azure.microsoft.com/de-DE/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/" target="_blank">Bereitstellen von Vorlagen mit der Azure-Befehlszeilenschnittstelle</a> <br/> <a href="https://azure.microsoft.com/de-DE/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/" target="_blank">Bereitstellen von Vorlagen mit Azure PowerShell</a>
+[Übersicht über Ressourcengruppen](../resource-group-overview.md)
 
-## Ausschnitt einer Beispielvorlage für VM-Erweiterungen
-Der Ausschnitt einer Vorlage für die Bereitstellung von Erweiterungen sieht wie folgt aus:
+## Ausschnitt einer Beispielvorlage für VM-Erweiterungen.
+Bereitstellen der VM-Erweiterung als Teil der Azure-Ressourcen-Manager-Vorlage erfordert das deklarative Festlegen der Konfiguration für die Erweiterung in der Vorlage. Dies ist das Format für die Angabe der Konfiguration für die Erweiterung.
 
       {
       "type": "Microsoft.Compute/virtualMachines/extensions",
@@ -43,6 +43,11 @@ Der Ausschnitt einer Vorlage für die Bereitstellung von Erweiterungen sieht wie
       }
       }
       }
+
+Wie Sie oben sehen können, enthält die Erweiterungsvorlage zwei Hauptabschnitte:
+
+1. Name der Erweiterung, Herausgeber und Version.
+2. Konfiguration der Erweiterung.
 
 ## Identifizieren des Herausgebers, des Typs und des typeHandlerVersion-Elements für eine beliebige Erweiterung
 
@@ -74,8 +79,10 @@ Um eine Beispielkonfiguration für Linux-Erweiterungen anzuzeigen, klicken Sie a
 
 Eine vollständige Vorlage mit VM-Erweiterungen finden Sie in der folgenden Dokumentation zu Vorlagen für virtuelle Computer.
 
-<a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/" target="_blank">CustomScript-Erweiterung auf einem virtuellen Linux-Computer</a> </br> <a href="https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/" target="_blank">CustomScript-Erweiterung auf einem virtuellen Windows-Computer</a>
+[Benutzerdefinierte Skripterweiterung auf einem virtuellen Windows-Computer](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/)
+
+[Benutzerdefinierte Skriptserweiterung auf einem virtuellen Linux-Computer](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/)
 
 Nachdem Sie die Vorlage geschrieben haben, können Sie sie über die Azure-Befehlszeilenschnittstelle oder über Azure Powershell bereitstellen.
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

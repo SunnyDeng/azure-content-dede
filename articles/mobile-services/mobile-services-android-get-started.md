@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Mobile Services für Android-Apps"
-	description="Befolgen Sie dieses Tutorial für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Android-Entwicklung."
+	pageTitle="Erste Schritte mit Azure Mobile Services für Android-Apps (JavaScript-Back-End)"
+	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Android-Entwicklung (JavaScript-Back-End)."
 	services="mobile-services"
 	documentationCenter="android"
 	authors="RickSaling"
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/04/2015"
 	ms.author="ricksal"/>
 
-# Erste Schritte mit Mobile Services
+# Erste Schritte mit Mobile Services für Android (JavaScript-Back-End)
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
@@ -117,4 +117,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 [Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

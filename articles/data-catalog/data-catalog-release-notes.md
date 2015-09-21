@@ -1,36 +1,30 @@
 <properties
    pageTitle="Versionshinweise für Azure Data Catalog"
-	description="Versionshinweise für die öffentliche Vorschauversion von Azure Data Catalog vom 28. August 2015"
-	services="data-catalog"
-	documentationCenter=""
-	authors="steelanddata"
-	manager="NA"
-	editor=""
-	tags=""/>
+   description="Versionshinweise für die öffentliche Vorschauversion von Azure Data Catalog vom 28. August 2015"
+   services="data-catalog"
+   documentationCenter=""
+   authors="steelanddata"
+   manager="NA"
+   editor=""
+   tags=""/>
 <tags
    ms.service="data-catalog"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-catalog"
-	ms.date="08/28/2015"
-	ms.author="maroche"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-catalog"
+   ms.date="09/04/2015"
+   ms.author="maroche"/>
 
 # Versionshinweise für Azure Data Catalog
 
-## Hinweise für die Azure Data Catalog-Version vom 28. August 2015
+## Hinweise für die Azure Data Catalog-Version vom 4. September 2015
 
-### Datenprofil fehlt bei einigen registrierten Datenassets
+### Datenprofil fehlt eventuell bei einigen registrierten Datenassets
 
-Wenn Sie Datenquellen registrieren und die Option zur Datenprofilerstellung im Tool zum Registrieren von Datenquellen ausgewählt ist, werden die Datenprofilinformationen in folgenden Szenarien unter Umständen nicht einbezogen:
+Wenn Sie Datenquellen registrieren und die Option zur Datenprofilerstellung im Tool zum Registrieren von Datenquellen aktiviert ist, werden die Datenprofilinformationen unter Umständen nicht einbezogen, wenn Sie Oracle-Tabellen mit Mehrbytezeichen in den Spaltennamen registrieren.
 
-* Azure SQL-Datenbanktabellen
-* SQL Server-Tabellen und -Sichten, in denen in verschiedenen Schemas mehrere Objekte desselben Namens vorliegen
-* SQL Server-Tabellen und -Sichten mit Spaltennamen mit mehr als 118 Zeichen
-* Oracle-Tabellen und -Sichten mit Spaltennamen mit mehr als 20 Zeichen
-* Oracle-Tabellen und -Sichten mit Leerzeichen oder Multi-Byte-Zeichen in Spaltennamen
-
-Diese Einschränkungen sind auf ein bekanntes Problem in der Version vom 28. August zurückzuführen und werden in einem zukünftigen Update von Azure Data Catalog behoben.
+Diese Einschränkungen sind auf ein bekanntes Problem in der Version vom 4. September zurückzuführen und werden in einem zukünftigen Update von Azure Data Catalog behoben.
 
 ## Hinweise für die Azure Data Catalog-Version vom 13. Juli 2015
 
@@ -49,7 +43,7 @@ Die Unterstützung von SQL Server Reporting Services (SSRS)-Datenquellen ist in
 
 ### Öffnen von Datenassets in Excel
 
-Beim Öffnen von Datenassets in Microsoft Excel aus dem Azure Data Catalog-Portal wird Benutzern möglicherweise ein Dialogfeld mit einem **Sicherheitshinweis für Microsoft Excel** angezeigt. Hierbei handelt es sich um einen Standardvorgang. Benutzer können **Aktivieren** auswählen, um den Vorgang fortzusetzen.
+Beim Öffnen von Datenassets aus dem Azure Data Catalog-Portal in Microsoft Excel wird Benutzern möglicherweise ein Dialogfeld mit einem **Sicherheitshinweis für Microsoft Excel** angezeigt. Hierbei handelt es sich um einen Standardvorgang. Benutzer können **Aktivieren** auswählen, um den Vorgang fortzusetzen.
 
 Weitere Informationen finden Sie unter [Aktivieren oder Deaktivieren von Sicherheitswarnungen zu Verknüpfungen und Dateien von verdächtigen Websites](https://support.office.com/de-DE/article/Enable-or-disable-security-alerts-about-links-and-files-from-suspicious-websites-A1AC6AE9-5C4A-4EB3-B3F8-143336039BBE).
 
@@ -67,7 +61,7 @@ Für dieses Problem sind zwei Ursachen möglich:
 
 In manchen Fällen tritt dieser Fehler möglicherweise nur dann auf, wenn der Benutzer im Unternehmensnetzwerk ist oder wenn der Benutzer von außerhalb des Unternehmensnetzwerks eine Verbindung herstellt. Mit der globalen Authentifizierungsrichtlinie können separate Authentifizierungsmethoden für Intranet- und Extranetverbindungen aktiviert werden. Anmeldefehler können auftreten, wenn die Formularauthentifizierung nicht für das Netzwerk aktiviert ist, aus dem der Benutzer eine Verbindung herstellt.
 
-Weitere Informationen finden Sie unter [Configuring intranet forms-based authentication for devices that do not support WIA](https://technet.microsoft.com/library/dn727110.aspx) (in englischer Sprache).
+Weitere Informationen finden Sie unter [Configuring intranet forms-based authentication for devices that do not support WIA](https://technet.microsoft.com/library/dn727110.aspx) (Konfigurieren der formularbasierten Intranetauthentifizierung für Geräte ohne WIA-Unterstützung, in englischer Sprache).
 
 **Ursache 2: Netzwerkproxykonfiguration** Wenn das Unternehmensnetzwerk einen Proxyserver verwendet, kann das Registrierungstool möglicherweise aufgrund des Proxys keine Verbindung zu Azure Active Directory herstellen. Um die Funktion des Registrierungstools sicherzustellen, können Benutzer die Konfigurationsdatei bearbeiten , indem sie der Datei diesen Abschnitt hinzufügen:
 
@@ -83,4 +77,4 @@ Weitere Informationen finden Sie unter [Configuring intranet forms-based authent
 
 Starten Sie das Registrierungstool, um die Datei "RegistrationTool.exe.config" zu suchen, und öffnen Sie den Windows Task-Manager. Klicken Sie im Task-Manager auf der Registerkarte "Details" mit der rechten Maustaste auf "RegistrationTool.exe", und wählen Sie im Popupmenü "Dateispeicherort öffnen" aus.
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

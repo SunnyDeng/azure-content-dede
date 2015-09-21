@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Media Encoder Standard-Formate und -Codecs"
-	description="Dieses Thema bietet eine Übersicht über Azure Media Encoder Standard-Formate und -Codecs."
-	services="media-services"
-	documentationCenter=""
-	authors="juliako"
-	manager="dwrede"
+	pageTitle="Media Encoder Standard-Formate und -Codecs" 
+	description="Dieses Thema bietet eine Übersicht über Azure Media Encoder Standard-Formate und -Codecs." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="juliako" 
+	manager="dwrede" 
 	editor=""/>
 
 <tags 
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/03/2015"
 	ms.author="juliako"/>
 
 #Media Encoder Standard-Formate und -Codecs
@@ -29,10 +29,10 @@ Dateiformate (Dateierweiterungen)|Unterstützt
 FLV (mit H.264- und AAC-Codecs) (.flv) |Ja 
 MXF (.mxf) |Ja 
 GXF (.gxf) |Ja 
-MPEG2-PS, MPEG2-TS, 3GP (.ts, .ps, .3gp) |Ja 
+MPEG2-PS, MPEG2-TS, 3GP (.ts, .ps, .3gp, .3gpp, .mpg) |Ja 
 Windows Media Video (WMV)/ASF (.wmv, .asf) |Ja 
 AVI (unkomprimiert, 8-Bit/10-Bit) (.avi)|Ja 
-MP4/ISMV (.ismv)|Ja 
+MP4 (.mp4, .m4a, .m4v)/ISMV (.isma, .ismv)|Ja 
 [Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984) (.dvr-ms) |Ja 
 Matroska/WebM (.mkv) |Ja 
 WAVE/WAV (.wav) |Ja 
@@ -81,8 +81,16 @@ In der folgenden Tabelle werden die Codecs und Dateiformate aufgeführt, die fü
 
 Dateiformat|Videocodec|Audiocodec
 ---|---|---
-MP4 (* .mp4)<br/><br/>(einschließlich Multi-Bitrate-MP4-Container) |H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2 
+MP4 <br/><br/>(einschließlich Multi-Bitrate-MP4-Container) |H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2 
 MPEG2-TS |H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2 
+
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
 ##Weitere Informationen
 
@@ -90,4 +98,4 @@ MPEG2-TS |H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2
 
 [Gewusst wie: Codieren mit Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-standard.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

@@ -47,7 +47,7 @@ Der Agent wird automatisch installiert und für den Operational Insights-Arbeits
 
 ![Abbildung der Seite mit Operational Insights-Servern](./media/operational-insights-analyze-data-azure/servers.png)
 
- >[AZURE.NOTE]Der [VM-Agent von Azure](https://msdn.microsoft.com/library/azure/dn832621.aspx) muss installiert sein, damit der Agent für Operational Insights automatisch installiert wird.
+ >[AZURE.NOTE]Der [VM-Agent von Azure](https://msdn.microsoft.com/library/azure/dn832621.aspx) muss installiert sein, damit der Agent für Operational Insights automatisch installiert wird. Wenn Sie über einen virtuellen Azure-Ressourcen-Manager-Computer verfügen, wird dieser in der Liste nicht angezeigt, und Sie müssen PowerShell verwenden oder eine ARM-Vorlage erstellen, um den Agent zu installieren.
 
 
 
@@ -55,7 +55,9 @@ Der Agent wird automatisch installiert und für den Operational Insights-Arbeits
 
 Wenn Sie für Änderungen an Ihren virtuellen Azure-Computern lieber die Skriptfunktion verwenden, können Sie Microsoft Monitoring Agent über PowerShell aktivieren.
 
-Microsoft Monitoring Agent ist eine [Erweiterung des virtuellen Azure-Computers](https://msdn.microsoft.com/library/azure/dn832621.aspx), den Sie mithilfe von PowerShell verwalten können, wie im folgenden Beispiel gezeigt wird.
+Microsoft Monitoring Agent ist eine [Erweiterung des virtuellen Azure-Computers](https://msdn.microsoft.com/library/azure/dn832621.aspx), den Sie mithilfe von PowerShell verwalten können, wie in den folgenden Beispielen gezeigt wird.
+
+Verwenden Sie für „klassische“ virtuelle Azure-Computer diese PowerShell:
 
 ```powershell
 Add-AzureAccount
@@ -66,6 +68,24 @@ $hostedService="enter hosted service here"
 
 $vm = Get-AzureVM –ServiceName $hostedService
 Set-AzureVMExtension -VM $vm -Publisher 'Microsoft.EnterpriseCloud.Monitoring' -ExtensionName 'MicrosoftMonitoringAgent' -Version '1.*' -PublicConfiguration "{'workspaceId':  '$workspaceId'}" -PrivateConfiguration "{'workspaceKey': '$workspaceKey' }" | Update-AzureVM -Verbose
+```
+Verwenden Sie für virtuelle Azure-Ressourcen-Manager-Computer diese PowerShell:
+
+```powershell
+Add-AzureAccount
+Switch-AzureMode -Name AzureResourceManager
+
+$workspaceId="enter workspace here"
+$workspaceKey="enter workspace key here"
+
+$resourcegroup = "enter resource group"
+$resourcename = "enter resource group"
+
+$vm = Get-AzureVM -ResourceGroupName $resourcegroup -Name $resourcename
+$location = $vm.Location
+
+Set-AzureVMExtension -ResourceGroupName $resourcegroup -VMName $resourcename -Name 'MicrosoftMonitoringAgent' -Publisher 'Microsoft.EnterpriseCloud.Monitoring' -ExtensionType 'MicrosoftMonitoringAgent' -TypeHandlerVersion '1.0' -Location $location -SettingString "{'workspaceId':  '$workspaceId'}" -ProtectedSettingString "{'workspaceKey': '$workspaceKey' }"
+
 ```
 
 Bei der Konfiguration mit PowerShell müssen Sie die Arbeitsbereichs-ID und einen Primärschlüssel bereitstellen. Sie finden Ihre Arbeitsbereichs-ID und den Primärschlüssel auf der Seite **Einstellungen** im Operational Insights-Portal.
@@ -131,7 +151,7 @@ Bei aktivierter Azure-Diagnose:
 
 ### So aktivieren Sie die Diagnose
 
-Um Windows-Ereignisprotokolle zu aktivieren oder die "scheduledTransferPeriod" zu ändern, konfigurieren Sie die Azure-Diagnose mithilfe der XML-Konfigurationsdatei (diagnostics.wadcfg), wie im Thema "Aktivieren der Diagnose in einem Clouddienst" in [Schritt 2: Hinzufügen der Datei "diagnostics.wadcfg" zur Visual Studio-Projektmappe](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step2) und in [Schritt 3: Konfigurieren der Diagnose für Ihre Anwendung](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step3) beschrieben wird. Die folgende Beispielkonfigurationsdatei sammelt IIS-Protokolle und alle Ereignisse aus dem Anwendungs- und dem Systemprotokoll:
+Um Windows-Ereignisprotokolle zu aktivieren oder „scheduledTransferPeriod“ zu ändern, konfigurieren Sie die Azure-Diagnose mithilfe der XML-Konfigurationsdatei (diagnostics.wadcfg), wie im Thema „Aktivieren der Diagnose in einem Clouddienst“ in [Schritt 2: Hinzufügen der Datei „diagnostics.wadcfg“ zur Visual Studio-Projektmappe](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step2) und in [Schritt 3: Konfigurieren der Diagnose für Ihre Anwendung](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step3) beschrieben wird. Die folgende Beispielkonfigurationsdatei sammelt IIS-Protokolle und alle Ereignisse aus dem Anwendungs- und dem Systemprotokoll:
 
     <?xml version="1.0" encoding="utf-8" ?>
     <DiagnosticMonitorConfiguration xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration"
@@ -154,7 +174,7 @@ Um Windows-Ereignisprotokolle zu aktivieren oder die "scheduledTransferPeriod" z
     </DiagnosticMonitorConfiguration>
 
 
-Stellen Sie in [Schritt 4: Konfigurieren des Speichers der Diagnosedaten](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step4) im Thema "Aktivieren der Diagnose in einem Clouddienst" sicher, dass "ConfigurationSettings" ein Speicherkonto angibt, wie im folgenden Beispiel gezeigt wird:
+Stellen Sie in [Schritt 4: Konfigurieren des Speichers der Diagnosedaten](https://msdn.microsoft.com/library/azure/dn482131.aspx#BKMK_step4) im Thema „Aktivieren der Diagnose in einem Clouddienst“ sicher, dass „ConfigurationSettings“ ein Speicherkonto angibt, wie im folgenden Beispiel gezeigt wird:
 
 
     <ConfigurationSettings>
@@ -162,7 +182,7 @@ Stellen Sie in [Schritt 4: Konfigurieren des Speichers der Diagnosedaten](https:
     </ConfigurationSettings>
 
 
-Die Werte für **AccountName** und **AccountKey** finden Sie im Microsoft Azure-Verwaltungsportal im Speicherkonto-Dashboard unter "Zugriffsschlüssel verwalten". Als Protokoll für die Verbindungszeichenfolge muss **https** verwendet werden.
+Die Werte für **AccountName** und **AccountKey** finden Sie im Microsoft Azure-Verwaltungsportal im Speicherkonto-Dashboard unter „Zugriffsschlüssel verwalten“. Als Protokoll für die Verbindungszeichenfolge muss **https** verwendet werden.
 
 Sobald die aktualisierte Diagnosekonfiguration auf den Cloud-Dienst angewendet wurde und Diagnoseinformationen in Azure Storage geschrieben werden, sind Sie zur Konfiguration von Operational Insights bereit.
 
@@ -182,7 +202,7 @@ Gehen Sie folgendermaßen vor, um die Azure-Diagnose mithilfe des Microsoft Azur
 	1. Wählen Sie den virtuellen Computer aus.
 	2. Klicken Sie auf **Überwachen**.
 	3. Klicken Sie auf **Diagnose**.
-	4. Setzen Sie den **Status** auf **Ein**.
+	4. Setzen Sie den **Status** auf **EIN**.
 	5. Wählen Sie die einzelnen Diagnosemetriken aus, die Sie verwenden möchten. Operational Insights kann Windows-Ereignissystemprotokolle, Windows-Ereignisanwendungsprotokolle und IIS-Protokolle analysieren.
 	7. Klicken Sie auf **OK**.
 
@@ -249,4 +269,4 @@ Nach etwa einer Stunde werden Daten aus dem Speicherkonto für die Analyse in Op
 
 [Konfigurieren von Proxy- und Firewall-Einstellungen (Optional)](../operational-insights-proxy-filewall.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

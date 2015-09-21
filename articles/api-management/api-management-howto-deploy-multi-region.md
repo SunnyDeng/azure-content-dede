@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/10/2015"
 	ms.author="sdanie"/>
 
 # Bereitstellen einer Azure API Management-Dienstinstanz für mehrere Azure-Regionen
@@ -30,7 +30,7 @@ Klicken Sie zunächst im Azure-Portal für Ihren API Management-Dienst auf **Ver
 
 ![Herausgeberportal][api-management-management-console]
 
->Falls Sie noch keine API-Verwaltungs-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API-Verwaltungsinstanz][] im Lernprogramm [Erste Schritte mit der Azure API-Verwaltung][].
+>Falls Sie noch keine API Management-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API Management-Instanz][] im Lernprogramm [Erste Schritte mit Azure API Management][].
 
 Navigieren Sie im Azure-Portal zur Registerkarte **Skalieren** für Ihre API Management-Dienstinstanz.
 
@@ -66,8 +66,8 @@ Wenn Sie die gewünschten Regionen entfernt haben, klicken Sie auf **Speichern**
 [api-management-select-units]: ./media/api-management-howto-deploy-multi-region/api-management-select-units.png
 [api-management-remove-region]: ./media/api-management-howto-deploy-multi-region/api-management-remove-region.png
 
-[Erstellen einer API-Verwaltungsinstanz]: api-management-get-started.md#create-service-instance
-[Erste Schritte mit der Azure API-Verwaltung]: api-management-get-started.md
+[Erstellen einer API Management-Instanz]: api-management-get-started.md#create-service-instance
+[Erste Schritte mit Azure API Management]: api-management-get-started.md
 
 [Deploy an API Management service instance to a new region]: #add-region
 [Delete an API Management service instance from a region]: #remove-region
@@ -75,4 +75,4 @@ Wenn Sie die gewünschten Regionen entfernt haben, klicken Sie auf **Speichern**
 [Einheit]: http://azure.microsoft.com/pricing/details/api-management/
 [Premium]: http://azure.microsoft.com/pricing/details/api-management/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Aktualisieren Ihrer Azure RemoteApp-Sammlung"
+   pageTitle="Aktualisieren Ihrer Azure RemoteApp-Sammlung | Microsoft Azure"
    description="Hier erfahren Sie, wie Sie Ihre Azure RemoteApp-Sammlung aktualisieren."
    services="remoteapp"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="compute"
-   ms.date="08/12/2015"
+   ms.date="09/03/2015"
    ms.author="elizapo"/>
 
 # Aktualisieren einer Sammlung in Azure RemoteApp
@@ -25,7 +25,7 @@ Wenn Sie dagegen ein benutzerdefiniertes (von Grund auf neu erstelltes oder ange
 In diesem Artikel erfahren Sie, wie Sie Ihre Sammlung aktualisieren. Es ist ganz einfach:
 
 1. Aktualisieren Sie das Image, das Sie in Ihrer Sammlung verwendet haben. Wenden Sie alle erforderlichen Patches oder Updates an, und speichern Sie es anschließend unter einem neuen Namen.
-2. [Laden Sie das Image an RemoteApp hoch](remoteapp-uploadimage.md), oder [importieren](remoteapp-image-on-azurevm) Sie es.
+2. [Laden Sie das Image auf RemoteApp hoch](remoteapp-uploadimage.md), oder [importieren](remoteapp-image-on-azurevm.md) Sie es.
 3. Klicken Sie auf der Sammlungsseite auf **Aktualisieren**.
 4. Wählen Sie in der Liste **Vorlagenimage** das neue Image aus.
 4. Nun wird es etwas kniffliger: Sie müssen entscheiden, wie mit den Benutzern verfahren werden soll, die zurzeit eine App aus der Sammlung verwenden. Folgende Optionen stehen zur Auswahl:
@@ -36,4 +36,4 @@ In diesem Artikel erfahren Sie, wie Sie Ihre Sammlung aktualisieren. Es ist ganz
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO2-->

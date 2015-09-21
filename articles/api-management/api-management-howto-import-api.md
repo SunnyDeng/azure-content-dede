@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/16/2015" 
+	ms.date="09/10/2015" 
 	ms.author="sdanie"/>
 
 # Importieren einer API-Definition mit Operationen in Azure API Management
@@ -95,4 +95,4 @@ Nachdem Sie die API erstellt und die Operationen importiert haben, können Sie z
 [Erstellen von APIs]: api-management-howto-create-apis.md
 [Konfigurieren von API-Einstellungen]: api-management-howto-create-apis.md#configure-api-settings
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

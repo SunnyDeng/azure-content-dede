@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="09/07/2015" 
 	ms.author="juliako"/>
 
 
@@ -100,10 +100,19 @@ Legen Sie schließlich die Größe des Videoelements mithilfe von CSS fest. In e
 
 Zeigen Sie zur Wiedergabe eines Videos in Ihrem Browser auf die Datei "basicPlayback.html", und klicken Sie dann im angezeigten Videoplayer auf die Schaltfläche für die Wiedergabe.
 
-##Siehe auch
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+
+##Weitere Informationen
 
 [Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md)
 
 [dash.js-Repository von GitHub](https://github.com/Dash-Industry-Forum/dash.js) (in englischer Sprache)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO2-->

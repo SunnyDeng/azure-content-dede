@@ -1,20 +1,20 @@
 <properties
    pageTitle="Übertragen eines Azure-Abonnements | Microsoft Azure"
-	description="Übertragung eines Azure-Abonnements auf einen anderen Benutzer, und einige häufig gestellte Fragen (FAQS) zu dem Prozess."
-	services="billing"
-	documentationCenter=""
-	authors="curtand"
-	manager="msmStevenPo"
-	editor=""/>
+   description="Übertragung eines Azure-Abonnements auf einen anderen Benutzer, und einige häufig gestellte Fragen (FAQS) zu dem Prozess."
+   services="billing"
+   documentationCenter=""
+   authors="curtand"
+   manager="msmStevenPo"
+   editor=""/>
 
 <tags
    ms.service="billing"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="billing"
-	ms.date="08/19/2015"
-	ms.author="curtand;ruchic"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="billing"
+   ms.date="08/19/2015"
+   ms.author="curtand;ruchic"/>
 
 # Übertragen eines Azure-Abonnements
 
@@ -94,4 +94,15 @@ Ist Ihr Konto in den USA, können Sie dies jetzt problemlos im Microsoft Azure A
 
     Ja, und in der Tat können Sie diesen Mechanismus dazu nutzen, um die Zahlungsmethode für Ihr Abonnement von Rechnung auf Kreditkarte zu ändern. Führen Sie nur die Übertragung auf ein anderes Konto durch, und geben Sie Ihre Kreditkartendaten beim Empfang des Abonnements ein. Es gibt hier Einschränkungen: der Abrechnungsverlauf des Abonnements ist nun auf zwei Konten aufgeteilt. Der Vorteil ist jedoch, dass Sie sich dazu nicht an den [Support wenden](http://go.microsoft.com/fwlink/?LinkID=619338) müssen.
 
-<!---HONumber=September15_HO1-->
+## Nächste Schritte nach dem Übernehmen des Besitzes eines Abonnements
+
+1. Sie sind nun der Kontoadministrator. Überprüfen und aktualisieren Sie den Dienstadministrator und die Co-Administratoren. Sie verwalten die Administratoren im [Azure-Verwaltungsportal](https://manage.windowsazure.com) unter "Einstellungen". [Weitere Informationen](http://go.microsoft.com/fwlink/?LinkID=533293). 
+2. Sie können auch die rollenbasierte Zugriffskontrolle (RBAC) für Ihr Abonnement und die Dienste verwenden. Weitere Informationen finden Sie im [Azure-Vorschauportal](https://portal.azure.com) ([Weitere Informationen zur rollenbasierten Zugriffssteuerung](http://go.microsoft.com/fwlink/?LinkID=544802))
+3. Aktualisieren Sie die Anmeldeinformationen für die Dienste dieses Abonnements. Diese umfassen: 
+    -   Verwaltungszertifikate, die dem Benutzer Administratorrechte auf Abonnementressourcen gewähren. Weitere Informationen finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure](https://msdn.microsoft.com/library/azure/gg551722.aspx).
+    -	Tastenkombinationen für Dienste wie Storage. Weitere Informationen finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+    -	RAS-Anmeldeinformationen für Dienste wie Azure Virtual Machines
+4. Aktualisieren Sie die Abrechnungswarnungen für dieses Abonnement im [Azure-Kontocenter](https://account.windowsazure.com/Subscriptions) ([weitere Informationen](http://go.microsoft.com/fwlink/?LinkID=533292)).
+5. 	Wenn Sie mit einem Partner arbeiten, sollten Sie die Partner-ID für dieses Abonnement aktualisieren. Sie können diese im [Azure-Kontocenter](https://account.windowsazure.com/Subscriptions) durchführen.
+
+<!---HONumber=Sept15_HO2-->

@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Erfahren Sie mehr über die Schlüsselkonzepte von Stream Analytics | Microsoft Azure" 
 	description="Erfahren Sie mehr über die Schlüsselkonzepte von Azure Stream Analytics: Komponenten von Stream Analytics-Aufträgen, einschließlich unterstützte Eingaben und Ausgaben, Auftragskonfiguration und Metriken." 
+	keywords="event processing,data stream,key concepts,serialization"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -13,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="08/04/2015" 
+	ms.date="09/09/2015" 
 	ms.author="jeffstok" />
 
 
@@ -92,12 +93,12 @@ Je nach Eingabetyp im Auftrag werden einige zusätzliche Felder mit Ereignismeta
 	</tr>
 </table>
 
-###Partitionen mit langsamem oder gar keinen Eingabedaten
+### Partitionen mit langsamem oder gar keinen Eingabedaten
 Beim Lesen von Eingabequellen mit mehreren Partitionen, bei denen mindestens eine Partition verlangsamt ist oder über keine Daten verfügt, muss der Streaming-Auftrag entscheiden, wie mit der Situation umgegangen wird, damit die Ereignisse weiter durch das System fließen. Die Eingabeeinstellung "Maximum allowed arrival delay" steuert dieses Verhalten und wartet in der Standardeinstellung über einen unbegrenzten Zeitraum auf die Daten. Daher werden zwar einerseits die Ereigniszeitstempel nicht verändert, andererseits fließen die Ereignisse beruhend auf der langsamsten Eingabepartition, wobei der Fluss unterbrochen wird, wenn mindestens eine Eingabepartition über keine Daten verfügt. Dies ist hilfreich, wenn die Daten gleichmäßig auf alle Eingabepartitionen verteilt sind und wenn die zeitliche Konsistenz unter den Ereignissen entscheidend ist.
 
 Sie können jedoch auch festlegen, nur eine begrenzte Zeit zu warten. Mit „Maximal zulässige Eingangsverzögerung“ wird die Verzögerung angegeben, nach der der Auftrag weitergeleitet wird und die verzögerten Eingabepartitionen hinter sich lässt. Hierbei wird der Umgang mit verzögerten Ereignissen über die Einstellung „Aktion bei verzögerten Ereignissen“ festgelegt, wobei Ereignisse verworfen werden oder deren Zeitstempel angepasst wird, wenn Daten später ankommen. Dies ist hilfreich, wenn die Latenzzeit wichtig und eine Veränderung der Zeitstempel zulässig ist. Die Eingabe wird jedoch möglicherweise nicht gleichmäßig verteilt.
 
-###Partitionen mit Ereignissen in der falschen Reihenfolge
+### Partitionen mit Ereignissen in der falschen Reihenfolge
 Wenn für die Streaming-Auftragsabfrage das Schlüsselwort "TIMESTAMP BY" verwendet wird, kann die Reihenfolge nicht gewährleistet werden, in der die Ereignisse an der Eingabe ankommen. Einige Ereignisse derselben Eingabepartition sind möglicherweise verzögert, sodass der Parameter "Maximum allowed disorder within an input" dazu führt, dass der Streaming-Auftrag auf Ereignisse außerhalb der Toleranz anhand der Einstellung "Action for late events" reagiert und diese verwirft oder deren Zeitstempel anpasst.
 
 ### Zusätzliche Ressourcen
@@ -138,7 +139,7 @@ Die Ausgabequelle ist der Ort, an den die Ergebnisse des Stream Analytics-Auftra
 - Azure-Tabellenspeicher – der Azure-Tabellenspeicher ist ein strukturierter Datenspeicher mit weniger Schemaeinschränkungen. Entitäten mit unterschiedlichen Schemas und Typen können in der gleichen Azure-Tabelle gespeichert werden. Azure-Tabellenspeicher kann zum Speichern von Daten für dauerhafte Archivierung und effizienten Abruf verwendet werden. Weitere Informationen finden Sie unter [Einführung zum Azure-Speicher](../storage/storage-introduction.md) und [Entwerfen einer Strategie für die skalierbare Partitionierung des Azure-Tabellenspeichers](https://msdn.microsoft.com/library/azure/hh508997.aspx).
 - Azure-SQL-Datenbank – diese Ausgabequelle eignet sich für relationale Daten oder für Anwendungen, die von dem in einer Datenbank gehosteten Inhalt abhängig sind.
 
-## Streaming-Einheiten ##
+## Streaming-Einheiten
 Im Rahmen der Bereitstellung einer besser vorhersagbaren Leistung für Kunden verwendet Azure Stream Analytics Streaming-Einheiten (SUs) zur Darstellung der Ressourcen und Leistung für die Ausführung eines Auftrags. SUs bieten anhand eines kombinierten Maßes aus CPU, Arbeitsspeicher und Schreib- und Leseraten eine Möglichkeit zur Beschreibung der relativen Ereignisverarbeitungskapazität. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s. Für jeden Azure Stream Analytics-Auftrag wird mindestens eine Streaming-Einheit benötigt. Dies ist der Standardwert für sämtliche Aufträge. Weitere Informationen zum Auswählen der richtigen Anzahl an SUs für einen Auftrag finden Sie unter [Skalieren von Azure Stream Analytics-Aufträgen](stream-analytics-scale-jobs.md)
 
 ## Skalieren von Aufträgen
@@ -167,7 +168,7 @@ Die folgenden Metriken sind für die Überwachung der Nutzung und Leistung von S
 - Datenkonvertierungsfehler – Anzahl der Datenkonvertierungsfehler im Zusammenhang mit einem Stream Analytics-Auftrag.
 
 ### Vorgangsprotokolle
-Das beste Verfahren zum Debuggen oder zur Fehlerbehebung eines Stream Analytics-Auftrags ist die Verwendung von Azure-Vorgangsprotokollen. Vorgangsprotokolle stehen im Bereich **Management Services** des Portals zur Verfügung. Legen Sie zum Überprüfen von Protokollen **Diensttyp** auf **Stream Analytics** und **Dienstname** auf den Namen des Auftrags fest.
+Das beste Verfahren zum Debuggen oder zur Fehlerbehebung eines Stream Analytics-Auftrags erfolgt über Azure-Vorgangsprotokolle. Vorgangsprotokolle stehen im Bereich **Verwaltungsdienste** des Portals zur Verfügung. Legen Sie zum Überprüfen von Protokollen **Diensttyp** auf **Stream Analytics** und **Dienstname** auf den Namen des Auftrags fest.
 
 
 ## Verwalten von Aufträgen 
@@ -181,7 +182,7 @@ Sie können die folgenden Einstellungen auf der obersten Ebene für einen Stream
 - **Start Output** – mit dieser Einstellung können Sie angeben, wann dieser Auftrag mit der Ergebnisausgabe beginnen soll. Wenn die zugeordnete Abfrage ein Fenster enthält, beginnt der Auftrag mit dem Erfassen von Eingaben aus den Eingabequellen zu Beginn der erforderlichen Fensterdauer, um das erste Ausgabeereignis zum angegebenen Zeitpunkt zu erzeugen. Es gibt zwei Optionen: **Auftragsstartzeit** und **Benutzerdefiniert**. Die Standardeinstellung ist **Auftragsstartzeit**. Für die Option **Benutzerdefiniert** müssen Sie ein Datum und eine Uhrzeit angeben. Diese Einstellung ist nützlich für die Angabe, wie viele historische Daten in den Eingabequellen genutzt werden sollen oder für die Erfassung der Datenaufnahme von einem bestimmten Zeitpunkt, z. B. dem letzten Stopp des Auftrags. 
 - **Out of order policy** – Einstellungen für den Umgang mit Ereignissen, die nicht in der richtigen Reihenfolge beim Stream Analytics-Auftrag eingehen. Sie können einen Zeitschwellenwert angeben, um die enthaltenen Ereignisse neu zu ordnen, indem Sie ein Toleranzfenster festlegen. Sie können auch eine Aktion bestimmen, um Ereignisse außerhalb dieses Fensters zu bearbeiten: **Verwerfen** oder **Anpassen**. **Löschen** löscht alle Ereignisse, die in der falschen Reihenfolge empfangen wurden, und **Anpassen** bewirkt eine Änderung des Systems. Zeitstempel der in falscher Reihenfolge empfangenen Ereignisse zum Zeitstempel des zuletzt empfangenen sortierten Ereignisses. 
 - **Late arrival policy** – beim Lesen von Eingabequellen mit mehreren Partitionen, bei denen mindestens eine Partition verlangsamt ist oder über keine Daten verfügt, muss der Streaming-Auftrag entscheiden, wie mit der Situation umgegangen wird, damit die Ereignisse weiter durch das System fließen. Die Eingabeeinstellung "Maximum allowed arrival delay" steuert dieses Verhalten und wartet in der Standardeinstellung über einen unbegrenzten Zeitraum auf die Daten. Daher werden zwar einerseits die Ereigniszeitstempel nicht verändert, andererseits fließen die Ereignisse jedoch beruhend auf der langsamsten Eingabepartition, wobei der Fluss unterbrochen wird, wenn mindestens eine Eingabepartition über keine Daten verfügt. Dies ist hilfreich, wenn die Daten gleichmäßig auf alle Eingabepartitionen verteilt sind und wenn die zeitliche Konsistenz unter den Ereignissen entscheidend ist. Der Benutzer kann jedoch auch festlegen, dass nur eine begrenzte Zeit gewartet wird. Mit "Maximum allowed arrival delay" wird die Verzögerung angegeben, nach der der Auftrag weitergeleitet wird und die nachhinkenden Partitionen hinter sich lässt. Hierbei wird der Umgang mit verzögerten Ereignissen über die Einstellung "Action for late events" festgelegt, wobei Ereignisse verworfen werden oder deren Zeitstempel angepasst wird, wenn Daten später ankommen. Dies ist hilfreich, wenn die Latenzzeit wichtig und eine Veränderung der Zeitstempel zulässig ist. Die Eingabe wird jedoch möglicherweise nicht gleichmäßig verteilt.
-- **Gebietsschema** – Verwenden Sie diese Einstellung, um die Voreinstellung für die Internationalisierung für den Stream Analytics-Auftrag anzugeben. Zeitstempel der Daten sind gebietsschemaneutral, die hier vorgenommenen Einstellungen haben Auswirkungen auf die Analyse, den Vergleich und die Sortierung der Daten. Für die Vorabversion wird nur **en-US** unterstützt.
+- **Gebietsschema** – Verwenden Sie diese Einstellung, um die Voreinstellung für die Internationalisierung für den Stream Analytics-Auftrag anzugeben. Zeitstempel der Daten sind gebietsschemaneutral, die hier vorgenommenen Einstellungen haben Auswirkungen auf die Analyse, den Vergleich und die Sortierung der Daten. Für die Vorabversion wird nur **de-DE** unterstützt.
 
 ### Status
 
@@ -192,7 +193,7 @@ Der Status von Stream Analytics-Aufträgen kann im Azure-Portal angezeigt werden
 
 
 ## Support
-Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics).
+Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
 
 
 ## Nächste Schritte
@@ -206,4 +207,4 @@ Nachdem Sie nun mit den Schlüsselkonzepten von Stream Analytics vertraut sind, 
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

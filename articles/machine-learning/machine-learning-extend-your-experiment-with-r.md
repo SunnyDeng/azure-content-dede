@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erweitern Ihres Experiments mit R | Microsoft Azure"
-	description="In diesem Artikel erfahren Sie, wie Sie die Funktionalität von Azure Machine Learning Studio über die R-Sprache mithilfe des Moduls &quot;Execute R Script&quot; erweitern."
+	description="In diesem Artikel erfahren Sie, wie Sie die Funktionalität von Azure Machine Learning Studio über die R-Sprache mithilfe des Moduls ";Execute R Script"; erweitern."
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/29/2015"
+	ms.date="09/03/2015"
 	ms.author="garye" />
 
 
-#Erweitern Ihres Experiments mit R 
+#Erweitern Ihres Experiments mit R
 
 Sie können die Funktionalität von ML Studio mithilfe der Programmiersprache R hinaus erweitern, indem Sie das [Execute R Script][execute-r-script] verwenden.
 
@@ -501,6 +501,5 @@ Eine vollständige Liste der aktuell verfügbare Pakete finden Sie im Abschnitt 
 <!-- Module References -->
 [execute-r-script]: https://msdn.microsoft.com/library/azure/30806023-392b-42e0-94d6-6b775a6e0fd5/
 [convert-to-csv]: https://msdn.microsoft.com/library/azure/faa6ba63-383c-4086-ba58-7abf26b85814/
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

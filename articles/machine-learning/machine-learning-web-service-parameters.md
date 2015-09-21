@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="09/04/2015" 
 	ms.author="raymondl;garye"/>
 
 #Verwenden von Azure Machine Learning-Webdienstparametern
@@ -22,9 +22,9 @@ Ein Azure Machine Learning-Webdienst wird erstellt, indem ein Experiment veröff
 
 Ein typisches Beispiel ist das Einrichten des [Reader][reader]-Moduls, damit die Benutzer des veröffentlichten Webdiensts beim Zugreifen auf den Webdienst eine andere Datenquelle angeben können. Ein weiteres Beispiel ist die Konfiguration des [Writer][writer]-Moduls, damit ein anderes Ziel angegeben werden kann. Zu weiteren Beispielen zählen die Änderung der Anzahl von Bits für das Modul [Feature Hashing][feature-hashing] oder der Anzahl der gewünschten Funktionen für das Modul [Filter-Based Feature Selection][filter-based-feature-selection].
 
-Sie können Web Service-Parameter definieren und einem oder mehreren Modulparametern zuordnen, und Sie können angeben, ob diese erforderlich oder optional sind. Der Benutzer des Webdiensts kann dann Werte für diese Parameter für den Zugriff auf den Dienst angeben, und die Aktionen des Moduls werden zur Laufzeit angepasst.
+Sie können Webdienstparameter definieren und einem oder mehreren Modulparametern im Experiment zuordnen, und Sie können angeben, ob diese Parameter erforderlich oder optional sind. Benutzer des Webdiensts können dann Werte für diese Parameter bereitstellen, wenn sie den Webdienst aufrufen.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
 
 ##Festlegen und Verwenden von Webdienstparametern
@@ -91,4 +91,4 @@ Weitere Informationen zum Zugreifen auf einen Machine Learning-Webdienst finden 
 [writer]: https://msdn.microsoft.com/library/azure/7a391181-b6a7-4ad4-b82d-e419c0d6522c/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Reliable Actors: Muster für verteilte Berechnung"
-	description="Service Fabric Reliable Actors ist sehr gut geeignet für parallele asynchrone Nachrichten, leicht zu verwaltenden verteilten Status sowie Parallelberechnung."
-	services="service-fabric"
-	documentationCenter=".net"
-	authors="jessebenson"
-	manager="timlt"
-	editor=""/>
+   description="Service Fabric Reliable Actors ist sehr gut geeignet für parallele asynchrone Nachrichten, leicht zu verwaltenden verteilten Status sowie Parallelberechnung."
+   services="service-fabric"
+   documentationCenter=".net"
+   authors="jessebenson"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="service-fabric"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="08/05/2015"
-	ms.author="claudioc"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="09/08/2015"
+   ms.author="claudioc"/>
 
 # Reliable Actors-Entwurfsmuster: Verteilte Berechnung
 Dieses Beispiel verdanken wir zum Teil dem Umstand, dass wir einen realen Kunden dabei beobachten konnten, wie er eine Finanzberechnung in Service Fabric Reliable Actors innerhalb verblüffend kurzer Zeit durchführte – eine Monte-Carlo-Simulation für die Risikoberechnung, um genau zu sein.
@@ -48,10 +48,13 @@ public class Processor : Actor, IProcessor
     public Task ProcessAsync(int tries, int seed, int taskCount)
     {
         var tasks = new List<Task>();
+        ActorId aggregatorId = null;
         for (int i = 0; i < taskCount; i++)
         {
-            var task = ActorProxy.Create<IPooledTask>(0); // stateless
-            tasks.Add(task.CalculateAsync(tries, seed));
+            var task = ActorProxy.Create<IPooledTask>(ActorId.NewId()); // stateless
+            if (i % 2 == 0) // new aggregator for every 2 pooled actors
+               aggregatorId = ActorId.NewId();
+            tasks.Add(task.CalculateAsync(tries, seed, aggregatorId));
         }
         return Task.WhenAll(tasks);
     }
@@ -59,12 +62,12 @@ public class Processor : Actor, IProcessor
 
 public interface IPooledTask : IActor
 {
-    Task CalculateAsync(int tries, int seed);
+    Task CalculateAsync(int tries, int seed, ActorId aggregatorId);
 }
 
 public class PooledTask : Actor, IPooledTask
 {
-    public Task CalculateAsync(int tries, int seed)
+    public Task CalculateAsync(int tries, int seed, ActorId aggregatorId)
     {
         var pi = new Pi()
         {
@@ -82,7 +85,7 @@ public class PooledTask : Actor, IPooledTask
                 pi.InCircle++;
         }
 
-        var agg = ActorProxy.Create<IAggregator>(ActorId.NewId());
+        var agg = ActorProxy.Create<IAggregator>(aggregatorId);
         return agg.AggregateAsync(pi);
     }
 }
@@ -203,4 +206,4 @@ Es soll hier keineswegs behauptet werden, Azure Service Fabric sei ein Drop-in R
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-pattern-distributed-computation/distributed-computation-1.png
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

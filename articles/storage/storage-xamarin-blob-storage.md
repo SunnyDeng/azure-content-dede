@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/15/2015" 
+	ms.date="09/03/2015" 
 	ms.author="tamram"/>
 
 # Verwenden des Blob-Speichers mit Xamarin (Vorschau)
@@ -179,4 +179,4 @@ Weitere Informationen zu Blobs, Tabellen und Warteschlangen finden Sie über die
 [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

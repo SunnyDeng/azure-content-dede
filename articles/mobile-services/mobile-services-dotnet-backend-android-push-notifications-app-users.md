@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer"
-	description="Erfahren Sie mehr über das Senden von Pushbenachrichtigungen an bestimmte"
+	pageTitle="Senden von Pushbenachrichtigungen an authentifizierte Benutzer Ihrer Android-App (.NET-Back-End)"
+	description="Erfahren Sie, wie Sie Pushbenachrichtigungen an bestimmte authentifizierte Benutzer Ihrer Android-App mit Mobile Service und einem .NET-Back-End senden."
 	services="mobile-services,notification-hubs"
 	documentationCenter="android"
 	authors="wesmc7777"
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="notification-hubs"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/03/2015" 
 	ms.author="wesmc"/>
 
-# Senden von Pushbenachrichtigungen an authentifizierte Benutzer
+# Senden von Pushbenachrichtigungen an authentifizierte Benutzer Ihrer Android-App
 
 [AZURE.INCLUDE [mobile-services-selector-push-users](../../includes/mobile-services-selector-push-users.md)]
 
@@ -25,7 +25,7 @@
 In diesem Thema erfahren Sie, wie Sie Pushbenachrichtigungen an authentifizierte Benutzer auf einem beliebigen registrierten Gerät senden. Im Gegensatz zum vorherigen Lernprogramm für [Pushbenachrichtigungen][Get started with push notifications] wird in diesem Lernprogramm der mobile Dienst geändert, sodass sich Benutzer authentifizieren müssen, bevor sich der Client beim Notification Hub für Pushbenachrichtigungen registrieren kann. Außerdem wird die Registrierung geändert, um einen Tag basierend auf der zugewiesenen Benutzer-ID hinzuzufügen. Abschließend wird der Servercode aktualisiert, um die Benachrichtigung nur an den authentifizierten Benutzer anstatt an alle Registrierungen zu senden.
 
 
-Dieses Lernprogramm unterstützt Apps für Android.
+In diesem Lernprogramm werden Android-Apps mit Mobile Service und einem .NET-Back-End unterstützt.
 
 ##Voraussetzungen
 
@@ -63,4 +63,4 @@ In the next tutorial, [Service-side authorization of Mobile Services users](mobi
 [Azure Management Portal]: https://manage.windowsazure.com/
 [Mobile Services .NET How-to Conceptual Reference]: /develop/mobile/how-to-guides/work-with-net-client-library
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

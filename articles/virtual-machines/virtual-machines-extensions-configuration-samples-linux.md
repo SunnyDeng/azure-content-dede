@@ -1,24 +1,30 @@
 <properties
    pageTitle="Beispielkonfiguration für Azure-VM-Erweiterungen | Microsoft Azure"
-	description="Beispielkonfiguration für das Erstellen von Vorlagen mit Erweiterungen"
-	services="virtual-machines"
-	documentationCenter=""
-	authors="kundanap"
-	manager="timlt"
-	editor=""/>
+   description="Beispielkonfiguration für das Erstellen von Vorlagen mit Erweiterungen"
+   services="virtual-machines"
+   documentationCenter=""
+   authors="kundanap"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="09/01/2015"
-	ms.author="kundanap"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/01/2015"
+   ms.author="kundanap"/>
 
 # Konfigurationsbeispiele für Linux-VM-Erweiterungen in Azure.
 
-Dieser Artikel enthält Beispielkonfigurationen der Azure-VM-Erweiterungen für Azure-IaaS-Linux-VMs. Klicken Sie <a href="https://msdn.microsoft.com/de-DE/library/azure/dn606311.aspx" target="_blank">hier</a>, um mehr über diese Erweiterungen zu erfahren.
+Dieser Artikel enthält Beispielkonfigurationen der Azure-VM-Erweiterungen für Azure-IaaS-Linux-VMs.
+
+Weitere Informationen zu diesen Erweiterungen finden Sie unter [Azure-VM-Erweiterungen](https://msdn.microsoft.com/library/azure/dn606311.aspx).
+
+Weitere Informationen zum Erstellen von Erweiterungsvorlagen finden Sie unter [Erstellen von Erweiterungsvorlagen](virtual-machines-extensions-authoring-templates.md).
+
+Dieser Artikel führt die erwarteten Konfigurationswerte für einige der Linux-Erweiterungen auf.
 
 ## Ausschnitt einer Beispielvorlage für VM-Erweiterungen.
 Im Folgenden ist ein Ausschnitt einer Vorlage für die Bereitstellung von Erweiterungen gezeigt:
@@ -91,7 +97,7 @@ Im weiteren Verlauf des Artikels sind Beispielkonfigurationen für Linux-VM-Erwe
         }
 
 ### VM-Zugriffserweiterung (Zurücksetzen des Kennworts)
-Das aktualisierte Schema finden Sie <a href="https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess" target="_blank">hier</a>.
+Das aktualisierte Schema finden Sie unter [VMAccessForLinux Dokumentation](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess) (in englischer Sprache)
 
         {
           "publisher": "Microsoft.OSTCExtensions",
@@ -107,7 +113,7 @@ Das aktualisierte Schema finden Sie <a href="https://github.com/Azure/azure-linu
         }
 
 ### Betriebssystempatching
-Das aktualisierte Schema finden Sie <a href="https://github.com/Azure/azure-linux-extensions/tree/master/OSPatching" target="_blank">hier</a>.
+Das aktualisierte Schema finden Sie unter [OSPatching Extension](https://github.com/Azure/azure-linux-extensions/tree/master/OSPatching) (in englischer Sprache)
 
         {
         "publisher": "Microsoft.OSTCExtensions",
@@ -132,7 +138,7 @@ Das aktualisierte Schema finden Sie <a href="https://github.com/Azure/azure-linu
         }
 
 ### Docker-Erweiterung
-Das aktualisierte Schema finden Sie <a href="https://github.com/Azure/azure-docker-extension/blob/master/README.md#1-configuration-schema" target="_blank">hier</a>.
+Das aktualisierte Schema finden Sie unter [Azure Virtual Machine Extension for Docker](https://github.com/Azure/azure-docker-extension/blob/master/README.md#1-configuration-schema) (in englischer Sprache)
 
         {
           "publisher": "Microsoft.Azure.Extensions ",
@@ -155,6 +161,29 @@ Das aktualisierte Schema finden Sie <a href="https://github.com/Azure/azure-dock
             }
             }
         }
+
+        ### Linux Diagnostics Extension
+        {
+        "storageAccountName": "storage account to receive data",
+        "storageAccountKey": "key of the account",
+        "perfCfg": [
+        {
+            "query": "SELECT PercentAvailableMemory, AvailableMemory, UsedMemory ,PercentUsedSwap FROM SCX_MemoryStatisticalInformation",
+            "table": "LinuxMemory"
+        }
+        ],
+        "fileCfg": [
+        {
+            "file": "/var/log/mysql.err",
+            "table": "mysqlerr"
+        }
+        ]
+        }
+
 Ersetzen Sie die Versionsnummer in den oben gezeigten Beispielen durch die aktuelle Versionsnummer.
 
-<!---HONumber=September15_HO1-->
+Dies ist eine vollständige VM-Vorlage zum Erstellen eines virtuellen Linux-Computers mit einer Erweiterung:
+
+[Benutzerdefinierte Skriptserweiterung auf einem virtuellen Linux-Computer](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/)
+
+<!---HONumber=Sept15_HO2-->

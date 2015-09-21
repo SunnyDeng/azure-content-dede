@@ -1,4 +1,4 @@
-<properties 
+<properties
 	pageTitle="Installieren von R in HDInsight zum Anpassen von Clustern| Microsoft Azure"
 	description="Erfahren Sie, wie Sie R installieren und verwenden können, um Hadoop-Cluster anzupassen."
 	services="hdinsight"
@@ -7,7 +7,7 @@
 	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
+<tags
 	ms.service="hdinsight"
 	ms.workload="big-data"
 	ms.tgt_pltfrm="na"
@@ -84,11 +84,11 @@ Nach Abschluss der Clusterbereitstellung führen Sie anhand der folgenden Schrit
 1. Stellen Sie mithilfe von SSH eine Verbindung mit dem HDInsight-Cluster her:
 
 		ssh USERNAME@CLUSTERNAME-ssh.azurehdinsight.net
-		
+
 	Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den folgenden Artikeln:
-	
+
 	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
-	
+
 	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 
 2. Geben Sie an der `username@headnode1:~$`-Aufforderung den folgenden Befehl ein, um eine interaktive R-Sitzung zu starten:
@@ -100,24 +100,24 @@ Nach Abschluss der Clusterbereitstellung führen Sie anhand der folgenden Schrit
 		library(rmr2)
 		ints = to.dfs(1:100)
 		calc = mapreduce(input = ints, map = function(k, v) cbind(v, 2*v))
-		
+
 
 	Die erste Zeile ruft die RHadoop-Bibliothek „rmr2“ auf, die für MapReduce-Vorgänge verwendet wird.
-	
+
 	Die zweite Zeile generiert die Werte 1 bis 100 und speichert sie mithilfe von `to.dfs` im Hadoop-Dateisystem.
-	
+
 	Die dritte Zeile erstellt einen MapReduce-Prozess mit rmr2-Funktionen und beginnt mit der Verarbeitung. Nach Beginn der Verarbeitung sollten mehrere Zeilen über den Bildschirm ablaufen.
-	
+
 4. Als Nächstes verwenden Sie den folgenden Befehl, um temporären Pfad anzuzeigen, unter dem die MapReduce-Ausgabe gespeichert wurde:
 
 		print(calc())
-		
+
 	Der Pfad sollte etwa wie folgt aussehen: `/tmp/file5f615d870ad2`. Verwenden Sie den folgenden Befehl, um die tatsächliche Ausgabe anzuzeigen:
-	
+
 		print(from.dfs(calc))
-	
+
 	Die Ausgabe sollte wie folgt aussehen:
-	
+
 		[1,]  1 2
 		[2,]  2 4
 		.
@@ -126,7 +126,7 @@ Nach Abschluss der Clusterbereitstellung führen Sie anhand der folgenden Schrit
 		[98,]  98 196
 		[99,]  99 198
 		[100,] 100 200
-		
+
 5. Geben Sie zum Beenden von R Folgendes ein:
 
 		q()
@@ -148,6 +148,5 @@ Nach Abschluss der Clusterbereitstellung führen Sie anhand der folgenden Schrit
 [hdinsight-provision]: hdinsight-provision-clusters-linux.md
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
- 
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

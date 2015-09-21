@@ -1,20 +1,20 @@
 <properties
    pageTitle="Flexible Leistung und Skalierbarkeit mit SQL Data Warehouse | Microsoft Azure"
-	description="Grundlegende Informationen zur SQL Data Warehouse-Flexibilität mithilfe von Data Warehouse-Einheiten für die Aufwärts- und Abwärtsskalierung von Compute-Ressourcen. Codebeispiele werden bereitgestellt."
-	services="sql-data-warehouse"
-	documentationCenter="NA"
-	authors="TwoUnder"
-	manager="barbkess"
-	editor=""/>
+   description="Grundlegende Informationen zur SQL Data Warehouse-Flexibilität mithilfe von Data Warehouse-Einheiten für die Aufwärts- und Abwärtsskalierung von Compute-Ressourcen. Codebeispiele werden bereitgestellt."
+   services="sql-data-warehouse"
+   documentationCenter="NA"
+   authors="TwoUnder"
+   manager="barbkess"
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-services"
-	ms.date="06/25/2015"
-	ms.author="nicw;JRJ@BigBangData.co.uk;mausher"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/09/2015"
+   ms.author="nicw;JRJ@BigBangData.co.uk;mausher"/>
 
 # Flexible Leistung und Skalierbarkeit mit SQL Data Warehouse
 Um die Rechenleistung flexibel zu erhöhen oder zu verringern, müssen Sie nur die Anzahl der Data Warehouse-Einheiten (Data Warehouse Unit, DWU) anpassen, die Ihrem SQL Data Warehouse zugeordnet sind. Data Warehouse-Einheiten sind ein neues Konzept des SQL Data Warehouse, damit Sie einfach und effektiv verwalten können. Dieses Thema dient als Einführung in Data Warehouse-Einheiten. Es erläutert, wie Sie damit Ihre Rechenleistung flexibel skalieren können. Der Artikel enthält auch eine erste Anleitung zum Festlegen eines sinnvollen DWU-Werts für Ihre Umgebung.
@@ -23,18 +23,15 @@ Um die Rechenleistung flexibel zu erhöhen oder zu verringern, müssen Sie nur d
 Microsoft führt im Hintergrund eine Reihe von Leistungsbenchmarktests durch, um zu bestimmen, mit wie viel Hardware und mit welcher Konfiguration wir unseren Kunden ein konkurrenzfähiges Angebot bereitstellen können. Das Aufwärts- und Abwärtsskalieren der Rechenleistung geschieht in Blöcken zu je 100 DWUs, aber nicht jedes Vielfache von 100 DWUs wird angeboten.
 
 ## Wie viele DWUs sollte ich verwenden?
-Es gibt viele verschiedene Lösungen, die SQL Data Warehouse für Kunden entsperren kann. Es gibt viele verschiedene Typen von Abfragen, die Kunden ausführen können, sowie eine große zu verarbeitende Datenmenge. Auch die Architektur des Schemas, die Verteilung der Daten und zum Beispiel die Frage, wie viele Benutzer wie oft auf die Daten zugreifen, spielen eine wichtige Rolle.
+Anstatt feste DWU-Ausgangspunkte bereitzustellen, die möglicherweise gut für eine Kategorie von Kunden funktionieren, sollen wir uns dieser Frage mit einem praktischen Ansatz nähern. Die Leistung in SQL Data Warehouse wird linear skaliert, und das Ändern von einer Compute-Skalierung in eine andere (z. B. von 100 DWUs auf 2000 DWUs) erfolgt in Sekunden. Dies gibt Ihnen die Flexibilität, Dinge auszuprobieren und zu bestimmen, was am besten für Ihr Szenario geeignet ist.
 
-Anstatt feste DWU-Ausgangspunkte bereitzustellen, die möglicherweise gut für eine Kategorie von Kunden funktionieren, sollen wir uns dieser Frage mit einem praktischen Ansatz nähern. Die Leistung in SQL Data Warehouse wird linear skaliert, und das Ändern von einer Compute-Skalierung in eine andere (z. B. von 100 DWUs auf 2000 DWUs) erfolgt in Sekunden. Dies gibt Ihnen die Freiheit, Dinge auszuprobieren und zu bestimmen, was am besten für Ihr Szenario geeignet ist.
+1. Beginnen Sie bei einer Data Warehouse-Entwicklung, indem Sie eine geringe Anzahl von DWUs auswählen.
+2. Überwachen Sie die Anwendungsleistung, und beobachten Sie dabei die Anzahl der ausgewählten DWUs im Vergleich zur beobachteten Leistung.
+3. Bestimmen Sie durch Annahme einer linearen Skalierung, wie viel schneller oder langsamer die Leistung für Sie sein muss, um die optimale Leistungsstufe für Ihre Anforderungen zu erreichen. 
+4. Erhöhen oder verringern Sie die Anzahl der ausgewählten DWUs. Der Dienst reagiert schnell und passt die Computeressourcen gemäß den DWU-Anforderungen an.
+5. Nehmen Sie weitere Anpassungen vor, bis Sie die optimale Leistungsstufe für Ihre geschäftlichen Anforderungen erreichen.
 
-
-1. Beginnen Sie für eine Data Warehouse-Entwicklung mit einer kleinen Anzahl von DWUs.
-2. Überwachen Sie die Leistung Ihrer Anwendung so, dass Sie sich mit DWUs und der beobachteten Leistung vertraut machen können.
-3. Bestimmen Sie durch Annahme einer linearen Skalierung, wie viel schneller oder langsamer die Leistung für Sie sein muss, um die optimale Leistungsstufe für Ihre Geschäftsanforderungen zu erreichen. 
-4. Erhöhen oder reduzieren Sie je nach Bedarf die Menge an verwendeten DWUs. Der Dienst wird schnell reagieren, um die Compute-Ressourcen gemäß den DWU-Anforderungen anzupassen.
-5. Nehmen Sie Anpassungen vor, bis sie die optimale Leistungsstufe für Ihre geschäftlichen Anforderungen erreichen.
-
-Wenn Sie eine Anwendung mit wechselndem Workload haben, können Sie die Leistungsstufen nach oben oder unten verschieben, um Spitzen und Tiefpunkte zu berücksichtigen. Wenn z. B. ein Workload in der Regel am Ende des Monats einen Spitzenwert aufweist, können Sie planen, weitere DWUs während dieser Spitzenzeiten hinzufügen und dann wieder zu entfernen, wenn diese Spitzenzeiten vorbei sind.
+Wenn Sie eine Anwendung mit wechselnder Workload haben, verschieben Sie die Leistungsstufen nach oben oder unten, um Spitzen und Tiefpunkte zu berücksichtigen. Wenn z. B. eine Workload in der Regel am Ende des Monats einen Spitzenwert aufweist, fügen Sie während dieser Spitzenzeiten weitere DWUs hinzu, und entfernen Sie sie wieder, wenn diese Spitzenzeiten vorbei sind.
  
 ## Aufwärts- und Abwärtsskalieren von Compute-Ressourcen
 Unabhängig vom Cloudspeicher ermöglicht Ihnen die Flexibilität von SQL Data Warehouse das Vergrößern, Verkleinern oder Anhalten der Rechenleistung mithilfe eines Schiebereglers für Data Warehouse-Einheiten (DWUs). Dies bietet Ihnen die Flexibilität, die Rechenleistung auf einen Idealwert für Ihr Unternehmen zu optimieren.
@@ -96,4 +93,4 @@ Die Leistungsübersicht finden Sie unter [Leistungsübersicht][].
 
 [Azure-Portal]: http://portal.azure.com/
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

@@ -14,13 +14,29 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/30/2015"
+	ms.date="09/09/2015"
 	ms.author="nitinme"/>
 
 
 # Versionshinweise zu Hadoop-Komponenten in Azure HDInsight
 
-## Hinweise für die HDInsight-Version vom 31.07.2015 ##
+## Hinweise für die HDInsight-Version vom 09.09.2015
+
+Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
+
+* HDInsight 2.1.10.675.1768697 (HDP 1.3.12.0-01795 – unverändert)
+* HDInsight 3.0.6.675.1768697 (HDP 2.0.13.0-2117 – unverändert)
+* HDInsight 3.1.4.675.1768697 (HDP 2.1.15.0-2334 – unverändert)
+* HDInsight 3.2.6.675.1768697 (HDP 2.2.6.1-0012 – unverändert)
+* SDK 1.5.8
+
+Diese Version enthält die folgenden Updates.
+
+| Titel | Beschreibung | Betroffener Bereich (z. B. Dienst, Komponente oder SDK) | Clustertyp (z. B. Hadoop, HBase oder Storm) | JIRA (falls zutreffend) |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| Aktualisierte Versionen von HDInsight aller HDInsight-Cluster | In dieser Version wurden HDInsight-Versionen aktualisiert | Dienst | Alle| N/V |
+
+## Hinweise für die HDInsight-Version vom 31.07.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -37,7 +53,7 @@ Diese Version enthält die folgenden Updates.
 | Reimaging-Workflow des Spark-Clusterknotens beheben. | Ein Fehler wurde behoben, der verhinderte, dass Spark-Clusterknoten nach dem Reimaging nicht wiederhergestellt wurden. | Dienst | Spark| N/V |
 
 
-## Hinweise für die HDInsight-Version vom 31.07.2015 ##
+## Hinweise für die HDInsight-Version vom 31.07.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -54,7 +70,7 @@ Diese Version enthält die folgenden Updates.
 | Aktualisierte Versionen von HDInsight aller HDInsight-Cluster | In dieser Version wurden HDInsight-Versionen aktualisiert | Dienst | Alle| N/V |
 
 
-## Hinweise für die HDInsight-Version vom 07.07.2015 ##
+## Hinweise für die HDInsight-Version vom 07.07.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -72,7 +88,7 @@ Diese Version enthält die folgenden Updates.
 | Aktualisierte HDP-Versionen für HDInsight 3.2-Cluster | Mit dieser Version stellt HDInsight 3.2 HDP 2.2.6.1-0012 bereit. | Dienst | Alle | N/V |
 
 
-## Hinweise für die HDInsight-Version vom 06.26.2015 ##
+## Hinweise für die HDInsight-Version vom 06.26.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -105,7 +121,7 @@ Diese Version enthält die folgenden Updates.
 
 </table>
 
-## Hinweise zur HDInsight-Version vom 18.06.2015 ##
+## Hinweise zur HDInsight-Version vom 18.06.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -162,7 +178,7 @@ Diese Version enthält die folgenden Updates.
 
 </table>
 
-## Hinweise zur HDInsight-Version vom 04.06.2015 ##
+## Hinweise zur HDInsight-Version vom 04.06.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -195,7 +211,7 @@ Diese Version enthält die folgenden Updates.
 
 </table>
 
-## Hinweise für die HDInsight-Version vom 01.06.2015 ##
+## Hinweise für die HDInsight-Version vom 01.06.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -228,7 +244,7 @@ Diese Version enthält die folgenden Updates.
 
 </table>
 
-## Hinweise für die HDInsight-Version vom 27.05.2015 ##
+## Hinweise für die HDInsight-Version vom 27.05.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -274,7 +290,7 @@ Diese Version enthält die folgenden Updates.
 
 </table>
 
-## Hinweise für die HDInsight-Version vom 20.05.2015 ##
+## Hinweise für die HDInsight-Version vom 20.05.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -313,7 +329,7 @@ Diese Version enthält die folgenden Updates.
 </tr>
 </table>
 
-## Hinweise für die HDInsight-Version vom 27.04.2015 ##
+## Hinweise für die HDInsight-Version vom 27.04.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -352,7 +368,7 @@ Diese Version enthält die folgenden Updates.
 </tr>
 </table>
 
-## Hinweise für die HDInsight-Version vom 14.04.2015 ##
+## Hinweise für die HDInsight-Version vom 14.04.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -384,7 +400,7 @@ Diese Version enthält die folgenden Updates.
 </tr>
 </table>
 
-## Hinweise für die HDInsight-Version vom 06.04.2015 ##
+## Hinweise für die HDInsight-Version vom 06.04.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -433,7 +449,7 @@ Diese Version enthält die folgenden Updates.
 </table>
 <br>
 
-## Hinweise für die HDInsight-Version vom 01.04.2015 ##
+## Hinweise für die HDInsight-Version vom 01.04.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -538,7 +554,7 @@ Diese Version enthält die folgenden Updates.
 </table>
 <br>
 
-## Hinweise für die HDInsight-Version vom 03.03.2015 ##
+## Hinweise für die HDInsight-Version vom 03.03.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -573,7 +589,7 @@ Diese Version enthält das folgende Update.
 </table>
 <br>
 
-## Hinweise für die HDInsight-Version vom 18.02.2015 ##
+## Hinweise für die HDInsight-Version vom 18.02.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -662,7 +678,7 @@ Diese Version enthält die folgenden Updates.
 </table>
 <br>
 
-## Hinweise für die HDInsight-Version vom 06.02.2015 ##
+## Hinweise für die HDInsight-Version vom 06.02.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -716,7 +732,7 @@ Diese Version enthält die folgenden Updates.
 </table>
 <br>
 
-## Hinweise für die HDInsight-Version vom 29.1.2015 ##
+## Hinweise für die HDInsight-Version vom 29.1.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -751,7 +767,7 @@ Diese Version enthält das folgende Update.
 </table>
 <br>
 
-## Hinweise für die HDInsight-Version vom 5.1.2015 ##
+## Hinweise für die HDInsight-Version vom 5.1.2015
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster:
 
@@ -797,7 +813,7 @@ Apache Mahout ist eine Apache Hadoop-Bibliothek für maschinelles Lernen. Mahout
 </table>
 <br>
 
-## Hinweise für die HDInsight-Version vom 23.12.2014 ##
+## Hinweise für die HDInsight-Version vom 23.12.2014
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster sind:
 
@@ -830,7 +846,7 @@ Diese Version enthält das folgende Update.
 </table>
 <br>
 
-## Hinweise für die HDInsight-Version vom 18.12.2014 ##
+## Hinweise für die HDInsight-Version vom 18.12.2014
 
 Diese Version enthält das folgende Komponentenupdate.
 
@@ -855,7 +871,7 @@ Diese Version enthält das folgende Komponentenupdate.
 </table>
 <br>
 
-## Hinweise für die HDInsight-Version vom 05.12.2014 ##
+## Hinweise für die HDInsight-Version vom 05.12.2014
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster sind:
 
@@ -911,7 +927,7 @@ Diese Version enthält die folgenden Aktualisierungen von Komponenten.
 <br>
 
 
-## Hinweise für die HDInsight-Version vom 21.11.2014 ##
+## Hinweise für die HDInsight-Version vom 21.11.2014
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster sind:
 
@@ -957,7 +973,7 @@ Diese Version enthält die folgenden Aktualisierungen von Komponenten.
 </table>
 <br>
 
-## Hinweise für die HDInsight-Version vom 11.14.2014 ##
+## Hinweise für die HDInsight-Version vom 11.14.2014
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster sind:
 
@@ -1015,7 +1031,7 @@ Erfahren Sie, wie Sie mit HDInsight arbeiten, indem Sie verschiedene einfache Sz
 
 
 
-## Hinweise für die HDInsight-Version vom 07.11.2014 ##
+## Hinweise für die HDInsight-Version vom 07.11.2014
 
 Die vollständigen Versionsnummern für mit dieser Version bereitgestellte HDInsight-Cluster sind:
 
@@ -1062,14 +1078,14 @@ Diese Version enthält die folgenden Aktualisierungen von Komponenten.
 
 **Hinweis**: Beachten Sie, dass der Fehler, der das Anzeigen der vollständigen Versionsnummer im Portal oder deren Rückgabe durch das SDK oder Windows PowerShell verhindert hat, in dieser Version behoben wurde.
 
-## Hinweise für die Version vom 15.10.2014 ##
+## Hinweise für die Version vom 15.10.2014
 
 Dieser Hotfix korrigiert einen Speicherverlust in Templeton, der insbesondere Templeton-Benutzer mit hohen Anforderungen betraf. Manche Benutzer mit hohen Anforderungen an Templeton haben Fehlercodes 500 erhalten, da nicht genügend Arbeitsspeicher für die Bearbeitung der Anforderungen vorhanden war. Der Templeton-Dienst musste in diesem Fall neu gestartet werden, um das Problem zu umgehen. Dieses Problem wurde behoben.
 
 
-## Hinweise für die Version vom 07.10.2014 ##
+## Hinweise für die Version vom 07.10.2014
 
-* Beim Verwenden des Ambari-Endpunkts https://{clusterDns}.azurehdinsight.net/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.net/services/{servicename}/components/{componentname} gibt das Feld *host\_name* nun den vollqualifizierten Domänennamen (FQDN) des Knotens anstelle des Hostnamens zurück. Anstatt beispielsweise des Rückgabewerts "**headnode0**" erhalten Sie den FQDN "**headnode0.{ClusterDNS}.azurehdinsight.net**". Diese Änderung war erforderlich, um Szenarien, in denen mehrere Clustertypen (z. B. HBase und Hadoop) in einem einzigen virtuellen Netzwerk (VNET) bereitgestellt werden, zu erleichtern. Dies ist z. B. der Fall, wenn HBase als Back-End-Plattform für Hadoop verwendet wird.
+* Beim Verwenden des Ambari-Endpunkts https://{clusterDns}.azurehdinsight.net/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.net/services/{servicename}/components/{componentname} gibt das Feld *host\_name* nun den vollqualifizierten Domänennamen (FQDN) des Knotens anstelle des Hostnamens zurück. Anstelle beispielsweise des Rückgabewerts **headnode0** erhalten Sie den FQDN **headnode0.{ClusterDNS}.azurehdinsight.net**. Diese Änderung war erforderlich, um Szenarien, in denen mehrere Clustertypen (z. B. HBase und Hadoop) in einem einzigen virtuellen Netzwerk (VNET) bereitgestellt werden, zu erleichtern. Dies ist z. B. der Fall, wenn HBase als Back-End-Plattform für Hadoop verwendet wird.
 
 * Wir haben neue Speichereinstellungen für die Standardbereitstellung des HDInsight-Clusters bereitgestellt. Bei den vorherigen Speichereinstellungen wurden die Empfehlungen für die Anzahl der bereitgestellten CPU-Kerne nicht ausreichend berücksichtigt. Diese neuen Arbeitsspeichereinstellungen sollten (gemäß den Empfehlungen von Hortonworks) bessere Standardeinstellungen bieten. Um diese Einstellungen zu ändern, konsultieren Sie die SDK-Referenzdokumentation bezüglich des Änderns der Clusterkonfiguration. Die folgende Tabelle enthält die neuen Arbeitsspeichereinstellungen für ein Standard-HDInsight-Cluster mit 4 CPU-Kernen (8 Containern). (Die Werte, die in vorherigen Versionen verwendet wurden, sind in Klammern angegeben).
 
@@ -1081,19 +1097,19 @@ Weitere Informationen zu den Konfigurationseinstellungen des Arbeitsspeichers, d
 
 Anmerkung zur Azure PowerShell- und HDInsight SDK-Fehlermeldung: "*Cluster ist nicht für den Zugriff auf HTTP-Dienste konfiguriert*":
 
-* Dieser Fehler ist ein bekanntes [Kompatibilitätsproblem](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight), das auftritt, wenn sich die Version von HDInsight SDK oder Azure PowerShell von der Clusterversion unterscheidet. Alle ab dem 15.8.2014 erstellten Cluster unterstützen die neue Bereitstellungsfunktion für virtuelle Netzwerke. Diese Funktion wird jedoch von älteren Versionen von HDInsight SDK oder Azure PowerShell nicht korrekt interpretiert. Das Resultat ist ein Fehler bei der Übermittlung mancher Aufträge. Wenn Sie Aufträge mit HDInsight SDK APIs oder Azure PowerShell-Cmdlets übermitteln (**Use-AzureHDInsightCluster** oder **Invoke-Hive**), können diese Vorgänge mit der Fehlermeldung "*Cluster <clustername> wurde nicht für Zugriff auf HTTP-Dienste konfiguriert*" fehlschlagen. Oder (abhängig vom Vorgang) erhalten Sie andere Fehlermeldungen, z. B. "*Es kann keine Verbindung mit dem Cluster hergestellt werden*".
+* Dieser Fehler ist ein bekanntes [Kompatibilitätsproblem](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight), das auftritt, wenn sich die Version von HDInsight SDK oder Azure PowerShell von der Clusterversion unterscheidet. Alle ab dem 15.8.2014 erstellten Cluster unterstützen die neue Bereitstellungsfunktion für virtuelle Netzwerke. Diese Funktion wird jedoch von älteren Versionen von HDInsight SDK oder Azure PowerShell nicht korrekt interpretiert. Das Resultat ist ein Fehler bei der Übermittlung mancher Aufträge. Wenn Sie Aufträge mit HDInsight-SDK-APIs oder Azure PowerShell-Cmdlets übermitteln (**Use-AzureHDInsightCluster** oder **Invoke-Hive**), können diese Vorgänge mit der Fehlermeldung "*Cluster <clustername> wurde nicht für Zugriff auf HTTP-Dienste konfiguriert*" fehlschlagen. Oder Sie erhalten (abhängig vom Vorgang) andere Fehlermeldungen, z. B. "*Es kann keine Verbindung mit dem Cluster hergestellt werden*".
 
 * Diese Kompatibilitätsprobleme sind in den neuesten Versionen von HDInsight SDK und Azure PowerShell behoben. Sie sollten daher das HDInsight SDK auf Version 1.3.1.6 oder eine neuere Version und die Azure PowerShell-Tools auf Version 0.8.8 oder eine neuere Version aktualisieren. Sie erhalten das neueste HDInsight SDK über [](http://nuget.codeplex.com/wikipage?title=Getting%20Started) und die Azure PowerShell-Tools unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure/).
 
 
 
-## Hinweise für die HDInsight-Version 3.1 vom 12.9.2014##
+## Hinweise für die HDInsight-Version 3.1 vom 12.9.2014
 
 * Diese Version basiert auf Hortonworks Data Platform (HDP) 2.1.5. Eine Liste der in dieser Version korrigierten Fehler finden Sie auf der Seite [Fixed in this Release](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.5/bk_releasenotes_hdp_2.1/content/ch_relnotes-hdp-2.1.5-fixed.html) auf der Hortonworks-Website.
 * Die Datei "avro-mapred-1.7.4.jar” im pig-Bibliotheksverzeichnis wurde in "avro-mapred-1.7.4-hadoop2.jar" geändert. Diese Datei enthält eine kleine Fehlerbehebung, die keine Funktionen beeinträchtigt. Wir empfehlen unseren Kunden, keine direkten Abhängigkeiten über den Namen der JAR-Datei zu definieren, um Probleme zu vermeiden, wenn Dateien umbenannt werden.
 
 
-## Hinweise für die Version vom 21.08.2014 ##
+## Hinweise für die Version vom 21.08.2014
 
 * Es wird die folgende WebHCat-Konfiguration (HIVE-7155) hinzugefügt, mit der die Standardspeicherbegrenzung für einen Templeton-Controllerauftrag auf 1 GB festgelegt wird. (Der vorherige Standardwert lautete 512 MB.)
 
@@ -1111,14 +1127,14 @@ Anmerkung zur Azure PowerShell- und HDInsight SDK-Fehlermeldung: "*Cluster ist n
 	* zookeeper2
 * Die HBase-Versionssupportmatrix wurde aktualisiert. Nur Version HDInsight 3.1 (HBase Version 0.98) wird für HBase-Arbeitslasten für Produktionsumgebungen unterstützt. Version 3.0 (die zur Vorschau verfügbar war) wird zukünftig nicht mehr unterstützt.
 
-## Hinweise zu Clustern, die vor dem 15.8.2014 erstellt wurden ##
+## Hinweise zu Clustern, die vor dem 15.8.2014 erstellt wurden
 
 Von Azure PowerShell oder HDInsight SDK kann die Fehlermeldung "Cluster <clustername> ist nicht für den Zugriff auf HTTP-Dienste konfiguriert" (oder abhängig vom Vorgang andere Fehlermeldungen, wie z. B.: "Es kann keine Verbindung mit dem Cluster hergestellt werden") ausgegeben werden, wenn sich die Azure PowerShell- oder HDInsight SDK-Version von der Clusterversion unterscheidet. Alle ab dem 15.8.2014 erstellten Cluster unterstützen die neue Bereitstellungsfunktion für virtuelle Netzwerke. Diese Funktion wird von älteren Versionen von Azure PowerShell oder HDInsight SDK nicht korrekt interpretiert. Das Resultat ist ein Fehler bei der Übermittlung mancher Aufträge. Falls Sie Aufträge mit HDInsight SDK APIs oder Azure PowerShell-Cmdlets übermitteln (z. B. Use-AzureHDInsightCluster oder Invoke-AzureHDInsightHiveJob), können diese Vorgänge mit einer der oben beschriebenen Fehlermeldungen fehlschlagen.
 
 Diese Kompatibilitätsprobleme sind in den neuesten Versionen von HDInsight SDK und Azure PowerShell behoben. Sie sollten daher das HDInsight SDK auf Version 1.3.1.6 oder eine neuere Version und die Azure PowerShell-Tools auf Version 0.8.8 oder eine neuere Version aktualisieren. Sie können über [NuGet][nuget-link] auf das neueste HDInsight SDK zugreifen. Mit [Microsoft Web Platform Installer][webpi-link] können Sie auf die Azure PowerShell-Tools zugreifen.
 
 
-## Hinweise für die Version vom 28.07.2014 ##
+## Hinweise für die Version vom 28.07.2014
 
 * **Verfügbarkeit von HDInsight in drei neuen Regionen**: Mit dieser Version wurde die geografische Präsenz von HDInsight auf drei neue Regionen ausgeweitet. HDInsight-Kunden können in den folgenden Regionen Cluster erstellen:
 	* Ostasien
@@ -1132,7 +1148,7 @@ Diese Kompatibilitätsprobleme sind in den neuesten Versionen von HDInsight SDK 
 
 </table><br>
 
-## Hinweise für die Version vom 24.06.2014 ##
+## Hinweise für die Version vom 24.06.2014
 
 Diese Version enthält mehrere Verbesserungen des HDInsight-Dienstes:
 
@@ -1143,7 +1159,7 @@ Diese Version enthält mehrere Verbesserungen des HDInsight-Dienstes:
 
 Mit HBase können Sie verschiedene Arbeitslasten in Echtzeit in HDInsight erstellen, von interaktiven Websites mit großen Datasets bis zu Diensten, die Sensor- und Telemetriedaten aus Millionen von Endpunkten speichern. Der nächste Schritt besteht im Analysieren der Daten in diesen Arbeitslasten mit Hadoop-Aufträgen. Dies ist in HDInsight über Azure PowerShell und das Hive-Cluster-Dashboard möglich.
 
-### Apache Mahout vorinstalliert in HDInsight 3.1 ###
+### Apache Mahout vorinstalliert in HDInsight 3.1
 
  [Mahout](http://hortonworks.com/hadoop/mahout/) wird in HDInsight 3.1 Hadoop-Clustern vorinstalliert, sodass Sie Mahout-Aufträge ohne eine zusätzliche Clusterkonfiguration ausführen können. Sie können beispielsweise remote auf einen Hadoop-Cluster über das Remote Desktop Protocol (RDP) zugreifen und ohne zusätzliche Schritte den folgenden Mahout-Befehl "Hello world" ausführen:
 
@@ -1154,7 +1170,7 @@ Mit HBase können Sie verschiedene Arbeitslasten in Echtzeit in HDInsight erstel
 Eine umfassendere Erklärung dieses Verfahrens finden Sie in der Dokumentation zum [Breiman-Beispiel](https://mahout.apache.org/users/classification/breiman-example.html) auf der Apache Mahout-Website.
 
 
-### Hive-Abfragen können Tez in HDInsight 3.1 verwenden ###
+### Hive-Abfragen können Tez in HDInsight 3.1 verwenden
 
 Hive 0.13 ist in HDInsight 3.1 verfügbar und kann Abfragen mit Tez ausführen. Dies kann für erhebliche Leistungsverbesserungen genutzt werden. Tez ist nicht standardmäßig für Hive-Abfragen aktiviert. Um es zu verwenden, müssen Sie die entsprechende Option aktivieren. Sie können Tez aktivieren, indem Sie das folgende Code-Snippet ausführen:
 
@@ -1289,11 +1305,11 @@ Die folgenden Versionsänderungen wurden zwischen HDInsight 2.x (HDP1.x) und HDI
 * 0\.8.0.RELEASE']
 
 
-###Treiber
+### Treiber
 Der JDBC-Treiber (Java Database Connnectivity) für SQL Server wird intern von HDInsight und nicht für externe Vorgänge verwendet. Wenn Sie über ODBC (Open Database Connectivity) eine Verbindung mit HDInsight herstellen möchten, verwenden Sie den Microsoft Hive ODBC-Treiber. Weitere Informationen finden Sie unter [Verbinden von Excel mit HDInsight mithilfe des Microsoft Hive ODBC-Treibers](../hdinsight-connect-excel-hive-odbc-driver.md).
 
 
-### Fehlerbehebungen ###
+### Fehlerbehebungen
 
 In dieser Version wurden die folgenden HDInsight-Versionen mit mehreren Fehlerbehebungen aktualisiert:
 
@@ -1302,7 +1318,7 @@ In dieser Version wurden die folgenden HDInsight-Versionen mit mehreren Fehlerbe
 * HDInsight 3.1 (HDP 2.1)
 
 
-## Hortonworks-Versionshinweise ##
+## Hortonworks-Versionshinweise
 
 Versionshinweise zu den HDPs (Hortonworks Data Platforms), die von den Versionen von HDInsight-Cluster verwendet werden, sind an folgenden Speicherorten verfügbar.
 
@@ -1332,4 +1348,4 @@ Versionshinweise zu den HDPs (Hortonworks Data Platforms), die von den Versionen
 [hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

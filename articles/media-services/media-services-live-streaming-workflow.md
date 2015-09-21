@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Bereitstellen von Livestreaming mit Azure Media Services"
-	description="Dieses Thema bietet einen Überblick über die beim Livestreaming beteiligten Hauptkomponenten."
-	services="media-services"
-	documentationCenter=""
-	authors="Juliako"
-	manager="dwrede"
+	pageTitle="Bereitstellen von Livestreaming mit Azure Media Services" 
+	description="Dieses Thema bietet einen Überblick über die beim Livestreaming beteiligten Hauptkomponenten." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="Juliako" 
+	manager="dwrede" 
 	editor=""/>
 
 <tags 
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/20/2015"
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/07/2015"  
 	ms.author="juliako"/>
 
 
@@ -70,6 +70,13 @@ Das folgende Diagramm zeigt die Hauptkomponenten der AMS-Plattform, die am Lives
 Weitere Informationen finden Sie unter [Arbeiten mit Kanälen, die Livedatenströme mit mehreren Bitraten von lokalen Encodern empfangen](media-services-manage-channels-overview.md).
 
 
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
 ##Verwandte Themen
 
 [Media Services-Konzepte](media-services-concepts.md)
@@ -85,4 +92,4 @@ Weitere Informationen finden Sie unter [Arbeiten mit Kanälen, die Livedatenstr�
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

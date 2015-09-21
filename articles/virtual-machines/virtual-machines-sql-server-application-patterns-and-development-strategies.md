@@ -3,7 +3,7 @@
 	description="Dieser Artikel behandelt eine Reihe von Anwendungsmustern im Zusammenhang mit SQL Server auf virtuellen Azure-Computern. Er bietet Lösungsarchitekten und Entwicklern eine Grundlage für gute Anwendungsarchitektur und deren Entwurf."
 	services="virtual-machines"
 	documentationCenter="na"
-	authors="rothja"
+	authors="Selcin"
 	manager="jeffreyg"
 	editor="monicar" />
 <tags 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="08/20/2015"
-	ms.author="jroth" />
+	ms.author="selcint" />
 
 # Anwendungsmuster und Entwicklungsstrategien für SQL Server in Azure Virtual Machines
 
@@ -105,7 +105,7 @@ In diesem Anwendungsmuster gibt es nur einen virtuellen Computer auf jeder Ebene
 
 Im Diagramm kann es sich bei den Internetprotokollen um TCP, UDP, HTTP oder HTTPS handeln.
 
->[AZURE.NOTE] Das Einrichten eines virtuellen Netzwerks in Azure ist kostenlos. Allerdings wird das VPN-Gateway für die lokale Verbindung in Rechnung gestellt. Diese Kosten basieren auf dem Zeitraum, in dem die Verbindung bereitgestellt wird und verfügbar ist.
+>[AZURE.NOTE]Das Einrichten eines virtuellen Netzwerks in Azure ist kostenlos. Allerdings wird das VPN-Gateway für die lokale Verbindung in Rechnung gestellt. Diese Kosten basieren auf dem Zeitraum, in dem die Verbindung bereitgestellt wird und verfügbar ist.
 
 ## 2 und 3 Ebenen mit horizontal hochskalierter Präsentationsebene
 
@@ -322,4 +322,4 @@ Weitere Informationen zur Auswahl der richtigen Programmiermethode finden Sie un
 
 Ausführlichere Informationen zur Verwendung von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
 
-<!-----HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

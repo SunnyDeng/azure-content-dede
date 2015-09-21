@@ -1,22 +1,25 @@
 <properties
  pageTitle="Informationen zum Agent und zu Erweiterungen für virtuelle Computer | Microsoft Azure"
-	description="Bietet eine Übersicht über den Agent und die Erweiterungen sowie die Installation des Agents."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="squillace"
-	manager="timlt"
-	editor=""/>
+ description="Bietet eine Übersicht über den Agent und die Erweiterungen sowie die Installation des Agents."
+ services="virtual-machines"
+ documentationCenter=""
+ authors="squillace"
+ manager="timlt"
+ editor=""/>
 <tags
 ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-multiple"
-	ms.workload="infrastructure-services"
-	ms.date="03/10/2015"
-	ms.author="rasquill"/>
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-multiple"
+ ms.workload="infrastructure-services"
+ ms.date="03/10/2015"
+ ms.author="rasquill"/>
  
 #Informationen zum Agent und zu Erweiterungen für virtuelle Computer
-Der Azure-Agent für virtuelle Computer (VM-Agent) dient zum Installieren, Konfigurieren, Verwalten und Ausführen von Azure-Erweiterungen für virtuelle Computer (VM-Erweiterungen). VM-Erweiterungen bieten dynamische Features, die von Microsoft und Drittanbietern bereitgestellt werden. Der Agent und die Erweiterungen werden in erster Linie über das Verwaltungsportal hinzugefügt, jedoch können Sie auch die [PowerShell](../install-configure-powershell.md)-Cmdlets oder die [plattformübergreifende Befehlszeilenschnittstelle](virtual-machines-command-line-tools.md) zum Hinzufügen und Konfigurieren verwenden, wenn Sie einen virtuellen Computer erstellen oder vorhandene virtuelle Computer nutzen. VM-Erweiterungen umfassen Unterstützung für das [Remotedebuggen in Visual Studio](https://msdn.microsoft.com/library/y7f5zaaa.aspx), [System Center 2012](http://social.technet.microsoft.com/wiki/contents/articles/18274.system-center-2012-r2-virtual-machine-role-authoring-guide-resource-extension-package.aspx), [Microsoft Azure-Diagnose](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/) und [Docker](virtual-machines-docker-vm-extension.md) – um nur einige zu nennen.
+Der Azure-Agent für virtuelle Computer (VM-Agent) dient zum Installieren, Konfigurieren, Verwalten und Ausführen von Azure-Erweiterungen für virtuelle Computer (VM-Erweiterungen). VM-Erweiterungen bieten dynamische Features, die von Microsoft und Drittanbietern bereitgestellt werden. Der Agent und die Erweiterungen werden in erster Linie über das Verwaltungsportal hinzugefügt, jedoch können Sie auch die [PowerShell](../install-configure-powershell.md)-Cmdlets oder die [Azure-Befehlszeilenschnittstelle](xplat-install.md) zum Hinzufügen und Konfigurieren verwenden, wenn Sie einen virtuellen Computer erstellen oder vorhandene virtuelle Computer nutzen.
+
+> [AZURE.NOTE]In diesem Thema wird PowerShell und die Azure-Befehlszeilenschnittstelle erläutert. Es behandelt dabei Bereitstellungsaufrufe für das klassische und nicht das Ressourcen-Manager-Bereitstellungsmodell. Weitere Informationen zu Bereitstellungsmodellen finden Sie unter [Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md).
+
 
 VM-Erweiterungen helfen Ihnen bei folgenden Aufgaben:
 
@@ -25,7 +28,7 @@ VM-Erweiterungen helfen Ihnen bei folgenden Aufgaben:
 -   Zurücksetzen oder Installieren von Konnektivitätsfeatures, z. B. RDP und SSH
 -   Diagnostizieren, Überwachen und Verwalten Ihrer virtuellen Computer
 
-Darüber hinaus gibt es viele andere Features. Neue VM-Erweiterungsfeatures werden regelmäßig veröffentlicht. Dieser Artikel beschreibt die Azure-VM-Agents für Windows und Linux und deren Unterstützung der Funktionalität von VM-Erweiterungen. Eine Liste der VM-Erweiterungen nach Featurekategorie finden Sie unter [Azure-VM-Erweiterungen und Features](https://msdn.microsoft.com/library/dn606311.aspx).
+Darüber hinaus gibt es viele andere Features. Neue VM-Erweiterungsfeatures werden regelmäßig veröffentlicht. Dieser Artikel beschreibt die Azure-VM-Agents für Windows und Linux und deren Unterstützung der Funktionalität von VM-Erweiterungen. Eine Liste der VM-Erweiterungen nach Featurekategorie finden Sie unter [Azure-VM-Erweiterungen und Features](virtual-machines-extensions-features.md).
 
 ##Azure-VM-Agents für Windows und Linux
 
@@ -49,7 +52,7 @@ Der VM-Agent wird in den folgenden Situationen aktiviert:
         $vm.VM.ProvisionGuestAgent = $TRUE
         Update-AzureVM –Name $name –VM $vm.VM –ServiceName $svc
 
--   Durch das Erstellen eines VM-Images, auf dem der VM-Agent installiert ist, bevor es in Azure hochgeladen wird. Laden Sie für einen virtuellen Windows-Computer die [MSI-Datei des Windows-VM-Agents](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409) herunter, und installieren Sie den VM-Agent. Für einen virtuellen Linux-Computer installieren Sie ihn über <https://github.com/Azure/WALinuxAgent>. Weitere Informationen zum Installieren des VM-Agents unter Linux finden Sie im [Benutzerhandbuch für den Azure Linux-VM-Agent](virtual-machines-linux-agent-user-guide.md).
+-   Durch das Erstellen eines VM-Images, auf dem der VM-Agent installiert ist, bevor es in Azure hochgeladen wird. Laden Sie für einen virtuellen Windows-Computer die [MSI-Datei des Windows-VM-Agents](http://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409) herunter, und installieren Sie den VM-Agent. Für einen virtuellen Linux-Computer installieren Sie ihn aus dem GitHub-Repository unter <https://github.com/Azure/WALinuxAgent>. Weitere Informationen zum Installieren des VM-Agents unter Linux finden Sie im [Benutzerhandbuch für den Azure Linux-VM-Agent](virtual-machines-linux-agent-user-guide.md).
 
 >[AZURE.NOTE]In PaaS heißt der VM-Agent **GuestAgent** und ist auf virtuellen Computern mit der Web- und Workerrolle immer verfügbar. (Weitere Informationen finden Sie unter [Azure Role Architecture](http://blogs.msdn.com/b/kwill/archive/2011/05/05/windows-azure-role-architecture.aspx) (in englischer Sprache).) Der VM-Agent für Rollen-VMs kann jetzt den Clouddienst-VMs auf die gleiche Weise Erweiterungen hinzufügen, wie den dauerhaften virtuellen Computern. Der größte Unterschied zwischen VM-Erweiterungen auf Rollen-VMs und persistenten virtuellen Computern ist, dass bei Rollen-VMs Erweiterungen zuerst dem Clouddienst und dann zu Bereitstellungen innerhalb des Clouddiensts hinzugefügt werden.
 
@@ -57,6 +60,6 @@ Der VM-Agent wird in den folgenden Situationen aktiviert:
 
 ##Suchen, Hinzufügen, Aktualisieren und Entfernen von VM-Erweiterungen  
 
-Weitere Informationen zu diesen Aufgaben finden Sie unter [Hinzufügen, Suchen, Aktualisieren und Entfernen von Azure-VM-Erweiterungen](https://msdn.microsoft.com/library/dn850373.aspx).
+Weitere Informationen zu diesen Aufgaben finden Sie unter [Hinzufügen, Suchen, Aktualisieren und Entfernen von Azure-VM-Erweiterungen](virtual-machines-extensions-install.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

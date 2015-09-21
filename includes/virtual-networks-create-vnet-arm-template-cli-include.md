@@ -7,11 +7,16 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 
 		azure config mode arm
 
+	Hier ist die erwartete Ausgabe des obigen Befehls:
+
 		info:    New mode is arm
 
 3. Führen Sie bei Bedarf **azure group create** aus, um eine neue Ressourcengruppe zu erstellen, wie unten dargestellt. Beachten Sie die Ausgabe des Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md/#resource-groups).
 
 		azure group create -n TestRG -l centralus
+
+	Hier ist die erwartete Ausgabe des obigen Befehls:
+
 		info:    Executing command group create
 		+ Getting resource group TestRG
 		+ Creating resource group TestRG
@@ -30,6 +35,8 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 4. Führen Sie das Cmdlet **azure group deployment create** aus, um das neue VNet mithilfe der oben heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
 
 		azure group deployment create -g TestRG -n TestVNetDeployment -f C:\ARM\azuredeploy.json -e C:\ARM\azuredeploy-parameters.json
+
+	Hier ist die erwartete Ausgabe des obigen Befehls:
 
 		info:    Executing command group deployment create
 		+ Initializing template configurations and parameters
@@ -54,13 +61,15 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 		data:    subnet2Name    String  BackEnd
 		info:    group deployment create command OK
 
-	- **-g (oder --resource-group)**. Name der Ressourcengruppe, in der das neue VNet erstellt wird.
+	- **-g (or --resource-group)**. Name der Ressourcengruppe, in der das neue VNet erstellt wird.
 	- **-f (oder --template-file)**. Pfad zu Ihrer ARM-Vorlagendatei.
 	- **-e (oder --parameters-file)**. Pfad zu Ihrer ARM-Parameterdatei.
 
 5. Führen Sie den Befehl **azure network vnet show** aus, um die Eigenschaften des neuen VNet anzuzeigen, wie unten dargestellt.
 
 		azure network vnet show -g TestRG -n TestVNet
+
+	Hier ist die erwartete Ausgabe des obigen Befehls:
 
 		info:    Executing command network vnet show
 		+ Looking up virtual network "TestVNet"
@@ -80,4 +89,4 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 		data:
 		info:    network vnet show command OK
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

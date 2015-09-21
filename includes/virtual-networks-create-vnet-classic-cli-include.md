@@ -7,6 +7,8 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 
 			azure network vnet create --vnet TestVNet -e 192.168.0.0 -i 16 -n FrontEnd -p 192.168.1.0 -r 24 -l "Central US"
 	
+	Hier ist die erwartete Ausgabe des obigen Befehls:
+
 			info:    Executing command network vnet create
 			+ Looking up network configuration
 			+ Looking up locations
@@ -15,7 +17,7 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 
 	- **--vnet**. Name des zu erstellenden VNet. In diesem Szenario *TestVNet*.
 	- **-e (oder --address-space)**. VNet-Adressraum. In diesem Szenario *192.168.0.0*.
-	- **-i (oder -cidr)**. Netzwerkmaske im CIDR-Format. In diesem Szenario *16*.
+	- **-i (oder --cidr)**. Netzwerkmaske im CIDR-Format. In diesem Szenario *16*.
 	- **-n (oder --subnet-name**). Name des ersten Subnetzes. In diesem Szenario *FrontEnd*.
 	- **-p (oder --subnet-start-ip)**. IP-Startadresse für das Subnetz oder Subnetzadressraum. In diesem Szenario *192.168.1.0*.
 	- **-r (oder --subnet-cidr)**. Netzwerkmaske im CIDR-Format für das Subnetz. In diesem Szenario *24*.
@@ -25,6 +27,8 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 
 			azure network vnet subnet create -t TestVNet -n BackEnd -a 192.168.2.0/24
 	
+	Hier ist die erwartete Ausgabe des obigen Befehls:
+
 			info:    Executing command network vnet subnet create
 			+ Looking up network configuration
 			+ Creating subnet "BackEnd"
@@ -35,13 +39,15 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 			data:    Address prefix                  : 192.168.2.0/24
 			info:    network vnet subnet create command OK
 
-	- **-t (oder --vnet-name**. Name des VNet, in dem das Subnetz erstellt wird. In diesem Szenario *TestVNet*.
+	- **-t (oder --vnet-name)**. Name des VNet, in dem das Subnetz erstellt wird. In diesem Szenario *TestVNet*.
 	- **-n (oder --name)**. Name des neuen Subnetzes. In diesem Szenario *BackEnd*.
 	- **-a (oder --address-prefix)**. Subnetz-CIDR-Block. In diesem Szenario *192.168.2.0/24*.
 
 4. Führen Sie den Befehl **azure network vnet show** aus, um die Eigenschaften des neuen VNet anzuzeigen, wie unten dargestellt.
 
 			azure network vnet show
+
+	Hier ist die erwartete Ausgabe des obigen Befehls:
 
 			info:    Executing command network vnet show
 			Virtual network name: TestVNet
@@ -59,4 +65,4 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 			data:
 			info:    network vnet show command OK
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

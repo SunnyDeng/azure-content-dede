@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Verwenden Sie StorSimple Snapshot Manager zum Verwalten des Sicherungskatalogs | Microsoft Azure"
+   pageTitle="StorSimple Snapshot Manager-Sicherungskatalog | Microsoft Azure"
    description="Beschreibt, wie das MMC-Snap-In StorSimple Snapshot Manager zum Anzeigen und Verwalten des Sicherungskatalogs verwendet wird."
    services="storsimple"
    documentationCenter="NA"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/17/2015"
+   ms.date="09/04/2015"
    ms.author="v-sharos" />
 
 # Verwenden Sie StorSimple Snapshot Manager zum Verwalten des Sicherungkatalogs
@@ -207,4 +207,4 @@ Sie sollten die StorSimple Snapshot Manager-Datenbank auf dem Hostcomputer regel
 
 Weitere Informationen zu den [Aufgaben und Workflows im StorSimple Snapshot Manager](storsimple-snapshot-manager-admin.md#storsimple-snapshot-manager-tasks-and-workflows).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

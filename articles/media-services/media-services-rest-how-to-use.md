@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="09/07/2015"
 	ms.author="juliako"/>
 
 
@@ -51,7 +51,7 @@ Accept-Language|„en“, „es“ usw.|Gibt die bevorzugte Sprache für die Ant
 Accept-Charset|Charset-Typ, z. B. „UTF-8“|Der Standardwert ist UTF-8.
 X-HTTP-Method|HTTP-Methode|Ermöglicht Clients oder Firewalls, die keine HTTP-Methoden wie PUT oder DELETE unterstützen, die Verwendung dieser Methoden über einen getunnelten GET-Aufruf.
 Content-Typ|Content-Typ|Der Inhaltstyp des Anforderungstexts in PUT- oder POST-Anforderungen.
-client-request-id|String|Ein vom Aufrufer definierter Wert, der die angegebene Anforderung identifiziert. Falls angegeben, wird dieser Wert in die Antwortnachricht eingeschlossen, um die Anforderung zuzuordnen. <p><p>**Wichtig**<p>Werte müssen auf 2096 Bytes \(2 KB\) begrenzt werden.
+client-request-id|String|Ein vom Aufrufer definierter Wert, der die angegebene Anforderung identifiziert. Falls angegeben, wird dieser Wert in die Antwortnachricht eingeschlossen, um die Anforderung zuzuordnen. <p><p>**Wichtig**<p>Werte müssen auf 2096 Bytes (2 KB) begrenzt werden.
 
 ## Von Media Services unterstützte standardmäßige HTTP-Antwortheader
 
@@ -76,7 +76,7 @@ Verb|Beschreibung
 ---|---
 GET|Gibt den aktuellen Wert eines Objekts zurück.
 POST|Erstellt ein Objekt auf Grundlage der bereitgestellten Daten oder sendet einen Befehl.
-PUT|Ersetzt ein Objekt oder erstellt ein benanntes Objekt \(falls zutreffend\).
+PUT|Ersetzt ein Objekt oder erstellt ein benanntes Objekt (falls zutreffend).
 LÖSCHEN|Löscht ein Objekt.
 MERGE|Aktualisiert ein vorhandenes Objekt anhand von Änderungen der benannten Eigenschaft.
 HEAD|Gibt die Metadaten eines Objekts für eine GET-Antwort zurück.
@@ -89,6 +89,16 @@ Um Media Services-Entitäten schnell aufzufinden, können Sie den $metadata-Vorg
 Sie sollten "?api-version=2.x" an das Ende des URIs anhängen, wenn Sie die Metadaten in einem Browser anzeigen möchten. Andernfalls sollte der x-ms-version-Header nicht in die Anforderung eingeschlossen werden.
 
 
+
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+
 <!-- Anchors. -->
 
 
@@ -99,4 +109,4 @@ Sie sollten "?api-version=2.x" an das Ende des URIs anhängen, wenn Sie die Meta
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO2-->

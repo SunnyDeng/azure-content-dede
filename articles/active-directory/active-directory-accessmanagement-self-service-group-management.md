@@ -19,7 +19,7 @@
 
 #Einrichten von Azure AD zur Self-Service-Verwaltung des Anwendungszugriffs
 
-Die Self-Service-Gruppenverwaltung ermöglicht Benutzern das Erstellen und Verwalten von Sicherheitsgruppen in Microsoft Azure Active Directory (AD) und bietet die Möglichkeit, die Mitgliedschaft in Sicherheitsgruppen anzufordern, die anschließend vom Besitzer der Gruppe genehmigt oder abgelehnt werden kann. Mithilfe der Funktionen für die Self-Service-Gruppenverwaltung kann die tagtägliche Steuerung der Gruppenmitgliedschaft an Personen delegiert werden, die den Geschäftskontext für die betreffende Mitgliedschaft verstehen.
+Die Self-Service-Gruppenverwaltung ermöglicht Benutzern das Erstellen und Verwalten von Sicherheitsgruppen in Microsoft Azure Active Directory (AD) und bietet die Möglichkeit, die Mitgliedschaft in Sicherheitsgruppen anzufordern, die anschließend vom Besitzer der Gruppe genehmigt oder abgelehnt werden kann. Mithilfe der Funktionen für die Self-Service-Gruppenverwaltung kann die tagtägliche Steuerung der Gruppenmitgliedschaft an Personen delegiert werden, die den Geschäftskontext für die betreffende Mitgliedschaft verstehen. Beachten Sie, dass die Self-Service-Funktionen zur Gruppenverwaltung nur für Sicherheitsgruppen und Office 365-Gruppen, und nicht für E-Mail-aktivierte Sicherheitsgruppen oder Verteilerlisten verfügbar sind.
 
 Die Self-Service-Gruppenverwaltung unterstützt zurzeit zwei grundlegende Szenarien: delegierte Gruppenverwaltung und Self-Service-Gruppenverwaltung.
 
@@ -49,4 +49,4 @@ Hier finden Sie einige Themen, die zusätzliche Informationen zu Azure Active Di
 
 * [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

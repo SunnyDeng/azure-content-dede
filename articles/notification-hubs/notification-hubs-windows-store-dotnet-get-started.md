@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Notification Hubs | Microsoft Azure"
+	pageTitle="Erste Schritte mit Azure Notification Hubs für Windows Store Apps | Microsoft Azure"
 	description="In diesem Lernprogramm erfahren Sie, wie Sie mit Azure Notification Hubs Pushbenachrichtigungen an eine Windows Store oder Windows Phone 8.1 (nicht Silverlight)-Anwendung senden."
 	services="notification-hubs"
 	documentationCenter="windows"
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="08/24/2015"
+	ms.date="09/03/2015"
 	ms.author="wesmc"/>
 
-# Erste Schritte mit Notification Hubs
+# Erste Schritte mit Notification Hubs für Windows Store-Apps
 
 [AZURE.INCLUDE [Notification-Hubs-Auswahl-Erste-Schritte](../../includes/notification-hubs-selector-get-started.md)]
 
@@ -264,4 +264,4 @@ In diesem einfachen Beispiel haben Sie Übertragungsbenachrichtigungen an alle I
 [Kachelkatalog]: http://msdn.microsoft.com/library/windows/apps/hh761491.aspx
 [Übersicht über Signale]: http://msdn.microsoft.com/library/windows/apps/hh779719.aspx
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

@@ -20,20 +20,6 @@
 
 ASP.NET ist das vorherrschende Webanwendungsframework bei benutzerdefinierten Lösungen für Azure Search. In diesem Artikel erfahren Sie, wie Sie Ihre ASP.NET-Web-App mit Azure Search verbinden und Entwurfsmuster für allgemeine Vorgänge herstellen. Außerdem lernen Sie einige Codierungsmethoden kennen, mit denen die Entwicklung vereinfacht wird.
 
-##Organisieren des Codes
-
-Wenn Sie die Workloads in eigenständige Projekte innerhalb derselben Visual Studio-Projektmappe aufteilen, gewinnen Sie mehr Flexibilität beim Planen, Verwalten und Ausführen der einzelnen Programme. Wir empfehlen drei:
-
-- Indexerstellungscode
-- Datenerfassungscode
-- Benutzerinteraktionscode
-
-In Azure Search sind Indizierungs- und Dokumentvorgänge – z. B. das Hinzufügen oder Aktualisieren von Dokumenten oder das Ausführen von Abfragen – vollständig unabhängig voneinander. Dies bedeutet, dass Sie den Code zur Indexverwaltung vom ASP.NET-Code zur Benutzerinteraktion, mit dem Sie Suchanforderungen formulieren und die Ergebnisse rendern, entkoppeln können.
-
-In den meisten unserer Codebeispiele wird der Index (in den verschiedenen Beispielen bezeichnet als DataIndexer, CatalogIndexer oder DataCatalog) in einem Projekt erstellt und geladen, während sich der Code für die Suchanforderungen und -antworten in einem ASP.NET-MVC-Anwendungsprojekt befindet. In den Codebeispielen ist es praktisch, die Indexerstellung und das Hochladen von Dokumenten in einem Projekt zusammenzufassen – im Produktionscode würden diese Vorgänge jedoch vermutlich isoliert werden. Nachdem ein Index erstellt wurde, wird er nur selten geändert (und bei einer Änderung muss er neu erstellt werden), während Dokumente regelmäßig aktualisiert werden können.
-
-Das Trennen der Workloads bietet noch andere Vorteile, z. B. durch unterschiedliche Berechtigungsstufen für Azure Search (vollständige Administratorrechte im Gegensatz zu reinen Abfrageberechtigungen), die Verwendung unterschiedlicher Programmiersprachen, spezifischere Abhängigkeiten pro Programm sowie die Möglichkeit, Programme einzeln zu überprüfen oder mehrere Front-End-Anwendung zu erstellen, die alle den erstellten Index verwenden und von einer zentralen Indizierungsanwendung verwaltet werden.
-
 ##Beispiele und Demos mit ASP.NET und Azure Search
 
 Es gibt bereits verschiedene Codebeispiele, die zeigen, wie Search in ASP.NET integriert wird. Unter den folgenden Links gelangen Sie direkt zum Code oder zu Demonstrations-Apps:
@@ -46,8 +32,8 @@ Es gibt bereits verschiedene Codebeispiele, die zeigen, wie Search in ASP.NET in
 
 Zum Herstellen einer Verbindung mit dem Dienst und zum Übermitteln von Anforderungen benötigt Ihre Webanwendung lediglich drei Dinge:
 
-- Eine URL zum dem von Ihnen bereitgestellten Azure Search-Dienst im Format "https://<service-name>.search.windows.net"
-- Einen API-Schlüssel (GUID) zur Authentifizierung der Verbindung mit Azure Search
+- Eine URL zum dem von Ihnen bereitgestellten Azure Search-Dienst im Format „https://<service-name>.search.windows.net“
+- Einen API-Schlüssel (Zeichenfolge) zur Authentifizierung der Verbindung mit Azure Search
 - Einen HTTPClient oder SearchServiceClient zum Formulieren der Verbindungsanfrage
 
 ####URLs und API-Schlüssel
@@ -62,14 +48,14 @@ Normalerweise werden die URL und der Schlüssel in der Datei "web.config" des Pr
     	. . .
       </appSettings>
 
-Der Search-Dienstname kann der Kurzname sein, den Sie während der Bereitstellung angegeben haben, sofern Sie die Domäne ("search.windows.net") an die Verbindung anfügen. Sie können aber auch den vollqualifizierten Namen ("<service-name>.search.windows.net") in der Datei "web.config" ohne das HTTPS-Präfix angeben.
+Der Search-Dienstname kann der Kurzname sein, den Sie während der Bereitstellung angegeben haben, sofern Sie die Domäne („search.windows.net“) an die Verbindung anfügen. Sie können aber auch den vollqualifizierten Namen („<service-name>.search.windows.net“) in der Datei „web.config“ ohne das HTTPS-Präfix angeben.
 
 Der API-Schlüssel ist ein Authentifizierungstoken, das während der Dienstbereitstellung (nur Administratorschlüssel) oder manuell generiert wird, wenn Sie die Abfrageschlüssel im Portal erstellen. Der Schlüsseltyp legt fest, welche Suchvorgänge Ihrer Anwendung zur Verfügung stehen:
 
 - Administratorschlüssel (Lese-/Schreibberechtigungen, 2 pro Dienst)
 - Abfrageschlüssel (schreibgeschützt, bis zu 50 pro Dienst)
 
-Alle API-Schlüssel sind GUIDs. Visuell gibt es keinen Unterschied zwischen Administratoren- und Abfrageschlüsseln. Sie müssen den Schlüsseltyp im Portal oder mithilfe der Management-REST-API bestimmen.
+API-Schlüssel sind Zeichenfolgen, die aus 32 Zeichen bestehen. Visuell gibt es keinen Unterschied zwischen Administratoren- und Abfrageschlüsseln. Wenn Sie nicht mehr wissen, welchen Schlüsseltyp Sie im Code angegeben haben, müssen Sie das Portal überprüfen oder den Schlüsseltyp mithilfe der Management-REST-API zurückgeben. Weitere Informationen zu Schlüsseln finden Sie unter [Azure-Suchdienst-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx).
 
 > [AZURE.TIP]Ein Abfrageschlüssel ermöglicht lediglich schreibgeschützte Vorgänge auf dem Client. Informationen zu den bei einem schreibgeschützten Dienst verfügbaren Azure Search-Vorgängen finden Sie unter [Testen von App Service mit Azure Search](search-tryappservice.md). Beachten Sie, dass beim Testen von App Service der Web-App-Code vollständig geändert werden kann – Sie können beliebigen C#-Code im ASP.NET-Projekt und damit das Webseitenlayout, die Struktur der Suchabfrage oder die Suchergebnisse ändern – lediglich die Vorgänge für den Azure Search-Index und das Laden der Dokumente sind schreibgeschützt, da ein Abfrage-API-Schlüssel auf die Dienstverbindung angewendet wird.
 
@@ -95,7 +81,7 @@ Die folgenden beiden Codeausschnitte richten unter Verwendung von URL und API-Sc
             }
             catch (Exception e)
             {
-                errorMessage = e.Message.ToString();
+                errorMessage = e.Message;
             }
         }
 
@@ -123,7 +109,7 @@ Eine Web-App mit Integration in Azure Search muss Abfragen formulieren und die E
 
 ###Formulieren von Abfragen
 
-Eine Volltextsuche über den Index wird in den als **isSearchable** markierten Feldern im Schema ausgeführt, das der Index definiert. Wird ein Suchbegriff (unten durch die Zeichenfolge "q" dargestellt) eingegeben, sucht das Suchmodul nach einer Übereinstimmung in allen durchsuchbaren Feldern und gibt die Ergebnisse aus den als **isRetrievable** markierten Feldern zurück.
+Eine Volltextsuche über den Index wird in den als **isSearchable** markierten Feldern im Schema ausgeführt, das der Index definiert. Wird ein Suchbegriff (unten durch die Zeichenfolge „q“ dargestellt) eingegeben, sucht das Suchmodul nach einer Übereinstimmung in allen durchsuchbaren Feldern und gibt die Ergebnisse aus den als **isRetrievable** markierten Feldern zurück.
 
 > [AZURE.NOTE]Obwohl i. d. R. die meisten Felder durchsuchbar sind, kann ein Index Felder enthalten, die nur in Filterausdrücken verwendet werden. Solche Felder können Sie als nicht durchsuchbar markieren, um sie von der Volltextsuche auszuschließen, und als nicht abrufbar, um sie aus den Suchergebnissen auszuschließen.
 
@@ -222,7 +208,7 @@ Eine .NET-Methode zum Aufrufen von **Search** könnte wie folgt aussehen (das Be
 
 ###Verarbeiten der Suchergebnisse
 
-Suchergebnisse werden als Rowset zurückgegeben, das aus Feldern besteht, die im Indexschema als "isRetrievable" markiert sind. Eine einfachere Methode zum Rendern eines Resultsets bietet die Verwendung des ViewBag-Systemobjekts in MVC. Das folgende Codeausschnitt stammt aus der Datei "Index.cshtml" im [Azure Search Adventure Works-Demo auf CodePlex](https://azuresearchadventureworksdemo.codeplex.com/) (in englischer Sprache).
+Suchergebnisse werden als Rowset zurückgegeben, das aus Feldern besteht, die im Indexschema als "isRetrievable" markiert sind. Eine einfachere Methode zum Rendern eines Resultsets bietet die Verwendung des ViewBag-Systemobjekts in MVC. Der folgende Codeausschnitt stammt aus der Datei „Index.cshtml“ im [Azure Search Adventure Works-Demo auf CodePlex](https://azuresearchadventureworksdemo.codeplex.com/).
 
 	@model dynamic
 	
@@ -454,6 +440,19 @@ Den Code für die JSON-Serialisierung finden Sie in einigen der Beispiele in der
 	    }
 	}
 
+###Organisieren des Codes
+
+Wenn Sie die Workloads in eigenständige Projekte innerhalb derselben Visual Studio-Projektmappe aufteilen, gewinnen Sie mehr Flexibilität beim Planen, Verwalten und Ausführen der einzelnen Programme. Wir empfehlen drei:
+
+- Indexerstellungscode
+- Datenerfassungscode
+- Benutzerinteraktionscode
+
+In Azure Search sind Indizierungs- und Dokumentvorgänge – z. B. das Hinzufügen oder Aktualisieren von Dokumenten oder das Ausführen von Abfragen – vollständig unabhängig voneinander. Dies bedeutet, dass Sie den Code zur Indexverwaltung vom ASP.NET-Code zur Benutzerinteraktion, mit dem Sie Suchanforderungen formulieren und die Ergebnisse rendern, entkoppeln können.
+
+In den meisten unserer Codebeispiele wird der Index (in den verschiedenen Beispielen bezeichnet als DataIndexer, CatalogIndexer oder DataCatalog) in einem Projekt erstellt und geladen, während sich der Code für die Suchanforderungen und -antworten in einem ASP.NET-MVC-Anwendungsprojekt befindet. In den Codebeispielen ist es praktisch, die Indexerstellung und das Hochladen von Dokumenten in einem Projekt zusammenzufassen – im Produktionscode würden diese Vorgänge jedoch vermutlich isoliert werden. Nachdem ein Index erstellt wurde, wird er nur selten geändert (und muss je nach Änderung u. U. neu erstellt werden), während Dokumente regelmäßig aktualisiert werden können.
+
+Das Trennen der Workloads bietet noch andere Vorteile, z. B. durch unterschiedliche Berechtigungsstufen für Azure Search (vollständige Administratorrechte im Gegensatz zu reinen Abfrageberechtigungen), die Verwendung unterschiedlicher Programmiersprachen, spezifischere Abhängigkeiten pro Programm sowie die Möglichkeit, Programme einzeln zu überprüfen oder mehrere Front-End-Anwendung zu erstellen, die alle den erstellten Index verwenden und von einer zentralen Indizierungsanwendung verwaltet werden.
 
 ##Nächste Schritte
 
@@ -463,4 +462,4 @@ Zur Vertiefung Ihres Verständnisses der Integration von Azure Search und ASP.NE
 - [Azure Search-Fallstudie für Entwickler](search-dev-case-study-whattopedia.md)
 - [Typischer Workflow für die Azure Search-Entwicklung](search-workflow.md) 
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

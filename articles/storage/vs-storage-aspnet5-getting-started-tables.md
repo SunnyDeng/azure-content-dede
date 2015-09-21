@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erste Schritte mit Azure-Tabellenspeicher und verbundenen Visual Studio-Diensten | Microsoft Azure"
-	description="Erste Schritte mit Azure-Tabellenspeicher in einem ASP.NET 5-Projekt in Visual Studio"
+	pageTitle="Erste Schritte mit Tabellenspeicher und verbundenen Visual Studio-Diensten (ASP.NET 5) | Microsoft Azure"
+	description="Erfahren Sie etwas über die ersten Schritte mit Azure-Tabellenspeicher in einem ASP.NET 5-Projekt in Visual Studio, nachdem Sie mithilfe von verbundenen Visual Studio-Diensten eine Verbindung mit einem Speicherkonto hergestellt haben."
 	services="storage"
 	documentationCenter=""
 	authors="patshea123"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/22/2015"
+	ms.date="09/03/2015"
 	ms.author="patshea123"/>
 
 # Erste Schritte mit Azure-Tabellenspeicher und verbundenen Visual Studio-Diensten
@@ -45,7 +45,7 @@ Damit Sie beginnen können, müssen Sie zuerst eine Tabelle in Ihrem Speicherkon
 
 Um auf Tabellen in ASP.NET 5-Projekten zuzugreifen, müssen Sie die folgenden Elemente zu jeder C#-Quelldatei hinzufügen, in der auf Azure-Tabellenspeicher zugegriffen wird.
 
-1. Vergewissern Sie sich, dass die Namespace-Deklarationen am Anfang der C#-Datei diese `using`-Anweisungen enthalten.
+1. Vergewissern Sie sich, dass die Namespacedeklarationen am Anfang der C#-Datei diese **using**-Anweisungen enthalten.
 
 	    using Microsoft.Framework.Configuration;
 	    using Microsoft.WindowsAzure.Storage;
@@ -53,26 +53,26 @@ Um auf Tabellen in ASP.NET 5-Projekten zuzugreifen, müssen Sie die folgenden El
 	    using System.Threading.Tasks;
 	    using LogLevel = Microsoft.Framework.Logging.LogLevel;
 
-2. Rufen Sie ein `CloudStorageAccount`-Objekt ab, das die Informationen zu Ihrem Speicherkonto enthält. Verwenden Sie den folgenden Code, um Ihre Speicherverbindungszeichenfolge und Speicherkontoinformationen aus der Azure-Dienstkonfiguration abzurufen.
+2. Rufen Sie ein **CloudStorageAccount**-Objekt ab, das die Informationen zu Ihrem Speicherkonto enthält. Verwenden Sie den folgenden Code, um Ihre Speicherverbindungszeichenfolge und Speicherkontoinformationen aus der Azure-Dienstkonfiguration abzurufen.
 
 	    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
 	        CloudConfigurationManager.GetSetting("<storage-account-name>_AzureStorageConnectionString"));
 
     **HINWEIS**: Verwenden Sie den gesamten obigen Code vor dem Code in den folgenden Beispielen.
 
-3. Rufen Sie ein `CloudTableClient`-Objekt ab, um auf die Tabellenobjekte in Ihrem Speicherkonto zu verweisen.
+3. Rufen Sie ein **CloudTableClient**-Objekt ab, um auf die Tabellenobjekte in Ihrem Speicherkonto zu verweisen.
 
 	    // Create the table client.
     	CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 
-4. Rufen Sie ein `CloudTable`-Verweisobjekt ab, um auf eine bestimmte Tabelle und auf bestimmte Entitäten zu verweisen.
+4. Rufen Sie ein **CloudTable**-Verweisobjekt ab, um auf eine bestimmte Tabelle und auf bestimmte Entitäten zu verweisen.
 
     	// Get a reference to a table named "peopleTable"
 	    CloudTable table = tableClient.GetTableReference("peopleTable");
 
 ## Erstellen einer Tabelle in Code
 
-Fügen Sie zum Erstellen einer Azure-Tabelle einfach einen Aufruf von `CreateIfNotExistsAsync()` hinzu.
+Fügen Sie zum Erstellen der Azure-Tabelle einfach einen Aufruf von **CreateIfNotExistsAsync()** hinzu.
 
 	// Create the CloudTable if it does not exist
 	await table.CreateIfNotExistsAsync();
@@ -96,7 +96,7 @@ Sie erstellen eine Klasse, mit der die Eigenschaften der Entität definiert werd
 	    public string PhoneNumber { get; set; }
 	}
 
-Tabellenvorgänge, die Entitäten betreffen, werden mit dem `CloudTable`-Objekt ausgeführt, das Sie zuvor unter "Zugreifen auf Tabellen im Code" erstellt haben. Das `TableOperation`-Objekt stellt den auszuführenden Vorgang dar. Das folgende Codebeispiel zeigt, wie Sie ein `CloudTable`- und ein `CustomerEntity`-Objekt erstellen. Um den Vorgang vorzubereiten, wird eine `TableOperation` zum Einfügen der Kundenentität in die Tabelle erstellt. Schließlich wird der Vorgang durch einen Aufruf von CloudTable.ExecuteAsync ausgeführt.
+Tabellenvorgänge, die Entitäten betreffen, werden mit dem **CloudTable**-Objekt ausgeführt, das Sie zuvor unter "Zugreifen auf Tabellen in Code" erstellt haben. Das **TableOperation**-Objekt stellt den auszuführenden Vorgang dar. Das folgende Codebeispiel zeigt das Erstellen eines **CloudTable**-Objekts und eines **CustomerEntity**-Objekts. Um den Vorgang vorzubereiten, wird eine **TableOperation** zum Einfügen der Kundenentität in die Tabelle erstellt. Schließlich wird der Vorgang durch einen Aufruf von CloudTable.ExecuteAsync ausgeführt.
 
 	// Get a reference to the CloudTable object named 'peopleTable' as described in "Access a table in code"
 
@@ -113,7 +113,7 @@ Tabellenvorgänge, die Entitäten betreffen, werden mit dem `CloudTable`-Objekt 
 
 ## Einfügen eines Entitätsbatchs
 
-Sie können mehrere Entitäten mit einem Schreibvorgang in eine Tabelle einfügen. Mit dem folgenden Codebeispiel werden zwei Entitätsobjekte ("Jeff Smith" und "Ben Smith") erstellt und unter Verwendung der **Insert**-Methode einem `TableBatchOperation`-Objekt hinzugefügt. Anschließend wird der Vorgang durch einen Aufruf von "CloudTable.ExecuteBatchAsync" gestartet.
+Sie können mehrere Entitäten mit einem Schreibvorgang in eine Tabelle einfügen. Das folgende Codebeispiel erstellt zwei Entitätsobjekte ("Jeff Smith" und "Ben Smith"), fügt diese mithilfe der **Insert**-Methode einem **TableBatchOperation**-Objekt hinzu und startet den Vorgang dann durch einen Aufruf von "CloudTable.ExecuteBatchAsync".
 
 	// Get a reference to a CloudTable object named 'peopleTable' as described in "Access a table in code"
 
@@ -138,7 +138,7 @@ Sie können mehrere Entitäten mit einem Schreibvorgang in eine Tabelle einfüge
 	await peopleTable.ExecuteBatchAsync(batchOperation);
 
 ## Abrufen aller Entitäten in einer Partition
-Verwenden Sie ein `TableQuery`-Objekt, um eine Tabelle nach allen Entitäten in einer Partition abzufragen. Im folgenden Codebeispiel wird ein Filter für Entitäten erstellt, wobei "Smith" der Partitionsschlüssel ist. In diesem Beispiel werden die Felder der einzelnen Entitäten in den Abfrageergebnissen an die Konsole ausgegeben.
+Verwenden Sie ein **TableQuery**-Objekt, um eine Tabelle nach allen Entitäten in einer Partition abzufragen. Im folgenden Codebeispiel wird ein Filter für Entitäten erstellt, wobei "Smith" der Partitionsschlüssel ist. In diesem Beispiel werden die Felder der einzelnen Entitäten in den Abfrageergebnissen an die Konsole ausgegeben.
 
 	// Get a reference to a CloudTable object named 'peopleTable' as described in "Access a table in code"
 
@@ -163,7 +163,7 @@ Verwenden Sie ein `TableQuery`-Objekt, um eine Tabelle nach allen Entitäten in 
 
 
 ## Abrufen einer einzelnen Entität
-Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Der folgende Code verwendet ein `TableOperation`-Objekt, um einen Kunden namens "Ben Smith" anzugeben. Bei dieser Methode wird nur eine Entität anstelle einer Sammlung zurückgegeben, und der zurückgegebene Wert in `TableResult.Result` ist ein `CustomerEntity`-Objekt. Das Angeben der Partitions- und Zeilenschlüssel in einer Abfrage ist die schnellste Möglichkeit, um eine einzelne Entität aus dem Tabellendienst abzurufen.
+Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Der folgende Code verwendet ein **TableOperation**-Objekt, um einen Kunden namens "Ben Smith" anzugeben. Diese Methode gibt anstelle einer Sammlung nur eine Entität zurück, und bei dem zurückgegebenen Wert in **TableResult.Result** handelt es sich um ein **CustomerEntity**-Objekt. Das Angeben der Partitions- und Zeilenschlüssel in einer Abfrage ist die schnellste Möglichkeit, um eine einzelne Entität aus dem Tabellendienst abzurufen.
 
 	// Get a reference to a CloudTableobject named 'peopleTable' as described in "Access a table in code"
 
@@ -211,4 +211,4 @@ Sie können eine Entität nach dem Abrufen löschen. Der folgende Code sucht nac
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

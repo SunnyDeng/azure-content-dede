@@ -4,7 +4,7 @@
 	services="application-insights" 
     documentationCenter=""
 	authors="alancameronwills" 
-	manager="keboyd"/>
+	manager="douge"/>
 
 <tags 
 	ms.service="application-insights" 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/02/2015" 
+	ms.date="09/08/2015" 
 	ms.author="awills"/>
  
 # Leistung in Webanwendungen überwachen
@@ -22,23 +22,26 @@
 
 Stellen sie sicher, dass Ihre Anwendung optimal funktioniert, und stellen Sie Fehler umgehend fest. [Application Insights][start] informiert Sie über alle Leistungsprobleme und Ausnahmefälle. So können Sie die Ursachen schnell ermitteln und diagnostizieren.
 
-Application Insights kann sowohl ASP.NET-Webanwendungen und WCF-Dienste, die auf lokalen und virtuellen Computern gehostet werden, als auch Microsoft Azure-Websites überwachen.
+Application Insights kann Java- und ASP.NET-Webanwendungen und -Dienste sowie WCF-Dienste überwachen. Das Hosting kann lokal, auf virtuellen Computern oder als Microsoft Azure-Websites erfolgen.
+
+Auf Clientseite kann Application Insights Telemetriedaten von Webseiten und eine Vielzahl von Geräten sammeln, einschließlich iOS-, Android- und Windows Store-Apps.
 
 
 ## <a name="setup"></a>Einrichten der Leistungsüberwachung
 
 Falls Sie Application Insights Ihrem Projekt noch nicht hinzugefügt haben (d. h., wenn es nicht über ApplicationInsights.config verfügt), gehen Sie nach einer der folgenden Methoden vor, um zu beginnen:
 
-* [Application Insights Ihrem App-Projekt in Visual Studio hinzufügen][greenbrown] – empfohlene Methode. Sie können sowohl passive Leistungsüberwachung als auch Diagnoseprotokollierung und Nutzungsverfolgung einsetzen.
-* [Leistung einer Live-Website jetzt überwachen][redfield] – Bei dieser Methode müssen Sie das App-Projekt nicht aktualisieren bzw. die Webseite nicht erneut bereitstellen.
-* [Für eine Microsoft Azure-Website](../insights-how-to-customize-monitoring.md) können Sie Metriken bereits im Überwachungsfokus der Website sehen. 
-
-Durch Verwendung einer dieser Methoden werden schnell Daten auf dem Übersichtsblatt in Application Insights angezeigt.
+* [ASP.NET-Web-Apps](app-insights-asp-net.md)
+* [J2EE-Web-Apps](app-insights-java-get-started.md)
 
 
-## <a name="view"></a>Erforschen von Metriken
+## <a name="view"></a>Untersuchen von Leistungsmetriken
 
-Klicken Sie auf eine beliebige Kachel, um weitere Details und Ergebnisse über einen längeren Zeitraum anzuzeigen. Klicken Sie beispielsweise auf die Kachel "Requests", und wählen Sie dann einen Zeitraum aus.
+Navigieren Sie im [Azure-Portal](https://portal.azure.com) zu der Application Insights-Ressource, die Sie für Ihre Anwendung eingerichtet haben. Das Blatt "Übersicht" zeigt grundlegende Leistungsdaten:
+
+
+
+Klicken Sie auf ein beliebiges Diagramm, um weitere Details und Ergebnisse über einen längeren Zeitraum anzuzeigen. Klicken Sie beispielsweise auf die Kachel "Requests", und wählen Sie dann einen Zeitraum aus.
 
 
 ![Zu mehr Daten durchklicken und einen Zeitraum auswählen](./media/app-insights-web-monitor-performance/appinsights-48metrics.png)
@@ -106,7 +109,7 @@ Wenn Sie eine Metrik auswählen, werden alle anderen deaktiviert, die nicht im s
 
 Einige der Metriken, aus denen Sie auswählen können, sind [Leistungsindikatoren](http://www.codeproject.com/Articles/8590/An-Introduction-To-Performance-Counters). Windows bietet eine Vielzahl solcher Indikatoren, und Sie können auch eigene definieren.
 
-Dieses Beispiel zeigt die Leistungsindikatoren, die standardmäßig verfügbar sind. Wir haben für jeden Leistungsindikator [ein eigenes Diagramm hinzugefügt](app-insights-metrics-explorer.md#editing-charts-and-grids) und das Diagramm benannt, indem wir es [als Favorit speichern](app-insights-metrics-explorer.md#editing-charts-and-grids):
+Dieses Beispiel zeigt die Leistungsindikatoren, die standardmäßig verfügbar sind. Wir haben für jeden Leistungsindikator [ein eigenes Diagramm hinzugefügt](app-insights-metrics-explorer.md#editing-charts-and-grids) und das Diagramm benannt, indem wir es [als Favorit gespeichert](app-insights-metrics-explorer.md#editing-charts-and-grids) haben:
 
 ![](./media/app-insights-web-monitor-performance/sys-perf.png)
 
@@ -120,7 +123,7 @@ Wenn sich die gewünschten Leistungsindikatoren nicht in der Eigenschaftenliste 
       </Counters>
     </Add>
 
-Das Format lautet `\Category(instance)\Counter"` bzw. für Kategorien, die keine Instanzen besitzen, einfach `\Category\Counter`. Um zu ermitteln, welche Indikatoren in Ihrem System verfügbar sind, lesen Sie [diese Einführung](http://www.codeproject.com/Articles/8590/An-Introduction-To-Performance-Counters).
+Das Format lautet `\Category(instance)\Counter"` bzw. für Kategorien, die keine Instanzen besitzen, einfach `\Category\Counter`. Weitere Informationen zum Ermitteln der in Ihrem System verfügbaren Indikatoren finden Sie in [dieser Einführung](http://www.codeproject.com/Articles/8590/An-Introduction-To-Performance-Counters).
 
 `ReportAs` ist für Leistungsindikatornamen erforderlich, die andere Zeichen als die folgenden enthalten: Buchstaben, runde Klammern, Schrägstriche, Bindestriche, Unterstriche, Leerzeichen und Punkte.
 
@@ -183,4 +186,4 @@ Im Folgenden finden Sie einige Tipps zum Feststellen und Diagnostizieren von Lei
 
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

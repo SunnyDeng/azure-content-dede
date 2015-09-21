@@ -1,0 +1,7 @@
+# Statische interne IP-Adresse
+
+Die virtuellen IaaS-Computer (VMs) und PaaS-Rolleninstanzen in einem virtuellen Netzwerk erhalten automatisch eine interne IP-Adresse aus einem von Ihnen angegebenen Bereich. Diese Adresse wird von den virtuellen Computern und Rolleninstanzen beibehalten, bis sie außer Betrieb gesetzt werden. Sie setzen einen virtuellen Computer oder eine Rolleninstanz durch Beenden von PowerShell, der Azure-Befehlszeilenschnittstelle oder dem Azure-Portal aus außer Betrieb. Sobald der virtuelle Computer oder die Rolleninstanz erneut gestartet wird, wird in diesen Fällen eine verfügbare IP-Adresse aus der Azure-Infrastruktur bereitgestellt. Möglicherweise ist diese nicht dieselbe wie vorher. In bestimmten Fällen sollte ein virtueller Computer oder eine Rolleninstanz keine dynamische IP-Adresse besitzen, wenn beispielsweise auf Ihrem virtuellen Computer DNS ausgeführt wird oder der virtuelle Computer als Domänencontroller fungieren soll.
+
+>[AZURE.NOTE]Eine dynamische interne IP-Adresse verbleibt beim virtuellen Computer, wenn Sie ihn vom Gastbetriebssystem aus herunterfahren. Virtuelle Computer werden nur außer Betrieb gesetzt, wenn Sie vom Azure-Portal, PowerShell oder der Azure-Befehlszeilenschnittstelle aus beendet werden.
+
+<!---HONumber=Sept15_HO2-->

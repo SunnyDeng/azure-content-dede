@@ -1,20 +1,20 @@
 
 <properties 
-    pageTitle="Verwenden Ihres Office 365-Abonnements mit Azure RemoteApp"
+    pageTitle="Verwenden Ihres Office 365-Abonnements mit Azure RemoteApp | Microsoft Azure"
 	description="Erfahren Sie, wie Sie über Ihr Office 365-Abonnement in Azure RemoteApp Office-Apps freigeben können."
 	services="remoteapp"
-	documentationCenter=""
-	authors="lizap"
-	manager="mbaldwin"/>
+	documentationCenter="" 
+	authors="lizap" 
+	manager="mbaldwin" />
 
 <tags 
-    ms.service="remoteapp"
-	ms.workload="compute"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/02/2015"
-	ms.author="elizapo"/>
+    ms.service="remoteapp" 
+    ms.workload="compute" 
+    ms.tgt_pltfrm="na" 
+    ms.devlang="na" 
+    ms.topic="article" 
+    ms.date="09/09/2015" 
+    ms.author="elizapo" />
 
 
 
@@ -35,6 +35,8 @@ Welche Office 365-Pläne umfassen Office 365 ProPlus? Informationen dazu finde
 ## Wie werden meine Office 365 ProPlus-Lizenzen nun mit Azure RemoteApp verwendet?
 
 Mit jeder Benutzerlizenz für Office 365 ProPlus kann ein Benutzer Office-Anwendungen auf bis zu 5 Computern plus Tablets und Smartphones aktivieren. Jede Aktivierung ist für den Benutzer registriert, bis er Office auf dem entsprechenden Gerät deaktiviert. (Benutzer können ihre Geräte im [Office 365-Portal](https://portal.office365.com/) verwalten.)
+
+Mit Azure RemoteApp kann sich ein einzelner Benutzer am selben Tag bei mehreren Computern anmelden, ohne es zu bemerken. Dies liegt daran, dass der Dienst Ressourcen in der Cloud automatisch verwaltet und skaliert, während der Benutzer nur Apps und Programme wahrnimmt, die Sie freigegeben haben. Für dieses Szenario bietet Office 365 ProPlus einen gemeinsam genutzten Computeraktivierungsmodus. Das bedeutet, dass dieser Benutzer keine Lizenzverwaltung benötigt, um auf diese Ressourcen zuzugreifen, und die einzelnen Computer nicht auf das Aktivierungslimit von 5 Computern angerechnet werden.
 
 Solange Sie (als Administrator) Ihren Benutzern Office 365 ProPlus-Lizenzen zuweisen, können diese Office auf ihren persönlichen Geräten sowie über Ihre Azure RemoteApp-Sammlung verwenden.
 
@@ -115,4 +117,4 @@ Sie benötigen weitere Informationen zur Verwendung des Office-Bereitstellungsto
 - [Deploying and Updating Office 365 ProPlus Using the Office Deployment Tool](https://channel9.msdn.com/Events/Ignite/2015/BRK3168) (Video, in englischer Sprache)
 - [Konfigurieren von Updateeinstellungen für Office 365 ProPlus](https://technet.microsoft.com/library/dn761708.aspx)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

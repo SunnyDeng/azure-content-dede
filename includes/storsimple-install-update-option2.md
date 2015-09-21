@@ -1,18 +1,30 @@
+<properties 
+   pageTitle="Option 2: Verwenden des Azure-Verwaltungsportals zum Anwenden von Update 1.2"
+   description="Hier wird erläutert, wie Sie das Verwaltungsportal zum Installieren von Update 1.2 der StorSimple 8000-Serie verwenden."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="adinah"
+   editor="tysonn" />
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/08/2015"
+   ms.author="v-sharos" />
 
-#### So installieren Sie Update 1 über das Azure-Verwaltungsportal
+#### So installieren Sie Update 1.2 über das Azure-Verwaltungsportal
 
 1. Wechseln Sie im Verwaltungsportal zur Seite **Geräte**, und wählen Sie Ihr Gerät aus.
  
 2. Navigieren Sie zu **Geräte** > **Konfigurieren**.
 
-3. Suchen Sie unter **Netzwerkschnittstellen** die Netzwerkschnittstelle, der ein Gateway zugewiesen wurde. Dies ist eine andere Netzwerkschnittstelle als DATA 0.
+3. Vergewissern Sie sich unter **Netzwerkschnittstellen** zunächst, dass Sie über mindestens eine Netzwerkschnittstelle verfügen, für die iSCSI aktiviert ist. Suchen Sie dann die Netzwerkschnittstelle (nicht DATA 0), der ein Gateway zugewiesen wurde.
 
-4. Löschen Sie die Gatewayeinstellung. Hinweis: Da Gatewayeinstellungen für eine cloudfähige Netzwerkschnittstelle erforderlich sind, müssen Sie den Cloudzugriff für diese Schnittstelle deaktivieren, um die Einstellung löschen zu können.
+4. Deaktivieren Sie die Netzwerkschnittstelle, der ein Gateway zugeordnet ist, und speichern Sie die geänderte Konfiguration. Beachten Sie, dass die Netzwerkschnittstellen-Einstellungen beibehalten werden. Wenn Sie also diese Netzwerkschnittstelle später wieder aktivieren, stellt das Portal wieder die ursprünglichen Einstellungen her.
 
-5. Wiederholen Sie Schritt 4 für alle anderen Netzwerkschnittstellen, denen ein Gateway zugewiesen ist (mit Ausnahme von DATA 0).
+7. Sie können nun [das Verwaltungsportal zum Installieren von Update 1.2 verwenden](#use-the-management-portal-to-install-update-1). Befolgen Sie die Anleitung beginnend mit Schritt 3 dieses Verfahrens. Nachdem Sie alle Updates installiert haben, können Sie die deaktivierte Netzwerkschnittstelle wieder aktivieren.
 
-6. Speichern Sie die geänderte Konfiguration.
-
-7. Sie können nun [das Verwaltungsportal zum Installieren von Update 1 verwenden](#use-the-management-portal-to-install-update-1).
-
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

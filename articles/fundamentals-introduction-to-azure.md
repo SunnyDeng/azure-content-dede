@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Einführung in Azure | Microsoft Azure"
-	description="Neu bei Microsoft Azure? Verschaffen Sie sich eine grundlegende Übersicht über die angebotenen Dienste sowie Beispiele für deren Nutzen."
-	services=" "
-	documentationCenter=".net"
-	authors="Rboucher"
+	pageTitle="Einführung in Azure | Microsoft Azure" 
+	description="Neu bei Microsoft Azure? Verschaffen Sie sich eine grundlegende Übersicht über die angebotenen Dienste sowie Beispiele für deren Nutzen." 
+	services=" " 
+	documentationCenter=".net" 
+	authors="Rboucher" 
 	manager="jwhit"
 	editor=""/>
 
 <tags 
-	ms.service="multiple"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="06/30/2015"
+	ms.service="multiple" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="06/30/2015"  
 	ms.author="robb"/>
 
 # Einführung in Microsoft Azure
@@ -399,11 +399,11 @@ Jedes Unternehmen muss Daten sichern und wiederherstellen. Mit Azure können Sie
 
 ### Site Recovery
  
-Mit Azure Site Recovery (früher Hyper-V-Wiederherstellungsmanager) können Sie wichtige Anwendungen schützen, indem Sie die Replikation und Wiederherstellung von Hyper-V-Images standortübergreifend koordinieren. Sie können die Sicherung auf einem sekundären Standort oder auf dem Standort eines Hosters ablegen oder Azure verwenden und die mit dem Erstellen und Verwalten eines sekundären Standorts verknüpften Kosten und Schwierigkeiten vermeiden. Azure verschlüsselt die Daten und die Kommunikation, und Sie haben die Option, die Verschlüsselung auch für gespeicherte Daten zu aktivieren.
+Mit Azure Site Recovery (ehemals Hyper-V-Wiederherstellungs-Manager) können Sie wichtige Anwendungen schützen, indem Sie die Replikation und Wiederherstellung standortübergreifend koordinieren. Site Recovery bietet Funktionen zum Schutz von Anwendungen auf der Grundlage von Hyper-V, VMWare oder SAN an Ihrem eigenen sekundären Standort, am Standort eines Hosters oder in Azure. Gleichzeitig können Sie die mit der Erstellung und Verwaltung eines sekundären Standorts einhergehenden Kosten und Probleme vermeiden. Azure verschlüsselt die Daten und die Kommunikation, und Sie haben die Option, die Verschlüsselung auch für gespeicherte Daten zu aktivieren.
 
 Es überwacht ständig den Zustand Ihrer Dienste und automatisiert die geordnete Wiederherstellung von Diensten bei Ausfall eines Standorts im primären Datencenter. Virtuelle Computer können systematisch hochgefahren werden, um den Dienst selbst bei komplexen mehrschichtigen Arbeitsauslastungen schnell wiederherzustellen.
 
-Site Recovery nutzt vorhandene Technologien wie Hyper-V Replica, System Center und SQL Server AlwaysOn.
+Site Recovery nutzt vorhandene Technologien wie Hyper-V Replica, System Center und SQL Server AlwaysOn. Ausführlichere Informationen finden Sie unter [Übersicht über Azure Site Recovery](site-recovery/site-recovery-overview.md).
 
 ### Azure Backup
 ![Azure Backup](./media/fundamentals-introduction-to-azure/AzureBackupIntroNew.png)
@@ -612,4 +612,4 @@ Nachdem Sie nun einen Überblick erhalten haben, besteht der nächste Schritt da
 
 [Azure Media Services Poster]: http://azure.microsoft.com/documentation/infographics/media-services/
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

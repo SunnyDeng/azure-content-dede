@@ -1,4 +1,4 @@
-<properties 
+<properties
 	pageTitle="Verwenden von Skriptaktionen zum Installieren von Solr in einem Hadoop-Cluster | Microsoft Azure"
 	description="Erfahren Sie, wie Sie HDInsight-Cluster mit Solr anpassen. Sie verwenden eine Script Action-Konfigurationsoption, um mithilfe eines Skripts Solr zu installieren."
 	services="hdinsight"
@@ -8,7 +8,7 @@
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags 
+<tags
 	ms.service="hdinsight"
 	ms.workload="big-data"
 	ms.tgt_pltfrm="na"
@@ -22,7 +22,7 @@
 
 In diesem Thema wird beschrieben, wie Sie Solr in Azure HDInsight mithilfe der Funktion "Skriptaktion" installieren. Solr ist eine leistungsfähige Suchplattform und bietet Suchfunktionen der Unternehmensklasse für von Hadoop verwaltete Daten. Sobald Sie Solr in einem HDInsight-Cluster installiert haben, erfahren Sie auch, wie Sie Daten mithilfe von Solr suchen können.
 
-> [AZURE.NOTE]Die Schritte in diesem Dokument erfordern einen Linux-basierten HDInsight-Cluster. Informationen zur Verwendung von Solr mit einem Windows-basierten Cluster finden Sie unter [Installieren und Verwenden von R in HDinsight Hadoop-Clustern (Windows)](hdinsight-hadoop-solr-install.md).
+> [AZURE.NOTE]Die Schritte in diesem Dokument erfordern einen Linux-basierten HDInsight-Cluster. Informationen zur Verwendung von Solr mit einem Windows-basierten Cluster finden Sie unter [Installieren und Verwenden von Solr in HDinsight Hadoop-Clustern (Windows)](hdinsight-hadoop-solr-install.md).
 
 Das in diesem Thema verwendete Beispielskript erstellt einen Solr-Cluster mit einer bestimmten Konfiguration. Wenn Sie den Solr-Cluster mit anderen Auflistungen, Shards, Schemas, Replikaten usw. konfigurieren möchten, müssen Sie das Skript und die Solr-Binärdateien entsprechend ändern.
 
@@ -69,15 +69,15 @@ Sie müssen mit der Indizierung von Solr mit einigen Datendateien beginnen. Sie 
 1. Stellen Sie mithilfe von SSH eine Verbindung mit dem HDInsight-Cluster her:
 
 		ssh USERNAME@CLUSTERNAME-ssh.azurehdinsight.net
-		
+
 	Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den folgenden Artikeln:
-	
+
 	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
-	
+
 	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
-	
+
 	> [AZURE.IMPORTANT]Die späteren Schritte in diesem Dokument verwenden einen SSL-Tunnel, um mit der Solr-Webbenutzeroberfläche eine Verbindung herzustellen. Um diese Schritte ausführen zu können, müssen Sie einen SSL-Tunnel einrichten, und Ihren Browser dann zu dessen Verwendung einrichten.
-	> 
+	>
 	> Weitere Informationen finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
 
 2. Verwenden Sie die folgenden Befehle, mit denen Solr Beispieldaten indiziert:
@@ -94,13 +94,13 @@ Sie müssen mit der Indizierung von Solr mit einigen Datendateien beginnen. Sie 
 		Time spent: 0:00:01.624
 
 	Das Hilfsprogramm "post.jar" indiziert Solr mit zwei Beispieldokumenten: **solr.xml** und **monitor.xml**. Diese werden in __collection1__ innerhalb von Solr gespeichert.
-	
+
 3. Verwenden Sie folgenden Befehl, um die von Solr verfügbar gemachte REST-API abzufragen:
 
 		curl "http://localhost:8983/solr/collection1/select?q=*%3A*&wt=json&indent=true"
-		
+
 	Dadurch wird eine Abfrage gegen __collection1__ für alle Dokumente ausgestellt, die __*:*__ (codiert als *% 3A* in der Abfragezeichenfolge) entsprechen. Die Antwort sollte im JSON-Format zurückgegeben werden. Die Antwort sollte in etwa wie folgt aussehen:
-	
+
 			"response": {
 			    "numFound": 2,
 			    "start": 0,
@@ -156,7 +156,7 @@ Sie müssen mit der Indizierung von Solr mit einigen Datendateien beginnen. Sie 
 ###Verwenden des Solr-Dashboards
 
 Das Solr-Dashboard ist eine Webbenutzeroberfläche, mit dem Sie über Ihren Webbrowser mit Solr arbeiten können. Das Solr-Dashboard wir nicht direkt im Internet aus Ihrem HDInsight-Cluster verfügbar gemacht. Der Zugriff muss mithilfe eines SSH-Tunnels stattfinden. Weitere Informationen zum Verwenden eines SSH-Tunnels finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
-	
+
 Wenn Sie einen SSH-Tunnel eingerichtet haben, gehen Sie folgendermaßen vor, um das Solr-Dashboard zu verwenden:
 
 1. Stellen Sie in Ihrem Browser eine Verbindung mit \_\___http://headnode0:8983/solr/#/__ her. Der Datenverkehr sollte über den SSH-Tunnel auf „headnode0“ für Ihr HDInsight-Cluster weitergeleitet werden. Eine Seite ähnlich der folgenden wird angezeigt:
@@ -168,13 +168,13 @@ Wenn Sie einen SSH-Tunnel eingerichtet haben, gehen Sie folgendermaßen vor, um 
 3. Wählen Sie aus den Einträgen unter __collection1__ __Abfrage__ aus. Verwenden Sie die folgenden Werte zum Auffüllen der Suchseite:
 
 	* Geben Sie im Textfeld **q** Folgendes ein: ***:***. Dadurch werden alle Dokumente zurückgegeben, die in Solr indiziert sind. Wenn Sie nach einer bestimmten Zeichenfolge innerhalb der Dokumente suchen möchten, können diese Zeichenfolge hier eingeben.
-	
+
 	* Wählen Sie im Textfeld **wt** das Ausgabeformat aus. Der Standardwert ist **json**.
-	
+
 	Klicken Sie abschließend am unteren Rand der Suchseite auf die Schaltfläche **Abfrage ausführen**.
 
 	![Anpassen eines Clusters mit "Skriptaktion"](./media/hdinsight-hadoop-solr-install-linux/hdi-solr-dashboard-query.png)
-	
+
 	Die Ausgabe gibt die beiden Dokumente zurück, die wir zur Indizierung von Solr verwendet haben. Die Ausgabe sieht ungefähr so aus:
 
 			"response": {
@@ -236,8 +236,8 @@ Wenn Sie Solr manuell beenden oder starten müssen, verwenden Sie die folgenden 
 	sudo stop solr
 
 	sudo start solr
-	
-   
+
+
 ##Sichern indizierter Daten
 
 Bewährt hat sich auch das Sichern der indizierten Daten auf den Solr-Clusterknoten in Azure-Blobspeicher. Führen Sie dazu die folgenden Schritte aus:
@@ -260,17 +260,17 @@ Bewährt hat sich auch das Sichern der indizierten Daten auf den Solr-Clusterkno
 2. Als Nächstes wechseln Sie zum Verzeichnis __/usr/hdp/current/solr/example/solr__. Dort ist ein Unterverzeichnis für jede Sammlung vorhanden. Jedes Sammlungsverzeichnis enthält ein __Datenverzeichnis__, in dem sich die Momentaufnahme für diese Sammlung befindet.
 
 	Wenn Sie beispielsweise die Schritte oben zum Indizieren der Beispieldokumente verwendet haben, sollte das Verzeichnis __/usr/hdp/current/solr/example/solr/collection1/data__ jetzt ein Verzeichnis namens __snapshot.###########__ enthalten, in denen die „#“-Zeichen das Datum und die Uhrzeit der Momentaufnahme darstellen.
-	
+
 3. Erstellen Sie ein komprimiertes Archiv des Momentaufnahmenordnders, indem Sie einen Befehl ähnlich dem folgenden verwenden:
 
 		tar -zcf snapshot.20150806185338855.tgz snapshot.20150806185338855
 
 	Dadurch entsteht ein neues Archiv mit dem Namen __snapshot.20150806185338855.tgz__, das den Inhalt des Verzeichnisses __snapshot.20150806185338855__ enthält.
-	
+
 3. Sie können das Archiv dann im primären Speicher des Clusters mit dem folgenden Befehl speichern:
 
 	hadoop fs -copyFromLocal snapshot.20150806185338855.tgz /example/data
-	
+
 	> [AZURE.NOTE]Möglicherweise möchten Sie ein dediziertes Verzeichnis für Solr-Momentaufnahmen erstellen. Beispiel: `hadoop fs -mkdir /solrbackup`.
 
 Weitere Informationen zum Arbeiten mit Solr-Backups und -Wiederherstellungen finden Sie unter [Making and restoring backups of SolrCores](https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups+of+SolrCores) (auf Englisch).
@@ -297,6 +297,5 @@ Weitere Informationen zum Arbeiten mit Solr-Backups und -Wiederherstellungen fin
 [hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux.md
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
- 
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

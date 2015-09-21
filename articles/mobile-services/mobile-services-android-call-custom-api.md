@@ -1,6 +1,7 @@
 <properties
-	pageTitle="Aufrufen einer benutzerdefinierten API von einem Android-Client | Microsoft Azure"
-	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer Android-App aufrufen, die Azure Mobile Services verwendet."
+	writer="ricksal"
+	pageTitle="Aufrufen einer benutzerdefinierten API von einem Andoird-Client (JavaScript-Back-End) | Microsoft Azure"
+	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer Android-App aufrufen, die Azure Mobile Services verwendet (JavaScript-Back-End)."
 	services="mobile-services"
 	documentationCenter="android"
 	authors="RickSaling"
@@ -13,10 +14,10 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/03/2015"
 	ms.author="ricksal"/>
 
-# Aufrufen einer benutzerdefinierten API aus dem Client
+# Aufrufen einer benutzerdefinierten API von einem Andoird-Client (JavaScript-Back-End)
 
 [AZURE.INCLUDE [mobile-services-selector-call-custom-api](../../includes/mobile-services-selector-call-custom-api.md)]
 
@@ -68,4 +69,4 @@ Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

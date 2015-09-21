@@ -1,17 +1,17 @@
 <properties 
-	pageTitle="Versionshinweise für Application Insights für Java"
-	description="Die neuesten Updates."
-	services="application-insights"
-	documentationCenter=""
-	authors="alancameronwills"
+	pageTitle="Versionshinweise für Application Insights für Java" 
+	description="Die neuesten Updates." 
+	services="application-insights" 
+    documentationCenter=""
+	authors="alancameronwills" 
 	manager="douge"/>
 <tags 
-	ms.service="application-insights"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="ibiza"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="06/18/2015"
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="06/18/2015" 
 	ms.author="awills"/>
  
 # Versionshinweise für das Application Insights-SDK für Java
@@ -38,7 +38,7 @@ Nach dem Upgrade müssen Sie alle an "ApplicationInsights.xml" vorgenommenen Anp
 Vergleichen Sie die alte und die neue Version der Datei "ApplicationInsights.xml". Viele Änderungen sind darauf zurückzuführen, dass Module hinzugefügt und entfernt wurden. Reaktivieren Sie alle Anpassungen, die Sie vorgenommen haben.
 
 ## Version 1.0.1
-- Der Java-Agent unterstützt das Sammeln folgender Abhängigkeitsinformationen:
+- Der [Java-Agent](app-insights-java-agent.md) unterstützt das Sammeln folgender Abhängigkeitsinformationen:
 	- HTTP-Aufrufe über HttpClient, OkHttp und RestTemplate (Spring).
 	- Aufrufe von Redis über den Jedis-Client. Wenn ein konfigurierbarer Schwellenwert übergeben wird, ruft das SDK auch die Argumente des Aufrufs ab.
 	- JDBC-Aufrufe mit Oracle DB und Apache Derby DB-Clients.
@@ -68,4 +68,4 @@ Vergleichen Sie die alte und die neue Version der Datei "ApplicationInsights.xml
 - Möglichkeit, ein Telemetrieelement als synthetisch zu markieren, indem dem gemeldeten Element eine ```SyntheticSource```-Eigenschaft hinzugefügt wird.
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

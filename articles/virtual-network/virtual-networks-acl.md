@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?"
-	description="Informationen zu ACLs"
-	services="virtual-network"
-	documentationCenter="na"
-	authors="telmosampaio"
-	manager="carolz"
-	editor="tysonn"/>
+   description="Informationen zu ACLs"
+   services="virtual-network"
+   documentationCenter="na"
+   authors="telmosampaio"
+   manager="carolz"
+   editor="tysonn" />
 <tags 
    ms.service="virtual-network"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="06/08/2015"
-	ms.author="telmos"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/04/2015"
+   ms.author="telmos" />
 
 # Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?
 
@@ -99,4 +99,4 @@ Netzwerk-ACLs können für einen Endpunkt eines Satzes mit Lastenausgleich (LB-S
 
 [Verwalten von Zugriffssteuerungslisten (Access Control Lists, ACLs) für Endpunkte mithilfe von PowerShell](../virtual-networks-acl-powershell)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

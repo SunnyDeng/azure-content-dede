@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="07/06/2015"
+	ms.date="09/03/2015"
 	ms.author="bwren"/>
 
 # Was ist Azure Automation?
@@ -33,7 +33,7 @@ Beispielsweise verfügen Sie unter Umständen über einen vorhandenen manuellen 
 
 ## Was kann mit Runbooks automatisiert werden?
 
-Runbooks in Azure Automation basieren auf dem PowerShell-Workflow, sodass alle Optionen von PowerShell verfügbar sind. Wenn eine Anwendung oder ein Dienst über eine API verfügt, kann ein Runbook damit arbeiten. Falls Sie ein PowerShell-Modul dafür haben, können Sie das Modul in Azure Automation laden und diese Cmdlets in Ihr Runbook einbinden. Azure Automation-Runbooks werden in der Azure-Cloud ausgeführt, sodass Sie auf alle Ressourcen in der Cloud oder externen Ressourcen zugreifen können, auf die über die Cloud zugegriffen werden kann. Mit dem [Hybrid-Runbook Worker](automation-hybrid-runbook-worker.md) können Runbooks in Ihrem lokalen Rechenzentrum ausgeführt werden, um lokale Ressourcen zu verwalten.
+Runbooks in Azure Automation basieren auf dem PowerShell-Workflow, sodass alle Optionen von PowerShell verfügbar sind. Wenn eine Anwendung oder ein Dienst über eine API verfügt, kann ein Runbook damit arbeiten. Falls Sie ein PowerShell-Modul dafür haben, können Sie das Modul in Azure Automation laden und diese Cmdlets in Ihr Runbook einbinden. Azure Automation-Runbooks werden in der Azure-Cloud ausgeführt, sodass Sie auf alle Ressourcen in der Cloud oder externen Ressourcen zugreifen können, auf die über die Cloud zugegriffen werden kann. Mit dem [Hybrid Runbook Worker](automation-hybrid-runbook-worker.md) können Runbooks in Ihrem lokalen Rechenzentrum ausgeführt werden, um lokale Ressourcen zu verwalten.
 
 
 ## Wo erhalte ich Runbooks?
@@ -58,11 +58,11 @@ Um mehr über Azure Automation zu erfahren und Ihre eigenen Runbooks zu erstelle
 
 - Sie befinden sich gerade in der **Azure Automation-Bibliothek**. Die Artikel in dieser Bibliothek enthalten die vollständige Dokumentation für die Konfiguration und Verwaltung von Azure Automation und für die Erstellung Ihrer eigenen Runbooks.
 - Unter [Azure PowerShell-Cmdlets](http://msdn.microsoft.com/library/jj156055.aspx) finden Sie Informationen zur Automatisierung von Azure-Vorgängen mit Windows PowerShell. Runbooks verwenden diese Cmdlets zum Arbeiten mit Azure-Ressourcen.
-- Der [Azure Automation-Blog](http://azure.microsoft.com/blog/tag/azure-automation) liefert Ihnen die neuesten Informationen von Microsoft zu Azure Automation. Es ist ratsam, diesen Blog zu abonnieren, um stets die neuesten Informationen vom Azure Automation-Team zu erhalten.
+- Der [Management-Blog](http://azure.microsoft.com/blog/topics/management) enthält die neuesten Informationen über Azure Automation und andere Verwaltungstechnologien von Microsoft. Es ist ratsam, diesen Blog zu abonnieren, um stets die neuesten Informationen vom Azure Automation-Team zu erhalten.
 - Im [Automation-Forum](http://go.microsoft.com/fwlink/p/?LinkId=390561) können Sie Fragen über Azure Automation stellen, um sie von Microsoft und der Automation-Community beantworten zu lassen.
 
 ## Kann ich Feedback geben?
 
 **Bitte geben Sie uns Feedback!** Wenn Sie nach einer Azure Automation-Runbook-Lösung oder einem Integrationsmodul suchen, senden Sie im Script Center eine Skriptanforderung. Wenn Sie Feedback oder Vorschläge zu Features für Azure Automation haben, veröffentlichen Sie sie auf [User Voice](http://feedback.windowsazure.com/forums/34192--general-feedback). Vielen Dank!
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

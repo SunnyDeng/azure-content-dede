@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/28/2015" 
+	ms.date="09/08/2015" 
 	ms.author="stepsic"/>
 
 # Manuelles oder automatisches Skalieren der Instanzenzahl
@@ -137,4 +137,4 @@ Möglicherweise möchten Sie jedoch tagsüber oder unter der Woche eine aggressi
 * [Überwachen der Verfügbarkeit und Reaktionsfähigkeit einer beliebigen Webseite](../app-insights-monitor-web-app-availability.md) mit Application Insights, um zu ermitteln, ob eine Seite offline ist.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

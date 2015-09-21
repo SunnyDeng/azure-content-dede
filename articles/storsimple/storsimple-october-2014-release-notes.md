@@ -1,6 +1,6 @@
 <properties 
-    pageTitle="Versionsanmerkungen zu Update 0.1 der StorSimple 8000-Serie – Oktober 2014 | Microsoft Azure"
-    description="Beschreibt die neuen Features, Probleme und Problemumgehungen für die StorSimple-Version vom Oktober 2014."
+    pageTitle="Versionshinweise zu Update 0.1 von StorSimple 8000 | Microsoft Azure"
+    description="Beschreibt die neuen Features und Problembehebungen sowie noch nicht behandelte Probleme und verfügbare Problemumgehungen für die Microsoft Azure StorSimple-Version vom Oktober 2014 (Update 0.1)."
     services="storsimple"
     documentationCenter="NA"
     authors="SharS"
@@ -12,7 +12,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="TBD"
-    ms.date="08/19/2015"
+    ms.date="09/04/2015"
     ms.author="v-sharos" />
 
 # Versionsanmerkungen zu Update 0.1 der StorSimple 8000-Serie – Oktober 2014  
@@ -99,4 +99,4 @@ Diese Version wendet auch ein kumulatives Firmwareupdate zur Behebung von Zuverl
 Diese Version enthält keine Updates für das virtuelle Gerät. Durch die Installation des Updates ändert sich die Softwareversion des virtuellen Geräts nicht.
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

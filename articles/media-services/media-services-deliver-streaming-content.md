@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="09/07/2015" 
 	ms.author="juliako"/>
 
 
@@ -28,7 +28,7 @@
 
 Sie können einen MP4-Satz mit adaptiver Bitrate streamen, indem Sie einen OnDemand-Streaminglocator und eine Streaming-URL erstellen. Im Thema [Codieren eines Medienobjekts](media-services-encode-asset.md) wird die Codierung in einen MP4-Satz mit adaptiver Bitrate erläutert.
 
->[AZURE.NOTE]Wenn Ihr Inhalt verschlüsselt ist, konfigurieren Sie vor dem Erstellen eines Locators die Bereitstellungsrichtlinie für Medienobjekte \(wie in [diesem](media-services-dotnet-configure-asset-delivery-policy.md) Thema beschrieben\).
+>[AZURE.NOTE]Wenn Ihr Inhalt verschlüsselt ist, konfigurieren Sie vor dem Erstellen eines Locators die Bereitstellungsrichtlinie für Medienobjekte (wie in [diesem](media-services-dotnet-configure-asset-delivery-policy.md) Thema beschrieben).
 
 Sie können auch einen OnDemand-Streaminglocator zum Erstellen von URLs verwenden, die auf MP4-Dateien verweisen, die progressiv heruntergeladen werden können.
 
@@ -40,7 +40,7 @@ Verfahren Sie zum Erstellen des OnDemand-Streaminglocators und Abrufen von URLs 
 
    1. Wenn der Inhalt verschlüsselt ist, definieren Sie eine Zugriffsrichtlinie.
    2. Erstellen Sie einen OnDemand-Streaminglocator.
-   3. Wenn Sie ein Streaming planen, rufen Sie die Streaming-Manifestdatei \(ISM\) im Medienobjekt ab. 
+   3. Wenn Sie ein Streaming planen, rufen Sie die Streaming-Manifestdatei (ISM) im Medienobjekt ab. 
    		
 	Wenn Sie einen progressiven Download ausführen möchten, rufen Sie die Namen der MP4-Dateien im Medienobjekt ab.  
    4. Erstellen Sie URLs für die Manifestdatei oder MP4-Dateien. 
@@ -156,9 +156,18 @@ Im folgenden Code werden .NET SDK-Erweiterungsmethoden aufgerufen, durch die ein
 	Console.WriteLine(smoothStreamingUri);
 	Console.WriteLine(hlsUri);
 	Console.WriteLine(mpegDashUri);
- 
+
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+
 ##Weitere Informationen
 
 [Herunterladen von Medienobjekten](media-services-deliver-asset-download.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO2-->

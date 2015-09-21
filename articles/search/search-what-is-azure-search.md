@@ -49,7 +49,7 @@ Die Dokumente enthalten die detaillierten Daten, die durch vom Suchmodul in den 
 
 ##Demo ansehen
 
-Sehen Sie sich unsere Videos an, um mehr über Szenarien und Funktionen zu erfahren. Links zu Videoinhalten finden Sie unter [Azure Search: Lernprogramme, Videodemos und Beispiele](https://msdn.microsoft.com/library/azure/dn818681.aspx).
+Sehen Sie sich unsere Videos an, um mehr über Szenarien und Funktionen zu erfahren. Links zu Videoinhalten finden Sie unter [Azure Search: Lernprogramme, Videodemos und Beispiele](search-video-demo-tutorial-list.md).
 
 ##Detaillierte Funktionsübersicht
 
@@ -69,7 +69,7 @@ Azure Search nutzt für Indizes und Dokumente automatisch die Partitionen, die S
 
 Partitionen und Replikate sind dienstweite Ressourcen, wobei alle Indizes in allen Replikate ausgeführt werden. Wenn Sie einen Index isolieren müssen oder verschiedene Rechenzentren unterschiedliche Anforderungen an die geografische Verteilung der Dienste und Ressourcen haben, könnten Sie einen zweiten Dienst erstellen.
 
-Es gibt Beschränkungen bezüglich des Speichers und der Anzahl der Indizes und Dokumente, die in den Dienst geladen werden. Das tatsächliche Limit wird durch das definiert, was zuerst eintritt: wenn der physische Speicher aufgebraucht ist oder wenn die Obergrenze der Indiz- und Dokumentanzahl erreicht wird. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen (Azure Search)](https://msdn.microsoft.com/library/azure/dn798934.aspx).
+Es gibt Beschränkungen bezüglich des Speichers und der Anzahl der Indizes und Dokumente, die in den Dienst geladen werden. Das tatsächliche Limit wird durch das definiert, was zuerst eintritt: wenn der physische Speicher aufgebraucht ist oder wenn die Obergrenze der Indiz- und Dokumentanzahl erreicht wird. Weitere Details finden Sie im Abschnitt [Limits und Einschränkungen (Azure Search)](search-limits-quotas-capacity.md).
 
 ###Programmierbarkeit
 
@@ -85,7 +85,7 @@ Die Authentifizierung von der Hostanwendung gegenüber Azure Search erfolgt übe
 
 ###Indizes und Dokumente
 
-Sie können mehrere Indizes verwenden (Informationen zu den für die einzelnen Tarife geltenden Limits finden Sie unter [Limits und Einschränkungen (Azure Search)](https://msdn.microsoft.com/library/azure/dn798934.aspx)). Beachten Sie, dass das Verknüpfen von Indizes derzeit nicht unterstützt wird. In einer Suchanforderung kann ein Index angegeben werden.
+Sie können mehrere Indizes verwenden (Informationen zu den für die einzelnen Tarife geltenden Limits finden Sie unter [Limits und Einschränkungen (Azure Search)](search-limits-quotas-capacity.md)). Beachten Sie, dass das Verknüpfen von Indizes derzeit nicht unterstützt wird. In einer Suchanforderung kann ein Index angegeben werden.
 
 **Dokumente** enthalten Felder und die zugehörigen Attribute. Felder enthalten durchsuchbaren Text, Werte, die vorwiegend (oder sogar ausschließlich) in Filtern und Bewertungsprofilen verwendet werden, und sehr wahrscheinlich URLs oder Verweise auf Inhalte, z. B. Bilder, in anderen Datenspeichern. Viele Suchanwendungen verwenden mehrere Arten von Speicher. Bilder oder Videos können kostengünstiger in anderen Speichermedien, wie z. B. Azure Blob-Speicher, gespeichert werden.
 
@@ -129,6 +129,6 @@ Besuchen Sie [Erstellen eines Azure Search-Diensts](search-create-service-portal
 
 Sie können auch diese Lernprogramme ausprobieren:
 
-[Verwenden von Azure Search in .NET](search-howto-dotnet-sdk.md) [Erste Schritte mit Azure Search .NET](search-get-started-dotnet.md) [Azure Search: Lernprogramme, Videodemos und Beispiele](https://msdn.microsoft.com/library/azure/dn818681.aspx)
+[Verwenden von Azure Search in .NET](search-howto-dotnet-sdk.md) [Erste Schritte mit Azure Search .NET](search-get-started-dotnet.md) [Azure Search: Lernprogramme, Videodemos und Beispiele](search-video-demo-tutorial-list.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

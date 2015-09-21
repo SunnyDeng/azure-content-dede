@@ -1,20 +1,20 @@
 <properties
    pageTitle="Verwenden von verknüpften Vorlagen mit Azure-Ressourcen-Manager"
-	description="Beschreibt, wie verknüpfte Vorlagen in einer Azure-Ressourcen-Manager-Vorlage zum Erstellen einer modularen Vorlagenprojektmappe verwendet werden. Zeigt, wie Parameterwerte übergeben, eine Parameterdatei festgelegt und URLs dynamisch erstellt werden."
-	services="azure-resource-manager"
-	documentationCenter="na"
-	authors="tfitzmac"
-	manager="wpickett"
-	editor=""/>
+   description="Beschreibt, wie verknüpfte Vorlagen in einer Azure-Ressourcen-Manager-Vorlage zum Erstellen einer modularen Vorlagenprojektmappe verwendet werden. Zeigt, wie Parameterwerte übergeben, eine Parameterdatei festgelegt und URLs dynamisch erstellt werden."
+   services="azure-resource-manager"
+   documentationCenter="na"
+   authors="tfitzmac"
+   manager="wpickett"
+   editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="09/02/2015"
-	ms.author="tomfitz"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/04/2015"
+   ms.author="tomfitz"/>
 
 # Verwenden von verknüpften Vorlagen mit Azure-Ressourcen-Manager
 
@@ -44,7 +44,7 @@ Sie erstellen einen Link zwischen zwei Vorlagen durch Hinzufügen einer Bereitst
       } 
     ] 
 
-Der Ressourcen-Manager muss in der Lage sein, auf die verknüpften Vorlagen zuzugreifen. Dies bedeutet, dass Sie keine lokale Datei für die verknüpfte Vorlage angeben können. Sie müssen einen URI-Wert bereitstellen, der entweder **http** oder **https** enthält. Eine Option besteht darin, Ihre verknüpfte Vorlage in einem Speicherkonto zu platzieren und den URI für dieses Element zu verwenden, wie nachfolgend gezeigt.
+Der Ressourcen-Manager-Dienst muss in der Lage sein, auf die verknüpften Vorlagen zuzugreifen. Dies bedeutet, dass Sie keine lokale Datei und keine Datei, die nur in Ihrem lokalen Netzwerk verfügbar ist, für die verknüpfte Vorlage angeben können. Sie müssen einen URI-Wert bereitstellen, der entweder **http** oder **https** enthält. Eine Option besteht darin, Ihre verknüpfte Vorlage in einem Speicherkonto zu platzieren und den URI für dieses Element zu verwenden, wie nachfolgend gezeigt.
 
     "templateLink": {
         "uri": "http://mystorageaccount.blob.core.windows.net/templates/template.json",
@@ -110,4 +110,4 @@ Wenn Sie einen Wert aus der verknüpften Vorlage an die Hauptvorlage übergeben 
 - [Erstellen von Vorlagen](./resource-group-authoring-templates.md)
 - [Bereitstellen von Vorlagen](azure-portal/resource-group-template-deploy.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

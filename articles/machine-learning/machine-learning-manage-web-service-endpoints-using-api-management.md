@@ -8,16 +8,14 @@
 	manager="paulettm"
 	editor=""/>
 
-
 <tags
 	ms.service="machine-learning"
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/09/2015"
 	ms.author="roalexan" />
-
 
 
 # Erfahren Sie, wie Sie Azure ML-Webdienste mithilfe von API Management verwalten
@@ -40,7 +38,7 @@ Zum Durcharbeiten dieses Leitfadens benötigen Sie Folgendes:
 
 * Ein Azure-Konto. Wenn Sie kein Azure-Konto haben, klicken Sie [hier](http://azure.microsoft.com/pricing/free-trial/), um zu erfahren, wie Sie ein kostenloses Testkonto erstellen.
 * Ein Azure ML-Konto. Wenn Sie kein Azure ML-Konto haben, klicken Sie [hier](https://studio.azureml.net/), um zu erfahren, wie Sie ein kostenloses Testkonto erstellen.
-* Den Arbeitsbereich, den Dienst und den API-Schlüssel für ein als Webdienst veröffentlichtes Azure ML-Experiment. Klicken Sie [hier](machine-learning/machine-learning-create-experiment.md), um Informationen zum Erstellen eines Azure ML-Experiments zu erhalten. Klicken Sie [hier](machine-learning/machine-learning-publish-a-machine-learning-web-service.md), um Informationen zum Veröffentlichen eines Azure ML-Experiments als Webdienst zu erhalten. Alternativ dazu enthält Anhang A Anweisungen zum Erstellen und Testen eines einfachen Azure ML-Experiments und zum Veröffentlichen dieses Experiments als Webdienst.
+* Den Arbeitsbereich, den Dienst und den API-Schlüssel für ein als Webdienst bereitgestelltes Azure ML-Experiment. Klicken Sie [hier](machine-learning/machine-learning-create-experiment.md), um Informationen zum Erstellen eines Azure ML-Experiments zu erhalten. Klicken Sie [hier](machine-learning/machine-learning-publish-a-machine-learning-web-service.md), um Informationen zum Bereitstellen eines Azure ML-Experiments als Webdienst zu erhalten. Alternativ dazu enthält Anhang A Anweisungen zum Erstellen und Testen eines einfachen Azure ML-Experiments und zum Bereitstellen dieses Experiments als Webdienst.
 
 ##Erstellen einer API Management-Instanz
 
@@ -74,7 +72,7 @@ Klicken Sie auf der linken Seite im Menü **API Management** auf **APIs**, und k
 
 ![api-management-menu](./media/machine-learning-manage-web-service-endpoints-using-api-management/api-management-menu.png)
 
-Geben Sie **Azure ML-Demo-API** als **Web-API-Namen** ein. Geben Sie \*\***https://ussouthcentral.services.azureml.net** als **Webdienst-URL** ein. Geben Sie **azureml-demo** als **Web-API-URL-Suffix** ein. Aktivieren Sie **HTTPS** als **Web-API-URL**-Schema. Wählen Sie **Starter** als **Produkte** aus. Wenn Sie fertig sind, klicken Sie auf **Speichern**, um die API zu erstellen.
+Geben Sie **Azure ML-Demo-API** als **Web-API-Namen** ein. Geben Sie ****https://ussouthcentral.services.azureml.net** als **Webdienst-URL** ein. Geben Sie **azureml-demo** als **Web-API-URL-Suffix** ein. Aktivieren Sie **HTTPS** als **Web-API-URL**-Schema. Wählen Sie **Starter** als **Produkte** aus. Wenn Sie fertig sind, klicken Sie auf **Speichern**, um die API zu erstellen.
 
 ![add-new-api](./media/machine-learning-manage-web-service-endpoints-using-api-management/add-new-api.png)
 
@@ -150,7 +148,7 @@ Nach dem Aufruf der Operation zeigt das Entwicklerportal die **Angeforderte URL*
 
 ###Erstellen des Experiments
 
-Im Folgenden finden Sie die Schritte, die zum Erstellen eines einfachen Azure ML-Experiments und Veröffentlichen des Experiments als Webdienst erforderlich sind. Der Webdienst akzeptiert als Eingabe eine Spalte mit beliebigem Text und gibt einen Satz von Features zurück, die als Ganzzahlen dargestellt werden. Beispiel:
+Im Folgenden finden Sie die Schritte, die zum Erstellen eines einfachen Azure ML-Experiments und zum Bereitstellen des Experiments als Webdienst erforderlich sind. Der Webdienst akzeptiert als Eingabe eine Spalte mit beliebigem Text und gibt einen Satz von Features zurück, die als Ganzzahlen dargestellt werden. Beispiel:
 
 Text | Text im Hashformat
 --- | ---
@@ -386,4 +384,4 @@ Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses 
 	return
 	invokeBatchExecutionService()
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

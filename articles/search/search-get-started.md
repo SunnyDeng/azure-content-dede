@@ -98,7 +98,7 @@ Die Standardsuche beginnt mit je einem Replikat und einer Partition, kann jedoch
 
 Zusätzliche Replikate und Partitionen werden in Sucheinheiten abgerechnet. Die insgesamt benötigten Sucheinheiten zum Unterstützen einer bestimmten Ressourcenkonfiguration wird auf der Seite angezeigt, während Sie Ressourcen hinzufügen.
 
-Unter [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=509792) finden Sie Abrechnungsinformationen pro Einheit. Eine Entscheidungshilfe für die Konfiguration von Partitions- und Replikatkombinationen finden Sie unter [Limits und Einschränkungen](http://msdn.microsoft.com/library/azure/dn798934.aspx).
+Unter [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=509792) finden Sie Abrechnungsinformationen pro Einheit. Eine Entscheidungshilfe für die Konfiguration von Partitions- und Replikatkombinationen finden Sie unter [Limits und Einschränkungen](search-limits-quotas-capacity.md).
 
  ![][15]
 
@@ -334,7 +334,7 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 
 - [Was ist Azure Search?](search-what-is-azure-search.md)
 
-- [Azure Search REST-API](http://msdn.microsoft.com/library/dn798935.aspx)
+- [REST-API für Azure Suchdienst](http://msdn.microsoft.com/library/dn798935.aspx)
 
 - [Azure Search .NET SDK](https://msdn.microsoft.com/library/azure/dn951165.aspx)
 
@@ -378,4 +378,4 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [Create your first azure search solution]: search-create-first-solution.md
 [Create a geospatial search app using Azure Search]: search-create-geospatial.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

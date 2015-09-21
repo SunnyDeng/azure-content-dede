@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure Media Services – Übersicht und häufige Szenarios"
-	description="Dieses Thema bietet eine Übersicht über Azure Media Services."
-	services="media-services"
-	documentationCenter=""
-	authors="Juliako"
-	manager="dwrede"
+	pageTitle="Azure Media Services – Übersicht und häufige Szenarios" 
+	description="Dieses Thema bietet eine Übersicht über Azure Media Services." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="Juliako" 
+	manager="dwrede" 
 	editor=""/>
 
 <tags 
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/20/2015"
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/07/2015"
 	ms.author="juliako"/>
 
 #Azure Media Services – Übersicht und häufige Szenarios
@@ -36,12 +36,20 @@ Zum Entwickeln von Media Services-Lösungen können Sie folgende Komponenten ver
 - Vorhandene Tools: [Azure-Verwaltungsportal](http://manage.windowsazure.com/) oder [Azure Media Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer).
 
 
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+
 ##Voraussetzungen
 
 Um mit Azure Media Services loszulegen, sollten Sie Folgendes haben:
  
 3. Ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](azure.microsoft.com).
-2. Ein Azure Media Services-Konto. Verwenden Sie das Azure-Verwaltungsportal, .NET oder die REST-API zum Erstellen eines Azure Media Services-Kontos. Weitere Informationen finden Sie unter [Erstellen eines Kontos](media-services-create-account.md).
+2. Ein Azure Media Services-Konto. Verwenden Sie das Azure-Verwaltungsportal, .NET oder die REST-API zum Erstellen eines Azure Media Services-Kontos. Weitere Informationen finden Sie unter [Erstellen von Konten](media-services-create-account.md).
 3. (Optional) Eine eingerichtete Entwicklungsumgebung. Wählen Sie .NET oder REST-API für Ihre Entwicklungsumgebung. Weitere Informationen finden Sie unter [Einrichten der Umgebung](media-services-dotnet-how-to-use.md). 
 
 	Erfahren Sie darüber hinaus, wie Sie programmgesteuert eine [Verbindung](media-services-dotnet-connect_programmatically.md) herstellen können.
@@ -52,7 +60,7 @@ Um mit Azure Media Services loszulegen, sollten Sie Folgendes haben:
 Weitere Informationen finden Sie unter [Konzepte](media-services-concepts.md).
 
 
-##<a id="vod_scenarios"></a>Bereitstellung von Medien-on-Demand mit Azure Media Services: häufige Szenarien und Aufgaben.
+##<a id="vod_scenarios"></a>Bereitstellen von Medien-on-Demand mit Azure Media Services: häufige Szenarios und Aufgaben.
 
 Dieser Abschnitt erläutert allgemeine Szenarien und enthält Links zu relevanten Themen. Das folgende Diagramm zeigt die Hauptbestandteile der Media Services-Plattform, die am Bereitstellen von On-Demand-Inhalten beteiligt sind.
 
@@ -140,19 +148,19 @@ Beim Arbeiten mit Livestreaming werden normalerweise die folgenden Komponenten v
 	- Übermitteln der Inhalte über häufig verwendete Streaming-Protokolle (z. B. MPEG DASH, Smooth, HLS, HDS) direkt an die Kunden oder an ein Content Delivery Network (CDN) zur weiteren Verteilung 
 	
 		
-Mit **Microsoft Azure Media Services** (AMS) können Sie Livestreaming-Inhalte erfassen, codieren, in der Vorschau anzeigen, speichern und bereitstellen.
+Mit **Microsoft Azure Media Services** (AMS) können Sie Livestreaminginhalte erfassen, codieren, in der Vorschau anzeigen, speichern und bereitstellen.
 
 Bei der Übermittlung Ihrer Inhalte für Kunden besteht Ihr Ziel darin, qualitativ hochwertige Videos für unterschiedliche Geräte unter verschiedenen Netzwerkbedingungen bereitzustellen. Damit Qualität und Netzwerkbedingungen sichergestellt werden, codieren Sie den Datenstrom mit Live-Encodern in einen Videodatenstrom mit mehreren Bitraten (adaptive Bitrate). Verwenden Sie die [dynamische Paketerstellung](media-services-dynamic-packaging-overview.md) von Media Services, um den Datenstrom dynamisch erneut in verschiedene Protokolle zu packen. Media Services unterstützt die Übermittlung der folgenden Streamingtechnologien mit adaptiver Bitrate: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
-In Azure Media Services verarbeiten die **Kanäle**, **Programme** und **Streamingendpunkte** alle Livestreaming-Funktionen, einschließlich Erfassung, Formatierung, DVR, Sicherheit, Skalierbarkeit und Redundanz.
+In Azure Media Services verarbeiten die **Kanäle**, **Programme** und **Streamingendpunkte** alle Livestreamingfunktionen, einschließlich Erfassung, Formatierung, DVR, Sicherheit, Skalierbarkeit und Redundanz.
 
-Ein **Kanal** stellt eine Pipeline zum Verarbeiten von Livestreaming-Inhalten dar. Derzeit kann ein Kanal Live-Eingabedatenströme auf folgende Weise empfangen:
+Ein **Kanal** stellt eine Pipeline zum Verarbeiten von Livestreaminginhalten dar. Derzeit kann ein Kanal Live-Eingabedatenströme auf folgende Weise empfangen:
 
 
 - Ein lokaler Liveencoder sendet einen Single-Bitrate-Datenstrom an den Kanal, der zum Ausführen von Livecodierung mit Media Services in einem der folgenden Formate aktiviert wurde: RTP (MPEG-TS), RTMP oder Smooth Streaming (fragmentiertes MP4). Vom Kanal wird dann eine Livecodierung des Single-Bitrate-Eingabedatenstroms in einen Multi-Bitrate-Videodatenstrom (adaptiv) ausgeführt. Auf Anforderung wird der Datenstrom den Kunden von Media Services bereitgestellt.
 
-	Die Codierung eines Livedatenstroms mit Media Services befindet sich in der **Vorschau**.
-- Von einem lokalen Live-Encoder wird Multi-Bitrate-**RTMP** oder -**Smooth Streaming** (fragmentiertes MP4) an den Kanal gesendet. Sie können die folgenden Liveencoder verwenden, von denen Multi-Bitrate-Smooth Streaming ausgegeben werden kann: Elemental, Envivio, Cisco. Von den folgenden Liveencodern wird RTMP ausgegeben: Adobe Flash Live, Telestream Wirecast und Tricaster-Transcoder. Die aufgenommenen Datenströme werden ohne weitere Verarbeitung durch die **Kanäle** geleitet. Ihr Liveencoder kann auch einen Single-Bitrate-Datenstrom an einen Kanal senden, der nicht für die Live-Codierung aktiviert ist. Dies wird jedoch nicht empfohlen. Auf Anforderung wird der Datenstrom den Kunden von Media Services bereitgestellt.
+	Die Codierung eines Livedatenstroms mit Media Services erfolgt in der **Vorschau**.
+- Von einem lokalen Liveencoder wird Multi-Bitrate-**RTMP** oder -**Smooth Streaming** (fragmentiertes MP4) an den Kanal gesendet. Sie können die folgenden Liveencoder verwenden, von denen Multi-Bitrate-Smooth Streaming ausgegeben werden kann: Elemental, Envivio, Cisco. Von den folgenden Liveencodern wird RTMP ausgegeben: Adobe Flash Live, Telestream Wirecast und Tricaster-Transcoder. Die aufgenommenen Datenströme werden ohne weitere Verarbeitung durch die **Kanäle** geleitet. Ihr Liveencoder kann auch einen Single-Bitrate-Datenstrom an einen Kanal senden, der nicht für die Live-Codierung aktiviert ist. Dies wird jedoch nicht empfohlen. Auf Anforderung wird der Datenstrom den Kunden von Media Services bereitgestellt.
 
 
 ###Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden
@@ -198,7 +206,7 @@ Der [Azure-Support](http://azure.microsoft.com/support/options/) bietet Supporto
 
 ##Muster & Leitfäden
 
-[Muster & Leitfäden](https://wamsg.codeplex.com/) [Onlinedokumentation](https://msdn.microsoft.com/library/dn735912.aspx) [Herunterladbares E-Book](https://www.microsoft.com/download/details.aspx?id=42629)
+[Patterns and practices guidance](https://wamsg.codeplex.com/) [Online documentation](https://msdn.microsoft.com/library/dn735912.aspx) [Downloadable eBook](https://www.microsoft.com/download/details.aspx?id=42629) (alle in englischer Sprache)
 
 
 ##Vereinbarung zum Servicelevel (SLA)
@@ -211,8 +219,6 @@ Der [Azure-Support](http://azure.microsoft.com/support/options/) bietet Supporto
 
 	Weitere Informationen finden Sie im [Microsoft Azure-SLA](http://azure.microsoft.com/support/legal/sla/).
 
-
-
 <!-- Images -->
 [overview]: ./media/media-services-overview/media-services-overview.png
 [vod-overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
@@ -220,4 +226,4 @@ Der [Azure-Support](http://azure.microsoft.com/support/options/) bietet Supporto
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

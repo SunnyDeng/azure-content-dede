@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung."
-	description="Analysiert die Unterschiede und Gemeinsamkeiten zwischen den beiden zurzeit von Azure angebotenen Warteschlangentypen."
-	services="service-bus"
-	documentationCenter="na"
-	authors="sethmanheim"
-	manager="timlt"
-	editor="tysonn"/>
+   description="Analysiert die Unterschiede und Gemeinsamkeiten zwischen den beiden zurzeit von Azure angebotenen Warteschlangentypen."
+   services="service-bus"
+   documentationCenter="na"
+   authors="sethmanheim"
+   manager="timlt"
+   editor="tysonn" />
 <tags 
    ms.service="service-bus"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="tbd"
-	ms.date="08/25/2015"
-	ms.author="sethm"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="tbd"
+   ms.date="09/09/2015"
+   ms.author="sethm" />
 
 # Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung.
 
@@ -257,7 +257,7 @@ In diesem Abschnitt werden die von Azure-Warteschlangen und Service Bus-Wartesch
 |Vergleichskriterien|Azure-Warteschlangen|Service Bus-Warteschlangen|
 |---|---|---|
 |Authentifizierung|**Symmetrischer Schlüssel**|**Symmetrischer Schlüssel**|
-|Zugriffssteuerungsmodell|Delegierter Zugriff über SAS-Token|RBAC über ACS|
+|Sicherheitsmodell|Delegierter Zugriff über SAS-Token|SAS|
 |Verbund von Identitätsanbietern|**Nein**|**Ja**|
 
 ### Zusätzliche Informationen
@@ -265,10 +265,6 @@ In diesem Abschnitt werden die von Azure-Warteschlangen und Service Bus-Wartesch
 - Jede Anforderung an eine der beiden Warteschlangentechnologien muss authentifiziert werden. Öffentliche Warteschlangen mit anonymem Zugriff werden nicht unterstützt. Mithilfe von SAS können Sie dieses Szenario verwalten, indem Sie eine lesegeschützte SAS, eine schreibgeschützte SAS oder sogar eine SAS mit Vollzugriff veröffentlichen.
 
 - Das von Azure-Warteschlangen bereitgestellte Authentifizierungsschema schließt die Verwendung eines symmetrischen Schlüssels ein. Dieser entspricht einem hashbasierten Message Authentication Code (HMAC), der mit dem SHA-256-Algorithmus berechnet und als **Base64**-Zeichenfolge codiert wird. Weitere Informationen zum jeweiligen Protokoll finden Sie unter [Authenticating Access to Your Storage Account](https://msdn.microsoft.com/library/hh225339.aspx). Service Bus-Warteschlangen unterstützen ein ähnliches Modell mithilfe symmetrischer Schlüssel. Weitere Informationen finden Sie unter [SAS-Authentifizierung (Shared Access Signature) mit Service Bus](https://msdn.microsoft.com/library/dn170477.aspx).
-
-- Die von Service Bus unterstützte Zugriffssteuerung für Microsoft Azure Active Directory (auch Zugriffssteuerungsdienst oder ACS) bietet drei verschiedene Rollen: **Administrator**, **Absender** und **Empfänger**. Diese werden derzeit für Azure-Warteschlangen nicht unterstützt.
-
-- Da Service Bus ACS-Integration bietet, können Sie (durch Verwendung von ADFS) einen Verbund mit Active Directory und allgemeinen Identitätsanbietern eingehen.
 
 ## Kosten
 
@@ -315,4 +311,4 @@ Die folgenden Artikel enthalten weitere Anleitungen und Informationen zur Verwen
 - [Understanding Azure Storage Billing – Bandwidth, Transactions, and Capacity](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx) (Grundlagen zur Abrechnung von Azure Storage – Bandbreite, Transaktionen und Kapazität, in englischer Sprache)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

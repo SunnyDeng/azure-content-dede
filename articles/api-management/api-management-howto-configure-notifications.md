@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/16/2015" 
+	ms.date="09/10/2015" 
 	ms.author="sdanie"/>
 
 # Konfigurieren von Benachrichtigungen und E-Mail-Vorlagen in Azure API Management
@@ -114,4 +114,4 @@ Klicken Sie auf **Vorschau** oder auf **Test senden**, um eine Vorschau der E-Ma
 [Erste Schritte mit API Management]: api-management-get-started.md
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

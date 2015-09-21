@@ -1,9 +1,9 @@
-<properties 
+<properties
    pageTitle="Azure Active Directory-Authentifizierungsprotokolle"
    description="Eine Übersicht über die von Azure Active Directory (AD) unterstützten Authentifizierungsprotokolle"
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
-   services="active-directory" 
+   services="active-directory"
    manager="mbaldwin"
    editor=""/>
 
@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="06/01/2015"
+   ms.date="09/02/2015"
    ms.author="mbaldwin"/>
 
 # Azure Active Directory-Authentifizierungsprotokolle
 
 Azure Active Directory (Azure AD) unterstützt mehrere der am häufigsten verwendeten Protokolle zur Authentifizierung und Autorisierung. Die Themen in diesem Abschnitt beschreiben die unterstützten Protokolle und ihre Implementierung in Azure AD. Die Themen umfassen eine Beschreibung der unterstützten Anspruchstypen, eine Einführung in die Verwendung von Verbundmetadaten, ausführliche OAuth 2.0.- und SAML 2.0-Protokoll-Referenzdokumentation und einen Abschnitt zur Problembehandlung.
 
-## Authentifizierungsprotokolle, Artikel und Referenz 
+## Authentifizierungsprotokolle, Artikel und Referenz
 
 - [Wichtige Informationen zum Signieren vom Schlüssel-Rollover in Azure AD](https://msdn.microsoft.com/library/azure/dn641920.aspx) – Erfahren Sie mehr über das Signieren der Schlüssel-Rolloverkadenz von Azure AD, die Änderungen zum automatischen Update des Schlüssels und die Erläuterungen zum Aktualisieren der häufigsten Anwendungsszenarien.
 
@@ -47,13 +47,12 @@ Azure Active Directory (Azure AD) unterstützt mehrere der am häufigsten verwen
 
 
 
-## Weitere Informationen 
+## Weitere Informationen
 
 [Entwicklerhandbuch zu Azure Active Directory](active-directory-developers-guide.md)
 
 [Verwenden von Azure AD für Autorisierung](../app-service-web/web-sites-authentication-authorization.md)
 
 [Active Directory-Codebeispiele](active-directory-code-samples.md)
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

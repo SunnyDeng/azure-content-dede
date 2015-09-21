@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/07/2015" 
+	ms.date="09/08/2015" 
 	ms.author="tdykstra"/>
 
 # Dokumentationsressourcen zu Azure WebJobs
@@ -42,6 +42,7 @@ Das WebJobs-Dashboard im Azure-Portal bietet leistungsstarke Verwaltungsfunktion
 * [Verwenden von Azure-Tabellenspeicher mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-storage-tables-how-to.md)
 * [Verwenden von Azure Service Bus mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-service-bus.md)
 * [Kurzübersicht zum Azure WebJobs-SDK (PDF zum Herunterladen)](http://go.microsoft.com/fwlink/?LinkID=524028&clcid=0x409)
+* [Dokumentation zu Webauftragseinstellungen in GitHub](https://github.com/projectkudu/kudu/wiki/Web-jobs).
 * Videos
 	* [WebJobs und das WebJobs-SDK](http://channel9.msdn.com/Shows/Cloud+Cover/Episode-153-WebJobs-with-Pranav-Rastogi?utm_source=dlvr.it&utm_medium=twitter)
 	* [Videoreihe zu Azure WebJobs auf Channel 9](http://channel9.msdn.com/Tags/azurefridaywebjobs)
@@ -57,6 +58,7 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von WebJ
 * [Aktivieren der befehlszeilengesteuerten oder der kontinuierlichen Bereitstellung von Azure WebJobs](http://azure.microsoft.com/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/)
 * [Git-Bereitstellung einer .NET-Konsolen-App in Azure mithilfe von WebJobs](http://blog.amitapple.com/post/73574681678/git-deploy-console-app/)
 * [Deploying an F# WebJob to Azure](http://blogs.msdn.com/b/dave_crooks_dev_blog/archive/2015/02/18/deploying-f-web-job-to-azure.aspx) (Bereitstellen eines F#-Webauftrags in Azure; in englischer Sprache)
+* [Deploying custom services as Azure Webjobs](http://withouttheloop.com/articles/2015-06-23-deploying-custom-services-as-azure-webjobs/) (Bereitstellen benutzerdefinierter Dienste als Azure-WebJobs, in englischer Sprache)
 * Videos
 	* [Einführung in WebJobs-Tools für Visual Studio](http://channel9.msdn.com/Shows/Web+Camps+TV/Introducing-WebJobs-Tooling-for-Visual-Studio-with-Brady-Gaster) 
 	* [WebJobs-Tools und Remotedebuggen](http://channel9.msdn.com/Shows/Web+Camps+TV/WebJobs-GA-Series-Episode-1-WebJobs-Tooling-with-Brady-Gaster) 
@@ -65,6 +67,8 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von WebJ
 
 * [Das Dialogfeld "Azure-Webauftrag hinzufügen"](websites-dotnet-deploy-webjobs.md#configure)
 * [Erstellen geplanter WebJobs im Azure-Verwaltungsportal](web-sites-create-web-jobs.md#CreateScheduled)
+* [Hooking up a scheduler job to a WebJob](http://blog.davidebbo.com/2015/05/scheduled-webjob.html) (Einbinden eines Zeitplanungsauftrags in einen WebJob, in englischer Sprache)
+* [Scheduling Azure WebJobs with cron expressions](http://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/) (Planen von Azure WebJobs mit Cron-Ausdrücken, in englischer Sprache)
 
 ##<a name="debug"></a>Testen und Debuggen von WebJobs
 
@@ -90,7 +94,6 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von WebJ
 ##<a name="additional"></a>Zusätzliche WebJobs-Ressourcen
 
 * [Blogbeitrag zur allgemeinen Verfügbarkeit von Azure WebJobs von Magnus Mårtensson](http://magnusmartensson.com/azure-webjobs-ga)
-* [Dokumentation zu Webauftragseinstellungen in GitHub](https://github.com/projectkudu/kudu/wiki/Web-jobs).
 * [Ausführen von PowerShell-Webaufträgen in Azure App Service](http://blogs.msdn.com/b/nicktrog/archive/2014/01/22/running-powershell-web-jobs-on-azure-websites.aspx)
 * [Erhalten von Benachrichtigungen, wenn die von Azure ausgelösten Webaufträge abgeschlossen sind](http://blog.amitapple.com/post/2014/03/webjobs-notification/)
 * [Aufbewahrungsrichtlinie für einfache Web-App-Sicherung mit WebJobs](http://azure.microsoft.com/blog/2014/04/28/simple-web-site-backup-retention-policy-with-webjobs/)
@@ -139,4 +142,4 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von WebJ
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

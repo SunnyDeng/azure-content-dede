@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Verwenden von Access Control (.NET) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Access Control Service (ACS) in Ihrer Azure-Anwendung zur Authentifizierung von Benutzern beim Zugriff auf eine Webanwendung verwenden können." 
-	services="active-directory" 
-	documentationCenter=".net" 
-	authors="msmbaldwin" 
-	manager="mbaldwin" 
+<properties
+	pageTitle="Verwenden von Access Control (.NET) | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Access Control Service (ACS) in Ihrer Azure-Anwendung zur Authentifizierung von Benutzern beim Zugriff auf eine Webanwendung verwenden können."
+	services="active-directory"
+	documentationCenter=".net"
+	authors="msmbaldwin"
+	manager="mbaldwin"
 	editor=""/>
 
-<tags 
-	ms.service="active-directory" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="05/20/2015" 
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/02/2015" 
 	ms.author="mbaldwin"/>
 
 
@@ -78,7 +78,7 @@ Die folgende Abbildung zeigt, wie die ACS-Authentifizierung bei einer Webanwendu
 Damit Sie die in dieser Anleitung gestellten Aufgaben ausführen können, brauchen Sie Folgendes:
 
 -	Azure-Abonnement
--	Microsoft Visual Studio 2012 
+-	Microsoft Visual Studio 2012
 -	Identitäts- und Zugriffstool für Visual Studio 2012 (Download siehe [Identitäts- und Zugriffstool][])
 
 
@@ -87,7 +87,7 @@ Damit Sie die in dieser Anleitung gestellten Aufgaben ausführen können, brauch
 Damit Sie den Active Directory-Zugriffssteuerungsdienst in Azure verwenden können, müssen Sie einen Access Control-Namespace anlegen. Dieser Namespace stellt einen eindeutigen Bereich für die Adressierung von ACS-Ressourcen innerhalb Ihrer Anwendung bereit.
 
 1.  Melden Sie sich beim [Azure-Verwaltungsportal][] an (https://manage.WindowsAzure.com).
-    
+
 2.  Klicken Sie auf **Active Directory**.
 
 	![][1]
@@ -124,7 +124,7 @@ In diesem Schritt erstellen Sie eine ASP.NET MVC-Anwendung. In nachfolgenden Sch
             if (!String.IsNullOrEmpty(User.Identity.Name))
             {
                 name = User.Identity.Name;
-            }    
+            }
             <text>
             Hello, @Html.ActionLink(name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
                     @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
@@ -238,19 +238,19 @@ In diesem Abschnitt werden wir die Anwendung ändern, sodass die von ACS gesende
         <table>
             <tr>
                 <td>
-                    IsAuthenticated: 
+                    IsAuthenticated:
                 </td>
                 <td>
-                    @ViewBag.ClaimsIdentity.IsAuthenticated 
+                    @ViewBag.ClaimsIdentity.IsAuthenticated
                 </td>
             </tr>
             <tr>
                 <td>
-                    Name: 
-                </td>        
+                    Name:
+                </td>
                 <td>
                     @ViewBag.ClaimsIdentity.Name
-                </td>        
+                </td>
             </tr>
         </table>
         <h3>Claims from ClaimsIdentity</h3>
@@ -349,7 +349,7 @@ Sobald der Benutzer einen Identitätsanbieter ausgewählt hat, geht der Browser 
 ## Nächste Schritte
 
 Sie haben nun eine Webanwendung erstellt, die mit ACS integriert ist. Aber das ist erst der Anfang. Dieses Szenario können Sie noch weiter ausführen.
- 
+
 Sie können beispielsweise weitere Identitätsanbieter für diese vertrauende Seite hinzufügen oder Benutzern, die in Unternehmensverzeichnissen wie beispielsweise Active Directory-Domänendiensten registriert sind, die Anmeldung bei der Webanwendung gestatten.
 
 Außerdem können Sie mit zusätzlichen Regeln in Ihrem Namespace festlegen, welche Ansprüche an eine Anwendung gesendet und in der Geschäftslogik der Anwendung verarbeitet werden.
@@ -400,6 +400,5 @@ Wenn Sie die ACS-Funktionalität genauer erforschen und mit anderen Szenarien ex
   [18]: ./media/active-directory-dotnet-how-to-use-access-control/acsManagementService.png
   [19]: ./media/active-directory-dotnet-how-to-use-access-control/acsShowKey.png
   [20]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace2.png
- 
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO2-->

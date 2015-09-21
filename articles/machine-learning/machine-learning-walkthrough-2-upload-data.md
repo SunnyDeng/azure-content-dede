@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Schritt 2: Hochladen von Daten in ein Machine Learning-Experiment | Microsoft Azure" 
-	description="Exemplarische Vorgehensweise zur Entwicklung einer Vorhersagelösung – Schritt 2: Hochladen gespeicherter öffentlicher Daten in Azure Machine Learning Studio." 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="garyericson" 
-	manager="paulettm" 
+<properties
+	pageTitle="Schritt 2: Hochladen von Daten in ein Machine Learning-Experiment | Microsoft Azure"
+	description="Exemplarische Vorgehensweise zur Entwicklung einer Vorhersagelösung – Schritt 2: Hochladen gespeicherter öffentlicher Daten in Azure Machine Learning Studio."
+	services="machine-learning"
+	documentationCenter=""
+	authors="garyericson"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="machine-learning" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/10/2015" 
+<tags
+	ms.service="machine-learning"
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/08/2015" 
 	ms.author="garye"/>
 
 
@@ -25,8 +25,8 @@ Dies ist der zweite Teil der Anleitung [Entwickeln einer Vorhersagelösung mit A
 1.	[Erstellen eines Machine Learning-Arbeitsbereichs](machine-learning-walkthrough-1-create-ml-workspace.md)
 2.	**Hochladen vorhandener Daten**
 3.	[Erstellen eines neuen Experiments](machine-learning-walkthrough-3-create-new-experiment.md)
-4.	[Trainieren und Auswerten der Modelle](machine-learning-walkthrough-4-train-and-evaluate-models.md)
-5.	[Veröffentlichen des Webdiensts](machine-learning-walkthrough-5-publish-web-service.md)
+4.	[Trainieren und Bewerten der Modelle](machine-learning-walkthrough-4-train-and-evaluate-models.md)
+5.	[Bereitstellen des Webdiensts](machine-learning-walkthrough-5-publish-web-service.md)
 6.	[Zugreifen auf den Webdienst](machine-learning-walkthrough-6-access-web-service.md)
 
 ----------
@@ -70,7 +70,7 @@ Nach dem Konvertieren der Daten in das CSV-Format müssen Sie sie in Machine Lea
 
 ![Hochladen des DataSets][1]
 
- 
+
 Daraufhin werden die Daten in ein DataSet-Modul hochgeladen, das wir in einem Experiment verwenden können.
 
 Weitere Informationen zum Importieren von verschiedenen Datentypen in einem Experiment finden Sie unter [Importieren von Trainingsdaten in Azure Machine Learning Studio](machine-learning-import-data.md).
@@ -78,6 +78,5 @@ Weitere Informationen zum Importieren von verschiedenen Datentypen in einem Expe
 **Als Nächstes: [Erstellen eines neuen Experiments](machine-learning-walkthrough-3-create-new-experiment.md)**
 
 [1]: ./media/machine-learning-walkthrough-2-upload-data/upload1.png
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

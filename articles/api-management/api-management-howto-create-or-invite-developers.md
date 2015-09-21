@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/16/2015" 
+	ms.date="09/10/2015" 
 	ms.author="sdanie"/>
 
 # Verwalten von Benutzerkonten in Azure API Management
@@ -26,7 +26,7 @@ Klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**, 
 
 ![Herausgeberportal][api-management-management-console]
 
-Klicken Sie auf **Entwickler** im Menü **API Management** auf der linken Seite, und klicken Sie anschließend auf **Benutzer hinzufügen**.
+Klicken Sie auf **Benutzer** im Menü **API Management** auf der linken Seite, und klicken Sie anschließend auf **Benutzer hinzufügen**.
 
 ![Entwickler erstellen][api-management-create-developer]
 
@@ -42,7 +42,7 @@ Entwicklerkonten mit dem Status **Aktiv** können sämtliche APIs aufrufen, die 
 
 ## <a name="invite-developer"> </a>Einladen eines Entwicklers
 
-Klicken Sie auf **Entwickler** im Menü **API Management** auf der linken Seite, und klicken Sie anschließend auf **Benutzer einladen**, um einen Entwickler einzuladen.
+Klicken Sie auf **Benutzer** im Menü **API Management** auf der linken Seite, und klicken Sie anschließend auf **Benutzer einladen**, um einen Entwickler einzuladen.
 
 ![Entwickler einladen][api-management-invite-developer]
 
@@ -91,4 +91,4 @@ Nachdem Sie das Entwicklerkonto erstellt haben, können Sie das Konto zu Rollen 
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 [E-Mail-Vorlagen konfigurieren]: api-management-howto-configure-notifications.md#email-templates
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

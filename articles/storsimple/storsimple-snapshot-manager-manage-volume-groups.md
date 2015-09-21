@@ -1,10 +1,10 @@
 <properties 
-   pageTitle="Verwenden des StorSimple Snapshot Managers zum Erstellen und Verwalten von Volumegruppen | Microsoft Azure"
+   pageTitle="StorSimple Snapshot Manager-Volumegruppen | Microsoft Azure"
    description="Beschreibt, wie das MMC-Snap-In StorSimple Snapshot Manager zum Erstellen und Verwalten von Volumegruppen verwendet wird."
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
-   manager="adinah"
+   manager="carolz"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="07/09/2015"
+   ms.date="09/04/2015"
    ms.author="v-sharos" />
 
 # Verwenden des StorSimple Snapshot Manager zum Erstellen und Verwalten von Volumegruppen
@@ -142,4 +142,4 @@ Gehen Sie folgendermaßen vor, um eine Volumegruppe zu löschen.
 
 [Verwenden des StorSimple Snapshot Managers zum Erstellen und Verwalten von Sicherungsrichtlinien](storsimple-snapshot-manager-manage-backup-policies.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

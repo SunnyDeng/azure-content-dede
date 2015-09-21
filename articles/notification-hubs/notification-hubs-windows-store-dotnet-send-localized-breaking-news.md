@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Lernprogramm zu lokalisierten aktuellen Nachrichten in Notification Hubs"
-	description="Erfahren Sie mehr über die Verwendung von Azure Service Bus Notification Hubs zum Senden von Benachrichtigungen zu lokalisierten aktuellen Nachrichten."
+	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs zum Senden von Benachrichtigungen zu lokalisierten aktuellen Nachrichten."
 	services="notification-hubs"
 	documentationCenter="windows"
 	authors="wesmc7777"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/18/2015" 
+	ms.date="09/08/2015" 
 	ms.author="wesmc"/>
 
 # Verwenden von Notification Hubs zum Senden lokalisierter Nachrichten
@@ -230,4 +230,4 @@ Weitere Informationen zum Verwenden von Vorlagen finden Sie unter [Benachrichtig
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
 [Notification Hub-Informationen für Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

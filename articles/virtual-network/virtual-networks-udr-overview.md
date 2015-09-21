@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/09/2015"
+   ms.date="09/04/2015"
    ms.author="telmos" />
 
 # Benutzerdefinierte Routen und IP-Weiterleitung
@@ -90,4 +90,4 @@ Informationen zum Aktivieren der IP-Weiterleitung für einen virtuellen Computer
 - Erfahren Sie, wie Sie [Routen erstellen](../virtual-networks-udr-how-to#How-to-manage-routes) und Subnetzen zuordnen.
 - Erfahren Sie, wie Sie die [IP-Weiterleitung aktivieren](../virtual-networks-udr-how-to#How-to-Manage-IP-Forwarding) für einen virtuellen Computer, auf dem ein virtuelles Gerät ausgeführt wird. 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

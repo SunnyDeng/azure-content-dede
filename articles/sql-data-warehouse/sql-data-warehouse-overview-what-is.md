@@ -1,9 +1,9 @@
 <properties
-   pageTitle="Was ist SQL Data Warehouse | Microsoft Azure"
-   description="Verteilte Datenbank der Enterprise-Klasse in der Azure-Cloud, die bis zu mehreren Petabyte an relationalen und nicht relationalen Daten verarbeiten kann. Sie ist das branchenweit erste Cloud-Data Warehouse mit Funktionen zum Vergrößern, Verkleinern und Anhalten innerhalb weniger Sekunden."
+   pageTitle="Was ist Azure SQL Data Warehouse? | Microsoft Azure"
+   description="Verteilte Datenbank der Enterprise-Klasse, die mehrere Petabyte an relationalen und nicht relationalen Daten verarbeiten kann Sie ist das branchenweit erste Cloud-Data Warehouse mit Funktionen zum Vergrößern, Verkleinern und Anhalten innerhalb weniger Sekunden."
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="barbkess"
+   authors="twounder"
    manager="jhubbard"
    editor=""/>
 
@@ -13,17 +13,19 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="05/23/2015"
-   ms.author="barbkess;JRJ@BigBangData.co.uk;"/>
+   ms.date="09/09/2015"
+   ms.author="barbkess;twounder;JRJ@BigBangData.co.uk;"/>
 
-# Was ist SQL Data Warehouse?
+# Was ist Azure SQL Data Warehouse?
 
-SQL Data Warehouse ist eine verteilte Datenbank der Enterprise-Klasse in der Azure-Cloud, die bis zu mehreren Petabyte an relationalen und nicht relationalen Daten verarbeiten kann. Sie ist das branchenweit erste Cloud-Data Warehouse mit Funktionen zum Vergrößern, Verkleinern und Anhalten innerhalb weniger Sekunden.
+Azure SQL Data Warehouse ist eine verteilte Datenbank der Enterprise-Klasse, die mehrere Petabyte an relationalen und nicht relationalen Daten verarbeiten kann. Sie ist das branchenweit erste Cloud-Data Warehouse mit Funktionen zum Vergrößern, Verkleinern und Anhalten innerhalb weniger Sekunden mit bewährten Funktionen.
 
 SQL Data Warehouse kombiniert das Beste aus der relationalen Datenbankqualität der Enterprise-Klasse von SQL Server mit der Zuverlässigkeit des Cloud Computing. Weitere Informationen zu den wichtigsten Entwurfskomponenten von SQL Data Warehouse.
 
 ## Vergrößern, Verkleinern oder Anhalten von Compute-Ressourcen
-Mit SQL Data Warehouse werden Daten im Cloudspeicher gespeichert, während der Server unabhängig davon skaliert wird, sodass Sie nur die benötigte Abfrageleistung bezahlen müssen. Sie können den Server nun dynamisch bereitstellen, vergrößern, verkleinern und sogar anhalten. Nutzen Sie den Cloudspeicher, und wenden Sie Abfragen basierend auf dem jeweiligen Bedarf an. Im Pausezustand bezahlen Sie nur für den Speicher.
+SQL Data Warehouse führt getrennte Speicher- und Compute-Ressourcen ein, sodass diese unabhängig voneinander skaliert werden können. Mit Speicher auf Cloudebene und Azure Compute-Ressourcen ermöglicht SQL Data Warehouse die bedarfsbasierte Bezahlung der Abfrageleistung. Sie können nun innerhalb von Sekunden dynamisch bereitstellen, vergrößern, verkleinern und sogar anhalten, um Einblicke in Ihre Geschäftsanforderungen zu erwerben. Das Ändern des Umfangs der Computeleistung ist so einfach wie das Bewegen eines Schiebereglers nach links oder rechts.
+
+Dank der Möglichkeit zur vollständigen Kontrolle über den Umfang der Computeleistung unabhängig vom Speicher ermöglicht Ihnen SQL Data Warehouse das Anhalten der Computeressource. Dies wird beibehalten, die Computeressource wird zurück in den zentralen Pool verschoben, um Kosten zu sparen. Setzen Sie die Computeressource bei Bedarf einfach fort, und halten Sie Ihre Daten und Computeleistung für Ihre Arbeitslast zur Verfügung.
 
 > [AZURE.NOTE]Data Warehouse-Einheiten (DWUs) sind die Skalierungseinheiten für Compute-Ressourcen in SQL Data Warehouse.
 
@@ -76,4 +78,4 @@ Erfahren Sie mehr über die [Data Warehouse-Workload]. [Beispieldaten] [bereitst
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

@@ -7,16 +7,14 @@
 	manager="adinah" 
 	editor=""/>
 
-
 <tags 
 	ms.service="storage" 
 	ms.workload="storage" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/18/2015" 
+	ms.date="09/03/2015" 
 	ms.author="tamram"/>
-
 
 
 # Konfigurieren eines benutzerdefinierten Domänennamens für Blob-Daten in einem Azure-Speicherkonto
@@ -36,9 +34,9 @@ Die folgende Tabelle enthält Beispiel-URLs für den Zugriff auf Blob-Daten in e
 
 Ressourcentyp|URL-Formate
 ---|---
-Speicherkonto|**Standard-URL:** http://mystorageaccount.blob.core.windows.net<p> \*\*URL der benutzerdefinierten Domäne:\*\* http://www.contoso.com</td>
-Blob|**Standard-URL:** http://mystorageaccount.blob.core.windows.net/mycontainer/myblob<p> \*\*URL der benutzerdefinierten Domäne:\*\* http://www.contoso.com/mycontainer/myblob
-Stammcontainer|**Standard-URL:** http://mystorageaccount.blob.core.windows.net/myblob oder http://mystorageaccount.blob.core.windows.net/$root/myblob<p>\*\*URL der benutzerdefinierten Domäne:\*\* http://www.contoso.com/myblob oder http://www.contoso.com/$root/myblob
+Speicherkonto|**Standard-URL:** http://mystorageaccount.blob.core.windows.net<p> **URL der benutzerdefinierten Domäne:** http://www.contoso.com</td>
+Blob|**Standard-URL:** http://mystorageaccount.blob.core.windows.net/mycontainer/myblob<p> **URL der benutzerdefinierten Domäne:** http://www.contoso.com/mycontainer/myblob
+Stammcontainer|**Standard-URL:** http://mystorageaccount.blob.core.windows.net/myblob oder http://mystorageaccount.blob.core.windows.net/$root/myblob<p>**URL der benutzerdefinierten Domäne:** http://www.contoso.com/myblob oder http://www.contoso.com/$root/myblob
 
 ## Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto
 
@@ -119,4 +117,4 @@ Sie können z. B. den folgenden URI verwenden, um über eine benutzerdefinierte
 -   <a href="http://msdn.microsoft.com/library/azure/gg680307.aspx">Zuordnen von CDN-Inhalt (Content Delivery Network) zu einer benutzerdefinierten Domäne</a>
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

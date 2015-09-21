@@ -13,16 +13,22 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/02/2015"
+	ms.date="09/04/2015"
 	ms.author="mmercuri"/>
 
 # Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen
 
 In diesem Thema werden die bewährten Methoden zum Verwalten und Freigeben des Status innerhalb einer Azure-Ressourcen-Manager-Vorlage und über verknüpfte Vorlagen hinweg aufgeführt. Die in diesem Thema erläuterten Parameter und Variablen sind Beispiele für die Art von Objekten, die Sie definieren können, um Ihre Bereitstellungsanforderungen bequem zu organisieren. Anhand dieser Beispiele können Sie Ihre eigenen Objekte mit Eigenschaftswerten implementieren, die für Ihre Umgebung sinnvoll sind.
 
+Dieses Thema ist Teil eines umfangreicheren Whitepapers. Um den vollständigen Artikel zu lesen, laden Sie [World Class ARM Templates Considerations and Proven Practices](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf) herunter.
+
+
 ## Verwenden komplexer Objekte zum Freigeben des Status
 
-Zusätzlich zu einwertigen Parametern können Sie in einer Azure-Ressourcen-Manager-Vorlage komplexe Objekte als Parameter verwenden. Bei komplexen Objekten können Sie Sammlungen von Daten für einen bestimmten Bereich implementieren und auf diese verweisen, z. B. T-Shirt-Größen wie etwa M oder XL (zur Beschreibung eines virtuellen Computers), Netzwerkeinstellungen, Betriebssystemeinstellungen und Verfügbarkeitseinstellungen.
+Statt eine Vorlage zu bieten, die eine umfassende Flexibilität und unzählige Variationen zulässt, ist es empfehlenswert, bekannte Konfigurationen, die an T-Shirt-Größen wie S, M und L angelehnt sind, sowie eine Experimentierumgebung (auch Sandkasten genannt) zur Auswahl zu stellen. Weitere Beispiele für T-Shirt-Größen sind Produktangebote, wie z. B. Community Edition oder Enterprise Edition. In anderen Fällen gibt es möglicherweise workloadspezifische Konfigurationen einer Technologie wie z. B. MapReduce oder NoSQL.
+
+Mit komplexen Objekten können Sie Variablen erstellen, die Datensammlungen – bisweilen auch als „Eigenschaftenbehälter“ bezeichnet – enthalten und diese Daten zum Ausführen der Ressourcendeklaration in Ihrer Vorlage verwenden. Dieser Ansatz bietet geeignete, bekannte Konfigurationen mit unterschiedlichen Größen, die für Kunden vorkonfiguriert sind. Ohne bekannte Konfigurationen müssen Endkunden Clustergrößen selbst bestimmen, Ressourcenbeschränkungen der Plattform berücksichtigen und Berechnungen ausführen, um die resultierende Partitionierung von Speicherkonten und anderen Ressourcen (aufgrund von Clustergrößen- und Ressourcenbeschränkungen) zu bestimmen. Bekannte Konfigurationen ermöglichen Kunden das einfache Auswählen der richtigen Größe für eine bestimmte Bereitstellung. Zusätzlich zum Verbessern der Erfahrung für den Kunden ist eine kleine Anzahl bekannter Konfigurationen einfacher zu unterstützen und ermöglicht Ihnen das Erreichen einer höheren Dichte.
+
 
 Das folgende Beispiel zeigt, wie Sie Variablen definieren, die komplexe Objekte für die Darstellung von Datensammlungen enthalten. Die Sammlungen definieren Werte, die für die Größe des virtuellen Computers sowie Netzwerkeinstellungen, Betriebssystemeinstellungen und Verfügbarkeitseinstellungen verwendet werden.
 
@@ -146,7 +152,7 @@ Name | Wert | Beschreibung
 ---- | ----- | -----------
 location | Zeichenfolge aus einer eingeschränkten Liste von Azure-Regionen | Der Speicherort, an dem die Ressourcen bereitgestellt werden.
 storageAccountNamePrefix | String | Eindeutiger DNS-Name für das Speicherkonto, in dem die VM-Datenträger platziert werden.
-domainName | String | Domänenname der öffentlich zugänglichen Jumpbox-VM im Format **{domainName}.{location}.cloudapp.com**. Beispiel: **mydomainname.westus.cloudapp.azure.com**
+domainName | String | Domänenname des öffentlich zugänglichen virtuellen Jumpbox-Computers im Format **{domainName}.{location}.cloudapp.com**. Beispiel: **mydomainname.westus.cloudapp.azure.com**
 adminUsername | String | Benutzername für die virtuellen Computer
 adminPassword | String | Kennwort für die virtuellen Computer
 tshirtSize | Zeichenfolge aus einer eingeschränkten Liste von angebotenen T-Shirt-Größen | Die Größe der benannten Skalierungseinheit, die bereitgestellt werden soll. Beispielsweise "Small", "Medium", "Large".
@@ -205,7 +211,7 @@ In der Hauptvorlage wird diese Option als Parameter wie z. B *tshirtSize* angez
       }
     }
 
-Innerhalb der Hauptvorlage sind für jede Größe entsprechende Variablen vorhanden. Wenn "Small", "Medium" und "Large" als Größen verfügbar sind, enthält der Variablenabschnitt Variablen namens *tshirtSizeSmall*, *tshirtSizeMedium* und *tshirtSizeLarge*.
+Innerhalb der Hauptvorlage sind für jede Größe entsprechende Variablen vorhanden. Wenn „Small“, „Medium“ und „Large“ als Größen verfügbar sind, enthält der Variablenabschnitt Variablen namens *tshirtSizeSmall*, *tshirtSizeMedium* und *tshirtSizeLarge*.
 
 Wie das folgende Beispiel zeigt, definieren diese Variablen die Eigenschaften einer bestimmten T-Shirt-Größe. Jede Variable identifiziert den VM-Typ, die Datenträgergröße, die zu verknüpfende zugeordnete Ressourcenvorlage für die Skalierungseinheit, die Anzahl von Instanzen, die Speicherkontodetails und den Jumpboxstatus.
 
@@ -319,7 +325,7 @@ Das folgende Beispiel zeigt ein Objekt für *osSettings*:
 
 ##### machineSettings
 
-Die generierte Variable *machineSettings* ist ein komplexes Objekt, das verschiedene Hauptvariablen zum Erstellen eines neuen virtuellen Computers enthält: Administratorbenutzername und -kennwort, ein Präfix für die VM-Namen und einen Verweis auf ein Betriebssystemimage, wie unten gezeigt:
+Die generierte Variable *machineSettings* ist ein komplexes Objekt, das verschiedene Hauptvariablen zum Erstellen eines neuen virtuellen Computers enthält: Administratorbenutzername und -kennwort, ein Präfix für die Namen der virtuellen Computer und einen Verweis auf ein Betriebssystemimage, wie unten gezeigt:
 
     "machineSettings": {
         "adminUsername": "[parameters('adminUsername')]",
@@ -337,13 +343,13 @@ Beachten Sie, dass *osImageReference* die Werte aus der in der Hauptvorlage defi
 
 ##### vmScripts
 
-Das *vmScripts*-Objekt enthält Details zu den Skripts zum Herunterladen und Ausführen auf einer VM-Instanz, einschließlich der externen und internen Verweise. Externe Verweise schließen die Infrastruktur ein. Interne Verweise umfassen die installierte Software und die Konfiguration.
+Das *vmScripts*-Objekt enthält Details zu den Skripts zum Herunterladen und Ausführen auf einer virtuellen Computerinstanz, einschließlich der externen und internen Verweise. Externe Verweise schließen die Infrastruktur ein. Interne Verweise umfassen die installierte Software und die Konfiguration.
 
 Mithilfe der *scriptsToDownload*-Eigenschaft listen Sie die Skripts auf, die auf den virtuellen Computer heruntergeladen werden sollen.
 
 Wie das folgende Beispiel zeigt, enthält dieses Objekt auch Verweise auf Befehlszeilenargumente für verschiedene Arten von Aktionen. Zu diesen Aktionen gehört die Ausführung der Standardinstallation für jeden einzelnen Knoten, eine Installation, die nach der Bereitstellung aller Knoten ausgeführt wird, sowie ggf. die Ausführung weiterer vorlagenspezifischer Skripts.
 
-Dieses Beispiel stammt aus einer Vorlage zum Bereitstellen von MongoDB, wofür ein Arbiter erforderlich ist, um Hochverfügbarkeit sicherzustellen. *arbiterNodeInstallCommand* wurde zu *vmScripts* hinzugefügt, um den Arbiter zu installieren.
+Dieses Beispiel stammt aus einer Vorlage zum Bereitstellen von MongoDB, wofür ein Arbiter erforderlich ist, um Hochverfügbarkeit sicherzustellen. *arbiterNodeInstallCommand* wurde zu *vmScripts* hinzugefügt, um den Arbiter (Vermittlung) zu installieren.
 
 Sie finden die Variablen, die den spezifischen Text zum Ausführen des Skripts mit den richtigen Werten definieren, im Variablenabschnitt.
 
@@ -381,4 +387,4 @@ Innerhalb der Hauptvorlage können Sie diese Daten mit folgender Syntax verwende
 - [Authoring Azure Resource Manager Templates](resource-group-authoring-templates.md) (in englischer Sprache)
 - [Funktionen von Azure-Ressourcen- Manager-Vorlagen](resource-group-template-functions.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

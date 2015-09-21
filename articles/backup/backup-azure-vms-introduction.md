@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Einführung in die Sicherung von virtuellen Azure-Computern"
+	pageTitle="Einführung in die Sicherung von virtuellen Azure-Computern | Microsoft Azure"
 	description="Einführung in die Sicherung von virtuellen Computern in Azure mithilfe des Azure Backup-Diensts"
 	services="backup"
 	documentationCenter=""
@@ -7,16 +7,9 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags
-	ms.service="backup"
-	ms.workload="storage-backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
-	ms.author="aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/09/2015" ms.author="trinadhk";"aashishr";"jimpark"/>
 
-# Sichern von virtuellen Azure-Computern – Einführung
+# Sichern virtueller Azure-Computer
 
 Dieser Artikel enthält eine Einführung in die Verwendung von Microsoft Azure Backup zum Schutz Ihrer virtuellen Azure-Computer. In diesem Artikel lernen Sie Folgendes:
 
@@ -106,17 +99,19 @@ Erfahren Sie mehr über den [VM-Agent](https://go.microsoft.com/fwLink/?LinkID=3
 
 ## Einschränkungen
 
-- Die Sicherung virtueller IaaS-Computer (V2) wird nicht unterstützt.
+- Die Sicherung von virtuellen Computern auf Grundlage des Azure-Ressourcen-Managers (d. h. IaaS V2) wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mit mehr als 16 Datenträgern wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mithilfe von Storage-Premium wird nicht unterstützt.
+- Die Sicherung von virtuellen Computern mit mehreren reservierten IPs wird nicht unterstützt.
+- Die Sicherung von virtuellen Computern mit einer reservierten IP und ohne definierten Endpunkt wird nicht unterstützt.
 - Die Sicherung von virtuellen Computern mit mehreren NICs oder in einer Konfiguration mit Lastenausgleich wird nicht unterstützt.
 - Das Ersetzen eines vorhandenen virtuellen Computers während der Wiederherstellung wird nicht unterstützt. Löschen Sie zuerst den vorhandenen virtuellen Computer und alle zugeordneten Datenträger, und stellen Sie dann die Daten aus der Sicherung wieder her.
 - Regionsübergreifende Sicherungs- und Wiederherstellungsvorgänge werden nicht unterstützt.
-- Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird nur in bestimmten Regionen unterstützt. Überprüfen Sie die Liste der [unterstützten Regionen](http://azure.microsoft.com/regions/#services). Wenn die gewünschte Region derzeit nicht unterstützt wird, wird sie bei der Erstellung des Tresors in der Dropdownliste nicht angezeigt.
+- Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird in allen öffentlichen Azure-Regionen unterstützt. Dies ist eine [Liste der unterstützten Regionen](http://azure.microsoft.com/regions/#services). Wenn die gewünschte Region derzeit nicht unterstützt wird, wird sie bei der Erstellung des Tresors in der Dropdownliste nicht angezeigt.
 - Die Sicherung virtueller Computer mithilfe des Azure Backup-Diensts wird nur für bestimmte Betriebssystemversionen unterstützt:
   - **Linux**: Die Liste der von Azure unterstützten Verteilungen finden Sie [hier](../virtual-machines-linux-endorsed-distributions.md). Andere Bring-Your-Own-Linux-Verteilungen sollten ebenfalls funktionieren, sofern der VM-Agent auf dem virtuellen Computer verfügbar ist.
   - **Windows Server**: Versionen, die älter als Windows Server 2008 R2 sind, werden nicht unterstützt.
-- Das Wiederherstellen einer Domänencontroller-VM, die Teil einer Konfiguration mit mehreren Domänencontrollern ist, wird nur über PowerShell unterstützt. Informationen hierzu finden Sie unter [Wiederherstellen eines Multi-DC-Domänencontrollers](backup-azure-restore-vms.md#multiple-dcs).
+- Das Wiederherstellen einer Domänencontroller-VM, die Teil einer Konfiguration mit mehreren Domänencontrollern ist, wird nur über PowerShell unterstützt. Weitere Informationen hierzu finden Sie unter [Wiederherstellen von Multi-DC-Domänencontrollern](backup-azure-restore-vms.md#multiple-dcs).
 
 Wenn Sie Anregungen zu gewünschten Funktionen haben, [senden Sie uns Ihr Feedback](http://aka.ms/azurebackup_feedback).
 
@@ -124,9 +119,7 @@ Wenn Sie Anregungen zu gewünschten Funktionen haben, [senden Sie uns Ihr Feedba
 Informationen für Ihre ersten Schritte mit der Sicherung von virtuellen Computern:
 
 - [Sichern virtueller Computer](backup-azure-vms.md)
-
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
-
 - [Verwalten der Sicherung virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

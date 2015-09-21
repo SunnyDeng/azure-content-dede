@@ -1,24 +1,30 @@
 <properties
    pageTitle="Beispielkonfiguration für Azure-VM-Erweiterungen | Microsoft Azure"
-	description="Beispielkonfiguration für das Erstellen von Vorlagen mit Erweiterungen"
-	services="virtual-machines"
-	documentationCenter=""
-	authors="kundanap"
-	manager="timlt"
-	editor=""/>
+   description="Beispielkonfiguration für das Erstellen von Vorlagen mit Erweiterungen"
+   services="virtual-machines"
+   documentationCenter=""
+   authors="kundanap"
+   manager="timlt"
+   editor=""/>
 
 <tags
    ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="09/01/2015"
-	ms.author="kundanap"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/01/2015"
+   ms.author="kundanap"/>
 
 # Konfigurationsbeispiele für Windows-VM-Erweiterungen in Azure.
 
-Dieser Artikel enthält Beispielkonfigurationen der Azure-VM-Erweiterungen für Azure-IaaS-Windows-VMs. Klicken Sie <a href="https://msdn.microsoft.com/de-DE/library/azure/dn606311.aspx" target="_blank">hier</a>, um mehr über diese Erweiterungen zu erfahren.
+Dieser Artikel enthält Beispielkonfigurationen der Azure-VM-Erweiterungen für Azure-IaaS-Windows-VMs.
+
+Weitere Informationen zu diesen Erweiterungen finden Sie unter [Azure-VM-Erweiterungen](https://msdn.microsoft.com/library/azure/dn606311.aspx).
+
+Weitere Informationen zum Erstellen von Erweiterungsvorlagen finden Sie unter [Erstellen von Erweiterungsvorlagen](virtual-machines-extensions-authoring-templates.md).
+
+Dieser Artikel führt die erwarteten Konfigurationswerte für einige der Windows-Erweiterungen auf.
 
 ## Ausschnitt einer Beispielvorlage für VM-Erweiterungen.
 Im Folgenden ist ein Ausschnitt einer Vorlage für die Bereitstellung von Erweiterungen gezeigt:
@@ -268,6 +274,29 @@ Im weiteren Verlauf des Artikels sind Beispielkonfigurationen für Windows-VM-Er
             }
           }
 
+### Azure-Diagnose
+
+Klicken Sie hier, um eine Übersicht über die [Azure Diagnostics-Erweiterung](https://msdn.microsoft.com/library/azure/dn782207.aspx/) anzuzeigen.
+
+          {
+            "publisher": "Microsoft.Azure.Diagnostics",
+            "type": "IaaSDiagnostics",
+            "typeHandlerVersion": "1.4",
+            "settings": {
+              "xmlCfg": "[base64(variables('wadcfgx'))]",
+              "storageAccount": "[parameters('diagnosticsStorageAccount')]"
+            },
+            "protectedSettings": {
+            "storageAccountName": "[parameters('diagnosticsStorageAccount')]",
+            "storageAccountKey": "[listkeys(variables('accountid'), '2015-05-01-preview').key1]",
+            "storageAccountEndPoint": "https://core.windows.net"
+          }
+          }
+
 Ersetzen Sie die Versionsnummer in den oben gezeigten Beispielen durch die aktuelle Versionsnummer.
 
-<!---HONumber=September15_HO1-->
+Dies ist ein Beispiel für eine vollständige VM-Vorlage mit einer benutzerdefinierten Skripterweiterung.
+
+[Benutzerdefinierte Skripterweiterung auf einem virtuellen Windows-Computer](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/)
+
+<!---HONumber=Sept15_HO2-->

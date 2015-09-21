@@ -23,14 +23,9 @@ Mit dem Split-Merge-Tool wird das Hoch- und Herunterskalieren verwaltet. Sie kö
 
 ## Neuerungen bei Split-Merge
 
-Die neueste Version des Split-Merge-Tools bietet die folgenden Verbesserungen:
+Version 1.1.0 des Split-Merge-Tools bietet die Möglichkeit, Metadaten in der abgeschlossenen Anforderung automatisch zu bereinigen. Eine Konfigurationsoption steuert, wie lange diese Metadaten beibehalten werden, bevor sie entfernt werden.
 
-* .NET-APIs sind als Schnittstellen mit Split-Merge enthalten – die Webrolle ist jetzt optional 
-* Datums- und Uhrzeittypen werden jetzt für Sharding-Schlüssel unterstützt. 
-* Es werden jetzt Listen-Shardzuordnungen unterstützt. 
-* Bereichsgrenzen in Anforderungen können einfacher mit Bereichen verglichen werden, die in der Shard-Zuordnung gespeichert werden.
-* Es werden jetzt mehrere Workerrolleninstanzen unterstützt, um die Verfügbarkeit zu verbessern. 
-* Im Rahmen Ihres Split-Merge-Vorgangs gespeicherte Anmeldeinformationen werden jetzt im Ruhezustand verschlüsselt.
+Version 1.0.0 des Split-Merge-Tools bietet die folgenden Verbesserungen: * .NET-APIs sind als Schnittstellen mit Split-Merge enthalten – die Webrolle ist jetzt optional. * Datums- und Uhrzeittypen werden jetzt für Sharding-Schlüssel unterstützt. * Listen-Shardzuordnungen werden jetzt unterstützt. * Bereichsgrenzen in Anforderungen können einfacher mit Bereichen verglichen werden, die in der Shard-Zuordnung gespeichert werden. * Mehrere Workerrolleninstanzen werden jetzt unterstützt, um die Verfügbarkeit zu verbessern. * Im Rahmen Ihres Split-Merge-Vorgangs gespeicherte Anmeldeinformationen werden jetzt im Ruhezustand verschlüsselt.
 
 ## Aktualisieren
 
@@ -109,7 +104,7 @@ Die Tabellen "region" und "nation" sind als Verweistabellen definiert und werden
 
 ## Beziehen der Binärdateien des Diensts
 
-Die Binärdateien für den Split-Merge-Dienst werden von [NuGet](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/) bereitgestellt. Weitere Informationen zum Herunterladen der Binärdateien finden Sie in den Schritt-für-Schritt-Anleitungen im [Split-Merge-Tutorial](sql-database-elastic-scale-configure-deploy-split-and-merge.md).
+Die Binärdateien für den Split-Merge-Dienst werden von [NuGet](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge/) bereitgestellt. Weitere Informationen zum Herunterladen der Binärdateien finden Sie in den Schritt-für-Schritt-Anleitungen im [Split-Merge-Lernprogramm](sql-database-elastic-scale-configure-deploy-split-and-merge.md).
 
 ## Split-Merge-Benutzeroberfläche
 
@@ -243,4 +238,4 @@ Darüber hinaus ermöglicht die Eindeutigkeit des Shardingschlüssels als führe
 [3]: ./media/sql-database-elastic-scale-overview-split-and-merge/diagnostics-config.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

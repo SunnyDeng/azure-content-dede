@@ -1,20 +1,20 @@
 <properties
    pageTitle="Lernprogramm zur Verwendung von PolyBase in SQL Data Warehouse | Microsoft Azure"
-	description="Informationen zu PolyBase und Hinweise zur Verwendung in Data Warehouse-Szenarios."
-	services="sql-data-warehouse"
-	documentationCenter="NA"
-	authors="barbkess"
-	manager="jhubbard"
-	editor="jrowlandjones"/>
+   description="Informationen zu PolyBase und Hinweise zur Verwendung in Data Warehouse-Szenarios."
+   services="sql-data-warehouse"
+   documentationCenter="NA"
+   authors="barbkess"
+   manager="jhubbard"
+   editor="jrowlandjones"/>
 
 <tags
    ms.service="sql-data-warehouse"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-services"
-	ms.date="05/09/2015"
-	ms.author="sahajs;barbkess"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="09/02/2015"
+   ms.author="sahajs;barbkess"/>
 
 
 # Laden von Daten mit PolyBase
@@ -137,6 +137,8 @@ Die Definition einer externen Tabelle ähnelt der Definition einer relationalen 
 
 Die Option LOCATION gibt den Pfad für die Daten aus dem Stammverzeichnis der Datenquelle an. In diesem Beispiel befinden sich die Daten unter "wasbs://mycontainer@ test.blob.core.windows.net/path/Demo/". Alle Dateien für eine Tabelle müssen sich im gleichen logischen Ordner im Azure-Blob befinden.
 
+Sie haben auch die Option, Ablehnungsoptionen anzugeben (REJECT\_TYPE, REJECT\_VALUE, REJECT\_SAMPLE\_VALUE), die bestimmen, wie PolyBase fehlerhafte Datensätze verarbeitet, die von der externen Datenquelle empfangen werden.
+
 ```
 -- Creating external table pointing to file stored in Azure Storage
 CREATE EXTERNAL TABLE [ext].[CarSensor_Data] 
@@ -172,7 +174,7 @@ DROP EXTERNAL TABLE [ext].[CarSensor_Data]
 
 > [AZURE.NOTE]Wenn Sie eine externe Tabelle löschen, müssen Sie `DROP EXTERNAL TABLE` verwenden. `DROP TABLE` **kann nicht** verwendet werden.
 
-Referenzthema: [DROP EXTERNAL TABLE (Transact-SQL)][].
+Referenzthema: [DROP EXTERNAL TABLE (Transact-SQL)][]
 
 Es ist auch zu erwähnen, dass externe Tabellen sowohl in `sys.tables`- als auch insbesondere in `sys.external_tables`-Katalogsichten angezeigt werden.
 
@@ -197,21 +199,17 @@ Wenn Sie alle Ihre externen Tabellen zur neuen externen Datenquelle migriert hab
 ## Abfragen von Daten im Azure-Blob-Speicher
 Bei Abfragen für externe Tabellen wird einfach der Tabellenname verwendet, als handle es sich um relationale Tabellen.
 
-Hier sehen Sie eine Ad-hoc-Abfrage, in der Daten für Versicherungskunden, die in SQL Data Warehouse gespeichert sind, mit Daten für Kfz-Sensoren zusammengeführt werden, die im Azure-Blob-Speicher gespeichert sind. Das Ergebnis zeigt die Fahrer, die schneller als andere Fahrer fahren.
 
 ```
--- Join SQL Data Warehouse relational data with Azure storage data. 
-SELECT 
-      [Insured_Customers].[FirstName]
-,     [Insured_Customers].[LastName]
-,     [Insured_Customers].[YearlyIncome]
-,     [CarSensor_Data].[Speed]
-FROM  [dbo].[Insured_Customers] 
-JOIN  [ext].[CarSensor_Data]         ON [Insured_Customers].[CustomerKey] = [CarSensor_Data].[CustomerKey]
-WHERE [CarSensor_Data].[Speed] > 60 
-ORDER BY [CarSensor_Data].[Speed] DESC
+
+-- Query Azure storage resident data via external table. 
+SELECT * FROM [ext].[CarSensor_Data]
 ;
+
 ```
+
+> [AZURE.NOTE]Eine Abfrage für eine externe Tabelle kann mit folgendem Fehler fehlschlagen: *Abfrage abgebrochen – der maximale Ablehungsgrenzwert wurde beim Lesen aus einer externen Quelle erreicht*. Dies weist darauf hin, dass die externen Daten *fehlerhafte* Datensätze enthalten. Ein Datensatz gilt als fehlerhaft, wenn die tatsächlichen Datentypen/Anzahl der Spalten nicht den Spaltendefinitionen der externen Tabelle entsprechen, oder wenn die Daten nicht im angegebenen Format der externen Datei vorliegen. Um dieses Problem zu beheben, stellen Sie sicher, dass die Formatdefinitionen der externen Tabelle und Datei richtig und Ihre externen Daten diesen Definitionen entsprechen. Für den Fall, dass eine Teilmenge der Datensätze für externe Daten fehlerhaft sind, können Sie diese Datensätze für Ihre Abfragen mit den Ablehnungsoptionen in „CREATE EXTERNAL TABLE DDL“ ablehnen.
+
 
 ## Laden von Daten aus dem Azure-Blob-Speicher
 In diesem Beispiel werden Daten aus dem Azure-Blob-Speicher in die SQL Data Warehouse-Datenbank geladen.
@@ -327,4 +325,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [CREATE CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms189522.aspx
 [DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms189450.aspx
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

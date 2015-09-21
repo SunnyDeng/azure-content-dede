@@ -7,11 +7,15 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 
 		azure config mode arm
 
+	Hier ist die erwartete Ausgabe des obigen Befehls:
+
 		info:    New mode is arm
 
 3. Führen Sie bei Bedarf **azure group create** aus, um eine neue Ressourcengruppe zu erstellen, wie unten dargestellt. Beachten Sie die Ausgabe des Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md/#resource-groups).
 
 		azure group create -n TestRG -l centralus
+
+	Hier ist die erwartete Ausgabe des obigen Befehls:
 
 		info:    Executing command group create
 		+ Getting resource group TestRG
@@ -28,9 +32,11 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 	- **-n (oder --name)**. Name für die neue Ressourcengruppe. In diesem Szenario *TestRG*.
 	- **-l (oder --location)**. Azure-Region, in der die neue Ressourcengruppe erstellt wird. In diesem Szenario *centralus*.
 
-4. Führen Sie den Befehl **azure network vnet create** aus, um ein VNet und ein Subnetz zu erstellen, wie unten dargestellt. Beachten Sie die Ausgabe des CLI-Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
-5. 
+4. Führen Sie den Befehl **azure network vnet create** aus, um ein VNet und ein Subnetz zu erstellen, wie unten dargestellt.
+
 		azure network vnet create -g TestRG -n TestVNet -a 192.168.0.0/16 -l centralus
+
+	Hier ist die erwartete Ausgabe des obigen Befehls:
 
 		info:    Executing command network vnet create
 		+ Looking up virtual network "TestVNet"
@@ -45,7 +51,7 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 		data:      192.168.0.0/16
 		info:    network vnet create command OK
 
-	- **-g (oder --resource-group)**. Name der Ressourcengruppe, in der das neue VNet erstellt wird. In diesem Szenario *TestRG*.
+	- **-g (or --resource-group)**. Name der Ressourcengruppe, in der das neue VNet erstellt wird. In diesem Szenario *TestRG*.
 	- **-n (oder --name)**. Name des zu erstellenden VNet. In diesem Szenario *TestVNet*.
 	- **-a (oder --address-prefixes)**. Liste der für den VNet-Adressraum verwendeten CIDR-Blöcke. In diesem Szenario *192.168.0.0/16*.
 	- **-l (oder --location)**. Azure-Region, in der das VNet erstellt wird. In diesem Szenario *centralus*.
@@ -53,6 +59,8 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 5. Führen Sie den Befehl **azure network vnet subnet create** aus, um ein Subnetz zu erstellen, wie unten dargestellt. Beachten Sie die Ausgabe des Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
 
 		azure network vnet subnet create -g TestRG -e TestVNet -n FrontEnd -a 192.168.1.0/24
+
+	Hier ist die erwartete Ausgabe des obigen Befehls:
 
 		info:    Executing command network vnet subnet create
 		+ Looking up the subnet "FrontEnd"
@@ -66,7 +74,7 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 		data:
 		info:    network vnet subnet create command OK
 
-	- **-t (oder --vnet-name**. Name des VNet, in dem das Subnetz erstellt wird. In diesem Szenario *TestVNet*.
+	- **-e (oder --vnet-name**. Name des VNet, in dem das Subnetz erstellt wird. In diesem Szenario *TestVNet*.
 	- **-n (oder --name)**. Name des neuen Subnetzes. In diesem Szenario *FrontEnd*.
 	- **-a (oder --address-prefix)**. Subnetz-CIDR-Block. In diesem Szenario *192.168.1.0/24*.
 
@@ -77,6 +85,8 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 4. Führen Sie den Befehl **azure network vnet show** aus, um die Eigenschaften des neuen VNet anzuzeigen, wie unten dargestellt.
 
 		azure network vnet show -g TestRG -n TestVNet
+
+	Hier ist die erwartete Ausgabe des obigen Befehls:
 
 		info:    Executing command network vnet show
 		+ Looking up virtual network "TestVNet"
@@ -96,4 +106,4 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 		data:
 		info:    network vnet show command OK
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

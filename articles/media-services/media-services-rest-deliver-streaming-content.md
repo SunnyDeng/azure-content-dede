@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="09/07/2015"  
 	ms.author="juliako"/>
 
 
@@ -176,6 +176,15 @@ Beispiel:
         None = 0,
         Sas = 1,
         OnDemandOrigin = 2,
-    } 
+    }
 
-<!---HONumber=August15_HO7-->
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+ 
+
+<!---HONumber=Sept15_HO2-->

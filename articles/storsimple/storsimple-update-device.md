@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/19/2015"
+   ms.date="09/04/2015"
    ms.author="v-sharos" />
 
-# Aktualisieren von StorSimple-Geräten
+# Aktualisieren von Geräten der StorSimple 8000-Serie
 
 ## Übersicht
 
@@ -119,4 +119,4 @@ Wenn ein Gerät auf die Werkseinstellungen zurückgesetzt wird, gehen alle Updat
 [Informationen zum Verwenden von Windows PowerShell für StorSimple zum Verwalten des StorSimple-Geräts](storsimple-windows-powershell-administration.md).
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

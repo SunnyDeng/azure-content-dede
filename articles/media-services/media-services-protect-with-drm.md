@@ -12,8 +12,8 @@
 	ms.workload="media"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.date="08/14/2015"
+	ms.topic="get-started-article" 
+	ms.date="09/07/2015"
 	ms.author="juliako"/>
 
 #Verwenden der dynamischen PlayReady DRM-Verschlüsselung und des Lizenzübermittlungsdiensts
@@ -579,4 +579,12 @@ Sie können den [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer
 		    }
 		}
 
-<!---HONumber=August15_HO9-->
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+<!---HONumber=Sept15_HO2-->

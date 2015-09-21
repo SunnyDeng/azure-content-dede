@@ -1,6 +1,7 @@
 <properties
 	pageTitle="Was ist Hadoop in HDInsight?: Big Data-Analyse in der Cloud | Microsoft Azure"
 	description="Eine Einführung in Hadoop-Komponenten in der Cloud in HDInsight. Erfahren Sie, wie HDInsight Hadoop-Cluster nutzt, um Big Data zu verwalten, zu analysieren und dazugehörige Berichte zu erstellen."
+	keywords="big data,big data analysis,hadoop,introduction to hadoop,what is hadoop"
 	services="hdinsight"
 	documentationCenter=""
 	authors="cjgronlund"
@@ -13,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/27/2015"
+   ms.date="09/03/2015"
    ms.author="cgronlun"/>
 
 
@@ -58,9 +59,9 @@ Kategorie | Hadoop unter Linux | Hadoop unter Windows
 
 
 
-### Hadoop, HBase, Storm und angepasste Cluster
+### Hadoop, HBase, Storm, Spark und angepasste Cluster
 
-HDInsight bietet Clusterkonfigurationen für Hadoop, HBase oder Storm. Ebenso können Sie <a href="http://azure.microsoft.com/documentation/articles/hdinsight-hadoop-customize-cluster/" target="_blank">Cluster mit Skriptaktionen anpassen</a>.
+HDInsight bietet Clusterkonfigurationen für Hadoop, HBase, Storm und Spark. Ebenso können Sie <a href="http://azure.microsoft.com/documentation/articles/hdinsight-hadoop-customize-cluster/" target="_blank">Cluster mit Skriptaktionen anpassen</a>.
 
 * **Hadoop** (die "Abfrage"-Arbeitslast): Bietet eine zuverlässige Datenspeicherung mithilfe von [HDFS](#HDFS) und ein einfaches [MapReduce](#mapreduce)-Programmiermodell zum parallelen Verarbeiten und Analysieren von Daten.
 
@@ -68,6 +69,7 @@ HDInsight bietet Clusterkonfigurationen für Hadoop, HBase oder Storm. Ebenso k�
 
 * **<a  target="_blank" href="https://storm.incubator.apache.org/">Apache Storm</a>** (die "Stream"-Arbeitslast): Ein verteiltes Echtzeitberechnungssystem für die schnelle Verarbeitung großer Datenströme. Storm wird als verwalteter Cluster in HDInsight angeboten. Siehe [Analysieren von Echtzeit-Sensordaten mit Storm und Hadoop](hdinsight-storm-sensor-data-analysis.md).
 
+* **<a  target="_blank" href="http://spark.apache.org/">Apache Spark</a>**: Ein Open-Source-Framework für die Parallelverarbeitung, das die arbeitsspeicherinterne Verarbeitung unterstützt, um die Leistung von Anwendungen zur Analyse von großen Datenmengen zu steigern. Weitere Informationen finden Sie unter [Apache Spark für Azure HDInsight](hdinsight-apache-spark-overview.md).
 
 ## Aus welchen Komponenten besteht Hadoop?
 
@@ -246,4 +248,4 @@ Wenden Sie Big Data-Analysen auf Daten Ihres Unternehmens an, um sich Einblicke 
 [zookeeper]: http://zookeeper.apache.org/
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

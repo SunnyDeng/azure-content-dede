@@ -13,12 +13,12 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/23/2015"
+   ms.date="09/09/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Erste Schritte: Bereitstellen von SQL Data Warehouses #
 
-Dieser Artikel bietet einen schnellen Einstieg in die Bereitstellung eines SQL Data Warehouse in Azure. In dieser Anleitung werden die folgenden Aufgaben ausgeführt:
+Dieser Artikel stellt einen Leitfaden für die Bereitstellung eines SQL Data Warehouse in Azure dar. In dieser Anleitung werden die folgenden Aufgaben ausgeführt:
 
 1. Erstellen einer neuen SQL Data Warehouse-Datenbank
 2. Konfigurieren eines neuen logischen Servers
@@ -27,7 +27,7 @@ Dieser Artikel bietet einen schnellen Einstieg in die Bereitstellung eines SQL 
 ## Kostenlose Azure-Testversion ##
 Sie benötigen ein Azure-Abonnement, um die folgenden Aufgaben abzuschließen. Wenn Sie noch keinen Zugriff auf ein Azure-Abonnement haben, müssen Sie dies als ersten Schritt erledigen.
 
-Sie können Zugriff auf eine [kostenlose Testversion][] erhalten, mit der Sie alle Dienste in Azure, einschließlich SQL Data Warehouse, testen können.
+Sie können eine [kostenlose Testversion][] erhalten, mit der Sie alle Azure-Dienste, einschließlich SQL Data Warehouse, testen können.
 
 
 ## Anmelden beim Azure-Portal ##
@@ -76,7 +76,7 @@ Die erste Konfiguration ist die Benennung der Datenbank.
 
 Die Leistungsoption ist sehr *wichtig*. Über diesen Schieberegler kann die Leistung von SQL Data Warehouse skaliert werden. Sie können die Leistung zu einem beliebigen Zeitpunkt erhöhen oder verringern – nicht nur während der Konfiguration von Data Warehouse. Je weiter Sie den Regler nach rechts schieben, desto mehr Ressourcen stehen zur Verfügung. Wenn diese Ressourcen nicht mehr benötigt werden, können Sie den Schieberegler sofort wieder zurückschieben, um Kosten zu sparen. In SQL Data Warehouse können Sie Ihr Leistungsprofil bei Bedarf ändern, ohne es neu erstellen oder Daten verschieben zu müssen.
 
-- Verwenden Sie den Schieberegler nun, um zu sehen, wie die Data Warehouse-Einheiten zunehmen, während Sie den Regler nachts rechts bewegen, und sich verringern, wenn Sie ihn wieder nach links schieben.
+- Verwenden Sie den Schieberegler nun, um zu sehen, wie die Data Warehouse-Einheiten (DWU) zunehmen, während Sie den Regler nachts rechts bewegen, und sich verringern, wenn Sie ihn wieder nach links schieben.
 
 - Vor dem Beenden dieses Schritts sollten Sie sicherstellen, dass sich der Schieberegler wieder auf der linken Seite befindet. Ihr neues Data Warehouse ist klein, sodass wir nicht sehr viele Ressourcen benötigen. Bewahren Sie sich die Ressourcen für den verbleibenden Testzeitraum auf.
 
@@ -151,12 +151,10 @@ Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen 
 
 ## Nächste Schritte
 
-Nachdem der SQL Data Warehouse-Dienst bereitgestellt wurde, können wir jetzt zu dessen Verwendung übergehen.
-
-In den nächsten Schritten lernen Sie daher Folgendes:
+Nachdem der SQL Data Warehouse-Dienst bereitgestellt wurde, können wir jetzt zu dessen Verwendung übergehen. Nächste Schritte:
 
 1. Data Warehouse – [Verbinden und Abfragen][].
-2. Laden der [Beispieldaten].
+2. Laden von [Beispieldaten].
 
 <!--Image references-->
 
@@ -166,7 +164,7 @@ In den nächsten Schritten lernen Sie daher Folgendes:
 [Beispieldaten]: ./sql-data-warehouse-get-started-load-samples.md
 
 <!--External links-->
-[kostenlose Testversion]: https://azure.microsoft.com/de-de/pricing/free-trial/
+[kostenlose Testversion]: https://azure.microsoft.com/de-DE/pricing/free-trial/
 [Azure-Portal]: https://portal.azure.com/
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

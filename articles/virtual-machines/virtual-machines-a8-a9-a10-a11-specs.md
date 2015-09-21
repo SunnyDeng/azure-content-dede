@@ -5,14 +5,15 @@
  documentationCenter=""
  authors="dlepow"
  manager="timlt"
- editor=""/>
+ editor=""
+ tags="azure-resource-manager, azure-service-management"/>
 <tags
 ms.service="virtual-machines"
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="infrastructure-services"
- ms.date="07/22/2015"
+ ms.date="09/02/2015"
  ms.author="danlep"/>
 
 # Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen
@@ -53,7 +54,7 @@ Ethernet mit 10 GBit/s | Verbindung mit Azure-Diensten (z. B. Azure Storage un
 Back-End mit 32 GBit/s, RDMA-fähig | Ermöglicht Anwendungskommunikation mit geringer Latenz und hohem Durchsatz zwischen Instanzen in einem einzelnen Clouddienst oder in einer einzelnen Verfügbarkeitsgruppe Für MPI-Verkehr reserviert.
 
 
->[AZURE.IMPORTANT]Auf virtuellen A8- und A9-Computern, auf denen Linux in IaaS ausgeführt wird, ist der Zugriff auf das RDMA-Netzwerk derzeit nur über Anwendungen möglich, die Azure Linux RDMA und Intel MPI Library 5.0 unter SUSE Linux Enterprise Server 12 (SLES 12) verwenden. In A8- und A9-Instanzen, auf denen Windows Server in IaaS oder PaaS ausgeführt wird, ist der Zugriff auf das RDMA-Netzwerk derzeit nur über Anwendungen möglich, die die Microsoft Network Direct-Schnittstelle verwenden. Informationen zu weiteren Anforderungen finden Sie unter [Zugreifen auf das RDMA-Netzwerk](#access-the-rdma-network) in diesem Artikel.
+>[AZURE.IMPORTANT]Auf virtuellen A8- und A9-Computern, auf denen Linux ausgeführt wird, ist der Zugriff auf das RDMA-Netzwerk derzeit nur über Anwendungen möglich, die Azure Linux RDMA und Intel MPI Library 5 unter SUSE Linux Enterprise Server 12 (SLES 12) verwenden. In A8- und A9-Instanzen, auf denen Windows Server ausgeführt wird, ist der Zugriff auf das RDMA-Netzwerk derzeit nur über Anwendungen möglich, die die Microsoft Network Direct-Schnittstelle verwenden. Informationen zu weiteren Anforderungen finden Sie unter [Zugreifen auf das RDMA-Netzwerk](#access-the-rdma-network) in diesem Artikel.
 
 A10- und A11-Instanzen besitzen einen einzelnen 10-GBit/s-Ethernet-Netzwerkadapter, der mit den Azure-Diensten und dem Internet verbunden ist.
 
@@ -63,7 +64,7 @@ A10- und A11-Instanzen besitzen einen einzelnen 10-GBit/s-Ethernet-Netzwerkadapt
 
 * **Kernnutzungskontingent**: Das standardmäßige Kernnutzungskontingent Ihres Azure-Abonnements (20 Kerne) muss unter Umständen erhöht werden, da es für viele Szenarien mit 8 oder 16 Kernen nicht ausreicht. Für anfängliche Tests sollten Sie eine Erhöhung des Kontingents auf 100 Kerne in Erwägung ziehen. Erstellen Sie hierzu ein kostenloses Supportticket (siehe [Grundlegendes zu Azure-Einschränkungen und -Steigerungen](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)).
 
->[AZURE.NOTE]Azure-Kontingente sind Angebotsbeschränkungen, keine Kapazitätsgarantien. Nur verwendete Kerne werden auch in Rechnung gestellt.
+    >[AZURE.NOTE]Azure-Kontingente sind Angebotsbeschränkungen, keine Kapazitätsgarantien. Nur verwendete Kerne werden auch in Rechnung gestellt.
 
 * **Affinitätsgruppe**: Für die meisten neuen Bereitstellungen werden Affinitätsgruppen derzeit nicht empfohlen. Wenn Sie jedoch eine Affinitätsgruppe verwenden, die Instanzen einer anderen Größe als A8 bis A11 enthält, können Sie sie nicht für die Instanzen A8 bis A11 verwenden (und umgekehrt).
 
@@ -75,7 +76,7 @@ A10- und A11-Instanzen besitzen einen einzelnen 10-GBit/s-Ethernet-Netzwerkadapt
 
 ### Überlegungen zu HPC Pack und Linux
 
-[HPC Pack](https://technet.microsoft.com/library/jj899572.aspx) ist die kostenlose HPC-Cluster- und Auftragsverwaltungslösung von Microsoft für Windows. HPC Pack unterstützt ab HPC Pack 2012 R2 Update 2 das Ausführen von mehreren Linux-Distributionen auf Compute-Knoten, die auf virtuellen Azure-Computern bereitgestellt wurden und von einem Windows Server-Hauptknoten verwaltet werden. Mit der neuesten Version von HPC Pack können Sie einen Linux-basierten Cluster bereitstellen, der MPI-Anwendungen mit Zugriff auf das RDMA-Netzwerk in Azure ausführen kann. Weitere Informationen finden Sie in der [Dokumentation zu HPC Pack](http://go.microsoft.com/fwlink/?LinkId=617894).
+[HPC Pack](https://technet.microsoft.com/library/jj899572.aspx) ist die kostenlose HPC-Cluster- und Auftragsverwaltungslösung von Microsoft für Windows. HPC Pack unterstützt ab HPC Pack 2012 R2 Update 2 das Ausführen von mehreren Linux-Distributionen auf Compute-Knoten, die auf virtuellen Azure-Computern bereitgestellt wurden und von einem Windows Server-Hauptknoten verwaltet werden. Mit der neuesten Version von HPC Pack können Sie einen Linux-basierten Cluster bereitstellen, der MPI-Anwendungen mit Zugriff auf das RDMA-Netzwerk in Azure ausführen kann. Weitere Informationen finden Sie unter [Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster-hpcpack.md).
 
 ### Überlegungen zu HPC Pack und Windows
 
@@ -87,7 +88,7 @@ Weitere Informationen und Prüflisten zum Bereitstellen und Verwenden der rechen
 
 ### Zugriff von virtuellen Linux A8- und A9-Computern
 
-In einem einzelnen Clouddienst oder einer einzelnen Verfügbarkeitsgruppe können die A8- und A9-Instanzen auf das RDMA-Netzwerk in Azure zugreifen, um MPI-Anwendungen auszuführen, die für die Kommunikation zwischen Instanzen die Linux-RDMA-Treiber verwenden. Azure Linux RDMA wird derzeit nur mit [Intel MPI Library 5.0](https://software.intel.com/de-de/intel-mpi-library/) unterstützt.
+In einem einzelnen Clouddienst oder einer einzelnen Verfügbarkeitsgruppe können die A8- und A9-Instanzen auf das RDMA-Netzwerk in Azure zugreifen, um MPI-Anwendungen auszuführen, die für die Kommunikation zwischen Instanzen die Linux-RDMA-Treiber verwenden. Azure Linux RDMA wird derzeit nur mit [Intel MPI Library 5](https://software.intel.com/de-DE/intel-mpi-library/) unterstützt.
 
 >[AZURE.NOTE]Azure Linux RDMA-Treiber können derzeit nicht über Treibererweiterungen installiert werden. Sie sind nur bei Verwendung des RDMA-fähigen SLES 12-Image aus dem Azure Marketplace verfügbar.
 
@@ -96,7 +97,7 @@ In der folgenden Tabelle sind die Voraussetzungen für den Zugriff von Linux-MPI
 Voraussetzung | Virtuelle Computer (IaaS)
 ------------ | -------------
 Betriebssystem | SLES 12-HPC-Image aus dem Azure Marketplace
-MPI | Intel MPI Library 5.0
+MPI | Intel MPI Library 5
 
 ### Zugriff von Windows-A8- und A9-Instanzen
 
@@ -108,10 +109,10 @@ Weitere Informationen zu den Voraussetzungen für MPI-Anwendungen zum Zugreifen 
 Voraussetzung | Virtuelle Computer (IaaS) | Clouddienste (PaaS)
 ---------- | ------------ | -------------
 Betriebssystem | Windows Server 2012 R2 oder Windows Server 2012 | Gastbetriebssystemfamilie Windows Server 2012 R2, Windows Server 2012 oder Windows Server 2008 R2
-MPI | MS-MPI 2012 R2 oder höher, entweder eigenständig oder installiert über HPC Pack 2012 R2 oder höher<br/><br/>Intel MPI Library 5.0 | MS-MPI 2012 R2 oder höher, installiert über HPC Pack 2012 R2 oder höher<br/><br/>Intel MPI Library 5.0
+MPI | MS-MPI 2012 R2 oder höher, entweder eigenständig oder installiert über HPC Pack 2012 R2 oder höher<br/><br/>Intel MPI Library 5 | MS-MPI 2012 R2 oder höher, installiert über HPC Pack 2012 R2 oder höher<br/><br/>Intel MPI Library 5
 
 
->[AZURE.NOTE]Für IaaS-Szenarien muss den virtuellen Computern die [HpcVmDrivers-Erweiterung](https://msdn.microsoft.com/library/azure/dn690126.aspx) hinzugefügt werden, sodass die für RDMA-Verbindungen benötigten Windows-Treiber installiert werden.
+>[AZURE.NOTE]Für IaaS-Szenarien muss den virtuellen Computern die HpcVmDrivers-Erweiterung hinzugefügt werden, sodass die für RDMA-Verbindungen benötigten Windows-Netzwerkgerätetreiber installiert werden. Je nach Bereitstellungsmethode wird die HpcVmDriversDrivers-Erweiterung zu einem virtuellen Computer der Größe A8 oder A9 automatisch hinzugefügt, oder Sie fügen sie selbst hinzu. Informationen zum Hinzufügen der Erweiterung finden Sie unter [Verwalten von Erweiterungen für virtuelle Computer](virtual-machines-extensions-install.md).
 
 
 ## Weitere wichtige Informationen
@@ -130,4 +131,4 @@ MPI | MS-MPI 2012 R2 oder höher, entweder eigenständig oder installiert übe
 * Informationen zum Bereitstellen und Konfigurieren eines Linux-basierten Clusters mit A8- und A9-Instanzen für den Zugriff auf das Azure-RDMA-Netzwerk finden Sie unter [Einrichten eines Linux RDMA-Clusters zum Ausführen von MPI-Anwendungen](virtual-machines-linux-cluster-rdma.md).
 * Informationen zu ersten Schritten bei der Bereitstellung und Verwendung von A8- und A9-Instanzen mit HPC Pack unter Windows finden Sie unter [Rechenintensive A8- und A9-Instanzen: Schnellstart mit HPC Pack](https://msdn.microsoft.com/library/azure/dn594431.aspx) sowie unter [Ausführen von MPI-Anwendungen auf A8- und A9-Instanzen](https://msdn.microsoft.com/library/azure/dn592104.aspx).
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

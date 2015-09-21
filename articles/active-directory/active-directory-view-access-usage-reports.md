@@ -76,7 +76,7 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 |	Benutzer mit anomalen Anmeldeaktivitäten | | |	✓ |
 |	Benutzer mit kompromittierten Anmeldeinformationen | | |	✓ |
 |	**Aktivitätsprotokolle**
-|	Überwachungsbericht |	✓ | | |
+|	Überwachungsbericht |	✓ |	✓ |	✓ |
 |	Kennwortzurücksetzungsaktivität | | |	✓ |
 |	Aktivität "Registrierung für Zurücksetzen des Kennworts" | | |	✓ |
 |	Self-Service-Gruppenaktivität | | |	✓ |
@@ -276,4 +276,4 @@ Weitere Informationen zu den Benachrichtigungen für Berichte in Azure AD finde
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

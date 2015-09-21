@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Azure Automation DSC – Übersicht"
-	description="Eine Übersicht über Azure Automation Desired State Configuration (DSC), die verwendeten Begriffe und bekannte Fehler."
-	services="automation"
-	documentationCenter="dev-center-name"
-	authors="coreyp-at-msft"
-	manager="stevenka"
-	editor="tysonn"/>
+   pageTitle="Azure Automation DSC – Übersicht" 
+   description="Eine Übersicht über Azure Automation Desired State Configuration (DSC), die verwendeten Begriffe und bekannte Fehler." 
+   services="automation" 
+   documentationCenter="dev-center-name" 
+   authors="coreyp-at-msft" 
+   manager="stevenka" 
+   editor="tysonn"/>
 
 <tags
    ms.service="automation"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="powershell"
-	ms.workload="TBD"
-	ms.date="08/18/2015"
-	ms.author="coreyp"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="powershell"
+   ms.workload="TBD" 
+   ms.date="09/04/2015"
+   ms.author="coreyp"/>
 
 # Azure Automation DSC – Übersicht #
 
@@ -193,6 +193,12 @@ Azure Automation DSC stellt für die Verwaltung von DSC-Kompilierungsaufträgen 
 -	`Get-AzureAutomationDscCompilationJobOutput`
 -	`Start-AzureAutomationDscCompilationJob`
 
+
+##Azure Automation DSC – Lebenszyklus##
+Der Weg von einem leeren Automation-Konto zu einer verwalteten und ordnungsgemäß konfigurierten Knotengruppe umfasst eine Reihe von Verfahren zum Definieren von Konfigurationen, zum Umwandeln dieser Konfigurationen in Knotenkonfigurationen und zum Integrieren von Knoten und Knotenkonfigurationen in Azure Automation DSC. Das folgende Diagramm veranschaulicht den Azure Automation DSC-Lebenszyklus:
+
+![alt text](./media/automation-dsc-overview/DSCLifecycle.png)
+
 ##Häufige / bekannte Probleme:##
 
 - Da sich Azure Automation DSC in der Vorschau befindet, müssen Sie sich bei der ersten Verwendung dieses Features mithilfe von Azure PowerShell-Cmdlets oder im Azure-Vorschauportal registrieren. Sie können die Registrierung durch Aufruf der folgenden zwei Cmdlets durchführen:
@@ -226,4 +232,4 @@ Azure Automation DSC stellt für die Verwaltung von DSC-Kompilierungsaufträgen 
 
 - Für in Azure Automation DSC integrierte DSC-Knoten wird anfänglich der Status „Kompatibel“ angezeigt, auch wenn sie eigentlich nicht mit der DSC-Knotenkonfiguration kompatibel sind, der sie zugeordnet sind. Nachdem ein Knoten seinen ersten Pull-Vorgang ausgeführt und den ersten DSC-Bericht an Azure Automation DSC gesendet hat, sollte der korrekte Status angezeigt werden.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

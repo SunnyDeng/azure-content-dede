@@ -3,7 +3,7 @@
    description="Sie erhalten einen Überblick über das proaktive Packen von Metriken im Resource Balancer."
    services="service-fabric"
    documentationCenter=".net"
-   authors="abhic"
+   authors="GaugeField"
    manager="timlt"
    editor=""/>
 
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="04/27/2015"
-   ms.author="abhic"/>
+   ms.date="09/03/2015"
+   ms.author="masnider"/>
 
 # Proaktives Packen von Metriken
 
@@ -74,4 +74,4 @@ Weitere Informationen: [Resource Balancer-Architektur](service-fabric-resource-b
 [Image1]: media/service-fabric-resource-balancer-proactive-metric-packing/PMP.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

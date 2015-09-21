@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015"
+	ms.date="09/07/2015" 
 	ms.author="juliako"/>
 
 
@@ -24,7 +24,7 @@
 
 ##Übersicht
 
-Mit Microsoft Azure Media Services können Sie Inhalte verschlüsselt übermitteln, und zwar mit AES \(Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels\) und PlayReady-DRM. Media Services bietet einen **Schlüssel-/Lizenzübermittlungsdienst**, von dem die Clients einen Schlüssel oder eine Lizenz zur Wiedergabe von verschlüsselten Inhalten abrufen können.
+Mit Microsoft Azure Media Services können Sie Inhalte verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und PlayReady-DRM. Media Services bietet einen **Schlüssel-/Lizenzübermittlungsdienst**, von dem die Clients einen Schlüssel oder eine Lizenz zur Wiedergabe von verschlüsselten Inhalten abrufen können.
 
 In diesem Thema wird veranschaulicht, wie Sie das **Azure-Verwaltungsportal** zur Konfiguration der Autorisierungsrichtlinie für Inhaltsschlüssel verwenden. Der Schlüssel kann später verwendet werden, um Inhalte dynamisch zu verschlüsseln. Zur Zeit können Sie die folgenden Streamingformate verschlüsseln: HLS, MPEG DASH und Smooth Streaming. Das HDS-Streamingformat oder progressive Downloads können nicht verschlüsselt werden.
  
@@ -41,14 +41,14 @@ Wenn Sie mehrere Inhaltsschlüssel verwenden oder eine andere **Schlüssel-/Lize
 
 - Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine reservierte Einheit für das Streaming verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](media-services-manage-origins.md#scale_streaming_endpoints). 
 - Ihr Medienobjekt muss einen Satz von MP4-Dateien bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten. Weitere Informationen finden Sie unter [Codieren von Medienobjekten](media-services-encode-asset.md).  
-- ContentKeyAuthorizationPolicy und die zugehörigen Objekte \(Richtlinienoptionen und Einschränkungen\) werden vom Schlüsselübermittlungsdienst für 15 Minuten zwischengespeichert. Wenn Sie ContentKeyAuthorizationPolicy erstellen und angeben, dass eine „Token“-Einschränkung verwendet werden soll, diese anschließend testen und dann die Richtlinie auf eine „Open“-Einschränkung aktualisieren, dauert es ungefähr 15 Minuten, bis die Richtlinie zur „Open“-Version der Richtlinie wechselt.
+- ContentKeyAuthorizationPolicy und die zugehörigen Objekte (Richtlinienoptionen und Einschränkungen) werden vom Schlüsselübermittlungsdienst für 15 Minuten zwischengespeichert. Wenn Sie ContentKeyAuthorizationPolicy erstellen und angeben, dass eine „Token“-Einschränkung verwendet werden soll, diese anschließend testen und dann die Richtlinie auf eine „Open“-Einschränkung aktualisieren, dauert es ungefähr 15 Minuten, bis die Richtlinie zur „Open“-Version der Richtlinie wechselt.
 
 
 ##Vorgehensweise: Konfigurieren der Schlüsselautorisierungsrichtlinie
 
 Um die Schlüsselautorisierungsrichtlinie zu konfigurieren, wählen Sie die Seite **INHALTSSCHUTZ** aus.
 	
-Media Services unterstützt mehrere Möglichkeiten zur Authentifizierung von Benutzern, die Schlüssel anfordern. Autorisierungsrichtlinien für Inhaltsschlüssel können die Autorisierungseinschränkung **Open**, **Token** oder **IP** aufweisen \(**IP** kann mit REST oder dem .NET-SDK konfiguriert werden\).
+Media Services unterstützt mehrere Möglichkeiten zur Authentifizierung von Benutzern, die Schlüssel anfordern. Autorisierungsrichtlinien für Inhaltsschlüssel können die Autorisierungseinschränkung **Open**, **Token** oder **IP** aufweisen (**IP** kann mit REST oder dem .NET-SDK konfiguriert werden).
 
 ###Open-Einschränkung
 
@@ -60,11 +60,11 @@ Bei Verwendung einer **Open**-Einschränkung übermittelt das System den Schlüs
 
 Zum Auswählen der durch "Token" eingeschränkten Richtlinie klicken Sie auf die Schaltfläche **TOKEN**.
 
-Eine durch **Token** eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem **Secure Token Service** \(STS\) ausgestellt wurde. Media Services unterstützt Token im **Simple Web Tokens** \([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2)\)-Format und **JSON Web Token** \(JWT\)-Format. Informationen finden Sie unter [JWT token authentication](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/) \("JWT-Tokenauthentifizierung", in englischer Sprache\).
+Eine durch **Token** eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem **Secure Token Service** (STS) ausgestellt wurde. Media Services unterstützt Token im **Simple Web Tokens** ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2))-Format und **JSON Web Token** (JWT)-Format. Informationen finden Sie unter [JWT token authentication](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/) ("JWT-Tokenauthentifizierung", in englischer Sprache).
 
-**Secure Token Services** werden von Media Services nicht bereitgestellt. Sie können einen benutzerdefinierten STS erstellen oder Microsoft Azure ACS zum Ausstellen von Token nutzen. Der STS muss für die Erstellung eines mit dem angegebenen Schlüssel signierten Tokens und die Ausstellungsansprüche konfiguriert sein, die Sie in der Konfiguration der Tokeneinschränkung angegeben haben. Der Schlüsselübermittlungsdienst von Media Services gibt den Verschlüsselungsschlüssel an den Client zurück, wenn das Token gültig ist und die Ansprüche im Token mit den für den Inhaltsschlüssel konfigurierten Ansprüchen übereinstimmen. Weitere Informationen finden Sie unter [Use Azure ACS to issue tokens](http://mingfeiy.com/acs-with-key-services) \("Ausstellen von Token mithilfe von Azure ACS", in englischer Sprache\).
+**Secure Token Services** werden von Media Services nicht bereitgestellt. Sie können einen benutzerdefinierten STS erstellen oder Microsoft Azure ACS zum Ausstellen von Token nutzen. Der STS muss für die Erstellung eines mit dem angegebenen Schlüssel signierten Tokens und die Ausstellungsansprüche konfiguriert sein, die Sie in der Konfiguration der Tokeneinschränkung angegeben haben. Der Schlüsselübermittlungsdienst von Media Services gibt den Verschlüsselungsschlüssel an den Client zurück, wenn das Token gültig ist und die Ansprüche im Token mit den für den Inhaltsschlüssel konfigurierten Ansprüchen übereinstimmen. Weitere Informationen finden Sie unter [Use Azure ACS to issue tokens](http://mingfeiy.com/acs-with-key-services) ("Ausstellen von Token mithilfe von Azure ACS", in englischer Sprache).
 
-Beim Konfigurieren der durch **TOKEN** eingeschränkten Richtlinie müssen Sie Werte für **verificationKey**, **issuer** und **audience** festlegen. PrimaryVerificationKey enthält den Schlüssel, mit dem das Token signiert wurde, und Issuer ist der STS \(Secure Token Service\), von dem das Token ausgestellt wurde. Audience \(manchmal auch Scope\) beschreibt den Verwendungszweck des Tokens oder die Ressource, auf die durch das Token Zugriff gewährt wird. Der Schlüsselübermittlungsdienst von Media Services überprüft, ob die Werte im Token mit den Werten in der Vorlage übereinstimmen.
+Beim Konfigurieren der durch **TOKEN** eingeschränkten Richtlinie müssen Sie Werte für **verificationKey**, **issuer** und **audience** festlegen. PrimaryVerificationKey enthält den Schlüssel, mit dem das Token signiert wurde, und Issuer ist der STS (Secure Token Service), von dem das Token ausgestellt wurde. Audience (manchmal auch Scope) beschreibt den Verwendungszweck des Tokens oder die Ressource, auf die durch das Token Zugriff gewährt wird. Der Schlüsselübermittlungsdienst von Media Services überprüft, ob die Werte im Token mit den Werten in der Vorlage übereinstimmen.
 
 ###PlayReady
 
@@ -84,8 +84,17 @@ Wenn Sie Inhalte mit PlayReady schützen, müssen Sie in Ihrer Autorisierungsric
 
 Klicken Sie auf die Schaltfläche **XML für Importrichtlinie**, und geben Sie anderen XML-Code an, der dem [hier](https://msdn.microsoft.com/library/azure/dn783459.aspx) definierten XML-Schema entspricht.
 
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+
 ##Nächste Schritte
-Nachdem Sie die Autorisierungsrichtlinie für den Inhaltsschlüssel konfiguriert haben, können Sie mit dem Thema [Gewusst wie: Aktivieren der Verschlüsselung im Azure-Verwaltungsportal](../media-services-manage-content#encrypt/) fortfahren.
+Nachdem Sie die Autorisierungsrichtlinie für den Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Aktivieren der Verschlüsselung im Azure-Verwaltungsportal](../media-services-manage-content#encrypt/) fort.
 
 
 [open_policy]: ./media/media-services-portal-configure-content-key-auth-policy/media-services-protect-content-with-open-restriction.png
@@ -93,4 +102,4 @@ Nachdem Sie die Autorisierungsrichtlinie für den Inhaltsschlüssel konfiguriert
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO2-->

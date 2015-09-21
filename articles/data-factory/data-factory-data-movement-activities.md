@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Datenverschiebungsaktivitäten"
-	description="Erfahren Sie mehr über Data Factory-Entitäten, die Sie in einer Data Factory-Pipeline zum Verschieben von Daten verwenden können."
-	services="data-factory"
-	documentationCenter=""
-	authors="spelluru"
-	manager="jhubbard"
+	pageTitle="Datenverschiebungsaktivitäten" 
+	description="Erfahren Sie mehr über Data Factory-Entitäten, die Sie in einer Data Factory-Pipeline zum Verschieben von Daten verwenden können." 
+	services="data-factory" 
+	documentationCenter="" 
+	authors="spelluru" 
+	manager="jhubbard" 
 	editor="monicar"/>
 
 <tags 
-	ms.service="data-factory"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/29/2015"
+	ms.service="data-factory" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/29/2015" 
 	ms.author="spelluru"/>
 
 # Datenverschiebungsaktivitäten
@@ -86,7 +86,7 @@ Verschiedene Datenspeicher weisen unterschiedliche systemeigene Typsysteme auf. 
 Sie finden die Zuordnung für ein bestimmtes systemeigenes Typsystem zu .NET für den Datenspeicher im entsprechenden Artikel zum Connector des Datenspeichers. Über diese Zuordnung können Sie beim Erstellen von Tabellen die geeigneten Typen bestimmen, damit die richtigen Konvertierungen während der Kopieraktivität ausgeführt werden.
 
 ### Arbeiten mit unterschiedlichen Dateiformaten
-Für dateibasierte Quellen unterstützt die Kopieraktivität verschiedener Dateiformate, einschließlich Binär-, Text- und Avro-Formate.
+Für dateibasierte Quellen unterstützt die Kopieraktivität verschiedener Dateiformate, einschließlich Binär-, Text- und Avro-Formate. Sie können mit der Kopieraktivität von einem Format in ein anderes konvertieren. Beispiel: Text (CSV) in Avro.
 
 ### Eigenschaften der Kopieraktivität
 Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar. Eigenschaften im Abschnitt **TypeProperties** der Aktivität können dagegen je nach Aktivitätstyp variieren.
@@ -97,4 +97,4 @@ Bei der Kopieraktivität hängt der Abschnitt **TypeProperties** von den Typen d
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-data-movement-activities.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

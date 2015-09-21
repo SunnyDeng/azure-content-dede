@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/28/2015" 
+	ms.date="09/08/2015" 
 	ms.author="stepsic"/>
 
 # Aktivieren von Überwachung und Diagnose
@@ -71,4 +71,4 @@ Beachten Sie, dass derzeit bestimmte Linux-Distributionen nicht unterstützt wer
 * [Nachverfolgen der Dienstintegrität](insights-service-health.md), um den Zeitpunkt von Leistungsabfällen oder Dienstunterbrechungen zu ermitteln, die in Azure aufgetreten sind. 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

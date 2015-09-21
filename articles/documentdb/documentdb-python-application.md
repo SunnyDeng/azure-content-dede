@@ -1,20 +1,20 @@
 <properties
     pageTitle="Erstellen einer Webanwendung mit Python und Flask mithilfe von DocumentDB | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mithilfe von DocumentDB Daten aus einer Anwendung in Azure gehosteten Python- und Flask-Webanwendung (MVC) speichern und darauf zugreifen."
-	services="documentdb"
-	documentationCenter="python"
-	authors="ryancrawcour"
-	manager="jhubbard"
-	editor="cgronlun"/>
+    description="Erfahren Sie, wie Sie mithilfe von DocumentDB Daten aus einer Anwendung in Azure gehosteten Python- und Flask-Webanwendung (MVC) speichern und darauf zugreifen."
+    services="documentdb"
+    documentationCenter="python"
+    authors="ryancrawcour"
+    manager="jhubbard"
+    editor="cgronlun"/>
 
 <tags
     ms.service="documentdb"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="python"
-	ms.topic="hero-article"
-	ms.date="09/03/2015"
-	ms.author="ryancraw"/>
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="python"
+    ms.topic="hero-article"
+    ms.date="09/03/2015"
+    ms.author="ryancraw"/>
 
 # Erstellen einer Webanwendung mit Python und Flask (MVC) mithilfe von DocumentDB
 
@@ -338,7 +338,7 @@ Nachdem Sie eine vollständige Anwendung erstellt haben, die DocumentDB ordnungs
 
 Glückwunsch! Sie haben Ihre erste Python-Anwendung mit Azure DocumentDB erstellt und auf Azure-Websites veröffentlicht.
 
-Wir möchten gerne wissen, ob Sie dieses Tutorial hilfreich fanden. Bitte verwenden Sie die Abstimmungsschaltflächen am Anfang oder Ende des Themas, um uns Ihre Meinung mitzuteilen. Dieses Thema wird aktiv aktualisiert, daher benötigen wir Ihr Feedback, um es stetig zu verbessern. Wenn wir mit Ihnen Kontakt aufnehmen sollen, können Sie Ihre E-Mail-Adresse im Kommentar hinterlassen.
+Wir aktualisieren und verbessern dieses Thema häufig basierend auf Ihrem Feedback. Verwenden Sie bitte nach Abschluss des Lernprogramms die Abstimmungsschaltflächen oben und unten auf dieser Seite, und geben Sie auch Feedback zu gewünschten Verbesserungen an. Wenn wir mit Ihnen Kontakt aufnehmen sollen, können Sie Ihre E-Mail-Adresse im Kommentar hinterlassen.
 
 Um Ihrer Anwendung weitere Funktionen hinzuzufügen, überprüfen Sie die im [Python SDK für DocumentDB](https://pypi.python.org/pypi/pydocumentdb) verfügbaren APIs.
 
@@ -351,4 +351,4 @@ Um Ihrer Anwendung weitere Funktionen hinzuzufügen, überprüfen Sie die im [Py
   [Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
   [Azure portal]: http://portal.azure.com
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

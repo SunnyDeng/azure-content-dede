@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure Media Encoder-Formate und -Codecs"
-	description="Dieses Thema bietet eine Übersicht über Azure Media Encoder-Formate und -Codecs."
-	services="media-services"
-	documentationCenter=""
-	authors="juliako"
-	manager="dwrede"
+	pageTitle="Azure Media Encoder-Formate und -Codecs" 
+	description="Dieses Thema bietet eine Übersicht über Azure Media Encoder-Formate und -Codecs." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="juliako" 
+	manager="dwrede" 
 	editor=""/>
 
 <tags 
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/30/2015"
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/05/2015" 
 	ms.author="juliako"/>
 
 #Azure Media Encoder-Formate und -Codecs
@@ -21,7 +21,7 @@
 Dieses Dokument enthält eine Liste der gängigsten Eingabe- und Ausgabedateiformate sowie Codecs, die Sie mit dem Azure Media Encoder verwenden können.
 
 
-##Eingabeformate für Videodateien (Container)
+##Eingabedateiformate (Container)
  
 Dateiformat (Dateierweiterungen)|Unterstützt
 ---|---
@@ -33,32 +33,25 @@ Digitaler Camcorder MPEG-2 (MOD) (.mod) |Ja
 DVD-Transportdatenstrom (TS-Datei) (.ts) |Ja
 DVD-Videoobjektdatei (VOB) (.vob) |Ja
 Expression Encoder Screen Capture-Codec-Datei (.xesc) |Ja
-MP4 (.mp4) |Ja
+MP4 (.mp4, .m4a, .m4v)/ISMV (.isma, .ismv) |Ja
 MPEG-1-Systemdatenstrom (.mpeg, .mpg) |Ja
 MPEG-2-Videodatei (.m2v) |Ja
-Smooth Streaming-Dateiformat (PIFF 1.3) (.ismv) |Ja
 Windows Media Video (WMV) (.wmv) |Ja
+AC-3-Audio (Dolby Digital) (.ac3)|Ja
+Audio Interchange File Format (AIFF) (.aiff)|Ja
+Broadcast Wave Format (.bwf)|Ja
+MP3 (MPEG-1 Audio Layer 3) (.mp3)|Ja
+MPEG-4 Audiobook (.m4b)|Ja
+WAVE-Datei (.wav)|Ja
+Windows Media Audio (.wma)|Ja
 Adobe® Flash® F4V |Nein		
 MXF/SMPTE 377M |Eingeschränkt 
 GXF |Nein		 
 [Microsoft Digital Video Recording (DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984)|Nein
 Matroska/WebM |Nein
 
+
 Einige nicht komprimierte Dateiformate werden unterstützt. Weitere Informationen finden Sie unter [Unterstützte nicht komprimierte Videoformate](#uncompressed).
-
-##Eingabeformate für Audiodateien
-
-Dateiformat (Dateierweiterungen)|Unterstützt
----|---
-AC-3-Audio (Dolby Digital) (.ac3)|Ja
-Audio Interchange File Format (AIFF) (.aiff)|Ja
-Broadcast Wave Format (.bwf)|Ja
-MP3 (MPEG-1 Audio Layer 3) (.mp3)|Ja
-MP4-Audio (.m4a)|Ja
-MPEG-4 Audiobook (.m4b)|Ja
-WAVE-Datei (.wav)|Ja
-Windows Media Audio (.wma)|Ja
-
 
 ##Codecs für Videoeingang
 
@@ -121,7 +114,7 @@ Windows Media (*.wmv; *.wma)|VC-1 (Advanced, Main und Simple Profile)|Windows Me
 MP4 (*.mp4)|H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2, Dolby Digital Plus
 Smooth Streaming File Format (PIFF 1.1) (*.ismv; *.isma)|VC-1 (Advanced Profile)<p>H.264 (High, Main und Baseline Profile) |Windows Media Audio Standard, Windows Media Audio Professional<p><p>AAC-LC, HE-AAC v1, HE-AAC v2
 
-Zusätzliche unterstützte Codecs und Filter in Media Services finden Sie unter [Windows DirectShow-Filter](https://msdn.microsoft.com/library/windows/desktop/dd375464.aspx).
+Zusätzliche unterstützte Codecs und Filter in Media Services finden Sie unter [DirectShow Filters](https://msdn.microsoft.com/library/windows/desktop/dd375464.aspx) (in englischer Sprache).
 
 ##<a id="uncompressed"></a>Unterstützte nicht komprimierte Videoformate 
 
@@ -141,4 +134,12 @@ Daten im YUV 211-Format|Ein gepacktes YUV-Format. Ein Y-Sample bei jedem zweiten
 Cirrus Logic Jr YUV 411-Format|Das Cirrus Logic Jr YUV 411-Format mit weniger als 8 Bit pro Y-, U- und V-Sample. Ein Y-Sample bei jedem Pixel, ein U- und V-Sample bei jedem vierten Pixel horizontal in jeder Zeile. Jede vertikale Zeile enthält Sample-Werte.
 Von Indeo generiertes YVU9-Format|Das von Indeo generierte YVU9-Format mit zusätzlichen Informationen über die Unterschiede zum letzten Frame. 9,5 Bit pro Pixel, wird jedoch als 9 angezeigt.
 
-<!---HONumber=September15_HO1-->
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
+<!---HONumber=Sept15_HO2-->

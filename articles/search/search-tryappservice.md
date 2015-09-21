@@ -318,7 +318,7 @@ Mithilfe des schreibgeschützten Dienstes gemäß der [Try Azur App Service](htt
 
 Um alle Aufgaben durchführen zu können, benötigen Sie ein Azure-Abonnement, damit Sie Indizes in einem Dienst erstellen und befüllen können. Weitere Informationen dazu, wie Sie sich für eine kostenlose Testversion registrieren, finden Sie auf [https://azure.microsoft.com/pricing/free-trial](https://azure.microsoft.com/pricing/free-trial/).
 
-Weitere Informationen zu Azure Search finden Sie auf der [Dokumentationsseite](http://azure.microsoft.com/documentation/services/search/) auf [http://azure.microsoft.com](http://azure.microsoft.com), oder sehen Sie sich eine beliebige Anzahl von [Beispielen und Videos](https://msdn.microsoft.com/library/dn818681.aspx) an, die die ganze Bandbreite von Azure Search-Funktionen abdecken.
+Weitere Informationen zu Azure Search finden Sie in der [Azure Search-Dokumentation](http://azure.microsoft.com/documentation/services/search/) auf [http://azure.microsoft.com](http://azure.microsoft.com), oder sehen Sie sich eine beliebige Anzahl von [Beispielen und Videos](search-video-demo-tutorial-list.md) an, die die ganze Bandbreite von Azure Search-Funktionen abdecken.
 
 <a name="Schema"></a>
 ##Zum Schema
@@ -529,4 +529,4 @@ Der folgende Screenshot zeigt das verwendete Schema, um den in dieser Vorlage ve
 [13]: ./media/search-tryappservice/AzSearch-TryAppService-Schema.png
 [14]: ./media/search-tryappservice/AzSearch-TryAppService-HitHighlight.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

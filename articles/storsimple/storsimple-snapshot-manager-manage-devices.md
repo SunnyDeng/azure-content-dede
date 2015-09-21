@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Verwenden des StorSimple Snapshot Managers zum Verbinden und Verwalten von StorSimple-Geräten | Microsoft Azure"
+   pageTitle="Verwalten von Geräten mit dem StorSimple Snapshot Manager | Microsoft Azure"
    description="Beschreibt, wie das MMC-Snap-In StorSimple Snapshot Manager zum Herstellen von Verbindungen mit StorSimple-Geräten und zu deren Verwaltung verwendet wird."
    services="storsimple"
    documentationCenter=""
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/18/2015"
+   ms.date="09/04/2015"
    ms.author="v-sharos" />
 
 # Verwenden des StorSimple Snapshot Managers zum Verbinden und Verwalten von StorSimple-Geräten
@@ -262,4 +262,4 @@ Wenn ein StorSimple-Gerät ausfällt und durch ein Austauschgerät ersetzt wird 
 
 [Verwenden des StorSimple Snapshot Managers zum Anzeigen und Verwalten von Volumes](storsimple-snapshot-manager-manage-volumes.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

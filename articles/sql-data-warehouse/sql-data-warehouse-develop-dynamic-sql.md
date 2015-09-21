@@ -13,15 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/26/2015"
+   ms.date="09/09/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Dynamischer SQL-Code in SQL Data Warehouse
-Beim Entwickeln von Anwendungscode für SQL Data Warehouse müssen Sie unter Umständen dynamischen SQL-Code verwenden, um flexible, generische und modulare Lösungen bereitstellen zu können. Allerdings unterstützt SQL Data Warehouse derzeit keine Blob-Datentypen. Dadurch kann die Größe Ihrer Zeichenfolgen verringert werden, weil Blob-Typen sowohl varchar(max)- als auch nvarchar(max)-Typen umfassen. Unter Umständen finden Sie heraus, dass Sie diese Typen im Anwendungscode verwendet haben, als Sie sehr große Zeichenfolgen mit dynamischem SQL-Code erstellt haben, den Sie ausführen müssen.
+Beim Entwickeln von Anwendungscode für SQL Data Warehouse müssen Sie unter Umständen dynamischen SQL-Code verwenden, um flexible, generische und modulare Lösungen bereitstellen zu können. SQL Data Warehouse unterstützt derzeit keine BLOB-Datentypen. Dadurch kann die Größe Ihrer Zeichenfolgen verringert werden, weil Blob-Typen sowohl varchar(max)- als auch nvarchar(max)-Typen umfassen. Wenn Sie diese Typen im Anwendungscode verwendet haben und sehr große Zeichenfolgen erstellen, müssen Sie den Code in Segmente unterteilen und stattdessen die EXEC-Anweisung verwenden.
 
-In diesen Fällen müssen Sie den Code in Segmente unterteilen und stattdessen die EXEC-Anweisung verwenden.
-
-Hier ist ein vereinfachtes Beispiel angegeben:
+Ein einfaches Beispiel:
 
 ```
 DECLARE @sql_fragment1 VARCHAR(8000)=' SELECT name '
@@ -31,7 +29,7 @@ DECLARE @sql_fragment1 VARCHAR(8000)=' SELECT name '
 EXEC( @sql_fragment1 + @sql_fragment2 + @sql_fragment3);
 ```
 
-Wenn die Zeichenfolge nicht besonders lang ist, können Sie [sp\_executesql][] normal verwenden.
+Wenn die Zeichenfolge kurz ist, können Sie [sp\_executesql][] normal verwenden.
 
 
 ## Nächste Schritte
@@ -43,8 +41,8 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
 
 <!--MSDN references-->
-[sp\_executesql]: https://msdn.microsoft.com/de-de/library/ms188001.aspx
+[sp\_executesql]: https://msdn.microsoft.com/de-DE/library/ms188001.aspx
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

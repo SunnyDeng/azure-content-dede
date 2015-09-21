@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwalten von API-Apps"
-	description="Erfahren Sie, wie Sie Azure App Service-API-Apps mithilfe des Azure-Portals und dem Server-Explorer von Visual Studio verwalten."
-	services="app-service\api"
-	documentationCenter=""
-	authors="tdykstra"
-	manager="wpickett"
+	pageTitle="Verwalten von API-Apps" 
+	description="Erfahren Sie, wie Sie Azure App Service-API-Apps mithilfe des Azure-Portals und dem Server-Explorer von Visual Studio verwalten." 
+	services="app-service\api" 
+	documentationCenter="" 
+	authors="tdykstra" 
+	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-api"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
+	ms.service="app-service-api" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="06/17/2015"
+	ms.topic="article" 
+	ms.date="09/08/2015" 
 	ms.author="tdykstra"/>
 
 # Verwalten von API-Apps in Azure App Service
@@ -134,4 +134,4 @@ Dieser Artikel hat gezeigt, wie Sie das Azure-Portal zum Ausführen verschiedene
 
 Informationen zum Verwalten von API-Apps über die Befehlszeile finden Sie in den Artikeln im Abschnitt **Automatisieren**, die links neben dem Artikel (bei breiten Browserfenstern) oder oben über dem Artikel (bei schmalen Browserfenstern) angezeigt werden.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

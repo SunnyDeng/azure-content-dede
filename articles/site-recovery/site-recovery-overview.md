@@ -48,19 +48,20 @@ Sekundäres Datencenter | Einzelner VMM-Server | Repliziert virtuelle Computer a
 
 Die ASR-Replikationstechnologien sind mit jeder Anwendung kompatibel, die auf einem virtuellen Computer ausgeführt wird. Wir haben in Zusammenarbeit mit Anwendungsproduktteams zusätzliche Tests durchgeführt, um die Unterstützung der einzelnen Anwendungen noch weiter zu optimieren.
 
-**Workload** | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: Azure)**</p> | <p>**Replizieren virtueller VMware-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller VMware-Computer**</p><p>**(Ziel: Azure)****</p>
+**Workload** | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller Hyper-V-Computer**</p> <p>**(Ziel: Azure)**</p> | <p>**Replizieren virtueller VMware-Computer**</p> <p>**(Ziel: sekundärer Standort)**</p> | <p>**Replizieren virtueller VMware-Computer**</p><p>**(Ziel: Azure)**</p>
 ---|---|---|---|---
-Active Directory, DNS | J | J | J | In Kürze verfügbar: 
-Web-Apps (IIS, SQL) | J | J | J | In Kürze verfügbar:
-SCOM | J | J | J | In Kürze verfügbar:
-Sharepoint | J | J | J | In Kürze verfügbar:
-<p>SAP</p><p>Replizieren eines SAP-Standorts zu Azure (kein Cluster)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | In Kürze verfügbar:
-Exchange (kein DAG) | J | In Kürze verfügbar | J | In Kürze verfügbar:
-Remotedesktop/VDI | J | J | J | In Kürze verfügbar: 
-<p>Linux</p> <p>(Betriebssystem und Apps)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | In Kürze verfügbar:
-Dynamics AX | J | J | J | In Kürze verfügbar:
-Dynamics CRM | In Kürze verfügbar | In Kürze verfügbar | J | In Kürze verfügbar:
-Oracle | In Kürze verfügbar | In Kürze verfügbar | J (getestet von Microsoft) | In Kürze verfügbar
+Active Directory, DNS | J | J | J | J 
+Web-Apps (IIS, SQL) | J | J | J | J
+SCOM | J | J | J | J
+Sharepoint | J | J | J | J
+<p>SAP</p><p>Replizieren eines SAP-Standorts zu Azure (kein Cluster)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft)
+Exchange (kein DAG) | J | In Kürze verfügbar | J | J
+Remotedesktop/VDI | J | J | J | N/A 
+<p>Linux</p> <p>(Betriebssystem und Apps)</p> | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) 
+Dynamics AX | J | J | J | J
+Dynamics CRM | J | In Kürze verfügbar | J | In Kürze verfügbar
+Oracle | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft) | J (getestet von Microsoft)
+Windows-Dateiserver | J | J | J | J
 
 
 ## Features und Anforderungen 
@@ -89,4 +90,4 @@ Speicherzuordnung|Nicht zutreffend|Ordnet Speicherklassifizierungen auf VMM-Quel
 Lesen Sie nach dieser Übersicht die [bewährten Methoden](site-recovery-best-practices.md), um mit der Planung der Bereitstellung zu beginnen.
  
 
-<!----HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO2-->

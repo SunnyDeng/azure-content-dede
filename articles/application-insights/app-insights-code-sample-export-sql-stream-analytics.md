@@ -1,18 +1,18 @@
 <properties 
-	pageTitle="Exemplarische Vorgehensweise: Exportieren von Telemetriedaten in SQL-Datenbank mit Application Insights"
-	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export."
-	services="application-insights"
-	documentationCenter=""
-	authors="noamben"
+	pageTitle="Exemplarische Vorgehensweise: Exportieren von Telemetriedaten in SQL-Datenbank mit Application Insights" 
+	description="Codieren Sie Ihre eigene Telemetrieanalyse in Application Insights mithilfe des Features für den fortlaufenden Export." 
+	services="application-insights" 
+    documentationCenter=""
+	authors="noamben" 
 	manager="douge"/>
 
 <tags 
-	ms.service="application-insights"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="ibiza"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/31/2015"
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/31/2015" 
 	ms.author="awills"/>
  
 # Exemplarische Vorgehensweise: Exportieren aus Application Insights in SQL mit Stream Analytics
@@ -97,7 +97,7 @@ Durch fortlaufende Exportaktivitäten werden Daten an ein Azure-Speicherkonto ü
 
     Darüber hinaus werden die Daten in Ihren Speicher exportiert.
 
-4. Überprüfen Sie die exportierten Daten. Wählen Sie in Visual Studio **Anzeigen / Cloud Explorer**, und öffnen Sie "Azure / Storage". (Wenn diese Menüoption nicht verfügbar ist, müssen Sie das Azure SDK installieren: Öffnen Sie das Dialogfeld "Neues Projekt" und anschließend "Visual C# / Cloud / Microsoft Azure SDK für .NET abrufen".)
+4. Überprüfen Sie die exportierten Daten, entweder im Portal (wählen Sie **Durchsuchen**, anschließend Ihr Speicherkonto und dann **Container** aus) oder in Visual Studio. Wählen Sie in Visual Studio **Anzeigen/Cloud Explorer** aus, und öffnen Sie „Azure/Storage“. (Wenn diese Menüoption nicht verfügbar ist, müssen Sie das Azure SDK installieren: Öffnen Sie das Dialogfeld "Neues Projekt" und anschließend "Visual C# / Cloud / Microsoft Azure SDK für .NET abrufen".)
 
     ![Öffnen Sie in Visual Studio den "Server-Browser", "Azure" und "Storage".](./media/app-insights-code-sample-export-sql-stream-analytics/087-explorer.png)
 
@@ -196,7 +196,7 @@ Jetzt benötigen Sie den primären Zugriffsschlüssel aus Ihrem Speicherkonto, d
 
 ![](./media/app-insights-code-sample-export-sql-stream-analytics/47-sa-wizard3.png)
 
-Achten Sie darauf, dass das Datum das Format "JJJJ-MM-TT" (mit Bindestrichen) aufweist.
+Achten Sie darauf, dass das Datum das Format **JJJJ-MM-TT** (mit **Bindestrichen**) aufweist.
 
 Das Präfixmuster des Pfads gibt an, wie Stream Analytics die Eingabedateien im Speicher ermittelt. Sie müssen es so einstellen, dass es der Speicherung der Daten durch den fortlaufenden Export entspricht. Legen Sie ihn wie folgt fest:
 
@@ -218,6 +218,8 @@ Bestätigen Sie das Serialisierungsformat:
 ![Bestätigen Sie den Vorgang, und schließen Sie den Assistenten.](./media/app-insights-code-sample-export-sql-stream-analytics/48-sa-wizard4.png)
 
 Schließen Sie den Assistenten, und warten Sie, bis das Setup abgeschlossen ist.
+
+>[AZURE.TIP]Verwenden Sie die Beispielfunktion um zu überprüfen, ob der Eingabepfad ordnungsgemäß festgelegt wurde. Bei einem Fehler: Überprüfen Sie, ob sich für den ausgewählten Beispielzeitraum Daten im Speicher befinden. Bearbeiten Sie die Eingabedefinition, und überprüfen Sie, ob die Einstellungen für Speicherkonto, Pfadpräfix und Datumsformat richtig sind.
 
 ## Festlegen der Abfrage
 
@@ -312,4 +314,4 @@ Nach einigen Minuten wechseln Sie zurück zu den SQL Server-Verwaltungstools, un
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

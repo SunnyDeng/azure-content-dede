@@ -1,6 +1,7 @@
 <properties
 	pageTitle="Erstellen eines einfachen Experiments in Machine Learning-Studio | Microsoft Azure"
 	description="Ein erstes Lernprogramm für maschinelles Lernen zum Erstellen eines einfachen Experiments zum Trainieren und Testen eines linearen Regressionsmodells in Azure Machine Learning Studio."
+	keywords="experiment,linear regression,machine learning algorithms,machine learning tutorial,predictive modeling techniques"
 	services="machine-learning"
 	documentationCenter=""
 	authors="garyericson"
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="07/09/2015"
+	ms.date="09/09/2015"
 	ms.author="garye"/>
 
 #Lernprogramm für maschinelles Lernen: Erstellen Ihres ersten Experiments im Azure Machine Learning Studio
@@ -197,11 +198,11 @@ Da Sie jetzt ein erstes Lernprogramm zum maschinellen Lernen abgeschlossen und d
 
 [runhistory]: machine-learning-manage-experiment-iterations.md
 
-Wenn Sie mit Ihrem Modell zufrieden sind, können Sie es als Webdienst veröffentlichen, der Automobilpreise anhand neuer Daten vorhersagt. Weitere Informationen finden Sie unter [Veröffentlichen eines Azure Machine Learning-Webdiensts][publish].
+Wenn Sie mit Ihrem Modell zufrieden sind, können Sie es als Webdienst bereitstellen, der Automobilpreise anhand neuer Daten vorhersagt. Weitere Informationen finden Sie unter [Bereitstellen eines Azure Machine Learning-Webdiensts][publish].
 
 [publish]: machine-learning-publish-a-machine-learning-web-service.md
 
-Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersagemodell-Techniken zum Erstellen, Trainieren, Bewerten und Veröffentlichen eines Modells finden Sie unter [Entwickeln einer Vorhersagelösung mit Azure Machine Learning][walkthrough].
+Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersagemodell-Techniken zum Erstellen, Trainieren, Bewerten und Bereitstellen eines Modells finden Sie unter [Entwickeln einer Vorhersagelösung mit Azure Machine Learning][walkthrough].
 
 [walkthrough]: machine-learning-walkthrough-develop-predictive-solution.md
 
@@ -231,4 +232,4 @@ Eine umfassendere und ausführlichere exemplarische Vorgehensweise für Vorhersa
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

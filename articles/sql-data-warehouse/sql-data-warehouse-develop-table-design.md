@@ -13,11 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/26/2015"
+   ms.date="09/09/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Tabellenentwurf in SQL Data Warehouse #
-SQL Data Warehouse ist ein verteiltes Datenbanksystem mit paralleler Massenverarbeitung (Massively Parallel Processing, MPP). Aus diesem Grund werden Daten an vielen verschiedenen Orten gespeichert, die als **Verteilungen** (Englisch: Distributions) bezeichnet werden. Jede **Verteilung** fungiert wie ein „Bucket“. Darin werden eindeutige Teilmengen von Daten im Data Warehouse gespeichert. Indem die Daten- und Verarbeitungsfunktionen über mehrere Knoten verteilt werden, ist in SQL Data Warehouse eine umfassende Skalierbarkeit möglich, die die Skalierbarkeit eines einzelnen Systems weit übersteigt.
+SQL Data Warehouse ist ein verteiltes Datenbanksystem mit paralleler Massenverarbeitung (Massively Parallel Processing, MPP). Daten werden an vielen verschiedenen Orten gespeichert, die als **Verteilungen** bezeichnet werden. Jede **Verteilung** fungiert wie ein „Bucket“. Darin werden eindeutige Teilmengen von Daten im Data Warehouse gespeichert. Indem die Daten- und Verarbeitungsfunktionen über mehrere Knoten verteilt werden, ist in SQL Data Warehouse eine umfassende Skalierbarkeit möglich, die die Skalierbarkeit eines einzelnen Systems weit übersteigt.
 
 Wenn eine Tabelle in SQL Data Warehouse erstellt wird, wird sie dabei auf alle Verteilungen verteilt.
 
@@ -92,9 +92,9 @@ OR  y.[is_user_defined] = 1
 
 ```
 
-Die Abfrage enthält alle benutzerdefinierten Datentypen, die auch nicht unterstützt werden.
+Die Abfrage enthält alle benutzerdefinierten Datentypen, die nicht unterstützt werden.
 
-Wenn Ihre Datenbank nicht unterstützte Datentypen enthält, ist das kein Grund zur Sorge. Unten sind einige Alternativen aufgeführt, die Sie stattdessen wählen können.
+Im Folgenden finden Sie einige Alternativen, die denen Sie anstelle von nicht unterstützten Datentypen verwenden können.
 
 Alternativen:
 
@@ -126,7 +126,7 @@ Es gibt zwei Möglichkeiten für das Verteilen von Daten in SQL Data Warehouse:
 1. Verteilen von Daten basierend auf Hashwerten aus einer einzelnen Spalte
 2. Gleichmäßiges zufälliges Verteilen von Daten  
 
-Die Datenverteilung wird auf Tabellenebene entschieden. Alle Tabellen werden so verteilt, dass Sie diese Entscheidung für jede Tabelle in Ihrer SQL Data Warehouse-Datenbank treffen können.
+Die Datenverteilung wird auf Tabellenebene entschieden. Alle Tabellen sind verteilt. Sie weisen die Verteilung für jede Tabelle in der SQL Data Warehouse-Datenbank zu.
 
 Die erste Option wird als **Roundrobin**-Verteilung bezeichnet (oder auch als „Random Hash“). Sie können sich dies wie eine Standardoption oder Absicherungsoption vorstellen.
 
@@ -134,7 +134,7 @@ Die zweite Option wird als **Hash**verteilung bezeichnet. Dies ist eine optimier
 
 ## Roundrobin-Verteilung
 
-Die Roundrobin-Verteilung ist eine Methode, mit der Daten so gleichmäßig wie möglich über alle Verteilungen verteilt werden können. Puffer, die Zeilen mit Daten enthalten, werden dann wiederum jeder Verteilung zugeordnet (daher der Name „Roundrobin“). Der Vorgang wird wiederholt, bis alle Datenpuffer zugeordnet wurden. Bei einer verteilten Roundrobin-Tabelle werden die Daten zu keinem Zeitpunkt sortiert oder in eine besondere Reihenfolge gebracht. Aus diesem Grund wird eine Roundrobin-Verteilung auch als „Random Hash“ (zufälliger Hash) bezeichnet. Die Daten werden einfach möglichst gleichmäßig auf die Verteilungen verteilt.
+Die Roundrobin-Verteilung ist eine Methode, mit der Daten so gleichmäßig wie möglich über alle Verteilungen verteilt werden können. Puffer, die Zeilen mit Daten enthalten, werden dann wiederum jeder Verteilung zugeordnet (daher der Name „Roundrobin“). Der Vorgang wird wiederholt, bis alle Datenpuffer zugeordnet wurden. Bei einer verteilten Roundrobin-Tabelle werden die Daten zu keinem Zeitpunkt sortiert oder in eine besondere Reihenfolge gebracht. Aus diesem Grund wird eine Roundrobin-Verteilung auch als „Random Hash“ (zufälliger Hash) bezeichnet. Die Daten werden möglichst gleichmäßig auf die Verteilungen verteilt.
 
 Es folgt ein Beispiel für eine verteilte Roundrobin-Tabelle:
 
@@ -306,4 +306,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

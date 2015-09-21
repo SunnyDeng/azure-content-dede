@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie App Service-Pläne für Azure App Service funktionieren, und wie Ihre Verwaltungsumgebung davon profitiert." 
 	services="app-service" 
 	documentationCenter="" 
-	authors="cephalin" 
+	authors="btardif" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/24/2015" 
+	ms.date="09/07/2015" 
 	ms.author="byvinyal"/>
 
 #Azure App Service-Pläne – Detaillierte Übersicht#
@@ -50,17 +50,11 @@ Wenn Sie schließlich eine neue App in einer anderen Region erstellen möchten u
 
 Sie können keinen leeren App Service-Plan erstellen. Sie können jedoch bei der App-Erstellung einen neuen Plan erstellen.
 
-Klicken Sie hierzu im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) auf **NEU**, dann auf **Web + mobil** und anschließend auf **Web-Apps**, **Mobile Apps**, **Logik-Apps** oder **API-Apps**. Sie können dann den App Service-Plan für die neue Anwendung auswählen oder erstellen.
- 
-![App Service-Pläne – Häufig gestellte Fragen](./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview01.png)
+Klicken Sie hierzu im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) auf **NEU**, anschließend auf **Web + mobil** und dann auf **Web-Apps**, **Mobile Apps**, **Logik-Apps** oder **API-Apps**. ![][createWebApp]
 
-##Wie weise ich eine App einem App Service-Plan zu?
-
-Apps können während der Erstellung einem vorhandenen Plan zugewiesen werden.
-
-Klicken Sie hierzu im [Azure-Portal](http://portal.azure.com) auf **NEU**, dann auf **Web + mobil** und anschließend auf **Web-Apps**, **Mobile Apps**, **Logik-Apps** oder **API-Apps**. Sie können dann den App Service-Plan für die neue Anwendung auswählen oder erstellen. Wenn Sie auf die Option zur Auswahl eines vorhandenen Plans klicken, wird eine Liste der vorhandenen Pläne angezeigt, aus denen Sie wählen können.
-
-![App Service-Pläne – Häufig gestellte Fragen](./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview02.png)
+Sie können dann den App Service-Plan für die neue Anwendung auswählen oder erstellen.
+  
+ ![][createASP]
  
 ## Wie kann ich eine App in einen anderen App Service-Plan verschieben?
 
@@ -70,7 +64,7 @@ Um eine Anwendung in einen anderen Plan zu verschieben, navigieren Sie zu der Ap
  
 Dadurch wird das Blatt "App Service-Plan" geöffnet. Jetzt können Sie entweder einen vorhandenen Plan auswählen oder einen neuen erstellen. Pläne in einer anderen geografischen Region werden abgeblendet dargestellt und können nicht ausgewählt werden.
 
-![App Service-Pläne – Häufig gestellte Fragen](./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview03.png)
+![][change]
 
 Beachten Sie, dass jeder Plan eine eigene Preisstufe aufweist. Wenn Sie eine Website von der Preisstufe **Free** in die Preisstufe **Standard** verschieben, kann Ihre App alle Features und Ressourcen der Preisstufe **Standard** nutzen.
 
@@ -84,7 +78,7 @@ Es gibt zwei Möglichkeiten, einen Plan zu skalieren:
 
 In der folgenden Abbildung sehen Sie das Blatt **App Service-Plan** und das Blatt **Preisstufe**. Durch Klicken auf den Bereich **Preisstufe** im Blatt **App Service-Plan** wird das Blatt **Preisstufe** erweitert, in dem Sie die Preisstufe und Instanzgröße des Plans ändern können.
  
-![App Service-Pläne – Häufig gestellte Fragen](./media/azure-web-sites-web-hosting-plans-in-depth-overview/azure-web-sites-web-hosting-plans-in-depth-overview04.png)
+ ![][pricingtier]
 
 ##Zusammenfassung
 
@@ -95,5 +89,13 @@ App Service-Pläne stellen einen Satz an Funktionen und Kapazitäten dar, die Si
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
+ 
+ 
+ <!-- Images. -->
+[pricingtier]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/appserviceplan-pricingtier.png
+[assign]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/assing-appserviceplan.png
+[change]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/change-appserviceplan.png
+[createASP]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/create-appserviceplan.png
+[createWebApp]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/create-web-app.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

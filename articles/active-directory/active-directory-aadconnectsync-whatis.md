@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/27/2015"
+	ms.date="09/08/2015"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -34,7 +34,8 @@ Was möchten Sie als Nächstes tun?
 - Informationen zur Kennwortsynchronisierung finden Sie unter [Implementieren der Kennwortsynchronisierung](active-directory-aadconnectsync-implement-password-synchronization.md).
 - Informationen zu Benutzern und Kontakten in der Azure AD Connect-Synchronisierung finden Sie unter [Grundlegendes zu Benutzern und Kontakten](active-directory-aadconnectsync-understanding-users-and-contacts.md).
 - Informationen zum Ändern der Standardkonfiguration finden Sie unter [Bewährte Methoden zum Ändern der Standardkonfiguration](active-directory-aadconnectsync-best-practices-changing-default-configuration.md).
-- Informationen zu den Attributen, die in Azure AD synchronisiert werden, finden Sie unter [Mit Azure Active Directory synchronisierte Attribute](active-directory-aadconnectsync-attributes-synchronized.md).
+- Weitere Informationen zum Betrieb des Synchronisierungsservers finden Sie unter [Operative Aufgaben und Überlegungen](active-directory-aadconnectsync-operations.md).
+- Weitere Informationen zu den Attributen, die in Azure AD synchronisiert werden, finden Sie unter [Mit Azure Active Directory synchronisierte Attribute](active-directory-aadconnectsync-attributes-synchronized.md).
 - Informationen zur deklarativen Bereitstellung finden Sie unter [Grundlegendes zu deklarativen Provisioningausdrücken](active-directory-aadconnectsync-understanding-declarative-provisioning-expressions.md).
 - Informationen zu den Funktionen der deklarativen Bereitstellung finden Sie in der [Funktionsreferenz](active-directory-aadconnectsync-functions-reference.md).
 
@@ -48,4 +49,4 @@ Was möchten Sie als Nächstes tun?
 
 <!--Image references-->
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory (Windows Store) | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Zugriff basierend auf Azure Active Directory-Rollen in Ihrer Windows Store-Anwendung steuern." 
+	pageTitle="Rollenbasierte Zugriffssteuerung in Mobile Services mit JavaScript und Azure Active Directory (Windows Store) | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie den Zugriff basierend auf Azure Active Directory-Rollen in Ihrer Windows Store-Anwendung mit Mobile Service und einem JavaScript-Back-End steuern." 
 	documentationCenter="windows" 
 	authors="wesmc7777" 
 	manager="dwrede" 
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/15/2015" 
+	ms.date="09/03/2015" 
 	ms.author="wesmc"/>
 
-# Rollenbasierte Zugriffssteuerung in Mobile Services und Azure Active Directory
+# Rollenbasierte Zugriffssteuerung in Mobile Services mit .NET und Azure Active Directory
 
 [AZURE.INCLUDE [mobile-services-selector-rbac](../../includes/mobile-services-selector-rbac.md)]
 
@@ -24,7 +24,7 @@
 
 Rollenbasierte Zugriffssteuerung (RBAC) besteht im Zuweisen von Berechtigungen für Rollen, die Benutzer innehaben können, um Beschränkungen für die Möglichkeiten bestimmter Benutzer zu definieren. In diesem Lernprogramm erfahren Sie, wie Sie grundlegende RBAC für Azure Mobile Services hinzufügen können.
 
-In diesem Lernprogramm wird die rollenbasierte Zugriffssteuerung erläutert, welche die Mitgliedschaft der einzelnen Benutzer in der Gruppe „Sales“ prüft, die in Azure Active Directory (AAD) definiert ist. Die Zugriffsprüfung erfolgt mit JavaScript im Mobile Services-Backe-Ed mithilfe der [Graph-API] für Azure Active Directory. Nur Benutzer, die der Rolle „Sales“ angehören, dürfen Daten abfragen.
+In diesem Lernprogramm wird die rollenbasierte Zugriffssteuerung erläutert, welche die Mitgliedschaft der einzelnen Benutzer in der Gruppe "Sales" prüft, die in Azure Active Directory (AAD) definiert ist. Die Zugriffsprüfung erfolgt mit JavaScript im Mobile Services-Back-End mithilfe der [Graph-API] für Azure Active Directory. Nur Benutzer, die der Rolle „Sales“ angehören, dürfen Daten abfragen.
 
 
 >[AZURE.NOTE]Dieses Lernprogramm ist dazu vorgesehen, Ihre Kenntnisse bezüglich der Authentifizierung um Autorisierungsmethoden zu erweitern. Es wird davon ausgegangen, dass Sie das Lernprogramm [Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App] unter Verwendung des Azure Active Directory-Authentifizierungsanbieters abgeschlossen haben. In diesem Lernprogramm wird die TodoItem-Anwendung weiter aktualisiert, die im Lernprogramm [Hinzufügen von Authentifizierung zu Ihrer Mobile Services-App] verwendet wurde.
@@ -285,4 +285,4 @@ Die folgenden Schritte zeigen, wie Sie rollenbasierte Zugriffssteuerung mithilfe
 [IsMemberOf]: http://msdn.microsoft.com/library/azure/dn151601.aspx
 [Zugriff auf Azure Active Directory Graph-Informationen]: mobile-services-javascript-backend-windows-store-dotnet-aad-graph-info.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO2-->

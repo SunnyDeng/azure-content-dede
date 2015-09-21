@@ -1,11 +1,4 @@
-<properties
-	pageTitle=""
-	description="Beschreibt, was in Ihrem Visual Studio-Projekt geändert wurde, nachdem Sie den Azure Active Directory-Assistenten ausgeführt haben"
-	services="active-directory"
-	documentationCenter=""
-	authors="patshea123"
-	manager="douge"
-	editor="tglee"/>
+<properties pageTitle="Was ist mit meinem WebApi-Projekt passiert (verbundene Visual Studio-Dienste für Azure Active Directory) |Microsoft Azure " description="Erfahren Sie, was mit Ihrem WebApi-Projekt passiert, wenn Sie mithilfe von verbundenen Visual Studio-Diensten eine Verbindung mit Azure AD herstellen.="active-directory" services="active-directory" documentationCenter="" authors="patshea123" manager="douge" editor="tglee"/>
 
 <tags
 	ms.service="active-directory"
@@ -13,10 +6,10 @@
 	ms.tgt_pltfrm="vs-what-happened"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/22/2015"
+	ms.date="09/03/2015"
 	ms.author="patshea"/>
 
-# Was ist mit meinem Projekt passiert?
+# Was ist mit dem WebApi-Projekt passiert (verbundene Visual Studio-Dienste für Azure Active Directory)?
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-active-directory-webapi-getting-started.md)
@@ -64,7 +57,7 @@ Die folgenden Konfigurationseinträge wurden hinzugefügt. ```
     		<add key="ida:ClientId" value="ClientId from the new Azure AD App" />
     		<add key="ida:Tenant" value="Your selected Azure AD Tenant" />
     		<add key="ida:Audience" value="The App ID Uri from the wizard" />
-	</appSettings>` 
+	</appSettings>`
 ```
 
 ###Eine Azure AD-App wurde erstellt
@@ -73,7 +66,7 @@ Eine Azure AD-Anwendung wurde in dem Verzeichnis erstellt, das Sie im Assistente
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
 
-##Wenn ich *das Deaktivieren der Authentifizierung für einzelne Benutzerkonten* ausgewählt habe, welche zusätzlichen Änderungen wurden an meinem Projekt vorgenommen?
+##Wenn ich *das Deaktivieren der Authentifizierung für einzelne Benutzerkonten* aktiviert habe, welche zusätzlichen Änderungen wurden an meinem Projekt vorgenommen?
 NuGet-Paketverweise wurden entfernt, und die Dateien wurden entfernt und gesichert. Abhängig vom Status des Projekts müssen Sie möglicherweise manuell zusätzliche Verweise oder Dateien entfernen oder Code entsprechend ändern.
 
 ###NuGet-Paketverweise entfernt (die vorhanden waren)
@@ -108,12 +101,12 @@ Die folgenden zusätzlichen Konfigurationseinträge wurden hinzugefügt.
 ```
 	`<appSettings>
 	    <add key="ida:Password" value="Your Azure AD App's new password" />
-	</appSettings>` 
+	</appSettings>`
 ```
 
 ###Ihre Azure Active Directory-App (AD) wurde aktualisiert
-Ihre Azure Active Directory-App wurde aktualisiert und enthält nun die Berechtigung *Verzeichnis lesen*. Außerdem wurde ein zusätzlicher Schlüssel erstellt, der als *ida:Password* in der Datei `web.config` verwendet wird.
+Ihre Azure Active Directory-App wurde aktualisiert und enthält nun die Berechtigung *Verzeichnisdaten lesen*. Außerdem wurde ein zusätzlicher Schlüssel erstellt, der als *ida:Password* in der Datei `web.config` verwendet wird.
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

@@ -1,20 +1,20 @@
 <properties
     pageTitle="Tools für elastische Datenbanken in Azure SQL-Datenbank"
-	description="SaaS-Entwickler (Software-as-a-Service) können mit diesen Tools problemlos elastische und skalierbare Datenbanken in der Cloud erstellen."
-	services="sql-database"
-	documentationCenter=""
-	manager="jeffreyg"
-	authors="ddove"
-	editor=""/>
+    description="SaaS-Entwickler (Software-as-a-Service) können mit diesen Tools problemlos elastische und skalierbare Datenbanken in der Cloud erstellen."
+    services="sql-database"
+    documentationCenter=""
+    manager="jeffreyg"
+    authors="ddove"
+    editor=""/>
 
 <tags
     ms.service="sql-database"
-	ms.workload="sql-database"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/27/2015"
-	ms.author="sidneyh"/>
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="08/27/2015"
+    ms.author="sidneyh"/>
 
 # Übersicht über Features für elastische Datenbanken
 
@@ -97,6 +97,10 @@ Einzelheiten zum Pool für elastische Datenbanken finden Sie unter [Überlegunge
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
+### Geben Sie uns Feedback!
+Was können wir besser tun? Wird das Feature in diesem Thema deutlich erklärt? Oder ist irgendein Teil verwirrend? Wir möchten Sie zufrieden stellen. Teilen Sie uns über die Abstimmschaltflächen mit, ob wir Fehler gemacht haben (oder erfolgreich waren). Wenn wir Kontakt zu Ihnen aufnehmen sollen, geben Sie in Ihrem Feedback Ihre E-Mail-Adresse an.
+
+
 <!--Anchors-->
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-introduction/tools.png
@@ -104,4 +108,4 @@ Einzelheiten zum Pool für elastische Datenbanken finden Sie unter [Überlegunge
 [3]: ./media/sql-database-elastic-scale-introduction/overview.png
 [4]: ./media/sql-database-elastic-scale-introduction/single_v_multi_tenant.png
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO2-->

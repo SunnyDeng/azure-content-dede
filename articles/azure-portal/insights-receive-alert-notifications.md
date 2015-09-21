@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/25/2015" 
+	ms.date="09/08/2015" 
 	ms.author="stepsic"/>
 
 # Empfangen von Warnbenachrichtigungen
@@ -39,6 +39,8 @@ Beim Erstellen einer Warnungsregel können Sie Optionen auswählen, um eine E-Ma
 5. Bei Auswahl von **Metrics** geben Sie eine Bedingung und einen Schwellenwert für die Metrik an. Dies ist der Zeitraum, den Azure verwendet, um die Warnungsaktivität zu überwachen und darzustellen. ![Bedingung und Schwellenwert](./media/insights-receive-alert-notifications/Insights_ConditionAndThreshold.png)
 
 6. Sie können auch **Events** auswählen, um eine Benachrichtigung zu erhalten, wenn ein bestimmtes Ereignis auftritt. ![Ereignisse](./media/insights-receive-alert-notifications/Insights_Events.png)
+    
+>[AZURE.NOTE]Zu diesem Zeitpunkt werden Ereignisse nur für Web-Apps unterstützt.
 
 7. Anschließend können Sie festlegen, dass eine E-Mail-Benachrichtigung an die zuständigen Administratoren gesendet wird.
 
@@ -63,4 +65,4 @@ Sie können diese Warnungsregel natürlich bearbeiten und **deaktivieren** und w
 * [Nachverfolgen des Dienststatus](insights-service-health.md), um den Zeitpunkt von Leistungsabfällen oder Dienstunterbrechungen zu ermitteln, die bei Azure aufgetreten sind.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO2-->

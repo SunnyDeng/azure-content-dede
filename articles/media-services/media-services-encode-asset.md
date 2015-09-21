@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Azure On-Demand Media Encoder – Überblick und Vergleich"
-	description="Dieses Thema bietet eine Übersicht und einen Vergleich über Azure On-Demand-Media Encoder."
-	services="media-services"
-	documentationCenter=""
-	authors="juliako"
-	manager="dwrede"
+	pageTitle="Azure On-Demand Media Encoder – Überblick und Vergleich" 
+	description="Dieses Thema bietet eine Übersicht und einen Vergleich über Azure On-Demand-Media Encoder." 
+	services="media-services" 
+	documentationCenter="" 
+	authors="juliako" 
+	manager="dwrede" 
 	editor=""/>
 
 <tags 
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/24/2015"
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/07/2015"  
 	ms.author="juliako"/>
 
 #Azure On-Demand Media Encoder – Überblick und Vergleich
@@ -238,6 +238,14 @@ MPEG Layer 2|Nein|Nein|Ja
 MP3 (MPEG-1 Audio Layer 3)|Nein|Nein|Ja
 Windows Media Audio|Nein|Ja|Ja
 
+
+##Media Services-Lernpfade
+
+Sie können sich die AMS-Lernpfade hier ansehen:
+
+- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
+
 ##Verwandte Artikel
 
 - [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md)
@@ -246,4 +254,4 @@ Windows Media Audio|Nein|Ja|Ja
 <!--Reference links in article-->
 [1]: http://azure.microsoft.com/pricing/details/media-services/
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO2-->
