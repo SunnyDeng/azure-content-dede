@@ -75,7 +75,7 @@ Bei der Arbeit mit Daten ist es zunächst wichtig, die Art der Vorhersagen zu be
 
 ## <a name="setup"></a>Einrichten eines HDInsight Hadoop-Clusters für die erweiterte Analyse
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
 
 Sie können in drei Schritten eine Azure-Umgebung für die erweiterte Analyse einrichten, in der ein HDInsight-Cluster verwendet wird:
 
@@ -91,7 +91,7 @@ Sie können in drei Schritten eine Azure-Umgebung für die erweiterte Analyse ei
 
 ## <a name="getdata"></a>Abrufen der Daten aus der öffentlichen Quelle
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
 
 Sie können zum Abrufen des Datasets [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/) von seinem öffentlichen Speicherort eine der in [Verschieben von Daten in und aus Azure-Blobspeichern](machine-learning-data-science-move-azure-blob.md) beschriebenen Methoden verwenden, um die Daten auf Ihren Computer zu kopieren.
 
@@ -107,7 +107,7 @@ Nachfolgend wird beschrieben, wie Sie AzCopy zum Übertragen der Dateien verwend
 
 ## <a name="upload"></a>Hochladen der Daten in den Standardcontainer des Azure HDInsight Hadoop-Clusters
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
 
 Ersetzen Sie in den folgenden AzCopy-Befehlen die folgenden Parameter durch die tatsächlichen Werte, die Sie beim Erstellen des Hadoop-Clusters und beim Entzippen der Dateien angegeben haben.
 
@@ -130,7 +130,7 @@ Die Daten sollten jetzt im Azure-Blobspeicher vorliegen und zur Verarbeitung im 
 
 ## <a name="#download-hql-files"></a>Melden Sie sich beim Hauptknoten des Hadoop-Clusters an, und bereiten Sie eine explorative Datenanalyse vor.
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
 
 Um für eine explorative Datenanalyse und eine Komprimierung der Daten auf den Hauptknoten des Clusters zuzugreifen, folgen Sie den Anweisungen unter [Zugreifen auf den Hauptknoten des Hadoop-Clusters](machine-learning-data-science-customize-hadoop-cluster.md#headnode).
 
@@ -146,13 +146,13 @@ Mit diesen zwei Befehlen werden alle für diese exemplarische Vorgehensweise ben
 
 ## <a name="#hive-db-tables"></a>Erstellen von Hive-Datenbank und Tabellen partitioniert nach Monat
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
 
 Wir können jetzt Hive-Tabellen für das NYC Taxi-Dataset erstellen. Öffnen Sie auf dem Desktop des Hauptknotens die ***Hadoop-Befehlszeile***, und wechseln Sie mithilfe des folgenden Befehls zum Hive-Verzeichnis.
 
     cd %hive_home%\bin
 
->[AZURE.NOTE]**Führen Sie alle Hive-Befehle dieser exemplarischen Vorgehensweise über die Eingabeaufforderung im oben angeführten Hive-Verzeichnis "bin/" aus. So werden alle Pfadprobleme automatisch behoben. Die hier verwendeten Begriffe "Hive-Eingabeaufforderung", "Hive-Eingabeaufforderung im bin-Verzeichnis" und "Hadoop-Befehlszeile" sind austauschbar.**
+>[AZURE.NOTE] **Führen Sie alle Hive-Befehle dieser exemplarischen Vorgehensweise über die Eingabeaufforderung im oben angeführten Hive-Verzeichnis "bin/" aus. So werden alle Pfadprobleme automatisch behoben. Die hier verwendeten Begriffe "Hive-Eingabeaufforderung", "Hive-Eingabeaufforderung im bin-Verzeichnis" und "Hadoop-Befehlszeile" sind austauschbar.**
 
 Geben Sie auf dem Hauptknoten von der Hive-Eingabeaufforderung den folgenden Befehl in der Hadoop-Befehlszeile ein, um die Hive-Abfrage zum Erstellen von Hive-Datenbank und -Tabellen zu senden:
 	
@@ -208,7 +208,7 @@ Wenn Sie weitere Hilfe bei diesen oder anderen Verfahren benötigen, oder wenn S
 
 ## <a name="#load-data"></a>Laden von Daten in Hive-Tabellen nach Partitionen
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Administrator** ausgeführt.
 
 Das NYC Taxi-Dataset ist bereits nach Monat partitioniert, was wir für eine schnellere Verarbeitung und Abfrage nutzen. Die nachstehenden PowerShell-Befehle (ausgegeben über das Hive-Verzeichnis mithilfe der **Hadoop-Befehlszeile**) laden Daten in die nach Monat partitionierten Hive-Tabellen "trip" und "fare".
 
@@ -275,7 +275,7 @@ Nachfolgend sehen Sie die erwartete Ausgabe:
    
 ## <a name="#explore-hive"></a>Untersuchen von Daten und Entwickeln von Features in Hive
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
 
 Das Untersuchen von Daten und das Entwickeln von Funktionen für die in die Hive-Tabellen geladenen Daten kann mithilfe von Hive-Abfragen durchgeführt werden. Dies sind einige Beispiele für solche Aufgaben, die wir in diesem Abschnitt bearbeiten:
 
@@ -287,7 +287,7 @@ Das Untersuchen von Daten und das Entwickeln von Funktionen für die in die Hive
 
 ### Untersuchung: Anzeigen der ersten 10 Datensätze in der Tabelle "trip"
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
 
 Um einen Eindruck der Daten zu erhalten, untersuchen wir die ersten 10 Datensätze jeder Tabelle. Führen Sie die folgenden zwei Abfragen einzeln von der Hive-Eingabeaufforderung in der Hadoop-Befehlszeilenkonsole aus, um die Datensätze zu überprüfen.
 
@@ -305,7 +305,7 @@ Es ist häufig nützlich, die Datensätze zur bequemen Anzeige in einer Datei zu
 
 ### Untersuchung: Anzeigen der Anzahl von Datensätzen in jeder der 12 Partitionen
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
 
 Interessant ist, wie die Anzahl von Fahrten im Laufe des Kalenderjahrs variiert. Eine Gruppierung nach Monat ermöglicht es uns, die Verteilung der Fahrten anzuzeigen.
 	
@@ -373,7 +373,7 @@ Die Gesamtzahl der Datensätze in beiden Tabellen stimmt ebenfalls überein. Die
 
 ### Untersuchung: Verteilung der Fahrten nach "medallion"
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
 
 In diesem Beispiel wird die Taxinummer ("medallion") mit mehr als 100 Fahrten innerhalb eines bestimmten Zeitraums ermittelt. Die Abfrage profitiert vom Zugriff auf die partitionierte Tabelle, da sie von der Partitionsvariable **month** abhängig ist. Die Abfrageergebnisse werden in eine lokale Datei namens "queryoutput.tsv" im Verzeichnis `C:\temp` auf dem Hauptknoten geschrieben.
 
@@ -405,7 +405,7 @@ Führen Sie an der Hive-Eingabeaufforderung den folgenden Befehl aus:
 
 ### Untersuchung: Verteilung der Fahrten nach "medallion" und "hack\_license"
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
 
 Beim Untersuchen eines Datasets wird häufig das Zusammentreffen von Gruppen von Werten geprüft. Der vorliegende Abschnitt zeigt anhand eines Beispiels, wie diese Untersuchung für Taxis und Fahrer durchgeführt werden kann.
 
@@ -428,7 +428,7 @@ Die Abfrageergebnisse werden in eine lokale Datei namens "C:\\temp\\queryoutput.
 
 ### Untersuchung: Bewerten der Datenqualität durch Prüfen auf Datensätze mit ungültigem Längen-/Breitengrad
 
->[AZURE.NOTE]Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
+>[AZURE.NOTE] Diese Aufgabe wird typischerweise von einem **Datenanalyst** ausgeführt.
 
 Eine allgemeines Ziel bei der explorativen Datenanalyse besteht darin, ungültige oder falsche Datensätze auszusortieren. Im Beispiel in diesem Abschnitt wird ermittelt, ob Werte in den Feldern für Längen- oder Breitengrad außerhalb des Bereichs von New York liegen. Da es wahrscheinlich ist, dass solche Datensätze einen falschen Wert für den Längen-/Breitengrad enthalten, sollen diese Daten bei der Modellierung ausgeschlossen werden.
 
@@ -794,9 +794,9 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts werden von Micro
 
 ## Referenzen
 
-• [Downloadseite von Andrés Monroy mit den New Yorker Taxidaten](http://www.andresmh.com/nyctaxitrips/) 
-• [FOILing NYC’s Taxi Trip Data (in englischer Sprache) von Chris Whong](http://chriswhong.com/open-data/foil_nyc_taxi/) 
-• [NYC Taxi and Limousine Commission Research and Statistics (in englischer Sprache)](https://www1.nyc.gov/html/tlc/html/about/statistics.shtml)
+•	[Downloadseite von Andrés Monroy mit den New Yorker Taxidaten](http://www.andresmh.com/nyctaxitrips/)  
+•	[FOILing NYC’s Taxi Trip Data (in englischer Sprache) von Chris Whong](http://chriswhong.com/open-data/foil_nyc_taxi/)   
+•	[NYC Taxi and Limousine Commission Research and Statistics (in englischer Sprache)](https://www1.nyc.gov/html/tlc/html/about/statistics.shtml)
 
 
 [2]: ./media/machine-learning-data-science-process-hive-walkthrough/output-hive-results-3.png
@@ -811,4 +811,4 @@ Diese exemplarische Vorgehensweise und die zugehörigen Skripts werden von Micro
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
  
 
-<!----HONumber=September15_HO1-->
+<!-----HONumber=September15_HO1-->

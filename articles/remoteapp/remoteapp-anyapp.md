@@ -84,7 +84,6 @@ Den ersten Teil führen Sie als Administrator aus. Dann müssen Ihre Benutzer ei
 3. Nun müssen Sie ein Azure-[Speicherkonto](../storage-create-storage-account.md) erstellen. Wir haben unseres "accessstorage" genannt. Wählen Sie einen Namen, der für Sie von Bedeutung ist (es kann nur ein "accessstorage" geben).
 ![Unser Azure-Speicherkonto.](./media/remoteapp-anyapp/ra-anyappazurestorage.png)
 4. Kehren Sie zurück zu Ihrem Dashboard, sodass Sie den Pfad zu Ihrem Speicherort (Endpunkt) abrufen können. Da Sie den Pfad in Kürze benötigen, sollten Sie ihn kopieren und aufbewahren.
-
 ![Der Speicherkontopfad](./media/remoteapp-anyapp/ra-anyappstoragelocation.png)
 5. Nachdem das Speicherkonto erstellt wurde, benötigen Sie als Nächstes den primären Zugriffsschlüssel. Klicken Sie auf **Zugriffstasten verwalten** und kopieren Sie dann den primären Zugriffsschlüssel.
 6. Nun legen Sie den Kontext des Speicherkontos fest und erstellen eine neue Dateifreigabe für Access. Führen Sie die folgenden Cmdlets in einem Windows PowerShell-Fenster mit erhöhten Rechten aus:
@@ -118,4 +117,4 @@ Nun, da Sie eine Sammlung erstellen können, versuchen Sie das Erstellen einer [
 
 <!--Image references-->
 
-<!---HONumber=Sept15_HO2-->
+<!----HONumber=Sept15_HO2-->
