@@ -55,7 +55,6 @@ Nachdem Ihre Sammlung erfolgreich erstellt wurde, ist es Zeit, Access für Benut
 
 Wenn Sie während der Sammlungserstellung vom Azure-RemoteApp-Knoten weg navigiert sind, finden Sie den Weg dorthin von der Azure-Homepage wieder zurück.
 
-1. Klicken Sie auf **RemoteApp** im linken Navigationsbereich.
 2. Klicken Sie auf die zuvor erstellte Sammlung, um zusätzliche Optionen zu erhalten, und konfigurieren Sie die Sammlung.
 ![Eine neue RemoteApp-Cloudsammlung](./media/remoteapp-anyapp/ra-anyappcollection.png)
 3. Auf der Registerkarte **Veröffentlichen** klicken Sie auf **Veröffentlichen** unten auf dem Bildschirm, und klicken Sie dann auf **Startmenüprogramme veröffentlichen**.
@@ -117,4 +116,4 @@ Nun, da Sie eine Sammlung erstellen können, versuchen Sie das Erstellen einer [
 
 <!--Image references-->
 
-<!----HONumber=Sept15_HO2-->
+<!-----HONumber=Sept15_HO2-->
