@@ -61,16 +61,18 @@ Ein Beispielskript zum Installieren von Spark in einem HDInsight-Cluster steht i
 	![Anpassen eines Clusters mit "Skriptaktion"](./media/hdinsight-hadoop-spark-install/HDI.CustomProvision.Page6.png "Anpassen eines Clusters mit "Skriptaktion"")
 
 	<table border='1'>
-	<tr><th>Eigenschaft</th><th>Wert</th></tr>
-	<tr><td>Name</td>
-		<td>Geben Sie einen Namen für die Skriptaktion an. Z. B. <b>Spark installieren</b>.</td></tr>
-	<tr><td>Skript-URI</td>
-		<td>Geben Sie den Uniform Resource Identifier (URI) für das Skript an, das aufgerufen wird, um den Cluster anzupassen. Beispielsweise <i>https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1</i></td></tr>
-	<tr><td>Knotentyp</td>
-		<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
-	<tr><td>Parameter</td>
-		<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist. Für das Skript zum Installieren von Spark sind keine Parameter erforderlich, sodass Sie dieses Feld leer lassen können.</td></tr>
-</table>Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
+		<tr><th>Eigenschaft</th><th>Wert</th></tr>
+		<tr><td>Name</td>
+			<td>Geben Sie einen Namen für die Skriptaktion an. Z. B. <b>Spark installieren</b>.</td></tr>
+		<tr><td>Skript-URI</td>
+			<td>Geben Sie den Uniform Resource Identifier (URI) für das Skript an, das aufgerufen wird, um den Cluster anzupassen. Beispielsweise <i>https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1</i></td></tr>
+		<tr><td>Knotentyp</td>
+			<td>Gibt die Knoten an, auf denen das Anpassungsskript ausgeführt wird. Sie können <b>Alle Knoten</b>, <b>Nur Hauptknoten</b> oder <b>Nur Workerknoten</b> auswählen.
+		<tr><td>Parameter</td>
+			<td>Geben Sie die Parameter an, wenn dies für das Skript erforderlich ist. Für das Skript zum Installieren von Spark sind keine Parameter erforderlich, sodass Sie dieses Feld leer lassen können.</td></tr>
+	</table>
+
+	Sie können dem Cluster mehr als eine Skriptaktion zum Installieren von mehreren Komponenten hinzufügen. Nachdem Sie die Skripts hinzugefügt haben, klicken Sie auf das Häkchen, um die Bereitstellung des Clusters zu starten.
 
 Sie können das Skript auch zum Installieren von Giraph auf HDInsight mit Azure PowerShell oder dem HDInsight .NET SDK verwenden. Anweisungen zu diesen Verfahren finden Sie nachfolgend in diesem Thema.
 
@@ -118,7 +120,7 @@ Mit Spark SQL können Sie mit Spark relationale Abfragen (SQL = Structured Query
 
 >[AZURE.NOTE]Das folgende Beispiel wurde gegen **Spark 1.2.0** erstellt, das installiert wird, wenn Sie die Skript-Aktion beim Bereitstellen von HDInsight 3.2 Cluster ausführen.
 
-1. Aktivieren Sie im Azure-Portal Remotedesktop für den Cluster, den Sie mit installiertem Spark erstellt haben, und stellen Sie dann eine Remoteverbindung mit dem Cluster her. Anweisungen hierzu finden Sie unter </a>Herstellen einer Verbindung mit HDInsight-Clustern mit RDP.
+1. Aktivieren Sie im Azure-Portal Remotedesktop für den Cluster, den Sie mit installiertem Spark erstellt haben, und stellen Sie dann eine Remoteverbindung mit dem Cluster her. Anweisungen hierzu finden Sie unter <a href="http://azure.microsoft.com/documentation/articles/hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung mit HDInsight-Clustern mit RDP</a>.
 
 2. Öffnen Sie in der RDP-Sitzung auf dem Desktop die Hadoop-Befehlszeile, und navigieren Sie zum Speicherort der Installation von Spark, z. B. **C:\\apps\\dist\\spark-1.2.0**.
 
@@ -429,4 +431,4 @@ Geben Sie einen Clusternamen ein, und drücken Sie die EINGABETASTE zum Bereitst
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster.md
 [powershell-install-configure]: ../install-configure-powershell.md
 
-<!---HONumber=Sept15_HO2-->
+<!----HONumber=Sept15_HO2-->

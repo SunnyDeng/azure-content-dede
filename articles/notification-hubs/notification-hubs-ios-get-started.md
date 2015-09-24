@@ -507,8 +507,10 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Ihre iOS-Gerä
 
 [Erste Schritte mit Pushbenachrichtigungen in Mobile Services]: ../mobile-services-javascript-backend-ios-get-started-push.md
 [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: notification-hubs-aspnet-backend-ios-notify-users.md
+[Benachrichtigen von Benutzern mit Benachrichtigungshubs]: notification-hubs-aspnet-backend-ios-notify-users.md
 [Verwenden von Notification Hubs zum Übermitteln von Nachrichten]: notification-hubs-ios-send-breaking-news.md
+[Verwenden von Benachrichtigungshubs zum Übermitteln von Nachrichten]: notification-hubs-ios-send-breaking-news.md
 
 [Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 
-<!---HONumber=Sept15_HO2-->
+<!----HONumber=Sept15_HO2-->

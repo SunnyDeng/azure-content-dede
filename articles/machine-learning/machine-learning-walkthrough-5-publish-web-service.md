@@ -89,7 +89,8 @@ Es stimmt zwar, dass der Dienst die Originalkreditkartendaten nicht benötigt. E
 
 Führen Sie das Experiment ein letztes Mal aus (klicken Sie auf **Ausführen**). Wenn Sie überprüfen möchten, ob das Modell noch funktioniert, klicken Sie mit der rechten Maustaste auf die Ausgabe des Moduls [Score Model][score-model] und wählen **Ergebnisse anzeigen**. Sie sehen, dass die Originaldaten zusammen mit dem Wert für das Kreditrisiko („Bewertete Beschriftungen“)' und dem Bewertungswahrscheinlichkeitswert („Bewertete Wahrscheinlichkeiten“) angezeigt werden.
 
-## Bereitstellen des Webdiensts
+##
+Bereitstellen des Webdiensts
 
 Zum Bereitstellen eines aus dem Experiment abgeleiteten Webdiensts klicken Sie unter dem Bereich auf **Webdienst bereitstellen**. Machine Learning Studio stellt das Experiment als Webdienst bereit und führt Sie zum Dienst-Dashboard.
 
@@ -126,4 +127,4 @@ Die vom Webdienst generierten Ergebnisse werden jetzt unten im Dashboard angezei
 [two-class-boosted-decision-tree]: https://msdn.microsoft.com/library/azure/e3c522f8-53d9-4829-8ea4-5c6a6b75330c/
 [two-class-support-vector-machine]: https://msdn.microsoft.com/library/azure/12d8479b-74b4-4e67-b8de-d32867380e20/
 
-<!---HONumber=Sept15_HO2-->
+<!----HONumber=Sept15_HO2-->

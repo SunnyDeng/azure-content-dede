@@ -231,7 +231,7 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 
 * [Offlinedatensynchronisierung in Azure Mobile Apps]
 
-* [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services] (Hinweis: Im Video geht es zwar um Mobile Services, aber die Offlinesynchronisierung in Azure Mobile Apps funktioniert auf ähnliche Weise.)
+* [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services] \(Hinweis: Im Video geht es zwar um Mobile Services, aber die Offlinesynchronisierung in Azure Mobile Apps funktioniert auf ähnliche Weise.)
 
 <!-- URLs. -->
 
@@ -248,4 +248,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
  
 
-<!---HONumber=Sept15_HO2-->
+<!----HONumber=Sept15_HO2-->

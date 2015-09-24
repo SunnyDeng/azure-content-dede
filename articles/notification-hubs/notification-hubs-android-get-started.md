@@ -70,7 +70,9 @@ Das Abschließen dieses Tutorial ist eine Voraussetzung für alle anderen Notifi
 
 
 
-	Die Referenzdokumentation für diese zwei Pakete finden Sie unter den folgenden Links: * [com.microsoft.windowsazure.messaging](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/messaging/package-summary.html) * [com.microsoft.windowsazure.notifications](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/notifications/package-summary.html)
+	Die Referenzdokumentation für diese zwei Pakete finden Sie unter den folgenden Links:
+	* [com.microsoft.windowsazure.messaging](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/messaging/package-summary.html)
+	* [com.microsoft.windowsazure.notifications](http://dl.windowsazure.com/androiddocs/com/microsoft/windowsazure/notifications/package-summary.html)
 
 
     > [AZURE.NOTE]Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.
@@ -107,7 +109,10 @@ Das Abschließen dieses Tutorial ist eine Voraussetzung für alle anderen Notifi
 	    private static Boolean isVisible = false;
 
 
-	Aktualisieren Sie die drei Platzhalter: * **SENDER\_ID**: Setzen Sie `SENDER_ID` auf die Projektnummer, die Sie zuvor von dem in der [Google Cloud Console](http://cloud.google.com/console) erstellten Projekt abgerufen haben. * **HubListenConnectionString**: Legen Sie für `HubListenConnectionString` die Verbindungszeichenfolge **DefaultListenAccessSignature** für den Hub fest. Sie können diese Verbindungszeichenfolge kopieren, indem Sie im [Azure-Portal] auf der Registerkarte **Dashboard** Ihres Hubs auf **Verbindungszeichenfolge anzeigen** klicken. * **HubName**: Verwenden Sie den Namen Ihres Notification Hubs, der oben auf der Seite in Azure angezeigt wird (**nicht** die vollständige URL). Verwenden Sie z. B. `"myhub"`.
+	Aktualisieren Sie die drei Platzhalter:
+	* **SENDER\_ID**: Setzen Sie `SENDER_ID` auf die Projektnummer, die Sie zuvor von dem in der [Google Cloud Console](http://cloud.google.com/console) erstellten Projekt abgerufen haben.
+	* **HubListenConnectionString**: Legen Sie für `HubListenConnectionString` die Verbindungszeichenfolge **DefaultListenAccessSignature** für den Hub fest. Sie können diese Verbindungszeichenfolge kopieren, indem Sie im [Azure-Portal] auf der Registerkarte **Dashboard** Ihres Hubs auf **Verbindungszeichenfolge anzeigen** klicken.
+	* **HubName**: Verwenden Sie den Namen Ihres Notification Hubs, der oben auf der Seite in Azure angezeigt wird (**nicht** die vollständige URL). Verwenden Sie z. B. `"myhub"`.
 
 
 
@@ -530,4 +535,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [Benachrichtigen von Benutzern mit Benachrichtigungshubs]: notification-hubs-aspnet-backend-android-notify-users.md
 [Verwenden von Benachrichtigungshubs zum Übermitteln von Nachrichten]: notification-hubs-aspnet-backend-android-breaking-news.md
 
-<!---HONumber=Sept15_HO2-->
+<!----HONumber=Sept15_HO2-->
