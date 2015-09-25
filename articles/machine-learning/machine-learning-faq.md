@@ -215,7 +215,8 @@ Sobald ein Vorhersagemodell in die Produktionsumgebung übernommen wurde, könne
 
 Für RRS wird das Ergebnis normalerweise in der Antwort des Webdiensts ausgegeben. Sie können es aber auch in ein Blob schreiben. Bei BES wird die Ausgabe standardmäßig in ein Blob geschrieben. Sie können die Ausgabe aber auch mithilfe des Schreibmoduls in eine Datenbank oder Tabelle schreiben.
 
- ****Können Webdienste nur aus Modellen erstellt werden, die im Studio erstellt wurden? Nein. Webdienste können auch direkt aus Jupyter Notebooks und RStudio erstellt werden.
+ **Können Webdienste nur aus Modellen erstellt werden, die im Studio erstellt wurden?
+ Nein. Webdienste können auch direkt aus Jupyter Notebooks und RStudio erstellt werden.
 
 
 ##Skalierbarkeit
@@ -308,4 +309,4 @@ Für Azure Machine Learning gibt es außerdem ein Community-Forum auf MSDN, in d
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 
-<!----HONumber=Sept15_HO2-->
+<!-----HONumber=Sept15_HO2-->
