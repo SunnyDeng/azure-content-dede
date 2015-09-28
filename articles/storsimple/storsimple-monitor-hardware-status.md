@@ -1,19 +1,19 @@
 <properties 
    pageTitle="StorSimple-Hardwarekomponenten und Status | Microsoft Azure"
-	description="Hier erfahren Sie, wie Sie mithilfe des StorSimple Manager-Diensts die Hardwarekomponenten Ihres StorSimple-Geräts überwachen."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Hier erfahren Sie, wie Sie mithilfe des StorSimple Manager-Diensts die Hardwarekomponenten Ihres StorSimple-Geräts überwachen."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="09/02/2015"
-	ms.author="alkohli"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/15/2015"
+   ms.author="alkohli" />
 
 # Überwachen von Hardwarekomponenten und Status mithilfe des StorSimple Manager-Diensts
 
@@ -160,10 +160,12 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 |Verbindung mit Gerätecontroller|E/A|Physisch|Controller|Nein|Gibt den Zustand der Verbindung zwischen dem EBOD-E/A-Modul und dem Gerätecontroller an.|
 
 ## Nächste Schritte
-Informationen zum Behandeln von Problemen mit einer beeinträchtigten oder fehlerhaften Gerätekomponente finden Sie unter [StorSimple-Überwachungsindikatoren](storsimple-monitoring-indicators.md).
+- Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+ 
+- Informationen zum Behandeln von Problemen mit einer beeinträchtigten oder fehlerhaften Gerätekomponente finden Sie unter [StorSimple-Überwachungsindikatoren](storsimple-monitoring-indicators.md).
 
-Informationen zum Austauschen fehlerhafter Hardwarekomponenten finden Sie unter [Austausch von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
+- Informationen zum Austauschen fehlerhafter Hardwarekomponenten finden Sie unter [Austausch von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-Sollten weiterhin Geräteprobleme auftreten, [wenden Sie sich an den Microsoft-Support](storsimple-contact-microsoft-support.md).
+- Sollten weiterhin Geräteprobleme auftreten, [wenden Sie sich an den Microsoft-Support](storsimple-contact-microsoft-support.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Funktionen von Azure Resource Manager-Vorlagen"
-	description="Es werden die Funktionen beschrieben, die in einer Azure-Ressourcen-Manager-Vorlage zum Abrufen von Werten, Formatieren von Zeichenfolgen und Abrufen von Bereitstellungsinformationen verwendet werden."
-	services="azure-resource-manager"
-	documentationCenter="na"
-	authors="tfitzmac"
-	manager="wpickett"
-	editor=""/>
+   description="Es werden die Funktionen beschrieben, die in einer Azure-Ressourcen-Manager-Vorlage zum Abrufen von Werten, Formatieren von Zeichenfolgen und Abrufen von Bereitstellungsinformationen verwendet werden."
+   services="azure-resource-manager"
+   documentationCenter="na"
+   authors="tfitzmac"
+   manager="wpickett"
+   editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/21/2015"
-	ms.author="tomfitz"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/14/2015"
+   ms.author="tomfitz"/>
 
 # Funktionen von Azure Resource Manager-Vorlagen
 
@@ -108,6 +108,25 @@ Gibt die Ganzzahldivision der beiden angegebenen ganzen Zahlen zurück.
 | operand1 | Ja | Die zu teilende Zahl.
 | operand2 | Ja | Die Zahl, durch die geteilt wird. Muss ungleich 0 sein.
 
+## int
+
+**int(valueToConvert)**
+
+Konvertiert den angegebenen Wert in eine ganze Zahl (Integer).
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| valueToConvert | Ja | Der Wert, der in eine ganze Zahl konvertiert werden soll. Der Wert kann nur den Typ „String“ oder „Integer“ haben.
+
+Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in eine ganze Zahl konvertiert.
+
+    "parameters": {
+        "appId": { "type": "string" }
+    },
+    "variables": { 
+        "intValue": "[int(parameters('appId'))]"
+    }
+
 ## Länge
 
 **length(array)**
@@ -129,7 +148,7 @@ Das folgende Beispiel zeigt, wie die Schlüssel von einem Speicherkonto in die A
 
     "outputs": { 
       "exampleOutput": { 
-        "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0])]", 
+        "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2015-05-01-preview')]", 
         "type" : "object" 
       } 
     } 
@@ -206,9 +225,9 @@ Die folgenden Beispiele zeigen eine vereinfachte Nutzungsweise der Parameterfunk
        }
     ]
 
-## Anbieter
+## providers
 
-**provider (providerNamespace, [resourceType])**
+**providers (providerNamespace, [resourceType])**
 
 Rückgabe von Informationen über einen Ressourcenanbieter und die von ihm unterstützten Ressourcentypen. Wenn kein Typ angegeben wird, werden alle unterstützten Typen zurückgegeben.
 
@@ -384,6 +403,25 @@ Im folgenden Beispiel wird die Eingabezeichenfolge durch ein Komma unterteilt.
         "stringPieces": "[split(parameters('inputString'), ',')]"
     }
 
+## string
+
+**string(valueToConvert)**
+
+Konvertiert den angegebenen Wert in eine Zeichenfolge (String).
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| valueToConvert | Ja | Der Wert, der in eine Zeichenfolge konvertiert werden soll. Der Wert kann nur den Typ „Boolean“, „Integer“ oder „String“ haben.
+
+Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in eine Zeichenfolge konvertiert.
+
+    "parameters": {
+        "appId": { "type": "int" }
+    },
+    "variables": { 
+        "stringValue": "[string(parameters('appId'))]"
+    }
+
 ## sub
 
 **sub(operand1, operand2)**
@@ -472,4 +510,4 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 - Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 - Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](azure-portal/resource-group-template-deploy.md).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

@@ -74,7 +74,7 @@ Eigenschaft | Beschreibung
 | ------------- | -----------
 | Client-ID | Der eindeutige Bezeichner für die App. Sie müssen diesen Bezeichner in Aufrufen der Graph-API oder anderer Web-APIs verwenden, die bei Azure AD registriert sind. Azure AD generiert diesen Wert während der Registrierung der App automatisch. Der Wert kann nicht geändert werden.<BR><BR>Um die App für den Zugriff auf das Verzeichnis (für Lese- oder Schreibzugriff) über die Graph-API zu aktivieren, benötigen Sie eine Client-ID und einen Schlüssel (in OAuth 2.0 als "geheimer Clientschlüssel" bezeichnet). Die App verwendet die Client-ID und den Schlüssel, um ein Zugriffstoken vom Azure AD OAuth 2.0-Tokenendpunkt anzufordern. (Klicken Sie zum Anzeigen aller Azure AD-Endpunkte in der Befehlsleiste auf **Endpunkte anzeigen**.) Wenn Sie die Graph-API zum Abrufen oder Festlegen (Ändern) von Verzeichnisdaten nutzen, verwendet die App das Zugriffstoken im Autorisierungsheader der Anforderung an die Graph-API.
 | Schlüssel | Wenn die App Daten in Azure AD liest oder schreibt, wie etwa Daten, die über die Graph-API zur Verfügung gestellt werden, benötigt die App einen Schlüssel. Wenn Sie ein Zugriffstoken zum Aufrufen der Graph-API anfordern, stellt die App die zugehörige **Client-ID** und den **Schlüssel** bereit. Der Tokenendpunkt verwendet die ID und den Schlüssel zur Authentifizierung der App, bevor das Zugriffstoken ausgegeben wird. Sie können mehrere Schlüssel erstellen, um Schlüsselrolloverszenarien zu ermöglichen. Außerdem können Sie Schlüssel löschen, die abgelaufen, gefährdet oder nicht mehr in Verwendung sind.
-| Zugriff verwalten | Wählen Sie eine der drei verschiedenen Zugriffsebenen aus: "Einmaliges Anmelden (SSO)", "Einmaliges Anmelden, Verzeichnisdaten lesen" oder "Einmaliges Anmelden, Verzeichnisdaten lesen/schreiben". Sie können den Zugriff auch aufheben. Weitere Informationen zum Verzeichniszugriff finden Sie unter [Anwendungszugriffsebenen](https://msdn.microsoft.com/library/azure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels).<br><BR>**Hinweis**: Änderungen an der Verzeichniszugriffsebene für Ihre App gelten nur für Ihr Verzeichnis. Die Änderungen gelten nicht für Kunden, die einen Zugriff auf die App gewährt haben.
+| Zugriff verwalten | Wählen Sie eine der drei verschiedenen Zugriffsebenen aus: "Einmaliges Anmelden (SSO)", "Einmaliges Anmelden, Verzeichnisdaten lesen" oder "Einmaliges Anmelden, Verzeichnisdaten lesen/schreiben". Sie können den Zugriff auch aufheben. <br><BR>**Hinweis**: Änderungen an der Verzeichniszugriffsebene für Ihre App gelten nur für Ihr Verzeichnis. Die Änderungen gelten nicht für Kunden, die einen Zugriff auf die App gewährt haben.
 
 
 ### Systemeigene Clients
@@ -85,4 +85,4 @@ Eigenschaft | Beschreibung
 
 ##
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="08/10/2015" 
+	ms.date="09/15/2015" 
 	ms.author="genemi"/>
 
 
@@ -40,9 +40,9 @@ Die neueste Informationen zu Ressourceneinschränkungen für SQL-Datenbank finde
 Ein wichtiges Ziel für SQL-Datenbank V12 war die Verbesserung der Kompatibilität mit Microsoft SQL Server 2014. Unter anderem ist V12 jetzt mit SQL Server im wichtigen Bereich der Programmierung gleichauf. Beispiel:
 
 
-- [Common Language Runtime \(CLR\)-Assemblys](http://msdn.microsoft.com/library/ms189524.aspx)
-- [Fensterfunktionen](https://msdn.microsoft.com/library/bb934097.aspx), mit [OVER](http://msdn.microsoft.com/library/ms189461.aspx) 
-- [XML-Indizes](https://msdn.microsoft.com/library/bb934097.aspx) und [selektive XML-Indizes](http://msdn.microsoft.com/library/jj670104.aspx)
+- [Common Language Runtime (CLR)-Assemblys](http://msdn.microsoft.com/library/ms189524.aspx)
+- [Fensterfunktionen](http://msdn.microsoft.com/library/bb934097.aspx), mit [OVER](http://msdn.microsoft.com/library/ms189461.aspx) 
+- [XML-Indizes](http://msdn.microsoft.com/library/bb934097.aspx) und [selektive XML-Indizes](http://msdn.microsoft.com/library/jj670104.aspx)
 - [Änderungsnachverfolgung](http://msdn.microsoft.com/library/bb933875.aspx)
 - [INTO-Klausel](http://msdn.microsoft.com/library/ms188029.aspx)
 - [Volltextsuche](http://msdn.microsoft.com/library/ms142571.aspx)
@@ -54,12 +54,24 @@ Informationen zu den wenigen noch nicht unterstützten SQL-Datenbankfunktionen f
 ## Mehr Premium-Performance, neue Leistungsstufen
 
 
-In V12 haben wir die Datenbankdurchsatzeinheiten \(DTUs\) aller Premium-Leistungsstufen ohne zusätzliche Kosten um 25 % erhöht. Durch neue Features, wie die im Folgenden aufgeführten, können noch größere Leistungsvorteile erzielt werden:
+In V12 haben wir die Datenbankdurchsatzeinheiten (DTUs) aller Premium-Leistungsstufen ohne zusätzliche Kosten um 25 % erhöht. Durch neue Features, wie die im Folgenden aufgeführten, können noch größere Leistungsvorteile erzielt werden:
 
 
 - Unterstützung für speicherinterne [Columnstore-Indizes](http://msdn.microsoft.com/library/gg492153.aspx).
 - [Tabellenpartitionierung nach Zeilen](http://msdn.microsoft.com/library/ms187802.aspx) und damit verbundene Verbesserungen bei [TRUNCATE TABLE](http://msdn.microsoft.com/library/ms177570.aspx).
-- Verfügbarkeit der dynamischen Verwaltungssichten [\(DMVs\)](http://msdn.microsoft.com/library/ms188754.aspx) und Extended Events[\(XEvents\)](https://msdn.microsoft.com/library/bb630282.aspx) zur besseren Überwachung und Optimierung der Leistung.
+- Verfügbarkeit der dynamischen Verwaltungssichten [(DMVs)](http://msdn.microsoft.com/library/ms188754.aspx) zur besseren Überwachung und Optimierung der Leistung.
+
+
+### Zuverlässige Leistung
+
+
+Wenn Ihr Clientprogramm eine Verbindung mit SQL-Datenbank V12 herstellt, wobei der Client auf einem virtuellen Azure-Computer ausgeführt wird, müssen Sie die folgenden Portbereiche auf dem virtuellen Computer öffnen:
+
+- 11000-11999
+- 14000-14999
+
+
+Klicken Sie auf [hier](sql-database-develop-direct-route-ports-adonet-v12.md), um ausführliche Informationen über die Ports für die SQL-Datenbank V12 zu erhalten. Die Ports werden für Leistungssteigerungen in der SQL-Datenbank V12 benötigt.
 
 
 ## Bessere Unterstützung für Cloud-SaaS-Anbieter
@@ -78,27 +90,29 @@ Nur in V12 verfügbar ist die neue Standardleistungsstufe S3 sowie die öffentli
 Sicherheit ist eines der Hauptprobleme für alle Benutzer, die für Unternehmenszwecke auf die Cloud angewiesen sind. Zu den aktuellen Sicherheitsfeatures in V12 gehören die folgenden:
 
 
-- [Zeilenbasierte Sicherheit](http://msdn.microsoft.com/library/dn765131.aspx) \(RLS\)
+- [Zeilenbasierte Sicherheit](http://msdn.microsoft.com/library/dn765131.aspx) (RLS)
 - [Dynamische Datenmaskierung](sql-database-dynamic-data-masking-get-started.md)
 - [Eigenständige Datenbanken](http://msdn.microsoft.com/library/azure/ff394108.aspx)
 - [Anwendungsrollen](http://msdn.microsoft.com/library/ms190998.aspx), die mit GRANT, DENY oder REVOKE verwaltet werden
-- [Transparente Datenverschlüsselung](http://msdn.microsoft.com/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) \(TDE\)
+- [Transparente Datenverschlüsselung](http://msdn.microsoft.com/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) (TDE)
+- [Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung der Azure Active Directory-Authentifizierung](sql-database-aad-authentication.md)
+ - SQL-Datenbank unterstützt nun die Azure Active Directory-Authentifizierung, ein Mechanismus zum Herstellen einer Verbindung mit SQL-Datenbank unter Verwendung von Identitäten in Azure Active Directory (Azure AD). Mithilfe der Azure Active Directory-Authentifizierung ist es möglich, die Identitäten von Datenbankbenutzern und anderen Microsoft-Diensten an einer zentralen Stelle zu verwalten.
 
 
 ## Erhöhte Geschäftskontinuität, wenn eine Wiederherstellung erforderlich ist
 
 
-V12 bietet wesentlich bessere Recovery Point Objectives \(RPO\) und geschätzte Wiederherstellungszeiten \(ERTs\):
+V12 bietet wesentlich bessere Recovery Point Objectives (RPO) und geschätzte Wiederherstellungszeiten (ERTs):
 
 
 | Funktionen der Geschäftskontinuität | Frühere Version | V12 |
 | :-- | :-- | :-- |
-| Geografische Wiederherstellung | • RPO \< 24 Stunden.<br/>• ERT \< 12 Stunden. | • RPO \< 1 Stunde.<br/>• ERT \< 12 Stunden. |
-| Standardgeoreplikation | • RPO \< 30 Minuten.<br/>• ERT \< 2 Stunden. | • RPO \< 5 Sekunden.<br/>• ERT \< 30 Sekunden. |
-| Aktive Georeplikation | • RPO \< 5 Minuten.<br/>• ERT \< 1 Stunde. | • RPO \< 5 Sekunden.<br/>• ERT \< 30 Sekunden. |
+| Geografische Wiederherstellung | • RPO < 24 Stunden.<br/>• ERT < 12 Stunden. | • RPO < 1 Stunde.<br/>• ERT < 12 Stunden. |
+| Standardgeoreplikation | • RPO < 30 Minuten.<br/>• ERT < 2 Stunden. | • RPO < 5 Sekunden.<br/>• ERT < 30 Sekunden. |
+| Aktive Georeplikation | • RPO < 5 Minuten.<br/>• ERT < 1 Stunde. | • RPO < 5 Sekunden.<br/>• ERT < 30 Sekunden. |
 
 
-Weitere Informationen finden Sie unter [Azure SQL-Datenbank – Geschäftskontinuität](https://msdn.microsoft.com/library/azure/hh852669.aspx).
+Weitere Informationen finden Sie unter [Azure SQL-Datenbank – Geschäftskontinuität](http://msdn.microsoft.com/library/azure/hh852669.aspx).
 
 
 ## Weitere Gründe für ein Upgrade
@@ -129,8 +143,8 @@ Eine einfache Möglichkeit, um festzustellen, ob eine Datenbank oder ein logisch
 Ein anderes Verfahren zum Ermitteln der Version besteht in der Ausführung der `SELECT @@version;`-Anweisung in der Datenbank zur Anzeige von Versionsinformationen, die den folgenden ähneln:
 
 
-- **12**.0.2000.10 &nbsp; *\(Version V12\)*
-- **11**.0.9228.18 &nbsp; *\(Version V11\)*
+- **12**.0.2000.10 &nbsp; *(Version V12)*
+- **11**.0.9228.18 &nbsp; *(Version V11)*
 
 
 Eine V12-Datenbank kann nur auf einem logischen V12-Server gehostet werden. Und ein V12-Server kann nur V12 Datenbanken hosten.
@@ -139,7 +153,7 @@ Eine V12-Datenbank kann nur auf einem logischen V12-Server gehostet werden. Und 
 Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Servers ausführen, indem Sie die Schritte unter [Upgrade auf SQL-Datenbank V12 vorhanden](sql-database-v12-upgrade.md) befolgen.
 
 
-## <a name="V12AzureSqlDbPreviewGaTable"></a>Regionen mit allgemeiner Verfügbarkeit
+## <a name="V12AzureSqlDbPreviewGaTable"></a> Regionen mit allgemeiner Verfügbarkeit
 
 
 - Am 31. Juli 2015 wurden alle Regionen auf die "Allgemeine Verfügbarkeit" heraufgestuft.
@@ -147,4 +161,4 @@ Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Server
 
 [Ergänzende Nutzungsbedingungen für Microsoft Azure-Vorschauversionen](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

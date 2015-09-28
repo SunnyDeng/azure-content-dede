@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="rkarlin"
-	manager="terrylan"
+	manager="msStevenPo"
 	editor=""/>
 
 <tags
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/07/2015"
+	ms.date="09/09/2015"
 	ms.author="rkarlin"/>
 
 # Aktivieren des Azure AD-Anwendungsproxys
-> [AZURE.NOTE] Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](https://msdn.microsoft.com/library/azure/dn532272.aspx).
+> [AZURE.NOTE]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
 
 Der Microsoft Azure AD-Anwendungsproxy ermöglicht Ihnen das Veröffentlichen von Anwendungen, z. B. SharePoint-Websites, Outlook Web Access und IIS-basierten Anwendungen innerhalb Ihres privaten Netzwerks und bietet den sicheren Zugriff für Benutzer außerhalb Ihres Netzwerks. Mitarbeiter können sich auf ihren eigenen Geräten von zu Hause aus bei Ihren Apps anmelden und sich über diesen cloudbasierten Proxy authentifizieren.
 
@@ -74,5 +74,6 @@ Wenn Sie den Connector deinstallieren möchten, stellen Sie nach der Deinstallat
 
 * [Als Organisation für Azure registrieren](..sign-up-organization.md)
 * [Azure-Identität](..fundamentals-identity.md)
+* [Veröffentlichen von Anwendungen mit dem Anwendungsproxy](active-directory-application-proxy-publish.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

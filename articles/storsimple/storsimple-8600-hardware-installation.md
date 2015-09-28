@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Installieren des StorSimple 8600-Geräts | Microsoft Azure"
-	description="Beschreibt, wie Sie das StorSimple 8600-Gerät auspacken, in ein Rack einbauen und verkabeln., bevor Sie die Software bereitstellen und konfigurieren."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt, wie Sie das StorSimple 8600-Gerät auspacken, in ein Rack einbauen und verkabeln., bevor Sie die Software bereitstellen und konfigurieren."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/06/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/16/2015"
+   ms.author="alkohli" />
 
 # Auspacken, Einbauen und Verkabeln des StorSimple 8600-Geräts
 
@@ -196,7 +196,7 @@ Bevor Sie mit dem Verkabeln des Geräts beginnen können, benötigen Sie Folgend
 - Mitgelieferte serielle Kabel
 - Seriell-USB-Konverter, für den der entsprechende Treiber auf dem PC installiert ist (sofern erforderlich)
 - Mitgelieferte einzelne QSFP-zu-SFP+-Adapter für die Verwendung mit 10-GbE-Netzwerkschnittstellen
-- [Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät](storsimple-supported-hardware-for-10-gbe-network-interfaces/) 
+- [Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät](storsimple-supported-hardware-for-10-gbe-network-interfaces.md) 
 
 ### SAS- und Stromverkabelung
 
@@ -289,4 +289,4 @@ Das Gerät ist nun für Stromversorgung, Netzwerkzugriff und serielle Verbindung
 Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

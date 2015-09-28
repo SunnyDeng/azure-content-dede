@@ -23,6 +23,8 @@ Wenn Ihr Unternehmen auf die Cloud umstellt, können Sie möglicherweise nicht a
 
 In diesem Tutorial erfahren Sie, wie Sie ein Mobile Apps-.NET-Back-End so anpassen können, dass es eine lokale SQL Server-Datenbank anstatt der standardmäßig mit Ihrem Dienst bereitgestellten Azure SQL-Datenbank verwendet.
 
+[AZURE.INCLUDE [app-service-mobile-to-web-and-api](../../includes/app-service-mobile-to-web-and-api.md)]
+
 ## Voraussetzungen ##
 
 Für dieses Lernprogramm müssen Sie über Folgendes verfügen:
@@ -162,4 +164,4 @@ Abschließend müssen Sie das mobile App-Back-End auf Azure veröffentlichen und
 [Azure Management Portal]: http://go.microsoft.com/fwlink/p/?linkid=213885
 [Get started with Mobile Services]: ../mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

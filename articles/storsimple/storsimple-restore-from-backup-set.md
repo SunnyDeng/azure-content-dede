@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Wiederherstellen eines StorSimple-Volumes aus einer Sicherung | Microsoft Azure"
-	description="Erläutert, wie Sie die Seite ";Sicherungskatalog"; des StorSimple Manager-Diensts zum Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz verwenden."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   description="Erläutert, wie Sie die Seite ";Sicherungskatalog"; des StorSimple Manager-Diensts zum Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz verwenden."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/28/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/15/2015"
+   ms.author="v-sharos" />
 
 # Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz
 
@@ -78,8 +78,14 @@ Sie können Ihr StorSimple-Volume auf der Seite **Sicherungskatalog** aus einer 
 
 8. Nachdem die Wiederherstellung abgeschlossen ist, können Sie überprüfen, ob die Inhalte der Volumes durch die aus der Sicherung ersetzt wurden.
 
+![Video verfügbar](./media/storsimple-restore-from-backup-set/Video_icon.png) **Video verfügbar**
+
+Um ein Video zu schauen, in dem gezeigt wird, wie Sie mithilfe des Klons und Wiederherstellungsfunktionen in StorSimple gelöschte Dateien wiederherstellen können, klicken Sie [hier](http://azure.microsoft.com/documentation/videos/storsimple-recover-deleted-files-with-storsimple/).
+
 ## Nächste Schritte
 
-Erfahren Sie, wie Sie [StorSimple-Volumes verwalten](storsimple-manage-volumes.md).
+- Erfahren Sie, wie Sie [StorSimple-Volumes verwalten](storsimple-manage-volumes.md).
 
-<!---HONumber=September15_HO1-->
+- Erfahren Sie, wie Sie [Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts verwalten](storsimple-manager-service-administration.md).
+
+<!---HONumber=Sept15_HO3-->

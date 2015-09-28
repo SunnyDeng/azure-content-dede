@@ -1,23 +1,25 @@
 <properties 
-	pageTitle="Branchenanwendung, Phase 2 | Microsoft Azure"
-	description="In Phase 2 der Branchenanwendung erstellen und konfigurieren Sie in Azure die zwei Active Directory-Replikatdomänencontroller."
+	pageTitle="Branchenanwendung, Phase 2 | Microsoft Azure" 
+	description="In Phase 2 der Branchenanwendung erstellen und konfigurieren Sie in Azure die zwei Active Directory-Replikatdomänencontroller." 
 	documentationCenter=""
-	services="virtual-machines"
-	authors="JoeDavies-MSFT"
-	manager="timlt"
+	services="virtual-machines" 
+	authors="JoeDavies-MSFT" 
+	manager="timlt" 
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="Windows" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/11/2015" 
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 2: Konfigurieren der Domänencontroller
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 In dieser Phase der Bereitstellung einer hochverfügbaren Branchenanwendung in den Azure-Infrastrukturdiensten konfigurieren Sie zwei Replikatdomänencontroller im virtuellen Azure-Netzwerk, sodass Webanforderungen der Clients nach Webressourcen im virtuellen Azure-Netzwerk authentifiziert werden können. Die für die Authentifizierung erforderlichen Daten müssen dann nicht über die Verbindung mit Ihrem lokalen Netzwerk gesendet werden.
 
@@ -39,7 +41,7 @@ Element | Name des virtuellen Computers | Katalogimage | Mindestgröße
 
 **Tabelle M: Virtuelle Computer für die Branchenanwendung mit hoher Verfügbarkeit in Azure**
 
-Einzelheiten zu den Größen der virtuellen Computer finden Sie unter [Größen für virtuelle Computer und Clouddienste](https://msdn.microsoft.com/library/azure/dn197896.aspx).
+Einzelheiten zu den Größen der virtuellen Computer finden Sie unter [Größen virtueller Computer und Cloud-Dienste für Azure](https://msdn.microsoft.com/library/azure/dn197896.aspx).
 
 Mit dem folgenden Azure PowerShell-Befehlsblock erstellen Sie die virtuellen Computer für die beiden Domänencontroller. Geben Sie die Werte für die Variablen ein, lassen Sie dabei aber die < and >-Zeichen weg. Die Werte für diesen PowerShell-Befehlsblock entnehmen Sie den folgenden Tabellen:
 
@@ -108,6 +110,8 @@ Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierende
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
 	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+
+> [AZURE.NOTE]Da diese virtuellen Computer für eine Intranetanwendung gedacht sind, wird ihnen keine öffentliche IP-Adresse oder ein DNS-Domänenname zugewiesen, und sie sind nicht über das Internet erreichbar. Dies bedeutet jedoch auch, dass Sie damit aus dem Azure-Vorschauportal keine Verbindung herstellen können. Die Schaltfläche **Verbinden** ist nicht verfügbar, wenn Sie die Eigenschaften des virtuellen Computers anzeigen. Verwenden Sie die Remotedesktopverbindung oder ein anderes Remotedesktoptool zum Herstellen einer Verbindung mit dem virtuellen Computer über seine private IP-Adresse oder den Intranet-DNS-Namen.
 
 ## Konfigurieren des ersten Domänencontrollers
 
@@ -192,7 +196,7 @@ Im folgenden Diagramm ist die aus dem erfolgreichen Abschluss dieser Phase resul
 
 ## Nächster Schritt
 
-Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 3: Konfigurieren der SQL Server-Infrastruktur](virtual-machines-workload-high-availability-LOB-application-phase3.md).
+Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 3: Konfigurieren der SQL Server-Infrastruktur](virtual-machines-workload-high-availability-LOB-application-phase3.md).
 
 ## Zusätzliche Ressourcen
 
@@ -206,4 +210,4 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 3: Konfi
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

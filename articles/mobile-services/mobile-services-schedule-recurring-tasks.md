@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Planen von Back-End-Aufgaben mit Scheduler | Microsoft Azure"
-	description="Verwenden Sie den Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung."
+	pageTitle="Planen von Back-End-Aufgaben in einen mobilen JavaScript-Back-End-Dienst | Microsoft Azure"
+	description="Verwenden Sie den Scheduler in Azure Mobile Services, um JavaScript-Back-End-Aufträge zu definieren, die nach einem Zeitplan ausgeführt werden."
 	services="mobile-services"
 	documentationCenter=""
 	authors="ggailey777"
@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/14/2015"
 	ms.author="glenga"/>
 
 # Planen von periodischen Aufträgen in Mobile Services
 
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](mobile-services-dotnet-backend-schedule-recurring-tasks.md)
-- [(Any | Javascript)](mobile-services-schedule-recurring-tasks.md)
+> [AZURE.SELECTOR]
+- [.NET backend](mobile-services-dotnet-backend-schedule-recurring-tasks.md)
+- [Javascript backend](mobile-services-schedule-recurring-tasks.md)
 
 In diesem Thema erfahren Sie, wie Sie die Auftragsplanerfunktion im Verwaltungsportal verwenden, um Serverskript-Code zu definieren, der auf der Grundlage eines von Ihnen festgelegten Plans ausgeführt wird. Im vorliegenden Fall führt das Skript einen periodischen Abgleich mit einem Remote-Dienst, hier Twitter, aus und speichert die Ergebnisse in einer neuen Tabelle. Im Folgenden sind einige weitere periodische Aufgaben aufgeführt, die geplant werden können:
 
@@ -166,4 +166,4 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

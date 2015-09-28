@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden von Hue mit Hadoop auf HDInsight Linux-Clustern | Microsoft Azure"
-	description="Informationen zum Installieren und Verwenden von Hue mit Hadoop-Clustern für HDInsight Linux."
-	services="hdinsight"
-	documentationCenter=""
-	authors="nitinme"
-	manager="paulettm"
+	pageTitle="Verwenden von Hue mit Hadoop auf HDInsight Linux-Clustern | Microsoft Azure" 
+	description="Informationen zum Installieren und Verwenden von Hue mit Hadoop-Clustern für HDInsight Linux." 
+	services="hdinsight" 
+	documentationCenter="" 
+	authors="nitinme" 
+	manager="paulettm" 
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/21/2015"
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/11/2015" 
 	ms.author="nitinme"/>
 
 # Installieren und Verwenden von Hue in HDInsight Hadoop-Clustern
@@ -38,21 +38,23 @@ Die Skriptaktion [https://hdiconfigactions.blob.core.windows.net/linuxhueconfiga
 
 > [AZURE.NOTE]Sie können auch Azure PowerShell oder das HDInsight .NET SDK zum Erstellen eines Clusters mit diesem Skript verwenden. Weitere Informationen zur Verwendung dieser Methoden finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
-1. Beginnen Sie die Bereitstellung eines Clusters anhand der Schritte in [Bereitstellen von HDInsight-Clustern unter Linux](hdinsight-provision-linux-clusters.md#portal), schließen Sie sie jedoch nicht ab.
+1. Beginnen Sie die Bereitstellung eines Clusters anhand der Schritte in [Bereitstellen von HDInsight-Clustern unter Linux](hdinsight-hadoop-provision-linux-clusters.md#portal), schließen Sie sie jedoch nicht ab.
+
+	> [AZURE.NOTE]Um Hue auf HDInsight-Clustern zu installieren, ist die empfohlene Hauptknotengröße mindestens A4 (8 Kerne, 14 GB Arbeitsspeicher).
 
 2. Wählen Sie auf dem Blatt **Optionale Konfiguration** die Option **Skriptaktionen** aus, und geben Sie die folgenden Informationen an:
 
 	* __NAME__: Geben Sie einen Anzeigenamen für die Skriptaktion ein.
 	* __SKRIPT-URI__: https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh
 	* __HEAD__: Aktivieren Sie diese Option.
-	* __WORKER__: Lassen Sie diese Option deaktiviert.
-	* __ZOOKEEPER__: Lassen Sie diese Option deaktiviert.
-	* __PARAMETER__: Für das Skript muss das Administratorkennwort für den Cluster als Parameter angegeben werden. Geben Sie das Kennwort in einfachen Anführungszeichen ein.
+	* __WORKER__: Belassen Sie diese Option deaktiviert.
+	* __ZOOKEEPER__: Belassen Sie diese Option deaktiviert.
+	* __PARAMETER__: Für das Skript muss das **Administratorkennwort für den Cluster** als Parameter angegeben werden. Dies ist das Kennwort, das Sie bei der Bereitstellung des Clusters angegeben haben. Sie müssen das Kennwort in einfachen Anführungszeichen angeben.
 
 
-3. Klicken Sie unten in **Skriptaktionen** auf die Schaltfläche **Auswählen**, um die Konfiguration zu speichern. Klicken Sie schließlich auf die Schaltfläche **Auswählen** unten auf dem Blatt **Optionale Konfiguration**, um die optionalen Konfigurationsinformationen zu speichern.
+3. Verwenden Sie am unteren Rand der **Skriptaktionen** die Schaltfläche **Auswählen**, um die Konfiguration zu speichern. Verwenden Sie schließlich die Schaltfläche **Auswählen** am unteren Rand des Blatts **Optionale Konfiguration**, um die optionalen Konfigurationsinformationen zu speichern.
 
-4. Setzen Sie die Bereitstellung des Clusters entsprechend der Beschreibung unter [Bereitstellen von HDInsight-Clustern unter Linux](hdinsight-provision-linux-clusters.md#portal) fort.
+4. Setzen Sie die Bereitstellung des Clusters entsprechend der Beschreibung unter [Bereitstellen von HDInsight-Clustern unter Linux](hdinsight-hadoop-provision-linux-clusters.md#portal) fort.
 
 ## Verwenden von Hue mit HDInsight-Clustern
 
@@ -131,4 +133,4 @@ SSH-Tunneling ist die einzige Möglichkeit für den Zugriff auf Hue auf dem Clus
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

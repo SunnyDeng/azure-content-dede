@@ -1,16 +1,11 @@
 1.	Melden Sie sich online beim [Microsoft Azure-Vorschauportal](https://portal.azure.com/) an.
 2.	Klicken Sie in der Indexleiste auf **Neu**, klicken Sie auf **Daten und Speicher** und dann auf **Azure DocumentDB**. 
+  
+	![Screenshot des Azure-Vorschauportals bei Erstellen einer Datenbank, markiert sind die Schaltfläche "Neu" sowie "Daten und Speicher" auf dem Blatt "Erstellen" und "Azure DocumentDB" auf dem Blatt "Daten und Speicher"][1]
 
-	![Screenshot des Azure-Vorschauportals][88]   
-
-	<!-- Alternatively, from the Startboard, you can browse the Azure Marketplace, select **Data + storage**, choose **DocumentDB**, and then click **Create**.  -->
-	
-	<!-- ![Screen shot of the Azure preview portal, showing the Marketplace blade with the DocumentDB tile highlighted, and the DocumentDB blade with the Create database button highlighted][89]    -->
-   
-
-3. Geben Sie im Blatt **Neues DocumentDB-Konto** die gewünschte Konfiguration für das DocumentDB-Konto an.
+3. Geben Sie auf dem Blatt **Neues DocumentDB-Konto** die gewünschte Konfiguration für das DocumentDB-Konto an.
  
-	![Screenshot des Blatts "Neue DocumentDB"][90]
+	![Screenshot des Blatts "Neue DocumentDB"][3]
 
 
 	- Geben Sie im Feld **ID** einen Namen zur Identifizierung des DocumentDB-Kontos ein. Wenn die **ID** überprüft wurde, wird im Feld **ID** ein grünes Häkchen angezeigt. Der Wert für **ID** wird zum Hostnamen innerhalb des URI. Die **ID** darf nur Kleinbuchstaben, Ziffern und den Bindestrich "-" enthalten und muss zwischen 3 und 50 Zeichen lang sein. Beachten Sie, dass *documents.azure.com* an den gewählten Namen des Endpunkts angehängt wird, um den Endpunkt des DocumentDB-Kontos zu erstellen.
@@ -24,29 +19,29 @@
 	- Unter **Standort** können Sie einen geografischen Standort angeben, an dem Ihr DocumentDB-Konto gehostet wird.
 
 4.	Klicken Sie nach der Konfiguration der Optionen für das neue DocumentDB-Konto auf **Erstellen**. Die Erstellung des DocumentDB-Kontos kann einige Minuten dauern. Sie können den Fortschritt im Startmenü überwachen, um den Status zu überprüfen.  
-	![Screenshot der Kachel "Erstellen" im Startmenü – Online-Datenbankersteller][91]  
+	![Screenshot der Kachel "Erstellen" im Startmenü – Online-Datenbankersteller][4]  
   
 	Sie können den Status auch über den Hub "Benachrichtigungen" überwachen.  
 
-	![Datenbanken schnell erstellen – Screenshot des Notification Hubs, in dem gerade das DocumentDB-Konto erstellt wird – Benachrichtigung für Online-Datenbankersteller][92]  
+	![Datenbanken schnell erstellen - Screenshot des Benachrichtigungs-Hubs, der zeigt, dass das DocumentDB-Konto erstellt wird][5]
 
-	![Screenshot des Notification Hubs, in dem das DocumentDB-Konto erfolgreich erstellt und in einer Ressourcengruppe bereitgestellt wurde][93]
+	![Screenshot des Benachrichtigungs-Hubs, der zeigt, dass das DocumentDB-Konto erfolgreich erstellt und in einer Ressourcengruppe bereitgestellt wurde – Benachrichtigung für Online-Datenbankersteller][6]
 
-5.	Nachdem das DocumentDB-Konto erstellt wurde, kann es mit den Standardeinstellungen im Onlineportal verwendet werden. Beachten Sie, dass die Standardkonsistenz des DocumentDB-Kontos auf **Sitzung** eingestellt ist. Sie können die Einstellung für die Standardkonsistenz ändern, indem Sie im Blatt **DocumentDB-Konto** auf die Kachel **Standardkonsistenz** klicken.
+5.	Nachdem das DocumentDB-Konto erstellt wurde, kann es mit den Standardeinstellungen im Onlineportal verwendet werden. Beachten Sie, dass die Standardkonsistenz des DocumentDB-Kontos auf **Sitzung** eingestellt ist. Sie können die Einstellung für die Standardkonsistenz ändern, indem Sie auf dem Blatt **DocumentDB-Konto** auf die Kachel **Standardkonsistenz** klicken.
 
-    ![Screenshot des Blatts "Ressourcengruppe"][94]
+    ![Screenshot des Blatts "Ressourcengruppe" – Anwendungsentwicklung beginnen][7]
 
 <!--Image references-->
-[88]: media/documentdb-create-dbaccount/ca1.png
-[89]: media/documentdb-create-dbaccount/ca2.png
-[90]: media/documentdb-create-dbaccount/ca3.png
-[91]: media/documentdb-create-dbaccount/ca4.png
-[92]: media/documentdb-create-dbaccount/ca5.png
-[93]: media/documentdb-create-dbaccount/ca6.png
-[94]: media/documentdb-create-dbaccount/ca7.png
+[1]: media/documentdb-create-dbaccount/ca1.png
+[2]: media/documentdb-create-dbaccount/ca2.png
+[3]: media/documentdb-create-dbaccount/ca3.png
+[4]: media/documentdb-create-dbaccount/ca4.png
+[5]: media/documentdb-create-dbaccount/ca5.png
+[6]: media/documentdb-create-dbaccount/ca6.png
+[7]: media/documentdb-create-dbaccount/ca7.png
 
 [How to: Create a DocumentDB account]: #Howto
 [Next steps]: #NextSteps
 [documentdb-manage]: ../articles/documentdb/documentdb-manage.md
 
-<!-----HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

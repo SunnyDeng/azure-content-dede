@@ -274,19 +274,19 @@ Nachdem Sie die BLOBs zurück in die SQL Server-Inhaltsdatenbanken verschoben ha
 1. Verwenden Sie ein Konto mit Administratorrechten, um sich beim Web-Front-End-Server (WFE) anzumelden.
 2. Doppelklicken Sie auf das Installationsprogramm für StorSimple-Adapter für SharePoint. Der Setup-Assistent wird gestartet.
 
-![Setup-Assistent](./media/storsimple-adapter-for-sharepoint/sasp2.png)
+    ![Setup-Assistent](./media/storsimple-adapter-for-sharepoint/sasp2.png)
 
 3. Klicken Sie auf **Weiter**. Die folgende Seite wird angezeigt.
 
-![Seite „Entfernen“ im Setup-Assistenten](./media/storsimple-adapter-for-sharepoint/sasp3.png)
+    ![Seite „Entfernen“ im Setup-Assistenten](./media/storsimple-adapter-for-sharepoint/sasp3.png)
 
 4. Klicken Sie auf **Entfernen**, um den Entfernungsvorgang auszuwählen. Die folgende Seite wird angezeigt.
 
-![Seite „Bestätigung“ im Setup-Assistenten](./media/storsimple-adapter-for-sharepoint/sasp4.png)
+    ![Seite „Bestätigung“ im Setup-Assistenten](./media/storsimple-adapter-for-sharepoint/sasp4.png)
 
 5. Klicken Sie auf **Entfernen**, um den Entfernungsvorgang zu bestätigen. Die folgende Statusseite wird angezeigt.
 
-![Statusseite im Setup-Assistenten](./media/storsimple-adapter-for-sharepoint/sasp5.png)
+    ![Statusseite im Setup-Assistenten](./media/storsimple-adapter-for-sharepoint/sasp5.png)
 
 6. Wenn die Installation abgeschlossen ist, wird die Seite „Fertig stellen“ angezeigt. Klicken Sie auf **Fertig stellen**, um den Setup-Assistenten zu schließen.
 
@@ -308,4 +308,4 @@ Nachdem Sie die BLOBs zurück in die SQL Server-Inhaltsdatenbanken verschoben ha
 [5]: https://technet.microsoft.com/library/ff628583(v=office.15).aspx
 [8]: https://technet.microsoft.com/de-DE/library/ff943565.aspx
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

@@ -1,3 +1,4 @@
+<!--author=SharS last changed: 9/16/15-->
 
 #### So löschen Sie einen Volumecontainer
 
@@ -9,4 +10,4 @@
 
 Wenn dem Volumecontainer Volumes zugeordnet sind, müssen Sie zuerst diese Volumes offline schalten. Führen Sie dazu die Schritte unter [Offlineschalten von Volumes](../articles/storsimple/storsimple-manage-volumes.md#take-a-volume-offline) aus. Wenn die Volumes offline sind, können Sie sie löschen. Wenn dem Volumecontainer keine Volumes zugeordnet sind, löschen Sie den Volumecontainer wie oben beschrieben.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

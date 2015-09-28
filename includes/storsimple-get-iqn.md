@@ -1,3 +1,4 @@
+<!--author=SharS last changed: 9/17/15-->
 
 #### So rufen Sie den IQN eines Windows Server-Hosts ab
 
@@ -9,4 +10,4 @@
 
 3. Speichern Sie diese Zeichenfolge.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

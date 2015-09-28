@@ -3,17 +3,17 @@
 	description="Erfahren Sie, wie Sie den Azure Cache Service zur Unterstützung des ASP.NET-Sitzungszustand-Caching verwenden." 
 	services="app-service\web" 
 	documentationCenter=".net" 
- 	authors="Rick-Anderson" 
+	authors="Rick-Anderson" 
 	manager="wpickett" 
-	editor=""/>
+	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="08/06/2015" 
+	ms.date="09/16/2015" 
 	ms.author="riande"/>
 
 
@@ -23,6 +23,8 @@
 In diesem Thema wird erläutert, wie Sie den Azure Redis Cache-Dienst für den Sitzungszustand verwenden.
 
 Falls Ihre ASP.NET-Web-App den Sitzungszustand verwendet, müssen Sie einen externen Sitzungszustandsanbieter (entweder den Redis Cache Service oder einen SQL Server-Sitzungszustandsanbieter) konfigurieren. Wird der Sitzungszustand ohne einen externen Anbieter verwendet, sind Sie auf eine Instanz Ihrer Web-App beschränkt. Der Redis Cache Service lässt sich am schnellsten und einfachsten aktivieren.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ##<a id="createcache"></a>Erstellen des Caches
 Befolgen Sie [diese Anweisungen](../cache-dotnet-how-to-use-azure-redis-cache.md#create-cache) zum Erstellen des Caches.
@@ -107,4 +109,4 @@ Sie können den Redis Cache auch zum Zwischenspeichern von Objekten in Ihrer Web
   [ManageKeys]: ./media/web-sites-dotnet-session-state-caching/CachingScreenshot_ManageAccessKeys.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

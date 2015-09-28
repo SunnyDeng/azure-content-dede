@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/06/2015"
+   ms.date="09/10/2015"
    ms.author="lauracr"/>
 
 # Verbinden mit Operational Insights von System Center Operations Manager aus
@@ -46,4 +46,4 @@ Wenn Sie Operations Manager zum Überwachen der folgenden Arbeitsauslastungen ve
 
 [Konfigurieren von Proxy- und Firewall-Einstellungen (Optional)](operational-insights-proxy-firewall.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

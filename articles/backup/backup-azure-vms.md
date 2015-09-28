@@ -3,11 +3,11 @@
 	description="Informationen zum Sichern eines virtuellen Azure-Computers nach der Registrierung"
 	services="backup"
 	documentationCenter=""
-	authors="aashishr"
+	authors="trinadhk"
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="hero-article" ms.date="09/09/2015" ms.author="aashishr"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="hero-article" ms.date="09/14/2015" ms.author="trinadhk"; "aashishr"; "jimpark"/>
 
 
 # Sichern von virtuellen Azure-Computern
@@ -89,7 +89,7 @@ Um einen virtuellen Computer zu schützen, führen Sie die folgenden Schritte au
 
 4. Im Assistenten **Elemente schützen** können die zu schützenden virtuellen Computer ausgewählt werden. Wenn zwei oder mehr virtuelle Computer denselben Namen aufweisen, verwenden Sie den Clouddienst zur Unterscheidung zwischen den virtuellen Computern.
 
-    Der Vorgang **Schützen** kann skaliert werden. Das bedeutet, dass mehrere virtuelle Computer gleichzeitig für die Registrierung ausgewählt werden können. Dadurch wird der Aufwand zum Schützen des virtuellen Computers erheblich reduziert.
+    Der Vorgang **Schützen** kann skaliert werden. Das bedeutet, dass mehrere virtuelle Computer gleichzeitig ausgewählt werden können, um geschützt zu werden. Dadurch wird der Aufwand zum Schützen des virtuellen Computers erheblich reduziert.
 
     ![Effektives Konfigurieren von Schutzeinstellungen](./media/backup-azure-vms/protect-at-scale.png)
 
@@ -101,7 +101,7 @@ Um einen virtuellen Computer zu schützen, führen Sie die folgenden Schritte au
 
     ![Schützen mit der neuen Richtlinie](./media/backup-azure-vms/policy-schedule.png)
 
-6. Im dritten Bildschirm des Assistenten **Elemente schützen** wählen Sie eine Aufbewahrungsdauer aus, die den Sicherungen zugeordnet werden soll. Dieser Bildschirm unterstützt das GFS-Aufbewahrungsschema (Grandfather-Father-Son) nach Industriestandard. Erfahren Sie mehr über die [langfristige Aufbewahrung] (backup-azure-vms-introduction.md#Langfristige Aufbewahrung).
+6. Im dritten Bildschirm des Assistenten **Elemente schützen** wählen Sie eine Aufbewahrungsdauer aus, die den Sicherungen zugeordnet werden soll. Dieser Bildschirm unterstützt das GFS-Aufbewahrungsschema (Grandfather-Father-Son) nach Industriestandard. Erfahren Sie mehr über [langfristige Aufbewahrung](#long-term-retention).
 
     Eine Sicherungsrichtlinie umfasst auch das Aufbewahrungsschema der geplanten Sicherungen. Durch die Auswahl einer vorhandenen Sicherungsrichtlinie im vorherigen Bildschirm wird die Änderung des Aufbewahrungsschemas deaktiviert, und die Sicherungen entsprechen der in der Richtlinie definierten Aufbewahrungsrichtlinie.
 
@@ -136,8 +136,12 @@ Sobald der Schutz eingerichtet ist, steigt die Anzahl der virtuellen Computer au
 
 ![Status der Sicherung auf der Dashboard-Seite](./media/backup-azure-vms/dashboard-protectedvms.png)
 
+>[AZURE.NOTE]Werte im Dashboard werden einmal alle 24 Stunden aktualisiert.
+
 ### Langfristige Aufbewahrung
 Die Aufbewahrungsrichtlinie gibt die Dauer an, für die die Sicherung gespeichert werden muss. Anstatt für alle Sicherungspunkte lediglich eine Aufbewahrungsdauer anzugeben, können Kunden je nach Sicherungszeitpunkt verschiedene Aufbewahrungsrichtlinien festlegen. Beispiel: Der Sicherungspunkt am Ende jedes Quartals muss für Audits möglicherweise länger aufbewahrt werden als der tägliche Sicherungspunkt (der als Wiederherstellungspunkt für den alltäglichen Betrieb dient), der 90 Tage lang aufbewahrt werden muss.
+
+![Virtueller Computer wird mit Wiederherstellungspunkt gesichert](./media/backup-azure-vms/long-term-retention.png)
 
 1. **Tägliche Aufbewahrungsrichtlinie**: Täglich erstellte Sicherungen werden 30 Tage lang gespeichert.
 2. **Wöchentliche Aufbewahrungsrichtlinie**: Sicherungen, die jeden Sonntag erstellt werden, werden 104 Wochen lang aufbewahrt.
@@ -203,4 +207,4 @@ Weitere Informationen zum Einstieg in Azure Backup finden Sie unter:
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Verwalten virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

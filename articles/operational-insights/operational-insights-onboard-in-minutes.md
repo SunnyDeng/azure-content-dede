@@ -1,20 +1,20 @@
 <properties
     pageTitle="Minutenschnelles Onboarding auf Operational Insights | Microsoft Azure"
-	description="Mehr Erfahren über die Einrichtung von Azure Operational Insights in wenigen Minuten"
-	services="operational-insights"
-	documentationCenter=""
-	authors="bandersmsft"
-	manager="jwhit"
-	editor=""/>
+    description="Mehr Erfahren über die Einrichtung von Azure Operational Insights in wenigen Minuten"
+    services="operational-insights"
+    documentationCenter=""
+    authors="bandersmsft"
+    manager="jwhit"
+    editor=""/>
 
 <tags
     ms.service="operational-insights"
-	ms.workload="operational-insights"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.date="08/27/2015"
-	ms.author="banders"/>
+    ms.workload="operational-insights"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="hero-article"
+    ms.date="09/10/2015"
+    ms.author="banders"/>
 
 # Minutenschnelles Onboarding auf Azrue Operational Insights
 
@@ -101,4 +101,4 @@ Mit der Operations Management Suite können Sie schnell Ereignis- und IIS-Protok
 - Mit der [Suche](operational-insights-search.md) vertraut machen
 - [Dashboards](operational-insights-use-dashboards.md) zum Speichern und Anzeigen von benutzerdefinierten Suchvorgängen verwenden
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

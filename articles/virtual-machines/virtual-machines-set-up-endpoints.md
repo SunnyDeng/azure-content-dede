@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Endpunkte im Portal eingerichtet werden, um die Kommunikation mit einem virtuellen Computer in Azure zu ermöglichen."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/28/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 #Einrichten von Endpunkten für einen virtuellen Computer
 
@@ -96,4 +96,4 @@ Informationen dazu, wie Sie ein Azure PowerShell-Cmdlet für die Einrichtung ver
 
 [Lastenausgleich für Azure-Infrastrukturdienste](virtual-machines-load-balance.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

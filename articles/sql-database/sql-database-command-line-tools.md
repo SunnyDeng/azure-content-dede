@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwalten von Azure SQL-Datenbank-Ressourcen mit PowerShell" 
+	pageTitle="Verwalten von Azure SQL-Datenbanken mit PowerShell" 
 	description="Verwalten von Azure SQL-Datenbanken mit PowerShell." 
 	services="sql-database" 
 	documentationCenter="" 
@@ -13,11 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/28/2015" 
+	ms.date="09/11/2015" 
 	ms.author="vinsonyu"/>
 
-# Verwalten von Azure SQL-Datenbank-Ressourcen mit PowerShell
+# Verwalten von Azure SQL-Datenbanken mit PowerShell
 
+
+> [AZURE.SELECTOR]
+- [Azure Preview Portal](sql-database-manage-portal.md)
+- [SSMS](sql-database-manage-azure-ssms.md)
+- [PowerShell](sql-database-command-line-tools.md)
 
 In diesem Thema werden PowerShell-Befehle vorgestellt, mit denen viele Azure SQL-Datenbank-Aufgaben mithilfe von Azure-Ressourcen-Manager-Cmdlets ausgeführt werden können.
 
@@ -137,4 +142,4 @@ Kombinieren und Automatisieren von Befehlen. Ersetzen Sie z. B. alles innerhalb
 - [Azure SQL Database Cmdlets (in englischer Sprache)](https://msdn.microsoft.com/library/dn546726.aspx)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

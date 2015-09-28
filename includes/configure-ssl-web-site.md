@@ -1,8 +1,7 @@
-#Aktivieren von HTTPS für eine Web-App in Azure App Service
-
-> [AZURE.NOTE]Schneller ans Ziel kommen – mit der NEUEN [Komplettanleitung für Azure](http://support.microsoft.com/kb/2990804). Mit dieser Anleitung wird das Zuordnen eines benutzerdefinierten Domänennamens zu Azure Cloud Services oder [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) sowie das Absichern der Kommunikation mittels SSL zum Kinderspiel.
 
 Sie können die Kommunikation zwischen Web-App und Browser mit HTTPS sichern, wobei SSL-Verschlüsselung (Secure Socket Layer) verwendet wird. Dies ist die gängigste Methode zum Schützen von Daten, die über das Internet gesendet werden, und bietet Besuchern die Sicherheit, dass ihre Transaktionen mit Ihrer Web-App sicher sind. In diesem Artikel wird die Vorgehensweise beim Konfigurieren von HTTPS für eine Web-App in Azure App Service beschrieben. In diesem Artikel wird die Clientzertifikatsauthentifizierung nicht behandelt. Informationen hierzu finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../articles/app-service-web/app-service-web-configure-tls-mutual-auth.md).
+
+> [AZURE.NOTE]Schneller ans Ziel kommen – mit der NEUEN [Komplettanleitung für Azure](http://support.microsoft.com/kb/2990804). Mit dieser Anleitung wird das Zuordnen eines benutzerdefinierten Domänennamens zu Azure Cloud Services oder [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) sowie das Absichern der Kommunikation mittels SSL zum Kinderspiel.
 
 ##<a name="bkmk_azurewebsites"></a>HTTPS für die Domäne "\\*.azurewebsites.net"
 
@@ -540,4 +539,4 @@ Weitere Informationen zum IIS-URL-Rewrite-Modul finden Sie unter der Dokumentati
 [certwiz3]: ./media/configure-ssl-web-site/waws-certwiz3.png
 [certwiz4]: ./media/configure-ssl-web-site/waws-certwiz4.png
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

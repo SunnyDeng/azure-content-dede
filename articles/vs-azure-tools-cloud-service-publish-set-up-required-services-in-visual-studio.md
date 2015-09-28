@@ -1,23 +1,23 @@
-<properties 
+<properties
    pageTitle="Einrichten von Diensten, die zum Veröffentlichen eines Clouddiensts aus Visual Studio erforderlich sind"
-	description="Lernen Sie die Verfahren zum Einrichten von Cloud- und Speicherkontodiensten und zum Konfigurieren Ihrer Azure-Anwendung kennen."
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="kempb"
-	manager="douge"
-	editor="tglee"/>
-<tags 
+   description="Lernen Sie die Verfahren zum Einrichten von Cloud- und Speicherkontodiensten und zum Konfigurieren Ihrer Azure-Anwendung kennen."
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="kempb"
+   manager="douge"
+   editor="tglee" />
+<tags
    ms.service="multiple"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="multiple"
-	ms.date="08/13/2015"
-	ms.author="kempb"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="multiple"
+   ms.date="09/08/2015"
+   ms.author="kempb" />
 
 # Einrichten von Diensten, die zum Veröffentlichen eines Clouddiensts aus Visual Studio erforderlich sind
 
-##Übersicht
+## Übersicht
 
 Bevor Sie ein Clouddienstprojekt veröffentlichen können, müssen Sie die folgenden Dienste einrichten:
 
@@ -78,7 +78,7 @@ Ein Speicherkonto bietet Zugriff auf die Blob-, Warteschlangen- und Tabellendien
     - Das Azure-Abonnement, dem Sie das Speicherkonto hinzufügen möchten
     - Den Namen, den Sie für das neue Speicherkonto verwenden möchten
     - Die Region oder Affinitätsgruppe (z. B. USA, Westen oder Ostasien)
-    - Den Typ der Replikation, den Sie für das Speicherkonto wünschen, z. B. "Georedundant".
+    - Den Typ der Replikation, den Sie für das Speicherkonto verwenden möchten, zum Beispiel "Georedundant"
 
 1. Wenn Sie fertig sind, wählen Sie **Erstellen** aus. Das neue Speicherkonto wird im Server-Explorer in der Liste **Speicher** angezeigt.
 
@@ -143,7 +143,7 @@ Sie müssen alle Rollen, die auf Speicherdienste zugreifen, für das Verwenden d
     1. Sie müssen eine der folgenden Optionen auswählen, um zu bestimmen, wie der Dienst auf das Speicherkonto zugreift:
         - **HTTP verwenden**. Dies ist die Standardoption. Beispiel: `http://<account name>.blob.core.windows.net`.
         - **HTTPS verwenden** (für eine sichere Verbindung). Beispiel: `https://<accountname>.blob.core.windows.net`.
-        - **Benutzerdefinierte Endpunkte angeben** (für jeden der drei Dienste). Sie können dann diese Endpunkte für den jeweiligen Dienst in das Feld eingeben. 
+        - **Benutzerdefinierte Endpunkte angeben** (für jeden der drei Dienste). Sie können dann diese Endpunkte für den jeweiligen Dienst in das Feld eingeben.
 
         >[AZURE.NOTE]Wenn Sie benutzerdefinierte Endpunkte erstellen, können Sie eine komplexere Verbindungszeichenfolge erstellen. Wenn Sie dieses Zeichenfolgenformat verwenden, können Sie Speicherdienstendpunkte angeben, die einen benutzerdefinierten Domänennamen enthalten, den Sie für Ihr Speicherkonto mit dem Blobdienst registriert haben. Außerdem können Sie über eine SAS (Shared Access Signature) Zugriff auf ausschließlich Blobressourcen in einem einzelnen Container gewähren. Weitere Informationen zum Erstellen benutzerdefinierter Endpunkte finden Sie unter [Konfigurieren von Azure Storage-Verbindungszeichenfolgen](https://azure.microsoft.com/documentation/articles/storage-configure-connection-string/).
 
@@ -153,4 +153,4 @@ Sie müssen alle Rollen, die auf Speicherdienste zugreifen, für das Verwenden d
 
 [Veröffentlichen eines Clouddiensts mit Azure Tools](https://msdn.microsoft.com/library/azure/ee460772.aspx)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

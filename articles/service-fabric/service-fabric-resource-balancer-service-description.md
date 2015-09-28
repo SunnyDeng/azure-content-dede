@@ -3,7 +3,7 @@
    description="Sie erhalten einen Überblick über das Konfigurieren von Dienstbeschreibungen, die vom Resource Balancer verwendet werden können."
    services="service-fabric"
    documentationCenter=".net"
-   authors="GaugeField"
+   authors="masnider"
    manager="timlt"
    editor=""/>
 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/03/2015"
+   ms.date="09/15/2015"
    ms.author="masnider"/>
 
 # Dienstbeschreibung – Übersicht
@@ -202,7 +202,9 @@ Im Codebeispiel werden ServiceTemplates-Definitionen veranschaulicht, die über 
    </StatefulService>
  </ServiceTemplates>
 ```
-Im Codebeispiel werden DefaultServices-Definitionen veranschaulicht, die über das Anwendungsmanifest erfolgen. ``` xml
+Im Codebeispiel werden DefaultServices-Definitionen veranschaulicht, die über das Anwendungsmanifest erfolgen.
+
+``` xml
 <DefaultServices>
   <Service Name="QueueServiceInstance">
     <StatefulService MinReplicaSetSize="3" ServiceTypeName="QueueService" TargetReplicaSetSize="3">
@@ -229,4 +231,4 @@ Weitere Informationen: [Resource Balancer-Architektur](service-fabric-resource-b
 [Image3]: media/service-fabric-resource-balancer-service-description/MW.png
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Aufrufen einer benutzerdefinierten API von einem iOS-Client"
+	pageTitle="Aufrufen einer benutzerdefinierten API von einem iOS-Client (Back-End)"
 	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer iOS-App aufrufen, die Azure Mobile Services verwendet."
 	services="mobile-services"
 	documentationCenter="ios"
@@ -50,4 +50,4 @@ In diesem Thema wurde gezeigt, wie Sie mithilfe der **invokeApi**-Methode eine r
 [Get started with push notifications]: mobile-services-dotnet-backend-ios-get-started-push.md
 [Store server scripts in source control]: mobile-services-store-scripts-source-control.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

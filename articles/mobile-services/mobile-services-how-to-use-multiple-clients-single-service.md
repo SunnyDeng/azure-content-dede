@@ -1,18 +1,18 @@
 <properties
-	pageTitle="Verwenden mehrerer Clients mit einem einzelnen mobilen Dienst-Back-End | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein einzelnes mobiles Dienst-Back-End von mehreren Client-Apps verwenden, die auf verschiedene mobile Plattformen, einschließlich Windows Store und Windows Phone, abzielen."
+	pageTitle="Verwenden von mehreren Clients mit einem einzelnen mobilen Dienst-Back-End | Azure Mobile Services"
+	description="Erfahren Sie, wie Sie ein einzelnes mobiles Dienst-Back-End von mehreren Client-Apps verwenden, die auf verschiedene mobile Plattformen abzielen."
 	services="mobile-services"
 	documentationCenter=""
 	authors="ggailey777"
 	manager="dwrede"
 	editor="mollybos"/>
 <tags
-	ms.service="mobile-services"
+	ms.service="mobile-services" 
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/16/2015"
 	ms.author="glenga"/>
 
 # Unterstützen mehrerer Geräteplattformen durch einen einzelnen mobilen Dienst
@@ -28,8 +28,6 @@ Mobile Services nutzen Azure Notification Hubs zum Senden von Pushbenachrichtigu
 + Windows-Benachrichtigungsdienst (WNS) für Windows Store, Windows Phone 8.1 Store und universelle Windows-Apps
 + Microsoft-Pushbenachrichtigungsdienst (MPNS) für Windows Phone Silverlight-Apps
 
->[AZURE.NOTE]Die Verwendung von WNS zum Senden von Pushbenachrichtigungen an Windows Phone Silverlight 8.1-Apps wird von Notification Hubs derzeit nicht unterstützt. Zum Senden von Benachrichtigungen an Silverlight- und Windows Phone 8.0- und 7.0-Apps muss MPNS verwendet werden.
-
 Weitere Informationen finden Sie unter [Azure Notification Hubs].
 
 Clientregistrierungen werden mithilfe der Registrierungsfunktion in der plattformspezifischen Mobile Services-Clientbibliothek oder mit REST-APIs von Mobile Services erstellt. Notification Hubs unterstützen zwei Arten von Geräteregistrierungen:
@@ -37,8 +35,6 @@ Clientregistrierungen werden mithilfe der Registrierungsfunktion in der plattfor
 + **Systemregistrierung**<br/>Systemregistrierungen sind speziell auf den plattformspezifischen Pushbenachrichtigungsdienst zugeschnitten. Beim Versand von Benachrichtigungen an Geräte, die mit einer Systemregistrierung registriert wurden, müssen Sie plattformspezifische APIs in Ihrem mobilen Dienst aufrufen. Zum Senden einer Benachrichtigung an Geräte auf verschiedenen Plattformen sind mehrere plattformspezifische Aufrufe erforderlich.
 
 + **Vorlagenregistrierung**<br/>Notification Hubs unterstützen auch plattformspezifische Vorlagenregistrierungen. Bei Verwendung von Vorlagenregistrierungen können Sie mit einem einzigen API-Aufruf eine Benachrichtigung an Ihre App auf einer beliebigen registrierten Plattform senden. Weitere Informationen finden Sie unter [Senden plattformübergreifender Benachrichtigungen an Benutzer].
-
->[AZURE.NOTE]Der Versuch, eine Nachricht an eine systemeigene Geräteplattform zu senden, für die keine Geräteregistrierung vorhanden ist, verursacht einen Fehler. Beim Versand von Vorlagenbenachrichtigungen tritt dieser Fehler nicht auf.
 
 Die Tabellen in den folgenden Abschnitten enthalten Links zu clientspezifischen Lernprogrammen, die die Implementierung von Pushbenachrichtigungen mithilfe mobiler .NET- und JavaScript-Back-End-Dienste veranschaulichen.
 
@@ -147,43 +143,9 @@ Einige plattformübergreifende Tools gewährleisten eine funktionsreichere syste
 
 + [**Xamarin**](https://go.microsoft.com/fwLink/p/?LinkID=330242)<br/>Mit Xamarin erstellen Sie sowohl für iOS- als auch für Android-Geräte vollständig systemeigene Apps mit systemeigener Benutzeroberfläche und Zugriff auf alle Geräteressourcen. Xamarin-Apps werden in C# anstatt in Objective-C und Java programmiert. So können .NET-Entwickler Apps für iOS und Android veröffentlichen und Code aus Windows-Projekten gemeinsam nutzen. Xamarin bietet mittels C#-Code eine vollständig systemeigene Benutzeroberfläche auf iOS- und Android-Geräten. Auf diese Weise lässt sich Mobile Services-Code aus Windows-Apps auf iOS- und Android-Geräten wiederverwenden. Weitere Informationen finden Sie unter [Xamarin-Entwicklung](#xamarin) weiter unten.
 
-	Sie können Xamarin-Apps entweder mit Xamarin Studio oder Visual Studio 2013 erstellen. Weitere Informationen finden Sie unter [Plattformübergreifende Entwicklung in Visual Studio](http://msdn.microsoft.com/library/dn771552.aspx).
-
-
-##<a id="shared-vs"></a>Gemeinsame Nutzung und Wiederverwendung von Code in Visual Studio-Projekten
-
-Mobile Services enthalten eine .NET-Clientbibliothek in Form einer portablen .NET Framework-Klassenbibliothek, die die Entwicklung auf allen Windows-Plattformen unterstützt. Weitere Informationen finden Sie unter [Verwenden eines .NET-Clients mit Mobile Services]. Auf diese Weise kann derselbe Mobile Services-Code, z. B. für den Datenzugriff oder die Authentifizierung, in mehreren C#-Projekten einfach wiederverwendet werden.
-
-Eine allgemeine Herangehensweise für die gemeinsame Nutzung und Wiederverwendung von C#-Code zwischen Projekten besteht darin, das Model-View-ViewModel (MVVM)-Muster zu implementieren und Assemblys plattformübergreifend gemeinsam zu nutzen. Sie können die Model- und View Model-Klassen in einem Projekt für eine portable Klassenbibliothek in Visual Studio implementieren und anschließend die an verschiedene Plattformen angepassten Ansichten erstellen. Der plattformübergreifende Model-Code kann z. B. Daten aus einer Quelle wie Ihrem mobilen Dienst auf plattformunabhängige Weise abrufen. In der MSDN-Bibliothek finden Sie eine <a href="http://msdn.microsoft.com/library/gg597391(v=vs.110)">Übersicht und Beispiele</a>, eine Besprechung von <a href="http://msdn.microsoft.com/library/gg597392(v=vs.110)">API-Unterschieden</a>, ein Beispiel für <a href="http://msdn.microsoft.com/library/hh563947(v=vs.110)">die Verwendung von portablen Klassenbibliotheken zur Implementierung des MVVM-Schemas</a> (in englischer Sprache), zusätzliche <a href="http://msdn.microsoft.com/library/windowsphone/develop/jj714086(v=vs.105).aspx">empfohlene Anleitungen</a> und Informationen zur <a href="http://msdn.microsoft.com/library/hh871422(v=vs.110)">Ressourcenverwaltung</a> in portablen Klassenbibliothek-Projekten.
-
-Neben diesen allgemeinen Erläuterungen bietet Visual Studio auch spezifische Möglichkeiten, Code aus mobilen Diensten übergreifend über mehrere Client-App-Projekte wiederzuverwenden, wie in den folgenden Abschnitten beschrieben. Allgemeinere Informationen zur Verwendung von Visual Studio 2013 zum Erstellen plattformübergreifender Apps finden Sie unter [Plattformübergreifende Entwicklung in Visual Studio](http://msdn.microsoft.com/library/dn771552.aspx).
-
-### Universelle Windows-Apps
-
-Visual Studio 2013 Update 2 bietet erstmalig Unterstützung für universelle Windows-App-Projekte. Universelle Apps sind Lösungen, die sowohl Windows Store 8.1- und Windows Phone Store 8.1-App-Projekte als auch ein Projekt mit freigegebenem Code enthalten. In diesen Projekten wird freigegebener Code behandelt, als wäre er Teil von Windows Store- und von Windows Phone-Projekten. Weitere Informationen finden Sie unter [Erstellen universeller Windows-Apps für alle Windows-Geräte]. Universelle Windows-Apps können in C#/XAML und JavaScript/HTML geschrieben werden.
-
-Auf der Schnellstartregisterkarte "Mobiler Service" im [Azure-Verwaltungsportal] wird die TodoList-Beispiel-App standardmäßig in der Version einer universellen Windows-App generiert, um Sie bei Ihren ersten Schritten zu unterstützen. Sie können entweder eine C#/XAML- oder eine JavaScript/HTML-Version des Projekts herunterladen. Weitere Informationen finden Sie unter [Erste Schritte mit Mobile Services](../mobile-services-windows-store-get-started.md).
-
->[AZURE.NOTE]Die C#-Version des Schnellstart-App-Projekts aus dem Portal nutzt zwar die CodeBehind-Seite "MainPage.xaml.cs", verwendet aber kein Anzeigemodell. Ein Beispiel der TodoList-App als Projekt für eine universelle Windows-App in C#, das MVVM verwendet, finden Sie unter [Projekt für eine universelle Windows-App für Azure Mobile Services unter Verwendung von MVVM].
-
-###<a id="xamarin"></a>Xamarin-Entwicklung
-
-Mit Xamarin können Sie Ihre Kenntnisse in der Visual Studio- und C#-Entwicklung nutzen und Apps für iOS und Android in Visual Studio oder Xamarin Studio entwickeln. Xamarin verwendet eine plattformübergreifende Implementierung von .NET Framework, die die Entwicklung von iOS- und Android-Apps mit C#-Code ermöglicht. Mithilfe von Xamarin können Sie vorhandenen Code aus Windows-Projekten nutzen, der die .NET-Clientbibliothek von Mobile Services für den Zugriff auf Ihren mobilen Dienst verwendet. Weitere Informationen finden Sie unter [Plattformübergreifende Entwicklung in Visual Studio](http://msdn.microsoft.com/library/dn771552.aspx).
-
-In den Xamarin-Schnellstart-Lernprogrammen ([iOS](mobile-services-ios-get-started.md)/[Android](mobile-services-android-get-started.md)) erfahren Sie, wie Sie Ihre ersten Xamarin-Apps erstellen, die Mobile Services verwenden.
-
-
-### Windows Store- und Windows Phone Silverlight-Apps
-
-In Windows Phone 8.1 können Sie Apps mit der früheren Silverlight-basierten XAML entwickeln oder die Windows-Runtime-basierte XAML verwenden, die die Entwicklung universeller Windows-Apps unterstützt. Weitere Informationen zu Windows Phone 8.1 Silverlight-Apps und Windows Phone Store 8.1-Apps finden Sie unter [Nächste Schritte für Windows Phone 8-Entwickler].
-
-Die .NET-Clientbibliothek von Mobile Services unterstützt sowohl Windows Phone Store 8.1-Apps als auch Windows Phone Silverlight 8.1-Apps. Da Windows-Runtime- und Windows Phone Silverlight-Apps nicht im selben Projekt erstellt werden können, sollten Sie eine Wiederverwendungsstrategie für Code wie den oben beschriebenen PCL- und MVVM-Ansatz in Erwägung ziehen.
-
->[AZURE.NOTE]Um die Clientauthentifizierung für einmaliges Anmelden mit einem Microsoft-Konto in Windows-Runtime- und Windows Phone Silverlight-Apps zu verwenden, müssen Sie die Windows-Runtime-App zunächst im Windows Store-Dashboard registrieren. Dies liegt daran, dass Sie nach der Erstellung einer Live Connect-Registrierung für Windows Phone keine weitere Registrierung für Windows Store erstellen können. Weitere Informationen hierzu finden Sie im Thema **Authentifizieren Ihrer Windows Store-App mit einmaliger Anmeldung von Live Connect** ([Windows Store][SSO Windows Store]/[Windows Phone][SSO Windows Phone]).
-
 
 <!-- URLs -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com
+[Azure Management portal]: https://manage.windowsazure.com
 [Azure Notification Hubs]: /develop/net/how-to-guides/service-bus-notification-hubs/
 [SSO Windows Store]: /develop/mobile/tutorials/single-sign-on-windows-8-dotnet/
 [SSO Windows Phone]: /develop/mobile/tutorials/single-sign-on-wp8/
@@ -196,15 +158,15 @@ Die .NET-Clientbibliothek von Mobile Services unterstützt sowohl Windows Phone 
 [Get started with push iOS]: /develop/mobile/tutorials/get-started-with-push-ios/
 [Get started with push Android]: /develop/mobile/tutorials/get-started-with-push-android/
 [Dynamic schema]: http://msdn.microsoft.com/library/windowsazure/jj193175.aspx
-[Verwenden eines .NET-Clients mit Mobile Services]: documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
+[How to use a .NET client with Mobile Services]: documentation/articles/mobile-services-windows-dotnet-how-to-use-client-library/
 [push-Objekt]: http://msdn.microsoft.com/library/windowsazure/jj554217.aspx
 [TemplatePushMessage]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.templatepushmessage.aspx
 [PhoneGap]: mobile-services-javascript-backend-phonegap-get-started.md
 [Sencha]: partner-sencha-mobile-services-get-started.md
 [Appcelerator]: ../partner-appcelerator-mobile-services-javascript-backend-appcelerator-get-started.md
 [SendAsync]: http://msdn.microsoft.com/library/microsoft.windowsazure.mobile.service.notifications.pushclient.sendasync.aspx
-[Nächste Schritte für Windows Phone 8-Entwickler]: http://msdn.microsoft.com/library/windows/apps/dn655121(v=vs.105).aspx
-[Erstellen universeller Windows-Apps für alle Windows-Geräte]: http://go.microsoft.com/fwlink/p/?LinkId=509905
-[Projekt für eine universelle Windows-App für Azure Mobile Services unter Verwendung von MVVM]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de
+[What's next for Windows Phone 8 developers]: http://msdn.microsoft.com/library/windows/apps/dn655121(v=vs.105).aspx
+[Building universal Windows apps for all Windows devices]: http://go.microsoft.com/fwlink/p/?LinkId=509905
+[Universal Windows app project for Azure Mobile Services using MVVM]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

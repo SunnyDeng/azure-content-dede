@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App-Modell v2.0 | Microsoft Azure"
+	pageTitle="App-Modell v2.0 .NET-Web-App | Microsoft Azure"
 	description="Vorgehensweise beim Erstellen einer .NET MVC-Web-App, bei der sich Benutzer sowohl mit ihrem persönlichen Microsoft-Konto als auch ihrem Geschäfts- oder Schulkonto anmelden können."
 	services="active-directory"
 	documentationCenter=".net"
@@ -13,15 +13,15 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/12/2015"
+	ms.date="09/11/2015"
 	ms.author="dastrock"/>
 
 # App-Modell v2. 0 (Vorschauversion): Hinzufügen der Anmeldung bei einer .NET-MVC-Web-App
 
 Mit dem App-Modell v2. 0 können Sie schnell eine Authentifizierung zu Ihren Web-Apps hinzufügen, die sowohl persönliche Microsoft-Konten als auch Geschäfts- oder Schulkonten unterstützt. Für ASP.NET-Webanwendungen erreichen Sie das Gleiche durch die in .NET Framework 4.5 enthaltenen OWIN-Middleware von Microsoft.
 
-  >[AZURE.NOTE]
-	Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+>[AZURE.NOTE]
+Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
  Hier verwenden wir OWIN für Folgendes:
 -	Anmelden eines Benutzers bei der Anwendung mit Azure AD und dem App-Modell v2.0.
@@ -52,11 +52,11 @@ Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.micr
 ## 2. Einrichten der App zur Verwendung mit der OWIN-Authentifizierungspipeline
 Hier konfigurieren wir die OWIN-Middleware zur Verwendung mit dem OpenID Connect-Authentifizierungsprotokoll. OWIN wird u. a. zum Ausstellen von Anmelde- und Abmeldeanforderungen, zum Verwalten von Benutzersitzungen und zum Abrufen von Benutzerinformationen verwendet.
 
--	Öffnen Sie zunächst die Datei „web.config“ im Stammverzeichnis des Projekts, und geben Sie im Abschnitt <AppEinstellungen> die Konfigurationswerte der App ein.
-    -	Die „ida:ClientId“ ist die Ihrer App zugewiesene **Anwendungs-ID** im Registrierungsportal.
-    -	Der „ida:RedirectUri“ ist der im Portal eingegebene **Umleitungs-URI**.
+-   Öffnen Sie zunächst die Datei „web.config“ im Stammverzeichnis des Projekts, und geben Sie im Abschnitt <AppEinstellungen> die Konfigurationswerte der App ein.
+    -    Die „ida:ClientId“ ist die Ihrer App zugewiesene **Anwendungs-ID** im Registrierungsportal.
+    -    Der „ida:RedirectUri“ ist der im Portal eingegebene **Umleitungs-URI**.
 
--	Fügen Sie als Nächstes mithilfe der Paket-Manager-Konsole die OWIN-Middleware-NuGet-Pakete zum Projekt hinzu.
+-    Fügen Sie als Nächstes mithilfe der Paket-Manager-Konsole die OWIN-Middleware-NuGet-Pakete zum Projekt hinzu.
 
 ```
 PM > Install-Package Microsoft.Owin.Security.OpenIdConnect
@@ -211,4 +211,4 @@ Weitere Ressourcen:
 - [Die App-Modell v2.0-Vorschauversion >>](active-directory-appmodel-v2-overview.md) 
 - [StackOverflow-"azure-active-directory"-Tag >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!----HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

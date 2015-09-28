@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/02/2015"
+   ms.date="09/10/2015"
    ms.author="banders" />
 
 # Unterstützte Konfigurationen für Operational Insights
@@ -29,13 +29,13 @@ Sie können Operational Insights als angefügten Dienst von Operations Manager i
 Für die Nutzung von Operational Insights als angefügten Dienst gelten die folgenden Voraussetzungen:
 
 
-- Für die Integration von System Center 2012 SP1 Operations Manager und Operational Insights sind aktualisierte Management Packs erforderlich, die im [Operational Insights Connector für Operations Manager](https://www.microsoft.com/de-de/download/details.aspx?id=38199) enthalten sind. Sie können die Management Packs auch unter [Operational Insights-Connector für Operations Manager](https://www.microsoft.com/de-de/download/details.aspx?id=38199) herunterladen und installieren.
+- Für die Integration von System Center 2012 SP1 Operations Manager und Operational Insights sind aktualisierte Management Packs erforderlich, die im [Operational Insights Connector für Operations Manager](https://www.microsoft.com/de-DE/download/details.aspx?id=38199) enthalten sind. Sie können die Management Packs auch unter [Operational Insights-Connector für Operations Manager](https://www.microsoft.com/de-DE/download/details.aspx?id=38199) herunterladen und installieren.
 
 - System Center 2012 SP1: Operations Manager-Updaterollup 6 (Updaterollup 7 bevorzugt). Dieses Update muss im Rahmen eines angefügten Diensts auf den Verwaltungsserver, Agents und die Betriebskonsole für Operational Insights angewendet werden.
 
 - System Center 2012 R2: Operations Manager-Updaterollup 2 (Updaterollup 3 bevorzugt). Dieses Update muss im Rahmen eines angefügten Diensts auf den Verwaltungsserver, Agents und die Betriebskonsole für Operational Insights angewendet werden.
 
-- Um Kapazitätsverwaltungsdaten anzuzeigen, müssen Sie die Operations Manager-Verbindung mit Virtual Machine Manager (VMM) aktivieren. Zusätzliche Informationen zum Verbinden der Systeme finden Sie unter [Verbinden von VMM mit Operations Manager](https://technet.microsoft.com/de-de/library/hh882396.aspx).
+- Um Kapazitätsverwaltungsdaten anzuzeigen, müssen Sie die Operations Manager-Verbindung mit Virtual Machine Manager (VMM) aktivieren. Zusätzliche Informationen zum Verbinden der Systeme finden Sie unter [Verbinden von VMM mit Operations Manager](https://technet.microsoft.com/de-DE/library/hh882396.aspx).
 
 Anleitungen zur Installation und Konfiguration finden Sie unter [Anzeigen von Operational Insights-Warnungen](http://go.microsoft.com/fwlink/?LinkID=293793).
 
@@ -48,11 +48,11 @@ Operations Manager-Agents werden auf vielen verschiedenen Computern unterstützt
 
 ### Erforderliche Software für Operations Manager
 
-Zum Anzeigen von Kapazitätsverwaltungsdaten müssen Sie die Operations Manager-Verbindung mit VMM aktivieren. Zusätzliche Informationen zum Verbinden der Systeme finden Sie unter [Verbinden von VMM mit Operations Manager](https://technet.microsoft.com/de-de/library/hh882396.aspx).
+Zum Anzeigen von Kapazitätsverwaltungsdaten müssen Sie die Operations Manager-Verbindung mit VMM aktivieren. Zusätzliche Informationen zum Verbinden der Systeme finden Sie unter [Verbinden von VMM mit Operations Manager](https://technet.microsoft.com/de-DE/library/hh882396.aspx).
 
 ## Agents mit direkter Operational Insights-Verbindung
 
-Der Agent, der zum Herstellen der direkten Verbindung mit dem Dienst verwendet wird, ist der Microsoft Monitoring Agent. Die dazugehörigen Systemanforderungen sind auf der Seite [Microsoft Download Center](https://www.microsoft.com/de-de/download/details.aspx?id=40316&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True) aufgeführt.
+Der Agent, der zum Herstellen der direkten Verbindung mit dem Dienst verwendet wird, ist der Microsoft Monitoring Agent. Die dazugehörigen Systemanforderungen sind auf der Seite [Microsoft Download Center](https://www.microsoft.com/de-DE/download/details.aspx?id=40316&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True) aufgeführt.
 
 ## Browser
 
@@ -100,4 +100,4 @@ Für SQL Server werden die folgenden 32-Bit- und 64-Bit-Editionen für Analysezw
 
 Darüber hinaus wird bei der Ausführung in der WOW64-Implementierung die 32-Bit-Edition von SQL Server unterstützt.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

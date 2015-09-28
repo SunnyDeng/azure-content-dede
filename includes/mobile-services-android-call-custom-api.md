@@ -1,5 +1,5 @@
 
-##<a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
+###<a name="update-app"></a>Aktualisieren der App zum Aufruf der benutzerdefinierten API
 
 1. Wir fügen neben der vorhandenen Schaltfläche eine Schaltfläche namens "Complete All" ein und verschieben beide Schaltflächen um eine Zeile nach unten. Öffnen Sie in Android Studio die Datei *res\\layout\\activity\_to\_do.xml* in Ihrem Schnellstartprojekt, suchen Sie das Element **LinearLayout**, welches das **Button**-Element namens `buttonAddToDo` enthält. Kopieren Sie das **LinearLayout**, und fügen Sie es direkt nach dem ursprünglichen ein. Löschen Sie das Element **Button** vom ersten **LinearLayout**.
 
@@ -95,7 +95,7 @@
 	
 	Diese Methode verarbeitet das **Click**-Ereignis für die neue Schaltfläche. Die **invokeApi**-Methode wird beim Client aufgerufen, der eine POST-Anfrage an die neue benutzerdefinierte API sendet. Das von der benutzerdefinierten API zurückgegebene Ergebnis wird in einem Meldungsdialogfeld angezeigt, ebenso wie jegliche Fehler.
 
-## Testen der App
+### Testen der App
 
 1. Klicken Sie im Menü **Ausführen** auf **App ausführen**, um das Projekt im Android-Emulator oder auf einem angeschlossenen Android-Gerät zu starten.
 
@@ -112,4 +112,4 @@
 
 	Ein Meldungsdialogfeld wird angezeigt, das die Zahl der als abgeschlossen markierten Elemente angibt, und die gefilterte Abfrage wird erneut ausgeführt, um alle Elemente aus der Liste zu löschen.
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

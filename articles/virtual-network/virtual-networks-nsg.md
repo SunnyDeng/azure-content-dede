@@ -1,23 +1,23 @@
 <properties 
    pageTitle="Was ist eine Netzwerksicherheitsgruppe (NSG)?"
-	description="Informationen zu Netzwerksicherheitsgruppen (NSGs)"
-	services="virtual-network"
-	documentationCenter="na"
-	authors="telmosampaio"
-	manager="carolz"
-	editor="tysonn"/>
+   description="Informationen zu Netzwerksicherheitsgruppen (NSGs)"
+   services="virtual-network"
+   documentationCenter="na"
+   authors="telmosampaio"
+   manager="carolz"
+   editor="tysonn" />
 <tags 
    ms.service="virtual-network"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/13/2015"
-	ms.author="telmos"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/13/2015"
+   ms.author="telmos" />
 
 # Was ist eine Netzwerksicherheitsgruppe (NSG)?
 
-Mit einer NSG können Sie eingehenden Datenverkehr für Instanzen virtueller Computer in Ihrem virtuellen Netzwerk steuern. Bei einer Netzwerksicherheitsgruppe handelt es sich um ein übergeordnetes Objekt, das Ihrem Abonnement zugeordnet ist. Eine NSG enthält Zugriffsregeln, die eingehenden Datenverkehr für VM-Instanzen zulassen oder verweigern. Die Regeln für eine NSG können jederzeit geändert werden, und die Änderungen werden auf alle zugeordneten Instanzen angewendet. Für die Verwendung einer NSG benötigen Sie ein VNet mit Regionszuordnung (Standort).
+Mit einer NSG können Sie eingehenden Datenverkehr für Instanzen virtueller Computer in Ihrem virtuellen Netzwerk steuern. Eine NSG enthält Regeln zur Zugriffssteuerung, die den Datenverkehr auf Grundlage der Richtung des Datenverkehrs, des Protokolls, der Quelladresse und des Quellports, und der Zieladresse und des Zielports zulässt oder verweigert. Die Regeln für eine NSG können jederzeit geändert werden, und die Änderungen werden auf alle zugeordneten Instanzen angewendet. Um eine NSG verwenden zu können, müssen Sie über ein regionales VNet verfügen.
 
 >[AZURE.WARNING]NSGs sind nicht mit VNets kompatibel, die einer Affinitätsgruppe zugeordnet sind. Wenn Sie über kein regionales VNet verfügen und trotzdem den eingehenden Datenverkehr für Ihre Endpunkte steuern möchten, lesen Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (Access Control List, ACL)?](./virtual-networks-acl.md) weiter. Sie können auch [Ihr VNet in ein regionales VNet migrieren](./virtual-networks-migrate-to-regional-vnet.md).
 
@@ -249,4 +249,4 @@ Derzeit können NSGs ausschließlich über PowerShell-Cmdlets und REST-APIs konf
 
 	Get-Command *azurenetworksecuritygroup*
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

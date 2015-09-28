@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Ändern der StorSimple-Gerätekonfiguration | Microsoft Azure"
-	description="Beschreibt, wie der StorSimple Manager-Dienst dazu verwendet werden kann, ein StorSimple-Gerät neu zu konfigurieren, das bereits bereitgestellt wurde."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   pageTitle="Ändern der StorSimple-Gerätekonfiguration | Microsoft Azure" 
+   description="Beschreibt, wie der StorSimple Manager-Dienst dazu verwendet werden kann, ein StorSimple-Gerät neu zu konfigurieren, das bereits bereitgestellt wurde." 
+   services="storsimple" 
+   documentationCenter="NA" 
+   authors="SharS" 
+   manager="carolz" 
+   editor=""/>
 
 <tags
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/14/2015"
-	ms.author="v-sharos@microsoft.com"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD" 
+   ms.date="09/15/2015"
+   ms.author="v-sharos@microsoft.com"/>
 
 # Verwenden des StorSimple Manager-Diensts, um eine StorSimple-Gerätekonfiguration zu ändern
 
@@ -59,7 +59,7 @@ Wenn das Gerät in einer anderen Zeitzone bereitgestellt wird, wird die Zeitzone
 
 ## Ändern von DNS-Einstellungen
 
-Ein DNS-Server wird verwendet, wenn das Gerät versucht, mit dem Cloud-Speicherdienstanbieter zu kommunizieren. Für eine hohe Verfügbarkeit müssen bei der ersten Gerätebereitstellung sowohl den primären als auch den sekundäre DNS-Server konfigurieren. Um den primären DNS-Server neu zu konfigurieren, müssen Sie Windows PowerShell-Schnittstelle auf dem StorSimple-Gerät verwenden.
+Ein DNS-Server wird verwendet, wenn das Gerät versucht, mit dem Cloudspeicher-Dienstanbieter zu kommunizieren. Für eine hohe Verfügbarkeit müssen bei der ersten Gerätebereitstellung sowohl den primären als auch den sekundäre DNS-Server konfigurieren. Um den primären DNS-Server neu zu konfigurieren, müssen Sie Windows PowerShell-Schnittstelle auf dem StorSimple-Gerät verwenden.
 
 Um den sekundären DNS-Server zu ändern, können Sie das Verwaltungsportal verwenden.
 
@@ -83,7 +83,7 @@ Für jede Netzwerkschnittstelle werden die folgenden Parameter angezeigt:
 
 - **Geschwindigkeit** – Dieser Parameter ist nicht benutzerkonfigurierbar. DATA 0, DATA 1, DATA 4 und DATA 5 sind immer 1-GbE-Schnittstellen, und DATA 2 und DATA 3 sind 10-GbE-Schnittstellen.
 
-     >[AZURE.NOTE] Geschwindigkeit und Duplexmodus werden immer automatisch ausgehandelt. Großrahmen (Jumbo-Frames) werden nicht unterstützt.
+     >[AZURE.NOTE]Geschwindigkeit und Duplexmodus werden immer automatisch ausgehandelt. Großrahmen werden nicht unterstützt.
  
 - **Schnittstellenstatus** – Eine Schnittstelle kann aktiviert oder deaktiviert sein. Wenn sie aktiviert ist, versucht das Gerät, die Schnittstelle zu verwenden. Es wird empfohlen, dass nur die Schnittstellen aktiviert werden, die mit dem Netzwerk verbunden sind und verwendet werden. Deaktivieren Sie alle Schnittstellen, die Sie nicht verwenden.
 
@@ -124,8 +124,9 @@ Führen Sie die folgenden Schritte aus, wenn Sie die VIPs für eine der Netzwerk
 
 ## Nächste Schritte
 
-[Konfigurieren von MPIO für Ihr StorSimple-Gerät](storsimple-configure-mpio-windows-server.md)
- 
+- Informationen zum [Konfigurieren von MPIO für Ihr StorSimple-Gerät](storsimple-configure-mpio-windows-server.md).
+
+- Informationen zum [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
      
 
-<!----HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

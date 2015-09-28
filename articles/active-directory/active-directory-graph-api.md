@@ -17,7 +17,7 @@
 
 # Azure Active Directory Graph-API
 
-> *Sehen Sie sich die [interaktive Umgebung für die Graph-API-Referenz](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) an.*
+> *Legen Sie direkt los mit der [Graph-API-Schnellstartanleitung](active-directory-graph-api-quickstart.md) und der [interaktiven Graph-API-Referenzdokumentation](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog).*
 
 Die Azure Active Directory Graph-API ermöglicht programmgesteuerten Zugriff auf Azure AD über REST-API-Endpunkte. Anwendungen können die Graph-API verwenden, um CRUD-Vorgänge (Erstellen, Lesen, Aktualisieren und Löschen) für Verzeichnisdaten und Objekte auszuführen. Die Graph-API unterstützt beispielsweise die folgenden allgemeinen Vorgänge für ein Benutzerobjekt:
 
@@ -66,4 +66,4 @@ Die Graph-API ermöglicht eine Vielzahl von Anwendungsszenarios. Die gängigsten
 
 [Entwicklerhandbuch zu Azure Active Directory](active-directory-developers-guide.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

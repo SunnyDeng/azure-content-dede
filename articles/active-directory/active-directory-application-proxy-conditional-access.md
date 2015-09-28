@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/09/2015"
+	ms.date="09/09/2015"
 	ms.author="rkarlin"/>
 
 # Arbeiten mit bedingtem Zugriff
-> [AZURE.NOTE]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](https://msdn.microsoft.com/library/azure/dn532272.aspx).
+> [AZURE.NOTE]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
 
 Sie können ab sofort Zugriffsregeln aktivieren, mit denen Benutzern und Gruppen bedingter Zugriff auf Anwendungen gewährt wird, die mit dem Anwendungsproxy veröffentlicht werden. Dies ermöglicht Folgendes: – Anforderung von Multi-Factor Authentication auf Anwendungsebene – Anforderung von Multi-Factor Authentication nur dann, wenn Benutzer nicht bei der Arbeit sind – Blockieren des Anwendungszugriffs, wenn Benutzer nicht bei der Arbeit sind
 
@@ -44,10 +44,10 @@ Diese Regeln können auf alle Benutzer und Gruppen oder lediglich auf bestimmte 
 
 
 ## Konfigurieren von MFA für Verbunddienste
-Für Verbundmandanten kann die mehrstufige Authentifizierung von Azure Active Directory oder den lokalen AD FS-Server durchgeführt werden. Standardmäßig wird MFA auf allen Seiten durchgeführt, die von Azure Active Directory gehostet werden. Führen Sie zur lokalen Konfiguration von MFA Windows PowerShell aus, und verwenden Sie die –SupportsMFA-Eigenschaft zum Festlegen des Azure AD-Moduls. Das folgende Beispiel zeigt, wie Sie MFA lokal aktivieren, indem Sie das [Set-MsolDomainFederationSettings-Cmdlet](https://msdn.microsoft.com/library/azure/dn194088.aspx) im Mandanten "contoso.com" verwenden: `Set-MsolDomainFederationSettings -DomainName contoso.com -SupportsMFA $true ` Zusätzlich zum Festlegen dieses Flags muss die AD FS-Instanz des Verbundmandanten für die Ausführung der mehrstufigen Authentifizierung konfiguriert werden. Folgen Sie hierzu den Anweisungen unter [Lokales Bereitstellen von Microsoft Azure Multi-Factor Authentication](http://technet.microsoft.com/library/dn280946.aspx).
+Für Verbundmandanten kann die mehrstufige Authentifizierung von Azure Active Directory oder den lokalen AD FS-Server durchgeführt werden. Standardmäßig wird MFA auf allen Seiten durchgeführt, die von Azure Active Directory gehostet werden. Führen Sie zur lokalen Konfiguration von MFA Windows PowerShell aus, und verwenden Sie die –SupportsMFA-Eigenschaft zum Festlegen des Azure AD-Moduls. Das folgende Beispiel zeigt, wie Sie MFA lokal aktivieren, indem Sie das [Set-MsolDomainFederationSettings-Cmdlet](https://msdn.microsoft.com/library/azure/dn194088.aspx) im Mandanten "contoso.com" verwenden: `Set-MsolDomainFederationSettings -DomainName contoso.com -SupportsMFA $true ` Zusätzlich zum Festlegen dieses Flags muss die AD FS-Instanz des Verbundmandanten für die Ausführung der mehrstufigen Authentifizierung konfiguriert werden. Folgen Sie hierzu den Anweisungen unter [Lokales Bereitstellen von Microsoft Azure Multi-Factor Authentication](..multi-factor-authentication-get-started-server.md).
 ## Zusätzliche Ressourcen
 
 * [Als Organisation für Azure registrieren](..sign-up-organization.md)
 * [Azure-Identität](..fundamentals-identity.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

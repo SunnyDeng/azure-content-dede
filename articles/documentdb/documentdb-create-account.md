@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Erstellen eines Datenbankkontos – Testversion | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Datenbankkonten mit dem Onlinedienstportal für Azure DocumentDB, einer verwalteten NoSQL-Dokumentendatenbank für JSON, erstellen. Holen Sie sich noch heute eine kostenlose Testversion."
+	description="Erfahren Sie, wie Sie Datenbankkonten mit dem Online-Datenbankersteller für Azure DocumentDB, einer verwalteten NoSQL-Dokumentendatenbank für JSON, erstellen. Holen Sie sich noch heute eine kostenlose Testversion."
+	keywords="Free trial, online database creator, create a database, create database, documentdb, azure, Microsoft azure"
 	services="documentdb" 
 	documentationCenter="" 
 	authors="mimig1" 
@@ -45,4 +46,4 @@ Weitere Informationen zu DocumentDB finden Sie in folgenden Ressourcen:
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

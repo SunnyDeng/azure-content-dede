@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="rkarlin"
-	manager="stevenpo"
+	manager="msStevenPo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.date="09/09/2015"
 	ms.author="rkarlin"/>
 
 
@@ -27,12 +27,12 @@ Wenn beim Zugriff auf eine veröffentlichte Anwendung oder beim Veröffentlichen
 
 - Öffnen Sie die Windows Services-Konsole, und vergewissern Sie sich, dass der Dienst "Microsoft AAD-Anwendungsproxy-Connector" aktiviert ist und ausgeführt wird. Sie können ggf. auch – wie in der folgenden Abbildung gezeigt – die Eigenschaftenseite des Anwendungsproxy-Diensts anzeigen:
 
-![Screenshot von Microsoft AAD-Anwendungsproxy-Connector-Eigenschaften][1]
+![Screenshot von Microsoft AAD-Anwendungsproxy-Connector-Eigenschaften][connectorproperties.png]
 
 - Öffnen Sie die Ereignisanzeige, und suchen Sie unter **Anwendungs- und Dienstprotokolle** > **Microsoft** > **AadApplicationProxy** > **Connector** > **Administrator** nach Ereignissen, die sich auf den Anwendungsproxy-Connector beziehen.
 - Bei Bedarf sind ausführlichere Protokolle verfügbar, indem Sie die Analyse- und Debugprotokolle aktivieren und das Sitzungsprotokoll des Anwendungsproxy-Connectors aktivieren. Die folgende Abbildung zeigt dies:
 
-![Screenshot von Anwendungsproxy-Connector-Sitzungsprotokoll][2]
+![Screenshot von Anwendungsproxy-Connector-Sitzungsprotokoll][sessionlog.png]
 
 
 ## Allgemeine Fehler
@@ -87,7 +87,7 @@ Wenn während der Connector-Installation durch den Assistenten ein Fehler bei de
 [Aktivieren von Anwendungsproxy-Diensten](active-directory-application-proxy-enable.md)
 
 <!--Image references-->
-[1]: ./media/active-directory-application-proxy-troubleshoot/ConnectorProperties.jpg
-[2]: ./media/active-directory-application-proxy-troubleshoot/SessionLog.jpg
+[1]: ./media/active-directory-application-proxy-troubleshoot/connectorproperties.png
+[2]: ./media/active-directory-application-proxy-troubleshoot/sessionlog.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

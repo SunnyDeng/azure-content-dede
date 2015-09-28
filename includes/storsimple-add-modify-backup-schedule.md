@@ -1,4 +1,6 @@
 
+<!--author=SharS last changed: 9/15/15-->
+
 #### So können sie einen StorSimple-Sicherungszeitplan hinzufügen oder ändern
 
 1. Klicken Sie auf der Seite **Schnellstart** des Geräts auf die Registerkarte **Sicherungsrichtlinien**. Dadurch gelangen Sie auf die Seite **Sicherungsrichtlinien**.
@@ -28,4 +30,4 @@
 Die Seite **Sicherungsrichtlinien** wird aktualisiert, um die Änderungen an der Richtlinie zu speichern.
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

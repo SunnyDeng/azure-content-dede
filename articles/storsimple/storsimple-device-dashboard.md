@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Verwenden des Dashboards des StorSimple Manager-Geräts | Microsoft Azure"
-	description="Beschreibt das Dashboard des StorSimple Manager-Geräts und erläutert, wie das Dashboard verwendet wird, um Speichermetriken und verbundene Initiatoren anzuzeigen sowie nach der Seriennummer und dem IQN zu suchen."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt das Dashboard des StorSimple Manager-Geräts und erläutert, wie das Dashboard verwendet wird, um Speichermetriken und verbundene Initiatoren anzuzeigen sowie nach der Seriennummer und dem IQN zu suchen."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="09/01/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/15/2015"
+   ms.author="alkohli" />
 
 # Verwenden des StorSimple Manager-Gerätedashboards
 
@@ -97,6 +97,7 @@ Möglicherweise benötigen Sie den Ziel-IQN des Geräts, wenn Sie das Challenge 
 
 ## Nächste Schritte
 
-[Erfahren Sie mehr über das StorSimple Manager-Dienstdashboard](storsimple-service-dashboard.md).
+- Erfahren Sie mehr über das [StorSimple Manager-Dienstdashboard](storsimple-service-dashboard.md).
+- Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

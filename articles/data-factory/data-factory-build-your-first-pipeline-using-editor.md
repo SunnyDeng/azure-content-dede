@@ -12,7 +12,7 @@
 	ms.workload="data-services"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="article" 
 	ms.date="07/27/2015"
 	ms.author="spelluru"/>
 
@@ -96,7 +96,7 @@ Sie erstellen nun einen verknüpften Dienst für einen bedarfsgesteuerten HDInsi
 		    "typeProperties": {
 		      "version": "3.1",
 		      "clusterSize": 1,
-		      "timeToLive": "00:05:00",
+		      "timeToLive": "00:30:00",
 		      "jobsContainer": "adfjobs",
 		      "linkedServiceName": "StorageLinkedService"
 		    }
@@ -152,12 +152,12 @@ Jetzt erstellen Sie das Ausgabedataset, das die im Azure- Blobspeicher gespeiche
 ## Schritt 3: Erstellen Ihrer ersten Pipeline
 In diesem Schritt erstellen Sie Ihre erste Pipeline.
 
-1. Klicken Sie im **Data Factory-Editor** auf **\(...\)** und dann auf **Neue Pipeline**.
+1. Klicken Sie im **Data Factory-Editor** auf **(...)** und dann auf **Neue Pipeline**.
 	
 	![Schaltfläche "Neue Pipeline"](./media/data-factory-build-your-first-pipeline-using-editor/new-pipeline-button.png)
 2. Kopieren Sie den Codeausschnitt, und fügen Sie ihn in das Fenster "Draft-1" ein.
 
-	> [AZURE.IMPORTANT] Ersetzen Sie im JSON-Code **storageaccountname** durch den Namen Ihres Speicherkontos.
+	> [AZURE.IMPORTANT]Ersetzen Sie im JSON-Code **storageaccountname** durch den Namen Ihres Speicherkontos.
 
 		{
 		  "name": "MyFirstPipeline",
@@ -233,4 +233,4 @@ In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (H
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-build-your-first-pipeline-using-editor.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

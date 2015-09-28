@@ -3,7 +3,7 @@
 	description="Einführung in die Sicherung von virtuellen Computern in Azure mithilfe des Azure Backup-Diensts"
 	services="backup"
 	documentationCenter=""
-	authors="aashishr"
+	authors="trinadhk"
 	manager="shreeshd"
 	editor=""/>
 
@@ -122,4 +122,4 @@ Informationen für Ihre ersten Schritte mit der Sicherung von virtuellen Compute
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 - [Verwalten der Sicherung virtueller Computer](backup-azure-manage-vms.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

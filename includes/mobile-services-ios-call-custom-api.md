@@ -1,5 +1,5 @@
 
-## <a name="update-app"></a>Aufrufen der benutzerdefinierten API aus einer iOS-App
+### Aufrufen der benutzerdefinierten API aus einer iOS-App
 
 Verwenden Sie zum Aufrufen dieser benutzerdefinierten API von einem iOS-Client aus die `MSClient invokeAPI`-Methode. Es gibt zwei Versionen dieser Methode, eine für JSON-formatierte Anforderungen und eine für beliebige Datentypen:
 
@@ -34,4 +34,4 @@ Verwenden Sie zum Aufrufen dieser benutzerdefinierten API von einem iOS-Client a
 	     completion:completion ];
 		
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

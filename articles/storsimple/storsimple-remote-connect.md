@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Herstellen einer Remoteverbindung mit dem StorSimple-Gerät | Microsoft Azure"
-	description="Erläutert, wie das Gerät für die Remoteverwaltung konfiguriert und über HTTP oder HTTPS eine Verbindung mit Windows PowerShell für StorSimple hergestellt wird."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Erläutert, wie das Gerät für die Remoteverwaltung konfiguriert und über HTTP oder HTTPS eine Verbindung mit Windows PowerShell für StorSimple hergestellt wird."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="08/28/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="09/15/2015"
+   ms.author="alkohli" />
 
 # Herstellen einer Remoteverbindung mit dem StorSimple-Gerät
 
@@ -268,6 +268,8 @@ Führen Sie die folgenden Schritte auf dem Computer aus, über den Sie die Windo
 
 ## Nächste Schritte
 
-[Weitere Informationen zur Verwendung von Windows PowerShell zum Verwalten Ihres StorSimple-Geräts](storsimple-windows-powershell-administration.md)
+- Erfahren Sie mehr zur [Verwendung von Windows PowerShell zum Verwalten Ihres StorSimple-Geräts](storsimple-windows-powershell-administration.md).
 
-<!---HONumber=September15_HO1-->
+- Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+
+<!---HONumber=Sept15_HO3-->

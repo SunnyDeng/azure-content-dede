@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Austauschen von StorSimple-Gerätecontrollern | Microsoft Azure"
-	description="In diesem Thema wird erläutert, wie Sie ein oder beide Controllermodule in einem StorSimple-Gerät austauschen oder entfernen."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="In diesem Thema wird erläutert, wie Sie ein oder beide Controllermodule in einem StorSimple-Gerät austauschen oder entfernen."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/31/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/10/2015"
+   ms.author="alkohli" />
 
 # Ersetzen des Controllermoduls auf dem StorSimple-Gerät
 
@@ -32,14 +32,14 @@ In der folgenden Tabelle werden die unterstützten Controlleraustauschszenarios 
 
 |Fall|Austauschszenario|Anwendbare Verfahren|
 |:---|:-------------------|:-------------------|
-|1|Ein Domänencontroller ist in einem fehlerhaften Zustand, der andere Controller funktioniert fehlerfrei und ist aktiv.|[Austauschen eines einzelnen Controllers](#replace-a-single-controller)|
-|2|Beide Controller sind fehlerhaft und müssen ausgetauscht werden. Das Gehäuse, die Laufwerke und Laufwerkgehäuse sind fehlerfrei.|[Austauschen zweier Controller](#replace-both-controllers)|
+|1|Ein Domänencontroller ist in einem fehlerhaften Zustand, der andere Controller funktioniert fehlerfrei und ist aktiv.|[Austauschen eines einzelnen Controllers](#replace-a-single-controller). Es werden sowohl die [Logik hinter dem Austauschen eines einzelnen Controllers](#single-controller-replacement-logic) als auch die [Schritte für den Austausch](#single-controller-replacement-steps) beschrieben.|
+|2|Beide Controller sind fehlerhaft und müssen ausgetauscht werden. Das Gehäuse, die Laufwerke und Laufwerkgehäuse sind fehlerfrei.|[Austauschen zweier Controller](#replace-both-controllers). Es werden sowohl die [Logik hinter dem Austauschen zweier Controller](#dual-controller-replacement-logic) als auch die [Schritte für den Austausch](#dual-controller-replacement-steps) beschrieben. |
 |3|Die Controller aus dem gleichen Gerät oder aus verschiedenen Geräten werden ausgetauscht. Das Gehäuse, die Laufwerke und die Laufwerkgehäuse sind fehlerfrei.|Es wird eine Warnung bezüglich des falschen Steckplatzes angezeigt.|
-|4|Ein Domänencontroller ist nicht vorhanden, und der andere Controller ist fehlerhaft.|[Austauschen zweier Controller](#replace-both-controllers)|
+|4|Ein Domänencontroller ist nicht vorhanden, und der andere Controller ist fehlerhaft.|[Austauschen zweier Controller](#replace-both-controllers). Es werden sowohl die [Logik hinter dem Austauschen zweier Controller](#dual-controller-replacement-logic) als auch die [Schritte für den Austausch](#dual-controller-replacement-steps) beschrieben.|
 |5|Ein oder beide Domänencontroller sind ausgefallen. Auf das Gerät kann nicht über die serielle Konsole oder Windows PowerShell-Remoteverbindung zugegriffen werden.|[Wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md), um Anweisungen zum manuellen Controlleraustausch zu erhalten.|
-|6|Die Controller verfügen über unterschiedliche Buildversionen. Dies kann folgende Ursachen haben:<ul><li>Controller haben eine unterschiedliche Softwareversion.</li><li>Controller haben eine unterschiedliche Firmwareversion.</li></ul>|Wenn sich die Controller-Softwareversionen unterscheiden, erkennt dies die Austauschlogik und aktualisiert die Software auf dem Ersatzcontroller.<br><br>Wenn sich die Controller-Firmwareversionen unterscheiden und die alte Firmwareversion **nicht** automatisch aktualisiert werden kann, wird eine Warnung im Verwaltungsportal angezeigt. Sie sollten nach Updates suchen und die Firmwareupdates installieren.</br></br>Wenn sich die Controller-Firmwareversionen unterscheiden und die alte Firmwareversion automatisch aktualisiert werden kann, erkennt dies die Ersatzcontrollerlogik, und nach dem Start des Controllers wird die Firmware automatisch aktualisiert.|
+|6|Die Controller haben unterschiedliche Buildversionen. Dies kann folgende Ursachen haben:<ul><li>Controller haben eine unterschiedliche Softwareversion.</li><li>Controller haben eine unterschiedliche Firmwareversion.</li></ul>|Wenn sich die Controller-Softwareversionen unterscheiden, erkennt dies die Austauschlogik und aktualisiert die Software auf dem Ersatzcontroller.<br><br>Wenn sich die Controller-Firmwareversionen unterscheiden und die alte Firmwareversion **nicht** automatisch aktualisiert werden kann, wird eine Warnung im Verwaltungsportal angezeigt. Sie sollten nach Updates suchen und die Firmwareupdates installieren.</br></br>Wenn sich die Controller-Firmwareversionen unterscheiden und die alte Firmwareversion automatisch aktualisiert werden kann, erkennt dies die Ersatzcontrollerlogik, und nach dem Start des Controllers wird die Firmware automatisch aktualisiert.|
 
-Sie müssen ein Controllermodul entfernen, wenn es einen Fehler verursacht hat. Ein oder beide Controllermodule können Fehler aufweisen. Dies kann den Austausch eines einzelnen oder beider Controller zur Folge haben. Die Vorgehensweisen für den Austausch sind unter folgenden Themen erläutert:
+Sie müssen ein Controllermodul entfernen, wenn es einen Fehler verursacht hat. Ein oder beide Controllermodule können Fehler aufweisen. Dies kann den Austausch eines einzelnen oder beider Controller zur Folge haben. Beschreibungen der Austauschvorgehensweisen und der jeweils zugehörigen Logik finden Sie in den folgenden Abschnitten:
 
 - [Austauschen eines einzelnen Controllers](#replace-a-single-controller)
 - [Austauschen beider Controller](#replace-both-controllers)
@@ -194,7 +194,7 @@ Verwenden Sie das folgende Verfahren, um ein fehlerhaftes Controllermodul aus Ih
 
 Gehen Sie folgendermaßen vor, um ein neues Controllermodul zu installieren, nachdem Sie ein fehlerhaftes Modul aus Ihrem StorSimple-Gerät entfernt haben.
 
-### So installieren Sie ein Controllermodul
+#### So installieren Sie ein Controllermodul
 
 1. Überprüfen Sie, ob Schäden an den Schnittstellenanschlüssen vorliegen. Installieren Sie das Modul nicht, wenn einer der Stecker beschädigt oder verbogen ist.
 
@@ -266,4 +266,4 @@ Wenn diese LED blinkt, ist der Controller aktiv, und der andere Controller befin
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

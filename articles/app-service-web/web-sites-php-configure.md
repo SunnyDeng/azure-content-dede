@@ -8,12 +8,12 @@
 	editor=""/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="article"
-	ms.date="06/24/2015"
+	ms.date="09/16/2015"
 	ms.author="tomfitz"/>
 
 #Konfigurieren von PHP in Azure App Service-Web-Apps
@@ -21,6 +21,8 @@
 ## Einführung
 
 In diesem Leitfaden erfahren Sie, wie Sie die integrierte PHP-Laufzeit für Web-Apps in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) konfigurieren, eine benutzerdefinierte PHP-Laufzeit angeben und Erweiterungen aktivieren. Um App Service zu verwenden, registrieren Sie sich für die[ kostenlose Testversion]. Um diese Anleitung optimal zu nutzen, sollten Sie zuerst eine PHP-Web-App in App Service erstellen.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Vorgehensweise: Ändern der integrierten PHP-Version
 PHP 5.4 ist standardmäßig installiert und kann sofort verwendet werden, wenn Sie eine App Service-Web-App erstellen. Die beste Möglichkeit, um die verfügbare Versionsrevision, die Standardkonfiguration und die aktivierten Erweiterungen anzuzeigen, ist die Bereitstellung eines Skripts, das die Funktion [phpinfo()] abruft.
@@ -176,4 +178,4 @@ Anstelle der PHP-Standardlaufzeit können App Service-Web-Apps auch eine PHP-Lau
 [GETPHPVERPS]: ./media/web-sites-php-configure/ShowPHPVersion-PS.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

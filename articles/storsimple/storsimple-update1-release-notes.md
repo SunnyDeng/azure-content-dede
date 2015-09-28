@@ -79,7 +79,7 @@ Die folgende Tabelle enthält eine Zusammenfassung der Probleme, die in den Upda
 | 9 | Netzwerkschnittstellen | In früheren Versionen konnte ein StorSimple-Gerät, das mit einem nicht routbaren Gateway konfiguriert war, offline geschaltet werden. In dieser Version wurde für DATA 0 die niedrigste Routingmetrik festgelegt. Daher wird selbst bei Cloud-Aktivierung anderer Schnittstellen der gesamte Cloud-Datenverkehr vom Gerät über DATA 0 geleitet. | Update 1 | Ja | Ja | 
 | 10 | Backups | Ein Fehler in Update 1, der zum Fehlschlagen von Sicherungen nach 24 Tagen führte, wurde in der Patchversion Update 1.1 behoben. | Update 1.1 | Ja | Ja |
 | 11 | Backups | Ein Fehler in vorherigen Versionen führte zu einer schlechten Leistung für Cloudmomentaufnahmen mit niedrigen Änderungsraten. Dieser Fehler wurde in dieser Patchversion behoben.| Update 1.2 | Ja | Ja |
-| 12 | Backups | Ein Fehler in Update 1, bei dem ein Upgradefehler gemeldet wurde und dazu führte, dass die Controller in den Wiederherstellungsmodus wechselten, wurde in dieser Patchversion behoben.| Update 1.2 | Ja | Ja |
+| 12 | Aktualisierungen | Ein Fehler in Update 1, bei dem ein Upgradefehler gemeldet wurde und dazu führte, dass die Controller in den Wiederherstellungsmodus wechselten, wurde in dieser Patchversion behoben.| Update 1.2 | Ja | Ja |
 
 
 ## Bekannte Probleme in Update 1.2
@@ -124,4 +124,4 @@ Dieses Update kann nicht auf das virtuelle Gerät angewendet werden. Es müssen 
 - [Installieren Sie Update 1.2 auf dem Gerät](storsimple-install-update-1.md).
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

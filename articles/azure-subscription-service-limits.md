@@ -42,9 +42,11 @@ In den folgenden Grenzwerten wurde eine neue Tabelle hinzugefügt, um alle abwei
 - [Azure RemoteApp](#azure-remoteapp-limits)
 - [Sicherung](#backup-limits)
 - [Batch](#batch-limits)
+- [BizTalk Services](#biztalk-services-limits)
 - [CDN](#cdn-limits)
 - [Cloud Services](#cloud-services-limits)
 - [Data Factory](#data-factory-limits)
+- [DNS](#dns-limits)
 - [DocumentDB](#documentdb-limits)
 - [Schlüsseltresor](#key-vault-limits)
 - [Media Services](#media-services-limits)
@@ -64,6 +66,7 @@ In den folgenden Grenzwerten wurde eine neue Tabelle hinzugefügt, um alle abwei
 - [StorSimple-System](#storsimple-system-limits)
 - [Stream Analytics](#stream-analytics-limits)
 - [Abonnement](#subscription-limits)
+- [Traffic Manager](#traffic-manager-limits)
 - [Virtuelle Computer](#virtual-machines-limits)
 
 
@@ -143,6 +146,11 @@ Die folgenden App Service-Grenzwerte umfassen Grenzwerte für Web-Apps, Mobile A
 ### Batchgrenzwerte
 
 [AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
+
+###BizTalk Services-Grenzwerte
+In der folgende Tabelle werden die Grenzwerte für Azure Biztalk Services aufgeführt.
+
+[AZURE.INCLUDE [biztalk-services-service-limits](../includes/biztalk-services-service-limits.md)]
 
 
 ### DocumentDB-Grenzwerte
@@ -246,4 +254,4 @@ Grenzwerte für SQL-Datenbank finden Sie unter [Ressourceneinschränkungen für 
 
 [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

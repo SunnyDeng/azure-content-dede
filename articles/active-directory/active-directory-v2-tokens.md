@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App-Modell v2 | Microsoft Azure"
+	pageTitle="App-Modell v2.0 Tokenreferenz | Microsoft Azure"
 	description="Die vom Endpunkt mit der Version 2.0 ausgestellten Token- und Anspruchstypen"
 	services="active-directory"
 	documentationCenter=""
@@ -163,4 +163,4 @@ Die folgenden Angaben zur Tokengültigkeitsdauer dienen ausschließlich zu Infor
 | Autorisierungscodes (Geschäfts- oder Schulkonten) | 10 Minuten | Autorisierungscodes haben absichtlich eine kurze Gültigkeitsdauer. Sie müssen umgehend für Zugriffs- und Aktualisierungstoken eingelöst werden, wenn sie empfangen werden. |
 | Autorisierungscodes (Persönliche Konten) | 5 Minuten | Autorisierungscodes haben absichtlich eine kurze Gültigkeitsdauer. Sie müssen umgehend für Zugriffs- und Aktualisierungstoken eingelöst werden, wenn sie empfangen werden. Für persönliche Konten ausgestellte Autorisierungscodes können auch nur einmal verwendet werden. |
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

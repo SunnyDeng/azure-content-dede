@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/09/2015"
+	ms.date="09/15/2015"
 	ms.author="nitinme"/>
 
 
@@ -1153,9 +1153,7 @@ Diese Kompatibilitätsprobleme sind in den neuesten Versionen von HDInsight SDK 
 Diese Version enthält mehrere Verbesserungen des HDInsight-Dienstes:
 
 * **Verfügbarkeit von HDP 2.1**: HDInsight 3.1 (mit HDP 2.1) ist jetzt allgemein verfügbar und die Standardversion für neue Cluster.
-* **HBase – Azure-Portalverbesserungen**: HBase-Cluster werden in der Vorschau verfügbar gemacht. Über das Portal können HBase-Cluster mit drei Klicks erstellt werden.
-
-![](http://i.imgur.com/cmOl5fM.png)
+* **HBase – Azure-Portalverbesserungen**: HBase-Cluster werden in der Vorschau verfügbar gemacht. Über das Portal können HBase-Cluster mit nur wenigen Klicks erstellt werden. 
 
 Mit HBase können Sie verschiedene Arbeitslasten in Echtzeit in HDInsight erstellen, von interaktiven Websites mit großen Datasets bis zu Diensten, die Sensor- und Telemetriedaten aus Millionen von Endpunkten speichern. Der nächste Schritt besteht im Analysieren der Daten in diesen Arbeitslasten mit Hadoop-Aufträgen. Dies ist in HDInsight über Azure PowerShell und das Hive-Cluster-Dashboard möglich.
 
@@ -1348,4 +1346,4 @@ Versionshinweise zu den HDPs (Hortonworks Data Platforms), die von den Versionen
 [hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

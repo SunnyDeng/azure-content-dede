@@ -1,31 +1,33 @@
 <properties 
-	pageTitle="Steuern von eingehendem Datenverkehr in eine App Service-Umgebung"
-	description="Erfahren Sie, wie Netzwerksicherheitsregeln für das Steuern des in einer App Service-Umgebung eingehenden Datenverkehrs konfiguriert werden."
-	services="app-service\web"
-	documentationCenter=""
-	authors="ccompy"
-	manager="wpickett"
+	pageTitle="Steuern von eingehendem Datenverkehr in eine App Service-Umgebung" 
+	description="Erfahren Sie, wie Netzwerksicherheitsregeln für das Steuern des in einer App Service-Umgebung eingehenden Datenverkehrs konfiguriert werden." 
+	services="app-service\web" 
+	documentationCenter="" 
+	authors="ccompy" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="06/30/2015"
-	ms.author="stefsh"/>
+	ms.service="app-service" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/11/2015" 
+	ms.author="stefsch"/>
 
 # Steuern von eingehendem Datenverkehr in eine App Service-Umgebung
 
 ## Übersicht ##
-Eine App Service-Umgebung wird immer in einem Subnetz eines regionalen [virtuellen Netzwerks][virtualnetwork] erstellt. Ein neues regionales virtuelles Netzwerk und ein neues Subnetz können bei der Erstellung einer App Service-Umgebung definiert werden. Alternativ kann eine App Service-Umgebung in einem bereits vorhandenen regionalen virtuellen Netzwerk und einem bereits vorhandenen Subnetz erstellt werden. Weitere Informationen zum Erstellen einer App Service-Umgebung finden Sie unter [Erstellen einer App Service-Umgebung][HowToCreateAnAppServiceEnvironment].
+Eine App Service-Umgebung wird immer in einem Subnetz eines regionalen klassischen [virtuellen "v1"-Netzwerks][virtualnetwork] erstellt. Ein neues regionales klassisches virtuelles "v1"-Netzwerk und ein neues Subnetz können bei der Erstellung einer App Service-Umgebung definiert werden. Alternativ kann eine App Service-Umgebung in einem bereits vorhandenen regionalen klassischen virtuellen "v1"-Netzwerk und einem bereits vorhandenen Subnetz erstellt werden. Weitere Informationen zum Erstellen einer App Service-Umgebung finden Sie unter [Erstellen einer App Service-Umgebung][HowToCreateAnAppServiceEnvironment].
 
 Eine App Service-Umgebung muss immer innerhalb eines Subnetzes erstellt werden, da ein Subnetz eine Netzwerkgrenze bereitstellt, die zum Sperren von eingehendem Datenverkehr hinter Upstreamgeräten und -diensten verwendet werden kann. Auf diese Weise wird HTTP- und HTTPS-Datenverkehr nur von bestimmten Upstream-IP-Adressen akzeptiert.
 
 Der ein- und ausgehende Netzwerkdatenverkehr in einem Subnetz wird anhand einer [Netzwerksicherheitsgruppe][NetworkSecurityGroups] gesteuert. Zur Steuerung des eingehenden Datenverkehrs müssen Netzwerksicherheitsregeln in einer Netzwerksicherheitsgruppe erstellt werden. Anschließend wird die Netzwerksicherheitsgruppe dem Subnetz mit der App Service-Umgebung zugewiesen.
 
 Sobald eine Netzwerksicherheitsgruppe einem Subnetz zugewiesen wurde, wird der in den Apps in der App Service-Umgebung eingehende Datenverkehr abhängig von den Zulassungs- und Ablehnungsregeln, die in der Netzwerksicherheitsgruppe definiert wurden, entweder zugelassen oder blockiert.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## In einer App Service-Umgebung verwendete Netzwerkports ##
 Bevor Sie den eingehenden Netzwerkdatenverkehr mithilfe einer Netzwerksicherheitsgruppe sperren, sollten Sie unbedingt die erforderlichen und optionalen Netzwerkports kennen, die von einer App Service-Umgebung verwendet werden. Das versehentliche Ausschließen von Datenverkehr für bestimmte Ports kann zu einem Funktionalitätsverlust in einer App Service-Umgebung führen.
@@ -43,14 +45,16 @@ Im Folgenden sehen Sie eine Liste der Ports, die von einer App Service-Umgebung 
 - 4020: Wird zum Remotedebuggen in Visual Studio 2015 verwendet. Dieser Port kann sicher blockiert werden, wenn die Funktion nicht verwendet wird.
 
 ## Ausgehende Verbindungen und DNS-Anforderungen ##
-Damit eine App-Service-Umgebung ordnungsgemäß funktioniert, ist auch ein ausgehender Zugriff auf Azure Storage sowie eine SQL-Datenbank in derselben Azure-Region erforderlich. Wenn der ausgehende Internetzugriff im virtuellen Netzwerk blockiert ist, können App Service-Umgebungen nicht auf diese Azure-Endpunkte zugreifen.
+Damit eine App Service-Umgebung ordnungsgemäß funktioniert, ist auch ein ausgehender Zugriff auf Azure Storage weltweit sowie eine SQL-Datenbank in derselben Azure-Region erforderlich. Wenn der ausgehende Internetzugriff im virtuellen Netzwerk blockiert ist, können App Service-Umgebungen nicht auf diese Azure-Endpunkte zugreifen.
 
 Kunden können auch über benutzerdefinierte DNS-Server verfügen, die im virtuellen Netzwerk konfiguriert sind. App Service-Umgebungen müssen Azure-Endpunkte unter *.database.windows.net, *.file.core.windows.net und *.blob.core.windows.net auflösen können.
 
-Es empfiehlt sich auch, benutzerdefinierte DNS-Server im VNET vor dem Erstellen einer App-Service-Umgebung einzurichten. Wenn die DNS-Konfiguration eines virtuellen Netzwerks geändert wird, während eine App Service-Umgebung erstellt wird, misslingt das Erstellen der App Service-Umgebung.
+Es empfiehlt sich auch, benutzerdefinierte DNS-Server im VNET vor dem Erstellen einer App-Service-Umgebung einzurichten. Wenn die DNS-Konfiguration eines virtuellen Netzwerks geändert wird, während eine App Service-Umgebung erstellt wird, misslingt das Erstellen der App Service-Umgebung. Wenn ein benutzerdefinierter DNS-Server am anderen Ende eines VPN-Gateways vorhanden ist und der DNS-Server nicht erreichbar oder nicht verfügbar ist, kommt es ebenso zu einem Fehler beim Erstellen der App-Service-Umgebung.
 
 ## Erstellen einer Netzwerksicherheitsgruppe ##
 Einzelheiten zur Funktionsweise von Netzwerksicherheitsgruppen finden Sie in den folgenden [Informationen][NetworkSecurityGroups]. Die unten aufgeführten Details gehen kurz auf die wichtigsten Aspekte von Netzwerksicherheitsgruppen ein. Dabei liegt der Schwerpunkt auf dem Konfigurieren und Anwenden einer Netzwerksicherheitsgruppe auf ein Subnetz, das eine App Service-Umgebung enthält.
+
+**Hinweis:** Netzwerksicherheitsgruppen können nur mit den unten beschriebenen PowerShell-Cmdlets konfiguriert werden. Netzwerksicherheitsgruppen können nicht grafisch über das neue Portal (portal.azure.com) konfiguriert werden, da das neue Portal nur die grafische Konfiguration von NSGs zulässt, die virtuellen "v2"-Netzwerken zugeordnet sind. App Service-Umgebungen werden jedoch derzeit nur in klassischen virtuellen "v1"-Netzwerken unterstützt. Daher können nur PowerShell-Cmdlets verwendet werden, um Netzwerksicherheitsgruppen zu konfigurieren, die virtuellen "v1"-Netzwerken zugeordnet sind.
 
 Netzwerksicherheitsgruppen werden zuerst als eigenständige Entität erstellt, die einem Abonnement zugeordnet ist. Da Netzwerksicherheitsgruppen in einer Azure-Region erstellt werden, stellen Sie sicher, dass die Netzwerksicherheitsgruppe in derselben Region wie die App Service-Umgebung erstellt wird.
 
@@ -106,7 +110,7 @@ Das folgende Beispiel zeigt der Vollständigkeit halber das Entfernen und somit 
 ## Besonderheiten für explizites IP-SSL ##
 Wenn eine Anwendung mit einer expliziten IP-Adresse und nicht mit der Standard-IP-Adresse der App Service-Umgebung konfiguriert wird, fließt sowohl HTTP- als auch HTTPS-Datenverkehr über einen anderen Satz von Ports (nicht über Port 80 und 443) in das Subnetz.
 
-Während der ersten Vorschau von App Service-Umgebungen ist es nicht möglich, die spezifischen von IP-SSL verwendeten Ports zu bestimmen. Sobald diese Informationen jedoch über das Portal, Befehlszeilentools und REST-APIs verfügbar gemacht wurden, können Entwickler Netzwerksicherheitsgruppen so konfigurieren, dass diese auch den Datenverkehr über diese Ports regeln.
+Sie können die jeweils für eine IP-SSL-Adresse verwendeten Ports aufrufen, indem Sie auf dem Benutzeroberflächenblatt einer App Service-Umgebung auf "Alle Einstellungen" --> "IP-Adressen" klicken. Das Blatt "IP-Adressen" enthält eine Tabelle aller explizit konfigurierten IP-SSL-Adressen für die App Service-Umgebung sowie das Portpaar, mit dem HTTP- und HTTPS-Datenverkehr für jede IP-SSL-Adresse weitergeleitet wird. Dieses Portpaar muss beim Konfigurieren von Regeln in einer Netzwerksicherheitsgruppe für den DestinationPortRange-Parameter verwendet werden.
 
 ## Erste Schritte
 
@@ -130,4 +134,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 <!-- IMAGES -->
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

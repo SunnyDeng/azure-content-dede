@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App-Modell v2.0 | Microsoft Azure"
+	pageTitle="App-Modell v2.0 .Net Web-API | Microsoft Azure"
 	description="Vorgehensweise beim Erstellen einer .NET-MVC-Web-API, die sowohl Token von persönlichen Microsoft-Konten als auch Geschäfts- oder Schulkonten akzeptiert."
 	services="active-directory"
 	documentationCenter=".net"
@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/12/2015"
+	ms.date="09/11/2015"
 	ms.author="dastrock"/>
 
-# App-Modell v2.0 \(Vorschauversion\): Schützen einer MVC-Web-API
+# App-Modell v2.0 (Vorschauversion): Schützen einer MVC-Web-API
 
 Mit dem App-Modell v2.0 können Sie eine Web-API mit [OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow)-Zugriffstoken schützen, sodass sowohl Benutzer mit persönlichen Microsoft-Konten als auch solche mit Geschäfts- oder Schulkonten sicher auf Ihre Web-API zugreifen können.
 
-> [AZURE.NOTE] Diese Informationen gelten für App-Modell v2.0 \(öffentliche Vorschauversion\). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
 Für ASP.NET-Web-APIs erreichen Sie das Gleiche durch die in .NET Framework 4.5 enthaltene OWIN-Middleware von Microsoft. Hier verwenden wir OWIN zur Erstellung einer MVC-Web-API mit einer Aufgabenliste, die folgende Aktionen ausführt: – Sie erlaubt Clients das Erstellen und Lesen von Aufgaben aus der Aufgabenliste eines Benutzers. – Sie legt fest, welche APIs geschützt sind. – Sie stellt sicher, dass die Web-API-Aufrufe ein gültiges Zugriffstoken enthalten.
 
@@ -55,11 +55,10 @@ Nachdem Sie eine App registriert haben, müssen Sie sie so einrichten, dass sie 
 -	Öffnen Sie dazu zunächst die Projektmappe, und fügen Sie dem Projekt „TodoListService“ über die Paket-Manager-Konsole die NuGet-Pakete der OWIN-Middleware hinzu.
 
 ```
-PM\> Installationspaket Microsoft.Owin.Security.OAuth - Projektname TodoListService PM\> Installationspaket Microsoft.Owin.Security.Jwt - Projektname TodoListService PM \> Installationspaket Microsoft.Owin.Host.SystemWeb - Projektname TodoListService 
-```
+PM> Installationspaket Microsoft.Owin.Security.OAuth - Projektname TodoListService PM> Installationspaket Microsoft.Owin.Security.Jwt - Projektname TodoListService PM > Installationspaket Microsoft.Owin.Host.SystemWeb - Projektname TodoListService '''
 
--	Fügen Sie dem Projekt „TodoListService“ eine OWIN-Startklasse mit dem Namen `Startup.cs` hinzu. Klicken Sie mit der rechten Maustaste auf das Projekt, wählen Sie **Hinzufügen** --\> **Neues Element** aus, und suchen Sie nach „OWIN“. Die OWIN-Middleware ruft beim Starten Ihrer Anwendung die Methode `Configuration(…)` auf.
--	Ändern Sie die Klassendeklaration in `public partial class Startup` – einen Teil dieser Klasse haben wir bereits für Sie in einer anderen Datei implementiert. Rufen Sie in der Methode `Configuration(…)` „ConfigureAuth\(...\)“ auf, um die Authentifizierung für Ihre Webanwendung einzurichten.
+-	Fügen Sie dem Projekt „TodoListService“ eine OWIN-Startklasse mit dem Namen `Startup.cs` hinzu. Klicken Sie mit der rechten Maustaste auf das Projekt, wählen Sie **Hinzufügen** --> **Neues Element** aus, und suchen Sie nach „OWIN“. Die OWIN-Middleware ruft beim Starten Ihrer Anwendung die Methode `Configuration(…)` auf.
+-	Ändern Sie die Klassendeklaration in `public partial class Startup` – einen Teil dieser Klasse haben wir bereits für Sie in einer anderen Datei implementiert. Rufen Sie in der Methode `Configuration(…)` „ConfigureAuth(...)“ auf, um die Authentifizierung für Ihre Webanwendung einzurichten.
 
 ```C#
 public partial class Startup
@@ -145,15 +144,15 @@ Um den Dienst „TodoListService“ in Aktion sehen zu können, müssen Sie den 
 
 Bereinigen, erstellen und führen Sie zum Schluss alle Projekte aus! Sie verfügen nun über eine .NET-MVC-Web-App, die sowohl Token von persönlichen Microsoft-Konten als auch Geschäfts- oder Schulkonten akzeptiert. Melden Sie sich bei „TodoListClient“ an, und rufen Sie Ihre Web-API ab, um Aufgaben zur Aufgabenliste des Benutzers hinzuzufügen.
 
-Als Referenz stellen wir das vollständige Beispiel \(ohne Ihre Konfigurationswerte\) [hier als ZIP-Datei bereit](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet/archive/complete.zip). Sie können es alternativ aus GitHub klonen:
+Als Referenz stellen wir das vollständige Beispiel (ohne Ihre Konfigurationswerte) [hier als ZIP-Datei bereit](https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet/archive/complete.zip). Sie können es alternativ aus GitHub klonen:
 
 ```git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet.git```
 
 ## Nächste Schritte
 Sie können sich nun weiteren Themen zuwenden. Wie wäre es zum Beispiel mit Folgendem:
 
-[Aufrufen einer Web-API über eine Web-App mit dem app-Modell v2. 0 \>\>](active-directory-devquickstarts-webapp-webapi-dotnet.md)
+[Aufrufen einer Web-API über eine Web-App mit dem app-Modell v2. 0 >>](active-directory-devquickstarts-webapp-webapi-dotnet.md)
 
-Weitere Ressourcen: - [Die App-Modell v2.0-Vorschauversion \>\>](active-directory-appmodel-v2-overview.md) - [StackOverflow-"azure-active-directory"-Tag \>\>](http://stackoverflow.com/questions/tagged/azure-active-directory)
+Weitere Ressourcen: - [Die App-Modell v2.0-Vorschauversion >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-"azure-active-directory"-Tag >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!----HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

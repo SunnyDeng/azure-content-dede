@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie ein Image eines virtuellen Azure-Computers unter Windows Server erfassen können."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management"/>
@@ -15,13 +15,13 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/16/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 #Erfassen eines virtuellen Windows-Computers, um ihn als Image zu verwenden#
 
 In diesem Artikel wird erläutert, wie Sie einen virtuellen Azure-Computer erfassen, auf dem Windows läuft, um ihn als Image zum Erstellen anderer virtueller Computer zu verwenden. Dieses Image enthält den Betriebssystem-Datenträger und alle Datenträger, die an den virtuellen Computer angefügt sind. Da die Vorlage keine Netzwerkkonfiguration enthält, muss diese später erfolgen, wenn Sie die anderen auf dieser Vorlage basierenden virtuellen Computer erstellen.
 
-Azure speichert das Image unter**Eigene Images**. Hier werden auch sämtliche Images abgelegt, die Sie hochladen. Weitere Informationen zu Images finden Sie unter [Informationen zu Images virtueller Computer in Azure][].
+Azure speichert das Image unter**Eigene Images**. Hier werden auch sämtliche Images abgelegt, die Sie hochladen. Näheres zu Images finden Sie unter [Informationen zu Images für virtuelle Computer](virtual-machines-images.md).
 
 ##Voraussetzungen##
 
@@ -71,8 +71,6 @@ Diese Schritte setzen voraus, dass Sie bereits einen virtuellen Azure-Computer e
 ##Nächste Schritte##
 Das Image kann jetzt zum Erstellen virtueller Computer verwendet werden. Dazu erstellen Sie mithilfe des Menüeintrags **Aus Katalog** einen virtuellen Computer und wählen das gerade erstellte Image aus. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers mit Windows][].
 
-
-[Informationen zu Images virtueller Computer in Azure]: http://msdn.microsoft.com/library/azure/dn790290.aspx
 [Erstellen eines benutzerdefinierten virtuellen Computers mit Windows]: virtual-machines-windows-create-custom.md
 [Anfügen eines Datenträgers an einen virtuellen Computer]: storage-windows-attach-disk.md
 [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird]: virtual-machines-log-on-windows-server.md
@@ -85,4 +83,4 @@ Das Image kann jetzt zum Erstellen virtueller Computer verwendet werden. Dazu er
 [Image capture successful]: ./media/virtual-machines-capture-image-windows-server/CaptureSuccess.png
 [Use the captured image]: ./media/virtual-machines-capture-image-windows-server/MyImagesWindows.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

@@ -3,7 +3,7 @@
    description="Stellen Sie ein SQL Data Warehouse bereit, indem Sie diese Schritte und Richtlinien befolgen."
    services="sql-data-warehouse"
    documentationCenter="NA"
-   authors="jrowlandjones"
+   authors="lodipalm"
    manager="barbkess"
    editor=""/>
 
@@ -25,7 +25,7 @@ Dieser Artikel stellt einen Leitfaden für die Bereitstellung eines SQL Data Wa
 3. Festlegen einer Azure-Firewallregel, um externen Clientzugriff zu ermöglichen
 
 ## Kostenlose Azure-Testversion ##
-Sie benötigen ein Azure-Abonnement, um die folgenden Aufgaben abzuschließen. Wenn Sie noch keinen Zugriff auf ein Azure-Abonnement haben, müssen Sie dies als ersten Schritt erledigen.
+Sie benötigen ein Azure-Abonnement und eine Genehmigung für SQL Data Warehouse Preview, um die folgenden Aufgaben auszuführen. Wenn Sie noch keinen Zugriff auf ein Azure-Abonnement haben, müssen Sie dies als ersten Schritt erledigen.
 
 Sie können eine [kostenlose Testversion][] erhalten, mit der Sie alle Azure-Dienste, einschließlich SQL Data Warehouse, testen können.
 
@@ -40,13 +40,13 @@ In den nächsten Schritten setzen wir schnell einen neuen logischen Server auf u
 
 Als Erstes müssen wir den SQL Data Warehouse-Dienst im Azure-Portal suchen.
 
-In der unteren linken Ecke des Azure-Portals befindet sich die Schaltfläche "Neu". Die Schaltfläche "Neu" ist der Ausgangspunkt zum Erstellen eines neuen Diensts in Azure.
+In der oben linken Ecke des Azure-Portals befindet sich die Schaltfläche "Neu". Die Schaltfläche "Neu" ist der Ausgangspunkt zum Erstellen eines neuen Diensts in Azure.
 
 - Klicken Sie jetzt auf die Schaltfläche "Neu".
 
 ### Daten + Speicher
 
-Durch Klicken auf die Schaltfläche "Neu" wurden alle Dienstkategorien in Azure geöffnet. SQL Data Warehouse befindet sich in der Kategorie "Daten + Speicher".
+Durch Klicken auf die Schaltfläche "Neu" werden alle Azure-Dienstkategorien geöffnet. SQL Data Warehouse befindet sich in der Kategorie "Daten + Speicher".
 
 - Klicken Sie auf **Daten + Speicher**, um die von Azure angebotenen Dienste für diese Kategorie anzuzeigen.
 
@@ -54,7 +54,12 @@ Durch Klicken auf die Schaltfläche "Neu" wurden alle Dienstkategorien in Azure 
 
 Wie Sie sehen können, bietet Azure viele Daten- und Speichermodule. Dieser Leitfaden bezieht sich jedoch auf SQL Data Warehouse.
 
-- Fahren Sie fort, und wählen Sie **SQL Data Warehouse**.
+- Fahren Sie fort, und wählen Sie **SQL Data Warehouse**. 
+
+##Zulassung für die Vorschau (Preview)
+Bevor Sie den Installationsvorgang starten können, müssen Sie für das Vorschauprogramm (Preview-Programm) zugelassen werden. Klicken Sie auf die Anmeldung für die Vorschau, und senden Sie diese ab (einreichen). Sie werden per E-Mail benachrichtigt, wenn Ihre Einreichung genehmigt wurde.
+
+Sobald Sie die Genehmigung erhalten haben, können Sie die nächsten Schritte ausführen. Hinweis: Es kann mehrere Tage dauern, bis die Genehmigung erteilt wird.
 
 ## Konfigurieren von SQL Data Warehouse
 
@@ -167,4 +172,4 @@ Nachdem der SQL Data Warehouse-Dienst bereitgestellt wurde, können wir jetzt zu
 [kostenlose Testversion]: https://azure.microsoft.com/de-DE/pricing/free-trial/
 [Azure-Portal]: https://portal.azure.com/
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

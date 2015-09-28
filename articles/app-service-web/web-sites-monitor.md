@@ -8,17 +8,19 @@
 	editor="mollybos"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/02/2015"
+	ms.date="09/16/2015"
 	ms.author="cephalin"/>
 
 #<a name="howtomonitor"></a>Überwachen von Web-Apps in Azure App Service
 
 [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) bieten über die Verwaltungsseite "Überwachung" Überwachungsfunktionen für die Standard- und Premium-Pläne von App Service. Die Verwaltungsseite "Überwachung" enthält Leistungsstatistiken für eine Web-App, die unten beschrieben sind.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ##<a name="websitemetrics"></a>Vorgehensweise: Hinzufügen von Web-App-Kennzahlen
 
@@ -277,4 +279,4 @@ Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folge
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

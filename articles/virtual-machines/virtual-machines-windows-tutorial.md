@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie mithilfe des Azure Marketplace im Azure-Vorschauportal einen virtuellen Azure-Computer erstellen, auf dem Windows ausgeführt wird."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="08/14/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 # Erstellen Sie einen virtuellen Windows-Computer im Azure-Vorschauportal#
 
@@ -39,8 +39,6 @@ Hier finden Sie eine exemplarische Vorgehensweise für dieses Lernprogramm.
 [AZURE.VIDEO create-a-virtual-machine-running-windows-in-the-azure-preview-portal]
 
 ## Auswählen des Images
-
-Wechseln Sie im Vorschauportal zum Azure Marketplace, um das gewünschte Windows-Server-Image für den virtuellen Computer zu finden.
 
 1. Melden Sie sich beim [Vorschauportal](https://portal.azure.com) an.
 
@@ -109,4 +107,4 @@ Nachdem Sie den virtuellen Computer erstellt haben, sollten Sie sich bei diesem 
 * Verwenden Sie Azure PowerShell und die Azure-Befehlszeilenschnittstelle zum [Suchen und Auswählen von Images für virtuelle Computer](resource-groups-vm-searching.md).
 * Automatisieren Sie die Bereitstellung und Verwaltung von virtuellen Computern und Workloads mithilfe von [Azure-Ressourcen-Manager](virtual-machines-how-to-automate-azure-resource-manager.md) und [Azure-Ressourcen-Manager-Vorlagen](http://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

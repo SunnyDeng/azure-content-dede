@@ -1,11 +1,11 @@
 <properties 
-	pageTitle="Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in Azure (GUI)"
+	pageTitle="Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in einem virtuellen Azure-Computer (GUI)"
 	description="Erstellen einer AlwaysOn-Verfügbarkeitsgruppe in Azure Virtual Machines. In diesem Tutorial werden die Benutzeroberfläche und Tools anstelle von Skripts verwendet."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar"/>
+	editor="monicar" />
 <tags 
 	ms.service="virtual-machines"
 	ms.devlang="na"
@@ -13,9 +13,9 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="08/12/2015"
-	ms.author="jroth"/>
+	ms.author="jroth" />
 
-# Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in Azure (GUI)
+# Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in einem virtuellen Azure-Computer (GUI)
 
 In diesem End-to-End-Tutorial erfahren Sie, wie Sie Verfügbarkeitsgruppen mithilfe von SQL Server AlwaysOn implementieren, das auf virtuellen Computern in Azure ausgeführt wird.
 
@@ -534,4 +534,4 @@ Sie haben nun erfolgreich SQL Server AlwaysOn implementiert, indem Sie eine Verf
 
 Weitere Informationen zur Verwendung von SQL Server in Azure finden Sie unter [SQL Server auf virtuellen Azure-Computern](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

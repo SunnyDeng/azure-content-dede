@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Ändern Ihres StorSimple-Kennworts | Microsoft Azure"
-	description="Beschreibt, wie Sie den StorSimple Manager-Dienst verwenden, um Ihr StorSimple Snapshot Manager- und Ihr Geräteadministratorkennwort zu ändern."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   pageTitle="Ändern Ihres StorSimple-Kennworts | Microsoft Azure" 
+   description="Beschreibt, wie Sie den StorSimple Manager-Dienst verwenden, um Ihr StorSimple Snapshot Manager- und Ihr Geräteadministratorkennwort zu ändern." 
+   services="storsimple" 
+   documentationCenter="NA" 
+   authors="SharS" 
+   manager="carolz" 
+   editor=""/>
 
 <tags
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/31/2015"
-	ms.author="v-sharos@microsoft.com"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD" 
+   ms.date="09/15/2015"
+   ms.author="v-sharos@microsoft.com"/>
 
 # Verwenden des StorSimple Manager-Diensts, um StorSimple-Kennwörter zu ändern
 
@@ -62,8 +62,10 @@ Das Geräteadministratorkennwort wurde jetzt aktualisiert. Sie können dieses ge
 
 ## Nächste Schritte
 
-[Erfahren Sie mehr über StorSimple-Sicherheit](storsimple-security.md)
+- Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
 
-[Erfahren Sie mehr über das Ändern Ihrer Gerätekonfiguration](storsimple-modify-device-config.md).
+- Weitere Informationen zum [Ändern Ihrer Gerätekonfiguration](storsimple-modify-device-config.md).
 
-<!---HONumber=September15_HO1-->
+- Weitere Informationen zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+
+<!---HONumber=Sept15_HO3-->

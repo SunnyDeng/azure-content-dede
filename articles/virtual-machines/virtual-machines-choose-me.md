@@ -1,20 +1,22 @@
-<properties 
-	pageTitle="Sind virtuelle Azure-Computer die passende Computeoption für mich?" 
-	description="Erfahren Sie mehr über Computehostingoptionen in Azure und ihre Funktionsweise: App Service, Cloud Services und Virtual Machines" 
+<properties
+	pageTitle="Sind virtuelle Azure-Computer die passende Computeoption für mich?"
+	description="Erfahren Sie mehr über Computehostingoptionen in Azure und ihre Funktionsweise: App Service, Cloud Services und Virtual Machines"
+	headerExpose=""
+	footerExpose=""
 	services="virtual-machines"
-	authors="KBDAzure" 
+	authors="cynthn"
 	documentationCenter=""
 	manager="timlt"
 	tags=azure-resource-manager, azure-service-management/>
 
-<tags 
-	ms.service="multiple" 
-	ms.workload="multiple" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="06/19/2015" 
-	ms.author="kathydav"/>
+<tags
+	ms.service="multiple"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="06/19/2015"
+	ms.author="cynthn"/>
 
 # Welche Vorteile bieten mir die virtuellen Azure-Computer?
 
@@ -29,4 +31,4 @@ Erfahren Sie mehr über [Virtual Machines](https://msdn.microsoft.com/library/az
 [Virtual Machines]: #tellmevm
 [Cloud Services]: cloud-services-choose-me.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

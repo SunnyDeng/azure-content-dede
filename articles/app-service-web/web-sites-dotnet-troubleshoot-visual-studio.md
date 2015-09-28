@@ -5,22 +5,24 @@
 	documentationCenter=".net" 
 	authors="tdykstra" 
 	manager="wpickett" 
-	editor=""/>
+	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/08/2015" 
+	ms.date="09/16/2015" 
 	ms.author="tdykstra"/>
 
 # Problembehandlung von Web-Apps in Azure App Service in Visual Studio
 
 ## Übersicht
 
-In diesem Lernprogramm lernen Sie die Visual Studio-Tools zum Debuggen von Web-Apps kennen, während diese in [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) ausgeführt werden. Sie führen die App entweder remote im [Debugmodus](http://www.visualstudio.com/de-de/get-started/debug-your-app-vs.aspx) aus oder arbeiten mit Anwendungs- und Webserverprotokollen.
+In diesem Lernprogramm lernen Sie die Visual Studio-Tools zum Debuggen von Web-Apps kennen, während diese in [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) ausgeführt werden. Sie führen die App entweder remote im [Debugmodus](http://www.visualstudio.com/de-DE/get-started/debug-your-app-vs.aspx) aus oder arbeiten mit Anwendungs- und Webserverprotokollen.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 Sie lernen Folgendes:
 
@@ -55,9 +57,9 @@ Visual Studio bietet Zugriff auf einen Teil der Web-App-Verwaltungsfunktionen un
 
 	Weitere Informationen für Verbindungen zwischen Visual Studio und Azure-Ressourcen finden Sie unter [Verwalten von Konten, Abonnements und Administratorrollen](http://go.microsoft.com/fwlink/?LinkId=324796#BKMK_AccountVCert).
 
-2. Erweitern Sie im **Server-Explorer** den Knoten **Azure** und anschließend **Web-Apps**.
+2. Erweitern Sie im **Server-Explorer** den Knoten **Azure**, und erweitern Sie dann **App-Dienst**.
 
-3. Klicken Sie mit der rechten Maustaste auf den Knoten der Web-App, die Sie in [Erste Schritte mit Azure und ASP.NET][GetStarted] erstellt haben, und klicken Sie anschließend auf **Anzeigeeinstellungen**.
+3. Erweitern Sie die Ressourcengruppe, die die Web-App enthält, die Sie in [Erste Schritte mit Azure und ASP.NET][GetStarted] erstellt haben, klicken Sie mit der rechten Maustaste auf den Web-App-Knoten, und klicken Sie dann auf **Anzeigeeinstellungen**.
 
 	![Anzeigeeinstellungen im Server-Explorer](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-viewsettings.png)
 
@@ -69,7 +71,7 @@ Visual Studio bietet Zugriff auf einen Teil der Web-App-Verwaltungsfunktionen un
    
 	Weitere Informationen zu den Feldern für App-Einstellungen und Verbindungszeichenfolgen in diesem Fenster finden Sie unter [Azure-Web-Apps: Funktionsweise von Anwendungs- und Verbindungszeichenfolgen](http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx).
 
-	Falls Sie eine Web-App-Verwaltungsaufgabe ausführen möchten, die in diesem Fenster nicht durchgeführt werden kann, können Sie auf **Alle Web-App-Einstellungen** klicken, um das Verwaltungsportal in einem Browserfenster zu öffnen. Weitere Informationen finden Sie unter [Konfigurieren von Web-Apps](/de-de/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig).
+	Falls Sie eine Web-App-Verwaltungsaufgabe ausführen möchten, die in diesem Fenster nicht ausgeführt werden kann, klicken Sie auf **Im Verwaltungsportal öffnen** klicken, um ein Browserfenster für das Azure-Vorschauportal zu öffnen. Weitere Informationen finden Sie unter [Konfigurieren von Web-Apps](/de-DE/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig).
 
 ## <a name="remoteview"></a>Zugreifen auf Web-App-Dateien im Server-Explorer
 
@@ -109,7 +111,7 @@ Häufig ist der einfachste Weg für die Suche nach der Fehlerursache die Aktivie
 
 	![Detaillierte Fehlermeldung](./media/web-sites-dotnet-troubleshoot-visual-studio/detailederror.png)
 
-	(Dieser Fehler wurde durch Hinzufügen der in rot angezeigten Zeile zu *Views\Home\Index.cshtml* erstellt.)
+	(Dieser Fehler wurde durch Hinzufügen der in rot angezeigten Zeile zu *Views\\Home\\Index.cshtml* erstellt.)
 
 Änderungen an der Datei "Web.config" sind nur eines der Szenarien, in denen die Möglichkeit zum Lesen und Bearbeiten der Dateien in Ihrer Azure-Web-App die Problembehandlung erleichtert.
 
@@ -123,7 +125,7 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 1. Öffnen Sie das Webprojekt, das Sie in [Erste Schritte mit Windows Azure und ASP.NET][GetStarted] erstellt haben.
 
-1. Öffnen Sie die Datei *Controllers\HomeController.cs*.
+1. Öffnen Sie die Datei *Controllers\\HomeController.cs*.
 
 2. Löschen Sie die `About()`-Methode, und fügen Sie stattdessen den folgenden Code ein.
 
@@ -146,13 +148,13 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 4. Nachdem die Bereitstellung abgeschlossen ist und Ihr Browser die Azure-URL Ihrer Web-App öffnet, schließen Sie den Browser.
 
-5. Für Visual Studio 2013: Erweitern Sie im **Server-Explorer** zuerst **Azure** und anschließend **Web-Apps**, klicken Sie mit der rechten Maustaste auf Ihre Web-App, und klicken Sie auf **Debugger anfügen**.
+5. Für Visual Studio 2013: Klicken Sie im **Server-Explorer** mit der rechten Maustaste auf Ihre Web-App, und klicken Sie dann auf **Debugger anfügen**.
 
 	![Debugger anfügen](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-attachdebugger.png)
 
 	Der Browser öffnet automatisch Ihre Startseite in Azure. Möglicherweise müssen Sie ca. 20 Sekunden warten, während Azure die den Server zum Debuggen einrichtet. Diese Verzögerung tritt nur bei der ersten Ausführung einer Web-App im Debugmodus auf. Bei weiteren Ausführungen in den folgenden 48 Stunden tritt keine Verzögerung auf.
 
-6. Für Visual Studio 2012 mit Update 4:<a id="vs2012"></a>
+6. Für Visual Studio 2012 mit Update 4 oder höher:<a id="vs2012"></a>
 
 	* Navigieren Sie im Azure-Verwaltungsportal zu **Einstellungen > Anwendungseinstellungen** für Ihre Web-App, und führen Sie einen Bildlauf nach unten zum Abschnitt **Debugging** durch.
 
@@ -192,7 +194,7 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 ## <a name="remotedebugwj"></a>Remotedebuggen von WebJobs
 
-Dieser Abschnitt zeigt, wie Sie das Projekt und die Web-App, die Sie in [Erste Schritte mit dem Azure WebJobs SDK](websites-dotnet-webjobs-sdk.md) erstellen, remote debuggen können. Die in diesem Abschnitt dargestellten Funktionen sind nur in Visual Studio 2013 mit Update 4 verfügbar. Remotedebuggen funktioniert nur bei kontinuierlichen WebJobs. Geplante und bedarfsabhängige WebJobs unterstützen Debuggen nicht.
+Dieser Abschnitt zeigt, wie Sie das Projekt und die Web-App, die Sie in [Erste Schritte mit dem Azure WebJobs SDK](websites-dotnet-webjobs-sdk.md) erstellen, remote debuggen können. Die in diesem Abschnitt dargestellten Funktionen sind nur in Visual Studio 2013 mit Update 4 oder höher verfügbar. Remotedebuggen funktioniert nur bei kontinuierlichen WebJobs. Geplante und bedarfsabhängige WebJobs unterstützen Debuggen nicht.
 
 1. Öffnen Sie das Webprojekt, das Sie in [Erste Schritte mit dem Azure WebJobs SDK][GetStartedWJ] erstellt haben.
 
@@ -210,7 +212,7 @@ Dieser Abschnitt zeigt, wie Sie das Projekt und die Web-App, die Sie in [Erste S
 
 	Visual Studio stellt die Web- und WebJob-Projekte bereit, und in Ihrem Browser wird die Azure-URL Ihrer Web-App angezeigt.
 
-5. Erweitern Sie im **Server-Explorer** nacheinander **Azure** >** Web-Apps** > Ihre Web-App > **WebJobs** >** Fortlaufend**, und klicken Sie dann mit der rechten Maustaste auf **ContosoAdsWebJob**.
+5. Erweitern Sie im **Server-Explorer** nacheinander **Azure > App-Dienst > Ihre Ressourcengruppe > Ihre Web-App > WebJobs > Fortlaufend**, und klicken Sie dann mit der rechten Maustaste auf **ContosoAdsWebJob**.
 
 7. Klicken Sie auf **Debugger anfügen**.
 
@@ -296,7 +298,7 @@ Informationen zum Erstellen von Anwendungsprotokollen in WebJobs finden Sie unte
 
 ### Hinzufügen von Ablaufverfolgungs-Anweisungen zur Anwendung
 
-1. Öffnen Sie *Controllers\HomeController.cs*, und ersetzen Sie den Inhalt der Datei durch den folgenden Code, um `Trace`-Anweisungen und eine `using`-Anweisung für `System.Diagnostics` hinzuzufügen:
+1. Öffnen Sie *Controllers\\HomeController.cs*, und ersetzen Sie den Inhalt der Datei durch den folgenden Code, um `Trace`-Anweisungen und eine `using`-Anweisung für `System.Diagnostics` hinzuzufügen:
 
 		using System;
 		using System.Collections.Generic;
@@ -517,9 +519,9 @@ Alle Protokolle, die Sie im **Ausgabefenster** überwachen können, lassen sich 
 
 	![Heruntergeladene Datei](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-logfilefolders.png)
 
-	* Ablaufverfolgungsprotokolle von Anwendungen befinden sich in *.txt*-Dateien im Ordner *LogFiles\Application*.
-	* Webserverprotokolle befinden sich in *.log*-Dateien im Ordner *LogFiles\http\RawLogs*. Sie können diese Dateien mit Werkzeugen wie z. B. [Log Parser](http://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) anzeigen und bearbeiten.
-	* Detaillierte Fehlerprotokolle befinden sich in *.html*-Dateien im Ordner *LogFiles\DetailedErrors*.
+	* Ablaufverfolgungsprotokolle von Anwendungen befinden sich in *.txt*-Dateien im Ordner *LogFiles\\Application*.
+	* Webserverprotokolle befinden sich in *.log*-Dateien im Ordner *LogFiles\\http\\RawLogs*. Sie können diese Dateien mit Werkzeugen wie z. B. [Log Parser](http://www.microsoft.com/download/details.aspx?displaylang=en&id=24659) anzeigen und bearbeiten.
+	* Detaillierte Fehlerprotokolle befinden sich in *.html*-Dateien im Ordner *LogFiles\\DetailedErrors*.
 
 	(Der Ordner *deployments* enthält Dateien der Quellcodeverwaltung und hat nichts mit der Veröffentlichung in Visual Studio zu tun. Der Ordner *Git* enthält Ablaufverfolgungsprotokolle für die Quellcodeverwaltung und den Protokollstreamingdienst.)
 
@@ -568,9 +570,9 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
     <!-- todo:screenshot of new portal if the VS page link goes to new portal -->
 	![Konfigurieren der Protokollierung](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png)
 
-	Damit öffnen Sie im Verwaltungsportal die Registerkarte **Konfigurieren** für Ihre Web-App. Sie können diese Registerkarte auch öffnen, indem Sie auf die Registerkarte **Web-Apps** und anschließend auf Ihre Web-App und dann auf die Registerkarte **Konfigurieren** klicken.
+	Damit öffnen Sie im Azure-Portal die Registerkarte **Konfigurieren** für Ihre Web-App.
 
-2. Blättern Sie in der Registerkarte **Konfigurieren** im Verwaltungsportal nach unten bis zum Bereich Anwendungsdiagnose und ändern Sie den Wert von **Anwendungsprotokollierung (Tabellenspeicher)** auf **Ein**.
+2. Blättern Sie in der Registerkarte **Konfigurieren** des Portals nach unten bis zum Bereich Anwendungsdiagnose und ändern Sie den Wert von **Anwendungsprotokollierung (Tabellenspeicher)** in **Ein**.
 
 3. Ändern Sie **Protokollierungsstufe** auf **Information**.
 
@@ -584,7 +586,7 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
 6. Setzen Sie das Häkchen im Feld **Tabellenspeicher für Anwendungsdiagnose verwalten**, um das Fenster zu schließen.
 
-6. Klicken Sie in der Registerkarte **Konfigurieren** im Verwaltungsportal auf **Speichern**.
+6. Klicken Sie auf der Portalregisterkarte **Konfigurieren** auf **Speichern**.
 
 7. Klicken Sie im Browserfenster, in dem die Anwendung der Web-App angezeigt wird, auf **Home**, anschließend auf **About** und dann auf **Contact**.
 
@@ -636,15 +638,13 @@ Sie können die Protokolle für fehlgeschlagene Anforderungen entweder direkt ü
 
 2. Klicken Sie in Visual Studio auf der Registerkarte **Konfiguration** im Fenster **Azure-Web-App** auf **Im Verwaltungsportal öffnen**.
 
-3. Klicken Sie im Blatt des Verwaltungsportals für Ihre Web-App auf **Alle Einstellungen > Anmeldeinformationen für die Bereitstellung**, und klicken Sie dann auf **Anmeldeinformationen für die Bereitstellung zurücksetzen**.
-
-4. Geben Sie einen neuen Benutzernamen und ein neues Passwort ein.
+3. Klicken Sie im Azure-Vorschauportal auf der Seite für Ihre Web-App auf **Einstellungen > Anmeldeinformationen für die Bereitstellung**, und geben Sie dann einen neuen Benutzernamen und ein neues Kennwort.
 
 	![Neuer FTP-Benutzername und neues Passwort](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-enterftpcredentials.png)
 
-5. Drücken Sie im **Dashboard** im Verwaltungsportal auf F5, um die Seite zu aktualisieren, und blättern Sie nach unten zum Bereich **Bereitstellung / FTP-Benutzer**. Beachten Sie, dass der Name der Web-App dem Benutzernamen vorangestellt ist. **Bei der Anmeldung müssen Sie diesen vollständigen Benutzernamen inklusive dem Namen der Web-App verwenden, wie hier gezeigt.**
+	****Wenn Sie sich anmelden, müssen Sie den vollständigen Benutzernamen mit dem vorangestellten Namen der Web-App verwenden. Angenommen, Sie geben „meine-id" als einen Benutzernamen ein, und die Website ist „meinbeispiel“, dann melden Sie sich als „meinbeispiel\\meine-id“ an.
 
-5. Öffnen Sie in einem neuen Browserfenster die URL, die unter **FTP-Hostname** auf der Registerkarte **Dashboard** der Verwaltungsportalseite für Ihre Web-App angezeigt wird. **FTP-Hostname** befindet sich in der Nähe von **Bereitstellung / FTP-Benutzer** im Bereich **Schnellübersicht**.
+5. Öffnen Sie in einem neuen Browserfenster die URL, die auf der **Web-App**-Portalseite für Ihre Web-App unter **FTP-Hostname** oder unter **FTPS-Hostname** angezeigt wird.
 
 6. Melden Sie sich mit den zuvor erstellten FTP-Anmeldeinformationen an (inklusive dem vor dem Benutzernamen vorangestelltem Namen der Web-App).
 
@@ -735,7 +735,7 @@ Momentan sind keine vollständigen und aktuellen Einführungen zur Ablaufverfolg
 
 Für die Fehlerprotokollierung können Sie Open Source-Protokollframeworks wie z. B. [ELMAH](http://nuget.org/packages/elmah/) verwenden, anstatt Ihren eigenen Ablaufverfolgungscode zu schreiben. Weitere Informationen finden Sie unter [Scott Hanselman's blog posts about ELMAH](http://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx) (Blogeinträge von Scott Hanselmann zu ELMAH, in englischer Sprache).
 
-Sie müssen nicht unbedingt die Ablaufverfolgung von ASP.NET oder System.Diagnostics verwenden, um Streamingprotokolle aus Azure zu erhalten. Der Streamingprotokolldienst von Azure-Web-Apps ist in der Lage, beliebige *.txt-*, *.html-* oder *.log-*-Dateien aus dem Ordner *LogFiles* zu streamen. Sie können also Ihr eigenes Protokollsystem erstellen und in das Dateisystem der Web-App schreiben, und Ihre Dateien werden automatisch gestreamt und heruntergeladen. Dazu müssen Sie nur den Anwendungscode schreiben, der Dateien im Ordner *d:\home\logfiles* erstellt.
+Sie müssen nicht unbedingt die Ablaufverfolgung von ASP.NET oder System.Diagnostics verwenden, um Streamingprotokolle aus Azure zu erhalten. Der Streamingprotokolldienst von Azure-Web-Apps ist in der Lage, beliebige *.txt-*, *.html-* oder *.log-*-Dateien aus dem Ordner *LogFiles* zu streamen. Sie können also Ihr eigenes Protokollsystem erstellen und in das Dateisystem der Web-App schreiben, und Ihre Dateien werden automatisch gestreamt und heruntergeladen. Dazu müssen Sie nur den Anwendungscode schreiben, der Dateien im Ordner *d:\\home\\logfiles* erstellt.
 
 ### Analyse von Webserverprotokollen
 
@@ -754,14 +754,12 @@ Die Microsoft TechNet-Website enthält einen Abschnitt zum Thema [Ablaufverfolgu
 
 Informationen darüber, wie Sie statt einer Web-App einen Azure-Cloud-Dienst debuggen, finden Sie unter [Debuggen von Cloud-Diensten](http://msdn.microsoft.com/library/windowsazure/ee405479.aspx).
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
-
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 [GetStarted]: web-sites-dotnet-get-started.md
 [GetStartedWJ]: websites-dotnet-webjobs-sdk.md
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

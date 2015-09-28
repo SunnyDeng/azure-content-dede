@@ -44,7 +44,7 @@ Standardimplementierungen von Hadoop-Clustern verfügen in der Regel nur über e
 
 [ZooKeeper](http://zookeeper.apache.org/)-Knoten (ZKs) wurden hinzugefügt, führen eine sogenannte Leader Election der Hauptknoten durch und teilen Workerknoten und Gateways (GWs) mit, wann diese auf den sekundären Hauptknoten (Head Node1) umschalten müssen, wenn der aktive Hauptknoten (Node0) inaktiv wird.
 
-![Diagramm der äußerst zuverlässigen Hauptknoten in der HDInsight Hadoop-Implementierung.](http://i.imgur.com/jrUmrH4.png)
+![Diagramm der äußerst zuverlässigen Hauptknoten in der HDInsight Hadoop-Implementierung.](./media/hdinsight-high-availability/hadoop.high.availability.architecture.diagram.png)
 
 
 
@@ -98,4 +98,4 @@ Das Verfahren für das SDK ist ähnlich. Die Erstellung und Bereitstellung eines
 - [Herstellen einer Verbindung zu HDInsight-Clustern mit RDP](hdinsight-administer-use-management-portal.md#rdp)
 - [Verwenden des HDInsight .NET SDK](hdinsight-provision-clusters.md#sdk)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

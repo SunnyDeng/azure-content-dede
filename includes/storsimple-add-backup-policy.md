@@ -1,4 +1,6 @@
 
+<!--author=alkohli last changed: 9/11/15-->
+
 #### So fügen Sie eine StorSimple-Sicherungsrichtlinie hinzu
 
 1. Klicken Sie auf der Seite **Schnellstart** des Geräts auf die Registerkarte **Sicherungsrichtlinien**. Dadurch gelangen Sie auf die Seite **Sicherungsrichtlinien**.
@@ -14,4 +16,4 @@
 Die neu hinzugefügte Richtlinie wird in der Tabellenansicht auf der Seite **Sicherungsrichtlinien** angezeigt.
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

@@ -1,12 +1,11 @@
 <properties 
-	pageTitle="Planen von periodischen Aufträgen in Azure Mobile Services" 
-	description="Verwenden Sie den Azure Mobile Services-Planer zum Planen von Aufträgen für Ihre mobile Anwendung." 
+	pageTitle="Planen von Back-End-Aufgaben in einen mobilen .NET-Back-End-Dienst | Microsoft Azure"
+	description="Verwenden Sie den Scheduler in Azure Mobile Services, um .NET-Back-End-Aufträge zu definieren, die nach einem Zeitplan ausgeführt werden."
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="ggailey777" 
 	manager="dwrede" 
 	editor=""/>
-
 
 <tags 
 	ms.service="mobile-services" 
@@ -14,15 +13,14 @@
 	ms.tgt_pltfrm="mobile-multiple" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="07/21/2015" 
+	ms.date="09/14/2015" 
 	ms.author="glenga"/>
-
 
 # Planen von periodischen Aufträgen in Mobile Services 
 
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](mobile-services-dotnet-backend-schedule-recurring-tasks.md)
-- [(Any | Javascript)](mobile-services-schedule-recurring-tasks.md)
+> [AZURE.SELECTOR]
+- [.NET backend](mobile-services-dotnet-backend-schedule-recurring-tasks.md)
+- [Javascript backend](mobile-services-schedule-recurring-tasks.md)
  
 In diesem Thema erfahren Sie, wie Sie die Auftragsplanerfunktion im Verwaltungsportal verwenden, um Serverskript-Code zu definieren, der auf der Grundlage eines von Ihnen festgelegten Plans ausgeführt wird. Im vorliegenden Fall führt das Skript einen periodischen Abgleich mit einem Remote-Dienst, hier Twitter, aus und speichert die Ergebnisse in einer neuen Tabelle. Im Folgenden sind einige weitere periodische Aufgaben aufgeführt, die geplant werden können:
 
@@ -43,9 +41,7 @@ In diesem Lernprogramm wird die Verwendung des Auftragsplaners erläutert, um mi
 &nbsp;&nbsp;8. Fügen Sie im selben Bereich die folgenden neuen App-Einstellungen hinzu. Ersetzen Sie die Platzhalter durch das Twitter-Zugriffstoken und durch die geheimen Werte des Zugriffstoken, die Sie als App-Einstellungen im Portal gesetzt haben:
 
 	<add key="TWITTER_ACCESS_TOKEN" value="**your_access_token**" />
-
 	<add key="TWITTER_ACCESS_TOKEN_SECRET" value="**your_access_token_secret**" />
-
 
 Der mobile Dienst verwendet diese gespeicherten Einstellungen, wenn er auf dem lokalen Computer ausgeführt wird. Dadurch können Sie den geplanten Auftrag testen, bevor Sie ihn veröffentlichen. Beim Ausführen in Azure verwendet der mobile Dienst stattdessen jene Werte, die im Portal gesetzt wurden, und ignoriert die Projekteinstellungen.
 
@@ -90,7 +86,7 @@ Als Nächstes müssen Sie eine neue Tabelle erstellen, in der Tweets gespeichert
 	        public DateTime Date { get; set; }
     	}
 
-4. Erweitern Sie den Ordner "Models", öffnen Sie die Datenmodellkontextdatei (mit der Bezeichnung "Dienstname\*Context.cs"), und fügen Sie die folgende Eigenschaft hinzu, die ein typisiertes **DbSet** zurückgibt:
+4. Erweitern Sie den Ordner "Models", öffnen Sie die Datenmodellkontextdatei (mit der Bezeichnung "Dienstname*Context.cs"), und fügen Sie die folgende Eigenschaft hinzu, die ein typisiertes **DbSet** zurückgibt:
 
 		public DbSet<Updates> Updates { get; set; }
 
@@ -217,7 +213,7 @@ Als Nächstes erstellen Sie den geplanten Auftrag, der auf Twitter zugreift und 
 		    }
 		}
 
-	Im oben angegebenen Code müssen Sie die Zeichenfolgen _todolistService_ und _todolistContext_ durch den Namespace und den DbContext Ihres heruntergeladenen Projekts ersetzen. Dabei handelt es sich in diesem Fall um den Namespace "Name&#95;mobiler&#95;Dienst\*Service" beziehungsweise um den Kontext "Name&#95;mobiler&#95;Dienst\*Context".
+	Im oben angegebenen Code müssen Sie die Zeichenfolgen _todolistService_ und _todolistContext_ durch den Namespace und den DbContext Ihres heruntergeladenen Projekts ersetzen. Dabei handelt es sich in diesem Fall um den Namespace "Name&#95;mobiler&#95;Dienst*Service" beziehungsweise um den Kontext "Name&#95;mobiler&#95;Dienst*Context".
    	
 	Im oben angegebenen Code ruft die Überschreibungsmethode **ExecuteAsync** die Twitter-Abfrage-API mithilfe der gespeicherten Anmeldeinformationen auf, um aktuelle Tweets anzufordern, die das Hashtag `#mobileservices` enthalten. Doppelte Tweets und Antworten werden aus den Ergebnissen entfernt, bevor sie in der Tabelle gespeichert werden.
 
@@ -304,4 +300,4 @@ Glückwunsch! Sie haben erfolgreich einen neuen geplanten Auftrag in Ihrem mobil
 [App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 [LINQtoTwitter-CodePlex-Projekt]: http://linqtotwitter.codeplex.com/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

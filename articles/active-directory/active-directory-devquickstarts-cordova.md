@@ -255,6 +255,5 @@ Als Referenz stellen wir hier das vollständige Beispiel (ohne Ihre Konfiguratio
 [Schützen einer Node.js-Web-API mit Azure AD >>](active-directory-devquickstarts-webapi-nodejs.md)
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
- 
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

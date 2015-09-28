@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Bereitstellen von StorSimple-Geräten im Government-Portal | Microsoft Azure"
-	description="Beschreibt die Schritte und bewährten Methoden für die Bereitstellung des StorSimple Update 1-Geräts und -Diensts im Azure Government-Portal."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt die Schritte und bewährten Methoden für die Bereitstellung des StorSimple Update 1-Geräts und -Diensts im Azure Government-Portal."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="09/02/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/17/2015"
+   ms.author="v-sharos" />
 
 # Bereitstellen lokaler StorSimple-Geräte im Government-Portal
 
@@ -277,4 +277,4 @@ Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
 Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!----HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

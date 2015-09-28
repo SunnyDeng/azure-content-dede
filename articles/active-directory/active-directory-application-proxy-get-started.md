@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="rkarlin"
-	manager="terrylan"
+	manager="msStevenPo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/07/2015"
+	ms.date="09/09/2015"
 	ms.author="rkarlin"/>
 
 # Bereitstellen von sicherem Remotezugriff auf lokale Anwendungen
@@ -46,14 +46,14 @@ Das Einrichten des Anwendungsproxys erfolgt in zwei Schritten:
 Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 
 
-- [Veröffentlichen von Anwendungen mit Ihrem eigenen Domänennamen](https://msdn.microsoft.com/library/azure/mt210927.aspx)
-- [Aktivieren der einmaligen Anmeldung](https://msdn.microsoft.com/library/azure/dn879065.aspx)
-- [Arbeiten mit Anwendungen, die Ansprüche unterstützen](https://msdn.microsoft.com/library/azure/mt210926.aspx)
-- [Aktivieren des bedingten Zugriffs](https://msdn.microsoft.com/library/azure/dn931796.aspx)
+- [Veröffentlichen von Anwendungen mit Ihrem eigenen Domänennamen](active-directory-application-proxy-custom-domains.md)
+- [Aktivieren der einmaligen Anmeldung](active-directory-application-proxy-sso-using-kcd.md)
+- [Arbeiten mit Anwendungen, die Ansprüche unterstützen](active-directory-application-proxy-claims-aware-apps.md)
+- [Aktivieren des bedingten Zugriffs](active-directory-application-proxy-conditional-access.md)
 
 
 ### Weitere Informationen zum Anwendungsproxy
-- [Onlinehilfe anzeigen](https://msdn.microsoft.com/library/azure/dn768219.aspx)
+- [Onlinehilfe anzeigen](active-directory-application-proxy-enable.md)
 - [Blog zum Anwendungsproxy aufrufen](http://blogs.technet.com/b/applicationproxyblog/)
 - [Sehen Sie sich unsere Videos auf Channel 9 an!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 
@@ -61,4 +61,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 * [Als Organisation für Azure registrieren](../sign-up-organization.md)
 * [Azure-Identität](../fundamentals-identity.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

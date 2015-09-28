@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/03/2015"
+	ms.date="09/16/2015"
 	ms.author="juliako"/>
 
 #Media Encoder Standard-Formate und -Codecs
@@ -36,7 +36,20 @@ MP4 (.mp4, .m4a, .m4v)/ISMV (.isma, .ismv)|Ja
 [Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984) (.dvr-ms) |Ja 
 Matroska/WebM (.mkv) |Ja 
 WAVE/WAV (.wav) |Ja 
+QuickTime (.mov) |Ja
  
+###Audioformate in Eingabecontainern 
+
+Media Encoder Standard unterstützt das Befördern der folgenden Audioformate in Eingabecontainern:
+
+- MXF-, GXF- und QuickTime-Dateien, die Audiospuren mit verschachteltem Stereo- oder 5.1-Beispielen haben.
+
+oder
+
+- MXF-, GXF- und QuickTime-Dateien, in denen die Audiospuren als separate PCM-Tracks befördert, die Kanalzuordnung jedoch (für Stereo oder 5.1) aus den Dateimetadaten abgeleitet werden kann.
+
+Beachten Sie, dass der Support für die explizite oder vom Benutzer angegebene Kanalzuordnung in naher Zukunft bereitgestellt wird.
+
 
 ##Codecs für Videoeingang
 
@@ -53,6 +66,13 @@ Canopus HQ/HQX |Nein
 MPEG-4 Teil 2 |Ja 
 [Theora](https://en.wikipedia.org/wiki/Theora) |Ja 
 YUV420, nicht komprimiert oder Mezzanine |Ja
+Apple ProRes 422 |Ja
+Apple ProRes 422 LT |Ja
+Apple ProRes 422 HQ |Ja
+Apple ProRes Proxy|Ja
+Apple ProRes 4444 |Ja
+Apple ProRes 4444 XQ |Ja
+
 
 
 ##Codecs für Audioeingang
@@ -89,7 +109,7 @@ MPEG2-TS |H.264 (High, Main und Baseline Profile)|AAC-LC, HE-AAC v1, HE-AAC v2
 
 Sie können sich die AMS-Lernpfade hier ansehen:
 
-- [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
+- [AMS Live Streaming Workflow](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
 ##Weitere Informationen
@@ -98,4 +118,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 
 [Gewusst wie: Codieren mit Media Encoder Standard](media-services-dotnet-encode-with-media-encoder-standard.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

@@ -1,19 +1,4 @@
-<properties 
-   pageTitle="Konfigurieren und Registrieren von Geräten"
-   description="Erläutert, wie Sie Windows PowerShell für StorSimple zum Konfigurieren und Registrieren Ihres Geräts mit Update 1 verwenden."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="alkohli"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/08/2015"
-   ms.author="alkohli" />
+<!--author=alkohli last changed: 9/17/15-->
 
 
 ### So konfigurieren und registrieren Sie das Gerät
@@ -83,4 +68,4 @@
      
        
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

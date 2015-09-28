@@ -13,12 +13,14 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2015" 
+	ms.date="09/15/2015" 
 	ms.author="tomfitz"/>
 
 # Erstellen einer Redis Cache-Instanz mithilfe einer Vorlage
 
-In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, die einen Azure Redis Cache bereitstellt. Sie erfahren, wie Sie definieren, welche Ressourcen bereitgestellt werden und wie Sie Parameter definieren, die angegeben werden, wenn die Bereitstellung ausgeführt wird. Sie können diese Vorlage für Ihre eigenen Bereitstellungen verwenden oder an Ihre Anforderungen anpassen.
+In diesem Thema erfahren Sie, wie Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, die einen Azure Redis Cache bereitstellt. Der Cache kann mit einem vorhandenen Speicherkonto verwendet werden, um Diagnosedaten aufzunehmen. Sie erfahren, wie Sie definieren, welche Ressourcen bereitgestellt werden und wie Sie Parameter definieren, die angegeben werden, wenn die Bereitstellung ausgeführt wird. Sie können diese Vorlage für Ihre eigenen Bereitstellungen verwenden oder an Ihre Anforderungen anpassen.
+
+Derzeit werden für alle Caches in derselben Region für ein Abonnement dieselben Diagnoseeinstellungen verwendet. Ein Aktualisieren eines Cache in der Region wirkt sich auf alle anderen Caches in der Region aus.
 
 Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
@@ -26,7 +28,7 @@ Die vollständige Vorlage finden Sie unter [Redis Cache-Vorlage](https://github.
 
 ## Was Sie bereitstellen
 
-In dieser Vorlage stellen Sie einen Azure Redis Cache bereit:
+In dieser Vorlage stellen Sie einen Azure Redis Cache bereit, der ein vorhandenes Speicherkonto für Diagnosedaten verwendet.
 
 Klicken Sie auf folgende Schaltfläche, um die Bereitstellung automatisch auszuführen:
 
@@ -48,6 +50,34 @@ Der Speicherort der Redis Cache-Instanz. Um eine optimale Leistung zu erzielen, 
       "type": "string"
     }
 
+### diagnosticsStorageAccountName
+
+Der Name des vorhandenen Speicherkontos, das für Diagnosen verwendet werden soll.
+
+    "diagnosticsStorageAccountName": {
+      "type": "string"
+    }
+
+### enableNonSslPort
+
+Ein boolescher Wert, der angibt, ob Zugriff über Nicht-SSL-Ports zugelassen werden soll.
+
+    "enableNonSslPort": {
+      "type": "bool"
+    }
+
+### diagnosticsStatus
+
+Ein Wert, der angibt, ob Diagnosen aktiviert sind. Verwenden Sie ON oder OFF.
+
+    "diagnosticsStatus": {
+      "type": "string",
+      "defaultValue": "ON",
+      "allowedValues": [
+            "ON",
+            "OFF"
+        ]
+    }
     
 ## Bereitzustellende Ressourcen
 
@@ -56,23 +86,36 @@ Der Speicherort der Redis Cache-Instanz. Um eine optimale Leistung zu erzielen, 
 Erstellt den Azure Redis Cache.
 
     {
-      "apiVersion": "2014-04-01-preview",
+      "apiVersion": "2015-08-01",
       "name": "[parameters('redisCacheName')]",
       "type": "Microsoft.Cache/Redis",
       "location": "[parameters('redisCacheLocation')]",
       "properties": {
-        "sku": {
-          "name": "[parameters('redisCacheSKU')]",
-          "family": "[parameters('redisCacheFamily')]",
-          "capacity": "[parameters('redisCacheCapacity')]"
-        },
+        "enableNonSslPort": "[parameters('enableNonSslPort')]",
         "redisVersion": "[parameters('redisCacheVersion')]",
-        "enableNonSslPort": true
-      }
+        "sku": {
+          "capacity": "[parameters('redisCacheCapacity')]",
+          "family": "[parameters('redisCacheFamily')]",
+          "name": "[parameters('redisCacheSKU')]"
+        }
+      },
+        "resources": [
+          {
+            "apiVersion": "2014-04-01",
+            "type": "diagnosticSettings",
+            "name": "service", 
+            "location": "[parameters('redisCacheLocation')]",
+            "dependsOn": [
+              "[concat('Microsoft.Cache/Redis/', parameters('redisCacheName'))]"
+            ],
+            "properties": {
+              "status": "[parameters('diagnosticsStatus')]",
+              "storageAccountName": "[parameters('diagnosticsStorageAccountName')]",
+              "retention": "30"
+            }
+          }
+        ]
     }
-     
-
-
 
 ## Befehle zum Ausführen der Bereitstellung
 
@@ -86,4 +129,4 @@ Erstellt den Azure Redis Cache.
 
     azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-redis-cache/azuredeploy.json -g ExampleDeployGroup
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

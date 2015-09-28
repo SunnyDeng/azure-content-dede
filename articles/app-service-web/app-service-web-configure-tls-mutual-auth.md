@@ -5,21 +5,23 @@
 	documentationCenter="" 
 	authors="naziml" 
 	manager="wpickett" 
-	editor=""/>
+	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/24/2015" 
+	ms.date="09/15/2015" 
 	ms.author="naziml"/>
 
 # Konfigurieren der gegenseitigen TLS-Authentifizierung für eine Web-App
 
 ## Übersicht ##
 Sie können den Zugriff auf Ihre Azure-Web-App einschränken, indem Sie verschiedene Arten von Authentifizierung für sie aktivieren. Eine Möglichkeit hierzu ist die Authentifizierung mithilfe eines Clientzertifikats, wenn die Anforderung über TLS/SSL erfolgt. Dieser Mechanismus wird gegenseitige TLS-Authentifizierung oder Clientzertifikatauthentifizierung genannt. In diesem Artikel wird das Einrichten Ihrer Web-App für die Clientzertifikatauthentifizierung ausführlich beschrieben.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Konfigurieren einer Web-App für die Clientzertifikatauthentifizierung ##
 Zum Einrichten Ihrer Web-App für das Anfordern von Clientzertifikaten müssen Sie Ihrer Web-App die Website-Einstellung "clientCertEnabled" hinzufügen und diese auf "true" festlegen. Diese Einstellung ist derzeit nicht auf der Verwaltungsoberfläche im Portal verfügbar, weshalb Sie die REST-API verwenden müssen.
@@ -177,4 +179,4 @@ Das Clientzertifikat, das an die Anwendung gesendet wird, durchläuft keinerlei 
         }
     }
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

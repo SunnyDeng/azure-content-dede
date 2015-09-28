@@ -121,6 +121,13 @@ Stellen Sie jetzt Ihre Anwendung für IIS bereit, und beobachten Sie, wie die Da
 
 Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass Ihnen innerhalb von wenigen Sekunden Daten angezeigt werden. Sobald Sie Ihre Anwendung bereitstellen, sammeln sich die Daten langsamer an.
 
+#### Keine Daten nach dem Veröffentlichen auf Ihrem Server?
+
+Öffnen Sie diese Ports für den ausgehenden Datenverkehr in der Firewall des Servers:
+
++ `dc.services.visualstudio.com:443`
++ `f5.services.visualstudio.com:443`
+
 
 #### Probleme auf dem Buildserver?
 
@@ -130,13 +137,13 @@ Weitere Informationen finden Sie in [diesem Artikel zur Problembehandlung](app-i
 
 Das SDK benötigt beim Zugriff auf bestimmte Daten etwas Hilfe. Dieser zusätzliche Schritt ist insbesondere erforderlich, um eine automatische Messung der von Ihrer App ausgeführten Aufrufe von Datenbanken, REST-APIs und anderen externen Komponenten zu ermöglichen. Diese Abhängigkeitsmetriken können sehr nützlich sein, um Leistungsprobleme zu diagnostizieren.
 
-Dieser Schritt ermöglicht außerdem [Berichte zu Leistungsindikatoren](app-insights-web-monitor-performance.md#system-performance-counters) wie z. B. CPU, Arbeitsspeicher, Netzwerkauslastung.
-
 #### Wenn Ihre App in IIS-Server ausgeführt wird
 
 Melden Sie sich auf dem Server mit Administratorrechten an, und installieren Sie den [Application Insights-Statusmonitor](http://go.microsoft.com/fwlink/?LinkId=506648).
 
-(Sie können den Statusmonitor auch zum [Instrumentieren einer bereits ausgeführten App](app-insights-monitor-performance-live-website-now.md) verwenden, auch wenn diese nicht mit dem SDK erstellt wurde.)
+Möglicherweise müssen Sie [zusätzliche ausgehende Ports in der Firewall öffnen](app-insights-monitor-performance-live-website-now.md#troubleshooting).
+
+Dieser Schritt ermöglicht außerdem [Berichte zu Leistungsindikatoren](app-insights-web-monitor-performance.md#system-performance-counters) wie z. B. CPU, Arbeitsspeicher, Netzwerkauslastung.
 
 #### Wenn Ihre App eine Azure-Web-App ist
 
@@ -168,7 +175,7 @@ Beachten Sie, dass der Code den Instrumentationsschlüssel enthält, der Ihre An
 
 #### Wenn Ihre Clients Geräte-Apps sind
 
-Wenn Ihre Anwendung für Clients wie Smartphones oder andere Geräte verwendet wird, fügen Sie der Geräte-App das [entsprechende SDK](app-insights-platforms.md) hinzu.
+Wenn Ihre Anwendung für Clients wie Smartphones oder andere Geräte verwendet wird, fügen Sie Ihrer Geräte-App das [entsprechende SDK](app-insights-platforms.md) hinzu.
 
 Wenn Sie das Client-SDK mit dem gleichen Instrumentationsschlüssel konfigurieren wie das Server-SDK, werden die beiden Datenströme integriert, damit Sie sie zusammen anzeigen können.
 
@@ -189,7 +196,7 @@ Sie benötigen [Visual Studio](http://go.microsoft.com/fwlink/?linkid=397827&clc
 
 #### Falls es sich um ein neues Projekt handelt ...
 
-Wenn Sie in Visual Studio ein neues Projekt erstellen, achten Sie darauf, dass **Application Insights** ausgewählt ist.
+Wenn Sie in Visual Studio ein neues Projekt erstellen, achten Sie darauf, dass **Application Insights hinzufügen** ausgewählt ist.
 
 
 ![Erstellen eines ASP.NET-Projekts](./media/app-insights-start-monitoring-app-health-usage/appinsights-01-vsnewp1.png)
@@ -200,7 +207,7 @@ Verfügt das Projekt über Webseiten, wird der Master-Webseite auch das [JavaScr
 
 #### … oder falls es sich um ein vorhandenes Projekt handelt
 
-Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie **Application Insights hinzufügen** aus.
+Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie **Application Insights hinzufügen**.
 
 ![Application Insights hinzufügen](./media/app-insights-start-monitoring-app-health-usage/appinsights-03-addExisting.png)
 
@@ -248,4 +255,4 @@ Wenn diese App Teil einer größeren Anwendung ist, empfiehlt es sich, sie mithi
 [roles]: app-insights-resources-roles-access-control.md
 [start]: app-insights-get-started.md
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

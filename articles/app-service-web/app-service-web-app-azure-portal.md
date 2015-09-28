@@ -8,17 +8,19 @@
 	editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/17/2015"
+	ms.date="09/15/2015"
 	ms.author="jaime-espinosa"/>
 
 # Referenz zur Navigation im Azure-Portal
 
 Azure Websites heißt ab sofort [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Wir aktualisieren unsere gesamte Dokumentation, um dieser Namensänderung Rechnung zu tragen und bieten Anleitungen für das neue Azure-Portal. Bis dieser Prozess abgeschlossen ist, können Sie dieses Dokument als Leitfaden für die Arbeit mit Web-Apps im neuen Azure-Portal verwenden.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
  
 ## Die Zukunft des alten Portals
 
@@ -86,4 +88,4 @@ Neben dem Markennamen wurden einige Elemente im Portal umbenannt oder anders gru
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

@@ -5,15 +5,15 @@
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="monicar"/>
+	editor="monicar" />
 <tags 
 	ms.service="virtual-machines"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="08/11/2015"
-	ms.author="jroth"/>
+	ms.date="09/16/2015"
+	ms.author="jroth" />
 
 # Konfigurieren eines ILB-Listeners für AlwaysOn-Verfügbarkeitsgruppen in Azure
 
@@ -34,8 +34,6 @@ Beachten Sie die folgenden Einschränkungen, die für Verfügbarkeitsgruppenlist
 - Die Clientanwendung darf sich nicht in demselben Clouddienst befinden wie Ihre Verfügbarkeitsgruppen-VMs. Azure bietet keine Unterstützung für Direct Server Return, wenn sich Client und Server im selben Clouddienst befinden.
 
 - Da der Listener entweder für die Verwendung der VIP-Adresse des Clouddiensts oder der VIP-Adresse des internen Load Balancer konfiguriert wird, wird pro Clouddienst maximal ein Verfügbarkeitsgruppenlistener unterstützt. Beachten Sie, dass diese Einschränkung weiterhin gilt, wenngleich Azure inzwischen die Erstellung mehrerer VIP-Adressen in einem Clouddienst unterstützt.
-
->[AZURE.NOTE]Der Schwerpunkt dieses Tutorials liegt auf der Verwendung von PowerShell zum Erstellen eines Listeners für eine Verfügbarkeitsgruppe, die Azure-Replikate umfasst. Weitere Informationen zum Konfigurieren von Listenern mithilfe von SSMS oder Transact-SQL finden Sie unter [Erstellen oder Konfigurieren eines Verfügbarkeitsgruppenlisteners](https://msdn.microsoft.com/library/hh213080.aspx).
 
 ## Festlegen des Zugriffs auf den Listener
 
@@ -135,4 +133,4 @@ Sie müssen für ILB zunächst den internen Load Balancer einrichten. Verwenden 
 
 [AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

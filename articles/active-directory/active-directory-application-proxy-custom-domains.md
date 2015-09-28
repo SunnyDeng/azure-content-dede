@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/06/2015"
+	ms.date="09/09/2015"
 	ms.author="rkarlin"/>
 
 # Arbeiten mit benutzerdefinierten Domänen im Azure AD-Anwendungsproxy
-> [AZURE.NOTE]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](https://msdn.microsoft.com/library/azure/dn532272.aspx).
+> [AZURE.NOTE]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
 
 Durch das Verwenden von Standarddomänen können Sie eine einzige URL als interne und externe URL für den Zugriff auf eine Anwendung festlegen, sodass Ihre Benutzer sich nur eine URL für den Zugriff merken müssen – unabhängig davon, von wo sie auf die Anwendung zugreifen. Außerdem können Sie im Zugriffsbereich eine einzige Verknüpfung für die Anwendung erstellen. Wenn Sie die von Azure AD-Anwendungsproxy bereitgestellte Standarddomäne verwenden, ist keine weitere Konfiguration zum Aktivieren Ihrer Domäne erforderlich. Falls Sie eine benutzerdefinierte Domäne einsetzen, müssen Sie verschiedene Punkte berücksichtigen, damit der Anwendungsproxy Ihre Domäne erkennt und die zugehörigen Zertifikate überprüft.
 
@@ -40,4 +40,4 @@ F: Kann ich ein bereits hochgeladenes Zertifikat auswählen, ohne es erneut hoch
 * [Als Organisation für Azure registrieren](..sign-up-organization.md)
 * [Azure-Identität](..fundamentals-identity.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

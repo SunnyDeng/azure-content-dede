@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="StorSimple-Sicherheit | Microsoft Azure"
-	description="In diesem Abschnitt werden die Sicherheits- und Datenschutzfunktionen zum Schutz Ihres StorSimple-Diensts und -Geräts sowie Ihrer lokalen Daten und Daten in der Cloud beschrieben."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="Carolz"
-	editor=""/>
+   pageTitle="StorSimple-Sicherheit | Microsoft Azure" 
+   description="In diesem Abschnitt werden die Sicherheits- und Datenschutzfunktionen zum Schutz Ihres StorSimple-Diensts und -Geräts sowie Ihrer lokalen Daten und Daten in der Cloud beschrieben." 
+   services="storsimple" 
+   documentationCenter="NA" 
+   authors="SharS" 
+   manager="Carolz" 
+   editor=""/>
 
 <tags
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/26/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD" 
+   ms.date="09/10/2015"
+   ms.author="v-sharos"/>
 
 # StorSimple-Sicherheit und -Datenschutz
 
@@ -56,6 +56,7 @@ Um ein Gerät zu autorisieren, müssen Sie es beim StorSimple-Manager-Dienst reg
 > 
 > * Wenn der Dienstregistrierungsschlüssel nach der Registrierung Ihres ersten Geräts verloren geht, können Sie über den StorSimple-Manager-Dienst einen neuen Schlüssel generieren. Dies wirkt sich nicht auf den Betrieb vorhandener Geräte aus. 
 > * Nachdem ein Gerät registriert wurde, verwendet es Token für die Kommunikation mit Microsoft Azure. Der Dienstregistrierungsschlüssel wird nach der Geräteregistrierung nicht verwendet.
+> * Es wird empfohlen, den Dienstregistrierungsschlüssel nach jeder Verwendung neu zu generieren.
 
 ## Schützen der StorSimple-Lösung mittels Kennwörtern
 
@@ -83,7 +84,7 @@ Nachdem Sie Windows PowerShell für StorSimple verwendet haben, um eine Verbindu
 
 ### CHAP-Initiator- und Zielkennwörter (Challenge Handshake Authentication Protocol)
 
-CHAP ist ein vom StorSimple-Gerät verwendetes Authentifizierungsschema zum Überprüfen der Identität von Remoteclients. Die Überprüfung basiert auf einem gemeinsam genutzten Kennwort. HAP kann unidirektional oder bidirektional verwendet werden. Beim unidirektionalen CHAP authentifiziert das Ziel (das StorSimple-Gerät) einen Initiator (Host). Beim bidirektionalen CHAP ist es erforderlich, dass das Ziel den Initiator und der Initiator wiederum das Ziel authentifiziert. Azure StorSimple kann für die Verwendung beider Methoden konfiguriert werden.
+CHAP ist ein vom StorSimple-Gerät verwendetes Authentifizierungsschema zum Überprüfen der Identität von Remoteclients. Die Überprüfung basiert auf einem gemeinsam genutzten Kennwort. HAP kann unidirektional oder bidirektional verwendet werden. Beim unidirektionalen CHAP authentifiziert das Ziel (das StorSimple-Gerät) einen Initiator (Host). Beim bidirektionalen oder umgekehrten CHAP ist es erforderlich, dass das Ziel den Initiator und der Initiator dann das Ziel authentifiziert. Ihr StorSimple-Gerät kann für die Verwendung beider Methoden konfiguriert werden.
 
 > [AZURE.IMPORTANT]
 > 
@@ -107,8 +108,8 @@ Wenn Sie ein Gerät für die Verwendung des StorSimple-Momentaufnahmen-Managers 
 
 Es wird empfohlen, die folgenden Richtlinien zu befolgen, um sicherzustellen, dass die Azure StorSimple-Kennwörter sicher und ausreichend geschützt sind:
 
-- Ändern Sie Ihre Kennwörter alle drei Monate.
-- Verwenden Sie sichere Kennwörter. Weitere Informationen finden Sie unter [Create stronger passwords and protect them](http://blogs.microsoft.com/cybertrust/2014/08/25/create-stronger-passwords-and-protect-them/)(in englischer Sprache).
+- Ändern Sie Ihre Kennwörter alle drei Monate. Ein Ändern der Kennwörter wird jährlich erzwungen.
+- Verwenden Sie sichere Kennwörter. Weitere Informationen finden Sie unter [Create stronger passwords and protect them](http://blogs.microsoft.com/cybertrust/2014/08/25/create-stronger-passwords-and-protect-them/) (in englischer Sprache).
 - Wählen Sie für verschiedene Zugriffsmechanismen stets unterschiedliche Kennwörter. Jedes gewählte Kennwort muss eindeutig sein.
 - Teilen Sie Kennwörter nicht mit Personen, die nicht für den Zugriff auf das StorSimple-Gerät autorisiert sind.
 - Erwähnen Sie Kennwörter nicht in Gegenwart anderer Personen, und geben Sie keine Hinweise zum Format eines Kennworts.
@@ -138,7 +139,7 @@ Der Hauptzweck des StorSimple-Manager-Diensts ist die Verwaltung und Konfigurati
 > * Sie können den Verschlüsselungsschlüssel für Dienstdaten und das entsprechende Datenverschlüsselungszertifikat ändern, indem Sie im Dashboard des Diensts die Option **Verschlüsselungsschlüssel für Dienstdaten ändern** auswählen. Die Änderung der Verschlüsselungsschlüssel erfordert, dass alle Geräte mit dem neuen Schlüssel aktualisiert werden. Daher wird empfohlen, den Schlüssel zu ändern, wenn alle Geräte online sind. Wenn Geräte offline sind, können ihre Schlüssel zu einem anderen Zeitpunkt geändert werden. Die Geräte mit abgelaufenen Schlüsseln können weiterhin Sicherungen ausführen, aber Daten erst nach der Aktualisierung des Schlüssels wiederherstellen. Weitere Informationen finden Sie unter [Verwenden des StorSimple-Manager-Dienstdashboards](storsimple-service-dashboard.md).
 > * Um sicherzustellen, dass die Datensicherheit nicht gefährdet ist, müssen Sie ein physisches StorSimple-Gerät verwenden, um den Verschlüsselungsschlüssel für Dienstdaten zu ändern.
 > * Wenn der Verschlüsselungsschlüssel für Dienstdaten verloren geht, kann Ihnen ein Microsoft-Supportmitarbeiter helfen, ihn abzurufen, vorausgesetzt, mindestens ein Gerät ist online. Wir empfehlen, den Verschlüsselungsschlüssel für Dienstdaten zu ändern, nachdem dieser abgerufen wurde. Anweisungen hierzu finden Sie unter [Ändern des Verschlüsselungsschlüssels für Dienstdaten](storsimple-service-dashboard.md#change-the-service-data-encryption-key).
-> * Der Verschlüsselungsschlüssel für Dienstdaten und das Datenverschlüsselungszertifikat haben kein Ablaufdatum. Wir empfohlen jedoch, den Verschlüsselungsschlüssel für Dienstdaten regelmäßig zu ändern, um eine Gefährdung des Schlüssels zu vermeiden.</li></ul>
+> * Der Verschlüsselungsschlüssel für Dienstdaten und das Datenverschlüsselungszertifikat haben kein Ablaufdatum. Wir empfohlen jedoch, den Verschlüsselungsschlüssel für Dienstdaten jährlich zu ändern, um eine Gefährdung des Schlüssels zu vermeiden.</li></ul>
 
 
 ## Schutz gespeicherter Daten
@@ -150,10 +151,9 @@ Das StorSimple-Gerät verwaltet Daten, indem diese lokal und in der Cloud abhän
 - Wenn Sie den Verschlüsselungsschlüssel für Cloud-Speicher im StorSimple-Manager-Dienst eingeben, wird der Schlüssel mit dem öffentlichen Teil des Verschlüsselungsschlüssels für Dienstdaten verschlüsselt und an das Gerät gesendet.
 - Der Verschlüsselungsschlüssel für Cloud-Speicher wird nicht innerhalb des Diensts gespeichert und ist ausschließlich dem Gerät bekannt.
 - Die Angabe eines Verschlüsselungsschlüssels für Cloud-Speicher ist optional. Sie können die auf dem Host verschlüsselten Daten zum Gerät senden.
+- Es empfiehlt sich, den Verschlüsselungsschlüssel für Cloud-Speicher vierteljährlich geräteweise weiterzugeben. Die geräteweise Weitergabe dieser Schlüssel wird nicht erzwungen.
 
 ### Zusätzliche bewährte Methoden für die Sicherheit
-
-- Verwenden Sie die Multipfadfunktion (MPIO), um Redundanz zu implementieren und einen Single-Point-of-Failureim iSCSI-SAN zu vermeiden. Detaillierte Anweisungen finden Sie unter [Konfigurieren von MPIO für Ihr StorSimple-Gerät](storsimple-configure-mpio-windows-server.md).
 
 - Aufteilen des Datenverkehrs: Isolieren Sie den iSCSI-SAN-Datenverkehr vom Benutzerdatenverkehr in einem Unternehmens-LAN, indem Sie ein vollständig getrenntes Netzwerk bereitstellen und VLANs einsetzen, wenn eine physische Isolation nicht möglich ist. Ein dediziertes Netzwerk für die iSCSI-Speicherung garantiert die Sicherheit und Leistung Ihrer unternehmenskritischen Daten. Die Mischung von Speicher- und Benutzerdatenverkehr in einem Unternehmens-LAN wird nicht empfohlen und kann die Latenz erhöhen sowie zu Netzwerkfehlern führen.
 
@@ -253,4 +253,4 @@ Die folgenden Fragen und Antworten beziehen sich auf die Sicherheit und Microsof
 [Bereitstellen von StorSimple-Geräten](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

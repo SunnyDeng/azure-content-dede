@@ -1,26 +1,29 @@
 <properties
    pageTitle="Integrieren von Anwendungen in Azure Active Directory | Microsoft Azure"
-	description="Erfahren Sie, wie Sie eine Anwendung in Azure AD hinzufügen, aktualisieren oder sie aus Azure Active Directory (Azure AD) entfernen."
-	services="active-directory"
-	documentationCenter=""
-	authors="msmbaldwin"
-	manager="mbaldwin"
-	editor="mbaldwin"/>
+   description="Erfahren Sie, wie Sie eine Anwendung in Azure AD hinzufügen, aktualisieren oder sie aus Azure Active Directory (Azure AD) entfernen."
+   services="active-directory"
+   documentationCenter=""
+   authors="msmbaldwin"
+   manager="mbaldwin"
+   editor="mbaldwin" />
 <tags
    ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
-	ms.date="08/25/2015"
-	ms.author="mbaldwin"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="08/25/2015"
+   ms.author="mbaldwin" />
 
 # Integrieren von Anwendungen in Azure Active Directory
+
+[AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
+
 Unternehmensentwickler und SaaS-Anbieter (Software-as-a-Service) können kommerzielle Clouddienste oder Branchenanwendungen entwickeln, die in Azure Active Directory (Azure AD) integriert werden können, um eine sichere Anmeldung und Autorisierung für ihre Dienste bereitzustellen Um eine Anwendung oder einen Dienst in Azure AD integrieren zu können, muss ein Entwickler zunächst die Details zu seiner Anwendung mithilfe des Azure-Verwaltungsportals in Azure AD registrieren.
 
 Der vorliegende Artikel zeigt, wie Sie eine Anwendung in Azure AD hinzufügen, aktualisieren oder aus sie aus Azure AD entfernen. Sie lernen die verschiedenen Anwendungstypen kennen, die in Azure AD integriert werden können, und erfahren, wie Sie Ihre Anwendungen für den Zugriff auf andere Ressourcen (z. B. auf Web-APIs) konfigurieren.
 
-Weitere Informationen zu Anwendungseigenschaften finden Sie unter [Anwendungsobjekte und Dienstprinzipalobjekte](active-directory-application-objects.md), Richtlinien zum Branding bei der Anwendungsentwicklung mit Azure Active Directory finden Sie unter [Brandingrichtlinien für integrierte Apps](active-directory-branding-guidelines.md).
+Weitere Informationen zu Anwendungseigenschaften finden Sie unter [Anwendungsobjekte und Dienstprinzipalobjekte](active-directory-application-objects.md), Richtlinien zum Branding bei der Anwendungsentwicklung mit Azure Active Directory finden Sie unter [Brandingrichtlinien für integrierte Apps](active-directory-branding-guidelines.md). Anwendungsmanifeste werden in [Grundlegendes zum Azure Active Directory-Anwendungsmanifest](active-directory-application-manifest.md) erläutert.
 
 ## Hinzufügen einer Anwendung
 
@@ -106,7 +109,7 @@ Mit dem oben beschriebenen Consent Framework können Sie Ihre Anwendung so konfi
 
 ### Bereitstellen von Web-APIs für andere Anwendungen
 
-Sie können eine Web-API entwickeln und für andere Unternehmen zur Verfügung stellen, indem Sie Ihre Berechtigungsbereiche für andere Entwickler verfügbar machen. Eine ordnungsgemäß konfigurierte Web-API wird auf die gleiche Weise wie andere Microsoft-Web-APIs (einschließlich der Graph-API und der Office 365-APIs) zur Verfügung gestellt. Ihre Web-API wird durch Konfigurieren eines Anwendungsmanifests zur Verfügung gestellt. Hierbei handelt es sich um eine JSON-Datei, die die Identitätskonfiguration Ihrer Anwendung repräsentiert. Sie können Ihre Berechtigungsbereiche bereitstellen, indem Sie zu Ihrer Anwendung im Azure-Verwaltungsportal navigieren und dann auf der Befehlsleiste auf die Schaltfläche "Anwendungsmanifest" klicken.
+Sie können eine Web-API entwickeln und für andere Unternehmen zur Verfügung stellen, indem Sie Ihre Berechtigungsbereiche für andere Entwickler verfügbar machen. Eine ordnungsgemäß konfigurierte Web-API wird auf die gleiche Weise wie andere Microsoft-Web-APIs (einschließlich der Graph-API und der Office 365-APIs) zur Verfügung gestellt. Ihre Web-API wird durch Konfigurieren eines [Anwendungsmanifests](active-directory-application-manifest.md) zur Verfügung gestellt. Hierbei handelt es sich um eine JSON-Datei, die die Identitätskonfiguration Ihrer Anwendung repräsentiert. Sie können Ihre Berechtigungsbereiche bereitstellen, indem Sie zu Ihrer Anwendung im Azure-Verwaltungsportal navigieren und dann auf der Befehlsleiste auf die Schaltfläche "Anwendungsmanifest" klicken. Weitere Informationen finden Sie unter [Grundlegendes zum Azure Active Directory-Anwendungsmanifest](active-directory-application-manifest.md).
 
 #### So stellen Sie eine Web-API für andere Anwendungen bereit
 
@@ -215,13 +218,13 @@ Alternativ kann Ihre Webanwendung auch eine Benutzeroberfläche bereitstellen, d
 
 #### Aktivieren der impliziten OAuth 2.0-Gewährung für Single-Page-Anwendungen
 
-Single-Page-Anwendungen (SPAs) sind in der Regel mit einem JavaScript-intensiven Front-End aufgebaut, das im Browser ausgeführt wird, der das Web-API-Back-End der Anwendung zum Ausführen deren Geschäftslogik aufruft. Für SPAs, die in Azure AD gehostet werden, verwenden Sie die implizite OAuth 2.0-Gewährung zum Authentifizieren des Benutzers für Azure AD und rufen ein Token ab, mit denen Sie Aufrufe vom JavaScript-Client der Anwendung an ihre Back-End-Web-API sichern können. Nachdem der Benutzer seine Zustimmung erteilt hat, können mit dem gleichen Authentifizierungsprotokoll Token zum Sichern von Aufrufen zwischen dem Client und anderen für die Anwendung konfigurierten Web-API-Ressourcen abgerufen werden. Die implizite OAuth 2.0-Gewährung ist für Anwendungen standardmäßig deaktiviert. Sie können die implizite OAuth 2.0-Gewährung für Ihre Anwendung aktivieren, indem Sie den Wert `oauth2AllowImplicitFlow` in deren Anwendungsmanifest festlegen. Dabei handelt es sich um eine JSON-Datei, welche die Identitätskonfiguration Ihrer Anwendung darstellt.
+Single-Page-Anwendungen (SPAs) sind in der Regel mit einem JavaScript-intensiven Front-End aufgebaut, das im Browser ausgeführt wird, der das Web-API-Back-End der Anwendung zum Ausführen deren Geschäftslogik aufruft. Für SPAs, die in Azure AD gehostet werden, verwenden Sie die implizite OAuth 2.0-Gewährung zum Authentifizieren des Benutzers für Azure AD und rufen ein Token ab, mit denen Sie Aufrufe vom JavaScript-Client der Anwendung an ihre Back-End-Web-API sichern können. Nachdem der Benutzer seine Zustimmung erteilt hat, können mit dem gleichen Authentifizierungsprotokoll Token zum Sichern von Aufrufen zwischen dem Client und anderen für die Anwendung konfigurierten Web-API-Ressourcen abgerufen werden. Die implizite OAuth 2.0-Gewährung ist für Anwendungen standardmäßig deaktiviert. Sie können die implizite OAuth 2.0-Gewährung für Ihre Anwendung aktivieren, indem Sie den Wert `oauth2AllowImplicitFlow` in deren [Anwendungsmanifest](active-directory-application-manifest.md) festlegen. Dabei handelt es sich um eine JSON-Datei, welche die Identitätskonfiguration Ihrer Anwendung darstellt.
 
 ##### So aktivieren Sie die implizite OAuth 2.0-Gewährung
 
 1. Melden Sie sich beim Azure-Verwaltungsportal an.
 1. Klicken Sie im linken Menü auf das **Active Directory**-Symbol und anschließend auf das gewünschte Verzeichnis.
-1. Klicken Sie im oberen Menü auf **Anwendungen** und dann auf die Anwendung, die Sie konfigurieren möchten. Die Seite "Schnellstart" wird geöffnet und zeigt Informationen zum einmaligen Anmelden (SSO) und weitere Konfigurationsinformationen an.
+1. Klicken Sie im oberen Menü auf **Anwendungen**, und klicken Sie dann auf die Anwendung, die Sie konfigurieren möchten. Die Seite "Schnellstart" wird geöffnet und zeigt Informationen zum einmaligen Anmelden (SSO) und weitere Konfigurationsinformationen an.
 1. Klicken Sie auf der Befehlsleiste auf die Schaltfläche **Manifest verwalten**, und wählen Sie dann **Manifest herunterladen** aus. Öffnen Sie die JSON-Manifestdatei der Anwendung, und legen Sie den Wert „oauth2AllowImplicitFlow“ auf „true“ fest. Der Standardwert ist „false“.
 
        „oauth2AllowImplicitFlow“: „true“,
@@ -344,6 +347,8 @@ Damit ein Unternehmensadministrator den Zugriff einer App auf das Verzeichnis en
 
 - Weitere Informationen über [Anwendungsobjekte und Dienstprinzipalobjekte](active-directory-application-objects.md)
 
+- [Grundlegendes zum Azure Active Directory-Anwendungsmanifest](active-directory-application-manifest.md)
+
 - Informieren Sie sich im [Entwicklerhandbuch zu Azure Active Directory](active-directory-developer's guide.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

@@ -1,6 +1,7 @@
 <properties 
-	pageTitle="DocumentDB-Programmierung: Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie mit Microsoft Azure DocumentDB gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen systemeigen in JavaScript schreiben." 
+	pageTitle="DocumentDB-Programmierung: Gespeicherte Prozeduren, Datenbanktrigger und benutzerdefinierte Funktionen | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie DocumentDB dazu verwenden, gespeicherte Prozeduren, Datenbanktrigger und benutzerdefinierte Funktionen in JavaScript zu schreiben. Erhalten Sie Tipps zur Datenbankprogrammierung und mehr." 
+	keywords="Database triggers, stored procedure, stored procedure, database program, sproc, documentdb, azure, Microsoft azure"
 	services="documentdb" 
 	documentationCenter="" 
 	authors="aliuy" 
@@ -16,11 +17,11 @@
 	ms.date="08/18/2015" 
 	ms.author="andrl"/>
 
-# DocumentDB-serverseitige Programmierung : gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen
+# DocumentDB-serverseitige Programmierung : gespeicherte Prozeduren, Datenbanktrigger und benutzerdefinierte Funktionen
 
-Erfahren Sie, wie Entwickler dank der in die DocumentDB-Sprache integrierten transaktionalen Ausführung von JavaScript **gespeicherte Prozeduren**, **Trigger** und **benutzerdefinierte Funktionen (User Defined Functions, UDFs)** in systemeigenem JavaScript erstellen können. Dadurch können Sie eine Anwendungslogik schreiben, die direkt auf den Partitionen des Datenbankspeichers bereitgestellt und ausgeführt werden kann.
+Erfahren Sie, wie Entwickler dank der in die DocumentDB-Sprache integrierten transaktionalen Ausführung von JavaScript **gespeicherte Prozeduren**, **Trigger** und **benutzerdefinierte Funktionen (User Defined Functions, UDFs)** in systemeigenem JavaScript erstellen können. Dadurch können Sie für ein Datenbankprogramm Anwendungslogik schreiben, die direkt auf den Partitionen des Datenbankspeichers bereitgestellt und ausgeführt werden kann.
 
-Für den Beginn empfiehlt sich folgendes Video, in dem Andrew Liu das serverseitige Programmiermodell von DocumentDB kurz vorstellt.
+Für den Beginn empfiehlt sich folgendes Video, in dem Andrew Liu das serverseitige Datenbankprogrammiermodell von DocumentDB kurz vorstellt.
 
 > [AZURE.VIDEO azure-demo-a-quick-intro-to-azure-documentdbs-server-side-javascript]
 
@@ -33,7 +34,7 @@ Kehren Sie dann zurück zu diesem Artikel, in dem Sie die Antworten auf die folg
 - Wie kann ich eine gespeicherte Prozedur, einen Trigger oder eine UDF auf REST-konforme Weise mithilfe von HTTP registrieren und ausführen?
 - Welche DocumentDB-SDKs sind für das Erstellen und Ausführen von gespeicherten Prozeduren, Triggern und UDFs verfügbar?
 
-## Einführung
+## Einführung in die Programmierung von gespeicherten Prozeduren und die UDF-Programmierung
 
 Dieser Ansatz von *„JavaScript als modernes T-SQL„* befreit die Anwendungsentwickler von der Komplexität durch nicht übereinstimmende Systeme und objektrelationale Zuordnungstechnologien. Er hat auch eine Reihe spezifischer Vorteile, die zum Erstellen funktionsreicher Anwendungen genutzt werden können:
 
@@ -49,7 +50,7 @@ Dieser Ansatz von *„JavaScript als modernes T-SQL„* befreit die Anwendungsen
 	-	Es wird eine Abstraktionsschicht über den Rohdaten hinzugefügt, die es Datenarchitekten gestattet, ihre Anwendungen unabhängig von den Daten zu entwickeln. Dies ist aufgrund der komplizierten Annahmen, die bei der direkten Behandlung der Daten zur Anwendung hinzugefügt werden müssen, insbesondere bei schemafreien Daten von Vorteil.  
 	-	Durch diese Abstraktion können Unternehmen ihre Daten schützen, indem sie den Zugriff über die Scripts optimieren.  
 
-Die Erstellung und Ausführung von Triggern, gespeicherten Prozeduren und benutzerdefinierten Abfrageoperatoren wird auf vielen Plattformen, einschließlich .NET, Node.js und JavaScript, über die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) und [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) unterstützt. <b>In diesem Lernprogramm wird das [Node.js-SDK](http://dl.windowsazure.com/documentDB/nodedocs/)</b> verwendet, um die Syntax und Verwendung von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen (User Defined Functions, UDFs) zu veranschaulichen.
+Die Erstellung und Ausführung von Datenbanktriggern, gespeicherten Prozeduren und benutzerdefinierten Abfrageoperatoren wird auf vielen Plattformen, einschließlich .NET, Node.js und JavaScript, über die [REST-API](https://msdn.microsoft.com/library/azure/dn781481.aspx) und [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) unterstützt. **In diesem Lernprogramm wird das [Node.js-SDK](http://dl.windowsazure.com/documentDB/nodedocs/)** verwendet, um die Syntax und Verwendung von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen (User Defined Functions, UDFs) zu veranschaulichen.
 
 ## Gespeicherte Prozeduren
 
@@ -147,7 +148,7 @@ Beachten Sie, dass diese gespeicherte Prozedur modifiziert werden kann, um ein A
 
 Das beschriebene Beispiel hat die Verwendung gespeicherter Prozeduren veranschaulicht. Trigger und benutzerdefinierte Funktionen (UDFs) werden später in diesem Lernprogramm behandelt.
 
-## Transaktionen
+## Datenbankprogrammtransaktionen
 Eine Transaktion in einer typischen Datenbank kann als Folge von Vorgängen definiert werden, die als einzelne logische Arbeitseinheit ausgeführt wird. Jede Transaktion bietet **ACID-Garantien**. ACID (Atomicity, Consistency, Isolation, Durability) ist ein bekanntes Akronym, das für vier Eigenschaften steht: Atomarität, Konsistenz, Isolation und Dauerhaftigkeit.
 
 Die Atomarität gewährleistet kurz gesagt, dass alle innerhalb einer Transaktion ausgeführten Vorgänge als einzelne Einheit betrachtet werden, in der entweder alle oder kein Vorgang ausgeführt wird. Die Konsistenz stellt sicher, dass die Daten zwischen den Transaktionen immer einen geeigneten internen Status aufweisen. Die Isolation sorgt dafür, dass es keine Konflikte zwischen zwei Transaktionen gibt. Im Allgemeinen stellen die meisten kommerziellen Systeme mehrere Isolationsebenen bereit, die auf Basis der Anforderungen der Anwendung genutzt werden können. Die Dauerhaftigkeit stellt sicher, dass jede an die Datenbank übergebene Änderung immer vorhanden ist.
@@ -234,7 +235,7 @@ Um die Entwicklung gespeicherter Prozeduren und Trigger zur Behandlung von Zeitl
 
 JavaScript-Funktionen sind auch an den Ressourcenverbrauch gebunden. DocumentDB reserviert den Durchsatz auf Basis der bereitgestellten Größe eines Datenbankkontos pro Sammlung. Der Durchsatz wird gemäß einer normierten Einheit des CPU-, Arbeitsspeicher- und E/A-Verbrauchs angegeben, der als Anforderungseinheit (Request Unit, RU) bezeichnet wird. JavaScript-Funktionen können eventuell große Mengen von Anforderungseinheiten innerhalb eines kurzen Zeitraums verbrauchen und werden möglicherweise eingeschränkt, wenn das Limit der Sammlung erreicht ist. Ressourcenintensive gespeicherte Prozeduren werden möglicherweise auch in Quarantäne gestellt, um die Verfügbarkeit grundlegender Datenbankvorgänge sicherzustellen.
 
-### Beispiel: Massenimport von Daten
+### Beispiel: Massenimport von Daten in ein Datenbankprogramm
 Nachfolgend finden Sie ein Beispiel einer gespeicherten Prozedur, die für den massenhaften Import von Dokumenten in eine Sammlung erstellt wurde. Beachten Sie, wie die gespeicherte Prozedur die gebundene Ausführung handhabt, indem der boolesche Rückgabewert von "createDocument" geprüft und dann die Anzahl der Dokumente verwendet wird, die bei jedem Aufruf der gespeicherten Prozedur eingefügt werden, um den mengenübergreifenden Fortschritt nachzuverfolgen und zu übernehmen.
 
 	function bulkImport(docs) {
@@ -286,8 +287,8 @@ Nachfolgend finden Sie ein Beispiel einer gespeicherten Prozedur, die für den m
 	    }
 	}
 
-## <a id="trigger"></a> Trigger
-### Vorangestellte Trigger
+## <a id="trigger"></a> Datenbanktrigger
+### Vorangestellte Datenbanktrigger
 DocumentDB stellt Trigger bereit, die durch einen für ein Dokument erfolgten Vorgang ausgeführt oder ausgelöst werden. Sie können z. B. einen vorangestellten Trigger angeben, wenn Sie ein Dokument erstellen. Dieser vorangestellte Trigger wird ausgeführt, bevor das Dokument erstellt wird. Nachfolgend finden Sie ein Beispiel dafür, wie vorangestellte Trigger zum Überprüfen der Eigenschaften eines zu erstellenden Dokuments verwendet werden können:
 
 	var validateDocumentContentsTrigger = {
@@ -356,7 +357,7 @@ Wenn Trigger registriert werden, können die Benutzer die Vorgänge angeben, mit
 	
 	// Fails, can’t use a create trigger in a replace operation
 
-### Nachgestellte Trigger
+### Nachgestellte Datenbanktrigger
 Nachgestellte Trigger werden wie vorangestellte Trigger einem Vorgang zugeordnet, der für ein Dokument ausgeführt wird. Auch dieser Trigger übernimmt keine Eingabeparameter. Sie werden ausgeführt **nachdem** der Vorgang abgeschlossen ist und haben Zugriff auf die Antwortnachricht, die an den Client gesendet wird.
 
 Das folgende Beispiel veranschaulicht nachgestellte Trigger:
@@ -539,7 +540,7 @@ Erzeugt einen neuen Satz von Dokumenten, indem die Dokumente im Eingabedokument-
 
 Bei der Verwendung innerhalb von Prädikat- und/oder Selektorfunktionen werden die folgenden JavaScript-Konstrukte automatisch optimiert, damit sie direkt für DocumentDB-Indizes ausgeführt werden:
 
-* Einfache Operatoren: = + - * / % | ^ &amp; == != === !=== &lt; &gt; &lt;= &gt;= || &amp;&amp; &lt;&lt; &gt;&gt; &gt;&gt;&gt;! \~
+* Einfache Operatoren: = + - * / % | ^ &amp; == != === !=== &lt; &gt; &lt;= &gt;= || &amp;&amp; &lt;&lt; &gt;&gt; &gt;&gt;&gt;! ~
 * Literale, einschließlich des Objektliterals: {}
 * var, return
 
@@ -915,4 +916,4 @@ Weitere Informationen zur serverseitigen DocumentDB-Programmierung finden Sie au
 -	[Dienstorientierte Datenbankarchitektur](http://dl.acm.org/citation.cfm?id=1066267&coll=Portal&dl=GUIDE) 
 -	[Hosten der .NET-Lautzeitumgebung in Microsoft SQL Server](http://dl.acm.org/citation.cfm?id=1007669)  
 
-<!-----HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

@@ -256,4 +256,4 @@ Um Azure BizTalk Services im Azure-Portal zu erstellen, wechseln Sie zu [BizTalk
 - [BizTalk Services: Name und Schlüssel des Ausstellers](biztalk-issuer-name-issuer-key.md)<br/>
 - [Wie verwende ich das Azure BizTalk Services SDK?](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

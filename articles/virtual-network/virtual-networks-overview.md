@@ -12,12 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/05/2015"
+   ms.date="09/14/2015"
    ms.author="telmos" />
 
 # Virtuelle Netzwerke im Überblick
 
-Ein virtuelles Azure-Netzwerk \(VNet\) ist eine Darstellung Ihres eigenen Netzwerks in der Cloud. Sie können Ihre Azure-Netzwerkeinstellungen steuern und DHCP-Adressblöcke, DNS-Einstellungen, Sicherheitsrichtlinien sowie das Routing definieren. Außerdem können Sie Ihr VNet in Subnetze segmentieren und virtuelle Azure-IaaS-Computer \(VMs\) und PaaS-Rolleninstanzen genauso bereitstellen wie Sie physische und virtuelle Computer im lokalen Datencenter bereitstellen. Im Wesentlichen bietet ein VNet Ihnen die Möglichkeit, Ihr Netzwerk unter Verwendung Ihrer eigenen IP-Adressblöcke auf Azure auszudehnen.
+Ein virtuelles Azure-Netzwerk (VNet) ist eine Darstellung Ihres eigenen Netzwerks in der Cloud. Sie können Ihre Azure-Netzwerkeinstellungen steuern und DHCP-Adressblöcke, DNS-Einstellungen, Sicherheitsrichtlinien sowie das Routing definieren. Außerdem können Sie Ihr VNet in Subnetze segmentieren und virtuelle Azure-IaaS-Computer (VMs) und PaaS-Rolleninstanzen genauso bereitstellen wie Sie physische und virtuelle Computer im lokalen Datencenter bereitstellen. Im Wesentlichen bietet ein VNet Ihnen die Möglichkeit, Ihr Netzwerk unter Verwendung Ihrer eigenen IP-Adressblöcke auf Azure auszudehnen.
 
 Die unten stehende Abbildung zeigt ein vereinfachtes lokales Netzwerk und ermöglicht ein besseres Verständnis von VNets.
 
@@ -39,11 +39,11 @@ VNets bieten die folgenden Dienste für IaaS-VMs und auf ihnen bereitgestellte P
 
 - **Einschluss**. VNets können nicht mehrere Azure-Regionen umfassen.
 
-    >[AZURE.NOTE]In Azure stehen zwei Bereitstellungsmodi zur Auswahl: klassisch \(auch bekannt als Dienstverwaltung\) und Azure-Ressourcen-Manager \(ARM\). Klassische VNets können einer Affinitätsgruppe hinzugefügt oder als regionales VNet erstellt werden. Wenn Sie ein VNet in einer Affinitätsgruppe haben, wird die [Migration zu einem regionalen VNet](./virtual-networks-migrate-to-regional-vnet.md) empfohlen.
+    >[AZURE.NOTE]In Azure stehen zwei Bereitstellungsmodi zur Auswahl: klassisch (auch bekannt als Dienstverwaltung) und Azure-Ressourcen-Manager (ARM). Klassische VNets können einer Affinitätsgruppe hinzugefügt oder als regionales VNet erstellt werden. Wenn Sie ein VNet in einer Affinitätsgruppe haben, wird die [Migration zu einem regionalen VNet](./virtual-networks-migrate-to-regional-vnet.md) empfohlen.
 
 - **Zugriff auf das öffentliche Internet**. Alle IaaS-VMs und PaaS-Rolleninstanzen in einem VNet können standardmäßig auf das öffentliche Internet zugreifen. Der Zugriff kann mithilfe von Netzwerksicherheitsgruppen gesteuert werden.
 
-- **Zugriff auf VMs im VNet**. IaaS-VMs und PaaS-Rolleninstanzen können im selben VNet eine Verbindung miteinander herstellen \(auch, wenn sie sich in unterschiedlichen Subnetzen befinden\), ohne dass dafür ein Gateway konfiguriert oder öffentliche IP-Adressen verwendet werden müssen. Ihre PaaS- und IaaS-Umgebungen werden somit vereint.
+- **Zugriff auf VMs im VNet**. IaaS-VMs und PaaS-Rolleninstanzen können im selben VNet eine Verbindung miteinander herstellen (auch, wenn sie sich in unterschiedlichen Subnetzen befinden), ohne dass dafür ein Gateway konfiguriert oder öffentliche IP-Adressen verwendet werden müssen. Ihre PaaS- und IaaS-Umgebungen werden somit vereint.
 
 - **Namensauflösung**. Azure bietet eine interne Namensauflösung für die im VNet bereitgestellten IaaS-VMs und PaaS-Rolleninstanzen. Sie können auch eigene DNS-Server bereitstellen und das VNet zur Verwendung dieser Server konfigurieren.
 
@@ -57,7 +57,7 @@ Sie können Ihr VNet aus Organisations- und Sicherheitsgründen in mehrere Subne
 
 ## IP-Adressen
 
-Es gibt zwei Arten von IP-Adressen, die Komponenten in Azure zugewiesen werden: öffentliche und private. Den Netzwerkkarten \(NICs\) der in einem Azure-Subnetz bereitgestellten IaaS-VMs und PaaS-Rolleninstanzen wird basierend auf den CIDR-Adressblöcken des Subnetzes automatisch eine private IP-Adresse zugewiesen. Sie können Ihren IaaS-VMs und PaaS-Rolleninstanzen auch eine öffentliche IP-Adresse zuweisen.
+Es gibt zwei Arten von IP-Adressen, die Komponenten in Azure zugewiesen werden: öffentliche und private. Den Netzwerkkarten (NICs) der in einem Azure-Subnetz bereitgestellten IaaS-VMs und PaaS-Rolleninstanzen wird basierend auf den CIDR-Adressblöcken des Subnetzes automatisch eine private IP-Adresse zugewiesen. Sie können Ihren IaaS-VMs und PaaS-Rolleninstanzen auch eine öffentliche IP-Adresse zuweisen.
 
 Diese IP-Adressen sind dynamisch, d. h. sie können sich jederzeit ändern. Wenn Sie sicherstellen möchten, dass die IP-Adresse für bestimmte Dienste immer gleich bleibt, können Sie eine IP-Adresse reservieren und so zu einer statischen Adresse machen.
 
@@ -79,13 +79,13 @@ Sie können Netzwerksicherheitsgruppen zum Steuern des ein- und ausgehenden Zugr
 
 Ein virtuelles Gerät ist eine andere VM in Ihrem VNet, die eine softwarebasierte Gerätefunktion ausführt, z. B. eine Firewall, WAN-Optimierung oder Angriffserkennung. Sie können eine Route in Azure erstellen, um den Datenverkehr Ihres VNets über ein virtuelles Gerät weiterzuleiten und dessen Funktionen zu nutzen.
 
-Netzwerksicherheitsgruppen können z. B. verwendet werden, um Sicherheit für das VNet bereitzustellen. Allerdings bieten Netzwerksicherheitsgruppen eine Layer 4-Zugriffssteuerungsliste \(ACL\) für ein- und ausgehende Pakete. Wenn Sie ein Layer 7-Sicherheitsmodell verwenden möchten, müssen Sie ein Firewallgerät einsetzen.
+Netzwerksicherheitsgruppen können z. B. verwendet werden, um Sicherheit für das VNet bereitzustellen. Allerdings bieten Netzwerksicherheitsgruppen eine Layer 4-Zugriffssteuerungsliste (ACL) für ein- und ausgehende Pakete. Wenn Sie ein Layer 7-Sicherheitsmodell verwenden möchten, müssen Sie ein Firewallgerät einsetzen.
 
 Virtuelle Geräte sind von [benutzerdefinierten Routen und IP-Weiterleitung](../virtual-networks-udr-overview.md) abhängig.
 
 ## Nächste Schritte
 
-- [Erstellen eines VNets](../virtual-networks-create-a-vnet.md) und von Subnetzen
+- [Erstellen eines VNets](../virtual-networks-create-vnet-arm-pportal.md) und von Subnetzen
 - [Erstellen einer VM in einem VNet](../virtual-machines-windows-tutorial.md)
 - Weitere Informationen zu [Netzwerksicherheitsgruppen](../virtual-networks-nsg.md)
 - Weitere Informationen zu [Load Balancern](../load-balancer-overview.md)
@@ -93,4 +93,4 @@ Virtuelle Geräte sind von [benutzerdefinierten Routen und IP-Weiterleitung](../
 - [Reservieren einer öffentlichen IP-Adresse](../virtual-networks-reserved-public-ip.md)
 - Weitere Informationen zu [benutzerdefinierten Routen und IP-Weiterleitung](virtual-networks-udr-overview.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

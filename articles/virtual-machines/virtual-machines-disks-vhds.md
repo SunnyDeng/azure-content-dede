@@ -3,7 +3,7 @@
 	description="Machen Sie sich mit den Grundlagen von Datenträgern und VHDs für virtuelle Azure-Computern vertraut."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-resource-manager,azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/30/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 # Informationen zu Datenträgern und VHDs für virtuelle Computer
 
@@ -65,4 +65,4 @@ Virtuelle Windows-Computer:
 -  [Erfassen eines virtuellen Windows-Computers](virtual-machines-capture-image-windows-server.md)
 -  [Trennen eines Datenträgers](storage-windows-detach-disk.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

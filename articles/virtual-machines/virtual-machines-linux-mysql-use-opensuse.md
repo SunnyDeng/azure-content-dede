@@ -3,7 +3,7 @@
 	description="Erfahren Sie mehr über die Installation von MySQL auf einem virtuellen Computer in Azure."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/31/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 # Installieren von MySQL auf einem virtuellen Computer mit OpenSUSE Linux in Azure
 
@@ -38,4 +38,4 @@ Einzelheiten zu MySQL finden Sie in der [MySQL-Dokumentation][MySQLDocs].
 [MySQL]: http://www.mysql.com
 [AzurePortal]: http://manage.windowsazure.com
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

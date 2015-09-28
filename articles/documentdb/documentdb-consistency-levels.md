@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Konsistenzebenen in DocumentDB | Microsoft Azure" 
-	description="DocumentDB verfügt über vier Konsistenzebenen mit zugehörigen Leistungsstufen, die Anwendungsentwickler dabei unterstützen, vorhersehbare Kompromisse zwischen Konsistenz, Verfügbarkeit und Latenz einzugehen." 
+	description="Erfahren Sie, wie DocumentDB über vier Konsistenzebenen mit zugehörigen Leistungsstufen verfügt, um vorhersehbare Kompromisse zwischen Konsistenz, Verfügbarkeit und Latenz eingehen zu können." 
+	keywords="eventual consistency, documentdb, azure, Microsoft azure"
 	services="documentdb" 
 	authors="mimig1" 
 	manager="jhubbard" 
@@ -22,10 +23,10 @@ Entwickler werden oft mit der Herausforderung konfrontiert, zwischen zwei Extrem
  
 Alle Systemressourcen wie Datenbankkonten, Datenbanken, Sammlungen, Benutzer und Berechtigungen sind für Lesevorgänge und Abfragen strikt konsistent. Die Konsistenzebenen werden nur auf benutzerdefinierte Ressourcen angewendet. Für Abfragen und Lesevorgänge für benutzerdefinierte Ressourcen wie Dokumente, Anhänge, gespeicherte Prozeduren, Trigger und UDFs bietet DocumentDB vier eigene Konsistenzebenen:
 
- - Strong
- - Bounded staleness 
- - Session
- - Eventual 
+ - Konsistenzebene "Strong"
+ - Konsistenzebene "Bounded staleness"
+ - Konsistenzebene "Session"
+ - Konsistenzebene "Eventual"
 
 Mit diesen genau definierten und abgegrenzten Konsistenzebenen können fundierte Kompromisse zwischen Konsistenz, Verfügbarkeit und Leistung geschlossen werden. Diese Konsistenzebenen stützen sich auf vorhersagbare Leistungsstufen und stellen konsistente Ergebnisse für Ihre Anwendung sicher.
 
@@ -89,4 +90,4 @@ Wenn Sie weitere Informationen zu Konsistenzebenen und deren Vor- und Nachteile 
 -	Werner Vogels. Eventual Consistent - Revisited. [http://allthingsdistributed.com/2008/12/eventually\_consistent.html](http://allthingsdistributed.com/2008/12/eventually_consistent.html)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

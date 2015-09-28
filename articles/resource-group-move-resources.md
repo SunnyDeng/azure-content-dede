@@ -38,6 +38,7 @@ Nicht alle Dienste unterstützen derzeit die Möglichkeit, Ressourcen zu verschi
 Derzeit unterstützen die folgenden Dienste das Verschieben in eine neue Ressourcengruppe und ein neues Abonnement:
 
 - API Management
+- Azure DocumentDB
 - Azure Search
 - Azure-Web-Apps (es gelten einige [Einschränkungen](app-service-web/app-service-move-resources.md))
 - Data Factory
@@ -102,4 +103,4 @@ Schließen Sie in die Anforderung ein JSON-Objekt ein, das die Zielressourcengru
 - [Verwenden des Azure-Portals zum Verwalten von Ressourcen](azure-portal/resource-group-portal.md)
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

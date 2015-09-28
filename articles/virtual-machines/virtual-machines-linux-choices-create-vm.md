@@ -65,7 +65,6 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 [Anfügen eines Datenträgers][]
 
 ## Zusätzliche Ressourcen
-[Informationen zu Azure-VM-Konfigurationseinstellungen][]
 
 [Testumgebung für die Basiskonfiguration][]
 
@@ -96,11 +95,10 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 
 [Anfügen eines Datenträgers]: virtual-machines-linux-how-to-attach-disk.md
 
-[Informationen zu Azure-VM-Konfigurationseinstellungen]: http://msdn.microsoft.com/library/azure/dn763935.aspx
 [Testumgebung für die Basiskonfiguration]: virtual-machines-base-configuration-test-environment.md
 [Testumgebungen für Azure-Hybridclouds]: virtual-machines-hybrid-cloud-test-environments.md
 
 [Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
 [Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-create-custom.md
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

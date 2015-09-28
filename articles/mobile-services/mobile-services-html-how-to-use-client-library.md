@@ -16,7 +16,6 @@
 	ms.date="09/09/2015" 
 	ms.author="glenga"/>
 
-
 # So verwenden Sie einen HTML-/JavaScript-Client für Azure Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
@@ -367,7 +366,7 @@ In Windows Store-Apps können Sie mit dem Abfrageergebnis ein [WinJS.Binding.Lis
 
 ##<a name="#custom-api"></a>Gewusst wie: Aufrufen einer benutzerdefinierten API
 
-Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte definieren, die Serverfunktionen zur Verfügung stellen, welche keinem Einfüge-, Aktualisierungs-, Lösch- oder Lesevorgang zugeordnet sind. Durch die Verwendung einer benutzerdefinierten API erhalten Sie mehr Kontrolle über das Messaging, einschließlich Lesen und Einstellen der HTTP-Nachrichten-Header sowie Definieren eines von JSON abweichenden Nachrichtentextformats. Ein vollständiges Beispiel, in dem u. a. das Erstellen einer benutzerdefinierten API im mobilen Dienst beschrieben wird, finden Sie unter [Aufrufen einer benutzerdefinierten API aus dem Client].
+Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte definieren, die Serverfunktionen zur Verfügung stellen, welche keinem Einfüge-, Aktualisierungs-, Lösch- oder Lesevorgang zugeordnet sind. Durch die Verwendung einer benutzerdefinierten API erhalten Sie mehr Kontrolle über das Messaging, einschließlich Lesen und Einstellen der HTTP-Nachrichten-Header sowie Definieren eines von JSON abweichenden Nachrichtentextformats. Ein Beispiel für das Erstellen einer benutzerdefinierten API in Ihrem mobilen Dienst finden Sie unter [Gewusst wie: Definieren eines benutzerdefinierten API-Endpunkts](mobile-services-dotnet-backend-define-custom-api.md).
 
 Sie können eine benutzerdefinierte API vom Client aufrufen, indem Sie die [InvokeApi](https://github.com/Azure/azure-mobile-services/blob/master/sdk/Javascript/src/MobileServiceClient.js#L337)-Methode für **MobileServiceClient** aufrufen. Mit der folgenden Codezeile wird beispielsweise eine POST-Anforderung an die **completeAll**-API im mobilen Dienst gesendet:
 
@@ -605,7 +604,7 @@ Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforde
 [Authentifizieren Ihrer Anwendung mit einmaliger Anmeldung]: mobile-services-windows-store-javascript-single-sign-on.md
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [Referenz zu OData-Systemabfrageoptionen]: http://go.microsoft.com/fwlink/p/?LinkId=444502
-[Aufrufen einer benutzerdefinierten API aus dem Client]: mobile-services-html-call-custom-api.md
+[Call a custom API from the client]: mobile-services-html-call-custom-api.md
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

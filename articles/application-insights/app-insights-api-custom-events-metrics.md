@@ -74,10 +74,9 @@ Erstellen Sie eine Instanz von TelemetryClient (außer in JavaScript auf Webseit
 
     private TelemetryClient telemetry = new TelemetryClient();
 
-Es wird empfohlen, für jede Anforderung in einer Web-App oder für jede Sitzung in anderen Apps eine Instanz von `TelemetryClient` zu verwenden. Sie können Eigenschaften wie z. B. `TelemetryClient.Context.User.Id` festlegen, um Benutzer und Sitzungen zu verfolgen. Diese Informationen werden allen Ereignissen angefügt, die von der Instanz gesendet werden.
-
 TelemetryClient ist threadsicher.
 
+Wir empfehlen Ihnen, für jedes Modul Ihrer App eine Instanz des `TelemetryClient` zu verwenden. Zum Beispiel können Sie einen `TelemetryClient` in Ihrem Webdienst haben, der eingehende HTTP-Anforderungen meldet, und einen anderen in einer Middleware-Klasse, der Geschäftslogikereignisse meldet. Sie können Eigenschaften festlegen wie `TelemetryClient.Context.User.Id` zum Nachverfolgen von Benutzern und Sitzungen oder `TelemetryClient.Context.Device.Id` zum Identifizieren des Computers. Diese Informationen werden allen Ereignissen angefügt, die von der Instanz gesendet werden.
 
 
 ## Nachverfolgen von Ereignissen
@@ -748,7 +747,7 @@ Sie können einen universellen Initialisierer einrichten, damit alle neuen "Tele
 
 Eine typische Verwendung besteht in der Identifikation von Telemetriedaten aus verschiedenen Versionen oder Komponenten Ihrer App. Im Portal können Sie Ergebnisse nach der Eigenschaft "Application Version" filtern oder gruppieren.
 
-Im allgemeinen [empfehlen wir die Verwendung von Telemetrieinitialisierern statt von Kontextinitialisierern](http://apmtips.com/blog/2015/06/09/do-not-use-context-initializers/).
+Im Allgemeinen [empfehlen wir die Verwendung von Telemetrieinitialisierern anstelle von Kontextinitialisierern](http://apmtips.com/blog/2015/06/09/do-not-use-context-initializers/).
 
 #### Definieren eines Kontextinitialisierers
 
@@ -901,4 +900,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

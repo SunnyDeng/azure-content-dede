@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Erstellen einer Hybridsammlung für Azure RemoteApp"
-	description="Erfahren Sie, wie Sie eine Bereitstellung von RemoteApp erstellen, die eine Verbindung mit Ihrem internen Netzwerk herstellt."
-	services="remoteapp"
-	documentationCenter=""
-	authors="lizap"
-	manager="mbaldwin"
+	pageTitle="Erstellen einer Hybridsammlung für Azure RemoteApp | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie eine Bereitstellung von RemoteApp erstellen, die eine Verbindung mit Ihrem internen Netzwerk herstellt." 
+	services="remoteapp" 
+	documentationCenter="" 
+	authors="lizap" 
+	manager="mbaldwin" 
 	editor=""/>
 
 <tags 
-	ms.service="remoteapp"
-	ms.workload="compute"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/02/2015"
+	ms.service="remoteapp" 
+	ms.workload="compute" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/11/2015" 
 	ms.author="elizapo"/>
 
 # Erstellen einer Hybridsammlung für Azure RemoteApp
@@ -29,7 +29,7 @@ Es gibt zwei Arten von RemoteApp-Sammlungen:
 Dieses Tutorial führt Sie durch den Prozess für das Erstellen einer Hybridsammlung. Der Vorgang umfasst acht Schritte:
 
 1.	Entscheiden Sie, welches [Image](remoteapp-imageoptions.md) für Ihre Sammlung verwendet werden soll. Sie können ein benutzerdefiniertes Image erstellen oder ein Microsoft-Image erstellen, das in Ihrem Abonnement enthalten ist.
-2. Richten Sie Ihr virtuelles Netzwerk ein.
+2. Richten Sie Ihr virtuelles Netzwerk ein. Sehen Sie sich die Informationen [VNET-Planung](remoteapp-planvpn.md) und [-Größe](remoteapp-vnetsizing.md) an.
 2.	Erstellen einer RemoteApp-Sammlung.
 2.	Fügen Sie Ihre Sammlung Ihrer lokalen Domäne hinzu.
 3.	Fügen Sie Ihrer Sammlung ein Vorlagenimage hinzu.
@@ -55,7 +55,7 @@ Bevor Sie mit der Erstellung der Sammlung beginnen, benötigen Sie Folgendes:
 ## Schritt 1: Einrichten des virtuellen Netzwerks
 Sie können eine RemoteApp-Hybridsammlung für ein vorhandenes virtuelles Azure-Netzwerk bereitstellen oder ein neues virtuelles Netzwerk erstellen. Ein virtuelles Netzwerk ermöglicht es den Benutzern, auf Daten auf Ihrem lokalen Netzwerk über RemoteApp-Remoteressourcen zuzugreifen. Mit einem virtuellen Azure-Netzwerk verfügt Ihre Sammlung über direkten Zugriff auf andere Azure-Dienste und virtuelle Computer in diesem virtuellen Netzwerk.
 
-Überprüfen Sie die Informationen zur [VNET-Größe](remoteapp-vnetsizing.md), bevor Sie Ihr VNET erstellen.
+Überprüfen Sie die Informationen zur [VNET-Planung](remoteapp-planvpn.md) und [VNET-Größe](remoteapp-vnetsizing.md), bevor Sie Ihr VNET erstellen.
 
 ### Erstellen eines Azure-VNET und Verknüpfen mit der Active Directory-Bereitstellung
 
@@ -121,7 +121,7 @@ Eine RemoteApp-App ist die App oder das Programm, das Sie den Benutzern zur Verf
 
 Bevor ein Benutzer aber auf das RemoteApp-Programm zugreifen kann, muss es im Endbenutzer-Feed – einer Liste verfügbarer Programme, auf die der Benutzer über den Remotedesktop-Client zugreift – veröffentlicht werden.
  
-Sie können in Ihrer RemoteApp-Sammlung mehrere Apps veröffentlichen. Klicken Sie auf der RemoteApp-Veröffentlichungsseite auf **Veröffentlichen**. Sie können die App entweder aus dem Startmenü des Vorlagenimages veröffentlichen oder den Pfad zur App im Vorlagenimage angeben. Wenn Sie das Programm vom Startmenü aus veröffentlichen möchten, wählen Sie das zu veröffentlichende Programm aus. Wenn Sie den Pfad angeben möchten, geben Sie den Namen der App sowie den Pfad an, in dem die App auf dem Vorlagenimage installiert ist.
+Sie können in Ihrer RemoteApp-Sammlung mehrere Apps veröffentlichen. Klicken Sie auf der RemoteApp-Veröffentlichungsseite auf **Veröffentlichen**. Sie können die App entweder aus dem **Startmenü** des Vorlagenimages veröffentlichen oder den Pfad zur App im Vorlagenimage angeben. Wenn Sie das Programm vom **Startmenü** aus veröffentlichen möchten, wählen Sie das hinzuzufügende Programm aus. Wenn Sie den Pfad angeben möchten, geben Sie den Namen der App sowie den Pfad an, in dem die App auf dem Vorlagenimage installiert ist.
 
 ## Schritt 7: Konfigurieren des Benutzerzugriffs ##
 
@@ -146,4 +146,4 @@ Das war alles: Sie haben die RemoteApp-Hybridsammlung nun erfolgreich erstellt u
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

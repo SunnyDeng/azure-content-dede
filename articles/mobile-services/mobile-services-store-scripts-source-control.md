@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Speichern von Projektcode in der Quellcodeverwaltung | Microsoft Azure"
+	pageTitle="Speichern des Projektcodes vom JavaScript-Back-End in der Quellcodeverwaltung | Azure Mobile Services"
 	description="Erfahren Sie, wie Sie Serverskriptdateien und -module in einem lokalen Git-Repository auf Ihrem Computer speichern."
 	services="mobile-services"
 	documentationCenter=""
@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="08/18/2015" 
+	ms.date="09/15/2015" 
 	ms.author="ggailey777"/>
 
-# Speichern von Projektcode in der Quellcodeverwaltung
+# Speichern von Projektcode des mobilen Diensts in der Quellcodeverwaltung
 
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](mobile-services-dotnet-backend-store-code-source-control.md)
-- [(Any | Javascript)](mobile-services-store-scripts-source-control.md)
+> [AZURE.SELECTOR]
+- [.NET backend](mobile-services-dotnet-backend-store-code-source-control.md)
+- [Javascript backend](mobile-services-store-scripts-source-control.md)
 
 In diesem Thema erfahren Sie, wie Sie die von Azure Mobile Services bereitgestellte Quellcodeverwaltung verwenden, um Ihre Serverskripts zu speichern. Sie können Skripts und andere JavaScript-Back-End-Codedateien aus Ihrem lokalen Git-Repository in Ihre Produktionsumgebung im mobilen Dienst befördern. Außerdem erfahren Sie, wie Sie freigegebenen Code definieren, der möglicherweise für mehrere Skripts erforderlich ist, und wie Sie die Datei „package.jason“ verwenden, um Ihrem mobilen Dienst Node.js-Module hinzuzufügen.
 
@@ -125,7 +125,7 @@ Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobil
 		$ git add .
 		$ git commit -m "added node-uuid module"
 		$ git push origin master
-		
+
 	Daraufhin wird die neue Datei hinzugefügt, Ihre Änderungen übernommen und das neue Modul node-uuid sowie die Änderungen am Skript todoitem.insert.js an Ihren mobilen Dienst übertragen.
 
 ## <a name="next-steps"> </a>Nächste Schritte
@@ -161,4 +161,4 @@ Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinier
 [Module]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

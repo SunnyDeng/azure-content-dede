@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="rkarlin"
-	manager="terrylan"
+	manager="msStevenPo"
 	editor=""/>
 
 <tags
@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/02/2015"
+	ms.date="09/09/2015"
 	ms.author="rkarlin"/>
 
 
 # Veröffentlichen von Anwendungen mit Azure AD-Anwendungsproxy
 
-> [AZURE.NOTE]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](https://msdn.microsoft.com/library/azure/dn532272.aspx).
+> [AZURE.NOTE]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-edition.md).
 
 Nachdem Sie Microsoft Azure AD-Anwendungsproxy aktiviert haben, können Sie Anwendungen veröffentlichen, um sie für Ihre Benutzer von außerhalb Ihres privaten Netzwerks zugänglich zu machen.
 
@@ -79,4 +79,4 @@ Nachdem Sie Anwendungen mit dem Azure Active Directory-Anwendungsproxy veröffen
 
 * [Informationen zur eingeschränkten Kerberos-Delegierung](http://technet.microsoft.com/library/cc995228.aspx)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

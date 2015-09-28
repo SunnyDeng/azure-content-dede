@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/05/2015"
+   ms.date="09/10/2015"
    ms.author="banders"/>
 # Analysieren der Daten von Servern in Microsoft Azure
 
@@ -269,4 +269,4 @@ Nach etwa einer Stunde werden Daten aus dem Speicherkonto für die Analyse in Op
 
 [Konfigurieren von Proxy- und Firewall-Einstellungen (Optional)](../operational-insights-proxy-filewall.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

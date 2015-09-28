@@ -5,15 +5,15 @@
 	documentationCenter="" 
 	authors="tfitzmac" 
 	manager="wpickett" 
-	editor=""/>
+	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="09/15/2015" 
 	ms.author="tomfitz"/>
 
 # Bereitstellen einer Web-App mit einer SQL-Datenbank
@@ -25,6 +25,8 @@ Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von
 Weitere Informationen zum Bereitstellen von Apps finden Sie unter [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md).
 
 Die vollständige Vorlage finden Sie unter [Web-App mit SQL-Datenbankvorlage](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json).
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Was Sie bereitstellen
 
@@ -108,7 +110,7 @@ Der Typ der zu erstellenden Datenbank.
 
 ### maxSizeBytes
 
-Die maximale Größe \(in Bytes\) der Datenbank.
+Die maximale Größe (in Bytes) der Datenbank.
 
     "maxSizeBytes": {
       "type": "string",
@@ -450,4 +452,4 @@ Erstellt einen neuen SQL-Server und eine Datenbank. Der Name des Servers wird im
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

@@ -1,5 +1,3 @@
-# Kontinuierliche Bereitstellung mit GIT in Azure App Service
-
 [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) unterstützt die fortlaufende Bereitstellung von Quellcodeverwaltungs- und Repositorytools wie BitBucket, CodePlex, Dropbox, Git, GitHub, Mercurial und TFS in Web-Apps. Sie können diese Tools verwenden, um den Inhalt und den Code für Ihre Anwendung zu verwalten und bei Bedarf schnell und einfach Änderungen an Ihrer Azure-Web-App vorzunehmen.
 
 In diesem Artikel erfahren Sie, wie Sie mithilfe von Git direkt von Ihrem lokalen Computer aus in Web-Apps veröffentlichen (in Azure wird diese Methode der Veröffentlichung **lokales Git** genannt). Außerdem wird erläutert, wie Sie die fortlaufende Bereitstellung von Repositorywebsites aus ermöglichen, z. B. von BitBucket, CodePlex, Dropbox, GitHub oder Mercurial. Informationen zum Verwenden von TFS für die fortlaufende Bereitstellung finden Sie unter [Continuous delivery to Azure using Visual Studio Online] (Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online, in englischer Sprache).
@@ -82,11 +80,11 @@ Führen Sie die folgenden Schritte durch, um Ihre Web-App mit einem lokalen Git 
 
 	![](./media/publishing-with-git/azure3-repo-details.png)
 
-	Die **Git URL** ist die Remotereferenz für die Bereitstellung aus dem lokalen Repository. Sie verwenden diese URL in den folgenden Schritten.
+	Die **Git-URL** ist die Remotereferenz für die Bereitstellung aus dem lokalen Repository. Sie verwenden diese URL in den folgenden Schritten.
 
 1. Stellen Sie unter Verwendung der Befehlszeile sicher, dass das Stammverzeichnis Ihres lokalen Git-Repositorys, das die vorher erstellte Datei "index.html" enthält, das aktuelle Verzeichnis ist.
 
-2. Fügen Sie mit `git remote` die in Schritt 1 unter **Git URL** aufgeführte Remotereferenz hinzu. Der Befehl sieht etwa wie folgt aus:
+2. Fügen Sie mit `git remote` die in Schritt 1 unter **Git-URL** aufgeführte Remotereferenz hinzu. Der Befehl sieht etwa wie folgt aus:
 
 		git remote add azure https://username@needsmoregit.scm.azurewebsites.net:443/NeedsMoreGit.git
 
@@ -300,4 +298,4 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 [Verwenden von Dropbox zum Freigeben von Git-Repositorys]: https://gist.github.com/trey/2722927
 [Continuous delivery to Azure using Visual Studio Online]: ../articles/cloud-services/cloud-services-continuous-delivery-use-vso.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

@@ -1,20 +1,20 @@
 <properties
    pageTitle="Verwendung des SMTP-Connectors in Logik-Apps | Microsoft Azure App Service"
-	description="Erstellen und Konfigurieren des SMTP-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
-	services="app-service\logic"
-	documentationCenter=".net,nodejs,java"
-	authors="anuragdalmia"
-	manager="dwrede"
-	editor=""/>
+   description="Erstellen und Konfigurieren des SMTP-Connectors oder einer API-App und Verwenden in einer Logik-App in Azure App Service"
+   services="app-service\logic"
+   documentationCenter=".net,nodejs,java"
+   authors="anuragdalmia"
+   manager="dwrede"
+   editor=""/>
 
 <tags
    ms.service="app-service-logic"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="integration"
-	ms.date="08/23/2015"
-	ms.author="andalmia"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="integration"
+   ms.date="08/23/2015"
+   ms.author="andalmia"/>
 
 
 # Erste Schritte mit dem SMTP-Connector und das Hinzufügen zur Logik-App
@@ -54,18 +54,17 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 6. Klicken Sie auf **Erstellen**.
 
+> [AZURE.IMPORTANT]Einige SMTP-Server haben möglicherweise Probleme mit der Funktionsweise dieses Connectors (SendGrid und Gmail). Wenn Sie E-Mails von SendGrid senden möchten, bietet unser [GitHub-Repository](https://github.com/logicappsio/SendGridAPI) eine benutzerdefinierte API, die eine direkte Schnittstelle zu den SendGrid-APIs darstellt.
+
 ## Verwenden des SMTP-Connectors in Logik-Apps
 Sobald Ihr Connector erstellt wurde, können Sie den SMTP-Connector als Aktion für Ihre Logik-App verwenden. Gehen Sie dazu folgendermaßen vor:
 
-1.	Erstellen Sie eine neue Logik-App:
-
-	![][2]
-2.	Öffnen Sie **Trigger und Aktionen**, um den Logik-Apps-Designer zu öffnen und den Workflow zu konfigurieren.
-
-	![][3]
+1.	Erstellen einer neuen Logik-App:
+![][2]
+2.	Öffnen Sie **Trigger und Aktionen**, um den Logik-Apps-Designer zu öffnen und den Workflow zu konfigurieren:
+![][3]
 3.	Der SMTP-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt. Wählen Sie ihn aus:
-
-	![][4]
+![][4]
 4.	Wählen Sie den SMTP-Connector aus, um ihn automatisch dem Workflow-Designer hinzuzufügen.
 
 Sie können nun den SMTP-Connector zur Verwendung in Ihrem Workflow konfigurieren. Wählen Sie die Aktion **E-Mail senden** aus, und konfigurieren Sie die Eingabeeigenschaften wie folgt:
@@ -87,7 +86,7 @@ Sie können nun den SMTP-Connector zur Verwendung in Ihrem Workflow konfiguriere
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
-Sie finden die Swagger-REST-API-Referenz unter [Connectors and API Apps Reference](http://go.microsoft.com/fwlink/p/?LinkId=529766) (in englischer Sprache).
+Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
 Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connector steuern. Informationen finden Sie unter [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md).
 
@@ -99,4 +98,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [5]: ./media/app-service-logic-connector-smtp/img5.PNG
 [6]: ./media/app-service-logic-connector-smtp/img6.PNG
 
-<!-----HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

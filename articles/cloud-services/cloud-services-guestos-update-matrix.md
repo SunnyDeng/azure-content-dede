@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Erfahren Sie mehr über die neuesten Azure-Gastbetriebssystemversionen | Microsoft Azure"
-	description="Die neueste Releaseneuigkeiten und SDK-Kompatibilität für das Azure Cloud Services-Gastbetriebssystem."
-	services="cloud-services"
-	documentationCenter="na"
-	authors="yuemlu"
-	manager="markkie"
-	editor=""/>
+   pageTitle="Erfahren Sie mehr über die neuesten Azure-Gastbetriebssystemversionen | Microsoft Azure" 
+   description="Die neueste Releaseneuigkeiten und SDK-Kompatibilität für das Azure Cloud Services-Gastbetriebssystem." 
+   services="cloud-services" 
+   documentationCenter="na" 
+   authors="yuemlu" 
+   manager="markkie" 
+   editor=""/>
 
 <tags
    ms.service="cloud-services"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="tbd"
-	ms.date="08/19/2015"
-	ms.author="yuemlu"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="tbd" 
+   ms.date="09/09/2015"
+   ms.author="yuemlu"/>
 
 # Azure-Gastbetriebssystemreleases und SDK-Kompatibilitätsmatrix
 Bietet Ihnen aktuelle Informationen zu den neuesten Azure-Gastbetriebssystemreleases für Cloud Services. Anhand dieser Informationen können Sie Ihren Upgradepfad planen, bevor ein Gastbetriebssystem wird.
@@ -28,6 +28,11 @@ Bietet Ihnen aktuelle Informationen zu den neuesten Azure-Gastbetriebssystemrele
 
 
 ## Neuigkeiten
+
+###### **9. September 2015**
+Die Bereitstellung des Gastbetriebssystems September begann am 9. September 2015 und sollte voraussichtlich am 8. Oktober 2015 freigegeben werden.
+
+Gastbetriebssystemversionen 4.23, 3.30, 2.42 wurden am 9. September 2015 veröffentlicht.
 
 ###### **14. August 2015**
 Das Rollout des August-Gastbetriebssystems beginnt am 14. August 2015. Die Veröffentlichung ist für den 11. September 2015 geplant.
@@ -122,9 +127,10 @@ Unterstützt .NET 4.0, 4.5, 4.5.1, 4.5.2 (Hinweis 2)
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
-| 4\.23 | WA-GUEST-OS-4.23\_201508-01 | Voraussichtlich: 11. September 2015 | Wird bei Veröffentlichung von 4.25 aktualisiert | TBD |
+| 4\.24 | WA-GUEST-OS-4.24\_201509-01 | Voraussichtlich: 8. Oktober 2015 | Wird bei Veröffentlichung von 4.26 aktualisiert | TBD |
+| 4\.23 | WA-GUEST-OS-4.23\_201508-02 | 9\. September 2015 | Wird bei Veröffentlichung von 4.25 aktualisiert | TBD |
 | 4\.22 | WA-GUEST-OS-4.22\_201507-02 | 7\. August 2015 | Wird bei Veröffentlichung von 4.24 aktualisiert | TBD |
-| 4\.21 | WA-GUEST-OS-4.21\_201506-01 | 9\. Juli 2015 | Wird bei Veröffentlichung von 4.23 aktualisiert | TBD |
+| 4\.21 | WA-GUEST-OS-4.21\_201506-01 | 9\. Juli 2015 | 9\. Oktober 2015 | TBD |
 | 4\.20 | WA-GUEST-OS-4.20\_201505-02 | 12\. Juni 2015 | 7\. September 2015 | TBD |
 | 4\.19 | WA-GUEST-OS-4.19\_201504-01 | 17\. April 2015 | 9\. August 2015 | TBD |
 | 4\.18 | WA-GUEST-OS-4.18\_201503-01 | 2\. April 2015 | 12\. Juli 2015 | TBD |
@@ -147,9 +153,10 @@ Unterstützt .NET 4.0, 4.5
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
-| 3\.30 | WA-GUEST-OS-3.30\_201508-01 | Voraussichtlich: 11. September 2015 | Wird bei Veröffentlichung von 3.32 aktualisiert | TBD |
+| 3\.31 | WA-GUEST-OS-3.31\_201509-01 | Voraussichtlich: 8. Oktober 2015 | Wird bei Veröffentlichung von 3.33 aktualisiert | TBD |
+| 3\.30 | WA-GUEST-OS-3.30\_201508-02 | 9\. September 2015 | Wird bei Veröffentlichung von 3.32 aktualisiert | TBD |
 | 3\.29 | WA-GUEST-OS-3.29\_201507-02 | 7\. August 2015 | Wird bei Veröffentlichung von 3.31 aktualisiert | TBD |
-| 3\.28 | WA-GUEST-OS-3.28\_201506-01 | 9\. Juli 2015 | Wird bei Veröffentlichung von 3.30 aktualisiert | TBD |
+| 3\.28 | WA-GUEST-OS-3.28\_201506-01 | 9\. Juli 2015 | 9\. Oktober 2015 | TBD |
 | 3\.27 | WA-GUEST-OS-3.27\_201505-02 | 12\. Juni 2015 | 7\. September 2015 | TBD |
 | 3\.26 | WA-GUEST-OS-3.26\_201504-01 | 17\. April 2015 | 9\. August 2015 | TBD |
 | 3\.25 | WA-GUEST-OS-3.25\_201503-01 | 2\. April 2015 | 12\. Juli 2015 | TBD |
@@ -173,9 +180,10 @@ Unterstützt .NET 3.5, 4.0
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
-| 2\.42 | WA-GUEST-OS-2.42\_201508-01 | Voraussichtlich: 11. September 2015 | Wird bei Veröffentlichung von 2.44 aktualisiert | TBD |
+| 2\.43 | WA-GUEST-OS-2.43\_201509-01 | Voraussichtlich: 8. Oktober 2015 | Wird bei Veröffentlichung von 2.45 aktualisiert | TBD |
+| 2\.42 | WA-GUEST-OS-2.42\_201508-02 | 9\. September 2015 | Wird bei Veröffentlichung von 2.44 aktualisiert | TBD |
 | 2\.41 | WA-GUEST-OS-2.41\_201507-02 | 7\. August 2015 | Wird bei Veröffentlichung von 2.43 aktualisiert | TBD |
-| 2\.40 | WA-GUEST-OS-2.40\_201506-01 | 9\. Juli 2015 | Wird bei Veröffentlichung von 2.42 aktualisiert | TBD |
+| 2\.40 | WA-GUEST-OS-2.40\_201506-01 | 9\. Juli 2015 | 9\. Oktober 2015 | TBD |
 | 2\.39 | WA-GUEST-OS-2.39\_201505-02 | 12\. Juni 2015 | 7\. September 2015 | TBD |
 | 2\.38 | WA-GUEST-OS-2.38\_201504-01 | 17\. April 2015 | 9\. August 2015 | TBD |
 | 2\.37 | WA-GUEST-OS-2.37\_201503-01 | 2\. April 2015 | 12\. Juli 2015 | TBD |
@@ -336,4 +344,4 @@ Aufgrund der partiellen Einführung der letzten beiden Releases können Personen
 [fam1retire]: cloud-services-guestos-family1-retirement.md
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

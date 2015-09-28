@@ -1,23 +1,25 @@
 <properties 
-	pageTitle="Branchenanwendung in Azure | Microsoft Azure"
-	description="Entdecken Sie den Wert einer Branchenanwendung in Azure, richten Sie eine Testumgebung ein, und stellen Sie eine hochverfügbare Konfiguration bereit."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="JoeDavies-MSFT"
-	manager="timlt"
+	pageTitle="Branchenanwendung in Azure | Microsoft Azure" 
+	description="Entdecken Sie den Wert einer Branchenanwendung in Azure, richten Sie eine Testumgebung ein, und stellen Sie eine hochverfügbare Konfiguration bereit." 
+	services="virtual-machines" 
+	documentationCenter="" 
+	authors="JoeDavies-MSFT" 
+	manager="timlt" 
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="Windows" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/11/2015" 
 	ms.author="josephd"/>
 
 # Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 Richten Sie Ihre webbasierte, nur im Intranet verfügbare Branchenanwendung in Microsoft Azure ein – so profitieren Sie von der einfachen Konfiguration sowie der Möglichkeit, die Anwendung schnell um neue Kapazitäten zu erweitern.
  
@@ -103,4 +105,4 @@ Nach der Konfiguration können Sie diese Branchenanwendung problemlos erweitern,
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

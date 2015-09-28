@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App-Modell v2.0 | Microsoft Azure"
+	pageTitle="App-Modell v2.0: Bereiche, Berechtigungen und Zustimmung | Microsoft Azure"
 	description="Eine Beschreibung der Autorisierung im Azure AD-App-Modell v2.0 einschließlich Bereichen, Berechtigungen und Zustimmung."
 	services="active-directory"
 	documentationCenter=""
@@ -16,11 +16,11 @@
 	ms.date="08/12/2015"
 	ms.author="dastrock"/>
 
-# App-Modell v2.0 \(Vorschauversion\): Bereiche, Berechtigungen und Zustimmung
+# App-Modell v2.0 (Vorschauversion): Bereiche, Berechtigungen und Zustimmung
 
 Apps, die sich in Azure AD integrieren lassen, folgen einem bestimmten Autorisierungsmodell, mit dem Benutzer festlegen können, wie eine App auf ihre Daten zugreift. In App-Modell v2.0 wurde die Implementierung dieses Autorisierungsmodells so aktualisiert, sodass die Art und Weise, wie eine App mit Azure AD interagieren muss, nun anders ist. In diesem Thema werden die grundlegenden Konzepte dieses Autorisierungsmodells einschließlich der Bereiche, Berechtigungen und Zustimmung behandelt.
 
-> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 \(öffentliche Vorschauversion\). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
 ## Bereiche und Berechtigungen
 
@@ -48,7 +48,7 @@ Eine Anwendung kann diese Berechtigungen wie unten beschrieben durch Angabe der 
 
 ## Zustimmung
 
-In einer Autorisierungsanforderung von [OpenID Connect oder OAuth 2.0](active-directory-v2-protocols.md) kann eine App die erforderlichen Berechtigungen mithilfe des `scope`-Abfrageparameters anfordern. Wenn sich ein Benutzer beispielsweise in einer App anmeldet, sendet die App eine Anforderung wie die folgende \(mit Zeilenumbrüchen zur besseren Lesbarkeit\):
+In einer Autorisierungsanforderung von [OpenID Connect oder OAuth 2.0](active-directory-v2-protocols.md) kann eine App die erforderlichen Berechtigungen mithilfe des `scope`-Abfrageparameters anfordern. Wenn sich ein Benutzer beispielsweise in einer App anmeldet, sendet die App eine Anforderung wie die folgende (mit Zeilenumbrüchen zur besseren Lesbarkeit):
 
 ```
 GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
@@ -62,7 +62,7 @@ https%3A%2F%2Fgraph.windows.net%2Fmail.send
 &state=12345
 ```
 
-Der `scope`-Parameter ist eine durch Leerzeichen getrennte Liste von Bereichen, die von der App angefordert wird. Jeder einzelne Bereich wird durch Anhängen des Bereichswerts an den Ressourcenbezeichner \(App-ID-URI\) angegeben. Die obere Anforderung gibt an, dass die Anwendung eine Berechtigung zum Lesen des Postfachs des Benutzers und Senden von E-Mails als Benutzer benötigt.
+Der `scope`-Parameter ist eine durch Leerzeichen getrennte Liste von Bereichen, die von der App angefordert wird. Jeder einzelne Bereich wird durch Anhängen des Bereichswerts an den Ressourcenbezeichner (App-ID-URI) angegeben. Die obere Anforderung gibt an, dass die Anwendung eine Berechtigung zum Lesen des Postfachs des Benutzers und Senden von E-Mails als Benutzer benötigt.
 
 Nachdem der Benutzer seine Anmeldeinformationen eingegeben hat, überprüft der v2.0-Endpunkt, ob es einen übereinstimmenden Datensatz der **Benutzerzustimmung** gibt. Wenn der Benutzer den angeforderten Berechtigungen in der Vergangenheit nicht zugestimmt hat, fragt der v2.0-Endpunkt den Benutzer nach den erforderlichen Berechtigungen.
 
@@ -112,8 +112,8 @@ Bei einer App-Anmeldung mit [OpenID Connect](active-directory-v2-protocols.md#op
 
 Mit dem `offline_access`-Bereich kann Ihre App im Auftrag des Benutzers für einen längeren Zeitraum auf Ressourcen zugreifen. Auf dem Zustimmungsbildschirm des Arbeitskontos erscheint dieser Bereich als "Jederzeit und überall auf Ihre Daten zugreifen". Auf dem Zustimmungsbildschirm des persönlichen Microsoft-Kontos erscheint er als "Jederzeit auf Ihre Informationen zugreifen". Wenn ein Benutzer den `offline_access`-Bereich genehmigt, ist Ihre App für den Empfang von Aktualisierungstoken vom v2.0-Tokenendpunkt aktiviert. Aktualisierungstoken sind langlebig und ermöglichen es Ihrer App, neue Zugriffstoken zu erhalten, wenn ältere ablaufen.
 
-Wenn die App den `offline_access`-Bereich nicht anfordert, werden auch keine Aktualisierungstoken empfangen. Dies bedeutet, dass Sie beim Einlösen eines Autorisierungscodes im [OAuth 2.0-Authorisierungscodefluss](active-directory-v2-protocols.md#oauth2-authorization-code-flow) nur ein Zugriffstoken vom `/token`-Endpunkt erhalten. Dieses Zugriffstoken bleibt für einen kurzen Zeitraum \(in der Regel eine Stunde\) gültig, läuft aber anschließend ab. Zu diesem Zeitpunkt muss Ihre App den Benutzer zurück auf den `/authorize`-Endpunkt leiten, um einen neuen Autorisierungscode abzurufen. Während dieser Umleitung muss der Benutzer möglicherweise seine Anmeldeinformationen erneut eingeben oder den Berechtigungen erneut zustimmen, je nach Art der App.
+Wenn die App den `offline_access`-Bereich nicht anfordert, werden auch keine Aktualisierungstoken empfangen. Dies bedeutet, dass Sie beim Einlösen eines Autorisierungscodes im [OAuth 2.0-Authorisierungscodefluss](active-directory-v2-protocols.md#oauth2-authorization-code-flow) nur ein Zugriffstoken vom `/token`-Endpunkt erhalten. Dieses Zugriffstoken bleibt für einen kurzen Zeitraum (in der Regel eine Stunde) gültig, läuft aber anschließend ab. Zu diesem Zeitpunkt muss Ihre App den Benutzer zurück auf den `/authorize`-Endpunkt leiten, um einen neuen Autorisierungscode abzurufen. Während dieser Umleitung muss der Benutzer möglicherweise seine Anmeldeinformationen erneut eingeben oder den Berechtigungen erneut zustimmen, je nach Art der App.
 
 Weitere Informationen zum Abrufen und Verwenden von Aktualisierungstoken finden Sie in der [App-Modell, Version 2.0 –Protokollreferenz](active-directory-v2-protocols.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

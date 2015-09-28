@@ -3,7 +3,7 @@
 	description="Informationen zur Nutzung von Images mit virtuellen Computern in Azure."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/13/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 # Informationen zu Images für virtuelle Computer
 
@@ -57,4 +57,4 @@ Beispiele der Verwendung der Tools in einer klassischen Bereitstellung:
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

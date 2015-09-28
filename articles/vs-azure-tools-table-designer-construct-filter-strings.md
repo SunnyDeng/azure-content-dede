@@ -1,23 +1,23 @@
-<properties 
+<properties
    pageTitle="Erstellen von Filterzeichenfolgen für den Tabellen-Designer"
-	description="Erstellen von Filterzeichenfolgen für den Tabellen-Designer"
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="kempb"
-	manager="douge"
-	editor="tlee"/>
-<tags 
+   description="Erstellen von Filterzeichenfolgen für den Tabellen-Designer"
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="kempb"
+   manager="douge"
+   editor="tlee" />
+<tags
    ms.service="storage"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/24/2015"
-	ms.author="kempb"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/24/2015"
+   ms.author="kempb" />
 
 # Erstellen von Filterzeichenfolgen für den Tabellen-Designer
 
-##Übersicht
+## Übersicht
 
 Wenn Sie Daten in einer Azure-Tabelle filtern möchten, die im **Tabellen-Designer** von Visual Studio angezeigt wird, müssen Sie eine Filterzeichenfolge erstellen und in das Filterfeld eingeben. Die Syntax der Filterzeichenfolge wird von den WCF Data Services definiert und ist mit einer SQL WHERE-Klausel vergleichbar. Sie wird jedoch über eine HTTP-Anforderung an den Tabellenspeicherdienst gesendet. Der **Tabellen-Designer** nimmt die erforderliche Codierung vor, sodass Sie zum Filtern nach einem gewünschten Eigenschaftswert nur den Eigenschaftennamen, den Vergleichsoperator, den Kriterienwert und optional einen booleschen Operator im Filterfeld eingeben müssen. Die $filter-Abfrageoption muss nicht eingeschlossen werden, wie es beim Erstellen einer URL zur Tabellenabfrage über die [Referenz zur REST-API der Speicherdienste](http://go.microsoft.com/fwlink/p/?LinkId=400447) notwendig wäre.
 
@@ -55,11 +55,9 @@ Im folgenden Beispiel wird nach der **PartitionKey**-Eigenschaft und der **RowKe
 
     PartitionKey eq 'Partition1' and RowKey eq '00001'
 
-
 Sie können jeden Filterausdruck in Klammern einschließen, obwohl dies nicht erforderlich ist:
 
     (PartitionKey eq 'Partition1') and (RowKey eq '00001')
-
 
 Der Tabellenspeicherdienst unterstützt keine Platzhalterabfragen, und sie werden auch nicht im Tabellen-Designer unterstützt. Sie können jedoch den Präfixabgleich ausführen, indem Sie für das gewünschte Präfix Vergleichsoperatoren verwenden. Im folgenden Beispiel werden Entitäten mit einer LastName-Eigenschaft zurückgegeben, die mit dem Buchstaben 'A' beginnt:
 
@@ -72,7 +70,6 @@ Wenn Sie nach einer ganzen Zahl oder einer Gleitkommazahl filtern möchten, gebe
 In diesem Beispiel werden alle Entitäten mit einer Alterseigenschaft zurückgegeben, deren Wert größer als 30 ist:
 
     Age gt 30
-
 
 In diesem Beispiel werden alle Entitäten mit einer AmountDue-Eigenschaft zurückgegeben, deren Wert kleiner oder gleich 100,25 ist:
 
@@ -88,11 +85,11 @@ Im folgenden Beispiel werden alle Entitäten zurückgegeben, bei denen die IsAct
 
 Sie können auch diesen Filterausdruck ohne den logischen Operator schreiben. Im folgenden Beispiel gibt der Tabellenspeicherdienst ebenfalls alle Entitäten zurück, in denen IsActive **true** ist:
 
-[Kopieren](javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode\_3d6a191e-f389-447a-bbbb-ef8b163bc645');)
+    IsActive
 
 Mit dem not-Operator können alle Entitäten zurückgegeben werden, bei denen IsActive "false" ergibt:
 
-    IsActive
+    not IsActive
 
 ## Filtern nach DateTime-Eigenschaften
 
@@ -102,4 +99,4 @@ Im folgenden Beispiel werden Entitäten zurückgegeben, bei denen die CustomerSi
 
     CustomerSince eq datetime'2008-07-10T00:00:00Z'
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

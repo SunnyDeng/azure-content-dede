@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Verwalten von StorSimple-Gerätecontrollern | Microsoft Azure"
-	description="Erfahren Sie, wie Sie StorSimple-Gerätecontroller beenden, neu starten, herunterfahren oder zurücksetzen."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Erfahren Sie, wie Sie StorSimple-Gerätecontroller beenden, neu starten, herunterfahren oder zurücksetzen."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="09/01/2015"
-	ms.author="alkohli"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/15/2015"
+   ms.author="alkohli" />
 
 # Verwalten von StorSimple-Gerätecontrollern
 
@@ -220,6 +220,8 @@ In diesem Abschnitt haben wir einige der häufig gestellten Fragen zur Verwaltun
 
 ## Nächste Schritte
 
-[Wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md), falls ein Problem mit Ihren StorSimple-Gerätecontrollern auftritt, das Sie mit den Verfahren in diesem Tutorial nicht beheben können.
+- [Wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md), falls ein Problem mit Ihren StorSimple-Gerätecontrollern auftritt, das Sie mit den Verfahren in diesem Tutorial nicht beheben können.
 
-<!---HONumber=September15_HO1-->
+- Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+
+<!---HONumber=Sept15_HO3-->

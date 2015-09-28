@@ -4,7 +4,7 @@
 	description="Erfahren Sie, wie Sie über Ihr Office 365-Abonnement in Azure RemoteApp Office-Apps freigeben können."
 	services="remoteapp"
 	documentationCenter="" 
-	authors="lizap" 
+	authors="piotrci" 
 	manager="mbaldwin" />
 
 <tags 
@@ -117,4 +117,4 @@ Sie benötigen weitere Informationen zur Verwendung des Office-Bereitstellungsto
 - [Deploying and Updating Office 365 ProPlus Using the Office Deployment Tool](https://channel9.msdn.com/Events/Ignite/2015/BRK3168) (Video, in englischer Sprache)
 - [Konfigurieren von Updateeinstellungen für Office 365 ProPlus](https://technet.microsoft.com/library/dn761708.aspx)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

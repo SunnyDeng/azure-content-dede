@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.date="09/11/2015"
 	ms.author="luisca"/>
 
 
@@ -135,7 +135,9 @@ In der folgenden Antwort erhalten Sie die Bewertungsliste im Zusammenhang mit Ih
 		 {"Score":0.7767222,"Id":"2"},
 		 {"Score":0.8988889,"Id":"3"}
 		],  
-		"Errors":[] 
+		"Errors":[
+		   {"Id": "4", Message:"Record cannot be null/empty"}
+		]
 	}
 
 
@@ -191,7 +193,9 @@ In der folgenden Antwort erhalten Sie die Schlüsselwortliste im Zusammenhang mi
 		   {"KeyPhrases":["amazing build conference","interesting talks"],"Id":"2"},
 		   {"KeyPhrases":["hours","traffic","airport"],"Id":"3" }
 		],
-		"Errors":[ ]
+		"Errors":[
+		   {"Id": "4", Message:"Record cannot be null/empty"}
+		]
 	}
 
 ---
@@ -201,4 +205,4 @@ In der folgenden Antwort erhalten Sie die Schlüsselwortliste im Zusammenhang mi
 Die ins System eingegebenen IDs werden von diesem zurückgegeben. Der Webdienst überprüft nicht, ob die IDs eindeutig sind. Es ist die Verantwortung des Aufrufers, deren Eindeutigkeit zu prüfen.
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

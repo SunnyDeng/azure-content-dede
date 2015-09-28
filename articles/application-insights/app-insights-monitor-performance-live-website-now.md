@@ -2,9 +2,9 @@
 	pageTitle="Diagnostizieren von Leistungsproblemen auf einer ausgeführten Website | Microsoft Azure"
 	description="Überwachen Sie die Leistung einer Website, ohne sie erneut bereitzustellen. Zur eigenständigen Verwendung oder in Verbindung mit dem Application Insights-SDK zum Abrufen von Telemetriedaten zu Abhängigkeiten."
 	services="application-insights"
-	documentationCenter=".net"
+    documentationCenter=".net"
 	authors="alancameronwills"
-	manager="ronmart"/>
+	manager="douge"/>
 
 <tags
 	ms.service="application-insights"
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="04/27/2015"
+	ms.date="09/10/2015"
 	ms.author="awills"/>
 
 
@@ -55,6 +55,8 @@ Bei der Anwendung von Application Insights auf die IIS-Webanwendungen können Si
 4. Melden Sie sich im Installations-Assistenten bei Microsoft Azure an.
 
     ![Melden Sie sich mit den Anmeldeinformationen für ihr Microsoft-Konto bei Azure an.](./media/app-insights-monitor-performance-live-website-now/appinsights-035-signin.png)
+
+    *Verbindungsfehler? Informationen hierzu finden Sie unter [Problembehandlung](#troubleshooting).*
 
 5. Wählen Sie die installierte Webanwendung oder Website aus, die Sie überwachen möchten, und konfigurieren Sie die Ressource, in der die Ergebnisse im Application Insights-Portal angezeigt werden sollen.
 
@@ -114,6 +116,32 @@ Klicken Sie auf ein Leistungsindikatordiagramm, um dessen Anzeige zu ändern. Si
 Sie können Detailinformationen zu bestimmten Ausnahmen (der letzten sieben Tage) anzeigen sowie Stapelüberwachung und Kontextdaten abrufen.
 
 
+## Problembehandlung
+
+### Verbindungsfehler
+
+Sie müssen einige ausgehende Ports in der Firewall des Servers öffnen, damit der Statusmonitor funktioniert:
+
++ Telemetrie – die folgenden sind jederzeit erforderlich:
+ +	`dc.services.visualstudio.com:80`
+ +	`f5.services.visualstudio.com:80`
+ +	`dc.services.visualstudio.com:443`
+ +	`f5.services.visualstudio.com:443`
+ +	`dc.services.vsallin.net:443`
++ Konfiguration – nur erforderlich, wenn Änderungen vorgenommen werden:
+ -	`management.core.windows.net:443`
+ -	`management.azure.com:443`
+ -	`login.windows.net:443`
+ -	`login.microsoftonline.com:443`
+ -	`secure.aadcdn.microsoftonline-p.com:443`
+ -	`auth.gfx.ms:443`
+ -	`login.live.com:443`
++ Installation:
+ +	`packages.nuget.org:443`
+ +	`appinsightsstatusmonitor.blob.core.windows.net:80`
+
+Diese Liste kann sich von Zeit zu Zeit ändern.
+
 ### Keine Telemetriedaten?
 
   * Verwenden Sie Ihre Website, um einige Daten zu generieren.
@@ -123,7 +151,7 @@ Sie können Detailinformationen zu bestimmten Ausnahmen (der letzten sieben Tage
 
   ![](./media/app-insights-monitor-performance-live-website-now/appinsights-status-monitor-diagnostics-message.png)
 
-  * Stellen Sie sicher, dass die Firewall Ihres Servers auf Port 443 ausgehenden Datenverkehr an "dc.services.visualstudio.com" erlaubt.
+  * Stellen Sie sicher, dass die Firewall Ihres Servers ausgehenden Datenverkehr an die oben aufgeführten Ports erlaubt.
   * Wenn auf dem Server eine Meldung über "unzureichende Berechtigungen" angezeigt wird, versuchen Sie Folgendes:
     * Wählen Sie in IIS-Manager den Anwendungspool aus, öffnen Sie **Erweiterte Einstellungen**, und notieren Sie die Identität unter **Prozessmodell**.
     * Fügen Sie in der Systemsteuerung "Computerverwaltung" diese Identität der Gruppe "Systemmonitorbenutzer" hinzu.
@@ -168,4 +196,4 @@ IIS-Unterstützung: IIS 7, 7.5, 8, 8.5 (IIS ist erforderlich)
 [roles]: app-insights-resources-roles-access-control.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

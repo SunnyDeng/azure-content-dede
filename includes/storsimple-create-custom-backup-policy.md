@@ -1,4 +1,7 @@
 
+<!--author=SharS last changed: 9/15/15-->
+
+
 #### So erstellen Sie eine benutzerdefinierte Sicherungsrichtlinie
 
 1. Klicken Sie auf der Seite **Geräte** auf **Sicherungsrichtlinien** und anschließend auf **Hinzufügen**.
@@ -39,4 +42,4 @@
 
     ![Benutzerdefinierte Sicherungsrichtlinie](./media/storsimple-create-custom-backup-policy/HCS_CustomBackupPolicyM-include.png).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

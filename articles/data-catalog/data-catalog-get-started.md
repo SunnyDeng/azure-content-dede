@@ -1,20 +1,20 @@
 <properties
    pageTitle="Erste Schritte mit Azure Data Catalog"
-	description="Umfassendes Lernprogramm zu den Szenarios und Funktionen von Azure Data Catalog"
-	documentationCenter=""
-	services="data-catalog"
-	authors="dvana"
-	manager="mblythe"
-	editor=""
-	tags=""/>
+   description="Umfassendes Lernprogramm zu den Szenarios und Funktionen von Azure Data Catalog"
+   documentationCenter=""
+   services="data-catalog"
+   authors="dvana"
+   manager="mblythe"
+   editor=""
+   tags=""/>
 <tags
    ms.service="data-catalog"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-catalog"
-	ms.date="07/13/2015"
-	ms.author="derrickv"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-catalog"
+   ms.date="09/11/2015"
+   ms.author="derrickv"/>
 
 # Erste Schritte mit Azure Data Catalog
 
@@ -148,19 +148,28 @@ In dieser Übung arbeiten Sie mit einem anderen Benutzer zusammen, um den Datena
 
 Bitten Sie einen Kollegen, die obige Übung **Versehen von registrierten Datenquellen mit Anmerkungen** durchzuführen. Nachdem Ihr Kollege einem Datenasset eine Beschreibung hinzugefügt hat, z. B. ProductPhoto, werden mehrere Anmerkungen angezeigt.
 
-In dieser Übung haben Sie die Funktionen von Azure Data Catalog zum Crowdsourcing von Metadaten untersucht, wobei jeder Katalogbenutzer die selbst ermittelten Datenassets mit Anmerkungen versehen kann. Übung: Herstellen einer Verbindung mit Datenquellen In dieser Übung verwenden Sie das **Azure Data Catalog**-Portal, um mit Microsoft Excel eine Verbindung mit Datenquellen herzustellen.
 
-> [AZURE.NOTE]Es ist wichtig zu beachten, dass Benutzer mit **Azure Data Catalog** keinen Zugriff auf die eigentliche Datenquelle erhalten – es wird Benutzern lediglich erleichtert, sie zu ermitteln und zu verstehen. Wenn Benutzer eine Verbindung mit einer Datenquelle herstellen, werden von der gewählten Clientanwendung deren Windows-Anmeldeinformationen verwendet, oder Benutzer werden bei Bedarf zur Eingabe ihrer Anmeldeinformationen aufgefordert. Falls dem Benutzer bisher noch kein Zugriff auf die Datenquelle gewährt wurde, muss dies erfolgen, bevor er die Verbindung herstellen kann.
+![crowdsource][13]
+
+In dieser Übung haben Sie die Funktionen von Azure Data Catalog zum Crowdsourcing von Metadaten untersucht, wobei jeder Katalogbenutzer die selbst ermittelten Datenassets mit Anmerkungen versehen kann.
+
+
+## Übung 6: Herstellen einer Verbindung mit Datenquellen
+
+In dieser Übung verwenden Sie das **Azure Data Catalog**-Portal, um über Microsoft Excel eine Verbindung mit Datenquellen herzustellen.
+
+
+> [AZURE.NOTE]Es ist wichtig zu beachten, dass **Azure Data Catalog** Benutzern keinen Zugriff auf die eigentliche Datenquelle ermöglicht – es erleichtert Benutzern lediglich, sie zu ermitteln und zu verstehen. Wenn Benutzer eine Verbindung mit einer Datenquelle herstellen, werden von der gewählten Clientanwendung deren Windows-Anmeldeinformationen verwendet, oder Benutzer werden bei Bedarf zur Eingabe ihrer Anmeldeinformationen aufgefordert. Falls dem Benutzer bisher noch kein Zugriff auf die Datenquelle gewährt wurde, muss dies erfolgen, bevor er die Verbindung herstellen kann.
 
 ### So stellen Sie über Excel eine Verbindung mit einer Datenquelle her
 
 1.	Melden Sie sich am **Azure Data Catalog**-Portal an.
 2.	Klicken Sie auf **Ermitteln**.
 3.	Wählen Sie ein Datenasset aus. Wählen Sie in diesem Beispiel „ProductCategory“ aus.
-4.	Wählen Sie **Öffnen in** > **Excel**.
+4.	Wählen Sie **Öffnen in** > **Excel** aus.
 
     ![connect1][10]
-5.	Klicken Sie im Fenster **Sicherheitshinweis für Microsoft Excel** auf **Aktivieren**.
+5.	Klicken Sie im Fenster **Microsoft Excel-Sicherheitshinweis** auf **Aktivieren**.
 6.	Öffnen Sie die Datei **ProductCategory.odc**.
 7.	Die Datenquelle wird in Excel geöffnet.
 
@@ -168,11 +177,11 @@ In dieser Übung haben Sie die Funktionen von Azure Data Catalog zum Crowdsourci
 
 In dieser Übung haben Sie Verbindungen mit Datenquellen hergestellt, die per Azure Data Catalog ermittelt wurden. Mit dem **Azure Data Catalog**-Portal können Benutzer Verbindungen direkt mit Clientanwendungen herstellen, die in das Menü **Öffnen in…** integriert sind. Außerdem können Benutzer eine Verbindung mit einer beliebigen Anwendung herstellen, indem sie die Speicherortinformationen der Verbindung in den Assetmetadaten verwenden.
 
-## Übung 6: Entfernen von Datenquellenmetadaten
+## Übung 7: Entfernen von Datenquellenmetadaten
 
 In dieser Übung verwenden Sie das **Azure Data Catalog**-Portal, um Vorschaudaten aus registrierten Datenassets zu entfernen und Datenassets aus dem Katalog zu löschen.
 
-> [AZURE.NOTE]Das Standardverhalten des Katalogs besteht darin, das Registrieren beliebiger Datenquellen für alle Benutzer zuzulassen und Benutzern auch das Löschen aller registrierten Datenassets zu ermöglichen. Die Verwaltungsfunktionen der **Standard Edition von Azure Data Catalog** umfassen zusätzliche Optionen zum Festlegen des Besitzes von Assets, Einschränken der Ermittlung von Assets und Einschränken des Löschens von Assets.
+> [AZURE.NOTE]Das Standardverhalten des Katalogs besteht darin, das Registrieren beliebiger Datenquellen für alle Benutzer zuzulassen und Benutzern auch das Löschen aller registrierten Datenassets zu ermöglichen. Die Verwaltungsfunktionen in der **Standard Edition von Azure Data Catalog** umfassen zusätzliche Optionen zum Festlegen des Besitzes von Assets, Einschränken der Ermittlung von Assets und Einschränken des Löschens von Assets.
 
 In **Azure Data Catalog** können Sie die Vorschau für das Löschen einzelner oder mehrerer Assets entfernen.
 
@@ -185,7 +194,7 @@ In **Azure Data Catalog** können Sie die Vorschau für das Löschen einzelner o
 
 In dieser Übung haben Sie die registrierten Datenassets aus dem Katalog entfernt.
 
-## Übung 7: Verwalten von registrierten Datenquellen
+## Übung 8: Verwalten von registrierten Datenquellen
 
 In dieser Übung verwenden Sie die Verwaltungsfunktionen von **Azure Data Catalog**, um Datenassets in Besitz zu nehmen und zu steuern, was Benutzer ermitteln können und wie sie die Ressourcen verwalten können.
 
@@ -196,7 +205,7 @@ Hinweis: Die in dieser Übung beschriebenen Verwaltungsfunktionen sind nur in de
 1.	Melden Sie sich am **Azure Data Catalog**-Portal an.
 2.	Klicken Sie auf **Ermitteln**.
 3.	Wählen Sie mindestens ein Datenasset aus.
-4.	Klicken Sie im Bereich **Eigenschaften** unter **Verwaltung** auf **In Besitz nehmen**.
+4.	Klicken Sie im Bereich **Eigenschaften** unter **Verwaltung** auf **Besitz übernehmen**.
 5.	Klicken Sie zum Einschränken der Sichtbarkeit auf **Besitzer und diese Benutzer**.
 
     ![Besitz][12]
@@ -221,5 +230,6 @@ In diesem Lernprogramm haben Sie wichtige Funktionen der Preview-Version von **A
 [10]: ./media/data-catalog-get-started/connect1.png
 [11]: ./media/data-catalog-get-started/connect2.png
 [12]: ./media/data-catalog-get-started/ownership.png
+[13]: ./media/data-catalog-get-started/crowdsource.png
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

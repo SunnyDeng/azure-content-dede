@@ -3,11 +3,11 @@
 Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressourcen über die Eingabeaufforderung eines beliebigen Computers mit Windows, Linux oder OSX zu verwalten. Führen Sie zum Erstellen eines VNet mithilfe der Azure-Befehlszeilenschnittstelle die folgenden Schritte aus.
 
 1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
-2. Führen Sie den Befehl **azure network vnet create** aus, um ein VNet und ein Subnetz zu erstellen, wie unten dargestellt. Beachten Sie die Ausgabe des CLI-Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
+2. Führen Sie den Befehl **azure network vnet create** aus, um ein VNet und ein Subnetz zu erstellen, wie unten dargestellt. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
 
 			azure network vnet create --vnet TestVNet -e 192.168.0.0 -i 16 -n FrontEnd -p 192.168.1.0 -r 24 -l "Central US"
 	
-	Hier ist die erwartete Ausgabe des obigen Befehls:
+	Erwartete Ausgabe:
 
 			info:    Executing command network vnet create
 			+ Looking up network configuration
@@ -23,7 +23,7 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 	- **-r (oder --subnet-cidr)**. Netzwerkmaske im CIDR-Format für das Subnetz. In diesem Szenario *24*.
 	- **-l (oder --location)**. Azure-Region, in der das VNet erstellt wird. In diesem Szenario *USA, Mitte*.
 
-3. Führen Sie den Befehl **azure network vnet subnet create** aus, um ein Subnetz zu erstellen, wie unten dargestellt. Beachten Sie die Ausgabe des Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
+3. Führen Sie den Befehl **azure network vnet subnet create** aus, um ein Subnetz zu erstellen, wie unten dargestellt. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
 
 			azure network vnet subnet create -t TestVNet -n BackEnd -a 192.168.2.0/24
 	
@@ -65,4 +65,4 @@ Sie können die Azure-Befehlszeilenschnittstelle verwenden, um Ihre Azure-Ressou
 			data:
 			info:    network vnet show command OK
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

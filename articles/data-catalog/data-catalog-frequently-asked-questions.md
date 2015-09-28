@@ -1,36 +1,36 @@
 <properties
    pageTitle="Häufig gestellte Fragen zu Azure Data Catalog"
-	description="Häufig gestellte Fragen zur Vorschau von Azure Data Catalog, einschließlich Funktionen für die Ermittlung von Datenquellen, Anmerkungen und Verwaltung."
-	services="data-catalog"
-	documentationCenter=""
-	authors="steelanddata"
-	manager="NA"
-	editor=""
-	tags=""/>
+   description="Häufig gestellte Fragen zur Vorschau von Azure Data Catalog, einschließlich Funktionen für die Ermittlung von Datenquellen, Anmerkungen und Verwaltung."
+   services="data-catalog"
+   documentationCenter=""
+   authors="steelanddata"
+   manager="NA"
+   editor=""
+   tags=""/>
 <tags
    ms.service="data-catalog"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-catalog"
-	ms.date="08/25/2015"
-	ms.author="maroche"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-catalog"
+   ms.date="09/11/2015"
+   ms.author="maroche"/>
 
 # Häufig gestellte Fragen zu Azure Data Catalog
 
-Dieser Artikel enthält Antworten auf häufig gestellte Fragen im Zusammenhang mit dem Microsoft Azure Data Catalog-Dienst.
+Dieser Artikel enthält Antworten auf häufig gestellte Fragen im Zusammenhang mit dem **Microsoft Azure Data Catalog**-Dienst.
 
-## F: Was ist Azure Data Catalog?
+## F: Was ist **Azure Data Catalog**?
 
-Microsoft Azure Data Catalog ist ein vollständig verwalteter Dienst, der in der Microsoft Azure-Cloud gehostet wird. Er dient als Registrierungs- und Ermittlungssystem für die Datenquellen von Unternehmen. Azure Data Catalog enthält Funktionen, mit denen alle Benutzer – von Analysten über Datenwissenschaftler bis zu Entwicklern – Datenquellen registrieren, ermitteln, verstehen und nutzen können.
+A: Microsoft **Azure Data Catalog** ist ein vollständig verwalteter Dienst, der in der Microsoft Azure-Cloud gehostet wird. Er dient als Registrierungs- und Ermittlungssystem für die Datenquellen von Unternehmen. **Azure Data Catalog** enthält Funktionen, mit denen alle Benutzer – von Analysten über Datenwissenschaftler bis zu Entwicklern – Datenquellen registrieren, ermitteln, verstehen und nutzen können.
 
 ## F: Welche Kundenprobleme werden mit Azure Data Catalog gelöst?
 
-Mit Azure Data Catalog werden Probleme bei der Ermittlung von Datenquellen und „obskuren Daten“ gelöst, indem Benutzer Datenquellen von Unternehmen ermitteln und verstehen können.
+Mit **Azure Data Catalog** werden Probleme bei der Ermittlung von Datenquellen und "obskuren Daten" gelöst, indem Benutzer Datenquellen von Unternehmen ermitteln und verstehen können.
 
 ## F: Was sind die Zielgruppen von Azure Data Catalog?
 
-Azure Data Catalog enthält Funktionen für technisch versierte und andere Benutzer, z. B.:
+**Azure Data Catalog** enthält Funktionen für technisch versierte und andere Benutzer, z. B.:
 
 - Datenentwickler, BI- und Analyseexperten: Personen, die für die Produktion von Daten- und Analyseinhalten zur Verwendung durch andere Benutzer verantwortlich sind
 -	Data Stewards: Personen, die über die Kenntnisse zu den Daten verfügen, ihre Bedeutung kennen und über die beabsichtigte Nutzung und den Zweck Bescheid wissen
@@ -39,7 +39,7 @@ Azure Data Catalog enthält Funktionen für technisch versierte und andere Benut
 
 ## F: In welchen Regionen ist Azure Data Catalog verfügbar?
 
-Während der Vorschauphase sind Azure Data Catalog-Dienste nur in den folgenden Rechenzentren verfügbar:
+Während der Vorschauphase sind **Azure Data Catalog**-Dienste nur in den folgenden Rechenzentren verfügbar:
 
 - USA, Westen
 - USA, Osten
@@ -48,15 +48,15 @@ Während der Vorschauphase sind Azure Data Catalog-Dienste nur in den folgenden 
 
 ## F: Welche Grenzwerte gelten für die Anzahl der Datenassets in Azure Data Catalog?
 
-Die Free Edition von Azure Data Catalog ist auf 5.000 registrierte Datenassets begrenzt.
+Die Free Edition von **Azure Data Catalog** ist auf 5.000 registrierte Datenassets begrenzt.
 
-Die Standard Edition von Azure Data Catalog unterstützt bis zu 100.000 registrierte Datenassets.
+Die Standard Edition von **Azure Data Catalog** unterstützt bis zu 100.000 registrierte Datenassets.
 
 ## F: Welche Datenquellen und Assettypen werden unterstützt?
 
-Während der Vorschauphase unterstützt Azure Data Catalog derzeit relationale SQL Server-Datenbanken (z. B. Azure SQL DB) und SQL Server Analysis Services-Datenbanken (mehrdimensional und tabellarisch) sowie SQL Server Reporting Services (nur systemeigener Modus) und Oracle Database.
+Während der Vorschauphase unterstützt **Azure Data Catalog** derzeit relationale SQL Server-Datenbanken (z. B. Azure SQL DB) und SQL Server Analysis Services-Datenbanken (mehrdimensional und tabellarisch) sowie SQL Server Reporting Services (nur systemeigener Modus) und Oracle Database.
 
-Während der Vorschauphase unterstützt Azure Data Catalog die folgenden Assettypen:
+Während der Vorschauphase unterstützt **Azure Data Catalog** die Registrierung und Ermittlung der folgenden Assettypen:
 
 - SQL Server-Tabelle
 - SQL Server-Ansicht
@@ -72,21 +72,28 @@ Während der Vorschauphase unterstützt Azure Data Catalog die folgenden Assetty
 - HDFS-Datei
 - HDFS-Verzeichnis
 
+Zusätzlich zu den oben aufgeführten Assets unterstützt **Azure Data Catalog** die Ermittlung der folgenden Datenasset-Container:
+
+- SQL Server-Datenbank
+- Oracle-Datenbank
+- HDFS-Cluster
+
+
 ## F: Wie fordere ich die Unterstützung für eine andere Datenquelle an?
 
 Für Anfragen zu Features und anderes Feedback können Sie das [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409) verwenden.
 
 ## F: Wie beginne ich mit der Nutzung von Azure Data Catalog?
 
-Befolgen Sie am besten die Anleitung unter „Erste Schritte mit Data Catalog“. Dieser Artikel enthält eine umfassende Vorstellung der Funktionen, die in der öffentlichen Vorschau enthalten sind.
+Befolgen Sie am besten die Anleitung unter [Erste Schritte mit Data Catalog](../data-catalog-get-started/). Dieser Artikel enthält eine umfassende Vorstellung der Funktionen, die in der öffentlichen Vorschau enthalten sind.
 
 ## F: Wie registriere ich meine Daten?
 
-Starten Sie zum Registrieren Ihrer Daten in Azure Data Catalog das Azure Data Catalog-Registrierungstool, indem Sie im Azure Data Catalog-Portal den Bereich „Veröffentlichen“ verwenden. Melden Sie sich in der Azure Data Catalog-Veröffentlichungsanwendung mit denselben Anmeldeinformationen wie für das Azure Data Catalog-Portal an, und wählen Sie die Datenquelle und das spezielle Asset aus, die bzw. das Sie registrieren möchten.
+Starten Sie zum Registrieren Ihrer Daten in **Azure Data Catalog** das **Azure Data Catalog**-Registrierungstool, indem Sie im **Azure Data Catalog**-Portal den Bereich "Veröffentlichen" verwenden. Melden Sie sich in der **Azure Data Catalog**-Veröffentlichungsanwendung mit denselben Anmeldeinformationen wie für das **Azure Data Catalog**-Portal an, und wählen Sie die Datenquelle und das spezielle Asset aus, die bzw. das Sie registrieren möchten.
 
 ## F: Welche Eigenschaften werden für Datenassets extrahiert, die registriert werden?
 
-Die spezifischen Eigenschaften variieren je nach Datenquelle, aber im Allgemeinen werden mit dem Azure Data Catalog-Veröffentlichungsdienst die folgenden Informationen extrahiert:
+Die spezifischen Eigenschaften variieren je nach Datenquelle, aber im Allgemeinen werden mit dem **Azure Data Catalog**-Veröffentlichungsdienst die folgenden Informationen extrahiert:
 
 - Assetname
 - Assettyp
@@ -95,11 +102,11 @@ Die spezifischen Eigenschaften variieren je nach Datenquelle, aber im Allgemeine
 - Datentypen von Attributen/Spalten
 - Beschreibung von Attributen/Spalten
 
-> [AZURE.IMPORTANT]Von Azure Data Catalog werden Ihre Daten nicht in die Cloud (cloudAzure) verschoben oder kopiert. Beim Registrieren von Assets einer Datenquelle werden die Metadaten des Assets nach Azure kopiert, aber die eigentlichen Daten verbleiben am vorhandenen Speicherort der Datenquelle. Die einzige Ausnahme von dieser Regel ist, wenn ein Benutzer sich beim Registrieren von Assets zum Hochladen von Vorschaudatensätzen entscheidet. In diesem Fall werden bis zu 20 Datensätze aus jedem Asset kopiert und als Momentaufnahme in **Azure Data Catalog** gespeichert.
+> [AZURE.IMPORTANT]Durch das Registrieren von Datenassets mit **Azure Data Catalog** werden Ihre Daten nicht in die Cloud verschoben oder kopiert. Beim Registrieren von Assets einer Datenquelle werden die Metadaten des Assets nach Azure kopiert, aber die eigentlichen Daten verbleiben am vorhandenen Speicherort der Datenquelle. Die einzige Ausnahme von dieser Regel ist, wenn ein Benutzer sich beim Registrieren von Assets zum Hochladen von Vorschaudatensätzen oder eines Datenprofils entscheidet. Beim Einschließen einer Vorschau werden bis zu 20 Datensätze aus jedem Asset kopiert und als Momentaufnahme in **Azure Data Catalog** gespeichert. Beim Einschließen eines Datenprofils werden aggregierte Informationen (z. B. die Größe von Tabellen, der Prozentsatz von NULL-Werten pro Spalte und die niedrigsten, höchsten und durchschnittlichen Werte für Spalten) berechnet und in die im Katalog gespeicherten Metadaten eingeschlossen.
 
 <br/>
 
-> [AZURE.NOTE]Für Datenquellen wie SQL Server Analysis Services, die über eine sehr gute **Description**-Eigenschaft verfügen, wird dieser Eigenschaftswert von der **Azure Data Catalog**-Veröffentlichungsanwendung extrahiert. Für relationale SQL Server-Datenbanken ohne sehr gute **Description**-Eigenschaft extrahiert die **Azure Data Catalog**-Veröffentlichungsanwendung den Wert für Objekte und Spalten aus der erweiterten ms\_description-Eigenschaft. Weitere Informationen finden Sie bei TechNet unter [Verwenden von erweiterten Eigenschaften für Datenbankobjekte](https://technet.microsoft.com/library/ms190243%28v=sql.105%29.aspx).
+> [AZURE.NOTE]Für Datenquellen wie SQL Server Analysis Services, die über eine leistungsstarke **Description**-Eigenschaft verfügen, wird dieser Eigenschaftswert von der **Azure Data Catalog**-Veröffentlichungsanwendung extrahiert. Für relationale SQL Server-Datenbanken ohne leistungsstarke **Description**-Eigenschaft extrahiert die **Azure Data Catalog**-Veröffentlichungsanwendung den Wert für Objekte und Spalten aus der erweiterten ms\_description-Eigenschaft. Weitere Informationen finden Sie bei TechNet unter [Verwenden von erweiterten Eigenschaften für Datenbankobjekte](https://technet.microsoft.com/library/ms190243%28v=sql.105%29.aspx).
 
 ## F: Wie lange sollte es dauern, bis neu registrierte Assets in Azure Data Catalog angezeigt werden?
 
@@ -132,7 +139,7 @@ Wir arbeiten aktiv daran, **Azure Data Catalog** weitere Datenquellen hinzuzufü
 
 ## F: Welche Verbindung besteht zwischen Azure Data Catalog und Data Catalog in Power BI für Office 365?
 
-Sie können sich **Azure Data Catalog** als Weiterentwicklung von Data Catalog vorstellen. **Azure Data Catalog** verfügt über ähnliche Funktionen für die Veröffentlichung und Ermittlung von Datenquellen, ist aber auf weiter gefasste Szenarios ausgerichtet und nicht von Office 365 abhängig. Kurz nach der allgemeinen Verfügbarkeit von Azure Data Catalog werden die beiden Kataloge zu einem einzelnen Dienst zusammengefasst.
+Sie können sich **Azure Data Catalog** als Weiterentwicklung von Data Catalog vorstellen. **Azure Data Catalog** verfügt über ähnliche Funktionen für die Veröffentlichung und Ermittlung von Datenquellen, ist aber auf weiter gefasste Szenarios ausgerichtet und nicht von Office 365 abhängig. Kurz nach der allgemeinen Verfügbarkeit von **Azure Data Catalog** werden die beiden Kataloge zu einem einzelnen Dienst zusammengefasst.
 
 ## F: Welche Berechtigungen benötigt ein Benutzer, um Assets unter Azure Data Catalog registrieren zu können?
 
@@ -148,7 +155,7 @@ Wir arbeiten derzeit daran, die Funktionen von **Azure Data Catalog** zu erweite
 
 ## F: Wie kann ich die Sichtbarkeit der registrierten Datenassets so einschränken, dass nur bestimmte Personen sie ermitteln können?
 
-Wählen Sie die Datenassets in Azure Data Catalog aus, und klicken Sie auf die Schaltfläche „In Besitz nehmen“. Besitzer von Datenassets in Azure Data Catalog können die Einstellungen zur Sichtbarkeit ändern, um entweder für alle Katalogbenutzer die Ermittlung der im Besitz befindlichen Ressourcen zuzulassen oder die Sichtbarkeit auf bestimmte Benutzer zu beschränken.
+A: Wählen Sie die Datenassets in **Azure Data Catalog** aus, und klicken Sie auf die Schaltfläche "In Besitz nehmen". Besitzer von Datenassets in **Azure Data Catalog** können die Einstellungen zur Sichtbarkeit ändern, um entweder für alle Katalogbenutzer die Ermittlung der im Besitz befindlichen Ressourcen zuzulassen oder die Sichtbarkeit auf bestimmte Benutzer zu beschränken.
 
 ## F: Wie aktualisiere ich die Registrierung für ein Datenasset so, dass Änderungen in der Datenquelle im Katalog widergespiegelt werden?
 
@@ -156,10 +163,10 @@ Zum Aktualisieren der Metadaten für Datenassets, die im Katalog bereits registr
 
 ## F: Wie stelle ich bei der Arbeit mit Azure Data Catalog Fragen oder nehme die Hilfe in Anspruch?
 
-Wenn Probleme auftreten oder falls Sie Hilfe mit der Vorschauversion von Azure Data Catalog benötigen, können Sie einen Beitrag im [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409) erstellen.
+Wenn Probleme auftreten oder falls Sie Hilfe mit der Vorschauversion von **Azure Data Catalog** benötigen, können Sie einen Beitrag im [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409) erstellen.
 
 ## F: Meine Frage wird hier nicht beantwortet. Was kann ich tun?
 
 Wechseln Sie in das [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409). Fragen, die dort gestellt werden, werden in diesen Artikel aufgenommen.
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

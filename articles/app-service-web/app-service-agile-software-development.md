@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Agile Softwareentwicklung mit Azure App Service"
 	description="Erfahren Sie, wie Sie umfangreiche komplexe Anwendungen mit Azure App Service auf eine Weise erstellen, die die agile Softwareentwicklung unterstützt."
-	services="app-service\web"
+	services="app-service\web,app-service\api,app-service\mobile"
 	documentationCenter=""
 	authors="cephalin"
 	manager="wpickett"
@@ -33,6 +33,8 @@ Die folgende Tabelle enthält eine kurze Liste der Anforderungen an die agile En
 | – Ergebnis des neuesten Builds problemlos anzeigen | Die kontinuierliche Bereitstellung in Azure aus einem Repository bedeutet, dass Sie unmittelbar nach dem Commit Ihrer Änderungen neuen Code in einer aktiven Anwendung testen können. |
 | – Täglicher Commit in der MAIN-Verzweigung<br> – Bereitstellung automatisieren | Durch die fortlaufende Integration einer Produktionsanwendung mit der MAIN-Verzweigung eines Repositorys wird jeder Commit-/Zusammenführungsvorgang automatisch in der MAIN-Verzweigung in der Produktion bereitgestellt. |
 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
+
 ## Aufgaben ##
 
 Sie durchlaufen einen typischen Produktionsworkflow aus Entwicklung/Test/Staging, um neue Änderungen an der Beispielanwendung [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) zu veröffentlichen, die aus zwei [Web-Apps](/services/app-service/web/), von denen eine ein Front-End (FE) und die andere ein Web-API-Back-End (BE) ist, und einer [SQL-Datenbank](/services/sql-database/) besteht. Sie werden mit der unten gezeigten Bereitstellungsarchitektur arbeiten:
@@ -46,9 +48,9 @@ Hier eine Erläuterung der Abbildung:
 -	Die Staging- und Produktionsumgebung werden als zwei Slots derselben App Service-App implementiert. Die Hauptverzweigung ist für die kontinuierliche Integration mit dem Stagingslot eingerichtet.
 -	Wenn ein Commit für die Hauptverzweigung im Stagingslot (mit Produktionsdaten) bestätigt wird, wird die überprüfte Staging-App im Produktionsslot [ohne Ausfallzeiten](web-sites-staged-publishing.md) ausgetauscht.
 
-Die Produktions- und Stagingumgebung werden von der Vorlage unter [*&lt;Repositorystammverzeichnis>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json) definiert.
+Die Produktions- und Stagingumgebung ist durch die Vorlage unter [*&lt;Repositorystammverzeichnis>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json) definiert.
 
-Die Entwicklungs- und Testumgebungen werden von der Vorlage unter [*&lt;Repositorystammverzeichnis>*/ARMTemplates/Dev.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/Dev.json) definiert.
+Die Entwicklungs- und Testumgebungen sind durch die Vorlage unter [*&lt;Repositorystammverzeichnis>*/ARMTemplates/Dev.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/Dev.json) definiert.
 
 Sie verwenden auch die übliche Verzweigungsstrategie, bei der Code aus der Entwicklungsverzweigung in die Testverzweigung und dann in die Hauptverzweigung verschoben wird (wobei jedes Mal die Qualität verbessert wird).
 
@@ -58,7 +60,7 @@ Sie verwenden auch die übliche Verzweigungsstrategie, bei der Code aus der Entw
 
 -	Ein Azure-Konto
 -	Ein [GitHub](https://github.com/)-Konto
--	Git-Shell (mit [GitHub für Windows](https://windows.github.com/) installiert) – Ermöglicht Ihnen, Git- und PowerShell-Befehle in der gleichen Sitzung auszuführen. 
+-	Git-Shell (mit [GitHub für Windows](https://windows.github.com/) installiert) – Ermöglicht Ihnen, Git- und PowerShell-Befehle in derselben Sitzung auszuführen. 
 -	Neueste [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/0.9.4-June2015/azure-powershell.0.9.4.msi)-Version
 -	Grundlegende Kenntnisse der folgenden Komponenten:
 	-	Bereitstellung der [Azure-Ressourcen-Manager](resource-group-overview.md)-Vorlage (siehe auch [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md))
@@ -87,7 +89,7 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 
 		git clone https://github.com/<your_fork>/ToDoApp.git 
 
-4.	Sobald Sie Ihre lokalen Klon haben, navigieren Sie zu *&lt;Repositorystammverzeichnis>\\ARMTemplates* und führen das Skript "deploy.ps1" wie folgt aus:
+4.	Sobald Sie Ihre lokalen Klon haben, navigieren Sie zu *&lt;Repositorystammverzeichnis>\\ARMTemplates*, und führen Sie das Skript „deploy.ps1“ wie folgt aus:
 
 		.\deploy.ps1 –RepoUrl https://github.com/<your_fork>/todoapp.git
 
@@ -107,9 +109,9 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 
 7.	Wenn das Skript abgeschlossen ist, navigieren Sie zurück zur Adresse des Front-Ends (http://ToDoApp*&lt;unique_string>*master.azurewebsites.net/), um zu prüfen, ob die Anwendung in der Produktionsumgebung ausgeführt wird.
  
-5.	Melden Sie sich am [Azure-Vorschauportal](https://portal.azure.com) an, und sehen Sie sich, was erstellt wurde.
+5.	Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an, und sehen Sie sich an, was erstellt wurde.
 
-	Sie sollten zwei Web-Apps in der gleichen Ressourcengruppe sehen, von denen eine das Suffix `Api` im Namen enthält. Wenn Sie die Ressourcengruppenansicht betrachten, sehen Sie auch SQL-Datenbank und -Server, den App Service-Plan und die Stagingslots für die Web-Apps. Navigieren Sie durch die verschiedenen Ressourcen, und vergleichen Sie diese mit *&lt;Repositorystammverzeichnis>\\ARMTemplates\\ProdAndStage.json*, um zu prüfen, wie sie in der Vorlage konfiguriert sind.
+	Sie sollten zwei Web-Apps in derselben Ressourcengruppe sehen, von denen eine das Suffix `Api` im Namen enthält. Wenn Sie die Ressourcengruppenansicht betrachten, sehen Sie auch SQL-Datenbank und -Server, den App Service-Plan und die Stagingslots für die Web-Apps. Navigieren Sie durch die verschiedenen Ressourcen, und vergleichen Sie diese mit *&lt;Repositorystammverzeichnis>\\ARMTemplates\\ProdAndStage.json*, um zu prüfen, wie sie in der Vorlage konfiguriert sind.
 
 	![](./media/app-service-agile-software-development/production-3-resource-group-view.png)
 
@@ -119,7 +121,7 @@ Sie haben nun die Produktionsumgebung eingerichtet. Als Nächstes leiten Sie ein
 
 Nun da Sie über eine komplexe Anwendung verfügen, die in Azure in der Produktionsumgebung ausgeführt wird, nehmen Sie in Übereinstimmung mit der agilen Methodik ein Update an Ihrer Anwendung vor. In diesem Abschnitt erstellen Sie die Entwicklungs- und Testverzweigungen, die Sie benötigen, um die erforderlichen Aktualisierungen vorzunehmen.
 
-1.	Erstellen Sie zunächst die Testumgebung. Führen Sie in der Git-Shell-Sitzung die folgenden Befehle zum Erstellen der Umgebung für eine neue Verzweigung mit dem Namen **NewUpdate** aus. 
+1.	Erstellen Sie zunächst die Testumgebung. Führen Sie in der Git-Shell-Sitzung die folgenden Befehle zum Erstellen der Umgebung für eine neue Verzweigung namens **NewUpdate** aus. 
 
 		git checkout -b NewUpdate
 		git push origin NewUpdate 
@@ -164,7 +166,7 @@ Und Sie sollten über sechs Web-Apps (drei Gruppen mit je zwei) in drei separate
 
 ![](./media/app-service-agile-software-development/test-2-all-webapps.png)
  
->[AZURE.NOTE]Beachten Sie, dass "ProdandStage.json" angibt, dass die Produktionsumgebung den Tarif **Standard** verwenden soll, der für die Skalierbarkeit der Produktionsumgebung geeignet ist.
+>[AZURE.NOTE]Beachten Sie, dass „ProdandStage.json“ angibt, dass die Produktionsumgebung den Tarif **Standard** verwenden soll, der für die Skalierbarkeit der Produktionsumgebung geeignet ist.
 
 ## Erstellen von Builds und Testen aller Commits ##
 
@@ -192,7 +194,7 @@ Die Vorlagendateien "ProdAndStage.json" und "Dev.json" geben bereits die Quellve
  
 	Diese Git-Befehle sind ähnlich wie zum "Einchecken Ihres Code" in einem anderen Quellcodeverwaltungssystem wie TFS. Beim Ausführen von `git push` löst der neue Commit eine automatische Pushübertragung des Codes in Azure aus. Anschließend wird die Anwendung neu erstellt, um die Änderung an der Entwicklungsumgebung wiederzugeben.
 
-4.	Um sicherzustellen, dass diese Pushübertragung des Codes in Ihre Entwicklungsumgebung erfolgt ist, wechseln Sie zum Blatt "Web-App" Ihrer Entwicklungsumgebung und untersuchen den Bereich **Bereitstellung**. Ihre letzte Commitnachricht sollte angezeigt werden.
+4.	Um sicherzustellen, dass diese Pushübertragung des Codes in Ihre Entwicklungsumgebung erfolgt ist, wechseln Sie zum Blatt „Web-App“ Ihrer Entwicklungsumgebung, und untersuchen Sie den Bereich **Bereitstellung**. Ihre letzte Commitnachricht sollte angezeigt werden.
 
 	![](./media/app-service-agile-software-development/commit-2-deployed.png)
 
@@ -236,7 +238,7 @@ Führen Sie die folgenden Befehle auf der Git-Shell aus:
 	git merge NewUpdate
 	git push origin master
 
-Denken Sie daran, dass basierend auf der Einrichtung der Produktionsumgebung in "ProdandStage.json" Ihr neuer Code per Push in den **Stagingslot** übertragen und dort ausgeführt wird. Wenn Sie also zur URL des Stagingslots navigieren, werden Sie feststellen, dass der neue Code dort ausgeführt wird. Führen Sie hierzu das Cmdlet `Show-AzureWebsite` auf der Git-Shell aus.
+Denken Sie daran, dass basierend auf der Einrichtung der Produktionsumgebung in „ProdandStage.json“ Ihr neuer Code per Push in den **Stagingslot** übertragen und dort ausgeführt wird. Wenn Sie also zur URL des Stagingslots navigieren, werden Sie feststellen, dass der neue Code dort ausgeführt wird. Führen Sie hierzu das Cmdlet `Show-AzureWebsite` in der Git-Shell aus.
 
 	Show-AzureWebsite -Name ToDoApp<unique_string>master -Slot Staging
  
@@ -279,4 +281,4 @@ Eine agile Softwareentwicklung ist für viele Unternehmen unverzichtbar, die Azu
 -	[Erstellen oder Bearbeiten von Benutzern in Azure AD](https://msdn.microsoft.com/library/azure/hh967632.aspx#BKMK_1)
 -	[Wiki zum Kudu-Projekt](https://github.com/projectkudu/kudu/wiki)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

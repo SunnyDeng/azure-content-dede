@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/11/2015" 
 	ms.author="ricksal"/>
 
 
@@ -649,8 +649,14 @@ Sie sind nun in der Lage, die Datenbindung zu verwenden. Der folgende Code zeigt
 
 Sie müssen den Adapter jedes mal aufrufen, wenn Sie die *ToDoItem*-Tabelle ändern und das Ergebnis der Änderungen anzeigen möchten. Da Veränderungen auf einzelnen Einträgen erfolgen, erhalten Sie in diesem Fall eine einzelne Zeile anstatt einer Sammlung. Beim Einfügen von Elementen rufen Sie die *add*-Methode des Adapters auf und beim Löschen von Elementen dessen *remove*-Methode.
 
+##<a name="#custom-api"></a>Gewusst wie: Aufrufen einer benutzerdefinierten API
 
-##<a name="authentication"></a>Gewusst wie: Authentifizieren von Benutzern
+Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte definieren, die Serverfunktionen zur Verfügung stellen, welche keinem Einfüge-, Aktualisierungs-, Lösch- oder Lesevorgang zugeordnet sind. Durch die Verwendung einer benutzerdefinierten API erhalten Sie mehr Kontrolle über das Messaging, einschließlich Lesen und Einstellen der HTTP-Nachrichten-Header sowie Definieren eines von JSON abweichenden Nachrichtentextformats. Ein Beispiel für das Erstellen einer benutzerdefinierten API in Ihrem mobilen Dienst finden Sie unter [Gewusst wie: Definieren eines benutzerdefinierten API-Endpunkts](mobile-services-dotnet-backend-define-custom-api.md).
+
+[AZURE.INCLUDE [mobile-services-android-call-custom-api](../../includes/mobile-services-android-call-custom-api.md)]
+
+
+##<a name="authentication"></a>Authentifizieren von Benutzern
 
 Mobile Services unterstützt Authentifizierung und Autorisierung von Anwendungsbenutzern mit einer Vielzahl externer Identitätsanbieter: Facebook, Google, Microsoft Account, Twitter und Azure Active Directory. Sie können Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Außerdem können Sie die Identität authentifizierter Benutzer verwenden, um Autorisierungsregeln auf Ihrem Back-End zu implementieren. Weitere Informationen finden Sie unter [Get started with authentication](http://go.microsoft.com/fwlink/p/?LinkId=296316) (Erste Schritte zur Authentifizierung, in englischer Sprache).
 
@@ -927,4 +933,4 @@ Sie können diese allgemeine Methode immer dann verwenden, wenn Sie mit komplexe
 [Erste Schritte mit Mobile Services]: mobile-services-android-get-started.md
 [ASCII-Steuerzeichen C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

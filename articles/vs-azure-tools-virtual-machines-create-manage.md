@@ -1,19 +1,19 @@
-<properties 
+<properties
    pageTitle="Erstellen und Verwalten virtueller Azure-Computer in Visual Studio"
-	description="Erstellen und Verwalten virtueller Azure-Computer in Visual Studio"
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="kempb"
-	manager="douge"
-	editor="tlee"/>
-<tags 
+   description="Erstellen und Verwalten virtueller Azure-Computer in Visual Studio"
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="kempb"
+   manager="douge"
+   editor="tlee" />
+<tags
    ms.service="virtual-machines"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/24/2015"
-	ms.author="kempb"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/24/2015"
+   ms.author="kempb" />
 
 # Erstellen und Verwalten virtueller Azure-Computer in Visual Studio
 
@@ -54,7 +54,7 @@ Sie können einen virtuellen Computer im [Azure-Verwaltungsportal](http://go.mic
     Sie können auf den Namen des Images eines virtuellen Computers klicken, um rechts auf der Seite Informationen zum Image anzuzeigen.
 
     >[AZURE.NOTE]Sie können den Listen **Öffentliche Images** oder **MSDN-Images** keine Images virtueller Computer hinzufügen, da diese Listen schreibgeschützt sind. Alle virtuellen Computer, die Sie erstellen, werden der Liste **Private Images** hinzugefügt.
-    
+
     >Wenn Sie über ein MSDN-Abonnement auf Visual Studio-Ebene verfügen, können Sie einen vordefinierten virtuellen Azure-Computer erstellen, der Visual Studio enthält, sowie verschiedene weitere Images. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Computers in Visual Studio mithilfe von Images – Visual Studio 2013-Katalogimage für MSDN-Abonnenten](http://visualstudio2013msdngalleryimage.azurewebsites.net) und [MSDN-Abonnements](https://www.visualstudio.com/products/msdn-subscriptions-vs).
 
 1. Geben Sie auf der Seite **Grundeinstellungen des virtuellen Computers** einen Computernamen ein, und fügen Sie dann die Spezifikationen für den virtuellen Computer (z. B. die Größe) sowie einen Benutzernamen und ein Kennwort hinzu. Wenn Sie fertig sind, klicken Sie auf **Weiter**.
@@ -92,7 +92,6 @@ Sie können einen virtuellen Computer im [Azure-Verwaltungsportal](http://go.mic
     ![Aktivitätsprotokoll für virtuelle Computer – abgeschlossen](./media/vs-azure-tools-virtual-machines-create-manage/IC744139.png)
 
     Wenn der Vorgang erfolgreich abgeschlossen wurde, wird der neue virtuelle Computer unter dem Knoten **Virtuelle Computer** im Server-Explorer angezeigt. Sie können sich an diesem Computer anmelden, indem Sie auf die Verknüpfung **Mithilfe von Remotedesktop verbinden** klicken.
-
 
     ![Virtueller Computer im Server-Explorer](./media/vs-azure-tools-virtual-machines-create-manage/IC744140.png)
 
@@ -145,7 +144,7 @@ Wenn Sie Ihren virtuellen Computer konfigurieren und Software darauf installiere
     Sysprep ist ein Tool, das u. a. systemspezifische Daten aus der Windows-Version des virtuellen Computers entfernt und auf diese Weise eine Vorlage erstellt, die andere Computer verwenden können. Weitere Informationen hierzu finden Sie unter [Erfassen eines virtuellen Windows-Computers, um ihn als Vorlage zu verwenden](http://azure.microsoft.com/documentation/articles/virtual-machines-capture-image-windows-server/).
 
 1. Nachdem Sie die Aufzeichnungseinstellungen konfiguriert haben, klicken Sie auf die Schaltfläche **Aufzeichnen**, um den Prüfpunkt zu erstellen.
- 
+
     Während Azure den Prüfpunkt erstellt, zeigt das **Azure-Aktivitätsprotokoll** den Status des Vorgangs an.
 
     ![Aufzeichnen eines Prüfpunkts für einen virtuellen Computer](./media/vs-azure-tools-virtual-machines-create-manage/IC744144.png)
@@ -174,12 +173,8 @@ Wenn Sie Ihren virtuellen Computer konfigurieren und Software darauf installiere
 
 1. Wählen Sie im Kontextmenü den Befehl **Herunterfahren** aus, oder wählen Sie** Konfigurieren** aus, um die Konfigurationsseite des virtuellen Computers anzuzeigen, und klicken Sie dann auf die Schaltfläche **Herunterfahren**.
 
-## Siehe auch
+## Nächste Schritte
 
-[Virtuelle Computer](https://msdn.microsoft.com/library/azure/)
+Weitere Informationen zum Erstellen von virtuellen Computern finden Sie unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md) und [Erstellen ein virtuellen Windows-Computers im Azure-Vorschauportal](virtual-machines-windows-tutorial.md).
 
-[Zugreifen auf virtuelle Computer in Azure über den Server-Explorer](https://msdn.microsoft.com/library/azure/jj131259.aspx)
-
-[Azure Tools für Microsoft Visual Studio](https://msdn.microsoft.com/library/azure/ee405484.aspx)
-
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="DocumentDB-Grenzwerte und -Kontingente | Microsoft Azure" 
-	description="Erfahren Sie mehr über die Grenzen und Kontingenterzwingungen von DocumentDB" 
+	description="Erfahren Sie mehr über die Grenzen und Kontingenterzwingungen von DocumentDB Überprüfen Sie die Kontingente für die Nutzung der Azure-Datenbankdienste."
+	keywords="Quotas, database, documentdb, azure, Microsoft azure"
 	services="documentdb" 
 	authors="mimig1" 
 	manager="jhubbard" 
@@ -17,10 +18,10 @@
 	ms.author="mimig"/>
 
 
-#DocumentDB-Grenzen und -Kontingente
+# DocumentDB-Grenzen und -Kontingente
 
 In der folgenden Tabelle werden die Grenzen und Kontingenterzwingungen von DocumentDB beschrieben.
 
 [AZURE.INCLUDE [azure-documentdb-limits](../../includes/azure-documentdb-limits.md)]
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

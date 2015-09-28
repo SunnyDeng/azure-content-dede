@@ -1,19 +1,19 @@
-<properties 
-                pageTitle="Was ist Azure Active Directory?" 
-                description="Verwenden Sie Azure Active Directory, um Ihre vorhandenen lokalen Identitäten in die Cloud zu erweitern oder in Azure AD integrierte Anwendungen zu entwickeln." 
-                services="active-directory" 
-                documentationCenter="" 
-                authors="markusvi" 
-                manager="swadhwa" 
+<properties
+                pageTitle="Was ist Azure Active Directory?"
+                description="Verwenden Sie Azure Active Directory, um Ihre vorhandenen lokalen Identitäten in die Cloud zu erweitern oder in Azure AD integrierte Anwendungen zu entwickeln."
+                services="active-directory"
+                documentationCenter=""
+                authors="markusvi"
+                manager="swadhwa"
                 editor=""/>
 
-<tags 
-                ms.service="active-directory" 
-                ms.workload="identity" 
-                ms.tgt_pltfrm="na" 
-                ms.devlang="na" 
-                ms.topic="article" 
-                ms.date="08/10/2015" 
+<tags
+                ms.service="active-directory"
+                ms.workload="identity"
+                ms.tgt_pltfrm="na"
+                ms.devlang="na"
+                ms.topic="article"
+                ms.date="08/10/2015"
                 ms.author="markusvi"/>
 
 
@@ -56,7 +56,7 @@ Ihr Unternehmen kann Azure AD verwenden, um in vielerlei Hinsicht die Mitarbeit
 
 -	Führen Sie Clouddienste in kürzester Zeit ein, um Mitarbeitern und Partnern den Zugriff über die einmalige Anmeldung zu vereinfachen, und profitieren Sie von den vollständig automatisierten Azure AD-Funktionen für die SaaS-App-Zugriffsverwaltung und die Bereitstellung von Diensten.
 -	Bieten Sie Mitarbeitern Zugriff auf erstklassige Cloudanwendungen und -dienste sowie Self-Services-Funktionen – von jedem Ort der Welt und mit allen Geräten, die Ihre Mitarbeiter gerne nutzen.
--	Verwalten Sie den Zugriff Ihrer Mitarbeiter und Lieferanten auf Ihre Unternehmenskonten für soziale Medien. 
+-	Verwalten Sie den Zugriff Ihrer Mitarbeiter und Lieferanten auf Ihre Unternehmenskonten für soziale Medien.
 -	Erhöhen Sie die Sicherheit von Anwendungen mit der mehrstufigen Authentifizierung und dem bedingten Zugriff von Azure AD.
 -	Implementieren Sie eine konsistente Self-Service-Verwaltung des Anwendungszugriffs, sodass Geschäftsinhaber schnell reagieren und gleichzeitig IT-Aufwand und -Kosten senken können.
 -	Überwachen Sie die Anwendungsnutzung, und schützen Sie Ihr Unternehmen mit Sicherheits-, Berichterstellungs- und Überwachungsfunktionen vor Bedrohungen.
@@ -73,7 +73,7 @@ Ihr Unternehmen kann Azure AD verwenden, um in vielerlei Hinsicht die Mitarbeit
  - Lesen Sie den Artikel "Erste Schritte mit Azure AD" mit Tipps und Tricks zum schnellen Einrichten und Ausführen eines Azure AD-Mandanten.
 -	Wenn Sie Entwickler sind:
  - Sehen Sie sich die [Anleitung für Entwickler](https://msdn.microsoft.com/library/azure/ff800682.aspx) für Azure Active Directory an. <need link>
- - [Starten Sie eine Testversion.](https://azure.microsoft.com/trial/get-started-active-directory/) – Registrieren Sie sich noch heute für eine kostenlose 30-Tage-Testversion, und beginnen Sie damit, Ihre App in Azure AD zu integrieren. 
+ - [Starten Sie eine Testversion.](https://azure.microsoft.com/trial/get-started-active-directory/) – Registrieren Sie sich noch heute für eine kostenlose 30-Tage-Testversion, und beginnen Sie damit, Ihre App in Azure AD zu integrieren.
 
 
 
@@ -104,4 +104,4 @@ Wir haben viele hervorragende Ressourcen online gestellt, in denen Sie alles Wis
 
 - [Wie ermittle ich nicht genehmigte Cloud-Apps, die in meiner Organisation verwendet werden?](active-directory-cloudappdiscovery-whatis.md)
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

@@ -1,23 +1,25 @@
 <properties 
-	pageTitle="Testumgebung für Office 365 DirSync | Microsoft Azure"
-	description="Erfahren Sie, wie für ein Office 365-Verzeichnissynchronisierung (DirSync)-Serverkonfiguration in einer hybridcloud für IT Pro oder Entwicklung zu testen."
-	services="virtual-network"
-	documentationCenter=""
-	authors="JoeDavies-MSFT"
-	manager="timlt"
+	pageTitle="Testumgebung für Office 365 DirSync | Microsoft Azure" 
+	description="Erfahren Sie, wie für ein Office 365-Verzeichnissynchronisierung (DirSync)-Serverkonfiguration in einer hybridcloud für IT Pro oder Entwicklung zu testen." 
+	services="virtual-network" 
+	documentationCenter="" 
+	authors="JoeDavies-MSFT" 
+	manager="timlt" 
 	editor=""
 	tags="azure-service-management"/>
 
 <tags 
-	ms.service="virtual-network"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/08/2015"
+	ms.service="virtual-network" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="Windows" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/10/2015" 
 	ms.author="josephd"/>
 
 # Office 365-Verzeichnissynchronisierung (DirSync) in einer hybridcloud zu Testzwecken einrichten
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 Dieses Thema führt Sie durch die Erstellung einer hybriden Cloud-Umgebung zum Testen von Office 365-Verzeichnissynchronisierung (DirSync) mit Kennwortsynchronisierung in Microsoft Azure gehostet. Hier sehen Sie die daraus resultierende Konfiguration.
 
@@ -56,7 +58,7 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 ## Phase 2: Konfigurieren der Testversion von Office 365 Fast Track
 
-Um Ihre Testversion von Office 365 Fast Track zu starten, benötigen Sie einen fiktiven Firmennamen und ein Microsoft-Konto. Es wird empfohlen, dass Sie eine Variante des Unternehmensnamens Contoso für den Namen Ihres Unternehmens, einem fiktiven Unternehmen, die in Microsoft-Beispielinhalt verwendet wird, aber nicht erforderlich unbedingt.
+Um Ihre Testversion von Office 365 Fast Track zu starten, benötigen Sie einen fiktiven Firmennamen und ein Microsoft-Konto. Es wird empfohlen, dass Sie eine Variante des Unternehmensnamens Contoso als Namen Ihres Unternehmens verwenden, das ein fiktives Unternehmen ist, das in Microsoft-Beispielinhalten verwendet wird, wobei dies aber nicht unbedingt erforderlich ist.
 
 Melden Sie sich als Nächstes ein neues Microsoft-Konto an. Wechseln Sie zu ****http://outlook.com**, und erstellen Sie ein Konto mit einer E-Mail-Adresse wie user123@outlook.com. Sie können für eine Testversion von Office 365 Fast Track mit diesem Konto anmelden.
 
@@ -82,13 +84,13 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 Erstellen Sie zunächst einen virtuellen Computer in Azure für DS1 mit diesen Befehlen an der Eingabeaufforderung von Azure PowerShell auf dem lokalen Computer. Füllen Sie vor dem Ausführen dieser Befehle die Variablenwerte aus, und entfernen Sie die Zeichen < and >.
 
 	$ServiceName="<The cloud service name for your TestVNET virtual network>"
-	$cred1=Get-Credential –Message "Type the name and password of the local administrator account for DS1."
-	$cred2=Get-Credential –UserName "CORP\User1" –Message "Now type the password for the CORP\User1 account."
+	$cred1=Get-Credential â€“Message "Type the name and password of the local administrator account for DS1."
+	$cred2=Get-Credential â€“UserName "CORP\User1" â€“Message "Now type the password for the CORP\User1 account."
 	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name DS1 -InstanceSize Medium -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain "CORP" -DomainUserName "User1" -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain "corp.contoso.com"
 	$vm1 | Set-AzureSubnet -SubnetNames TestSubnet
-	New-AzureVM –ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
+	New-AzureVM â€“ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
 
 Schließen Sie dann den virtuellen Computer DS1.
 
@@ -136,7 +138,7 @@ Als Nächstes melden Sie sich mit dem Konto CORP\\User1 auf DC1, und öffnen Sie
 	New-ADUser -SamAccountName marcik -AccountPassword (Read-Host "Set user password" -AsSecureString) -name "Marci Kaufman" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false -Path "OU=contoso_users,DC=corp,DC=contoso,DC=com"
 	New-ADUser -SamAccountName lyndam -AccountPassword (Read-Host "Set user password" -AsSecureString) -name "Lynda Meyer" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false -Path "OU=contoso_users,DC=corp,DC=contoso,DC=com"
 
-Wenn Sie jede Windows PowerShell-Befehl ausführen, werden Sie für das neue Kennwort des Benutzers aufgefordert. Diese Kennwörter zu erfassen und an einem sicheren Ort aufbewahren. Diese werden später benötigt werden.
+Wenn Sie jeden Windows PowerShell-Befehl ausführen, werden Sie zur Eingabe des neuen Kennworts des Benutzers aufgefordert. Diese Kennwörter zu erfassen und an einem sicheren Ort aufbewahren. Diese werden später benötigt werden.
 
 Konfigurieren Sie anschließend die Verzeichnissynchronisierung auf DS1.
 
@@ -197,4 +199,4 @@ Diese Umgebung ist nun bereit für Sie zum Testen des Office 365-Anwendungen, di
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

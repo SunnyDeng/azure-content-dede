@@ -24,7 +24,6 @@ Die folgende Dokumentation stellt Informationen zur Verwendung der benutzerdefin
 Weitere Informationen zur Express-Installation finden Sie unter [Express-Installation](active-directory-aadconnect.md#getting-started-with-azure-ad-connect). Informationen zum Upgrade von DirSync auf Azure AD Connect finden Sie unter [Upgrade von DirSync auf Azure Active Directory Connect](active-directory-aadconnect-dirsync-upgrade-get-started.md).
 
 
-
 ## Installieren der erforderlichen Komponenten
 
 Bei der Installation der Synchronisierungsdienste können Sie den optionalen Konfigurationsabschnitt deaktiviert lassen, sodass Azure AD Connect alles automatisch einrichtet. Dies umfasst das Einrichten einer SQL Server 2012 Express-Instanz und die Erstellung der entsprechenden Gruppen sowie das Zuweisen der Berechtigungen für die Gruppen. Wenn Sie die Standardeinstellungen ändern möchten, können Sie die unten stehende Tabelle verwenden, um sich die verfügbaren optionalen Konfigurationsoptionen anzusehen.
@@ -174,7 +173,7 @@ Vor dem Ausführen des PowerShell-Cmdlets müssen Sie dieses zunächst importier
 
 Hierzu müssen Active Directory und MSOnline PowerShell lokal installiert sein.
 
-
+Weitere Informationen finden Sie unter [Aktivieren von "Geräterückschreiben" in Azure AD Connect](active-directory-aadconnect-get-started-custom-device-writeback.md).
 
 ## Stagingmodus
 Mit dem Stagingmodus ist es möglich, einen neuen Synchronisierungsservers parallel zu einem vorhandenen Server einzurichten. Es wird nur ein mit einem Verzeichnis in der Cloud verbundener Synchronisierungsserver unterstützt. Aber wenn Sie eine Verschiebung von einem anderen Server durchführen möchten, z. B. einem Server, auf dem DirSync ausgeführt wird, kann Azure AD Connect im Stagingmodus aktiviert werden. Bei Aktivierung importiert und synchronisiert das Synchronisierungsmodul Daten wir gewohnt. Allerdings werden keine Daten nach Azure AD exportiert, und die Kennwortsynchronisierung und das Kennwortrückschreiben werden deaktiviert.
@@ -268,4 +267,4 @@ Sie können die Abbildung und das Logo für Ihre AD FS-Anmeldeseiten anpassen, i
 	
 	Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.png"} –Illustration @{path=”c:\Contoso\illustration.png”}
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

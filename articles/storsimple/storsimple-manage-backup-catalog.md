@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Verwalten von StorSimple-Sicherungskatalog | Microsoft Azure"
-	description="Erläutert, wie Sie die Seite ";Sicherungskatalog"; des StorSimple Manager-Diensts nutzen können, um Sicherungssätze für ein Volume aufzulisten, auszuwählen und zu löschen."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   description="Erläutert, wie Sie die Seite ";Sicherungskatalog"; des StorSimple Manager-Diensts nutzen können, um Sicherungssätze für ein Volume aufzulisten, auszuwählen und zu löschen."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="09/01/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/14/2015"
+   ms.author="v-sharos" />
 
 # Verwalten des Sicherungskatalogs mithilfe des StorSimple Manager-Diensts
 
@@ -113,6 +113,8 @@ Löschen Sie eine Sicherung, wenn Sie die zugeordneten Daten nicht mehr beibehal
 
 ## Nächste Schritte
 
-Erfahren sie mehr über die Verwendung des Sicherungskatalogs zum [Wiederherstellen Ihres Geräts aus einem Sicherungssatz](storsimple-restore-from-backup-set.md).
+- Informationen zur [Verwendung des Sicherungskatalogs zum Wiederherstellen Ihres Geräts aus einem Sicherungssatz](storsimple-restore-from-backup-set.md).
 
-<!---HONumber=September15_HO1-->
+- Informationen zum [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+
+<!---HONumber=Sept15_HO3-->

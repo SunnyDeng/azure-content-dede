@@ -5,15 +5,15 @@
 	documentationCenter="na"
 	authors="rothja"
 	manager="jeffreyg"
-	editor="mo	nicar"/>
+	editor="monicar" />
 <tags 
 	ms.service="virtual-machines"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="08/24/2015"
-	ms.author="jroth"/>
+	ms.date="09/16/2015"
+	ms.author="jroth" />
 
 # Konfigurieren eines externen Listeners für AlwaysOn-Verfügbarkeitsgruppen in Azure
 
@@ -34,8 +34,6 @@ Beachten Sie die folgenden Einschränkungen für den Verfügbarkeitsgruppenliste
 - Da der Listener für die Verwendung der VIP-Adresse des Clouddiensts konfiguriert wird, wird pro Clouddienst maximal ein Verfügbarkeitsgruppenlistener unterstützt. Beachten Sie, dass diese Einschränkung weiterhin gilt, wenngleich Azure inzwischen die Erstellung mehrerer VIP-Adressen in einem Clouddienst unterstützt.
 
 - Wenn Sie einen Listener für eine Hybridumgebung erstellen, muss das lokale Netzwerk zusätzlich zum Standort-zu-Standort-VPN mit dem virtuellen Azure-Netzwerk auch mit dem öffentlichen Internet verbunden sein. Im Azure-Subnetz ist der Verfügbarkeitsgruppenlistener nur über die öffentliche IP-Adresse des jeweiligen Clouddiensts erreichbar.
-
->[AZURE.NOTE]Der Schwerpunkt dieses Tutorials liegt auf der Verwendung von PowerShell zum Erstellen eines Listeners für eine Verfügbarkeitsgruppe, die Azure-Replikate umfasst. Weitere Informationen zum Konfigurieren von Listenern mithilfe von SSMS oder Transact-SQL finden Sie unter [Erstellen oder Konfigurieren eines Verfügbarkeitsgruppenlisteners](https://msdn.microsoft.com/library/hh213080.aspx).
 
 ## Festlegen des Zugriffs auf den Listener
 
@@ -124,4 +122,4 @@ Wenn sich die AlwaysOn-Replikate in unterschiedlichen Subnetzen befinden, müsse
 
 [AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

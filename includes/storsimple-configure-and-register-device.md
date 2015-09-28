@@ -1,19 +1,4 @@
-<properties 
-   pageTitle="Konfigurieren und Registrieren von Geräten"
-   description="Erläutert, wie Sie Windows PowerShell für StorSimple zum Konfigurieren und Registrieren Ihres Geräts verwenden."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/05/2015"
-   ms.author="v-sharos" />
+<!--author=alkohli last changed: 9/17/15-->
 
 
 #### So konfigurieren und registrieren Sie das Gerät
@@ -47,7 +32,7 @@
    
       >[AZURE.NOTE]Sie müssen ggf. einige Minuten warten, bis die Subnetzmaske und die DNS-Einstellungen übernommen werden. Wenn die Fehlermeldung "Das Gerät ist nicht bereit" angezeigt wird, überprüfen Sie die physische Netzwerkverbindung für die Netzwerkschnittstelle DATA 0 Ihres aktiven Controllers.
 
-8. (Optional) Konfigurieren Sie Ihren Webproxyserver. Die Webproxykonfiguration ist optional. **Achten Sie jedoch bei Verwendung eines Webproxys darauf, dass dieser nur hier konfiguriert werden kann.** Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](https://msdn.microsoft.com/library/azure/dn764937.aspx). Wenn während dieses Schritts Probleme auftreten, finden Sie Informationen zur Problembehandlung unter [Fehler während der Webproxykonfiguration](storsimple-troubleshoot-deployment.md#errors-during-the-optional-web-proxy-settings).
+8. (Optional) Konfigurieren Sie Ihren Webproxyserver. Die Webproxykonfiguration ist optional. **Achten Sie jedoch bei Verwendung eines Webproxys darauf, dass dieser nur hier konfiguriert werden kann.** Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](storsimple-configure-web-proxy.md). Wenn während dieses Schritts Probleme auftreten, finden Sie Informationen zur Problembehandlung unter [Fehler während der Webproxykonfiguration](storsimple-troubleshoot-deployment.md#errors-during-the-optional-web-proxy-settings).
  
 
       >[AZURE.NOTE]Sie können jederzeit STRG+C drücken, um den Installations-Assistenten zu beenden. Alle Einstellungen, die Sie vor dem Ausgeben dieses Befehls angewendet haben, werden beibehalten.
@@ -87,4 +72,8 @@
 
 Wenn das Gerät erfolgreich registriert wurde, jedoch nicht online geschaltet wird, führen Sie `Test-HcsmConnection -Verbose` aus, um sicherzustellen, dass die Netzwerkverbindungen funktionieren. Ausführliche Informationen zur Verwendung dieses Cmdlets finden Sie in der [Cmdlet-Referenz für "Test-HcsmConnection"](https://technet.microsoft.com/library/dn715782.aspx).
 
-<!---HONumber=August15_HO7-->
+![Video verfügbar](./media/storsimple-configure-and-register-device/Video_icon.png) **Video verfügbar**
+
+Sie können sich [hier](http://azure.microsoft.com/documentation/videos/initialize-the-storsimple-appliance/) ein Video anschauen, dass die Konfiguration und Registrierung Ihres Geräts über Windows PowerShell für StorSimple demonstriert.
+
+<!---HONumber=Sept15_HO3-->

@@ -3,7 +3,7 @@
 	description="Listet die verschiedenen Möglichkeiten zum Erstellen eines virtuellen Windows-Computers auf und enthält Links zu Anweisungen."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager,azure-service-management"/>
@@ -14,8 +14,8 @@
 	ms.topic="index-page"
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="infrastructure-services"
-	ms.date="07/15/2015"
-	ms.author="kathydav"/>
+	ms.date="09/15/2015"
+	ms.author="cynthn"/>
 
 # Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers
 
@@ -67,8 +67,6 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 [Anfügen eines Datenträgers][]
 
 ## Zusätzliche Ressourcen
-[Informationen zu Azure-VM-Konfigurationseinstellungen][]
-
 [Testumgebung für die Basiskonfiguration][]
 
 [Testumgebungen für Azure-Hybridclouds][]
@@ -97,10 +95,8 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 
 [Anfügen eines Datenträgers]: storage-windows-attach-disk.md
 
-[Informationen zu Azure-VM-Konfigurationseinstellungen]: http://msdn.microsoft.com/library/azure/dn763935.aspx
-
 [Testumgebung für die Basiskonfiguration]: virtual-machines-base-configuration-test-environment.md
 
 [Testumgebungen für Azure-Hybridclouds]: virtual-machines-hybrid-cloud-test-environments.md
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

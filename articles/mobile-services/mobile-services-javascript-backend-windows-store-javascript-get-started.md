@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erste Schritte mit Mobile Services für Windows Store-Apps | Microsoft Azure"
-	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Windows Store-Entwicklung in C# oder JavaScript."
+	pageTitle="Erste Schritte mit Mobile Services für Windows Store-JavaScript-Apps | Azure Mobile Services"
+	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die Windows Store-Entwicklung in JavaScript."
 	services="mobile-services"
 	documentationCenter="windows"
 	authors="ggailey777"
@@ -13,18 +13,16 @@
 	ms.tgt_pltfrm="mobile-windows-store"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/16/2015"
 	ms.author="glenga"/>
 
-# <a name="getting-started"></a>Erste Schritte mit Mobile Services
+# Erste Schritte mit Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
 
-In diesem Lernprogramm wird gezeigt, wie Sie einer universellen Windows-App einen cloudbasierten Back-End-Dienst unter Verwendung von Azure Mobile Services hinzufügen.
+Dieses Lernprogramm zeigt Ihnen, wie Sie einen cloudbasierten Back-End-Dienst zu einer Windows Store-JavaScript-App mithilfe von Azure Mobile Services hinzufügen.
 
-In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache *To-Do-Listen*-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik. Informationen zum Erstellen eines mobilen Diensts, mit dem Sie serverseitige Geschäftslogik in den unterstützten .NET-Sprachen mithilfe von Visual Studio verfassen können, finden Sie in der .NET-Back-End-Version dieses Themas.
-
-[AZURE.INCLUDE [mobile-services-windows-universal-get-started](../../includes/mobile-services-windows-universal-get-started.md)]
+In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache *To-Do-Listen*-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik. Informationen zum Erstellen eines mobilen Diensts, mit dem Sie serverseitige Geschäftslogik in den unterstützten .NET-Sprachen mithilfe von Visual Studio verfassen können, finden Sie in der [.NET-Back-End-Version dieses Themas](mobile-services-dotnet-backend-windows-store-dotnet-get-started.md).
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
@@ -35,11 +33,9 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 [AZURE.INCLUDE [mobile-services-create-new-service](../../includes/mobile-services-create-new-service.md)]
 
-## Erstellen einer neuen universellen Windows-App
+## Erstellen einer neuen Windows Store-App
 
-Sobald Sie den mobilen Dienst erstellt haben, können Sie einem einfachen Schnellstart im Verwaltungsportal folgen, um eine neue universelle Windows-App zu erstellen oder eine vorhandene Windows Store- oder Windows Phone-App für die Verbindung zum mobilen Dienst zu ändern.
-
-In diesem Abschnitt erstellen Sie eine neue universelle Windows-App, die sich mit dem mobilen Dienst verbindet.
+Sobald Sie Ihren mobilen Dienst erstellt haben, können Sie einfach dem Schnellstart im Verwaltungsportal folgen, um eine neue Windows Store 8.1-JavaScript-App zu erstellen, die eine Verbindung mit Ihrem mobilen Dienst herstellt.
 
 1.  Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
@@ -47,10 +43,6 @@ In diesem Abschnitt erstellen Sie eine neue universelle Windows-App, die sich mi
 2. Klicken Sie auf der Schnellstartregisterkarte unter **Plattform auswählen** auf **Windows**. Erweitern Sie dann **Neue Windows Store-App erstellen**.
 
    	![](./media/mobile-services-javascript-backend-windows-store-javascript-get-started/mobile-portal-quickstart.png)
-
-   	Auf diese Weise werden die drei einfachen Schritte zum Erstellen einer Windows Store-App, die mit dem mobilen Dienst verbunden ist, angezeigt.
-
-  	![](./media/mobile-services-javascript-backend-windows-store-javascript-get-started/mobile-quickstart-steps.png)
 
 3. Laden Sie [Visual Studio 2013][Visual Studio 2013 Express for Windows] auf Ihren lokalen Computer oder virtuellen Computer herunter und installieren Sie es, falls noch nicht geschehen.
 
@@ -62,18 +54,23 @@ In diesem Abschnitt erstellen Sie eine neue universelle Windows-App, die sich mi
 
 ## Ausführen der Windows-App
 
-[AZURE.INCLUDE [mobile-services-javascript-backend-run-app](../../includes/mobile-services-javascript-backend-run-app.md)]
+Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der neuen App.
+
+1. Navigieren Sie zu dem Verzeichnis, in dem Sie die komprimierten Projektdateien gespeichert haben, erweitern Sie die Dateien auf Ihrem Computer, und öffnen Sie die Projektmappen-Datei in Visual Studio.
+
+2. Drücken Sie die **F5**-Taste, um das Projekt neu zu erstellen und die App zu starten.
+
+3. Geben Sie in der App einen beschreibenden Text ein, zum Beispiel *Lernprogramm abschließen*, unter **TodoItem einfügen**. Klicken Sie dann auf **Speichern**.
+
+   	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Werte werden vom mobilen Dienst zurückgegeben, und die Daten werden in der zweiten Spalte der App angezeigt.
+
+4. (Optional) Führen Sie die App erneut aus, und beachten Sie, dass nach dem Starten der App Daten, die im vorhergehenden Schritt gespeichert wurden, aus dem mobilen Dienst geladen werden.
+ 
+4. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
+
+   	Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.
 
 >[AZURE.NOTE]Sie können den Code, der zur Abfrage und zum Einfügen von Daten auf Ihren mobilen Dienst zugreift, in der Datei "default.js" finden und prüfen.
-
-## Nächste Schritte
-Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
-
-* [Hinzufügen von Authentifizierung zur App][Get started with authentication] <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
-
-* [Hinzufügen von Pushbenachrichtigungen zur App][Get started with push notifications] <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
-
-Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstützen mehrerer Geräteplattformen aus einem einzigen Mobile Service heraus](mobile-services-how-to-use-multiple-clients-single-service.md#shared-vs).
 
 <!-- Anchors. -->
 [Getting started with Mobile Services]: #getting-started
@@ -92,4 +89,4 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

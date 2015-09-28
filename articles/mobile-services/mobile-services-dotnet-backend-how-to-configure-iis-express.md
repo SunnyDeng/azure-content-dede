@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Konfigurieren von IIS Express für lokales Testen von Mobile Service"
+	pageTitle="Konfigurieren von IIS Express für lokales Testen von einem mobilen Dienst | Azure Mobile Services"
 	description="Erfahren Sie, wie Sie IIS Express konfigurieren müssen, um Verbindungen zu einem lokalen mobilen Dienstprojekt zu Testzwecken zu ermöglichen."
 	authors="ggailey777"
 	manager="dwrede"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/16/2015"
 	ms.author="glenga"/>
 
 # Konfigurieren des lokalen Webservers für Verbindungen mit einem lokalen mobilen Dienst
@@ -24,4 +24,4 @@ Um einen mobilen Dienst lokal mit Clients zu testen, die auf einem Emulator, ein
 
 [AZURE.INCLUDE [mobile-services-how-to-configure-iis-express](../../includes/mobile-services-how-to-configure-iis-express.md)]
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

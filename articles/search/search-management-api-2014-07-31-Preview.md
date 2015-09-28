@@ -4,7 +4,7 @@
 
 # Verwaltungs-API: Version 2014-07-31-Preview
 
-Das vorliegende Dokument beschreibt die Version **2014-07-31-Preview** der Azure Search-Verwaltungs-REST-API. Diese wurde auf MSDN durch die allgemein verfügbare Version [Azure Search-Verwaltungs-REST API 2015-02-28](https://msdn.microsoft.com/library/dn832684.aspx) ersetzt. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+Das vorliegende Dokument beschreibt die Version **2014-07-31-Preview** der Azure Search-Verwaltungs-REST-API. Sie wurde seitdem durch neuere Versionen ersetzt. Die neuesten Versionen finden Sie unter [Azure Search-Verwaltungs-REST-API 2015-08-19](https://msdn.microsoft.com/library/dn832684.aspx) auf MSDN. \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 ## Dienstverwaltungsvorgänge
 
@@ -26,7 +26,7 @@ Beachten Sie, dass alle Aufrufe an die Verwaltungs-API die Abonnement-ID und ein
 
 ### Versionen
 
-Die aktuelle Version der Azure Search Verwaltungs-REST-API ist `api-version=2014-07-31-Preview`. Diese API liegt nur in dieser Version vor.
+`api-version=2014-07-31-Preview` wurde während der öffentlichen Vorschau von Azure Search eingeführt. Weitere Informationen zu Änderungen von einer Version zur nächsten finden Sie unter [Neuigkeiten in Azure Search](search-latest-updates.md).
 
 ### Authentifizierung und Zugriffssteuerung
 
@@ -815,4 +815,4 @@ Keiner.
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

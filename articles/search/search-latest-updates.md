@@ -94,10 +94,20 @@ Diese Version war die öffentliche Preview-Version für Azure Search. Sie enthie
 
 - Bereitstellung in der Preview-Version von [Azure Management Portal](https://portal.azure.com). Azure Search war einer der wenigen Dienste, die nur im neuen Portal verfügbar waren.
 
+##Management-API Version 2015-08-19
+**Veröffentlicht: 11. September 2015**
+
+[Management-REST-API](https://msdn.microsoft.com/library/azure/dn832684.aspx) enthält die folgenden Updates.
+
+- „CheckNameAvailability“ überprüft, ob ein bestimmter Dienst bereits verwendet wird.
+- Replikatsbereich war zuvor 1 bis 6 und ist jetzt 1 bis 12.
+- SKU-Eigenschaft wurde aus dem Eigenschaftenbehälter in die oberste Ebene der Dienstnutzlast verschoben.
+- Antworttext des Vorgangs „Search-Dienst erstellen“ wurde aktualisiert, um das Verschieben der SKU-Einstellung zu unterstützen.
+
 ##Management-API Version 2015-02-28
 **Veröffentlicht am 05.03.2015**
 
-[Management-REST-API](https://msdn.microsoft.com/library/azure/dn832684.aspx) ist die erste Version der Management-API in der allgemein verfügbaren Version von Azure Search. Es gibt keine Funktionsunterschiede zwischen dem früheren und diesem Preview.
+[Management-REST-API](search-management-api-2014-02-28.md) ist die erste Version der Management-API in der allgemein verfügbaren Version von Azure Search. Es gibt keine Funktionsunterschiede zwischen dem früheren und diesem Preview.
 
 ##Management-API Version 2014-07-31-Preview
 **Veröffentlicht im Oktober 2014**
@@ -107,4 +117,4 @@ Zur Unterstützung der programmgesteuerten Dienstverwaltung wurde die Preview-Ve
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

@@ -1,6 +1,7 @@
 <properties 
-	pageTitle="Ressourcenmodell und Konzepte von DocumentDB | Microsoft Azure" 
-	description="Microsoft Azure DocumentDB ist eine vollständig verwaltete NoSQL-Dokumentdatenbank, die ein hierarchisches Modell aus Datenbankkonten, Datenbanken, Sammlungen, gespeicherten Prozeduren, Triggern, benutzerdefinierten Funktionen (User Defined Functions, UDFs), Dokumenten, Anlagen, Medien, Benutzern und Berechtigungen zur Ressourcenverwaltung einsetzt."  
+	pageTitle="Hierarchisches Ressourcenmodell und Konzepte von DocumentDB | Microsoft Azure" 
+	description="Erfahren Sie mehr zum hierarchischen Modell von DocumentDB für Datenbanken, Sammlungen, benutzerdefinierte Funktion, Dokumente, Berechtigungen zum Verwalten von Ressourcen und mehr."
+	keywords="Hierarchical Model, documentdb, azure, Microsoft azure"	
 	services="documentdb" 
 	documentationCenter="" 
 	authors="mimig1" 
@@ -16,36 +17,35 @@
 	ms.date="08/03/2015" 
 	ms.author="anhoh"/>
 
-#Ressourcenmodell und Konzepte von DocumentDB
+# Hierarchisches Ressourcenmodell und Konzepte von DocumentDB
 
 Die in DocumentDB verwalteten Datenbankentitäten werden als **Ressourcen** bezeichnet. Jede Ressource wird durch einen logischen URI eindeutig identifiziert. Sie können über standardmäßige HTTP-Verben, Anforderungs-/Antwortheader und Statuscodes mit den Ressourcen interagieren.
 
 Nach dem Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
 
 - Was sind die DocumentDB-Ressourcen?
-- Wie gestaltet sich die Hierarchie der DocumentDB-Ressourcen?
+- Wie gestaltet sich das hierarchische Modell der DocumentDB-Ressourcen?
 - Wie unterscheiden sich systemdefinierte Ressourcen von benutzerdefinierten?
 - Wie adressiere ich eine Ressource?
 - Wie arbeite ich mit Sammlungen?
 - Wie arbeite ich mit gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen?
 
 ##Hierarchisches Ressourcenmodell
-Wie das folgende Diagramm veranschaulicht, besteht das **Ressourcenmodell** von DocumentDB aus Gruppen von Ressourcen, die unter einem Datenbankkonto angeordnet sind und jeweils über einen logischen und beständigen URI adressiert werden können. Eine Ressourcengruppe wird in diesem Dokument als **Feed** bezeichnet.
+Wie das folgende Diagramm veranschaulicht, besteht das hierarchische **Ressourcenmodell** von DocumentDB aus Gruppen von Ressourcen, die unter einem Datenbankkonto angeordnet sind und jeweils über einen logischen und beständigen URI adressiert werden können. Eine Ressourcengruppe wird in diesem Dokument als **Feed** bezeichnet.
 
->[AZURE.NOTE] DocumentDB bietet ein hoch effizientes TCP-Protokoll mit einem RESTful-basierten Kommunikationsmodell, das über das [.NET Client-SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx) verfügbar ist.
+>[AZURE.NOTE]DocumentDB bietet ein hoch effizientes TCP-Protokoll mit einem RESTful-basierten Kommunikationsmodell, das über das [.NET Client-SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx) verfügbar ist.
 
-![][1]  
-**Hierarchisches Ressourcenmodell unter einem Datenbankkonto**
+![Hierarchisches Ressourcenmodell von DocumentDB][1] **Hierarchisches Ressourcenmodell unter einem Datenbankkonto**
 
-Um mit Ressourcen zu arbeiten, müssen Sie über Ihr Azure-Abonnement [ein DocumentDB-Datenbankkonto erstellen](documentdb-create-account.md). Ein Datenbankkonto kann aus einer Reihe von **Datenbanken** mit jeweils mehreren **Sammlungen** bestehen, die jeweils wiederum **gespeicherte Prozeduren, Trigger, UDFs, Dokumente** und zugehörige **Anhänge** \(Vorschaufunktion\) enthalten. Einer Datenbank sind zudem **Benutzer** zugeordnet, die jeweils über eine Reihe von **Berechtigungen** verfügen, um auf Sammlungen, gespeicherte Prozeduren, Trigger, UDFs, Dokumente oder Anhänge zuzugreifen. Während Datenbanken, Benutzer, Berechtigungen und Sammlungen vom System definierte Ressourcen mit bekannten Schemas sind, enthalten Dokumente und Anhänge beliebige, benutzerdefinierte JSON-Inhalte.
+Um mit Ressourcen zu arbeiten, müssen Sie über Ihr Azure-Abonnement [ein DocumentDB-Datenbankkonto erstellen](documentdb-create-account.md). Ein Datenbankkonto kann aus einer Reihe von **Datenbanken** mit jeweils mehreren **Sammlungen** bestehen, die jeweils wiederum **gespeicherte Prozeduren, Trigger, UDFs, Dokumente** und zugehörige **Anhänge** (Vorschaufunktion) enthalten. Einer Datenbank sind zudem **Benutzer** zugeordnet, die jeweils über eine Reihe von **Berechtigungen** verfügen, um auf Sammlungen, gespeicherte Prozeduren, Trigger, UDFs, Dokumente oder Anhänge zuzugreifen. Während Datenbanken, Benutzer, Berechtigungen und Sammlungen vom System definierte Ressourcen mit bekannten Schemas sind, enthalten Dokumente und Anhänge beliebige, benutzerdefinierte JSON-Inhalte.
 
 |Ressource |Beschreibung
 |-----------|-----------
-|Datenbankkonto |Einem Datenbankkonto ist eine Gruppe von Datenbanken sowie eine festgelegte Menge von Blobspeicher für Anhänge \(Vorschaufunktion\) zugeordnet. Sie können mithilfe Ihres Azure-Abonnements mindestens ein Datenbankkonto erstellen. Jedem Datenbankkonto der Ebene "Standard" ist eine Mindestkapazität von einer S1-Sammlung zugewiesen. Weitere Informationen finden Sie auf der [Seite mit der Preisübersicht](https://azure.microsoft.com/pricing/details/documentdb/).
+|Datenbankkonto |Einem Datenbankkonto ist eine Gruppe von Datenbanken sowie eine festgelegte Menge von Blobspeicher für Anhänge (Vorschaufunktion) zugeordnet. Sie können mithilfe Ihres Azure-Abonnements mindestens ein Datenbankkonto erstellen. Jedem Datenbankkonto der Ebene "Standard" ist eine Mindestkapazität von einer S1-Sammlung zugewiesen. Weitere Informationen finden Sie auf der [Seite mit der Preisübersicht](https://azure.microsoft.com/pricing/details/documentdb/).
 |Datenbank |Eine Datenbank ist ein logischer Container für Dokumentspeicher, der auf Sammlungen aufgeteilt ist. Sie ist auch ein Benutzercontainer.
 |Benutzer |Logischer Namespace für Bereichs-/geteilte Berechtigungen. 
 |Berechtigung |Ein Autorisierungstoken, das einem Benutzer für den autorisierten Zugriff auf eine bestimmte Ressource zugeordnet ist.
-|Sammlung |Eine Sammlung ist ein Container für JSON-Dokumente und die zugehörige JavaScript-Anwendungslogik. Eine Sammlung ist eine fakturierbare Entität, bei der die Kosten durch die Leistungsebene bestimmt werden, die mit der Sammlung verknüpft ist. Die Leistungsebenen \(S1, S2 und S3\) bieten 10 GB Speicher und eine festgelegte Menge an Durchsatz. Weitere Informationen zu Leistungsstufen finden Sie unter [Leistungsebenen in DocumentDB](documentdb-performance-levels.md).
+|Sammlung |Eine Sammlung ist ein Container für JSON-Dokumente und die zugehörige JavaScript-Anwendungslogik. Eine Sammlung ist eine fakturierbare Entität, bei der die Kosten durch die Leistungsebene bestimmt werden, die mit der Sammlung verknüpft ist. Die Leistungsebenen (S1, S2 und S3) bieten 10 GB Speicher und eine festgelegte Menge an Durchsatz. Weitere Informationen zu Leistungsstufen finden Sie unter [Leistungsebenen in DocumentDB](documentdb-performance-levels.md).
 |Gespeicherte Prozedur |Mit JavaScript geschriebene Anwendungslogik, die mit einer Sammlung registriert und über Transaktion innerhalb des Datenbankmoduls ausgeführt wird.
 |Trigger |Mit JavaScript geschriebene Anwendungslogik unter Berücksichtigung von mit Einfüge-, Ersetzungs- oder Löschvorgängen verknüpften Nebeneffekten.
 |UDF |Eine in JavaScript geschriebene Anwendungslogik ohne Nebeneffekte. Mit UDFs kann ein benutzerdefinierter Abfrageoperator erstellt und damit die DocumentDB-Kernabfragesprache erweitert werden.
@@ -56,7 +56,7 @@ Um mit Ressourcen zu arbeiten, müssen Sie über Ihr Azure-Abonnement [ein Docum
 ##Vergleich von system- und benutzerdefinierten Ressourcen
 Ressourcen wie Datenbankkonten, Datenbanken, Sammlungen, Benutzer, Berechtigungen, gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen verfügen alle über ein festes Schema und werden als Systemressourcen bezeichnet. Im Gegensatz dazu weisen Ressourcen wie Dokumente und Anhänge keine Einschränkungen hinsichtlich des Schemas auf und sind somit ein Beispiel für benutzerdefinierte Ressourcen. In DocumentDB werden sowohl system- als auch benutzerdefinierte Ressourcen als standardkonformes JSON dargestellt und verwaltet. Alle Ressourcen, egal ob system- oder benutzerdefiniert, haben folgende Eigenschaften gemeinsam.
 
->[AZURE.NOTE] Beachten Sie, dass in allen systemgenierten Eigenschaften in einer Ressource ein Unterstrich \(\_\) in ihrer JSON-Darstellung voransteht.
+>[AZURE.NOTE]Beachten Sie, dass in allen systemgenierten Eigenschaften in einer Ressource ein Unterstrich (\_) in ihrer JSON-Darstellung voransteht.
 
 
 Eigenschaft |Vom Benutzer einstellbar oder systemgeneriert?|Zweck
@@ -223,10 +223,9 @@ Beachten Sie, dass kein Typsystemkonflikt vorliegt und keine "OR-Zuordnung" oder
 
 Gespeicherte Prozeduren und Trigger interagieren über ein wohldefiniertes Objektmodell, das den aktuellen Sammlungskontext offenlegt, mit einer Sammlung und den Dokumenten in einer Sammlung.
 
-Sammlungen können in DocumentDB mithilfe der [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) problemlos erstellt, gelöscht, gelesen oder aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Sammlung immer eine hohe Konsistenz. Das Löschen einer Sammlung stellt automatisch sicher, dass Sie nicht auf die darin enthaltenen Dokumente, Anhänge, gespeicherten Prozeduren, Trigger und benutzerdefinierten Funktionen zugreifen können.   
-
-##Gespeicherte Prozeduren, Trigger und UDFs
-Wie im vorigen Abschnitt beschrieben, können Sie eine Anwendungslogik erstellen, die direkt innerhalb einer Transaktion im Datenbankmodul ausgeführt wird. Die Anwendungslogik kann vollständig in JavaScript geschrieben und als gespeicherte Prozedur, Trigger oder benutzerdefinierte Funktion \(UDF\) gestaltet werden. Der JavaScript-Code innerhalb einer gespeicherten Prozedur oder eines Triggers kann Dokumente in eine Sammlung einfügen, sie dort ersetzen, löschen, lesen oder abfragen. Andererseits kann der JavaScript-Code innerhalb einer benutzerdefinierten Funktion nur durch die Aufzählung der Dokumente der Abfrageergebnisgruppe ohne Nebenwirkungen berechnen und eine weitere Ergebnisgruppe erzeugen. Für die Mehrinstanzenfähigkeit erzwingt DocumentDB eine strikte, auf Reservierung basierende Ressourcensteuerung. Jede gespeicherte Prozedur, jeder Trigger oder jede benutzerdefinierte Funktion erhält für die Erledigung seiner Aufgaben einen festgelegten Anteil an den Betriebssystemressourcen. Zudem können gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen \(UDFs\) keine Verknüpfungen zu externen JavaScript-Bibliotheken herstellen und werden gesperrt, wenn sie den ihnen zugeordnete Ressourcenanteil überschreiten. Sie können gespeicherte Prozeduren, Trigger oder UDFs mithilfe der REST-APIs für eine Sammlung registrieren oder die Registrierung aufheben. Während der Registrierung werden eine gespeicherte Prozedur, ein Trigger oder eine benutzerdefinierte Funktion vorkompiliert und als Bytecode gespeichert, der später ausgeführt wird. Der folgende Abschnitt veranschaulicht, wie Sie eine gespeicherte Prozedur, einen Trigger und eine UDF mithilfe des DocumentDB-JavaScript-SDKs registrieren und ausführen und die Registrierung wieder aufheben. Das JavaScript-SDK ist ein einfacher Wrapper für die [DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx).
+Sammlungen können in DocumentDB mithilfe der [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder eines der [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) problemlos erstellt, gelöscht, gelesen oder aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Sammlung immer eine hohe Konsistenz. Das Löschen einer Sammlung stellt automatisch sicher, dass Sie nicht auf die darin enthaltenen Dokumente, Anhänge, gespeicherten Prozeduren, Trigger und benutzerdefinierten Funktionen zugreifen können.
+##Gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen
+Wie im vorigen Abschnitt beschrieben, können Sie eine Anwendungslogik erstellen, die direkt innerhalb einer Transaktion im Datenbankmodul ausgeführt wird. Die Anwendungslogik kann vollständig in JavaScript geschrieben und als gespeicherte Prozedur, Trigger oder benutzerdefinierte Funktion (UDF) gestaltet werden. Der JavaScript-Code innerhalb einer gespeicherten Prozedur oder eines Triggers kann Dokumente in eine Sammlung einfügen, sie dort ersetzen, löschen, lesen oder abfragen. Andererseits kann der JavaScript-Code innerhalb einer benutzerdefinierten Funktion nur durch die Aufzählung der Dokumente der Abfrageergebnisgruppe ohne Nebenwirkungen berechnen und eine weitere Ergebnisgruppe erzeugen. Für die Mehrinstanzenfähigkeit erzwingt DocumentDB eine strikte, auf Reservierung basierende Ressourcensteuerung. Jede gespeicherte Prozedur, jeder Trigger oder jede benutzerdefinierte Funktion erhält für die Erledigung seiner Aufgaben einen festgelegten Anteil an den Betriebssystemressourcen. Zudem können gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen (UDFs) keine Verknüpfungen zu externen JavaScript-Bibliotheken herstellen und werden gesperrt, wenn sie den ihnen zugeordnete Ressourcenanteil überschreiten. Sie können gespeicherte Prozeduren, Trigger oder UDFs mithilfe der REST-APIs für eine Sammlung registrieren oder die Registrierung aufheben. Während der Registrierung werden eine gespeicherte Prozedur, ein Trigger oder eine benutzerdefinierte Funktion vorkompiliert und als Bytecode gespeichert, der später ausgeführt wird. Der folgende Abschnitt veranschaulicht, wie Sie eine gespeicherte Prozedur, einen Trigger und eine UDF mithilfe des DocumentDB-JavaScript-SDKs registrieren und ausführen und die Registrierung wieder aufheben. Das JavaScript-SDK ist ein einfacher Wrapper für die [DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx).
 
 ###Registrieren einer gespeicherten Prozedur
 Die Registrierung einer gespeicherten Prozedur erstellt eine neue gespeicherte Prozedurressource für eine Sammlung über HTTP POST.
@@ -277,7 +276,7 @@ Das Aufheben der Registrierung für eine gespeicherte Prozedur erfolgt über das
 
 
 ###Registrieren eines vorangestellten Triggers
-Die Registrierung eines Triggers umfasst das Erstellen einer neuen Triggerressource für eine Sammlung über HTTP POST. Sie können angeben, ob es sich um einen vorangestellten oder nachgestellten Trigger handelt. Zudem können Sie die Art des Vorgangs angeben, der dem Trigger zugeordnet ist \(z. B. Erstellen, Ersetzen, Löschen oder Alle\).
+Die Registrierung eines Triggers umfasst das Erstellen einer neuen Triggerressource für eine Sammlung über HTTP POST. Sie können angeben, ob es sich um einen vorangestellten oder nachgestellten Trigger handelt. Zudem können Sie die Art des Vorgangs angeben, der dem Trigger zugeordnet ist (z. B. Erstellen, Ersetzen, Löschen oder Alle).
 
 	var preTrigger = {
 	    id: "upperCaseId",
@@ -298,7 +297,7 @@ Die Registrierung eines Triggers umfasst das Erstellen einer neuen Triggerressou
 	    });
 
 ###Ausführen eines vorangestellten Triggers
-Die Ausführung eines Triggers erfolgt durch die Angabe des Namens \(über den Anforderungsheader\) eines vorhandenen Triggers während der Auslösung der POST-/PUT-/DELETE-Anforderung einer Dokumentressource.
+Die Ausführung eines Triggers erfolgt durch die Angabe des Namens (über den Anforderungsheader) eines vorhandenen Triggers während der Auslösung der POST-/PUT-/DELETE-Anforderung einer Dokumentressource.
  
 	client.createDocumentAsync(collection._self, { id: "doc1", key: "Love in the Time of Cholera" }, { preTriggerInclude: "upperCaseId" })
 	    .then(function(createdDocument) {
@@ -317,7 +316,7 @@ Das Aufheben der Registrierung für einen Trigger erfolgt über das einfache Aus
 	        console.log("Error");
 	    });
 
-###Registrieren einer benutzerdefinierten Funktion \(UDF\)
+###Registrieren einer benutzerdefinierten Funktion (UDF)
 Die Registrierung einer UDF umfasst das Erstellen einer neuen UDF-Ressource für eine Sammlung über HTTP POST.
 
 	var udf = { 
@@ -344,7 +343,7 @@ Eine UDF kann im Rahmen der SQL-Abfrage angegeben werden und wird als Methode ve
 	        console.log("Error");
 	    });
 
-###Aufheben der Registrierung einer benutzerdefinierten Funktion \(UDF\) 
+###Aufheben der Registrierung einer benutzerdefinierten Funktion (UDF) 
 Das Aufheben der Registrierung für eine benutzerdefinierte Funktion erfolgt über das einfache Auslösen einer HTTP DELETE-Methode für eine vorhandene UDF-Ressource.
 
 	client.deleteUserDefinedFunctionAsync(createdUdf._self)
@@ -354,19 +353,19 @@ Das Aufheben der Registrierung für eine benutzerdefinierte Funktion erfolgt üb
 	        console.log("Error");
 	    });
 
-Obwohl die obigen Codeausschnitte die Registrierung \(POST\), die Aufhebung der Registrierung \(PUT\), das Lesen/Auflisten \(GET\) und die Ausführung \(POST\) über das [DocumentDB-JavaScript-SDK](https://github.com/Azure/azure-documentdb-js) veranschaulicht haben, können Sie auch die [REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder andere [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) verwenden.
+Obwohl die obigen Codeausschnitte die Registrierung (POST), die Aufhebung der Registrierung (PUT), das Lesen/Auflisten (GET) und die Ausführung (POST) über das [DocumentDB-JavaScript-SDK](https://github.com/Azure/azure-documentdb-js) veranschaulicht haben, können Sie auch die [REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) oder andere [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) verwenden.
 
 ##Dokumente
 Sie können beliebige JSON-Dokumente zu einer Sammlung hinzufügen, sie dort ersetzen, löschen, lesen, aufzählen und abfragen. DocumentDB erfordert weder Schema noch sekundäre Indizes, um die dokumentübergreifende Abfrage in einer Sammlung zu unterstützen.
 
-DocumentDB ist ein ganz und gar offener Datenbankdienst, der keine speziellen Datentypen \(z. B. Datum/Uhrzeit\) oder bestimmte Codierungen für JSON-Dokumente einführt. Beachten Sie, dass für DocumentDB keine speziellen JSON-Konventionen erforderlich sind, um die Beziehungen zwischen verschiedenen Dokumenten festzuschreiben. Die SQL-Abfragesprache von DocumentDB bietet sehr leistungsstarke hierarchische und relationale Abfrageoperatoren, um Dokumente ohne spezielle Anmerkungen oder die Festschreibung der Beziehungen zwischen Dokumenten mithilfe unterschiedlicher Eigenschaften abzufragen und zu projizieren.
+DocumentDB ist ein ganz und gar offener Datenbankdienst, der keine speziellen Datentypen (z. B. Datum/Uhrzeit) oder bestimmte Codierungen für JSON-Dokumente einführt. Beachten Sie, dass für DocumentDB keine speziellen JSON-Konventionen erforderlich sind, um die Beziehungen zwischen verschiedenen Dokumenten festzuschreiben. Die SQL-Abfragesprache von DocumentDB bietet sehr leistungsstarke hierarchische und relationale Abfrageoperatoren, um Dokumente ohne spezielle Anmerkungen oder die Festschreibung der Beziehungen zwischen Dokumenten mithilfe unterschiedlicher Eigenschaften abzufragen und zu projizieren.
  
 Wie die anderen Ressourcen können Dokumente mithilfe der REST-APIs oder eines [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) einfach erstellt, ersetzt, gelöscht, gelesen, aufgezählt und abgefragt werden. Durch das Löschen eines Dokuments wird sofort das Kontingent freigegeben, das allen geschachtelten Anhängen entspricht. Der Grad der Lesekonsistenz von Dokumenten folgt der Konsistenzrichtlinie des Datenbankkontos. Diese Richtlinie kann anforderungsbasiert in Abhängigkeit von den Anforderungen Ihrer Anwendung an die Datenkonsistenz außer Kraft gesetzt werden. Bei der Abfrage von Dokumenten folgt die Lesekonsistenz dem für die Sammlung festgelegten Indizierungsmodus. Die Konsistenz folgt der Konsistenzrichtlinie des Kontos.
 
 ##Anhänge und Medien
->[AZURE.NOTE] Anhangs- und Medienressourcen sind Vorschaufunktionen.
+>[AZURE.NOTE]Anhangs- und Medienressourcen sind Vorschaufunktionen.
  
-DocumentDB gestattet es Ihnen, binäre Blobs/Medien mit DocumentDB oder in einem eigenen Remotemedienspeicher zu speichern. Zudem haben Sie die Möglichkeit, die Metadaten eines Mediums in Form eines speziellen Dokuments, dem sogenannten Anhang, darzustellen. Ein Anhang in DocumentDB ist ein spezielles \(JSON-\)Dokument, das auf die/den an anderer Stelle gespeicherten Medien/Blob verweist. Ein Anhang ist einfach ein spezielles Dokument, das die Metadaten \(z. B. Speicherort, Autor usw.\) eines Mediums erfasst, das in einem Remotemedienspeicher gespeichert wird.
+DocumentDB gestattet es Ihnen, binäre Blobs/Medien mit DocumentDB oder in einem eigenen Remotemedienspeicher zu speichern. Zudem haben Sie die Möglichkeit, die Metadaten eines Mediums in Form eines speziellen Dokuments, dem sogenannten Anhang, darzustellen. Ein Anhang in DocumentDB ist ein spezielles (JSON-)Dokument, das auf die/den an anderer Stelle gespeicherten Medien/Blob verweist. Ein Anhang ist einfach ein spezielles Dokument, das die Metadaten (z. B. Speicherort, Autor usw.) eines Mediums erfasst, das in einem Remotemedienspeicher gespeichert wird.
 
 Betrachten Sie eine soziale Leseanwendung, die DocumentDB zum Speichern von Anmerkungen und Metadaten verwendet, einschließlich der Kommentare, Lesezeichen, Bewertungen usw., die einem E-Book für einen bestimmten Benutzer zugeordnet sind.
 
@@ -376,7 +375,7 @@ Betrachten Sie eine soziale Leseanwendung, die DocumentDB zum Speichern von Anme
 
 Beachten Sie, dass die Beispiele benutzerfreundliche IDs verwenden, um die Ressourcenhierarchie zu vermitteln. Der Zugriff auf Ressourcen erfolgt mithilfe eindeutiger Ressourcen-IDs über REST-APIs.
 
-Für die von DocumentDB verwalteten Medien verweist die "\_media"-Eigenschaft des Anhangs über seinen URI auf das Medium. DocumentDB stellt die Garbage Collection für die Medien sicher, wenn alle ausstehenden Referenzen entfernt werden. Der Anhang wird automatisch von DocumentDB generiert, wenn Sie neue Medien hochladen. Zudem wird die "\_media"-Eigenschaft gefüllt, um auf das neu hinzugefügte Medium zu verweisen. Wenn Sie die Medien in einem von Ihnen verwalteten Remote-BLOB-Speicher speichern \(z. B. OneDrive, Azure Storage, DropBox usw.\), können Sie weiterhin Anhänge verwenden, um auf die Medien zu verweisen. In diesem Fall erstellen Sie den Anhang selbst und füllen seine "\_media"-Eigenschaft.
+Für die von DocumentDB verwalteten Medien verweist die "\_media"-Eigenschaft des Anhangs über seinen URI auf das Medium. DocumentDB stellt die Garbage Collection für die Medien sicher, wenn alle ausstehenden Referenzen entfernt werden. Der Anhang wird automatisch von DocumentDB generiert, wenn Sie neue Medien hochladen. Zudem wird die "\_media"-Eigenschaft gefüllt, um auf das neu hinzugefügte Medium zu verweisen. Wenn Sie die Medien in einem von Ihnen verwalteten Remote-BLOB-Speicher speichern (z. B. OneDrive, Azure Storage, DropBox usw.), können Sie weiterhin Anhänge verwenden, um auf die Medien zu verweisen. In diesem Fall erstellen Sie den Anhang selbst und füllen seine "\_media"-Eigenschaft.
 
 Wie die anderen Ressourcen können Anhänge mithilfe der REST-APIs oder eines Client-SDKs einfach erstellt, ersetzt, gelöscht, gelesen und aufgezählt werden. Wie bei Dokumenten folgt der Grad der Lesekonsistenz von Anhängen der Konsistenzrichtlinie des Datenbankkontos. Diese Richtlinie kann anforderungsbasiert in Abhängigkeit von den Anforderungen Ihrer Anwendung an die Datenkonsistenz außer Kraft gesetzt werden. Bei der Abfrage von Anhängen folgt die Lesekonsistenz dem für die Sammlung festgelegten Indizierungsmodus. Die Konsistenz folgt der Konsistenzrichtlinie des Kontos.
 ##Benutzer
@@ -399,7 +398,7 @@ Unabhängig von der gewählten Strategie für die horizontale Partitionierung k�
 Wie alle anderen Ressourcen können Benutzer in DocumentDB mithilfe der REST-APIs oder eines Client-SDKs einfach erstellt, ersetzt, gelöscht, gelesen und aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Benutzerressource immer eine hohe Konsistenz. Es sollte dabei darauf hingewiesen werden, dass das Löschen eines Benutzers automatisch sicherstellt, dass Sie auf keine der ihm zugeordneten Berechtigungen zugreifen können. Obwohl das Kontingent der Berechtigungen als Teil des gelöschten Benutzers im Hintergrund von DocumentDB freigegeben wird, stehen die gelöschten Berechtigungen sofort wieder für Sie zur Verfügung.
 
 ##Berechtigungen
-Hinsichtlich der Zugriffssteuerung werden Ressourcen wie Datenbankkonten, Datenbanken, Benutzer und Berechtigungen als *administrative* Ressourcen betrachtet, da sie Administratorrechte erfordern. Auf der anderen Seite werden Ressourcen wie Sammlungen, Dokumente, Anhänge, gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen \(UDFs\) einer angegebenen Datenbank zugeordnet und als *Anwendungsressource* betrachtet. Entsprechend den zwei Arten von Ressourcen und den Rollen, die Zugriff darauf haben \(also Administrator und Benutzer\), definiert das Autorisierungsmodell zwei Arten von *Zugriffsschlüsseln*: *Hauptschlüssel* und *Ressourcenschlüssel*. Der Hauptschlüssel ist eine Komponente des Datenbankkontos und wird dem Entwickler \(oder Administrator\) übermittelt, der das Datenbankkonto bereitstellt. Dieser Hauptschlüssel verfügt über eine Administratorsemantik, da er zum Autorisieren des Zugriffs auf administrative Ressourcen und Anwendungsressourcen verwendet werden kann. Im Gegensatz dazu, ist der Ressourcenschlüssel ein differenzierter Zugriffsschlüssel, der den Zugriff auf eine *bestimmte* Anwendungsressource gestattet. Somit erfasst er die Beziehung zwischen dem Benutzer einer Datenbank und den Berechtigungen, über die der Benutzer für eine bestimmte Ressource verfügt \(Beispiel: Sammlung, Dokument, Anhang, gespeicherte Prozedur, Trigger oder benutzerdefinierte Funktion\).
+Hinsichtlich der Zugriffssteuerung werden Ressourcen wie Datenbankkonten, Datenbanken, Benutzer und Berechtigungen als *administrative* Ressourcen betrachtet, da sie Administratorrechte erfordern. Auf der anderen Seite werden Ressourcen wie Sammlungen, Dokumente, Anhänge, gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen (UDFs) einer angegebenen Datenbank zugeordnet und als *Anwendungsressource* betrachtet. Entsprechend den zwei Arten von Ressourcen und den Rollen, die Zugriff darauf haben (also Administrator und Benutzer), definiert das Autorisierungsmodell zwei Arten von *Zugriffsschlüsseln*: *Hauptschlüssel* und *Ressourcenschlüssel*. Der Hauptschlüssel ist eine Komponente des Datenbankkontos und wird dem Entwickler (oder Administrator) übermittelt, der das Datenbankkonto bereitstellt. Dieser Hauptschlüssel verfügt über eine Administratorsemantik, da er zum Autorisieren des Zugriffs auf administrative Ressourcen und Anwendungsressourcen verwendet werden kann. Im Gegensatz dazu, ist der Ressourcenschlüssel ein differenzierter Zugriffsschlüssel, der den Zugriff auf eine *bestimmte* Anwendungsressource gestattet. Somit erfasst er die Beziehung zwischen dem Benutzer einer Datenbank und den Berechtigungen, über die der Benutzer für eine bestimmte Ressource verfügt (Beispiel: Sammlung, Dokument, Anhang, gespeicherte Prozedur, Trigger oder benutzerdefinierte Funktion).
 
 Die einzige Möglichkeit zum Abrufen eines Ressourcenschlüssels besteht darin, unter einem bestimmten Benutzer eine Berechtigungsressource zu erstellen. Beachten Sie, dass zum Erstellen oder Abrufen einer Berechtigung ein Hauptschlüssel im Autorisierungsheader angegeben werden muss. Eine Berechtigungsressource verknüpft die Ressource, den Zugriff und den Benutzer. Nach der Erstellung einer Berechtigungsressource muss der Benutzer lediglich den zugehörigen Ressourcenschlüssel präsentieren, um Zugriff auf die relevante Ressource zu erhalten. Daher kann ein Ressourcenschlüssel als logische und kompakte Darstellung der Berechtigungsressource betrachtet werden.
 
@@ -414,5 +413,4 @@ Weitere Informationen zum Arbeiten mit Ressourcen mithilfe von HTTP-Befehlen fin
 [3]: media/documentdb-resources/resources3.png
  
 
-
-<!-----HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

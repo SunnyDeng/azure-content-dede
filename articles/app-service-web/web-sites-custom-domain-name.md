@@ -5,15 +5,15 @@
 	documentationCenter=""
 	authors="MikeWasson"
 	manager="wpickett"
-	editor=""/>
+	editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/13/2015"
+	ms.date="09/16/2015"
 	ms.author="mwasson"/>
 
 # Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service
@@ -24,14 +24,13 @@
 - [Web Apps with Traffic Manager](web-sites-traffic-manager-custom-domain-name.md)
 - [GoDaddy](web-sites-godaddy-custom-domain-name.md)
 
-[AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
-
 Wenn Sie eine Web-App erstellen, weist Azure dieser eine Unterdomäne von "azurewebsites.NET" zu. Wenn Ihre Web-App beispielsweise **contoso** heißt, lautet die URL **contoso.azurewebsites.net**. Darüber hinaus weist Azure eine virtuelle IP-Adresse zu.
 
 Bei einer Produktions-Web-App sollten Sie Benutzern einen benutzerdefinierten Domänennamen anzeigen. In diesem Artikel erfahren Sie, wie Sie eine benutzerdefinierte Domäne für [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) reservieren oder konfigurieren.
 
-[AZURE.INCLUDE [introfooter](../../includes/custom-dns-web-site-intro-notes.md)]
+[AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
+[AZURE.INCLUDE [introfooter](../../includes/custom-dns-web-site-intro-notes.md)]
 
 ## Übersicht
 
@@ -148,4 +147,4 @@ Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](../dns/dns
 [subdomain]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

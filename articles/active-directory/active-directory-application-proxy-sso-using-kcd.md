@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="rkarlin"
-	manager="stevenpo"
+	manager="msStevenPo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.date="09/09/2015"
 	ms.author="rkarlin"/>
 
 
@@ -54,7 +54,13 @@ Die Active Directory-Konfiguration variiert in Abhängigkeit davon, ob Ihr Anwen
 
 ### Connector und veröffentlichter Server in der gleichen Domäne
 
-Wechseln Sie in Active Directory zu **Extras** > **Benutzer und Computer**. Wählen Sie den Server aus, der den Connector ausführt. Klicken Sie mit der rechten Maustaste, und wählen Sie **Eigenschaften** > **Delegierung** aus. Wählen Sie **Computer bei Delegierungen angegebener Dienste vertrauen** aus, und fügen Sie unter **Dienste, für die dieses Konto delegierte Anmeldeinformationen verwenden kann** den Wert für die Dienstprinzipalnamen-Identität (SPN) des Anwendungsservers hinzu. Auf diese Weise kann der Anwendungsproxy-Connector die Identität von Benutzern in AD für die Anwendungen annehmen, die in der Liste definiert sind.
+
+
+1. Wechseln Sie in Active Directory zu **Extras** > **Benutzer und Computer**. 
+2. Wählen Sie den Server aus, der den Connector ausführt. 
+3. Klicken Sie mit der rechten Maustaste, und wählen Sie **Eigenschaften** > **Delegierung** aus. 
+4. Wählen Sie **Computer bei Delegierungen angegebener Dienste vertrauen** aus, und fügen Sie unter **Dienste, für die dieses Konto delegierte Anmeldeinformationen verwenden kann** den Wert für die Dienstprinzipalnamen-Identität (SPN) des Anwendungsservers hinzu. 
+5. Auf diese Weise kann der Anwendungsproxy-Connector die Identität von Benutzern in AD für die Anwendungen annehmen, die in der Liste definiert sind.
 
 ![Screenshot des Connector-SVR-Eigenschaftenfensters](./media/active-directory-application-proxy-sso-using-kcd/Properties.jpg)
 
@@ -87,11 +93,11 @@ Wechseln Sie in Active Directory zu **Extras** > **Benutzer und Computer**. Wäh
 
 | | |
 | --- | --- |
-| Interne Authentifizierungsmethode | Bei Verwendung von Azure AD für die Vorauthentifizierung können Sie eine interne Authentifizierungsmethode festlegen, die Ihren Benutzern ermöglicht, vom einmaligen Anmelden (SSO) bei dieser Anwendung zu profitieren. <br><br> Wählen Sie **Integrierte Windows-Authentifizierung** (IWA) aus, wenn Ihre Anwendung IWA verwendet, und Sie die eingeschränkte Kerberos-Delegierung (KCD) konfigurieren können, um die einmalige Anmeldung für diese Anwendung zu aktivieren. Anwendungen, die IWA verwenden, müssen mithilfe von KCD konfiguriert werden. Ansonsten kann der Anwendungsproxy diese Anwendungen nicht veröffentlichen. <br><br> Wählen Sie **Keine** aus, wenn Ihre Anwendung IWA nicht verwendet. |
+| Interne Authentifizierungsmethode | Bei Verwendung von Azure AD für die Vorauthentifizierung können Sie eine interne Authentifizierungsmethode festlegen, die Ihren Benutzern ermöglicht, vom einmaligen Anmelden (SSO) bei dieser Anwendung zu profitieren. <br><br> Wählen Sie **Integrierte Windows-Authentifizierung** (IWA), wenn Ihre Anwendung IWA verwendet. Außerdem können Sie die eingeschränkte Kerberos-Delegierung zum Aktivieren von SSO für diese Anwendung konfigurieren. Anwendungen, die IWA verwenden, müssen mithilfe von KCD konfiguriert werden. Ansonsten kann der Anwendungsproxy diese Anwendungen nicht veröffentlichen. <br><br> Wählen Sie **Keine**, wenn Ihre Anwendung IWA nicht verwendet. |
 | Interner Anwendungs-SPN | Dies ist der Dienstprinzipalname (SPN) der internen Anwendung wie im lokalen Azure AD konfiguriert. Der SPN wird vom Anwendungsproxy-Connector verwendet, um Kerberos-Token für die Anwendung mithilfe der eingeschränkten Kerberos-Delegierung (KCD) abzurufen. |
 
 <!--Image references-->
 [1]: ./media/active-directory-application-proxy-sso-using-kcd/AuthDiagram.png
 [2]: ./media/active-directory-application-proxy-sso-using-kcd/Properties.jpg
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

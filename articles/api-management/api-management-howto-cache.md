@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hinzufügen der Zwischenspeicherung zum Verbessern der Leistung in Azure API Management"
+	pageTitle="Hinzufügen der Zwischenspeicherung zum Verbessern der Leistung in Azure API Management | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Latenz, Bandbreitennutzung und Webdienstauslastung für API Management-Dienstaufrufe verbessern."
 	services="api-management"
 	documentationCenter=""
@@ -12,7 +12,7 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="get-started-article" 
+	ms.topic="get-started-article"
 	ms.date="08/05/2015"
 	ms.author="sdanie"/>
 
@@ -21,7 +21,6 @@
 Operationen in API Management können für das Zwischenspeichern von Antworten konfiguriert werden. Das Zwischenspeichern von Antworten kann API-Latenz, Bandbreitennutzung und Webdienstlast für Daten, die sich eher selten ändern, drastisch senken.
 
 In diesem Leitfaden wird gezeigt, wie Sie die Zwischenspeicherung von Antworten für Ihre API hinzufügen und Richtlinien für Operationen in der Echo-Beispiel-API konfigurieren. Um die Zwischenspeicherung in Aktion zu sehen, können Sie die Operation im Entwicklerportal aufrufen.
-
 
 ## Voraussetzungen
 
@@ -37,19 +36,19 @@ Klicken Sie zunächst im Azure-Portal für Ihren API Management-Dienst auf **Ver
 
 ![Herausgeberportal][api-management-management-console]
 
-Klicken Sie auf **APIs** im Menü **API Management** auf der linken Seite, und klicken Sie anschließend auf **Echo API**.
+Klicken Sie auf der linken Seite im Menü **API Management** auf **APIs**, und klicken Sie anschließend auf **Echo API**.
 
 ![Echo API][api-management-echo-api]
 
-Wählen Sie die Registerkarte **Operationen** aus, und klicken Sie auf die Operation **GET Resource (cached)** in der Liste der **Operationen**.
+Klicken Sie auf die Registerkarte **Operationen**, und klicken Sie dann auf die Operation **GET Resource (cached)** in der Liste der **Operationen**.
 
 ![Operationen der Echo API][api-management-echo-api-operations]
 
-Wählen Sie die Registerkarte **Zwischenspeichern** aus, um die Einstellungen der Zwischenspeicherung für diese Operation anzuzeigen.
+Klicken Sie auf die Registerkarte **Zwischenspeichern**, um die Einstellungen der Zwischenspeicherung für diese Operation anzuzeigen.
 
 ![Registerkarte "Zwischenspeichern"][api-management-caching-tab]
 
-Markieren Sie das Kontrollkästchen **Aktivieren**, um die Zwischenspeicherung für eine Operation zu aktivieren. In diesem Beispiel ist die die Zwischenspeicherung aktiviert.
+Aktivieren Sie das Kontrollkästchen **Aktivieren**, um die Zwischenspeicherung für eine Operation zu aktivieren. In diesem Beispiel ist die Zwischenspeicherung aktiviert.
 
 Jedes Operationsergebnis erhält einen Schlüssel anhand der Felder, die in **Nach Abfrageparametern variieren** und **Nach Headern variieren** ausgewählt wurden. Falls Sie mehrere Antworten anhand von Abfrageparametern oder Headern zwischenspeichern möchten, können Sie dies in diesen beiden Feldern konfigurieren.
 
@@ -63,7 +62,7 @@ In diesem Schritt prüfen Sie die Einstellungen der Zwischenspeicherung für die
 
 Wenn Sie die Einstellungen der Zwischenspeicherung für eine Operation auf der Registerkarte **Zwischenspeichern** konfigurieren, werden Richtlinien für die Zwischenspeicherung für die Operation hinzugefügt. Sie können diese Richtlinien im Richtlinien-Editor anzeigen und bearbeiten.
 
-Klicken Sie auf **Richtlinien** im Menü **API Management** auf der linken Seite, und wählen Sie **Echo API / GET Resource (cached)** in der Dropdownliste **Operation** aus.
+Klicken Sie auf **Richtlinien** im Menü **API Management** auf der linken Seite, und wählen Sie dann **Echo API / GET Resource (cached)** in der Dropdownliste **Operation** aus.
 
 ![Richtlinien-Geltungsbereich Operation][api-management-operation-dropdown]
 
@@ -88,7 +87,7 @@ Die Richtliniendefinition für diese Operation enthält auch die Richtlinien fü
 		</outbound>
 	</policies>
 
->Änderungen, die Sie im Richtlinien-Editor vornehmen, werden auf der Registerkarte **Zwischenspeichern** der Operation übernommen, und umgekehrt.
+>[AZURE.NOTE]Änderungen, die Sie im Richtlinien-Editor vornehmen, werden auf der Registerkarte **Zwischenspeichern** der Operation übernommen, und umgekehrt.
 
 ## <a name="test-operation"> </a>Aufrufen einer Operation und Testen der Zwischenspeicherung
 
@@ -96,13 +95,13 @@ Um die Zwischenspeicherung in Aktion zu sehen, können Sie die Operation im Entw
 
 ![Entwicklerportal][api-management-developer-portal-menu]
 
-Klicken Sie auf **APIs** im Hauptmenü, und wählen Sie **Echo API** aus.
+Klicken Sie auf **APIs** im Hauptmenü, und wählen Sie dann **Echo API** aus.
 
 ![Echo API][api-management-apis-echo-api]
 
 >Falls nur eine API konfiguriert oder für Ihr Konto sichtbar ist, können Sie auf APIs klicken, um direkt zu den Operationen für diese API zu gelangen.
 
-Wählen Sie die Operation **GET Resource (cached)** aus, und klicken Sie auf **Konsole öffnen**.
+Wählen Sie die Operation **GET Resource (cached)** aus, und klicken Sie dann auf **Konsole öffnen**.
 
 ![Konsole öffnen][api-management-open-console]
 
@@ -118,11 +117,11 @@ Geben Sie **sampleheader:value1** in das Textfeld **Request headers** ein.
 
 Klicken Sie auf **HTTP Get**, und notieren Sie sich die Antwortheader.
 
-Geben Sie **sampleheader:value2** in das Textfeld **Request headers** ein, und klicken Sie auf **HTTP Get**.
+Geben Sie **sampleheader:value2** in das Textfeld **Request headers** ein, und klicken Sie dann auf **HTTP Get**.
 
 **sampleheader** hat in der Antwort immer noch den Wert **value1**. Probieren Sie unterschiedliche Werte aus und beachten Sie, dass immer der zwischengespeicherte Wert aus dem ersten Aufruf zurückgegeben wird.
 
-Geben Sie **25** in das Feld **param2** ein, und klicken Sie auf **HTTP Get**.
+Geben Sie **25** in das Feld **param2** ein, und klicken Sie dann auf **HTTP Get**.
 
 **sampleheader** hat in der Antwort nun den Wert **value2**. Die zuvor zwischengespeicherte Antwort wurde nicht zurückgegeben, da die Operationsergebnisse einen Schlüssel anhand der Abfragezeichenfolge erhalten.
 
@@ -161,4 +160,4 @@ Geben Sie **25** in das Feld **param2** ein, und klicken Sie auf **HTTP Get**.
 [Call an operation and test the caching]: #test-operation
 [Next steps]: #next-steps
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

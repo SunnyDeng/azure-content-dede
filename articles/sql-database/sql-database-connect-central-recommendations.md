@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen"
-	description="Ein Themeneinstieg, der Links und Empfehlungen für Client-Programme für das Aufbauen von Verbindungen mit Azure SQL-Datenbank mit Technologien wie ADO.NET und PHP zusammenfasst."
-	services="sql-database"
-	documentationCenter=""
-	authors="MightyPen"
-	manager="jeffreyg"
+	pageTitle="Herstellen einer Verbindung mit SQL-Datenbank: Bewährte Methoden | Microsoft Azure" 
+	description="Ein Themeneinstieg, der Links und bewährte Empfehlungen für Client-Programme für das Aufbauen von Verbindungen mit Azure SQL-Datenbank mit Technologien wie ADO.NET und PHP zusammenfasst." 
+	services="sql-database" 
+	documentationCenter="" 
+	authors="MightyPen" 
+	manager="jeffreyg" 
 	editor=""/>
 
 
 <tags 
-	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/02/2015"
+	ms.service="sql-database" 
+	ms.workload="data-management" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/15/2015" 
 	ms.author="genemi"/>
 
 
@@ -77,7 +77,10 @@ Weitere Informationen finden Sie unter [enthaltenen Datenbanken](http://msdn.mic
  - Sie können die Einstellungen für die Firewall auf einem SQL-Datenbankserver oder für eine einzelne Datenbank konfigurieren.
 
 
-- Zum Behandeln *vorübergehender Fehler* fügen Sie Ihren Clientprogrammen, die mit der Azure SQL-Datenbank interagieren, [Logik für *Wiederholungsversuche*](#TransientFaultsAndRetryLogicGm) hinzu.
+- Wenn Ihr Clientprogramm eine Verbindung mit SQL-Datenbank V12 herstellt, wobei der Client auf einem virtuellen Azure-Computer ausgeführt wird, müssen Sie die Portbereiche 11000 11999 und 14000-14999 auf dem virtuellen Computer öffnen. Klicken Sie [hier](sql-database-develop-direct-route-ports-adonet-v12.md), um ausführliche Informationen zu erhalten.
+
+
+- Um *vorübergehende Fehler* zu behandeln, fügen Sie Ihren Clientprogrammen, die mit der Azure SQL-Datenbank interagieren, [Logik für *Wiederholungsversuche*](#TransientFaultsAndRetryLogicGm) hinzu.
 
 
 ### Verbindungspool
@@ -164,4 +167,4 @@ Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unt
 
 - [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/21/2015"
+   ms.date="09/10/2015"
    ms.author="banders" />
 
 # Entdecken Sie die Sicherheits- und Überwachungsdaten in Operational Insights
@@ -100,4 +100,4 @@ Alle Überwachungsdaten, die Sie erfassen und an Operational Insights senden mö
 
 Wenn Sie zusätzlich zu den lokalen Richtlinieneinstellungen AppLocker zur Erfassung der Überwachungsdaten verwenden, wird Operational Insights diese Daten erfassen und dann können Sie sie ansehen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

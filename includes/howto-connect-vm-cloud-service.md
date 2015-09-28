@@ -1,4 +1,4 @@
-Virtuelle Computer, die in der Dienstverwaltung erstellt werden, sind immer mit einem Clouddienst verbunden. Der Clouddienst fungiert als Container und stellt einen eindeutigen öffentlichen DNS-Namen, eine öffentliche IP-Adresse und einen Satz von Endpunkten bereit, damit auf den virtuellen Computer über das Internet zugegriffen werden kann. Der Clouddienst kann optional auch in einem virtuellen Netzwerk sein.
+Virtuelle Computer, die mit dem Bereitstellungsmodell der Dienstverwaltung erstellt werden, befinden sich immer in einem Clouddienst. Der Clouddienst fungiert als Container und stellt einen eindeutigen öffentlichen DNS-Namen, eine öffentliche IP-Adresse und einen Satz von Endpunkten bereit, damit auf den virtuellen Computer über das Internet zugegriffen werden kann. Der Clouddienst kann sich in einem virtuellen Netzwerk befinden, was jedoch nicht zwingend erforderlich ist.
 
 Befindet sich ein Clouddienst nicht in einem virtuellen Netzwerk, handelt es sich um einen *eigenständigen* Clouddienst. Die virtuellen Computer in einem eigenständigen Clouddienst können mit anderen virtuellen Computern nur über deren öffentliche DNS-Namen kommunizieren. Dieser Datenverkehr läuft über das Internet. Wenn ein Clouddienst mit einem virtuellen Netzwerk verbunden ist, können die virtuellen Computer in diesem Clouddienst mit allen anderen virtuellen Computern in dem virtuellen Netzwerk kommunizieren, ohne dass Daten über das Internet gesendet werden.
 
@@ -42,4 +42,4 @@ Nachdem Sie einen virtuellen Computer erstellt haben, empfiehlt es sich, einen D
 
 [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](../articles/virtual-machines/storage-windows-attach-disk.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

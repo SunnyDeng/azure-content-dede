@@ -3,7 +3,7 @@
 	description="Verwenden des Azure-Vorschauportals oder der VMAccess-Erweiterung für Linux zum Zurücksetzen der Kennwörter und SSH-Schlüssel, um SSH-Konfigurationen zurückzusetzen und Linux-Benutzer zu löschen"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/28/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 # Gewusst wie: Zurücksetzen eines Kennworts oder einer SSH für virtuelle Linux-Computer #
 
@@ -263,4 +263,4 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 [Azure-VM-Erweiterungen und Features]: http://msdn.microsoft.com/library/azure/dn606311.aspx
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH]: http://msdn.microsoft.com/library/azure/dn535788.aspx
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

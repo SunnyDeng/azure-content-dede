@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="07/21/2015"
+   ms.date="09/10/2015"
    ms.author="banders" />
 
 # Suchen nach Daten in Operational Insights
@@ -451,7 +451,7 @@ Type=PerfHourly  CounterName="% Processor Time"  InstanceName="_Total" | Measure
 
 Wenn Sie mit Microsoft System Center – Operations Manager vertraut sind, können Sie sich den "Where"-Befehl in der Management Pack-Terminologie denken. Wenn das Beispiel eine Regel wäre, wäre der erste Teil der Abfrage die Datenquelle und der "Where"-Befehl wäre die Bedingungserkennung.
 
-Sie können die Abfrage als Kachel in **Mein Dashboard** verwenden, als eine Art Überwachung, wenn die CPUs des Computers stark ausgelastet sind. Weitere Informationen zu Dashboards finden Sie unter [Operational Insights-Dashboards](operational-insights-use-dashboards). Sie können Dashboards auch mithilfe der mobilen App erstellen und verwenden. Weitere Informationen finden Sie unter [Azure Operational Insights – Mobile App ](http://www.windowsphone.com/de-de/store/app/operational-insights/4823b935-83ce-466c-82bb-bd0a3f58d865). In den unteren beiden Kacheln der folgenden Abbildung bekommen Sie den Monitor als Liste und als Zahl angezeigt. Im Wesentlichen sollte die Zahl immer 0 (null) sein und die Liste leer. Andernfalls könnte es eine Warnungsbedingung geben. Bei Bedarf können sie die Abfrage auch nutzen, um einen Blick auf überlastete Computer zu werden.
+Sie können die Abfrage als Kachel in **Mein Dashboard** verwenden, als eine Art Überwachung, wenn die CPUs des Computers stark ausgelastet sind. Weitere Informationen zu Dashboards finden Sie unter [Operational Insights-Dashboards](operational-insights-use-dashboards). Sie können Dashboards auch mithilfe der mobilen App erstellen und verwenden. Weitere Informationen finden Sie unter [Azure Operational Insights – Mobile App ](http://www.windowsphone.com/de-DE/store/app/operational-insights/4823b935-83ce-466c-82bb-bd0a3f58d865). In den unteren beiden Kacheln der folgenden Abbildung bekommen Sie den Monitor als Liste und als Zahl angezeigt. Im Wesentlichen sollte die Zahl immer 0 (null) sein und die Liste leer. Andernfalls könnte es eine Warnungsbedingung geben. Bei Bedarf können sie die Abfrage auch nutzen, um einen Blick auf überlastete Computer zu werden.
 
 !["mobile dashboard" ("mobiles Dashboard")](./media/operational-insights-search/search-mobile.png)
 
@@ -615,7 +615,7 @@ Sie können Datum/Zeit mit mathematischen Operatoren verketten, z. B.:
 Die folgende Tabelle enthält die unterstützten Datums-/Uhrzeit-Einheiten.
 
 Einheit für Datum/Uhrzeit|Beschreibung
----|--- 
+---|---
 YEAR, YEARS|Rundet auf das aktuelle Jahr oder versetzt um die angegebene Anzahl von Jahren.
 MONTH, MONTHS|Rundet auf den aktuellen Monat oder versetzt um die angegebene Anzahl von Monaten.
 DAY, DAYS, DATE|Rundet auf den aktuellen Tag des Monats oder versetzt um die angegebene Anzahl von Tagen.
@@ -2049,4 +2049,4 @@ Wenn Sie Suche verwenden, um Daten zu finden, zeigen die Ergebnisse verschiedene
 ## Weitere Ressourcen
 Stefan Roth hat einen praktisch Spickzettel für die Suche erstellt. Besuchen Sie seinen [Blog](http://stefanroth.net/2014/11/05/microsoft-azure-operational-insights-search-data-explorer-cheat-sheet/), um mehr zu erfahren und seinen Spickzettel herunterzuladen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

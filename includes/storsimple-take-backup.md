@@ -1,3 +1,4 @@
+<!--author=alkohli last changed: 9/17/15-->
 
 ### So erstellen Sie eine Sicherung
 
@@ -24,4 +25,8 @@
 
 Sie haben die Gerätekonfiguration abgeschlossen.
 
-<!---HONumber=August15_HO6-->
+![Video verfügbar](./media/storsimple-take-backup/Video_icon.png) **Video verfügbar**
+
+Sie können sich [hier](http://azure.microsoft.com/documentation/videos/take-a-storsimple-backup/) ein Video anschauen, in dem das Erstellen einer StorSimple-Sicherung demonstriert wird.
+
+<!---HONumber=Sept15_HO3-->

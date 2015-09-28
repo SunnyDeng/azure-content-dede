@@ -5,15 +5,15 @@
 	documentationCenter=""
 	authors="cephalin"
 	manager="wpickett"
-	editor=""/>
+	editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/08/2015"
+	ms.date="09/15/2015"
 	ms.author="cephalin"/>
 
 
@@ -22,6 +22,8 @@
 Dieses Tutorial zeigt, wie eine aus [Microservices](https://en.wikipedia.org/wiki/Microservices) bestehende Anwendung in [Azure App Service](/services/app-service/) als eine Einheit und in vorhersagbarer Weise mithilfe von JSON-Ressourcengruppenvorlagen und PowerShell-Skripts bereitgestellt wird.
 
 Beim Bereitstellen umfassender Anwendungen, die aus stark entkoppelten Microservices bestehen, sind Wiederholbarkeit und Vorhersagbarkeit von entscheidender Bedeutung für den Erfolg. [Azure App Service](/services/app-service/) ermöglicht Ihnen, Microservices zu erstellen, die Web-, mobile, API- und Logik-Apps enthalten. Mit dem [Azure-Ressourcen-Manager](../resource-group-overview.md) können Sie alle Microservices zusammen mit Ressourcenabhängigkeiten, wie z. B. Datenbank- und Quellcodeverwaltungseinstellungen, als Einheit verwalten. Jetzt können Sie auch eine solche Anwendung mit JSON-Vorlagen und einfachen PowerShell-Skripts bereitstellen.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Aufgaben ##
 
@@ -303,4 +305,4 @@ Erfahren Sie, wie Sie [agile Methoden umsetzen und Ihre aus Microservices besteh
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

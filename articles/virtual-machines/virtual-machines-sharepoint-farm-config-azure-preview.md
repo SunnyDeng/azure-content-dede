@@ -10,7 +10,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows-sharepoint"
+	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/07/2015"
@@ -18,6 +18,8 @@
 
 
 # SharePoint-Serverfarm-Konfigurationsdetails
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 Die SharePoint-Serverfarm ist ein Feature des Azure-Vorschauportals für die automatische Erstellung einer vorkonfigurierten SharePoint Server 2013-Farm für Sie. Es gibt zwei Farmkonfigurationen:
 
@@ -139,4 +141,4 @@ Die SharePoint-Serverfarm-Funktion des Azure-Vorschauportals erstellt virtuelle 
 
 [Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

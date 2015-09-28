@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-android" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/19/2015" 
+	ms.date="09/16/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
@@ -86,4 +86,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Azure Mobile Services-Komponente]: http://components.xamarin.com/view/azure-mobile-services/
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

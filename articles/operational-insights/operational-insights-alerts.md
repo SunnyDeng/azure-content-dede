@@ -6,16 +6,14 @@
    authors="bandersmsft"
    manager="jwhit"
    editor="" />
-
 <tags
    ms.service="operational-insights"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/05/2015"
+   ms.date="09/10/2015"
    ms.author="banders" />
-
 
 
 
@@ -60,4 +58,4 @@ Im Dashboard **Alert Management** können Sie alle Warnungen anzeigen, die Micro
 
 [AZURE.INCLUDE [operational-insights-export](../../includes/operational-insights-export.md)]
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/04/2015" 
+	ms.date="09/15/2015" 
 	ms.author="genemi"/>
 
 
@@ -72,7 +72,9 @@ Der Ablauf ist wie folgt:
 Stellen Sie sicher, dass der Portbereich von 11000 bis 11999 und 14000 bis 14999 auf Ihrem Azure-Clientcomputer für ADO.NET 4.5-Clientinteraktionen mit SQL-Datenbank V12 verfügbar ist.
 
 - Insbesondere dürfen Ports in diesem Bereich keine anderen ausgehenden Blockierungen aufweisen.
-- Die Windows-Firewall auf Ihrer Azure-VM steuert die Porteinstellungen.
+
+- Auf Ihrer Azure-VM steuert die **Windows-Firewall mit erweiterter Sicherheit** die Porteinstellungen.
+ - Sie können die [Benutzeroberfläche der Firewall](http://msdn.microsoft.com/library/cc646023.aspx) verwenden, um eine Regel hinzuzufügen, für die Sie das **TCP**-Protokoll sowie einen Portbereich mit einer Syntax wie **11000 11999** angeben.
 
 
 ## Erläuterungen zu Versionen
@@ -112,4 +114,4 @@ In diesem Thema werden die Unterschiede bei der Clientverbindung zwischen SQL-Da
 
 - [Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen](sql-database-connect-central-recommendations.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

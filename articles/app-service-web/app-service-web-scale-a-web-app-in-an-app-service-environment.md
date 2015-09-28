@@ -5,20 +5,22 @@
 	documentationCenter="" 
 	authors="ccompy" 
 	manager="stefsch" 
-	editor=""/>
+	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="04/27/2015" 
+	ms.date="09/16/2015" 
 	ms.author="ccompy"/>
 
 # Skalieren von Web-Apps in einer App Service-Umgebung #
 
 Allgemein betrachtet sind App Service-Umgebungen im Wesentlichen persönliche Bereitstellungen von Azure App Service im VNET und nur über Ihr Abonnement verwaltbar. Sie bieten neue Netzwerkfunktionen, da sie in das VNET integriert sind und in höherem Maß skalierbar sind, als dies normalerweise in Azure App Service-Umgebungen möglich ist. Weitere Informationen rund um das Thema App Service-Umgebung finden Sie unter [Was ist eine App Service-Umgebung?][WhatisASE]. Weitere Informationen zum Erstellen einer App Service-Umgebung oder zum Erstellen einer Web-App in einer App Service-Umgebung finden Sie unter [Erstellen einer App Service-Umgebung][HowtoCreateASE] und [Erstellen einer Web-App in einer App Service-Umgebung][CreateWebappinASE].
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 Denken Sie daran: Wenn Sie normalerweise ein Skalierungsattribut für eine Web-App ändern, wird diese Änderung auf Ebene des App Service-Plans durchgeführt. Nähere Informationen zum Skalieren von App Service-Plänen oder zu App Service-Plänen außerhalb von App Service-Umgebungen finden Sie unter [Skalieren eine Web-App in Azure App Service][ScaleWebapp] und [App Service-Pläne: ausführliche Übersicht][Appserviceplans].
 
@@ -84,4 +86,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

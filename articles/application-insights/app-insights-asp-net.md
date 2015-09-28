@@ -148,9 +148,18 @@ Wenn Sie eine neue User Story bereitgestellt haben, möchten Sie wissen, wie vie
 
 Wenn Sie Ihre App noch nicht veröffentlicht haben (seit Sie Application Insights hinzugefügt haben), holen Sie dies jetzt nach. Beobachten Sie die Datenzunahme in den Diagrammen, wenn Personen Ihre App verwenden.
 
+
+#### Keine Daten nach dem Veröffentlichen auf Ihrem Server?
+
+Öffnen Sie diese Ports für den ausgehenden Datenverkehr in der Firewall des Servers:
+
++ `dc.services.visualstudio.com:443`
++ `f5.services.visualstudio.com:443`
+
 ### Trennen der Ressourcen für Entwicklung, Test und Freigabe
 
 Bei größeren Anwendungen ist es ratsam, Telemetriedaten vom Debuggen, Testen und aus der Produktion an [getrennte Ressourcen](app-insights-separate-resources.md) zu senden.
+
 
 
 
@@ -166,7 +175,7 @@ Dieser Schritt ermöglicht außerdem [Berichte zu Leistungsindikatoren](app-insi
 
 Melden Sie sich auf dem Server mit Administratorrechten an, und installieren Sie den [Application Insights-Statusmonitor](http://go.microsoft.com/fwlink/?LinkId=506648).
 
-(Sie können den Statusmonitor auch zum [Instrumentieren einer bereits ausgeführten App](app-insights-monitor-performance-live-website-now.md) verwenden, auch wenn diese nicht mit dem SDK erstellt wurde.)
+Sie müssen sicherstellen, dass einige [zusätzliche Ports in der Firewall des Servers geöffnet sind](app-insights-monitor-performance-live-website-now.md#troubleshooting).
 
 #### Wenn Ihre App eine Azure-Web-App ist
 
@@ -226,4 +235,4 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

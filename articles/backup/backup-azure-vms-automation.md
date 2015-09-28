@@ -7,14 +7,7 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags
-	ms.service="backup"
-	ms.workload="storage-backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
-	ms.author="aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/16/2015" ms.author="trinadhk";"aashishr" />
 
 
 # Bereitstellen und Verwalten von Sicherungen für Azure-VMs mit PowerShell
@@ -31,7 +24,11 @@ Die beiden wichtigsten Abläufe sind das Aktivieren des Schutzes für einen virt
 
 
 ## Einrichtung und Registrierung
-Aktivieren Sie zunächst die Azure Backup-Cmdlets, indem Sie mithilfe des Cmdlets **Switch-AzureMode** in den *AzureResourceManager*-Modus wechseln:
+Vorbereitung:
+
+1. [Laden Sie die neueste PowerShell herunter](https://github.com/Azure/azure-powershell/releases) (erforderliche Mindestversion ist 0.9.8).
+
+2. Aktivieren Sie die Azure Backup-Cmdlets, indem Sie über das Cmdlet **Switch-AzureMode** in den *AzureResourceManager*-Modus wechseln:
 
 ```
 PS C:\> Switch-AzureMode AzureResourceManager
@@ -49,8 +46,8 @@ Die folgenden Installations- und Registrierungsaufgaben können mit PowerShell a
 Sie können mit dem Cmdlet **New-AzureRMBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
 
 ```
-PS C:\> New-AzureRMResourceGroup –Name “test-rg” –Region “West US”
-PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GRS
+PS C:\> New-AzureResourceGroup –Name “test-rg” –Region “West US”
+PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GeoRedundant
 ```
 
 Mit dem Cmdlet **Get-AzureRMBackupVault** können Sie eine Liste aller Sicherungstresore in einem bestimmten Abonnement abrufen.
@@ -59,7 +56,7 @@ Mit dem Cmdlet **Get-AzureRMBackupVault** können Sie eine Liste aller Sicherung
 
 
 ### Registrieren der virtuellen Computer
-Der erste Schritt zum Konfigurieren der Sicherung mit Azure Backup besteht darin, Ihren Computer oder virtuellen Computer bei einem Azure-Sicherungstresor zu registrieren. Das Cmdlet **Register-AzureRMBackupContainer** verwendet die Eingabeinformationen einer Azure-IaaS-VM, um diese beim angegebenen Tresor zu registrieren. Der Registrierungsvorgang ordnet den virtuellen Azure-Computer dem Sicherungstresor zu und verfolgt den virtuellen Computer über den gesamten Sicherungslebenszyklus hinweg.
+Der erste Schritt zum Konfigurieren der Sicherung mit Azure Backup besteht darin, Ihren Computer oder virtuellen Computer bei einem Azure-Sicherungstresor zu registrieren. Das Cmdlet **Register-AzureRMBackupContainer** verwendet die Eingabeinformationen eines virtuellen Azure-IaaS-Computers, um diesen beim angegebenen Tresor zu registrieren. Der Registrierungsvorgang ordnet den virtuellen Azure-Computer dem Sicherungstresor zu und verfolgt den virtuellen Computer über den gesamten Sicherungslebenszyklus hinweg.
 
 Durch die Registrierung des virtuellen Computers beim Azure Backup-Dienst wird ein Containerobjekt der obersten Ebene erstellt. Ein Container enthält i. d. R. mehrere Elemente, die gesichert werden können. Bei virtuellen Computern enthält der Container jedoch nur ein Sicherungselement.
 
@@ -148,7 +145,7 @@ PS C:\> $backupitem = Get-AzureBackupContainer -Vault $backupvault -Type AzureVM
 
 ### Auswählen eines Wiederherstellungspunkts
 
-Sie können jetzt alle Wiederherstellungspunkte für das Sicherungselement mithilfe des Cmdlets **Get-AzureRMBackupRecoveryPoint** auflisten und anschließend den Wiederherstellungspunkt auswählen. Die meisten Benutzer wählen den neuesten Wiederherstellungspunkt vom Typ *AppConsistent* in der Liste aus.
+Sie können jetzt alle Wiederherstellungspunkte für das Sicherungselement mithilfe des Cmdlets **Get-AzureRMBackupRecoveryPoint** auflisten und anschließend den Wiederherstellungspunkt auswählen. Üblicherweise wählen Benutzer den neuesten *AppConsistent*-Punkt in der Liste aus.
 
 ```
 PS C:\> $rp =  Get-AzureRMBackupRecoveryPoint -Item $backupitem
@@ -234,4 +231,4 @@ Weitere Informationen zum Erstellen eines virtuellen Computers aus den wiederher
 - [New-AzureVMConfig](https://msdn.microsoft.com/library/azure/dn495159.aspx)
 - [New-AzureVM,](https://msdn.microsoft.com/library/azure/dn495254.aspx)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

@@ -1,23 +1,23 @@
-<properties 
-	pageTitle="Dynamische Paketerstellung – Übersicht" 
-	description="In diesem Thema finden Sie eine Übersicht über die dynamische Paketerstellung." 
-	authors="Juliako" 
-	manager="dwrede" 
-	editor="" 
-	services="media-services" 
+<properties
+	pageTitle="Dynamische Paketerstellung – Übersicht"
+	description="In diesem Thema finden Sie eine Übersicht über die dynamische Paketerstellung."
+	authors="Juliako"
+	manager="dwrede"
+	editor=""
+	services="media-services"
 	documentationCenter=""/>
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/07/2015" 
+<tags
+	ms.service="media-services"
+	ms.workload="media"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/07/2015"
 	ms.author="juliako"/>
 
 
-#Dynamische Paketerstellung 
+#Dynamische Paketerstellung
 
 ##Übersicht
 
@@ -38,14 +38,14 @@ Im folgenden Diagramm wird der Workflow zur dynamischen Paketerstellung dargeste
 
 ##Allgemeines Szenario
 
-1. Laden Sie eine Eingabedatei (auch Mezzaninedatei genannt) hoch. Beispielformate: H.264, MP4 oder WMV (eine Liste unterstützter Formate finden Sie unter „Von Media Services Encoder unterstützte Formate“).
- 
+1. Laden Sie eine Eingabedatei (auch Mezzaninedatei genannt) hoch. Beispielformate: H.264, MP4 oder WMV (eine Liste unterstützter Formate finden Sie unter [Von Media Services Encoder unterstützte Formate](media-services-azure-media-encoder-formats)).
+
 1. Codieren Sie Ihre Mezzaninedatei zu H.264-MP4-Sätzen mit adaptiver Bitrate.
- 
+
 1. Veröffentlichen Sie das Medienobjekt, das den MP4-Satz mit adaptiver Bitrate enthält, indem Sie den On-Demand-Locator erstellen.
- 
+
 1. Erstellen Sie die Streaming-URLs zum Zugreifen und Streamen Ihrer Inhalte.
- 
+
 >[AZURE.NOTE]Es werden nicht alle MP4-Dateiformate von der dynamischen Paketerstellung unterstützt. Weitere Informationen finden Sie unter [Formats that are not supported by dynamic packaging](media-services-dynamic-packaging-overview.md#unsupported_formats) (Formate, die nicht von der dynamischen Paketerstellung unterstützt werden).
 
 ##Vorbereiten von Medienobjekten auf dynamisches Streaming
@@ -65,7 +65,7 @@ Laden Sie Ihre Dateien mithilfe des **Azure-Verwaltungsportals**, mithilfe von *
 [AZURE.INCLUDE [media-services-selector-upload-files](../../includes/media-services-selector-upload-files.md)]
 
 Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des **Azure-Verwaltungsportals**, mithilfe von **.NET**, oder **REST-API** aus.
- 
+
 [AZURE.INCLUDE [media-services-selector-encode](../../includes/media-services-selector-encode.md)]
 
 
@@ -105,6 +105,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 - [Media Services - Live Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-live/) (in englischer Sprache)
 - [Media Services - on Demand Streaming](http://azure.microsoft.com/documentation/learning-paths/media-services-streaming-on-demand/) (in englischer Sprache)
 
- 
-
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

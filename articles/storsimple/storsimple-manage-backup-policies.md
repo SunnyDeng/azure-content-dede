@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Verwalten von StorSimple-Sicherungsrichtlinien | Microsoft Azure"
-	description="Beschreibt, wie Sie den StorSimple Manager-Dienst zum Erstellen und Verwalten von manuellen Sicherungen, Sicherungszeitplänen und zur Sicherungsaufbewahrung verwenden können."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt, wie Sie den StorSimple Manager-Dienst zum Erstellen und Verwalten von manuellen Sicherungen, Sicherungszeitplänen und zur Sicherungsaufbewahrung verwenden können."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor=""/>
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/27/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/15/2015"
+   ms.author="v-sharos"/>
 
 # Verwalten von Sicherungsrichtlinien mithilfe des StorSimple Manager-Diensts
 
@@ -53,6 +53,10 @@ Fügen Sie eine Sicherungsrichtlinie zum automatischen Planen Ihrer Sicherungen 
 
 [AZURE.INCLUDE [storsimple-add-backup-policy](../../includes/storsimple-add-backup-policy.md)]
 
+![Video verfügbar](./media/storsimple-manage-backup-policies/Video_icon.png) **Video verfügbar**
+
+Sie können sich [hier](http://azure.microsoft.com/documentation/videos/create-storsimple-backup-policies/) ein Video anschauen, in dem das Erstellen einer lokalen Sicherungsrichtlinie oder einer Sicherungsrichtlinie in der Cloud demonstriert wird.
+
 
 ## Hinzufügen oder Ändern eines Zeitplans
 
@@ -82,6 +86,6 @@ Führen Sie die folgenden Schritte im Verwaltungsportal aus, um eine benutzerdef
 
 ## Nächste Schritte
 
-Erfahren Sie mehr über das [Verwenden von StorSimple Snapshot Manager zum Anzeigen und Verwalten von Sicherungsaufträgen](storsimple-snapshot-manager-manage-backup-jobs.md).
+- Erfahren Sie mehr über das [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

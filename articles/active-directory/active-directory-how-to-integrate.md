@@ -1,20 +1,20 @@
 <properties
    pageTitle="Integration in Azure Active Directory"
-	description="Eine Übersicht für die Vorteile und Ressourcen für die Integration in Azure Active Directory."
-	services="active-directory"
-	documentationCenter="dev-center-name"
-	authors="msmbaldwin"
-	manager="mbaldwin"
-	editor=""/>
+   description="Eine Übersicht für die Vorteile und Ressourcen für die Integration in Azure Active Directory."
+   services="active-directory"
+   documentationCenter="dev-center-name"
+   authors="msmbaldwin"
+   manager="mbaldwin"
+   editor=""/>
 
 <tags
    ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
-	ms.date="08/25/2015"
-	ms.author="mbaldwin"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
+   ms.date="08/25/2015"
+   ms.author="mbaldwin"/>
 
 # Integration in Azure Active Directory
 
@@ -34,9 +34,9 @@ Es gibt mehrere Möglichkeiten, Ihre Anwendung in Azure AD zu integrieren. Nutze
 
 ### Suchen nach Benutzern, Verwalten der Benutzerbereitstellung und Steuern des Zugriffs auf Ihre Anwendung
 
-**Suchen nach Benutzern im Verzeichnis.** Verwenden Sie die Graph-API, um Benutzern zu helfen, nach anderen andere Personen in ihrer Organisation zu suchen, wenn diese eingeladen werden sollen oder Zugriff gewährt werden soll, anstatt von ihnen zu verlangen, E-Mail-Adressen einzugeben. Benutzer können auf einer vertrauten Adressbuchoberfläche suchen und beispielsweise Details der Organisationshierarchie anzeigen. Erfahren Sie mehr über die [Graph-API](https://msdn.microsoft.com/library/azure/hh974476.aspx).
+**Suchen nach Benutzern im Verzeichnis.** Verwenden Sie die Graph-API, um Benutzern zu helfen, nach anderen andere Personen in ihrer Organisation zu suchen, wenn diese eingeladen werden sollen oder Zugriff gewährt werden soll, anstatt von ihnen zu verlangen, E-Mail-Adressen einzugeben. Benutzer können auf einer vertrauten Adressbuchoberfläche suchen und beispielsweise Details der Organisationshierarchie anzeigen. Erfahren Sie mehr über die [Graph-API](active-directory-graph-api.md).
 
-**Wiederverwenden von Active Directory-Gruppen und Verteilerlisten, die Ihr Kunde bereits verwaltet.** Azure AD enthält die Gruppen, die Ihr Kunde bereits für die E-Mail-Verteilung und das Verwalten des Zugriffs verwendet. Verwenden Sie diese Gruppen mithilfe der Graph-API wieder, anstatt vom Kunden zu verlangen, eine getrennte Zusammenstellung von Gruppen in Ihrer Anwendung zu erstellen und zu nutzen. Informationen zu Gruppen können auch in Anmeldetoken an Ihre Anwendung gesendet werden. Erfahren Sie mehr über die [Graph-API](https://msdn.microsoft.com/library/azure/hh974476.aspx).
+**Wiederverwenden von Active Directory-Gruppen und Verteilerlisten, die Ihr Kunde bereits verwaltet.** Azure AD enthält die Gruppen, die Ihr Kunde bereits für die E-Mail-Verteilung und das Verwalten des Zugriffs verwendet. Verwenden Sie diese Gruppen mithilfe der Graph-API wieder, anstatt vom Kunden zu verlangen, eine getrennte Zusammenstellung von Gruppen in Ihrer Anwendung zu erstellen und zu nutzen. Informationen zu Gruppen können auch in Anmeldetoken an Ihre Anwendung gesendet werden. Erfahren Sie mehr über die [Graph-API](active-directory-graph-api.md).
 
 **Verwenden von Azure AD zum Steuern des Zugriffs auf Ihre Anwendung.** Administratoren und Besitzer von Anwendungen in Azure AD können den Zugriff auf Anwendungen bestimmten Benutzern und Gruppen zuweisen. Mithilfe der Graph-API können Sie diese Liste lesen und zum Steuern der Bereitstellung bzw. der Aufhebung der Bereitstellung von Ressourcen und des Zugriffs innerhalb Ihrer Anwendung verwenden.
 
@@ -72,7 +72,7 @@ Die Integration in Azure AD bietet den Vorteil, dass Sie keinen zusätzlichen Co
 
 **Erkennung anomaler Anmeldungen.** Azure AD verarbeitet mehr als eine Milliarde Anmeldungen pro Tag. Dabei kommen Algorithmen für maschinelles Lernen zum Erkennen verdächtiger Aktivitäten zum Einsatz, die IT-Administratoren über mögliche Probleme informieren. Durch die Unterstützung der Azure AD-Anmeldung kommt Ihre Anwendung in den Genuss dieses Schutzes. Erfahren Sie mehr über das [Anzeigen des Azure Active Directory-Zugriffsberichts](active-directory-view-access-usage-reports.md).
 
-**Bedingter Zugriff.** Zusätzlich zur Multi-Factor Authentication können Administratoren anfordern, dass bestimmte Bedingungen erfüllt sein müssen, ehe sich Benutzer bei Ihrer Anwendung anmelden können. Bedingungen, die festgelegt werden können, sind u. a. der IP-Adressbereich von Clientgeräten, Mitgliedschaft in angegebenen Gruppen und den Status des Geräts, das für den Zugriff verwendet wird. Erfahren Sie mehr über den [bedingten Azure Active Directory-Zugriff](https://msdn.microsoft.com/library/azure/dn906873.aspx).
+**Bedingter Zugriff.** Zusätzlich zur Multi-Factor Authentication können Administratoren anfordern, dass bestimmte Bedingungen erfüllt sein müssen, ehe sich Benutzer bei Ihrer Anwendung anmelden können. Bedingungen, die festgelegt werden können, sind u. a. der IP-Adressbereich von Clientgeräten, Mitgliedschaft in angegebenen Gruppen und den Status des Geräts, das für den Zugriff verwendet wird. Erfahren Sie mehr über den [bedingten Azure Active Directory-Zugriff](active-directory-conditional-access.md).
 
 ### Einfache Entwicklung
 
@@ -90,4 +90,4 @@ Die Integration in Azure AD bietet den Vorteil, dass Sie keinen zusätzlichen Co
 
 [Anmelden von Benutzern über Azure AD](active-directory-authentication-scenarios.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

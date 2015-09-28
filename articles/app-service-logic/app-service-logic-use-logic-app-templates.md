@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/24/2015"
+	ms.date="09/15/2015"
 	ms.author="klam"/>
 
 # Verwenden von Logik-App-Vorlagen
 
 Bei Logik-App-Vorlagen handelt es sich um eine Gruppe von geordneten, vorgefertigten Logik-Apps, mit denen Sie schnell in die Erstellung eigener Integrationsanwendungen einsteigen können.
 
-Diese Vorlagen zeigen, wie einige der vielen Connector im Marketplace verwendet werden. Außerdem eignen sich die Vorlagen gut, um verschiedene Muster kennenzulernen, die mit Logik-Apps erstellt werden können. Sie können diese unverändert nutzen oder für Ihr Szenario anpassen. Um mit der Verwendung von Logik-App-Vorlagen zu beginnen, wechseln Sie zum Marketplace und wählen "Logik-Apps". Wählen Sie eine der Logik-App-Vorlagen aus der Liste der geordneten Vorlagen.
+Diese Vorlagen zeigen, wie einige der vielen Connector im Marketplace verwendet werden. Außerdem eignen sich die Vorlagen gut, um verschiedene Muster kennenzulernen, die mit Logik-Apps erstellt werden können. Sie können diese unverändert nutzen oder für Ihr Szenario anpassen. Für die ersten Schritte mit einer Vorlage für Logik-Apps besuchen Sie entweder den Marketplace, suchen nach "Logik-App-Vorlagen" und wählen eine der Logik-App-Vorlagen aus der Liste der geordneten Vorlagen aus, oder Sie wählen beim Erstellen einer neuen Logik-App "Trigger und Aktionen" aus und treffen eine Auswahl aus der Gruppe der Logik-App-Vorlagen im Designer.
 
 ### SaaS- und Cloud-Vorlagen
 Beispiele für die Integration verschiedener SaaS-Connectors. Hier finden Sie verschiedene Beispiele für die Integration von Salesforce, Box, SharePoint und anderen Diensten.
@@ -40,4 +40,4 @@ Einfache Vorlagen für die Integration in soziale Netzwerkdienste, wie z. B. Tw
 Nachdem Sie eine der Vorlagen ausgewählt haben, führen Sie die Bereitstellungsschritte durch, wie Sie es bei Ihrer eigenen Logik-App auch tun würden. Weitere Informationen finden Sie unter [Erstellen einer Logik-App](app-service-logic-create-a-logic-app.md).
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

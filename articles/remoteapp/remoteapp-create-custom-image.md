@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen eines benutzerdefinierten Vorlagenimages für Azure RemoteApp"
+	pageTitle="Erstellen eines benutzerdefinierten Vorlagenimages für Azure RemoteApp | Microsoft Azure"
 	description="Erfahren Sie, wie Sie ein benutzerdefiniertes Vorlagenimage für Azure RemoteApp erstellen. Sie können diese Vorlage entweder mit einer Hybrid- oder einer Cloudsammlung verwenden."
 	services="remoteapp"
 	documentationCenter=""
@@ -13,11 +13,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/12/2015" 
+	ms.date="09/12/2015" 
 	ms.author="elizapo"/>
 
 # Erstellen eines benutzerdefinierten Vorlagenimages für Azure RemoteApp
-Azure RemoteApp verwendet ein Windows Server 2012 R2-Vorlagenimage, um alle Programme zu hosten, die Sie an die Benutzer freigeben möchten. Um ein benutzerdefiniertes RemoteApp-Vorlagenimage zu erstellen, beginnen Sie mit einem bestehenden Abbild oder erstellen Sie ein neues. Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll, muss folgende Anforderungen erfüllen:
+Azure RemoteApp verwendet ein Windows Server 2012 R2-Vorlagenimage, um alle Programme zu hosten, die Sie an die Benutzer freigeben möchten. Um ein benutzerdefiniertes RemoteApp-Vorlagenimage zu erstellen, beginnen Sie mit einem bestehenden Abbild oder erstellen Sie ein neues.
+
+
+> [AZURE.TIP]Wussten Sie, dass Sie für eine Azure-VM ein Image erstellen können? Das stimmt. So wird der Zeitaufwand für das Importieren des Images reduziert. Die entsprechenden Schritte sind [hier](remoteapp-image-on-azurevm.md) angegeben.
+
+Das Abbild, das für die Verwendung mit Azure RemoteApp hochgeladen werden soll, muss folgende Anforderungen erfüllen:
 
 
 - Die Größe des Abbilds sollte ein Vielfaches der Einheit MB (1.024 KB) betragen. Wenn Sie versuchen, ein Abbild hochzuladen, das kein exaktes Vielfaches ist, treten beim Upload Fehler auf.
@@ -33,7 +38,6 @@ Azure RemoteApp verwendet ein Windows Server 2012 R2-Vorlagenimage, um alle Prog
 - Das Abbild muss mit SYSPREP unter Verwendung der Parameter **/oobe /generalize /shutdown** vorbereitet werden. Verwenden Sie nicht den Parameter **/mode:vm**.
 - VHD-Uploads aus einer Momentaufnahmenkette werden nicht unterstützt.
 
-> [AZURE.TIP]Wussten Sie, dass Sie für eine Azure-VM jetzt ein Image erstellen können? Das stimmt. So wird der Zeitaufwand für das Importieren des Images reduziert. Die entsprechenden Schritte sind [hier](remoteapp-image-on-azurevm.md) angegeben.
 
 **Voraussetzungen**
 
@@ -56,7 +60,7 @@ Grundsätzlich müssen diese Schritte ausgeführt werden, um ein neues Vorlageni
 4.	Installieren Sie Windows Server 2012 R2
 5.	Installieren Sie die RDSH-Rolle (Remote Desktop Session Host) und das Desktopdarstellung-Feature.
 6.	Installieren Sie weitere, von den Anwendungen benötigte Features.
-7.	Installieren und konfigurieren Sie die Anwendungen.
+7.	Installieren und konfigurieren Sie die Anwendungen. Um die gemeinsame Nutzung von Apps zu vereinfachen, fügen Sie alle Apps oder Programme, die Sie freigeben möchten, in das **Startmenü** des Images hinzu, insbesondere in „**%systemdrive%\\ProgramData\\Microsoft\\Windows\\Start \\Programme“.
 8.	Führen Sie weitere, von den Anwendungen benötigte Windows-Konfigurationen aus.
 9.	Deaktivieren Sie Encrypting File System (EFS).
 10.	**ERFORDERLICH:** Wechseln Sie zu Windows Update, und installieren Sie alle wichtigen Updates.
@@ -106,11 +110,12 @@ Dies sind die einzelnen Schritte zum Erstellen eines neuen Abbilds:
 1.	Installieren Sie die für Ihre Anwendungen benötigten zusätzlichen Features, wie z. B. .NET Framework 3.5. Führen Sie dazu den Assistenten zum Hinzufügen von Rollen und Features aus.
 7.	Installieren und konfigurieren Sie die Programme und Anwendungen, die Sie über RemoteApp veröffentlichen möchten.
 
- 	**Wichtig:**
+>[AZURE.IMPORTANT]
+>
+>Installieren Sie die RDSH-Rolle, bevor Sie Anwendungen installieren. So wird sichergestellt, dass Probleme mit der Anwendungskompatibilität vor dem Hochladen des Images in RemoteApp erkannt werden.
+>
+>Stellen Sie sicher, dass für alle Benutzer eine Verknüpfung zu Ihrer Anwendung (**.lnk**) im **Startmenü** erscheint („%systemdrive%\\ProgramData\\Microsoft\\Windows\\Startmenue\\Programme“). Stellen Sie außerdem sicher, dass das im **Startmenü** angezeigte Symbol demjenigen entspricht, das den Benutzern angezeigt werden soll. Wenn dies nicht der Fall ist, ändern Sie es. (Sie *müssen* die Anwendung nicht zum Startmenü hinzufügen, vereinfachen damit jedoch die Veröffentlichung der Anwendung in RemoteApp. Andernfalls müssen Sie den Installationspfad für die Anwendung bereitstellen, wenn Sie die Anwendung veröffentlichen.)
 
-
-	- Installieren Sie die RDSH-Rolle, bevor Sie Anwendungen installieren. So wird sichergestellt, dass Probleme mit der Anwendungskompatibilität vor dem Hochladen des Images in RemoteApp erkannt werden.
-	- Stellen Sie sicher, dass die Anwendung im Startmenü angezeigt wird. Stellen Sie außerdem sicher, dass das im Startmenü angezeigte Symbol demjenigen entspricht, das den Benutzern angezeigt werden soll. Wenn dies nicht der Fall ist, ändern Sie es. (Sie *müssen* die Anwendung nicht zum Startmenü hinzufügen, vereinfachen damit jedoch die Veröffentlichung der Anwendung in RemoteApp. Andernfalls müssen Sie den Installationspfad für die Anwendung bereitstellen, wenn Sie die Anwendung veröffentlichen.)
 
 8.	Führen Sie weitere, von den Anwendungen benötigte Windows-Konfigurationen aus.
 9.	Deaktivieren Sie Encrypting File System (EFS). Führen Sie in einem Befehlsfenster mit erhöhten Rechten den folgenden Befehl aus:
@@ -120,7 +125,7 @@ Dies sind die einzelnen Schritte zum Erstellen eines neuen Abbilds:
 	Alternativ können Sie in der Registrierung den folgenden DWORD-Wert festlegen oder hinzufügen:
 
 		HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisableEncryption = 1
-9.	Wenn Sie das Abbild in einem virtuellen Azure-Computer erstellen, müssen Sie die Datei **%windir%\\Panther\\Unattend.xml** umbenennen, da sie anderenfalls das Uploadskript blockiert, das in einem der folgenden Schritte verwendet wird. Benennen Sie diese Datei in "Unattend.old" um, damit sie ggf. darauf zurückgreifen können, falls Sie die Bereitstellung rückgängig machen müssen.
+9.	Wenn Sie das Abbild in einem virtuellen Azure-Computer erstellen, müssen Sie die Datei **\\%windir%\\Panther\\Unattend.xml** umbenennen, da sie anderenfalls das Uploadskript blockiert, das in einem der folgenden Schritte verwendet wird. Benennen Sie diese Datei in "Unattend.old" um, damit sie ggf. darauf zurückgreifen können, falls Sie die Bereitstellung rückgängig machen müssen.
 10.	Wechseln Sie zu Windows Update, und installieren Sie alle wichtigen Updates. Möglicherweise müssen Sie Windows Update mehrmals ausführen, um alle Updates zu erhalten. (Manchmal ist für ein von Ihnen installiertes Update direkt ein weiteres Update erforderlich.)
 10.	Bereiten Sie das Abbild mit SYSPREP vor. Führen Sie an einer Eingabeaufforderung mit erhöhten Rechten den folgenden Befehl aus:
 
@@ -133,8 +138,8 @@ Dies sind die einzelnen Schritte zum Erstellen eines neuen Abbilds:
 Nach dem Erstellen des benutzerdefinierten Vorlagenimages müssen Sie dieses Image in die RemoteApp-Sammlung hochladen. Informationen zum Erstellen Ihrer Sammlung finden Sie in den folgenden Artikeln:
 
 
-- [Erstellen einer Hybridsammlung von RemoteApp](remoteapp-create-hybrid-deployment.md)
-- [Erstellen einer Cloudsammlung von RemoteApp](remoteapp-create-cloud-deployment.md)
+- [Erstellen einer Hybrid-Sammlung von RemoteApp](remoteapp-create-hybrid-deployment.md)
+- [Erstellen einer Cloud-Sammlung von RemoteApp](remoteapp-create-cloud-deployment.md)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

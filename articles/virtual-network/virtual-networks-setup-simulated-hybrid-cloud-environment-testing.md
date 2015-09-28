@@ -1,23 +1,25 @@
 <properties 
-	pageTitle="Simulierte Hybrid Cloud-Testumgebung | Microsoft Azure"
-	description="Erstellen Sie eine simulierte Hybrid Cloud-Umgebung für Tests durch IT-Spezialisten oder für Entwicklungstests, indem Sie zwei virtuelle Azure-Netzwerke und eine VNet-zu-VNet-Verbindung verwenden."
-	services="virtual-network"
-	documentationCenter=""
-	authors="JoeDavies-MSFT"
-	manager="timlt"
+	pageTitle="Simulierte Hybrid Cloud-Testumgebung | Microsoft Azure" 
+	description="Erstellen Sie eine simulierte Hybrid Cloud-Umgebung für Tests durch IT-Spezialisten oder für Entwicklungstests, indem Sie zwei virtuelle Azure-Netzwerke und eine VNet-zu-VNet-Verbindung verwenden." 
+	services="virtual-network" 
+	documentationCenter="" 
+	authors="JoeDavies-MSFT" 
+	manager="timlt" 
 	editor=""
 	tags="azure-service-management"/>
 
 <tags 
-	ms.service="virtual-network"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/08/2015"
+	ms.service="virtual-network" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="Windows" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/10/2015" 
 	ms.author="josephd"/>
 
 # Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 In diesem Thema lernen Sie Schritt für Schritt, wie Sie eine simulierte Hybrid Cloud-Umgebung mit Microsoft Azure für Tests mithilfe zweier virtueller Azure-Netzwerke erstellen. Verwenden Sie diese Konfiguration als Alternative zum [Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md), wenn Sie nicht über eine direkte Internetverbindung und eine erreichbare öffentliche IP-Adresse verfügen. Hier sehen Sie die daraus resultierende Konfiguration.
 
@@ -49,14 +51,14 @@ Wenn Sie noch über kein Azure-Abonnement verfügen, können Sie sich unter [Azu
 
 ## Phase 1: Konfigurieren des virtuellen Netzwerks "TestLab"
 
-Erstellen Sie gemäß den Anweisungen zur [Testumgebung "Basiskonfiguration"](../virtual-machines/virtual-machines-base-configuration-test-environment.md) die Computer "DC1", "APP1" und "CLIENT1" in einem virtuellen Azure-Netzwerk mit dem Namen "TestLab".
+Erstellen Sie gemäß den Anweisungen zur [Testumgebung für die Basiskonfiguration](../virtual-machines/virtual-machines-base-configuration-test-environment.md) die Computer "DC1", "APP1" und "CLIENT1" in einem virtuellen Azure-Netzwerk mit dem Namen "TestLab".
 
 Stellen Sie im Azure-Verwaltungsportal auf Ihrem lokalen Computer eine Verbindung mit DC1 her. Verwenden Sie dafür die Anmeldeinformationen für CORP\\User1. Führen Sie die folgenden Befehle von einer Windows PowerShell-Eingabeaufforderung aus, um die CORP-Domäne so zu konfigurieren, dass Computer und Benutzer ihren lokalen Domänencontroller zur Authentifizierung verwenden.
 
 	New-ADReplicationSite -Name "TestLab" 
 	New-ADReplicationSite -Name "TestVNET"
-	New-ADReplicationSubnet –Name "10.0.0.0/8" –Site "TestLab"
-	New-ADReplicationSubnet –Name "192.168.0.0/16" –Site "TestVNET"
+	New-ADReplicationSubnet â€“Name "10.0.0.0/8" â€“Site "TestLab"
+	New-ADReplicationSubnet â€“Name "192.168.0.0/16" â€“Site "TestVNET"
 
 Die aktuelle Konfiguration sieht folgendermaßen aus.
 
@@ -70,16 +72,16 @@ Erstellen Sie zunächst ein neues virtuelles Netzwerk mit dem Namen TestVNET.
 2.	Geben Sie auf der Seite „Details zum virtuellen Netzwerk“ unter **Name** den Namen **TestVNET** ein.
 3.	Wählen Sie unter **Speicherort** den entsprechenden Speicherort aus.
 4.	Klicken Sie auf den „Weiter“-Pfeil.
-5.	Geben Sie auf der Seite "DNS-Server und VPN-Konnektivität" unter **DNS-Server** > **Name auswählen oder eingeben** den Namen **DC1** ein , und klicken Sie dann auf den Pfeil für "Weiter".
+5.	Geben Sie auf der Seite "DNS-Server und VPN-Konnektivität" unter **DNS-Server** im Feld **Name auswählen oder eingeben** den Namen **DC1** ein, und klicken Sie dann auf den Pfeil für "Weiter".
 6.	Führen Sie auf der Seite „Virtuelle Netzwerkadressräume“ folgende Schritte aus:
-	- Wählen Sie unter **Adressraum** > **Start-IP** die **IP 192.168.0.0** aus, oder geben Sie sie ein.
+	- Geben Sie unter **Adressraum** > **Start-IP** den Wert **192.168.0.0** ein, oder wählen Sie den Wert aus.
 	- Klicken Sie unter **Subnetze** auf **Subnetz-1**, und ersetzen Sie den Namen durch **TestSubnet**. 
 	- Klicken Sie in der Spalte **CIDR (Anzahl Adressen)** für TestSubnet auf **/24 (256)**.
 7.	Klicken Sie auf das Symbol „Abgeschlossen“. Warten Sie, bis das virtuelle Netzwerk erstellt ist, bevor Sie fortfahren.
 
-Befolgen Sie anschließend die Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md), um Azure PowerShell auf dem lokalen Computer zu installieren.
+Befolgen Sie anschließend die Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md) zum Installieren von Azure PowerShell auf dem lokalen Computer.
 
-Erstellen Sie dann einen neuen Cloud-Dienst für das virtuelle Netzwerk TestVNET. Sie müssen einen eindeutigen Namen auswählen. Sie können beispielsweise den Namen **TestVNET-***UniqueSequence* wählen, wobei *UniqueSequence* eine Abkürzung für Ihre Organisation ist. Wenn Ihre Organisation z. B. "Tailspin Toys" heißt, können Sie den Cloud-Dienst **TestVNET-Tailspin** nennen.
+Erstellen Sie dann einen neuen Cloud-Dienst für das virtuelle Netzwerk TestVNET. Sie müssen einen eindeutigen Namen auswählen. Sie können beispielsweise den Namen **TestVNET-***UniqueSequence* wählen, wobei *UniqueSequence* eine Abkürzung für Ihre Organisation ist. Wenn Ihre Organisation z. B. "Tailspin Toys" heißt, können Sie den Clouddienst **TestVNET-Tailspin** nennen.
 
 Sie können die Eindeutigkeit des Namens mit diesem Azure PowerShell-Befehl auf dem lokalen Computer testen.
 
@@ -97,24 +99,24 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 
 Erstellen Sie zunächst lokale Netzwerke, die die Adressräume der beiden virtuellen Netzwerke darstellen.
 
-1.	Klicken Sie im Azure-Verwaltungsportal auf dem lokalen Computer auf **Neu > Netzwerkdienste > Virtuelles Netzwerk > Lokales Netzwerk hinzufügen**.
-2.	Geben Sie auf der Seite "Details zum lokalen Netzwerk angeben" unter **Name** den Namen **TestLabLNet** und unter IP-Adresse des **VPN-Geräts** die IP-Adresse **131.107.0.1** ein, und klicken Sie dann auf den Pfeil nach rechts.
-3.	Geben Sie auf der Seite "Adressraum angeben" unter **Start-IP** die IP **10.0.0.0** ein.
-4.	Klicken Sie unter **CIDR (Anzahl Adressen)** auf **/24 (256)** und anschließend auf das Häkchen.
-5.	Klicken Sie auf **Neu > Netzwerkdienste > Virtuelles Netzwerk > Lokales Netzwerk hinzufügen**.
-6.	Geben Sie auf der Seite "Details zum lokalen Netzwerk angeben" unter **Name** den Namen **TestVNETLNet** und unter IP-Adresse des **VPN-Geräts** die IP-Adresse **131.107.0.2** ein, und klicken Sie dann auf den Pfeil nach rechts.
-7.	Geben Sie auf der Seite "Adressraum angeben" unter **Start-IP** die IP **192.168.0.0** ein.
-8.	Klicken Sie unter **CIDR (Anzahl Adressen)** auf **/24 (256)** und anschließend auf das Häkchen.
+1.	Klicken Sie im Azure-Verwaltungsportal auf dem lokalen Computer auf **Neu > Netzwerkdienste > Virtual Network > Lokales Netzwerk hinzufügen**.
+2.	Geben Sie auf der Seite "Details zum lokalen Netzwerk angeben" unter **Name** den Namen **TestLabLNet** und unter **IP-Adresse des VPN-Geräts** die IP-Adresse **131.107.0.1** ein, und klicken Sie dann auf den Pfeil nach rechts.
+3.	Geben Sie auf der Seite "Adressraum angeben" unter **Start-IP** den Wert **10.0.0.0** ein.
+4.	Klicken Sie unter **CIDR (Anzahl Adressen)** auf **/24 (256)** und anschließend auf das Kontrollkästchen.
+5.	Klicken Sie auf **Neu > Netzwerkdienste > Virtual Network > Lokales Netzwerk hinzufügen**.
+6.	Geben Sie auf der Seite "Details zum lokalen Netzwerk angeben" unter **Name** den Namen **TestVNETLNet** und unter **IP-Adresse des VPN-Geräts** die IP-Adresse **131.107.0.2** ein, und klicken Sie dann auf den Pfeil nach rechts.
+7.	Geben Sie auf der Seite "Adressraum angeben" unter **Start-IP** den Wert **192.168.0.0** ein.
+8.	Klicken Sie unter **CIDR (Anzahl Adressen)** auf **/24 (256)** und anschließend auf das Kontrollkästchen.
 
 Beachten Sie, dass die IP-Adressen 131.107.0.1 und 131.107.0.2 für die VPM-Geräte nur temporäre Platzhalterwerte sind, die so lange gelten, bis Sie Gateways für die beiden virtuellen Netzwerke konfigurieren.
 
 Konfigurieren Sie anschließend jedes virtuelle Netzwerk so, dass es eine Site-to-Site-VPN-Verbindung verwendet, also das lokale Netzwerk entsprechend dem anderen virtuellen Netzwerk.
 
-1.	Klicken Sie im linken Bereich des Azure-Verwaltungsportals auf dem lokalen Computer auf **Netzwerke**, und überprüfen Sie, ob die Spalte **Status** für **TestLab** auf **Erstellt** festgelegt ist.
+1.	Klicken Sie im linken Bereich des Azure-Verwaltungsportals auf dem lokalen Computer auf **Netzwerke**, und überprüfen Sie, ob in der Spalte **Status** für **TestLab** der Wert **Erstellt** angezeigt wird.
 2.	Klicken Sie auf **TestLab** und anschließend auf **Konfigurieren**. Klicken Sie auf der Seite "TestLab" im Abschnitt **Site-to-Site-Konnektivität** auf **Eine Verbindung mit dem lokalen Netzwerk herstellen**. 
 3.	Klicken Sie unter **Lokales Netzwerk** auf **TestVNETLNet**.
 4.	Klicken Sie in der Taskleiste auf **Speichern**. In einigen Fällen müssen Sie möglicherweise auf **Gatewaysubnetz hinzufügen** klicken, um ein Subnetz zu erstellen, das vom Azure-VPN-Gateway verwendet wird.
-5.	Klicken Sie im linken Bereich auf **Netzwerke**, und überprüfen Sie, ob die Spalte **Status** für "TestVNET" auf **Erstellt** festgelegt ist.
+5.	Klicken Sie im linken Bereich auf **Netzwerke**, und überprüfen Sie, ob in der Spalte **Status** für "TestVNET" der Wert **Erstellt** angezeigt wird.
 6.	Klicken Sie auf **TestVNET** und anschließend auf **Konfigurieren**. Klicken Sie auf der Seite "TestVNET" im Abschnitt **Site-to-Site-Konnektivität** auf **Eine Verbindung mit dem lokalen Netzwerk herstellen**. 
 7.	Klicken Sie unter **Lokales Netzwerk** auf **TestLabLNet**.
 8.	Klicken Sie in der Taskleiste auf **Speichern**. In einigen Fällen müssen Sie möglicherweise auf **Gatewaysubnetz hinzufügen** klicken, um ein Subnetz zu erstellen, das vom Azure-VPN-Gateway verwendet wird.
@@ -124,7 +126,7 @@ Erstellen Sie anschließend die virtuellen Netzwerkgateways für die beiden virt
 1.	Klicken Sie im Azure-Verwaltungsportal auf der Seite **Netzwerke** auf **TestLab**. Auf der Seite „Dashboard“ sollte der Status **Das Gateway wurde nicht erstellt** angezeigt werden.
 2.	Klicken Sie in der Taskleiste auf **Gateway erstellen**, und klicken Sie dann auf **Dynamisches Routing**. Klicken Sie auf **Ja**, wenn Sie dazu aufgefordert werden. Warten Sie, bis das Gateway fertig gestellt ist und den Status **Verbindung wird hergestellt** aufweist. Dies kann einige Minuten in Anspruch nehmen.
 3.	Notieren Sie die **Gateway-IP-Adresse** von der Seite „Dashboard“. Dies ist die öffentliche IP-Adresse des Azure-VPN-Gateways für das virtuelle Netzwerk TestLab. Notieren Sie diese IP-Adresse, da sie zum Konfigurieren der VNet-zu-VNet-Verbindung erforderlich sein wird.
-4.	Klicken Sie in der Taskleiste auf **Schlüssel verwalten** und anschließend auf das Symbol "Kopieren" neben dem Schlüssel, um diesen in die Zwischenablage zu kopieren. Fügen Sie diesen Schlüssel in ein Dokument ein, und speichern Sie es. Sie benötigen diesen Schlüsselwert, um die VNet-zu-VNet-Verbindung zu konfigurieren.
+4.	Klicken Sie in der Taskleiste auf **Schlüssel verwalten** und anschließend neben dem Schlüssel auf das Symbol "Kopieren", um diesen in die Zwischenablage zu kopieren. Fügen Sie diesen Schlüssel in ein Dokument ein, und speichern Sie es. Sie benötigen diesen Schlüsselwert, um die VNet-zu-VNet-Verbindung zu konfigurieren.
 5.	Klicken Sie auf der Seite "Netzwerke" auf **TestVNET**. Auf der Seite „Dashboard“ sollte der Status **Das Gateway wurde nicht erstellt** angezeigt werden.
 6.	Klicken Sie in der Taskleiste auf **Gateway erstellen**, und klicken Sie dann auf **Dynamisches Routing**. Klicken Sie auf **Ja**, wenn Sie dazu aufgefordert werden. Warten Sie, bis das Gateway fertig gestellt ist und den Status **Verbindung wird hergestellt** aufweist. Dies kann einige Minuten in Anspruch nehmen.
 7.	Notieren Sie die **Gateway-IP-Adresse** von der Seite „Dashboard“. Dies ist die öffentliche IP-Adresse des Azure-VPN-Gateways für das virtuelle Netzwerk TestVNET. Notieren Sie diese IP-Adresse, da sie zum Konfigurieren der VNet-zu-VNet-Verbindung erforderlich sein wird.
@@ -142,9 +144,9 @@ Konfigurieren Sie anschließend die lokalen Netzwerke TestLabLNet und TestVNETLN
 Setzen Sie anschließend den vorinstallierten Schlüssel für beide Gateways auf denselben Wert. Dieser ist der im Azure-Verwaltungsportal festgelegte Schlüsselwert für das virtuelle Netzwerk TestLab. Führen Sie über eine Azure PowerShell-Eingabeaufforderung auf Ihrem lokalen Computer die folgenden Befehle aus, und tragen Sie den Wert des für TestLab vorinstallierten Schlüssels ein.
 
 	$preSharedKey="<The preshared key for the TestLab virtual network>"
-	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet –SharedKey $preSharedKey
+	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet â€“SharedKey $preSharedKey
 
-Klicken Sie anschließend im Azure-Verwaltungsportal des lokalen Computers auf der Seite "Netzwerk" auf das virtuelle Netzwerk **TestLab** und anschließend auf **Dashboard** sowie in der Taskleiste auf **Verbinden**. Warten Sie, bis angezeigt wird, dass das virtuelle Netzwerk TestLab verbunden ist.
+Klicken Sie anschließend im Azure-Verwaltungsportal des lokalen Computers auf der Seite "Netzwerk" auf das virtuelle Netzwerk **TestLab**, klicken Sie auf **Dashboard** und anschließend in der Taskleiste auf **Verbinden**. Warten Sie, bis angezeigt wird, dass das virtuelle Netzwerk TestLab verbunden ist.
 
 Die aktuelle Konfiguration sieht folgendermaßen aus.
 
@@ -155,14 +157,14 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 Erstellen Sie zunächst einen virtuellen Azure-Computer für DC2. Führen Sie in der Eingabeaufforderung von Azure PowerShell auf dem lokalen Computer die folgenden Befehle aus.
 
 	$ServiceName="<Your cloud service name from Phase 2>"
-	$cred=Get-Credential –Message "Type the name and password of the local administrator account for DC2."
+	$cred=Get-Credential â€“Message "Type the name and password of the local administrator account for DC2."
 	$image = Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name DC2 -InstanceSize Medium -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
 	$vm1 | Set-AzureSubnet -SubnetNames TestSubnet
 	$vm1 | Set-AzureStaticVNetIP -IPAddress 192.168.0.4
-	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 20 -DiskLabel ADFiles –LUN 0 -HostCaching None
-	New-AzureVM –ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
+	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 20 -DiskLabel ADFiles â€“LUN 0 -HostCaching None
+	New-AzureVM â€“ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
 
 Melden Sie sich anschließend bei dem neuen virtuellen Computer für DC2 an.
 
@@ -171,7 +173,7 @@ Melden Sie sich anschließend bei dem neuen virtuellen Computer für DC2 an.
 3.	Wenn Sie zum Öffnen von DC2.rdp aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
-- Name: **DC2**[Name des lokalen Administratorkontos]
+- Name: **DC2\**[Name des lokalen Administratorkontos]
 - Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
@@ -206,7 +208,7 @@ Da das virtuelle Netzwerk TestVNET nun über einen eigenen DNS-Server (DC2) verf
 
 1.	Klicken Sie im linken Bereich des Azure-Verwaltungsportals auf **Netzwerke**, und klicken Sie dann auf **TestVNET**.
 2.	Klicken Sie auf **Konfigurieren**.
-3.	Entfernen Sie unter **DNS-Server** den Eintrag „10.0.0.4“.
+3.	Entfernen Sie unter **DNS-Server** den Eintrag "10.0.0.4".
 4.	Fügen Sie in **DNS-Server** einen Eintrag mit **DC2** als Name und **192.168.0.4** als IP-Adresse hinzu. 
 5.	Klicken Sie in der Befehlsleiste am unteren Rand auf **Speichern** und anschließend, wenn Sie dazu aufgefordert werden, auf **Ja**. Warten Sie, bis das Update auf das Netzwerk TestVNet abgeschlossen ist.
 
@@ -240,9 +242,9 @@ Führen Sie zur Minimierung der Kosten für das Ausführen von virtuellen Comput
 
 Ein Azure-VPN-Gateway wird als Gruppe von zwei virtuellen Computern in Azure implementiert, für die laufende Kosten anfallen. Nähere Informationen hierzu finden Sie unter [Preise – Virtuelles Netzwerk](http://azure.microsoft.com/pricing/details/virtual-network/). Wenn Sie die Kosten für die zwei VPN-Gateways (eines für TestLab und eines für TestVNET) minimieren möchten, erstellen sie die Testumgebung, und führen Sie die erforderlichen Test- und Demonstrationen so schnell wie möglich durch, oder löschen Sie die Gateways mit folgenden Schritten.
  
-1.	Klicken Sie im linken Bereich des Azure-Verwaltungsportals auf dem lokalen Computer auf **Netzwerke** und anschließend auf **TestLab** sowie auf **Dashboard**.
+1.	Klicken Sie im linken Bereich des Azure-Verwaltungsportals auf dem lokalen Computer auf **Netzwerke**, klicken Sie auf **TestLab** und anschließend auf **Dashboard**.
 2.	Klicken Sie in der Taskleiste auf **Gateway löschen**. Klicken Sie auf **Ja**, wenn Sie dazu aufgefordert werden. Warten Sie, bis das Gateway gelöscht ist und sein Status in **Das Gateway wurde nicht erstellt** geändert wird.
-3.	Klicken Sie im linken Bereich auf **Netzwerke** und anschließend auf **TestVNET** sowie auf **Dashboard**.
+3.	Klicken Sie im linken Bereich auf **Netzwerke**, klicken Sie auf **TestVNET** und anschließend auf **Dashboard**.
 4.	Klicken Sie in der Taskleiste auf **Gateway löschen**. Klicken Sie auf **Ja**, wenn Sie dazu aufgefordert werden. Warten Sie, bis das Gateway gelöscht ist und sein Status in **Das Gateway wurde nicht erstellt** geändert wird.
 
 Wenn Sie die Gateways löschen und diese Testumgebung anschließend wiederherstellen möchten, müssen Sie zunächst neue Gateways erstellen.
@@ -268,9 +270,9 @@ Konfigurieren Sie anschließend die lokalen Netzwerke TestLabLNet und TestVNETLN
 Setzen Sie anschließend den vorinstallierten Schlüssel für beide Gateways auf denselben Wert. Dieser ist der im Azure-Verwaltungsportal festgelegte Schlüsselwert für das virtuelle Netzwerk TestLab. Führen Sie über eine Azure PowerShell-Eingabeaufforderung auf Ihrem lokalen Computer die folgenden Befehle aus, und tragen Sie den Wert des für TestLab vorinstallierten Schlüssels ein.
 
 	$preSharedKey="<The preshared key for the TestLab virtual network>"
-	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet –SharedKey $preSharedKey
+	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet â€“SharedKey $preSharedKey
 
-Klicken Sie anschließend auf der Seite "Netzwerk" im Azure-Verwaltungsportal auf das virtuelle Netzwerk **TestLab** und anschließend in der Taskleiste auf **Verbinden**. Warten Sie, bis angezeigt wird, dass das virtuelle Netzwerk TestLab mit dem lokalen Netzwerk TestVNET verbunden ist.
+Klicken Sie auf der Seite "Netzwerk" im Azure-Verwaltungsportal auf das virtuelle Netzwerk **TestLab** und anschließend in der Taskleiste auf **Verbinden**. Warten Sie, bis angezeigt wird, dass das virtuelle Netzwerk TestLab mit dem lokalen Netzwerk TestVNET verbunden ist.
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

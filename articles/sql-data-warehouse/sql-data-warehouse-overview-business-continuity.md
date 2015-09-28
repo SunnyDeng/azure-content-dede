@@ -13,13 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/25/2015"
+   ms.date="09/15/2015"
    ms.author="sahajs"/>
 
 
 # Planen von Geschäftskontinuität in SQL Data Warehouse
 
-Dieser Artikel erläutert die Grundlagen der Planung von Geschäftskontinuität und Notfallwiederherstellung mit SQL Data Warehouse. Data Warehouses sind das zentrale Informationsrepository für Unternehmen. Sie spielen eine wichtige Rolle in den täglichen Vorgängen für Analysen und Business Intelligence auf allen Ebenen der Organisation. Es ist daher wichtig, dass Ihr Data Warehouse zuverlässig ist und Wiederherstellbarkeit sowie fortlaufende Ausführung zulässt. Insbesondere erfahren Sie in diesem Artikel, wie Sie mit SQL Data Warehouse nach Benutzerfehlern und Notfällen Point-in-Time-Wiederherstellungen und geografische Wiederherstellung ausführen können.
+Dieser Artikel erläutert die Grundlagen der Planung von Geschäftskontinuität und Notfallwiederherstellung mit SQL Data Warehouse. Data Warehouses sind das zentrale Informationsrepository für Unternehmen. Sie spielen eine wichtige Rolle in den täglichen Vorgängen für Analysen und Business Intelligence auf allen Ebenen der Organisation. Es ist daher wichtig, dass Ihr Data Warehouse zuverlässig ist und Wiederherstellbarkeit sowie fortlaufende Ausführung zulässt. Insbesondere erfahren Sie in diesem Artikel, wie Sie mit SQL Data Warehouse nach Benutzerfehlern und Notfällen Datenbankwiederherstellungen und geografische Wiederherstellungen ausführen können.
 
 ## Konzepte
 
@@ -78,4 +78,4 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer SQL-Datenbank-Editi
 
 <!--Other Web references-->
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

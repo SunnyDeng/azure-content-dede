@@ -1,24 +1,27 @@
 <properties
 	pageTitle="Erweiterte Konfiguration und Erweiterungen von Azure App Service-Web-Apps"
-	description="Verwenden Sie XML Document Transformation-Deklarationen (XDT) zum Transformieren der Datei &quot;ApplicationHost.config&quot; in Ihrer Azure App Service-Web-App und zum Hinzufügen privater Erweiterungen zum Aktivieren von benutzerdefinierten Verwaltungsaktionen."
+	description="Verwenden Sie XML Document Transformation-Deklarationen (XDT) zum Transformieren der Datei ";ApplicationHost.config"; in Ihrer Azure App Service-Web-App und zum Hinzufügen privater Erweiterungen zum Aktivieren von benutzerdefinierten Verwaltungsaktionen."
 	authors="cephalin"
+	writer="cephalin"
 	editor="mollybos"
 	manager="wpickett"
 	services="app-service\web"
 	documentationCenter=""/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/06/2015"
+	ms.date="09/16/2015"
 	ms.author="cephalin"/>
 
 # Erweiterte Konfiguration und Erweiterungen von Azure App Service-Web-Apps
 
 Mithilfe von [XML Document Transformation-Deklarationen](http://msdn.microsoft.com/library/dd465326.aspx) (XDT) können Sie die Datei [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) in Ihrer Web-App in Azure App Service transformieren. Sie können XDT-Deklarationen außerdem dazu verwenden, private Erweiterungen hinzuzufügen, um benutzerdefinierte Web-App-Verwaltungsaktionen zu ermöglichen. Dieser Artikel enthält ein Beispiel für eine PHP-Manager-Web-App-Erweiterung, mit der PHP-Einstellungen über eine Weboberfläche verwaltet werden können.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ##<a id="transform"></a>Erweiterte Konfiguration durch "ApplicationHost.config"
 Die App Service-Plattform ermöglicht eine flexible Konfiguration von Web-Apps. Obwohl die standardmäßige IIS-Konfigurationsdatei "ApplicationHost.config" zur direkten Bearbeitung in App Service nicht zur Verfügung steht, unterstützt die Plattform ein deklaratives, auf XDT (XML Document Transformation) beruhendes Transformationsmodell für die Datei "ApplicationHost.config".
@@ -179,4 +182,4 @@ Es ist möglich, alle privaten (nicht vorinstallierten) Erweiterungen für Ihre 
 [TransformSiteSolEx]: ./media/web-sites-transform-extend/TransformSiteSolEx.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

@@ -1,19 +1,19 @@
 <properties
    pageTitle="Virtuelles StorSimple-Gerät in Azure | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein virtuelles StorSimple-Gerät in einem virtuellen Microsoft Azure-Netzwerk erstellen, bereitstellen und verwalten. (Gilt für StorSimple Version 0.3 und frühere Versionen.)"
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Erfahren Sie, wie Sie ein virtuelles StorSimple-Gerät in einem virtuellen Microsoft Azure-Netzwerk erstellen, bereitstellen und verwalten. (Gilt für StorSimple Version 0.3 und frühere Versionen.)"
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="NA"
-	ms.date="09/02/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="hero-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="09/16/2015"
+   ms.author="alkohli" />
 
 # Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure
 
@@ -114,8 +114,6 @@ Nach Abschluss dieser Schritte können Sie [mit dem virtuellen Gerät arbeiten](
 Nachdem Sie ein virtuelles Netzwerk erstellt, den StorSimple-Manager-Dienst konfiguriert und das physische StorSimple-Gerät beim Dienst registriert haben, können Sie mithilfe der folgenden Schritte ein virtuelles StorSimple-Gerät erstellen.
 
 Führen Sie die folgenden Schritte aus, um das virtuelle StorSimple-Gerät zu erstellen.
-
-
 
 1.  Wechseln Sie im Azure-Portal zum **StorSimple Manager**-Dienst.
 
@@ -219,7 +217,6 @@ Sie können eine Verbindung über HTTP oder HTTPS herstellen. Aus Sicherheitsgr�
 
 Führen Sie die folgenden Schritte durch, um die Remoteverwaltung für das virtuelle StorSimple-Gerät zu konfigurieren.
 
-
 1. Wechseln Sie auf dem virtuellen Gerät zu **Geräte > Konfigurieren**.
 
 2. Scrollen nach unten zum Abschnitt **Remoteverwaltung**.
@@ -232,6 +229,9 @@ Führen Sie die folgenden Schritte durch, um die Remoteverwaltung für das virtu
 
 6. Klicken Sie unten auf der Seite auf **Speichern**.
 
+![Video verfügbar](./media/storsimple-virtual-device/Video_icon.png) **Video verfügbar**
+
+Sie können sich [hier](http://azure.microsoft.com/documentation/videos/create-a-storsimple-virtual-device/) ein Video anschauen, in dem das Erstellen eines virtuellen StorSimple-Geräts in der Cloud gezeigt wird.
 
 ## Arbeiten mit dem virtuellen StorSimple-Gerät
 
@@ -345,7 +345,7 @@ Die Notfallwiederherstellung ist eines der wichtigsten Szenarios, für die das v
 
 - Wiederholen Sie den vorherigen Schritt für alle Volumecontainer, für die auf dem virtuellen Gerät ein Failover durchgeführt werden soll.
 
-- Wählen Sie auf der Seite **Geräte** das Gerät aus, für das ein Failover durchgeführt werden soll, und klicken Sie anschließend auf **Failover**, um den Assistenten **Gerätefailover** zu öffnen.
+- Wählen Sie auf der Seite **Geräte** das Gerät aus, für das ein Failover durchgeführt werden soll, und klicken Sie anschließend auf **Failover**, um den Assistenten „Gerätefailover“ zu öffnen.
 
 - Wählen Sie unter **Volumecontainer für Failover auswählen** die Volumecontainer aus, für die ein Failover durchgeführt werden soll. In dieser Liste werden nur offline geschaltete Volumecontainer angezeigt, die eine Cloudmomentaufnahme beinhalten. Wenn ein erwarteter Volumecontainer nicht angezeigt wird, brechen Sie den Assistenten ab, und stellen Sie sicher, dass dieser offline ist.
 
@@ -353,9 +353,13 @@ Die Notfallwiederherstellung ist eines der wichtigsten Szenarios, für die das v
 
 - Überprüfen Sie die Failover-Einstellungen auf der Seite **Failover bestätigen**. Wenn diese richtig sind, klicken Sie auf das Häkchensymbol.
 
-Der Failovervorgang wird gestartet. Wechseln Sie nach Abschluss des Failovers zur Seite "Geräte", und wählen Sie das virtuelle Gerät aus, das als Ziel für den Failovervorgang verwendet wurde. Wechseln Sie zur Seite "Volumecontainer". Es sollten alle angezeigt Volumecontainer und Volumes des alten Geräts angezeigt werden.
+Der Failovervorgang wird gestartet. Wechseln Sie nach Abschluss des Failovers zur Seite **Geräte**, und wählen Sie das virtuelle Gerät aus, das als Ziel für den Failovervorgang verwendet wurde. Wechseln Sie zur Seite "Volumecontainer". Es sollten alle angezeigt Volumecontainer und Volumes des alten Geräts angezeigt werden.
 
 >[AZURE.NOTE]Der auf dem virtuellen Gerät unterstützte Speicherplatz beträgt 30 TB.
+
+![Video verfügbar](./media/storsimple-virtual-device/Video_icon.png) **Video verfügbar**
+
+Sie können sich [hier](http://azure.microsoft.com/documentation/videos/storsimple-and-disaster-recovery/) ein Video anschauen, in dem das Wiederherstellen eines fehlgeschlagenen physischen Geräts auf ein virtuelles Gerät in der Cloud gezeigt wird.
 
 ## Herunterfahren oder Löschen virtueller Geräte
 
@@ -384,4 +388,4 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 Informationen zum Verwalten Ihres virtuellen Geräts finden Sie in der detaillierten Liste der Workflows unter [Verwalten des StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md#administer-storsimple-device-using-storsimple-manager-service).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

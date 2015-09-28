@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/04/2015"
+	ms.date="09/10/2015"
 	ms.author="mmercuri"/>
 
 # Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen
@@ -32,52 +32,54 @@ Mit komplexen Objekten können Sie Variablen erstellen, die Datensammlungen – 
 
 Das folgende Beispiel zeigt, wie Sie Variablen definieren, die komplexe Objekte für die Darstellung von Datensammlungen enthalten. Die Sammlungen definieren Werte, die für die Größe des virtuellen Computers sowie Netzwerkeinstellungen, Betriebssystemeinstellungen und Verfügbarkeitseinstellungen verwendet werden.
 
-    "tshirtSizeLarge": {
-      "vmSize": "Standard_A4",
-      "diskSize": 1023,
-      "vmTemplate": "[concat(variables('templateBaseUrl'), 'database-16disk-resources.json')]",
-      "vmCount": 3,
-      "slaveCount": 2,
-      "storage": {
-        "name": "[parameters('storageAccountNamePrefix')]",
-        "count": 2,
-        "pool": "db",
-        "map": [0,1,1],
-        "jumpbox": 0
-      }
-    },
-    "osSettings": {
-      "scripts": [
-        "[concat(variables('templateBaseUrl'), 'install_postgresql.sh')]",
-        "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/shared_scripts/ubuntu/vm-disk-utils-0.1.sh"
-      ],
-      "imageReference": {
-				"publisher": "Canonical",
-        "offer": "UbuntuServer",
-        "sku": "14.04.2-LTS",
-        "version": "latest"
-      }
-    },
-    "networkSettings": {
-      "vnetName": "[parameters('virtualNetworkName')]",
-      "addressPrefix": "10.0.0.0/16",
-      "subnets": {
-        "dmz": {
-          "name": "dmz",
-          "prefix": "10.0.0.0/24",
-          "vnet": "[parameters('virtualNetworkName')]"
-        },
-        "data": {
-          "name": "data",
-          "prefix": "10.0.1.0/24",
-          "vnet": "[parameters('virtualNetworkName')]"
+    "variables": {
+      "tshirtSizeLarge": {
+        "vmSize": "Standard_A4",
+        "diskSize": 1023,
+        "vmTemplate": "[concat(variables('templateBaseUrl'), 'database-16disk-resources.json')]",
+        "vmCount": 3,
+        "slaveCount": 2,
+        "storage": {
+          "name": "[parameters('storageAccountNamePrefix')]",
+          "count": 2,
+          "pool": "db",
+          "map": [0,1,1],
+          "jumpbox": 0
         }
+      },
+      "osSettings": {
+        "scripts": [
+          "[concat(variables('templateBaseUrl'), 'install_postgresql.sh')]",
+          "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/shared_scripts/ubuntu/vm-disk-utils-0.1.sh"
+        ],
+        "imageReference": {
+	  "publisher": "Canonical",
+          "offer": "UbuntuServer",
+          "sku": "14.04.2-LTS",
+          "version": "latest"
+        }
+      },
+      "networkSettings": {
+        "vnetName": "[parameters('virtualNetworkName')]",
+        "addressPrefix": "10.0.0.0/16",
+        "subnets": {
+          "dmz": {
+            "name": "dmz",
+            "prefix": "10.0.0.0/24",
+            "vnet": "[parameters('virtualNetworkName')]"
+          },
+          "data": {
+            "name": "data",
+            "prefix": "10.0.1.0/24",
+            "vnet": "[parameters('virtualNetworkName')]"
+          }
+        }
+      },
+      "availabilitySetSettings": {
+        "name": "pgsqlAvailabilitySet",
+        "fdCount": 3,
+        "udCount": 5
       }
-    },
-    "availabilitySetSettings": {
-      "name": "pgsqlAvailabilitySet",
-      "fdCount": 3,
-      "udCount": 5
     }
 
 Sie können später in der Vorlage auf diese Variablen verweisen. Die Möglichkeit zum Verweisen auf benannte Variablen und deren Eigenschaften vereinfacht die Vorlagensyntax und erleichtert es den Benutzern, den Kontext zu verstehen. Das folgende Beispiel definiert eine Ressource, die unter Verwendung der oben gezeigten Objekte zum Festlegen von Werten bereitgestellt werden soll. Beachten Sie beispielsweise, dass die Größe des virtuellen Computers durch Abrufen des Werts für `variables('tshirtSize').vmSize` festgelegt wird. Der Wert für die Festplattengröße wird aus `variables('tshirtSize').diskSize` abgerufen. Darüber hinaus wird der URI für eine verknüpfte Vorlage mit dem Wert für `variables('tshirtSize').vmTemplate` festgelegt.
@@ -387,4 +389,4 @@ Innerhalb der Hauptvorlage können Sie diese Daten mit folgender Syntax verwende
 - [Authoring Azure Resource Manager Templates](resource-group-authoring-templates.md) (in englischer Sprache)
 - [Funktionen von Azure-Ressourcen- Manager-Vorlagen](resource-group-template-functions.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

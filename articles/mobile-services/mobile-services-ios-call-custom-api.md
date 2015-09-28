@@ -1,9 +1,10 @@
 <properties
-	pageTitle="Aufrufen einer benutzerdefinierten API von einem iOS-Client"
+	pageTitle="Aufrufen einer benutzerdefinierten API von einem iOS-Client (JavaScript-Back-End)"
 	description="Erfahren Sie, wie Sie eine benutzerdefinierte API definieren und dann von einer iOS-App aufrufen, die Azure Mobile Services verwendet."
 	services="mobile-services"
 	documentationCenter="ios"
 	authors="krisragh"
+	writer="krisragh"
 	manager="dwrede"
 	editor=""/>
 
@@ -55,4 +56,4 @@ Weitere Informationen finden Sie in den folgenden Mobile Services-Themen:
 [Get started with push notifications]: ../mobile-services-ios-get-started-push.md
 [Speichern von Serverskripts in der Quellcodeverwaltung]: mobile-services-store-scripts-source-control.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

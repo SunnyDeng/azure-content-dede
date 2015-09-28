@@ -50,9 +50,10 @@ Wie bei der Relaymessaging-Infrastruktur wird auch das Brokermessaging für WCF-
 Weitere Informationen zu Service Bus Messaging finden Sie in folgenden Themen.
 
 - [Service Bus-Warteschlangen, -Themen und -Abonnements](service-bus-queues-topics-subscriptions.md)
-- [Übersicht über die Architektur von Azure Service Bus](service-bus-fundamentals-hybrid-solutions.md)
+- [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
+- [Service Bus-Architektur](service-bus-architecture.md)
 - [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
 - [Verwenden von Service Bus-Themen](service-bus-dotnet-how-to-use-topics-subscriptions.md)
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

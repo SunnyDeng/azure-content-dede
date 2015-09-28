@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Auf Azure Virtual Machines gehostete Oracle-Software"
-	description="Erfahren Sie, wie Sie Oracle-Software auf Windows- oder Linux-basierten virtuellen Azure-Computern einrichten."
+	pageTitle="Oracle auf Azure VMs | Microsoft Azure"
+	description="Hier finden Sie die Artikel, in den beschrieben wird, wie Sie Oracle-Software auf Windows- oder Linux-basierten virtuellen Azure-Computern einrichten."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -11,13 +11,15 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
-	ms.topic="article"
+	ms.topic="index-page"
 	ms.date="07/09/2015"
 	ms.author="josephd"/>
 
 # Auf Azure Virtual Machines gehostete Oracle-Software
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 Richten Sie Ihre erste oder nächste Oracle-Datenbank für Entwicklung/Tests oder Produktion auf einem virtuellen Computer in Azure-Infrastrukturdiensten ein. Nutzen Sie die Vorteile der einfachen Konfiguration und die Möglichkeit, die Oracle-Datenbankworkload schnell zu erweitern, um neue Kapazitäten einzuschließen.
 
@@ -61,4 +63,4 @@ In [Verschiedene Überlegungen zu Images für virtuelle Oracle-Computer](virtual
 
 [Konfigurieren von Oracle GoldenGate für Azure](virtual-machines-configuring-oracle-goldengate.md) führt Sie schrittweise durch das Datenbank- und Replikationssetup.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

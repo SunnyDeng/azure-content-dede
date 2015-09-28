@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie Azure PowerShell zum Erstellen und Vorabkonfigurieren Linux-basierter virtueller Computer verwenden."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/09/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 # Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren von Linux-basierten virtuellen Computern
 
@@ -260,4 +260,4 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="08/05/2015"
+    ms.date="09/10/2015"
     ms.author="banders"/>
 
 # Einrichten Ihres Arbeitsbereichs und Verwalten von Einstellungen
@@ -184,7 +184,7 @@ Es ist möglich, unter [microsoft.com/oms](https://microsoft.com/oms) einen Arbe
 
 ## Aktualisieren des Arbeitsbereichs auf einen kostenpflichtigen Datenplan
 
-Es gibt drei Arten von Arbeitsbereichsdatenplänen für Operational Insights: **Kostenlos**, **Standard** und **Premium**. Wenn Sie mit einem Plan vom Typ *Kostenlos* arbeiten, ist Ihre Datenübertragung auf 500 MB begrenzt. Sie müssen für den Arbeitsbereich die **nutzungsbasierte Bezahlung** aktivieren, um Daten über diesen Grenzwert hinaus erfassen zu können. Sie können Ihren Plantyp jederzeit ändern. Weitere Informationen zu den Preisen von Operational Insights finden Sie unter [Preisdetails](http://azure.microsoft.com/pricing/operational-insights/).
+Es gibt drei Arten von Arbeitsbereichsdatenplänen für Operational Insights: **Kostenlos**, **Standard** und **Premium**. Wenn Sie mit einem Plan vom Typ *Kostenlos* arbeiten, ist Ihre Datenübertragung auf 500 MB begrenzt. Sie müssen für den Arbeitsbereich die **nutzungsbasierte Bezahlung** aktivieren, um Daten über diesen Grenzwert hinaus erfassen zu können. Sie können Ihren Plantyp jederzeit ändern. Weitere Informationen zu den Preisen von Operational Insights finden Sie unter [Preisdetails](https://azure.microsoft.com/de-DE/pricing/details/operational-insights/).
 
 >[AZURE.IMPORTANT]Pläne für Arbeitsbereiche können nur geändert werden, wenn sie mit einem Azure-Abonnement *verknüpft* sind. Wenn Sie den Arbeitsbereich in Azure erstellt haben oder *bereits* eine Verknüpfung mit dem Arbeitsbereich hergestellt haben, können Sie diese Meldung ignorieren. Wenn Sie den Arbeitsbereich unter [opinsights.azure.com](http://opinsights.azure.com) erstellt haben, müssen Sie die Schritte unter [Verknüpfen eines vorhandenen Arbeitsbereichs mit einem Azure-Abonnement](#link-an-existing-workspace-to-an-Azure-subscription) ausführen.
 
@@ -253,4 +253,4 @@ Wenn Sie Administrator sind und mehrere Benutzer mit dem Arbeitsbereich verknüp
 - [Anforderungen des IIS-Protokollformats in Azure Operational Insights](http://blogs.technet.com/b/momteam/archive/2014/09/19/iis-log-format-requirements-in-system-center-advisor.aspx)
 - Sehen Sie sich im [Feedback-Forum](http://feedback.azure.com/forums/267889-azure-operational-insights/category/88086-log-management-and-log-collection-policy) an, welche weiteren Datenquellen und Protokolltypen die Community implementiert haben möchte.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

@@ -26,6 +26,8 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 * Ein aktives Abonnement von [SharePoint Online]
 * Sie haben das Lernprogramm [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden] durchlaufen. Sie sollten das Mandat verwenden, das von Ihrem SharePoint-Abonnement bereitgestellt wird.
 
+[AZURE.INCLUDE [app-service-mobile-to-web-and-api](../../includes/app-service-mobile-to-web-and-api.md)]
+
 ## <a name="configure-permissions"></a>Konfigurieren Ihrer Anwendung für den delegierten Zugriff auf SharePoint
 Standardmäßig hat der Token, den Sie von AAD erhalten, eingeschränkte Berechtigungen. Um auf eine Ressource von Dritten oder eine SaaS-Anwendung wie etwa SharePoint Online zugreifen zu können, müssen Sie dies explizit erlauben.
 
@@ -51,11 +53,11 @@ Um einen Aufruf an SharePoint zu richten, müssen Sie die Endpunkte festlegen, m
 
 * Legen Sie bei SP\_ClientSecret den geheimen Clientwert fest, den Sie zuvor abgerufen haben.
 
-* Legen Sie bei SP\_SharePointURL die URL für Ihre SharePoint-Website fest. Sie sollte das folgende Format aufweisen: `https://contoso-my.sharepoint.com`
+* Legen Sie bei SP\_SharePointURL die URL für Ihre SharePoint-Website fest. Sie hat das Format `https://contoso-my.sharepoint.com`.
 
 Sie können diese Werte mithilfe von "ApiServices.Settings" in Ihrem Code abrufen.
 
-## <a name="obtain-token"></a>Abrufen eines Zugriffstokens und Aufrufen der SharePoint-API
+## <a name="obtain-token"></a>Beziehen eines Zugriffstokens und Aufrufen der SharePoint-API
 
 Um auf SharePoint zugreifen zu können, benötigen Sie einen speziellen Zugriffstoken mit SharePoint als Zielgruppe. Um dieses Token zu erhalten, müssen Sie erneut einen Aufruf in Azure AD ausführen und dabei die App Service-Identität und das Token verwenden, das für den Benutzer ausgestellt wurde.
 
@@ -186,4 +188,4 @@ Um ein Word-Dokument erstellen zu können, verwenden Sie das OpenXML NuGet-Paket
 [Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden]: app-service-mobile-dotnet-backend-ios-aad-sso-preview.md
 [Mobile Apps .NET Backend App Service Extension]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.AppService/
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

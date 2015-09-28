@@ -3,7 +3,7 @@
 	description="Stellt Antworten auf die häufigsten Fragen zu virtuellen Azure-Computern bereit"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/17/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 # Virtuelle Azure-Computer – häufig gestellte Fragen
 
@@ -148,4 +148,4 @@ Um Redundanz bereitzustellen, platzieren Sie zwei oder mehr ähnlich konfigurier
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

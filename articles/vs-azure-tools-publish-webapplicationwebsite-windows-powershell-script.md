@@ -1,19 +1,19 @@
-<properties 
+<properties
    pageTitle="Publish-WebApplicationWebSite (Windows PowerShell-Skript)"
-	description="Informationen zum Veröffentlichen eines Webprojekts auf einer Azure-Website. Dieses Skript erstellt die erforderlichen Ressourcen in Ihrem Azure-Abonnement, sofern noch nicht vorhanden."
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="kempb"
-	manager="douge"
-	editor="tglee"/>
-<tags 
+   description="Informationen zum Veröffentlichen eines Webprojekts auf einer Azure-Website. Dieses Skript erstellt die erforderlichen Ressourcen in Ihrem Azure-Abonnement, sofern noch nicht vorhanden."
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="kempb"
+   manager="douge"
+   editor="tglee" />
+<tags
    ms.service="multiple"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="multiple"
-	ms.date="08/13/2015"
-	ms.author="kempb"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="multiple"
+   ms.date="08/13/2015"
+   ms.author="kempb" />
 
 # Publish-WebApplicationWebSite (Windows PowerShell-Skript)
 
@@ -22,13 +22,13 @@
 Veröffentlicht ein Webprojekt auf einer Azure-Website. Das Skript erstellt die erforderlichen Ressourcen in Ihrem Azure-Abonnement, wenn sie noch nicht vorhanden sind.
 
 	Publish-WebApplicationWebSite
-	–Configuration <configuration> 
+	–Configuration <configuration>
 	-SubscriptionName <subscriptionName>
 	-WebDeployPackage <packageName>
 	-DatabaseServerPassword @{Name = "name"; Password = "password"}
 	-SendHostMessagesToOutput
 	-Verbose
-	
+
 
 ## Konfiguration
 
@@ -68,14 +68,14 @@ Der Pfad zum Webbereitstellungspaket für die Veröffentlichung auf der Website.
 |Standardwert|(Keine)|
 |Pipelineeingabe akzeptieren?|false|
 |Platzhalterzeichen akzeptieren?|false|
-	
+
 ## DatabaseServerPassword
 
 Der Benutzername und das Kennwort für die SQL-Datenbank in Azure.
 
 |Parameter|Standardwert|
-|Aliase|(Keine)|
 |---|---|
+|Aliase|(Keine)|
 |Erforderlich|false|
 |Position|benannt|
 |Standardwert|(Keine)|
@@ -129,4 +129,4 @@ Sie können die JSON-Konfigurationsdatei bearbeiten, um den Umfang der Bereitste
 
 [Publish-WebApplicationWebSite (Windows PowerShell-Skript)](https://msdn.microsoft.com/library/azure/dn689112.aspx)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

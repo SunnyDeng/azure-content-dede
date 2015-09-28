@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="09/07/2015"
+	ms.date="09/16/2015"
 	ms.author="juliako"/>
 
 #Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden (Vorschau)
@@ -41,22 +41,13 @@ Im folgenden Diagramm ist ein Livedatenstrom-Workflow dargestellt, bei dem ein S
 
 ![Liveworkflow][live-overview]
 
->[AZURE.NOTE]Nicht alle Rechenzentren unterstützen die Livecodierung mit Azure Media Services.
->
->Wenn Sie zum Erstellen von Kanälen das Azure-Verwaltungsportal verwenden, stehen zwei Optionen für den Kanalcodierungstyp zur Verfügung: **Keine** und **Standard**. Wenn nur die Option **Keine** angezeigt wird, bedeutet dies, dass Ihr Rechenzentrum die Livecodierung mit AMS nicht unterstützt.
->
->Wenn Sie .NET SDK oder REST-API verwenden, gehen Sie zum Überprüfen wie folgt vor:
->
->1. Versuchen Sie, einen Kanal zu erstellen und dabei den Codierungstyp auf "Standard" festzulegen. 
->2. Wenn der HTTP-Fehlercode 412 (Vorbedingung nicht erfüllt) mit der Meldung *"Livecodierung wird für diese Region nicht unterstützt; der Codierungstyp muss auf 'Keine' festgelegt werden"* zurückgegeben wird, unterstützt Ihr Rechenzentrum die Livecodierung nicht.
-
 
 ##In diesem Thema
 
 - Übersicht über ein [allgemeines Livestreamingszenario](media-services-manage-live-encoder-enabled-channels.md#scenario)
 - [Beschreibung von Kanälen und zugehörigen Komponenten](media-services-manage-live-encoder-enabled-channels.md#channel)
-- [Überlegungen](media-services-manage-live-encoder-enabled-channels.md#considerations)
-- [Aufgaben im Zusammenhang mit Livestreaming](media-services-manage-live-encoder-enabled-channels.md#tasks)
+- [Überlegungen](media-services-manage-live-encoder-enabled-channels.md#Considerations)
+
 
 ##<a id="scenario"></a>Allgemeines Livestreamingszenario
 
@@ -387,7 +378,7 @@ In der folgenden Tabelle ist die Zuordnung der Kanalstatus mit den Abrechnungsmo
 Kanalstatus|Portal-UI-Indikatoren|In Rechnung gestellt?
 ---|---|---
 Wird gestartet|Wird gestartet|Nein (Übergangsstatus)
-Wird ausgeführt|Bereit (keine ausgeführten Programme)<br/>oder<br/>Streaming (mindestens ein laufendes Programm)|Ja
+Wird ausgeführt|Bereit (keine aktiven Programme)<br/>oder<br/>Streaming (mindestens ein aktives Programm)|Ja
 Wird beendet|Wird beendet|Nein (Übergangsstatus)
 Beendet|Beendet|Nein
 
@@ -397,6 +388,7 @@ Beendet|Beendet|Nein
 
 ##<a id="Considerations"></a>Überlegungen
 
+- Tritt für einen Kanal des Codierungstyps **Standard** ein Verlust des Eingabequellen-/Beitragsfeeds auf, wird der Verlust kompensiert, indem der Quellvideo-/-audiodatenstrom durch eine Fehlertafel (Fehlerslate) und Stille ersetzt wird. Der Kanal gibt solange eine Tafel aus, bis der Eingabe-/Beitragsfeed fortgesetzt wird. Es empfiehlt sich, einen Livekanal nicht länger als 2 Stunden in diesem Zustand zu belassen. Nach diesem Punkt ist weder das Verhalten des Kanals nach erneuter Verbindung der Eingabe noch sein Verhalten als Reaktion auf einen Rücksetzungsbefehl vorhersagbar. Sie müssen den Kanal beenden, ihn löschen und dann einen neuen erstellen.
 - Sie können das Eingabeprotokoll nicht ändern, während der Kanal oder seine zugehörigen Programme ausgeführt werden. Wenn Sie andere Protokolle benötigen, erstellen Sie für jedes Eingabeprotokoll einen separaten Kanal. 
 - Rufen Sie bei jeder Neukonfiguration des Liveencoders die **Reset**-Methode für den Kanal auf. Bevor Sie den Kanal zurückzusetzen, müssen Sie das Programm beenden. Wenn Sie den Kanal zurückgesetzt haben, starten Sie das Programm neu. 
 - Ein Kanal kann nur beendet werden, wenn er den Status „Wird ausgeführt“ aufweist und alle Programme im Kanal beendet wurden.
@@ -438,4 +430,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

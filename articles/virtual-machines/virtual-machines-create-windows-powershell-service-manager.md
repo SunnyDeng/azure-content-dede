@@ -3,7 +3,7 @@
 	description="Verwenden Sie Azure PowerShell, um schnell einen neuen Windows-basierten virtuellen Computer in der Dienstverwaltung zu erstellen und Verwaltungsfunktionen auszuführen."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/09/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 # Erstellen und Verwalten eines Windows-basierten virtuellen Computers in der Azure-Dienstverwaltung unter Verwendung von Azure PowerShell
 
@@ -209,4 +209,4 @@ Führen Sie den folgenden Befehl zum Anfügen von Datenträgern aus einer vorhan
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Machine Learning-Empfehlungs-APIs – Dokumentation | Microsoft Azure"
-	description="Azure Machine Learning-Empfehlungs-APIs – Dokumentation für ein Empfehlungsmodul, das im Microsoft Azure Marketplace verfügbar ist."
-	services="machine-learning"
-	documentationCenter=""
-	authors="AharonGumnik"
-	manager="paulettm"
+	pageTitle="Machine Learning-Empfehlungs-APIs – Dokumentation | Microsoft Azure" 
+	description="Azure Machine Learning-Empfehlungs-APIs – Dokumentation für ein Empfehlungsmodul, das im Microsoft Azure Marketplace verfügbar ist." 
+	services="machine-learning" 
+	documentationCenter="" 
+	authors="AharonGumnik" 
+	manager="paulettm" 
 	editor="cgronlun"/>
 
 <tags 
-	ms.service="machine-learning"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="machine-learning" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/14/2015" 
 	ms.author="LuisCa"/>
 
 #Azure Machine Learning-Empfehlungs-APIs – Dokumentation
@@ -352,7 +352,7 @@ In der folgenden Tabelle werden die Werte dargestellt, die von den Schlüsseln r
 | MaxUserLength | Dies ist die maximale Anzahl der unterschiedlichen Elemente für einen Benutzer. |
 | MinItemLength | Dies ist die maximale Anzahl der unterschiedlichen Benutzer für ein Element. |
 | MinUserLength | Dies ist die minimale Anzahl der unterschiedlichen Elemente für einen Benutzer. |
-| RawNumberOfItems | Dies ist die Anzahl der Elemente vor dem Bereinigen der nicht modellierbaren Elemente. |
+| RawNumberOfItems | Dies ist die Anzahl von Elementen in den Nutzungsdateien. |
 | RawNumberOfUsers | Dies ist die Anzahl der Nutzungspunkte vor allen Bereinigungen. |
 | RawNumberOfRecords | Dies ist die Anzahl der Nutzungspunkte vor allen Bereinigungen. |
 | SamplingNumberOfItems | N/V |
@@ -848,6 +848,7 @@ OData-XML
 | HTTP-Methode | URI |
 |:--------|:--------|
 |POST |`<rootURI>/AddRule?apiVersion=%271.0%27`|
+|HEADER |`"Content-Type", "text/xml"`|
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
@@ -945,6 +946,7 @@ Hinweis: Die maximale Dateigröße beträgt 200 MB.
 | HTTP-Methode | URI |
 |:--------|:--------|
 |POST |`<rootURI>/ImportCatalogFile?modelId=%27<modelId>%27&filename=%27<fileName>%27&apiVersion=%271.0%27`<br><br>Beispiel<br>`<rootURI>/ImportCatalogFile?modelId=%27a658c626-2baa-43a7-ac98-f6ee26120a12%27&filename=%27catalog10_small.txt%27&apiVersion=%271.0%27`:|
+|HEADER |`"Content-Type", "text/xml"`|
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
@@ -1189,6 +1191,7 @@ In diesem Abschnitt wird gezeigt, wie Ereignisse in Echtzeit an Azure Machine Le
 | HTTP-Methode | URI |
 |:--------|:--------|
 |POST |`<rootURI>/AddUsageEvent?apiVersion=%271.0%27`|
+|HEADER |`"Content-Type", "text/xml"`|
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
@@ -1736,6 +1739,7 @@ In der folgenden Tabelle sind die Parameter für Empfehlungsbuilds aufgeführt.
 | HTTP-Methode | URI |
 |:--------|:--------|
 |POST |`<rootURI>/BuildModel?modelId=%27<modelId>%27&userDescription=%27<description>%27&apiVersion=%271.0%27`<br><br>Beispiel<br>`<rootURI>/BuildModel?modelId=%27a658c626-2baa-43a7-ac98-f6ee26120a12%27&userDescription=%27First%20build%27&apiVersion=%271.0%27`:|
+|HEADER |`"Content-Type", "text/xml"` (Wenn der Anforderungstext gesendet wird)|
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
@@ -1809,6 +1813,7 @@ OData-XML
 | HTTP-Methode | URI |
 |:--------|:--------|
 |POST |`<rootURI>/BuildModel?modelId=%27<modelId>%27&userDescription=%27<description>%27&buildType=%27<buildType>%27&apiVersion=%271.0%27`<br><br>Beispiel<br>`<rootURI>/BuildModel?modelId=%27a658c626-2baa-43a7-ac98-f6ee26120a12%27&userDescription=%27First%20build%27&buildType=%27Ranking%27&apiVersion=%271.0%27`:|
+|HEADER |`"Content-Type", "text/xml"` (Wenn der Anforderungstext gesendet wird)|
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
@@ -1816,7 +1821,7 @@ OData-XML
 | userDescription | Dies ist der Textbezeichner des Katalogs. Beachten Sie, dass Sie bei Verwendung von Leerzeichen diese stattdessen mit "%20" codieren müssen. Siehe Beispiel oben. <br>Max. Länge: 50 |
 | buildType | Typ des aufzurufenden Builds: <br/>: „Recommendation“ für Empfehlungsbuild <br>: „Ranking“ für Rangplatzbuild <br/>: „Fbt“ für FBT-Build
 | apiVersion | 1\.0 |
-||| | Anforderungstext | Wird das Feld leer gelassen, wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie Buildparameter festlegen möchten, senden Sie diese wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung und eine vollständige Liste der Parameter finden Sie im Abschnitt „Buildparameter“).`<BuildParametersList><NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance></BuildParametersList>` |
+||| | Anforderungstext | Wird das Feld leer belassen, wird der Build mit den Standardbuildparametern ausgeführt.<br><br>Wenn Sie Buildparameter festlegen möchten, senden Sie diese wie im folgenden Beispiel als XML in den Textkörper. (Eine Erläuterung und eine vollständige Liste der Parameter finden Sie im Abschnitt „Buildparameter“).`<BuildParametersList><NumberOfModelIterations>40</NumberOfModelIterations><NumberOfModelDimensions>20</NumberOfModelDimensions><MinItemAppearance>5</MinItemAppearance><MinUserAppearance>5</MinUserAppearance></BuildParametersList>` |
 
 **Antwort**:
 
@@ -2861,4 +2866,4 @@ HTTP-Statuscode: 200
 Dieses Dokument wird so bereitgestellt, wie es ist. Informationen und Stellungnahmen in diesem Dokument einschließlich URLs und anderer Verweise auf Websites können ohne Ankündigung geändert werden.<br><br> Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Ähnlichkeiten oder Verbindungen sind rein zufällig und nicht beabsichtigt.<br><br> Dieses Dokument gibt Ihnen keinerlei geistige Eigentums- oder anderweitige Rechte an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden.<br><br> © 2015 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

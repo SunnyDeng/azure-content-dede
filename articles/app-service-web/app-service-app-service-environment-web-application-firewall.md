@@ -5,21 +5,23 @@
 	documentationCenter="" 
 	authors="naziml" 
 	manager="wpickett" 
-	editor=""/>
+	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/02/2015" 
+	ms.date="09/15/2015" 
 	ms.author="naziml"/>
 
 # Konfigurieren einer Web Application Firewall (WAF) für eine App Service-Umgebung
 
 ## Übersicht ##
 Web Application Firewalls wie [Barracuda WAF for Azure](https://www.barracuda.com/programs/azure) (im [Azure Marketplace](http://azure.microsoft.com/marketplace/partners/barracudanetworks/waf-byol/) verfügbar) dienen zum Schützen Ihrer Webanwendungen, indem eingehender Webdatenverkehr untersucht wird, um SQL-Injections, Cross-Site Scripting, das Hochladen von Schadsoftware sowie DDoS- und andere Angriffe zu blockieren. WAF überprüft auch zur Verhinderung von Datenverlust (Data Loss Prevention, DLP) die Antworten von den Back-End-Webservern. Zusammen mit der von App Service-Umgebungen bereitgestellten Isolierung und zusätzlichen Skalierung ergibt sich dadurch eine ideale Umgebung für das Hosten geschäftswichtiger Webanwendungen, die böswilligen Anforderungen abwehren und hohe Datenverkehrsvolumen bewältigen müssen.
+
+\+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Einrichtung ##
 Für dieses Dokument konfigurieren wir unsere App Service-Umgebung hinter mehreren Barracuda WAF-Instanzen mit Lastenausgleich, sodass nur Datenverkehr von der WAF die App Service-Umgebung erreichen kann und kein Zugriff aus der DMZ möglich ist. Außerdem haben wir Azure Traffic Manager unseren Barracuda WAF-Instanzen für den Lastenausgleich von Azure-Datencentern und Regionen vorgelagert. Ein allgemeines Diagramm der Einrichtung wird nachstehend gezeigt.
@@ -97,4 +99,4 @@ Ersetzen Sie "SourceAddressPrefix" durch die virtuelle IP-Adresse (VIP) des Clou
 [ConfigureTrafficManager]: ./media/app-service-app-service-environment-web-application-firewall/ConfigureTrafficManager.png
 [WebsiteTranslations]: ./media/app-service-app-service-environment-web-application-firewall/WebsiteTranslations.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

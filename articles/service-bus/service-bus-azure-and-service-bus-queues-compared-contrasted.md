@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="09/09/2015"
+   ms.date="09/11/2015"
    ms.author="sethm" />
 
 # Azure-Warteschlangen und Service Bus-Warteschlangen – Vergleich und Gegenüberstellung.
@@ -272,7 +272,7 @@ In diesem Abschnitt werden Azure-Warteschlangen und Service Bus-Warteschlangen i
 
 |Vergleichskriterien|Azure-Warteschlangen|Service Bus-Warteschlangen|
 |---|---|---|
-|Kosten für Warteschlangentransaktionen|**0,0005 $**<br/><br/>(pro 10.000 Transaktionen)|**Basic-Stufe**: **0,05 $**<br/><br/>(pro Million Vorgänge)|
+|Kosten für Warteschlangentransaktionen|**0,0036 $**<br/><br/>(pro 100.000 Transaktionen)|**Basic-Stufe**: **0,05 $**<br/><br/>(pro Million Vorgänge)|
 |Abrechenbare Vorgänge|**Alle**|**Nur Senden/Empfangen**<br/><br/>(keine Gebühren für andere Vorgänge)|
 |Transaktionen im Leerlauf|**Abrechenbar**<br/><br/>(Die Abfrage einer leeren Warteschlange wird als abrechenbare Transaktion angerechnet.)|**Abrechenbar**<br/><br/>(Ein Empfangsvorgang für eine leere Warteschlange wird als abrechenbare Nachricht angerechnet.)|
 |Speicherkosten|**0,07 $**<br/><br/>(pro GB/Monat)|**0,00 $**|
@@ -311,4 +311,4 @@ Die folgenden Artikel enthalten weitere Anleitungen und Informationen zur Verwen
 - [Understanding Azure Storage Billing – Bandwidth, Transactions, and Capacity](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx) (Grundlagen zur Abrechnung von Azure Storage – Bandbreite, Transaktionen und Kapazität, in englischer Sprache)
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

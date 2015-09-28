@@ -5,15 +5,15 @@
 	documentationCenter=".net"
 	authors="cephalin"
 	manager="wpickett"
-	editor=""/>
+	editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/02/2015"
+	ms.date="09/16/2015"
 	ms.author="cephalin"/>
 
 # Aktivieren der Diagnoseprotokollierung für Web-Apps in Azure App Service
@@ -22,7 +22,9 @@
 
 Azure bietet integrierte Diagnosefunktionen zur Unterstützung beim Debuggen einer [App Service-Web-App](http://go.microsoft.com/fwlink/?LinkId=529714). In diesem Artikel erfahren Sie, wie Sie die Diagnoseprotokollierung aktivieren und Ihrer Anwendung Instrumentierung hinzufügen sowie wie Sie die von Azure protokollierten Informationen abrufen.
 
-> [AZURE.NOTE]In diesem Artikel wird die Verwendung von Diagnoseprotokollen mit dem [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), Azure PowerShell und der Azure-Befehlszeilenschnittstelle (Azure-CLI) beschrieben. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
+In diesem Artikel wird die Verwendung von Diagnoseprotokollen mit dem [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), Azure PowerShell und der Azure-Befehlszeilenschnittstelle (Azure-CLI) beschrieben. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## <a name="whatisdiag"></a>Webserver- und Anwendungsdiagnose
 
@@ -252,7 +254,7 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 
 ##<a name="nextsteps"></a> Nächste Schritte
 
-- [Überwachen von Web-Apps](/de-de/manage/services/web-sites/how-to-monitor-websites/)
+- [Überwachen von Web-Apps](/de-DE/manage/services/web-sites/how-to-monitor-websites/)
 - [Problembehandlung von Azure-Web-Apps in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md)
 - [Analyse von Web-App-Protokollen in HDInsight](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)
 
@@ -263,4 +265,4 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

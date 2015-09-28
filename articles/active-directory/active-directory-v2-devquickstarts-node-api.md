@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App-Modell v2.0 | Microsoft Azure"
+	pageTitle="App-Modell v2.0 Node.js Web-API | Microsoft Azure"
 	description="Vorgehensweise beim Erstellen einer NodeJS-Web-API, die sowohl Token von persönlichen Microsoft-Konten als auch Geschäfts- oder Schulkonten akzeptiert."
 	services="active-directory"
 	documentationCenter="nodejs"
@@ -10,15 +10,16 @@
 <tags
 	ms.service="active-directory"
 	ms.workload="identity"
-	ms.tgt_pltfrm="na"
+  	ms.tgt_pltfrm="na"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="08/25/2015"
+	ms.date="09/11/2015"
 	ms.author="brandwe"/>
 
 # App-Modell v2.0 (Vorschauversion): Schützen einer Web-API mit "node.js"
 
-> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]
+Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
 Mit dem App-Modell v2.0 können Sie eine Web-API mit [OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow)-Zugriffstoken schützen, sodass sowohl Benutzer mit persönlichen Microsoft-Konten als auch solche mit Geschäfts- oder Schulkonten sicher auf Ihre Web-API zugreifen können.
 
@@ -38,25 +39,25 @@ Die fertige Anwendung wird außerdem am Ende dieses Lernprogramms bereitgestellt
 
 
 ## 1. Registrieren einer App
-Create a new app at [apps.dev.microsoft.com](https://apps.dev.microsoft.com), or follow these [detailed steps](active-directory-v2-app-registration.md). Stellen Sie sicher, dass Sie:
+Erstellen Sie eine neue App auf [apps.dev.microsoft.com](https://apps.dev.microsoft.com) oder führen Sie die folgenden [detailed steps](active-directory-v2-app-registration.md).  Stellen Sie sicher, dass Sie:
 
 - die **Anwendungs-ID**, die Ihrer App zugewiesen ist, kopieren. Sie werden sie in Kürze benötigen.
-- Fügen Sie die **Mobile** Plattform zu Ihrer App hinzu.
-- Kopieren Sie den **Umleitungs-URI** aus dem Portal. Sie müssen den Standardwert `urn:ietf:wg:oauth:2.0:oob` verwenden.
+- Fügen Sie die **Mobile**-Plattform zu Ihrer App hinzu.
+- Kopieren Sie den **Umleitungs-URI** aus dem Portal. Sie müssen den Standardwert “urn:ietf:wg:oauth:2.0:oob“verwenden.
 
 
-## 2: Herunterladen der Datei node.js für Ihre Plattform
+## 2: Herunterladen der Datei „node.js“ für Ihre Plattform
 Für die Verwendung dieses Beispiels benötigen Sie eine funktionsfähige Installation von Node.js.
 
-Install Node.js from [http://nodejs.org](http://nodejs.org).
+Installieren Sie Node.js von [http://nodejs.org](http://nodejs.org).
 
 ## 3: Installieren von MongoDB auf Ihrer Plattform
 
 Für die Verwendung dieses Beispiels benötigen Sie eine funktionsfähige Installation von MongoDB. Durch die Verwendung von MongoDB bleibt die REST-API über Serverinstanzen hinweg persistent.
 
-Install MongoDB from [http://mongodb.org](http://www.mongodb.org).
+Installieren Sie MongoDB von [http://mongodb.org](http://www.mongodb.org).
 
-> [AZURE.NOTE] In dieser exemplarischen Vorgehensweise wird davon ausgegangen, dass Sie die Standardinstallation und die Standardserverendpunkte für MongoDB verwenden. Diese sind zum Zeitpunkt der Erstellung dieses Artikels: mongodb://localhost
+> [AZURE.NOTE] exemplarischen Vorgehensweise wird davon ausgegangen, dass Sie die Standardinstallation und die Standardserverendpunkte für MongoDB verwenden. Diese sind zum Zeitpunkt der Erstellung dieses Artikels: mongodb://localhost
 
 ## 4: Installieren der Restify-Module in Ihrer Web-API
 
@@ -64,7 +65,7 @@ Zur Erstellung der REST-API verwenden Sie Restify. Restify ist ein einfaches und
 
 ### Installieren von Restify
 
-Wechseln Sie an der Befehlszeile zum Verzeichnis azuread. Falls das Verzeichnis **azuread** nicht vorhanden ist, erstellen Sie es.
+Wechseln Sie an der Befehlszeile zum Verzeichnis „azuread“. Falls das Verzeichnis **azuread** nicht vorhanden ist, erstellen Sie es.
 
 `cd azuread` - or- `mkdir azuread;`
 
@@ -74,11 +75,11 @@ Geben Sie den folgenden Befehl ein:
 
 Mit diesem Befehl wird Restify installiert.
 
-#### BEI EINEM FEHLER
+#### Bei einem fehler?
 
-Bei Verwendung von npm kann bei einigen Betriebssystemen der Fehler Error: EPERM, chmod '/usr/local/bin/..' zurückgegeben werden und die Aufforderung erfolgen, das Konto als Administrator auszuführen. Verwenden Sie in diesem Fall den Befehl, um npm mit einer höheren Berechtigungsstufe auszuführen.
+Bei Verwendung von „npm“ kann bei einigen Betriebssystemen der Fehler „Error: EPERM, chmod '/usr/local/bin/..'“ zurückgegeben werden und die Aufforderung erfolgen, das Konto als Administrator auszuführen. Verwenden Sie in diesem Fall den Befehl sudo, um npm mit einer höheren Berechtigungsstufe auszuführen.
 
-#### BEI EINEM FEHLER ZU DTRACE
+#### Bei einem fehler zu DTRACE?
 
 Bei der Installation von Restify erhalten Sie eventuell einen Fehler wie den Folgenden:
 
@@ -148,7 +149,7 @@ Die Ausgabe dieses Befehls sollte ungefähr wie folgt aussehen:
 
 Als Nächstes fügen wir die OAuth-Strategie mit "passport-azuread" hinzu, einer Reihe von Strategien, die Azure Active Directory mit Passport verbinden. Wir verwenden diese Strategie für Bearertoken in diesem Rest-API-Beispiel.
 
-> [AZURE.NOTE]OAuth2 bietet zwar ein Framework, in dem alle bekannten Tokentypen ausgegeben werden können, allerdings findet hiervon meist nur ein eingeschränkter Tokensatz Anwendung. Für den Schutz von Endpunkten sind dies in der Regel Bearer-Tokens. Bearer-Tokens sind die in OAuth2 am häufigsten ausgegebenen Tokens, und viele Implementierungen gehen sogar davon aus, dass nur dieser Tokentyp ausgestellt wird.
+> [AZURE.NOTE] OAuth2 bietet zwar ein Framework, in dem alle bekannten Tokentypen ausgegeben werden können, allerdings findet hiervon meist nur ein eingeschränkter Tokensatz Anwendung. Für den Schutz von Endpunkten sind dies in der Regel Bearer-Tokens. Bearer-Tokens sind die in OAuth2 am häufigsten ausgegebenen Tokens, und viele Implementierungen gehen sogar davon aus, dass nur dieser Tokentyp ausgestellt wird.
 
 Wechseln Sie an der Befehlszeile zum Verzeichnis "azuread".
 
@@ -271,7 +272,8 @@ identityMetadata: 'https://login.microsoftonline.com/common/.well-known/openid-c
 
 *audience*: Die Umleitungs-URI aus dem Portal.
 
-> [AZURE.NOTE]Wir setzen unsere Schlüssel in regelmäßigen Abständen zurück. Stellen Sie sicher, dass Sie Ihre Schlüssel immer über die „openid\_keys“-URL abrufen und die Anwendung auf das Internet zugreifen kann.
+> [AZURE.NOTE]
+Wir setzen unsere Schlüssel in regelmäßigen Abständen zurück. Stellen Sie sicher, dass Sie Ihre Schlüssel immer über die „openid\_keys“-URL abrufen und die Anwendung auf das Internet zugreifen kann.
 
 
 ## 11: Hinzufügen der Konfiguration zur Datei "server.js"
@@ -648,7 +650,8 @@ Vergewissern Sie sich zunächst, dass Ihre MonogoDB-Instanz ausgeführt wird.
 
 Wechseln Sie danach zum Verzeichnis, und beginnen Sie mit dem Curling.
 
-`$ cd azuread` `$ node server.js`
+`$ cd azuread`
+`$ node server.js`
 
 `$ curl -isS http://127.0.0.1:8080 | json`
 
@@ -714,7 +717,8 @@ server.use(passport.initialize()); // Starts passport
 server.use(passport.session()); // Provides session support
 ```
 
-> [AZURE.TIP]Beim Schreiben von APIs sollten Sie die Daten immer mit einem eindeutigen Element aus dem Token verknüpfen, das der Benutzer nicht spoofen kann. Wenn dieser Server TODO-Elemente speichert, speichert er sie entsprechend der Abonnement-ID des Benutzers im Token (wird "token.sub" genannt), die wir in das Feld "owner" aufnehmen. Dadurch wird sichergestellt, dass nur dieser Benutzer auf seine TODOs zugreifen kann und dass sonst niemand auf die eingegebenen TODOs zugreifen kann. Es ist keine Offenlegung in den APIs von "owner" vorgesehen, also kann ein externer Benutzer TODOs von anderen anfordern, selbst wenn eine Authentifizierung erfolgt ist.
+> [AZURE.TIP]
+Beim Schreiben von APIs sollten Sie die Daten immer mit einem eindeutigen Element aus dem Token verknüpfen, das der Benutzer nicht spoofen kann. Wenn dieser Server TODO-Elemente speichert, speichert er sie entsprechend der Abonnement-ID des Benutzers im Token (wird "token.sub" genannt), die wir in das Feld "owner" aufnehmen. Dadurch wird sichergestellt, dass nur dieser Benutzer auf seine TODOs zugreifen kann und dass sonst niemand auf die eingegebenen TODOs zugreifen kann. Es ist keine Offenlegung in den APIs von "owner" vorgesehen, also kann ein externer Benutzer TODOs von anderen anfordern, selbst wenn eine Authentifizierung erfolgt ist.
 
 Als Nächstes verwenden wir die Strategie "Open ID Connect Bearer", die zu "passport-azure-ad" gehört. Sehen wir uns jetzt nur den Code an, den ich kurz erläutern werde. Fügen Sie ihn nach dem ein, was Sie weiter oben hinzugefügt haben:
 
@@ -763,9 +767,10 @@ passport.use(oidcStrategy);
 
 Passport verwendet ein ähnliches Muster für alle Strategien (Twitter, Facebook usw.), das beim Schreiben aller Strategien eingehalten wird. Beim Betrachten der Strategie sehen Sie, dass ein function()-Element übergeben wird, das Token- und done-Elemente als Parameter aufweist. Die Strategie kehrt wieder an den Ausgangspunkt zurück, sobald die gesamte Arbeit abgeschlossen ist. Sobald dies der Fall ist, speichern wir den Benutzer und das Token, damit wir beides nicht mehr erfragen müssen.
 
-> [AZURE.IMPORTANT]Der obige Code erfasst alle Benutzer, die sich an unserem Server authentifizieren. Dies wird als automatische Registrierung bezeichnet. Bei Produktionsservern müssten die Benutzer zunächst einen Registrierungsprozess durchlaufen, den Sie festlegen. Dies ist normalerweise das Muster, das Sie bei Consumer-Apps finden, die es Ihnen ermöglichen, sich bei Facebook zu registrieren, aber dann dazu auffordern, zusätzliche Informationen anzugeben. Wenn dies nicht ein Befehlszeilenprogramm wäre, könnten wir einfach die E-Mail aus dem Tokenobjekt extrahieren, das zurückgegeben wird, und dann dazu auffordern, zusätzliche Informationen einzugeben. Da es sich um einen Testserver handelt, fügen wir sie einfach der Datenbank im Arbeitsspeicher hinzu.
+> [AZURE.IMPORTANT]
+Der obige Code erfasst alle Benutzer, die sich an unserem Server authentifizieren. Dies wird als automatische Registrierung bezeichnet. Bei Produktionsservern müssten die Benutzer zunächst einen Registrierungsprozess durchlaufen, den Sie festlegen. Dies ist normalerweise das Muster, das Sie bei Consumer-Apps finden, die es Ihnen ermöglichen, sich bei Facebook zu registrieren, aber dann dazu auffordern, zusätzliche Informationen anzugeben. Wenn dies nicht ein Befehlszeilenprogramm wäre, könnten wir einfach die E-Mail aus dem Tokenobjekt extrahieren, das zurückgegeben wird, und dann dazu auffordern, zusätzliche Informationen einzugeben. Da es sich um einen Testserver handelt, fügen wir sie einfach der Datenbank im Arbeitsspeicher hinzu.
 
-### 2\. Schützen einiger Endpunkte
+### 2. Schützen einiger Endpunkte
 
 Endpunkte schützen Sie mit dem Aufruf „passport.authenticate()“, wobei Sie darin das Protokoll angeben, das Sie verwenden möchten.
 
@@ -851,6 +856,8 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 [Sichern einer Web-App mit dem App-Modell v2.0 in "Node.js" >>](active-directory-v2-devquickstarts-node-web.md)
 
-Weitere Ressourcen: - [App-Modell, Version 2.0, Vorschau >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-Tag "azure-active-directory" >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
+Weitere Ressourcen:
+- [App-Modell, Version 2.0, Vorschau >>](active-directory-appmodel-v2-overview.md)
+- [StackOverflow-Tag "azure-active-directory" >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

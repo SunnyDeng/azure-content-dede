@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015"
+	ms.date="09/16/2015"
 	ms.author="juliako"/>
 
 
@@ -204,8 +204,8 @@ Bei Verwendung des **Media Services SDK für .NET** können Sie die **TokenRestr
 	
 	    template.PrimaryVerificationKey = new SymmetricVerificationKey();
 	    template.AlternateVerificationKeys.Add(new SymmetricVerificationKey());
-	    template.Audience = _sampleAudience;
-	    template.Issuer = _sampleIssuer;
+            template.Audience = _sampleAudience.ToString();
+            template.Issuer = _sampleIssuer.ToString();
 	
 	    template.RequiredClaims.Add(TokenClaim.ContentKeyIdentifierClaim);
 	
@@ -336,8 +336,8 @@ Zur Konfiguration der Token-Einschränkungsoption müssen die Autorisierungsanfo
 	
 	    template.PrimaryVerificationKey = new SymmetricVerificationKey();
 	    template.AlternateVerificationKeys.Add(new SymmetricVerificationKey());
-	    template.Audience = _sampleAudience;
-	    template.Issuer = _sampleIssuer;
+            template.Audience = _sampleAudience.ToString();
+            template.Issuer = _sampleIssuer.ToString();
 	
 	
 	    template.RequiredClaims.Add(TokenClaim.ContentKeyIdentifierClaim);
@@ -403,4 +403,4 @@ Sie können sich die AMS-Lernpfade hier ansehen:
 Nachdem Sie eine Autorisierungsrichtlinie für einen Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Konfigurieren einer Übermittlungsrichtlinie für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md) fort.
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

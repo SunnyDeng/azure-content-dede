@@ -1,12 +1,12 @@
 <properties 
 	pageTitle="Erstellen einer Webanwendung mit ASP.NET MVC unter Verwendung von DocumentDB | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie mithilfe von DocumentDB und .NET eine To-Do-List-Webanwendung erstellen. Das Speichern von und der Zugriff auf Daten erfolgt über eine ASP.NET MVC-Webanwendung, die in Azure-Websites gehostet wird." 
+	keywords="Github, visual studio, web application development, application development, database tutorial, mvc applications, json data, documentdb, azure, Microsoft azure"
 	services="documentdb" 
 	documentationCenter=".net" 
 	authors="ryancrawcour" 
 	manager="jhubbard" 
 	editor="cgronlun"/>
-
 
 
 <tags 
@@ -18,7 +18,6 @@
 	ms.date="07/24/2015" 
 	ms.author="ryancraw"/>
 
-
 #<a name="_Toc395809351"></a>Erstellen einer Webanwendung mit ASP.NET MVC unter Verwendung von DocumentDB
 
 In diesem Artikel wird mithilfe einer umfassenden exemplarischen Vorgehensweise verdeutlicht, wie Sie Azure DocumentDB effizient zum Speichern und Abfragen von JSON-Dokumenten einsetzen, indem das Erstellen einer To-Do-List-Webanwendung unter Verwendung von Azure DocumentDB erläutert wird. Die Aufgaben werden als JSON-Dokumente in Azure DocumentDB gespeichert.
@@ -29,7 +28,7 @@ In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie mit dem vo
 
 > [AZURE.TIP]Dieses Lernprogramm setzt vorherige Erfahrung mit der Verwendung von ASP.NET MVC und Azure-Websites voraus. Wenn Sie noch nicht mit ASP.NET oder den als [Voraussetzung erforderlichen Tools](#_Toc395637760) vertraut sind, sollten Sie das vollständige [ToDo](https://github.com/Azure/azure-documentdb-net/tree/master/tutorials/todo)-Lernprogrammprojekt von [GitHub](https://github.com/Azure/azure-documentdb-net) herunterladen und gemäß den [Anweisungen am Ende dieses Artikels](#GetProject) erstellen. Nachdem Sie das Projekt erstellt haben, können Sie den Artikel lesen, um Einblick in den Code im Kontext des Projekts zu erhalten.
 
-## <a name="_Toc395637760"></a>Voraussetzungen
+## <a name="_Toc395637760"></a>Voraussetzungen für dieses Lernprogramm
 
 Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgendes vorhanden ist:
 
@@ -47,8 +46,7 @@ Erstellen Sie zunächst ein DocumentDB-Konto. Wenn Sie bereits über ein Konto v
 
 [AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
 
-<br/>
-Im Folgenden wird erläutert, wie eine neue ASP.NET MVC-Anwendung von Grund auf erstellt wird.
+<br/>Im Folgenden wird erläutert, wie eine neue ASP.NET MVC-Anwendung von Grund auf erstellt wird.
 
 ## <a name="_Toc395637762"></a>Schritt 2: Erstellen einer neuen ASP.NET MVC-Anwendung
 
@@ -67,7 +65,7 @@ Nun, da Sie über ein Konto verfügen, erstellen wir unser neues ASP.NET-Projekt
 
   	Das Dialogfeld **Neues ASP.NET-Projekt** wird angezeigt.
 
-  	![Screenshot des Dialogfelds "Neues ASP.NET-Projekt", bei dem die MVC-Vorlage hervorgehoben und der Host im Cloud-Feld aktiviert ist](./media/documentdb-dotnet-application/image11.png)
+  	![Screenshot des Dialogfelds "Neues ASP.NET-Projekt", in dem die MVC-Anwendungsvorlage hervorgehoben und das Feld "Host in der Cloud" aktiviert ist](./media/documentdb-dotnet-application/image11.png)
 
 5. Wählen Sie im Vorlagenbereich **MVC** aus.
 
@@ -87,13 +85,13 @@ Nun, da Sie über ein Konto verfügen, erstellen wir unser neues ASP.NET-Projekt
 
 	Die lokale Ausführung des Projekts wird übersprungen, da sicher alle von Ihnen die ASP.NET-Anwendung "Hello World" gesehen haben. Betrachten wir im Folgenden das Hinzufügen von DocumentDB zu diesem Projekt, und das Erstellen unserer Anwendung.
 
-## <a name="_Toc395637767"></a>Schritt 3: Hinzufügen von DocumentDB zum Projekt
+## <a name="_Toc395637767"></a>Schritt 3: Hinzufügen von DocumentDB zu Ihrem Webanwendungsprojekt
 
 Nun, da ein Großteil des für diese Lösung benötigten ASP.NET MVC-Frameworks steht, kommen wir zum wesentlichen Teil dieses Lernprogramms, dem Hinzufügen von Azure DocumentDB zu unserer Webapplikation.
 
 1. Das DocumentDB .NET SDK wird als NuGet-Paket verpackt und verteilt. Verwenden Sie zum Abrufen des NuGet-Pakets in Visual Studio den NuGet-Paket-Manager in Visual Studio, indem Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt klicken und dann auf **NuGet-Pakete verwalten** klicken.
 
-  	![Screenshot der Kontextmenüoptionen für das Projekt im Projektmappen-Explorer, bei dem "NuGet-Pakete verwalten" hervorgehoben ist.](./media/documentdb-dotnet-application/image21.png)
+  	![Screenshot der Kontextmenüoptionen für das Webanwendungsprojekt im Projektmappen-Explorer, bei dem "NuGet-Pakete verwalten" hervorgehoben ist.](./media/documentdb-dotnet-application/image21.png)
 
     Das Dialogfeld **NuGet-Pakete verwalten** wird geöffnet.
 
@@ -109,7 +107,7 @@ Nun, da ein Großteil des für diese Lösung benötigten ASP.NET MVC-Frameworks 
 
 3. Wenn das Paket installiert ist, sollte die Visual Studio-Projektmappe ungefähr wie folgt aussehen und die folgenden zwei neuen Verweise enthalten: Microsoft.Azure.Documents.Client und Newtonsoft.Json.
 
-  	![Screenshot der zwei Verweise, die dem Projekt im Projektmappen-Explorer hinzugefügt wurden](./media/documentdb-dotnet-application/image22.png)
+  	![Screenshot der zwei Verweise, die dem JSON-Datenprojekt im Projektmappen-Explorer hinzugefügt wurden](./media/documentdb-dotnet-application/image22.png)
 
 
 ##<a name="_Toc395637763"></a>Schritt 4: Einrichten der ASP.NET MVC-Anwendung
@@ -121,7 +119,7 @@ Jetzt werden der MVC-Anwendung die Modelle, Ansichten und Controller hinzugefüg
 - [Hinzufügen von Ansichten](#_Toc395637766).
 
 
-### <a name="_Toc395637764"></a>Hinzufügen eines Modells
+### <a name="_Toc395637764"></a>Hinzufügen eines JSON-Datenmodells
 
 Beginnen wir zunächst mit dem Erstellen des **M** in MVC, des Modells.
 
@@ -181,7 +179,7 @@ Das **M** ist damit abgedeckt, nun wird das **C** in MVC erstellt, eine Controll
 
 	Nachdem die Datei erstellt wurde, sollte die Visual Studio-Projektmappe ungefähr wie folgt aussehen, und die neue Datei "ItemController.cs" sollte im **Projektmappen-Explorer** angezeigt werden. Die neue Item.cs-Datei, die zuvor erstellt wurde, wird ebenfalls angezeigt.
 
-	![Screenshot des Projektmappen-Explorers, bei dem die neue ItemController.cs-Datei und die Item.cs-Datei hervorgehoben ist](./media/documentdb-dotnet-application/image16.png)
+	![Screenshot der Visual Studio-Projektmappe - Projektmappen-Explorer, in dem die neue ItemController.cs-Datei und die Item.cs-Datei hervorgehoben sind](./media/documentdb-dotnet-application/image16.png)
 
 	Sie können ItemController.cs schließen, darauf kommen wir zu einem späteren Zeitpunkt zurück.
 
@@ -198,14 +196,14 @@ Nun wird das **V** in MVC erstellt, die Ansichten (Views):
 
 1. Erweitern Sie im **Projektmappen-Explorer** den Ordner **Ansichten**, klicken Sie mit der rechten Maustaste auf den leeren Ordner **Item**, der zuvor beim Hinzufügen des **ItemController** von Visual Studio erstellt wurde, klicken Sie auf **Hinzufügen** und dann auf **Ansicht**.
 
-	![Screenshot des Projektmappen-Explorers, bei dem der Ordner "Elemente" mit den Befehlen "Ansicht hinzufügen" hervorgehoben ist](./media/documentdb-dotnet-application/image17.png)
+	![Screenshot des Projektmappen-Explorers, in dem der von Visual Studio erstellte Ordner "Element" gezeigt wird und die Befehle "Hinzufügen" > "Ansicht" hervorgehoben sind](./media/documentdb-dotnet-application/image17.png)
 
 2. Gehen Sie im Dialogfeld **Ansicht hinzufügen** folgendermaßen vor:
 	- Geben Sie im Feld **Ansichtsname** den Namen ***Index*** ein.
 	- Wählen Sie im Feld **Vorlage** die Option ***Liste*** aus.
 	- Wählen Sie im Feld **Modellklasse** die Option ***Item (todo.Models)*** aus.
 	- Lassen Sie das Feld **Datenkontextklasse** leer. 
-	- Geben Sie im Feld für die Layoutseite ***\~/Views/Shared/\_Layout.cshtml*** ein.
+	- Geben Sie im Feld für die Layoutseite ***~/Views/Shared/\_Layout.cshtml*** ein.
 	
 	![Screenshot des Dialogfelds "Ansicht hinzufügen"](./media/documentdb-dotnet-application/image18.png)
 
@@ -222,7 +220,7 @@ Nun wird das **V** in MVC erstellt, die Ansichten (Views):
     - Wählen Sie im Feld **Vorlage** die Option ***Erstellen*** aus.
     - Wählen Sie im Feld **Modellklasse** die Option ***Item (todo.Models)*** aus.
     - Lassen Sie das Feld **Datenkontextklasse** leer.
-    - Geben Sie im Feld für die Layoutseite ***\~/Views/Shared/\_Layout.cshtml*** ein.
+    - Geben Sie im Feld für die Layoutseite ***~/Views/Shared/\_Layout.cshtml*** ein.
     - Klicken Sie auf **Hinzufügen**.
 
 #### <a name="_Toc395888515"></a>Hinzufügen einer Elementbearbeitungsansicht
@@ -236,7 +234,7 @@ Fügen Sie abschließend eine letzte Ansicht zum Bearbeiten eines **Elements** a
     - Wählen Sie im Feld **Vorlage** die Option ***Bearbeiten*** aus.
     - Wählen Sie im Feld **Modellklasse** die Option ***Item (todo.Models)*** aus.
     - Lassen Sie das Feld **Datenkontextklasse** leer. 
-    - Geben Sie im Feld für die Layoutseite ***\~/Views/Shared/\_Layout.cshtml*** ein.
+    - Geben Sie im Feld für die Layoutseite ***~/Views/Shared/\_Layout.cshtml*** ein.
     - Klicken Sie auf **Hinzufügen**.
 
 Wenn dies abgeschlossen ist, schließen Sie alle CSHTML-Dokumente in Visual Studio, da wir erst später zu diesen Ansichten zurückkehren.
@@ -251,7 +249,7 @@ In diesem Abschnitt fügen wir Code zur Ausführung folgender Aufgaben hinzu:
 - [Hinzufügen von Elementen](#_Toc395637771).
 - [Bearbeiten von Elementen](#_Toc395637772).
 
-### <a name="_Toc395637770"></a>Auflisten unvollständiger Elemente
+### <a name="_Toc395637770"></a>Auflisten unvollständiger Elemente in Ihrer Webanwendung
 
 Hier muss zunächst eine Klasse hinzugefügt werden, die die gesamte Logik zur Verbindung mit und Verwendung der DocumentDB enthält. Für dieses Lernprogramm kapseln wir die gesamte Logik in einer Repository-Klasse namens DocumentDBRepository.
 
@@ -398,13 +396,9 @@ Hier muss zunächst eine Klasse hinzugefügt werden, die die gesamte Logik zur V
 3. Nun werden einige Werte aus der Konfiguration gelesen. Öffnen Sie die Datei **Web.config** Ihrer Anwendung, und fügen Sie die folgenden Zeilen unter dem Abschnitt `<AppSettings>` hinzu.
 	
     	<add key="endpoint" value="enter the URI from the Keys blade of the Azure Preview portal"/>
-
     	<add key="authKey" value="enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Preview portal"/>
-
     	<add key="database" value="ToDoList"/>
-
     	<add key="collection" value="Items"/>
-
 	
 4. Aktualisieren Sie nun über das Blatt „Schlüssel“ des Azure-Vorschauportals die Werte für *endpoint* und *authKey*. Verwenden Sie die **URI** aus dem Blatt "Schlüssel" als Wert für die Endpunkt-Einstellung, und verwenden Sie den **PRIMÄRSCHLÜSSEL** oder den **SEKUNDÄRSCHLÜSSEL** aus dem Blatt "Schlüssel" als Wert für die authKey-Einstellung.
 
@@ -448,17 +442,17 @@ Jetzt sollte Ihre Lösung ohne Fehler erstellen können.
 
 Wenn Sie die Anwendung jetzt ausführen, werden Sie zum **HomeController** und der Ansicht **Index** dieses Controllers geleitet. Das ist das Standardverhalten für das MVC-Vorlagenprojekt, das am Anfang ausgewählt wurde, das möchten wir jedoch nicht! Zum Ändern dieses Verhaltens muss die Weiterleitung dieser MVC-Anwendung geändert werden.
 
-Öffnen Sie ***App\\\_Start\\RouteConfig.cs***, navigieren Sie zur Zeile, die mit „defaults“ beginnt, und ändern Sie diese auf folgende Weise.
+Öffnen Sie ***App\\_Start\\RouteConfig.cs***, navigieren Sie zur Zeile, die mit „defaults“ beginnt, und ändern Sie diese auf folgende Weise.
 
     	defaults: new { controller = "Item", action = "Index", id = UrlParameter.Optional }
 
 Damit weiß ASP.NET MVC, dass Sie keinen Wert in der URL angegeben haben, um das Routingverhalten zu steuern, dass anstelle von **Home** **Item** als Controller und den Benutzer-**Index** als Ansicht verwendet.
 
-Wenn Sie die Anwendung nun ausführen, wird sie Ihren **ItemController** aufrufen, der die Repository-Klasse aufruft und die GetItems-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\\**Element**\\**Index** zurückzugeben.
+Wenn Sie die Anwendung nun ausführen, wird sie Ihren **ItemController** aufrufen, der die Repository-Klasse aufruft und die GetItems-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\**Element**\**Index** zurückzugeben.
 
 Wenn Sie dieses Projekt jetzt erstellen und ausführen, sollte ein Ergebnis ähnlich dem folgenden angezeigt werden.
 
-![Screenshot der in diesem Lernprogramm erstellten Webanwendung "Aufgabenliste"](./media/documentdb-dotnet-application/image23.png)
+![Screenshot der in diesem Datenbanklernprogramm erstellten Aufgabenliste-Webanwendung](./media/documentdb-dotnet-application/image23.png)
 
 ### <a name="_Toc395637771"></a>Hinzufügen von Elementen
 
@@ -585,7 +579,7 @@ Um die Anwendung lokal zu testen, führen Sie die folgenden Schritte aus:
 
 1. Drücken Sie in Visual Studio F5 , um die Anwendung im Debugmodus zu erstellen. Die Anwendung sollte erstellt, und ein Browser mit der zuvor angezeigten leeren Rasterseite sollte geöffnet werden:
 
-	![Screenshot der in diesem Lernprogramm erstellten Webanwendung "Aufgabenliste"](./media/documentdb-dotnet-application/image24.png)
+	![Screenshot der in diesem Datenbanklernprogramm erstellten Aufgabenliste-Webanwendung](./media/documentdb-dotnet-application/image24.png)
 
 	Wenn an dieser Stelle Fehler auftreten, können Sie Ihren Code mit dem Todo-Lernprogramm auf [GitHub][] vergleichen.
 
@@ -615,7 +609,7 @@ Nachdem die vollständige Anwendung korrekt mit DocumentDB zusammenarbeitet, ste
 
 2. Alles sollte bereits Ihren Anmeldeinformationen entsprechend konfiguriert sein; tatsächlich wurde die Website bereits unter der angezeigten **Ziel-URL** in Azure erstellt, Sie müssen lediglich noch auf **Veröffentlichen** klicken.
 
-    ![Screenshots des Dialogfelds "Web veröffentlichen"](./media/documentdb-dotnet-application/image29.png)
+    ![Screenshots des Dialogfelds "Web veröffentlichen" in Visual Studio](./media/documentdb-dotnet-application/image29.png)
 
 Dann schließt Visual Studio die Veröffentlichung Ihrer Webanwendung in wenigen Sekunden ab und startet einen Browser, in dem das Ergebnis Ihrer Arbeit in Azure ausgeführt wird!
 
@@ -642,14 +636,12 @@ Wenn Sie Zeit sparen und einfach nur die vollständige Todo-Projektmappe erstell
 	
 	Wenn Sie nicht über ein Konto verfügen, finden Sie unter [Erstellen eines Datenbankkontos](documentdb-create-account.md) Informationen zum Einrichten eines Kontos.
 
-	![Screenshot des Azure-Vorschauportals mit einem DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche „Schlüssel“ auf dem Blatt „DocumentDB-Konto“, und auf dem Blatt „Schlüssel“ die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL hervorgehoben sind.](media/documentdb-dotnet-application/keys.png)
+	![Screenshot des Azure-Vorschauportals mit einem DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche „Schlüssel“ auf dem Blatt „DocumentDB-Konto“, und auf dem Blatt „Schlüssel“ die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL hervorgehoben sind](media/documentdb-dotnet-application/keys.png)
 
 5. Aktualisieren Sie in der Datei "Web.config" die Standardwerte für die Schlüssel **endpoint** und **authKey**.
 
-    	<add key="endpoint" value="~enter URI for your DocumentDB Account, from Azure Preview portal~" />
- 
-		<add key="authKey" value="~enter either Primary or Secondary key for your DocumentDB Account, from Azure Preview portal~" />
- 
+    	<add key="endpoint" value="~enter URI for your DocumentDB Account, from Azure Preview portal~" /> 
+		<add key="authKey" value="~enter either Primary or Secondary key for your DocumentDB Account, from Azure Preview portal~" /> 
 
 	- Kopieren Sie den Wert für **URI** auf dem Blatt "Schlüssel", und fügen Sie ihn in den Wert der **endpoint**-Eigenschaft ein. 
 	- Kopieren Sie den Wert für **PRIMÄRSCHLÜSSEL** oder **SEKUNDÄRSCHLÜSSEL** auf dem Blatt **Schlüssel**, und fügen Sie ihn in den Wert der **authKey**-Eigenschaft ein.
@@ -659,7 +651,7 @@ Wenn Sie Zeit sparen und einfach nur die vollständige Todo-Projektmappe erstell
 7. Sie können nun [Ihre Anwendung lokal ausführen](#_Toc395637773) und anschließend [auf Azure-Websites bereitstellen](#_Toc395637774).
 
 
-[\*]: https://microsoft.sharepoint.com/teams/DocDB/Shared%20Documents/Documentation/Docs.LatestVersions/PicExportError
+[*]: https://microsoft.sharepoint.com/teams/DocDB/Shared%20Documents/Documentation/Docs.LatestVersions/PicExportError
 [Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
 [Microsoft-Webplattform-Installer]: http://www.microsoft.com/web/downloads/platform.aspx
 [GitHub]: http://go.microsoft.com/fwlink/?LinkID=509838&clcid=0x409
@@ -667,4 +659,4 @@ Wenn Sie Zeit sparen und einfach nur die vollständige Todo-Projektmappe erstell
 [Grundlegende CRUD-Vorgänge in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

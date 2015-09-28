@@ -1,19 +1,19 @@
-<properties 
+<properties
    pageTitle="Durchsuchen und Verwalten von Speicherressourcen mit dem Server-Explorer"
-	description="Durchsuchen und Verwalten von Speicherressourcen mit dem Server-Explorer"
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="kempb"
-	manager="douge"
-	editor="tlee"/>
-<tags 
+   description="Durchsuchen und Verwalten von Speicherressourcen mit dem Server-Explorer"
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="kempb"
+   manager="douge"
+   editor="tlee" />
+<tags
    ms.service="storage"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/24/2015"
-	ms.author="kempb"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/24/2015"
+   ms.author="kempb" />
 
 # Durchsuchen und Verwalten von Speicherressourcen mit dem Server-Explorer
 
@@ -42,19 +42,21 @@ Erweitern Sie zum Anzeigen von Ressourcen in einem Speicherkonto den Knoten des 
 
 Der Knoten "Blobs" zeigt eine Liste der Container für das ausgewählte Speicherkonto an. Blobcontainer enthalten Blobdateien, und Sie können diese Blobs in Ordnern und Unterordnern organisieren. Weitere Informationen finden Sie unter [Verwenden von BLOB-Speicher aus .NET](..storage/storage-dotnet-how-to-use-blobs/).
 
-###So erstellen Sie einen Blobcontainer
+### So erstellen Sie einen Blobcontainer
 
 1. Öffnen Sie das Kontextmenü für den Knoten **Blobs**, und wählen Sie dann **Blobcontainer erstellen**.
 
-1. Geben Sie den Namen des neuen Containers im Dialogfeld **Blobcontainer erstellen** ein, und wählen Sie dann **OK**. ![Hinzufügen eines neuen Blobcontainers](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC744153.bmp)
+1. Geben Sie den Namen des neuen Containers im Dialogfeld **Blobcontainer erstellen** ein, und wählen Sie dann **OK**.
+
+    ![Hinzufügen eines neuen Blobcontainers](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC744153.bmp)
 
     >[AZURE.NOTE]Der Blobcontainername muss mit einer Zahl (0-9) oder einem Kleinbuchstaben (a-z) beginnen.
 
-###So löschen Sie einen Blobcontainer
+### So löschen Sie einen Blobcontainer
 
 - Öffnen Sie das Kontextmenü für den Blobcontainer, den Sie entfernen möchten, und wählen Sie **Löschen**.
 
-###So zeigen Sie eine Liste der in einem Blobcontainer enthaltenen Elemente an
+### So zeigen Sie eine Liste der in einem Blobcontainer enthaltenen Elemente an
 
 - Öffnen Sie das Kontextmenü für einen Blobcontainernamen in der Liste aus, und wählen Sie dann **Blobcontainer anzeigen**.
 
@@ -64,7 +66,6 @@ Der Knoten "Blobs" zeigt eine Liste der Container für das ausgewählte Speicher
 
     Sie können die folgenden Vorgänge für Blobs mithilfe der Schaltflächen in der rechten oberen Ecke der Blobcontaineransicht ausführen:
 
-
     - Eingeben und Anwenden eines Filterwerts
 
     - Aktualisieren der Liste der Blobs im Container
@@ -73,17 +74,15 @@ Der Knoten "Blobs" zeigt eine Liste der Container für das ausgewählte Speicher
 
     - Löschen eines Blobs
 
-
-        >[AZURE.NOTE]Beim Löschen einer Datei aus einem Blobcontainer wird nicht die zugrunde liegende Datei gelöscht; sie wird lediglich aus dem Blobcontainer entfernt.
-
+      >[AZURE.NOTE]Beim Löschen einer Datei aus einem Blobcontainer wird nicht die zugrunde liegende Datei gelöscht; sie wird lediglich aus dem Blobcontainer entfernt.
 
     - Öffnen eines Blobs
 
     - Speichern eines Blobs auf dem lokalen Computer
 
-###So erstellen Sie einen Ordner oder Unterordner in einem Blobcontainer 
+### So erstellen Sie einen Ordner oder Unterordner in einem Blobcontainer
 
-1. Wählen Sie den Blobcontainer im Server-Explorer. Wählen Sie im Fenster "Container" die Schaltfläche **Blob hochladen**.
+1. Wählen Sie den Blobcontainer im Server-Explorer. Wählen Sie im Containerfenster die Schaltfläche **Blob hochladen** aus.
 
     ![Hochladen einer Datei in einen Blobordner](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC766037.png)
 
@@ -95,9 +94,9 @@ Der Knoten "Blobs" zeigt eine Liste der Container für das ausgewählte Speicher
 
 1. Doppelklicken Sie auf den Ordner, oder drücken Sie die EINGABETASTE, um den Inhalt des Ordners anzuzeigen. Wenn Sie sich im Ordner des Containers befinden, können Sie in das Stammverzeichnis des Containers zurück wechseln, indem Sie die Schaltfläche **Übergeordnetes Verzeichnis öffnen** (Pfeil nach oben) wählen.
 
-###So löschen Sie einen Containerordner
+### So löschen Sie einen Containerordner
 
- - Löschen aller Dateien im Ordner 
+ - Löschen aller Dateien im Ordner
 
     >[AZURE.NOTE]Da es sich bei Ordnern in Blobcontainern um virtuelle Ordner handelt, ist es nicht möglich, einen leeren Ordner zu erstellen, noch können Sie einen Ordner löschen, um dessen Dateiinhalt zu löschen. Sie müssen den gesamten Inhalt eines Ordners löschen, um den Ordner zu löschen.
 
@@ -114,7 +113,7 @@ Wenn Sie beispielsweise das Präfix `hello` in das Filtertextfeld eingeben und d
 
 ### So laden Sie Blobdaten herunter
 
-- Öffnen Sie im Server-Explorer das Kontextmenü für mindestens ein Blob, und wählen Sie **Öffnen** aus, oder wählen Sie den Blobnamen, und wählen Sie dann die Schaltfläche **Öffnen**, oder doppelklicken Sie auf den Blobnamen.
+- Öffnen Sie im **Server-Explorer** das Kontextmenü für mindestens ein Blob, und wählen Sie **Öffnen** aus, oder wählen Sie den Blobnamen, und wählen Sie dann die Schaltfläche **Öffnen**, oder doppelklicken Sie auf den Blobnamen.
 
     Der Status eines Blobdownloads wird im Fenster **Azure-Aktivitätsprotokoll** angezeigt.
 
@@ -130,7 +129,7 @@ Wenn Sie beispielsweise das Präfix `hello` in das Filtertextfeld eingeben und d
 
 ### So zeigen Sie an Blobs übertragene Protokolle an
 
-- Wenn Sie mithilfe der Azure-Diagnose Daten von der Azure-Anwendung protokollieren und Protokolle an das Speicherkonto übertragen haben, werden Container angezeigt, die von Azure für diese Protokolle erstellt wurden. Das Anzeigen dieser Protokolle im Server-Explorer ist eine einfache Möglichkeit, um Probleme mit Ihrer Anwendung zu erkennen, insbesondere wenn sie für Azure bereitgestellt wurde. Weitere Informationen zur Azure-Diagnose finden Sie unter [Sammeln von Protokollierungsdaten mit der Azure-Diagnose](https://msdn.microsoft.com/library/azure/gg433048.aspx).
+- Wenn Sie mithilfe der Azure-Diagnose Daten von der Azure-Anwendung protokollieren und Protokolle an das Speicherkonto übertragen haben, werden Container angezeigt, die von Azure für diese Protokolle erstellt wurden. Das Anzeigen dieser Protokolle im Server-Explorer ist eine einfache Möglichkeit, um Probleme mit Ihrer Anwendung zu erkennen, insbesondere wenn sie für Azure bereitgestellt wurde. Weitere Informationen zu Azure-Diagnose finden Sie unter [Sammeln von Protokollierungsdaten mit der Azure-Diagnose](https://msdn.microsoft.com/library/azure/gg433048.aspx).
 
 ### So rufen Sie die URL für ein Blob ab
 
@@ -162,7 +161,7 @@ Die folgende Abbildung zeigt eine Warteschlange, die zwei Nachrichten enthält.
 
 ![Anzeigen einer Warteschlange](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC651470.png)
 
-Weitere Informationen über Speicherdienstwarteschlangen finden Sie unter [Verwenden des Warteschlangenspeicherdiensts](http://go.microsoft.com/fwlink/?LinkID=264702). Weitere Informationen zum Webdienst für Speicherdienstwarteschlangen finden Sie unter [Konzepte des Warteschlangendiensts](http://go.microsoft.com/fwlink/?LinkId=264788). Informationen dazu, wie Nachrichten mithilfe von Visual Studio an eine Speicherdienstwarteschlange gesendet werden, finden Sie unter [Senden von Nachrichten an eine Speicherdienstwarteschlange](https://msdn.microsoft.com/library/azure/jj649344.aspx).
+Weitere Informationen über Speicherdienstwarteschlangen finden Sie unter [Verwenden des Warteschlangenspeichers mit .NET](http://go.microsoft.com/fwlink/?LinkID=264702). Weitere Informationen zum Webdienst für Speicherdienstwarteschlangen finden Sie unter [Konzepte des Warteschlangendiensts](http://go.microsoft.com/fwlink/?LinkId=264788). Informationen dazu, wie Nachrichten mithilfe von Visual Studio an eine Speicherdienstwarteschlange gesendet werden, finden Sie unter [Senden von Nachrichten an eine Speicherdienstwarteschlange](https://msdn.microsoft.com/library/azure/jj649344.aspx).
 
 >[AZURE.NOTE]Speicherdienstwarteschlangen unterscheiden sich von Service Bus-Warteschlangen. Weitere Informationen zu Service Bus-Warteschlangen finden Sie unter "Service Bus-Warteschlangen, -Themen und -Abonnements".
 
@@ -184,11 +183,9 @@ Der Azure Tabellenspeicherdienst erlaubt die Speicherung großer Mengen von stru
 
 1. Öffnen Sie das Kontextmenü für eine Tabelle, und wählen Sie dann **Tabelle anzeigen**.
 
-    
     ![Eine Azure-Tabelle im Projektmappen-Explorer](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC744165.png)
 
 Die Tabelle ist in Entitäten (Anzeige in Zeilen) und Eigenschaften (Anzeige in Spalten) organisiert. Die folgende Abbildung zeigt z. B. Entitäten, die im **Tabellen-Designer** aufgeführt sind:
-
 
 ### So bearbeiten Sie Tabellendaten
 
@@ -196,10 +193,7 @@ Die Tabelle ist in Entitäten (Anzeige in Zeilen) und Eigenschaften (Anzeige in 
 
     ![Hinzufügen oder Bearbeiten einer Tabellenentität](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC656238.png)
 
-    Entitäten in einer einzelnen Tabelle müssen nicht denselben Eigenschaftensatz (Spalten) aufweisen. Beachten Sie beim Anzeigen und Bearbeiten von Tabellendaten folgende Einschränkungen:
-
-
-    - Binäre Daten (vom Typ "Byte") können zwar nicht angezeigt oder bearbeitet, aber in einer Tabelle gespeichert werden.
+    Entitäten in einer einzelnen Tabelle müssen nicht denselben Eigenschaftensatz (Spalten) aufweisen. Beachten Sie beim Anzeigen und Bearbeiten von Tabellendaten folgende Einschränkungen: Binäre Daten (Typ "Byte") können zwar weder angezeigt noch bearbeitet, können aber in einer Tabelle gespeichert werden.
 
     - Die **PartitionKey**- oder **RowKey**-Werte können nicht bearbeitet werden, da dieser Vorgang vom Tabellenspeicher in Azure nicht unterstützt wird.
 
@@ -253,7 +247,7 @@ Wenn der Server-Explorer eine Verbindung mit einem Speicherkonto herstellt oder 
 
 ### So aktualisieren Sie Tabellendaten
 
-- Wählen Sie unter **Storage** den Knoten **Tabellen** und dann die Schaltfläche **Aktualisieren** aus. 
+- Wählen Sie unter **Storage** den Knoten **Tabellen** und dann die Schaltfläche **Aktualisieren** aus.
 
 - Um die Liste der Entitäten zu aktualisieren, die im **Tabellen-Designer** angezeigt wird, klicken Sie im **Tabellen-Designer** auf die Schaltfläche **Ausführen**.
 
@@ -303,7 +297,7 @@ Es gibt zwei Möglichkeiten, Speicherkonten mithilfe des Server-Explorers hinzuz
 
     - Das Protokoll, das zum Herstellen einer Verbindung mit dem Speicherkonto verwendet wird, beispielsweise HTTP, HTTPS oder ein benutzerdefinierter Endpunkt. Unter [Konfigurieren von Verbindungszeichenfolgen](https://msdn.microsoft.com/library/azure/ee758697.aspx) finden Sie weitere Informationen über benutzerdefinierte Endpunkte.
 
-### So zeigen Sie die sekundären Endpunkte an 
+### So zeigen Sie die sekundären Endpunkte an
 
 - Wenn Sie ein Speicherkonto mithilfe der Replikationsoption **Read-Access Geo Redundant** erstellt haben, können Sie dessen sekundäre Endpunkte anzeigen. Öffnen Sie das Kontextmenü für den Kontonamen, und wählen Sie dann **Eigenschaften** aus.
 
@@ -313,10 +307,10 @@ Es gibt zwei Möglichkeiten, Speicherkonten mithilfe des Server-Explorers hinzuz
 
 - Öffnen Sie im Server-Explorer das Kontextmenü für den Kontonamen, und wählen Sie **Löschen**. Wenn Sie ein Speicherkonto löschen, werden auch alle gespeicherten Schlüsselinformationen für dieses Konto entfernt.
 
->[AZURE.NOTE]Das Löschen eines Speicherkontos aus dem Server-Explorer besitzt keine Auswirkungen auf das Speicherkonto oder die darin enthaltenen Daten. Es wird lediglich der Verweis aus dem Server-Explorer entfernt. Verwenden Sie das Azure-Verwaltungsportal, um ein Speicherkonto dauerhaft zu löschen.
+    >[AZURE.NOTE]Das Löschen eines Speicherkontos aus dem Server-Explorer besitzt keine Auswirkungen auf das Speicherkonto oder die darin enthaltenen Daten. Es wird lediglich der Verweis aus dem Server-Explorer entfernt. Verwenden Sie das Azure-Verwaltungsportal, um ein Speicherkonto dauerhaft zu löschen.
 
-## Siehe auch
+## Nächste Schritte
 
-[Zugreifen auf Azure Storage Services](https://msdn.microsoft.com/library/azure/ee405490.aspx)
+Weitere Informationen dazu, wie Azure Storage Services verwendet wird, finden Sie unter [Zugreifen auf Azure Storage Services](https://msdn.microsoft.com/library/azure/ee405490.aspx).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

@@ -1,23 +1,23 @@
-<properties 
+<properties
    pageTitle="Upgrade von Projekten auf die aktuelle Version von Azure Tools"
-	description="Erfahren Sie, wie Sie ein Upgrade von Projekten auf die aktuelle Version von Azure Tools für Visual Studio durchführen."
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="kempb"
-	manager="douge"
-	editor="tglee"/>
-<tags 
+   description="Erfahren Sie, wie Sie ein Upgrade von Projekten auf die aktuelle Version von Azure Tools für Visual Studio durchführen."
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="kempb"
+   manager="douge"
+   editor="tglee" />
+<tags
    ms.service="multiple"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="multiple"
-	ms.date="08/13/2015"
-	ms.author="kempb"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="multiple"
+   ms.date="08/13/2015"
+   ms.author="kempb" />
 
 # Upgrade von Projekten auf die aktuelle Version von Azure Tools für Visual Studio
 
-##Übersicht
+## Übersicht
 
 Nach der Installation der aktuellen Version von Azure Tools (bzw. einer früheren Version ab 1.6) werden alle Projekte, die mit einer Version von Azure Tools vor Version 1.6 (November 2011) erstellt wurden, beim Öffnen automatisch aktualisiert. Wenn Sie Projekte mit Version 1.6 (November 2011) der Tools erstellt haben und diese Version weiterhin installiert ist, können Sie die betreffenden Projekte in der älteren Version öffnen und später entscheiden, ob sie aktualisiert werden sollen.
 
@@ -55,4 +55,4 @@ Wenn ein Projekt automatisch aktualisiert oder angegeben wird, dass es aktualisi
 
 [Azure Tools – Versionsverlauf](http://go.microsoft.com/fwlink/p/?LinkId=623548)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

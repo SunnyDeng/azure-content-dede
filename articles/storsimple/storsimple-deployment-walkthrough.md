@@ -1,19 +1,19 @@
 <properties
    pageTitle="Bereitstellen lokaler StorSimple-Geräte | Microsoft Azure"
-	description="Beschreibt die Schritte und bewährten Methoden für die Bereitstellung des StorSimple-Geräts und -Diensts. (Gilt für Microsoft Azure StorSimple Version 0.3 und frühere Versionen.)"
-	services="storsimple"
-	documentationCenter="NA"
-	authors="alkohli"
-	manager="adinah"
-	editor=""/>
+   description="Beschreibt die Schritte und bewährten Methoden für die Bereitstellung des StorSimple-Geräts und -Diensts. (Gilt für Microsoft Azure StorSimple Version 0.3 und frühere Versionen.)"
+   services="storsimple"
+   documentationCenter="NA"
+   authors="alkohli"
+   manager="adinah"
+   editor="" />
 <tags
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="09/02/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="hero-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/17/2015"
+   ms.author="alkohli" />
 
 # Bereitstellen lokaler StorSimple-Geräte
 
@@ -290,4 +290,4 @@ Führen Sie die folgenden Schritte im Azure-Portal aus, um bei Bedarf eine manue
 
 - Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

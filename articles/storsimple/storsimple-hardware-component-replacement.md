@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Austauschen von StorSimple-Hardwarekomponenten | Microsoft Azure"
-	description="Beschreibt, wie PCMs, Batterien, Controllermodule, EBOD-Controller, Laufwerke und Gehäuse eines StorSimple-Gerät sicher ausgetauscht werden."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt, wie PCMs, Batterien, Controllermodule, EBOD-Controller, Laufwerke und Gehäuse eines StorSimple-Gerät sicher ausgetauscht werden."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/31/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="08/31/2015"
+   ms.author="alkohli" />
 
 # Austauschen von StorSimple-Hardwarekomponenten
 
@@ -90,7 +90,7 @@ Die Steckmodule im Gerät sind in den folgenden Abbildungen der Vorder- und Rüc
 
 |Bezeichnung|Beschreibung|
 |:----|:----------|
-|0-11|Laufwerke (insgesamt 12)|
+|0-11|Festplattenlaufwerke (insgesamt 12)|
 
 Sowohl das primäre Gehäuse als auch das EBOD-Gehäuse haben Laufwerksträgermodule. Das Gehäuse enthält zwölf 3,5-Zoll-Laufwerke, die in einem 3x4-Format angeordnet sind.
 
@@ -142,4 +142,4 @@ Die folgenden FRUs (Field Replaceable Units) sind für Ihr StorSimple-Gerät ver
 
 Lesen Sie die [Sicherheitsinformationen](storsimple-safety.md) vollständig, bevor Sie versuchen, eine StorSimple-Hardwarekomponente auszutauschen.
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

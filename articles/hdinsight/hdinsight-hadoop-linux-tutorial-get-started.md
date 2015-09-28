@@ -75,7 +75,11 @@ Beim Bereitstellen eines Clusters werden Azure-Compute-Ressourcen bereitgestellt
 
 	![Clusteranmeldeinformationen eingeben](./media/hdinsight-hadoop-linux-tutorial-get-started/HDI.CreateCluster.3.png "Clusteranmeldeinformationen eingeben")
 
-	Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den folgenden Artikeln:
+    > [AZURE.NOTE]SSH wird verwendet, um über eine Befehlszeile mit Remotezugriff auf den HDInsight-Cluster zuzugreifen. Der Benutzername und das Kennwort oder der öffentliche Schlüssel, die Sie hier verwenden, werden verwendet, wenn über SSH eine Verbindung mit dem Cluster hergestellt wird. Außerdem muss der SSH-Benutzername eindeutig sein, da mit ihm auf allen HDInsight-Clusterknoten ein Benutzerkonto erstellt wird. Die folgenden Namen sind einige der Namen, die für die Verwendung durch Dienste auf dem Cluster reserviert sind und daher nicht als SSH-Benutzername verwendet werden können:
+    >
+    > root, hdiuser, storm, hbase, ubuntu, zookeeper, hdfs, yarn, mapred, hbase, hive, oozie, falcon, sqoop, admin, tez, hcat, hdinsight-zookeeper.
+
+	Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den folgenden Dokumenten:
 
 	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
 	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
@@ -99,7 +103,7 @@ Beim Bereitstellen eines Clusters werden Azure-Compute-Ressourcen bereitgestellt
 
 	Klicken Sie auf **Auswählen**, um die Datenquellenkonfiguration zu speichern.
 
-8. Klicken Sie auf **Knotenpreistarife**, um Informationen zu den Knoten anzuzeigen, die für diesen Cluster erstellt werden. Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
+8. Klicken Sie auf **Knotentarife**, um Informationen zu den Knoten anzuzeigen, die für diesen Cluster erstellt werden. Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
 
 	![Blatt „Knotenpreistarife“](./media/hdinsight-hadoop-linux-tutorial-get-started/HDI.CreateCluster.5.png "Anzahl von Clusterknoten angeben")
 
@@ -288,4 +292,4 @@ In diesem Linux-Lernprogramm haben Sie erfahren, wie Sie einen Hadoop-Cluster un
 [image-hdi-gettingstarted-powerquery-importdata]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData.png
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData2.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

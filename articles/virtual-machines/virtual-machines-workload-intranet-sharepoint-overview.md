@@ -11,13 +11,15 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows-sharepoint"
+	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/22/2015"
 	ms.author="josephd"/>
 
 # Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 Dieses Thema enthält Links zu schrittweisen Anweisungen für die Bereitstellung einer Intranet-internen SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen mit dem klassischen Bereitstellungsmodell. Die Farm enthält die folgenden Computer:
 
@@ -74,4 +76,4 @@ Zum Starten der Konfiguration für diese Arbeitsauslastung gehen Sie zu [Phase 1
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

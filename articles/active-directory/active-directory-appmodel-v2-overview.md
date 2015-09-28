@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App-Modell, Version 2.0 | Microsoft Azure"
+	pageTitle="Übersicht über das App-Modell v2.0 | Microsoft Azure"
 	description="Eine Einführung in die Entwicklung von Apps mit Microsoft-Konto- und Azure Active Directory-Anmeldung."
 	services="active-directory"
 	documentationCenter=""
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/12/2015"
+	ms.date="09/11/2015"
 	ms.author="dastrock"/>
 
 # App-Modell, Version 2.0, Vorschau: Anmelden von Benutzern am Microsoft-Konto und bei Azure AD in einer einzigen Anwendung
 
-> [AZURE.NOTE]Diese Informationen gelten für App-Modell, Version 2.0 \(öffentliche Vorschauversion\). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]Diese Informationen gelten für App-Modell, Version 2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
 In der Vergangenheit musste ein App-Entwickler, der sowohl Unterstützung für Microsoft-Konten als auch für Azure Active Directory benötigte, die Integration für zwei separate Systeme bereitstellen. Mit dem App-Modell, Version 2.0 können Sie nun Benutzer mit beiden Kontotypen anmelden. Mit einer einzelnen Implementierung können Sie eine Zielgruppe erreichen, die Millionen von Benutzern sowohl mit privaten als auch geschäftlichen Konten umfasst.
 
@@ -57,4 +57,4 @@ Die folgenden Links bieten ausführliche Informationen zur Plattform:
 - [v2 Endpoint FAQs](active-directory-v2-faq.md)
 -->
 
-<!-----HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

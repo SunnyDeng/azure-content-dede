@@ -5,27 +5,26 @@
 	documentationCenter=""
 	authors="erikre"
 	manager="wpickett"
-	editor=""/>
+	editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/18/2015"
+	ms.date="09/16/2015"
 	ms.author="erikre"/>
 
 # Konfigurieren eines benutzerdefinierten (direkt von GoDaddy erworbenen) Domänennamens in Azure App Service
 
 [AZURE.INCLUDE [web-selector](../../includes/websites-custom-domain-selector.md)]
 
+[AZURE.INCLUDE [Einführung](../../includes/custom-dns-web-site-intro.md)]
+
+Wenn Sie eine Domäne über Azure App Service-Web-Apps erworben haben, lesen Sie den letzten Schritt des Artikels zum <a href="/documentation/articles/custom-dns-web-site-buydomains-web-app" title="Web Apps" class="current">Erwerben einer Domäne für Web-Apps</a>.
 
 [AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
-
-> [AZURE.NOTE]Wenn Sie eine Domäne über Azure App Service-Web-Apps erworben haben, lesen Sie den letzten Schritt des Artikels zum <a href="/documentation/articles/custom-dns-web-site-buydomains-web-app" title="Web Apps" class="current">Erwerben einer Domäne für Web-Apps</a>.
-
-[AZURE.INCLUDE [Einführung](../../includes/custom-dns-web-site-intro.md)]
 
 Dieser Artikel enthält Anweisungen zur Verwendung eines benutzerdefinierten Domänennamens, der mit [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) direkt bei [GoDaddy](https://godaddy.com) erworben wurde.
 
@@ -35,7 +34,6 @@ Dieser Artikel enthält Anweisungen zur Verwendung eines benutzerdefinierten Dom
 ##Interpretation von DNS-Datensätzen
 
 [AZURE.INCLUDE [understandingdns](../../includes/custom-dns-web-site-understanding-dns-raw.md)]
-
 
 <a name="bkmk_configurecname"></a>
 ## Hinzufügen eines DNS-Datensatzes zu Ihrer benutzerdefinierten Domäne
@@ -89,4 +87,4 @@ Um Ihre benutzerdefinierte Domäne mit einer Web-App im App Service zu verknüpf
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

@@ -7,16 +7,14 @@
 	manager="wpickett"
 	editor=""/>
 
-
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="07/03/2015"
+	ms.date="09/16/2015"
 	ms.author="cephalin"/>
-
 
 
 #Sichern einer Web-App in Azure App Service
@@ -25,9 +23,11 @@ Eine der Herausforderungen bei der Entwicklung einer Web-App besteht darin, eine
 
 > [AZURE.NOTE]Eine umfassende Erläuterung der Sicherheitsaspekte webbasierter Anwendungen wird über den Rahmen dieses Dokuments sprengen. Einen Ansatzpunkt für weitere Anleitungen zur Sicherung von Webanwendungen finden Sie unter [Open Web Application Security Project (OWASP)](https://www.owasp.org/index.php/Main_Page), insbesondere unter dem [Top 10-Projekt](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project), das die derzeit 10 kritischsten Sicherheitsschwachstellen auflistet, die von OWASP-Mitgliedern angegeben wurden.
 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
+
 ##<a name="https"></a> Sichern der Kommunikation
 
-Wenn Sie den Domänennamen ***\*.azurewebsites.net** nutzen, der für Ihre Web-App erstellt wurde, können Sie HTTPS sofort verwenden, da ein SSL-Zertifikat für alle Domänennamen vom Typ ***\*.azurewebsites.net** bereitgestellt wird. Wenn Ihre Site einen [kundenspezifischen Domänennamen](web-sites-custom-domain-name.md) verwendet, können Sie ein SSL-Zertifikat hochladen, um für die kundenspezifische Domäne [HTTPS zu aktivieren](web-sites-configure-ssl-certificate.md).
+Wenn Sie den Domänennamen ****.azurewebsites.net** nutzen, der für Ihre Web-App erstellt wurde, können Sie HTTPS sofort verwenden, da ein SSL-Zertifikat für alle Domänennamen vom Typ ****.azurewebsites.net** bereitgestellt wird. Wenn Ihre Site einen [kundenspezifischen Domänennamen](web-sites-custom-domain-name.md) verwendet, können Sie ein SSL-Zertifikat hochladen, um für die kundenspezifische Domäne [HTTPS zu aktivieren](web-sites-configure-ssl-certificate.md).
 
 ##<a name="develop"></a> Sichern der Entwicklung
 
@@ -47,14 +47,14 @@ Bei der Entwicklung von Anwendungen, der Durchführung von Verwaltungsaufgaben o
 
 Wenn Sie ein Dienstprogramm nutzen, das Veröffentlichungseinstellungen oder ein Veröffentlichungsprofil verwendet, importieren Sie die Datei, die die Veröffentlichungseinstellungen oder das Profil enthält, in das Dienstprogramm und **löschen** Sie anschließend die Datei. Wenn Sie die Datei behalten müssen, beispielsweise um sie mit anderen zu teilen, die an dem Projekt mitarbeiten, speichern Sie sie an einem sicheren Ort, z.B. in einem **verschlüsselten** Verzeichnis mit begrenzten Berechtigungen.
 
-Zusätzlich sollten Sie sicherstellen, dass die importierten Berechtigungsnachweise sicher sind. Beispielsweise speichern **Azure PowerShell** und die **Azure-Befehlszeilenschnittstelle** importierte Daten in Ihrem **Basisverzeichnis** (*\~* bei Linux- oder OS X-Systemen und */Benutzer/IhrBenutzername* bei Windows-Systemen.) Als zusätzliche Sicherheit können Sie diese Verzeichnisse mit Verschlüsselungstools **verschlüsseln**, die für Ihr Betriebssystem erhältlich sind.
+Zusätzlich sollten Sie sicherstellen, dass die importierten Berechtigungsnachweise sicher sind. Beispielsweise speichern **Azure PowerShell** und die **Azure-Befehlszeilenschnittstelle** importierte Daten in Ihrem **Basisverzeichnis** (*~* bei Linux- oder OS X-Systemen und */Benutzer/IhrBenutzername* bei Windows-Systemen.) Als zusätzliche Sicherheit können Sie diese Verzeichnisse mit Verschlüsselungstools **verschlüsseln**, die für Ihr Betriebssystem erhältlich sind.
 
 ### Konfigurationseinstellungen und Verbindungszeichenfolgen
 Es ist üblich, Verbindungszeichenfolgen, Berechtigungsnachweise zur Authentisierung und andere sensible Daten in Konfigurationsdateien zu speichern. Leider können sich diese Dateien ungeschützt auf ihrer Website befinden oder in ein öffentliches Repository verschoben werden, wodurch diese Daten gefährdet werden können.
 
 Azure App Service ermöglicht es Ihnen, Konfigurationsdaten als Teil der Laufzeitumgebung von Web-Apps als **App-Einstellungen** und **Verbindungszeichenfolgen** zu speichern. Die Werte werden für Ihre Anwendung zur Laufzeit über *Umgebungsvariablen* für die meisten Programmiersprachen freigegeben. Bei .NET-Anwendungen werden diese Werte in Ihre .NET-Konfiguration zur Laufzeit eingegeben.
 
-**Anwendungseinstellungen** und **Verbindungszeichenfolgen** können mit dem [Azure-Vorschauportal](http://portal.azure.com) oder mit Hilfsprogrammen wie PowerShell oder der Azure-Befehlszeilenschnittstelle konfiguriert werden.
+**App-Einstellungen** und **Verbindungszeichenfolgen** können mit dem [Azure-Vorschauportal](http://portal.azure.com) oder mit Hilfsprogrammen wie PowerShell oder der Azure-Befehlszeilenschnittstelle konfiguriert werden.
 
 Weitere Informationen zu App-Einstellungen und Verbindungszeichenfolgen finden Sie unter [Konfigurieren von Web-Apps](web-sites-configure.md).
 
@@ -88,4 +88,4 @@ Weitere Informationen zum Protokollieren von Informationen für Web-Apps, die si
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

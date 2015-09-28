@@ -131,7 +131,7 @@ Beachten Sie, dass Sie keine codierten Funktionen in den Tests verwenden können
 
 #### 1\. Aufzeichnen eines Szenarios
 
-Verwenden Sie Visual Studio Ultimate, um eine Websitzung aufzuzeichnen.
+Verwenden Sie Visual Studio Enterprise oder Ultimate, um eine Websitzung aufzuzeichnen.
 
 1. Erstellen Sie ein Webleistungstest-Projekt.
 
@@ -147,14 +147,18 @@ Verwenden Sie Visual Studio Ultimate, um eine Websitzung aufzuzeichnen.
 
     Erstellen Sie kein langes Szenario. Es gibt eine Beschränkung von 100 Schritten und 2 Minuten.
 
-4. Führen Sie den Test in Visual Studio aus, um sicherzustellen, dass er funktioniert.
+4. Bearbeiten Sie den Test:
+ - Fügen Sie Validierungen zum Überprüfen der empfangenen Text- und Antwortcodes hinzu.
+ - Entfernen Sie alle überflüssigen Interaktionen. Sie können auch abhängige Anforderungen für Bilder oder für Werbe- oder Nachverfolgungswebsites entfernen.
+
+    Denken Sie daran, dass Sie nur das Testskript bearbeiten können. Sie können keinen benutzerdefinierten Code hinzufügen oder andere Webtests aufrufen. Fügen Sie keine Schleifen in den Test ein. Sie können standardmäßige Webtest-Plug-Ins verwenden.
+
+5. Führen Sie den Test in Visual Studio aus, um sicherzustellen, dass er funktioniert.
 
     Das Webtest-Ausführungsprogramm öffnet einen Webbrowser und wiederholt die aufgezeichneten Aktionen. Stellen Sie sicher, dass der Test wie erwartet funktioniert.
 
     ![Öffnen Sie in Visual Studio die WEBTEST-Datei, und klicken Sie auf "Ausführen".](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-run.png)
 
-
-(Fügen Sie keine Schleifen in den Webtest ein.)
 
 #### 2\. Hochladen des Webtests in Application Insights
 
@@ -218,7 +222,7 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 
 * *Kann ich Code aus meinem Webtest aufrufen?*
 
-    Nein. Die Schritte des Tests müssen in der Webtest-Datei enthalten sein. Es gibt eine Reihe von hilfreichen Plug-Ins.
+    Nein. Die Schritte des Tests müssen in der Webtest-Datei enthalten sein. Und Sie können keine anderen Webtests aufrufen oder Schleifen verwenden. Aber es gibt eine Reihe von hilfreichen Plug-Ins.
 
 ## <a name="video"></a>Video
 
@@ -240,4 +244,4 @@ Sie können Webtests beispielsweise deaktivieren, während Sie Wartungsarbeiten 
 [qna]: app-insights-troubleshoot-faq.md
 [start]: app-insights-get-started.md
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

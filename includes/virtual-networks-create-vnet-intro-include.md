@@ -1,5 +1,3 @@
 Ein virtuelles Azure-Netzwerk (VNet) ist eine Darstellung Ihres eigenen Netzwerks in der Cloud. Sie können Ihre Azure-Netzwerkeinstellungen steuern und DHCP-Adressblöcke, DNS-Einstellungen, Sicherheitsrichtlinien sowie das Routing definieren. Außerdem können Sie Ihr VNet in Subnetze segmentieren und virtuelle Azure-IaaS-Computer (VMs) und PaaS-Rolleninstanzen genauso bereitstellen wie Sie physische und virtuelle Computer im lokalen Datencenter bereitstellen. Im Wesentlichen bietet ein VNet Ihnen die Möglichkeit, Ihr Netzwerk unter Verwendung Ihrer eigenen IP-Adressblöcke auf Azure auszudehnen. Ziehen Sie [Virtuelle Netzwerke im Überblick](virtual-networks-overview.md) zurate, wenn Sie mit VNets nicht vertraut sind.
 
->[AZURE.IMPORTANT]Bevor Sie ein VNet erstellen, sollten Sie wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Stellen Sie sicher, dass Sie die [Bereitstellungsmodelle und -tools](azure-classic-rm.md) verstanden haben, bevor Sie ein VNet erstellen. Zum Anzeigen der Dokumentation für verschiedene Tools klicken Sie auf die Registerkarten oben in diesem Artikel.
-
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

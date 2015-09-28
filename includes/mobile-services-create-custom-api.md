@@ -6,7 +6,7 @@
 
 3. Geben Sie _completeall_ in das Feld **API-Name** ein, und klicken Sie auf die Schaltfläche mit dem Häkchen, um die neue API zu erstellen.
 
-	> [AZURE.NOTE]Mit den Standardberechtigungen kann jeder Benutzer mit dem App-Schlüssel die benutzerdefinierte API aufrufen. Der Anwendungsschlüssel wird jedoch nicht verteilt bzw. sicher gespeichert und gilt daher nicht als sichere Anmeldeinformation. Erwägen Sie, den Zugriff nur authentifizierten Benutzern zu gestatten, um die Sicherheit zu erhöhen.
+	> [AZURE.TIP]Mit den Standardberechtigungen kann jeder Benutzer mit dem App-Schlüssel die benutzerdefinierte API aufrufen. Der Anwendungsschlüssel wird jedoch nicht verteilt bzw. sicher gespeichert und gilt daher nicht als sichere Anmeldeinformation. Erwägen Sie, den Zugriff nur authentifizierten Benutzern zu gestatten, um die Sicherheit zu erhöhen.
 
 4. Klicken Sie in der API-Tabelle auf **completeall**.
 
@@ -26,8 +26,7 @@
 		};
 
 
-
-> [AZURE.NOTE]Das <a href="http://msdn.microsoft.com/library/windowsazure/jj554218.aspx" target="_blank">request</a>-Objekt und das <a href="http://msdn.microsoft.com/library/windowsazure/dn303373.aspx" target="_blank">response</a>-Objekt, die für die Funktionen der benutzerdefinierten API bereitgestellt werden, werden durch die <a href="http://go.microsoft.com/fwlink/p/?LinkId=309046" target="_blank">Express.js-Bibliothek</a> implementiert. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/library/windowsazure/dn280974.aspx" target="_blank">Benutzerdefinierte API</a>.
+> [AZURE.NOTE]Das [request](http://msdn.microsoft.com/library/windowsazure/jj554218.aspx)-Objekt und das [response](http://msdn.microsoft.com/library/windowsazure/dn303373.aspx)-Objekt, die für die Funktionen der benutzerdefinierten API bereitgestellt werden, werden durch die [Express.js-Bibliothek](http://go.microsoft.com/fwlink/p/?LinkId=309046) implementiert.
 
 <!-- Anchors. -->
 
@@ -36,4 +35,4 @@
 <!-- URLs. -->
 [mssql-Objekt]: http://msdn.microsoft.com/library/windowsazure/jj554212.aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

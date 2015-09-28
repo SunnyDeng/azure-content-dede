@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
-   manager="adinah"
+   manager="carolz"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/04/2015"
+   ms.date="09/15/2015"
    ms.author="v-sharos" />
 
 # Was ist der StorSimple Snapshot Manager?
@@ -144,8 +144,8 @@ Informationen zum Überwachen von Sicherungsaufträgen finden Sie unter [Anzeige
 
 ## Nächste Schritte
 
-[Erfahren Sie mehr über StorSimple Snapshot Manager-Aufgaben und -Workflows](storsimple-snapshot-manager-admin.md)
+- Weitere Informationen zum [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
 
-[StorSimple Snapshot Manager herunterladen](https://www.microsoft.com/download/details.aspx?id=44220).
+- [StorSimple Snapshot Manager](https://www.microsoft.com/download/details.aspx?id=44220) herunterladen.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

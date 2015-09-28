@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App-Modell v2.0 | Microsoft Azure"
+	pageTitle="App-Modell v2.0 iOS-App | Microsoft Azure"
 	description="Vorgehensweise beim Erstellen einer iOS-App, bei der sich Benutzer sowohl mit ihrem persönlichen Microsoft-Konto als auch ihrem Geschäfts- oder Schulkonto anmelden können."
 	services="active-directory"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="08/12/2015"
+	ms.date="09/11/2015"
 	ms.author="brandwe"/>
 
 # App-Modell v2. 0 (Vorschauversion): Hinzufügen der Anmeldung zu einer iOS-App
@@ -22,4 +22,4 @@ Das Schnellstart-Tutorial für iOS ist noch nicht ausgereift... Kommen Sie bald 
 
 > [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

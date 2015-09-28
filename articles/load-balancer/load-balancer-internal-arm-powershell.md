@@ -93,11 +93,11 @@ Im oben stehenden Beispiel haben wir eine Ressourcengruppe namens "NRP RG" mit d
 
 ### Schritt 1
 
-Erstellen Sie ein virtuelles Netzwerk:
+Erstellt ein Subnetz für das virtuelle Netzwerk und weist es der Variablen "$backendSubnet" zu
 
 	$backendSubnet = New-AzureVirtualNetworkSubnetConfig -Name LB-Subnet-BE -AddressPrefix 10.0.2.0/24
 
-Erstellt ein Subnetz für das virtuelle Netzwerk und weist es der Variablen "$backendSubnet" zu
+Erstellen Sie ein virtuelles Netzwerk:
 
 	$vnet= New-AzurevirtualNetwork -Name NRPVNet -ResourceGroupName NRP-RG -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $backendSubnet
 
@@ -111,7 +111,7 @@ Richten Sie einen Front-End-IP-Pool für den eingehenden Netzwerkverkehr des Loa
 
 ### Schritt 1 
 
-Erstellen Sie einen Front-End-IP-Adresspool mit der privaten IP-Adresse 10.0.2.6 für das Subnetz 10.0.2.0/24, das der Endpunkt für eingehenden Netzwerkdatenverkehr ist.
+Erstellen Sie einen Front-End-IP-Adresspool mit der privaten IP-Adresse 10.0.2.5 für das Subnetz 10.0.2.0/24, das der Endpunkt für eingehenden Netzwerkdatenverkehr ist.
 
 	$frontendIP = New-AzureLoadBalancerFrontendIpConfig -Name LB-Frontend -PrivateIpAddress 10.0.2.5 -SubnetId $backendSubnet.Id
 
@@ -245,4 +245,4 @@ In der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Co
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

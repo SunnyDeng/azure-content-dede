@@ -1,3 +1,4 @@
+<!--author=SharS last changed: 9/17/15-->
 
 ### So konfigurieren und registrieren Sie das Gerät
 
@@ -35,7 +36,7 @@
 
       4. (Optional) Konfigurieren Sie Ihren Webproxyserver.
 
-      >[AZURE.IMPORTANT]Die Webproxykonfiguration ist optional. Achten Sie jedoch bei Verwendung eines Webproxys darauf, dass dieser nur hier konfiguriert werden kann. Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](https://msdn.microsoft.com/library/azure/dn764937.aspx).
+      >[AZURE.IMPORTANT]Die Webproxykonfiguration ist optional. Achten Sie jedoch bei Verwendung eines Webproxys darauf, dass dieser nur hier konfiguriert werden kann. Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](storsimple-configure-web-proxy.md).
 
 6. Drücken Sie STRG+C, um den Setup-Assistenten zu beenden.
  
@@ -136,4 +137,4 @@
      
         
 
-<!-----HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

@@ -1,3 +1,4 @@
+<!--author=SharS last changed: 9/17/15-->
 
 #### So stellen Sie ein Volume bereit und initialisieren und formatieren dieses
 
@@ -27,7 +28,11 @@
   3. Geben Sie 64 KB als Zuordnungseinheitsgröße an. Diese Zuordnungseinheitsgröße eignet sich gut für die Deduplikationsalgorithmen, die in der StorSimple-Lösung verwendet werden.
   4. Führen Sie eine Schnellformatierung durch.
 
+![Video verfügbar](./media/storsimple-mount-initialize-format-volume/Video_icon.png) **Video verfügbar**
+
+Sie können sich [hier](http://azure.microsoft.com/documentation/videos/mount-initialize-and-format-a-storsimple-volume/) ein Video anschauen, in dem das Bereitstellen, Initialisieren und Formatieren eines StorSimple-Volumes demonstriert wird.
+
 <!--Link references-->
 [1]: https://technet.microsoft.com/library/ee338480(WS.10).aspx
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

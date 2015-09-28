@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Verbinden einer Web-App mit einer API-App in Azure App Service" 
-   description="In diesem Lernprogramm wird veranschaulicht, wie eine API-App in einer in Azure App Service gehosteten ASP.NET-Web-App genutzt wird." 
-   services="app-service\web" 
-   documentationCenter=".net" 
-   authors="syntaxc4" 
-   manager="yochayk" 
-   editor="jimbe"/>
+	pageTitle="Verbinden einer Web-App mit einer API-App in Azure App Service" 
+	description="In diesem Lernprogramm wird veranschaulicht, wie eine API-App in einer in Azure App Service gehosteten ASP.NET-Web-App genutzt wird." 
+	services="app-service\web" 
+	documentationCenter=".net" 
+	authors="syntaxc4" 
+	manager="yochayk" 
+	editor="jimbe"/>
 
 <tags
-   ms.service="app-service-web"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="web" 
-   ms.date="03/24/2015"
-   ms.author="cfowler"/>
+	ms.service="app-service"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="web" 
+	ms.date="09/15/2015"
+	ms.author="cfowler"/>
 
 # Verbinden einer Web-App mit einer API-App in Azure App Service
 
@@ -71,19 +71,19 @@ Wählen Sie die API-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink
 
 1. Aktualisieren Sie die Ansicht `Contact` entsprechend der dynamischen Liste von Kontakten mit dem folgenden Code:
 	<pre>// Add to the very top of the view file
-	@model IList&lt;MyContactsList.Web.Models.Contact&gt;
-	
-	// Replace the default email addresses with the following
-    &lt;h3&gt;Public Contacts&lt;/h3&gt;
-    &lt;ul&gt;
-        @foreach (var contact in Model)
-        {
-            &lt;li&gt;&lt;a href=&quot;mailto:@contact.EmailAddress&quot;&gt;@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a&gt;&lt;/li&gt;
-        }
-    &lt;/ul&gt; 
+@model IList&lt;MyContactsList.Web.Models.Contact>
+
+// Replace the default email addresses with the following
+&lt;h3>Public Contacts&lt;/h3>
+&lt;ul>
+    @foreach (var contact in Model)
+    {
+        &lt;li>&lt;a href="mailto:@contact.EmailAddress">@contact.Name &amp;lt;@contact.EmailAddress&amp;gt;&lt;/a>&lt;/li>
+    }
+&lt;/ul> 
 	</pre>
 
-	![Contact.cshtml Code Updates](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
+	![Codeaktualisierung in "Contact.cshtml"](./media/app-service-web-connect-web-app-to-saas-api/6-Update-View-To-Reflect-Changes.png)
 
 ## Bereitstellen der Webanwendung in Web-Apps in App Service
 
@@ -96,4 +96,4 @@ Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure Web-App](web-sites
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!----HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

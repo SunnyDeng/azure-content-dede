@@ -112,7 +112,7 @@ Vor der Installation von Azure AD Connect mit Express-Einstellungen benötigen 
     		<defaultProxy>
       		<proxy
         	usesystemdefault="true"
-        	proxyaddress=http://<PROXYIP>:80"
+        	proxyaddress="http://<PROXYIP>:80"
         	bypassonlocal="true"
      		 />
     		</defaultProxy>
@@ -273,4 +273,4 @@ Ignite 2015-Präsentation über die Erweiterung lokaler Verzeichnisse in die Cl
 
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

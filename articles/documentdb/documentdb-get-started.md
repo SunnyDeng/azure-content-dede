@@ -1,6 +1,7 @@
 <properties
-	pageTitle="Erste Schritte mit dem DocumentDB .NET SDK | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein Azure DocumentDB-Konto erstellen und konfigurieren, Datenbanken erstellen, Sammlungen erstellen und JSON-Dokumente in Ihrem NoSQL-Dokumentdatenbankkonto speichern."
+	pageTitle="NoSQL Databases – Erste Schritte mit dem DocumentDB .NET SDK | Microsoft Azure"
+	description="Erfahren Sie mehr über das Erstellen einer Datenbank und das Konfigurieren eines Azure-DocumentDB-Kontos. Erstellen Sie Datenbanken und Sammlungen und speichern Sie JSON-Dokumente in Ihrem NoSQL-Datenbankkonto."
+	keywords="Create a database, create database, nosql database, nosql databases, nuget, documentdb, azure, Microsoft azure"
 	services="documentdb"
 	documentationCenter=".net"
 	authors="AndrewHoh"
@@ -480,4 +481,4 @@ Um die Verweise auf das DocumentDB .NET SDK in Visual Studio 2013 wiederherzust
 [keys]: media/documentdb-get-started/keys.png
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

@@ -1,23 +1,25 @@
 <properties 
-	pageTitle="Testumgebung für Branchenanwendung | Microsoft Azure"
-	description="Erfahren Sie, wie Sie eine webbasierte Branchenanwendung in einer Hybrid Cloud-Umgebung für Tests durch IT-Spezialisten oder zu Entwicklungszwecken erstellen."
-	services="virtual-network"
-	documentationCenter=""
-	authors="JoeDavies-MSFT"
-	manager="timlt"
+	pageTitle="Testumgebung für Branchenanwendung | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie eine webbasierte Branchenanwendung in einer Hybrid Cloud-Umgebung für Tests durch IT-Spezialisten oder zu Entwicklungszwecken erstellen." 
+	services="virtual-network" 
+	documentationCenter="" 
+	authors="JoeDavies-MSFT" 
+	manager="timlt" 
 	editor=""
 	tags="azure-service-management"/>
 
 <tags 
-	ms.service="virtual-network"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/08/2015"
+	ms.service="virtual-network" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="Windows" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/10/2015" 
 	ms.author="josephd"/>
 
 # Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
 In diesem Thema werden die Schritte zum Erstellen einer Hybrid Cloud-Umgebung zum Testen einer in Microsoft Azure gehosteten Intranetbranchenanwendung erläutert. Hier sehen Sie die daraus resultierende Konfiguration.
 
@@ -63,15 +65,15 @@ Erstellen Sie dann in einer Azure PowerShell-Eingabeaufforderung auf dem lokalen
 
 	$storageacct="<Name of the storage account for your TestVNET virtual network>"
 	$ServiceName="<The cloud service name for your TestVNET virtual network>"
-	$cred1=Get-Credential –Message "Type the name and password of the local administrator account for SQL1."
-	$cred2=Get-Credential –UserName "CORP\User1" –Message "Now type the password for the CORP\User1 account."
-	Set-AzureStorageAccount –StorageAccountName $storageacct
+	$cred1=Get-Credential -Message "Type the name and password of the local administrator account for SQL1."
+	$cred2=Get-Credential -UserName "CORP\User1" -Message "Now type the password for the CORP\User1 account."
+	Set-AzureStorageAccount -StorageAccountName $storageacct
 	$image= Get-AzureVMImage | where { $_.ImageFamily -eq "SQL Server 2014 RTM Standard on Windows Server 2012 R2" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name SQL1 -InstanceSize Large -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain "CORP" -DomainUserName "User1" -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain "corp.contoso.com"
 	$vm1 | Set-AzureSubnet -SubnetNames TestSubnet
-	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 100 -DiskLabel SQLFiles –LUN 0 -HostCaching None
-	New-AzureVM –ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
+	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 100 -DiskLabel SQLFiles -LUN 0 -HostCaching None
+	New-AzureVM -ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
 
 Stellen Sie dann mit dem *lokalen Administratorkonto* eine Verbindung zum virtuellen Computer "SQL1" her.
 
@@ -80,13 +82,13 @@ Stellen Sie dann mit dem *lokalen Administratorkonto* eine Verbindung zum virtue
 3.	Wenn Sie zum Öffnen von "SQL1.rdp" aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
-	- Name: **SQL1**[Name des lokalen Administratorkontos]
+	- Name: **SQL1\**[Name des lokalen Administratorkontos]
 	- Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
 Konfigurieren Sie anschließend Windows-Firewall-Regeln, um Datenverkehr zum Testen der allgemeinen Konnektivität und von SQL Server zuzulassen. Führen Sie in der Windows PowerShell-Eingabeaufforderung von SQL1 die folgenden Befehle auf Administratorebene aus.
 
-	New-NetFirewallRule -DisplayName “SQL Server” -Direction Inbound –Protocol TCP –LocalPort 1433,1434,5022 -Action allow 
+	New-NetFirewallRule -DisplayName "SQL Server" -Direction Inbound -Protocol TCP -LocalPort 1433,1434,5022 -Action allow 
 	Set-NetFirewallRule -DisplayName "File and Printer Sharing (Echo Request - ICMPv4-In)" -enabled True
 	ping dc1.corp.contoso.com
 
@@ -138,13 +140,13 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 Führen Sie als Erstes auf dem lokalen Computer die folgenden Befehlen in der Azure PowerShell-Eingabeaufforderung aus, um einen virtuellen Azure-Computer für LOB1 zu erstellen.
 
 	$ServiceName="<The cloud service name for your TestVNET virtual network>"
-	$cred1=Get-Credential –Message "Type the name and password of the local administrator account for LOB1."
-	$cred2=Get-Credential –UserName "CORP\User1" –Message "Now type the password for the CORP\User1 account."
+	$cred1=Get-Credential -Message "Type the name and password of the local administrator account for LOB1."
+	$cred2=Get-Credential -UserName "CORP\User1" -Message "Now type the password for the CORP\User1 account."
 	$image = Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name LOB1 -InstanceSize Medium -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -AdminUsername $cred1.GetNetworkCredential().Username -Password $cred1.GetNetworkCredential().Password -WindowsDomain -Domain "CORP" -DomainUserName "User1" -DomainPassword $cred2.GetNetworkCredential().Password -JoinDomain "corp.contoso.com"
 	$vm1 | Set-AzureSubnet -SubnetNames TestSubnet
-	New-AzureVM –ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
+	New-AzureVM -ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
 
 Stellen Sie dann unter Verwendung der Anmeldeinformationen des Kontos „CORP\\User1“ eine Verbindung mit dem virtuellen Computer für LOB1 her.
 
@@ -158,7 +160,7 @@ Der Ping-Befehl sollte zu vier erfolgreichen Antworten von der IP-Adresse 10.0.0
 Konfigurieren Sie dann LOB1 für IIS, und testen Sie den Zugriff von CLIENT1.
 
 1.	Führen Sie Server-Manager aus, und klicken Sie dann auf **Rollen und Features hinzufügen**.
-2.	Klicken Sie auf der Seite "Vorbereitungen" auf **Weiter**.
+2.	Klicken Sie auf der Seite „Voraussetzungen“ auf **Weiter**.
 3.	Klicken Sie auf der Seite "Installationstyp auswählen" auf **Weiter**.
 4.	Klicken Sie auf der Seite "Zielserver auswählen" auf **Weiter**.
 5.	Klicken Sie auf der Seite "Serverrollen" in der Liste **Rollen** auf **Webserver (IIS)**.
@@ -196,4 +198,4 @@ Diese Umgebung kann jetzt zum Bereitstellen von webbasierten Anwendungen auf LOB
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-infrastructure-services-implementation-guidelines.md)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

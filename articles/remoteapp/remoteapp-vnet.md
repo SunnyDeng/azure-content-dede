@@ -1,6 +1,6 @@
 
 <properties
-    pageTitle="Überprüfen des Azure-VNET für die Verwendung mit Azure RemoteApp"
+    pageTitle="Überprüfen des Azure-VNET für die Verwendung mit Azure RemoteApp | Microsoft Azure"
     description="Hier erfahren Sie, wie Sie sich vergewissern, dass Ihr Azure-VNET mit Azure RemoteApp verwendet werden kann."
     services="remoteapp"
     documentationCenter=""
@@ -33,8 +33,9 @@ Anschließend kann das Azure-VNET mit RemoteApp verwendet werden.
 
 Weitere Informationen zum End-to-End-Workflow für Hybridsammlungen finden Sie in den folgenden Artikeln:
 
+- [How to plan your virtual network for Azure RemoteApp](remoteapp-planvpn.md) (auf Englisch)
 - [Erstellen einer Hybridsammlung](remoteapp-create-hybrid-deployment.md)
 - [Bereitstellen einer Azure RemoteApp-Sammlung für Azure Virtual Network (mit ExpressRoute-Unterstützung)](http://blogs.msdn.com/b/rds/archive/2015/04/23/deploy-azure-remoteapp-collection-to-your-azure-virtual-network-with-support-for-expressroute.aspx)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

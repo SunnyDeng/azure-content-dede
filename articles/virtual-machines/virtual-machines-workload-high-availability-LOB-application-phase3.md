@@ -1,29 +1,31 @@
 <properties 
-	pageTitle="Branchenanwendung, Phase 3 | Microsoft Azure"
-	description="In Phase 3 der Branchenanwendung erstellen Sie in Azure die Computer und den SQL Server-Cluster, und aktivieren Sie Verfügbarkeitsgruppen."
+	pageTitle="Branchenanwendung, Phase 3 | Microsoft Azure" 
+	description="In Phase 3 der Branchenanwendung erstellen Sie in Azure die Computer und den SQL Server-Cluster, und aktivieren Sie Verfügbarkeitsgruppen." 
 	documentationCenter=""
-	services="virtual-machines"
-	authors="JoeDavies-MSFT"
-	manager="timlt"
+	services="virtual-machines" 
+	authors="JoeDavies-MSFT" 
+	manager="timlt" 
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="Windows" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/11/2015" 
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 3: Konfigurieren der SQL Server-Infrastruktur
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 In dieser Phase der Bereitstellung einer hochverfügbaren Branchenanwendung in den Azure-Infrastrukturdiensten konfigurieren Sie die beiden SQL Server-Computer und den Hauptknotencomputer des Clusters und fassen diese in einem Windows-Servercluster zusammen.
 
 Diese Phase muss vor Beginn von [Phase 4](virtual-machines-workload-high-availability-LOB-application-phase4.md) ausgeführt worden sein. Eine Übersicht über alle Phasen finden Sie unter [Bereitstellen einer hochverfügbaren Branchenanwendung in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md).
 
-> [AZURE.NOTE]In den vorliegenden Anweisungen wird ein SQL Server-Image aus dem Azure-Imagekatalog verwendet, und es fallen laufende Kosten für die Nutzung der SQL Server-Lizenz an. Es ist ebenfalls möglich, virtuelle Computer in Azure zu erstellen und eigene SQL Server-Lizenzen zu installieren, entsprechende Anweisungen sind hier jedoch nicht enthalten.
+> [AZURE.NOTE]In den vorliegenden Anweisungen wird ein SQL Server-Image aus dem Azure-Imagekatalog verwendet, und es werden Ihnen laufende Kosten für die Nutzung der SQL Server-Lizenz berechnet. Es ist auch möglich, virtuelle Computer in Azure zu erstellen und eigene SQL Server-Lizenzen zu installieren. Allerdings müssen Sie in dem Fall über Software Assurance und Lizenzmobilität verfügen, um die SQL Server-Lizenz auf einem virtuellen Computer einschließlich des virtuellen Computers in Azure verwenden zu können. Weitere Informationen zum Installieren von SQL Server auf einem virtuellen Computer finden Sie unter [Installation für SQL Server](https://msdn.microsoft.com/library/bb500469.aspx).
 
 ## Erstellen der virtuellen Computer des SQL Server-Clusters in Azure
 
@@ -112,9 +114,11 @@ Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierende
 	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
+> [AZURE.NOTE]Da diese virtuellen Computer für eine Intranetanwendung gedacht sind, wird ihnen keine öffentliche IP-Adresse oder ein DNS-Domänenname zugewiesen, und sie sind nicht über das Internet erreichbar. Dies bedeutet jedoch auch, dass Sie damit aus dem Azure-Vorschauportal keine Verbindung herstellen können. Die Schaltfläche **Verbinden** ist nicht verfügbar, wenn Sie die Eigenschaften des virtuellen Computers anzeigen. Verwenden Sie die Remotedesktopverbindung oder ein anderes Remotedesktoptool zum Herstellen einer Verbindung mit dem virtuellen Computer über seine private IP-Adresse oder den Intranet-DNS-Namen.
+
 ## Konfigurieren der SQL Server-Computer
 
-Erstellen Sie für jeden virtuellen Computer mit SQL Server unter Verwendung eines Remotedesktopclients Ihrer Wahl eine Remotedesktopverbindung mit dem virtuellen Computer, der als erster Domänencontroller fungiert. Verwenden Sie den zugehörigen Intranet-DNS- oder Computernamen und die Anmeldeinformationen des lokalen Administratorkontos.
+Verwenden Sie für jeden virtuellen Computer, auf dem SQL Server ausgeführt wird, einen Remotedesktopclient Ihrer Wahl, und erstellen Sie eine Remotedesktopverbindung. Verwenden Sie den zugehörigen Intranet-DNS- oder Computernamen und die Anmeldeinformationen des lokalen Administratorkontos.
 
 Treten Sie für jeden virtuellen Computer mit SQL Server der geeigneten AD DS-Domäne bei, indem Sie an der Windows PowerShell-Eingabeaufforderung diese Befehle ausführen.
 
@@ -212,12 +216,12 @@ Aufgrund des noch nicht RFC-konformen Verhaltens von DHCP in Azure kann die Erst
 1.	Melden Sie sich beim primären virtuellen SQL Server-Computer mit dem Konto "sqladmin" an, das Sie in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) erstellt haben.
 2.	Geben Sie auf dem Startbildschirm **Failover** ein, und klicken Sie dann auf **Failovercluster-Manager**.
 3.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **Failovercluster-Manager**, und klicken Sie dann auf **Cluster erstellen**.
-4.	Klicken Sie auf der Seite **Vorbereitungen** auf **Weiter**.
+4.	Klicken Sie auf der Seite **Voraussetzungen** auf **Weiter**.
 5.	Geben Sie auf der Seite **Server auswählen** den Namen des primären SQL Server-Computers ein, klicken Sie auf **Hinzufügen**, und klicken Sie dann auf **Weiter**.
 6.	Klicken Sie auf der Seite **Validierungswarnung** auf **Nein. Microsoft-Support für diesen Cluster nicht nötig. Validierungstests nicht durchführen. Beim Klicken auf „Weiter“ Erstellung des Clusters fortsetzen.** Klicken Sie danach auf **Weiter**.
 7.	Geben Sie auf der Seite **Zugriffspunkt für die Verwaltung des Clusters** im Textfeld **Clustername** den Namen Ihres Clusters ein, und klicken Sie dann auf **Weiter**.
-8.	Klicken Sie auf der Bestätigungsseite auf **Weiter**, um den Cluster zu erstellen. 
-9.	Klicken Sie auf der Seite **Zusammenfassung** auf **Fertig stellen**.
+8.	Klicken Sie auf der **Bestätigungsseite** auf **Weiter**, um den Cluster zu erstellen. 
+9.	Klicken Sie auf der **Zusammenfassungsseite** auf **Fertig stellen**.
 10.	Klicken Sie im linken Bereich auf den neuen Cluster. Öffnen Sie im Inhaltsbereich im Abschnitt **Hauptressourcen des Clusters** den Namen Ihres Serverclusters. Zur Ressource **IP-Adresse** wird der Status **Fehlgeschlagen** angezeigt. Die IP-Adressressource kann nicht online geschaltet werden, da dem Cluster die gleiche IP-Adresse wie dem Computer selbst zugewiesen ist. Damit ist die IP-Adresse nicht mehr eindeutig. 
 11.	Klicken Sie mit der rechten Maustaste auf die fehlgeschlagene Ressource **IP-Adresse**, und klicken Sie dann auf **Eigenschaften**.
 12.	Klicken Sie im Dialogfeld **Eigenschaften von IP-Adressen** auf **Statische IP-Adresse**.
@@ -226,11 +230,11 @@ Aufgrund des noch nicht RFC-konformen Verhaltens von DHCP in Azure kann die Erst
 15.	Nachdem das AD-Konto erstellt wurde, können Sie den Clusternamen wieder offline schalten. Klicken Sie mit der rechten Maustaste im Bereich **Hauptressourcen des Clusters** auf den Clusternamen, und klicken Sie dann auf **Offline schalten**.
 16.	Klicken Sie zum Entfernen der IP-Adresse des Clusters mit der rechten Maustaste auf **IP-Adresse**, klicken Sie dann auf **Entfernen** und auf Aufforderung auf **Ja**. Die Clusterressource kann nun nicht mehr online geschaltet werden, da sie von der IP-Adressressource abhängig ist. Die einwandfreie Funktion einer Verfügbarkeitsgruppe ist jedoch nicht vom Clusternamen oder der IP-Adresse abhängig. Daher kann der Clustername offline bleiben.
 17.	Um die verbleibenden Knoten zum Cluster hinzuzufügen, klicken Sie im linken Bereich mit der rechten Maustaste auf den Clusternamen, und klicken Sie dann auf **Knoten hinzufügen**.
-18.	Klicken Sie auf der Seite **Vorbereitungen** auf **Weiter**. 
-19.	Geben Sie auf der Seite **Server auswählen** den Namen ein, und klicken Sie dann auf **Hinzufügen**, um sowohl den sekundären SQL Server-Computer als auch den Hauptknoten des Clusters zum Cluster hinzuzufügen. Klicken Sie nach dem Hinzufügen beider Computer auf **Weiter**. Wenn ein Computer nicht hinzugefügt werden kann und die Fehlermeldung darauf hinweist, dass die Remoteregistrierung nicht ausgeführt wird, führen Sie folgende Schritte aus. Melden Sie sich bei dem Computer an, öffnen Sie das Snap-in „Dienste“ (services.msc), und aktivieren Sie die Remoteregistrierung. Weitere Informationen finden Sie unter [Mit dem Remoteregistrierungsdienst kann keine Verbindung hergestellt werden](http://technet.microsoft.com/library/bb266998.aspx). 
+18.	Klicken Sie auf der Seite **Voraussetzungen** auf **Weiter**. 
+19.	Geben Sie auf der Seite **Server auswählen** den Namen ein, und klicken Sie dann auf **Hinzufügen**, um sowohl den sekundären SQL-Server als auch den Mehrheitsknoten des Clusters zum Cluster hinzuzufügen. Klicken Sie nach dem Hinzufügen beider Computer auf **Weiter**. Wenn ein Computer nicht hinzugefügt werden kann und die Fehlermeldung darauf hinweist, dass die Remoteregistrierung nicht ausgeführt wird, führen Sie folgende Schritte aus. Melden Sie sich bei dem Computer an, öffnen Sie das Snap-in „Dienste“ (services.msc), und aktivieren Sie die Remoteregistrierung. Weitere Informationen finden Sie unter [Mit dem Remoteregistrierungsdienst kann keine Verbindung hergestellt werden](http://technet.microsoft.com/library/bb266998.aspx). 
 20.	Klicken Sie auf der Seite **Validierungswarnung** auf **Nein. Microsoft-Support für diesen Cluster nicht nötig. Validierungstests nicht durchführen. Beim Klicken auf „Weiter“ Erstellung des Clusters fortsetzen.** Klicken Sie danach auf **Weiter**. 
-21.	Klicken Sie auf der Bestätigungsseite auf **Weiter**.
-22.	Klicken Sie auf der Seite **Zusammenfassung** auf **Fertig stellen**.
+21.	Klicken Sie auf der **Bestätigungsseite** auf **Weiter**.
+22.	Klicken Sie auf der **Zusammenfassungsseite** auf **Fertig stellen**.
 23.	Klicken Sie im linken Bereich auf **Knoten**. Alle drei Computer sollten nun aufgelistet werden.
 
 ## Aktivieren von AlwaysOn-Verfügbarkeitsgruppen
@@ -268,4 +272,4 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 4: Konfi
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

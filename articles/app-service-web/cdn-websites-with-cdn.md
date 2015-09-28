@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden von Azure CDN in Azure App Service"
-	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie eine Web-App in Azure App Service bereitstellen, die Inhalte über einen integrierten Azure CDN-Endpunkt zur Verfügung stellt."
-	services="app-service\web"
-	documentationCenter=".net"
-	authors="cephalin"
-	manager="wpickett"
+	pageTitle="Verwenden von Azure CDN in Azure App Service" 
+	description="Ein Lernprogramm, in dem Sie erfahren, wie Sie eine Web-App in Azure App Service bereitstellen, die Inhalte über einen integrierten Azure CDN-Endpunkt zur Verfügung stellt." 
+	services="app-service\web" 
+	documentationCenter=".net" 
+	authors="cephalin" 
+	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="06/25/2015"
+	ms.service="app-service" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="09/16/2015" 
 	ms.author="cephalin"/>
 
 
@@ -28,7 +28,9 @@ Die Integration von Web-Apps in Azure CDN bietet folgende Vorteile:
 - Verwalten der Webanwendung und des vom CDN verarbeiteten Inhalts über dieselbe Visual Studio-Oberfläche
 - Integrieren von ASP.NET-Bündelung und -Minimierung in Azure CDN
 
-## Sie erstellen Folgendes ##
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
+
+## Was Sie erstellen ##
 
 Sie stellen eine Web-App in Azure App Service unter Verwendung der ASP.NET-MVC-Standardvorlage in Visual Studio bereit, fügen Code hinzu, um Inhalt aus einem integrierten Azure CDN bereitzustellen, z. B. ein Bild, Ergebnisse von Controlleraktionen und die JavaScript- und CSS-Standarddateien. Außerdem schreiben Sie Code zum Konfigurieren des Fallbackmechanismus für verarbeitete Bundles für den Fall, dass das CDN offline ist.
 
@@ -545,4 +547,4 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

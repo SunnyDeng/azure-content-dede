@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hinzufügen von Authentifizierung zur Mobile Services-App (iOS) | Microsoft Azure"
+	pageTitle="Hinzufügen von Authentifizierung zur Mobile Services-App (iOS) | JavaScript-Back-End | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Mobile Services verwenden, um die Benutzer Ihrer iOS-App über verschiedene Identitätsanbieter, einschließlich Google, Facebook, Twitter und Microsoft, zu authentifizieren."
 	services="mobile-services"
 	documentationCenter="ios"
@@ -85,4 +85,4 @@ Als Nächstes erfahren Sie, [wie der Benutzer-ID-Wert zum Filtern der zurückgeg
 
 [Azure Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

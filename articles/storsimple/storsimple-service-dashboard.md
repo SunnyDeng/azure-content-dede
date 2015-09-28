@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Dashboard des StorSimple Manager-Diensts | Microsoft Azure"
-	description="Beschreibt das Dashboard des StorSimple Manager-Diensts und erläutert, wie Sie den Zustand Ihrer StorSimple-Lösung über dieses Dashboard verwalten."
-	services="storsimple"
-	documentationCenter=""
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt das Dashboard des StorSimple Manager-Diensts und erläutert, wie Sie den Zustand Ihrer StorSimple-Lösung über dieses Dashboard verwalten."
+   services="storsimple"
+   documentationCenter=""
+   authors="SharS"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="09/02/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/17/2015"
+   ms.author="v-sharos" />
 
 # Verwenden des Dashboards des StorSimple Manager-Diensts
 
@@ -74,6 +74,8 @@ Sie können die Vorgangsprotokolle anzeigen, indem Sie auf den entsprechenden Li
 
 ## Nächste Schritte
 
-[Behandeln von Problemen bei StorSimple-Geräten](storsimple-troubleshoot-operational-device.md).
+- Erfahren Sie, wie Sie [Probleme bei StorSimple-Geräten behandeln](storsimple-troubleshoot-operational-device.md).
 
-<!---HONumber=September15_HO1-->
+- Erfahren Sie mehr über das [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+
+<!---HONumber=Sept15_HO3-->

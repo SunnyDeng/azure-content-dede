@@ -8,25 +8,27 @@
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="04/27/2015" 
+	ms.date="09/11/2015" 
 	ms.author="ccompy"/>
 
 # Erstellen einer App Service-Umgebung #
 
 App Service-Umgebungen sind eine Premium-Dienstoption von Azure App Service, die sich aktuell in der Vorschau befindet. Sie bietet eine erweiterte Konfigurationsmöglichkeit, die in den mehrinstanzenfähigen Verwaltungseinheiten nicht verfügbar ist. Um ein besseres Verständnis von den Möglichkeiten von App Service-Umgebungen zu erhalten, lesen Sie die Dokumentation [Was ist eine App Service-Umgebung][WhatisASE].
 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
+
 ### Übersicht ###
 
 Mit der Funktion der App Service-Umgebungen wird im Wesentlichen Azure App Service im VNET eines Kunden bereitgestellt. Hierzu sind folgende Voraussetzungen zu erfüllen:
 
-- Ein regionales VNET ist erforderlich mit 512 (/23) oder mehr Adressen.
-- Ein Subnetz in diesem VNET ist erforderlich mit 256 (/24) oder mehr Adressen.
-- Das Subnetz **darf keinen anderen Computeressourcen enthalten**. In einem Subnetz kann nur eine App Service-Umgebung bereitgestellt werden. Der Erstellungsversuch misslingt, wenn das Subnetz bereits andere Compute-Ressourcen enthält.
+- Ein regionales, klassisches „v1“-VNET ist erforderlich mit 512 (/23) oder mehr Adressen.
+- Ein Subnetz in diesem VNET ist erforderlich mit 8 (/29) oder mehr Adressen.
+- Das Subnetz **darf keine anderen Computeressourcen enthalten**. In einem Subnetz kann nur eine App Service-Umgebung bereitgestellt werden. Der Erstellungsversuch misslingt, wenn das Subnetz bereits andere Compute-Ressourcen enthält.
 
 Wenn Sie noch kein VNET besitzen, das Sie zum Hosten Ihrer App Service-Umgebung verwenden möchten, können Sie bei der Erstellung der App Service-Umgebung eines erstellen.
 
@@ -72,7 +74,7 @@ Die Preisgebung für App Service-Umgebungen erfolgt anhand der zugewiesenen Comp
 
 
 ### VNET-Erstellung ###
-Auch wenn es eine schnelle Funktion zum automatischen Erstellen eines neuen VNET gibt, unterstützt die Funktion auch die Auswahl eines vorhandenen VNET und die manuelle Erstellung eines VNET. Sie können ein vorhandenes VNET auswählen, wenn es für die Unterstützung der Bereitstellung einer App Service-Umgebung groß genug ist. Das VNET muss mindestens 512 Adressen aufweisen. Wenn Sie ein bereits vorhandenes VNET auswählen, müssen Sie auch ein Subnetz angeben oder ein neues erstellen. Das Subnetz muss mindestens 256 Adressen aufweisen.
+Auch wenn es eine schnelle Funktion zum automatischen Erstellen eines neuen VNET gibt, unterstützt die Funktion auch die Auswahl eines vorhandenen VNET und die manuelle Erstellung eines VNET. Sie können ein vorhandenes VNET auswählen (nur klassische virtuelle „v1“-Netzwerke werden derzeit unterstützt), wenn es für die Unterstützung der Bereitstellung einer App Service-Umgebung groß genug ist. Das VNET muss mindestens 512 Adressen aufweisen. Wenn Sie ein bereits vorhandenes VNET auswählen, müssen Sie auch ein Subnetz angeben oder ein neues erstellen. Das Subnetz muss mindestens 8 Adressen aufweisen.
 
 Beim Durchlaufen der Benutzeroberfläche zur VNET-Erstellung müssen Sie Folgendes bereitstellen:
 
@@ -143,4 +145,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AppServicePricing]: http://azure.microsoft.com/pricing/details/app-service/
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

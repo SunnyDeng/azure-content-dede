@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Planen und Vorbereiten des Upgrades auf die SQL-Datenbank V12"
+	pageTitle="Planen Sie Ihr Upgrade auf die SQL-Datenbank V12 | Microsoft Azure"
 	description="Beschreibt die Vorbereitungen und Einschränkungen im Zusammenhang mit einem Upgrade auf Version V12 der Azure SQL-Datenbank."
 	services="sql-database"
 	documentationCenter=""
@@ -14,14 +14,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/15/2015"
+	ms.date="09/16/2015"
 	ms.author="genemi"/>
 
 
 # Planen und Vorbereiten des Upgrades auf die SQL-Datenbank V12
 
 
-In diesem Thema werden die Planungen und Vorbereitungen beschrieben, die Sie ausführen müssen, um das Upgrade Ihrer Azure SQL-Datenbanken von Version V11 auf V12 vorzunehmen ([in einigen Regionen im Vorschaustatus](sql-database-v12-whats-new.md#V12AzureSqlDbPreviewGaTable)).
+In diesem Thema werden die Planung und die Vorbereitungen beschrieben, die Sie ausführen müssen, um das Upgrade Ihrer Azure SQL-Datenbanken von Version V11 auf V12 vorzunehmen.
 
 
 Ein neues [Azure-Vorschauportal](http://portal.azure.com/) ist verfügbar, um Sie bei der Durchführung des Upgrades auf V12 zu unterstützen.
@@ -107,6 +107,18 @@ Das Upgrade auf V12 kann nicht ausgeführt werden, wenn Georeplikation für Ihre
 Nachdem das Upgrade abgeschlossen ist, können Sie Ihre Datenbank erneut für die Verwendung von Georeplikation konfigurieren.
 
 
+### Client auf einem virtuellen Azure-Computer
+
+
+Wenn Ihr Clientprogramm eine Verbindung mit SQL-Datenbank V12 herstellt, wobei der Client auf einem virtuellen Azure-Computer ausgeführt wird, müssen Sie die folgenden Portbereiche auf dem virtuellen Computer öffnen:
+
+- 11000-11999
+- 14000-14999
+
+
+Klicken Sie auf [hier](sql-database-develop-direct-route-ports-adonet-v12.md), um ausführliche Informationen über die Ports für die SQL-Datenbank V12 zu erhalten. Die Ports werden für Leistungssteigerungen in der SQL-Datenbank V12 benötigt.
+
+
 ##<a id="limitations"></a>Einschränkungen während und nach dem Upgrade auf V12
 
 
@@ -138,7 +150,7 @@ Wir empfehlen Kunden, die Verbindung zu ihren Azure SQL-Datenbanken mit Visual S
 - Entwickeln einer Datenbank, entweder online oder offline
 
 
-Sie können die Verbindung stattdessen mit [Visual Studio Community 2013](https://www.visualstudio.com/de-de/news/vs2013-community-vs.aspx/) herstellen, bei dem es sich um eine kostenlose, voll funktionsfähige Version von VS2013 handelt.
+Sie können die Verbindung stattdessen mit [Visual Studio Community 2013](https://www.visualstudio.com/de-DE/news/vs2013-community-vs.aspx/) herstellen, bei dem es sich um eine kostenlose, voll funktionsfähige Version von VS2013 handelt.
 
 
 Im älteren Azure-Portal können Sie auf der Datenbankseite auf **In Visual Studio öffnen** klicken, um VS2013 auf Ihrem Computer zu starten und die Verbindung zu Ihrer Azure SQL-Datenbank herzustellen.
@@ -166,7 +178,7 @@ Während des Upgrades auf V12 kann weiterhin auf Daten in V11-Datenbanken zugegr
 | :--- | :--- |
 | Keine Zurücksetzung auf V11 | Nachdem das Upgrade abgeschlossen wurde, kann das Ergebnis nicht mehr zurückgesetzt oder rückgängig gemacht werden. |
 | Web- oder Business-Ebene | Sobald das Upgrade gestartet wurde, kann der Server für die neue V12-Datenbank die Web- oder Business-Dienstebene nicht mehr erkennen oder akzeptieren. |
-| Der 50 %ige Rabatt ist aus den im Azure-Portal angegebenen Tarifen nicht ersichtlich | Im Zeitraum der Preview gilt für Datenbanken, die für die aktuelle Preview des Azure SQL-Datenbankupdates (V12) registriert sind, ein Previewrabatt von 50 %*. Auch wenn der Rabatt nicht im Vorschauportal auf dem Blatt "Diensttarif" angezeigt wird, gilt er dennoch.<br/><br/> Der 50 %ige Rabatt ist in allen geografischen Regionen bis zum **31. März 2015** gültig. Danach läuft er für alle Regionen ab. Der Rabatt ist auch in Regionen wirksam, für die der Status der allgemeinen Verfügbarkeit bekannt gegeben wurde.<br/><br/> (* Die Nutzung des neuesten Azure SQL-Datenbankupdates V12 unterliegt den Preview-Bedingungen in Ihrem Lizenzvertrag (z. B. Enterprise Agreement, Microsoft Azure-Vertrag oder Microsoft Online-Abonnementvertrag) sowie etwaigen gültigen [ergänzenden Nutzungsbedingungen für Microsoft Azure Previews](http://azure.microsoft.com/support/legal/preview-supplemental-terms/). Für die Dauer der Preview berechnet Microsoft alle für diese Preview registrierten Datenbanken zur Hälfte des GA (General Availability)-Tarifs und gewährt Ihnen (oder ggf. Ihrem Händler) einen 50 %igen Rabatt. 30 Tage vor Ablauf des Preview-Zeitraums und des reduzierten Preview-Tarifs werden Sie von Microsoft per E-Mail benachrichtigt.) |
+
 
 
 ### Exportieren und Importieren *nach* Upgrades auf V12
@@ -244,4 +256,4 @@ Wenn aus einem bestimmten Grund ein Upgradefehler auftritt, bleibt Ihre V11-Date
 [Subheading 1]: #subheading-1
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

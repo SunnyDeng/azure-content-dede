@@ -8,12 +8,12 @@
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/26/2015" 
+	ms.date="09/16/2015" 
 	ms.author="tdykstra"/>
 
 # Ausführen von Hintergrundaufgaben mit WebJobs
@@ -25,6 +25,8 @@ Sie können Programme oder Skripts in WebJobs auf drei Arten in Ihrer [App Servi
 Dieser Artikel zeigt, wie Sie WebJobs mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) bereitstellen. Informationen zum Bereitstellen über Visual Studio oder einen kontinuierlichen Bereitstellungsprozess finden Sie unter [Bereitstellen von Azure WebJobs in Azure-Web-Apps](websites-dotnet-deploy-webjobs.md).
 
 Das Azure WebJobs-SDK vereinfacht zahlreiche WebJobs-Programmieraufgaben. Weitere Informationen finden Sie unter [Was ist das WebJobs-SDK?](websites-dotnet-webjobs-sdk.md).
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## <a name="acceptablefiles"></a>Akzeptable Dateitypen für Skripts oder Programme
 
@@ -209,4 +211,4 @@ Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs
 [JobActionPageInScheduler]: ./media/web-sites-create-web-jobs/33JobActionPageInScheduler.png
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

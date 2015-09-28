@@ -132,7 +132,6 @@ Früher unter dem Namen SQL Azure bekannt, bietet Azure SQL-Datenbank alle wicht
 
 SQL-Datenbank ist jedoch nicht nur ein DBMS in der Cloud, es handelt sich um einen PaaS. Sie kontrollieren weiterhin Ihre Daten und steuern den Zugriff, aber SQL-Datenbank übernimmt die Routinearbeiten bei der Verwaltung, z. B. die Verwaltung der Hardwareinfrastruktur und die automatische Aktualisierung der Datenbank und des Betriebssystems. SQL-Datenbank bietet außerdem hohe Verfügbarkeit, automatische Sicherungen sowie Zeitpunktwiederherstellungen und kann Kopien in geografischen Regionen replizieren.
 
-Darüber hinaus gibt es eine Premium-Option, für die Sie ein wenig mehr zahlen, damit Sie über Ihren eigenen dedizierten Server verfügen. Mit der Standardoption wird die Datenbank auf gemeinsam genutzter Hardware ausgeführt. Dabei können die Datenbankabfragen gedrosselt werden, wenn Sie zufällig einen besonders stark beanspruchten Server nutzen.
 
 **Szenarien für SQL-Datenbank**
 
@@ -612,4 +611,4 @@ Nachdem Sie nun einen Überblick erhalten haben, besteht der nächste Schritt da
 
 [Azure Media Services Poster]: http://azure.microsoft.com/documentation/infographics/media-services/
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

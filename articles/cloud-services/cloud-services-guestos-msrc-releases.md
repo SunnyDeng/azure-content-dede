@@ -1,24 +1,38 @@
 <properties 
-   pageTitle="Liste der Updates für das Azure-Gastbetriebssystem | Microsoft Azure"
-	description="Liste der Updates für Azure-Gastbetriebssystemreleases"
-	services="cloud-services"
-	documentationCenter="na"
-	authors="yuemlu"
-	manager="markkie"
-	editor=""/>
+   pageTitle="Liste der Updates für das Azure-Gastbetriebssystem | Microsoft Azure" 
+   description="Liste der Updates für Azure-Gastbetriebssystemreleases" 
+   services="cloud-services" 
+   documentationCenter="na" 
+   authors="yuemlu" 
+   manager="markkie" 
+   editor=""/>
 
 <tags
    ms.service="cloud-services"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="tbd"
-	ms.date="08/24/2015"
-	ms.author="yuemlu"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="tbd" 
+   ms.date="09/14/2015"
+   ms.author="yuemlu"/>
 
 # Azure-Gastbetriebssystem 
 
 Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MSRC), die auf das Azure-Gastbetriebssystem angewendet wurden. Durchsuchen Sie diesen Artikel, um zu ermitteln, ob ein bestimmtes Update für das Gastbetriebssystem gilt, das Sie verwenden. Updates werden für die [Familie][family-explain], in der sie eingeführt wurden, immer in die jeweils neueste Version übertragen.
+
+## Gastbetriebssystem September
+
+| Bulletin-ID | Übergeordneter KB-Artikel | Beschreibung des Sicherheitsrisikos | Gastbetriebssystem | Datum der ersten Einführung |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS15-093 | [3088903] | Sicherheitsupdate für Internet Explorer | 4\.24, 3.31, 2.43 | 8\. September 2015 |
+| MS15-094 | [3089548] | Kumulatives Sicherheitsupdate für Internet Explorer | 4\.24, 3.31, 2.43 | 8\. September 2015 |
+| MS15-096 | [3072595] | Schwachstellen im Active Directory-Dienst können Denial-of-Service ermöglichen. | 4\.24, 3.31, 2.43 | 8\. September 2015 |
+| MS15-097 | [3089656] | Schwachstellen in Microsoft-Grafikkomponente können Erhöhung von Berechtigungen ermöglichen. | 4\.24, 3.31, 2.43 | 8\. September 2015 |
+| MS15-098 | [3089669] | Schwachstellen in Windows Journal können Remotecodeausführung ermöglichen. | 4\.24, 3.31, 2.43 | 8\. September 2015 |
+| MS15-101 | [3089662] | Sicherheitsanfälligkeiten im .NET Framework können Erhöhung von Berechtigungen ermöglichen | 4\.24, 3.31, 2.43 | 8\. September 2015 |
+| MS15-102 | [3089657] | Schwachstellen im Windows-Task-Management können Erhöhung von Berechtigungen ermöglichen. | 4\.24, 3.31, 2.43 | 8\. September 2015 |
+| MS15-105 | [3091287] | Sicherheitsanfälligkeit im Windows-Hyper-V kann Umgehung von Sicherheitsfunktionen ermöglichen. | 4\.24 | 8\. September 2015 |
+
 
 ## Gastbetriebssystem August
 
@@ -157,6 +171,16 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 | – | [2999802][2999802] | In Windows werden durchgezogene Linien statt gepunktete Linien gedruckt | 4\.15, 3.22, 2.34 | 13\. Januar 2015 |
 | – | [2896881][2896881] | Lange Anmeldezeit bei der Verwendung des VBScript-Befehls "AddPrinterConnection" zum Zuordnen von Druckern zu Benutzern während des Anmeldeprozesses in Windows | 4\.15, 3.22, 2.34 | 13\. Januar 2015 |
 
+
+[3088903]: http://support.microsoft.com/kb/3088903
+[3089548]: http://support.microsoft.com/kb/3089548
+[3072595]: http://support.microsoft.com/kb/3072595
+[3089656]: http://support.microsoft.com/kb/3089656
+[3089669]: http://support.microsoft.com/kb/3089669
+[3089657]: http://support.microsoft.com/kb/3089657
+[3091287]: http://support.microsoft.com/kb/3091287
+[3089662]: http://support.microsoft.com/kb/3089662
+
 [3082442]: http://support.microsoft.com/kb/3082442
 [3078662]: http://support.microsoft.com/kb/3078662
 [3080348]: http://support.microsoft.com/kb/3080348
@@ -184,7 +208,7 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 
 [MS15-034]: https://technet.microsoft.com/library/security/MS15-034
 
-[3042553]: https://support.microsoft.com/de-de/kb/3042553/
+[3042553]: https://support.microsoft.com/de-DE/kb/3042553/
 
 [3034682]: http://support.microsoft.com/kb/3034682
 [3036220]: http://support.microsoft.com/kb/3036220
@@ -264,4 +288,4 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 [family-explain]: cloud-services-guestos-update-matrix.md#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

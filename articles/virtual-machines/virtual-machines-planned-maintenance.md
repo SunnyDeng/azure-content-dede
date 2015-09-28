@@ -75,7 +75,7 @@ Bei virtuellen Computern in einer Konfiguration mit nur einer Instanz werden die
 Der geplante Wartungsvorgang wirkt sich bei dieser Art von Konfiguration eines virtuellen Computers auf die Verfügbarkeit aus. Aktuell wird bei Azure eine Woche vorher über geplante Wartungsarbeiten für virtuelle Computer in einer Einzelinstanzkonfiguration informiert.
 
 ### E-Mail-Benachrichtigung
-Nur bei virtuellen Computern mit Konfigurationen mit einzelnen und mehreren Instanzen informiert Azure im Voraus per E-Mail über geplante Wartungsarbeiten. Bei einzelnen Instanzen erfolgt die Benachrichtigung eine Woche im Voraus, bei mehreren Instanzen 48 Stunden im Voraus. Diese E-Mail wird an das Haupt-E-Mail-Konto gesandt, das im Abonnement angegeben ist. Hier ist ein Beispiel für diese Art von E-Mail:
+Nur bei virtuellen Computern mit Konfigurationen mit einzelnen und mehreren Instanzen informiert Azure im Voraus per E-Mail über geplante Wartungsarbeiten. Bei einzelnen Instanzen erfolgt die Benachrichtigung eine Woche im Voraus, bei mehreren Instanzen 48 Stunden im Voraus. Diese E-Mail wird an die E-Mail-Konten des Kontoadministrators und die des Co-Administrators gesendet, die im Abonnement bereitgestellt werden. Hier ist ein Beispiel für diese Art von E-Mail:
 
 <!--Image reference-->
 ![][image1]
@@ -110,4 +110,4 @@ Beispiel: Während einer geplanten Wartung stellt Azure für "USA (West)" kein U
 [Virtual Machines Manage Availability]: virtual-machines-windows-tutorial.md
 [Understand planned versus unplanned maintenance]: virtual-machines-manage-availability.md#Understand-planned-versus-unplanned-maintenance/
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

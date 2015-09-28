@@ -1,19 +1,19 @@
 <properties 
    pageTitle="StorSimple-Failover und -Notfallwiederherstellung | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein Failover des StorSimple-Geräts auf sich selbst, auf ein anderes physisches Gerät oder auf ein virtuelles Gerät durchführen."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="adinah"
-	editor=""/>
+   description="Erfahren Sie, wie Sie ein Failover des StorSimple-Geräts auf sich selbst, auf ein anderes physisches Gerät oder auf ein virtuelles Gerät durchführen."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/28/2015"
-	ms.author="alkohli"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/14/2015"
+   ms.author="alkohli" />
 
 # Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät
 
@@ -129,11 +129,16 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorS
 	
 	b. Wechseln Sie zur Seite **Volumecontainer**. Es sollten jetzt alle Volumecontainer und die Volumes des alten Geräts aufgeführt werden.
 
+![Video verfügbar](./media/storsimple-device-failover-disaster-recovery/Video_icon.png) **Video verfügbar**
+
+Sie können sich [hier](http://azure.microsoft.com/documentation/videos/storsimple-and-disaster-recovery/) ein Video anschauen, in dem das Wiederherstellen eines fehlgeschlagenen physischen Geräts auf ein virtuelles Gerät in der Cloud demonstriert wird.
+
 ## Business Continuity Disaster Recovery (BCDR)
 
 Ein Business Continuity Disaster Recovery (BCDR)-Szenario liegt vor, wenn das gesamte Azure-Rechenzentrum nicht mehr funktioniert. Dies kann sich auf den StorSimple Manager-Dienst und die zugehörigen StorSimple-Geräte auswirken.
 
 Wenn StorSimple-Geräte direkt vor einem Notfall registriert wurden, müssen diese StorSimple-Geräte möglicherweise auf die Werkseinstellungen zurückgesetzt werden. Nach dem Notfall wird das StorSimple-Gerät als offline angezeigt. Das StorSimple-Gerät muss aus dem Portal gelöscht und auf die Werkseinstellungen zurückgesetzt werden. Anschließend muss es neu registriert werden.
+
 
 ## Nächste Schritte
 
@@ -142,7 +147,7 @@ Nach einem Failover müssen Sie möglicherweise folgende Schritte ausführen:
 - [Deaktivieren des StorSimple-Geräts](storsimple-deactivate-and-delete-device.md#deactivate-a-device)
 - [Löschen des StorSimple-Geräts](storsimple-deactivate-and-delete-device.md#delete-a-device)
 
-Informationen dazu, wie Sie den StorSimple Manager-Dienst verwenden, um Ihr Gerät zu verwalten, finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

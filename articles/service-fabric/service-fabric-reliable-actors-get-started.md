@@ -7,7 +7,6 @@
    manager="timlt"
    editor=""/>
 
-
 <tags
    ms.service="service-fabric"
    ms.devlang="dotnet"
@@ -16,7 +15,6 @@
    ms.workload="NA"
    ms.date="08/05/2015"
    ms.author="claudioc"/>
-
 
 # Reliable Actors: Das Szenario für die kanonische HelloWorld-Vorgehensweise
 Dieser Artikel erläutert die Grundlagen von Service Fabric Reliable Actors und führt Sie durch das Erstellen, Debuggen und Bereitstellen einer einfachen HelloWorld-Anwendung in Visual Studio.
@@ -148,7 +146,9 @@ Service Fabric-Tools für Visual Studio unterstützen das Debuggen auf dem lokal
 
 ## Nächste Schritte
 
-[Einführung in Service Fabric Reliable Actors](service-fabric-reliable-actors-introduction.md) [Referenzdokumentation zu Actors-APIs](https://msdn.microsoft.com/library/azure/dn971626.aspx) [Beispielcode](https://github.com/Azure/servicefabric-samples)
+- [Einführung in Service Fabric Reliable Actors](service-fabric-reliable-actors-introduction.md)
+- [Actors-APIS-Referenzdokumentation](https://msdn.microsoft.com/library/azure/dn971626.aspx)
+- [Beispielcode](https://github.com/Azure/servicefabric-samples)
 
 
 <!--Image references-->
@@ -158,4 +158,4 @@ Service Fabric-Tools für Visual Studio unterstützen das Debuggen auf dem lokal
 [4]: ./media/service-fabric-reliable-actors-get-started/vs-context-menu.png
 [5]: ./media/service-fabric-reliable-actors-get-started/reliable-actors-newproject1.PNG
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

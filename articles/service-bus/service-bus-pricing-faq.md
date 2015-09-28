@@ -21,18 +21,18 @@ In diesem Abschnitt werden einige häufig gestellte Fragen zur Service Bus-Preis
 
 >[AZURE.NOTE]Die Preisstruktur für Event Hubs wird im Thema [Event Hubs Verfügbarkeit und Support – häufig gestellte Fragen](event-hubs-availability-and-support-faq.md) beschrieben. Weitere Informationen hierzu finden Sie zudem im Thema [Event Hubs-Preise](http://azure.microsoft.com/pricing/details/event-hubs/).
 
-- [Wie werden die Kosten für Service Bus berechnet?](#How-do-you-charge-for-Service-Bus?)
-- [Bei welcher Nutzung von Service Bus werden Daten übertragen? Bei welcher nicht?](#What-usage-of-Service-Bus-is-subject-to-data-transfer?-What-is-not?)
-- [Was genau ist ein Service Bus-Relay?](#What-exactly-is-a-Service-Bus-"relay"?)
-- [Wie wird die Verbrauchseinheit "Relaystunden" berechnet?](#How-is-the-Relay-Hours-meter-calculated?)
-- [Was geschieht, wenn mehrere Listener mit einem bestimmten Relay verbunden sind?](#What-if-I-have-more-than-one-listener-connected-to-a-given-relay?)
-- [Wie wird die Verbrauchseinheit "Nachrichten" für Relays berechnet?](#How-is-the-Messages-meter-calculated-for-relays?)
-- [Fallen für Service Bus Speicherkosten an?](#Does-Service-Bus-charge-for-storage?)
-- [Gibt es für Service Bus Nutzungskontingente?](#Does-Service-Bus-have-any-usage-quotas?)
+- [Wie werden die Kosten für Service Bus berechnet?](#how-do-you-charge-for-service-bus)
+- [Bei welcher Nutzung von Service Bus werden Daten übertragen? Bei welcher nicht?](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not)
+- [Was genau ist ein Service Bus-Relay?](#what-exactly-is-a-service-bus-quotrelayquot)
+- [Wie wird die Verbrauchseinheit "Relaystunden" berechnet?](#how-is-the-relay-hours-meter-calculated)
+- [Was geschieht, wenn mehrere Listener mit einem bestimmten Relay verbunden sind?](#what-if-i-have-more-than-one-listener-connected-to-a-given-relay)
+- [Wie wird die Verbrauchseinheit "Nachrichten" für Relays berechnet?](#how-is-the-messages-meter-calculated-for-relays)
+- [Fallen für Service Bus Speicherkosten an?](#does-service-bus-charge-for-storage)
+- [Gibt es für Service Bus Nutzungskontingente?](#does-service-bus-have-any-usage-quotas)
 
 ## Wie werden die Kosten für Service Bus berechnet?
 
-Vollständige Informationen zur Preisgestaltung von Servicebus finden Sie unter [Service Bus – Preisdetails und Abrechnung](https://msdn.microsoft.com/library/dn831889.aspx) sowie unter [Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/). Neben den aufgeführten Preisen werden Ihnen die damit verbundenen aus dem Datencenter ausgehenden Datenübertragungen berechnet, mit denen Ihre Anwendung bereitgestellt wird. Weitere Details finden Sie weiter unten im Abschnitt [Bei welcher Nutzung von Service Bus werden Daten übertragen? Bei welcher nicht?](#What-usage-of-Service-Bus-is-subject-to-data-transfer?-What-is-not?).
+Vollständige Informationen zur Preisgestaltung von Servicebus finden Sie unter [Service Bus – Preisdetails und Abrechnung](https://msdn.microsoft.com/library/dn831889.aspx) sowie unter [Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/). Neben den aufgeführten Preisen werden Ihnen die damit verbundenen aus dem Datencenter ausgehenden Datenübertragungen berechnet, mit denen Ihre Anwendung bereitgestellt wird. Weitere Details finden Sie im Abschnitt [Bei welcher Nutzung von Service Bus werden Daten übertragen? Bei welcher nicht?](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not).
 
 ## Bei welcher Nutzung von Service Bus werden Daten übertragen? Bei welcher nicht?
 
@@ -114,4 +114,4 @@ Weitere Informationen zu Service Bus Messaging finden Sie in folgenden Themen.
 - [Übersicht über die Architektur von Azure Service Bus](fundamentals-service-bus-hybrid-solutions.md)
 - [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

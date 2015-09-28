@@ -1,12 +1,12 @@
 <properties 
-	pageTitle="Verwalten eines DocumentDB-Kontos | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Ihr DocumentDB-Konto verwalten." 
+	pageTitle="Verwalten eines DocumentDB-Kontos über das Azure-Vorschauportal | Microsoft Azure" 
+	description="Erfahren Sie, wie Sie Ihr DocumentDB-Konto über das Azure-Vorschauportal verwalten. Sie erhalten eine Anleitung, wie das Azure-Vorschauportal verwendet werden kann, um Konten anzuzeigen, zu kopieren, zu löschen sowie auf Konten zuzugreifen." 
+	keywords="Azure preview portal, documentdb, azure, Microsoft azure"
 	services="documentdb" 
 	documentationCenter="" 
 	authors="stephbaron" 
 	manager="jhubbard" 
 	editor="cgronlun"/>
-
 
 <tags 
 	ms.service="documentdb" 
@@ -17,27 +17,26 @@
 	ms.date="07/28/2015" 
 	ms.author="stbaro"/>
 
+# Verwalten eines DocumentDB-Kontos im Azure-Vorschauportal
 
-#Verwalten eines DocumentDB-Kontos
-
-Erfahren Sie, wie mit Schlüsseln und Konsistenzeinstellungen arbeiten und ein Konto löschen.
+Erfahren Sie, wie Sie mit Schlüsseln und Konsistenzeinstellungen arbeiten, und wie Sie ein Konto im Azure-Vorschauportal löschen.
 
 ## <a id="keys"></a>Anzeigen, Kopieren und erneutes Generieren von Zugriffsschlüsseln
 Wenn Sie ein DocumentDB-Konto erstellen, generiert der Dienst zwei Hauptzugriffsschlüssel, die für die Authentifizierung verwendet werden können, wenn der Zugriff auf das DocumentDB-Konto erfolgt. Durch Bereitstellen von zwei Zugriffsschlüsseln ermöglicht DocumentDB Ihnen das erneute Generieren der Schlüssel ohne Unterbrechung des Zugriffs auf das DocumentDB-Konto.
 
 Greifen Sie im [Microsoft Azure-Vorschauportal](https://portal.azure.com/) auf den Bereich **Schlüssel** des Blatts **DocumentDB-Konto** zu, um die für den Zugriff auf Ihr DocumentDB-Konto verwendeten Schlüssel anzuzeigen, zu kopieren und neu zu generieren.
 
-![](media/documentdb-manage-account/keys.png)
+![Screenshot mit Azure-Vorschauportal, Blatt „Schlüssel“](media/documentdb-manage-account/keys.png)
 
-### Anzeigen und Kopieren eines Zugriffsschlüssels
+### Anzeigen und Kopieren eines Zugriffsschlüssels im Azure-Vorschauportal
 
 1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu. 
 
 2.      Klicken Sie in der **Zusammenfassung** auf **Schlüssel**.
 
-3.      Klicken Sie im Blatt **Schlüssel** rechts neben dem Schlüssel, den Sie kopieren möchten, auf die Schaltfläche **Kopieren**.
+3.      Klicken Sie im Blatt **Schlüssel** rechts neben dem Schlüssel, den Sie kopieren möchten, auf die Schaltfläche **Kopieren**.
 
-  ![](./media/documentdb-manage-account/image004.jpg)
+  ![Anzeigen und Kopieren eines Zugriffsschlüssels im Azure-Vorschauportal, Blatt „Schlüssel“](./media/documentdb-manage-account/image004.jpg)
 
 ### Erneutes Generieren von Zugriffsschlüsseln
 
@@ -74,7 +73,7 @@ DocumentDB unterstützt vier detailliert definierte, benutzerkonfigurierbare Dat
 
 *Beachten Sie, dass DocumentDB-Konten standardmäßig über die Konsistenzebene „Session“ verfügen. Weitere Informationen zu DocumentDB-Konsistenzeinstellungen finden Sie im Abschnitt [Konsistenzebene](http://go.microsoft.com/fwlink/p/?LinkId=402365).*
 
-### Festlegen der standardmäßigen Konsistenz für ein DocumentDB-Konto
+### So legen Sie die Standardkonsistenz für ein DocumentDB-Konto fest
 
 1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf Ihr DocumentDB-Konto zu. 
 
@@ -82,9 +81,9 @@ DocumentDB unterstützt vier detailliert definierte, benutzerkonfigurierbare Dat
 
 3.      Wählen Sie im Blatt **Standardkonsistenz** die für das DocumentDB-Konto standardmäßig zu verwendende Konsistenzebene aus.
 
-![](./media/documentdb-manage-account/image005.png)
+![Standardkonsistenz - Sitzung](./media/documentdb-manage-account/image005.png)
 
-![](./media/documentdb-manage-account/image006.png)
+![Standardkonsistenz - Gebunden](./media/documentdb-manage-account/image006.png)
 
 4.      Klicken Sie auf **Speichern**.
 
@@ -92,10 +91,10 @@ DocumentDB unterstützt vier detailliert definierte, benutzerkonfigurierbare Dat
 
 *Beachten Sie, dass es einige Minuten in Anspruch nehmen kann, bis sich die Änderung der Standardkonsistenz auf Ihr DocumentDB-Konto auswirkt.*
 
-## <a id="delete"></a> Löschen eines DocumentDB-Kontos
-Zum Entfernen eines nicht mehr verwendeten DocumentDB-Kontos, verwenden Sie den Befehl **Löschen** im Blatt **DocumentDB-Konto**.
+## <a id="delete"></a> Gewusst wie: Löschen eines DocumentDB-Kontos im Azure-Vorschauportal
+Um ein nicht mehr verwendetes DocumentDB-Konto aus dem Azure-Vorschauportal zu entfernen, verwenden Sie den Befehl **Löschen** im Blatt **DocumentDB-Konto**.
 
-![](./media/documentdb-manage-account/image009.png)
+![So löschen Sie ein DocumentDB-Konto im Azure-Vorschauportal](./media/documentdb-manage-account/image009.png)
 
 1.      Greifen Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf das zu löschende DocumentDB-Konto zu. 
 
@@ -114,4 +113,4 @@ Weitere Informationen zu DocumentDB finden Sie in der Azure DocumentDB-Dokumenta
  
  
 
-<!-----HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

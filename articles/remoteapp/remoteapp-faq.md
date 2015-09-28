@@ -27,7 +27,7 @@ Folgende Fragen wurden zu Azure RemoteApp an uns gestellt. Haben Sie weitere Fra
 
 ## Unterstützte Konfigurationen ##
 
-- **Was sind die Dienstgrenzwerte?** Informationen zu den Standardeinstellungen und Dienstbeschränkungen für Azure RemoteApp finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](.\azure-subscription-service-limits.md). Sie können sich gern an uns wenden, wenn Sie weitere Fragen haben.
+- **Was sind die Dienstgrenzwerte?** Informationen zu den Standardeinstellungen und Dienstbeschränkungen für Azure RemoteApp finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](azure-subscription-service-limits.md). Sie können sich gern an uns wenden, wenn Sie weitere Fragen haben.
 - **Wie viele Benutzer benötige ich?** Es sind mindestens 20 Benutzer erforderlich. Ich wiederhole dies noch einmal, damit es klar verständlich ist: das MINIMUM beträgt 20. Ihnen werden 20 Benutzer berechnet. 
 - **Werden benutzerdefinierte Line-of-Business-Anwendungen (LOB) unterstützt?** Ja. Zum Verwenden einer benutzerdefinierten Anwendung in Azure RemoteApp müssen Sie ein [benutzerdefiniertes Vorlagenimage](remoteapp-create-custom-image.md) erstellen und anschließend in die RemoteApp-Sammlung hochladen.
 - **Kann ich meine benutzerdefinierte LOB-Anwendung in Azure RemoteApp ausführen?** Dies lässt sich am besten im Rahmen eines Tests ermitteln. Überprüfen Sie die [Anforderungen an die Anwendungskompatibilität](http://www.microsoft.com/download/details.aspx?id=18704), und informieren Sie sich im [RD-Kompatibilitätscenter](http://www.rdcompatibility.com/compatibility/default.aspx).
@@ -82,4 +82,4 @@ Folgende Fragen wurden zu Azure RemoteApp an uns gestellt. Haben Sie weitere Fra
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

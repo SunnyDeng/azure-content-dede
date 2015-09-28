@@ -3,7 +3,7 @@
 	description="Machen Sie sich mit den Grundlagen von virtuellen Azure-Computern vertraut."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-resource-manager,azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/14/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 #Über virtuelle Azure-Computer
 
@@ -49,4 +49,4 @@ Wenn Sie sich zum ersten Mal mit virtuellen Azure-Computern beschäftigen, werfe
 [Virtuelle Computer]: #tellmevm
 [Cloud-Dienste]: cloud-services-choose-me.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

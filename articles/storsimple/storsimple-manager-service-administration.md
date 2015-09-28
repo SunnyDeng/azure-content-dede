@@ -1,19 +1,19 @@
 <properties 
    pageTitle="StorSimple Manager-Dienstverwaltung | Microsoft Azure"
-	description="Erfahren Sie, wie Sie Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts im Azure-Verwaltungsportal verwalten."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Erfahren Sie, wie Sie Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts im Azure-Verwaltungsportal verwalten."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="09/01/2015"
-	ms.author="alkohli"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/11/2015"
+   ms.author="alkohli" />
 
 # Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts
 
@@ -89,7 +89,7 @@ Klicken Sie auf die Verfahren in der Tabelle, um weitere Informationen zu den ei
 |Geräteeinstellungen ändern</br>Zeiteinstellungen ändern</br>Einstellungen für „DNS.md“ ändern</br>Netzwerkschnittstellen konfigurieren|StorSimple Manager-Dienst → Geräte → Konfigurieren|[Ändern der Gerätekonfiguration für Ihr StorSimple-Gerät](storsimple-modify-device-config.md)|
 |Webproxyeinstellungen anzeigen|StorSimple Manager-Dienst → Geräte → Konfigurieren|[Konfigurieren des Webproxys für Ihr Gerät](storsimple-configure-web-proxy.md)|
 |Geräteadministratorkennwort ändern</br>Kennwort für StorSimple Snapshot Manager ändern|StorSimple Manager-Dienst → Geräte → Konfigurieren|[Ändern von StorSimple-Kennwörtern](storsimple-change-passwords.md)|
-|Remoteverwaltung konfigurieren|StorSimple Manager-Dienst → Geräte → Konfigurieren|[Herstellen einer Remoteverbindung mit dem StorSimple-Gerät](https://msdn.microsoft.com/library/azure/dn772393.aspx)|
+|Remoteverwaltung konfigurieren|StorSimple Manager-Dienst → Geräte → Konfigurieren|[Herstellen einer Remoteverbindung mit dem StorSimple-Gerät](storsimple-remote-connect.md)|
 |Warnungseinstellungen konfigurieren|StorSimple Manager-Dienst → Geräte → Konfigurieren|[Anzeigen und Verwalten von StorSimple-Warnungen](storsimple-manage-alerts.md)|
 |CHAP für Ihr StorSimple-Gerät konfigurieren|StorSimple Manager-Dienst → Geräte → Konfigurieren|[Konfigurieren von CHAP für Ihr StorSimple-Gerät](storsimple-configure-chap.md)|
 |Sicherungsrichtlinie hinzufügen</br>Zeitplan hinzufügen oder ändern</br>Sicherungsrichtlinie löschen</br>Manuelle Sicherung ausführen</br>Benutzerdefinierte Sicherungsrichtlinie mit mehreren Volumes und Zeitplänen erstellen|StorSimple Manager-Dienst → Geräte → Sicherungsrichtlinien|[Verwalten von Sicherungsrichtlinien](storsimple-manage-backup-policies.md)|
@@ -97,6 +97,10 @@ Klicken Sie auf die Verfahren in der Tabelle, um weitere Informationen zu den ei
 |Über StorSimple-Hardwarekomponenten informieren</br>Hardwarestatus überwachen</br>(nur bei lokalen Geräten)|StorSimple Manager-Dienst → Geräte → Wartung|[Überwachen der Hardwarekomponenten](storsimple-monitor-hardware-status.md)|
 |Unterstützungspaket erstellen|StorSimple Manager-Dienst → Geräte → Wartung|[Erstellen und Verwalten eines Unterstützungspakets](storsimple-create-manage-support-package.md)|
 |Softwareupdates installieren|StorSimple Manager-Dienst → Geräte → Wartung|[Aktualisieren Ihres Geräts](storsimple-update-device.md)|
+
+![Video verfügbar](./media/storsimple-manager-service-administration/Video_icon.png) **Video verfügbar**
+
+Um sich ein Video anzuschauen, dass Sie durch die Benutzeroberfläche des StorSimple-Manager-Diensts führt, klicken Sie [hier](http://azure.microsoft.com/documentation/videos/storsimple-manager-service-overview/).
 
 ##Nächste Schritte
 Informationen zu Problemen beim alltäglichen Betrieb Ihres StorSimple-Geräts oder zu Problemen mit dessen Hardwarekomponenten finden Sie hier:
@@ -108,4 +112,4 @@ Falls sich das Problem nicht beheben lässt und Sie eine Serviceanfrage erstelle
 
 -  [Kontaktaufnahme mit dem Microsoft-Support](storsimple-contact-microsoft-support.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

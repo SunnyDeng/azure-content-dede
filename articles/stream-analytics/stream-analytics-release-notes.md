@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="09/08/2015" 
+	ms.date="09/16/2015" 
 	ms.author="jeffstok"/>
 
 #Microsoft Stream Analytic – Hinweise zu dieser Version
@@ -24,7 +24,7 @@ Diese Version enthält die folgenden Updates.
 
 Titel|Beschreibung
 ---|---
-Unterstützung für Power BI-Gruppen|Zum Aktivieren der Freigabe von Daten mit anderen Power BI-Benutzern, können Stream Analytics-Aufträge jetzt in Gruppen innerhalb Ihres Power BI-Kontos schreiben.
+Unterstützung für Power BI-Gruppen|Zum Aktivieren der Freigabe von Daten mit anderen Power BI-Benutzern können Stream Analytics-Aufträge jetzt in [PowerBI-Gruppen](stream-analytics-define-outputs.md#power-bi) innerhalb Ihres Power BI-Kontos schreiben.
 
 ## Hinweise zur Stream Analytics-Version vom 20.08.2015 ##
 
@@ -92,4 +92,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

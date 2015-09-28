@@ -6,7 +6,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/24/2015" 
+	ms.date="09/16/2015" 
 	ms.author="adhurwit"/>
 
 # Verwenden des Azure-Schlüsseltresors aus einer Webanwendung #
@@ -152,6 +152,11 @@ Weitere Informationen zum Erstellen eines Testzertifikats finden Sie unter [How 
 	PS C:\> $adapp = New-AzureADApplication -DisplayName "KVWebApp" -HomePage "http://kvwebapp" -IdentifierUris "http://kvwebapp" -KeyValue $credValue -KeyType "AsymmetricX509Cert" -KeyUsage "Verify" -StartDate $now -EndDate $yearfromnow
 	
 	PS C:\> $sp = New-AzureADServicePrincipal -ApplicationId $adapp.ApplicationId
+	
+	PS C:\> Set-AzureKeyVaultAccessPolicy -VaultName 'contosokv' -ServicePrincipalName $sp.ServicePrincipalName -PermissionsToKeys all -ResourceGroupName 'contosorg'
+	
+	# get the thumbprint to use in your app settings
+	PS C:\>$x509.Thumbprint
 
 Nachdem Sie diese Befehle ausgeführt haben, wird die Anwendung in Azure AD angezeigt. Wenn die Anwendung nicht sofort angezeigt wird, suchen Sie nach "Anwendungen im Besitz meines Unternehmens" anstelle von "Anwendungen, die mein Unternehmen verwendet".
 
@@ -238,4 +243,4 @@ Eine Referenz zur Programmierung finden Sie unter [C#-Client-API-Referenz für d
 [2]: ./media/key-vault-use-from-web-application/PortalAddCertificate.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

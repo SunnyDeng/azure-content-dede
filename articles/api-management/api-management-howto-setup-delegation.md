@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/18/2015" 
+	ms.date="09/14/2015" 
 	ms.author="antonba"/>
 
 # Delegieren von Benutzerregistrierung und Produktabonnierung
@@ -90,7 +90,7 @@ Die Delegierung der Produktabonnierung funktioniert gleich wie die Delegierung d
 1. Ein Entwickler wählt ein Produkt im API Management-Entwicklerportal aus und klickt auf die Schaltfläche "Abonnieren".
 2. Der Browser wird zum Delegierungsendpunkt umgeleitet.
 3. Der Delegierungsendpunkt führt die erforderlichen Schritte für die Produktabonnierung aus. Dies ist frei konfigurierbar und kann z. B. eine Umleitung auf eine Seite zur Eingabe von Zahlungsdaten oder zusätzlichen Fragen beinhalten, oder einfach die Speicherung der Daten ohne weiteres Eingreifen des Benutzers.
-4. Im Erfolgsfall wird der Benutzer anschließend wieder auf die Seite im API Management-Entwicklerportal umgeleitet, von der er ursprünglich gekommen ist.
+
 
 Klicken Sie in der Seite **Delegierung** auf **Produktabonnierung delegieren**, um diese Funktion zu aktivieren.
 
@@ -114,8 +114,6 @@ Konfigurieren Sie anschließend die folgenden Aktionen für den Delegierungsendp
 3. Führen Sie Ihre für die Produktabonnierung erforderlichen Schritte anhand der im Parameter **operation** angeforderten Operation aus, z. B. Abrechnung, weitere Fragen usw.
 
 4. Nachdem der Benutzer das Produkt auf Ihrer Seite erfolgreich abonniert hat, abonnieren Sie das Produkt in API Management für den Benutzer, indem Sie die [REST-API für die Produktabonnierung] aufrufen.
-
-5. Leiten Sie den Benutzer wieder an die im Parameter **returnUrl** der Anforderung angegebene URL um.
 
 ## <a name="delegate-example-code"> </a>Beispielcode ##
 
@@ -168,4 +166,4 @@ Weitere Informationen zum Delegieren finden Sie im folgenden Video.
 
 [api-management-delegation-signin-up]: ./media/api-management-howto-setup-delegation/api-management-delegation-signin-up.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App-Modell v2.0 | Microsoft Azure"
+	pageTitle="App-Modell v2.0-Protokolle | Microsoft Azure"
 	description="Die Protokolle, die von Azure AD-App-Modell v2.0 (öffentliche Vorschauversion) unterstützt werden."
 	services="active-directory"
 	documentationCenter=""
@@ -16,14 +16,14 @@
 	ms.date="08/12/2015"
 	ms.author="dastrock"/>
 
-# App-Modell v2.0 \(Vorschauversion\): Protokolle – OAuth 2.0 und OpenID Connect
+# App-Modell v2.0 (Vorschauversion): Protokolle – OAuth 2.0 und OpenID Connect
 
-Das App-Modell Version 2.0 bietet Identity-as-a-Service \(IDaaS\) für Ihre Apps durch die Unterstützung gängiger Standardprotokolle, OpenID Connect und OAuth 2.0. Während der Dienst standardkonform ist, kann es feine Unterschiede zwischen den beiden Implementierungen dieser Protokolle geben. Die hier bereitgestellten Informationen sind nützlich, wenn Sie Code direkt durch Senden und Verarbeiten von HTTP-Anforderungen schreiben, anstatt eine unserer Open Source-Bibliotheken zu nutzen. <!-- TODO: Need link to libraries above -->
+Das App-Modell Version 2.0 bietet Identity-as-a-Service (IDaaS) für Ihre Apps durch die Unterstützung gängiger Standardprotokolle, OpenID Connect und OAuth 2.0. Während der Dienst standardkonform ist, kann es feine Unterschiede zwischen den beiden Implementierungen dieser Protokolle geben. Die hier bereitgestellten Informationen sind nützlich, wenn Sie Code direkt durch Senden und Verarbeiten von HTTP-Anforderungen schreiben, anstatt eine unserer Open Source-Bibliotheken zu nutzen. <!-- TODO: Need link to libraries above -->
 
-> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 \(öffentliche Vorschauversion\). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
+> [AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
 ## Token
-Die App-Modell v2.0-Implementation von OAuth 2.0 und OpenID Connect macht ausgiebig Gebrauch von Bearertoken \(auch in Form von JWTs\). Ein Trägertoken ist ein einfaches Sicherheitstoken, das dem „Träger“ den Zugriff auf eine geschützte Ressource ermöglicht. In diesem Kontext ist der „Träger“ jede beliebige Partei, die das Token vorweisen kann. Um das Trägertoken zu erhalten, muss sich die Partei zwar zunächst bei Azure AD authentifizieren, falls jedoch keine Maßnahmen ergriffen werden, um das Token bei der Übertragung und Speicherung zu schützen, kann das Token von einer fremden Partei abgefangen und verwendet werden. Einige Sicherheitstoken verfügen über einen integrierten Mechanismus, der eine unbefugte Verwendung durch nicht autorisierte Parteien verhindert. Trägertoken besitzen dagegen keinen solchen Mechanismus und müssen über einen sicheren Kanal wie etwa Transport Layer Security \(HTTPS\) übertragen werden. Wird ein Trägertoken als Klartext gesendet, kann eine böswillige Partei das Token mithilfe eines Man-in-the-Middle-Angriffs abfangen und damit unautorisiert auf eine geschützte Ressource zugreifen. Die gleichen Sicherheitsprinzipien gelten für die \(Zwischen-\)Speicherung von Trägertoken zur späteren Verwendung. Stellen Sie daher sicher, dass Ihre App Bearertoken stets auf sichere Weise überträgt und speichert. Weitere Sicherheitsüberlegungen zu Trägertoken finden Sie unter [RFC 6750, Abschnitt 5](http://tools.ietf.org/html/rfc6750).
+Die App-Modell v2.0-Implementation von OAuth 2.0 und OpenID Connect macht ausgiebig Gebrauch von Bearertoken (auch in Form von JWTs). Ein Trägertoken ist ein einfaches Sicherheitstoken, das dem „Träger“ den Zugriff auf eine geschützte Ressource ermöglicht. In diesem Kontext ist der „Träger“ jede beliebige Partei, die das Token vorweisen kann. Um das Trägertoken zu erhalten, muss sich die Partei zwar zunächst bei Azure AD authentifizieren, falls jedoch keine Maßnahmen ergriffen werden, um das Token bei der Übertragung und Speicherung zu schützen, kann das Token von einer fremden Partei abgefangen und verwendet werden. Einige Sicherheitstoken verfügen über einen integrierten Mechanismus, der eine unbefugte Verwendung durch nicht autorisierte Parteien verhindert. Trägertoken besitzen dagegen keinen solchen Mechanismus und müssen über einen sicheren Kanal wie etwa Transport Layer Security (HTTPS) übertragen werden. Wird ein Trägertoken als Klartext gesendet, kann eine böswillige Partei das Token mithilfe eines Man-in-the-Middle-Angriffs abfangen und damit unautorisiert auf eine geschützte Ressource zugreifen. Die gleichen Sicherheitsprinzipien gelten für die (Zwischen-)Speicherung von Trägertoken zur späteren Verwendung. Stellen Sie daher sicher, dass Ihre App Bearertoken stets auf sichere Weise überträgt und speichert. Weitere Sicherheitsüberlegungen zu Trägertoken finden Sie unter [RFC 6750, Abschnitt 5](http://tools.ietf.org/html/rfc6750).
 
 Weitere Informationen zu verschiedenen Tokentypen, die im App-Modell v2.0 verwendet werden, finden Sie in [der App-Modell, Version 2.0 – Tokenreferenz](active-directory-v2-tokens.md).
 
@@ -72,7 +72,7 @@ https%3A%2F%2Fgraph.windows.net%2Fdirectory.write
 
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | ----------------------- |
-| client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal \([apps.dev.microsoft.com](https://apps.dev.microsoft.com)\) Ihrer Anwendung zugewiesen hat. |
+| client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) Ihrer Anwendung zugewiesen hat. |
 | response\_type | erforderlich | Muss `code` für den Autorisierungscodefluss enthalten. |
 | redirect\_uri | erforderlich | Der Umleitungs-URI der App, in dem Authentifizierungsantworten gesendet und von der App empfangen werden können. Er muss genau mit einer der Umleitungs-URIs übereinstimmen, die Sie im Portal registriert haben, mit dem Unterschied, dass er URL-codiert sein muss. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Ein einzelner Bereichswert zeigt dem v2.0-Endpunkt sowohl die Ressource als auch die Berechtigungen für diese angeforderte Ressource an. Bereiche nehmen die Form einer `<app identifier URI>/<scope value>` an. Im obigen Beispiel wird der App-Bezeichner für die Azure AD Graph-API verwendet, `https://graph.windows.net`, und zwei Berechtigungen werden angefordert: `directory.read` und `directory.write`. Eine ausführlichere Erläuterung von Bereichen finden Sie in c. |
@@ -131,7 +131,7 @@ Content-Type: application/json
 
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | --------------------- |
-| client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal \([apps.dev.microsoft.com](https://apps.dev.microsoft.com)\) Ihrer Anwendung zugewiesen hat. |
+| client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) Ihrer Anwendung zugewiesen hat. |
 | grant\_type | erforderlich | Muss den `authorization_code` für den Autorisierungscodefluss enthalten. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Die in diesem Abschnitt angeforderten Bereiche müssen den Bereichen entsprechen oder eine Teilmenge der Bereiche sein, die im ersten Abschnitt angefordert wurden. Wenn die in dieser Anforderung angegebenen Bereiche mehrere Ressourcenserver umfassen, gibt der v2.0-Endpunkt ein Token für die im ersten Bereich angegebene Ressource zurück. Eine ausführlichere Erläuterung von Bereichen finden Sie in [Berechtigungen, Zustimmung und Bereiche](active-directory-v2-scopes.md). |
 | Code | erforderlich | Der Autorisierungscode, den Sie im ersten Abschnitt des Vorgangs erhalten haben. |
@@ -154,11 +154,11 @@ Eine erfolgreiche Tokenantwort sieht wie folgt aus:
 | ----------------------- | ------------------------------- |
 | access\_token | Das angeforderte Zugriffstoken. Die App kann dieses Token zur Authentifizierung auf geschützten Ressourcen verwenden, wie z. B. eine Web-API. |
 | token\_type | Gibt den Wert des Tokentyps an. Der Bearertyp ist der einzige Typ, den Azure AD unterstützt. |
-| expires\_in | Gibt an, wie lange das Zugriffstoken \(in Sekunden\) gültig ist. |
+| expires\_in | Gibt an, wie lange das Zugriffstoken (in Sekunden) gültig ist. |
 | expires\_on | Die Uhrzeit, zu der das Zugriffstoken abläuft. Das Zeit wird als die Anzahl der Sekunden aus der Epochenzeit dargestellt. |
 | Bereich | Die Bereiche, für die das Zugriffstoken gültig ist. |
 | refresh\_token | Ein Aktualisierungstoken von OAuth 2.0. Die App kann dieses Token verwenden, um zusätzliche Zugriffstoken nach Ablauf der aktuellen Zugriffstoken zu erhalten. Aktualisierungstoken sind langlebig und können verwendet werden, um den Zugriff auf Ressourcen für längere Zeit beizubehalten. Weitere Details finden Sie in der [v2.0-Tokenreferenz](active-directory-v2-tokens.md). |
-| id\_token | Eine unsigniertes JSON-Webtoken \(JWT\). Die App kann die Segmente dieses Tokens mit einer base64-URL decodieren, um Informationen über den angemeldeten Benutzer abzurufen. Die App kann die Werte zwischenspeichern und sie anzeigen, sollte sich jedoch nicht für Autorisierungs- und Sicherheitsgrenzen auf sie verlassen. Weitere Informationen zu ID-Token finden Sie in der [App-Modell v2.0-Tokenreferenz](active-directory-v2-tokens.md). |
+| id\_token | Eine unsigniertes JSON-Webtoken (JWT). Die App kann die Segmente dieses Tokens mit einer base64-URL decodieren, um Informationen über den angemeldeten Benutzer abzurufen. Die App kann die Werte zwischenspeichern und sie anzeigen, sollte sich jedoch nicht für Autorisierungs- und Sicherheitsgrenzen auf sie verlassen. Weitere Informationen zu ID-Token finden Sie in der [App-Modell v2.0-Tokenreferenz](active-directory-v2-tokens.md). |
 
 Fehlerantworten sehen wie folgt aus:
 
@@ -202,7 +202,7 @@ Content-Type: application/json
 
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | -------- |
-| client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal \([apps.dev.microsoft.com](https://apps.dev.microsoft.com)\) Ihrer Anwendung zugewiesen hat. |
+| client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) Ihrer Anwendung zugewiesen hat. |
 | grant\_type | erforderlich | Muss den `refresh_token` für diesen Abschnitt des Autorisierungsvorgangcodeflusses enthalten. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Die in diesem Abschnitt angeforderten Bereiche müssen den Bereichen entsprechen oder eine Teilmenge der Bereiche sein, die im ursprünglichen Autorisierungscode-Abschnitt angefordert wurden. Wenn die in dieser Anforderung angegebenen Bereiche mehrere Ressourcenserver umfassen, gibt der v2.0-Endpunkt ein Token für die im ersten Bereich angegebene Ressource zurück. Eine ausführlichere Erläuterung von Bereichen finden Sie in [Berechtigungen, Zustimmung und Bereiche](active-directory-v2-scopes.md). |
 | refresh\_token | erforderlich | Das Aktualisierungstoken, das Sie im zweiten Abschnitt des Vorgangs erhalten haben. |
@@ -225,11 +225,11 @@ Eine erfolgreiche Tokenantwort sieht wie folgt aus:
 | ----------------------- | ------------------------------- |
 | access\_token | Das angeforderte Zugriffstoken. Die App kann dieses Token zur Authentifizierung auf geschützten Ressourcen verwenden, wie z. B. eine Web-API. |
 | token\_type | Gibt den Wert des Tokentyps an. Der Bearertyp ist der einzige Typ, den Azure AD unterstützt. |
-| expires\_in | Gibt an, wie lange das Zugriffstoken \(in Sekunden\) gültig ist. |
+| expires\_in | Gibt an, wie lange das Zugriffstoken (in Sekunden) gültig ist. |
 | expires\_on | Die Uhrzeit, zu der das Zugriffstoken abläuft. Das Zeit wird als die Anzahl der Sekunden aus der Epochenzeit dargestellt. |
 | Bereich | Die Bereiche, für die das Zugriffstoken gültig ist. |
 | refresh\_token | Ein neues Aktualisierungstoken von OAuth 2.0. Ersetzen Sie das alte Aktualisierungstoken durch das neu erworbene, um sicherzustellen, dass Ihre Aktualisierungstoken so lange wie möglich gültig bleiben. |
-| id\_token | Eine unsigniertes JSON-Webtoken \(JWT\). Die App kann die Segmente dieses Tokens mit einer base64-URL decodieren, um Informationen über den angemeldeten Benutzer abzurufen. Die App kann die Werte zwischenspeichern und sie anzeigen, sollte sich jedoch nicht für Autorisierungs- und Sicherheitsgrenzen auf sie verlassen. Weitere Informationen zu ID-Token finden Sie in der [App-Modell v2.0-Tokenreferenz](active-directory-v2-tokens.md). |
+| id\_token | Eine unsigniertes JSON-Webtoken (JWT). Die App kann die Segmente dieses Tokens mit einer base64-URL decodieren, um Informationen über den angemeldeten Benutzer abzurufen. Die App kann die Werte zwischenspeichern und sie anzeigen, sollte sich jedoch nicht für Autorisierungs- und Sicherheitsgrenzen auf sie verlassen. Weitere Informationen zu ID-Token finden Sie in der [App-Modell v2.0-Tokenreferenz](active-directory-v2-tokens.md). |
 
 Fehlerantworten sehen wie folgt aus:
 
@@ -273,7 +273,7 @@ client_id=2d4d11a2-f814-46a7-890a-274a72a7309e		// Your registered Application I
 
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | --------------- |
-| client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal \([apps.dev.microsoft.com](https://apps.dev.microsoft.com)\) Ihrer Anwendung zugewiesen hat. |
+| client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) Ihrer Anwendung zugewiesen hat. |
 | response\_type | erforderlich | Muss das `id_token` für die OpenID Connect-Anmeldung enthalten. Der Parameter kann auch andere Antworttypen enthalten, wie im Abschnitt [OpenID Connect mit OAuth-Codefluss](#OpenID-Connect-with-OAuth-Code-Flow) beschrieben. |
 | redirect\_uri | erforderlich | Der Umleitungs-URI der App, in dem Authentifizierungsantworten gesendet und von der App empfangen werden können. Er muss genau mit einer der Umleitungs-URIs übereinstimmen, die Sie im Portal registriert haben, mit dem Unterschied, dass er URL-codiert sein muss. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Für OpenID Connect muss der Bereich `openid` enthalten sein, der sich auf die Berechtigung "Anmelden im Profil und Lesen des Profils" in der Zustimmungsbenutzeroberfläche übersetzt. Sie können auch andere Bereiche in dieser Anforderung für die anfordernde Zustimmung aufnehmen, wie im Abschnitt [OpenID Connect mit OAuth-Codefluss](#OpenID-Connect-with-OAuth-Code-Flow) beschrieben. |
@@ -316,7 +316,7 @@ error=access_denied
 | error\_description | Eine spezifische Fehlermeldung, mit der Entwickler die Hauptursache eines Authentifizierungsfehlers identifizieren können. |
 
 #### Überprüfen des ID-Tokens
-Das Empfangen eines ID-Tokens allein reicht nicht aus, um den Benutzer zu authentifizieren. Sie müssen die Signatur des ID-Tokens validieren und die Ansprüche im Token gemäß der App-Anforderungen überprüfen. Der v2.0-Endpunkt verwendet [JSON-Webtoken \(JSTs\)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html) und die Verschlüsselung mit öffentlichem Schlüssel, um Token zu signieren und deren Gültigkeit zu überprüfen.
+Das Empfangen eines ID-Tokens allein reicht nicht aus, um den Benutzer zu authentifizieren. Sie müssen die Signatur des ID-Tokens validieren und die Ansprüche im Token gemäß der App-Anforderungen überprüfen. Der v2.0-Endpunkt verwendet [JSON-Webtoken (JSTs)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html) und die Verschlüsselung mit öffentlichem Schlüssel, um Token zu signieren und deren Gültigkeit zu überprüfen.
 
 Das App-Modell v2.0 verfügt über einen OpenID Connect-Metadatenendpunkt, mit dem die App Informationen über das App-Modell v2.0 in Laufzeit abrufen kann. Diese Informationen umfassen Endpunkte, Tokeninhalte und Token-Signaturschlüssel. Der Metadatenendpunkt enthält ein JSON-Dokument, das Sie hier finden:
 
@@ -392,7 +392,7 @@ https%3A%2F%2Fgraph.windows.net%2Fdirectory.write
 
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | ----------------- |
-| client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal \([apps.dev.microsoft.com](https://apps.dev.microsoft.com)\) Ihrer Anwendung zugewiesen hat. |
+| client\_id | erforderlich | Die Anwendungs-ID, die das Registrierungsportal ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) Ihrer Anwendung zugewiesen hat. |
 | response\_type | erforderlich | Muss ein `id_token` und einen `code` für dieses Szenario enthalten. |
 | redirect\_uri | erforderlich | Der Umleitungs-URI der App, in dem Authentifizierungsantworten gesendet und von der App empfangen werden können. Er muss genau mit einer der Umleitungs-URIs übereinstimmen, die Sie im Portal registriert haben, mit dem Unterschied, dass er URL-codiert sein muss. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Für OpenID Connect muss der Bereich `openid` enthalten sein, der sich auf die Berechtigung "Anmelden im Profil und Lesen des Profils" in der Zustimmungsbenutzeroberfläche übersetzt. Sie müssen auch die Bereiche für Ressourcen angeben, auf die Ihre App Zugriff erfordert. Eine ausführlichere Erläuterung von Bereichen finden Sie in [Berechtigungen, Zustimmung und Bereiche](active-directory-v2-scopes.md). |
@@ -471,8 +471,8 @@ Die Anmeldeberechtigungen für das OAuth 2.0-Ressourcenbesitzer-Kennwort werden 
 Der Vorgang wird derzeit von der Vorschauversion des App-Modells v2.0 nicht unterstützt. Um zu sehen, wie dies im allgemein verfügbaren Azure AD-Dienst funktioniert, schauen Sie sich [dieses Azure AD-Codebeispiel](https://github.com/AzureADSamples/NativeClient-Headless-DotNet) an.
 
 ## OAuth 2.0-“Im-Auftrag-von“-Vorgang
-Der „Im-Auftrag-von-Vorgang“ oder die JWT-Bearer-Anmeldeinformationsberechtigung wird in der [OAuth 2.0-Berechtigungserweiterung \(Entwurf\)](https://tools.ietf.org/html/draft-ietf-oauth-jwt-bearer-12) beschrieben. Dadurch kann eine Web-API, die ein Zugriffstoken erhält, dieses Token als Anmeldeinformation für den Erhalt von Zugriffstoken auf andere Ressourcen nutzen. Dadurch kann die Web-API sicher eine andere nachgelagerte Web-API aufrufen.
+Der „Im-Auftrag-von-Vorgang“ oder die JWT-Bearer-Anmeldeinformationsberechtigung wird in der [OAuth 2.0-Berechtigungserweiterung (Entwurf)](https://tools.ietf.org/html/draft-ietf-oauth-jwt-bearer-12) beschrieben. Dadurch kann eine Web-API, die ein Zugriffstoken erhält, dieses Token als Anmeldeinformation für den Erhalt von Zugriffstoken auf andere Ressourcen nutzen. Dadurch kann die Web-API sicher eine andere nachgelagerte Web-API aufrufen.
 
 Der Vorgang wird derzeit von der Vorschauversion des App-Modells v2.0 nicht unterstützt. Um zu sehen, wie dies im allgemein verfügbaren Azure AD-Dienst funktioniert, schauen Sie sich [dieses Azure AD-Codebeispiel](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet) an.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

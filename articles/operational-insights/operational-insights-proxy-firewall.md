@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/21/2015"
+   ms.date="09/10/2015"
    ms.author="banders" />
 
 # Konfigurieren von Proxy- und Firewalleinstellungen für Operational Insights
@@ -174,4 +174,4 @@ Verwenden Sie die folgenden Verfahren, um die Operations Manager-Verwaltungsgrup
 3. Fügen Sie alle Leistungsindikatoren hinzu, die mit **HTTP** beginnen. ![Hinzufügen der Leistungsindikatoren](./media/operational-insights-proxy-firewall/sendingdata1.png)
 4. Wenn die Operations Manager-Konfiguration in Ordnung ist, werden Aktivitäten für die Leistungsindikatoren der Verwaltungsgruppen des Integritätsdiensts für Ereignisse und andere Datenelemente angezeigt. Die Grundlage bilden die in Operational Insights hinzugefügten Management Packs und die konfigurierten Richtlinien für die Protokollerfassung. ![Systemmonitor mit Aktivität](./media/operational-insights-proxy-firewall/sendingdata2.png)
 
-<!----HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

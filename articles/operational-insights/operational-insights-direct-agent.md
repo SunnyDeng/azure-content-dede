@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="07/02/2015" 
+	ms.date="09/10/2015" 
 	ms.author="banders"/>
 # Direktes Verbinden von Computern mit Operational Insights
 
@@ -76,4 +76,4 @@ Wenn Sie in Ihrer Umgebung Proxyserver oder Firewalls verwenden, die den Zugriff
 
 - [Konfigurieren von Proxy- und Firewall-Einstellungen (optional)](operational-insights-proxy-firewall.md)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

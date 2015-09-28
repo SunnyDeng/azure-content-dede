@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/18/2015"
+   ms.date="09/15/2015"
    ms.author="v-sharos" />
 
 # Benutzeroberfläche des StorSimple Snapshot Managers
@@ -538,6 +538,7 @@ In den folgenden Tabellen werden die Tastenkombinationen für die einzelnen Knot
  
 ## Nächste Schritte
 
-Erfahren Sie, wie Sie [mit dem StorSimple Snapshot Manager Verbindungen mit Geräten herstellen und diese verwalten](storsimple-snapshot-manager-manage-devices.md).
+- Weitere Informationen zum [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
+- Erfahren Sie, wie Sie [mit dem StorSimple Snapshot Manager Verbindungen mit Geräten herstellen und diese verwalten](storsimple-snapshot-manager-manage-devices.md).
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

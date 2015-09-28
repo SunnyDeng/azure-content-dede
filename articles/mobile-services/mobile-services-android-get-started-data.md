@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="09/04/2015" 
+	ms.date="09/16/2015" 
 	ms.author="ricksal"/>
 
 # Hinzufügen von Mobile Services zu einer vorhandenen Android-App (JavaScript-Back-End)
@@ -156,4 +156,4 @@ Nach Abschluss der Daten-Lernprogramme können Sie diese anderen Android-Lernpro
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

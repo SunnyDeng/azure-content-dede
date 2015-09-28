@@ -1,19 +1,4 @@
-<properties 
-   pageTitle="Erstellen eines Volumecontainers"
-   description="Beschreibt, wie Sie einen Volumecontainer auf einem StorSimple-Gerät erstellen."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="09/08/2015"
-   ms.author="v-sharos" />
+<!--author=SharS last changed: 9/17/15-->
 
 #### So erstellen Sie einen Volumecontainer
 
@@ -31,4 +16,8 @@
 
   Der neu erstellte Volumecontainer wird auf der Seite **Volumecontainer** aufgeführt.
 
-<!---HONumber=Sept15_HO2-->
+![Video verfügbar](./media/storsimple-create-volume-container/Video_icon.png) **Video verfügbar**
+
+Sie können sich [hier](http://azure.microsoft.com/documentation/videos/create-a-volume-container-in-your-storsimple-solution/) ein Video anschauen, in dem das Erstellen eines Volumecontainers in der StorSimple-Lösung demonstriert wird.
+
+<!---HONumber=Sept15_HO3-->

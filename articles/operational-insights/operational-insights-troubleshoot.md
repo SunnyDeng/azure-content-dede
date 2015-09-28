@@ -12,58 +12,116 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/02/2015"
+   ms.date="09/10/2015"
    ms.author="banders" />
 
-#Behandeln von Problemen mit Operational Insights
+# Behandeln von Problemen mit Operational Insights
 
 [AZURE.INCLUDE [operational-insights-note-moms](../../includes/operational-insights-note-moms.md)]
 
 Die Informationen in den folgenden Abschnitten unterstützen Sie bei der Problembehandlung. Wenn das vorliegende Problem nicht in diesem Artikel enthalten ist, können Sie den [Operational Insights-Teamblog](http://blogs.technet.com/b/momteam/archive/2014/05/29/advisor-error-3000-unable-to-register-to-the-advisor-service-amp-onboarding-troubleshooting-steps.aspx) zurate ziehen.
 
-## Diagnostizieren von Verbindungsproblemen für Operational Insights
+## Problembehandlung bei Problemen mit SQL Assessment
+Die Operations Management Suite (OMS) verwendet Microsoft Monitoring Agent und Operations Manager-Verwaltungsgruppen, um Daten zu erfassen und an den OMS-Dienst zu senden. Bestimmte Arbeitsauslastungen, z. B. SQL Server, erfordern spezifische Berechtigungen zum Ausführen der Datenerfassung in einem anderen Sicherheitskontext, z. B. ein Domänenkonto. Wenn Microsoft Monitoring Agent über System Center Operations Manager verbunden ist und Berechtigungsprobleme beim Erfassen von Daten auftreten, müssen Sie Anmeldeinformationen bereitstellen, indem Sie ein ausführendes Konto konfigurieren.
 
-Da Microsoft Azure Operational Insights auf Daten beruht, die in die Cloud und aus der Cloud verschoben werden, können Verbindungsprobleme Vorgänge beeinträchtigen. Anhand der folgenden Informationen können Sie Ihre Verbindungsprobleme verstehen und lösen.
+Wenn Sie bereits das SQL Server Management Pack verwenden, sollten Sie dieses Windows-Konto als ausführendes Konto verwenden.
 
+### So konfigurieren Sie das ausführende SQL-Konto in der Betriebskonsole
 
-**Fehlermeldung:** Die Internetverbindung wurde überprüft, die Verbindung mit dem Operational Insights-Dienst konnte jedoch nicht hergestellt werden. Bitte versuchen Sie es später noch einmal.
+1. Öffnen Sie in Operations Manager die Betriebskonsole, und klicken Sie dann auf **Verwaltung**.
 
-**Mögliche Ursachen:** - Der Operational Insights-Dienst wird gewartet. Warten Sie, bis die Wartung von Operational Insights abgeschlossen ist. - Operational Insights wurde von Ihrem Netzwerk blockiert. Wenden Sie sich an Ihren Netzwerkadministrator, und fordern Sie Zugriff auf Operational Insights an, oder verwenden Sie einen anderen Server als Gateway.
+2. Klicken Sie unter **Ausführen als-Konfiguration** auf **Profile**, und öffnen Sie **Ausführendes Profil für Microsoft System Center Advisor**.
 
-**Fehlermeldung:** Internetverbindung konnte nicht hergestellt werden. Überprüfen Sie Ihre Proxyeinstellungen.
+3. Klicken Sie auf der Seite **Ausführende Konten** auf **Hinzufügen**.
 
-**Mögliche Ursachen:** - Dieser Server ist nicht mit dem Internet verbunden. Überprüfen Sie den Status der Internetkonnektivität, und verbinden Sie den Server mit dem Internet. - Die Proxyeinstellung ist nicht korrekt. Informationen zum Einrichten oder Ändern Ihrer Proxyeinstellungen finden Sie unter [Konfigurieren des Proxys und der Firewalleinstellungen](operational-insights-proxy-firewall.md). - Der Proxyserver erfordert eine Authentifizierung. Informationen zum Konfigurieren von Operations Manager für die Verwendung eines Proxyservers finden Sie unter [Konfigurieren des Proxys und der Firewalleinstellungen](operational-insights-proxy-firewall.md).
+4. Wählen Sie ein ausführendes Windows-Konto aus, das die Anmeldeinformationen für SQL Server enthält, oder klicken Sie auf **Neu**, um eines zu erstellen.
 
+    >[AZURE.NOTE]Der Typ des ausführenden Kontos muss "Windows" sein. Das ausführende Konto muss auch Teil der lokalen Administratorengruppe auf allen Windows-Servern sein, auf denen SQL Server-Instanzen gehostet werden.
 
-## Problembehandlung bei der SQL Server-Ermittlung
+5. Klicken Sie auf **Speichern**.
 
-Wenn Sie Microsoft SQL Server 2008 R2 ausführen und trotz Bereitstellung des Operations Manager-Agents keine Warnungen für diesen Server angezeigt werden, liegt möglicherweise ein Ermittlungsproblem vor.
+6. Ändern und führen Sie dann das folgende T-SQL-Beispiel auf jeder SQL Server-Instanz aus, um dem ausführenden Konto die erforderlichen Mindestberechtigungen zum Ausführen von SQL Assessment zu erteilen. Dies ist jedoch nicht erforderlich, wenn ein ausführendes Konto bereits Teil der Serverrolle "sysadmin" auf SQL Server-Instanzen ist.
 
-Um sicherzustellen, dass dies die Fehlerursache ist, überprüfen Sie die folgenden zwei Probleme:
+```
+---
+    -- Replace <UserName> with the actual user name being used as Run As Account.
+    USE master
 
-- Im Operations Manager-Ereignisprotokoll wird die Ereignis-ID 4001 aufgeführt. Dieses Ereignis weist darauf hin, dass eine ungültige Klasse vorliegt.
+    -- Create login for the user, comment this line if login is already created.
+    CREATE LOGIN [<UserName>] FROM WINDOWS
 
-- Wenn Sie im SQL Server-Konfigurations-Manager die SQL Server-Dienste anzeigen, sehen Sie die Fehlermeldung „Fehler bei Remoteprozeduraufruf. [0x0800706be]“.
+    -- Grant permissions to user.
+    GRANT VIEW SERVER STATE TO [<UserName>]
+    GRANT VIEW ANY DEFINITION TO [<UserName>]
+    GRANT VIEW ANY DATABASE TO [<UserName>]
 
-Wenn beide Probleme vorliegen, müssen Sie SQL Server 2008 R2 Service Pack 2 installieren. Sie können dieses Service Pack im Microsoft Download Center unter [SQL Server 2008 R2 Service Pack 2](http://go.microsoft.com/fwlink/?LinkId=271310) herunterladen.
+    -- Add database user for all the databases on SQL Server Instance, this is required for connecting to individual databases.
+    -- NOTE: This command must be run anytime new databases are added to SQL Server instances.
+    EXEC sp_msforeachdb N'USE [?]; CREATE USER [<UserName>] FOR LOGIN [<UserName>];'
 
-Nach der Installation des Service Packs sollten innerhalb von 24 Stunden Operational Insights-Daten für den Server angezeigt werden.
-
-## Problembehandlung bei Agents oder beim Operations Manager-Datenfluss zu Operational Insights
-
-Der folgende Satz von Verfahren dient als Anleitung zum Beheben von Problemen mit direkt angeschlossenen Agents oder Operations Manager-Bereitstellungen, die für das Berichten von Daten an Azure Operational Insights konfiguriert sind.
-
-### 1\. Verfahren: Überprüfen, ob in die Operations Manager-Umgebung die richtigen Management Packs heruntergeladen werden
->[AZURE.NOTE]Wenn Sie nur Direct Agent verwenden, können Sie mit dem nächsten Verfahren fortfahren.
-
-Je nachdem, welche Lösungen (bisher als „Intelligence Packs“ bezeichnet) Sie im OpInsights-Portal aktiviert haben, werden unterschiedlich viele Management Packs angezeigt. Suchen Sie im Namen nach dem Schlüsselwort "Advisor" oder "Intelligence". Sie können diese Management Packs mit OpsMgr PowerShell suchen:
-
-```Powershell
-Get-SCOMManagementPack | where {$_.DisplayName -match 'Advisor'} | Select Name,Sealed,Version
-Get-SCOMManagementPack | where {$_.Name -match 'IntelligencePacks'} | Select Name,Sealed,Version
 ```
 
->[AZURE.NOTE]Wenn Sie die Problembehandlung für die Capacity-Lösung durchführen, prüfen Sie, *wie viele* Management Packs „Capacity“ im Namen enthalten: Es gibt zwei Management Packs mit demselben Anzeigenamen (jedoch unterschiedlichen internen IDs), die in demselben Management Pack-Paket enthalten sind. Wenn eines der beiden nicht importiert wird (häufig aufgrund fehlender VMM-Abhängigkeiten), wird auch das andere Management Pack nicht importiert, und der Vorgang wird nicht wiederholt.
+### To configure the SQL Run As account using Windows PowerShell
+Alternatively, you can use the following PowerShell script to set the SQL Run As account. Open a PowerShell window and run the following script after you’ve updated it with your information:
+
+```
+
+    import-module OperationsManager
+    New-SCOMManagementGroupConnection "<your management group name>"
+     
+    $profile = Get-SCOMRunAsProfile -DisplayName "Operational Insights SQL Assessment Run As Profile"
+    $account = Get-SCOMrunAsAccount | Where-Object {$_.Name -eq "<your run as account name>"}
+    Set-SCOMRunAsProfile -Action "Add" -Profile $Profile -Account $Account
+```
+After the PowerShell Script finishes executing, perform the T-SQL commands provided above.
+
+## Diagnose connection issues for Operational Insights
+
+Because Microsoft Azure Operational Insights relies on data that is moved to and from the cloud, connection issues can be crippling. Use the following information to understand and solve your connection issues.
+
+
+**Error message:** The Internet connectivity was verified, but connection to Operational Insights service could not be established. Please try again later.
+
+**Possible causes:**
+- The Operational Insights service is under maintenance. Wait until the Operational Insights maintenance is done.
+- Your network has blocked Operational Insights. Contact your network administrator and request access to Operational Insights, or use another server as your gateway.
+
+**Error message:** Internet connection could not be established. Please check your proxy settings.
+
+**Possible causes:**
+- This server is not connected to the Internet. Check the Internet connectivity status, and connect the server to the Internet.
+- The proxy setting is not correct. See [Configure proxy and firewall settings](operational-insights-proxy-firewall.md) for information about how to set or change your proxy settings.
+- The proxy server requires authentication. See [Configure proxy and firewall settings](operational-insights-proxy-firewall.md) to learn about how to configure Operations Manager to use a proxy server.
+
+
+## Troubleshoot SQL Server discovery
+
+If you are running Microsoft SQL Server 2008 R2, and despite deploying the Operations Manager agent, you do not see alerts for this server, you might have a discovery issue.
+
+To confirm if this is the source of your trouble, check for the following two issues:
+
+- In the Operations Manager event log, you see Event ID 4001. This event indicates that there is an invalid class.
+
+- In SQL Server Configuration Manager, when you view SQL Server Services, you see the error message, “The remote procedure call failed. [0x0800706be]”
+
+If both issues are true, you need to install SQL Server 2008 R2 Service Pack 2. To download this service pack, see [SQL Server 2008 R2 Service Pack 2](http://go.microsoft.com/fwlink/?LinkId=271310) in the Microsoft Download Center.
+
+After you install the service pack, you should see Operational Insights data for the server within 24 hours.
+
+## Troubleshoot agents or Operations Manager data flow to Operational Insights
+
+The following set of procedures is meant as a guide to help you troubleshoot your directly-connected agents or Operations Manager deployments configured to report data to Azure Operational Insights.
+
+### Procedure 1: Validate if the right Management Packs get downloaded to your Operations Manager Environment
+>[AZURE.NOTE] If you only use Direct Agent, you can skip to the next procedure.
+
+Depending on which solutions (previously called intelligence packs) you have enabled from the OpInsights Portal will you see more or less of these MPs. Search for keyword ‘Advisor’ or ‘Intelligence’ in their name.
+You can check for these MPs using OpsMgr PowerShell:
+
+```Powershell
+Get-SCOMManagementPack | where {$\_.DisplayName -match 'Advisor'} | Select Name,Sealed,Version Get-SCOMManagementPack | where {$\_.Name -match 'IntelligencePacks'} | Select Name,Sealed,Version ```
+
+>[AZURE.NOTE]Wenn Sie die Problembehandlung für die Capacity-Lösung durchführen, prüfen Sie, *wie viele* Management Packs "Capacity" im Namen enthalten: Es gibt zwei Management Packs mit demselben Anzeigenamen (jedoch unterschiedlichen internen IDs), die in demselben Management Pack-Paket enthalten sind. Wenn eines der beiden nicht importiert wird (häufig aufgrund fehlender VMM-Abhängigkeiten), wird auch das andere Management Pack nicht importiert, und der Vorgang wird nicht wiederholt.
 
 Die folgenden drei Management Packs mit „Capacity“ im Namen sollten angezeigt werden: - Microsoft System Center Advisor Capacity Intelligence Pack - Microsoft System Center Advisor Capacity Intelligence Pack - Microsoft System Center Advisor Capacity Storage Data
 
@@ -135,14 +193,14 @@ Das Modul "System.PublishDataToEndPoint" ist abgestürzt. Ein Modul des Typs „
 
 ### Ereignisse der Quelle „Service Connector“
 ##### Ereignis-ID 4002
-Der Dienst hat den HTTP-Statuscode 403 als Antwort auf eine Abfrage zurückgegeben. Überprüfen Sie mit dem Dienstadministrator die Integrität des Diensts. Die Abfrage wird später wiederholt. Sie können einen 403-Fehler während der ersten Registrierungsphase des Agents erhalten. Sie sehen dann eine URL wie „https://<YourWorkspaceID>.oms.opinsights.azure.com/ AgentService.svc/AgentTopologyRequest“. Fehlercode 403 bedeutet „Unzulässig“. Der Grund ist meist ein fehlerhafter Kopiervorgang einer WorkspaceId oder eines Schlüssels, oder die Uhr ist nicht mit dem Computer synchronisiert. Versuchen Sie die Synchronisierung mit einer zuverlässigen Zeitquelle, und stellen Sie mithilfe der Konnektivitätsprüfung im Systemsteuerungs-Applet für Microsoft Monitoring Agent sicher, dass Sie die richtige Arbeitsbereichs-ID und den richtigen Schlüssel verwenden.
+Der Dienst hat den HTTP-Statuscode 403 als Antwort auf eine Abfrage zurückgegeben. Überprüfen Sie mit dem Dienstadministrator die Integrität des Diensts. Die Abfrage wird später wiederholt. Sie können einen 403-Fehler während der ersten Registrierungsphase des Agent erhalten. Sie sehen dann eine URL wie "https://<YourWorkspaceID>.oms.opinsights.azure.com/ AgentService.svc/AgentTopologyRequest". Fehlercode 403 bedeutet "Unzulässig". Der Grund ist meist ein fehlerhafter Kopiervorgang einer WorkspaceId oder eines Schlüssels, oder die Uhr ist nicht mit dem Computer synchronisiert. Versuchen Sie die Synchronisierung mit einer zuverlässigen Zeitquelle, und stellen Sie mithilfe der Konnektivitätsprüfung im Systemsteuerungs-Applet für Microsoft Monitoring Agent sicher, dass Sie die richtige Arbeitsbereichs-ID und den richtigen Schlüssel verwenden.
 
 
 ### 5\. Verfahren: Suchen nach den Agents, um Daten zu senden und im Portal zu indizieren
-Melden Sie sich im OpInsights-Portal an, und navigieren Sie von der Seite „Übersicht“ zur kleinen Kachel **Server und Verwendung**. Es wird angezeigt, ob Verwaltungsgruppen (und deren Agents) und Direct Agents Daten an die Protokollsuche melden. Die Anzahl der Agents in der Kachel leitet sich aus den Daten ab. Wenn Computer zwei Wochen lang keine Daten melden, werden sie aus dem Netz entfernt.
+Melden Sie sich im OpInsights-Portal an, und navigieren Sie von der Seite "Übersicht" zur kleinen Kachel **Server und Verwendung**. Es wird angezeigt, ob Verwaltungsgruppen (und deren Agents) und Direct Agents Daten an die Protokollsuche melden. Die Anzahl der Agents in der Kachel leitet sich aus den Daten ab. Wenn Computer zwei Wochen lang keine Daten melden, werden sie aus dem Netz entfernt.
 
 Über Drilldowns gelangen Sie zur Protokollsuche. Die Zeitstempel der letzten indizierten Daten werden für jeden Computer angezeigt. Von dort aus können Sie untersuchen, um welche Daten es sich handelt. Je nach Umfang der konfigurierten Datensammlung und der Art der Lösungen können der Zeitplan und die Geschwindigkeit des Datenuploads variieren.
 
 Diese Seite bietet zudem Messungsinformationen (hierbei wird nicht der Index der Protokollsuche, sondern das Abrechnungssystem verwendet, und die Daten werden alle paar Stunden aktualisiert) über die an den Dienst gesendeten Datenmengen, aufgeschlüsselt nach Lösung.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

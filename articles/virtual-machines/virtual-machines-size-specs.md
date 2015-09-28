@@ -1,21 +1,21 @@
 <properties
  pageTitle="Größen virtueller Computer"
-	description="Listet die verschiedenen Größen für virtuelle Computer und die zugehörigen Kapazitäten auf."
-	services="virtual-machines"
-	documentationCenter=""
-	authors="KBDAzure"
-	manager="timlt"
-	editor=""
-	tags="azure-resource-manager,azure-service-management"/>
+ description="Listet die verschiedenen Größen für virtuelle Computer und die zugehörigen Kapazitäten auf."
+ services="virtual-machines"
+ documentationCenter=""
+ authors="cynthn"
+ manager="timlt"
+ editor=""
+ tags="azure-resource-manager,azure-service-management"/>
 
 <tags
 ms.service="virtual-machines"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-multiple"
-	ms.workload="infrastructure-services"
-	ms.date="09/02/2015"
-	ms.author="kathydav"/>
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-multiple"
+ ms.workload="infrastructure-services"
+ ms.date="09/02/2015"
+ ms.author="cynthn"/>
 
 # Größen für virtuelle Computer
 
@@ -146,4 +146,4 @@ In den folgenden Tabellen sind die Größe und die von den einzelnen Größen be
 
 [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](virtual-machines-a8-a9-a10-a11-specs.md)
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

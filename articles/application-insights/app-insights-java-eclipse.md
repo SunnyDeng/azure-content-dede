@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/13/2015" 
+	ms.date="09/09/2015" 
 	ms.author="awills"/>
  
 # Erste Schritte mit Application Insights mit Java in Eclipse
@@ -116,6 +116,104 @@ Seitenansichts-, Benutzer- und Sitzungsmetriken werden auf dem Blatt "Verwendung
 
 [Weitere Informationen zum Einrichten clientseitiger Telemetrie.][usage]
 
+## Veröffentlichen der Anwendung
+
+Jetzt veröffentlichen Sie Ihre App auf dem Server, erlauben deren Benutzung und sehen sich an, wie die Telemetrie im Portal angezeigt wird.
+
+* Stellen Sie sicher, dass die Firewall der Anwendung das Senden von Telemetrie an die folgenden Ports erlaubt:
+
+ * dc.services.visualstudio.com:443
+ * dc.services.visualstudio.com:80
+ * f5.services.visualstudio.com:443
+ * f5.services.visualstudio.com:80
+
+
+* Installieren Sie auf Windows-Servern:
+
+ * [Microsoft Visual C++ Redistributable](http://www.microsoft.com/download/details.aspx?id=40784)
+
+    (Damit werden Leistungsindikatoren aktiviert).
+
+## Ausnahmen und Anforderungsfehler
+
+Nicht behandelte Ausnahmen werden automatisch gesammelt:
+
+![](./media/app-insights-java-get-started/21-exceptions.png)
+
+Um Daten zu anderen Ausnahmen zu erfassen, haben Sie zwei Möglichkeiten:
+
+* [Fügen Sie TrackException-Aufrufe in den Code ein](app-insights-api-custom-events-metrics.md#track-exception). 
+* [Installieren Sie den Java-Agent auf dem Server](app-insights-java-agent.md). Sie geben die Methoden an, die Sie überwachen möchten.
+
+
+## Überwachen von Methodenaufrufen und externen Abhängigkeiten
+
+[Installieren Sie den Java-Agent](app-insights-java-agent.md), um die angegebenen internen Methoden und Aufrufe über JDBC mit Zeitdaten zu protokollieren.
+
+
+## Leistungsindikatoren
+
+Klicken Sie auf die Kachel **Server**. Ein Bereich mit Leistungsindikatoren wird angezeigt.
+
+
+![](./media/app-insights-java-get-started/11-perf-counters.png)
+
+### Anpassen der Erfassung von Leistungsindikatoren
+
+Um die Erfassung der Standardgruppe von Leistungsindikatoren zu deaktivieren, fügen Sie unter dem Stammknoten der Datei „ApplicationInsights.xml“ den folgenden Code hinzu:
+
+    <PerformanceCounters>
+       <UseBuiltIn>False</UseBuiltIn>
+    </PerformanceCounters>
+
+### Erfassen weiterer Leistungsindikatoren
+
+Sie können weitere Leistungsindikatoren angeben, die erfasst werden sollen.
+
+#### JMX-Leistungsindikatoren (von der Java Virtual Machine bereitgestellt)
+
+    <PerformanceCounters>
+      <Jmx>
+        <Add objectName="java.lang:type=ClassLoading" attribute="TotalLoadedClassCount" displayName="Loaded Class Count"/>
+        <Add objectName="java.lang:type=Memory" attribute="HeapMemoryUsage.used" displayName="Heap Memory Usage-used" type="composite"/>
+      </Jmx>
+    </PerformanceCounters>
+
+*	`displayName` – Der im Application Insights-Portal angezeigte Name.
+*	`objectName` – Der JMX-Objektname.
+*	`attribute` – Das Attribut des abzurufenden JMX-Objektnamens
+*	`type` (optional) – Der Typ des Attributs des JMX-Objekts:
+ *	Standard: ein einfacher Typ wie "int" oder "long".
+ *	`composite`: Die Leistungsindikatordaten haben das Format 'Attribut.Daten'.
+ *	`tabular`: Die Leistungsindikatordaten haben das Format einer Tabellenzeile.
+
+
+
+#### Windows-Leistungsindikatoren
+
+Jeder [Windows-Leistungsindikator](https://msdn.microsoft.com/library/windows/desktop/aa373083.aspx) gehört zu einer Kategorie (genauso wie ein Feld zu einer Klasse gehört). Kategorien können entweder global sein oder nummerierte oder benannte Instanzen haben.
+
+    <PerformanceCounters>
+      <Windows>
+        <Add displayName="Process User Time" categoryName="Process" counterName="%User Time" instanceName="__SELF__" />
+        <Add displayName="Bytes Printed per Second" categoryName="Print Queue" counterName="Bytes Printed/sec" instanceName="Fax" />
+      </Windows>
+    </PerformanceCounters>
+
+*	displayName – Der im Application Insights-Portal angezeigte Name
+*	categoryName – Die Leistungsindikatorkategorie (Leistungsobjekt), der dieser Leistungsindikator zugeordnet ist
+*	counterName – Der Name des Leistungsindikators
+*	instanceName – Der Name der Instanz der Leistungsindikatorkategorie oder eine leere Zeichenfolge (""), wenn die Kategorie eine einzelne Instanz enthält. Wenn "categoryName" auf "Process" festgelegt ist und der Leistungsindikator, den Sie erfassen möchten, aus dem aktuellen JVM-Prozess stammt, in dem Ihre Anwendung ausgeführt wird, geben Sie `"__SELF__"` an.
+
+Ihre Leistungsindikatoren werden im [Metrik-Explorer][metrics] als benutzerdefinierte Metriken angezeigt.
+
+![](./media/app-insights-java-get-started/12-custom-perfs.png)
+
+
+### Unix-Leistungsindikatoren
+
+* [Installieren Sie collectd mit dem Application Insights-Plug-In](app-insights-java-collectd.md), um eine Vielzahl von System- und Netzwerkdaten abzurufen.
+
 ## Verfügbarkeitswebtests
 
 Application Insights kann Ihre Website in regelmäßigen Abständen testen, um zu überprüfen, ob sie betriebsbereit ist und gut reagiert. Um dies einzurichten, klicken Sie sich durch das leere Webtestdiagramm auf dem Blatt "Übersicht", und geben Sie Ihre öffentliche URL an.
@@ -169,4 +267,4 @@ Sie können Code sowohl in das JavaScript der Webseite als auch in serverseitige
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

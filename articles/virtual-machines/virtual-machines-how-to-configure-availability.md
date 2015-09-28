@@ -3,7 +3,7 @@
 	description="Enthält die Schritte zum Konfigurieren einer Verfügbarkeitsgruppe für einen neuen oder vorhandenen virtuellen Computer in Azure mithilfe des Azure-Portals und mit Azure PowerShell-Befehlen"
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
@@ -15,9 +15,9 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/10/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
-#Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer#
+# Gewusst wie: Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer
 
 Eine Verfügbarkeitsgruppe hilft, dass Ihre virtuellen Computer während eines Ausfalls wie während einer Wartung verfügbar bleiben. Das Platzieren von mindestens zwei ähnlich konfigurierten virtuellen Computern in einer Verfügbarkeitsgruppe erstellt die Redundanz, die zum Wahren der Verfügbarkeit der Anwendungen oder Dienste erforderlich ist, die auf Ihrem virtuellen Computer ausgeführt werden. Ausführliche Informationen hierzu finden Sie unter [Verwalten der Verfügbarkeit virtueller Computer][].
 
@@ -46,7 +46,7 @@ So verwenden Sie das Portal:
 
 5. Im dritten Bildschirm können Sie die Ressourcen für Netzwerk, Speicher und Verfügbarkeit konfigurieren. Gehen Sie wie folgt vor:
 
-	1. Wählen Sie den entsprechenden Clouddienst. Lassen Sie die Option **Einen neuen Clouddienst erstellen** ausgewählt \(es sei denn, Sie fügen diesen neuen virtuellen Computer einem vorhandenen VM-Clouddienst hinzu\). Geben Sie dann unter **DNS-Name des Cloud-Diensts** einen Namen ein. Der DNS-Name wird ein Teil des URI, der zum Kontaktieren des virtuellen Computers verwendet wird. Der Cloud-Dienst fungiert als eine Kommunikations- und Isolationsgruppe. Alle virtuellen Computer im selben Cloud-Dienst können miteinander kommunizieren, für den Lastenausgleich eingerichtet werden und in derselben Verfügbarkeitsgruppe platziert werden.
+	1. Wählen Sie den entsprechenden Clouddienst. Lassen Sie die Option **Einen neuen Clouddienst erstellen** ausgewählt (es sei denn, Sie fügen diesen neuen virtuellen Computer einem vorhandenen VM-Clouddienst hinzu). Geben Sie dann unter **DNS-Name des Cloud-Diensts** einen Namen ein. Der DNS-Name wird ein Teil des URI, der zum Kontaktieren des virtuellen Computers verwendet wird. Der Cloud-Dienst fungiert als eine Kommunikations- und Isolationsgruppe. Alle virtuellen Computer im selben Cloud-Dienst können miteinander kommunizieren, für den Lastenausgleich eingerichtet werden und in derselben Verfügbarkeitsgruppe platziert werden.
 
 	2. Geben Sie unter **Region/Affinitätsgruppe/Virtuelles Netzwerk** ein virtuelles Netzwerk an, wenn Sie eins einsetzen möchten. **Wichtig**: Wenn der virtuelle Computer ein virtuelles Netzwerk verwenden soll, müssen Sie ihn bei seiner Erstellung in das virtuelle Netzwerk einbinden. Sie können den virtuellen Computer nicht in ein virtuelles Netzwerk einbinden, nachdem Sie den virtuellen Computer erstellt haben. Weitere Informationen finden Sie unter [Virtuelle Netzwerke im Überblick][].
 
@@ -69,7 +69,7 @@ Beachten Sie Folgendes, wenn Sie einen virtuellen Azure-Computer mithilfe von Az
 
 ## <a id="addmachine"> </a>Option 2: Fügen Sie einer Verfügbarkeitsgruppe einen vorhandenen virtuellen Computer hinzu##
 
-Im Portal können Sie einer vorhandenen Verfügbarkeitsgruppe vorhandene virtuelle Computer hinzufügen oder einen neuen für sie erstellen. \(Beachten Sie, dass die virtuellen Computer in derselben Verfügbarkeitsgruppe zum selben Cloud-Dienst gehören müssen.\) Die Schritte sind beinah identisch. Mit Azure PowerShell können Sie einer vorhandenen Verfügbarkeitsgruppe den virtuellen Computer hinzufügen.
+Im Portal können Sie einer vorhandenen Verfügbarkeitsgruppe vorhandene virtuelle Computer hinzufügen oder einen neuen für sie erstellen. (Beachten Sie, dass die virtuellen Computer in derselben Verfügbarkeitsgruppe zum selben Cloud-Dienst gehören müssen.) Die Schritte sind beinah identisch. Mit Azure PowerShell können Sie einer vorhandenen Verfügbarkeitsgruppe den virtuellen Computer hinzufügen.
 
 1. Melden Sie sich beim [Portal](http://manage.windowsazure.com) an, falls Sie dies noch nicht getan haben.
 
@@ -89,15 +89,15 @@ Im Portal können Sie einer vorhandenen Verfügbarkeitsgruppe vorhandene virtuel
 
 6. Klicken Sie auf **Speichern**.
 
-Um Azure PowerShell-Befehle zu verwenden, öffnen Sie eine Azure PowerShell-Sitzung mit Administratorrechten, und führen Sie den folgenden Befehl aus. Für die Platzhalter \(z. B. &lt;VmCloudServiceName&gt;\) ersetzen Sie alles innerhalb der Anführungszeichen einschließlich der Zeichen < and > durch die richtigen Namen.
+Um Azure PowerShell-Befehle zu verwenden, öffnen Sie eine Azure PowerShell-Sitzung mit Administratorrechten, und führen Sie den folgenden Befehl aus. Für die Platzhalter (z. B. &lt;VmCloudServiceName&gt;) ersetzen Sie alles innerhalb der Anführungszeichen einschließlich der Zeichen < and > durch die richtigen Namen.
 
 	Get-AzureVM -ServiceName "<VmCloudServiceName>" -Name "<VmName>" | Set-AzureAvailabilitySet -AvailabilitySetName "<AvSetName>" | Update-AzureVM
 
 >[AZURE.NOTE]Der virtuelle Computer muss möglicherweise neu gestartet werden, um das Hinzufügen zur Verfügbarkeitsgruppe abzuschließen.
 
-##Zusätzliche Ressourcen
+## Zusätzliche Ressourcen
 
-[Informationen zu Azure-VM-Konfigurationseinstellungen]
+[Artikel zu virtuellen Computern in der Dienstverwaltung]
 
 <!-- LINKS -->
 [Option 1: Erstellen Sie gleichzeitig einen virtuellen Computer und eine Verfügbarkeitsgruppe]: #createset
@@ -107,6 +107,6 @@ Um Azure PowerShell-Befehle zu verwenden, öffnen Sie eine Azure PowerShell-Sitz
 [Verwalten der Verfügbarkeit virtueller Computer]: virtual-machines-manage-availability.md
 [Erstellen eines virtuellen Windows-Computers]: virtual-machines-windows-tutorial.md
 [Virtuelle Netzwerke im Überblick]: virtual-networks-overview.md
-[Informationen zu Azure-VM-Konfigurationseinstellungen]: http://msdn.microsoft.com/library/azure/dn763935.aspx
+[Artikel zu virtuellen Computern in der Dienstverwaltung]: virtual-machines-service-management-articles.md
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

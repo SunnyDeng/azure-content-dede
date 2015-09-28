@@ -1,19 +1,19 @@
-<properties 
-    pageTitle="Migrieren zu Azure Premium-Speicher | Microsoft Azure" 
-    description="Migrieren Sie zu Azure Premium-Speicher für leistungsstarke Datenträgerunterstützung mit niedriger Latenz von E/A-intensiven Workloads in Azure Virtual Machines." 
-    services="storage" 
-    documentationCenter="na" 
-    authors="tamram" 
-    manager="adinah" 
+<properties
+    pageTitle="Migrieren zu Azure Premium-Speicher | Microsoft Azure"
+    description="Migrieren Sie zu Azure Premium-Speicher für leistungsstarke Datenträgerunterstützung mit niedriger Latenz von E/A-intensiven Workloads in Azure Virtual Machines."
+    services="storage"
+    documentationCenter="na"
+    authors="tamram"
+    manager="adinah"
     editor=""/>
 
-<tags 
-    ms.service="storage" 
-    ms.workload="storage" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="07/06/2015" 
+<tags
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="07/06/2015"
     ms.author="tamram"/>
 
 
@@ -23,16 +23,16 @@
 
 Azure Premium-Speicher bietet leistungsstarke Solid State-Laufwerkstechnologie (SSD) mit niedriger Latenz für Workloads mit hoher E/A, die auf virtuellen Azure-Computern ausgeführt werden. Mit dem Premium-Speicher können Ihre Anwendungen bis zu 32 TB Speicher pro virtuellem Computer nutzen und 50.000 IOPS (Input/Output Operations Per Second, E/A-Vorgänge pro Sekunde) pro virtuellem Computer mit äußerst niedriger Latenz für Lesevorgänge erzielen. In diesem Artikel finden Sie Anleitungen zum Migrieren von Festplatten oder virtuellen Computern (VMs) von lokalen oder Standardspeichern bzw. anderen Cloud-Plattformen zu Premium-Azure-Speicher. Eine ausführliche Übersicht über Azure Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads in Azure Virtual Machine](storage-premium-storage-preview-portal.md).
 
-## Voraussetzungen 
+## Voraussetzungen
 
 ### Voraussetzungen
-- Sie benötigen ein Azure-Abonnement. Wenn Sie kein Abonnement besitzen, können Sie für einen Monat eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) abonnieren, oder Sie besuchen die Seite mit den [Azure-Preisen](http://azure.microsoft.com/pricing/) für weitere Optionen. 
+- Sie benötigen ein Azure-Abonnement. Wenn Sie kein Abonnement besitzen, können Sie für einen Monat eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) abonnieren, oder Sie besuchen die Seite mit den [Azure-Preisen](http://azure.microsoft.com/pricing/) für weitere Optionen.
 - Zum Ausführen von PowerShell-Cmdlets benötigen Sie das Microsoft Azure PowerShell-Modul. Informationen zum Herunterladen dieses Moduls finden Sie unter [Microsoft Azure-Downloads](http://azure.microsoft.com/downloads/).
-- Wenn Sie Azure-VMs mit Premium-Speicher nutzen möchten, müssen Sie die VMs der DS-Serie verwenden. Mit VMs der DS-Serie können Sie Standard- und Premium-Speicherdatenträger verwenden. Premium-Datenträger werden zukünftig mit mehreren VM-Typen verfügbar sein. Weitere Informationen zu den verfügbaren Typen und Größen von Azure-VM-Datenträgern finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). 
+- Wenn Sie Azure-VMs mit Premium-Speicher nutzen möchten, müssen Sie die VMs der DS-Serie verwenden. Mit VMs der DS-Serie können Sie Standard- und Premium-Speicherdatenträger verwenden. Premium-Datenträger werden zukünftig mit mehreren VM-Typen verfügbar sein. Weitere Informationen zu den verfügbaren Typen und Größen von Azure-VM-Datenträgern finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx).
 
-### Überlegungen 
+### Überlegungen
 
-#### VM-Größen 
+#### VM-Größen
 Im Folgenden finden Sie die VM-Größen der DS-Serie und deren Merkmale zusammengefasst. Sehen Sie sich die Leistungsmerkmale dieser Angebote für Premium-Speicher an, und wählen Sie die am besten für Ihre Workload geeignete Option für Ihre Azure-Datenträger und virtuellen Computer aus. Stellen Sie sicher, dass auf Ihrem virtuellen Computer ausreichend Bandbreite zum Steuern des Datenverkehrs des Datenträgers verfügbar ist.
 
 |Größe des virtuellen Computers|CPU-Kerne|Max. IOPS|Max. Bandbreite des Datenträgers|
@@ -46,7 +46,7 @@ Im Folgenden finden Sie die VM-Größen der DS-Serie und deren Merkmale zusammen
 |**STANDARD\_DS13**|8|25\.600|256 MB pro Sekunde|
 |**STANDARD\_DS14**|16|50\.000|512 MB pro Sekunde|
 
-#### Datenträgergrößen 
+#### Datenträgergrößen
 Es gibt drei Datenträgertypen, die Sie mit Ihrem virtuellen Computer verwenden können, und jeder Typ weist bestimmte IOPs und Einschränkungen auf. Berücksichtigen Sie diese Beschränkungen beim Auswählen des Datenträgertyps für Ihren virtuellen Computer je nach Anforderungen Ihrer Anwendung hinsichtlich Kapazität, Leistung, Skalierbarkeit und Spitzenlasten.
 
 |Datenträgertyp des Premium-Speichers|P10|P20|P30|
@@ -63,25 +63,25 @@ Premium-Speicherkonten haben zusätzlich zu den unter [Ziele für Skalierbarkeit
 |:--|:---|
 |Festplattenkapazität: 35 TB<br />Kapazität für Momentaufnahmen: 10 TB|Bis zu 50 GB pro Sekunde für eingehenden und ausgehenden Datenverkehr|
 
-Weitere Informationen zu den Spezifikationen für Premium-Speicher finden Sie unter [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](storage-premium-storage-preview-portal.md#scalability-and-performance-targets-whde-deing-premium-storage).
+Weitere Informationen zu den Spezifikationen für Premium-Speicher finden Sie unter [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](storage-premium-storage-preview-portal.md#scalability-and-performance-targets-whde-DEing-premium-storage).
 
-#### Zusätzliche Datenträger 
+#### Zusätzliche Datenträger
 Legen Sie je nach Workload fest, ob zusätzliche Datenträger für Ihren virtuellen Computer erforderlich sind. Sie können mehrere Datenträger für permanente Daten auf Ihrem virtuellen Computer anfügen. Bei Bedarf können Sie Daten über die Datenträger verteilen, um die Kapazität und die Leistung des Volumens zu erhöhen. Wenn Sie Daten über Premium-Speicher-Datenträger mithilfe von [Speicherplätzen](http://technet.microsoft.com/library/hh831739.aspx) verteilen, sollten Sie sie für jeden verwendeten Datenträger eine Spalte konfigurieren. Andernfalls kann die Gesamtleistung des Stripesetvolume aufgrund ungleicher Verteilung des Datenverkehrs auf die Datenträger niedriger sein als erwartet. Für Linux-VMs können Sie dazu das Dienstprogramm *mdadm* verwenden. Weitere Informationen finden Sie im Artikel [Konfigurieren von Software-RAID unter Linux](../virtual-machines-linux-configure-raid.md).
 
-#### Zwischenspeicherungsrichtlinie für Datenträger 
+#### Zwischenspeicherungsrichtlinie für Datenträger
 Standardmäßig ist die Richtlinie für das Zwischenspeichern für alle Premium-Datenträger *Schreibgeschützt* und für die Premium-Betriebssystem-Datenträger, die an den virtuellen Computer angeschlossen sind, *Lesen/Schreiben*. Diese Konfigurationseinstellung wird empfohlen, um die optimale E/A-Leistung für Ihre Anwendung zu erreichen. Für Datenträger mit hohem oder ausschließlichem Schreibzugriff (z. B. SQL Server-Protokolldateien) deaktivieren Sie das Zwischenspeichern, sodass Sie eine bessere Anwendungsleistung erzielen können. Die Einstellungen für das Zwischenspeichern bei vorhandenen Datenträgern können Sie über das Azure-Portal oder den Parameter *-HostCaching* des Cmdlets *Set-AzureDataDisk* aktualisieren.
 
 #### Standort 
 Wählen Sie einen Speicherort, an dem Azure Premium-Speicher verfügbar ist. Aktuelle Informationen zu Speicherorten finden Sie unter [Wichtige Informationen zum Premium-Speicher](storage-premium-storage-preview-portal.md#important-things-to-know-about-premium-storage). Virtuelle Computer in der gleichen Umgebung wie das Speicherkonto, in dem die Datenträger für den virtuellen Computer gespeichert sind, erzielen eine höhere Leistung als solche in unterschiedlichen Regionen.
 
-#### Sonstige Azure-VM-Konfigurationseinstellungen 
+#### Sonstige Azure-VM-Konfigurationseinstellungen
 
-Beim Erstellen einer Azure-VM müssen Sie bestimmte Einstellungen für die virtuellen Computer konfigurieren. Denken Sie daran, dass es einige Einstellungen gibt, die für die Lebensdauer des virtuellen Computers festgelegt sind, während Sie andere Einstellungen später hinzufügen oder ändern können. Überprüfen Sie diese Azure-VM-Konfigurationseinstellungen, und stellen Sie sicher, dass diese korrekt konfiguriert sind, um die Anforderungen für die Workload zu erfüllen. Weitere Informationen finden Sie unter [Informationen zu Azure-VM-Konfigurationseinstellungen](https://msdn.microsoft.com/library/azure/dn763935.aspx).
+Beim Erstellen einer Azure-VM müssen Sie bestimmte Einstellungen für die virtuellen Computer konfigurieren. Denken Sie daran, dass es einige Einstellungen gibt, die für die Lebensdauer des virtuellen Computers festgelegt sind, während Sie andere Einstellungen später hinzufügen oder ändern können. Überprüfen Sie diese Azure-VM-Konfigurationseinstellungen, und stellen Sie sicher, dass diese korrekt konfiguriert sind, um die Anforderungen für die Workload zu erfüllen.
 
-## Vorbereiten von virtuellen Festplatten für die Migration 
+## Vorbereiten von virtuellen Festplatten für die Migration
 
 Der folgende Abschnitt enthält Richtlinien zur Vorbereitung der Migration der virtuellen Festplatten des virtuellen Computers. Bei der virtuellen Festplatte kann es sich um Folgendes handeln:
- 
+
 - Ein allgemeines Betriebssystemimage, das verwendet werden kann, um mehrere Azure-VMs zu erstellen  
 - Einen Betriebssystem-Datenträger, der mit einer einzelnen virtuellen Azure-Computer-Instanz verwendet werden kann  
 - Einen Datenträger, der mit einem virtuellen Azure-Computer zur dauerhaften Speicherung verbunden werden kann.
@@ -90,14 +90,14 @@ Der folgende Abschnitt enthält Richtlinien zur Vorbereitung der Migration der v
 
 Zum Migrieren Ihrer virtuellen Computer benötigen Sie Folgendes:
 
-- Ein Azure-Abonnement, ein Speicherkonto und ein Container in diesem Speicherkonto, in den die virtuelle Festplatte kopiert wird. Beachten Sie, dass das Zielspeicherkonto je nach Ihren Anforderung ein Standard- oder Premium-Speicherkonto sein kann. 
-- Ein Tool zum Generalisieren der VHD, wenn Sie mehrere virtuelle Computerinstanzen daraus erstellen möchten. Beispiel: Sysprep für Windows oder virt-sysprep für Ubuntu. 
-- Ein Tool für den Upload der VHD-Datei in das Speicherkonto. Beispielsweise [AzCopy](storage-use-azcopy.md) oder der [Azure-Speicher-Explorer](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx). In dieser Anleitung wird erläutert, wie Sie Ihre VHD mit dem Tool AzCopy kopieren. 
+- Ein Azure-Abonnement, ein Speicherkonto und ein Container in diesem Speicherkonto, in den die virtuelle Festplatte kopiert wird. Beachten Sie, dass das Zielspeicherkonto je nach Ihren Anforderung ein Standard- oder Premium-Speicherkonto sein kann.
+- Ein Tool zum Generalisieren der VHD, wenn Sie mehrere virtuelle Computerinstanzen daraus erstellen möchten. Beispiel: Sysprep für Windows oder virt-sysprep für Ubuntu.
+- Ein Tool für den Upload der VHD-Datei in das Speicherkonto. Beispielsweise [AzCopy](storage-use-azcopy.md) oder der [Azure-Speicher-Explorer](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx). In dieser Anleitung wird erläutert, wie Sie Ihre VHD mit dem Tool AzCopy kopieren.
 
 > [AZURE.NOTE]Kopieren Sie die VHD im Hinblick auf eine optimale Leistung, indem Sie eines dieser Tools auf einem virtuellen Azure-Computer ausführen, der sich in der gleichen Region wie das Zielspeicherkonto befindet. Wenn Sie eine VDH von einem virtuellen Azure-Computer in einer anderen Region kopieren, kann dies die Leistung beeinträchtigen.
 >
 > Beim Kopieren großer Datenmengen bei begrenzter Bandbreite können Sie den [Microsoft Azure-Import/Export-Dienst](storage-import-export-service.md) nutzen und für die Datenübertragung Festplatten an ein Azure-Rechenzentrum senden. Mit dem Azure Import/Export-Dienst können Sie Daten nur in ein Standardspeicherkonto kopieren. Wenn die Daten sich im Standardspeicherkonto befinden, können Sie sie mit der [Copy Blob-API](https://msdn.microsoft.com/library/azure/dd894037.aspx) oder mit AzCopy in Ihr Premium-Speicherkonto übertragen.
-> 
+>
 > Beachten Sie, dass Microsoft Azure nur VHD-Dateien mit fester Größe unterstützt. VHDX-Dateien und dynamische virtuelle Festplatten werden nicht unterstützt. Wenn Sie über eine dynamische virtuelle Festplatte verfügen, können Sie sie mit dem Cmdlet [Convert-VHD](http://technet.microsoft.com/library/hh848454.aspx) in eine VHD mit fester Größe konvertieren .
 
 ### Szenarios für die Vorbereitung von virtuellen Festplatten
@@ -112,7 +112,7 @@ Denken Sie beim Hochladen einer VHD-Datei, mit der mehrere generische Azure-VM-I
 
 1. Öffnen Sie ein Eingabeaufforderungsfenster als ein Administrator.
 2. Geben Sie den folgenden Befehl zum Öffnen von Sysprep ein:
- 
+
 		%windir%\system32\sysprep\sysprep.exe
 
 4. Wählen Sie im Systemvorbereitungsprogramm die Option "Out-of-Box-Experience (OOBE) für System aktivieren" aus, aktivieren Sie das Kontrollkästchen "Verallgemeinern", wählen Sie **Herunterfahren** aus, und klicken Sie dann auf **OK** (siehe dazu Abbildung unten). Dadurch werden das Betriebssystem generalisiert und das System heruntergefahren.
@@ -137,7 +137,7 @@ Nun da die virtuelle Festplatte vorbereitet ist, können Sie die Schritte unten 
 
 Erstellen Sie ein Speicherkonto für die Verwaltung Ihrer virtuellen Festplatten. Berücksichtigen Sie die folgenden Punkte beim Planen des Speicherorts der virtuellen Festplatten:
 
-- Der Speicherort des Zielspeicherkontos kann sich je nach Anwendungsanforderungen in einem Standard- oder Premium-Speicher befinden. 
+- Der Speicherort des Zielspeicherkontos kann sich je nach Anwendungsanforderungen in einem Standard- oder Premium-Speicher befinden.
 - Der Speicherort für das Konto muss mit den Azure-VMs der DS-Serie übereinstimmen, die Sie in der letzten Phase erstellen. Sie können je nach Anforderungen in ein neues Speicherkonto kopieren oder die Verwendung desselben Speicherkontos planen.
 - Kopieren und speichern Sie den Speicherkontenschlüssel des Zielspeicherkontos für die nächste Phase.
 - Für Datenträger können Sie auswählen, dass einige in einem Standardspeicherkonto verbleiben (z. B. Festplatten mit Daten, auf die weniger zugegriffen wird) und andere mit hohem IOPS-Wert in einem Premium-Speicherkonto gespeichert werden.
@@ -150,16 +150,16 @@ Im Folgenden sind einige Szenarios zum Kopieren der virtuellen Festplatte beschr
 
 Wenn Sie VHDs aus einem Azure-Standardspeicherkonto zu einem Azure Premium-Speicherkonto migrieren, müssen Sie den Quellpfad des VHD-Containers, den Namen der VHD-Datei und den Speicherkontoschlüssel des Quellspeicherkontos kopieren.
 
-1. Wechseln Sie zu **Azure-Portal > Virtual Machines > Datenträger**.
+1. Wechseln Sie zu **Azure-Portal > Virtuelle Computer > Datenträger**.
 2. Kopieren und speichern Sie die VHD-Container-URL aus der Spalte "Speicherort". Die Container-URL ähnelt dem folgenden Format: `https://myaccount.blob.core.windows.net/mycontainer/`.
 
 #### Kopieren von VHDs aus anderen Clouddiensten
 
 Wenn Sie virtuelle Festplatten aus anderen Cloud-Speichern als Azure zu Azure migrieren möchten, müssen Sie zuerst die VHD-Datei in ein lokales Verzeichnis exportieren. Kopieren Sie den vollständigen Quellpfad des lokalen Verzeichnisses, in dem die VHD-Datei gespeichert ist.
 
-1. Bei Verwendung von AWS exportieren Sie die EC2-Instanz in eine virtuelle Festplatte in einem Amazon S3-Bucket. Befolgen Sie die in der Amazon-Dokumentation unter [Exporting Amazon EC2 Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html) (in englischer Sprache) beschriebenen Schritte, um das Befehlszeilenschnittstellen-Tool Amazon EC2 zu installieren, und führen Sie den Befehl zum Exportieren der EC2-Instanz in eine VHD-Datei aus. 
-	
-	Verwenden Sie **VHD** für die Variable "DISK&#95;IMAGE&#95;FORMAT", wenn Sie den Befehl ausführen. Die exportierte VHD-Datei wird im Amazon S3-Bucket gespeichert, der während dieses Prozesses angegeben wurde.
+1. Bei Verwendung von AWS exportieren Sie die EC2-Instanz in eine virtuelle Festplatte in einem Amazon S3-Bucket. Befolgen Sie die in der Amazon-Dokumentation unter [Exporting Amazon EC2 Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html) (in englischer Sprache) beschriebenen Schritte, um das Befehlszeilenschnittstellen-Tool Amazon EC2 zu installieren, und führen Sie den Befehl zum Exportieren der EC2-Instanz in eine VHD-Datei aus.
+
+	Verwenden Sie unbedingt **VHD** für die Variable "DISK&#95;IMAGE&#95;FORMAT", wenn Sie den Befehl ausführen. Die exportierte VHD-Datei wird im Amazon S3-Bucket gespeichert, der während dieses Prozesses angegeben wurde.
 
 	![][2]
 
@@ -177,7 +177,7 @@ Mit AzCopy können Sie auf einfache Weise die VHD-Datei über das Internet hochl
 
 1. Laden Sie AzCopy über den folgendem Link herunter, und installieren Sie es: [Aktuelle Version von AzCopy](http://aka.ms/downloadazcopy).  
 2. Öffnen Sie Azure PowerShell, und wechseln Sie zu dem Ordner, in dem AzCopy installiert ist.  
-3. Verwenden Sie den folgenden Befehl, um die VHD-Datei von der "Quelle" zum "Ziel" zu kopieren. 
+3. Verwenden Sie den folgenden Befehl, um die VHD-Datei von der "Quelle" zum "Ziel" zu kopieren.
 
 		AzCopy /Source: <source> /SourceKey: <source-account-key> /Dest: <destination> /DestKey: <dest-account-key> /BlobType:page /Pattern: <file-name>  
 
@@ -185,19 +185,19 @@ Mit AzCopy können Sie auf einfache Weise die VHD-Datei über das Internet hochl
 
  - **/Source: *&lt;Quelle&gt;:*** Speicherort des Ordners oder URL des Speichercontainers mit der virtuellen Festplatte.    
  - **/SourceKey: *&lt;Quellspeicherschlüssel&gt;:*** Speicherkontoschlüssel des Quellspeicherkontos.  
- - **/Dest:*&lt;Ziel&gt;:*** Storage-Container-URL zum Kopieren der virtuellen Festplatte.
+ - **/Dest:*&lt;Ziel&gt;:*** URL des Speichercontainers, in den die virtuelle Festplatte kopiert werden soll.
  - **/DestKey: *&lt;Zielspeicherschlüssel&gt;:*** Speicherkontoschlüssel des Zielspeicherkontos.
  - **/BlobType: page:** Gibt an, dass das Ziel ein Seiten-Blob ist.
  - **/Pattern: *&lt;Dateiname&gt;:*** Geben Sie den Dateinamen der zu kopierenden VHD-Datei an.
-   
+
 Weitere Informationen zum Verwenden von AzCopy finden Sie unter [Erste Schritte mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md).
 
-### Weitere Optionen zum Hochladen einer virtuellen Festplatte 
+### Weitere Optionen zum Hochladen einer virtuellen Festplatte
 
 Sie können virtuelle Festplatten zudem mit den folgenden Tools in ein Speicherkonto hochladen:
 
-- [Copy Blob](https://msdn.microsoft.com/library/azure/dd894037.aspx) 
-- [Referenz zur REST-API des Import-/Exportdiensts](https://msdn.microsoft.com/library/dn529096.aspx) 
+- [Copy Blob](https://msdn.microsoft.com/library/azure/dd894037.aspx)
+- [Referenz zur REST-API des Import-/Exportdiensts](https://msdn.microsoft.com/library/dn529096.aspx)
 
 >[AZURE.NOTE]Import/Export kann nur zum Kopieren in oder aus dem Standardspeicherkonto verwendet werden. Sie benötigen ein Tool wie AzCopy zum Kopieren zwischen Standardspeicherkonto und Premium-Speicherkonto.
 
@@ -206,7 +206,7 @@ Sie können virtuelle Festplatten zudem mit den folgenden Tools in ein Speicherk
 Nachdem die virtuelle Festplatte in das gewünschte Speicherkonto hochgeladen wurde, führen Sie die Anweisungen in diesem Abschnitt aus, um die virtuelle Festplatte je nach Szenario als Betriebssystemimage oder Betriebssystemdatenträger zu registrieren und anschließend eine VM-Instanz daraus zu erstellen. Das VHD-Datenlaufwerk kann dem virtuellen Computer hinzugefügt werden, nachdem es erstellt wurde.
 
 ### Registrieren der virtuellen Festplatte
-  
+
 Zum Erstellen eines virtuellen Computers von einer Betriebssystem-VHD oder zum Hinzufügen eines Datenträgers zu einem neuen virtuellen Computer müssen Sie diese zunächst registrieren. Führen Sie je nach Szenario die nachstehenden Schritte aus.
 
 #### Generalisierte Betriebssystem-VHD zum Erstellen mehrerer Azure-VM-Instanzen
@@ -244,7 +244,7 @@ Nachdem das Betriebssystemimage oder der Betriebssystemdatenträger registriert 
 Führen Sie nacheinander die folgenden PowerShell-Cmdlets aus, um den neuen virtuellen Computer zu erstellen. Legen Sie zunächst die allgemeinen Parameter fest:
 
 	$serviceName = "yourVM"
-	$location = "location-name" (e.g., West US) 
+	$location = "location-name" (e.g., West US)
 	$vmSize ="Standard_DS2"
 	$adminUser = "youradmin"
 	$adminPassword = "yourpassword"
@@ -261,22 +261,22 @@ Erstellen Sie anschließend je nach Szenario die Azure-VM-Instanz aus dem regist
 
 Erstellen Sie eine oder mehrere neue Azure-VM-Instanzen der DS-Serie mit dem **Azure-Betriebssystemimage**, das Sie registriert haben. Geben Sie beim Erstellen eines neuen virtuellen Computers den Namen des Betriebssystemimages in der Konfiguration des virtuellen Computers an, wie dies unten dargestellt ist.
 
-	$OSImage = Get-AzureVMImage –ImageName "OSImageName"	
+	$OSImage = Get-AzureVMImage –ImageName "OSImageName"
 
 	$vm = New-AzureVMConfig -Name $vmName –InstanceSize $vmSize -ImageName $OSImage.ImageName
 
 	Add-AzureProvisioningConfig -Windows –AdminUserName $adminUser -Password $adminPassword –VM $vm  
 
-	New-AzureVM -ServiceName $serviceName -VM $vm	
+	New-AzureVM -ServiceName $serviceName -VM $vm
 
 #### Eindeutige Betriebssystem-VHD zum Erstellen einer einzelnen Azure-VM-Instanz
 
 Erstellen Sie eine neue Azure-VM-Instanz der DS-Serie mit dem **Azure-Betriebssystemimage**, das Sie registriert haben. Geben Sie beim Erstellen eines neuen virtuellen Computers den Namen des Betriebssystemdatenträgers in der Konfiguration des virtuellen Computers an, wie dies unten dargestellt ist.
 
 	$OSDisk = Get-AzureDisk –DiskName "OSDisk"  
-	
+
 	$vm = New-AzureVMConfig -Name $vmName -InstanceSize $vmSize -DiskName $OSDisk.DiskName
-	
+
 	New-AzureVM -ServiceName $serviceName –VM $vm
 
 Geben Sie andere Azure-VM-Informationen an, z. B. Clouddienst, Region, Speicherkonto, Verfügbarkeitssatz und Zwischenspeicherungsrichtlinie. Beachten Sie, dass die VM-Instanz mit dem zugehörigen Betriebssystem oder Datenträger angeordnet werden muss, d. h., dass alle ausgewählten Clouddienste, Regionen und Speicherkonten sich an demselben Speicherort befinden müssen wie die zugrundeliegenden VHDs des Datenträgers.
@@ -315,4 +315,4 @@ Lesen Sie außerdem die folgenden Ressourcen, um mehr über Azure Sstorage und A
 [2]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-1.png
 [3]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-3.png
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

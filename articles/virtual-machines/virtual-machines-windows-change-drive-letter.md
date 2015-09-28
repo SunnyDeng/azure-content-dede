@@ -3,7 +3,8 @@
 	description="Beschreibt die erneute Zuordnung des temporären Datenträgers auf einem virtuellen Windows-basierten Computer in Azure."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn
+"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
@@ -15,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="05/27/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 #Ändern des Datenträgerbuchstabens des temporären Windows-Datenträgers
 
@@ -65,4 +66,4 @@ Wenn Sie einen vorhandenen Datenträger auf Laufwerk D verwenden möchten, stell
 
 [Storage]: ../storage-whatis-account.md
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

@@ -1,19 +1,4 @@
-<properties 
-   pageTitle="Stromverkabelung des StorSimple 8100-Geräts | Microsoft Azure"
-   description="Dieses Thema erläutert, wie ein StorSimple 8100-Gerät an die Stromversorgung angeschlossen und anschließend zum ersten Mal eingeschaltet wird."
-   services="storsimple"
-   documentationCenter=""
-   authors="alkohli"
-   manager="carolz"
-   editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/06/2015"
-   ms.author="alkohli" />
+<!--author=alkohli last changed: 9/16/15-->
 
 #### So verkabeln Sie das Gerät für die Stromversorgung
 
@@ -39,4 +24,4 @@
 
 4. Schalten Sie das System ein, indem Sie die Netzschalter beider PCMs in die Position ON bringen.
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

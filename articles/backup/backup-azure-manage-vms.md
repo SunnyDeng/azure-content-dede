@@ -4,11 +4,11 @@
 	description="Erfahren Sie, wie ein virtueller Azure-Computer verwaltet wird."
 	services="backup"
 	documentationCenter=""
-	authors="aashishr"
+	authors="trinadhk"
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/09/2015" ms.author="aashishr"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/09/2015" ms.author="aashishr"; "jimpark"; "trinadhk"/>
 
 # Verwalten virtueller Computer
 
@@ -23,6 +23,8 @@ So verwalten Sie geschützte virtuelle Computer
     ![Sicherung virtueller Computer](./media/backup-azure-manage-vms/backup-vmdetails.png)
 
 3. Zum Anzeigen und Verwalten von Sicherungsrichtlinieneinstellungen für einen virtuellen Computer klicken Sie auf die Registerkarte **Richtlinien**.
+
+    ![VM-Richtlinie](./media/backup-azure-manage-vms/manage-policy-settings.png)
 
     Auf der Registerkarte **Sicherungsrichtlinien** wird die vorhandene Richtlinie angezeigt. Sie können sie nach Bedarf ändern. Wenn Sie eine neue Richtlinie erstellen müssen, klicken Sie auf der Seite **Richtlinien** auf **Erstellen**. Wenn Sie eine Richtlinie entfernen möchten, dürfen ihr keine virtuellen Computer zugeordnet sein.
 
@@ -100,7 +102,7 @@ Wenn Sie im Assistenten **Schutz beenden** nicht **Zugeordnete Sicherungsdaten l
 
 Nach erneuter Aktivierung des Schutzes ändert sich der Schutzstatus des virtuellen Computers in **Geschützt**, wenn es Wiederherstellungspunkte gibt, die vor dem Zeitpunkt der Aktivierung von **Schutz beenden** liegen.
 
-    ![Reprotected VM](./media/backup-azure-manage-vms/reprotected-status.png)
+  ![VM erneut geschützt](./media/backup-azure-manage-vms/reprotected-status.png)
 
 >[AZURE.NOTE]Wenn Sie den virtuellen Computer erneut schützen, können Sie eine andere Richtlinie als die Richtlinie auswählen, gemäß der der virtuelle Computer zuvor geschützt wurde.
 
@@ -136,7 +138,7 @@ So löschen Sie Sicherungsdaten auf einem virtuellen Computer mit dem Status *Sc
 
     ![Sicherung löschen](./media/backup-azure-manage-vms/delete-backup.png)
 
-4. Wählen Sie im Assistenten **Sicherungsdaten löschen** einen Grund für das Löschen von Sicherungsdaten (dringend empfohlen), und klicken Sie auf **Senden**.
+4. Wählen Sie im **Sicherungsdaten löschen**-Assistenten einen Grund für das Löschen von Sicherungsdaten aus (dringend empfohlen), und klicken Sie auf **Senden**.
 
     ![Löschen von Sicherungsdaten](./media/backup-azure-manage-vms/delete-backup-data.png)
 
@@ -149,7 +151,9 @@ So löschen Sie Sicherungsdaten auf einem virtuellen Computer mit dem Status *Sc
 ## Dashboard
 Auf der Seite **Dashboard** können Sie Informationen zu virtuellen Computern in Azure, ihrer Speicherung und den ihnen in den letzten 24 Stunden zugeordneten Aufträgen prüfen. Sie können den Sicherungsstatus und alle zugehörigen Sicherungsfehler anzeigen.
 
-    ![Dashboard](./media/backup-azure-manage-vms/dashboard-protectedvms.png)
+![Dashboard](./media/backup-azure-manage-vms/dashboard-protectedvms.png)
+
+>[AZURE.NOTE]Werte im Dashboard werden einmal alle 24 Stunden aktualisiert.
 
 ## Überwachen von Vorgängen
 Azure Backup bietet einen Überblick über die "Vorgangsprotokolle" der vom Kunden ausgelösten Sicherungsvorgänge, sodass leicht zu erkennen ist, welche Verwaltungsvorgänge für den Sicherungstresor ausgeführt wurden. Vorgangsprotokolle bieten eine hervorragende Grundlage für Nachbesprechungen und für die Überwachung von Sicherungsvorgängen.
@@ -170,15 +174,15 @@ Die folgenden Vorgänge werden in Vorgangsprotokollen aufgezeichnet:
 
 So zeigen Sie die einem Sicherungstresor entsprechenden Vorgangsprotokolle an:
 
-1. Klicken Sie im Azure-Portal auf **Verwaltungsdienste**, und klicken Sie dann auf die Registerkarte **Vorgangsprotokolle**.
+1. Navigieren Sie im Azure-Portal zu **Verwaltungsdienste**, und klicken Sie dann auf die Registerkarte **Vorgangsprotokolle**.
 
     ![Vorgangsprotokolle](./media/backup-azure-manage-vms/ops-logs.png)
 
-2. Wählen Sie den Filter **Backup** als *Typ* aus, geben Sie unter *Dienstname* den Namen des Sicherungstresors an, und klicken Sie auf **Senden**.
+2. Wählen Sie in den Filtern **Backup** als *Typ* aus, geben Sie unter *Dienstname* den Namen des Sicherungstresors an, und klicken Sie auf **Senden**.
 
     ![Vorgangsprotokollfilter](./media/backup-azure-manage-vms/ops-logs-filter.png)
 
-3. Wählen Sie bei den Vorgangsprotokollen einen beliebigen Vorgang aus, und klicken Sie auf **Details**, um die Einzelheiten zu einem Vorgang anzuzeigen.
+3. Wählen Sie in den Vorgangsprotokollen einen beliebigen Vorgang aus, und klicken Sie auf **Details**, um die Einzelheiten zu einem Vorgang anzuzeigen.
 
     ![Details zum Abrufen von Vorgangsprotokollen](./media/backup-azure-manage-vms/ops-logs-details.png)
 
@@ -201,11 +205,11 @@ Der folgende Beispielbefehl dient zum Definieren einer benutzerdefinierten Benac
 PS C:\> Add-AlertRule -Operator GreaterThanOrEqual -Threshold 1 -ResourceId '/subscriptions/86eeac34-eth9a-4de3-84db-7a27d121967e/resourceGroups/RecoveryServices-DP2RCXUGWS3MLJF4LKPI3A3OMJ2DI4SRJK6HIJH22HFIHZVVELRQ-East-US/providers/microsoft.backupbvtd2/BackupVault/trinadhVault' -EventName Backup  -EventSource Administrative -Level Error -OperationName 'Microsoft.Backup/backupVault/Backup' -ResourceProvider Microsoft.Backup -Status Failed  -SubStatus Failed -RuleType Event -Location eastus -ResourceGroup RecoveryServices-DP2RCXUGWS3MLJF4LKPI3A3OMJ2DI4SRJK6HIJH22HFIHZVVELRQ-East-US -Name Backup-Failed -Description 'Backup failed for one of the VMs in vault trinadhkVault' -CustomEmails 'contoso@microsoft.com' -SendToServiceOwners
 ```
 
-**ResourceId**: Sie erhalten diese aus dem Popup "Vorgangsprotokolle" wie im oben im Abschnitt beschrieben. "ResourceUri" im Popup-Detailfenster eines Vorgangs entspricht der "ResourceId", die für dieses Cmdlet bereitgestellt werden muss.
+**ResourceId**: Sie erhalten diese aus dem Popup "Vorgangsprotokolle", wie im vorherigen im Abschnitt beschrieben. "ResourceUri" im Popup-Detailfenster eines Vorgangs entspricht der "ResourceId", die für dieses Cmdlet bereitgestellt werden muss.
 
 **EventName**: Für Warnungen zur IaaS-VM-Sicherung werden folgende Werte unterstützt: Register,Unregister,ConfigureProtection,Backup,Restore,StopProtection,DeleteBackupData,CreateProtectionPolicy,DeleteProtectionPolicy,UpdateProtectionPolicy
 
-**Level**: Unterstützte Werte sind "Informational", "Error". Verwenden Sie "Error" für Warnungen bei fehlerhaften Aktionen und "Informational" für Meldungen bei erfolgreichen Aufträgen.
+**Level**: Unterstützte Werte sind "Informational" und "Error". Verwenden Sie "Error" für Warnungen bei fehlerhaften Aktionen und "Informational" für Meldungen bei erfolgreichen Aufträgen.
 
 **OperationName**: Liegt im Format "Microsoft.Backup/backupvault/<EventName>" vor, wobei "EventName" der obigen Beschreibung entspricht.
 
@@ -215,7 +219,7 @@ PS C:\> Add-AlertRule -Operator GreaterThanOrEqual -Threshold 1 -ResourceId '/su
 
 **RuleType**: Behalten Sie *Event* bei, da Sicherungswarnungen auf Ereignissen basieren.
 
-**ResourceGroup**: ResourceGroup der Ressource, für die der Vorgang ausgelöst wird. Sie können diese aus dem ResourceId-Wert abrufen. Der Wert zwischen den Feldern */resourceGroups/* und */providers/* im ResourceId-Wert ist der Wert für "ResourceGroup".
+**ResourceGroup**: Ressourcengruppe der Ressource, für die der Vorgang ausgelöst wird. Sie können diese aus dem ResourceId-Wert abrufen. Der Wert zwischen den Feldern */resourceGroups/* und */providers/* im ResourceId-Wert ist der Wert für "ResourceGroup".
 
 **Name**: Name der Warnungsregel.
 
@@ -245,4 +249,4 @@ Ereignisbasierte Warnungen unterliegen den folgenden Einschränkungen:
 
 - [Wiederherstellen virtueller Azure-Computer](backup-azure-restore-vms.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

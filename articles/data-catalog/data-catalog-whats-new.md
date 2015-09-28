@@ -13,12 +13,24 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="09/04/2015"
+   ms.date="09/11/2015"
    ms.author="maroche"/>
 
 # Neuigkeiten in Azure Data Catalog
 
 Updates für **Azure Data Catalog** werden in regelmäßigen Abständen veröffentlicht. Nicht jede Version umfasst neue Funktionen für Benutzer, da sich einige Versionen auf Back-End-Dienstfunktionen konzentrieren. Auf dieser Seite werden neue Funktionen für Benutzer aufgezeigt, die dem Dienst **Azure Data Catalog** hinzugefügt wurden.
+
+
+## Neuigkeiten in der Version der Woche ab dem 11. September 2015
+
+Ab der Woche beginnend am 11. September 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+
+- Unterstützung für das Registrieren und die Ermittlung von SQL Server Analysis Services-Objekten über HTTP/HTTPS. Benutzer können jetzt mithilfe einer URL (z. B. https://servername/olap/msmdpump.dll) anstelle eines Servernamens eine Verbindung mit SSAS-Servern herstellen und können die Standardauthentifizierung und anonyme Verbindungen zusätzlich zur Windows-Authentifizierung verwenden. Weitere Informationen zu HTTP/HTTPS-Verbindungen mit SSAS finden Sie unter [Konfigurieren von HTTP-Zugriff auf Analysis Services](https://msdn.microsoft.com/library/gg492140.aspx).
+- Unterstützung für die Hive-Datenquellen auf HDInsight. Benutzer können jetzt Hive-Tabellen für Apache Hive in Hadoop in HDInsight-Datenquellen registrieren und ermitteln. Weitere Informationen zu Hive auf HDInsight finden Sie im [HDInsight Documentation Center](../hdinsight-use-hive/).
+- Unterstützung für das Registrieren und Ermitteln von Oracle-Datenbanken und HDFS-Clustern als Container Beim Registrieren von Oracle-Tabellen und Ansichten oder HDFS erstellt **Azure Data Catalog** einen Eintrag für die Datenbank sowie für die Tabellen und Ansichten. Die Datenbank kann über das **Azure Data Catalog**-Portal ermittelt und gekennzeichnet werden. Benutzer können neben den Inhalten des Katalogs auch die Inhalte einer Datenbank oder eines Clusters durchsuchen und filtern.
+
+
+> [AZURE.NOTE]Oracle-Tabellen und -Ansichten und HDFS-Dateien und -Verzeichnisse, die vor der Version vom 11. September registriert wurden, müssen mithilfe des Registrierungstools für Datenquellen erneut registriert werden, bevor der Datenbank- oder Clustereintrag dem Katalog hinzugefügt wird. Das erneute Registrieren einer Datenquelle wirkt sich nicht auf Anmerkungen aus, die von Benutzern im **Azure Data Catalog**-Portal hinzugefügt wurden.
 
 ## Neuigkeiten in der Version der Woche ab dem 4. September 2015
 
@@ -27,8 +39,7 @@ Ab der Woche beginnend am 4. September 2015 wurden **Azure Data Catalog** die f
 - Unterstützung für die manuelle Registrierung unbekannter Datenquellentypen Benutzer können über das **Azure Data Catalog**-Portal manuell Datenquelleninformationen eingeben, sodass Datenquellen, die nicht explizit vom Quellregistrierungstool unterstützt werden, gekennzeichnet und ermittelt werden können.
 - Unterstützung für das Registrieren und Ermitteln von SQL Server-Datenbanken als Container Beim Registrieren von SQL Server-Tabellen und Ansichten erstellt **Azure Data Catalog** einen Eintrag für die Datenbank sowie für die Tabellen und Ansichten. Die Datenbank kann über das **Azure Data Catalog**-Portal ermittelt und gekennzeichnet werden. Benutzer können neben den Inhalten des Katalogs auch die Inhalte einer Datenbank durchsuchen und filtern.
 
-
-> [AZURE.NOTE]SQL Server-Tabellen und -Ansichten, die vor der Version vom 04.09.2015 erfasst wurden, müssen mithilfe des Registrierungstools für Datenquellen erneut erfasst werden, bevor der Datenbankeintrag dem Katalog hinzugefügt wird. Das erneute Registrieren einer Datenquelle wirkt sich nicht auf Anmerkungen aus, die von Benutzern im **Azure Data Catalog**-Portal hinzugefügt wurden.
+> [AZURE.NOTE]SQL Server-Tabellen und -Ansichten, die vor der Version vom 4. September registriert wurden, müssen mithilfe des Registrierungstools für Datenquellen erneut registriert werden, bevor der Datenbankeintrag dem Katalog hinzugefügt wird. Das erneute Registrieren einer Datenquelle wirkt sich nicht auf Anmerkungen aus, die von Benutzern im **Azure Data Catalog**-Portal hinzugefügt wurden.
 
 ## Neuigkeiten in der Version der Woche ab dem 28. August 2015
 
@@ -47,4 +58,4 @@ Ab der Woche beginnend am 21. August 2015 wurden **Azure Data Catalog** die folg
 - Nur Standard Edition: Beim Hinzufügen von Besitzern zu Datenassets unterstützt **Azure Data Catalog** jetzt sowohl Benutzerkonten als auch Sicherheitsgruppen als Besitzer. Um eine Sicherheitsgruppe als Besitzer für ausgewählte Datenasset hinzuzufügen, können Sie entweder den Anzeigenamen der Gruppe oder die UPN-E-Mail-Adresse der Gruppe (sofern vorhanden) eingeben.
 - Unterstützung für Datenquellen in Azure-Blob-Speichern. Benutzer können nun Azure Storage-Blobs und -Verzeichnisse registrieren und ermitteln.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

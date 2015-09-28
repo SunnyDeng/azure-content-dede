@@ -17,6 +17,7 @@
    ms.author="dkershaw;bryanla"/>
 
 # Grundlegendes zum Azure Active Directory-Anwendungsmanifest
+
 Anwendungen, die in Azure Active Directory (AD) integriert werden, müssen bei einem Azure AD-Mandanten registriert werden, um eine dauerhafte Identitätskonfiguration für die Anwendung bereitzustellen. Diese Konfiguration wird zur Laufzeit geprüft und ermöglicht so Szenarien, in denen eine Anwendung die Authentifizierung/Autorisierung über Azure AD abwickelt/vermittelt. Weitere Informationen zum Azure AD-Anwendungsmodell finden Sie im Artikel [Hinzufügen, Aktualisieren und Entfernen einer Anwendung][ADD-UPD-RMV-APP].
 
 ## Aktualisieren der Identitätskonfiguration für eine Anwendung
@@ -37,7 +38,7 @@ Um deshalb das Format und die Eigenschaften des Anwendungsmanifests verstehen zu
 - Deklarieren bekannter Clientanwendungen.
 - Fordern Sie bei Azure AD die Ausgabe eines Anspruchs für die Gruppenmitgliedschaften des angemeldeten Benutzers an. HINWEIS: Durch eine zusätzliche Konfiguration kann ein Anspruch für die Verzeichnisrollenmitgliedschaften des Benutzers ausgegeben werden. Ein Implementierungsbeispiel finden Sie im Artikel [Authorization in Cloud Applications using AD Groups][AAD-GROUPS-FOR-AUTHORIZATION] (in englischer Sprache).
 - Ermöglichen Sie die Unterstützung von impliziten OAuth 2.0-Code Grant-Datenflüssen (für eingebettete JavaScript-Webseiten oder SPAs [Single Page Applications]) durch Ihre Anwendung.
-- Aktivieren Sie die Verwendung von X509-Zertifikaten als geheimer Schlüssel. Ein Implementierungsbeispiel finden Sie im Artikel [Build service and daemon apps in Office 365][O365-SERVICE-DAEMON-APPS] (in englischer Sprache). 
+- Aktivieren Sie die Verwendung von X509-Zertifikaten als geheimer Schlüssel. Ein Implementierungsbeispiel finden Sie im Artikel [Build service and daemon apps in Office 365][O365-SERVICE-DAEMON-APPS] (in englischer Sprache).
 
 Das Anwendungsmanifest bietet außerdem eine gute Möglichkeit, den Status Ihrer Anwendungsregistrierung nachzuverfolgen. Da dieser im JSON-Format verfügbar ist, kann die Dateidarstellung in Ihrer Quellcodeverwaltung geprüft werden, gemeinsam mit dem Quellcode der Anwendung.
 
@@ -94,14 +95,14 @@ Verwenden Sie den unten angezeigten DISQUS-Kommentarabschnitt, um uns Feedback z
 
 <!--article references -->
 [AAD-GROUPS-FOR-AUTHORIZATION]: http://www.dushyantgill.com/blog/2014/12/10/authorization-cloud-applications-using-ad-groups/
-[ADD-UPD-RMV-APP]: https://msdn.microsoft.com/library/azure/dn132599.aspx
+[ADD-UPD-RMV-APP]: active-directory-integrating-applications.md
 [APPLICATION-ENTITY]: https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#ApplicationEntity
 [APPLICATION-ENTITY-OAUTH2-PERMISSION]: https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#OAuth2PermissionType
 [AZURE-PORTAL]: https://manage.windowsazure.com
-[GRAPH-API]: https://msdn.microsoft.com/library/azure/hh974476.aspx
+[GRAPH-API]: active-directory-graph-api.md
 [INTEGRATING-APPLICATIONS-AAD]: https://azure.microsoft.com/documentation/articles/active-directory-integrating-applications/
 [O365-PERM-DETAILS]: https://msdn.microsoft.com/office/office365/HowTo/application-manifest
 [O365-SERVICE-DAEMON-APPS]: https://msdn.microsoft.com/office/office365/howto/building-service-apps-in-office-365
 [RBAC-CLOUD-APPS-AZUREAD]: http://www.dushyantgill.com/blog/2014/12/10/roles-based-access-control-in-cloud-applications-using-azure-ad/
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

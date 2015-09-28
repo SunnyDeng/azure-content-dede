@@ -1,19 +1,4 @@
-<properties 
-   pageTitle="Erstellen eines neuen StorSimple-Manager-Diensts"
-   description="Beschreibt das Erstellen einer neuen Instanz des StorSimple-Manager-Diensts."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="carolz"
-   editor="" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/18/2015"
-   ms.author="v-sharos" />
+<!--author=alkohli last changed: 9/17/15-->
 
 
 #### So erstellen Sie einen neuen Dienst
@@ -33,10 +18,14 @@
   4. Aktivieren Sie **Neues Speicherkonto erstellen**, um automatisch ein Speicherkonto mit dem Dienst zu erstellen. Dieses Speicherkonto erhält einen speziellen Namen wie "storsimplebwv8c6dcnf". Wenn Ihre Daten an einem anderen Speicherort gespeichert werden sollen, deaktivieren Sie dieses Kontrollkästchen. 
   5. Klicken Sie auf **StorSimple-Manager erstellen**, um den Dienst zu erstellen.
 
-   ![Erstellen eines Diensts](./media/storsimple-create-new-service/HCS_CreateAService-include.png)
+   ![StorSimple-Manager erstellen](./media/storsimple-create-new-service/HCS_CreateAService-include.png)
 
   Sie werden auf die Startseite **Dienst** weitergeleitet. Die Diensterstellung dauert einige Minuten. Nachdem der Dienst erfolgreich erstellt wurde, werden Sie entsprechend benachrichtigt, und der Status des Diensts ändert sich in **Aktiv**.
  
    ![Diensterstellung](./media/storsimple-create-new-service/HCS_StorSimpleManagerServicePage-include.png)
 
-<!-----HONumber=August15_HO8-->
+![Video verfügbar](./media/storsimple-create-new-service/Video_icon.png) **Video verfügbar**
+
+Sie können sich [hier](http://azure.microsoft.com/documentation/videos/create-a-storsimple-manager-service/) ein Video anschauen, in dem das Erstellen eines neuen StorSimple Manager-Services demonstriert wird.
+
+<!---HONumber=Sept15_HO3-->

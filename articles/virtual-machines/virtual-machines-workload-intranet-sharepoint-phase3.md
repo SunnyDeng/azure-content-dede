@@ -11,7 +11,7 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows-sharepoint"
+	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/21/2015"
@@ -19,9 +19,13 @@
 
 # SharePoint-Intranetfarm-Arbeitsauslastung Phase 3: Konfigurieren der SQL Server-Infrastruktur
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
+
 In dieser Phase der Intranet-Bereitstellung einer SharePoint 2013-Farm mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in den Azure-Infrastrukturdiensten erstellen und konfigurieren Sie die beiden SQL Server-Computer und den Mehrheitsknotencomputer des Clusters in der Dienstverwaltung und fassen diese in einem Windows-Servercluster zusammen.
 
 Diese Phase muss vor Beginn von [Phase 4](virtual-machines-workload-intranet-sharepoint-phase4.md) ausgeführt worden sein. Eine Übersicht über alle Phasen finden Sie unter [Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-workload-intranet-sharepoint-overview.md).
+
+> [AZURE.NOTE]In den vorliegenden Anweisungen wird ein SQL Server-Image aus dem Azure-Imagekatalog verwendet, und es werden Ihnen laufende Kosten für die Nutzung der SQL Server-Lizenz berechnet. Es ist auch möglich, virtuelle Computer in Azure zu erstellen und eigene SQL Server-Lizenzen zu installieren. Allerdings müssen Sie in dem Fall über Software Assurance und Lizenzmobilität verfügen, um die SQL Server-Lizenz auf einem virtuellen Computer einschließlich des virtuellen Computers in Azure verwenden zu können. Weitere Informationen zum Installieren von SQL Server auf einem virtuellen Computer finden Sie unter [Installation für SQL Server](https://msdn.microsoft.com/library/bb500469.aspx).
 
 ## Erstellen der virtuellen Computer des SQL Server-Clusters in Azure
 
@@ -228,4 +232,4 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 4:
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

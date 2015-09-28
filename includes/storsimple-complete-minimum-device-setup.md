@@ -1,19 +1,4 @@
-<properties 
-   pageTitle="Abschließen der minimalen Gerätekonfiguration"
-   description="Beschreibt das Abschließen der minimalen Konfiguration von StorSimple-Geräten."
-   services="storsimple"
-   documentationCenter="NA"
-   authors="SharS"
-   manager="adinah"
-   editor="tysonn" />
-<tags 
-   ms.service="storsimple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="TBD"
-   ms.date="08/07/2015"
-   ms.author="v-sharos" />
+<!--author=alkohli last changed: 9/17/15-->
 
 #### So führen Sie die mindestens erforderliche StorSimple-Gerätekonfiguration aus
 
@@ -49,4 +34,8 @@
 
  >[AZURE.NOTE]Alle anderen Geräteeinstellungen können über die Seite **Konfigurieren** geändert werden.
 
-<!---HONumber=August15_HO7-->
+![Video verfügbar](./media/storsimple-complete-minimum-device-setup/Video_icon.png) **Video verfügbar**
+
+Sie können sich [hier](http://azure.microsoft.com/documentation/videos/minimum-storsimple-device-setup/) ein Video anschauen, in dem die mindestens erforderliche Gerätekonfiguration demonstriert wird.
+
+<!---HONumber=Sept15_HO3-->

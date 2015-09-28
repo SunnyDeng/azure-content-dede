@@ -1,30 +1,34 @@
 <properties 
-	pageTitle="Einführung in die App Service-Umgebung"
-	description="Lernen Sie die App Service-Umgebung kennen, die sichere, mit dem VNet verknüpfte, dedizierte Skalierungseinheiten für die Ausführung all Ihrer Apps bietet."
-	services="app-service\web"
-	documentationCenter=""
-	authors="ccompy"
-	manager="wpickett"
+	pageTitle="Einführung in die App Service-Umgebung" 
+	description="Lernen Sie die App Service-Umgebung kennen, die sichere, mit dem VNet verknüpfte, dedizierte Skalierungseinheiten für die Ausführung all Ihrer Apps bietet." 
+	services="app-service\web" 
+	documentationCenter="" 
+	authors="ccompy" 
+	manager="wpickett" 
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/31/2015"
-	ms.author="stefsh"/>
+	ms.service="app-service" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/11/2015" 
+	ms.author="stefsch"/>
 
 # Einführung in die App Service-Umgebung
 
 ## Übersicht ##
 Eine App Service-Umgebung ist eine Option des [Premium][PremiumTier]-Tarifs von Azure App Service, die eine vollständig isolierte und dedizierte Umgebung zur sicheren Ausführung all Ihrer Apps bereitstellt. Dazu gehören [Web-Apps][WebApps], [mobile Apps][MobileApps], [API-Apps][APIApps] und [Logik-Apps][LogicApps] mit erweiterten Skalierungsoptionen.
 
-Computeressourcen für eine App Service-Umgebung werden ausschließlich zur Ausführung Ihrer Apps eingesetzt. Eine App Service-Umgebung wird immer in einem regionalen virtuellen Netzwerk erstellt. Dadurch ergeben sich für Ihre Apps neue Optionen für die Netzwerkisolation. Eine App Service-Umgebung unterstützt außerdem zusätzliche Skalierungsoptionen mit bis zu fünfzig (50) Computeressourcen, die zur Ausführung Ihrer Apps zur Verfügung stehen. Außerhalb einer App Service-Umgebung gilt ein Limit von 20 Computeressourcen für das Hosten Ihrer Apps.
+Computeressourcen für eine App Service-Umgebung werden ausschließlich zur Ausführung Ihrer Apps eingesetzt. Eine App Service-Umgebung wird immer in einem regionalen, klassischen virtuellen „v1“-Netzwerk erstellt. Dadurch ergeben sich für Ihre Apps neue Optionen für die Netzwerkisolation. Eine App Service-Umgebung unterstützt außerdem zusätzliche Skalierungsoptionen mit bis zu fünfzig (50) Computeressourcen, die zur Ausführung Ihrer Apps zur Verfügung stehen. Außerhalb einer App Service-Umgebung gilt ein Limit von 20 Computeressourcen für das Hosten Ihrer Apps.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Unterstützung für virtuelle Netzwerke ##
-Eine App Service-Umgebung kann entweder in einem bereits vorhandenen oder in einem neuen regionalen virtuellen Netzwerk erstellt werden. ([Hier finden Sie weitere Informationen zu virtuellen Netzwerken.][MoreInfoOnVirtualNetworks]) Da eine App Service-Umgebung sich immer in einem regionalen virtuellen Netzwerk, genauer gesagt in einem Subnetz eines regionalen virtuellen Netzwerks befindet, können Sie die Sicherheitsfunktionen virtueller Netzwerke zum Steuern sowohl der eingehenden als auch der ausgehenden Netzwerkkommunikation nutzen.
+Eine App Service-Umgebung kann entweder in einem bereits vorhandenen oder in einem neuen regionalen, klassischen virtuellen „v1“-Netzwerk erstellt werden. ([Hier finden Sie weitere Informationen zu virtuellen Netzwerken.][MoreInfoOnVirtualNetworks]) Da eine App Service-Umgebung sich immer in einem regionalen virtuellen Netzwerk, genauer gesagt in einem Subnetz eines regionalen virtuellen Netzwerks befindet, können Sie die Sicherheitsfunktionen virtueller Netzwerke zum Steuern sowohl der eingehenden als auch der ausgehenden Netzwerkkommunikation nutzen.
+
+**Hinweis:** Eine App Service-Umgebung kann nicht in einem „v2“ virtuellen Netzwerk erstellt werden.
 
 Mithilfe von [Netzwerksicherheitsgruppen][NetworkSecurityGroups] können Sie die eingehende Netzwerkkommunikation mit dem Subnetz einschränken, das eine App Service-Umgebung enthält. Dadurch können Sie Apps hinter Upstreamgeräten und -diensten ausführen wie z. B. Web Application Firewalls und Netzwerk-SaaS-Anbietern.
 
@@ -79,4 +83,4 @@ Informationen zur Verwendung einer App Service-Umgebung mit ExpressRoute finden 
 
 <!-- IMAGES -->
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

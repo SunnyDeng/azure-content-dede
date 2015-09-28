@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="rkarlin"
-	manager="stevenpo"
+	manager="msStevenPo"
 	editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.date="09/09/2015"
 	ms.author="rkarlin"/>
 
 
@@ -42,15 +42,11 @@ Stellen Sie vor dem Ausführen dieses Verfahrens sicher, dass der STS, zu dem di
 1. Öffnen Sie die **ADFS-Verwaltung**.
 2. Wechseln Sie zu **Vertrauensstellungen der vertrauenden Seite**, und klicken Sie mit der rechten Maustaste auf die App, die Sie mit dem Anwendungsproxy veröffentlichen, und wählen Sie **Eigenschaften**.
 
-![Vertrauensstellungen der vertrauenden Seite: mit der rechten Maustaste auf den App-Namen klicken – Screenshot][1]
+![Vertrauensstellungen der vertrauenden Seite: mit der rechten Maustaste auf den App-Namen klicken – Screenshot](./media/active-directory-application-proxy-claims-aware-apps/appproxyrelyingpartytrust.png)
 
 3. Wählen Sie auf der Registerkarte **Endpunkte** unter **Endpunkttyp** die Option **WS-Verbund**.
 4. Geben Sie unter **Vertrauenswürdige URL** die URL ein, die Sie unter **Externe URL** in den Anwendungsproxy eingegeben haben, und klicken Sie auf **OK**.
 
-![Hinzufügen eines Endpunkts – Wert "Vertrauenswürdige URL" festlegen – Screenshot][2]
+![Hinzufügen eines Endpunkts – Wert "Vertrauenswürdige URL" festlegen – Screenshot](./media/active-directory-application-proxy-claims-aware-apps/appproxyendpointtrustedurl.png)
 
-<!--image references-->
-[1]: ./media/active-directory-application-proxy-claims-aware-apps/AppDropdown.jpg
-[2]: ./media/active-directory-application-proxy-claims-aware-apps/AddEndpoint.jpg
-
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

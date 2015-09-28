@@ -1,13 +1,13 @@
 <properties
    pageTitle="Häufig gestellte Fragen zu Azure Backup | Microsoft Azure"
-	description="Häufig gestellte Fragen zum Azure Backup-Dienst"
-	services="backup"
-	documentationCenter=""
-	authors="Jim-Parker"
-	manager="shreeshd"
-	editor=""/>
+   description="Häufig gestellte Fragen zum Azure Backup-Dienst"
+   services="backup"
+   documentationCenter=""
+   authors="Jim-Parker"
+   manager="shreeshd"
+   editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/26/2015" ms.author="giridham"; "arunak"; "jimpark"; "aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="08/26/2015" ms.author="trinadhk";"giridham"; "arunak"; "jimpark"; "aashishr"/>
 
 # Azure Backup – Häufig gestellte Fragen
 Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. Weitere Fragen zu Azure Backup können im [Diskussionsforum](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup) gestellt werden. Ein Mitglied der Community hilft Ihnen dabei, Ihre Antworten zu erhalten. Wenn eine Frage häufiger gestellt wird, fügen wir sie diesem Artikel hinzu, damit sie schnell und einfach gefunden werden kann.
@@ -40,7 +40,7 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 
 **F6. Kann ich einen Tresor als Abrechnungseinheit betrachten?** <br/> A6. Zwar besteht die Möglichkeit, eine detaillierte Rechnung für jeden Tresor zu erhalten, es empfiehlt sich aber unbedingt, ein Azure-Abonnement als Abrechnungseinheit zu verwenden. Es ist für alle Dienste konsistent und einfacher zu verwalten.
 
-**F7. Gibt es Beschränkungen im Hinblick auf die Anzahl von Servern/Computern, die pro Tresor registriert werden können?** <br/> A7. Ja, Sie können bis zu 50 Computer pro Tresor registrieren. Wenn Sie weitere Computer registrieren müssen, erstellen Sie einen neuen Tresor.
+**F7. Gibt es Beschränkungen im Hinblick auf die Anzahl von Servern/Computern, die pro Tresor registriert werden können?** <br/> A7. Ja, Sie können bis zu 50 Computer pro Tresor registrieren. Bei virtuellen Azure-IaaS-Computern liegt die Beschränkung bei 100 virtuellen Computer pro Depot. Wenn Sie weitere Computer registrieren müssen, erstellen Sie einen neuen Tresor.
 
 **F8. Gibt es Beschränkungen für die Datenmenge, die von einem Windows-Server/-Client oder einem SCDPM-Server gesichert werden kann?** <br/> A8. Nein.
 
@@ -114,7 +114,7 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 |Microsoft Exchange|Summe aller Exchange-Datenbanken eines zu sichernden Exchange-Servers|
 |BMR/Systemstatus|Jede einzelne Kopie der BMR oder des Systemstatus des zu sichernden Computers|
 
-**F2. Gibt es einen Grenzwert für die Häufigkeit der geplanten Sicherungen pro Tag?**<br/> A2. Ja. Azure Backup ermöglicht drei Sicherungskopien pro Tag über Windows Server/Client und zwei Sicherungskopien pro Tag über SCDPM.
+**F2. Gibt es einen Grenzwert für die Häufigkeit der geplanten Sicherungen pro Tag?**<br/> A2. Ja. Azure Backup ermöglicht drei Sicherungskopien pro Tag über Windows Server oder Windows Client, zwei Sicherungskopien pro Tag über SCDPM und eine Sicherungskopie am Tag für virtuelle IaaS-Computer.
 
 **F3. Gibt es einen Unterschied zwischen den Richtlinien zur Sicherungsplanung von DPM und Azure Backup (d. h. auf Windows Server ohne DPM)?** <br/> A3. Ja. Mithilfe von DPM können Sie tägliche, wöchentliche, monatliche und jährliche Planungen angeben. Auf einem Windows-Server (ohne DPM) hingegen können Sie nur tägliche und wöchentliche Zeitpläne festlegen.
 
@@ -132,13 +132,9 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 
 **F9. Wenn jeder Wiederherstellungspunkt sich wie ein vollständiger Punkt verhält, wie wirkt sich dies auf den abrechenbaren Gesamtspeicher für die Sicherung aus?**<br/> A9. Bei typischen Produkten für die langfristige Aufbewahrung werden Sicherungsdaten als vollständige Punkte gespeichert. Diese sind im Hinblick auf den Speicher ineffizient, jedoch einfacher und schneller wiederherzustellen. Inkrementelle Kopien sind speichereffizient. Allerdings müssen Sie eine Datenkette wiederherstellen, was sich auf die Wiederherstellungszeit auswirkt. Die besondere Speicherarchitektur von Azure Backup bietet Ihnen die Vorteile beider Ansätze, indem die Daten optimal zur schnellen Wiederherstellung und zu geringen Speicherkosten gespeichert werden. Durch diesen Ansatz wird sichergestellt, dass Ihre (eingehende und ausgehende) Bandbreite effizient genutzt, der Speicher möglichst gering gehalten und die Zeit zur Wiederherstellung auf ein Minimum beschränkt wird.
 
-**F10. Gibt es eine Beschränkung für die Anzahl der Wiederherstellungspunkte, die erstellt werden können?**<br/> A10. Ab April 2015 können Sie bis zu 366 Wiederherstellungspunkte verwenden. Sie können eine beliebige Kombination einsetzen, um eine Anzahl von weniger als 366 zu erzielen. Die Aufbewahrungspunkte in der unten gezeigten Abbildung ergeben in der Summe beispielsweise 354. <br/>
+**F10. Gibt es eine Beschränkung für die Anzahl der Wiederherstellungspunkte, die erstellt werden können?**<br/> A10. Nein. Wir haben eine Beschränkung für Wiederherstellungspunkte ausgeschlossen. Sie können so viele Wiederherstellungspunkte wie gewünscht erstellen.
 
-![Bildschirm für die Aufbewahrung](./media/backup-azure-backup-faq/RetentionScreen1.png)
-
-**F11. Muss ich ein Upgrade des Agents durchführen oder die erste Sicherung durch Seeding erneut einrichten, wenn Microsoft den Grenzwert von 366 erhöht?** <br/> A11. Nein. Sobald wir unseren Dienst ändern, werden Sie über unsere sozialen Medien (Blogs, Azure-Ankündigungen, Portal usw.) benachrichtigt. Basierend auf Ihren Anforderungen müssen Sie nur die Aufbewahrungsrichtlinie ändern.
-
-**F12. Warum entspricht die Menge der in der Sicherung übertragenen Daten nicht der Menge der gesicherten Daten?**<br/> A12. Alle Daten, die gesichert werden, werden vor der Übertragung komprimiert und verschlüsselt. Je nach Typ der zu sichernden Daten können Sie mit einem Komprimierungsvorteil von 30 bis 40 % rechnen.
+**F11. Warum entspricht die Menge der in der Sicherung übertragenen Daten nicht der Menge der gesicherten Daten?**<br/> A11. Alle Daten, die gesichert werden, werden vor der Übertragung komprimiert und verschlüsselt. Je nach Typ der zu sichernden Daten können Sie mit einem Komprimierungsvorteil von 30 bis 40 % rechnen.
 
 ## Wiederherstellen
 **F1. Wie viele Wiederherstellungen kann ich für die Daten ausführen, die auf Azure gesichert werden?**<br/> A1. Es gibt keine Beschränkung für die Anzahl der Wiederherstellungen aus Azure Backup.
@@ -169,8 +165,8 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 
 	| Registrierungspfad | Registrierungsschlüssel | Wert |
 	| ------ | ------- | ------ |
-	| HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows Azure Backup\\Config | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
-	| HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows Azure Backup\\Config\\CloudBackupProvider | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
+	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config` | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
+	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider` | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
 
 
 + Starten Sie die OBEngine durch Ausführen des nachfolgenden Befehls in einer Eingabeaufforderung mit erhöhten Rechten:
@@ -179,4 +175,4 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 
 Sobald die Sicherungen erfolgreich mit dem neuen Cachespeicherort ausgeführt werden, können Sie den ursprünglichen Cacheordner entfernen.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

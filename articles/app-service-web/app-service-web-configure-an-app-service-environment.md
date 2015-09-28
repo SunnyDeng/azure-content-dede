@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Konfigurieren einer App Service-Umgebung"
-	description="Konfiguration, Verwaltung und Überwachung von App Service-Umgebungen"
-	services="app-service\web"
-	documentationCenter=""
-	authors="ccompy"
-	manager="stefsch"
+	pageTitle="Konfigurieren einer App Service-Umgebung" 
+	description="Konfiguration, Verwaltung und Überwachung von App Service-Umgebungen" 
+	services="app-service\web" 
+	documentationCenter="" 
+	authors="ccompy" 
+	manager="stefsch" 
 	editor=""/>
 
 <tags 
-	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="04/27/2015"
+	ms.service="app-service" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/11/2015" 
 	ms.author="ccompy"/>
 
 # Konfigurieren einer App Service-Umgebung #
@@ -27,12 +27,14 @@ Im Allgemeinen besteht eine App Service-Umgebung aus mehreren Hauptkomponenten:
 - Compute-Ressourcen, die im gehosteten Dienst der Azure App-Umgebung ausgeführt werden
 - Speicher
 - Datenbank
-- Virtual Network mit mindestens einem Subnetz
+- Ein klassisches „v1“-Virtual Network mit mindestens einem Subnetz
 - Subnetz mit darin ausgeführtem gehosteten Dienst der Azure App-Umgebung
 
 Zum Verwalten und Überwachen Ihrer App Service-Umgebungen können Sie im Azure-Vorschauportal über "Durchsuchen" -> "App Service-Umgebungen" auf eine Benutzeroberfläche zugreifen. Die erste Version verfügt über die nötigen Funktionen zum Verwalten des Systems. Sie wird in den kommenden Wochen weiterhin durch zusätzliche Funktionen ergänzt.
 
 ![][1]
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Überwachung ##
 
@@ -90,8 +92,8 @@ Dies führt bei ausgeführten Apps zu sehr viel weniger Unterbrechungen als das 
 
 [Virtual Network][virtualnetwork] und Subnetz werden vollständig vom Benutzer gesteuert. App Service-Umgebungen besitzen einige Netzwerkanforderungen, aber der Rest unterliegt der Steuerung durch den Benutzer. Die App Service-Umgebung stellt folgende Anforderungen:
 
-- Ein VNET mit mindestens 512 Adressen
-- Ein Subnetz mit mindestens 256 Adressen 
+- ein klassisches „v1“-VNET mit mindestens 512 Adressen
+- ein Subnetz mit mindestens 8 Adressen 
 - Das VNET muss ein regionales VNET sein  
  
 Die Verwaltung Ihres VNET erfolgt über die normale Virtual Network-Benutzeroberfläche.
@@ -131,4 +133,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

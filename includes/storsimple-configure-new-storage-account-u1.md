@@ -1,3 +1,4 @@
+<!--author=alkohli last changed: 9/17/15-->
 
 #### So fügen Sie ein Speicherkonto zur StorSimple 8000-Serie mit Update 1.0 hinzu
 
@@ -46,4 +47,4 @@
 
 7. Das neu erstellte Speicherkonto wird auf der Seite **Konfigurieren** unter **Speicherkonten** angezeigt. Klicken Sie auf **Speichern**, um das neue Speicherkonto zu speichern. Klicken Sie auf **OK**, wenn Sie zur Bestätigung aufgefordert werden.
 
-<!----HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

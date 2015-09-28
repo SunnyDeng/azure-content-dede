@@ -82,7 +82,7 @@ Sie erstellen nun einen verknüpften Dienst für einen bedarfsgesteuerten HDInsi
 		    "typeProperties": {
 		      "version": "3.1",
 		      "clusterSize": 1,
-		      "timeToLive": "00:05:00",
+		      "timeToLive": "00:30:00",
 		      "linkedServiceName": "AzureStorageLinkedService1"
 		    }
 		  }
@@ -235,4 +235,4 @@ In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (H
 ## Feedback senden
 Über Ihr Feedback zu diesem Artikel würden wir uns sehr freuen. Bitte nehmen Sie sich einen Moment Zeit, und senden Sie uns Ihr Feedback per [E-Mail](mailto:adfdocfeedback@microsoft.com?subject=data-factory-build-your-first-pipeline-using-vs.md).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

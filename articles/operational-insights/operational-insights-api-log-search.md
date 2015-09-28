@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="07/21/2015"
+   ms.date="09/10/2015"
    ms.author="banders" />
 
 
@@ -31,7 +31,8 @@ Der Azure-Ressourcen-Manager kann über eine [Library für .NET](https://msdn.mi
 
 ### Verwendung von ARMClient
 
-1. Installieren Sie [Chocolatey](https://chocolatey.org/), ein Open Source Computer-Paket-Manager für Windows. Öffnen Sie eine Eingabeaufforderung als Administrator, und führen Sie den folgenden Befehl aus:
+1. Installieren Sie [Chocolatey](https://chocolatey.org/), ein Open Source Computer-Paket-Manager für Windows.
+2. Öffnen Sie ein PowerShell-Fenster als Administrator, und führen Sie den folgenden Befehl aus:
 
     ```
     @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
@@ -299,7 +300,8 @@ Im Folgenden werden die verfügbaren optionalen Parameter beschrieben.
 
 Der Parameter "Highlight" ist ein optionaler Parameter, den Sie verwenden können, damit das Suchsubsystem einen Satz von Markern in die Antwort einbezieht.
 
-Diese Marker stehen für den Beginn und das Ende von hervorgehobenem Text, der den in Ihrer Suchabfrage angegebenen Begriffen entspricht. Sie können die Start- und Endmarker angeben, die bei der Suche zum Einschließen des markierten Begriffs verwendet werden.
+Diese Marker stehen für den Beginn und das Ende von hervorgehobenem Text, der den in Ihrer Suchabfrage angegebenen Begriffen entspricht.
+Sie können die Start- und Endmarker angeben, die bei der Suche zum Einschließen des markierten Begriffs verwendet werden.
 
 **Beispiel für eine Suchabfrage**
 
@@ -344,4 +346,4 @@ Diese Marker stehen für den Beginn und das Ende von hervorgehobenem Text, der d
 
 Beachten Sie, dass das oben genannte Ergebnis eine Fehlermeldung enthält, die mit dem Präfix versehen und angefügt wurde.
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

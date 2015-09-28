@@ -5,20 +5,22 @@
 	documentationCenter=""
 	authors="ccompy"
 	manager="stefsch"
-	editor=""/>
+	editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="04/27/2015"
+	ms.date="09/15/2015"
 	ms.author="ccompy"/>
 
 # Erstellen einer Web-App in einer App Service-Umgebung #
 
 Das Erstellen von Web-Apps ist in einer App Service-Umgebung nahezu identisch mit den Schritten in einer regulären Umgebung. Wenn Sie mit der Funktion der App Service-Umgebung nicht vertraut sind, lesen Sie das Dokument [Was ist eine App Service-Umgebung](app-service-app-service-environment-intro.md).
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 Um eine Web-App in einer App Service-Umgebung erstellen zu können, müssen Sie zunächst über eine App Service-Umgebung verfügen. Einzelheiten zum Erstellen einer App Service-Umgebung finden Sie im Dokument [Erstellen einer App Service-Umgebung](app-service-web-how-to-create-an-app-service-environment.md).
 
@@ -91,4 +93,4 @@ Nach dem Erstellen der Web-App und des App Service-Plans, sollten Sie eine Skali
 [HowtoConfigureASE]: http://azure.microsoft.com/documentation/articles/app-service-web-configure-an-app-service-environment
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

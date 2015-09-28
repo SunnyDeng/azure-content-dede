@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie einen benutzerdefinierten virtuellen Computer in Azure erstellen können."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/11/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 #Erstellen eines benutzerdefinierten virtuellen Computers
 
@@ -31,4 +31,4 @@ Ein *benutzerdefinierter* virtueller Computer ist einfach ein virtueller Compute
 
 [AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-windowsvm.md)]
 
-<!-----HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

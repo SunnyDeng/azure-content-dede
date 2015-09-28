@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verbinden eines mobilen Azure-Diensts mit einem lokalen SQL Server über Hybridverbindungen - Azure Mobile Services" 
-	description="Erfahren Sie, wie Sie über Hybridverbindungen eine Verbindung mit einem lokalen SQL-Server von einem mobilen Azure-Dienst herstellen." 
+	pageTitle="Verbinden eines mobilen .NET-Back-End-Diensts mit einem lokalen SQL Server über Hybridverbindungen | Azure Mobile Services" 
+	description="Erfahren Sie, wie Sie über Azure Hybridverbindungen eine Verbindung mit einem lokalen SQL-Server von einem mobilen .NET-Back-End-Dienst herstellen." 
 	services="mobile-services" 
 	documentationCenter="" 
 	authors="ggailey777" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="06/16/2015" 
+	ms.date="09/15/2015" 
 	ms.author="glenga"/>
 
   
@@ -133,4 +133,4 @@ Da Sie jetzt die Datenbankverbindung überprüft haben, müssen Sie eine App-Ein
 [Azure-Verwaltungsportal]: http://manage.windowsazure.com
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

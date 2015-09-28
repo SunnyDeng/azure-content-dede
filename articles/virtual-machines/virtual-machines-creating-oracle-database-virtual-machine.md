@@ -1,7 +1,5 @@
 <properties pageTitle="Erstellen eines virtuellen Oracle Database-Computers in Azure" description="Erstellen Sie mithilfe eines Beispiels einen virtuellen Oracle-Computer in Microsoft Azure und anschließend eine Oracle-Datenbank auf dem Computer." services="virtual-machines" authors="bbenz" documentationCenter=""/>
-
-<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz"/>
-
+<tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
 #Erstellen eines virtuellen Oracle Database-Computers in Azure
 Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer (Virtual Machine, VM) auf der Grundlage eines von Microsoft bereitgestellten Oracle Database-Image unter Windows Server 2012 in Azure erstellen. Der Vorgang umfasst zwei Schritte: die Erstellung des virtuellen Computers und die Erstellung der Oracle-Datenbank auf dem virtuellen Computer. In diesem Beispiel wird Oracle Database Version 12c verwendet, die Schritte sind jedoch für Version 11g nahezu identisch.
 
@@ -21,19 +19,19 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer (Virtual Machine,
 
 7.	Wählen Sie einen **Tarif** aus. Beachten Sie, dass die empfohlenen Preiskategorien standardmäßig angezeigt werden. Um alle Konfigurationsoptionen anzuzeigen, klicken Sie oben rechts auf **Alle anzeigen**.
 
-8.	Legen Sie [Optionale Konfiguration](https://msdn.microsoft.com/library/azure/dn763935.aspx) nach Bedarf fest. Beachten Sie dabei folgende Überlegungen:
+8.	Legen Sie die optionale Konfiguration nach Bedarf fest. Beachten Sie dabei folgende Überlegungen:
 
 	a. Lassen Sie **Speicherkonto** unverändert, um ein neues Speicherkonto mit dem Namen des virtuellen Computers zu erstellen.
 
-	b. Behalten Sie für **Verfügbarkeitsgruppe** die Einstellung „Nicht konfiguriert“ bei.
+	b. Legen Sie für die **Verfügbarkeitsgruppe** "Nicht konfiguriert" fest.
 
 	c. Fügen Sie zu diesem Zeitpunkt keine **Endpunkte** hinzu.
 
 9.	Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe
 
-10. Wählen Sie ein Abonnement aus.
+10. Wählen Sie ein **Abonnement** aus.
 
-11. Wählen Sie einen Standort aus.
+11. Wählen Sie einen **Standort** aus.
 
 12. Klicken Sie auf **Erstellen**. Der Vorgang zum Erstellen eines virtuellen Computers wird gestartet. Wenn der Status des virtuellen Computers **Wird ausgeführt** lautet, fahren Sie mit dem nächsten Schritt fort.
 
@@ -66,13 +64,13 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer (Virtual Machine,
 
 7.	Klicken Sie in Windows auf **Start**, und geben Sie **Datenbank-Konfigurationsassistent** ein. Klicken Sie auf das Symbol **Datenbank-Konfigurationsassistent**.
 
-8.	Geben Sie in den Dialogfeldern des Datenbank-Konfigurationsassistenten jeweils die erforderlichen Werte an:
+8.	Geben Sie in den Dialogfeldern des **Datenbank-Konfigurationsassistenten** jeweils die erforderlichen Werte an:
 
 	a. **Schritt 1:** Klicken Sie auf **Datenbank erstellen** und dann auf **Weiter**.
 
 		![](media/virtual-machines-creating-oracle-database-virtual-machine/image5.png)
 
-	b. **Schritt 2:** Geben Sie einen Wert für **Globaler Datenbankname** ein. Geben Sie einen Wert für **Administratorkennwort** ein, und bestätigen Sie ihn. Dieses Kennwort gilt für den SYSTEM-Benutzer Ihrer Oracle-Datenbank. Deaktivieren Sie das Kontrollkästchen **Als Container-Datenbank erstellen**. Klicken Sie auf **Weiter**.
+	b. **Schritt 2:** Geben Sie einen Wert für **Globaler Datenbankname** ein. Geben Sie einen Wert für **Administratorkennwort** ein, und bestätigen Sie ihn. Dieses Kennwort gilt für den **SYSTEM**-Benutzer Ihrer Oracle-Datenbank. Deaktivieren Sie das Kontrollkästchen **Als Container-Datenbank erstellen**. Klicken Sie auf **Weiter**.
 
 		![](media/virtual-machines-creating-oracle-database-virtual-machine/image6.png)
 
@@ -81,16 +79,16 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer (Virtual Machine,
 	d. **Schritt 4:** Überprüfen Sie die Optionen unter **Datenbank erstellen – Zusammenfassung**, und klicken Sie dann auf **Fertig stellen**.
 
 		![](media/virtual-machines-creating-oracle-database-virtual-machine/image7.png)
-	e. **Schritt 5:** Auf der Statusseite wird der Status der Datenbankerstellung angezeigt.
+	e. **Schritt 5:** Auf der **Statusseite** wird der Status der Datenbankerstellung angezeigt.
 
 		![](media/virtual-machines-creating-oracle-database-virtual-machine/image8.png)
-	f. Nachdem die Datenbank erstellt wurde, können Sie das Dialogfeld **Kennwortverwaltung** verwenden. Ändern Sie ggf. die Kennworteinstellungen, und schließen Sie dann die Dialogfelder, um den Datenbank-Konfigurationsassistenten zu beenden.
+	f. Nachdem die Datenbank erstellt wurde, können Sie das Dialogfeld **Kennwortverwaltung** verwenden. Ändern Sie ggf. die Kennworteinstellungen, und schließen Sie dann die Dialogfelder, um den **Datenbank-Konfigurationsassistenten** zu beenden.
 
 ##Bestätigen, dass die Datenbank installiert ist
 
 1.	Starten Sie eine SQL Plus-Eingabeaufforderung, während Sie noch bei Ihrem virtuellen Computer angemeldet sind. Klicken Sie in Windows auf *Start**, und geben Sie **SQL Plus** ein. Klicken Sie auf das Symbol **SQL Plus**.
 
-2.	Geben Sie den Namen des SYSTEM-Benutzers und das Kennwort ein, den bzw. das Sie beim Erstellen der Oracle-Datenbank angegeben haben.
+2.	Geben Sie den Namen des **SYSTEM**-Benutzers und das Kennwort ein, den bzw. das Sie beim Erstellen der Oracle-Datenbank angegeben haben.
 
 3.	Führen Sie den folgenden Befehl an der SQL Plus-Eingabeaufforderung aus.
 
@@ -161,7 +159,7 @@ Um Remoteverbindungen mit Ihrer Datenbank zuzulassen (z. B. für einen Clientco
 ##Aktivieren des Remotezugriffs auf Oracle Database Enterprise Manager
 Wenn Sie den Remotezugriff für Oracle Database Enterprise Manager aktivieren möchten, öffnen Sie Port 5500 in der Firewall, und erstellen Sie im Azure-Portal einen VM-Endpunkt für 5500. (Verwenden Sie dazu die weiter oben angegebenen Schritte für das Öffnen von Port 1521 und das Erstellen eines Endpunkts für 1521.) Öffnen Sie dann einen Browser mit der URL im Format `http://<<unique_domain_name>>:5500/em`, um Oracle Enterprise Manager auf dem Remotecomputer auszuführen.
 
-> [AZURE.NOTE]Sie können den Wert für *<<unique\_domain\_name>>* im Azure-Portal[](https://ms.portal.azure.com/) festlegen, indem Sie auf **Virtuelle Computer** klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle Database verwenden.
+> [AZURE.NOTE]Sie können den Wert für *<<unique\_domain\_name>>* im [Azure-Portal](https://ms.portal.azure.com/) festlegen, indem Sie auf **Virtuelle Computer** klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle Database verwenden.
 
 ##Konfigurieren von Popular Options- und Advanced Options-Bündeln
 Wenn Sie das Bündel **Oracle Database with Popular Options** oder **Oracle Database with Advanced Options** verwenden, müssen Sie als Nächstes die Add-On-Funktionen in der Oracle-Installation konfigurieren. Anweisungen zum Einrichten dieser Funktionen unter Windows finden Sie in der Oracle-Dokumentation. Die Konfigurationen können je nach Anforderungen der einzelnen Komponenten stark variieren.
@@ -183,4 +181,4 @@ Nachdem Sie den virtuellen Computer eingerichtet und die Datenbank erstellt habe
 
 -	[Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Anzeigen und Verwalten von StorSimple-Warnungen | Microsoft Azure"
-	description="Beschreibt die StorSimple-Warnungsbedingungen und -Schweregrade, die Vorgehensweise zum Konfigurieren von Warnungsbenachrichtigungen sowie die Verwaltung von Warnungen mithilfe des StorSimple Manager-Diensts."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt die StorSimple-Warnungsbedingungen und -Schweregrade, die Vorgehensweise zum Konfigurieren von Warnungsbenachrichtigungen sowie die Verwaltung von Warnungen mithilfe des StorSimple Manager-Diensts."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="09/01/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/15/2015"
+   ms.author="v-sharos" />
 
 # Anzeigen und Verwalten von StorSimple-Warnungen mithilfe des StorSimple Manager-Diensts
 
@@ -231,6 +231,7 @@ Wenn die Cloudverbindung für das StorSimple-Gerät in der Produktion ausfällt,
 
 ## Nächste Schritte
 
-[Weitere Informationen zu StorSimple-Fehlern](storsimple-troubleshoot-operational-device.md).
+- Weitere Informationen zu [StorSimple-Fehlern](storsimple-troubleshoot-operational-device.md).
+- Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/02/2015"
+   ms.date="09/10/2015"
    ms.author="banders" />
 
 # Überlegungen zu Operations Manager mit Operational Insights
@@ -83,8 +83,8 @@ Wenn Sie beispielsweise von einer täglichen Uploadgröße von 100 KB pro Agent 
 
 Anzahl der Agents|Geschätzter Speicherplatzbedarf für die Verwaltungsgruppe
 ---|---
-5|\~2,5 MB (5 Agents x 100 KB Daten/Tag x 5 Tage = 2.500 KB)
-50|\~25 MB (50 Agents x 100 KB Daten/Tag x 5 Tage = 25.000 KB)
+5|~2,5 MB (5 Agents x 100 KB Daten/Tag x 5 Tage = 2.500 KB)
+50|~25 MB (50 Agents x 100 KB Daten/Tag x 5 Tage = 25.000 KB)
 
 ## Ausführende Operations Manager-Konten für Operational Insights
 
@@ -215,4 +215,4 @@ Führen Sie die folgenden Schritte aus, um das Konto festzulegen, wenn Sie Opera
 
 Wenn Sie Daten von Servern an unterschiedlichen geografischen Standorten analysieren möchten, sollten Sie die Verwendung einer Verwaltungsgruppe pro Standort in Betracht ziehen. Dadurch können Sie die Leistung der Datenübertragung vom Agent an die Verwaltungsgruppe verbessern.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

@@ -1,12 +1,12 @@
 <properties 
-	pageTitle="Erstellen einer Node.js-Webanwendung mit DocumentDB | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie mit Microsoft Azure DocumentDB Daten aus einer in Azure-Websites gehosteten Node.js Express-Webanwendung speichern und auf sie zugreifen." 
+	pageTitle="Kennenlernen von Node.js - DocumentDB-Node.js-Lernprogramm | Microsoft Azure" 
+	description="Kennenlernen von Node.js! Im Lernprogramm wird vorgestellt, wie Sie mit Microsoft Azure DocumentDB Daten aus einer in Azure-Websites gehosteten Node.js Express-Webanwendung speichern und auf sie zugreifen." 
+	keywords="Application development, database tutorial, learn node.js, node.js tutorial, documentdb, azure, Microsoft azure"
 	services="documentdb" 
 	documentationCenter="nodejs" 
 	authors="ryancrawcour" 
 	manager="jhubbard" 
 	editor="cgronlun"/>
-
 
 <tags 
 	ms.service="documentdb" 
@@ -17,29 +17,28 @@
 	ms.date="07/24/2015" 
 	ms.author="ryancraw"/>
 
-
 # <a name="_Toc395783175"></a>Erstellen einer Node.js-Webanwendung mithilfe von DocumentDB
 
-In diesem Lernprogramm erfahren Sie, wie Sie den Azure DocumentDB-Dienst verwenden, um Daten aus einer in Azure-Websites gehosteten Node.js-Express-Anwendung zu speichern und abzurufen.
+In diesem Node.js-Lernprogramm erfahren Sie, wie Sie den Azure DocumentDB-Dienst verwenden, um Daten aus einer in Azure-Websites gehosteten Node.js-Express-Anwendung zu speichern und abzurufen.
 
-Für den Beginn empfiehlt sich folgendes Video, in dem wir Ihnen zeigen, wie Sie ein Azure DocumentDB-Datenbankkonto bereitstellen und JSON-Dokumente in Ihrer Node.js-Anwendung speichern.
+Für den Beginn empfiehlt sich folgendes Video, in dem Sie erfahren, wie Sie ein Azure DocumentDB-Datenbankkonto bereitstellen und JSON-Dokumente in Ihrer Node.js-Anwendung speichern.
 
 > [AZURE.VIDEO azure-demo-getting-started-with-azure-documentdb-on-nodejs-in-linux]
 
-Kehren Sie dann zurück zu diesem Artikel, in dem Sie die Antworten auf die folgenden Fragen erfahren:
+Kehren Sie dann zu diesem Node.js-Lernprogramm zurück, in dem Sie die Antworten auf die folgenden Fragen erfahren:
 
 - Wie arbeite ich mit DocumentDB mithilfe des Moduls "documentdb npm"?
 - Wie kann ich die Webanwendung in Azure-Websites bereitstellen?
 
-In diesem Lernprogramm erstellen Sie eine einfache webbasierte Anwendung zur Aufgabenverwaltung, mit der Sie Aufgaben erstellen, abrufen und durchführen können. Die Aufgaben werden als JSON-Dokumente in Azure DocumentDB gespeichert.
+In diesem Datenbanklernprogramm erstellen Sie eine einfache webbasierte Anwendung zur Aufgabenverwaltung, mit der Sie Aufgaben erstellen, abrufen und durchführen können. Die Aufgaben werden als JSON-Dokumente in Azure DocumentDB gespeichert.
 
-![Screenshot der in diesem Lernprogramm erstellten Anwendung "Meine Aufgabenliste"](./media/documentdb-nodejs-application/image1.png)
+![Screenshot der in diesem Node.js-Lernprogramm erstellten Anwendung "My Todo List"](./media/documentdb-nodejs-application/image1.png)
 
 Sie haben keine Zeit, um das Lernprogramm abzuschließen, und möchten nur die vollständige Lösung von GitHub abrufen? Kein Problem. Die Lösung erhalten Sie [hier](https://github.com/Azure/azure-documentdb-node/tree/master/tutorial/todo).
 
 ## <a name="_Toc395783176"></a>Voraussetzungen
 
-> [AZURE.TIP]In diesem Lernprogramm wird davon ausgegangen, dass Sie bereits Erfahrung mit Node.js und Azure-Websites haben.
+> [AZURE.TIP]In diesem Node.js-Lernprogramm wird davon ausgegangen, dass Sie bereits Erfahrung mit Node.js und Azure-Websites haben.
 
 Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgendes vorhanden ist:
 
@@ -56,9 +55,9 @@ Erstellen Sie zunächst ein DocumentDB-Konto. Wenn Sie bereits über ein Konto v
 
 [AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
 
-## <a name="_Toc395783178"></a>Schritt2: Erstellen einer neuen Node.js-Anwendung
+## <a name="_Toc395783178"></a>Schritt 2: Erstellen einer neuen Node.js-Anwendung
 
-Jetzt erstellen Sie ein einfaches "Hello World"-Node.js-Projekt mithilfe des [Express](http://expressjs.com/)-Frameworks.
+Nun erfahren Sie, wie Sie ein einfaches "Hello World"-Node.js-Projekt mithilfe des [Express](http://expressjs.com/)-Frameworks erstellen.
 
 1. Öffnen Sie den bevorzugten Terminaldienst.
 
@@ -77,7 +76,7 @@ Jetzt erstellen Sie ein einfaches "Hello World"-Node.js-Projekt mithilfe des [Ex
 
 5. Sie können die neue Anwendung anzeigen, indem Sie in Ihrem Browser zu [http://localhost:3000](http://localhost:3000) navigieren.
 
-	![Screenshot der "Hello World"-Anwendung in einem Browserfenster](./media/documentdb-nodejs-application/image12.png)
+	![Kennenlernen von Node.js - Screenshot der "Hello World"-Anwendung in einem Browserfenster](./media/documentdb-nodejs-application/image12.png)
 
 ## <a name="_Toc395783179"></a>Schritt 3: Installieren zusätzlicher Module
 
@@ -537,7 +536,7 @@ Jetzt konzentrieren wir uns auf die Erstellung der Benutzeroberfläche, um den B
 
 4. Zum Abschließen einer Aufgabe aktivieren Sie einfach das Kontrollkästchen in der entsprechenden Spalte, und klicken Sie dann auf **Aufgaben aktualisieren**.
 
-## <a name="_Toc395783182"></a>Schritt 7: Bereitstellen der Anwendung auf Azure-Websites
+## <a name="_Toc395783182"></a>Schritt 7: Bereitstellen Ihres Anwendungsentwicklungsprojekts auf Azure-Websites
 
 1. Falls noch nicht geschehen, aktivieren Sie ein Git-Repository für Ihre Azure-Website. Anweisungen dazu finden Sie [hier](../web-sites-publish-source-control-git.md#step4).
 
@@ -561,4 +560,4 @@ Den Quellcode für die vollständige Referenzanwendung können Sie [hier](https:
   [Git]: http://git-scm.com/
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

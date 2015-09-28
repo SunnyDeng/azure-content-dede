@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Einrichten eines Webproxys für ein StorSimple-Gerät | Microsoft Azure"
-	description="Hier erfahren Sie, wie Sie Webproxyeinstellungen für Ihr StorSimple-Gerät mithilfe von Windows PowerShell für StorSimple konfigurieren."
-	services="storsimple"
-	documentationCenter=""
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Hier erfahren Sie, wie Sie Webproxyeinstellungen für Ihr StorSimple-Gerät mithilfe von Windows PowerShell für StorSimple konfigurieren."
+   services="storsimple"
+   documentationCenter=""
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/31/2015"
-	ms.author="alkohli"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/15/2015"
+   ms.author="alkohli" />
 
 # Konfigurieren des Webproxys für Ihr StorSimple-Gerät
 
@@ -146,6 +146,9 @@ Sind die Webproxyeinstellungen nicht korrekt konfiguriert, werden in Windows Pow
 > - Im Verwaltungsportal Ihres StorSimple Manager-Diensts werden keine Fehler für Webproxyeinstellungen angezeigt. Liegt nach Abschluss der Konfiguration ein Problem mit dem Webproxy vor, wechselt der Gerätestatus im Verwaltungsportal zu **Offline**.|
 
 ## Nächste Schritte
-Informationen zum Behandeln von Problemen beim Bereitstellen Ihres Geräts oder beim Konfigurieren der Webproxyeinstellungen finden Sie unter [Beheben von Problemen mit der Bereitstellung von StorSimple-Geräten](storsimple-troubleshoot-deployment.md).
 
-<!---HONumber=September15_HO1-->
+- Informationen zum Behandeln von Problemen beim Bereitstellen Ihres Geräts oder beim Konfigurieren der Webproxyeinstellungen finden Sie unter [Beheben von Problemen mit der Bereitstellung von StorSimple-Geräten](storsimple-troubleshoot-deployment.md).
+
+- Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+
+<!---HONumber=Sept15_HO3-->

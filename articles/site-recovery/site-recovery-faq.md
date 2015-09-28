@@ -200,6 +200,15 @@ Wenn Sie für die Replikation und den Schutz zwischen Hyper-V-Standorten die (SA
 
 Darüber hinaus muss SCVMM Ihre Arrays mithilfe eines aktualisierten SMI-S-Anbieters erkennen, der von Ihren jeweiligen Speicheranbietern bereitgestellt wird.
 
+## Bereitstellen zwischen VMware und Azure
+
+### Ich habe eine geklonte VMware VM. Kann ich die geklonte VM in Azure schützen?
+Eine geschützte VM kann nicht geklont werden. Sie können eine geklonte VMware VM in Azure schützen, sofern der Mobility Service nicht in ihr installiert ist. Sie können die VM klonen, bevor Sie den Mobility Service installieren. So vermeiden Sie einen doppelten Eintrag, da von beiden VMs dieselbe GUID gemeldet wird, was sich auf die Replikation auswirkt.
+
+### Kann ich einen virtuellen Prozessserver-Computer klonen?
+Nein, ein virtueller Prozessserver-Computer sollte nicht geklont werden. Wenn ein virtueller Prozessserver-Computer bereitgestellt wird, erstellt er seine eigene eindeutige ID. Wird er geklont, haben beide virtuellen Prozessserver-Computer dieselbe GUID, die sich auf die vorhandene Replikation auswirkt.
+
+
 ## Bereitstellung zwischen physischen Servern und Azure
 
 ### Kann ich meine physischen lokalen Server in Azure schützen?
@@ -247,4 +256,4 @@ So stellen Sie ASR bereit:
 
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

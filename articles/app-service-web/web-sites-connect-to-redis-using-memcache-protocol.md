@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Verbinden einer Web-App in Azure App Service mit Redis-Cache über das Memcache-Protokoll | Microsoft Azure"
+	pageTitle="Verbinden einer Web-App in Azure App Service mit Redis-Cache über das Memcache-Protokoll | Microsoft Azure"
 	description="Verbinden Sie eine Web-App in Azure App Service mit Redis-Cache über das Memcache-Protokoll."
 	services="app-service\web"
 	documentationCenter="php"
@@ -8,12 +8,12 @@
 	editor="riande"/>
 
 <tags
-   ms.service="app-service-web"
+	ms.service="app-service"
 	ms.devlang="php"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="windows"
 	ms.workload="web"
-	ms.date="06/30/2015"
+	ms.date="09/16/2015"
 	ms.author="cfowler"/>
 
 # Verbinden einer Web-App in Azure App Service mit Redis-Cache über das Memcache-Protokoll
@@ -21,6 +21,8 @@
 In diesem Artikel erfahren Sie, wie Sie eine WordPress-Web-App in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) mithilfe des [Memcache][13]-Protokolls mit [Azure Redis Cache][12] verbinden. Wenn Sie über eine vorhandene Web-App verfügen, die einen Memcached-Server für die Zwischenspeicherung im Arbeitsspeicher verwendet, können Sie diese in Azure App Service migrieren und die Erstanbieter-Lösung für die Zwischenspeicherung in Microsoft Azure mit nur wenigen oder gar keinen Änderungen am Anwendungscode nutzen. Darüber hinaus können Sie Ihre vorhandenen Memcache-Erfahrungen nutzen, um hochgradig skalierbare, verteilte Apps in Azure App Service mit Azure Redis Cache für die Zwischenspeicherung im Arbeitsspeicher zu erstellen und dabei gängige Anwendungsframeworks wie .NET, PHP, Node.js, Java und Python zu verwenden.
 
 App Service-Web-Apps ermöglichen dieses Anwendungsszenario mit dem Web-App-Memcache-Shim, einem lokalen Memcache-Server, der als Memcache-Proxy für die Aufrufe zur Zwischenspeicherung von Azure Redis Cache fungiert. Dadurch kann jede App, die mithilfe des Memcache-Protokolls kommuniziert, Daten mit Redis-Cache zwischenspeichern. Der Memcache-Shim arbeitet auf Protokollebene, damit er von Anwendungen oder Anwendungsframeworks verwendet werden kann, sofern diese mit dem Memcache-Protokoll kommunizieren.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Voraussetzungen
 
@@ -100,7 +102,7 @@ Klicken Sie auf der Seite mit den WordPress-Plug-Ins auf die Schaltfläche **Neu
 
 ![WordPress – Plug-In-Seite](./media/web-sites-connect-to-redis-using-memcache-protocol/10-wordpress-plugin.png)
 
-Geben Sie im Suchfeld **memcached** ein, und drücken Sie die EINGABETASTE.
+Geben Sie im Suchfeld **memcached** ein, und drücken Sie die **Eingabetaste**.
 
 ![WordPress – neues Plug-In hinzufügen](./media/web-sites-connect-to-redis-using-memcache-protocol/11-wordpress-add-new-plugin.png)
 
@@ -196,4 +198,4 @@ Glückwunsch! Die WordPress-App verfügt jetzt über einen zentralen Cache im Ar
 [12]: /services/cache/
 [13]: http://memcached.org
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

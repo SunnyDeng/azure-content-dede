@@ -1,19 +1,19 @@
 <properties 
-	pageTitle="Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management"
-	description="Erfahren Sie, wie Sie den Ablauf von Aufrufen mit dem API-Inspektor in Azure API Management verfolgen können."
-	services="api-management"
-	documentationCenter=""
-	authors="steved0x"
-	manager="dwrede"
+	pageTitle="Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management" 
+	description="Erfahren Sie, wie Sie den Ablauf von Aufrufen mit dem API-Inspektor in Azure API Management verfolgen können." 
+	services="api-management" 
+	documentationCenter="" 
+	authors="steved0x" 
+	manager="dwrede" 
 	editor=""/>
 
 <tags 
-	ms.service="api-management"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/31/2015"
+	ms.service="api-management" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/14/2015" 
 	ms.author="sdanie"/>
 
 # Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management
@@ -24,7 +24,7 @@ Zusätzlich zur Ablaufverfolgung von Vorgängen verfolgt der API-Inspektor auch 
 
 Hier finden Sie eine schrittweise Anleitung für die Nutzung des API-Inspektors.
 
->[AZURE.NOTE]API-Inspektor-Ablaufverfolgungen stehen nur den [Administratoren](api-management-howto-create-groups.md) Ihrer API Management-Dienstinstanz zur Verfügung. API-Inspektor-Ablaufverfolgungen werden nur zurückgegeben, wenn Aufrufe an ein [geschütztes Produkt](api-management-howto-add-products.md) erfolgen, für das ein Abonnementschlüssel erforderlich ist.
+>[AZURE.NOTE]Nachverfolgungen mit dem API-Inspektor werden nur für Anforderungen generiert und verfügbar gemacht, die Abonnementschlüssel enthalten, die zum [Administratorkonto](api-management-howto-create-groups.md) gehören.
 
 ## <a name="trace-call"> </a> Verwenden des API-Inspektors zum Verfolgen von Aufrufen
 
@@ -261,4 +261,4 @@ Laden Sie die Ablaufverfolgungsdatei über die **ocp-apim-trace-location**-URL h
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

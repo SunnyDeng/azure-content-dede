@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Speichern von Projektcode in der Quellcodeverwaltung | Microsoft Azure"
+	pageTitle="Speichern des Projektcodes vom .NET-Back-End in der Quellcodeverwaltung | Azure Mobile Services"
 	description="Erfahren Sie, wie Sie Ihr .NET-Back-End-Projekt in einem lokalen Git-Repository auf Ihrem Computer speichern und von dort veröffentlichen."
 	services="mobile-services"
 	documentationCenter=""
@@ -10,17 +10,17 @@
 <tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="06/16/2015"
+	ms.date="09/15/2015"
 	ms.author="glenga"/>
 
-# Speichern von Projektcode in der Quellcodeverwaltung
+# Speichern von Projektcode des mobilen Diensts in der Quellcodeverwaltung
 
-> [AZURE.SELECTOR-LIST (Platform | Backend)]
-- [(Any | .NET)](mobile-services-dotnet-backend-store-code-source-control.md)
-- [(Any | Javascript)](mobile-services-store-scripts-source-control.md)
+> [AZURE.SELECTOR]
+- [.NET backend](mobile-services-dotnet-backend-store-code-source-control.md)
+- [Javascript backend](mobile-services-store-scripts-source-control.md)
 
 In diesem Thema erfahren Sie, wie Sie die von Azure Mobile Services bereitgestellte Quellcodeverwaltung verwenden, um ein .NET-Back-End-Dienstprojekt zu speichern. Ihr Projekt kann veröffentlicht werden, indem Sie es einfach aus Ihrem lokalen Git-Repository in Ihren mobilen Dienst in der Produktionsumgebung hochladen.
 
@@ -32,12 +32,11 @@ Dieses Lernprogramm setzt voraus, dass Sie bereits einen mobilen Dienst durch Be
 
 ##<a name="clone-repo"></a>Installieren von Git und Erstellen des lokalen Repositorys
 
-1. Installieren Sie Git auf Ihrem lokalen Computer. 
+1. Installieren Sie Git auf Ihrem lokalen Computer.
 
 	Die erforderlichen Schritte zum Installieren von Git variieren je nach Betriebssystem. Informationen zu Betriebssystem-spezifischen Distributionen und zur Installation finden Sie unter [Installieren von Git].
 
-	> [AZURE.NOTE]
-	> Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
+	> [AZURE.NOTE]Einige Betriebssysteme verfügen über eine Befehlszeilenversion und eine GUI-Version von Git. Die in diesem Artikel bereitgestellten Anweisungen verwenden die Befehlszeilenversion.
 
 2. Öffnen Sie eine Befehlszeile, zum Beispiel **GitBash** (Windows) oder **Bash** (Unix Shell). Auf OS X-Systemen können Sie auf die Befehlszeile über die **Terminal**-Anwendung zugreifen.
 
@@ -99,8 +98,7 @@ Ihr mobiles Dienstprojekt wird jetzt in der Quellcodeverwaltung verwaltet, und S
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
 [Hinzufügen von Mobile Services zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-data.md
 [Azure Management Portal]: https://manage.windowsazure.com/
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Call a custom API from the client]: mobile-services-dotnet-backend-ios-call-custom-api.md
 [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts]: mobile-services-dotnet-backend-how-to-use-code-first-migrations.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

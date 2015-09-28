@@ -1,23 +1,25 @@
 <properties 
-	pageTitle="Bereitstellen einer Branchenanwendung | Microsoft Azure"
-	description="Sie stellen eine webbasierte, hochverfügbare Branchenanwendung mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in fünf Phasen in Azure bereit."
+	pageTitle="Bereitstellen einer Branchenanwendung | Microsoft Azure" 
+	description="Sie stellen eine webbasierte, hochverfügbare Branchenanwendung mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in fünf Phasen in Azure bereit." 
 	documentationCenter=""
-	services="virtual-machines"
-	authors="JoeDavies-MSFT"
-	manager="timlt"
+	services="virtual-machines" 
+	authors="JoeDavies-MSFT" 
+	manager="timlt" 
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="Windows" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/11/2015" 
 	ms.author="josephd"/>
 
 # Bereitstellen einer hochverfügbaren Branchenanwendung in Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 Dieser Artikel enthält Links zu den schrittweisen Anweisungen für die Bereitstellung einer hochverfügbaren, webbasierten, nur im Intranet verfügbaren Branchenanwendung mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure-Infrastrukturdiensten. Die Anwendung wird auf folgenden Computern gehostet:
 
@@ -35,8 +37,8 @@ Mindestens zwei Computer pro Rolle stellen eine hohe Verfügbarkeit sicher. Alle
 Sie stellen diese Konfiguration in den folgenden Phasen bereit:
 
 - [Phase 1: Konfigurieren von Azure](virtual-machines-workload-high-availability-LOB-application-phase1.md): Erstellen Sie Speicherkonten, Verfügbarkeitsgruppen und ein standortübergreifendes virtuelles Netzwerk.
-- [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md): Erstellen und konfigurieren Sie Replikate der Domänencontroller für Active Directory Domain Services (AD DS).
-- [Phase 3: Konfigurieren der SQL Server-Infrastruktur](virtual-machines-workload-high-availability-LOB-application-phase3.md): Erstellen und konfigurieren Sie die virtuellen Computer, auf denen SQL Server ausgeführt wird, und aktivieren Sie SQL Server-AlwaysOn-Verfügbarkeitsgruppen.
+- [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md): Erstellen und konfigurieren Sie Replikate der Domänencontroller für Active Directory Domain Services (AD DS).
+- [Phase 3: Konfigurieren der SQL Server-Infrastruktur](virtual-machines-workload-high-availability-LOB-application-phase3.md): Erstellen und konfigurieren Sie die virtuellen Computer, auf denen SQL Server ausgeführt wird, und aktivieren Sie SQL Server-AlwaysOn-Verfügbarkeitsgruppen.
 - [Phase 4: Konfigurieren der Webserver](virtual-machines-workload-high-availability-LOB-application-phase4.md): Erstellen und konfigurieren Sie die beiden virtuellen Webservercomputer.
 - [Phase 5: Hinzufügen der Anwendungsdatenbanken zu einer SQL Server-AlwaysOn-Verfügbarkeitsgruppe](virtual-machines-workload-high-availability-LOB-application-phase5.md): Bereiten Sie die Datenbanken für die Branchenanwendung vor, und fügen Sie sie zu einer SQL Server-AlwaysOn-Verfügbarkeitsgruppe hinzu.
 
@@ -54,7 +56,7 @@ Weitere Informationen zum Entwickeln von IT-Workloads für Azure finden Sie in d
 
 ## Nächster Schritt
 
-Zum Starten der Konfiguration für diesen Workload wechseln Sie zu [Phase 1: Konfigurieren von Azure](virtual-machines-workload-high-availability-LOB-application-phase1.md).
+Zum Starten der Konfiguration für diese Arbeitsauslastung gehen Sie zu [Phase 1: Konfigurieren von Azure](virtual-machines-workload-high-availability-LOB-application-phase1.md).
 
 ## Zusätzliche Ressourcen
 
@@ -66,4 +68,4 @@ Zum Starten der Konfiguration für diesen Workload wechseln Sie zu [Phase 1: Kon
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

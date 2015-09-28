@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/04/2015"
+   ms.date="09/15/2015"
    ms.author="v-sharos" />
 
 # Verwenden Sie StorSimple Snapshot Manager zum Verwalten des Sicherungkatalogs
@@ -205,6 +205,7 @@ Sie sollten die StorSimple Snapshot Manager-Datenbank auf dem Hostcomputer regel
 
 ## Nächste Schritte
 
-Weitere Informationen zu den [Aufgaben und Workflows im StorSimple Snapshot Manager](storsimple-snapshot-manager-admin.md#storsimple-snapshot-manager-tasks-and-workflows).
+- Weitere Informationen zum [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
+- Weitere Informationen zu den [Aufgaben und Workflows im StorSimple Snapshot Manager](storsimple-snapshot-manager-admin.md#storsimple-snapshot-manager-tasks-and-workflows).
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

@@ -8,17 +8,19 @@
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/03/2015" 
+	ms.date="09/16/2015" 
 	ms.author="cephalin"/>
 
 # Wiederherstellen einer Web-App in Azure App Service
 
 In diesem Artikel erfahren Sie, wie Sie eine Web-App wiederherstellen, die zuvor mit der Funktion zur Sicherung von [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) gesichert wurde. Weitere Informationen finden Sie unter [Sichern von App Service-Web-Apps](web-sites-backup.md).
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 Mit der Wiederherstellungsfunktion für Web-Apps können Sie Ihre Web-App bei Bedarf in einem vorherigen Zustand wiederherstellen oder eine neue Web-App auf der Grundlage einer Sicherung Ihrer ursprünglichen Web-App erstellen. Das Erstellen einer neuen Web-App, die parallel zur letzten Version ausgeführt wird, kann für A/B-Tests nützlich sein.
 
@@ -96,4 +98,4 @@ Auf dem Blatt "Details" werden die verfügbaren Informationen im Zusammenhang mi
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

@@ -1,12 +1,11 @@
 <properties
-	pageTitle="Erste Schritte mit Azure Mobile Services für iOS-Apps"
+	pageTitle="Erste Schritte mit Azure Mobile Services für iOS-Apps | JavaScript-Back-End"
 	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung von Azure Mobile Services für die iOS-Entwicklung."
 	services="mobile-services"
 	documentationCenter="ios"
 	authors="krisragh"
 	manager="dwrede"
 	editor=""/>
-
 
 <tags
 	ms.service="mobile-services"
@@ -17,7 +16,6 @@
 	ms.date="07/28/2015"
 	ms.author="krisragh"/>
 
-
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
@@ -26,7 +24,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen
 
 In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache _To-Do-Listen_-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik. Informationen zum Erstellen eines mobilen Diensts mit serverseitiger Geschäftslogik in .NET finden Sie in der [.NET-Back-End-Version] dieses Themas.
 
-> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](http://azure.microsoft.com/pricing/details/mobile-services/). Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-de%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F%20 target="\_blank").
+> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](http://azure.microsoft.com/pricing/details/mobile-services/). Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F%20 target="\_blank").
 
 ## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Dienstes
 
@@ -53,17 +51,13 @@ Sie können zum Erstellen einer neuen App, die mit Ihrem mobilen Dienst verbunde
 ## <a name="next-steps"> </a>Nächste Schritte
 Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 
-* [Hinzufügen von Mobile Services zu einer vorhandenen App] <br/>
-Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
+* [Hinzufügen von Mobile Services zu einer vorhandenen App] <br/>Informationen zum Speichern und Abfragen von Daten mit Mobile Services.
 
-* [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>
-Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
+* [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
 
-* [Hinzufügen von Authentifizierung zu einer vorhandenen App] <br/>
-Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
+* [Hinzufügen von Authentifizierung zu einer vorhandenen App] <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
-* [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App] <br/>
-Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
+* [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App] <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
 
 
 <!-- Anchors. -->
@@ -94,4 +88,4 @@ Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden kön
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [.NET-Back-End-Version]: mobile-services-dotnet-backend-ios-get-started.md
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

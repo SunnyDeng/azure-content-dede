@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Herstellen einer Verbindung mit einem virtuellen Microsoft Azure Linux-Computer mithilfe von Remotedesktop über Xrdp"
+	pageTitle="Herstellen einer Verbindung mit einem virtuellen Microsoft Azure Linux-Computer mithilfe von Remotedesktop"
 	description="Erfahren Sie mehr zur Installation und Konfiguration von Remotedesktop auf einem virtuellen Microsoft Azure Linux-Computer."
 	services="virtual-machines"
 	documentationCenter=""
@@ -13,17 +13,17 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/31/2015"
+	ms.date="09/14/2015"
 	ms.author="mingzhan"/>
 
 
-#Herstellen einer Verbindung mit einem virtuellen Microsoft Azure Linux-Computer mithilfe von Remotedesktop über Xrdp
+#Herstellen einer Verbindung mit einem virtuellen Microsoft Azure Linux-Computer mithilfe von Remotedesktop
 
 ##Übersicht
 
-RDP (Remote Desktop Protocol) jedoch ein proprietäres Protokoll, das für Windows verwendet wird. Wie können wir mithilfe von RDP eine Remoteverbindung mit einem virtuellen Linux-Computer herstellen?
+RDP (Remote Desktop Protocol) ist ein proprietäres Protokoll, das für Windows verwendet wird. Wie können wir mithilfe von RDP eine Remoteverbindung mit einem virtuellen Linux-Computer herstellen?
 
-In dieser Anleitung erhalten Sie die Antwort! Sie finden Informationen zum Installieren und Konfigurieren von Xrdp auf Ihrem virtuellen Microsoft Azure Linux-Computer, und anschließend können Sie diesen mit Remotedesktop auf einem Windows-Computer verbinden.
+In dieser Anleitung erhalten Sie die Antwort! Sie finden Informationen zum Installieren und Konfigurieren von Xrdp auf Ihrem virtuellen Microsoft Azure Linux-Computer, und anschließend können Sie diesen mit Remotedesktop auf einem Windows-Computer verbinden. Wir verwenden einen virtuellen Linux-Computer, der unter Ubuntu oder OpenSUSE ausgeführt wird, als Beispiel in dieser Anleitung.
 
 Xrdp ist ein Open-Source-RDP-Server, der Ihnen das Herstellen einer Verbindung zwischen Ihrem Linux-Server und Remotedesktop auf einem Windows-Computer ermöglicht. Er bietet eine viel bessere Leistung als VNC (Virtual Network Computing). VNC weist Züge von „JPEG“-Qualität und langsames Verhalten auf, während RDP schnell und klar ist.
  
@@ -45,11 +45,7 @@ Wenn Sie nicht wissen, wie die Einrichtung eines Endgeräts für Ihren virtuelle
 
 Stellen Sie über Putty eine Verbindung mit Ihrem virtuellen Linux-Computer her, und installieren Sie `Gnome Desktop`.
 
-Für die Linux-Produktfamilie Red Hat verwenden Sie:
-
-	#sudo yum install gnome* "xorg*" -y
-
-Für Debian und Ubuntu verwenden Sie:
+Für Ubuntu verwenden Sie:
 
 	#sudo apt-get update
 	#sudo apt-get install ubuntu-desktop
@@ -57,20 +53,13 @@ Für Debian und Ubuntu verwenden Sie:
 
 Für OpenSUSE verwenden Sie:
 
-	#sudo zypper -y install gnome-session
-
+	#sudo zypper install gnome-session
 
 ##Installation von Xrdp
 
-Für die Linux-Produktfamilie Red Hat müssen Sie Ihrem virtuellen Linux-Computer zuerst das EPEL-Repository hinzufügen, um das Xrdp-Paket über `yum` zu installieren; verwenden Sie:
-
-	#sudo rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-	#sudo yum -y install xrdp tigervnc-server tigervnc-server-module xterm
-
-Für Debian und Ubuntu Linux verwenden Sie:
+Für Ubuntu verwenden Sie:
 
 	#sudo apt-get install xrdp
-
 
 Für OpenSUSE verwenden Sie:
 
@@ -82,28 +71,16 @@ Für OpenSUSE verwenden Sie:
 
 ##Starten von Xrdp und Festlegen des Xdrp-Dienstes beim Start
 
-Für die Linux-Produktfamilie Red Hat verwenden Sie:
-
-	#sudo service xrdp start
-	#sudo chkconfig xrdp on
-
-
 Für OpenSUSE verwenden Sie:
 
 	#sudo systemctl start xrdp
 	#sudo systemctl enable xrdp
- 
 
-##Deaktivieren Sie bei Verwendung der Linux-Produktfamilie Red Hat iptables. 
-
-Verwendung:
-
-	#sudo service iptables stop
-
+Für Ubuntu wird Xrdp nach der Installation zum Startzeitpunkt automatisch gestartet und aktiviert.
 
 ##Verwenden Sie Xfce , wenn Sie eine neuere Ubuntu-Version als Ubuntu 12.04LTS verwenden.
 
-Da das aktuelle Xrop nicht in der Lage war, Gnome Desktop aus einer neueren Ubuntu-Version als Ubuntu 12.04LTS zu unterstützen, verwenden wir stattdessen `xfce` Desktop.
+Da das aktuelle Xrdp nicht in der Lage war, Gnome Desktop aus einer neueren Ubuntu-Version als Ubuntu 12.04LTS zu unterstützen, verwenden wir stattdessen `xfce` Desktop.
 
 Installieren Sie `xfce`; verwenden Sie:
 
@@ -125,11 +102,11 @@ Starten Sie den Xrdp-Dienst neu; verwenden Sie:
 
 
 ##Herstellen einer Verbindung mit Ihrem virtuellen Linux-Computer auf einem Windows-Computer
-Starten Sie auf einem Windows-den Computer Remotedesktopclient, geben Sie den DNS-Namen Ihres virtuellen Linux-Computers ein, oder wechseln Sie zum `Dashboard` Ihres virtuellen Computers in Azure-Portal, und klicken Sie auf `Connect`. Daraufhin wird das folgende Anmeldefenster angezeigt:
+Starten Sie auf einem Windows-den Computer Remotedesktopclient, geben Sie den DNS-Namen Ihres virtuellen Linux-Computers ein, oder wechseln Sie zum `Dashboard` Ihres virtuellen Computers in Azure-Portal, und klicken Sie auf `Connect`, um Ihren virtuellen Linux-Computer zu verbinden. Daraufhin wird das folgende Anmeldefenster angezeigt:
 
 ![image](./media/virtual-machines-linux-remote-desktop/no2.png)
 
-Melden Sie sich mit dem `user` und dem `password` für Ihren virtuellen Linux-Computer an, und nutzen Sie Remotedesktop sofort auf Ihrem virtuellen Microsoft Azure Linux-Computer!
+Melden Sie sich mit dem `user` und dem `password` Ihres virtuellen Linux-Computers an, und nutzen Sie Remotedesktop sofort auf Ihrem virtuellen Microsoft Azure Linux-Computer!
 
 
 ##Weiter
@@ -141,4 +118,4 @@ Weitere Informationen zur Verwendung von Xrdp finden Sie [hier](http://www.xrdp.
 
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

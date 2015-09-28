@@ -11,17 +11,17 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
+	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/09/2015"
+	ms.topic="index-page"
+	ms.date="09/16/2015"
 	ms.author="josephd"/>
 
 # Testumgebungen für Azure-Hybridclouds
 
-Für Dev/Test oder eine Machbarkeitsstudie verwenden hybride Cloud-Testumgebungen Ihre lokale Internetverbindung und eine Ihrer öffentlichen IP-Adressen, und führen Sie schrittweise zur Einrichtung eines funktionsfähigen standortübergreifenden Azure Virtual Network (VNet). Sobald Sie fertig sind, können Sie Anwendungen entwickeln und testen, mit einfachen IT-Arbeitslasten experimentieren und die relative Leistung einer Standort-zu-Standort-VPN (VPN)-Verbindung im Vergleich zu Ihrem Standort im Internet zu messen.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell.
 
-> [AZURE.NOTE]Mit diesen Artikeln werden derzeit virtuelle Computer, virtuelle Netzwerke und andere Ressourcen in der Dienstverwaltung erstellt.
+Für Dev/Test oder eine Machbarkeitsstudie verwenden hybride Cloud-Testumgebungen Ihre lokale Internetverbindung und eine Ihrer öffentlichen IP-Adressen, und führen Sie schrittweise zur Einrichtung eines funktionsfähigen standortübergreifenden Azure Virtual Network (VNet). Sobald Sie fertig sind, können Sie Anwendungen entwickeln und testen, mit einfachen IT-Arbeitslasten experimentieren und die relative Leistung einer Standort-zu-Standort-VPN (VPN)-Verbindung im Vergleich zu Ihrem Standort im Internet zu messen.
 
 ## Hybride Cloud-Basiskonfiguration
 
@@ -52,10 +52,10 @@ Für Organisationen und Einzelpersonen, für die eine direkte Internetverbindung
 
 [In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
 
-[PDF-Datei mit der Architekturblaupause für 3-D-Branchenanwendungen](http://download.microsoft.com/download/2/C/8/2C8EB75F-AC45-4A79-8A63-C1800C098792/MS_Arch_LOB_App_3D_pdf.pdf)
+[Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-LOB-application.md)
 
 [Bereitstellen von Office 365-Verzeichnissynchronisierung (DirSync) in Microsoft Azure](https://technet.microsoft.com/library/dn635310.aspx)
 
 [Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

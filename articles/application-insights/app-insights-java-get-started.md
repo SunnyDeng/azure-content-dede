@@ -2,7 +2,7 @@
 	pageTitle="Erste Schritte mit Application Insights in einem Java-Webprojekt | Microsoft Azure"
 	description="Überwachen der Leistung und Nutzung Ihrer Java-Website mit Application Insights"
 	services="application-insights"
-	documentationCenter="java"
+    documentationCenter="java"
 	authors="alancameronwills"
 	manager="douge"/>
 
@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="06/30/2015"
+	ms.date="09/09/2015"
 	ms.author="awills"/>
 
 # Erste Schritte mit Application Insights in einem Java-Webprojekt
@@ -206,19 +206,13 @@ Fügen Sie dieses Element der Struts-Konfigurationsdatei (die in der Regel "stru
 
 (Wenn Sie in einem Standardstapel Interceptors definiert haben, kann der Interceptor einfach diesem Stapel hinzugefügt werden.)
 
-## 5\. Installieren auf dem Server
 
-Installieren Sie auf Windows-Servern:
 
-* [Microsoft Visual C++ Redistributable](http://www.microsoft.com/download/details.aspx?id=40784)
-
-(Damit werden Leistungsindikatoren aktiviert).
-
-## 6\. Ausführen der Anwendung
+## 5\. Ausführen der Anwendung
 
 Führen Sie sie entweder im Debugmodus auf dem Entwicklungscomputer aus, oder veröffentlichen Sie sie auf Ihrem Server.
 
-## 7\. Anzeigen Ihrer Telemetriedaten in Application Insights
+## 6\. Anzeigen Ihrer Telemetriedaten in Application Insights
 
 Kehren Sie zur Application Insights-Ressource im [Microsoft Azure-Portal](https://portal.azure.com) zurück.
 
@@ -250,15 +244,34 @@ Application Insights setzt voraus, dass das Format von HTTP-Anforderungen für M
 
 Dadurch werden aussagekräftige Aggregationen von Anforderungen ermöglicht, z. B. die Anzahl der Anforderungen und die durchschnittliche Ausführungszeit von Anforderungen.
 
+
+## 5\. Installieren der App auf dem Server
+
+Jetzt veröffentlichen Sie Ihre App auf dem Server, erlauben deren Benutzung und sehen sich an, wie die Telemetrie im Portal angezeigt wird.
+
+* Stellen Sie sicher, dass die Firewall der Anwendung das Senden von Telemetrie an die folgenden Ports erlaubt:
+
+ * dc.services.visualstudio.com:443
+ * dc.services.visualstudio.com:80
+ * f5.services.visualstudio.com:443
+ * f5.services.visualstudio.com:80
+
+
+* Installieren Sie auf Windows-Servern:
+
+ * [Microsoft Visual C++ Redistributable](http://www.microsoft.com/download/details.aspx?id=40784)
+
+    (Damit werden Leistungsindikatoren aktiviert).
+
 ## Ausnahmen und Anforderungsfehler
 
-Nicht behandelte Ausnahmen werden gesammelt:
+Nicht behandelte Ausnahmen werden automatisch gesammelt:
 
 ![](./media/app-insights-java-get-started/21-exceptions.png)
 
 Um Daten zu anderen Ausnahmen zu erfassen, haben Sie zwei Möglichkeiten:
 
-* [Fügen Sie TrackException-Aufrufe in den Code ein][apiexceptions].
+* [Fügen Sie TrackException-Aufrufe in den Code ein][apiexceptions]. 
 * [Installieren Sie den Java-Agent auf dem Server](app-insights-java-agent.md). Sie geben die Methoden an, die Sie überwachen möchten.
 
 
@@ -349,6 +362,17 @@ Nachdem Sie das SDK installiert haben, können Sie die API verwenden, um eigene 
 * [Durchsuchen Sie Ereignisse und Protokolle][diagnostic], um Probleme besser zu diagnostizieren.
 
 
+## Verfügbarkeitswebtests
+
+Application Insights kann Ihre Website in regelmäßigen Abständen testen, um zu überprüfen, ob sie betriebsbereit ist und gut reagiert. Um dies einzurichten, klicken Sie sich durch das leere Webtestdiagramm auf dem Blatt "Übersicht", und geben Sie Ihre öffentliche URL an.
+
+Sie erhalten Diagramme von Reaktionszeiten sowie E-Mail-Benachrichtigungen, falls Ihre Website ausfällt.
+
+![Beispiel für Webtest](./media/app-insights-java-eclipse/appinsights-10webtestresult.png)
+
+[Weitere Informationen zu Verfügbarkeitswebtests.][availability]
+
+
 
 
 
@@ -370,4 +394,4 @@ Nachdem Sie das SDK installiert haben, können Sie die API verwenden, um eigene 
 [metrics]: app-insights-metrics-explorer.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

@@ -1,9 +1,13 @@
 <properties
+	urlDisplayName="How to connect to an Azure SQL database using SQL Server Management Studio (SSMS)"
 	pageTitle="Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SSMS | Microsoft Azure"
+	metaKeywords=""
 	description="Erfahren Sie, wie Sie mit SSMS eine Verbindung mit einer Azure SQL-Datenbank herstellen."
+	metaCanonical=""
 	services="sql-database"
 	documentationCenter=""
-	authors="sidneyh"
+	title="How to connect to an Azure SQL database using SSMS"
+	authors="sidneyh" solutions=""
 	manager="jhubbard" editor="" />
 
 <tags
@@ -12,43 +16,55 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="07/15/2015"
+	ms.date="09/14/2015"
 	ms.author="sidneyh" />
 
-# Herstellen einer Verbindung mit SQL Server Management Studio
+# Herstellen einer Verbindung mit SQL Server Management Studio (SSMS)
 
-Führen Sie die folgenden Schritte aus, um SQL Server Management Studio (SSMS) zu installieren, und verwenden Sie dann SSMS, um eine Verbindung mit der SQL-Datenbank herzustellen und diese abzufragen.
+Führen Sie die folgenden Schritte aus, um über SQL Server Management Studio (SSMS) eine Verbindung mit Ihrer SQL-Datenbank herzustellen und diese abzufragen.
 
 ## Voraussetzungen
-* Die AdventureWorks-Beispieldatenbank als SQL-Datenbank, wie unter [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md) beschrieben.
 
-## Installieren und Starten von SQL Server Management Studio (SSMS)
-1. Wechseln Sie zur Downloadseite für [SQL Server 2014 Express](http://www.microsoft.com/download/details.aspx?id=42299), klicken Sie auf **Download**, und wählen Sie entweder die 32-Bit-Version (X 86) oder 64-Bit-Version (X 64) von MgmtStudio für den Download aus.
+* SQL Server Management Studio (SSMS) – Um die neueste Version von SSMS herunterzuladen, wechseln Sie zu [Herunterladen von SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx).
+* Die AdventureWorks-Beispieldatenbank, wie unter [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md) beschrieben.
 
-	![MgtmtStudio32BIT oder MgmtStudio64BIT][1]
-2.	Befolgen Sie beim Installieren von SSMS mit den Standardeinstellungen die Eingabeaufforderungen.
-3.	Suchen Sie nach dem Download auf Ihrem PC nach SQL Server 2014 Management Studio, und starten Sie SSMS.
+
+## Abrufen des vollqualifizierten Namens des SQL Azure-Servers
+
+Um eine Verbindung mit Ihrer Datenbank herzustellen, benötigen Sie den vollständigen Namen des Servers (****Servername**.database.windows.net*), auf dem sich die Datenbank befindet.
+
+1. Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com).
+2. Navigieren Sie zu der Datenbank, mit der Sie eine Verbindung herstellen möchten.
+3. Suchen Sie nach dem vollständigen Servernamen:
+
+    ![vollqualifizierter Servername][6]
+
+    Verwenden Sie den vollqualifizierten Servernamen in Schritt 3 weiter unten.
+
 
 
 ## Herstellen von Verbindungen mit der SQL-Datenbank
+
 1. Öffnen Sie SSMS.
+2. Klicken Sie auf **Verbinden** > **Datenbankmodul...**
+
+    ![Verbinden > Datenbankmodul][7]
+
 2. Geben Sie im Dialogfeld **Verbindung mit Server herstellen** im Feld **Servername** den Servernamen im Format *&lt;Servername>*.**database.windows.net** ein.
-3. Wählen Sie in der Liste **Authentifizierung** den Eintrag **SQL Server-Authentifizierung**.
-4. Geben Sie den **Benutzernamen** und das **Kennwort** ein, die Sie beim Erstellen des SQL-Datenbankservers angegeben haben.
+3. Wählen Sie in der Liste **Authentifizierung** den Eintrag **SQL Server-Authentifizierung** aus.
+4. Geben Sie den **Benutzernamen** und das **Kennwort** ein, die Sie beim Erstellen des SQL-Datenbankservers angegeben haben, und klicken Sie auf **Verbinden**.
 
 	![Dialogfeld "Verbindung mit Server herstellen"][2]
-5. Klicken Sie auf die Schaltfläche **Optionen**.
-6. Geben Sie **AdventureWorks** im Feld **Mit Datenbank verbinden** ein, und klicken Sie dann auf **Verbinden**.
 
-	![Mit Datenbank verbinden][3]
+
 
 ### Bei Verbindungsfehlern
-Stellen Sie sicher, dass die Firewall des von Ihnen erstellten logischen Servers Verbindungen vom lokalen Computer zulässt. Weitere Informationen finden Sie unter [Konfigurieren der Firewalleinstellungen (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/azure/jj553530.aspx).
+Stellen Sie sicher, dass die Firewall des von Ihnen erstellten logischen Servers Verbindungen vom lokalen Computer zulässt. Weitere Informationen finden Sie unter [Konfigurieren der Firewalleinstellungen für Azure SQL-Datenbank](sql-database-configure-firewall-settings.md).
 
 ## Durchführen von Beispielabfragen
 
 1. Navigieren Sie im **Objekt-Explorer** zur Datenbank **AdventureWorks**.
-2. Klicken Sie mit der rechten Maustaste auf die Datenbank, und wählen Sie dann **Neue Abfrage**.
+2. Klicken Sie mit der rechten Maustaste auf die Datenbank, und wählen Sie dann **Neue Abfrage** aus.
 
 	![Neue Abfrage][4]
 
@@ -66,8 +82,11 @@ Stellen Sie sicher, dass die Firewall des von Ihnen erstellten logischen Servers
 
 	![Erfolgreich][5]
 
+
+
+
 ## Nächste Schritte
-Sie können Transact-SQL-Anweisungen zum Erstellen oder Verwalten von Datenbanken verwenden. Weitere Informationen finden Sie unter [CREATE DATABASE (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/dn268335.aspx) und [Verwalten einer Azure SQL-Datenbank mit SQL Server Management Studio](sql-database-manage-azure-ssms.md). Sie können Ereignisse auch in Azure Storage protokollieren. Weitere Informationen finden Sie unter [Erste Schritte bei der Überwachung von SQL- Datenbank](sql-database-auditing-get-started.md).
+Sie können Transact-SQL-Anweisungen zum Erstellen oder Verwalten von Datenbanken verwenden. Weitere Informationen finden Sie unter [CREATE DATABASE (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/dn268335.aspx) und [Verwalten einer Azure SQL-Datenbank mit SQL Server Management Studio](sql-database-manage-azure-ssms.md). Sie können Ereignisse auch in Azure Storage protokollieren. Weitere Informationen finden Sie unter [Erste Schritte bei der Überwachung von SQL-Datenbank](sql-database-auditing-get-started.md).
 
 <!--Image references-->
 
@@ -76,5 +95,7 @@ Sie können Transact-SQL-Anweisungen zum Erstellen oder Verwalten von Datenbanke
 [3]: ./media/sql-database-connect-to-database/3-connect-to-database.png
 [4]: ./media/sql-database-connect-to-database/4-run-query.png
 [5]: ./media/sql-database-connect-to-database/5-success.png
+[6]: ./media/sql-database-connect-to-database/server-name.png
+[7]: ./media/sql-database-connect-to-database/connect-dbengine.png
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

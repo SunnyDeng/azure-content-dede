@@ -1,23 +1,23 @@
-<properties 
+<properties
    pageTitle="Build per Befehlszeile für Azure"
-	description="Build per Befehlszeile für Azure"
-	services="visual-studio-online"
-	documentationCenter="na"
-	authors="kempb"
-	manager="douge"
-	editor="tlee"/>
-<tags 
+   description="Build per Befehlszeile für Azure"
+   services="visual-studio-online"
+   documentationCenter="na"
+   authors="kempb"
+   manager="douge"
+   editor="tlee" />
+<tags
    ms.service="multiple"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/24/2015"
-	ms.author="kempb"/>
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/24/2015"
+   ms.author="kempb" />
 
 # Build per Befehlszeile für Azure
 
-##Übersicht
+## Übersicht
 
 Sie können ein Paket für die Azure-Bereitstellung durch Ausführen von "MSBuild" an der Eingabeaufforderung erstellen. Sie können neben der Automatisierung eines Teils des Buildprozesses Builds für das Debugging, Staging und die Produktion konfigurieren und definieren.
 
@@ -48,7 +48,7 @@ Wie im folgenden Verfahren beschrieben, müssen Software und Tools auf dem Build
 
 ## MSBuild-Parameter
 
-Die einfachste Möglichkeit zur Erstellung eines Pakets besteht im Ausführen von MSBuild mit der Option `/t:Publish`. Standardmäßig erstellt dieser Befehl ein Verzeichnis unter dem Stammordner des Projekts, z. B. "ProjectDir\\bin\\Configuration\\app.publish". Beim Erstellen eines Azure-Projekts werden zwei Dateien generiert, die Paketdatei selbst und die zugehörige Konfigurationsdatei:
+Die einfachste Möglichkeit zur Erstellung eines Pakets besteht im Ausführen von MSBuild mit der Option `/t:Publish`. Standardmäßig erstellt dieser Befehl ein Verzeichnis unter dem Stammordner des Projekts, z. B. "ProjectDir\\bin\\Configuration\\app.publish\". Beim Erstellen eines Azure-Projekts werden zwei Dateien generiert, die Paketdatei selbst und die zugehörige Konfigurationsdatei:
 
 - Project.cspkg
 
@@ -62,4 +62,4 @@ Wenn Sie ein alternatives Verzeichnis zur Speicherung des Pakets und der Konfigu
 
 Nach dem Erstellen des Pakets können Sie es in Azure bereitstellen. Ein Tutorial, das diesen Prozess veranschaulicht, finden Sie auf der Azure-Website. Weitere Informationen zur Automatisierung dieses Prozesses finden Sie unter [Kontinuierliche Bereitstellung für Clouddienste in Azure](../cloud-services/cloud-services-dotnet-continuous-delivery).
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

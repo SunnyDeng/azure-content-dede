@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Überwachen des StorSimple-Geräts | Microsoft Azure"
-	description="Beschreibt, wie Sie den StorSimple Manager-Dienst verwenden, um E/A-Leistung, Kapazitätsauslastung, Netzwerkdurchsatz und Geräteleistung zu überwachen."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt, wie Sie den StorSimple Manager-Dienst verwenden, um E/A-Leistung, Kapazitätsauslastung, Netzwerkdurchsatz und Geräteleistung zu überwachen."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="09/02/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/15/2015"
+   ms.author="alkohli" />
 
 # Verwenden des StorSimple Manager-Diensts zum Überwachen Ihres StorSimple-Geräts 
 
@@ -91,6 +91,8 @@ Das Diagramm unten stellt den Netzwerkdurchsatz für „Data 0“ und „Data 4�
 
 ## Nächste Schritte
 
-[Informationen zur Verwendung des StorSimple Manager-Dienstdashboards für Geräte](storsimple-device-dashboard.md).
+- Informationen zur [Verwendung des StorSimple Manager-Dienstdashboards für Geräte](storsimple-device-dashboard.md).
 
-<!---HONumber=September15_HO1-->
+- Informationen zum [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+
+<!---HONumber=Sept15_HO3-->

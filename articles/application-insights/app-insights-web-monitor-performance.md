@@ -32,7 +32,10 @@ Auf Clientseite kann Application Insights Telemetriedaten von Webseiten und eine
 Falls Sie Application Insights Ihrem Projekt noch nicht hinzugefügt haben (d. h., wenn es nicht über ApplicationInsights.config verfügt), gehen Sie nach einer der folgenden Methoden vor, um zu beginnen:
 
 * [ASP.NET-Web-Apps](app-insights-asp-net.md)
+ * [Ausnahmeüberwachung hinzufügen](app-insights-asp-net-exceptions.md)
+ * [Abhängigkeitsüberwachung hinzufügen](app-insights-monitor-performance-live-website-now.md)
 * [J2EE-Web-Apps](app-insights-java-get-started.md)
+ * [Abhängigkeitsüberwachung hinzufügen](app-insights-java-agent.md)
 
 
 ## <a name="view"></a>Untersuchen von Leistungsmetriken
@@ -138,7 +141,12 @@ Wenn Sie möchten, können Sie den gleichen Effekt auch mit Code erzielen:
     perfCollector.Initialize(TelemetryConfiguration.Active);
     TelemetryConfiguration.Active.TelemetryModules.Add(perfCollector);
 
+### Ausnahmeraten
 
+*Worin besteht der Unterschied zwischen der Ausnahmerate und der Ausnahmenmetrik?*
+
+* *Ausnahmerate* ist ein Systemleistungsindikator. Die CLR zählt alle behandelten und nicht behandelten Ausnahmen, die ausgelöst werden, und dividiert das Ergebnis innerhalb eines Samplingintervalls durch die Länge dieses Intervalls. Das Application Insights SDK sammelt dieses Ergebnis und sendet es an das Portal.
+* *Ausnahmen* ist die Anzahl der TrackException-Meldungen, die das Portal innerhalb des Samplingintervalls des Diagramms empfangen hat. Sie enthält nur die behandelten Ausnahmen, wo Sie TrackException-Aufrufe in Ihren Code geschrieben haben, und enthält nicht alle [nicht behandelten Ausnahmen](app-insights-asp-net-exceptions.md). 
 
 ## Festlegen von Benachrichtigungen
 
@@ -186,4 +194,4 @@ Im Folgenden finden Sie einige Tipps zum Feststellen und Diagnostizieren von Lei
 
  
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

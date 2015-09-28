@@ -114,7 +114,7 @@ Die folgenden Features sind derzeit in öffentlicher Vorschau verfügbar und wer
 - Privileged Identity Management: Privileged Identity Management bietet verbesserte Überwachung, um Vereinbarungen zum Servicelevel zu erfüllen und gesetzliche Bestimmungen einzuhalten.
 - Self-Service-Anwendungsanforderungen: Administratoren können für Benutzer eine Liste mit SaaS-Anwendungen bereitstellen, damit Benutzer die gewünschten Anwendungen auswählen können. Die Anwendungen sind entweder sofort oder nach der Genehmigung verfügbar.
 - Azure Reporting-API: Daten für alle Sicherheitsberichte von Azure Active Directory stehen für andere Überwachungstools oder SIEM-Tools zur Verfügung.
-
+- [Azure Active Directory B2C](http://azure.microsoft.com/services/active-directory-b2c/): Ein neuer, umfassender, hoch skalierbarer und cloudbasierter Dienst mit einem Verbraucherverzeichnis und für die Identitäts- und Zugriffsverwaltung, der entwickelt wurde, um die wachsenden Bedürfnisse von Unternehmen zu erfüllen, die direkt mit ihren Kunden in Verbindung treten möchten.
 
 ## Nächste Schritte
 
@@ -122,4 +122,4 @@ Die folgenden Features sind derzeit in öffentlicher Vorschau verfügbar und wer
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 - [Anzeigen Ihrer Zugriffs- und Nutzungsberichte](active-directory-view-access-usage-reports.md)
 
-<!---HONumber=Sept15_HO2-->
+<!---HONumber=Sept15_HO3-->

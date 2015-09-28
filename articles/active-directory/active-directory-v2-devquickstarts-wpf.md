@@ -1,5 +1,5 @@
 <properties
-	pageTitle="App-Modell v2.0 | Microsoft Azure"
+	pageTitle="App-Modell v2.0: systemeigene .NET-App | Microsoft Azure"
 	description="Vorgehensweise beim Erstellen einer systemeigenen .NET-App, bei der sich Benutzer sowohl mit ihrem persönlichen Microsoft-Konto als auch ihrem Geschäfts- oder Schulkonto anmelden können."
 	services="active-directory"
 	documentationCenter=""
@@ -13,17 +13,17 @@
   ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/12/2015"
+	ms.date="09/11/2015"
 	ms.author="dastrock"/>
 
-# App-Modell v2.0 \(Vorschauversion\): Hinzufügen der Anmeldung zu einer Windows-Desktop-App
+# App-Modell v2.0 (Vorschauversion): Hinzufügen der Anmeldung zu einer Windows-Desktop-App
 
 Mit dem App-Modell v2.0 können Sie schnell eine Authentifizierung zu Ihren Desktop-Apps hinzufügen, die sowohl persönliche Microsoft-Konten als auch Geschäfts- oder Schulkonten unterstützt. Dadurch kann Ihre App außerdem sicher mit einer Back-End-Web-API sowie einigen [Office 365-Unified-APIs](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) kommunizieren.
 
 > [AZURE.NOTE]
 	Diese Informationen gelten für App-Modell v2.0 \(öffentliche Vorschauversion\). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
-Für [systemeigene .NET- Apps, die auf einem Gerät ausgeführt werden](active-directory-v2-flows.md#mobile-and-native-apps), bietet Azure AD die Active Directory-Authentifizierungsbibliothek \(ADAL\). Die einzige Aufgabe von ADAL besteht darin, Ihrer Anwendung das Abrufen von Token für den Aufruf von Webdiensten zu erleichtern. Um Ihnen zu zeigen, wie einfach das geht, wollen wir nun eine .NET-WPF-App mit einer Aufgabenliste entwickeln, die folgende Aktionen ausführt:
+Für [systemeigene .NET- Apps, die auf einem Gerät ausgeführt werden](active-directory-v2-flows.md#mobile-and-native-apps), bietet Azure AD die Active Directory-Authentifizierungsbibliothek (ADAL). Die einzige Aufgabe von ADAL besteht darin, Ihrer Anwendung das Abrufen von Token für den Aufruf von Webdiensten zu erleichtern. Um Ihnen zu zeigen, wie einfach das geht, wollen wir nun eine .NET-WPF-App mit einer Aufgabenliste entwickeln, die folgende Aktionen ausführt:
 
 -	Anmelden von Benutzern und Abrufen von Zugriffstoken mit dem [OAuth 2.0-Authentifizierungsprotokoll](active-directory-v2-protocols.md#oauth2-authorization-code-flow).
 -	Sicheres Aufrufen eines Back-End-ToDoList-Webdienstes, der ebenfalls durch OAuth 2.0 gesichert ist.
@@ -51,11 +51,10 @@ Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.micr
 ## 2. Installieren und Konfigurieren von ADAL
 Nachdem Sie eine App bei Microsoft registriert haben, können Sie ADAL installieren und Code im Zusammenhang mit Identitätsfunktionen schreiben. Damit ADAL mit dem v2.0-Endpunkt kommunizieren kann, müssen Sie einige Informationen zur App-Registrierung bereitstellen.
 
--	Fügen Sie dazu zunächst ADAL mithilfe der Paket-Manager-Konsole zum TodoListClient-Projekt hinzu.
+- Fügen Sie dazu zunächst ADAL mithilfe der Paket-Manager-Konsole zum TodoListClient-Projekt hinzu.
 
 ```
-PM \> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory ProjectName - TodoListClient - IncludePrerelease 
-```
+PM > Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory ProjectName - TodoListClient - IncludePrerelease '''
 
 -	Öffnen Sie im Projekt „TodoListClient“ `app.config`. Ersetzen Sie die Werte der Elemente in Abschnitt `<appSettings>` durch die Werte, die Sie im App-Registrierungsportal eingegeben haben. Sobald Ihr Code ADAL verwendet, verweist er auf diese Werte.
     -	`ida:ClientId` ist die **Anwendungs-ID** Ihrer App, die Sie aus dem Portal kopiert haben.
@@ -218,7 +217,7 @@ private async void GetTodoList()
 - When the user is done managing their To-Do List, they may finally sign out of the app by clicking the "Clear Cache" button.
 
 ```C#
-private async void SignIn\(object sender = null, RoutedEventArgs args = null\) { // Wenn der Benutzer auf die Schaltfläche 'Zwischenspeicher leeren' geklickt hat, // leeren Sie den ADAL-TOken-Cache und zeigen Sie den Benutzer als abgemeldet an. // Außerdem müssen die Cookies aus dem Browsersteuerung gelöscht werden, // damit der nächste Benutzer die Möglichkeit hat, sich anzumelden.
+private async void SignIn(object sender = null, RoutedEventArgs args = null) { // Wenn der Benutzer auf die Schaltfläche 'Zwischenspeicher leeren' geklickt hat, // leeren Sie den ADAL-TOken-Cache und zeigen Sie den Benutzer als abgemeldet an. // Außerdem müssen die Cookies aus dem Browsersteuerung gelöscht werden, // damit der nächste Benutzer die Möglichkeit hat, sich anzumelden.
 
 		if (SignInButton.Content.ToString() == "Clear Cache")
 		{
@@ -250,4 +249,4 @@ Weitere Ressourcen:
 - [Die App-Modell v2.0-Vorschauversion \>\>](active-directory-appmodel-v2-overview.md)
 - [StackOverflow-"adal"-Tag \>\>](http://stackoverflow.com/questions/tagged/adal)
 
-<!------HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

@@ -6,15 +6,15 @@
 	authors="HeidiSteen"
 	manager="mblythe"
 	editor=""
-	tags="azure-portal"/>
+    tags="azure-portal"/>
 
 <tags
 	ms.service="search"
 	ms.devlang="NA"
 	ms.workload="search"
-	ms.topic="article"
+	ms.topic="article" 
 	ms.tgt_pltfrm="na"
-	ms.date="08/19/2015"
+	ms.date="09/16/2015"
 	ms.author="heidist"/>
 
 #Azure Search: Lernprogramme, Videodemos und Beispiele
@@ -23,7 +23,7 @@ Finden Sie mit den folgenden Videos, Demos, Lernprogrammen und Beispiel-Apps ein
 
 ##Demo-Websites
 
-Die [**Demo eines Jobportals für New York City (NYC) mit Azure Search**](http://aka.ms/azjobsdemo) ist eine ASP.NET-Website, die Azure Search-Funktionen mithilfe von Daten der NYC Open Data Initiative veranschaulicht.
+Die [**Demo eines Jobportals für New York City (NYC) mit Azure Search**](http://aka.ms/azjobsdemo) ist eine aktive ASP.NET-Website, die Azure Search-Funktionen mithilfe von Daten der NYC Open Data Initiative veranschaulicht.
 
 [**Testen von Azure App Service mit Azure Search**](search-tryappservice.md) ist eine kostenlose einstündige Sitzung mit Azure Search, die Daten, eine funktionsfähige Webanwendung und Quellcode umfasst, den Sie zum Testen verschiedener Suchfunktionen online ändern können.
 
@@ -64,7 +64,16 @@ Exemplarische Vorgehensweise|Beschreibung
 
 ##Codebeispiele
 
-[****https://github.com/AzureSearch**](https://github.com/AzureSearch) ist ein GitHub-Repository für Azure Search, das Codebeispiele enthält, die vom Azure Search-Entwicklungsteam erstellt wurden. Sie können das Repository durchsuchen, um den Inhalt zu sehen, oder auf die folgenden Links klicken, um direkt zu spezifischen Beispielen zu wechseln.
+[****https://github.com/liamca/AzureSearchDemos**](https://github.com/liamca/AzureSearchDemos) ist ein GitHub-Repository, das Codebeispiele enthält, die von Liam Cavanagh erstellt wurden. Dieses Repository enthält die folgenden Beispiele:
+
+- [AdventureWorksWP8]() ist eine Windows Phone-App.
+- [AzSearchAutoScaleWeb](https://github.com/liamca/AzureSearchDemos/tree/master/AzSearchAutoScaleWeb) 
+- [BabyNameJS](https://github.com/liamca/AzureSearchDemos/tree/master/BabyNamesJS) ist eine „index.html“-Datei, die Daten in einem Lernprogramm bereitstellt.
+- [DotNetSample](https://github.com/liamca/AzureSearchDemos/tree/master/DotNetSample) ist eine ASP.NET MVC-Anwendung für Azure Search.
+- [NYCJobs.NET](https://github.com/liamca/AzureSearchDemos/tree/master/NYCJobs.NET) stellt Quellcode für die aktive NYCJobs-Demowebsite bereit.
+- [Recommendations](https://github.com/liamca/AzureSearchDemos/tree/master/Recommendations) verwendet Active Data Factory, SQL-Datenbank, BLOB-Speicher und HDInsight, um Produktempfehlungen anhand der Häufigkeit zu implementieren, mit der Produkte zusammen gekauft werden.
+
+[****https://github.com/AzureSearch**](https://github.com/AzureSearch) ist ein weiteres GitHub-Repository für Azure Search, das Codebeispiele enthält, die vom Azure Search-Entwicklungsteam erstellt wurden. Sie können das Repository durchsuchen, um den Inhalt zu sehen, oder auf die folgenden Links klicken, um direkt zu spezifischen Beispielen zu wechseln.
 
 - [**JavaIndexerDemo**](https://github.com/AzureSearch/AzureSearchJavaIndexerDemo)
 - [**NodeJSIndexerDemo**](https://github.com/AzureSearch/AzureSearchNodeJSIndexerDemo)
@@ -81,4 +90,4 @@ Auf CodePlex finden Sie mehrere Beispiele, die während der öffentlichen Vorsch
 - [**SQL Server to Azure Search Sync Sample**](http://sqlserver2azuresearch.codeplex.com/) ist eine Windows-Konsolenanwendung, die ein SQL Server-Rowset aus einer lokalen eingebetteten Datenbank lädt.
 - [**Scoring Profiles Demo**](https://azuresearchscoringprofiles.codeplex.com/) ist eine Windows-Konsolenanwendung, die Bewertungsprofile für die Optimierung der Suchergebnisse definiert, ausführt und aktualisiert.
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

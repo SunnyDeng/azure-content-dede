@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/18/2015"
+	ms.date="08/18/2015" 
 	ms.author="glenga"/>
 
 # So verwenden Sie einen .NET-Client für mobile Dienste in Azure
@@ -276,7 +276,7 @@ Wenn Sie versuchen, ein Element zu löschen, ohne dass das "Id"-Feld bereits fes
 
 ##<a name="#custom-api"></a>Gewusst wie: Aufrufen einer benutzerdefinierten API
 
-Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte definieren, die Serverfunktionen zur Verfügung stellen, welche keinem Einfüge-, Aktualisierungs-, Lösch- oder Lesevorgang zugeordnet sind. Durch die Verwendung einer benutzerdefinierten API erhalten Sie mehr Kontrolle über das Messaging, einschließlich Lesen und Einstellen der HTTP-Nachrichten-Header sowie Definieren eines von JSON abweichenden Nachrichtentextformats. Ein vollständiges Beispiel, in dem u. a. das Erstellen einer benutzerdefinierten API im mobilen Dienst beschrieben wird, finden Sie unter [Aufrufen einer benutzerdefinierten API aus dem Client].
+Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte definieren, die Serverfunktionen zur Verfügung stellen, welche keinem Einfüge-, Aktualisierungs-, Lösch- oder Lesevorgang zugeordnet sind. Durch die Verwendung einer benutzerdefinierten API erhalten Sie mehr Kontrolle über das Messaging, einschließlich Lesen und Einstellen der HTTP-Nachrichten-Header sowie Definieren eines von JSON abweichenden Nachrichtentextformats. Ein Beispiel für das Erstellen einer benutzerdefinierten API in Ihrem mobilen Dienst finden Sie unter [Gewusst wie: Definieren eines benutzerdefinierten API-Endpunkts](mobile-services-dotnet-backend-define-custom-api.md).
 
 Sie rufen eine benutzerdefinierte API auf, indem Sie eine der [InvokeApiAsync]-Methodenüberladungen für den Client aufrufen. Mit der folgenden Codezeile wird beispielsweise eine POST-Anforderung an die **completeAll**-API im mobilen Dienst gesendet:
 
@@ -442,7 +442,7 @@ Insgesamt werden zwei Authentifizierungsflüsse unterstützt: ein _Serverfluss_ 
 ###Serverfluss
 Sie müssen Ihre Anwendung bei Ihrem Identitätsanbieter registrieren, um den mobilen Diensten die Verwaltung des Authentifizierungsprozesses in Ihrer Windows Store- oder Windows Phone-App zu ermöglichen. Anschließend müssen Sie in Ihrem mobilen Dienst die Anwendungs-ID und den geheimen Schlüssel Ihres Anbieters konfigurieren. Weitere Informationen finden Sie im Lernprogramm [Authentifizierung zu Ihrer App hinzufügen].
 
-Nach der Registrierung bei Ihrem Identitätsanbieter können Sie die [LoginAsync]-Methode mit dem [MobileServiceAuthenticationProvider]-Wert Ihres Anbieters aufrufen. Der folgende Beispielcode startet eine Serverfluss-Anmeldung für Facebook.
+Nach der Registrierung bei Ihrem Identitätsanbieter können Sie die [LoginAsync]-Methode mit dem [MobileServiceAuthenticationProvider]-Wert Ihres Anbieters aufrufen. Der folgende Beispielcode startet eine Serverfluss-Anmeldung über Facebook.
 
 	private MobileServiceUser user;
 	private async System.Threading.Tasks.Task Authenticate()
@@ -472,11 +472,11 @@ Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie 
 
 In diesem Fall verwaltet der mobile Dienst den OAuth 2.0-Authentifizierungsfluss, indem die Anmeldungsseite des ausgewählten Anbieters angezeigt und nach der erfolgreichen Anmeldung beim Identitätsanbieter ein Authentifizierungstoken für den mobilen Dienst generiert wird. Die [LoginAsync]-Methode gibt einen [MobileServiceUser] zurück, der wiederum sowohl [userId] des authentifizierten Benutzers als auch das [MobileServiceAuthenticationToken] in Form eines JSON-Webtokens (JWT) enthält. Dieses Token kann zwischen gespeichert und wiederverwendet werden, bis es abläuft. Weitere Informationen finden Sie unter [Zwischenspeichern des Authentifizierungstokens].
 
-> [AZURE.NOTE]**Windows Store-App** Wenn Sie den Anmeldeanbieter für Microsoft-Konten zum Authentifizieren von Benutzern Ihrer Windows Store-App verwenden, sollten Sie ebenfalls das App-Paket im mobilen Dienst registrieren. Wenn Sie Ihre Windows Store-App-Paketinformationen bei Mobile Services registrieren, kann der Client die Anmeldeinformationen für Microsoft Account für eine einmalige Anmeldung verwenden. Wenn Sie dies nicht tun, werden Ihre Benutzer mit Microsoft Account-Login jedes Mal zur Anmeldung aufgefordert, wenn diese Anmeldemethode aufgerufen wird. Informationen zur Registrierung Ihres Windows Store-App-Pakets finden Sie unter [Registrieren Ihres Windows Store-App-Pakets für Microsoft-Authentifizierung](/develop/mobile/how-to-guides/register-windows-store-app-package/%20target="_blank"). Nach der Registrierung Ihres Pakets im mobilen Dienst können Sie die [LoginAsync](http://go.microsoft.com/fwlink/p/?LinkId=311594%20target="_blank")-Methode aufrufen und den Wert **true** für den _useSingleSignOn_-Parameter übergeben, um die Anmeldeinformationen wiederzuverwenden.
-
 ###Clientfluss
 
 Ihre Anwendung kann den Identitätsanbieter auch unabhängig kontaktieren und das zurückgegebene Token zur Authentifizierung dem mobilen Dienst vorlegen. Mit diesem Clientfluss können Sie die einmalige Anmeldung für Ihre Benutzer implementieren oder zusätzliche Benutzerdaten vom Identitätsanbieter abrufen.
+
+####Einmaliges Anmelden mit einem Token von Facebook oder Google
 
 Der folgende Codeausschnitt zeigt die einfachste Form des Clientflusses für Facebook oder Google.
 
@@ -511,13 +511,60 @@ Der folgende Codeausschnitt zeigt die einfachste Form des Clientflusses für Fac
 		}
 	}
 
-Für Microsoft-Konten funktioniert die Anmeldung folgendermaßen:
 
-	// Replace authentication_token_value with actual value of your Microsoft authentication token obtained through the Live SDK
-	user = await client
-		.LoginWithMicrosoftAccountAsync(authentication_token_value);
+####Einmaliges Anmelden mit einem Microsoft-Konto mit dem Live SDK
 
-Ein Beispiel für die einmalige Anmeldung mit Microsoft-Konten finden Sie im Lernprogramm "Authenticate your app with single sign-in" ([Windows Store](/develop/mobile/tutorials/single-sign-on-windows-8-dotnet/)/[Windows Phone](/develop/mobile/tutorials/single-sign-on-wp8/)).
+Damit Sie Benutzer authentifizieren können, müssen Sie Ihre App beim Microsoft-Konto für das Developer Center registrieren. Sie müssen dann diese Registrierung mit Ihrem mobilen Dienst verbinden. Führen Sie die Schritte unter [Registrieren Ihrer App für die Verwendung einer Microsoft-Kontoanmeldung](mobile-services-how-to-register-microsoft-authentication.md) aus, um eine Microsoft-Kontoregistrierung zu erstellen und diese mit Ihrem mobilen Dienst zu verbinden. Wenn Sie sowohl eine Windows Store- als auch eine Windows Phone-Versionen Ihrer App haben, registrieren Sie zuerst die Windows Store-Version.
+
+Im folgenden Code erfolgt eine Authentifizierung mit Live SDK und wird das zurückgegebene Token verwendet, um eine Anmeldung bei Ihrem mobilen Dienst vorzunehmen.
+
+	private LiveConnectSession session;
+ 	//private static string clientId = "<microsoft-account-client-id>";
+    private async System.Threading.Tasks.Task AuthenticateAsync()
+    {
+
+        // Get the URL the mobile service.
+        var serviceUrl = App.MobileService.ApplicationUri.AbsoluteUri;
+
+        // Create the authentication client for Windows Store using the mobile service URL.
+        LiveAuthClient liveIdClient = new LiveAuthClient(serviceUrl);
+        //// Create the authentication client for Windows Phone using the client ID of the registration.
+        //LiveAuthClient liveIdClient = new LiveAuthClient(clientId);
+
+        while (session == null)
+        {
+            // Request the authentication token from the Live authentication service.
+			// The wl.basic scope is requested.
+            LiveLoginResult result = await liveIdClient.LoginAsync(new string[] { "wl.basic" });
+            if (result.Status == LiveConnectSessionStatus.Connected)
+            {
+                session = result.Session;
+
+                // Get information about the logged-in user.
+                LiveConnectClient client = new LiveConnectClient(session);
+                LiveOperationResult meResult = await client.GetAsync("me");
+
+                // Use the Microsoft account auth token to sign in to Mobile Services.
+                MobileServiceUser loginResult = await App.MobileService
+                    .LoginWithMicrosoftAccountAsync(result.Session.AuthenticationToken);
+
+                // Display a personalized sign-in greeting.
+                string title = string.Format("Welcome {0}!", meResult.Result["first_name"]);
+                var message = string.Format("You are now logged in - {0}", loginResult.UserId);
+                var dialog = new MessageDialog(message, title);
+                dialog.Commands.Add(new UICommand("OK"));
+                await dialog.ShowAsync();
+            }
+            else
+            {
+                session = null;
+                var dialog = new MessageDialog("You must log in.", "Login Required");
+                dialog.Commands.Add(new UICommand("OK"));
+                await dialog.ShowAsync();
+            }
+        }
+    }
+
 
 ###<a name="caching"></a>Zwischenspeichern von Authentifizierungstoken
 Manche Aufrufe der Anmeldemethode lassen sich vermeiden, nachdem sich der Benutzer authentifiziert hat. Sie können den [Kennworttresor] für Windows Store-Apps verwenden, um die Identität des aktuellen Benutzers bei der ersten Anmeldung zwischenzuspeichern und später bei Bedarf prüfen, ob Sie die Benutzeridentität bereits im Speicher haben. Wenn der Zwischenspeicher leer ist, muss der Benutzer den Anmeldeprozess durchlaufen.
@@ -695,7 +742,7 @@ Mit dieser Eigenschaft werden alle Eigenschaften während der Serialisierung in 
 [Take]: http://msdn.microsoft.com/library/windowsazure/dn250574.aspx
 [Fiddler]: http://www.telerik.com/fiddler
 [Benutzerdefinierte API in Azure Mobile Services Client SDKs]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
-[Aufrufen einer benutzerdefinierten API aus dem Client]: mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api.md
+[Call a custom API from the client]: mobile-services-dotnet-backend-windows-store-dotnet-call-custom-api.md
 [InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

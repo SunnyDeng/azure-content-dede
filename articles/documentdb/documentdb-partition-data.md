@@ -1,27 +1,28 @@
 <properties      
-    pageTitle="Partitionieren von Daten in DocumentDB | Microsoft Azure"
-	description="Erfahren Sie, wie Sie Daten in DocumentDB partitionieren können und wann Sie eine Hash-, Bereichs- und Suchpartitionierung verwenden sollten."
-	services="documentdb"
-	authors="arramac"
-	manager="jhubbard"
-	editor="monicar"
-	documentationCenter=""/>
+    pageTitle="Partitionieren und Skalieren von Daten in DocumentDB mit Sharding | Microsoft Azure"      
+    description="Hier erfahren Sie, wie Sie Daten mit einem als Sharding bezeichneten Verfahren skalieren. Sie erhalten Informationen zu Shards, zum Partitionieren von Daten in DocumentDB und zur Verwendung der Hash-, Bereichs- und Suchpartitionierung."         
+    keywords="Scale data, shard, sharding, documentdb, azure, Microsoft azure"
+	services="documentdb"      
+    authors="arramac"      
+    manager="jhubbard"      
+    editor="monicar"      
+    documentationCenter=""/>
 <tags       
-    ms.service="documentdb"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="05/28/2015"
-	ms.author="arramac"/>
+    ms.service="documentdb"      
+    ms.workload="data-services"      
+    ms.tgt_pltfrm="na"      
+    ms.devlang="na"      
+    ms.topic="article"      
+    ms.date="09/14/2015"      
+    ms.author="arramac"/>
 
-# Partitionieren von Daten in DocumentDB
+# Partitionieren und Skalieren von Daten in DocumentDB
 
 [Microsoft Azure DocumentDB](../../services/documentdb/) wurde entwickelt, damit Sie schnelle, vorhersagbare Leistung für Ihre Anwendung erzielen und diese nahtlos *horizontal hochskalieren* können, wenn sie wächst. DocumentDB wurde verwendet, um hoch skalierbare Produktionsdienste bei Microsoft zu betreiben, wie z. B. den Benutzer-Datenspeicher, der wiederum die MSN-Suite mit Webanwendungen und mobilen Apps betreibt.
 
 Im Hinblick auf Speicher und Durchsatz für Ihre DocumentDB-Anwendung können Sie eine nahezu unbegrenzte Skalierung erzielen, wenn Sie Ihre Daten horizontal partitionieren. Dieses Konzept wird gemeinhin als **Sharding** bezeichnet. DocumentDB-Konten können über stapelbare Einheiten, auch bekannt als **Sammlungen**, linear zu den Kosten skaliert werden. Die beste Partitionierung Ihrer Daten zwischen Sammlungen ist vom Datenformat und den Zugriffsmustern abhängig.
 
-Nach dem Lesen dieses Artikels können Sie die folgenden Fragen beantworten:
+Nach dem Lesen dieses Artikels zur Datenskalierung können Sie die folgenden Fragen beantworten:
 
  - Was ist eine Hash-, Bereichs- und Suchpartitionierung?
  - Wann verwenden Sie die einzelnen Partitionierungsverfahren und warum?
@@ -31,13 +32,13 @@ Dieser Artikel stellt einige Konzepte zum Sharding vor. Wenn Sie Code zum Partit
 
 ## Sammlungen = Partitionen
 
-Bevor wir uns näher mit Datenpartitionierungsverfahren befassen, müssen Sie zunächst verstehen, was eine Sammlung genau ist und was nicht. Wie Sie vielleicht bereits wissen, ist eine Sammlung ein Container für Ihre JSON-Dokumente. Sammlungen in DocumentDB sind nicht nur *logische*, sondern auch *physische* Container. Sie stellen die Transaktionsgrenze für gespeicherte Prozeduren und Trigger sowie den Eingangspunkt für Abfragen und CRUD-Vorgänge dar. Jeder Sammlung ist eine reservierte Durchsatzmenge zugewiesen, die nicht mit anderen Sammlungen im gleichen Konto gemeinsam genutzt wird. Aus diesem Grund können Sie Ihre Anwendung im Hinblick auf Speicher und Durchsatz horizontal hochskalieren, indem Sie weitere Sammlungen hinzufügen und dann Ihre Dokumente auf diesen verteilen.
+Bevor wir uns näher mit Verfahren für die Datenskalierung und -partitionierung befassen, müssen Sie zunächst verstehen, was eine Sammlung genau ist und was nicht. Wie Sie vielleicht bereits wissen, ist eine Sammlung ein Container für Ihre JSON-Dokumente. Sammlungen in DocumentDB sind nicht nur *logische*, sondern auch *physische* Container. Sie stellen die Transaktionsgrenze für gespeicherte Prozeduren und Trigger sowie den Eingangspunkt für Abfragen und CRUD-Vorgänge dar. Jeder Sammlung ist eine reservierte Durchsatzmenge zugewiesen, die nicht mit anderen Sammlungen im gleichen Konto gemeinsam genutzt wird. Aus diesem Grund können Sie Ihre Anwendung im Hinblick auf Speicher und Durchsatz horizontal hochskalieren, indem Sie weitere Sammlungen hinzufügen und dann Ihre Dokumente auf diesen verteilen.
 
 Sammlungen sind nicht identisch mit Tabellen in relationalen Datenbanken. Sammlungen erzwingen kein Schema. Daher können Sie unterschiedliche Arten von Dokumenten mit unterschiedlichen Schemas in derselben Sammlung speichern. Sie können jedoch auch Sammlungen verwenden, um wie bei Tabellen Objekte eines einzelnen Typs zu speichern. Das geeignetste Modell ist nur davon abhängig, wie die Daten zusammen in Abfragen und Transaktionen angezeigt werden.
 
 ## Partitionieren mit DocumentDB
 
-Die am häufigsten verwendeten Verfahren zum Partitionieren von Daten mit Azure DocumentDB sind die *Bereichspartitionierung*, die *Suchpartitionierung* und die *Hashpartitionierung*. In der Regel legen Sie einen einzelnen JSON-Eigenschaftennamen im Dokument als Partitionsschlüssel fest, z. B. "timestamp" oder "userID". In einigen Fällen ist dies möglicherweise stattdessen eine interne JSON-Eigenschaft oder ein anderer Eigenschaftennamen für jeden unterschiedlichen Dokumenttyp.
+Es gibt zwei Ansätze für das Partitionieren von Daten mit Azure-DocumentDB (bzw. jedem verteilten System) – hierbei handelt es sich um die *Bereichspartitionierung* und die *Hashpartitionierung*. Dies umfasst die Auswahl eines einzelnen JSON-Eigenschaftennamens im Dokument als *Partitionsschlüssel*, im Allgemeinen die normale ID-Eigenschaft, z. B. "userID" für Benutzerstorage oder "deviceId" für IoT-Szenarien. Für Zeitreihendaten wird "Timestamp" als Partitionsschlüssel verwendet, da Daten in der Regel nach Zeitabschnitten eingefügt und gesucht werden. Es ist üblich, eine einzelne Eigenschaft zu verwenden, diese könnte jedoch auch eine andere Eigenschaft aus unterschiedlichen Arten von Dokumenten sein. Verwenden Sie z. B. "id" für Benutzerdokumente und "ownerUserId" für Kommentare. Der nächste Schritt besteht darin, alle Vorgänge wie Aktionen zum Erstellen und Abfragen an die richtigen Sammlungen weiterzuleiten, wobei der Partitionsschlüssel in einer Anforderung eingeschlossen wird.
 
 Lassen Sie uns diese Verfahren einmal näher betrachten.
 
@@ -47,15 +48,13 @@ In einer Bereichspartitionierung werden Partitionen basierend darauf zugewiesen,
 
 > [AZURE.TIP]Verwenden Sie die Bereichspartitionierung, wenn Ihre Abfragen des Partitionsschlüssels auf bestimmte Bereichswerte beschränkt sind.
 
-## Suchpartitionierung
+Ein Sonderfall der Bereichspartitionierung ist ein Bereich mit einem einzelnen Wert. Dies wird häufig für Partitionierungen nach diskreten Werten wie Region verwendet (z. B. wenn die Partition für Skandinavien Norwegen, Dänemark und Schweden umfasst).
 
-Bei einer Suchpartitionierung werden Partitionen basierend auf einer Suchzuordnung zugewiesen, die diskrete Partitionswerte bestimmten Partitionen auch bekannt als Partitions- oder Shardzuordnung zuweist. Dies wird häufig für Partitionierungen nach Region verwendet (z. B. die Partition für Skandinavien umfasst Norwegen, Dänemark und Schweden).
-
-> [AZURE.TIP]Die Suchpartitionierung bietet das höchste Maß an Kontrolle bei der Verwaltung einer mehrinstanzenfähigen Anwendung. Sie können einer Sammlung mehrere Mandanten, einer Sammlung einen Mandanten oder sogar mehreren Sammlungen einen Mandanten zuweisen.
+> [AZURE.TIP]Die Bereichspartitionierung bietet das höchste Maß an Kontrolle bei der Verwaltung einer mehrinstanzenfähigen Anwendung. Sie können einer Sammlung mehrere Mandanten, einer Sammlung einen Mandanten oder sogar mehreren Sammlungen einen Mandanten zuweisen.
 
 ## Hashpartitionierung
 
-Bei der Hashpartitionierung werden basierend auf dem Wert einer Hashfunktion Partitionen zugewiesen, sodass Sie Anforderungen und Daten gleichmäßig über eine Anzahl von Partitionen verteilen können. Dies wird häufig zur Partitionierung der Daten verwendet, die aus einer großen Anzahl von unterschiedlichen Clients hergestellt oder genutzt werden, und eignet sich zum Speichern von Benutzerprofilen, Katalogelementen und IoT-Telemetriedaten ("Internet der Dinge").
+Bei der Hashpartitionierung werden basierend auf dem Wert einer Hashfunktion Partitionen zugewiesen, sodass Sie Anforderungen und Daten gleichmäßig über eine Anzahl von Partitionen verteilen können. Dies wird häufig zur Partitionierung der Daten verwendet, die aus einer großen Anzahl von unterschiedlichen Clients erstellt oder genutzt werden, und eignet sich zum Speichern von Benutzerprofilen, Katalogelementen und IoT-Gerätetelemetriedaten ("Internet der Dinge").
 
 > [AZURE.TIP]Verwenden Sie die Hashpartitionierung, wenn es zu viele Entitäten gibt, um sie mit der Suchpartitionierung aufzuzählen (z. B. Benutzer oder Geräte), und wenn die Abfragerate zwischen Entitäten einigermaßen gleichmäßig ist.
 
@@ -63,8 +62,7 @@ Bei der Hashpartitionierung werden basierend auf dem Wert einer Hashfunktion Par
 
 Welches Partitionierungsverfahren ist für Sie geeignet? Die Wahl hängt vom Datentypen und den allgemeinen Zugriffsmustern ab. Durch die Wahl des richtigen Partitionierungsverfahrens zum Entwurfszeitpunkt können Sie technische Schulden vermeiden und das Wachstum der Datengröße und des Anfragevolumens bewältigen.
 
-- Die **Bereichspartitionierung** wird im Allgemeinen im Datenkontext verwendet, da sie Ihnen eine einfache und natürliche Methode bietet, um Partitionen nach Zeitstempel altern zu lassen. Sie ist auch nützlich, wenn Abfragen im Allgemeinen auf einen Zeitraum beschränkt sind, da dies an den Partitionierungsgrenzen ausgerichtet ist. 
-- Die **Suchpartitionierung** ermöglicht es Ihnen, unsortierte und nicht miteinander verbundene Datensätze auf natürliche Weise zu gruppieren und zu organisieren, z. B. Gruppieren von Mandanten nach Organisation oder von Staaten nach geografischer Region. Die Suche bietet auch eine präzisere Kontrolle für die Migration von Daten zwischen Sammlungen. 
+- Die **Bereichspartitionierung** wird im Allgemeinen im Datenkontext verwendet, da sie Ihnen eine einfache und natürliche Methode bietet, um Partitionen nach Zeitstempel altern zu lassen. Sie ist auch nützlich, wenn Abfragen im Allgemeinen auf einen Zeitraum beschränkt sind, da dies an den Partitionierungsgrenzen ausgerichtet ist. Außerdem können Sie unsortierte und nicht miteinander verbundene Datensätze auf natürliche Weise gruppieren und organisieren, z. B. Gruppieren von Mandanten nach Organisation oder von Staaten nach geografischer Region. Die Suche bietet auch eine präzisere Kontrolle für die Migration von Daten zwischen Sammlungen. 
 - Die **Hashpartitionierung** eignet sich für den einheitlichen Lastenausgleich von Anforderungen, um den bereitgestellten Speicher und Durchsatz effektiv zu nutzen. Mithilfe von *konsistenten Hash*-Algorithmen können Sie die Datenmenge minimieren, die beim Hinzufügen oder Entfernen einer Partition verschoben werden muss.
 
 Sie müssen sich nicht für ein Partitionierungsverfahren entscheiden. Eine *Mischung* dieser Verfahren kann je nach Szenario ebenfalls sinnvoll sein. Wenn Sie z. B. Fahrzeugtelemetriedaten speichern, wäre eine Partitionierung der Gerätetelemetriedaten nach Zeitstempelbereich ein guter Ansatz, um die Partitionen einfach verwalten zu können. Führen Sie anschließend eine Subpartitionierung nach VIN (Fahrzeugnummer) durch, um für den Durchsatz eine horizontale Skalierung durchzuführen (gemischte Bereichs-Hash-Partitionierung).
@@ -80,7 +78,7 @@ Lassen Sie uns diese Bereiche einmal näher betrachten.
 
 ## Weiterleiten von Erstellungsvorgängen und Abfragen
 
-Das Weiterleiten von Dokumenterstellungsanfragen ist bei allen drei bislang erwähnten Verfahren relativ unkompliziert. Das Dokument wird auf der Partition aus dem Hash-, Such- oder Bereichswert erstellt, der dem Partitionsschlüssel entspricht.
+Das Weiterleiten von Erstellungsanforderungen ist für die Hash- und Bereichspartitionierung unkompliziert. Das Dokument wird auf der Partition aus dem Hash-, Such- oder Bereichswert erstellt, der dem Partitionsschlüssel entspricht.
 
 Abfragen und Lesevorgänge sollten in der Regel auf einen einzelnen Partitionsschlüssel begrenzt werden, damit Abfragen nur auf die entsprechenden Partitionen verteilt werden können. Bei Abfragen für alle Daten müssen Sie jedoch die Abfrage über mehrere Partitionen*verteilen* und dann die Ergebnisse zusammenführen. Beachten Sie, dass einige Abfragen eine benutzerdefinierte Logik durchführen müssen, um die Ergebnisse zusammenzuführen, z. B. beim Abrufen der ersten n Ergebnisse.
 
@@ -90,7 +88,7 @@ Außerdem müssen Sie entscheiden, wie Sie die Partitionszuordnung speichern mö
 
 Wenn dies nicht der Fall ist, können Sie sie in einem persistenten Speicher speichern. Ein häufiges Entwurfsmuster in der Produktion ist die Serialisierung von Partitionszuordnungen als JSON und auch deren Speicherung in DocumentDB-Sammlungen. Clients können dann die Zuordnung zwischenspeichern, um zusätzliche Roundtrips zu vermeiden, und dann in regelmäßigen Abständen auf Änderungen hin zu prüfen. Wenn die Clients die Shardzuordnung ändern können, stellen Sie sicher, dass sie ein konsistentes Namensgebungsschema und eine optimistische Parallelität (eTags) verwenden, um einheitliche Updates der Partitionszuordnung zu ermöglichen.
 
-## Hinzufügen und Entfernen von Partitionen
+## Hinzufügen und Entfernen von Partitionen zum Skalieren von Daten
 
 Mit DocumentDB können Sie jederzeit Sammlungen hinzufügen und entfernen und sie verwenden, um neue eingehende Daten zu speichern oder in vorhandenen Sammlungen verfügbare Daten neu auszugleichen. Die Anzahl der Sammlungen finden Sie auf der Seite [Grenzen](documentdb-limits.md). Sie können sich jederzeit an uns wenden, um diese Grenzen anzuheben.
 
@@ -114,4 +112,4 @@ In diesem Artikel haben wir einige gängige Verfahren der Datenpartitionierung m
 
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

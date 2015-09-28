@@ -5,23 +5,26 @@
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
-	editor=""/>
+	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="09/16/2015" 
 	ms.author="cephalin"/>
 
 # Integrieren einer Web-App in einem Azure Virtual Network #
+
 Dieses Dokument beschreibt die Vorschaufunktion der Virtual Network-Integration und zeigt, wie Sie diese mit Web-Apps in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) einrichten. Mit Azure Virtual Networks und Ihren lokalen Ressourcen können Sie Hybrid-Lösungen entwickeln, auch wenn Sie nicht mit virtuellen Azure-Netzwerken vertraut sind.
 
 Diese Integration ermöglicht Ihrer Web-App den Zugriff auf Ressourcen in Ihrem virtuellen Netzwerk, gewährt aber keinen Zugriff auf Ihre Web-App aus dem virtuellen Netzwerk. Einige Standardszenarios sind dort vorgesehen, wo Ihre Web-App Zugriff auf Datenbank- oder Webdienste benötigt, die auf virtuellen Maschinen in Ihrem virtuellen Netzwerk oder sogar in Ihrem eigenen Rechenzentrum ausgeführt werden. Der Einbau eines Laufwerks wird nicht unterstützt. Auch die Integration mit Authentifizierungssystemen in Ihrem virtuellen Netzwerk ist derzeit nicht möglich. Diese Funktion ist allerdings in der Vorschau enthalten und wird vor der GA weiterhin verbessert.
 
 Weitere Informationen zu Azure Virtual Networks, den Vorteilen und Anwendungsfällen finden Sie unter "Virtuelle Netzwerke im Überblick".
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Erste Schritte ##
 Sie müssen Folgendes beachten, bevor Sie Ihre Web-App mit einem virtuellen Netzwerk verbinden:
@@ -106,4 +109,4 @@ Es gibt zurzeit auch bei den Preisebenen noch Unterschiede zwischen den beiden F
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

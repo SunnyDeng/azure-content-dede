@@ -1,20 +1,20 @@
 <properties
    pageTitle="Grundlegendes zu den Unterschieden zwischen dem Modell der Ressourcen-Manager-Bereitstellung und dem Modell der klassischen Bereitstellung"
-	description="Beschreibt die Unterschiede zwischen dem Ressourcen-Manager-Bereitstellungsmodell und dem klassischen Bereitstellungsmodell (auch als Dienstverwaltungsmodell bekannt)."
-	services="azure-resource-manager"
-	documentationCenter="na"
-	authors="tfitzmac"
-	manager="wpickett"
-	editor=""/>
+   description="Beschreibt die Unterschiede zwischen dem Ressourcen-Manager-Bereitstellungsmodell und dem klassischen Bereitstellungsmodell (auch als ";Dienstverwaltungsmodell"; bekannt)."
+   services="azure-resource-manager"
+   documentationCenter="na"
+   authors="tfitzmac"
+   manager="wpickett"
+   editor=""/>
 
 <tags
    ms.service="azure-resource-manager"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/20/2015"
-	ms.author="tomfitz"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/15/2015"
+   ms.author="tomfitz"/>
 
 # Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung
 
@@ -101,7 +101,7 @@ Mit dem Ressourcen-Manager wurde das Konzept der Ressourcengruppen eingeführt. 
 - Sie können Tags auf Ressourcen anwenden, um alle Ressourcen in Ihrem Abonnement logisch zu organisieren.
 
 
-Vor der Einführung des Ressourcen-Managers befanden sich die über die klassische Bereitstellung erstellten Ressourcen nicht in Ressourcengruppen. Nach Einführung des Ressourcen-Managers wurden alle Ressourcen nachträglich zu Standardressourcengruppen hinzugefügt. Wenn Sie jetzt eine Ressource über die klassische Bereitstellung erstellen, wird diese automatisch in einer leeren Ressourcengruppe erstellt, auch wenn Sie während der Bereitstellung diese Ressourcengruppe nicht angegeben haben. Jedoch bedeutet die bloße Tatsache, dass eine Ressource sich in einer Ressourcengruppe befindet, noch nicht, dass diese Ressource in das Ressourcen-Manager-Modell konvertiert wurde. Wenn die Ressource über die klassische Bereitstellung erstellt wurde, müssen Sie diese weiterhin mit klassischen Vorgängen ausführen.
+Vor der Einführung des Ressourcen-Managers befanden sich die über die klassische Bereitstellung erstellten Ressourcen nicht in Ressourcengruppen. Nach Einführung des Ressourcen-Managers wurden alle Ressourcen nachträglich zu Standardressourcengruppen hinzugefügt. Wenn Sie jetzt eine Ressource über die klassische Bereitstellung erstellen, wird diese automatisch in einer standardmäßigen Ressourcengruppe für diesen Dienst erstellt, auch wenn Sie während der Bereitstellung diese Ressourcengruppe nicht angegeben haben. Jedoch bedeutet die bloße Tatsache, dass eine Ressource sich in einer Ressourcengruppe befindet, noch nicht, dass diese Ressource in das Ressourcen-Manager-Modell konvertiert wurde. Für Virtual Machines, Storage und Virtual Networks gilt: Wenn die Ressource über die klassische Bereitstellung erstellt wurde, müssen Sie diese weiterhin mit klassischen Vorgängen ausführen.
 
 Sie können Ressourcen in eine andere Ressourcengruppe verschieben und einer vorhandenen Ressourcengruppe neue Ressourcen hinzufügen. Eine Ressourcengruppe kann daher eine Kombination aus Ressourcen enthalten, die mit dem Ressourcen-Manager und über die klassische Bereitstellung erstellt wurden. Diese Ressourcenkombination kann zu unerwarteten Ergebnissen führen, da die Ressourcen nicht die gleichen Vorgänge unterstützen.
 
@@ -158,4 +158,4 @@ Informationen zum Verbinden virtueller Netzwerke aus verschiedenen Bereitstellun
 - Informationen zum Erstellen deklarativer Bereitstellungsvorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Die Befehle zum Bereitstellen einer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!------HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

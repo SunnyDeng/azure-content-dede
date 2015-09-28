@@ -4,16 +4,17 @@
 	services="app-service\web"
 	documentationCenter=""
 	authors="cephalin"
+	writer="cephalin"
 	manager="wpickett"
 	editor="mollybos"/>
 
 <tags
-	ms.service="app-service-web"
+	ms.service="app-service"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/03/2015"
+	ms.date="09/16/2015"
 	ms.author="cephalin"/>
 
 # Einrichten von Stagingumgebungen für Web-Apps in Azure App Service
@@ -33,9 +34,10 @@ Jeder App Service-Planmodus unterstützt eine andere Anzahl von Bereitstellungss
 
 - Die Skalierung ist für Nicht-Produktionsslots nicht verfügbar,
 
-- Die Verwaltung verknüpfter Ressourcen wird für Nicht-Produktionsslots nicht unterstützt.
+- Die Verwaltung verknüpfter Ressourcen wird für Nicht-Produktionsslots nicht unterstützt. Sie können diese negativen Auswirkungen für einen Produktionsslot nur im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) vermeiden, indem Sie den Nicht-Produktionsslot vorübergehend in einen anderen App Service-Planmodus verschieben. Beachten Sie, dass der Nicht-Produktionsslot wieder im selben Modus freigegeben werden muss wie der Produktionsslot, bevor Sie die beiden Slots austauschen können.
 
-	> [AZURE.NOTE]Sie können diese negativen Auswirkungen für einen Produktionsslot nur im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) vermeiden, indem Sie den Nicht-Produktionsslot vorübergehend in einen anderen App Service-Planmodus verschieben. Beachten Sie, dass der Nicht-Produktionsslot wieder im selben Modus freigegeben werden muss wie der Produktionsslot, bevor Sie die beiden Slots austauschen können.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 <a name="Add"></a>
 ## Hinzufügen eines Bereitstellungsslots zu einer Web-App ##
@@ -259,4 +261,4 @@ Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie w
 [SlotSettings]: ./media/web-sites-staged-publishing/SlotSetting.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

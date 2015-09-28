@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie einen Datenträger an einen virtuellen Azure-Computer anfügen und initialisieren können, damit er betriebsbereit ist."
 	services="virtual-machines, storage"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/16/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 # Anfügen eines Datenträgers an einen virtuellen Windows-Computer
 
@@ -59,4 +59,4 @@ Hier finden Sie eine exemplarische Vorgehensweise für die Schritte dieses Tutor
 
 [logon]: virtual-machines-log-on-windows-server.md
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

@@ -14,22 +14,22 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/24/2015"
+   ms.date="09/15/2015"
    ms.author="larryfr"/>
 
-#Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows (Vorschau)
+#Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows
 
 > [AZURE.SELECTOR]
 - [Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 - [Linux, Unix, OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
 
-Linux-basierte Azure-HDInsight-Cluster bieten die Möglichkeit des SSH-Zugriffs (Secure Shell) mithilfe eines Kennworts oder SSH-Schlüssels. Dieses Dokument enthält Informationen zum Herstellen einer Verbindung von Windows-Clients mit HDInsight über den PuTTY SSH-Client.
+Mit [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) können Sie Vorgänge in Linux-basierten HDInsight-Clustern über eine Befehlszeilenschnittstelle remote ausführen. Dieses Dokument enthält Informationen zum Herstellen einer Verbindung von Windows-Clients mit HDInsight über den PuTTY SSH-Client.
 
 > [AZURE.NOTE]Für die Schritte in diesem Artikel wird davon ausgegangen, dass Sie einen Windows-Client verwenden. Wenn Sie einen Linux-, Unix- oder OS X-Client verwenden, finden Sie entsprechende Informationen unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ##Voraussetzungen
 
-* **PuTTY** und **PuTTYGen** für Windows-Clients. Diese Hilfsprogramme stehen unter [http://www.chiark.greenend.org.uk/\~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) zur Verfügung.
+* **PuTTY** und **PuTTYGen** für Windows-Clients. Diese Hilfsprogramme stehen unter [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) zur Verfügung.
 
 * Ein zeitgemäßer Webbrowser, der HTML5 unterstützt.
 
@@ -41,9 +41,25 @@ OR
 
 SSH ist ein Dienstprogramm zur Anmeldung und Remoteausführung von Befehlen auf einem Remoteserver. Bei Linux-basiertem HDInsight stellt SSH eine verschlüsselte Verbindung mit dem Hauptknoten des Clusters her und bietet eine Befehlszeile, über die Sie Befehle eingeben können. Die Befehle werden dann direkt auf dem Server ausgeführt.
 
-##Erstellen eines SSH-Schlüssels (optional)
+###SSH-Benutzername
 
-Wenn Sie einen Linux-basierten HDInsight-Cluster erstellen, können Sie sich bei Verwenden von SSH mithilfe eines Kennworts oder SSH-Schlüssels beim Server authentifizieren. SSH-Schlüssel werden als sicherer erachtet, da sie auf Zertifikaten basieren. Verwenden Sie die folgenden Informationen, wenn Sie für Ihren Cluster die Verwendung von SSH-Schlüsseln planen.
+Eine SSH-Benutzername ist der Name, den Sie für die Authentifizierung beim HDInsight-Cluster verwenden. Wenn Sie während der Erstellung des Clusters einen SSH-Benutzernamen angeben, wird dieser Benutzer in allen Knoten im Cluster erstellt. Nach dem Erstellen des Clusters können Sie diesen Benutzernamen zum Herstellen einer Verbindung mit den Hauptknoten des HDInsight-Clusters verwenden. Ausgehend von den Hauptknoten können Sie dann eine Verbindung mit den einzelnen Workerknoten herstellen.
+
+> [AZURE.NOTE]Ein SSH-Benutzername muss eindeutig sein. Da ein SSH-Benutzername ein Benutzerkonto im HDInsight-Cluster erstellt, darf kein Konflikt mit vorhandenen Benutzern entstehen, die von HDInsight erstellt werden. Im Folgenden finden Sie die Namen, die für die Verwendung durch Dienste, die im HDInsight-Cluster ausgeführt werden, reserviert sind und daher nicht als SSH-Benutzername verwendet werden können:
+>
+> root, hdiuser, storm, hbase, ubuntu, zookeeper, hdfs, yarn, mapred, hbase, hive, oozie, falcon, sqoop, admin, tez, hcat, hdinsight-zookeeper.
+
+###SSH-Kennwort oder öffentlicher Schlüssel
+
+Ein SSH-Benutzer kann entweder ein Kennwort oder einen öffentlichen Schlüssel für die Authentifizierung verwenden. Ein Kennwort ist nur eine von Ihnen erstellte Textzeichenfolge, während ein öffentlicher Schlüssel Teil eines kryptografischen Schlüsselpaars ist, das generiert wurde, um Sie eindeutig zu identifizieren.
+
+Ein Schlüssel ist sicherer als ein Kennwort, es sind jedoch zusätzliche Schritte erforderlich, um den Schlüssel zu generieren, und Sie müssen die Dateien mit dem Schlüssel an einem sicheren Ort verwalten. Wenn jemand Zugriff auf die Schlüsseldateien erhält, hat er Zugriff auf Ihr Konto. Wenn die Schlüsseldateien verloren gehen, können Sie sich nicht bei Ihrem Konto anmelden.
+
+Ein Schlüsselpaar besteht aus einem öffentlichen Schlüssel (der an den HDInsight-Server gesendet wird) und einem privaten Schlüssel (der auf dem Clientcomputer gespeichert ist). Beim Herstellen einer Verbindung mit dem HDInsight-Server über SSH verwendet der SSH-Client den privaten Schlüssel auf Ihrem Computer zur Authentifizierung beim Server.
+
+##Erstellen eines SSH-Schlüssels
+
+Verwenden Sie die folgenden Informationen, wenn Sie für Ihren Cluster die Verwendung von SSH-Schlüsseln planen. Wenn Sie ein Kennwort verwenden möchten, können Sie diesen Abschnitt überspringen.
 
 1. Öffnen Sie PuTTYGen.
 
@@ -129,7 +145,7 @@ Auf die Workerknoten kann von außerhalb des Azure-Datencenters nicht direkt zug
 
 Sofern Sie beim Erstellen des Benutzerkontos einen SSH-Schlüssel bereitgestellt haben, müssen Sie die folgenden Schritte ausführen, um den privaten Schlüssel auszuwählen, der zum Authentifizieren für den Cluster verwendet wird (wenn Sie eine Verbindung mit den Workerknoten herstellen möchten).
 
-1. Laden Sie Pageant von [http://www.chiark.greenend.org.uk/\~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) herunter, und installieren Sie dieses Programm. Es dient zum Zwischenspeichern von SSH-Schlüsseln für PuTTY.
+1. Laden Sie Pageant von [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) herunter, und installieren Sie dieses Programm. Es dient zum Zwischenspeichern von SSH-Schlüsseln für PuTTY.
 
 2. Führen Sie Pageant aus. Es wird im Statusbereich minimiert als Symbol angezeigt. Klicken Sie mit rechten Maustaste, und wählen Sie **Add Key** aus.
 
@@ -203,75 +219,7 @@ SSH kann auch zum Tunneln lokaler Anforderungen wie etwa Webanforderungen zum HD
 
 > [AZURE.IMPORTANT]Ein SSH-Tunnel ist eine Voraussetzung für den Zugriff auf die Webbenutzeroberfläche für manche Hadoop-Dienste. Auf die Benutzeroberfläche des Auftragsverlaufs und des Ressourcen-Managers kann beispielsweise nur über einen SSH-Tunnel zugegriffen werden.
 
-Verwenden Sie die folgenden Schritte, um einen SSH-Tunnel zu erstellen und Ihren Browser zu konfigurieren, damit Sie mit ihm die Verbindung zum Cluster herstellen können:
-
-1. Öffnen Sie PuTTY, und geben Sie die Verbindungsinformationen ein, wie im Abschnitt [Verbinden mit einem Linux-basierten Cluster](#connect-to-a-linux-based-hdinsight-cluster) beschrieben.
-
-2. Erweitern Sie auf der linken Seite des Dialogfelds im Abschnitt **Category** erst **Connection**, dann **SSH**, und wählen Sie anschließend **Tunnels** aus.
-
-3. Geben Sie die folgenden Informationen in das Formular **Options controlling SSH port forwarding** ein:
-
-	* **Source port**: Der Port auf dem Client, den Sie weiterleiten möchten. Beispiel: **9876**.
-
-	* **Destination**: Die SSH-Adresse des Linux-basierten HDInsight-Clusters. Beispiel: **mycluster-ssh.azurehdinsight.net**.
-
-	* **Dynamic**: Ermöglicht das dynamische SOCKS-Proxyrouting.
-
-	![Abbildung von Tunneloptionen](./media/hdinsight-hadoop-linux-use-ssh-windows/puttytunnel.png)
-
-4. Klicken Sie auf **Add**, um die Einstellungen hinzuzufügen. Klicken Sie dann auf **Open**, um eine SSH-Verbindung zu öffnen.
-
-5. Melden Sie sich bei entsprechender Aufforderung am Server an. Dadurch wird eine SSH-Sitzung eingerichtet und der Tunnel aktiviert.
-
-6. Konfigurieren Sie das Clientprogramm, z. B. Firefox, für die Verwendung von **localhost:9876** als **SOCKS v5**-Proxy. Die Firefox-Einstellungen sollten wie folgt aussehen:
-
-	![Abbildung von Firefox-Einstellungen](./media/hdinsight-hadoop-linux-use-ssh-windows/socks.png)
-
-	> [AZURE.NOTE]Durch die Auswahl von **Remote-DNS** werden DNS-Anforderungen mithilfe des HDInsight-Clusters aufgelöst. Ist diese Option deaktiviert, wird DNS lokal aufgelöst.
-
-	Sie können überprüfen, ob Datenverkehr durch den Tunnel weitergeleitet wird, indem Sie eine Website wie z. B. [http://www.whatismyip.com/](http://www.whatismyip.com/) mit aktivierten und deaktivierten Proxyeinstellungen in Firefox aufrufen. Bei aktivierten Einstellungen wird die IP-Adresse eines Computers im Microsoft Azure-Datencenter angezeigt.
-
-###Browsererweiterungen
-
-Obwohl Sie den Browser für die Verwendung des Tunnels konfigurieren, möchten Sie in der Regel jedoch nicht den gesamten Datenverkehr über den Tunnel weiterleiten. Browsererweiterungen wie [FoxyProxy](http://getfoxyproxy.org/) unterstützen den Musterabgleich für URL-Anforderungen (nur FoxyProxy Standard oder Plus), sodass nur Anforderungen für bestimmte URLs durch den Tunnel gesendet werden.
-
-Wenn Sie FoxyProxy Standard installiert haben, konfigurieren Sie es folgendermaßen, um nur den Datenverkehr für HDInsight über den Tunnel weiterzuleiten.
-
-1. Öffnen Sie die FoxyProxy-Erweiterung in Ihrem Browser. Wählen Sie z. B. in Firefox das FoxyProxy-Symbol neben dem Adressfeld aus.
-
-	![FoxyProxy (Symbol)](./media/hdinsight-hadoop-linux-use-ssh-windows/foxyproxy.png)
-
-2. Wählen Sie **Neuen Proxy hinzufügen** aus, und geben Sie auf der Registerkarte **Allgemein** einen Proxynamen für **HDInsightProxy** ein.
-
-	![FoxyProxy allgemein](./media/hdinsight-hadoop-linux-use-ssh-windows/foxygeneral.png)
-
-3. Wählen Sie die Registerkarte **Proxydetails** aus, und geben Sie die entsprechenden Werte in die Felder ein:
-
-	* **Host- oder IP-Adresse**: "localhost", da wir auf dem lokalen Computer einen SSH-Tunnel verwenden.
-
-	* **Port**: Der Port, den Sie für den SSH-Tunnel verwendet haben.
-
-	* **SOCKS-Proxy**: Aktivieren Sie diese Option, damit der Browser den Tunnel als Proxy verwenden kann.
-
-	* **SOCKS v5**: Aktivieren Sie diese Option, um die erforderliche Version für den Proxy festzulegen.
-
-	![FoxyProxy-Proxy](./media/hdinsight-hadoop-linux-use-ssh-windows/foxyproxyproxy.png)
-
-4. Wählen Sie die Registerkarte **URL-Muster** und anschließend **Neues Muster** aus. Gehen Sie wie folgt vor, um das Muster zu definieren, und klicken Sie dann auf **OK**:
-
-	* **Name des Musters**: **Hauptknoten** – Dies ist lediglich ein Anzeigename für das Muster.
-
-	* **URL-Muster**: **\\*Hauptknoten\\*** – Definiert ein Muster, das mit allen URLs übereinstimmt, die das Wort **Hauptknoten** enthalten.
-
-	![FoxyProxy-Muster](./media/hdinsight-hadoop-linux-use-ssh-windows/foxypattern.png)
-
-4. Klicken Sie auf **OK**, um den Proxy hinzuzufügen und **Proxyeinstellungen** zu schließen.
-
-5. Am oberen Rand des FoxyProxy-Dialogfelds ändern Sie **Modus auswählen** in **Proxys basierend auf ihren vordefinierten Mustern und Prioritäten verwenden**, und klicken Sie dann auf **Schließen**.
-
-	![FoxyProxy – Modus auswählen](./media/hdinsight-hadoop-linux-use-ssh-windows/selectmode.png)
-
-Nachdem Sie diese Schritte ausgeführt haben, werden ausschließlich Anforderungen für URLs, die die Zeichenfolge **Hauptknoten** enthalten, über den SSL-Tunnel weitergeleitet.
+Weitere Informationen zum Erstellen und Verwenden eines SSH-Tunnels finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
 
 ##Nächste Schritte
 
@@ -285,4 +233,4 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 [preview-portal]: https://portal.azure.com/
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

@@ -11,13 +11,15 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
+	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/07/2015"
 	ms.author="josephd"/>
 
 # Testumgebung für die Basiskonfiguration
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem klassischen Bereitstellungsmodell. Sie haben auch die Möglichkeit, diese Ressourcen mit dem [Bereitstellungsmodell des Ressourcen-Managers](virtual-machines-base-configuration-test-environment-resource-manager.md) zu erstellen.
 
 Dieser Artikel enthält schrittweise Anweisungen zum Erstellen der Testumgebung für die Basiskonfiguration in einem Azure Virtual Network mit virtuellen Computern, die in der Dienstverwaltung erstellt wurden.
 
@@ -52,11 +54,6 @@ Die Einrichtung des Corpnet-Subnetzes der Testumgebung für die Basiskonfigurati
 Wenn Sie noch nicht über ein Azure-Konto verfügen, erhalten Sie unter [Try Azure](http://azure.microsoft.com/pricing/free-trial/) (Azure testen) eine kostenlose Testversion. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
 > [AZURE.NOTE]Durch virtuelle Computer, die in Azure ausgeführt werden, entstehen fortlaufend Kosten. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zu den Kosten der in Azure ausgeführten virtuellen Computer finden Sie unter [Virtuelle Computer – Preisdetails](http://azure.microsoft.com/pricing/details/virtual-machines/) und [Azure-Preisrechner](http://azure.microsoft.com/pricing/calculator/). Informationen dazu, wie Sie die Kosten möglichst gering halten können, finden Sie unter [Minimizing the costs of test environment virtual machines in Azure](#costs) (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure).
-
-[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../../includes/service-management-pointer-to-resource-manager.md)]
-
-- [Testumgebung für die Basiskonfiguration mit Azure-Ressourcen-Manager](virtual-machines-base-configuration-test-environment-resource-manager.md)
-
 
 ## Phase 1: Erstellen des virtuellen Netzwerks
 
@@ -244,7 +241,7 @@ Als Nächstes überprüfen Sie, ob Sie mit CLIENT1 auf die Web- und Dateifreigab
 4.	Klicken Sie auf der Startseite auf **Internet Explorer** und dann auf **OK**.
 5.	Geben Sie in die Adressleiste ****http://app1.corp.contoso.com/** ein, und drücken Sie dann die EINGABETASTE. Nun sollte die IIS-Standardwebseite (Internet-Informationsdienste) für APP1 angezeigt werden.
 6.	Klicken Sie in der Desktopsymbolleiste auf das Symbol des Datei-Explorers.
-7.	Geben Sie in der Adressleiste **\\\\app1\\Files** ein, und drücken Sie dann die EINGABETASTE.
+7.	Geben Sie in der Adressleiste **\\\app1\\Files** ein, und drücken Sie dann die EINGABETASTE.
 8.	Es wird ein Fenster mit dem Inhalt des freigegebenen Ordners geöffnet.
 9.	Doppelklicken Sie im Fenster **Dateien** des freigegebenen Ordners auf die Datei **Example.txt**. Nun wird der Inhalt der Datei „Example.txt“ angezeigt.
 10.	Schließen Sie die Fenster **example.txt – Editor** und **Dateien** des freigegebenen Ordners.
@@ -289,4 +286,4 @@ Zum Starten der virtuellen Computer in der angegebenen Reihenfolge mit Azure Pow
 	Start-AzureVM -ServiceName $serviceName -Name "APP1"
 	Start-AzureVM -ServiceName $serviceName -Name "CLIENT1"
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

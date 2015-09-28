@@ -8,17 +8,19 @@
 	editor="mollybos"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/08/2015" 
+	ms.date="09/16/2015" 
 	ms.author="cephalin"/>
 
 # Skalieren einer Web-App in Azure App Service #
 
 Zur Steigerung von Leistung und Durchsatz für Ihre Web-Apps unter Microsoft Azure können Sie mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) Ihren[App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan vom Modus **Kostenlos** zum Modus **Freigegeben**,**Basic**, **Standard** oder **Premium** hochstufen.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 Das Skalieren von Azure-Web-Apps umfasst zwei zusammenhängende Vorgänge: Ändern des App Service-Plan-Modus auf einen höhere Servicelevel und Konfigurieren bestimmter Einstellungen nach dem Wechsel zum höheren Servicelevel. Beide Themen werden in diesem Artikel erläutert. Höhere Servicelevel wie die Modi **Standard** und **Premium** bieten bessere Stabilität und Flexibilität bei der Festlegung, wie Ressourcen auf Azure verwendet werden.
 
@@ -199,4 +201,4 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 [GeoReplication]: ./media/web-sites-scale/scale12SQLGeoReplication.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

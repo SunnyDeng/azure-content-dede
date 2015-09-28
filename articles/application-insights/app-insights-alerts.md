@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/12/2015" 
+	ms.date="09/14/2015" 
 	ms.author="awills"/>
  
 # Einrichten von Warnungen in Application Insights
@@ -36,11 +36,13 @@ Um eine E-Mail zu erhalten, wenn eine Metrik einen Schwellenwert überschreitet,
 
 ![Klicken Sie auf dem Blatt "Warnungsregeln" auf "Warnung hinzufügen". Legen Sie Ihre App als die zu messende Ressource fest, geben Sie einen Namen für die Warnung ein, und wählen eine Metrik.](./media/app-insights-alerts/01-set-metric.png)
 
-Legen Sie die Ressource vor den anderen Eigenschaften fest. **Wählen Sie die Ressource "\(Komponenten\)" aus**, wenn Sie Benachrichtigungen für Leistungs- oder Nutzungsmetriken festlegen möchten.
+Legen Sie die Ressource vor den anderen Eigenschaften fest. **Wählen Sie die Ressource "(Komponenten)" aus**, wenn Sie Benachrichtigungen für Leistungs- oder Nutzungsmetriken festlegen möchten.
 
 Achten Sie auf die Einheiten, die beim Eingeben des Schwellenwerts gefordert sind.
 
-*Die Schaltfläche "Warnung hinzufügen" wird nicht angezeigt.* – Verwenden Sie ein Organisationskonto? Sie können Warnungen festlegen, wenn Sie für diese Anwendungsressource über Zugriffsberechtigungen für Besitzer oder Mitwirkende verfügen. Sehen Sie unter "Einstellungen" -\> "Benutzer" nach. [Erfahren Sie mehr über die Zugriffssteuerung][roles].
+Der Name, den Sie der Warnung zuweisen, muss innerhalb der Ressourcengruppe (nicht nur in Ihrer Anwendung) eindeutig sein.
+
+*Die Schaltfläche "Warnung hinzufügen" wird nicht angezeigt.* – Verwenden Sie ein Organisationskonto? Sie können Warnungen festlegen, wenn Sie für diese Anwendungsressource über Zugriffsberechtigungen für Besitzer oder Mitwirkende verfügen. Sehen Sie unter "Einstellungen" -> "Benutzer" nach. [Erfahren Sie mehr über die Zugriffssteuerung][roles].
 
 ## Anzeigen Ihrer Warnungen
 
@@ -70,6 +72,104 @@ Zu den gängigen Warnungen zählen Folgende:
 * [Browsermetriken][client], insbesondere Browser-Seitenladezeiten, eignen sich für Webanwendungen. Wenn Ihre Seite viele Skripts enthält, sollten Sie auf Browserausnahmen achten. Um diese Metriken und Warnungen zu erhalten, müssen Sie die [Webseitenüberwachung][client] einrichten.
 * Serverantwortzeit und Fehler bei Anforderungen für die Serverseite von Webanwendungen. Achten Sie neben der Einrichtung von Warnungen auf diese Metriken, um festzustellen, ob sie bei hohen Anforderungsraten unverhältnismäßig variieren: Dies kann darauf hindeuten, dass für Ihre App nicht genügend Systemressourcen vorhanden sind.
 
+## Festlegen von Warnungen mit PowerShell
+
+In den meisten Fällen reicht es aus, Warnungen manuell festzulegen. Wenn Sie jedoch Metrikwarnungen automatisch erstellen möchten, können Sie hierzu PowerShell verwenden.
+
+#### Einmalige Konfiguration
+
+Wenn Sie PowerShell noch nicht mit Ihrem Azure-Abonnement verwendet haben:
+
+1. Installieren Sie das Azure-PowerShell-Modul auf dem Computer, auf dem die Skripts ausgeführt werden sollen. 
+ * Installieren Sie [Microsoft-Webplattform-Installer (v5 oder höher)](http://www.microsoft.com/web/downloads/platform.aspx).
+ * Installieren Sie hiermit Microsoft Azure PowerShell.
+2. Starten Sie Azure PowerShell, und [stellen Sie eine Verbindung mit Ihrem Abonnement her](powershell-install-configure.md):
+
+    ```
+    Add-AzureAccount
+    ```
+
+#### Abrufen von Warnungen
+
+    Get-AlertRule -ResourceGroup "Fabrikam" [-Name "My rule"] [-DetailedOutput]
+
+#### Warnung hinzufügen
+
+
+    Add-AlertRule  -Name "{ALERT NAME}" -Description "{TEXT}" `
+     -ResourceGroup "{GROUP NAME}" `
+     -ResourceId "/subscriptions/{SUBSCRIPTION ID}/resourcegroups/{GROUP NAME}/providers/microsoft.insights/components/{APP RESOURCE NAME}" `
+     -MetricName "{METRIC NAME}" `
+     -Operator GreaterThan  `
+     -Threshold {NUMBER}   `
+     -WindowSize {HH:MM:SS}  `
+     [-SendEmailToServiceOwners] `
+     [-CustomEmails "EMAIL1@X.COM","EMAIL2@Y.COM" ] `
+     -Location "East US"
+     -RuleType Metric
+
+
+
+#### Beispiel 1
+
+E-Mail-Nachricht senden, wenn die Antwort des Servers auf HTTP-Anforderungen, gemittelt über 5 Minuten, langsamer als 1 Sekunde ist. Der Name meiner Application Insights-Ressource lautet IceCreamWebApp, und sie befindet sich in der Ressourcengruppe "Fabrikam". Ich bin Besitzer des Azure-Abonnements.
+
+    Add-AlertRule -Name "slow responses" `
+     -Description "email me if the server responds slowly" `
+     -ResourceGroup "Fabrikam" `
+     -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabrikam/providers/microsoft.insights/components/IceCreamWebApp" `
+     -MetricName "request.duration" `
+     -Operator GreaterThan `
+     -Threshold 1 `
+     -WindowSize 00:05:00 `
+     -SendEmailToServiceOwners `
+     -Location "East US" -RuleType Metric
+
+#### Beispiel 2
+
+Ich habe eine Anwendung, in der ich mit [TrackMetric()](app-insights-api-custom-events-metrics.md#track-metric) eine Metrik mit dem Namen "salesPerHour" melde. Eine E-Mail an meine Kollegen senden, wenn "salesPerHour" gemittelt über 24 Stunden unter 100 fällt.
+
+    Add-AlertRule -Name "poor sales" `
+     -Description "slow sales alert" `
+     -ResourceGroup "Fabrikam" `
+     -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabrikam/providers/microsoft.insights/components/IceCreamWebApp" `
+     -MetricName "salesPerHour" `
+     -Operator LessThan `
+     -Threshold 100 `
+     -WindowSize 24:00:00 `
+     -CustomEmails "satish@fabrikam.com","lei@fabrikam.com" `
+     -Location "East US" -RuleType Metric
+
+Die gleiche Regel kann für die Metrik verwendet werden, die mit dem [Messparameter](app-insights-api-custom-events-metrics.md#properties) eines anderen Tracking-Aufrufs gemeldet wird, z. B. TrackEvent oder trackPageView.
+
+#### Metriknamen
+
+Metrikname | Anzeigename | Beschreibung
+---|---|---
+`basicExceptionBrowser.count`|Browserausnahmen|Anzahl nicht erfasster Ausnahmen, die im Browser ausgelöst wurden.
+`basicExceptionServer.count`|Serverausnahmen|Anzahl der nicht behandelten Ausnahmen, die von der Anwendung ausgelöst wurden
+`clientPerformance.clientProcess.value`|Clientverarbeitungszeit|Zeit zwischen dem Empfang des letzten Byte eines Dokuments und dem Laden des DOM. Asynchrone Anforderungen werden möglicherweise immer noch verarbeitet.
+`clientPerformance.networkConnection.value`|Netzwerkverbindungszeit zum Laden der Seite| Zeit, die der Browser für die Verbindung mit dem Netzwerk benötigt. Kann bei Zwischenspeicherung 0 sein.
+`clientPerformance.receiveRequest.value`|Empfängt Antwortzeit| Zeit zwischen dem Senden der Anforderung durch den Browser und dem Empfangen der Antwort.
+`clientPerformance.sendRequest.value`|Anforderungszeit senden| Vom Browser benötigte Zeit zum Senden der Anforderung.
+`clientPerformance.total.value`|Browser-Seitenladezeit|Zeit ab der Benutzeranforderung, bis DOM, Stylesheets, Skripts und Bilder geladen werden.
+`performanceCounter.available_bytes.value`|Verfügbarer Arbeitsspeicher|Physischer Arbeitsspeicher, der sofort für einen Prozess oder für die Nutzung durch das System verfügbar ist.
+`performanceCounter.io_data_bytes_per_sec.value`|E/A-Rate für Prozess|Gesamtanzahl von pro Sekunde in Dateien, im Netzwerk und auf Geräten gelesenen und geschriebenen Bytes.
+`performanceCounter.number_of_exceps_thrown_per_sec`|Ausnahmerate|Pro Sekunde ausgelöste Ausnahmen.
+`performanceCounter.percentage_processor_time.value`|Prozess-CPU|Der Prozentsatz der verstrichenen Zeit für alle Prozessthreads, die vom Prozessor zur Ausführung von Anweisungen für den Anwendungsprozess verwendet wird.
+`performanceCounter.percentage_processor_total.value`|Prozessorzeit|Der Prozentsatz der Zeit, die der Prozessor nicht im Leerlauf in Threads verbringt.
+`performanceCounter.process_private_bytes.value`|Private Bytes für Prozess|Speicher, der exklusiv den überwachten Anwendungsprozessen zugewiesen ist.
+`performanceCounter.request_execution_time.value`|Ausführungsdauer für ASP.NET-Anforderungen|Ausführungszeit der aktuellen Anforderung.
+`performanceCounter.requests_in_application_queue.value`|ASP.NET-Anforderungen in Ausführungswarteschlange|Länge der Anwendungsanforderungswarteschleife.
+`performanceCounter.requests_per_sec`|ASP.NET-Anforderungsrate|Rate aller Anforderungen an die Anwendung pro Sekunde von ASP.NET.
+`remoteDependencyFailed.durationMetric.count`|Abhängigkeitsfehler|Anzahl der Aufrufe mit Fehlern von der Serveranwendung an externe Ressourcen.
+`request.duration`|Serverantwortzeit|Zeit zwischen dem Empfang einer HTTP-Anforderung und dem Abschluss des Sendevorgangs der Antwort.
+`request.rate`|Anforderungsrate|Rate aller Anforderungen an die Anwendung pro Sekunde.
+`requestFailed.count`|Failed requests|Anzahl von HTTP-Anforderungen, die als Ergebnis Antwortcode >= 400 hatten. 
+`view.count`|Seitenaufrufe|Anzahl der Clientbenutzeranforderungen für eine Webseite. Synthetischer Datenverkehr wird herausgefiltert.
+{benutzerdefinierter Metrikname}|{Ihr Metrikname}|Der von [TrackMetric](app-insights-api-custom-events-metrics.md#track-metric) oder im [Messparameter für einen Tracking-Aufruf](app-insights-api-custom-events-metrics.md#properties) gemeldete Metrikwert.
+
+   
 
 
 <!--Link references-->
@@ -82,4 +182,4 @@ Zu den gängigen Warnungen zählen Folgende:
 
  
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

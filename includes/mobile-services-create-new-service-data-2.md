@@ -51,4 +51,4 @@ Um App-Daten im neuen mobilen Dienst speichern zu können, müssen Sie zuerst ei
 
 Sie können den neuen mobilen Dienst nun als Datenspeicher für die App verwenden.
 
-<!------HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

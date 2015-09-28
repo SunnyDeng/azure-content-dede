@@ -1,30 +1,31 @@
 <properties 
-	pageTitle="Häufig gestellte Fragen zu DocumentDB | Microsoft Azure"
-	description="Antworten auf häufig gestellte Fragen zu Azure DocumentDB, einem NoSQL-Dokumentdatenbankdienst."
-	services="documentdb"
-	authors="mimig1"
-	manager="jhubbard"
-	editor="monicar"
+	pageTitle="Datenbankfragen zu DocumentDB – Häufig gestellte Fragen | Microsoft Azure" 
+	description="Erhalten Sie Antworten auf häufig gestellte Fragen zum Azure DocumentDB-NoSql-Dokumentdatenbankdienst. Beantworten Sie Datenbankfragen zu Kapazität, Leistung und Skalierung." 
+	keywords="Database questions, frequently asked questions, documentdb, azure, Microsoft azure"
+	services="documentdb" 
+	authors="mimig1" 
+	manager="jhubbard" 
+	editor="monicar" 
 	documentationCenter=""/>
 
 <tags 
-	ms.service="documentdb"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.service="documentdb" 
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/01/2015" 
 	ms.author="mimig"/>
 
 
 #Häufig gestellte Fragen zu DocumentDB
 
-## Grundlagen zu Microsoft Azure DocumentDB
+## Datenbankfragen zu den Grundlagen von Microsoft Azure DocumentDB
 
 ### Was ist Microsoft Azure DocumentDB? 
 Microsoft Azure DocumentDB ist eine umfassend skalierbare, als Dienst verfügbare NoSQL-Dokumentdatenbank, die umfangreiche Abfragen von nicht schematisierten Daten ermöglicht, konfigurierbare, zuverlässige Leistung bietet und eine schnelle Bereitstellung ermöglicht – und all das auf einer verwalteten Plattform, die auf der Leistungsfähigkeit und Reichweite von Microsoft Azure basiert. DocumentDB ist die geeignete Lösung für mobile und Webanwendungen, wenn vorhersagbarer Durchsatz, niedrige Latenz und schemafreie Datenmodelle wichtige Anforderungen sind. DocumentDB bietet Schemaflexibilität und umfassende Indizierung über ein systemeigenes JSON-Datenmodell und beinhaltet die Transaktionsunterstützung mehrerer Dokumente durch integriertes JavaScript.
   
-Anweisungen zur Bereitstellung und Verwendung des Diensts finden Sie auf der [Dokumentationsseite für DocumentDB](http://azure.microsoft.com/documentation/services/documentdb/).
+Weitere Datenbankfragen, -antworten und -anweisungen zur Bereitstellung und Verwendung des Diensts finden Sie auf der [Dokumentationsseite für DocumentDB](http://azure.microsoft.com/documentation/services/documentdb/).
 
 ### Was für eine Art Datenbank ist DocumentDB?
 DocumentDB ist eine dokumentorientierte NoSQL-Datenbank, die Daten im JSON-Format speichert. DocumentDB unterstützt geschachtelte, eigenständige Datenstrukturen, die mithilfe einer umfassenden DocumentDB-[SQL-Abfragegrammatik](documentdb-sql-query.md) abgefragt werden können. DocumentDB eine bietet hochleistungsfähige Transaktionsverarbeitung von serverseitigem JavaScript durch [gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen](documentdb-programming.md). Die Datenbank unterstützt außerdem vom Entwickler optimierbare Konsistenzebenen mit den zugehörigen [Leistungsebenen](documentdb-performance-levels.md).
@@ -75,7 +76,7 @@ Jede Sammlung ist mit einer Zuweisung an Datenbankspeicher und bereitgestelltem 
 ### Wie richte ich Benutzer und Berechtigungen ein?
 Sie können Benutzer und Berechtigungen mit einem der [DocumentDB SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) oder mithilfe der [REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) erstellen.
 
-## Entwickeln mit Microsoft Azure DocumentDB
+## Datenbankfragen zum Entwickeln mit Microsoft Azure DocumentDB
 
 ### Wie beginne ich beim Entwickeln mit DocumentDB?
 [SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) sind für .NET, Python, Node.js, JavaScript und Java verfügbar. Entwickler können außerdem die [RESTful HTTP-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) zur Interaktion mit DocumentDB-Ressourcen auf einer Vielzahl von Plattformen und mit verschiedenen Sprachen nutzen.
@@ -111,4 +112,4 @@ Ja. Da es sich bei DocumentDB um einen RESTful-Dienst handelt, sind Ressourcenli
 [query]: documentdb-sql-query.md
  
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

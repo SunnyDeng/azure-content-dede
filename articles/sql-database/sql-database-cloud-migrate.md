@@ -1,20 +1,20 @@
 <properties
    pageTitle="Migrieren von Datenbanken zur Azure SQL-Datenbank"
-	description="Microsoft Azure SQL-Datenbank, Datenbankbereitstellung, Datenbankmigration, Datenbank importieren, Datenbank exportieren, Migrations-Assistent"
-	services="sql-database"
-	documentationCenter=""
-	authors="carlrabeler"
-	manager="jeffreyg"
-	editor=""/>
+   description="Microsoft Azure SQL-Datenbank, Datenbankbereitstellung, Datenbankmigration, Datenbank importieren, Datenbank exportieren, Migrations-Assistent"
+   services="sql-database"
+   documentationCenter=""
+   authors="carlrabeler"
+   manager="jeffreyg"
+   editor=""/>
 
 <tags
    ms.service="sql-database"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="data-management"
-	ms.date="09/02/2015"
-	ms.author="carlrab"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-management"
+   ms.date="09/02/2015"
+   ms.author="carlrab"/>
 
 # Migrieren von Datenbanken zur Azure SQL-Datenbank
 
@@ -49,7 +49,7 @@ Wenn Ihre lokale SQL Server-Datenbank nicht kompatibel ist oder Sie ermitteln m
 ## Migrationstools
 Zu den verwendeten Tools gehören SQL Server Management Studio (SSMS) und die SQL Server-Tools in Visual Studio (VS, SSDT) sowie das Azure-Portal.
 
-> Achten Sie darauf, dass Sie jeweils die neueste Version der Clienttools installieren, da ältere Versionen nicht mit Azure SQL-Datenbank V12 kompatibel sind.
+> [AZURE.IMPORTANT]Achten Sie darauf, dass Sie jeweils die neueste Version der Clienttools installieren, da ältere Versionen nicht mit Azure SQL-Datenbank V12 kompatibel sind.
 
 ### SQL Server Management Studio (SSMS)
 Mit SSMS kann eine kompatible Datenbank direkt in Azure SQL-Datenbank bereitgestellt oder eine logische Sicherung der Datenbank als BACPAC-Datei exportiert werden, die dann, ebenfalls mit SSMS, importiert werden kann, um eine neue Azure SQL-Datenbank zu erstellen.
@@ -72,4 +72,4 @@ Verwenden Sie die [aktuelle SSDT-Version (SQL Server Data Tools) für Visual Stu
 | Keine Möglichkeit zum Ändern der Ausgabe, wenn Fehler vorhanden sind; das Quellschema muss kompatibel sein. | Sämtliche Features von SSDT für Visual Studio verfügbar. Schema wird offline geändert. | Anwendungsvalidierung erfolgt in Azure. Meist minimal, da das Schema ohne Änderungen migriert wird. | Anwendungsvalidierung kann in SQL Server erfolgen, bevor die Datenbank in Azure bereitgestellt wird. |
 | Einfach zu konfigurierender Prozess mit ein oder zwei Schritten. | Komplexerer Prozess mit mehreren Schritten (einfacher, wenn nur ein Schema bereitgestellt wird). |
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

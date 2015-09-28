@@ -1,21 +1,21 @@
 <properties
    pageTitle="Erstellen eines virtuellen Netzwerks mit dem Azure-Portal | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein virtuelles Netzwerk mit dem Azure-Portal erstellen."
-	services="virtual-network"
-	documentationCenter=""
-	authors="telmosampaio"
-	manager="carolz"
-	editor=""
-	tags="classic"/>
+   description="Erfahren Sie, wie Sie ein virtuelles Netzwerk mit dem Azure-Portal erstellen."
+   services="virtual-network"
+   documentationCenter=""
+   authors="telmosampaio"
+   manager="carolz"
+   editor=""
+   tags="classic"/>
 
 <tags
    ms.service="virtual-network"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
-	ms.date="08/21/2015"
-	ms.author="telmos"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/21/2015"
+   ms.author="telmos"/>
 
 # Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Portal
 
@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-intro](../../includes/virtual-networks-create-vnet-intro-include.md)]
 
-In diesem Dokument wird beschrieben, wie ein virtuelles Netzwerk (VNet) mit dem klassischen Bereitstellungsmodell erstellt wird. Sie haben auch die Möglichkeit, [ein virtuelles Netzwerks im Ressourcen-Manager-Bereitstellungsmodell durch Verwenden des Azure-Vorschauportals zu erstellen](virtual-networks-create-vnet-arm-pportal.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]In diesem Dokument wird beschrieben, wie ein virtuelles Netzwerk (VNet) mit dem klassischen Bereitstellungsmodell erstellt wird. Sie haben auch die Möglichkeit, [ein virtuelles Netzwerks im Ressourcen-Manager-Bereitstellungsmodell durch Verwenden des Azure-Vorschauportals zu erstellen](virtual-networks-create-vnet-arm-pportal.md).
 
 Sie erfahren, wie Sie ein virtuelles Netzwerk aus dem Azure-Portal durch Verwenden der Benutzeroberfläche und Bereitstellen einer netcfg-Datei erstellen.
 
@@ -33,4 +33,4 @@ Sie erfahren, wie Sie ein virtuelles Netzwerk aus dem Azure-Portal durch Verwend
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-classic-netcfg-portal-include](../../includes/virtual-networks-create-vnet-classic-netcfg-portal-include.md)]
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

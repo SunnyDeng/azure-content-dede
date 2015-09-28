@@ -1,3 +1,4 @@
+<!--author=SharS last changed: 9/17/15-->
 
 #### So stellen Sie über die serielle Konsole eine Verbindung her
 
@@ -29,4 +30,4 @@
 7. Klicken Sie auf **Öffnen**, um eine serielle Sitzung zu starten.
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

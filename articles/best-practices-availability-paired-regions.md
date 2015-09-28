@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="07/07/2015"
+    ms.date="09/16/2015"
     ms.author="robb"/>
 
 # Verbessern der Verfügbarkeit mithilfe von Azure-Regionspaaren
@@ -84,4 +84,4 @@ Wie in Abbildung 2 dargestellt.
 
 ![9Orange](./media/best-practices-availability-paired-regions/9Orange.png) **Speicherort von Daten** – Eine Region befindet sich innerhalb desselben Gebiets wie ihr Paar (mit Ausnahme von Brasilien, Süden), um steuerliche und rechtliche Anforderungen an den Speicherort von Daten zu erfüllen.
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

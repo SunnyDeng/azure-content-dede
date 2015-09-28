@@ -3,7 +3,7 @@
 	description="Erstellen Sie einen virtuellen Azure-Computer unter Windows Server 2012 R2, und installieren und konfigurieren Sie dann eine MySQL-Datenbank auf dem virtuellen Computer."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
 	tags="azure-service-management"/>
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/10/2015"
-	ms.author="kathydav"/>
+	ms.author="cynthn"/>
 
 
 # Installieren von MySQL auf einem virtuellen Computer mit Windows Server 2012 R2 in Azure
@@ -34,7 +34,7 @@ Dieses Lernprogramm beschreibt Folgendes:
 
 ## Erstellen eines virtuellen Computers unter Windows Server
 
-[AZURE.INCLUDE [virtual-machines-create-windowsvm](../../includes/virtual-machines-create-windowsvm.md)]
+[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-windowsvm.md)]
 
 ## Datenträger anfügen
 
@@ -128,4 +128,4 @@ Um die Remoteverbindung zum MySQL Server-Dienst zu testen, der auf dem virtuelle
 
 Informationen zu MySQL finden Sie in der [MySQL-Dokumentation](http://dev.mysql.com/doc/)
 
-<!----HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

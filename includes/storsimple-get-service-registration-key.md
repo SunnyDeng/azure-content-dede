@@ -1,3 +1,4 @@
+<!--author=alkohli last changed: 9/17/15-->
 
 #### So rufen Sie den StorSimple-Dienstregistrierungsschlüssel ab
 
@@ -17,6 +18,8 @@
 
 > [AZURE.NOTE]Der Dienstregistrierungsschlüssel wird zur Registrierung aller Geräte verwendet, die mit dem StorSimple-Manager-Dienst registriert werden müssen.
 
- 
+![Video verfügbar](./media/storsimple-get-service-registration-key/Video_icon.png) **Video verfügbar**
 
-<!---HONumber=August15_HO8-->
+Um sich ein Video anzusehen, das zeigt, wie Sie den Dienstregistrierungsschlüssel erhalten, klicken Sie [hier](http://azure.microsoft.com/documentation/videos/get-the-service-registration-key/).
+
+<!---HONumber=Sept15_HO3-->

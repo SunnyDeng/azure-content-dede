@@ -1,4 +1,4 @@
-<properties title="Creating an Oracle WebLogic Server 12c Virtual Machine in Azure" pageTitle="Erstellen eines Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers in Azure" description="Durchlaufen Sie ein Beispiel zum Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers unter Windows Server 2012 in Microsoft Azure." services="virtual-machines" authors="bbenz" documentationCenter=""/>
+<properties pageTitle="Erstellen eines Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers in Azure" description="Durchlaufen Sie ein Beispiel zum Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers unter Windows Server 2012 in Microsoft Azure." services="virtual-machines" authors="bbenz" documentationCenter=""/>
 <tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
 #Erstellen eines Erstellen eines virtuellen Oracle WebLogic Server 12c-Computers in Azure
 Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf einem von Microsoft bereitgestellten Oracle WebLogic Server 12c-Image unter Windows Server 2012 in Azure erstellen.
@@ -19,12 +19,12 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 7.	Wählen Sie einen **Tarif** aus. Beachten Sie, dass die empfohlenen Preiskategorien standardmäßig angezeigt werden. Um alle Konfigurationsoptionen anzuzeigen, klicken Sie oben rechts auf **Alle anzeigen**.
 
-8.	Legen Sie [Optionale Konfiguration](https://msdn.microsoft.com/library/azure/dn763935.aspx) nach Bedarf fest. Beachten Sie dabei folgende Überlegungen:
+8.	Legen Sie die optionale Konfiguration nach Bedarf fest. Beachten Sie dabei folgende Überlegungen:
 	1. Lassen Sie **Speicherkonto** unverändert, um ein neues Speicherkonto mit dem Namen des virtuellen Computers zu erstellen.
-	2. Legen Sie für **Verfügbarkeitsgruppe** "Nicht konfiguriert" fest.
+	2. Lassen Sie die **Verfügbarkeitsgruppe** auf "Nicht konfiguriert" festgelegt.
 	3. Fügen Sie zu diesem Zeitpunkt keine **Endpunkte** hinzu.
 
-9.	Wählen Sie eine [Ressourcengruppe](resource-group-portal.md) aus oder erstellen Sie eine Ressourcengruppe
+9.	Wählen Sie eine [Ressourcengruppe](resource-group-portal.md) aus, oder erstellen Sie eine.
 
 10. Wählen Sie ein **Abonnement** aus.
 
@@ -140,7 +140,7 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer basierend auf ein
 
 	1.	Melden Sie sich am virtuellen Computer an.
 
-	2.	Klicken Sie auf die **Windows-Schaltfläche Start**, geben Sie **Windows-Firewall mit erweiterter Sicherheit** ein, und klicken Sie dann auf das Symbol **Windows-Firewall mit erweiterter Sicherheit**. Die Verwaltungskonsole für **Windows-Firewall mit erweiterter Sicherheit** wird geöffnet.
+	2.	Klicken Sie auf die Windows-Schaltfläche **Start**, geben Sie **Windows-Firewall mit erweiterter Sicherheit** ein, und klicken Sie dann auf das Symbol **Windows-Firewall mit erweiterter Sicherheit**. Die Verwaltungskonsole für **Windows-Firewall mit erweiterter Sicherheit** wird geöffnet.
 
 	3.	Klicken Sie in der Firewall-Verwaltungskonsole im linken Bereich auf **Eingehende Regeln** (wenn **Eingehende Regeln** nicht angezeigt wird, erweitern Sie den obersten Knoten im linken Bereich), und klicken Sie dann auf "Neue Regel" im rechten Bereich.
 
@@ -168,4 +168,4 @@ Nachdem Sie den virtuellen Computer mit Oracle WebLogic Server eingerichtet habe
 
 -	[Oracle Virtual Machine images for Azure](virtual-machines-oracle-list-oracle-virtual-machine-images.md) (Images von virtuellen Oracle-Computern für Azure; in englischer Sprache)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

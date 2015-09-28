@@ -1,23 +1,25 @@
 <properties 
-	pageTitle="Branchenanwendung, Phase 5 | Microsoft Azure"
-	description="In Phase 5 der Branchenanwendung erstellen Sie in Azure eine Verfügbarkeitsgruppe, und fügen Sie dieser Ihre Anwendungsdatenbanken hinzu."
+	pageTitle="Branchenanwendung, Phase 5 | Microsoft Azure" 
+	description="In Phase 5 der Branchenanwendung erstellen Sie in Azure eine Verfügbarkeitsgruppe, und fügen Sie dieser Ihre Anwendungsdatenbanken hinzu." 
 	documentationCenter=""
-	services="virtual-machines"
-	authors="JoeDavies-MSFT"
-	manager="timlt"
+	services="virtual-machines" 
+	authors="JoeDavies-MSFT" 
+	manager="timlt" 
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="Windows" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/11/2015" 
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 5: Erstellen der Verfügbarkeitsgruppe und Hinzufügen der Anwendungsdatenbanken
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 In dieser letzten Phase der Bereitstellung einer hochverfügbaren Branchenanwendung in den Azure-Infrastrukturdiensten erstellen Sie eine neue SQL Server AlwaysOn-Verfügbarkeitsgruppe und fügen die Datenbanken der Anwendung hinzu.
 
@@ -56,7 +58,7 @@ Führen Sie zum Sichern einer Datenbank die folgenden Schritte aus.
 3.	Erweitern Sie im linken Bereich den Knoten **Datenbanken**.
 4.	Klicken Sie mit der rechten Maustaste auf eine Datenbank, die Sie sichern möchten, zeigen Sie auf **Aufgaben**, und klicken Sie dann auf **Sichern**.
 5.	Klicken Sie im Abschnitt **Ziel** auf **Entfernen**, um den Standarddateipfad der Sicherungsdatei zu entfernen.
-6.	Klicken Sie auf **Hinzufügen**. Geben Sie unter **Dateiname** **\[Computername]\\backup[Datenbankname].bak** ein, wobei **Computername** für den Namen des primären SQL-**Servercomputers** und **Datenbankname** für den Namen der Datenbank steht. Klicken Sie auf **OK** und nach der Meldung über die erfolgreiche Sicherung nochmals auf **OK**.
+6.	Klicken Sie auf **Hinzufügen**. Geben Sie unter **Dateiname** **\\[Computername]\\backup[Datenbankname].bak** ein, wobei **Computername** der Name des primären SQL **Server-Computers** und **Datenbankname** der Name der Datenbank ist. Klicken Sie auf **OK** und nach der Meldung über die erfolgreiche Sicherung nochmals auf **OK**.
 7.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **[Datenbankname]**, zeigen Sie auf **Aufgaben**, und klicken Sie dann auf **Sichern**.
 8.	Wählen Sie unter **Sicherungstyp** die Option **Transaktionsprotokoll** aus, und klicken Sie dann zweimal hintereinander auf **OK**.
 9.	Lassen Sie diese Remotedesktopsitzung geöffnet.
@@ -69,7 +71,7 @@ Führen Sie zum Wiederherstellen einer Datenbank die folgenden Schritte aus.
 4.	Klicken Sie im linken Bereich mit der rechten Maustaste auf **Datenbanken**, und klicken Sie dann auf **Datenbank wiederherstellen**.
 5.	Wählen Sie im Abschnitt **Quelle** die Option **Gerät** aus, und klicken Sie dann auf die Schaltfläche mit den Auslassungspunkten (...).
 6.	Klicken Sie unter **Sicherungsmedien auswählen** auf **Hinzufügen**.
-7.	Geben Sie unter **Speicherort der Sicherungsdatei** **\[Computername]\\backup** ein, drücken Sie die **Eingabetaste**, wählen Sie **[Datenbankname].bak** aus, und klicken Sie dann zweimal auf **OK**. Nun sollten im Abschnitt **Wiederherzustellende Sicherungssätze** die vollständige Sicherung und die Protokollsicherung angezeigt werden.
+7.	Geben Sie unter **Speicherort der Sicherungsdatei** **\\[Computername]\\backup** ein, drücken Sie die **Eingabetaste**, wählen Sie **[Datenbankname].bak** aus, und klicken Sie dann zweimal auf **OK**. Nun sollten im Abschnitt **Wiederherzustellende Sicherungssätze** die vollständige Sicherung und die Protokollsicherung angezeigt werden.
 8.	Klicken Sie unter **Seite auswählen** auf **Optionen**. Wählen Sie im Abschnitt **Wiederherstellungsoptionen** unter **Wiederherstellungsstatus** die Option **OHNE RECOVERY WIEDERHERSTELLEN** aus, und klicken Sie dann auf **OK**. 
 9.	Klicken Sie auf Aufforderung auf **OK**.
 
@@ -79,7 +81,7 @@ Nachdem Sie mindestens eine Datenbank durch Sicherung und Wiederherstellung vorb
 
 1.	Kehren Sie zur Remotedesktopsitzung für den primären Datenbankserver zurück.
 2.	Klicken Sie in **SQL Server Management Studio** im linken Bereich mit der rechten Maustaste auf **Hohe Verfügbarkeit mit AlwaysOn**, und klicken Sie dann auf **Assistent für neue Verfügbarkeitsgruppen**.
-3.	Klicken Sie auf der Einführungsseite auf **Weiter**. 
+3.	Klicken Sie auf der **Einführungsseite** auf **Weiter**. 
 4.	Geben Sie auf der Seite **Namen der Verfügbarkeitsgruppe angeben** unter **Name der Verfügbarkeitsgruppe** den Namen Ihrer Verfügbarkeitsgruppe (z. B. AG1) ein, und klicken Sie dann auf **Weiter**.
 5.	Wählen Sie auf der Seite **Datenbanken auswählen** die gesicherten Datenbanken für die Anwendung aus, und klicken Sie auf **Weiter**. Diese Datenbanken erfüllen die Voraussetzungen für eine Verfügbarkeitsgruppe, da Sie mindestens eine vollständige Sicherung auf dem vorgesehenen primären Replikat erstellt haben.
 6.	Klicken Sie auf der Seite **Replikate angeben** auf **Replikat hinzufügen**.
@@ -98,7 +100,7 @@ Sekundär | Lesbare sekundäre Rolle | Ja
 9.	Klicken Sie auf **Weiter**.
 10.	Klicken Sie auf der Seite **Anfängliche Datensynchronisierung auswählen** auf **Nur verknüpfen**, und klicken Sie dann auf **Weiter**. Die Datensynchronisierung erfolgt manuell durch Durchführung der vollständigen Sicherung und der Sicherung der Transaktionsprotokolle auf dem primären Server und die Wiederherstellung der Sicherungen auf dem Sicherungsserver. Alternativ können Sie aber auch **Vollständig** auswählen. In diesem Fall führt der Assistent für neue Verfügbarkeitsgruppen die Datensynchronisierung automatisch aus. Von der automatischen Synchronisierung wird bei großen Datenbanken, wie sie in manchen Unternehmen vorhanden sind, jedoch abgeraten.
 11.	Klicken Sie auf der **Überprüfungsseite** auf **Weiter**. Sie erhalten eine Warnung zu einer fehlenden Listenerkonfiguration, da für die Verfügbarkeitsgruppe noch kein Listener konfiguriert ist. 
-12.	Klicken Sie auf der Seite **Zusammenfassung** auf **Fertig stellen**. Überprüfen Sie nach Abschluss des Assistenten die Seite **Ergebnisse**, um sich zu vergewissern, dass die Verfügbarkeitsgruppe erfolgreich erstellt wurde. Klicken Sie in diesem Fall auf **Schließen**, um den Assistenten zu beenden. 
+12.	Klicken Sie auf der **Zusammenfassungsseite** auf **Fertig stellen**. Überprüfen Sie nach Abschluss des Assistenten die Seite **Ergebnisse**, um sich zu vergewissern, dass die Verfügbarkeitsgruppe erfolgreich erstellt wurde. Klicken Sie in diesem Fall auf **Schließen**, um den Assistenten zu beenden. 
 13.	Geben Sie auf dem Startbildschirm **Failover** ein, und klicken Sie dann auf **Failovercluster-Manager**. Öffnen Sie im linken Bereich den Namen Ihres Clusters, und klicken Sie dann auf **Rollen**. Es sollte nun eine neue Rolle mit dem Namen Ihrer Verfügbarkeitsgruppe vorhanden sein.
 
 Damit haben Sie erfolgreich eine SQL Server AlwaysOn-Verfügbarkeitsgruppe für Ihre Anwendungsdatenbanken konfiguriert.
@@ -125,4 +127,4 @@ Nach der Erstellung des Listeners müssen Sie alle virtuellen Webservercomputer 
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

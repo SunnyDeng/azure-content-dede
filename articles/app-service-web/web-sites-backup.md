@@ -5,15 +5,15 @@
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
-	editor="mollybos"/>
+	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-web" 
+	ms.service="app-service" 
 	ms.workload="web" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/03/2015" 
+	ms.date="09/16/2015" 
 	ms.author="cephalin"/>
 
 # Sichern von Web-Apps in Azure App Service
@@ -22,6 +22,8 @@
 Die Funktion zum Sichern und Wiederherstellen von [Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) ermöglicht die einfache Erstellung manueller oder automatischer Web-App-Sicherungen. Sie können die Web-App in einem früheren Zustand wiederherstellen oder eine neue Web-App basierend auf einer Web-App-Sicherung erstellen.
 
 Informationen zum Wiederherstellen von Azure-Web-Apps aus einer Sicherung finden Sie unter [Wiederherstellen von Web-Apps](web-sites-restore.md).
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 <a name="whatsbackedup"></a>
 ## Was wird gesichert? 
@@ -142,9 +144,9 @@ Die unten angegebenen Schritte zeigen, wie Sie diese Dateien aus der Sicherung a
 
     \\site\\wwwroot\\Logs \\LogFiles \\site\\wwwroot\\Images\\2013 \\site\\wwwroot\\Images\\2014 \\site\\wwwroot\\Images\\brand.png
 
-3. Laden Sie diese Datei in das Verzeichnis `D:\home\site\wwwroot` Ihrer Website hoch. Verwenden Sie dazu [ftp](web-sites-deploy.md#ftp)oder eine andere Methode. Wenn Sie möchten, können Sie die Datei direkt in `http://{yourapp}.scm.azurewebsites.net/DebugConsole` erstellen und den Inhalt dort einfügen.
+3. Laden Sie diese Datei in das Verzeichnis `D:\home\site\wwwroot` Ihrer Website hoch. Verwenden Sie dazu [ftp](web-sites-deploy.md#ftp) oder eine andere Methode. Wenn Sie möchten, können Sie die Datei direkt in `http://{yourapp}.scm.azurewebsites.net/DebugConsole` erstellen und den Inhalt dort einfügen.
 
-4. Führen Sie die Sicherungen durch, wie Sie es gewohnt sind, [manuell](#create-a-manual-backup) oder [automatisch](#configure-automated-backups).
+4. Führen Sie die Sicherungen aus, wie Sie es gewohnt sind: [manuell](#create-a-manual-backup) oder [automatisch](#configure-automated-backups).
 
 Alle Dateien und Ordner, die in `_backup.filter` angegeben sind, werden jetzt aus der Sicherung ausgeschlossen. In diesem Beispiel werden die Protokolldateien und die Bilddateien "2013" und "2014" sowie "brand.png" nicht mehr gesichert.
 
@@ -220,4 +222,4 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

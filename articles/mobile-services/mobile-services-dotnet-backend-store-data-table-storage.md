@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen eines Diensts, der den Tabellenspeicher anstelle einer SQL-Datenbank verwendet | Microsoft Azure" 
+	pageTitle="Erstellen eines mobilen .NET-Back-End-Diensts, der den Tabellenspeicher verwendet | Azure Mobile Services" 
 	description="Erfahren Sie, wie Sie den Azure-Tabellenspeicher mit dem mobilen .NET-Back-End-Dienst verwenden." 
 	services="mobile-services" 
 	documentationCenter="" 
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="06/09/2015" 
+	ms.date="09/14/2015" 
 	ms.author="glenga"/>
 
-# Erstellen eines mobilen .NET-Back-End-Diensts, der den Tabellenspeicher anstelle einer SQL-Datenbank verwendet
+# Erstellen eines mobilen .NET-Back-End-Diensts, der den Tabellenspeicher verwendet
 
 In diesem Thema erfahren Sie, wie Sie einen nicht relationalen Datenspeicher für Ihren mobilen .NET-Back-End-Dienst verwenden. In diesem Lernprogramm ändern Sie das Azure Mobile Services-Schnellstartprojekt, um den Azure-Tabellenspeicher statt des standardmäßigen Azure SQL-Datenbank-Datenspeichers zu verwenden.
 
@@ -158,4 +158,4 @@ Da Sie jetzt gesehen haben, wie einfach sich der Tabellenspeicher mit dem .NET B
 [MongoLab Add-on Page]: /gallery/store/mongolab/mongolab
  
 
-<!---HONumber=August15_HO8-->
+<!---HONumber=Sept15_HO3-->

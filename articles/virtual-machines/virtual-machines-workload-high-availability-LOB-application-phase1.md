@@ -1,23 +1,26 @@
 <properties 
-	pageTitle="Branchenanwendung, Phase 1 | Microsoft Azure"
-	description="In Phase 1 der Branchenanwendung erstellen Sie in Azure das virtuelle Netzwerk und weitere Elemente der Azure-Infrastruktur."
+	pageTitle="Branchenanwendung, Phase 1 | Microsoft Azure" 
+	description="In Phase 1 der Branchenanwendung erstellen Sie in Azure das virtuelle Netzwerk und weitere Elemente der Azure-Infrastruktur." 
 	documentationCenter=""
-	services="virtual-machines"
-	authors="JoeDavies-MSFT"
-	manager="timlt"
-	editor=""/>
+	services="virtual-machines" 
+	authors="JoeDavies-MSFT" 
+	manager="timlt" 
+	editor=""
+	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="Windows" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/11/2015" 
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 1: Konfigurieren von Azure
-
+ 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell.
+ 
 In dieser Phase der Bereitstellung einer nur im Intranet verfügbaren Branchenanwendung mit hoher Verfügbarkeit in den Azure-Infrastrukturdiensten erstellen Sie die Azure-Netzwerk- und Speicherinfrastruktur. Diese Phase muss vor Beginn von [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md) ausgeführt worden sein. Eine Übersicht über alle Phasen finden Sie unter [Bereitstellen einer hochverfügbaren Branchenanwendung in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md).
 
 Azure muss mit den folgenden grundlegenden Netzwerkkomponenten bereitgestellt werden:
@@ -234,7 +237,7 @@ Hier sehen Sie die nach erfolgreichem Abschluss dieser Phase erstellte Konfigura
 
 ## Nächster Schritt
 
-Zum Fortsetzen der Konfiguration für diesen Workload wechseln Sie zu [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md).
+Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md).
 
 ## Zusätzliche Ressourcen
 
@@ -248,4 +251,4 @@ Zum Fortsetzen der Konfiguration für diesen Workload wechseln Sie zu [Phase 2:
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

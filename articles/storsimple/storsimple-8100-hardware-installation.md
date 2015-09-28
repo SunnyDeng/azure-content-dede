@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Installieren des StorSimple 8100-Geräts | Microsoft Azure"
-	description="Beschreibt, wie Sie das StorSimple 8100-Gerät auspacken, in ein Rack einbauen und verkabeln., bevor Sie die Software bereitstellen und konfigurieren."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="alkohli"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt, wie Sie das StorSimple 8100-Gerät auspacken, in ein Rack einbauen und verkabeln., bevor Sie die Software bereitstellen und konfigurieren."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="alkohli"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/26/2015"
-	ms.author="alkohli"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/16/2015"
+   ms.author="alkohli" />
 
 # Auspacken, Einbauen und Verkabeln des StorSimple 8100-Geräts
 
@@ -275,4 +275,4 @@ Das Gerät ist jetzt für Stromversorgung, Netzwerkzugriff und serielle Konnekti
 Sie können nun [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

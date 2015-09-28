@@ -1,23 +1,25 @@
 <properties 
-	pageTitle="Branchenanwendung, Phase 4 | Microsoft Azure"
-	description="Phase 4 der Branchenanwendung in Azure erstellen Sie die Webserver, und laden Sie Ihre Branchenanwendung auf diese Server."
+	pageTitle="Branchenanwendung, Phase 4 | Microsoft Azure" 
+	description="Phase 4 der Branchenanwendung in Azure erstellen Sie die Webserver, und laden Sie Ihre Branchenanwendung auf diese Server." 
 	documentationCenter=""
-	services="virtual-machines"
-	authors="JoeDavies-MSFT"
-	manager="timlt"
+	services="virtual-machines" 
+	authors="JoeDavies-MSFT" 
+	manager="timlt" 
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags 
-	ms.service="virtual-machines"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.service="virtual-machines" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="Windows" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/11/2015" 
 	ms.author="josephd"/>
 
 # Branchenanwendungs-Workload, Phase 4: Konfigurieren der Webserver
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt das Erstellen von Ressourcen mit dem Ressourcen-Manager-Bereitstellungsmodell.
 
 In dieser Phase der Bereitstellung einer hochverfügbaren Branchenanwendung in den Azure-Infrastrukturdiensten erstellen Sie die Webserver und laden Ihre Branchenanwendung auf die Server.
 
@@ -34,7 +36,7 @@ Zunächst konfigurieren Sie den internen Lastenausgleich, sodass Azure den Clien
 	$testIP="<a chosen IP address from the subnet address space, Table S - Item 2 – Subnet address space column>"
 	Test-AzureStaticVNetIP –VNetName $vnet –IPAddress $testIP
 
-Wenn das Feld **IsAvailable** in der Ausgabe des Test-AzureStaticVNetIP-Befehls den Wert **True** aufweist, können Sie die IP-Adresse verwenden.
+Wenn das Feld **IsAvailable** in der Ausgabe des Befehls „Test-AzureStaticVNetIP“ **True** lautet, können Sie die IP-Adresse verwenden.
 
 Wechseln Sie mit diesem Befehl zurück zum Ressourcen-Manager-Modus von PowerShell.
 
@@ -116,6 +118,8 @@ Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierende
 	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
+> [AZURE.NOTE]Da diese virtuellen Computer für eine Intranetanwendung gedacht sind, wird ihnen keine öffentliche IP-Adresse oder ein DNS-Domänenname zugewiesen, und sie sind nicht über das Internet erreichbar. Dies bedeutet jedoch auch, dass Sie damit aus dem Azure-Vorschauportal keine Verbindung herstellen können. Die Schaltfläche **Verbinden** ist nicht verfügbar, wenn Sie die Eigenschaften des virtuellen Computers anzeigen.
+
 Verwenden Sie einen Remotedesktopclient Ihrer Wahl, und erstellen Sie eine Remotedesktopverbindung mit jedem virtuellen Computer, der als Webserver fungiert. Verwenden Sie den zugehörigen Intranet-DNS- oder Computernamen und die Anmeldeinformationen des lokalen Administratorkontos.
 
 Treten Sie dann für jeden virtuellen Computer, der als Webserver fungiert, der geeigneten Active Directory-Domäne bei, indem Sie an der Windows PowerShell-Eingabeaufforderung diese Befehle ausführen.
@@ -131,11 +135,11 @@ Stellen Sie nach dem Neustart unter Verwendung eines Kontos mit lokalen Administ
 Installieren und konfigurieren Sie jetzt für jeden Webserver IIS.
 
 1. Führen Sie Server-Manager aus, und klicken Sie dann auf **Rollen und Features hinzufügen**.
-2. Klicken Sie auf der Seite "Vorbereitungen" auf **Weiter**.
+2. Klicken Sie auf der Seite „Voraussetzungen“ auf **Weiter**.
 3. Klicken Sie auf der Seite "Installationstyp auswählen" auf **Weiter**.
 4. Klicken Sie auf der Seite "Zielserver auswählen" auf **Weiter**.
 5. Klicken Sie auf der Seite "Serverrollen" in der Liste **Rollen** auf **Webserver (IIS)**.
-6. Klicken Sie bei entsprechender Aufforderung auf **Features hinzufügen** und anschließend auf **Weiter**.
+6. Klicken Sie bei der entsprechenden Aufforderung auf **Features hinzufügen** und anschließend auf **Weiter**.
 7. Klicken Sie auf der Seite "Features auswählen" auf **Weiter**.
 8. Klicken Sie auf der Seite "Webserver (IIS)" auf **Weiter**.
 9. Aktivieren oder deaktivieren Sie auf der Seite "Rollendienste auswählen" die Kontrollkästchen für die Dienste, die Sie für Ihre Branchenanwendung benötigen, und klicken Sie dann auf **Weiter**. 10. Klicken Sie auf der Seite "Installationsauswahl bestätigen" auf **Installieren**.
@@ -168,4 +172,4 @@ Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 5: Erste
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=August15_HO9-->
+<!---HONumber=Sept15_HO3-->

@@ -1,4 +1,4 @@
-<properties title="Creating an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure" pageTitle="Erstellen eines virtuellen Oracle WebLogic Server 12c- und Oracle Database 12c-Computers in Azure" description="Durchlaufen Sie ein Beispiel zum Erstellen eines Oracle WebLogic Server 12c- und Oracle Database 12c-Images unter Windows Server 2012 in Microsoft Azure." services="virtual-machines" authors="bbenz" documentationCenter=""/>
+<properties pageTitle="Erstellen eines virtuellen Oracle WebLogic Server 12c- und Oracle Database 12c-Computers in Azure" description="Durchlaufen Sie ein Beispiel zum Erstellen eines Oracle WebLogic Server 12c- und Oracle Database 12c-Images unter Windows Server 2012 in Microsoft Azure." services="virtual-machines" authors="bbenz" documentationCenter=""/>
 <tags ms.service="virtual-machines" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="infrastructure-services" ms.date="06/22/2015" ms.author="bbenz" />
 
 #Erstellen eines virtuellen Oracle WebLogic Server 12c- und Oracle Database 12c-Computers in Azure
@@ -21,11 +21,11 @@ In diesem Artikel wird gezeigt, wie Sie einen virtuellen Computer in Azure erste
 
 7.	Wählen Sie einen **Tarif** aus. Beachten Sie, dass standardmäßig die empfohlenen Preisstufen angezeigt werden. Um alle Konfigurationsoptionen anzuzeigen, klicken Sie oben rechts auf **Alle anzeigen**.
 
-8. Legen Sie die optionalen Konfigurationen wie erforderlich fest (siehe [Informationen zu Azure-VM-Konfigurationseinstellungen](https://msdn.microsoft.com/library/azure/dn763935.aspx). Beachten Sie folgende Überlegungen:
+8. Legen Sie die optionalen Konfigurationen je nach Bedarf fest. Beachten Sie folgende Überlegungen:
 
 	a. Lassen Sie **Speicherkonto** unverändert, um ein neues Speicherkonto mit dem Namen des virtuellen Computers zu erstellen.
 
-	b. Legen Sie für **Verfügbarkeitsgruppe** **Nicht konfiguriert** fest.
+	b. Legen Sie für die **Verfügbarkeitsgruppe** **Nicht konfiguriert** fest.
 
 	c. Fügen Sie zu diesem Zeitpunkt keine Endpunkte hinzu.
 
@@ -54,4 +54,4 @@ Folgen Sie den Anweisungen in [Erstellen eines virtuellen Oracle WebLogic Server
 
 [Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

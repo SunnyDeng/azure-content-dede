@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="07/22/2015"
+	ms.date="09/11/2015"
 	ms.author="cabailey"/>
 #Gewusst wie: Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor
 
@@ -105,6 +105,7 @@ Wechseln Sie zum Microsoft Download Center, und [laden Sie das BYOK-Toolset für
 |Europa|KeyVault-BYOK-Tools-Europe.zip|881DCA798305B8408C06BAE7B3EFBC1E9EA6113A8D6EC443464F3744896F32C3|
 |Asien|KeyVault-BYOK-Tools-AsiaPacific.zip|0C76967B3AC76687E4EA47EB96174EE6B25AB24E3114E28A90D9B93A2E6ABF6E|
 |Lateinamerika|KeyVault-BYOK-Tools-LatinAmerica.zip|B38015990D4D1E522B8367FF78E78E0234BF9592663470426088C44C3CAAAF48|
+|Japan|KeyVault-BYOK-Tools-Japan.zip|DB512CD9472FDE2FD610522847DF05E4D7CD49A296EE4A2DD74D43626624A113|
 
 Verwenden Sie in der Azure PowerShell-Sitzung das [Get-FileHash](https://technet.microsoft.com/library/dn520872.aspx)-Cmdlet, um die Integrität des heruntergeladenen BYOK-Toolsets zu überprüfen.
 
@@ -115,8 +116,8 @@ Das Toolset enthält Folgendes:
 - Ein Schlüsselaustauschschlüssel-Paket (Key Exchange Key, KEK), dessen Name mit **BYOK-KEK-pkg-.** beginnt.
 - Ein Security World-Paket, dessen Name mit **BYOK-SecurityWorld-pkg-.** beginnt.
 - Ein Python-Skript mit dem Namen „v**erifykeypackage.py.**“.
-- Eine ausführbare Befehlszeilendatei mit dem Namen **KeyTransferRemote.exe** und die zugehörigen DLLs.
-- Ein Visual C++ Redistributable Package mit dem Namen **vcredist\_x64.exe**.
+- Eine ausführbare Befehlszeilendatei namens **KeyTransferRemote.exe** und die zugehörigen DLLs.
+- Ein Visual C++ Redistributable Package namens **vcredist\_x64.exe**.
 
 Kopieren Sie das Paket auf ein USB-Laufwerk oder ein anderes tragbares Speichergerät.
 
@@ -129,7 +130,7 @@ Führen Sie für diesen zweiten Schritt die folgenden Verfahren auf der Arbeitss
 
 Installieren Sie die Supportsoftware nCipher (Thales) auf einem Windows-Computer, und schließen Sie dann ein Thales-HSM an diesen Computer an.
 
-Stellen Sie sicher, dass sich die Thales-Tools unter Ihrem Pfad befinden (**%nfast\_home%\\bin** und **%nfast\_home%\\python\\bin**). Geben Sie beispielsweise Folgendes ein:
+Stellen Sie sicher, dass sich die Thales-Tools in Ihrem Pfad befinden (**%nfast\_home%\\bin** und **%nfast\_home%\\python\\bin**). Geben Sie beispielsweise Folgendes ein:
 
 		set PATH=%PATH%;”%nfast_home%\bin”;”%nfast_home%\python\bin”
 
@@ -246,7 +247,7 @@ Ersetzen Sie beim Ausführen dieses Befehls *contosokey* durch den gleichen Wert
 
 Sie werden aufgefordert, Ihre Security World-Administratorkarten einzuführen.
 
-Wenn der Befehl abgeschlossen ist, wird **Result: SUCCESS** angezeigt, und die Kopie Ihres Schlüssels mit reduzierten Berechtigungen ist in der Datei mit dem Namen "key\_xferacId\_<contosokey>" enthalten.
+Wenn der Befehl abgeschlossen ist, wird **Result: SUCCESS** angezeigt, und die Kopie Ihres Schlüssels mit reduzierten Berechtigungen ist in der Datei mit dem Namen „key\_xferacId\_<contosokey>“ enthalten.
 
 ###Schritt 4.2: Überprüfen der neuen Kopie des Schlüssels
 
@@ -258,7 +259,7 @@ Optional können Sie die Thales-Hilfsprogramme ausführen, um zu bestätigen, da
 - kmfile-dump.exe:
 
 		"%nfast_home%\bin\kmfile-dump.exe" "%NFAST_KMDATA%\local\key_xferacld_contosokey"
-Ersetzen Sie beim Ausführen dieser Befehle "contosokey" durch den gleichen Wert, den Sie in **Schritt 3.3: Erstellen eines neuen Schlüssels** unter [Generieren des Schlüssels](#step-3-generate-your-key) angegeben haben.
+Ersetzen Sie beim Ausführen dieser Befehle „contosokey“ durch den Wert, den Sie in **Schritt 3.3: Erstellen eines neuen Schlüssels** unter [Generieren des Schlüssels](#step-3-generate-your-key) angegeben haben.
 
 ###Schritt 4.3: Verschlüsseln des Schlüssels mit dem Schlüsselaustauschschlüssel von Microsoft
 
@@ -288,7 +289,7 @@ Gehen Sie wie folgt vor, wenn Sie diesen Befehl ausführen:
 
 - Ersetzen Sie *ContosoFirstHSMKey* durch eine Bezeichnung, die als Name Ihrer Ausgabedatei verwendet werden soll.
 
-Wenn dieser Vorgang erfolgreich ist, wird **Result: SUCCESS** angezeigt, und im aktuellen Ordner ist eine neue Datei mit dem folgenden Namen enthalten: "TransferPackage-*ContosoFirstHSMkey**byok".
+Wenn dieser Vorgang erfolgreich ist, wird **Result: SUCCESS** angezeigt, und im aktuellen Ordner ist eine neue Datei mit dem folgenden Namen enthalten: „TransferPackage-*ContosoFirstHSMkey**byok“.
 
 ###Schritt 4.4: Kopieren des Schlüsselübertragungspakets auf die Arbeitsstation mit Internetverbindung 
 
@@ -306,4 +307,4 @@ Wenn der Upload erfolgreich ist, werden die Eigenschaften des gerade hinzugefüg
 
 Sie können diesen HSM-geschützten Schlüssel jetzt in Ihrem Schlüsseltresor verwenden. Weitere Informationen finden Sie im Abschnitt **Verwenden eines Hardwaresicherheitsmoduls (HSM)** im Lernprogramm [Erste Schritte mit dem Azure-Schlüsseltresor](key-vault-get-started.md).
 
-<!---HONumber=August15_HO7-->
+<!---HONumber=Sept15_HO3-->

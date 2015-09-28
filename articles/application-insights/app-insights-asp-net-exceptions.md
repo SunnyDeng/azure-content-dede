@@ -6,16 +6,14 @@
 	authors="alancameronwills" 
 	manager="douge"/>
 
-
 <tags 
 	ms.service="application-insights" 
 	ms.workload="tbd" 
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/11/2015" 
+	ms.date="09/10/2015" 
 	ms.author="awills"/>
-
  
 # Diagnostizieren von Fehlern und Ausnahmen in ASP.NET-Anwendungen mit Application Insights  
 
@@ -52,7 +50,7 @@ Von dort aus können Sie sich die Stapelüberwachung und detaillierte Eigenschaf
 
 Eine *Abhängigkeit* ist ein Dienst, der von Ihrer Anwendung aufgerufen wird. Dies geschieht in der Regel über eine REST-API oder eine Datenbankverbindung. [Application Insights-Statusmonitor][redfield] überwacht automatisch eine Vielzahl von Abhängigkeitsaufruftypen und misst dabei die Dauer des Aufrufs sowie Erfolg oder Fehler.
 
-Um Abhängigkeitsdaten zu erhalten, müssen Sie den [Statusmonitor auf dem IIS-Server installieren][redfield] oder, wenn es sich bei Ihrer App um eine Azure-Web-App handelt, die [Application Insights-Erweiterung][azure] verwenden. Gehen Sie dazu folgendermaßen vor
+Um Abhängigkeitsdaten zu erhalten, müssen Sie den [Statusmonitor auf dem IIS-Server installieren][redfield] oder, wenn es sich bei Ihrer App um eine Azure-Web-App handelt, die [Application Insights-Erweiterung][azure] verwenden.
 
 Fehlerhafte Aufrufe von Abhängigkeiten werden auf dem Blatt "Fehler" aufgeführt, und Sie finden sie außerdem unter "Verwandte Elemente" in den Anforderungsdetails und den Ausnahmendetails.
 
@@ -428,7 +426,15 @@ Fügen Sie das Attribut den Dienstimplementierungen hinzu:
 
 [Beispiel](https://github.com/AppInsightsSamples/WCFUnhandledExceptions)
 
+## Ausnahmeleistungsindikatoren
 
+Wenn Sie den [Statusmonitor auf Ihrem Server installiert haben][redfield], können Sie ein Diagramm mit der von .NET gemessenen Rate der Ausnahmen abrufen. Dies enthält sowohl behandelte als auch nicht behandelte .NET-Ausnahmen.
+
+Öffnen Sie ein "Metrik-Explorer"-Blatt, fügen Sie ein neues Diagramm hinzu, und wählen **Ausnahmerate** aus, das unter Leistungsindikatoren aufgelistet wird.
+
+.NET Framework berechnet die Rate, indem die Anzahl von Ausnahmen innerhalb eines Intervalls gezählt und diese durch die Länge des Intervalls geteilt wird.
+
+Beachten Sie, dass sich der Wert von der Anzahl der "Ausnahmen" unterscheidet, die vom Application Insights-Portal durch Zählen von TrackException-Meldungen berechnet wird. Die Samplingintervalle sind unterschiedlich, und das SDK sendet keine TrackException-Meldungen für alle behandelten und nicht behandelten Ausnahmen.
 
 <!--Link references-->
 
@@ -443,4 +449,4 @@ Fügen Sie das Attribut den Dienstimplementierungen hinzu:
 
  
 
-<!---HONumber=August15_HO6-->
+<!---HONumber=Sept15_HO3-->

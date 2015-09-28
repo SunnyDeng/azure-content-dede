@@ -1,19 +1,19 @@
 <properties 
    pageTitle="Verwalten Ihres StorSimple-Speicherkontos | Microsoft Azure"
-	description="Beschreibt, wie Sie die Seite ";Konfigurieren"; des StorSimple Manager-Diensts zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten verwenden oder wie Sie die Sicherheitsschlüssel für ein Speicherkonto rotieren."
-	services="storsimple"
-	documentationCenter="NA"
-	authors="SharS"
-	manager="carolz"
-	editor=""/>
+   description="Beschreibt, wie Sie die Seite ";Konfigurieren"; des StorSimple Manager-Diensts zum Hinzufügen, Bearbeiten oder Löschen von Speicherkonten verwenden oder wie Sie die Sicherheitsschlüssel für ein Speicherkonto rotieren."
+   services="storsimple"
+   documentationCenter="NA"
+   authors="SharS"
+   manager="carolz"
+   editor="" />
 <tags 
    ms.service="storsimple"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"
-	ms.workload="TBD"
-	ms.date="08/27/2015"
-	ms.author="v-sharos"/>
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="09/15/2015"
+   ms.author="v-sharos" />
 
 # Verwalten von Speicherkonten mithilfe des StorSimple Manager-Diensts
 
@@ -148,6 +148,7 @@ Um den StorSimple-Manager-Dienst über die Änderung zu informieren, müssen Sie
 
 ## Nächste Schritte
 
-Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
+- Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md)
+- Weitere Informationen zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->

@@ -1,17 +1,17 @@
 <properties 
-	pageTitle="Versionshinweise für Application Insights für Windows"
-	description="Die neuesten Updates."
-	services="application-insights"
-	documentationCenter=""
-	authors="alancameronwills"
+	pageTitle="Versionshinweise für Application Insights für Windows" 
+	description="Die neuesten Updates." 
+	services="application-insights" 
+    documentationCenter=""
+	authors="alancameronwills" 
 	manager="douge"/>
 <tags 
-	ms.service="application-insights"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="ibiza"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="06/18/2015"
+	ms.service="application-insights" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="ibiza" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="06/18/2015" 
 	ms.author="sergkanz"/>
  
 # Versionshinweise für das Application Insights-SDK für Windows Phone und Store
@@ -31,6 +31,23 @@ Weitere Informationen finden Sie unter [Erste Schritte mit Application Insights 
 * Wählen Sie die installierten Application Insights-Pakete und dann "Upgrade" aus.
 * Vergleichen Sie die alte und neue Version der Datei "ApplicationInsights.config". Übernehmen Sie wieder alle Anpassungen, die Sie an der alten Version vorgenommen haben.
 * Erstellen Sie die Projektmappe neu.
+
+## Version 1.2
+
+### Windows-App-SDK
+
+- Korrigieren Sie eine „FileNotFound“-Ausnahme, die verhindert, dass beibehaltene Telemetrien gesendet werden, nachdem die App erneut geöffnet wird.
+
+### Core SDK
+
+- Erste Version des Application Insights-SDK, das von [Github](http://github.com/microsoft/ApplicationInsights-dotnet) geliefert wird
+
+## Version 1.1
+
+### Core SDK
+
+- Das SDK stellt jetzt den neuen Telemetrie-Typ ```DependencyTelemetry``` vor, der Informationen zum Abhängigkeitsaufruf von der Anwendung enthält.
+- Die neue ```TelemetryClient.TrackDependency```-Methode erlaubt das Senden von Informationen über Abhängigkeitsaufrufe von der Anwendung.
 
 ## Version 1.0.0
 
@@ -77,4 +94,4 @@ Vorschau vom 28.04.2015
 
 Für ältere Versionen sind keine Versionshinweise verfügbar.
 
-<!---HONumber=September15_HO1-->
+<!---HONumber=Sept15_HO3-->
