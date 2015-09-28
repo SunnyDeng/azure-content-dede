@@ -50,23 +50,23 @@ Das folgende Beispiel zeigt, wie Sie einen virtuellen Computer (Virtual Machine,
 
 6.	Erstellen Sie eine Umgebungsvariable mit dem Namen **ORACLE\_HOSTNAME**, und legen Sie als Wert den Computername des virtuellen Computers fest. Sie können eine Umgebungsvariable anhand der folgenden Schritte erstellen:
 
-	a. Klicken Sie in Windows auf **Start**, geben Sie **Systemsteuerung** ein, und klicken Sie auf das Symbol **Systemsteuerung**. Klicken Sie auf **System und Sicherheit**, dann auf **System**, und klicken Sie anschließend auf **Erweiterte Systemeinstellungen**.
+	a.	Klicken Sie in Windows auf **Start**, geben Sie **Systemsteuerung** ein, und klicken Sie auf das Symbol **Systemsteuerung**. Klicken Sie auf **System und Sicherheit**, dann auf **System**, und klicken Sie anschließend auf **Erweiterte Systemeinstellungen**.
 
-	b. Klicken Sie auf die Registerkarte **Erweitert** und dann auf **Umgebungsvariablen**.
+	b.	Klicken Sie auf die Registerkarte **Erweitert** und dann auf **Umgebungsvariablen**.
 
-	c. Klicken Sie im Bereich **Systemvariablen** auf **Neu**, um die Variable zu erstellen.
+	c.	Klicken Sie im Bereich **Systemvariablen** auf **Neu**, um die Variable zu erstellen.
 
-	d. Geben Sie im Dialogfeld **Neue Systemvariable** den Variablennamen **ORACLE\_HOSTNAME** und als Wert den Computernamen des virtuellen Computers ein. Öffnen Sie zum Ermitteln des Computernamens eine Eingabeaufforderung, und führen Sie **SET COMPUTERNAME** aus. Die Ausgabe dieses Befehls enthält den Computernamen.
+	d.	Geben Sie im Dialogfeld **Neue Systemvariable** den Variablennamen **ORACLE\_HOSTNAME** und als Wert den Computernamen des virtuellen Computers ein. Öffnen Sie zum Ermitteln des Computernamens eine Eingabeaufforderung, und führen Sie **SET COMPUTERNAME** aus. Die Ausgabe dieses Befehls enthält den Computernamen.
 
-	e. Klicken Sie auf **OK**, um die neue Umgebungsvariable zu speichern und das Dialogfeld **Neue Systemvariable** zu schließen.
+	e.	Klicken Sie auf **OK**, um die neue Umgebungsvariable zu speichern und das Dialogfeld **Neue Systemvariable** zu schließen.
 
-	f. Schließen Sie die übrigen von der Systemsteuerung geöffneten Dialogfelder.
+	f.	Schließen Sie die übrigen von der Systemsteuerung geöffneten Dialogfelder.
 
 7.	Klicken Sie in Windows auf **Start**, und geben Sie **Datenbank-Konfigurationsassistent** ein. Klicken Sie auf das Symbol **Datenbank-Konfigurationsassistent**.
 
 8.	Geben Sie in den Dialogfeldern des **Datenbank-Konfigurationsassistenten** jeweils die erforderlichen Werte an:
 
-	a. **Schritt 1:** Klicken Sie auf **Datenbank erstellen** und dann auf **Weiter**.
+	a.	**Schritt 1:** Klicken Sie auf **Datenbank erstellen** und dann auf **Weiter**.
 
 		![](media/virtual-machines-creating-oracle-database-virtual-machine/image5.png)
 
@@ -110,7 +110,7 @@ Um Remoteverbindungen mit Ihrer Datenbank zuzulassen (z. B. für einen Clientco
 
 		**lsnrctl start**
 
-> [AZURE.NOTE]Mit **lsnrctl status** können Sie den Status des Listeners ermitteln. Führen Sie **lsnrctl stop** aus, wenn Sie den Listener beenden möchten.
+> [AZURE.NOTE] Mit **lsnrctl status** können Sie den Status des Listeners ermitteln. Führen Sie **lsnrctl stop** aus, wenn Sie den Listener beenden möchten.
 
 ### Öffnen Sie in der Firewall des virtuellen Computers Port 1521.
 
@@ -159,7 +159,7 @@ Um Remoteverbindungen mit Ihrer Datenbank zuzulassen (z. B. für einen Clientco
 ##Aktivieren des Remotezugriffs auf Oracle Database Enterprise Manager
 Wenn Sie den Remotezugriff für Oracle Database Enterprise Manager aktivieren möchten, öffnen Sie Port 5500 in der Firewall, und erstellen Sie im Azure-Portal einen VM-Endpunkt für 5500. (Verwenden Sie dazu die weiter oben angegebenen Schritte für das Öffnen von Port 1521 und das Erstellen eines Endpunkts für 1521.) Öffnen Sie dann einen Browser mit der URL im Format `http://<<unique_domain_name>>:5500/em`, um Oracle Enterprise Manager auf dem Remotecomputer auszuführen.
 
-> [AZURE.NOTE]Sie können den Wert für *<<unique\_domain\_name>>* im [Azure-Portal](https://ms.portal.azure.com/) festlegen, indem Sie auf **Virtuelle Computer** klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle Database verwenden.
+> [AZURE.NOTE] Sie können den Wert für *\<\<unique\_domain\_name\>\>* im [Azure-Portal](https://ms.portal.azure.com/) festlegen, indem Sie auf **Virtuelle Computer** klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle Database verwenden.
 
 ##Konfigurieren von Popular Options- und Advanced Options-Bündeln
 Wenn Sie das Bündel **Oracle Database with Popular Options** oder **Oracle Database with Advanced Options** verwenden, müssen Sie als Nächstes die Add-On-Funktionen in der Oracle-Installation konfigurieren. Anweisungen zum Einrichten dieser Funktionen unter Windows finden Sie in der Oracle-Dokumentation. Die Konfigurationen können je nach Anforderungen der einzelnen Komponenten stark variieren.
@@ -181,4 +181,4 @@ Nachdem Sie den virtuellen Computer eingerichtet und die Datenbank erstellt habe
 
 -	[Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)
 
-<!---HONumber=Sept15_HO3-->
+<!-----HONumber=Sept15_HO3-->
