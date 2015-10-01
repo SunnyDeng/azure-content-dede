@@ -41,14 +41,14 @@ Der Code für dieses Tutorial wird [auf GitHub](https://github.com/AzureADQuickS
 
 ```git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-nodejs.git```
 
-The completed application is provided at the end of this tutorial as well.
+Die fertige Anwendung wird außerdem am Ende dieses Lernprogramms bereitgestellt.
 
 ## 1. Registrieren einer App
 Erstellen Sie eine neue App auf [apps.dev.microsoft.com](https://apps.dev.microsoft.com) oder führen Sie die folgenden [detailed steps](active-directory-v2-app-registration.md).  Stellen Sie sicher, dass Sie:
 
-- Copy down the **Application Id** assigned to your app, you'll need it soon.
-- Add the **Web** platform for your app.
-- Enter the correct **Redirect URI**. The redirect URI indicates to Azure AD where authentication responses should be directed - the default for this tutorial is `http://localhost:3000/auth/openid/return`.
+- die **Anwendungs-ID**, die Ihrer App zugewiesen ist, kopieren. Sie werden sie in Kürze benötigen.
+- die **Web**-Plattform für Ihre App hinzufügen.
+- den richtigen **Umleitungs-URI** eingeben. Der Umleitung-URI zeigt Azure AD an, wohin Authentifizierungsantworten gesendet werden sollen – der Standardwert in diesem Tutorial lautet `http://localhost:3000/auth/openid/return`.
 
 ## 2. Erforderliche Komponenten zu Ihrem Verzeichnis hinzufügen
 
@@ -72,23 +72,24 @@ Wechseln Sie über die Befehlszeile vom Verzeichnis auf Ihren Stammordner, wenn 
 - `npm install passport-azure-ad`
 
 
-This will install the libraries that passport-azure-ad depend on.
+Dadurch werden die Bibliotheken installiert, von denen "passport-azure-ad" abhängt.
 
-## 3. Set up your app to use the passport-node-js strategy
-Here, we'll configure the Express middleware to use the OpenID Connect authentication protocol.  Passport will be used to issue sign-in and sign-out requests, manage the user's session, and get information about the user, amongst other things.
+## 3. Richten Sie Ihre App zur Nutzung der "passport-node-js"-Strategie ein.
+Hier konfigurieren wir die Express-Middleware für die Verwendung des Authentifizierungsprotokolls OpenID Connect. Passport wird unter anderem für die Ausgabe von Anmelde- und Abmeldeanforderungen, für die Verwaltung der Benutzerssitzungen und für das Abrufen der Benutzerinformationen verwendet.
 
--	To begin, open the `config.js` file in the root of the project, and enter your app's configuration values in the `exports.creds` section.
-    -	The `clientID:` is the **Application Id** assigned to your app in the registration portal.
-    -	The `returnURL` is the **Redirect URI** you entered in the portal.
-    - The `clientSecret` is the secret you generated in the portal.
+-	Öffnen Sie zunächst die Datei `config.js` aus dem Stammverzeichnis des Projekts, und geben Sie die Konfigurationswerte Ihrer App im Abschnitt `exports.creds` ein.
+    -	`clientID:` ist die **Anwendungs-ID**, die Ihrer App im Registrierungsportal zugewiesen ist.
+    -	`returnURL` ist der **Umleitungs-URI**, den Sie im Portal eingegeben haben.
+    - `clientSecret` ist der geheime Schlüssel, den Sie im Portal generiert haben.
 
-- Next open `app.js` file in the root of the proejct and add the follwing call to invoke the `OIDCStrategy` strategy that comes with `passport-azure-ad`
+- Öffnen Sie als Nächstes die Datei `app.js` im Stammverzeichnis des Projekts, und fügen Sie den Aufruf hinzu, um die `OIDCStrategy`-Strategie aufzurufen, die zu `passport-azure-ad` gehört.
 
 
 ```JavaScript
 var OIDCStrategy = require('passport-azure-ad').OIDCStrategy;
 
-// Fügen Sie Protokollierung hinzu var log = bunyan.createLogger({ name: 'Beispiel für eine Microsoft OIDC-Webanwendung' }); ```
+// Fügen Sie Protokollierung hinzu var log = bunyan.createLogger({ name: 'Beispiel für eine Microsoft OIDC-Webanwendung' }); 
+```
 
 - Verwenden Sie danach die Strategie, auf die gerade verwiesen wurde, um die Anmeldeanforderungen zu verarbeiten.
 
@@ -417,4 +418,4 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 Weitere Ressourcen: - [Die App-Modell v2.0-Vorschauversion >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-"azure-active-directory"-Tag >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=Sept15_HO3-->
+<!----HONumber=Sept15_HO3-->

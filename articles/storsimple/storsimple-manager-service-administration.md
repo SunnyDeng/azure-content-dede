@@ -57,7 +57,11 @@ Die folgende Tabelle gibt Aufschluss über die Navigationshierarchie der Benutze
 |Zielseite|Seiten auf Dienstebene|Seiten auf Geräteebene|Seiten auf Geräteebene|
 |---|---|---|---|
 |StorSimple Manager-Dienst|Dienstdashboard|Gerätedashboard||
-||Geräte →|Überwachen| ||Sicherungskatalog|Volumecontainer→|Volumes| ||Konfigurieren (Dienst)|Sicherungsrichtlinien|| ||Aufträge|Konfigurieren (Gerät)| ||Warnungen|Wartung|
+||Geräte →|Überwachen| |
+||Sicherungskatalog|Volumecontainer→|Volumes| 
+||Konfigurieren (Dienst)|Sicherungsrichtlinien|| 
+||Aufträge|Konfigurieren (Gerät)||
+||Warnungen|Wartung|
 
 
 ## Verwalten des StorSimple-Geräts mithilfe des StorSimple Manager-Diensts
@@ -112,4 +116,4 @@ Falls sich das Problem nicht beheben lässt und Sie eine Serviceanfrage erstelle
 
 -  [Kontaktaufnahme mit dem Microsoft-Support](storsimple-contact-microsoft-support.md)
 
-<!---HONumber=Sept15_HO3-->
+<!----HONumber=Sept15_HO3-->

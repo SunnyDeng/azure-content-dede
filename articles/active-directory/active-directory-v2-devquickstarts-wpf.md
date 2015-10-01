@@ -46,7 +46,7 @@ Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.micr
 
 - die der App zugewiesene **Anwendungs-ID** kopieren, da Sie sie demnächst benötigen.
 - die **Web**-Plattform zur App hinzufügen.
-- den richtigen **Umleitungs-URI** aus dem Portal eingeben. Sie müssen den Standardwert „urn:ietf:wg:oauth:2.0:oob“ verwenden.
+- den richtigen **Umleitungs-URI** aus dem Portal eingeben. Sie müssen den Standardwert `urn:ietf:wg:oauth:2.0:oob` verwenden.
 
 ## 2. Installieren und Konfigurieren von ADAL
 Nachdem Sie eine App bei Microsoft registriert haben, können Sie ADAL installieren und Code im Zusammenhang mit Identitätsfunktionen schreiben. Damit ADAL mit dem v2.0-Endpunkt kommunizieren kann, müssen Sie einige Informationen zur App-Registrierung bereitstellen.
@@ -54,7 +54,8 @@ Nachdem Sie eine App bei Microsoft registriert haben, können Sie ADAL installie
 - Fügen Sie dazu zunächst ADAL mithilfe der Paket-Manager-Konsole zum TodoListClient-Projekt hinzu.
 
 ```
-PM > Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory ProjectName - TodoListClient - IncludePrerelease '''
+PM > Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory ProjectName - TodoListClient - IncludePrerelease 
+```
 
 -	Öffnen Sie im Projekt „TodoListClient“ `app.config`. Ersetzen Sie die Werte der Elemente in Abschnitt `<appSettings>` durch die Werte, die Sie im App-Registrierungsportal eingegeben haben. Sobald Ihr Code ADAL verwendet, verweist er auf diese Werte.
     -	`ida:ClientId` ist die **Anwendungs-ID** Ihrer App, die Sie aus dem Portal kopiert haben.
@@ -249,4 +250,4 @@ Weitere Ressourcen:
 - [Die App-Modell v2.0-Vorschauversion \>\>](active-directory-appmodel-v2-overview.md)
 - [StackOverflow-"adal"-Tag \>\>](http://stackoverflow.com/questions/tagged/adal)
 
-<!---HONumber=Sept15_HO3-->
+<!----HONumber=Sept15_HO3-->

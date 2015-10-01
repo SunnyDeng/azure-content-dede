@@ -20,17 +20,21 @@
 
 <!-- TODO [AZURE.INCLUDE [active-directory-b2c-devquickstarts-native-switcher](../../includes/active-directory-b2c-devquickstarts-native-switcher.md)]-->
 
-Mit Azure AD B2C können Sie Ihren Desktop-Apps in wenigen Schritten leistungsstarke Self-Service-Features zur Identitätsverwaltung hinzufügen. In diesem Artikel erfahren Sie, wie eine .NET WPF-App für eine Aufgabenliste erstellt wird, die Benutzerregistrierung, -anmeldung und die Verwaltung von Profilen umfasst. Sie umfasst auch die Unterstützung für die Registrierung und Anmeldung mit einem Benutzernamen oder einer E-Mail-Adresse sowie über Konten sozialer Netzwerke wie Facebook oder Google.
+Mit Azure AD B2C können Sie Ihren Desktop-Apps in wenigen Schritten leistungsstarke Self-Service-Features zur Identitätsverwaltung hinzufügen.  In diesem Artikel 
+erfahren Sie, wie eine .NET WPF-App für eine Aufgabenliste erstellt wird, die Benutzerregistrierung, -anmeldung und die Verwaltung von Profilen umfasst. Sie umfasst auch die Unterstützung für die Registrierung und Anmeldung mit einem Benutzernamen oder
+einer E-Mail-Adresse sowie über Konten sozialer Netzwerke wie Facebook oder Google.
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
 ## 1\. Erstellen eines Azure AD B2C-Verzeichnisses
 
-Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über ein Verzeichnis verfügen, [erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
+Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über
+ein Verzeichnis verfügen, [erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
 
 ## 2\. Erstellen einer Anwendung
 
-Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die Informationen erhält, die für die sichere Kommunikation mit Ihrer App erforderlich sind. Befolgen Sie zum Erstellen einer App [diese Anweisungen](active-directory-b2c-app-registration.md). Ersetzen Sie
+Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die Informationen erhält, die für die sichere Kommunikation mit Ihrer App erforderlich sind.  Befolgen Sie zum
+Erstellen einer App [diese Anweisungen](active-directory-b2c-app-registration.md). Ersetzen Sie
 
 - Einfügen eines **systemeigenen Clients** in die Anwendung
 - Notieren Sie sich den **Umleitungs-URI** `urn:ietf:wg:oauth:2.0:oob` – dies ist die Standard-URL für dieses Codebeispiel.
@@ -38,7 +42,9 @@ Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die
 
 ## 3\. Erstellen der Richtlinien
 
-In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert. Dieses Codebeispiel enthält drei Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im [Artikel für Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Beachten Sie beim Erstellen der drei Richtlinien Folgendes:
+In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active-directory-b2c-reference-policies.md) definiert.  Dieses Codebeispiel enthält drei 
+Benutzeroberflächen, für die Identitäten relevant sind: Registrierung, Anmeldung und Profilbearbeitung. Sie müssen eine Richtlinie für jeden Typ erstellen, wie im 
+[Artikel für Richtlinienreferenzen](active-directory-b2c-reference-policies.md#how-to-create-a-sign-up-policy) beschrieben. Beachten Sie beim Erstellen der drei Richtlinien Folgendes:
 
 - Wählen Sie auf dem Blatt für den Identitätsanbieter **User ID signup** oder **Email signup** aus.
 - Wählen Sie den **Anzeigenamen** und einige andere Anmeldeattribute in der Registrierungsrichtlinie aus.
@@ -49,15 +55,19 @@ Nachdem Sie die drei Richtlinien erstellt haben, können Sie Ihre App erstellen.
 
 ## 4\. Herunterladen des Codes
 
-Der Code für dieses Lernprogramm wird auf [GitHub](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie [ein Projektgerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
+Der Code für dieses Lernprogramm wird auf [GitHub](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet) verwaltet. Zum Erstellen des Beispiels können Sie 
+[ein Projektgerüst als ZIP-Datei herunterladen](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/skeleton.zip) oder das Gerüst klonen:
 
 ```
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet.git
 ```
 
-Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/complete.zip) und unter `complete` im gleichen Repository enthalten.
+Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-DotNet/archive/complete.zip) und unter
+`complete` im gleichen Repository enthalten.
 
-Nachdem Sie den Beispielcode heruntergeladen haben, öffnen Sie die `.sln`-Datei in Visual Studio, um zu beginnen. Wie Sie sehen, sind in der Projektmappe zwei Projekte enthalten: ein `TaskClient`-Projekt und ein `TaskService`-Projekt. `TaskClient` ist eine WPF-Desktopanwendung, mit der der Benutzer interagiert. `TaskService` ist die Back-End-Web-API der App, in der die Aufgabenlisten der Benutzer gespeichert werden. Der `TaskClient` und der `TaskService` werden in diesem Fall durch eine einzige **Anwendungs-ID** dargestellt, da sie zusammen eine logische Anwendung bilden.
+Nachdem Sie den Beispielcode heruntergeladen haben, öffnen Sie die `.sln`-Datei in Visual Studio, um zu beginnen. Wie Sie sehen, sind in der Projektmappe zwei Projekte enthalten: ein `TaskClient`-Projekt und ein `TaskService`-Projekt. `TaskClient` ist eine WPF-Desktopanwendung,
+mit der der Benutzer interagiert. `TaskService` ist die Back-End-Web-API der App, in der die Aufgabenlisten der Benutzer gespeichert werden. Der `TaskClient` und der `TaskService` werden in diesem Fall durch eine einzige **Anwendungs-ID**
+dargestellt, da sie zusammen eine logische Anwendung bilden.
 
 ## 5\. Konfigurieren des Aufgabendiensts
 
@@ -88,7 +98,8 @@ to send OAuth 2.0 authentication messages, execute policies, and get tokens for 
 Begin by adding ADAL to the TaskClient project using the Visual Studio Package Manager Console.
 
 ```
-PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TaskClient -IncludePrerelease ```
+PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TaskClient -IncludePrerelease
+```
 
 #### Geben Sie Ihre B2C-Details ein.
 Öffnen Sie die Datei `Globals.cs`, und ersetzen Sie alle Eigenschaftenwerte durch Ihre eigenen. Diese Klasse wird vom `TaskClient` für Verweise auf häufig verwendete Werte verwendet.
@@ -337,4 +348,4 @@ You can now move onto more advanced B2C topics.  You may want to try:
 
 -->
 
-<!---HONumber=Sept15_HO3-->
+<!-----HONumber=Sept15_HO3-->
