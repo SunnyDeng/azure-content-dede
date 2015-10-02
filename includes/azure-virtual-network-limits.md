@@ -43,4 +43,4 @@ Anwendungsgateways | 10
 
 Wenden Sie sich an den Support, falls Sie diese Limits erhöhen müssen.
 
-<!---HONumber=September15_HO1-->
+<!----HONumber=Sept15_HO1-->

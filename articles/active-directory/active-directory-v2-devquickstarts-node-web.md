@@ -88,7 +88,10 @@ Hier konfigurieren wir die Express-Middleware für die Verwendung des Authentifi
 ```JavaScript
 var OIDCStrategy = require('passport-azure-ad').OIDCStrategy;
 
-// Fügen Sie Protokollierung hinzu var log = bunyan.createLogger({ name: 'Beispiel für eine Microsoft OIDC-Webanwendung' }); 
+// Fügen Sie Protokollierung hinzu 
+var log = bunyan.createLogger({ 
+	name: 'Beispiel für eine Microsoft OIDC-Webanwendung' 
+}); 
 ```
 
 - Verwenden Sie danach die Strategie, auf die gerade verwiesen wurde, um die Anmeldeanforderungen zu verarbeiten.
@@ -418,4 +421,4 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 Weitere Ressourcen: - [Die App-Modell v2.0-Vorschauversion >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-"azure-active-directory"-Tag >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!----HONumber=Sept15_HO3-->
+<!-----HONumber=Sept15_HO3-->

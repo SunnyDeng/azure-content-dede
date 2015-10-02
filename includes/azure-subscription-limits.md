@@ -16,4 +16,4 @@ Warnungsregeln pro Abonnement|250|250
 
 <sup>1</sup> Zusätzliche kleine Instanzen zählen als ganzer Prozessorkern im Sinn des Limits, obwohl nur ein Teil eines Kerns verwendet wird.
 
-<!---HONumber=September15_HO1-->
+<!----HONumber=Sept15_HO1-->
